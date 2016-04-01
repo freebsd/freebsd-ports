@@ -12,12 +12,12 @@ COMMENT=	Fluent event collector
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-	rubygem-cool.io>=1.1.1:${PORTSDIR}/devel/rubygem-cool.io \
-	rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb \
-	rubygem-json>=1.4.3:${PORTSDIR}/devel/rubygem-json \
-	rubygem-msgpack>=0.5.4:${PORTSDIR}/devel/rubygem-msgpack \
-	rubygem-sigdump>=0.2.2:${PORTSDIR}/devel/rubygem-sigdump \
-	rubygem-yajl-ruby>=1.0:${PORTSDIR}/devel/rubygem-yajl-ruby
+	rubygem-cool.io>=1.1.1:devel/rubygem-cool.io \
+	rubygem-http_parser.rb>=0.5.1:net/rubygem-http_parser.rb \
+	rubygem-json>=1.4.3:devel/rubygem-json \
+	rubygem-msgpack>=0.5.4:devel/rubygem-msgpack \
+	rubygem-sigdump>=0.2.2:devel/rubygem-sigdump \
+	rubygem-yajl-ruby>=1.0:devel/rubygem-yajl-ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

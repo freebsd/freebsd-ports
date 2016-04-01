@@ -11,9 +11,9 @@ COMMENT=	Library to access the secret service API
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		vala:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+		vala:lang/vala
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 libxslt:build intltool \

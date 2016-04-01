@@ -15,7 +15,7 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	node012>=0:${PORTSDIR}/www/node012
+RUN_DEPENDS=	node012>=0:www/node012
 
 NO_BUILD=	yes
 NO_ARCH=	yes

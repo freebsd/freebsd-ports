@@ -12,7 +12,7 @@ COMMENT=	Regexp::Log::Common, a parser for the Common Log Format
 
 LICENSE=	ART20
 
-RUN_DEPENDS=	p5-Regexp-Log>=0:${PORTSDIR}/textproc/p5-Regexp-Log
+RUN_DEPENDS=	p5-Regexp-Log>=0:textproc/p5-Regexp-Log
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

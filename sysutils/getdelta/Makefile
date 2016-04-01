@@ -15,9 +15,9 @@ COMMENT=	Script for reducing bandwidth load while upgrading ports disfiles
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	deltup>=0.4.4:${PORTSDIR}/sysutils/deltup \
-		wget:${PORTSDIR}/ftp/wget \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	deltup>=0.4.4:sysutils/deltup \
+		wget:ftp/wget \
+		bash:shells/bash
 
 USES=		tar:bzip2
 NO_WRKSUBDIR=	yes

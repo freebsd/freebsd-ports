@@ -10,7 +10,7 @@ DISTNAME=	Search-OpenFTS-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Open Source Full Text Search engine
 
-RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 
 USES+=		perl5 pgsql shebangfix
 SHEBANG_FILES=	examples/*.pl examples/parser/*.pl

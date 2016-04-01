@@ -14,7 +14,7 @@ COMMENT=	Perl extension for manipulating a RADIUS users file
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
+BUILD_DEPENDS=	p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

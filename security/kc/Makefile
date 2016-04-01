@@ -12,8 +12,8 @@ COMMENT=	Console based password storing application
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+		libpcre.so:devel/pcre
 
 USES=		libedit pkgconfig uidfix
 USE_GITHUB=	yes

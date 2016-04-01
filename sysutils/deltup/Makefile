@@ -14,9 +14,9 @@ DISTFILES+=	${DISTNAME}.tar.gz ${BZIP2_102_SOURCE}:bzip2102src ${BZIP2_103_SOURC
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Source delta update program
 
-RUN_DEPENDS=	bdelta:${PORTSDIR}/misc/bdelta \
-		xdelta:${PORTSDIR}/misc/xdelta \
-		gzip>=1:${PORTSDIR}/archivers/gzip
+RUN_DEPENDS=	bdelta:misc/bdelta \
+		xdelta:misc/xdelta \
+		gzip>=1:archivers/gzip
 
 BZIP2_102_SOURCE=	bzip2-${BZIP2_102}.tar.gz
 BZIP2_103_SOURCE=	bzip2-${BZIP2_103}.tar.gz

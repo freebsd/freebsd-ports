@@ -10,10 +10,10 @@ COMMENT=	PC-BSD Web Interface
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	syscache:${PORTSDIR}/sysutils/pcbsd-syscache \
-		pbi:${PORTSDIR}/sysutils/pbi-manager \
-		warden:${PORTSDIR}/sysutils/warden \
-		nginx:${PORTSDIR}/www/nginx
+RUN_DEPENDS=	syscache:sysutils/pcbsd-syscache \
+		pbi:sysutils/pbi-manager \
+		warden:sysutils/warden \
+		nginx:www/nginx
 
 IGNORE_WITH_PHP=5 54
 USE_PHP=	filter gd json session

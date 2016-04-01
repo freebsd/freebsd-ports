@@ -13,7 +13,7 @@ COMMENT=	Fake IKE PSK+XAUTH daemon based on VPNC
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 USES=		gmake tar:bzip2
 
@@ -25,7 +25,7 @@ PORTDOCS=	README NEWS
 OPTIONS_DEFINE=	LIBNET DOCS
 OPTIONS_DEFAULT=LIBNET
 LIBNET_DESC=	Build with libnet support
-LIBNET_LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIBNET_LIB_DEPENDS=	libnet.so:net/libnet
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=-g|=|' ${WRKSRC}/${MAKEFILE}

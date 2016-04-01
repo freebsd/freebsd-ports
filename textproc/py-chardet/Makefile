@@ -13,7 +13,7 @@ COMMENT=	Universal encoding detector for Python 2 and 3
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
 
 USES=		python
 USE_GITHUB=	yes

@@ -12,7 +12,7 @@ DIST_SUBDIR=	kmfl
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Engine to interpret compiled KMFL keyboard tables
 
-LIB_DEPENDS=	libkmflcomp.so:${PORTSDIR}/textproc/kmflcomp
+LIB_DEPENDS=	libkmflcomp.so:textproc/kmflcomp
 
 USE_LDCONFIG=	yes
 USES=	libtool

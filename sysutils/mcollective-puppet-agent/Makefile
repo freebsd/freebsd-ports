@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	anes@anes.su
 COMMENT=	Puppet agent manager for mcollective
 
-RUN_DEPENDS=	mcollective>=2:${PORTSDIR}/sysutils/mcollective
+RUN_DEPENDS=	mcollective>=2:sysutils/mcollective
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs

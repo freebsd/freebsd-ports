@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Generalize listed filenames to csh-extended glob patterns
 
-BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
-		mkcmd:${PORTSDIR}/devel/mkcmd
+BUILD_DEPENDS=	makeme:devel/msrc0 \
+		mkcmd:devel/mkcmd
 
 MAKE_FLAGS=
 MAKEFILE=

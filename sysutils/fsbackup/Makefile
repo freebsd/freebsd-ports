@@ -11,7 +11,7 @@ DISTNAME=	fsbackup-1.2pl1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File system backup and synchronization utility
 
-RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	p5-Net>=0:net/p5-Net
 
 USES=		shebangfix perl5
 SHEBANG_FILES=	contrib/*.pl \

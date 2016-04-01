@@ -14,10 +14,10 @@ COMMENT=	Create a new file in the Excel 2007+ XLSX format
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip
+BUILD_DEPENDS=	p5-Archive-Zip>=1.30:archivers/p5-Archive-Zip
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
+TEST_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
+		p5-Date-Manip>=0:devel/p5-Date-Manip
 
 NO_ARCH=	yes
 USE_PERL5=	configure

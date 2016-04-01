@@ -13,7 +13,7 @@ COMMENT=	GTK+ 2 spell checking component
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20 intlhack

@@ -35,6 +35,6 @@ PORTDOCS=	niceload.html niceload.pdf niceload.texi \
 
 SHEBANG_FILES=	src/niceload src/sql
 
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/pod2texi:${PORTSDIR}/print/texinfo
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/pod2texi:print/texinfo
 
 .include <bsd.port.mk>

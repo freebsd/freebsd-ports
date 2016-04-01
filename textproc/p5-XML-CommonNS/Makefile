@@ -14,7 +14,7 @@ COMMENT=	List of commonly used namespaces
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-XML-NamespaceFactory>=0:${PORTSDIR}/textproc/p5-XML-NamespaceFactory
+BUILD_DEPENDS=	p5-XML-NamespaceFactory>=0:textproc/p5-XML-NamespaceFactory
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

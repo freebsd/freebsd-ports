@@ -12,7 +12,7 @@ COMMENT=	Tool that acts as a complement to cd
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 NO_BUILD=	yes
 USES=		python:run
@@ -28,7 +28,7 @@ PLIST_FILES=	bin/autojump \
 OPTIONS_DEFINE=		ZSH
 OPTIONS_DEFAULT=	ZSH
 
-ZSH_RUN_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
+ZSH_RUN_DEPENDS=	zsh:shells/zsh
 ZSH_PLIST_FILES=	share/zsh/site-functions/_j
 
 post-patch:

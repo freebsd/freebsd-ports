@@ -15,7 +15,7 @@ EXTRACT_ONLY=	IPAUni_Src12.zip
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	IPA Unicode 5.1 mnemonic keyboard for KMFL IMEngine
 
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
+RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
 USES=		dos2unix zip
 WRKSRC=		${WRKDIR}/IPA12

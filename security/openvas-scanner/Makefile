@@ -12,11 +12,11 @@ COMMENT=	OpenVAS scanner
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv2
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libopenvas_base.so:${PORTSDIR}/security/openvas-libraries
-RUN_DEPENDS=	redis-server:${PORTSDIR}/databases/redis \
-		curl:${PORTSDIR}/ftp/curl \
-		rsync:${PORTSDIR}/net/rsync
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libopenvas_base.so:security/openvas-libraries
+RUN_DEPENDS=	redis-server:databases/redis \
+		curl:ftp/curl \
+		rsync:net/rsync
 
 USES=		cmake:outsource execinfo gettext-runtime gnome pkgconfig
 USE_GNOME=	glib20

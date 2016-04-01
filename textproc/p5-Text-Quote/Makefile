@@ -14,7 +14,7 @@ COMMENT=	Quotes strings as required for perl to eval them back correctly
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Carp-Assert>=0.13:${PORTSDIR}/devel/p5-Carp-Assert
+BUILD_DEPENDS=	p5-Carp-Assert>=0.13:devel/p5-Carp-Assert
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -12,7 +12,7 @@ COMMENT=	Very light interface to the command-line GPG tool
 
 LICENSE=	RUBY
 
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:security/gnupg
 
 NO_ARCH=	yes
 

@@ -12,7 +12,7 @@ COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	java-sigar>=0:${PORTSDIR}/java/sigar
+RUN_DEPENDS=	java-sigar>=0:java/sigar
 
 CONFLICTS=	elasticsearch2-[0-9]*
 

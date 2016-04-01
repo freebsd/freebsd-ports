@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tldp.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts a Texinfo file into DocBook XML
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

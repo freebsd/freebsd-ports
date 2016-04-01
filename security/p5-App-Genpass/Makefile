@@ -15,15 +15,15 @@ COMMENT=	Quickly and easily create secure passwords
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
-		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-List-AllUtils>=0:${PORTSDIR}/devel/p5-List-AllUtils \
-		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
-		p5-MooX-Types-MooseLike>=0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
-		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
+BUILD_DEPENDS=	p5-Config-Any>=0:devel/p5-Config-Any \
+		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
+		p5-List-AllUtils>=0:devel/p5-List-AllUtils \
+		p5-Moo>=0:devel/p5-Moo \
+		p5-MooX-Types-MooseLike>=0:devel/p5-MooX-Types-MooseLike \
+		p5-namespace-clean>=0.20:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+TEST_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-Test-Deep>=0:devel/p5-Test-Deep
 
 NO_ARCH=	yes
 USE_PERL5=	configure

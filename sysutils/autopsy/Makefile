@@ -12,7 +12,7 @@ COMMENT=	Web-based (graphical) interface to The Sleuth Kit
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ifind:${PORTSDIR}/sysutils/sleuthkit
+BUILD_DEPENDS=	${LOCALBASE}/bin/ifind:sysutils/sleuthkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

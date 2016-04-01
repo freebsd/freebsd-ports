@@ -10,8 +10,8 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK application to securely store sensitive data
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libgringotts.so:${PORTSDIR}/security/libgringotts
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libgringotts.so:security/libgringotts
 
 USES=		gettext pkgconfig
 USE_GNOME=	gtk20

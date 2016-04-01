@@ -13,7 +13,7 @@ COMMENT=	Default plugins for lineakd
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liblineak.so:${PORTSDIR}/sysutils/lineakd
+LIB_DEPENDS=	liblineak.so:sysutils/lineakd
 
 USES=		gmake libtool
 USE_XORG=	x11 xext xt xtst xfixes

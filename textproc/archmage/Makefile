@@ -14,8 +14,8 @@ COMMENT=	Extensible reader/decompiler of files in CHM format
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/chm.py:${PORTSDIR}/textproc/pychm \
-		${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/chm.py:textproc/pychm \
+		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32
 
 NO_BUILD=	yes
 USES=		cpe python:2 tar:bzip2

@@ -13,8 +13,8 @@ MASTER_SITES=	SF/${PORTNAME}/MCrypt/${PORTVERSION} \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
 
-LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
-		libmhash.so:${PORTSDIR}/security/mhash
+LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
+		libmhash.so:security/mhash
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

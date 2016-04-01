@@ -13,9 +13,9 @@ COMMENT=	Manipulate BibTeX files from perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Config-AutoConf>=0.16:${PORTSDIR}/devel/p5-Config-AutoConf \
-		p5-ExtUtils-LibBuilder>=0.02:${PORTSDIR}/devel/p5-ExtUtils-LibBuilder
-TEST_DEPENDS=	p5-Capture-Tiny>=0.06:${PORTSDIR}/devel/p5-Capture-Tiny
+BUILD_DEPENDS=	p5-Config-AutoConf>=0.16:devel/p5-Config-AutoConf \
+		p5-ExtUtils-LibBuilder>=0.02:devel/p5-ExtUtils-LibBuilder
+TEST_DEPENDS=	p5-Capture-Tiny>=0.06:devel/p5-Capture-Tiny
 
 USES=		perl5
 USE_PERL5=	modbuild

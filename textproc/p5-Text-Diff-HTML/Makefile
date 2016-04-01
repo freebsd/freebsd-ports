@@ -14,8 +14,8 @@ COMMENT=	Text::Diff::HTML - XHTML format for Text::Diff::Unified
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-Text-Diff>=0:textproc/p5-Text-Diff \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -13,8 +13,8 @@ COMMENT=	C library for parsing, writing, and creating RSS
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libnxml.so:${PORTSDIR}/textproc/libnxml
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libnxml.so:textproc/libnxml
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

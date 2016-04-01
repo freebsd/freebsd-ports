@@ -12,8 +12,8 @@ COMMENT=	Boot loader for the Linux operating system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
+BUILD_DEPENDS=	nasm:devel/nasm
+RUN_DEPENDS=	mtools:emulators/mtools
 
 USES=		perl5 gmake tar:xz
 USE_PERL5=	build

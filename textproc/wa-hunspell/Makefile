@@ -14,7 +14,7 @@ COMMENT=	Wallon hunspell dictionaries
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+BUILD_DEPENDS=	aspell:textproc/aspell
 
 ALL_TARGET=	myspell
 NO_ARCH=	yes

@@ -19,7 +19,7 @@ COMMENT?=	Meta-port for the courier authentication library
 CONFLICTS=	courier-0.45*
 
 .if !defined(PKGNAMESUFFIX)
-RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base
 
 NO_BUILD=	yes
 PATCHDIR=	/dev/null
@@ -30,8 +30,8 @@ OPTIONS_DEFINE+=	GDBM
 
 .else	# !defined(PKGNAMESUFFIX)
 
-LIB_DEPENDS+=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libcourier-unicode.so:${PORTSDIR}/devel/courier-unicode
+LIB_DEPENDS+=	libltdl.so:devel/libltdl \
+		libcourier-unicode.so:devel/courier-unicode
 
 USES=		iconv gmake libtool perl5 tar:bzip2
 GNU_CONFIGURE=	yes
@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=--with-pipeprog=${WITH_AUTHPIPE_PROG}
 .endif
 
 .else
-RUN_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+RUN_DEPENDS+=	courierauthconfig:security/courier-authlib-base
 CONFIGURE_ARGS+=--without-base --without-authpam --without-authpipe
 REMOVE_SUBDIRS+=liblock liblog
 .endif
@@ -94,7 +94,7 @@ REMOVE_SUBDIRS+=liblock liblog
 .if ${AUTHMOD} == authuserdb
 .if ${PKGNAMESUFFIX} == -usergdbm
 CONFLICTS+=	${PORTNAME}-userdb-0.*
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:databases/gdbm
 CONFIGURE_ARGS+=--with-db=gdbm
 .elif ${PKGNAMESUFFIX} == -userdb
 CONFLICTS+=	${PORTNAME}-usergdbm-0.*
@@ -133,7 +133,7 @@ CONFIGURE_ARGS+=--without-authpgsql
 .endif
 
 .if ${AUTHMOD} == authvchkpw
-BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:mail/vpopmail
 CONFIGURE_ARGS+=--with-authvchkpw
 .else
 CONFIGURE_ARGS+=--without-authvchkpw

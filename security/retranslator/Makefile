@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-LIB_DEPENDS+=	libm.so:${PORTSDIR}/misc/compat6x
+LIB_DEPENDS+=	libm.so:misc/compat6x
 
 do-configure:
 

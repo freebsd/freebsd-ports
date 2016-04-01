@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple DBI authentication
 
-BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-Authen-Simple>=0:security/p5-Authen-Simple \
+		p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

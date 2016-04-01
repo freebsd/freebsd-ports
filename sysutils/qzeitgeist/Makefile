@@ -17,8 +17,8 @@ COMMENT=	Qt 4 wrapper library around the Zeitgeist D-Bus API
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rapper:${PORTSDIR}/textproc/raptor2 \
-		${PYTHON_SITELIBDIR}/rdflib/__init__.py:${PORTSDIR}/textproc/py-rdflib
+BUILD_DEPENDS=	rapper:textproc/raptor2 \
+		${PYTHON_SITELIBDIR}/rdflib/__init__.py:textproc/py-rdflib
 
 USE_KDE4=	automoc4
 USE_QT4=	dbus declarative qtestlib \

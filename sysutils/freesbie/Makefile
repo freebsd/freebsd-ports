@@ -13,7 +13,7 @@ COMMENT=	Yet another cool answer to the system-on-cd question
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	cdrecord:sysutils/cdrtools
 
 USES=		tar:bzip2
 NO_BUILD=	yes

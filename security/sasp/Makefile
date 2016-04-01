@@ -11,7 +11,7 @@ MASTER_SITES=	LOCAL/ahze \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that permits to use a gateway whatever IP we have
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/sasp

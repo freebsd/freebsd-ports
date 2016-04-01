@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-gtk3
 COMMENT=	GTK+ 3.x modules of uim input method
 
 USE_GNOME=	gtk30
-LIB_DEPENDS=	libuim.so:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	libuim.so:textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

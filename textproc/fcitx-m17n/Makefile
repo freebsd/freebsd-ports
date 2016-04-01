@@ -12,8 +12,8 @@ COMMENT=	Multilingualization support for Fcitx
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
-		libm17n.so:${PORTSDIR}/devel/m17n-lib
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
+		libm17n.so:devel/m17n-lib
 
 USES=		cmake gettext pkgconfig tar:xz
 

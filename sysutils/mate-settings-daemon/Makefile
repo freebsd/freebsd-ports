@@ -10,14 +10,14 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE settings daemon
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libxklavier.so:${PORTSDIR}/x11/libxklavier \
-		libnss3.so:${PORTSDIR}/security/nss \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
-		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libxklavier.so:x11/libxklavier \
+		libnss3.so:security/nss \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libpolkit-gobject-1.so:sysutils/polkit \
+		libnotify.so:devel/libnotify
+RUN_DEPENDS=	xrdb:x11/xrdb
 
 PORTSCOUT=	limitw:1,even
 
@@ -62,6 +62,6 @@ OPTIONS_DEFINE=	PULSEAUDIO
 OPTIONS_SUB=	yes
 
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 .include <bsd.port.mk>

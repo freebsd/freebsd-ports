@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RDF Notation3 parser
 
-BUILD_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
-		p5-RDF-Core>=0:${PORTSDIR}/textproc/p5-RDF-Core \
-		p5-RDFStore>=0:${PORTSDIR}/textproc/p5-RDFStore
+BUILD_DEPENDS=	p5-XML-SAX>=0:textproc/p5-XML-SAX \
+		p5-RDF-Core>=0:textproc/p5-RDF-Core \
+		p5-RDFStore>=0:textproc/p5-RDFStore
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

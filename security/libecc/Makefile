@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	C++ Elliptic Curve Library
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		libtool
 GNU_CONFIGURE=	yes

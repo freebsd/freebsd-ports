@@ -15,7 +15,7 @@ COMMENT=	SSH and SFTP protocol implementation with clients and servers
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.0.9a:${PORTSDIR}/devel/py-pyasn1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.0.9a:devel/py-pyasn1
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils

@@ -13,7 +13,7 @@ COMMENT=	Small and secure replacement for syslogd
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/package/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/chpst:${PORTSDIR}/sysutils/runit
+RUN_DEPENDS=	${LOCALBASE}/sbin/chpst:sysutils/runit
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 ALL_TARGET=	default

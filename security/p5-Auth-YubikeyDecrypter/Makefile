@@ -13,7 +13,7 @@ DISTNAME=	Auth-Yubikey_Decrypter-${PORTVERSION}
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Decrypting the output from the yubikey token
 
-RUN_DEPENDS=	p5-Crypt-Rijndael>=1:${PORTSDIR}/security/p5-Crypt-Rijndael
+RUN_DEPENDS=	p5-Crypt-Rijndael>=1:security/p5-Crypt-Rijndael
 
 LICENSE=	GPLv2
 USES=		perl5

@@ -22,7 +22,7 @@ NLS_CONFIGURE_WITH=	gettext
 NLS_USES=	gettext
 
 UNICODE_CONFIGURE_WITH=	unicode
-UNICODE_LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu
+UNICODE_LIB_DEPENDS=	libicudata.so:devel/icu
 
 HAS_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

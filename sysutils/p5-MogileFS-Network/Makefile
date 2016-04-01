@@ -15,9 +15,9 @@ COMMENT=	Network awareness and extensions for p5-MogileFS-Server
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
-		p5-Net-Patricia>=0:${PORTSDIR}/net/p5-Net-Patricia \
-		p5-MogileFS-Server>=2.50:${PORTSDIR}/sysutils/p5-MogileFS-Server
+BUILD_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \
+		p5-Net-Patricia>=0:net/p5-Net-Patricia \
+		p5-MogileFS-Server>=2.50:sysutils/p5-MogileFS-Server
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -12,7 +12,7 @@ COMMENT=	AES encrypting or decrypting pipe
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:security/gnupg
 
 USES=	tar:bzip2
 

@@ -41,9 +41,9 @@ POLARSSL_DESC=		SSL/TLS via PolarSSL (mbedTLS) 1.3.8+ (not 2.x)
 TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
 
-EASYRSA_RUN_DEPENDS=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
+EASYRSA_RUN_DEPENDS=	easy-rsa>=0:security/easy-rsa
 
-PKCS11_LIB_DEPENDS=	libpkcs11-helper.so:${PORTSDIR}/security/pkcs11-helper
+PKCS11_LIB_DEPENDS=	libpkcs11-helper.so:security/pkcs11-helper
 PKCS11_CONFIGURE_ENABLE=	pkcs11
 
 TUNNELBLICK_EXTRA_PATCHES=	${FILESDIR}/extra-tunnelblick-openvpn_xorpatch
@@ -59,7 +59,7 @@ OPENSSL_CONFIGURE_ON=	--with-crypto-library=openssl
 # Pin the libmbedtls version because the 2.3.x port can't work with .so.10 or
 # newer from the security/mbedtls package. Upstream works in progress
 # for OpenVPN 2.4 to use mbedTLS 2.X.
-POLARSSL_LIB_DEPENDS=	libmbedtls.so.9:${PORTSDIR}/security/polarssl13
+POLARSSL_LIB_DEPENDS=	libmbedtls.so.9:security/polarssl13
 POLARSSL_CONFIGURE_ON=	--with-crypto-library=polarssl
 
 USE_RC_SUBR=		openvpn
@@ -71,7 +71,7 @@ SUB_FILES=		pkg-message openvpn-client
 CFLAGS+=		-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-LIB_DEPENDS+=		liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=		liblzo2.so:archivers/lzo2
 
 PORTDOCS=		*
 PORTEXAMPLES=		*

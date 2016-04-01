@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Hashes (and objects based on hashes) with encrypting fields
 
-BUILD_DEPENDS=	p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC
+BUILD_DEPENDS=	p5-Crypt-CBC>=0:security/p5-Crypt-CBC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
-		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES
+TEST_DEPENDS=	p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \
+		p5-Crypt-DES>=0:security/p5-Crypt-DES
 
 USES=		perl5
 USE_PERL5=	configure

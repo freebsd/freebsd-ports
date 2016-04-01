@@ -14,9 +14,9 @@ COMMENT=	Namespace-aware DocBook XSLT stylesheets
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
-RUN_DEPENDS=	docbook>=0:${PORTSDIR}/textproc/docbook \
-		xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
+BUILD_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
+RUN_DEPENDS=	docbook>=0:textproc/docbook \
+		xmlcatmgr:textproc/xmlcatmgr
 
 USES=	tar:bzip2
 NO_BUILD=	yes

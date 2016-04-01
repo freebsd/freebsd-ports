@@ -12,9 +12,9 @@ EXTRACT_SUFX=
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Compare two versions of an Internet Draft and produce a diff
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		gawk:${PORTSDIR}/lang/gawk \
-		wdiff:${PORTSDIR}/textproc/wdiff
+RUN_DEPENDS=	bash:shells/bash \
+		gawk:lang/gawk \
+		wdiff:textproc/wdiff
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

@@ -11,8 +11,8 @@ DISTFILES=	ConsoleKit-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for defining and tracking users
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libpolkit-gobject-1.so:sysutils/polkit
 
 WRKSRC=		${WRKDIR}/ConsoleKit-${PORTVERSION}
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2

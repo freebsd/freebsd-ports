@@ -13,7 +13,7 @@ COMMENT=	Python bindings for the Sleuthkit
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libtsk.so:${PORTSDIR}/sysutils/sleuthkit
+LIB_DEPENDS=	libtsk.so:sysutils/sleuthkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

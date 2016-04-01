@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	All W3C published SGML DTDs for HTML
 
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
 
 NO_MTREE=	yes
 NO_BUILD=	yes

@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.m17n.org/common/im-config/ \
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	GUI for per-user configuration of m17n-lib input methods
 
-LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
+LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -13,8 +13,8 @@ COMMENT=	Application for displaying Microsoft(R) Word documents
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Docs/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:${PORTSDIR}/print/gsfonts
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:${PORTSDIR}/print/gsfonts
+BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:print/gsfonts
 
 USES=		cpe gmake shebangfix perl5
 CPE_VENDOR=	antiword_project

@@ -12,7 +12,7 @@ COMMENT=	Nokogiri interface to the Gumbo HTML5 parser
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

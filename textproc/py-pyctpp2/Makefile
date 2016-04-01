@@ -13,7 +13,7 @@ COMMENT=	Python interface to CTPP2 library
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libctpp2.so:${PORTSDIR}/textproc/ctpp2
+LIB_DEPENDS=	libctpp2.so:textproc/ctpp2
 
 # Python3 ready
 USES=		python

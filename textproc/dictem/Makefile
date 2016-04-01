@@ -13,7 +13,7 @@ COMMENT=	DictEm is a dict client for [X]Emacs
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/bin/dict:${PORTSDIR}/textproc/dict
+RUN_DEPENDS=	${LOCALBASE}/bin/dict:textproc/dict
 
 USE_EMACS=	yes
 

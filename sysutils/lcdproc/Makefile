@@ -36,13 +36,13 @@ SERDISP_DESC=	Build drivers using serdisplib
 OPTIONS_DEFAULT=USB FREETYPE
 NO_OPTIONS_SORT=yes
 
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
 
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_ENABLE=	libpng
 
-SERDISP_LIB_DEPENDS=	libserdisp.so:${PORTSDIR}/devel/serdisplib
+SERDISP_LIB_DEPENDS=	libserdisp.so:devel/serdisplib
 SERDISP_CFLAGS=		-I${LOCALBASE}/include
 SERDISP_LDFLAGS=	-L${LOCALBASE}/lib
 SERDISP_CPPFLAGS=	-I${LOCALBASE}/include
@@ -97,7 +97,7 @@ LCDPROC_DRIVERS+=IOWarrior \
 		shuttleVFD
 
 . if ${PORT_OPTIONS:MFTDI}
-LIB_DEPENDS+=		libftdi.so:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=		libftdi.so:devel/libftdi
 PLIST_SUB+=		FTDI=""
 LCDPROC_DRIVERS+=i2500vfd \
 		lis \
@@ -108,7 +108,7 @@ PLIST_SUB+=		FTDI="@comment "
 . endif
 
 . if ${PORT_OPTIONS:MHID}
-LIB_DEPENDS+=		libhid.so:${PORTSDIR}/devel/libhid
+LIB_DEPENDS+=		libhid.so:devel/libhid
 PLIST_SUB+=		HID=""
 LCDPROC_DRIVERS+=mdm166a
 . else

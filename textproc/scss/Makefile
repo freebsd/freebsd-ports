@@ -13,7 +13,7 @@ COMMENT=	Scheme module for W3C Cascading Stylesheets recommendation
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
+RUN_DEPENDS=	guile:lang/guile
 
 NO_BUILD=	yes
 

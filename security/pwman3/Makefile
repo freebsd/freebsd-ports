@@ -12,8 +12,8 @@ DISTNAME=	Pwman3-${PORTVERSION}
 MAINTAINER=	yarodin@gmail.com
 COMMENT=	Console password management application with sql storage
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
 
 USES=		python
 USE_PYTHON=	distutils autoplist

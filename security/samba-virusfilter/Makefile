@@ -9,9 +9,9 @@ MASTER_SITES=	GHC
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	On-access anti-virus filter for Samba
 
-PATCH_DEPENDS=	smbclient:${PORTSDIR}/net/${SAMBA_PORT}
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${SAMBA_PORT}:configure
-RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
+PATCH_DEPENDS=	smbclient:net/${SAMBA_PORT}
+BUILD_DEPENDS=	${NONEXISTENT}:net/${SAMBA_PORT}:configure
+RUN_DEPENDS=	ksh:shells/pdksh
 
 GNU_CONFIGURE=	yes
 USES=		gmake shebangfix tar:bzip2

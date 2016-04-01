@@ -19,8 +19,8 @@ WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(PORTVERSION)
 
 MAKE_JOBS_UNSAFE=	yes
 
-LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
-		libsyslog-ng-3.5.6.so:${PORTSDIR}/sysutils/syslog-ng35
+LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
+		libsyslog-ng-3.5.6.so:sysutils/syslog-ng35
 
 USES=		bison gmake libtool lua pathfix pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	scl/elasticsearch/es-bridge

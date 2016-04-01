@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	spawk@acm.poly.edu
 COMMENT=	Watches for and e-mails admins about GEOM/ZFS state changes
 
-LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 
 USES=		tar:tbz
 

@@ -9,7 +9,7 @@ COMMENT=	Full operating system stack fingerprinting suite
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Net-SinFP>=2.02:${PORTSDIR}/security/p5-Net-SinFP
+BUILD_DEPENDS=	p5-Net-SinFP>=2.02:security/p5-Net-SinFP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST=		""

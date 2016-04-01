@@ -12,7 +12,7 @@ COMMENT=	Virtual Private Network (VPN) daemon
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 USES=		cpe makeinfo
 CPE_VENDOR=	tinc-vpn

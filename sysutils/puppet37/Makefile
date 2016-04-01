@@ -13,11 +13,11 @@ COMMENT=	Configuration management framework written in Ruby
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
-		rubygem-hiera1>=0:${PORTSDIR}/sysutils/rubygem-hiera1
-RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
-		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-ruby-augeas \
-		rubygem-hiera1>=0:${PORTSDIR}/sysutils/rubygem-hiera1
+BUILD_DEPENDS=	rubygem-facter>=0:sysutils/rubygem-facter \
+		rubygem-hiera1>=0:sysutils/rubygem-hiera1
+RUN_DEPENDS=	rubygem-facter>=0:sysutils/rubygem-facter \
+		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
+		rubygem-hiera1>=0:sysutils/rubygem-hiera1
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs

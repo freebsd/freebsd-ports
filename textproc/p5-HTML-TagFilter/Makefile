@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fine-grained html-filter, xss-blocker and mailto-obfuscator
 
-BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-URI>=0:net/p5-URI \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

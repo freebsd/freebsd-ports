@@ -12,7 +12,7 @@ COMMENT=	TPM Manager
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtspi.so:${PORTSDIR}/security/trousers
+LIB_DEPENDS=	libtspi.so:security/trousers
 
 USES=		qmake
 USE_QT4=	gui moc_build rcc_build uic_build

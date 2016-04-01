@@ -13,7 +13,7 @@ COMMENT=	Programmable completion library for Bash
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USE_AUTOTOOLS=	aclocal automake
 GNU_CONFIGURE=	yes

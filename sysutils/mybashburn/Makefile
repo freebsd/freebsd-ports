@@ -13,9 +13,9 @@ COMMENT=	Ncurses CD burning bash script
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		cdialog:${PORTSDIR}/devel/cdialog \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	bash:shells/bash \
+		cdialog:devel/cdialog \
+		cdrecord:sysutils/cdrtools
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -31,15 +31,15 @@ EJECT_DESC=	Ejecting the CD/DVD drive
 NORMALIZE_DESC=	An audio file volume normalizer
 SUDO_DESC=	To allow non-privileged users to burn CD's
 
-CDRDAO_RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
-DVDTOOLS_RUN_DEPENDS=	dvd+rw-mediainfo:${PORTSDIR}/sysutils/dvd+rw-tools
-EJECT_RUN_DEPENDS=	eject:${PORTSDIR}/sysutils/eject
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
-LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
-MPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-NORMALIZE_RUN_DEPENDS=	normalize:${PORTSDIR}/audio/normalize
-SUDO_RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
-VORBIS_RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
+CDRDAO_RUN_DEPENDS=	cdrdao:sysutils/cdrdao
+DVDTOOLS_RUN_DEPENDS=	dvd+rw-mediainfo:sysutils/dvd+rw-tools
+EJECT_RUN_DEPENDS=	eject:sysutils/eject
+FLAC_RUN_DEPENDS=	flac:audio/flac
+LAME_RUN_DEPENDS=	lame:audio/lame
+MPG123_RUN_DEPENDS=	mpg123:audio/mpg123
+NORMALIZE_RUN_DEPENDS=	normalize:audio/normalize
+SUDO_RUN_DEPENDS=	sudo:security/sudo
+VORBIS_RUN_DEPENDS=	ogg123:audio/vorbis-tools
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/|${PREFIX}/etc/|; \

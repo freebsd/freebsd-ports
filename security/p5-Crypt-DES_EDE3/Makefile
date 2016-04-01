@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to a implementing 3-DES EDE encryption and decryption
 
-BUILD_DEPENDS=	p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES
+BUILD_DEPENDS=	p5-Crypt-DES>=0:security/p5-Crypt-DES
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

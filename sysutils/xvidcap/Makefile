@@ -13,13 +13,13 @@ COMMENT=		Capture your X display to individual frames or MPEG video
 
 LICENSE=		GPLv3
 
-BUILD_DEPENDS=		xml2po:${PORTSDIR}/textproc/gnome-doc-utils	\
-			scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-LIB_DEPENDS=		libswscale.so:${PORTSDIR}/multimedia/ffmpeg	\
-			libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib	\
-			libmp3lame.so:${PORTSDIR}/audio/lame
-RUN_DEPENDS=		animate:${PORTSDIR}/graphics/ImageMagick	\
-			gimp:${PORTSDIR}/graphics/gimp-app
+BUILD_DEPENDS=		xml2po:textproc/gnome-doc-utils	\
+			scrollkeeper-config:textproc/scrollkeeper
+LIB_DEPENDS=		libswscale.so:multimedia/ffmpeg	\
+			libdbus-glib-1.so:devel/dbus-glib	\
+			libmp3lame.so:audio/lame
+RUN_DEPENDS=		animate:graphics/ImageMagick	\
+			gimp:graphics/gimp-app
 
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include

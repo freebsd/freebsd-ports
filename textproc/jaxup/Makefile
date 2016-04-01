@@ -14,9 +14,9 @@ COMMENT=	Java XUpdate engine
 BUILD_DEPENDS=	${JAR_DEPENDS}
 RUN_DEPENDS=	${JAR_DEPENDS}
 
-JAR_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom \
-		${JAVALIBDIR}/jaxen-full.jar:${PORTSDIR}/java/jaxen \
-		${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
+JAR_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom \
+		${JAVALIBDIR}/jaxen-full.jar:java/jaxen \
+		${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
 USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}

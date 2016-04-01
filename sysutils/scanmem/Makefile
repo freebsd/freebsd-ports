@@ -25,7 +25,7 @@ OPTIONS_SUB=	yes
 
 X11_DESC=	Install PyGTK-based GUI (GameConqueror)
 X11_CATEGORIES=	python
-X11_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:${PORTSDIR}/x11-toolkits/py-gtk2
+X11_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:x11-toolkits/py-gtk2
 X11_CONFIGURE_ON=	--enable-gui
 
 post-patch:

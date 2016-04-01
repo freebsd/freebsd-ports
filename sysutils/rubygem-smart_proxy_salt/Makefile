@@ -12,8 +12,8 @@ COMMENT=	SaltStack Plug-In for Foreman's Smart Proxy
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	foreman-proxy>=1.8.0:${PORTSDIR}/net/foreman-proxy \
-		${PYTHON_PKGNAMEPREFIX}salt>0:${PORTSDIR}/sysutils/py-salt
+RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
+		${PYTHON_PKGNAMEPREFIX}salt>0:sysutils/py-salt
 
 USES=		python
 NO_ARCH=	yes

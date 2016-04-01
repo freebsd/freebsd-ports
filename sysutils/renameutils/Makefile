@@ -11,7 +11,7 @@ COMMENT=	Rename files faster and more easily
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	gls:${PORTSDIR}/sysutils/coreutils
+RUN_DEPENDS=	gls:sysutils/coreutils
 
 GNU_CONFIGURE=	yes
 USES=		readline charsetfix

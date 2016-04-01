@@ -12,10 +12,10 @@ COMMENT=	Power manager for the Xfce Desktop
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
-	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
-	libupower-glib.so:${PORTSDIR}/sysutils/upower
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+	libdbus-glib-1.so:devel/dbus-glib \
+	libpolkit-gobject-1.so:sysutils/polkit \
+	libupower-glib.so:sysutils/upower
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3

@@ -11,7 +11,7 @@ COMMENT=	Ruby interface to Nmap scan data
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	nmap:security/nmap
 
 NO_ARCH=	yes
 

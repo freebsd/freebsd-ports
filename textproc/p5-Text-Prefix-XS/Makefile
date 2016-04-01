@@ -14,9 +14,9 @@ COMMENT=	Fast prefix searching
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Digest-SHA1>=1:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	p5-Digest-SHA1>=1:security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0.108:${PORTSDIR}/devel/p5-Test-Deep
+TEST_DEPENDS=	p5-Test-Deep>=0.108:devel/p5-Test-Deep
 
 USE_PERL5=	configure
 USES=		perl5 shebangfix

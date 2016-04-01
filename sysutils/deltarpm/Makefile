@@ -11,7 +11,7 @@ COMMENT=	Tool that generates delta RPMs
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	librpm.so:${PORTSDIR}/archivers/rpm4
+LIB_DEPENDS=	librpm.so:archivers/rpm4
 
 USES=		gmake python shebangfix tar:bz2
 SHEBANG_FILES=	drpmsync

@@ -13,8 +13,8 @@ COMMENT=	SaltStack Web UI
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}salt>=0.17.0:${PORTSDIR}/sysutils/py-salt \
-		${PYTHON_PKGNAMEPREFIX}cherrypy>0:${PORTSDIR}/www/py-cherrypy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}salt>=0.17.0:sysutils/py-salt \
+		${PYTHON_PKGNAMEPREFIX}cherrypy>0:www/py-cherrypy
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

@@ -10,12 +10,12 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for extracting file metadata
 
-LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
-		libtag.so:${PORTSDIR}/audio/taglib \
-		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
-		libepub.so:${PORTSDIR}/textproc/ebook-tools \
-		libqmobipocket.so:${PORTSDIR}/graphics/kdegraphics4-mobipocket
+LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4 \
+		libtag.so:audio/taglib \
+		libexiv2.so:graphics/exiv2 \
+		libswscale.so:multimedia/ffmpeg \
+		libepub.so:textproc/ebook-tools \
+		libqmobipocket.so:graphics/kdegraphics4-mobipocket
 
 USE_KDE4=	kdeprefix automoc4 kdelibs
 USES=		cmake:outsource tar:xz

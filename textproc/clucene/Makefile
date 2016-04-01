@@ -14,7 +14,7 @@ COMMENT=	CLucene is a C++ port of Lucene
 LICENSE=	APACHE20 LGPL21
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_regex.a:devel/boost-libs
 
 USES=		cmake ninja
 USE_LDCONFIG=	yes

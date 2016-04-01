@@ -11,11 +11,11 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME doc utils
 
-BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
-		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
-RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
-		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS=	rarian-sk-config:textproc/rarian \
+		${PYTHON_SITELIBDIR}/libxml2mod.so:textproc/py-libxml2
+RUN_DEPENDS=	rarian-sk-config:textproc/rarian \
+		${PYTHON_SITELIBDIR}/libxml2mod.so:textproc/py-libxml2 \
+		docbook-xml>0:textproc/docbook-xml
 
 USES=		gettext-tools:build,run gmake pathfix pkgconfig python:2 tar:xz
 USE_GNOME=	libxslt intlhack

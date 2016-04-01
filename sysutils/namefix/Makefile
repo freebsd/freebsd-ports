@@ -13,10 +13,10 @@ COMMENT=	Batch file renamer
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag \
-		p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
-		p5-Tk-JComboBox>=0:${PORTSDIR}/x11-toolkits/p5-Tk-JComboBox \
-		p5-Tk-DynaTabFrame>=0:${PORTSDIR}/x11-toolkits/p5-Tk-DynaTabFrame
+RUN_DEPENDS=	p5-MP3-Tag>=0:audio/p5-MP3-Tag \
+		p5-Tk>=0:x11-toolkits/p5-Tk \
+		p5-Tk-JComboBox>=0:x11-toolkits/p5-Tk-JComboBox \
+		p5-Tk-DynaTabFrame>=0:x11-toolkits/p5-Tk-DynaTabFrame
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.pl
 NO_BUILD=	yes

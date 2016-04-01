@@ -11,7 +11,7 @@ COMMENT=	Program that allows you to securely store the passwords
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20 intltool

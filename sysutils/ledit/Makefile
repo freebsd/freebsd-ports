@@ -14,7 +14,7 @@ COMMENT=	Line editor to be used with interactive commands
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	camlp5r:${PORTSDIR}/devel/ocaml-camlp5
+BUILD_DEPENDS=	camlp5r:devel/ocaml-camlp5
 
 USES=		gmake tar:tgz
 USE_OCAML=	yes

@@ -11,12 +11,12 @@ COMMENT=	Lightweight notification daemon
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libpango-1.0.so:${PORTSDIR}/x11-toolkits/pango \
-		libxdg-basedir.so:${PORTSDIR}/x11/libxdg-basedir
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libdbus-1.so:devel/dbus \
+		libfreetype.so:print/freetype2 \
+		libnotify.so:devel/libnotify \
+		libpango-1.0.so:x11-toolkits/pango \
+		libxdg-basedir.so:x11/libxdg-basedir
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	knopwob

@@ -12,7 +12,7 @@ COMMENT=	Frugal, high performance file carver
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	libtre.so:textproc/libtre
 
 USES=		alias
 GNU_CONFIGURE=	yes

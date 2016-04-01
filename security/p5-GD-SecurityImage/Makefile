@@ -14,7 +14,7 @@ COMMENT=	Perl5 module for creating CAPTCHA security images
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	IMAGEMAGICK X11
@@ -30,11 +30,11 @@ USE_PERL5=	configure
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
-IMAGEMAGICK_BUILD_DEPENDS= ${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
-IMAGEMAGICK_RUN_DEPENDS=   ${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_BUILD_DEPENDS= ${LOCALBASE}/bin/convert:graphics/ImageMagick
+IMAGEMAGICK_RUN_DEPENDS=   ${LOCALBASE}/bin/convert:graphics/ImageMagick
 .else
-IMAGEMAGICK_BUILD_DEPENDS= ${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
-IMAGEMAGICK_RUN_DEPENDS=   ${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
+IMAGEMAGICK_BUILD_DEPENDS= ${LOCALBASE}/bin/convert:graphics/ImageMagick-nox11
+IMAGEMAGICK_RUN_DEPENDS=   ${LOCALBASE}/bin/convert:graphics/ImageMagick-nox11
 .endif
 .endif
 

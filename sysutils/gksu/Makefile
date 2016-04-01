@@ -10,9 +10,9 @@ MASTER_SITES=	http://people.debian.org/~kov/gksu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical frontend to su
 
-LIB_DEPENDS=	libgksu2.so:${PORTSDIR}/sysutils/libgksu \
-		libnautilus-extension.so:${PORTSDIR}/x11-fm/nautilus \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS=	libgksu2.so:sysutils/libgksu \
+		libnautilus-extension.so:x11-fm/nautilus \
+		libgnome-keyring.so:security/libgnome-keyring
 
 USES=		gettext-tools gmake libtool pathfix pkgconfig
 USE_GNOME=	gconf2 gnomeprefix gtk20 intlhack

@@ -14,10 +14,10 @@ COMMENT=	Perl extension for interfacing with Solr
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

@@ -19,8 +19,8 @@ RAILTIES4_DESC=	Use Railties 4
 
 OPTIONS_DEFAULT=	RAILTIES4
 
-RAILTIES_RUN_DEPENDS=	rubygem-railties>=3.2:${PORTSDIR}/www/rubygem-railties
-RAILTIES4_RUN_DEPENDS=	rubygem-railties4>=4.0:${PORTSDIR}/www/rubygem-railties4
+RAILTIES_RUN_DEPENDS=	rubygem-railties>=3.2:www/rubygem-railties
+RAILTIES4_RUN_DEPENDS=	rubygem-railties4>=4.0:www/rubygem-railties4
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -14,9 +14,9 @@ COMMENT=	Perl extension for elevation queries against USGS web services
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-JSON>=0:converters/p5-JSON \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	limit:^[0-9\.]*$$

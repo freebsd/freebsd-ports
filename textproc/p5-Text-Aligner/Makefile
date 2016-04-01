@@ -13,7 +13,7 @@ COMMENT=	Align text in columns
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-Term-ANSIColor>=2.02:${PORTSDIR}/devel/p5-Term-ANSIColor
+BUILD_DEPENDS=	p5-Term-ANSIColor>=2.02:devel/p5-Term-ANSIColor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

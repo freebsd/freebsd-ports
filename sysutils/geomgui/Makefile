@@ -10,7 +10,7 @@ MASTER_SITES=	http://tinkering.hambrew.net/geomgui/ \
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Viewer for kernel geom layer
 
-LIB_DEPENDS=	libgvc.so:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS=	libgvc.so:graphics/graphviz
 
 USE_GNOME=	gtk20 librsvg2
 USES=		iconv pkgconfig libtool tar:bzip2

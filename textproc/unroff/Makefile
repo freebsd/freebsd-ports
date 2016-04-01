@@ -16,7 +16,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmable troff translator with backend for HTML
 
-LIB_DEPENDS=	libelk.so:${PORTSDIR}/lang/elk
+LIB_DEPENDS=	libelk.so:lang/elk
 
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DBSD"	\

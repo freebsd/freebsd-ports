@@ -13,7 +13,7 @@ COMMENT=	Open source, distributed, S3 interface to Riak KV
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:${PORTSDIR}/lang/erlang-riak
+BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:lang/erlang-riak
 
 USES=		gmake readline shebangfix
 SHEBANG_FILES=	deps/eper/priv/bin/dtop \

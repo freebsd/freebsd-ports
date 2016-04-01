@@ -12,7 +12,7 @@ COMMENT=	Retrieve process stack traces
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libunwind.so:${PORTSDIR}/devel/libunwind
+LIB_DEPENDS=	libunwind.so:devel/libunwind
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-libunwind=${LOCALBASE}

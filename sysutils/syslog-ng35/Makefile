@@ -16,7 +16,7 @@ COMMENT=	Powerful syslogd replacement
 DEPRECATED=	EOL, no longer supported by bababit.hu
 EXPIRATION_DATE=	2016-06-30
 
-LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog
+LIB_DEPENDS=	libevtlog.so:sysutils/eventlog
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if ${PORT_OPTIONS:MSPOOF}
-LIB_DEPENDS+=		libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS+=		libnet.so:net/libnet
 CONFIGURE_ARGS+=	--enable-spoof-source
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
@@ -85,14 +85,14 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=	--enable-pcre
-LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
 CONFIGURE_ARGS+=	--enable-geoip
-LIB_DEPENDS+=		libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=		libGeoIP.so:net/GeoIP
 CONFIGURE_ENV+=		GEOIP_LIBS="-L${LOCALBASE}/lib -lGeoIP"
 PLIST_FILES+=		lib/syslog-ng/libtfgeoip.so
 .else
@@ -101,7 +101,7 @@ CONFIGURE_ARGS+=	--disable-geoip
 
 .if ${PORT_OPTIONS:MREDIS}
 CONFIGURE_ARGS+=        --enable-redis
-LIB_DEPENDS+=           libhiredis.so:${PORTSDIR}/databases/hiredis
+LIB_DEPENDS+=           libhiredis.so:databases/hiredis
 PLIST_FILES+=           lib/syslog-ng/libredis.so
 .else
 CONFIGURE_ARGS+=        --disable-redis
@@ -110,14 +110,14 @@ CONFIGURE_ARGS+=        --disable-redis
 
 .if ${PORT_OPTIONS:MSMTP}
 CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
-LIB_DEPENDS+=		libesmtp.so:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS+=		libesmtp.so:mail/libesmtp
 PLIST_FILES+=		lib/syslog-ng/libafsmtp.so
 .else
 CONFIGURE_ARGS+=	--disable-smtp
 .endif
 
 .if ${PORT_OPTIONS:MSQL}
-LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=		libdbi.so:databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=	--disable-sql
 .endif
 
 .if ${PORT_OPTIONS:MJSON}
-LIB_DEPENDS+=		libjson-c.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS+=		libjson-c.so:devel/json-c
 CONFIGURE_ARGS+=	--enable-json
 PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 .else

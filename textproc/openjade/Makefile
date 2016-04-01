@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-pre/}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 
-LIB_DEPENDS=	libosp.so:${PORTSDIR}/textproc/opensp
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+LIB_DEPENDS=	libosp.so:textproc/opensp
+RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
 
 USES=		gettext gmake libtool perl5
 USE_LDCONFIG=	yes

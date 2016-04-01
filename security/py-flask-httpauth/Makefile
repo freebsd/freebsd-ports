@@ -11,7 +11,7 @@ COMMENT=	Basic and Digest HTTP authentication for Flask routes
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>0:${PORTSDIR}/www/py-flask
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>0:www/py-flask
 
 NO_ARCH=	yes
 USES=		python

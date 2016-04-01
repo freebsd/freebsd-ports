@@ -24,7 +24,7 @@ PORTSCOUT=	limit:(?<!~rc[0-9])$$
 OPTIONS_DEFINE=	PCRE
 OPTIONS_DEFAULT=PCRE
 
-PCRE_LIB_DEPENDS=	libpcreposix.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcreposix.so:devel/pcre
 PCRE_MAKE_ENV_OFF=	ENABLE=
 
 do-install:

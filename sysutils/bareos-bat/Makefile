@@ -7,8 +7,8 @@ PORTREVISION=	0
 
 COMMENT=	Backup archiving recovery open sourced (GUI)
 
-LIB_DEPENDS+=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
-		libbareos.so:${PORTSDIR}/sysutils/bareos-client
+LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \
+		libbareos.so:sysutils/bareos-client
 
 CONFLICTS=	bacula*-bat-*
 

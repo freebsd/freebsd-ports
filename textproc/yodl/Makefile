@@ -13,11 +13,11 @@ COMMENT=	Easy to use but powerful document formatting/preparation language
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt
-BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
-		bash:${PORTSDIR}/shells/bash \
-		gsed:${PORTSDIR}/textproc/gsed
+RUN_DEPENDS=	bash:shells/bash \
+		${LOCALBASE}/bin/getopt:misc/getopt
+BUILD_DEPENDS=	icmake:devel/icmake \
+		bash:shells/bash \
+		gsed:textproc/gsed
 
 USES=		perl5 shebangfix compiler:c++11-lib
 USE_PERL5=	build

@@ -12,8 +12,8 @@ COMMENT=	Natural language toolkit written in python
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.09:${PORTSDIR}/devel/py-yaml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.09:devel/py-yaml
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -12,8 +12,8 @@ COMMENT=	Keybase.io client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
-		node:${PORTSDIR}/www/node
+RUN_DEPENDS=	gpg:security/gnupg \
+		node:www/node
 
 NO_ARCH=	yes
 NO_BUILD=	yes

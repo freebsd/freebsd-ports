@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl toolkit to describe molecules
 
-BUILD_DEPENDS=	p5-Math-VectorReal>=1.02:${PORTSDIR}/math/p5-Math-VectorReal
+BUILD_DEPENDS=	p5-Math-VectorReal>=1.02:math/p5-Math-VectorReal
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

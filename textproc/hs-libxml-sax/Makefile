@@ -13,7 +13,7 @@ LICENSE=	MIT
 USE_CABAL=	text>=0.7 xml-types>=0.3
 
 USES=		pkgconfig
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

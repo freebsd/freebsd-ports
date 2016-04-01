@@ -11,7 +11,7 @@ COMMENT=	Advanced Disk Imager
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libafflib.so:${PORTSDIR}/sysutils/afflib
+LIB_DEPENDS=	libafflib.so:sysutils/afflib
 
 USE_OPENSSL=	yes
 USES=		gmake

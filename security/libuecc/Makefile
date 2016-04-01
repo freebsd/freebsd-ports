@@ -12,7 +12,7 @@ COMMENT=	Very small Elliptic Curve Cryptography library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
+LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USE_LDCONFIG=	yes
 

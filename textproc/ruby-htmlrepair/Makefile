@@ -12,7 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library to repair unclosed tags in an HTML document
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/htmlsplit.rb:textproc/ruby-htmlsplit
 
 PLIST_FILES=	%%RUBY_SITELIBDIR%%/htmlrepair.rb
 USES=		zip

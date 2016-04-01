@@ -12,8 +12,8 @@ DISTNAME=	ct17a15
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Drawing organic molecules easily and store them (developer version)
 
-LIB_DEPENDS=	libEMF.so:${PORTSDIR}/graphics/libemf
-RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
+LIB_DEPENDS=	libEMF.so:graphics/libemf
+RUN_DEPENDS=	transfig:print/transfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_GNOME=	gtk20

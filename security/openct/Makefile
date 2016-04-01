@@ -12,7 +12,7 @@ COMMENT=	Middleware framework for smart card terminals
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 OPTIONS_DEFINE=	PCSC DOCS
 PCSC_DESC=	Enable PC/SC support
@@ -36,7 +36,7 @@ PORTEXAMPLES=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCSC}
-LIB_DEPENDS+=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS+=	libpcsclite.so:devel/pcsc-lite
 CONFIGURE_ARGS+=--enable-pcsc
 PLIST_SUB+=	PCSC=""
 .else

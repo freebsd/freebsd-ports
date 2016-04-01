@@ -41,7 +41,7 @@ CFLAGS+=	-DUSE_LOCK
 
 .if ${PORT_OPTIONS:MUBLIO}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ublio
-LIB_DEPENDS+=	libublio.so:${PORTSDIR}/devel/libublio
+LIB_DEPENDS+=	libublio.so:devel/libublio
 CFLAGS+=	-DUSE_UBLIO
 .endif
 

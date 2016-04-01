@@ -15,8 +15,8 @@ COMMENT=	High-level interface for RDF
 LICENSE=	APACHE20 GPLv2 GPLv3 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libraptor2.so:${PORTSDIR}/textproc/raptor2 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libraptor2.so:textproc/raptor2 \
+		libpcre.so:devel/pcre
 
 USES=		gmake libtool pathfix perl5 pkgconfig
 USE_OPENSSL=	yes
@@ -31,9 +31,9 @@ GMP_DESC=	Use GMP library for decimals
 MPFR_DESC=	Use MPFR library for decimals
 
 GMP_CONFIGURE_ON=	--with-decimal=gmp --with-gmp=${LOCALBASE}
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 MPFR_CONFIGURE_ON=	--with-decimal=mpfr --with-mpfr=${LOCALBASE}
-MPFR_LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
+MPFR_LIB_DEPENDS=	libmpfr.so:math/mpfr
 
 .include <bsd.port.options.mk>
 

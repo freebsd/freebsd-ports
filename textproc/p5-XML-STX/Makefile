@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure Perl STX processor
 
-BUILD_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
-		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
-		p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceSupport
+BUILD_DEPENDS=	p5-XML-SAX>=0:textproc/p5-XML-SAX \
+		p5-Clone>=0:devel/p5-Clone \
+		p5-XML-NamespaceSupport>=0:textproc/p5-XML-NamespaceSupport
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

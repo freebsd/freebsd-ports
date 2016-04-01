@@ -15,8 +15,8 @@ COMMENT=	Perl API to Yale's Central Authentication System (CAS)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

@@ -12,7 +12,7 @@ COMMENT=	Library for a reading/writing KeePass 1.x DB
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle
+LIB_DEPENDS=	libnettle.so:security/nettle
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -8,7 +8,7 @@ MASTER_SITES=	http://c-s.li/ports/
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Pluggable transport proxy that relays through third-party server
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/git.torproject.org/pluggable-transports/goptlib.git.a:${PORTSDIR}/security/goptlib
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/git.torproject.org/pluggable-transports/goptlib.git.a:security/goptlib
 
 PLIST_FILES=	bin/meek-client bin/meek-server man/man1/meek-client.1.gz man/man1/meek-server.1.gz
 SUB_FILES=	pkg-message

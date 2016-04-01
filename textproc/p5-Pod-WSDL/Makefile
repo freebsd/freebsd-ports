@@ -14,9 +14,9 @@ COMMENT=	Create WSDL documents from (extended) pod
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-stringy>=2.110:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-XML-Writer>=0.531:${PORTSDIR}/textproc/p5-XML-Writer \
-		p5-XML-XPath>=1.13:${PORTSDIR}/textproc/p5-XML-XPath
+BUILD_DEPENDS=	p5-IO-stringy>=2.110:devel/p5-IO-stringy \
+		p5-XML-Writer>=0.531:textproc/p5-XML-Writer \
+		p5-XML-XPath>=1.13:textproc/p5-XML-XPath
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

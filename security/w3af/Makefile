@@ -12,18 +12,18 @@ COMMENT=	Web Application Attack and Audit Framework
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}soappy>=0:${PORTSDIR}/net/py-soappy \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}fpconst>0:${PORTSDIR}/math/py-fpconst \
-		${PYTHON_PKGNAMEPREFIX}nltk>0:${PORTSDIR}/textproc/py-nltk \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}soappy>=0:net/py-soappy \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}fpconst>0:math/py-fpconst \
+		${PYTHON_PKGNAMEPREFIX}nltk>0:textproc/py-nltk \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pdf>0:${PORTSDIR}/print/py-pdf \
-		scapy>0:${PORTSDIR}/net/scapy \
-		${PYTHON_PKGNAMEPREFIX}wordnet>0:${PORTSDIR}/textproc/py-wordnet \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
+		${PYTHON_PKGNAMEPREFIX}pdf>0:print/py-pdf \
+		scapy>0:net/scapy \
+		${PYTHON_PKGNAMEPREFIX}wordnet>0:textproc/py-wordnet \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -32,7 +32,7 @@ USES=		gettext python tar:bzip2
 OPTIONS_DEFINE=	GUI
 OPTIONS_SUB=	yes
 
-GUI_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>0:${PORTSDIR}/graphics/py-graphviz
+GUI_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>0:graphics/py-graphviz
 GUI_USE=	GNOME=pygtk2
 
 .include <bsd.port.options.mk>

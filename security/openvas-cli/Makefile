@@ -12,8 +12,8 @@ COMMENT=	OpenVAS command-line interface and Nagios plugin
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-		libopenvas_base.so:${PORTSDIR}/security/openvas-libraries
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libopenvas_base.so:security/openvas-libraries
 
 CFLAGS+=	-Wno-missing-field-initializers
 USES=		cmake:outsource gnome pkgconfig

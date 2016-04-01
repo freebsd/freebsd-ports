@@ -14,11 +14,11 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-HTML-Selector-XPath>=0.09:${PORTSDIR}/www/p5-HTML-Selector-XPath \
-	p5-XML-LibXML>=1.69:${PORTSDIR}/textproc/p5-XML-LibXML
+	p5-HTML-Selector-XPath>=0.09:www/p5-HTML-Selector-XPath \
+	p5-XML-LibXML>=1.69:textproc/p5-XML-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
-	p5-Text-Pipe>0:${PORTSDIR}/textproc/p5-Text-Pipe
+	p5-Text-Pipe>0:textproc/p5-Text-Pipe
 
 USES=		perl5
 USE_PERL5=	configure

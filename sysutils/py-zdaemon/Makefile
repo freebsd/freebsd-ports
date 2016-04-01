@@ -13,7 +13,7 @@ COMMENT=	Daemon Process Control Library and Tools for Unix-bases Systems
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>0:${PORTSDIR}/devel/py-zconfig
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>0:devel/py-zconfig
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

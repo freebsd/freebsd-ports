@@ -9,7 +9,7 @@ CATEGORIES=	security
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Reasonable Expectation Of Privacy
 
-LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
+LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		gmake
 USE_GITHUB=	yes

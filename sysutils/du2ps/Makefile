@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter for converting output of du to PostScript file
 
 # Nkf is required for just converting character code of japanese manual
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	nkf:japanese/nkf
 
 USES=		tar:tgz
 ALL_TARGET=	# empty

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet another Perl SAX XML Writer
 
-BUILD_DEPENDS=	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml
+BUILD_DEPENDS=	p5-libxml>=0:textproc/p5-libxml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

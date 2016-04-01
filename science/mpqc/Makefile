@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Massively Parallel Quantum Computing library and program
 
-LIB_DEPENDS=	libint.so:${PORTSDIR}/science/libint
+LIB_DEPENDS=	libint.so:science/libint
 
 GNU_CONFIGURE=	yes
 USES=		fortran gmake libtool perl5 shebangfix tar:bzip2
@@ -40,23 +40,23 @@ DOCS_DESC=		Generate html docs and manpages (heavy dependencies)
 MPICH_DESC=		Message-Passing Interface support
 OPTIFLAGS_DESC=		Build with optimized flags
 
-ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
-MPICH_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-			dot:${PORTSDIR}/graphics/graphviz \
-			${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
+ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:lang/icc
+MPICH_LIB_DEPENDS=	libmpich.so:net/mpich2
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			dot:graphics/graphviz \
+			${LOCALBASE}/bin/gsed:textproc/gsed
 DOCS_USES=		execinfo
 DOCS_USE=		TEX=latex:build
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas
+LIB_DEPENDS+=	liblapack.so:math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif

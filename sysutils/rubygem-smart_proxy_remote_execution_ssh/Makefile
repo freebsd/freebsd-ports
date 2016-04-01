@@ -11,10 +11,10 @@ COMMENT=	SSH remote execution provider for foreman-proxy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	foreman-proxy>=1.9.0:${PORTSDIR}/net/foreman-proxy \
-		rubygem-net-scp>=0:${PORTSDIR}/security/rubygem-net-scp \
-		rubygem-net-ssh>=0:${PORTSDIR}/security/rubygem-net-ssh \
-		rubygem-smart_proxy_dynflow>=0.0.3:${PORTSDIR}/sysutils/rubygem-smart_proxy_dynflow
+RUN_DEPENDS=	foreman-proxy>=1.9.0:net/foreman-proxy \
+		rubygem-net-scp>=0:security/rubygem-net-scp \
+		rubygem-net-ssh>=0:security/rubygem-net-ssh \
+		rubygem-smart_proxy_dynflow>=0.0.3:sysutils/rubygem-smart_proxy_dynflow
 
 NO_ARCH=	yes
 USE_RUBY=	yes

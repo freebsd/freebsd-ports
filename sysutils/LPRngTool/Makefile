@@ -12,8 +12,8 @@ COMMENT=	Configuration Tool for LPRng
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps \
-		mpage:${PORTSDIR}/print/mpage
+BUILD_DEPENDS=	a2ps:print/a2ps \
+		mpage:print/mpage
 
 USES=		ghostscript:build tar:tgz tk
 GNU_CONFIGURE=	yes

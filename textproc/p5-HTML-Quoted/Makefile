@@ -13,7 +13,7 @@ COMMENT=	Extract structure of quoted HTML mail message
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Parser>=3.0:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-HTML-Parser>=3.0:www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

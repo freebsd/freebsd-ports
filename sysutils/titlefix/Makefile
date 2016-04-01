@@ -12,7 +12,7 @@ COMMENT=	Renames files in a proper English title format
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
+RUN_DEPENDS=	id3v2:audio/id3v2
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${PORTNAME}

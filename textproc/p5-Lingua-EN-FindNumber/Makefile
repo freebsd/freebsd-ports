@@ -13,10 +13,10 @@ COMMENT=	Locate (written) numbers in English text
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Lingua-EN-Words2Nums>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Words2Nums
+BUILD_DEPENDS=	p5-Lingua-EN-Words2Nums>=0:textproc/p5-Lingua-EN-Words2Nums
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1:devel/p5-Test-Pod-Coverage
 
 NO_ARCH=	yes
 USE_PERL5=	configure

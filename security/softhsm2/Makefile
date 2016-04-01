@@ -13,7 +13,7 @@ COMMENT=	Software implementation of a Hardware Security Module (HSM)
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sqlite3=${LOCALBASE} --localstatedir="${PREFIX}/var"
@@ -33,7 +33,7 @@ CRYP_BOTAN_DESC=	Build with Botan crypto library
 OPTIONS_DEFAULT=	CRYP_OPEN
 
 CRYP_BOTAN_CONFIGURE_ON=	--with-crypto-backend=botan
-CRYP_BOTAN_LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110
+CRYP_BOTAN_LIB_DEPENDS=	libbotan-1.10.so:security/botan110
 CRYP_OPEN_USE=		openssl=yes
 CRYP_OPEN_VARS=		WITH_OPENSSL_PORT=yes
 CRYP_OPEN_CONFIGURE_ON=	--with-crypto-backend=openssl

@@ -11,8 +11,8 @@ COMMENT=	UEFI Secure Boot shim loader
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:${PORTSDIR}/devel/gnu-efi \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:devel/gnu-efi \
+		bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mjg59

@@ -13,7 +13,7 @@ COMMENT=	Library & tools for converting wbxml<->xml
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		cmake:outsource iconv tar:bzip2
 USE_LDCONFIG=	yes

@@ -49,7 +49,7 @@ PKGMESSAGE=		${WRKDIR}/pkg-message-cgiserv
 PLIST_SUB+=		MFS_WORKDIR="${MFS_WORKDIR}"
 CONFIGURE_ARGS+=	--enable-mfscgiserv \
 			--with-mfscgiserv-dir=${MFS_CGISERVDIR}
-RUN_DEPENDS=		moosefs-cgi>0:${PORTSDIR}/sysutils/moosefs-cgi
+RUN_DEPENDS=		moosefs-cgi>0:sysutils/moosefs-cgi
 .else
 CONFIGURE_ARGS+=	--disable-mfscgiserv
 .endif

@@ -11,7 +11,7 @@ COMMENT=	Service discovery and configuration made easy
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	go14>=1.4:${PORTSDIR}/lang/go14
+BUILD_DEPENDS=	go14>=1.4:lang/go14
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp:DEFAULT,go_msgpack,go_syslog,go_net,logutils,mdns,memberlist \

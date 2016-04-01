@@ -10,7 +10,7 @@ DISTNAME=	Kst-${DISTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data viewing and plotting tool
 
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		cmake:outsource pkgconfig
 _USE_QT4=	gui xml designer svg linguisttools_build \
@@ -31,13 +31,13 @@ OPTIONS_DEFAULT=	QT4
 OPTIONS_SUB=	yes
 
 FITS_DESC=	Support for data in FITS format
-FITS_LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
+FITS_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 
 MATLAB_DESC=	Support for data in MATLAB format
-MATLAB_LIB_DEPENDS=	libmatio.so:${PORTSDIR}/math/matio
+MATLAB_LIB_DEPENDS=	libmatio.so:math/matio
 
 NETCDF_DESC=	Support for data in NetCDF format (broken)
-NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
+NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 NETCDF_IGNORE=	does not support NetCDF 4
 
 TOOLKIT_DESC=	Qt toolkit

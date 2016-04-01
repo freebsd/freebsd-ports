@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	MogileFS tools
 
-BUILD_DEPENDS=	p5-MogileFS-Client>=1.16:${PORTSDIR}/sysutils/p5-MogileFS-Client \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-MogileFS-Client>=1.16:sysutils/p5-MogileFS-Client \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

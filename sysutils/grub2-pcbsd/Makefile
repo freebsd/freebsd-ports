@@ -14,9 +14,9 @@ COMMENT=	Multiboot boot loader
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		help2man:${PORTSDIR}/misc/help2man
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+		${LOCALBASE}/bin/bash:shells/bash \
+		help2man:misc/help2man
 
 WRKSRC=		${WRKDIR}/grub-2.02
 CONFLICTS=	grub-0* grub2-2*
@@ -52,9 +52,9 @@ EFIEMU=		"@comment "
 PLIST_SUB+=	EFIEMU=${EFIEMU}
 
 .if ${PORT_OPTIONS:MMKFONT}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS+=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
-		${LOCALBASE}/share/fonts/gnu-unifont/unifont.pcf.gz:${PORTSDIR}/x11-fonts/gnu-unifont
+LIB_DEPENDS+=	libfreetype.so:print/freetype2
+BUILD_DEPENDS+=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
+		${LOCALBASE}/share/fonts/gnu-unifont/unifont.pcf.gz:x11-fonts/gnu-unifont
 MAN1+=		grub-mkfont.1
 CONFIGURE_ARGS+=	--enable-grub-mkfont
 .else
@@ -65,7 +65,7 @@ MKFONT=		"@comment "
 PLIST_SUB+=	MKFONT=${MKFONT}
 
 .if ${PORT_OPTIONS:MFUSE}
-LIB_DEPENDS+=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
+LIB_DEPENDS+=	libfuse.so:sysutils/fusefs-libs
 CONFIGURE_ARGS+=	--enable-grub-mount
 .else
 CONFIGURE_ARGS+=	--disable-grub-mount

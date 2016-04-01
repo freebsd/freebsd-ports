@@ -73,9 +73,9 @@ VSTR_DESC=	Use devel/vstr printf hooks
 
 # Extra options
 CURL_CONFIGURE_ON=	--enable-curl
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 EAPAKA3GPP2_CONFIGURE_ON=	--enable-eap-aka --enable-eap-aka-3gpp2
-EAPAKA3GPP2_LIB_DEPENDS=libgmp.so:${PORTSDIR}/math/gmp
+EAPAKA3GPP2_LIB_DEPENDS=libgmp.so:math/gmp
 EAPDYNAMIC_CONFIGURE_ON=--enable-eap-dynamic
 EAPRADIUS_CONFIGURE_ON=	--enable-eap-radius
 EAPSIMFILE_CONFIGURE_ON=--enable-eap-sim --enable-eap-sim-file
@@ -88,17 +88,17 @@ LDAP_CONFIGURE_ON=	--enable-ldap
 LDAP_USE=		OPENLDAP=yes
 MYSQL_CONFIGURE_ON=	--enable-mysql
 MYSQL_USE=		MYSQL=yes
-SMP_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+SMP_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 SMP_CONFIGURE_ON=	--enable-smp
 SWANCTL_CONFIGURE_ON=	--enable-swanctl
 SWANCTL_IMPLIES=	VICI
 SQLITE_CONFIGURE_ON=	--enable-sqlite
-SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
 PKI_CONFIGURE_OFF=	--disable-pki
 SCEP_CONFIGURE_OFF=	--disable-scepclient
 UNBOUND_CONFIGURE_ON=	--enable-unbound
-UNBOUND_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
+UNBOUND_LIB_DEPENDS=	libunbound.so:dns/unbound
 UNITY_CONFIGURE_ON=	--enable-unity
 VICI_CONFIGURE_ON=	--enable-vici
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic

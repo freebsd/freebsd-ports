@@ -10,13 +10,13 @@ MASTER_SITES=	SF/${PORTNAME}/AIM%20Sniff/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AOL Instant Messenger Sniffing and Reading Tool
 
-RUN_DEPENDS=	p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap\
-		p5-NetPacket>=0:${PORTSDIR}/net/p5-NetPacket\
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI\
-		p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String\
-		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon\
-		p5-Proc-Simple>=0:${PORTSDIR}/devel/p5-Proc-Simple\
-		p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog
+RUN_DEPENDS=	p5-Net-Pcap>=0:net/p5-Net-Pcap\
+		p5-NetPacket>=0:net/p5-NetPacket\
+		p5-DBI>=0:databases/p5-DBI\
+		p5-Unicode-String>=0:converters/p5-Unicode-String\
+		p5-Proc-Daemon>=0:devel/p5-Proc-Daemon\
+		p5-Proc-Simple>=0:devel/p5-Proc-Simple\
+		p5-Unix-Syslog>=0:sysutils/p5-Unix-Syslog
 
 OPTIONS_DEFINE=	SUID_ROOT DOCS
 SUID_ROOT_DESC=	Install aimsniff with set-uid bit

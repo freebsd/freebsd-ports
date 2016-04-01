@@ -10,13 +10,13 @@ PKGNAMESUFFIX=	-m17nlib
 
 COMMENT=	Uim plugin using m17n library input method
 
-BUILD_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
-LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib \
-		libuim.so:${PORTSDIR}/textproc/uim
-RUN_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
+BUILD_DEPENDS=	m17n-db:devel/m17n-db
+LIB_DEPENDS=	libm17n.so:devel/m17n-lib \
+		libuim.so:textproc/uim
+RUN_DEPENDS=	m17n-db:devel/m17n-db
 
 .if !defined(WITHOUT_M17NCONTRIB)
-RUN_DEPENDS+=	${LOCALBASE}/share/m17n/icons/as-phonetic.png:${PORTSDIR}/devel/m17n-db
+RUN_DEPENDS+=	${LOCALBASE}/share/m17n/icons/as-phonetic.png:devel/m17n-db
 .endif
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim

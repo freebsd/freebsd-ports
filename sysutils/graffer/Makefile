@@ -11,8 +11,8 @@ MASTER_SITES=	http://chaosophia.net/downloads/graffer/ \
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Utility to render graphical statistics
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 USES=		jpeg
 

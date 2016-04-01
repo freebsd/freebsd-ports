@@ -12,10 +12,10 @@ COMMENT=	Part-of-speech tagger for English natural language processing
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	p5-HTML-Parser>=3.45:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTML-Tagset>=3.20:${PORTSDIR}/www/p5-HTML-Tagset \
-		p5-Lingua-Stem>=0.81:${PORTSDIR}/textproc/p5-Lingua-Stem \
-		p5-Memoize-ExpireLRU>=0.55:${PORTSDIR}/devel/p5-Memoize-ExpireLRU
+BUILD_DEPENDS=	p5-HTML-Parser>=3.45:www/p5-HTML-Parser \
+		p5-HTML-Tagset>=3.20:www/p5-HTML-Tagset \
+		p5-Lingua-Stem>=0.81:textproc/p5-Lingua-Stem \
+		p5-Memoize-ExpireLRU>=0.55:devel/p5-Memoize-ExpireLRU
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

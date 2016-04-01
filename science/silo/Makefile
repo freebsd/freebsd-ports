@@ -27,7 +27,7 @@ OPTIONS_SUB=			yes
 FORTRAN_CONFIGURE_ENABLE=	fortran
 FORTRAN_USES=			fortran
 
-HDF5_LIB_DEPENDS=		libhdf5.so:${PORTSDIR}/science/hdf5
+HDF5_LIB_DEPENDS=		libhdf5.so:science/hdf5
 HDF5_CONFIGURE_ON=		--with-hdf5=${LOCALBASE}/include,${LOCALBASE}/lib
 HDF5_PLIST_SUB=			SUFX_HDF5="h5"
 HDF5_PLIST_SUB_OFF=		SUFX_HDF5=""

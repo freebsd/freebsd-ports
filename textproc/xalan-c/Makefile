@@ -12,7 +12,7 @@ COMMENT=	XSLT processor from the Apache XML Project
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool localbase pathfix

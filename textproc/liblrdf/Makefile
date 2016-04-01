@@ -13,11 +13,11 @@ COMMENT=	Library for manipulating RDF files describing LADSPA plugins
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu \
-		libyajl.so:${PORTSDIR}/devel/yajl \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libraptor2.so:${PORTSDIR}/textproc/raptor2
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+LIB_DEPENDS=	libicuuc.so:devel/icu \
+		libyajl.so:devel/yajl \
+		libcurl.so:ftp/curl \
+		libraptor2.so:textproc/raptor2
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf iconv libtool pathfix pkgconfig

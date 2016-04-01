@@ -10,8 +10,8 @@ COMMENT=	Digital signing with Estonian ID card in Firefox
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	opensc-tool:${PORTSDIR}/security/opensc \
-		pcscd:${PORTSDIR}/devel/pcsc-lite
+RUN_DEPENDS=	opensc-tool:security/opensc \
+		pcscd:devel/pcsc-lite
 
 USE_OPENSSL=	yes
 USE_GNOME=	gtk20

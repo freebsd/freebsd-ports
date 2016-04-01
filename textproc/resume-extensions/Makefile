@@ -11,9 +11,9 @@ DISTNAME=	xml${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extends the XML Resume library
 
-RUN_DEPENDS=	resume>0:${PORTSDIR}/textproc/resume \
-		${LOCALBASE}/share/xsl/string/print-n-times.xsl:${PORTSDIR}/textproc/print-n-times \
-		${LOCALBASE}/share/xsl/xhtml/add-css-links.xsl:${PORTSDIR}/textproc/add-css-links
+RUN_DEPENDS=	resume>0:textproc/resume \
+		${LOCALBASE}/share/xsl/string/print-n-times.xsl:textproc/print-n-times \
+		${LOCALBASE}/share/xsl/xhtml/add-css-links.xsl:textproc/add-css-links
 
 NO_BUILD=	yes
 

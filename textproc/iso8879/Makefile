@@ -11,7 +11,7 @@ DISTNAME=	isoENTS
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Character entity sets from ISO 8879:1986 (SGML)
 
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
 
 USES=		zip
 NO_BUILD=	yes

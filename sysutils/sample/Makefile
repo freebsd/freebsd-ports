@@ -10,11 +10,11 @@ COMMENT=	Examine periodic stack traces of all running processes
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd \
-		${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \
-		${LOCALBASE}/lib/libxo.a:${PORTSDIR}/devel/libxo \
-		${LOCALBASE}/bin/cython:${PORTSDIR}/lang/cython \
-		${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/libbfd \
+		${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty \
+		${LOCALBASE}/lib/libxo.a:devel/libxo \
+		${LOCALBASE}/bin/cython:lang/cython \
+		${LOCALBASE}/bin/python:lang/python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freenas

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Various niceties for p5-Text-FixedLength lovers
 
-BUILD_DEPENDS=	p5-Text-FixedLength>=0:${PORTSDIR}/textproc/p5-Text-FixedLength
+BUILD_DEPENDS=	p5-Text-FixedLength>=0:textproc/p5-Text-FixedLength
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

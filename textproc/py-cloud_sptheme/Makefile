@@ -13,7 +13,7 @@ COMMENT=	Sphinx theme
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:${PORTSDIR}/textproc/py-sphinx
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

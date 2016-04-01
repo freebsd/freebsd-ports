@@ -13,7 +13,7 @@ COMMENT=	XS acceleration for the PPI perl parser
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-PPI>=1.000:${PORTSDIR}/textproc/p5-PPI
+RUN_DEPENDS=	p5-PPI>=1.000:textproc/p5-PPI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

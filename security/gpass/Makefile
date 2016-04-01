@@ -12,8 +12,8 @@ COMMENT=	Password manager for GNOME2
 
 BROKEN=		unfetchable
 
-LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
-		libmhash.so:${PORTSDIR}/security/mhash
+LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
+		libmhash.so:security/mhash
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic

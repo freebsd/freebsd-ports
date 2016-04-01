@@ -11,7 +11,7 @@ COMMENT=	Belgian eID PKCS #11 module
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Fedict

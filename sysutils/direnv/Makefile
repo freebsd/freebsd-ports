@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Environment variable manager for your shell
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zimbatm

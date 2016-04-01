@@ -61,7 +61,7 @@ CYRUS_BUILD_TARGET?=	${PORTNAME}
 .if ${CYRUS_BUILD_TARGET} != "cyrus-sasl" && ${CYRUS_BUILD_TARGET} != "saslauthd"
 
 INSTALL_WRKSRC=	${WRKSRC}/plugins
-LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 USES=		libtool:build
 
 PLIST_FILES+=	lib/sasl2/lib${CYRUS_BUILD_TARGET}.a \

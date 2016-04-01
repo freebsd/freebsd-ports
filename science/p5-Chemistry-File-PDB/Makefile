@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to read and write PDB files
 
-BUILD_DEPENDS=	p5-Chemistry-Mol>=0.37:${PORTSDIR}/science/p5-Chemistry-Mol \
-		p5-Chemistry-MacroMol>=0.06:${PORTSDIR}/science/p5-Chemistry-MacroMol
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0.37:science/p5-Chemistry-Mol \
+		p5-Chemistry-MacroMol>=0.06:science/p5-Chemistry-MacroMol
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -16,8 +16,8 @@ OPTIONS_DEFINE=		BARNYARD JPGRAPH MYSQL PGSQL DOCS
 BARNYARD_DESC=		Depend on Barnyard2
 JPGRAPH_DESC=		Graphical charting
 
-BARNYARD_RUN_DEPENDS=	barnyard2:${PORTSDIR}/security/barnyard2
-JPGRAPH_RUN_DEPENDS=	${LOCALBASE}/share/jpgraph/jpgraph.php:${PORTSDIR}/graphics/jpgraph2
+BARNYARD_RUN_DEPENDS=	barnyard2:security/barnyard2
+JPGRAPH_RUN_DEPENDS=	${LOCALBASE}/share/jpgraph/jpgraph.php:graphics/jpgraph2
 .include <bsd.port.options.mk>
 
 NO_BUILD=	yes

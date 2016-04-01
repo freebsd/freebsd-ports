@@ -12,8 +12,8 @@ COMMENT=	MultiBody Dynamics analysis system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack \
-		libumfpack.so:${PORTSDIR}/math/suitesparse
+LIB_DEPENDS=	libarpack.so:math/arpack \
+		libumfpack.so:math/suitesparse
 
 GNU_CONFIGURE=	yes
 USES=		fortran gmake libtool
@@ -52,7 +52,7 @@ BROKEN=		Does not compile on powerpc
 .endif
 
 .if ${PORT_OPTIONS:MMPI}
-LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	libmpich.so:net/mpich2
 CONFIGURE_ARGS+=	--with-mpi=yes --enable-schur
 CPPFLAGS+=	-I${LOCALBASE}/include
 . if ! ${PORT_OPTIONS:MMETIS}
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--with-mpi=no
 .endif
 
 .if ${PORT_OPTIONS:MMETIS}
-LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis4
+LIB_DEPENDS+=	libmetis.so:math/metis4
 CONFIGURE_ARGS+=	--with-metis=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
 .else
@@ -71,15 +71,15 @@ CONFIGURE_ARGS+=	--with-metis=no
 .endif
 
 .if ${PORT_OPTIONS:MCHACO}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libchaco.a:${PORTSDIR}/math/chaco
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libchaco.a:math/chaco
 CONFIGURE_ARGS+=	--with-chaco=yes
 .else
 CONFIGURE_ARGS+=	--with-chaco=no
 .endif
 
 .if ${PORT_OPTIONS:MGINAC}
-LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis4 \
-		libginac.so:${PORTSDIR}/math/GiNaC
+LIB_DEPENDS+=	libmetis.so:math/metis4 \
+		libginac.so:math/GiNaC
 CONFIGURE_ARGS+=	--with-ginac=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
 .else
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--with-ginac=no
 
 .if ${PORT_OPTIONS:MTCL}
 IGNORE=		you enabled Tcl-support, which is not implemented yet
-LIB_DEPENDS+=	libtcl84.so:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS+=	libtcl84.so:lang/tcl84
 CONFIGURE_ARGS+=	--with-tcl=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 .else

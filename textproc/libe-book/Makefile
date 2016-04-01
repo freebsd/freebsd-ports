@@ -11,9 +11,9 @@ COMMENT=	Library for import of reflowable e-book formats
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
-		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
+LIB_DEPENDS=	libicui18n.so:devel/icu \
+		librevenge-0.0.so:textproc/librevenge
 
 OPTIONS_DEFINE=	DOCS
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--disable-werror --disable-tests
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOST_ERROR_CODE_HEADER_ONLY
 
 PORTDOCS=	*
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOCS_CONFIGURE_OFF=	--without-docs
 
 .include <bsd.port.mk>

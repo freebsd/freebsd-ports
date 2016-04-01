@@ -11,8 +11,8 @@ DISTNAME=	scim-tables-${PORTVERSION}
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	SCIM table based input method engine
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+BUILD_DEPENDS=	scim:textproc/scim
+RUN_DEPENDS=	scim:textproc/scim
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool:keepla pkgconfig

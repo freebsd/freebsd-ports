@@ -14,8 +14,8 @@ COMMENT=	High performance template engine
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-MessagePack>=0.38:${PORTSDIR}/devel/p5-Data-MessagePack \
-		p5-Mouse>=0.61:${PORTSDIR}/devel/p5-Mouse
+BUILD_DEPENDS=	p5-Data-MessagePack>=0.38:devel/p5-Data-MessagePack \
+		p5-Mouse>=0.61:devel/p5-Mouse
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes

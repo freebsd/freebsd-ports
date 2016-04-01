@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way
 # of turning this off.  So for consistency, make sure it's always on.
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=	ICONV ID64 LIBSTEMMER MYSQL OPTIMIZED_CFLAGS PGSQL \
 		RE2 SYSLOG UNIXODBC DOCS
@@ -78,13 +78,13 @@ PGSQL_USES=		pgsql
 
 RE2_DESC=		Enable re2 regular expression library
 RE2_CONFIGURE_WITH=	re2
-RE2_BUILD_DEPENDS=	${LOCALBASE}/lib/libre2.a:${PORTSDIR}/devel/re2
+RE2_BUILD_DEPENDS=	${LOCALBASE}/lib/libre2.a:devel/re2
 
 SYSLOG_DESC=		Enable logging via syslog
 SYSLOG_CONFIGURE_WITH=	syslog
 
 UNIXODBC_CONFIGURE_WITH=unixodbc
-UNIXODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 CONFLICTS=	sphinxsearch-devel-[0-9]* dpsearch-[0-9]* rdb-[0-9]* \
 		swish++-[0-9]* xaira-[0-9]*

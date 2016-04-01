@@ -16,12 +16,12 @@ COMMENT=	Subsystem for High-Availability Clustering
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libnet.so:${PORTSDIR}/net/libnet \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libgnutls.so:security/gnutls \
+		libnet.so:net/libnet \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libxml2.so:textproc/libxml2
+BUILD_DEPENDS=	bison:devel/bison
 
 USES=		autoreconf cpe gettext gmake libtool perl5 pkgconfig python tar:bzip2 \
 		shebangfix
@@ -66,14 +66,14 @@ LDIRECTORD_DESC=	Enable Linux Director Daemon
 APCSNMP_DESC=		Enable APC SNMP Stonith Device
 DRAC3_DESC=		Enable Dell DRACIII Stonith Device
 
-APCSNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
-DRAC3_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+APCSNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+DRAC3_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMGMT}
-BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
-RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:${PORTSDIR}/x11-toolkits/py-gtk2
+BUILD_DEPENDS+=		swig:devel/swig13
+RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:x11-toolkits/py-gtk2
 PLIST_SUB+=		MGMT=""
 .else
 CONFIGURE_ARGS+=	--disable-mgmt
@@ -81,8 +81,8 @@ PLIST_SUB+=		MGMT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLDIRECTORD}
-RUN_DEPENDS+=		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-			p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS+=		p5-libwww>=0:www/p5-libwww \
+			p5-Mail-Tools>=0:mail/p5-Mail-Tools
 USES+=			perl5
 USE_PERL5=		run
 PLIST_SUB+=		LDIRECTORD=""

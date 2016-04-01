@@ -11,7 +11,7 @@ COMMENT=	General Hidden Markov Model Library in C
 
 LICENSE=	GPLv3
 
-#BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+#BUILD_DEPENDS=	swig:devel/swig13
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

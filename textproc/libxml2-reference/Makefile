@@ -3,7 +3,7 @@
 
 PORTREVISION=	0
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/textproc/libxml2:configure
+BUILD_DEPENDS=	${NONEXISTENT}:textproc/libxml2:configure
 
 PARENT_WRKSRC!=	cd ${.CURDIR}/../libxml2 && ${MAKE} -V WRKSRC
 EXTRACT_ONLY=

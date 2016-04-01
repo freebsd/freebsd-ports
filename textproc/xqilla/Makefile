@@ -14,8 +14,8 @@ COMMENT=	XQuery and XPath2 library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
-		libtidy.so:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS=	libxerces-c.so.3:textproc/xerces-c3 \
+		libtidy.so:www/tidy-lib
 
 USES=		libtool
 GNU_CONFIGURE=	yes
@@ -27,8 +27,8 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DOXYGEN
 
-DOCYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-			dot:${PORTSDIR}/graphics/graphviz
+DOCYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			dot:graphics/graphviz
 DOCYGEN_ALL_TARGET=	all docs
 
 post-patch:

@@ -14,7 +14,7 @@ COMMENT=	Forensics tool to examine Thumbs.db files
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 
 USES=		python
 USE_PYTHON=	autoplist distutils

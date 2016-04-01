@@ -13,10 +13,10 @@ COMMENT=	Grep-like text finder for large trees of text
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-File-Next>=0.40:${PORTSDIR}/sysutils/p5-File-Next
+BUILD_DEPENDS=	p5-File-Next>=0.40:sysutils/p5-File-Next
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
+TEST_DEPENDS=	bash:shells/bash \
+		p5-IO-Tty>=0:devel/p5-IO-Tty
 
 CONFLICTS_INSTALL=	ja-ack-[0-9]*
 

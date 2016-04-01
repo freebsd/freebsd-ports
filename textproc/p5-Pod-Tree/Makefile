@@ -13,13 +13,13 @@ COMMENT=	Create a static syntax tree for a POD
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-HTML-Stream>=1.49:${PORTSDIR}/www/p5-HTML-Stream \
-		p5-IO-String>=1:${PORTSDIR}/devel/p5-IO-String \
-		p5-Path-Tiny>=0.068:${PORTSDIR}/devel/p5-Path-Tiny \
-		p5-Text-Template>=1:${PORTSDIR}/textproc/p5-Text-Template
+RUN_DEPENDS=	p5-HTML-Stream>=1.49:www/p5-HTML-Stream \
+		p5-IO-String>=1:devel/p5-IO-String \
+		p5-Path-Tiny>=0.068:devel/p5-Path-Tiny \
+		p5-Text-Template>=1:textproc/p5-Text-Template
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Path-Tiny>=0.068:${PORTSDIR}/devel/p5-Path-Tiny \
-		p5-Test-Compile>1.2.1:${PORTSDIR}/devel/p5-Test-Compile
+TEST_DEPENDS=	p5-Path-Tiny>=0.068:devel/p5-Path-Tiny \
+		p5-Test-Compile>1.2.1:devel/p5-Test-Compile
 
 USES=		perl5
 USE_PERL5=	configure
@@ -33,7 +33,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502000
-TEST_DEPENDS+=	p5-Test-Simple>=1:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=1:devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

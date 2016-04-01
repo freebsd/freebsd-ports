@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}uilder/${PORTNAME}uilder/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkpoint FW1 to Firewall Builder ruleset converter
 
-RUN_DEPENDS=	p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer
+RUN_DEPENDS=	p5-XML-Writer>=0:textproc/p5-XML-Writer
 
 PLIST_FILES=	bin/cp2fwbuilder
 USES=		perl5 shebangfix tar:tgz

@@ -12,7 +12,7 @@ COMMENT=	Facilitates the creation and modification of PDF files
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	p5-Font-TTF>=0:${PORTSDIR}/x11-fonts/p5-Font-TTF
+BUILD_DEPENDS=	p5-Font-TTF>=0:x11-fonts/p5-Font-TTF
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

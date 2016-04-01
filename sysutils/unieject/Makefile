@@ -13,9 +13,9 @@ COMMENT=	Eject(1) replacement
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcdio.so:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
+		libpcre.so:devel/pcre \
+		libcdio.so:sysutils/libcdio
 
 USES=		tar:bzip2 pathfix pkgconfig gettext iconv libtool
 USE_GNOME=	glib20

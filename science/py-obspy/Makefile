@@ -13,14 +13,14 @@ COMMENT=	Python framework for seismological observatories
 LICENSE=	LGPL3
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.9.0:${PORTSDIR}/science/py-scipy \
-		${PYTHON_PKGNAMEPREFIX}future>=0.12.4:${PORTSDIR}/devel/py-future \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1.0:${PORTSDIR}/math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}suds>=0.4.0:${PORTSDIR}/net/py-suds \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}decorator>=0:${PORTSDIR}/devel/py-decorator \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.9.0:science/py-scipy \
+		${PYTHON_PKGNAMEPREFIX}future>=0.12.4:devel/py-future \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1.0:math/py-matplotlib \
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}suds>=0.4.0:net/py-suds \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:databases/py-sqlalchemy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		fortran python shebangfix zip

@@ -12,10 +12,10 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	perlfu@gmail.com
 COMMENT=	Encryption Plugin for the Pidgin instant messenger client
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple \
-		libnss3.so:${PORTSDIR}/security/nss
+BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
+RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
+LIB_DEPENDS=	libpurple.so:net-im/libpurple \
+		libnss3.so:security/nss
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \

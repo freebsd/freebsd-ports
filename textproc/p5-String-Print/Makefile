@@ -13,7 +13,7 @@ COMMENT=	Alternative of printf
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Unicode-LineBreak>=0:${PORTSDIR}/textproc/p5-Unicode-LineBreak
+BUILD_DEPENDS=	p5-Unicode-LineBreak>=0:textproc/p5-Unicode-LineBreak
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

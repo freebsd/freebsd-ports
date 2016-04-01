@@ -13,10 +13,10 @@ COMMENT=	Perl5 interface to allow p5-libwww LWP to make https connections
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-LWP-Protocol-https>=6.02:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		p5-Path-Class>=0.26:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Try-Tiny>=0.19:${PORTSDIR}/lang/p5-Try-Tiny
-RUN_DEPENDS=	p5-LWP-Protocol-https>=6.02:${PORTSDIR}/www/p5-LWP-Protocol-https
+BUILD_DEPENDS=	p5-LWP-Protocol-https>=6.02:www/p5-LWP-Protocol-https \
+		p5-Path-Class>=0.26:devel/p5-Path-Class \
+		p5-Try-Tiny>=0.19:lang/p5-Try-Tiny
+RUN_DEPENDS=	p5-LWP-Protocol-https>=6.02:www/p5-LWP-Protocol-https
 
 USES=		perl5
 USE_PERL5=	configure

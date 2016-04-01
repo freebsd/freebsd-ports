@@ -10,7 +10,7 @@ COMMENT=	Command line utilities for working with dates
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
+BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		tar:xz
 GNU_CONFIGURE=	yes

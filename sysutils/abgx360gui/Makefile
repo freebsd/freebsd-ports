@@ -15,8 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	wxWidgets frontend for abgx360
 
-RUN_DEPENDS=	abgx360:${PORTSDIR}/sysutils/abgx360 \
-		xterm:${PORTSDIR}/x11/xterm
+RUN_DEPENDS=	abgx360:sysutils/abgx360 \
+		xterm:x11/xterm
 
 PLIST_FILES=	bin/abgx360gui \
 		share/pixmaps/abgx360-256.png

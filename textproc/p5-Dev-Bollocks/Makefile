@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to generate bollocks straight from middle management
 
-BUILD_DEPENDS=	p5-Math-String>=0:${PORTSDIR}/math/p5-Math-String
+BUILD_DEPENDS=	p5-Math-String>=0:math/p5-Math-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

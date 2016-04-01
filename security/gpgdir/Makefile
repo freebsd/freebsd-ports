@@ -13,9 +13,9 @@ COMMENT=	Recursive directory encryption with GnuPG
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
-		p5-GnuPG-Interface>=0:${PORTSDIR}/security/p5-GnuPG-Interface \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
+RUN_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
+		p5-GnuPG-Interface>=0:security/p5-GnuPG-Interface \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

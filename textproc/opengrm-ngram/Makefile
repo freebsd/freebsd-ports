@@ -11,7 +11,7 @@ COMMENT=	Library for making n-gram language models encoded as weighted FSTs
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libfst.so:${PORTSDIR}/math/openfst
+LIB_DEPENDS=	libfst.so:math/openfst
 
 USES=		compiler:c++11-lib libtool
 USE_LDCONFIG=	yes

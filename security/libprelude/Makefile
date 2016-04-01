@@ -12,9 +12,9 @@ COMMENT=	Sensor support library from Prelude SIEM
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libgnutls.so:security/gnutls \
+		libgcrypt.so:security/libgcrypt
 
 OPTIONS_DEFINE=	DOCS PERL PYTHON
 OPTIONS_SUB=	yes

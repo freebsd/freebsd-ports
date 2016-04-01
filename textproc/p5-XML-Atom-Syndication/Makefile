@@ -13,9 +13,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple lightweight client for consuming Atom syndication feeds
 
-BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
-		p5-XML-Elemental>=2:${PORTSDIR}/textproc/p5-XML-Elemental \
-		p5-XML-Writer>=0.6:${PORTSDIR}/textproc/p5-XML-Writer
+BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
+		p5-XML-Elemental>=2:textproc/p5-XML-Elemental \
+		p5-XML-Writer>=0.6:textproc/p5-XML-Writer
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

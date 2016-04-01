@@ -16,12 +16,12 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libksba.so:${PORTSDIR}/security/libksba \
-		libnpth.so:${PORTSDIR}/devel/npth
-BUILD_DEPENDS=	libgpg-error>=1.16:${PORTSDIR}/security/libgpg-error
-RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libgcrypt.so:security/libgcrypt \
+		libksba.so:security/libksba \
+		libnpth.so:devel/npth
+BUILD_DEPENDS=	libgpg-error>=1.16:security/libgpg-error
+RUN_DEPENDS=	pinentry>0:security/pinentry
 
 GNU_CONFIGURE=	YES
 USES=		cpe gmake iconv pkgconfig tar:bzip2
@@ -47,8 +47,8 @@ OPTIONS_SUB=		YES
 DOCS_CONFIGURE_ENABLE=	doc
 DOCS_INFO=		gnupg
 GNUTLS_CONFIGURE_ENABLE=gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
-KDNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+KDNS_LIB_DEPENDS=	libadns.so:dns/adns
 KDNS_CONFIGURE_ON=	--with-adns=${LOCALBASE}
 LDAP_CONFIGURE_ENABLE=	ldap
 LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}

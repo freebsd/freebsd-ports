@@ -13,10 +13,10 @@ COMMENT=	Kolab XML Format Schema Definitions Library
 # are considered LGPL3-licensed, though.
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	xsdcxx:${PORTSDIR}/devel/xsd
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3
+BUILD_DEPENDS=	xsdcxx:devel/xsd
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libcurl.so:ftp/curl \
+		libxerces-c.so.3:textproc/xerces-c3
 
 # TODO: Conditionally enable the bindings based on OPTIONs.
 CMAKE_ARGS=	-DBUILD_TESTS:BOOL=OFF \

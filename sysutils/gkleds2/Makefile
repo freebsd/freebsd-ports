@@ -14,8 +14,8 @@ COMMENT=	GKrellM Leds for CapsLock, NumLock, and ScrollLock
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 USES=		gmake libtool pkgconfig
 GNU_CONFIGURE=	yes

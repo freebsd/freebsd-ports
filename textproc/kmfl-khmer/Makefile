@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	kmfl-
 MAINTAINER=	buganini@gmail.com
 COMMENT=	KMFL SCIM IMEngine keyboard for Khmer language
 
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
+RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini

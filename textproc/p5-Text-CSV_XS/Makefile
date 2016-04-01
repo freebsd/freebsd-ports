@@ -14,8 +14,8 @@ COMMENT=	Comma-separated values manipulation routines
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
+TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage \
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure

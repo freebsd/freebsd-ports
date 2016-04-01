@@ -11,7 +11,7 @@ COMMENT=	Listens on a keyboard device and executes commands on keypresses
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libcfu.so:${PORTSDIR}/devel/libcfu
+LIB_DEPENDS=	libcfu.so:devel/libcfu
 
 USES=		tar:bzip2
 

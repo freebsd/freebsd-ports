@@ -11,12 +11,12 @@ MASTER_SITES=	http://hal.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Hardware Abstraction Layer for simplifying device access
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 # keep shlib version, to prevent confusion with polkit-* from sysutils/polkit
-LIB_DEPENDS=	libpolkit.so.2:${PORTSDIR}/sysutils/policykit \
-		libvolume_id.so:${PORTSDIR}/devel/libvolume_id \
-		libck-connector.so:${PORTSDIR}/sysutils/consolekit
-RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
+LIB_DEPENDS=	libpolkit.so.2:sysutils/policykit \
+		libvolume_id.so:devel/libvolume_id \
+		libck-connector.so:sysutils/consolekit
+RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig python shebangfix
 USE_GNOME=	intlhack
@@ -71,7 +71,7 @@ FIXED_MOUNTPOINTS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-tools_hal-storage-mount
 .include <bsd.port.pre.mk>
 
 .if (${ARCH}=="i386" || ${ARCH}=="amd64" || ${ARCH}=="ia64")
-RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 .endif
 
 post-patch:
