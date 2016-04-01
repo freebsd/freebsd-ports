@@ -1,6 +1,6 @@
---- bkmrkconv.pl.orig	Thu Sep 21 00:21:54 2000
-+++ bkmrkconv.pl	Wed Mar  7 05:37:20 2001
-@@ -70,9 +70,10 @@
+--- bkmrkconv-1.12.pl.orig	2016-04-01 15:44:40 UTC
++++ bkmrkconv-1.12.pl
+@@ -74,9 +74,10 @@ $outputDir =~ s!/$!!;
  
  chomp(my $oldcwd = `pwd`);
  chdir $outputDir;
