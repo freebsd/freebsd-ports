@@ -14,7 +14,7 @@ COMMENT=	Traceroute(1) functionality in perl via raw sockets
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-Traceroute>=0:${PORTSDIR}/net/p5-Net-Traceroute
+BUILD_DEPENDS=	p5-Net-Traceroute>=0:net/p5-Net-Traceroute
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

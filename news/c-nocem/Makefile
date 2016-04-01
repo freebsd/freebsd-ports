@@ -10,10 +10,10 @@ MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NoCeM for C News and INN
 
-FETCH_DEPENDS=	${DISTDIR}/c-news/c-news.tar.Z:${PORTSDIR}/${CNEWS_PORT}:checksum
-BUILD_DEPENDS=	${CNEWSWRK}/conf/substitutions:${PORTSDIR}/${CNEWS_PORT}:configure
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWS_PORT} \
-		gpgv:${PORTSDIR}/security/gnupg1
+FETCH_DEPENDS=	${DISTDIR}/c-news/c-news.tar.Z:${CNEWS_PORT}:checksum
+BUILD_DEPENDS=	${CNEWSWRK}/conf/substitutions:${CNEWS_PORT}:configure
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${CNEWS_PORT} \
+		gpgv:security/gnupg1
 
 USES=		perl5 gmake
 GNU_CONFIGURE=	yes

@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -30,14 +30,14 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	libblas.so:math/blas
 BLAS=	-lblas
 .elif ${WITH_BLAS} == gotoblas
-LIB_DEPENDS+=	libgoto2.so:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2.so:math/gotoblas
 BLAS=	-lgoto2p
 BROKEN=	Build stops while testing
 .elif ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=	-lptf77blas
 .endif
 

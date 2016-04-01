@@ -12,8 +12,8 @@ COMMENT=	Admin-configurable email user signup CGI
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	vpopmail>0:${PORTSDIR}/mail/vpopmail
-RUN_DEPENDS=	vpopmail>0:${PORTSDIR}/mail/vpopmail
+BUILD_DEPENDS=	vpopmail>0:mail/vpopmail
+RUN_DEPENDS=	vpopmail>0:mail/vpopmail
 
 USE_APACHE_RUN=	22+
 VPOPMAIL_DIR?=	${LOCALBASE}/vpopmail

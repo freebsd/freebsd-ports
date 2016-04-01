@@ -11,7 +11,7 @@ MASTER_SITES=	LOCAL/laszlof \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to send a SMS to any GSM
 
-LIB_DEPENDS=	libskyutils.so:${PORTSDIR}/misc/skyutils
+LIB_DEPENDS=	libskyutils.so:misc/skyutils
 
 USES=		libtool shebangfix
 SHEBANG_FILES=	bestsms.sh email2smssend

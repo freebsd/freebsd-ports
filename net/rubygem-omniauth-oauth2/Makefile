@@ -11,8 +11,8 @@ COMMENT=	Abstract OAuth2 strategy for OmniAuth
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-oauth2>=1.0:${PORTSDIR}/net/rubygem-oauth2 \
-		rubygem-omniauth>=1.2:${PORTSDIR}/security/rubygem-omniauth
+RUN_DEPENDS=	rubygem-oauth2>=1.0:net/rubygem-oauth2 \
+		rubygem-omniauth>=1.2:security/rubygem-omniauth
 
 NO_ARCH=	yes
 USE_RUBY=	yes

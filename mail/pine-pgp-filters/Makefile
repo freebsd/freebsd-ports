@@ -11,9 +11,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple /bin/sh-based filters to use GnuPG with Alpine
 
-BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
-RUN_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
-RUN_DEPENDS=	alpine:${PORTSDIR}/mail/alpine
+BUILD_DEPENDS=	gpg2:security/gnupg
+RUN_DEPENDS+=	gpg2:security/gnupg
+RUN_DEPENDS=	alpine:mail/alpine
 
 PORTDOCS=	BUGS CHANGES INSTALL LICENSE README
 PLIST_FILES=	bin/ppf_mime bin/ppf_mime_decrypt \

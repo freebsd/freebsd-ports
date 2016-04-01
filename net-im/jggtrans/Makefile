@@ -12,9 +12,9 @@ COMMENT=	Jabberd XMPP to GG instant messaging service gateway
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libgadu.so:${PORTSDIR}/polish/libgadu
+LIB_DEPENDS=	libidn.so:dns/libidn \
+		libexpat.so:textproc/expat2 \
+		libgadu.so:polish/libgadu
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig

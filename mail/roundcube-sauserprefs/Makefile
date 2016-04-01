@@ -15,7 +15,7 @@ COMMENT=	Roundcube plugin to manage SpamAssassin prefs
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=0.8:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.8:mail/roundcube
 
 NO_BUILD=	yes
 NO_ARCH=	yes

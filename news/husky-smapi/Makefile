@@ -5,7 +5,7 @@ PORTEPOCH=	1
 
 COMMENT=	Husky FTN MSGAPI library
 
-LIB_DEPENDS=    libhusky.so:${PORTSDIR}/news/husky-huskylib
+LIB_DEPENDS=    libhusky.so:news/husky-huskylib
 
 USE_LDCONFIG=	yes
 

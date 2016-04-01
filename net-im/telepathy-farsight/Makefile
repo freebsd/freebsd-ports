@@ -11,9 +11,9 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Farsight Connection Manager for Telepathy Framework
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libgstfarsight-0.10.so:${PORTSDIR}/net-im/farsight2
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libtelepathy-glib.so:net-im/telepathy-glib \
+		libgstfarsight-0.10.so:net-im/farsight2
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig python

@@ -13,7 +13,7 @@ COMMENT=	SNMP/SMI MIB parsing in Python
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:${PORTSDIR}/devel/py-ply
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply
 
 NO_ARCH=	yes
 USES=		python shebangfix

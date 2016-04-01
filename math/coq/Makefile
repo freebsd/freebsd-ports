@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-${COQVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 
-BUILD_DEPENDS=	camlp5:${PORTSDIR}/devel/ocaml-camlp5 \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
+BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
+		ocamlfind:devel/ocaml-findlib
 
 COQVERSION=	${PORTVERSION:R}pl${PORTVERSION:E}
 USES=		gmake
@@ -31,11 +31,11 @@ OPTIONS_DEFINE=		DOCS IDE
 OPTIONS_DEFAULT=	DOCS IDE
 OPTIONS_SUB=		yes
 IDE_DESC=		Include desktop environment (coqide)
-IDE_BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-IDE_RUN_DEPENDS:=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+IDE_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+IDE_RUN_DEPENDS:=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 IDE_CONFIGURE_OFF=	--coqide no
 DOCS_USE=		TEX=latex:build,dvipsk:build,texmf:build
-DOCS_BUILD_DEPENDS=	hevea:${PORTSDIR}/textproc/hevea
+DOCS_BUILD_DEPENDS=	hevea:textproc/hevea
 DOCS_CONFIGURE_OFF=	--with-doc none
 PORTDOCS=		*
 

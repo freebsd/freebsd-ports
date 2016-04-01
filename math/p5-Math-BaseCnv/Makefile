@@ -13,8 +13,8 @@ COMMENT=	Fast functions to convert between number Bases
 
 LICENSE=	GPLv3
 
-TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure

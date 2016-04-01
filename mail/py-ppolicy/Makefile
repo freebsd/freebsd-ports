@@ -11,7 +11,7 @@ MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~vokac/activities/ppolicy/download/%SU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPolicy is tool for extending Postfix checking capabilities
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:dns/py-dnspython
 
 USES=		python twisted
 USE_PYTHON=	distutils autoplist
@@ -26,9 +26,9 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	GEOIP LDAP MYSQL DOCS
 OPTIONS_DEFAULT=	GEOIP LDAP
 
-GEOIP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GeoIP.so:${PORTSDIR}/net/py-GeoIP
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
-LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:${PORTSDIR}/net/py-ldap
+GEOIP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GeoIP.so:net/py-GeoIP
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb
+LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:net/py-ldap
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ppolicy.conf ${STAGEDIR}${PREFIX}/etc

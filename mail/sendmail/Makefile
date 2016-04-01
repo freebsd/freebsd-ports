@@ -59,8 +59,8 @@ MILTER_DESC=		Enable milter support
 
 BDB_USE=	BDB=yes
 LDAP_USE=	OPENLDAP=yes
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:security/cyrus-sasl2-saslauthd
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MSHMEM} && !defined(BUILDING_INDEX)

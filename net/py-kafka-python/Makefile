@@ -15,6 +15,6 @@ LICENSE=	APACHE20
 USE_PYTHON=	autoplist distutils
 USES=		python shebangfix
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
 
 .include <bsd.port.mk>

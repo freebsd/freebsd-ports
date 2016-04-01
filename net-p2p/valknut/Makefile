@@ -12,8 +12,8 @@ COMMENT=	Qt-based Direct Connect client
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdc.so:${PORTSDIR}/net-p2p/dclib \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libdc.so:net-p2p/dclib \
+		libxml2.so:textproc/libxml2
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 

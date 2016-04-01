@@ -10,8 +10,8 @@ COMMENT=	Jabber (XMPP) plugin for Licq
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgloox.so:${PORTSDIR}/net-im/gloox \
-		libboost_regex.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libgloox.so:net-im/gloox \
+		libboost_regex.so:devel/boost-libs
 
 USES=		cmake pkgconfig
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

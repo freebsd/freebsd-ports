@@ -108,29 +108,29 @@ BACKTRACE_USES=			execinfo
 
 CURL_CONFIGURE_ON=	--with-libcurl
 CURL_CONFIGURE_OFF=	--with-libcurl=no
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 DAHDI_CONFIGURE_ON=	--with-dahdi --with-openr2
 DAHDI_CONFIGURE_OFF=	--without-dahdi --without-openr2
-DAHDI_BUILD_DEPENDS=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
-			${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
-DAHDI_LIB_DEPENDS=	libpri.so:${PORTSDIR}/misc/libpri \
-			libopenr2.so:${PORTSDIR}/misc/openr2
+DAHDI_BUILD_DEPENDS=	libpri>=1.4.10:misc/libpri \
+			${LOCALBASE}/include/dahdi/user.h:misc/dahdi
+DAHDI_LIB_DEPENDS=	libpri.so:misc/libpri \
+			libopenr2.so:misc/openr2
 
 EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
-EXCHANGE_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
+EXCHANGE_LIB_DEPENDS=	libneon.so:www/neon
 
 FREETDS_CONFIGURE_ON=	--with-tds=${LOCALBASE}
 FREETDS_CONFIGURE_OFF=	--without-tds
-FREETDS_LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
+FREETDS_LIB_DEPENDS=	libsybdb.so:databases/freetds
 
 GSM_CONFIGURE_WITH=	gsm
-GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 
 H323_CONFIGURE_WITH=	h323
 H323_CPPFLAGS=		-I${LOCALBASE}/include/openh323
-H323_LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib \
-			libh323_r.so:${PORTSDIR}/net/openh323
+H323_LIB_DEPENDS=	libpt_r.so:devel/pwlib \
+			libh323_r.so:net/openh323
 H323_MAKE_ENV=		OPENH323DIR=${LOCALBASE}/share/openh323
 
 ICONV_CONFIGURE_OFF=	--with-iconv=/dev/null --with-iconv=no
@@ -138,12 +138,12 @@ ICONV_CONFIGURE_WITH=	iconv
 ICONV_USES=		iconv
 
 JABBER_CONFIGURE_WITH=	iksemel
-JABBER_LIB_DEPENDS=	libiksemel.so:${PORTSDIR}/textproc/iksemel
+JABBER_LIB_DEPENDS=	libiksemel.so:textproc/iksemel
 
 ODBC_CONFIGURE_WITH=	unixodbc
 ODBC_CONFIGURE_ON=	--with-ltdl
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC \
-			libltdl.so:${PORTSDIR}/devel/libltdl
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC \
+			libltdl.so:devel/libltdl
 
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
@@ -153,41 +153,41 @@ LUA_USES=		lua:51
 LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
 
-MP3PLAYER_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+MP3PLAYER_RUN_DEPENDS=	mpg123:audio/mpg123
 
 MYSQL_CONFIGURE_WITH=	mysqlclient
 MYSQL_USE=		MYSQL=yes
 
 NCURSES_USES=		ncurses
 
-NEWT_LIB_DEPENDS=	libnewt.so:${PORTSDIR}/devel/newt
+NEWT_LIB_DEPENDS=	libnewt.so:devel/newt
 
 PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_USES=		pgsql
 
 RADIUS_CONFIGURE_WITH=	radius
-RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
+RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
 
 SNMP_CONFIGURE_WITH=	netsnmp
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
-SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 
 SQLITE_CONFIGURE_WITH=	sqlite
 SQLITE_CONFIGURE_OFF=	--with-sqlite3=no
-SQLITE_LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2 \
-			libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite.so:databases/sqlite2 \
+			libsqlite3.so:databases/sqlite3
 
 VORBIS_CONFIGURE_WITH=	ogg
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 SPANDSP_CONFIGURE_WITH=	spandsp
-SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
+SPANDSP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 
 SRTP_CONFIGURE_WITH=	srtp
-SRTP_BUILD_DEPENDS=	libsrtp>=1.4.4:${PORTSDIR}/net/libsrtp
+SRTP_BUILD_DEPENDS=	libsrtp>=1.4.4:net/libsrtp
 
-SYSINFO_LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo
+SYSINFO_LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 PORTSCOUT=	limit:^1\.8\.
 

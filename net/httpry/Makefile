@@ -19,7 +19,7 @@ EXTRASCRIPTS_DESC=	Install additional scripts
 PLIST_SUB=	EXTRASCRIPTS=""
 USES+=		perl5
 USE_PERL5=	run
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 .else
 PLIST_SUB=	EXTRASCRIPTS="@comment "
 .endif

@@ -14,8 +14,8 @@ COMMENT=	Accounts and SSO framework for Linux and POSIX based platforms
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libsqlite3.so:databases/sqlite3
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 

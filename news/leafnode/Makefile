@@ -10,7 +10,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		tar:xz
 GNU_CONFIGURE=	yes

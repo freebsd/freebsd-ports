@@ -6,7 +6,7 @@ PORTREVISION=	0
 
 COMMENT=	ClamAV based antivirus plugin for Claws Mail
 
-RUN_DEPENDS=	clamd:${PORTSDIR}/security/clamav
+RUN_DEPENDS=	clamd:security/clamav
 
 CLAWS_PLUGINS_BUILD=	clamd
 

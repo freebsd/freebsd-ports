@@ -10,10 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
-LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups \
-		libdbus-1.so:${PORTSDIR}/devel/dbus
-RUN_DEPENDS=	${LOCALBASE}/libexec/cups/filter/gstoraster:${PORTSDIR}/print/cups-filters \
-		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
+LIB_DEPENDS=	libcupsimage.so:print/cups \
+		libdbus-1.so:devel/dbus
+RUN_DEPENDS=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters \
+		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus
 
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
@@ -67,27 +67,27 @@ OPTIONS_DEFAULT=SNMP SCAN X11
 OPTIONS_SUB=	yes # FAX SCAN X11
 
 FAX_DESC=	PC Send Fax support
-FAX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
+FAX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:print/py-reportlab2
 FAX_CONFIGURE_ENABLE=	fax-build
 
 SNMP_DESC=	Network/JetDirect support
 SNMP_USE=	OPENSSL=yes
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=	network-build
 
 SCAN_DESC=	Scanning support
-SCAN_LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
-SCAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+SCAN_LIB_DEPENDS=	libsane.so:graphics/sane-backends
+SCAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 SCAN_CONFIGURE_ENABLE=	scan-build
 
 X11_DESC=	Graphical User Interface (Qt 4)
-X11_RUN_DEPENDS=${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbussupport
+X11_RUN_DEPENDS=${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui \
+		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:devel/py-qt4-dbussupport
 X11_CONFIGURE_ENABLE=	qt4 gui-build
 
 XSANE_DESC=	Install XSane for scanning (requires SCAN)
 XSANE_IMPLIES=	SCAN
-XSANE_RUN_DEPENDS=	xsane:${PORTSDIR}/graphics/xsane
+XSANE_RUN_DEPENDS=	xsane:graphics/xsane
 
 DOCS_CONFIGURE_ENABLE=	doc-build
 

@@ -14,7 +14,7 @@ COMMENT=	Persian poetry software
 
 LICENSE=	GPLv3
 
-EXTRACT_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
 OPTIONS_DEFINE=	DEBUG
 

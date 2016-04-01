@@ -19,7 +19,7 @@ LICENSE_PERMS=	auto-accept
 
 # libc++.so is a linker script, not a symlink.
 # Ignore portlint, the linker needs the actual library specified
-LIB_DEPENDS=	libc++.so.1:${PORTSDIR}/devel/libc++
+LIB_DEPENDS=	libc++.so.1:devel/libc++
 
 OPTIONS_DEFINE=	OPENMPI DOCS
 OPENMPI_DESC=	Use openmpi instead of mpich2
@@ -36,12 +36,12 @@ PLIST_FILES=	include/parmetis/metis.h \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMPI}
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 MPICC=		${LOCALBASE}/mpi/openmpi/bin/mpicc
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich2
 MPICC=		${LOCALBASE}/bin/mpicc
 .endif
 

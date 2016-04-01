@@ -12,7 +12,7 @@ COMMENT=	Routines useful for checking data against the spamhaus blacklists
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-DNS>=0.72:${PORTSDIR}/dns/p5-Net-DNS
+BUILD_DEPENDS=	p5-Net-DNS>=0.72:dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

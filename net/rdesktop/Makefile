@@ -24,14 +24,14 @@ SMARTCARD_DESC=	Enable SmartCard login via PCSC-lite
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAO}
-LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	libao.so:audio/libao
 CONFIGURE_ARGS+=	--with-sound=libao
 .else
 CONFIGURE_ARGS+=	--with-sound=oss
 .endif
 
 .if exists(${LOCALBASE}/lib/libsamplerate.so) || ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libsamplerate.so:audio/libsamplerate
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--with-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MSMARTCARD}
-LIB_DEPENDS+=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS+=	libpcsclite.so:devel/pcsc-lite
 .else
 CONFIGURE_ARGS+=	--disable-smartcard
 .endif

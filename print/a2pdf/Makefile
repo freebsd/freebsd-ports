@@ -13,11 +13,11 @@ COMMENT=	Text to PDF converter
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2 \
+BUILD_DEPENDS=	p5-PDF-API2>=0:textproc/p5-PDF-API2 \
 		p5-Switch>=0:lang/p5-Switch \
-		perltidy:${PORTSDIR}/devel/p5-Perl-Tidy \
-		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
-		p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type
+		perltidy:devel/p5-Perl-Tidy \
+		p5-Image-Size>=0:graphics/p5-Image-Size \
+		p5-File-Type>=0:devel/p5-File-Type
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

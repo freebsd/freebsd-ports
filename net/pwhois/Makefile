@@ -12,14 +12,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Whois-compatible framework for disclosing routing data
 
-RUN_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
-		p5-Time-Format>0:${PORTSDIR}/devel/p5-Time-Format \
-		p5-Log-Dispatch>0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-Telnet>0:${PORTSDIR}/net/p5-Net-Telnet \
-		p5-Net-CIDR>0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
-		p5-RPSL-Parser>0:${PORTSDIR}/devel/p5-RPSL-Parser \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-DBI>0:databases/p5-DBI \
+		p5-Time-Format>0:devel/p5-Time-Format \
+		p5-Log-Dispatch>0:devel/p5-Log-Dispatch \
+		p5-Net-DNS>0:dns/p5-Net-DNS \
+		p5-Net-Telnet>0:net/p5-Net-Telnet \
+		p5-Net-CIDR>0:net-mgmt/p5-Net-CIDR \
+		p5-RPSL-Parser>0:devel/p5-RPSL-Parser \
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
 FETCH_ARGS=	-p
 

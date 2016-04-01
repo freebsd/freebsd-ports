@@ -11,7 +11,7 @@ COMMENT=	Tool intended for Blackbox that checks for new mail
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libbt.pc:${PORTSDIR}/x11-wm/blackbox
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libbt.pc:x11-wm/blackbox
 
 USES=		pkgconfig
 USE_XORG=	xext

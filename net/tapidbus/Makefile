@@ -10,7 +10,7 @@ MASTER_SITES=	SF/tapioca-voip/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction layer for interprocess communication
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 USES=		pathfix pkgconfig gmake libtool
 GNU_CONFIGURE=	yes

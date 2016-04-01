@@ -20,9 +20,9 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 MAINTAINER?=	johans@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
-LIB_DEPENDS=	libuu.so:${PORTSDIR}/converters/uulib \
-		libpcre.so:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+LIB_DEPENDS=	libuu.so:converters/uulib \
+		libpcre.so:devel/pcre
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
 USES=		gmake iconv ncurses shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
@@ -36,13 +36,13 @@ OPTIONS_DEFAULT=	GNUPG ISPELL METAMAIL
 OPTIONS_SUB=		yes
 NNTP_ONLY_DESC=		Only read news via NNTP (no spool dir support)
 NNTP_ONLY_CONFIGURE_ENABLE=nntp-only
-GNUPG_RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+GNUPG_RUN_DEPENDS=	gpg:security/gnupg
 GNUPG_CONFIGURE_ON=	--with-gpg=${PREFIX}/bin/gpg \
 			--without-pgp --without-pgpk
 GNUPG_CONFIGURE_OFF=	--disable-pgp-gpg
-ISPELL_RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
+ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 ISPELL_CONFIGURE_ARGS=	--with-ispell=${PREFIX}/bin/ispell
-METAMAIL_RUN_DEPENDS=	metamail:${PORTSDIR}/mail/metamail
+METAMAIL_RUN_DEPENDS=	metamail:mail/metamail
 METAMAIL_CONFIGURE_ARGS=--with-metamail=${PREFIX}/bin/metamail
 CANLOCK_DESC=		Enable Cancel-Lock key support via libcanlock
 CANLOCK_CONFIGURE_ENABLE=cancel-locks

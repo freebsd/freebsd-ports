@@ -8,8 +8,8 @@ PKGNAMESUFFIX=	-gtk
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk+ tools and bindings to the Avahi mDNS system
 
-LIB_DEPENDS=	libavahi-common.so:${PORTSDIR}/net/avahi-app
-RUN_DEPENDS=	avahi-header>=0.6:${PORTSDIR}/net/avahi-header
+LIB_DEPENDS=	libavahi-common.so:net/avahi-app
+RUN_DEPENDS=	avahi-header>=0.6:net/avahi-header
 
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-ui

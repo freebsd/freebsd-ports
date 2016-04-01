@@ -11,7 +11,7 @@ EXTRACT_SUFX=	-source.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XForms-based statistics package
 
-LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
 WRKSRC=		${WRKDIR}/xldlas
 

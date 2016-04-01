@@ -28,7 +28,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 CONFLICTS=	xrdp-[0-9]*
 # xrdp v0.7 is not compatible with current net/freerdp (1.0.2)
-#BUILD_DEPENDS+=	freerdp>=1.0.2:${PORTSDIR}/net/freerdp
+#BUILD_DEPENDS+=	freerdp>=1.0.2:net/freerdp
 #CONFIGURE_ARGS+=	--enable-freerdp1
 
 OPTIONS_DEFINE=	DEBUG SOUND
@@ -48,16 +48,16 @@ JP106_DESC=	Install Japanese JP106 keymap
 
 # Which Xserver to use
 .if ${PORT_OPTIONS:MREALVNC}
-RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/vnc
+RUN_DEPENDS=	Xvnc:net/vnc
 .endif
 .if ${PORT_OPTIONS:MTIGERVNC}
-RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tigervnc
+RUN_DEPENDS=	Xvnc:net/tigervnc
 .endif
 .if ${PORT_OPTIONS:MTIGHTVNC}
-RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tightvnc
+RUN_DEPENDS=	Xvnc:net/tightvnc
 .endif
 .if ${PORT_OPTIONS:MTRIDIAVNC}
-RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tridiavnc
+RUN_DEPENDS=	Xvnc:net/tridiavnc
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -74,8 +74,8 @@ PLIST_SUB+=	JP106="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSOUND}
-BUILD_DEPENDS+=	${LOCALBASE}/include/pulse/simple.h:${PORTSDIR}/audio/pulseaudio \
-		${LOCALBASE}/include/pulse/error.h:${PORTSDIR}/audio/pulseaudio
+BUILD_DEPENDS+=	${LOCALBASE}/include/pulse/simple.h:audio/pulseaudio \
+		${LOCALBASE}/include/pulse/error.h:audio/pulseaudio
 CONFIGURE_ARGS+=	--enable-simplesound
 .endif
 

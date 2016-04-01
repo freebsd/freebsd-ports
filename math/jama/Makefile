@@ -13,8 +13,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Java-like Matrix C++ Templates
 
-BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt
-RUN_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt
+BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:devel/tnt
+RUN_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:devel/tnt
 
 USES=		zip
 NO_BUILD=	yes

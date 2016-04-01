@@ -13,13 +13,13 @@ COMMENT=	Lightweight direct connect client with ncurses interface
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libnettle.so:${PORTSDIR}/security/nettle \
-		libp11-kit.so:${PORTSDIR}/security/p11-kit
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
+		libpcre.so:devel/pcre \
+		libgmp.so:math/gmp \
+		libgnutls.so:security/gnutls \
+		libgcrypt.so:security/libgcrypt \
+		libnettle.so:security/nettle \
+		libp11-kit.so:security/p11-kit
 
 USES=		gmake pkgconfig ncurses
 USE_GNOME=	glib20
@@ -35,6 +35,6 @@ OPTIONS_DEFINE=	GEOIP
 GEOIP_CONFIGURE_WITH=	geoip
 GEOIP_CONFIGURE_ENV=	GEOIP_CFLAGS="-I${LOCALBASE}/include" \
 			GEOIP_LIBS="-L${LOCALBASE}/lib -lGeoIP"
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 .include <bsd.port.mk>

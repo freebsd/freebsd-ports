@@ -10,7 +10,7 @@ MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%204.92
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP address management and tracking
 
-RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	nmap:security/nmap
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

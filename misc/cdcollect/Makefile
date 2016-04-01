@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}_source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple CD catalog for GNOME
 
-BUILD_DEPENDS=	sqlite3>=3.0:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS=	sqlite3>=3.0:databases/sqlite3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

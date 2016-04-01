@@ -12,8 +12,8 @@ COMMENT=	Exception notification for Rails apps
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-actionmailer4>=4.0:${PORTSDIR}/mail/rubygem-actionmailer4 \
-		rubygem-activesupport4>=4.0:${PORTSDIR}/devel/rubygem-activesupport4
+RUN_DEPENDS=	rubygem-actionmailer4>=4.0:mail/rubygem-actionmailer4 \
+		rubygem-activesupport4>=4.0:devel/rubygem-activesupport4
 
 NO_ARCH=	yes
 USE_RUBY=	yes

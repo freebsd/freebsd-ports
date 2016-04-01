@@ -9,7 +9,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	VNC server for KDE
 
-LIB_DEPENDS=	libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4
+LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4
 
 USES=		alias cmake:outsource jpeg tar:xz
 USE_KDE4=	kdelibs kdeprefix automoc4

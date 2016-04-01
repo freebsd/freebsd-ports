@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultra lightweight xml-rpc library written in C++
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

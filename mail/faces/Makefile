@@ -38,13 +38,13 @@ X11_CONFIGURE_WITH=	x
 AUDIO_CONFIGURE_ENABLE=	audio
 
 NAS_CONFIGURE_ON=	--with-audio-cmd=${LOCALBASE}/bin/auplay
-NAS_RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
+NAS_RUN_DEPENDS=	auplay:audio/nas
 
 SOX_CONFIGURE_ON=	--with-audio-cmd=${LOCALBASE}/bin/play
-SOX_RUN_DEPENDS=	play:${PORTSDIR}/audio/sox
+SOX_RUN_DEPENDS=	play:audio/sox
 
 RPLAY_CONFIGURE_ON=	--with-audio-cmd=${LOCALBASE}/bin/rplay
-RPLAY_RUN_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
+RPLAY_RUN_DEPENDS=	rplay:audio/rplay
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

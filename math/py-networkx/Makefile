@@ -14,10 +14,10 @@ COMMENT=	Tools for complex networks
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=3.4.0:${PORTSDIR}/devel/py-decorator
+RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=3.4.0:devel/py-decorator
 
-#		${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.3:${PORTSDIR}/textproc/py-sphinx \
-#		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:${PORTSDIR}/textproc/py-docutils
+#		${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.3:textproc/py-sphinx \
+#		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils
 
 NO_ARCH=	yes
 USES=		python shebangfix
@@ -32,20 +32,20 @@ OPTIONS_GROUP_RENDER=	MPL GRAPHVIZ
 OPTIONS_DEFAULT=	NUMPY SCIPY MPL GRAPHVIZ YAML
 
 NUMPY_DESC=	Matrix representation of graphs
-NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.2:${PORTSDIR}/math/py-numpy
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.2:math/py-numpy
 
 SCIPY_DESC=	Sparse matrix representation of graphs
-SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.15.1:${PORTSDIR}/science/py-scipy \
-			${PYTHON_PKGNAMEPREFIX}scikit-sparse>=0.2:${PORTSDIR}/science/py-scikit-sparse
+SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.15.1:science/py-scipy \
+			${PYTHON_PKGNAMEPREFIX}scikit-sparse>=0.2:science/py-scikit-sparse
 
 MPL_DESC=	Flexible graph rendering
-MPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.0:${PORTSDIR}/math/py-matplotlib
+MPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.0:math/py-matplotlib
 
 GRAPHVIZ_DESC=	Additional graph layout and rendering algorithms
-GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.2:${PORTSDIR}/graphics/py-pygraphviz
+GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.2:graphics/py-pygraphviz
 
 YAML_DESC=	Reading and writing YAML files
-YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml
+YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml
 
 .include <bsd.port.pre.mk>
 

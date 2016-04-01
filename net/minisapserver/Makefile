@@ -23,7 +23,7 @@ SLP_DESC=	Enable SLP support via openslp
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-SLP_LIB_DEPENDS=	libslp.so:${PORTSDIR}/net/openslp
+SLP_LIB_DEPENDS=	libslp.so:net/openslp
 SLP_CONFIGURE_ENABLE=	slp
 
 post-patch:

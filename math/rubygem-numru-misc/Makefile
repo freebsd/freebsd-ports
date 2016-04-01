@@ -9,8 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Miscellaneous functions and classes to help Ruby programming
 
-RUN_DEPENDS=	rubygem-narray>0:${PORTSDIR}/math/rubygem-narray \
-		rubygem-narray_miss>0:${PORTSDIR}/math/rubygem-narray_miss
+RUN_DEPENDS=	rubygem-narray>0:math/rubygem-narray \
+		rubygem-narray_miss>0:math/rubygem-narray_miss
 
 USE_RUBY=	yes
 USE_RAKE=	yes

@@ -15,8 +15,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-AnyEvent>=6.1:${PORTSDIR}/devel/p5-AnyEvent \
-	p5-Data-SExpression>=0.41:${PORTSDIR}/devel/p5-Data-SExpression
+	p5-AnyEvent>=6.1:devel/p5-AnyEvent \
+	p5-Data-SExpression>=0.41:devel/p5-Data-SExpression
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

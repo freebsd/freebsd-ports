@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.vanheusden.com/nagcon/
 MAINTAINER=	rand@meridian-enviro.com
 COMMENT=	Nagios console monitor
 
-LIB_DEPENDS=	libstrfunc.so:${PORTSDIR}/devel/libstrfunc
+LIB_DEPENDS=	libstrfunc.so:devel/libstrfunc
 
 PLIST_FILES=	bin/nagcon
 

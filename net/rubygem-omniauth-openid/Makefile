@@ -12,8 +12,8 @@ COMMENT=	OpenID strategy for OmniAuth
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-omniauth>=1.0:${PORTSDIR}/security/rubygem-omniauth \
-		rubygem-rack-openid>=1.3.1:${PORTSDIR}/www/rubygem-rack-openid
+RUN_DEPENDS=	rubygem-omniauth>=1.0:security/rubygem-omniauth \
+		rubygem-rack-openid>=1.3.1:www/rubygem-rack-openid
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -13,7 +13,7 @@ COMMENT=	Perl module to parse traceroute6(8) output
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
+BUILD_DEPENDS=	p5-Socket6>=0:net/p5-Socket6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

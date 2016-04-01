@@ -9,8 +9,8 @@ MASTER_SITES=	http://synflood.at/tpp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text presentation program
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/ncurses.rb:${PORTSDIR}/devel/ruby-ncurses \
-		figlet:${PORTSDIR}/misc/figlet
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/ncurses.rb:devel/ruby-ncurses \
+		figlet:misc/figlet
 
 NO_BUILD=	yes
 USE_RUBY=	yes

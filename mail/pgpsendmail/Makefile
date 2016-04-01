@@ -14,7 +14,7 @@ COMMENT=	PGP sign/encrypt/decrypt messages automatically
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
+BUILD_DEPENDS=	pgp:security/pgp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

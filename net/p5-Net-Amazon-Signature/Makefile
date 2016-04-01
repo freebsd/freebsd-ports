@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to create Amazon AWS signatures
 
-TEST_DEPENDS=	p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
+TEST_DEPENDS=	p5-Spiffy>=0:devel/p5-Spiffy \
+		p5-URI>=0:net/p5-URI \
+		p5-DateTime>=0:devel/p5-DateTime \
+		p5-Digest-HMAC>=0:security/p5-Digest-HMAC
 
 USES=		perl5
 USE_PERL5=	configure

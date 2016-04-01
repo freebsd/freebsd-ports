@@ -9,9 +9,9 @@ MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenType text shaping engine
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libicudata.so:${PORTSDIR}/devel/icu \
-		libgraphite2.so:${PORTSDIR}/graphics/graphite2
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libicudata.so:devel/icu \
+		libgraphite2.so:graphics/graphite2
 
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig tar:bzip2

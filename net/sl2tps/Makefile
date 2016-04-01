@@ -13,7 +13,7 @@ COMMENT=	Simple L2TP server based on libpdel(3) and netgraph(4)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libpdel.so:${PORTSDIR}/devel/libpdel
+LIB_DEPENDS=	libpdel.so:devel/libpdel
 
 USES=		uidfix
 

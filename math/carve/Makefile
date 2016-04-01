@@ -12,7 +12,7 @@ COMMENT=	Fast, robust constructive solid geometry library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 OPTIONS_DEFINE=	DOCS GUI
 
@@ -29,7 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}
-LIB_DEPENDS+=	libglui.so:${PORTSDIR}/devel/glui
+LIB_DEPENDS+=	libglui.so:devel/glui
 PLIST_SUB+=	GUI=""
 CMAKE_ARGS+=	-DCARVE_WITH_GUI:BOOL=true
 .else

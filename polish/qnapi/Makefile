@@ -11,10 +11,10 @@ COMMENT=	Qt5 based subtitle downloader
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-BUILD_DEPENDS=	qt-maybe>0:${PORTSDIR}/devel/qt-maybe \
-		libmaia>0:${PORTSDIR}/net/libmaia
-LIB_DEPENDS=	libmediainfo.so:${PORTSDIR}/multimedia/libmediainfo
-RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
+BUILD_DEPENDS=	qt-maybe>0:devel/qt-maybe \
+		libmaia>0:net/libmaia
+LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo
+RUN_DEPENDS=	7z:archivers/p7zip
 
 USE_GITHUB=	yes
 

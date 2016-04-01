@@ -18,8 +18,8 @@ LICENSE_NAME=	Floodgap Free Software License
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS=	curl:ftp/curl \
+		p5-TimeDate>=0:devel/p5-TimeDate
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix
@@ -36,11 +36,11 @@ PLIST_FILES=	bin/${PORTNAME}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
-RUN_DEPENDS+=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
+RUN_DEPENDS+=	p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl
 .endif
 
 .if ${PORT_OPTIONS:MRLTTYTTER}
-RUN_DEPENDS+=	p5-ReadLine-TTYtter>=1.4:${PORTSDIR}/devel/p5-ReadLine-TTYtter
+RUN_DEPENDS+=	p5-ReadLine-TTYtter>=1.4:devel/p5-ReadLine-TTYtter
 .endif
 
 do-extract:

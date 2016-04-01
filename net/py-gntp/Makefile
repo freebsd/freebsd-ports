@@ -23,7 +23,7 @@ USE_PYTHON=	distutils autoplist
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PYDISTUTILS_BUILD_TARGET+=	build_sphinx
 

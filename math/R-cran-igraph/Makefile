@@ -12,10 +12,10 @@ COMMENT=	Network Analysis and Visualization
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
-RUN_DEPENDS=	R-cran-magrittr>0:${PORTSDIR}/devel/R-cran-magrittr \
-		R-cran-NMF>0:${PORTSDIR}/math/R-cran-NMF \
-		R-cran-irlba>0:${PORTSDIR}/math/R-cran-irlba
+LIB_DEPENDS=	libgmp.so:math/gmp
+RUN_DEPENDS=	R-cran-magrittr>0:devel/R-cran-magrittr \
+		R-cran-NMF>0:math/R-cran-NMF \
+		R-cran-irlba>0:math/R-cran-irlba
 
 USES=	cran:auto-plist
 USE_GNOME=	libxml2

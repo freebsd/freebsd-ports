@@ -18,11 +18,11 @@ PKGNAMESUFFIX?=	-plugins${GST_PLUGIN_SUFFIX}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
 
-BUILD_DEPENDS+=	v4l_compat>=1.0.20110720:${PORTSDIR}/multimedia/v4l_compat \
-		gstreamer>=0.10.36:${PORTSDIR}/multimedia/gstreamer \
-		orc>=0.4.14:${PORTSDIR}/devel/orc
-LIB_DEPENDS+=	libgstreamer-0.10.so:${PORTSDIR}/multimedia/gstreamer \
-		liborc-0.4.so:${PORTSDIR}/devel/orc
+BUILD_DEPENDS+=	v4l_compat>=1.0.20110720:multimedia/v4l_compat \
+		gstreamer>=0.10.36:multimedia/gstreamer \
+		orc>=0.4.14:devel/orc
+LIB_DEPENDS+=	libgstreamer-0.10.so:multimedia/gstreamer \
+		liborc-0.4.so:devel/orc
 
 PORTSCOUT=	limit:0\.10\..*
 

@@ -11,9 +11,9 @@ COMMENT=	Python client for Slack.com
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}websocket-client>0:${PORTSDIR}/www/py-websocket-client \
-		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}websocket-client>0:www/py-websocket-client \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
 USES=		python:-2.7
 USE_GITHUB=	yes

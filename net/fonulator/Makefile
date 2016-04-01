@@ -10,9 +10,9 @@ MASTER_SITES=	http://support.red-fone.com/fonulator/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FoneBRIDGE configuration utility
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.a:${PORTSDIR}/devel/argtable\
-		${LOCALBASE}/lib/libfb.a:${PORTSDIR}/net/libfb
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.a:devel/argtable\
+		${LOCALBASE}/lib/libfb.a:net/libfb
+LIB_DEPENDS=	libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

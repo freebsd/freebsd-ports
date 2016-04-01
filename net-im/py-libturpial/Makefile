@@ -13,9 +13,9 @@ COMMENT=	Twitter API
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.4.0:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}oauth>=1.0.1:${PORTSDIR}/net/py-oauth \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.2.0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.4.0:devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}oauth>=1.0.1:net/py-oauth \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.2.0:www/py-requests
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

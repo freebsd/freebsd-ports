@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to make Email::Address->parse() loose
 
 RUN_DEPENDS=	\
-	p5-Email-Address>=1.88.9:${PORTSDIR}/mail/p5-Email-Address
+	p5-Email-Address>=1.88.9:mail/p5-Email-Address
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

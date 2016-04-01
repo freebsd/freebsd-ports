@@ -13,7 +13,7 @@ COMMENT=	Modern front-end for MPlayer (fork of SMPlayer)
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 USES=		desktop-file-utils gmake qmake tar:xz
 USE_QT4=	gui network xml moc_build rcc_build uic_build \

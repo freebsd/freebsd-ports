@@ -14,7 +14,7 @@ COMMENT=	C++ library for symbolic mathematical calculations
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcln.so:${PORTSDIR}/math/cln
+LIB_DEPENDS=	libcln.so:math/cln
 
 USES=		gmake libtool makeinfo pathfix pkgconfig python:build tar:bzip2
 GNU_CONFIGURE=	yes

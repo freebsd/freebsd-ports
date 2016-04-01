@@ -14,8 +14,8 @@ COMMENT=	Tool to grab images out of (your) TCP connections
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
+LIB_DEPENDS=	libgif.so:graphics/giflib
+BUILD_DEPENDS=	makedepend:devel/makedepend
 
 USE_GNOME=	gtk12
 USES=		gmake jpeg

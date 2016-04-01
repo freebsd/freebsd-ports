@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Gspoof-3/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console/GTK+ TCP/IP Packets Forger
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

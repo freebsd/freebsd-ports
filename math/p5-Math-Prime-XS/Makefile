@@ -14,11 +14,11 @@ COMMENT=	Detect and calculate prime numbers with deterministic tests
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-boolean>=0:${PORTSDIR}/devel/p5-boolean
+BUILD_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate \
+		p5-boolean>=0:devel/p5-boolean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=1.14:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage
 
 USE_PERL5=	configure
 USES=		perl5

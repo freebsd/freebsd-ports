@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	oz@nixil.net
 COMMENT=	Extracts info or subtitles from DV stream
 
-LIB_DEPENDS=	libdv.so:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS=	libdv.so:multimedia/libdv
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig

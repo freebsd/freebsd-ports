@@ -12,9 +12,9 @@ COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
-BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
+BUILD_DEPENDS=	xmlto:textproc/xmlto \
+		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:textproc/docbook-xml
 
 GNU_CONFIGURE=	yes
 USES=		iconv perl5 shebangfix

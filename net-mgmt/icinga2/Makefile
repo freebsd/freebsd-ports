@@ -10,10 +10,10 @@ COMMENT=	Monitoring and management system for hosts, services and networks
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libyajl.so:${PORTSDIR}/devel/yajl \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo # for better debugging
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libyajl.so:devel/yajl \
+		libexecinfo.so:devel/libexecinfo # for better debugging
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
@@ -31,8 +31,8 @@ OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
 
 OPTIONS_DEFAULT=	MYSQL PGSQL MONPLUGINS
 
-MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
-NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
+MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/monitoring-plugins
+NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 
 MYSQL_CMAKE_ON=	-DICINGA2_WITH_MYSQL:BOOL=true
 PGSQL_CMAKE_ON=	-DICINGA2_WITH_PGSQL:BOOL=true
@@ -81,7 +81,7 @@ PLIST_SUB+=	DBBACKEND=""
 .endif
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=2.5.31:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>=2.5.31:textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex
 CXXFLAGS+=	-I${LOCALBASE}/include/flex
 .endif

@@ -13,7 +13,7 @@ COMMENT=	R support for Emacsen
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	R:${PORTSDIR}/math/R
+RUN_DEPENDS=	R:math/R
 
 NO_ARCH=	yes
 

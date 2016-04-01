@@ -12,7 +12,7 @@ COMMENT=	Strip attachments from email
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	p5-MIME-Base64>=0:converters/p5-MIME-Base64
 
 USES=		shebangfix perl5
 USE_PERL5=	run

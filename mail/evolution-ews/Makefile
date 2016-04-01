@@ -10,11 +10,11 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Evolution Microsoft Exchange plugin through Exchange Web Services
 
-BUILD_DEPENDS=	evolution>=3.0.0:${PORTSDIR}/mail/evolution
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libmspack.so:${PORTSDIR}/archivers/libmspack \
-		libical.so:${PORTSDIR}/devel/libical
-RUN_DEPENDS=	evolution>=3.0.0:${PORTSDIR}/mail/evolution
+BUILD_DEPENDS=	evolution>=3.0.0:mail/evolution
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libmspack.so:archivers/libmspack \
+		libical.so:devel/libical
+RUN_DEPENDS=	evolution>=3.0.0:mail/evolution
 
 PORTSCOUT=	limitw:1,even
 

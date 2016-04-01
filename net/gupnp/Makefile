@@ -11,11 +11,11 @@ COMMENT=	Framework for UPnP devices
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	gobject-introspection>=0.6.4:${PORTSDIR}/devel/gobject-introspection \
-		gssdp>=0.14.13:${PORTSDIR}/net/gssdp
-LIB_DEPENDS=	libgssdp-1.0.so:${PORTSDIR}/net/gssdp \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+BUILD_DEPENDS=	gobject-introspection>=0.6.4:devel/gobject-introspection \
+		gssdp>=0.14.13:net/gssdp
+LIB_DEPENDS=	libgssdp-1.0.so:net/gssdp \
+		libsoup-2.4.so:devel/libsoup \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 OPTIONS_DEFINE=	VALA
 OPTIONS_SUB=	yes
@@ -31,7 +31,7 @@ USES=		compiler:c11 gmake libtool pathfix pkgconfig python:run shebangfix tar:xz
 
 SHEBANG_FILES=	tools/gupnp-binding-tool
 
-VALA_BUILD_DEPENDS=	vala>=0.20:${PORTSDIR}/lang/vala
+VALA_BUILD_DEPENDS=	vala>=0.20:lang/vala
 VALA_CONFIGURE_ENV=	ac_cv_path_VAPIGEN=${LOCALBASE}/bin/vapigen
 VALA_CONFIGURE_ENV_OFF=	ac_cv_path_VAPIGEN=""
 

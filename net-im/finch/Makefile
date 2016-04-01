@@ -8,7 +8,7 @@ PORTREVISION=	0
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Finch multi-protocol messaging client (Console UI)
 
-LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	libpurple.so:net-im/libpurple
 
 MASTERDIR=	${.CURDIR}/../libpurple
 BUILD_WRKSRC=	${WRKSRC}/finch

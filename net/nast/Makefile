@@ -13,7 +13,7 @@ COMMENT=	Packet sniffer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		gmake
 GNU_CONFIGURE=	yes

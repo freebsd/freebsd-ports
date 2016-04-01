@@ -24,6 +24,6 @@ SASL_DESC=	Support SASL Authentication
 
 IMAP_USE=	PHP=imap
 MBSTRING_USE=	PHP=mbstring
-SASL_RUN_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
+SASL_RUN_DEPENDS=	${PEARDIR}/Auth/SASL.php:security/pear-Auth_SASL
 
 .include <bsd.port.mk>

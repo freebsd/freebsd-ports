@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Library for accessing the Amazon Web Services APIs
 
-RUN_DEPENDS=	rubygem-xml-simple>=1.0.12:${PORTSDIR}/textproc/rubygem-xml-simple
+RUN_DEPENDS=	rubygem-xml-simple>=1.0.12:textproc/rubygem-xml-simple
 
 NO_ARCH=	yes
 

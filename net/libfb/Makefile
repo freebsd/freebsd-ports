@@ -10,7 +10,7 @@ MASTER_SITES=	http://support.red-fone.com/downloads/fonulator/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FoneBRIDGE configuration library
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-shared

@@ -13,16 +13,16 @@ COMMENT=	Plotting library uses a syntax familiar to MATLAB users
 LICENSE=	PSFL
 
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libtcl86.so:${PORTSDIR}/lang/tcl86
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libtcl86.so:lang/tcl86
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}cycler>0:${PORTSDIR}/devel/py-cycler \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing \
-		${PYTHON_PKGNAMEPREFIX}tornado>0:${PORTSDIR}/www/py-tornado
+		${PYTHON_PKGNAMEPREFIX}cycler>0:devel/py-cycler \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing \
+		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado
 
 USES=		compiler:c++11-lib gettext pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
@@ -41,13 +41,13 @@ GTKAGGBACKEND_USE=	GNOME=gtk20,pygtk2,cairo,gdkpixbuf2
 GTKAGGBACKEND_VARS=	GTKAGG_BACKEND=True
 GTKAGGBACKEND_VARS_OFF=	GTKAGG_BACKEND=False
 QT4AGGBACKEND_DESC=	Qt4Agg backend support
-QT4AGGBACKEND_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:${PORTSDIR}/x11-toolkits/py-qt4-gui
-QT4AGGBACKEND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:${PORTSDIR}/x11-toolkits/py-qt4-gui
+QT4AGGBACKEND_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:x11-toolkits/py-qt4-gui
+QT4AGGBACKEND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:x11-toolkits/py-qt4-gui
 QT4AGGBACKEND_VARS=	QT4AGG_BACKEND=True
 QT4AGGBACKEND_VARS_OFF=	QT4AGG_BACKEND=False
 TKAGGBACKEND_DESC=	TKAgg backend support
-TKAGGBACKEND_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
-TKAGGBACKEND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+TKAGGBACKEND_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+TKAGGBACKEND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 TKAGGBACKEND_USES=	tk:run
 TKAGGBACKEND_VARS=	TKAGG_BACKEND=True
 TKAGGBACKEND_VARS_OFF=	TKAGG_BACKEND=False
@@ -60,11 +60,11 @@ WXAGGBACKEND_VARS_OFF=	WXAGG_BACKEND=False
 PORTEXAMPLES=	*
 
 .if defined(PACKAGE_BUILDING)
-GTKBACKEND_BUILD_DEPENDS=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
-GTKAGGBACKEND_BUILD_DEPENDS=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
-QT4AGGBACKEND_BUILD_DEPENDS+=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
-TKAGGBACKEND_BUILD_DEPENDS+=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
-WXAGGBACKEND_BUILD_DEPENDS=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
+GTKBACKEND_BUILD_DEPENDS=	Xvfb:x11-servers/xorg-vfbserver
+GTKAGGBACKEND_BUILD_DEPENDS=	Xvfb:x11-servers/xorg-vfbserver
+QT4AGGBACKEND_BUILD_DEPENDS+=	Xvfb:x11-servers/xorg-vfbserver
+TKAGGBACKEND_BUILD_DEPENDS+=	Xvfb:x11-servers/xorg-vfbserver
+WXAGGBACKEND_BUILD_DEPENDS=	Xvfb:x11-servers/xorg-vfbserver
 .endif
 
 post-extract:

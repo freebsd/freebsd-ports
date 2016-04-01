@@ -18,8 +18,8 @@ EXPIRATION_DATE=	2016-04-15
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlobject>=0.7:${PORTSDIR}/databases/py-sqlobject \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlobject>=0.7:databases/py-sqlobject \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
 
 USES=		gettext python
 USE_PYTHON=	distutils

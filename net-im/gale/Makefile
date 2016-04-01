@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}ruit
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure instant messaging system
 
-LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc \
-		libwwwcore.so:${PORTSDIR}/www/libwww \
-		libadns.so:${PORTSDIR}/dns/adns
+LIB_DEPENDS=	libgc.so:devel/boehm-gc \
+		libwwwcore.so:www/libwww \
+		libadns.so:dns/adns
 
 USES=		iconv libtool ncurses
 GNU_CONFIGURE=	yes

@@ -12,8 +12,8 @@ GST_PLUGIN_SUFFIX=	-ugly
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
-RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
+BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:multimedia/gstreamer-plugins
+RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:multimedia/gstreamer-plugins
 
 gst_ugly_DIST=	ugly
 UGLY_GST_DIRS=	gst po gst-libs

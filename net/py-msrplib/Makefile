@@ -16,9 +16,9 @@ COMMENT=	Python MSRP client library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gnutls>=1.1.6:${PORTSDIR}/security/py-gnutls \
-		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.15:${PORTSDIR}/net/py-eventlet \
-		${PYTHON_PKGNAMEPREFIX}application>=1.1.0:${PORTSDIR}/devel/py-application
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gnutls>=1.1.6:security/py-gnutls \
+		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.15:net/py-eventlet \
+		${PYTHON_PKGNAMEPREFIX}application>=1.1.0:devel/py-application
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python twisted:names

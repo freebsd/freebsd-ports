@@ -13,10 +13,10 @@ COMMENT=	Interface to GSL for the Objective Caml language
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
+LIB_DEPENDS=	libgsl.so:math/gsl
+BUILD_DEPENDS=	gawk:lang/gawk \
 		${OCAMLC_DEPEND}
-RUN_DEPENDS=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib
+RUN_DEPENDS=	ocamlfind:devel/ocaml-findlib
 
 USES=			gmake
 USE_OCAML=		YES

@@ -14,9 +14,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Class-Accessor-Lite>0:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
-	p5-JSON-XS>0:${PORTSDIR}/converters/p5-JSON-XS \
-	p5-Net-SSLeay>0:${PORTSDIR}/security/p5-Net-SSLeay
+	p5-Class-Accessor-Lite>0:devel/p5-Class-Accessor-Lite \
+	p5-JSON-XS>0:converters/p5-JSON-XS \
+	p5-Net-SSLeay>0:security/p5-Net-SSLeay
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

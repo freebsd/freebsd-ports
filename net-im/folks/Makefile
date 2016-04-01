@@ -9,11 +9,11 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	library to aggregates people from multiple sources
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libgcr-3.so:${PORTSDIR}/security/gcr \
-		libzeitgeist-2.0.so:${PORTSDIR}/sysutils/zeitgeist \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
+BUILD_DEPENDS=	vapigen:lang/vala
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+		libgcr-3.so:security/gcr \
+		libzeitgeist-2.0.so:sysutils/zeitgeist \
+		libtelepathy-glib.so:net-im/telepathy-glib
 
 CONFLICTS=	folks-0.4.[0-9]*
 
@@ -36,9 +36,9 @@ OPTIONS_DEFAULT=SOCIALWEB TRACKER
 SOCIALWEB_DESC=	Social web backend
 TRACKER_DESC=	Tracker backend
 SOCIALWEB_CONFIGURE_ENABLE=	libsocialweb-backend
-SOCIALWEB_LIB_DEPENDS=	libsocialweb.so:${PORTSDIR}/www/libsocialweb
+SOCIALWEB_LIB_DEPENDS=	libsocialweb.so:www/libsocialweb
 TRACKER_CONFIGURE_ENABLE=	tracker-backend
-TRACKER_LIB_DEPENDS=	libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker
+TRACKER_LIB_DEPENDS=	libtracker-control-1.0.so:sysutils/tracker
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|--fatal-warnings||g' \

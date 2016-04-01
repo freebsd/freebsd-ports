@@ -22,10 +22,10 @@ OPTIONS_DEFINE=	QPAGE
 OPTIONS_DEFAULT=
 QPAGE_DESC=	Integrate qpage for victorops server problems
 
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
-		curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS+=	bash:shells/bash \
+		curl:ftp/curl
 
-QPAGE_RUN_DEPENDS+=	qpage:${PORTSDIR}/comms/qpage
+QPAGE_RUN_DEPENDS+=	qpage:comms/qpage
 QPAGE_EXTRA_PATCHES+=	${FILESDIR}/qpage-patch
 
 do-install:

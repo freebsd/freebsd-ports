@@ -12,7 +12,7 @@ COMMENT=	Print information about the contents and structure of a DVD
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

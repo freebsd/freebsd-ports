@@ -10,8 +10,8 @@ COMMENT=	Library and tools for parsing Aldus/Adobe PageMaker documents
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
+LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

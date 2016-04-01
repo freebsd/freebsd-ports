@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	--without-pkgdocdir
 .endif
 
 .if ${PORT_OPTIONS:MDETACH}
-RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
+RUN_DEPENDS=	screen:sysutils/screen
 CONFIGURE_ARGS+=	--enable-detach
 .endif
 

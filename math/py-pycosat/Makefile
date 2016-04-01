@@ -13,7 +13,7 @@ COMMENT=	Bindings to PicoSAT (a SAT solver)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpicosat.so:${PORTSDIR}/math/picosat
+LIB_DEPENDS=	libpicosat.so:math/picosat
 
 USES=		python
 USE_PYTHON=	autoplist distutils

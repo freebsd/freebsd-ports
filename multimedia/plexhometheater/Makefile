@@ -13,54 +13,54 @@ COMMENT=	Media center frontend to multimedia/plexmediaserver
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
-		gawk:${PORTSDIR}/lang/gawk \
-		gperf:${PORTSDIR}/devel/gperf \
-		cmake:${PORTSDIR}/devel/cmake \
-		zip:${PORTSDIR}/archivers/zip \
-		unzip:${PORTSDIR}/archivers/unzip \
-		nasm:${PORTSDIR}/devel/nasm \
-		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20 \
-		swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS=	enca:converters/enca \
+		gawk:lang/gawk \
+		gperf:devel/gperf \
+		cmake:devel/cmake \
+		zip:archivers/zip \
+		unzip:archivers/unzip \
+		nasm:devel/nasm \
+		gtk-update-icon-cache:x11-toolkits/gtk20 \
+		swig2.0:devel/swig20
 
-LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
-		libavahi-client.so:${PORTSDIR}/net/avahi-app \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libcdio.so:${PORTSDIR}/sysutils/libcdio \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libenca.so:${PORTSDIR}/converters/enca \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libhal.so:${PORTSDIR}/sysutils/hal \
-		libjasper.so:${PORTSDIR}/graphics/jasper \
-		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd \
-		libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libplist.so:${PORTSDIR}/devel/libplist \
-		libpng.so:${PORTSDIR}/graphics/png \
-		librtmp.so:${PORTSDIR}/multimedia/librtmp \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libshairport.so:${PORTSDIR}/audio/libshairport \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libtag.so:${PORTSDIR}/audio/taglib \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
-		libva.so:${PORTSDIR}/multimedia/libva \
-		libvdpau.so:${PORTSDIR}/multimedia/libvdpau \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libxslt.so:${PORTSDIR}/textproc/libxslt \
-		libyajl.so:${PORTSDIR}/devel/yajl
+LIB_DEPENDS=	libass.so:multimedia/libass \
+		libavahi-client.so:net/avahi-app \
+		libboost_thread.so:devel/boost-libs \
+		libcdio.so:sysutils/libcdio \
+		libcurl.so:ftp/curl \
+		libdbus-1.so:devel/dbus \
+		libenca.so:converters/enca \
+		libFLAC.so:audio/flac \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libfribidi.so:converters/fribidi \
+		libhal.so:sysutils/hal \
+		libjasper.so:graphics/jasper \
+		liblzo2.so:archivers/lzo2 \
+		libmad.so:audio/libmad \
+		libmicrohttpd.so:www/libmicrohttpd \
+		libmodplug.so:audio/libmodplug \
+		libmpeg2.so:multimedia/libmpeg2 \
+		libpcre.so:devel/pcre \
+		libplist.so:devel/libplist \
+		libpng.so:graphics/png \
+		librtmp.so:multimedia/librtmp \
+		libsamplerate.so:audio/libsamplerate \
+		libshairport.so:audio/libshairport \
+		libsqlite3.so:databases/sqlite3 \
+		libtag.so:audio/taglib \
+		libtiff.so:graphics/tiff \
+		libtinyxml.so:textproc/tinyxml \
+		libva.so:multimedia/libva \
+		libvdpau.so:multimedia/libvdpau \
+		libvorbis.so:audio/libvorbis \
+		libxslt.so:textproc/libxslt \
+		libyajl.so:devel/yajl
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		glxinfo:${PORTSDIR}/graphics/mesa-demos \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		glxinfo:graphics/mesa-demos \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		xdpyinfo:x11/xdpyinfo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plexinc
@@ -103,13 +103,13 @@ CEC_DESC=	Control plexhometheater over HDMI with TV remote
 
 OPTIONS_DEFAULT=	CEC LIRC
 
-CEC_BUILD_DEPENDS=	libcec>=2.2.0:${PORTSDIR}/multimedia/libcec
-CEC_LIB_DEPENDS=	libcec.so:${PORTSDIR}/multimedia/libcec
+CEC_BUILD_DEPENDS=	libcec>=2.2.0:multimedia/libcec
+CEC_LIB_DEPENDS=	libcec.so:multimedia/libcec
 CEC_CMAKE_OFF=		-DCMAKE_DISABLE_FIND_PACKAGE_CEC:BOOL=true
 
-LIRC_RUN_DEPENDS=	lircd:${PORTSDIR}/comms/lirc
+LIRC_RUN_DEPENDS=	lircd:comms/lirc
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_PulseAudio:BOOL=true
 
 .include <bsd.port.options.mk>

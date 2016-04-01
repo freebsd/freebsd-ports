@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Probabilistic data structure
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitarray>0:${PORTSDIR}/devel/py-bitarray
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitarray>0:devel/py-bitarray
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -11,8 +11,8 @@ COMMENT=	Azure OAuth2 Strategy for OmniAuth
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-jwt>=1.0:${PORTSDIR}/www/rubygem-jwt \
-		rubygem-omniauth-oauth2>=1.2:${PORTSDIR}/net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-jwt>=1.0:www/rubygem-jwt \
+		rubygem-omniauth-oauth2>=1.2:net/rubygem-omniauth-oauth2
 
 NO_ARCH=	yes
 USE_RUBY=	yes

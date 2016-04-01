@@ -14,8 +14,8 @@ COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
+		libpcre.so:devel/pcre
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].*
 
@@ -54,14 +54,14 @@ BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${LOCALBASE}/lib
 CLAMAV_DESC=		Use ClamAV
 CLAMAV_CONFIGURE_WITH=	clamav
-CLAMAV_LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
+CLAMAV_LIB_DEPENDS=	libclamav.so:security/clamav
 DRAC_DESC=		Enable DRAC support
 DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
-DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:mail/drac
 HTTP_DESC=		Enable HTTP (beta quality)
 HTTP_CONFIGURE_ENABLE=	http
-HTTP_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
-			libical.so:${PORTSDIR}/devel/libical
+HTTP_LIB_DEPENDS=	libjansson.so:devel/jansson \
+			libical.so:devel/libical
 HTTP_USES=		pkgconfig
 HTTP_USE=		GNOME=libxml2
 IDLED_DESC=		Enable IMAP idled support
@@ -85,7 +85,7 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 REPLICATION_DESC=	Enable replication (experimental)
 REPLICATION_CONFIGURE_ENABLE=replication
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}

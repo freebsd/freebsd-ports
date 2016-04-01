@@ -13,9 +13,9 @@ COMMENT=	Multimedia framework
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
-		libgavl.so:${PORTSDIR}/multimedia/gavl \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libgavl.so:multimedia/gavl \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		gettext libtool makeinfo pathfix pkgconfig sqlite
 USE_GNOME=	gtk20 libxml2
@@ -41,29 +41,29 @@ OPTIONS_DEFAULT=	CDDB JACK JPEG LIBVISUAL \
 			OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME TIFF
 OPTIONS_SUB=		yes
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--disable-alsa --disable-alsamixer
-CDDB_LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
+CDDB_LIB_DEPENDS=	libcddb.so:audio/libcddb
 CDDB_CONFIGURE_OFF=	--disable-cddb
-CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
+CDIO_LIB_DEPENDS=	libcdio.so:sysutils/libcdio
 CDIO_CONFIGURE_OFF=	--disable-libcdio
 CDIO_BROKEN=		fails to build with new libcdio
 ESOUND_USE=		gnome=esound
 ESOUND_CONFIGURE_OFF=	--disable-esd
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	--disable-jack
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_OFF=	--disable-libjpeg
-LIBVISUAL_LIB_DEPENDS=	libvisual-0.4.so:${PORTSDIR}/graphics/libvisual04
+LIBVISUAL_LIB_DEPENDS=	libvisual-0.4.so:graphics/libvisual04
 LIBVISUAL_CONFIGURE_OFF=--disable-libvisual
 OPTIMIZED_CFLAGS_CFLAGS=-O3 -funroll-loops -fomit-frame-pointer -ffast-math
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_OFF=	--disable-libpng
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=--disable-pulseaudio
-QUICKTIME_LIB_DEPENDS=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
+QUICKTIME_LIB_DEPENDS=	libquicktime.so:multimedia/libquicktime
 QUICKTIME_CONFIGURE_OFF=--disable-lqt
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_OFF=	--disable-libtiff
 
 post-patch:

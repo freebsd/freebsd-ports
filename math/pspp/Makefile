@@ -12,8 +12,8 @@ COMMENT=	Program for statistical analysis of sampled data
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	texinfo>0:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	libgslcblas.so:${PORTSDIR}/math/gsl
+BUILD_DEPENDS=	texinfo>0:print/texinfo
+LIB_DEPENDS=	libgslcblas.so:math/gsl
 
 USES=		charsetfix gmake iconv libtool perl5 pkgconfig readline
 USE_GNOME=	libxml2
@@ -35,8 +35,8 @@ INFO=		pspp pspp-dev
 OPTIONS_DEFINE=		DOCS GUI NLS PGSQL
 OPTIONS_SUB=		yes
 
-GUI_LIB_DEPENDS=	libgladeui-1.so:${PORTSDIR}/devel/glade3
-GUI_RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
+GUI_LIB_DEPENDS=	libgladeui-1.so:devel/glade3
+GUI_RUN_DEPENDS=	yelp:x11/yelp
 GUI_USES=		desktop-file-utils
 GUI_USE=		gnome=gtksourceview2,libglade2
 GUI_CONFIGURE_WITH=	cairo gui gui-tools

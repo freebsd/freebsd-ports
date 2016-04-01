@@ -12,10 +12,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for creating easy email filters
 
-BUILD_DEPENDS=	p5-Email-Simple>=0:${PORTSDIR}/mail/p5-Email-Simple \
-		p5-Email-LocalDelivery>=0:${PORTSDIR}/mail/p5-Email-LocalDelivery \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
-		p5-Class-Trigger>=0:${PORTSDIR}/devel/p5-Class-Trigger
+BUILD_DEPENDS=	p5-Email-Simple>=0:mail/p5-Email-Simple \
+		p5-Email-LocalDelivery>=0:mail/p5-Email-LocalDelivery \
+		p5-IPC-Run>=0:devel/p5-IPC-Run \
+		p5-Class-Trigger>=0:devel/p5-Class-Trigger
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

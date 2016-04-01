@@ -47,12 +47,12 @@ JP106_DESC=	Install Japanese JP106 keymap
 # Debug
 DEBUG_CONFIGURE_ENABLE=	xrdpdebug
 # Xvnc
-REALVNC_RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/vnc
-TIGERVNC_RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tigervnc
-TIGHTVNC_RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tightvnc
-TRIDIAVNC_RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tridiavnc
+REALVNC_RUN_DEPENDS=	Xvnc:net/vnc
+TIGERVNC_RUN_DEPENDS=	Xvnc:net/tigervnc
+TIGHTVNC_RUN_DEPENDS=	Xvnc:net/tightvnc
+TRIDIAVNC_RUN_DEPENDS=	Xvnc:net/tridiavnc
 # X11rdp
-X11RDP_RUN_DEPENDS=	X11rdp:${PORTSDIR}/x11-servers/x11rdp
+X11RDP_RUN_DEPENDS=	X11rdp:x11-servers/x11rdp
 X11RDP_EXTRA_PATCHES=	${FILESDIR}/extra-patch-x11rdp_xrdp.ini
 # JP106 keymap
 JP106_PLIST_SUB=	JP106=""

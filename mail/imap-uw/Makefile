@@ -18,7 +18,7 @@ COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libc-client4.so.9:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	libc-client4.so.9:mail/cclient
 
 CONFLICTS_INSTALL=	panda-imap-20*
 
@@ -42,7 +42,7 @@ NETSCAPE_BRAIN_DAMAGE_DESC=	See Makefile for documentation
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDRAC}
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:mail/drac
 MAKE_ARGS+=	WITH_DRAC=yes
 .endif
 

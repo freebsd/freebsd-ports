@@ -16,8 +16,8 @@ COMMENT=	Python bindings for FFmpeg
 LICENSE=	LGPL20 LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+BUILD_DEPENDS=	cython:lang/cython
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 MAKE_ENV=	FFMPEG_LIBRARIES="SDL SDL_mixer" FFMPEG_LIBRARY_DIRS=${LOCALBASE}/lib \
 		FFMPEG_INCLUDES=${LOCALBASE}/include/SDL FFMPEG_ROOT=${LOCALBASE}

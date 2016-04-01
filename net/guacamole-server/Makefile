@@ -12,10 +12,10 @@ COMMENT=	HTML5 Clientless Remote Desktop
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libossp-uuid.so:${PORTSDIR}/misc/ossp-uuid \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg-turbo
+LIB_DEPENDS=	libossp-uuid.so:misc/ossp-uuid \
+		libpng.so:graphics/png \
+		libcairo.so:graphics/cairo \
+		libjpeg.so:graphics/jpeg-turbo
 
 CONFLICTS_BUILD=pulseaudio-*+jack_* ffmpeg-*+jack_*
 
@@ -39,16 +39,16 @@ SUB_LIST+=	GUACD_USER=${USERS} \
 OPTIONS_DEFINE=		RDP SSH VNC VORBIS PULSEAUDIO
 OPTIONS_DEFAULT=	SSH
 OPTIONS_SUB=		yes
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_DESC?=	VNC audio support (Experimental)
-RDP_LIB_DEPENDS=	libfreerdp.so:${PORTSDIR}/net/freerdp
+RDP_LIB_DEPENDS=	libfreerdp.so:net/freerdp
 RDP_DESC?=		RDP Protocal Support
-SSH_LIB_DEPENDS=	libpango-1.0.so:${PORTSDIR}/x11-toolkits/pango \
-			libssh2.so:${PORTSDIR}/security/libssh2
+SSH_LIB_DEPENDS=	libpango-1.0.so:x11-toolkits/pango \
+			libssh2.so:security/libssh2
 SSH_DESC?=		SSH Support
-VNC_LIB_DEPENDS=	libvncserver.so:${PORTSDIR}/net/libvncserver
+VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 VNC_DESC?=		VNC Protocol Support
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_DESC?=		Ogg Vorbis for compression
 
 .include <bsd.port.pre.mk>

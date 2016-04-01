@@ -10,11 +10,11 @@ MASTER_SITES=	SF/libspiff/Sources/${PORTVERSION}
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	XSPF parsing library
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 # We need 0.7.5, which uses pkg-config
-BUILD_DEPENDS=	uriparser>=0.7.5:${PORTSDIR}/net/uriparser
-RUN_DEPENDS=	uriparser>=0.7.5:${PORTSDIR}/net/uriparser
+BUILD_DEPENDS=	uriparser>=0.7.5:net/uriparser
+RUN_DEPENDS=	uriparser>=0.7.5:net/uriparser
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expat=${LOCALBASE} --disable-test

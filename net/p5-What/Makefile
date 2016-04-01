@@ -15,11 +15,11 @@ COMMENT=	Find out about running services
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error \
-		p5-Exception-Class>=1.21:${PORTSDIR}/devel/p5-Exception-Class
+BUILD_DEPENDS=	p5-Error>=0:lang/p5-Error \
+		p5-Exception-Class>=1.21:devel/p5-Exception-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-Pod>=1:devel/p5-Test-Pod
 
 NO_ARCH=	yes
 USE_PERL5=	configure

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Perl module to check email addresses for validity
 
-BUILD_DEPENDS=  p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+BUILD_DEPENDS=  p5-Net-DNS>=0:dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

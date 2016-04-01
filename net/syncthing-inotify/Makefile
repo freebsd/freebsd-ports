@@ -8,7 +8,7 @@ CATEGORIES=	net
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Syncthing inotify monitor
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	syncthing cenkalti:backoff zillode:notify

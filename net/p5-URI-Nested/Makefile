@@ -13,7 +13,7 @@ COMMENT=	Perl5 interface for nested URIs
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-URI>=1.40:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-URI>=1.40:net/p5-URI
 
 NO_ARCH=	yes
 USES=		perl5

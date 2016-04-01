@@ -47,7 +47,7 @@ SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP}
 
 CONFLICTS=	squirreloutlook-[0-9]*
 
-DATABASE_RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+DATABASE_RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB
 LDAP_USE=	PHP=ldap
 
 post-patch:

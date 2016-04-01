@@ -15,15 +15,15 @@ COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
-		gifsicle:${PORTSDIR}/graphics/gifsicle			\
-		gocr:${PORTSDIR}/graphics/gocr				\
-		ocrad:${PORTSDIR}/graphics/ocrad			\
-		giftext:${PORTSDIR}/graphics/giflib			\
-		spamassassin:${PORTSDIR}/mail/spamassassin	\
-		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM	\
-		p5-MLDBM-Sync>=0:${PORTSDIR}/databases/p5-MLDBM-Sync \
-		p5-String-Approx>=0:${PORTSDIR}/devel/p5-String-Approx
+RUN_DEPENDS=	giftopnm:graphics/netpbm			\
+		gifsicle:graphics/gifsicle			\
+		gocr:graphics/gocr				\
+		ocrad:graphics/ocrad			\
+		giftext:graphics/giflib			\
+		spamassassin:mail/spamassassin	\
+		p5-MLDBM>=0:databases/p5-MLDBM	\
+		p5-MLDBM-Sync>=0:databases/p5-MLDBM-Sync \
+		p5-String-Approx>=0:devel/p5-String-Approx
 
 USES=		perl5
 NO_BUILD=	yes
@@ -52,7 +52,7 @@ PLIST_FILES=	%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr.pm		\
 		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr/Scoring.pm
 
 #.if defined(WITH_OCRAD)
-#RUN_DEPENDS+=	ocrad:${PORTSDIR}/graphics/ocrad
+#RUN_DEPENDS+=	ocrad:graphics/ocrad
 #.endif
 
 pre-everything::

@@ -9,8 +9,8 @@ MASTER_SITES=	SF/sblim/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	CLI for Web Based Enterprise Management by SBLIM
 
-BUILD_DEPENDS=	libwww-config:${PORTSDIR}/www/libwww
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	libwww-config:www/libwww
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=	tar:bzip2
 GNU_CONFIGURE=	YES

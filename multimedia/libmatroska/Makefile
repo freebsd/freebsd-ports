@@ -12,7 +12,7 @@ COMMENT=	Extensible Multimedia Container Format
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libebml.so:${PORTSDIR}/textproc/libebml
+LIB_DEPENDS=	libebml.so:textproc/libebml
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes

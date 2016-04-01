@@ -34,7 +34,7 @@ SBIN=		in.imapproxyd pimpstat
 
 .if ${PORT_OPTIONS:MDOVECOT}
 SUB_LIST+=	DOVECOT="dovecot"
-RUN_DEPENDS+=	dovecot:${PORTSDIR}/mail/dovecot2
+RUN_DEPENDS+=	dovecot:mail/dovecot2
 .else
 SUB_LIST+=	DOVECOT=""
 .endif

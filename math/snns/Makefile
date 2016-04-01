@@ -11,7 +11,7 @@ DISTNAME=	SNNSv${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully featured neural network simulator
 
-LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 USE_XORG=	x11 xext xt
 HAS_CONFIGURE=	yes

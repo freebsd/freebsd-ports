@@ -30,8 +30,8 @@ DOCS_DESC=		Install documentation
 NLS_DESC=		Build with NLS support
 
 BUILDDOCS_CONFIGURE_WITH=	docs
-BUILDDOCS_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
-				dblatex:${PORTSDIR}/textproc/dblatex
+BUILDDOCS_BUILD_DEPENDS=	xmlto:textproc/xmlto \
+				dblatex:textproc/dblatex
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls

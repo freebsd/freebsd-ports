@@ -12,10 +12,10 @@ COMMENT=	Real-time audio and video streaming and processing
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/ortp \
-		libsrtp.so:${PORTSDIR}/net/libsrtp \
-		libbzrtp.so:${PORTSDIR}/security/libbzrtp \
-		libmbedtls.so.9:${PORTSDIR}/security/polarssl13
+LIB_DEPENDS=	libortp.so:net/ortp \
+		libsrtp.so:net/libsrtp \
+		libbzrtp.so:security/libbzrtp \
+		libmbedtls.so.9:security/polarssl13
 
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
@@ -43,44 +43,44 @@ OPTIONS_SUB=		yes
 AUDIOOPT_DESC=		Audio options
 
 FFMPEG_CONFIGURE_ENABLE=ffmpeg
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 GLX_CONFIGURE_ENABLE=	glx
 GLX_USE=		GL=glew
 
 GSM_CONFIGURE_ENABLE=	gsm
-GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 
 OPUS_CONFIGURE_ENABLE=	opus
-OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
+OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 
 SPANDSP_CONFIGURE_ENABLE=	spandsp
-SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
+SPANDSP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 
 SPEEX_CONFIGURE_ENABLE=	speex
-SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 
 THEORA_CONFIGURE_ENABLE=theora
-THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 
 UPNP_CONFIGURE_ENABLE=	upnp
-UPNP_LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
+UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 
 V4L_CONFIGURE_ENABLE=	libv4l1 libv4l2
 V4L_CONFIGURE_OFF=	ac_cv_header_linux_videodev_h=no \
 			ac_cv_header_linux_videodev2_h=no
-V4L_BUILD_DEPENDS=	v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
-V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_BUILD_DEPENDS=	v4l_compat>=1.0.20120501:multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 VIDEOOPT_DESC=		Video options
 
 VIDEO_CONFIGURE_ENABLE=	video
 
 VPX_CONFIGURE_ENABLE=	vp8
-VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 
 XVIDEO_CONFIGURE_ENABLE=x11 xv
 XVIDEO_USE=		XORG=videoproto,x11,xv

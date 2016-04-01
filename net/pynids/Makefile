@@ -12,7 +12,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Python interface to libnids
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		pkgconfig python
 USE_GNOME=	glib20

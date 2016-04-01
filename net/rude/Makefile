@@ -13,7 +13,7 @@ COMMENT=	Rude is a Real-time UDP Data Emitter and Collector (crude)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/DOC/COPYING
 
-RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS=	p5-Tk>=0:x11-toolkits/p5-Tk
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	--with-debug-lvl=3

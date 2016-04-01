@@ -10,7 +10,7 @@ COMMENT=	Roundcube webmail automatic addressbook plugin
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=0.8:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.8:mail/roundcube
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -12,12 +12,12 @@ COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread \
+		libfribidi.so:converters/fribidi \
+		libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png \
+		libexpat.so:textproc/expat2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -45,7 +45,7 @@ PAL_DESC=	Default video format PAL
 
 SUB_FILES=	README.FreeBSD
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 
 .include <bsd.port.options.mk>
 

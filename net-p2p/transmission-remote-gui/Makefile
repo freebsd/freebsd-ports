@@ -11,9 +11,9 @@ DISTNAME=	transgui-${PORTVERSION}-src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Remote GUI for transmission daemon
 
-BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
-		fpcres:${PORTSDIR}/lang/fpc-utils
-RUN_DEPENDS=	transmission-daemon:${PORTSDIR}/net-p2p/transmission-daemon
+BUILD_DEPENDS=	lazbuild:editors/lazarus \
+		fpcres:lang/fpc-utils
+RUN_DEPENDS=	transmission-daemon:net-p2p/transmission-daemon
 
 PROJECTHOST=	transmisson-remote-gui
 
@@ -46,13 +46,13 @@ OPTIONS_DEFAULT=	GTK2
 USE_FPC+=	gtk2
 USE_GNOME=	gtk20
 LCL_PLATFORM=	gtk2
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+LIB_DEPENDS+=	libQt4Pas.so:x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 .endif
 
 do-build:

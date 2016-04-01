@@ -13,7 +13,7 @@ COMMENT=	Web interface for managing virtual domains for exim
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB
 
 VEXIMDIR=	www/${PORTNAME}
 WRKSRC=		${WRKDIR}/vexim-release

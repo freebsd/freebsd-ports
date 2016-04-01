@@ -11,8 +11,8 @@ DISTNAME=	gg2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gadu-Gadu IM network client
 
-LIB_DEPENDS=	libgadu.so:${PORTSDIR}/polish/libgadu \
-		libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	libgadu.so:polish/libgadu \
+		libaudiofile.so:audio/libaudiofile
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -55,27 +55,27 @@ GTKSPELL_DESC=	Enable GTKSpell checker
 TLEN_DESC=	Enable Tlen.pl network plugin
 XOSD_DESC=	Enable On-Screen-Display messages
 
-TLEN_LIB_DEPENDS=	libtlen.so:${PORTSDIR}/polish/libtlen
+TLEN_LIB_DEPENDS=	libtlen.so:polish/libtlen
 TLEN_CONFIGURE_WITH=	tlen
 
-JABBER_LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
+JABBER_LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 JABBER_CONFIGURE_WITH=	jabber
 
 DOCKLET_CONFIGURE_WITH=	docklet-system-tray
 
 DOCKAPP_CONFIGURE_WITH=	docklet_dockapp
 
-GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
 GTKSPELL_CONFIGURE_WITH=	gtkspell
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=	dbus
 DBUS_CONFIGURE_ON=	--with-dbus-dir=${PREFIX}/share/dbus-1/services
 
 ESOUND_USE=	GNOME=esound
 ESOUND_CONFIGURE_WITH=	esd
 
-XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+XOSD_LIB_DEPENDS=	libxosd.so:misc/xosd
 XOSD_CONFIGURE_WITH=	xosd
 
 post-patch:

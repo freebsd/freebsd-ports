@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.freedesktop.org/software/geoclue/releases/${PORTVERSION
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	D-Bus service that provides location information
 
-LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libsoup-2.4.so:devel/libsoup
 
 USES=		gettext gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 intlhack

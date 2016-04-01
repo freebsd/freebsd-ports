@@ -85,13 +85,13 @@ KRB_BASE_USES=		gssapi
 KRB_HEIMDAL_USES=	gssapi:heimdal
 KRB_MIT_USES=		gssapi:mit
 
-RTP_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
-SNMP_LIB_DEPENDS=	libsmi.so:${PORTSDIR}/net-mgmt/libsmi
-ADNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
-CARES_LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
-GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+RTP_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
+ADNS_LIB_DEPENDS=	libadns.so:dns/adns
+CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 

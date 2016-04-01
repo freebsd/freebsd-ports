@@ -12,9 +12,9 @@ COMMENT=	IDE/GUI for the R-project
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
-RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
-		${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
+BUILD_DEPENDS=	${LOCALBASE}/bin/R:math/R
+RUN_DEPENDS=	${LOCALBASE}/bin/R:math/R \
+		${KDE4_PREFIX}/lib/kde4/katepart.so:editors/kate
 
 CONFLICTS=	rkward-0.4.*
 
@@ -45,12 +45,12 @@ PLIST_SUB+=	NLS=${NLS}
 
 .if ${PORT_OPTIONS:MRECDEP}
 LR_MOD_DIR=	${LOCALBASE}/lib/R/library
-RUN_DEPENDS+=	${LR_MOD_DIR}/R2HTML/INDEX:${PORTSDIR}/textproc/R-cran-R2HTML	\
-		${LR_MOD_DIR}/XML/INDEX:${PORTSDIR}/textproc/R-cran-XML		\
-		${LR_MOD_DIR}/mvtnorm/INDEX:${PORTSDIR}/math/R-cran-mvtnorm	\
-		${LR_MOD_DIR}/outliers/INDEX:${PORTSDIR}/math/R-cran-outliers	\
-		${LR_MOD_DIR}/tseries/INDEX:${PORTSDIR}/finance/R-cran-tseries	\
-		${LR_MOD_DIR}/car/INDEX:${PORTSDIR}/math/R-cran-car
+RUN_DEPENDS+=	${LR_MOD_DIR}/R2HTML/INDEX:textproc/R-cran-R2HTML	\
+		${LR_MOD_DIR}/XML/INDEX:textproc/R-cran-XML		\
+		${LR_MOD_DIR}/mvtnorm/INDEX:math/R-cran-mvtnorm	\
+		${LR_MOD_DIR}/outliers/INDEX:math/R-cran-outliers	\
+		${LR_MOD_DIR}/tseries/INDEX:finance/R-cran-tseries	\
+		${LR_MOD_DIR}/car/INDEX:math/R-cran-car
 .endif
 
 pre-configure:

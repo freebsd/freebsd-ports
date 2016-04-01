@@ -12,7 +12,7 @@ COMMENT=	All fonts to svg-font converter
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		ghostscript:run
 NO_BUILD=	yes

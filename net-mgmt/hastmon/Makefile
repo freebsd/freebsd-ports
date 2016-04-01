@@ -11,7 +11,7 @@ COMMENT=	Cluster monitoring daemon
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	mk-configure>=0.20:${PORTSDIR}/devel/mk-configure
+BUILD_DEPENDS=	mk-configure>=0.20:devel/mk-configure
 
 MKCMAKE?=	${LOCALBASE}/bin/mkcmake
 INSTALL_TARGET=	installdirs install

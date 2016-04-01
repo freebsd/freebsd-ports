@@ -13,12 +13,12 @@ COMMENT=	Powerful script-based vector graphics language
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded \
-		libsigsegv.so:${PORTSDIR}/devel/libsigsegv
-RUN_DEPENDS=	animate:${PORTSDIR}/graphics/ImageMagick \
-		gv:${PORTSDIR}/print/gv \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
+		libsigsegv.so:devel/libsigsegv
+RUN_DEPENDS=	animate:graphics/ImageMagick \
+		gv:print/gv \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 
 ALL_TARGET=	asy asy-keywords.el
 
@@ -42,22 +42,22 @@ USE_TEX=	dvipsk formats
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 # Options
-DOCS_BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
+DOCS_BUILD_DEPENDS=	texi2dvi:print/texinfo
 DOCS_CONFIGURE_WITH=	docdir=${DOCSDIR}
 
 FFTW_CONFIGURE_ENABLE=	fftw
 FFTW_DESC=	Use FFTW to compute the Discrete Fourier Transform
-FFTW_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 GSL_CONFIGURE_ENABLE=	gsl
 GSL_DESC=	Enable GNU Scientific library
-GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 
-MANPAGES_BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
+MANPAGES_BUILD_DEPENDS=	texi2dvi:print/texinfo
 
 OFFSCREEN_CONFIGURE_ENABLE=	offscreen
 OFFSCREEN_DESC=	Enable offscreen rendering using OSMesa library
-OFFSCREEN_LIB_DEPENDS=	libOSMesa.so:${PORTSDIR}/graphics/libosmesa
+OFFSCREEN_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 OPTIONS_DEFAULT=	FFTW GSL MANPAGES READLINE
 OPTIONS_DEFINE=	DOCS EXAMPLES FFTW GSL MANPAGES OFFSCREEN READLINE
 

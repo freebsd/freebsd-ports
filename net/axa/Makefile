@@ -12,12 +12,12 @@ COMMENT=	AXA library and tools
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/copyright
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		sie-nmsg>0:${PORTSDIR}/net/sie-nmsg
-LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
-		libnmsg.so:${PORTSDIR}/net/nmsg \
-		libwdns.so:${PORTSDIR}/dns/wdns
-RUN_DEPENDS=	sie-nmsg>0:${PORTSDIR}/net/sie-nmsg
+BUILD_DEPENDS=	bash:shells/bash \
+		sie-nmsg>0:net/sie-nmsg
+LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c \
+		libnmsg.so:net/nmsg \
+		libwdns.so:dns/wdns
+RUN_DEPENDS=	sie-nmsg>0:net/sie-nmsg
 
 WRKSRC=		${WRKDIR}/axa-tools
 
@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=DOXYGEN
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install-strip
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	html-local
 
 LDFLAGS+=	-lm

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a nicer CLI interface to Net::WhitePages
 
-RUN_DEPENDS=	p5-Net-WhitePages>=0:${PORTSDIR}/net/p5-Net-WhitePages
+RUN_DEPENDS=	p5-Net-WhitePages>=0:net/p5-Net-WhitePages
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/phoneinfo

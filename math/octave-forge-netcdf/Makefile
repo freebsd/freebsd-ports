@@ -17,7 +17,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	libnetcdf.so:science/netcdf
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

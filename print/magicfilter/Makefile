@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 
 .if exists(${LOCALBASE}/lib/libmagic.so)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:${PORTSDIR}/sysutils/file
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:sysutils/file
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 

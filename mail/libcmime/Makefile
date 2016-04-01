@@ -26,7 +26,7 @@ PORTDOCS=	AUTHORS CHANGELOG INSTALL README
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=2.5.33:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>=2.5.33:textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex
 .endif
 
@@ -35,8 +35,8 @@ CMAKE_ARGS+=	-DENABLE_DEBUG=TRUE
 .endif
 
 .if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen>=1.8:${PORTSDIR}/devel/doxygen \
-		dot:${PORTSDIR}/graphics/graphviz
+BUILD_DEPENDS+=	doxygen>=1.8:devel/doxygen \
+		dot:graphics/graphviz
 CMAKE_ARGS+=	-DENABLE_DOC=TRUE
 .endif
 

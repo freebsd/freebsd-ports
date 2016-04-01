@@ -13,7 +13,7 @@ COMMENT=	Cisco NetFlow awk-like extracting tool
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:${PORTSDIR}/net-mgmt/flow-tools
+BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:net-mgmt/flow-tools
 
 USES=		alias
 WRKSRC=		${WRKDIR}/${PORTNAME}

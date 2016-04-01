@@ -31,7 +31,7 @@ PLISTF?=	${WRKDIR}/plist_files
 .include <bsd.port.pre.mk>
 
 .ifndef WITHOUT_SWITCHER
-RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
+RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:www/xpi-quick-locale-switcher
 .endif
 
 .include "${.CURDIR}/Makefile.lang"

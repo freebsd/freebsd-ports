@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://truffula.com/pub/ \
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Network load monitor dockapp
 
-LIB_DEPENDS=	libdockapp.so:${PORTSDIR}/x11-wm/libdockapp
+LIB_DEPENDS=	libdockapp.so:x11-wm/libdockapp
 
 USES=		tar:bzip2
 USE_XORG=	xpm x11

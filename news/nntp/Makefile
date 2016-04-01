@@ -14,7 +14,7 @@ PATCHFILES=	nntp-patch-y2k
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NNTP with NOV support
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcnews.a:news/cnews
 
 NO_WRKSUBDIR=	yes
 PLIST_SUB+=	VARBASE=${VARBASE}

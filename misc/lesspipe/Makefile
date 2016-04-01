@@ -11,7 +11,7 @@ COMMENT=	Preprocessor for less
 
 LICENSE=	GPLv2
 
-MY_DEPENDS=	bash:${PORTSDIR}/shells/bash
+MY_DEPENDS=	bash:shells/bash
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 

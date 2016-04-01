@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Test Email Contents
 
-BUILD_DEPENDS=	p5-Mail-POP3Client>=2:${PORTSDIR}/mail/p5-Mail-POP3Client \
-		p5-Mail-Sendmail>=0.79:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		p5-MIME-Tools>=5.4:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-Test-Simple>=0.7:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-Mail-POP3Client>=2:mail/p5-Mail-POP3Client \
+		p5-Mail-Sendmail>=0.79:mail/p5-Mail-Sendmail \
+		p5-MIME-Tools>=5.4:mail/p5-MIME-Tools \
+		p5-Test-Simple>=0.7:devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

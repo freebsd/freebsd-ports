@@ -13,11 +13,11 @@ COMMENT=	Blu-Ray discs playback library for media players
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 # dlopen dependencies
-LIB_DEPENDS+=	libaacs.so:${PORTSDIR}/multimedia/libaacs \
-		libbdplus.so:${PORTSDIR}/multimedia/libbdplus
+LIB_DEPENDS+=	libaacs.so:multimedia/libaacs \
+		libbdplus.so:multimedia/libbdplus
 
 INSTALL_TARGET=	install-strip
 USES=		autoreconf iconv libtool pathfix pkgconfig tar:bzip2
@@ -34,7 +34,7 @@ JAVA_DESC=	Enable Blu-Ray Java support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJAVA}
-BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS+=	ant:devel/apache-ant
 CATEGORIES+=	java
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

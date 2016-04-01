@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt network module
 
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USE_QT4=	qmake_build moc_build rcc_build corelib
 QT_DIST=	yes

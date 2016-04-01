@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
-RUN_DEPENDS+=	zenity:${PORTSDIR}/x11/zenity
+RUN_DEPENDS+=	zenity:x11/zenity
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>

@@ -11,8 +11,8 @@ DISTNAME=	idzebra-${PORTVERSION}
 MAINTAINER=	ben@gibbed.org
 COMMENT=	Z39.50/SR server software
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libyaz.so:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libyaz.so:net/yaz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \

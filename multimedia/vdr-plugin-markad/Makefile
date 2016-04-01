@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - MarkAd plugin
 
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 
 USES=		execinfo pkgconfig tar:tgz
 PATCH_STRIP=	-p1

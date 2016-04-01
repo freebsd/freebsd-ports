@@ -13,12 +13,12 @@ COMMENT=	Perl interface to MPFR Library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr
-TEST_DEPENDS=	p5-Math-GMP>=0:${PORTSDIR}/math/p5-Math-GMP \
-		p5-Math-GMPf>=0:${PORTSDIR}/math/p5-Math-GMPf \
-		p5-Math-GMPq>=0:${PORTSDIR}/math/p5-Math-GMPq \
-		p5-Math-GMPz>=0:${PORTSDIR}/math/p5-Math-GMPz
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr
+TEST_DEPENDS=	p5-Math-GMP>=0:math/p5-Math-GMP \
+		p5-Math-GMPf>=0:math/p5-Math-GMPf \
+		p5-Math-GMPq>=0:math/p5-Math-GMPq \
+		p5-Math-GMPz>=0:math/p5-Math-GMPz
 
 USES=		perl5
 USE_PERL5=	configure

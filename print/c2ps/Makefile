@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.cs.technion.ac.il/users/c2ps/
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	PostScript pretty-printer for C source
 
-LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libpaper.so:print/libpaper
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 

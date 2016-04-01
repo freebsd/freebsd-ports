@@ -14,7 +14,7 @@ LICENSE_NAME=	MPICH
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libhwloc.so:${PORTSDIR}/devel/hwloc
+LIB_DEPENDS=	libhwloc.so:devel/hwloc
 
 CONFLICTS=	lam-7.* mpd-[0-9]* mpiexec-0.* mpich2-[0-9]*
 GNU_CONFIGURE=	yes

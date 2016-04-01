@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Access Apache FOP from Perl to create PDF files using XSL-FO
 
-BUILD_DEPENDS=	p5-Java>=0:${PORTSDIR}/devel/p5-Java \
-		${LOCALBASE}/share/java/fop/build/fop.jar:${PORTSDIR}/textproc/fop
+BUILD_DEPENDS=	p5-Java>=0:devel/p5-Java \
+		${LOCALBASE}/share/java/fop/build/fop.jar:textproc/fop
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

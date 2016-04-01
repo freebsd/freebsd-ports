@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20(Stable)/
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Cross-platform C++ library for network and low-level I/O programming
 
-RUN_DEPENDS=	${LOCALBASE}/include/boost/chrono/system_clocks.hpp:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/include/boost/chrono/system_clocks.hpp:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USES=		gmake tar:bz2

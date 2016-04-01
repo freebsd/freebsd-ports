@@ -12,9 +12,9 @@ COMMENT=	Alternative GUI for the Xine media player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
-		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \
-		libxine.so:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	libnspr4.so:devel/nspr \
+		libmozjs185.so:lang/spidermonkey185 \
+		libxine.so:multimedia/libxine
 
 USES=		desktop-file-utils gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk20
@@ -28,12 +28,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lm
 OPTIONS_DEFINE=		GNOME LIRC WEBPLUGIN
 OPTIONS_SUB=		yes
 
-GNOME_BUILD_DEPENDS=	gnome-screensaver:${PORTSDIR}/x11/gnome-screensaver
-GNOME_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-GNOME_RUN_DEPENDS=	gnome-screensaver:${PORTSDIR}/x11/gnome-screensaver
+GNOME_BUILD_DEPENDS=	gnome-screensaver:x11/gnome-screensaver
+GNOME_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+GNOME_RUN_DEPENDS=	gnome-screensaver:x11/gnome-screensaver
 GNOME_CONFIGURE_ON=	--with-dbus
 GNOME_CONFIGURE_OFF=	--disable-integration-wizard --without-dbus
-LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CONFIGURE_ON=	--enable-lirc
 LIRC_CONFIGURE_OFF=	--disable-lirc
 WEBPLUGIN_DESC=		Build and/or install Web browser plugins

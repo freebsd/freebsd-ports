@@ -9,8 +9,8 @@ PKGNAMESUFFIX=	-webkit
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	WebKit JavaScript plug-in for libproxy
 
-LIB_DEPENDS=	libjavascriptcoregtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
-		libproxy.so:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libjavascriptcoregtk-3.0.so:www/webkit-gtk3 \
+		libproxy.so:net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr

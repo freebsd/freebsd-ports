@@ -13,7 +13,7 @@ COMMENT=	Web-driven graphing interface for RRDTool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=	rrdtool:databases/rrdtool
 
 USES=		cpe shebangfix
 USE_MYSQL=	yes

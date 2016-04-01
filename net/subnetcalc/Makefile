@@ -13,7 +13,7 @@ COMMENT=	IPv4/IPv6 Subnet Calculator
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-geoip=${LOCALBASE}"

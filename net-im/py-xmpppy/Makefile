@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}rc1
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Python library that provides easy scripting with Jabber
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=1.7.1:${PORTSDIR}/dns/py-dnspython
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=1.7.1:dns/py-dnspython
 
 USES=		python
 USE_PYTHON=	distutils

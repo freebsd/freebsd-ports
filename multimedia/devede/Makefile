@@ -13,11 +13,11 @@ COMMENT=	Create video DVDs, VCDs, sVCDs, or CVDs from any number of video files
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-		mencoder:${PORTSDIR}/multimedia/mencoder \
-		spumux:${PORTSDIR}/multimedia/dvdauthor \
-		vcdimager:${PORTSDIR}/multimedia/vcdimager \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
+		mencoder:multimedia/mencoder \
+		spumux:multimedia/dvdauthor \
+		vcdimager:multimedia/vcdimager \
+		cdrecord:sysutils/cdrtools
 
 USE_GNOME=	pygtk2
 USES=		iconv python tar:bzip2
@@ -30,7 +30,7 @@ IBUS_DESC=	iBus support
 DEJAVU_FONTSDIR=	${LOCALBASE}/share/fonts/dejavu
 DEJAVU_FONTFILE=	${DEJAVU_FONTSDIR}/DejaVuSans.ttf
 
-IBUS_RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
+IBUS_RUN_DEPENDS=	ibus-daemon:textproc/ibus
 NLS_USES=	gettext
 OPTIONS_SUB=	yes
 

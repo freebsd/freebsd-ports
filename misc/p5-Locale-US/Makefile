@@ -15,7 +15,7 @@ COMMENT=	Two letter codes for state identification in the United States
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Section-Simple>=0:${PORTSDIR}/devel/p5-Data-Section-Simple
+BUILD_DEPENDS=	p5-Data-Section-Simple>=0:devel/p5-Data-Section-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -13,13 +13,13 @@ COMMENT=	System for monitoring servers and networks
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcares.so:${PORTSDIR}/dns/c-ares
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
-		fping:${PORTSDIR}/net/fping \
-		mtr:${PORTSDIR}/net/mtr-nox11
+BUILD_DEPENDS=	rrdtool:databases/rrdtool
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libpcre.so:devel/pcre \
+		libcares.so:dns/c-ares
+RUN_DEPENDS=	rrdtool:databases/rrdtool \
+		fping:net/fping \
+		mtr:net/mtr-nox11
 
 USERS=		xymon
 GROUPS=		xymon
@@ -63,7 +63,7 @@ USE_OPENLDAP=	yes
 
 .if ${PORT_OPTIONS:MNETSNMP}
 MAKE_ENV+=	WITH_NETSNMP=1
-LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 .endif
 
 post-patch:

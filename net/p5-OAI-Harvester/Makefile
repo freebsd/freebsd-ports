@@ -15,13 +15,13 @@ COMMENT=	Perl module to harvest using the OAI protocol
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-URI>=1.30:${PORTSDIR}/net/p5-URI \
-		p5-XML-SAX>=0.12:${PORTSDIR}/textproc/p5-XML-SAX \
-		p5-XML-SAX-Base>=1.04:${PORTSDIR}/textproc/p5-XML-SAX-Base \
-		p5-libwww>=2.0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-URI>=1.30:net/p5-URI \
+		p5-XML-SAX>=0.12:textproc/p5-XML-SAX \
+		p5-XML-SAX-Base>=1.04:textproc/p5-XML-SAX-Base \
+		p5-libwww>=2.0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer
+TEST_DEPENDS=	p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
+		p5-XML-SAX-Writer>=0:textproc/p5-XML-SAX-Writer
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 

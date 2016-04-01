@@ -14,7 +14,7 @@ COMMENT=	Turn off Math::Symbolic simplification
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-Symbolic>=0:${PORTSDIR}/math/p5-Math-Symbolic
+BUILD_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

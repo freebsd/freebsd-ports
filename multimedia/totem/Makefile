@@ -10,24 +10,24 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gstreamer-based video player for the GNOME 3 Desktop
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
-		pylint${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/devel/pylint \
-		appstream-glib>=0:${PORTSDIR}/devel/appstream-glib \
-		itstool:${PORTSDIR}/textproc/itstool \
-		grilo-plugins>=0:${PORTSDIR}/net/grilo-plugins
-LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libclutter-gst-3.0.so:${PORTSDIR}/multimedia/clutter-gst3 \
-		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
-		libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
-		libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
-		${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PORTSDIR}/devel/py-libpeas \
-		gnome-settings-daemon>=2.91.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
-		gnome-icon-theme-symbolic>=2.91.0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
-		grilo-plugins>=0:${PORTSDIR}/net/grilo-plugins
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme \
+		pylint${PYTHON_PKGNAMESUFFIX}>=0:devel/pylint \
+		appstream-glib>=0:devel/appstream-glib \
+		itstool:textproc/itstool \
+		grilo-plugins>=0:net/grilo-plugins
+LIB_DEPENDS=	libgdata.so:devel/libgdata \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libclutter-gst-3.0.so:multimedia/clutter-gst3 \
+		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
+		libpeas-1.0.so:devel/libpeas \
+		libtotem-plparser.so:multimedia/totem-pl-parser
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme \
+		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas \
+		gnome-settings-daemon>=2.91.0:sysutils/gnome-settings-daemon \
+		gnome-icon-theme-symbolic>=2.91.0:x11-themes/gnome-icon-theme-symbolic \
+		grilo-plugins>=0:net/grilo-plugins
 
 PORTSCOUT=	limitw:1,even
 
@@ -73,7 +73,7 @@ TOTEM_PLUGINS=	apple-trailers autoload-subtitles brasero-disc-recorder chapters 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	liblirc_client.so:comms/lirc
 PLIST_SUB+=	LIRC=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
 .else

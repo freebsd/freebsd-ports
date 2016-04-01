@@ -12,10 +12,10 @@ COMMENT=	Free peak fitting software
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	boost-libs>=1.35:${PORTSDIR}/devel/boost-libs \
-		swig2.0:${PORTSDIR}/devel/swig20 \
-		gnuplot:${PORTSDIR}/math/gnuplot
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+BUILD_DEPENDS=	boost-libs>=1.35:devel/boost-libs \
+		swig2.0:devel/swig20 \
+		gnuplot:math/gnuplot
+RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wojdyr
@@ -44,7 +44,7 @@ OPTIONS_DEFINE=		DOCS PYTHON
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 PYTHON_USES=		python
 PYTHON_CONFIGURE_ENABLE=	python
 

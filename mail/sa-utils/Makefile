@@ -11,7 +11,7 @@ DISTFILES=	# none
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	SpamAssassin nightly periodic maintenance
 
-RUN_DEPENDS=	sa-update:${PORTSDIR}/mail/spamassassin
+RUN_DEPENDS=	sa-update:mail/spamassassin
 
 OPTIONS_DEFINE=	SACOMPILE
 SACOMPILE_DESC=	Enable sa-compile support
@@ -27,7 +27,7 @@ PLIST_FILES=	${PERIODIC_DAILY}/sa-utils
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSACOMPILE}
-RUN_DEPENDS+=	re2c>=0.12.0:${PORTSDIR}/devel/re2c
+RUN_DEPENDS+=	re2c>=0.12.0:devel/re2c
 SUB_LIST+=	SACOMPILE=YES
 .else
 SUB_LIST+=	SACOMPILE=NO

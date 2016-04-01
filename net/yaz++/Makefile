@@ -10,7 +10,7 @@ DISTNAME=	yazpp-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	C++ toolkit for development of Z39.50v3 clients and servers
 
-LIB_DEPENDS=	libyaz.so:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	libyaz.so:net/yaz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin

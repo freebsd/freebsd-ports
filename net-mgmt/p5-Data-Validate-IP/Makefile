@@ -14,10 +14,10 @@ COMMENT=	Common data validation methods for IPs
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-NetAddr-IP>=4:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+BUILD_DEPENDS=	p5-NetAddr-IP>=4:net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-Taint>=0:${PORTSDIR}/devel/p5-Test-Taint
+TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
+		p5-Test-Taint>=0:devel/p5-Test-Taint
 
 USES=		perl5
 USE_PERL5=	configure

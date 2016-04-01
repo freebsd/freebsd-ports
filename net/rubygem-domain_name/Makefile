@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2 LGPL21 MPL
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-unf>=0.0.5:${PORTSDIR}/textproc/rubygem-unf
+RUN_DEPENDS=	rubygem-unf>=0.0.5:textproc/rubygem-unf
 
 NO_ARCH=	yes
 USE_RUBY=	yes

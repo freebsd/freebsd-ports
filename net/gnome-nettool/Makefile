@@ -11,8 +11,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME utility that provides network information statistics
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
 
 USE_GNOME=	gtk30 intlhack libxml2:build
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
@@ -27,7 +27,7 @@ GLIB_SCHEMAS=	org.gnome.gnome-nettool.gschema.xml
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} > 1000000)
-RUN_DEPENDS+=	${LOCALBASE}/bin/dig:${PORTSDIR}/dns/bind-tools
+RUN_DEPENDS+=	${LOCALBASE}/bin/dig:dns/bind-tools
 .endif
 
 .include <bsd.port.mk>

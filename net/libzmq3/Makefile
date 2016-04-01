@@ -25,7 +25,7 @@ PGM_DESC=	Reliable multicast transport using PGM via OpenPGM
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 PGM_CONFIGURE_ON=	--with-system-pgm
-PGM_LIB_DEPENDS=	libpgm.so:${PORTSDIR}/net/openpgm
+PGM_LIB_DEPENDS=	libpgm.so:net/openpgm
 PGM_USES=		pkgconfig
 
 MAKE_ENV=	V=1

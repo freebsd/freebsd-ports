@@ -11,7 +11,7 @@ DISTFILES=	# none
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Quick display of files inside the FreeBSD ports tree
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		shebangfix
 NO_WRKSUBDIR=	yes

@@ -11,7 +11,7 @@ COMMENT=	Command line tools for the Google Data APIs
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:${PORTSDIR}/devel/py-gdata
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:devel/py-gdata
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils

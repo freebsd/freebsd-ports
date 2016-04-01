@@ -17,7 +17,7 @@ OCTSRC=		${OCTAVE_PKGNAME}_tmp
 
 WRKSRC=		${WRKDIR}/${OCTSRC}
 
-RUN_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml
+RUN_DEPENDS+=	py*-lxml>=0:devel/py-lxml
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

@@ -10,9 +10,9 @@ MASTER_SITES=	https://sites.google.com/site/makovick/projects/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM plugin reading data from helium thermometer at Strahov, Prague
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
+LIB_DEPENDS=	libcurl.so:ftp/curl
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 USES=		pkgconfig tar:tgz
 

@@ -47,7 +47,7 @@ DEFAULT_SENDER_CONFIGURE_ENABLE=default_sender
 
 DIFFHEADERS_DESC=		Compare signed and verified headers (experimental)
 DIFFHEADERS_CONFIGURE_ENABLE=	diffheaders
-DIFFHEADERS_LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre                                                      
+DIFFHEADERS_LIB_DEPENDS=	libtre.so:textproc/libtre                                                      
 DIFFHEADERS_CONFIGURE_WITH=	tre=${LOCALBASE}                                                                           
 DIFFHEADERS_CONFIGURE_OFF=	--without-tre                                                                              
 
@@ -75,7 +75,7 @@ REPLACE_RULES_CONFIGURE_ENABLE=	replace_rules
 
 REPRRD_DESC=			Support for collaborative reputation that uses rrdtool (experimental)
 REPRRD_CONFIGURE_ENABLE=	reprrd
-REPRRD_LIB_DEPENDS=		librrd.so:${PORTSDIR}/databases/rrdtool
+REPRRD_LIB_DEPENDS=		librrd.so:databases/rrdtool
 
 REPUTATION_DESC=		Reputation check (experimental)
 REPUTATION_CONFIGURE_ENABLE=	reputation

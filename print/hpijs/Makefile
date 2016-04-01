@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	CUPS DOCS
 OPTIONS_DEFAULT=CUPS
 OPTIONS_SUB=	yes
 
-CUPS_RUN_DEPENDS=	foomatic-rip:${PORTSDIR}/print/cups-filters
+CUPS_RUN_DEPENDS=	foomatic-rip:print/cups-filters
 CUPS_USES_OFF=		ghostscript:run perl5
 
 post-patch:

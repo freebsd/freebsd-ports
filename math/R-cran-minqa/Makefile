@@ -11,7 +11,7 @@ COMMENT=	Derivative-free optimization algorithms by quadratic approximation
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-Rcpp>=0.9.10:${PORTSDIR}/devel/R-cran-Rcpp
+RUN_DEPENDS=	R-cran-Rcpp>=0.9.10:devel/R-cran-Rcpp
 
 USES=	cran:auto-plist
 

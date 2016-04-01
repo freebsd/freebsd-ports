@@ -12,23 +12,23 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
-BUILD_DEPENDS=	nspr>=4.10.10:${PORTSDIR}/devel/nspr \
-		nss>=3.19.2.3:${PORTSDIR}/security/nss \
-		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
-		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
-		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \
-		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
-		libvorbis>=1.3.5,3:${PORTSDIR}/audio/libvorbis \
-		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
-		sqlite3>=3.8.9:${PORTSDIR}/databases/sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
-		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
-		zip:${PORTSDIR}/archivers/zip \
-		unzip:${PORTSDIR}/archivers/unzip
-#		opus>=1.1:${PORTSDIR}/audio/opus \
+BUILD_DEPENDS=	nspr>=4.10.10:devel/nspr \
+		nss>=3.19.2.3:security/nss \
+		libevent2>=2.0.21_2:devel/libevent2 \
+		soundtouch>=1.8.0:audio/soundtouch \
+		harfbuzz>=0.9.34:print/harfbuzz \
+		graphite2>=1.2.4:graphics/graphite2 \
+		libvorbis>=1.3.5,3:audio/libvorbis \
+		libvpx>=1.3.0:multimedia/libvpx \
+		sqlite3>=3.8.9:databases/sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		v4l_compat>0:multimedia/v4l_compat \
+		autoconf-2.13:devel/autoconf213 \
+		zip:archivers/zip \
+		unzip:archivers/unzip
+#		opus>=1.1:audio/opus \
 
-LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 EM_VERSION=	1.9.1
 L_VERSION=	4.0.7.1
@@ -77,7 +77,7 @@ MOZ_OPTIONS:=	${MOZ_OPTIONS:S/${CONFIGURE_TARGET}//}
 .if ${PORT_OPTIONS:MENIGMAIL}
 MASTER_SITES+=	https://www.enigmail.net/download/source/:enigmail
 DISTFILES+=	${EM_DISTFILE}:enigmail
-RUN_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	gpg2:security/gnupg
 EM_DISTNAME=	enigmail-${EM_VERSION}
 EM_DISTFILE=	${EM_DISTNAME}.tar.gz
 EM_XPI_FILE=	${WRKSRC}/mailnews/extensions/enigmail/build/${EM_DISTNAME}.xpi

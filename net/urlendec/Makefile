@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	URL encoder and decoder
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:devel/nasm
 
 ONLY_FOR_ARCHS=	i386
 

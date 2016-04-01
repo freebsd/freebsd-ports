@@ -10,7 +10,7 @@ DISTNAME=		${PORTNAME}${PORTVERSION}
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Music TeX converter from "abc" to MusiXTeX format
 
-RUN_DEPENDS=		musixtex:${PORTSDIR}/print/musixtex
+RUN_DEPENDS=		musixtex:print/musixtex
 
 USE_GCC=	any
 

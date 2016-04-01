@@ -10,15 +10,15 @@ COMMENT=	Lightweight Tox client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox \
-		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libsodium.so:${PORTSDIR}/security/libsodium \
-		libv4lconvert.so:${PORTSDIR}/multimedia/libv4l \
-		libvpx.so:${PORTSDIR}/multimedia/libvpx \
-		libfilteraudio.so:${PORTSDIR}/audio/libfilteraudio
-RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox \
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libsodium.so:security/libsodium \
+		libv4lconvert.so:multimedia/libv4l \
+		libvpx.so:multimedia/libvpx \
+		libfilteraudio.so:audio/libfilteraudio
+RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GrayHatter
@@ -31,7 +31,7 @@ INSTALLS_ICONS=	yes
 OPTIONS_DEFINE=		DBUS
 OPTIONS_DEFAULT=	DBUS
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_MAKE_ARGS_OFF=	DBUS=0
 
 post-patch:

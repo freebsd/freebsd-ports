@@ -11,10 +11,10 @@ DISTNAME=	pl${PORTVERSION:S/.//}src
 MAINTAINER?=	linimon@FreeBSD.org
 COMMENT?=	Generates plots and graphs from data
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libming.so:${PORTSDIR}/graphics/ming \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libming.so:graphics/ming \
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 USES=		jpeg
 BUILD_WRKSRC=	${WRKSRC}/src

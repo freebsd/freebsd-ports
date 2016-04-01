@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Lightweight DHCP Relay Agent with GIF tunnel support
 
-LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	libdnet.so:net/libdnet
 
 PLIST_FILES=	bin/dhcprelay
 USE_RC_SUBR=	${PORTNAME}

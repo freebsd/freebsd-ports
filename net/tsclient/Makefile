@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@thepentagon.org
 COMMENT=	GNOME 2 frontend for rdesktop and vncviewer
 
-RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
+RUN_DEPENDS=	rdesktop:net/rdesktop
 
 USE_GNOME=	gtk20 intltool
 USES=		gettext gmake libtool pathfix pkgconfig
@@ -28,11 +28,11 @@ XNEST_DESC=	X via Xnest support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTIGHTVNC}
-RUN_DEPENDS+=	vncviewer:${PORTSDIR}/net/tightvnc
+RUN_DEPENDS+=	vncviewer:net/tightvnc
 .endif
 
 .if ${PORT_OPTIONS:MXNEST}
-RUN_DEPENDS+=	Xnest:${PORTSDIR}/x11-servers/xorg-nestserver
+RUN_DEPENDS+=	Xnest:x11-servers/xorg-nestserver
 .endif
 
 .include <bsd.port.pre.mk>

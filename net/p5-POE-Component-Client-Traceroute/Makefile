@@ -14,7 +14,7 @@ COMMENT=	Non-blocking traceroute client
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-POE>=0.11:${PORTSDIR}/devel/p5-POE
+RUN_DEPENDS=	p5-POE>=0.11:devel/p5-POE
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 shebangfix

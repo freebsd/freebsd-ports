@@ -14,8 +14,8 @@ COMMENT=	Light-weight IMAP server for Maildir
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	checkpassword-pam:${PORTSDIR}/security/checkpassword-pam \
-		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+RUN_DEPENDS=	checkpassword-pam:security/checkpassword-pam \
+		tcpserver:sysutils/ucspi-tcp
 
 USE_RC_SUBR=	bincimapd
 GNU_CONFIGURE=	yes

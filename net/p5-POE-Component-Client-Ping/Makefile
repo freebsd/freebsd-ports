@@ -14,7 +14,7 @@ COMMENT=	POE component for non-blocking/concurrent ICMP ping
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-POE>=1.0070:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-POE>=1.0070:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

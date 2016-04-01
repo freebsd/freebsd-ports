@@ -11,7 +11,7 @@ COMMENT=	Simple mail to news gateway
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-NNTPClient>=0:${PORTSDIR}/news/p5-NNTPClient
+RUN_DEPENDS=	p5-NNTPClient>=0:news/p5-NNTPClient
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

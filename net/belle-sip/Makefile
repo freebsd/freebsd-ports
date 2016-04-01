@@ -16,7 +16,7 @@ COMMENT=	Belle-sip is a SIP (RFC3261) implementation written in C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libantlr3c.so:${PORTSDIR}/devel/libantlr3c
+LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	POLARSSL
 OPTIONS_DEFAULT=POLARSSL
 
 POLARSSL_CONFIGURE_ENABLE=	tls
-POLARSSL_LIB_DEPENDS=		libmbedtls.so.9:${PORTSDIR}/security/polarssl13
+POLARSSL_LIB_DEPENDS=		libmbedtls.so.9:security/polarssl13
 
 post-extract:
 	@${CP} ${DISTDIR}/antlr-3.4-complete.jar ${WRKDIR}/antlr-complete.jar

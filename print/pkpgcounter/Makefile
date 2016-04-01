@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.pykota.com/software/pkpgcounter/download/tarballs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Count pages and ink coverage percent
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv3

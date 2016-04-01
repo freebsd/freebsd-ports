@@ -31,7 +31,7 @@ OPTIONS_UNSET+=	${PORT_OPTIONS:MGS_${D}}
 .endfor
 
 .if defined(_VGA_DEVS)
-LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:graphics/svgalib
 .endif
 
 .if ${PORT_OPTIONS:MGS_cdj670} || \

@@ -12,7 +12,7 @@ COMMENT=	Incremental FreeBSD ports INDEX file generation
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	p5-BerkeleyDB>0:${PORTSDIR}/databases/p5-BerkeleyDB
+BUILD_DEPENDS=	p5-BerkeleyDB>0:databases/p5-BerkeleyDB
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 tar:xz
@@ -36,7 +36,7 @@ PLIST_SUB+=	CACHE_DIR=${CACHE_DIR} \
 # machine.
 OPTIONS_DEFINE=	GRAPHVIZ
 GRAPHVIZ_DESC=	Add GraphViz run-time dependency
-GRAPHVIZ_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz
 
 post-install:
 	${MKDIR} ${STAGEDIR}${CACHE_DIR}

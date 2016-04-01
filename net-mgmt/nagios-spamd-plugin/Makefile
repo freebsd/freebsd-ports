@@ -12,7 +12,7 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Nagios plugin for checking SpamAssassins spamd
 
-RUN_DEPENDS+=	${LOCALBASE}/${NAGIOS_PLUGIN_DIR}/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins
+RUN_DEPENDS+=	${LOCALBASE}/${NAGIOS_PLUGIN_DIR}/utils.pm:net-mgmt/nagios-plugins
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	check_spamd.pl

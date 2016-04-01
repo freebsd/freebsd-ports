@@ -29,13 +29,13 @@ INSTALLS_ICONS=	yes
 
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-qt4"
 CONFLICTS_INSTALL=	trojita-[0-9]*
-LIB_DEPENDS+=	libqtkeychain.so:${PORTSDIR}/security/qtkeychain-qt4
+LIB_DEPENDS+=	libqtkeychain.so:security/qtkeychain-qt4
 CMAKE_ARGS+=	-DWITH_QT5:STRING=OFF
 USE_QT4=	linguisttools_build moc_build qmake_build rcc_build uic_build \
 		corelib dbus gui network opengl sql sql-sqlite3 webkit
 .else
 CONFLICTS_INSTALL=	trojita-qt4-[0-9]*
-LIB_DEPENDS+=	libqt5keychain.so:${PORTSDIR}/security/qtkeychain-qt5
+LIB_DEPENDS+=	libqt5keychain.so:security/qtkeychain-qt5
 CMAKE_ARGS+=	-DWITH_QT5:STRING=ON
 USE_QT5=	buildtools_build linguisttools_build qmake_build \
 		core dbus gui network opengl printsupport \

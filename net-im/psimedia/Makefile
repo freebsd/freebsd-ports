@@ -9,8 +9,8 @@ MASTER_SITES=	http://delta.affinix.com/download/psimedia/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Voice and video API for Psi-like IM clients
 
-LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil \
-		libspeexdsp.so:${PORTSDIR}/audio/speexdsp
+LIB_DEPENDS=	liboil-0.3.so:devel/liboil \
+		libspeexdsp.so:audio/speexdsp
 
 USES=		pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes

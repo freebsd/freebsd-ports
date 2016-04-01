@@ -8,8 +8,8 @@ CATEGORIES=	net www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to handle talking to timsieved
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
-RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 
 USES=	pear
 

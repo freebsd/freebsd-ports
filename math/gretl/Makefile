@@ -12,8 +12,8 @@ COMMENT=	GNU Regression, Econometrics, and Time-series Library
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libfftw3.so:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfftw3.so:math/fftw3
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -40,12 +40,12 @@ OPTIONS_DEFAULT=	GUI OPENMP UNZIP
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas \
+		liblapack.so:math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
@@ -55,8 +55,8 @@ CONFIGURE_ARGS+=	--enable-gtk2=yes --enable-gui=yes
 INSTALLS_ICONS=		yes
 USE_GNOME=		gtksourceview2
 USES+=			desktop-file-utils shared-mime-info
-BUILD_DEPENDS+=		gnuplot:${PORTSDIR}/math/gnuplot
-RUN_DEPENDS+=		gnuplot:${PORTSDIR}/math/gnuplot
+BUILD_DEPENDS+=		gnuplot:math/gnuplot
+RUN_DEPENDS+=		gnuplot:math/gnuplot
 PLIST_SUB+=		GUI=""
 .else
 USE_GNOME=		glib20 libxml2
@@ -75,7 +75,7 @@ PLIST_SUB+=		NLS="@comment "
 
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=	--with-odbc
-LIB_DEPENDS+=		libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		libodbc.so:databases/unixODBC
 PLIST_SUB+=		ODBC=""
 .else
 CONFIGURE_ARGS+=	--without-odbc
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--enable-openmp
 
 .if ${PORT_OPTIONS:MR}
 CONFIGURE_ARGS+=	--with-libR
-LIB_DEPENDS+=		libR.so:${PORTSDIR}/math/R
+LIB_DEPENDS+=		libR.so:math/R
 .else
 CONFIGURE_ARGS+=	--without-libR
 .endif

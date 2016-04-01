@@ -11,8 +11,8 @@ COMMENT=	Applet to edit Claws Mail's hidden preferences
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
+RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-Locale-gettext>=0:devel/p5-Locale-gettext
 
 USES=		shebangfix perl5
 SHEBANG_FILES=	${PORTNAME}

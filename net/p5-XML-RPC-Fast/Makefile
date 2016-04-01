@@ -11,14 +11,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mons@cpan.org
 COMMENT=	Fast and modular implementation for an XML-RPC client and server
 
-BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-WWW-Curl>=0:${PORTSDIR}/www/p5-WWW-Curl \
-		p5-XML-Hash-LX>=0.05:${PORTSDIR}/textproc/p5-XML-Hash-LX \
-		p5-XML-LibXML>=1.58:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-WWW-Curl>=0:www/p5-WWW-Curl \
+		p5-XML-Hash-LX>=0.05:textproc/p5-XML-Hash-LX \
+		p5-XML-LibXML>=1.58:textproc/p5-XML-LibXML \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
 USES=		perl5
 USE_PERL5=	configure

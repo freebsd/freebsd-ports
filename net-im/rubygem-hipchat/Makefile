@@ -12,8 +12,8 @@ COMMENT=	Ruby library to interact with HipChat
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-httparty>=0:${PORTSDIR}/www/rubygem-httparty \
-		rubygem-mimemagic>=0:${PORTSDIR}/misc/rubygem-mimemagic
+RUN_DEPENDS=	rubygem-httparty>=0:www/rubygem-httparty \
+		rubygem-mimemagic>=0:misc/rubygem-mimemagic
 
 NO_ARCH=	yes
 USE_RUBY=	yes

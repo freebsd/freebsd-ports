@@ -15,8 +15,8 @@ COMMENT=	PDF generation library
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-berkeley-db

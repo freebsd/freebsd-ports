@@ -13,7 +13,7 @@ COMMENT=	Very easy-to-use mplayer sh wrapper script (supports playlists)
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 PLIST_FILES=	bin/playd \
 		man/man1/playd.1.gz

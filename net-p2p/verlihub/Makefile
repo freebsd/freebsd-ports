@@ -13,10 +13,10 @@ COMMENT=	Direct Connect protocol server (Hub)
 
 # XXX: Actually, bash isn't required for building,
 # but otherwise configure script would pick the wrong path
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP \
-		libpcre.so:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP \
+		libpcre.so:devel/pcre
+RUN_DEPENDS=	bash:shells/bash
 
 LIBS+=		-L${LOCALBASE}/lib
 USE_RC_SUBR=	verlihub

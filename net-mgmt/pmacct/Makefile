@@ -91,14 +91,14 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 .if ${PORT_OPTIONS:MMONGO}
-LIB_DEPENDS+=	libmongoc.so:${PORTSDIR}/devel/mongo-c-driver
+LIB_DEPENDS+=	libmongoc.so:devel/mongo-c-driver
 CONFIGURE_ARGS+=--enable-mongodb \
 		--with-mongodb-libs=${LOCALBASE}/lib \
 		--with-mongodb-includes=${LOCALBASE}/include
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 CONFIGURE_ARGS+=--enable-geoip \
 		--with-geoip-libs=${LOCALBASE}/lib \
 		--with-geoip-includes=${LOCALBASE}/include

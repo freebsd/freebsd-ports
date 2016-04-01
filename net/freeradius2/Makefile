@@ -17,8 +17,8 @@ COMMENT=	Free RADIUS server implementation
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libgdbm.so:databases/gdbm \
+		libltdl.so:devel/libltdl
 
 LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs
@@ -109,11 +109,11 @@ SUB_LIST+=	RUN_AS_USER="no"
 .if ${PORT_OPTIONS:MKERBEROS} || ${PORT_OPTIONS:MHEIMDAL}
 .if ${PORT_OPTIONS:MHEIMDAL}
 .if ${PORT_OPTIONS:MHEIMDAL_PORT}
-LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	libkrb5.so:security/heimdal
 .endif
 CONFIGURE_ARGS+=--enable-heimdal-krb5
 .else
-LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5support.so:security/krb5
 .endif
 CONFIGURE_ARGS+=--with-rlm_krb5
 .if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MHEIMDAL_PORT)
@@ -170,7 +170,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .if ${PORT_OPTIONS:MUNIXODBC}
 CONFIGURE_ARGS+=--with-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC=""
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC="@comment "
@@ -239,7 +239,7 @@ EXPM=		yes
 
 # No SMB option yet; rlm_smb is still unbuildable
 #.if ${PORT_OPTIONS:MSMB}
-#LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+#LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 #CONFIGURE_ARGS+=--with-rlm_smb
 #CONFIGURE_ARGS+=--with-rlm-smb-lib-dir=${LOCALBASE}/lib
 #CONFIGURE_ARGS+=--with-rlm-smb-include-dir=${LOCALBASE}/include
@@ -259,7 +259,7 @@ EXPM=		yes
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-exec.c
 CONFIGURE_ENV+=	ORACLE_HOME="${ORACLE_HOME}"
 ORACLE_HOME?=	${LOCALBASE}/oracle8-client
-BUILD_DEPENDS+=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
+BUILD_DEPENDS+=	${ORACLE_HOME}/lib/libclntst8.a:databases/oracle8-client
 CONFIGURE_ARGS+=--with-oracle-home-dir=${ORACLE_HOME}/rdbms/demo
 PLIST_SUB+=	OCI8=""
 .else

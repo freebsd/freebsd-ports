@@ -19,7 +19,7 @@ COMMENT=	Markov based SpamFilter
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	libtre.so:textproc/libtre
 
 CRM114RELEASENAME=BlameMichelson
 

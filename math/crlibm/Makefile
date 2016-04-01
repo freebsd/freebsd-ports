@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--enable-sse2
 
 .if ${PORT_OPTIONS:MTEST}
 CONFIGURE_ARGS+=	--enable-mpfr
-LIB_DEPENDS+=		libmpfr.so:${PORTSDIR}/math/mpfr
+LIB_DEPENDS+=		libmpfr.so:math/mpfr
 .else
 CONFIGURE_ARGS+=	--disable-mpfr
 .endif

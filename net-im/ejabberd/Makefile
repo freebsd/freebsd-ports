@@ -16,12 +16,12 @@ COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		git:${PORTSDIR}/devel/git
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
-		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libyaml.so:${PORTSDIR}/textproc/libyaml
+BUILD_DEPENDS=	erlc:lang/erlang \
+		git:devel/git
+RUN_DEPENDS=	erl:lang/erlang \
+		bash:shells/bash
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libyaml.so:textproc/libyaml
 
 USERS=		ejabberd
 GROUPS=		${USERS}

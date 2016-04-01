@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.escape.de/~tolot/mutt/t-prot/downloads/ \
 MAINTAINER=	torres.g.alex@gmail.com
 COMMENT=	TOFU Protection - Display Filter for RFC822 messages
 
-RUN_DEPENDS=	p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
-		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
+RUN_DEPENDS=	p5-Getopt-Long>=0:devel/p5-Getopt-Long \
+		p5-Locale-gettext>=0:devel/p5-Locale-gettext
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes

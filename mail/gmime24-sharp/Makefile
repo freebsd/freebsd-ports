@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	24-sharp
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for gmime
 
-LIB_DEPENDS=	libgmime-2.4.so:${PORTSDIR}/mail/gmime24
+LIB_DEPENDS=	libgmime-2.4.so:mail/gmime24
 
 MASTERDIR=	${.CURDIR}/../gmime24
 BUILD_WRKSRC=	${WRKSRC}/mono

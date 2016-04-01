@@ -34,14 +34,14 @@ CONFIGURE_ARGS+=ac_cv_lib_iconv_libiconv_open=no
 
 .if ${PORT_OPTIONS:MHEIMDAL}
 BROKEN=		bad depobj
-LIB_DEPENDS+=	libss.so.1:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	libss.so.1:security/heimdal
 .if defined(HEIMDAL_HOME)
 KRB5_DIR?=	${HEIMDAL_HOME}
 .else
 KRB5_DIR?=	${LOCALBASE}
 .endif
 .else
-LIB_DEPENDS+=	libss.so.2:${PORTSDIR}/devel/e2fsprogs-libss
+LIB_DEPENDS+=	libss.so.2:devel/e2fsprogs-libss
 KRB5_DIR?=	${DESTDIR}/usr
 .endif
 

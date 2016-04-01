@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Perl module to send and receive multicast messages
 
-RUN_DEPENDS=	p5-IO-Interface>=0:${PORTSDIR}/net/p5-IO-Interface
+RUN_DEPENDS=	p5-IO-Interface>=0:net/p5-IO-Interface
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 shebangfix

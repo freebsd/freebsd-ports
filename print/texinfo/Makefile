@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Typeset documentation system with multiple format output
 
-BUILD_DEPENDS+=	help2man:${PORTSDIR}/misc/help2man
+BUILD_DEPENDS+=	help2man:misc/help2man
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

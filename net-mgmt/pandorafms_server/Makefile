@@ -10,22 +10,22 @@ COMMENT=	Pandora FMS server
 LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
-PANDORA_DEPS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
-		p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \
-		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6 \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+PANDORA_DEPS=	p5-DBI>=0:databases/p5-DBI \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
+		p5-NetAddr-IP>=0:net-mgmt/p5-NetAddr-IP \
+		net-snmp>=0:net-mgmt/net-snmp \
+		p5-Socket6>=0:net/p5-Socket6 \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-XML-Twig>=0:textproc/p5-XML-Twig \
+		p5-JSON>=0:converters/p5-JSON
 BUILD_DEPENDS=	${PANDORA_DEPS}
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-DBD-mysql>=4:${PORTSDIR}/databases/p5-DBD-mysql \
-		${LOCALBASE}/bin/wmic:${PORTSDIR}/net-mgmt/wmi-client \
-		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
-		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
-		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-DBD-mysql>=4:databases/p5-DBD-mysql \
+		${LOCALBASE}/bin/wmic:net-mgmt/wmi-client \
+		${LOCALBASE}/bin/nmap:security/nmap \
+		p5-Storable>=0:devel/p5-Storable \
+		p5-Encode-Locale>=0:converters/p5-Encode-Locale \
 		${PANDORA_DEPS}
 
 OPTIONS_DEFINE=	DOCS TENTACLE XPROBE PGSQL ORACLE EXTRAS
@@ -78,26 +78,26 @@ PLIST_SUB+=	TENTACLE=""
 #USE_RC_SUBR+=	tentacle_server
 .endif
 .if ${PORT_OPTIONS:MXPROBE}
-RUN_DEPENDS+=	${LOCALBASE}/bin/xprobe2:${PORTSDIR}/net/xprobe
+RUN_DEPENDS+=	${LOCALBASE}/bin/xprobe2:net/xprobe
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 .endif
 .if ${PORT_OPTIONS:MORACLE}
-RUN_DEPENDS+=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
+RUN_DEPENDS+=	p5-DBD-Oracle>=0:databases/p5-DBD-Oracle
 .endif
 .if ${PORT_OPTIONS:MEXTRAS}
 # plugin/bgp_pluin.pl
-RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+RUN_DEPENDS+=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 # plugin/multicast.pl
-RUN_DEPENDS+=	p5-IO-Socket-Multicast>=0:${PORTSDIR}/net/p5-IO-Socket-Multicast
+RUN_DEPENDS+=	p5-IO-Socket-Multicast>=0:net/p5-IO-Socket-Multicast
 # plugin/openvpn_pandoraplugin.pl
-RUN_DEPENDS+=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
+RUN_DEPENDS+=	p5-Net-Telnet>=0:net/p5-Net-Telnet
 # plugin/integria_plugin/integria_plugin.sh, plugin/webcheck_plugin.sh,
 # plugin/babel_plugin/babel_plugin.sh, plugin/create_integria_incident.sh
-RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS+=	${LOCALBASE}/bin/wget:ftp/wget
 # plugin/ipmi-plugin.pl, recon_scripts/ipmi-recon.pl
-RUN_DEPENDS+=	${LOCALBASE}/sbin/ipmi-sensors:${PORTSDIR}/sysutils/freeipmi
+RUN_DEPENDS+=	${LOCALBASE}/sbin/ipmi-sensors:sysutils/freeipmi
 .endif
 
 post-patch:

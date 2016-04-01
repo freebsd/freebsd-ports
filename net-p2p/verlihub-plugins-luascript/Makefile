@@ -31,8 +31,8 @@ SOCKET_DESC=	Build with LuaSocket support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOCKET}
-BUILD_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
-RUN_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
+BUILD_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket
+RUN_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket
 CONFIGURE_ARGS+=	--with-luasocket
 .endif
 

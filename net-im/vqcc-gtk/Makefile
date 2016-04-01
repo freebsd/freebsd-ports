@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	LAN chat client compatible with quickChat and Vypress Chat (TM)
 
-LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 
 USES=		pathfix gmake gettext pkgconfig
 USE_GNOME=	gnomeprefix gtk20

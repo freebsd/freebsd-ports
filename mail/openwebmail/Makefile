@@ -11,7 +11,7 @@ MASTER_SITES=	http://openwebmail.acatysmoof.com/download/release/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Webmail system designed to manage big mail folder files efficiently
 
-RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
+RUN_DEPENDS=	p5-Text-Iconv>=0:converters/p5-Text-Iconv
 
 USES=		perl5
 USE_PERL5=	run build patch
@@ -35,37 +35,37 @@ OPTIONS_DEFINE=	ANTIWORD MAGICK ISPELL LEARNSPAM LSOF PAM POP3_OVER_SSL QUOTA \
 		WGET
 
 ANTIWORD_DESC=	AntiWord
-ANTIWORD_RUN_DEPENDS=	antiword:${PORTSDIR}/textproc/antiword
+ANTIWORD_RUN_DEPENDS=	antiword:textproc/antiword
 ISPELL_DESC=	ISpell
-ISPELL_RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
+ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 LEARNSPAM_DESC=	Learn HAM/SPAM
 LEARNSPAM_IMPLIES=	SPAMCHECK
 LSOF_DESC=	lsof
-LSOF_RUN_DEPENDS=	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
-MAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+LSOF_RUN_DEPENDS=	${LOCALBASE}/sbin/lsof:sysutils/lsof
+MAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
 PAM_DESC=	PAM
-PAM_RUN_DEPENDS=	p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
+PAM_RUN_DEPENDS=	p5-Authen-PAM>=0:security/p5-Authen-PAM
 POP3_OVER_SSL_DESC=	POP3 Over SSL
-POP3_OVER_SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+POP3_OVER_SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 QUOTA_DESC=	Quota
-QUOTA_RUN_DEPENDS=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota
+QUOTA_RUN_DEPENDS=	p5-Quota>=0:sysutils/p5-Quota
 SPAMCHECK_DESC=	Spam check (Mail::SpamAssassin)
-SPAMCHECK_RUN_DEPENDS=	spamassassin>=0:${PORTSDIR}/mail/spamassassin
+SPAMCHECK_RUN_DEPENDS=	spamassassin>=0:mail/spamassassin
 SPAMCHECK_ALL_DESC=	Spam check for all (default: pop3)
 SPAMCHECK_ALL_IMPLIES=	SPAMCHECK
 SPEEDYCGI_DESC=	SpeedyCGI
-SPEEDYCGI_RUN_DEPENDS=	speedy_suidperl:${PORTSDIR}/www/p5-CGI-SpeedyCGI
+SPEEDYCGI_RUN_DEPENDS=	speedy_suidperl:www/p5-CGI-SpeedyCGI
 SPEEDYCGI_SUB_LIST=	WITHOUT_SPEEDYCGI="@comment "
 SPEEDYCGI_SUB_LIST_OFF=	WITHOUT_SPEEDYCGI=""
 SPEEDYCGI_EXTRA_PATCHES=	${PATCH_WRKSRC}/misc/patches/suidperl2speedy_suidperl.notmp.patch
 TNEF_DESC=	tnef
-TNEF_RUN_DEPENDS=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
+TNEF_RUN_DEPENDS=	${LOCALBASE}/bin/tnef:converters/tnef
 VIRUSCHECK_DESC=	Virus check (Clam AntiVirus)
-VIRUSCHECK_RUN_DEPENDS=	clamdscan:${PORTSDIR}/security/clamav
+VIRUSCHECK_RUN_DEPENDS=	clamdscan:security/clamav
 VIRUSCHECK_ALL_DESC=	Virus check for all (default: pop3)
 VIRUSCHECK_ALL_IMPLIES=	VIRUSCHECK
 WGET_DESC=	wget
-WGET_RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+WGET_RUN_DEPENDS=	${LOCALBASE}/bin/wget:ftp/wget
 
 .include <bsd.port.pre.mk>
 

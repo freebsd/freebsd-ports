@@ -11,12 +11,12 @@ COMMENT=	Seafile desktop client
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS+=	libglib-2.0.so:${PORTSDIR}/devel/glib20 \
-		libsearpc.so:${PORTSDIR}/devel/libsearpc \
-		libseafile.so:${PORTSDIR}/net-mgmt/seafile \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libccnet.so:${PORTSDIR}/net-mgmt/ccnet \
-		libjansson.so:${PORTSDIR}/devel/jansson
+LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
+		libsearpc.so:devel/libsearpc \
+		libseafile.so:net-mgmt/seafile \
+		libsqlite3.so:databases/sqlite3 \
+		libccnet.so:net-mgmt/ccnet \
+		libjansson.so:devel/jansson
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen

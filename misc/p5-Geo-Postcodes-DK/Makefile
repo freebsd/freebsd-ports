@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Danish postcodes with associated information
 
-BUILD_DEPENDS=	p5-Geo-Postcodes>=0.31:${PORTSDIR}/misc/p5-Geo-Postcodes
-RUN_DEPENDS=	p5-Geo-Postcodes>=0.31:${PORTSDIR}/misc/p5-Geo-Postcodes
+BUILD_DEPENDS=	p5-Geo-Postcodes>=0.31:misc/p5-Geo-Postcodes
+RUN_DEPENDS=	p5-Geo-Postcodes>=0.31:misc/p5-Geo-Postcodes
 
 USES=		perl5
 USE_PERL5=	configure

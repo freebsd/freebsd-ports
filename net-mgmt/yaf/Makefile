@@ -12,10 +12,10 @@ COMMENT=	YAF is Yet Another Flowmeter
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/net/libfixbuf \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libpcap.so:${PORTSDIR}/net/libpcap \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libfixbuf.so:net/libfixbuf \
+		libltdl.so:devel/libltdl \
+		libpcap.so:net/libpcap \
+		libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -64,7 +64,7 @@ ENTROPY_IMPLIES=	PAYLOAD
 P0FPRINT_IMPLIES=	APPLABEL
 NONIP_IMPLIES=		MPLS
 
-P0FPRINT_LIB_DEPENDS=	libp0f.so:${PORTSDIR}/net/libp0f
+P0FPRINT_LIB_DEPENDS=	libp0f.so:net/libp0f
 
 .include <bsd.port.options.mk>
 

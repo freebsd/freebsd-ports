@@ -10,45 +10,45 @@ COMMENT=	Award winning media center application
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
-		gawk:${PORTSDIR}/lang/gawk \
-		gperf:${PORTSDIR}/devel/gperf \
-		cmake:${PORTSDIR}/devel/cmake \
-		zip:${PORTSDIR}/archivers/zip \
-		unzip:${PORTSDIR}/archivers/unzip \
-		nasm:${PORTSDIR}/devel/nasm \
-		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20 \
-		swig2.0:${PORTSDIR}/devel/swig20
-LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libcdio.so:${PORTSDIR}/sysutils/libcdio	\
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libenca.so:${PORTSDIR}/converters/enca \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
-		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libtag.so:${PORTSDIR}/audio/taglib \
-		libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libxslt.so:${PORTSDIR}/textproc/libxslt	\
-		libyajl.so:${PORTSDIR}/devel/yajl
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		glxinfo:${PORTSDIR}/graphics/mesa-demos \
-		python:${PORTSDIR}/lang/python \
-		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
+BUILD_DEPENDS=	enca:converters/enca \
+		gawk:lang/gawk \
+		gperf:devel/gperf \
+		cmake:devel/cmake \
+		zip:archivers/zip \
+		unzip:archivers/unzip \
+		nasm:devel/nasm \
+		gtk-update-icon-cache:x11-toolkits/gtk20 \
+		swig2.0:devel/swig20
+LIB_DEPENDS=	libass.so:multimedia/libass \
+		libboost_thread.so:devel/boost-libs \
+		libcdio.so:sysutils/libcdio	\
+		libcurl.so:ftp/curl \
+		libdbus-1.so:devel/dbus \
+		libdrm.so:graphics/libdrm \
+		libenca.so:converters/enca \
+		libFLAC.so:audio/flac \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libfribidi.so:converters/fribidi \
+		libgnutls.so:security/gnutls \
+		liblzo2.so:archivers/lzo2 \
+		libjasper.so:graphics/jasper \
+		libltdl.so:devel/libltdl \
+		libmodplug.so:audio/libmodplug \
+		libmpeg2.so:multimedia/libmpeg2 \
+		libpcre.so:devel/pcre \
+		libpng.so:graphics/png \
+		libsamplerate.so:audio/libsamplerate \
+		libsqlite3.so:databases/sqlite3 \
+		libtag.so:audio/taglib \
+		libtinyxml.so:textproc/tinyxml \
+		libvorbis.so:audio/libvorbis \
+		libxslt.so:textproc/libxslt	\
+		libyajl.so:devel/yajl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		glxinfo:graphics/mesa-demos \
+		python:lang/python \
+		xdpyinfo:x11/xdpyinfo
 
 USE_GITHUB=	yes
 GH_TUPLE=	xbmc:xbmc:f4dda26 xbmc:FFmpeg:2.6.4-Isengard:ffmpeg
@@ -84,56 +84,56 @@ SFTP_DESC=	SSH SFTP support via libssh
 OPTIONS_DEFAULT=	AIRPLAY AIRTUNES AVAHI LIBBLURAY LIRC MYSQL \
 			NFS PULSEAUDIO RTMP SFTP SMB VAAPI VDPAU WEBSERVER
 
-AIRPLAY_LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist
+AIRPLAY_LIB_DEPENDS=	libplist.so:devel/libplist
 AIRPLAY_CONFIGURE_ENABLE=	airplay
 
-AIRTUNES_LIB_DEPENDS=	libshairplay.so:${PORTSDIR}/audio/shairplay
+AIRTUNES_LIB_DEPENDS=	libshairplay.so:audio/shairplay
 AIRTUNES_CONFIGURE_ENABLE=	airtunes
 
-AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
 
 CEC_BROKEN=		libcec >= 3.0.0 has not been ported yet
-CEC_BUILD_DEPENDS=	libcec>=3.0.0:${PORTSDIR}/multimedia/libcec
-CEC_LIB_DEPENDS=	libcec.so:${PORTSDIR}/multimedia/libcec
+CEC_BUILD_DEPENDS=	libcec>=3.0.0:multimedia/libcec
+CEC_LIB_DEPENDS=	libcec.so:multimedia/libcec
 CEC_CONFIGURE_ENABLE=	libcec
 
-LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	libbluray
 
-LIRC_RUN_DEPENDS=	lircd:${PORTSDIR}/comms/lirc
+LIRC_RUN_DEPENDS=	lircd:comms/lirc
 
 MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_ENABLE=	mysql
 
-NFS_LIB_DEPENDS=	libnfs.so:${PORTSDIR}/net/libnfs
+NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 NFS_CONFIGURE_ENABLE=	nfs
 
 NONFREE_CONFIGURE_ENABLE=	non-free
 NONFREE_VARS=		NO_CDROM="Restricted binary distribution" \
 			NO_PACKAGE="Restricted binary distribution"
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
-RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
+RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	rtmp
 
-SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-SMB_RUN_DEPENDS=	nmblookup:${PORTSDIR}/net/samba-nmblookup
+SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+SMB_RUN_DEPENDS=	nmblookup:net/samba-nmblookup
 SMB_CONFIGURE_ENABLE=	samba
 
-VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
+VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VAAPI_CONFIGURE_ENABLE=	vaapi
 
-VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
-WEBSERVER_LIB_DEPENDS=	libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd
+WEBSERVER_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 WEBSERVER_CONFIGURE_ENABLE=	webserver
 
-SFTP_BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
-SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
+SFTP_BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
+SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 SFTP_CONFIGURE_ENABLE=	ssh
 
 CONFIGURE_ARGS+=	--disable-debug --disable-alsa

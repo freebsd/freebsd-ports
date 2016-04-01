@@ -12,7 +12,7 @@ COMMENT=	Python wrapper for net/nmsg
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libnmsg.so:${PORTSDIR}/net/nmsg
+LIB_DEPENDS=	libnmsg.so:net/nmsg
 
 USE_PYTHON=	autoplist distutils
 USES=		pkgconfig python shebangfix uniquefiles:dirs

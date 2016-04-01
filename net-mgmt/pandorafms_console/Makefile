@@ -10,7 +10,7 @@ COMMENT=	Pandora FMS console
 LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
-RUN_DEPENDS=	${LOCALBASE}/bin/twopi:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS=	${LOCALBASE}/bin/twopi:graphics/graphviz
 
 USES=		shebangfix
 SHEBANG_FILES=	include/languages/extract_newlines.sh \

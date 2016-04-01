@@ -14,9 +14,9 @@ COMMENT=	Collection of fast NumPy array functions written in Cython
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		cython:${PORTSDIR}/lang/cython
+		cython:lang/cython
 RUN_DEPENDS=	${PYNUMPY}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -12,7 +12,7 @@ COMMENT=	Relay-only Mail Transfer Agent with sendmail compatible syntax
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 
 USES=		tar:bzip2 bison
 USE_OPENSSL=	yes

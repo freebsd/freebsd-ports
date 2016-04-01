@@ -14,10 +14,10 @@ COMMENT=	Network monitoring system
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libjansson.so:${PORTSDIR}/devel/jansson \
-		libtre.so:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2 \
+		libjansson.so:devel/jansson \
+		libtre.so:textproc/libtre
 
 PORTSCOUT=	limit:^1\.
 
@@ -41,7 +41,7 @@ PGSQL_USES=		pgsql
 SQLITE_CONFIGURE_ON=	--with-sqlite
 SQLITE_USE=		SQLITE=yes
 ODBC_CONFIGURE_ON=	--with-odbc
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 USE_OPENSSL=	yes
 USES=		gmake iconv libtool perl5

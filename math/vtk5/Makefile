@@ -14,9 +14,9 @@ COMMENT=	The Visualization Toolkit
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 WRKSRC=		${WRKDIR}/VTK${PORTVERSION}
 
@@ -80,7 +80,7 @@ PLIST_SUB+=	SHARED="@comment " \
 .endif
 
 .if ${PORT_OPTIONS:MVTKMPEG2}
-LIB_DEPENDS+=	libvtkMPEG2Encode.so:${PORTSDIR}/multimedia/vtkmpeg2encode
+LIB_DEPENDS+=	libvtkMPEG2Encode.so:multimedia/vtkmpeg2encode
 PLIST_SUB+=	MPEG=""
 CMAKE_ARGS+=	-DVTK_USE_PATENTED:BOOL=ON \
 		-DVTK_USE_MPEG2_ENCODER:BOOL=ON \
@@ -91,8 +91,8 @@ PLIST_SUB+=	MPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	libogg.so:audio/libogg \
+		libtheora.so:multimedia/libtheora
 PLIST_SUB+=	THEORA=""
 CMAKE_ARGS+=	-DVTK_USE_OGGTHEORA_ENCODER:BOOL=ON
 .else
@@ -101,7 +101,7 @@ CMAKE_ARGS+=	-DVTK_USE_OGGTHEORA_ENCODER:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MGL2PS}
-LIB_DEPENDS+=	libgl2ps.so:${PORTSDIR}/print/gl2ps
+LIB_DEPENDS+=	libgl2ps.so:print/gl2ps
 CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
 PLIST_SUB+=	GL2PS=""
 .else
@@ -109,7 +109,7 @@ PLIST_SUB+=	GL2PS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOSMESA}
-LIB_DEPENDS+=	libOSMesa.so:${PORTSDIR}/graphics/libosmesa
+LIB_DEPENDS+=	libOSMesa.so:graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
 		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so \

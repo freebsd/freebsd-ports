@@ -12,7 +12,7 @@ COMMENT=	Java parser for e-mail message streams
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
+RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:java/jakarta-commons-logging
 
 OPTIONS_DEFINE=	DOCS
 

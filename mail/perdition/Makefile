@@ -9,10 +9,10 @@ MASTER_SITES=	http://horms.net/projects/perdition/download/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3 & IMAP4 proxy that can map users to multiple backend servers
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libvanessa_logger.so:${PORTSDIR}/devel/libvanessa_logger \
-		libvanessa_socket.so:${PORTSDIR}/devel/libvanessa_socket \
-		libvanessa_adt.so:${PORTSDIR}/devel/libvanessa_adt
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libvanessa_logger.so:devel/libvanessa_logger \
+		libvanessa_socket.so:devel/libvanessa_socket \
+		libvanessa_adt.so:devel/libvanessa_adt
 
 USES=		gettext libtool pkgconfig shebangfix
 SHEBANG_FILES=	${WRKSRC}/perdition/db/ldap/perditiondb_ldap_makedb \
@@ -58,7 +58,7 @@ PLIST_SUB+=		POSIXREGEX="@comment "
 .if ${PORT_OPTIONS:MDAEMON_MAP}
 CONFIGURE_ARGS+=	--enable-daemon-map
 PLIST_SUB+=		DAEMONMAP=""
-LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		libgdbm.so:databases/gdbm
 .else
 CONFIGURE_ARGS+=	--disable-daemon-map
 PLIST_SUB+=		DAEMONMAP="@comment "
@@ -84,7 +84,7 @@ PLIST_SUB+=		NIS="@comment "
 
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=	--enable-gdbm
-LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		libgdbm.so:databases/gdbm
 PLIST_SUB+=		GDBM=""
 .else
 CONFIGURE_ARGS+=	--disable-gdbm
@@ -122,7 +122,7 @@ PLIST_SUB+=		LDAP="@comment "
 
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=	--enable-odbc
-LIB_DEPENDS+=		libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		libodbc.so:databases/unixODBC
 PLIST_SUB+=		ODBC=""
 .else
 CONFIGURE_ARGS+=	--disable-odbc

@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	C library implementing the core BitTorrent protocol
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		gmake

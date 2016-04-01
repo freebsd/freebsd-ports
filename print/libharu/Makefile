@@ -10,7 +10,7 @@ CATEGORIES=	print
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Haru Free PDF Library
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	EXAMPLES
 

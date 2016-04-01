@@ -11,8 +11,8 @@ DISTNAME=	smb4k-${PORTVERSION}
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	KDE 4.x SMB Network browser and SMB shares mounting center
 
-RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo \
-		smbstatus:${PORTSDIR}/${SAMBA_PORT}
+RUN_DEPENDS=	sudo:security/sudo \
+		smbstatus:${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba36
 

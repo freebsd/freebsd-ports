@@ -12,10 +12,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for interfacing with Amazon S3 through SOAP
 
-RUN_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
-		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
-		p5-SOAP-MySOAP>=0:${PORTSDIR}/net/p5-SOAP-MySOAP \
-		p5-XML-MyXML>=0:${PORTSDIR}/textproc/p5-XML-MyXML
+RUN_DEPENDS=	p5-Time-Piece>=0:devel/p5-Time-Piece \
+		p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
+		p5-SOAP-MySOAP>=0:net/p5-SOAP-MySOAP \
+		p5-XML-MyXML>=0:textproc/p5-XML-MyXML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

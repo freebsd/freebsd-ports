@@ -10,9 +10,9 @@ COMMENT=	Share CUPS printers via Google Cloud Print
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go \
-		cups>=0:${PORTSDIR}/print/cups \
-		avahi-app>=0:${PORTSDIR}/net/avahi-app
+BUILD_DEPENDS=	go:lang/go \
+		cups>=0:print/cups \
+		avahi-app>=0:net/avahi-app
 
 USES=		compiler pkgconfig
 USE_GITHUB=	yes

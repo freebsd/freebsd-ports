@@ -13,7 +13,7 @@ COMMENT=	Tool to centralize and visualize Exim logs with a web front end
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
+#RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask
 
 OPTIONS_DEFINE=	DOCS
 
@@ -28,11 +28,11 @@ WITH_SQL_BACKEND?=	mysql
 
 .if (${WITH_SQL_BACKEND} == "mysql")
 WITH_MYSQL=	yes
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 SERVER=		mysql
 .elif (${WITH_SQL_BACKEND} == "postgresql")
 WITH_POSTGRESQL=	yes
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 SERVER=		postgresql
 .else
 BROKEN=	You should specify sql backend using WITH_SQL_BACKEND

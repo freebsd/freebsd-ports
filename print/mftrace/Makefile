@@ -11,15 +11,15 @@ MASTER_SITES=	http://lilypond.org/download/sources/mftrace/ \
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
 
-RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils \
-		fontforge:${PORTSDIR}/print/fontforge
+RUN_DEPENDS=	t1asm:print/t1utils \
+		fontforge:print/fontforge
 
 .if defined(WITH_AUTOTRACE)
-BUILD_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
-RUN_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
+BUILD_DEPENDS+=	autotrace:graphics/autotrace
+RUN_DEPENDS+=	autotrace:graphics/autotrace
 .else
-BUILD_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
-RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
+BUILD_DEPENDS+=	potrace:graphics/potrace
+RUN_DEPENDS+=	potrace:graphics/potrace
 .endif
 
 # Python3 ready

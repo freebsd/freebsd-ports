@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	C library implementing the OAuth Core standard
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"

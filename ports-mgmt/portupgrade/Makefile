@@ -43,7 +43,7 @@ INSTALL_TARGET+=	install-doc
 .endif
 
 # For PKG_DBDRIVER={bdb_btree,bdb_hash}
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:databases/ruby-bdb
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg

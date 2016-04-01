@@ -36,12 +36,12 @@ OPTIONS_DEFAULT=	SPCRE OPENSSL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 MAKE_ARGS+=	USE_PCRE=1 USE_PCRE_JIT=1
 .endif
 
 .if ${PORT_OPTIONS:MSPCRE}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcre.a:devel/pcre
 MAKE_ARGS+=	USE_PCRE=1 USE_STATIC_PCRE=1 USE_PCRE_JIT=1
 .endif
 

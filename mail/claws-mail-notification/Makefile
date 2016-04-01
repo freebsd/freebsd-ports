@@ -6,8 +6,8 @@ PORTREVISION=	0
 
 COMMENT=	New mail notification plugin for Claws Mail
 
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
+		libnotify.so:devel/libnotify
 
 CLAWS_PLUGINS_BUILD=	notification
 

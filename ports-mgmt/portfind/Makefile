@@ -10,8 +10,8 @@ COMMENT=	Search the ports tree
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS=	sqlite3:databases/sqlite3
+RUN_DEPENDS=	sqlite3:databases/sqlite3
 
 USES=		perl5
 USE_PERL5=	build

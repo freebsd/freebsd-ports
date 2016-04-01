@@ -11,8 +11,8 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-contro
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Telepathy component to apps to abstract details of connection managers
 
-LIB_DEPENDS=	libtelepathy.so:${PORTSDIR}/net-im/libtelepathy \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libtelepathy.so:net-im/libtelepathy \
+		libdbus-glib-1.so:devel/dbus-glib
 
 USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 libxslt

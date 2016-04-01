@@ -11,10 +11,10 @@ COMMENT=	Meta-port for administrative tools to maintain ports
 USES=	metaport
 
 RUN_DEPENDS=	\
-		${LOCALBASE}/sbin/portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
-		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
-		${LOCALBASE}/sbin/pkg_cutleaves:${PORTSDIR}/ports-mgmt/pkg_cutleaves \
-		${LOCALBASE}/bin/pkg_tree:${PORTSDIR}/ports-mgmt/pkg_tree \
-		${LOCALBASE}/sbin/portdowngrade:${PORTSDIR}/ports-mgmt/portdowngrade
+		${LOCALBASE}/sbin/portupgrade:ports-mgmt/portupgrade \
+		${LOCALBASE}/bin/svn:devel/subversion \
+		${LOCALBASE}/sbin/pkg_cutleaves:ports-mgmt/pkg_cutleaves \
+		${LOCALBASE}/bin/pkg_tree:ports-mgmt/pkg_tree \
+		${LOCALBASE}/sbin/portdowngrade:ports-mgmt/portdowngrade
 
 .include <bsd.port.mk>

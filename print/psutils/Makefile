@@ -13,7 +13,7 @@ DISTNAME=	psutils-p17
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Utilities for manipulating PostScript documents
 
-LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libpaper.so:print/libpaper
 
 USES=		perl5
 USE_PERL5=	build

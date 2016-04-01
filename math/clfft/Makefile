@@ -12,9 +12,9 @@ COMMENT=	Software library containing FFT functions written in OpenCL
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
-LIB_DEPENDS=	libOpenCL.so:${PORTSDIR}/devel/ocl-icd
-RUN_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
+BUILD_DEPENDS=	opencl>=0:devel/opencl
+LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
+RUN_DEPENDS=	opencl>=0:devel/opencl
 
 BROKEN_FreeBSD_9=	clFFT is only supported on FreeBSD 10.1 and newer
 ONLY_FOR_ARCHS=	amd64

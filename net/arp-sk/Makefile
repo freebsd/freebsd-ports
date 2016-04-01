@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool designed to manipulate ARP tables of all kinds of equipment
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet=${LOCALBASE}

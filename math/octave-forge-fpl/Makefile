@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
 
-RUN_DEPENDS+=	dx:${PORTSDIR}/graphics/opendx
+RUN_DEPENDS+=	dx:graphics/opendx
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

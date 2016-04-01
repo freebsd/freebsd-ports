@@ -13,7 +13,7 @@ COMMENT=	Comprehensive newsfeeding and newsreading software package
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
+BUILD_DEPENDS=	xmake:devel/xmake
 
 PORTDOCS=	COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 

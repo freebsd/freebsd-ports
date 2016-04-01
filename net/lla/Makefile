@@ -12,9 +12,9 @@ EXTRACT_SUFX=	.pl
 MAINTAINER=	koj@ofug.net
 COMMENT=	Perl-based LDAP log statistics generator
 
-RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
+RUN_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
+		p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-Time-modules>=0:devel/p5-Time-modules
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

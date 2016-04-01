@@ -11,7 +11,7 @@ COMMENT=	R interface to NLopt
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libnlopt.so:${PORTSDIR}/math/nlopt
+LIB_DEPENDS=	libnlopt.so:math/nlopt
 
 USES=	cran:auto-plist pkgconfig
 

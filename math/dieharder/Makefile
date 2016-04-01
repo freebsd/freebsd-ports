@@ -12,7 +12,7 @@ COMMENT=	Random number generator testsuite
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 MAKE_JOBS_UNSAFE=	yes
 

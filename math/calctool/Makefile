@@ -34,7 +34,7 @@ BINARIES+=	tty_calctool
 
 .if ${PORT_OPTIONS:MXVIEW}
 BINARIES+=	xv_calctool
-LIB_DEPENDS+=	libxview.so:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS+=	libxview.so:x11-toolkits/xview
 .endif
 
 .if ${ARCH} == "sparc64"

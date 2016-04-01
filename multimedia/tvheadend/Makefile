@@ -11,12 +11,12 @@ COMMENT=	TV streaming server supporting DVB, IPTV and V4L
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	bash:shells/bash \
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		liburiparser.so:${PORTSDIR}/net/uriparser
-RUN_DEPENDS=	dtv-scan-tables>=0:${PORTSDIR}/multimedia/dtv-scan-tables
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		liburiparser.so:net/uriparser
+RUN_DEPENDS=	dtv-scan-tables>=0:multimedia/dtv-scan-tables
 
 USE_GITHUB=	yes
 GH_TAGNAME=	0499859
@@ -49,21 +49,21 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lcrypto -lz
 OPTIONS_DEFINE=	AVAHI DVBCSA HDHOMERUN TRANSCODING XMLTV
 OPTIONS_DEFAULT=DVBCSA HDHOMERUN
 
-AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
 DVBCSA_DESC=		Replace internal ffdecsa with dvbcsa
-DVBCSA_LIB_DEPENDS=	libdvbcsa.so:${PORTSDIR}/multimedia/libdvbcsa
+DVBCSA_LIB_DEPENDS=	libdvbcsa.so:multimedia/libdvbcsa
 DVBCSA_CONFIGURE_ENABLE=	dvbcsa
 
 HDHOMERUN_DESC=		Native support for HDHomeRun network tuners
-HDHOMERUN_LIB_DEPENDS=	libhdhomerun.so:${PORTSDIR}/multimedia/libhdhomerun
+HDHOMERUN_LIB_DEPENDS=	libhdhomerun.so:multimedia/libhdhomerun
 HDHOMERUN_CONFIGURE_ENABLE=	hdhomerun_client
 
 TRANSCODING_DESC=	Transcoding for mobile and web clients
-TRANSCODING_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+TRANSCODING_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 TRANSCODING_CONFIGURE_ENABLE=	libav
 
-XMLTV_RUN_DEPENDS=	p5-xmltv>=0:${PORTSDIR}/textproc/p5-xmltv
+XMLTV_RUN_DEPENDS=	p5-xmltv>=0:textproc/p5-xmltv
 
 .include <bsd.port.pre.mk>
 

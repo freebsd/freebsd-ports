@@ -5,7 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python module for miniupnpc
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/miniupnpc:build
+BUILD_DEPENDS=	${NONEXISTENT}:net/miniupnpc:build
 
 MASTERDIR=	${.CURDIR}/../miniupnpc
 

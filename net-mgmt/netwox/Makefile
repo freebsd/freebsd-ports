@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}.tgz ${DISTNAME:S/src/doc_html/}.tgz
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Netwox a network testing toolbox
 
-BUILD_DEPENDS=	netwib-config:${PORTSDIR}/net/netwib
+BUILD_DEPENDS=	netwib-config:net/netwib
 
 OPTIONS_DEFINE=	DOCS
 

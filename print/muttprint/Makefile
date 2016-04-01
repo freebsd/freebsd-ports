@@ -12,12 +12,12 @@ COMMENT=	Utility to print mail for most any mail client
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	docbook2pdf:${PORTSDIR}/textproc/docbook-utils \
-		docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml
-RUN_DEPENDS=	psnup:${PORTSDIR}/print/psutils \
-		uncompface:${PORTSDIR}/mail/faces \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
+BUILD_DEPENDS=	docbook2pdf:textproc/docbook-utils \
+		docbook-sgml>0:textproc/docbook-sgml
+RUN_DEPENDS=	psnup:print/psutils \
+		uncompface:mail/faces \
+		p5-TimeDate>=0:devel/p5-TimeDate \
+		p5-Text-Iconv>=0:converters/p5-Text-Iconv
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake perl5
@@ -30,7 +30,7 @@ OPTIONS_DEFINE=		CUPS X11
 OPTIONS_DEFAULT=	X11
 X11_DESC=		graphics/ImageMagick[-nox11] dependency
 
-CUPS_RUN_DEPENDS=	lpr-cups:${PORTSDIR}/print/cups
+CUPS_RUN_DEPENDS=	lpr-cups:print/cups
 
 .if !defined(PAPERSIZE)
 PAPERSIZE=	letter
@@ -45,9 +45,9 @@ PRINT_COMMAND=lpr -P$$PRINTER
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:graphics/ImageMagick
 .else
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
+RUN_DEPENDS+=	convert:graphics/ImageMagick-nox11
 .endif
 
 pre-everything::

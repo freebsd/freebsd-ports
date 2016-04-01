@@ -10,9 +10,9 @@ MASTER_SITES=	http://code.100allora.it/releases/pdfcube/
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	OpenGL presentation viewer on a spinning cube
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
-		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
-		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libpoppler-glib.so:graphics/poppler-glib \
+		libboost_program_options.so:devel/boost-libs
 
 USES=		pkgconfig
 USE_GL=		glut

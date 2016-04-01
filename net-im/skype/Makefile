@@ -35,14 +35,14 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA_GL}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 USE_LINUX_APPS+=xorglibs
 .else
 USE_LINUX_APPS+=dri
 .endif
 
 .if ${PORT_OPTIONS:MVIDEO}
-RUN_DEPENDS+=	webcamd:${PORTSDIR}/multimedia/webcamd
+RUN_DEPENDS+=	webcamd:multimedia/webcamd
 USE_LINUX_APPS+=libv4l
 SUB_LIST+=	VIDEO="LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so "
 .else

@@ -12,8 +12,8 @@ COMMENT=	Maintain DNS zones using an LDAP directory
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-perl-ldap>=0:net/p5-perl-ldap
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bklang

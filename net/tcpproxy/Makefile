@@ -13,7 +13,7 @@ COMMENT=	Simple TCP connection proxy for IPv4 and IPv6
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BUILD_DEPENDS=	ragel:${PORTSDIR}/devel/ragel
+BUILD_DEPENDS=	ragel:devel/ragel
 
 USES=		gmake
 HAS_CONFIGURE=	yes

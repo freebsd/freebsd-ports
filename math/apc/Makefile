@@ -12,7 +12,7 @@ COMMENT=	Xforms based Auto Payment Calculator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
 USE_XORG=	x11 xpm
 PLIST_FILES=	bin/apc man/man1/apc.1.gz

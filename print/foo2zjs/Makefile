@@ -15,10 +15,10 @@ COMMENT=	Driver for printers that use the ZjStream wire protocol
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
-RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foomatic-db \
-		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
-		gsed:${PORTSDIR}/textproc/gsed
+LIB_DEPENDS=	libcups.so:print/cups
+RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:print/foomatic-db \
+		foomatic-rip:print/foomatic-filters \
+		gsed:textproc/gsed
 
 PROJECTHOST=	bsdistfiles
 USES=		ghostscript gmake shebangfix

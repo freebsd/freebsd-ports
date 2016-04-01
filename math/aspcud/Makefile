@@ -12,11 +12,11 @@ COMMENT=	Advanced solver for package dependencies
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	gringo:${PORTSDIR}/math/gringo \
-		clasp:${PORTSDIR}/math/clasp \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	re2c:devel/re2c
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+RUN_DEPENDS=	gringo:math/gringo \
+		clasp:math/clasp \
+		bash:shells/bash
 
 USES=	compiler:c++11-lang cmake:outsource python:run
 

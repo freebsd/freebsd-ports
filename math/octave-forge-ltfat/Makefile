@@ -11,9 +11,9 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libportaudio.so:${PORTSDIR}/audio/portaudio \
-		libcblas.so:${PORTSDIR}/math/cblas
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libportaudio.so:audio/portaudio \
+		libcblas.so:math/cblas
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.

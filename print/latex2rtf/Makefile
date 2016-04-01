@@ -17,7 +17,7 @@ OPTIONS_DEFINE= LATEX2PNG
 LATEX2PNG_DESC= Install latex2png utility
 OPTIONS_SUB=    yes
 
-LATEX2PNG_RUN_DEPENDS=  convert:${PORTSDIR}/graphics/ImageMagick
+LATEX2PNG_RUN_DEPENDS=  convert:graphics/ImageMagick
 
 MAKE_ARGS+=	MANDIR=${PREFIX}/man/man1 CFGDIR=${DATADIR}/cfg \
 		BINDIR=${PREFIX}/bin

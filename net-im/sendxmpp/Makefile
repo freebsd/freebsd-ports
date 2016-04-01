@@ -11,10 +11,10 @@ COMMENT=	Perl-script to send xmpp (jabber) messages
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Net-XMPP>=0:${PORTSDIR}/net-im/p5-Net-XMPP
-RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
-		p5-Net-XMPP>=0:${PORTSDIR}/net-im/p5-Net-XMPP
+BUILD_DEPENDS=	p5-Net-XMPP>=0:net-im/p5-Net-XMPP
+RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
+		p5-Getopt-Long>=0:devel/p5-Getopt-Long \
+		p5-Net-XMPP>=0:net-im/p5-Net-XMPP
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lhost

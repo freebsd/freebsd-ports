@@ -12,10 +12,10 @@ COMMENT=	Companion to Applied Regression for R
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-pbkrtest>=0.3.2:${PORTSDIR}/math/R-cran-pbkrtest \
-		R-cran-quantreg>0:${PORTSDIR}/math/R-cran-quantreg
-TEST_DEPENDS=	R-cran-lmtest>=0.9.26:${PORTSDIR}/finance/R-cran-lmtest \
-		R-cran-sandwich>0:${PORTSDIR}/math/R-cran-sandwich
+RUN_DEPENDS=	R-cran-pbkrtest>=0.3.2:math/R-cran-pbkrtest \
+		R-cran-quantreg>0:math/R-cran-quantreg
+TEST_DEPENDS=	R-cran-lmtest>=0.9.26:finance/R-cran-lmtest \
+		R-cran-sandwich>0:math/R-cran-sandwich
 
 USES=	cran
 

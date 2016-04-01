@@ -71,8 +71,8 @@ do-install:
 
 .if defined(MAINTAINER_MODE)
 
-BUILD_DEPENDS +=	${LOCALBASE}/lib/libblas.so.2:${PORTSDIR}/math/blas \
-			${LOCALBASE}/lib/liblapack.so.4:${PORTSDIR}/math/lapack
+BUILD_DEPENDS +=	${LOCALBASE}/lib/libblas.so.2:math/blas \
+			${LOCALBASE}/lib/liblapack.so.4:math/lapack
 
 BLAS?=		-L${LOCALBASE}/lib -lblas
 LAPACK?=	-L${LOCALBASE}/lib -llapack

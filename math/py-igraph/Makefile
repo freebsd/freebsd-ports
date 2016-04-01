@@ -11,7 +11,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High performance graph data structures and algorithms
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libigraph.so:${PORTSDIR}/math/igraph
+BUILD_DEPENDS=	${LOCALBASE}/lib/libigraph.so:math/igraph
 
 USES=		python
 USE_PYTHON=	distutils autoplist

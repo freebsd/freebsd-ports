@@ -14,40 +14,40 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
-	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
-	p5-Class-Singleton>=0:${PORTSDIR}/devel/p5-Class-Singleton	\
-	p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive	\
-	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy	\
-	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl	\
-	p5-Term-ProgressBar>=0:${PORTSDIR}/devel/p5-Term-ProgressBar	\
-	p5-MIME-EncWords>=0:${PORTSDIR}/mail/p5-MIME-EncWords	\
-	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools	\
-	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools	\
-	p5-Msgcat>=0:${PORTSDIR}/misc/p5-Locale-Msgcat	\
-	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap	\
-	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask	\
-	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL	\
-	p5-Crypt-CipherSaber>=0:${PORTSDIR}/security/p5-Crypt-CipherSaber	\
-	p5-HTML-Format>=0:${PORTSDIR}/textproc/p5-HTML-Format	\
-	p5-Unicode-LineBreak>=0:${PORTSDIR}/textproc/p5-Unicode-LineBreak	\
-	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML	\
-	p5-HTML-StripScripts-Parser>=0:${PORTSDIR}/www/p5-HTML-StripScripts-Parser	\
-	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree	\
-	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit	\
-	p5-MIME-Lite-HTML>=0:${PORTSDIR}/mail/p5-MIME-Lite-HTML	\
-	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS	\
-	p5-DateTime-Format-Mail>=0:${PORTSDIR}/devel/p5-DateTime-Format-Mail	\
-	p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone	\
-	p5-Email-Simple>=0:${PORTSDIR}/mail/p5-Email-Simple	\
-	p5-File-NFSLock>=0:${PORTSDIR}/devel/p5-File-NFSLock	\
-	p5-MIME-Charset>=0:${PORTSDIR}/mail/p5-MIME-Charset	\
-	p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR	\
-	p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable	\
-	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes	\
-	p5-Crypt-SMIME>=0:${PORTSDIR}/security/p5-Crypt-SMIME	\
-	p5-CGI>=0:${PORTSDIR}/www/p5-CGI \
-	p5-Data-Password>=0:${PORTSDIR}/security/p5-Data-Password
+	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+	p5-DBI>=0:databases/p5-DBI	\
+	p5-Class-Singleton>=0:devel/p5-Class-Singleton	\
+	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive	\
+	p5-IO-stringy>=0:devel/p5-IO-stringy	\
+	p5-Locale-libintl>=0:devel/p5-Locale-libintl	\
+	p5-Term-ProgressBar>=0:devel/p5-Term-ProgressBar	\
+	p5-MIME-EncWords>=0:mail/p5-MIME-EncWords	\
+	p5-MIME-Tools>=0:mail/p5-MIME-Tools	\
+	p5-Mail-Tools>=0:mail/p5-Mail-Tools	\
+	p5-Msgcat>=0:misc/p5-Locale-Msgcat	\
+	p5-perl-ldap>=0:net/p5-perl-ldap	\
+	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask	\
+	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL	\
+	p5-Crypt-CipherSaber>=0:security/p5-Crypt-CipherSaber	\
+	p5-HTML-Format>=0:textproc/p5-HTML-Format	\
+	p5-Unicode-LineBreak>=0:textproc/p5-Unicode-LineBreak	\
+	p5-XML-LibXML>=0:textproc/p5-XML-LibXML	\
+	p5-HTML-StripScripts-Parser>=0:www/p5-HTML-StripScripts-Parser	\
+	p5-HTML-Tree>=0:www/p5-HTML-Tree	\
+	p5-Template-Toolkit>=0:www/p5-Template-Toolkit	\
+	p5-MIME-Lite-HTML>=0:mail/p5-MIME-Lite-HTML	\
+	p5-Net-DNS>=0:dns/p5-Net-DNS	\
+	p5-DateTime-Format-Mail>=0:devel/p5-DateTime-Format-Mail	\
+	p5-DateTime-TimeZone>=0:devel/p5-DateTime-TimeZone	\
+	p5-Email-Simple>=0:mail/p5-Email-Simple	\
+	p5-File-NFSLock>=0:devel/p5-File-NFSLock	\
+	p5-MIME-Charset>=0:mail/p5-MIME-Charset	\
+	p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR	\
+	p5-Proc-ProcessTable>=0:devel/p5-Proc-ProcessTable	\
+	p5-Time-HiRes>=0:devel/p5-Time-HiRes	\
+	p5-Crypt-SMIME>=0:security/p5-Crypt-SMIME	\
+	p5-CGI>=0:www/p5-CGI \
+	p5-Data-Password>=0:security/p5-Data-Password
 
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
@@ -109,22 +109,22 @@ OPTIONS_SET+=	${option}
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-FASTCGI_RUN_DEPENDS=	p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
+FASTCGI_RUN_DEPENDS=	p5-FCGI>=0:www/p5-FCGI
 APACHE_IMPLIES=	FASTCGI
 APACHE_USE=	APACHE_RUN=22+
-APACHE_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+APACHE_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:www/mod_fastcgi
 
-ORACLE_RUN_DEPENDS=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
+ORACLE_RUN_DEPENDS=	p5-DBD-Oracle>=0:databases/p5-DBD-Oracle
 ORACLE_VARS=	DB_TYPE=oracle
 PGSQL_SUB_LIST=	REQ_PGSQL=postgresql
 PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
-PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 PGSQL_VARS=	DB_TYPE=Pg
-SYBASE_RUN_DEPENDS=	p5-DBD-Sybase>=0:${PORTSDIR}/databases/p5-DBD-Sybase
+SYBASE_RUN_DEPENDS=	p5-DBD-Sybase>=0:databases/p5-DBD-Sybase
 SYBASE_VARS=	DB_TYPE=sybase
 MYSQL_SUB_LIST=	REQ_MYSQL=mysql
 MYSQL_SUB_LIST_OFF=	REQ_MYSQL=""
-MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 MYSQL_VARS=	DB_TYPE=mysql
 
 post-patch:

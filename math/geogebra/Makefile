@@ -16,7 +16,7 @@ LICENSE_NAME=	GeoGebra Non-Commercial License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USE_LINUX?=	c6
 

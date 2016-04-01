@@ -15,8 +15,8 @@ LICENSE_NAME=	Aladdin Free Public Licence
 LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-RUN_DEPENDS+=	epstool:${PORTSDIR}/graphics/epstool \
-		pstotext:${PORTSDIR}/print/pstotext
+RUN_DEPENDS+=	epstool:graphics/epstool \
+		pstotext:print/pstotext
 
 USES=		cpe ghostscript
 USE_GNOME=	gtk12

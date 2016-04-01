@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Tiny RML2PDF easily creates PDF documents
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:${PORTSDIR}/print/py-reportlab1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:print/py-reportlab1
 
 NO_BUILD=	yes
 NO_ARCH=	yes

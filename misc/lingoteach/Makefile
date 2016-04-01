@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-ui-${PORTVERSION}.tar.gz:src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language teaching program with sound
 
-LIB_DEPENDS=	liblingoteach.so:${PORTSDIR}/textproc/liblingoteach
+LIB_DEPENDS=	liblingoteach.so:textproc/liblingoteach
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-ui-${PORTVERSION}
 

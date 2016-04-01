@@ -12,12 +12,12 @@ COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL-LICENSE.TXT
 
-RUN_DEPENDS+=	p5-DBI>=1.634:${PORTSDIR}/databases/p5-DBI \
-		p5-Email-Valid>=0.12:${PORTSDIR}/mail/p5-Email-Valid \
-		p5-Log-Dispatch>=1.79:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-Log-Log4perl>=0.26:${PORTSDIR}/devel/p5-Log-Log4perl \
-		p5-Mail-Sender>=0.7.04:${PORTSDIR}/mail/p5-Mail-Sender \
-		p5-MIME-EncWords>=0.040:${PORTSDIR}/mail/p5-MIME-EncWords
+RUN_DEPENDS+=	p5-DBI>=1.634:databases/p5-DBI \
+		p5-Email-Valid>=0.12:mail/p5-Email-Valid \
+		p5-Log-Dispatch>=1.79:devel/p5-Log-Dispatch \
+		p5-Log-Log4perl>=0.26:devel/p5-Log-Log4perl \
+		p5-Mail-Sender>=0.7.04:mail/p5-Mail-Sender \
+		p5-MIME-EncWords>=0.040:mail/p5-MIME-EncWords
 
 USES=		cpe perl5 shebangfix
 CPE_VENDOR=	postfix_admin_project
