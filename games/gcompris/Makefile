@@ -31,7 +31,7 @@ USE_GNOME=	intlhack gnomeprefix gtk20 pygtk2 libxml2 librsvg2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    	${WRKSRC}/src/gcompris/gcompris.c
+		${WRKSRC}/src/gcompris/gcompris.c
 	@${FIND} ${WRKSRC} -type f -name "*.bak" -delete
 
 post-install:

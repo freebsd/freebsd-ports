@@ -13,7 +13,7 @@ COMMENT=	Utility library to make XKB stuff easier
 
 BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
-    		iso-codes>=0:${PORTSDIR}/misc/iso-codes
+		iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 USE_XORG=	x11 xkbfile
 USES=		gmake libtool pathfix pkgconfig tar:xz

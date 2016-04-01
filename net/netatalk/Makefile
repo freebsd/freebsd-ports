@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=	--disable-sendfile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
-	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
+		s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 

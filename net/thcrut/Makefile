@@ -13,6 +13,6 @@ COMMENT=	Local network discovery tool
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--with-libnet=${LOCALBASE} \
-		 	--sysconfdir=${DATADIR}
+			--sysconfdir=${DATADIR}
 
 .include <bsd.port.mk>

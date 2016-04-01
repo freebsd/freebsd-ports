@@ -59,7 +59,7 @@ USE_RC_SUBR=	tpop3d
 DEFAULT_CONFIG=	${PREFIX}/etc/tpop3d.conf.sample
 
 PORTDOCS=	CHANGES CREDITS FAQ HACKING INSTALL PORTABILITY \
-       		README README.POP-before-SMTP README.auth_mysql TODO
+		README README.POP-before-SMTP README.auth_mysql TODO
 
 post-patch:
 	@${REINPLACE_CMD} '/^CFLAGS/ s, -g -O2,,' \

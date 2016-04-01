@@ -36,7 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|font\.tga|${DATADIR}/font.tga|; \
 		s|language\.txt|${DATADIR}/language.txt|; \
 		s|features\.txt|${DATADIR}/features.txt|' \
-	       	${BUILD_WRKSRC}/game.cpp
+		${BUILD_WRKSRC}/game.cpp
 	@${REINPLACE_CMD} -e 's|"languages"|"${DATADIR}/languages"|' \
 		${WRKSRC}/../minorGems/util/TranslationManager.cpp
 

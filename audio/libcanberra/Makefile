@@ -62,6 +62,6 @@ PLIST_SUB+=	GSTREAMER="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

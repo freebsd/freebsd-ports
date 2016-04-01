@@ -21,7 +21,7 @@ PLIST_FILES=	${SPHINXDIR}/ext/numfig.py ${SPHINXDIR}/ext/numfig.pyc
 
 do-install:
 	cd ${WRKDIR}/sphinx_numfig-r13 && \
-       	${MKDIR} ${STAGEDIR}${SPHINXDIR}/ext && \
-      	${PYTHON_CMD} setup.py install ${STAGEDIR}${SPHINXDIR} ${SPHINXDIR}/ext
+		${MKDIR} ${STAGEDIR}${SPHINXDIR}/ext && \
+		${PYTHON_CMD} setup.py install ${STAGEDIR}${SPHINXDIR} ${SPHINXDIR}/ext
 
 .include <bsd.port.mk>

@@ -134,7 +134,7 @@ USE_APACHE_RUN=	22+
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.pm" | \
 		${XARGS} ${REINPLACE_CMD} -i '' \
-      			-e 's|Digest::SHA::PurePerl|Digest::SHA|g'
+			-e 's|Digest::SHA::PurePerl|Digest::SHA|g'
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${RM} -rf ${WRKSRC}/Kernel/cpan-lib/ \
 		${CLEAN_FILES:S!^!${WRKSRC}/!}

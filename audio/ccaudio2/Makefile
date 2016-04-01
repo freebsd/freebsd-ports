@@ -13,7 +13,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libccgnu2.so:${PORTSDIR}/devel/commoncpp \
-    		libucommon.so:${PORTSDIR}/devel/ucommon \
+		libucommon.so:${PORTSDIR}/devel/ucommon \
 		libgsm.so:${PORTSDIR}/audio/gsm \
 		libspeex.so:${PORTSDIR}/audio/speex
 

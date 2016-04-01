@@ -197,7 +197,7 @@ post-patch:
 	start=$$(expr $$(${SED} -n '/^#	type	*"oss"/=' \
 		${WRKSRC}/doc/mpdconf.example) - 1); \
 	 finish=$$(for n in $$(${JOT} 10 $$start); do \
-	 	     [ "$$(${SED} -n $${n}p ${WRKSRC}/doc/mpdconf.example)" = \
+		     [ "$$(${SED} -n $${n}p ${WRKSRC}/doc/mpdconf.example)" = \
 				"#}" ] && echo $$n || true; done); \
 	 ${REINPLACE_CMD} -e "$${start},$${finish}s,^#,," \
 		${WRKSRC}/doc/mpdconf.example

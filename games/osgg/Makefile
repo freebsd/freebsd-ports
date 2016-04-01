@@ -31,7 +31,7 @@ do-build:
 	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} `${SDL_CONFIG} --libs --cflags` \
 		-lGL -lSDL_image -lSDL_ttf -lSDL_mixer -o ${PORTNAME} \
 		-DDATADIR="\"${DATADIR}/\"" \
-	       	main.cpp text.cpp sound.cpp
+		main.cpp text.cpp sound.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

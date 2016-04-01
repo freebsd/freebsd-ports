@@ -33,7 +33,7 @@ post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|demos/|${DATADIR}/&|g; s|graphics/|${DATADIR}/&|g; \
 		s|maps/|${DATADIR}/&|g; s|sound/|${DATADIR}/&|g; \
-	       	s|"maps"|"${DATADIR}/maps"|g'
+		s|"maps"|"${DATADIR}/maps"|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

@@ -30,11 +30,11 @@ MANPAGES=	avahi-bookmarks.1 avahi-discover.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@pkglibdir@|${DATADIR}|' \
-	    	${WRKSRC}/avahi-python/avahi/ServiceTypeDatabase.py.in
+		${WRKSRC}/avahi-python/avahi/ServiceTypeDatabase.py.in
 
 pre-build:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-	    	Makefile ${MAKE_ARGS} clean
+		Makefile ${MAKE_ARGS} clean
 
 post-build:
 	@cd ${WRKSRC}/service-type-database && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \

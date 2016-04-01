@@ -19,7 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
-	    	's|-DG.*_DISABLE_DEPRECATED||g' -e 's|-Werror||g'
+		's|-DG.*_DISABLE_DEPRECATED||g' -e 's|-Werror||g'
 	@${REINPLACE_CMD} -e 's|glib/garray.h|glib.h|g' \
 		-e 's|glib/gmessages.h|glib.h|g' \
 		-e 's|glib/gtypes.h|glib.h|g' \

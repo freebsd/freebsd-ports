@@ -15,7 +15,7 @@ COMMENT=	The Visualization Toolkit
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-    		libpng.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
@@ -167,20 +167,20 @@ CMAKE_ARGS+=	-DQT_DESIGNER_PLUGIN:BOOL=OFF
 CATEGORIES+=	java
 USE_JAVA=	yes
 CMAKE_ARGS+=	-DVTK_WRAP_JAVA:BOOL=ON \
-    		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
+		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
 		-DJAVA_AWT_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \
 		-DJAVA_JVM_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ATCH}/libjava.so
 PLIST_SUB+=	JAVA=""
 .else
 CMAKE_ARGS+=	-DVTK_WRAP_JAVA:BOOL=OFF \
-    		-DModule_vtkWrappingJava:BOOL=OFF
+		-DModule_vtkWrappingJava:BOOL=OFF
 PLIST_SUB+=	JAVA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=		python
 CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=ON \
-    		-DVTK_INSTALL_PYTHON_MODULE_DIR:STRING=${PYTHONPREFIX_SITELIBDIR} \
+		-DVTK_INSTALL_PYTHON_MODULE_DIR:STRING=${PYTHONPREFIX_SITELIBDIR} \
 		-DModule_vtkRenderingMatplotlib:BOOL=ON \
 		-DModule_vtkPythonInterpreter:BOOL=ON
 PLIST_SUB+=	PYTHON=""
@@ -193,14 +193,14 @@ PLIST_SUB+=	PYTHON="@comment "
 .if ${PORT_OPTIONS:MTCLTK}
 USES+=		tk
 CMAKE_ARGS+=	-DVTK_WRAP_TCL:BOOL=ON \
-    		-DVTK_Group_Tk:BOOL=ON \
+		-DVTK_Group_Tk:BOOL=ON \
 		-DTCL_INCLUDE_PATH:PATH=${TCL_INCLUDEDIR} \
 		-DTK_INCLUDE_PATH:PATH=${TK_INCLUDEDIR}  \
 		-DVTK_INSTALL_TCL_DIR=lib/vtk-${VTK_SHORT_VER}
 PLIST_SUB+=	TCLTK=""
 .else
 CMAKE_ARGS+=	-DVTK_WRAP_TCL:BOOL=OFF \
-    		-DVTK_Group_Tk:BOOL=OFF
+		-DVTK_Group_Tk:BOOL=OFF
 PLIST_SUB+=	TCLTK="@comment "
 .endif
 

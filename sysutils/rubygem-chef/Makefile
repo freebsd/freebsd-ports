@@ -45,7 +45,7 @@ post-install:
 	knife-download.1 knife-edit.1 knife-environment.1 knife-exec.1 knife-index-rebuild.1 \
 	knife-list.1 knife-node.1 knife-raw.1 knife-recipe-list.1 knife-role.1 knife-search.1 \
 	knife-serve.1 knife-show.1 knife-ssh.1 knife-ssl-check.1 knife-ssl-fetch.1 knife-status.1 \
-       	knife-tag.1 knife-upload.1 knife-user.1 knife-xargs.1 knife.1
+	knife-tag.1 knife-upload.1 knife-user.1 knife-xargs.1 knife.1
 	@cd ${WRKSRC}/distro/common/man/man1 && ${INSTALL_MAN} ${M1} ${STAGEDIR}${MANPREFIX}/man/man1/
 .endfor
 .for M8 in chef-client.8 chef-solo.8

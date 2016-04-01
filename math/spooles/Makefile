@@ -38,7 +38,7 @@ CONFLICTS=	spooles-mpich-2*
 
 .if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} AllInOne.ps.gz Eigen.ps.gz \
-	 	Install.ps.gz LinSol.ps.gz Ordering.ps.gz \
+		Install.ps.gz LinSol.ps.gz Ordering.ps.gz \
 		PP99.ps.gz ReferenceManual.ps.gz
 .endif
 

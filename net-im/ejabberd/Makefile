@@ -82,7 +82,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-	 	${WRKSRC}/ejabberdctl.template
+		${WRKSRC}/ejabberdctl.template
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}

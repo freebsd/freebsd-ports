@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=		DOXYGEN
 
 DOCYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-   			dot:${PORTSDIR}/graphics/graphviz
+			dot:${PORTSDIR}/graphics/graphviz
 DOCYGEN_ALL_TARGET=	all docs
 
 post-patch:

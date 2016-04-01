@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-IO-Async>=0:${PORTSDIR}/devel/p5-IO-Async \
 		p5-Net-Async-FastCGI>=0:${PORTSDIR}/www/p5-Net-Async-FastCGI \
-  		p5-Net-FastCGI>=0:${PORTSDIR}/www/p5-Net-FastCGI
+		p5-Net-FastCGI>=0:${PORTSDIR}/www/p5-Net-FastCGI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-HexString>=0:${PORTSDIR}/devel/p5-Test-HexString \

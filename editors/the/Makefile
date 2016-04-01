@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--with-rexx=regina
 
 post-extract:
 	${REINPLACE_CMD} -e 's|(datadir)/THE|(datadir)/the|g' \
-		 	-e 's|/share/THE|/share/the|g'	 ${WRKSRC}/Makefile.in
+			-e 's|/share/THE|/share/the|g'	 ${WRKSRC}/Makefile.in
 
 pre-install:
 	${MKDIR}				${STAGEDIR}${DOCSDIR}

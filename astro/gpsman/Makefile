@@ -25,7 +25,7 @@ DOCS_SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} "s|/dev/ttyS0|${GPSMAN_DEFAULT_PORT}|" \
- 		${WRKSRC}/util/exerciser.tcl \
+		${WRKSRC}/util/exerciser.tcl \
 		${WRKSRC}/manual/html/info/l_realtime.doc.txt \
 		${WRKSRC}/gpsman.tcl
 	@${REINPLACE_CMD} -e "s:%%WISH%%:${WISH}:; s:%%GPSMANDIR%%:${GPSMANDIR}:g" ${WRKSRC}/gpsman.tcl

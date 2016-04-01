@@ -50,6 +50,6 @@ PLIST_SUB=	FULL_VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	    	${WRKSRC}/libbrasero-burn/burn-process.c
+		${WRKSRC}/libbrasero-burn/burn-process.c
 
 .include <bsd.port.mk>

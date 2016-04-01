@@ -82,6 +82,6 @@ CXX=    ${LOCALBASE}/bin/clang++34
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

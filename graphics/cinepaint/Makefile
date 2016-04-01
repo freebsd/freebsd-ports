@@ -18,7 +18,7 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-    		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 OPTIONS_DEFINE=	OYRANOS PRINT
 OYRANOS_DESC=	ICC profile support via Oyranos

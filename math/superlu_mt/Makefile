@@ -97,7 +97,7 @@ do-build:
 	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${CP} {} ${WRKDIR}/tmp_shared \;
 	@cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
 	${RM} -f $${i}.so.* $${i}.so ; \
-       	${FC} ${CFLAGS} ${FPIC} ${LDFLAGS} -shared -o $${i}.so.${SVERSION} \
+	${FC} ${CFLAGS} ${FPIC} ${LDFLAGS} -shared -o $${i}.so.${SVERSION} \
 	-Wl,-soname,$${i}.so.${SVERSION} -Wl,--allow-multiple-definition \
 	-Wl,--whole-archive $${i}.a -Wl,--no-whole-archive -Wl,--as-needed; \
 		${LN} -s $${i}.so.${SVERSION} $${i}.so ;\

@@ -22,8 +22,8 @@ ICINGADIR?=	/var/spool/icinga
 
 CONFIGURE_ARGS+=	--destdir ${STAGEDIR} \
 			--icli-object-file=${ICINGADIR}/objects.cache \
-                	--icli-status-file=${ICINGADIR}/status.dat \
-                	--icli-command-file=${ICINGADIR}/icinga.cmd
+			--icli-status-file=${ICINGADIR}/status.dat \
+			--icli-command-file=${ICINGADIR}/icinga.cmd
 
 USES=		perl5
 USE_PERL5=	modbuild

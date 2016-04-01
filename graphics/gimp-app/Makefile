@@ -121,7 +121,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-u /-Wl,-u,/' \
 		${WRKSRC}/app/Makefile.in
 	@${REINPLACE_CMD} -e 's|"libpng"|"libpng15"|' \
-	    	-e 's|x86_64|amd64|g' \
+		-e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>

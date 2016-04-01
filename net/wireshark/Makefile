@@ -45,12 +45,12 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
-    			${x:tu}_MAN="@comment $x not installed "
+			${x:tu}_MAN="@comment $x not installed "
 CONFIGURE_ARGS+=	--enable-$x=no
 OPTIONS_EXCLUDE+=	RTP SNMP GEOIP LUA ADNS CARES
 .else
 PLIST_SUB+=		${x:tu}=bin/$x \
-    			${x:tu}_MAN=""
+			${x:tu}_MAN=""
 .endif
 .endfor
 

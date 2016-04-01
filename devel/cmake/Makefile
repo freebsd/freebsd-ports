@@ -56,7 +56,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/opt/kde4,${KDE4_PREFIX},g' \
 		${WRKSRC}/Modules/FindKDE4.cmake
 	@${REINPLACE_CMD} -e 's,/usr/include,${LOCALBASE}/include,' \
-	   	${WRKSRC}/Modules/FindDCMTK.cmake
+		${WRKSRC}/Modules/FindDCMTK.cmake
 	@${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
 
 # cmake-gui(1) is installed by devel/cmake-gui. Remove the man page's source to

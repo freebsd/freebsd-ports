@@ -43,7 +43,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/t
 	${PERL} -e 'for (${TESTS}) {$$f=sprintf "t%04d.t", $$_;\
 		    $$x= "${INSTALL_DATA} ${WRKSRC}/t/$$f \
-		    	    ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/t";\
+			    ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/t";\
 		    printf "$$x\n"; system $$x;}'
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/Test/Cmd
 	${INSTALL_DATA} ${WRKSRC}/Test/Cmd.pm \

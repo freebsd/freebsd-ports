@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%CONFPATH%%|${PREFIX}/etc/aprsd/|' \
- 	    -e 's|%%LOGPATH%%|/var/log/aprsd/|' \
+	    -e 's|%%LOGPATH%%|/var/log/aprsd/|' \
 		    ${WRKSRC}/src/aprsd.cpp
 	${REINPLACE_CMD} -e 's|%%LOGPATH%%|/var/log/aprsd/|' \
 	    ${WRKSRC}/src/utils.cpp

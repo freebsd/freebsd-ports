@@ -232,11 +232,11 @@ do-install:
 	cd ${STAGEDIR}${PREFIX} ;					\
 	    ${FIND} ${LEOFS_BASEDIR:S/${PREFIX}\///}			\
 		${LEOFS_LIBXDIR:S/${PREFIX}\///} -type f -o -type l	\
-	    	| ${SORT} > ${WRKDIR}/PLIST.leofs
+		| ${SORT} > ${WRKDIR}/PLIST.leofs
 	cd ${STAGEDIR}${PREFIX} ; 					\
 	    ${FIND} ${LEOFS_BASEDIR:S/${PREFIX}\///}			\
 		${LEOFS_LIBXDIR:S/${PREFIX}\///} -type d -empty		\
-	    	| ${SORT} -r | ${SED} -e 's/^/@dir /' 			\
+		| ${SORT} -r | ${SED} -e 's/^/@dir /' 			\
 		>> ${WRKDIR}/PLIST.leofs
 	${ECHO_CMD} "r ${TMPPLIST}"			>  ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.leofs"		>> ${WRKDIR}/ex.script

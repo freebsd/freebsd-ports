@@ -104,8 +104,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|root:root|root:wheel|g' \
 		${WRKSRC}/data/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-	    	-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	    	${WRKSRC}/daemon/gdm-session-worker.c
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/daemon/gdm-session-worker.c
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		-e 's|/usr/bin/X|${LOCALBASE}/bin/X|g' \
 		-e 's|/usr/bin/Xorg|${LOCALBASE}/bin/Xorg|g' \

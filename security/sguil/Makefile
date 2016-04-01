@@ -78,8 +78,8 @@ GROUPS=		sguil
 
 PORTDOCS=	${COMMON_DOCS:S|^doc/||}
 COMMON_DOCS=	doc/CHANGES doc/FAQ doc/INSTALL doc/INSTALL.openbsd \
-	       	doc/OPENSSL.README doc/TODO doc/UPGRADE doc/USAGE \
-	       	doc/sguildb.dia
+		doc/OPENSSL.README doc/TODO doc/UPGRADE doc/USAGE \
+		doc/sguildb.dia
 
 .include <bsd.port.options.mk>
 

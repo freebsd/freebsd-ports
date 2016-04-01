@@ -108,10 +108,10 @@ CONFIGURE_ARGS+=--disable-contact-maps
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^plugins_standard_always/s/audio-inline//' \
-	    	-e 's|-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi|${KRB5_LIB}|g' \
+		-e 's|-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi|${KRB5_LIB}|g' \
 		-e 's|-Wl,--no-undefined||g' \
 		-e 's|-Wmissing-include-dirs||g' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 		${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
 		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c

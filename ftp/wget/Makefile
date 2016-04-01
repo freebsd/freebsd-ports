@@ -65,7 +65,7 @@ INFO=		wget
 # eliminate gmakism
 post-patch:
 	${REINPLACE_CMD} -e 's,$$<,$$(srcdir)/wget.texi,' \
-	    		 -e 's,WGETRC = $$(sysconfdir)/wgetrc,&.sample,' \
+			 -e 's,WGETRC = $$(sysconfdir)/wgetrc,&.sample,' \
 		${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e 's,/usr/local/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
 			 -e 's,@file{},@file{${PREFIX}},' \

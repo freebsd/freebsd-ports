@@ -103,14 +103,14 @@ avahi-post-patch:
 	@${REINPLACE_CMD} -e 's|have_inotify=yes|have_inotify=no|' \
 		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
-	    	${REINPLACE_CMD} -e 's|(LIBINTL)|(INTLLIBS)|g ; \
+		${REINPLACE_CMD} -e 's|(LIBINTL)|(INTLLIBS)|g ; \
 		s|(LIBICONV)|(LTLIBICONV)|g'
 	@${REINPLACE_CMD} -e 's|%%RC_SUBR%%|/etc/rc.subr| ; \
-	    	s|%%GNOME_SUBR%%|${GNOME_SUBR}|' \
+		s|%%GNOME_SUBR%%|${GNOME_SUBR}|' \
 		${WRKSRC}/initscript/freebsd/avahi-dnsconfd.sh.in \
 		${WRKSRC}/initscript/freebsd/avahi-daemon.sh.in
 	@${REINPLACE_CMD} -e 's|dbus_connection_disconnect|dbus_connection_close|g' \
-	    	${WRKSRC}/avahi-client/client.c \
+		${WRKSRC}/avahi-client/client.c \
 		${WRKSRC}/avahi-daemon/dbus-protocol.c
 	@${REINPLACE_CMD} -e 's|^_||g' \
 		${WRKSRC}/avahi-ui/*.desktop.in.in
