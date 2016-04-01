@@ -33,7 +33,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	bash:shells/bash \
-			makeinfo:/print/texinfo
+			makeinfo:print/texinfo
 DOCS_MAKE_ENV=		LANG=C BUILD_DOCS=true
 
 post-patch:
