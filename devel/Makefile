@@ -4451,6 +4451,7 @@
     SUBDIR += py-tvrage
     SUBDIR += py-tw.forms
     SUBDIR += py-twiggy
+    SUBDIR += py-twine
     SUBDIR += py-twisted
     SUBDIR += py-twisted152
     SUBDIR += py-twistedCore
