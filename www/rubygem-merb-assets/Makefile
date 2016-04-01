@@ -11,7 +11,7 @@ COMMENT=	Merb plugin for supporting assets
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-merb-core>=1.1.3:${PORTSDIR}/www/rubygem-merb-core
+RUN_DEPENDS=	rubygem-merb-core>=1.1.3:www/rubygem-merb-core
 
 NO_ARCH=	yes
 

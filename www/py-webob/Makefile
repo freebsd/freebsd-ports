@@ -12,7 +12,7 @@ COMMENT=	WSGI request and response Python object
 
 LICENSE=	MIT
 
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE= DOCS TESTS
@@ -22,7 +22,7 @@ PORTDOCS=	*
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-TESTS_BUILD_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
+TESTS_BUILD_DEPENDS=	nosetests:devel/py-nose
 TESTS_DESC=	Run tests with Nose
 
 .include <bsd.port.options.mk>

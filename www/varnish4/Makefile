@@ -12,7 +12,7 @@ COMMENT=	High-performance HTTP accelerator
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFLICTS=	varnish-2.* varnish-3.*
 BROKEN_arm=	does not configure

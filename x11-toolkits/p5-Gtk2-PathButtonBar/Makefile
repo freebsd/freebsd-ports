@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Creates a bar for path manipulation
 
-RUN_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS=	p5-Gtk2>=1.060:x11-toolkits/p5-Gtk2
 
 USES=		perl5
 USE_PERL5=	configure

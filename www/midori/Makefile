@@ -14,12 +14,12 @@ COMMENT=	Lightweight web browser using WebKit browser engine
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
-		valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
-		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
-		libgcr-3.so:${PORTSDIR}/security/gcr
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+BUILD_DEPENDS=	rsvg-convert:graphics/librsvg2 \
+		valac:lang/vala
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libsoup-gnome-2.4.so:devel/libsoup-gnome \
+		libgcr-3.so:security/gcr
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -40,14 +40,14 @@ OPTIONS_SUB=	yes
 GIR_PREVENTS=	GTK3
 GIR_USE=	gnome=introspection:build
 GIR_CMAKE_ON=	-DUSE_GIR:BOOL=ON
-GTK3_LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+GTK3_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 GTK3_USE=	gnome=gtk30
 GTK3_CMAKE_ON=	-DUSE_GTK3:BOOL=ON \
 	-DHALF_BRO_INCOM_WEBKIT2:BOOL=OFF
-GTK3_LIB_DEPENDS_OFF=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+GTK3_LIB_DEPENDS_OFF=	libwebkitgtk-1.0.so:www/webkit-gtk2
 GTK3_USE_OFF=	gnome=gtk20
 GTK3_CMAKE_OFF=	-DUSE_GTK3:BOOL=OFF
-ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:${PORTSDIR}/sysutils/zeitgeist
+ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:sysutils/zeitgeist
 ZEITGEIST_CMAKE_OFF=	-DUSE_ZEITGEIST:BOOL=OFF
 GIR_DESC=	Install GObject Introspection Reference manual
 ZEITGEIST_DESC=	User logs activities

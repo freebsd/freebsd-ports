@@ -11,7 +11,7 @@ COMMENT=	Respond_to style Rails block for Sinatra
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-sinatra>=1.3:${PORTSDIR}/www/rubygem-sinatra
+RUN_DEPENDS=	rubygem-sinatra>=1.3:www/rubygem-sinatra
 
 NO_ARCH=	yes
 

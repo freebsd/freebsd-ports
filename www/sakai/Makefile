@@ -15,7 +15,7 @@ LICENSE_NAME=	Educational Community License version 2
 LICENSE_FILE=	${WRKDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:www/tomcat7
 
 IGNORE=		does not work correctly
 

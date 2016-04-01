@@ -12,7 +12,7 @@ COMMENT=	Adwaita theme for Qt5 applications
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	adwaita-common>=0.3:${PORTSDIR}/x11-themes/adwaita-common
+RUN_DEPENDS=	adwaita-common>=0.3:x11-themes/adwaita-common
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MartinBriza

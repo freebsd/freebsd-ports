@@ -10,7 +10,7 @@ MASTER_SITES=	SF/materm/${PORTNAME}%20source/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tabbed version of rxvt
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 CONFLICTS=	mrxvt-0.5.*
 
@@ -24,7 +24,7 @@ USE_XORG=	x11
 OPTIONS_DEFINE=	DOCS JAPANESE XFT
 
 JAPANESE_CONFIGURE_ON=	--enable-xim --enable-cjk --with-encoding=eucj
-XFT_LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
+XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
 XFT_CONFIGURE_ENABLE=	xft
 
 PORTDOCS=	TIPS \

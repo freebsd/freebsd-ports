@@ -3,8 +3,8 @@
 
 PORTREVISION=	1
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-2.4.pc:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		glibmm-reference>=0:${PORTSDIR}/devel/glibmm-reference
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-2.4.pc:x11-toolkits/gtkmm24 \
+		glibmm-reference>=0:devel/glibmm-reference
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes

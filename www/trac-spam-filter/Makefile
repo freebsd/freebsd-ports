@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	Allow different ways to reject contributions that contain spam
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}dev
 

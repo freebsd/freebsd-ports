@@ -13,9 +13,9 @@ COMMENT=	Cross-platform modular live environment
 LICENSE=	BSL
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
-LIB_DEPENDS=	libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6 \
+		libpcre.so:devel/pcre \
+		libboost_program_options.so:devel/boost-libs
 
 #LC_REV=		1526-g7fdb92a
 INSTALLS_ICONS=	yes
@@ -65,24 +65,24 @@ AZOTH_CMAKE_ON=		-DENABLE_AZOTH:BOOL=true \
 			-DENABLE_AZOTH_VELVETBIRD:BOOL=true
 AZOTH_CMAKE_OFF=	-DENABLE_AZOTH:BOOL=false
 
-AZOTH_LIB_DEPENDS=	libQtMultimediaKit.so:${PORTSDIR}/multimedia/qt4-mobility \
-			libkqoauth.so:${PORTSDIR}/security/kqoauth \
-			libotr.so.5:${PORTSDIR}/security/libotr \
-			libpurple.so:${PORTSDIR}/net-im/libpurple \
-			libqca.so:${PORTSDIR}/devel/qca \
-			libqxmpp.so:${PORTSDIR}/net-im/qxmpp \
-			libspeex.so:${PORTSDIR}/audio/speex
+AZOTH_LIB_DEPENDS=	libQtMultimediaKit.so:multimedia/qt4-mobility \
+			libkqoauth.so:security/kqoauth \
+			libotr.so.5:security/libotr \
+			libpurple.so:net-im/libpurple \
+			libqca.so:devel/qca \
+			libqxmpp.so:net-im/qxmpp \
+			libspeex.so:audio/speex
 AZOTH_USES=		desktop-file-utils
 
 BITTORRENT_DESC=	Full-featured BitTorrent client plugin
 BITTORRENT_CMAKE_ON=	-DENABLE_TORRENT:BOOL=true
 BITTORRENT_CMAKE_OFF=	-DENABLE_TORRENT:BOOL=false
-BITTORRENT_LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar
+BITTORRENT_LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar
 
 BLASQ_DESC=		Cloud image storage services client (like Flickr or Picasa)
 BLASQ_CMAKE_ON=		-DENABLE_BLASQ:BOOL=true
 BLASQ_CMAKE_OFF=	-DENABLE_BLASQ:BOOL=false
-BLASQ_LIB_DEPENDS=	libkqoauth.so:${PORTSDIR}/security/kqoauth
+BLASQ_LIB_DEPENDS=	libkqoauth.so:security/kqoauth
 
 BLOGIQUE_DESC=		Blogging client
 BLOGIQUE_CMAKE_ON=	-DENABLE_BLOGIQUE:BOOL=true
@@ -185,7 +185,7 @@ LACKMAN_CMAKE_OFF=	-DENABLE_LACKMAN:BOOL=false
 LASTFMSCROBBLE_DESC=		Last.FM scrobbler plugin
 LASTFMSCROBBLE_CMAKE_ON=	-DENABLE_LASTFMSCROBBLE:BOOL=true
 LASTFMSCROBBLE_CMAKE_OFF=	-DENABLE_LASTFMSCROBBLE:BOOL=false
-LASTFMSCROBBLE_LIB_DEPENDS=	liblastfm.so:${PORTSDIR}/audio/liblastfm
+LASTFMSCROBBLE_LIB_DEPENDS=	liblastfm.so:audio/liblastfm
 
 LAUGHTY_DESC=		The LeechCraft notification daemon
 LAUGHTY_CMAKE_ON=	-DENABLE_LAUGHTY:BOOL=true
@@ -202,7 +202,7 @@ LEMON_CMAKE_OFF=	-DENABLE_LEMON:BOOL=false
 LHTR_DESC=		LeechCraft HTML Text editoR component
 LHTR_CMAKE_ON=		-DENABLE_LHTR:BOOL=true
 LHTR_CMAKE_OFF=		-DENABLE_LHTR:BOOL=false
-LHTR_BUILD_DEPENDS=	tidy:${PORTSDIR}/www/tidy-devel
+LHTR_BUILD_DEPENDS=	tidy:www/tidy-devel
 
 LIZNOO_DESC=		UPower-based power manager
 LIZNOO_CMAKE_ON=	-DENABLE_LIZNOO:BOOL=true
@@ -213,8 +213,8 @@ LMP_CMAKE_ON=		-DENABLE_LMP:BOOL=true \
 			-DUSE_GSTREAMER_10:BOOL=false
 LMP_CMAKE_OFF=		-DENABLE_LMP:BOOL=false
 LMP_USE=		GSTREAMER=yes
-LMP_LIB_DEPENDS=	libguess.so:${PORTSDIR}/textproc/libguess \
-			libtag.so:${PORTSDIR}/audio/taglib
+LMP_LIB_DEPENDS=	libguess.so:textproc/libguess \
+			libtag.so:audio/taglib
 
 MELLONETRAY_DESC=	System tray quark
 MELLONETRAY_CMAKE_ON=	-DENABLE_MELLONETRAY:BOOL=true
@@ -224,14 +224,14 @@ MELLONETRAY_USE=	xorg=xdamage
 MONOCLE_DESC=		Monocle, the modular document viewer
 MONOCLE_CMAKE_ON=	-DENABLE_MONOCLE:BOOL=true
 MONOCLE_CMAKE_OFF=	-DENABLE_MONOCLE:BOOL=false
-MONOCLE_LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre \
-			libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
+MONOCLE_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
+			libpoppler-qt4.so:graphics/poppler-qt4
 
 MUSICZOMBIE_DESC=	MusicBrainz client plugin
 MUSICZOMBIE_CMAKE_ON=	-DENABLE_MUSICZOMBIE:BOOL=true
 MUSICZOMBIE_CMAKE_OFF=	-DENABLE_MUSICZOMBIE:BOOL=false
-MUSICZOMBIE_LIB_DEPENDS=libchromaprint.so:${PORTSDIR}/audio/chromaprint \
-			libavdevice.so:${PORTSDIR}/multimedia/ffmpeg
+MUSICZOMBIE_LIB_DEPENDS=libchromaprint.so:audio/chromaprint \
+			libavdevice.so:multimedia/ffmpeg
 
 NACHEKU_DESC=		Monitors selected directory and clipboard for downloadable entities
 NACHEKU_CMAKE_ON=	-DENABLE_NACHEKU:BOOL=true
@@ -273,7 +273,7 @@ POLEEMERY_CMAKE_OFF=	-DENABLE_POLEEMERY:BOOL=false
 POPISHU_DESC=		Text editor with IDE features
 POPISHU_CMAKE_ON=	-DENABLE_POPISHU:BOOL=true
 POPISHU_CMAKE_OFF=	-DENABLE_POPISHU:BOOL=false
-POPISHU_LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
+POPISHU_LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2
 
 POSHUKU_DESC=		The full-featured web browser plugin
 POSHUKU_CMAKE_ON=	-DENABLE_POSHUKU:BOOL=true
@@ -282,12 +282,12 @@ POSHUKU_CMAKE_OFF=	-DENABLE_POSHUKU:BOOL=false
 QROSP_DESC=		Scrpting support for LeechCraft via Qross
 QROSP_CMAKE_ON=		-DENABLE_QROSP:BOOL=true
 QROSP_CMAKE_OFF=	-DENABLE_QROSP:BOOL=false
-QROSP_LIB_DEPENDS=	libqrosscore.so:${PORTSDIR}/devel/qross
+QROSP_LIB_DEPENDS=	libqrosscore.so:devel/qross
 
 ROSENTHAL_DESC=		Spellchecking support
 ROSENTHAL_CMAKE_ON=	-DENABLE_ROSENTHAL:BOOL=true
 ROSENTHAL_CMAKE_OFF=	-DENABLE_ROSENTHAL:BOOL=false
-ROSENTHAL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+ROSENTHAL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 
 SB2_DESC=		Sidebar for LeechCraft with combined launcher and tab switcher
 SB2_CMAKE_ON=		-DENABLE_SB2:BOOL=true
@@ -345,7 +345,7 @@ VROOBY_CMAKE_OFF=	-DENABLE_VROOBY:BOOL=false
 VTYULC_DESC=		Build VtyuLC, the videoplayer plugin
 VTYULC_CMAKE_ON=	-DENABLE_VTYULC:BOOL=true
 VTYULC_CMAKE_OFF=	-DENABLE_VTYULC:BOOL=false
-VTYULC_LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc
+VTYULC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
 
 XPROXY_DESC=		Provides advanced proxy support features
 XPROXY_CMAKE_ON=	-DENABLE_XPROXY:BOOL=true
@@ -383,7 +383,7 @@ USE_QT4+=	xmlpatterns
     ${PORT_OPTIONS:MNETSTOREMANAGER} || ${PORT_OPTIONS:MPOSHUKU} || \
     ${PORT_OPTIONS:MQROSP} || ${PORT_OPTIONS:MSB2} || \
     ${PORT_OPTIONS:MTOUCHSTREAMS}
-LIB_DEPENDS+=	libqjson.so:${PORTSDIR}/devel/qjson
+LIB_DEPENDS+=	libqjson.so:devel/qjson
 .endif
 
 .if ${PORT_OPTIONS:MELEEMINATOR}

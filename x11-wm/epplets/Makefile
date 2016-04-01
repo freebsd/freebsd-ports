@@ -10,10 +10,10 @@ MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Collection of Enlightenment dock applications
 
-BUILD_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16
-LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
-RUN_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16 \
-		import:${PORTSDIR}/graphics/ImageMagick
+BUILD_DEPENDS=	e16:x11-wm/e16
+LIB_DEPENDS=	libcdaudio.so:audio/libcdaudio
+RUN_DEPENDS=	e16:x11-wm/e16 \
+		import:graphics/ImageMagick
 
 USES=		gmake libtool pkgconfig
 USE_XORG=	xext

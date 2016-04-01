@@ -11,7 +11,7 @@ COMMENT=	Ruby binding for gtksourceview-2.x
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-gtk2>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-gtk2
+RUN_DEPENDS=	rubygem-gtk2>=${PORTVERSION}:x11-toolkits/rubygem-gtk2
 
 USE_GNOME=	gtksourceview2
 USE_RUBY=	yes

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Terminus Font - a clean fixed width font
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		gmake fonts perl5
 USE_PERL5=	build

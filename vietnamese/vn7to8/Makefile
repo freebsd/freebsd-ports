@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts between 7-bit Vietnamese VIQR and 8-bit VISCII formats
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libviqr.a:vietnamese/libviet
 
 CFLAGS+=	-I${PREFIX}/include/viet
 

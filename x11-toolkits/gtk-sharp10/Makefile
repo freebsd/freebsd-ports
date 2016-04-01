@@ -11,8 +11,8 @@ PKGNAMESUFFIX=	10
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
+BUILD_DEPENDS=	mono:lang/mono
+RUN_DEPENDS=	mono:lang/mono
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

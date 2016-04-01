@@ -13,8 +13,8 @@ COMMENT=	Retrieve comic strip images
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-WWW-Dilbert>=1.19:${PORTSDIR}/www/p5-WWW-Dilbert \
-		p5-WWW-VenusEnvy>=1.10:${PORTSDIR}/www/p5-WWW-VenusEnvy
+BUILD_DEPENDS=	p5-WWW-Dilbert>=1.19:www/p5-WWW-Dilbert \
+		p5-WWW-VenusEnvy>=1.10:www/p5-WWW-VenusEnvy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

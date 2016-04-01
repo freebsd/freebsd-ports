@@ -13,7 +13,7 @@ COMMENT=	Serf HTTP client library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	libapr-1.so:devel/apr1
 
 USES=		scons tar:bzip2 cpe
 USE_OPENSSL=	yes
@@ -26,8 +26,8 @@ OPTIONS_RADIO_KERBEROS= MIT HEIMDAL HEIMDAL_BASE
 HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 MIT_DESC=		MIT Kerberos (security/krb5)
-MIT_LIB_DEPENDS=	libkrb5.so.3:${PORTSDIR}/security/krb5
-HEIMDAL_LIB_DEPENDS=	libkrb5.so.26:${PORTSDIR}/security/heimdal
+MIT_LIB_DEPENDS=	libkrb5.so.3:security/krb5
+HEIMDAL_LIB_DEPENDS=	libkrb5.so.26:security/heimdal
 
 SCONS_ARGS=	APR=${LOCALBASE}/bin/apr-1-config
 SCONS_ARGS+=	APU=${LOCALBASE}/bin/apu-1-config

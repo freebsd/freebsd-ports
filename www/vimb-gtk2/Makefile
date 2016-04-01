@@ -9,7 +9,7 @@ COMMENT=	Vim like browser
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS?=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS?=	libwebkitgtk-1.0.so:www/webkit-gtk2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fanglingsu

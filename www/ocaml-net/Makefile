@@ -14,8 +14,8 @@ COMMENT=	OCaml modules for Internet applications
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
-RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
+RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 
 CONFLICTS=	ocaml-equeue-2* ocaml-netclient-0*
 
@@ -54,16 +54,16 @@ ZIP_DESC=	Compression support
 APACHE_DESC=	Apache mod connector (experimental)
 GNUTLS_DESC=	SSL/TLS support via GnuTLS
 
-GTK2_BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-GTK2_RUN_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-ZIP_BUILD_DEPENDS=	${SA_DIR}/zip/zip.a:${PORTSDIR}/archivers/ocaml-zip
-ZIP_RUN_DEPENDS=	${SA_DIR}/zip/zip.a:${PORTSDIR}/archivers/ocaml-zip
+GTK2_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+GTK2_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+ZIP_BUILD_DEPENDS=	${SA_DIR}/zip/zip.a:archivers/ocaml-zip
+ZIP_RUN_DEPENDS=	${SA_DIR}/zip/zip.a:archivers/ocaml-zip
 NETHTTPD_CONFIGURE_ON=	-with-nethttpd
 NETHTTPD_VARS=		OCAML_PKGDIRS+=nethttpd
 GTK2_CONFIGURE_ON=	-enable-gtk2
 GTK2_VARS=		OCAML_PKGDIRS+=equeue-gtk2
 GNUTLS_USES=		pkgconfig
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ON=	-enable-gnutls
 GNUTLS_VARS=		OCAML_PKGDIRS+=nettls-gnutls
 APACHE_BROKEN=		does not build with APACHE option enabled

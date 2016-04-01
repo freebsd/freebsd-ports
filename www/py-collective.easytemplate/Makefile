@@ -13,11 +13,11 @@ COMMENT=	Dynamic HTML generation and scripting for Plone
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=2.1.0:${PORTSDIR}/devel/py-Products.CMFCore \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.3:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}plone.portlet.static>=0:${PORTSDIR}/www/py-plone.portlet.static \
-		${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}collective.templateengines>=0.3:${PORTSDIR}/www/py-collective.templateengines
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=2.1.0:devel/py-Products.CMFCore \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.3:devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}plone.portlet.static>=0:www/py-plone.portlet.static \
+		${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser \
+		${PYTHON_PKGNAMEPREFIX}collective.templateengines>=0.3:www/py-collective.templateengines
 
 USES=		python:2 zip
 USE_PYTHON=	autoplist distutils

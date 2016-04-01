@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	TT plugin to make email addresses into HTML links
 
-BUILD_DEPENDS=	p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
-		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
+BUILD_DEPENDS=	p5-Email-Find>=0:mail/p5-Email-Find \
+		p5-Template-Toolkit>=0:www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

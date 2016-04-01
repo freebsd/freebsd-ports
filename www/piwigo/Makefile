@@ -43,9 +43,9 @@ PLIST_SUB+=	WWWOWN="${WWWOWN}" \
 
 .if ${PORT_OPTIONS:MIMAGICK}
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick
 .else
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
+RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick-nox11
 .endif
 .endif
 

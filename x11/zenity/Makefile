@@ -12,7 +12,7 @@ COMMENT=	Display GNOME dialogs from the command line
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 
 CONFLICTS=	gtkada-1.2.* zenity-2.*
 
@@ -25,7 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=libnotify
 
 post-patch:

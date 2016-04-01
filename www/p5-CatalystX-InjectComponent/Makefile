@@ -14,10 +14,10 @@ COMMENT=	Inject components into your Catalyst application
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80000:www/p5-Catalyst-Runtime \
+		p5-Class-Inspector>=0:devel/p5-Class-Inspector
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
+TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most
 
 USES=		perl5
 USE_PERL5=	configure

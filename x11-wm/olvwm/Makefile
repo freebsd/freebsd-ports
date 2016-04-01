@@ -19,7 +19,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	OpenLook Virtual Window manager
 
-LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 REINPLACE_ARGS= -i ""
 NO_WRKSUBDIR=	yes

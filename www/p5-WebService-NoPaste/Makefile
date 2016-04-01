@@ -14,9 +14,9 @@ COMMENT=	Pastebin web application to upload snippets of text
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
-		p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-IO-All>=0:devel/p5-IO-All \
+		p5-Spiffy>=0:devel/p5-Spiffy \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	X11
@@ -28,7 +28,7 @@ USES=		perl5 shebangfix
 
 SHEBANG_FILES=	nopaste
 
-X11_BUILD_DEPENDS=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
+X11_BUILD_DEPENDS=	p5-Clipboard>=0:x11/p5-Clipboard
 X11_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-lib-WebService-NoPaste.pm
 
 post-patch:

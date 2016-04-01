@@ -9,8 +9,8 @@ MASTER_SITES=	LOCAL/gblach/enlightenment/
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Digital clock gadget module for Enlightenment
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	enlightenment:x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment:x11-wm/enlightenment
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

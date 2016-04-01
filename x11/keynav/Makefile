@@ -10,8 +10,8 @@ MASTER_SITES=	http://semicomplete.googlecode.com/files/
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
 
-LIB_DEPENDS=	libxdo.so:${PORTSDIR}/x11/xdotool \
-		libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libxdo.so:x11/xdotool \
+		libcairo.so:graphics/cairo
 
 USES=		gmake pkgconfig
 USE_GNOME=	glib20

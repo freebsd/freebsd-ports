@@ -12,9 +12,9 @@ COMMENT=	Tool for writing automated tests of websites
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-childprocess>=0.5:${PORTSDIR}/devel/rubygem-childprocess \
-		rubygem-rubyzip>=1.0:${PORTSDIR}/archivers/rubygem-rubyzip \
-		rubygem-websocket>=1.0:${PORTSDIR}/www/rubygem-websocket
+RUN_DEPENDS=	rubygem-childprocess>=0.5:devel/rubygem-childprocess \
+		rubygem-rubyzip>=1.0:archivers/rubygem-rubyzip \
+		rubygem-websocket>=1.0:www/rubygem-websocket
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

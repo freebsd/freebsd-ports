@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Database of robots.txt-derived permissions
 
-BUILD_DEPENDS=	p5-URI>=1.10:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-URI>=1.10:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*

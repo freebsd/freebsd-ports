@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Redmine
 
-RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-		p5-JSON-XS>0:${PORTSDIR}/converters/p5-JSON-XS
+RUN_DEPENDS=	p5-libwww>0:www/p5-libwww \
+		p5-JSON-XS>0:converters/p5-JSON-XS
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

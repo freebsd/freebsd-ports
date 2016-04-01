@@ -9,11 +9,11 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt WebKit implementation
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libicui18n.so:${PORTSDIR}/devel/icu \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libwebp.so:${PORTSDIR}/graphics/webp
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libicui18n.so:devel/icu \
+		libpng.so:graphics/png \
+		libwebp.so:graphics/webp
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 USE_GL=		gl
 USE_GNOME=	libxml2 libxslt
@@ -46,7 +46,7 @@ GSTREAMER_USE=	GNOME=glib20 GSTREAMER1=yes
 # Base ld(1) segfaults on PowerPC (inherited from Qt 4):
 # http://bugs.freebsd.org/173042
 .if ${ARCH} == "powerpc"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
 .endif
 
 post-patch:

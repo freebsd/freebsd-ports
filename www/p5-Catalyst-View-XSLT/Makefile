@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XSLT view class for Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-XML-LibXSLT>=1.52:${PORTSDIR}/textproc/p5-XML-LibXSLT \
-		p5-Path-Class>=0.12:${PORTSDIR}/devel/p5-Path-Class
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:www/p5-Catalyst-Runtime \
+		p5-XML-LibXSLT>=1.52:textproc/p5-XML-LibXSLT \
+		p5-Path-Class>=0.12:devel/p5-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

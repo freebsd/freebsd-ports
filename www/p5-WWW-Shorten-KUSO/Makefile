@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Shorten URL using http://KUSO.CC/
 
-BUILD_DEPENDS=	p5-WWW-Shorten>=0:${PORTSDIR}/www/p5-WWW-Shorten
+BUILD_DEPENDS=	p5-WWW-Shorten>=0:www/p5-WWW-Shorten
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

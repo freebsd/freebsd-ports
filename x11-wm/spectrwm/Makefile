@@ -12,10 +12,10 @@ COMMENT=	Small, dynamic tiling window manager for X11
 
 LICENSE=	ISCL
 
-LIB_DEPENDS+=	libxcb-util.so:${PORTSDIR}/x11/xcb-util \
-		libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
-RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
+LIB_DEPENDS+=	libxcb-util.so:x11/xcb-util \
+		libxcb-icccm.so:x11/xcb-util-wm \
+		libxcb-keysyms.so:x11/xcb-util-keysyms
+RUN_DEPENDS+=	dmenu:x11/dmenu
 
 USE_XORG=	x11 xcb xcursor xft xrandr xt
 

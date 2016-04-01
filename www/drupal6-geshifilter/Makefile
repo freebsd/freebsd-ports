@@ -10,7 +10,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Drupal 6 module for syntax highlighting
 
-RUN_DEPENDS=	${LOCALBASE}/lib/php/geshi/geshi.php:${PORTSDIR}/devel/php5-geshi
+RUN_DEPENDS=	${LOCALBASE}/lib/php/geshi/geshi.php:devel/php5-geshi
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

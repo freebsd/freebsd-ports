@@ -10,7 +10,7 @@ COMMENT=	FastCGI library for Ruby
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
+LIB_DEPENDS=	libfcgi.so:www/fcgi
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

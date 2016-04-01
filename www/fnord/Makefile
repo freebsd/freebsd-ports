@@ -27,8 +27,8 @@ DIR_LIST_DESC=		Enable directory listing
 SYSTEM_SYMLINK_DEREF_DESC=	Enable system symlink (needs DIR_LIST)
 OLD_STYLE_REDIRECT_DESC= Enable old style redirection
 
-DAEMONTOOLS_RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
-TCPSERVER_RUN_DEPENDS=		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+DAEMONTOOLS_RUN_DEPENDS=	setuidgid:sysutils/daemontools
+TCPSERVER_RUN_DEPENDS=		tcpserver:sysutils/ucspi-tcp
 
 MAKE_ARGS+=	DIET="" CC="${CC}" CXX="${CXX}"
 

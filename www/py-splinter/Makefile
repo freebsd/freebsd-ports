@@ -12,10 +12,10 @@ COMMENT=	Browser abstraction for web acceptance testing
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}selenium>=2.39:${PORTSDIR}/www/py-selenium \
-		${PYTHON_PKGNAMEPREFIX}zope.testbrowser>=4.0.4:${PORTSDIR}/devel/py-zope.testbrowser \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}cssselect>0:${PORTSDIR}/www/py-cssselect
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}selenium>=2.39:www/py-selenium \
+		${PYTHON_PKGNAMEPREFIX}zope.testbrowser>=4.0.4:devel/py-zope.testbrowser \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}cssselect>0:www/py-cssselect
 
 USES=		python
 USE_PYTHON=	distutils autoplist

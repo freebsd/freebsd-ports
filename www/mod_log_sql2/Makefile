@@ -20,7 +20,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DBI DOCS
 
 DBI_CONFIGURE_WITH=	dbi=${LOCALBASE}
-DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
+DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 
 DBI_DESC=	depend on databases/libdbi
 PORTDOCS=	manual.html manual.xml

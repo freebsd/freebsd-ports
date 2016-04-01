@@ -13,7 +13,7 @@ COMMENT=	Simple Ruby DSL for making HTTP requests
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-railties>=3.2.0:${PORTSDIR}/www/rubygem-railties
+RUN_DEPENDS=	rubygem-railties>=3.2.0:www/rubygem-railties
 
 PORTSCOUT=	limit:^1\.[0-9]*
 

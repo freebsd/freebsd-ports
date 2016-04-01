@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	FillInForm with UTF-8 encoding
 
-RUN_DEPENDS=	p5-HTML-FillInForm>0:${PORTSDIR}/www/p5-HTML-FillInForm
+RUN_DEPENDS=	p5-HTML-FillInForm>0:www/p5-HTML-FillInForm
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

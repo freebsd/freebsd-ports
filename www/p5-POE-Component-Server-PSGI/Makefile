@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to PSGI Server implementation for POE
 
-RUN_DEPENDS=	p5-POEx-Role-PSGIServer>0:${PORTSDIR}/www/p5-POEx-Role-PSGIServer
+RUN_DEPENDS=	p5-POEx-Role-PSGIServer>0:www/p5-POEx-Role-PSGIServer
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

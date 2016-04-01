@@ -8,9 +8,9 @@ CATEGORIES=	www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Smarty Renderer for pear-Structures_DataGrid
 
-RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:${PORTSDIR}/devel/pear-Structures_DataGrid \
-		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2 \
-		${PEARDIR}/Structures/DataGrid/Renderer/Pager.php:${PORTSDIR}/www/pear-Structures_DataGrid_Renderer_Pager
+RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
+		${LOCALBASE}/share/smarty/Smarty.class.php:www/smarty2 \
+		${PEARDIR}/Structures/DataGrid/Renderer/Pager.php:www/pear-Structures_DataGrid_Renderer_Pager
 
 USES=	pear
 

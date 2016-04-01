@@ -18,7 +18,7 @@ DBI_DESC=	depend on databases/libdbi
 OPTIONS_SUB=		yes
 DBI_CONFIGURE_ON=	--with-dbi=${LOCALBASE}
 DBI_CONFIGURE_OFF=	--without-dbi
-DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
+DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 
 GNU_CONFIGURE=	yes
 USES=		gmake tar:bzip2

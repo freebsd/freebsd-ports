@@ -40,7 +40,7 @@ WX_COMPS=	python:run
 
 .if ${PORT_OPTIONS:MREPORTGRAPHS}
 RUN_DEPENDS+=	${PYNUMPY}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/matplotlib/__init__.py:${PORTSDIR}/math/py-matplotlib
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib
 .endif
 
 .include <bsd.port.mk>

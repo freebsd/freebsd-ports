@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	Generate nice HTML files from HTML syntax trees
 
-BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree
+BUILD_DEPENDS=	p5-HTML-Tree>=0:www/p5-HTML-Tree
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

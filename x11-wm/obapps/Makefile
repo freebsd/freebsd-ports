@@ -16,7 +16,7 @@ COMMENT=	Graphical editor for Openbox application settings
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>=0:${PORTSDIR}/x11-toolkits/py-xlib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>=0:x11-toolkits/py-xlib
 
 USES=		python
 USE_PYTHON=	distutils

@@ -63,7 +63,7 @@ USE_RC_SUBR=	resin3
 
 # Install the Apache plugin if needed
 .if ${PORT_OPTIONS:MAPACHE22}
-BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/www/apache22
+BUILD_DEPENDS+=	${APXS}:www/apache22
 CONFIGURE_ARGS+=--with-apxs=${APXS}
 PLIST_SUB+=	MOD_DIR=libexec/apache22
 # Allow apxs invocations

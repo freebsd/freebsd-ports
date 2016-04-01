@@ -11,7 +11,7 @@ COMMENT=	Lightweight pager for netwm compatible window managers
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed
 
 USES=		gmake
 USE_XORG=	x11 xext

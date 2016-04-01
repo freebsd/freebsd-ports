@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tk [incr Tk]
 
-LIB_DEPENDS=	libitcl.so.${MAJOR}:${PORTSDIR}/lang/itcl
+LIB_DEPENDS=	libitcl.so.${MAJOR}:lang/itcl
 
 USES=		tk uidfix
 USE_LDCONFIG=	yes

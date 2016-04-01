@@ -10,13 +10,13 @@ MASTER_SITES=	http://www.dixongroup.net/
 MAINTAINER=	jhuldtgren@gmail.com
 COMMENT=	Simple weblog
 
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
-		p5-HTTP-Lite>=0:${PORTSDIR}/www/p5-HTTP-Lite \
-		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
+		p5-XML-RSS>=0:textproc/p5-XML-RSS \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-HTML-Template>=0:www/p5-HTML-Template \
+		p5-HTTP-Lite>=0:www/p5-HTTP-Lite \
+		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 
 USES=		perl5
 NO_BUILD=	yes

@@ -15,8 +15,8 @@ COMMENT=	Update Class::DBI using Data::FormValidator or HTML::Widget
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
-		p5-Data-FormValidator>=0:${PORTSDIR}/textproc/p5-Data-FormValidator
+BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \
+		p5-Data-FormValidator>=0:textproc/p5-Data-FormValidator
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

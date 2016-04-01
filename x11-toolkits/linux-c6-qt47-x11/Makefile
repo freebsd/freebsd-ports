@@ -19,8 +19,8 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	NVIDIA_GL
 
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
-			linux-c6-libGLU>0:${PORTSDIR}/graphics/linux-c6-libGLU
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver \
+			linux-c6-libGLU>0:graphics/linux-c6-libGLU
 NVIDIA_GL_USE_OFF=	linux_apps=dri
 
 USE_LINUX_APPS=	fontconfig png xorglibs png alsalib jpeg tiff qt47

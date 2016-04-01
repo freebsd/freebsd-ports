@@ -9,7 +9,7 @@ MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web interface for anyRemote
 
-RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote
+RUN_DEPENDS=	anyremote:comms/anyremote
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

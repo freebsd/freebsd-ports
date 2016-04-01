@@ -14,7 +14,7 @@ COMMENT=	Apache module for rewriting HTML links in proxied content
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_xml2enc.so:${PORTSDIR}/www/mod_xml2enc
+RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_xml2enc.so:www/mod_xml2enc
 
 SUB_FILES=	pkg-message
 USE_APACHE=	22

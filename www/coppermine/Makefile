@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 OPTIONS_DEFINE=	DOCS IMAGEMAGICK
 IMAGEMAGICK_DESC=	Use ImageMagick instead of PHP GD extension
 
-IMAGEMAGICK_RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_RUN_DEPENDS+=	convert:graphics/ImageMagick
 
 USE_PHP=	mysql pcre ctype
 USES=		zip

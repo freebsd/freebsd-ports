@@ -12,11 +12,11 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for multiple HTTP requests with Coro
 
 RUN_DEPENDS=	\
-	p5-Coro>0:${PORTSDIR}/devel/p5-Coro \
-	p5-Furl>0:${PORTSDIR}/www/p5-Furl
+	p5-Coro>0:devel/p5-Coro \
+	p5-Furl>0:www/p5-Furl
 BUILD_DEPENDS=	\
 	${RUN_DEPENDS} \
-	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
+	p5-Test-Requires>0:devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	modbuild

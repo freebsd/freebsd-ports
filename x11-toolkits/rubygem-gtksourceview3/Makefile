@@ -11,8 +11,8 @@ COMMENT=	Ruby/GtkSourceView3 is a Ruby binding of gtksourceview-3.x
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-gobject-introspection \
-		rubygem-gtk3>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-gtk3
+RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
+		rubygem-gtk3>=${PORTVERSION}:x11-toolkits/rubygem-gtk3
 
 NO_ARCH=	yes
 USE_GNOME=	gtksourceview3

@@ -18,8 +18,8 @@ OPTIONS_DEFINE=	OPERA NEPOMUK
 OPTIONS_DEFAULT=	NEPOMUK
 
 OPERA_DESC=	Support for Opera Sync service
-OPERA_LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca \
-			libqoauth.so:${PORTSDIR}/net/qoauth
+OPERA_LIB_DEPENDS=	libqca.so:devel/qca \
+			libqoauth.so:net/qoauth
 OPERA_CMAKE_OFF=	-DWITH_QCA2=off \
 			-DWITH_QtOAuth=off
 

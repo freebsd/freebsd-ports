@@ -14,9 +14,9 @@ COMMENT=	Simple HTTP server class
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Date>=6:${PORTSDIR}/www/p5-HTTP-Date \
-		p5-HTTP-Message>=6:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-LWP-MediaTypes>=6:${PORTSDIR}/www/p5-LWP-MediaTypes
+BUILD_DEPENDS=	p5-HTTP-Date>=6:www/p5-HTTP-Date \
+		p5-HTTP-Message>=6:www/p5-HTTP-Message \
+		p5-LWP-MediaTypes>=6:www/p5-LWP-MediaTypes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*

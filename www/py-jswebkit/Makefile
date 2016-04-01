@@ -13,9 +13,9 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WebKit/JavaScriptCore Python bindings
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
+BUILD_DEPENDS=	cython:lang/cython
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 
 USES=		pkgconfig python:2
 USE_PYTHON=	distutils autoplist

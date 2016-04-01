@@ -28,17 +28,17 @@ HTML_TEMPLATE_DESC=	HTML::Template support
 TEXT_TEMPLATE_DESC=	Text::Template support
 TEMPLATE_DESC=		Template Toolkit support
 
-CGI_FAST_TEMPLATE_BUILD_DEPENDS=p5-CGI-FastTemplate>=1.09:${PORTSDIR}/www/p5-CGI-FastTemplate
-CGI_FAST_TEMPLATE_RUN_DEPENDS=	p5-CGI-FastTemplate>=1.09:${PORTSDIR}/www/p5-CGI-FastTemplate
-CGI_SESSION_BUILD_DEPENDS=	p5-CGI-Session>=3.95:${PORTSDIR}/www/p5-CGI-Session
-CGI_SESSION_RUN_DEPENDS=p5-CGI-Session>=3.95:${PORTSDIR}/www/p5-CGI-Session
-CGI_SSI_BUILD_DEPENDS=	p5-CGI-SSI>=0.92:${PORTSDIR}/www/p5-CGI-SSI
-CGI_SSI_RUN_DEPENDS=	p5-CGI-SSI>=0.92:${PORTSDIR}/www/p5-CGI-SSI
-HTML_TEMPLATE_BUILD_DEPENDS=	p5-HTML-Template>=2.06:${PORTSDIR}/www/p5-HTML-Template
-HTML_TEMPLATE_RUN_DEPENDS=	p5-HTML-Template>=2.06:${PORTSDIR}/www/p5-HTML-Template
-TEXT_TEMPLATE_BUILD_DEPENDS=	p5-Text-Template>=1.43:${PORTSDIR}/textproc/p5-Text-Template
-TEXT_TEMPLATE_RUN_DEPENDS=	p5-Text-Template>=1.43:${PORTSDIR}/textproc/p5-Text-Template
-TEMPLATE_BUILD_DEPENDS=	p5-Template-Toolkit>=2.08:${PORTSDIR}/www/p5-Template-Toolkit
-TEMPLATE_RUN_DEPENDS=	p5-Template-Toolkit>=2.08:${PORTSDIR}/www/p5-Template-Toolkit
+CGI_FAST_TEMPLATE_BUILD_DEPENDS=p5-CGI-FastTemplate>=1.09:www/p5-CGI-FastTemplate
+CGI_FAST_TEMPLATE_RUN_DEPENDS=	p5-CGI-FastTemplate>=1.09:www/p5-CGI-FastTemplate
+CGI_SESSION_BUILD_DEPENDS=	p5-CGI-Session>=3.95:www/p5-CGI-Session
+CGI_SESSION_RUN_DEPENDS=p5-CGI-Session>=3.95:www/p5-CGI-Session
+CGI_SSI_BUILD_DEPENDS=	p5-CGI-SSI>=0.92:www/p5-CGI-SSI
+CGI_SSI_RUN_DEPENDS=	p5-CGI-SSI>=0.92:www/p5-CGI-SSI
+HTML_TEMPLATE_BUILD_DEPENDS=	p5-HTML-Template>=2.06:www/p5-HTML-Template
+HTML_TEMPLATE_RUN_DEPENDS=	p5-HTML-Template>=2.06:www/p5-HTML-Template
+TEXT_TEMPLATE_BUILD_DEPENDS=	p5-Text-Template>=1.43:textproc/p5-Text-Template
+TEXT_TEMPLATE_RUN_DEPENDS=	p5-Text-Template>=1.43:textproc/p5-Text-Template
+TEMPLATE_BUILD_DEPENDS=	p5-Template-Toolkit>=2.08:www/p5-Template-Toolkit
+TEMPLATE_RUN_DEPENDS=	p5-Template-Toolkit>=2.08:www/p5-Template-Toolkit
 
 .include <bsd.port.mk>

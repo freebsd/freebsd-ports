@@ -14,7 +14,7 @@ DISTNAME=	SlingShot${PORTVERSION}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Supplemental Libraries to extend Xview
 
-LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/sspkg2.1
 USE_LDCONFIG=	yes

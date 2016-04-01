@@ -11,8 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to concatenate JavaScripts
 
 RUN_DEPENDS=	\
-	p5-IPC-Run3>0:${PORTSDIR}/devel/p5-IPC-Run3 \
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack
+	p5-IPC-Run3>0:devel/p5-IPC-Run3 \
+	p5-Plack>0:www/p5-Plack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

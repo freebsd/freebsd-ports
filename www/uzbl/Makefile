@@ -13,9 +13,9 @@ COMMENT=	Web interface tools which adhere to the unix philosophy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
-RUN_DEPENDS=	socat:${PORTSDIR}/net/socat \
-		dmenu:${PORTSDIR}/x11/dmenu
+LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
+RUN_DEPENDS=	socat:net/socat \
+		dmenu:x11/dmenu
 
 USES=		gmake pkgconfig python:2
 USE_GNOME=	gtk20 pygtk2

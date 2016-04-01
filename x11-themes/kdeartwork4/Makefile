@@ -10,7 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Artworks Themes
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:${PORTSDIR}/math/eigen3
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
 
 USE_KDE4=	kdelibs kdeprefix libkexiv2 workspace automoc4
 USES=		cmake:outsource tar:xz
@@ -20,9 +20,9 @@ USE_XORG=	x11 xt
 
 OPTIONS_DEFINE=	GNOME
 GNOME_DESC=	Use Gnome screensavers
-GNOME_BUILD_DEPENDS=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
+GNOME_BUILD_DEPENDS=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:x11/xscreensaver-gnome
 GNOME_RUN_DEPENDS=	${GNOME_BUILD_DEPENDS}
-GNOME_BUILD_DEPENDS_OFF=	xscreensaver:${PORTSDIR}/x11/xscreensaver
+GNOME_BUILD_DEPENDS_OFF=	xscreensaver:x11/xscreensaver
 GNOME_RUN_DEPENDS_OFF=		${GNOME_BUILD_DEPENDS_OFF}
 
 post-patch:

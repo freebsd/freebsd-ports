@@ -27,7 +27,7 @@ GUI_DESC=	Install Tk GUI
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}
-RUN_DEPENDS+=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS+=	p5-Tk>=0:x11-toolkits/p5-Tk
 PLIST_SUB=	GUI=""
 MAKE_ARGS+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 .else

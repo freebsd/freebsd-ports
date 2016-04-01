@@ -30,8 +30,8 @@ RT_VER=         ${opt}
 ### Temporary for debugging
 #WRKDIR=         ${WRKDIRPREFIX}${.CURDIR}/work${RT_VER}
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
-RUN_DEPENDS=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
+BUILD_DEPENDS=	${LOCALBASE}/bin/rt:www/rt${RT_VER}
+RUN_DEPENDS=	${LOCALBASE}/bin/rt:www/rt${RT_VER}
 
 NO_ARCH=	yes
 

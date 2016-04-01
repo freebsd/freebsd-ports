@@ -12,7 +12,7 @@ COMMENT=	Construct absolute paths and full URLs for a Sinatra application
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-sinatra>=0.9.1.1:${PORTSDIR}/www/rubygem-sinatra
+RUN_DEPENDS=	rubygem-sinatra>=0.9.1.1:www/rubygem-sinatra
 
 NO_ARCH=	yes
 USE_RUBY=	yes

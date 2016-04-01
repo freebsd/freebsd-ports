@@ -10,10 +10,10 @@ MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GDI+ API for System.Windows.Forms in Mono
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libgif.so:graphics/giflib \
+		libpng.so:graphics/png \
+		libcairo.so:graphics/cairo
 
 GNU_CONFIGURE=	yes
 USES=		cpe gmake libtool:keepla pathfix pkgconfig

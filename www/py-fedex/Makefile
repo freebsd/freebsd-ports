@@ -12,7 +12,7 @@ COMMENT=	Light wrapper around Fedex's Web Services SOAP API using suds
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}suds>=0:${PORTSDIR}/net/py-suds
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}suds>=0:net/py-suds
 
 NO_ARCH=	yes
 USES=		python:2

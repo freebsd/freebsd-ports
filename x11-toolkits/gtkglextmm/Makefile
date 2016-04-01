@@ -10,8 +10,8 @@ MASTER_SITES=	SF/gtkglext/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for GtkGLExt
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
-		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
 USES=		pathfix pkgconfig gettext gmake tar:bzip2 libtool
 GNU_CONFIGURE=	yes

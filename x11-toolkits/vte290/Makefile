@@ -21,7 +21,7 @@ PORTSCOUT=	ignore:1
 VTE3_SLAVE?=	no
 
 .if ${VTE3_SLAVE}!="yes"
-RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gnome-pty-helper
+RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:x11-toolkits/gnome-pty-helper
 .endif
 
 USES+=		bison gettext gmake libtool pathfix pkgconfig

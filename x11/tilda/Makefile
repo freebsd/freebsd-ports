@@ -11,9 +11,9 @@ COMMENT=	Drop down x11 terminal with transparency support
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	vte3>=0:${PORTSDIR}/x11-toolkits/vte3
-RUN_DEPENDS=	vte3>=0:${PORTSDIR}/x11-toolkits/vte3
-LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse
+BUILD_DEPENDS=	vte3>=0:x11-toolkits/vte3
+RUN_DEPENDS=	vte3>=0:x11-toolkits/vte3
+LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-rpath

@@ -12,7 +12,7 @@ COMMENT=	Web community content management system in PHP5 and MySQL
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
+RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:www/smarty2
 
 USE_APACHE_RUN=	22+
 USE_PHP=	mysqli simplexml xml session gd

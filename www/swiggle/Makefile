@@ -13,7 +13,7 @@ COMMENT=	Swiggle is a commandline web image gallery generator
 
 LICENSE=	BSD4CLAUSE
 
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libexif.so:graphics/libexif
 
 USES=		jpeg
 

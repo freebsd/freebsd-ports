@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Tools for using a Web Server Gateway Interface stack
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		python

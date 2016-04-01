@@ -13,8 +13,8 @@ COMMENT=	HTML editor designed for the experienced web designer
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libenchant.so:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libenchant.so:textproc/enchant
 
 USES=		desktop-file-utils gettext gmake libtool pkgconfig python \
 		shared-mime-info tar:bzip2
@@ -42,9 +42,9 @@ DEBUG_CONFIGURE_ENABLE=	debugging-output
 GTK2_USE=		gnome=gtk20
 GTK2_CONFIGURE_ON=	--with-gtk2=yes
 GTK2_CONFIGURE_OFF=	--with-gtk2=no
-GTK3_LIB_DEPENDS=	libgucharmap_2_90.so:${PORTSDIR}/deskutils/gucharmap
+GTK3_LIB_DEPENDS=	libgucharmap_2_90.so:deskutils/gucharmap
 GTK3_USE=		gnome=gtk30
-TIDY_RUN_DEPENDS=	tidy4:${PORTSDIR}/www/tidy
-WEBLINT_RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
+TIDY_RUN_DEPENDS=	tidy4:www/tidy
+WEBLINT_RUN_DEPENDS=	weblint:www/weblint
 
 .include <bsd.port.mk>

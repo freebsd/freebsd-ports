@@ -11,9 +11,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Tests remote URLs or local web files
 
 BUILD_DEPENDS=	\
-	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
-	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
+	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
+	p5-libwww>=0:www/p5-libwww \
+	p5-Test-MockObject>=0:devel/p5-Test-MockObject \
 
 USES=		perl5
 USE_PERL5=	configure

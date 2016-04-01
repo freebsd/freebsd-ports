@@ -15,8 +15,8 @@ COMMENT=	Modules for c-icap: virus_scan and srv_url_check
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS+=	libicapapi.so:${PORTSDIR}/www/c-icap \
-		libclamav.so:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	libicapapi.so:www/c-icap \
+		libclamav.so:security/clamav
 
 USES=		libtool
 GNU_CONFIGURE=	yes

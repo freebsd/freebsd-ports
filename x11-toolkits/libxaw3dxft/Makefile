@@ -9,7 +9,7 @@ DISTNAME=	libXaw3dXft-${DISTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	3D Xaw (Athena Widget Set) replacement with extended fonts
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig tar:bzip2

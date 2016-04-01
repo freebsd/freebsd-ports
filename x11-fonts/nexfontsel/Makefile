@@ -12,7 +12,7 @@ DISTNAME=	NeXFontSel-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NeXtaw based replacement for xfontsel
 
-LIB_DEPENDS=	libneXtaw.so:${PORTSDIR}/x11-toolkits/neXtaw
+LIB_DEPENDS=	libneXtaw.so:x11-toolkits/neXtaw
 
 USES=		imake
 USE_XORG=	xaw

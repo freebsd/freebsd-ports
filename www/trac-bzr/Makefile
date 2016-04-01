@@ -14,8 +14,8 @@ COMMENT=	Bazaar-NG plugin for Trac
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac \
-		bzr:${PORTSDIR}/devel/bzr
+RUN_DEPENDS=	tracd:www/trac \
+		bzr:devel/bzr
 
 USES=		python:2 tar:bzip2
 USE_PYTHON=	distutils autoplist

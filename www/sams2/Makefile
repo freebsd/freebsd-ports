@@ -11,8 +11,8 @@ COMMENT=	Squid Accounting Management System
 
 LICENSE=	BSD4CLAUSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/${_MYSQL_SERVER}
+LIB_DEPENDS=	libpcre.so:devel/pcre
+RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${_MYSQL_SERVER}
 
 USES=		autoreconf gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
@@ -36,10 +36,10 @@ APACHE_USE=	APACHE=22+
 
 .if ${PORT_OPTIONS:MAPACHE}
 .  if ${PHP_VER} == "54" && (${APACHE_VERSION} >= 24)
-RUN_DEPENDS+=	mod_php5>=0:${PORTSDIR}/www/mod_php5
+RUN_DEPENDS+=	mod_php5>=0:www/mod_php5
 .  endif
 .  if ${PHP_VER} == "55" && (${APACHE_VERSION} >= 24)
-RUN_DEPENDS+=	mod_php55>=0:${PORTSDIR}/www/mod_php55
+RUN_DEPENDS+=	mod_php55>=0:www/mod_php55
 .  endif
 .  if ${APACHE_VERSION} >= 24
 AP24=		""

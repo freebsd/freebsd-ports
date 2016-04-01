@@ -13,8 +13,8 @@ DISTNAME=	x-koi8u
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Ukrainian KOI8 fonts for X11R6 (koi8-u)
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+		mkfontdir:x11-fonts/mkfontdir
 
 USES=		fonts perl5 tar:tgz
 USE_PERL5=	build

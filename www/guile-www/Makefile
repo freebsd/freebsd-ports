@@ -10,7 +10,7 @@ MASTER_SITES=	GNU/guile
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Guile modules for WWW interaction
 
-RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
+RUN_DEPENDS=	guile:lang/guile
 
 GNU_CONFIGURE=	yes
 INFO=		guile-www

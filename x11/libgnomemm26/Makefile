@@ -12,8 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgnome library
 
-LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
+BUILD_DEPENDS=	gm4:devel/m4
 
 USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_XORG=	xext

@@ -15,15 +15,15 @@ COMMENT=	Download videos from various Flash-based video hosting sites
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-		p5-Crypt-Blowfish_PP>=0:${PORTSDIR}/security/p5-Crypt-Blowfish_PP \
-		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
-		p5-Data-AMF>=0:${PORTSDIR}/converters/p5-Data-AMF \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		rtmpdump>=2.4.0:${PORTSDIR}/multimedia/rtmpdump
+		p5-Crypt-Blowfish_PP>=0:security/p5-Crypt-Blowfish_PP \
+		p5-Crypt-Rijndael>=0:security/p5-Crypt-Rijndael \
+		p5-Data-AMF>=0:converters/p5-Data-AMF \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-IO-Compress>=0:archivers/p5-IO-Compress \
+		p5-URI>=0:net/p5-URI \
+		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		rtmpdump>=2.4.0:multimedia/rtmpdump
 
 USES=		perl5
 NO_BUILD=	yes

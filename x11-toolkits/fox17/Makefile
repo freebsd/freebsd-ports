@@ -42,19 +42,19 @@ CONFIGURE_ARGS+=--disable-jpeg
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 .else
 CONFIGURE_ARGS+=--disable-png
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libtiff.so:graphics/tiff
 .else
 CONFIGURE_ARGS+=--disable-tiff
 .endif
 
 .if ${PORT_OPTIONS:MWEBP}
-LIB_DEPENDS+=	libwebp.so:${PORTSDIR}/graphics/webp
+LIB_DEPENDS+=	libwebp.so:graphics/webp
 .else
 CONFIGURE_ARGS+=--disable-webp
 .endif

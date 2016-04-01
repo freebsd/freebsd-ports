@@ -15,7 +15,7 @@ PATCHFILES=	patch04.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Log-Analyzer for web servers
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 

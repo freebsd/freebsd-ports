@@ -31,11 +31,11 @@ IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGD}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${PORTSDIR}/${gd_DEPENDS}
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${gd_DEPENDS}
 .endif
 
 .if ${PORT_OPTIONS:MIMAGICK}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/${imagick_DEPENDS}
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${imagick_DEPENDS}
 .endif
 
 .if empty(PORT_OPTIONS:MGD) && empty(PORT_OPTIONS:MIMAGICK)

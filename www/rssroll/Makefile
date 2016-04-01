@@ -9,9 +9,9 @@ COMMENT=	RSS collector in C
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libxml2.so:textproc/libxml2 \
+		libsqlite3.so:databases/sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koue

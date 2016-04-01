@@ -10,7 +10,7 @@ MASTER_SITES=	http://gtk.no/archive/genmenu/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Generating menus for Bbox, Fbox, Obox, WM and E
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		shebangfix
 NO_BUILD=	yes

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	e-module-
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment module that minimizes windows to show the desktop
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	enlightenment:x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment:x11-wm/enlightenment
 
 DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes

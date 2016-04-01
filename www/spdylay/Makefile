@@ -13,9 +13,9 @@ COMMENT=	SPDY protocol version 2, 3 and 3.1 implementation in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libevent2>=2.0.8:${PORTSDIR}/devel/libevent2
-LIB_DEPENDS=	libevent_openssl.so:${PORTSDIR}/devel/libevent2
-RUN_DEPENDS=	libevent2>=2.0.8:${PORTSDIR}/devel/libevent2
+BUILD_DEPENDS=	libevent2>=2.0.8:devel/libevent2
+LIB_DEPENDS=	libevent_openssl.so:devel/libevent2
+RUN_DEPENDS=	libevent2>=2.0.8:devel/libevent2
 
 CONFIGURE_ARGS=	--enable-examples \
 		--enable-src

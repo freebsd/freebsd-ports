@@ -9,8 +9,8 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	The gconf backend for CompizConfig
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
-LIB_DEPENDS=	libcompizconfig.so:${PORTSDIR}/x11-wm/libcompizconfig
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz
+LIB_DEPENDS=	libcompizconfig.so:x11-wm/libcompizconfig
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

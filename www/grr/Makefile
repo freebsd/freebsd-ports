@@ -13,7 +13,7 @@ COMMENT=	Rss reader for GNUstep
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libRSSKit.so:${PORTSDIR}/www/rsskit
+LIB_DEPENDS=	libRSSKit.so:www/rsskit
 
 USES=		gnustep
 USE_GNUSTEP=	back build

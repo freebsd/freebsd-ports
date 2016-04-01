@@ -11,12 +11,12 @@ COMMENT=	Slightly improved screen locker based on slock
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
-		libxcb-image.so:${PORTSDIR}/x11/xcb-util-image \
-		libev.so:${PORTSDIR}/devel/libev \
-		libxkbfile.so:${PORTSDIR}/x11/libxkbfile \
-		libxkbcommon.so:${PORTSDIR}/x11/libxkbcommon
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libxcb-keysyms.so:x11/xcb-util-keysyms \
+		libxcb-image.so:x11/xcb-util-image \
+		libev.so:devel/libev \
+		libxkbfile.so:x11/libxkbfile \
+		libxkbcommon.so:x11/libxkbcommon
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 		X11INC="${LOCALBASE}/include" CC="${CC}" \

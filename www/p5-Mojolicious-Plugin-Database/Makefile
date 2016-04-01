@@ -13,11 +13,11 @@ COMMENT=	Handling of DBI based connections in Mojolicious
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Mojolicious>=1:${PORTSDIR}/www/p5-Mojolicious
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-Mojolicious>=1:www/p5-Mojolicious
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
 NO_ARCH=	yes
 USES=		perl5

@@ -14,7 +14,7 @@ COMMENT=	Engine, and collection of icons, themes from OpenSolaris
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	icon-naming-utils>=0.8.90:${PORTSDIR}/x11-themes/icon-naming-utils
+BUILD_DEPENDS=	icon-naming-utils>=0.8.90:x11-themes/icon-naming-utils
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool perl5 pkgconfig tar:bzip2

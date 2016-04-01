@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.webdav.org/cadaver/ \
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Commandline client for DAV
 
-LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
+LIB_DEPENDS=	libneon.so:www/neon
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-netrc

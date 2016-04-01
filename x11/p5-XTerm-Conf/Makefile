@@ -13,7 +13,7 @@ COMMENT=	Perl module that changes configuration of a running xterm
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Term-ReadKey>=2.32:${PORTSDIR}/devel/p5-Term-ReadKey
+BUILD_DEPENDS=	p5-Term-ReadKey>=2.32:devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

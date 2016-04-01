@@ -10,7 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for KDE
 
-LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
 USE_GNOME=	glib20
 USE_KDE4=	kdelibs kdeprefix baloo baloo-widgets libkonq \
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	KONSOLE KWRITE
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 KONSOLE_DESC=	Install Konsole terminal emulator
-KONSOLE_RUN_DEPENDS=	${KDE4_PREFIX}/bin/konsole:${PORTSDIR}/x11/konsole
+KONSOLE_RUN_DEPENDS=	${KDE4_PREFIX}/bin/konsole:x11/konsole
 
 KWRITE_DESC=	Install KWrite text editor
 KWRITE_USE=	KDE4=kate_run

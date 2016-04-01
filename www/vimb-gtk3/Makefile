@@ -2,7 +2,7 @@
 
 PORTNAME=	vimb-gtk3
 
-LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 
 MAKE_ENV=	GTK="3"
 USE_GNOME=	gtk30

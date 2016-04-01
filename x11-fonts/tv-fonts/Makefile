@@ -10,8 +10,8 @@ MASTER_SITES=	http://dl.bytesex.org/releases/${PORTNAME}/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Number of fonts which are useful for TV applications
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+		mkfontdir:x11-fonts/mkfontdir
 
 USES=		gmake fonts tar:bzip2
 MAKE_JOBS_UNSAFE=	yes

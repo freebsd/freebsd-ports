@@ -12,7 +12,7 @@ COMMENT=	Web Interface for Graylog
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		tar:tgz
 USE_JAVA=	yes

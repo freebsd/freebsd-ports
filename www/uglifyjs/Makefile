@@ -11,8 +11,8 @@ COMMENT=	JavaScript parser/compressor/beautifier
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	npm>=0:${PORTSDIR}/www/npm
-RUN_DEPENDS=	npm>=0:${PORTSDIR}/www/npm
+BUILD_DEPENDS=	npm>=0:www/npm
+RUN_DEPENDS=	npm>=0:www/npm
 
 NO_BUILD=	yes
 USE_GITHUB=	yes

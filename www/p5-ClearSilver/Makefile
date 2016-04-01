@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl bindings for fast and powerful template system
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver
+BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:www/clearsilver
 
 USES=		perl5
 USE_PERL5=	configure

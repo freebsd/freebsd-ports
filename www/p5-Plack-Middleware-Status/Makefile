@@ -11,8 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to map urls to status code-driven responses for Plack
 
 RUN_DEPENDS=	\
-	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack
+	p5-libwww>0:www/p5-libwww \
+	p5-Plack>0:www/p5-Plack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -12,8 +12,8 @@ COMMENT=	HTTP crawler with an easy interface
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		makedepend:${PORTSDIR}/devel/makedepend
+BUILD_DEPENDS=	bash:shells/bash \
+		makedepend:devel/makedepend
 
 USES=		gmake shebangfix
 SHEBANG_FILES=	configure

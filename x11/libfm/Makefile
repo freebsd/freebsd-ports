@@ -12,10 +12,10 @@ COMMENT?=	Core library of PCManFM file manager
 LICENSE=	LGPL21
 
 .if ! defined(EXTRA_ONLY)
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
-		libexif.so:${PORTSDIR}/graphics/libexif
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		valac:lang/vala
+LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
+		libexif.so:graphics/libexif
 .endif
 
 SLAVEDIRS=	${CATEGORIES}/${PORTNAME}-extra

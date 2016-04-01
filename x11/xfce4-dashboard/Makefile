@@ -14,8 +14,8 @@ COMMENT=	GNOME shell like dashboard for the Xfce desktop
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-	libclutter-1.0.so:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+	libclutter-1.0.so:graphics/clutter
 
 GNU_CONFIGURE=	yes
 USES=	pkgconfig libtool gmake perl5 gettext xfce tar:bzip2

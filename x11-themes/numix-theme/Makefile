@@ -12,7 +12,7 @@ COMMENT=	Gtk and Xfwm4 flat themes for the Xfce Desktop
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:${PORTSDIR}/x11-themes/gtk-murrine-engine
+RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:x11-themes/gtk-murrine-engine
 
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Numix

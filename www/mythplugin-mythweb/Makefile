@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	mythplugin-
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Frontend for scheduling and managing recordings on your MythTV Box
 
-RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
@@ -24,7 +24,7 @@ PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
 
-LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
+LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 
 .include <bsd.port.options.mk>
 

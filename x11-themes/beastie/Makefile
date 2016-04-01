@@ -13,8 +13,8 @@ DISTNAME=	Beastie-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome theme with FreeBSD Colors
 
-RUN_DEPENDS+=	gtk-engines2>=2.7.4_1:${PORTSDIR}/x11-themes/gtk-engines2 \
-		gnome-themes>=2.11.91:${PORTSDIR}/x11-themes/gnome-themes
+RUN_DEPENDS+=	gtk-engines2>=2.7.4_1:x11-themes/gtk-engines2 \
+		gnome-themes>=2.11.91:x11-themes/gnome-themes
 
 WRKSRC=		${WRKDIR}/Beastie
 NO_BUILD=	yes

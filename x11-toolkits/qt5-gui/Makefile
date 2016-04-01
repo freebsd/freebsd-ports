@@ -8,18 +8,18 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt graphical user interface module
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libxcb.so:${PORTSDIR}/x11/libxcb \
-		libxcb-image.so:${PORTSDIR}/x11/xcb-util-image \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
-		libxcb-render-util.so:${PORTSDIR}/x11/xcb-util-renderutil \
-		libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm \
-		libxkbcommon.so:${PORTSDIR}/x11/libxkbcommon
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libpng.so:graphics/png \
+		libxcb.so:x11/libxcb \
+		libxcb-image.so:x11/xcb-util-image \
+		libxcb-keysyms.so:x11/xcb-util-keysyms \
+		libxcb-render-util.so:x11/xcb-util-renderutil \
+		libxcb-icccm.so:x11/xcb-util-wm \
+		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		jpeg
 USE_GL=		gl egl
@@ -61,8 +61,8 @@ QT_CONFIG=	accessibility accessibility-atspi-bridge dbus \
 
 # Inherited from Qt 4.
 .if defined(PACKAGE_BUILDING)
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/encodings \
-		xorg-fonts-truetype>0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/encodings/encodings.dir:x11-fonts/encodings \
+		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 .endif
 
 CFLAGS_powerpc64=	-mminimal-toc
