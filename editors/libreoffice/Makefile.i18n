@@ -41,5 +41,7 @@ do-install:
 
 post-install:
 	@cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} && \
-	${FIND} -s * -not -type d \
-	    -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${TMPPLIST}
+		${FIND} -s * -not -type d \
+			-exec ${ECHO_CMD} "lib/${PORTNAME}/{}" \; >> ${TMPPLIST} && \
+		${FIND} -d * -type d -empty \
+			-exec ${ECHO_CMD} "@dir lib/${PORTNAME}/{}" \; >> ${TMPPLIST}
