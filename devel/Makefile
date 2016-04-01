@@ -4056,6 +4056,7 @@
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
     SUBDIR += py-event
+    SUBDIR += py-exam
     SUBDIR += py-extras
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
