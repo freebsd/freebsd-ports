@@ -1300,6 +1300,7 @@
     SUBDIR += py-syck
     SUBDIR += py-texttable
     SUBDIR += py-tinycss
+    SUBDIR += py-toronado
     SUBDIR += py-trans
     SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
