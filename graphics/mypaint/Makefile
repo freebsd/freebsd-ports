@@ -12,13 +12,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast painting/scribbling program
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}cairo>0:${PORTSDIR}/graphics/py-cairo \
-		${PYTHON_PKGNAMEPREFIX}protobuf>0:${PORTSDIR}/devel/py-protobuf
-LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2
+		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo \
+		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf
+LIB_DEPENDS=	libjson-c.so:devel/json-c \
+		liblcms2.so:graphics/lcms2
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		swig:${PORTSDIR}/devel/swig13 \
-		protoc:${PORTSDIR}/devel/protobuf
+		swig:devel/swig13 \
+		protoc:devel/protobuf
 
 USE_GNOME=	glib20 pygtk2
 MAKE_ARGS=	prefix="${PREFIX}"

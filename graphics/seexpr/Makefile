@@ -31,7 +31,7 @@ CMAKE_ARGS+=	-DUSE_SSE41:BOOL=ON
 
 # base flex(1) v2.5.4 is not sufficient
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 .endif
 
 post-patch:

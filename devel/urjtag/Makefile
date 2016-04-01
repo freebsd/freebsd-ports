@@ -12,7 +12,7 @@ COMMENT=	Extended utility to work with JTAG-aware boards
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake readline shebangfix tar:bzip2
 SHEBANG_FILES=	src/bsdl2jtag
@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	FTDI USB
 OPTIONS_SUB=		yes
 
 FTDI_DESC=		FTDI-based USB JTAG adapters support
-FTDI_LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi
+FTDI_LIB_DEPENDS=	libftdi.so:devel/libftdi
 FTDI_CONFIGURE_WITH=	libftdi
 
 JEDEC_DESC=		Experimental JEDEC flash detection
@@ -42,7 +42,7 @@ USB_CONFIGURE_ON=	--with-libusb=/usr
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>0:textproc/flex
 CONFIGURE_ENV+=	LEX=${LOCALBASE}/bin/flex
 .endif
 

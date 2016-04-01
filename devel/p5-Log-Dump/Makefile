@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Data-Dump>0:${PORTSDIR}/devel/p5-Data-Dump \
-	p5-Sub-Install>0:${PORTSDIR}/devel/p5-Sub-Install
+	p5-Data-Dump>0:devel/p5-Data-Dump \
+	p5-Sub-Install>0:devel/p5-Sub-Install
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-	p5-ExtUtils-MakeMaker-CPANfile>0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker-CPANfile
+	p5-ExtUtils-MakeMaker-CPANfile>0:devel/p5-ExtUtils-MakeMaker-CPANfile
 
 USES=		perl5
 USE_PERL5=	configure

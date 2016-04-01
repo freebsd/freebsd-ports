@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to add module directories of a project into @INC
 
 RUN_DEPENDS=	\
-	p5-FindBin-libs>0:${PORTSDIR}/devel/p5-FindBin-libs
+	p5-FindBin-libs>0:devel/p5-FindBin-libs
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -10,9 +10,9 @@ COMMENT=	Log normalizer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c \
-		libestr.so:${PORTSDIR}/devel/libestr
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+LIB_DEPENDS=	libjson-c.so:devel/json-c \
+		libestr.so:devel/libestr
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

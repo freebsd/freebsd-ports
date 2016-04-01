@@ -12,10 +12,10 @@ COMMENT=	Set of classes to do different actions with the console
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	pear-ezc_Base>=1.8:${PORTSDIR}/devel/pear-ezc_Base \
-		${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
-RUN_DEPENDS=	pear-ezc_Base>=1.8:${PORTSDIR}/devel/pear-ezc_Base \
-		${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
+BUILD_DEPENDS=	pear-ezc_Base>=1.8:devel/pear-ezc_Base \
+		${PEARDIR}/.channels/components.ez.no.reg:devel/pear-channel-ezc
+RUN_DEPENDS=	pear-ezc_Base>=1.8:devel/pear-ezc_Base \
+		${PEARDIR}/.channels/components.ez.no.reg:devel/pear-channel-ezc
 
 PEAR_CHANNEL=	ezc
 USES=	pear

@@ -17,8 +17,8 @@ LICENSE=	GPLv3
 USES=		perl5
 USE_PERL5=	configure
 
-BUILD_DEPENDS=	p5-Types-Serialiser>=0:${PORTSDIR}/devel/p5-Types-Serialiser \
-		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-Types-Serialiser>=0:devel/p5-Types-Serialiser \
+		p5-common-sense>=0:devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 post-stage:

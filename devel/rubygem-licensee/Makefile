@@ -12,7 +12,7 @@ COMMENT=	Detects under what license a project is distributed
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-rugged>=0.23:${PORTSDIR}/devel/rubygem-rugged
+RUN_DEPENDS=	rubygem-rugged>=0.23:devel/rubygem-rugged
 
 NO_ARCH=	yes
 USE_RUBY=	yes

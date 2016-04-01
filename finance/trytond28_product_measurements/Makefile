@@ -14,7 +14,7 @@ COMMENT=	Tryton Application Platform (Product Measurements Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_product>=2.8.0:${PORTSDIR}/finance/trytond28_product
+RUN_DEPENDS=	trytond28_product>=2.8.0:finance/trytond28_product
 
 CONFLICTS=	trytond_product_measurements-2.[46].*
 

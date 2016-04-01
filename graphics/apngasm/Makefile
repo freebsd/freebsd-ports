@@ -24,12 +24,12 @@ LDFLAGS+=	-lz
 PORTDOCS=	readme.txt
 PLIST_FILES=	bin/${PORTNAME}
 
-STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
+STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:graphics/png
 STATIC_MAKE_ENV=	STATIC=1
-STATIC_LIB_DEPENDS_OFF=	libpng.so:${PORTSDIR}/graphics/png
+STATIC_LIB_DEPENDS_OFF=	libpng.so:graphics/png
 
 # libzopfli.a is N/A
-STATIC_LIB_DEPENDS_OFF+=libzopfli.so:${PORTSDIR}/archivers/zopfli
+STATIC_LIB_DEPENDS_OFF+=libzopfli.so:archivers/zopfli
 STATIC_CPPFLAGS_OFF+=	-I${LOCALBASE}/include/zopfli
 STATIC_LDFLAGS_OFF+=	-lzopfli
 

@@ -10,10 +10,10 @@ DISTNAME=	autoconf-${PORTVERSION}
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		help2man:${PORTSDIR}/misc/help2man
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		autoconf-wrapper:${PORTSDIR}/devel/autoconf-wrapper
+BUILD_DEPENDS=	gm4:devel/m4 \
+		help2man:misc/help2man
+RUN_DEPENDS=	gm4:devel/m4 \
+		autoconf-wrapper:devel/autoconf-wrapper
 
 BUILD_VERSION=	2.69
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}

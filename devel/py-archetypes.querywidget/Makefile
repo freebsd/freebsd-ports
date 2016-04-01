@@ -13,8 +13,8 @@ COMMENT=	Widget for creating catalog queries
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.querystring>=1.0.3:${PORTSDIR}/www/py-plone.app.querystring \
-		${PYTHON_PKGNAMEPREFIX}plone.app.jquerytools>=0:${PORTSDIR}/www/py-plone.app.jquerytools
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.querystring>=1.0.3:www/py-plone.app.querystring \
+		${PYTHON_PKGNAMEPREFIX}plone.app.jquerytools>=0:www/py-plone.app.jquerytools
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

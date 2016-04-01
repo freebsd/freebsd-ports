@@ -13,14 +13,14 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libssh2.so:${PORTSDIR}/security/libssh2
-BUILD_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq \
-		xsltproc:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq \
-		dmidecode:${PORTSDIR}/sysutils/dmidecode
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libgcrypt.so:security/libgcrypt \
+		libxml2.so:textproc/libxml2 \
+		libssh2.so:security/libssh2
+BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
+		xsltproc:textproc/libxslt
+RUN_DEPENDS=	dnsmasq:dns/dnsmasq \
+		dmidecode:sysutils/dmidecode
 
 OPTIONS_DEFINE=	DOCS GNUTLS NLS QEMU SASL
 OPTIONS_DEFAULT=	GNUTLS
@@ -42,24 +42,24 @@ BHYVE_CONFIGURE_WITH=	bhyve
 
 QEMU_CONFIGURE_WITH=	qemu yajl
 QEMU_CFLAGS=	-I${LOCALBASE}/include
-QEMU_LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl
-QEMU_RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
-			qemu-io:${PORTSDIR}/emulators/qemu-devel
+QEMU_LIB_DEPENDS=	libyajl.so:devel/yajl
+QEMU_RUN_DEPENDS=	dmidecode:sysutils/dmidecode \
+			qemu-io:emulators/qemu-devel
 
 GNUTLS_CONFIGURE_ON=	--with-gnutls=${LOCALBASE}
 GNUTLS_CONFIGURE_OFF=	--without-gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
 SASL_CONFIGURE_WITH=	sasl
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 XEN_CONFIGURE_WITH=	libxl
 XEN_CFLAGS=	-I${LOCALBASE}/include
-XEN_LIB_DEPENDS=	libxenlight.so:${PORTSDIR}/sysutils/xen-tools
+XEN_LIB_DEPENDS=	libxenlight.so:sysutils/xen-tools
 
 VARDIR=		/var
 

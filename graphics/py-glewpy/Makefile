@@ -16,7 +16,7 @@ PATCHFILES=	glewpy-${PORTVERSION}-generatedsources.diff.bz2
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Advanced OpenGL extensions to Python
 
-BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
+BUILD_DEPENDS=	pyrex>=0.9.6.2:devel/pyrex
 
 USES=		python
 USE_GL=		glew

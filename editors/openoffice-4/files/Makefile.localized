@@ -163,7 +163,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .if ${LOCALIZED_LANG} == "ja"
 CATEGORIES+=	japanese
 LANG_PKGNAME=	${LOCALIZED_LANG}
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/japanese/font-std
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:japanese/font-std
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ka"
@@ -384,14 +384,14 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 CATEGORIES+=	chinese
 LANG_PKGNAME=	zh
 LANG_SUFFIX=	CN
-BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/gbsn00lp.ttf:${PORTSDIR}/chinese/arphicttf
+BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/gbsn00lp.ttf:chinese/arphicttf
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "zh-TW"
 CATEGORIES+=	chinese
 LANG_PKGNAME=	zh
 LANG_SUFFIX=	TW
-BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
+BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf:chinese/arphicttf
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "zu"

@@ -15,10 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to build
 
-BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
-		mtn:${PORTSDIR}/devel/monotone \
-		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+RUN_DEPENDS+=	dot:graphics/graphviz \
+		mtn:devel/monotone \
+		lablgtk2:x11-toolkits/ocaml-lablgtk2
 
 USES=		gmake
 USE_OCAML=	yes

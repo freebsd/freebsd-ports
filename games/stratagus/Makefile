@@ -13,8 +13,8 @@ COMMENT=	Free cross-platform real-time strategy gaming engine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtolua++-${LUA_VER}.so:lang/tolua++
 
 USE_GL=		gl glu
 USE_SDL=	sdl
@@ -30,20 +30,20 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS X11 FLUIDSYNTH DOCS
 OPTIONS_DEFAULT=MIKMOD MNG THEORA VORBIS X11 FLUIDSYNTH
 
-MIKMOD_LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+MIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
 MIKMOD_CMAKE_ON=	-DWITH_MIKMOD:BOOL=ON
 MIKMOD_CMAKE_OFF=	-DWITH_MIKMOD:BOOL=OFF
 
 MNG_DESC=		MNG image library support
-MNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+MNG_LIB_DEPENDS=	libmng.so:graphics/libmng
 MNG_CMAKE_ON=		-DWITH_MNG:BOOL=ON
 MNG_CMAKE_OFF=		-DWITH_MNG:BOOL=OFF
 
-THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 THEORA_CMAKE_ON=	-DWITH_THEORA:BOOL=ON
 THEORA_CMAKE_OFF=	-DWITH_THEORA:BOOL=OFF
 
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CMAKE_ON=	-DWITH_OGGVORBIS:BOOL=ON
 VORBIS_CMAKE_OFF=	-DWITH_OGGVORBIS:BOOL=OFF
 
@@ -52,7 +52,7 @@ X11_USE=		XORG=x11
 X11_CMAKE_ON=		-DWITH_X11:BOOL=ON
 X11_CMAKE_OFF=		-DWITH_X11:BOOL=OFF
 
-FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_CMAKE_ON=	-DWITH_FLUIDSYNTH:BOOL=ON
 FLUIDSYNTH_CMAKE_OFF=	-DWITH_FLUIDSYNTH:BOOL=OFF
 

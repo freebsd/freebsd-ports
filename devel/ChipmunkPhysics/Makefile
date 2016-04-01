@@ -26,7 +26,7 @@ PORTEXAMPLES=	*.c *.h
 
 DEMOS_DESC=	Install the demo program (requires GLFW and GLEW)
 DEMOS_USE=		GL=glew
-DEMOS_LIB_DEPENDS=	libglfw.so:${PORTSDIR}/graphics/glfw2
+DEMOS_LIB_DEPENDS=	libglfw.so:graphics/glfw2
 DEMOS_CMAKE_OFF=	-DBUILD_DEMOS=OFF
 
 post-install-DOCS-on:

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	plasma-applet-
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionary plasma applet for KDE
 
-RUN_DEPENDS=	${QSTARDICT_PLUGIN_PATH}/libstardict.so:${PORTSDIR}/textproc/qstardict
+RUN_DEPENDS=	${QSTARDICT_PLUGIN_PATH}/libstardict.so:textproc/qstardict
 
 USES=		cmake tar:bzip2
 USE_QT4=	qmake_build uic_build moc_build rcc_build

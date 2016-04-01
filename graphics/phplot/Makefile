@@ -15,7 +15,7 @@ COMMENT=	PHP class for creating scientific and business charts
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -29,7 +29,7 @@ LIBRARIES=	phplot.php rgb.inc.php
 OPTIONS_DEFINE=		DOCS FONTS
 OPTIONS_DEFAULT=	FONTS
 FONTS_DESC=		install TrueType fonts
-FONTS_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FONTS_LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 do-install:
 	@${MKDIR} ${PHPLOT_DIR}

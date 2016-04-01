@@ -13,8 +13,8 @@ COMMENT=	Keep imports and functions out of your namespace
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.12:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
-		p5-Package-Stash>=0.23:${PORTSDIR}/devel/p5-Package-Stash
+BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.12:devel/p5-B-Hooks-EndOfScope \
+		p5-Package-Stash>=0.23:devel/p5-Package-Stash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

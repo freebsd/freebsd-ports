@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Plain virtual filesystem
 
-BUILD_DEPENDS=	p5-Filesys-Virtual>=0.05:${PORTSDIR}/devel/p5-Filesys-Virtual
+BUILD_DEPENDS=	p5-Filesys-Virtual>=0.05:devel/p5-Filesys-Virtual
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -10,11 +10,11 @@ COMMENT=	Open source MSX emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libao.so:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libtheora.so:multimedia/libtheora \
+		libao.so:audio/libao
 
 MAKEFILE=	GNUmakefile
 USES=		gmake python tcl

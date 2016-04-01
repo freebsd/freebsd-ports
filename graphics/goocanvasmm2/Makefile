@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	C++ bindings for the goocanvas widget for GTK
 
-LIB_DEPENDS=	libgoocanvas-2.0.so:${PORTSDIR}/graphics/goocanvas2
+LIB_DEPENDS=	libgoocanvas-2.0.so:graphics/goocanvas2
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtkmm30

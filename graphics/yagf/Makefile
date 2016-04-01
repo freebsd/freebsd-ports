@@ -12,16 +12,16 @@ COMMENT=	Graphical interface for an OCR program (cuneiform and tesseract)
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libaspell.so:textproc/aspell
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_MULTI=		OCRENGINE
 OPTIONS_MULTI_OCRENGINE=CUNEIFORM TESSERACT
 CUNEIFORM_DESC=		Cuneiform OCR engine
-CUNEIFORM_RUN_DEPENDS=	cuneiform:${PORTSDIR}/graphics/cuneiform
+CUNEIFORM_RUN_DEPENDS=	cuneiform:graphics/cuneiform
 TESSERACT_DESC=		Tesseract OCR engine
-TESSERACT_RUN_DEPENDS=	tesseract:${PORTSDIR}/graphics/tesseract
+TESSERACT_RUN_DEPENDS=	tesseract:graphics/tesseract
 
 OPTIONS_DEFAULT=	CUNEIFORM
 

@@ -12,14 +12,14 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Strategy game featuring tactical combat
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libxvidcore.so:${PORTSDIR}/multimedia/xvid \
-		libmxml.so:${PORTSDIR}/textproc/mxml
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:${PORTSDIR}/games/ufoai-data
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libpng.so:graphics/png \
+		libcurl.so:ftp/curl \
+		libtheora.so:multimedia/libtheora \
+		libxvidcore.so:multimedia/xvid \
+		libmxml.so:textproc/mxml
+BUILD_DEPENDS=	zip:archivers/zip
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:games/ufoai-data
 
 USE_GL=		yes
 USE_SDL=	sdl image mixer ttf
@@ -68,7 +68,7 @@ PLIST_SUB+=	UFO2MAP="@comment "
 .if ${PORT_OPTIONS:MUFORADIANT}
 CONFIGURE_ARGS+=--enable-uforadiant
 USE_GNOME+=	gtk20 glib20 gtksourceview2 libxml2
-LIB_DEPENDS+=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 RADIANT_FILES=	colours.xml game.xml input.xml mapdef.template menu.xml user.xml
 RADIANT_DIRS=	bitmaps i18n prefabs sourceviewer
 PLIST_SUB+=	UFORADIANT=""

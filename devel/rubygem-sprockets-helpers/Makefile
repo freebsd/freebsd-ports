@@ -12,7 +12,7 @@ COMMENT=	Asset path helpers for Sprockets 2.x applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-sprockets3>=2.2:${PORTSDIR}/devel/rubygem-sprockets3
+RUN_DEPENDS=	rubygem-sprockets3>=2.2:devel/rubygem-sprockets3
 
 NO_ARCH=	yes
 USE_RUBY=	yes

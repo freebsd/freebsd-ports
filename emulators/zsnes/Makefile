@@ -13,8 +13,8 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
 
 # This must be >= 0.98!
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	nasm:devel/nasm
+LIB_DEPENDS=	libpng.so:graphics/png
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	non-portable, for a portable emulator see emulators/snes9x
@@ -39,7 +39,7 @@ JMA_CONFIGURE_ENABLE=	jma
 X11_CONFIGURE_WITH=	x
 OPENGL_CONFIGURE_ENABLE=	opengl
 
-AO_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+AO_LIB_DEPENDS=	libao.so:audio/libao
 AO_CONFIGURE_ENABLE=	libao
 
 CFLAGS+=	-I${LOCALBASE}/include

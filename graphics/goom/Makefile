@@ -21,7 +21,7 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 .if exists(${X11R6}/bin/xmms) || defined(WITH_XMMS)
-LIB_DEPENDS+=	libxmms.so:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	libxmms.so:multimedia/xmms
 PLIST_SUB+=	XMMS=""
 .else
 PLIST_SUB+=	XMMS="@comment "

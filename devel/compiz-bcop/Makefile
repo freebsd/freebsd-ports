@@ -10,8 +10,8 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/ \
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Code generator for Compiz Fusion Plugins
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
+		${LOCALBASE}/bin/getopt:misc/getopt
 
 GNU_CONFIGURE=	yes
 

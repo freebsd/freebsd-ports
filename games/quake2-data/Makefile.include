@@ -58,5 +58,5 @@ SUB_LIST+=	Q2DIR="${Q2DIR}"
 
 .if ${PORTNAME} != data
 # Not depending on the particular .pak file since they are OPTIONS-dependent
-RUN_DEPENDS+=	quake2-data>0:${PORTSDIR}/games/quake2-data
+RUN_DEPENDS+=	quake2-data>0:games/quake2-data
 .endif

@@ -13,10 +13,10 @@ COMMENT=	Tryton Application Platform (Stock Supply Production Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28>=2.8.2:${PORTSDIR}/finance/trytond28 \
-		trytond28_stock_supply>=2.8.1:${PORTSDIR}/finance/trytond28_stock_supply \
-		trytond28_production>=2.8.0:${PORTSDIR}/finance/trytond28_production \
-		trytond28_product>=2.8.0:${PORTSDIR}/finance/trytond28_product
+RUN_DEPENDS=	trytond28>=2.8.2:finance/trytond28 \
+		trytond28_stock_supply>=2.8.1:finance/trytond28_stock_supply \
+		trytond28_production>=2.8.0:finance/trytond28_production \
+		trytond28_product>=2.8.0:finance/trytond28_product
 
 CONFLICTS=	trytond_stock_supply_production-2.[46].*
 

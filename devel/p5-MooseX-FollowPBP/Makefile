@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Name your accessors get_foo() and set_foo()
 
-BUILD_DEPENDS=	p5-Moose>=1.16:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Moose>=1.16:devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	ART20

@@ -9,7 +9,7 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Top-down survival shoot 'em up
 
-LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ooxi

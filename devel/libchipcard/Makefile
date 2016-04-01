@@ -12,8 +12,8 @@ COMMENT=	Library for easy access to chipcards
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite \
-		libgwenhywfar.so:${PORTSDIR}/devel/gwenhywfar
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
+		libgwenhywfar.so:devel/gwenhywfar
 
 USES=		gmake libtool
 USE_OPENSSL=	yes
@@ -34,8 +34,8 @@ GWEN_SHLIB_VER=	60
 
 OPTIONS_DEFINE=			DOXYGEN MEMDEBUG
 
-DOXYGEN_BUILD_DEPENDS=		doxygen:${PORTSDIR}/devel/doxygen \
-				dot:${PORTSDIR}/graphics/graphviz
+DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen \
+				dot:graphics/graphviz
 DOXYGEN_CONFIGURE_ENABLE=	full-doc
 
 MEMDEBUG_DESC=			Enable memory debugger statistic

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Safe, simple inside-out object construction kit
 
-BUILD_DEPENDS=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA
+BUILD_DEPENDS=	p5-Class-ISA>=0:devel/p5-Class-ISA
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.0301

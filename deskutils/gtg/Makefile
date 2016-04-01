@@ -10,10 +10,10 @@ COMMENT=	GTD organizer for the GNOME desktop environment
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_PKGNAMEPREFIX}liblarch>=2.1:${PORTSDIR}/devel/py-liblarch \
-		xset:${PORTSDIR}/x11/xset
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg \
+		${PYTHON_PKGNAMEPREFIX}liblarch>=2.1:devel/py-liblarch \
+		xset:x11/xset
 
 USE_GNOME=	pygobject pygtk2
 USES=		gettext desktop-file-utils python:2 shebangfix
@@ -24,7 +24,7 @@ USE_PYTHON=	distutils autoplist
 OPTIONS_DEFINE=		CHEETAH
 CHEETAH_DESC=		Needed for export plugin to work
 OPTIONS_EXCLUDE=	NLS DOCS
-CHEETAH_RUN_DEPENDS=	${LOCALBASE}/bin/cheetah:${PORTSDIR}/devel/py-cheetah
+CHEETAH_RUN_DEPENDS=	${LOCALBASE}/bin/cheetah:devel/py-cheetah
 
 .include <bsd.port.options.mk>
 

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Retrieves module information from a file or script
 
-RUN_DEPENDS=	p5-Module-Info>0.20:${PORTSDIR}/devel/p5-Module-Info
+RUN_DEPENDS=	p5-Module-Info>0.20:devel/p5-Module-Info
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

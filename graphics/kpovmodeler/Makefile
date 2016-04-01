@@ -11,7 +11,7 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE editor/frontend for Povray
 
-RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
+RUN_DEPENDS=	povray:graphics/povray-meta
 
 USE_GL=		glu
 USE_KDE4=	kdelibs kdeprefix automoc4

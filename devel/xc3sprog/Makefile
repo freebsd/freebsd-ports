@@ -8,8 +8,8 @@ MASTER_SITES=	http://opsec.eu/src/xc3sprog/
 MAINTAINER=	uffe@uffe.org
 COMMENT=	Free programmer for Xilinx Spartan S3E Starter Kit
 
-LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi
-RUN_DEPENDS=	${LOCALBASE}/sbin/fxload:${PORTSDIR}/misc/fxload
+LIB_DEPENDS=	libftdi.so:devel/libftdi
+RUN_DEPENDS=	${LOCALBASE}/sbin/fxload:misc/fxload
 
 USES=		tar:xz cmake
 ALL_TARGET=	xc3sprog

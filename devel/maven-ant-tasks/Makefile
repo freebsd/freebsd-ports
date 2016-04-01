@@ -12,7 +12,7 @@ COMMENT=	Allows Maven artifact handling to be used from within an Ant build
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
+RUN_DEPENDS=	ant:devel/apache-ant
 
 USE_JAVA=	1.6+
 

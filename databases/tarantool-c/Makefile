@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	C client for Tarantool 1.6+
 
-LIB_DEPENDS=	libmsgpuck.so:${PORTSDIR}/devel/msgpuck
+LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}

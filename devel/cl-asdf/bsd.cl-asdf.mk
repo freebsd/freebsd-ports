@@ -50,19 +50,19 @@ USE_CLISP=	yes
 .endif # defined(FASL_TARGET)
 
 .if defined(USE_SBCL)
-BUILD_DEPENDS+=	sbcl:${PORTSDIR}/lang/sbcl
-RUN_DEPENDS+=	sbcl:${PORTSDIR}/lang/sbcl
+BUILD_DEPENDS+=	sbcl:lang/sbcl
+RUN_DEPENDS+=	sbcl:lang/sbcl
 .elif defined(USE_CLISP)
-BUILD_DEPENDS+=	clisp:${PORTSDIR}/lang/clisp
-RUN_DEPENDS+=	clisp:${PORTSDIR}/lang/clisp
+BUILD_DEPENDS+=	clisp:lang/clisp
+RUN_DEPENDS+=	clisp:lang/clisp
 .endif # defined(USE_CLISP)
 
 .if defined(USE_ASDF)
 # Even if the Common Lisp compiler already has a bundled ASDF framework,
 # we still need the asdf-init file.
 
-BUILD_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/asdf.asd:${PORTSDIR}/devel/cl-asdf
-RUN_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/asdf.asd:${PORTSDIR}/devel/cl-asdf
+BUILD_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/asdf.asd:devel/cl-asdf
+RUN_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/asdf.asd:devel/cl-asdf
 
 .endif # defined(USE_ASDF)
 
@@ -70,8 +70,8 @@ RUN_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/asdf.asd:${PORTSDIR}/devel/cl-a
 .if defined(USE_SBCL)
 # SBCL already has a bundled ASDF framework
 .elif defined(USE_CLISP)
-BUILD_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/${FASL_DIR_REL}/asdf.fasl:${PORTSDIR}/devel/cl-asdf-clisp
-RUN_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/${FASL_DIR_REL}/asdf.fasl:${PORTSDIR}/devel/cl-asdf-clisp
+BUILD_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/${FASL_DIR_REL}/asdf.fasl:devel/cl-asdf-clisp
+RUN_DEPENDS+=	${LOCALBASE}/${CL_LIBDIR_REL}/asdf/${FASL_DIR_REL}/asdf.fasl:devel/cl-asdf-clisp
 .endif # defined(USE_CLISP)
 .endif # defined(USE_ASDF_FASL)
 

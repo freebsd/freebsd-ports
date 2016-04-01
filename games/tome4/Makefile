@@ -16,8 +16,8 @@ COMMENT=	Epic tactical turn-based roguelike adventure
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	premake4:${PORTSDIR}/devel/premake4
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+BUILD_DEPENDS=	premake4:devel/premake4
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
 DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;RolePlaying;" ""

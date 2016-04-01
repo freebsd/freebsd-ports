@@ -15,7 +15,7 @@ COMMENT=	Interprocess communication library
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	liblwp.so:${PORTSDIR}/devel/lwp
+LIB_DEPENDS=	liblwp.so:devel/lwp
 
 USES=		gmake libtool pathfix perl5 pkgconfig
 GNU_CONFIGURE=	yes

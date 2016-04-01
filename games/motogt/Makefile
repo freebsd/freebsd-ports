@@ -11,8 +11,8 @@ DISTNAME=	MotoGT-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D top-viewed motorcycle racing game
 
-LIB_DEPENDS=	libsfml1-system.so:${PORTSDIR}/devel/sfml1 \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libsfml1-system.so:devel/sfml1 \
+		libpng.so:graphics/png
 
 LICENSE=	GPLv2 CCbySA
 LICENSE_COMB=	multi

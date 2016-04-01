@@ -13,8 +13,8 @@ COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 CONFLICTS?=	libwmf-nox11-[0-9]*
 

@@ -21,7 +21,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:shells/bash
 
 PLIST_FILES=	bin/lein \
 		etc/bash_completion.d/_lein.bash \

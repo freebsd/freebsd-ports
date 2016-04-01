@@ -13,12 +13,12 @@ COMMENT=	Photorealistic rendering system
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
-		xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libtiff.so:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bison:devel/bison \
+		xsltproc:textproc/libxslt
+LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+		libboost_filesystem.so:devel/boost-libs \
+		libtiff.so:graphics/tiff
+RUN_DEPENDS=	bash:shells/bash
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

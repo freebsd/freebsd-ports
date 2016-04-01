@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome chess
 
-BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
-		itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	vala:lang/vala \
+		itstool:textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 
@@ -29,6 +29,6 @@ GLIB_SCHEMAS=	org.gnome.chess.gschema.xml
 OPTIONS_DEFINE=	GNUCHESS
 OPTIONS_DEFAULT=GNUCHESS
 GNUCHESS_DESC=	Use gnuchess engine for computer player
-GNUCHESS_RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess
+GNUCHESS_RUN_DEPENDS=	gnuchess:games/gnuchess
 
 .include <bsd.port.mk>

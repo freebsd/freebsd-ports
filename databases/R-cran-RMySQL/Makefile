@@ -11,7 +11,7 @@ COMMENT=	R interface to the MySQL database
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-DBI>=0.3.1:${PORTSDIR}/databases/R-cran-DBI
+RUN_DEPENDS=	R-cran-DBI>=0.3.1:databases/R-cran-DBI
 
 USE_MYSQL=	yes
 USES=	cran:auto-plist

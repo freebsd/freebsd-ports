@@ -13,8 +13,8 @@ COMMENT=	Utilities for manipulating with HDR images in OpenEXR format
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 USES=		gmake jpeg pkgconfig

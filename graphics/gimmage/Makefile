@@ -10,7 +10,7 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		desktop-file-utils gettext pkgconfig
 USE_GNOME=	gtkmm24

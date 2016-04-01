@@ -12,7 +12,7 @@ COMMENT=	GTK interface for snes9x
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
+RUN_DEPENDS=	snes9x:emulators/snes9x
 
 USE_GNOME=	gtk20
 USES=		gettext pkgconfig

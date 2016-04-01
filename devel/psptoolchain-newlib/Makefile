@@ -15,11 +15,11 @@ COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 PSP_GCC_STAGE_PREFIX=	psp/stage1
 PSP_SDK_STAGE_PREFIX=	psp/stage1
 
-BUILD_DEPENDS+=		${LOCALBASE}/${PSP_SDK_STAGE_PREFIX}/sdk/include/pspsdk.h:${PORTSDIR}/devel/psptoolchain-pspsdk-stage1 \
-			psp-ar:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-as:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-ld:${PORTSDIR}/devel/psptoolchain-binutils \
-			${LOCALBASE}/${PSP_GCC_STAGE_PREFIX}/bin/psp-gcc:${PORTSDIR}/devel/psptoolchain-gcc-stage1
+BUILD_DEPENDS+=		${LOCALBASE}/${PSP_SDK_STAGE_PREFIX}/sdk/include/pspsdk.h:devel/psptoolchain-pspsdk-stage1 \
+			psp-ar:devel/psptoolchain-binutils \
+			psp-as:devel/psptoolchain-binutils \
+			psp-ld:devel/psptoolchain-binutils \
+			${LOCALBASE}/${PSP_GCC_STAGE_PREFIX}/bin/psp-gcc:devel/psptoolchain-gcc-stage1
 
 USES=			gmake makeinfo
 HAS_CONFIGURE=		yes

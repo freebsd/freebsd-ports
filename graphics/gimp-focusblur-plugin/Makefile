@@ -15,8 +15,8 @@ COMMENT=	Gimp realistic focus blur plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libgimp-2.0.so:graphics/gimp-app
 
 USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

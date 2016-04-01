@@ -14,10 +14,10 @@ COMMENT=	Parse and examine a Perl distribution MANIFEST file
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+BUILD_DEPENDS=	p5-Params-Util>=0:devel/p5-Params-Util \
+		p5-Test-Warn>=0:devel/p5-Test-Warn
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure

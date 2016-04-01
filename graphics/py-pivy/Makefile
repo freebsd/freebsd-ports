@@ -12,8 +12,8 @@ COMMENT=	Python binding for Coin
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libSoQt.so:${PORTSDIR}/x11-toolkits/soqt
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig:devel/swig13
+LIB_DEPENDS=	libSoQt.so:x11-toolkits/soqt
 
 USES=		zip python:2
 USE_PYTHON=	autoplist distutils

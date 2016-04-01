@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to compress Regular Expression
 
 RUN_DEPENDS=	\
-	p5-Regexp-Assemble>0:${PORTSDIR}/devel/p5-Regexp-Assemble
+	p5-Regexp-Assemble>0:devel/p5-Regexp-Assemble
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

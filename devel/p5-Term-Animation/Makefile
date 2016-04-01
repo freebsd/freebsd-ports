@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	ASCII sprite animation framework
 
-BUILD_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
+BUILD_DEPENDS=	p5-Curses>=0:devel/p5-Curses
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

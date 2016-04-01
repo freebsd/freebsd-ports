@@ -14,12 +14,12 @@ COMMENT=	Java-PDF Library
 LICENSE=	MPL LGPL20
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle \
-		${JAVAJARDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j \
-		${JAVAJARDIR}/pdf-renderer.jar:${PORTSDIR}/print/pdf-renderer
-RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle \
-		${JAVAJARDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j \
-		${JAVAJARDIR}/pdf-renderer.jar:${PORTSDIR}/print/pdf-renderer
+BUILD_DEPENDS=	${JAVAJARDIR}/bcmail.jar:java/bouncycastle \
+		${JAVAJARDIR}/dom4j.jar:textproc/dom4j \
+		${JAVAJARDIR}/pdf-renderer.jar:print/pdf-renderer
+RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:java/bouncycastle \
+		${JAVAJARDIR}/dom4j.jar:textproc/dom4j \
+		${JAVAJARDIR}/pdf-renderer.jar:print/pdf-renderer
 
 OPTIONS_DEFINE=	DOCS
 

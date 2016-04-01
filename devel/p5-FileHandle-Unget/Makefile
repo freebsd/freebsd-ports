@@ -12,8 +12,8 @@ COMMENT=	FileHandle which supports ungetting of multiple bytes
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
-TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+BUILD_DEPENDS=	p5-URI>=0:net/p5-URI
+TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp
 
 USES=		perl5
 USE_PERL5=	configure

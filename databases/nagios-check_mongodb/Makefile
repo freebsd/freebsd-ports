@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}nagios-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Nagios plugin to check mongodb server
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=0:${PORTSDIR}/databases/pymongo
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=0:databases/pymongo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mzupan

@@ -14,10 +14,10 @@ COMMENT=	Acmeist PEG Parser Framework
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
-		p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML
+BUILD_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS \
+		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-File-ShareDir-Install>=0.06:${PORTSDIR}/devel/p5-File-ShareDir-Install
+BUILD_DEPENDS+=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install
 
 USE_PERL5=	configure
 USES=		perl5

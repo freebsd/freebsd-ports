@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/gstreamer/gst/}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer OpenGL video plugin
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gettext gmake jpeg libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes

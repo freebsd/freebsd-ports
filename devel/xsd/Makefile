@@ -16,12 +16,12 @@ LICENSE_NAME_FLOSSE=	FLOSS Exception
 LICENSE_FILE_FLOSSE=	${WRKSRC}/xsd/FLOSSE
 LICENSE_PERMS_FLOSSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/include/build-0.3/abspath.make:${PORTSDIR}/devel/build
+BUILD_DEPENDS=	${LOCALBASE}/include/build-0.3/abspath.make:devel/build
 # libxsd-frontend should come from a separate port as well, but at the moment
 # its distribution as a separate tarball is so poor that it does not even have
 # a `make install'.
-LIB_DEPENDS=	libcutl.so:${PORTSDIR}/devel/libcutl \
-		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS=	libcutl.so:devel/libcutl \
+		libxerces-c.so:textproc/xerces-c3
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

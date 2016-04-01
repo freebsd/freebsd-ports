@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Common rules for searching for Perl things
 
-BUILD_DEPENDS=	p5-File-Find-Rule>=0.20:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-Parse-CPAN-Meta>=1.38:${PORTSDIR}/devel/p5-Parse-CPAN-Meta \
-		p5-Params-Util>=0.38:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-File-Find-Rule>=0.20:devel/p5-File-Find-Rule \
+		p5-Parse-CPAN-Meta>=1.38:devel/p5-Parse-CPAN-Meta \
+		p5-Params-Util>=0.38:devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

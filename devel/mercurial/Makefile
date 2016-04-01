@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=DATA
 OPTIONS_SUB=	yes
 
 CA_BUNDLE_DESC=		Install CA Certificates
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 FREEBSD_DESC=		Patches used internally by the FreeBSD Project
 FREEBSD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-authormapsuffix
 NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-setup.py

@@ -12,7 +12,7 @@ COMMENT=	Build tool alternative to make
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	gm4:devel/m4
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	script/scons

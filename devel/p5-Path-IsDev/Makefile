@@ -15,12 +15,12 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Class-Tiny>=0.010:${PORTSDIR}/devel/p5-Class-Tiny \
-	p5-File-HomeDir>0:${PORTSDIR}/devel/p5-File-HomeDir \
-	p5-Module-Runtime>0:${PORTSDIR}/devel/p5-Module-Runtime \
-	p5-Path-Tiny>=0.004:${PORTSDIR}/devel/p5-Path-Tiny \
-	p5-Role-Tiny>0:${PORTSDIR}/devel/p5-Role-Tiny \
-	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
+	p5-Class-Tiny>=0.010:devel/p5-Class-Tiny \
+	p5-File-HomeDir>0:devel/p5-File-HomeDir \
+	p5-Module-Runtime>0:devel/p5-Module-Runtime \
+	p5-Path-Tiny>=0.004:devel/p5-Path-Tiny \
+	p5-Role-Tiny>0:devel/p5-Role-Tiny \
+	p5-Sub-Exporter>0:devel/p5-Sub-Exporter
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

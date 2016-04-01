@@ -13,7 +13,7 @@ COMMENT=	Extension library for Qt
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 USE_BDB=	44+
 USES=		tar:bzip2
@@ -43,8 +43,8 @@ PLIST_SUB+=	SHVER_1=${PORTVERSION} \
 OPTIONS_DEFAULT=	AVAHI
 OPTIONS_SINGLE=		ZEROCONF
 OPTIONS_SINGLE_ZEROCONF=	AVAHI MDNSRESPONDER
-AVAHI_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/avahi-libdns
-MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+AVAHI_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
 STRIP_FILES=	lib/qxt/lib*.so.${PORTVERSION} \
 		${QT_PLUGINDIR_REL}/designer/libQxtDesignerPlugins.so

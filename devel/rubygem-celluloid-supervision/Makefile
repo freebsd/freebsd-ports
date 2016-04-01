@@ -12,7 +12,7 @@ COMMENT=	Supervisors, supervision groups, and supervision trees for Celluloid
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-timers>=4.1.1:${PORTSDIR}/devel/rubygem-timers
+RUN_DEPENDS=	rubygem-timers>=4.1.1:devel/rubygem-timers
 
 NO_ARCH=	yes
 USE_RUBY=	yes

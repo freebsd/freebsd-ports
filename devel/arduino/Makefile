@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux32
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Open-source electronics prototyping platform
 
-RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:${PORTSDIR}/comms/rxtx \
-		${LOCALBASE}/bin/avrdude:${PORTSDIR}/devel/avrdude \
-		${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc
+RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx \
+		${LOCALBASE}/bin/avrdude:devel/avrdude \
+		${LOCALBASE}/avr/include/avr/io.h:devel/avr-libc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		dos2unix tar:tgz

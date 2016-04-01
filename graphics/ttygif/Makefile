@@ -11,7 +11,7 @@ COMMENT=	Converts a ttyrec file into animated gif
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	convert:graphics/ImageMagick
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icholy

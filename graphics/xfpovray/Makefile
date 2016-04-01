@@ -11,8 +11,8 @@ MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to POV-Ray
 
-LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
-RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
+LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
+RUN_DEPENDS=	povray:graphics/povray-meta
 
 USES=		tar:tgz uidfix
 USE_XORG=	x11 xext xpm

@@ -12,7 +12,7 @@ COMMENT=	Version of the card game solitaire
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
 
 USES=		shebangfix tar:tgz
 SHEBANG_FILES=	pictures/generate_mini_pictures

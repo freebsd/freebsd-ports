@@ -12,8 +12,8 @@ COMMENT=	Open Source accounting system
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	dbow:${PORTSDIR}/databases/dbow
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	dbow:databases/dbow
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 LATE_INSTALL_ARGS=	BEANIEROOT="${STAGEDIR}${PREFIX}/beanie"
 MAKE_JOBS_UNSAFE=	yes

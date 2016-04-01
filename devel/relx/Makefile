@@ -17,8 +17,8 @@ COMMENT=	Sane, simple release creation for Erlang
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang \
-		rebar3>=0:${PORTSDIR}/devel/rebar3
+BUILD_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang \
+		rebar3>=0:devel/rebar3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	VERSION="${PORTVERSION}"

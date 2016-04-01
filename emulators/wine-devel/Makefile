@@ -18,9 +18,9 @@ LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		prelink:${PORTSDIR}/sysutils/prelink
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+		prelink:sysutils/prelink
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 CONFLICTS_INSTALL=	wine-[0-9]* wine-staging-[0-9]* i386-wine-[0-9]* \
 			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
@@ -65,47 +65,47 @@ GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 
 CUPS_CONFIGURE_WITH=	cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
-DOSBOX_RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
+DOSBOX_RUN_DEPENDS=	dosbox:emulators/dosbox
 
-GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.44-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
+GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.44-x86.msi:emulators/wine-gecko-devel
 
 GNUTLS_CONFIGURE_WITH=	gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 HAL_CONFIGURE_WITH=	hal
-HAL_LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal
+HAL_LIB_DEPENDS=	libhal.so:sysutils/hal
 
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
 
 LIBXSLT_CONFIGURE_WITH=	xslt
-LIBXSLT_LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt
+LIBXSLT_LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
-MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.6.0.msi:${PORTSDIR}/emulators/wine-mono-devel
+MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.6.0.msi:emulators/wine-mono-devel
 
 MPG123_CONFIGURE_WITH=	mpg123
-MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 
 OPENAL_CONFIGURE_WITH=	openal
 OPENAL_USES=		openal
 
-STAGING_LIB_DEPENDS=	libtxc_dxtn.so:${PORTSDIR}/graphics/s2tc
+STAGING_LIB_DEPENDS=	libtxc_dxtn.so:graphics/s2tc
 
 V4L_CONFIGURE_WITH=	v4l
-V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-V4L_LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 
-WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
+WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML
 
 X11_CONFIGURE_WITH=	x cms fontconfig freetype glu jpeg opengl png xinput2 xrandr xrender
 X11_USES=		jpeg
 X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xrandr,xrender
-X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-			libfreetype.so:${PORTSDIR}/print/freetype2 \
-			liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-			libpng.so:${PORTSDIR}/graphics/png
+X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2 \
+			liblcms2.so:graphics/lcms2 \
+			libpng.so:graphics/png
 
 .include <bsd.port.pre.mk>
 
@@ -147,8 +147,8 @@ MASTER_SITES+=	https://github.com/compholio/wine-compholio-daily/archive/:cho
 COMP_DIST=	v${DISTVERSION}.tar.gz
 DISTFILES+=	${COMP_DIST}:cho
 
-EXTRACT_DEPENDS=bash:${PORTSDIR}/shells/bash \
-		git:${PORTSDIR}/devel/git \
+EXTRACT_DEPENDS=bash:shells/bash \
+		git:devel/git \
 		${AUTOCONF_DEPENDS}
 
 # Fix build on FreeBSD 9.x (false positive: powl)

@@ -14,8 +14,8 @@ COMMENT=	WYSIWYG scientific text editor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
+LIB_DEPENDS=	libguile.so:lang/guile
+RUN_DEPENDS=	fig2dev:print/transfig
 
 USES=		cpe desktop-file-utils gmake iconv pkgconfig python \
 		shared-mime-info shebangfix
@@ -38,15 +38,15 @@ OPTIONS_DEFINE=	ASPELL FREETYPE GHOSTSCRIPT IMLIB2 PDF QT4 SQLITE
 OPTIONS_DEFAULT=ASPELL FREETYPE GHOSTSCRIPT IMLIB2 PDF QT4 SQLITE
 OPTIONS_SUB=	yes
 
-ASPELL_RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
 FREETYPE_CONFIGURE_ENV_OFF=	FREETYPE_CFLAGS=" " FREETYPE_LDFLAGS=" " \
 				ac_cv_header_ft2build_h=no
 GHOSTSCRIPT_USES=	ghostscript:x11
 GHOSTSCRIPT_CONFIGURE_ON=	--with-gs=yes
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-gs=no
-IMLIB2_LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 IMLIB2_CONFIGURE_WITH=	imlib2
 PDF_CONFIGURE_ENABLE=	pdf-renderer
 PDF_LDFLAGS=		-lz

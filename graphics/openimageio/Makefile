@@ -42,15 +42,15 @@ DOCS_CMAKE_OFF=		-DINSTALL_DOCS:BOOL=OFF
 
 FFMPEG_CMAKE_ON=	-DUSE_FFMPEG:BOOL=ON
 FFMPEG_CMAKE_OFF=	-DUSE_FFMPEG:BOOL=OFF
-FFMPEG_LIB_DEPENDS=	libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
 FREETYPE_CMAKE_ON=	-DUSE_FREETYPE:BOOL=ON
 FREETYPE_CMAKE_OFF=	-DUSE_FREETYPE:BOOL=OFF
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 GIF_CMAKE_ON=		-DUSE_GIF:BOOL=ON
 GIF_CMAKE_OFF=		-DUSE_GIF:BOOL=OFF
-GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
 IMAGEVIEWER_CMAKE_ON=	-DUSE_QT:BOOL=ON -DUSE_OPENGL:BOOL=ON
 IMAGEVIEWER_CMAKE_OFF=	-DUSE_OPENGL:BOOL=OFF -DUSE_QT:BOOL=OFF
@@ -58,19 +58,19 @@ IMAGEVIEWER_USE=	GL=glew QT4=corelib,gui,opengl,qmake_build,moc_build,rcc_build,
 
 OCIO_CMAKE_ON=		-DUSE_OCIO:BOOL=ON
 OCIO_CMAKE_OFF=		-DUSE_OCIO:BOOL=OFF
-OCIO_LIB_DEPENDS=	libOpenColorIO.so:${PORTSDIR}/graphics/opencolorio
+OCIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio
 
 OPENCV_CMAKE_ON=	-DUSE_OPENCV:BOOL=ON
 OPENCV_CMAKE_OFF=	-DUSE_OPENCV:BOOL=OFF
-OPENCV_LIB_DEPENDS=	libopencv_highgui.so:${PORTSDIR}/graphics/opencv
+OPENCV_LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv
 
 OPENJPEG_CMAKE_ON=	-DUSE_OPENJPEG:BOOL=ON
 OPENJPEG_CMAKE_OFF=	-DUSE_OPENJPEG:BOOL=OFF
-OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
+OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
 
 RAW_CMAKE_ON=		-DUSE_LIBRAW:BOOL=ON
 RAW_CMAKE_OFF=		-DUSE_LIBRAW:BOOL=OFF
-RAW_LIB_DEPENDS=	libraw_r.so:${PORTSDIR}/graphics/libraw
+RAW_LIB_DEPENDS=	libraw_r.so:graphics/libraw
 
 TEST_CMAKE_ON=		-DOIIO_BUILD_TESTS:BOOL=ON
 TEST_CMAKE_OFF=		-DOIIO_BUILD_TESTS:BOOL=OFF
@@ -84,16 +84,16 @@ USE_GCC=	yes
 .endif
 
 .if ${SLAVE_PORT} == no
-LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libwebp.so:${PORTSDIR}/graphics/webp
+LIB_DEPENDS+=	libIlmImf.so:graphics/OpenEXR \
+		libboost_thread.so:devel/boost-libs \
+		libhdf5.so:science/hdf5 \
+		libwebp.so:graphics/webp
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=OFF -DUSE_PYTHON3:BOOL=OFF \
 		-DOIIO_BUILD_TOOLS:BOOL=ON
 .else
-LIB_DEPENDS=	libOpenImageIO.so:${PORTSDIR}/graphics/openimageio \
-		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
+		libboost_python.so:devel/boost-python-libs
 PLIST=		${PKGDIR}/pkg-plist-pybind
 #while oiio supports py3, ports doesn't have py3 support for boost-python yet
 USES+=		python:2

@@ -12,7 +12,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	arundel@FreeBSD.org
 COMMENT=	PyRoom is a clone of WriteRoom and features "distraction-free writing"
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg
 
 USES=		gettext python
 USE_PYTHON=	distutils

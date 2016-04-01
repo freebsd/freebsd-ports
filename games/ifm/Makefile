@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ifarchive.org/if-archive/mapping-tools/
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Interactive Fiction mapper and walkthrough generator
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
 
 USES=		perl5 gmake
 GNU_CONFIGURE=	yes

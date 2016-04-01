@@ -10,8 +10,8 @@ MASTER_SITES=	SF/worldforge/libwfut%20%28updates%20library%29/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	WorldForge update library
 
-LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
+		libcurl.so:ftp/curl
 
 CONFIGURE_ARGS+=--without-python
 GNU_CONFIGURE=	yes

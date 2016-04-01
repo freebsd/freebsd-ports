@@ -10,7 +10,7 @@ COMMENT=	DataStax C/C++ Driver for Apache Cassandra
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libuv.so:${PORTSDIR}/devel/libuv
+LIB_DEPENDS=	libuv.so:devel/libuv
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	datastax

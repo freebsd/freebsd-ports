@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/XaoS/${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Real-time fractal browser
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libgsl.so:math/gsl
 
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -23,7 +23,7 @@ DRIVER_DESC=	User Interface
 OPTIONS_DEFAULT=	X11
 OPTIONS_SUB=	yes
 
-AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
+AALIB_LIB_DEPENDS=	libaa.so:graphics/aalib
 AALIB_CONFIGURE_WITH=	aa-driver
 AALIB_CONFIGURE_ON=	ac_cv_aalib_ver_ok=yes
 

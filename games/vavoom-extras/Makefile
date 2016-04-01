@@ -18,7 +18,7 @@ COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port (extras)
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	vavoom:${PORTSDIR}/games/vavoom
+RUN_DEPENDS=	vavoom:games/vavoom
 
 DATADIR=	${PREFIX}/share/vavoom
 

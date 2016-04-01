@@ -13,7 +13,7 @@ COMMENT=	Me and My Shadow puzzle/platform game
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cmake libarchive
 USE_SDL=	sdl ttf image mixer image gfx

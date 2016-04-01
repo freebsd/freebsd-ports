@@ -13,9 +13,9 @@ COMMENT=	Check to see that version in modules are sane
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-File-Find-Rule-Perl>=0:${PORTSDIR}/devel/p5-File-Find-Rule-Perl
+BUILD_DEPENDS=	p5-File-Find-Rule-Perl>=0:devel/p5-File-Find-Rule-Perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USE_PERL5=	configure
 USES=		perl5
@@ -23,7 +23,7 @@ USES=		perl5
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

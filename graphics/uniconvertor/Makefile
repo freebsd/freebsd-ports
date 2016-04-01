@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Universal vector graphics translator
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:${PORTSDIR}/graphics/sk1libs
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:graphics/sk1libs
 
 USES=		python
 USE_PYTHON=	distutils

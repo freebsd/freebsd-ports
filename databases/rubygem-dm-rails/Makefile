@@ -12,10 +12,10 @@ COMMENT=	Integrate DataMapper with Rails 3
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-actionpack>=3.0:${PORTSDIR}/www/rubygem-actionpack \
-		rubygem-dm-active_model>=1.2.0:${PORTSDIR}/databases/rubygem-dm-active_model \
-		rubygem-dm-core>=1.2.0:${PORTSDIR}/databases/rubygem-dm-core \
-		rubygem-railties>=3.0:${PORTSDIR}/www/rubygem-railties
+RUN_DEPENDS=	rubygem-actionpack>=3.0:www/rubygem-actionpack \
+		rubygem-dm-active_model>=1.2.0:databases/rubygem-dm-active_model \
+		rubygem-dm-core>=1.2.0:databases/rubygem-dm-core \
+		rubygem-railties>=3.0:www/rubygem-railties
 
 NO_ARCH=	yes
 

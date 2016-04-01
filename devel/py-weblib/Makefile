@@ -11,10 +11,10 @@ COMMENT=	Set of tools for web scraping projects
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytils>0:${PORTSDIR}/russian/py-pytils \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}user_agent>0:${PORTSDIR}/www/py-user_agent
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytils>0:russian/py-pytils \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}user_agent>0:www/py-user_agent
 
 NO_ARCH=	yes
 USES=		python

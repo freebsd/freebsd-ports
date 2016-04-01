@@ -12,7 +12,7 @@ COMMENT=	Simulation game where the goal is to crash each other's programs
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
+BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:devel/argp-standalone
 
 USE_GNOME=	gtk12
 

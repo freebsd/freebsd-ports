@@ -26,11 +26,11 @@ LATIN1_CONFIGURE_ENABLE=latin1
 
 NEXTAW_DESC=		Link with NeXtaw
 NEXTAW_CONFIGURE_WITH=	nextaw
-NEXTAW_LIB_DEPENDS=	libneXtaw.so:${PORTSDIR}/x11-toolkits/neXtaw
+NEXTAW_LIB_DEPENDS=	libneXtaw.so:x11-toolkits/neXtaw
 
 XAW3D_DESC=		Link with Xaw3d
 XAW3D_CONFIGURE_WITH=	xaw3d
-XAW3D_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 post-patch:
 	@${REINPLACE_CMD} -e \

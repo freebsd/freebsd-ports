@@ -15,9 +15,9 @@ COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
-		gsed:${PORTSDIR}/textproc/gsed
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	gmake:devel/gmake \
+		gsed:textproc/gsed
+RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS_INSTALL=	hadoop2-2*
 

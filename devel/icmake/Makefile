@@ -12,8 +12,8 @@ COMMENT=	Intelligent C-like Maker
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	bash:shells/bash \
+		gsed:textproc/gsed
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*

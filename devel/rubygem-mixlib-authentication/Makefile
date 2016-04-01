@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Mixes in simple per-request authentication
 
-RUN_DEPENDS=	rubygem-mixlib-log>=0:${PORTSDIR}/devel/rubygem-mixlib-log
+RUN_DEPENDS=	rubygem-mixlib-log>=0:devel/rubygem-mixlib-log
 
 NO_ARCH=	yes
 

@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically apply roles at object creation time
 
-BUILD_DEPENDS=	p5-Mouse>=0.81:${PORTSDIR}/devel/p5-Mouse
+BUILD_DEPENDS=	p5-Mouse>=0.81:devel/p5-Mouse
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USE_PERL5=	configure
 USES=		perl5

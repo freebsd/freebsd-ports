@@ -7,7 +7,7 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
-LIB_DEPENDS=	libmediawiki.so:${PORTSDIR}/net/libmediawiki
+LIB_DEPENDS=	libmediawiki.so:net/libmediawiki
 
 KIPI_PLUGIN=	mediawiki
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"

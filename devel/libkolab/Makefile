@@ -12,7 +12,7 @@ COMMENT=	Advanced Kolab Object Handling Library
 # itself to be LGPL3-licensed (and so are all the installed headers).
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libkolabxml.so:${PORTSDIR}/textproc/libkolabxml
+LIB_DEPENDS=	libkolabxml.so:textproc/libkolabxml
 
 # TODO: Conditionally enable the bindings based on OPTIONs.
 CMAKE_ARGS=	-DBUILD_TESTS:BOOL=OFF \

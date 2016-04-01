@@ -15,10 +15,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Net-DNS>=0.65:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-POE>=1.249:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-Net-DNS>=0.65:dns/p5-Net-DNS \
+		p5-POE>=1.249:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
 NO_ARCH=	yes
 USES=		perl5

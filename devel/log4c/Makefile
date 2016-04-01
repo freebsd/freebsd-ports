@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 OPTIONS_DEFINE=	EXPAT
 OPTIONS_DEFAULT=EXPAT
 EXPAT_CONFIGURE_WITH=	expat
-EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		libtool pathfix
 GNU_CONFIGURE=	yes

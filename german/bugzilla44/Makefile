@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-de-${PORTVERSION}-1.utf-8
 MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	German localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla44
+RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:devel/bugzilla44
 
 NO_WRKSUBDIR=	yes
 

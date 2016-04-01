@@ -11,8 +11,8 @@ PKGNAMESUFFIX=	-engine
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Dink Smallwood RPG and RPG Construction Set
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libcheck.so:${PORTSDIR}/devel/libcheck
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libcheck.so:devel/libcheck
 
 USES=		gettext gmake pkgconfig
 USE_SDL=	sdl gfx ttf image mixer
@@ -24,9 +24,9 @@ OPTIONS_DEFAULT=EMBEDDED
 
 EMBEDDED_DESC=			Embedded Resources
 EMBEDDED_CONFIGURE_ENABLE=	embedded-resources
-EMBEDDED_BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip
-EMBEDDED_LIB_DEPENDS=		libzip.so:${PORTSDIR}/archivers/libzip
-EMBEDDED_RUN_DEPENDS=		zip:${PORTSDIR}/archivers/zip
+EMBEDDED_BUILD_DEPENDS=		zip:archivers/zip
+EMBEDDED_LIB_DEPENDS=		libzip.so:archivers/libzip
+EMBEDDED_RUN_DEPENDS=		zip:archivers/zip
 
 post-patch:
 	@${CHMOD} 0755 ${WRKSRC}/autotools/install-reloc

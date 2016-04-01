@@ -10,7 +10,7 @@ MASTER_SITES=   LOCAL/sanpei \
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Diagnose unhealthy DNS domains
 
-RUN_DEPENDS=	dig:${PORTSDIR}/dns/bind-tools
+RUN_DEPENDS=	dig:dns/bind-tools
 
 USES=		tar:bzip2
 

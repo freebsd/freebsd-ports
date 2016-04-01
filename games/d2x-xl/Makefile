@@ -15,8 +15,8 @@ DISTFILES=	${PORTNAME}-src-${PORTVERSION}.rar:source \
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	Community Unix port of Descent 2 Game
 
-EXTRACT_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
-RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+EXTRACT_DEPENDS=	unrar:archivers/unrar
+RUN_DEPENDS=	unrar:archivers/unrar
 
 DATAVERSION=	1.14.95
 

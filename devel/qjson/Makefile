@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:devel/doxygen
 .endif
 
 post-patch:

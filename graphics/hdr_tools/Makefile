@@ -13,10 +13,10 @@ COMMENT=	Command-line tools for creating and manipulating HDR images
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libtiff.so:graphics/tiff \
+		libIlmImf.so:graphics/OpenEXR \
+		libMagick++-6.so:graphics/ImageMagick
 
 USES=		compiler:features gmake pkgconfig tar:tgz
 NO_WRKSUBDIR=	yes
@@ -37,7 +37,7 @@ CXXFLAGS+=	-fopenmp
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000034
-LIB_DEPENDS+=	libml.so:${PORTSDIR}/math/ldouble
+LIB_DEPENDS+=	libml.so:math/ldouble
 LDFLAGS+=	-lml
 .endif
 

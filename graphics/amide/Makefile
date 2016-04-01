@@ -11,7 +11,7 @@ COMMENT=	Medical Imaging Data Examiner
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:devel/m4
 
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
@@ -35,17 +35,17 @@ XMEDCON_DESC=	Use xmedcon
 
 OPTIONS_SUB=			yes
 DCMTK_CONFIGURE_ENABLE=		libdcmdata
-DCMTK_LIB_DEPENDS=		libdcmdata.so:${PORTSDIR}/devel/dcmtk
+DCMTK_LIB_DEPENDS=		libdcmdata.so:devel/dcmtk
 FAME_CONFIGURE_ENABLE=		libfame
-FAME_LIB_DEPENDS=		libfame.so:${PORTSDIR}/multimedia/libfame
+FAME_LIB_DEPENDS=		libfame.so:multimedia/libfame
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg
-FFMPEG_LIB_DEPENDS=		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_LIB_DEPENDS=		libavcodec0.so:multimedia/ffmpeg0
 GSL_CONFIGURE_ENABLE=		libgsl
-GSL_LIB_DEPENDS=		libgsl.so:${PORTSDIR}/math/gsl
+GSL_LIB_DEPENDS=		libgsl.so:math/gsl
 VOLPACK_CONFIGURE_ENABLE=	libvolpack
-VOLPACK_BUILD_DEPENDS=		${LOCALBASE}/lib/libvolpack.a:${PORTSDIR}/graphics/volpack
+VOLPACK_BUILD_DEPENDS=		${LOCALBASE}/lib/libvolpack.a:graphics/volpack
 XMEDCON_CONFIGURE_ENABLE=	libmdc
-XMEDCON_LIB_DEPENDS=		libmdc.so:${PORTSDIR}/graphics/xmedcon
+XMEDCON_LIB_DEPENDS=		libmdc.so:graphics/xmedcon
 NLS_CONFIGURE_ENABLE=		nls
 
 post-patch:

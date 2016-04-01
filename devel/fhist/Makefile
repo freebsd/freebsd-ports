@@ -13,7 +13,7 @@ COMMENT=	Utilities to maintain file history, do file comparisons, and merges
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexplain.so:${PORTSDIR}/devel/libexplain
+LIB_DEPENDS=	libexplain.so:devel/libexplain
 
 OPTIONS_DEFINE=	NLS
 

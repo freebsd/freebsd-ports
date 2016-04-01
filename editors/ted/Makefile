@@ -15,11 +15,11 @@ COMMENT=	X11 based RTF editor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpaper.so:${PORTSDIR}/print/libpaper
-RUN_DEPENDS=	gsfonts>0:${PORTSDIR}/print/gsfonts
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libpaper.so:print/libpaper
+RUN_DEPENDS=	gsfonts>0:print/gsfonts
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	otaviof@gmail.com
 COMMENT=	Perl front end for the Gearman C library
 
-LIB_DEPENDS=	libgearman.so:${PORTSDIR}/devel/gearmand
+LIB_DEPENDS=	libgearman.so:devel/gearmand
 
 CFLAGS+=	-I${LOCALBASE}/include
 

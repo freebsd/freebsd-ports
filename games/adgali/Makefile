@@ -15,9 +15,9 @@ BROKEN=		unfetchable
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libfreetype.so:print/freetype2
 
 USES=		execinfo gmake jpeg libtool tar:bzip2
 USE_LDCONFIG=	yes

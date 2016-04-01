@@ -11,10 +11,10 @@ MASTER_SITE_SUBDIR=	CPAN:SUKRIA
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Light program that lets you evaluate Perl code interactively
 
-RUN_DEPENDS=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		p5-Module-Refresh>=0:${PORTSDIR}/devel/p5-Module-Refresh \
-		p5-Lexical-Persistence>=0:${PORTSDIR}/devel/p5-Lexical-Persistence \
-		p5-B-Keywords>=0:${PORTSDIR}/devel/p5-B-Keywords
+RUN_DEPENDS=	p5-ReadLine-Gnu>=0:devel/p5-ReadLine-Gnu \
+		p5-Module-Refresh>=0:devel/p5-Module-Refresh \
+		p5-Lexical-Persistence>=0:devel/p5-Lexical-Persistence \
+		p5-B-Keywords>=0:devel/p5-B-Keywords
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

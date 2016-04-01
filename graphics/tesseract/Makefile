@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	liblept.so:${PORTSDIR}/graphics/leptonica
+LIB_DEPENDS=	liblept.so:graphics/leptonica
 
 DIST_SUBDIR=	${PORTNAME}
 PROJECTHOST=	tesseract-ocr

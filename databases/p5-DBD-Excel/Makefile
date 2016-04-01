@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Class for DBI drivers that acts on Excel files
 
-BUILD_DEPENDS=	p5-SQL-Statement>=0:${PORTSDIR}/databases/p5-SQL-Statement \
-		p5-Spreadsheet-ParseExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
-		p5-Spreadsheet-WriteExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-SQL-Statement>=0:databases/p5-SQL-Statement \
+		p5-Spreadsheet-ParseExcel>=0:textproc/p5-Spreadsheet-ParseExcel \
+		p5-Spreadsheet-WriteExcel>=0:textproc/p5-Spreadsheet-WriteExcel \
+		p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}

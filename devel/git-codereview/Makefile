@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Command-line tool for working with Gerrit
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang

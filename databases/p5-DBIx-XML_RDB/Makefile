@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for creating XML from existing DBI datasources
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

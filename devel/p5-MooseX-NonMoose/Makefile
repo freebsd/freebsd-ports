@@ -14,12 +14,12 @@ COMMENT=	Easy subclassing of non-Moose classes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
-		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+BUILD_DEPENDS=	p5-Module-Runtime>=0:devel/p5-Module-Runtime \
+		p5-Moose>=2:devel/p5-Moose \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-MooseX-InsideOut>=0:${PORTSDIR}/devel/p5-MooseX-InsideOut \
-		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-MooseX-InsideOut>=0:devel/p5-MooseX-InsideOut \
+		p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
 USE_PERL5=	configure

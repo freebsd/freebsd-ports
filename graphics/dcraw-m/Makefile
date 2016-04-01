@@ -11,9 +11,9 @@ COMMENT=	Modified Decoder for RAW files from digital cameras
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libjasper.so:graphics/jasper \
+		liblcms2.so:graphics/lcms2 \
+		libMagickWand-6.so:graphics/ImageMagick
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman

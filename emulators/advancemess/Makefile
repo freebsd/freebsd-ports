@@ -12,8 +12,8 @@ COMMENT=	SDL MESS port with advanced TV and monitor video support
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
-RUN_DEPENDS=	advancemame>=1.4:${PORTSDIR}/emulators/advancemame
+LIB_DEPENDS=	libexpat.so:textproc/expat2
+RUN_DEPENDS=	advancemame>=1.4:emulators/advancemame
 
 USES=		gmake ncurses
 USE_SDL=	sdl
@@ -36,12 +36,12 @@ OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT=	FREETYPE
 OPTIONS_DEFAULT_i386=	ASM
 
-ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_BUILD_DEPENDS=	nasm:devel/nasm
 ASM_USE=		gcc=any
 ASM_CONFIGURE_ENABLE=	asm
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
-SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_CONFIGURE_ENABLE=	slang
 SLANG_LDFLAGS=		-lncurses
 

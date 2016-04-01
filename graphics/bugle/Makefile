@@ -12,7 +12,7 @@ COMMENT=	Debugging library for OpenGL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		libtool pathfix perl5
 USE_GL=		gl
@@ -31,8 +31,8 @@ OPTIONS_DEFINE=		FFMPEG GTK2 READLINE THREADS
 OPTIONS_DEFAULT=	READLINE THREADS
 
 FFMPEG_CONFIGURE_WITH=	lavc
-FFMPEG_LIB_DEPENDS=	libavcodec.so.1:${PORTSDIR}/multimedia/ffmpeg
-GTK2_LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
+FFMPEG_LIB_DEPENDS=	libavcodec.so.1:multimedia/ffmpeg
+GTK2_LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 GTK2_USE=		gnome=gtk20
 GTK2_CONFIGURE_WITH=	gtk gtkglext
 READLINE_USES=		readline

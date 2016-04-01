@@ -12,10 +12,10 @@ COMMENT=	Time series analysis and computational finance
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	R-cran-quadprog>0:${PORTSDIR}/math/R-cran-quadprog \
-		R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo
-RUN_DEPENDS=	R-cran-quadprog>0:${PORTSDIR}/math/R-cran-quadprog \
-		R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo
+BUILD_DEPENDS=	R-cran-quadprog>0:math/R-cran-quadprog \
+		R-cran-zoo>0:math/R-cran-zoo
+RUN_DEPENDS=	R-cran-quadprog>0:math/R-cran-quadprog \
+		R-cran-zoo>0:math/R-cran-zoo
 
 USES=	cran:auto-plist
 

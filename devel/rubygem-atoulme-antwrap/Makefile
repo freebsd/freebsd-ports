@@ -11,8 +11,8 @@ COMMENT=	Ruby wrapper for Apache Ant
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-		rubygem-rjb>=1.0.3:${PORTSDIR}/java/rubygem-rjb
+RUN_DEPENDS=	ant:devel/apache-ant \
+		rubygem-rjb>=1.0.3:java/rubygem-rjb
 
 NO_ARCH=	yes
 

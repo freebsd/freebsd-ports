@@ -11,9 +11,9 @@ DISTNAME=	dx-${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
-LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick	\
-		libtiff.so:${PORTSDIR}/graphics/tiff		\
-		libcdf.so:${PORTSDIR}/science/cdf
+LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick	\
+		libtiff.so:graphics/tiff		\
+		libcdf.so:science/cdf
 
 USE_XORG=	xinerama xext xpm xmu sm ice
 USES=		bison motif gmake libtool
@@ -34,13 +34,13 @@ IGNORE=	HDF and NETCDF are conflicting
 .endif
 
 .if defined(WITH_HDF)
-LIB_DEPENDS+=	libmfhdf.so:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=	libmfhdf.so:science/hdf
 .else
 CONFIGURE_ARGS+=	--without-hdf
 .endif
 
 .if !defined(WITHOUT_NETCDF)
-LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	libnetcdf.so:science/netcdf
 .else
 CONFIGURE_ARGS+=	--without-netcdf
 .endif
@@ -48,8 +48,8 @@ CONFIGURE_ARGS+=	--without-netcdf
 .if defined(WITH_JAVA)
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-BUILD_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
-RUN_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
+BUILD_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:graphics/cosmoplayer
+RUN_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:graphics/cosmoplayer
 CONFIGURE_ARGS+=	--with-cosmojar-path=${JAVALIBDIR}/npcosmop211.jar \
 			--with-java40jar-path=${JAVALIBDIR}/java40.jar \
 			--with-jni-path=${JAVA_HOME}/include:${JAVA_HOME}/include/freebsd

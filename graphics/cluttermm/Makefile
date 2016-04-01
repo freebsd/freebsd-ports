@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for clutter
 
-LIB_DEPENDS=	libclutter-1.0.so:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter
 
 USES+=		gettext gmake libtool pathfix perl5 pkgconfig tar:xz
 USE_GNOME=	atkmm glib20 gtkmm30 libsigc++20 pangomm

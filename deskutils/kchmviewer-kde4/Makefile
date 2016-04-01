@@ -11,8 +11,8 @@ MASTER_SITES=	SF
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE viewer for CHM files
 
-LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib \
-		libzip.so:${PORTSDIR}/archivers/libzip
+LIB_DEPENDS=	libchm.so:misc/chmlib \
+		libzip.so:archivers/libzip
 
 USES=		cmake:outsource gettext-tools
 USE_KDE4=	kdeprefix kdelibs automoc4

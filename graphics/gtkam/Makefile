@@ -12,8 +12,8 @@ COMMENT=	Download and view files from various digital cameras
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libexif-gtk.so:${PORTSDIR}/graphics/libexif-gtk \
-		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libexif-gtk.so:graphics/libexif-gtk \
+		libgphoto2.so:graphics/libgphoto2
 
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gtk20 intltool
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS GIMP GNOME
 OPTIONS_SUB=	yes
 
 GIMP_DESC=		GIMP plugin support
-GIMP_LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp
+GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp
 GIMP_CONFIGURE_WITH=	gimp
 
 GNOME_USE=		GNOME=gnomeprefix,libgnomeui

@@ -14,7 +14,7 @@ COMMENT=	Drop-in replacement for <STDIN> with handling of non-standard keys
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
+BUILD_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

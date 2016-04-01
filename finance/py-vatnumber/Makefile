@@ -13,7 +13,7 @@ COMMENT=	Python module to validate VAT numbers
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stdnum>=1.1:${PORTSDIR}/devel/py-stdnum
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stdnum>=1.1:devel/py-stdnum
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -13,7 +13,7 @@ COMMENT=	Guide a cat across a series of rivers, jumping from log to log
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USES=		gmake

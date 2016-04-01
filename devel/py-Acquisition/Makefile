@@ -13,8 +13,8 @@ COMMENT=	Allows to obtain attributes from the containment hierarchy
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ExtensionClass>=4.1.1:${PORTSDIR}/devel/py-ExtensionClass \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ExtensionClass>=4.1.1:devel/py-ExtensionClass \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface
 
 USES=		python
 USE_PYTHON=	autoplist distutils

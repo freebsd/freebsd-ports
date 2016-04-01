@@ -12,5 +12,5 @@ PLIST_SUB+=	DMDIR="${DMDIR:S/${LOCALBASE}\///}"
 SUB_LIST+=	DMDIR="${DMDIR}"
 
 .if ${PORTNAME} != "data"
-RUN_DEPENDS+=	doom-data>0:${PORTSDIR}/games/doom-data
+RUN_DEPENDS+=	doom-data>0:games/doom-data
 .endif

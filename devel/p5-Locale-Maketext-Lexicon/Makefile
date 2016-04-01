@@ -12,7 +12,7 @@ COMMENT=	Use other catalog formats in Locale::Maketext
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	p5-Locale-Maketext>=1.17:${PORTSDIR}/devel/p5-Locale-Maketext
+RUN_DEPENDS=	p5-Locale-Maketext>=1.17:devel/p5-Locale-Maketext
 
 USES=		perl5
 USE_PERL5=	configure

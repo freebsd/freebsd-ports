@@ -17,11 +17,11 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_FILE_CCbyNCSA3=${WRKSRC}/License.txt
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libradius-engine.a:${PORTSDIR}/graphics/radius-engine
-LIB_DEPENDS=	liblua-5.1.so:${PORTSDIR}/lang/lua51 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libphysfs.so.1:${PORTSDIR}/devel/physfs
-RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	${LOCALBASE}/lib/libradius-engine.a:graphics/radius-engine
+LIB_DEPENDS=	liblua-5.1.so:lang/lua51 \
+		libpng.so:graphics/png \
+		libphysfs.so.1:devel/physfs
+RUN_DEPENDS=	zip:archivers/zip
 
 USES=		pkgconfig
 USE_SDL=	sdl sound

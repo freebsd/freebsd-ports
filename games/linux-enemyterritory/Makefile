@@ -24,7 +24,7 @@ PATCH_260B_DIR=	Enemy Territory 2.60b
 
 OPTIONS_DEFINE=	DOCS NVIDIA_GL
 
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 NVIDIA_GL_USE_OFF=	linux_apps=dri
 
 .include <bsd.port.options.mk>

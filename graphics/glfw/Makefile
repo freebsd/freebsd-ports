@@ -11,8 +11,8 @@ COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libXinerama.so:${PORTSDIR}/x11/libXinerama \
-		libXcursor.so:${PORTSDIR}/x11/libXcursor
+LIB_DEPENDS=	libXinerama.so:x11/libXinerama \
+		libXcursor.so:x11/libXcursor
 
 USES=		cmake zip
 USE_XORG=	xi xrandr

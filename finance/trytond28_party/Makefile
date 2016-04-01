@@ -13,9 +13,9 @@ COMMENT=	Tryton Application Platform (Party Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28>=2.8.2:${PORTSDIR}/finance/trytond28 \
-		trytond28_country>=2.8.0:${PORTSDIR}/finance/trytond28_country \
-		${PYTHON_PKGNAMEPREFIX}vatnumber>=1.0.0:${PORTSDIR}/finance/py-vatnumber
+RUN_DEPENDS=	trytond28>=2.8.2:finance/trytond28 \
+		trytond28_country>=2.8.0:finance/trytond28_country \
+		${PYTHON_PKGNAMEPREFIX}vatnumber>=1.0.0:finance/py-vatnumber
 
 CONFLICTS=	trytond_party-2.[46].*
 

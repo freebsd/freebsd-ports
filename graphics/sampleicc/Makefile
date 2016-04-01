@@ -14,7 +14,7 @@ LICENSE_NAME=	The ICC Software License, Version 0.2
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 GNU_CONFIGURE=	yes
 USES=	libtool pathfix

@@ -11,9 +11,9 @@ COMMENT=	Allow to push code to review and interact with a Gerrit server
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:${PORTSDIR}/devel/py-pbr
-RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
-		${PYTHON_PKGNAMEPREFIX}requests>2.4:${PORTSDIR}/www/py-requests
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr
+RUN_DEPENDS=	git:devel/git \
+		${PYTHON_PKGNAMEPREFIX}requests>2.4:www/py-requests
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -16,7 +16,7 @@ LICENSE_NAME=	no name
 LICENSE_FILE=	${WRKSRC}/readme.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
+RUN_DEPENDS=	scummvm:games/scummvm
 
 USES=		zip
 NO_BUILD=	yes

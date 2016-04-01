@@ -14,8 +14,8 @@ COMMENT=	Tryton Application Platform (LDAP Connection Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28>=2.8.2:${PORTSDIR}/finance/trytond28 \
-		${PYTHON_PKGNAMEPREFIX}ldap>=2.4.10:${PORTSDIR}/net/py-ldap
+RUN_DEPENDS=	trytond28>=2.8.2:finance/trytond28 \
+		${PYTHON_PKGNAMEPREFIX}ldap>=2.4.10:net/py-ldap
 
 CONFLICTS=	trytond_ldap_connection-2.[46].*
 

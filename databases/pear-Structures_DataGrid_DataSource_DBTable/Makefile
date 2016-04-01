@@ -8,10 +8,10 @@ CATEGORIES=	databases www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	DataSource driver using PEAR::DB_Table
 
-BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:${PORTSDIR}/devel/pear-Structures_DataGrid \
-		${PEARDIR}/DB/Table.php:${PORTSDIR}/databases/pear-DB_Table
-RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:${PORTSDIR}/devel/pear-Structures_DataGrid \
-		${PEARDIR}/DB/Table.php:${PORTSDIR}/databases/pear-DB_Table
+BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
+		${PEARDIR}/DB/Table.php:databases/pear-DB_Table
+RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
+		${PEARDIR}/DB/Table.php:databases/pear-DB_Table
 
 USES=	pear
 USE_PHP=	mysql

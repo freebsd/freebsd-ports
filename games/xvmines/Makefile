@@ -10,7 +10,7 @@ MASTER_SITES=	XCONTRIB/../R5contrib
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple minesweeper game for X Window System
 
-LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 OPTIONS_DEFINE=	DOCS
 

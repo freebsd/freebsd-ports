@@ -12,14 +12,14 @@ COMMENT=	Calendar client for GNOME 3
 
 IGNORE=		Not compatible with evolution-data-server 3.16.0
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		xdg-open:${PORTSDIR}/devel/xdg-utils
-LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libgdata.so:${PORTSDIR}/devel/libgdata \
-		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		xdg-open:devel/xdg-utils
+LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3 \
+		libsoup-2.4.so:devel/libsoup \
+		libgee-0.8.so:devel/libgee \
+		libgdata.so:devel/libgdata \
+		libgoa-1.0.so:net/gnome-online-accounts
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz

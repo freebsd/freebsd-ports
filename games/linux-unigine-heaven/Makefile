@@ -29,7 +29,7 @@ NO_BUILD=	yes
 
 OPTIONS_DEFINE=	NVIDIA_GL
 NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 NVIDIA_GL_VARS_OFF=	USE_LINUX_APPS+=dri
 
 do-extract:

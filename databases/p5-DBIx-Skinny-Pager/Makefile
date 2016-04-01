@@ -11,14 +11,14 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of resultset pager for DBIx::Skinny
 
 RUN_DEPENDS=	\
-	p5-DBIx-Skinny>=0.0729:${PORTSDIR}/databases/p5-DBIx-Skinny \
-	p5-Data-Page>0:${PORTSDIR}/databases/p5-Data-Page \
-	p5-Class-Accessor-Lite>0:${PORTSDIR}/devel/p5-Class-Accessor-Lite
+	p5-DBIx-Skinny>=0.0729:databases/p5-DBIx-Skinny \
+	p5-Data-Page>0:databases/p5-Data-Page \
+	p5-Class-Accessor-Lite>0:devel/p5-Class-Accessor-Lite
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules \
-		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
+TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
+		p5-Test-UseAllModules>=0:devel/p5-Test-UseAllModules \
+		p5-Test-Deep>0:devel/p5-Test-Deep \
+		p5-Test-Differences>=0:devel/p5-Test-Differences
 
 USES=		perl5
 USE_PERL5=	configure

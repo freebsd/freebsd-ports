@@ -10,7 +10,7 @@ COMMENT=	ODBC ProFTPD module
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 
 DESCR=		${.CURDIR}/pkg-descr
 

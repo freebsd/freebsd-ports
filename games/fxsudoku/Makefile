@@ -12,7 +12,7 @@ COMMENT=	Implementation of the Sudoku game
 
 BROKEN=		unfetchable
 
-LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
+LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 
 USES=		tar:bzip2 gmake
 PLIST_FILES=	bin/fxsudoku

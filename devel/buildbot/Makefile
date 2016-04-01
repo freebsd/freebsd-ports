@@ -13,16 +13,16 @@ COMMENT=	Continuous Integration Framework (Master)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=11.0.0:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.1:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.7:${PORTSDIR}/databases/py-sqlalchemy-migrate \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6:${PORTSDIR}/databases/py-sqlalchemy \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
-TEST_DEPENDS=	trial:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}mock>0.8.0:${PORTSDIR}/devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}boto>0:${PORTSDIR}/devel/py-boto \
-		${PYTHON_PKGNAMEPREFIX}txrequests>0:${PORTSDIR}/www/py-txrequests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=11.0.0:devel/py-twisted \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.1:devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.7:databases/py-sqlalchemy-migrate \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+TEST_DEPENDS=	trial:devel/py-twisted \
+		${PYTHON_PKGNAMEPREFIX}mock>0.8.0:devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto \
+		${PYTHON_PKGNAMEPREFIX}txrequests>0:www/py-txrequests
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils

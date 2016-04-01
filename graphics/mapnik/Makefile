@@ -14,10 +14,10 @@ COMMENT=	Free Toolkit For Developing Mapping Applications
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libharfbuzz.so:${PORTSDIR}/print/harfbuzz
+LIB_DEPENDS=	libicuuc.so:devel/icu \
+		libboost_system.so:devel/boost-libs \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
 BROKEN_powerpc=	does not install: runs out of virtual memory
 BROKEN_FreeBSD_9=	does not build: lack of c++11 support
@@ -51,29 +51,29 @@ PROJ_DESC=	proj4 support
 CAIRO_DESC=	Enable cairo rendering
 
 GDAL_VARS=		INPUT_PLUGINS+=gdal
-GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
 OGR_VARS=		INPUT_PLUGINS+=ogr
-OGR_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+OGR_LIB_DEPENDS=	libgdal.so:graphics/gdal
 POSTGIS_VARS=		INPUT_PLUGINS+=postgis
 POSTGIS_USES=		pgsql
 PGRASTER_VARS=		INPUT_PLUGINS+=pgraster
 PGRASTER_USES=		pgsql
 SQLITE3_VARS=		INPUT_PLUGINS+=sqlite
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_MAKE_ARGS_OFF=	PNG=False
 JPEG_USES=		jpeg
 JPEG_MAKE_ARGS_OFF=	JPEG=False
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_MAKE_ARGS_OFF=	TIFF=False
-WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_MAKE_ARGS_OFF=	WEBP=False
-PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
+PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 PROJ_MAKE_ARGS_OFF=	PROJ=False
 
-CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
-CAIRO_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:${PORTSDIR}/graphics/py-cairo
+CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
+CAIRO_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:graphics/py-cairo
 CAIRO_MAKE_ARGS_OFF=	CAIRO=False
 
 .include <bsd.port.pre.mk>

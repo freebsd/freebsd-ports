@@ -11,8 +11,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source World War II German submarine simulation
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	dangerdeep-data>0:${PORTSDIR}/games/dangerdeep-data
+LIB_DEPENDS=	libfftw3.so:math/fftw3
+RUN_DEPENDS=	dangerdeep-data>0:games/dangerdeep-data
 
 USES=		execinfo scons
 USE_GL=		yes

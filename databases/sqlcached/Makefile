@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ivoras@FreeBSD.org
 COMMENT=	Cache daemon using SQL for data manipulation
 
-LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS=	libsqlite.so:databases/sqlite2
 
 USES=		readline ncurses tar:tgz
 

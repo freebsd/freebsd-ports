@@ -12,7 +12,7 @@ COMMENT=	Complete regular expressions C++ solution
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake pkgconfig libtool
 GNU_CONFIGURE=	yes

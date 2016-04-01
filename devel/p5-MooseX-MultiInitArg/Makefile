@@ -14,7 +14,7 @@ COMMENT=	Attributes with aliases for constructor arguments for MooseX
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS=	p5-Moose>=0:devel/p5-Moose
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -15,8 +15,8 @@ COMMENT=	Ruby binding for GDAL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
-BUILD_DEPENDS=	swig3.0:${PORTSDIR}/devel/swig30
-LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+BUILD_DEPENDS=	swig3.0:devel/swig30
+LIB_DEPENDS=	libgdal.so:graphics/gdal
 
 IGNORE=		disabled by upstream (https://trac.osgeo.org/gdal/changeset/28756)
 

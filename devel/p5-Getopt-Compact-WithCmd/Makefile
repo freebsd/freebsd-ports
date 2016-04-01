@@ -14,10 +14,10 @@ COMMENT=	Sub-command friendly, like Getopt::Compact
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Text-Table>=0:${PORTSDIR}/textproc/p5-Text-Table
+BUILD_DEPENDS=	p5-Text-Table>=0:textproc/p5-Text-Table
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Test-Output>=0:devel/p5-Test-Output \
+		p5-Test-Requires>=0:devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	modbuild

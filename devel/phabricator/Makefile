@@ -11,9 +11,9 @@ COMMENT=	Open source, software engineering platform
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	php5-libphutil>0:${PORTSDIR}/devel/libphutil \
-		php5-arcanist>0:${PORTSDIR}/devel/arcanist \
-		git:${PORTSDIR}/devel/git
+RUN_DEPENDS=	php5-libphutil>0:devel/libphutil \
+		php5-arcanist>0:devel/arcanist \
+		git:devel/git
 
 OPTIONS_DEFINE=	GD OPCACHE
 OPTIONS_DEFAULT=OPCACHE
@@ -35,7 +35,7 @@ GD_USE=		PHP=gd
 .if ${PORT_OPTIONS:MOPCACHE}
 .	if ${PHP_EXT_DIR:C|[^0-9]||g}  >= 20121212
 USE_PHP+=	opcache
-RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:${PORTSDIR}/devel/pecl-APCu
+RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu
 .	else
 USE_PHP+=	apc
 .	endif

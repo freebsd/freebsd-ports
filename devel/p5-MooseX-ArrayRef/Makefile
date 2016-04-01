@@ -13,7 +13,7 @@ COMMENT=	Moose blessed array references
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=2.00:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Moose>=2.00:devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

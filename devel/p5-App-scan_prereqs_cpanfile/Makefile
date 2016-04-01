@@ -13,8 +13,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Module-CPANfile>=0.9020:${PORTSDIR}/devel/p5-Module-CPANfile \
-	p5-Perl-PrereqScanner-Lite>=0.21:${PORTSDIR}/devel/p5-Perl-PrereqScanner-Lite
+	p5-Module-CPANfile>=0.9020:devel/p5-Module-CPANfile \
+	p5-Perl-PrereqScanner-Lite>=0.21:devel/p5-Perl-PrereqScanner-Lite
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.wolfermann.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	proxy for DNS queries
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 GNU_CONFIGURE=	yes
 

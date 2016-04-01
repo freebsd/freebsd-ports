@@ -11,12 +11,12 @@ COMMENT=	Graphical frontend to run FlightGear Flight Simulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libosg.so:${PORTSDIR}/graphics/osg
-BUILD_DEPENDS=	simgear>=2.10.0:${PORTSDIR}/devel/simgear \
-		${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	simgear>=2.10.0:${PORTSDIR}/devel/simgear \
-		fgfs:${PORTSDIR}/games/flightgear
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libosg.so:graphics/osg
+BUILD_DEPENDS=	simgear>=2.10.0:devel/simgear \
+		${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
+RUN_DEPENDS=	simgear>=2.10.0:devel/simgear \
+		fgfs:games/flightgear
 
 WRKSRC=		${WRKDIR}/${GO_ACCOUNT}-${GO_PROJECT}
 

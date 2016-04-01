@@ -16,7 +16,7 @@ COMMENT=	Test bed for `Cons' development
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/bin/cons:${PORTSDIR}/devel/cons
+RUN_DEPENDS=	${LOCALBASE}/bin/cons:devel/cons
 
 USES=		perl5 tar:tgz
 WRKSRC=		${WRKDIR}/cons-${PORTVERSION}/test

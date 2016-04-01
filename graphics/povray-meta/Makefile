@@ -44,7 +44,7 @@ PORT_OPTIONS+=	POVRAY${ver}
 POV_VERSION=	${ver}
 . endif
 . if ${PORT_OPTIONS:MPOVRAY${ver}}
-RUN_DEPENDS+=	${LOCALBASE}/bin/${POVRAY${ver}_BIN}:${PORTSDIR}/${POVRAY${ver}_PORT}
+RUN_DEPENDS+=	${LOCALBASE}/bin/${POVRAY${ver}_BIN}:${POVRAY${ver}_PORT}
 . endif
 .endfor
 

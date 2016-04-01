@@ -14,15 +14,15 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # quilt is required by build.sh
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		cmake:${PORTSDIR}/devel/cmake \
-		bison:${PORTSDIR}/devel/bison \
-		xxd:${PORTSDIR}/editors/vim-lite
-LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error
-RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
-		qpress:${PORTSDIR}/archivers/qpress
+BUILD_DEPENDS=	bash:shells/bash \
+		cmake:devel/cmake \
+		bison:devel/bison \
+		xxd:editors/vim-lite
+LIB_DEPENDS=	libev.so:devel/libev \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
+RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		qpress:archivers/qpress
 
 # autotool is in use for 5.1 builds
 USES=		alias autoreconf:build cpe gettext cmake libtool perl5 shebangfix

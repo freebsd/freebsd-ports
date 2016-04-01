@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Thin fast full interface to the libmemcached client API
 
-LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 USES=		perl5
 USE_PERL5=	configure

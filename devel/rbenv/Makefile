@@ -10,7 +10,7 @@ COMMENT=	Manage multiple versions of ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sstephenson

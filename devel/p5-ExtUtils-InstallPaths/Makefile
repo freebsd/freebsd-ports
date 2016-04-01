@@ -13,7 +13,7 @@ COMMENT=	Build.PL install path logic made easy
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-ExtUtils-Config>=0.002:${PORTSDIR}/devel/p5-ExtUtils-Config
+BUILD_DEPENDS=	p5-ExtUtils-Config>=0.002:devel/p5-ExtUtils-Config
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

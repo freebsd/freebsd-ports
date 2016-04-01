@@ -46,7 +46,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 SDL_USE=		SDL=gfx,image,mixer,net,ttf,sdl
 SDL_CONFIGURE_ENABLE=	sdl
-SDL_RUN_DEPENDS=	${FONTSDIR}/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+SDL_RUN_DEPENDS=	${FONTSDIR}/Vera.ttf:x11-fonts/bitstream-vera
 SMPF_DESC=		Support for 16 players
 SMPF_CONFIGURE_ENABLE=	SMPF
 SOUND_CONFIGURE_ENABLE=	sound

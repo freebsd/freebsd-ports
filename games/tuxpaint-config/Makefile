@@ -12,9 +12,9 @@ COMMENT=	Graphical tool to change TuxPaint settings
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
-LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
-RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
+LIB_DEPENDS=	libpaper.so:print/libpaper \
+		libfltk.so:x11-toolkits/fltk
+RUN_DEPENDS=	tuxpaint:games/tuxpaint
 
 USES=		gettext gmake
 MAKE_ARGS=	PREFIX="${PREFIX}" \

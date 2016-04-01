@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.mammothcheese.ca/
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Simple console text editor
 
-RUN_DEPENDS=	munger:${PORTSDIR}/lang/munger
+RUN_DEPENDS=	munger:lang/munger
 
 MAKE_ENV=	INSTALL_MAN="${INSTALL_MAN}" INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 

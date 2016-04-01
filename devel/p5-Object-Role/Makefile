@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl base class for non-Moose roles
 
-BUILD_DEPENDS=	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
+BUILD_DEPENDS=	p5-Sub-Name>=0:devel/p5-Sub-Name
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

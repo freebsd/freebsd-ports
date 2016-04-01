@@ -16,9 +16,9 @@ LICENSE_COMB=	multi
 LICENSE_DISTFILES=	${WRKSRC}/COPYING-GPL3 ${WRKSRC}/COPYING.2.1 \
 	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala \
-		gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
-LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+BUILD_DEPENDS=	vapigen:lang/vala \
+		gtkdoc-check:textproc/gtk-doc
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig pathfix libtool

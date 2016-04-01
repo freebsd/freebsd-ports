@@ -14,8 +14,8 @@ COMMENT=	Fully-configurable hex grid generator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/lexical_cast.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/lexical_cast.hpp:devel/boost-libs
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		gmake
 

@@ -13,8 +13,8 @@ COMMENT=	Replaces actual time with simulated time
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece
-RUN_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece
+BUILD_DEPENDS=	p5-Time-Piece>=0:devel/p5-Time-Piece
+RUN_DEPENDS=	p5-Time-Piece>=0:devel/p5-Time-Piece
 
 USES=		perl5
 USE_PERL5=	configure

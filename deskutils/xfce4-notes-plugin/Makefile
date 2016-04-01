@@ -12,7 +12,7 @@ COMMENT=	Notes plugin for the Xfce panel
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pkgconfig xfce tar:bzip2

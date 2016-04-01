@@ -14,9 +14,9 @@ COMMENT=	Extensible platform for source-code analysis of C
 
 LICENSE=	LGPL21
 
-EXTRACT_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
-BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
-RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
+EXTRACT_DEPENDS=	gtar:archivers/gtar
+BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:math/ocaml-ocamlgraph
+RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:math/ocaml-ocamlgraph
 
 USES=		gmake
 USE_OCAML=	yes

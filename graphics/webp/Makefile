@@ -13,9 +13,9 @@ COMMENT=	Google WebP image format conversion tool
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libgif.so:graphics/giflib \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 OPTIONS_DEFINE=	X11
 OPTIONS_SUB=	yes

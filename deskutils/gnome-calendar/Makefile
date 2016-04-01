@@ -12,7 +12,7 @@ COMMENT=	Simple and beatiful calendar application for GNOME
 
 PORTSCOUT=	limitw:1,even
 
-LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical
+LIB_DEPENDS=	libical.so:devel/libical
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes

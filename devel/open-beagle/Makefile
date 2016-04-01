@@ -21,7 +21,7 @@ INSTALL_TARGET=	install-strip
 PACCVERSION=	1.3.1b
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} PACCVERSION=${PACCVERSION}
-BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS+=	gsed:textproc/gsed
 
 #unfortunately, some important sed statements rely on GNU sed behavior, and can't be
 #easily changed to call GNU sed by means of the configure script

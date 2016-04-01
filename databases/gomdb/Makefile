@@ -9,7 +9,7 @@ COMMENT=	Go wrapper for LMDB - OpenLDAP Lightning Memory-Mapped Database
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go:lang/go
 
 ONLY_FOR_ARCHS=	i386 amd64
 

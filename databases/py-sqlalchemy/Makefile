@@ -15,7 +15,7 @@ COMMENT=	Python SQL toolkit and Object Relational Mapper
 LICENSE=	MIT
 
 TEST_DEPENDS:=	${RUN_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
+		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
 
 # Python3 ready
 USES=		python
@@ -45,33 +45,33 @@ AL_PORTDOCS_SUBDIR=	core dialects orm
 .endif
 
 .if ${PORT_OPTIONS:MMSSQL}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:databases/py-mssql
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 .if ${PYTHON_VER} < 3.0
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb
 #.else
 # At the moment databases/py-pymysql does not build with Python3
 # See https://github.com/petehunt/PyMySQL#python-3-0-support
-#RUN_DEPENDS+=	pymysql>=0.5:${PORTSDIR}/databases/py-pymysql
+#RUN_DEPENDS+=	pymysql>=0.5:databases/py-pymysql
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-psycopg2
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:databases/py-psycopg2
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MSYBASE}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Sybase.py:${PORTSDIR}/databases/py-sybase
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Sybase.py:databases/py-sybase
 .endif
 
 post-patch:

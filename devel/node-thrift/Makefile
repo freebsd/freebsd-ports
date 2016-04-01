@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	node-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Node.js bindings for the Apache Thrift RPC system
 
-RUN_DEPENDS=	node:${PORTSDIR}/www/node
+RUN_DEPENDS=	node:www/node
 
 NO_BUILD=	yes
 NO_ARCH=	yes

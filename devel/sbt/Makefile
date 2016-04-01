@@ -26,7 +26,7 @@ PLIST_FILES=	bin/sbt \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MADVANCED}
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 PLIST_FILES+=	%%DATADIR%%/sbt \
 		%%DATADIR%%/sbt-launch-lib.bash

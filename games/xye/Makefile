@@ -25,7 +25,7 @@ COMMENT=	Puzzle games like sokoban or boulderdash
 
 LICENSE=	ZLIB
 
-EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip
 
 USES=		gmake
 USE_SDL=	sdl image ttf

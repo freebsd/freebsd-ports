@@ -14,9 +14,9 @@ COMMENT=	Tryton Application Platform (Sale Price List Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_party>=2.8.0:${PORTSDIR}/finance/trytond28_party \
-		trytond28_sale>=2.8.1:${PORTSDIR}/finance/trytond28_sale \
-		trytond28_product_price_list>=2.8.0:${PORTSDIR}/finance/trytond28_product_price_list
+RUN_DEPENDS=	trytond28_party>=2.8.0:finance/trytond28_party \
+		trytond28_sale>=2.8.1:finance/trytond28_sale \
+		trytond28_product_price_list>=2.8.0:finance/trytond28_product_price_list
 
 CONFLICTS=	trytond_sale_price_list-2.[46].*
 

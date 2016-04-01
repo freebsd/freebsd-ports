@@ -15,8 +15,8 @@ COMMENT=	Create lightweight SCALARs with get/set callbacks
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Refcount>=0:${PORTSDIR}/devel/p5-Test-Refcount
+TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod \
+		p5-Test-Refcount>=0:devel/p5-Test-Refcount
 
 USE_PERL5=	modbuild
 USES=		perl5

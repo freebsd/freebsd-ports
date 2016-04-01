@@ -14,7 +14,7 @@ COMMENT=	Handles all the housework for a daemon in POE
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-POE>=1:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-POE>=1:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

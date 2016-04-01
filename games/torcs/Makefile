@@ -14,10 +14,10 @@ LICENSE=	GPLv2
 
 MAKE_JOBS_UNSAFE=	yes
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libvorbis.so:audio/libvorbis
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe gmake openal:al,alut shebangfix tar:bzip2
 CPE_VENDOR=	bernhard_wymann

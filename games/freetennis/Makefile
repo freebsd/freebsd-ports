@@ -10,14 +10,14 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tennis simulation
 
-BUILD_DEPENDS=	ocamlopt:${PORTSDIR}/lang/ocaml \
-		ocaml-images>3.0:${PORTSDIR}/graphics/ocaml-images \
+BUILD_DEPENDS=	ocamlopt:lang/ocaml \
+		ocaml-images>3.0:graphics/ocaml-images \
 		${OCAML_DEPENDS}
 RUN_DEPENDS=	${OCAML_DEPENDS}
 
-OCAML_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/gtk.ml:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
-		${LOCALBASE}/lib/ocaml/lablGL/gl.ml:${PORTSDIR}/graphics/ocaml-lablgl \
-		${LOCALBASE}/lib/ocaml/site-lib/sdl/sdl.mli:${PORTSDIR}/devel/ocaml-sdl
+OCAML_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/gtk.ml:x11-toolkits/ocaml-lablgtk2 \
+		${LOCALBASE}/lib/ocaml/lablGL/gl.ml:graphics/ocaml-lablgl \
+		${LOCALBASE}/lib/ocaml/site-lib/sdl/sdl.mli:devel/ocaml-sdl
 
 USES=		tar:bzip2
 

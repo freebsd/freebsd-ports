@@ -10,8 +10,8 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Collection of portable public domain utilities for Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria
-RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:devel/cl-alexandria
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:devel/cl-alexandria
 
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl

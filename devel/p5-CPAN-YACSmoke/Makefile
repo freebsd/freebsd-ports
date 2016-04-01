@@ -11,13 +11,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet Another CPAN Smoke Tester
 
-RUN_DEPENDS=	p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
-		p5-File-HomeDir>=0.06:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-Regexp-Assemble>=0.06:${PORTSDIR}/devel/p5-Regexp-Assemble \
-		p5-Sort-Versions>=1.5:${PORTSDIR}/devel/p5-Sort-Versions \
-		p5-Test-Reporter>=1.25:${PORTSDIR}/devel/p5-Test-Reporter \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
+		p5-File-HomeDir>=0.06:devel/p5-File-HomeDir \
+		p5-Regexp-Assemble>=0.06:devel/p5-Regexp-Assemble \
+		p5-Sort-Versions>=1.5:devel/p5-Sort-Versions \
+		p5-Test-Reporter>=1.25:devel/p5-Test-Reporter \
+		p5-URI>=0:net/p5-URI \
+		p5-libwww>=0:www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

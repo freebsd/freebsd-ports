@@ -14,7 +14,7 @@ COMMENT=	PHP extension for interfacing with Apache ZooKeeper
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libzookeeper_mt.so:${PORTSDIR}/devel/libzookeeper
+LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
 USE_PHP=	session
 USE_PHP_BUILD=	session

@@ -14,7 +14,7 @@ COMMENT=	Tryton Application Platform (German Account Chart)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_account>=2.8.1:${PORTSDIR}/finance/trytond28_account
+RUN_DEPENDS=	trytond28_account>=2.8.1:finance/trytond28_account
 
 CONFLICTS=	trytond_account_de_skr03-2.[46].*
 

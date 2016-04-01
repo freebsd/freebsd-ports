@@ -23,8 +23,8 @@ SSCRIPTS_DESC=	Install sort-pictures script
 .include <bsd.port.options.mk>
 
 .if  ${PORT_OPTIONS:MSSCRIPTS}
-RUN_DEPENDS=	exif:${PORTSDIR}/graphics/exif \
-		identify:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	exif:graphics/exif \
+		identify:graphics/ImageMagick
 PLIST_FILES+=	bin/sort-pictures man/man1/sort-pictures.1.gz
 MANPAGE1+=	sort-pictures.1
 .endif

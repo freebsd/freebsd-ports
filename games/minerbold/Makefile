@@ -11,7 +11,7 @@ COMMENT=	Remake of Bolder Dash from BK-0010 with INSTEAD engine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	instead:${PORTSDIR}/games/instead
+RUN_DEPENDS=	instead:games/instead
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gl00my

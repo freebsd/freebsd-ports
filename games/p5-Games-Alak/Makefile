@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple game-tree implementation of a gomoku-like game
 
-TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
 
 USES=		perl5
 USE_PERL5=	configure

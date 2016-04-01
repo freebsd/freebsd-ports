@@ -13,7 +13,7 @@ COMMENT=	Cooperative multiplayer graphical RPG and adventure game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig tar:bzip2

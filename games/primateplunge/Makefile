@@ -15,7 +15,7 @@ LICENSE_NAME=	uDevGame license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	# empty
 
-RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
+RUN_DEPENDS=	timidity:audio/timidity
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer

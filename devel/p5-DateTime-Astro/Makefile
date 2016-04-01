@@ -14,11 +14,11 @@ COMMENT=	Functions For Astromical Calendars
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set
-LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
+BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Set>=0:devel/p5-DateTime-Set
+LIB_DEPENDS=	libmpfr.so:math/mpfr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USE_PERL5=	configure
 USES=		gmake localbase perl5

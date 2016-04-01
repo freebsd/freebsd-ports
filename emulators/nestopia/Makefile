@@ -9,7 +9,7 @@ COMMENT=	Portable NES/Famicom emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libao.so:audio/libao
 
 USES=		gmake libarchive pkgconfig
 USE_GL=		glu

@@ -12,9 +12,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Configuration database system for GNOME
 
-BUILD_DEPENDS=	vala>=0.18.1:${PORTSDIR}/lang/vala \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+BUILD_DEPENDS=	vala>=0.18.1:lang/vala \
+		docbook-xsl>=0:textproc/docbook-xsl
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 PORTSCOUT=	limitw:1,even
 

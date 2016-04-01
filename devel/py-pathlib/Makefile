@@ -17,7 +17,7 @@ USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
 
 .include <bsd.port.options.mk>
 

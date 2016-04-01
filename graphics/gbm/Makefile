@@ -8,10 +8,10 @@ CATEGORIES=	graphics
 
 COMMENT=	gbm library
 
-LIB_DEPENDS+=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libglapi.so:${PORTSDIR}/graphics/libglapi
+LIB_DEPENDS+=	libpthread-stubs.so:devel/libpthread-stubs \
+		libexpat.so:textproc/expat2 \
+		libdrm.so:graphics/libdrm \
+		libglapi.so:graphics/libglapi
 
 USE_XORG=	x11 xau xcb xdmcp
 

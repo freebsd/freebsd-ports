@@ -16,7 +16,7 @@ COMMENT=	Simple missile command clone
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libglfw.a:${PORTSDIR}/graphics/glfw2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libglfw.a:graphics/glfw2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	snoutmate

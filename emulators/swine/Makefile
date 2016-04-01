@@ -11,11 +11,11 @@ COMMENT=	Qt4 graphical Wine frontend
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pyrcc4:${PORTSDIR}/textproc/py-qt4-xml
-RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm \
-		cabextract:${PORTSDIR}/archivers/cabextract \
-		icotool:${PORTSDIR}/graphics/icoutils \
-		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+BUILD_DEPENDS=	pyrcc4:textproc/py-qt4-xml
+RUN_DEPENDS=	xterm:x11/xterm \
+		cabextract:archivers/cabextract \
+		icotool:graphics/icoutils \
+		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui
 
 DATADIRLIB=	${PREFIX}/lib/${PORTNAME}
 
@@ -35,7 +35,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
-RUN_DEPENDS+=	wine:${PORTSDIR}/emulators/wine-devel
+RUN_DEPENDS+=	wine:emulators/wine-devel
 .endif
 
 post-patch:

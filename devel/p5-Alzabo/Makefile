@@ -13,11 +13,11 @@ COMMENT=	Data modelling tool and RDBMS-OO mapper
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-BUILD_DEPENDS=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Class-Factory-Util>=0:${PORTSDIR}/devel/p5-Class-Factory-Util \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-Exception-Class>=0:devel/p5-Exception-Class \
+		p5-Class-Factory-Util>=0:devel/p5-Class-Factory-Util \
+		p5-Params-Validate>=0:devel/p5-Params-Validate \
+		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash \
+		p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

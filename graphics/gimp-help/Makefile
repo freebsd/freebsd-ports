@@ -53,8 +53,8 @@ ${lang}_DETECT?=	${LOCALBASE}/share/gimp/help/${lang}/index.html
 ${lang}_PORT?=		misc/gimp-help-${lang}
 ${lang}_NAME?=		${lang}
 ${lang:tu}_DESC=		${${lang}_NAME}
-${lang:tu}_RUN_DEPENDS=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
-ALL_RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
+${lang:tu}_RUN_DEPENDS=	${${lang}_DETECT}:${${lang}_PORT}
+ALL_RUN_DEPENDS+=	${${lang}_DETECT}:${${lang}_PORT}
 .endfor
 
 .include <bsd.port.mk>

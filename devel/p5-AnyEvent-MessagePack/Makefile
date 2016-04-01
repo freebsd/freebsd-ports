@@ -11,9 +11,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of AnyEvent for MessagePack
 
 RUN_DEPENDS=	\
-	p5-AnyEvent>=7.02:${PORTSDIR}/devel/p5-AnyEvent \
-	p5-Data-MessagePack>=0.46:${PORTSDIR}/devel/p5-Data-MessagePack \
-	p5-Data-MessagePack-Stream>=0.07:${PORTSDIR}/devel/p5-Data-MessagePack-Stream
+	p5-AnyEvent>=7.02:devel/p5-AnyEvent \
+	p5-Data-MessagePack>=0.46:devel/p5-Data-MessagePack \
+	p5-Data-MessagePack-Stream>=0.07:devel/p5-Data-MessagePack-Stream
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

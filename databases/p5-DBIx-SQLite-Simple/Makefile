@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Easy access to SQLite databases using objects
 
-BUILD_DEPENDS=	p5-Class-Gomor>=0:${PORTSDIR}/devel/p5-Class-Gomor \
-		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+BUILD_DEPENDS=	p5-Class-Gomor>=0:devel/p5-Class-Gomor \
+		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

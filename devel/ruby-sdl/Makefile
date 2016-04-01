@@ -15,10 +15,10 @@ COMMENT=	Ruby extension library to use SDL library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libSGE.so:${PORTSDIR}/devel/sdl_sge \
-		libSDLSKK.so:${PORTSDIR}/devel/sdlskk \
-		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
-RUN_DEPENDS=	rubygem-opengl>=0:${PORTSDIR}/graphics/rubygem-opengl
+LIB_DEPENDS=	libSGE.so:devel/sdl_sge \
+		libSDLSKK.so:devel/sdlskk \
+		libsmpeg.so:multimedia/smpeg
+RUN_DEPENDS=	rubygem-opengl>=0:graphics/rubygem-opengl
 
 USE_SDL=	mixer image ttf sdl
 USE_RUBY=	yes

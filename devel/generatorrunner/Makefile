@@ -11,8 +11,8 @@ COMMENT=	Tool to create binding generators for C++ and Qt libraries
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-LIB_DEPENDS=	libapiextractor.so:${PORTSDIR}/devel/apiextractor
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+LIB_DEPENDS=	libapiextractor.so:devel/apiextractor
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

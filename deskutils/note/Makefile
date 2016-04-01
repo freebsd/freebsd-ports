@@ -11,8 +11,8 @@ COMMENT=	Console based tool to handle encrypted notes
 
 LICENSE=	GPLv1
 
-RUN_DEPENDS=	p5-YAML>=0.1:${PORTSDIR}/textproc/p5-YAML \
-		p5-Crypt-IDEA>=1.0:${PORTSDIR}/security/p5-Crypt-IDEA
+RUN_DEPENDS=	p5-YAML>=0.1:textproc/p5-YAML \
+		p5-Crypt-IDEA>=1.0:security/p5-Crypt-IDEA
 
 USES=		perl5
 USE_PERL5=	configure

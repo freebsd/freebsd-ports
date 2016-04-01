@@ -13,12 +13,12 @@ COMMENT=	Validate method/function parameters
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Module-Implementation>=0.04:${PORTSDIR}/devel/p5-Module-Implementation
-RUN_DEPENDS=	p5-Module-Implementation>=0.04:${PORTSDIR}/devel/p5-Module-Implementation
-TEST_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
-		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-Taint>=0.02:${PORTSDIR}/devel/p5-Test-Taint
+BUILD_DEPENDS=	p5-Module-Implementation>=0.04:devel/p5-Module-Implementation
+RUN_DEPENDS=	p5-Module-Implementation>=0.04:devel/p5-Module-Implementation
+TEST_DEPENDS=	p5-Readonly>=0:devel/p5-Readonly \
+		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+		p5-Test-Requires>0:devel/p5-Test-Requires \
+		p5-Test-Taint>=0.02:devel/p5-Test-Taint
 
 USES=		perl5
 USE_PERL5=	modbuild

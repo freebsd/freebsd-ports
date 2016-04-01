@@ -10,7 +10,7 @@ COMMENT=	Module that adds descendant tracking to a class
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-thread_safe>=0.3.1:${PORTSDIR}/devel/rubygem-thread_safe
+RUN_DEPENDS=	rubygem-thread_safe>=0.3.1:devel/rubygem-thread_safe
 
 NO_ARCH=	yes
 

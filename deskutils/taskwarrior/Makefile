@@ -13,7 +13,7 @@ COMMENT=	Feature-rich command-line todo list manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 USES=		compiler:c++11-lib cmake python:test shebangfix
 

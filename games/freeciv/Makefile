@@ -10,9 +10,9 @@ MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
 
-RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libcurl.so:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	hicolor-icon-theme>=0:misc/hicolor-icon-theme
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libcurl.so:ftp/curl
 
 USES=		gettext gmake iconv libtool pkgconfig tar:bzip2 python sqlite
 GNU_CONFIGURE=	yes
@@ -40,12 +40,12 @@ IGNORE=		cannot use SDL without X11: re-run make config
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libggz.so:${PORTSDIR}/games/libggz \
-		libggz-gtk.so:${PORTSDIR}/games/ggz-gtk-client \
-		libggzcore.so:${PORTSDIR}/games/ggz-client-libs \
-		libggzmod.so:${PORTSDIR}/games/ggz-client-libs
+LIB_DEPENDS+=	libtiff.so:graphics/tiff \
+		libpng.so:graphics/png \
+		libggz.so:games/libggz \
+		libggz-gtk.so:games/ggz-gtk-client \
+		libggzcore.so:games/ggz-client-libs \
+		libggzmod.so:games/ggz-client-libs
 USE_XORG=	xpm
 USE_SDL+=	mixer
 USE_GNOME=	gtk20

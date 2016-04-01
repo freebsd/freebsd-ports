@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	linux-enemyterritory-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ET Pro - Enemy Territory Competition Mod
 
-RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
+RUN_DEPENDS=	et:games/linux-enemyterritory
 
 USES=		zip
 USE_LINUX=	yes

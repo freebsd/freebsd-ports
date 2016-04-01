@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S,.0$,,}/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt 4 based Qemu frontend
 
-LIB_DEPENDS=	libvncclient.so:${PORTSDIR}/net/libvncserver
+LIB_DEPENDS=	libvncclient.so:net/libvncserver
 
 USE_QT4=	gui network qtestlib xml linguisttools_build \
 		moc_build qmake_build rcc_build uic_build

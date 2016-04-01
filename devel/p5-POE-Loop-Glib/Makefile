@@ -14,8 +14,8 @@ COMMENT=	Bridge that supports Glib event loop from POE
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-POE>=1.288:${PORTSDIR}/devel/p5-POE \
-		p5-Glib2>=1.222:${PORTSDIR}/devel/p5-Glib2
+BUILD_DEPENDS=	p5-POE>=1.288:devel/p5-POE \
+		p5-Glib2>=1.222:devel/p5-Glib2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

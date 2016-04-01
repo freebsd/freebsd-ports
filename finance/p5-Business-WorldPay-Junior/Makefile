@@ -13,9 +13,9 @@ COMMENT=	Perl module to handle WorldPay Junior for payment services
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Business-CreditCard>=0:${PORTSDIR}/finance/p5-Business-CreditCard \
-		p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-Business-CreditCard>=0:finance/p5-Business-CreditCard \
+		p5-Business-OnlinePayment>=0:finance/p5-Business-OnlinePayment \
+		p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

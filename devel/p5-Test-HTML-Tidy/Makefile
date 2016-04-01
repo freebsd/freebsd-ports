@@ -14,7 +14,7 @@ COMMENT=	Test::More-style wrapper around HTML::Tidy
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy
+BUILD_DEPENDS=	p5-HTML-Tidy>=0:textproc/p5-HTML-Tidy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

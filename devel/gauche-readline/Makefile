@@ -13,8 +13,8 @@ DIST_SUBDIR=	gauche
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Pure gauche/scheme implementation of the Readline library
 
-RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
-BUILD_DEPENDS=	gauche-config:${PORTSDIR}/lang/gauche
+RUN_DEPENDS=	gosh:lang/gauche
+BUILD_DEPENDS=	gauche-config:lang/gauche
 
 GAUCHE_LIBDIR=	share/gauche/site/lib
 GAUCHE_FILES=	readline/history.scm readline/keymap.scm readline/term-util.scm

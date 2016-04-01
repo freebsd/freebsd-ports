@@ -13,8 +13,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-File-Sync>0:${PORTSDIR}/devel/p5-File-Sync \
-	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class
+	p5-File-Sync>0:devel/p5-File-Sync \
+	p5-Path-Class>0:devel/p5-Path-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

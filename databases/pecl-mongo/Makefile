@@ -13,7 +13,7 @@ COMMENT=	PECL classes for Mongo Database Driver
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	re2c>=0.13.4:${PORTSDIR}/devel/re2c
+BUILD_DEPENDS=	re2c>=0.13.4:devel/re2c
 
 USES=		tar:tgz
 USE_PHP=	spl

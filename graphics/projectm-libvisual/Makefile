@@ -12,9 +12,9 @@ COMMENT=	Allows projectM to be used with libvisual
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libprojectM.so:${PORTSDIR}/graphics/libprojectm \
-		libvisual-${LIBVISUAL_VER}.so:${PORTSDIR}/graphics/libvisual${LIBVISUAL_VER:S/.//} \
-		libSDL.so:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	libprojectM.so:graphics/libprojectm \
+		libvisual-${LIBVISUAL_VER}.so:graphics/libvisual${LIBVISUAL_VER:S/.//} \
+		libSDL.so:devel/sdl12
 
 USES=		cmake pkgconfig
 CMAKE_ARGS+=	-DLIBVISUAL_LIBRARIES=visual-${LIBVISUAL_VER}

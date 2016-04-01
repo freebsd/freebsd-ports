@@ -13,8 +13,8 @@ COMMENT=	Get directories of configuration files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-HomeDir>=0.50:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils
+BUILD_DEPENDS=	p5-File-HomeDir>=0.50:devel/p5-File-HomeDir \
+		p5-List-MoreUtils>=0.22:lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

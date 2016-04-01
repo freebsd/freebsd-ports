@@ -15,15 +15,15 @@ COMMENT=	Ember is a WorldForge 3D client using the OGRE 3D library
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d
-RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d
-LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		liberis-1.3.so:${PORTSDIR}/devel/eris \
-		libvarconf-1.0.so:${PORTSDIR}/devel/varconf \
-		libmercator-0.3.so:${PORTSDIR}/devel/mercator \
-		libwfut-0.2.so:${PORTSDIR}/devel/libwfut \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libCEGUIBase-0.so:${PORTSDIR}/graphics/cegui
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:graphics/ogre3d
+RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:graphics/ogre3d
+LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
+		liberis-1.3.so:devel/eris \
+		libvarconf-1.0.so:devel/varconf \
+		libmercator-0.3.so:devel/mercator \
+		libwfut-0.2.so:devel/libwfut \
+		libboost_thread.so:devel/boost-libs \
+		libCEGUIBase-0.so:graphics/cegui
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc \
 		--program-transform-name= --disable-cppunit --disable-debug \

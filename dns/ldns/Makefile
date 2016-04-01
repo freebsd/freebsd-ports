@@ -48,8 +48,8 @@ ALL_TARGET=	pyldns
 INSTALL_TARGET=	install-pyldns
 
 CONFIGURE_ARGS+=--with-pyldns
-LIB_DEPENDS+=	libldns.so:${PORTSDIR}/dns/ldns
-BUILD_DEPENDS+=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
+LIB_DEPENDS+=	libldns.so:dns/ldns
+BUILD_DEPENDS+=	${LOCALBASE}/bin/swig:devel/swig13
 
 post-patch:
 	@${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
@@ -62,7 +62,7 @@ ALL_TARGET=	p5-dns-ldns
 INSTALL_TARGET=	install-p5-dns-ldns
 
 CONFIGURE_ARGS+=--with-p5-dns-ldns
-LIB_DEPENDS+=	libldns.so:${PORTSDIR}/dns/ldns
+LIB_DEPENDS+=	libldns.so:dns/ldns
 
 post-patch:
 	@${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
@@ -71,7 +71,7 @@ ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h install-config
 
 .if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:devel/doxygen
 ALL_TARGET+=	doc
 INSTALL_TARGET+=install-manpages
 .endif
@@ -80,7 +80,7 @@ INSTALL_TARGET+=install-manpages
 
 .if ${PORT_OPTIONS:MGOST}
 . if ${OSVERSION} < 1000015
-BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
+BUILD_DEPENDS+=	openssl>=1.0:security/openssl
 CONFLICTS+=	libressl-*
 . endif
 .else

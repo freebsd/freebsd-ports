@@ -11,7 +11,7 @@ COMMENT=	MaxMind DB Reader extension for PHP
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libmaxminddb.so:${PORTSDIR}/net/libmaxminddb
+LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

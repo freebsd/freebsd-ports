@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dliakh@ukr.net
 COMMENT=	Cache::Memcached compatible interface to libmemcached
 
-BUILD_DEPENDS=	p5-Memcached-libmemcached>=0.42.01:${PORTSDIR}/databases/p5-Memcached-libmemcached \
-		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
+BUILD_DEPENDS=	p5-Memcached-libmemcached>=0.42.01:databases/p5-Memcached-libmemcached \
+		p5-Task-Weaken>=0:devel/p5-Task-Weaken
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

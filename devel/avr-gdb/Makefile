@@ -11,7 +11,7 @@ DISTNAME=	gdb-${PORTVERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	GNU GDB for the AVR target
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake ncurses tar:bzip2
 

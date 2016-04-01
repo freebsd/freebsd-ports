@@ -9,10 +9,10 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Extension for Nautilus to configure programs to launch on files
 
-LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
-		libunique-3.0.so:${PORTSDIR}/x11-toolkits/libunique3
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libgtop-2.0.so:devel/libgtop \
+		libunique-3.0.so:x11-toolkits/libunique3
 
 USES=		gettext gmake libtool pkgconfig tar:xz
 USE_GNOME=	gtk30 intltool nautilus3

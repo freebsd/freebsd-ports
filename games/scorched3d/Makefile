@@ -13,11 +13,11 @@ COMMENT=	3D version of the classic DOS game Scorched Earth
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libpng.so:graphics/png \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=	MYSQL
 

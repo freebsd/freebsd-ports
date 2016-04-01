@@ -12,9 +12,9 @@ COMMENT=	Fitting tool for EVE Online
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6:${PORTSDIR}/databases/py-sqlalchemy \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:www/py-requests
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DarkFenX
@@ -33,9 +33,9 @@ WX_COMPS=	wx:run python:run
 OPTIONS_DEFINE=		DPSGRAPHING
 DPSGRAPHING_DESC=	DPS graphing (requires NumPy and matplotlib. need fix)
 
-DPSGRAPHING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}more-itertools>0:${PORTSDIR}/devel/py-more-itertools
+DPSGRAPHING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

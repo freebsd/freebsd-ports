@@ -12,14 +12,14 @@ COMMENT=	Professional-level digital darkroom and photo editor
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	jhindexer:${PORTSDIR}/java/javahelp \
-		git:${PORTSDIR}/devel/git \
-		rsync:${PORTSDIR}/net/rsync \
-		tidy:${PORTSDIR}/www/tidy-lib \
-		autoconf:${PORTSDIR}/devel/autoconf
-LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libtiff.so:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	jhindexer:${PORTSDIR}/java/javahelp
+BUILD_DEPENDS=	jhindexer:java/javahelp \
+		git:devel/git \
+		rsync:net/rsync \
+		tidy:www/tidy-lib \
+		autoconf:devel/autoconf
+LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
+		libtiff.so:graphics/tiff
+RUN_DEPENDS=	jhindexer:java/javahelp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ktgw0316

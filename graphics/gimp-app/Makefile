@@ -15,13 +15,13 @@ COMMENT=	GNU Image Manipulation Program
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libgegl-0.2.so:${PORTSDIR}/graphics/gegl \
-		libbabl-0.1.so:${PORTSDIR}/x11/babl
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		liblcms2.so:graphics/lcms2 \
+		libgegl-0.2.so:graphics/gegl \
+		libbabl-0.1.so:x11/babl
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 
 GNU_CONFIGURE=	yes
 USES+=		cpe desktop-file-utils execinfo gettext gmake jpeg libtool \
@@ -67,48 +67,48 @@ GIMP_LIBS=	`${PKG_CONFIG} --libs gimp-2.0`
 GIMP_THUMB_LIBS=`${PKG_CONFIG} --libs gimpthumb-2.0`
 GIMP_UI_LIBS=	`${PKG_CONFIG} --libs gimpui-2.0`
 
-LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS+=	libgimp-2.0.so:graphics/gimp-app
 
 .else
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
-AA_LIB_DEPENDS=		libaa.so:${PORTSDIR}/graphics/aalib
+AA_LIB_DEPENDS=		libaa.so:graphics/aalib
 AA_CONFIGURE_OFF=	--without-aa
 
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 DBUS_CONFIGURE_WITH=	dbus
 
 GHOSTSCRIPT_USES=		ghostscript
 GHOSTSCRIPT_CONFIGURE_WITH=	gs
 
 GVFS_USE=		GNOME=gvfs
-GVFS_LIB_DEPENDS_OFF=	libcurl.so:${PORTSDIR}/ftp/curl
+GVFS_LIB_DEPENDS_OFF=	libcurl.so:ftp/curl
 GVFS_CONFIGURE_OFF=	--without-gvfs
 
-HELPBROWSER_LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+HELPBROWSER_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 HELPBROWSER_CONFIGURE_WITH=	webkit
 
-JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 JASPER_CONFIGURE_WITH=	libjasper
 
-LIBEXIF_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 LIBEXIF_CONFIGURE_OFF=	--without-libexif
 
-LIBMNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+LIBMNG_LIB_DEPENDS=	libmng.so:graphics/libmng
 LIBMNG_CONFIGURE_OFF=	--without-libmng
 
 LIBRSVG2_USE= 		GNOME=librsvg2
 LIBRSVG2_CONFIGURE_WITH=librsvg
 
-POPPLER_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 POPPLER_CONFIGURE_OFF=	--without-poppler
 
 SIMD_CONFIGURE_OFF=	--disable-mmx \
 			--disable-sse \
 			--disable-altivec
 
-WMF_LIB_DEPENDS=	libwmf.so:${PORTSDIR}/graphics/libwmf
+WMF_LIB_DEPENDS=	libwmf.so:graphics/libwmf
 WMF_CONFIGURE_OFF=	--without-wmf
 
 .endif

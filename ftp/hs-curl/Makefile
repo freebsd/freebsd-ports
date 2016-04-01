@@ -10,7 +10,7 @@ COMMENT=	Haskell binding to libcurl
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

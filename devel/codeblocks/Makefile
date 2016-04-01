@@ -14,10 +14,10 @@ COMMENT=	Open source, cross-platform, free C/C++ IDE
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
-		librsync.so:${PORTSDIR}/net/librsync
+BUILD_DEPENDS=	zip:archivers/zip
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libhunspell-1.3.so:textproc/hunspell \
+		librsync.so:net/librsync
 
 USES=		compiler desktop-file-utils fam:gamin libtool pathfix \
 		pkgconfig shared-mime-info

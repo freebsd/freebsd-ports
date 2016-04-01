@@ -12,7 +12,7 @@ DISTNAME=	GDTextUtil-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Text utilities for use with GD drawing package
 
-RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD
 
 USES=		perl5
 USE_PERL5=	configure

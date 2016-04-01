@@ -8,9 +8,9 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL ES v2 library
 
-LIB_DEPENDS+=	libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libglapi.so:${PORTSDIR}/graphics/libglapi \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
+		libglapi.so:graphics/libglapi \
+		libexpat.so:textproc/expat2
 
 # stuff not needed by libglesv2 but configure wants it
 USE_XORG+=	glproto dri2proto xext xdamage xfixes presentproto \

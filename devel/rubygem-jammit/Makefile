@@ -12,8 +12,8 @@ COMMENT=	Industrial strength asset packaging library for Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-cssmin>=1.0:${PORTSDIR}/textproc/rubygem-cssmin \
-		rubygem-jsmin>=1.0:${PORTSDIR}/textproc/rubygem-jsmin
+RUN_DEPENDS=	rubygem-cssmin>=1.0:textproc/rubygem-cssmin \
+		rubygem-jsmin>=1.0:textproc/rubygem-jsmin
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -16,23 +16,23 @@ ONLY_FOR_ARCHS=		amd64 i386
 
 PSP_GCC_STAGE_PREFIX=	psp/stage1
 
-LIB_DEPENDS=		libgmp.so:${PORTSDIR}/math/gmp \
-			libmpfr.so:${PORTSDIR}/math/mpfr \
-			libmpc.so:${PORTSDIR}/math/mpc
+LIB_DEPENDS=		libgmp.so:math/gmp \
+			libmpfr.so:math/mpfr \
+			libmpc.so:math/mpc
 
-BUILD_DEPENDS+=		psp-addr2line:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-ar:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-as:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-c++filt:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-ld:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-nm:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-objcopy:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-objdump:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-ranlib:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-readelf:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-size:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-strings:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-strip:${PORTSDIR}/devel/psptoolchain-binutils
+BUILD_DEPENDS+=		psp-addr2line:devel/psptoolchain-binutils \
+			psp-ar:devel/psptoolchain-binutils \
+			psp-as:devel/psptoolchain-binutils \
+			psp-c++filt:devel/psptoolchain-binutils \
+			psp-ld:devel/psptoolchain-binutils \
+			psp-nm:devel/psptoolchain-binutils \
+			psp-objcopy:devel/psptoolchain-binutils \
+			psp-objdump:devel/psptoolchain-binutils \
+			psp-ranlib:devel/psptoolchain-binutils \
+			psp-readelf:devel/psptoolchain-binutils \
+			psp-size:devel/psptoolchain-binutils \
+			psp-strings:devel/psptoolchain-binutils \
+			psp-strip:devel/psptoolchain-binutils
 
 USES=			gmake libtool tar:bzip2
 PATCH_WRKSRC=		${SRCDIR}

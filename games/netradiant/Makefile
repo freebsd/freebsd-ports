@@ -16,8 +16,8 @@ COMMENT=	Fork of the well-known GtkRadiant 1.5 FPS games map editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
-		libwebp.so:${PORTSDIR}/graphics/webp
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libwebp.so:graphics/webp
 
 USES=		gmake jpeg pkgconfig tar:bzip2
 USE_GL=		gl

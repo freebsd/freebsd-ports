@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides an interactive input buffer written in plain PERL
 
-BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
+BUILD_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

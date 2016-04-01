@@ -11,7 +11,7 @@ DISTNAME=	gdmodule-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to the GD library
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		python
 USE_PYTHON=	distutils autoplist pythonprefix

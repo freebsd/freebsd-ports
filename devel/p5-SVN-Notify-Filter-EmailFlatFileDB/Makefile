@@ -14,8 +14,8 @@ COMMENT=	Converts account names to email address based on a flat-file database
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-SVN-Notify>=2.72:${PORTSDIR}/devel/p5-SVN-Notify
-RUN_DEPENDS=	p5-SVN-Notify>=2.72:${PORTSDIR}/devel/p5-SVN-Notify
+BUILD_DEPENDS=	p5-SVN-Notify>=2.72:devel/p5-SVN-Notify
+RUN_DEPENDS=	p5-SVN-Notify>=2.72:devel/p5-SVN-Notify
 
 USES=		perl5
 USE_PERL5=	configure

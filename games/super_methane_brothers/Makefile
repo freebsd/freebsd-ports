@@ -13,7 +13,7 @@ COMMENT=	Port of the Amiga platform game of the same name
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libclan23Core.so:${PORTSDIR}/devel/clanlib
+LIB_DEPENDS=	libclan23Core.so:devel/clanlib
 
 USES=		execinfo gmake pkgconfig tar:tgz
 USE_GCC=	yes

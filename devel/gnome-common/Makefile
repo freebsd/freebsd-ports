@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Common automake macros for GNOME 3
 
-BUILD_DEPENDS=	autoconf-archive>=0:${PORTSDIR}/devel/autoconf-archive
-RUN_DEPENDS=	autoconf-archive>=0:${PORTSDIR}/devel/autoconf-archive
+BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
+RUN_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 
 USES=		gmake gnome pkgconfig tar:xz
 GNU_CONFIGURE=	yes

@@ -10,50 +10,50 @@ MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Ebook management application
 
-LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libpoppler-qt5.so:${PORTSDIR}/graphics/poppler-qt5 \
-		libwmflite.so:${PORTSDIR}/graphics/libwmf \
-		libchm.so:${PORTSDIR}/misc/chmlib \
-		libicudata.so:${PORTSDIR}/devel/icu \
-		libpodofo.so:${PORTSDIR}/graphics/podofo \
-		libmtp.so:${PORTSDIR}/multimedia/libmtp
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:${PORTSDIR}/devel/py-sip \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}qt5-core>=0:${PORTSDIR}/devel/py-qt5-core \
-		${PYTHON_PKGNAMEPREFIX}qt5-gui>=0:${PORTSDIR}/x11-toolkits/py-qt5-gui \
-		${PYTHON_PKGNAMEPREFIX}qt5-network>=0:${PORTSDIR}/net/py-qt5-network \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkit>=0:${PORTSDIR}/www/py-qt5-webkit \
-		${PYTHON_PKGNAMEPREFIX}qt5-widgets>=0:${PORTSDIR}/x11-toolkits/py-qt5-widgets \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkitwidgets>=0:${PORTSDIR}/www/py-qt5-webkitwidgets \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:${PORTSDIR}/www/py-cssutils \
-		${PYTHON_PKGNAMEPREFIX}apsw>=0:${PORTSDIR}/databases/py-apsw
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
-		${PYTHON_PKGNAMEPREFIX}sip>=0:${PORTSDIR}/devel/py-sip \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:${PORTSDIR}/www/py-cssutils \
-		${PYTHON_PKGNAMEPREFIX}dnspython>=0:${PORTSDIR}/dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:${PORTSDIR}/www/py-beautifulsoup32 \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}mechanize>=0:${PORTSDIR}/www/py-mechanize \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}qt5-core>=0:${PORTSDIR}/devel/py-qt5-core \
-		${PYTHON_PKGNAMEPREFIX}qt5-gui>=0:${PORTSDIR}/x11-toolkits/py-qt5-gui \
-		${PYTHON_PKGNAMEPREFIX}qt5-network>=0:${PORTSDIR}/net/py-qt5-network \
-		${PYTHON_PKGNAMEPREFIX}qt5-svg>=0:${PORTSDIR}/graphics/py-qt5-svg \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkit>=0:${PORTSDIR}/www/py-qt5-webkit \
-		${PYTHON_PKGNAMEPREFIX}qt5-widgets>=0:${PORTSDIR}/x11-toolkits/py-qt5-widgets \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkitwidgets>=0:${PORTSDIR}/www/py-qt5-webkitwidgets \
-		${PYTHON_PKGNAMEPREFIX}qt5-xmlpatterns>=0:${PORTSDIR}/textproc/py-qt5-xmlpatterns \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}netifaces>=0:${PORTSDIR}/net/py-netifaces \
-		${PYTHON_PKGNAMEPREFIX}cssselect>=0:${PORTSDIR}/www/py-cssselect \
-		${PYTHON_PKGNAMEPREFIX}apsw>=0:${PORTSDIR}/databases/py-apsw \
-		pdftohtml:${PORTSDIR}/graphics/poppler-utils
+LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libpoppler-qt5.so:graphics/poppler-qt5 \
+		libwmflite.so:graphics/libwmf \
+		libchm.so:misc/chmlib \
+		libicudata.so:devel/icu \
+		libpodofo.so:graphics/podofo \
+		libmtp.so:multimedia/libmtp
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}qt5-core>=0:devel/py-qt5-core \
+		${PYTHON_PKGNAMEPREFIX}qt5-gui>=0:x11-toolkits/py-qt5-gui \
+		${PYTHON_PKGNAMEPREFIX}qt5-network>=0:net/py-qt5-network \
+		${PYTHON_PKGNAMEPREFIX}qt5-webkit>=0:www/py-qt5-webkit \
+		${PYTHON_PKGNAMEPREFIX}qt5-widgets>=0:x11-toolkits/py-qt5-widgets \
+		${PYTHON_PKGNAMEPREFIX}qt5-webkitwidgets>=0:www/py-qt5-webkitwidgets \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw
+RUN_DEPENDS=	xdg-open:devel/xdg-utils \
+		${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip \
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:www/py-beautifulsoup32 \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}mechanize>=0:www/py-mechanize \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}qt5-core>=0:devel/py-qt5-core \
+		${PYTHON_PKGNAMEPREFIX}qt5-gui>=0:x11-toolkits/py-qt5-gui \
+		${PYTHON_PKGNAMEPREFIX}qt5-network>=0:net/py-qt5-network \
+		${PYTHON_PKGNAMEPREFIX}qt5-svg>=0:graphics/py-qt5-svg \
+		${PYTHON_PKGNAMEPREFIX}qt5-webkit>=0:www/py-qt5-webkit \
+		${PYTHON_PKGNAMEPREFIX}qt5-widgets>=0:x11-toolkits/py-qt5-widgets \
+		${PYTHON_PKGNAMEPREFIX}qt5-webkitwidgets>=0:www/py-qt5-webkitwidgets \
+		${PYTHON_PKGNAMEPREFIX}qt5-xmlpatterns>=0:textproc/py-qt5-xmlpatterns \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}netifaces>=0:net/py-netifaces \
+		${PYTHON_PKGNAMEPREFIX}cssselect>=0:www/py-cssselect \
+		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw \
+		pdftohtml:graphics/poppler-utils
 
 USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f

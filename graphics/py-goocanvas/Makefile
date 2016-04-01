@@ -13,7 +13,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GooCanvas python bindings
 
-LIB_DEPENDS=	libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
+LIB_DEPENDS=	libgoocanvas.so:graphics/goocanvas
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/goocanvasmodule.so \
 		libdata/pkgconfig/pygoocanvas.pc

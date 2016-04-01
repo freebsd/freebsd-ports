@@ -12,14 +12,14 @@ COMMENT=	IDE for writing software for GNOME
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	intltool-update:${PORTSDIR}/textproc/intltool \
-		llvm-config35:${PORTSDIR}/devel/llvm35 \
-		clang35:${PORTSDIR}/lang/clang35
-LIB_DEPENDS=	libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
-		libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
-		libdevhelp-3.so:${PORTSDIR}/devel/devhelp \
-		libgjs.so:${PORTSDIR}/lang/gjs \
-		libpcre.so:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	intltool-update:textproc/intltool \
+		llvm-config35:devel/llvm35 \
+		clang35:lang/clang35
+LIB_DEPENDS=	libgit2-glib-1.0.so:devel/libgit2-glib \
+		libpeas-1.0.so:devel/libpeas \
+		libdevhelp-3.so:devel/devhelp \
+		libgjs.so:lang/gjs \
+		libpcre.so:devel/pcre
 
 BROKEN_FreeBSD_9=	Does not builds
 

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulating Flash movie (SWF) files
 
-BUILD_DEPENDS=	p5-Data-TemporaryBag>=0:${PORTSDIR}/devel/p5-Data-TemporaryBag
+BUILD_DEPENDS=	p5-Data-TemporaryBag>=0:devel/p5-Data-TemporaryBag
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 dos2unix

@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log4j equivalent for Perl
 
-BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-AppConfig>=1.52:${PORTSDIR}/devel/p5-AppConfig \
-		p5-Log-Dispatch>=2:${PORTSDIR}/devel/p5-Log-Dispatch
+BUILD_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-AppConfig>=1.52:devel/p5-AppConfig \
+		p5-Log-Dispatch>=2:devel/p5-Log-Dispatch
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

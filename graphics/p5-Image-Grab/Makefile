@@ -14,10 +14,10 @@ COMMENT=	Perl extension for Grabbing images off the Internet
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-HTML-Tree>=0:www/p5-HTML-Tree \
+		p5-URI>=0:net/p5-URI \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

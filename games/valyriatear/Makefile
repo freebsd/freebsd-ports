@@ -14,9 +14,9 @@ COMMENT=	Open Source J-RPG based on the Hero of Allacrost engine
 # GPLv2, GPLv3 (with font exception), OFL-1.1, CC0, CC-BY-3, and CC-BY-SA-3.
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libvorbis.so:audio/libvorbis \
+		libpng.so:graphics/png
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Bertram25

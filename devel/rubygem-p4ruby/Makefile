@@ -10,7 +10,7 @@ COMMENT=	Ruby bindings for the Perforce API
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perforce/libclient.a:${PORTSDIR}/devel/p4api
+BUILD_DEPENDS+=	${LOCALBASE}/lib/perforce/libclient.a:devel/p4api
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes

@@ -14,7 +14,7 @@ COMMENT=	Information management tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
+RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/katepart.so:editors/kate
 
 USES=		cmake
 USE_KDE4=	kdelibs kdeprefix automoc4

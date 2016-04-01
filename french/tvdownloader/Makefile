@@ -12,11 +12,11 @@ COMMENT=	Download podcasts and videos from French websites
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	msdl:${PORTSDIR}/multimedia/msdl	\
-		rtmpdump:${PORTSDIR}/multimedia/rtmpdump	\
-		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui	\
-		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto\
-		${PYTHON_SITELIBDIR}/mechanize/_mechanize.py:${PORTSDIR}/www/py-mechanize
+RUN_DEPENDS=	msdl:multimedia/msdl	\
+		rtmpdump:multimedia/rtmpdump	\
+		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui	\
+		${PYTHON_SITELIBDIR}/Crypto/__init__.py:security/py-pycrypto\
+		${PYTHON_SITELIBDIR}/mechanize/_mechanize.py:www/py-mechanize
 
 DEPRECATED=	Many channels have modified their protocols and cannot be DL anymore
 EXPIRATION_DATE=	2016-04-14

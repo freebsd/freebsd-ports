@@ -14,10 +14,10 @@ COMMENT=	Subclass of Log-Dispatch-Email that uses Email-Send
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Email-Send>=2.0:${PORTSDIR}/mail/p5-Email-Send \
-		p5-Email-Simple>=2.100:${PORTSDIR}/mail/p5-Email-Simple \
-		p5-Log-Dispatch>=2.0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS=	p5-Email-Send>=2.0:mail/p5-Email-Send \
+		p5-Email-Simple>=2.100:mail/p5-Email-Simple \
+		p5-Log-Dispatch>=2.0:devel/p5-Log-Dispatch \
+		p5-Params-Validate>=0:devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -10,11 +10,11 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of patience games written in guile scheme
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		appstream-builder:${PORTSDIR}/devel/appstream-glib \
-		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2 \
-		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		appstream-builder:devel/appstream-glib \
+		bash:shells/bash
+LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3
 
 CONFLICTS=	sol-*
 PORTSCOUT=	limitw:1,even

@@ -12,8 +12,8 @@ COMMENT=	Multi-user server for taskwarrior
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libgnutls.so:security/gnutls
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		cmake:outsource compiler:c++11-lib shebangfix
 SHEBANG_FILES=	demo/client/case* \

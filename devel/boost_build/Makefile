@@ -13,7 +13,7 @@ COMMENT=	Extensible cross-platform build tool suite
 
 LICENSE=	BSL
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bjam:${PORTSDIR}/devel/boost-jam
+RUN_DEPENDS=	${LOCALBASE}/bin/bjam:devel/boost-jam
 
 USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/g}

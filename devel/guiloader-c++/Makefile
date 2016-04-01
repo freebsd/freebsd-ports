@@ -10,9 +10,9 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ binding to the GuiLoader library
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libguiloader.so:${PORTSDIR}/devel/guiloader \
-		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
+LIB_DEPENDS=	libguiloader.so:devel/guiloader \
+		libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
 PROJECTHOST=	nothing-personal
 USES=		gettext libtool pathfix pkgconfig tar:bzip2

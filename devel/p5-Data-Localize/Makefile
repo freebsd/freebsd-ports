@@ -14,9 +14,9 @@ COMMENT=	Perl extension for alternate data localization API
 LICENSE=	MIT
 
 RUN_DEPENDS=	\
-	p5-Moo>=1.000008:${PORTSDIR}/devel/p5-Moo \
-	p5-MooX-Types-MooseLike>0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
-	p5-Log-Minimal>=0.14:${PORTSDIR}/devel/p5-Log-Minimal
+	p5-Moo>=1.000008:devel/p5-Moo \
+	p5-MooX-Types-MooseLike>0:devel/p5-MooX-Types-MooseLike \
+	p5-Log-Minimal>=0.14:devel/p5-Log-Minimal
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=	perl5

@@ -32,7 +32,7 @@ PORTDOCS=	*
 JPEGICC_CONFIGURE_WITH=	jpeg
 JPEGICC_USES=		jpeg
 TIFFICC_CONFIGURE_WITH=	tiff
-TIFFICC_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFFICC_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| python samples||' ${WRKSRC}/Makefile.in

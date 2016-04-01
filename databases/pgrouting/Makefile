@@ -12,10 +12,10 @@ COMMENT=	Extension to PostGIS to provide geospatial routing functionality
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs\
-		libCGAL.so:${PORTSDIR}/math/cgal \
-		libgmp.so:${PORTSDIR}/math/gmp
-RUN_DEPENDS=	${LOCALBASE}/share/postgresql/contrib/postgis-2.1/postgis.sql:${PORTSDIR}/databases/postgis21
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs\
+		libCGAL.so:math/cgal \
+		libgmp.so:math/gmp
+RUN_DEPENDS=	${LOCALBASE}/share/postgresql/contrib/postgis-2.1/postgis.sql:databases/postgis21
 
 USES=		compiler:features cmake pgsql pkgconfig
 USE_LDCONFIG=	yes
@@ -28,7 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 36
-BUILD_DEPENDS+=	clang36:${PORTSDIR}/lang/clang36
+BUILD_DEPENDS+=	clang36:lang/clang36
 CPP=		clang-cpp36
 CC=		clang36
 CXX=		clang++36

@@ -10,7 +10,7 @@ MASTER_SITES=		SUNSITE/libs/graphics
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Multi-format graphics manipulation library
 
-LIB_DEPENDS=		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=		libtiff.so:graphics/tiff
 
 PLIST_FILES=		lib/liblug.a
 USE_XORG=		x11

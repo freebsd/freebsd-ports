@@ -10,7 +10,7 @@ DISTNAME=	AlephOne-${PORTVERSION}
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	The open source version of Bungie's Marathon game
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 
 USES=		gmake localbase pkgconfig tar:bzip2
 USE_SDL=	image net sdl ttf
@@ -29,23 +29,23 @@ FFMPEG_DESC=	Use ffmpeg for film export and playback
 SMPEG_DESC=	Use SMPEG for movie playback
 ZZIP_DESC=	Enable zziplib support
 
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CONFIGURE_WITH=	mad
-FMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FMPEG_CONFIGURE_WITH=	ffmpeg
-OGG_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+OGG_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 OGG_CONFIGURE_WITH=	vorbis
-SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_CONFIGURE_WITH=	speex
-SMPEG_LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+SMPEG_LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 SMPEG_CONFIGURE_WITH=	smpeg
-ZZIP_LIB_DEPENDS=	libzzip.so:${PORTSDIR}/devel/zziplib
+ZZIP_LIB_DEPENDS=	libzzip.so:devel/zziplib
 ZZIP_CONFIGURE_WITH=	zzip
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	curl
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_WITH=	sndfile
 
 post-install-DOCS-on:

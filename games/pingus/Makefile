@@ -11,8 +11,8 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Lemmings-like game
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libboost_signals.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libboost_signals.so:devel/boost-libs
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

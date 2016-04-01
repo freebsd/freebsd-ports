@@ -12,12 +12,12 @@ COMMENT=	Wikimedia Commons (MediaWiki) utilities for bulk image uploading
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		p5-Text-CSV-Encoded>=0:${PORTSDIR}/textproc/p5-Text-CSV-Encoded \
-		${PYTHON_PKGNAMEPREFIX}mechanize>=0.2:${PORTSDIR}/www/py-mechanize \
-		exiv2:${PORTSDIR}/graphics/exiv2
+RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS \
+		p5-Text-CSV-Encoded>=0:textproc/p5-Text-CSV-Encoded \
+		${PYTHON_PKGNAMEPREFIX}mechanize>=0.2:www/py-mechanize \
+		exiv2:graphics/exiv2
 
 USES=		jpeg perl5 python shebangfix
 SHEBANG_FILES=	commons-csv-creator

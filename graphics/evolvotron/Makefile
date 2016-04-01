@@ -15,7 +15,7 @@ COMMENT=	Generative software that evolves images/textures/patterns
 
 LICENSE=	GPLv3+ # LICENSE file is GPLv2 though
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

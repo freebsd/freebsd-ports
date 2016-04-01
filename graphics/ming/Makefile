@@ -15,9 +15,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE_GPL2
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libgif.so:graphics/giflib \
+		libpng.so:graphics/png
 
 CONFLICTS_INSTALL=	ja-ming-[0-9]*
 

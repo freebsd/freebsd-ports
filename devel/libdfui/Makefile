@@ -11,7 +11,7 @@ COMMENT=	Abstract user interface protocol library
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libaura3.so:${PORTSDIR}/devel/libaura
+LIB_DEPENDS=	libaura3.so:devel/libaura
 
 USES=	tar:bzip2
 USE_LDCONFIG=	yes

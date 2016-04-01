@@ -10,7 +10,7 @@ COMMENT=	Go library for slice-based datatypes
 
 #LICENSE=	MIT based, with no-evli clause
 
-BUILD_DEPENDS=	go-raw>0:${PORTSDIR}/devel/go-raw
+BUILD_DEPENDS=	go-raw>0:devel/go-raw
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	feyeleanor

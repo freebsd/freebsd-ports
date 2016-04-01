@@ -14,8 +14,8 @@ COMMENT=	Datetime sets and set math
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-DateTime>=0.12:${PORTSDIR}/devel/p5-DateTime \
-		p5-Set-Infinite>=0.59:${PORTSDIR}/devel/p5-Set-Infinite
+BUILD_DEPENDS=	p5-DateTime>=0.12:devel/p5-DateTime \
+		p5-Set-Infinite>=0.59:devel/p5-Set-Infinite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS

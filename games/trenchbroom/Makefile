@@ -10,7 +10,7 @@ COMMENT=	Cross-platform level editor for Quake-engine based games
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfreeimage.so:${PORTSDIR}/graphics/freeimage
+LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kduske

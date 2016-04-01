@@ -12,9 +12,9 @@ MASTER_SITES=	https://bitbucket.org/libgd/gd-libgd/downloads/ \
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	Graphics library for fast creation of images
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 CONFLICTS=	bazaar-1.*
 
@@ -26,11 +26,11 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	FONTCONFIG ICONV VPX XPM
 OPTIONS_DEFAULT=FONTCONFIG
 NO_OPTIONS_SORT=yes
-FONTCONFIG_LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+FONTCONFIG_LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 FONTCONFIG_CONFIGURE_OFF=	--with-fontconfig=no
 ICONV_USES=	iconv
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
-VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CONFIGURE_OFF=	--without-vpx
 XPM_USE=	xorg=xpm,x11
 XPM_CONFIGURE_ON=	--with-x

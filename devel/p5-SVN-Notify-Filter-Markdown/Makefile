@@ -14,12 +14,12 @@ COMMENT=	Perl module to convert SVN::Notify log messages from Markdown to HTML
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-SVN-Notify>=2.70:${PORTSDIR}/devel/p5-SVN-Notify \
-		p5-Text-Markdown>=1.04:${PORTSDIR}/textproc/p5-Text-Markdown
-RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-SVN-Notify>=2.70:${PORTSDIR}/devel/p5-SVN-Notify \
-		p5-Text-Markdown>=1.04:${PORTSDIR}/textproc/p5-Text-Markdown
+BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-SVN-Notify>=2.70:devel/p5-SVN-Notify \
+		p5-Text-Markdown>=1.04:textproc/p5-Text-Markdown
+RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-SVN-Notify>=2.70:devel/p5-SVN-Notify \
+		p5-Text-Markdown>=1.04:textproc/p5-Text-Markdown
 
 USES=		perl5
 USE_PERL5=	modbuild

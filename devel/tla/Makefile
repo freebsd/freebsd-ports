@@ -13,9 +13,9 @@ COMMENT=	The original arch source control management CLI written in C
 
 OPTIONS_DEFINE=	DOCS
 
-BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
-		gdiff:${PORTSDIR}/textproc/diffutils \
-		gtar:${PORTSDIR}/archivers/gtar
+BUILD_DEPENDS=	gpatch:devel/patch \
+		gdiff:textproc/diffutils \
+		gtar:archivers/gtar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake

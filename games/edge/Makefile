@@ -17,8 +17,8 @@ COMMENT=	DOOM style engine aimed at the Total Conversion developer
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libpng.so:graphics/png
 
 USES=		alias gmake jpeg tar:bzip2
 USE_GL=		glew

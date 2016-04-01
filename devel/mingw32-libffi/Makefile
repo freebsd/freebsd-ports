@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	mingw32-
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The libffi library cross-compiled for MinGW32
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
-		${LOCALBASE}/mingw32/include/stdlib.h:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt
+BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
+		${LOCALBASE}/mingw32/include/stdlib.h:devel/${PKGNAMEPREFIX}bin-msvcrt
 
 SSP_UNSAFE=	fails to link
 GNU_CONFIGURE=	yes

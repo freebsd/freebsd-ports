@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drivers for libdbi
 
-LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS=	libdbi.so:databases/libdbi
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
@@ -40,7 +40,7 @@ MYSQL_PLIST_FILES=	lib/dbd/libdbdmysql.so
 PGSQL_USES=	pgsql
 PGSQL_CONFIGURE_WITH=	pgsql
 PGSQL_PLIST_FILES=	lib/dbd/libdbdpgsql.so
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 SQLITE3_CONFIGURE_WITH=	sqlite3
 SQLITE3_PLIST_FILES=	lib/dbd/libdbdsqlite3.so
 

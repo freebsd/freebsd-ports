@@ -16,7 +16,7 @@ COMMENT=	Cleaned up copy of the GPL'ed Quake 1 source code
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -62,7 +62,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} --with-vorbis=${LOCALBASE}
 PLIST_SUB+=	VORBIS=""
 .else
@@ -71,7 +71,7 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXMMS}
-LIB_DEPENDS+=	libxmms.so:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	libxmms.so:multimedia/xmms
 CONFIGURE_ARGS+=--with-xmms-prefix=${LOCALBASE}
 PLIST_SUB+=	XMMS=""
 .else

@@ -13,8 +13,8 @@ COMMENT=	Tryton Application Platform (Product Cost Fifo Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_product>=2.8.0:${PORTSDIR}/finance/trytond28_product \
-		trytond28_stock>=2.8.2:${PORTSDIR}/finance/trytond28_stock
+RUN_DEPENDS=	trytond28_product>=2.8.0:finance/trytond28_product \
+		trytond28_stock>=2.8.2:finance/trytond28_stock
 
 CONFLICTS=	trytond_product_cost_fifo-2.[46].*
 

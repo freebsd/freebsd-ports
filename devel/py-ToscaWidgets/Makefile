@@ -13,7 +13,7 @@ COMMENT=	Python framework for building reusable web components
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=0:${PORTSDIR}/www/py-webob
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=0:www/py-webob
 
 USES=		python
 USE_PYTHON=	distutils autoplist

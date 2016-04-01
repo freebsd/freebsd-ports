@@ -14,12 +14,12 @@ COMMENT=	C and math library for the Atmel AVR controller family
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
-		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		avr-gcc:${PORTSDIR}/devel/avr-gcc
-RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
-		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		avr-gcc:${PORTSDIR}/devel/avr-gcc
+BUILD_DEPENDS=	avr-as:devel/avr-binutils \
+		avr-ld:devel/avr-binutils \
+		avr-gcc:devel/avr-gcc
+RUN_DEPENDS=	avr-as:devel/avr-binutils \
+		avr-ld:devel/avr-binutils \
+		avr-gcc:devel/avr-gcc
 
 OPTIONS_DEFINE=	DOXYGEN
 
@@ -31,10 +31,10 @@ OPTIONS_DEFINE=	DOXYGEN
 
 .if ${PORT_OPTIONS:MDOXYGEN}
 USE_TEX=	latex:build
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-		fig2dev:${PORTSDIR}/print/transfig \
-		jpegtopnm:${PORTSDIR}/graphics/netpbm \
-		dvips:${PORTSDIR}/print/tex-dvipsk
+BUILD_DEPENDS+=	doxygen:devel/doxygen \
+		fig2dev:print/transfig \
+		jpegtopnm:graphics/netpbm \
+		dvips:print/tex-dvipsk
 .endif
 
 USES=		gettext-tools tar:bzip2 gmake

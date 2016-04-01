@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sounds for Atris: Alizarin Tetris
 
-RUN_DEPENDS=	atris:${PORTSDIR}/games/atris
+RUN_DEPENDS=	atris:games/atris
 
 USES=		gmake
 GNU_CONFIGURE=	yes

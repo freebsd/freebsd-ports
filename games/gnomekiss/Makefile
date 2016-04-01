@@ -13,7 +13,7 @@ COMMENT=	GNOME version of Kisekae Set System
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+RUN_DEPENDS=	lha:archivers/lha
 
 USES=		gettext-tools pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui

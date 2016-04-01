@@ -10,7 +10,7 @@ DISTNAME=	SimpleAgenda-${PORTVERSION}
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	simple calendar and agenda application
 
-LIB_DEPENDS+=	libical.so:${PORTSDIR}/devel/libical
+LIB_DEPENDS+=	libical.so:devel/libical
 
 LICENSE=	GPLv2
 

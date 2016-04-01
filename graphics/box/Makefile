@@ -14,8 +14,8 @@ COMMENT=	Compiler for box, the figure description language
 LICENSE=	GPLv2+ LGPL3+
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man
+LIB_DEPENDS=	libcairo.so:graphics/cairo
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

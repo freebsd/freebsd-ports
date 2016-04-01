@@ -14,8 +14,8 @@ BROKEN=		does not build
 DEPRECATED=	Broken for more than 6 months
 EXPIRATION_DATE=	2016-04-15
 
-BUILD_DEPENDS=	npm>0:${PORTSDIR}/www/npm
-RUN_DEPENDS=	npm>0:${PORTSDIR}/www/npm
+BUILD_DEPENDS=	npm>0:www/npm
+RUN_DEPENDS=	npm>0:www/npm
 
 NO_BUILD=	yes
 USE_GITHUB=	yes

@@ -9,9 +9,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OSD extension for the GNOME3 shell
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
-RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
-		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
+		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
 USES=		autoreconf gettext gmake gnome libtool pkgconfig tar:xz
 USE_GNOME=	glib20 intltool

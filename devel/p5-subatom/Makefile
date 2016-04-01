@@ -13,7 +13,7 @@ COMMENT=	Produce an atom feed from subversion commits
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	p5-XML-Atom-SimpleFeed>=0.80:${PORTSDIR}/textproc/p5-XML-Atom-SimpleFeed
+BUILD_DEPENDS=	p5-XML-Atom-SimpleFeed>=0.80:textproc/p5-XML-Atom-SimpleFeed
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

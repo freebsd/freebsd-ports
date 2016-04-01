@@ -18,7 +18,7 @@ LICENSE_NAME=	Q PUBLIC LICENSE v1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.QPL
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	giftopnm:graphics/netpbm
 
 OPTIONS_DEFINE=	NLS A4SIZE DOCS
 A4SIZE_DESC=	Set default paper size to A4

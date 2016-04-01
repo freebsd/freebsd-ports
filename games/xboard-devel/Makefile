@@ -14,7 +14,7 @@ MAINTAINER=	kalten@gmx.at
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS?=	libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango
+LIB_DEPENDS?=	libpangocairo-1.0.so:x11-toolkits/pango
 
 CONFLICTS=	xboard-[0-9]*
 

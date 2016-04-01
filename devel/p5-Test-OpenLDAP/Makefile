@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Data-UUID>0:${PORTSDIR}/devel/p5-Data-UUID \
-	p5-perl-ldap>0:${PORTSDIR}/net/p5-perl-ldap \
-	${LOCALBASE}/libexec/slapd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-server \
-	p5-Net>0:${PORTSDIR}/net/p5-Net
+	p5-Data-UUID>0:devel/p5-Data-UUID \
+	p5-perl-ldap>0:net/p5-perl-ldap \
+	${LOCALBASE}/libexec/slapd:net/openldap${OPENLDAP_VER}-server \
+	p5-Net>0:net/p5-Net
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

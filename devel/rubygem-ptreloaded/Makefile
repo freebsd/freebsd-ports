@@ -10,7 +10,7 @@ DISTNAME=	ParseTreeReloaded-${PORTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Reimplementation of ParseTree using RubyInlineAcceleration
 
-RUN_DEPENDS=	rubygem-rubyinlineaccel>=0.0.1:${PORTSDIR}/devel/rubygem-rubyinlineaccel
+RUN_DEPENDS=	rubygem-rubyinlineaccel>=0.0.1:devel/rubygem-rubyinlineaccel
 
 LICENSE=	GPLv2
 

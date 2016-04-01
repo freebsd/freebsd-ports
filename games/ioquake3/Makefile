@@ -98,7 +98,7 @@ ALL_TARGET=	debug
 .endif
 
 .if ${PORT_OPTIONS:MSERVER}
-RUN_DEPENDS+=	${Q3SERVER}${BINSUFFIX}:${PORTSDIR}/games/${PORTNAME}-server
+RUN_DEPENDS+=	${Q3SERVER}${BINSUFFIX}:games/${PORTNAME}-server
 .endif
 
 .if !defined(DESKTOP_ENTRIES)
@@ -130,7 +130,7 @@ MAKE_ARGS+=	BUILD_SERVER=0
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 MAKE_ARGS+=	USE_CURL=1 USE_CURL_DLOPEN=0
 .else
 MAKE_ARGS+=	USE_CURL=0
@@ -145,7 +145,7 @@ MAKE_ARGS+=	USE_OPENAL=0
 
 .if ${PORT_OPTIONS:MVORBIS}
 NEED_OGG=	yes
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 MAKE_ARGS+=	USE_CODEC_VORBIS=1
 .else
 MAKE_ARGS+=	USE_CODEC_VORBIS=0
@@ -153,15 +153,15 @@ MAKE_ARGS+=	USE_CODEC_VORBIS=0
 
 .if ${PORT_OPTIONS:MOPUS}
 NEED_OGG=	yes
-LIB_DEPENDS+=	libopusfile.so:${PORTSDIR}/audio/opusfile \
-		libopus.so:${PORTSDIR}/audio/opus
+LIB_DEPENDS+=	libopusfile.so:audio/opusfile \
+		libopus.so:audio/opus
 MAKE_ARGS+=	USE_CODEC_OPUS=1 USE_INTERNAL_OPUS=0
 .else
 MAKE_ARGS+=	USE_CODEC_OPUS=0
 .endif
 
 .if defined(NEED_OGG)
-LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	libogg.so:audio/libogg
 MAKE_ARGS+=	USE_INTERNAL_OGG=0
 .endif
 

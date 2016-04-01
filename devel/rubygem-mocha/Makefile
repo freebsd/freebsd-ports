@@ -11,7 +11,7 @@ COMMENT=	Library for mocking and stubbing syntax like JMock and SchMock
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-metaclass>=0:${PORTSDIR}/devel/rubygem-metaclass
+RUN_DEPENDS=	rubygem-metaclass>=0:devel/rubygem-metaclass
 
 NO_ARCH=	yes
 

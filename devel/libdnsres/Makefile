@@ -10,7 +10,7 @@ MASTER_SITES=	http://monkey.org/~provos/
 MAINTAINER=	oz@nixil.net
 COMMENT=	Provides a non-blocking thread-safe API for resolving DNS names
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:devel/libevent2
 
 USES=		libtool
 GNU_CONFIGURE=	yes

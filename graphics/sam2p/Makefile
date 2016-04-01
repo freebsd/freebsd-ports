@@ -14,8 +14,8 @@ COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		tif22pnm:${PORTSDIR}/graphics/tif22pnm
+RUN_DEPENDS=	zip:archivers/zip \
+		tif22pnm:graphics/tif22pnm
 
 USES=		ghostscript:run gmake jpeg:run perl5
 USE_PERL5=	build

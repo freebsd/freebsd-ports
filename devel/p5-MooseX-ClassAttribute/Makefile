@@ -14,15 +14,15 @@ COMMENT=	Declare class attributes Moose-style
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
-		p5-namespace-autoclean>=0.11:${PORTSDIR}/devel/p5-namespace-autoclean \
-		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
+BUILD_DEPENDS=	p5-Moose>=2:devel/p5-Moose \
+		p5-namespace-autoclean>=0.11:devel/p5-namespace-autoclean \
+		p5-namespace-clean>=0.20:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
-		p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
-		p5-MooseX-Role-Strict>=0:${PORTSDIR}/devel/p5-MooseX-Role-Strict \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-MooseX-AttributeHelpers>=0:devel/p5-MooseX-AttributeHelpers \
+		p5-MooseX-Role-Parameterized>=0:devel/p5-MooseX-Role-Parameterized \
+		p5-MooseX-Role-Strict>=0:devel/p5-MooseX-Role-Strict \
+		p5-Test-Requires>=0:devel/p5-Test-Requires \
+		p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
 USE_PERL5=	configure

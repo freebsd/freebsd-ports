@@ -11,9 +11,9 @@ COMMENT=	PostScript support for Zathura PDF viewer
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libspectre.so:${PORTSDIR}/print/libspectre
-BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
-RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
+LIB_DEPENDS=	libspectre.so:print/libspectre
+BUILD_DEPENDS=	zathura:graphics/zathura
+RUN_DEPENDS=	zathura:graphics/zathura
 
 USES=		compiler:c11 desktop-file-utils gmake pkgconfig
 USE_GNOME=	glib20 gtk30

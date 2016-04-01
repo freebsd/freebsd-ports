@@ -12,7 +12,7 @@ COMMENT=	Functions for visualising simple graphs, plotting flow diagrams
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-shape>0:${PORTSDIR}/graphics/R-cran-shape
+RUN_DEPENDS=	R-cran-shape>0:graphics/R-cran-shape
 
 USES=	cran:auto-plist
 

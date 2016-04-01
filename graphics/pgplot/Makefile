@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	C/FORTRAN library for drawing graphs on a variety of display devices
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 MAKE_JOBS_UNSAFE=	yes
 

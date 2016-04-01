@@ -12,7 +12,7 @@ COMMENT=	High-performance multiple regex matching library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	ragel:${PORTSDIR}/devel/ragel
+BUILD_DEPENDS=	ragel:devel/ragel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	01org

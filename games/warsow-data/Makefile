@@ -38,7 +38,7 @@ MAPPACK_DESC=		Install community map pack
 .if ${PORT_OPTIONS:MMAPPACK}
 MAPPACK_FILE=	warsow_comunity_map_pack_01.zip
 DISTFILES+=	${MAPPACK_FILE}:mappack
-EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
 PORTDATA+=	previews
 
 post-extract:

@@ -11,7 +11,7 @@ COMMENT=	Qt bindings for the Graphics Transformation Languages
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libGTLCore.so:${PORTSDIR}/graphics/opengtl
+LIB_DEPENDS=	libGTLCore.so:graphics/opengtl
 
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USES=		cmake:outsource pkgconfig tar:bzip2

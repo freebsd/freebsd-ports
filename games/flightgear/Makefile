@@ -11,16 +11,16 @@ COMMENT=	The FlightGear flight simulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libosg.so:${PORTSDIR}/graphics/osg \
-		libspeex.so:${PORTSDIR}/audio/speex
-BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${LOCALBASE}/lib/libSimGearCore.a:${PORTSDIR}/devel/simgear
-RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${LOCALBASE}/lib/libSimGearCore.a:${PORTSDIR}/devel/simgear \
-		${LOCALBASE}/share/flightgear/version:${PORTSDIR}/games/flightgear-data
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libboost_thread.so:devel/boost-libs \
+		libfltk.so:x11-toolkits/fltk \
+		libosg.so:graphics/osg \
+		libspeex.so:audio/speex
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
+		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear
+RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
+		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear \
+		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xt
 USE_GL=		gl glu glut
@@ -38,7 +38,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DBUS
 OPTIONS_DEFAULT=	DBUS
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_USES=	pkgconfig
 DBUS_CMAKE_ON=	-DUSE_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF

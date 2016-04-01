@@ -12,9 +12,9 @@ DISTFILES=	jogl-v${PORTVERSION}.tar.7z \
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Java bindings for OpenGL
 
-EXTRACT_DEPENDS=	${7Z_CMD}:${PORTSDIR}/archivers/p7zip
-BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
-RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+EXTRACT_DEPENDS=	${7Z_CMD}:archivers/p7zip
+BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
+RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
 
 ONLY_FOR_ARCHS=	i386 amd64
 

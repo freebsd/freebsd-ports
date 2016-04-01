@@ -16,7 +16,7 @@ COMMENT=	Source-based package manager for OCaml
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=		camlp4:${PORTSDIR}/devel/ocaml-camlp4
+RUN_DEPENDS=		camlp4:devel/ocaml-camlp4
 
 USES=		gmake
 USE_OCAML=	yes
@@ -34,12 +34,12 @@ HG_DESC=		Remote repository synchronized with mercurial
 DARCS_DESC=		Remote repository synchronized with darcs
 ASPCUD_DESC=		Use aspcud as an external dependencies solver
 
-WGET_RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-RSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
-GIT_RUN_DEPENDS=	git:${PORTSDIR}/devel/git
-HG_RUN_DEPENDS=		hg:${PORTSDIR}/devel/mercurial
-DARCS_RUN_DEPENDS=	darcs:${PORTSDIR}/devel/hs-darcs
-ASPCUD_RUN_DEPENDS=	aspcud:${PORTSDIR}/math/aspcud
+WGET_RUN_DEPENDS=	wget:ftp/wget
+RSYNC_RUN_DEPENDS=	rsync:net/rsync
+GIT_RUN_DEPENDS=	git:devel/git
+HG_RUN_DEPENDS=		hg:devel/mercurial
+DARCS_RUN_DEPENDS=	darcs:devel/hs-darcs
+ASPCUD_RUN_DEPENDS=	aspcud:math/aspcud
 
 MAKE_JOBS_UNSAFE=	yes
 

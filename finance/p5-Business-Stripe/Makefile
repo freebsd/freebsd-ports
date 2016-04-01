@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module interface for the Stripe.com payment system
 
-RUN_DEPENDS=	p5-HTTP-Message>=0.0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-JSON>=0.0:${PORTSDIR}/converters/p5-JSON \
-		p5-libwww>0.0:${PORTSDIR}/www/p5-libwww \
-		p5-MIME-Base64>=0.0:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	p5-HTTP-Message>=0.0:www/p5-HTTP-Message \
+		p5-JSON>=0.0:converters/p5-JSON \
+		p5-libwww>0.0:www/p5-libwww \
+		p5-MIME-Base64>=0.0:converters/p5-MIME-Base64
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

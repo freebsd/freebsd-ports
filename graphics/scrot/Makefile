@@ -11,7 +11,7 @@ MASTER_SITES=	http://linuxbrit.co.uk/downloads/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Screen capture utility that utilizes Imlib2
 
-LIB_DEPENDS=	libgiblib.so:${PORTSDIR}/graphics/giblib
+LIB_DEPENDS=	libgiblib.so:graphics/giblib
 
 GNU_CONFIGURE=	yes
 

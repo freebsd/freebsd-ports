@@ -13,7 +13,7 @@ COMMENT=	Funny multiplayer game... and much more
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		gmake iconv ncurses
 USE_SDL=	sdl image mixer net ttf

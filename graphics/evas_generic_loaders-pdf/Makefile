@@ -14,8 +14,8 @@ COMMENT=	Additional loader for Evas (pdf)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
-		libpoppler.so:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	libefl.so:devel/efl \
+		libpoppler.so:graphics/poppler
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

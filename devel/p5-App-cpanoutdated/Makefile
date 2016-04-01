@@ -14,9 +14,9 @@ COMMENT=	Detect outdated CPAN modules
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CPAN-DistnameInfo>=0.10:${PORTSDIR}/devel/p5-CPAN-DistnameInfo \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-local-lib>=0:${PORTSDIR}/devel/p5-local-lib
+BUILD_DEPENDS=	p5-CPAN-DistnameInfo>=0.10:devel/p5-CPAN-DistnameInfo \
+		p5-libwww>=0:www/p5-libwww \
+		p5-local-lib>=0:devel/p5-local-lib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

@@ -10,8 +10,8 @@ MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/ \
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	A German-English dictionary program for X windows/Unix
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		agrep:${PORTSDIR}/textproc/agrep
+RUN_DEPENDS=	wish8.4:x11-toolkits/tk84 \
+		agrep:textproc/agrep
 
 USES=		perl5
 

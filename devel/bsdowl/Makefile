@@ -14,8 +14,8 @@ LICENSE_NAME=	CeCILL B, Version 1.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick
-BUILD_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick
+BUILD_DEPENDS=	gm:graphics/GraphicsMagick
+BUILD_DEPENDS=	gm:graphics/GraphicsMagick
 
 USES=		tar:xz uidfix
 

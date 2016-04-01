@@ -11,7 +11,7 @@ COMMENT=	Pretty Quick Image Viewer
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phillipberndt

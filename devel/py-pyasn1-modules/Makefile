@@ -13,7 +13,7 @@ COMMENT=	Collection of ASN.1 data structures for py-asn1
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.8:${PORTSDIR}/devel/py-pyasn1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.8:devel/py-pyasn1
 
 NO_ARCH=	yes
 USES=		python shebangfix

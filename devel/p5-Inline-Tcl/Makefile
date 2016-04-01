@@ -13,7 +13,7 @@ COMMENT=	Write Perl subroutines in Tcl
 
 LICENSE=	ARTPERL10
 
-BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
+BUILD_DEPENDS=	p5-Inline>=0:devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 tcl

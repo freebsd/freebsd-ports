@@ -10,12 +10,12 @@ COMMENT=	Cairo-Dock is a light and eye-candy dock
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		sox:${PORTSDIR}/audio/sox
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libcurl.so:ftp/curl \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
+RUN_DEPENDS=	bash:shells/bash \
+		sox:audio/sox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cairo-Dock

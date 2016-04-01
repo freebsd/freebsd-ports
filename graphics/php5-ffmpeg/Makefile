@@ -14,8 +14,8 @@ COMMENT=	FFmpeg shared extension for php
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libavutil.so:multimedia/ffmpeg
 
 IGNORE_WITH_PHP=70
 USE_PHP=	yes

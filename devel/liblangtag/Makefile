@@ -12,7 +12,7 @@ COMMENT=	Interface library to access tags for identifying languages
 LICENSE=	LGPL3 MPL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

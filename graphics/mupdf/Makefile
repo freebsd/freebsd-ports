@@ -15,10 +15,10 @@ COMMENT=	Lightweight PDF viewer and toolkit
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
-		libopenjp2.so:${PORTSDIR}/graphics/openjpeg
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfreetype.so:print/freetype2 \
+		libjbig2dec.so:graphics/jbig2dec \
+		libopenjp2.so:graphics/openjpeg
 
 CFLAGS+=	-I${WRKSRC}/include/mupdf
 LIBS+=		-L${LOCALBASE}/lib
@@ -37,7 +37,7 @@ SCROLL_DESC=	Build with scroll hacks
 JS_DESC=	JavaScript support (V8 engine)
 
 SCROLL_EXTRA_PATCHES=	${FILESDIR}/scroll_hack-platform__x11__pdfapp.c
-JS_LIB_DEPENDS=		libv8.so:${PORTSDIR}/lang/v8
+JS_LIB_DEPENDS=		libv8.so:lang/v8
 JS_MAKE_ARGS=		V8_PRESENT=1 V8LIBS=-lv8
 
 post-patch:

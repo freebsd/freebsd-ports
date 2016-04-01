@@ -12,12 +12,12 @@ COMMENT=	OpenGL-based 3D visualisation tool for source control repositories
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
-LIB_DEPENDS=	libSDL_image.so:${PORTSDIR}/graphics/sdl_image \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
+BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
+LIB_DEPENDS=	libSDL_image.so:graphics/sdl_image \
+		libfreetype.so:print/freetype2 \
+		libpcre.so:devel/pcre \
+		libboost_filesystem.so:devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig compiler:c++0x

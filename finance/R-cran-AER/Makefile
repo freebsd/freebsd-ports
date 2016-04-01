@@ -12,10 +12,10 @@ COMMENT=	Applied Econometrics with R
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-car>=2.0.1:${PORTSDIR}/math/R-cran-car \
-		R-cran-lmtest>=0:${PORTSDIR}/finance/R-cran-lmtest \
-		R-cran-Formula>=0.2.0:${PORTSDIR}/math/R-cran-Formula \
-		R-cran-zoo>=0:${PORTSDIR}/math/R-cran-zoo
+RUN_DEPENDS=	R-cran-car>=2.0.1:math/R-cran-car \
+		R-cran-lmtest>=0:finance/R-cran-lmtest \
+		R-cran-Formula>=0.2.0:math/R-cran-Formula \
+		R-cran-zoo>=0:math/R-cran-zoo
 
 USES=	cran:auto-plist
 

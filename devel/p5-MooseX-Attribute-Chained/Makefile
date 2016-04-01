@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+BUILD_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS_INSTALL=	p5-MooseX-ChainedAccessors-[0-9]*

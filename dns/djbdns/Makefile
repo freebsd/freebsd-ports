@@ -14,8 +14,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	lx@FreeBSD.org
 COMMENT?=	Collection of secure and reliable DNS tools
 
-RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
-		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+RUN_DEPENDS=	setuidgid:sysutils/daemontools \
+		tcpserver:sysutils/ucspi-tcp
 
 CONFLICTS=	djbdns-tools-[0-9]*
 LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
@@ -111,7 +111,7 @@ PATCHFILES+=	djbdns-dnscurve-20090602.patch:dnscurve
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LDFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-BUILD_DEPENDS+=	nacl-sha256:${PORTSDIR}/security/nacl
+BUILD_DEPENDS+=	nacl-sha256:security/nacl
 .endif
 
 DJBDNS_VER=	1.05

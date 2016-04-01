@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library and script language tool to create Flash movies
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

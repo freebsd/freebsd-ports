@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 USES=		tar:bzip2 gnustep
 USE_GNUSTEP=	back build
-LIB_DEPENDS=	libSlideShow.so:${PORTSDIR}/graphics/gnustep-slideshowkit
+LIB_DEPENDS=	libSlideShow.so:graphics/gnustep-slideshowkit
 
 OBJCFLAGS+=	-Dsel_eq=sel_isEqual
 

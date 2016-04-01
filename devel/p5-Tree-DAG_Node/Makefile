@@ -12,7 +12,7 @@ COMMENT=	Super class for representing nodes in a tree
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-File-Slurp-Tiny>=0.003:${PORTSDIR}/devel/p5-File-Slurp-Tiny
+BUILD_DEPENDS=	p5-File-Slurp-Tiny>=0.003:devel/p5-File-Slurp-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
@@ -22,7 +22,7 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

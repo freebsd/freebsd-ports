@@ -19,10 +19,10 @@ USE_EMACS=	yes
 
 NO_BUILD=	yes
 
-RUN_DEPENDS+=	clojure-mode.el>0:${PORTSDIR}/lang/clojure-mode.el \
-		dash.el>0:${PORTSDIR}/devel/dash.el \
-		epl.el>0:${PORTSDIR}/devel/epl.el \
-		pkg-info.el>0:${PORTSDIR}/devel/pkg-info.el
+RUN_DEPENDS+=	clojure-mode.el>0:lang/clojure-mode.el \
+		dash.el>0:devel/dash.el \
+		epl.el>0:devel/epl.el \
+		pkg-info.el>0:devel/pkg-info.el
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/cider-client.el \

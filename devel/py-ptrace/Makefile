@@ -14,7 +14,7 @@ COMMENT=	Python binding of ptrace
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distorm>0:${PORTSDIR}/devel/py-distorm
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distorm>0:devel/py-distorm
 
 USES=		python
 USE_PYTHON=	distutils autoplist

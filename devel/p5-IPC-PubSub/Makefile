@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Interprocess Publish/Subscribe channels
 
-BUILD_DEPENDS=	p5-DBM-Deep>=1:${PORTSDIR}/databases/p5-DBM-Deep \
-		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Data-UUID>0:${PORTSDIR}/devel/p5-Data-UUID
+BUILD_DEPENDS=	p5-DBM-Deep>=1:databases/p5-DBM-Deep \
+		p5-Class-Accessor>0:devel/p5-Class-Accessor \
+		p5-Data-UUID>0:devel/p5-Data-UUID
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -14,14 +14,14 @@ COMMENT=	Lightweight, extensible REPL for Perl
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Config-INI-Reader-Ordered>=0:${PORTSDIR}/devel/p5-Config-INI-Reader-Ordered \
-		p5-Devel-LexAlias>=0:${PORTSDIR}/devel/p5-Devel-LexAlias \
-		p5-Eval-Closure>=0.11:${PORTSDIR}/devel/p5-Eval-Closure \
-		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
-		p5-Package-Stash>=0:${PORTSDIR}/devel/p5-Package-Stash \
-		p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+BUILD_DEPENDS=	p5-Config-INI-Reader-Ordered>=0:devel/p5-Config-INI-Reader-Ordered \
+		p5-Devel-LexAlias>=0:devel/p5-Devel-LexAlias \
+		p5-Eval-Closure>=0.11:devel/p5-Eval-Closure \
+		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
+		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
+		p5-Package-Stash>=0:devel/p5-Package-Stash \
+		p5-PadWalker>=0:devel/p5-PadWalker \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

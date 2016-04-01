@@ -12,7 +12,7 @@ DISTNAME=	1.2-test13-l
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shrub - An Enemy Territory Modification
 
-RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
+RUN_DEPENDS=	et:games/linux-enemyterritory
 
 USES=		zip
 USE_LINUX=	yes

@@ -15,7 +15,7 @@ COMMENT=	Simple interface for calling SQL functions from PostgreSQL PL/Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=1.60.5:databases/p5-DBI
 
 NO_ARCH=	yes
 USE_PERL5=	configure

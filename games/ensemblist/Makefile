@@ -10,8 +10,8 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assemble given shapes from primitives
 
-LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libmikmod.so:audio/libmikmod \
+		libpng.so:graphics/png
 
 USES=		gmake
 USE_XORG=	xmu

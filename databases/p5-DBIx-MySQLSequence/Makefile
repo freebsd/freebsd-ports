@@ -11,12 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Proper and correct (emulated) sequence support for MySQL
 
-BUILD_DEPENDS=	p5-DBD-mysql>0:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
-		p5-Params-Util>=0.26:${PORTSDIR}/devel/p5-Params-Util
-RUN_DEPENDS=	p5-DBD-mysql>0:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
-		p5-Params-Util>=0.26:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-DBD-mysql>0:databases/p5-DBD-mysql \
+		p5-DBI>0:databases/p5-DBI \
+		p5-Params-Util>=0.26:devel/p5-Params-Util
+RUN_DEPENDS=	p5-DBD-mysql>0:databases/p5-DBD-mysql \
+		p5-DBI>0:databases/p5-DBI \
+		p5-Params-Util>=0.26:devel/p5-Params-Util
 
 USES=		perl5
 USE_PERL5=	configure

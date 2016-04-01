@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo Entertainment System emlator for X
 
-LIB_DEPENDS=	libc.so.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libc.so.5:misc/compat5x
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	is an i386 binary

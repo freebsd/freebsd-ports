@@ -23,8 +23,8 @@ PORTDOCS=	BUGS README TODO
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL
 
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
-PGSQL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psycopg
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb
+PGSQL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/psycopgmodule.so:databases/py-psycopg
 
 .include <bsd.port.options.mk>
 

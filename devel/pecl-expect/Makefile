@@ -14,7 +14,7 @@ COMMENT=	PHP extension for expect library
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
+LIB_DEPENDS=	libexpect.so:lang/expect
 
 USES=		tar:tgz tcl:86
 USE_PHP=	yes

@@ -11,7 +11,7 @@ COMMENT=	Object-oriented AST extension for rubygem-parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-parser>=2.2:${PORTSDIR}/devel/rubygem-parser
+RUN_DEPENDS=	rubygem-parser>=2.2:devel/rubygem-parser
 
 NO_ARCH=	yes
 USE_RUBY=	yes

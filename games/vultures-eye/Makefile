@@ -21,7 +21,7 @@ LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE
 LICENSE_FILE=	${WRKSRC}/dat/license
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/vulture-${PORTVERSION}/nethack
 CONFIGURE_WRKSRC=	${WRKSRC}/sys/unix
@@ -37,7 +37,7 @@ DESKTOP_ENTRIES="Vulture's Eye" "" "" "vulture-nethack" "" ""
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>0:textproc/flex
 MAKE_ENV+=	FLEX="${LOCALBASE}/bin/flex"
 .else
 MAKE_ENV+=	FLEX="${FLEX}"

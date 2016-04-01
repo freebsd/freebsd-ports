@@ -13,7 +13,7 @@ COMMENT=	DHIS server for dynamic updates on the server using specific engines
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib

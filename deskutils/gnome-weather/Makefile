@@ -10,9 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Weather application for GNOME 3
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather \
-		libgjs.so:${PORTSDIR}/lang/gjs
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgweather-3.so:net/libgweather \
+		libgjs.so:lang/gjs
 
 PORTSCOUT=	limitw:1,even
 

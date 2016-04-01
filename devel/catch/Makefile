@@ -12,7 +12,7 @@ COMMENT=	Header-only test framework for C++
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-TEST_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+TEST_DEPENDS=	cmake:devel/cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	philsquared

@@ -12,8 +12,8 @@ COMMENT=	Adds dnscrypt support to any name resolver
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium \
-		libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libsodium.so:security/libsodium \
+		libevent.so:devel/libevent2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cofyc

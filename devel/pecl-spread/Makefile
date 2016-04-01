@@ -14,8 +14,8 @@ COMMENT=	Php Interface to the Spread Toolkit API
 
 LICENSE=	PHP301
 
-BUILD_DEPENDS=	${LOCALBASE}/include/sp.h:${PORTSDIR}/net/spread4
-RUN_DEPENDS=	${LOCALBASE}/include/sp.h:${PORTSDIR}/net/spread4
+BUILD_DEPENDS=	${LOCALBASE}/include/sp.h:net/spread4
+RUN_DEPENDS=	${LOCALBASE}/include/sp.h:net/spread4
 
 USES=		tar:tgz
 USE_PHP=	yes

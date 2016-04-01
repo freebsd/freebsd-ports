@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.dinoex.org/pub/unix-connect/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Unix-Connect - mail+news-gateway for Zconnect (tm)
 
-BUILD_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
+BUILD_DEPENDS=	lrz:comms/lrzsz
 
 LICENSE_COMB=	multi
 LICENSE=	GPLv2 BSD3CLAUSE

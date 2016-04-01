@@ -4,15 +4,15 @@
 CATEGORIES=	devel python
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/PyQt4/Qsci.so:${PORTSDIR}/devel/py-qt4-qscintilla2
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui \
+		${PYTHON_SITELIBDIR}/PyQt4/Qsci.so:devel/py-qt4-qscintilla2
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network \
-		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
-		${PYTHON_SITELIBDIR}/PyQt4/QtSql.so:${PORTSDIR}/databases/py-qt4-sql \
-		${PYTHON_SITELIBDIR}/PyQt4/QtWebKit.so:${PORTSDIR}/www/py-qt4-webkit \
-		${PYTHON_SITELIBDIR}/PyQt4/QtHelp.so:${PORTSDIR}/devel/py-qt4-help \
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:net/py-qt4-network \
+		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:graphics/py-qt4-svg \
+		${PYTHON_SITELIBDIR}/PyQt4/QtSql.so:databases/py-qt4-sql \
+		${PYTHON_SITELIBDIR}/PyQt4/QtWebKit.so:www/py-qt4-webkit \
+		${PYTHON_SITELIBDIR}/PyQt4/QtHelp.so:devel/py-qt4-help \
+		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3
 
 USES=		desktop-file-utils
 INSTALL_CMD=	install.py -c -f eric6config.freebsd -i ${STAGEDIR}

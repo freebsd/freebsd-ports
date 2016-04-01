@@ -11,8 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of DBIx::DBHResolver mixin for DBIx::Skinny
 
 RUN_DEPENDS=	\
-	p5-DBIx-DBHResolver>0:${PORTSDIR}/databases/p5-DBIx-DBHResolver \
-	p5-DBIx-Skinny>0:${PORTSDIR}/databases/p5-DBIx-Skinny
+	p5-DBIx-DBHResolver>0:databases/p5-DBIx-DBHResolver \
+	p5-DBIx-Skinny>0:databases/p5-DBIx-Skinny
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

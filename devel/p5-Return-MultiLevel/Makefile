@@ -15,7 +15,7 @@ COMMENT=	Return across multiple call levels
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Munge>=0.07:${PORTSDIR}/devel/p5-Data-Munge
+BUILD_DEPENDS=	p5-Data-Munge>=0.07:devel/p5-Data-Munge
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

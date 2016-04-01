@@ -10,9 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 graphical directory tree analyzer
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		vapigen:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		vapigen:lang/vala
+LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 PORTSCOUT=	limitw:1,even

@@ -45,9 +45,9 @@ SUB_FILES=	repaircluster
 
 .include <bsd.port.options.mk>
 
-RUN_DEPENDS+=	${JAVALIBDIR}/snappy-java.jar:${PORTSDIR}/archivers/snappy-java
+RUN_DEPENDS+=	${JAVALIBDIR}/snappy-java.jar:archivers/snappy-java
 
-MX4J_RUN_DEPENDS=	${JAVAJARDIR}/mx4j-tools.jar:${PORTSDIR}/java/mx4j
+MX4J_RUN_DEPENDS=	${JAVAJARDIR}/mx4j-tools.jar:java/mx4j
 CQL_USES=	python:2
 
 PORTDOCS=	javadoc *.txt

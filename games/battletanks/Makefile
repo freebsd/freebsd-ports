@@ -13,11 +13,11 @@ COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+BUILD_DEPENDS=	zip:archivers/zip
+LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
+		libexpat.so:textproc/expat2 \
+		libvorbisfile.so:audio/libvorbis \
+		libsmpeg.so:multimedia/smpeg
 
 USES=		openal:al pkgconfig lua:51 python:build scons tar:bzip2
 USE_LDCONFIG=	yes

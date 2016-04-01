@@ -31,27 +31,27 @@ BROKEN=		Does not configure on powerpc
 
 .if ${PORT_OPTIONS:MXAW3D}
 CONFIGURE_ARGS+=--with-xaw3d
-LIB_DEPENDS+=	libxaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	libxaw3d.so:x11-toolkits/Xaw3d
 .endif
 
 .if ${PORT_OPTIONS:MXCURSES}
 CONFIGURE_ARGS+=--with-xcurses \
 		--with-cursesincdir=${LOCALBASE}/include \
 		--with-curseslibdir=${LOCALBASE}/lib
-BUILD_DEPENDS+=	pdcurses:${PORTSDIR}/devel/pdcurses
-LIB_DEPENDS+=	libxcurses.so:${PORTSDIR}/devel/pdcurses
+BUILD_DEPENDS+=	pdcurses:devel/pdcurses
+LIB_DEPENDS+=	libxcurses.so:devel/pdcurses
 PLIST_SUB=	XCURSES="" NCURSES="@comment "
 .else
 PLIST_SUB=	XCURSES="@comment " NCURSES=""
 .endif
 
 .if ${PORT_OPTIONS:MREXX_IMC}
-BUILD_DEPENDS+=	rexx:${PORTSDIR}/lang/rexx-imc
-RUN_DEPENDS+=	rexx:${PORTSDIR}/lang/rexx-imc
+BUILD_DEPENDS+=	rexx:lang/rexx-imc
+RUN_DEPENDS+=	rexx:lang/rexx-imc
 CONFIGURE_ARGS+=	--with-rexx=rexximc
 .else
-BUILD_DEPENDS+=	regina:${PORTSDIR}/lang/rexx-regina
-RUN_DEPENDS+=	regina:${PORTSDIR}/lang/rexx-regina
+BUILD_DEPENDS+=	regina:lang/rexx-regina
+RUN_DEPENDS+=	regina:lang/rexx-regina
 CONFIGURE_ARGS+=	--with-rexx=regina
 .endif
 

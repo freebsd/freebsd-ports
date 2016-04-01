@@ -15,7 +15,7 @@ LICENSE_NAME=	imlib2 license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -61,7 +61,7 @@ PLIST_SUB+=	JPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 PLIST_SUB+=	PNG=""
 .else
 CONFIGURE_ARGS+=	--without-png
@@ -69,7 +69,7 @@ PLIST_SUB+=	PNG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libtiff.so:graphics/tiff
 PLIST_SUB+=	TIFF=""
 .else
 CONFIGURE_ARGS+=	--without-tiff
@@ -77,7 +77,7 @@ PLIST_SUB+=	TIFF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGIF}
-LIB_DEPENDS+=	libgif.so:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=	libgif.so:graphics/giflib
 PLIST_SUB+=	GIF=""
 .else
 CONFIGURE_ARGS+=	--without-gif
@@ -85,7 +85,7 @@ PLIST_SUB+=	GIF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MID3}
-LIB_DEPENDS+=	libid3tag.so:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS+=	libid3tag.so:audio/libid3tag
 PLIST_SUB+=	ID3=""
 .else
 CONFIGURE_ARGS+=	--without-id3

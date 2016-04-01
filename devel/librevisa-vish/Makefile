@@ -10,7 +10,7 @@ DISTNAME=	vish-${PORTVERSION}
 MAINTAINER=	uffe@uffe.org
 COMMENT=	Open Source VISA shell for interfacing test and measurement equipment
 
-LIB_DEPENDS=	libvisa.so:${PORTSDIR}/devel/librevisa
+LIB_DEPENDS=	libvisa.so:devel/librevisa
 
 USES=		gmake
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ COMMENT=	IPython-enabled pdb
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0.10:${PORTSDIR}/devel/ipython
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0.10:devel/ipython
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

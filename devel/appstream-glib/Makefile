@@ -14,14 +14,14 @@ COMMENT=	Library to help with AppStream metadata
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
-		gcab:${PORTSDIR}/archivers/gcab
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libyaml.so:${PORTSDIR}/textproc/libyaml \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	gcab:${PORTSDIR}/archivers/gcab
+BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc \
+		gcab:archivers/gcab
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libyaml.so:textproc/libyaml \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+RUN_DEPENDS=	gcab:archivers/gcab
 
 USES=		gettext gperf gmake gnome libarchive libtool pathfix \
 		pkgconfig sqlite tar:xz
@@ -40,8 +40,8 @@ OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 MANPAGES_CONFIGURE_ENABLE=	man
-MANPAGE_BUILD_DEPENDS=	docbook-xml>=0:${PORTSDIR}/textproc/docbook-xml \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+MANPAGE_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
+		docbook-xsl>=0:textproc/docbook-xsl
 MANPAGES_USE=	GNOME=libxslt:build
 
 .include <bsd.port.options.mk>

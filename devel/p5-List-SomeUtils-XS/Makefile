@@ -13,8 +13,8 @@ COMMENT=	XS implementation for List::SomeUtils
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
-		p5-Test-Warnings>=0.006:${PORTSDIR}/devel/p5-Test-Warnings
+TEST_DEPENDS=	p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
+		p5-Test-Warnings>=0.006:devel/p5-Test-Warnings
 
 USE_PERL5=	configure
 USES=		perl5

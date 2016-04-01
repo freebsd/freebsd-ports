@@ -10,8 +10,8 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved rich city simulation game for X
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
+BUILD_DEPENDS=	jam:devel/jam
+LIB_DEPENDS=	libphysfs.so:devel/physfs
 
 USES=		pkgconfig tar:bzip2
 USE_SDL=	sdl mixer image ttf gfx

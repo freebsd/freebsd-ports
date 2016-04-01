@@ -14,9 +14,9 @@ COMMENT=	Calendar application for the Xfce Desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-	libical.so:${PORTSDIR}/devel/libical
+LIB_DEPENDS=	libpopt.so:devel/popt \
+	libdbus-glib-1.so:devel/dbus-glib \
+	libical.so:devel/libical
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -27,7 +27,7 @@ USE_XFCE=	panel
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=	NOTIFY
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	libnotify
 
 CFLAGS+=	-I${LOCALBASE}/include/libical

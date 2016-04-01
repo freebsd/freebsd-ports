@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.60/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Height field generator and editor
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libpng.so:graphics/png
 
 USES=		desktop-file-utils gmake pkgconfig shebangfix
 SHEBANG_FILES=	update-rc

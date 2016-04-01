@@ -29,12 +29,12 @@ OPTIONS_SUB=	yes
 USES+=		libarchive
 HAS_CONFIGURE=	yes
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp
-RUN_DEPENDS=	${LOCALBASE}/share/cmake/Modules/CMake.cmake:${PORTSDIR}/devel/cmake-modules
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2 \
+		libjsoncpp.so:devel/jsoncpp
+RUN_DEPENDS=	${LOCALBASE}/share/cmake/Modules/CMake.cmake:devel/cmake-modules
 
-MANPAGES_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 MANPAGES_CONFIGURE_ON=	--sphinx-man
 .endif
 

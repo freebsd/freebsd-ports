@@ -12,8 +12,8 @@ COMMENT=	Verify consistency of DNS information in an SQL database
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-Net-CIDR>0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
-		p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	p5-Net-CIDR>0:net-mgmt/p5-Net-CIDR \
+		p5-Net-DNS>0:dns/p5-Net-DNS
 
 USES=		perl5
 USE_PERL5=	configure

@@ -21,9 +21,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-			libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-			libgpg-error.so:${PORTSDIR}/security/libgpg-error
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+			libgcrypt.so:security/libgcrypt \
+			libgpg-error.so:security/libgpg-error
 GNUTLS_CONFIGURE_ON=	--enable-gnutls
 GNUTLS_LDFLAGS=		-L${LOCALBASE}/lib
 OPENSSL_CONFIGURE_ENABLE=	ssl

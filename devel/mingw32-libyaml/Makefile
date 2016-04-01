@@ -13,8 +13,8 @@ DIST_SUBDIR=	repacked
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The libyaml library cross-compiled for MinGW32
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
-		${LOCALBASE}/mingw32/include/stdlib.h:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt
+BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
+		${LOCALBASE}/mingw32/include/stdlib.h:devel/${PKGNAMEPREFIX}bin-msvcrt
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/mingw32

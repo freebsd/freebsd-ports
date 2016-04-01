@@ -11,17 +11,17 @@ COMMENT=	Vector based 2D animation package
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	etl>=0.04.19_1:${PORTSDIR}/devel/etl
-LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libmlt.so:${PORTSDIR}/multimedia/mlt \
-		libmng.so:${PORTSDIR}/graphics/libmng \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libdv.so:${PORTSDIR}/multimedia/libdv
+BUILD_DEPENDS=	etl>=0.04.19_1:devel/etl
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
+		libltdl.so:devel/libltdl \
+		libMagickWand-6.so:graphics/ImageMagick \
+		libIlmImf.so:graphics/OpenEXR \
+		libmlt.so:multimedia/mlt \
+		libmng.so:graphics/libmng \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libavcodec.so:multimedia/ffmpeg \
+		libdv.so:multimedia/libdv
 
 USES=		iconv jpeg libtool pathfix pkgconfig
 USE_GNOME=	cairo glibmm libxml++26

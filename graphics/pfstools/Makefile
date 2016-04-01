@@ -12,7 +12,7 @@ COMMENT=	Tools for manipulating HDR images and video frames
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:shells/bash
 
 PFS_BUILD=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB+=	PFS_BASE=${PREFIX}
@@ -36,31 +36,31 @@ OPTIONS_DEFAULT=	TIFF
 OPTIONS_SUB=		yes
 
 NETPBM_CONFIGURE_ENABLE=	netpbm
-NETPBM_LIB_DEPENDS=		libnetpbm.so:${PORTSDIR}/graphics/netpbm
+NETPBM_LIB_DEPENDS=		libnetpbm.so:graphics/netpbm
 
 OPENEXR_CONFIGURE_ENABLE=	openexr
 OPENEXR_CONFIGURE_ON=		--with-exrdir=${LOCALBASE}/include/OpenEXR
-OPENEXR_LIB_DEPENDS=		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=		libIlmImf.so:graphics/OpenEXR
 
 TIFF_CONFIGURE_ENABLE=		tiff
-TIFF_LIB_DEPENDS=		libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=		libtiff.so:graphics/tiff
 
 QT_CONFIGURE_ENABLE=		qt
 QT_USE=				QT4=moc_build,corelib,gui
 
 IMAGEMAGICK_CONFIGURE_ENABLE=	imagemagick
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 
 GDAL_CONFIGURE_ENABLE=		gdal
-GDAL_LIB_DEPENDS=		libgdal.so:${PORTSDIR}/graphics/gdal
+GDAL_LIB_DEPENDS=		libgdal.so:graphics/gdal
 
 OPENGL_CONFIGURE_ENABLE=	opengl
 OPENGL_USE=			GL=glut
 
 OCTAVE_CONFIGURE_ENABLE=	octave
-OCTAVE_PATCH_DEPENDS=		octave-config:${PORTSDIR}/math/octave
-OCTAVE_BUILD_DEPENDS=		mkoctfile:${PORTSDIR}/math/octave
-OCTAVE_RUN_DEPENDS=		octave:${PORTSDIR}/math/octave
+OCTAVE_PATCH_DEPENDS=		octave-config:math/octave
+OCTAVE_BUILD_DEPENDS=		mkoctfile:math/octave
+OCTAVE_RUN_DEPENDS=		octave:math/octave
 
 .include <bsd.port.options.mk>
 

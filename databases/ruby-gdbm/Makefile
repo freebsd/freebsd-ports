@@ -16,8 +16,8 @@ COMMENT=	Ruby extension to GDBM library
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+FETCH_DEPENDS=	${NONEXISTENT}:${RUBY_PORT}:patch
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 PLIST_FILES=	%%RUBY_ARCHLIBDIR%%/gdbm.so
 USE_RUBY=	yes

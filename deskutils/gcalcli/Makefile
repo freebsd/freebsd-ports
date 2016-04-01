@@ -11,11 +11,11 @@ COMMENT=	Google Calendar Command Line Interface
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_SITELIBDIR}/gdata/__init__.py:${PORTSDIR}/devel/py-gdata \
-		${PYTHON_SITELIBDIR}/gflags.py:${PORTSDIR}/devel/py-gflags \
-		${PYTHON_SITELIBDIR}/apiclient/__init__.py:${PORTSDIR}/www/py-google-api-python-client \
-		${PYTHON_SITELIBDIR}/httplib2/__init__.py:${PORTSDIR}/www/py-httplib2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
+		${PYTHON_SITELIBDIR}/gdata/__init__.py:devel/py-gdata \
+		${PYTHON_SITELIBDIR}/gflags.py:devel/py-gflags \
+		${PYTHON_SITELIBDIR}/apiclient/__init__.py:www/py-google-api-python-client \
+		${PYTHON_SITELIBDIR}/httplib2/__init__.py:www/py-httplib2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	insanum
@@ -36,9 +36,9 @@ ICS_VCAL_DESC=		enable importing of ics/vcal files
 SIMPLEJSON_DESC=	use simplejson for url shortening
 FUZZYDATES_DESC=	use parsedatetime for fuzzy date parsing
 
-ICS_VCAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject
-SIMPLEJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson
-FUZZYDATES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsedatetime>=0:${PORTSDIR}/devel/py-parsedatetime
+ICS_VCAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:deskutils/py-vobject
+SIMPLEJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson
+FUZZYDATES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsedatetime>=0:devel/py-parsedatetime
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin

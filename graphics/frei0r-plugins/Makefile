@@ -8,7 +8,7 @@ EXTRACT_ONLY=	# empty
 
 COMMENT=	Frei0r meta-port
 
-RUN_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+RUN_DEPENDS=	${LOCALBASE}/include/frei0r.h:graphics/frei0r
 
 MASTERDIR=	${.CURDIR}/../frei0r
 NO_BUILD=	yes
@@ -28,11 +28,11 @@ PATCHDIR=	${.CURDIR}/files
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGAVL}
-RUN_DEPENDS+=	${LOCALBASE}/lib/frei0r-1/rgbparade.so:${PORTSDIR}/graphics/frei0r-plugins-gavl
+RUN_DEPENDS+=	${LOCALBASE}/lib/frei0r-1/rgbparade.so:graphics/frei0r-plugins-gavl
 .endif
 
 .if ${PORT_OPTIONS:MOPENCV}
-RUN_DEPENDS+=	${LOCALBASE}/lib/frei0r-1/facedetect.so:${PORTSDIR}/graphics/frei0r-plugins-opencv
+RUN_DEPENDS+=	${LOCALBASE}/lib/frei0r-1/facedetect.so:graphics/frei0r-plugins-opencv
 .endif
 
 do-install:

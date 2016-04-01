@@ -23,12 +23,12 @@ COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3 \
-		cmake:${PORTSDIR}/devel/cmake \
-		${LOCALBASE}/protobuf25/bin/protoc:${PORTSDIR}/devel/protobuf25
-LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		ssid:${PORTSDIR}/sysutils/ssid
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3 \
+		cmake:devel/cmake \
+		${LOCALBASE}/protobuf25/bin/protoc:devel/protobuf25
+LIB_DEPENDS=	libsnappy.so:archivers/snappy
+RUN_DEPENDS=	bash:shells/bash \
+		ssid:sysutils/ssid
 
 BROKEN_FreeBSD_9=	fails to build
 

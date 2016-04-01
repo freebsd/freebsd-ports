@@ -13,8 +13,8 @@ COMMENT=	Auto keyboard switcher
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libpcre.so:devel/pcre
 
 USES=		compiler:nestedfct iconv libtool localbase pathfix pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -39,11 +39,11 @@ NLS_CONFIGURE_ENABLE=	nls
 X11_USE=		XORG=x11
 X11_CONFIGURE_WITH=	x
 
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_CONFIGURE_ON=	--with-spell=aspell
 ASPELL_CONFIGURE_OFF=	--with-spell=no --without-aspell
 
-XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+XOSD_LIB_DEPENDS=	libxosd.so:misc/xosd
 XOSD_CONFIGURE_WITH=	xosd
 
 .include <bsd.port.options.mk>

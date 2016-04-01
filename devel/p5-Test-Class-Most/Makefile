@@ -15,8 +15,8 @@ COMMENT=	Test Classes the easy way
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Test-Class>=0.38:${PORTSDIR}/devel/p5-Test-Class \
-		p5-Test-Most>=0.31:${PORTSDIR}/devel/p5-Test-Most
+BUILD_DEPENDS=	p5-Test-Class>=0.38:devel/p5-Test-Class \
+		p5-Test-Most>=0.31:devel/p5-Test-Most
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

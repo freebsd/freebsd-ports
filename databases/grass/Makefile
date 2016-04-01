@@ -25,14 +25,14 @@ COMMENT=	Open source Geographical Information System (GIS)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libproj.so:${PORTSDIR}/graphics/proj \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig:devel/swig13
+LIB_DEPENDS=	libgdal.so:graphics/gdal \
+		libpng.so:graphics/png \
+		libproj.so:graphics/proj \
+		libtiff.so:graphics/tiff \
+		libfftw3.so:math/fftw3 \
+		libfreetype.so:print/freetype2
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		fortran gettext gmake iconv jpeg perl5 pkgconfig python:2 \
 		readline shebangfix tk
@@ -93,7 +93,7 @@ ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
 ATLAS_USES=		blaslapack:atlas
 ATLAS_USES_OFF=		blaslapack
 DB_DESC=		Database support
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ON=	--with-ffmpeg \
 			--with-ffmpeg-includes="${LOCALBASE}/include/libavcodec \
 			 ${LOCALBASE}/include/libavformat \
@@ -107,7 +107,7 @@ MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ON=	--with-mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_CONFIGURE_ON=	--with-odbc
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgres

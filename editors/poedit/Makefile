@@ -13,10 +13,10 @@ COMMENT=	Gettext catalogs (.po files) editor
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		liblucene++.so:${PORTSDIR}/textproc/luceneplusplus
+BUILD_DEPENDS=	zip:archivers/zip
+LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell \
+		libboost_thread.so:devel/boost-libs \
+		liblucene++.so:textproc/luceneplusplus
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake pkgconfig
 USE_WX=		3.0

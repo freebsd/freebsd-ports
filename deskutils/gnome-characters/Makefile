@@ -12,9 +12,9 @@ COMMENT=	find and insert unusual characters for GNOME 3
 
 PORTSCOUT=	limitw:1,even
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgjs.so:${PORTSDIR}/lang/gjs \
-		libunistring.so:${PORTSDIR}/devel/libunistring
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgjs.so:lang/gjs \
+		libunistring.so:devel/libunistring
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes

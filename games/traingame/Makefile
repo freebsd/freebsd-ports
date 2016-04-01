@@ -12,9 +12,9 @@ COMMENT=	Game about Trains
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libxerces-c.so:textproc/xerces-c3 \
+		libboost_filesystem.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nickg

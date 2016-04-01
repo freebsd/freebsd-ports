@@ -12,8 +12,8 @@ COMMENT=	Collection of mature utilities for Python programmers
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.1:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}zbase32>=1.1.0:${PORTSDIR}/converters/zbase32
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.1:devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}zbase32>=1.1.0:converters/zbase32
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

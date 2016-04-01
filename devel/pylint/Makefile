@@ -12,14 +12,14 @@ COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=1.3.6:${PORTSDIR}/devel/py-astroid \
-		${PYTHON_PKGNAMEPREFIX}six>=1.8.0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=1.3.6:devel/py-astroid \
+		${PYTHON_PKGNAMEPREFIX}six>=1.8.0:devel/py-six
 
 USES=		python
 USE_PYTHON=	distutils concurrent
 
 OPTIONS_DEFINE=	GUI
 
-GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 
 .include <bsd.port.mk>

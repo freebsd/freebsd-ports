@@ -12,10 +12,10 @@ COMMENT=	Parallel ftp-fetching program
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker
+BUILD_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
+		p5-URI>=0:net/p5-URI \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple
 
 USES=		perl5
 USE_PERL5=	configure

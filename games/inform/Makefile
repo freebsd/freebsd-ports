@@ -15,7 +15,7 @@ EXTRACT_ONLY=	inform${PORTVERSION:S/.//}_source.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for producing text adventure games
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	unzip:archivers/unzip
 
 NO_WRKSUBDIR=	yes
 

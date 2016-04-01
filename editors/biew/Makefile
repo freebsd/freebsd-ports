@@ -37,7 +37,7 @@ SLANG_DESC=	Use S-Lang based display renderer
 BROKEN_powerpc=		Does not compile
 BROKEN_sparc64=		Does not compile
 
-SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_CONFIGURE_ON=	--enable-slang
 SLANG_CONFIGURE_OFF=	--enable-curses
 

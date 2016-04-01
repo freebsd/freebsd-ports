@@ -29,8 +29,8 @@ MEMORY_DESC=	Enable the memoize memory storage module
 APC_CONFIGURE_ON=	--enable-memoize-apc
 APC_USE=		PHP=apc
 MEMCACHED_CONFIGURE_ON=	--with-memoize-memcached
-MEMCACHED_BUILD_DEPENDS=libmemcached>=0:${PORTSDIR}/databases/libmemcached
-MEMCACHED_RUN_DEPENDS=	libmemcached>=0:${PORTSDIR}/databases/libmemcached
+MEMCACHED_BUILD_DEPENDS=libmemcached>=0:databases/libmemcached
+MEMCACHED_RUN_DEPENDS=	libmemcached>=0:databases/libmemcached
 MEMORY_CONFIGURE_OFF=	--disable-memoize-memory
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ COMMENT=	Simplified PostgreSQL client built upon Psycopg2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.1:${PORTSDIR}/databases/py-psycopg2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.1:databases/py-psycopg2
 
 USES=		python
 USE_PYTHON=	autoplist distutils

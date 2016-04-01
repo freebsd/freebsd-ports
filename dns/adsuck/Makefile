@@ -14,8 +14,8 @@ COMMENT=	DNS relay for ad blocking
 
 LICENSE=	ISCL
 
-LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2 \
-		libldns.so:${PORTSDIR}/dns/ldns
+LIB_DEPENDS+=	libevent.so:devel/libevent2 \
+		libldns.so:dns/ldns
 
 CFLAGS+= 	-I${LOCALBASE}/include
 

@@ -11,7 +11,7 @@ COMMENT=	Progressbar library for Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-hashie>=1.1.0:${PORTSDIR}/devel/rubygem-hashie
+RUN_DEPENDS=	rubygem-hashie>=1.1.0:devel/rubygem-hashie
 
 NO_ARCH=	yes
 USE_RUBY=	yes

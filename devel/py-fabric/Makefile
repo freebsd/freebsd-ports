@@ -15,10 +15,10 @@ COMMENT=	Simple, Pythonic remote execution and deployment
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.10:${PORTSDIR}/security/py-paramiko
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}fudge>0:${PORTSDIR}/devel/py-fudge \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=0.6:${PORTSDIR}/devel/py-Jinja2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.10:security/py-paramiko
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}fudge>0:devel/py-fudge \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0.6:devel/py-Jinja2
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist

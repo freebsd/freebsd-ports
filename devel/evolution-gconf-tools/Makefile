@@ -11,7 +11,7 @@ MASTER_SITES=	http://people.redhat.com/dmalcolm/evolution-gconf-tools/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Scripts to make it easier to work with Evolution's configuration
 
-RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
+RUN_DEPENDS=	evolution:mail/evolution
 
 GNU_CONFIGURE=	yes
 USES=		python

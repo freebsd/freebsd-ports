@@ -15,9 +15,9 @@ COMMENT=	Simple and Fast Multimedia Library
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 USES=		gmake jpeg openal:al pkgconfig dos2unix
 DOS2UNIX_GLOB=	Makefile ResourcePtr.inl

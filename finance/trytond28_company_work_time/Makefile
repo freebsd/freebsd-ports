@@ -14,7 +14,7 @@ COMMENT=	Tryton Application Platform (Company Work Time Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_company>=2.8.0:${PORTSDIR}/finance/trytond28_company
+RUN_DEPENDS=	trytond28_company>=2.8.0:finance/trytond28_company
 
 CONFLICTS=	trytond_company_work_time-2.[46].*
 

@@ -14,8 +14,8 @@ DIST_SUBDIR=	povray36
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Persistence of Vision Ray Tracer
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 USE_XORG=	x11
 USES=		gmake jpeg tar:bzip2
@@ -30,7 +30,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}-3.6
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "i386" || ${ARCH} == "amd64")
-LIB_DEPENDS+=	libvgagl.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvgagl.so:graphics/svgalib
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

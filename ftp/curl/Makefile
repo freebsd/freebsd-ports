@@ -73,14 +73,14 @@ SLAVEDIRS=	ftp/curl-hiphop
 
 CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CARES_CONFIGURE_ENABLE=	ares
-CARES_LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
+CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 COOKIES_CONFIGURE_ENABLE=	cookies
 CURL_DEBUG_CONFIGURE_ENABLE=	curldebug
 DEBUG_CONFIGURE_ENABLE=	debug
 GNUTLS_CONFIGURE_WITH=	gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GSSAPI_BASE_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
 GSSAPI_BASE_CPPFLAGS=	${GSSAPICPPFLAGS}
 GSSAPI_BASE_LDFLAGS=	${GSSAPILDFLAGS}
@@ -97,25 +97,25 @@ GSSAPI_MIT_LDFLAGS=	${GSSAPILDFLAGS}
 GSSAPI_MIT_LIBS=	${GSSAPILIBS}
 GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
-HTTP2_BUILD_DEPENDS=	nghttp2>=1.0.0:${PORTSDIR}/www/nghttp2
+HTTP2_BUILD_DEPENDS=	nghttp2>=1.0.0:www/nghttp2
 HTTP2_CONFIGURE_WITH=	nghttp2
-HTTP2_LIB_DEPENDS=	libnghttp2.so:${PORTSDIR}/www/nghttp2
-HTTP2_RUN_DEPENDS=	nghttp2>=1.0.0:${PORTSDIR}/www/nghttp2
+HTTP2_LIB_DEPENDS=	libnghttp2.so:www/nghttp2
+HTTP2_RUN_DEPENDS=	nghttp2>=1.0.0:www/nghttp2
 HTTP2_USES=		pkgconfig
 IDN_CONFIGURE_WITH=	libidn
-IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_ENABLE=	ipv6
 LDAP_CONFIGURE_ENABLE=	ldap
 LDAP_USE=		OPENLDAP=yes
 LDAPS_CONFIGURE_ENABLE=	ldaps
 LIBSSH2_CONFIGURE_WITH=	libssh2
-LIBSSH2_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
+LIBSSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
 METALINK_CONFIGURE_WITH=libmetalink
-METALINK_LIB_DEPENDS=	libmetalink.so:${PORTSDIR}/misc/libmetalink
+METALINK_LIB_DEPENDS=	libmetalink.so:misc/libmetalink
 METALINK_LIBS=		-lcrypto
 NSS_CONFIGURE_WITH=	nss
-NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+NSS_LIB_DEPENDS=	libnss3.so:security/nss
 NSS_USES=		pkgconfig
 OPENSSL_CONFIGURE_OFF=	--without-ssl
 OPENSSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
@@ -123,17 +123,17 @@ OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
 OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
 OPENSSL_USE=		OPENSSL=yes
 POLARSSL_CONFIGURE_WITH=polarssl
-POLARSSL_LIB_DEPENDS=	libmbedtls.so.9:${PORTSDIR}/security/polarssl13
+POLARSSL_LIB_DEPENDS=	libmbedtls.so.9:security/polarssl13
 PROXY_CONFIGURE_ENABLE=	proxy
 PSL_CONFIGURE_WITH=	libpsl
-PSL_LIB_DEPENDS=	libpsl.so:${PORTSDIR}/dns/libpsl
+PSL_LIB_DEPENDS=	libpsl.so:dns/libpsl
 RTMP_CONFIGURE_WITH=	librtmp
-RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
+RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 RTMP_USES=		pkgconfig
 THREADED_RESOLVER_CONFIGURE_ENABLE=	threaded-resolver
 TLS_SRP_CONFIGURE_ENABLE=	tls-srp
 WOLFSSL_CONFIGURE_WITH=	cyassl
-WOLFSSL_LIB_DEPENDS=	libwolfssl.so:${PORTSDIR}/security/wolfssl
+WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 
 .include <bsd.port.options.mk>
 

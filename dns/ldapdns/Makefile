@@ -13,8 +13,8 @@ COMMENT=	LDAP-backed DNS server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
-		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+RUN_DEPENDS=	setuidgid:sysutils/daemontools \
+		tcpserver:sysutils/ucspi-tcp
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

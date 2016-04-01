@@ -14,7 +14,7 @@ BROKEN=		unfetchable
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24
+LIB_DEPENDS=	libglademm-2.4.so:devel/libglademm24
 
 USES=		desktop-file-utils gettext libtool pkgconfig
 USE_GNOME=	gconfmm26 gtkmm24 intltool

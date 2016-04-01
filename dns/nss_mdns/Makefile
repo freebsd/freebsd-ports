@@ -14,7 +14,7 @@ COMMENT=	NSS module implementing multicast DNS name resolution
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
 CONFLICTS_INSTALL=	mDNSResponder_nss-[0-9]*
 

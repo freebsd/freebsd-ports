@@ -12,9 +12,9 @@ COMMENT=	DjVu support for zathura
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
-BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
-RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
+LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
+BUILD_DEPENDS=	zathura:graphics/zathura
+RUN_DEPENDS=	zathura:graphics/zathura
 
 PLIST_FILES=	lib/zathura/djvu.so share/applications/zathura-djvu.desktop
 

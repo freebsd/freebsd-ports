@@ -13,7 +13,7 @@ COMMENT=	Load Log::Any only if LOG environment variable is true
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Log-Any>=0:${PORTSDIR}/devel/p5-Log-Any
+BUILD_DEPENDS=	p5-Log-Any>=0:devel/p5-Log-Any
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

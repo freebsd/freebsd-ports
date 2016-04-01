@@ -13,7 +13,7 @@ COMMENT=	Tryton Application Platform (Project Plan Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_project>=2.8.0:${PORTSDIR}/finance/trytond28_project
+RUN_DEPENDS=	trytond28_project>=2.8.0:finance/trytond28_project
 
 CONFLICTS=	trytond_project_plan-2.[46].*
 

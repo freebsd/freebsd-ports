@@ -35,7 +35,7 @@ USE_PHP+=	pgsql
 USE_APACHE_RUN=	22
 .endif
 .if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
+RUN_DEPENDS+=	lighttpd:www/lighttpd
 .endif
 
 do-install:

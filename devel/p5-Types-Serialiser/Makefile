@@ -15,7 +15,7 @@ COMMENT=	Simple data types for common serialisation formats
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-common-sense>=0:devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

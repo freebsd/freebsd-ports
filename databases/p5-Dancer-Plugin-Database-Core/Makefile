@@ -12,10 +12,10 @@ COMMENT=	Shared core for D1 and D2 Database plugins
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.22:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=1.22:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.08:devel/p5-Test-Pod-Coverage
 
 NO_ARCH=	yes
 USE_PERL5=	configure

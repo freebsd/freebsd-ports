@@ -19,9 +19,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-etc --disable-initscripts
 CXXFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
 
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS+=	bash:shells/bash
+LIB_DEPENDS+=	libpng.so:graphics/png \
+		libxml2.so:textproc/libxml2
 
 OPTIONS_DEFINE=	MUSIC ARMA_SERVER_ONLY
 MUSIC_DESC=	Compile in support for background music

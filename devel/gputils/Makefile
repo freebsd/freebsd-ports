@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/gputils-${PORTVERSION:R}
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=2.5.35:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>=2.5.35:textproc/flex
 CONFIGURE_ARGS+=LEX=${LOCALBASE}/bin/flex
 .endif
 

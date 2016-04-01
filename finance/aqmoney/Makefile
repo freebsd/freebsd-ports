@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage your credit institute accounts using openhbci
 
-LIB_DEPENDS=	libopenhbci.so:${PORTSDIR}/finance/openhbci
+LIB_DEPENDS=	libopenhbci.so:finance/openhbci
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/aqmoney \

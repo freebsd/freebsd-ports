@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Extension to generate a size report for all elements in a structure
 
-BUILD_DEPENDS=	p5-Array-RefElem>=1.00:${PORTSDIR}/misc/p5-Array-RefElem \
-		p5-Devel-Size>=0.69:${PORTSDIR}/devel/p5-Devel-Size
+BUILD_DEPENDS=	p5-Array-RefElem>=1.00:misc/p5-Array-RefElem \
+		p5-Devel-Size>=0.69:devel/p5-Devel-Size
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

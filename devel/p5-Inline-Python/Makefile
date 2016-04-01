@@ -14,7 +14,7 @@ COMMENT=	Write Perl Subroutines in Python
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Inline>=0.79:${PORTSDIR}/devel/p5-Inline
+BUILD_DEPENDS=	p5-Inline>=0.79:devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
