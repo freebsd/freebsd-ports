@@ -19,11 +19,13 @@ COMMENT=	Language with a focus on memory safety and concurrency
 LICENSE=	APACHE20 \
 		MIT
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE \
-		${WRKSRC}/LICENSE-MIT
+# APACHE20 license is standard, see Templates/Licenses/APACHE20
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
+
+BROKEN_FreeBSD_9=	Only compiles on FreeBSD 10 and 11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
@@ -93,12 +95,6 @@ PORT_LLVM_VARS_OFF=		NOPRECIOUSMAKEVARS=1 # ARCH
 LLVM_VER?=			36 # XXX Move to DEFAULT_VERSIONS
 LLVM_PREFIX=			${LOCALBASE}/llvm${LLVM_VER}
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		Only compiles on FreeBSD 10 and 11
-.endif
-
 pre-fetch:
 	# FIXME: This is the same check for CONFLICTS as the standard
 	# one, except port origins are not compared. This allows
@@ -136,7 +132,7 @@ post-extract:
 	  ${MV} ${WRKSRC_rust_installer} ${WRKSRC}/src/rust-installer)
 	@${MKDIR} ${WRKSRC}/dl
 	${LN} -sf ${DISTDIR}/${RUST_BOOT} ${WRKSRC}/dl
-	(cd ${WRKSRC} && ${FIND} . -type d -exec ${CHMOD} 0755 {} \;)
+	${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 {} +
 
 post-extract-PORT_LLVM-off:
 	@(${RMDIR} ${WRKSRC}/src/llvm && \
