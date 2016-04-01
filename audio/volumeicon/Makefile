@@ -23,7 +23,7 @@ OPTIONS_DEFINE=		NLS NOTIFY
 OPTIONS_DEFAULT=	NOTIFY
 OPTIONS_SUB=		yes
 
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=notify
 
 .include <bsd.port.mk>

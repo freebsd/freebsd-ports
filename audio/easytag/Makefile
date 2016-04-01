@@ -11,15 +11,15 @@ COMMENT=	GTK Tag editor for audio files
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
-	        ${LOCALBASE}/share/xsl/docbook/html/refentry.xsl:${PORTSDIR}/textproc/docbook-xsl \
-	        itstool:${PORTSDIR}/textproc/itstool \
-		xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libtag.so:${PORTSDIR}/audio/taglib
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/catalog.xml:textproc/docbook-xml \
+	        ${LOCALBASE}/share/xsl/docbook/html/refentry.xsl:textproc/docbook-xsl \
+	        itstool:textproc/itstool \
+		xsltproc:textproc/libxslt
+LIB_DEPENDS=	libid3.so:audio/id3lib \
+		libid3tag.so:audio/libid3tag \
+		libvorbis.so:audio/libvorbis \
+		libFLAC.so:audio/flac \
+		libtag.so:audio/taglib
 
 USES=		desktop-file-utils gettext-tools gmake pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack libxslt
@@ -39,12 +39,12 @@ OPTIONS_DEFINE=	WAVPACK NLS OPUS SPEEX DOCS
 OPTIONS_DEFAULT=	NLS
 OPTIONS_SUB=	yes
 
-WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CONFIGURE_ENABLE=	wavpack
 NLS_CONFIGURE_ENABLE=	nls
-OPUS_LIB_DEPENDS=	libopusfile.so:${PORTSDIR}/audio/opusfile
+OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
 OPUS_CONFIGURE_ENABLE=	opus
-SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_CONFIGURE_ENABLE=	speex
 
 NLS_USES=		gettext-runtime

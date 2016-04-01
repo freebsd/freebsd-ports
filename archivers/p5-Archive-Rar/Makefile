@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface with the 'rar' command
 
-BUILD_DEPENDS=	rar:${PORTSDIR}/archivers/rar \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
+BUILD_DEPENDS=	rar:archivers/rar \
+		p5-IPC-Run>=0:devel/p5-IPC-Run
 
 NO_ARCH=	yes
 USES=		perl5

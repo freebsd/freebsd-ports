@@ -13,9 +13,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Information efficient text-entry interface
 
-BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
-RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
+BUILD_DEPENDS=	rarian-sk-config:textproc/rarian
+LIB_DEPENDS=	libogg.so:audio/libogg
+RUN_DEPENDS=	rarian-sk-config:textproc/rarian
 
 USES=		gettext gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnomeui atspi \

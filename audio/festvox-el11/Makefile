@@ -12,7 +12,7 @@ DIST_SUBDIR=	festival
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Castilian Spanish male voice for Festival
 
-RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
+RUN_DEPENDS=	festival:audio/festival
 
 WRKSRC=		${WRKDIR}/festival
 

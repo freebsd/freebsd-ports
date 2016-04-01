@@ -13,9 +13,9 @@ COMMENT=	GNU VHDL simulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr \
-		libmpc.so:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libmpc.so:math/mpc
 
 USES=		ada gmake
 USE_GITHUB=	yes
@@ -78,7 +78,7 @@ PLIST_SUB+=	X86_64="@comment "
 .if defined(MODERN_BINUTILS)
 # Apparently gcc 4.9 needs binutils 2.23 or greater to link Ada correctly
 USE_BINUTILS=	yes
-RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 AS_COMMAND=	${LOCALBASE}/bin/as
 EXTRA_CONFIG+=	--with-ld=${LOCALBASE}/bin/ld
 .else
@@ -101,9 +101,9 @@ IGNORE=		not supported by GCC backend
 .endif
 
 .if ${PORT_OPTIONS:MLLVM}
-BUILD_DEPENDS+=	llvm-config${LLVMVER}:${PORTSDIR}/devel/llvm${LLVMVER} \
-		clang++${LLVMVER}:${PORTSDIR}/lang/clang${LLVMVER}
-RUN_DEPENDS+=	llc${LLVMVER}:${PORTSDIR}/devel/llvm${LLVMVER}
+BUILD_DEPENDS+=	llvm-config${LLVMVER}:devel/llvm${LLVMVER} \
+		clang++${LLVMVER}:lang/clang${LLVMVER}
+RUN_DEPENDS+=	llc${LLVMVER}:devel/llvm${LLVMVER}
 PLIST=		${.CURDIR}/llvm-plist
 PLIST_SUB+=	GLIB=ghdl/lib/ghdl/
 .endif

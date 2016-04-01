@@ -25,13 +25,13 @@ SCIM_DESC=		Smart Common Input Method platform
 MINICHINPUT_DESC=	A tiny version of Chinput
 RELAXCONF_DESC=		A set of utilities for FreeBSD LiveCD
 
-WQY_RUN_DEPENDS=	${LOCALBASE}/share/fonts/wqy/wenquanyi_10pt.pcf:${PORTSDIR}/x11-fonts/wqy
-FIREFLYTTF_RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:${PORTSDIR}/chinese/fireflyttf
-FCITX_RUN_DEPENDS=	fcitx:${PORTSDIR}/chinese/fcitx
-SCIM_RUN_DEPENDS=	${LOCALBASE}/share/scim/tables/Wubi.bin:${PORTSDIR}/chinese/scim-tables \
-			${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/pinyin.so:${PORTSDIR}/chinese/scim-pinyin
-MINICHINPUT_RUN_DEPENDS=	chinput:${PORTSDIR}/chinese/miniChinput
-RELAXCONF_RUN_DEPENDS=	relaxconf:${PORTSDIR}/sysutils/relaxconf
+WQY_RUN_DEPENDS=	${LOCALBASE}/share/fonts/wqy/wenquanyi_10pt.pcf:x11-fonts/wqy
+FIREFLYTTF_RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:chinese/fireflyttf
+FCITX_RUN_DEPENDS=	fcitx:chinese/fcitx
+SCIM_RUN_DEPENDS=	${LOCALBASE}/share/scim/tables/Wubi.bin:chinese/scim-tables \
+			${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/pinyin.so:chinese/scim-pinyin
+MINICHINPUT_RUN_DEPENDS=	chinput:chinese/miniChinput
+RELAXCONF_RUN_DEPENDS=	relaxconf:sysutils/relaxconf
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \

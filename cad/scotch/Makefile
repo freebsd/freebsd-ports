@@ -46,7 +46,7 @@ PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf
 EXAMPLES=	scotch_example_1.f scotch_example_2.f90
 
 .if !defined(WITHOUT_MPI)
-LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	libmpich.so:net/mpich2
 
 ALL_TARGET+=	ptscotch
 MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin

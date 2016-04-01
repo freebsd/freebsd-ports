@@ -25,7 +25,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOCS_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN=no
 
 post-patch:

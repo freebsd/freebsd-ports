@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.2/src/
 MAINTAINER=	eischen@vigrid.com
 COMMENT=	Motif CD player
 
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libFLAC.so:${PORTSDIR}/audio/flac
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \
+		libFLAC.so:audio/flac
+RUN_DEPENDS+=	lame:audio/lame
 
 USES=		imake motif ncurses
 USE_XORG=	x11 xext xaw xmu xp xpm xt sm ice

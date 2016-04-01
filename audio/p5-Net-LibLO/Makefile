@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for liblo Lightweight OSC library
 
-LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
+LIB_DEPENDS=	liblo.so:audio/liblo
 
 USES=		pkgconfig perl5
 USE_PERL5=	modbuild

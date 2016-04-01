@@ -10,8 +10,8 @@ DISTNAME=	mapcatcher_${PORTVERSION}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Offline map viewer
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/g}
 USES=		python

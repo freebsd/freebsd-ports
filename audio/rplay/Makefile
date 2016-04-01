@@ -13,7 +13,7 @@ COMMENT=	Network audio player
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	libgsm.so:audio/gsm
 
 USES=		makeinfo
 USE_LDCONFIG=	yes

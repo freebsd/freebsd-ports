@@ -27,9 +27,9 @@ INSTALLS_ICONS=	yes
 PORTDATA=	*
 MAKE_ENV=	INSTALL_ROOT="${STAGEDIR}"
 
-BUILD_DEPENDS+=	boost-libs>1.52:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS+=	boost-libs>1.52:devel/boost-libs
 
-RUN_DEPENDS+=	py${PYTHON_SUFFIX}-sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS+=	py${PYTHON_SUFFIX}-sqlite3>0:databases/py-sqlite3
 
 .include <bsd.port.pre.mk>
 

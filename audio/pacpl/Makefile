@@ -12,12 +12,12 @@ COMMENT=	Perl Audio Converter
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	p5-Audio-FLAC-Header>0:${PORTSDIR}/audio/p5-Audio-FLAC-Header \
-		p5-Audio-Scan>0:${PORTSDIR}/audio/p5-Audio-Scan \
-		p5-CDDB_get>0:${PORTSDIR}/audio/p5-CDDB_get \
-		p5-MP3-Tag>0:${PORTSDIR}/audio/p5-MP3-Tag \
-		p5-Parallel-ForkManager>0:${PORTSDIR}/devel/p5-Parallel-ForkManager \
-		p5-Switch>0:${PORTSDIR}/lang/p5-Switch
+RUN_DEPENDS=	p5-Audio-FLAC-Header>0:audio/p5-Audio-FLAC-Header \
+		p5-Audio-Scan>0:audio/p5-Audio-Scan \
+		p5-CDDB_get>0:audio/p5-CDDB_get \
+		p5-MP3-Tag>0:audio/p5-MP3-Tag \
+		p5-Parallel-ForkManager>0:devel/p5-Parallel-ForkManager \
+		p5-Switch>0:lang/p5-Switch
 
 NO_ARCH=	yes
 
@@ -31,32 +31,32 @@ OPTIONS_DEFINE=		APE CDPARANOIA DOCS FAAC FAAD FFMPEG KDE4 \
 OPTIONS_DEFAULT=	CDPARANOIA FAAC FAAD FFMPEG LAME VORBIS
 OPTIONS_SUB=		yes
 
-APE_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
-CDPARANOIA_RUN_DEPENDS=	cdparanoia:${PORTSDIR}/audio/cdparanoia
-FAAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac
-FAAD_RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad
-FFMPEG_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+APE_RUN_DEPENDS=	mac:audio/mac
+CDPARANOIA_RUN_DEPENDS=	cdparanoia:audio/cdparanoia
+FAAC_RUN_DEPENDS=	faac:audio/faac
+FAAD_RUN_DEPENDS=	faad:audio/faad
+FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 KDE4_DESC=		Konqueror/Dolphin integration
-LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
+LAME_RUN_DEPENDS=	lame:audio/lame
 LAUDIO_DESC=		Laudio support
-LAUDIO_RUN_DEPENDS=	laudio:${PORTSDIR}/audio/linux-laudio
-MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
-MUSEPACK_RUN_DEPENDS=	mpcenc:${PORTSDIR}/audio/musepack
+LAUDIO_RUN_DEPENDS=	laudio:audio/linux-laudio
+MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
+MUSEPACK_RUN_DEPENDS=	mpcenc:audio/musepack
 OPTIMFROG_DESC=		OptimFROG lossless audio support
-OPTIMFROG_RUN_DEPENDS=	ofr:${PORTSDIR}/audio/optimfrog
+OPTIMFROG_RUN_DEPENDS=	ofr:audio/optimfrog
 OPUS_DESC=		Ogg Opus audio codec support
-OPUS_RUN_DEPENDS=	opusenc:${PORTSDIR}/audio/opus-tools
-SNDFILE_RUN_DEPENDS=	sndfile-convert:${PORTSDIR}/audio/libsndfile
-VORBIS_RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
+OPUS_RUN_DEPENDS=	opusenc:audio/opus-tools
+SNDFILE_RUN_DEPENDS=	sndfile-convert:audio/libsndfile
+VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
 SHORTEN_DESC=		Shorten audio support
-SHORTEN_RUN_DEPENDS=	shorten:${PORTSDIR}/audio/shorten
+SHORTEN_RUN_DEPENDS=	shorten:audio/shorten
 SOX_DESC=		Audio conversion support via SoX
-SOX_RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
-SPEEX_RUN_DEPENDS=	speexenc:${PORTSDIR}/audio/speex
-TOOLAME_RUN_DEPENDS+=	toolame:${PORTSDIR}/audio/toolame
-TTA_RUN_DEPENDS=	ttaenc:${PORTSDIR}/audio/tta
-VORBIS_RUN_DEPENDS=	vorbiscomment:${PORTSDIR}/audio/vorbis-tools
-WAVPACK_RUN_DEPENDS=	wavpack:${PORTSDIR}/audio/wavpack
+SOX_RUN_DEPENDS=	sox:audio/sox
+SPEEX_RUN_DEPENDS=	speexenc:audio/speex
+TOOLAME_RUN_DEPENDS+=	toolame:audio/toolame
+TTA_RUN_DEPENDS=	ttaenc:audio/tta
+VORBIS_RUN_DEPENDS=	vorbiscomment:audio/vorbis-tools
+WAVPACK_RUN_DEPENDS=	wavpack:audio/wavpack
 
 post-patch:
 	@${REINPLACE_CMD} -e \

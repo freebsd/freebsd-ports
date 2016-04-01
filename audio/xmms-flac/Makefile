@@ -9,9 +9,9 @@ DISTNAME=	flac-${PORTVERSION}
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin for playing FLAC files
 
-LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libxmms.so:multimedia/xmms \
+		libFLAC.so:audio/flac \
+		libogg.so:audio/libogg
 
 USES=		iconv libtool tar:xz
 GNU_CONFIGURE=	yes

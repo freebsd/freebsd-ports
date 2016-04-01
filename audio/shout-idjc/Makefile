@@ -13,10 +13,10 @@ COMMENT=	Shoutcast/Icecast Library for audio/idjc
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libspeex.so:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
+		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg \
+		libspeex.so:audio/speex
 
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig

@@ -12,7 +12,7 @@ COMMENT=	Amateur Radio soundcard fsk, pactor 1, amtor, gtor, mt63
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	whiptail:${PORTSDIR}/devel/newt
+RUN_DEPENDS=	whiptail:devel/newt
 
 USE_GNOME=	gtk12
 USES=		gmake

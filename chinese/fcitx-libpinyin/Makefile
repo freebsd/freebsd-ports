@@ -16,8 +16,8 @@ COMMENT=	Libpinyin support for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
-		libpinyin.so:${PORTSDIR}/chinese/libpinyin
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
+		libpinyin.so:chinese/libpinyin
 
 USES=		tar:xz cmake gettext pkgconfig
 INSTALLS_ICONS=	yes

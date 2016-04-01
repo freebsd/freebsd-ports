@@ -14,8 +14,8 @@ COMMENT=	Schematic and PCB editing software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+RUN_DEPENDS=	xpdf:graphics/xpdf
 
 CONFLICTS=	kicad-devel*
 
@@ -26,8 +26,8 @@ USE_GCC=	4.7
 #USES+=		compiler:gcc-c++11-lib
 LDFLAGS+=	-L${LOCALBASE}/lib/c++
 CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 DOS2UNIX_GLOB=	*.cmake sch_bus_entry.h sch_line.h sch_no_connect.h
 USE_XORG=	ice x11 xext

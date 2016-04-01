@@ -12,7 +12,7 @@ COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	yaggo:${PORTSDIR}/devel/yaggo
+BUILD_DEPENDS=	yaggo:devel/yaggo
 
 GNU_CONFIGURE=	yes
 

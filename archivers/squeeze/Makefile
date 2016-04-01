@@ -13,7 +13,7 @@ COMMENT=	Squeeze is a modern and advanced archive manager
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libthunar-vfs-1.so:${PORTSDIR}/x11-fm/thunar-vfs
+LIB_DEPENDS=	libthunar-vfs-1.so:x11-fm/thunar-vfs
 
 SSP_UNSAFE=	yes
 GNU_CONFIGURE=	yes

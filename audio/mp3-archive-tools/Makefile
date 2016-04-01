@@ -14,8 +14,8 @@ COMMENT=	Set of tools to ease organising a collection of audio files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl \
-		p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag
+BUILD_DEPENDS=	libmp3-archive-perl>=0:audio/libmp3-archive-perl \
+		p5-MP3-Tag>=0:audio/p5-MP3-Tag
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

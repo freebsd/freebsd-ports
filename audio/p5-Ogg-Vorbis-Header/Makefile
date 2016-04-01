@@ -14,10 +14,10 @@ COMMENT=	Manipulate / fetch info from Ogg-Vorbis audio files
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
-		p5-Inline-C>=0:${PORTSDIR}/devel/p5-Inline-C
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+BUILD_DEPENDS=	p5-Inline>=0:devel/p5-Inline \
+		p5-Inline-C>=0:devel/p5-Inline-C
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes

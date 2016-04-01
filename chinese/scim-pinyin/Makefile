@@ -10,7 +10,7 @@ MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM Chinese Smart Pinyin input method
 
-BUILD_DEPENDS=	scim>=1.2.0:${PORTSDIR}/textproc/scim
+BUILD_DEPENDS=	scim>=1.2.0:textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2

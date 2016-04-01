@@ -11,8 +11,8 @@ COMMENT=	Daemon for multiplexing connections over USB to iPhone/iPod Touch
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
-		libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice
+LIB_DEPENDS=	libplist.so:devel/libplist \
+		libimobiledevice.so:comms/libimobiledevice
 
 USES=		autoreconf cpe libtool pathfix pkgconfig tar:bzip2
 CPE_VENDOR=	nikias_bassen

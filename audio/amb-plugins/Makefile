@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ambisonics plugins, mainly to be used within Ardour
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2 GPLv3

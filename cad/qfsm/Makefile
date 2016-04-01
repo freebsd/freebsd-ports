@@ -20,8 +20,8 @@ USE_QT4=	corelib gui qt3support svg xml \
 USES=		tar:bzip2 cmake desktop-file-utils
 INSTALLS_ICONS=	yes
 
-GRAPHVIZ_BUILD_DEPENDS=	graphviz>=2.22:${PORTSDIR}/graphics/graphviz
-GRAPHVIZ_RUN_DEPENDS=	graphviz>=2.22:${PORTSDIR}/graphics/graphviz
+GRAPHVIZ_BUILD_DEPENDS=	graphviz>=2.22:graphics/graphviz
+GRAPHVIZ_RUN_DEPENDS=	graphviz>=2.22:graphics/graphviz
 GRAPHVIZ_CMAKE_OFF=	-DQFSM_AVOID_GRAPHVIZ:BOOL=ON
 
 pre-configure:

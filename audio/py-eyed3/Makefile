@@ -14,7 +14,7 @@ COMMENT=	Python module for processing ID3 tags
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}magic>0:${PORTSDIR}/devel/py-magic
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}magic>0:devel/py-magic
 
 NO_ARCH=	yes
 USES=		python

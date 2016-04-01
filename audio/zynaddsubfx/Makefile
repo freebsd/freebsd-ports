@@ -13,8 +13,8 @@ COMMENT=	Realtime software synthesizer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libmxml.so:${PORTSDIR}/textproc/mxml
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libmxml.so:textproc/mxml
 
 USES=		tar:bzip2 cmake pkgconfig
 
@@ -28,29 +28,29 @@ ALSAMIDI_DESC=	MIDI input through ALSA
 DSSI_DESC=	DSSI Plugin
 LO_DESC=	Open Sound Control support via LibLO
 
-ALSAMIDI_LIB_DEPENDS=		libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSAMIDI_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSAMIDI_CMAKE_OFF=		-DAlsaEnable:BOOL=OFF
 
-DSSI_LIB_DEPENDS=		libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat
-DSSI_BUILD_DEPENDS=		dssi>0:${PORTSDIR}/audio/dssi
-DSSI_RUN_DEPENDS=		dssi>0:${PORTSDIR}/audio/dssi
+DSSI_LIB_DEPENDS=		libdssialsacompat.so:audio/libdssialsacompat
+DSSI_BUILD_DEPENDS=		dssi>0:audio/dssi
+DSSI_RUN_DEPENDS=		dssi>0:audio/dssi
 DSSI_CFLAGS=			-I${LOCALBASE}/include/dssi
 DSSI_CMAKE_OFF=			-DDssiEnable:BOOL=OFF
 
-GUI_LIB_DEPENDS=		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+GUI_LIB_DEPENDS=		libfltk.so:x11-toolkits/fltk
 GUI_ON=				-DGuiModule:STRING=fltk
 GUI_CMAKE_OFF=			-DGuiModule:STRING=OFF
 
-LO_LIB_DEPENDS=			liblo.so:${PORTSDIR}/audio/liblo
+LO_LIB_DEPENDS=			liblo.so:audio/liblo
 LO_CMAKE_OFF=			-DLibloEnable:BOOL=OFF
 
-LASH_LIB_DEPENDS=		liblash.so:${PORTSDIR}/audio/lash
+LASH_LIB_DEPENDS=		liblash.so:audio/lash
 LASH_CMAKE_OFF=			-DLashEnabe:BOOL=OFF
 
-JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=		libjack.so:audio/jack
 JACK_CMAKE_OFF=			-DJackEnable:BOOL=OFF
 
-PORTAUDIO_LIB_DEPENDS=		libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=		libportaudio.so:audio/portaudio
 PORTAUDIO_CMAKE_OFF=		-DPaEnabe:BOOL=OFF
 PORTAUDIO_LDFLAGS=		-lportaudio
 

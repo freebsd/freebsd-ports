@@ -10,13 +10,13 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Learning console-based MP3/OGG player
 
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libfftw.so:${PORTSDIR}/math/fftw \
-		libid3.so:${PORTSDIR}/audio/id3lib \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libao.so:${PORTSDIR}/audio/libao
-RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
+LIB_DEPENDS+=	libFLAC.so:audio/flac \
+		libfftw.so:math/fftw \
+		libid3.so:audio/id3lib \
+		libmad.so:audio/libmad \
+		libvorbis.so:audio/libvorbis \
+		libao.so:audio/libao
+RUN_DEPENDS=	id3v2:audio/id3v2
 
 USES=		tar:bzip2 gmake
 USE_RUBY=	yes

@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/dist/src/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS plugin to allow playing shorten-compressed audio
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	xmms-config:multimedia/xmms
+RUN_DEPENDS=	xmms:multimedia/xmms
 
 USES=		libtool
 USE_GNOME=	gtk12

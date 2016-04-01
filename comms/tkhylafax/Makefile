@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/tk interface to Sam Leffler's fax package
 
-RUN_DEPENDS=	sendfax:${PORTSDIR}/comms/hylafax \
-		gv:${PORTSDIR}/print/gv
+RUN_DEPENDS=	sendfax:comms/hylafax \
+		gv:print/gv
 
 USES=		tk:run
 

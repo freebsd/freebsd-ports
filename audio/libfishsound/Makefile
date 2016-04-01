@@ -14,9 +14,9 @@ COMMENT=	Programing interface to decode/encode audio data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libspeex.so:audio/speex \
+		libvorbis.so:audio/libvorbis
 
 OPTIONS_DEFINE=	DOCS DOXYGEN
 
@@ -27,7 +27,7 @@ USES=		libtool pathfix pkgconfig
 
 PORTDOCS=	*
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_IMPLIES=	DOCS
 
 post-patch-DOCS-off:

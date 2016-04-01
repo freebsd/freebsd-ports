@@ -12,14 +12,14 @@ COMMENT=	Command line Pandora player
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
-		libfaad.so:${PORTSDIR}/audio/faad \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libjson-c.so:${PORTSDIR}/devel/json-c \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libao.so:audio/libao \
+		libfaad.so:audio/faad \
+		libmad.so:audio/libmad \
+		libgnutls.so:security/gnutls \
+		libjson-c.so:devel/json-c \
+		libgcrypt.so:security/libgcrypt \
+		libavcodec.so:multimedia/ffmpeg \
+		libcurl.so:ftp/curl
 
 PLIST_FILES=	bin/pianobar \
 		man/man1/pianobar.1.gz

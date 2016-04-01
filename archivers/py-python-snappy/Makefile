@@ -12,7 +12,7 @@ COMMENT=	Python library for the snappy compression library from Google
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS=	libsnappy.so:archivers/snappy
 
 USES=		python
 USE_PYTHON=	distutils autoplist

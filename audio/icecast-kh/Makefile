@@ -13,11 +13,11 @@ COMMENT=	Streaming mp3/ogg-vorbis audio server, KH branch
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libxslt.so:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libtheora.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis \
+		libxml2.so:textproc/libxml2 \
+		libxslt.so:textproc/libxslt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	karlheyes
@@ -46,20 +46,20 @@ CONFLICTS_INSTALL=	icecast-[0-9]* icecast2-[0-9]*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}
-BUILD_DEPENDS+=	curl>=7.10:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS+=	curl>=7.10:ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif
 
 .if ${PORT_OPTIONS:MKATE}
-LIB_DEPENDS+=	libkate.so:${PORTSDIR}/multimedia/libkate
+LIB_DEPENDS+=	libkate.so:multimedia/libkate
 .else
 CONFIGURE_ARGS+=	--without-kate
 .endif
 
 .if ${PORT_OPTIONS:MSPEEX}
-BUILD_DEPENDS+=	speex>=1:${PORTSDIR}/audio/speex
+BUILD_DEPENDS+=	speex>=1:audio/speex
 CONFIGURE_ARGS+=	--with-speex=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-speex

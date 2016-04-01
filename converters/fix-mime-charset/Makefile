@@ -12,7 +12,7 @@ COMMENT=	Fix incorrect Content-Type MIME headers of e-mail messages
 
 OPTIONS_DEFINE=	DOCS
 
-LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca
+LIB_DEPENDS=	libenca.so:converters/enca
 
 PORTDOCS=	README.koi8r README
 

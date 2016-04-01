@@ -13,13 +13,13 @@ COMMENT=	Find similar music by perceptual hashing
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libfftw3.so:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
-		mpg123:${PORTSDIR}/audio/mpg123 \
-		ogg123:${PORTSDIR}/audio/vorbis-tools \
-		p5-GDBM>=0:${PORTSDIR}/databases/p5-GDBM \
-		spline:${PORTSDIR}/graphics/plotutils
+LIB_DEPENDS=	libgdbm.so:databases/gdbm \
+		libfftw3.so:math/fftw3
+RUN_DEPENDS=	mplayer:multimedia/mplayer \
+		mpg123:audio/mpg123 \
+		ogg123:audio/vorbis-tools \
+		p5-GDBM>=0:databases/p5-GDBM \
+		spline:graphics/plotutils
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${SCRS}

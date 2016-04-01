@@ -20,12 +20,12 @@ COMMENT=	Streaming mp3/ogg-vorbis audio server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libshout.so:${PORTSDIR}/audio/libshout \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libxslt.so:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libshout.so:audio/libshout \
+		libspeex.so:audio/speex \
+		libtheora.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis \
+		libxslt.so:textproc/libxslt
 
 OPTIONS_DEFINE=	DOCS
 

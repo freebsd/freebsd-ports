@@ -13,9 +13,9 @@ COMMENT=	3D triangular meshes processing and editing tool
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=gtar:${PORTSDIR}/archivers/gtar
-LIB_DEPENDS=	libQtSolutions_SOAP-head.so:${PORTSDIR}/devel/qt4-qtsolutions-soap	\
-		libmpir.so:${PORTSDIR}/math/mpir
+EXTRACT_DEPENDS=gtar:archivers/gtar
+LIB_DEPENDS=	libQtSolutions_SOAP-head.so:devel/qt4-qtsolutions-soap	\
+		libmpir.so:math/mpir
 
 USES=		dos2unix qmake compiler:c++11-lib tar:tgz
 USE_CXXSTD=	c++11

@@ -12,10 +12,10 @@ COMMENT=	Tellstick Telldus daemon + library
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
-LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi \
-		libconfuse.so:${PORTSDIR}/devel/libconfuse \
-		libargp.so:${PORTSDIR}/devel/argp-standalone
+BUILD_DEPENDS=	help2man:misc/help2man
+LIB_DEPENDS=	libftdi.so:devel/libftdi \
+		libconfuse.so:devel/libconfuse \
+		libargp.so:devel/argp-standalone
 
 USES= 		cmake compiler:c++11-lang iconv:wchar_t
 

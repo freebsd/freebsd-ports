@@ -12,13 +12,13 @@ COMMENT=	API for audio processing plugins
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
-		liblo.so:${PORTSDIR}/audio/liblo \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libjack.so:${PORTSDIR}/audio/jack
-RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
+		liblo.so:audio/liblo \
+		libsamplerate.so:audio/libsamplerate \
+		libsndfile.so:audio/libsndfile \
+		libjack.so:audio/jack
+RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
 USES=		gmake pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes

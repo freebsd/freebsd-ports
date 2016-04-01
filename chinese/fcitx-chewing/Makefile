@@ -12,8 +12,8 @@ COMMENT=	Chewing support for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
-		libchewing.so:${PORTSDIR}/chinese/libchewing
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
+		libchewing.so:chinese/libchewing
 
 USES=		tar:xz cmake gettext pkgconfig
 INSTALLS_ICONS=	yes

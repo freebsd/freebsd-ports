@@ -12,7 +12,7 @@ COMMENT=	Amateur Radio cw (Morse code) keyer daemon
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcw.so:${PORTSDIR}/comms/unixcw
+LIB_DEPENDS=	libcw.so:comms/unixcw
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
 
 GNU_CONFIGURE=	yes

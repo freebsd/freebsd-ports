@@ -12,7 +12,7 @@ COMMENT=	GTK mixer for PulseAudio
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig gettext tar:xz
@@ -26,11 +26,11 @@ OPTIONS_DEFAULT=	GTK2
 CONFIGURE_ARGS=	--disable-lynx
 
 GTK2_USE=	GNOME=gtkmm24
-GTK2_LIB_DEPENDS=	libcanberra.so:${PORTSDIR}/audio/libcanberra
+GTK2_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 GTK2_CONFIGURE_ON=	--disable-gtk3
 
 GTK3_USE=	GNOME=gtkmm30
-GTK3_LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+GTK3_LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3
 
 post-patch:
 # Install locales files in right place

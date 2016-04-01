@@ -11,7 +11,7 @@ DISTNAME=	LayoutEditor-${PORTVERSION:S,^0.0.,,}-gpl-src
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IC/MEMS layout editor
 
-LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	libttf.so:print/freetype
 
 USES=		qmake zip
 USE_QT4=	corelib gui network moc_build sql uic_build \

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
 
-LIB_DEPENDS=	libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
+LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
 
 RESTRICTED=	Distribution in binary form is prohibited
 

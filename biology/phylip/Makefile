@@ -13,7 +13,7 @@ COMMENT=	Phylogeny Inference Package
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/src/COPYRIGHT
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src

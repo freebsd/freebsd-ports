@@ -39,7 +39,7 @@ DOXYGEN_DESC=	Install API documentation (requires DOCS)
 
 OPTIONS_SUB=	yes
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ON=	--with-jack
 JACK_CONFIGURE_OFF=	--without-jack
 
@@ -47,7 +47,7 @@ EXAMPLES_BIN=	pa_d* pa_f* paex_*
 PATEST_BIN=	pa_m* paqa_* patest*
 
 DOXYGEN_IMPLIES=	DOCS
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/configure.in \

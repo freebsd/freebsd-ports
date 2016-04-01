@@ -12,10 +12,10 @@ COMMENT=	Ventrilo VOIP compatible client
 
 BROKEN=		unfetchable
 
-LIB_DEPENDS=	libcelt0.so:${PORTSDIR}/audio/celt \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgsm.so:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	libcelt0.so:audio/celt \
+		libspeex.so:audio/speex \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libgsm.so:audio/gsm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-alsa
@@ -28,6 +28,6 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	PULSEAUDIO
 PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 .include <bsd.port.mk>

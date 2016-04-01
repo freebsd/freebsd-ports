@@ -10,15 +10,15 @@ MASTER_SITES=	SF/${PORTNAME}/BRL-CAD%20Source/${PORTVERSION}
 MAINTAINER=	erik@brlcad.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 
-BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:${PORTSDIR}/math/jama	\
-		xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libpng.so:${PORTSDIR}/graphics/png \
-		librle.so:${PORTSDIR}/graphics/urt \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:math/jama	\
+		xsltproc:textproc/libxslt
+LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
+		libdrm.so:graphics/libdrm \
+		libpng.so:graphics/png \
+		librle.so:graphics/urt \
+		libfreetype.so:print/freetype2 \
+		libexpat.so:textproc/expat2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USE_GL=		gl glu
 USE_XORG=	ice inputproto sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \

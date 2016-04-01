@@ -13,7 +13,7 @@ COMMENT=	Perl interface to Starlink PAL positional astronomy library
 
 LICENSE=	GPLv3
 
-TEST_DEPENDS=	p5-Test-Number-Delta>=1:${PORTSDIR}/devel/p5-Test-Number-Delta
+TEST_DEPENDS=	p5-Test-Number-Delta>=1:devel/p5-Test-Number-Delta
 
 USE_PERL5=	modbuild
 USES=		perl5

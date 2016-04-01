@@ -13,7 +13,7 @@ COMMENT=	Extract valid data from within an Open Street Map input file
 LICENSE=	MPL LGPL21 GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}e
 GNU_CONFIGURE=	yes

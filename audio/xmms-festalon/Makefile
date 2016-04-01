@@ -7,8 +7,8 @@ COMMENT=	XMMS plugin for playing .nsf and .hes audio files
 
 MASTERDIR=	${.CURDIR}/../festalon
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	xmms:multimedia/xmms
+RUN_DEPENDS=	xmms:multimedia/xmms
 
 USE_GNOME=	glib12
 CONFIGURE_ARGS+=	--enable-interface=interface

@@ -12,9 +12,9 @@ COMMENT=	Library for direct access to iPod contents
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
-		libtag.so:${PORTSDIR}/audio/taglib \
-		libsgutils2.so:${PORTSDIR}/sysutils/sg3_utils
+LIB_DEPENDS=	libplist.so:devel/libplist \
+		libtag.so:audio/taglib \
+		libsgutils2.so:sysutils/sg3_utils
 
 USES=		gettext gmake libtool localbase pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
@@ -32,7 +32,7 @@ OPTIONS_SUB=	yes
 
 IMOBILE_DESC=	Apple iPhone/iPod Touch support
 
-IMOBILE_LIB_DEPENDS=	libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice
+IMOBILE_LIB_DEPENDS=	libimobiledevice.so:comms/libimobiledevice
 IMOBILE_CONFIGURE_ENV=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 IMOBILE_CONFIGURE_WITH=	libimobiledevice
 
@@ -42,9 +42,9 @@ MONO_CONFIGURE_WITH=	mono
 CONFIGURE_ARGS+=	--without-mono
 PLIST_SUB+=		MONO="@comment "
 
-PYTHON_BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20 \
-			${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
-PYTHON_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
+PYTHON_BUILD_DEPENDS=	swig2.0:devel/swig20 \
+			${PYTHON_SITELIBDIR}/mutagen/__init__.py:audio/py-mutagen
+PYTHON_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:audio/py-mutagen
 PYTHON_USE=		GNOME=pygobject
 PYTHON_USES=		python
 PYTHON_CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig2.0"

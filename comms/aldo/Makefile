@@ -10,7 +10,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	lambert@lambertfam.org
 COMMENT=	Morse code training program
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libao.so:audio/libao
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

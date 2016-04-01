@@ -14,7 +14,7 @@ COMMENT=	GPS file translating tool (pre-qt version)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes

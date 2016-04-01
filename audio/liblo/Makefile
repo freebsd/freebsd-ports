@@ -24,7 +24,7 @@ PORTEXAMPLES=	example_client example_server \
 OPTIONS_DEFINE=	DOXYGEN DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 .include <bsd.port.options.mk>
 

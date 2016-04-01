@@ -11,7 +11,7 @@ COMMENT=	MusicBrainz client library for audio metadata lookup
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
+LIB_DEPENDS=	libneon.so:www/neon
 
 USES=		cmake iconv:build pathfix
 USE_GNOME=	libxml2

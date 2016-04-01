@@ -10,7 +10,7 @@ MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 
-LIB_DEPENDS=	libsphinxbase.so:${PORTSDIR}/audio/sphinxbase
+LIB_DEPENDS=	libsphinxbase.so:audio/sphinxbase
 
 USES=		gmake pathfix libtool
 GNU_CONFIGURE=	yes

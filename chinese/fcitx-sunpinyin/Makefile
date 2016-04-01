@@ -12,8 +12,8 @@ COMMENT=	SunPinyin support for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
-		libsunpinyin.so:${PORTSDIR}/chinese/sunpinyin
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
+		libsunpinyin.so:chinese/sunpinyin
 
 USES=		cmake gettext pkgconfig tar:xz
 INSTALLS_ICONS=	yes

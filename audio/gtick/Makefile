@@ -11,8 +11,8 @@ COMMENT=	Metronome application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
+		libpulse-simple.so:audio/pulseaudio
 
 USES=		pkgconfig desktop-file-utils
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ DIST_SUBDIR=	squeezeboxserver
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Squeezebox Server plugin for performing lazy searches
 
-RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
+RUN_DEPENDS=	softsqueeze:audio/squeezeboxserver
 
 USES=		zip
 NO_WRKSUBDIR=	yes

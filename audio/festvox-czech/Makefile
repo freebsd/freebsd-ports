@@ -11,7 +11,7 @@ DIST_SUBDIR=	festival
 MAINTAINER=	valtri@civ.zcu.cz
 COMMENT=	Czech male voice for Festival
 
-RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/dicts/czech-lexicon.out:${PORTSDIR}/audio/festlex-czech
+RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/dicts/czech-lexicon.out:audio/festlex-czech
 
 NO_BUILD=	yes
 USES=		gmake

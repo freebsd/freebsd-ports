@@ -12,8 +12,8 @@ COMMENT=	MPD AudioScrobbler written in C++ supporting the latest protocol
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libmpdclient.so:${PORTSDIR}/audio/libmpdclient
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libmpdclient.so:audio/libmpdclient
 
 USES=		pkgconfig
 

@@ -12,7 +12,7 @@ COMMENT=	Simple, programmable, intelligent CD player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
+LIB_DEPENDS=	libcdaudio.so:audio/libcdaudio
 
 USES=		gmake
 

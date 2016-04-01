@@ -11,7 +11,7 @@ COMMENT=	Multi-track non-linear audio editing
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg
 
 USES=	desktop-file-utils python:2 shared-mime-info
 USE_PYTHON=	distutils
@@ -29,7 +29,7 @@ PULSE_DESC=	${PULSEAUDIO_DESC}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus
 .endif
 
 .if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MPROFILES} \
@@ -41,11 +41,11 @@ USE_GNOME+=	pygnome2
 .if empty(PORT_OPTIONS:MDBUS)
 IGNORE=		requires DBUS support
 . endif
-RUN_DEPENDS+=	pidgin:${PORTSDIR}/net-im/pidgin
+RUN_DEPENDS+=	pidgin:net-im/pidgin
 .endif
 
 .if ${PORT_OPTIONS:MOMF} || exists(${LOCALBASE}/bin/scrollkeeper-update)
-RUN_DEPENDS+=	scrollkeeper-update:${PORTSDIR}/textproc/scrollkeeper
+RUN_DEPENDS+=	scrollkeeper-update:textproc/scrollkeeper
 INSTALLS_OMF=	yes
 PLIST_SUB+=	OMF=""
 .else

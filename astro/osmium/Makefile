@@ -12,14 +12,14 @@ COMMENT=	C++/Javascript framework for working with OSM files
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
-		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libgeos.so:${PORTSDIR}/graphics/geos \
-		libprotobuf.so:${PORTSDIR}/devel/protobuf
-BUILD_DEPENDS=	google-sparsehash>=2.0.2:${PORTSDIR}/devel/google-sparsehash
-RUN_DEPENDS=	google-sparsehash>=2.0.2:${PORTSDIR}/devel/google-sparsehash
+LIB_DEPENDS=	libgdal.so:graphics/gdal \
+		libboost_regex.so:devel/boost-libs \
+		libsqlite3.so:databases/sqlite3 \
+		libexpat.so:textproc/expat2 \
+		libgeos.so:graphics/geos \
+		libprotobuf.so:devel/protobuf
+BUILD_DEPENDS=	google-sparsehash>=2.0.2:devel/google-sparsehash
+RUN_DEPENDS=	google-sparsehash>=2.0.2:devel/google-sparsehash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	joto
@@ -35,12 +35,12 @@ OPTIONS_DEFINE=	JAVASCRIPT DOXYGEN DOCS
 OPTIONS_DEFAULT=JAVASCRIPT
 JAVASCRIPT_DESC=Enable javascript support
 
-JAVASCRIPT_LIB_DEPENDS=	libv8.so:${PORTSDIR}/lang/v8 \
-			libshp.so:${PORTSDIR}/devel/shapelib \
-			libicuuc.so:${PORTSDIR}/devel/icu
+JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8 \
+			libshp.so:devel/shapelib \
+			libicuuc.so:devel/icu
 
 DOXYGEN_IMPLIES=	DOCS
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 do-build-DOXYGEN-on:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \

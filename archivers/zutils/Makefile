@@ -12,7 +12,7 @@ COMMENT=	Utilities for searching in bzip2, gzip, lzip, and xz archives
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=	lzip:${PORTSDIR}/archivers/lzip
+EXTRACT_DEPENDS=	lzip:archivers/lzip
 
 INFO=		zutils
 

@@ -13,7 +13,7 @@ COMMENT=	Python wrapper for chinese/cconv
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcconv.so:${PORTSDIR}/chinese/cconv
+LIB_DEPENDS=	libcconv.so:chinese/cconv
 
 USE_PYTHON=	autoplist concurrent distutils
 USES=		localbase python

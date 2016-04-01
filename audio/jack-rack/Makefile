@@ -10,10 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	LADSPA effects rack for the JACK audio server
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
-		liblrdf.so:${PORTSDIR}/textproc/liblrdf
-RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+LIB_DEPENDS=	libjack.so:audio/jack \
+		liblrdf.so:textproc/liblrdf
+RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
 USE_GNOME=	libgnomeui libxml2
 USES=		gettext shebangfix pkgconfig python tar:bzip2

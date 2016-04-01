@@ -13,14 +13,14 @@ COMMENT=	Multichannel digital audio workstation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo \
-		liblrdf.so:${PORTSDIR}/textproc/liblrdf \
-		libjack.so:${PORTSDIR}/audio/jack \
-		libaubio.so:${PORTSDIR}/audio/aubio \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
-		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26
+LIB_DEPENDS=	liblo.so:audio/liblo \
+		liblrdf.so:textproc/liblrdf \
+		libjack.so:audio/jack \
+		libaubio.so:audio/aubio \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libboost_date_time.so:devel/boost-libs \
+		libgnomecanvasmm-2.6.so:graphics/libgnomecanvasmm26
 
 USES=		cpe gettext scons pkgconfig tar:bzip2
 MAKE_ARGS+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
@@ -39,7 +39,7 @@ BROKEN_powerpc64=	Does not build
 
 .if ${PORT_OPTIONS:MVST}
 MAKE_ARGS+=	VST=yes
-LIB_DEPENDS+=	libwine.so:${PORTSDIR}/emulators/wine
+LIB_DEPENDS+=	libwine.so:emulators/wine
 PLIST_SUB+=	NO_VST="@comment "
 PLIST_SUB+=	VST=""
 .else

@@ -15,9 +15,9 @@ COMMENT=	Toolkit for statistical analysis of biological sequences
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${LOCALBASE}/bin/cython:${PORTSDIR}/lang/cython \
-		${LOCALBASE}/bin/sphinx-build:${PORTSDIR}/textproc/py-sphinx \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06
+		${LOCALBASE}/bin/cython:lang/cython \
+		${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:databases/py-sqlalchemy06
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

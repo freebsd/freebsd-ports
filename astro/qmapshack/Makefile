@@ -13,8 +13,8 @@ LICENSE=	GPLv3
 
 BROKEN=		unfetchable
 
-LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
-		libroutino.so:${PORTSDIR}/astro/routino
+LIB_DEPENDS=	libgdal.so:graphics/gdal \
+		libroutino.so:astro/routino
 
 USES=		cmake desktop-file-utils
 USE_QT5=	buildtools linguisttools qmake script sql webkit widgets xml

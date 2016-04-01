@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 USES=		motif pkgconfig
 
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-L${LOCALBASE}/lib -I${PREFIX}/include

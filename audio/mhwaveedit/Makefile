@@ -45,21 +45,21 @@ DOUBLE_SAMPLES_DESC=	Increase quality for 24/32-bit samplerates
 DOUBLE_SAMPLES_CONFIGURE_WITH=	double-samples
 ESOUND_USE=		gnome=esound
 ESOUND_CONFIGURE_WITH=	esound
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_WITH=	jack
-LADSPA_BUILD_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
-LADSPA_RUN_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
+LADSPA_BUILD_DEPENDS=	ladspa>0:audio/ladspa
+LADSPA_RUN_DEPENDS=	ladspa>0:audio/ladspa
 LADSPA_CONFIGURE_ENV_OFF=	ac_cv_header_ladspa_h=no
 OSS_CONFIGURE_WITH=	oss
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_CONFIGURE_WITH=	portaudio
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=	pulse
-SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_WITH=	libsamplerate
 SDL_USE=		sdl=sdl
 SDL_CONFIGURE_WITH=	sdl
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_WITH=	libsndfile
 
 post-patch:

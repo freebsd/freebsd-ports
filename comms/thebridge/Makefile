@@ -13,7 +13,7 @@ COMMENT=	Amateur Radio Echolink conference bridge
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake shebangfix tar:tgz
 GNU_CONFIGURE=	yes

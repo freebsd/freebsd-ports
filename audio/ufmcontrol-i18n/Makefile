@@ -10,7 +10,7 @@ MASTER_SITES=	SF/ufmcontrol-i18n/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	USB radio control utility
 
-RUN_DEPENDS=	snack>=2.2.10_4:${PORTSDIR}/audio/snack
+RUN_DEPENDS=	snack>=2.2.10_4:audio/snack
 
 USES=		libedit tk:wrapper,run
 USE_LDCONFIG=	yes

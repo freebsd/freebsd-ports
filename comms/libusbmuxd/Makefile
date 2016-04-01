@@ -11,7 +11,7 @@ COMMENT=	Communication interface library for usbmuxd
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist
+LIB_DEPENDS=	libplist.so:devel/libplist
 
 CONFLICTS_INSTALL=usbmuxd-1.0.[6-8]
 
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS INOTIFY
 
 INOTIFY_DESC=	Use inotify instead of polling (saves energy)
 
-INOTIFY_LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
+INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 # *_CONFIGURE_WITH can't be used as --with-inotify doesn't work.
 INOTIFY_CONFIGURE_OFF=	--without-inotify
 INOTIFY_CFLAGS=		-I${LOCALBASE}/include

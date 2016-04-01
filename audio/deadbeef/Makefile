@@ -71,13 +71,13 @@ GUI_IMPLIES=		CONVERTER
 OPTIONS_GROUP+=		MP3
 OPTIONS_GROUP_MP3=	MAD MPG123
 
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CONFIGURE_OFF=	--disable-libmad
 
-MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 MPG123_CONFIGURE_OFF=	--disable-libmpg123
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
 GTK2_USE=		gnome=gtk20,glib20
@@ -95,16 +95,16 @@ GTK3_IMPLIES=		GUI
 PLIST_SUB+=		GTK_VER=${GTK_VER}
 
 GUI_CONFIGURE_OFF=	--disable-gtk2 --disable-gtk3
-GUI_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
+GUI_LIB_DEPENDS=	libjansson.so:devel/jansson
 
-VFS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+VFS_LIB_DEPENDS=	libcurl.so:ftp/curl
 VFS_CONFIGURE_OFF=	--disable-vfs-curl
 
-LASTFM_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LASTFM_LIB_DEPENDS=	libcurl.so:ftp/curl
 LASTFM_CONFIGURE_OFF=	--disable-lfm
 
-ART_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-			libImlib2.so:${PORTSDIR}/graphics/imlib2
+ART_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			libImlib2.so:graphics/imlib2
 ART_USES=		jpeg
 ART_CONFIGURE_OFF=	--disable-artwork --disable-artwork-imlib2
 ART_IMPLIES=		VFS
@@ -113,7 +113,7 @@ SUPEREQ_CONFIGURE_OFF=	--disable-supereq
 
 SID_CONFIGURE_OFF=	--disable-sid
 
-FFAP_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+FFAP_BUILD_DEPENDS=	yasm:devel/yasm
 FFAP_CONFIGURE_OFF=	--disable-ffap
 
 VTX_CONFIGURE_OFF=	--disable-vtx
@@ -122,44 +122,44 @@ ADPLUG_CONFIGURE_OFF=	--disable-adplug
 
 HOTKEYS_CONFIGURE_OFF=	--disable-hotkeys
 
-OGG_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+OGG_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 OGG_CONFIGURE_OFF=	--disable-vorbis
 
-FFMPEG_LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		libavformat0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0 \
+		libavformat0.so:multimedia/ffmpeg0 \
+		libavutil0.so:multimedia/ffmpeg0
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg
 
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CONFIGURE_OFF=	--disable-flac
 
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_OFF=	--disable-sndfile
 
-WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CONFIGURE_OFF=	--disable-wavpack
 
-CDDA_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
-			libcddb.so:${PORTSDIR}/audio/libcddb
+CDDA_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
+			libcddb.so:audio/libcddb
 CDDA_CONFIGURE_OFF=	--disable-cdda
 
 GME_CONFIGURE_OFF=	--disable-gme
 
 DUMB_CONFIGURE_OFF=	--disable-dumb
 
-NOTIFY_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+NOTIFY_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 NOTIFY_CONFIGURE_OFF=	--disable-notify
 
 MUSEPACK_CONFIGURE_OFF=	--disable-musepack
 
-WILDMIDI_RUN_DEPENDS=	${LOCALBASE}/share/freepats/crude.cfg:${PORTSDIR}/audio/freepats
+WILDMIDI_RUN_DEPENDS=	${LOCALBASE}/share/freepats/crude.cfg:audio/freepats
 WILDMIDI_CONFIGURE_OFF=	--disable-wildmidi
 
 TTA_CONFIGURE_OFF=	--disable-tta
 
 DCA_CONFIGURE_OFF=	--disable-dca
 
-AAC_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
+AAC_LIB_DEPENDS=	libfaad.so:audio/faad
 AAC_CONFIGURE_OFF=	--disable-aac
 
 MMS_CONFIGURE_OFF=	--disable-mms
@@ -177,14 +177,14 @@ M3U_CONFIGURE_OFF=	--disable-m3u
 
 SPF_CONFIGURE_OFF=	--disable-psf
 
-DSP_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+DSP_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 DSP_CONFIGURE_OFF=	--disable-src
 
 MONO2STEREO_CONFIGURE_OFF=	--disable-mono2stereo
 
 CONVERTER_CONFIGURE_OFF=	--disable-converter
 
-VFS_ZIP_LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip
+VFS_ZIP_LIB_DEPENDS=	libzip.so:archivers/libzip
 VFS_ZIP_CONFIGURE_OFF=	--disable-vfs-zip
 
 ALAC_CONFIGURE_OFF=		--disable-alac

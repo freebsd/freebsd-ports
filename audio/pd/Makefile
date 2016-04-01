@@ -15,8 +15,8 @@ LICENSE=	BSD3CLAUSE LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
-		dejavu>0:${PORTSDIR}/x11-fonts/dejavu
+RUN_DEPENDS=	xdg-open:devel/xdg-utils \
+		dejavu>0:x11-fonts/dejavu
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
@@ -37,9 +37,9 @@ DESKTOP_ENTRIES="Pd" "" "${PREFIX}/lib/pd/tcl/pd.ico" "pd" "" false
 OPTIONS_DEFINE=		ALSA DOCS JACK
 
 ALSA_CONFIGURE_ENABLE=	alsa
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 JACK_CONFIGURE_ENABLE=	jack
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
 post-patch:
 	${FIND} ${PATCH_WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \

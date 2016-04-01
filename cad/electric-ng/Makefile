@@ -17,7 +17,7 @@ COMMENT=	Sophisticated VLSI design system
 
 LICENSE=	GPLv3
 
-EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -45,16 +45,16 @@ DESKTOP_ENTRIES="Electric-NG" "${COMMENT}" "${PORTNAME}${PKGNAMESUFFIX}" \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBSH} || exists(${JAVALIBDIR}/bsh.jar)
-RUN_DEPENDS+=	${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh
+RUN_DEPENDS+=	${JAVALIBDIR}/bsh.jar:lang/bsh
 LIBFILES+=	${JAVALIBDIR}/bsh.jar
 .endif
 
 .if ${PORT_OPTIONS:M3D} || exists(${J3DLIB})
-RUN_DEPENDS+=	${J3DLIB}:${PORTSDIR}/java/java3d
+RUN_DEPENDS+=	${J3DLIB}:java/java3d
 .endif
 
 .if ${PORT_OPTIONS:MIRSIM}
-RUN_DEPENDS+=	${JAVALIBDIR}/jmf.jar:${PORTSDIR}/java/jmf
+RUN_DEPENDS+=	${JAVALIBDIR}/jmf.jar:java/jmf
 PLUGINS+=	electricSFS-${PORTVERSION}
 LIBFILES+=	${PREFIX}/libexec/${PORTNAME}${PKGNAMESUFFIX}/electricSFS-${PORTVERSION}.jar
 .endif

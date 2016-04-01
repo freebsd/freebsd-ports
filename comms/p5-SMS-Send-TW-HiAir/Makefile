@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	SMS::Send driver for http://hiair.hinet.net/
 
-BUILD_DEPENDS=	p5-SMS-Send>=0:${PORTSDIR}/comms/p5-SMS-Send \
-		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-Crypt-SSLeay>=0.51:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
+BUILD_DEPENDS=	p5-SMS-Send>=0:comms/p5-SMS-Send \
+		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \
+		p5-Crypt-SSLeay>=0.51:security/p5-Crypt-SSLeay \
+		p5-Text-Iconv>=0:converters/p5-Text-Iconv
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

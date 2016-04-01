@@ -14,10 +14,10 @@ COMMENT=	Astropulse for BOINC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
-		${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-v7:patch
-RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
-LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3 \
+		${NONEXISTENT}:astro/boinc-setiathome-v7:patch
+RUN_DEPENDS=	boinc_client:net/boinc-client
+LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool pkgconfig tar:xz
@@ -36,13 +36,13 @@ X11_DESC=	Build screensaver (requires net/boinc-client with X11)
 
 OPTIONS_SUB=	yes
 
-X11_BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
+X11_BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc_graphics2.a:net/boinc-client
 X11_USES=		jpeg
 X11_USE=		GL=gl,glu,glut \
 			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
 X11_CONFIGURE_ENABLE=	graphics
 
-X11_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
+X11_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boinc/std_fixes.h:net/boinc-client
 
 SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-v7 && ${MAKE} -V WRKSRC
 CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}" \

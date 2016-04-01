@@ -2,8 +2,8 @@
 
 # Shared by timidity++ interface ports
 
-BUILD_DEPENDS+=	libarc>0:${PORTSDIR}/archivers/libarc
-RUN_DEPENDS+=	timidity++>0:${PORTSDIR}/audio/timidity++
+BUILD_DEPENDS+=	libarc>0:archivers/libarc
+RUN_DEPENDS+=	timidity++>0:audio/timidity++
 
 SLAVEDIRS=	audio/timidity++-emacs audio/timidity++-gtk \
 		audio/timidity++-motif audio/timidity++-slang \
@@ -57,9 +57,9 @@ DESKTOP_ENTRIES="XmMidi" "" "" "${LINK}" "Motif;AudioVideo;Audio;Midi;" ""
 
 .if ${INTERFACE} == "slang"
 .if defined(JAPANESE)
-LIB_DEPENDS+=	libslang.so:${PORTSDIR}/japanese/libslang
+LIB_DEPENDS+=	libslang.so:japanese/libslang
 .else
-LIB_DEPENDS+=	libslang.so:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS+=	libslang.so:devel/libslang2
 .endif
 
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=\
 LINK=		tkmidi
 
 .if defined(JAPANESE)
-LIB_DEPENDS+=	libtk80jp.so:${PORTSDIR}/japanese/tk80
+LIB_DEPENDS+=	libtk80jp.so:japanese/tk80
 CONFIGURE_ARGS+=\
 		--with-tcl-includes=${LOCALBASE}/include/tcl8.0jp \
 		--with-tk-includes=${LOCALBASE}/include/tk8.0jp \
@@ -105,7 +105,7 @@ DESKTOP_ENTRIES="TkMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""
 .if ${INTERFACE} == "xaw"
 LINK=		xawmidi
 
-LIB_DEPENDS+=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	libXaw3d.so:x11-toolkits/Xaw3d
 
 USE_XORG=	x11 xext xmu xt sm ice xpm
 

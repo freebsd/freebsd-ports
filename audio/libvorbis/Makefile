@@ -10,7 +10,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Audio compression codec library
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:audio/libogg
 
 USES=		libtool pathfix tar:xz
 USE_LDCONFIG=	yes

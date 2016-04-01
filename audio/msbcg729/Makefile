@@ -12,8 +12,8 @@ COMMENT=	Software G729A codec plugin for Mediastreamer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/ortp \
-		libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer
+LIB_DEPENDS=	libortp.so:net/ortp \
+		libmediastreamer_base.so:net/mediastreamer
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --disable-strict

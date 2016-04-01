@@ -14,8 +14,8 @@ COMMENT=	Fast erasure codec for Python
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
-BUILD_DEPENDS=	darcsver:${PORTSDIR}/devel/py-darcsver \
-		unsort:${PORTSDIR}/devel/py-pyutil
+BUILD_DEPENDS=	darcsver:devel/py-darcsver \
+		unsort:devel/py-pyutil
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

@@ -10,9 +10,9 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draws all album covers
 
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
-RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
+LIB_DEPENDS=	libmpd.so:audio/libmpd
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:audio/gmpc
+RUN_DEPENDS=	gmpc:audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 intltool

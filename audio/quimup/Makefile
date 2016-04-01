@@ -12,8 +12,8 @@ COMMENT=	Qt4 client for MPD (the Music Player Daemon)
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
-		libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
+		libtag.so:audio/taglib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}\ ${PORTVERSION}
 

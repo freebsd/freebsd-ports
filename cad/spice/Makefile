@@ -24,7 +24,7 @@ COMMENT=	General-purpose circuit simulation program
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-EXTRACT_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAKEFILE=	${FILESDIR}/Makefile

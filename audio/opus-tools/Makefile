@@ -14,9 +14,9 @@ LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libopus.so:${PORTSDIR}/audio/opus
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libogg.so:audio/libogg \
+		libopus.so:audio/opus
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

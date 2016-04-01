@@ -13,9 +13,9 @@ COMMENT=	Audio plug-in pack for LV2 and JACK environments
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
-		libjack.so:${PORTSDIR}/audio/jack \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
+		libjack.so:audio/jack \
+		libexpat.so:textproc/expat2
 
 USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig
 USE_GNOME=	gtk20
@@ -30,11 +30,11 @@ OPTIONS_DEFINE=		DOCS LASH LV2
 OPTIONS_DEFAULT=	LASH LV2
 OPTIONS_SUB=		yes
 
-LASH_LIB_DEPENDS=	liblash.so:${PORTSDIR}/audio/lash
+LASH_LIB_DEPENDS=	liblash.so:audio/lash
 LASH_CONFIGURE_WITH=	lash
 LV2_DESC=		LV2 audio plugin
-LV2_BUILD_DEPENDS=	lv2core>0:${PORTSDIR}/audio/lv2core
-LV2_RUN_DEPENDS=	lv2core>0:${PORTSDIR}/audio/lv2core
+LV2_BUILD_DEPENDS=	lv2core>0:audio/lv2core
+LV2_RUN_DEPENDS=	lv2core>0:audio/lv2core
 LV2_CONFIGURE_WITH=	lv2
 
 .include <bsd.port.pre.mk>

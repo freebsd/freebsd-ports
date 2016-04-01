@@ -15,7 +15,7 @@ COMMENT=	The Gnome MFSK terminal program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	libfftw.so:math/fftw
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	HAMLIB
 HAMLIB_DESC=	Enable HAMLIB Support
 OPTIONS_DEFAULT=	HAMLIB
 
-HAMLIB_LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
+HAMLIB_LIB_DEPENDS=	libhamlib.so:comms/hamlib
 HAMLIB_CONFIGURE_ENABLE=	hamlib
 HAMLIB_CONFIGURE_ENV=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
 

@@ -12,8 +12,8 @@ COMMENT=	GUI for Apple iPod using GTK2
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
-		libgpod.so:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
+		libgpod.so:audio/libgpod
 
 USES=		gettext gmake pkgconfig shebangfix
 SHEBANG_FILES=	scripts/mab2vcard scripts/sync-evolution.sh \
@@ -33,13 +33,13 @@ OPTIONS_DEFAULT=	VORBIS FLAC CURL
 
 CURL_DESC=	Cover art download support via libcurl
 
-VORBIS_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 VORBIS_CONFIGURE_OFF=	--without-ogg
 
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CONFIGURE_OFF=	--without-flac
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_OFF=	--without-curl
 
 post-patch:

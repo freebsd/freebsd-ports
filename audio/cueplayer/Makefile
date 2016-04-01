@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	CUE player
 
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libnotify.so:devel/libnotify
 
 USES=		pkgconfig qmake
 USE_QT4=	gui xml uic_build moc_build rcc_build network

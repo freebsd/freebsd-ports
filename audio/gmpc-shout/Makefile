@@ -14,11 +14,11 @@ COMMENT=	Shoutcast stream for gmpc
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
-		libcairo.so:${PORTSDIR}/graphics/cairo
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
-RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc \
-		ogg123:${PORTSDIR}/audio/vorbis-tools
+LIB_DEPENDS=	libmpd.so:audio/libmpd \
+		libcairo.so:graphics/cairo
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:audio/gmpc
+RUN_DEPENDS=	gmpc:audio/gmpc \
+		ogg123:audio/vorbis-tools
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

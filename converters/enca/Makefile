@@ -12,9 +12,9 @@ COMMENT=	Detect encoding of text files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
-LIB_DEPENDS=	librecode.so:${PORTSDIR}/converters/recode
-RUN_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
+BUILD_DEPENDS=	umap:converters/p5-Unicode-Map8
+LIB_DEPENDS=	librecode.so:converters/recode
+RUN_DEPENDS=	umap:converters/p5-Unicode-Map8
 
 USES=		gmake iconv libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes

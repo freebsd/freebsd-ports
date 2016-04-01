@@ -12,7 +12,7 @@ COMMENT=	Codec 2 speech codec
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speexdsp
+LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 
 USE_LDCONFIG=	yes
 USES=		cmake:outsource tar:xz

@@ -15,8 +15,8 @@ BROKEN=		checksum mismatch
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

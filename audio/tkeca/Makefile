@@ -10,8 +10,8 @@ COMMENT=	Tk interface to ecasound
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	normalize:${PORTSDIR}/audio/normalize \
-		ecasound:${PORTSDIR}/audio/ecasound
+RUN_DEPENDS=	normalize:audio/normalize \
+		ecasound:audio/ecasound
 
 USES=		desktop-file-utils tk
 

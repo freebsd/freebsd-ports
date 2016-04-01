@@ -12,9 +12,9 @@ COMMENT=	Toolpath generator for 3-axis CNC machining
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2 \
+		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-opengl \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:x11-toolkits/py-gtkglext
 
 USES=		python:-2.7
 USE_PYTHON=	distutils autoplist

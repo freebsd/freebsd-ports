@@ -12,9 +12,9 @@ COMMENT=	Perl script that converts Ogg Vorbis files to MP3 format
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
-		ogginfo:${PORTSDIR}/audio/vorbis-tools
+RUN_DEPENDS=	lame:audio/lame \
+		p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote \
+		ogginfo:audio/vorbis-tools
 
 NO_BUILD=	yes
 USES=		perl5 tar:bzip2

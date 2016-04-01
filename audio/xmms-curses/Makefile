@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Ncurses program for (remote) controlling multimedia/xmms
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
+BUILD_DEPENDS=	xmms:multimedia/xmms
+RUN_DEPENDS=	xmms:multimedia/xmms
+LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs
 
 USES=		gettext iconv
 USE_GNOME=	gtk12

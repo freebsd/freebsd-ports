@@ -12,7 +12,7 @@ DISTNAME=	sexypsf-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS plugin for playing .psf files
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	xmms:multimedia/xmms
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		tar:bzip2

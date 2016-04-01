@@ -15,8 +15,8 @@ COMMENT=	XMMS Plugin that provides LADSPA Plugins to XMMS
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+LIB_DEPENDS=	libxmms.so:multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Effect/ladspa.so
 

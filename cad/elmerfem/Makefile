@@ -10,8 +10,8 @@ COMMENT=	ELMER FEM package
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libparpack.so:${PORTSDIR}/math/arpack-ng-mpich	\
-		libmpich.so.8:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	libparpack.so:math/arpack-ng-mpich	\
+		libmpich.so.8:net/mpich2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC

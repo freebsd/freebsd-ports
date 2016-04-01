@@ -10,7 +10,7 @@ MASTER_SITES=	http://libarchive.org/downloads/
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=	LZO NETTLE
 OPTIONS_DEFAULT=LZO
@@ -79,10 +79,10 @@ CFLAGS+=	"-I${LOCALBASE}/include"
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LZO_CONFIGURE_WITH=	lzo2
 
-NETTLE_LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle
+NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NETTLE_CONFIGURE_WITH=	nettle
 NETTLE_CONFIGURE_ON=	--without-openssl
 NETTLE_USE_OFF=		OPENSSL=yes

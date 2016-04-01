@@ -12,8 +12,8 @@ COMMENT=	Identify candidate coding regions within transcript sequences
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	cd-hit>=4.6.1:${PORTSDIR}/biology/cd-hit \
-		p5-URI>0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	cd-hit>=4.6.1:biology/cd-hit \
+		p5-URI>0:net/p5-URI
 
 NO_BUILD=	yes
 NO_ARCH=	yes

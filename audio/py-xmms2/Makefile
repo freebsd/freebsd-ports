@@ -9,8 +9,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Python Bindings for XMMS2
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS+=	libxmmsclient.so:${PORTSDIR}/audio/xmms2
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:devel/pyrex
+LIB_DEPENDS+=	libxmmsclient.so:audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 

@@ -10,12 +10,12 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to burn audio CDs from MP3, Ogg, Vorbis, FLAC files
 
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
-		ogg123:${PORTSDIR}/audio/vorbis-tools \
-		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
-		p5-Ogg-Vorbis-Header>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
-		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
-		cdda2wav:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	mpg123:audio/mpg123 \
+		ogg123:audio/vorbis-tools \
+		p5-MP3-Info>=0:audio/p5-MP3-Info \
+		p5-Ogg-Vorbis-Header>=0:audio/p5-Ogg-Vorbis-Header \
+		p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote \
+		cdda2wav:sysutils/cdrtools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
