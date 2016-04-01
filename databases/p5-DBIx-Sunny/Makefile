@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-DBI>=1.615:${PORTSDIR}/databases/p5-DBI \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=1.31:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-    		p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny
+		p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny
 
 USES=		perl5
 USE_PERL5=	modbuild

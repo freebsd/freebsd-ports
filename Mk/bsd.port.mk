@@ -3424,7 +3424,7 @@ check-install-conflicts:
 .if defined(DEFER_CONFLICTS_CHECK)
 	@conflicts_with=$$( \
 	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
-	       	| while read pkgname prfx orgn; do \
+			| while read pkgname prfx orgn; do \
 		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
 			${ECHO_CMD} -n " $${pkgname}"; \
 		fi; \
@@ -3442,7 +3442,7 @@ check-install-conflicts:
 .else
 	@conflicts_with=$$( \
 	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
-	       	| while read pkgname prfx orgn; do \
+			| while read pkgname prfx orgn; do \
 		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
 			${ECHO_CMD} -n " $${pkgname}"; \
 		fi; \

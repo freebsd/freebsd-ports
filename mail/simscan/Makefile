@@ -42,7 +42,7 @@ DSPAM_DESC=	Turn on DSPAM scanning
 
 CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
 		--enable-qmaildir=${QMAIL_PREFIX} \
-	  	--enable-spamc-user=n \
+		--enable-spamc-user=n \
 		--enable-workdir=${WORKDIR} \
 		--enable-user=nobody
 

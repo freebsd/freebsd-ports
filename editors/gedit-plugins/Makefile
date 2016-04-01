@@ -43,7 +43,7 @@ GLIB_SCHEMAS+=	org.gnome.gedit.plugins.terminal.gschema.xml
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| \\t\\r\\n\\f|[:space:]|g' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 

@@ -49,7 +49,7 @@ pre-patch:
 post-patch:
 	@${REINPLACE_CMD} \
 		's|/usr/X11R6/lib|${LOCALBASE}/lib|' \
-	   	${WRKSRC}/src/Makefile.* ${WRKSRC}/src/xkbmap.cpp
+		${WRKSRC}/src/Makefile.* ${WRKSRC}/src/xkbmap.cpp
 	@${REINPLACE_CMD} \
 		's|/usr/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/scim_kmfl_imengine_setup/scim_kmfl_imengine_setup.cpp

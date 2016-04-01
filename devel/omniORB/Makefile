@@ -30,7 +30,7 @@ STATIC_CONFIGURE_OFF=	--disable-static
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
 	@${REINPLACE_CMD} -e 's#%%STAGEDIR%%%%PREFIX%%#${STAGEDIR}${PREFIX}#g' \
-	       	${WRKSRC}/contrib/pkgconfig/GNUmakefile.in
+		${WRKSRC}/contrib/pkgconfig/GNUmakefile.in
 
 post-install:
 	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl')"

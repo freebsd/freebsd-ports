@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	p5-Tk>0:${PORTSDIR}/x11-toolkits/p5-Tk \
 		p5-PGPLOT>=2.21:${PORTSDIR}/graphics/p5-PGPLOT	\
 		PDL>0:${PORTSDIR}/math/PDL \
-	 	${LOCALBASE}/bin/mcstas:${PORTSDIR}/science/mcstas
+		${LOCALBASE}/bin/mcstas:${PORTSDIR}/science/mcstas
 
 USES=		cmake gmake perl5
 CMAKE_ARGS=	-Denable_mcstas=1

@@ -18,10 +18,10 @@ LICENSE_PERMS_LinuxdocTools=	dist-mirror dist-sell pkg-mirror pkg-sell auto-acce
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		nsgmls:${PORTSDIR}/textproc/jade \
-    		sgmlsasp:${PORTSDIR}/textproc/sgmls
+		sgmlsasp:${PORTSDIR}/textproc/sgmls
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		nsgmls:${PORTSDIR}/textproc/jade \
-    		sgmlsasp:${PORTSDIR}/textproc/sgmls
+		sgmlsasp:${PORTSDIR}/textproc/sgmls
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5

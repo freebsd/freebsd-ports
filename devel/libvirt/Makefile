@@ -112,7 +112,7 @@ CONF_FILES=	\
 		libxl.conf \
 		qemu.conf \
 		virtlockd.conf \
-	   	virtlogd.conf
+		virtlogd.conf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ln -s ../default.xml|true|' \

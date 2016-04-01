@@ -11,7 +11,7 @@ COMMENT=	Daemon that provides fingerprint scanning functionality over D-Bus
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfprint.so:${PORTSDIR}/security/libfprint \
-    		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
 GNU_CONFIGURE=	yes

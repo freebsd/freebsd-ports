@@ -35,6 +35,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-O2||g'
 	@${REINPLACE_CMD} -e 's|__gnu_cxx::lldiv|lldiv|' \
-	    	${WRKSRC}/Src/DasherCore/DasherViewSquare.cpp
+		${WRKSRC}/Src/DasherCore/DasherViewSquare.cpp
 
 .include <bsd.port.mk>

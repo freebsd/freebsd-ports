@@ -85,16 +85,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|user="0"|group="operator"|g' \
 		${WRKSRC}/hal.conf.in
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-	    	< ${FILESDIR}/README.fuse > ${WRKDIR}/README.fuse
+		< ${FILESDIR}/README.fuse > ${WRKDIR}/README.fuse
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/dist
 	${INSTALL_DATA} ${WRKSRC}/hal.conf ${STAGEDIR}${DATADIR}/dist
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_DATA} ${FILESDIR}/10-mouse-sysmouse.fdi \
-	    	${STAGEDIR}${PREFIX}/share/hal/fdi/policy/10osvendor
+		${STAGEDIR}${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_SCRIPT} ${FILESDIR}/mount-fuse \
-	    	${STAGEDIR}${PREFIX}/share/hal/mount-fuse
+		${STAGEDIR}${PREFIX}/share/hal/mount-fuse
 	@${MKDIR} ${STAGEDIR}/var/lib/hal
 
 post-install-DOCS-on:
@@ -102,6 +102,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/hald/freebsd/README \
 		${STAGEDIR}${DOCSDIR}/README.freebsd
 	${INSTALL_DATA} ${WRKDIR}/README.fuse \
-	    	${STAGEDIR}${DOCSDIR}/README.fuse
+		${STAGEDIR}${DOCSDIR}/README.fuse
 
 .include <bsd.port.post.mk>

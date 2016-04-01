@@ -27,7 +27,7 @@ ELISPFILES=	ghc-core.el ghci-script-mode.el haskell-align-imports.el \
 		haskell-collapse.el haskell-commands.el \
 		haskell-compile.el haskell-compat.el \
 		haskell-complete-module.el haskell-completions.el \
-	 	haskell-customize.el \
+		haskell-customize.el \
 		haskell-debug.el haskell-decl-scan.el \
 		haskell-doc.el haskell-font-lock.el haskell-hoogle.el \
 		haskell-indent.el haskell-indentation.el \

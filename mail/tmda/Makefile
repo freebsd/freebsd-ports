@@ -22,7 +22,7 @@ NO_ARCH=	yes
 DOCS=		CODENAMES CRYPTO README THANKS NEWS UPGRADE
 SAMPLES=	tmda.el tofmipd.sysconfig vtmdarc
 SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
-	 	smtp-check-sender tofmipd.init tofmipd.sysconfig \
+		smtp-check-sender tofmipd.init tofmipd.sysconfig \
 		update-internaldomains vadduser-tmda vmailmgr-vdir.sh \
 		vpopmail-vdir.sh wrapfd3.sh
 

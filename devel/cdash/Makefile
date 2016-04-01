@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 USES=		dos2unix cmake:outsource zip
 DOS2UNIX_GLOB=	*.php *.xml *.xsl *.txt
 CMAKE_ARGS=	-DCDASH_DB_NAME:STRING=cdash \
-   		-DCDASH_DB_LOGIN:STRING=cdash \
-   		-DCDASH_DB_TYPE:STRING=${DB_TYPE}
+		-DCDASH_DB_LOGIN:STRING=cdash \
+		-DCDASH_DB_TYPE:STRING=${DB_TYPE}
 USE_PHP=	curl gd pdo session xsl zlib
 NO_ARCH=	yes
 

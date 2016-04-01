@@ -39,10 +39,10 @@ post-patch:
 		-e 's|CC = gcc |CC = ${CC}|g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/pwhois/|${ETCDIR}/|g' \
-	    	-e 's|/var/pwhois/|/var/db/pwhois/|g' \
-	    	-e 's|/var/log/|/var/log/pwhois/|g' \
-	    	-e 's|/var/db/log/|/var/log/pwhois/|g' \
-	    	${WRKSRC}/main.c ${WRKSRC}/pwhois-updatedb \
+		-e 's|/var/pwhois/|/var/db/pwhois/|g' \
+		-e 's|/var/log/|/var/log/pwhois/|g' \
+		-e 's|/var/db/log/|/var/log/pwhois/|g' \
+		${WRKSRC}/main.c ${WRKSRC}/pwhois-updatedb \
 		${WRKSRC}/pwhois_pwdump.c ${WRKSRC}/pwhoisd.conf
 
 do-install:
@@ -54,7 +54,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/pwhois-pwdump ${STAGEDIR}${PREFIX}/bin/
 	@${INSTALL_SCRIPT} ${WRKSRC}/pwhois-updatedb ${STAGEDIR}${PREFIX}/sbin/
 	@${INSTALL_DATA} ${WRKSRC}/pwhoisd.conf \
-	    	${STAGEDIR}${ETCDIR}/pwhoisd.conf.sample
+		${STAGEDIR}${ETCDIR}/pwhoisd.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/mysql/createdb.sql ${STAGEDIR}${DATADIR}/
 
 post-install:

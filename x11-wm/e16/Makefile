@@ -18,7 +18,7 @@ OPTIONS_DEFINE=		DOCS NLS SOUND
 OPTIONS_SUB=		yes
 SOUND_DESC=		Sound support via pulseaudio/libsndfile
 SOUND_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio \
-    			libsndfile.so:${PORTSDIR}/audio/libsndfile
+			libsndfile.so:${PORTSDIR}/audio/libsndfile
 SOUND_CONFIGURE_ON=	--enable-sound \
 			--enable-sound-pulse \
 			--with-sndldr=sndfile

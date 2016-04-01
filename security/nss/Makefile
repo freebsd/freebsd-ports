@@ -85,17 +85,17 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nss/nss ${STAGEDIR}${PREFIX}/lib/nss
 	${FIND} ${DIST}/public/nss -type l \
-	    	-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/include/nss/nss \;
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/include/nss/nss \;
 	${INSTALL_LIB} ${BINS}/lib/*.so.1 \
 		${STAGEDIR}${PREFIX}/lib/nss
 	${INSTALL_DATA} ${BINS}/lib/libcrmf.a \
-	    	${STAGEDIR}${PREFIX}/lib/nss
+		${STAGEDIR}${PREFIX}/lib/nss
 .for bin in ${INSTALL_BINS}
 	${INSTALL_PROGRAM} ${BINS}/bin/${bin} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
 	cd ${BINS}/lib && \
-	    	${TAR} -cf - *.so | ${TAR} --unlink -C ${STAGEDIR}${PREFIX}/lib/nss -xf -
+		${TAR} -cf - *.so | ${TAR} --unlink -C ${STAGEDIR}${PREFIX}/lib/nss -xf -
 	${INSTALL_SCRIPT} ${WRKDIR}/nss-config ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/nss.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 

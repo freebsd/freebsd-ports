@@ -13,7 +13,7 @@ MAINTAINER=	meethune@gmail.com
 COMMENT=	This plugin adds a libnotify interface to Pidgin
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \
-    		${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
+		${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libpurple.so:${PORTSDIR}/net-im/libpurple
 

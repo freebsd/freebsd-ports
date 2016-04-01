@@ -25,7 +25,7 @@ AP_GENPLIST=	yes
 SRC_FILE=	*.c
 
 AP_INC+=	${LOCALBASE}/include/home \
-		   	-I ${LOCALBASE}/include/php \
+			-I ${LOCALBASE}/include/php \
 			-I ${LOCALBASE}/include/php/Zend \
 			-I ${LOCALBASE}/include/php/TSRM \
 			-I ${LOCALBASE}/include/php/main

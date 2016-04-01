@@ -15,7 +15,7 @@ BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		geoclue>=0:${PORTSDIR}/net/geoclue \
 		itstool:${PORTSDIR}/textproc/itstool \
-    		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
+		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
 		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
@@ -35,7 +35,7 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		geoclue>=0:${PORTSDIR}/net/geoclue \
-    		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
+		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig python tar:xz
 USE_GNOME=	evolutiondataserver3 intlhack

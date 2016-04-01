@@ -11,7 +11,7 @@ COMMENT=	Command-line interface for Telegram
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
-    		libevent.so:${PORTSDIR}/devel/libevent2 \
+		libevent.so:${PORTSDIR}/devel/libevent2 \
 		libjansson.so:${PORTSDIR}/devel/jansson
 
 USES=		execinfo gmake lua:52 ncurses pkgconfig readline

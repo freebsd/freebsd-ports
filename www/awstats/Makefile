@@ -76,7 +76,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/*.pm \
 		${STAGEDIR}${WWWDIR}/cgi-bin/plugins
 	(cd ${WRKSRC}/wwwroot/cgi-bin/plugins && ${COPYTREE_SHARE} example \
-	       	${STAGEDIR}${WWWDIR}/cgi-bin/plugins)
+		${STAGEDIR}${WWWDIR}/cgi-bin/plugins)
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/classes
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/classes/awgraphapplet.jar \
 		${STAGEDIR}${WWWDIR}/classes

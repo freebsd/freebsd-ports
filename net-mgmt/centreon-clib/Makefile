@@ -14,7 +14,7 @@ LICENSE=	AGPLv3
 USES=		cmake
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 CMAKE_ARGS=	-DWITH_PREFIX=${PREFIX} \
-	       	-DWITH_PREFIX_INC=${PREFIX}/include/centreon \
+		-DWITH_PREFIX_INC=${PREFIX}/include/centreon \
 		-DWITH_PKGCONFIG_DIR=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
 

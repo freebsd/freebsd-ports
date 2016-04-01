@@ -19,7 +19,7 @@ PLIST_FILES=	sbin/vpnc-script sbin/vpnc-script-sshd sbin/vpnc-script-ptrtd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(/etc/vpnc\)|${PREFIX}\1|' \
-	    	${WRKSRC}/vpnc-script
+		${WRKSRC}/vpnc-script
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vpnc-script ${STAGEDIR}${PREFIX}/sbin

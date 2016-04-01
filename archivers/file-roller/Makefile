@@ -14,7 +14,7 @@ COMMENT=	Archive manager for zip files, tar, etc
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
-    		zipinfo:${PORTSDIR}/archivers/unzip
+		zipinfo:${PORTSDIR}/archivers/unzip
 
 # Port unzip is desired, but specify the uniquely named zipinfo to ensure
 # archivers/unzip is pulled in.  Using "unzip" is satisfied by base unzip  

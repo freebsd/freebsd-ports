@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
 		p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC \
-	    	p5-Term-ShellUI>=0:${PORTSDIR}/shells/p5-Term-ShellUI
+		p5-Term-ShellUI>=0:${PORTSDIR}/shells/p5-Term-ShellUI
 
 MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
 

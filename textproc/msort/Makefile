@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre \
-    		libuninum.so:${PORTSDIR}/devel/libuninum \
+		libuninum.so:${PORTSDIR}/devel/libuninum \
 		libutf8proc.so:${PORTSDIR}/textproc/utf8proc
 RUN_DEPENDS=	iwidgets>=0:${PORTSDIR}/x11-toolkits/iwidgets
 TEST_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash

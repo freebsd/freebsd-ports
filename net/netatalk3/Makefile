@@ -14,7 +14,7 @@ COMMENT=	File server for Mac OS X
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-    		libevent.so:${PORTSDIR}/devel/libevent2
+		libevent.so:${PORTSDIR}/devel/libevent2
 
 USE_BDB=	5+
 USES=		iconv gmake pkgconfig perl5 libtool tar:bzip2
@@ -140,7 +140,7 @@ CONFIGURE_ARGS+=--disable-tcp-wrappers
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
-	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
+		s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 

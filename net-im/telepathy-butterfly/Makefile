@@ -14,7 +14,7 @@ COMMENT=	MSN Connection Manager for Telepathy Framework
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/papyon/__init__.py:${PORTSDIR}/net-im/papyon \
 		${PYTHON_SITELIBDIR}/telepathy/__init__.py:${PORTSDIR}/net-im/telepathy-python
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/papyon/__init__.py:${PORTSDIR}/net-im/papyon \
-    		${PYTHON_SITELIBDIR}/telepathy/__init__.py:${PORTSDIR}/net-im/telepathy-python
+		${PYTHON_SITELIBDIR}/telepathy/__init__.py:${PORTSDIR}/net-im/telepathy-python
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}

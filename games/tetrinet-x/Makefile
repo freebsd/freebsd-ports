@@ -6,7 +6,7 @@ PORTVERSION=	1.13.16
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ \
-	     	ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
+		ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 

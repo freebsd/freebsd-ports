@@ -21,7 +21,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ac_config_files/s|xft\.pc|xft\.pc xft-config|' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/xft-config \

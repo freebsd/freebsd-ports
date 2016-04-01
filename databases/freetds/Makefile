@@ -23,7 +23,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-lgcrypt -lpthread
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER} --sysconfdir=${ETCDIR} \
-	       	--enable-sybase-compat --enable-msdblib
+		--enable-sybase-compat --enable-msdblib
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

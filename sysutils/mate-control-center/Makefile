@@ -40,7 +40,7 @@ GLIB_SCHEMAS=	org.mate.control-center.gschema.xml \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-	    	${WRKSRC}/capplets/common/mate-theme-info.c
+		${WRKSRC}/capplets/common/mate-theme-info.c
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${PREFIX}/sbin|g' \
 		${WRKSRC}/capplets/display/org.mate.randr.policy.in
 

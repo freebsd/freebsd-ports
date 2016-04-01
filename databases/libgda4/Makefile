@@ -131,14 +131,14 @@ CONFIGURE_ARGS+=	--without-java
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"db.h|"db${BDB_VER}/db.h|g' \
 		-e 's|ldb47|l${BDB_LIB_NAME}|g' \
 		-e 's|ldb|l${BDB_LIB_NAME}|g' \
 		-e 's|libdb|lib${BDB_LIB_NAME}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<db\.h>|<db${BDB_VER}/db.h>|' \
-	    	${WRKSRC}/providers/bdb/gda-bdb-provider.c \
+		${WRKSRC}/providers/bdb/gda-bdb-provider.c \
 		${WRKSRC}/providers/bdb/gda-bdb-test.c
 .if ${LIBGDA4_SLAVE}!="no"
 #. for d in msql firebird odbc freetds mdb ldap mysql sqlite postgres

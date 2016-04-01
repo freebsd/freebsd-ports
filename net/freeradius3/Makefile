@@ -218,7 +218,7 @@ EXPM=		yes
 
 .if ${PORT_OPTIONS:MREST}
 LIB_DEPENDS+=	libjson-c.so:${PORTSDIR}/devel/json-c \
-    		libcurl.so:${PORTSDIR}/ftp/curl
+		libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-rlm_rest \
 		--with-libcurl=${LOCALBASE} \
 		--with-jsonc-lib-dir=${LOCALBASE}/lib \

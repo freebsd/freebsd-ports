@@ -35,7 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-	    	${WRKSRC}/src/orca/orca_i18n.py
+		${WRKSRC}/src/orca/orca_i18n.py
 
 .include <bsd.port.pre.mk>
 

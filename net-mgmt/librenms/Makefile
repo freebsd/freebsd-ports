@@ -23,14 +23,14 @@ SHEBANG_FILES=	html/js/makemini.pl mibs/process.pl scripts/agent-local/bind \
 		scripts/agent-local/tinydns scripts/apache-stats.py \
 		scripts/check_mk_agent scripts/cron.sh scripts/cron-hourly.sh \
 		scripts/cron-minute.sh scripts/get-geshi.sh \
-	       	scripts/get-jpgraph.sh scripts/ifAlias \
+		scripts/get-jpgraph.sh scripts/ifAlias \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
 		scripts/Migration/XML_Conversion/convert.sh \
 		scripts/Migration/XML_Conversion/destwork.sh \
 		scripts/Migration/XML_Conversion/mkdir.sh validate.php \
-	       	scripts/postfix-queues scripts/removespikes.php \
+		scripts/postfix-queues scripts/removespikes.php \
 		scripts/removespikes.pl scripts/watchmaillog/watchmaillog.pl
 USE_PHP=	ctype filter gd json mcrypt mysql session snmp tokenizer xml
 WANT_PHP_CLI=	yes
@@ -69,10 +69,10 @@ SUB_FILES+=	pkg-message
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 
 ROOT_FILES=	addhost.php adduser.php	alerts.php build-base.php build.sql \
-	       	billing-calculate.php callback.php \
-	       	check-services.php config_to_json.php daily.php daily.sh \
-	       	delhost.php discovery.php dist-pollers.php irc.php \
-	       	poll-billing.php poller.php poller-service.py poller-wrapper.py renamehost.php \
+		billing-calculate.php callback.php \
+		check-services.php config_to_json.php daily.php daily.sh \
+		delhost.php discovery.php dist-pollers.php irc.php \
+		poll-billing.php poller.php poller-service.py poller-wrapper.py renamehost.php \
 		snmp-scan.php snmptrap.php syslog.php validate.php
 
 ROOT_DIRS=	contrib html includes lib mibs scripts sql-schema
