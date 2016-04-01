@@ -2,6 +2,7 @@
 
 PORTNAME=	bosh_cli
 PORTVERSION=	1.3215.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,21 +11,21 @@ COMMENT=	BOSH CLI
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-blobstore_client>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-blobstore_client \
-		rubygem-bosh_common>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-bosh_common \
-		rubygem-bosh-template>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-bosh-template \
-		rubygem-cf-uaa-lib>=3.2.1:${PORTSDIR}/devel/rubygem-cf-uaa-lib \
-		rubygem-highline>=1.6.2:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-httpclient>=2.4.0:${PORTSDIR}/www/rubygem-httpclient \
-		rubygem-json_pure>=1.7:${PORTSDIR}/devel/rubygem-json_pure \
-		rubygem-minitar>=0.5.4:${PORTSDIR}/archivers/rubygem-minitar \
-		rubygem-netaddr>=1.5.0:${PORTSDIR}/devel/rubygem-netaddr \
-		rubygem-net-scp>=1.1.0:${PORTSDIR}/security/rubygem-net-scp \
-		rubygem-net-ssh>=2.9.2:${PORTSDIR}/security/rubygem-net-ssh \
-		rubygem-net-ssh-gateway>=1.2.0:${PORTSDIR}/security/rubygem-net-ssh-gateway \
-		rubygem-progressbar>=0.9.0:${PORTSDIR}/devel/rubygem-progressbar \
-		rubygem-sshkey>=1.7.0:${PORTSDIR}/security/rubygem-sshkey \
-		rubygem-terminal-table>=1.4.3:${PORTSDIR}/textproc/rubygem-terminal-table
+RUN_DEPENDS=	rubygem-blobstore_client>=${PORTVERSION}:devel/rubygem-blobstore_client \
+		rubygem-bosh_common>=${PORTVERSION}:devel/rubygem-bosh_common \
+		rubygem-bosh-template>=${PORTVERSION}:devel/rubygem-bosh-template \
+		rubygem-cf-uaa-lib>=3.2.1:devel/rubygem-cf-uaa-lib \
+		rubygem-highline>=1.6.2:devel/rubygem-highline \
+		rubygem-httpclient>=2.4.0:www/rubygem-httpclient \
+		rubygem-json_pure>=1.7:devel/rubygem-json_pure \
+		rubygem-minitar>=0.5.4:archivers/rubygem-minitar \
+		rubygem-netaddr>=1.5.0:devel/rubygem-netaddr \
+		rubygem-net-scp>=1.1.0:security/rubygem-net-scp \
+		rubygem-net-ssh>=2.9.2:security/rubygem-net-ssh \
+		rubygem-net-ssh-gateway>=1.2.0:security/rubygem-net-ssh-gateway \
+		rubygem-progressbar>=0.9.0:devel/rubygem-progressbar \
+		rubygem-sshkey>=1.7.0:security/rubygem-sshkey \
+		rubygem-terminal-table>=1.4.3:textproc/rubygem-terminal-table
 
 NO_ARCH=	yes
 USE_RUBY=	yes
