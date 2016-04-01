@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	2.6.10
-PORTREVISION=	1
+PORTVERSION=	2.7.1
 CATEGORIES=	devel
 MASTER_SITES=	http://ports.toco-domains.de/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
