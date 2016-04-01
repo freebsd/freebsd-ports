@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Support for forwarding requests in CGI::Application
 
-BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
-		p5-CGI-Application-Plugin-AutoRunmode>=0:${PORTSDIR}/www/p5-CGI-Application-Plugin-AutoRunmode
+BUILD_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
+		p5-CGI-Application-Plugin-AutoRunmode>=0:www/p5-CGI-Application-Plugin-AutoRunmode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

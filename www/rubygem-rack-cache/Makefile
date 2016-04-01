@@ -12,7 +12,7 @@ COMMENT=	Rack middleware to enable HTTP caching
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-rack16>=0.4:${PORTSDIR}/www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack16>=0.4:www/rubygem-rack16
 
 NO_ARCH=	yes
 USE_RUBY=	yes

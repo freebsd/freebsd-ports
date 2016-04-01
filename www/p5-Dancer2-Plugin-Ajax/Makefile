@@ -12,7 +12,7 @@ COMMENT=	Ajax handling for Dancer2 applications
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Dancer2>=0.155000:${PORTSDIR}/www/p5-Dancer2
+RUN_DEPENDS=	p5-Dancer2>=0.155000:www/p5-Dancer2
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 NO_ARCH=	yes

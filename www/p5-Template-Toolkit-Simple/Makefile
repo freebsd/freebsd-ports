@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Simple Interface to Template Toolkit
 
-BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
+BUILD_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

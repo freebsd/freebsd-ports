@@ -13,24 +13,24 @@ MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.12:${PORTSDIR}/devel/nspr \
-		nss>=3.21.1:${PORTSDIR}/security/nss \
-		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
-		soundtouch>=1.9.0:${PORTSDIR}/audio/soundtouch \
-		harfbuzz>=1.1.0:${PORTSDIR}/print/harfbuzz \
-		graphite2>=1.3.6:${PORTSDIR}/graphics/graphite2 \
-		png>=1.6.19:${PORTSDIR}/graphics/png \
-		libvorbis>=1.3.5,3:${PORTSDIR}/audio/libvorbis \
-		libvpx>=1.5.0:${PORTSDIR}/multimedia/libvpx \
-		sqlite3>=3.9.1:${PORTSDIR}/databases/sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
-		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
-		yasm:${PORTSDIR}/devel/yasm \
-		zip:${PORTSDIR}/archivers/zip \
-		unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
+		nss>=3.21.1:security/nss \
+		libevent2>=2.0.21_2:devel/libevent2 \
+		soundtouch>=1.9.0:audio/soundtouch \
+		harfbuzz>=1.1.0:print/harfbuzz \
+		graphite2>=1.3.6:graphics/graphite2 \
+		png>=1.6.19:graphics/png \
+		libvorbis>=1.3.5,3:audio/libvorbis \
+		libvpx>=1.5.0:multimedia/libvpx \
+		sqlite3>=3.9.1:databases/sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		v4l_compat>0:multimedia/v4l_compat \
+		autoconf-2.13:devel/autoconf213 \
+		yasm:devel/yasm \
+		zip:archivers/zip \
+		unzip:archivers/unzip
 
-LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr-45.* firefox-esr-3[18].* firefox-esr-24.*

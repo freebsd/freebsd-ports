@@ -12,7 +12,7 @@ COMMENT=	Ruby wrapper for UglifyJS JavaScript compressor
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-execjs>=0.3.0:${PORTSDIR}/devel/rubygem-execjs
+RUN_DEPENDS=	rubygem-execjs>=0.3.0:devel/rubygem-execjs
 
 NO_ARCH=	yes
 USE_RUBY=	yes

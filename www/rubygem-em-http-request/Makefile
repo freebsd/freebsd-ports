@@ -11,11 +11,11 @@ COMMENT=	EventMachine based, async HTTP Request client
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-addressable>=2.3.4:${PORTSDIR}/www/rubygem-addressable \
-		rubygem-cookiejar>=0:${PORTSDIR}/www/rubygem-cookiejar \
-		rubygem-em-socksify>=0.3:${PORTSDIR}/www/rubygem-em-socksify \
-		rubygem-eventmachine>=1.0.3:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-http_parser.rb>=0.6.0:${PORTSDIR}/net/rubygem-http_parser.rb
+RUN_DEPENDS=	rubygem-addressable>=2.3.4:www/rubygem-addressable \
+		rubygem-cookiejar>=0:www/rubygem-cookiejar \
+		rubygem-em-socksify>=0.3:www/rubygem-em-socksify \
+		rubygem-eventmachine>=1.0.3:devel/rubygem-eventmachine \
+		rubygem-http_parser.rb>=0.6.0:net/rubygem-http_parser.rb
 
 NO_ARCH=	yes
 USE_RUBY=	yes

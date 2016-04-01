@@ -11,7 +11,7 @@ COMMENT=	Ruby/Rack Git Smart-HTTP Server Handler
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack15>=1.5.1:${PORTSDIR}/www/rubygem-rack15
+RUN_DEPENDS=	rubygem-rack15>=1.5.1:www/rubygem-rack15
 
 NO_ARCH=	yes
 

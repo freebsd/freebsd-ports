@@ -37,7 +37,7 @@ PCRE_CONFIGURE_ENABLE=	pcreposix
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

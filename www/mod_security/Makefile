@@ -12,10 +12,10 @@ COMMENT=	Intrusion detection and prevention engine
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libyajl.so:${PORTSDIR}/devel/yajl \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libpcre.so:devel/pcre \
+		libapr-1.so:devel/apr1 \
+		libyajl.so:devel/yajl \
+		libcurl.so:ftp/curl
 
 USE_APACHE=	22+
 USE_GNOME=	libxml2
@@ -54,7 +54,7 @@ MLOGC_CONFIGURE_OFF=	--disable-mlogc
 FUZZYHASH_DESC=		Allow matching contents using fuzzy hashes with ssdeep
 FUZZYHASH_CONFIGURE_ON=	--with-ssdeep=${LOCALBASE}
 FUZZYHASH_CONFIGURE_OFF=--without-ssdeep
-FUZZYHASH_LIB_DEPENDS=	libfuzzy.so:${PORTSDIR}/security/ssdeep
+FUZZYHASH_LIB_DEPENDS=	libfuzzy.so:security/ssdeep
 
 ETCDIR=		${PREFIX}/etc/modsecurity
 

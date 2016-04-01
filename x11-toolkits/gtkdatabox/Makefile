@@ -32,7 +32,7 @@ GLADE_DESC=	Enable libglade2 support
 GLADE_USE=	GNOME=libglade2
 GLADE_CONFIGURE_ENABLE=	libglade
 GLADEUI_DESC=	Enable glade3 support
-GLADEUI_LIB_DEPENDS=	libgladeui-1.so:${PORTSDIR}/devel/glade3
+GLADEUI_LIB_DEPENDS=	libgladeui-1.so:devel/glade3
 GLADEUI_CONFIGURE_ENABLE=	glade
 
 post-patch:

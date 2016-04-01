@@ -11,7 +11,7 @@ COMMENT=	Flexible replacement for libevent httpd API
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ellzey

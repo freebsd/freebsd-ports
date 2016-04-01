@@ -13,7 +13,7 @@ COMMENT=	Set of Pure language bindings for GTK+
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libcairo.so:graphics/cairo
 
 USES=		pkgconfig pure:ffi
 USE_GNOME=	glib20 gtk20 atk pango

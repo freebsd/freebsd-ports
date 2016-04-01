@@ -15,11 +15,11 @@ COMMENT=	DeforaOS desktop web browser
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
-		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop \
-		libgnet-2.0.so:${PORTSDIR}/net/gnet2 \
-		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+		libDesktop.so:x11/deforaos-libdesktop \
+		libgnet-2.0.so:net/gnet2 \
+		libwebkitgtk-1.0.so:www/webkit-gtk2
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USE_GNOME=	gtk20
 USES=		desktop-file-utils pkgconfig
@@ -31,8 +31,8 @@ MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
-DOCS_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 post-patch-DOCS-off:
 	${REINPLACE_CMD} 's|= data doc|= data|' \

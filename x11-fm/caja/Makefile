@@ -10,11 +10,11 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	File manager for the MATE desktop
 
-BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
-		libexempi.so:${PORTSDIR}/textproc/exempi
-RUN_DEPENDS=	${LOCALBASE}/libexec/gvfsd:${PORTSDIR}/devel/gvfs
+BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc
+LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libunique-1.0.so:x11-toolkits/unique \
+		libexempi.so:textproc/exempi
+RUN_DEPENDS=	${LOCALBASE}/libexec/gvfsd:devel/gvfs
 
 PORTSCOUT=	limitw:1,even
 

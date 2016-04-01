@@ -11,7 +11,7 @@ DISTNAME=	django-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Library to make writing templatetags in Django sweet
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:${PORTSDIR}/www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18
 
 USES=		python
 USE_PYTHON=	distutils autoplist

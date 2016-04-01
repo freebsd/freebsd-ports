@@ -11,7 +11,7 @@ COMMENT=	The backend of mod_log_spread
 
 LICENSE=	ART10
 
-LIB_DEPENDS=	libspread.so:${PORTSDIR}/net/spread
+LIB_DEPENDS=	libspread.so:net/spread
 
 MAKEFILE=	makefile
 

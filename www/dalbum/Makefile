@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Free, highly customizable PHP photo album
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	convert:graphics/ImageMagick
 
 USES=		cpe
 CPE_VERSION=	${PORTVERSION:C/^([0-9])([0-9][0-9]).*/\1.\2/}

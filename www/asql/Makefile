@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.steve.org.uk/Software/asql/ \
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Query Apache logfiles via SQL
 
-RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
+RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/asql

@@ -13,8 +13,8 @@ EXTRACT_SUFX=	.bdfs.tgz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Cyrillic X11 bitmap fonts from CYR-RFX project
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+		mkfontdir:x11-fonts/mkfontdir
 
 USES=		fonts
 USE_XORG=	x11

@@ -11,7 +11,7 @@ COMMENT=	Simple X hotkey daemon
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
+LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville

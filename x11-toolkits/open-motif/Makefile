@@ -13,7 +13,7 @@ COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif-[0-9]*

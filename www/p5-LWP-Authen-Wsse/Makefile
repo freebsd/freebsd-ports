@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for enabling X-WSSE authentication in LWP
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

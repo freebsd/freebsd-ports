@@ -21,17 +21,17 @@ YUI_DESC=	Install Yahoo UI Editor
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTINYMCE3}
-RUN_DEPENDS+=	${LOCALBASE}/www/tinymce:${PORTSDIR}/www/tinymce3
+RUN_DEPENDS+=	${LOCALBASE}/www/tinymce:www/tinymce3
 PLIST_FILES+=	${DRUPAL_MODLIB}/tinymce
 .endif
 
 .if ${PORT_OPTIONS:MCKEDITOR}
-RUN_DEPENDS+=	${LOCALBASE}/www/ckeditor:${PORTSDIR}/www/ckeditor
+RUN_DEPENDS+=	${LOCALBASE}/www/ckeditor:www/ckeditor
 PLIST_FILES+=	${DRUPAL_MODLIB}/ckeditor
 .endif
 
 .if ${PORT_OPTIONS:MYUI}
-RUN_DEPENDS+=	${LOCALBASE}/www/yui:${PORTSDIR}/www/yahoo-ui
+RUN_DEPENDS+=	${LOCALBASE}/www/yui:www/yahoo-ui
 PLIST_FILES+=	${DRUPAL_MODLIB}/yui
 .endif
 

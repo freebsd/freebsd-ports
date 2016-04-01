@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Memcached storage backend for session data
 
-BUILD_DEPENDS=	p5-Cache-Memcached-Fast>=0:${PORTSDIR}/databases/p5-Cache-Memcached-Fast \
-		p5-Catalyst-Plugin-Session>=0.01:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
-		p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable
+BUILD_DEPENDS=	p5-Cache-Memcached-Fast>=0:databases/p5-Cache-Memcached-Fast \
+		p5-Catalyst-Plugin-Session>=0.01:www/p5-Catalyst-Plugin-Session \
+		p5-Catalyst-Runtime>=5.7000:www/p5-Catalyst-Runtime \
+		p5-Class-Data-Inheritable>=0:devel/p5-Class-Data-Inheritable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

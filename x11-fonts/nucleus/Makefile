@@ -11,7 +11,7 @@ COMMENT=	Another font package for X
 
 USES=		fonts
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -14,9 +14,9 @@ COMMENT=	Describe Flickr photos as RDF
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-Flickr-API>=1.7:${PORTSDIR}/www/p5-Net-Flickr-API \
-		p5-RDF-Simple>=0.22:${PORTSDIR}/textproc/p5-RDF-Simple \
-		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate
+BUILD_DEPENDS=	p5-Net-Flickr-API>=1.7:www/p5-Net-Flickr-API \
+		p5-RDF-Simple>=0.22:textproc/p5-RDF-Simple \
+		p5-TimeDate>=1.16:devel/p5-TimeDate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

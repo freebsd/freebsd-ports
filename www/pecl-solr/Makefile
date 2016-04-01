@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gaod@hychen.org
 COMMENT=	The Apache Solr PHP extension
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libxml2.so:textproc/libxml2
 
 USE_PHP=	json
 USE_PHPEXT=	yes

@@ -10,8 +10,8 @@ COMMENT=	Apache module that provides the country code of the client IP
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
-RUN_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
+BUILD_DEPENDS=	GeoIP>=1.4.4:net/GeoIP
+RUN_DEPENDS=	GeoIP>=1.4.4:net/GeoIP
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind

@@ -11,8 +11,8 @@ COMMENT=	EFL Terminal Emulator
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
-		libelementary.so:${PORTSDIR}/x11-toolkits/elementary
+LIB_DEPENDS=	libefl.so:devel/efl \
+		libelementary.so:x11-toolkits/elementary
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

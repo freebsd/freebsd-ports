@@ -12,8 +12,8 @@ COMMENT=	Simple Queue Service based on HTTP GET/POST protocol
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS+=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet \
-		libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS+=	libtokyocabinet.so:databases/tokyocabinet \
+		libevent.so:devel/libevent2
 
 USES=		pkgconfig
 

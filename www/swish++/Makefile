@@ -13,7 +13,7 @@ COMMENT=	Simple Web Indexing System for Humans: C++ version
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:ftp/wget
 
 USES=		gmake perl5 shebangfix
 SHEBANG_FILES=	scripts/searchc.in scripts/splitmail.in scripts/httpindex.in

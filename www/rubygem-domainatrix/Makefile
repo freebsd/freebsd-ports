@@ -11,7 +11,7 @@ COMMENT=	Library for parsing domain names and canonicalizing URLs
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-addressable>=0:${PORTSDIR}/www/rubygem-addressable
+RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable
 
 NO_ARCH=	yes
 

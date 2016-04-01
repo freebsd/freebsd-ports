@@ -15,16 +15,16 @@ LICENSE=	GPLv3
 
 BROKEN=		fails to build
 
-LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
-		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop
-BUILD_DEPENDS=	browser:${PORTSDIR}/x11-fm/deforaos-browser \
-		${LOCALBASE}/include/Desktop/Keyboard.h:${PORTSDIR}/x11/deforaos-keyboard \
-		${LOCALBASE}/include/Desktop/Player.h:${PORTSDIR}/multimedia/deforaos-player \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-RUN_DEPENDS=	keyboard:${PORTSDIR}/x11/deforaos-keyboard \
-		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
-		sudo:${PORTSDIR}/security/sudo
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+		libDesktop.so:x11/deforaos-libdesktop
+BUILD_DEPENDS=	browser:x11-fm/deforaos-browser \
+		${LOCALBASE}/include/Desktop/Keyboard.h:x11/deforaos-keyboard \
+		${LOCALBASE}/include/Desktop/Player.h:multimedia/deforaos-player \
+		xsltproc:textproc/libxslt \
+		docbook-xsl>=0:textproc/docbook-xsl
+RUN_DEPENDS=	keyboard:x11/deforaos-keyboard \
+		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme \
+		sudo:security/sudo
 
 USE_GNOME=	gtk20
 USES=		gettext pkgconfig

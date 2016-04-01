@@ -18,11 +18,11 @@ USE_GNOME=	libxml2 libxslt
 USE_GITHUB=	yes
 GH_ACCOUNT=	alibaba
 
-LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit \
-		libeio.so:${PORTSDIR}/devel/libeio \
-		libev.so:${PORTSDIR}/devel/libev \
-		libgd.so:${PORTSDIR}/graphics/gd \
-		libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit \
+		libeio.so:devel/libeio \
+		libev.so:devel/libev \
+		libgd.so:graphics/gd \
+		libGeoIP.so:net/GeoIP
 
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=	\
@@ -339,7 +339,7 @@ CONFIGURE_ARGS+=--with-http_dav_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_DAV_EXT}
-LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	libexpat.so:textproc/expat2
 NGINX_DAV_EXT_VERSION=	0.0.2
 GH_ACCOUNT+=	arut:dav_ext
 GH_PROJECT+=	nginx-dav-ext-module:dav_ext
@@ -449,11 +449,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_VIDEO_THUMBEXTRACTOR}
-LIB_DEPENDS+=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
-			libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-			libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
-			libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
-			libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
+			libavcodec.so:multimedia/ffmpeg \
+			libavutil.so:multimedia/ffmpeg \
+			libswscale.so:multimedia/ffmpeg \
+			libMagickWand-6.so:graphics/ImageMagick
 USES+=		jpeg
 NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.2.0
 GH_ACCOUNT+=	wandenberg:videothumbextractor
@@ -471,7 +471,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MDRIZZLE}
-LIB_DEPENDS+=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
+LIB_DEPENDS+=	libdrizzle.so:databases/libdrizzle
 NGINX_DRIZZLE_VERSION=	0.1.6
 GH_ACCOUNT+=	chaoslawful:drizzle
 GH_PROJECT+=	drizzle-nginx-module:drizzle
@@ -524,9 +524,9 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
 
 .if ${PORT_OPTIONS:MMODSECURITY}
 NGINX_MODSECURITY_VERSION=	2.7.5
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
-	libcurl.so:${PORTSDIR}/ftp/curl \
-	libapr-1.so:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	libpcre.so:devel/pcre \
+	libcurl.so:ftp/curl \
+	libapr-1.so:devel/apr1
 USE_APACHE=	22+
 MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION}/:modsecurity
 DISTFILES+=	modsecurity-apache_${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
@@ -654,7 +654,7 @@ CONFIGURE_ARGS+=--with-cpp_test_module
 .endif
 
 .if ${PORT_OPTIONS:MTFS}
-LIB_DEPENDS+=	libyajl.so:${PORTSDIR}/devel/yajl
+LIB_DEPENDS+=	libyajl.so:devel/yajl
 CONFIGURE_ARGS+=--with-http_tfs_module
 .endif
 
@@ -718,7 +718,7 @@ USERS?=	${WWWOWN}
 GROUPS?=${WWWGRP}
 
 .if defined(WITH_HTTP_REWRITE)
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 .else
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre

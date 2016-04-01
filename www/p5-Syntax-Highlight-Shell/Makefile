@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Syntax::Highlight::Shell - Highlight shell scripts
 
-BUILD_DEPENDS=	p5-Shell-Parser>=0:${PORTSDIR}/devel/p5-Shell-Parser
+BUILD_DEPENDS=	p5-Shell-Parser>=0:devel/p5-Shell-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

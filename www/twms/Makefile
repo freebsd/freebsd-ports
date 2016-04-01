@@ -13,9 +13,9 @@ COMMENT=	Tiny WMS server
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:${PORTSDIR}/graphics/py-pyproj \
-		${PYTHON_SITELIBDIR}/web/__init__.py:${PORTSDIR}/www/webpy \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:graphics/py-pyproj \
+		${PYTHON_SITELIBDIR}/web/__init__.py:www/webpy \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 
 USES=		python tar:bzip2
 NO_BUILD=	yes

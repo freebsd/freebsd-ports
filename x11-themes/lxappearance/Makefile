@@ -11,7 +11,7 @@ COMMENT=	Desktop-independent theme switcher for GTK+
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 USES=		gettext-tools gmake localbase pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes

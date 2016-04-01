@@ -11,12 +11,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line Google search utility
 
-RUN_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-HTML-Format>=0:${PORTSDIR}/textproc/p5-HTML-Format \
-		p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
-		p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
-		urlview:${PORTSDIR}/textproc/urlview
+RUN_DEPENDS=	p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
+		p5-HTML-Tree>=0:www/p5-HTML-Tree \
+		p5-HTML-Format>=0:textproc/p5-HTML-Format \
+		p5-AppConfig>=0:devel/p5-AppConfig \
+		p5-Curses>=0:devel/p5-Curses \
+		urlview:textproc/urlview
 
 USES=		perl5
 WRKSRC=		${WRKDIR}/${PORTNAME}

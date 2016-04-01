@@ -11,7 +11,7 @@ COMMENT=	Library used to read freedesktop.org menus
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libfm-extra.so:${PORTSDIR}/x11/libfm-extra
+LIB_DEPENDS=	libfm-extra.so:x11/libfm-extra
 
 USES=		gmake pathfix pkgconfig libtool tar:xz
 GNU_CONFIGURE=	yes

@@ -14,7 +14,7 @@ COMMENT=	Apache module that provides DNS-SD capabilities
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
 USES=		gmake pkgconfig
 USE_APACHE=	22+

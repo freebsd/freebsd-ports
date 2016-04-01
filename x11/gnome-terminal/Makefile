@@ -11,13 +11,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal component for the GNOME 3 Desktop
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		itstool:${PORTSDIR}/textproc/itstool \
-		appstream-builder:${PORTSDIR}/devel/appstream-glib \
-		vala:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		itstool:textproc/itstool \
+		appstream-builder:devel/appstream-glib \
+		vala:lang/vala
+LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
+		libuuid.so:misc/e2fsprogs-libuuid
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 
@@ -37,8 +37,8 @@ OPTIONS_DEFINE=		MIGRATION SEARCHPROVIDER
 OPTIONS_DEFAULT=	SEARCHPROVIDER
 SEARCHPROVIDER_DESC=	Gnome-shell search provider
 SEARCHPROVIDER_CONFIGURE_ENABLE=	search-provider
-SEARCHPROVIDER_BUILD_DEPENDS=	gnome-shell:${PORTSDIR}/x11/gnome-shell
-SEARCHPROVIDER_RUN_DEPENDS=	gnome-shell:${PORTSDIR}/x11/gnome-shell
+SEARCHPROVIDER_BUILD_DEPENDS=	gnome-shell:x11/gnome-shell
+SEARCHPROVIDER_RUN_DEPENDS=	gnome-shell:x11/gnome-shell
 MIGRATION_CONFIGURE_ENABLE=	migration
 MIGRATION_USE=		GNOME=gconf2
 MIGRATION_DESC=		Profile migration to gsettings (pulls in gconf2)

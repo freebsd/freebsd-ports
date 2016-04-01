@@ -52,9 +52,9 @@ ZLIB_USE=	PHP=zlib
 
 .if ${PORT_OPTIONS:MIMAGICK}
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:graphics/ImageMagick
 .else
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
+RUN_DEPENDS+=	convert:graphics/ImageMagick-nox11
 .endif
 .endif
 

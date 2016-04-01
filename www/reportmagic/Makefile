@@ -14,10 +14,10 @@ DISTNAME=	rmagic-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web site statistics post-processor for Analog
 
-RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
-		p5-GD-Graph3d>=0:${PORTSDIR}/graphics/p5-GD-Graph3d \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles
+RUN_DEPENDS=	analog:www/analog \
+		p5-GD-Graph3d>=0:graphics/p5-GD-Graph3d \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-Config-IniFiles>=0:devel/p5-Config-IniFiles
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	rmagic.pl

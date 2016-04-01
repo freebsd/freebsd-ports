@@ -12,7 +12,7 @@ COMMENT?=	Pager/text-based WWW browser
 
 USES=		pkgconfig perl5
 USE_OPENSSL=	yes
-LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
 MAKE_JOBS_UNSAFE=	yes
 

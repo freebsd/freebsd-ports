@@ -13,10 +13,10 @@ COMMENT=	Artistic X window manager
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
-		libelementary.so:${PORTSDIR}/x11-toolkits/elementary \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
-RUN_DEPENDS=	${LOCALBASE}/lib/evas/utils/evas_image_loader.svg:${PORTSDIR}/graphics/evas_generic_loaders-svg
+LIB_DEPENDS=	libefl.so:devel/efl \
+		libelementary.so:x11-toolkits/elementary \
+		libxcb-keysyms.so:x11/xcb-util-keysyms
+RUN_DEPENDS=	${LOCALBASE}/lib/evas/utils/evas_image_loader.svg:graphics/evas_generic_loaders-svg
 
 GNU_CONFIGURE=	yes
 USES=		alias autoreconf desktop-file-utils execinfo gettext-tools \

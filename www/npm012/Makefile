@@ -13,7 +13,7 @@ COMMENT=	Node package manager
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	node012>=0.12.0:${PORTSDIR}/www/node012
+RUN_DEPENDS=	node012>=0.12.0:www/node012
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 MANPREFIX=	${PREFIX}/lib/node_modules/npm

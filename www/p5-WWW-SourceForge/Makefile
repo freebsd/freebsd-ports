@@ -13,9 +13,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Retrieve information from SourceForge site
 
-BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \
+		p5-HTML-TableExtract>=0:www/p5-HTML-TableExtract \
+		p5-YAML>=0:textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

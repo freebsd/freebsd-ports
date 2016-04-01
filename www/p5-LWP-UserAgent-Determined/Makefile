@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Virtual browser that retries errors
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

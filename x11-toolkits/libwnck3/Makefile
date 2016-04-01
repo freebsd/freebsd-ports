@@ -29,7 +29,7 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	STARTUP
 OPTIONS_DEFAULT=STARTUP
 STARTUP_DESC=	Startup notification support
-STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 STARTUP_CONFIGURE_ENABLE=	startup-notification
 
 .include <bsd.port.mk>

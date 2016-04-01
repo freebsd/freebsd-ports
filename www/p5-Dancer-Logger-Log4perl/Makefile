@@ -13,8 +13,8 @@ COMMENT=	Dancer logging adapter for Log::Log4perl
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Dancer>=1.2001:${PORTSDIR}/www/p5-Dancer \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl
+BUILD_DEPENDS=	p5-Dancer>=1.2001:www/p5-Dancer \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -13,7 +13,7 @@ COMMENT=	Embeds a Tcl interpreter in the Apache server
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libitcl.so:${PORTSDIR}/lang/itcl
+LIB_DEPENDS=	libitcl.so:lang/itcl
 
 GNU_CONFIGURE=	yes
 USE_APACHE=	22+

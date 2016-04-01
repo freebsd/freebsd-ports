@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager that emphasizes efficiency, speed, and beauty
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USES=		gmake
 GNU_CONFIGURE=	yes

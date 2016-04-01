@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module to filter entries out of an httpd log
 
-BUILD_DEPENDS=	p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib
-RUN_DEPENDS=	p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib
+BUILD_DEPENDS=	p5-IO-Zlib>=0:archivers/p5-IO-Zlib
+RUN_DEPENDS=	p5-IO-Zlib>=0:archivers/p5-IO-Zlib
 
 USES=		perl5
 USE_PERL5=	configure

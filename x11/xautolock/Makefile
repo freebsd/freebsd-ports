@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	XLOCK
 OPTIONS_DEFAULT=XLOCK
 XLOCK_DESC=	Force dependency on x11/xlockmore
 
-XLOCK_RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
+XLOCK_RUN_DEPENDS=	xlock:x11/xlockmore
 
 PLIST_FILES=	bin/xautolock man/man1/xautolock.1.gz
 

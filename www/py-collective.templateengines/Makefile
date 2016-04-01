@@ -13,7 +13,7 @@ COMMENT=	Template engine abstraction layer for Python
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=2.1.0:${PORTSDIR}/devel/py-Products.CMFCore
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=2.1.0:devel/py-Products.CMFCore
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist

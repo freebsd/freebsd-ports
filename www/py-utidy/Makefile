@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to tidy-lib
 
 # XXX Better depend on tidy or tidy-devel???
-LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist

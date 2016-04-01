@@ -11,7 +11,7 @@ DISTNAME=	swfdec-mozilla-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash rendering plugin
 
-LIB_DEPENDS=	libswfdec-0.8.so:${PORTSDIR}/graphics/swfdec
+LIB_DEPENDS=	libswfdec-0.8.so:graphics/swfdec
 
 USES=		libtool:keepla pkgconfig webplugin:gecko
 GNU_CONFIGURE=	yes

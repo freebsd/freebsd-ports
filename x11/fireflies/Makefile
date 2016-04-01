@@ -10,7 +10,7 @@ MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension of xscreensaver
 
-LIB_DEPENDS=	libgfx.so:${PORTSDIR}/graphics/libgfx
+LIB_DEPENDS=	libgfx.so:graphics/libgfx
 
 GNU_CONFIGURE=	yes
 USE_GL=		yes

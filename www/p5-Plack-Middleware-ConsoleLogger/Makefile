@@ -13,8 +13,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Plack>=0.99:${PORTSDIR}/www/p5-Plack \
-	p5-JavaScript-Value-Escape>0:${PORTSDIR}/lang/p5-JavaScript-Value-Escape
+	p5-Plack>=0.99:www/p5-Plack \
+	p5-JavaScript-Value-Escape>0:lang/p5-JavaScript-Value-Escape
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

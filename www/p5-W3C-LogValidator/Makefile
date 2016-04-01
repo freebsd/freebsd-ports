@@ -12,13 +12,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Comprehensive validation tool for webmasters and web developers
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
-		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		p5-WebService-Validator-CSS-W3C>=0:${PORTSDIR}/www/p5-webservice-validator-css-w3c \
-		p5-WebService-Validator-HTML-W3C>=0:${PORTSDIR}/www/p5-webservice-validator-html-w3c \
-		${LOCALBASE}/bin/checklink:${PORTSDIR}/www/p5-W3C-LinkChecker
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-URI>=0:net/p5-URI \
+		p5-Config-General>=0:devel/p5-Config-General \
+		p5-Mail-Sendmail>=0:mail/p5-Mail-Sendmail \
+		p5-WebService-Validator-CSS-W3C>=0:www/p5-webservice-validator-css-w3c \
+		p5-WebService-Validator-HTML-W3C>=0:www/p5-webservice-validator-html-w3c \
+		${LOCALBASE}/bin/checklink:www/p5-W3C-LinkChecker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

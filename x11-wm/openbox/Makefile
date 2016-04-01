@@ -33,11 +33,11 @@ NLS_CONFIGURE_OFF=	--disable-nls
 PANGO_USE=		GNOME=pango
 PANG_CONFIGURE_OFF=	--disable-pango
 
-NOTIFY_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+NOTIFY_LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 NOTIFY_CONFIGURE_OFF=	--disable-startup-notification
 
 IMLIB_CONFIGURE_ENABLE=	imlib2
-IMLIB_LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+IMLIB_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 SVG_USE=	GNOME=librsvg2
 SVG_CONFIGURE_ENABLE=	librsvg

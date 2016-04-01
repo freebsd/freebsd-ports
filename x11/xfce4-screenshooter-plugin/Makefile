@@ -15,7 +15,7 @@ COMMENT=	Application and panel plugin to take screenshots
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

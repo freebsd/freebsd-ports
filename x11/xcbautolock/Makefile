@@ -14,7 +14,7 @@ USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	bapt
 
-LIB_DEPENDS=	libxcb-screensaver.so:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	libxcb-screensaver.so:x11/libxcb
 
 PLIST_FILES=	bin/xcbautolock \
 		man/man1/xcbautolock.1.gz

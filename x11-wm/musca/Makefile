@@ -13,7 +13,7 @@ COMMENT=	Simple window manager for X, with features from ratpoison and dwm
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
+RUN_DEPENDS=	dmenu:x11/dmenu
 
 USE_XORG=	x11
 MAKE_ARGS=	CFLAGS="-I${LOCALBASE}/include \

@@ -9,7 +9,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Driver for Intel integrated graphics chipsets
 
-LIB_DEPENDS=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
+LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_GL=		gl
@@ -36,7 +36,7 @@ INSTALL_TARGET=	install-strip
 .include <bsd.port.options.mk>
 
 .if (${OSVERSION} >= 903000 && ${OSVERSION} < 1000000)
-RUN_DEPENDS+=	drm-kmod>=9:${PORTSDIR}/x11-drivers/drm-kmod
+RUN_DEPENDS+=	drm-kmod>=9:x11-drivers/drm-kmod
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"i915kms"|"i915kms_port"|g' \

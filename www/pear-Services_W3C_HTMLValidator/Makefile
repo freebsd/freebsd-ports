@@ -9,8 +9,8 @@ CATEGORIES=	www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Object Oriented Interface to the W3C HTML Validator service
 
-BUILD_DEPENDS=	${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
-RUN_DEPENDS=	${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
+BUILD_DEPENDS=	${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2
+RUN_DEPENDS=	${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2
 
 USES=		pear
 

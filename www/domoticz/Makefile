@@ -10,11 +10,11 @@ COMMENT=	Home Automation System
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
-		libtelldus-core.so:${PORTSDIR}/comms/telldus-core
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2 \
+		libboost_system.so:devel/boost-libs \
+		libboost_python.so:devel/boost-python-libs \
+		libtelldus-core.so:comms/telldus-core
 
 # This hack is to get rid of dependency of git while building
 # the package.

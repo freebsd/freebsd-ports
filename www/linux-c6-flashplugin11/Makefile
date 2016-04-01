@@ -35,7 +35,7 @@ OPTIONS_DEFINE=	ALSA GNOME
 OPTIONS_SUB=	yes
 
 ALSA_DESC=	ALSA audio output (broken, needs lemul)
-ALSA_RUN_DEPENDS?=	linux-${USE_LINUX}-alsa-lib>=1.0.22_2:${PORTSDIR}/audio/linux-c6-alsa-lib
+ALSA_RUN_DEPENDS?=	linux-${USE_LINUX}-alsa-lib>=1.0.22_2:audio/linux-c6-alsa-lib
 ALSA_DISTFILES_OFF=	linux-f10-flashsupport-9.0.1.i386.tar.gz:suplib
 ALSA_PLIST_SUB_OFF=	LINUXBASE="${LINUXBASE}" COMPATDIR="${LINUXBASE:H}"
 

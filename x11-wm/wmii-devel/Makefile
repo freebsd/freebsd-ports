@@ -15,7 +15,7 @@ COMMENT=	Dynamic, minimalist window manager for X11
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libixp.so:${PORTSDIR}/devel/libixp
+LIB_DEPENDS=	libixp.so:devel/libixp
 
 CONFLICTS=	wmii-3.6*
 

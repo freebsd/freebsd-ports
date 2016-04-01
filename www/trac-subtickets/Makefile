@@ -15,7 +15,7 @@ COMMENT=	Offers sub-ticket feature for managing tickets
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	itota

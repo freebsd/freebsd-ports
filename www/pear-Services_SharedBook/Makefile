@@ -8,8 +8,8 @@ CATEGORIES=	www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP wrapper for SharedBook Open API
 
-BUILD_DEPENDS=	${PEARDIR}/HTTP/Client.php:${PORTSDIR}/www/pear-HTTP_Client
-RUN_DEPENDS=	${PEARDIR}/HTTP/Client.php:${PORTSDIR}/www/pear-HTTP_Client
+BUILD_DEPENDS=	${PEARDIR}/HTTP/Client.php:www/pear-HTTP_Client
+RUN_DEPENDS=	${PEARDIR}/HTTP/Client.php:www/pear-HTTP_Client
 
 USES=	pear
 

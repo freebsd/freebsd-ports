@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	High-performance pre-forking Catalyst engine
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7012:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Net-Server>=0.97:${PORTSDIR}/net/p5-Net-Server \
-		p5-HTTP-HeaderParser-XS>=0:${PORTSDIR}/www/p5-HTTP-HeaderParser-XS \
-		p5-CGI-Cookie-XS>=0:${PORTSDIR}/www/p5-CGI-Cookie-XS \
-		p5-HTTP-Body>=0:${PORTSDIR}/www/p5-HTTP-Body
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7012:www/p5-Catalyst-Runtime \
+		p5-Net-Server>=0.97:net/p5-Net-Server \
+		p5-HTTP-HeaderParser-XS>=0:www/p5-HTTP-HeaderParser-XS \
+		p5-CGI-Cookie-XS>=0:www/p5-CGI-Cookie-XS \
+		p5-HTTP-Body>=0:www/p5-HTTP-Body
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

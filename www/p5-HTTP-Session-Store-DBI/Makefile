@@ -11,9 +11,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to store session data in DBI for HTTP::Session
 
 BUILD_DEPENDS=	\
-	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
-	p5-HTTP-Session>=0.26:${PORTSDIR}/www/p5-HTTP-Session \
-	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
+	p5-Moose>0:devel/p5-Moose \
+	p5-HTTP-Session>=0.26:www/p5-HTTP-Session \
+	p5-DBI>0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

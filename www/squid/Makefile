@@ -81,22 +81,22 @@ AUTH_LDAP_USE=			OPENLDAP=yes
 AUTH_SASL_CFLAGS=		-I${LOCALBASE}/include
 AUTH_SASL_CPPFLAGS=		-I${LOCALBASE}/include
 AUTH_SASL_LDFLAGS=		-L${LOCALBASE}/lib
-AUTH_SASL_LIB_DEPENDS=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-AUTH_SMB3_RUN_DEPENDS=		smbclient:${PORTSDIR}/net/samba36
-AUTH_SMB4_RUN_DEPENDS=		smbclient:${PORTSDIR}/net/samba42
-AUTH_SQL_RUN_DEPENDS=		p5-DBI>=1.08:${PORTSDIR}/databases/p5-DBI
+AUTH_SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
+AUTH_SMB3_RUN_DEPENDS=		smbclient:net/samba36
+AUTH_SMB4_RUN_DEPENDS=		smbclient:net/samba42
+AUTH_SQL_RUN_DEPENDS=		p5-DBI>=1.08:databases/p5-DBI
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
 DELAY_POOLS_CONFIGURE_ENABLE=	delay-pools
 ECAP_CFLAGS=			-I${LOCALBASE}/include
 ECAP_CONFIGURE_ENABLE=		ecap
 ECAP_LDFLAGS=			-L${LOCALBASE}/lib
-ECAP_LIB_DEPENDS=		libecap.so:${PORTSDIR}/www/libecap
+ECAP_LIB_DEPENDS=		libecap.so:www/libecap
 ECAP_USES=			pkgconfig:build
 ESI_CFLAGS=			-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 ESI_CONFIGURE_ENABLE=		esi
 ESI_LDFLAGS=			-L${LOCALBASE}/lib
-ESI_LIB_DEPENDS=		libexpat.so:${PORTSDIR}/textproc/expat2 \
-				libxml2.so:${PORTSDIR}/textproc/libxml2
+ESI_LIB_DEPENDS=		libexpat.so:textproc/expat2 \
+				libxml2.so:textproc/libxml2
 FOLLOW_XFF_CONFIGURE_ENABLE=	follow-x-forwarded-for
 HTCP_CONFIGURE_ENABLE=		htcp
 ICAP_CONFIGURE_ENABLE=		icap-client
@@ -106,13 +106,13 @@ IPV6_CONFIGURE_ENABLE=		ipv6
 KQUEUE_CONFIGURE_ENABLE=	kqueue
 LARGEFILE_CONFIGURE_WITH=	large-files
 LAX_HTTP_CONFIGURE_ENABLE=	http-violations
-NETTLE_LIB_DEPENDS=		libnettle.so:${PORTSDIR}/security/nettle
+NETTLE_LIB_DEPENDS=		libnettle.so:security/nettle
 NETTLE_CONFIGURE_OFF=		--without-nettle
 SNMP_CONFIGURE_ENABLE=		snmp
 SSL_CONFIGURE_ENABLE=		ssl
 SSL_CRTD_CONFIGURE_ENABLE=	ssl-crtd
 STACKTRACES_CONFIGURE_ENABLE=	stacktraces
-STACKTRACES_LIB_DEPENDS=	libunwind.so:${PORTSDIR}/devel/libunwind
+STACKTRACES_LIB_DEPENDS=	libunwind.so:devel/libunwind
 STACKTRACES_CONFIGURE_ON=	--disable-strict-error-checking
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
 TP_IPF_CONFIGURE_ENABLE=	ipf-transparent

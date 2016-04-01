@@ -12,8 +12,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME keyboard shared library
 
-BUILD_DEPENDS=	libxklavier>=5.2:${PORTSDIR}/x11/libxklavier
-LIB_DEPENDS=	libxklavier.so:${PORTSDIR}/x11/libxklavier
+BUILD_DEPENDS=	libxklavier>=5.2:x11/libxklavier
+LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intltool introspection:build \

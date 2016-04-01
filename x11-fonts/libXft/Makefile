@@ -8,8 +8,8 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Client-sided font API for X applications
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 XORG_CAT=	lib
 USE_XORG=	xproto:both xrender

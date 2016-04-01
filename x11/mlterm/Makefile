@@ -35,29 +35,29 @@ SIXEL_DESC=	Sixel graphics support
 UIM_DESC=	uim support (experimental)
 
 FRIBIDI_CONFIGURE_ENABLE=	fribidi
-FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 UIM_CONFIGURE_ENABLE=	uim
-UIM_LIB_DEPENDS=	libuim.so:${PORTSDIR}/textproc/uim
+UIM_LIB_DEPENDS=	libuim.so:textproc/uim
 
 M17NLIB_CONFIGURE_ENABLE=	m17nlib
-M17NLIB_LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
+M17NLIB_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 
 SCIM_CONFIGURE_ENABLE=	scim
-SCIM_LIB_DEPENDS=	libscim-1.0.so:${PORTSDIR}/textproc/scim
+SCIM_LIB_DEPENDS=	libscim-1.0.so:textproc/scim
 
 IBUS_CONFIGURE_ENABLE=	ibus
-IBUS_LIB_DEPENDS=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
+IBUS_LIB_DEPENDS=	libibus-1.0.so:textproc/ibus
 
-CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_CONFIGURE_ON=	--with-type-engines="xcore,xft,cairo"
 CAIRO_CONFIGURE_OFF=	--with-type-engines="xcore,xft"
 
 SIXEL_CONFIGURE_ENABLE=	sixel
 
-REGIS_LIB_DEPENDS=	libSDL.so:${PORTSDIR}/devel/sdl12 \
-			libSDL_ttf.so:${PORTSDIR}/graphics/sdl_ttf \
-			libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+REGIS_LIB_DEPENDS=	libSDL.so:devel/sdl12 \
+			libSDL_ttf.so:graphics/sdl_ttf \
+			libfontconfig.so:x11-fonts/fontconfig
 
 .include <bsd.port.options.mk>
 

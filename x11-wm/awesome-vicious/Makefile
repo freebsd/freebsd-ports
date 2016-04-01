@@ -13,7 +13,7 @@ COMMENT=	Widgets for the awesome window manager
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	awesome:${PORTSDIR}/x11-wm/awesome
+RUN_DEPENDS=	awesome:x11-wm/awesome
 
 USES=		tar:xz
 NO_BUILD=	yes

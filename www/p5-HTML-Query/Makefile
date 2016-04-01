@@ -14,8 +14,8 @@ COMMENT=	JQuery-like selection queries for HTML::Element
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS+=	p5-Badger>=0.03:${PORTSDIR}/devel/p5-Badger \
-		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree
+RUN_DEPENDS+=	p5-Badger>=0.03:devel/p5-Badger \
+		p5-HTML-Tree>=3.23:www/p5-HTML-Tree
 
 USES=		perl5
 USE_PERL5=	configure

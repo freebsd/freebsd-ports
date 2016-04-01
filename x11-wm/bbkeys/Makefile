@@ -12,7 +12,7 @@ COMMENT=	Keygrabber for the Blackbox window manager
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
+BUILD_DEPENDS=	blackbox:x11-wm/blackbox
 
 USES=		perl5 pkgconfig
 USE_PERL5=	build

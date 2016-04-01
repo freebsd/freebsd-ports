@@ -12,8 +12,8 @@ COMMENT=	Aria2 Qt front-end
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	aria2c:${PORTSDIR}/www/aria2 \
-		xterm:${PORTSDIR}/x11/xterm
+RUN_DEPENDS=	aria2c:www/aria2 \
+		xterm:x11/xterm
 
 USES=		tar:bzip2 qmake
 USE_QT4=	gui moc_build rcc_build uic_build

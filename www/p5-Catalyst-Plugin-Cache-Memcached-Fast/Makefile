@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Catalyst Plugin for Cache::Memcached::Fast
 
-BUILD_DEPENDS=	p5-Cache-Memcached-Fast>=0:${PORTSDIR}/databases/p5-Cache-Memcached-Fast \
-		p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-Cache-Memcached-Fast>=0:databases/p5-Cache-Memcached-Fast \
+		p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime \
+		p5-Class-Data-Inheritable>=0:devel/p5-Class-Data-Inheritable \
+		p5-Test-Simple>=0:devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

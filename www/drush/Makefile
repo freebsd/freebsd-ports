@@ -10,7 +10,7 @@ COMMENT=	Drupal command line and scripting interface
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	pear-Console_Table>0:${PORTSDIR}/devel/pear-Console_Table
+RUN_DEPENDS=	pear-Console_Table>0:devel/pear-Console_Table
 
 NO_BUILD=	yes
 

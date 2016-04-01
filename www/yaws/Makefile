@@ -10,7 +10,7 @@ COMMENT=	Web server for dynamic content written in Erlang
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erl:lang/erlang
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_SUB=	yes

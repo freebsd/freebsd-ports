@@ -13,9 +13,9 @@ COMMENT=	Graphviz plugin for Trac's wiki
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS+=	urwfonts>0:${PORTSDIR}/x11-fonts/urwfonts \
-		dot:${PORTSDIR}/graphics/graphviz \
-		tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	urwfonts>0:x11-fonts/urwfonts \
+		dot:graphics/graphviz \
+		tracd:www/trac
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils

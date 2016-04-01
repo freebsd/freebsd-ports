@@ -14,9 +14,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-HTTP-Message>=1.28:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-LWP-Protocol-https>=1:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-HTTP-Message>=1.28:www/p5-HTTP-Message \
+		p5-LWP-Protocol-https>=1:www/p5-LWP-Protocol-https \
+		p5-libwww>0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

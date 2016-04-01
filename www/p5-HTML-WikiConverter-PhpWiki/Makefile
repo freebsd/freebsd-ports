@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert HTML to PhpWiki markup
 
-BUILD_DEPENDS=	p5-HTML-WikiConverter>=0.54:${PORTSDIR}/www/p5-HTML-WikiConverter \
-		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-HTML-WikiConverter>=0.54:www/p5-HTML-WikiConverter \
+		p5-URI>=1.35:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -13,11 +13,11 @@ COMMENT=	Personal social data server
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+BUILD_DEPENDS=	vapigen:lang/vala
+LIB_DEPENDS=	librest-0.7.so:devel/librest \
+		libgnome-keyring.so:security/libgnome-keyring \
+		libsoup-gnome-2.4.so:devel/libsoup-gnome \
+		libjson-glib-1.0.so:devel/json-glib
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gconf2 glib20 intlhack introspection:build \

@@ -14,7 +14,7 @@ COMMENT=	Validates the HTML output of your apache2 webserver
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_APACHE=	22+

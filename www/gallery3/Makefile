@@ -35,36 +35,36 @@ WWWDIR=		${GALLERY3DIR}
 .endif
 
 .if ${PORT_OPTIONS:MDCRAW}
-RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
+RUN_DEPENDS+=	dcraw:graphics/dcraw
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
-RUN_DEPENDS+=	pngtogd:${PORTSDIR}/graphics/gd
+RUN_DEPENDS+=	pngtogd:graphics/gd
 .endif
 
 .if ${PORT_OPTIONS:MGRAPHMAGICK}
-RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
+RUN_DEPENDS+=	gm:graphics/GraphicsMagick
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:graphics/ImageMagick
 .else
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
+RUN_DEPENDS+=	convert:graphics/ImageMagick-nox11
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MJHEAD}
-RUN_DEPENDS+=	jhead:${PORTSDIR}/graphics/jhead
+RUN_DEPENDS+=	jhead:graphics/jhead
 .endif
 
 .if ${PORT_OPTIONS:MNETPBM}
-RUN_DEPENDS+=	giftopnm:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS+=	giftopnm:graphics/netpbm
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -73,7 +73,7 @@ USES+=		gettext
 .endif
 
 .if ${PORT_OPTIONS:MUNZIP}
-RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS+=	unzip:archivers/unzip
 .endif
 
 do-install:

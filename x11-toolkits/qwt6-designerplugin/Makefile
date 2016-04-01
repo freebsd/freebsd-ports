@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	6-designerplugin
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Designer plugin for Qwt
 
-LIB_DEPENDS=	libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6
+LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6
 
 USES=		gmake qmake tar:bzip2
 USE_QT4=	designer moc_build rcc_build

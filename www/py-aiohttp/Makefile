@@ -13,9 +13,9 @@ COMMENT=	HTTP client/server for asyncio
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py3-chardet
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}gunicorn>0:${PORTSDIR}/www/py-gunicorn
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py3-chardet
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}gunicorn>0:www/py-gunicorn
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist distutils

@@ -14,9 +14,9 @@ COMMENT=	Perl framework to automate HTML forms
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Random>=0.05:${PORTSDIR}/devel/p5-Data-Random \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-HTML-Form>=1.038:${PORTSDIR}/www/p5-HTML-Form
+BUILD_DEPENDS=	p5-Data-Random>=0.05:devel/p5-Data-Random \
+		p5-libwww>=0:www/p5-libwww \
+		p5-HTML-Form>=1.038:www/p5-HTML-Form
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

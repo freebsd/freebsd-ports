@@ -13,9 +13,9 @@ COMMENT=	Perl module to provide custom forms for reauthentication
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=1.39:${PORTSDIR}/www/mod_perl2 \
-		p5-Class-Load>=0.03:${PORTSDIR}/devel/p5-Class-Load \
-		p5-autobox>=1.10:${PORTSDIR}/devel/p5-autobox
+BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=1.39:www/mod_perl2 \
+		p5-Class-Load>=0.03:devel/p5-Class-Load \
+		p5-autobox>=1.10:devel/p5-autobox
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

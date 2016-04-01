@@ -12,8 +12,8 @@ DIST_SUBDIR=	trac
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin that provides a project Blog
 
-RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \
-		tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	htmldoc:textproc/htmldoc \
+		tracd:www/trac
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

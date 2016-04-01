@@ -13,10 +13,10 @@ COMMENT=	Lightweight X11 desktop panel
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
-		libsysinfo.so:${PORTSDIR}/devel/libsysinfo
-RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data \
-		xmessage:${PORTSDIR}/x11/xmessage
+LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
+		libsysinfo.so:devel/libsysinfo
+RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:x11/lxmenu-data \
+		xmessage:x11/xmessage
 
 USE_AUTOTOOLS=	automake:env
 USE_CSTD=	gnu89
@@ -37,7 +37,7 @@ PORTDOCS=	AUTHORS README
 OPTIONS_DEFINE=	ALSA DOCS NLS
 OPTIONS_SUB=	yes
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext

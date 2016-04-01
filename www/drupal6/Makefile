@@ -41,7 +41,7 @@ USE_PHP+=	mysql
 USE_PHP+=	mysqli
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB
 USE_PHP+=	pgsql
 .endif
 

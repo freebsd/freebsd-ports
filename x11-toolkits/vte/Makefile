@@ -17,7 +17,7 @@ PORTSCOUT=	ignore:1
 
 .if !defined(REFERENCE_PORT)
 
-RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gnome-pty-helper
+RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:x11-toolkits/gnome-pty-helper
 
 USES+=		cpe gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

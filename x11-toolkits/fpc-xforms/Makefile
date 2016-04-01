@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	EXAMPLES XFORMS
 XFORMS_DESC=	Install xforms graphical user interface toolkit
 OPTIONS_DEFAULT=	XFORMS
 
-XFORMS_LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
+XFORMS_LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
 .include "${MASTERDIR}/Makefile"

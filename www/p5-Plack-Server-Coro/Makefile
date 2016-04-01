@@ -12,12 +12,12 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for Coro cooperative multithread web server
 
 RUN_DEPENDS=	\
-	p5-Coro>0:${PORTSDIR}/devel/p5-Coro \
-	p5-Net-Server-Coro>=0.5:${PORTSDIR}/net/p5-Net-Server-Coro \
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack
+	p5-Coro>0:devel/p5-Coro \
+	p5-Net-Server-Coro>=0.5:net/p5-Net-Server-Coro \
+	p5-Plack>0:www/p5-Plack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
+TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
+		p5-Test-TCP>0:devel/p5-Test-TCP
 
 USES=		perl5
 USE_PERL5=	configure

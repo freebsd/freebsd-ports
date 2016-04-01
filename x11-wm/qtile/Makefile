@@ -13,8 +13,8 @@ COMMENT=	Small, flexible, scriptable tiling window manager written in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xpyb>0:${PORTSDIR}/x11/xpyb \
-		${PYTHON_PKGNAMEPREFIX}cairo>0:${PORTSDIR}/graphics/py-cairo
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xpyb>0:x11/xpyb \
+		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qtile

@@ -12,12 +12,12 @@ COMMENT=	Simple, Git-powered wiki with a sweet API and local frontend
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-github-markup>=1.4.0:${PORTSDIR}/textproc/rubygem-github-markup \
-		rubygem-gollum-grit_adapter>=1.0:${PORTSDIR}/www/rubygem-gollum-grit_adapter \
-		rubygem-nokogiri>=1.6.4:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-rouge>=1.10:${PORTSDIR}/textproc/rubygem-rouge \
-		rubygem-sanitize>=2.1.0:${PORTSDIR}/textproc/rubygem-sanitize \
-		rubygem-stringex>=2.5.1:${PORTSDIR}/devel/rubygem-stringex
+RUN_DEPENDS=	rubygem-github-markup>=1.4.0:textproc/rubygem-github-markup \
+		rubygem-gollum-grit_adapter>=1.0:www/rubygem-gollum-grit_adapter \
+		rubygem-nokogiri>=1.6.4:textproc/rubygem-nokogiri \
+		rubygem-rouge>=1.10:textproc/rubygem-rouge \
+		rubygem-sanitize>=2.1.0:textproc/rubygem-sanitize \
+		rubygem-stringex>=2.5.1:devel/rubygem-stringex
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -32,16 +32,16 @@ OPTIONS_RADIO_GRAPHICS=	DIRECTFB SVGALIB X11
 OPTIONS_DEFAULT=	FORMSAVE FREETYPE JS X11
 
 DIRECTFB_DESC=		DirectFB driver support
-DIRECTFB_LIB_DEPENDS=	libdirectfb-1.4.so:${PORTSDIR}/devel/directfb
+DIRECTFB_LIB_DEPENDS=	libdirectfb-1.4.so:devel/directfb
 DIRECTFB_CONFIGURE_WITH=	directfb
 FORMSAVE_DESC=		Form saving/loading support
-FORMSAVE_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+FORMSAVE_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 FORMSAVE_CONFIGURE_ENABLE=	form-saving
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_WITH=	freetype
 JS_DESC=		Javascript interpreter support (very basic)
 JS_CONFIGURE_ENABLE=	javascript
-SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_WITH=	svgalib
 X11_USE=		xorg=x11,xproto
 X11_CONFIGURE_WITH=	x
@@ -49,8 +49,8 @@ X11_CONFIGURE_WITH=	x
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDIRECTFB} || ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 USES+=		jpeg
 CONFIGURE_ARGS+=	--enable-graphics
 .else

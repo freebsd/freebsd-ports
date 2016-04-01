@@ -11,7 +11,7 @@ COMMENT=	Implementation of HPACK (Header compression for HTTP/2.0)
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libcheck.so:${PORTSDIR}/devel/libcheck
+LIB_DEPENDS=	libcheck.so:devel/libcheck
 
 CMAKE_ARGS=	-DBUILD_DOCS=OFF \
 		-DBUILD_TESTS=OFF \

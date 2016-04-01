@@ -43,7 +43,7 @@ MENUFIX_DESC=		MenuIconSize fix
 MENUFIX_EXTRA_PATCHES=	${FILESDIR}/extra-menu-icon-fix.patch
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-XFT_LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
+XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
 XFT_CONFIGURE_OFF=	--enable-corefonts --disable-xfreetype
 XINERAMA_USE=		XORG=xinerama
 XINERAMA_CONFIGURE_ENABLE=	xinerama

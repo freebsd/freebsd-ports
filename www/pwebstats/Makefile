@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.gleeson.net/pub/pwebstats/dist/ \
 MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	Analyse a web server log
 
-RUN_DEPENDS=	fly:${PORTSDIR}/graphics/fly
+RUN_DEPENDS=	fly:graphics/fly
 
 USES=		perl5
 

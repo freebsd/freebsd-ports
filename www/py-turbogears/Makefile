@@ -11,18 +11,18 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python-Based Framework for Rapid Web Development
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.1.2:${PORTSDIR}/www/py-cherrypy \
-		${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:${PORTSDIR}/devel/py-configobj \
-		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.1:${PORTSDIR}/www/py-formencode \
-		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.7:${PORTSDIR}/www/py-pastescript \
-		${PYTHON_PKGNAMEPREFIX}PEAK-Rules>=0.5a1:${PORTSDIR}/devel/py-PEAK-Rules \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=1.9.1:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}TurboCheetah>=1.0:${PORTSDIR}/devel/py-turbocheetah \
-		${PYTHON_PKGNAMEPREFIX}TurboKid>=1.0.5:${PORTSDIR}/devel/py-turbokid \
-		${PYTHON_PKGNAMEPREFIX}TurboJson>=1.3:${PORTSDIR}/devel/py-turbojson \
-		${PYTHON_PKGNAMEPREFIX}tgMochiKit>=1.4.2:${PORTSDIR}/devel/py-tgMochiKit \
-		${PYTHON_PKGNAMEPREFIX}Genshi>=0.4.4:${PORTSDIR}/textproc/py-genshi \
-		${PYTHON_PKGNAMEPREFIX}TGScheduler>0:${PORTSDIR}/devel/py-TGScheduler
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.1.2:www/py-cherrypy \
+		${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:devel/py-configobj \
+		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.1:www/py-formencode \
+		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.7:www/py-pastescript \
+		${PYTHON_PKGNAMEPREFIX}PEAK-Rules>=0.5a1:devel/py-PEAK-Rules \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=1.9.1:devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}TurboCheetah>=1.0:devel/py-turbocheetah \
+		${PYTHON_PKGNAMEPREFIX}TurboKid>=1.0.5:devel/py-turbokid \
+		${PYTHON_PKGNAMEPREFIX}TurboJson>=1.3:devel/py-turbojson \
+		${PYTHON_PKGNAMEPREFIX}tgMochiKit>=1.4.2:devel/py-tgMochiKit \
+		${PYTHON_PKGNAMEPREFIX}Genshi>=0.4.4:textproc/py-genshi \
+		${PYTHON_PKGNAMEPREFIX}TGScheduler>0:devel/py-TGScheduler
 
 USES=		gettext python:2
 USE_PYTHON=	distutils autoplist
@@ -41,19 +41,19 @@ post-patch:
 		${WRKSRC}/TurboGears.egg-info/requires.txt
 
 .if ${PORT_OPTIONS:MELIXIR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Elixir>=0.6.1:${PORTSDIR}/databases/py-Elixir
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Elixir>=0.6.1:databases/py-Elixir
 .endif
 
 .if ${PORT_OPTIONS:MNOSE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>=0.9.1:${PORTSDIR}/devel/py-nose
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>=0.9.1:devel/py-nose
 .endif
 
 .if ${PORT_OPTIONS:MSQLOBJECT}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlobject>=0.10.1:${PORTSDIR}/databases/py-sqlobject
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlobject>=0.10.1:databases/py-sqlobject
 .endif
 
 .if ${PORT_OPTIONS:MSQLALCHEMY}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.3.4:${PORTSDIR}/databases/py-sqlalchemy06
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.3.4:databases/py-sqlalchemy06
 .endif
 
 .include <bsd.port.mk>

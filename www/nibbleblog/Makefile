@@ -11,7 +11,7 @@ DISTNAME=	nibbleblogv302
 MAINTAINER=	marekholienka@gmail.com
 COMMENT=	Lightweight blog system for general use
 
-RUN_DEPENDS=	pear:${PORTSDIR}/devel/pear
+RUN_DEPENDS=	pear:devel/pear
 
 USES=		cpe zip
 NO_BUILD=	yes
@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
 
 APACHE_USE=		APACHE_RUN=22+
-LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
+LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

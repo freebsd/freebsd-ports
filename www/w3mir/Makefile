@@ -12,7 +12,7 @@ COMMENT=	All-purpose HTTP copying and mirroring tool
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-web
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance multi-threaded web server
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 BROKEN=		Needs to be ported to GnuTLS 3.4; abandoned upstream
 

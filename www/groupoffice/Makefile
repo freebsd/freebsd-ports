@@ -43,7 +43,7 @@ WBXML_DESC=	Synchronization Support
 CALENDAR_USE=		PHP=calendar
 GD_USE=			PHP=gd
 IMAP_USE=		PHP=iconv imap
-WBXML_LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
+WBXML_LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \

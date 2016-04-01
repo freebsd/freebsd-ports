@@ -10,8 +10,8 @@ DISTNAME=	httpd-test_20041105052051
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Profile-driven HTTP load tester
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libapr-1.so:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libapr-1.so:devel/apr1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE}/bin/apr-1-config \

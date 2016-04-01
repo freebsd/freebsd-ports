@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extented persistence framework for session data
 
-BUILD_DEPENDS=	p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session
+BUILD_DEPENDS=	p5-Apache-Session>=0:www/p5-Apache-Session
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

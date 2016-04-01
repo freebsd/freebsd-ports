@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to port Apache2 AddDefaultCharset for Plack
 
 RUN_DEPENDS=	\
-	p5-Plack>=0.9925:${PORTSDIR}/www/p5-Plack
+	p5-Plack>=0.9925:www/p5-Plack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

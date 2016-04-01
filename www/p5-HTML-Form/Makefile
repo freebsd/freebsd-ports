@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class that represents an HTML form element
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTTP-Message>=6.03:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-URI>=1.10:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-HTTP-Message>=6.03:www/p5-HTTP-Message \
+		p5-URI>=1.10:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*

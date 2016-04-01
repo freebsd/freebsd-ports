@@ -12,7 +12,7 @@ COMMENT=	Low-level access to the X11 library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-CheckLib>=0:${PORTSDIR}/devel/p5-Devel-CheckLib
+BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

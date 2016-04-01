@@ -12,12 +12,12 @@ COMMENT=	HTTP/2.0 C Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libev>=4.15:${PORTSDIR}/devel/libev \
-		libevent2>=2.0.8:${PORTSDIR}/devel/libevent2 \
-		spdylay>=1.3.0:${PORTSDIR}/www/spdylay
-LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
-		libevent_openssl.so:${PORTSDIR}/devel/libevent2 \
-		libspdylay.so:${PORTSDIR}/www/spdylay
+BUILD_DEPENDS=	libev>=4.15:devel/libev \
+		libevent2>=2.0.8:devel/libevent2 \
+		spdylay>=1.3.0:www/spdylay
+LIB_DEPENDS=	libev.so:devel/libev \
+		libevent_openssl.so:devel/libevent2 \
+		libspdylay.so:www/spdylay
 
 OPTIONS_DEFINE=	ASIO DOCS HPACK
 OPTIONS_DEFAULT=HPACK
@@ -45,13 +45,13 @@ USES=		autoreconf compiler:c++11-lib gmake libtool localbase pathfix pkgconfig
 PORTDATA=	fetch-ocsp-response
 PORTDOCS=	*
 
-ASIO_BUILD_DEPENDS=	boost-libs>=1.54.0:${PORTSDIR}/devel/boost-libs
+ASIO_BUILD_DEPENDS=	boost-libs>=1.54.0:devel/boost-libs
 ASIO_CONFIGURE_OFF=	--with-boost=no
 ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost-asio --with-boost-system --with-boost-thread
-ASIO_LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
-ASIO_RUN_DEPENDS=	boost-libs>=1.54.0:${PORTSDIR}/devel/boost-libs
+ASIO_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+ASIO_RUN_DEPENDS=	boost-libs>=1.54.0:devel/boost-libs
 HPACK_CONFIGURE_ENABLE=	hpack-tools
-HPACK_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
+HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
 
 .include <bsd.port.pre.mk>
 

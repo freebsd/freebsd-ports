@@ -14,8 +14,8 @@ COMMENT=	Window manager based on aewm with title bars, iconization, and styles
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
-		rxvt:${PORTSDIR}/x11/rxvt
+RUN_DEPENDS=	xv:graphics/xv \
+		rxvt:x11/rxvt
 
 USES=		gmake
 USE_XORG=	x11

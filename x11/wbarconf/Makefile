@@ -12,7 +12,7 @@ COMMENT=	Configuration GUI for wbar
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	wbar:${PORTSDIR}/x11/wbar
+RUN_DEPENDS=	wbar:x11/wbar
 
 USE_GNOME=	pygobject pygtk2 gtk20
 USES=		gettext desktop-file-utils python shebangfix

@@ -15,9 +15,9 @@ LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libtumbler-1.so:${PORTSDIR}/deskutils/xfce4-tumbler \
-	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
+LIB_DEPENDS=	libtumbler-1.so:deskutils/xfce4-tumbler \
+	libdbus-glib-1.so:devel/dbus-glib
+RUN_DEPENDS=	pkexec:sysutils/polkit
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -44,11 +44,11 @@ PLUG_WALL_DESC=	Wallpaper plugin
 
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	notifications
-PLUG_APR_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+PLUG_APR_LIB_DEPENDS=	libexif.so:graphics/libexif
 PLUG_APR_CONFIGURE_ENABLE=	apr-plugin exif
-PLUG_SBR_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PLUG_SBR_LIB_DEPENDS=	libpcre.so:devel/pcre
 PLUG_SBR_CONFIGURE_ENABLE=	sbr-plugin pcre
 PLUG_TPA_USE=	gnome=gvfs xfce=panel
 PLUG_TPA_CONFIGURE_ENABLE=	tpa-plugin

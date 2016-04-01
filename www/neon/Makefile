@@ -27,9 +27,9 @@ PROXY_DESC=		libproxy support
 XML_DESC=		XML parser library
 
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 EXPAT_CONFIGURE_WITH=	expat
-EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 GSSAPI_CONFIGURE_WITH=	gssapi
 LIBXML_CONFIGURE_WITH=	libxml2
 LIBXML_USE=		GNOME=libxml2
@@ -38,7 +38,7 @@ NLS_USES=		gettext
 OPENSSL_CONFIGURE_WITH=	ssl
 OPENSSL_USE=		OPENSSL=yes
 PROXY_CONFIGURE_WITH=	libproxy
-PROXY_LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
+PROXY_LIB_DEPENDS=	libproxy.so:net/libproxy
 
 .include <bsd.port.options.mk>
 

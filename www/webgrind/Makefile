@@ -26,7 +26,7 @@ NO_ARCH=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 CALLGRAPH_USES=		python
-CALLGRAPH_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+CALLGRAPH_RUN_DEPENDS=	dot:graphics/graphviz
 
 post-patch-CALLGRAPH-on:
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' ${WRKSRC}/config.php

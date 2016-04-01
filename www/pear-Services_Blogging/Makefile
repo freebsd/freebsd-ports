@@ -8,8 +8,8 @@ CATEGORIES=	www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to Blog
 
-BUILD_DEPENDS=	${PEARDIR}/XML/RPC.php:${PORTSDIR}/net/pear-XML_RPC
-RUN_DEPENDS=	${PEARDIR}/XML/RPC.php:${PORTSDIR}/net/pear-XML_RPC
+BUILD_DEPENDS=	${PEARDIR}/XML/RPC.php:net/pear-XML_RPC
+RUN_DEPENDS=	${PEARDIR}/XML/RPC.php:net/pear-XML_RPC
 
 USES=	pear
 

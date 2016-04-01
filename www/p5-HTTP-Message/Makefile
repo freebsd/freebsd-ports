@@ -13,11 +13,11 @@ COMMENT=	Representation of HTTP style messages
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Encode-Locale>=1:${PORTSDIR}/converters/p5-Encode-Locale \
-		p5-HTTP-Date>=6:${PORTSDIR}/www/p5-HTTP-Date \
-		p5-IO-HTML>=0:${PORTSDIR}/devel/p5-IO-HTML \
-		p5-LWP-MediaTypes>=6:${PORTSDIR}/www/p5-LWP-MediaTypes \
-		p5-URI>=1.10:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-Encode-Locale>=1:converters/p5-Encode-Locale \
+		p5-HTTP-Date>=6:www/p5-HTTP-Date \
+		p5-IO-HTML>=0:devel/p5-IO-HTML \
+		p5-LWP-MediaTypes>=6:www/p5-LWP-MediaTypes \
+		p5-URI>=1.10:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

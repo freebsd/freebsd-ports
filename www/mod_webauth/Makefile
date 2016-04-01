@@ -10,8 +10,8 @@ DISTNAME=	webauth-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for authenticating users with Kerberos v5
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libsasl2.so:security/cyrus-sasl2
 
 USES=		libtool pkgconfig
 USE_APACHE=	22+

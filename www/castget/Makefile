@@ -12,8 +12,8 @@ COMMENT=	Command-line podcast downloader
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libid3.so:audio/id3lib \
+		libcurl.so:ftp/curl
 
 USE_LDCONFIG=	yes
 USES=		libtool pkgconfig tar:bzip2

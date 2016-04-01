@@ -10,8 +10,8 @@ MASTER_SITES=	http://cr.yp.to/publicfile/
 MAINTAINER=	uffe@uffe.org
 COMMENT=	Secure, read-only, anonymous HTTP/FTP server
 
-RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
-		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+RUN_DEPENDS=	setuidgid:sysutils/daemontools \
+		tcpserver:sysutils/ucspi-tcp
 
 OPTIONS_DEFINE=	BASICAUTH COMMONLOG REDIRECT_SLASH ENV_FILETYPES SSL
 BASICAUTH_DESC=		basic HTTP authentication support
@@ -53,14 +53,14 @@ pre-configure::
 .if ${PORT_OPTIONS:MSSL}
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/publicfile.sslserver
-RUN_DEPENDS+=	sslserver:${PORTSDIR}/sysutils/ucspi-ssl
+RUN_DEPENDS+=	sslserver:sysutils/ucspi-ssl
 .endif
 
 .if ${PORT_OPTIONS:MBASICAUTH}
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} -p1 < \
 		${PATCHDIR}/publicfile-0.52_basicauth.patch
-PATCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/databases/cdb:extract
+PATCH_DEPENDS+=	${NONEXISTENT}:databases/cdb:extract
 PLIST_SUB+=	BASICAUTH=""
 .else
 PLIST_SUB+=	BASICAUTH="@comment "

@@ -18,8 +18,8 @@ COMMENT=	Fast program for analysing WWW logfiles
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Licence.txt
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libpng.so:graphics/png
 
 USES=		jpeg
 BUILD_WRKSRC=	${WRKSRC}/src

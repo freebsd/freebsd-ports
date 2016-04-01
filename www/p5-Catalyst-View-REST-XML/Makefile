@@ -11,8 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for Catalyst XML View Class
 
 RUN_DEPENDS=	\
-	p5-Catalyst-Runtime>0:${PORTSDIR}/www/p5-Catalyst-Runtime \
-	p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
+	p5-Catalyst-Runtime>0:www/p5-Catalyst-Runtime \
+	p5-XML-Simple>0:textproc/p5-XML-Simple
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

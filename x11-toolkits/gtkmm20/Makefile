@@ -19,8 +19,8 @@ PORTSCOUT=	ignore:1
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+LIB_DEPENDS=	libsigc-1.2.so:devel/libsigc++12
+BUILD_DEPENDS=	gm4:devel/m4
 
 USES+=		gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes

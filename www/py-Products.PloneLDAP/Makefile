@@ -14,8 +14,8 @@ COMMENT=	LDAP/Active Directory support for Plone
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.LDAPMultiPlugins>=1.10:${PORTSDIR}/devel/py-Products.LDAPMultiPlugins \
-		${PYTHON_PKGNAMEPREFIX}Products.LDAPUserFolder>=2.9:${PORTSDIR}/devel/py-Products.LDAPUserFolder
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.LDAPMultiPlugins>=1.10:devel/py-Products.LDAPMultiPlugins \
+		${PYTHON_PKGNAMEPREFIX}Products.LDAPUserFolder>=2.9:devel/py-Products.LDAPUserFolder
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

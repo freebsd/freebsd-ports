@@ -15,7 +15,7 @@ COMMENT=	HTTP Cookie parser in C
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
+BUILD_DEPENDS=	p5-Filter-Simple>=0:textproc/p5-Filter-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

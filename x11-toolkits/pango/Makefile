@@ -15,13 +15,13 @@ USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	fontconfig>=2.10.91:${PORTSDIR}/x11-fonts/fontconfig \
-		cairo>=1.12.10,2:${PORTSDIR}/graphics/cairo
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	xorg-fonts-truetype>0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
-		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
+BUILD_DEPENDS=	fontconfig>=2.10.91:x11-fonts/fontconfig \
+		cairo>=1.12.10,2:graphics/cairo
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype \
+		${FONTENCOD}:x11-fonts/encodings
 
 PORTSCOUT=	limitw:1,even
 

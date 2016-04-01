@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Place launch icons and background directly on your desktop
 
-LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libXft.so:x11-fonts/libXft \
+		libImlib2.so:graphics/imlib2
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
@@ -29,7 +29,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
 SHAPE_CONFIGURE_ENABLE=	shape
-SN_LIB_DEPENDS=	libstartup-notification.so:${PORTSDIR}/x11/startup-notification
+SN_LIB_DEPENDS=	libstartup-notification.so:x11/startup-notification
 SN_CONFIGURE_ON=	--enable-libsn
 
 do-install:

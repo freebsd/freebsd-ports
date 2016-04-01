@@ -12,8 +12,8 @@ COMMENT=	RSI prevention tool
 
 LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:${PORTSDIR}/devel/py-cheetah
-LIB_DEPENDS=	libgdome.so:${PORTSDIR}/textproc/gdome2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah
+LIB_DEPENDS=	libgdome.so:textproc/gdome2
 
 USES=		gettext gmake pathfix pkgconfig python
 USE_XORG=	recordproto x11 xext xmu xscrnsaver xtst
@@ -31,11 +31,11 @@ OPTIONS_DEFAULT=	GSTREAMER
 OPTIONS_SUB=		yes
 
 GNOME_USE=		gnome=gnomepanel
-GNOME_LIB_DEPENDS=	libgnomeuimm-2.6.so:${PORTSDIR}/x11-toolkits/libgnomeuimm26
+GNOME_LIB_DEPENDS=	libgnomeuimm-2.6.so:x11-toolkits/libgnomeuimm26
 GNOME_CONFIGURE_ENABLE=	gnome2
 GSTREAMER_USE=		gstreamer=good
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
 post-patch:

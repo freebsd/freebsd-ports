@@ -9,8 +9,8 @@ MASTER_SITES=	LOCAL/gblach/enlightenment/
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment wlan devices monitoring module
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	enlightenment:x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment:x11-wm/enlightenment
 
 DIST_SUBDIR=	enlightenment
 USES=		gmake libtool pkgconfig tar:xz

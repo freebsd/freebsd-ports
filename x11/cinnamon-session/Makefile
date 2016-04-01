@@ -10,13 +10,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the cinnamon desktop
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
-		libupower-glib.so:${PORTSDIR}/sysutils/upower \
-		libcanberra.so:${PORTSDIR}/audio/libcanberra
-RUN_DEPENDS=	console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
-		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
+BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libjson-glib-1.0.so:devel/json-glib \
+		libupower-glib.so:sysutils/upower \
+		libcanberra.so:audio/libcanberra
+RUN_DEPENDS=	console-kit-daemon:sysutils/consolekit \
+		xdpyinfo:x11/xdpyinfo
 
 USES=		autoreconf:build execinfo gettext gmake libtool \
 		pathfix pkgconfig tar:xz

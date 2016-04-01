@@ -14,9 +14,9 @@ COMMENT=	Sets removes body for HTTP response if it is not required
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Plack>=0:${PORTSDIR}/www/p5-Plack
+BUILD_DEPENDS=	p5-Plack>=0:www/p5-Plack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message
+TEST_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message
 
 USE_PERL5=	configure
 USES=		perl5

@@ -11,7 +11,7 @@ DISTNAME=	60029-Envy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Envy theme for GTK+ 2.0
 
-#RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango:${PORTSDIR}/x11-themes/icons-tango
+#RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango:x11-themes/icons-tango
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

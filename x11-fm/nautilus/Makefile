@@ -10,11 +10,11 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	File manager for the GNOME desktop
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libexempi.so:${PORTSDIR}/textproc/exempi
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libnotify.so:devel/libnotify \
+		libexempi.so:textproc/exempi
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 
@@ -34,7 +34,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	TRACKER
 OPTIONS_DEFAULT=TRACKER
 TRACKER_DESC=	Tracker support
-TRACKER_LIB_DEPENDS=	libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker
+TRACKER_LIB_DEPENDS=	libtracker-control-1.0.so:sysutils/tracker
 TRACKER_CONFIGURE_ENABLE=	tracker
 
 .include <bsd.port.mk>

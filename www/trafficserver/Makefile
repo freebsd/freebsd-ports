@@ -12,10 +12,10 @@ COMMENT=	Fast, scalable and extensible HTTP proxy server
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libhwloc.so:${PORTSDIR}/devel/hwloc \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libhwloc.so:devel/hwloc \
+		libpcre.so:devel/pcre \
+		libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -60,7 +60,7 @@ SPDY_DESC=	Enable SPDY
 WCCP_CONFIGURE_ENABLE=	wccp
 INTERIM_CONFIGURE_ENABLE=	interim-cache
 SPDY_CONFIGURE_ENABLE=	spdy
-SPDY_LIB_DEPENDS=	libspdylay.so:${PORTSDIR}/www/spdylay
+SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 
 BROKEN_FreeBSD_9=	Trafficserver is only supported on FreeBSD 10.1 or newer
 

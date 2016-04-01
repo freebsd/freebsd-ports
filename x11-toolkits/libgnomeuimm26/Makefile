@@ -12,12 +12,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgnomeui library
 
-LIB_DEPENDS=	libgnomemm-2.6.so:${PORTSDIR}/x11/libgnomemm26 \
-		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26 \
-		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
-		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+LIB_DEPENDS=	libgnomemm-2.6.so:x11/libgnomemm26 \
+		libgnomecanvasmm-2.6.so:graphics/libgnomecanvasmm26 \
+		libgconfmm-2.6.so:devel/gconfmm26 \
+		libglademm-2.4.so:devel/libglademm24 \
+		libgnomevfsmm-2.6.so:devel/gnome-vfsmm
+BUILD_DEPENDS=	gm4:devel/m4
 
 USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_XORG=	x11

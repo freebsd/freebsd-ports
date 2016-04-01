@@ -4,10 +4,10 @@ PORTNAME=	xephyr
 
 COMMENT=	X server from X.Org based on kdrive
 
-LIB_DEPENDS+=	libxcb-image.so:${PORTSDIR}/x11/xcb-util-image \
-		libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
-		libxcb-render-util.so:${PORTSDIR}/x11/xcb-util-renderutil
+LIB_DEPENDS+=	libxcb-image.so:x11/xcb-util-image \
+		libxcb-icccm.so:x11/xcb-util-wm \
+		libxcb-keysyms.so:x11/xcb-util-keysyms \
+		libxcb-render-util.so:x11/xcb-util-renderutil
 
 MASTERDIR=	${.CURDIR}/../xorg-server
 DESCR=		${.CURDIR}/pkg-descr

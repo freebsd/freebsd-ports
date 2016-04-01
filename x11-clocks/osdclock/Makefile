@@ -12,7 +12,7 @@ DISTNAME=	osd_clock-${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small clock which uses libxosd to render text to the root window
 
-LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+LIB_DEPENDS=	libxosd.so:misc/xosd
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lpthread

@@ -13,7 +13,7 @@ COMMENT=	JavaScript linter
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gflags>=0:${PORTSDIR}/devel/py-gflags
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gflags>=0:devel/py-gflags
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils

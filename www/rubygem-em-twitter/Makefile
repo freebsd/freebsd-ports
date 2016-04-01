@@ -12,10 +12,10 @@ COMMENT=	Twitter Streaming API client for EventMachine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-buftok>=0.2:${PORTSDIR}/devel/rubygem-buftok \
-		rubygem-eventmachine>=1.0:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-http_parser.rb>=0.6:${PORTSDIR}/net/rubygem-http_parser.rb \
-		rubygem-simple_oauth>=0.2:${PORTSDIR}/net/rubygem-simple_oauth
+RUN_DEPENDS=	rubygem-buftok>=0.2:devel/rubygem-buftok \
+		rubygem-eventmachine>=1.0:devel/rubygem-eventmachine \
+		rubygem-http_parser.rb>=0.6:net/rubygem-http_parser.rb \
+		rubygem-simple_oauth>=0.2:net/rubygem-simple_oauth
 
 NO_ARCH=	yes
 USE_RUBY=	yes

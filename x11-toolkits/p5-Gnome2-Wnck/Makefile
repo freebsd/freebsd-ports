@@ -13,13 +13,13 @@ COMMENT=	Perl interface to the Window Navigator Construction Kit
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
-LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck
-RUN_DEPENDS=	p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	p5-Glib2>=0:devel/p5-Glib2 \
+		p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig
+LIB_DEPENDS=	libwnck-1.so:x11-toolkits/libwnck
+RUN_DEPENDS=	p5-Glib2>=0:devel/p5-Glib2 \
+		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
 MAKE_JOBS_UNSAFE=	yes
 

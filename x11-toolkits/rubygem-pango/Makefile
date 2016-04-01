@@ -11,8 +11,8 @@ COMMENT=	Ruby binding for Pango
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-cairo>=1.14.0:${PORTSDIR}/graphics/rubygem-cairo \
-		rubygem-glib2>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-glib2
+RUN_DEPENDS=	rubygem-cairo>=1.14.0:graphics/rubygem-cairo \
+		rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
 
 USE_GNOME=	pango
 USE_RUBY=	yes

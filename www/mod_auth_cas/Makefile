@@ -12,7 +12,7 @@ COMMENT=	Apache 2.x module that supports the CASv1 and CASv2 protocols
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jasig

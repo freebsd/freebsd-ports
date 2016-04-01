@@ -11,7 +11,7 @@ COMMENT=	Gtk+ 3.0 mapping widget
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 USES=		gmake gnome libtool pkgconfig
 USE_GNOME=	cairo gtk30 introspection:build

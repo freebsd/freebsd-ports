@@ -12,9 +12,9 @@ COMMENT=	OAuthlib authentication support for Requests
 
 LICENSE=	ISCL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauthlib>=0.6.2:${PORTSDIR}/security/py-oauthlib \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:${PORTSDIR}/www/py-requests
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauthlib>=0.6.2:security/py-oauthlib \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 USES=		python
 USE_PYTHON=	autoplist distutils

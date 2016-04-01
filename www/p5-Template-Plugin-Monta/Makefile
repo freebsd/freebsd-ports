@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Template-Toolkit plugin to Monta Method
 
-BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
+BUILD_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		p5-Acme-Monta>=0:${PORTSDIR}/www/p5-Acme-Monta
+		p5-Acme-Monta>=0:www/p5-Acme-Monta
 
 USES=		perl5
 USE_PERL5=	configure

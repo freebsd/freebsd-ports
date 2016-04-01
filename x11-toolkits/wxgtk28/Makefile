@@ -12,9 +12,9 @@ DISTNAME=	wxGTK-${PORTVERSION}
 MAINTAINER?=	fjoe@FreeBSD.org
 COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings
 
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png\
-		libtiff.so:${PORTSDIR}/graphics/tiff\
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	libpng.so:graphics/png\
+		libtiff.so:graphics/tiff\
+		libexpat.so:textproc/expat2
 
 USES=		compiler gmake iconv jpeg pkgconfig tar:bzip2
 USE_XORG=	x11 sm xxf86vm xinerama
@@ -57,13 +57,13 @@ PLIST_SUB+=     GSTREAMER="@comment "
 
 .if ${PORT_OPTIONS:MMSPACK}
 CONFIGURE_ARGS+=--with-libmspack
-LIB_DEPENDS+=	libmspack.so:${PORTSDIR}/archivers/libmspack
+LIB_DEPENDS+=	libmspack.so:archivers/libmspack
 .else
 CONFIGURE_ARGS+=--without-libmspack
 .endif
 
 .if ${WXGTK_FLAVOR} != "gtk2-common"
-RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk28-common
+RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/wx.h:x11-toolkits/wxgtk28-common
 .endif
 
 .if ${WXGTK_FLAVOR:M*-common} != ""
@@ -80,7 +80,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .if ${WXGTK_FLAVOR} != "gtk2-contrib-common"
 USE_WX=		2.8
-RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk28-contrib-common
+RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/stc/stc.h:x11-toolkits/wxgtk28-contrib-common
 WX_UNICODE=	yes
 
 pre-configure:

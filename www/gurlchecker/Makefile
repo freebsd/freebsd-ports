@@ -13,7 +13,7 @@ COMMENT=	Gnome program to check a page/website for broken links
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
+LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 
 OPTIONS_DEFINE=	CROCO TIDY CLAMAV GNUTLS
 OPTIONS_DEFAULT=CLAMAV GNUTLS
@@ -38,25 +38,25 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCROCO}
-LIB_DEPENDS+=	libcroco-0.6.so:${PORTSDIR}/textproc/libcroco
+LIB_DEPENDS+=	libcroco-0.6.so:textproc/libcroco
 .else
 CONFIGURE_ARGS+=	--disable-croco
 .endif
 
 .if ${PORT_OPTIONS:MTIDY}
-LIB_DEPENDS+=	libtidy.so:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS+=	libtidy.so:www/tidy-lib
 .else
 CONFIGURE_ARGS+=	--disable-tidy
 .endif
 
 .if ${PORT_OPTIONS:MCLAMAV}
-LIB_DEPENDS+=	libclamav.so:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	libclamav.so:security/clamav
 .else
 CONFIGURE_ARGS+=	--disable-clamav
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif

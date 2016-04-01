@@ -13,9 +13,9 @@ COMMENT=	CGI that can do on-the-fly HTML to WML conversion
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-Text-Template>0:${PORTSDIR}/textproc/p5-Text-Template \
-		p5-XML-Parser>0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-Text-Template>0:textproc/p5-Text-Template \
+		p5-XML-Parser>0:textproc/p5-XML-Parser \
+		p5-libwww>0:www/p5-libwww
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	html2wml.cgi

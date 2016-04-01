@@ -12,10 +12,10 @@ COMMENT=	The X protocol C-language Binding (XCB) library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck \
-		xcb-proto>=1.9:${PORTSDIR}/x11/xcb-proto \
-		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:devel/libcheck \
+		xcb-proto>=1.9:x11/xcb-proto \
+		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 
 CONFIGURE_ARGS+=	--disable-build-docs --without-doxygen --enable-xinput
 

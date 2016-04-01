@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.gahr.ch/vtkfox/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FOX/VTK Widget and Interactor
 
-LIB_DEPENDS=	libvtkCommon.so.5:${PORTSDIR}/math/vtk5
+LIB_DEPENDS=	libvtkCommon.so.5:math/vtk5
 
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SINGLE=	FOX
@@ -24,12 +24,12 @@ GH_ACCOUNT=	gahr
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFOX16}
-LIB_DEPENDS+=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
+LIB_DEPENDS+=	libFOX-1.6.so:x11-toolkits/fox16
 CMAKE_ARGS+=	-DFOX17:BOOL=FALSE
 .endif
 
 .if ${PORT_OPTIONS:MFOX17}
-LIB_DEPENDS+=	libFOX-1.7.so:${PORTSDIR}/x11-toolkits/fox17
+LIB_DEPENDS+=	libFOX-1.7.so:x11-toolkits/fox17
 CMAKE_ARGS+=	-DFOX17:BOOL=TRUE
 .endif
 

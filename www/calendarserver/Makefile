@@ -13,20 +13,20 @@ COMMENT=	Calendar and Contacts Server from Apple (RFC 4791, RFC 6352)
 
 LICENSE=	APACHE20
 
-FETCH_DEPENDS=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS=	svn:devel/subversion
 BUILD_DEPENDS=	${FETCH_DEPENDS}
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		memcached:${PORTSDIR}/databases/memcached \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}openssl>=0.13:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}psutil121>=1.2:${PORTSDIR}/sysutils/py-psutil121 \
-		${PYTHON_PKGNAMEPREFIX}PyGreSQL>=4.1:${PORTSDIR}/databases/py-PyGreSQL \
-		${PYTHON_PKGNAMEPREFIX}service_identity>=14.0.0:${PORTSDIR}/security/py-service_identity \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.1:${PORTSDIR}/databases/py-sqlparse \
-		${PYTHON_PKGNAMEPREFIX}xattr>=0.6:${PORTSDIR}/devel/py-xattr \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.8:${PORTSDIR}/devel/py-zope.interface
+RUN_DEPENDS=	bash:shells/bash \
+		memcached:databases/memcached \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0.13:security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}psutil121>=1.2:sysutils/py-psutil121 \
+		${PYTHON_PKGNAMEPREFIX}PyGreSQL>=4.1:databases/py-PyGreSQL \
+		${PYTHON_PKGNAMEPREFIX}service_identity>=14.0.0:security/py-service_identity \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.1:databases/py-sqlparse \
+		${PYTHON_PKGNAMEPREFIX}xattr>=0.6:devel/py-xattr \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.8:devel/py-zope.interface
 
 OPTIONS_DEFINE=	EXAMPLES DOCS
 EXAMPLES_DESC=	Install configuration examples

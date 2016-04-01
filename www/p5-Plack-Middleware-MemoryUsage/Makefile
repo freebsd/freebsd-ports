@@ -11,9 +11,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for measuring process memory
 
 RUN_DEPENDS=	\
-	p5-B-Size2>=2.01:${PORTSDIR}/devel/p5-B-Size2 \
-	p5-Devel-Symdump>0:${PORTSDIR}/devel/p5-Devel-Symdump \
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack
+	p5-B-Size2>=2.01:devel/p5-B-Size2 \
+	p5-Devel-Symdump>0:devel/p5-Devel-Symdump \
+	p5-Plack>0:www/p5-Plack
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

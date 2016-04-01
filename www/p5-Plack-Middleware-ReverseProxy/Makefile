@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to support app to run as a reverse proxy backend
 
 RUN_DEPENDS=	\
-	p5-Plack>=0.9988:${PORTSDIR}/www/p5-Plack
+	p5-Plack>=0.9988:www/p5-Plack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

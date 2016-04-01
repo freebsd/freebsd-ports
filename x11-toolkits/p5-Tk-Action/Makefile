@@ -14,10 +14,10 @@ COMMENT=	Action abstraction for Tk
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0.92:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Has-Sugar>=0:${PORTSDIR}/devel/p5-MooseX-Has-Sugar \
-		p5-MooseX-SemiAffordanceAccessor>=0:${PORTSDIR}/devel/p5-MooseX-SemiAffordanceAccessor \
-		p5-Tk-Sugar>=0:${PORTSDIR}/x11-toolkits/p5-Tk-Sugar
+BUILD_DEPENDS=	p5-Moose>=0.92:devel/p5-Moose \
+		p5-MooseX-Has-Sugar>=0:devel/p5-MooseX-Has-Sugar \
+		p5-MooseX-SemiAffordanceAccessor>=0:devel/p5-MooseX-SemiAffordanceAccessor \
+		p5-Tk-Sugar>=0:x11-toolkits/p5-Tk-Sugar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

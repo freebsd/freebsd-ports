@@ -11,7 +11,7 @@ COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 ONLY_FOR_ARCHS=	i386 amd64
 

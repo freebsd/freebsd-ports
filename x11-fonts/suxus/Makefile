@@ -12,7 +12,7 @@ DIST_SUBDIR=	suxus
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 font designed to be small yet easily read
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 SUB_FILES=	pkg-message
 USE_XORG=	x11

@@ -13,11 +13,11 @@ COMMENT=	Basic library used by some rfm applications
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	libtubo.so:${PORTSDIR}/x11-fm/libtubo \
-		libdbh.so:${PORTSDIR}/databases/dbh \
-		libzip.so:${PORTSDIR}/archivers/libzip \
-		librsvg-2.so:${PORTSDIR}/graphics/librsvg2
+BUILD_DEPENDS=	gawk:lang/gawk
+LIB_DEPENDS=	libtubo.so:x11-fm/libtubo \
+		libdbh.so:databases/dbh \
+		libzip.so:archivers/libzip \
+		librsvg-2.so:graphics/librsvg2
 
 OPTIONS_DEFINE=	NLS
 

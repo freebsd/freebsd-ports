@@ -19,9 +19,9 @@ THEME_DIR=	${PREFIX}/share/themes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc) || defined(WITH_GTKENGINE)
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:x11-themes/gtk-engines2
 .else
-RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libclearlooks.so:${PORTSDIR}/x11-themes/clearlooks
+RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libclearlooks.so:x11-themes/clearlooks
 .endif
 
 do-install:

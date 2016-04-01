@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-0.02
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use .htpasswd with Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0.01:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
-		p5-Authen-Htpasswd>=0.13:${PORTSDIR}/security/p5-Authen-Htpasswd
+BUILD_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0.01:www/p5-Catalyst-Plugin-Authentication \
+		p5-Authen-Htpasswd>=0.13:security/p5-Authen-Htpasswd
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

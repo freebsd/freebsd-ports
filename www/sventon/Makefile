@@ -24,8 +24,8 @@ OPTIONS_DEFAULT=	TOMCAT6
 
 .if ${PORT_OPTIONS:MTOMCAT6}
 APPHOME=	${LOCALBASE}/apache-tomcat-6.0
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
 .endif
 
 .if !defined(APPHOME)

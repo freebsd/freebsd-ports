@@ -11,8 +11,8 @@ COMMENT=	Ruby binding for VTE
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-gobject-introspection \
-		rubygem-gtk3>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-gtk3
+RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
+		rubygem-gtk3>=${PORTVERSION}:x11-toolkits/rubygem-gtk3
 
 NO_ARCH=	yes
 USE_GNOME=	vte3

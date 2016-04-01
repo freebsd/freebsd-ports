@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.peapodcast.com/sgi/downloads/
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Open Source Wiki-Spreadsheet
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes

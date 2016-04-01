@@ -11,7 +11,7 @@ COMMENT=	Framework for window manager implementation
 
 LICNESE=	MIT
 
-LIB_DEPENDS=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
+LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
 XORG_CAT=	lib
 USES=		gmake

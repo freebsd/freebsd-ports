@@ -11,8 +11,8 @@ DISTNAME=	sawfish-pager-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pager for sawfish without GNOME
 
-BUILD_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
-RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
+BUILD_DEPENDS=	sawfish:x11-wm/sawfish
+RUN_DEPENDS=	sawfish:x11-wm/sawfish
 
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig tar:xz

@@ -11,7 +11,7 @@ MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show where disk space is taken up
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 USES=		gmake tar:tgz
 

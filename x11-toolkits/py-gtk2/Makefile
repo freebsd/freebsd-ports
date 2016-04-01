@@ -15,8 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Set of Python bindings for GTK+
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo
 
 USES=		gettext gmake libtool pathfix pkgconfig python:2 tar:bzip2
 USE_GNOME=	libglade2 pygobject

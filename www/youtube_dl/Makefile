@@ -14,7 +14,7 @@ LICENSE_NAME=	The Unlicense
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:archivers/zip
 
 ALL_TARGET=	youtube-dl
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
@@ -34,8 +34,8 @@ PLIST_FILES=	bin/youtube-dl \
 		%%FISH%%share/fish/completions/youtube-dl.fish \
 		%%ZSH%%share/zsh/site-functions/_youtube-dl
 
-FFMPEG_RUN_DEPENDS=	${LOCALBASE}/bin/ffprobe:${PORTSDIR}/multimedia/ffmpeg
-RTMPDUMP_RUN_DEPENDS=	${LOCALBASE}/bin/rtmpdump:${PORTSDIR}/multimedia/rtmpdump
+FFMPEG_RUN_DEPENDS=	${LOCALBASE}/bin/ffprobe:multimedia/ffmpeg
+RTMPDUMP_RUN_DEPENDS=	${LOCALBASE}/bin/rtmpdump:multimedia/rtmpdump
 
 post-extract:
 	@# remove tarball provided version, build our own

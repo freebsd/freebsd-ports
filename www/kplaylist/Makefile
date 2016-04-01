@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	PHP based music database
 
-RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	lame:audio/lame \
+		oggenc:audio/vorbis-tools \
+		zip:archivers/zip
 
 USE_PHP=	curl mysql session iconv
 

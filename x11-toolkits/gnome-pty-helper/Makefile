@@ -11,7 +11,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	utmp/wtmp/lastlog helper program for the vte Terminal widget
 
-BUILD_DEPENDS+=	gnutls>=0:${PORTSDIR}/security/gnutls
+BUILD_DEPENDS+=	gnutls>=0:security/gnutls
 
 PORTSCOUT=	ignore:1
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Python/GTK based settings manager for CompizConfig
 
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:${PORTSDIR}/x11-wm/compizconfig-python
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:x11-wm/compizconfig-python
 
 USES=		gettext gmake python:2 tar:bzip2
 USE_GNOME=	intltool pygtk2

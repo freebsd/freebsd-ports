@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Discussion forum plugin for Trac
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		trac-TracSpamFilter>=0.2.1:${PORTSDIR}/www/trac-spam-filter
+RUN_DEPENDS+=	tracd:www/trac \
+		trac-TracSpamFilter>=0.2.1:www/trac-spam-filter
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
@@ -20,7 +20,7 @@ USE_PYTHON=	distutils autoplist
 
 # Retrieve the latest version from SVN and package in a tarball.
 .if defined(BOOTSTRAP)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && \

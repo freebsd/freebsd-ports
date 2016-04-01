@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME interface to xcompmgr
 
-RUN_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr
+RUN_DEPENDS=	xcompmgr:x11-wm/xcompmgr
 
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lX11

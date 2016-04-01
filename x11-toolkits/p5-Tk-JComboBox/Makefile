@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Contains a Label or Entry, a Button, and a Listbox
 
-BUILD_DEPENDS=	p5-Tk>=804.027:${PORTSDIR}/x11-toolkits/p5-Tk
+BUILD_DEPENDS=	p5-Tk>=804.027:x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
