@@ -1,7 +1,10 @@
+CXXFLAGS+=	-Wall -Wextra
 CPPFLAGS+=	-DSYSTEM_POSIX -DSTDC_HEADERS -DHAVE_SYS_RESOURCE_H \
 		-DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H \
 		-DHAVE_FCNTL_H -DHAVE_UNISTD_H -DDOUBLEVEC_T
-CXXFLAGS+=	-Wall -Wextra
+.if $(ARCH:M*64)
+CPPFLAGS+=	-DSIZEOF_CHARP=8
+.endif
 
 common_OBJS=	common/blockmem.o \
 		common/bspfile.o \
@@ -16,7 +19,7 @@ common_OBJS=	common/blockmem.o \
 		common/threads.o \
 		common/winding.o
 
-hlbsp_OBJ=	hlbsp/merge.o \
+hlbsp_OBJS=	hlbsp/merge.o \
 		hlbsp/outside.o \
 		hlbsp/portals.o \
 		hlbsp/qbsp.o \
@@ -57,18 +60,17 @@ hlvis_OBJS=	hlvis/flow.o \
 
 ripent_OBJS=	ripent/ripent.o
 
-PROGS=		hlbsp/hlbsp hlcsg/hlcsg hlrad/hlrad hlvis/hlvis ripent/ripent
-
 .cpp.o:
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $@ -c $< -Icommon -Itemplate
 
-all: $(PROGS)
+all:	# force default goal
 
-hlbsp/hlbsp: $(common_OBJS) $(hlbsp_OBJ)
-hlcsg/hlcsg: $(common_OBJS) $(hlcsg_OBJS)
-hlrad/hlrad: $(common_OBJS) $(hlrad_OBJS)
-hlvis/hlvis: $(common_OBJS) $(hlvis_OBJS)
-ripent/ripent: $(common_OBJS) $(ripent_OBJS)
+.for p in hlbsp hlcsg hlrad hlvis ripent
+PROGS+=		$(p)/$(p)
+$(p)/$(p): $(common_OBJS) $($(p)_OBJS)
+.endfor
+
+all: $(PROGS)
 
 $(PROGS):
 	$(CXX) $(LDFLAGS) -o $@ $> -lpthread
