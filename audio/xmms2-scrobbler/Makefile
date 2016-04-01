@@ -13,8 +13,8 @@ COMMENT=	Last.fm submission client for XMMS2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libxmmsclient.so:audio/xmms2 \
+		libcurl.so:ftp/curl
 
 USES=		gmake pkgconfig
 LDFLAGS+=	-lpthread

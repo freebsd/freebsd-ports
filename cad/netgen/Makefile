@@ -9,8 +9,8 @@ MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:C|\.[[:digit:]]+$||}/
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Automatic 3D tetrahedral mesh generator
 
-LIB_DEPENDS=	libTix8.4.3.so:${PORTSDIR}/x11-toolkits/tix \
-		libtogl.so:${PORTSDIR}/graphics/togl
+LIB_DEPENDS=	libTix8.4.3.so:x11-toolkits/tix \
+		libtogl.so:graphics/togl
 
 OCC_BROKEN=	Does not compile because of issues with cad/opencascade
 
@@ -33,11 +33,11 @@ OPTIONS_DEFAULT=	# OCC
 
 BROKEN_sparc64=		internal gcc error (Bug 23159)
 
-OCC_LIB_DEPENDS=	libTKernel.so:${PORTSDIR}/cad/opencascade
+OCC_LIB_DEPENDS=	libTKernel.so:cad/opencascade
 OCC_CXXFLAGS=		-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
 OCC_CONFIGURE_ON=	--enable-occ
 
-FFMPEG_LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0
 FFMPEG_CONFIGURE_ON=	--enable-ffmpeg
 
 MACHINE=	${OPSYS:tu}

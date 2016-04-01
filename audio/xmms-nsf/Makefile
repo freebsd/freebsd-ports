@@ -13,8 +13,8 @@ COMMENT=	XMMS input-plugin for playing Nintendo(TM) NSF audio files
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	xmms:multimedia/xmms
+RUN_DEPENDS=	xmms:multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USES=		libtool

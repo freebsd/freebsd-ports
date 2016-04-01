@@ -33,7 +33,7 @@ RTPSTREAM_CONFIGURE_WITH=	rtpstream
 OPENSSL_CONFIGURE_WITH=	openssl
 
 OPENSSL_USE=	openssl=yes
-GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 
 PCAP_FILES=	dtmf_2833_0.pcap dtmf_2833_1.pcap dtmf_2833_2.pcap \
 		dtmf_2833_3.pcap dtmf_2833_4.pcap dtmf_2833_5.pcap \

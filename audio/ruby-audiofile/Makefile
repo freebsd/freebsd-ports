@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding to the audiofile library
 
-LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes

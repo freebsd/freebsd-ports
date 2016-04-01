@@ -23,6 +23,6 @@ PLIST_FILES=	bin/railsbench
 OPTIONS_DEFINE=	GRUFF
 GRUFF_DESC=	Plotting of perf data support using gruff
 
-GRUFF_RUN_DEPENDS=	rubygem-gruff>=0.2.8:${PORTSDIR}/graphics/rubygem-gruff
+GRUFF_RUN_DEPENDS=	rubygem-gruff>=0.2.8:graphics/rubygem-gruff
 
 .include <bsd.port.mk>

@@ -14,9 +14,9 @@ COMMENT?=	Software MIDI player
 LICENSE=	GPLv2+
 
 .if !defined(PKGNAMESUFFIX)
-LIB_DEPENDS=	libarc.so:${PORTSDIR}/archivers/libarc \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-RUN_DEPENDS=	eawpats>0:${PORTSDIR}/audio/eawpats
+LIB_DEPENDS=	libarc.so:archivers/libarc \
+		libvorbis.so:audio/libvorbis
+RUN_DEPENDS=	eawpats>0:audio/eawpats
 .endif
 
 USES=		gmake tar:bzip2
@@ -33,11 +33,11 @@ OPTIONS_DEFINE=		DOCS EAWPLUS ESOUND X11
 OPTIONS_DEFAULT=	X11
 
 EAWPLUS_DESC=		Collection of Gravis Ultrasound MIDI patches
-EAWPLUS_RUN_DEPENDS=	eawplus>0:${PORTSDIR}/audio/eawplus
+EAWPLUS_RUN_DEPENDS=	eawplus>0:audio/eawplus
 ESOUND_USE=		gnome=esound
 ESOUND_CONFIGURE_ON=	--enable-audio=oss,esd,vorbis
 ESOUND_CONFIGURE_OFF=	--enable-audio=oss,vorbis
-X11_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+X11_LIB_DEPENDS=	libpng.so:graphics/png
 X11_USE=		xorg=x11,xext
 X11_CONFIGURE_ON=	--with-x --enable-spectrogram --enable-wrd \
 			--enable-dynamic

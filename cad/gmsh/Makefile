@@ -14,10 +14,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libpng.so:${PORTSDIR}/graphics/png \
-		liblapack.so:${PORTSDIR}/math/lapack
-RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libpng.so:graphics/png \
+		liblapack.so:math/lapack
+RUN_DEPENDS=	getdp:science/getdp
 
 BROKEN_powerpc64=	Does not build on powerpc64
 
@@ -62,17 +62,17 @@ METIS_CMAKE_ON=	-DENABLE_METIS=ON
 METIS_CMAKE_OFF=	-DENABLE_METIS=OFF
 METIS_VARS=		"no_cdrom=Contact appropriate authors for commercial purposes if including Tetgen or Metis"
 METIS_VARS=		distfiles+=manual.pdf
-TAUCS_LIB_DEPENDS=	libtaucs.so:${PORTSDIR}/math/taucs
+TAUCS_LIB_DEPENDS=	libtaucs.so:math/taucs
 TAUCS_CMAKE_ON=		-DENABLE_TAUCS=ON
 TAUCS_CMAKE_OFF=	-DENABLE_TAUCS=OFF
-MED_LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med
+MED_LIB_DEPENDS=	libmed.so:french/med
 MED_CMAKE_ON=		-DENABLE_MED=ON
 MED_CMAKE_OFF=		-DENABLE_MED=OFF
-CGNS_LIB_DEPENDS=	libcgns.so:${PORTSDIR}/science/cgnslib
+CGNS_LIB_DEPENDS=	libcgns.so:science/cgnslib
 CGNS_CMAKE_ON=		-DENABLE_CGNS=ON
 CGNS_CMAKE_OFF=		-DENABLE_CGNS=OFF
 GMM_CMAKE_OFF=		-DENABLE_GMM=OFF
-OCC_LIB_DEPENDS=	libTKernel.so:${PORTSDIR}/cad/opencascade
+OCC_LIB_DEPENDS=	libTKernel.so:cad/opencascade
 OCC_CMAKE_ON=		-DENABLE_OCC=ON -DOCC_INC=${LOCALBASE}/include/OpenCASCADE
 OCC_CFLAGS=		-DHAVE_CONFIG_H -DHAVE_WOK_CONFIG_H -DFREEBSD
 OCC_CONFLICTS=		gmsh-2.*

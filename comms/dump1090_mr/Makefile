@@ -13,7 +13,7 @@ BROKEN=		unfetchable
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr
+LIB_DEPENDS=	librtlsdr.so:comms/rtl-sdr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware

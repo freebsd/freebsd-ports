@@ -13,9 +13,9 @@ COMMENT=	Cross platform audio loop slicer
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libcsound64.so:${PORTSDIR}/audio/csound
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
+		libmad.so:audio/libmad \
+		libcsound64.so:audio/csound
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gmake pkgconfig

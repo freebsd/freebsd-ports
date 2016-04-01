@@ -16,7 +16,7 @@ BROKEN=		does not work with recent versions of glib and/or DeaDBeeF
 DEPRECATED=	Abandonware; use `audio/deadbeef-mpris2-plugin' instead
 EXPIRATION_DATE=	2016-05-16
 
-BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:${PORTSDIR}/audio/deadbeef
+BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

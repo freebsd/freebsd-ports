@@ -12,8 +12,8 @@ COMMENT=	Vintage synthesiers emulation for electric pianos and organs
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
-		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS=	libjack.so:audio/jack \
+		libfluidsynth.so:audio/fluidsynth
 
 USES=		libtool
 USE_LDCONFIG=	yes

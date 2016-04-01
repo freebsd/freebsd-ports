@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME:S/-/_/}_Tool_source_${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Update program for the HVSC C= 64 SID tune collection
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
+BUILD_DEPENDS=	makedepend:devel/makedepend
 
 GNU_CONFIGURE=	yes
 USES=		gmake

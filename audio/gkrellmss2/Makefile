@@ -12,9 +12,9 @@ COMMENT=	GKrellM plugin with a VU meter showing left/right channel audio
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
+LIB_DEPENDS=	libfftw3.so:math/fftw3
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 USES=		gettext gmake
 USE_XORG=	x11

@@ -12,8 +12,8 @@ COMMENT=	Panel plugin for controlling PulseAudio mixer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpulse-mainloop-glib.so:${PORTSDIR}/audio/pulseaudio
-RUN_DEPENDS=	pavucontrol>=2.0:${PORTSDIR}/audio/pavucontrol
+LIB_DEPENDS=	libpulse-mainloop-glib.so:audio/pulseaudio
+RUN_DEPENDS=	pavucontrol>=2.0:audio/pavucontrol
 
 USES=	gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 GNU_CONFIGURE=	yes
@@ -30,7 +30,7 @@ CFLAGS+=	-Wno-return-type
 OPTIONS_DEFINE=	KEYBINDER
 OPTIONS_DEFAULT=	KEYBINDER
 KEYBINDER_DESC=	Keyboard shortcuts
-KEYBINDER_LIB_DEPENDS=	libkeybinder-3.0.so:${PORTSDIR}/x11/keybinder-gtk3
+KEYBINDER_LIB_DEPENDS=	libkeybinder-3.0.so:x11/keybinder-gtk3
 KEYBINDER_CONFIGURE_ENABLE=	keybinder
 
 .include <bsd.port.mk>

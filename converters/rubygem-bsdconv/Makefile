@@ -12,7 +12,7 @@ COMMENT=	Ruby wrapper for bsdconv
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	libbsdconv.so:converters/bsdconv
 
 CONFIGURE_ARGS+=--with-bsdconv-dir=${LOCALBASE}
 

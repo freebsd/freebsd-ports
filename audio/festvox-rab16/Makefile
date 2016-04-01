@@ -13,8 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	16 kHz British English male voice for Festival
 
 RUN_DEPENDS=	\
-${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex \
-${LOCALBASE}/share/festival/lib/dicts/oald/oaldlex.scm:${PORTSDIR}/audio/festlex-oald
+${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:audio/festlex-poslex \
+${LOCALBASE}/share/festival/lib/dicts/oald/oaldlex.scm:audio/festlex-oald
 
 WRKSRC=		${WRKDIR}/festival
 

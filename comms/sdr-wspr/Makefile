@@ -10,7 +10,7 @@ COMMENT=	WSPR receiver/decoder using libsdr
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libsdr-gui.so:${PORTSDIR}/comms/libsdr-gui
+LIB_DEPENDS=	libsdr-gui.so:comms/libsdr-gui
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatuschek

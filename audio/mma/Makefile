@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	aplaymidi:${PORTSDIR}/audio/alsa-utils \
-		timidity:${PORTSDIR}/audio/timidity++
+RUN_DEPENDS=	aplaymidi:audio/alsa-utils \
+		timidity:audio/timidity++
 
 MMABIN=	${PREFIX}/bin/mma
 

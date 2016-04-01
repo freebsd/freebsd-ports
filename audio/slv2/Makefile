@@ -13,9 +13,9 @@ COMMENT=	LV2 Application Support Library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:${PORTSDIR}/audio/lv2core
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
-		librdf.so:${PORTSDIR}/textproc/redland
+BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:audio/lv2core
+LIB_DEPENDS=	libjack.so:audio/jack \
+		librdf.so:textproc/redland
 
 USES=		pkgconfig tar:bzip2 waf
 USE_LDCONFIG=	yes

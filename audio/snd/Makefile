@@ -31,16 +31,16 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-FFTW3_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+FFTW3_LIB_DEPENDS=	libfftw3.so:math/fftw3
 FFTW3_CONFIGURE_WITH=	fftw
 
-GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 GSL_CONFIGURE_WITH=	gsl
 
 S7_CONFIGURE_WITH=	s7
 
-LADSPA_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LADSPA_RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+LADSPA_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+LADSPA_RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LADSPA_CONFIGURE_WITH=	ladspa
 
 GTK2_USE=	GNOME=gtk20

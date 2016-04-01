@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Sega Genesis GYM plugin for XMMS
 
-LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USES=		libtool

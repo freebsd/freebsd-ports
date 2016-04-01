@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MP3 player
 
-LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
-		libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libid3.so:audio/id3lib \
+		libgdbm.so:databases/gdbm
 
 USES=		pathfix libtool pkgconfig gettext gmake perl5
 USE_GNOME=	gtk20
@@ -31,12 +31,12 @@ ESOUND_USE=		GNOME=esound
 INSTALL_TARGET=	install-strip
 
 VORBIS_CONFIGURE_OFF=	--disable-vorbis
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	nasm:devel/nasm
 CPPFLAGS+=	"-D_M_IX86"
 .else
 CONFIGURE_ARGS+=	--disable-x86opts

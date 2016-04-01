@@ -20,8 +20,8 @@ WANT_PHP_CLI=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phoronix-test-suite
 
-RUN_DEPENDS+=	fpdf>0:${PORTSDIR}/print/fpdf
-RUN_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
+RUN_DEPENDS+=	fpdf>0:print/fpdf
+RUN_DEPENDS+=	cmake:devel/cmake
 
 PORTDATA=	*
 PORTDOCS=	*

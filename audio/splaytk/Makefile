@@ -12,7 +12,7 @@ COMMENT=	Tk based interface for splay
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	splay:${PORTSDIR}/audio/splay
+RUN_DEPENDS=	splay:audio/splay
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/splay-tk-${PORTVERSION}

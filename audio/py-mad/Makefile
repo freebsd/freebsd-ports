@@ -13,7 +13,7 @@ COMMENT=	Python module that provides the MPEG Audio Decoder interface
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+LIB_DEPENDS=	libmad.so:audio/libmad
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jaqx0r

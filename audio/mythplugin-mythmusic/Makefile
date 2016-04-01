@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	mythplugin-
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Music playing plugin for MythTV
 
-LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libtag.so:${PORTSDIR}/audio/taglib \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float
-BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv
+LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
+		libFLAC.so:audio/flac \
+		libvorbis.so:audio/libvorbis \
+		libtag.so:audio/taglib \
+		libfftw3f.so:math/fftw3-float
+BUILD_DEPENDS=	mythfrontend:multimedia/mythtv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV

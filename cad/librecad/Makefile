@@ -7,8 +7,8 @@ CATEGORIES=	cad
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	2D CAD system
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libmuparser.so:${PORTSDIR}/math/muparser
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
+LIB_DEPENDS=	libmuparser.so:math/muparser
 
 USE_QT4=	gui help network sql svg help-tools_build \
 		linguisttools_build moc_build rcc_build uic_build

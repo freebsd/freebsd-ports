@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PECL extension for the Unicode Bidi algorithm
 
-LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 USES=		pkgconfig tar:tgz
 USE_PHP=	yes

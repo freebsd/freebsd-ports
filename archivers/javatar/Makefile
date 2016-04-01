@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.gjt.org/download/time/java/tar/ \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java tar archive I/O package
 
-RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf
+RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

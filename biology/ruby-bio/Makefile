@@ -29,10 +29,10 @@ USE_RUBY_SETUP=	yes
 SHEBANG_FILES=	sample/biofetch.rb
 ruby_OLD_CMD=	/usr/proj/bioruby/bin/ruby
 
-XMLPARSER_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
-BDB4_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
-MYSQL_RUN_DEPENDS=	rubygem-dbd-mysql>=0:${PORTSDIR}/databases/rubygem-dbd-mysql
-PGSQL_RUN_DEPENDS=	rubygem-dbd-pg>=0:${PORTSDIR}/databases/rubygem-dbd-pg
+XMLPARSER_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:textproc/ruby-xmlparser
+BDB4_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:databases/ruby-bdb
+MYSQL_RUN_DEPENDS=	rubygem-dbd-mysql>=0:databases/rubygem-dbd-mysql
+PGSQL_RUN_DEPENDS=	rubygem-dbd-pg>=0:databases/rubygem-dbd-pg
 
 post-patch:
 	${RUBY} -i -pe 'gsub(%r"(/etc/bioinformatics/)") { "${PREFIX}" + $$1 }' \

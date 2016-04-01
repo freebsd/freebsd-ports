@@ -11,10 +11,10 @@ COMMENT=	TI Linking Program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libticables2.so:${PORTSDIR}/comms/libticables2	\
-		libtifiles2.so:${PORTSDIR}/devel/libtifiles2	\
-		libticalcs2.so:${PORTSDIR}/comms/libticalcs2	\
-		libticonv.so:${PORTSDIR}/converters/libticonv
+LIB_DEPENDS=	libticables2.so:comms/libticables2	\
+		libtifiles2.so:devel/libtifiles2	\
+		libticalcs2.so:comms/libticalcs2	\
+		libticonv.so:converters/libticonv
 
 USES=		desktop-file-utils gmake pkgconfig shared-mime-info tar:bzip2
 USE_GNOME=	gtk20 intltool

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Perl interface for the MusicBrainz libdiscid library
 
-BUILD_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
-LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid
+BUILD_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod
+LIB_DEPENDS=	libdiscid.so:audio/libdiscid
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		pkgconfig perl5

@@ -7,10 +7,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for libimobiledevice
 
-LIB_DEPENDS=	libimobiledevice.so:${PORTSDIR}/${MASTER_PORT}
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
-		${PYTHON_SITELIBDIR}/plist.so:${PORTSDIR}/devel/py-libplist
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/plist.so:${PORTSDIR}/devel/py-libplist
+LIB_DEPENDS=	libimobiledevice.so:${MASTER_PORT}
+BUILD_DEPENDS=	cython:lang/cython \
+		${PYTHON_SITELIBDIR}/plist.so:devel/py-libplist
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/plist.so:devel/py-libplist
 
 USES=		python
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"

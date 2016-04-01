@@ -13,12 +13,12 @@ COMMENT=	Wrapper modules for common bioinformatics tools
 LICENSE=	ART10 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-bioperl>=1.6.0:${PORTSDIR}/biology/p5-bioperl \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
-		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
-		p5-File-Sort>=0:${PORTSDIR}/misc/p5-File-Sort \
-		p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any
+BUILD_DEPENDS=	p5-bioperl>=1.6.0:biology/p5-bioperl \
+		p5-IPC-Run>=0:devel/p5-IPC-Run \
+		p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
+		p5-XML-Twig>=0:textproc/p5-XML-Twig \
+		p5-File-Sort>=0:misc/p5-File-Sort \
+		p5-Config-Any>=0:devel/p5-Config-Any
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-bioperl-run-1.[13579]*

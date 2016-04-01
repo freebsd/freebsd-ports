@@ -13,11 +13,11 @@ COMMENT=	OO interface to SIMBAD4
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-XML-DoubleEncodedEntities>=1:${PORTSDIR}/textproc/p5-XML-DoubleEncodedEntities \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
+		p5-URI>=0:net/p5-URI \
+		p5-XML-DoubleEncodedEntities>=1:textproc/p5-XML-DoubleEncodedEntities \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

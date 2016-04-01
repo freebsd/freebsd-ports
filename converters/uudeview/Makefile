@@ -12,7 +12,7 @@ COMMENT=	Program for uu/xx/Base64/BinHex/yEnc de-/encoding
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libuu.so:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	libuu.so:converters/uulib
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcl

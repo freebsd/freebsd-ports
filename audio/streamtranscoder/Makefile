@@ -13,11 +13,11 @@ COMMENT=	Transcode and stream audio to a SHOUTcast/Icecast/Peercast server
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libmp3lame.so:${PORTSDIR}/audio/lame
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libmad.so:audio/libmad \
+		libcurl.so:ftp/curl \
+		libmp3lame.so:audio/lame
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

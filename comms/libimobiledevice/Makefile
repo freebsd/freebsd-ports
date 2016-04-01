@@ -24,8 +24,8 @@ INSTALL_TARGET=	install-strip
 
 .if ${SLAVE_PORT} == no
 
-LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
-		libusbmuxd.so:${PORTSDIR}/comms/libusbmuxd
+LIB_DEPENDS=	libplist.so:devel/libplist \
+		libusbmuxd.so:comms/libusbmuxd
 
 USE_GNOME=	glib20
 CONFIGURE_ARGS+=--without-cython

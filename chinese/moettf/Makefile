@@ -13,7 +13,7 @@ DIST_SUBDIR=	zh-moettf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three Chinese BIG5 TrueType fonts: Kai LiShu Sung SungExt
 
-EXTRACT_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+EXTRACT_DEPENDS=	unrar:archivers/unrar
 
 NO_CDROM=	Contact Ministry of Education of Taiwan for commercial use
 NO_BUILD=	yes

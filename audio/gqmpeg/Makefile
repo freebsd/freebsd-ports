@@ -14,12 +14,12 @@ COMMENT?=	Another gtk-based MP3 frontend
 OPTIONS_DEFINE=	MPG321
 MPG321_DESC=	use mpg321 instead of mpg123
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools \
-		xmp:${PORTSDIR}/audio/xmp
+LIB_DEPENDS=	libpng.so:graphics/png
+RUN_DEPENDS=	ogg123:audio/vorbis-tools \
+		xmp:audio/xmp
 
-MPG321_RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321
-MPG321_RUN_DEPENDS_OFF=	mpg123:${PORTSDIR}/audio/mpg123
+MPG321_RUN_DEPENDS=	mpg321:audio/mpg321
+MPG321_RUN_DEPENDS_OFF=	mpg123:audio/mpg123
 
 USE_GNOME=	gdkpixbuf
 USES=		gettext libtool

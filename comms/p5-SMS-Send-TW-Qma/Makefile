@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	SMS::Send driver for http://www.qma.com/
 
-RUN_DEPENDS=	p5-SMS-Send>=0:${PORTSDIR}/comms/p5-SMS-Send \
-		p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
+RUN_DEPENDS=	p5-SMS-Send>=0:comms/p5-SMS-Send \
+		p5-Crypt-SSLeay>=0.57:security/p5-Crypt-SSLeay \
+		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.gnokii.org/download/gnocky/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical (GTK+2) frontend for gnokii
 
-LIB_DEPENDS=	libgnokii.so:${PORTSDIR}/comms/gnokii
+LIB_DEPENDS=	libgnokii.so:comms/gnokii
 
 USES=		pkgconfig tar:bzip2
 USE_GNOME=	gtk20 libglade2

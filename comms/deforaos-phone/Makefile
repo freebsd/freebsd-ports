@@ -14,15 +14,15 @@ COMMENT=	DeforaOS telephony application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
-		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libpurple.so:${PORTSDIR}/net-im/libpurple \
-		libsofia-sip-ua.so:${PORTSDIR}/net/sofia-sip
-BUILD_DEPENDS=	locker:${PORTSDIR}/x11/deforaos-locker \
-		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+		libDesktop.so:x11/deforaos-libdesktop \
+		libpulse.so:audio/pulseaudio \
+		libpurple.so:net-im/libpurple \
+		libsofia-sip-ua.so:net/sofia-sip
+BUILD_DEPENDS=	locker:x11/deforaos-locker \
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
+		xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 USES=		desktop-file-utils gettext pkgconfig
 USE_GNOME=	gtk20

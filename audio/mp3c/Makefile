@@ -13,8 +13,8 @@ COMMENT=	CD to mp3c converter with a console frontend
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	mp3info:audio/mp3info \
+		cdrecord:sysutils/cdrtools
 
 USES=		ncurses
 HAS_CONFIGURE=	yes

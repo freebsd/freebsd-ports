@@ -10,7 +10,7 @@ MASTER_SITES=	SF/mediamover/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename mp3s and manipulate them
 
-RUN_DEPENDS=	p5-tagged>=0:${PORTSDIR}/audio/p5-tagged
+RUN_DEPENDS=	p5-tagged>=0:audio/p5-tagged
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	mp3mover.pl

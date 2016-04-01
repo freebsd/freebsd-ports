@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tuxcoder.com/cue2toc/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script that converts CUE files into TOC files for cdrdao
 
-RUN_DEPENDS=	p5-Audio-Wav>=0:${PORTSDIR}/audio/p5-Audio-Wav
+RUN_DEPENDS=	p5-Audio-Wav>=0:audio/p5-Audio-Wav
 
 USES=		perl5 shebangfix
 NO_WRKSUBDIR=	yes

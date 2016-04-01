@@ -11,8 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	E.A.W.+Izumo+Tamuki collection of Gravis Ultrasound MIDI patches
 
 # Not useful without timidity.
-RUN_DEPENDS=	${LOCALBASE}/share/eawpats/acbass.pat:${PORTSDIR}/audio/eawpats \
-		${LOCALBASE}/share/guspat/inst/GUS/acbass.pat:${PORTSDIR}/audio/guspat
+RUN_DEPENDS=	${LOCALBASE}/share/eawpats/acbass.pat:audio/eawpats \
+		${LOCALBASE}/share/guspat/inst/GUS/acbass.pat:audio/guspat
 
 NO_CDROM=	Some of the patches are marked no-commercial-use
 

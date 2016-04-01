@@ -15,7 +15,7 @@ COMMENT=	CAD program that uses bricks similar to those found in many toys
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -43,13 +43,13 @@ ICON_SIZES=	16x16 24x24 32x32 48x48 64x64 128x128 256x256 512x512
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDRAW}
-RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw
+RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:cad/ldraw
 .endif
 
 .if ${PORT_OPTIONS:MLEOCAD}
 LEOCAD_PIECES=	Library-Linux-7931.zip
 DISTFILES+=	${LEOCAD_PIECES}
-EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip
 post-extract:
 	@${UNZIP_CMD} -q -o ${_DISTDIR}/${LEOCAD_PIECES} -d ${WRKDIR}/pieces
 .endif

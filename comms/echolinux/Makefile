@@ -13,8 +13,8 @@ COMMENT=	Amateur Radio Echolink client for UNIX
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms \
-		libgsm.so:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	libforms.so:x11-toolkits/xforms \
+		libgsm.so:audio/gsm
 
 OPTIONS_DEFINE=	DOCS
 

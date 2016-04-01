@@ -12,7 +12,7 @@ COMMENT=	Implementation of the EBU R128 loudness standard
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speexdsp
+LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jiixyj

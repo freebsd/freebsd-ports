@@ -11,7 +11,7 @@ COMMENT=	Read, manipulate, and display geo data
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtclgeomap.so:${PORTSDIR}/astro/tclgeomap
+LIB_DEPENDS=	libtclgeomap.so:astro/tclgeomap
 
 USES+=		tk
 GNU_CONFIGURE=	yes

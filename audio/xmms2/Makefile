@@ -57,100 +57,100 @@ OPTIONS_SUB=	yes
 AIRPLAY_USE=		OPENSSL=yes
 AIRPLAY_CONFIGURE_OFF=	--without-plugins="airplay"
 
-AO_LIB_DEPENDS=		libao.so:${PORTSDIR}/audio/libao
+AO_LIB_DEPENDS=		libao.so:audio/libao
 AO_CONFIGURE_OFF=	--without-plugins="ao"
 
-APE_LIB_DEPENDS=	libmac.so:${PORTSDIR}/audio/mac
+APE_LIB_DEPENDS=	libmac.so:audio/mac
 APE_CONFIGURE_OFF=	--without-plugins="mac"
 
-AVCODEC_LIB_DEPENDS=	libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+AVCODEC_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 AVCODEC_CONFIGURE_OFF=	--without-plugins="avcodec"
 
-CDDA_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
-			libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia \
-			libdiscid.so:${PORTSDIR}/audio/libdiscid
+CDDA_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
+			libcdio_cdda.so:sysutils/libcdio-paranoia \
+			libdiscid.so:audio/libdiscid
 CDDA_CONFIGURE_OFF=	--without-plugins="cdda"
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_OFF=	--without-plugins="curl" --without-plugins="icymetaint"
 
-FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
+FAAD_LIB_DEPENDS=	libfaad.so:audio/faad
 FAAD_CONFIGURE_OFF=	--without-plugins="faad" --without-plugins="mp4"
 
 FAM_USES=		fam:gamin
 FAM_CONFIGURE_OFF=	--without-optionals="medialib-updater"
 
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 
-GME_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
+GME_LIB_DEPENDS=	libgme.so:audio/libgme
 GME_CONFIGURE_OFF=	--without-plugins="gme"
 
 GVFS_USE=		GNOME=gvfs
 GVFS_CONFIGURE_OFF=	--without-plugins="gvfs"
 
-ICES_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
+ICES_LIB_DEPENDS=	libshout.so:audio/libshout
 ICES_CONFIGURE_OFF=	--without-plugins="ices"
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	--without-plugins="jack"
 
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CONFIGURE_OFF=	--without-plugins="mad"
 
 MDNS_CONFIGURE_OFF=	--without-optionals="mdns"
 
 MDNS_APPLE_CONFIGURE_ON=	--with-mdns-backend="dns_sd"
-MDNS_APPLE_LIB_DEPENDS=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+MDNS_APPLE_LIB_DEPENDS=		libdns_sd.so:net/mDNSResponder
 
 MDNS_AVAHI_CONFIGURE_ON=	--with-mdns-backend="avahi"
-MDNS_AVAHI_LIB_DEPENDS=		libavahi-core.so:${PORTSDIR}/net/avahi-app
+MDNS_AVAHI_LIB_DEPENDS=		libavahi-core.so:net/avahi-app
 
-MMS_LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
+MMS_LIB_DEPENDS=	libmms.so:net/libmms
 MMS_CONFIGURE_OFF=	--without-plugins="mms"
 
-MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
+MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 MODPLUG_CONFIGURE_OFF=	--without-plugins="modplug"
 
-MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 MPG123_CONFIGURE_OFF=	--without-plugins="mpg123"
 
-MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack
+MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack
 MUSEPACK_CONFIGURE_OFF=	--without-plugins="musepack"
 
-OFA_LIB_DEPENDS=	libofa.so:${PORTSDIR}/audio/libofa
+OFA_LIB_DEPENDS=	libofa.so:audio/libofa
 OFA_CONFIGURE_OFF=	--without-plugins="ofa"
 
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--without-plugins="pulse"
 
-SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SAMBA_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 SAMBA_CONFIGURE_OFF=	--without-plugins="samba"
 
-SID_LIB_DEPENDS=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
+SID_LIB_DEPENDS=	libsidplay2.so:audio/libsidplay2
 SID_CONFIGURE_OFF=	--without-plugins="sid"
 
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_OFF=	--without-plugins="sndfile"
 
-SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_CONFIGURE_OFF=	--without-plugins="speex"
 
-TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 TREMOR_CONFIGURE_OFF=	--without-plugins="tremor"
 
 VISUAL_USE=		SDL=yes
-VISUAL_LIB_DEPENDS=	libvisual-0.4.so:${PORTSDIR}/graphics/libvisual04
+VISUAL_LIB_DEPENDS=	libvisual-0.4.so:graphics/libvisual04
 VISUAL_CONFIGURE_OFF=	--without-optionals="vistest"
 VISUAL_CONFIGURE_ON=	--with-vis-reference-clients
 
-VOCODER_LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-			libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+VOCODER_LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
+			libsamplerate.so:audio/libsamplerate
 VOCODER_CONFIGURE_OFF=	--without-plugins="vocoder"
 
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CONFIGURE_OFF=	--without-plugins="vorbis"
 
-WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CONFIGURE_OFF=	--without-plugins="wavpack"
 
 XML_USE=		GNOME=libxml2
@@ -192,7 +192,7 @@ CONFIGURE_ARGS+=	--without-optionals="python" \
 
 # xmms2-ripper
 .if ${PORT_OPTIONS:MVISUAL} && ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbisenc.so:audio/libvorbis
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-clients-vistest-wscript
 .endif

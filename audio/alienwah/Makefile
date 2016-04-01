@@ -12,7 +12,7 @@ COMMENT=	Paul Nasca's AlienWah LADSPA plugin
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
 USES=		gmake
 MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -fPIC"

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.lzop.org/download/ \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Fast file compressor similar to gzip, using the LZO library
 
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

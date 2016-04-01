@@ -12,9 +12,9 @@ COMMENT=	RIME support for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
-		librime.so:${PORTSDIR}/chinese/librime
-RUN_DEPENDS=	${LOCALBASE}/share/brise/default.yaml:${PORTSDIR}/chinese/brise
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
+		librime.so:chinese/librime
+RUN_DEPENDS=	${LOCALBASE}/share/brise/default.yaml:chinese/brise
 
 USES=		tar:xz cmake gettext pkgconfig
 INSTALLS_ICONS=	yes

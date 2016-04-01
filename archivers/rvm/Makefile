@@ -13,7 +13,7 @@ COMMENT=	Archive manager that uses rsync to manage backups
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+BUILD_DEPENDS=	rsync:net/rsync
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

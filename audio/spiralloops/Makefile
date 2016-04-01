@@ -14,7 +14,7 @@ COMMENT=	Loop-based sampler
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PTHREAD_LIBS="-lpthread"

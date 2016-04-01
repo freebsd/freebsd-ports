@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.w3.org/Tools/Ical2html/
 MAINTAINER=	keiichi@iijlab.net
 COMMENT=	Manipulation commands for iCalendar files
 
-LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical
+LIB_DEPENDS=	libical.so:devel/libical
 
 GNU_CONFIGURE=	yes
 

@@ -13,7 +13,7 @@ COMMENT=	AdLib emulator library supporting many formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libbinio.so:${PORTSDIR}/devel/libbinio
+LIB_DEPENDS=	libbinio.so:devel/libbinio
 
 USES=		pkgconfig libtool makeinfo
 GNU_CONFIGURE=	yes

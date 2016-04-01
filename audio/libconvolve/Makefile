@@ -13,10 +13,10 @@ COMMENT=	Simple C library for partitioned convolution
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libsamplerate.so:audio/libsamplerate \
+		libsndfile.so:audio/libsndfile
 
 USES=		gmake pkgconfig tar:tgz
 USE_LDCONFIG=	yes

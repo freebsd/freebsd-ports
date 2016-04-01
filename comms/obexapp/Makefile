@@ -9,8 +9,8 @@ MASTER_SITES=	http://people.freebsd.org/~emax/obexapp/
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Obex application to transfer objects to mobile equipment
 
-LIB_DEPENDS=	libopenobex.so:${PORTSDIR}/comms/openobex \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libopenobex.so:comms/openobex \
+		libexpat.so:textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

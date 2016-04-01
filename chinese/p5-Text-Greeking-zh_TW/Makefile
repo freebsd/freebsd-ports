@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate meaningless Chinese text that creates the illusion of the document
 
-RUN_DEPENDS=	p5-common-sense>=2.02:${PORTSDIR}/devel/p5-common-sense
+RUN_DEPENDS=	p5-common-sense>=2.02:devel/p5-common-sense
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

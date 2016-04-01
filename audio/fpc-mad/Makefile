@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	LIBMAD
 LIBMAD_DESC=	Install mad library
 OPTIONS_DEFAULT=	LIBMAD
 
-LIBMAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+LIBMAD_LIB_DEPENDS=	libmad.so:audio/libmad
 
 .include "${MASTERDIR}/Makefile"

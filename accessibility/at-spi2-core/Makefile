@@ -12,7 +12,7 @@ COMMENT=	Assistive Technology Service Provider Interface
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 PORTSCOUT=	limitw:1,even
 

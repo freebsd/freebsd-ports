@@ -16,7 +16,7 @@ USES+=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-RUN_DEPENDS=	at-spi2-atk>2.6.0:${PORTSDIR}/accessibility/at-spi2-atk
+RUN_DEPENDS=	at-spi2-atk>2.6.0:accessibility/at-spi2-atk
 
 USES+=		gmake gettext libtool pathfix pkgconfig python:2
 USE_GNOME=	intlhack gtk20 gconf2 libbonobo

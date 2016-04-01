@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	antirez
 GH_TAGNAME=	4c53e25
 
-LIB_DEPENDS=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr
+LIB_DEPENDS=	librtlsdr.so:comms/rtl-sdr
 
 USES=	gmake
 

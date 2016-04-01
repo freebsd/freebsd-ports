@@ -12,7 +12,7 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMPCR (USB XM radio) control software
 
-RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/CommDriver.jar:${PORTSDIR}/comms/java-commapi-freebsd
+RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/CommDriver.jar:comms/java-commapi-freebsd
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

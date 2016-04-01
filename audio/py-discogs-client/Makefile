@@ -12,9 +12,9 @@ COMMENT=	Python interface to Discogs website
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}oauthlib>=0:${PORTSDIR}/security/py-oauthlib \
-		${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}oauthlib>=0:security/py-oauthlib \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
 
 USES=		python
 USE_PYTHON=	distutils autoplist

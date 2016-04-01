@@ -12,9 +12,9 @@ DISTNAME=	xmms-OpenSPC-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	SPC player for XMMS using OpenSPC
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
-		xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	nasm:devel/nasm \
+		xmms:multimedia/xmms
+RUN_DEPENDS=	xmms:multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USES=		libtool

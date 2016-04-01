@@ -16,7 +16,7 @@ COMMENT=	Python wrapper for audio device abstraction library (libao)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libao.so:audio/libao
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

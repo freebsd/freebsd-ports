@@ -14,15 +14,15 @@ COMMENT=	Programmer's solid 3D CAD modeller
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		${LOCALBASE}/libdata/pkgconfig/eigen3.pc:${PORTSDIR}/math/eigen3 \
-		${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr \
-		libCGAL.so:${PORTSDIR}/math/cgal \
-		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2 \
-		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libopencsg.so:${PORTSDIR}/graphics/opencsg
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+		${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3 \
+		${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libCGAL.so:math/cgal \
+		libqscintilla2.so:devel/qscintilla2 \
+		libharfbuzz.so:print/harfbuzz \
+		libopencsg.so:graphics/opencsg
 
 USES=		bison compiler:c++11-lang desktop-file-utils gettext-tools pkgconfig qmake shebangfix
 SHEBANG_FILES=	libraries/MCAD/get_submodules.py

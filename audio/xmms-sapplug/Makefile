@@ -13,8 +13,8 @@ COMMENT=	XMMS input plugin for playing 8bit Atari(TM) .sap audio files
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	xmms:multimedia/xmms
+RUN_DEPENDS=	xmms:multimedia/xmms
 
 USES=		gmake compiler
 USE_GNOME=	glib12

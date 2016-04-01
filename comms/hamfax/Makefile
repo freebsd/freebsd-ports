@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	QT application for sending and receiving facsimiles over radio
 
-LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 
 USE_QT4=	gui moc_build
 GNU_CONFIGURE=	yes

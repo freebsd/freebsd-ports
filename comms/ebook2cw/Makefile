@@ -11,8 +11,8 @@ COMMENT=	Convert text files into cw as an mp3 or ogg file
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libmp3lame.so:audio/lame \
+		libvorbis.so:audio/libvorbis
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

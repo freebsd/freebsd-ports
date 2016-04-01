@@ -11,7 +11,7 @@ MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	gui front end for ebooks2cw
 
-RUN_DEPENDS=	ebook2cw:${PORTSDIR}/comms/ebook2cw
+RUN_DEPENDS=	ebook2cw:comms/ebook2cw
 
 USE_WX=	2.8
 WX_UNICODE=	yes

@@ -13,7 +13,7 @@ COMMENT=	PHP wrapper for chinese/cconv
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcconv.so:${PORTSDIR}/chinese/cconv
+LIB_DEPENDS=	libcconv.so:chinese/cconv
 
 CONFIGURE_ARGS=	--with-cconv-dir=${LOCALBASE}
 USE_PHP=	yes

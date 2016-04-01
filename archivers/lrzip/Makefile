@@ -12,8 +12,8 @@ COMMENT=	Long Range ZIP or Lzma RZIP
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	nasm>=0:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+BUILD_DEPENDS=	nasm>=0:devel/nasm
+LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-asm

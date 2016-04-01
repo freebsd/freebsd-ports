@@ -14,7 +14,7 @@ COMMENT=	Ncurses based frontend to mpg123
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+RUN_DEPENDS=	mpg123:audio/mpg123
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-kenrevs
 
@@ -28,7 +28,7 @@ PLIST_FILES=	bin/cmp3 bin/rnmp3
 OPTIONS_DEFINE=	DOCS VORBIS
 OPTIONS_DEFAULT=	VORBIS
 
-VORBIS_RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
+VORBIS_RUN_DEPENDS=	ogg123:audio/vorbis-tools
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

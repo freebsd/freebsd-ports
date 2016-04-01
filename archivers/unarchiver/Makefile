@@ -14,8 +14,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 # XXX: USES=gnustep overrides MAKEFILE we set below, so depend explicitly
-LIB_DEPENDS=	libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
-		libwavpack.so:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS=	libgnustep-base.so:lang/gnustep-base \
+		libwavpack.so:audio/wavpack
 
 USES=		gmake zip
 

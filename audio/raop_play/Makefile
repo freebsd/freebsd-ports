@@ -13,13 +13,13 @@ COMMENT=	Music file player for Apple Airport Express
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag
-RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321 \
-		ogg123:${PORTSDIR}/audio/vorbis-tools \
-		faad:${PORTSDIR}/audio/faad \
-		flac:${PORTSDIR}/audio/flac
+LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
+		libfltk.so:x11-toolkits/fltk \
+		libid3tag.so:audio/libid3tag
+RUN_DEPENDS=	mpg321:audio/mpg321 \
+		ogg123:audio/vorbis-tools \
+		faad:audio/faad \
+		flac:audio/flac
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	`fltk-config --ldflags`

@@ -10,9 +10,9 @@ COMMENT=	GUI functions (e.g. waterfall) for libsdr library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libsdr.so:${PORTSDIR}/comms/libsdr
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libsdr.so:comms/libsdr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatuschek

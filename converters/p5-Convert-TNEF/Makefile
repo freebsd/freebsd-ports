@@ -14,8 +14,8 @@ COMMENT=	Perl module to read TNEF files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-MIME-Tools>=4.109:${PORTSDIR}/mail/p5-MIME-Tools
+BUILD_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-MIME-Tools>=4.109:mail/p5-MIME-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

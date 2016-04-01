@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the LZO compression library
 
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 CFLAGS+=	-I${LOCALBASE}/include/lzo
 USES=		perl5

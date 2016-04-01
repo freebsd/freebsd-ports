@@ -11,7 +11,7 @@ COMMENT=	MPRIS protocol version 2 plugin for DeaDBeeF music player
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:${PORTSDIR}/audio/deadbeef
+BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes

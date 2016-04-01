@@ -14,7 +14,7 @@ COMMENT=	Future Composer Reference Player
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsidplay.so:${PORTSDIR}/audio/libsidplay
+LIB_DEPENDS=	libsidplay.so:audio/libsidplay
 
 USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes

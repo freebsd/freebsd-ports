@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 MAINTAINER=	toxic@doobie.com
 COMMENT=	Library for manipulating PAR2 files, extracted from par2cmdline
 
-LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
+LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20
 
 GNU_CONFIGURE=	yes
 

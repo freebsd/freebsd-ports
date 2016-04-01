@@ -27,8 +27,8 @@ OPTIONS_DEFINE=		PULSEAUDIO ALSA
 OPTIONS_SUB=		yes
 
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 ALSA_CONFIGURE_ENABLE=		alsa
-ALSA_LIB_DEPENDS=		libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 
 .include <bsd.port.mk>

@@ -25,7 +25,7 @@ PLIST_FILES=	bin/dinotrace
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMACS}
-RUN_DEPENDS+=	verilog-mode.el>0:${PORTSDIR}/cad/verilog-mode.el
+RUN_DEPENDS+=	verilog-mode.el>0:cad/verilog-mode.el
 USE_EMACS=	yes
 EMACS_NO_BUILD_DEPENDS=	yes
 .for F in dinotrace.el sim-log.el

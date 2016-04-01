@@ -19,8 +19,8 @@ OPTIONS_RADIO=	AUDIO_SYSTEM
 OPTIONS_RADIO_AUDIO_SYSTEM=	PORTAUDIO PULSEAUDIO RUNTIME
 RUNTIME_DESC=	Sound interface selected at runtime
 
-PORTAUDIOLIB=	libportaudio.so:${PORTSDIR}/audio/portaudio
-PULSEAUDIOLIB=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PORTAUDIOLIB=	libportaudio.so:audio/portaudio
+PULSEAUDIOLIB=	libpulse.so:audio/pulseaudio
 
 PORTAUDIO_LIB_DEPENDS=	${PORTAUDIOLIB}
 PULSEAUDIO_LIB_DEPENDS=	${PULSEAUDIOLIB}

@@ -8,7 +8,7 @@ MASTER_SITES=	http://github.com/downloads/alonbl/mp3unicode/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ID3 tags charset converter
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		iconv pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

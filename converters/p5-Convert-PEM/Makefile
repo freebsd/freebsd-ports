@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read/write access to ASN.1-encoded PEM files with optional encryption
 
-RUN_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
-		p5-Convert-ASN1>=0.10:${PORTSDIR}/converters/p5-Convert-ASN1 \
-		p5-Crypt-DES_EDE3>=0:${PORTSDIR}/security/p5-Crypt-DES_EDE3
+RUN_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
+		p5-Convert-ASN1>=0.10:converters/p5-Convert-ASN1 \
+		p5-Crypt-DES_EDE3>=0:security/p5-Crypt-DES_EDE3
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

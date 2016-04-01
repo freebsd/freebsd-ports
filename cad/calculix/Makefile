@@ -14,9 +14,9 @@ COMMENT=	Three-Dimensional Structural Finite Element Program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack	\
-		libspooles.so:${PORTSDIR}/math/spooles	\
-		libtaucs.so:${PORTSDIR}/math/taucs
+LIB_DEPENDS=	libarpack.so:math/arpack	\
+		libspooles.so:math/spooles	\
+		libtaucs.so:math/taucs
 
 DIST_SOURCES=	ccx_${PORTVERSION}.src${EXTRACT_SUFX}	\
 		cgx_${PORTVERSION}.all${EXTRACT_SUFX}
@@ -65,10 +65,10 @@ EXTRACT_ONLY+=	${DIST_HTM} ccx_${PORTVERSION}.ps${EXTRACT_SUFX}
 .endif
 
 .if ${PORT_OPTIONS:MMETIS}
-LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis4
+LIB_DEPENDS+=	libmetis.so:math/metis4
 .endif
 .if ${PORT_OPTIONS:MMETIS_EDF}
-LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis-edf
+LIB_DEPENDS+=	libmetis.so:math/metis-edf
 .endif
 
 .if ${ARCH} == "sparc64"

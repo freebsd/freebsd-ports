@@ -14,7 +14,7 @@ COMMENT=	Convert between XML and WBXML using libwbxml2
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
+LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
 
 USES=		perl5
 USE_PERL5=	configure

@@ -12,7 +12,7 @@ COMMENT=	Library for handling binary OpenStreetMap data
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.osmpbf
 
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	scrosby

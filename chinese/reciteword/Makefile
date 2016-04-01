@@ -17,7 +17,7 @@ COMMENT=	Education software to help people to study English
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libespeak.so:${PORTSDIR}/audio/espeak
+LIB_DEPENDS=	libespeak.so:audio/espeak
 
 GNU_CONFIGURE=	yes
 USES=		tar:bzip2 gettext gmake pkgconfig

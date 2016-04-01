@@ -25,8 +25,8 @@ PLIST_FILES=	bin/aacplusenc
 MAKE_ARGS+=	INSTDIR=${STAGEDIR}${PREFIX}
 
 FFTW3_MAKE_ARGS_OFF=	NOFFTW3=1
-FFTW3_LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-			libfftw3.so:${PORTSDIR}/math/fftw3
+FFTW3_LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
+			libfftw3.so:math/fftw3
 FFTW3_CFLAGS=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

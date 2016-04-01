@@ -66,7 +66,7 @@ post-patch::
 		${WRKSRC}/*/config/systems/default.mak
 
 .for m in nas esd
-${m:tu}_LIB_DEPENDS=	lib${m:nas=audio}.so:${PORTSDIR}/audio/${m:esd=esound}
+${m:tu}_LIB_DEPENDS=	lib${m:nas=audio}.so:audio/${m:esd=esound}
 post-patch-${m:tu}-on:
 	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ${m:tu}_AUDIO,INCLUDE_MODULES += ${m:tu}_AUDIO,' \
 		${WRKDIR}/*/config/config.in

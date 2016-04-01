@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 MAINTAINER=	demelier.david@gmail.com
 COMMENT=	Lua library for musicpd
 
-RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
+RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket
 
 OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}

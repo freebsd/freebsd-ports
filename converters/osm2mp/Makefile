@@ -10,14 +10,14 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenStreetMap data into Polish map format (MP) converter
 
-RUN_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
-		p5-Math-Polygon>=0:${PORTSDIR}/math/p5-Math-Polygon \
-		p5-Math-Polygon-Tree>=0:${PORTSDIR}/math/p5-Math-Polygon-Tree \
-		p5-Tree-R>=0:${PORTSDIR}/devel/p5-Tree-R \
-		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Math-Geometry-Planar-GPC-PolygonXS>=0:${PORTSDIR}/math/p5-Math-Geometry-Planar-GPC-PolygonXS \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+RUN_DEPENDS=	p5-YAML>=0:textproc/p5-YAML \
+		p5-Encode-Locale>=0:converters/p5-Encode-Locale \
+		p5-Math-Polygon>=0:math/p5-Math-Polygon \
+		p5-Math-Polygon-Tree>=0:math/p5-Math-Polygon-Tree \
+		p5-Tree-R>=0:devel/p5-Tree-R \
+		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-Math-Geometry-Planar-GPC-PolygonXS>=0:math/p5-Math-Geometry-Planar-GPC-PolygonXS \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
 LICENSE=	GPLv2
 

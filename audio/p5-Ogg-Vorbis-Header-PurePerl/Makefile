@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dominique.goncalves@gmail.com
 COMMENT=	Manipulate / fetch info from Ogg-Vorbis audio files
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	ogginfo.pl

@@ -13,7 +13,7 @@ COMMENT=	The CELT ultra-low delay audio codec
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:audio/libogg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
