@@ -13,18 +13,18 @@ COMMENT=	All-in-one sequencer, drum machine, sampler, and more
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float
-RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:${PORTSDIR}/audio/caps-plugins \
-		${LOCALBASE}/lib/ladspa/cmt.so:${PORTSDIR}/audio/cmt \
-		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:${PORTSDIR}/audio/swhplugins \
-		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:${PORTSDIR}/audio/tap-plugins
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libfluidsynth.so:audio/fluidsynth \
+		libsamplerate.so:audio/libsamplerate \
+		libsndfile.so:audio/libsndfile \
+		libvorbis.so:audio/libvorbis \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float
+RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
+		${LOCALBASE}/lib/ladspa/cmt.so:audio/cmt \
+		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:audio/swhplugins \
+		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:audio/tap-plugins
 
 OPTIONS_DEFINE=	JACK PULSEAUDIO SDL
 
@@ -47,10 +47,10 @@ CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 
 DOS2UNIX_FILES=	plugins/midi_import/portsmf/allegrowr.cpp plugins/midi_import/portsmf/mfmidi.cpp CMakeLists.txt
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_OFF=		-DWANT_JACK:BOOL=OFF
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-DWANT_PULSEAUDIO:BOOL=OFF
 
 SDL_USE=		SDL=sdl

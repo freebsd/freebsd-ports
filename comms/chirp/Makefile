@@ -14,8 +14,8 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${CHIRP_DEPENDS}
 RUN_DEPENDS=	${CHIRP_DEPENDS}
-CHIRP_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libxml2>0:${PORTSDIR}/textproc/py-libxml2 \
-		${PYTHON_PKGNAMEPREFIX}serial>0:${PORTSDIR}/comms/py-serial
+CHIRP_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libxml2>0:textproc/py-libxml2 \
+		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial
 
 USES=		desktop-file-utils gettext python
 USE_PYTHON=	distutils

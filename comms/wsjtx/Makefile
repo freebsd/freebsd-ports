@@ -15,13 +15,13 @@ COMMENT=	Weak signal ham radio communication package
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libhamlib.so:${PORTSDIR}/comms/hamlib
-RUN_DEPENDS=	${LOCALBASE}/bin/kvasd:${PORTSDIR}/comms/kvasd
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+		xsltproc:textproc/libxslt \
+		docbook-xsl>0:textproc/docbook-xsl
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libhamlib.so:comms/hamlib
+RUN_DEPENDS=	${LOCALBASE}/bin/kvasd:comms/kvasd
 
 MAKE_JOBS_UNSAFE=	yes
 USE_QT5=	gui buildtools qmake_build widgets multimedia concurrent serialport

@@ -18,7 +18,7 @@ COMMENT=	Dynamic Finite Element Program Suite
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	java3d>0:${PORTSDIR}/java/java3d
+RUN_DEPENDS=	java3d>0:java/java3d
 
 WRKSRC=		${WRKDIR}/Impact
 
@@ -45,7 +45,7 @@ DESKTOP_ENTRIES="Impact" "${COMMENT}" "${PORTNAME}" \
 OPTIONS_DEFINE=	GMSH
 
 GMSH_DESC=		Automatic 3D finite element mesh generator
-GMSH_RUN_DEPENDS=	gmsh:${PORTSDIR}/cad/gmsh
+GMSH_RUN_DEPENDS=	gmsh:cad/gmsh
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -print0 -or -name .cvsignore -type f -print0 | \

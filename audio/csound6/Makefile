@@ -15,12 +15,12 @@ COMMENT=	Sound synthesizer
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs \
-		swig>2:${PORTSDIR}/devel/swig20 \
-		eigen>0:${PORTSDIR}/math/eigen3 \
-		gmm++>0:${PORTSDIR}/math/gmm++
-LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		swig>2:devel/swig20 \
+		eigen>0:math/eigen3 \
+		gmm++>0:math/gmm++
+LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
+		libsndfile.so:audio/libsndfile
 
 USES=		bison cmake localbase python:2
 CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
@@ -45,36 +45,36 @@ OPTIONS_DEFAULT=	FLTK OPENMP
 OPTIONS_SUB=		yes
 
 ALSA_DESC=		Build ALSA I/O module
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_OFF=		-DUSE_ALSA:BOOL=OFF
 ALSA_PREVENTS=		DSSI
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CMAKE_OFF=		-DUSE_CURL:BOOL=OFF
 DSSI_DESC=		Build DSSI/LADSPA host opcodes
-DSSI_BUILD_DEPENDS=	dssi>0:${PORTSDIR}/audio/dssi
-DSSI_LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat
-DSSI_RUN_DEPENDS=	dssi>0:${PORTSDIR}/audio/dssi
+DSSI_BUILD_DEPENDS=	dssi>0:audio/dssi
+DSSI_LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat
+DSSI_RUN_DEPENDS=	dssi>0:audio/dssi
 DSSI_CMAKE_OFF=		-DBUILD_DSSI_OPCODES:BOOL=OFF
 DSSI_CFLAGS=		-isystem ${LOCALBASE}/include/dssi
 DSSI_PREVENTS=		ALSA
 FLTK_DESC=		Build FLTK plugin and GUI
-FLTK_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+FLTK_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 FLTK_CMAKE_ON=		-DBUILD_WINSOUND:BOOL=ON
 FLTK_CMAKE_OFF=		-DBUILD_CSOUND_AC:BOOL=OFF \
 			-DBUILD_VIRTUAL_KEYBOARD:BOOL=OFF \
 			-DUSE_FLTK:BOOL=OFF
 FLUIDSYNTH_DESC=	Building FluidSynth opcodes
-FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_CMAKE_OFF=	-DBUILD_FLUID_OPCODES:BOOL=OFF
 HDF5_DESC=		Build HDF5 read/write opcodes
-HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
+HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
 HDF5_CMAKE_OFF=		-DBUILD_HDF5_OPCODES:BOOL=OFF
 JACK_DESC=		Build Jack I/O module and opcodes
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_OFF=		-DBUILD_JACK_OPCODES:BOOL=OFF \
 			-DUSE_JACK:BOOL=OFF
 LUA_DESC=		Build Lua Interface and opcodes
-LUA_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUA_CMAKE_OFF=		-DBUILD_CSOUND_AC_LUA_INTERFACE:BOOL=OFF \
 			-DBUILD_LUA_INTERFACE:BOOL=OFF \
 			-DBUILD_LUA_OPCODES:BOOL=OFF
@@ -87,22 +87,22 @@ OPENMP_USES=		compiler:gcc-c++11-lib
 OPENMP_USES_OFF=	compiler:c++11-lib
 OPENMP_CMAKE_OFF=	-DUSE_OPEN_MP:BOOL=OFF
 OSC_DESC=		Build OSC opcodes
-OSC_LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
+OSC_LIB_DEPENDS=	liblo.so:audio/liblo
 OSC_CMAKE_OFF=		-DBUILD_OSC_OPCODES:BOOL=OFF
 PNG_DESC=		Build Image opcodes
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CMAKE_OFF=		-DBUILD_IMAGE_OPCODES:BOOL=OFF
 PORTAUDIO_DESC=		Build PortAudio I/O module
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_CMAKE_OFF=	-DUSE_PORTAUDIO:BOOL=OFF
 PULSEAUDIO_DESC=	Build PulseAudio I/O module
-PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-DUSE_PULSEAUDIO:BOOL=OFF
 
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING="${LOCALBASE}/bin/flex"
 .endif
 

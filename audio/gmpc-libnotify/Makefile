@@ -13,10 +13,10 @@ COMMENT=	Libnotify for gmpc
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
-		libnotify.so:${PORTSDIR}/devel/libnotify
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
-RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
+LIB_DEPENDS=	libmpd.so:audio/libmpd \
+		libnotify.so:devel/libnotify
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:audio/gmpc
+RUN_DEPENDS=	gmpc:audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 intltool

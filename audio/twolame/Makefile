@@ -11,10 +11,10 @@ MASTER_SITES=	SF \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG Audio Layer 2 encoder
 
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
+		libFLAC.so:audio/flac \
+		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg
 
 USES=		gmake pathfix pkgconfig libtool
 USE_LDCONFIG=	yes

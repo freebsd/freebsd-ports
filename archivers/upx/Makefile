@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The Ultimate Packer for eXecutables
 
-LIB_DEPENDS=	libucl.so:${PORTSDIR}/archivers/ucl
+LIB_DEPENDS=	libucl.so:archivers/ucl
 
 LZMA_VER=	4.65
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src

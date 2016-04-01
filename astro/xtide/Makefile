@@ -15,7 +15,7 @@ COMMENT=	Harmonic tide clock and tide predictor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		compiler:c++0x gmake libtool localbase tar:bzip2
 GNU_CONFIGURE=	yes

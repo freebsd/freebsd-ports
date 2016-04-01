@@ -11,8 +11,8 @@ MASTER_SITES=	SF
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GTK front-end to external cd rippers and audio encoders
 
-LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libid3.so:audio/id3lib \
+		libcurl.so:ftp/curl
 
 USE_XORG=	x11
 USES=		gmake libtool pathfix pkgconfig
@@ -30,13 +30,13 @@ OPTIONS_DEFAULT+=	LAME
 
 OPTIONS_SUB=	yes
 
-CDPARANOIA_LIB_DEPENDS=	libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
+CDPARANOIA_LIB_DEPENDS=	libcdda_paranoia.so:audio/cdparanoia
 CDPARANOIA_CONFIGURE_ENABLE=	cdpar
-CDDA2WAV_RUN_DEPENDS=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
-FAAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
-LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
-VORBIS_RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
+CDDA2WAV_RUN_DEPENDS=	cdda2wav:sysutils/cdrtools
+FAAC_RUN_DEPENDS=	faac:audio/faac
+FLAC_RUN_DEPENDS=	flac:audio/flac
+LAME_RUN_DEPENDS=	lame:audio/lame
+VORBIS_RUN_DEPENDS=	ogg123:audio/vorbis-tools
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 

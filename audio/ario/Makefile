@@ -13,15 +13,15 @@ COMMENT=	Ario is a GTK2 client for MPD
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libtag_c.so:${PORTSDIR}/audio/taglib \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
-		libmpdclient.so:${PORTSDIR}/audio/libmpdclient
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libgcrypt.so:security/libgcrypt \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libcurl.so:ftp/curl \
+		libnotify.so:devel/libnotify \
+		libsoup-2.4.so:devel/libsoup \
+		libtag_c.so:audio/taglib \
+		libunique-1.0.so:x11-toolkits/unique \
+		libmpdclient.so:audio/libmpdclient
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -35,7 +35,7 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	AVAHI NLS
 AVAHI_DESC=	Zeroconf support (Avahi)
 
-AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
 
 NLS_USES=		gettext

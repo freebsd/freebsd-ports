@@ -10,8 +10,8 @@ MASTER_SITES=	SFJP/julius/37582
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Large Vocabulary Continuous Speech Recognition Engine
 
-BUILD_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
-RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
+BUILD_DEPENDS=	ja-p5-Jcode>=0:japanese/p5-Jcode
+RUN_DEPENDS=	ja-p5-Jcode>=0:japanese/p5-Jcode
 
 GNU_CONFIGURE=	yes
 USES=		iconv perl5 shebangfix

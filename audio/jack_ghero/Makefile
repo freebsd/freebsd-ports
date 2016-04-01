@@ -12,7 +12,7 @@ COMMENT=	Daemon that converts a GuitarHero device into a JACK MIDI device
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libjack.so:audio/jack
 
 USES=		tar:bzip2 uidfix
 

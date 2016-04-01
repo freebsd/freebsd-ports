@@ -12,7 +12,7 @@ COMMENT=	Library for audio labelling
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	txt2man:${PORTSDIR}/textproc/txt2man
+BUILD_DEPENDS=	txt2man:textproc/txt2man
 
 USES=		pkgconfig tar:bzip2 waf
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
@@ -24,19 +24,19 @@ OPTIONS_SUB=		yes
 
 COMPLEX_DESC=		Compile with C99 complex.h
 COMPLEX_CONFIGURE_ENABLE=	complex
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=	avcodec
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	jack
-SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=	samplerate
 FFTW_DESC=		Use single precision FFTW3 instead of built-in OOURA
 FFTW_CONFIGURE_ENABLE=	fftw3f
-FFTW_BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-FFTW_LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+FFTW_BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
+FFTW_LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_ENABLE=	sndfile
 
 post-patch:

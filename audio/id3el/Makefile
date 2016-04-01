@@ -10,7 +10,7 @@ DISTNAME=	id3el-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add-on to edit ID3 tags for mpg123-mode (mpg123.el) on Emacsen
 
-RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/site-lisp/mpg123.el:${PORTSDIR}/audio/mpg123.el
+RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/site-lisp/mpg123.el:audio/mpg123.el
 
 ALL_TARGET=	id3put
 

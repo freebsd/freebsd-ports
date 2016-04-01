@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	otacilio.neto@ee.ufcg.edu.br
 COMMENT=	Building point for Verilog support in the Perl language
 
-BUILD_DEPENDS=	flex>=2.5.35:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	flex>=2.5.35:textproc/flex
 
 USES=		bison gmake perl5
 USE_PERL5=	configure

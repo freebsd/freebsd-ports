@@ -13,10 +13,10 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio DSP utility (SDR)
 
-LIB_DEPENDS=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr \
-		libportaudio.so:${PORTSDIR}/audio/portaudio \
-		libftdi.so:${PORTSDIR}/devel/libftdi
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+LIB_DEPENDS=	librtlsdr.so:comms/rtl-sdr \
+		libportaudio.so:audio/portaudio \
+		libftdi.so:devel/libftdi
+BUILD_DEPENDS=	nasm:devel/nasm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0${PORTVERSION}
 

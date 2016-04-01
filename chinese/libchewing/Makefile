@@ -13,7 +13,7 @@ COMMENT=	Chewing intelligent phonetic input method library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
 USES=		cmake libtool pathfix pkgconfig tar:bzip2
 USE_SQLITE=	yes

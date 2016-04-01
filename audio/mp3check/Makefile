@@ -10,8 +10,8 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for checking and fixing MP3 archive inconsistencies
 
-RUN_DEPENDS=	${LOCALBASE}/bin/id3tool:${PORTSDIR}/audio/id3tool \
-		${LOCALBASE}/bin/mp3_check:${PORTSDIR}/audio/mp3_check
+RUN_DEPENDS=	${LOCALBASE}/bin/id3tool:audio/id3tool \
+		${LOCALBASE}/bin/mp3_check:audio/mp3_check
 
 USES=		shebangfix perl5
 USE_PERL5=	run

@@ -13,10 +13,10 @@ COMMENT=	PDF generator using HTML and CSS
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0.11.1:${PORTSDIR}/www/py-html5lib \
-		${PYTHON_PKGNAMEPREFIX}reportlab2>=2.1:${PORTSDIR}/print/py-reportlab2 \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}pdf>=1.12:${PORTSDIR}/print/py-pdf
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0.11.1:www/py-html5lib \
+		${PYTHON_PKGNAMEPREFIX}reportlab2>=2.1:print/py-reportlab2 \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}pdf>=1.12:print/py-pdf
 
 USES=		python
 USE_PYTHON=	autoplist distutils

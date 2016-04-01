@@ -13,8 +13,8 @@ COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+		xsltproc:textproc/libxslt
 
 USES=		cpe pathfix pkgconfig python scons
 CPE_VENDOR=	gpsd_project
@@ -112,7 +112,7 @@ PPS_IMPLIES=	NTPSHM
 
 # Export methods
 SOCKEXPORT_MAKE_ARGS_OFF=	socket_export=no
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_MAKE_ARGS=	dbus_export=yes
 SHMEXPORT_MAKE_ARGS_OFF=	shm_export=no
 

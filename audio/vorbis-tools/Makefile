@@ -14,12 +14,12 @@ COMMENT=	Play, encode, and manage Ogg Vorbis files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libkate.so:${PORTSDIR}/multimedia/libkate \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libao.so:audio/libao \
+		libcurl.so:ftp/curl \
+		libFLAC.so:audio/flac \
+		libkate.so:multimedia/libkate \
+		libspeex.so:audio/speex \
+		libvorbis.so:audio/libvorbis
 
 USES=		cpe iconv pkgconfig
 CPE_VENDOR=	xiph

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for reading the Hipparcos star catalog
 
-BUILD_DEPENDS=	p5-ExtUtils-XSpp>=0.06:${PORTSDIR}/devel/p5-ExtUtils-XSpp
+BUILD_DEPENDS=	p5-ExtUtils-XSpp>=0.06:devel/p5-ExtUtils-XSpp
 
 MAKE_ARGS+=	CC="${CXX}"
 USES=		perl5

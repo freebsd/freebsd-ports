@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=	OSS
 
 AUDIO_DESC=		Audio backend
 
-ESOUND_LIB_DEPENDS=	libesd.so:${PORTSDIR}/audio/esound
+ESOUND_LIB_DEPENDS=	libesd.so:audio/esound
 ESOUND_CONFIGURE_ON=	--driver esd
 
 FILE_DESC=		Write raw PCM data to a file

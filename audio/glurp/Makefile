@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Nice and clean GTK+-2.x based graphical client for musicpd
 
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
+LIB_DEPENDS=	libmpd.so:audio/libmpd
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig

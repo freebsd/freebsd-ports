@@ -12,7 +12,7 @@ COMMENT=	Big5/GB enhanced TrueType Font Manager
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 MAKE_ARGS=	FREETYPE_BASE=${LOCALBASE:Q} CC="${CC}"
 

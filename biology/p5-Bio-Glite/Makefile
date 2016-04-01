@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Interface to G-language
 
-BUILD_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=5:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

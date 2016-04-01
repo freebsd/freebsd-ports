@@ -24,7 +24,7 @@ DOCSDIR=	${PREFIX}/share/doc/librtlsdr
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile.am
 
 post-patch:

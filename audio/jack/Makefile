@@ -14,10 +14,10 @@ COMMENT=	Low latency audio server
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libcelt0.so:${PORTSDIR}/audio/celt \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
+		libsamplerate.so:audio/libsamplerate \
+		libcelt0.so:audio/celt \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -36,12 +36,12 @@ OPTIONS_DEFINE=	ALSA DOXYGEN READLINE
 OPTIONS_DEFAULT=READLINE
 OPTIONS_SUB=	yes
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 
 READLINE_USES=		readline
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN="false"
 
 READLINE_CONFIGURE_ENV_OFF=	ac_cv_lib_readline_readline=no \

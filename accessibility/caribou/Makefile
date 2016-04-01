@@ -13,10 +13,10 @@ COMMENT=	Gnome On-Screen keyboard
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libxklavier.so:${PORTSDIR}/x11/libxklavier
-RUN_DEPENDS=	py2?-atspi>=2.1.91:${PORTSDIR}/accessibility/py-atspi
+LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter \
+		libgee-0.8.so:devel/libgee \
+		libxklavier.so:x11/libxklavier
+RUN_DEPENDS=	py2?-atspi>=2.1.91:accessibility/py-atspi
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig python:2 \
 		shebangfix tar:xz

@@ -12,7 +12,7 @@ COMMENT=	Open Sound System
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	gawk:lang/gawk
 
 USES=		tar:bzip2 kmod pkgconfig
 ALL_TARGET=	all install
@@ -43,7 +43,7 @@ CONFIGURE_ENV=	CC="${CC}" HOSTCC="${CC}"
 OPTIONS_DEFINE=	VORBIS
 OPTIONS_DEFAULT=VORBIS
 
-VORBIS_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 VORBIS_CONFIGURE_ENV=	OGG_SUPPORT=YES
 
 pre-patch:

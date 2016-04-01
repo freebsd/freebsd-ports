@@ -14,7 +14,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio recording and tick/scratch reduction for e.g. vinyl records
 
-LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	libfftw.so:math/fftw
 
 ALL_TARGET=	gramofile
 USES=		gmake perl5

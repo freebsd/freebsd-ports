@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OO Perl interface to the SIMBAD astronomical database
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure

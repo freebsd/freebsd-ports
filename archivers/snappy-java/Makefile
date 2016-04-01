@@ -23,7 +23,7 @@ COMMENT=	Fast compressor/decompressor library
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial

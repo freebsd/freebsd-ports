@@ -12,7 +12,7 @@ COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 GNU_CONFIGURE=	yes
 USES=		compiler pathfix pkgconfig
@@ -34,7 +34,7 @@ DESKTOP_ENTRIES="SoundTracker" "Pattern-oriented music editor" \
 
 ASM_CONFIGURE_ON=	--enable-asm
 
-JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=		libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	--disable-jack
 
 SDL_USE=		SDL=sdl

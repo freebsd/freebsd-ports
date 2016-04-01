@@ -27,15 +27,15 @@ GNOME_VARS=		INSTALLS_OMF=yes
 
 OPENGL_CONFIGURE_ON=	--with-lib-GL
 OPENGL_CONFIGURE_OFF=	--disable-opengl
-OPENGL_LIB_DEPENDS=	libgtkgl-2.0.so:${PORTSDIR}/x11-toolkits/gtkglarea2
+OPENGL_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2
 OPENGL_USE=		GL=glut
 
 PGPLOT_DESC=		PGPLOT support
 PGPLOT_CONFIGURE_ON=	--with-pgplot-include=${LOCALBASE}/include \
 			--with-pgplot-lib=${LOCALBASE}/lib
 PGPLOT_CONFIGURE_OFF=	--with-gnuplot
-PGPLOT_LIB_DEPENDS=	libpgplot.so:${PORTSDIR}/graphics/pgplot
-PGPLOT_RUN_DEPENDS_OFF=	gnuplot:${PORTSDIR}/math/gnuplot
+PGPLOT_LIB_DEPENDS=	libpgplot.so:graphics/pgplot
+PGPLOT_RUN_DEPENDS_OFF=	gnuplot:math/gnuplot
 PGPLOT_USES=		fortran
 
 .include <bsd.port.pre.mk>

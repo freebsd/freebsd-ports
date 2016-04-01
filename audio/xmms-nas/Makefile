@@ -10,8 +10,8 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Audio System (NAS) output plugin for XMMS
 
-LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
-		libaudio.so:${PORTSDIR}/audio/nas
+LIB_DEPENDS=	libxmms.so:multimedia/xmms \
+		libaudio.so:audio/nas
 
 USES=		libtool
 USE_GNOME=	gtk12

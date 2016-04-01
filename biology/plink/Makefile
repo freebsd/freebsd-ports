@@ -13,7 +13,7 @@ COMMENT=	Whole genome association analysis toolset
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	liblapack.so:math/lapack
 
 # We need Fortran LDFLAGS to link with Lapack.
 USES=		fortran gmake zip

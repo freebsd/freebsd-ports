@@ -11,7 +11,7 @@ MASTER_SITES=	http://rainbow-runner.nl/freebsd/ \
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for playing SPC (SNES audio) files
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:devel/nasm
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool

@@ -13,9 +13,9 @@ COMMENT=	Plugin for Pidgin to displays the music track currently playing
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

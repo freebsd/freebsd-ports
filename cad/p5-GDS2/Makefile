@@ -12,8 +12,8 @@ COMMENT=	GDS2 stream module
 
 LICENSE=	ART10
 
-RUN_DEPENDS=	p5-Tk>=804.027:${PORTSDIR}/x11-toolkits/p5-Tk \
-		p5-Tk-WaitBox>0:${PORTSDIR}/x11-toolkits/p5-Tk-WaitBox
+RUN_DEPENDS=	p5-Tk>=804.027:x11-toolkits/p5-Tk \
+		p5-Tk-WaitBox>0:x11-toolkits/p5-Tk-WaitBox
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

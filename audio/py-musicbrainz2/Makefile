@@ -16,7 +16,7 @@ COMMENT=	Next Generation Python bindings for MusicBrainz
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid
+LIB_DEPENDS=	libdiscid.so:audio/libdiscid
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils

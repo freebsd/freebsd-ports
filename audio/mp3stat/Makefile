@@ -28,7 +28,7 @@ PLIST_FILES=	bin/mp3stat \
 OPTIONS_DEFINE=		VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
 
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_PLIST_FILES=	lib/mp3stat/input_vorb.so
 VORBIS_MAKE_ARGS_OFF=	VORBIS=""
 

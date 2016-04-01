@@ -29,7 +29,7 @@ SNDFILE_DESC=	libsndfile support
 THREADS_DESC=	Build with thread safety support
 
 SNDFILE_USES=		pkgconfig
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_ENV_OFF=	HAVE_PKGCONFIG=no
 
 THREADS_LDFLAGS=		-lpthread

@@ -16,7 +16,7 @@ COMMENT=	SOund eXchange - universal sound sample translator
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 CONFLICTS=	play-[0-9]*
 
@@ -45,56 +45,56 @@ CONFIGURE_ARGS+=	--with-gsm
 CONFIGURE_ARGS+=	--disable-stack-protector
 
 ALSA_CONFIGURE_WITH=	alsa
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
 AO_CONFIGURE_WITH=	ao
-AO_LIB_DEPENDS=		libao.so:${PORTSDIR}/audio/libao
+AO_LIB_DEPENDS=		libao.so:audio/libao
 
 AMRNB_CONFIGURE_WITH=	amrnb
-AMRNB_LIB_DEPENDS=	libamrnb.so:${PORTSDIR}/audio/libamrnb
+AMRNB_LIB_DEPENDS=	libamrnb.so:audio/libamrnb
 
 AMRWB_CONFIGURE_WITH=	amrwb
-AMRWB_LIB_DEPENDS=	libamrwb.so:${PORTSDIR}/audio/libamrwb
+AMRWB_LIB_DEPENDS=	libamrwb.so:audio/libamrwb
 
 VORBIS_CONFIGURE_WITH=	oggvorbis
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 SNDFILE_CONFIGURE_WITH=	sndfile
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 LADSPA_CONFIGURE_WITH=	ladspa
-LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/filter.so:${PORTSDIR}/audio/ladspa
-LADSPA_BUILD_DEPENDS=	${LOCALBASE}/lib/ladspa/filter.so:${PORTSDIR}/audio/ladspa
+LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/filter.so:audio/ladspa
+LADSPA_BUILD_DEPENDS=	${LOCALBASE}/lib/ladspa/filter.so:audio/ladspa
 
 LAME_CONFIGURE_WITH=	lame
-LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 
 FLAC_CONFIGURE_WITH=	flac
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 
 MAD_CONFIGURE_WITH=	mad
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 
 PNG_CONFIGURE_WITH=	png
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
-GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 
 ID3TAG_CONFIGURE_WITH=	id3tag
-ID3TAG_LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag
+ID3TAG_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
 
 WAVPACK_CONFIGURE_WITH=	wavpack
-WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 
 TWOLAME_CONFIGURE_WITH=	twolame
-TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
+TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 
 OPUS_CONFIGURE_WITH=	opus
-OPUS_LIB_DEPENDS=	libopusfile.so:${PORTSDIR}/audio/opusfile
+OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
 
 # We cannot ask for gsm to be enabled without it trying to use external gsm,
 # so force the autoconf checks to fail

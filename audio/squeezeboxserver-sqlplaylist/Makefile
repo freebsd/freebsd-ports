@@ -13,8 +13,8 @@ DIST_SUBDIR=	squeezeboxserver
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Squeezebox Server plugin to create playlists based on SQL queries
 
-RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver \
-		${LOCALBASE}/${SLIMDIR}/Plugins/DynamicPlayList/install.xml:${PORTSDIR}/audio/squeezeboxserver-dynamicplaylist
+RUN_DEPENDS=	softsqueeze:audio/squeezeboxserver \
+		${LOCALBASE}/${SLIMDIR}/Plugins/DynamicPlayList/install.xml:audio/squeezeboxserver-dynamicplaylist
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 USES=		zip

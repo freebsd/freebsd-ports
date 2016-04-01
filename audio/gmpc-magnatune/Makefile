@@ -13,10 +13,10 @@ COMMENT=	Magnatune plugin lets you preview music from Magnatune
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
-RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
+LIB_DEPENDS=	libmpd.so:audio/libmpd \
+		libsqlite3.so:databases/sqlite3
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:audio/gmpc
+RUN_DEPENDS=	gmpc:audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool glib20 gtk20 libglade2

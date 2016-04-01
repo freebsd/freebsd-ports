@@ -14,7 +14,7 @@ COMMENT=	Multiple DNA or protein sequence alignment package
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw
+RUN_DEPENDS=	clustalw:biology/clustalw
 
 OPTIONS_DEFINE=	EXAMPLES
 

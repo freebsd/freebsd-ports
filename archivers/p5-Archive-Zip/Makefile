@@ -13,7 +13,7 @@ COMMENT=	Create, manipulate, read, and write Zip archive files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule
+TEST_DEPENDS=	p5-Test-MockModule>=0:devel/p5-Test-MockModule
 
 NO_ARCH=	yes
 USES=		perl5

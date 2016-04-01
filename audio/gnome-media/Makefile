@@ -12,9 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multimedia applications for the GNOME 2 desktop
 
-BUILD_DEPENDS=	xml2po:${PORTSDIR}/textproc/gnome-doc-utils
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+BUILD_DEPENDS=	xml2po:textproc/gnome-doc-utils
+LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
+		libunique-1.0.so:x11-toolkits/unique
 
 CONFLICTS=	gnome-control-center-3.[0-9]* libgnome-media-profiles-3.[0-9]*
 
@@ -36,7 +36,7 @@ OPTIONS_DEFINE=	PULSEAUDIO
 OPTIONS_DEFAULT=PULSEAUDIO
 OPTIONS_SUB=	yes
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=pulseaudio
 
 post-patch:

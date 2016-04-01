@@ -12,7 +12,7 @@ COMMENT=	Player for many different Amiga and PC module formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxmp.so:${PORTSDIR}/audio/libxmp
+LIB_DEPENDS=	libxmp.so:audio/libxmp
 
 USES=		pkgconfig gmake
 WANT_GNOME=	yes
@@ -27,11 +27,11 @@ CONFIG_FILES=	xmp.conf modules.conf
 
 OPTIONS_DEFINE=	ALSA PULSEAUDIO
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 ALSA_CONFIGURE_ENABLE=	alsa
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 
 post-patch:

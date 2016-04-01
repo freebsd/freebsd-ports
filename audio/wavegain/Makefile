@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}srcs${EXTRACT_SUFFIX}
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	Program that applies ReplayGain to wave files
 
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses x86 assembly

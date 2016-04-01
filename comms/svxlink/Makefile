@@ -10,15 +10,15 @@ COMMENT?=	General purpose ham radio voice services
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS?=	libgsm.so:${PORTSDIR}/audio/gsm \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libpopt.so:${PORTSDIR}/devel/popt \
-		libopus.so:${PORTSDIR}/audio/opus
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconf \
-		${LOCALBASE}/include/linux/input.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS?=	libgsm.so:audio/gsm \
+		libspeex.so:audio/speex \
+		libgpg-error.so:security/libgpg-error \
+		libgcrypt.so:security/libgcrypt \
+		libsigc-2.0.so:devel/libsigc++20 \
+		libpopt.so:devel/popt \
+		libopus.so:audio/opus
+BUILD_DEPENDS=	pkg-config:devel/pkgconf \
+		${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sm0svx
@@ -41,7 +41,7 @@ STATIC_CMAKE_ON=	-DBUILD_STATIC_LIBS=YES
 OPTIONS_DEFAULT=OSS ALSA
 OPTIONS_MULTI=	SOUND
 OPTIONS_MULTI_SOUND=	ALSA OSS
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_OFF=	-DUSE_ALSA:BOOL=OFF
 ALSA_CMAKE_ON=	-DUSE_ALSA:BOOL=ON
 OSS_CMAKE_OFF=	-DUSE_OSS:BOOL=OFF
@@ -49,8 +49,8 @@ OSS_CMAKE_ON=	-DUSE_OSS:BOOL=ON
 .endif
 DOCS_ALL_TARGET=doc
 DOCS_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:BOOL=TRUE
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-			dot:${PORTSDIR}/graphics/graphviz
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			dot:graphics/graphviz
 OPTIONS_SUB=	yes
 PORTDOCS=	*
 

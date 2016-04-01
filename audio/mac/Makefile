@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS=	yasm:devel/yasm
 .endif
 
 post-install:

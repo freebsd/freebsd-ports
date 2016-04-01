@@ -13,7 +13,7 @@ DIST_SUBDIR=	squeezeboxserver
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Squeezebox Server plugin to store ratings and statistics about songs
 
-RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
+RUN_DEPENDS=	softsqueeze:audio/squeezeboxserver
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 USES=		zip

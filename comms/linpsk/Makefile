@@ -8,8 +8,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Simple Qt PSK31, RTTY, and MSK31 client
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libasound.so:audio/alsa-lib
 
 USES=		qmake tar:tgz
 USE_QT4=	gui network corelib moc_build uic_build rcc_build qmake_build

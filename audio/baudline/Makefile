@@ -26,7 +26,7 @@ PLIST_FILES=	bin/baudline
 OPTIONS_DEFINE=		MPG123 DOCS
 OPTIONS_DEFAULT=	MPG123
 
-MMPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+MMPG123_RUN_DEPENDS=	mpg123:audio/mpg123
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		may not be automatically fetched due to licensing\

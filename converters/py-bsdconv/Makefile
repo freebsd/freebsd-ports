@@ -11,7 +11,7 @@ COMMENT=	Python wrapper for bsdconv
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	libbsdconv.so:converters/bsdconv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini

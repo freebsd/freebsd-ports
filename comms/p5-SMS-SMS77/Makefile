@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	steinex@nognu.de
 COMMENT=	Perl interface and script to send SMS via SMS77.de
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	modbuild

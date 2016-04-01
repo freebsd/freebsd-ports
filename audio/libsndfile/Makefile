@@ -30,8 +30,8 @@ EXTERNAL_DESC=	Enable FLAC and Ogg Vorbis support
 CPU_CLIP_VARS=	MANUAL_PACKAGE_BUILD="WITH_CPU_CLIP may customize the package for the build machine"
 CPU_CLIP_CONFIGURE_OFF=	--disable-cpu-clip
 
-EXTERNAL_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-			libvorbis.so:${PORTSDIR}/audio/libvorbis
+EXTERNAL_LIB_DEPENDS=	libFLAC.so:audio/flac \
+			libvorbis.so:audio/libvorbis
 EXTERNAL_CONFIGURE_OFF=	--disable-external-libs
 
 post-patch:

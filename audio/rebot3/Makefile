@@ -11,8 +11,8 @@ COMMENT=	Renames mp3 files using freedb or local CDDB
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-CDDB>=0:${PORTSDIR}/audio/p5-CDDB \
-		p5-MP3-ID3v1Tag>=0:${PORTSDIR}/audio/p5-MP3-ID3v1Tag
+RUN_DEPENDS=	p5-CDDB>=0:audio/p5-CDDB \
+		p5-MP3-ID3v1Tag>=0:audio/p5-MP3-ID3v1Tag
 
 USES=		perl5
 NO_BUILD=	yes

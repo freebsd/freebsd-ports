@@ -13,8 +13,8 @@ COMMENT=	Alternative light weight UI for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USE_XORG=	x11 xft xpm
 USES=		tar:bzip2 cmake gettext pkgconfig

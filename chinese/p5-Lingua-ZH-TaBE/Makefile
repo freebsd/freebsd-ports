@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Chinese processing via libtabe
 
-LIB_DEPENDS=	libtabe.so:${PORTSDIR}/chinese/libtabe
+LIB_DEPENDS=	libtabe.so:chinese/libtabe
 
 USES=		perl5
 USE_PERL5=	configure

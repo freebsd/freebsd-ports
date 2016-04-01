@@ -10,17 +10,17 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE music player
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
-		libtag-extras.so:${PORTSDIR}/audio/taglib-extras \
-		liblastfm.so:${PORTSDIR}/audio/liblastfm \
-		libofa.so:${PORTSDIR}/audio/libofa \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libqjson.so:${PORTSDIR}/devel/qjson \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libdbus-1.so:${PORTSDIR}/devel/dbus
-BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
-RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
-		${KDE4_PREFIX}/lib/kde4/kio_upnp_ms.so:${PORTSDIR}/net/kio-upnp-ms
+LIB_DEPENDS=	libtag.so:audio/taglib \
+		libtag-extras.so:audio/taglib-extras \
+		liblastfm.so:audio/liblastfm \
+		libofa.so:audio/libofa \
+		libavcodec.so:multimedia/ffmpeg \
+		libqjson.so:devel/qjson \
+		libqca.so:devel/qca \
+		libdbus-1.so:devel/dbus
+BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:devel/qtscriptgenerator
+RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:devel/qtscriptgenerator \
+		${KDE4_PREFIX}/lib/kde4/kio_upnp_ms.so:net/kio-upnp-ms
 
 USE_KDE4=	kdelibs kdeprefix libkcddb libkcompactdisc \
 		nepomuk-core runtime automoc4 strigi
@@ -40,20 +40,20 @@ OPTIONS_DEFAULT=IPOD MP3TUNES MTP
 OPTIONS_SUB=	yes
 
 AMAZON_DESC=		Amazon MP3 store support via clamz
-AMAZON_RUN_DEPENDS=	clamz:${PORTSDIR}/net/clamz
+AMAZON_RUN_DEPENDS=	clamz:net/clamz
 
 IPOD_DESC=		Apple iPod support
-IPOD_LIB_DEPENDS=	libgpod.so:${PORTSDIR}/audio/libgpod
+IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod
 IPOD_USE=		GNOME=gdkpixbuf2,glib20
 IPOD_CMAKE_OFF=		-DWITH_IPOD:BOOL=Off
 
 MP3TUNES_DESC=		MP3tunes support
-MP3TUNES_LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth \
-			libcurl.so:${PORTSDIR}/ftp/curl
+MP3TUNES_LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth \
+			libcurl.so:ftp/curl
 MP3TUNES_USE=		GNOME=glib20,libxml2
 MP3TUNES_CMAKE_OFF=	-DWITH_MP3tunes:BOOL=Off
 
-MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp
+MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 MTP_CMAKE_OFF=		-DWITH_Mtp:BOOL=Off
 
 NLS_USES=		gettext

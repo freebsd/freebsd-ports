@@ -14,8 +14,8 @@ COMMENT=	OO, component based, framework for molecular dynamics (MD) simulations
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 USES=		shebangfix
 SHEBANG_FILES=	examples/butane_4/procDihedralFile.awk \

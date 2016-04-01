@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/LIRC/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux Infrared Remote Control
 
-BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	v4l_compat>=1.0.20110603:multimedia/v4l_compat
 
 INSTALL_TARGET=	install-strip
 USES=		alias autoreconf gmake libtool python tar:bzip2
@@ -36,20 +36,20 @@ PORTEXAMPLES=	remotes
 SUB_FILES=	pkg-message lircd.conf
 
 .if exists(${LOCALBASE}/lib/libvga.so.1)
-LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:graphics/svgalib
 PLIST_SUB+=	SMODE2=
 .else
 PLIST_SUB+=	SMODE2="@comment "
 .endif
 
-MINIMAL_LIB_DEPENDS_OFF=		libftdi.so:${PORTSDIR}/devel/libftdi \
-			libirman.so:${PORTSDIR}/comms/libirman
+MINIMAL_LIB_DEPENDS_OFF=		libftdi.so:devel/libftdi \
+			libirman.so:comms/libirman
 MINIMAL_CONFIGURE_OFF=	--with-driver=userspace
 MINIMAL_CONFIGURE_ON=	--with-driver=dvico
 
 DEBUG_CONFIGURE_ENABLE=	debug
 
-UARTLIRC_RUN_DEPENDS=		uartlirc>=0.3:${PORTSDIR}/comms/uartlirc
+UARTLIRC_RUN_DEPENDS=		uartlirc>=0.3:comms/uartlirc
 
 post-patch:
 	@${REINPLACE_CMD} \

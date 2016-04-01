@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
 
-LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c
+LIB_DEPENDS=	libf2c.so:lang/f2c
 
 OPTIONS_DEFINE=	DOCS
 

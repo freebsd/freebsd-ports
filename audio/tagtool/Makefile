@@ -14,8 +14,8 @@ COMMENT=	GNOME MP3/Ogg file tagger
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libid3.so:audio/id3lib \
+		libvorbis.so:audio/libvorbis
 
 USES=		tar:bzip2 gettext gmake pathfix pkgconfig
 USE_GNOME=	intlhack libglade2

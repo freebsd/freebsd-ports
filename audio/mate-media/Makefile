@@ -10,10 +10,10 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multimedia applications for the MATE desktop
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
-		libmatemixer.so:${PORTSDIR}/audio/libmatemixer \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
+		libmatemixer.so:audio/libmatemixer \
+		libunique-1.0.so:x11-toolkits/unique
 
 PORTSCOUT=	limitw:1,even
 

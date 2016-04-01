@@ -10,7 +10,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Free lossless audio codec
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:audio/libogg
 
 USES=		iconv libtool pathfix pkgconfig tar:xz
 
@@ -28,7 +28,7 @@ TEST_TARGET=	check
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	nasm:devel/nasm
 .endif
 
 post-install:

@@ -13,7 +13,7 @@ COMMENT=	Amateur Radio control front-end
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
+LIB_DEPENDS=	libhamlib.so:comms/hamlib
 
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes

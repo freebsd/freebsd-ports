@@ -10,7 +10,7 @@ COMMENT=	Rime Schema Repository
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	rime_deployer:${PORTSDIR}/chinese/librime
+BUILD_DEPENDS=	rime_deployer:chinese/librime
 
 USES=		gmake
 USE_GITHUB=	yes

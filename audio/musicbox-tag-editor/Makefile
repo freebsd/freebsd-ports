@@ -12,7 +12,7 @@ DISTNAME=	musicbox-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK+ audio tag editor
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		pathfix pkgconfig shebangfix
 USE_GNOME=	gnomeprefix libglade2

@@ -14,10 +14,10 @@ COMMENT=	Legendary Open Cubic Player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libsidplay.so:${PORTSDIR}/audio/libsidplay
+LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
+		libmad.so:audio/libmad \
+		libvorbis.so:audio/libvorbis \
+		libsidplay.so:audio/libsidplay
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -51,7 +51,7 @@ OPTIONS_DEFAULT=ADPLUG FLAC MIDI X11 SDL
 .include <bsd.port.options.mk>
 
 .if exists(${TIMIDITY_CFG}) || ${PORT_OPTIONS:MMIDI}
-RUN_DEPENDS+=	eawpats>0:${PORTSDIR}/audio/eawpats
+RUN_DEPENDS+=	eawpats>0:audio/eawpats
 .endif
 
 .if ${PORT_OPTIONS:MX11}
@@ -64,7 +64,7 @@ PLIST_SUB+=		XORG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MADPLUG}
-LIB_DEPENDS+=		libadplug.so:${PORTSDIR}/audio/libadplug
+LIB_DEPENDS+=		libadplug.so:audio/libadplug
 CONFIGURE_ARGS+=	--with-adplug
 PLIST_SUB+=		ADPLUG=""
 .else
@@ -88,7 +88,7 @@ PLIST_SUB+=		DESKTOP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=		libFLAC.so:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=		libFLAC.so:audio/flac
 CONFIGURE_ARGS+=	--with-flac
 PLIST_SUB+=		FLAC=""
 .else

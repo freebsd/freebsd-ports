@@ -13,12 +13,12 @@ COMMENT=	Voice chat software primarily intended for use while gaming
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libboost_iostreams.so:${PORTSDIR}/devel/boost-libs \
-		libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
-		libprotoc.so:${PORTSDIR}/devel/protobuf \
-		libopus.so:${PORTSDIR}/audio/opus
+LIB_DEPENDS+=	libspeex.so:audio/speex \
+		libsndfile.so:audio/libsndfile \
+		libboost_iostreams.so:devel/boost-libs \
+		libboost_python.so:devel/boost-python-libs \
+		libprotoc.so:devel/protobuf \
+		libopus.so:audio/opus
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
@@ -52,7 +52,7 @@ USE_QT4+=	dbus
 .if ! ${PORT_OPTIONS:MBONJOUR}
 CONFIG+=	no-bonjour
 .else
-LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=	libdns_sd.so:net/mDNSResponder
 .endif
 
 .include <bsd.port.pre.mk>

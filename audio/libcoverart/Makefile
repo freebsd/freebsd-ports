@@ -11,8 +11,8 @@ COMMENT=	Library for accessing the MusicBrainz cover art archive
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
-		libneon.so:${PORTSDIR}/www/neon
+LIB_DEPENDS=	libjansson.so:devel/jansson \
+		libneon.so:www/neon
 
 USES=		cmake pathfix
 USE_LDCONFIG=	yes

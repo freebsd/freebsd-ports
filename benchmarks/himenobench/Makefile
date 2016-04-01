@@ -17,7 +17,7 @@ COMMENT=	Tool for measureing performance of floating point operation
 
 LICENSE=	LGPL20 # (or later)
 
-EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=	lha:archivers/lha
 
 USES=		zip
 NO_WRKSUBDIR=	yes
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=		ICC IFC OPTIMIZED_CFLAGS
 OPTIONS_SUB=		yes
 
 ICC_DESC=		Intel C compiler support
-ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
+ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:lang/icc
 IFC_DESC=		Intel Fortran compiler support
 IFC_USES=		fortran:ifort
 IFC_USES_OFF=		fortran

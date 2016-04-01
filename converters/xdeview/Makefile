@@ -14,7 +14,7 @@ COMMENT=	X11 program for uu/xx/Base64/BinHex/yEnc de-/encoding
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libuu.so:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	libuu.so:converters/uulib
 
 USES=		desthack tk
 GNU_CONFIGURE=	yes

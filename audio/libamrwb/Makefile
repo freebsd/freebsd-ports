@@ -23,7 +23,7 @@ LICENSE_PERMS_3GPP=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-a
 LICENSE_DISTFILES_BSD3CLAUSE=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_DISTFILES_3GPP=	${SRC26204}
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	unzip:archivers/unzip
 
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP and more
 

@@ -11,8 +11,8 @@ COMMENT=	Minimalistic Murmur (Mumble server)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
-		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+LIB_DEPENDS=	libconfig.so:devel/libconfig \
+		libprotobuf-c.so:devel/protobuf-c
 
 USE_GITHUB=	yes
 

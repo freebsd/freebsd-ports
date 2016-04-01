@@ -12,7 +12,7 @@ DISTNAME=	phpBB-tw-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Traditional Chinese version of phpBB
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
+RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear
 
 CONFLICTS=	phpbb-[0-9]*
 USES=		dos2unix

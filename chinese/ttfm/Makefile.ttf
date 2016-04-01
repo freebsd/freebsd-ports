@@ -22,17 +22,17 @@ XFONTSDIR_REL=	${XFONTSDIR:S,${LOCALBASE}/,,}
 PLIST_SUB+=	XFONTSDIR=${XFONTSDIR_REL}
 
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS+=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig
 _TTF_MODULES=	xttfm
 .endif
 
 .if ${PORT_OPTIONS:MGHOSTSCRIPT}
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:print/adobe-cmaps
 _TTF_MODULES+=	gscjk
 .endif
 
 .if defined(_TTF_MODULES)
-RUN_DEPENDS+=	${PREFIX}/bin/ttfm.sh:${PORTSDIR}/chinese/ttfm
+RUN_DEPENDS+=	${PREFIX}/bin/ttfm.sh:chinese/ttfm
 .endif
 
 check-makefile: check-makefile-ttf

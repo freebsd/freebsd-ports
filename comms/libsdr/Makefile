@@ -10,10 +10,10 @@ COMMENT=	Simple software defined radio (SDR) library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		librtlsdr.so:${PORTSDIR}/comms/rtl-sdr
+LIB_DEPENDS=	libportaudio.so:audio/portaudio \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		librtlsdr.so:comms/rtl-sdr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatuschek

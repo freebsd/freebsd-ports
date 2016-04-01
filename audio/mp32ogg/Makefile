@@ -12,10 +12,10 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Convert MP3 files to Ogg Vorbis files
 
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
-		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote
+RUN_DEPENDS=	mpg123:audio/mpg123 \
+		oggenc:audio/vorbis-tools \
+		p5-MP3-Info>=0:audio/p5-MP3-Info \
+		p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote
 
 USES=		shebangfix perl5
 SHEBANG_FILES=	mp32ogg

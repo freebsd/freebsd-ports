@@ -14,7 +14,7 @@ COMMENT=	Configurable tool to check collections of audio files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl
+BUILD_DEPENDS=	libmp3-archive-perl>=0:audio/libmp3-archive-perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

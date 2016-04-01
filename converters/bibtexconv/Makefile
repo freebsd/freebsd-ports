@@ -12,7 +12,7 @@ COMMENT=	BibTeX Converter
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		gmake

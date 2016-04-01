@@ -14,7 +14,7 @@ COMMENT=	Perl interface to Google Snappy (de)compressor
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-CheckLib>=0:${PORTSDIR}/devel/p5-Devel-CheckLib
+BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
 
 USE_PERL5=	configure
 USES=		perl5

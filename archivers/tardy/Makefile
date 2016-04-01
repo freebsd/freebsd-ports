@@ -14,9 +14,9 @@ COMMENT=	Manipulate the file headers in tar archive files in various ways
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/include/libiberty/libiberty.h:${PORTSDIR}/devel/gnulibiberty
-LIB_DEPENDS=	libexplain.so:${PORTSDIR}/devel/libexplain
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \
+		${LOCALBASE}/include/libiberty/libiberty.h:devel/gnulibiberty
+LIB_DEPENDS=	libexplain.so:devel/libexplain
 
 GNU_CONFIGURE=	yes
 

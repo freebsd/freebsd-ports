@@ -12,7 +12,7 @@ COMMENT=	Python module for RAR archive reading
 
 LICENSE=	ISCL
 
-RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+RUN_DEPENDS=	unrar:archivers/unrar
 
 NO_ARCH=	yes
 USES=		python:2.7+

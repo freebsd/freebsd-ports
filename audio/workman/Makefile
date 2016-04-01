@@ -11,7 +11,7 @@ DISTNAME=	WorkMan-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Look-based CD player tool
 
-LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
 USES=		imake

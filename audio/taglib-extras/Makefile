@@ -9,7 +9,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra taglib features for Amarok 2.2
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		cmake
 

@@ -13,8 +13,8 @@ COMMENT=	Tools for the conversion to and from UTF-8 Unicode encoding
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libutf-8.so:${PORTSDIR}/converters/libutf-8
-RUN_DEPENDS=	tuc:${PORTSDIR}/converters/tuc
+LIB_DEPENDS=	libutf-8.so:converters/libutf-8
+RUN_DEPENDS=	tuc:converters/tuc
 
 DATADIR=	${PREFIX}/share/i18n
 DOCSDIR=	${PREFIX}/share/doc/i18n

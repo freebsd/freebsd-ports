@@ -20,12 +20,12 @@ COMMENT=	Multitrack tablature editor and player
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel \
-		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
-		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill
+BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel \
+		${JAVALIBDIR}/itext.jar:devel/itext \
+		${JAVALIBDIR}/gervill.jar:audio/gervill
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
-		libjack.so:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
+		libjack.so:audio/jack
 
 MAKE_ENV+=	PREFIX=${PREFIX} INSTALL_DOC_DIR=${DOCSDIR} \
 		INSTALL_SHARE_DIR=${DATADIR}

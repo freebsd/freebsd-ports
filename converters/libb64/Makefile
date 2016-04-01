@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}
 MAINTAINER=	ismail.yenigul@surgate.com
 COMMENT=	Library for fast Base64 encoding and decoding
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
+BUILD_DEPENDS=	makedepend:devel/makedepend
 
 USES=		gmake zip
 ALL_TARGET=	all_src

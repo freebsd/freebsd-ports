@@ -12,7 +12,7 @@ COMMENT=	Simple Ogg API
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:audio/libogg
 
 OPTIONS_DEFINE=	DOCS
 

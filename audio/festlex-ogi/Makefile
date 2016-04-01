@@ -11,8 +11,8 @@ DISTNAME=	OGIlexicon-2.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Composite pronunciation dictionary from ogi.edu for Festival
 
-RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
-		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex
+RUN_DEPENDS=	festival:audio/festival \
+		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:audio/festlex-poslex
 
 RESTRICTED=	No commercial use
 

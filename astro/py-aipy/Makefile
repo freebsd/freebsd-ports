@@ -12,9 +12,9 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Astronomical Interferometry in PYthon
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem \
-		${PKGNAMEPREFIX}pyfits>=1.1:${PORTSDIR}/astro/py-pyfits \
-		${PKGNAMEPREFIX}matplotlib>=0.98:${PORTSDIR}/math/py-matplotlib
+		${PYTHON_SITELIBDIR}/ephem/__init__.py:astro/pyephem \
+		${PKGNAMEPREFIX}pyfits>=1.1:astro/py-pyfits \
+		${PKGNAMEPREFIX}matplotlib>=0.98:math/py-matplotlib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	ALLEGRO
 OPTIONS_SUB=	yes
 ALLEGRO_DESC=	Enable allegro support
 
-ALLEGRO_LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
+ALLEGRO_LIB_DEPENDS=	liballeg.so:devel/allegro
 ALLEGRO_MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`" \
 			LINK_ALLEGRO="`allegro-config --libs` -lm"
 ALLEGRO_CONFLICTS=	dumb-[0-9]*

@@ -4421,7 +4421,7 @@ fetch-recursive-list:
 
 # Used by fetch-required and fetch-required list, this script looks
 # at each of the dependencies. If 3 items are specified in the tuple,
-# such as foo:${PORTSDIR}/graphics/foo:extract, the first item (foo)
+# such as foo:graphics/foo:extract, the first item (foo)
 # is examined. Only if it begins with a / and does not exist on the
 # file-system will ``make targ'' proceed.
 # For more usual (dual-item) dependency tuples, the ``make targ''

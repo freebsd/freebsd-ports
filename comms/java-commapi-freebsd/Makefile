@@ -10,8 +10,8 @@ DISTNAME=	freebsd-commapi-${PORTVERSION}
 MAINTAINER=	ari.suutari@syncrontech.com
 COMMENT=	Java Communication API for FreeBSD
 
-BUILD_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
-RUN_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
+BUILD_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:comms/java-commapi
+RUN_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:comms/java-commapi
 
 MAKE_JOBS_UNSAFE=	yes
 

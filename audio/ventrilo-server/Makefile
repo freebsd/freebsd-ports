@@ -11,7 +11,7 @@ DISTNAME=	ventrilo_srv-${PORTVERSION}-FreeBSD-i386
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server side of the Ventrilo group voice chat system
 
-RUN_DEPENDS=	compat4x-i386>0:${PORTSDIR}/misc/compat4x
+RUN_DEPENDS=	compat4x-i386>0:misc/compat4x
 
 .include <bsd.port.pre.mk>
 

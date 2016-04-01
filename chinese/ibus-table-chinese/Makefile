@@ -11,11 +11,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 MAINTAINER=	dennylin93@hs.ntnu.edu.tw
 COMMENT=	Chinese input tables for IBus
 
-BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Modules/ManageEnvironment.cmake:${PORTSDIR}/devel/cmake-fedora \
-		ibus-daemon:${PORTSDIR}/textproc/ibus \
-		${LOCALBASE}/libexec/ibus-engine-table:${PORTSDIR}/textproc/ibus-table
-RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus \
-		${LOCALBASE}/libexec/ibus-engine-table:${PORTSDIR}/textproc/ibus-table
+BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Modules/ManageEnvironment.cmake:devel/cmake-fedora \
+		ibus-daemon:textproc/ibus \
+		${LOCALBASE}/libexec/ibus-engine-table:textproc/ibus-table
+RUN_DEPENDS=	ibus-daemon:textproc/ibus \
+		${LOCALBASE}/libexec/ibus-engine-table:textproc/ibus-table
 
 USES=		cmake pkgconfig
 INSTALL_TARGET=	install

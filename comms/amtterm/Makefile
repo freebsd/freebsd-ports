@@ -12,7 +12,7 @@ COMMENT=	Serial-over-lan client for Intel AMT
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-SOAP-Lite>=0.5:${PORTSDIR}/net/p5-SOAP-Lite
+RUN_DEPENDS=	p5-SOAP-Lite>=0.5:net/p5-SOAP-Lite
 
 USES=		gmake dos2unix shebangfix
 DOS2UNIX_FILES=	RedirectionConstants.h

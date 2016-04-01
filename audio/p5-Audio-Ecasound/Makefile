@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for ecasound sampler, recorder, fx-processor
 
-BUILD_DEPENDS=	libecasoundc-config:${PORTSDIR}/audio/ecasound
+BUILD_DEPENDS=	libecasoundc-config:audio/ecasound
 
 USES=		perl5
 USE_PERL5=	configure

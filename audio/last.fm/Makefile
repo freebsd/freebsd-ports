@@ -13,11 +13,11 @@ COMMENT=	Official last.fm radio player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libgpod.so:${PORTSDIR}/audio/libgpod \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libgpod.so:audio/libgpod \
+		libmad.so:audio/libmad \
+		libsamplerate.so:audio/libsamplerate \
+		libfftw3f.so:math/fftw3-float
 
 WRKSRC=		${WRKDIR}/last.fm-${PORTVERSION}
 

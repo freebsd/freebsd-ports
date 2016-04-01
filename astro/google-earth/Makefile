@@ -14,7 +14,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Explore, Search, and Discover
 
-EXTRACT_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
+EXTRACT_DEPENDS=	unmakeself:archivers/unmakeself
 
 RESTRICTED=	Not really sure about the redistribution terms
 
@@ -31,7 +31,7 @@ USE_PERL5=	patch build
 
 UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 
-NVIDIA_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 NVIDIA_USE_OFF=	LINUX_APPS=dri,libpciaccess
 
 # Fixed by the first post-patch target line?  Also, linprocfs needs to be mounted.

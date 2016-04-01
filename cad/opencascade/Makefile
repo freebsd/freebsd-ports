@@ -16,9 +16,9 @@ LICENSE_NAME=	LGPL21 with exception
 LICENSE_FILE=	${WRKSRC}/OCCT_LGPL_EXCEPTION.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libtbb.so:${PORTSDIR}/devel/tbb		\
-		libvtksys-${VTKVER}.so:${PORTSDIR}/math/vtk6
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libtbb.so:devel/tbb		\
+		libvtksys-${VTKVER}.so:math/vtk6
+RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/Overview.md
 # and ${WRKSRC}/dox/dev_guides/building
@@ -63,21 +63,21 @@ VIS_CMAKE_ON=		-DUSE_FREEIMAGE:BOOL=ON -DUSE_GL2PS:BOOL=ON	\
 VIS_CMAKE_OFF=		-DUSE_FREEIMAGE:BOOL=OFF -DUSE_GL2PS:BOOL=OFF	\
 			-DUSE_FREETYPE:BOOL=OFF
 VIS_USE=		GL=glu
-VIS_LIB_DEPENDS=	libftgl.so:${PORTSDIR}/graphics/ftgl		\
-			libfreetype.so:${PORTSDIR}/print/freetype2	\
-			libgl2ps.so:${PORTSDIR}/print/gl2ps		\
-			libfreeimageplus.so:${PORTSDIR}/graphics/freeimage
+VIS_LIB_DEPENDS=	libftgl.so:graphics/ftgl		\
+			libfreetype.so:print/freetype2	\
+			libgl2ps.so:print/gl2ps		\
+			libfreeimageplus.so:graphics/freeimage
 
 VIS_CMAKE_ON=	-D3RDPARTY_FREETYPE_DIR=${LOCALBASE}	\
 		-D3RDPARTY_FREEIMAGE_DIR=${LOCALBASE}	\
 		-D3RDPARTY_GL2PS_DIR=${LOCALBASE}
 
 DOCS_USE=	TEX=latex:build
-DOCS_BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash		\
-			doxygen:${PORTSDIR}/devel/doxygen	\
-			dot:${PORTSDIR}/graphics/graphviz	\
-			inkscape:${PORTSDIR}/graphics/inkscape
-DOCS_RUN_DEPENDS=	${LOCALBASE}/www/MathJax/MathJax.js:${PORTSDIR}/www/mathjax
+DOCS_BUILD_DEPENDS=	bash:shells/bash		\
+			doxygen:devel/doxygen	\
+			dot:graphics/graphviz	\
+			inkscape:graphics/inkscape
+DOCS_RUN_DEPENDS=	${LOCALBASE}/www/MathJax/MathJax.js:www/mathjax
 
 .include <bsd.port.options.mk>
 

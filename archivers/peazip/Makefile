@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free archiver and file compressor
 
-BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
-		fpcres:${PORTSDIR}/lang/fpc-utils
+BUILD_DEPENDS=	lazbuild:editors/lazarus \
+		fpcres:lang/fpc-utils
 
 USES=		dos2unix zip
 USE_FPC=	cairo fcl-base fcl-image pasjpeg rtl-objpas x11
@@ -46,17 +46,17 @@ OPTIONS_DEFAULT=	GTK2 7Z
 USE_FPC+=	gtk2
 USE_GNOME=	gtk20
 LCL_PLATFORM=	gtk2
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+LIB_DEPENDS+=	libQt4Pas.so:x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 .endif
 
 .if ${PORT_OPTIONS:M7Z}
-RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
+RUN_DEPENDS+=	7z:archivers/p7zip
 ARCHIVER_FILES+=7z
 PLIST_SUB+=	7Z=""
 .else
@@ -64,7 +64,7 @@ PLIST_SUB+=	7Z="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MARC}
-RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
+RUN_DEPENDS+=	arc:archivers/arc
 ARCHIVER_FILES+=arc
 PLIST_SUB+=	ARC=""
 .else
@@ -72,7 +72,7 @@ PLIST_SUB+=	ARC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MZPAQ}
-RUN_DEPENDS+=	zpaq:${PORTSDIR}/archivers/paq
+RUN_DEPENDS+=	zpaq:archivers/paq
 ARCHIVER_FILES+=zpaq
 PLIST_SUB+=	ZPAQ=""
 .else
@@ -80,7 +80,7 @@ PLIST_SUB+=	ZPAQ="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUNACE}
-RUN_DEPENDS+=	unace:${PORTSDIR}/archivers/unace
+RUN_DEPENDS+=	unace:archivers/unace
 ARCHIVER_FILES+=unace
 PLIST_SUB+=	UNACE=""
 .else

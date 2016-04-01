@@ -42,7 +42,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 PORTDOCS=	*
 PORTEXAMPLES=	.procmailrc .qmailrc *
 
-STATS_LIB_DEPENDS=	libmm.so:${PORTSDIR}/devel/mm
+STATS_LIB_DEPENDS=	libmm.so:devel/mm
 STATS_CFLAGS=	-I${LOCALBASE}/include
 STATS_CFLAGS_OFF=	-DNOSTATS
 

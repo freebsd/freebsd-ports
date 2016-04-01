@@ -36,11 +36,11 @@ CDAUDIO_DESC=	libcdaudio support
 # link audiere with ogg as well
 DUMB_IMPLIES=	VORBIS
 
-DUMB_BUILD_DEPENDS=	${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
-CDAUDIO_LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-			libogg.so:${PORTSDIR}/audio/libogg
-SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+DUMB_BUILD_DEPENDS=	${LOCALBASE}/lib/libdumb.a:audio/dumb
+CDAUDIO_LIB_DEPENDS=	libcdaudio.so:audio/libcdaudio
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+			libogg.so:audio/libogg
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 
 post-patch:
 # could be an option, but build is broken with recent FLAC
