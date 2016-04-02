@@ -17,6 +17,8 @@ LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 USE_GITHUB=	yes
 GH_ACCOUNT=	sekrit-twc
 
+CONFLICTS_INSTALL=	zimg-[0-9]* # include/zimg.h
+
 USES=		autoreconf compiler:c++11-lib gmake libtool pathfix
 EXTRACT_AFTER_ARGS=	--exclude test/extra
 PATHFIX_MAKEFILEIN=	Makefile.am

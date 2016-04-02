@@ -12,6 +12,8 @@ COMMENT=	Image-generator that uses ASCII input files to create PNGs/EDFs
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 
+CONFLICTS_INSTALL=	sekrit-twc-zimg-* # include/zimg.h
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \
 		--with-dynaload-cflags="${CFLAGS} -shared" \
