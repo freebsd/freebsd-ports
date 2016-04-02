@@ -6,8 +6,7 @@ PORTVERSION=	1.2.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES+=	http://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Docs.zip:doc
+DISTFILES=	Docs.zip:doc
 DIST_SUBDIR=	elixir/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
