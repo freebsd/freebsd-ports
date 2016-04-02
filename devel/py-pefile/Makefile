@@ -2,26 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	pefile
-DISTVERSION=	1.2.10-139
+PORTVERSION=	2016.3.28
 CATEGORIES=	devel python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP \
+		https://github.com/erocarrera/pefile/files/192316/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python module to read and work with PE files
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future
+
+NO_ARCH=	yes
+USES=		python
 USE_PYTHON=	distutils autoplist
-
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-PORTDOCS=	README
-
-OPTIONS_DEFINE=	DOCS
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
