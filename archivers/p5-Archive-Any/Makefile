@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	Archive-Any
-PORTVERSION=	0.09.42
+PORTVERSION=	0.0944
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Single interface to deal with file archives
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.07:archivers/p5-Archive-Zip \
 		p5-File-MMagic>=1.27:devel/p5-File-MMagic \
