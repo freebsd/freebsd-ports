@@ -13,6 +13,8 @@ COMMENT=	Node.js implementation of Tesla Model S API client
 LICENSE=	BSD2CLAUSE BSD3CLAUSE APACHE20 MIT ISCL
 LICENSE_COMB=	multi
 
+BROKEN=		tries to download from registry.npmjs.org during stage phase
+
 BUILD_DEPENDS=	npm>=0:www/npm
 RUN_DEPENDS=	npm>=0:www/npm
 
