@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav-unofficial-sigs
-PORTVERSION=	5.0.4
-PORTREVISION=	1
+PORTVERSION=	5.0.5
 CATEGORIES=	security
 
 MAINTAINER=	sf@maxempire.com
