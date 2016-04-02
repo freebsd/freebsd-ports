@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.19
+PORTVERSION=	0.0.20
 CATEGORIES=	games
-MASTER_SITES=	SF/zero-ad/releases
+MASTER_SITES=	SF/zero-ad/releases \
+		http://releases.wildfiregames.com/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
 		${PORTNAME}-${PORTVERSION}-alpha-unix-data.tar.xz
 
@@ -29,24 +30,13 @@ USES=		compiler:c++11-lib dos2unix execinfo gmake iconv openal:al \
 		pkgconfig tar:xz
 USE_GNOME=	libxml2 gtk20
 USE_GL=		gl
+USE_SDL=	sdl2
 BUNDLE_LIBS=	yes
 DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
 
 USE_WX=		2.8+
 WX_COMPS=	wx:lib
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
-
-OPTIONS_SINGLE=		SDL_VERSION
-OPTIONS_SINGLE_SDL_VERSION=	SDL SDL2
-OPTIONS_DEFAULT=	SDL2
-
-SDL_VERSION_DESC=	SDL version
-SDL_DESC=		Use SDL 1.2 (deprecated)
-SDL2_DESC=		Use SDL 2.0
-
-SDL_USE=		SDL=sdl
-SDL_VARS=		0ADSDLARG=--sdl1
-SDL2_USE=		SDL=sdl2
 
 MANUAL_PACKAGE_BUILD=	huge
 
