@@ -3219,6 +3219,7 @@
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-Harness-Straps
     SUBDIR += p5-Test-HasVersion
+    SUBDIR += p5-Test-HexDifferences
     SUBDIR += p5-Test-HexString
     SUBDIR += p5-Test-Identity
     SUBDIR += p5-Test-If
