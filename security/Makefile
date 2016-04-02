@@ -1093,6 +1093,7 @@
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += titus
+    SUBDIR += tls-check
     SUBDIR += tlswrap
     SUBDIR += tmux-cssh
     SUBDIR += tor
