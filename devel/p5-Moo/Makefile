@@ -3,7 +3,7 @@
 
 PORTNAME=	Moo
 PORTVERSION=	2.001001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
@@ -31,4 +31,11 @@ USE_PERL5=	configure
 XS_BUILD_DEPENDS=	p5-Class-XSAccessor>=1.18:devel/p5-Class-XSAccessor
 XS_RUN_DEPENDS=		${XS_BUILD_DEPENDS}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=0:lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
