@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openntpd
-PORTVERSION=	5.7p4
-PORTREVISION=	2
+PORTVERSION=	5.9p1
 PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD/OpenNTPD
@@ -20,20 +19,19 @@ USE_RC_SUBR=	openntpd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
 
-# * LibreSSL fails with the certificiate bundle from ca_root_nss;
-#   3.22.2 appears to work just fine (unlike 3.22).
-# * USE_OPENSSL does not handle LibreSSL yet.
-
 OPTIONS_DEFINE=		RESSL
 RESSL_DESC=		SSL/TLS support via LibreSSL
 
 OPTIONS_DEFAULT=	RESSL
 
-RESSL_LIB_DEPENDS=	libtls.so:security/libressl
+# Requires libtls from LibreSSL >= 2.3.2
+RESSL_USE=		openssl=yes
+RESSL_VARS=		with_openssl_port=yes \
+			openssl_port=security/libressl-devel
 RESSL_CONFIGURE_WITH=	cacert=${LOCALBASE}/etc/ssl/cert.pem
 RESSL_CPPFLAGS=		-I${LOCALBASE}/include
 RESSL_LDFLAGS=		-L${LOCALBASE}/lib
-RESSL_RUN_DEPENDS=	ca_root_nss>=3.22.2:security/ca_root_nss
+RESSL_RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 pre-build:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
