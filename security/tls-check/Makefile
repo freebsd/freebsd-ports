@@ -3,6 +3,7 @@
 PORTNAME=	tls-check
 PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	pi@FreeBSD.org
@@ -20,6 +21,7 @@ MY_DEPENDS=	p5-MooseX-SimpleConfig>=0.11:devel/p5-MooseX-SimpleConfig \
 		p5-Test-Pod>=1.51:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.10:devel/p5-Test-Pod-Coverage \
 		p5-forks>=0.36:devel/p5-forks \
+		p5-Net-IDN-Encode>=2.300:textproc/p5-Net-IDN-Encode \
 		p5-Net-LibIDN>=0.12:dns/p5-Net-LibIDN \
 		p5-IO-Socket-Timeout>=0.32:net/p5-IO-Socket-Timeout \
 		p5-IO-All>=0.86:devel/p5-IO-All \
@@ -33,7 +35,7 @@ RUN_DEPENDS=	${MY_DEPENDS}
 
 USES=		perl5
 USE_GITHUB=	yes
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	TLS-Check
 GH_TAGNAME=	b7c2488
