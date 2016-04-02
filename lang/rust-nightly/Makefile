@@ -15,8 +15,6 @@ PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 
-BROKEN_FreeBSD_9=	Only compiles on FreeBSD 10 and 11
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
 GH_PROJECT=	rust \
