@@ -1,6 +1,6 @@
---- src/ntpd.8.orig	2015-03-18 16:25:53 UTC
+--- src/ntpd.8.orig	2016-03-28 13:51:51 UTC
 +++ src/ntpd.8
-@@ -57,7 +57,7 @@ Use
+@@ -56,7 +56,7 @@ Use
  .Ar file
  as the configuration file,
  instead of the default
@@ -9,7 +9,7 @@
  .It Fl n
  Configtest mode.
  Only check the configuration file for validity.
-@@ -100,19 +100,19 @@ will be logged.
+@@ -99,19 +99,19 @@ will be logged.
  After the local clock is synchronized,
  .Nm
  adjusts the clock frequency using the
@@ -33,9 +33,9 @@
  for more information on the boot process
  and enabling daemons.
  .Pp
-@@ -137,8 +137,8 @@ signal on systems without
- it writes its peer and sensor status to
- .Xr syslog 3 .
+@@ -124,8 +124,8 @@ and its initial clock drift from
+ .Pa /var/db/ntpd.drift .
+ Clock drift is periodically written to the drift file thereafter.
  .Sh FILES
 -.Bl -tag -width "/var/db/ntpd.driftXXX" -compact
 -.It Pa /etc/ntpd.conf
@@ -44,7 +44,7 @@
  Default configuration file.
  .It Pa /var/db/ntpd.drift
  Drift file.
-@@ -148,12 +148,12 @@ Socket file for communication with
+@@ -135,12 +135,12 @@ Socket file for communication with
  .El
  .Sh SEE ALSO
  .Xr date 1 ,
