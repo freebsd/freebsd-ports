@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	antlr4
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.3
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
 DISTNAME=	antlr-${PORTVERSION}-complete
