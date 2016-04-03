@@ -1,42 +1,48 @@
 # $FreeBSD$
 
 PORTNAME=	wsjtx
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://physics.princeton.edu/pulsar/K1JT/:src \
+MASTER_SITES=	SF/wsjt/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}:src \
 		http://www.physics.princeton.edu/pulsar/K1JT/wsjtx-doc/:docs \
-		LOCAL/db
-DISTFILES=	wsjtx-1.5.0.tgz:src \
-		wsjtx-main.html:docs
+		LOCAL/db:docs
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
+		wsjtx-main-${PORTVERSION}.html:docs
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-		xsltproc:textproc/libxslt \
-		docbook-xsl>0:textproc/docbook-xsl
+BUILD_DEPENDS=	a2x:textproc/asciidoc
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
-		libhamlib.so:comms/hamlib
+		libhamlib.so:comms/hamlib \
+		libxslt.so:textproc/libxslt
 RUN_DEPENDS=	${LOCALBASE}/bin/kvasd:comms/kvasd
 
 MAKE_JOBS_UNSAFE=	yes
-USE_QT5=	gui buildtools qmake_build widgets multimedia concurrent serialport
+USE_GCC=	yes
 USE_GL=		yes
-USES=		cmake compiler:c++11-lib dos2unix fortran pkgconfig
+USE_QT5=	gui buildtools qmake_build widgets multimedia concurrent serialport
+USES=		cmake compiler fortran pkgconfig tar:tgz
 CMAKE_ARGS+=	-DPORT_BUILDING::STRING="ON" \
+		-DWSJT_SKIP_MANPAGES::BOOL="YES" \
 		-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib
-
-WRKSRC=		${WRKDIR}/wsjtx
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-extract:
-		(cd ${WRKDIR};tar xvf ${DISTDIR}/wsjtx-1.5.0.tgz)
-		(cd ${WRKDIR};tar xvf ${WRKDIR}/wsjtx-1.5.0/src/wsjtx.tgz)
+	${TAR} xf ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} -C${WRKDIR}
+	${TAR} xf ${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/wsjtx.tgz -C${WRKDIR}
 
 post-install:
-		${CP} ${DISTDIR}/wsjtx-main.html ${STAGEDIR}${DOCSDIR}
+	${MKDIR} -v ${STAGEDIR}${MANPREFIX}/man/man1
+	${CP} ${FILESDIR}/*.gz ${STAGEDIR}${MANPREFIX}/man/man1
+	${CP} ${DISTDIR}/${PORTNAME}-main-${PORTVERSION}.html ${STAGEDIR}${DOCSDIR}
+.for f in AUTHORS BUGS COPYING INSTALL NEWS README THANKS
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/debian/changelog.Debian.gz ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/debian/copyright ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

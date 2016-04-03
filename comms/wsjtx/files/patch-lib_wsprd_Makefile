@@ -1,0 +1,16 @@
+--- lib/wsprd/Makefile.orig	2015-12-11 00:00:13 UTC
++++ lib/wsprd/Makefile
+@@ -1,9 +1,9 @@
+-CC = gcc
++#CC = gcc
+ #CC = clang
+-FC = gfortran
++#FC = gfortran
+ 
+-CFLAGS= -I/usr/include -Wall -Wno-missing-braces -O3 -ffast-math
+-LDFLAGS = -L/usr/lib
++CFLAGS= -Wno-missing-braces -O3 -ffast-math
++#LDFLAGS = -L/usr/lib
+ LIBS = -lfftw3 -lm
+ 
+ # Default rules
