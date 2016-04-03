@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	8.8.0
+PORTVERSION=	9.0.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
-		LOCAL/ehaupt
+		https://mkvtoolnix.download/sources/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
@@ -26,20 +26,17 @@ RUBY_NO_RUN_DEPENDS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	ac_cv_path_PO4A=no ZLIB_CFLAGS=-I/usr/include ZLIB_LIBS=-lz
-CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
+CONFIGURE_ARGS=	--without-curl \
+		--with-boost=${LOCALBASE} \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-system=boost_system \
 		--with-boost-regex=boost_regex
 
 BROKEN_sparc64=	does not install
 
-OPTIONS_DEFINE=	CURL FLAC NLS QT5
+OPTIONS_DEFINE=	FLAC NLS QT5
 OPTIONS_DEFAULT=	FLAC QT5
 OPTIONS_SUB=	yes
-
-CURL_DESC=	Online update checks using curl
-CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-CURL_CONFIGURE_WITH=	curl
 
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CONFIGURE_WITH=	flac
