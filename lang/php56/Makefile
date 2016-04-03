@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php56
-PORTVERSION=	5.6.19
+PORTVERSION=	5.6.20
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
