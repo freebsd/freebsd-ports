@@ -11,15 +11,15 @@ DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	The Berkeley DB package, revision 4.8
+COMMENT=	Berkeley DB package, revision 4.8
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
 DEPRECATED=		Please migrate to db5 or db6
 # The port is not to be removed unless the bitcoin-related ports can
 # go without this.
-EXPIRATION_DATE=	2015-07-31
-
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
+EXPIRATION_DATE=	2016-07-31
 
 BDBVER=		${PORTVERSION:R:R}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
@@ -34,6 +34,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} >= 1100101
+IGNORE=		db48 is not supported on FreeBSD 11+ with clang 3.8 - upgrade to db5
+.endif
 
 .if ${ARCH} == "aarch64" || ${ARCH} == "armv6"
 # db48 uses a deprecated instruction for mutexes on ARM, fbsd bug#197227
