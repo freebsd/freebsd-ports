@@ -1,23 +1,21 @@
---- etc/Makefile.orig	2015-05-07 19:44:34 UTC
+--- etc/Makefile.orig	2016-01-28 19:28:21 UTC
 +++ etc/Makefile
-@@ -4,13 +4,13 @@ include ../config.mk
+@@ -3,11 +3,13 @@ top_builddir = ..
+ include ../config.mk
  
  install:
- 	$(MKINSTALLDIRS) $(sysconfdir)
--	$(MKINSTALLDIRS) $(sysconfdir)/sqlrelay.conf.d
--	$(CP) sqlrelay.conf.example $(sysconfdir)
--	$(CHMOD) 644 $(sysconfdir)/sqlrelay.conf.example
--	$(CP) sqlrelay.dtd $(sysconfdir)
--	$(CHMOD) 644 $(sysconfdir)/sqlrelay.dtd
--	$(CP) sqlrelay.xsd $(sysconfdir)
--	$(CHMOD) 644 $(sysconfdir)/sqlrelay.xsd
+-	$(MKINSTALLDIRS) $(sysconfdir)/$(SQLRELAY).conf.d
+-	$(CP) sqlrelay.xsd $(sysconfdir)/$(SQLRELAY).xsd
+-	$(MKINSTALLDIRS) $(EXAMPLEDIR)
+-	$(CP) sqlrelay.conf $(EXAMPLEDIR)/$(SQLRELAY).conf
+-	$(CHMOD) 644 $(EXAMPLEDIR)/$(SQLRELAY).conf
 +	$(MKINSTALLDIRS) $(sysconfdir)/sqlrelay
-+	$(CP) sqlrelay.conf.example $(sysconfdir)//sqlrelay/conf.sample
++	$(CP) sqlrelay.conf $(sysconfdir)//sqlrelay/conf.sample
 +	$(CHMOD) 644 $(sysconfdir)/sqlrelay/conf.sample
-+	$(CP) sqlrelay.dtd $(sysconfdir)/sqlrelay/
-+	$(CHMOD) 644 $(sysconfdir)/sqlrelay/sqlrelay.dtd
 +	$(CP) sqlrelay.xsd $(sysconfdir)/sqlrelay/
 +	$(CHMOD) 644 $(sysconfdir)/sqlrelay/sqlrelay.xsd
- 	$(CP) sqlrelay.conf.example $(EXAMPLEDIR)/sqlrelay.conf
- 	$(CHMOD) 644 $(EXAMPLEDIR)/sqlrelay.conf
++	$(CP) sqlrelay.conf $(EXAMPLEDIR)/sqlrelay.conf
++	$(CHMOD) 644 $(EXAMPLEDIR)/sqlrelay.conf
  
+ uninstall:
+ 	$(RM) $(EXAMPLEDIR)/$(SQLRELAY).conf \

@@ -14,20 +14,19 @@ LICENSE=	LGPL20
 LIB_DEPENDS=	librudiments.so:devel/rudiments
 
 WANT_GNOME=	yes
-USES=		gmake libtool
+USES=		gmake libtool python
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 			--disable-tcl \
 			--disable-java \
-			--disable-msql \
 			--disable-nodejs \
 			--disable-perl \
 			--disable-php \
 			--disable-python \
+			--disable-python3 \
 			--disable-ruby \
-			--disable-erlang \
-			--disable-zope
+			--disable-erlang
 MAKE_JOBS_UNSAFE=yes
 USE_LDCONFIG=	yes
 
@@ -46,21 +45,25 @@ TOSTRIP=	bin/sqlr-start \
 		bin/sqlr-pwdenc \
 		bin/sqlr-status \
 		bin/sqlrsh \
-		lib/libsqlrodbc-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libsqlrutil-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libsqlrclient-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libsqlrclientwrapper-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libpqsqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libmysql3sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libmysql40sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libmysql41sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libmysql50sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libmysql51sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
-		lib/libsqlrserver-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libsqlrodbc.so.2.0.0 \
+		lib/libsqlrutil.so.2.0.0 \
+		lib/libsqlrclient.so.2.0.0 \
+		lib/libsqlrclientwrapper.so.2.0.0 \
+		lib/libpqsqlrelay.so.2.0.0 \
+		lib/libmysql3sqlrelay.so.2.0.0 \
+		lib/libmysql40sqlrelay.so.2.0.0 \
+		lib/libmysql41sqlrelay.so.2.0.0 \
+		lib/libmysql50sqlrelay.so.2.0.0 \
+		lib/libmysql51sqlrelay.so.2.0.0 \
+		lib/libsqlrserver.so.2.0.0 \
 		libexec/sqlrelay/sqlrauth_database.so \
+		libexec/sqlrelay/sqlrauth_krb_userlist.so \
+		libexec/sqlrelay/sqlrauth_proxied.so \
 		libexec/sqlrelay/sqlrauth_sqlrelay.so \
+		libexec/sqlrelay/sqlrauth_tls_userlist.so \
 		libexec/sqlrelay/sqlrauth_userlist.so \
 		libexec/sqlrelay/sqlrconfig_xml.so \
+		libexec/sqlrelay/sqlrconfig_xmldom.so \
 		libexec/sqlrelay/sqlrconnection_router.so \
 		libexec/sqlrelay/sqlrfilter_patterns.so \
 		libexec/sqlrelay/sqlrfilter_regex.so \
@@ -95,8 +98,7 @@ CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
 			--with-sqlite-prefix="${LOCALBASE}"
 TOSTRIP+=		libexec/sqlrelay/sqlrconnection_sqlite.so
 .else
-CONFIGURE_ARGS+=	--without-gdbm-prefix \
-			--disable-sqlite
+CONFIGURE_ARGS+=	--disable-sqlite
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}

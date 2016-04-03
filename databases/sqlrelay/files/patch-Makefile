@@ -1,4 +1,4 @@
---- Makefile.orig	2015-08-05 21:07:34 UTC
+--- Makefile.orig	2016-01-17 07:20:04 UTC
 +++ Makefile
 @@ -30,16 +30,13 @@ install-doc:
  	cd doc $(AND) $(MAKE) install
@@ -10,10 +10,10 @@
  
  install-pkgconfig:
 -	$(MKINSTALLDIRS) $(libdir)/pkgconfig
--	$(CP) sqlrelay-c.pc $(libdir)/pkgconfig
--	$(CHMOD) 0644 $(libdir)/pkgconfig/sqlrelay-c.pc
--	$(CP) sqlrelay-c++.pc $(libdir)/pkgconfig
--	$(CHMOD) 0644 $(libdir)/pkgconfig/sqlrelay-c++.pc
+-	$(CP) sqlrelay-c.pc $(libdir)/pkgconfig/$(SQLRELAY)-c.pc
+-	$(CHMOD) 0644 $(libdir)/pkgconfig/$(SQLRELAY)-c.pc
+-	$(CP) sqlrelay-c++.pc $(libdir)/pkgconfig/$(SQLRELAY)-c++.pc
+-	$(CHMOD) 0644 $(libdir)/pkgconfig/$(SQLRELAY)-c++.pc
 +	$(MKINSTALLDIRS) $(prefix)/libdata/pkgconfig
 +	$(CP) sqlrelay-c.pc $(prefix)/libdata/pkgconfig/sqlrelay-c.pc
 +	$(CHMOD) 0644 $(prefix)/libdata/pkgconfig/sqlrelay-c.pc
@@ -29,4 +29,4 @@
 -	$(RMTREE) $(licensedir)
  
  uninstall-pkgconfig:
- 	$(RM) $(libdir)/pkgconfig/sqlrelay-c.pc \
+ 	$(RM) $(libdir)/pkgconfig/$(SQLRELAY)-c.pc \
