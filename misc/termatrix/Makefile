@@ -11,9 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulates Matrix terminal's "green tears" effect
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PLIST_FILES=	bin/termatrix
 PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
 
 do-build:
 	${CC} ${CFLAGS} ${CPPFLAGS} -o ${WRKSRC}/termatrix \
@@ -21,6 +24,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/termatrix ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
