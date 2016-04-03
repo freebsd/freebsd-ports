@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parrot
-PORTVERSION=	7.9.0
+PORTVERSION=	8.1.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/supported/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -50,6 +50,7 @@ do-configure:
 	(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 
 post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/inst_libparrot.so.${PORTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* \
 		${STAGEDIR}${PREFIX}/lib/libparrot.so.${PORTVERSION} \
 		${STAGEDIR}${PREFIX}/lib/parrot/${PORTVERSION}/dynext/*.so
