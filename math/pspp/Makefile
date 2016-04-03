@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pspp
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
 LICENSE=	GPLv3
@@ -30,15 +29,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 PORTDOCS=	AUTHORS ChangeLog NEWS ONEWS README THANKS TODO
+PORTEXAMPLES=	*
 INFO=		pspp pspp-dev
 
-OPTIONS_DEFINE=		DOCS GUI NLS PGSQL
+OPTIONS_DEFINE=		DOCS EXAMPLES GUI NLS PGSQL
 OPTIONS_SUB=		yes
 
-GUI_LIB_DEPENDS=	libgladeui-1.so:devel/glade3
+GUI_LIB_DEPENDS=	libgladeui-2.so:devel/glade
 GUI_RUN_DEPENDS=	yelp:x11/yelp
 GUI_USES=		desktop-file-utils
-GUI_USE=		gnome=gtksourceview2,libglade2
+GUI_USE=		gnome=gtk30,gtksourceview3
 GUI_CONFIGURE_WITH=	cairo gui gui-tools
 GUI_INSTALL_TARGET=	install-icons install-ext-icons
 NLS_USES=		gettext
@@ -66,6 +66,11 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \
+		"${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
