@@ -10,6 +10,7 @@ include/rudiments/commandline.h
 include/rudiments/compiler.h
 include/rudiments/crypt.h
 include/rudiments/datetime.h
+include/rudiments/debugprint.h
 include/rudiments/device.h
 include/rudiments/dictionary.h
 include/rudiments/directory.h
@@ -21,6 +22,7 @@ include/rudiments/file.h
 include/rudiments/filedescriptor.h
 include/rudiments/filesystem.h
 include/rudiments/groupentry.h
+include/rudiments/gss.h
 include/rudiments/hostentry.h
 include/rudiments/inetsocketclient.h
 include/rudiments/inetsocketserver.h
@@ -53,6 +55,7 @@ include/rudiments/private/config.h
 include/rudiments/private/cryptincludes.h
 include/rudiments/private/datetime.h
 include/rudiments/private/datetimeincludes.h
+include/rudiments/private/debugprint.h
 include/rudiments/private/device.h
 include/rudiments/private/deviceincludes.h
 include/rudiments/private/dictionary.h
@@ -79,6 +82,11 @@ include/rudiments/private/filesystem.h
 include/rudiments/private/filesystemincludes.h
 include/rudiments/private/groupentry.h
 include/rudiments/private/groupentryincludes.h
+include/rudiments/private/gss.h
+include/rudiments/private/gsscontext.h
+include/rudiments/private/gsscredentials.h
+include/rudiments/private/gssincludes.h
+include/rudiments/private/gssmechanism.h
 include/rudiments/private/hostentry.h
 include/rudiments/private/hostentryincludes.h
 include/rudiments/private/inetsocketclient.h
@@ -150,6 +158,10 @@ include/rudiments/private/thread.h
 include/rudiments/private/threadincludes.h
 include/rudiments/private/threadmutex.h
 include/rudiments/private/threadmutexincludes.h
+include/rudiments/private/tls.h
+include/rudiments/private/tlscertificate.h
+include/rudiments/private/tlscontext.h
+include/rudiments/private/tlsincludes.h
 include/rudiments/private/unixsocketclient.h
 include/rudiments/private/unixsocketclientincludes.h
 include/rudiments/private/unixsocketserver.h
@@ -162,6 +174,8 @@ include/rudiments/private/userentry.h
 include/rudiments/private/userentryincludes.h
 include/rudiments/private/winsock.h
 include/rudiments/private/xmldom.h
+include/rudiments/private/xmldomevents.h
+include/rudiments/private/xmldomeventsincludes.h
 include/rudiments/private/xmldomincludes.h
 include/rudiments/private/xmldomnode.h
 include/rudiments/private/xmldomnodeincludes.h
@@ -172,6 +186,7 @@ include/rudiments/protocolentry.h
 include/rudiments/randomnumber.h
 include/rudiments/regularexpression.h
 include/rudiments/resultcodes.h
+include/rudiments/security.h
 include/rudiments/semaphoreset.h
 include/rudiments/server.h
 include/rudiments/serviceentry.h
@@ -187,16 +202,18 @@ include/rudiments/stringbuffer.h
 include/rudiments/sys.h
 include/rudiments/thread.h
 include/rudiments/threadmutex.h
+include/rudiments/tls.h
 include/rudiments/unixsocketclient.h
 include/rudiments/unixsocketserver.h
 include/rudiments/unixsocketutil.h
 include/rudiments/url.h
 include/rudiments/userentry.h
 include/rudiments/xmldom.h
+include/rudiments/xmldomevents.h
 include/rudiments/xmldomnode.h
 include/rudiments/xmlsax.h
-lib/librudiments-%%VERSION%%.so.1
-lib/librudiments-%%VERSION%%.so.1.0.0
+lib/librudiments.so.2
+lib/librudiments.so.2.0.0
 lib/librudiments.a
 lib/librudiments.so
 libdata/pkgconfig/rudiments.pc
