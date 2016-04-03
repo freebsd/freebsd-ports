@@ -26,7 +26,7 @@ X11_CONFIGURE_ENABLE=	gifview
 X11_CONFIGURE_WITH=	x
 X11_PLIST_FILES=	bin/gifview man/man1/gifview.1.gz
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
