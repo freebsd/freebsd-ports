@@ -63,10 +63,12 @@ DESKTOP_ENTRIES="Pioneer" "${COMMENT}" \
 SUB_FILES=	pkg-message
 SUB_LIST=	QUICKSTART_PATH="${QUICKSTART_PATH}"
 
-OPTIONS_DEFINE=		DOCS MODELCOMPILER
+OPTIONS_DEFINE=		DOCS MODELCOMPILER PROFILER
 OPTIONS_DEFAULT=	MODELCOMPILER
 MODELCOMPILER_DESC=	Build/install modelcompiler tool
 MODELCOMPILER_PLIST_FILES=	bin/${PORTNAME}-modelcompiler
+PROFILER_DESC=		Build with internal profiler
+PROFILER_CONFIGURE_ON=	--enable-profiler
 
 .include <bsd.port.options.mk>
 
@@ -93,6 +95,14 @@ post-patch: .SILENT
 post-patch-MODELCOMPILER-off: .SILENT
 	${REINPLACE_CMD} -e 's/pioneer modelcompiler/pioneer/' \
 		${WRKSRC}/src/Makefile.am
+
+post-patch-PROFILER-off: .SILENT
+	${REINPLACE_CMD} -e '/^SUBDIRS/s/ profiler//' \
+		${WRKSRC}/contrib/Makefile.am
+	${REINPLACE_CMD} -i '.p.bak' -e '/libjson.a/s| \\|| ; /libprofiler.a/d' \
+		${WRKSRC}/src/Makefile.am
+	${REINPLACE_CMD} -i '.p.bak' -e '/contrib\/profiler/d' \
+		${WRKSRC}/configure.ac
 
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
