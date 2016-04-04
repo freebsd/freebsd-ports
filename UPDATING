@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160404:
+  AFFECTS: mail/spamassassin
+  AUTHOR: adamw@FreeBSD.org
+
+  Support for SSLv3 has been removed from SpamAssassin, because
+  SSLv3 is a Bad Idea. No direct option is provided to re-enable it.
+  If your setup requires use of SSLv3, some instructions are available
+  in FreeBSD PR 208225.
+
 20160331:
   AFFECTS: security/clamav-unofficial-sigs
   AUTHOR: lukasz@wasikowski.net, sf@maxempire.com
