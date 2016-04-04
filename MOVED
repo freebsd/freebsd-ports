@@ -8271,3 +8271,4 @@ www/rubygem-railties41|www/rubygem-railties4|2016-03-31|Has expired: Rails 4.1 i
 devel/rubygem-jbuilder-rails41|devel/rubygem-jbuilder|2016-03-31|Has expired: Rails 4.1 is no longer supported - please switch to Rails 4.2
 textproc/py-genshi-devel|textproc/py-genshi|2016-03-31|Has expired: The port is no longer updated and behind the main genshi port
 www/py-satchmo||2016-04-03|Has expired: Project development unmaintained
+www/py-ua-parser|devel/py-ua_parser|2016-04-04|Duplicate port deleted
