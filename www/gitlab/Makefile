@@ -11,8 +11,7 @@ COMMENT=	Web GUI for managing git repositories
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	ruby>=2.1.8:lang/ruby21 \
-	gem:devel/ruby-gems
+BUILD_DEPENDS=	gem:devel/ruby-gems
 RUN_DEPENDS=	git>=2.4.3:devel/git \
 	gitlab-shell>=2.6.10:devel/gitlab-shell\
 	gitlab-workhorse>=0.6.4:www/gitlab-workhorse \
