@@ -10,8 +10,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@toco-domains.de
 COMMENT=	GitLab Shell handles git commands for GitLab
 
-BUILD_DEPENDS=	ruby>=2.1.5:lang/ruby21 \
-		gem:devel/ruby-gems
+BUILD_DEPENDS=	gem:devel/ruby-gems
 
 USERS=		git
 GROUPS=		git
