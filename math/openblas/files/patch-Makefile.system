@@ -8,7 +8,25 @@
  MD5SUM = md5 -r
  endif
  
-@@ -1020,15 +1021,6 @@ ifndef LIBSUFFIX
+@@ -889,9 +890,17 @@ SYMBOLSUFFIX =
+ endif
+ 
+ ifndef LIBNAMESUFFIX
++ifndef SMP
+ LIBPREFIX = lib$(SYMBOLPREFIX)openblas$(SYMBOLSUFFIX)
+ else
++LIBPREFIX = lib$(SYMBOLPREFIX)openblasp$(SYMBOLSUFFIX)
++endif
++else
++ifndef SMP
+ LIBPREFIX = lib$(SYMBOLPREFIX)openblas$(SYMBOLSUFFIX)_$(LIBNAMESUFFIX)
++else
++LIBPREFIX = lib$(SYMBOLPREFIX)openblasp$(SYMBOLSUFFIX)_$(LIBNAMESUFFIX)
++endif
+ endif
+ 
+ KERNELDIR	= $(TOPDIR)/kernel/$(ARCH)
+@@ -1020,24 +1029,8 @@ ifndef LIBSUFFIX
  LIBSUFFIX = a
  endif
  
@@ -21,18 +39,19 @@
 -LIBNAME_P	= $(LIBPREFIX)_$(LIBCORE)p$(REVISION)_p.$(LIBSUFFIX)
 -endif
 -else
- ifndef SMP
+-ifndef SMP
  LIBNAME		= $(LIBPREFIX)$(REVISION).$(LIBSUFFIX)
  LIBNAME_P	= $(LIBPREFIX)$(REVISION)_p.$(LIBSUFFIX)
-@@ -1036,7 +1028,6 @@ else
- LIBNAME		= $(LIBPREFIX)p$(REVISION).$(LIBSUFFIX)
- LIBNAME_P	= $(LIBPREFIX)p$(REVISION)_p.$(LIBSUFFIX)
- endif
+-else
+-LIBNAME		= $(LIBPREFIX)p$(REVISION).$(LIBSUFFIX)
+-LIBNAME_P	= $(LIBPREFIX)p$(REVISION)_p.$(LIBSUFFIX)
 -endif
- 
+-endif
+-
  
  LIBDLLNAME   = $(LIBPREFIX).dll
-@@ -1067,7 +1058,7 @@ LIB_COMPONENTS = CBLAS
+ LIBSONAME    = $(LIBNAME:.$(LIBSUFFIX)=.so)
+@@ -1067,7 +1060,7 @@ LIB_COMPONENTS = CBLAS
  endif
  
  export OSNAME
