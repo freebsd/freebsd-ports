@@ -27,6 +27,6 @@ load_rc_config $name
 : ${filebeat_config:="%%PREFIX%%/etc/${name}.yml"}
 
 pidfile="/var/run/${name}"
-command_args="-rP ${pidfile} %%PREFIX%%/libexec/${name} -c ${filebeat_config}"
+command_args="-rP ${pidfile} %%PREFIX%%/sbin/${name} -c ${filebeat_config}"
 
 run_rc_command "$1"
