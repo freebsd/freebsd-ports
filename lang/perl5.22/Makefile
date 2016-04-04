@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 DISTVERSION=	${PERL_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0 CPAN/../by-authors/id/S/SH/SHAY
 DIST_SUBDIR=	perl
@@ -229,6 +229,12 @@ post-patch-PTHREAD-on:
 post-patch-PTHREAD-off:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
+.endif
+
+.if ${CC} == /nxb-bin/usr/bin/cc
+post-build:
+	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
+		${WRKSRC}/lib/Config.pm ${WRKSRC}/lib/Config_heavy.pl
 .endif
 
 post-install:
