@@ -46,10 +46,4 @@ KDE4_PLIST_SUB_OFF=	GUI_NAME=qt4  WITH_KDE="@comment " WITH_QT=""
 KDE_SUFFIX=	-kde
 .endif
 
-.if ${PORT_OPTIONS:MHUNSPELL}
-.if ${PORT_OPTIONS:MKDE4}
-IGNORE= option HUNSPELL can not be used with KDE4
-.endif
-.endif
-
 .include <bsd.port.mk>
