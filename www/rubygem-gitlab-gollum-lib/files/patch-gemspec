@@ -1,21 +1,21 @@
---- gitlab-gollum-lib.gemspec.orig	2015-05-02 09:40:36 UTC
+--- gitlab-gollum-lib.gemspec.orig	2016-03-31 20:27:23 UTC
 +++ gitlab-gollum-lib.gemspec
 @@ -24,12 +24,12 @@ Gem::Specification.new do |s|
      s.specification_version = 2
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<gitlab-grit>, ["~> 2.6.1"])
--      s.add_runtime_dependency(%q<github-markup>, ["< 1.0.0", ">= 0.7.5"])
--      s.add_runtime_dependency(%q<github-markdown>, ["~> 0.5.3"])
--      s.add_runtime_dependency(%q<sanitize>, ["~> 2.0.3"])
--      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.5.9"])
--      s.add_runtime_dependency(%q<stringex>, ["~> 1.5.1"])
-+      s.add_runtime_dependency(%q<gitlab-grit>, [">= 2.6.1"])
-+      s.add_runtime_dependency(%q<github-markup>, [">= 0.7.5"])
-+      s.add_runtime_dependency(%q<github-markdown>, [">= 0.5.3"])
-+      s.add_runtime_dependency(%q<sanitize>, [">= 2.0.3"])
-+      s.add_runtime_dependency(%q<nokogiri>, [">= 1.5.9"])
-+      s.add_runtime_dependency(%q<stringex>, [">= 1.5.1"])
-       s.add_development_dependency(%q<RedCloth>, ["~> 4.2.9"])
-       s.add_development_dependency(%q<mocha>, ["~> 0.13.2"])
-       s.add_development_dependency(%q<org-ruby>, ["~> 0.8.1"])
+-      s.add_runtime_dependency(%q<gitlab-grit>.freeze, ["~> 2.6.1"])
+-      s.add_runtime_dependency(%q<github-markup>.freeze, ["< 1.0.0", ">= 0.7.5"])
+-      s.add_runtime_dependency(%q<github-markdown>.freeze, ["~> 0.5.3"])
+-      s.add_runtime_dependency(%q<sanitize>.freeze, ["~> 2.0.3"])
+-      s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.5.9"])
+-      s.add_runtime_dependency(%q<stringex>.freeze, ["~> 1.5.1"])
++      s.add_runtime_dependency(%q<gitlab-grit>.freeze, [">= 2.6.1"])
++      s.add_runtime_dependency(%q<github-markup>.freeze, [">= 0.7.5"])
++      s.add_runtime_dependency(%q<github-markdown>.freeze, [">= 0.5.3"])
++      s.add_runtime_dependency(%q<sanitize>.freeze, [">= 2.0.3"])
++      s.add_runtime_dependency(%q<nokogiri>.freeze, [">= 1.5.9"])
++      s.add_runtime_dependency(%q<stringex>.freeze, [">= 1.5.1"])
+       s.add_development_dependency(%q<RedCloth>.freeze, ["~> 4.2.9"])
+       s.add_development_dependency(%q<mocha>.freeze, ["~> 0.13.2"])
+       s.add_development_dependency(%q<org-ruby>.freeze, ["~> 0.8.1"])

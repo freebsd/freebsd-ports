@@ -1,14 +1,14 @@
---- amqp-utils.gemspec.orig	2015-05-10 16:41:06 UTC
+--- amqp-utils.gemspec.orig	2016-03-31 18:24:58 UTC
 +++ amqp-utils.gemspec
-@@ -24,9 +24,9 @@ Gem::Specification.new do |s|
+@@ -23,9 +23,9 @@ Gem::Specification.new do |s|
      s.specification_version = 3
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<amqp>, ["~> 0.7.1"])
-+      s.add_runtime_dependency(%q<amqp>, [">= 0.7.1"])
-       s.add_runtime_dependency(%q<trollop>, ["~> 1.16.2"])
--      s.add_runtime_dependency(%q<facets>, ["~> 2.9"])
-+      s.add_runtime_dependency(%q<facets>, [">= 2.9"])
-       s.add_runtime_dependency(%q<clio>, ["~> 0.3.0"])
-       s.add_runtime_dependency(%q<json>, ["~> 1.5"])
-       s.add_runtime_dependency(%q<heredoc_unindent>, ["~> 1.1.2"])
+-      s.add_runtime_dependency(%q<amqp>.freeze, ["~> 0.7.1"])
++      s.add_runtime_dependency(%q<amqp>.freeze, [">= 0.7.1"])
+       s.add_runtime_dependency(%q<trollop>.freeze, ["~> 1.16.2"])
+-      s.add_runtime_dependency(%q<facets>.freeze, ["~> 2.9"])
++      s.add_runtime_dependency(%q<facets>.freeze, [">= 2.9"])
+       s.add_runtime_dependency(%q<clio>.freeze, ["~> 0.3.0"])
+       s.add_runtime_dependency(%q<json>.freeze, ["~> 1.5"])
+       s.add_runtime_dependency(%q<heredoc_unindent>.freeze, ["~> 1.1.2"])

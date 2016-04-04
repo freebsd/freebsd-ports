@@ -1,11 +1,11 @@
---- em-http-request.gemspec.orig	2016-01-16 09:46:47 UTC
+--- em-http-request.gemspec.orig	2016-03-31 16:11:06 UTC
 +++ em-http-request.gemspec
 @@ -24,7 +24,7 @@ Gem::Specification.new do |s|
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<addressable>, [">= 2.3.4"])
--      s.add_runtime_dependency(%q<cookiejar>, ["<= 0.3.0"])
-+      s.add_runtime_dependency(%q<cookiejar>, [">= 0"])
-       s.add_runtime_dependency(%q<em-socksify>, [">= 0.3"])
-       s.add_runtime_dependency(%q<eventmachine>, [">= 1.0.3"])
-       s.add_runtime_dependency(%q<http_parser.rb>, [">= 0.6.0"])
+       s.add_runtime_dependency(%q<addressable>.freeze, [">= 2.3.4"])
+-      s.add_runtime_dependency(%q<cookiejar>.freeze, ["<= 0.3.0"])
++      s.add_runtime_dependency(%q<cookiejar>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<em-socksify>.freeze, [">= 0.3"])
+       s.add_runtime_dependency(%q<eventmachine>.freeze, [">= 1.0.3"])
+       s.add_runtime_dependency(%q<http_parser.rb>.freeze, [">= 0.6.0"])

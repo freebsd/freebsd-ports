@@ -1,13 +1,13 @@
---- twitter-stream.gemspec.orig	2015-07-02 12:55:18 UTC
-+++ twitter-stream.gemspec
-@@ -25,8 +25,8 @@ Gem::Specification.new do |s|
+--- twitter-stream.gemspec.orig	2016-03-28 13:44:19.830676000 +0000
++++ twitter-stream.gemspec	2016-03-28 14:05:20.759417000 +0000
+@@ -24,8 +24,8 @@
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<eventmachine>, [">= 0.12.8"])
--      s.add_runtime_dependency(%q<simple_oauth>, ["~> 0.1.4"])
--      s.add_runtime_dependency(%q<http_parser.rb>, ["~> 0.5.1"])
-+      s.add_runtime_dependency(%q<simple_oauth>, [">= 0.1.4"])
-+      s.add_runtime_dependency(%q<http_parser.rb>, [">= 0.5.1"])
-       s.add_development_dependency(%q<rspec>, ["~> 2.5.0"])
+       s.add_runtime_dependency(%q<eventmachine>.freeze, [">= 0.12.8"])
+-      s.add_runtime_dependency(%q<simple_oauth>.freeze, ["~> 0.1.4"])
+-      s.add_runtime_dependency(%q<http_parser.rb>.freeze, ["~> 0.5.1"])
++      s.add_runtime_dependency(%q<simple_oauth>.freeze, [">= 0.1.4"])
++      s.add_runtime_dependency(%q<http_parser.rb>.freeze, [">= 0.5.1"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 2.5.0"])
      else
-       s.add_dependency(%q<eventmachine>, [">= 0.12.8"])
+       s.add_dependency(%q<eventmachine>.freeze, [">= 0.12.8"])
