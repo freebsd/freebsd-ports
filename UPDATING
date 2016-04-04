@@ -6,6 +6,40 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20160404:
+  AFFECTS: users of lang/ruby21
+  AUTHOR: swills@FreeBSD.org
+
+  The default ruby version has been updated from 2.1 to 2.2.
+
+  If you compile your own ports you may keep 2.1 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep ruby 2.1 as default version
+  #
+  DEFAULT_VERSIONS+=ruby=2.1
+
+  If you wish to update to the new default version, you need to first stop any
+  software that uses ruby. Then, you will need to follow these steps, depending
+  upon how you manage your system.
+
+  If you use pkgng, simply upgrade:
+  # pkg upgrade -f
+
+  If you use portmaster, install new ruby, then rebuild all ports that depend
+  on ruby:
+  # portmaster -o lang/ruby22 lang/ruby21
+  # portmaster -R -r ruby-2.2
+
+  If you use portupgrade, install new ruby, then rebuild all ports that depend
+  on ruby:
+
+  # pkg delete -f ruby portupgrade
+  # make -C /usr/ports/ports-mgmt/portupgrade install clean
+  # pkg set -o lang/ruby21:lang/ruby22
+  # portupgrade -x ruby-2.2.\* -fr lang/ruby22
+
+20160404:
   AFFECTS: mail/spamassassin
   AUTHOR: adamw@FreeBSD.org
 
