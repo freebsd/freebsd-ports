@@ -6,6 +6,7 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/bogons.txt
 %%DATADIR%%/el/FAQ
 %%DATADIR%%/en/FAQ
+%%DATADIR%%/en/glossary
 %%DATADIR%%/favicon.png
 %%DATADIR%%/fr/FAQ
 %%DATADIR%%/geo-ip.txt

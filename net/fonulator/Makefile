@@ -10,16 +10,14 @@ MASTER_SITES=	http://support.red-fone.com/fonulator/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FoneBRIDGE configuration utility
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.a:${PORTSDIR}/devel/argtable\
-		${LOCALBASE}/lib/libfb.a:${PORTSDIR}/net/libfb
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.a:devel/argtable\
+		${LOCALBASE}/lib/libfb.a:net/libfb
+LIB_DEPENDS=	libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${LIBNET_CPPFLAGS}
-LDFLAGS+=	${LIBNET_LIBS:N-l*}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-shared
-
-LIBNET_CONFIG=	${LOCALBASE}/bin/libnet11-config
 
 PLIST_FILES=	bin/fonulator \
 		man/man1/fonulator.1.gz
@@ -27,18 +25,9 @@ PLIST_FILES=	bin/fonulator \
 post-patch:
 	@${REINPLACE_CMD}\
 	    -e 's,/usr/lib/libargtable2.a,${LOCALBASE}/lib/libargtable2.a,'\
-	    -e 's,/usr/lib/libnet.a,${LIBNET_LIBS:N-l*:S,-L,,}/libnet.a,'\
+	    -e 's,/usr/lib/libnet.a,${LOCALBASE}/lib/libnet.a,'\
 	    ${WRKSRC}/Makefile.in ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,/etc/redfone.conf,${LOCALBASE}/etc/redfone.conf,'\
 	    ${WRKSRC}/fonulator.c ${WRKSRC}/fonulator.1
-
-.if 0
-# this does not work when LIBNET_CONFIG does not exist prior to building this port
-LIBNET_CPPFLAGS!=	${LIBNET_CONFIG} --cflags --defines
-LIBNET_LIBS!=		${LIBNET_CONFIG} --libs
-.else
-LIBNET_CPPFLAGS=	-I${LOCALBASE}/include/libnet11
-LIBNET_LIBS=		-L${LOCALBASE}/lib/libnet11
-.endif
 
 .include <bsd.port.mk>

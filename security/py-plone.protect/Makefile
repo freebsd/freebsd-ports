@@ -13,9 +13,9 @@ COMMENT=	Security for browser forms
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.keyring>1.0:${PORTSDIR}/security/py-plone.keyring \
-		${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.keyring>1.0:security/py-plone.keyring \
+		${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface
 
 NO_ARCH=	yes
 USES=		python zip

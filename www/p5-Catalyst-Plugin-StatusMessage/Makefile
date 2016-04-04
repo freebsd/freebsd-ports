@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fw@moov.de
 COMMENT=	Handle passing of status (success and error) messages
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:www/p5-Catalyst-Runtime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -16,8 +16,8 @@ COMMENT=	Controller and GCode generator for RepRap 3D printers
 LICENSE=	GPLv2 BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm \
-		libzip.so:${PORTSDIR}/archivers/libzip \
+LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm \
+		libzip.so:archivers/libzip \
 
 USES=		autoreconf gmake libtool perl5 pkgconfig
 USE_GNOME=	gtkmm24 intltool libxml++26

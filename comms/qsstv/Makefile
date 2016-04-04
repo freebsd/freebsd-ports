@@ -12,12 +12,12 @@ COMMENT=	Amateur Radio SSTV/FAX reception program for unix
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libhamlib.so:${PORTSDIR}/comms/hamlib \
-		libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libjasper.so:${PORTSDIR}/graphics/jasper
-BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libhamlib.so:comms/hamlib \
+		libasound.so:audio/alsa-lib \
+		libjasper.so:graphics/jasper
+BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 
 USES=		qmake
 USE_QT4=	gui network xml moc_build rcc_build uic_build

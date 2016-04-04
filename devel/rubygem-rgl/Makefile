@@ -9,8 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework for graph datastructures and algorithms implemented in Ruby
 
-RUN_DEPENDS=	rubygem-algorithms>=0.6.1:${PORTSDIR}/devel/rubygem-algorithms \
-		rubygem-stream>=0.5.0:${PORTSDIR}/devel/rubygem-stream
+RUN_DEPENDS=	rubygem-algorithms>=0.6.1:devel/rubygem-algorithms \
+		rubygem-stream>=0.5.0:devel/rubygem-stream
 
 NO_ARCH=	yes
 

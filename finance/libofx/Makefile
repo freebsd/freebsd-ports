@@ -12,9 +12,9 @@ COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
-		libosp.so:${PORTSDIR}/textproc/opensp
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libxml++-2.6.so:textproc/libxml++26 \
+		libosp.so:textproc/opensp
 
 USES=		gmake iconv pkgconfig pathfix libtool
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \

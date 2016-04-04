@@ -13,7 +13,7 @@ COMMENT=	Clone of the 1981 Night Stalker video game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libflatzebra-0.1.so:${PORTSDIR}/devel/flatzebra
+LIB_DEPENDS=	libflatzebra-0.1.so:devel/flatzebra
 
 USES=		pkgconfig
 USE_SDL=	mixer sdl

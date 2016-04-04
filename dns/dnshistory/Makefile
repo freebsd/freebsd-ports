@@ -13,7 +13,7 @@ COMMENT=	Store DNS lookups to a DB
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_BDB=	yes
 GNU_CONFIGURE=	yes

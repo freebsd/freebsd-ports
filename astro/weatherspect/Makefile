@@ -14,9 +14,9 @@ COMMENT=	Weather simulation in ASCII art
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Term-Animation>=0:${PORTSDIR}/devel/p5-Term-Animation \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-Term-Animation>=0:devel/p5-Term-Animation \
+		p5-libwww>=0:www/p5-libwww
 
 PORTSCOUT=	skipv:1.31
 

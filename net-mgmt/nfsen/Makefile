@@ -3,7 +3,7 @@
 
 PORTNAME=	nfsen
 PORTVERSION=	1.3.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
@@ -14,10 +14,10 @@ COMMENT=	Web based frontend to nfdump netflow collector
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
-RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
-		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
-		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6 \
-		nfdump>=0:${PORTSDIR}/net-mgmt/nfdump
+RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
+		p5-Mail-Tools>=0:mail/p5-Mail-Tools \
+		p5-Socket6>=0:net/p5-Socket6 \
+		nfdump>=0:net-mgmt/nfdump
 
 USES=		cpe iconv shebangfix perl5
 CPE_VENDOR=	nfsen

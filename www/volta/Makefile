@@ -13,7 +13,7 @@ COMMENT=	High performance, low resource URI rewriter for Squid
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
+LIB_DEPENDS=	libcdb.so:databases/tinycdb
 
 USES=		gmake pkgconfig lua tar:tgz
 ALL_TARGET=	${PORTNAME}

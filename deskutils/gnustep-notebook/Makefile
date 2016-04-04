@@ -13,6 +13,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Place to store notes in an organized manner
 
 BROKEN=		Does not fetch
+DEPRECATED=	Does not fetch
+EXPIRATION_DATE=2016-04-13
+
 LICENSE=	GPLv2
 
 USES=		gnustep

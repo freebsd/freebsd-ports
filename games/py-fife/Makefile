@@ -19,11 +19,11 @@ COMMENT=		Flexible Isometric Free Engine
 
 LICENSE=		LGPL21
 
-BUILD_DEPENDS=		${LOCALBASE}/bin/swig2.0:${PORTSDIR}/devel/swig20
-LIB_DEPENDS=		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-			libguichan.so:${PORTSDIR}/devel/guichan \
-			libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-			libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=		${LOCALBASE}/bin/swig2.0:devel/swig20
+LIB_DEPENDS=		libvorbisfile.so:audio/libvorbis \
+			libguichan.so:devel/guichan \
+			libboost_filesystem.so:devel/boost-libs \
+			libpng.so:graphics/png
 
 USES=			openal:al pkgconfig python:2 scons
 USE_GL=			gl

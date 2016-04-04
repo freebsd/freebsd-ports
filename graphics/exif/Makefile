@@ -12,8 +12,8 @@ COMMENT=	Command line utility to read and manipulate EXIF data
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
-		libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libpopt.so:devel/popt
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

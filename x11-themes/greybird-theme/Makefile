@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-theme
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Gtk and xfwm4 themes for the Xfce Desktop
 
-RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:${PORTSDIR}/x11-themes/gtk-murrine-engine
+RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:x11-themes/gtk-murrine-engine
 
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Greybird

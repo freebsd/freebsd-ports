@@ -30,11 +30,11 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_LIBS=		-lintl
 GD_CONFIGURE_WITH=	gd
-GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
+GD_LIB_DEPENDS=		libgd.so:graphics/gd
 PHP_CONFIGURE_ON=	--enable-sargphp="${ETCDIR}"
 PHP_CONFIGURE_OFF=	--disable-sargphp
 PCRE_CONFIGURE_WITH=	pcre
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 LDAP_USE=		USE_OPENLDAP=yes
 LDAP_CONFIGURE_WITH=	ldap
 ICONV_USES=		iconv

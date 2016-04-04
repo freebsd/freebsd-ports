@@ -11,15 +11,18 @@ DISTNAME=	ZThread-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform-independent object-oriented C++ threading library
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-ftime --disable-static
-MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
+MAKE_ARGS=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -delete
@@ -30,8 +33,10 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libZThread.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libZThread.so
 
 .include <bsd.port.mk>

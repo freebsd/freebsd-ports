@@ -2,51 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-PORTVERSION=	4.0.1	# Also update bsd.pypy.cffi.mk
+PORTVERSION=	5.0.1	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
-MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
-DISTNAME=	release-${DISTVERSION}
-DIST_SUBDIR=	pypy
+MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/
+DISTVERSIONSUFFIX=	-src
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libffi.so:devel/libffi
+TEST_DEPENDS=	${PREFIX}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.pypy-${PYPY_CFFI_VER}.so:databases/pypy-gdbm \
+		${PREFIX}/${PYPY_DIR}/lib_pypy/_sqlite3_cffi.pypy-${PYPY_CFFI_VER}.so:databases/pypy-sqlite3 \
+		${PREFIX}/${PYPY_DIR}/lib_pypy/_tkinter/tklib_cffi.pypy-${PYPY_CFFI_VER}.so:x11-toolkits/pypy-tkinter
 
 ONLY_FOR_ARCHS=	i386 amd64 armv6 powerpc64
 ONLY_FOR_ARCHS_REASON=	PyPy JIT only supported on these architectures
 
+OPTIONS_SINGLE=	TRANS
+OPTIONS_SINGLE_TRANS=	PYTHON
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
 PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
 PYPY_MINMEM_DESC=	Use PyPy to translate (lowest memory usage)
 TRANS_DESC=	Translation method
 LOCALBASE?=	/usr/local
 .if exists(${LOCALBASE}/bin/pypy)
-OPTIONS_SINGLE=	TRANS
-OPTIONS_SINGLE_TRANS=	PYTHON PYPY PYPY_MINMEM
-OPTIONS_DEFAULT+=	PYPY_MINMEM
+OPTIONS_DEFAULT=	PYPY_MINMEM
+OPTIONS_SINGLE_TRANS+=	PYPY PYPY_MINMEM
+.else
+OPTIONS_SLAVE=	PYTHON
 .endif
 
 CONFLICTS_INSTALL=	pypy3-[0-9]*
 
 ALL_TARGET=	pypy-c
-BUILD_WRKSRC=	${WRKDIR}/build/usession-release-${DISTVERSION}-0/testing_1
+BUILD_WRKSRC=	${WRKDIR}/build/usession-release-${PORTVERSION:C/0\.0/0/}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
-USES=		gettext-runtime tar:bzip2
-WRKSRC=		${WRKDIR}/pypy-pypy-5f8302b8bf9f
+USES=		gettext-runtime gmake tar:bzip2
+
+PYPY_VARS=	PYTHON_CMD=${LOCALBASE}/bin/pypy
+PYPY_MINMEM_VARS=	PYTHON_CMD="${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_longevity=300"
+PYTHON_USES=	python:2,build
 
 .include ".${CURDIR}/bsd.pypy.mk"
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYPY} || defined(PYTHON_CMD)
-PYTHON_CMD?=	${LOCALBASE}/bin/pypy
-.elif ${PORT_OPTIONS:MPYPY_MINMEM}
-PYTHON_CMD?=	${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_longevity=300
-.else # if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2,build
-.endif
 
 .if ${ARCH} == "i386" || ${ARCH} == "armv6"
 PYPY_BITS=	32
@@ -62,7 +62,6 @@ pre-build:
 		(cd ${WRKSRC}/pypy/goal; \
 			${SETENV} ${MAKE_ENV} TMPDIR=${WRKDIR}/build \
 			${PYTHON_CMD} ../../rpython/bin/rpython --source -Ojit targetpypystandalone.py); \
-		${REINPLACE_CMD} -e 's|^%.o: %.c$$|.c.o:|g' ${BUILD_WRKSRC}/Makefile; \
 	fi
 
 post-build:
@@ -75,7 +74,7 @@ do-install:
 	${EXTRACT_CMD} -C ${STAGEDIR}${PREFIX} -xf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2
 	${LN} -fs ../${PYPY_DIR}/bin/pypy ${STAGEDIR}${PREFIX}/bin/pypy
 
-regression-test: build
+do-test:
 	# See https://bitbucket.org/pypy/buildbot/src/default/bot2/pypybuildbot/builds.py?at=default#builds.py-386
 	# add_translated_tests()
 	(cd ${WRKSRC}; \
@@ -89,6 +88,9 @@ regression-test: build
 		${WRKSRC}/pypy/goal/pypy-c pypy/test_all.py --basetemp ${WRKDIR}/build --pypy pypy/goal/pypy-c \
 			${dir} )
 .endfor
+	(cd ${WRKSRC}/lib-python/2.7/test; \
+		${SETENV} ${MAKE_ENV} TMPDIR=${WRKDIR}/build PYTHONPATH=${WRKSRC} \
+                ${WRKSRC}/pypy/goal/pypy-c regrtest.py -vvu all)
 
 pkg-plist: build
 	${TAR} -tf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2 > ${WRKDIR}/.plist-files-gen

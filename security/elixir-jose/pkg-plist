@@ -79,6 +79,8 @@ lib/elixir/lib/jose/ebin/jose_jwk_oct.beam
 lib/elixir/lib/jose/ebin/jose_jwk_openssh_key.beam
 lib/elixir/lib/jose/ebin/jose_jwk_pem.beam
 lib/elixir/lib/jose/ebin/jose_jwk_set.beam
+lib/elixir/lib/jose/ebin/jose_jwk_use_enc.beam
+lib/elixir/lib/jose/ebin/jose_jwk_use_sig.beam
 lib/elixir/lib/jose/ebin/jose_jws.beam
 lib/elixir/lib/jose/ebin/jose_jws_alg.beam
 lib/elixir/lib/jose/ebin/jose_jws_alg_ecdsa.beam

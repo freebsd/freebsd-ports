@@ -13,8 +13,8 @@ COMMENT=	Routines to access raw VBI capture devices
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
-		libunicode.so:${PORTSDIR}/devel/libunicode
+LIB_DEPENDS+=	libpng.so:graphics/png \
+		libunicode.so:devel/libunicode
 
 USES=		iconv libtool localbase pathfix tar:bzip2
 GNU_CONFIGURE=	yes

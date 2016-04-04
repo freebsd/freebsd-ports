@@ -11,8 +11,8 @@ DISTFILES=	${DBFILES:C,.*:(.*),\1.zip:\1,:C,:docbook-([0-9]+).([0-9]+),:db\1\2,}
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	DocBook SGML DTD
 
-RUN_DEPENDS=	${LOCALBASE}/${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
-		${LOCALBASE}/${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	${LOCALBASE}/${ISOCAT}:textproc/iso8879 \
+		${LOCALBASE}/${XMLCATMGR}:textproc/xmlcatmgr
 
 NO_BUILD=	yes
 

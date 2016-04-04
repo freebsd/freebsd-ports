@@ -1,0 +1,17 @@
+%%JAVA_HOME%%/bin/javafxpackager
+%%JAVA_HOME%%/bin/javapackager
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libdecora_sse.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libglass.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libjavafx_font.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libjavafx_font_freetype.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libjavafx_font_pango.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libjavafx_iio.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libprism_common.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libprism_es2.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libprism_sw.so
+%%JAVA_HOME%%/jre/lib/ext/jfxrt.jar
+%%JAVA_HOME%%/jre/lib/javafx.properties
+%%JAVA_HOME%%/jre/lib/jfxswt.jar
+%%JAVA_HOME%%/lib/ant-javafx.jar
+%%JAVA_HOME%%/lib/javafx-mx.jar
+%%JAVA_HOME%%/lib/packager.jar

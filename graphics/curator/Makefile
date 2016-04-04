@@ -21,9 +21,9 @@ PLIST_FILES=	man/man1/curator.1.gz
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPIL}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=0:graphics/py-imaging
 .else
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	convert:graphics/ImageMagick
 .endif
 
 post-install:

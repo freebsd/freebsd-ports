@@ -1,6 +1,6 @@
---- content/browser/child_process_launcher.cc.orig	2015-09-01 16:10:42.000000000 -0400
-+++ content/browser/child_process_launcher.cc	2015-09-03 10:33:53.388547000 -0400
-@@ -114,7 +114,11 @@
+--- content/browser/child_process_launcher.cc.orig	2016-03-04 22:27:56.807672733 +0100
++++ content/browser/child_process_launcher.cc	2016-03-04 22:34:35.624645928 +0100
+@@ -116,7 +116,11 @@
    base::EnvironmentMap env = delegate->GetEnvironment();
    base::ScopedFD ipcfd = delegate->TakeIpcFd();
  #elif defined(OS_POSIX) && !defined(OS_ANDROID)
@@ -12,7 +12,7 @@
    base::EnvironmentMap env = delegate->GetEnvironment();
    base::ScopedFD ipcfd = delegate->TakeIpcFd();
  #endif
-@@ -143,7 +147,7 @@
+@@ -145,7 +149,7 @@
  #endif
  #endif
  
@@ -21,7 +21,7 @@
    std::map<int, base::MemoryMappedFile::Region> regions;
    GetContentClient()->browser()->GetAdditionalMappedFilesForChildProcess(
        *cmd_line, child_process_id, files_to_register.get()
-@@ -176,7 +180,7 @@
+@@ -178,7 +182,7 @@
      }
    }
  #endif  // defined(V8_USE_EXTERNAL_STARTUP_DATA)
@@ -30,7 +30,7 @@
  
  #if defined(OS_ANDROID)
    files_to_register->Share(
-@@ -196,21 +200,21 @@
+@@ -198,21 +202,21 @@
    // We need to close the client end of the IPC channel to reliably detect
    // child termination.
  
@@ -38,7 +38,7 @@
 +#if !defined(OS_MACOSX) && !defined(OS_BSD)
    if (use_zygote) {
      base::ProcessHandle handle = ZygoteHostImpl::GetInstance()->ForkRequest(
-         cmd_line->argv(), files_to_register.Pass(), process_type);
+         cmd_line->argv(), std::move(files_to_register), process_type);
      process = base::Process(handle);
    } else
    // Fall through to the normal posix case below when we're not zygoting.
@@ -55,7 +55,7 @@
      if (process_type == switches::kRendererProcess) {
        const int sandbox_fd =
            RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
-@@ -218,7 +222,7 @@
+@@ -220,7 +224,7 @@
            sandbox_fd,
            GetSandboxFD()));
      }
@@ -64,7 +64,7 @@
  
      // Actually launch the app.
      base::LaunchOptions options;
-@@ -294,13 +298,13 @@
+@@ -296,13 +300,13 @@
    process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -76,11 +76,11 @@
      ZygoteHostImpl::GetInstance()->EnsureProcessTerminated(process.Handle());
    } else
 -#endif  // !OS_MACOSX
-+#endif  // !OS_MACOSX && !OS_BSD
-   base::EnsureProcessTerminated(process.Pass());
++#endif  // !OS_MACOSX && !defined(OS_BSD)
+     base::EnsureProcessTerminated(std::move(process));
  #endif  // OS_POSIX
  #endif  // defined(OS_ANDROID)
-@@ -399,7 +403,7 @@
+@@ -398,7 +402,7 @@
  
  void ChildProcessLauncher::UpdateTerminationStatus(bool known_dead) {
    DCHECK(CalledOnValidThread());
@@ -89,7 +89,7 @@
    if (zygote_) {
      termination_status_ = ZygoteHostImpl::GetInstance()->
          GetTerminationStatus(process_.Handle(), known_dead, &exit_code_);
-@@ -407,7 +411,7 @@
+@@ -406,7 +410,7 @@
      termination_status_ =
          base::GetKnownDeadTerminationStatus(process_.Handle(), &exit_code_);
    } else {
@@ -98,9 +98,9 @@
    if (known_dead) {
      termination_status_ =
          base::GetKnownDeadTerminationStatus(process_.Handle(), &exit_code_);
-@@ -481,7 +485,7 @@
+@@ -469,7 +473,7 @@
    starting_ = false;
-   process_ = process.Pass();
+   process_ = std::move(process);
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)

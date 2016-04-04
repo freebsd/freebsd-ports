@@ -11,7 +11,6 @@ share/hplip/data/firmware/hp_laserjet_p1505.fw.gz
 share/hplip/data/firmware/hp_laserjet_professional_p1102.fw.gz
 share/hplip/data/firmware/hp_laserjet_professional_p1102w.fw.gz
 share/hplip/data/firmware/hp_laserjet_professional_p1566.fw.gz
-share/hplip/data/plugins/license.txt
 share/hplip/fax/plugins/fax_marvell-%%LINARCH%%.so
 share/hplip/fax/plugins/fax_marvell.so
 share/hplip/plugin.spec
@@ -19,6 +18,8 @@ share/hplip/prnt/plugins/hbpl1-%%LINARCH%%.so
 share/hplip/prnt/plugins/hbpl1.so
 share/hplip/prnt/plugins/lj-%%LINARCH%%.so
 share/hplip/prnt/plugins/lj.so
+share/hplip/scan/plugins/bb_escl-%%LINARCH%%.so
+share/hplip/scan/plugins/bb_escl.so
 share/hplip/scan/plugins/bb_marvell-%%LINARCH%%.so
 share/hplip/scan/plugins/bb_marvell.so
 share/hplip/scan/plugins/bb_soap-%%LINARCH%%.so

@@ -14,7 +14,7 @@ COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	swig:devel/swig13
 
 USES=		python
 USE_PYTHON=	distutils autoplist

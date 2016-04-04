@@ -19,7 +19,7 @@ USE_GNOME=	gtk20
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:audio/alsa-lib
 
 .include <bsd.port.pre.mk>
 

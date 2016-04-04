@@ -12,9 +12,9 @@ COMMENT=	Redports building node
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
-		poudriere:${PORTSDIR}/ports-mgmt/poudriere \
-		${LOCALBASE}/bin/ccache:${PORTSDIR}/devel/ccache
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
+		poudriere:ports-mgmt/poudriere \
+		${LOCALBASE}/bin/ccache:devel/ccache
 
 NO_BUILD=	yes
 USE_PHP=	curl hash json openssl pcntl phar

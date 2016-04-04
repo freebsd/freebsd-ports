@@ -1,0 +1,116 @@
+--- common/src/IO/ConfigParser.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/IO/ConfigParser.cpp
+@@ -61,10 +61,10 @@ namespace TrenchBroom {
+                     case '\t':
+                     case '\n':
+                     case '\r':
+-                        discardWhile(Whitespace);
++                        discardWhile(Whitespace());
+                         break;
+                     default: {
+-                        const char* e = readString(Whitespace + "=");
++                        const char* e = readString(Whitespace() + "=");
+                         if (e == NULL)
+                             throw ParserException(startLine, startColumn, "Unexpected character: " + String(c, 1));
+                         return Token(ConfigToken::Identifier, c, e, offset(c), startLine, startColumn);
+--- common/src/IO/FgdParser.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/IO/FgdParser.cpp
+@@ -79,7 +79,7 @@ namespace TrenchBroom {
+                     case '\t':
+                     case '\n':
+                     case '\r':
+-                        discardWhile(Whitespace);
++                        discardWhile(Whitespace());
+                         break;
+                     default: {
+                         const char* e = readInteger(WordDelims);
+--- common/src/IO/StandardMapParser.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/IO/StandardMapParser.cpp
+@@ -25,7 +25,10 @@
+ 
+ namespace TrenchBroom {
+     namespace IO {
+-        const String QuakeMapTokenizer::NumberDelim = Whitespace + ")";
++        const String& QuakeMapTokenizer::NumberDelim() {
++            static const String numberDelim(Whitespace() + ")");
++            return numberDelim;
++        }
+ 
+         QuakeMapTokenizer::QuakeMapTokenizer(const char* begin, const char* end) :
+         Tokenizer(begin, end),
+@@ -88,18 +91,18 @@ namespace TrenchBroom {
+                     case '\r':
+                     case ' ':
+                     case '\t':
+-                        discardWhile(Whitespace);
++                        discardWhile(Whitespace());
+                         break;
+                     default: { // whitespace, integer, decimal or word
+-                        const char* e = readInteger(NumberDelim);
++                        const char* e = readInteger(NumberDelim());
+                         if (e != NULL)
+                             return Token(QuakeMapToken::Integer, c, e, offset(c), startLine, startColumn);
+                         
+-                        e = readDecimal(NumberDelim);
++                        e = readDecimal(NumberDelim());
+                         if (e != NULL)
+                             return Token(QuakeMapToken::Decimal, c, e, offset(c), startLine, startColumn);
+                         
+-                        e = readString(Whitespace);
++                        e = readString(Whitespace());
+                         if (e == NULL)
+                             throw ParserException(startLine, startColumn, "Unexpected character: " + String(c, 1));
+                         return Token(QuakeMapToken::String, c, e, offset(c), startLine, startColumn);
+@@ -356,7 +359,7 @@ namespace TrenchBroom {
+             }
+             
+             // texture names can contain braces etc, so we just read everything until the next opening bracket or number
+-            String textureName = m_tokenizer.readAnyString(QuakeMapTokenizer::Whitespace);
++            String textureName = m_tokenizer.readAnyString(QuakeMapTokenizer::Whitespace());
+             if (textureName == Model::BrushFace::NoTextureName)
+                 textureName = "";
+             
+--- common/src/IO/StandardMapParser.h.orig	2016-03-09 20:19:17 UTC
++++ common/src/IO/StandardMapParser.h
+@@ -50,7 +50,7 @@ namespace TrenchBroom {
+         
+         class QuakeMapTokenizer : public Tokenizer<QuakeMapToken::Type> {
+         private:
+-            static const String NumberDelim;
++            static const String& NumberDelim();
+             bool m_skipEol;
+         public:
+             QuakeMapTokenizer(const char* begin, const char* end);
+--- common/src/IO/Tokenizer.h.orig	2016-03-09 20:19:17 UTC
++++ common/src/IO/Tokenizer.h
+@@ -54,7 +54,10 @@ namespace TrenchBroom {
+             
+             TokenStack m_tokenStack;
+         public:
+-            static const String Whitespace;
++            static const String& Whitespace() {
++                static const String whitespace(" \t\n\r");
++                return whitespace;
++            }
+         public:
+             Tokenizer(const char* begin, const char* end) :
+             m_begin(begin),
+@@ -205,7 +208,7 @@ namespace TrenchBroom {
+             }
+             
+             bool isWhitespace(const char c) const {
+-                return isAnyOf(c, Whitespace);
++                return isAnyOf(c, Whitespace());
+             }
+ 
+             const char* readInteger(const String& delims) {
+@@ -297,9 +300,6 @@ namespace TrenchBroom {
+             
+             virtual Token emitToken() = 0;
+         };
+-        
+-        template <typename TokenType>
+-        const String Tokenizer<TokenType>::Whitespace = " \t\n\r";
+     }
+ }
+ #endif

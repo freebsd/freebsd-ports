@@ -12,7 +12,7 @@ COMMENT=	Tool to create RFCs and related documents from XML, as per RFC2629
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.2.8:${PORTSDIR}/devel/py-lxml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.2.8:devel/py-lxml
 
 USES=		python
 USE_PYTHON=	distutils autoplist

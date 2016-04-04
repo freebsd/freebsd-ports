@@ -10,8 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another dictionary server for SKK
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcdb.a:${PORTSDIR}/databases/tinycdb
-RUN_DEPENDS=	${SKKJISYOCDB}:${PORTSDIR}/japanese/skk-jisyo-cdb
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcdb.a:databases/tinycdb
+RUN_DEPENDS=	${SKKJISYOCDB}:japanese/skk-jisyo-cdb
 
 PLIST_FILES=	libexec/dbskkd-cdb
 SUB_FILES=	pkg-message

@@ -17,7 +17,7 @@ GH_PROJECT=	trac-keyword-secret-ticket-plugin
 GH_TAGNAME=	98edea2
 GITDATE=	20130401
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	tracd:www/trac
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

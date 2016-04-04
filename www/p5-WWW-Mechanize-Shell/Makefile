@@ -14,16 +14,16 @@ COMMENT=	Interactive shell for www/p5-WWW-Mechanize
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Display>=0:${PORTSDIR}/www/p5-HTML-Display \
-		p5-HTML-TokeParser-Simple>=2:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
-		p5-Hook-LexWrap>=0.2:${PORTSDIR}/devel/p5-Hook-LexWrap \
-		p5-Term-Shell>=0.02:${PORTSDIR}/devel/p5-Term-Shell \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-WWW-Mechanize>=1.2:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-WWW-Mechanize-FormFiller>=0.05:${PORTSDIR}/www/p5-WWW-Mechanize-FormFiller \
-		p5-libwww>=5.69:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-HTML-Display>=0:www/p5-HTML-Display \
+		p5-HTML-TokeParser-Simple>=2:www/p5-HTML-TokeParser-Simple \
+		p5-Hook-LexWrap>=0.2:devel/p5-Hook-LexWrap \
+		p5-Term-Shell>=0.02:devel/p5-Term-Shell \
+		p5-URI>=0:net/p5-URI \
+		p5-WWW-Mechanize>=1.2:www/p5-WWW-Mechanize \
+		p5-WWW-Mechanize-FormFiller>=0.05:www/p5-WWW-Mechanize-FormFiller \
+		p5-libwww>=5.69:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp
 
 OPTIONS_DEFINE=	EXAMPLES
 

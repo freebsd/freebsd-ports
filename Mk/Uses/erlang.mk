@@ -38,23 +38,23 @@ ERL_DOCS?=		README*
 # VERSION is used in every Erlang pkg-plist
 PLIST_SUB+=		VERSION="${PORTVERSION}"
 
-BUILD_DEPENDS+=	erl:${PORTSDIR}/lang/erlang
-RUN_DEPENDS+=	erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS+=	erl:lang/erlang
+RUN_DEPENDS+=	erl:lang/erlang
 
 .if ${erlang_ARGS:Mrebar}
-BUILD_DEPENDS+=	rebar>=0:${PORTSDIR}/devel/rebar
+BUILD_DEPENDS+=	rebar>=0:devel/rebar
 .endif
 
 .if ${erlang_ARGS:Mrebar3}
-BUILD_DEPENDS+=	rebar3>=0:${PORTSDIR}/devel/rebar3
+BUILD_DEPENDS+=	rebar3>=0:devel/rebar3
 .endif
 
 .for depend in ${ERL_BUILD_DEPS}
-BUILD_DEPENDS+=	${depend:T}>=0:${PORTSDIR}/${depend}
+BUILD_DEPENDS+=	${depend:T}>=0:${depend}
 .endfor
 
 .for depend in ${ERL_RUN_DEPS}
-RUN_DEPENDS+=	${depend:T}>=0:${PORTSDIR}/${depend}
+RUN_DEPENDS+=	${depend:T}>=0:${depend}
 .endfor
 
 .if ${erlang_ARGS:Mrebar}

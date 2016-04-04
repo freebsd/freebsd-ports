@@ -15,14 +15,15 @@ COMMENT=	PHP extension for Puzzle library to find similar pictures
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC:H:H}/COPYING
 
-LIB_DEPENDS=	libpuzzle.so:${PORTSDIR}/graphics/libpuzzle \
-		libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libpuzzle.so:graphics/libpuzzle \
+		libgd.so:graphics/gd
 
 USES=		tar:bzip2
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
+IGNORE_WITH_PHP=	70
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/php/${PORTNAME}
 

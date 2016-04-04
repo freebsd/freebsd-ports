@@ -21,7 +21,7 @@ LIBMSP430_DESC=		Use TI libmsp430 USB driver
 READLINE_USES=		readline pkgconfig
 READLINE_MAKE_ARGS_OFF=	WITHOUT_READLINE=1
 
-LIBMSP430_LIB_DEPENDS=	libmsp430.so:${PORTSDIR}/devel/msp430-debug-stack
+LIBMSP430_LIB_DEPENDS=	libmsp430.so:devel/msp430-debug-stack
 
 USES=		gmake
 

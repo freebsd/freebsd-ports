@@ -11,10 +11,10 @@ COMMENT=	Simple graphical interface to manage a small Certification Authority
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
-		zip:${PORTSDIR}/archivers/zip \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
+		zip:archivers/zip \
+		p5-MIME-Base64>=0:converters/p5-MIME-Base64
 
 USES=		perl5 tar:xz shebangfix
 USE_OPENSSL=	yes

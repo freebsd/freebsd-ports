@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to choose a language
 
-BUILD_DEPENDS=	p5-Log-TraceMessages>=0:${PORTSDIR}/devel/p5-Log-TraceMessages
+BUILD_DEPENDS=	p5-Log-TraceMessages>=0:devel/p5-Log-TraceMessages
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

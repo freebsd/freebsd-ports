@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chruby
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel ruby
 
@@ -12,7 +12,7 @@ COMMENT=	Changes the current Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 PLIST_FILES=	bin/chruby-exec share/chruby/auto.sh share/chruby/chruby.sh
 

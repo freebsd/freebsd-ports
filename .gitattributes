@@ -1,0 +1,9 @@
+bsd.*.mk         svn-properties=svn:keywords=FreeBSD=%H;svn:eol-style=native;svn:mime-type=text/plain
+distinfo*        svn-properties=fbsd:nokeywords=yes;svn:eol-style=native;svn:mime-type=text/plain
+extrapatch-*     svn-properties=fbsd:nokeywords=yes;svn:eol-style=native;svn:mime-type=text/plain
+extra-patch-*    svn-properties=fbsd:nokeywords=yes;svn:eol-style=native;svn:mime-type=text/plain
+patch-*          svn-properties=fbsd:nokeywords=yes;svn:eol-style=native;svn:mime-type=text/plain
+pkg-*            svn-properties=fbsd:nokeywords=yes;svn:eol-style=native;svn:mime-type=text/plain
+Makefile*        svn-properties=svn:keywords=FreeBSD=%H;svn:eol-style=native;svn:mime-type=text/plain
+Mk/*.mk          svn-properties=svn:keywords=FreeBSD=%H;svn:eol-style=native;svn:mime-type=text/plain
+Mk/Scripts/*.sh  svn-properties=svn:keywords=FreeBSD=%H;svn:eol-style=native;svn:mime-type=text/plain

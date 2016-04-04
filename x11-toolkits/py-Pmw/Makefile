@@ -13,8 +13,8 @@ MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	High-level compound graphics widgets for Python
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
-LIB_DEPENDS=	libBLT25.so:${PORTSDIR}/x11-toolkits/blt
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt
 
 USES=		python
 USE_PYTHON=	distutils

@@ -21,14 +21,14 @@ OPTIONS_DEFAULT=	RSYNC SVN
 RSYNC_DESC=	rsync support
 GIT_DESC=	git support
 HG_DESC=	mercurial support
-RSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RSYNC_RUN_DEPENDS=	rsync:net/rsync
 .if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
-SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion18
+SVN_RUN_DEPENDS=	svn:devel/subversion18
 .else
-SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
+SVN_RUN_DEPENDS=	svn:devel/subversion
 .endif
-GIT_RUN_DEPENDS=	git:${PORTSDIR}/devel/git
-HG_RUN_DEPENDS=		hg:${PORTSDIR}/devel/mercurial
+GIT_RUN_DEPENDS=	git:devel/git
+HG_RUN_DEPENDS=		hg:devel/mercurial
 .else
 OPTIONS_DEFINE=	BSDSHARP ENLIGHTENMENT GECKO HASKELL MARCUSCOM TEXLIVE XORG
 OPTIONS_DEFAULT=	BSDSHARP

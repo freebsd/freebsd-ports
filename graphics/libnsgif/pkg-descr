@@ -1,0 +1,4 @@
+Libnsgif is a decoding library for the GIF image file format, written in C.
+It was developed as part of the NetSurf project.
+
+WWW: http://www.netsurf-browser.org/projects/libnsgif/

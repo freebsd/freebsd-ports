@@ -18,7 +18,7 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	gtk2 naslibs png sqlite3 xorglibs

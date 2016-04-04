@@ -13,7 +13,7 @@ COMMENT=	LXDE Main Menu Editor
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	gksu:${PORTSDIR}/sysutils/gksu
+RUN_DEPENDS=	gksu:sysutils/gksu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

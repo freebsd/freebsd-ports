@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emkatic
-PORTVERSION=	0.26
-PORTREVISION=	2
+PORTVERSION=	0.27
 CATEGORIES=	russian emulators
 MASTER_SITES=	SF/${PORTNAME}/eMKatic%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -14,13 +13,13 @@ COMMENT=	Emulator of Elektronika RPN programmable calculator series
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
-		fpcres:${PORTSDIR}/lang/fpc-utils
+BUILD_DEPENDS=	lazbuild:editors/lazarus \
+		fpcres:lang/fpc-utils
 
 USE_FPC=	cairo fcl-base fcl-image fcl-json fcl-xml pasjpeg x11
 
 PROJECT_FILE=	emkatic.lpi
-LAZARUS_VER=	1.6RC2
+LAZARUS_VER=	1.6.0
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 LCL_UNITS_DIR=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}
@@ -37,13 +36,13 @@ OPTIONS_DEFAULT=	GTK2 PORTAUDIO
 GTK2_DESC=	Build with GTK+ 2 interface
 QT4_DESC=	Build with Qt 4 interface
 
-GTK2_BUILD_DEPENDS=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+GTK2_BUILD_DEPENDS=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
 GTK2_USE=		GNOME=gtk20 FPC=gtk2
 
-QT4_BUILD_DEPENDS=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
-QT4_LIB_DEPENDS=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+QT4_BUILD_DEPENDS=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
+QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
 
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 .include <bsd.port.options.mk>
 

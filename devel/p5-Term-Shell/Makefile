@@ -13,8 +13,8 @@ COMMENT=	Write command-line shells in Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-Text-Autoformat>=0:${PORTSDIR}/textproc/p5-Text-Autoformat
+BUILD_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		p5-Text-Autoformat>=0:textproc/p5-Text-Autoformat
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

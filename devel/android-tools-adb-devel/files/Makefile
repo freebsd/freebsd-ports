@@ -24,6 +24,7 @@ SRCS+= line_printer.cpp
 SRCS+= services.cpp
 SRCS+= shell_service_protocol.cpp
 SRCS+= ../adb/sockets.cpp
+SRCS+= sysdeps_unix.cpp
 SRCS+= transport.cpp
 SRCS+= transport_local.cpp
 SRCS+= transport_usb.cpp

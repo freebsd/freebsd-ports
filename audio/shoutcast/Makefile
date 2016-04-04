@@ -55,9 +55,9 @@ GROUPS=		${SHOUTCASTGROUP}
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000010
 .if ${ARCH} == "i386"
-RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 .else
-RUN_DEPENDS+=	${LOCALBASE}/lib32/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+RUN_DEPENDS+=	${LOCALBASE}/lib32/compat/libstdc++.so.6:misc/compat9x
 .endif
 .endif
 

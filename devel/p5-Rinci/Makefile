@@ -15,8 +15,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-DefHash>=1.0.6:${PORTSDIR}/devel/p5-DefHash \
-		p5-Sah>=0.9.36:${PORTSDIR}/devel/p5-Sah
+TEST_DEPENDS=	p5-DefHash>=1.0.6:devel/p5-DefHash \
+		p5-Sah>=0.9.36:devel/p5-Sah
 
 NO_ARCH=	yes
 USE_PERL5=	configure

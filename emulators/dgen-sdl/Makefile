@@ -24,7 +24,7 @@ PLIST_FILES=	bin/dgen \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	nasm:devel/nasm
 .else
 CONFIGURE_ARGS+=	--disable-asm
 .endif

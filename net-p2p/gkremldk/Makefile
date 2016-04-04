@@ -13,8 +13,8 @@ COMMENT=	Shows current mldonkey donwload/upload rates and allows setting them
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 USES=		autoreconf pkgconfig tar:tbz
 GNU_CONFIGURE=	yes

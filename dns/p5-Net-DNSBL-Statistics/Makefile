@@ -14,9 +14,9 @@ COMMENT=	Gather DNSBL Statistics
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-DNS-Codes>=0.09:${PORTSDIR}/dns/p5-Net-DNS-Codes \
-		p5-Net-DNS-ToolKit>=0.41:${PORTSDIR}/dns/p5-Net-DNS-ToolKit \
-		p5-Net-DNSBL-MultiDaemon>=0.26:${PORTSDIR}/dns/p5-Net-DNSBL-MultiDaemon
+BUILD_DEPENDS=	p5-Net-DNS-Codes>=0.09:dns/p5-Net-DNS-Codes \
+		p5-Net-DNS-ToolKit>=0.41:dns/p5-Net-DNS-ToolKit \
+		p5-Net-DNSBL-MultiDaemon>=0.26:dns/p5-Net-DNSBL-MultiDaemon
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

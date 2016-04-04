@@ -13,13 +13,13 @@ COMMENT=	Convert DocBook documents into UNIX man page and GNU Texinfo formats
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	OpenSP>=0:${PORTSDIR}/textproc/opensp \
-		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
-		p5-XML-SAX-Expat>=0:${PORTSDIR}/textproc/p5-XML-SAX-Expat \
-		sdocbook-xml>=0:${PORTSDIR}/textproc/sdocbook-xml
+BUILD_DEPENDS=	OpenSP>=0:textproc/opensp \
+		dsssl-docbook-modular>=0:textproc/dsssl-docbook-modular \
+		p5-XML-NamespaceSupport>=0:textproc/p5-XML-NamespaceSupport \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX \
+		p5-XML-SAX-Expat>=0:textproc/p5-XML-SAX-Expat \
+		sdocbook-xml>=0:textproc/sdocbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS_INSTALL=	docbook-utils-*

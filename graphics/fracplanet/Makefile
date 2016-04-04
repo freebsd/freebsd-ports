@@ -16,8 +16,8 @@ COMMENT=	Interactive tool for creating random fractal planets and terrain
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -44,7 +44,7 @@ OPTIONS_DEFINE=	DOXYGEN DOCS
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:devel/doxygen
 .endif
 
 post-patch:

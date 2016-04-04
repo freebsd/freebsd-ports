@@ -151,6 +151,7 @@ bin/mix
 %%SRC%%lib/elixir/lib/mix/lib/mix/task.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/app.start.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/archive.build.ex
+%%SRC%%lib/elixir/lib/mix/lib/mix/tasks/archive.check.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/archive.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/archive.install.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/archive.uninstall.ex
@@ -170,6 +171,7 @@ bin/mix
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/deps.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/deps.get.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/deps.loadpaths.ex
+%%SRC%%lib/elixir/lib/mix/lib/mix/tasks/deps.precompile.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/deps.unlock.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/deps.update.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/do.ex
@@ -330,6 +332,8 @@ lib/elixir/lib/elixir/ebin/Elixir.RuntimeError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Set.beam
 lib/elixir/lib/elixir/ebin/Elixir.Stream.Reducers.beam
 lib/elixir/lib/elixir/ebin/Elixir.Stream.beam
+lib/elixir/lib/elixir/ebin/Elixir.String.Break.beam
+lib/elixir/lib/elixir/ebin/Elixir.String.Casing.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Atom.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.BitString.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Float.beam
@@ -339,7 +343,6 @@ lib/elixir/lib/elixir/ebin/Elixir.String.Chars.URI.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Version.Requirement.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Version.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.beam
-lib/elixir/lib/elixir/ebin/Elixir.String.Graphemes.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Normalizer.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Unicode.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.beam
@@ -499,6 +502,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.State.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.App.Start.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Build.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Check.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Install.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Uninstall.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.beam
@@ -517,6 +521,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Clean.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Compile.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Get.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Loadpaths.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Precompile.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Unlock.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Update.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.beam
@@ -740,6 +745,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Task.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.App.Start.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Archive.Build.html
+%%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Archive.Check.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Archive.Install.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Archive.Uninstall.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Archive.html
@@ -757,6 +763,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Compile.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Get.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Loadpaths.html
+%%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Precompile.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Unlock.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Update.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.html

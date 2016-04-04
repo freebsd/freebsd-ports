@@ -42,13 +42,13 @@ GTK2_MAKE_ENV=		WITH_GTK2=1 WITH_GTK3=0
 GTK2_USE=		GNOME=gtk20
 GTK3_MAKE_ENV=		WITH_GTK2=0 WITH_GTK3=1
 GTK3_USE=		GNOME=gtk30
-THUMB_LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp
+THUMB_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp
 THUMB_MAKE_ENV=		WITH_THUMB=1
 TRACKER_MAKE_ENV=	WITH_TRACKER=1
 NLS_USES=		gettext
 NLS_INSTALL_TARGET=	install_i18n
 HAL_MAKE_ENV=		WITH_HAL=1
-HAL_LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal
+HAL_LIB_DEPENDS=	libhal.so:sysutils/hal
 
 post-patch:
 # fix cross-arch compiling, which sets ${TARGET}

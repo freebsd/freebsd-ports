@@ -1,0 +1,7 @@
+jo creates a JSON string on stdout from words given it as arguments or read
+from stdin. Without option -a it generates an object whereby each word is a
+key=value (or key@value) pair with key being the JSON object element and value
+its value. jo attempts to guess the type of value in order to create number
+(using strtod(3)), string, or null values in JSON.
+
+WWW: https://github.com/jpmens/jo

@@ -3,7 +3,7 @@
 
 PORTNAME=	libmicrohttpd
 PORTVERSION=	0.9.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -23,8 +23,8 @@ CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	GNUTLS
 
-GNUTLS_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-			libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+			libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	libgcrypt-prefix=${LOCALBASE} gnutls=${LOCALBASE}
 GNUTLS_CONFIGURE_ENABLE=https
 

@@ -12,7 +12,7 @@ COMMENT=	Ruby interface to gd 2 library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 NO_ARCH=	yes
 

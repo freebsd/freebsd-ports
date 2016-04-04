@@ -25,12 +25,12 @@
  endif
  
  vpath %.h ../src ../include ../lexlib
-@@ -68,8 +61,7 @@
+@@ -77,8 +70,7 @@
  CTFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS) $(THREADFLAGS)
  endif
  
 -CFLAGS:=$(CTFLAGS)
--CXXTFLAGS:=--std=c++0x $(CTFLAGS) $(REFLAGS)
+-CXXTFLAGS:=--std=gnu++0x $(CTFLAGS) $(REFLAGS)
 +CXXTFLAGS:=$(CTFLAGS) $(REFLAGS)
  
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))

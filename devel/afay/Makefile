@@ -16,7 +16,7 @@ LICENSE_NAME=	Arcadia-UC-Irvine
 LICENSE_FILE=	${WRKSRC}/afay/aflex/README
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 USES=		ada tar:tgz
 NO_WRKSUBDIR=	yes

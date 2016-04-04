@@ -11,4 +11,4 @@ for the average programmer, and to popularize decorators usage giving
 examples of useful decorators, such as memoize, tracing,
 redirecting_stdout, locked, etc.
 
-WWW: https://pypi.python.org/pypi/decorator
+WWW: https://github.com/micheles/decorator

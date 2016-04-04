@@ -13,7 +13,7 @@ COMMENT=	Pack and unpack big-endian IEEE754 floats and doubles
 
 LICENSE=	ART20
 
-TEST_DEPENDS=	p5-Test-Bits>=0:${PORTSDIR}/devel/p5-Test-Bits
+TEST_DEPENDS=	p5-Test-Bits>=0:devel/p5-Test-Bits
 
 NO_ARCH=	yes
 USE_PERL5=	configure

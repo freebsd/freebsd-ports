@@ -1,0 +1,134 @@
+From 4f780e94a1fa54f22256e0f4d42a77c340a38fa1 Mon Sep 17 00:00:00 2001
+From: James Zern <jzern@google.com>
+Date: Thu, 28 Jan 2016 12:53:41 -0800
+Subject: vp9/10: fix encoder crash on flush
+
+the lookahead buffer allocation is deferred to receipt of the first
+frame to allow profile changes. if the encoder was flushed before
+supplying any frames the encoder would crash trying to dereference the
+NULL buffer. vp8 is unaffected.
+
+fixes mozilla bug:
+https://bugzilla.mozilla.org/show_bug.cgi?id=1237848
+
+Change-Id: Icee4b64de760476eee0d33b568f0a1010335ff13
+---
+ test/encode_api_test.cc     | 68 +++++++++++++++++++++++++++++++++++++++++++++
+ test/test.mk                |  1 +
+ vp10/encoder/lookahead.c    |  2 +-
+ vp8/encoder/lookahead.c     |  1 +
+ vp9/encoder/vp9_lookahead.c |  2 +-
+ 5 files changed, 72 insertions(+), 2 deletions(-)
+ create mode 100644 test/encode_api_test.cc
+
+diff --git test/encode_api_test.cc test/encode_api_test.cc
+new file mode 100644
+index 0000000..a7200e6
+--- /dev/null
++++ test/encode_api_test.cc
+@@ -0,0 +1,68 @@
++/*
++ *  Copyright (c) 2016 The WebM project authors. All Rights Reserved.
++ *
++ *  Use of this source code is governed by a BSD-style license
++ *  that can be found in the LICENSE file in the root of the source
++ *  tree. An additional intellectual property rights grant can be found
++ *  in the file PATENTS.  All contributing project authors may
++ *  be found in the AUTHORS file in the root of the source tree.
++ */
++
++#include "third_party/googletest/src/include/gtest/gtest.h"
++
++#include "./vpx_config.h"
++#include "vpx/vp8cx.h"
++#include "vpx/vpx_encoder.h"
++
++namespace {
++
++#define NELEMENTS(x) static_cast<int>(sizeof(x) / sizeof(x[0]))
++
++TEST(EncodeAPI, InvalidParams) {
++  static const vpx_codec_iface_t *kCodecs[] = {
++#if CONFIG_VP8_ENCODER
++    &vpx_codec_vp8_cx_algo,
++#endif
++#if CONFIG_VP9_ENCODER
++    &vpx_codec_vp9_cx_algo,
++#endif
++#if CONFIG_VP10_ENCODER
++    &vpx_codec_vp10_cx_algo,
++#endif
++  };
++  uint8_t buf[1] = {0};
++  vpx_image_t img;
++  vpx_codec_ctx_t enc;
++  vpx_codec_enc_cfg_t cfg;
++
++  EXPECT_EQ(&img, vpx_img_wrap(&img, VPX_IMG_FMT_I420, 1, 1, 1, buf));
++
++  EXPECT_EQ(VPX_CODEC_INVALID_PARAM, vpx_codec_enc_init(NULL, NULL, NULL, 0));
++  EXPECT_EQ(VPX_CODEC_INVALID_PARAM, vpx_codec_enc_init(&enc, NULL, NULL, 0));
++  EXPECT_EQ(VPX_CODEC_INVALID_PARAM, vpx_codec_encode(NULL, NULL, 0, 0, 0, 0));
++  EXPECT_EQ(VPX_CODEC_INVALID_PARAM, vpx_codec_encode(NULL, &img, 0, 0, 0, 0));
++  EXPECT_EQ(VPX_CODEC_INVALID_PARAM, vpx_codec_destroy(NULL));
++  EXPECT_EQ(VPX_CODEC_INVALID_PARAM,
++            vpx_codec_enc_config_default(NULL, NULL, 0));
++  EXPECT_EQ(VPX_CODEC_INVALID_PARAM,
++            vpx_codec_enc_config_default(NULL, &cfg, 0));
++  EXPECT_TRUE(vpx_codec_error(NULL) != NULL);
++
++  for (int i = 0; i < NELEMENTS(kCodecs); ++i) {
++    SCOPED_TRACE(vpx_codec_iface_name(kCodecs[i]));
++    EXPECT_EQ(VPX_CODEC_INVALID_PARAM,
++              vpx_codec_enc_init(NULL, kCodecs[i], NULL, 0));
++    EXPECT_EQ(VPX_CODEC_INVALID_PARAM,
++              vpx_codec_enc_init(&enc, kCodecs[i], NULL, 0));
++    EXPECT_EQ(VPX_CODEC_INVALID_PARAM,
++              vpx_codec_enc_config_default(kCodecs[i], &cfg, 1));
++
++    EXPECT_EQ(VPX_CODEC_OK, vpx_codec_enc_config_default(kCodecs[i], &cfg, 0));
++    EXPECT_EQ(VPX_CODEC_OK, vpx_codec_enc_init(&enc, kCodecs[i], &cfg, 0));
++    EXPECT_EQ(VPX_CODEC_OK, vpx_codec_encode(&enc, NULL, 0, 0, 0, 0));
++
++    EXPECT_EQ(VPX_CODEC_OK, vpx_codec_destroy(&enc));
++  }
++}
++
++}  // namespace
+diff --git test/test.mk test/test.mk
+index 80b57e5..e8e8304 100644
+--- test/test.mk
++++ test/test.mk
+@@ -20,6 +20,7 @@ LIBVPX_TEST_SRCS-$(CONFIG_DECODERS)    += ivf_video_source.h
+ LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += ../y4minput.h ../y4minput.c
+ LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += aq_segment_test.cc
+ LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += datarate_test.cc
++LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += encode_api_test.cc
+ LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += error_resilience_test.cc
+ LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += i420_video_source.h
+ LIBVPX_TEST_SRCS-$(CONFIG_ENCODERS)    += resize_test.cc
+diff --git vp8/encoder/lookahead.c vp8/encoder/lookahead.c
+index ce2ce08..6623385 100644
+--- vp8/encoder/lookahead.c
++++ vp8/encoder/lookahead.c
+@@ -181,6 +181,7 @@ vp8_lookahead_pop(struct lookahead_ctx *ctx,
+ {
+     struct lookahead_entry* buf = NULL;
+ 
++    assert(ctx != NULL);
+     if(ctx->sz && (drain || ctx->sz == ctx->max_sz - 1))
+     {
+         buf = pop(ctx, &ctx->read_idx);
+diff --git vp9/encoder/vp9_lookahead.c vp9/encoder/vp9_lookahead.c
+index 8787be8..def9b8c 100644
+--- vp9/encoder/vp9_lookahead.c
++++ vp9/encoder/vp9_lookahead.c
+@@ -207,7 +207,7 @@ struct lookahead_entry *vp9_lookahead_pop(struct lookahead_ctx *ctx,
+                                           int drain) {
+   struct lookahead_entry *buf = NULL;
+ 
+-  if (ctx->sz && (drain || ctx->sz == ctx->max_sz - MAX_PRE_FRAMES)) {
++  if (ctx && ctx->sz && (drain || ctx->sz == ctx->max_sz - MAX_PRE_FRAMES)) {
+     buf = pop(ctx, &ctx->read_idx);
+     ctx->sz--;
+   }

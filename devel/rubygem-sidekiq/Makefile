@@ -12,9 +12,9 @@ COMMENT=	Simple, efficient background processing for Ruby
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.0:${PORTSDIR}/devel/rubygem-concurrent-ruby \
-		rubygem-connection_pool>=2.2:${PORTSDIR}/net/rubygem-connection_pool \
-		rubygem-redis>=3.2.1:${PORTSDIR}/databases/rubygem-redis
+RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.0:devel/rubygem-concurrent-ruby \
+		rubygem-connection_pool>=2.2:net/rubygem-connection_pool \
+		rubygem-redis>=3.2.1:databases/rubygem-redis
 
 NO_ARCH=	yes
 USE_RUBY=	yes

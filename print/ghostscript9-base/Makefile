@@ -2,7 +2,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	9.06
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -17,15 +17,15 @@ COMMENT=	Ghostscript 9.x PostScript interpreter, base part
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libidn.so:${PORTSDIR}/dns/libidn \
-		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libpaper.so:${PORTSDIR}/print/libpaper \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libfreetype.so:print/freetype2 \
+		libidn.so:dns/libidn \
+		libjbig2dec.so:graphics/jbig2dec \
+		liblcms2.so:graphics/lcms2 \
+		libpaper.so:print/libpaper \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:print/gsfonts
 
 CONFLICTS_INSTALL= \
 		gambc-[0-9]* \
@@ -76,7 +76,7 @@ OPTIONS_DEFINE=	DOCS CUPS FONTCONFIG ICONV
 OPTIONS_DEFAULT=DOCS CUPS FONTCONFIG ICONV
 OPTIONS_SUB=	yes
 FONTCONFIG_DESC=Enable fontconfig support
-FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 FONTCONFIG_CONFIGURE_ENABLE=	fontconfig
 NO_OPTIONS_SORT=yes
 

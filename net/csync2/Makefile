@@ -2,52 +2,45 @@
 # $FreeBSD$
 
 PORTNAME=	csync2
-PORTVERSION=	1.34
-PORTREVISION=	20
+PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://oss.linbit.com/csync2/ \
-		http://people.freebsd.org/~aaron/distfiles/
+MASTER_SITES=	http://oss.linbit.com/csync2/
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Cluster synchronization tool
 
-LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync \
-		libtasn1.so:${PORTSDIR}/security/libtasn1 \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libsqlite.so:${PORTSDIR}/databases/sqlite2 \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	CSYNC2_COMPARE
-CSYNC2_COMPARE_DESC=	Install csync2-compare script
+LIB_DEPENDS=	librsync.so.2:net/librsync1 \
+		libgnutls.so:security/gnutls \
+		libsqlite3.so:databases/sqlite3
 
-USES=		pkgconfig
+OPTIONS_DEFINE=	CSYNC2_COMPARE DOCS
+OPTIONS_SUB=	yes
+CSYNC2_COMPARE_DESC=		Install csync2-compare script
+CSYNC2_COMPARE_RUN_DEPENDS=	bash:shells/bash
+
+USES=		pkgconfig shebangfix
+SHEBANG_FILES=	csync2-compare
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
-CONFIGURE_ENV=	LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
+CONFIGURE_ARGS=	ac_cv_prog_PDFLATEX=
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 USE_RC_SUBR=	csync2
 
-PLIST_FILES=	etc/csync2.cfg-dist \
-		sbin/csync2 \
-		man/man1/csync2.1.gz
-
 SUB_FILES=	pkg-install
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCSYNC2_COMPARE}
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-PLIST_FILES+=	sbin/csync2-compare
-CSYNC2_COMPARE=	csync2-compare
-.else
-CSYNC2_COMPARE=
-.endif
-
 post-patch:
-	${REINPLACE_CMD} -E "s#%%CSYNC2_COMPARE%%#${CSYNC2_COMPARE}#" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|(localstatedir)/lib|(localstatedir)/db|' \
+		-e 's/-ldl//' ${WRKSRC}/Makefile.in
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/csync2.cfg \
+		${STAGEDIR}${PREFIX}/etc/csync2.cfg.sample
+	${MKDIR} ${STAGEDIR}/var/backups/csync2
 
 .include <bsd.port.mk>

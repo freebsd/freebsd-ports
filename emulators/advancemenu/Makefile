@@ -11,7 +11,7 @@ COMMENT=	Frontend for AdvanceMAME, MAME, MESS, RAINE
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake
 USE_SDL=	sdl
@@ -30,10 +30,10 @@ OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT=	FREETYPE
 OPTIONS_DEFAULT_i386=	ASM
 
-ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_BUILD_DEPENDS=	nasm:devel/nasm
 ASM_USE=		gcc=any
 ASM_CONFIGURE_ENABLE=	asm
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
 
 MAKE_JOBS_UNSAFE=	yes

@@ -13,11 +13,11 @@ COMMENT=	Base classes wrapping fundamental Perl data types
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
-		p5-Role-Tiny>=0:${PORTSDIR}/devel/p5-Role-Tiny \
-		p5-strictures>=1:${PORTSDIR}/devel/p5-strictures
+BUILD_DEPENDS=	p5-Class-Method-Modifiers>=0:devel/p5-Class-Method-Modifiers \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
+		p5-Role-Tiny>=0:devel/p5-Role-Tiny \
+		p5-strictures>=1:devel/p5-strictures
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -59,11 +59,11 @@ MAKE_ARGS+=	TILES=y \
 		GL_INCLUDE="-I ${LOCALBASE}/include/GL"
 PLIST_SUB+=	SDL=""
 PKGNAMESUFFIX=	-sdl
-BUILD_DEPENDS+=	fc-list:${PORTSDIR}/x11-fonts/fontconfig \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS+=	fc-list:x11-fonts/fontconfig \
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
+LIB_DEPENDS+=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 USE_SDL=	sdl2 image2
 USE_GL=		yes
 .else
@@ -73,7 +73,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSOUND}
-RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
+RUN_DEPENDS+=	sox:audio/sox
 .endif
 
 .if empty(PORT_OPTIONS:MLUA_BINDINGS)

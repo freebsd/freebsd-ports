@@ -12,9 +12,9 @@ COMMENT=	Sample implementation set of "L2TP-IPv6PD" client using mpd
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	mpd5:${PORTSDIR}/net/mpd5
-RUN_DEPENDS=	dhcp6ctl:${PORTSDIR}/net/dhcp6 \
-		mpd5:${PORTSDIR}/net/mpd5
+BUILD_DEPENDS=	mpd5:net/mpd5
+RUN_DEPENDS=	dhcp6ctl:net/dhcp6 \
+		mpd5:net/mpd5
 
 NO_BUILD=	yes
 

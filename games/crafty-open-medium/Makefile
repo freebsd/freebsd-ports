@@ -12,8 +12,8 @@ DIST_SUBDIR=	crafty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medium opening book (about 1.9 MByte) for crafty
 
-BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
-RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+BUILD_DEPENDS=	crafty:games/crafty
+RUN_DEPENDS=	crafty:games/crafty
 
 USES=		zip
 NO_WRKSUBDIR=	yes

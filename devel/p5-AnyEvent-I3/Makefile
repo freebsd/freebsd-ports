@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Communicate with the i3 window manager
 
-BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS
-RUN_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS
+BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+		p5-JSON-XS>=0:converters/p5-JSON-XS
+RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+		p5-JSON-XS>=0:converters/p5-JSON-XS
 
 USES=		perl5
 USE_PERL5=	configure

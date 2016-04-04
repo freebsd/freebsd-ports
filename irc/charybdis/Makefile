@@ -6,13 +6,14 @@ PORTREVISION=	6
 CATEGORIES=	irc net
 MASTER_SITES=	http://www.stack.nl/~jilles/irc/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
-DISTFILES=	${DISTNAME}.tbz2 ${DOCSDIST}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTFILES:M*tbz2}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Powerful IRC daemon, based on ircd-ratbox
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	ircd-ratbox-[0-9]* ircd-ratbox-devel-[0-9]* \
 		nefarious-[0-9]* ircd-hybrid-[0-9]* \
@@ -25,7 +26,7 @@ MASTER_SITES:=	${MASTER_SITES} \
 
 PORTDOCS=	charybdis-oper-guide.pdf
 
-USES=		libtool pathfix
+USES=		libtool pathfix tar:tbz2
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
@@ -38,21 +39,17 @@ CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DOCSDIST+=	${PORTDOCS}:pdf
-.endif
+DOCS_DISTFILES=	${PORTDOCS}:pdf
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/charybdis-oper-guide.pdf \
-		${STAGEDIR}${DOCSDIR}
-.endif
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd \
+	${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd \
 		${STAGEDIR}${ETCDIR}/ircd.motd.sample
+
+pre-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/charybdis-oper-guide.pdf \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lacaml
-PORTVERSION=	7.2.6
-DISTVERSIONPREFIX=	v
+PORTVERSION=	8.0.7
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/mmottl/lacaml/releases/download/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/}
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,9 +13,6 @@ COMMENT=	OCaml interface to BLAS and LAPACK libraries
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	mmottl
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
@@ -54,7 +52,8 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS.txt CHANGES.txt README.md TODO.md
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR})
 .endfor
 
 post-install-EXAMPLES-on:

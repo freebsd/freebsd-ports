@@ -11,7 +11,7 @@ COMMENT=	Process manager for applications with multiple components
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-thor>=0.19.1:${PORTSDIR}/devel/rubygem-thor
+RUN_DEPENDS=	rubygem-thor>=0.19.1:devel/rubygem-thor
 
 NO_ARCH=	yes
 

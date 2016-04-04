@@ -11,7 +11,7 @@ COMMENT=	Command line interface tool to manage tags in music files
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
+LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kAworu
@@ -29,13 +29,13 @@ OPTIONS_DEFAULT=	FLAC OGG TAGLIB
 TAGLIB_DESC=	Multiple file format but limited tags support
 JSON_DESC=	JSON output format support
 
-JSON_LIB_DEPENDS+=	libjansson.so:${PORTSDIR}/devel/jansson
+JSON_LIB_DEPENDS+=	libjansson.so:devel/jansson
 JSON_CMAKE_OFF+=	-DWITHOUT_JSON=yes
-FLAC_LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS+=	libFLAC.so:audio/flac
 FLAC_CMAKE_OFF+=	-DWITHOUT_FLAC=yes
-OGG_LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+OGG_LIB_DEPENDS+=	libvorbisfile.so:audio/libvorbis
 OGG_CMAKE_OFF+=	-DWITHOUT_OGGVORBIS=yes
-TAGLIB_LIB_DEPENDS+=	libtag_c.so:${PORTSDIR}/audio/taglib
+TAGLIB_LIB_DEPENDS+=	libtag_c.so:audio/taglib
 TAGLIB_CMAKE_OFF+=	-DWITHOUT_TAGLIB=yes
 
 .include <bsd.port.mk>

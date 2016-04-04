@@ -16,6 +16,6 @@ WANT_FPC_BASE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_RUN_DEPENDS=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs
+DOCS_RUN_DEPENDS=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:lang/fpc-docs
 
 .include <bsd.port.mk>

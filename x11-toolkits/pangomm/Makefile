@@ -16,7 +16,7 @@ USES=		tar:xz
 .if !defined(REFERENCE_PORT)
 PORTSCOUT=	limitw:1,even
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:devel/m4
 
 USES+=		gmake libtool pathfix pkgconfig
 USE_GNOME=	cairomm glibmm pango

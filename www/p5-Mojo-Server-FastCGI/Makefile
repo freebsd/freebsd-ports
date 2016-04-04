@@ -14,7 +14,7 @@ COMMENT=	Mojo Server FastCGI
 
 LICENSE=	ART20
 
-RUN_DEPENDS=	p5-Mojolicious>=3.21:${PORTSDIR}/www/p5-Mojolicious
+RUN_DEPENDS=	p5-Mojolicious>=3.21:www/p5-Mojolicious
 
 USES=		perl5
 USE_PERL5=	configure

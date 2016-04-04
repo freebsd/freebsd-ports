@@ -21,24 +21,24 @@ RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-32171-noCPAN
 
-RUN_DEPENDS+=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
-		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
-		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
-		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
-		p5-EV>=0:${PORTSDIR}/devel/p5-EV \
-		p5-Audio-Scan>=0.87:${PORTSDIR}/audio/p5-Audio-Scan \
-		p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor
+RUN_DEPENDS+=	p5-DBIx-Class>=0:databases/p5-DBIx-Class \
+		p5-File-Which>=0:sysutils/p5-File-Which \
+		p5-URI-Find>=0:textproc/p5-URI-Find \
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-Encode-Detect>=0:converters/p5-Encode-Detect \
+		p5-GD>=0:graphics/p5-GD \
+		p5-JSON-XS>=0:converters/p5-JSON-XS \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-YAML-Syck>=0:textproc/p5-YAML-Syck \
+		p5-EV>=0:devel/p5-EV \
+		p5-Audio-Scan>=0.87:audio/p5-Audio-Scan \
+		p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor
 
 # Work around a bug in p5-Package-Stash port
-RUN_DEPENDS+=	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager
+RUN_DEPENDS+=	p5-Package-DeprecationManager>=0.10:devel/p5-Package-DeprecationManager
 
 USERS=		${SLIMUSER}
 GROUPS=		${SLIMGROUP}
@@ -46,12 +46,12 @@ USES=		perl5 tar:tgz
 
 USE_MYSQL=	server
 
-APE_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
-FAAD_RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
-LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
-SHORTEN_RUN_DEPENDS=	shorten:${PORTSDIR}/audio/shorten
-SOX_RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
+APE_RUN_DEPENDS=	mac:audio/mac
+FAAD_RUN_DEPENDS=	faad:audio/faad
+FLAC_RUN_DEPENDS=	flac:audio/flac
+LAME_RUN_DEPENDS=	lame:audio/lame
+SHORTEN_RUN_DEPENDS=	shorten:audio/shorten
+SOX_RUN_DEPENDS=	sox:audio/sox
 
 USE_RC_SUBR=	squeezeboxserver
 TMP_SLIMDIR=	${WRKDIR}/_squeezeboxserver

@@ -31,8 +31,8 @@ USE_XORG+=	x11
 
 .if ${PORT_OPTIONS:MLIBXCB}
 USE_XORG+=	xcb
-LIB_DEPENDS+=	libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm \
-    		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
+LIB_DEPENDS+=	libxcb-icccm.so:x11/xcb-util-wm \
+		libxcb-keysyms.so:x11/xcb-util-keysyms
 CMAKE_ARGS+=	-DUSE_XCB:BOOL=ON
 .endif
 

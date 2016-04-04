@@ -14,7 +14,7 @@ COMMENT=	Speedy, massively parallel, modular, login brute-forcer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
+LIB_DEPENDS=	libssh2.so:security/libssh2
 
 BROKEN_ia64=	Does not build on ia64
 
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--enable-module-ncp=no --enable-module-afp=no
 OPTIONS_DEFINE=	SVN PGSQL DOCS
 OPTIONS_SUB=	yes
 
-SVN_LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
+SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
 SVN_CFLAGS=		-I${LOCALBASE}/include/subversion-1 -I${LOCALBASE}/include/apr-1
 SVN_CONFIGURE_OFF=	--enable-module-svn=no
 

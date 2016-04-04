@@ -10,8 +10,8 @@ DISTNAME=	memo-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Appointment/TODO management for the ROX desktop
 
-RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
-		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
+RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
+		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:devel/py-roxlib
 
 USES=		python tar:bzip2
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mako
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,9 @@ COMMENT=	Super-fast templating language in Python
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beaker>=1.1:${PORTSDIR}/www/py-beaker \
-		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.9.2:${PORTSDIR}/textproc/py-MarkupSafe \
-		${PYTHON_PKGNAMEPREFIX}Babel>0:${PORTSDIR}/devel/py-babel
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beaker>=1.1:www/py-beaker \
+		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.9.2:textproc/py-MarkupSafe \
+		${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USES=		python

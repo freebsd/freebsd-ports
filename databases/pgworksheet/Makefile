@@ -12,7 +12,7 @@ COMMENT=	Simple PostreSQL GUI front end
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyPgSQL/libpq/__init__.py:${PORTSDIR}/databases/py-pyPgSQL
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyPgSQL/libpq/__init__.py:databases/py-pyPgSQL
 
 USES=		pgsql python:2 tar:bzip2
 USE_GNOME=	pygtk2

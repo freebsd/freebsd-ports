@@ -13,7 +13,7 @@ COMMENT=	Mathematics library and advanced calculator package
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 MAKE_JOBS_UNSAFE=	yes
 

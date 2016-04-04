@@ -16,7 +16,7 @@ COMMENT=	Full featured Python and Ruby editor and IDE based on Qt4
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS?=	${PREFIX}/bin/eric4:${PORTSDIR}/devel/eric4
+RUN_DEPENDS?=	${PREFIX}/bin/eric4:devel/eric4
 
 I18N_LANG?=	ru
 INSTALL_CMD?=	install-i18n.py -p ${STAGEDIR}

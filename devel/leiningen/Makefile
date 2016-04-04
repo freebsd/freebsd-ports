@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	leiningen
-PORTVERSION=	2.5.3
+PORTVERSION=	2.6.1
 CATEGORIES=	devel lisp java
 MASTER_SITES=	GH:source1 \
 		https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:source2
@@ -21,7 +21,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:shells/bash
 
 PLIST_FILES=	bin/lein \
 		etc/bash_completion.d/_lein.bash \

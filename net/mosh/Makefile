@@ -12,7 +12,7 @@ COMMENT=	Mobile terminal that supports intermittent connectivity
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USE_PERL5=	run
 GNU_CONFIGURE=	yes

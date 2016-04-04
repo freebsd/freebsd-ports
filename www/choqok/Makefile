@@ -3,6 +3,7 @@
 
 PORTNAME=	choqok
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	www kde
 MASTER_SITES=	SF/${PORTNAME}/Choqok/
 
@@ -12,9 +13,9 @@ COMMENT=	KDE micro-blogging client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson \
-		libqoauth.so:${PORTSDIR}/net/qoauth \
-		libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4
+LIB_DEPENDS=	libqjson.so:devel/qjson \
+		libqoauth.so:net/qoauth \
+		libtelepathy-qt4.so:net-im/telepathy-qt4
 
 USE_KDE4=	attica automoc4 kdelibs kdeprefix
 USE_QT4=	gui imageformats_run network \

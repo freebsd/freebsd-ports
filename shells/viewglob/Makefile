@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ add-on to bash and zsh
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		pkgconfig
 USE_XORG=	x11

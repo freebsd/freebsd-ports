@@ -16,7 +16,7 @@ COMMENT=	Convert any document from and to any LibreOffice supported format
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+RUN_DEPENDS=	xsltproc:textproc/libxslt
 
 USES=		python
 NO_BUILD=	yes

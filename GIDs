@@ -137,6 +137,7 @@ bs:*:220:
 rtpproxy:*:222:
 postgrey:*:225:
 sqlgrey:*:226:
+_hfm:*:227:
 kismet:*:229:
 aprsd:*:240:
 tnc:*:241:
@@ -243,6 +244,7 @@ dahdi:*:843:asterisk
 subsonic:*:844:
 sogod:*:846:
 domoticz:*:847:
+graylog:*:848:
 guacamole:*:899:
 fossy:*:901:www
 scanlogd:*:902:

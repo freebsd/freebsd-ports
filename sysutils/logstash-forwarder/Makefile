@@ -9,7 +9,7 @@ COMMENT=	Collect logs locally in preparation for processing elsewhere!
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elasticsearch

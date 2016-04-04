@@ -11,7 +11,7 @@ COMMENT=	Go support for Google's protocol buffers
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
+RUN_DEPENDS=	protoc:devel/protobuf
 
 GO_PKGNAME=	github.com/golang/protobuf
 GO_TARGET=	${GO_PKGNAME}/proto \

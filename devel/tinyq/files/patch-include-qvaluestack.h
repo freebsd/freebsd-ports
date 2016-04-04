@@ -1,6 +1,6 @@
---- include/qvaluestack.h.orig	2002-10-17 15:08:58.000000000 +0000
-+++ include/qvaluestack.h	2012-09-03 22:17:15.000000000 +0000
-@@ -50,12 +50,12 @@
+--- include/qvaluestack.h.orig	2002-10-17 15:08:58 UTC
++++ include/qvaluestack.h
+@@ -50,12 +50,12 @@ class QValueStack 
  public:
      QValueStack() {}
     ~QValueStack() {}

@@ -3,7 +3,7 @@
 
 PORTNAME=	ekg2
 PORTVERSION=	0.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://pl.ekg2.org/
@@ -11,9 +11,9 @@ MASTER_SITES=	http://pl.ekg2.org/
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu, Jabber, and IRC client
 
-LIB_DEPENDS=	libgadu.so:${PORTSDIR}/polish/libgadu \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libgadu.so:polish/libgadu \
+		libgnutls.so:security/gnutls \
+		libexpat.so:textproc/expat2
 
 LICENSE=	GPLv2
 
@@ -49,16 +49,16 @@ UNICODE_DESC=	Unicode support (experimental)
 XOSD_DESC=	Xosd plugin
 
 ASPELL_CONFIGURE_WITH=	aspell
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
-ASPELL_RUN_DEPENDS=	${LOCALBASE}/share/aspell/pl.rws:${PORTSDIR}/polish/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
+ASPELL_RUN_DEPENDS=	${LOCALBASE}/share/aspell/pl.rws:polish/aspell
 
 GPG_CONFIGURE_WITH=	gpg
-GPG_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
-			libgpg-error.so:${PORTSDIR}/security/libgpg-error
-GPG_RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+GPG_LIB_DEPENDS=	libgpgme.so:security/gpgme \
+			libgpg-error.so:security/libgpg-error
+GPG_RUN_DEPENDS=	gpg:security/gnupg
 
 GSM_CONFIGURE_WITH=	libgsm
-GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 
 GTK2_CONFIGURE_WITH=	gtk
 GTK2_USE=		GNOME=gtk2
@@ -74,12 +74,12 @@ PYTHON_USES=		python shebangfix
 SHEBANG_FILES=		contrib/python/notify-bubble.py
 
 SQLITE_CONFIGURE_WITH=	sqlite3
-SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 UNICODE_CONFIGURE_ENABLE=	unicode
 
 XOSD_CONFIGURE_WITH=	libxosd
-XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+XOSD_LIB_DEPENDS=	libxosd.so:misc/xosd
 
 post-patch:
 # needs newer headers for O_NOFOLLOW flag

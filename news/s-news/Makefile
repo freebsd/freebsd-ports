@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.lost.org.uk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple news server for hosts with one or two users
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 CONFLICTS=	leafnode-[1-9]* nntp-[0-9]*
 

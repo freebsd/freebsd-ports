@@ -20,7 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 #.if !defined(WITHOUT_SSL)
-#LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
+#LIB_DEPENDS+=	gnutls.13:security/gnutls
 #CONFIGURE_ARGS+=--enable-ssl=gnutls
 #.else
 CONFIGURE_ARGS+=--enable-ssl=no

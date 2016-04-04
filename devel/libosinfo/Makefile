@@ -9,9 +9,9 @@ MASTER_SITES=	https://fedorahosted.org/releases/l/i/libosinfo/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for managing OS information for virtualization
 
-LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
-BUILD_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids \
-		${LOCALBASE}/share/usbids/usb.ids:${PORTSDIR}/misc/usbids
+LIB_DEPENDS=	libsoup-gnome-2.4.so:devel/libsoup-gnome
+BUILD_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids \
+		${LOCALBASE}/share/usbids/usb.ids:misc/usbids
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake libtool pathfix pkgconfig

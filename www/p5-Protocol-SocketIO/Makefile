@@ -14,7 +14,7 @@ COMMENT=	Socket.IO protocol implementation
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+BUILD_DEPENDS=	p5-JSON>=0:converters/p5-JSON
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

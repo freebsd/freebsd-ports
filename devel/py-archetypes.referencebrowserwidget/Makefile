@@ -13,11 +13,11 @@ COMMENT=	Implementation of referencebrowser widget for Archetypes
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.formlib>=0:${PORTSDIR}/devel/py-zope.formlib \
-		${PYTHON_PKGNAMEPREFIX}plone.app.form>=0:${PORTSDIR}/www/py-plone.app.form \
-		${PYTHON_PKGNAMEPREFIX}plone.app.jquerytools>=1.1:${PORTSDIR}/www/py-plone.app.jquerytools
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component \
+		${PYTHON_PKGNAMEPREFIX}zope.formlib>=0:devel/py-zope.formlib \
+		${PYTHON_PKGNAMEPREFIX}plone.app.form>=0:www/py-plone.app.form \
+		${PYTHON_PKGNAMEPREFIX}plone.app.jquerytools>=1.1:www/py-plone.app.jquerytools
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

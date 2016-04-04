@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	artifactory
-PORTVERSION=	4.5.2
+PORTVERSION=	4.7.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://bintray.com/artifact/download/jfrog/artifactory/
 DISTNAME=	jfrog-${PORTNAME}-oss-${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSER
 LICENSE_FILE_APACHE20=	${WRKSRC}/tomcat/LICENSE
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-oss-${PORTVERSION}
 

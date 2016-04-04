@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Internet Relay Chat (IRC) client designed for GNOME 3
 
-LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libgjs.so:${PORTSDIR}/lang/gjs
+LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib \
+		libgjs.so:lang/gjs
 
 PORTSCOUT=	limitw:1,even
 

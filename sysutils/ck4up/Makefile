@@ -9,7 +9,7 @@ MASTER_SITES=	http://jue.li/crux/ck4up/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks http and ftp sites for updates
 
-RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/gdbm.so:${PORTSDIR}/databases/ruby-gdbm
+RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/gdbm.so:databases/ruby-gdbm
 
 NO_BUILD=	yes
 USE_RUBY=	yes

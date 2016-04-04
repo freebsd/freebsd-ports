@@ -1,0 +1,10 @@
+This set of modules tries to provide a correct and usable
+implementation of RFC 2047
+"MIME Part Three: Message Header Extensions for Non-ASCII Text"
+
+- As a replacement of 'text' tokens, for example in a Subject header
+- As a replacement for a 'word' entity within a 'phrase',
+  for example, one that precedes an address in a From,
+  To, or Cc header
+
+WWW: http://search.cpan.org/dist/Email-MIME-RFC2047/

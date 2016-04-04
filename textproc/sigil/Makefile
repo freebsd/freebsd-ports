@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sigil
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,16 +10,16 @@ COMMENT=	WYSIWYG ePub editor
 
 LICENSE=	GPLv3+
 
-LIB_DEPENDS=	libminizip.so:${PORTSDIR}/archivers/minizip \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+LIB_DEPENDS=	libminizip.so:archivers/minizip \
+		libpcre.so:devel/pcre \
+		libhunspell-1.3.so:textproc/hunspell
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Sigil-Ebook
 GH_PROJECT=	Sigil
 
-USES=		cmake compiler:c++11-lib desktop-file-utils pkgconfig \
-		python:3 shebangfix
+USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
+		pkgconfig python:3 shebangfix
 SHEBANG_FILES=	src/Resource_Files/plugin_launchers/python/*.py \
 		src/Resource_Files/python3lib/*.py
 USE_QT5=	concurrent gui network printsupport svg webkit widgets \

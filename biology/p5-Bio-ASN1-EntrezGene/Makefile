@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Regular expression-based Perl Parser for NCBI Entrez Gene
 
-BUILD_DEPENDS=	p5-bioperl>=0:${PORTSDIR}/biology/p5-bioperl
+BUILD_DEPENDS=	p5-bioperl>=0:biology/p5-bioperl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

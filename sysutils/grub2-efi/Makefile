@@ -14,11 +14,11 @@ COMMENT=	Multiboot EFI boot loader
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/bin/mformat:${PORTSDIR}/emulators/mtools \
-		${LOCALBASE}/bin/grub-mkrescue:${PORTSDIR}/sysutils/grub2-pcbsd
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		help2man:${PORTSDIR}/misc/help2man
+RUN_DEPENDS=	${LOCALBASE}/bin/mformat:emulators/mtools \
+		${LOCALBASE}/bin/grub-mkrescue:sysutils/grub2-pcbsd
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+		${LOCALBASE}/bin/bash:shells/bash \
+		help2man:misc/help2man
 
 WRKSRC=		${WRKDIR}/grub-${PORTVERSION}
 SSP_UNSAFE=	yes

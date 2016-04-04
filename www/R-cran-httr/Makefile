@@ -11,11 +11,11 @@ COMMENT=	Tools for Working with URLs and HTTP
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-jsonlite>0:${PORTSDIR}/converters/R-cran-jsonlite \
-		R-cran-mime>0:${PORTSDIR}/misc/R-cran-mime \
-		R-cran-curl>=0.9.1:${PORTSDIR}/ftp/R-cran-curl \
-		R-cran-openssl>=0.8:${PORTSDIR}/security/R-cran-openssl \
-		R-cran-R6>0:${PORTSDIR}/devel/R-cran-R6
+RUN_DEPENDS=	R-cran-jsonlite>0:converters/R-cran-jsonlite \
+		R-cran-mime>0:misc/R-cran-mime \
+		R-cran-curl>=0.9.1:ftp/R-cran-curl \
+		R-cran-openssl>=0.8:security/R-cran-openssl \
+		R-cran-R6>0:devel/R-cran-R6
 
 USES=	cran:auto-plist
 

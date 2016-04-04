@@ -13,7 +13,7 @@ COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

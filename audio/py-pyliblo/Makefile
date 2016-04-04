@@ -13,9 +13,9 @@ COMMENT=	Python wrapper for the Liblo OSC Library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pyrex>=0.9.4:${PORTSDIR}/devel/pyrex \
-		${LOCALBASE}/bin/cython:${PORTSDIR}/lang/cython
-LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
+BUILD_DEPENDS=	pyrex>=0.9.4:devel/pyrex \
+		${LOCALBASE}/bin/cython:lang/cython
+LIB_DEPENDS=	liblo.so:audio/liblo
 
 USES=		python
 USE_PYTHON=	distutils

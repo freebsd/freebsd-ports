@@ -13,7 +13,7 @@ COMMENT=	Oracle Java ${JRE_VERSION} Runtime Environment for Linux
 DEPRECATED=	Unsupported and known for multiple security vulnerabilities
 EXPIRATION_DATE=2016-02-29
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:java/javavmwrapper
 
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted

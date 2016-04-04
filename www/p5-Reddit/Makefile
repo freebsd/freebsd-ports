@@ -11,15 +11,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module for interacting with Reddit
 
-BUILD_DEPENDS=	p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
-		p5-common-sense>=3.2:${PORTSDIR}/devel/p5-common-sense
-RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-common-sense>=3.2:${PORTSDIR}/devel/p5-common-sense \
-		p5-JSON>=2:${PORTSDIR}/converters/p5-JSON \
-		p5-HTTP-Cookies>=6:${PORTSDIR}/www/p5-HTTP-Cookies \
-		p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Module-Install>=0:devel/p5-Module-Install \
+		p5-Moose>=0:devel/p5-Moose \
+		p5-ExtUtils-MakeMaker>=6.42:devel/p5-ExtUtils-MakeMaker \
+		p5-common-sense>=3.2:devel/p5-common-sense
+RUN_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
+		p5-common-sense>=3.2:devel/p5-common-sense \
+		p5-JSON>=2:converters/p5-JSON \
+		p5-HTTP-Cookies>=6:www/p5-HTTP-Cookies \
+		p5-libwww>=5.829:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure

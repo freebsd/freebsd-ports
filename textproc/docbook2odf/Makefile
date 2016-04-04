@@ -11,11 +11,11 @@ COMMENT=	Convert docbook document to Oasis Open Document
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsablot.so:${PORTSDIR}/textproc/sablotron \
-		libxslt.so:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		zip:${PORTSDIR}/archivers/zip \
-		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip
+LIB_DEPENDS=	libsablot.so:textproc/sablotron \
+		libxslt.so:textproc/libxslt
+RUN_DEPENDS=	convert:graphics/ImageMagick \
+		zip:archivers/zip \
+		p5-Archive-Zip>=0:archivers/p5-Archive-Zip
 
 USES=		desktop-file-utils perl5 shebangfix
 SHEBANG_FILES=	utils/maketests utils/${PORTNAME}

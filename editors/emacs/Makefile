@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU
@@ -88,17 +88,17 @@ CANNA_CONFIGURE_ON=	--with-canna \
 			--with-canna-libraries=${LOCALBASE}/lib
 CANNA_PATCH_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ LOCAL
 CANNA_PATCHFILES=	emacs24.4canna-20141030.diff.gz
-CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
+CANNA_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
 
 SOUND_CONFIGURE_OFF=	--with-sound=no
 ALSA_CONFIGURE_ON=	--with-sound=alsa
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 OSS_CONFIGURE_ON=	--with-sound=oss
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=	dbus
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 
 XML_USE=		GNOME=libxml2
@@ -117,7 +117,7 @@ GTK2_CONFIGURE_ON=	--with-x-toolkit=gtk2
 GTK3_USE=		GNOME=gtk30
 GTK3_CONFIGURE_ON=	--with-x-toolkit=gtk3
 
-XAW3D_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_ON=	--with-x-toolkit=athena
 
 XAW_USE=		XORG=xaw
@@ -131,29 +131,29 @@ SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=	tiff
 
-GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CONFIGURE_WITH=	gif
 
-PNG_LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS+=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
 
 XPM_USE=		XORG=xpm
 XPM_CONFIGURE_WITH=	xpm
 
 XFT_USE=		XORG=xft
-XFT_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2
 XFT_CONFIGURE_WITH=	xft
 
-M17N_LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
+M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=	m17n-flt
 
-OTF_LIB_DEPENDS=	libotf.so:${PORTSDIR}/print/libotf
+OTF_LIB_DEPENDS=	libotf.so:print/libotf
 OTF_CONFIGURE_WITH=	libotf
 
-MAGICK_LIB_DEPENDS=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
+MAGICK_LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick
 MAGICK_CONFIGURE_WITH=	imagemagick
 
 GSETTINGS_USE=		gnome=glib20

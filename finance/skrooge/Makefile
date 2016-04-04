@@ -8,14 +8,13 @@ MASTER_SITES=	KDE/stable/${PORTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 personal finance manager
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libgrantlee_gui.so:${PORTSDIR}/devel/grantlee \
-		libkactivities.so:${PORTSDIR}/x11/kactivities
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
+LIB_DEPENDS=	libofx.so:finance/libofx \
+		libqca.so:devel/qca \
+		libgrantlee_gui.so:devel/grantlee \
+		libkactivities.so:x11/kactivities
 
-USES=		cmake:outsource gettext shared-mime-info tar:xz
-USE_SQLITE=	yes
+USES=		cmake:outsource gettext shared-mime-info sqlite:3 tar:xz
 USE_QT4=	qmake_build moc_build uic_build rcc_build designer_build \
 		corelib dbus gui script sql webkit xml sql-sqlite3_run
 USE_KDE4=	automoc4 kdelibs kdeprefix pimlibs

@@ -17,7 +17,7 @@ COMMENT=	VI Like Emacs -- X11 version
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	reflex:${PORTSDIR}/textproc/reflex
+BUILD_DEPENDS=	reflex:textproc/reflex
 
 USES=		pkgconfig shebangfix tar:tgz
 SHEBANG_FILES=	macros/lxvile macros/lxvile-fonts perl/vileget
@@ -57,7 +57,7 @@ XAW_DESC=		X Athena Widgets
 XAW_USE=		XORG=xaw
 XAW_CONFIGURE_ON=	--with-screen=athena
 XAW3D_DESC=		X Athena Widgets with 3D effect
-XAW3D_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_ON=	--enable-colored-menus \
 			--with-Xaw3d \
 			--with-screen=xaw3d

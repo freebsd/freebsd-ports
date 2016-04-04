@@ -11,8 +11,8 @@ COMMENT=	Murmur is the server component of Mumble
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USERS=		murmur
 GROUPS=		murmur
@@ -39,7 +39,7 @@ BONJOUR_DESC=	Bonjour Support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICE}
-LIB_DEPENDS+=	libIce.so:${PORTSDIR}/devel/ice
+LIB_DEPENDS+=	libIce.so:devel/ice
 .else
 CONFIG+=	no-ice
 .endif
@@ -51,7 +51,7 @@ CONFIG+=	no-dbus
 .endif
 
 .if ${PORT_OPTIONS:MBONJOUR}
-LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=	libdns_sd.so:net/mDNSResponder
 .else
 CONFIG+=	no-bonjour
 .endif

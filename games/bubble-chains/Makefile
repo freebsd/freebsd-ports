@@ -3,28 +3,27 @@
 
 PORTNAME=	bubble-chains
 PORTVERSION=	0.1.1
+DISTVERSIONSUFFIX=	-src
 PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://bubble-chains.sintegrial.com/files/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	chains-${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	chains-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
-EXTRACT_SUFX=	-src.7z
-EXTRACT_ONLY=	chains-${DISTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTFILES:N*\:icons:C/:.*//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The aim is to remove all of the targets on each level
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
-BUILD_DEPENDS=		7z:${PORTSDIR}/archivers/p7zip
+BROKEN=		unfetchable
+DEPRECATED=	does not fetch
+EXPIRATION_DATE=2016-04-23
 
 WRKSRC=		${WRKDIR}/chains-${DISTVERSION}-src
 
-USES=		dos2unix qmake
+USES=		7z dos2unix qmake
 DOS2UNIX_GLOB=	*.pro *.cpp  *.h *.ui *.ui *.rc *.htm *.dat *.css
 USE_SDL=	sdl image mixer
 USE_GL=		glut glew glu
@@ -38,14 +37,6 @@ OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Bubble Chains" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
-
-P7ZIP_CMD=	${LOCALBASE}/bin/7z
-P7ZIP_ARGS=	x -o${WRKDIR}
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${P7ZIP_CMD} ${P7ZIP_ARGS} \
-		${_DISTDIR}/chains-${DISTVERSION}${EXTRACT_SUFX}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/games/chains|${DATADIR}|' \

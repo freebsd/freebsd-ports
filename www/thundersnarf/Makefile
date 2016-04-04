@@ -42,7 +42,7 @@ USE_PHP+=	pdo_pgsql pgsql
 .  endif
 .endif
 
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 
 SUB_FILES=	pkg-message
 

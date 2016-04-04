@@ -26,7 +26,7 @@ MSF_DESC=	Enable Metasploit Framework integration
 .include <bsd.port.options.mk>
 
 .if  ${PORT_OPTIONS:MMSF}
-RUN_DEPENDS+=	${LOCALBASE}/bin/msfcli:${PORTSDIR}/security/metasploit
+RUN_DEPENDS+=	${LOCALBASE}/bin/msfcli:security/metasploit
 .endif
 
 post-patch:

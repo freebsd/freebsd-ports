@@ -11,10 +11,10 @@ COMMENT=	Interface to Git for Emacs
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	dash.el>=2.12.1:${PORTSDIR}/devel/dash.el \
-		with-editor-${EMACS_PORT_NAME}>=2.5.0:${PORTSDIR}/editors/with-editor
-RUN_DEPENDS=	dash.el>=2.12.1:${PORTSDIR}/devel/dash.el \
-		with-editor-${EMACS_PORT_NAME}>=2.5.0:${PORTSDIR}/editors/with-editor
+BUILD_DEPENDS=	dash.el>=2.12.1:devel/dash.el \
+		with-editor-${EMACS_PORT_NAME}>=2.5.0:editors/with-editor
+RUN_DEPENDS=	dash.el>=2.12.1:devel/dash.el \
+		with-editor-${EMACS_PORT_NAME}>=2.5.0:editors/with-editor
 
 USE_GITHUB=	yes
 
@@ -26,10 +26,10 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=			DOCS GIT_SUBVERSION
 GIT_SUBVERSION_DESC=		Use devel/git-subversion as backend
-GIT_SUBVERSION_BUILD_DEPENDS=	git-subversion>0:${PORTSDIR}/devel/git-subversion
-GIT_SUBVERSION_BUILD_DEPENDS_OFF=	git>0:${PORTSDIR}/devel/git
-GIT_SUBVERSION_RUN_DEPENDS=	git-subversion>0:${PORTSDIR}/devel/git-subversion
-GIT_SUBVERSION_RUN_DEPENDS_OFF=	git>0:${PORTSDIR}/devel/git
+GIT_SUBVERSION_BUILD_DEPENDS=	git-subversion>0:devel/git-subversion
+GIT_SUBVERSION_BUILD_DEPENDS_OFF=	git>0:devel/git
+GIT_SUBVERSION_RUN_DEPENDS=	git-subversion>0:devel/git-subversion
+GIT_SUBVERSION_RUN_DEPENDS_OFF=	git>0:devel/git
 
 .include <bsd.port.pre.mk>
 

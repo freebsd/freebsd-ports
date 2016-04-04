@@ -1,0 +1,5 @@
+ctypes.sh is a bash plugin that provides a foreign function interface directly
+in your shell. In other words, it allows you to call routines in shared
+libraries from within bash.
+
+WWW: http://ctypes.sh

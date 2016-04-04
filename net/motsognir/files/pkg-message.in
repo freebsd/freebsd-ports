@@ -1,0 +1,32 @@
+==========================================================================
+Please configure Motsognir using
+
+  %%PREFIX%%/etc/motsognir.conf
+
+
+Add the following line to /etc/rc.conf to enable Motsognir:
+
+  motsognir_enable="YES"
+
+
+Then you can start Motsognir daemon by issuing the following command:
+
+  %%PREFIX%%/etc/rc.d/motsognir start
+
+
+You might need to add the following line to /etc/syslog.conf
+
+  daemon.*                                        /var/log/daemon.log
+
+if you want to keep log informations of Motsognir. Some of them go to
+/var/log/messages, but connection informations go to LOG_INFO.
+
+
+Motsognir will serve files in /var/gopher/ per default.
+
+
+Note that Motsognir tries to use an inet6/ipv6 socket. Therefore it needs
+access to an interface where ipv6 is enabled (for instance if you run
+Motsognir in a jail). This holds even if you want to bind it to an ipv4
+address.
+==========================================================================

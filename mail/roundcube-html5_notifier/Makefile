@@ -12,8 +12,8 @@ COMMENT=	HTML5 desktop notifier plugin for roundcube
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
-BUILD_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=1.0:mail/roundcube
+BUILD_DEPENDS=	roundcube>=1.0:mail/roundcube
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kitist

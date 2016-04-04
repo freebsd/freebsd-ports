@@ -1,0 +1,4 @@
+bin/qpage
+@sample etc/qpage.conf.sample
+man/man1/qpage.1.gz
+@dir(uucp,dialer,0775) /var/spool/qpage

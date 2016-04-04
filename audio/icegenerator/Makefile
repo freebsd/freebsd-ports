@@ -10,7 +10,7 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/0.5.5-pre2
 MAINTAINER=		funkblaster@mail.ru
 COMMENT=		Direct streaming generator for Icecast/Shoutcast
 
-LIB_DEPENDS=		libshout.so:${PORTSDIR}/audio/libshout
+LIB_DEPENDS=		libshout.so:audio/libshout
 
 GNU_CONFIGURE=		yes
 USES=			gmake pkgconfig

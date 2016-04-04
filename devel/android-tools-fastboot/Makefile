@@ -16,7 +16,7 @@ LICENSE=	APACHE20 BSD2CLAUSE PD
 LICENSE_COMB=	multi
 LICENSE_FILE_PD=	${WRKSRC}/libselinux/NOTICE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	android jbeich:extras,libselinux

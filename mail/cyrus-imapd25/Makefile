@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -14,8 +14,8 @@ COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
+		libpcre.so:devel/pcre
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].*
 
@@ -54,14 +54,15 @@ BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${LOCALBASE}/lib
 CLAMAV_DESC=		Use ClamAV
 CLAMAV_CONFIGURE_WITH=	clamav
-CLAMAV_LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
+CLAMAV_LIB_DEPENDS=	libclamav.so:security/clamav
 DRAC_DESC=		Enable DRAC support
 DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
-DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:mail/drac
 HTTP_DESC=		Enable HTTP (beta quality)
 HTTP_CONFIGURE_ENABLE=	http
-HTTP_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
-			libical.so:${PORTSDIR}/devel/libical
+HTTP_LIB_DEPENDS=	libjansson.so:devel/jansson \
+			libical.so:devel/libical
+HTTP_USES=		pkgconfig
 HTTP_USE=		GNOME=libxml2
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
@@ -84,7 +85,7 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 REPLICATION_DESC=	Enable replication (experimental)
 REPLICATION_CONFIGURE_ENABLE=replication
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
@@ -113,7 +114,6 @@ GSSAPI_MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 MANDIRS=	${CYRUS_PREFIX}/man
 
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
 SUB_FILES=	pkg-message pkg-install pkg-deinstall cyrus-imapd-man.conf
 
@@ -138,6 +138,9 @@ CYRUS_PERL_MAN1=cyradm
 CYRUS_PERL_MAN3=Cyrus::Annotator::Daemon Cyrus::Annotator::Message \
 		Cyrus::IMAP Cyrus::IMAP::Admin Cyrus::IMAP::IMSP \
 		Cyrus::IMAP::Shell Cyrus::SIEVE::managesieve
+
+CONFS=		cmu-backend.conf cmu-frontend.conf normal.conf prefork.conf \
+		small.conf
 
 .include <bsd.port.options.mk>
 
@@ -200,6 +203,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 		${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
+		${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 		${STAGEDIR}${CYRUS_PREFIX}/bin/mkimap
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
@@ -223,12 +228,17 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
-		"! ( -name Makefile.dist -o -name Makefile -o -name .gitignore )"
+		"! ( -name Makefile.dist -o -name Makefile \
+		-o -name .gitignore -o -name htmlstrip.Po \
+		-o -name htmlstrip.c )"
 
-# there are already files in examplesdir at that point, so no
+# there are already files in EXAMPLESDIR at that point, so no
 # need to create it.
 post-install-EXAMPLES-on:
-	cd ${WRKSRC}/master/conf && ${COPYTREE_SHARE} . \
+.for f in ${CONFS:Nnormal.conf}
+	@${INSTALL_DATA} ${WRKSRC}/master/conf/${f} \
 		${STAGEDIR}${EXAMPLESDIR}
+	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
+.endfor
 
 .include <bsd.port.mk>

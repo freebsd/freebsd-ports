@@ -12,8 +12,8 @@ COMMENT=	PHP_Depend design quality metrics for PHP packages
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/pear.pdepend.org.reg:${PORTSDIR}/devel/pear-channel-pdepend
-RUN_DEPENDS=	${PEARDIR}/.channels/pear.pdepend.org.reg:${PORTSDIR}/devel/pear-channel-pdepend
+BUILD_DEPENDS=	${PEARDIR}/.channels/pear.pdepend.org.reg:devel/pear-channel-pdepend
+RUN_DEPENDS=	${PEARDIR}/.channels/pear.pdepend.org.reg:devel/pear-channel-pdepend
 
 USES=	pear
 PEAR_CHANNEL=	pdepend

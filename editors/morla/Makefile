@@ -11,12 +11,12 @@ MASTER_SITES=	http://www.morlardf.net/src/ \
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	RDF editor
 
-LIB_DEPENDS=	libnxml.so:${PORTSDIR}/textproc/libnxml \
-		librdf.so:${PORTSDIR}/textproc/redland \
-		libraptor2.so:${PORTSDIR}/textproc/raptor2 \
-		libcurl.so:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
-RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS=	libnxml.so:textproc/libnxml \
+		librdf.so:textproc/redland \
+		libraptor2.so:textproc/raptor2 \
+		libcurl.so:ftp/curl
+BUILD_DEPENDS=	dot:graphics/graphviz
+RUN_DEPENDS=	dot:graphics/graphviz
 
 OPTIONS_DEFINE=	XULRUNNER
 XULRUNNER_DESC=	Xulrunner as JavaScript engine

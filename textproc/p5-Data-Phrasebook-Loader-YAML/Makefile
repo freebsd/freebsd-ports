@@ -13,10 +13,10 @@ COMMENT=	Loader class for phrasebook implementations using YAML
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Data-Phrasebook>=0.24:${PORTSDIR}/textproc/p5-Data-Phrasebook \
-		p5-YAML>=0.35:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-Data-Phrasebook>=0.24:textproc/p5-Data-Phrasebook \
+		p5-YAML>=0.35:textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Distribution>=0:${PORTSDIR}/devel/p5-Test-Distribution
+TEST_DEPENDS=	p5-Test-Distribution>=0:devel/p5-Test-Distribution
 
 USES=		perl5
 USE_PERL5=	configure

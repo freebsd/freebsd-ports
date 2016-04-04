@@ -13,8 +13,8 @@ COMMENT=	Email::Sender with Net::SMTP::TLS (Eg. Gmail)
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Email-Sender>=0.091660:${PORTSDIR}/mail/p5-Email-Sender \
-		p5-Net-SMTP-TLS-ButMaintained>=0.2:${PORTSDIR}/mail/p5-Net-SMTP-TLS-ButMaintained
+RUN_DEPENDS=	p5-Email-Sender>=0.091660:mail/p5-Email-Sender \
+		p5-Net-SMTP-TLS-ButMaintained>=0.2:mail/p5-Net-SMTP-TLS-ButMaintained
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

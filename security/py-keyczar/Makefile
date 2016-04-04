@@ -13,7 +13,7 @@ COMMENT=	Toolkit for safe and simple cryptography
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:security/py-pycrypto
 
 NO_ARCH=	yes
 USES=		python:2

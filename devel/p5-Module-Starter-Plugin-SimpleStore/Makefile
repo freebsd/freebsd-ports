@@ -14,7 +14,7 @@ COMMENT=	Provide methods of retrieving templates for Module::Starter
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Starter>=1.32:${PORTSDIR}/devel/p5-Module-Starter
+BUILD_DEPENDS=	p5-Module-Starter>=1.32:devel/p5-Module-Starter
 
 USES=		perl5
 USE_PERL5=	configure

@@ -8,5 +8,6 @@ following plugin ports are available:
  - databases/qt5-sqldrivers-pgsql	PostgreSQL
  - databases/qt5-sqldrivers-sqlite2	SQLite 2
  - databases/qt5-sqldrivers-sqlite3	SQLite 3
+ - databases/qt5-sqldrivers-tds		FreeTDS
 
 ======================================================================

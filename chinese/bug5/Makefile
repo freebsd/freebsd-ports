@@ -11,7 +11,7 @@ COMMENT=	Big5/GBK <-> UTF-8 translating layer in terminal
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	libbsdconv.so:converters/bsdconv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini

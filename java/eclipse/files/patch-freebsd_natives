@@ -47,7 +47,7 @@
 @@ -15,10 +15,10 @@
      <artifactId>eclipse.platform.resources</artifactId>
      <groupId>eclipse.platform.resources</groupId>
-     <version>4.5.1-SNAPSHOT</version>
+     <version>4.5.2-SNAPSHOT</version>
 -    <relativePath>../../</relativePath>
 +    <relativePath>../../../../</relativePath>
    </parent>
@@ -133,7 +133,7 @@
 @@ -15,10 +15,10 @@
      <artifactId>eclipse.platform.resources</artifactId>
      <groupId>eclipse.platform.resources</groupId>
-     <version>4.5.1-SNAPSHOT</version>
+     <version>4.5.2-SNAPSHOT</version>
 -    <relativePath>../../</relativePath>
 +    <relativePath>../../../../</relativePath>
    </parent>
@@ -209,7 +209,7 @@
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.swt.gtk.linux.x86; singleton:=true
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86; singleton:=true
- Bundle-Version: 3.104.1.qualifier
+ Bundle-Version: 3.104.2.qualifier
  Bundle-ManifestVersion: 2
  Bundle-Localization: fragment
 @@ -30,7 +30,7 @@
@@ -230,7 +230,7 @@
    <groupId>org.eclipse.swt</groupId>
 -  <artifactId>org.eclipse.swt.gtk.linux.x86</artifactId>
 +  <artifactId>org.eclipse.swt.gtk.freebsd.x86</artifactId>
-   <version>3.104.1-SNAPSHOT</version>
+   <version>3.104.2-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>
@@ -291,7 +291,7 @@
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.swt.gtk.linux.x86_64; singleton:=true
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86_64; singleton:=true
- Bundle-Version: 3.104.1.qualifier
+ Bundle-Version: 3.104.2.qualifier
  Bundle-ManifestVersion: 2
  Bundle-Localization: fragment
 @@ -30,7 +30,7 @@
@@ -328,7 +328,7 @@
    <groupId>org.eclipse.swt</groupId>
 -  <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
 +  <artifactId>org.eclipse.swt.gtk.freebsd.x86_64</artifactId>
-   <version>3.104.1-SNAPSHOT</version>
+   <version>3.104.2-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>

@@ -11,8 +11,8 @@ EXTRACT_SUFX=	-src.zip
 MAINTAINER=	peterj@FreeBSD.org
 COMMENT=	Java bindings for OpenGL
 
-LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
-BUILD_DEPENDS=	${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr
+LIB_DEPENDS=	libdrm.so:graphics/libdrm
+BUILD_DEPENDS=	${JAVALIBDIR}/antlr.jar:devel/antlr
 
 NO_WRKSUBDIR=	yes
 

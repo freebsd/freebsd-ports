@@ -11,7 +11,7 @@ COMMENT=	Cross platform C++ library, used by OPAL
 
 LICENSE=	MPL
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 CONFLICTS=	pwlib-1.*
 
@@ -59,7 +59,7 @@ PLIST_SUB+=	DEBUG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
 CONFIGURE_ARGS+=--enable-pulse
 .else
 CONFIGURE_ARGS+=--disable-pulse
@@ -71,14 +71,14 @@ PLLIB_VIDEO=1
 .endif
 
 .if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 CONFIGURE_ARGS+=--enable-odbc
 .else
 CONFIGURE_ARGS+=--disable-odbc
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:audio/alsa-lib
 CONFIGURE_ARGS+=--enable-alsa
 PLIST_SUB+=	ALSA=""
 .else
@@ -96,8 +96,8 @@ PLIST_SUB+=	BSDVIDEO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MV4L}
-BUILD_DEPENDS+=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS+=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+BUILD_DEPENDS+=	v4l_compat>=0:multimedia/v4l_compat
+LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l
 CONFIGURE_ARGS+=--enable-v4l --enable-v4l2
 PLIST_SUB+=	V4L=""
 PTLIB_VIDEO=1
@@ -137,8 +137,8 @@ CONFIGURE_ARGS+=--disable-openldap
 #
 ##enable libavc1394
 #.if defined(WITH_AVC1394)
-#LIB_DEPENDS+=	avc1394.2:${PORTSDIR}/devel/libavc1394 \
-#		dv.4:${PORTSDIR}/multimedia/libdv
+#LIB_DEPENDS+=	avc1394.2:devel/libavc1394 \
+#		dv.4:multimedia/libdv
 #CONFIGURE_ARGS+=	--enable-avc
 #PLIST_SUB+=	AVC1394=""
 #.else
@@ -148,7 +148,7 @@ PLIST_SUB+=	AVC1394="@comment "
 #
 ##enable libdc1394
 #.if defined(WITH_DC1394)
-#LIB_DEPENDS+=	dc1394.2[0-9]:${PORTSDIR}/multimedia/libdc1394
+#LIB_DEPENDS+=	dc1394.2[0-9]:multimedia/libdc1394
 #CONFIGURE_ARGS+=	--enable-dc
 #PLIST_SUB+=	DC1394=""
 #.else

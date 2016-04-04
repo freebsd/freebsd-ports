@@ -19,4 +19,6 @@ USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	msgpack
 
+IGNORE_WITH_PHP=	70
+
 .include <bsd.port.mk>

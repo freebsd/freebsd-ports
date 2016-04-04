@@ -11,7 +11,7 @@ COMMENT=	Frontend to the SSH client, using the Gtk+ toolkit
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem
 
 PLIST_FILES=	bin/gputty
 

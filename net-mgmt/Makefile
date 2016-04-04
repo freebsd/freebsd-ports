@@ -46,6 +46,7 @@
     SUBDIR += coovachilli
     SUBDIR += cowpatty
     SUBDIR += cricket
+    SUBDIR += crmsh
     SUBDIR += darkstat
     SUBDIR += devmon
     SUBDIR += devmon-templates
@@ -128,6 +129,7 @@
     SUBDIR += nagios-check_relayd_status
     SUBDIR += nagios-check_smartmon
     SUBDIR += nagios-check_tftp
+    SUBDIR += nagios-check_zpools
     SUBDIR += nagios-geom
     SUBDIR += nagios-openldap-plugins
     SUBDIR += nagios-pf-plugin
@@ -194,6 +196,7 @@
     SUBDIR += p5-AnyEvent-SNMP
     SUBDIR += p5-BigIP-iControl
     SUBDIR += p5-Cflow
+    SUBDIR += p5-Cisco-CopyConfig
     SUBDIR += p5-Cisco-Reconfig
     SUBDIR += p5-Data-Validate-IP
     SUBDIR += p5-FusionInventory-Agent
@@ -344,5 +347,9 @@
     SUBDIR += zabbix24-frontend
     SUBDIR += zabbix24-proxy
     SUBDIR += zabbix24-server
+    SUBDIR += zabbix3-agent
+    SUBDIR += zabbix3-frontend
+    SUBDIR += zabbix3-proxy
+    SUBDIR += zabbix3-server
 
 .include <bsd.port.subdir.mk>

@@ -12,7 +12,7 @@ COMMENT=	Ruby bindings for libcurl
 LICENSE=	RUBY
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

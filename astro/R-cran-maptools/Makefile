@@ -11,7 +11,7 @@ COMMENT=	Tools for reading and handling spatial objects
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	R-cran-sp>=1.0.11:${PORTSDIR}/math/R-cran-sp
+RUN_DEPENDS=	R-cran-sp>=1.0.11:math/R-cran-sp
 
 USES=	cran:auto-plist
 

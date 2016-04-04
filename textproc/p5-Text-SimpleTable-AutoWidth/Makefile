@@ -13,8 +13,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Moo>0:${PORTSDIR}/devel/p5-Moo \
-	p5-Text-SimpleTable>0:${PORTSDIR}/textproc/p5-Text-SimpleTable
+	p5-Moo>0:devel/p5-Moo \
+	p5-Text-SimpleTable>0:textproc/p5-Text-SimpleTable
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

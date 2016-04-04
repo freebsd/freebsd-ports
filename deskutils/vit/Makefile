@@ -11,9 +11,9 @@ COMMENT=	Curses-based interface to taskwarrior
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
-    		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
-		task:${PORTSDIR}/deskutils/taskwarrior
+RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses \
+		p5-Time-HiRes>=0:devel/p5-Time-HiRes \
+		task:deskutils/taskwarrior
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 shebangfix

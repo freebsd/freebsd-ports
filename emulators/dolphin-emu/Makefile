@@ -15,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 # Notes on dependencies:
 # - keep enet from externals as Dolphin's version diverges
 # - xxhash and SOIL are not (yet) in ports
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libSoundTouch.so:${PORTSDIR}/audio/soundtouch \
-		libmbedtls.so.9:${PORTSDIR}/security/polarssl13 \
-		libsfml-system.so:${PORTSDIR}/devel/sfml
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		liblzo2.so:archivers/lzo2 \
+		libpng.so:graphics/png \
+		libSoundTouch.so:audio/soundtouch \
+		libmbedtls.so.9:security/polarssl13 \
+		libsfml-system.so:devel/sfml
 
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin
@@ -54,24 +54,24 @@ CMAKE_ARGS+=	-DDOLPHIN_WC_BRANCH:STRING="stable" \
 OPTIONS_DEFINE=	PULSEAUDIO PORTAUDIO DEBUG FRAMEDUMPS UPNP NLS
 OPTIONS_DEFAULT=	PORTAUDIO FRAMEDUMPS UPNP NLS
 OPTIONS_SUB=	yes
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_ON=	-DDISABLE_PULSEAUDIO:BOOL=OFF
 PULSEAUDIO_CMAKE_OFF=	-DDISABLE_PULSEAUDIO:BOOL=ON
 PORTAUDIO_DESC=	Enable PortAudio (mic) support
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_CMAKE_ON=	-DDISABLE_PORTAUDIO:BOOL=OFF
 PORTAUDIO_CMAKE_OFF=	-DDISABLE_PORTAUDIO:BOOL=ON
 DEBUG_MAKE_ENV=	VERBOSE=yes
 DEBUG_CMAKE_ON=	-DFASTLOG:BOOL=ON
 DEBUG_CMAKE_OFF=	-DFASTLOG:BOOL=OFF
 FRAMEDUMPS_DESC=	Encode framedumps in AVI format
-FRAMEDUMPS_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-			libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
-			libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
-			libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+FRAMEDUMPS_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+			libavformat.so:multimedia/ffmpeg \
+			libswscale.so:multimedia/ffmpeg \
+			libavutil.so:multimedia/ffmpeg
 FRAMEDUMPS_CMAKE_ON=	-DENCODE_FRAMEDUMPS:BOOL=ON
 FRAMEDUMPS_CMAKE_OFF=	-DENCODE_FRAMEDUMPS:BOOL=OFF
-UPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 UPNP_CMAKE_ON=	-DUSE_UPNP:BOOL=ON
 UPNP_CMAKE_OFF=	-DUSE_UPNP:BOOL=OFF
 NLS_USES=	gettext

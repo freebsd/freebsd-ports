@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomeprint
 PORTVERSION=	2.18.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,7 @@ USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=CUPS
 
 .if ${PORT_OPTIONS:MCUPS}
 CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=		libgnomecups-1.0.so:${PORTSDIR}/print/libgnomecups
+LIB_DEPENDS+=		libgnomecups-1.0.so:print/libgnomecups
 PLIST_SUB+=		CUPS:=""
 .else
 CONFIGURE_ARGS+=	--without-cups

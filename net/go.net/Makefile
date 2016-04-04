@@ -11,7 +11,7 @@ COMMENT=	Additional Net packages for Go
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.text:${PORTSDIR}/textproc/go.text
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.text:textproc/go.text
 
 GO_PKGNAME=	code.google.com/p/go.net
 GO_TARGET=	${GO_PKGNAME}/dict		\

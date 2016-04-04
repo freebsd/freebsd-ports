@@ -142,6 +142,7 @@ bs:*:220:220::0:0:Big Sister:/usr/local/bigsister:/bin/sh
 rtpproxy:*:222:222::0:0:& user:/nonexistent:/sbin/nologin
 postgrey:*:225:225::0:0:Postgrey Owner:/nonexistent:/usr/sbin/nologin
 sqlgrey:*:226:226::0:0:SQLgrey Owner:/nonexistent:/usr/sbin/nologin
+_hfm:*:227:227::0:0:hfm daemon:/nonexistent:/usr/sbin/nologin
 aprsd:*:240:240::0:0:aprsd:/nonexistent:/bin/sh
 tnc:*:241:241::0:0:aprsd:/nonexistent:/bin/sh
 prosody:*:242:242::0:0:Prosody Jabber Server:/nonexistent:/usr/sbin/nologin
@@ -254,6 +255,7 @@ munin:*:842:842::0:0:Munin:/var/munin:/usr/sbin/nologin
 subsonic:*:844:844::0:0:Subsonic standalone-server:/nonexistent:/usr/sbin/nologin
 sogod:*:846:846::0:0:SOGo groupware:/nonexistent:/usr/sbin/nologin
 domoticz:*:847:847::0:0:domoticz user:/nonexistent:/usr/sbin/nologin
+graylog:*:848:848::0:0:Graylog user:/nonexistent:/usr/sbin/nologin
 guacamole:*:899:899::0:0:Guacamole user:/nonexistent:/usr/sbin/nologin
 fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash
 scanlogd:*:902:902::0:0:scanlogd user:/nonexistent:/usr/sbin/nologin

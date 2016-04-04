@@ -11,7 +11,7 @@ COMMENT=	Qt interface for JACK Audio Connection Kit
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libjack.so:audio/jack
 
 USES=		gmake
 QT_NONSTANDARD=	yes
@@ -31,10 +31,10 @@ OPTIONS_DEFAULT=	QT4
 
 TOOLKIT_DESC=		Preferred Qt toolkit
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa_seq
 
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_CONFIGURE_ENABLE=	portaudio
 
 QT4_USE=		qt4=corelib,dbus,gui,xml \

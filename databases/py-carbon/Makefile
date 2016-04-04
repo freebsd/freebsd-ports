@@ -11,9 +11,9 @@ COMMENT=	Backend storage application for graphite
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}txamqp>=0.3:${PORTSDIR}/net/py-txamqp \
-		${PYTHON_PKGNAMEPREFIX}whisper>=0.9.10:${PORTSDIR}/databases/py-whisper \
-		${PYTHON_PKGNAMEPREFIX}django18>=1.4:${PORTSDIR}/www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}txamqp>=0.3:net/py-txamqp \
+		${PYTHON_PKGNAMEPREFIX}whisper>=0.9.10:databases/py-whisper \
+		${PYTHON_PKGNAMEPREFIX}django18>=1.4:www/py-django18
 
 USE_PYTHON=	distutils
 USES=		python:2 twisted:run

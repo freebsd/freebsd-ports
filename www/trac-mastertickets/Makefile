@@ -15,7 +15,7 @@ COMMENT=	Support for ticket dependencies
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	trac>=0.12:www/trac
 
 WRKSRC=			${WRKDIR}/${DISTNAME}
 

@@ -12,9 +12,9 @@ COMMENT=	SlimKit surface modeling tools
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libgfx.so:${PORTSDIR}/graphics/libgfx
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libgfx.so:graphics/libgfx
 
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit
 BUILD_WRKSRC=		${WRKSRC}/mixkit/src

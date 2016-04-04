@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Simple configuration automation
 
-BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-YAML>=0:textproc/p5-YAML
+RUN_DEPENDS=	p5-YAML>=0:textproc/p5-YAML
 
 USES=		perl5
 USE_PERL5=	configure

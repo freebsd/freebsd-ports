@@ -1,7 +1,7 @@
---- Makefile.in.orig	2015-02-12 00:14:57.000000000 +0100
-+++ Makefile.in	2015-03-14 23:50:41.000000000 +0100
-@@ -18,7 +18,7 @@
- SBINDIR = $(DESTDIR)@sbindir@
+--- Makefile.in.orig	2016-02-29 13:35:45 UTC
++++ Makefile.in
+@@ -21,7 +21,7 @@ SBINDIR = $(DESTDIR)@sbindir@
+ LIBDIR =  $(DESTDIR)@libdir@
  
  # /lib/ejabberd/
 -EJABBERDDIR = $(DESTDIR)@libdir@/ejabberd
@@ -9,8 +9,8 @@
  
  # /share/doc/ejabberd
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
-@@ -44,10 +44,10 @@
- MSGSDIR = $(PRIVDIR)/msgs
+@@ -50,10 +50,10 @@ MSGSDIR = $(PRIVDIR)/msgs
+ SQLDIR = $(PRIVDIR)/sql
  
  # /var/lib/ejabberd/
 -SPOOLDIR = $(DESTDIR)@localstatedir@/lib/ejabberd
@@ -23,7 +23,16 @@
  
  # /var/lib/ejabberd/.erlang.cookie
  COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
-@@ -116,9 +116,7 @@
+@@ -117,7 +117,7 @@ JOIN_PATHS=$(if $(wordlist 2,1000,$(1)),
+ VERSIONED_DEP=$(if $(DEP_$(1)_VERSION),$(DEP_$(1)_VERSION),$(1))
+ 
+ ELIXIR_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 5,1000,$(1))
+-DEPS_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 3,1000,$(1))
++DEPS_TO_DEST=$(LIBDIR)/ejabberd-$(PORTVERSION)/lib $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 3,1000,$(1))
+ MAIN_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,ejabberd) $(1)
+ TO_DEST_SINGLE=$(if $(subst XdepsX,,X$(word 1,$(1))X),$(call MAIN_TO_DEST,$(1)),$(if $(subst XlibX,,X$(word 3,$(1))X),$(call DEPS_TO_DEST,$(1)),$(call ELIXIR_TO_DEST,$(1))))
+ TO_DEST=$(foreach path,$(1),$(call JOIN_PATHS,$(call TO_DEST_SINGLE,$(subst /, ,$(path)))))
+@@ -174,9 +174,7 @@ install: all copy-files
  	#
  	# Configuration files
  	$(INSTALL) -d -m 750 $(G_USER) $(ETCDIR)
@@ -34,7 +43,7 @@
  	$(SED) -e "s*{{rootdir}}*@prefix@*" \
  		-e "s*{{installuser}}*@INSTALLUSER@*" \
  		-e "s*{{bindir}}*@bindir@*" \
-@@ -126,16 +124,15 @@
+@@ -184,16 +182,15 @@ install: all copy-files
  		-e "s*{{sysconfdir}}*@sysconfdir@*" \
  		-e "s*{{localstatedir}}*@localstatedir@*" \
  		-e "s*{{docdir}}*@docdir@*" \
@@ -56,18 +65,16 @@
 +	$(INSTALL) -m 555 $(G_USER) ejabberdctl.example $(SBINDIR)/ejabberdctl
  	# Elixir binaries
  	[ -d $(BINDIR) ] || $(INSTALL) -d -m 755 $(BINDIR)
- 	-[ -f deps/elixir/bin/iex ] && $(INSTALL) -m 550 $(G_USER) deps/elixir/bin/iex $(BINDIR)/iex
-@@ -196,6 +193,7 @@
+ 	[ -f deps/elixir/bin/iex ] && $(INSTALL) -m 550 $(G_USER) deps/elixir/bin/iex $(BINDIR)/iex || true
+@@ -223,11 +220,13 @@ install: all copy-files
  	chmod -R 750 $(LOGDIR)
  	#
  	# Documentation
 +ifndef NOPORTDOCS
  	$(INSTALL) -d $(DOCDIR)
- 	[ -f doc/dev.html ] \
- 		&& $(INSTALL) -m 644 doc/dev.html $(DOCDIR) \
-@@ -208,6 +206,7 @@
- 		|| echo "No doc/guide.pdf was built"
- 	$(INSTALL) -m 644 doc/*.png $(DOCDIR)
+ 	[ -f doc/guide.html ] \
+ 		&& $(INSTALL) -m 644 doc/guide.html $(DOCDIR) \
+ 		|| echo "Documentation not included in sources"
  	$(INSTALL) -m 644 COPYING $(DOCDIR)
 +endif
  

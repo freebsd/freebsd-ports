@@ -12,9 +12,9 @@ EXTRACT_SUFX=
 MAINTAINER=	beastie@tardisi.com
 COMMENT=	Check the availability of a DHCP server using unicast delivery
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins \
-		p5-IO-Interface>=0:${PORTSDIR}/net/p5-IO-Interface \
-		p5-Net-DHCP-Watch>=0:${PORTSDIR}/net/p5-Net-DHCP-Watch
+RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/utils.pm:net-mgmt/nagios-plugins \
+		p5-IO-Interface>=0:net/p5-IO-Interface \
+		p5-Net-DHCP-Watch>=0:net/p5-Net-DHCP-Watch
 
 USES=		perl5
 USE_PERL5=	run

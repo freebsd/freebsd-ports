@@ -13,8 +13,8 @@ COMMENT=	Advanced molecular editor and viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	eigen2>2:${PORTSDIR}/math/eigen2
-LIB_DEPENDS=	libopenbabel.so:${PORTSDIR}/science/openbabel
+BUILD_DEPENDS=	eigen2>2:math/eigen2
+LIB_DEPENDS=	libopenbabel.so:science/openbabel
 
 USES=		cmake desktop-file-utils pkgconfig tar:bzip2
 USE_GL=		glu gl
@@ -35,10 +35,10 @@ OPTIONS_SUB=	yes
 
 PYTHON_USES=		python:2
 PYTHON_BUILD_DEPENDS=	${PYNUMPY} \
-			${PYTHON_PKGNAMEPREFIX}sip>0:${PORTSDIR}/devel/py-sip
-PYTHON_LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
+			${PYTHON_PKGNAMEPREFIX}sip>0:devel/py-sip
+PYTHON_LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
 PYTHON_RUN_DEPENDS=	${PYNUMPY} \
-			${PYTHON_PKGNAMEPREFIX}sip>0:${PORTSDIR}/devel/py-sip
+			${PYTHON_PKGNAMEPREFIX}sip>0:devel/py-sip
 PYTHON_CMAKE_ON=	-DENABLE_PYTHON=ON \
 			-DPYTHON_INCLUDE_DIR:PATH=${WRKDIR}/include/${PYTHON_VERSION}
 PYTHON_CMAKE_OFF=	-DENABLE_PYTHON=OFF

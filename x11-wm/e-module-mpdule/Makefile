@@ -9,9 +9,9 @@ MASTER_SITES=	LOCAL/gblach/enlightenment/
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	MPD module for Enlightenment
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
+BUILD_DEPENDS=	enlightenment:x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment:x11-wm/enlightenment
+LIB_DEPENDS=	libmpd.so:audio/libmpd
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ COMMENT=	Graphical disk map Utility
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		gettext gmake pathfix perl5 pkgconfig
 USE_PERL5=	build

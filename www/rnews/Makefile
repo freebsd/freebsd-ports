@@ -28,10 +28,10 @@ USE_PHP+=	gd
 .endif
 
 .if ${PORT_OPTIONS:MMYSQLSERVER}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:databases/mysql${MYSQL_VER}-server
 .endif
 
-RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS+=	curl:ftp/curl
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADE

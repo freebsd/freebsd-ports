@@ -23,28 +23,28 @@ SHEBANG_FILES=	html/js/makemini.pl mibs/process.pl scripts/agent-local/bind \
 		scripts/agent-local/tinydns scripts/apache-stats.py \
 		scripts/check_mk_agent scripts/cron.sh scripts/cron-hourly.sh \
 		scripts/cron-minute.sh scripts/get-geshi.sh \
-	       	scripts/get-jpgraph.sh scripts/ifAlias \
+		scripts/get-jpgraph.sh scripts/ifAlias \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
 		scripts/Migration/XML_Conversion/convert.sh \
 		scripts/Migration/XML_Conversion/destwork.sh \
 		scripts/Migration/XML_Conversion/mkdir.sh validate.php \
-	       	scripts/postfix-queues scripts/removespikes.php \
+		scripts/postfix-queues scripts/removespikes.php \
 		scripts/removespikes.pl scripts/watchmaillog/watchmaillog.pl
 USE_PHP=	ctype filter gd json mcrypt mysql session snmp tokenizer xml
 WANT_PHP_CLI=	yes
 
 NO_BUILD=	yes
 
-RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool \
-		dot:${PORTSDIR}/graphics/graphviz \
-		Magick-config:${PORTSDIR}/graphics/ImageMagick \
-		mtr:${PORTSDIR}/net/mtr-nox11 \
-		${LOCALBASE}/share/pear/Net/IPv4.php:${PORTSDIR}/net/pear-Net_IPv4 \
-		${LOCALBASE}/share/pear/Net/IPv6.php:${PORTSDIR}/net/pear-Net_IPv6 \
-		snmpget:${PORTSDIR}/net-mgmt/net-snmp \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	rrdtool:databases/rrdtool \
+		dot:graphics/graphviz \
+		Magick-config:graphics/ImageMagick \
+		mtr:net/mtr-nox11 \
+		${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4 \
+		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6 \
+		snmpget:net-mgmt/net-snmp \
+		bash:shells/bash
 
 OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES
 OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES
@@ -55,13 +55,13 @@ MYSQLD_DESC=	Use local MySQL server
 WMIC_DESC=	Enable support for WMI polling
 PYPOLLER_DESC=	Enable Python Poller Wrapper
 
-FPING_RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
-IPMITOOL_RUN_DEPENDS=	ipmitool:${PORTSDIR}/sysutils/ipmitool
-LIBVIRT_RUN_DEPENDS=	virsh:${PORTSDIR}/devel/libvirt
-NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
-NMAP_RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
-PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:${PORTSDIR}/databases/py-MySQLdb
-WMIC_RUN_DEPENDS=	wmic:${PORTSDIR}/net-mgmt/wmi-client
+FPING_RUN_DEPENDS=	fping:net/fping
+IPMITOOL_RUN_DEPENDS=	ipmitool:sysutils/ipmitool
+LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
+NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
+NMAP_RUN_DEPENDS=	nmap:security/nmap
+PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
+WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 MYSQLD_USE=		MYSQL=server
 MYSQLD_USE_OFF=		MYSQL=client
 
@@ -69,10 +69,10 @@ SUB_FILES+=	pkg-message
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 
 ROOT_FILES=	addhost.php adduser.php	alerts.php build-base.php build.sql \
-	       	billing-calculate.php callback.php \
-	       	check-services.php config_to_json.php daily.php daily.sh \
-	       	delhost.php discovery.php dist-pollers.php irc.php \
-	       	poll-billing.php poller.php poller-service.py poller-wrapper.py renamehost.php \
+		billing-calculate.php callback.php \
+		check-services.php config_to_json.php daily.php daily.sh \
+		delhost.php discovery.php dist-pollers.php irc.php \
+		poll-billing.php poller.php poller-service.py poller-wrapper.py renamehost.php \
 		snmp-scan.php snmptrap.php syslog.php validate.php
 
 ROOT_DIRS=	contrib html includes lib mibs scripts sql-schema

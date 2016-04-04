@@ -3,7 +3,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	18
+PORTREVISION=	19
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/%SUBDIR%/
@@ -16,11 +16,11 @@ COMMENT=	XMPP/Jabber server daemon
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libpth.so:${PORTSDIR}/devel/pth-hard \
-		libidn.so:${PORTSDIR}/dns/libidn \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libpth.so:devel/pth-hard \
+		libidn.so:dns/libidn \
+		libgnutls.so:security/gnutls \
+		libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE= IPV6 MYSQL PGSQL DOCS
 

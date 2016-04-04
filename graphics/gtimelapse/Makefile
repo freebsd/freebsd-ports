@@ -13,7 +13,7 @@ COMMENT=	Application for capturing images to generate timelapse videos
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

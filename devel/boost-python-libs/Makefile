@@ -18,9 +18,9 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 
-LIB_DEPENDS+=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_thread.so:devel/boost-libs
 
-BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
+BUILD_DEPENDS+=	${BJAM}:devel/boost-jam
 
 do-build:
 	@${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/v2/site-config.jam

@@ -13,7 +13,7 @@ COMMENT=	Perl module for Embeddable Fulltext Search Engine
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	senna-cfg:${PORTSDIR}/textproc/senna
+BUILD_DEPENDS=	senna-cfg:textproc/senna
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

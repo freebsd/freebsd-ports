@@ -1,0 +1,8 @@
+The Open Vulnerability Assessment System (OpenVAS) is a framework of several
+services and tools offering a comprehensive and powerful vulnerability
+scanning and vulnerability management solution.
+
+This package contains the OpenVAS Scanner which executes Network Vulnerability
+Tests (NVTs) provided by the OpenVAS NVT Feed or a commercial feed service.
+
+WWW: http://www.openvas.org/

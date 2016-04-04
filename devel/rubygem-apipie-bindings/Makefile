@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apipie-bindings
-PORTVERSION=	0.0.15
+PORTVERSION=	0.0.16
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,9 +12,9 @@ COMMENT=	Ruby bindings for API calls that are documented with Apipie
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-json>=1.2.1:${PORTSDIR}/devel/rubygem-json \
-		rubygem-oauth>=0.4.7:${PORTSDIR}/net/rubygem-oauth \
-		rubygem-rest-client>=1.6.5:${PORTSDIR}/www/rubygem-rest-client
+RUN_DEPENDS=	rubygem-json>=1.2.1:devel/rubygem-json \
+		rubygem-oauth>=0.4.7:net/rubygem-oauth \
+		rubygem-rest-client>=1.6.5:www/rubygem-rest-client
 
 NO_ARCH=	yes
 USE_RUBY=	yes

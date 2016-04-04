@@ -10,12 +10,12 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clocks for GNOME 3
 
-BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
-		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
-		libgweather-3.so:${PORTSDIR}/net/libgweather
-RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
+BUILD_DEPENDS=	geoclue>=0:net/geoclue \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libgeocode-glib.so:net/geocode-glib \
+		libgweather-3.so:net/libgweather
+RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limitw:1,even
 

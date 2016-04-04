@@ -1,0 +1,11 @@
+--- clients/no_client/CMakeLists.txt.orig	2016-02-04 15:32:31 UTC
++++ clients/no_client/CMakeLists.txt
+@@ -106,7 +106,7 @@ install(FILES
+ 
+ install(FILES ${CMAKE_SOURCE_DIR}/common/osSpecifics.h DESTINATION include/libzrtpcpp/common)
+ 
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${zrtplibName}.pc DESTINATION ${LIBDIRNAME}/pkgconfig)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lib${zrtplibName}.pc DESTINATION ${LIBDIRNAME}data/pkgconfig)
+ 
+ install(TARGETS ${zrtplibName} DESTINATION ${LIBDIRNAME})
+ 

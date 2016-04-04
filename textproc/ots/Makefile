@@ -13,7 +13,7 @@ COMMENT=	Open Text Summarizer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		autoreconf gettext libtool pathfix pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile.am

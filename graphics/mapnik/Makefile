@@ -2,125 +2,87 @@
 # $FreeBSD$
 
 PORTNAME=	mapnik
-PORTVERSION=	2.2.0
+PORTVERSION=	3.0.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	15
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://mapnik.s3.amazonaws.com/dist/v${PORTVERSION}/
 
 MAINTAINER=	littlesavage@rambler.ru
 COMMENT=	Free Toolkit For Developing Mapping Applications
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
-		libicuuc.so:${PORTSDIR}/devel/icu \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
-BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
-		${PYTHON_PKGNAMEPREFIX}icu>=0.8.1:${PORTSDIR}/devel/py-icu
+LIB_DEPENDS=	libicuuc.so:devel/icu \
+		libboost_system.so:devel/boost-libs \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
-USES=		pkgconfig python scons tar:bzip2
+BROKEN_powerpc=	does not install: runs out of virtual memory
+BROKEN_FreeBSD_9=	does not build: lack of c++11 support
+
+USES=		compiler:c++11-lib pkgconfig python scons tar:bzip2
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-WARNING_CXXFLAGS?=	-w
-
-INPUT_PLUGINS=	geojson python raster shape
-
-NO_OPTIONS_SORT= yes
-OPTIONS_DEFINE=	CAIRO CSV GDAL OGR OSM POSTGIS SQLITE3 JPEG PNG TIFF
-OPTIONS_DEFAULT=	CAIRO CSV GDAL OGR OSM POSTGIS SQLITE3 JPEG PNG TIFF
-
-CAIRO_DESC=	Enable cairo rendering
-CSV_DESC=	CSV input plugin
-GDAL_DESC=	GDAL input plugin
-OGR_DESC=	OGR input plugin
-OSM_DESC=	OSM input plugin
-POSTGIS_DESC=	PostGIS input plugin
-SQLITE3_DESC=	SQLite input plugin
-
-OPTIONS_SUB=	yes
+MAKE_ARGS=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`" \
+		CUSTOM_CFLAGS="${CFLAGS}" CUSTOM_CXXFLAGS="${CXXFLAGS}" \
+		CUSTOM_LDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	*
 
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS.md CHANGELOG.md README.md
+INPUT_PLUGINS=	csv raster shape geojson topojson
 
-DOCSRCDIR2=	${WRKSRC}/docs
-DOCSDIR2=	${DOCSDIR}/docs
-DOC_FILES2=	*
+OPTIONS_DEFINE=	CAIRO JPEG PNG TIFF WEBP PROJ
+OPTIONS_DEFAULT=CAIRO GDAL OGR POSTGIS PGRASTER SQLITE3 JPEG PNG TIFF PROJ WEBP
+OPTIONS_GROUP=	INPUT
+OPTIONS_GROUP_INPUT=	GDAL OGR POSTGIS PGRASTER SQLITE3
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+INPUT_DESC=	Input plugins
+GDAL_DESC=	GDAL input plugin
+OGR_DESC=	OGR input plugin
+POSTGIS_DESC=	PostGIS input plugin
+PGRASTER_DESC=	PGraster input plugin
+SQLITE3_DESC=	SQLite input plugin
 
-.if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:${PORTSDIR}/graphics/py-cairo
-.else
-MAKE_ARGS+=	CAIRO=False
-.endif
+PROJ_DESC=	proj4 support
 
-.if ${PORT_OPTIONS:MCSV}
-INPUT_PLUGINS+=	csv
-.endif
+CAIRO_DESC=	Enable cairo rendering
 
-.if ${PORT_OPTIONS:MGDAL}
-INPUT_PLUGINS+=	gdal
-LIB_DEPENDS+=	libgdal.so:${PORTSDIR}/graphics/gdal
-.endif
+GDAL_VARS=		INPUT_PLUGINS+=gdal
+GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
+OGR_VARS=		INPUT_PLUGINS+=ogr
+OGR_LIB_DEPENDS=	libgdal.so:graphics/gdal
+POSTGIS_VARS=		INPUT_PLUGINS+=postgis
+POSTGIS_USES=		pgsql
+PGRASTER_VARS=		INPUT_PLUGINS+=pgraster
+PGRASTER_USES=		pgsql
+SQLITE3_VARS=		INPUT_PLUGINS+=sqlite
+SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-.if ${PORT_OPTIONS:MOGR}
-INPUT_PLUGINS+=	ogr
-LIB_DEPENDS+=	libgdal.so:${PORTSDIR}/graphics/gdal
-.endif
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_MAKE_ARGS_OFF=	PNG=False
+JPEG_USES=		jpeg
+JPEG_MAKE_ARGS_OFF=	JPEG=False
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_MAKE_ARGS_OFF=	TIFF=False
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+WEBP_MAKE_ARGS_OFF=	WEBP=False
+PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
+PROJ_MAKE_ARGS_OFF=	PROJ=False
 
-.if ${PORT_OPTIONS:MOSM}
-INPUT_PLUGINS+=	osm
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-.endif
-
-.if ${PORT_OPTIONS:MPOSTGIS}
-INPUT_PLUGINS+=	postgis
-USES+=		pgsql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE3}
-INPUT_PLUGINS+=	sqlite
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
-BUILD_DEPENDS+=	sqlite3>=3.7.12:${PORTSDIR}/databases/sqlite3
-.endif
-
-.if ${PORT_OPTIONS:MJPEG}
-USES+=		jpeg
-.else
-MAKE_ARGS+=	JPEG=False
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=   libpng.so:${PORTSDIR}/graphics/png
-.else
-MAKE_ARGS+=	PNG=False
-.endif
-
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=   libtiff.so:${PORTSDIR}/graphics/tiff
-.else
-MAKE_ARGS+=	TIFF=False
-.endif
+CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
+CAIRO_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:graphics/py-cairo
+CAIRO_MAKE_ARGS_OFF=	CAIRO=False
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "powerpc"
-IGNORE=		does not install: runs out of virtual memory
+.if ${COMPILER_TYPE} == gcc
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
 .endif
 
-MAKE_ARGS+=	WARNING_CXXFLAGS=${WARNING_CXXFLAGS}
-MAKE_ARGS+=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`"
-MAKE_ARGS+=	JOBS=${MAKE_JOBS_NUMBER}
-MAKE_ARGS+=	${MAKE_ENV}
-
-pre-configure:
-.if ${PORT_OPTIONS:MSQLITE3}
+pre-configure-SQLITE3-on:
 	@if ! ${LOCALBASE}/bin/sqlite3 :memory: 'create virtual table foo using rtree(pkid, xmin, xmax, ymin, ymax)' > /dev/null 2>&1; then \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "The SQLite plugin requires libsqlite3 built with RTREE support"; \
@@ -128,7 +90,6 @@ pre-configure:
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	fi
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
@@ -136,9 +97,15 @@ post-patch:
 		${WRKSRC}/SConstruct
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mapnik-index \
+		${STAGEDIR}${PREFIX}/bin/mapnik-render \
+		${STAGEDIR}${PREFIX}/bin/shapeindex
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mapnik/input/*.input
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "AUTHORS.md CHANGELOG.md README.md docs" \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

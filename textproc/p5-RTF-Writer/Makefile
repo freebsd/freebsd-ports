@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for generating documents in Rich Text Format
 
-BUILD_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
+BUILD_DEPENDS=	p5-Image-Size>=0:graphics/p5-Image-Size
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

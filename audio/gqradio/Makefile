@@ -22,7 +22,7 @@ LIBS+=		-L${LOCALBASE}/lib -lm -lX11
 
 OPTIONS_DEFINE=		DOCS V4L
 
-V4L_BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
+V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 V4L_CONFIGURE_ENV_OFF=	ac_cv_header_linux_videodev_h=no
 
 post-patch:

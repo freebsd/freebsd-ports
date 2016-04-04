@@ -29,14 +29,14 @@ MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS=	PREFIX="${LOCALBASE}" DEST_PREFIX="${PREFIX}" CC="${CC}"
 
 .if ${PORT_OPTIONS:MULTRAGETOPT}
-LIB_DEPENDS+=	libultragetopt.so:${PORTSDIR}/devel/ultragetopt
+LIB_DEPENDS+=	libultragetopt.so:devel/ultragetopt
 MAKE_ARGS+=	USE_ULTRAGETOPT=yes
 .else
 MAKE_ARGS+=	USE_ULTRAGETOPT=no
 .endif
 
 .if ${PORT_OPTIONS:MIMLIB2}
-LIB_DEPENDS+=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=	libImlib2.so:graphics/imlib2
 MAKE_ARGS+=	USE_IMLIB2=yes
 .else
 MAKE_ARGS+=	USE_IMLIB2=no

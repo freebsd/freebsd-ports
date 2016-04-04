@@ -1,6 +1,6 @@
---- configure.orig	Sat Nov 20 21:39:50 2004
-+++ configure	Wed Jul 27 23:13:31 2005
-@@ -22804,7 +22804,7 @@
+--- configure.orig	2008-12-17 11:09:36 UTC
++++ configure
+@@ -36624,7 +36624,7 @@ if test "${ra_cv_lib_mysqlclient+set}" =
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -9,7 +9,7 @@
     do
        LIBS="$save_LIBS -lm -L$path -lmysqlclient"
        cat >conftest.$ac_ext <<_ACEOF
-@@ -22925,7 +22925,7 @@
+@@ -36742,7 +36742,7 @@ if test "${ra_cv_lib_pq+set}" = set; the
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  

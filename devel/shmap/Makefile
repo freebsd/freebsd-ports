@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared-memory-based hashmaps
 
-LIB_DEPENDS=	libmm.so:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	libmm.so:devel/mm
 
 USES=		libtool
 GNU_CONFIGURE=	yes

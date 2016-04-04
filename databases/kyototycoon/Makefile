@@ -13,7 +13,7 @@ COMMENT=	Handy cache/storage server
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libkyotocabinet.so:${PORTSDIR}/databases/kyotocabinet
+LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 
 OPTIONS_DEFINE=	DOCS
 

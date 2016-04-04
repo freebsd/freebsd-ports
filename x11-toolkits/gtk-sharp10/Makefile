@@ -11,8 +11,8 @@ PKGNAMESUFFIX=	10
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
+BUILD_DEPENDS=	mono:lang/mono
+RUN_DEPENDS=	mono:lang/mono
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -24,7 +24,7 @@ USE_GNOME=	gtkhtml3 vte librsvg2 libgnomecanvas \
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' -o -name 'gapi-parser' | ${XARGS} \
-	    	${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|'
+		${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|'
 	@${REINPLACE_CMD} -e 's|enable_gda=yes|enable_gda=no|g ; \
 		s|enable_gnomedb=yes|enable_gnomedb=no|g ; \
 		s|libgtkhtml-3.8|libgtkhtml-3.14|g' ${WRKSRC}/configure

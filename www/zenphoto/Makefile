@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.4.11
+PORTVERSION=	1.4.12
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	www
 
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	gd gettext json mbstring mysql pcre session
+USE_PHP=	gd gettext json mbstring mysqli pcre session
 USES=		cpe
 WANT_PHP_WEB=	yes
 

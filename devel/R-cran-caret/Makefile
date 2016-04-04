@@ -11,11 +11,11 @@ COMMENT=	Classification and Regression Training
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	R-cran-ggplot2>0:${PORTSDIR}/graphics/R-cran-ggplot2 \
-		R-cran-car>0:${PORTSDIR}/math/R-cran-car \
-		R-cran-foreach>0:${PORTSDIR}/devel/R-cran-foreach \
-		R-cran-plyr>0:${PORTSDIR}/devel/R-cran-plyr \
-		R-cran-reshape2>0:${PORTSDIR}/devel/R-cran-reshape2
+RUN_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
+		R-cran-car>0:math/R-cran-car \
+		R-cran-foreach>0:devel/R-cran-foreach \
+		R-cran-plyr>0:devel/R-cran-plyr \
+		R-cran-reshape2>0:devel/R-cran-reshape2
 
 USES=	cran:auto-plist
 

@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2015-04-22 14:45:15 UTC
+--- CMakeLists.txt.orig	2015-10-16 02:14:39 UTC
 +++ CMakeLists.txt
-@@ -367,8 +367,8 @@ SET(FTGLInclude ${PROJECT_SOURCE_DIR}/th
- SET(FTGLLibrary ftgl-tulip-${TulipMMVersion})
+@@ -501,8 +501,8 @@ IF(NOT BUILD_CORE_ONLY)
+   SET(Tess2Library tess2-tulip-${TulipMMVersion})
  ENDIF(NOT BUILD_CORE_ONLY)
  
--SET(OGDFInclude ${PROJECT_SOURCE_DIR}/thirdparty/OGDF)
+-SET(OGDFInclude ${PROJECT_SOURCE_DIR}/thirdparty/OGDF/include)
 -SET(OGDFLibrary OGDF-tulip-${TulipMMVersion})
-+#SET(OGDFInclude ${PROJECT_SOURCE_DIR}/thirdparty/OGDF)
++#SET(OGDFInclude ${PROJECT_SOURCE_DIR}/thirdparty/OGDF/include)
 +#SET(OGDFLibrary OGDF-tulip-${TulipMMVersion})
  SET(QHULLInclude ${PROJECT_SOURCE_DIR}/thirdparty)
  SET(UTF8CppInclude ${PROJECT_SOURCE_DIR}/thirdparty/utf8-cpp/source)

@@ -12,8 +12,8 @@ DISTFILES=	# none
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Nagios plug-in to get some common NetSNMP-exported information
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/utils.pm:net-mgmt/nagios-plugins \
+		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

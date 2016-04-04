@@ -10,3 +10,54 @@
    linux-musl*)
      os_include_dir="os/generic"
      ;;
+--- libstdc++-v3/config/os/bionic/ctype_base.h.orig
++++ libstdc++-v3/config/os/bionic/ctype_base.h
+@@ -38,6 +38,18 @@
+     // Non-standard typedefs.
+     typedef const int* 		__to_type;
+ 
++#ifdef _CTYPE_U
++#define _U _CTYPE_U
++#define _L _CTYPE_L
++#define _D _CTYPE_D
++#define _S _CTYPE_S
++#define _P _CTYPE_P
++#define _C _CTYPE_C
++#define _X _CTYPE_X
++#define _B _CTYPE_B
++#define _N _CTYPE_D
++#endif
++
+     // NB: Offsets into ctype<char>::_M_table force a particular size
+     // on the mask type. Because of this, we don't use an enum.
+     typedef char 		mask;
+--- libstdc++-v3/src/c++11/futex.cc.orig
++++ libstdc++-v3/src/c++11/futex.cc
+@@ -27,7 +27,11 @@
+ #if defined(_GLIBCXX_HAVE_LINUX_FUTEX) && ATOMIC_INT_LOCK_FREE > 1
+ #include <chrono>
+ #include <climits>
++#ifdef __ANDROID__
++#include <sys/syscall.h>
++#else
+ #include <syscall.h>
++#endif
+ #include <unistd.h>
+ #include <sys/time.h>
+ #include <errno.h>
+--- libstdc++-v3/src/filesystem/dir.cc.orig
++++ libstdc++-v3/src/filesystem/dir.cc
+@@ -147,7 +147,13 @@
+ 
+   int err = std::exchange(errno, 0);
+   const auto entp = readdir(dirp);
++#ifdef __ANDROID__
++  int tmperr = errno;
++  errno = err;
++  err = tmperr;
++#else
+   std::swap(errno, err);
++#endif
+ 
+   if (entp)
+     {

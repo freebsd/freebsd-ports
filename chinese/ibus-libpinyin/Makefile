@@ -11,9 +11,9 @@ COMMENT=	Intelligent Pinyin engine based on libpinyin for IBus
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
-		libpinyin.so:${PORTSDIR}/chinese/libpinyin
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
+		libibus-1.0.so:textproc/ibus \
+		libpinyin.so:chinese/libpinyin
 
 USES=		compiler:c++11-lib gmake python pkgconfig gettext
 USE_GNOME=	glib20
@@ -36,7 +36,7 @@ STROKE_CONFIGURE_ENABLE=	stroke-input-mode
 
 OPENCC_BROKEN=			Requires newer OpenCC
 OPENCC_CONFIGURE_ENABLE=	opencc
-OPENCC_LIB_DEPENDS=		libopencc.so:${PORTSDIR}/chinese/opencc
+OPENCC_LIB_DEPENDS=		libopencc.so:chinese/opencc
 
 NLS_USES=		gettext
 NLS_USE=		GNOME=intltool

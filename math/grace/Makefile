@@ -15,10 +15,10 @@ COMMENT=	Powerful 2D plotting tool (successor of xmgr)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libXbae.so:${PORTSDIR}/x11-toolkits/xbae
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libt1.so:devel/t1lib \
+		libpng.so:graphics/png \
+		libXbae.so:x11-toolkits/xbae
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		gmake jpeg motif
 GNU_CONFIGURE=	yes
@@ -37,15 +37,15 @@ OPTIONS_DEFINE=		DOCS EXAMPLES FFTW NETCDF PDF XMHTML
 OPTIONS_DEFAULT=	FFTW NETCDF PDF XMHTML
 
 FFTW_CONFIGURE_WITH=	fftw
-FFTW_LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
+FFTW_LIB_DEPENDS=	libfftw.so:math/fftw
 NETCDF_CONFIGURE_ENABLE=	netcdf
-NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
+NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 PDF_DESC=		PDF output
 PDF_CONFIGURE_ENABLE=	pdfdrv
-PDF_LIB_DEPENDS=	libpdf.so:${PORTSDIR}/print/pdflib
+PDF_LIB_DEPENDS=	libpdf.so:print/pdflib
 XMHTML_DESC=		XmHTML based on-line help
 XMHTML_CONFIGURE_ENABLE=	xmhtml
-XMHTML_LIB_DEPENDS=	libXmHTML.so:${PORTSDIR}/x11-toolkits/xmhtml
+XMHTML_LIB_DEPENDS=	libXmHTML.so:x11-toolkits/xmhtml
 
 post-configure:
 	${REINPLACE_CMD} -e \

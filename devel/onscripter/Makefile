@@ -1,18 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	onscripter
-PORTVERSION=	20150820
+PORTVERSION=	20160327
 CATEGORIES=	devel games
-MASTER_SITES=	http://onscripter.sourceforge.jp/
+MASTER_SITES=	http://onscripter.osdn.jp/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	Visual novel engine compatible with NScripter
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	sdl_ttf>=2.0.11_6:${PORTSDIR}/graphics/sdl_ttf
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg \
+		libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	sdl_ttf>=2.0.11_6:graphics/sdl_ttf
 
 USES=		gmake
 USE_SDL=	image mixer ttf
@@ -41,8 +41,6 @@ UTF8_CFLAGS?=	-DUTF8_CAPTION -DUTF8_FILESYSTEM
 post-patch:
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/Makefile.onscripter
-	@${REINPLACE_CMD} -e 's/luaL_checkint/(int)&eger/' \
-		${WRKSRC}/LUAHandler.cpp
 
 post-patch-LUA-off:
 	@${REINPLACE_CMD} '/optional: lua/,/^$$/d' ${WRKSRC}/${MAKEFILE}

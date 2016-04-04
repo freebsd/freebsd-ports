@@ -14,7 +14,7 @@ COMMENT=	Secure Neighbor Discovery implementation for IPv6
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	libdnet.so:net/libdnet
 
 USES=		gmake readline
 USE_RC_SUBR=	sendd

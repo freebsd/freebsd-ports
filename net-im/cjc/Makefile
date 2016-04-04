@@ -12,7 +12,7 @@ COMMENT=	Console Jabber Client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=0:${PORTSDIR}/net-im/py-pyxmpp
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=0:net-im/py-pyxmpp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jajcus

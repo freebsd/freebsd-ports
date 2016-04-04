@@ -8,18 +8,16 @@ DISTNAME=	lighttpd-${PORTVERSION}
 
 COMMENT=	GeoIP module for lighttpd
 
-BROKEN=		incompatibility with new Lighttpd API
-
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
-BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
-RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
+RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 
 MASTERDIR=	${.CURDIR}/../lighttpd
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-PATCH_SITES+=	LOCAL/mm
-PATCHFILES+=	lighttpd-1.4.26_mod_geoip.patch.gz
+PATCH_SITES+=	https://raw.githubusercontent.com/pkubaj/lighttpd-mod_geoip/master/
+PATCHFILES+=	lighttpd-1.4.26_mod_geoip.patch
 
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	${PORTNAME}.la

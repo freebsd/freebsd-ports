@@ -11,7 +11,7 @@ COMMENT=	TI calculator file types library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libticonv.so:${PORTSDIR}/converters/libticonv
+LIB_DEPENDS=	libticonv.so:converters/libticonv
 
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

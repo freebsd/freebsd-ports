@@ -1,0 +1,64 @@
+--- tools/openvas-nvt-sync.in.orig	2015-08-03 10:14:44 UTC
++++ tools/openvas-nvt-sync.in
+@@ -96,7 +96,7 @@ if [ -z "$TMPDIR" ]; then
+   SYNC_TMP_DIR=/tmp
+   # If we have mktemp, create a temporary dir (safer)
+   if [ -n "`which mktemp`" ]; then
+-    SYNC_TMP_DIR=`mktemp -t -d openvas-nvt-sync.XXXXXXXXXX` || { echo "ERROR: Cannot create temporary directory for file download" >&2; exit 1 ; }
++    SYNC_TMP_DIR=`mktemp -d /tmp/openvas-nvt-sync.XXXXXXXXXX` || { echo "ERROR: Cannot create temporary directory for file download" >&2; exit 1 ; }
+     trap "rm -rf $SYNC_TMP_DIR" EXIT HUP INT TRAP TERM
+   fi
+ else
+@@ -131,7 +131,7 @@ do_help () {
+ }
+ 
+ CMD_RSYNC=`which rsync`
+-CMD_MD5SUM=`which md5sum`
++CMD_MD5SUM=`which md5`
+ CMD_WGET=`which wget`
+ CMD_CURL=`which curl`
+ TMP_NVT="$SYNC_TMP_DIR/openvas-feed-`date +%F`-$$.tar.bz2"
+@@ -141,7 +141,7 @@ chk_system_tools () {
+ 
+   if [ -z "$CMD_MD5SUM" ]; then
+     SELFTEST_FAIL=1
+-    echo "[w] Warning: MD5SUM not found";
++    echo "[w] Warning: md5 not found";
+   fi
+ 
+   if [ -z "$CMD_RSYNC" ]; then
+@@ -162,7 +162,7 @@ chk_system_tools () {
+ 
+   echo "[i] If you did not get any warnings, that means you have all tools required"
+ 
+-  echo "[i] Note that it is recommended to have md5sum and one of the following: rsync, wget or curl."
++  echo "[i] Note that it is recommended to have md5 and one of the following: rsync, wget or curl."
+ }
+ 
+ do_rsync () {
+@@ -214,8 +214,8 @@ do_curl () {
+ }
+ 
+ do_check_md5 () {
+-  if [ -z "CMD_MD5SUM" ]; then
+-    echo "[w] md5sum utility not found, cannot check NVT checksums! You've been warned!"
++  if [ -z "$CMD_MD5SUM" ]; then
++    echo "[w] md5 utility not found, cannot check NVT checksums! You've been warned!"
+   else
+     echo -n "[i] Checking dir: "
+     eval "cd \"$NVT_DIR\""
+@@ -227,11 +227,11 @@ do_check_md5 () {
+       echo "ok"
+     fi
+     echo -n "[i] Checking MD5 checksum: "
+-    eval "cd \"$NVT_DIR\" ; $CMD_MD5SUM -c --status \"$NVT_DIR/md5sums\""
+-    if [ $? -ne 0 ] ; then
++    eval "cd \"$NVT_DIR\" ; xargs -n 2 $CMD_MD5SUM -c < \"$NVT_DIR/md5sums\" | grep Failed > \"$SYNC_TMP_DIR/md5.log\""
++    if [ $? -eq 0 ] ; then
+       echo "not ok"
++      cat "$SYNC_TMP_DIR/md5.log"
+       echo "Error: md5sums not correct. Your NVT collection might be broken now."
+-      echo "Please try this for details: cd \"$NVT_DIR\" ; $CMD_MD5SUM -c \"$NVT_DIR/md5sums\" | less"
+       exit 1
+     fi
+     echo "ok"

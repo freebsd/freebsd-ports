@@ -1,15 +1,18 @@
---- Makefile.orig	2015-12-29 12:13:36.418539000 +0200
-+++ Makefile	2015-12-29 12:16:20.089265000 +0200
-@@ -2,7 +2,7 @@
+--- Makefile.orig	2016-03-21 02:14:57 UTC
++++ Makefile
+@@ -2,9 +2,9 @@
  # set to anything else to disable them
- DBUS = 1
- V4LCONVERT = 1
--FILTER_AUDIO = 0
-+FILTER_AUDIO = 1
- UNITY = 0
+ DBUS 			= 1
+ V4LCONVERT 		= 1
+-FILTER_AUDIO 	= 0
++FILTER_AUDIO		= 1
+ UNITY 			= 0
+-XP 				= 0
++XP 			= 0
  
  DEPS = libtoxav libtoxcore openal vpx libsodium
-@@ -50,6 +50,37 @@
+ 
+@@ -53,6 +53,37 @@ ifeq ($(UNAME_S), Linux)
  
  	TRAY_OBJ = icons/utox-128x128.o
  	TRAY_GEN = $(LD) -r -b binary icons/utox-128x128.png -o

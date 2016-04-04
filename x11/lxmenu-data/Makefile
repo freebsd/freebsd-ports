@@ -11,7 +11,7 @@ COMMENT=	Menu data used by lxpanel
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		gettext gmake tar:xz
 USE_GNOME=	intltool

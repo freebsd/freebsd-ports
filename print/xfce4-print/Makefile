@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-print
 PORTVERSION=	4.6.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	print xfce
 MASTER_SITES=	XFCE/src/archive/xfprint/${PORTVERSION:R}
 DISTNAME=	xfprint-${PORTVERSION}
@@ -14,8 +14,8 @@ COMMENT=	Print system support for the Xfce Desktop
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps
-RUN_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps
+BUILD_DEPENDS=	a2ps:print/a2ps
+RUN_DEPENDS=	a2ps:print/a2ps
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -30,7 +30,7 @@ OPTIONS_SINGLE=	PRINTMETHOD
 OPTIONS_SINGLE_PRINTMETHOD=	LPR CUPS
 LETTER_DESC=	Use letter paper format instead of A4
 LPR_DESC=	LPR printing system support
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CONFIGURE_ENABLE=	cups
 LPR_CONFIGURE_ENABLE=	bsdlpr
 LPR_CONFIGURE_WITH=	printcap=/etc/printcap

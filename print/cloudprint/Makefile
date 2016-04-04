@@ -11,8 +11,8 @@ COMMENT=	Google Cloud Print proxy for local CUPS printers
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycups>=0:${PORTSDIR}/print/py-pycups \
-		${PYTHON_PKGNAMEPREFIX}daemon>0:${PORTSDIR}/devel/py-daemon
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycups>=0:print/py-pycups \
+		${PYTHON_PKGNAMEPREFIX}daemon>0:devel/py-daemon
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	armooo

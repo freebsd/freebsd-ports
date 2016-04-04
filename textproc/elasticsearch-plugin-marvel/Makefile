@@ -16,7 +16,7 @@ LICENSE_TEXT=	License available from Elasticsearch for production use.
 LICENSE_TEXT+=	See http://www.elasticsearch.com/marvel/ for more details.
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell no-auto-accept
 
-RUN_DEPENDS:=	elasticsearch>=0.90.9:${PORTSDIR}/textproc/elasticsearch
+RUN_DEPENDS:=	elasticsearch>=0.90.9:textproc/elasticsearch
 
 NO_BUILD=	yes
 LEGAL_TEXT=	${LICENSE_NAME_COMMERCIAL}

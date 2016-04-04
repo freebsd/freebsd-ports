@@ -18,7 +18,7 @@ CONFLICTS=	props-1.0
 
 MAKE_JOBS_UNSAFE=	yes
 PATCHDIR=	${PORTSDIR}/x11-toolkits/xview/files
-LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 USES=		imake
 USE_XORG=	x11 xext

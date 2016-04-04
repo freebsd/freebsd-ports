@@ -14,7 +14,7 @@ COMMENT=	Configure application plugins based on interfaces
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:devel/py-Products.GenericSetup
 
 USES=		python
 USE_PYTHON=	distutils autoplist

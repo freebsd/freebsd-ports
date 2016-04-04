@@ -23,7 +23,7 @@ MAKEFILE=	makefile
 
 PLIST_FILES=	bin/hsftp man/man1/hsftp.1.gz
 
-OPENSSH_RUN_DEPENDS=		ssh:${PORTSDIR}/security/openssh-portable
+OPENSSH_RUN_DEPENDS=		ssh:security/openssh-portable
 OPENSSH_CONFIGURE_WITH=		openssh
 
 READLINE_USES=			readline

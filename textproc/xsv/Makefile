@@ -12,7 +12,7 @@ COMMENT=	XML Schema Validator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ltxml>0:${PORTSDIR}/textproc/py-ltxml
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ltxml>0:textproc/py-ltxml
 
 USES=		python
 USE_PYTHON=	distutils autoplist

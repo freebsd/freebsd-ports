@@ -11,12 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	freebsd-ports@t-b-o-h.net
 COMMENT=	TT enabled MIME::Lite wrapper
 
-BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
+		p5-Test-Simple>=0:devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
+		p5-Test-Simple>=0:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

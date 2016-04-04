@@ -31,14 +31,14 @@ EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions --exclude third-party
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
 # General dependencies
-GEN_LIB_DEPENDS=libb64.so:${PORTSDIR}/converters/libb64 \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libdht.so:${PORTSDIR}/devel/jech-dht \
-		libminiupnpc.so:${PORTSDIR}/net/miniupnpc \
-		libnatpmp.so:${PORTSDIR}/net/libnatpmp \
-		libutp.so:${PORTSDIR}/net/libutp \
-		libevent.so:${PORTSDIR}/devel/libevent2
-GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
+GEN_LIB_DEPENDS=libb64.so:converters/libb64 \
+		libcurl.so:ftp/curl \
+		libdht.so:devel/jech-dht \
+		libminiupnpc.so:net/miniupnpc \
+		libnatpmp.so:net/libnatpmp \
+		libutp.so:net/libutp \
+		libevent.so:devel/libevent2
+GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:www/transmission-web
 
 # This is master port of transmission-*, so don't override USES definition
 USES+=		gmake iconv libtool localbase pkgconfig
@@ -72,10 +72,10 @@ OPENSSL_CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 OPENSSL_CONFIGURE_ON=	--with-crypto=openssl
 
-POLARSSL_LIB_DEPENDS=	libpolarssl.so:${PORTSDIR}/security/polarssl13
+POLARSSL_LIB_DEPENDS=	libpolarssl.so:security/polarssl13
 POLARSSL_CONFIGURE_ON=	--with-crypto=polarssl
 
-WOLFSSL_LIB_DEPENDS=	libwolfssl.so:${PORTSDIR}/security/wolfssl
+WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 WOLFSSL_CONFIGURE_ON=	--with-crypto=cyassl
 WOLFSSL_BROKEN=		Requires security/wolfssl built with --enable-arc4
 .endif

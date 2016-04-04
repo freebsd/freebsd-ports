@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	giflib
-PORTVERSION=	5.1.2
-PORTREVISION=	1
+PORTVERSION=	5.1.3
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -24,8 +24,8 @@ INSTALL_TARGET=	install-strip
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCBOOK} && ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS+=	xmlto:textproc/xmlto \
+		docbook-xml>0:textproc/docbook-xml
 .else
 CONFIGURE_ENV+=	have_xmlto=no
 .endif

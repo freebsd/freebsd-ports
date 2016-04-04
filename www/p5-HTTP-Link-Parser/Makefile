@@ -13,9 +13,9 @@ COMMENT=	Parse HTTP Link headers
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-URI>=1.30:${PORTSDIR}/net/p5-URI \
-		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-RDF-Trine>=0:${PORTSDIR}/textproc/p5-RDF-Trine
+BUILD_DEPENDS=	p5-URI>=1.30:net/p5-URI \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-RDF-Trine>=0:textproc/p5-RDF-Trine
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

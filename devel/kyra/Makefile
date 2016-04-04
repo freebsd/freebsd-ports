@@ -13,8 +13,8 @@ COMMENT=	Simple Sprite engine written in C++
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

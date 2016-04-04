@@ -1,21 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	gtkevemon
-DISTVERSION=	1.8-135
-PORTREVISION=	3
+PORTVERSION=	1.10.2016.02.17
+PORTREVISION=	0
 CATEGORIES=	games
-MASTER_SITES=	https://bitbucket.org/BattleClinic/${PORTNAME}/get/
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Skill monitoring standalone application for EVE Online
 
-LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30 \
+		libcurl.so:ftp/curl
 
-CHANGESET=	8fa5c0b5f16b
-WRKSRC=		${WRKDIR}/BattleClinic-${PORTNAME}-${CHANGESET}/${PORTNAME}
+USE_GITHUB=     yes
+GH_TAGNAME=     ac2ca34
 
 USES=		pkgconfig:both gmake
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	gtk30 libxml2
 USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
@@ -26,6 +26,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gtkevemon ${STAGEDIR}${PREFIX}/bin/gtkevemon
 	${INSTALL_DATA} ${WRKSRC}/icon/gtkevemon.desktop ${STAGEDIR}${PREFIX}/share/applications/gtkevemon.desktop
-	${INSTALL_DATA} ${WRKSRC}/icon/gtkevemon.png ${STAGEDIR}${PREFIX}/share/pixmaps/gtkevemon.png
+	${INSTALL_DATA} ${WRKSRC}/icon/gtkevemon.svg ${STAGEDIR}${PREFIX}/share/pixmaps/gtkevemon.svg
 
 .include <bsd.port.post.mk>

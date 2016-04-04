@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qpdf
-PORTVERSION=	5.1.2
-PORTREVISION=	1
+PORTVERSION=	6.0.0
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -11,23 +10,20 @@ MAINTAINER=	d.y.kazarov@mail.ru
 COMMENT=	Command-line tools for transforming and inspecting PDF documents
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/Artistic-2.0
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
-OPTIONS_DEFINE=	SDK
-OPTIONS_DEFAULT=	SDK
-OPTIONS_SUB=	yes
-
-SDK_DESC=	Install header files (required for cups-filters)
+OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=		gmake libtool
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
-		-e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/make/libtool.mk
+	@${REINPLACE_CMD} 's/make --version/${MAKE_CMD} --version/' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

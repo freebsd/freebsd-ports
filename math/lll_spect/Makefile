@@ -13,8 +13,8 @@ EXTRACT_ONLY=
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	LLL-spectral test of linear congruential random number generators
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
-RUN_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
+BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:math/ntl
+RUN_DEPENDS=	${LOCALBASE}/lib/libntl.a:math/ntl
 
 PLIST_FILES=	bin/lll_spect bin/lll_search
 PORTEXAMPLES=	examples.txt

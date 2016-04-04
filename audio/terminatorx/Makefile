@@ -15,10 +15,10 @@ COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
-		rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
-		liblrdf.so:${PORTSDIR}/textproc/liblrdf
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
+		rarian-sk-config:textproc/rarian
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
+		liblrdf.so:textproc/liblrdf
 
 OPTIONS_DEFINE=	ALSA JACK MPG123 SOX VORBIS MAD
 OPTIONS_DEFAULT=	JACK MPG123 SOX VORBIS MAD
@@ -36,21 +36,21 @@ INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--disable-alsa
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	--disable-jack
-MPG123_BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-MPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+MPG123_BUILD_DEPENDS=	mpg123:audio/mpg123
+MPG123_RUN_DEPENDS=	mpg123:audio/mpg123
 MPG123_CONFIGURE_OFF=	--disable-mpg123
-SOX_BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
-SOX_RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
+SOX_BUILD_DEPENDS=	sox:audio/sox
+SOX_RUN_DEPENDS=	sox:audio/sox
 SOX_CONFIGURE_OFF=	--disable-sox
-VORBIS_BUILD_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
-VORBIS_RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_BUILD_DEPENDS=	oggenc:audio/vorbis-tools
+VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CONFIGURE_OFF=	--disable-vorbis
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CONFIGURE_OFF=	--disable-mad
 
 post-patch:

@@ -3,7 +3,6 @@
 
     COMMENT = Russian support
 
-    SUBDIR += MT
     SUBDIR += artwiz-ru
     SUBDIR += aspell
     SUBDIR += bugzilla44

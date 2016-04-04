@@ -10,8 +10,8 @@ MASTER_SITES=	GENTOO
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities of the Tango project
 
-BUILD_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
-RUN_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
+BUILD_DEPENDS=	p5-XML-Simple>=0:textproc/p5-XML-Simple
+RUN_DEPENDS=	p5-XML-Simple>=0:textproc/p5-XML-Simple
 
 USES=		pathfix pkgconfig perl5 gmake
 GNU_CONFIGURE=	yes

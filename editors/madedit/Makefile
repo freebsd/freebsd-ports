@@ -12,7 +12,7 @@ COMMENT=	Open-source and cross-platform text/hex editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USES=		gettext pkgconfig dos2unix desktop-file-utils
 USE_WX=		2.8+

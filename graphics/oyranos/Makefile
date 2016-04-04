@@ -2,27 +2,27 @@
 
 PORTNAME=	oyranos
 PORTVERSION=	0.9.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Oyranos/Oyranos%20${PORTVERSION:C|(.*)\.[0-9]*$|\1|}
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Colour Management System (CMS)
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:${PORTSDIR}/graphics/icc-profiles-openicc \
-		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:${PORTSDIR}/graphics/icc-profiles-basiccolor
-LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw \
-		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libyajl.so:${PORTSDIR}/devel/yajl \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libcups.so:${PORTSDIR}/print/cups-client \
-		libxdot.so:${PORTSDIR}/graphics/graphviz \
-		liblcms.so:${PORTSDIR}/graphics/lcms \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libXcm.so:${PORTSDIR}/x11/libXcm
+BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
+RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:graphics/icc-profiles-openicc \
+		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:graphics/icc-profiles-basiccolor
+LIB_DEPENDS=	libraw.so:graphics/libraw \
+		libexiv2.so:graphics/exiv2 \
+		libpng.so:graphics/png \
+		libcairo.so:graphics/cairo \
+		libyajl.so:devel/yajl \
+		libfltk.so:x11-toolkits/fltk \
+		libcups.so:print/cups \
+		libxdot.so:graphics/graphviz \
+		liblcms.so:graphics/lcms \
+		liblcms2.so:graphics/lcms2 \
+		libXcm.so:x11/libXcm
 
 BROKEN_FreeBSD_9=	does not build
 

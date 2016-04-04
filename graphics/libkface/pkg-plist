@@ -1,9 +1,9 @@
-include/libkface/dataproviders.h
-include/libkface/facedetector.h
-include/libkface/identity.h
-include/libkface/libkface_export.h
-include/libkface/recognitiondatabase.h
-include/libkface/version.h
+include/kde4/libkface/dataproviders.h
+include/kde4/libkface/facedetector.h
+include/kde4/libkface/identity.h
+include/kde4/libkface/libkface_export.h
+include/kde4/libkface/recognitiondatabase.h
+include/kde4/libkface/version.h
 lib/libkface.so
 lib/libkface.so.2
 lib/libkface.so.2.0.0

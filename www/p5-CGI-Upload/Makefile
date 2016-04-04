@@ -14,9 +14,9 @@ COMMENT=	CGI class for handling browser file uploads
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-BrowserDetect>=0:${PORTSDIR}/www/p5-HTTP-BrowserDetect \
-		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
-		p5-CGI>=0:${PORTSDIR}/www/p5-CGI
+BUILD_DEPENDS=	p5-HTTP-BrowserDetect>=0:www/p5-HTTP-BrowserDetect \
+		p5-File-MMagic>=0:devel/p5-File-MMagic \
+		p5-CGI>=0:www/p5-CGI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -1,6 +1,6 @@
---- ./utils/readdb.c.orig	2011-06-21 15:44:50.000000000 +0200
-+++ ./utils/readdb.c	2011-06-21 15:45:08.000000000 +0200
-@@ -9,7 +9,7 @@
+--- utils/readdb.c.orig	2016-03-25 20:56:46 UTC
++++ utils/readdb.c
+@@ -9,7 +9,7 @@ char *id="\n\n\n\n\n-CW was here-\n\n\n\
  #include <stdio.h>
  #include <memory.h>
  #include <time.h>

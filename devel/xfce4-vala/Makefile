@@ -13,7 +13,7 @@ COMMENT=	Vala binding for the Xfce core libraries
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	valac:lang/vala
 
 GNU_CONFIGURE=	yes
 USES=	pkgconfig gmake pathfix xfce tar:bzip2

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb32
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
@@ -20,11 +20,11 @@ LICENSE_COMB=	multi
 # Bugs when compiled with < Clang 3.7
 #  - https://jira.mongodb.org/browse/SERVER-21217
 #  - https://jira.mongodb.org/browse/SERVER-22740
-BUILD_DEPENDS=	${LOCALBASE}/bin/clang37:${PORTSDIR}/lang/clang37
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libsnappy.so:${PORTSDIR}/archivers/snappy
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:${PORTSDIR}/devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}pymongo>=3.0:${PORTSDIR}/databases/pymongo
+BUILD_DEPENDS=	${LOCALBASE}/bin/clang37:lang/clang37
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libsnappy.so:archivers/snappy
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}pymongo>=3.0:databases/pymongo
 
 CPP=	${LOCALBASE}/bin/clang-cpp37
 CC=	${LOCALBASE}/bin/clang37
@@ -34,10 +34,11 @@ CHOSEN_COMPILER_TYPE=	clang
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 (i386 deprecated in v3)"
 
+CONFLICTS_BUILD=	mongo-cxx-driver
 OPTIONS_DEFINE=		SASL SSL
 OPTIONS_DEFAULT=	SASL SSL
 
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
 
 SSL_USE=	openssl=yes
@@ -68,6 +69,7 @@ post-install:
 .for f in mongo mongod mongoperf mongos mongosniff
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
+	${CP} ${WRKSRC}/rpm/mongod.conf ${STAGEDIR}${PREFIX}/etc/mongodb.conf.sample
 
 do-test:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \

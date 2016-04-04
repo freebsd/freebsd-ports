@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound library for enlightenment package
 
-LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 
 USES=		alias libtool:keepla pathfix pkgconfig:both tar:bzip2
 USE_LDCONFIG=	yes

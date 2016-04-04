@@ -13,7 +13,7 @@ DISTNAME=	pyla${PORTVERSION}
 MAINTAINER=	mike@Reifenberger.com
 COMMENT=	Hylafax client written in Python
 
-#LIB_DEPENDS=	lirc_client.0:${PORTSDIR}/comms/lirc
+#LIB_DEPENDS=	lirc_client.0:comms/lirc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DATADIR=	${PREFIX}/lib/pyla

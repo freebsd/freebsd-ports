@@ -18,7 +18,7 @@ COMMENT=	Action flight simulation computer program using OSG
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE_GNU_GPL_2.txt
 
-LIB_DEPENDS=	libosg.so:${PORTSDIR}/graphics/osg
+LIB_DEPENDS=	libosg.so:graphics/osg
 
 USES=		alias cmake lua:51 tar:xz
 USE_GL=		gl
@@ -38,8 +38,8 @@ GUI_DESC=	Enable FLTK GUI
 
 OPTIONS_SUB=	yes
 
-GUI_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
-PLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+GUI_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+PLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 
 PORTDOCS=	*
 

@@ -13,10 +13,10 @@ COMMENT=	Passphrases and Passwords as objects for Dancer2
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Dancer2>=0.164000:${PORTSDIR}/www/p5-Dancer2 \
-		p5-Data-Entropy>=0.005:${PORTSDIR}/security/p5-Data-Entropy \
-		p5-Digest-Bcrypt>0:${PORTSDIR}/security/p5-Digest-Bcrypt \
-		p5-Digest-SHA>=5.74:${PORTSDIR}/security/p5-Digest-SHA
+BUILD_DEPENDS=	p5-Dancer2>=0.164000:www/p5-Dancer2 \
+		p5-Data-Entropy>=0.005:security/p5-Data-Entropy \
+		p5-Digest-Bcrypt>0:security/p5-Digest-Bcrypt \
+		p5-Digest-SHA>=5.74:security/p5-Digest-SHA
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

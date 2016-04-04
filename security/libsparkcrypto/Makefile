@@ -28,7 +28,7 @@ MAKE_ENV+=	SPARKARCH=${SPARKARCH} \
 
 OPTIONS_DEFINE=		DOCS
 
-DOCS_BUILD_DEPENDS=	adabrowse:${PORTSDIR}/textproc/adabrowse
+DOCS_BUILD_DEPENDS=	adabrowse:textproc/adabrowse
 DOCS_MAKE_ENV_OFF=	NO_APIDOC=true
 
 post-patch:

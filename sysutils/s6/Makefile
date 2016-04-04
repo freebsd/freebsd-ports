@@ -11,9 +11,9 @@ COMMENT=	skarnet.org supervision suite
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	skalibs>=2.3.9.0:${PORTSDIR}/devel/skalibs \
-		execline>=2.1.4.5:${PORTSDIR}/lang/execline
-RUN_DEPENDS=	execlineb:${PORTSDIR}/lang/execline
+BUILD_DEPENDS=	skalibs>=2.3.9.0:devel/skalibs \
+		execline>=2.1.4.5:lang/execline
+RUN_DEPENDS=	execlineb:lang/execline
 
 USES=		gmake
 USE_RC_SUBR=	s6

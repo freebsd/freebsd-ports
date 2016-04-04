@@ -12,9 +12,9 @@ COMMENT=	Python interface to the R Programming Language
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		R:${PORTSDIR}/math/R
+		R:math/R
 RUN_DEPENDS=	${PYNUMPY} \
-		R:${PORTSDIR}/math/R
+		R:math/R
 
 USES=		python readline
 USE_GCC=	yes

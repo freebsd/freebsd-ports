@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Helper routines for using Sub::Exporter to build methods
 
-RUN_DEPENDS=	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-Sub-Exporter>=0.978:${PORTSDIR}/devel/p5-Sub-Exporter
+RUN_DEPENDS=	p5-Sub-Name>=0:devel/p5-Sub-Name \
+		p5-Sub-Exporter>=0.978:devel/p5-Sub-Exporter
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 NO_ARCH=	yes

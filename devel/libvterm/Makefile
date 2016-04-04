@@ -5,7 +5,7 @@ PORTNAME=	libvterm
 PORTVERSION=	git20150828
 CATEGORIES=	devel
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
 
 LICENSE=	MIT

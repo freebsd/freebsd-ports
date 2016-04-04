@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	routers2-extras
-PORTVERSION=	2.19
-PORTREVISION=	3
+PORTVERSION=	2.23
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
@@ -12,8 +11,8 @@ DISTNAME=	routers2-v${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Extra extensions and scripts for routers2 frontend
 
-RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:${PORTSDIR}/net-mgmt/routers2 \
-		${LOCALBASE}/bin/mrtg-ping-probe:${PORTSDIR}/net-mgmt/mrtg-ping-probe
+RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:net-mgmt/routers2 \
+		${LOCALBASE}/bin/mrtg-ping-probe:net-mgmt/mrtg-ping-probe
 
 WRKSRC=		${WRKDIR}/routers2-v${PORTVERSION}/extras
 

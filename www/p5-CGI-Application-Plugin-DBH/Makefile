@@ -13,10 +13,10 @@ COMMENT=	Easy DBI access from CGI::Application
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
+		p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-MockObject>=1.20120301:${PORTSDIR}/devel/p5-Test-MockObject
+TEST_DEPENDS=	p5-Test-MockObject>=1.20120301:devel/p5-Test-MockObject
 
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

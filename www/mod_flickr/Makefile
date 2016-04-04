@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.vshank.com/modcode/
 MAINTAINER=	venkyshankar@yahoo.com
 COMMENT=	Apache module for Flickr API access
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 XTRA_FLAGS=	-lcurl
 

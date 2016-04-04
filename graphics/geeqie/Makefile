@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image viewer forked from GQview
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gettext gmake pkgconfig desktop-file-utils
 USE_GNOME=	gtk20 intltool
@@ -34,16 +34,16 @@ LCMS_DESC=	Color adjusting
 LIRC_DESC=	Remote control
 GPS_DESC=	GPS map support via libchamplain (experimental!)
 
-EXIV2_LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_CONFIGURE_ENABLE=	exiv2
 
-LCMS_LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms
+LCMS_LIB_DEPENDS=	liblcms.so:graphics/lcms
 LCMS_CONFIGURE_ENABLE=	lcms
 
-LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
 
-GPS_LIB_DEPENDS=	libchamplain-0.8.so:${PORTSDIR}/graphics/libchamplain08
+GPS_LIB_DEPENDS=	libchamplain-0.8.so:graphics/libchamplain08
 GPS_CONFIGURE_ENABLE=	gps
 
 post-patch:

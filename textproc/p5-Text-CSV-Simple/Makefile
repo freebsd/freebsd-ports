@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for Simpler parsing of CSV files
 
-BUILD_DEPENDS=	p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Class-Trigger>=0:${PORTSDIR}/devel/p5-Class-Trigger
+BUILD_DEPENDS=	p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS \
+		p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-Class-Trigger>=0:devel/p5-Class-Trigger
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

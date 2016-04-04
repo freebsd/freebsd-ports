@@ -13,8 +13,8 @@ COMMENT=	Pencil - a traditional 2D animation software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libming.so:${PORTSDIR}/graphics/ming \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libming.so:graphics/ming \
+		libpng.so:graphics/png
 
 USES=		qmake zip
 USE_QT4=	gui opengl xml moc_build rcc_build

@@ -9,12 +9,14 @@ USERS_HOME="/var/spool/ejabberd"
 install -d -m 750 -o %%USERS%% -g %%GROUPS%% ${USERS_HOME} /var/log/ejabberd /var/run/ejabberdctl
 
 chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/etc/%%PORTNAME%%
-chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
+chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%
 	
-find %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chmod %%SHAREMODE%%
-find %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chown %%SHAREOWN%%:%%SHAREGRP%%
+find %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chmod %%SHAREMODE%%
+find %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chown %%SHAREOWN%%:%%SHAREGRP%%
 
-%%PAM%%chmod 4750 %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
-%%PAM%%chown root:%%GROUPS%% %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
+%%PAM%%chmod 4750 %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pam-1.0.0/priv/bin/epam \
+%%PAM%%	     %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
+%%PAM%%chown root:%%GROUPS%% %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pam-1.0.0/priv/bin/epam \
+%%PAM%%	     %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
 
 exit 0

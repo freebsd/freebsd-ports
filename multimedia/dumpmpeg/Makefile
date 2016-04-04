@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Dump frames from mpeg movies
 
-LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl

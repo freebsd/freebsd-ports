@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-2.8ucl1.1.6
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	MBone video conferencing tool
 
-BUILD_DEPENDS=	v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libuclmmbase.so:${PORTSDIR}/devel/uclmmbase
+BUILD_DEPENDS=	v4l_compat>=1.0.20060801:multimedia/v4l_compat
+LIB_DEPENDS=	libuclmmbase.so:devel/uclmmbase
 
 USES=		autoreconf gmake tk:84 # parallel builds (-jX) are broken with BSD make(1)
 USE_OPENSSL=	yes

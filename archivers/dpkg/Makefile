@@ -13,9 +13,9 @@ COMMENT=	Debian package maintenance system
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a
-RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
-		gpatch:${PORTSDIR}/devel/patch
+BUILD_DEPENDS=	po4a:textproc/po4a
+RUN_DEPENDS=	gtar:archivers/gtar \
+		gpatch:devel/patch
 
 GNU_CONFIGURE=	yes
 USES=		cpe gmake iconv libtool ncurses perl5 pkgconfig tar:xz

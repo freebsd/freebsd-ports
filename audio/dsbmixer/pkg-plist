@@ -1,0 +1,4 @@
+bin/dsbmixer
+@(root,wheel,4750) libexec/dsbmixer_backend
+share/applications/dsbmixer.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/dsbmixer.mo

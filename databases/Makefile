@@ -25,7 +25,6 @@
     SUBDIR += beansdb
     SUBDIR += buzhug
     SUBDIR += c3p0
-    SUBDIR += cassandra
     SUBDIR += cassandra-cpp-driver
     SUBDIR += cassandra2
     SUBDIR += casstcl
@@ -549,6 +548,7 @@
     SUBDIR += percona56-client
     SUBDIR += percona56-server
     SUBDIR += pg_activity
+    SUBDIR += pg_citus
     SUBDIR += pg_reorg
     SUBDIR += pg_rman
     SUBDIR += pg_statsinfo
@@ -702,6 +702,8 @@
     SUBDIR += proftpd-mod_sql_tds
     SUBDIR += puppetdb
     SUBDIR += puppetdb-terminus
+    SUBDIR += puppetdb-terminus4
+    SUBDIR += puppetdb4
     SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib
@@ -768,6 +770,7 @@
     SUBDIR += py-qt4-sql
     SUBDIR += py-qt5-sql
     SUBDIR += py-queries
+    SUBDIR += py-rb
     SUBDIR += py-redis
     SUBDIR += py-riak
     SUBDIR += py-rrdtool_lgpl
@@ -816,6 +819,7 @@
     SUBDIR += qt5-sqldrivers-pgsql
     SUBDIR += qt5-sqldrivers-sqlite2
     SUBDIR += qt5-sqldrivers-sqlite3
+    SUBDIR += qt5-sqldrivers-tds
     SUBDIR += rdb
     SUBDIR += rdfdb
     SUBDIR += recutils
@@ -842,16 +846,13 @@
     SUBDIR += ruby-tokyocabinet
     SUBDIR += rubygem-activemodel
     SUBDIR += rubygem-activemodel4
-    SUBDIR += rubygem-activemodel41
     SUBDIR += rubygem-activerecord
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-activerecord-mysql-adapter
     SUBDIR += rubygem-activerecord-session_store
     SUBDIR += rubygem-activerecord4
-    SUBDIR += rubygem-activerecord41
     SUBDIR += rubygem-after_commit_queue
-    SUBDIR += rubygem-after_commit_queue-rails41
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel-helpers
@@ -904,7 +905,6 @@
     SUBDIR += rubygem-mysql2
     SUBDIR += rubygem-openid-redis-store
     SUBDIR += rubygem-paranoia
-    SUBDIR += rubygem-paranoia-rails41
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis

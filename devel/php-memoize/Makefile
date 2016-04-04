@@ -18,6 +18,7 @@ USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 PHP_MODNAME=	memoize
+IGNORE_WITH_PHP=	70
 CONFIGURE_ARGS=	--enable-memoize
 
 OPTIONS_DEFINE=	APC MEMCACHED MEMORY
@@ -30,13 +31,13 @@ MEMORY_DESC=	Enable the memoize memory storage module
 
 .if ${PORT_OPTIONS:MAPC}
 CONFIGURE_ARGS+=	--enable-memoize-apc
-BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
+BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:www/pecl-APC
 .endif
 
 .if ${PORT_OPTIONS:MMEMCACHED}
 CONFIGURE_ARGS+=	--with-memoize-memcached
-BUILD_DEPENDS+=		libmemcached>0:${PORTSDIR}/databases/libmemcached
-RUN_DEPENDS+=		libmemcached>0:${PORTSDIR}/databases/libmemcached
+BUILD_DEPENDS+=		libmemcached>0:databases/libmemcached
+RUN_DEPENDS+=		libmemcached>0:databases/libmemcached
 .endif
 
 .if empty(PORT_OPTIONS:MMEMORY)

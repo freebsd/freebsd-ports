@@ -10,7 +10,7 @@ DISTNAME=	jre-${JRE_VERSION}u${JRE_UPDATE_VERSION}-linux-i586
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Runtime Environment for Linux
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:java/javavmwrapper
 
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
@@ -28,7 +28,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 JRE_VENDOR=		oracle
 JRE_VERSION=		8
 JRE_INTERNAL_VERSION=	1.${JRE_VERSION}.0
-JRE_UPDATE_VERSION=	74
+JRE_UPDATE_VERSION=	77
 .if ${JRE_UPDATE_VERSION} == 0
 DL_JRE_VERSION=		${JRE_INTERNAL_VERSION}
 .elif ${JRE_UPDATE_VERSION} <= 9

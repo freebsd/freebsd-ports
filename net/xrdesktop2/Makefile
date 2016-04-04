@@ -11,8 +11,8 @@ COMMENT=	GTK2 frontend for Rdesktop
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS=	rdesktop:net/rdesktop \
+		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
 CONFLICTS=	xrdesktop-1*
 

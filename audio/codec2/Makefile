@@ -9,7 +9,7 @@ MASTER_SITES=	http://files.freedv.org/codec2/ \
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Low bit rate codec
 
-LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	libspeex.so:audio/speex
 
 USES=		cmake:outsource compiler:c11 tar:xz
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON

@@ -27,7 +27,7 @@ PLIST_FILES=	bin/dclock \
 OPTIONS_DEFINE=	SOX XFT DOCS
 OPTIONS_DEFAULT=SOX XFT
 SOX_DESC=	Install SOX to play audio
-SOX_RUN_DEPENDS=	play:${PORTSDIR}/audio/sox
+SOX_RUN_DEPENDS=	play:audio/sox
 
 XFT_USE=	XORG=xft
 XFT_CPPFLAGS=	$$(freetype-config --cflags) -DXFT_SUPPORT

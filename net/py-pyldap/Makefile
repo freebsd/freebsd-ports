@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyldap
-PORTVERSION=	2.4.25
+PORTVERSION=	2.4.25.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Fork of python-ldap with Python 3 support
 
 LICENSE=	PSFL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0:${PORTSDIR}/devel/py-pyasn1-modules
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0:devel/py-pyasn1-modules
 
 CONFLICTS_INSTALL=	py27-ldap
 USES=		python

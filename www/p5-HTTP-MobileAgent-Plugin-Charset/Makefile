@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to plugin Encode::JP::Mobile for HTTP::MobileAgent
 
 RUN_DEPENDS=	\
-	p5-HTTP-MobileAgent>=0.26:${PORTSDIR}/www/p5-HTTP-MobileAgent
+	p5-HTTP-MobileAgent>=0.26:www/p5-HTTP-MobileAgent
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

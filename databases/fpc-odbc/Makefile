@@ -16,6 +16,6 @@ EXTRACTUNITDIR=	${WRKUNITDIR}
 OPTIONS_DEFINE=	ODBC
 ODBC_DESC=	Install ODBC library suite for Unix
 
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 .include "${MASTERDIR}/Makefile"

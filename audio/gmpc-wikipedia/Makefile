@@ -13,11 +13,11 @@ COMMENT=	Wikipedia info for gmpc
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
-RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
+LIB_DEPENDS=	libmpd.so:audio/libmpd \
+		libsoup-2.4.so:devel/libsoup \
+		libwebkitgtk-1.0.so:www/webkit-gtk2
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:audio/gmpc
+RUN_DEPENDS=	gmpc:audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool glib20 gtk20

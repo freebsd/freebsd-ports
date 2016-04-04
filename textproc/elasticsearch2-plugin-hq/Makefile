@@ -11,7 +11,7 @@ COMMENT=	ElasticSearch HQ Plugin
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	elasticsearch2>=2.0.0:${PORTSDIR}/textproc/elasticsearch2
+RUN_DEPENDS=	elasticsearch2>=2.0.0:textproc/elasticsearch2
 
 CONFLICTS=	elasticsearch-plugin-hq-1.*
 

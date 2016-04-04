@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	farbfeld
-PORTVERSION=	1
+PORTVERSION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.suckless.org/farbfeld/
 
@@ -11,7 +11,7 @@ COMMENT=	Lossless, uncompressed graphics format
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		jpeg
 

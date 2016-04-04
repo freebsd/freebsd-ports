@@ -12,7 +12,7 @@ COMMENT=	Unicode Description Utilities
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	ascii2binary:${PORTSDIR}/converters/ascii2binary
+RUN_DEPENDS=	ascii2binary:converters/ascii2binary
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

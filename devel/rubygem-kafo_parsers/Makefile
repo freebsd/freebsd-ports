@@ -11,7 +11,7 @@ COMMENT=	Parser for puppet modules
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	puppet:${PORTSDIR}/sysutils/puppet38
+RUN_DEPENDS=	puppet:sysutils/puppet38
 
 NO_ARCH=	yes
 USE_RUBY=	yes

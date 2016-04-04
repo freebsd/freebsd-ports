@@ -22,7 +22,7 @@ MACRESOLV_DESC=		Enable MAC Manufacturer Resolution (use p5-libwww)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPY4SUITE}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/Domlette.py:${PORTSDIR}/textproc/py-4suite-xml
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/Domlette.py:textproc/py-4suite-xml
 USES+=		python
 PLIST_SUB+=	PY=""
 .else
@@ -44,8 +44,8 @@ PORTDOCS=	INSTALL README
 
 .if ${PORT_OPTIONS:MMACRESOLV}
 CONFIGURE_ARGS+=--enable-mac-resolv
-BUILD_DEPENDS+=	p5-libwww>=6.05:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS+=	p5-libwww>=6.05:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS+=	p5-libwww>=6.05:www/p5-libwww
+RUN_DEPENDS+=	p5-libwww>=6.05:www/p5-libwww
 PLIST_SUB+=	MACRESOLV=""
 .else
 PLIST_SUB+=	MACRESOLV="@comment "

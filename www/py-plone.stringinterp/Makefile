@@ -12,8 +12,8 @@ COMMENT=	Adaptable string interpolation
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
-		${PYTHON_PKGNAMEPREFIX}zope.i18n>=0:${PORTSDIR}/devel/py-zope.i18n
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:devel/py-Products.CMFCore \
+		${PYTHON_PKGNAMEPREFIX}zope.i18n>=0:devel/py-zope.i18n
 
 NO_ARCH=	yes
 USES=		python zip

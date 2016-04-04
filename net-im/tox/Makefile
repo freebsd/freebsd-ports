@@ -3,7 +3,7 @@
 
 PORTNAME=	toxcore
 PORTVERSION=	0.151112
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,9 +11,9 @@ COMMENT=	ProjectTox-Core library, a decentralized and secure messenger
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	checkmk:${PORTSDIR}/devel/libcheck
-LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
-		libopus.so:${PORTSDIR}/audio/opus
+BUILD_DEPENDS=	checkmk:devel/libcheck
+LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
+		libopus.so:audio/opus
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
@@ -33,17 +33,17 @@ OPTIONS_DEFAULT=	SODIUM
 OPTIONS_SUB=		yes
 
 SODIUM_DESC=		Prefer libsodium
-SODIUM_LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
+SODIUM_LIB_DEPENDS=	libsodium.so:security/libsodium
 
 NACL_DESC=		Prefer NaCl
 NACL_CONFIGURE_ENABLE=	nacl
 NACL_CONFIGURE_ON=	--with-nacl-libs=${LOCALBASE}/lib
-NACL_BUILD_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl
-NACL_RUN_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl
+NACL_BUILD_DEPENDS=	${LOCALBASE}/lib/libnacl.a:security/nacl
+NACL_RUN_DEPENDS=	${LOCALBASE}/lib/libnacl.a:security/nacl
 
 DAEMON_DESC=		Bootstrap daemon
 DAEMON_CONFIGURE_ENABLE=daemon
-DAEMON_LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig
+DAEMON_LIB_DEPENDS=	libconfig.so:devel/libconfig
 
 .include <bsd.port.options.mk>
 

@@ -35,7 +35,7 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:databases/gdbm
 CONFIGURE_ARGS+=--with-gdbm
 .endif
 

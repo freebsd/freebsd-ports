@@ -13,8 +13,8 @@ COMMENT=	SLang module to plot graphs with grace
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
-RUN_DEPENDS=	grace:${PORTSDIR}/math/grace
+LIB_DEPENDS=	libslang.so:devel/libslang2
+RUN_DEPENDS=	grace:math/grace
 
 OPTIONS_DEFINE=	DOCS
 

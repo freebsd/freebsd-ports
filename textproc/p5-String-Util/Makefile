@@ -13,7 +13,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Number-Misc>=0:${PORTSDIR}/math/p5-Number-Misc
+	p5-Number-Misc>=0:math/p5-Number-Misc
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

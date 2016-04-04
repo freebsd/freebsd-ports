@@ -9,7 +9,7 @@ MASTER_SITES=	http://freeheimdall.spdns.org/files/
 MAINTAINER=	kalten@gmx.at
 COMMENT=	Command-line tools for extracting from XCF format (graphics/gimp)
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 # xcftools is under a public domain licence
 
@@ -41,8 +41,8 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	DOCS TESTS
 TESTS_DESC=	Run self-tests (faulty) (pulls in graphics/netpbm shells/bash)
 
-TEST_BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm \
-			bash:${PORTSDIR}/shells/bash
+TEST_BUILD_DEPENDS=	pngtopnm:graphics/netpbm \
+			bash:shells/bash
 
 .include <bsd.port.options.mk>
 

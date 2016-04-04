@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2015g
+DISTVERSION=	2016b
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iana.org/tz/releases/ \
 		ftp://munnari.oz.au/pub/
@@ -66,5 +66,8 @@ test-patches:
 	make clean
 	NOMISSING=1 EXTRA_PATCHES=${FILESDIR}/patchremove-${M} make patch
 .endfor
+
+test-pkgplist:
+	for f in $$(find work/stage/usr/share/zoneinfo/ | sed -e 's,work/stage/usr/share/zoneinfo/,,' ); do if [ $$(grep -c $$f pkg-plist) -eq 0 ]; then echo $$f; fi ; done
 
 .include <bsd.port.post.mk>

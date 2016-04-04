@@ -13,8 +13,8 @@ COMMENT=	GTK+ frontend for mkisofs and cdrecord
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	cdlabelgen:${PORTSDIR}/print/cdlabelgen \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	cdlabelgen:print/cdlabelgen \
+		cdrecord:sysutils/cdrtools
 
 USES=		gettext perl5
 USE_PERL5=	build

@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/File::ShareDir.3.gz
 %%SITE_PERL%%/File/ShareDir.pm
 %%SITE_PERL%%/auto/share/dist/File-ShareDir/sample.txt
 %%SITE_PERL%%/auto/share/dist/File-ShareDir/subdir/sample.txt
 %%SITE_PERL%%/auto/share/module/File-ShareDir/test_file.txt
+%%PERL5_MAN3%%/File::ShareDir.3.gz

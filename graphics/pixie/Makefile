@@ -14,9 +14,9 @@ COMMENT=	Photorealistic renderer with Pixar's RenderMan-like interface
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfltk_gl.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+		libtiff.so:graphics/tiff \
+		libfltk_gl.so:x11-toolkits/fltk
 
 USE_GL=		glu
 USES=		bison compiler:c++0x libtool pathfix tar:tgz
@@ -48,7 +48,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 CONFIGURE_ENV+=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex"
 .endif
 

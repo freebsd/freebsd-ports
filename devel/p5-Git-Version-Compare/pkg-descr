@@ -1,0 +1,10 @@
+Git::Version::Compare contains a selection of subroutines that make dealing with
+Git-related things (like versions) a little bit easier.
+
+The strings to compare can be version numbers, tags from git.git or the output
+of git version or git describe.
+
+These routines collect the knowledge about Git versions that was accumulated
+while developing Git::Repository.
+
+WWW: http://search.cpan.org/dist/Git-Version-Compare/

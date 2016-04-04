@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	This module simplifies access to hotmail
 
-BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-Mail-Audit>=0:${PORTSDIR}/mail/p5-Mail-Audit
+BUILD_DEPENDS=	p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \
+		p5-Mail-Audit>=0:mail/p5-Mail-Audit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -14,7 +14,7 @@ COMMENT=	Markup converter in pure Python
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/docutils/__init__.py:textproc/py-docutils
 
 USES=		python
 USE_PYTHON=	distutils autoplist

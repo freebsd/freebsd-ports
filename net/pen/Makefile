@@ -9,7 +9,7 @@ MASTER_SITES=	http://siag.nu/pub/pen/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Load balancer for UDP and TCP based protocols
 
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

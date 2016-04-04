@@ -10,7 +10,7 @@ COMMENT=	Library and tool for personalization of Yubico's YubiKey
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libyubikey.so:${PORTSDIR}/security/libyubikey
+LIB_DEPENDS=	libyubikey.so:security/libyubikey
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	48.0.2564.116
+PORTVERSION=	49.0.2623.110
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -15,48 +16,48 @@ LICENSE_COMB=	multi
 
 CFLAGS+=	-isystem${LOCALBASE}/include -I${PREFIX}/include/atk-1.0
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		bash:${PORTSDIR}/shells/bash \
-		yasm:${PORTSDIR}/devel/yasm \
-		flock:${PORTSDIR}/sysutils/flock \
-		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
-		${LOCALBASE}/share/usbids/usb.ids:${PORTSDIR}/misc/usbids \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}ply>0:${PORTSDIR}/devel/py-ply \
-		${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib
+BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:devel/gperf \
+		bash:shells/bash \
+		yasm:devel/yasm \
+		flock:sysutils/flock \
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
+		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply \
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libnss3.so:${PORTSDIR}/security/nss \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libcups.so:${PORTSDIR}/print/cups-client \
-		libevent.so:${PORTSDIR}/devel/libevent2 \
-		libexif.so:${PORTSDIR}/graphics/libexif \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libpci.so:${PORTSDIR}/devel/libpci \
-		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libicuuc.so:${PORTSDIR}/devel/icu \
-		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
-		libnspr4.so:${PORTSDIR}/devel/nspr \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libre2.so:${PORTSDIR}/devel/re2 \
-		libsnappy.so:${PORTSDIR}/archivers/snappy \
-		libspeechd.so:${PORTSDIR}/accessibility/speech-dispatcher \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libwebp.so:${PORTSDIR}/graphics/webp
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libasound.so:audio/alsa-lib \
+		libfreetype.so:print/freetype2 \
+		libnss3.so:security/nss \
+		libFLAC.so:audio/flac \
+		libgnome-keyring.so:security/libgnome-keyring \
+		libharfbuzz.so:print/harfbuzz \
+		libcups.so:print/cups \
+		libevent.so:devel/libevent2 \
+		libexif.so:graphics/libexif \
+		libgcrypt.so:security/libgcrypt \
+		libpci.so:devel/libpci \
+		libdrm.so:graphics/libdrm \
+		libicuuc.so:devel/icu \
+		libjsoncpp.so:devel/jsoncpp \
+		libnspr4.so:devel/nspr \
+		libpng.so:graphics/png \
+		libre2.so:devel/re2 \
+		libsnappy.so:archivers/snappy \
+		libspeechd.so:accessibility/speech-dispatcher \
+		libspeex.so:audio/speex \
+		libxml2.so:textproc/libxml2 \
+		libwebp.so:graphics/webp
 
-RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
-		droid-fonts-ttf>0:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
-		xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
+		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf \
+		xdg-open:devel/xdg-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		bison compiler:c++11-lib cpe desktop-file-utils execinfo jpeg \
+USES=		bison compiler:c++14-lang cpe desktop-file-utils execinfo jpeg \
 		ninja perl5 pkgconfig python:2,build shebangfix tar:xz
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -138,7 +139,7 @@ OPTIONS_DEFAULT=	CODECS GCONF KERBEROS
 OPTIONS_SUB=	yes
 
 GCONF_USE=	GNOME=gconf2
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 DRIVER_MAKE_ARGS=chromedriver
 TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 
@@ -205,7 +206,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 CFLAGS+=	-fno-stack-protector # gcc 4.8 cannot find __stack_chk_fail_local
 .else
 GYP_DEFINES+=	clang=1
-CFLAGS+=	-Wno-unknown-warning-option
+CFLAGS+=	-Wno-unknown-warning-option \
+			-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1 # work around base r261801
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 CONFIGURE_ENV+=	AR=/usr/bin/ar
 .endif
@@ -338,6 +340,7 @@ pre-configure:
 		'third_party/webdriver' \
 		'third_party/webrtc' \
 		'third_party/widevine' \
+		'third_party/woff2' \
 		'third_party/x86inc' \
 		'third_party/yasm' \
 		'third_party/zlib' \

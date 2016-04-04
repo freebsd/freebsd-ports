@@ -13,10 +13,10 @@ COMMENT=	Default product for the Zope Content Management Framework
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestinfo
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.formlib>=1.0.2:${PORTSDIR}/devel/py-five.formlib \
-		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
-		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:devel/py-eggtestinfo
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.formlib>=1.0.2:devel/py-five.formlib \
+		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:devel/py-Products.CMFCore \
+		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:devel/py-Products.GenericSetup
 
 NO_ARCH=	yes
 USES=		python

@@ -3,7 +3,7 @@
 
 PORTNAME=	fusenshi
 PORTVERSION=	0.9.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 
@@ -18,7 +18,7 @@ MAKE_JOBS_UNSAFE=	yes
 .ifdef WITHOUT_SSL
 MAKE_ARGS+=	WITHOUT_SSL=yes
 .else
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 .endif
 
 post-install:

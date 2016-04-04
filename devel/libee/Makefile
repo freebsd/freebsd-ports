@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.libee.org/files/download/
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Event expression library inspired by CEE
 
-LIB_DEPENDS=	libestr.so:${PORTSDIR}/devel/libestr
+LIB_DEPENDS=	libestr.so:devel/libestr
 
 MAKE_JOBS_UNSAFE=	yes
 

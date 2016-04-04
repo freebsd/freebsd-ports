@@ -9,12 +9,12 @@ CATEGORIES=	x11-toolkits devel gnome
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	The "meta-port" for the powerful C++ bindings to the GNOME2 libraries
 
-LIB_DEPENDS=	libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
-		libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm \
-		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26 \
-		libgnomemm-2.6.so:${PORTSDIR}/x11/libgnomemm26 \
-		libgnomeuimm-2.6.so:${PORTSDIR}/x11-toolkits/libgnomeuimm26
+LIB_DEPENDS=	libgconfmm-2.6.so:devel/gconfmm26 \
+		libgnomevfsmm-2.6.so:devel/gnome-vfsmm \
+		libglademm-2.4.so:devel/libglademm24 \
+		libgnomecanvasmm-2.6.so:graphics/libgnomecanvasmm26 \
+		libgnomemm-2.6.so:x11/libgnomemm26 \
+		libgnomeuimm-2.6.so:x11-toolkits/libgnomeuimm26
 
 USES=		metaport
 

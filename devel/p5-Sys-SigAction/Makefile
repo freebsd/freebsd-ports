@@ -14,7 +14,7 @@ COMMENT=	Perl extension for Consistent Signal Handling
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Time-HiRes>=1.9726:${PORTSDIR}/devel/p5-Time-HiRes
+BUILD_DEPENDS=	p5-Time-HiRes>=1.9726:devel/p5-Time-HiRes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

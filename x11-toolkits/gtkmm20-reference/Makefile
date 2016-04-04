@@ -3,7 +3,7 @@
 
 PORTREVISION=	7
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-2.0.pc:${PORTSDIR}/x11-toolkits/gtkmm20
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-2.0.pc:x11-toolkits/gtkmm20
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes

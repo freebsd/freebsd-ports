@@ -9,7 +9,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML Help Maker
 
-LIB_DEPENDS=	liblzxcomp.so:${PORTSDIR}/archivers/liblzxcomp
+LIB_DEPENDS=	liblzxcomp.so:archivers/liblzxcomp
 
 USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile

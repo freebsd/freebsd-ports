@@ -10,7 +10,7 @@ MASTER_SITES=	http://ftp.nluug.nl/ftp/pub/pub/security/coast/daemons/pidentd/too
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client side ident protocol daemon wrapper
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
+BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:security/libident
 
 PORTDOCS=	README
 PLIST_FILES=	libexec/identify

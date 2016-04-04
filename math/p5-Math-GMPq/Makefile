@@ -13,9 +13,9 @@ COMMENT=	Perl interface to the GMP library rational (mpq) functions
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
-TEST_DEPENDS=	p5-Math-GMP>=0:${PORTSDIR}/math/p5-Math-GMP \
-		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
+LIB_DEPENDS=	libgmp.so:math/gmp
+TEST_DEPENDS=	p5-Math-GMP>=0:math/p5-Math-GMP \
+		p5-Test-Pod>=1:devel/p5-Test-Pod
 
 USE_PERL5=	configure
 USES=		localbase perl5

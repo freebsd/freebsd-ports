@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2015-04-21 14:32:18 UTC
++++ src/CMakeLists.txt
+@@ -10,7 +10,7 @@ qt5_add_resources(sdr_wspr_RCC_SOURCES .
+ add_executable(sdr-wspr ${sdr_wspr_SOURCES} ${sdr_wspr_MOC_SOURCES} ${sdr_wspr_RCC_SOURCES})
+ target_link_libraries(sdr-wspr
+   ${Qt5Core_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5WebKitWidgets_LIBRARIES}
+-  ${LIBS} sdrwspr)
++  ${LIBS} ${LDFLAGS} sdrwspr)
+ 
+ #add_executable(sdr_wspr_cli wspr2.cc sdr_wspr_cli.cc)
+ #target_link_libraries(sdr_wspr_cli ${LIBS} ${Qt5Core_LIBRARIES} sdrwspr)

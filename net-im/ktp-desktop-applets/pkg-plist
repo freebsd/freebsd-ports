@@ -41,6 +41,8 @@ share/locale/de/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.ktp-presence.mo
 share/locale/el/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo
 share/locale/el/LC_MESSAGES/plasma_applet_org.kde.ktp-presence.mo
+share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo
+share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.ktp-presence.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.ktp-presence.mo
 share/locale/et/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo

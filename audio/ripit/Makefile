@@ -13,12 +13,12 @@ COMMENT=	Command line audio CD ripper
 LICENSE=	GPLv2
 
 # See pkg-message about other dependencies.
-RUN_DEPENDS=	p5-CDDB_get>=0:${PORTSDIR}/audio/p5-CDDB_get \
-	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-	p5-WebService-MusicBrainz>=0:${PORTSDIR}/www/p5-WebService-MusicBrainz \
-	p5-MusicBrainz-DiscID>=0:${PORTSDIR}/audio/p5-MusicBrainz-DiscID \
-	lame:${PORTSDIR}/audio/lame \
-	cdparanoia:${PORTSDIR}/audio/cdparanoia
+RUN_DEPENDS=	p5-CDDB_get>=0:audio/p5-CDDB_get \
+	p5-libwww>=0:www/p5-libwww \
+	p5-WebService-MusicBrainz>=0:www/p5-WebService-MusicBrainz \
+	p5-MusicBrainz-DiscID>=0:audio/p5-MusicBrainz-DiscID \
+	lame:audio/lame \
+	cdparanoia:audio/cdparanoia
 
 USES=		perl5 shebangfix tar:bzip2
 NO_BUILD=	yes

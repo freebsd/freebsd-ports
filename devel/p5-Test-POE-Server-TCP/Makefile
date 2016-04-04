@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	POE Component providing TCP server services for test cases
 
-BUILD_DEPENDS=	p5-POE>=1.004:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-POE>=1.004:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

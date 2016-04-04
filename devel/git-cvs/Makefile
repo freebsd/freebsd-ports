@@ -8,8 +8,8 @@ CATEGORIES=	devel python
 MAINTAINER=	mp39590@gmail.com
 COMMENT=	Tool to incrementally import changesets from CVS into Git
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rcsparse>0:${PORTSDIR}/devel/py-rcsparse \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rcsparse>0:devel/py-rcsparse \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

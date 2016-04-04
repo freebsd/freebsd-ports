@@ -14,7 +14,7 @@ COMMENT=	SLang-based text editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:devel/libslang2
 
 CONFLICTS=	jed-devel-[0-9]*
 

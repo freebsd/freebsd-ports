@@ -15,9 +15,9 @@ COMMENT=	Library for reading and writing GeoTIFF information tags
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libproj.so:${PORTSDIR}/graphics/proj \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjbig.so:graphics/jbigkit \
+		libproj.so:graphics/proj \
+		libtiff.so:graphics/tiff
 
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-doxygen-doc \

@@ -3,7 +3,7 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	1.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,24 +29,24 @@ OPTIONS_DEFINE=		ALSA CUPS DIRECTFB FFMPEG GSTREAMER PULSEAUDIO SSE X11
 OPTIONS_DEFAULT=	CUPS GSTREAMER X11
 OPTIONS_SUB=		yes
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_ON=		-DWITH_ALSA=ON
 ALSA_CMAKE_OFF=		-DWITH_ALSA=OFF
 
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CMAKE_ON=		-DWITH_CUPS=ON
 CUPS_CMAKE_OFF=		-DWITH_CUPS=OFF
 
 # outdated and unmaintained upstream
 DIRECTFB_DESC=		Build FreeRDP DirectFB client (outdated)
-DIRECTFB_LIB_DEPENDS=	libdirectfb.so:${PORTSDIR}/devel/directfb
+DIRECTFB_LIB_DEPENDS=	libdirectfb.so:devel/directfb
 DIRECTFB_CMAKE_ON=	-DWITH_DIRECTFB=ON
 DIRECTFB_CMAKE_OFF=	-DWITH_DIRECTFB=OFF
 # currently DirectFB option fails with clang
 DIRECTFB_USE=		gcc=yes
 
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-			libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+			libavutil.so:multimedia/ffmpeg
 FFMPEG_CMAKE_ON=	-DWITH_FFMPEG=ON
 FFMPEG_CMAKE_OFF=	-DWITH_FFMPEG=OFF
 
@@ -54,7 +54,7 @@ GSTREAMER_CMAKE_ON=	-DWITH_GSTREAMER_1_0=ON -DWITH_GSTREAMER_0_10=OFF
 GSTREAMER_CMAKE_OFF=	-DWITH_GSTREAMER_1_0=OFF -DWITH_GSTREAMER_0_10=OFF
 GSTREAMER_USE=		gstreamer1=yes xorg=x11,xextproto,xext,xrandr
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_ON=	-DWITH_PULSE=ON
 PULSEAUDIO_CMAKE_OFF=	-DWITH_PULSE=OFF
 
@@ -62,7 +62,7 @@ SSE_CMAKE_ON=		-DWITH_SSE2=ON
 SSE_CMAKE_OFF=		-DWITH_SSE2=OFF
 
 X11_DESC=		Build FreeRDP X11 client
-X11_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
+X11_BUILD_DEPENDS=	xmlto:textproc/xmlto
 X11_CMAKE_ON=		-DWITH_X11=ON
 X11_CMAKE_OFF=		-DWITH_X11=OFF -DWITH_XKBFILE=OFF
 X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xcursor,xrandr,xi,xfixes

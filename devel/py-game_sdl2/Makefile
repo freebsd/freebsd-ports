@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	game_sdl2
-PORTVERSION=	6.99.9
+PORTVERSION=	6.99.10
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO
@@ -14,8 +14,8 @@ COMMENT=	Reimplementation of portions of the pygame API using SDL2
 LICENSE=	LGPL21+ ZLIB
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	cython:lang/cython
+LIB_DEPENDS=	libpng.so:graphics/png
 
 # Upstream tends to reroll distfiles before moving under /release/
 PORTSCOUT=	site:http://www.renpy.org/dl/release/

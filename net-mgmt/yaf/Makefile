@@ -12,10 +12,10 @@ COMMENT=	YAF is Yet Another Flowmeter
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/net/libfixbuf \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libpcap.so:${PORTSDIR}/net/libpcap \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libfixbuf.so:net/libfixbuf \
+		libltdl.so:devel/libltdl \
+		libpcap.so:net/libpcap \
+		libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -27,6 +27,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	PAYLOAD APPLABEL PLUGIN FPEXPORT ENTROPY MPLS NONIP P0FPRINT IFEXP CMPTIP4 LOCALTIME DNSAUTH DNSNX
 OPTIONS_DEFAULT=	PAYLOAD APPLABEL PLUGIN ENTROPY
+OPTIONS_SUB=	yes
 
 PAYLOAD_DESC=	YAF will enable reading past IP headers to do deep packet inspection
 APPLABEL_DESC=	Create protocol application labels via traffic header inspection.
@@ -63,7 +64,7 @@ ENTROPY_IMPLIES=	PAYLOAD
 P0FPRINT_IMPLIES=	APPLABEL
 NONIP_IMPLIES=		MPLS
 
-P0FPRINT_LIB_DEPENDS=	libp0f.so:${PORTSDIR}/net/libp0f
+P0FPRINT_LIB_DEPENDS=	libp0f.so:net/libp0f
 
 .include <bsd.port.options.mk>
 

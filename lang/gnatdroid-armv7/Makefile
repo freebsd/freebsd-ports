@@ -15,19 +15,20 @@ COMMENT?=	C/Ada cross-compiler, target: Android ARMv7
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${SYSROOT}>=19:${PORTSDIR}/lang/${SYSROOT} \
-		${GDBINUTILS}>=2.21:${PORTSDIR}/lang/${GDBINUTILS}
+BUILD_DEPENDS=	${SYSROOT}>=19:lang/${SYSROOT} \
+		${GDBINUTILS}>=2.21:lang/${GDBINUTILS}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_LICENSES_INSTALL= yes
+AUXPORT=	gcc6-aux
 
-.include "${.CURDIR}/../gcc-aux/Makefile.common"
+.include "${.CURDIR}/../${AUXPORT}/Makefile.common"
 
-USES+=		ada:49 gmake
+USES+=		ada:6 gmake
 LANGS=		c c++ ada
 APPLY_DIFFS=	core ada cxx ada-testsuite
 NO_MTREE=	YES
-DISTINFO_FILE=	${.CURDIR}/../gcc-aux/distinfo
+DISTINFO_FILE=	${.CURDIR}/../${AUXPORT}/distinfo
 
 OPTIONS_DEFINE=		FORT OBJC
 OPTIONS_SUB=		yes
@@ -45,7 +46,7 @@ BITS=			${GARCH:S/x86_64/64/:S/i386/32/}
 OS_LABEL4VERS=		[${OPSYS}${BITS} x Android ${CPUVERSION}]
 WRKSRC=			${WRKDIR}/${IDENTIFICATION}
 BUILD_WRKSRC=		${WRKDIR}/build
-PATCHDIR=		${.CURDIR}/../gcc-aux/files
+PATCHDIR=		${.CURDIR}/../${AUXPORT}/files
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
 SRPREFIX?=		${LOCALBASE}/android
@@ -89,6 +90,7 @@ ADA_CONFIG_ARGS+=	${ARG_FPU}
 ADA_CONFIG_ARGS+=	--enable-target-optspace
 ADA_CONFIG_ARGS+=	--enable-threads=posix
 ADA_CONFIG_ARGS+=	--enable-cxx-flags=-frtti
+ADA_CONFIG_ARGS+=	--enable-checking=release
 ADA_CONFIG_ARGS+=	--disable-bootstrap
 ADA_CONFIG_ARGS+=	--disable-shared
 ADA_CONFIG_ARGS+=	--disable-libssp
@@ -148,12 +150,12 @@ post-stage:
 
 acats: build
 	(cd ${BUILD_WRKSRC}/gcc && ${SETENV} \
-		PATH=${LOCALBASE}/gcc-aux/bin:${PATH}:${PREFIX}/bin \
+		PATH=${LOCALBASE}/${AUXPORT}/bin:${PATH}:${PREFIX}/bin \
 		${GMAKE} -sk check-acats)
 
 gnatdg: build
 	(cd ${BUILD_WRKSRC}/gcc && ${SETENV} \
-		PATH=${LOCALBASE}/gcc-aux/bin:${PATH}:${PREFIX}/bin \
-		${GMAKE} -sk check-gnat RUNTESTFLAGS=--target_board=gnatdroid)
+		PATH=${LOCALBASE}/${AUXPORT}/bin:${PATH}:${PREFIX}/bin \
+		${GMAKE} -sk check-gnat RUNTESTFLAGS=--target_board=gnatdroid6)
 
 .include <bsd.port.mk>

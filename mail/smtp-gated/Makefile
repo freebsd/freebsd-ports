@@ -32,6 +32,6 @@ NAT_CONFIGURE_ENABLE=	nat
 CHUNKING_CONFIGURE_ENABLE=	chunking
 ECONNRESET_CONFIGURE_ENABLE=	silent-econnreset
 PCRE_CONFIGURE_OFF=	--disable-pcre
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 
 .include <bsd.port.mk>

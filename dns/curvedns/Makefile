@@ -3,16 +3,16 @@
 
 PORTNAME=	curvedns
 PORTVERSION=	0.88.b
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	dns
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Forwarder adding DNSCurve to an authoritative nameserver
 
-LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
-		libsodium.so:${PORTSDIR}/security/libsodium
-RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libev.so:devel/libev \
+		libsodium.so:security/libsodium
+RUN_DEPENDS=	setuidgid:sysutils/daemontools
+BUILD_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov

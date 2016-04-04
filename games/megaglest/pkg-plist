@@ -7,3 +7,5 @@ bin/megaglest
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.source_code.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.source_code.txt
+share/applications/megaglest.desktop
+share/icons/megaglest.png

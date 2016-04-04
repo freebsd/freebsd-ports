@@ -21,11 +21,11 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=		NTFS3G EXT4 EXFAT
 OPTIONS_DEFAULT=	NTFS3G EXT4
 NTFS3G_DESC=		Enable NTFS write support with ntfs-3g over FUSE
-NTFS3G_RUN_DEPENDS=	fusefs-ntfs>=0:${PORTSDIR}/sysutils/fusefs-ntfs
+NTFS3G_RUN_DEPENDS=	fusefs-ntfs>=0:sysutils/fusefs-ntfs
 EXT4_DESC=		Support EXT4 filesystem
-EXT4_RUN_DEPENDS=	fusefs-ext4fuse>=0:${PORTSDIR}/sysutils/fusefs-ext4fuse
+EXT4_RUN_DEPENDS=	fusefs-ext4fuse>=0:sysutils/fusefs-ext4fuse
 EXFAT_DESC=		Support Microsoft exFAT filesystem
-EXFAT_RUN_DEPENDS=	fusefs-exfat>=0:${PORTSDIR}/sysutils/fusefs-exfat
+EXFAT_RUN_DEPENDS=	fusefs-exfat>=0:sysutils/fusefs-exfat
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/automount             ${STAGEDIR}${PREFIX}/sbin

@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Syndication feed auto-discovery
 
-RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler
+RUN_DEPENDS=	p5-URI>=0:net/p5-URI \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-libwww>=0:www/p5-libwww \
+		p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

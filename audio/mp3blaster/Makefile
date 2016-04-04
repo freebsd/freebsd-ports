@@ -24,20 +24,20 @@ SIDPLAY_DESC=	Sidplayer support
 
 PORTDOCS=	AUTHORS CREDITS ChangeLog FAQ README TODO
 
-LIRC_LIB_DEPENDS=		liblirc_client.so:${PORTSDIR}/comms/lirc
+LIRC_LIB_DEPENDS=		liblirc_client.so:comms/lirc
 LIRC_CONFIGURE_WITH=		lirc
 
-SIDPLAY_LIB_DEPENDS=		libsidplay.so:${PORTSDIR}/audio/libsidplay
+SIDPLAY_LIB_DEPENDS=		libsidplay.so:audio/libsidplay
 SIDPLAY_CONFIGURE_WITH=		sidplay
 
-VORBIS_LIB_DEPENDS=		libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=		libvorbisfile.so:audio/libvorbis
 VORBIS_CONFIGURE_WITH=		oggvorbis
 
 SDL_CONFIGURE_WITH=	sdl
 SDL_USE=		SDL=yes
 
 NAS_CONFIGURE_WITH=	nas
-NAS_LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas
+NAS_LIB_DEPENDS=	libaudio.so:audio/nas
 NAS_LDFLAGS=		-laudio
 
 ESOUND_CONFIGURE_WITH=	esd

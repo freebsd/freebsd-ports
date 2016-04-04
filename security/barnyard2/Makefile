@@ -43,7 +43,7 @@ EXAMPLES=	SCHEMA_ACCESS create_db2 create_mssql create_mysql create_oracle.sql c
 
 64BIT_CONFIGURE_ENABLE=	64bit-gcc
 ARUBA_CONFIGURE_ENABLE=	aruba
-BRO_LIB_DEPENDS=	libbroccoli.so:${PORTSDIR}/security/broccoli
+BRO_LIB_DEPENDS=	libbroccoli.so:security/broccoli
 BRO_CONFIGURE_ON=	--with-broccoli=${LOCALBASE}/lib
 BRO_CONFIGURE_ENABLE=	bro
 GRE_CONFIGURE_ENABLE=	gre
@@ -54,7 +54,7 @@ MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 MYSQL_SSL_CONFIGURE_ENABLE=	mysql-ssl-support
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_WITH=		odbc
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config --with-pgsql-includes=${LOCALBASE}/include/postgresql/server
@@ -63,7 +63,7 @@ TCL_USES=		tcl
 TCL_CONFIGURE_ON=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER}
 TCL_CONFIGURE_OFF=	--without-tcl
 WANT_PGSQL_VER=		92+
-PORT_PCAP_LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap
+PORT_PCAP_LIB_DEPENDS=	libpcap.so:net/libpcap
 PORT_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
 			--with-libpcap-libraries=${LOCALBASE}/lib
 

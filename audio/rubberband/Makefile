@@ -12,12 +12,12 @@ COMMENT=	Vamp audio analysis plugin SDK
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libvamp-sdk.so:${PORTSDIR}/audio/vamp-plugin-sdk \
-		libfftw3.so:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
+		libsamplerate.so:audio/libsamplerate \
+		libvamp-sdk.so:audio/vamp-plugin-sdk \
+		libfftw3.so:math/fftw3
+RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
 USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	liblas
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library For Reading And Writing LAS-Format Data
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 LICENSE=	BSD2CLAUSE
 

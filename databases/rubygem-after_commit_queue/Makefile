@@ -2,6 +2,7 @@
 
 PORTNAME=	after_commit_queue
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Allows to run callbacks after transaction is committed
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS?=	rubygem-activerecord>=3.0:${PORTSDIR}/databases/rubygem-activerecord
+RUN_DEPENDS?=	rubygem-activerecord4>=3.0:databases/rubygem-activerecord4
 
 NO_ARCH=	yes
 USE_RUBY=	yes

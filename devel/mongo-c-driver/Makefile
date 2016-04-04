@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mongo-c-driver
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@bsdserwis.com
 COMMENT=	C Driver for MongoDB
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbson-1.0.so:${PORTSDIR}/devel/libbson
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbson-1.0.so:devel/libbson
+LIB_DEPENDS+=	libsasl2.so:security/cyrus-sasl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb

@@ -12,8 +12,8 @@ EXTRACT_SUFX=
 MAINTAINER=	holgerrepp@googlemail.com
 COMMENT=	Nagios plugin to check tftp servers
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/tftp:${PORTSDIR}/ftp/tftp-hpa
+RUN_DEPENDS=	bash:shells/bash \
+		${LOCALBASE}/bin/tftp:ftp/tftp-hpa
 
 PLIST_FILES=	libexec/nagios/check_tftp
 

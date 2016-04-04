@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc-portgresql
-PORTVERSION=	1.3
+PORTVERSION=	2.0
 CATEGORIES=	science graphics
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-postgresql/
 DISTNAME=	OrthancPostgreSQL-${PORTVERSION}
@@ -14,9 +14,9 @@ COMMENT=	PostgreSQL plugin for Orthanc
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	orthanc>=0.9.4:${PORTSDIR}/science/orthanc
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp
+BUILD_DEPENDS=	orthanc>=0.9.4:science/orthanc
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libjsoncpp.so:devel/jsoncpp
 
 ## UnitTests require running PostgreSQL server, so it's pointless to build/run them
 CMAKE_ARGS=	-DBUILD_UNIT_TESTS=OFF

@@ -11,7 +11,7 @@ COMMENT=	Small tool to recompress JPEG, PNG, and GIF images
 
 LICENSE=	GPLv1
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		tar:xz
 

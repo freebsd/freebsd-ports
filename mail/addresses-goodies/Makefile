@@ -16,8 +16,8 @@ LICENSE=	LGPL21
 USES=		gnustep
 USE_GNUSTEP=	back build
 
-LIB_DEPENDS=	libInspector.so:${PORTSDIR}/deskutils/gworkspace \
-		libAddresses.so:${PORTSDIR}/mail/addresses
+LIB_DEPENDS=	libInspector.so:deskutils/gworkspace \
+		libAddresses.so:mail/addresses
 USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 WRKSRC=		${WRKDIR}/Addresses-${PORTVERSION}/Goodies

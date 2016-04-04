@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python script for managing tarsnap backups
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
-		tarsnap>=0:${PORTSDIR}/sysutils/tarsnap
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml \
+		tarsnap>=0:sysutils/tarsnap
 
 USES=		python
 NO_BUILD=	yes

@@ -10,8 +10,8 @@ MASTER_SITES=	SF/g19linux/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	armin@frozen-zone.org
 COMMENT=	G19 draw library
 
-LIB_DEPENDS=	libg19.so:${PORTSDIR}/devel/libg19 \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libg19.so:devel/libg19 \
+		libfreetype.so:print/freetype2
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -pthread"
 

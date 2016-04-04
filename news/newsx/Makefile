@@ -13,9 +13,9 @@ COMMENT=	Program to fetch news from and post news to a remote NNTP server
 LICENSE=	GPLv2
 
 .if defined(WITH_CNEWS)
-BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
+BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:news/cnews
 .elif !defined(WITHOUT_INN_2-X)
-BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
+BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:news/inn
 .endif
 
 GNU_CONFIGURE=	yes

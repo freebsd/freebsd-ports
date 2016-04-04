@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generates Class::DBI subclasses dynamically
 
-BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
-		p5-Class-DBI-BaseDSN>=0:${PORTSDIR}/databases/p5-Class-DBI-BaseDSN
+BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \
+		p5-Class-DBI-BaseDSN>=0:databases/p5-Class-DBI-BaseDSN
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

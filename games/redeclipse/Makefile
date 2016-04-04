@@ -12,7 +12,7 @@ COMMENT=	Single-player and multi-player first-person ego-shooter
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	redeclipse-data>=1.5.3:${PORTSDIR}/games/redeclipse-data
+RUN_DEPENDS=	redeclipse-data>=1.5.3:games/redeclipse-data
 
 BROKEN_sparc64=	does not build on sparc64
 

@@ -13,11 +13,11 @@ COMMENT=	Octave-forge baseport for all packages
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	octave:${PORTSDIR}/math/octave \
-		gmake:${PORTSDIR}/devel/gmake \
-		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib \
-		p5-File-Remove>=0:${PORTSDIR}/devel/p5-File-Remove
+RUN_DEPENDS=	octave:math/octave \
+		gmake:devel/gmake \
+		p5-Archive-Tar>=0:archivers/p5-Archive-Tar \
+		p5-IO-Zlib>=0:archivers/p5-IO-Zlib \
+		p5-File-Remove>=0:devel/p5-File-Remove
 
 USES=		perl5
 SUB_FILES=	load-octave-pkg

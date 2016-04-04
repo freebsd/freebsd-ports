@@ -12,7 +12,7 @@ COMMENT=	GNOME 3D modeler
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 

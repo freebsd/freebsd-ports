@@ -5,7 +5,7 @@ PKGNAMESUFFIX=	-cheri128
 
 COMMENT=	QEMU emulator with CHERI CPU support (128-bit)
 
-RUN_DEPENDS=	qemu-system-cheri:${PORTSDIR}/emulators/qemu-cheri
+RUN_DEPENDS=	qemu-system-cheri:emulators/qemu-cheri
 
 MASTERDIR=	${.CURDIR}/../qemu-cheri
 

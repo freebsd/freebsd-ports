@@ -18,8 +18,8 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCS
 
 USES+=		tk
-RUN_DEPENDS=	identify:${PORTSDIR}/graphics/ImageMagick \
-		weblint:${PORTSDIR}/www/weblint
+RUN_DEPENDS=	identify:graphics/ImageMagick \
+		weblint:www/weblint
 
 NO_BUILD=	yes
 

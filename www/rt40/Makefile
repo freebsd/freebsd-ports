@@ -43,7 +43,7 @@ OPTIONS_DEFAULT=	AP_MODFASTCGI GD GPG MYSQL
 USERS?=		www
 GROUPS?=	rt www
 
-RUN_DEPENDS+=	${LOCALBASE}/bin/jsmin:${PORTSDIR}/devel/jsmin
+RUN_DEPENDS+=	${LOCALBASE}/bin/jsmin:devel/jsmin
 
 .include "${.CURDIR}/Makefile.cpan"
 
@@ -73,15 +73,15 @@ AP_MODPERL_CONFIGURE_ON=	--with-apachectl=${LOCALBASE}/sbin/apachectl
 
 AP_MODFASTCGI_DESC=		Deploy with apache and mod_fastcgi
 AP_MODFASTCGI_USE=		APACHE_RUN=22+
-AP_MODFASTCGI_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
+AP_MODFASTCGI_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:www/mod_fastcgi \
 				${FASTCGI_DEPS}
 AP_MODFASTCGI_CONFIGURE_ON=	--with-apachectl=${LOCALBASE}/sbin/apachectl
 
 LIGHTTPD_DESC=			Deploy with lighttpd and mod_fastcgi
-LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:www/lighttpd
 
 SPAWN_FCGI_DESC=		Deploy with spawn_fcgi
-SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
+SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:www/spawn-fcgi
 
 MYSQL_USE=			MYSQL=yes
 MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
@@ -212,7 +212,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 502200
-CORE_DEPS+=	p5-CGI>0:${PORTSDIR}/www/p5-CGI
+CORE_DEPS+=	p5-CGI>0:www/p5-CGI
 .endif
 
 .include <bsd.port.post.mk>

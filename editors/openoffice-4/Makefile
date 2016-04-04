@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -47,53 +47,53 @@ LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=								\
-		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip	\
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww			\
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser	\
-		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip	\
-		zip:${PORTSDIR}/archivers/zip				\
-		ant:${PORTSDIR}/devel/apache-ant			\
-		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
-		dmake:${PORTSDIR}/devel/dmake				\
-		epm:${PORTSDIR}/devel/epm				\
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf		\
-		imake:${PORTSDIR}/devel/imake				\
-		gpatch:${PORTSDIR}/devel/patch				\
-		${LOCALBASE}/include/sane/sane.h:${PORTSDIR}/graphics/sane-backends \
-		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra \
-		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
-		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit		\
-		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh		\
-		bash:${PORTSDIR}/shells/bash				\
-		${JAVALIBDIR}/lucene-core-3.6.2.jar:${PORTSDIR}/textproc/lucene \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+		p5-Archive-Zip>=0:archivers/p5-Archive-Zip	\
+		p5-libwww>=0:www/p5-libwww			\
+		p5-XML-Parser>=0:textproc/p5-XML-Parser	\
+		${LOCALBASE}/bin/unzip:archivers/unzip	\
+		zip:archivers/zip				\
+		ant:devel/apache-ant			\
+		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \
+		dmake:devel/dmake				\
+		epm:devel/epm				\
+		${LOCALBASE}/bin/gperf:devel/gperf		\
+		imake:devel/imake				\
+		gpatch:devel/patch				\
+		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
+		${LOCALBASE}/bin/vigra-config:graphics/vigra \
+		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient \
+		${JAVALIBDIR}/commons-lang.jar:java/jakarta-commons-lang \
+		${JAVALIBDIR}/junit.jar:java/junit		\
+		${JAVALIBDIR}/bsh.jar:lang/bsh		\
+		bash:shells/bash				\
+		${JAVALIBDIR}/lucene-core-3.6.2.jar:textproc/lucene \
+		p5-libwww>=0:www/p5-libwww
 LIB_DEPENDS=								\
-		libapr-1.so:${PORTSDIR}/devel/apr1			\
-		libnspr4.so:${PORTSDIR}/devel/nspr			\
-		libcurl.so:${PORTSDIR}/ftp/curl				\
-		libcairo.so:${PORTSDIR}/graphics/cairo			\
-		libpng.so:${PORTSDIR}/graphics/png			\
-		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib	\
-		libgraphite.so:${PORTSDIR}/graphics/silgraphite		\
-		libCoinMP.so:${PORTSDIR}/math/coinmp			\
-		libfreetype.so:${PORTSDIR}/print/freetype2		\
-		libnss3.so:${PORTSDIR}/security/nss			\
-		libexpat.so:${PORTSDIR}/textproc/expat2			\
-		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell	\
-		libhyphen.so:${PORTSDIR}/textproc/hyphen		\
-		libtextcat.so:${PORTSDIR}/textproc/libtextcat		\
-		libmythes-1.2.so:${PORTSDIR}/textproc/mythes		\
-		librdf.so:${PORTSDIR}/textproc/redland			\
-		libserf-1.so:${PORTSDIR}/www/serf			\
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+		libapr-1.so:devel/apr1			\
+		libnspr4.so:devel/nspr			\
+		libcurl.so:ftp/curl				\
+		libcairo.so:graphics/cairo			\
+		libpng.so:graphics/png			\
+		libpoppler-glib.so:graphics/poppler-glib	\
+		libgraphite.so:graphics/silgraphite		\
+		libCoinMP.so:math/coinmp			\
+		libfreetype.so:print/freetype2		\
+		libnss3.so:security/nss			\
+		libexpat.so:textproc/expat2			\
+		libhunspell-1.3.so:textproc/hunspell	\
+		libhyphen.so:textproc/hyphen		\
+		libtextcat.so:textproc/libtextcat		\
+		libmythes-1.2.so:textproc/mythes		\
+		librdf.so:textproc/redland			\
+		libserf-1.so:www/serf			\
+		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=								\
-		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
-		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
-		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-caladea-ttf \
-		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-carlito-ttf \
-		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
+		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
+		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient \
+		${JAVALIBDIR}/bsh.jar:lang/bsh \
+		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
+		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
+		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:x11-fonts/croscorefonts-fonts-ttf
 
 AOOVERSION1=	4
 AOOVERSION2=	1
@@ -146,10 +146,10 @@ WIKI_PUBLISHER_DESC=	Build and install Wiki Publisher extension
 CCACHE_DESC=		Mimimize compile time of C/C++ programs
 
 CUPS_CONFIGURE_ENABLE=		cups
-CUPS_LIB_DEPENDS=		libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=		libcups.so:print/cups
 
 GNOME_CONFIGURE_ENABLE=		dbus gconf lockdown
-GNOME_LIB_DEPENDS=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+GNOME_LIB_DEPENDS=		libdbus-glib-1.so:devel/dbus-glib
 GNOME_USE=			GNOME=gconf2
 
 GNOMEVFS_CONFIGURE_ENABLE=	gnome-vfs
@@ -164,6 +164,9 @@ SDK_CONFIGURE_ENABLE=		odk
 
 WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
 WIKI_PUBLISHER_VARS=	BUNDLED_EXTENSIONS+=swext/wiki-publisher.oxt
+
+# Don't run gnome-post-install until after post-install generates the plist
+TARGET_ORDER_OVERRIDE=	710:gnome-post-install
 
 .include <bsd.port.pre.mk>
 
@@ -185,7 +188,7 @@ PACKAGE_PREFIX=		Apache_OpenOffice
 LOCALIZED_LANG?=	en-US
 
 .if ${PORT_OPTIONS:MCCACHE} || defined(WITH_CCACHE)
-BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
+BUILD_DEPENDS+=	ccache:devel/ccache
 CCACHE_PREFIX=	ccache
 AOOCC=		${CCACHE_PREFIX} ${CC}
 AOOCXX=		${CCACHE_PREFIX} ${CXX}

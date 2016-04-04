@@ -12,8 +12,8 @@ DISTNAME=	ldaptor-${PORTVERSION}-${GITVERSION}
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Pure-python LDAP module for Twisted
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing \
-		${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl
 
 GITVERSION=	aad8ded658b36337a08aeb7402b6b67eb8771bea
 

@@ -12,8 +12,9 @@ MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Pluggable data store for hierarchical data
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
+RUN_DEPENDS=	rubygem-json_pure>=0:devel/rubygem-json_pure
 
 CONFLICTS_INSTALL=	rubygem-hiera-*
 

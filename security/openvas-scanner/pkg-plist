@@ -1,0 +1,17 @@
+bin/openvas-mkcert-client
+man/man1/openvas-mkcert-client.1.gz
+man/man8/greenbone-nvt-sync.8.gz
+man/man8/openvas-mkcert.8.gz
+man/man8/openvas-nvt-sync.8.gz
+man/man8/openvassd.8.gz
+sbin/greenbone-nvt-sync
+sbin/openvas-mkcert
+sbin/openvas-nvt-sync
+sbin/openvassd
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/example_redis_2_4.conf
+%%PORTDOCS%%%%DOCSDIR%%/example_redis_2_6.conf
+@dir /var/cache/openvas
+@dir /var/lib/openvas/plugins
+@dir /var/lib/openvas
+@dir /var/lib

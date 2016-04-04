@@ -14,10 +14,10 @@ LICENSE_NAME=	AMPAS
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libAcesContainer.so:${PORTSDIR}/graphics/ampasACES-container
+LIB_DEPENDS=	libImath.so:graphics/ilmbase \
+		libIlmImf.so:graphics/OpenEXR \
+		libtiff.so:graphics/tiff \
+		libAcesContainer.so:graphics/ampasACES-container
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ampas

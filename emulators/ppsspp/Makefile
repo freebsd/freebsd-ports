@@ -2,8 +2,8 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.2.1
-PORTREVISION?=	1
+DISTVERSION?=	1.2.2
+PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -15,15 +15,15 @@ COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
-		libsnappy.so:${PORTSDIR}/archivers/snappy \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libzip.so:archivers/libzip \
+		libsnappy.so:archivers/snappy \
+		libavcodec.so:multimedia/ffmpeg
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard:DEFAULT,lang Kingcom:ext_armips
 GH_PROJECT=	${PORTNAME}-lang:lang armips:ext_armips
-GH_TAGNAME?=	b7da552:lang 9b225d9:ext_armips
+GH_TAGNAME?=	16a50e3:lang 9b225d9:ext_armips
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
 
@@ -54,8 +54,8 @@ QT4_USE=	QT4=qmake_build,moc_build,rcc_build,uic_build,linguisttools_build,gui,o
 QT5_USES=	qmake:outsource
 QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
 SDL_USES=	cmake:outsource ninja
-SDL_BUILD_DEPENDS=	png>=1.6:${PORTSDIR}/graphics/png
-SDL_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+SDL_BUILD_DEPENDS=	png>=1.6:graphics/png
+SDL_LIB_DEPENDS=	libpng.so:graphics/png
 SDL_VARS=	PORTDATA+="assets ${PORTNAME}"
 
 post-extract:

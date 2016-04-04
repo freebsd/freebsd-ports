@@ -10,11 +10,15 @@ DISTNAME=	SP${PORTVERSION:tl:C/\.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool looking for vulnerabilities in web applications
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl
 
 USES=		python shebangfix tar:tgz
 SHEBANG_FILES=	*.py
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/spkproxy
 
@@ -27,6 +31,8 @@ do-install:
 	${SED} "s|DATADIR|${DATADIR}|" ${SCRIPTDIR}/spkproxy.sh > \
 		${STAGEDIR}${PREFIX}/bin/spkproxy.sh
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/spkproxy.sh
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} WHYGPL.txt TODO.txt SpikeUsage.txt \
 		README.txt CHANGELOG.txt ${STAGEDIR}${DOCSDIR})

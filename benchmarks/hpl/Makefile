@@ -10,8 +10,8 @@ MASTER_SITES=	NETLIB/benchmark/hpl
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	High Performance Computing Linpack Benchmark
 
-LIB_DEPENDS=	libblas.so:${PORTSDIR}/math/blas \
-		libmpich.so:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	libblas.so:math/blas \
+		libmpich.so:net/mpich2
 
 USES=		fortran
 USE_LDCONFIG=	yes

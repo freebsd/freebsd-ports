@@ -11,7 +11,7 @@ COMMENT=	Ruby version of the Rackspace Cloud Files API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 
 NO_ARCH=	yes
 

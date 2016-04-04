@@ -12,7 +12,7 @@ COMMENT=	Simple lightweight distributed issue tracker
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-trollop>=1.9:${PORTSDIR}/devel/rubygem-trollop
+RUN_DEPENDS=	rubygem-trollop>=1.9:devel/rubygem-trollop
 
 NO_ARCH=	yes
 

@@ -14,7 +14,7 @@ COMMENT=	ForensicArtifacts.com Artifact Repository
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:${PORTSDIR}/devel/py-yaml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml
 
 USES=		python
 USE_PYTHON=	distutils autoplist

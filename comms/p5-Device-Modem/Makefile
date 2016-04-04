@@ -14,7 +14,7 @@ COMMENT=	Perl class to interface generic modems (AT-compliant)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Device-SerialPort>=0:${PORTSDIR}/comms/p5-Device-SerialPort
+BUILD_DEPENDS=	p5-Device-SerialPort>=0:comms/p5-Device-SerialPort
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

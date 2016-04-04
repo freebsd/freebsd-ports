@@ -11,7 +11,7 @@ COMMENT=	HexInject is a very versatile packet injector and sniffer
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	libpcap.so:net/libpcap
 
 PLIST_FILES=	bin/${PORTNAME}
 

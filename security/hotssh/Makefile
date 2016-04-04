@@ -13,15 +13,15 @@ COMMENT=	HotSSH is an interface to Secure Shell, for GNOME and OpenSSH
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
-		${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc:${PORTSDIR}/devel/py-gobject \
-		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
-		${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc:${PORTSDIR}/devel/py-gobject \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus \
+		${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc:devel/py-gobject \
+		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:devel/dbus-glib \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:x11-toolkits/py-vte
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus \
+		${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc:devel/py-gobject \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:x11-toolkits/py-vte
 
 USE_GNOME=	pygtk2 gnomedocutils libxslt glib20 intltool
 USES=		gettext python tar:bzip2 waf

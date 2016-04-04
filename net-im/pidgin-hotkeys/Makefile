@@ -11,9 +11,9 @@ COMMENT=	Pidgin plugin that allows user to assign global hotkeys
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
-BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+LIB_DEPENDS=	libpurple.so:net-im/libpurple
+BUILD_DEPENDS=	pidgin:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin
 
 USES=		libtool pkgconfig
 USE_GNOME=	gtk20

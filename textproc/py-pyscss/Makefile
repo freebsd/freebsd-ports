@@ -12,9 +12,9 @@ COMMENT=	Compiler for SCSS flavor of the Sass language
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+LIB_DEPENDS=	libpcre.so:devel/pcre
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Kronuz

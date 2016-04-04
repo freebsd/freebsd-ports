@@ -12,9 +12,9 @@ COMMENT=	Encap Package Manager
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libfget.a:${PORTSDIR}/ftp/fget
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libfget.a:ftp/fget
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2
 
 HAS_CONFIGURE=	YES
 CPPFLAGS+=	-I${LOCALBASE}/include

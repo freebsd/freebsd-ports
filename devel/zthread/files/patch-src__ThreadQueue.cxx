@@ -1,6 +1,6 @@
---- ./src/ThreadQueue.cxx.orig	2005-03-12 22:55:23.000000000 -0500
-+++ ./src/ThreadQueue.cxx	2013-01-17 13:48:32.000000000 -0500
-@@ -139,11 +139,12 @@
+--- src/ThreadQueue.cxx.orig	2005-03-13 03:55:23 UTC
++++ src/ThreadQueue.cxx
+@@ -139,11 +139,12 @@ namespace ZThread {
      
      // Wake the main thread,if its waiting, when the last pending-thread becomes available;
      // Otherwise, take note that no wait for pending threads to finish is needed

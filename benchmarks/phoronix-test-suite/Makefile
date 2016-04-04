@@ -2,25 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	5.4.1
-PORTREVISION=	1
+PORTVERSION=	6.2.2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	luca.pizzamiglio@gmail.com
 COMMENT=	Phoronix Benchmarking Suite
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	fpdf>0:${PORTSDIR}/print/fpdf
-
+USE_GCC=	any
 USE_PHP=	ctype curl dom filter gd hash json openssl pcntl posix session \
-	sockets sqlite3 zip zlib
+	simplexml sockets sqlite3 zip zlib
 USE_PHP_BUILD=	yes
 WANT_PHP_CLI=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phoronix-test-suite
+
+RUN_DEPENDS+=	fpdf>0:print/fpdf
+RUN_DEPENDS+=	cmake:devel/cmake
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -39,18 +40,21 @@ post-patch:
 	@${SED} -i '' -e "s|/usr/local|${LOCALBASE}|g" \
 		${WRKSRC}/phoronix-test-suite \
 		${WRKSRC}/pts-core/commands/ob_test_profile_analyze.php \
+		${WRKSRC}/pts-core/pts-core.php \
+		${WRKSRC}/pts-core/objects/pts_svg_dom_gd.php \
+		${WRKSRC}/pts-core/objects/phodevi/components/phodevi_system.php \
+		${WRKSRC}/pts-core/objects/client/pts_external_dependencies.php \
+		${WRKSRC}/pts-core/objects/client/pts_client.php \
 		${WRKSRC}/pts-core/external-test-dependencies/scripts/install-dragonfly-packages.sh \
-		${WRKSRC}/pts-core/external-test-dependencies/xml/dragonfly-packages.xml \
-		${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml \
-		${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php \
-		${WRKSRC}/pts-core/objects/client/pts_client.php
+		${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml
 	@${SED} -i '' -e "s|/usr/share/fonts|${LOCALBASE}/share/fonts| ; \
 		s|/usr/X11/lib|${LOCALBASE}/lib|" \
-		${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php
+		${WRKSRC}/pts-core/objects/pts_svg_dom_gd.php
 	@${SED} -i '' -e "/fpdf.php/s|/usr/share/php|${PREFIX}/share|" \
-		${WRKSRC}/pts-core/pts-core.php \
-		${WRKSRC}/pts-core/commands/dump_documentation.php \
-		${WRKSRC}/pts-core/commands/result_file_to_pdf.php
+		${WRKSRC}/pts-core/objects/pts_pdf_template.php
+		#${WRKSRC}/pts-core/pts-core.php \
+		#${WRKSRC}/pts-core/commands/dump_documentation.php \
+		#${WRKSRC}/pts-core/commands/result_file_to_pdf.php
 
 do-install:
 	(cd ${WRKSRC} && ${CONFIGURE_ARGS} DESTDIR="${STAGEDIR}" ./install-sh ${PREFIX})

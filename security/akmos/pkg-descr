@@ -1,0 +1,11 @@
+Akmos is a cryptographic library with CLI.
+
+It supports:
+- symmetric ciphering;
+- computing message digests (hashes);
+- calculating a message authentication code (MAC);
+
+Depends only on the standard C library.
+Primary develop for the x86_64 architecture.
+
+WWW: https://github.com/melanhit/akmos

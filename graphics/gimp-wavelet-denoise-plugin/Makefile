@@ -15,8 +15,8 @@ COMMENT=	GIMP plugin to reduce noise in each channel of an image separately
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
 
 USES=		gettext gmake pkgconfig
 

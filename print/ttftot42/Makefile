@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.nih.at/ttftot42/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType to Type42 font converter
 
-LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	libttf.so:print/freetype
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ttftot42

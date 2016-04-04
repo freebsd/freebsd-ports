@@ -13,7 +13,7 @@ COMMENT=	Perl script for retrieving configuration of various network devices
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
+BUILD_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

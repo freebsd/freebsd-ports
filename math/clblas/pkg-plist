@@ -10,4 +10,4 @@ lib/cmake/clBLAS/clBLASTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/clBLAS/clBLASTargets.cmake
 lib/libclBLAS.so
 lib/libclBLAS.so.2
-lib/libclBLAS.so.2.6.0
+lib/libclBLAS.so.2.10.0

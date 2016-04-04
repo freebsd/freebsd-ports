@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Record, repeat, and play key sequence from keyboard
 
 BROKEN=		unfetchable
+DEPRECATED=	Does not fetch
+EXPIRATION_DATE=2016-04-13
 
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11 xt

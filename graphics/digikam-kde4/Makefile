@@ -3,7 +3,7 @@
 
 PORTNAME=	digikam
 PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	graphics kde
 
@@ -12,17 +12,17 @@ COMMENT=	KDE4 digital photo management application
 
 .include "${.CURDIR}/Makefile.common"
 
-BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libjasper.so:${PORTSDIR}/graphics/jasper \
-		liblensfun.so:${PORTSDIR}/graphics/lensfun \
-		liblqr-1.so:${PORTSDIR}/graphics/liblqr-1 \
-		libkface.so:${PORTSDIR}/graphics/libkface \
-		libpgf.so:${PORTSDIR}/graphics/libpgf \
-		libkgeomap.so:${PORTSDIR}/astro/libkgeomap \
-		libboost_graph.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		liblcms.so:graphics/lcms \
+		libpng.so:graphics/png \
+		libjasper.so:graphics/jasper \
+		liblensfun.so:graphics/lensfun \
+		liblqr-1.so:graphics/liblqr-1 \
+		libkface.so:graphics/libkface \
+		libpgf.so:graphics/libpgf \
+		libkgeomap.so:astro/libkgeomap \
+		libboost_graph.so:devel/boost-libs
 
 USES+=		pkgconfig shebangfix
 USE_KDE4+=	libkdcraw libkexiv2 libkipi
@@ -38,12 +38,12 @@ OPTIONS_DEFAULT=	GPHOTO2 PIMLIBS
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=		yes # MYSQL
 
-DOCS_RUN_DEPENDS=	digikam-doc>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-doc
+DOCS_RUN_DEPENDS=	digikam-doc>=${DIGIKAM_VER}:graphics/digikam-kde4-doc
 
-NLS_RUN_DEPENDS=	digikam-l10n>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-l10n
+NLS_RUN_DEPENDS=	digikam-l10n>=${DIGIKAM_VER}:graphics/digikam-kde4-l10n
 
 GPHOTO2_DESC=		Gphoto2 camera support
-GPHOTO2_LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+GPHOTO2_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 GPHOTO2_CMAKE_OFF=	-DWITH_Gphoto2:BOOL=OFF
 
 PIMLIBS_DESC=		Address book support
@@ -52,7 +52,7 @@ PIMLIBS_CMAKE_ON=	-DENABLE_KDEPIMLIBSSUPPORT:BOOL=ON
 PIMLIBS_CMAKE_OFF=	-DENABLE_KDEPIMLIBSSUPPORT:BOOL=OFF
 
 MYSQL_USE=		MYSQL=server QT4=sql-mysql_run
-MYSQL_BUILD_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqld.a:${PORTSDIR}/${_MYSQL_SERVER}
+MYSQL_BUILD_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqld.a:${_MYSQL_SERVER}
 MYSQL_CMAKE_ON= 	-DMYSQLD_PATH:PATH=${LOCALBASE}/libexec \
 			-DMYSQL_TOOLS_PATH:PATH=${LOCALBASE}/bin
 MYSQL_CMAKE_OFF=	-DENABLE_INTERNALMYSQL:BOOL=OFF

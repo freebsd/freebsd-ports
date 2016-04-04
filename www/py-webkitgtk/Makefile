@@ -16,7 +16,7 @@ COMMENT=	Python bindings for the WebKit GTK+ port
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

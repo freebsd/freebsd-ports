@@ -10,7 +10,7 @@ COMMENT=	Daemon to rotate, compress, remove, and mail system log files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 USE_GITHUB=	yes
 

@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGF Summarizer
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sgflib.py:${PORTSDIR}/games/py-sgflib
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sgflib.py:games/py-sgflib
 
 PLIST_FILES=	bin/sgfsummary.py
 USES=		python

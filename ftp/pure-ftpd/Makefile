@@ -3,6 +3,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.42
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -76,7 +77,7 @@ PERUSERLIMITS_CONFIGURE_WITH=	peruserlimits
 PGSQL_CONFIGURE_WITH=	pgsql
 PGSQL_USES=		pgsql
 PRIVSEP_CONFIGURE_WITH=	privsep
-SCRYPT_LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
+SCRYPT_LIB_DEPENDS=	libsodium.so:security/libsodium
 SENDFILE_CONFIGURE_WITH=sendfile
 THROTTLING_CONFIGURE_WITH=	throttling
 TLS_CONFIGURE_WITH=	tls

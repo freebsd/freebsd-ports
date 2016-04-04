@@ -14,7 +14,7 @@ COMMENT=	Test for Singleton classes
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Class-Singleton>=0:${PORTSDIR}/devel/p5-Class-Singleton
+BUILD_DEPENDS=	p5-Class-Singleton>=0:devel/p5-Class-Singleton
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

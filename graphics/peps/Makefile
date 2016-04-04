@@ -3,7 +3,7 @@
 
 PORTNAME=	peps
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://peps.redprince.net/peps/ \
 		ftp://ftp.peps.redprince.net/unix/peps/

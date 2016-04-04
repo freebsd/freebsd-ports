@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Core
-PORTVERSION=	2.22.6
+PORTVERSION=	2.23.0
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
@@ -68,7 +68,7 @@ USE_HORDE_RUN=	Horde_Role \
 USE_HORDE_RUN+=	Horde_Routes
 
 KOLAB_USE=	HORDE_RUN=Horde_Kolab_Server,Horde_Kolab_Session,Horde_Kolab_Storage
-LZF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/lzf.so:${PORTSDIR}/archivers/pecl-lzf
+LZF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/lzf.so:archivers/pecl-lzf
 SOCKETS_USE=	PHP=sockets
 
 .include <bsd.port.mk>

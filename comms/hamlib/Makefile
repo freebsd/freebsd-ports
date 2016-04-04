@@ -12,8 +12,8 @@ COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+BUILD_DEPENDS=	swig:devel/swig13
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 INFO=		hamlib
 USES=		autoreconf libtool:keepla pathfix perl5 pkgconfig python shebangfix tcl

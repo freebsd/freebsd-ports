@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	groonga
-PORTVERSION=	5.1.0
+PORTVERSION=	6.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -10,7 +10,7 @@ COMMENT=	Open-source fulltext search engine and column store
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -35,12 +35,12 @@ OPTIONS_DEFAULT=	MECAB SUGGEST RUBY
 OPTIONS_SUB=		yes
 
 MECAB_DESC=		Morphological analysis support via MeCab
-MECAB_LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
+MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
 MECAB_CONFIGURE_OFF=	--without-mecab
 SUGGEST_DESC=		Suggestions support
-SUGGEST_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
-			libmsgpack.so:${PORTSDIR}/devel/msgpack \
-			libzmq.so:${PORTSDIR}/net/libzmq2
+SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent2 \
+			libmsgpack.so:devel/msgpack \
+			libzmq.so:net/libzmq2
 SUGGEST_CONFIGURE_ON=	--with-libevent=${LOCALBASE} \
 			--with-message-pack=${LOCALBASE} \
 			--enable-zeromq
@@ -50,8 +50,6 @@ SUGGEST_CONFIGURE_OFF=	--without-libevent \
 RUBY_CONFIGURE_ON=	--enable-mruby
 RUBY_USE=		RUBY=yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|lib/$${PACKAGE}/db/db|db/$${PACKAGE}/db| ; \
@@ -60,7 +58,7 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.9.7/auto/install
+		${WRKSRC}/vendor/nginx-1.9.12/auto/install
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd

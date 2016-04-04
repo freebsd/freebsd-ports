@@ -18,6 +18,6 @@ USE_PYTHON=	distutils autoplist
 OPTIONS_DEFINE=		CAIRO
 OPTIONS_DEFAULT=	CAIRO
 
-CAIRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:${PORTSDIR}/graphics/py-cairo
+CAIRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo
 
 .include <bsd.port.mk>

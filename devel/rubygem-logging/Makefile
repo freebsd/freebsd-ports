@@ -12,8 +12,8 @@ COMMENT=	Logging library based on Java's log4j
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-little-plugger>=1.1.3:${PORTSDIR}/devel/rubygem-little-plugger \
-		rubygem-multi_json>=1.8.4:${PORTSDIR}/devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-little-plugger>=1.1.3:devel/rubygem-little-plugger \
+		rubygem-multi_json>=1.8.4:devel/rubygem-multi_json
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -11,7 +11,7 @@ COMMENT=	Simple X11 mouse cursor editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgtkmm-2.0.so:${PORTSDIR}/x11-toolkits/gtkmm20
+LIB_DEPENDS=	libgtkmm-2.0.so:x11-toolkits/gtkmm20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	danfe

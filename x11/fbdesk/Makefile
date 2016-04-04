@@ -13,8 +13,8 @@ COMMENT=	Fluxbox utility to create and manage icons on the desktop
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libImlib2.so:graphics/imlib2
 
 USE_XORG=	xext xft xpm xrender
 USES=		pkgconfig

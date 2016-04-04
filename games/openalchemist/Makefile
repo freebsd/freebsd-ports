@@ -17,9 +17,9 @@ LICENSE_NAME_CCbySA=	Creative Commons Attribution-ShareAlike
 LICENSE_FILE_CCbySA=	${WRKSRC}/GRAPHICS-LICENSE
 LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libclanCore.so:${PORTSDIR}/devel/clanlib1 \
-	libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	zip:archivers/zip
+LIB_DEPENDS=	libclanCore.so:devel/clanlib1 \
+	libpng.so:graphics/png
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib

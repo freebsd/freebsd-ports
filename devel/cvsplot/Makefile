@@ -10,9 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Perl script which analyses the history of a CVS-managed project
 
-RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
-		gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote \
+		gnuplot:math/gnuplot
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/cvsplot

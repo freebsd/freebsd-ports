@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 PORTDOCS=	pcs.pdf
 PORTEXAMPLES=	*
 
-BUILD_DEPENDS=	cython>=0.11.2:${PORTSDIR}/lang/cython
+BUILD_DEPENDS=	cython>=0.11.2:lang/cython
 
 USES=		python
 USE_PYTHON=	distutils pythonprefix

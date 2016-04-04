@@ -14,7 +14,7 @@ COMMENT=	Plugin of glpi to get information of networking devices
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	glpi>=0.85:${PORTSDIR}/www/glpi
+RUN_DEPENDS=	glpi>=0.85:www/glpi
 
 USE_PHP=	fileinfo simplexml wddx
 USES=		gettext

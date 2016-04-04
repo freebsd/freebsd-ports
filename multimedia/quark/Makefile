@@ -12,7 +12,7 @@ COMMENT=	Audio player, for geeks, by geeks
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	libxine.so:multimedia/libxine
 
 USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomevfs2

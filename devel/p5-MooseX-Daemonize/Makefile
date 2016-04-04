@@ -13,12 +13,12 @@ COMMENT=	Role for daemonizing your Moose based application
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0.33:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Getopt>=0.07:${PORTSDIR}/devel/p5-MooseX-Getopt \
-		p5-MooseX-Types-Path-Class>=0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class
+BUILD_DEPENDS=	p5-Moose>=0.33:devel/p5-Moose \
+		p5-MooseX-Getopt>=0.07:devel/p5-MooseX-Getopt \
+		p5-MooseX-Types-Path-Class>=0:devel/p5-MooseX-Types-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
-BUILD_DEPENDS+=	p5-Devel-CheckOS>=1.63:${PORTSDIR}/devel/p5-Devel-CheckOS
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
+BUILD_DEPENDS+=	p5-Devel-CheckOS>=1.63:devel/p5-Devel-CheckOS
 
 DEPRECATED=	Deprecated by upstream, use devel/p5-Daemon-Control instead
 

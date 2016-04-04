@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Mail_Autoconfig
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -14,6 +14,6 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Mail \
 		Horde_Smtp
 
-RUN_DEPENDS+=	${PEARDIR}/Net/DNS2.php:${PORTSDIR}/dns/pear-Net_DNS2
+RUN_DEPENDS+=	${PEARDIR}/Net/DNS2.php:dns/pear-Net_DNS2
 
 .include <bsd.port.mk>

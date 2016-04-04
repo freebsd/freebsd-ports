@@ -11,13 +11,13 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Mobile location information plugin for p5-HTTP-MobileAgent
 
 RUN_DEPENDS=	\
-	p5-Geo-Coordinates-Converter>=0.10:${PORTSDIR}/science/p5-Geo-Coordinates-Converter \
-	p5-Geo-Coordinates-Converter-iArea>=0.11:${PORTSDIR}/science/p5-Geo-Coordinates-Converter-iArea \
-	p5-HTTP-MobileAgent>=0.31:${PORTSDIR}/www/p5-HTTP-MobileAgent \
-	p5-UNIVERSAL-can>0:${PORTSDIR}/devel/p5-UNIVERSAL-can \
-	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require
+	p5-Geo-Coordinates-Converter>=0.10:science/p5-Geo-Coordinates-Converter \
+	p5-Geo-Coordinates-Converter-iArea>=0.11:science/p5-Geo-Coordinates-Converter-iArea \
+	p5-HTTP-MobileAgent>=0.31:www/p5-HTTP-MobileAgent \
+	p5-UNIVERSAL-can>0:devel/p5-UNIVERSAL-can \
+	p5-UNIVERSAL-require>0:devel/p5-UNIVERSAL-require
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	configure

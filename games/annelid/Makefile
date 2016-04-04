@@ -14,6 +14,8 @@ COMMENT=	Remake of the ubiquitous "Snake" and "Worm" games
 
 RESTRICTED=	No redistribution allowed
 BROKEN=		does not fetch: connect timeout
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 
 USES=		gmake zip
 USE_SDL=	sdl

@@ -11,7 +11,7 @@ bin/nspluginscan
 bin/nspluginviewer
 bin/servicemenudeinstallation
 bin/servicemenuinstallation
-include/konqsidebarplugin.h
+include/kde4/konqsidebarplugin.h
 lib/kde4/adblock.so
 lib/kde4/akregatorkonqfeedicon.so
 lib/kde4/autorefresh.so

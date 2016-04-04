@@ -1,0 +1,63 @@
+%%DATADIR%%/.gitignore
+%%DATADIR%%/.gitlab-ci.yml
+%%DATADIR%%/.hound.yml
+%%DATADIR%%/.rspec
+%%DATADIR%%/.rubocop.yml
+%%DATADIR%%/CHANGELOG
+%%DATADIR%%/Gemfile
+%%DATADIR%%/Gemfile.lock
+%%DATADIR%%/Guardfile
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README.md
+%%DATADIR%%/VERSION
+@(,,555) %%DATADIR%%/bin/authorized_keys
+@(,,555) %%DATADIR%%/bin/check
+@(,,555) %%DATADIR%%/bin/create-hooks
+@(,,555) %%DATADIR%%/bin/gitlab-keys
+@(,,555) %%DATADIR%%/bin/gitlab-projects
+@(,,555) %%DATADIR%%/bin/gitlab-shell
+@(,,555) %%DATADIR%%/bin/install
+@sample %%DATADIR%%/config.yml.sample
+@(,,555) %%DATADIR%%/hooks/post-receive
+@(,,555) %%DATADIR%%/hooks/pre-receive
+@(,,555) %%DATADIR%%/hooks/update
+%%DATADIR%%/lib/gitlab_access.rb
+%%DATADIR%%/lib/gitlab_access_status.rb
+%%DATADIR%%/lib/gitlab_authorized_keys.rb
+%%DATADIR%%/lib/gitlab_config.rb
+%%DATADIR%%/lib/gitlab_custom_hook.rb
+%%DATADIR%%/lib/gitlab_init.rb
+%%DATADIR%%/lib/gitlab_keys.rb
+%%DATADIR%%/lib/gitlab_logger.rb
+%%DATADIR%%/lib/gitlab_net.rb
+%%DATADIR%%/lib/gitlab_post_receive.rb
+%%DATADIR%%/lib/gitlab_projects.rb
+%%DATADIR%%/lib/gitlab_shell.rb
+%%DATADIR%%/lib/httpunix.rb
+%%DATADIR%%/lib/names_helper.rb
+%%DATADIR%%/spec/gitlab_access_spec.rb
+%%DATADIR%%/spec/gitlab_config_spec.rb
+%%DATADIR%%/spec/gitlab_keys_spec.rb
+%%DATADIR%%/spec/gitlab_logger_spec.rb
+%%DATADIR%%/spec/gitlab_net_spec.rb
+%%DATADIR%%/spec/gitlab_post_receive_spec.rb
+%%DATADIR%%/spec/gitlab_projects_spec.rb
+%%DATADIR%%/spec/gitlab_shell_spec.rb
+%%DATADIR%%/spec/httpunix_spec.rb
+%%DATADIR%%/spec/names_helper_spec.rb
+%%DATADIR%%/spec/spec_helper.rb
+%%DATADIR%%/spec/vcr_cassettes/allowed-pull.yml
+%%DATADIR%%/spec/vcr_cassettes/allowed-push.yml
+%%DATADIR%%/spec/vcr_cassettes/broadcast_message-none.yml
+%%DATADIR%%/spec/vcr_cassettes/broadcast_message-ok.yml
+%%DATADIR%%/spec/vcr_cassettes/check-ok.yml
+%%DATADIR%%/spec/vcr_cassettes/denied-pull.yml
+%%DATADIR%%/spec/vcr_cassettes/denied-push-with-user.yml
+%%DATADIR%%/spec/vcr_cassettes/denied-push.yml
+%%DATADIR%%/spec/vcr_cassettes/discover-ok.yml
+%%DATADIR%%/spec/vcr_cassettes/ssh-key-not-found.yml
+%%DATADIR%%/spec/vcr_cassettes/ssh-key-not-implemented.yml
+%%DATADIR%%/spec/vcr_cassettes/ssh-key-ok.yml
+%%DATADIR%%/support/rewrite-hooks.sh
+%%DATADIR%%/support/truncate_repositories.sh
+@dir(git,,755) /var/log/gitlab-shell

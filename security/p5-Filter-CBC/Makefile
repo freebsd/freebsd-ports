@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Source filter for Cipher Block Chaining
 
-BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
-		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
-		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC
+BUILD_DEPENDS=	p5-Filter>=0:devel/p5-Filter \
+		p5-Crypt-Rijndael>=0:security/p5-Crypt-Rijndael \
+		p5-Crypt-CBC>=0:security/p5-Crypt-CBC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"

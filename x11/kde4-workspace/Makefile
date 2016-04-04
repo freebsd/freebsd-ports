@@ -2,7 +2,7 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${KDE4_VERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -10,35 +10,35 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Plasma Desktop
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libck-connector.so:${PORTSDIR}/sysutils/consolekit \
-		libpci.so:${PORTSDIR}/devel/libpci \
-		libhal.so:${PORTSDIR}/sysutils/hal \
-		libqalculate.so:${PORTSDIR}/math/libqalculate \
-		libprison.so:${PORTSDIR}/graphics/prison \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libdbusmenu-qt.so:${PORTSDIR}/devel/libdbusmenu-qt \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libxcb-render-util.so:${PORTSDIR}/x11/xcb-util-renderutil \
-		libxcb-image.so:${PORTSDIR}/x11/xcb-util-image \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
-BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
-RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
-		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		xprop:${PORTSDIR}/x11/xprop \
-		xsetroot:${PORTSDIR}/x11/xsetroot \
-		xmessage:${PORTSDIR}/x11/xmessage \
-		xrdb:${PORTSDIR}/x11/xrdb \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		xset:${PORTSDIR}/x11/xset \
-		setxkbmap:${PORTSDIR}/x11/setxkbmap \
-		${KDE4_PREFIX}/bin/ksysguardd:${PORTSDIR}/sysutils/ksysguardd \
-		${KDE4_PREFIX}/lib/kde4/libexec/polkit-kde-authentication-agent-1:${PORTSDIR}/sysutils/polkit-kde \
-		${KDE4_PREFIX}/lib/kde4/libexec/polkitkde1helper:${PORTSDIR}/sysutils/kcm-polkit-kde \
-		${LOCALBASE}/etc/pam.d/kde:${PORTSDIR}/security/pam_kde \
-		${KDE4_PREFIX}/share/apps/ksplash/Themes/Default/Theme.rc:${PORTSDIR}/x11-themes/kde4-base-artwork
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libck-connector.so:sysutils/consolekit \
+		libpci.so:devel/libpci \
+		libhal.so:sysutils/hal \
+		libqalculate.so:math/libqalculate \
+		libprison.so:graphics/prison \
+		libboost_thread.so:devel/boost-libs \
+		libdbusmenu-qt.so:devel/libdbusmenu-qt \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png \
+		libxcb-render-util.so:x11/xcb-util-renderutil \
+		libxcb-image.so:x11/xcb-util-image \
+		libxcb-keysyms.so:x11/xcb-util-keysyms
+BUILD_DEPENDS=	xrdb:x11/xrdb
+RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:misc/kde4-xdg-env \
+		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
+		xprop:x11/xprop \
+		xsetroot:x11/xsetroot \
+		xmessage:x11/xmessage \
+		xrdb:x11/xrdb \
+		mkfontdir:x11-fonts/mkfontdir \
+		xset:x11/xset \
+		setxkbmap:x11/setxkbmap \
+		${KDE4_PREFIX}/bin/ksysguardd:sysutils/ksysguardd \
+		${KDE4_PREFIX}/lib/kde4/libexec/polkit-kde-authentication-agent-1:sysutils/polkit-kde \
+		${KDE4_PREFIX}/lib/kde4/libexec/polkitkde1helper:sysutils/kcm-polkit-kde \
+		${LOCALBASE}/etc/pam.d/kde:security/pam_kde \
+		${KDE4_PREFIX}/share/apps/ksplash/Themes/Default/Theme.rc:x11-themes/kde4-base-artwork
 
 USE_GL=		glu
 USE_GNOME=	glib20
@@ -78,7 +78,7 @@ GLES_USE=	GL=egl,glesv2
 GLES_CMAKE_OFF=	-DWITH_OpenGLES=off
 
 GPS_DESC=	GPS geolocation via gpsd
-GPS_LIB_DEPENDS=	libgps.so:${PORTSDIR}/astro/gpsd
+GPS_LIB_DEPENDS=	libgps.so:astro/gpsd
 GPS_CMAKE_ON=	-DWITH_libgps:BOOL=ON
 GPS_CMAKE_OFF=	-DWITH_libgps:BOOL=OFF
 
@@ -86,26 +86,26 @@ GSTREAMER_DESC=	Multimedia via Phonon-GStreamer
 GSTREAMER_USE=	QT4=phonon-gst_run
 
 KACTIVITY_DESC=		Activity Manager daemon
-KACTIVITY_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kactivitymanagerd:${PORTSDIR}/x11/kactivitymanagerd
+KACTIVITY_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kactivitymanagerd:x11/kactivitymanagerd
 
 PYTHON_DESC=		Python plasmoids support
-PYTHON_RUN_DEPENDS=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_python/plasma_importer.py:${PORTSDIR}/x11/plasma-scriptengine-python
+PYTHON_RUN_DEPENDS=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_python/plasma_importer.py:x11/plasma-scriptengine-python
 
 RUBY_DESC=		Ruby plasmoids support
-RUBY_RUN_DEPENDS=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_ruby/applet.rb:${PORTSDIR}/x11/plasma-scriptengine-ruby
+RUBY_RUN_DEPENDS=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_ruby/applet.rb:x11/plasma-scriptengine-ruby
 
 UPOWER_DESC=		Power management via UPower
-UPOWER_RUN_DEPENDS=	${LOCALBASE}/libexec/upowerd:${PORTSDIR}/sysutils/upower
+UPOWER_RUN_DEPENDS=	${LOCALBASE}/libexec/upowerd:sysutils/upower
 
 VLC_DESC=		Multimedia via Phonon-VLC
-VLC_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_vlc.so:${PORTSDIR}/multimedia/phonon-vlc
+VLC_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_vlc.so:multimedia/phonon-vlc
 
 WALLPAPERS_DESC=	Install official KDE wallpapers
-WALLPAPERS_RUN_DEPENDS=	${KDE4_PREFIX}/share/wallpapers/Horos/metadata.desktop:${PORTSDIR}/x11-themes/kde4-wallpapers \
-			${KDE4_PREFIX}/share/wallpapers/stripes-freebsd-blue/metadata.desktop:${PORTSDIR}/x11-themes/kde4-wallpapers-freebsd
+WALLPAPERS_RUN_DEPENDS=	${KDE4_PREFIX}/share/wallpapers/Horos/metadata.desktop:x11-themes/kde4-wallpapers \
+			${KDE4_PREFIX}/share/wallpapers/stripes-freebsd-blue/metadata.desktop:x11-themes/kde4-wallpapers-freebsd
 
 .if !exists(/usr/lib/libutempter.so)
-LIB_DEPENDS+=	libutempter.so:${PORTSDIR}/sysutils/libutempter
+LIB_DEPENDS+=	libutempter.so:sysutils/libutempter
 .endif
 
 post-patch:

@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Format text e-mail using Petal
 
-BUILD_DEPENDS=	p5-Petal>=0:${PORTSDIR}/textproc/p5-Petal \
-		p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
+BUILD_DEPENDS=	p5-Petal>=0:textproc/p5-Petal \
+		p5-Encode>=0:converters/p5-Encode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -16,6 +16,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Does not fetch, unmaintained
+EXPIRATION_DATE=2016-04-11
 
 USES=		qmake tar:bzip2
 USE_QT4=	xml gui corelib uic_build moc_build rcc_build

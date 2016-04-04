@@ -1,4 +1,4 @@
-%%ETCDIR%%/nsd.conf.sample
+@sample %%ETCDIR%%/nsd.conf.sample
 man/man5/nsd.conf.5.gz
 man/man8/nsd-checkconf.8.gz
 man/man8/nsd-checkzone.8.gz
@@ -12,5 +12,5 @@ sbin/nsd-control-setup
 %%MUNIN_PLUGIN%%share/munin/plugins/nsd_munin_
 @dir(%%NSDUSER%%,%%NSDGROUP%%,0755) %%NSDRUNDIR%%
 @dir(%%NSDUSER%%,%%NSDGROUP%%,0755) %%NSDDBDIR%%
-@exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDRUNDIR%%
-@exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDDBDIR%%
+@postexec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDRUNDIR%%
+@postexec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDDBDIR%%

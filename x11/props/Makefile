@@ -13,7 +13,7 @@ COMMENT=	The OpenLook props application
 
 CONFLICTS=	xview-clients-3.2.1.4.19*
 
-LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/props

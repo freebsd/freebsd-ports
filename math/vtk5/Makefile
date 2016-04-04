@@ -14,9 +14,9 @@ COMMENT=	The Visualization Toolkit
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 WRKSRC=		${WRKDIR}/VTK${PORTVERSION}
 
@@ -80,7 +80,7 @@ PLIST_SUB+=	SHARED="@comment " \
 .endif
 
 .if ${PORT_OPTIONS:MVTKMPEG2}
-LIB_DEPENDS+=	libvtkMPEG2Encode.so:${PORTSDIR}/multimedia/vtkmpeg2encode
+LIB_DEPENDS+=	libvtkMPEG2Encode.so:multimedia/vtkmpeg2encode
 PLIST_SUB+=	MPEG=""
 CMAKE_ARGS+=	-DVTK_USE_PATENTED:BOOL=ON \
 		-DVTK_USE_MPEG2_ENCODER:BOOL=ON \
@@ -91,8 +91,8 @@ PLIST_SUB+=	MPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
-    		libtheora.so:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	libogg.so:audio/libogg \
+		libtheora.so:multimedia/libtheora
 PLIST_SUB+=	THEORA=""
 CMAKE_ARGS+=	-DVTK_USE_OGGTHEORA_ENCODER:BOOL=ON
 .else
@@ -101,7 +101,7 @@ CMAKE_ARGS+=	-DVTK_USE_OGGTHEORA_ENCODER:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MGL2PS}
-LIB_DEPENDS+=	libgl2ps.so:${PORTSDIR}/print/gl2ps
+LIB_DEPENDS+=	libgl2ps.so:print/gl2ps
 CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
 PLIST_SUB+=	GL2PS=""
 .else
@@ -109,7 +109,7 @@ PLIST_SUB+=	GL2PS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOSMESA}
-LIB_DEPENDS+=	libOSMesa.so:${PORTSDIR}/graphics/libosmesa
+LIB_DEPENDS+=	libOSMesa.so:graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
 		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so \
@@ -126,9 +126,9 @@ PLIST_SUB+=	X11=""
 USE_QT4=	corelib designer gui opengl qmake_build uic_build \
 		moc_build rcc_build
 CMAKE_ARGS+=	-DVTK_USE_GUISUPPORT:BOOL=ON \
-   		-DVTK_USE_QVTK:BOOL=ON \
-   		-DVTK_USE_QT:BOOL=ON \
-   		-DDESIRED_QT_VERSION:STRING=4 \
+		-DVTK_USE_QVTK:BOOL=ON \
+		-DVTK_USE_QT:BOOL=ON \
+		-DDESIRED_QT_VERSION:STRING=4 \
 		-DQT_QMAKE_EXECUTABLE:FILEPATH=${QMAKE} \
 		-DVTK_INSTALL_QT_DIR:FILEPATH=/lib/qt4/plugins/designer
 PLIST_SUB+=	QT=""
@@ -149,7 +149,7 @@ PYDISTUTILS_PKGNAME=	VTK
 # INSTALLS_EGGINFO support has been removed
 # INSTALLS_EGGINFO=	yes
 CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=ON \
-    		-DVTK_PYTHON_SETUP_ARGS:STRING='--prefix="${PREFIX}"'
+		-DVTK_PYTHON_SETUP_ARGS:STRING='--prefix="${PREFIX}"'
 PLIST_SUB+=	PYTHON=""
 .else
 CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=OFF
@@ -189,9 +189,9 @@ USE_JAVA=	yes
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 CMAKE_ARGS+=	-DVTK_WRAP_JAVA:BOOL=ON \
-    		-DJAVA_AWT_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \
-    		-DJAVA_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \
-    		-DJAVA_INCLUDE_PATH2:FILEPATH=${JAVA_HOME}/include/freebsd \
+		-DJAVA_AWT_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \
+		-DJAVA_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \
+		-DJAVA_INCLUDE_PATH2:FILEPATH=${JAVA_HOME}/include/freebsd \
 		-DJAVA_AWT_LIBRARY:FILEPATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \
 		-DJAVA_JVM_LIBRARY:FILEPATH=${JAVA_HOME}/jre/lib/${ARCH}/server/libjvm.so
 PLIST_SUB+=	JAVA=""

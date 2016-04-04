@@ -11,7 +11,7 @@ COMMENT=	Tool for lexical, morphological analysis and generation of words
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 APVER=	3.3
 APREV=	2

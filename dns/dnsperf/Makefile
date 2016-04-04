@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Accurate performance metrics of Domain Name Services
 
-BUILD_DEPENDS=	isc-config.sh:${PORTSDIR}/dns/bind910
+BUILD_DEPENDS=	isc-config.sh:dns/bind910
 
 USES=		iconv
 GNU_CONFIGURE=	yes

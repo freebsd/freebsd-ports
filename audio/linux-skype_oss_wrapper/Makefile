@@ -13,7 +13,7 @@ COMMENT=	Partial PulseAudio API implementation using OSS backend
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux-c6-devtools
+BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:devel/linux-c6-devtools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3erios

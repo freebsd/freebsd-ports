@@ -59,9 +59,9 @@ USE_PHP+=	pdo_pgsql pgsql
 .  endif
 .endif
 
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libstdc++.so:${PORTSDIR}/lang/gcc \
-		libutil.so:${PORTSDIR}/misc/compat8x
+LIB_DEPENDS+=	libcurl.so:ftp/curl \
+		libstdc++.so:lang/gcc \
+		libutil.so:misc/compat8x
 
 SUB_FILES=	pkg-message log.sh test-deps.sh
 SUB_LIST=	"GREP=${GREP}"

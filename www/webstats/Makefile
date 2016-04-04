@@ -15,8 +15,8 @@ COMMENT=	Automated log file processing
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL
 
-RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
-		${LOCALBASE}/reportmagic/rmagic.pl:${PORTSDIR}/www/reportmagic
+RUN_DEPENDS=	analog:www/analog \
+		${LOCALBASE}/reportmagic/rmagic.pl:www/reportmagic
 
 NO_BUILD=	yes
 NO_ARCH=	yes

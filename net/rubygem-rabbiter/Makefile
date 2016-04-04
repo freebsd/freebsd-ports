@@ -11,10 +11,10 @@ COMMENT=	Rabbiter is a twitter client for Rabbit
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	rubygem-gio2>=1.1.4:${PORTSDIR}/devel/rubygem-gio2 \
-		rubygem-rabbit>=2.0.0:${PORTSDIR}/misc/rubygem-rabbit \
-		rubygem-twitter_oauth>0:${PORTSDIR}/security/rubygem-twitter_oauth \
-		rubygem-twitter-stream>=0.1.16:${PORTSDIR}/net/rubygem-twitter-stream
+RUN_DEPENDS=	rubygem-gio2>=1.1.4:devel/rubygem-gio2 \
+		rubygem-rabbit>=2.0.0:misc/rubygem-rabbit \
+		rubygem-twitter_oauth>0:security/rubygem-twitter_oauth \
+		rubygem-twitter-stream>=0.1.16:net/rubygem-twitter-stream
 
 NO_ARCH=	yes
 USE_RUBY=	yes

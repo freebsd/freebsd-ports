@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Perl extension for producing Graphs using the Imager library
 
-BUILD_DEPENDS=	p5-Imager>=0.75:${PORTSDIR}/graphics/p5-Imager
-RUN_DEPENDS=	p5-Imager>=0.75:${PORTSDIR}/graphics/p5-Imager
+BUILD_DEPENDS=	p5-Imager>=0.75:graphics/p5-Imager
+RUN_DEPENDS=	p5-Imager>=0.75:graphics/p5-Imager
 
 USES=		perl5
 USE_PERL5=	configure

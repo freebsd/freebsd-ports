@@ -12,11 +12,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Serve static files with Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=2.99:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-File-MimeInfo>=0.11:${PORTSDIR}/devel/p5-File-MimeInfo \
-		p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-MRO-Compat>0:${PORTSDIR}/devel/p5-MRO-Compat
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=2.99:www/p5-Catalyst-Runtime \
+		p5-Class-Data-Inheritable>=0:devel/p5-Class-Data-Inheritable \
+		p5-File-MimeInfo>=0.11:devel/p5-File-MimeInfo \
+		p5-File-Slurp>0:devel/p5-File-Slurp \
+		p5-MRO-Compat>0:devel/p5-MRO-Compat
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

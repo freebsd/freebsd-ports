@@ -13,11 +13,11 @@ COMMENT=	Python bindings for omniORB4, a CORBA 2.6 ORB
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libomniORB4.so:${PORTSDIR}/devel/omniORB
-RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
+LIB_DEPENDS=	libomniORB4.so:devel/omniORB
+RUN_DEPENDS=	omniidl:devel/omniORB
 # parts of omniORB4 source tree is required to build omniORBpy;
 # see also the "post-extract" target below.
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:patch
+BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB:patch
 
 CONFLICTS=	py*-orbit-2* py${PYTHON_SUFFIX}-omniorb3-3*
 

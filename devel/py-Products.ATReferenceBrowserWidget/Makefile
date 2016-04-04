@@ -13,8 +13,8 @@ COMMENT=	Reference widget for Archetypes
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}archetypes.referencebrowserwidget>=0:${PORTSDIR}/devel/py-archetypes.referencebrowserwidget \
-		${PYTHON_PKGNAMEPREFIX}zope.deprecation>=0:${PORTSDIR}/devel/py-zope.deprecation
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}archetypes.referencebrowserwidget>=0:devel/py-archetypes.referencebrowserwidget \
+		${PYTHON_PKGNAMEPREFIX}zope.deprecation>=0:devel/py-zope.deprecation
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rgdal
-DISTVERSION=	1.1-3
+DISTVERSION=	1.1-7
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,9 +11,9 @@ COMMENT=	Bindings for the Geospatial Data Abstraction Library
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
-		libproj.so:${PORTSDIR}/graphics/proj
-RUN_DEPENDS=	R-cran-sp>=1.1.0:${PORTSDIR}/math/R-cran-sp
+LIB_DEPENDS=	libgdal.so:graphics/gdal \
+		libproj.so:graphics/proj
+RUN_DEPENDS=	R-cran-sp>=1.1.0:math/R-cran-sp
 
 USES=	cran:auto-plist
 

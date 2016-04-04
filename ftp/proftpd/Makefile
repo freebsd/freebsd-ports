@@ -22,8 +22,8 @@ LICENSE?=	GPLv2
 LICENSE_FILE?=	${WRKSRC}/COPYING
 
 .if defined(_BUILDING_PROFTPD_MODULE)
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
-RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
+RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 .endif
 
 PROFTPD_VERSION=	1.3.5a
@@ -157,7 +157,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:devel/pcre
 CONFIGURE_ARGS+=	--enable-pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
@@ -166,7 +166,7 @@ CONFIGURE_ARGS+=	--disable-pcre
 .if ${PORT_OPTIONS:MMEMCACHE}
 MODULES+=		mod_memcache \
 			mod_tls_memcache
-LIB_DEPENDS+=		libmemcached.so:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=		libmemcached.so:databases/libmemcached
 CONFIGURE_ARGS+=	--enable-memcache
 LIBS+=			-L${LOCALBASE}/lib -lmemcached -lmemcachedutil
 PLIST_SUB+=	MEMCACHE=""

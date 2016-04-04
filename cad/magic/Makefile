@@ -14,7 +14,7 @@ COMMENT=	Interactive editor for VLSI layouts
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/license.txt
 
-LIB_DEPENDS=	libBLT25.so:${PORTSDIR}/x11-toolkits/blt
+LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt
 
 USES=		gmake tk:build tar:tgz
 USE_XORG=	ice xext xi xmu

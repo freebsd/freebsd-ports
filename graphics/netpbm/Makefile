@@ -11,11 +11,11 @@ MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION} \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libpng.so:graphics/png \
+		libjbig.so:graphics/jbigkit \
+		libjasper.so:graphics/jasper \
+		libxml2.so:textproc/libxml2
 
 USES=		tar:tgz gmake perl5 shebangfix jpeg
 CFLAGS+=	-DPNG_DEPSTRUCT= -Iutil

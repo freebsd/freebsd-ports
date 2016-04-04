@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	PCRE EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 MAKE_ENV+=	PCRE=1
 CFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lpcre

@@ -12,10 +12,10 @@ COMMENT=	Plugin to update your status with info from Rhythmbox
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
-		rhythmbox:${PORTSDIR}/audio/rhythmbox
+BUILD_DEPENDS=	pidgin:net-im/pidgin
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+RUN_DEPENDS=	pidgin:net-im/pidgin \
+		rhythmbox:audio/rhythmbox
 
 USES=		gmake libtool pkgconfig
 USE_GNOME=	gtk20

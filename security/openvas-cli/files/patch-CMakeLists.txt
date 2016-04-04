@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2015-10-12 12:46:59 UTC
++++ CMakeLists.txt
+@@ -134,7 +134,7 @@ if (NOT LIBDIR)
+ endif (NOT LIBDIR)
+ 
+ if (NOT LOCALSTATEDIR)
+-  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
++  set (LOCALSTATEDIR "/var")
+ endif (NOT LOCALSTATEDIR)
+ 
+ if (NOT DATADIR)
+@@ -202,7 +202,7 @@ configure_file (VERSION.in VERSION)
+ if (MINGW)
+   set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2")
+ else (MINGW)
+-  set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
++  set (HARDENING_FLAGS            "-Wformat -Wformat-security -Wl,-z,relro -Wl,-z,now")
+ endif (MINGW)
+ 
+ set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")

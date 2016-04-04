@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-sharp
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for Avahi service discovery
 
-LIB_DEPENDS=	libavahi-core.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libavahi-core.so:net/avahi-app
 
 USES=		mono
 MASTERDIR=	${.CURDIR}/../avahi-app

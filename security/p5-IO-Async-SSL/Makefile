@@ -13,13 +13,13 @@ COMMENT=	Use SSL/TLS with IO::Async
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Future>=0.33:${PORTSDIR}/devel/p5-Future \
-		p5-IO-Async>=0.66:${PORTSDIR}/devel/p5-IO-Async\
-		p5-IO-Socket-SSL>=1.968:${PORTSDIR}/security/p5-IO-Socket-SSL
+BUILD_DEPENDS=	p5-Future>=0.33:devel/p5-Future \
+		p5-IO-Async>=0.66:devel/p5-IO-Async\
+		p5-IO-Socket-SSL>=1.968:security/p5-IO-Socket-SSL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
-		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
-		socat:${PORTSDIR}/net/socat
+TEST_DEPENDS=	p5-Test-Identity>=0:devel/p5-Test-Identity \
+		p5-Test-Pod>=1:devel/p5-Test-Pod \
+		socat:net/socat
 
 NO_ARCH=	yes
 USE_PERL5=	configure

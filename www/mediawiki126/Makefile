@@ -48,15 +48,16 @@ IMAGICK_DESC=	Use ImageMagick
 SOCKETS_DESC=	Use sockets
 
 MYSQL_USE=	mysql=client php=mysql
+MYSQL_VARS=	IGNORE_WITH_PHP+=70
 PGSQL_USE=	php=pgsql
 SQLITE_USE=	php=sqlite3
 LDAP_USE=	php=ldap
 SOCKETS_USE=	php=sockets
 
-MEMCACHED_RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
-IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphics/pecl-imagick
-APC_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
-XCACHE_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
+MEMCACHED_RUN_DEPENDS=	memcached:databases/memcached
+IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick
+APC_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:www/pecl-APC
+XCACHE_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:www/xcache
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}

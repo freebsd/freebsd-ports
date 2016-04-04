@@ -18,7 +18,7 @@ COMMENT=	Racing game with elaborate stunts
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
 USES=		gettext openal:al,alut pkgconfig
 USE_GL=		gl glu

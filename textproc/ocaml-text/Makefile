@@ -31,8 +31,8 @@ OPTIONS_DEFINE=		PCRE
 OPTIONS_DEFAULT=	PCRE
 
 PCRE_CONFIGURE_ENABLE=	pcre
-PCRE_BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
-PCRE_RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+PCRE_BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
+PCRE_RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"install" :: findlib_name,"install" :: "-destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib" :: "-ldconf /dev/null" :: findlib_name,' \

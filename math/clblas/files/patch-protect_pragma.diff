@@ -1,0 +1,66 @@
+--- src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_NN_B0_MX048_NX048_KX08_src.cpp.orig	2016-01-05 17:04:55 UTC
++++ src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_NN_B0_MX048_NX048_KX08_src.cpp
+@@ -18,7 +18,7 @@ const unsigned int dgemm_Col_NN_B0_MX048
+ const unsigned int dgemm_Col_NN_B0_MX048_NX048_KX08_unroll = 8;
+ 
+ const char * const dgemm_Col_NN_B0_MX048_NX048_KX08_src = STRINGIFY(
+-#pragma OPENCL EXTENSION cl_khr_fp64 : enable \n
++_Pragma("OPENCL EXTENSION cl_khr_fp64 : enable") \n
+ 
+ #define  M6x6 \
+             rA[0] = lA[offA + 0];\
+--- src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_NN_B1_MX048_NX048_KX08_src.cpp.orig	2016-01-05 17:04:55 UTC
++++ src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_NN_B1_MX048_NX048_KX08_src.cpp
+@@ -18,7 +18,7 @@ const unsigned int dgemm_Col_NN_B1_MX048
+ const unsigned int dgemm_Col_NN_B1_MX048_NX048_KX08_unroll = 8;
+ 
+ const char * const dgemm_Col_NN_B1_MX048_NX048_KX08_src = STRINGIFY(
+-#pragma OPENCL EXTENSION cl_khr_fp64 : enable   \n
++_Pragma("OPENCL EXTENSION cl_khr_fp64 : enable")   \n
+ 
+ #define  M6x6 \
+             rA[0] = lA[offA + 0];                       \
+--- src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_NT_B0_MX048_NX048_KX08_src.cpp.orig	2016-01-05 17:04:55 UTC
++++ src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_NT_B0_MX048_NX048_KX08_src.cpp
+@@ -18,7 +18,7 @@ const unsigned int dgemm_Col_NT_B0_MX048
+ const unsigned int dgemm_Col_NT_B0_MX048_NX048_KX08_unroll = 8;
+ 
+ const char * const dgemm_Col_NT_B0_MX048_NX048_KX08_src = STRINGIFY(
+-#pragma OPENCL EXTENSION cl_khr_fp64 : enable   \n
++_Pragma("OPENCL EXTENSION cl_khr_fp64 : enable")   \n
+ \n
+ \ntypedef union _GPtr {
+ \n  __global float *f;
+--- src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_NT_B1_MX048_NX048_KX08_src.cpp.orig	2016-01-05 17:04:55 UTC
++++ src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_NT_B1_MX048_NX048_KX08_src.cpp
+@@ -18,7 +18,7 @@ const unsigned int dgemm_Col_NT_B1_MX048
+ const unsigned int dgemm_Col_NT_B1_MX048_NX048_KX08_unroll = 8;
+ 
+ const char * const dgemm_Col_NT_B1_MX048_NX048_KX08_src = STRINGIFY(
+-#pragma OPENCL EXTENSION cl_khr_fp64 : enable   \n
++_Pragma("OPENCL EXTENSION cl_khr_fp64 : enable")   \n
+ \n
+ \ntypedef union _GPtr {
+ \n  __global float *f;
+--- src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_TN_B0_MX048_NX048_KX08_src.cpp.orig	2016-01-05 17:04:55 UTC
++++ src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_TN_B0_MX048_NX048_KX08_src.cpp
+@@ -18,7 +18,7 @@ const unsigned int dgemm_Col_TN_B0_MX048
+ const unsigned int dgemm_Col_TN_B0_MX048_NX048_KX08_unroll = 8;
+ 
+ const char * const dgemm_Col_TN_B0_MX048_NX048_KX08_src = STRINGIFY(
+-#pragma OPENCL EXTENSION cl_khr_fp64 : enable   \n
++_Pragma("OPENCL EXTENSION cl_khr_fp64 : enable")   \n
+ 
+ __attribute__( (reqd_work_group_size(8, 8, 1)) )
+ __kernel void dgemm_Col_TN_B0_MX048_NX048_KX08_src (
+--- src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_TN_B1_MX048_NX048_KX08_src.cpp.orig	2016-01-05 17:04:55 UTC
++++ src/library/blas/AutoGemm/UserGemmKernelSources/dgemm_Col_TN_B1_MX048_NX048_KX08_src.cpp
+@@ -18,7 +18,7 @@ const unsigned int dgemm_Col_TN_B1_MX048
+ const unsigned int dgemm_Col_TN_B1_MX048_NX048_KX08_unroll = 8;
+ 
+ const char * const dgemm_Col_TN_B1_MX048_NX048_KX08_src = STRINGIFY(
+-#pragma OPENCL EXTENSION cl_khr_fp64 : enable   \n
++_Pragma("OPENCL EXTENSION cl_khr_fp64 : enable")   \n
+ 
+ __attribute__( (reqd_work_group_size(8, 8, 1)) )
+ __kernel void dgemm_Col_TN_B1_MX048_NX048_KX08_src (

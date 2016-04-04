@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Fortran-to-C converter and its run-time libraries
 
-EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 GUNZIP_CMD=	minigzip -d
 USES=		gmake

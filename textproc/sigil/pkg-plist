@@ -34,7 +34,9 @@ share/pixmaps/sigil.png
 %%DATADIR%%/plugin_launchers/python/validationresult.py
 %%DATADIR%%/plugin_launchers/python/wrapper.py
 %%DATADIR%%/polyfills/MathJax.js
-%%DATADIR%%/python3lib/navgenerator.py
+%%DATADIR%%/python3lib/metadata_utils.py
+%%DATADIR%%/python3lib/metaproc2.py
+%%DATADIR%%/python3lib/metaproc3.py
 %%DATADIR%%/python3lib/ncxgenerator.py
 %%DATADIR%%/python3lib/opf_newparser.py
 %%DATADIR%%/python3lib/sanitycheck.py
@@ -47,10 +49,8 @@ share/pixmaps/sigil.png
 %%DATADIR%%/translations/sigil_el_GR.qm
 %%DATADIR%%/translations/sigil_en.qm
 %%DATADIR%%/translations/sigil_es.qm
-%%DATADIR%%/translations/sigil_es_419.qm
 %%DATADIR%%/translations/sigil_fi.qm
 %%DATADIR%%/translations/sigil_fr.qm
-%%DATADIR%%/translations/sigil_gl.qm
 %%DATADIR%%/translations/sigil_he.qm
 %%DATADIR%%/translations/sigil_hu_HU.qm
 %%DATADIR%%/translations/sigil_id_ID.qm

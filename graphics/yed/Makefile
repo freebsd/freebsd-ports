@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yed
-PORTVERSION=	3.14.4
+PORTVERSION=	3.15.0.2
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${PORTVERSION}
@@ -27,7 +27,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SUB_FILES=	${PORTNAME}
 
-DOWNLOAD_URL?=	http://www.yworks.com/en/products_download.php?file=${DISTNAME}${EXTRACT_SUFX}
+DOWNLOAD_URL?=	http://www.yworks.com/downloads\#yEd
 
 .include <bsd.port.pre.mk>
 

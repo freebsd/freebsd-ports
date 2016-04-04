@@ -1,0 +1,47 @@
+======================================================================
+For Zabbix server and proxy daemons, as well as Zabbix frontend, a database is required. It is not needed to run Zabbix agent.
+% cd %%DATADIR%%/%%ZABBIX_BUILD%%/database
+
+PostgreSQL:
+shell> psql -U <username>
+psql> create database zabbix;
+psql> \q
+shell> cd database/postgresql
+shell> psql -U <username> zabbix < schema.sql
+shell> psql -U <username> zabbix < images.sql
+shell> psql -U <username> zabbix < data.sql
+
+MySQL:
+shell> mysql -u<username> -p<password>
+mysql> create database zabbix character set utf8;
+mysql> quit;
+shell> mysql -u<username> -p<password> zabbix < database/mysql/schema.sql
+shell> mysql -u<username> -p<password> zabbix < database/mysql/images.sql
+shell> mysql -u<username> -p<password> zabbix < database/mysql/data.sql
+
+SQLite:
+shell> cd database/sqlite3
+shell> sqlite3 /var/lib/sqlite/zabbix.db < schema.sql
+shell> sqlite3 /var/lib/sqlite/zabbix.db < images.sql
+shell> sqlite3 /var/lib/sqlite/zabbix.db < data.sql
+
+IBM DB2:
+shell> db2 "create database zabbix using codeset utf-8 territory us pagesize 32768"
+shell> cd database/ibm_db2
+shell> db2batch -d zabbix -f schema.sql
+shell> db2batch -d zabbix -f images.sql
+shell> db2batch -d zabbix -f data.sql
+
+
+Upgrade notes for 3.0.0 https://www.zabbix.com/documentation/3.0/manual/installation/upgrade_notes_300
+
+Upgrade procedure https://www.zabbix.com/documentation/3.0/manual/installation/upgrade
+
+Pleasese see http://www.zabbix.com/ for detailed information about Zabbix.
+
+On-line Zabbix documentation is available at https://www.zabbix.com/documentation/3.0/start
+
+For Zabbix frontend “Welcome” screen. Enter the user name Admin with password zabbix to log in as a Zabbix superuser.
+
+For use NMAP please edit sudoers
+======================================================================

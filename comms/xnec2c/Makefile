@@ -12,7 +12,7 @@ COMMENT=	Used to calculate antenna patterns useful to ham radio
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libccm.so:${PORTSDIR}/math/ccmath
+LIB_DEPENDS=	libccm.so:math/ccmath
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig tar:bzip2

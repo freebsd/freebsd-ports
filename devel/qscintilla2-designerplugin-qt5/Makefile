@@ -10,7 +10,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 Designer plugin for QScintilla2
 
-LIB_DEPENDS=	libqscintilla2-qt5.so:${PORTSDIR}/devel/qscintilla2-qt5
+LIB_DEPENDS=	libqscintilla2-qt5.so:devel/qscintilla2-qt5
 
 DISTINFO_FILE=	${.CURDIR:H}/qscintilla2-qt5/distinfo
 USE_GL=		gl

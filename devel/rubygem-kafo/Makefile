@@ -12,14 +12,14 @@ COMMENT=	Ruby framework to create installers
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
-		rubygem-ansi>=0:${PORTSDIR}/devel/rubygem-ansi \
-		rubygem-clamp>=0.6.2:${PORTSDIR}/devel/rubygem-clamp \
-		rubygem-highline>=1.6.21:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-kafo_parsers>=0:${PORTSDIR}/devel/rubygem-kafo_parsers \
-		rubygem-kafo_wizards>=0:${PORTSDIR}/devel/rubygem-kafo_wizards \
-		rubygem-logging>=0:${PORTSDIR}/devel/rubygem-logging \
-		rubygem-powerbar>=0:${PORTSDIR}/devel/rubygem-powerbar
+RUN_DEPENDS=	gsed:textproc/gsed \
+		rubygem-ansi>=0:devel/rubygem-ansi \
+		rubygem-clamp>=0.6.2:devel/rubygem-clamp \
+		rubygem-highline>=1.6.21:devel/rubygem-highline \
+		rubygem-kafo_parsers>=0:devel/rubygem-kafo_parsers \
+		rubygem-kafo_wizards>=0:devel/rubygem-kafo_wizards \
+		rubygem-logging>=0:devel/rubygem-logging \
+		rubygem-powerbar>=0:devel/rubygem-powerbar
 
 NO_ARCH=	yes
 USE_RUBY=	yes

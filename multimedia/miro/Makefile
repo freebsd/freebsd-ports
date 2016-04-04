@@ -13,22 +13,22 @@ COMMENT=	Video player to get internet TV broadcasts
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex \
-		${PYTHON_SITELIBDIR}/webkit/__init__.py:${PORTSDIR}/www/py-webkitgtk \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info \
-		${LOCALBASE}/include/boost/numeric/ublas/matrix.hpp:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/include/taglib/taglib.h:${PORTSDIR}/audio/taglib
-LIB_DEPENDS=	libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_SITELIBDIR}/dbus/glib.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify \
-		${PYTHON_SITELIBDIR}/libtorrent.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar-python \
-		${PYTHON_SITELIBDIR}/webkit/webkit.so:${PORTSDIR}/www/py-webkitgtk \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gconf.so:${PORTSDIR}/x11-toolkits/py-gnome2 \
-		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-pycurl \
-		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
+BUILD_DEPENDS=	pyrexc:devel/pyrex \
+		${PYTHON_SITELIBDIR}/webkit/__init__.py:www/py-webkitgtk \
+		update-mime-database:misc/shared-mime-info \
+		${LOCALBASE}/include/boost/numeric/ublas/matrix.hpp:devel/boost-libs \
+		${LOCALBASE}/include/taglib/taglib.h:audio/taglib
+LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
+		libsqlite3.so:databases/sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_SITELIBDIR}/dbus/glib.py:devel/py-dbus \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:devel/py-notify \
+		${PYTHON_SITELIBDIR}/libtorrent.so:net-p2p/libtorrent-rasterbar-python \
+		${PYTHON_SITELIBDIR}/webkit/webkit.so:www/py-webkitgtk \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gconf.so:x11-toolkits/py-gnome2 \
+		${PYTHON_SITELIBDIR}/pycurl.so:ftp/py-pycurl \
+		${PYTHON_SITELIBDIR}/mutagen/__init__.py:audio/py-mutagen
 
 BUILD_WRKSRC=	${WRKSRC}/linux
 INSTALL_WRKSRC=	${WRKSRC}/linux

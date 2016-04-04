@@ -49,7 +49,7 @@
 +ARPACK_LIB   = /usr/local/lib/libarpack.a
 +LAPACK_LIB   = /usr/local/lib/liblapack.a
 +UMFPACK_LIB  = /usr/local/lib/libumfpack.a
-+SUPERLU_LIB  = /usr/local/lib/libsuperlu.a
++SUPERLU_LIB  = /usr/local/lib/libsuperlu.so
 +BLAS_LIB     = /usr/local/lib/libf77blas.a /usr/local/lib/libatlas.a
 +FORTRAN_LIBS = -L/usr/local/lib/gcc-4.2.5 -lgfortran
  

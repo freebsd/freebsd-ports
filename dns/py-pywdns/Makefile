@@ -12,7 +12,7 @@ COMMENT=	Python wrapper for dns/wdns
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libwdns.so:${PORTSDIR}/dns/wdns
+LIB_DEPENDS=	libwdns.so:dns/wdns
 
 USE_PYTHON=	autoplist distutils
 USES=		pkgconfig python

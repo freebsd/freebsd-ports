@@ -1,0 +1,20 @@
+commit c8a1f887d7316f76853bd67ffe5a9bb556e54b57
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Fri Mar 25 17:48:33 2016 +0100
+
+    nanoflann: Include <cstdlib> for ::malloc().
+
+    malloc() is defined in stdlib.h, which was being included indirectly by
+    other on Linux. On systems such as FreeBSD, the code was just failing to
+    build because of the missing symbol.
+
+--- vendor/nanoflann-1.1.8/nanoflann.hpp.orig	2015-11-25 18:45:33 UTC
++++ vendor/nanoflann-1.1.8/nanoflann.hpp
+@@ -38,6 +38,7 @@
+ #include <algorithm>
+ #include <stdexcept>
+ #include <cstdio>  // for fwrite()
++#include <cstdlib> // for malloc()
+ #include <cmath>   // for fabs(),...
+ #include <limits>
+ 

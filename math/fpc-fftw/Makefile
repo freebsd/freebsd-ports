@@ -18,6 +18,6 @@ OPTIONS_DEFINE=	FFTW3
 FFTW3_DESC=	Install FFTW3 library
 OPTIONS_DEFAULT=	FFTW3
 
-FFTW3_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+FFTW3_LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 .include "${MASTERDIR}/Makefile"

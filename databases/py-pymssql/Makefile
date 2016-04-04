@@ -12,9 +12,9 @@ COMMENT=	Python database interface for MS-SQL. Version 2
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
-		${PYTHON_PKGNAMEPREFIX}setuptools-git>0:${PORTSDIR}/devel/py-setuptools-git
-LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
+BUILD_DEPENDS=	cython:lang/cython \
+		${PYTHON_PKGNAMEPREFIX}setuptools-git>0:devel/py-setuptools-git
+LIB_DEPENDS=	libsybdb.so:databases/freetds
 
 USES=		python
 USE_PYTHON=	autoplist distutils

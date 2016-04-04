@@ -18,7 +18,7 @@ COMMENT=	Newsreader based on the S-Lang library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libslang.so:${PORTSDIR}/japanese/libslang
+LIB_DEPENDS=	libslang.so:japanese/libslang
 
 CONFLICTS=	slrn-0.*
 

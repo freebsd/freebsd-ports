@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	4.2
+PORTVERSION=	4.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -12,8 +12,8 @@ COMMENT=	Persistent key-value store for fast storage environments
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags \
-		libsnappy.so:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS=	libgflags.so:devel/gflags \
+		libsnappy.so:archivers/snappy
 
 OPTIONS_DEFINE=	DEBUG
 
@@ -23,6 +23,8 @@ MAKE_ENV=	CXX=${CXX}
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 USES=		compiler:c++11-lib gmake localbase
+
+PORTDATA=	make_config.mk
 
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes

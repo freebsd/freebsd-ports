@@ -13,7 +13,7 @@ LICENSE=	CDDL GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILES=	${WRKSRC}/CDDL.Schily.txt
 
-BUILD_DEPENDS=	smake:${PORTSDIR}/devel/smake
+BUILD_DEPENDS=	smake:devel/smake
 
 USES=		gettext iconv tar:bzip2
 USE_GCC=	any

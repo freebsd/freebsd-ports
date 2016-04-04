@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.server-side.de/download/ \
 MAINTAINER=	ayu@commun.jp
 COMMENT=	HTTP Antivirus Proxy
 
-LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	libclamav.so:security/clamav
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes

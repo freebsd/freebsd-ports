@@ -14,8 +14,8 @@ COMMENT=	Authentication module for the Apache 2 webserver with OpenID
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libopkele.so:${PORTSDIR}/devel/libopkele \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libopkele.so:devel/libopkele \
+		libsqlite3.so:databases/sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bmuller

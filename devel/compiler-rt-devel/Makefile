@@ -16,7 +16,7 @@ USES=		cmake:outsource compiler:c++11-lib ninja
 
 BROKEN=	relies on incompatible stdarg.h from clang
 
-BUILD_DEPENDS=	llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
+BUILD_DEPENDS=	llvm-config${LLVM_SUFFIX}:devel/llvm${LLVM_SUFFIX}
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}/
 CMAKE_ARGS=	-DLLVM_CONFIG_PATH=${LOCALBASE}/bin/llvm-config${LLVM_SUFFIX}

@@ -24,7 +24,7 @@ PORTEXAMPLES=	ddns.py e164.py mx.py name.py reverse.py reverse_name.py \
 		xfr.py zonediff.py
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
-PYCRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+PYCRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto
 
 .include <bsd.port.pre.mk>
 

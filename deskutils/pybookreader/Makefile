@@ -11,7 +11,7 @@ DISTNAME=	PyBookReader-${PORTVERSION}
 MAINTAINER=	ufo@februality.com
 COMMENT=	Program for reading e-books
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2
 
 USES=		python
 USE_PYTHON=	distutils

@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep-gui
 PORTVERSION=	0.24.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	GNUSTEP/core
 
@@ -17,15 +17,15 @@ OPTIONS_DEFINE=	DOCS CUPS ASPELL
 OPTIONS_DEFAULT=	CUPS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
-			texi2pdf:${PORTSDIR}/print/texinfo
+DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
+			texi2pdf:print/texinfo
 
-LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
-LIB_DEPENDS+=	libgif.so:${PORTSDIR}/graphics/giflib
-LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
+LIB_DEPENDS+=	libtiff.so:graphics/tiff
+LIB_DEPENDS+=	libpng.so:graphics/png
+LIB_DEPENDS+=	libgif.so:graphics/giflib
+LIB_DEPENDS+=	libsndfile.so:audio/libsndfile
+LIB_DEPENDS+=	libao.so:audio/libao
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:audio/flite
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
@@ -48,8 +48,8 @@ MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
 CUPS_CONFIGURE_ENABLE=		cups
-CUPS_LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+CUPS_LIB_DEPENDS+=	libcups.so:print/cups
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_CONFIGURE_ENABLE=	aspell
 
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}

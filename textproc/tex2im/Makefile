@@ -7,11 +7,11 @@ PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nought.de/
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	convert:graphics/ImageMagick \
+		bash:shells/bash
 
 USE_TEX=	latex
 NO_BUILD=	yes

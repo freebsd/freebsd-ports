@@ -1,0 +1,39 @@
+--- CMakeLists.txt.orig	2015-08-03 10:14:45 UTC
++++ CMakeLists.txt
+@@ -147,7 +147,7 @@ if (NOT LIBDIR)
+ endif (NOT LIBDIR)
+ 
+ if (NOT LOCALSTATEDIR)
+-  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
++  set (LOCALSTATEDIR "/var")
+ endif (NOT LOCALSTATEDIR)
+ 
+ if (NOT DATADIR)
+@@ -225,7 +225,7 @@ configure_file (tools/greenbone-nvt-sync
+ 
+ ## Program
+ 
+-set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
++set (HARDENING_FLAGS            "-Wformat -Wformat-security -Wl,-z,relro -Wl,-z,now")
+ 
+ set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
+ set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -D_BSD_SOURCE -D_ISOC99_SOURCE -D_SVID_SOURCE -D_DEFAULT_SOURCE")
+@@ -263,15 +263,15 @@ install (FILES ${CMAKE_BINARY_DIR}/tools
+                      GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+ 
+ install (FILES ${CMAKE_SOURCE_DIR}/doc/openvas-mkcert-client.1
+-          DESTINATION ${DATADIR}/man/man1 )
++          DESTINATION man/man1 )
+ 
+ install (FILES ${CMAKE_BINARY_DIR}/doc/openvassd.8
+-         DESTINATION ${DATADIR}/man/man8 )
++         DESTINATION man/man8 )
+ 
+ install (FILES ${CMAKE_SOURCE_DIR}/doc/openvas-mkcert.8
+                ${CMAKE_SOURCE_DIR}/doc/openvas-nvt-sync.8
+                ${CMAKE_SOURCE_DIR}/doc/greenbone-nvt-sync.8
+-         DESTINATION ${DATADIR}/man/man8 )
++         DESTINATION man/man8 )
+ 
+ install (FILES ${CMAKE_BINARY_DIR}/doc/example_redis_2_4.conf
+                ${CMAKE_BINARY_DIR}/doc/example_redis_2_6.conf

@@ -55,6 +55,7 @@ include/rocksdb/utilities/json_document.h
 include/rocksdb/utilities/leveldb_options.h
 include/rocksdb/utilities/memory_util.h
 include/rocksdb/utilities/optimistic_transaction_db.h
+include/rocksdb/utilities/options_util.h
 include/rocksdb/utilities/spatial_db.h
 include/rocksdb/utilities/stackable_db.h
 include/rocksdb/utilities/table_properties_collectors.h
@@ -70,4 +71,3 @@ include/rocksdb/write_batch_base.h
 lib/librocksdb.a
 lib/librocksdb.so
 lib/librocksdb.so.0
-%%DATADIR%%/make_config.mk

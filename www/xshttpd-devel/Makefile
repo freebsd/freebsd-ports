@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Webserver with CGI as own user and SSL support
 
-RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+RUN_DEPENDS=	run-mailcap:misc/mime-support
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFLICTS_INSTALL=	xshttpd-[0-9]* publicfile-[0-9]*
 
@@ -30,14 +30,14 @@ BDB_USE=		BDB=5+
 BDB_CONFIGURE_ON=	--with-db-libdir=${BDB_LIB_DIR} \
 			--with-db-include-dir=${BDB_INCLUDE_DIR}
 BDB_CONFIGURE_WITH=	db
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	curl
 LDAP_USE=		openldap
 LDAP_CONFIGURE_WITH=	ldap
 M4_DESC=		Enable configuration preprocessor (m4)
 M4_CONFIGURE_WITH=	preprocessor
 NETPBM_DESC=		Enable NETPBM (for graphical counters)
-NETPBM_RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
+NETPBM_RUN_DEPENDS=	ppmtogif:graphics/netpbm
 PERL_DESC=		Enable persistent Perl interpreter
 PERL_USES=		perl5
 PERL_CONFIGURE_WITH=	perl

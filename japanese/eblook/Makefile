@@ -13,7 +13,7 @@ COMMENT=	Command to lookup words in EB format dictionaries
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	libeb.so:japanese/eb
 
 USES=		iconv
 GNU_CONFIGURE=	yes

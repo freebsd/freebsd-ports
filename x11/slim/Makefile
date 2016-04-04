@@ -13,10 +13,10 @@ COMMENT=	Graphical login manager for X11, derived from Login.app
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		cmake jpeg pkgconfig
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xorg-server xrandr \
@@ -45,7 +45,7 @@ PAM_CMAKE_OFF=	-DUSE_PAM=no
 UTF8_EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-utf8
 
 CONSOLEKIT_CMAKE_ON=	-DUSE_CONSOLEKIT=yes
-CONSOLEKIT_LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit
+CONSOLEKIT_LIB_DEPENDS=	libck-connector.so:sysutils/consolekit
 CONSOLEKIT_CMAKE_OFF=	-DUSE_CONSOLEKIT=no
 
 post-patch:

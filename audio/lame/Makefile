@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	nasm:devel/nasm
 .endif
 
 post-patch:

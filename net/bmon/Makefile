@@ -12,7 +12,7 @@ COMMENT=	Human-readable bandwidth monitor and rate estimator
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse
+LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 
 CONFLICTS_INSTALL=	bmon-*
 

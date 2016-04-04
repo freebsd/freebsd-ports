@@ -39,19 +39,19 @@ MBSTRING_DESC=	Support multi-byte character sets
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 .if ! ${PORT_OPTIONS:MDB}
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:databases/pear-MDB2_Driver_mysql
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=	pgsql
 .if ! ${PORT_OPTIONS:MDB}
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/pgsql.php:databases/pear-MDB2_Driver_pgsql
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MDB} && (${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL})
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB
 .endif
 
 .if ${PORT_OPTIONS:MICONV}

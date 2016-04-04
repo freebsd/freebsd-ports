@@ -12,8 +12,8 @@ COMMENT=	Simple and highly customizable quick launch bar
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	intltool-update:${PORTSDIR}/textproc/intltool
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+BUILD_DEPENDS=	intltool-update:textproc/intltool
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 

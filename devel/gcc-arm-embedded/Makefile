@@ -21,16 +21,16 @@ PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
 PYGDB_DESC=	Build and install pyhon-enabled gdb in addition to standard one
 
 PURE_LIB_DEPENDS_OFF=	\
-			libexpat.so:${PORTSDIR}/textproc/expat2 \
-			libgmp.so:${PORTSDIR}/math/gmp \
-			libmpfr.so:${PORTSDIR}/math/mpfr \
-			libmpc.so:${PORTSDIR}/math/mpc \
-			libisl.so:${PORTSDIR}/devel/isl \
-			libcloog-isl.so:${PORTSDIR}/math/cloog \
-			libelf.so:${PORTSDIR}/devel/libelf
+			libexpat.so:textproc/expat2 \
+			libgmp.so:math/gmp \
+			libmpfr.so:math/mpfr \
+			libmpc.so:math/mpc \
+			libisl.so:devel/isl \
+			libcloog-isl.so:math/cloog \
+			libelf.so:devel/libelf
 
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
-PDF_BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
+PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
 OPTIONS_SUB=		yes
 PYGDB_USES=		python:2
 

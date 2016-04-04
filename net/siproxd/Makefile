@@ -11,7 +11,7 @@ COMMENT=	Proxy/masquerading daemon for the SIP protocol
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libosip2.so:${PORTSDIR}/net/libosip2
+LIB_DEPENDS=	libosip2.so:net/libosip2
 
 # :keepla because port uses lt_dlopen
 USES=		libtool:keepla

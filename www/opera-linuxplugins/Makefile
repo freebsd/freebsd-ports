@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux plugin support for the native Opera browser
 
-RUN_DEPENDS=	${LOCALBASE}/lib/opera/pluginwrapper/operapluginwrapper:${PORTSDIR}/${PKGCATEGORY}/opera
+RUN_DEPENDS=	${LOCALBASE}/lib/opera/pluginwrapper/operapluginwrapper:${PKGCATEGORY}/opera
 
 OPERA_VER?=	12.16
 OPERA_BUILD?=	1860

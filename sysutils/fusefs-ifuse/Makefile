@@ -13,9 +13,9 @@ COMMENT=	FUSE-based filesystem for mounting iOS devices over USB
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
-		libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice
-RUN_DEPENDS=	usbmuxd:${PORTSDIR}/comms/usbmuxd
+LIB_DEPENDS=	libplist.so:devel/libplist \
+		libimobiledevice.so:comms/libimobiledevice
+RUN_DEPENDS=	usbmuxd:comms/usbmuxd
 
 USE_GNOME=	glib20
 USES=		fuse pkgconfig tar:bzip2

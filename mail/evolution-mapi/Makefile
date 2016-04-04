@@ -10,10 +10,10 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Evolution Microsoft Exchange plugin through OpenChange
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		evolution>=3.0.0:${PORTSDIR}/mail/evolution
-LIB_DEPENDS=	libmapi.so:${PORTSDIR}/mail/libmapi
-RUN_DEPENDS=	evolution>=3.0.0:${PORTSDIR}/mail/evolution
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		evolution>=3.0.0:mail/evolution
+LIB_DEPENDS=	libmapi.so:mail/libmapi
+RUN_DEPENDS=	evolution>=3.0.0:mail/evolution
 
 PORTSCOUT=	limitw:1,even
 
@@ -32,6 +32,6 @@ post-patch:
 		${WRKSRC}/src/libexchangemapi/Makefile.in
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		-e 's|$$(prefix)/$$(DATADIRNAME)/|$$(prefix)/share/|g' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

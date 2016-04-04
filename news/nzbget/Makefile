@@ -3,7 +3,7 @@
 
 PORTNAME=	nzbget
 PORTVERSION=	16.4
-PORTREVISION=	1
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	news
 
@@ -12,7 +12,7 @@ COMMENT=	Binary newsreader supporting NZB files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=		ncurses pkgconfig shebangfix
 USE_RC_SUBR=	nzbget
@@ -26,6 +26,7 @@ LDFLAGS+=	-lpthread
 BINMODE=	0755
 
 SHEBANG_FILES=	scripts/*.py
+SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes
 
@@ -37,11 +38,11 @@ OPTIONS_DEFAULT=	GNUTLS PAR PYTHON RAR 7Z
 PYTHON_DESC=	Support for python post-processing scripts
 RAR_DESC=	Support extraction of rar archives
 
-7Z_RUN_DEPENDS=		7z:${PORTSDIR}/archivers/p7zip
+7Z_RUN_DEPENDS=		7z:archivers/p7zip
 
 PYTHON_USES=		python:run
 
-RAR_RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+RAR_RUN_DEPENDS=	unrar:archivers/unrar
 
 OPENSSL_CONFIGURE_ON=	--with-tlslib=OpenSSL \
 			--with-openssl-includes=${OPENSSLINC} \
@@ -49,8 +50,8 @@ OPENSSL_CONFIGURE_ON=	--with-tlslib=OpenSSL \
 OPENSSL_USE=		OPENSSL=yes
 
 GNUTLS_CONFIGURE_ON=	--with-tlslib=GnuTLS
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-			libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+			libgcrypt.so:security/libgcrypt
 
 .include <bsd.port.options.mk>
 

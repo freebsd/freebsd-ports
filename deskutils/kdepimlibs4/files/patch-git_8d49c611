@@ -1,0 +1,24 @@
+Avoid errors on FreeBSD 9.3:
+
+/usr/local/include/kde4/akonadi/resourcebase.h:784: error: extra ';'
+/usr/local/include/kde4/akonadi/resourcebase.h:785: error: extra ';'
+
+commit 8d49c611948364aa9e7594b4e130e26ccd72da5e
+Author: Sergio Martins <iamsergio@gmail.com>
+Date:   Sun May 3 00:18:51 2015 +0100
+
+    Remove uneeded semi-colon from Q_PRIVATE_SLOT
+
+--- akonadi/resourcebase.h.orig	2014-11-04 21:19:27 UTC
++++ akonadi/resourcebase.h
+@@ -781,8 +781,8 @@ private:
+     Q_PRIVATE_SLOT(d_func(), void slotSessionReconnected())
+     Q_PRIVATE_SLOT(d_func(), void slotRecursiveMoveReplay(RecursiveMover *))
+     Q_PRIVATE_SLOT(d_func(), void slotRecursiveMoveReplayResult(KJob *))
+-    Q_PRIVATE_SLOT(d_func(), void slotItemRetrievalCollectionFetchDone(KJob *));
+-    Q_PRIVATE_SLOT(d_func(), void slotAttributeRetrievalCollectionFetchDone(KJob *));
++    Q_PRIVATE_SLOT(d_func(), void slotItemRetrievalCollectionFetchDone(KJob *))
++    Q_PRIVATE_SLOT(d_func(), void slotAttributeRetrievalCollectionFetchDone(KJob *))
+ };
+ 
+ }

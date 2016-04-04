@@ -11,8 +11,8 @@ COMMENT=	Sguil is a network security monitoring program
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	tcltls>=0:${PORTSDIR}/devel/tcltls \
-		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX
+RUN_DEPENDS=	tcltls>=0:devel/tcltls \
+		${LOCALBASE}/lib/tclx8.4/tclx.tcl:lang/tclX
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bammv
@@ -39,19 +39,19 @@ SANCP_SENSOR_DESC=	Include sancp sensor
 WIRESHARK_DESC=		Install wireshark
 
 CLIENT_USES=		tk:wrapper
-SERVER_RUN_DEPENDS=	p0f:${PORTSDIR}/net-mgmt/p0f \
-	                tcpflow:${PORTSDIR}/net/tcpflow \
-	                dtplite:${PORTSDIR}/devel/tcllib
-CLIENT_RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \
-			iwidgets>0:${PORTSDIR}/x11-toolkits/iwidgets \
-			gpg2:${PORTSDIR}/security/gnupg
-SENSOR_RUN_DEPENDS=	barnyard2:${PORTSDIR}/security/barnyard2-sguil
-MYSQL_LIB_DEPENDS=	mysqltcl>=3.052:${PORTSDIR}/databases/mysqltcl
-AUDIO_RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
-SANCP_RUN_DEPENDS=	sancp:${PORTSDIR}/security/sancp
-WIRESHARK_RUN_DEPENDS=	wireshark:${PORTSDIR}/net/wireshark
-PADS_SENSOR_RUN_DEPENDS=	pads:${PORTSDIR}/net-mgmt/pads
-SANCP_SENSOR_RUN_DEPENDS=	sancp:${PORTSDIR}/security/sancp
+SERVER_RUN_DEPENDS=	p0f:net-mgmt/p0f \
+	                tcpflow:net/tcpflow \
+	                dtplite:devel/tcllib
+CLIENT_RUN_DEPENDS=	dtplite:devel/tcllib \
+			iwidgets>0:x11-toolkits/iwidgets \
+			gpg2:security/gnupg
+SENSOR_RUN_DEPENDS=	barnyard2:security/barnyard2-sguil
+MYSQL_LIB_DEPENDS=	mysqltcl>=3.052:databases/mysqltcl
+AUDIO_RUN_DEPENDS=	festival:audio/festival
+SANCP_RUN_DEPENDS=	sancp:security/sancp
+WIRESHARK_RUN_DEPENDS=	wireshark:net/wireshark
+PADS_SENSOR_RUN_DEPENDS=	pads:net-mgmt/pads
+SANCP_SENSOR_RUN_DEPENDS=	sancp:security/sancp
 
 NO_BUILD=	yes
 TCL_VER=	8.5
@@ -78,8 +78,8 @@ GROUPS=		sguil
 
 PORTDOCS=	${COMMON_DOCS:S|^doc/||}
 COMMON_DOCS=	doc/CHANGES doc/FAQ doc/INSTALL doc/INSTALL.openbsd \
-	       	doc/OPENSSL.README doc/TODO doc/UPGRADE doc/USAGE \
-	       	doc/sguildb.dia
+		doc/OPENSSL.README doc/TODO doc/UPGRADE doc/USAGE \
+		doc/sguildb.dia
 
 .include <bsd.port.options.mk>
 

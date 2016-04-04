@@ -15,7 +15,7 @@ COMMENT=	Comprehensive Python interface to the mcrypt library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS=	libmcrypt.so:security/libmcrypt
 
 USES=		python
 USE_PYTHON=	distutils autoplist

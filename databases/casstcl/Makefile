@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	casstcl
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
@@ -11,7 +11,7 @@ COMMENT=	Tcl language interface to the Cassandra database
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcassandra.so:${PORTSDIR}/databases/cassandra-cpp-driver
+LIB_DEPENDS=	libcassandra.so:databases/cassandra-cpp-driver
 
 USES=		autoreconf tcl:85+
 GNU_CONFIGURE=	yes

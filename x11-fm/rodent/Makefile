@@ -11,12 +11,12 @@ COMMENT=	Fast, small, and powerful file manager
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
-		bash:${PORTSDIR}/shells/bash \
-		intltoolize:${PORTSDIR}/textproc/intltool
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libmagic.so:${PORTSDIR}/sysutils/file \
-		librfm.so:${PORTSDIR}/x11-fm/librfm
+BUILD_DEPENDS=	gawk:lang/gawk \
+		bash:shells/bash \
+		intltoolize:textproc/intltool
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libmagic.so:sysutils/file \
+		librfm.so:x11-fm/librfm
 
 USES=		desktop-file-utils gmake libtool:keepla pkgconfig tar:bzip2 shebangfix
 USE_GNOME=	glib20 gtk20 librsvg2 libxml2

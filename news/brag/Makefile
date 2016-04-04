@@ -10,8 +10,8 @@ MASTER_SITES=	http://brag.sourceforge.net/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Download and assemble multipart binaries from newsgroups
 
-RUN_DEPENDS=	uudeview:${PORTSDIR}/converters/uudeview \
-		${TCLSH}:${PORTSDIR}/lang/tcl84
+RUN_DEPENDS=	uudeview:converters/uudeview \
+		${TCLSH}:lang/tcl84
 
 PLIST_FILES=	bin/brag man/man1/brag.1.gz
 PORTDOCS=	CHANGES README

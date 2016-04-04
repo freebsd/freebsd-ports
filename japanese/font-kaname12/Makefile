@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	12-dot Kanji font
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
 FONTNAME=	misc

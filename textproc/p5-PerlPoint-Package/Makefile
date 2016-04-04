@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlPoint is both a presentation and a documentation toolset
 
-BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

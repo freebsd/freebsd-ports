@@ -1,9 +1,21 @@
-etc/unbound/unbound.conf.sample
+%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_class
+%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_flags
+%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_opcode
+%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_rcode
+%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_by_type
+%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_histogram
+%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_hits
+%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_memory
+%%MUNIN_PLUGIN%%etc/munin/plugins/unbound_munin_queue
+@sample %%ETCDIR%%/unbound.conf.sample
 include/unbound.h
-lib/libunbound.so.2.3.10
-lib/libunbound.so.2
-lib/libunbound.so
 lib/libunbound.a
+lib/libunbound.so
+lib/libunbound.so.2
+lib/libunbound.so.2.4.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/unbound.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/unboundmodule.py
 man/man1/unbound-host.1.gz
 man/man3/libunbound.3.gz
 man/man3/ub_cancel.3.gz
@@ -48,17 +60,5 @@ sbin/unbound-checkconf
 sbin/unbound-control
 sbin/unbound-control-setup
 sbin/unbound-host
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/unbound.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/unboundmodule.py
-%%MUNIN%%etc/munin/plugins/unbound_munin_by_class
-%%MUNIN%%etc/munin/plugins/unbound_munin_by_flags
-%%MUNIN%%etc/munin/plugins/unbound_munin_by_opcode
-%%MUNIN%%etc/munin/plugins/unbound_munin_by_rcode
-%%MUNIN%%etc/munin/plugins/unbound_munin_by_type
-%%MUNIN%%etc/munin/plugins/unbound_munin_histogram
-%%MUNIN%%etc/munin/plugins/unbound_munin_hits
-%%MUNIN%%etc/munin/plugins/unbound_munin_memory
-%%MUNIN%%etc/munin/plugins/unbound_munin_queue
-%%MUNIN%%share/munin/plugins/unbound_munin_
+%%MUNIN_PLUGIN%%share/munin/plugins/unbound_munin_
 @dir(unbound,,) %%ETCDIR%%

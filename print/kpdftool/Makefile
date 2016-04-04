@@ -3,7 +3,7 @@
 
 PORTNAME=	kpdftool
 PORTVERSION=	0.23.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTFILES=	33194-${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -11,7 +11,7 @@ DISTFILES=	33194-${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Simple utility to manipulate PS and PDF files
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	convert:graphics/ImageMagick
 
 USE_QT4=	qt3support moc_build porting_build uic3_build
 USES=		ghostscript:run qmake zip

@@ -12,7 +12,7 @@ COMMENT=	Free BitTorrent Implementation
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USES=		scons
 USE_OPENSSL=	yes

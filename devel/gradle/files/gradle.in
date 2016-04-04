@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-
-exec "%%JAVA%%" $JAVA_OPTS -classpath "%%DATADIR%%/lib/gradle-launcher-%%PORTVERSION%%.jar" org.gradle.launcher.GradleMain "$@"
+exec "%%JAVA%%" -Dorg.gradle.native=false $JAVA_OPTS -classpath "%%DATADIR%%/lib/gradle-launcher-%%PORTVERSION%%.jar" org.gradle.launcher.GradleMain "$@"

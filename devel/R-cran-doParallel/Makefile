@@ -11,8 +11,8 @@ COMMENT=	Foreach parallel adaptor for the parallel package
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-foreach>=1.2.0:${PORTSDIR}/devel/R-cran-foreach \
-		R-cran-iterators>=1.0.0:${PORTSDIR}/devel/R-cran-iterators
+RUN_DEPENDS=	R-cran-foreach>=1.2.0:devel/R-cran-foreach \
+		R-cran-iterators>=1.0.0:devel/R-cran-iterators
 
 USES=	cran:auto-plist
 

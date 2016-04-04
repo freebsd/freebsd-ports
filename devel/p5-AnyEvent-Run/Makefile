@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Run a process or coderef asynchronously
 
-RUN_DEPENDS=	p5-AnyEvent>=4.15:${PORTSDIR}/devel/p5-AnyEvent
+RUN_DEPENDS=	p5-AnyEvent>=4.15:devel/p5-AnyEvent
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

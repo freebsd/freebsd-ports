@@ -13,7 +13,7 @@ COMMENT=	Quick Database Manager
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 USES=		iconv
 GNU_CONFIGURE=	yes

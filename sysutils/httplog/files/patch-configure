@@ -1,6 +1,6 @@
---- configure.orig	Sat Jun 25 15:53:38 2005
-+++ configure	Sat Jun 25 16:00:31 2005
-@@ -140,7 +140,7 @@
+--- configure.orig	2002-01-22 02:45:23 UTC
++++ configure
+@@ -140,7 +140,7 @@ int main(void) {
  EOF
  	$CC -o ./dummy ./dummy.c -lz 1>/dev/null 2>&1
  	if [ $? -eq 0 ]; then

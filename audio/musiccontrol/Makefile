@@ -13,9 +13,9 @@ EXTRACT_ONLY=
 MAINTAINER=	xi@borderworlds.dk
 COMMENT=	Advanced music player
 
-RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
-		${LOCALBASE}/bin/ogg123:${PORTSDIR}/audio/vorbis-tools \
-		${LOCALBASE}/bin/simplemod:${PORTSDIR}/audio/simplemod
+RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:audio/mpg123 \
+		${LOCALBASE}/bin/ogg123:audio/vorbis-tools \
+		${LOCALBASE}/bin/simplemod:audio/simplemod
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

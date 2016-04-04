@@ -98,8 +98,8 @@ CONFIGURE_ARGS+=-no-graph
 
 OCAML_ARCH=	${ARCH:S/x86_64/amd64/:S/powerpc/power/:S/armv6/arm/}
 
-.if defined(NO_PROFILE) || ${OCAML_ARCH:Mpower} || ${OCAML_ARCH:Mamd64} \
-	|| ${OCAML_ARCH:Marm}
+.if defined(NO_PROFILE) || ${OCAML_ARCH:Mpower} || ${OCAML_ARCH:Mamd64}
+
 PLIST_SUB+=	PROF="@comment "
 .else
 PLIST_SUB+=	PROF=""

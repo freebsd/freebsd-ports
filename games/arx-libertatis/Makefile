@@ -14,8 +14,8 @@ COMMENT=	Cross-platform port of Arx Fatalis
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/ARX_PUBLIC_LICENSE.txt
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/foreach.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libfreetype.so:print/freetype2
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/foreach.hpp:devel/boost-libs
 
 USES=		cmake openal tar:xz
 USE_SDL=	sdl

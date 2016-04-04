@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dilbert of the day comic strip archive and retrieval module
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

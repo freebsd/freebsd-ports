@@ -5,7 +5,7 @@ PORTREVISION=	3
 
 COMMENT=	SASL authentication server for cyrus-sasl2
 
-LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 INSTALL_WRKSRC=	${WRKSRC}/saslauthd
 
@@ -14,7 +14,7 @@ USE_RC_SUBR=	saslauthd
 CYRUS_CONFIGURE_ARGS=	--with-saslauthd=${SASLAUTHD_RUNPATH}
 CONFIGURE_ENV+=	andrew_cv_runpath_switch=none
 
-OPTIONS_DEFINE=		DOCS HTTPFORM OPENLDAP
+OPTIONS_DEFINE=		DOCS HTTPFORM OPENLDAP OPENLDAP_SASL
 OPTIONS_RADIO=		GSSAPI SASLDB
 OPTIONS_RADIO_SASLDB=	BDB1 BDB GDBM
 OPTIONS_DEFAULT=	BDB1
@@ -24,6 +24,8 @@ HTTPFORM_CONFIGURE_ENABLE=httpform
 OPENLDAP_DESC=		Use OpenLDAP
 OPENLDAP_USE=		OPENLDAP=yes
 OPENLDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
+OPENLDAP_SASL_DESC=	OpenLDAP client with SASL2 support
+OPENLDAP_SASL_VARS=	WANT_OPENLDAP_SASL=yes
 
 SASLDB_DESC=		Experimental SASLdb authentication module
 BDB_USE=		BDB=yes
@@ -34,6 +36,7 @@ BDB_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-bdb=${BDB_LIB_NAME}
 BDB1_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-dblib=ndbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-dblib=gdbm \
 			--with-gdbm=${LOCALBASE}

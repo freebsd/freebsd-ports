@@ -15,7 +15,7 @@ LICENSE=	PD APACHE11
 LICENSE_COMB=	multi
 
 USES=		tar:xz
-RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_log_config-st.so:${PORTSDIR}/www/mod_log_config-st
+RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_log_config-st.so:www/mod_log_config-st
 
 USE_APACHE=	22
 AP_FAST_BUILD=	yes

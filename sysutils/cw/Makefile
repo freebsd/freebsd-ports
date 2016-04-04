@@ -11,7 +11,8 @@ MASTER_SITES=	http://cwrapper.sourceforge.net/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-intrusive color wrapper for common commands
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		shebangfix
 
@@ -23,15 +24,17 @@ cw_CMD=		${PREFIX}/bin/cw
 GNU_CONFIGURE=	yes
 ALL_TARGET=	local
 
-PORTDOCS=	CHANGES CONTRIB FILES INSTALL PLATFORM README VERSION
+PORTDOCS=	CHANGES CONTRIB README
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+.for file in cw cwu
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
+.endfor
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.for file in cw cwu
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
-.endfor
 
 .include <bsd.port.mk>

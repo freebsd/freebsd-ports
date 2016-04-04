@@ -14,7 +14,7 @@ COMMENT=	PECL extension to cracklib
 
 LICENSE=	PHP30
 
-LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
+LIB_DEPENDS=	libcrack.so:security/cracklib
 
 USES=		tar:tgz
 USE_PHP=	yes

@@ -14,7 +14,7 @@ BROKEN=		unfetchable
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		desktop-file-utils jpeg pathfix pkgconfig python shared-mime-info
 USE_GNOME=	gnomeprefix intlhack libgnomeui pygtk2

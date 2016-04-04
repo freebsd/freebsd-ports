@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cowboyneal@gmail.com
 COMMENT=	Perl interface to goo.gl
 
-BUILD_DEPENDS=	p5-WWW-Shorten>=1.98:${PORTSDIR}/www/p5-WWW-Shorten \
-		p5-libwww>=5.75:${PORTSDIR}/www/p5-libwww \
-		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
+BUILD_DEPENDS=	p5-WWW-Shorten>=1.98:www/p5-WWW-Shorten \
+		p5-libwww>=5.75:www/p5-libwww \
+		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
+		p5-JSON-Any>=0:converters/p5-JSON-Any
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

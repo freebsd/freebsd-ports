@@ -12,7 +12,7 @@ COMMENT=	MagickWand Python binding
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 
 USES=	python
 USE_PYTHON=	distutils autoplist

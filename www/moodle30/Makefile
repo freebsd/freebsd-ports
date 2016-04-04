@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable30/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
@@ -12,14 +12,12 @@ COMMENT=	Course management system based on social constructionism
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
-RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
-
 CONFLICTS=	moodle28-2.8.[0-9]* moodle29-2.9.[0-9]*
 
 USES=		cpe tar:tgz
-USE_PHP=	ctype curl dom gd hash iconv json mbstring opcache openssl pcre \
-		session simplexml soap spl tokenizer xml xmlrpc zip zlib
+USE_PHP=	ctype curl dom gd hash iconv intl json mbstring opcache \
+		openssl pcre session simplexml soap spl tokenizer xml xmlrpc \
+		zip zlib
 WRKSRC=		${WRKDIR}/moodle
 
 OPTIONS_SINGLE=		BACKEND
@@ -28,11 +26,11 @@ OPTIONS_DEFINE=		LDAP MIMETEX
 OPTIONS_DEFAULT=	MYSQL
 MIMETEX_DESC=		mimeTeX filter functionality support
 
-MYSQL_USE=	mysql=client php=mysql
+MYSQL_USE=	mysql=client php=mysqli
 PGSQL_USE=	php=pgsql
 MSSQL_USE=	php=mssql
 LDAP_USE=	php=ldap
-MIMETEX_RUN_DEPENDS=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
+MIMETEX_RUN_DEPENDS=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:www/mimetex
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist

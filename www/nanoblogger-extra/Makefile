@@ -11,7 +11,7 @@ COMMENT=	Extras for nanoblogger, a small weblog engine
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	nb:${PORTSDIR}/www/nanoblogger
+RUN_DEPENDS=	nb:www/nanoblogger
 
 WRKSRC=		${WRKDIR}/nanoblogger-${PORTVERSION}
 DATADIR=	${PREFIX}/share/nanoblogger

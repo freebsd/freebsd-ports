@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	RCC
 OPTIONS_SUB=	yes
 
 RCC_DESC=		Build with RusXMMS librcc patches (experimental)
-RCC_LIB_DEPENDS=	librcc.so:${PORTSDIR}/devel/librcc
+RCC_LIB_DEPENDS=	librcc.so:devel/librcc
 RCC_EXTRA_PATCHES=	${FILESDIR}/extrapatch-rcc
 RCC_CFLAGS=		-I${LOCALBASE}/include
 RCC_LDFLAGS=		-L${LOCALBASE}/lib

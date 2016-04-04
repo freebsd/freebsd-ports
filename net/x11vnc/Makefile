@@ -12,8 +12,8 @@ COMMENT=	VNC server for use with real X displays
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libpthread-stubs.so:devel/libpthread-stubs
 
 USE_XORG=	x11 xcb xdamage xfixes xrandr xinerama xext xtst xau xrender \
 		xdmcp recordproto
@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	NLS AVAHI DOCS
 OPTIONS_DEFAULT=NLS AVAHI
 NO_OPTIONS_SORT=yes
 NLS_USES=	gettext
-AVAHI_LIB_DEPENDS=	libavahi-common.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-common.so:net/avahi-app
 AVAHI_CONFIGURE_OFF=	--without-avahi
 
 post-patch:

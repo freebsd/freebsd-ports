@@ -11,12 +11,12 @@ COMMENT=	Extensible network forensic analysis framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${PYTHON_PKGNAMEPREFIX}pygeoip>0:${PORTSDIR}/net/py-pygeoip \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}dpkt>0:${PORTSDIR}/net/py-dpkt \
-		${PYTHON_PKGNAMEPREFIX}ipy>0:${PORTSDIR}/net-mgmt/py-ipy \
-		${PYTHON_PKGNAMEPREFIX}pypcap>0:${PORTSDIR}/net/py-pypcap
+BUILD_DEPENDS=	bash:shells/bash \
+		${PYTHON_PKGNAMEPREFIX}pygeoip>0:net/py-pygeoip \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}dpkt>0:net/py-dpkt \
+		${PYTHON_PKGNAMEPREFIX}ipy>0:net-mgmt/py-ipy \
+		${PYTHON_PKGNAMEPREFIX}pypcap>0:net/py-pypcap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes

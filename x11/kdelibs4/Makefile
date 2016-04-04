@@ -3,7 +3,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -11,27 +11,27 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libavahi-core.so:${PORTSDIR}/net/avahi-app \
-		libenchant.so:${PORTSDIR}/textproc/enchant \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libhal.so:${PORTSDIR}/sysutils/hal \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libHUpnp.so:${PORTSDIR}/net/hupnp \
-		libpolkit-qt-core-1.so:${PORTSDIR}/sysutils/polkit-qt \
-		libdbusmenu-qt.so:${PORTSDIR}/devel/libdbusmenu-qt \
-		libgrantlee_gui.so:${PORTSDIR}/devel/grantlee
+LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+		libjasper.so:graphics/jasper \
+		libpcre.so:devel/pcre \
+		libavahi-core.so:net/avahi-app \
+		libenchant.so:textproc/enchant \
+		libgif.so:graphics/giflib \
+		libpng.so:graphics/png \
+		libhal.so:sysutils/hal \
+		libqca.so:devel/qca \
+		libHUpnp.so:net/hupnp \
+		libpolkit-qt-core-1.so:sysutils/polkit-qt \
+		libdbusmenu-qt.so:devel/libdbusmenu-qt \
+		libgrantlee_gui.so:devel/grantlee
 
-BUILD_DEPENDS=	docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	docbook-xml>0:textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		xauth:${PORTSDIR}/x11/xauth \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
+		xauth:x11/xauth \
+		docbook-xml>0:textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdeprefix oxygen \
@@ -55,6 +55,18 @@ CMAKE_ARGS+=	-DWITH_ACL:BOOL=Off \
 		-DHUPNP_ENABLED:BOOL=On \
 		-DKDE_DISTRIBUTION_TEXT:STRING="${OPSYS}" \
 		-DKDE_DEFAULT_HOME:STRING=".kde4"
+
+# Do not conflict with KDE Frameworks 5 headers: instead of installing kdelibs4
+# headers directly into ${LOCALBASE}/include, put them into include/kde4 (this
+# also applies to all ports depending on kdelibs4 that derive their header
+# installation location from it).
+# If we install the headers directly into ${LOCALBASE}/include, with KDE
+# Frameworks 5 installed it is possible to end up in a situation where the
+# compiler is passed this:
+#   -I${LOCALBASE}/include -I${LOCALBASE}/KF5
+# which in turn leads to kdelibs4 headers with the same name being used instead
+# of the KF5 ones, possibly breaking the build.
+CMAKE_ARGS+=	-DINCLUDE_INSTALL_DIR:PATH="${KDE4_PREFIX}/include/kde4"
 
 SHEBANG_FILES=	kdecore/kconfig_compiler/checkkcfg.pl \
 		kdeui/preparetips \

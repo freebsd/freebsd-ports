@@ -13,9 +13,9 @@ COMMENT=	SDPARA parallel version of SDPA (math/sdpa)
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libblacs.so:${PORTSDIR}/math/blacs \
-		libscalapack.so:${PORTSDIR}/math/scalapack \
-		libmpich.so:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	libblacs.so:math/blacs \
+		libscalapack.so:math/scalapack \
+		libmpich.so:net/mpich2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 

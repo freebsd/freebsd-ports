@@ -4,15 +4,11 @@
 @unexec if [ -d %%ELASTIC_DBDIR%% ]; then echo "You should remove %%ELASTIC_DBDIR%% if you don't need it any more."; fi
 bin/elasticsearch-plugin
 lib/elasticsearch/lib/HdrHistogram-2.1.6.jar
-lib/elasticsearch/lib/antlr-runtime-3.5.jar
 lib/elasticsearch/lib/apache-log4j-extras-1.2.17.jar
-lib/elasticsearch/lib/asm-4.1.jar
-lib/elasticsearch/lib/asm-commons-4.1.jar
 lib/elasticsearch/lib/commons-cli-1.3.1.jar
 lib/elasticsearch/lib/compiler-0.8.13.jar
 lib/elasticsearch/lib/compress-lzf-1.0.2.jar
 lib/elasticsearch/lib/elasticsearch-%%PORTVERSION%%.jar
-lib/elasticsearch/lib/groovy-all-2.4.4-indy.jar
 lib/elasticsearch/lib/guava-18.0.jar
 lib/elasticsearch/lib/hppc-0.7.1.jar
 lib/elasticsearch/lib/jackson-core-2.6.2.jar
@@ -28,7 +24,6 @@ lib/elasticsearch/lib/log4j-1.2.17.jar
 lib/elasticsearch/lib/lucene-analyzers-common-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-backward-codecs-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-core-%%LUCENEVER%%.jar
-lib/elasticsearch/lib/lucene-expressions-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-grouping-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-highlighter-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-join-%%LUCENEVER%%.jar
@@ -41,6 +36,7 @@ lib/elasticsearch/lib/lucene-spatial-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-spatial3d-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-suggest-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/netty-3.10.5.Final.jar
+lib/elasticsearch/lib/securesm-1.0.jar
 lib/elasticsearch/lib/snakeyaml-1.15.jar
 lib/elasticsearch/lib/spatial4j-0.5.jar
 lib/elasticsearch/lib/t-digest-3.0.jar
@@ -52,6 +48,7 @@ lib/elasticsearch/bin/plugin
 %%PORTDOCS%%%%DOCSDIR%%/README.textile
 @dir lib/elasticsearch/lib
 @dir lib/elasticsearch/bin
+@dir lib/elasticsearch/modules
 @dir lib/elasticsearch/plugins
 @dir lib/elasticsearch
 @dir libexec/elasticsearch

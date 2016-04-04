@@ -10,7 +10,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Apache 2.2 module to block IPs from lists stored in memcache
 
-LIB_DEPENDS+=	libmemcached.so:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	netik

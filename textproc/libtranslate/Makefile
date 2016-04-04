@@ -37,7 +37,7 @@ post-patch::
 .if ${PORT_OPTIONS:MGENERIC}
 PLIST_SUB+=	GENERIC=""
 USE_GNOME+=	libxml2
-LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup
 CPPFLAGS+=	-DHAVE_LIBSOUP24
 DISTFILES+=	libtranslate-0.99-libsoup24.diff
 EXTRACT_ONLY=	${DISTFILES:M*tar.*}
@@ -53,7 +53,7 @@ PLIST_SUB+=	GENERIC="@comment "
 
 .if ${PORT_OPTIONS:MTALKFILTERS}
 PLIST_SUB+=	TALKFILTERS=""
-LIB_DEPENDS+=	libtalkfilters.so:${PORTSDIR}/misc/talkfilters
+LIB_DEPENDS+=	libtalkfilters.so:misc/talkfilters
 .else
 CONFIGURE_ARGS+=--disable-talkfilters
 PLIST_SUB+=	TALKFILTERS="@comment "

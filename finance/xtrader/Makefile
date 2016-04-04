@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Technical analysis program for financial instruments
 
-LIB_DEPENDS=	libptypes.so:${PORTSDIR}/devel/ptypes \
-		libfltk.so.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libptypes.so:devel/ptypes \
+		libfltk.so.1:x11-toolkits/fltk
 
 MAKEFILE=	Makefile.linux
 USE_XORG=	x11 xpm

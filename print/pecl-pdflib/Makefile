@@ -14,7 +14,7 @@ COMMENT=	PECL extension to create PDF on the fly
 
 LICENSE=	PHP30
 
-LIB_DEPENDS=	libpdf.so:${PORTSDIR}/print/pdflib
+LIB_DEPENDS=	libpdf.so:print/pdflib
 
 USE_PHP=	gd
 USE_PHP_BUILD=	yes

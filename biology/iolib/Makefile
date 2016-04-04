@@ -11,7 +11,7 @@ COMMENT=	General purpose trace file (and Experiment File) reading interface
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

@@ -1,30 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	20151120
+PORTVERSION=	3.0.0
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		rebar3-cache-3${EXTRACT_SUFX}:deps
+DISTFILES=	rebar3-cache-4${EXTRACT_SUFX}:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		rebar3-cache-3${EXTRACT_SUFX}
+		rebar3-cache-4${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Build tool for Erlang
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang \
-		${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
-RUN_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang \
+		${LOCALBASE}/bin/git:devel/git
+RUN_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang
 
 OPTIONS_DEFINE=	BASH ZSH
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rebar
-GH_TAGNAME=	356ac50
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTEXAMPLES=	rebar.config.sample
@@ -34,17 +33,17 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
 
 # from rebar.config
 REBAR_DEPS=	bbmustache-1.0.4 \
-		certifi-0.1.1 \
+		certifi-0.4.0 \
 		cf-0.2.1 \
-		cth_readable-1.0.1 \
-		erlware_commons-0.16.0 \
-		eunit_formatters-0.2.0 \
+		cth_readable-1.2.2 \
+		erlware_commons-0.19.0 \
+		eunit_formatters-0.3.1 \
 		getopt-0.8.2 \
-		providers-1.5.0 \
-		relx-3.8.0 \
+		providers-1.6.0 \
+		relx-3.17.0 \
 		ssl_verify_hostname-1.0.5
 
-REBAR_PLUGINS=	rebar3_hex-1.9.0
+# REBAR_PLUGINS=	rebar3_hex-1.9.0
 
 .for _dep in ${REBAR_DEPS} ${REBAR_PLUGINS}
 DISTFILES+=	${_dep}.tar:hex

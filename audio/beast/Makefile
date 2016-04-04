@@ -12,11 +12,11 @@ COMMENT=	Powerful music composition and modular synthesis application
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libguile.so:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libmad.so:audio/libmad \
+		libvorbisfile.so:audio/libvorbis \
+		libguile.so:lang/guile
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		shared-mime-info shebangfix tar:bzip2

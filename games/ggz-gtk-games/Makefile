@@ -9,7 +9,7 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - GTK+ Games
 
-RUN_DEPENDS=	${LOCALBASE}/bin/ggz-gtk:${PORTSDIR}/games/ggz-gtk-client
+RUN_DEPENDS=	${LOCALBASE}/bin/ggz-gtk:games/ggz-gtk-client
 
 USES=		gettext pkgconfig
 USE_GNOME=	gtk20

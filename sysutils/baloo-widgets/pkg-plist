@@ -1,7 +1,7 @@
-include/baloo/filemetadataconfigwidget.h
-include/baloo/filemetadatawidget.h
-include/baloo/tagwidget.h
-include/baloo/widgets_export.h
+include/kde4/baloo/filemetadataconfigwidget.h
+include/kde4/baloo/filemetadatawidget.h
+include/kde4/baloo/tagwidget.h
+include/kde4/baloo/widgets_export.h
 lib/cmake/BalooWidgets/BalooWidgetsConfig.cmake
 lib/cmake/BalooWidgets/BalooWidgetsConfigVersion.cmake
 lib/cmake/BalooWidgets/BalooWidgetsTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake

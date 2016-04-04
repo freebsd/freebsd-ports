@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for creating Meta objects to track custom metrics
 
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Fennec-Lite>=0:${PORTSDIR}/devel/p5-Fennec-Lite
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Fennec-Lite>=0:devel/p5-Fennec-Lite
 
 USES=		perl5
 USE_PERL5=	modbuild

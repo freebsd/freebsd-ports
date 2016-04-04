@@ -9,8 +9,8 @@ CATEGORIES=	security
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Tor-managed pluggable transport client
 
-LIB_DEPENDS=	liballium-1.0.so:${PORTSDIR}/devel/liballium \
-		libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	liballium-1.0.so:devel/liballium \
+		libevent.so:devel/libevent2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yawning

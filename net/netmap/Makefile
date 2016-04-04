@@ -12,7 +12,7 @@ COMMENT=	Make a graphical representation of the surrounding network
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	dotty:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS=	dotty:graphics/graphviz
 
 USES=		gmake
 

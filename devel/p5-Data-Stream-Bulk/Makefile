@@ -14,13 +14,13 @@ COMMENT=	N at a time iteration API
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
-		p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-namespace-clean>0:${PORTSDIR}/devel/p5-namespace-clean
+BUILD_DEPENDS=	p5-Moose>=0.90:devel/p5-Moose \
+		p5-Path-Class>0:devel/p5-Path-Class \
+		p5-Sub-Exporter>0:devel/p5-Sub-Exporter \
+		p5-namespace-clean>0:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Test-Requires>0:devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	configure

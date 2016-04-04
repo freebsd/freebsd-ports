@@ -12,9 +12,9 @@ COMMENT=	Utility for executing commands in parallel on multiple machines
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-i18n>=0:${PORTSDIR}/devel/rubygem-i18n \
-		rubygem-rake>=10:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-sshkit>=1.3:${PORTSDIR}/security/rubygem-sshkit
+RUN_DEPENDS=	rubygem-i18n>=0:devel/rubygem-i18n \
+		rubygem-rake>=10:devel/rubygem-rake \
+		rubygem-sshkit>=1.3:security/rubygem-sshkit
 
 NO_ARCH=	yes
 USE_RUBY=	yes

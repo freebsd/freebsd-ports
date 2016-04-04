@@ -12,7 +12,7 @@ COMMENT=	Game Boy Advance emulator with GTK frontend
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	NLS FFMPEG LINK LIRC DEBUGGER
 OPTIONS_MULTI=	INTERFACE
@@ -46,7 +46,7 @@ CMAKE_ARGS+=	-DVERSION:STRING="${PORTVERSION}" \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASMCORE} || ${PORT_OPTIONS:MASMSCALERS}
-BUILD_DEPENDS+=	as:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	as:devel/binutils
 .if ${PORT_OPTIONS:MASMCORE}
 CMAKE_ARGS+=	-DENABLE_ASM_CORE:BOOL=yes
 .else
@@ -61,12 +61,12 @@ CMAKE_ARGS+=	-DENABLE_ASM_SCALERS:BOOL=no
 
 .if ${PORT_OPTIONS:MGVBAM}
 USE_GNOME=	gtk20
-LIB_DEPENDS+=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		libglibmm-2.4.so:${PORTSDIR}/devel/glibmm \
-		libgiomm-2.4.so:${PORTSDIR}/devel/glibmm \
-		libcairomm-1.0.so:${PORTSDIR}/graphics/cairomm \
-		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libgdkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm
+LIB_DEPENDS+=	libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
+		libglibmm-2.4.so:devel/glibmm \
+		libgiomm-2.4.so:devel/glibmm \
+		libcairomm-1.0.so:graphics/cairomm \
+		libglademm-2.4.so:devel/libglademm24 \
+		libgdkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm
 CMAKE_ARGS+=	-DENABLE_GTK:BOOL=yes
 USES+=	desktop-file-utils
 .else
@@ -89,7 +89,7 @@ CMAKE_ARGS+=	-DENABLE_DEBUGGER:BOOL=no
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 CMAKE_ARGS+=	-DENABLE_FFMPEG:BOOL=yes
 .else
 CMAKE_ARGS+=	-DENABLE_FFMPEG:BOOL=no
@@ -103,14 +103,14 @@ CMAKE_ARGS+=	-DENABLE_NLS:BOOL=no
 
 .if ${PORT_OPTIONS:MLINK}
 CMAKE_ARGS+=	-DENABLE_LINK:BOOL=yes
-LIB_DEPENDS+=	libsfml1-system.so:${PORTSDIR}/devel/sfml1
+LIB_DEPENDS+=	libsfml1-system.so:devel/sfml1
 .else
 CMAKE_ARGS+=	-DENABLE_LINK:BOOL=no
 .endif
 
 .if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	liblirc_client.so:${PORTSDIR}/comms/lirc
-RUN_DEPENDS+=	lircd:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	liblirc_client.so:comms/lirc
+RUN_DEPENDS+=	lircd:comms/lirc
 CMAKE_ARGS+=	-DENABLE_LIRC:BOOL=yes
 .else
 CMAKE_ARGS+=	-DENABLE_LIRC:BOOL=no

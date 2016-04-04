@@ -11,7 +11,7 @@ PKGNAMEPREFIX=		psptoolchain-
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
-BUILD_DEPENDS=		${LOCALBASE}/psp/sdk/lib/libpspsdk.a:${PORTSDIR}/devel/psptoolchain-pspsdk-stage2
+BUILD_DEPENDS=		${LOCALBASE}/psp/sdk/lib/libpspsdk.a:devel/psptoolchain-pspsdk-stage2
 
 USES=			gmake tar:bzip2
 USE_CSTD=		gnu89

@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 BUILD_DEPENDS=	${KVASD_DEPENDS}
 RUN_DEPENDS=	${KVASD_DEPENDS}
 
-KVASD_DEPENDS=	linux-${USE_LINUX}-libgfortran>0:${PORTSDIR}/devel/linux-c6-libgfortran
+KVASD_DEPENDS=	linux-${USE_LINUX}-libgfortran>0:devel/linux-c6-libgfortran
 USE_LINUX=	c6
 NO_BUILD=	yes
 PLIST_FILES=	bin/kvasd

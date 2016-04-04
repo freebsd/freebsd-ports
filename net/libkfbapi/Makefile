@@ -2,7 +2,7 @@
 
 PORTNAME=	libkfbapi
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net kde
 MASTER_SITES=	KDE/stable/libkfbapi/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
@@ -12,7 +12,7 @@ COMMENT=	Library for accessing Facebook services
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson
 
 USES=		cmake:outsource gettext tar:bzip2
 USE_KDE4=	automoc4 kdelibs kdeprefix pimlibs

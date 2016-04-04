@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-logger-qt4
-PORTVERSION=	${KTP_VERSION}
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	KDE/stable/${PORTNAME:C/4$//}/${PORTVERSION}/src
 DISTNAME=	${PORTNAME:C/4$//}-${PORTVERSION}
@@ -11,11 +11,11 @@ COMMENT=	Qt binding for Telepathy Logger
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libtelepathy-logger.so:${PORTSDIR}/net-im/telepathy-logger \
-		libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libtelepathy-glib.so:net-im/telepathy-glib \
+		libtelepathy-logger.so:net-im/telepathy-logger \
+		libtelepathy-qt4.so:net-im/telepathy-qt4
 
 USE_GNOME=	glib20 libxml2
 USE_GSTREAMER=	qt4

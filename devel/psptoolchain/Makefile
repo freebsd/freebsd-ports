@@ -9,21 +9,21 @@ CATEGORIES=		devel
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain meta port
 
-RUN_DEPENDS=		psp-gdb:${PORTSDIR}/devel/psptoolchain-gdb \
-			psp-gcc:${PORTSDIR}/devel/psptoolchain-gcc-stage2 \
-			psp-g++:${PORTSDIR}/devel/psptoolchain-gcc-stage2 \
-			psp-ar:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-as:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-c++filt:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-ld:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-nm:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-objcopy:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-objdump:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-ranlib:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-readelf:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-size:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-strings:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-strip:${PORTSDIR}/devel/psptoolchain-binutils
+RUN_DEPENDS=		psp-gdb:devel/psptoolchain-gdb \
+			psp-gcc:devel/psptoolchain-gcc-stage2 \
+			psp-g++:devel/psptoolchain-gcc-stage2 \
+			psp-ar:devel/psptoolchain-binutils \
+			psp-as:devel/psptoolchain-binutils \
+			psp-c++filt:devel/psptoolchain-binutils \
+			psp-ld:devel/psptoolchain-binutils \
+			psp-nm:devel/psptoolchain-binutils \
+			psp-objcopy:devel/psptoolchain-binutils \
+			psp-objdump:devel/psptoolchain-binutils \
+			psp-ranlib:devel/psptoolchain-binutils \
+			psp-readelf:devel/psptoolchain-binutils \
+			psp-size:devel/psptoolchain-binutils \
+			psp-strings:devel/psptoolchain-binutils \
+			psp-strip:devel/psptoolchain-binutils
 
 USES=			metaport
 

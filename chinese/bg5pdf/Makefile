@@ -13,7 +13,7 @@ COMMENT=	Convert Chinese-Big5 encoded files to PDF, using PDFlib
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpdf.so:${PORTSDIR}/print/pdflib
+LIB_DEPENDS=	libpdf.so:print/pdflib
 
 USES=		python:2
 

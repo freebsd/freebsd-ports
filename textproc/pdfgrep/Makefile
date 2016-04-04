@@ -12,7 +12,7 @@ COMMENT=	Tool to search text in PDF files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	libpoppler.so:graphics/poppler
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lib gmake pkgconfig

@@ -16,7 +16,7 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit and library for raster image processing
 
-LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -32,17 +32,15 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 ALL_TARGET=	# none
 USE_LDCONFIG=	yes
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librle.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/img
 	@(cd ${WRKSRC}/img && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/img)
-.endif
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librle.so
 
 .include <bsd.port.mk>

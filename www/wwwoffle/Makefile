@@ -2,7 +2,7 @@
 
 PORTNAME=	wwwoffle
 PORTVERSION=	2.9i
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.gedanken.org.uk/software/wwwoffle/download/
 
@@ -11,7 +11,7 @@ COMMENT=	Caching proxy server for HTTP and FTP designed for dial-up hosts
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 USES=		perl5 gmake tar:tgz
 

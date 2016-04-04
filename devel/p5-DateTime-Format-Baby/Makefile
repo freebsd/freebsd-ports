@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-DateTime>=0.16:${PORTSDIR}/devel/p5-DateTime \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS=	p5-DateTime>=0.16:devel/p5-DateTime \
+		p5-Params-Validate>=0:devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

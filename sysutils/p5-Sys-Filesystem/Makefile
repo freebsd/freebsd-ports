@@ -13,9 +13,9 @@ COMMENT=	Perl module to Retrieve list of filesystems and their properties
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	p5-Params-Util>=1.0:${PORTSDIR}/devel/p5-Params-Util \
-		p5-IPC-Cmd>=0.80:${PORTSDIR}/devel/p5-IPC-Cmd \
-		p5-Module-Pluggable>=4.8:${PORTSDIR}/devel/p5-Module-Pluggable
+RUN_DEPENDS=	p5-Params-Util>=1.0:devel/p5-Params-Util \
+		p5-IPC-Cmd>=0.80:devel/p5-IPC-Cmd \
+		p5-Module-Pluggable>=4.8:devel/p5-Module-Pluggable
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

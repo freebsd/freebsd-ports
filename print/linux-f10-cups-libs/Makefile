@@ -17,6 +17,6 @@ RPMVERSION=	4.fc10
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/lib/libcups.so.2 usr/lib/libcupsimage.so.2
-DESCR=		${.CURDIR}/../cups-base/pkg-descr
+DESCR=		${.CURDIR}/../cups/pkg-descr
 
 .include <bsd.port.mk>

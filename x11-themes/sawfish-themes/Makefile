@@ -12,7 +12,7 @@ COMMENT=	Themes for Sawfish window manager
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
+RUN_DEPENDS=	sawfish:x11-wm/sawfish
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -11,8 +11,10 @@ COMMENT=	Perl-script to send xmpp (jabber) messages
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Net-XMPP>0.0:${PORTSDIR}/net-im/p5-Net-XMPP
-RUN_DEPENDS=	p5-Getopt-Long>0.0:${PORTSDIR}/devel/p5-Getopt-Long
+BUILD_DEPENDS=	p5-Net-XMPP>=0:net-im/p5-Net-XMPP
+RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
+		p5-Getopt-Long>=0:devel/p5-Getopt-Long \
+		p5-Net-XMPP>=0:net-im/p5-Net-XMPP
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lhost
@@ -27,7 +29,7 @@ PLIST_FILES=	bin/sendxmpp ${SITE_MAN1}/sendxmpp.1.gz
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

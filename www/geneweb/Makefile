@@ -11,8 +11,8 @@ COMMENT=	Advanced genealogy software
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		camlp5:${PORTSDIR}/devel/ocaml-camlp5
+BUILD_DEPENDS=	ocamlc:lang/ocaml \
+		camlp5:devel/ocaml-camlp5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	geneanet

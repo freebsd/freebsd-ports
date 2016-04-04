@@ -12,8 +12,8 @@ COMMENT=	Utility to remap USB keyboards under X11
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libhid.so:${PORTSDIR}/devel/libhid \
-		libXtst.so:${PORTSDIR}/x11/libXtst
+LIB_DEPENDS=	libhid.so:devel/libhid \
+		libXtst.so:x11/libXtst
 
 USES=		gmake
 USE_RUBY=	yes

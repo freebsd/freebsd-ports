@@ -12,7 +12,7 @@ COMMENT=	Data recovery tool
 
 LICENSE=	GPLv3
 
-EXTRACT_DEPENDS=lzip:${PORTSDIR}/archivers/lzip
+EXTRACT_DEPENDS=lzip:archivers/lzip
 
 OPTIONS_DEFINE=	DOCS
 

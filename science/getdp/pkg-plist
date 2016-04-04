@@ -3,9 +3,11 @@ man/man1/getdp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/demos/BH.pro
-%%PORTDOCS%%%%DOCSDIR%%/demos/Magnetostatics.pro
 %%PORTDOCS%%%%DOCSDIR%%/demos/magnet.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/magnet.msh
 %%PORTDOCS%%%%DOCSDIR%%/demos/magnet.pro
 %%PORTDOCS%%%%DOCSDIR%%/demos/magnet_data.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Electrostatics.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Magnetostatics.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/MaterialDatabase.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/MaterialMacros.pro

@@ -9,7 +9,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Weather extension for the GNOME3 shell
 
-RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell
+RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell
 
 USES=		autoreconf gettext gmake gnome libtool pkgconfig tar:xz
 USE_GNOME=	glib20 intlhack

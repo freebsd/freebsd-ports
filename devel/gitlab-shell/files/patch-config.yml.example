@@ -1,0 +1,11 @@
+--- config.yml.example.orig	2016-02-24 09:49:01 UTC
++++ config.yml.example
+@@ -48,7 +48,7 @@ redis:
+ 
+ # Log file.
+ # Default is gitlab-shell.log in the root directory.
+-# log_file: "/home/git/gitlab-shell/gitlab-shell.log"
++log_file: "/var/log/gitlab-shell/gitlab-shell.log"
+ 
+ # Log level. INFO by default
+ log_level: INFO

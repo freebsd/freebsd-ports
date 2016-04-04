@@ -13,8 +13,8 @@ COMMENT=	The interface of IO objects to classes providing a few simple methods
 LICENSE=	RUBY
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
-RUN_DEPENDS=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
+BUILD_DEPENDS=	${RUBYGEMBIN}:devel/ruby-gems
+RUN_DEPENDS=	${RUBYGEMBIN}:devel/ruby-gems
 
 USE_RUBY=	yes
 USE_RAKE=	yes
@@ -56,7 +56,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-ruby-1.9-temp
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	rubygem-allison>=0:${PORTSDIR}/devel/rubygem-allison
+DOCS_BUILD_DEPENDS=	rubygem-allison>=0:devel/rubygem-allison
 DOCS_VARS_OFF=		RUBYGEM_ARGS+=--no-rdoc
 
 post-patch:

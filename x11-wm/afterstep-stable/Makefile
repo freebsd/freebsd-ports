@@ -11,13 +11,13 @@ DISTNAME=	AfterStep-${PORTVERSION}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Stable version of the AfterStep window manager
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgif.so:graphics/giflib \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
+RUN_DEPENDS=	xli:graphics/xli
 
 USES=		execinfo gmake jpeg pkgconfig shebangfix tar:bzip2
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 librsvg2 pango

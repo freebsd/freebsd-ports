@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Keeps database connection persistent
 
-BUILD_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
-		p5-Exception-Class>0:${PORTSDIR}/devel/p5-Exception-Class
+BUILD_DEPENDS=	p5-DBI>0:databases/p5-DBI \
+		p5-Exception-Class>0:devel/p5-Exception-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

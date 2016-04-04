@@ -1,6 +1,6 @@
---- config.lib.orig	2014-06-03 02:26:54 +0800
+--- config.lib.orig	2016-04-01 18:33:55 UTC
 +++ config.lib
-@@ -804,15 +804,15 @@ check_params() {
+@@ -816,15 +816,15 @@ check_params() {
  	pre_detect_with_lzma=$with_lzma
  	detect_lzma
  
@@ -18,7 +18,7 @@
  			log 1 " If you want to compile without lzma use --without-lzma as parameter"
  			exit
  		fi
-@@ -1454,7 +1454,6 @@ make_cflags_and_ldflags() {
+@@ -1468,7 +1468,6 @@ make_cflags_and_ldflags() {
  			# -fomit-frame-pointer and -pg do not go well together (gcc errors they are incompatible)
  			CFLAGS="-fomit-frame-pointer $CFLAGS"
  		fi
@@ -26,8 +26,8 @@
  	else
  		OBJS_SUBDIR="debug"
  
-@@ -1664,16 +1663,14 @@ make_cflags_and_ldflags() {
- 		CFLAGS="$CFLAGS -DWITH_ZLIB"
+@@ -1675,16 +1674,14 @@ make_cflags_and_ldflags() {
+ 		fi
  	fi
  
 -	if [ -n "$lzma_config" ]; then
@@ -48,7 +48,7 @@
  	fi
  
  	if [ "$with_lzo2" != "0" ]; then
-@@ -2716,6 +2713,10 @@ detect_lzo2() {
+@@ -2692,6 +2689,10 @@ detect_lzo2() {
  	detect_library "$with_lzo2" "lzo2" "liblzo2.a" "lzo/" "lzo1x.h"
  }
  
@@ -57,9 +57,9 @@
 +}
 +
  detect_libtimidity() {
- 	detect_library "$with_libtimidity" "libtimidity" "libtimidity.a" "" "timidity.h"
+ 	detect_pkg_config "$with_libtimidity" "libtimidity" "libtimidity_config" "0.1" "1"
  }
-@@ -2772,10 +2773,6 @@ detect_pkg_config() {
+@@ -2756,10 +2757,6 @@ detect_pkg_config() {
  	log 1 "checking $2... found"
  }
  
@@ -70,13 +70,13 @@
  detect_xdg_basedir() {
  	detect_pkg_config "$with_xdg_basedir" "libxdg-basedir" "xdg_basedir_config" "1.2"
  }
-@@ -3669,8 +3666,7 @@ showhelp() {
- 	echo "  --with-cocoa                   enables COCOA video driver (OSX ONLY)"
- 	echo "  --with-sdl[=sdl-config]        enables SDL video driver support"
- 	echo "  --with-zlib[=zlib.a]           enables zlib support"
+@@ -3523,8 +3520,7 @@ showhelp() {
+ 	echo "  --with-sdl[=\"pkg-config sdl\"]  enables SDL video driver support"
+ 	echo "  --with-zlib[=\"pkg-config zlib\"]"
+ 	echo "                                 enables zlib support"
 -	echo "  --with-liblzma[=\"pkg-config liblzma\"]"
 -	echo "                                 enables liblzma support"
 +	echo "  --with-liblzma[=liblzma.a]     enables liblzma support"
  	echo "  --with-liblzo2[=liblzo2.a]     enables liblzo2 support"
- 	echo "  --with-png[=libpng-config]     enables libpng support"
- 	echo "  --with-freetype[=freetype-config]"
+ 	echo "  --with-png[=\"pkg-config libpng\"]"
+ 	echo "                                 enables libpng support"

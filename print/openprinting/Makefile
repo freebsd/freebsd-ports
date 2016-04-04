@@ -3,7 +3,7 @@
 
 PORTNAME=	openprinting
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print net
 MASTER_SITES=	SF/openprinting/papi/1.0%20Beta
 DISTNAME=	papi-${PORTVERSION}_beta
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=--without-apache
 .endif
 
 .if defined(WITH_PSM_CUPS)
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:print/cups
 CONFIGURE_ARGS+=--with-cups=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-cups

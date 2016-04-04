@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva-intel-driver
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
@@ -12,8 +12,8 @@ COMMENT=	VAAPI intel driver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	libva.so:multimedia/libva
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes
 USES=		alias autoreconf compiler:c11 gmake libtool pkgconfig tar:bzip2

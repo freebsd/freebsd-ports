@@ -1,13 +1,17 @@
-Oroborus is a small and simple window manager for X which has the following
-features:
+Oroborus is a small and simple window manager for X11 which has the
+following features:
 
- o Themeable appearance
- o Virtual desktops
- o Full keyboard control
- o Works with GNOME
+  - Good default key bindings
+  - Windows are moveable by keyboard
+  - Highly configurable
+  - XPM-themable
+  - GNOME compatible
+  - NET_WM compatible
+  - Sort of KDE compatible
+  - And many, many more...
 
 Oroborus doesn't provide any kind of dock, toolbar, program launcher,
-background changer or root menu as these functions can be provided by separate
-applications.
+background changer or root menu as these functions can be provided by
+separate applications.
 
-WWW: http://www.dreamind.de/oroborus.shtml
+WWW: http://www.oroborus.org/

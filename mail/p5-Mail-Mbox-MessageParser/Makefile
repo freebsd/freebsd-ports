@@ -12,13 +12,15 @@ COMMENT=	Fast and simple mbox folder reader
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-FileHandle-Unget>=0:${PORTSDIR}/devel/p5-FileHandle-Unget
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
-TEST_DEPENDS=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
+BUILD_DEPENDS+=	p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-FileHandle-Unget>=0:devel/p5-FileHandle-Unget \
+		p5-URI>=0:net/p5-URI
+RUN_DEPENDS=	p5-FileHandle-Unget>=0:devel/p5-FileHandle-Unget
+TEST_DEPENDS=	p5-Text-Diff>=0:textproc/p5-Text-Diff
 
 USES=		perl5
 USE_PERL5=	configure
+
+CONFIGURE_ARGS= < /dev/null
 
 .include <bsd.port.mk>

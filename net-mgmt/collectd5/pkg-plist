@@ -31,7 +31,7 @@ lib/collectd/dns.so
 lib/collectd/email.so
 lib/collectd/exec.so
 lib/collectd/filecount.so
-%%STATGRAB%%lib/collectd/interface.so
+lib/collectd/interface.so
 %%IPMI%%lib/collectd/ipmi.so
 lib/collectd/load.so
 %%LOGSTASH%%lib/collectd/log_logstash.so

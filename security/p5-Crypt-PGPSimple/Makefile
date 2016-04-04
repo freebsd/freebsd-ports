@@ -14,7 +14,7 @@ COMMENT=	Crypt::PGPSimple provides a simple object-oriented interface to PGP
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${LOCALBASE}/bin/pgp:${PORTSDIR}/security/pgp
+RUN_DEPENDS=	${LOCALBASE}/bin/pgp:security/pgp
 
 USES=		perl5
 USE_PERL5=	configure

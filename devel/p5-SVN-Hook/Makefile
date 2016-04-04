@@ -13,8 +13,8 @@ COMMENT=	Perl module for managing Subversion hook scripts
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-Path-Class>=0:devel/p5-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

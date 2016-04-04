@@ -40,7 +40,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NGS_${D}}
 .endfor
 
 .if defined(_CUPS_DEVS)
-LIB_DEPENDS+=	libcupsimage.so:${PORTSDIR}/print/cups-image
+LIB_DEPENDS+=	libcupsimage.so:print/cups
 CONFIGURE_ARGS+=	--enable-cups
 .else
 CONFIGURE_ARGS+=	--disable-cups
@@ -61,7 +61,7 @@ OPTIONS_UNSET+=	${PORT_OPTIONS:MGS_${D}}
 .endfor
 
 .if defined(_VGA_DEVS)
-LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:graphics/svgalib
 .endif
 
 # iconv specific
@@ -93,7 +93,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NGS_${D}}
 .endfor
 
 .if defined(_CAIRO_DEVS)
-LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libcairo.so:graphics/cairo
 CONFIGURE_ARGS+=	--enable-cairo
 .else
 CONFIGURE_ARGS+=	--disable-cairo

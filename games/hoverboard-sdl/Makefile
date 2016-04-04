@@ -15,7 +15,7 @@ LICENSE_TEXT_CCbyNC25=	http://creativecommons.org/licenses/by-nc/2.5/
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_PERMS_CCbyNC25=	no-dist-sell dist-mirror no-pkg-sell pkg-mirror auto-accept
 
-LIB_DEPENDS=	libSDL2pp.so:${PORTSDIR}/devel/sdl2pp
+LIB_DEPENDS=	libSDL2pp.so:devel/sdl2pp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3

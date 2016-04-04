@@ -13,7 +13,7 @@ COMMENT=	Fast Python WSGI server
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	libev.so:devel/libev
 
 USES=	python:2
 USE_PYTHON=	distutils autoplist

@@ -10,7 +10,7 @@ MASTER_SITES=	http://gailly.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 Go (weiqi, baduk) client for the Internet Go Server
 
-LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 GNU_CONFIGURE=	yes

@@ -14,7 +14,7 @@ COMMENT=	Web page update checker written in Ruby
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/htree.rb:${PORTSDIR}/textproc/ruby-htree
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/htree.rb:textproc/ruby-htree
 
 USES=	gmake
 USE_RUBY=	yes

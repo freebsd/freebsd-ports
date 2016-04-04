@@ -11,6 +11,9 @@ COMMENT=	ODS Dynamic DNS Client
 
 ALL_TARGET=	odsclient
 
+DEPRECATED=	ODS shuts service down, so client is probably useless
+EXPIRATION_DATE=	2016-04-30
+
 OPTIONS_DEFINE=	DOCS
 
 do-install:

@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for logging to screen
 
-BUILD_DEPENDS=	p5-Filter>0:${PORTSDIR}/devel/p5-Filter \
-		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-Log-Dispatch>0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS=	p5-Filter>0:devel/p5-Filter \
+		p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-Log-Dispatch>0:devel/p5-Log-Dispatch \
+		p5-Params-Validate>0:devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -13,8 +13,8 @@ COMMENT=	Enlightenment module to emulate right mouse button
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	enlightenment:x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment:x11-wm/enlightenment
 
 DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes

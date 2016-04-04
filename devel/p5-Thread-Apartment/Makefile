@@ -16,9 +16,9 @@ LICENSE_NAME=	Academic Free License version 2.1
 LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	p5-Class-ISA>=0.32:${PORTSDIR}/devel/p5-Class-ISA \
-		p5-Class-Inspector>=1.08:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-Thread-Queue-Duplex>=0.92:${PORTSDIR}/devel/p5-Thread-Queue-Duplex
+BUILD_DEPENDS=	p5-Class-ISA>=0.32:devel/p5-Class-ISA \
+		p5-Class-Inspector>=1.08:devel/p5-Class-Inspector \
+		p5-Thread-Queue-Duplex>=0.92:devel/p5-Thread-Queue-Duplex
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

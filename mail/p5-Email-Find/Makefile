@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Find RFC 822 email addresses in plain text
 
-BUILD_DEPENDS=	p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid
+BUILD_DEPENDS=	p5-Email-Valid>=0:mail/p5-Email-Valid
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

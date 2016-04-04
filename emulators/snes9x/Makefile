@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_XORG=	x11 sm ice xext
 USES=		gmake tar:bzip2
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--without-debug
 
 .if ${ARCH} == "i386"
 .if ${PORT_OPTIONS:MX86_ASM}
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	nasm:devel/nasm
 CONFIGURE_ARGS+=	--with-assembler
 .else
 CONFIGURE_ARGS+=	--without-assembler

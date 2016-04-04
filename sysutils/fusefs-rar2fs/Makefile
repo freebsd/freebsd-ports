@@ -14,7 +14,7 @@ COMMENT=	Mount rar archives as filesystem
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar4
+LIB_DEPENDS=	libunrar.so:archivers/libunrar4
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \

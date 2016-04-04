@@ -9,8 +9,8 @@ CATEGORIES=	devel
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	GitHub Enterprise Backup Utilities
 
-RUN_DEPENDS=	git>0:${PORTSDIR}/devel/git \
-		rsync>0:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	git>0:devel/git \
+		rsync>0:net/rsync
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	github

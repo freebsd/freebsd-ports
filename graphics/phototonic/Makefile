@@ -11,7 +11,7 @@ COMMENT=	Image viewer and organizer
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	oferkv

@@ -14,7 +14,7 @@ COMMENT=	Lightweight, featureful, and fast GTK+ based e-mail client
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
 USES=		gettext iconv gmake pkgconfig tar:bzip2 desktop-file-utils \
 		libtool
@@ -46,31 +46,31 @@ ONIGURUMA_DESC=	Oniguruma support
 
 OPTIONS_DEFAULT=CA_BUNDLE CURL GTKSPELL GPGME SSL
 
-CA_BUNDLE_RUN_DEPENDS=		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CA_BUNDLE_RUN_DEPENDS=		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CA_BUNDLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libsylph_ssl.c
 
-COMPFACE_LIB_DEPENDS=		libcompface.so:${PORTSDIR}/mail/faces
+COMPFACE_LIB_DEPENDS=		libcompface.so:mail/faces
 COMPFACE_CONFIGURE_ENABLE=	compface
 
-CURL_RUN_DEPENDS=		curl:${PORTSDIR}/ftp/curl
+CURL_RUN_DEPENDS=		curl:ftp/curl
 
-GPGME_LIB_DEPENDS=		libgpgme.so:${PORTSDIR}/security/gpgme
-GPGME_RUN_DEPENDS=		gpg:${PORTSDIR}/security/gnupg
+GPGME_LIB_DEPENDS=		libgpgme.so:security/gpgme
+GPGME_RUN_DEPENDS=		gpg:security/gnupg
 GPGME_CONFIGURE_ENABLE=		gpgme
 
-GTKSPELL_LIB_DEPENDS=		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+GTKSPELL_LIB_DEPENDS=		libgtkspell.so:textproc/gtkspell
 GTKSPELL_CONFIGURE_ENABLE=	gtkspell
 
 HIDE_OSSIG_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_main.c
 
-JPILOT_LIB_DEPENDS=		libpisock.so:${PORTSDIR}/palm/pilot-link
-JPILOT_RUN_DEPENDS=		jpilot:${PORTSDIR}/palm/jpilot
+JPILOT_LIB_DEPENDS=		libpisock.so:palm/pilot-link
+JPILOT_RUN_DEPENDS=		jpilot:palm/jpilot
 JPILOT_CONFIGURE_ENABLE=	jpilot
 
 LDAP_CONFIGURE_ENABLE=		ldap
 LDAP_USE=			openldap=yes
 
-ONIGURUMA_BUILD_DEPENDS=	${LOCALBASE}/lib/libonig.a:${PORTSDIR}/devel/oniguruma5
+ONIGURUMA_BUILD_DEPENDS=	${LOCALBASE}/lib/libonig.a:devel/oniguruma5
 ONIGURUMA_CONFIGURE_ENABLE=	oniguruma
 
 SSL_CONFIGURE_ENABLE=		ssl

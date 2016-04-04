@@ -10,7 +10,7 @@ MASTER_SITES=	http://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A X viewer of nec2c data
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake pkgconfig tar:tgz
 USE_GNOME=	gtk20

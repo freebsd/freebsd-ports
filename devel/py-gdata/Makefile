@@ -28,13 +28,13 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MM2CRYPTO}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.20:${PORTSDIR}/security/py-m2crypto
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.20:security/py-m2crypto
 .endif
 .if ${PORT_OPTIONS:MPYCRYPTO}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto
 .endif
 .if ${PORT_OPTIONS:MGMPY}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gmpy>0:${PORTSDIR}/math/py-gmpy
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gmpy>0:math/py-gmpy
 .endif
 
 post-install:

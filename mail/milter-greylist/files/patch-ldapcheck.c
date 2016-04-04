@@ -1,6 +1,6 @@
---- ldapcheck.c.orig	2009-04-09 05:26:46.000000000 +0200
-+++ ldapcheck.c	2009-10-23 23:57:42.000000000 +0200
-@@ -58,6 +58,22 @@
+--- ldapcheck.c.orig	2013-01-19 16:01:15 UTC
++++ ldapcheck.c
+@@ -60,6 +60,22 @@ __RCSID("$Id: ldapcheck.c,v 1.18 2013/01
  #include "prop.h"
  #include "ldapcheck.h"
  

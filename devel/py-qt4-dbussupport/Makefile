@@ -28,9 +28,9 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dbus/mainloop/qt.so
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_MAJOR_VER} == 2
-PYDBUS=		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus
+PYDBUS=		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus
 .elif ${PYTHON_MAJOR_VER} == 3
-PYDBUS=		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py3-dbus
+PYDBUS=		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py3-dbus
 .endif
 
 .include <bsd.port.post.mk>

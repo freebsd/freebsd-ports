@@ -10,7 +10,7 @@ COMMENT=	The Fast Light Window Manager
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk-devel
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk-devel
 
 USES=		autoreconf gmake
 GNU_CONFIGURE=	yes

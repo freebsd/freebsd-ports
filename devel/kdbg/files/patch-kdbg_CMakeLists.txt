@@ -11,7 +11,7 @@ Date:   Thu Nov 26 11:58:11 2015 +0100
     This fixes the build with CMake 3.4.0: kdbg/CMakeLists.txt was previously
     relying on the module being included indirectly.
 
---- kdbg/CMakeLists.txt
+--- kdbg/CMakeLists.txt.orig	2015-02-22 19:54:42 UTC
 +++ kdbg/CMakeLists.txt
 @@ -4,6 +4,7 @@ add_subdirectory(typetables)
  

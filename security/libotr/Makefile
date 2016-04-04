@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libotr
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.1.1
 CATEGORIES=	security net-im net
 MASTER_SITES=	https://otr.cypherpunks.ca/ \
 		http://www.c-s.li/ports/
@@ -14,8 +13,8 @@ COMMENT=	Portable OTR Messaging Library and toolkit
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
+		libgcrypt.so:security/libgcrypt
 
 CONFLICTS=	libotr3-*
 

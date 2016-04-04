@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20Your%20two-wheeled
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2::Perl wrapper for MPlayer and MEncoder for ripping DVDs
 
-BUILD_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd \
-		mencoder:${PORTSDIR}/multimedia/mencoder \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	lsdvd:multimedia/lsdvd \
+		mencoder:multimedia/mencoder \
+		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

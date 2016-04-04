@@ -16,8 +16,8 @@ COMMENT=	Rule-based Dispatching and Generic Functions
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:${PORTSDIR}/devel/py-extremes \
-		${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:${PORTSDIR}/devel/py-protocols-devel
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:devel/py-extremes \
+		${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:devel/py-protocols-devel
 
 USES=		python
 USE_PYTHON=	distutils autoplist

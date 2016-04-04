@@ -8,7 +8,7 @@ BOOKS=		glib gobject gio
 do-install:
 .for d in ${BOOKS}
 	if [ -d ${REFERENCE_SRC}/${d}/html ]; then \
-        	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/${d}; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/${d}; \
 		cd ${REFERENCE_SRC}/${d}/html && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/doc/${d}; \
 	fi

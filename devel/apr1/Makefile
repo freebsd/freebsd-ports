@@ -13,7 +13,7 @@ COMMENT=	Apache Portability Library
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		iconv pathfix libtool cpe
 USE_LDCONFIG=	yes
@@ -41,11 +41,11 @@ SSL_DESC=		OpenSSL crypto driver
 
 # APR-Util Options
 BDB_USE=		BDB=5+
-FREETDS_LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+FREETDS_LIB_DEPENDS=	libsybdb.so:databases/freetds
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 LDAP_USE=		OPENLDAP=yes
 MYSQL_USE=		MYSQL=yes
-NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+NSS_LIB_DEPENDS=	libnss3.so:security/nss
 PGSQL_USES=		pgsql
 SQLITE_USES=		sqlite
 SSL_USE=		OPENSSL=yes

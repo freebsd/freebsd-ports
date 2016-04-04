@@ -11,7 +11,7 @@ DISTNAME=	MToolsFM-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical frontend to mtools
 
-RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
+RUN_DEPENDS=	mtools:emulators/mtools
 
 USES=		gettext pathfix
 USE_GNOME=	gtk12

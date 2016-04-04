@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	OpenGL based space-ship "shoot-em-up" game
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		dos2unix gmake
 USE_SDL=	sdl mixer

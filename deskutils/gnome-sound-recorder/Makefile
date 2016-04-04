@@ -10,7 +10,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME sound recorder application
 
-LIB_DEPENDS=	libgjs.so:${PORTSDIR}/lang/gjs
+LIB_DEPENDS=	libgjs.so:lang/gjs
 
 PORTSCOUT=	limitw:1,even
 

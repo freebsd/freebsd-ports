@@ -11,9 +11,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional collection of icons for the GNOME desktop
 
-BUILD_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		icon-naming-utils>=0.8.7:${PORTSDIR}/x11-themes/icon-naming-utils
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+BUILD_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
+		icon-naming-utils>=0.8.7:x11-themes/icon-naming-utils
+RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
 USES=		gmake pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack gtk-update-icon-cache

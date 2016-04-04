@@ -11,7 +11,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	linder.gabriel@gmail.com
 COMMENT=	Simple script to help configure ports knobs and options
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/portconf:${PORTSDIR}/ports-mgmt/portconf
+RUN_DEPENDS=	${LOCALBASE}/libexec/portconf:ports-mgmt/portconf
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message ${PORTNAME}.sh

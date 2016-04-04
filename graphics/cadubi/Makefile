@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cadubi
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics editors
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +10,7 @@ COMMENT=	ASCII drawing utility
 
 LICENSE=	ART10
 
-RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
+RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
 GH_ACCOUNT=	statico
 GH_PROJECT=	cadubi

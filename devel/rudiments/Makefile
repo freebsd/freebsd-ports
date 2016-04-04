@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.54
+PORTVERSION=	0.55.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -22,7 +22,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=		DOCS PCRE SSL
 OPTIONS_DEFAULT=	SSL
 
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_ENABLE=	pcre
 SSL_USE=		OPENSSL=yes
 SSL_CONFIGURE_ENABLE=	ssl
@@ -30,6 +30,6 @@ SSL_CONFIGURE_ON=	--with-ssl-includes=-I${OPENSSLINC} \
 			--with-ssl-libs=-L${OPENSSLLIB}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments-${PORTVERSION}.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments.so.2.0.0
 
 .include <bsd.port.mk>

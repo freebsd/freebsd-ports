@@ -1,6 +1,6 @@
---- raddb/Makefile.in.orig	Wed Jul 27 21:46:31 2005
-+++ raddb/Makefile.in	Wed Jul 27 21:52:38 2005
-@@ -556,10 +556,10 @@
+--- raddb/Makefile.in.orig	2008-12-17 11:09:50 UTC
++++ raddb/Makefile.in
+@@ -893,10 +893,10 @@ install-data-local:
  		echo '================================================================='; \
  	else \
  		for file in $(raddb_files_644); do \

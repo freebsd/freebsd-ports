@@ -3,6 +3,7 @@
 
 PORTNAME=	libnacl
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Python bindings for libsodium/tweetnacl based on ctypes
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
+LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		python
 USE_PYTHON=	autoplist distutils

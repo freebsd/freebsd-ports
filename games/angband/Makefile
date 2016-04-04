@@ -23,13 +23,13 @@ CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${NCURSESINC}
 LDFLAGS+=	-L${NCURSESLIB} -lncursesw
 
-DOCS_BUILD_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils
+DOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
 
 SDL_USE=		SDL=image,mixer,ttf,sdl
 SDL_CONFIGURE_ENABLE=	sdl
 
 X11_USE=		XORG=sm,x11
-X11_RUN_DEPENDS=	xorg-fonts-miscbitmaps>=0:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps
+X11_RUN_DEPENDS=	xorg-fonts-miscbitmaps>=0:x11-fonts/xorg-fonts-miscbitmaps
 X11_CONFIGURE_ENABLE=	x11
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

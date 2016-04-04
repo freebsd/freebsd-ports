@@ -1,6 +1,7 @@
 lib/pidgin/pidgin-otr.so
 %%NLS%%share/locale/ar/LC_MESSAGES/pidgin-otr.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pidgin-otr.mo
+%%NLS%%share/locale/da/LC_MESSAGES/pidgin-otr.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pidgin-otr.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pidgin-otr.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pidgin-otr.mo

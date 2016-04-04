@@ -22,6 +22,6 @@ GNU_CONFIGURE=	yes
 
 MIKMOD_CONFIGURE_ON=	--with-libmikmod-prefix=${LOCALBASE}
 MIKMOD_CONFIGURE_OFF=	--disable-sound
-MMIKMOD_LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+MMIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
 
 .include <bsd.port.mk>

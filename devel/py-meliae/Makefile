@@ -13,7 +13,7 @@ COMMENT=	Python Memory Usage Analyzer
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	cython>0:${PORTSDIR}/lang/cython
+BUILD_DEPENDS=	cython>0:lang/cython
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

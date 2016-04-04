@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-qt4
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor (QT4 UI)
 
-LIB_DEPENDS=	libADM6avutil.so.54:${PORTSDIR}/multimedia/avidemux
+LIB_DEPENDS=	libADM6avutil.so.54:multimedia/avidemux
 
 MASTERDIR=	${.CURDIR}/../avidemux
 PLIST=		${.CURDIR}/pkg-plist

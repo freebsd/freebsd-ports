@@ -15,10 +15,10 @@ COMMENT=	Object Relational mapping system
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Tangram>=0:${PORTSDIR}/devel/p5-Class-Tangram \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Set-Object>=0:${PORTSDIR}/devel/p5-Set-Object \
-		p5-Tangram>=0:${PORTSDIR}/databases/p5-Tangram
+BUILD_DEPENDS=	p5-Class-Tangram>=0:devel/p5-Class-Tangram \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-Set-Object>=0:devel/p5-Set-Object \
+		p5-Tangram>=0:databases/p5-Tangram
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-extra${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeXLive manager modules
 
-RUN_DEPENDS=	tex-kpathsea>=6.2.1_1:${PORTSDIR}/devel/tex-kpathsea
+RUN_DEPENDS=	tex-kpathsea>=6.2.1_1:devel/tex-kpathsea
 
 CONFLICTS=	texlive-infra-[0-9]* texlive-base-20150521_[12345]
 

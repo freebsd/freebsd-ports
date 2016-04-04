@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl crypto extension to OpenSSL
 
-BUILD_DEPENDS=	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl \
-		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-X500-DN>=0:${PORTSDIR}/net/p5-X500-DN
+BUILD_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
+		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+		p5-X500-DN>=0:net/p5-X500-DN
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

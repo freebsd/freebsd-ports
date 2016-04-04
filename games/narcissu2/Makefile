@@ -22,7 +22,7 @@ LICENSE_TEXT=	Permission has been granted to anyone to redistribute \
 		game data are not modified.
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-RUN_DEPENDS=	ponscr:${PORTSDIR}/devel/ponscripter-sekai
+RUN_DEPENDS=	ponscr:devel/ponscripter-sekai
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	columnize
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Format a simple (i.e. not nested) list into aligned columns
 
 LICENSE=	MIT
 
-MY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.0:${PORTSDIR}/devel/py-nose
+MY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.0:devel/py-nose
 
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
@@ -24,7 +24,7 @@ USE_PYTHON=	autoplist distutils
 .if ${PYTHON_MAJOR_VER} == "3"
 EXTRA_PATCHES=      ${FILESDIR}/extra-patch-____pkginfo____.py
 .else
-MY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.shutil_get_terminal_size=1.0:${PORTSDIR}/devel/py-backports.shutil_get_terminal_size
+MY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.shutil_get_terminal_size=1.0:devel/py-backports.shutil_get_terminal_size
 .endif
 
 .include <bsd.port.post.mk>

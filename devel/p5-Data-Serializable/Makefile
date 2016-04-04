@@ -12,10 +12,10 @@ COMMENT=	Moose role that adds serialization support to any class
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+BUILD_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
+		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
+		p5-Moose>=0:devel/p5-Moose \
+		p5-Test-Exception>=0:devel/p5-Test-Exception
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

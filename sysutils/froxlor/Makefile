@@ -69,37 +69,37 @@ NLS_DESC=	Enable NLS support (required for webFTP frontend)
 
 OPTIONS_DEFAULT=	APACHE MYSQLS POSTFIX DOVECOT PROFTPD WEBALIZER MYSQLS PCNTL NLS
 
-POSTFIX_RUN_DEPENDS=	postfix:${PORTSDIR}/mail/postfix
+POSTFIX_RUN_DEPENDS=	postfix:mail/postfix
 
-EXIM_RUN_DEPENDS=	exim:${PORTSDIR}/mail/exim
+EXIM_RUN_DEPENDS=	exim:mail/exim
 
-DKIM_RUN_DEPENDS=	opendkim:${PORTSDIR}/mail/opendkim
+DKIM_RUN_DEPENDS=	opendkim:mail/opendkim
 
-DOVECOT_RUN_DEPENDS=	dovecot>1:${PORTSDIR}/mail/dovecot
+DOVECOT_RUN_DEPENDS=	dovecot>1:mail/dovecot
 
-DOVECOT2_RUN_DEPENDS=	dovecot2>=2:${PORTSDIR}/mail/dovecot2
+DOVECOT2_RUN_DEPENDS=	dovecot2>=2:mail/dovecot2
 
-COURIER_RUN_DEPENDS=	courier:${PORTSDIR}/mail/courier
+COURIER_RUN_DEPENDS=	courier:mail/courier
 
-PROFTPD_RUN_DEPENDS=	${LOCALBASE}/libexec/proftpd/mod_sql_mysql.so:${PORTSDIR}/databases/proftpd-mod_sql_mysql
+PROFTPD_RUN_DEPENDS=	${LOCALBASE}/libexec/proftpd/mod_sql_mysql.so:databases/proftpd-mod_sql_mysql
 
-PUREFTPD_RUN_DEPENDS=	pure-ftpd:${PORTSDIR}/ftp/pure-ftpd
+PUREFTPD_RUN_DEPENDS=	pure-ftpd:ftp/pure-ftpd
 
-POWERDNS_RUN_DEPENDS=	powerdns:${PORTSDIR}/dns/powerdns
+POWERDNS_RUN_DEPENDS=	powerdns:dns/powerdns
 
-ISCDNS_RUN_DEPENDS=	bind>=9.9.0.0:${PORTSDIR}/dns/bind99
+ISCDNS_RUN_DEPENDS=	bind>=9.9.0.0:dns/bind99
 
-LIBNSS_RUN_DEPENDS=	${LOCALBASE}/lib/nss_mysql.so:${PORTSDIR}/net/libnss-mysql
+LIBNSS_RUN_DEPENDS=	${LOCALBASE}/lib/nss_mysql.so:net/libnss-mysql
 
-WEBALIZER_RUN_DEPENDS=	webalizer:${PORTSDIR}/www/webalizer
+WEBALIZER_RUN_DEPENDS=	webalizer:www/webalizer
 
-AWSTATS_RUN_DEPENDS=	awstats>=6.8:${PORTSDIR}/www/awstats
+AWSTATS_RUN_DEPENDS=	awstats>=6.8:www/awstats
 
-LOGROTATE_RUN_DEPENDS=	logrotate:${PORTSDIR}/sysutils/logrotate
+LOGROTATE_RUN_DEPENDS=	logrotate:sysutils/logrotate
 
-LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
+LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 
-NGINX_RUN_DEPENDS=	nginx:${PORTSDIR}/www/nginx
+NGINX_RUN_DEPENDS=	nginx:www/nginx
 
 APACHE_USE=	yes
 

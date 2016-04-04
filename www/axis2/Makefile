@@ -26,14 +26,14 @@ OPTIONS_DEFINE=	EXAMPLES
 
 .if ${PORT_OPTIONS:MTOMCAT6}
 APPHOME=	${LOCALBASE}/apache-tomcat-6.0
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
 .endif
 
 .if ${PORT_OPTIONS:MTOMCAT7}
 APPHOME=	${LOCALBASE}/apache-tomcat-7.0
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
 .endif
 
 USE_JAVA=	yes

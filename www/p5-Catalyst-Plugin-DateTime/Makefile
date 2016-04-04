@@ -14,8 +14,8 @@ COMMENT=	DateTime support for Catalyst
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:www/p5-Catalyst-Runtime \
+		p5-DateTime>=0:devel/p5-DateTime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5 tar:tgz

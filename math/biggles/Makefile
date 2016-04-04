@@ -15,7 +15,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
+LIB_DEPENDS=	libplot.so:graphics/plotutils
 
 USES=		gmake python:2
 MAKE_ARGS=	CC="${CC}" \

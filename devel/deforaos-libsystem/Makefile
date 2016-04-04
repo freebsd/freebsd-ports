@@ -25,9 +25,9 @@ MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
-DOCS_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
+DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+	gtkdoc-check:textproc/gtk-doc
 
 BROKEN_FreeBSD_9=	This port works only on FreeBSD 10 and newer
 

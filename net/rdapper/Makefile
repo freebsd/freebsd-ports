@@ -10,7 +10,7 @@ COMMENT=	Command-line Registration Data Access Protocol (RDAP) client
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-JSON-Path>=0:${PORTSDIR}/devel/p5-JSON-Path
+RUN_DEPENDS=	p5-JSON-Path>=0:devel/p5-JSON-Path
 
 USES=		perl5
 USE_GITHUB=	yes

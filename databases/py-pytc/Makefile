@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Tokyo Cabinet Python bindings
 
-LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 USES=		python
 USE_PYTHON=	distutils autoplist

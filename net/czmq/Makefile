@@ -3,6 +3,7 @@
 
 PORTNAME=	czmq
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 
@@ -12,7 +13,7 @@ COMMENT=	High-level C Binding for ZeroMQ
 LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq4
+LIB_DEPENDS=	libzmq.so:net/libzmq4
 
 USES=		autoreconf libtool pkgconfig
 USE_LDCONFIG=	yes

@@ -6,7 +6,7 @@ PORTREVISION=	0
 
 COMMENT=	SpamAssassin plugin for Claws Mail
 
-RUN_DEPENDS=	spamd:${PORTSDIR}/mail/spamassassin
+RUN_DEPENDS=	spamd:mail/spamassassin
 
 CLAWS_PLUGINS_BUILD=	spamassassin
 

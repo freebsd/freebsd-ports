@@ -1,0 +1,11 @@
+DSBMD is a media/filesystem type detecting daemon that allows clients to mount
+storage devices.
+
+DSBMD watches the mount table for changes, monitors devd events for new storage
+devices, polls CD/DVD drives and card readers for media change events, deter-
+mines media types, volume names, and filesystem types. Mountable devices,
+changes in the mount table as well as device add/remove events and altered
+states of mountable devices are presented to clients. Clients can request DSBMD
+to mount, unmount, and eject media, or set the CD/DVD reading speed.
+
+WWW: http://freeshell.de/~mk/projects/dsbmd.html

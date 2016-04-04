@@ -29,7 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	SMB DOCS
 OPTIONS_SUB=	yes
 
-SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 SMB_CONFIGURE_ENV_OFF=	ac_cv_lib_smbclient_smbc_new_context=no
 
 post-patch:

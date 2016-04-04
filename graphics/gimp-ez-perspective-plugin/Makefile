@@ -19,8 +19,8 @@ LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app \
-		${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:${PORTSDIR}/graphics/py-gimp
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app \
+		${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:graphics/py-gimp
 
 USES=		python:run zip
 NO_BUILD=	yes

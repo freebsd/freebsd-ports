@@ -15,7 +15,7 @@ LICENSE_NAME=	mmix license
 LICENSE_FILE=	${FILESDIR}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
+BUILD_DEPENDS=	ctangle:devel/cweb
 
 NO_WRKSUBDIR=	yes
 FILES=		mmix.1 mmix.mp silly.out silly.run

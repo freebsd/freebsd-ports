@@ -12,7 +12,7 @@ COMMENT=	Robust Covariance Matrix Estimators
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo
+RUN_DEPENDS=	R-cran-zoo>0:math/R-cran-zoo
 
 USES=	cran:auto-plist
 

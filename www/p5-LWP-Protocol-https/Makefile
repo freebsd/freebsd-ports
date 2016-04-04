@@ -15,9 +15,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 # We remove p5-libwww here to avoid cyclic dependency
-BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.54:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Mozilla-CA>=20110101:${PORTSDIR}/www/p5-Mozilla-CA \
-		p5-Net-HTTP>=6:${PORTSDIR}/net/p5-Net-HTTP
+BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.54:security/p5-IO-Socket-SSL \
+		p5-Mozilla-CA>=20110101:www/p5-Mozilla-CA \
+		p5-Net-HTTP>=6:net/p5-Net-HTTP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

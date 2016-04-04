@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-data-${PORTVERSION}${EXTRACT_S
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game destined to improve the knowledge of Andalusia
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
 USES=		gmake

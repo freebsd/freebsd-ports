@@ -14,21 +14,21 @@ COMMENT=	WxWidgets frontend to dvd recoding and authoring programs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		wxsvg>=1.2:${PORTSDIR}/graphics/wxsvg \
-		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		mplex:${PORTSDIR}/multimedia/mjpegtools \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		docbook-xml>=4.1.2:${PORTSDIR}/textproc/docbook-xml \
-		xmlto:${PORTSDIR}/textproc/xmlto
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		wxsvg>=1.2:${PORTSDIR}/graphics/wxsvg \
-		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		mplex:${PORTSDIR}/multimedia/mjpegtools \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
+BUILD_DEPENDS=	zip:archivers/zip \
+		wxsvg>=1.2:graphics/wxsvg \
+		dvdauthor:multimedia/dvdauthor \
+		mplex:multimedia/mjpegtools \
+		growisofs:sysutils/dvd+rw-tools \
+		docbook-xml>=4.1.2:textproc/docbook-xml \
+		xmlto:textproc/xmlto
+LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libavcodec.so:multimedia/ffmpeg
+RUN_DEPENDS=	zip:archivers/zip \
+		wxsvg>=1.2:graphics/wxsvg \
+		dvdauthor:multimedia/dvdauthor \
+		mplex:multimedia/mjpegtools \
+		mkisofs:sysutils/cdrtools \
+		growisofs:sysutils/dvd+rw-tools
 
 USES=		autoreconf compiler:c++11-lib gettext gmake pkgconfig tar:bzip2
 USE_CXXSTD=	gnu++11

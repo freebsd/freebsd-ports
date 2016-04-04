@@ -15,9 +15,9 @@ COMMENT=	Object-oriented Python bindings for the vorbis library
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:audio/py-ogg
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:audio/py-ogg
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

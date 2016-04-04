@@ -29,7 +29,7 @@ OPTIONS_SUB=	yes
 
 PCRE_DESC=	Use Perl Compatible Regular Expressions for wesside
 PCRE_MAKE_ARGS=	pcre=true
-PCRE_LIB_DEPENDS=   libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=   libpcre.so:devel/pcre
 PCRE_USES=	pkgconfig
 
 SQLITE_DESC=	Use SQLite for storing pre-computed key tables

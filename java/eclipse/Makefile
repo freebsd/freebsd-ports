@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eclipse
-PORTVERSION=	4.5.1
+PORTVERSION=	4.5.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://googledrive.com/host/0B2kYpXHnC5LpSk01bU1ud0N5bXc/
 DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
@@ -10,13 +10,13 @@ DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ljboiler@gmail.com
-COMMENT=	Eclipse Mars.1
+COMMENT=	Eclipse Mars.2
 
 LICENSE=	EPL
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:${PORTSDIR}/devel/maven33
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libwebkitgtk-1.0.so:www/webkit-gtk2
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFLICTS_INSTALL=	eclipse
@@ -44,14 +44,14 @@ OPTIONS_DEFAULT=	FULL_SDK
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-PATCH_DEPENDS+=	gpatch:${PORTSDIR}/devel/patch
+PATCH_DEPENDS+=	gpatch:devel/patch
 PATCH=		gpatch
 .endif
 PATCH_STRIP=	-p1
 
 .if ${PORT_OPTIONS:MSWT_GTK3_SUPPORT}
 USE_GNOME+=	gtk30
-LIB_DEPENDS+=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+LIB_DEPENDS+=	libwebkitgtk-3.0.so:www/webkit-gtk3
 MVN_SETTINGS+=	-Dmachine_gtk3=1
 SWTGTK3OPT=
 .else
@@ -63,12 +63,12 @@ GITCLONE=${DISTDIR}/eclipse/eclipse-gitclone/eclipse.platform.releng.aggregator
 
 MVN_LOCAL_REPO=	-Dmaven.repo.local=${WRKDIR}/eclipse-maven-repo-${PORTVERSION}/repository
 MVN_TEST_FLAG=	-Dmaven.test.skip=true -DskipTests=true
-#MVN_SETTINGS+=	--offline
-MVN_OPTS?=	MAVEN_OPTS='-Xms1024m -Xmx1792m'
+MVN_SETTINGS+=	--offline
+MVN_OPTS?=	MAVEN_OPTS='-Xmx1024m'
 ECLIPSE_WS=	gtk
 ECLIPSE_ARCH=	x86${ARCH:C/^i.86//:C/^amd/_/}
 E_SHORTARCH=	${ARCH:C/^i.86//:C/^amd//}
-ECLIPSE_BUILDID=I20150603-2000
+ECLIPSE_BUILDID=M20160212-1500
 SCRIPTS_ENV+=	ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		E_SHORTARCH=${E_SHORTARCH}
 PORTDESTDIR=	${PREFIX}/lib/eclipse

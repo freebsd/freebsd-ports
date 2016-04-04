@@ -13,9 +13,9 @@ COMMENT=	Another XRandR GUI
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0.6:${PORTSDIR}/textproc/py-docutils
-RUN_DEPENDS=	xrandr>0:${PORTSDIR}/x11/xrandr \
-		${PYTHON_PKGNAMEPREFIX}gtk2>0:${PORTSDIR}/x11-toolkits/py-gtk2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0.6:textproc/py-docutils
+RUN_DEPENDS=	xrandr>0:x11/xrandr \
+		${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2
 
 OPTIONS_DEFINE=	DOCS
 

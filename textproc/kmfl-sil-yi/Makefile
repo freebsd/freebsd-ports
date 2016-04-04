@@ -13,7 +13,7 @@ DIST_SUBDIR=	kmfl
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL Unicode keyboard for standardized Yi script
 
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
+RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
 WRKSRC=		${WRKDIR}
 USES=		dos2unix zip

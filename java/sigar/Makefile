@@ -13,8 +13,8 @@ COMMENT=	Java bindings for the Sigar system information API
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/NOTICE
 
-BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
-LIB_DEPENDS=	libsigar.so:${PORTSDIR}/devel/sigar
+BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
+LIB_DEPENDS=	libsigar.so:devel/sigar
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	amishHammer

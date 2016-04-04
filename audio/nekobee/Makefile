@@ -11,10 +11,10 @@ COMMENT=	DSSI plugin that emulates the sound of the TB-303 Bassline
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
-LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
-		liblo.so:${PORTSDIR}/audio/liblo \
-		libjack.so:${PORTSDIR}/audio/jack
+BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:audio/dssi
+LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
+		liblo.so:audio/liblo \
+		libjack.so:audio/jack
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gordonjcp

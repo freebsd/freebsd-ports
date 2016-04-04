@@ -65,7 +65,7 @@ PLIST_SUB+=	${mod}="@comment "
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
 USES+=		jpeg
 USE_GL=		glu
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 .endif
 
 .if ${PORT_OPTIONS:MSDL} || ${PORT_OPTIONS:MSDLGL}
@@ -73,7 +73,7 @@ USE_SDL=	sdl
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 MAKE_ENV+=	BUILD_QUAKE2=YES
 PLIST_SUB+=	CLIENT=""
 Q2BIN+=		${PORTNAME}

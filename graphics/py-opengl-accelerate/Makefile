@@ -13,7 +13,7 @@ COMMENT=	OpenGL acceleration code for PyOpenGL
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
+BUILD_DEPENDS=	cython:lang/cython
 
 USE_PYTHON=	autoplist distutils
 USES=		python

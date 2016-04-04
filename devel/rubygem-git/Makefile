@@ -11,7 +11,7 @@ COMMENT=	Ruby wrapper library around git(1)
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	git>=1.6:${PORTSDIR}/devel/git
+RUN_DEPENDS=	git>=1.6:devel/git
 
 NO_ARCH=	yes
 

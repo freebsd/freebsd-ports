@@ -3,7 +3,7 @@
 
 PORTNAME=	font2svg
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://BSDforge.com/projects/source/print/font2svg/
 
@@ -12,7 +12,7 @@ COMMENT=	All fonts to svg-font converter
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		ghostscript:run
 NO_BUILD=	yes

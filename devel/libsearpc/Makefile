@@ -10,8 +10,8 @@ COMMENT=	Simple RPC framework based on GObject System in C
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
-		libgobject-2.0.so:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	libjansson.so:devel/jansson \
+		libgobject-2.0.so:devel/glib20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen

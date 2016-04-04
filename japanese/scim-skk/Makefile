@@ -11,7 +11,7 @@ MASTER_SITES=	SFJP/scim-imengine/18121
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module like SKK
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+BUILD_DEPENDS=	scim:textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake iconv libtool pkgconfig

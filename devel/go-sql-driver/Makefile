@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES=	GH \
-    		http://mirrors.rit.edu/zi/
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	lattera@gmail.com
 COMMENT=	Lightweight and fast MySQL driver for go

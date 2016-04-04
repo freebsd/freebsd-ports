@@ -15,8 +15,8 @@ COMMENT=	Assorted utilities for manipulating MP3 files via MP3::Tag
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-MP3-Tag>=1.13:${PORTSDIR}/audio/p5-MP3-Tag \
-		p5-Text-NeatTemplate>=0.10.01:${PORTSDIR}/textproc/p5-Text-NeatTemplate
+BUILD_DEPENDS=	p5-MP3-Tag>=1.13:audio/p5-MP3-Tag \
+		p5-Text-NeatTemplate>=0.10.01:textproc/p5-Text-NeatTemplate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

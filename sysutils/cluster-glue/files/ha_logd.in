@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ha_logd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# ha_logd_enable="YES"
+#
+
+. /etc/rc.subr
+
+: ${ha_logd_enable:=NO}
+
+name=ha_logd
+rcvar=ha_logd_enable
+command="%%PREFIX%%/lib/heartbeat/ha_logd"
+command_args="-d"
+pidfile="/var/run/ha_logd.pid"
+
+load_rc_config ${name}
+run_rc_command "$1"

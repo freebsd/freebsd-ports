@@ -13,13 +13,13 @@ COMMENT=	Script to convert DVD image, device, or VIDEO_TS to mkv
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-		normalize:${PORTSDIR}/audio/normalize \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		mencoder:${PORTSDIR}/multimedia/mencoder \
-		mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix \
-		dvdxchap:${PORTSDIR}/multimedia/ogmtools \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	lame:audio/lame \
+		normalize:audio/normalize \
+		oggenc:audio/vorbis-tools \
+		mencoder:multimedia/mencoder \
+		mkvmerge:multimedia/mkvtoolnix \
+		dvdxchap:multimedia/ogmtools \
+		bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

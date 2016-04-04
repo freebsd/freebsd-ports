@@ -11,7 +11,7 @@ COMMENT=	Ruby binding for VTE
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-gtk2>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-gtk2
+RUN_DEPENDS=	rubygem-gtk2>=${PORTVERSION}:x11-toolkits/rubygem-gtk2
 
 USE_GNOME=	vte
 USE_RUBY=	yes

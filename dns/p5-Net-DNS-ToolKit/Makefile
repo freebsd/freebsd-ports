@@ -14,8 +14,8 @@ COMMENT=	Tools for working with DNS packets
 LICENSE=	ART10 GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-DNS-Codes>=0.09:${PORTSDIR}/dns/p5-Net-DNS-Codes \
-		p5-NetAddr-IP>=1.30:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+BUILD_DEPENDS=	p5-Net-DNS-Codes>=0.09:dns/p5-Net-DNS-Codes \
+		p5-NetAddr-IP>=1.30:net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes

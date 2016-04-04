@@ -14,9 +14,9 @@ COMMENT=	Meta-logical framework for deductive systems
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	mlton:${PORTSDIR}/lang/mlton
-BUILD_DEPENDS=	mlton:${PORTSDIR}/lang/mlton \
-		texi2html:${PORTSDIR}/textproc/texi2html
+RUN_DEPENDS=	mlton:lang/mlton
+BUILD_DEPENDS=	mlton:lang/mlton \
+		texi2html:textproc/texi2html
 
 USES=	gmake
 ALL_TARGET=	mlton
@@ -28,7 +28,7 @@ PORTDOCS=	dvi html info pdf ps
 
 .if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	tex:build dvipsk:build
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:print/texinfo
 .endif
 
 post-patch:

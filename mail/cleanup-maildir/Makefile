@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/ehaupt
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Script for cleaning up mails in Maildir folders based on arival date
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:${PORTSDIR}/graphics/py-graph-core
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:graphics/py-graph-core
 
 USES=		python shebangfix
 NO_BUILD=	yes

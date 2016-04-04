@@ -14,7 +14,7 @@ COMMENT=	Dictionary API to a binary tree
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Tree-Binary>=0:${PORTSDIR}/devel/p5-Tree-Binary
+RUN_DEPENDS=	p5-Tree-Binary>=0:devel/p5-Tree-Binary
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -13,8 +13,8 @@ COMMENT=	Fully automated, active web application security reconnaissance tool
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libidn.so:dns/libidn \
+		libpcre.so:devel/pcre
 
 USES=		gmake tar:tgz
 USE_OPENSSL=	yes

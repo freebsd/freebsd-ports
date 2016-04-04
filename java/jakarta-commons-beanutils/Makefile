@@ -13,10 +13,10 @@ COMMENT=	JavaBeans utility library
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
-RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
+BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \
+		${JAVALIBDIR}/commons-collections.jar:java/jakarta-commons-collections
+RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \
+		${JAVALIBDIR}/commons-collections.jar:java/jakarta-commons-collections
 
 USES=		dos2unix
 USE_JAVA=	yes

@@ -10,10 +10,10 @@ COMMENT=	Kill unicorn workers by memory and request counts
 
 LICENSE=	GPLv2 GPLv3 RUBY
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-get_process_mem>=0:${PORTSDIR}/devel/rubygem-get_process_mem \
-		rubygem-unicorn>=4:${PORTSDIR}/www/rubygem-unicorn
+RUN_DEPENDS=	rubygem-get_process_mem>=0:devel/rubygem-get_process_mem \
+		rubygem-unicorn>=4:www/rubygem-unicorn
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for yet another messagepack streaming deserializer
 
-BUILD_DEPENDS=	p5-Data-MessagePack>0:${PORTSDIR}/devel/p5-Data-MessagePack
+BUILD_DEPENDS=	p5-Data-MessagePack>0:devel/p5-Data-MessagePack
 
 USES=		perl5
 USE_PERL5=	configure

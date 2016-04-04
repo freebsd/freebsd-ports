@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcludp
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.0.11
 CATEGORIES=	net tcl
 MASTER_SITES=	SF
 
@@ -15,9 +14,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--exec-prefix=${PREFIX}
 USE_LDCONFIG=	${PREFIX}/lib/udp${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	lib/udp1.0.8/libudp1.0.8.so \
-		lib/udp1.0.8/pkgIndex.tcl \
-		man/mann/udp.n.gz
+PLIST_FILES=	lib/udp${PORTVERSION}/libudp${PORTVERSION}.so \
+		lib/udp${PORTVERSION}/pkgIndex.tcl \
+		%%PORTDOCS%%man/mann/udp.n.gz
 
 .include <bsd.port.mk>

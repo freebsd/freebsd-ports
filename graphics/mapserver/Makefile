@@ -12,11 +12,11 @@ COMMENT=		System for developing web-based GIS applications
 
 LICENSE=		MIT
 
-LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd \
-			libproj.so:${PORTSDIR}/graphics/proj \
-			libpng.so:${PORTSDIR}/graphics/png \
-			libgif.so:${PORTSDIR}/graphics/giflib \
-			libharfbuzz.so:${PORTSDIR}/print/harfbuzz
+LIB_DEPENDS=		libgd.so:graphics/gd \
+			libproj.so:graphics/proj \
+			libpng.so:graphics/png \
+			libgif.so:graphics/giflib \
+			libharfbuzz.so:print/harfbuzz
 
 USES=			cpe cmake:outsource jpeg
 CPE_VENDOR=		umn
@@ -43,7 +43,7 @@ WCS_DESC=		WCS Server support
 
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=			python:2
-BUILD_DEPENDS+=		swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS+=		swig2.0:devel/swig20
 CMAKE_ARGS+=		-DWITH_PYTHON=yes
 PLIST_SUB+=		PYTHON=""
 MAP_EGG=		MapScript-${PORTVERSION}-${PYTHON_VERSION:S/thon//}
@@ -53,24 +53,24 @@ PLIST_SUB+=		PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=		libcairo.so:${PORTSDIR}/graphics/cairo \
-			libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=		libcairo.so:graphics/cairo \
+			libexpat.so:textproc/expat2
 CMAKE_ARGS+=		-DWITH_CAIRO=1
 .else
 CMAKE_ARGS+=		-DWITH_CAIRO=0
 .endif
 
 .if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=		libfribidi.so:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=		libfribidi.so:converters/fribidi
 CMAKE_ARGS+=		-DWITH_FRIBIDI=1
 .else
 CMAKE_ARGS+=		-DWITH_FRIBIDI=0
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO_SVG}
-LIB_DEPENDS+=		libcairo.so:${PORTSDIR}/graphics/cairo \
-			libsvg-cairo.so:${PORTSDIR}/graphics/libsvg-cairo \
-			libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=		libcairo.so:graphics/cairo \
+			libsvg-cairo.so:graphics/libsvg-cairo \
+			libexpat.so:textproc/expat2
 CMAKE_ARGS+=		-DWITH_SVGCAIRO=1 -DWITH_CAIRO=1
 USES+=			pkgconfig
 .else
@@ -78,7 +78,7 @@ CMAKE_ARGS+=		-DWITH_SVGCAIRO=0
 .endif
 
 .if ${PORT_OPTIONS:MKML}
-LIB_DEPENDS+=		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=		libxml2.so:textproc/libxml2
 CMAKE_ARGS+=		-DWITH_KML=1
 .else
 CMAKE_ARGS+=		-DWITH_KML=0
@@ -104,14 +104,14 @@ CMAKE_ARGS+=		-DWITH_WCS=0
 
 .if ${PORT_OPTIONS:MGDAL}
 USES+=			iconv
-LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=		libgdal.so:graphics/gdal
 CMAKE_ARGS+=		-DWITH_GDAL=1
 .else
 CMAKE_ARGS+=		-DWITH_GDAL=0
 .endif
 
 .if ${PORT_OPTIONS:MGEOS}
-LIB_DEPENDS+=		libgeos.so:${PORTSDIR}/graphics/geos
+LIB_DEPENDS+=		libgeos.so:graphics/geos
 CMAKE_ARGS+=		-DWITH_GEOS=1
 .else
 CMAKE_ARGS+=		-DWITH_GEOS=0
@@ -125,8 +125,8 @@ CMAKE_ARGS+=		-DWITH_POSTGIS=0
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php56
-RUN_BUILDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php56
+BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:lang/php56
+RUN_BUILDS+=		${LOCALBASE}/bin/php-config:lang/php56
 PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e "s,/usr/local/,,"
 CMAKE_ARGS+=		-DWITH_PHP=1
 PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}
@@ -138,7 +138,7 @@ PLIST_SUB+=		PHP="@comment "
 
 .if ${PORT_OPTIONS:MPERL}
 USES+=		perl5
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig2.0:devel/swig20
 CMAKE_ARGS+=	-DWITH_PERL=1
 PLIST_SUB+=	PERL=""
 .else
@@ -147,14 +147,14 @@ PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		libcurl.so:ftp/curl
 CMAKE_ARGS+=		-DWITH_CURL=1
 .else
 CMAKE_ARGS+=		-DWITH_CURL=0
 .endif
 
 .if ${PORT_OPTIONS:MFASTCGI}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/cgi-fcgi:${PORTSDIR}/www/fcgi
+BUILD_DEPENDS+=		${LOCALBASE}/bin/cgi-fcgi:www/fcgi
 CMAKE_ARGS+=		-DWITH_FCGI=1
 .else
 CMAKE_ARGS+=		-DWITH_FCGI=0
@@ -170,14 +170,14 @@ PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
 			sortshp msencrypt tile4ms mapserv
 
 .if ${PORT_OPTIONS:MCLIENT_WMS}
-LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
-LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=		libcurl.so:ftp/curl
+LIB_DEPENDS+=		libgdal.so:graphics/gdal
 CMAKE_ARGS+=		-DWITH_CURL=1 -DWITH_GDAL=1 -DWITH_CLIENT_WMS=1
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT_WFS}
-LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
-LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=		libcurl.so:ftp/curl
+LIB_DEPENDS+=		libgdal.so:graphics/gdal
 CMAKE_ARGS+=		-DWITH_CURL=1 -DWITH_GDAL=1 -DWITH_CLIENT_WFS=1
 .endif
 

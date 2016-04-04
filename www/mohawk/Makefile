@@ -12,7 +12,7 @@ COMMENT=	Simple and lightweight HTTP daemon
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 PLIST_FILES+=	bin/mhtpasswd \
 		man/man5/mohawk.conf.5.gz \

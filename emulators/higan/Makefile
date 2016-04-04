@@ -68,7 +68,7 @@ XSHM_VARS=	VIDEO_DRIVER+=video.xshm
 XV_USE=		XORG=xv
 XV_VARS=	VIDEO_DRIVER+=video.xv
 
-AO_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+AO_LIB_DEPENDS=	libao.so:audio/libao
 AO_VARS=	AUDIO_DRIVER+=audio.ao
 
 OPENAL_USES=	openal:al
@@ -76,7 +76,7 @@ OPENAL_VARS=	AUDIO_DRIVER+=audio.openal
 
 OSS_VARS=	AUDIO_DRIVER+=audio.oss
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_VARS=	AUDIO_DRIVER+=audio.pulseaudio
 
 INPUT_SDL_USE=	SDL=sdl

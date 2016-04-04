@@ -48,14 +48,14 @@ USE_PHP+=	pgsql
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-BUILD_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
-BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 .endif
 
 .if ! ${PORT_OPTIONS:MLIBWRAP}

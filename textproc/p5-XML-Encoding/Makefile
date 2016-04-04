@@ -14,7 +14,7 @@ COMMENT=	Perl module for parsing XML encoding maps
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

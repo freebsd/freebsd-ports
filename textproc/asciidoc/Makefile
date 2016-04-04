@@ -3,7 +3,7 @@
 
 PORTNAME=	asciidoc
 PORTVERSION=	8.6.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -12,9 +12,14 @@ COMMENT=	Text document format for writing short documents and man pages
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
+RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
+
+NO_ARCH=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake python:2 shebangfix
+USE_GNOME=	libxml2:run libxslt:run
+USES=		gmake gnome python:2 shebangfix
 
 CONF_FILES=	asciidoc.conf docbook45.conf filters/code/code-filter.conf \
 		filters/graphviz/graphviz-filter.conf \

@@ -20,6 +20,8 @@ USE_PHP=	mysql
 USES=		dos2unix
 WANT_PHP_WEB=	yes
 
+IGNORE_WITH_PHP=	70
+
 PHPIP?=		www/phpip
 PLIST_SUB+=	PHPIP=${PHPIP} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 

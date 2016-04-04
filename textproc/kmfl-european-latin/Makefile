@@ -13,8 +13,8 @@ DIST_SUBDIR=	kmfl
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Paneuropean Latin KMFL keyboard covering 120 languages
 
-BUILD_DEPENDS=	base64:${PORTSDIR}/converters/base64
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
+BUILD_DEPENDS=	base64:converters/base64
+RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
 WRKSRC=		${WRKDIR}/EuroLatin\ Source\ Files
 USES=		dos2unix zip

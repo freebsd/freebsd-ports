@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Make your object constructors blow up on unknown attributes
 
-BUILD_DEPENDS=	p5-Mouse>=0.62:${PORTSDIR}/devel/p5-Mouse
+BUILD_DEPENDS=	p5-Mouse>=0.62:devel/p5-Mouse
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

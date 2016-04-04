@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tulip
-PORTVERSION=	4.7.0
+PORTVERSION=	4.8.1
 DISTVERSIONSUFFIX=	_src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -12,18 +12,17 @@ COMMENT=	System dedicated to the visualization of huge graphs
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libquazip.so:${PORTSDIR}/archivers/quazip \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libOGDF.so:${PORTSDIR}/math/ogdf \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libquazip.so:archivers/quazip \
+		libpng.so:graphics/png \
+		libOGDF.so:math/ogdf \
+		libfreetype.so:print/freetype2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-
 
 USES=		cmake:outsource compiler:c++11-lib dos2unix execinfo jpeg python \
 		shebangfix
 SHEBANG_FILES=	tulip-config.in
 DOS2UNIX_FILES=	software/tulip/src/main.cpp
-USE_CXXSTD=	c++11
 USE_GL=		glew glut
 USE_GNOME=	libxml2
 CMAKE_ARGS=	-DBUILD_DOC:BOOL=OFF \
@@ -32,7 +31,9 @@ CMAKE_ARGS=	-DBUILD_DOC:BOOL=OFF \
 USE_LDCONFIG=	${PREFIX}/lib/tulip
 
 CXXFLAGS+=	-fPIC -I${LOCALBASE}/include -DNDEBUG -DOGDF_DLL
-LDFLAGS+=	-L${LOCALBASE}/lib
+# Unhide std::to_string() to fix build with GCC (see ports/193528 for details)
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
+LDFLAGS+=	-L${LOCALBASE}/lib -lCOIN
 
 PLIST_SUB=	TULIP_VERSION="${PORTVERSION}" \
 		TULIP_VERS="${PORTVERSION:R}"

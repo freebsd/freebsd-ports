@@ -1,14 +1,12 @@
 lib/erlang/lib/certifi-%%VERSION%%/ebin/certifi.app
 lib/erlang/lib/certifi-%%VERSION%%/ebin/certifi.beam
 lib/erlang/lib/certifi-%%VERSION%%/ebin/certifi_cacerts.beam
-lib/erlang/lib/certifi-%%VERSION%%/ebin/certifi_weak.beam
+lib/erlang/lib/certifi-%%VERSION%%/ebin/certifi_weakcerts.beam
 lib/erlang/lib/certifi-%%VERSION%%/priv/cacerts.pem
 lib/erlang/lib/certifi-%%VERSION%%/priv/old_root.pem
 lib/erlang/lib/certifi-%%VERSION%%/priv/weak.pem
 lib/erlang/lib/certifi-%%VERSION%%/src/certifi.app.src
 lib/erlang/lib/certifi-%%VERSION%%/src/certifi.erl
 lib/erlang/lib/certifi-%%VERSION%%/src/certifi_cacerts.erl
-lib/erlang/lib/certifi-%%VERSION%%/src/certifi_cacerts.erl.src
-lib/erlang/lib/certifi-%%VERSION%%/src/certifi_weak.erl
-lib/erlang/lib/certifi-%%VERSION%%/src/certifi_weak.erl.src
+lib/erlang/lib/certifi-%%VERSION%%/src/certifi_weakcerts.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md

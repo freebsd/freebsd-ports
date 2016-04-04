@@ -13,7 +13,7 @@ COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
+LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge
 
 USES=		libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

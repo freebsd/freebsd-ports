@@ -12,7 +12,7 @@ COMMENT=	Tiny asymmetric-coroutine library
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:devel/nasm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharow

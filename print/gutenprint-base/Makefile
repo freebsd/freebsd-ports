@@ -4,7 +4,7 @@
 
 PORTNAME?=	gutenprint
 PORTVERSION=	5.2.10
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
@@ -23,7 +23,7 @@ OPTIONS_SUB=	yes
 .endif
 
 GTK2_CONFIGURE_ENABLE=	libgutenprintui2
-GTK2_LIB_DEPENDS=	libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
+GTK2_LIB_DEPENDS=	libgtk-x11-2.0.so:x11-toolkits/gtk20
 
 .include <bsd.port.options.mk>
 
@@ -39,13 +39,13 @@ INSTALL_TARGET=	install-strip
 .include <bsd.port.pre.mk>
 
 .if ${SLAVE_PORT}=="yes"
-LIB_DEPENDS+=	libgutenprint.so:${PORTSDIR}/print/gutenprint-base
+LIB_DEPENDS+=	libgutenprint.so:print/gutenprint-base
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 GUTENPRINTUI2_LIBS=`${PKG_CONFIG} --libs gutenprintui2`
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="gimp"
-LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS+=	libgimp-2.0.so:graphics/gimp-app
 CONFIGURE_ARGS+=--with-gimp2=yes # Override CONFIGURE_ARGS
 BUILD_WRKSRC=	${WRKSRC}/src/gimp2
 INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
@@ -56,9 +56,8 @@ INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
 PLIST_FILES+=	libexec/cups/backend/gutenprint52+usb \
 		share/cups/usb/net.sf.gimp-print.usb-quirks
 .endif
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client \
-		libcupsimage.so:${PORTSDIR}/print/cups-image
-RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
+LIB_DEPENDS+=	libcupsimage.so:print/cups
+RUN_DEPENDS+=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters
 CONFIGURE_ARGS+=	--with-cups=${PREFIX} \
 			--enable-cups-ppds \
 			--enable-cups-level3-ppds
@@ -69,7 +68,7 @@ CONFIGURE_ARGS+=	--without-cups
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="ijs"
-LIB_DEPENDS+=	libijs.so:${PORTSDIR}/print/libijs
+LIB_DEPENDS+=	libijs.so:print/libijs
 CONFIGURE_ARGS+=--with-ijs=yes
 BUILD_WRKSRC=	${WRKSRC}/src/ghost
 INSTALL_WRKSRC=	${WRKSRC}/src/ghost
@@ -78,9 +77,9 @@ CONFIGURE_ARGS+=--without-ghostscript
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="foomatic"
-BUILD_DEPENDS+=	foomatic-combo-xml:${PORTSDIR}/print/foomatic-db-engine
-RUN_DEPENDS+=	foomatic-combo-xml:${PORTSDIR}/print/foomatic-db-engine \
-		${LOCALBASE}/share/cups/model/foomatic-db-ppds:${PORTSDIR}/print/foomatic-db
+BUILD_DEPENDS+=	foomatic-combo-xml:print/foomatic-db-engine
+RUN_DEPENDS+=	foomatic-combo-xml:print/foomatic-db-engine \
+		${LOCALBASE}/share/cups/model/foomatic-db-ppds:print/foomatic-db
 CONFIGURE_ARGS+=--with-foomatic=yes --with-foomatic3=yes
 BUILD_WRKSRC=	${WRKSRC}/src/foomatic
 INSTALL_WRKSRC=	${WRKSRC}/src/foomatic

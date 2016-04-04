@@ -1,7 +1,6 @@
-diff -urN libapm.h.orig libapm.h
---- libapm.h.orig	Tue May 12 11:05:49 1998
-+++ libapm.h	Thu Nov 19 13:02:03 1998
-@@ -32,34 +32,44 @@
+--- libapm.h.orig	1998-05-12 02:05:49 UTC
++++ libapm.h
+@@ -32,34 +32,44 @@ static inline int port_inw( int port )
  #define outb(port, value) port_out(value, port)
  #define outw(port, value) port_outw(value, port)
  

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mail::Audit plugin for attachment handling
 
-RUN_DEPENDS=	p5-Mail-Audit>=2:${PORTSDIR}/mail/p5-Mail-Audit \
-		p5-Mail-Tools>=1:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS=	p5-Mail-Audit>=2:mail/p5-Mail-Audit \
+		p5-Mail-Tools>=1:mail/p5-Mail-Tools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

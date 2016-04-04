@@ -13,9 +13,9 @@ COMMENT=	Fighting game similar to Streets of Rage and TMNT
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	liballeg.so:devel/allegro \
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 USES=		dos2unix scons tar:bzip2
 USE_SDL=	yes

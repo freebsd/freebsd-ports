@@ -12,7 +12,7 @@ COMMENT=	Timer for your personal activities
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_XORG=	x11 xscrnsaver
 USE_GNOME=	gtk20

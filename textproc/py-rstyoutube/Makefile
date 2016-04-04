@@ -12,7 +12,7 @@ COMMENT=	Embed YouTube videos in reStructuredText documents
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.11:${PORTSDIR}/textproc/py-docutils
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.11:textproc/py-docutils
 
 USES=	python:2
 USE_PYTHON=	distutils autoplist

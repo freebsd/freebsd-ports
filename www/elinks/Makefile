@@ -40,7 +40,7 @@ FASTMEM_DESC=		Fast memory allocation functions
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-GUILE_LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+GUILE_LIB_DEPENDS=	libguile.so:lang/guile
 GUILE_CONFIGURE_WITH=	guile
 
 LUA_USES=		lua:51
@@ -53,7 +53,7 @@ PERL_CONFIGURE_WITH=	perl
 
 FASTMEM_CONFIGURE_ON=	--enable-fastmem
 
-IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_WITH=	idn
 
 NOROOT_CONFIGURE_ON=	--enable-no-root
@@ -62,12 +62,12 @@ HIGHLIGHT_CONFIGURE_ON=	--enable-html-highlight
 
 EXMODE_CONFIGURE_ON=	--enable-exmode
 
-SMB_RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
-SMB_BUILD_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+SMB_RUN_DEPENDS=	smbclient:${SAMBA_PORT}
+SMB_BUILD_DEPENDS=	smbclient:${SAMBA_PORT}
 SMB_CONFIGURE_ENABLE=	smb
 
-FSP_RUN_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:${PORTSDIR}/net/fsplib
-FSP_BUILD_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:${PORTSDIR}/net/fsplib
+FSP_RUN_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:net/fsplib
+FSP_BUILD_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:net/fsplib
 FSP_CONFIGURE_ENABLE=	fsp
 
 FTP_CONFIGURE_ENABLE=	ftp
@@ -84,7 +84,7 @@ FINGER_CONFIGURE_ENABLE=	finger
 
 LOCAL_CGI_CONFIGURE_ENABLE=	cgi
 
-XBELMARKS_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+XBELMARKS_LIB_DEPENDS=	libexpat.so:textproc/expat2
 XBELMARKS_CONFIGURE_ON=	--enable-xbel --with-expat
 XBELNARKS_CONFIGURE_OFF=--disable-xbel
 
@@ -92,9 +92,9 @@ XBELNARKS_CONFIGURE_OFF=--disable-xbel
 
 88COLORS_CONFIGURE_ON=	--enable-88-colors
 
-SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey17
-SPIDERMONKEY_RUN_DEPENDS=	js:${PORTSDIR}/lang/spidermonkey17
-SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
+SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:lang/spidermonkey17
+SPIDERMONKEY_RUN_DEPENDS=	js:lang/spidermonkey17
+SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:devel/nspr
 SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr
 SPIDERMONKEY_LDFLAGS=		-lnspr4 -pthread -lpthread -lm
 SPIDERMONKEY_CONFIGURE_ON=	--enable-sm-scripting --with-spidermonkey

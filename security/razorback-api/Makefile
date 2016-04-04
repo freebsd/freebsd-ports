@@ -14,10 +14,10 @@ COMMENT=	Framework for an intelligence driven security solution - API
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libjson-c.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS=	libconfig.so:devel/libconfig \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libcurl.so:ftp/curl \
+		libjson-c.so:devel/json-c
 
 OPTIONS_DEFINE=	DEBUG ASSERT CNC_DEBUG STOMP_DEBUG
 

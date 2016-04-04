@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfm
-PORTVERSION=	1.2.3
-PORTREVISION=	3
+PORTVERSION=	1.2.4
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/LibFM/
 
@@ -13,10 +12,10 @@ COMMENT?=	Core library of PCManFM file manager
 LICENSE=	LGPL21
 
 .if ! defined(EXTRA_ONLY)
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
-		libexif.so:${PORTSDIR}/graphics/libexif
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		valac:lang/vala
+LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
+		libexif.so:graphics/libexif
 .endif
 
 SLAVEDIRS=	${CATEGORIES}/${PORTNAME}-extra
@@ -39,7 +38,7 @@ USE_GNOME+=	intltool intlhack
 CONFIGURE_ARGS+=--with-extra-only
 .endif
 
-MICRO_VERSION=	0.3
+MICRO_VERSION=	0.4
 ABI_VERSION=	4
 PLIST_SUB+=	MICRO_VERSION=${MICRO_VERSION} \
 		ABI_VERSION=${ABI_VERSION}
@@ -82,6 +81,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/actions/fm-actions.h \
 		${STAGEDIR}${PREFIX}/include/${PORTNAME}
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif

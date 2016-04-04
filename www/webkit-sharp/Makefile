@@ -8,7 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for Webkit
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-1.0.pc:${PORTSDIR}/www/webkit-gtk2
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-1.0.pc:www/webkit-gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes

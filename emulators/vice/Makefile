@@ -14,13 +14,13 @@ COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libmp3lame.so:${PORTSDIR}/audio/lame \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+		mkfontdir:x11-fonts/mkfontdir \
+		mkfontscale:x11-fonts/mkfontscale
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libgif.so:graphics/giflib \
+		libmp3lame.so:audio/lame \
+		libavcodec.so:multimedia/ffmpeg
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
@@ -78,14 +78,14 @@ PULSE_DESC=	build with pulseaudio support
 
 GNOMEUI_CONFIGURE_ENABLE=	gnomeui
 XAW3D_CONFIGURE_WITH=	xaw3d
-XAW3D_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_ON=	--with-sdlsound
 SDL_CPPFLAGS=		-I${LOCALBASE}/include/SDL
 ASOUND_CONFIGURE_OFF=	--without-alsa
-ASOUND_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ASOUND_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSE_CONFIGURE_OFF=	--without-pulse
-PULSE_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSE_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 .include <bsd.port.options.mk>
 

@@ -12,6 +12,7 @@ COMMENT=	Deployment concerns for dotenv
 LICENSE=	MIT
 
 DEPRECATED=	Deprecated by upstream in latest version (0.3.0)
+EXPIRATION_DATE=	2016-04-14
 
 NO_ARCH=	yes
 

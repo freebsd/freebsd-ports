@@ -12,7 +12,7 @@ COMMENT=	Python bindings for yara
 USE_GITHUB=	yes
 GH_ACCOUNT=	plusvic
 
-LIB_DEPENDS=	libyara.so:${PORTSDIR}/security/yara
+LIB_DEPENDS=	libyara.so:security/yara
 
 USES=		python
 USE_PYTHON=	distutils autoplist

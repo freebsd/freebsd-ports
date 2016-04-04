@@ -12,7 +12,7 @@ COMMENT=	Bindings for the scrypt key derivation function library
 
 LICENSE=	BSD2CLAUSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2
 
 USES=		python
 USE_PYTHON=	autoplist distutils

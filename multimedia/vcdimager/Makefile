@@ -12,9 +12,9 @@ COMMENT=	GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libcdio.so:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libxml2.so:textproc/libxml2 \
+		libcdio.so:sysutils/libcdio
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

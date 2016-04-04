@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Omni-Bot is a bot for Enemy Territory
 
-RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
+RUN_DEPENDS=	et:games/linux-enemyterritory
 
 VERSTR=	${PORTVERSION:C/([0-9])\.([0-9]+)/\1\2/}
 PKGNAMESUFFIX=	-${VERSTR}

@@ -15,9 +15,9 @@ COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell \
-				libcourier-unicode.so:${PORTSDIR}/devel/courier-unicode
-BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
+LIB_DEPENDS=	libaspell.so:textproc/aspell \
+				libcourier-unicode.so:devel/courier-unicode
+BUILD_DEPENDS=	gpgv:security/gnupg1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		fam gettext gmake iconv ncurses perl5 shebangfix tar:bzip2

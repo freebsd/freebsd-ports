@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	syncer@gmail.com
 COMMENT=	Usenet binary downloader for KDE4
 
-RUN_DEPENDS=	${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
-		${LOCALBASE}/bin/par2:${PORTSDIR}/archivers/par2cmdline \
-		${LOCALBASE}/bin/7z:${PORTSDIR}/archivers/p7zip
+RUN_DEPENDS=	${LOCALBASE}/bin/unrar:archivers/unrar \
+		${LOCALBASE}/bin/par2:archivers/par2cmdline \
+		${LOCALBASE}/bin/7z:archivers/p7zip
 
 USE_KDE4=	kdelibs kdeprefix automoc4 workspace
 USE_QT4=	qmake_build moc_build rcc_build uic_build

@@ -15,10 +15,10 @@ COMMENT=	Nagios Plugin to monitor your mail environment
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
-		p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Email-Address>0:${PORTSDIR}/mail/p5-Email-Address \
-		p5-Mail-IMAPClient>=0:${PORTSDIR}/mail/p5-Mail-IMAPClient
+RUN_DEPENDS=	p5-Net-SMTP-TLS>=0:mail/p5-Net-SMTP-TLS \
+		p5-Net-DNS>0:dns/p5-Net-DNS \
+		p5-Email-Address>0:mail/p5-Email-Address \
+		p5-Mail-IMAPClient>=0:mail/p5-Mail-IMAPClient
 
 USES=		perl5 shebangfix
 SCRIPTS=	check_email_delivery check_email_delivery_epn \

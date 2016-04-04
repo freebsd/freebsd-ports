@@ -1,3 +1,4 @@
+@preunexec rm -rf %D/%%WWWDIR%%/optimize/* 2>&1 >/dev/null || true
 @sample etc/kibana.yml.sample
 %%WWWDIR%%/LICENSE.txt
 %%WWWDIR%%/README.txt
@@ -10932,33 +10933,6 @@
 %%WWWDIR%%/node_modules/whatwg-fetch/README.md
 %%WWWDIR%%/node_modules/whatwg-fetch/fetch.js
 %%WWWDIR%%/node_modules/whatwg-fetch/package.json
-%%WWWDIR%%/optimize/bundles/commons.bundle.js
-%%WWWDIR%%/optimize/bundles/commons.style.css
-%%WWWDIR%%/optimize/bundles/kibana.bundle.js
-%%WWWDIR%%/optimize/bundles/kibana.entry.js
-%%WWWDIR%%/optimize/bundles/kibana.style.css
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.svg
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.ttf
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff2
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.eot
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.svg
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.ttf
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.woff
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.woff2
-%%WWWDIR%%/optimize/bundles/src/ui/public/images/elk.ico
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/cv.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/de.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/go.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/ne.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/ni.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/stop.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/us.png
-%%WWWDIR%%/optimize/bundles/statusPage.bundle.js
-%%WWWDIR%%/optimize/bundles/statusPage.entry.js
-%%WWWDIR%%/optimize/bundles/statusPage.style.css
-%%WWWDIR%%/optimize/bundles/webpack.records
 %%WWWDIR%%/package.json
 %%WWWDIR%%/src/cli/Command.js
 %%WWWDIR%%/src/cli/Log.js
@@ -11779,4 +11753,5 @@
 %%WWWDIR%%/webpackShims/ui-bootstrap.js
 @dir %%WWWDIR%%/installedPlugins
 @dir %%WWWDIR%%/node_modules/rimraf/node_modules
+@dir(www,www) %%WWWDIR%%/optimize
 @dir %%WWWDIR%%/src/ui/public/factories

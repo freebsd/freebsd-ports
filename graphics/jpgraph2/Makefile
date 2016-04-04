@@ -1,8 +1,9 @@
-# Created by: Alex Dupre <ale@FreeBSD.org:
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	jpgraph
 PORTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://hem.bredband.net/jpgraph2/
 PKGNAMESUFFIX=	2
@@ -10,7 +11,13 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
+LICENSE=	jpgraph
+LICENSE_NAME=	JpGraph license
+LICENSE_FILE=	${WRKSRC}/README
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 USES=		tar:bzip2
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PHP=	gd

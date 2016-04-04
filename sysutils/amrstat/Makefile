@@ -22,7 +22,7 @@ MEGARC_DESC=	Install LSI megarc binary port
 # We may want this for periodic script and to actually be able
 # to fix something in case amrstat reports degraded RAID.
 .if ${PORT_OPTIONS:MMEGARC}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/megarc:${PORTSDIR}/sysutils/megarc
+RUN_DEPENDS+=	${LOCALBASE}/sbin/megarc:sysutils/megarc
 .endif
 
 ALL_TARGET=	${PORTNAME}

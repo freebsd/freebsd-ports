@@ -15,7 +15,7 @@ COMMENT=	Enhanced Printer Spooler
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 USES=		gmake
 USE_OPENSSL=	yes

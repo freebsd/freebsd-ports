@@ -11,7 +11,7 @@ COMMENT=	C++ port of the Lucene library
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LGPL.license
 
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	luceneplusplus

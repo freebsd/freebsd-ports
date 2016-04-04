@@ -13,8 +13,8 @@ COMMENT=	Parse and format MySQL dates and times
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Format-Builder>=0.6:${PORTSDIR}/devel/p5-DateTime-Format-Builder
+BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Format-Builder>=0.6:devel/p5-DateTime-Format-Builder
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

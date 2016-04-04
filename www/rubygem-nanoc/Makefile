@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nanoc
-PORTVERSION=	3.6.11
+PORTVERSION=	4.1.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Simple but flexible static site generator
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-cri>=2.3:${PORTSDIR}/devel/rubygem-cri
+RUN_DEPENDS=	rubygem-cri>=2.3:devel/rubygem-cri
 
 NO_ARCH=	yes
 

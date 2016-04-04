@@ -1,3 +1,4 @@
+@preunexec rm -rf %D/%%WWWDIR%%/optimize/* 2>&1 >/dev/null || true
 @sample etc/kibana.yml.sample
 %%WWWDIR%%/LICENSE.txt
 %%WWWDIR%%/README.txt
@@ -3225,6 +3226,7 @@
 %%WWWDIR%%/node_modules/babel/node_modules/chokidar/node_modules/async-each/component.json
 %%WWWDIR%%/node_modules/babel/node_modules/chokidar/node_modules/async-each/index.js
 %%WWWDIR%%/node_modules/babel/node_modules/chokidar/node_modules/async-each/package.json
+%%WWWDIR%%/node_modules/babel/node_modules/chokidar/node_modules/async-each/test.js
 %%WWWDIR%%/node_modules/babel/node_modules/chokidar/node_modules/glob-parent/.npmignore
 %%WWWDIR%%/node_modules/babel/node_modules/chokidar/node_modules/glob-parent/.travis.yml
 %%WWWDIR%%/node_modules/babel/node_modules/chokidar/node_modules/glob-parent/LICENSE
@@ -3783,6 +3785,7 @@
 %%WWWDIR%%/node_modules/bunyan/.npmignore
 %%WWWDIR%%/node_modules/bunyan/AUTHORS
 %%WWWDIR%%/node_modules/bunyan/CHANGES.md
+%%WWWDIR%%/node_modules/bunyan/CONTRIBUTING.md
 %%WWWDIR%%/node_modules/bunyan/LICENSE.txt
 %%WWWDIR%%/node_modules/bunyan/Makefile
 %%WWWDIR%%/node_modules/bunyan/README.md
@@ -4320,6 +4323,14 @@
 %%WWWDIR%%/node_modules/chalk/license
 %%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/index.js
 %%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/license
+%%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/CHANGELOG.md
+%%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/LICENSE
+%%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/README.md
+%%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/conversions.js
+%%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/css-keywords.js
+%%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/index.js
+%%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/package.json
+%%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/route.js
 %%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/package.json
 %%WWWDIR%%/node_modules/chalk/node_modules/ansi-styles/readme.md
 %%WWWDIR%%/node_modules/chalk/node_modules/escape-string-regexp/index.js
@@ -4556,10 +4567,6 @@
 %%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/css-list/package.json
 %%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/decamelize/index.js
 %%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/decamelize/license
-%%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/decamelize/node_modules/escape-string-regexp/index.js
-%%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/decamelize/node_modules/escape-string-regexp/license
-%%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/decamelize/node_modules/escape-string-regexp/package.json
-%%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/decamelize/node_modules/escape-string-regexp/readme.md
 %%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/decamelize/package.json
 %%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/decamelize/readme.md
 %%WWWDIR%%/node_modules/css-loader/node_modules/cssnano/node_modules/defined/.travis.yml
@@ -7105,10 +7112,6 @@
 %%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/cliui/package.json
 %%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/index.js
 %%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/license
-%%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/index.js
-%%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/license
-%%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/package.json
-%%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/readme.md
 %%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/package.json
 %%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/readme.md
 %%WWWDIR%%/node_modules/jade/node_modules/uglify-js/node_modules/yargs/node_modules/window-size/LICENSE-MIT
@@ -9528,10 +9531,6 @@
 %%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/cliui/package.json
 %%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/index.js
 %%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/license
-%%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/index.js
-%%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/license
-%%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/package.json
-%%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/readme.md
 %%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/package.json
 %%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/decamelize/readme.md
 %%WWWDIR%%/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/os-locale/index.js
@@ -10819,10 +10818,6 @@
 %%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/camelcase/readme.md
 %%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/index.js
 %%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/license
-%%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/index.js
-%%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/license
-%%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/package.json
-%%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/node_modules/escape-string-regexp/readme.md
 %%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/package.json
 %%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/decamelize/readme.md
 %%WWWDIR%%/node_modules/webpack/node_modules/uglify-js/node_modules/yargs/node_modules/window-size/LICENSE-MIT
@@ -10877,6 +10872,7 @@
 %%WWWDIR%%/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/async-each/component.json
 %%WWWDIR%%/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/async-each/index.js
 %%WWWDIR%%/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/async-each/package.json
+%%WWWDIR%%/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/async-each/test.js
 %%WWWDIR%%/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/glob-parent/.npmignore
 %%WWWDIR%%/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/glob-parent/.travis.yml
 %%WWWDIR%%/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/glob-parent/LICENSE
@@ -11066,34 +11062,6 @@
 %%WWWDIR%%/node_modules/wreck/node_modules/hoek/lib/index.js
 %%WWWDIR%%/node_modules/wreck/node_modules/hoek/package.json
 %%WWWDIR%%/node_modules/wreck/package.json
-%%WWWDIR%%/optimize/bundles/commons.bundle.js
-%%WWWDIR%%/optimize/bundles/commons.style.css
-%%WWWDIR%%/optimize/bundles/kibana.bundle.js
-%%WWWDIR%%/optimize/bundles/kibana.entry.js
-%%WWWDIR%%/optimize/bundles/kibana.style.css
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.svg
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.ttf
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff
-%%WWWDIR%%/optimize/bundles/node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff2
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.eot
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.svg
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.ttf
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.woff
-%%WWWDIR%%/optimize/bundles/node_modules/font-awesome/fonts/fontawesome-webfont.woff2
-%%WWWDIR%%/optimize/bundles/src/ui/public/images/elk.ico
-%%WWWDIR%%/optimize/bundles/src/ui/public/images/kibana.svg
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/cv.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/de.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/go.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/ne.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/ni.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/stop.png
-%%WWWDIR%%/optimize/bundles/src/ui/public/stringify/icons/us.png
-%%WWWDIR%%/optimize/bundles/statusPage.bundle.js
-%%WWWDIR%%/optimize/bundles/statusPage.entry.js
-%%WWWDIR%%/optimize/bundles/statusPage.style.css
-%%WWWDIR%%/optimize/bundles/webpack.records
 %%WWWDIR%%/package.json
 %%WWWDIR%%/src/cli/Command.js
 %%WWWDIR%%/src/cli/Log.js
@@ -11105,6 +11073,7 @@
 %%WWWDIR%%/src/cli/plugin/downloaders/http.js
 %%WWWDIR%%/src/cli/plugin/extractors/tar_gz.js
 %%WWWDIR%%/src/cli/plugin/extractors/zip.js
+%%WWWDIR%%/src/cli/plugin/file_type.js
 %%WWWDIR%%/src/cli/plugin/plugin.js
 %%WWWDIR%%/src/cli/plugin/plugin_cleaner.js
 %%WWWDIR%%/src/cli/plugin/plugin_downloader.js
@@ -11947,4 +11916,5 @@
 %%WWWDIR%%/webpackShims/ui-bootstrap.js
 @dir %%WWWDIR%%/installedPlugins
 @dir %%WWWDIR%%/node_modules/rimraf/node_modules
+@dir(www,www) %%WWWDIR%%/optimize
 @dir %%WWWDIR%%/src/ui/public/factories

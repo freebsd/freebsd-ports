@@ -1,0 +1,9 @@
+This is a thin subclass of Mail::Box::IMAP4 to provide IMAP
+over SSL (aka IMAPS).
+It hides the complexity of setting up Mail::Box::IMAP4
+with IO::Socket::SSL, Mail::IMAPClient and Mail::Transport::IMAP4.
+
+In all other respects, it resembles Mail::Box::IMAP4.
+See that module for documentation.
+
+WWW: http://search.cpan.org/dist/Mail-Box-IMAP4-SSL/

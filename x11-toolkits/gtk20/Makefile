@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.24.29
-PORTREVISION?=	0
+PORTREVISION?=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	2
@@ -21,9 +21,9 @@ PORTSCOUT=	limitw:0,even
 
 .if !defined(REFERENCE_PORT)
 
-RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info \
-		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		python:${PORTSDIR}/lang/python
+RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
+		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
+		python:lang/python
 
 USES+=		gettext gmake libtool pathfix perl5 pkgconfig
 GNU_CONFIGURE=	yes
@@ -42,7 +42,7 @@ OPTIONS_DEFINE=	CUPS DEBUG
 OPTIONS_DEFAULT=CUPS
 OPTIONS_SUB=	yes
 
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CONFIGURE_ON=	--enable-cups=auto
 CUPS_CONFIGURE_OFF=	--disable-cups
 DEBUG_CONFIGURE_ON=	--enable-debug=yes

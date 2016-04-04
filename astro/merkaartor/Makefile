@@ -11,10 +11,10 @@ COMMENT=	Openstreetmap mapping program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
-		libproj.so:${PORTSDIR}/graphics/proj \
-		libquazip5.so:${PORTSDIR}/archivers/quazip-qt5 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libgdal.so:graphics/gdal \
+		libproj.so:graphics/proj \
+		libquazip5.so:archivers/quazip-qt5 \
+		libsqlite3.so:databases/sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
@@ -32,11 +32,11 @@ OPTIONS_DEFAULT=	GEOIMAGE
 
 GEOIMAGE_DESC=	Enable geotagged images (needs exiv2)
 GEOIMAGE_QMAKE_ON=	GEOIMAGE=1
-GEOIMAGE_LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+GEOIMAGE_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
 ZBAR_DESC=	Read barcodes from walking papers (BROKEN)
 ZBAR_QMAKE_ON=	ZBAR=1
-ZBAR_LIB_DEPENDS=	libzbar.so:${PORTSDIR}/graphics/zbar
+ZBAR_LIB_DEPENDS=	libzbar.so:graphics/zbar
 # graphics/zbar needs to be built with Qt support (and needs a Qt5 version)
 ZBAR_BROKEN=	Does not build with option ZBAR selected
 

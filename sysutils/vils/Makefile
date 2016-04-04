@@ -13,7 +13,7 @@ COMMENT=	Use your favorite editor to rename files
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
+RUN_DEPENDS=	zsh:shells/zsh
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

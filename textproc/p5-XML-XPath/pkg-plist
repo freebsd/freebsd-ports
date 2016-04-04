@@ -21,6 +21,7 @@ bin/xpath
 %%SITE_PERL%%/XML/XPath/Step.pm
 %%SITE_PERL%%/XML/XPath/Variable.pm
 %%SITE_PERL%%/XML/XPath/XMLParser.pm
+%%PERL5_MAN1%%/xpath.1.gz
 %%PERL5_MAN3%%/XML::XPath.3.gz
 %%PERL5_MAN3%%/XML::XPath::Boolean.3.gz
 %%PERL5_MAN3%%/XML::XPath::Builder.3.gz

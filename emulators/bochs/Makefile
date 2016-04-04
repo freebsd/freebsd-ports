@@ -7,7 +7,7 @@ PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
 LICENSE=	LGPL21
@@ -119,7 +119,7 @@ SHOW_IPS_DESC=		Enable logging of measured IPS
 SHOW_IPS_CONFIGURE_ENABLE=	show-ips
 SMP_DESC=		Enable SMP simulation support (CPU level 6)
 SMP_CONFIGURE_ENABLE=	smp
-SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_WITH=	svga
 SVM_DESC=		Enable SVM (AMD: secure virtual machine) emulation
 SVM_CONFIGURE_ENABLE=	svm
@@ -135,7 +135,7 @@ USB_XHCI_DESC=		Enable experimental USB xHCI support
 USB_XHCI_CONFIGURE_ENABLE=	usb-xhci
 VMX_DESC=		Enable Virtialization extensions
 VNCSERVER_DESC= 		Use LibVNCServer (works with VNC viewer)
-VNCSERVER_LIB_DEPENDS=	libvncserver.so:${PORTSDIR}/net/libvncserver
+VNCSERVER_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 VNCSERVER_CONFIGURE_WITH=	vncsrv
 VOODOO_DESC=		Enable 3dfx Voodoo Graphics emulation
 VOODOO_CONFIGURE_ENABLE=	voodoo

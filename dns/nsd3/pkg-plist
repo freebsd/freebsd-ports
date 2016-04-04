@@ -16,5 +16,5 @@ sbin/nsdc
 sbin/zonec
 @dir(%%NSDUSER%%,%%NSDGROUP%%,0755) %%NSDRUNDIR%%
 @dir(%%NSDUSER%%,%%NSDGROUP%%,0755) %%NSDDBDIR%%
-@exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDRUNDIR%%
-@exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDDBDIR%%
+@postexec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDRUNDIR%%
+@postexec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDDBDIR%%

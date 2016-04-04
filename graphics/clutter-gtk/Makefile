@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ Integration library for Clutter
 
-LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter
 
 PORTSCOUT=	ignore:1
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MCE
-PORTVERSION=	1.608
+PORTVERSION=	1.703
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARIOROY
@@ -13,6 +13,8 @@ COMMENT=	Many-Core Engine for Perl providing parallel processing capabilities
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 

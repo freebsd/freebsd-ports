@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome klotski
 
-BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
-		itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	vala:lang/vala \
+		itstool:textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 

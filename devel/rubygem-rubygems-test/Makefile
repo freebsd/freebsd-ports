@@ -12,7 +12,7 @@ COMMENT=	Run automated tests
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake
+RUN_DEPENDS=	rubygem-rake>=0.8.7:devel/rubygem-rake
 
 NO_ARCH=	yes
 

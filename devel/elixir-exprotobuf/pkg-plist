@@ -9,6 +9,7 @@ lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Field.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.OneOfField.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Parser.ParserError.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Parser.beam
+lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Serializable.Any.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Serializable.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Utils.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.beam

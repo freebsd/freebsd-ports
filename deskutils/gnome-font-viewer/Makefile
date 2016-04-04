@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 font viewer utility
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 PORTSCOUT=	limitw:1,even

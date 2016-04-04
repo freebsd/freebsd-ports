@@ -12,7 +12,7 @@ COMMENT=	Objects and routines pertaining to date and time
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:${PORTSDIR}/devel/py-setuptools_scm
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm
 
 USES=		python
 USE_PYTHON=	distutils autoplist

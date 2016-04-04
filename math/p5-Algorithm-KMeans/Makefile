@@ -13,9 +13,9 @@ COMMENT=	Clustering multi-dimensional data with a pure-Perl implementation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Graphics-GnuplotIF>=1.4:${PORTSDIR}/graphics/p5-Graphics-GnuplotIF \
-		p5-Math-GSL>=0.26:${PORTSDIR}/math/p5-Math-GSL \
-		p5-Math-Random>=0.71:${PORTSDIR}/math/p5-Math-Random
+BUILD_DEPENDS=	p5-Graphics-GnuplotIF>=1.4:graphics/p5-Graphics-GnuplotIF \
+		p5-Math-GSL>=0.26:math/p5-Math-GSL \
+		p5-Math-Random>=0.71:math/p5-Math-Random
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -14,7 +14,7 @@ COMMENT=	Convert fractions into Unicode chars
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Fraction>=0.40:${PORTSDIR}/textproc/p5-HTML-Fraction
+BUILD_DEPENDS=	p5-HTML-Fraction>=0.40:textproc/p5-HTML-Fraction
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

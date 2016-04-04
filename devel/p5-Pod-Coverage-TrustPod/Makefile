@@ -15,9 +15,9 @@ COMMENT=	Declare trusted symbol names in POD
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Pod-Coverage \
-		p5-Pod-Eventual>=0:${PORTSDIR}/textproc/p5-Pod-Eventual
-TEST_DEPENDS=	p5-Test-Pod>=1.41:${PORTSDIR}/devel/p5-Test-Pod
+BUILD_DEPENDS=	p5-Pod-Coverage>=0:devel/p5-Pod-Coverage \
+		p5-Pod-Eventual>=0:textproc/p5-Pod-Eventual
+TEST_DEPENDS=	p5-Test-Pod>=1.41:devel/p5-Test-Pod
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

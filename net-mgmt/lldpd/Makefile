@@ -12,7 +12,7 @@ COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USES=		libtool
 USE_LDCONFIG=	yes
@@ -49,10 +49,10 @@ SNMP_CONFIGURE_WITH=		snmp
 XML_CONFIGURE_WITH=		xml
 PROPRIETARY_CONFIGURE_ENABLE=	cdp edp fdp sonmp
 
-JSON_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
+JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
 JSON_USES=		pkgconfig
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
-XML_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/README.bsd ${STAGEDIR}${DOCSDIR}

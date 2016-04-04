@@ -11,6 +11,7 @@ COMMENT=	Web based GroupWare system
 USES=		tar:bzip2
 USE_PHP=	yes
 WANT_PHP_MOD=	yes
+IGNORE_WITH_PHP=	70
 
 NO_BUILD=	yes
 NO_ARCH=	yes

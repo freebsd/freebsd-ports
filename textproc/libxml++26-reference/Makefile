@@ -4,8 +4,8 @@
 
 PORTREVISION=	0
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libxml++-2.6.pc:${PORTSDIR}/textproc/libxml++26 \
-		glibmm-reference>=0:${PORTSDIR}/devel/glibmm-reference
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libxml++-2.6.pc:textproc/libxml++26 \
+		glibmm-reference>=0:devel/glibmm-reference
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes

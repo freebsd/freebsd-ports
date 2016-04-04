@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	IMAGEMAGICK
 IMAGEMAGICK_DESC=	Install ImageMagick image proccesing tool
 OPTIONS_DEFAULT=	IMAGEMAGICK
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 
 .include "${MASTERDIR}/Makefile"

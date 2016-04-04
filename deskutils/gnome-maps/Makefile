@@ -10,15 +10,15 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Map application for GNOME 3
 
-BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
-		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain \
-		libfolks.so:${PORTSDIR}/net-im/folks \
-		libgjs.so:${PORTSDIR}/lang/gjs
-RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
+BUILD_DEPENDS=	geoclue>=0:net/geoclue \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libgeocode-glib.so:net/geocode-glib \
+		libgee-0.8.so:devel/libgee \
+		libchamplain-0.12.so:graphics/libchamplain \
+		libfolks.so:net-im/folks \
+		libgjs.so:lang/gjs
+RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limitw:1,even
 

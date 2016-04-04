@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Event system independent IRC protocol module
 
-BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-Object-Event>=0.7:${PORTSDIR}/devel/p5-Object-Event
+BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+		p5-Object-Event>=0.7:devel/p5-Object-Event
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

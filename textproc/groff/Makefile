@@ -3,7 +3,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.22.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -12,7 +12,7 @@ COMMENT=	Software typesetting package
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils
+BUILD_DEPENDS=	${LOCALBASE}/bin/psselect:print/psutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe ghostscript gmake perl5 shebangfix
@@ -62,8 +62,8 @@ PLIST_SUB+=	HTMLDOCS="@comment "
 .endif
 .else
 USE_XORG=	x11 xaw xmu
-BUILD_DEPENDS+=	${LOCALBASE}/bin/pnmtops:${PORTSDIR}/graphics/netpbm
-RUN_DEPENDS+=	${LOCALBASE}/bin/pnmtops:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS+=	${LOCALBASE}/bin/pnmtops:graphics/netpbm
+RUN_DEPENDS+=	${LOCALBASE}/bin/pnmtops:graphics/netpbm
 CONFIGURE_ARGS+=--with-x --with-appresdir=${PREFIX}/lib/X11/app-defaults
 PLIST_SUB+=	X11=""
 PLIST_SUB+=	HTMLDOCS=""

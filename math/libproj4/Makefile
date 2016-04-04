@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	C language procedures related to cartographic processes
 
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		gmake tar:bzip2
 CFLAGS+=	-I${LOCALBASE}/include
@@ -30,7 +30,7 @@ EXTRACT_ONLY=	${PORTNAME}.${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000034
-LIB_DEPENDS+=	libmissing.so:${PORTSDIR}/math/libmissing
+LIB_DEPENDS+=	libmissing.so:math/libmissing
 LDFLAGS+=	-lmissing
 .endif
 

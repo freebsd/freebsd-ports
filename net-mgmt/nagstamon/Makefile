@@ -13,7 +13,7 @@ COMMENT=	Nagios status monitor for your desktop
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
+RUN_DEPENDS=	sox:audio/sox
 
 USES=		cpe python:2
 CPE_VENDOR=	henri_wahl

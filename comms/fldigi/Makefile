@@ -11,12 +11,12 @@ COMMENT=	Digital decoder for psk, cw, psk31, olivia
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc\
-		docbook-xsl>=1.0:${PORTSDIR}/textproc/docbook-xsl\
-		xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate\
-		libboost_system.so:${PORTSDIR}/devel/boost-libs\
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc\
+		docbook-xsl>=1.0:textproc/docbook-xsl\
+		xsltproc:textproc/libxslt
+LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate\
+		libboost_system.so:devel/boost-libs\
+		libfltk.so:x11-toolkits/fltk
 
 USE_CXXSTD=	gnu++0x
 GNU_CONFIGURE=	yes
@@ -42,13 +42,13 @@ NATIVE_OPT_CONFIGURE_OFF=	--enable-optimizations=none
 FLARQ_CONFIGURE_ENABLE=		flarq
 OSS_CONFIGURE_ENABLE=		oss
 SNDFILE_CONFIGURE_WITH=		sndfile
-SNDFILE_LIB_DEPENDS=		libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=		libsndfile.so:audio/libsndfile
 PORTAUDIO_CONFIGURE_WITH=	portaudio
-PORTAUDIO_LIB_DEPENDS=		libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=		libportaudio.so:audio/portaudio
 PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 HAMLIB_CONFIGURE_WITH=		hamlib
-HAMLIB_LIB_DEPENDS=		libhamlib.so:${PORTSDIR}/comms/hamlib
+HAMLIB_LIB_DEPENDS=		libhamlib.so:comms/hamlib
 NLS_CONFIGURE_ENABLE=		nls
 NLS_USES=			gettext
 

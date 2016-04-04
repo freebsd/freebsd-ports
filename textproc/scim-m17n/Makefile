@@ -11,10 +11,10 @@ MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	SCIM IMEngine module which uses m17n library as the backend
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
-		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
-RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+BUILD_DEPENDS=	scim:textproc/scim \
+		gsed:textproc/gsed
+LIB_DEPENDS=	libm17n.so:devel/m17n-lib
+RUN_DEPENDS=	scim:textproc/scim
 
 USES=		gmake pkgconfig libtool:keepla
 GNU_CONFIGURE=	yes

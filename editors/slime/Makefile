@@ -14,7 +14,7 @@ LICENSE_NAME=	${LICENSE:S/_/ /}
 LICENSE_TEXT=	The license: ${_LICENSE} (${_LICENSE_NAME}) is standard, please read from the web.
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	texinfo>=5.2:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS=	texinfo>=5.2:print/texinfo
 
 USES=		gmake
 USE_EMACS=	yes

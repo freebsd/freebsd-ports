@@ -15,11 +15,11 @@ COMMENT=	Framework for an intelligence driven security - Yara Detection
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
-		libjson-c.so:${PORTSDIR}/devel/json-c \
-		libpcre.so:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget
-RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget
+LIB_DEPENDS=	librazorback_api.so:security/razorback-api \
+		libjson-c.so:devel/json-c \
+		libpcre.so:devel/pcre
+BUILD_DEPENDS=	razorback-masterNugget>=0.5.0:security/razorback-masterNugget
+RUN_DEPENDS=	razorback-masterNugget>=0.5.0:security/razorback-masterNugget
 
 RB_LIBDIR?=	${PREFIX}/lib/razorback
 GNU_CONFIGURE=	yes

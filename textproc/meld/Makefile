@@ -11,8 +11,8 @@ COMMENT=	GNOME visual diff and merge tool
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	itstool:textproc/itstool
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 USES=		desktop-file-utils gettext python:2 shared-mime-info \
 		shebangfix tar:xz

@@ -13,9 +13,9 @@ DISTNAME=	Business-MaxMind-${PORTVERSION}
 MAINTAINER=	vivek@khera.org
 COMMENT=	Interface to MaxMind minFraud service
 
-RUN_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww \
-		p5-LWP-Protocol-https>0.0:${PORTSDIR}/www/p5-LWP-Protocol-https
-BUILD_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS+=	p5-libwww>0.0:www/p5-libwww \
+		p5-LWP-Protocol-https>0.0:www/p5-LWP-Protocol-https
+BUILD_DEPENDS+=	p5-libwww>0.0:www/p5-libwww
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	example*.pl

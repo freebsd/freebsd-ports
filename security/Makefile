@@ -14,6 +14,7 @@
     SUBDIR += afterglow
     SUBDIR += aide
     SUBDIR += aimsniff
+    SUBDIR += akmos
     SUBDIR += amap
     SUBDIR += amavis-stats
     SUBDIR += amavisd-milter
@@ -61,6 +62,7 @@
     SUBDIR += chntpw
     SUBDIR += chroot_safe
     SUBDIR += chrootuid
+    SUBDIR += cisco-torch
     SUBDIR += ckpass
     SUBDIR += cksfv
     SUBDIR += cl-md5
@@ -175,6 +177,7 @@
     SUBDIR += gpgdir
     SUBDIR += gpgme
     SUBDIR += gputty
+    SUBDIR += greenbone-security-assistant
     SUBDIR += gringotts
     SUBDIR += gsasl
     SUBDIR += gsfv
@@ -410,11 +413,10 @@
     SUBDIR += openssl
     SUBDIR += openssl-devel
     SUBDIR += openssl_tpm_engine
-    SUBDIR += openvas-client
-    SUBDIR += openvas-libnasl
+    SUBDIR += openvas-cli
     SUBDIR += openvas-libraries
-    SUBDIR += openvas-plugins
-    SUBDIR += openvas-server
+    SUBDIR += openvas-manager
+    SUBDIR += openvas-scanner
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
@@ -747,7 +749,6 @@
     SUBDIR += pecl-pam
     SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
-    SUBDIR += pecl-taint
     SUBDIR += pecl-tcpwrap
     SUBDIR += pev
     SUBDIR += pft
@@ -811,7 +812,6 @@
     SUBDIR += py-Products.PlonePAS
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
-    SUBDIR += py-scrypt
     SUBDIR += py-SecretStorage
     SUBDIR += py-acme
     SUBDIR += py-acme-tiny
@@ -880,12 +880,14 @@
     SUBDIR += py-pysha3
     SUBDIR += py-python-gnupg
     SUBDIR += py-python-openid
+    SUBDIR += py-python-social-auth
     SUBDIR += py-python-registry
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
     SUBDIR += py-rekall_gui
     SUBDIR += py-requests-kerberos
     SUBDIR += py-rsa
+    SUBDIR += py-scrypt
     SUBDIR += py-service_identity
     SUBDIR += py-signedjson
     SUBDIR += py-slowaes
@@ -1091,6 +1093,7 @@
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += titus
+    SUBDIR += tls-check
     SUBDIR += tlswrap
     SUBDIR += tmux-cssh
     SUBDIR += tor

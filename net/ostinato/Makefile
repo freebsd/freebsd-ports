@@ -12,7 +12,7 @@ COMMENT=	Packet crafter/generator and analyzer with friendly GUI
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		qmake
 USE_QT4=	gui moc_build rcc_build uic_build network script \

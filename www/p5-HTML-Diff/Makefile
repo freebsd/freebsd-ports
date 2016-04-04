@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	Perl module for finding changes between two strings of HTML
 
-BUILD_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff
+BUILD_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

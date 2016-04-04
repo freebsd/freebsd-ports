@@ -62,7 +62,7 @@ OPTIONS_DEFAULT=	ALSA ANALYZER BS2B CDDA CONVERTER COPYPASTE COVER \
 		SB SCROBBLER SID SKINNEDUI SNDFILE SRCONV STATICON STEREO \
 		TRACKCHANGE UDISKS2 VORBIS WAVPACK WILDMIDI
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 QSUI_DESC=	Simple UI based on standard widgets set
 QSUI_CMAKE_ON=	-DUSE_QSUI:BOOL=TRUE
@@ -77,71 +77,71 @@ DIR_ASSOC_DESC=	inode/directory mime type association
 DIR_ASSOC_CMAKE_ON=	-DUSE_DIR_ASSOC:BOOL=TRUE
 DIR_ASSOC_CMAKE_OFF=	-DUSE_DIR_ASSOC:BOOL=FALSE
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
-JACK_BUILD_DEPENDS=	jackit>=0.121.2:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
+JACK_BUILD_DEPENDS=	jackit>=0.121.2:audio/jack
 JACK_CMAKE_ON=	-DUSE_JACK:BOOL=TRUE
 JACK_CMAKE_OFF=	-DUSE_JACK:BOOL=FALSE
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_ON=	-DUSE_ALSA:BOOL=TRUE
 ALSA_CMAKE_OFF=	-DUSE_ALSA:BOOL=FALSE
 
 BS2B_DESC=		Support the Bauer stereophonic2binaural effect
-BS2B_LIB_DEPENDS=	libbs2b.so:${PORTSDIR}/audio/libbs2b
+BS2B_LIB_DEPENDS=	libbs2b.so:audio/libbs2b
 BS2B_CMAKE_ON=	-DUSE_BS2B:BOOL=TRUE
 BS2B_CMAKE_OFF=	-DUSE_BS2B:BOOL=FALSE
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_ON=	-DUSE_PULSE:BOOL=TRUE
 PULSEAUDIO_CMAKE_OFF=	-DUSE_PULSE:BOOL=FALSE
 
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libtag.so:${PORTSDIR}/audio/taglib
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libtag.so:audio/taglib
 FLAC_CMAKE_ON=	-DUSE_FLAC:BOOL=TRUE
 FLAC_CMAKE_OFF=	-DUSE_FLAC:BOOL=FALSE
 
-MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack \
-		libtag.so:${PORTSDIR}/audio/taglib
+MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack \
+		libtag.so:audio/taglib
 MUSEPACK_CMAKE_ON=	-DUSE_MPC:BOOL=TRUE
 MUSEPACK_CMAKE_OFF=	-DUSE_MPC:BOOL=FALSE
 
 GME_DESC=		Support video game music files
-GME_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
+GME_LIB_DEPENDS=	libgme.so:audio/libgme
 GME_CMAKE_ON=	-DUSE_GME:BOOL=TRUE
 GME_CMAKE_OFF=	-DUSE_GME:BOOL=FALSE
 
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CMAKE_ON=	-DUSE_FFMPEG:BOOL=TRUE
 FFMPEG_CMAKE_OFF=	-DUSE_FFMPEG:BOOL=FALSE
 
-MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
+MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 MODPLUG_CMAKE_ON=	-DUSE_MODPLUG:BOOL=TRUE
 MODPLUG_CMAKE_OFF=	-DUSE_MODPLUG:BOOL=FALSE
 
-FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad \
-		libtag.so:${PORTSDIR}/audio/taglib
+FAAD_LIB_DEPENDS=	libfaad.so:audio/faad \
+		libtag.so:audio/taglib
 FAAD_CMAKE_ON=	-DUSE_AAC:BOOL=TRUE
 FAAD_CMAKE_OFF=	-DUSE_AAC:BOOL=FALSE
 
-CDDA_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
-	libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia
+CDDA_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
+	libcdio_cdda.so:sysutils/libcdio-paranoia
 CDDA_CMAKE_ON=	-DUSE_CDA:BOOL=TRUE
 CDDA_CMAKE_OFF=	-DUSE_CDA:BOOL=FALSE
 
 ENCA_DESC=		Support automatic character set detection
-ENCA_LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca
+ENCA_LIB_DEPENDS=	libenca.so:converters/enca
 ENCA_CMAKE_ON=	-DUSE_ENCA:BOOL=TRUE
 ENCA_CMAKE_OFF=	-DUSE_ENCA:BOOL=FALSE
 
 MPLAYER1_DESC=	mplayer-1.1.x (multimedia/mplayer)
 MPLAYER2_DESC=	mplayer-2.0.x (multimedia/mplayer2)
-MPLAYER1_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
-MPLAYER2_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer2
+MPLAYER1_RUN_DEPENDS=	mplayer:multimedia/mplayer
+MPLAYER2_RUN_DEPENDS=	mplayer:multimedia/mplayer2
 MPLAYER1_PREVENTS=	MPLAYER2
 MPLAYER2_PREVENTS=	MPLAYER1
 
 PROJECTM_DESC=	Support the projectM music visualiser
-PROJECTM_LIB_DEPENDS=	libprojectM.so.2:${PORTSDIR}/graphics/libprojectm
+PROJECTM_LIB_DEPENDS=	libprojectM.so.2:graphics/libprojectm
 PROJECTM_USE=	QT5=opengl
 PROJECTM_CMAKE_ON=	-DUSE_PROJECTM:BOOL=TRUE
 PROJECTM_CMAKE_OFF=	-DUSE_PROJECTM:BOOL=FALSE
@@ -150,53 +150,53 @@ OSS_CMAKE_ON=	-DUSE_OSS:BOOL=TRUE
 OSS_CMAKE_OFF=	-DUSE_OSS:BOOL=FALSE
 
 OSS4_DESC=		Open Sound System (ver4) support
-OSS4_BUILD_DEPENDS=	${LOCALBASE}/lib/oss/include/sys/soundcard.h:${PORTSDIR}/audio/oss
+OSS4_BUILD_DEPENDS=	${LOCALBASE}/lib/oss/include/sys/soundcard.h:audio/oss
 OSS4_CMAKE_ON=	-DUSE_OSS4:BOOL=TRUE
 OSS4_CMAKE_OFF=	-DUSE_OSS4:BOOL=FALSE
 
-LADSPA_RUN_DEPENDS=	analyseplugin:${PORTSDIR}/audio/ladspa
+LADSPA_RUN_DEPENDS=	analyseplugin:audio/ladspa
 LADSPA_CMAKE_ON=	-DUSE_LADSPA:BOOL=TRUE
 LADSPA_CMAKE_OFF=	-DUSE_LADSPA:BOOL=FALSE
 
 WILDMIDI_DESC=	Support to playback MIDI files
-WILDMIDI_LIB_DEPENDS=	libWildMidi.so:${PORTSDIR}/audio/wildmidi
+WILDMIDI_LIB_DEPENDS=	libWildMidi.so:audio/wildmidi
 WILDMIDI_CMAKE_ON=	-DUSE_MIDI:BOOL=TRUE
 WILDMIDI_CMAKE_OFF=	-DUSE_MIDI:BOOL=FALSE
 
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
-		libtag.so:${PORTSDIR}/audio/taglib
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad \
+		libtag.so:audio/taglib
 MAD_CMAKE_ON=	-DUSE_MAD:BOOL=TRUE
 MAD_CMAKE_OFF=	-DUSE_MAD:BOOL=FALSE
 
 OPUS_DESC=		Enable reading opusfile tags
-OPUS_LIB_DEPENDS=	libopusfile.so:${PORTSDIR}/audio/opusfile \
-		libtag.so:${PORTSDIR}/audio/taglib
+OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile \
+		libtag.so:audio/taglib
 OPUS_CMAKE_ON=	-DUSE_OPUS:BOOL=TRUE
 OPUS_CMAKE_OFF=	-DUSE_OPUS:BOOL=FALSE
 
 RGSCAN_DESC=	ReplayGain scanner
-RGSCAN_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+RGSCAN_LIB_DEPENDS=	libtag.so:audio/taglib
 RGSCAN_CMAKE_ON=	-DUSE_RGSCAN:BOOL=TRUE
 RGSCAN_CMAKE_OFF=	-DUSE_RGSCAN:BOOL=FALSE
 
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CMAKE_ON=	-DUSE_SNDFILE:BOOL=TRUE
 SNDFILE_CMAKE_OFF=	-DUSE_SNDFILE:BOOL=FALSE
 
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libtag.so:${PORTSDIR}/audio/taglib
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libtag.so:audio/taglib
 VORBIS_CMAKE_ON=	-DUSE_VORBIS:BOOL=TRUE
 VORBIS_CMAKE_OFF=	-DUSE_VORBIS:BOOL=FALSE
 
-WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CMAKE_ON=	-DUSE_WAVPACK:BOOL=TRUE
 WAVPACK_CMAKE_OFF=	-DUSE_WAVPACK:BOOL=FALSE
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CMAKE_ON=	-DUSE_CURL:BOOL=TRUE
 CURL_CMAKE_OFF=	-DUSE_CURL:BOOL=FALSE
 
-MMS_LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
+MMS_LIB_DEPENDS=	libmms.so:net/libmms
 MMS_CMAKE_ON=	-DUSE_MMS:BOOL=TRUE
 MMS_CMAKE_OFF=	-DUSE_MMS:BOOL=FALSE
 
@@ -208,7 +208,7 @@ NULLOUT_CMAKE_ON=	-DUSE_NULL:BOOL=TRUE
 NULLOUT_CMAKE_OFF=	-DUSE_NULL:BOOL=FALSE
 
 SRCONV_DESC=	Support the sample rate converter
-SRCONV_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SRCONV_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SRCONV_CMAKE_ON=	-DUSE_SRC:BOOL=TRUE
 SRCONV_CMAKE_OFF=	-DUSE_SRC:BOOL=FALSE
 
@@ -225,7 +225,7 @@ ANALYZER_CMAKE_ON=	-DUSE_ANALYZER:BOOL=TRUE
 ANALYZER_CMAKE_OFF=	-DUSE_ANALYZER:BOOL=FALSE
 
 CONVERTER_DESC=	Support file type converter
-CONVERTER_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+CONVERTER_LIB_DEPENDS=	libtag.so:audio/taglib
 CONVERTER_CMAKE_ON=	-DUSE_CONVERTER:BOOL=TRUE
 CONVERTER_CMAKE_OFF=	-DUSE_CONVERTER:BOOL=FALSE
 
@@ -243,7 +243,7 @@ SCROBBLER_CMAKE_ON=	-DUSE_SCROBBLER:BOOL=TRUE
 SCROBBLER_CMAKE_OFF=	-DUSE_SCROBBLER:BOOL=FALSE
 
 SID_DESC=	Support sid
-SID_LIB_DEPENDS=	libsidplayfp.so:${PORTSDIR}/audio/libsidplayfp
+SID_LIB_DEPENDS=	libsidplayfp.so:audio/libsidplayfp
 SID_CMAKE_ON=	-DUSE_SID:BOOL=TRUE
 SID_CMAKE_OFF=	-DUSE_SID:BOOL=FALSE
 

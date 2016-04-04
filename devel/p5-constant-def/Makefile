@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mons@cpan.org
 COMMENT=	Declare only undeclared constants
 
-BUILD_DEPENDS=	p5-ex-lib>=0.06:${PORTSDIR}/devel/p5-ex-lib
+BUILD_DEPENDS=	p5-ex-lib>=0.06:devel/p5-ex-lib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -16,6 +16,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}hiera1>=0:${PORTSDIR}/sysutils/rubygem-hiera1
+RUN_DEPENDS=	${PKGNAMEPREFIX}hiera1>=0:sysutils/rubygem-hiera1
 
 .include <bsd.port.mk>

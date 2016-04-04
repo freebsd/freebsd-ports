@@ -13,11 +13,11 @@ COMMENT=	Pluggable command-line frontend
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:${PORTSDIR}/devel/py-cheetah \
-		${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup \
-		${PYTHON_PKGNAMEPREFIX}Paste>=1.7.2:${PORTSDIR}/www/py-paste \
-		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.3.2:${PORTSDIR}/www/py-pastedeploy \
-		${PYTHON_PKGNAMEPREFIX}wsgiutils>0:${PORTSDIR}/devel/py-wsgiutils
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:devel/py-cheetah \
+		${PYTHON_PKGNAMEPREFIX}flup>0:www/py-flup \
+		${PYTHON_PKGNAMEPREFIX}Paste>=1.7.2:www/py-paste \
+		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.3.2:www/py-pastedeploy \
+		${PYTHON_PKGNAMEPREFIX}wsgiutils>0:devel/py-wsgiutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

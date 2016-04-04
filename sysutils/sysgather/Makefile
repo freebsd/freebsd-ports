@@ -12,7 +12,7 @@ COMMENT=	Keep configuration files under version control
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles
+BUILD_DEPENDS=	p5-Config-IniFiles>=0:devel/p5-Config-IniFiles
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix uidfix

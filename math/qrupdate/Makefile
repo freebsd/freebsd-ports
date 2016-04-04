@@ -10,8 +10,8 @@ MASTER_SITES=	SOURCEFORGE/qrupdate/qrupdate/1.2
 MAINTAINER=	robertjenssen@ozemail.com.au
 COMMENT=	Fortran library for fast updates of QR and Cholesky decomposition
 
-LIB_DEPENDS=	libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	libblas.so:math/blas \
+		liblapack.so:math/lapack
 
 USES=		fortran gmake
 

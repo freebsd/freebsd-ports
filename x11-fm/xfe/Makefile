@@ -12,7 +12,7 @@ COMMENT=	Fast MS-Explorer like file manager for X
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
+LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 
 USES=		desktop-file-utils gmake localbase pathfix
 USE_XORG=	xft

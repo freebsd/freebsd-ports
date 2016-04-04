@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jeremybbaggs@gmail.com
 COMMENT=	Wrapper for the PDF::API2 modules
 
-RUN_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2
+RUN_DEPENDS=	p5-PDF-API2>=0:textproc/p5-PDF-API2
 
 USES=		perl5
 USE_PERL5=	configure

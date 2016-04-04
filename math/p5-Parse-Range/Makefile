@@ -15,7 +15,7 @@ COMMENT=	Parses range definitions and returns an array
 LICENSE=	ART10 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils
+BUILD_DEPENDS=	p5-List-MoreUtils>=0.22:lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

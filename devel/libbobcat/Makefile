@@ -12,8 +12,8 @@ COMMENT=	Brokken's Own Base Classes And Templates
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
-		yodl>=3.0:${PORTSDIR}/textproc/yodl
+BUILD_DEPENDS=	icmake:devel/icmake \
+		yodl>=3.0:textproc/yodl
 
 USE_GCC=	4.9+
 USE_XORG=	x11

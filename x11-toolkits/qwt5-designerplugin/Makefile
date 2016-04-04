@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	5-designerplugin
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Designer plugin for Qwt
 
-LIB_DEPENDS=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5
 
 USES=		gmake qmake tar:bzip2
 USE_QT4=	designer moc_build rcc_build

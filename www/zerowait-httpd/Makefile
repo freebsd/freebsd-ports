@@ -5,14 +5,14 @@ PORTNAME=	zerowait
 PORTVERSION=	0.8d
 PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://mirror.mcx2.org/
+MASTER_SITES=	http://BSDforge.com/projects/source/www/zerowait-httpd/
 PKGNAMESUFFIX=	-httpd
 DISTNAME=	0W-httpd-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lightweight and fast http server
 
-BROKEN=		unfetchable
+LICENSE=	BSD3CLAUSE
 
 USES=		gmake
 USE_OPENSSL=	yes

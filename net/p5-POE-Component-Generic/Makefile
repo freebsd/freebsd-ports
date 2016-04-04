@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides non-blocking access to a blocking object
 
-BUILD_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
-		p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
-		p5-Net-SSH2>=0:${PORTSDIR}/net/p5-Net-SSH2
+BUILD_DEPENDS=	p5-POE>=0.31:devel/p5-POE \
+		p5-Devel-Symdump>=0:devel/p5-Devel-Symdump \
+		p5-Net-SSH2>=0:net/p5-Net-SSH2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

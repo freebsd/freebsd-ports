@@ -12,7 +12,7 @@ COMMENT=	Making tests easy on the fingers and eyes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport4>=4.0.0:${PORTSDIR}/devel/rubygem-activesupport4
+RUN_DEPENDS=	rubygem-activesupport4>=4.0.0:devel/rubygem-activesupport4
 
 NO_ARCH=	yes
 USE_RUBY=	yes

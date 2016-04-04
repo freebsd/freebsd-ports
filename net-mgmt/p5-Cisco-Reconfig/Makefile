@@ -14,7 +14,7 @@ COMMENT=	Parse and generate Cisco configuration files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
+BUILD_DEPENDS=	p5-IO-String>=0:devel/p5-IO-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

@@ -13,8 +13,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Devel-StackTrace>=2.00:${PORTSDIR}/devel/p5-Devel-StackTrace \
-	p5-PadWalker>=1.98:${PORTSDIR}/devel/p5-PadWalker
+	p5-Devel-StackTrace>=2.00:devel/p5-Devel-StackTrace \
+	p5-PadWalker>=1.98:devel/p5-PadWalker
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

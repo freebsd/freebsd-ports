@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQL database written in Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kjbuckets.so:${PORTSDIR}/devel/py-kjbuckets
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kjbuckets.so:devel/py-kjbuckets
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

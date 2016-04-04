@@ -14,11 +14,11 @@ COMMENT=	Set of commonly-used type constraints that do not ship with p5-Moose
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types
+BUILD_DEPENDS=	p5-Moose>=0.39:devel/p5-Moose \
+		p5-MooseX-Types>=0.04:devel/p5-MooseX-Types
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Warnings>=0.005:${PORTSDIR}/devel/p5-Test-Warnings
+TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
+		p5-Test-Warnings>=0.005:devel/p5-Test-Warnings
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	DVD slideshow maker
 
-LIB_DEPENDS=	libsox.so:${PORTSDIR}/audio/sox \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libsox.so:audio/sox \
+		libavcodec.so:multimedia/ffmpeg
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

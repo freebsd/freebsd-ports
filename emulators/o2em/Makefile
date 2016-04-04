@@ -13,7 +13,7 @@ DISTFILES=	o2em117src.zip:1 \
 MAINTAINER=	techgunter@yahoo.com
 COMMENT=	Odyssey2 / Videopac console emulator
 
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	liballeg.so:devel/allegro
 
 WRKSRC=		${WRKDIR}/o2em117src
 MAKEFILE=	Makefile.freebsd

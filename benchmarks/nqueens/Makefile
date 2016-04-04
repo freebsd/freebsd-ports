@@ -30,7 +30,7 @@ PROGS=		qn24b_base
 
 .if ${PORT_OPTIONS:MMPI}
 MPICC?=		${LOCALBASE}/mpich/bin/mpicc
-BUILD_DEPENDS=	${MPICC}:${PORTSDIR}/net/mpich
+BUILD_DEPENDS=	${MPICC}:net/mpich
 PROGS+=		qn24b_mpi
 .endif
 

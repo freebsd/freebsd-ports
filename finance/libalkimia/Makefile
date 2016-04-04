@@ -2,6 +2,7 @@
 
 PORTNAME=	libalkimia
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/alkimia/${PORTVERSION}/src
 
@@ -10,7 +11,7 @@ COMMENT=	KDE4 financial data handling library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		cmake:outsource pathfix tar:xz
 USE_KDE4=	automoc4 kdeprefix kdelibs

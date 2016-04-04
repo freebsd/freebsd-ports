@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility that reports when files have been altered
 
-LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
+LIB_DEPENDS=	libargp.so:devel/argp-standalone
+BUILD_DEPENDS=	help2man:misc/help2man
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

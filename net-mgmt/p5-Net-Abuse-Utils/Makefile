@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Abuse-Utils
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.24
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +13,10 @@ COMMENT=	Routines useful for processing network abuse
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Email-Address>=0:${PORTSDIR}/mail/p5-Email-Address \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		p5-Net-Whois-IP>=1.11:${PORTSDIR}/net/p5-Net-Whois-IP
+BUILD_DEPENDS=	p5-Email-Address>=0:mail/p5-Email-Address \
+		p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
+		p5-Net-Whois-IP>=1.11:net/p5-Net-Whois-IP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

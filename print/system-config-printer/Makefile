@@ -3,19 +3,19 @@
 
 PORTNAME=	system-config-printer
 PORTVERSION=	1.4.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print gnome
 MASTER_SITES=	http://cyberelk.net/tim/data/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CUPS configuration Gtk+2.0 GUI
 
-BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-pycups \
-		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-pycurl \
-		${LOCALBASE}/libexec/cups-pk-helper-mechanism:${PORTSDIR}/print/cups-pk-helper
+BUILD_DEPENDS=	xmlto:textproc/xmlto \
+		docbook-xml>0:textproc/docbook-xml
+LIB_DEPENDS=	libcups.so:print/cups
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:print/py-pycups \
+		${PYTHON_SITELIBDIR}/pycurl.so:ftp/py-pycurl \
+		${LOCALBASE}/libexec/cups-pk-helper-mechanism:print/cups-pk-helper
 
 # 1.5 series is python3 ignore them for now.
 PORTSCOUT=	limitw:1,even

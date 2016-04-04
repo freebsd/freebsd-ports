@@ -13,7 +13,7 @@ COMMENT=	Gearman API
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libgearman.so:${PORTSDIR}/devel/gearmand
+LIB_DEPENDS=	libgearman.so:devel/gearmand
 
 USES=		tar:tgz
 CONFIGURE_ARGS=	--with-gearman

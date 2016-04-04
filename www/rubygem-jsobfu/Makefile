@@ -10,7 +10,7 @@ COMMENT=	Javascript code obfuscator
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-rkelly-remix>=0.0.6:${PORTSDIR}/www/rubygem-rkelly-remix
+RUN_DEPENDS=	rubygem-rkelly-remix>=0.0.6:www/rubygem-rkelly-remix
 
 NO_ARCH=	yes
 

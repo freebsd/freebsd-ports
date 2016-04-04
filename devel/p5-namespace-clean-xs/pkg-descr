@@ -1,0 +1,4 @@
+This module does the same thing as devel/p5-namespace-clean, but in
+XS and with no dependencies.
+
+WWW: https://metacpan.org/pod/namespace::clean::xs

@@ -13,7 +13,7 @@ COMMENT=	Code coverage metrics for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
+TEST_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences
 
 USES=		perl5
 USE_PERL5=	configure
@@ -23,20 +23,20 @@ OPTIONS_DEFAULT=CPANCOVER HTML_REPORTS POD_COVERAGE
 OPTIONS_SUB=	yes
 
 CPANCOVER_DESC=			Coverage statistics on CPAN modules
-CPANCOVER_BUILD_DEPENDS=	p5-Parallel-Iterator>=0:${PORTSDIR}/devel/p5-Parallel-Iterator \
-				p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit
+CPANCOVER_BUILD_DEPENDS=	p5-Parallel-Iterator>=0:devel/p5-Parallel-Iterator \
+				p5-Template-Toolkit>=2:www/p5-Template-Toolkit
 CPANCOVER_RUN_DEPENDS=		${CPANCOVER_BUILD_DEPENDS}
 
 HTML_REPORTS=			Build HTML reports with p5-HTML-Parser
-HTML_REPORTS_BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+HTML_REPORTS_BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser
 HTML_REPORTS_RUN_DEPENDS=	${HTML_REPORTS_BUILD_DEPENDS}
 
 POD_COVERAGE_DESC=		POD coverage via p5-Pod-Coverage
-POD_COVERAGE_BUILD_DEPENDS=	p5-Pod-Coverage>=0.06:${PORTSDIR}/devel/p5-Pod-Coverage
+POD_COVERAGE_BUILD_DEPENDS=	p5-Pod-Coverage>=0.06:devel/p5-Pod-Coverage
 POD_COVERAGE_RUN_DEPENDS=	${POD_COVERAGE_BUILD_DEPENDS}
 
 SYNTAX_HIGHLIGHTING_DESC=		Syntax highlighting via p5-PPI-HTML
-SYNTAX_HIGHLIGHTING_BUILD_DEPENDS=	p5-PPI-HTML>=1.07:${PORTSDIR}/textproc/p5-PPI-HTML
+SYNTAX_HIGHLIGHTING_BUILD_DEPENDS=	p5-PPI-HTML>=1.07:textproc/p5-PPI-HTML
 SYNTAX_HIGHLIGHTING_RUN_DEPENDS=	${SYNTAX_HIGHLIGHTING_BUILD_DEPENDS}
 
 post-install:

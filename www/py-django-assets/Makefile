@@ -12,8 +12,8 @@ COMMENT=	Compress and merge CSS and Javascript files
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:${PORTSDIR}/www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}webassets>0:${PORTSDIR}/www/py-webassets
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18 \
+		${PYTHON_PKGNAMEPREFIX}webassets>0:www/py-webassets
 
 USES=		python
 USE_PYTHON=	autoplist distutils

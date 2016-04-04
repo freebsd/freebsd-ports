@@ -10,9 +10,9 @@ COMMENT=	PEAR Class to Create UML Representation of PHP Code
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/Console/CommandLine.php:${PORTSDIR}/devel/pear-Console_CommandLine
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear \
+		${PEARDIR}/Console/CommandLine.php:devel/pear-Console_CommandLine
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
 
 USES=		pear
 USE_PHP=	spl xsl

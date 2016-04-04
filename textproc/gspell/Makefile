@@ -12,9 +12,9 @@ COMMENT=	Spell checking for GTK+
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala \
-	iso-codes>=3.57:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+BUILD_DEPENDS=	valac:lang/vala \
+	iso-codes>=3.57:misc/iso-codes
+LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 PORTSCOUT=	limit:^0\.1\.
 

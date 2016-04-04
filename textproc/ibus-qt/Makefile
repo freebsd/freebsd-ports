@@ -15,10 +15,10 @@ COMMENT=	IBus input method module for Qt4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	ibus>=1.3.7:${PORTSDIR}/textproc/ibus
-RUN_DEPENDS=	ibus>=1.3.7:${PORTSDIR}/textproc/ibus
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-	libicuuc.so:${PORTSDIR}/devel/icu
+BUILD_DEPENDS=	ibus>=1.3.7:textproc/ibus
+RUN_DEPENDS=	ibus>=1.3.7:textproc/ibus
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+	libicuuc.so:devel/icu
 
 GH_ACCOUNT=	ibus
 

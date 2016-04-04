@@ -2,6 +2,7 @@
 
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -9,12 +10,12 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra plasmoids for KDE SC 4
 
-LIB_DEPENDS=	libqalculate.so:${PORTSDIR}/math/libqalculate \
-		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libqoauth.so:${PORTSDIR}/net/qoauth \
-		libqjson.so:${PORTSDIR}/devel/qjson
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
+LIB_DEPENDS=	libqalculate.so:math/libqalculate \
+		libqwt.so:x11-toolkits/qwt5 \
+		libqca.so:devel/qca \
+		libqoauth.so:net/qoauth \
+		libqjson.so:devel/qjson
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:math/eigen2
 
 CONFLICTS_INSTALL=	plasma-applet-icontasks-0.[89].*
 
@@ -35,11 +36,11 @@ MARBLE_USE=	KDE4=marble
 MARBLE_CMAKE_OFF=	-DWITH_Marble=off
 
 IBUS_DESC=	Enable IBUS backend for input dialog
-IBUS_LIB_DEPENDS=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
+IBUS_LIB_DEPENDS=	libibus-1.0.so:textproc/ibus
 IBUS_CMAKE_OFF=	-DBUILD_ibus=off
 
 SCIM_DESC=	Enable SCIM backend for input dialog
-SCIM_LIB_DEPENDS=	libscim-1.0.so:${PORTSDIR}/textproc/scim
+SCIM_LIB_DEPENDS=	libscim-1.0.so:textproc/scim
 SCIM_CMAKE_OFF=	-DBUILD_scim=off
 
 post-patch:

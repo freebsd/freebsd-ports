@@ -8,10 +8,10 @@ CATEGORIES=	www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to Amazon Product Advertising API
 
-BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request \
-		${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
-RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request \
-		${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
+BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request \
+		${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
+RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request \
+		${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
 
 USES=	pear
 

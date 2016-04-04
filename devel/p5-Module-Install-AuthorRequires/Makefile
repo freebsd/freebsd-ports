@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to declare author-only dependencies
 
 RUN_DEPENDS=	\
-	p5-Module-Install>0:${PORTSDIR}/devel/p5-Module-Install
+	p5-Module-Install>0:devel/p5-Module-Install
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

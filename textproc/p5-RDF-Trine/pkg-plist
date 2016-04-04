@@ -1,5 +1,3 @@
-bin/srx2csv
-bin/srx2table
 %%PERL5_MAN3%%/RDF::Trine.3.gz
 %%PERL5_MAN3%%/RDF::Trine::Error.3.gz
 %%PERL5_MAN3%%/RDF::Trine::Exporter::CSV.3.gz
@@ -59,6 +57,7 @@ bin/srx2table
 %%PERL5_MAN3%%/RDF::Trine::Store::DBI::mysql.3.gz
 %%PERL5_MAN3%%/RDF::Trine::Store::Dydra.3.gz
 %%PERL5_MAN3%%/RDF::Trine::Store::Hexastore.3.gz
+%%PERL5_MAN3%%/RDF::Trine::Store::LanguagePreference.3.gz
 %%PERL5_MAN3%%/RDF::Trine::Store::Memory.3.gz
 %%PERL5_MAN3%%/RDF::Trine::Store::Redis.3.gz
 %%PERL5_MAN3%%/RDF::Trine::Store::Redland.3.gz
@@ -124,9 +123,12 @@ bin/srx2table
 %%SITE_PERL%%/RDF/Trine/Store/DBI/mysql.pm
 %%SITE_PERL%%/RDF/Trine/Store/Dydra.pm
 %%SITE_PERL%%/RDF/Trine/Store/Hexastore.pm
+%%SITE_PERL%%/RDF/Trine/Store/LanguagePreference.pm
 %%SITE_PERL%%/RDF/Trine/Store/Memory.pm
 %%SITE_PERL%%/RDF/Trine/Store/Redis.pm
 %%SITE_PERL%%/RDF/Trine/Store/Redland.pm
 %%SITE_PERL%%/RDF/Trine/Store/SPARQL.pm
 %%SITE_PERL%%/RDF/Trine/VariableBindings.pm
 %%SITE_PERL%%/Test/RDF/Trine/Store.pm
+bin/srx2csv
+bin/srx2table

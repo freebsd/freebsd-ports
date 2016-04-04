@@ -12,7 +12,7 @@ COMMENT=	John Horton Conway's Game of Life
 LICENSE=	MIT GPLv2
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS=	gawk:lang/gawk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 

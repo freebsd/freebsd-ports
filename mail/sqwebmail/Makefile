@@ -10,10 +10,10 @@ MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
 
-BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libcourier-unicode.so:${PORTSDIR}/devel/courier-unicode
+BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
+RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libcourier-unicode.so:devel/courier-unicode
 
 CFLAGS:=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS:S/^[:space:]*//}
 CXXFLAGS:=	-I${LOCALBASE}/include ${CXXFLAGS:S/^[:space:]*//}
@@ -116,15 +116,15 @@ CONFIGURE_ARGS+=	--without-gzip
 .endif
 
 .if ${PORT_OPTIONS:MISPELL}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/aspell-ispell
-RUN_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/aspell-ispell
+BUILD_DEPENDS+=		${LOCALBASE}/bin/ispell:textproc/aspell-ispell
+RUN_DEPENDS+=		${LOCALBASE}/bin/ispell:textproc/aspell-ispell
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell
 .else
 CONFIGURE_ARGS+=	--without-ispell
 .endif
 
 .if ${PORT_OPTIONS:MMIMETYPES}
-RUN_DEPENDS+=		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS+=		${LOCALBASE}/etc/mime.types:misc/mime-support
 CONFIGURE_ARGS+=	--enable-mimetypes=${LOCALBASE}/etc
 .else
 CONFIGURE_ARGS+=	--disable-mimetypes
@@ -164,7 +164,7 @@ CONFIGURE_ARGS+=	--enable-maxpurge=${WITH_MAXPURGE}
 
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=--with-db=gdbm
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:databases/gdbm
 .else
 CONFIGURE_ARGS+=--with-db=db
 .endif

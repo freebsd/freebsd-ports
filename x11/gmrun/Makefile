@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Customizable program to run programs, with tab-completion
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 OPTIONS_DEFINE=	DOCS
 

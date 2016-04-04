@@ -8,7 +8,7 @@ CATEGORIES=	math
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Fast out-of-core learning system
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 BROKEN_FreeBSD_9=	does not build
 

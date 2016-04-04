@@ -11,7 +11,7 @@ COMMENT=	Generalized version number library for Ruby
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-blockenspiel>=0.5:${PORTSDIR}/devel/rubygem-blockenspiel
+RUN_DEPENDS=	rubygem-blockenspiel>=0.5:devel/rubygem-blockenspiel
 
 NO_ARCH=	yes
 USE_RUBY=	yes

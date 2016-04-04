@@ -12,10 +12,10 @@ COMMENT=	Convert OSM XML data to PostgreSQL database
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
-		libgeos.so:${PORTSDIR}/graphics/geos \
-		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libproj.so:graphics/proj \
+		libgeos.so:graphics/geos \
+		libprotobuf-c.so:devel/protobuf-c \
+		libboost_thread.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap

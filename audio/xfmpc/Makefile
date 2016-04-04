@@ -13,8 +13,8 @@ COMMENT=	Graphical MPD client focusing on low footprint
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libmpd.so:audio/libmpd
 
 INSTALLS_ICONS=	yes
 USES=		tar:bzip2 gettext gmake xfce pkgconfig

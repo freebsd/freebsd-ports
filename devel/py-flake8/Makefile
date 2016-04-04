@@ -12,9 +12,9 @@ COMMENT=	Code checking using pep8 and pyflakes
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mccabe>=0.2.1:${PORTSDIR}/devel/py-mccabe \
-		${PYTHON_PKGNAMEPREFIX}pep8>=1.5.7:${PORTSDIR}/devel/pep8 \
-		${PYTHON_PKGNAMEPREFIX}pyflakes>=0.8.1:${PORTSDIR}/devel/py-pyflakes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mccabe>=0.2.1:devel/py-mccabe \
+		${PYTHON_PKGNAMEPREFIX}pep8>=1.5.7:devel/pep8 \
+		${PYTHON_PKGNAMEPREFIX}pyflakes>=0.8.1:devel/py-pyflakes
 
 USES=		python
 USE_PYTHON=	autoplist distutils

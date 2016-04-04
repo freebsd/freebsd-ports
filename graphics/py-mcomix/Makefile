@@ -13,7 +13,7 @@ COMMENT=	GTK2 comic book viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python tar:bzip2

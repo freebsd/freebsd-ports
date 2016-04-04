@@ -11,9 +11,9 @@ COMMENT=	GNOME frontend for MPlayer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgmtk.so:${PORTSDIR}/multimedia/gmtk
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libgmtk.so:multimedia/gmtk
+RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 USES=		desktop-file-utils gettext gmake pkgconfig
 USE_XORG=	x11 xscrnsaver
@@ -35,24 +35,24 @@ GLIB_SCHEMAS=	apps.gecko-mediaplayer.preferences.gschema.xml \
 
 OPTIONS_DEFINE=		ALSA BRAINZ3 DOCS GIO GPOD GTK3 NOTIFY PULSEAUDIO
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-ALSA_RUN_DEPENDS=	alsa-plugins>0:${PORTSDIR}/audio/alsa-plugins
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	alsa-plugins>0:audio/alsa-plugins
 ALSA_CONFIGURE_WITH=	alsa
 BRAINZ3_DESC=		Add support for libmusicbrainz
-BRAINZ3_LIB_DEPENDS=	libmusicbrainz3.so:${PORTSDIR}/audio/libmusicbrainz3 \
-			libcurl.so:${PORTSDIR}/ftp/curl
+BRAINZ3_LIB_DEPENDS=	libmusicbrainz3.so:audio/libmusicbrainz3 \
+			libcurl.so:ftp/curl
 BRAINZ3_CONFIGURE_WITH=	libmusicbrainz3
 GIO_DESC=		Use GIO for file I/O
 GIO_CONFIGURE_WITH=	gio
 GPOD_DESC=		Add support for libgpod
-GPOD_LIB_DEPENDS=	libgpod.so:${PORTSDIR}/audio/libgpod
+GPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod
 GPOD_CONFIGURE_WITH=	libgpod
 GTK3_USE=		gnome=gtk30
 GTK3_CONFIGURE_ENABLE=	gtk3
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
-NOTIFY_RUN_DEPENDS=	notification-daemon>0:${PORTSDIR}/deskutils/notification-daemon
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+NOTIFY_RUN_DEPENDS=	notification-daemon>0:deskutils/notification-daemon
 NOTIFY_CONFIGURE_WITH=	libnotify
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
 
 .include <bsd.port.options.mk>

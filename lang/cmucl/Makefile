@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-freebsd_6.3-release
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The CMU implementation of Common Lisp
 
-LIB_DEPENDS=	libc.so.6:${PORTSDIR}/misc/compat6x
+LIB_DEPENDS=	libc.so.6:misc/compat6x
 
 # To make available on other archs, has to be cross-compiled (there is a
 # script for this, but a configuration file has to be written).

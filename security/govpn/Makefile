@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	govpn
-PORTVERSION=	5.6
+PORTVERSION=	5.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ru/govpn/download/ \
 		http://sourceforge.net/projects/govpn/files/
@@ -12,7 +12,7 @@ COMMENT=	Simple secure, DPI-resistant VPN daemon
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go:lang/go
 
 USES=		tar:xz
 MAKEFILE=	BSDmakefile

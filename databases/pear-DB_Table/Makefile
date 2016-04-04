@@ -17,8 +17,8 @@ PEAR_HTML_QUICKFORM_DESC=	PEAR::HTML_QuickForm support
 PEAR_DB_DESC=	PEAR::DB support
 PEAR_MDB2_DESC=	PEAR::MDB2 support
 
-PEAR_HTML_QUICKFORM_RUN_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm
-PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-PEAR_MDB2_RUN_DEPENDS=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
+PEAR_HTML_QUICKFORM_RUN_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm
+PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
+PEAR_MDB2_RUN_DEPENDS=	${PEARDIR}/MDB2.php:databases/pear-MDB2
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ DIST_SUBDIR=	pysycache
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The pysycache lang support
 
-RUN_DEPENDS=	pysycache.py:${PORTSDIR}/games/pysycache
+RUN_DEPENDS=	pysycache.py:games/pysycache
 
 USES=		zip:infozip
 NO_BUILD=	yes

@@ -12,9 +12,9 @@ COMMENT=	Background browser and setter for X windows
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	gnome-icon-theme>0:${PORTSDIR}/misc/gnome-icon-theme \
-		hicolor-icon-theme>0:${PORTSDIR}/misc/hicolor-icon-theme
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	gnome-icon-theme>0:misc/gnome-icon-theme \
+		hicolor-icon-theme>0:misc/hicolor-icon-theme
 
 OPTIONS_DEFINE=	XINERAMA
 OPTIONS_DEFAULT=XINERAMA

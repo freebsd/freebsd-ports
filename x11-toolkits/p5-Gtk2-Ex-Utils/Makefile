@@ -13,13 +13,13 @@ COMMENT=	Extra Gtk2 utilities for Gtk2 in perl
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
-		p5-ExtUtils-Depends>=0.3:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		p5-ExtUtils-PkgConfig>=1.1:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo
-RUN_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
-		p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	p5-Glib2>=1.00:devel/p5-Glib2 \
+		p5-ExtUtils-Depends>=0.3:devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1.1:devel/p5-ExtUtils-PkgConfig \
+		p5-Gtk2>=1.060:x11-toolkits/p5-Gtk2 \
+		p5-Cairo>=0:graphics/p5-Cairo
+RUN_DEPENDS=	p5-Glib2>=1.00:devel/p5-Glib2 \
+		p5-Gtk2>=1.060:x11-toolkits/p5-Gtk2
 
 USES=		perl5
 USE_PERL5=	configure

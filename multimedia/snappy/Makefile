@@ -12,9 +12,9 @@ PKGNAMESUFFIX=	player
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open source gstreamer media player
 
-LIB_DEPENDS=	libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
-		libclutter-1.0.so:${PORTSDIR}/graphics/clutter \
-		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
+LIB_DEPENDS=	libclutter-gst-2.0.so:multimedia/clutter-gst \
+		libclutter-1.0.so:graphics/clutter \
+		libclutter-gtk-1.0.so:graphics/clutter-gtk3
 
 USES=		desktop-file-utils gettext gmake pathfix \
 		pkgconfig tar:xz

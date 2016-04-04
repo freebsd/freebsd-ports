@@ -14,7 +14,7 @@ COMMENT=	GTK2 based XMMS2 client, written in C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS=	libxmmsclient.so:audio/xmms2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

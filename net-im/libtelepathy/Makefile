@@ -11,8 +11,8 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Flexible Communications Framework
 
-LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib \
+		libdbus-glib-1.so:devel/dbus-glib
 
 USES=		gmake libtool pathfix pkgconfig python:build
 USE_LDCONFIG=	yes

@@ -11,8 +11,8 @@ COMMENT=	Online banking interface and financial data framework
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgwenhywfar.so:${PORTSDIR}/devel/gwenhywfar \
-		libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar \
+		libgmp.so:math/gmp
 
 USES=		compiler:features gettext gmake libtool pathfix pkgconfig
 
@@ -33,12 +33,12 @@ OPTIONS_DEFINE=		DOCS DOXYGEN EBICS KTOBLZCHECK
 OPTIONS_DEFAULT=	KTOBLZCHECK
 OPTIONS_SUB=		yes
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-			dot:${PORTSDIR}/graphics/graphviz
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			dot:graphics/graphviz
 DOXYGEN_CONFIGURE_ENABLE=	full-doc
 
 EBICS_DESC=		Enable EBICS backend
-EBICS_LIB_DEPENDS=	libxmlsec1-gnutls.so:${PORTSDIR}/security/xmlsec1
+EBICS_LIB_DEPENDS=	libxmlsec1-gnutls.so:security/xmlsec1
 EBICS_USE=		GNOME=libxml2,libxslt
 EBICS_CONFIGURE_OFF=	--with-backends="aqhbci aqnone aqofxconnect"
 
@@ -51,7 +51,7 @@ IGNORE=		(Re)Install security/xmlsec1 with the GNUTLS option ON
 .endif
 
 .if ${PORT_OPTIONS:MKTOBLZCHECK} || exists(${LOCALBASE}/lib/libktoblzcheck.so)
-LIB_DEPENDS+=	libktoblzcheck.so:${PORTSDIR}/finance/ktoblzcheck
+LIB_DEPENDS+=	libktoblzcheck.so:finance/ktoblzcheck
 .endif
 
 .if ${PORT_OPTIONS:MDOCS} && !${PORT_OPTIONS:MDOXYGEN}

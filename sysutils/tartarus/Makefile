@@ -14,9 +14,9 @@ COMMENT=	Wrappers around common Unix tools for simplified backup solution
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
-		${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
+		${LOCALBASE}/bin/gtar:archivers/gtar \
+		${LOCALBASE}/bin/curl:ftp/curl
 
 USES=		gmake perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/bin/*

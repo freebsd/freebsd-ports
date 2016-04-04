@@ -26,8 +26,8 @@ OPTIONS_DEFAULT=	APACHE MYSQL_SERVER
 
 MYSQL_SERVER_DESC=	MySQL server support
 NGINX_DESC=		NGINX web server
-LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
-NGINX_RUN_DEPENDS=	nginx:${PORTSDIR}/www/nginx
+LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
+NGINX_RUN_DEPENDS=	nginx:www/nginx
 MYSQL_SERVER_USE=	MYSQL=server
 APACHE_USE=		APACHE_RUN=22+
 NLS_USES=		gettext

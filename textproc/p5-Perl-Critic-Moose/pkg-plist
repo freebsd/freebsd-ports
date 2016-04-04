@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Perl/Critic/Moose.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Moose/ProhibitDESTROYMethod.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Moose/ProhibitLazyBuild.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Moose/ProhibitMultipleWiths.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Moose/ProhibitNewMethod.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Moose/RequireCleanNamespace.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Moose/RequireMakeImmutable.pm
+%%PERL5_MAN3%%/Perl::Critic::Moose.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Moose::ProhibitDESTROYMethod.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Moose::ProhibitLazyBuild.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Moose::ProhibitMultipleWiths.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Moose::ProhibitNewMethod.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Moose::RequireCleanNamespace.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Moose::RequireMakeImmutable.3.gz

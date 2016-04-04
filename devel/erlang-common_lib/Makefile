@@ -8,9 +8,9 @@ PKGNAMEPREFIX=	erlang-
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Library of commonly used Erlang functions
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		txt2tags:${PORTSDIR}/textproc/txt2tags
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erlc:lang/erlang \
+		txt2tags:textproc/txt2tags
+RUN_DEPENDS=	erl:lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

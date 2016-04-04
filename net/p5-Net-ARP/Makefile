@@ -12,7 +12,7 @@ COMMENT=	Perl extension for creating ARP packets
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap
+BUILD_DEPENDS=	p5-Net-Pcap>=0:net/p5-Net-Pcap
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure

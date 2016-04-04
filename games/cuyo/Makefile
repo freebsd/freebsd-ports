@@ -29,7 +29,7 @@ OPTIONS_DEFINE=		DOCS NLS
 OPTIONS_SUB=		yes
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+NLS_BUILD_DEPENDS=	gsed:textproc/gsed
 NLS_USES=		gettext perl5
 NLS_USE=		perl5=build
 NLS_LDFLAGS=		-lintl

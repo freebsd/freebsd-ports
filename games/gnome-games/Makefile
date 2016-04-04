@@ -10,25 +10,25 @@ COMMENT=	Gnome games meta port
 
 USES=		metaport
 
-RUN_DEPENDS=	five-or-more:${PORTSDIR}/games/five-or-more \
-		atomix:${PORTSDIR}/games/atomix \
-		four-in-a-row:${PORTSDIR}/games/four-in-a-row \
-		gnome-2048:${PORTSDIR}/games/gnome-2048 \
-		gnome-chess:${PORTSDIR}/games/gnome-chess \
-		gnome-klotski:${PORTSDIR}/games/gnome-klotski \
-		gnome-mahjongg:${PORTSDIR}/games/gnome-mahjongg \
-		gnome-mines:${PORTSDIR}/games/gnome-mines \
-		gnome-nibbles:${PORTSDIR}/games/gnome-nibbles \
-		gnome-robots:${PORTSDIR}/games/gnome-robots \
-		gnome-sudoku:${PORTSDIR}/games/gnome-sudoku \
-		gnome-taquin:${PORTSDIR}/games/gnome-taquin \
-		gnome-tetravex:${PORTSDIR}/games/gnome-tetravex \
-		hitori:${PORTSDIR}/games/hitori \
-		iagno:${PORTSDIR}/games/iagno \
-		lightsoff:${PORTSDIR}/games/lightsoff \
-		quadrapassel:${PORTSDIR}/games/quadrapassel \
-		aisleriot>=0:${PORTSDIR}/games/aisleriot \
-		swell-foop:${PORTSDIR}/games/swell-foop \
-		tali:${PORTSDIR}/games/tali
+RUN_DEPENDS=	five-or-more:games/five-or-more \
+		atomix:games/atomix \
+		four-in-a-row:games/four-in-a-row \
+		gnome-2048:games/gnome-2048 \
+		gnome-chess:games/gnome-chess \
+		gnome-klotski:games/gnome-klotski \
+		gnome-mahjongg:games/gnome-mahjongg \
+		gnome-mines:games/gnome-mines \
+		gnome-nibbles:games/gnome-nibbles \
+		gnome-robots:games/gnome-robots \
+		gnome-sudoku:games/gnome-sudoku \
+		gnome-taquin:games/gnome-taquin \
+		gnome-tetravex:games/gnome-tetravex \
+		hitori:games/hitori \
+		iagno:games/iagno \
+		lightsoff:games/lightsoff \
+		quadrapassel:games/quadrapassel \
+		aisleriot>=0:games/aisleriot \
+		swell-foop:games/swell-foop \
+		tali:games/tali
 
 .include <bsd.port.mk>

@@ -160,6 +160,7 @@
     SUBDIR += elasticsearch-river-rabbitmq
     SUBDIR += elasticsearch2
     SUBDIR += elasticsearch2-plugin-hq
+    SUBDIR += elasticsearch2-plugin-marvel
     SUBDIR += elasticsearch2-plugin-sql
     SUBDIR += elixir-earmark
     SUBDIR += elixir-ex_doc
@@ -352,6 +353,7 @@
     SUBDIR += jdictionary
     SUBDIR += jdictionary-int-eng
     SUBDIR += jing
+    SUBDIR += jo
     SUBDIR += jq
     SUBDIR += jrefentry
     SUBDIR += jshon
@@ -362,6 +364,7 @@
     SUBDIR += kibana42
     SUBDIR += kibana43
     SUBDIR += kibana44
+    SUBDIR += kibana45
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
     SUBDIR += kmfl-sil-ezra
@@ -382,13 +385,12 @@
     SUBDIR += latex-service
     SUBDIR += latex2html
     SUBDIR += libabw
-    SUBDIR += libabw00
     SUBDIR += libcrm114
     SUBDIR += libcroco
+    SUBDIR += libcss
     SUBDIR += libcsv
     SUBDIR += libcue
     SUBDIR += libe-book
-    SUBDIR += libe-book00
     SUBDIR += libebml
     SUBDIR += libextractor
     SUBDIR += libexttextcat
@@ -419,12 +421,11 @@
     SUBDIR += libucl
     SUBDIR += libunibreak
     SUBDIR += libuninameslist
-    SUBDIR += libvisio
+    SUBDIR += libutf8proc
     SUBDIR += libvisio01
-    SUBDIR += libwpd
+    SUBDIR += libwapcaplet
     SUBDIR += libwpd010
     SUBDIR += libwps
-    SUBDIR += libwps02
     SUBDIR += libwps03
     SUBDIR += libxdiff
     SUBDIR += libxml++26
@@ -684,6 +685,12 @@
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-Perl-Critic
     SUBDIR += p5-Perl-Critic-Bangs
+    SUBDIR += p5-Perl-Critic-Itch
+    SUBDIR += p5-Perl-Critic-Moose
+    SUBDIR += p5-Perl-Critic-More
+    SUBDIR += p5-Perl-Critic-Pulp
+    SUBDIR += p5-Perl-Critic-Swift
+    SUBDIR += p5-Perl-Critic-Tics
     SUBDIR += p5-Perl-Lint
     SUBDIR += p5-Perl-MinimumVersion
     SUBDIR += p5-PerlPoint-Converters
@@ -1230,7 +1237,6 @@
     SUBDIR += py-excelerator
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
-    SUBDIR += py-genshi-devel
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
     SUBDIR += py-hyperestraier-python
@@ -1295,6 +1301,7 @@
     SUBDIR += py-syck
     SUBDIR += py-texttable
     SUBDIR += py-tinycss
+    SUBDIR += py-toronado
     SUBDIR += py-trans
     SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
@@ -1418,12 +1425,12 @@
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-html-pipeline
+    SUBDIR += rubygem-html-pipeline1
     SUBDIR += rubygem-html-pipeline-gitlab
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-jekyll-assets
-    SUBDIR += rubygem-jekyll-assets1
     SUBDIR += rubygem-jekyll-feed
     SUBDIR += rubygem-jekyll-gist
     SUBDIR += rubygem-jekyll-mentions
@@ -1474,7 +1481,6 @@
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-rails
     SUBDIR += rubygem-sass-rails4
-    SUBDIR += rubygem-sass-rails4-rails41
     SUBDIR += rubygem-sass-rails5
     SUBDIR += rubygem-sass32
     SUBDIR += rubygem-sax-machine

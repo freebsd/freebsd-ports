@@ -11,7 +11,7 @@ EXTRACT_SUFX?=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for building and applying statistical language models
 
-LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	libtcl84.so:lang/tcl84
 
 DOWNLOAD_URL?=	http://www.speech.sri.com/projects/srilm/download.html
 

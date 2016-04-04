@@ -5,8 +5,6 @@ featured client, although it comes with a working example client.
 The main goals of libtorrent are to be cpu efficient, memory efficient and
 very easy to use.
 
-The 0.16 branch adds uTP support.
-
 Note that this is NOT the same library as the libtorrent port!
 
 WWW: http://www.rasterbar.com/products/libtorrent/

@@ -12,7 +12,7 @@ MASTER_SITES=	http://kbrandt.sdf-eu.org/FreeBSD/distfiles/ \
 MAINTAINER=	kbrandt@sdf-eu.org
 COMMENT=	Tetris like game with multiplayer support
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		autoreconf gmake localbase tar:bzip2
 USE_SDL=	sdl

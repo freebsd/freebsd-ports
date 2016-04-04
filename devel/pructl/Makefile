@@ -11,7 +11,7 @@ COMMENT=	Utilities to interface with PRUs
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libpru.so:${PORTSDIR}/devel/libpru
+LIB_DEPENDS=	libpru.so:devel/libpru
 
 USES=		cmake libedit
 

@@ -14,7 +14,7 @@ COMMENT=	Terminal emulator for the X windowing system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack vte libxml2

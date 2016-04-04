@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ${TESS_DATA="%%DATADIR%%"}
+exec %%PREFIX%%/libexec/${0##*/} ${TESS_OPTIONS="-u~/.tesseract"} "$@"

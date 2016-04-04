@@ -19,8 +19,8 @@ COMMENT=	Complete gcc-based toolcahin for TI MSP430 uC
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect \
-		flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	expect:lang/expect \
+		flex:textproc/flex
 
 OPTIONS_DEFINE=	INSIGHT PURE
 OPTIONS_DEFAULT=
@@ -35,9 +35,9 @@ INSIGHT_USE=			XORG=x11
 PURE_CONFIGURE_OFF=	--with-gmp=${PREFIX} \
 			--with-mprf=${PREFIX} \
 			--with-mpc=${PREFIX}
-PURE_LIB_DEPENDS_OFF=	libgmp.so:${PORTSDIR}/math/gmp \
-			libmpfr.so:${PORTSDIR}/math/mpfr \
-			libmpc.so:${PORTSDIR}/math/mpc
+PURE_LIB_DEPENDS_OFF=	libgmp.so:math/gmp \
+			libmpfr.so:math/mpfr \
+			libmpc.so:math/mpc
 PURE_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-libgui_configure \
 			${PATCHDIR}/extra-patch-gdb_configure
 
@@ -59,7 +59,7 @@ MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MPURE} && ${PORT_OPTIONS:MINSIGHT}
-RUN_DEPENDS+=		iwidgets>0:${PORTSDIR}/x11-toolkits/iwidgets
+RUN_DEPENDS+=		iwidgets>0:x11-toolkits/iwidgets
 USES+=			tk:84+
 CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
 			--with-tk=${TK_LIBDIR}

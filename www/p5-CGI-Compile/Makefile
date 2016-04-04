@@ -14,12 +14,12 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-File-pushd>0:${PORTSDIR}/devel/p5-File-pushd
+	p5-File-pushd>0:devel/p5-File-pushd
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
-	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings \
-	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
-	p5-CGI-Emulate-PSGI>0:${PORTSDIR}/www/p5-CGI-Emulate-PSGI
+	p5-Test-NoWarnings>0:devel/p5-Test-NoWarnings \
+	p5-Test-Requires>0:devel/p5-Test-Requires \
+	p5-CGI-Emulate-PSGI>0:www/p5-CGI-Emulate-PSGI
 # Depending on Plack::Test causes cyclic dependencies.
 
 USES=		perl5

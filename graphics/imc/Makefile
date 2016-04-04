@@ -13,8 +13,8 @@ COMMENT=	Image Compiler
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-CGI>=0:${PORTSDIR}/www/p5-CGI
+BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD \
+		p5-CGI>=0:www/p5-CGI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake perl5

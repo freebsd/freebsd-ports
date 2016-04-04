@@ -12,10 +12,10 @@ DIST_SUBDIR=		${PORTNAME}
 MAINTAINER=		mr@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
-		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/bzrlib/plugins/bzrtools/bzrtools.py:${PORTSDIR}/devel/bzrtools
+BUILD_DEPENDS=	bzr:devel/bzr \
+		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/bzrlib/plugins/bzrtools/bzrtools.py:devel/bzrtools
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 CONFLICTS=	kicad-2014*
 
@@ -49,9 +49,9 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DKICAD_SKIP_BOOST=YES
 
 .if exists(${LOCALBASE}/bin/konqueror)
-RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kde4-baseapps
+RUN_DEPENDS+=	konqueror:x11/kde4-baseapps
 .else
-RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
+RUN_DEPENDS+=	xpdf:graphics/xpdf
 .endif
 
 .if defined(BOOTSTRAP)
@@ -70,8 +70,8 @@ BZR_SRC_REV!=	bzr revno lp:kicad
 # make && make makeplist && make generate-plist && make check-plist
 # < Check PLIST_FILE_LIST below >
 
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-FETCH_DEPENDS+=	bzr:${PORTSDIR}/devel/bzr
+FETCH_DEPENDS+=	svn:devel/subversion
+FETCH_DEPENDS+=	bzr:devel/bzr
 
 showversions:
 	@${ECHO} "BOOST_RELEASE: ${BOOST_RELEASE}"

@@ -3,6 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	EXIM/exim4/:exim
 DISTNAME=	${PORTNAME}-${EXIM_VERSION}
@@ -40,21 +41,21 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_SUB=	yes
 
-AUTH_SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+AUTH_SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 BDB_USE=	bdb=yes
-DMARC_LIB_DEPENDS=	libopendmarc.so:${PORTSDIR}/mail/opendmarc
+DMARC_LIB_DEPENDS=	libopendmarc.so:mail/opendmarc
 EMBEDDED_PERL_USE=	perl5=run,build
 EXIMON_USE=	xorg=x11,xaw,xt
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 ICONV_USES=	iconv:lib,build
-INTERNATIONAL_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+INTERNATIONAL_LIB_DEPENDS=	libidn.so:dns/libidn
 MYSQL_USE=	mysql=yes
 OPENLDAP_USE=	openldap=yes
 PGSQL_USES=	pgsql
-REDIS_LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
-SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
-SA_EXIM_RUN_DEPENDS=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/spamassassin
-SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
+REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
+SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:security/cyrus-sasl2-saslauthd
+SA_EXIM_RUN_DEPENDS=	${LOCALBASE}/bin/spamc:mail/spamassassin
+SPF_LIB_DEPENDS=	libspf2.so:mail/libspf2
 SQLITE_USE=	sqlite=yes
 SQLITE_USES=	pkgconfig
 
@@ -184,7 +185,7 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 
 # You should not need to fiddle with anything below this point.
 
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 
 .if ! ${PORT_OPTIONS:MDKIM}
 SEDLIST+=	-e 's,^\# (DISABLE_DKIM=),\1,'
@@ -364,7 +365,7 @@ SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-lradius,' \
 		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1/etc/radius.conf,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADLIB,'
 .elif ${WITH_RADIUS_TYPE:tl} == radiusclient
-LIB_DEPENDS+=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
+LIB_DEPENDS+=	libradiusclient-ng.so:net/radiusclient
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -lradiusclient-ng,' \
 		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE:S/,/\\,/g}/etc/radiusclient-ng/radiusclient.conf,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADIUSCLIENTNEW,'
@@ -460,7 +461,7 @@ SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
 .endif
 
 .if ${PORT_OPTIONS:MSRS}
-LIB_DEPENDS+=	libsrs_alt.so:${PORTSDIR}/mail/libsrs_alt
+LIB_DEPENDS+=	libsrs_alt.so:mail/libsrs_alt
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DEXPERIMENTAL_SRS,' \
 		-e 's,XX_SRS_LIBS_XX,-L${LOCALBASE}/lib -lsrs_alt,'
 .else

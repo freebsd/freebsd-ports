@@ -12,7 +12,7 @@ COMMENT=	Collection of tools for internationalizing Python applications
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py3-pytz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py3-pytz
 
 USES=		python:3
 USE_PYTHON=	autoplist concurrent distutils

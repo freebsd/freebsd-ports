@@ -13,8 +13,8 @@ MASTER_SITES=	LOCAL/garga/ucspi-ssl \
 MAINTAINER?=	lx@FreeBSD.org
 COMMENT?=	UCSPI tools for building SSL client-server applications
 
-RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS=	tcpserver:sysutils/ucspi-tcp \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 CONFLICTS?=	ucspi-ssl-tls-[0-9]*
 

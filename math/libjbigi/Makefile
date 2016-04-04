@@ -11,7 +11,7 @@ DISTNAME=	i2psource_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	i2p JNI to GNU MP Bignum library (libgmp)
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		tar:bzip2
 USE_JAVA=	yes

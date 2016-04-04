@@ -1,0 +1,7 @@
+bin/pdfpc
+@sample etc/pdfpcrc.sample
+man/man1/pdfpc.1.gz
+share/pixmaps/pdfpc/blank.svg
+share/pixmaps/pdfpc/pause.svg
+share/pixmaps/pdfpc/pdfpc.css
+share/pixmaps/pdfpc/snow.svg

@@ -13,7 +13,7 @@ COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
 LICENSE=	MPL GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=	DEBUGGER DISABLE_META DOCS DOCUMENT_ERRORS DOM
 
@@ -26,7 +26,7 @@ OPTIONS_DEFAULT=	DOM DOCUMENT_ERRORS
 
 DEBUGGER_CONFIGURE_ENABLE=	debugger
 DISABLE_META_CONFIGURE_ON=	--disable-adding-meta
-DOCS_BUILD_DEPENDS=		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+DOCS_BUILD_DEPENDS=		p5-XML-Parser>=0:textproc/p5-XML-Parser
 DOCS_CONFIGURE_ON=		--with-html-dir=${DOCSDIR}
 DOCS_USES=			perl5
 DOCS_USE=			PERL5=build

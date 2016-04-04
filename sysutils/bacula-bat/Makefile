@@ -6,8 +6,8 @@ PKGNAMESUFFIX=	-bat
 
 COMMENT=	Network backup solution (GUI)
 
-LIB_DEPENDS+=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
-		libbac.so:${PORTSDIR}/sysutils/bacula-client
+LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \
+		libbac.so:sysutils/bacula-client
 
 USES=		pkgconfig
 USE_QT4=	qmake_build uic_build moc_build rcc_build

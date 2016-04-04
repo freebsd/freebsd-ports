@@ -17,8 +17,8 @@ PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libpcre.so:devel/pcre \
+		libffi.so:devel/libffi
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -78,7 +78,7 @@ GLIB_ARCH=	${ARCH}
 CONFIGURE_TARGET=${GLIB_ARCH}-portbld-freebsd${OSREL}
 
 .if ${PORT_OPTIONS:MCOLLATION_FIX}
-LIB_DEPENDS+=	libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicui18n.so:devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 		${FILESDIR}/extra-patch-glib_gunicollate.c
 # Disable it until someone can figure why it causes net-im/pidgin crashed.

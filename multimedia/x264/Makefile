@@ -34,8 +34,8 @@ COMMENT?=	H.264/MPEG-4 AVC Video Encoding (Front End CLI)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	yasm>=1.2.0:${PORTSDIR}/devel/yasm \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	yasm>=1.2.0:devel/yasm \
+		bash:shells/bash
 
 X264_BUILD=	144
 X264_REV=	2533
@@ -59,13 +59,13 @@ DEBUG_CONFIGURE_ON=	--enable-debug
 DEBUG_CONFIGURE_OFF=	--enable-strip
 
 GPAC_CONFIGURE_OFF=	--disable-gpac
-GPAC_LIB_DEPENDS=	libgpac.so:${PORTSDIR}/multimedia/gpac-libgpac
+GPAC_LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac
 
 LAVF_CONFIGURE_OFF=	--disable-swscale --disable-lavf
-LAVF_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-			libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
-			libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
-			libswscale.so:${PORTSDIR}/multimedia/ffmpeg
+LAVF_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+			libavformat.so:multimedia/ffmpeg \
+			libavutil.so:multimedia/ffmpeg \
+			libswscale.so:multimedia/ffmpeg
 
 CONFIGURE_COMMON_ARGS=	--prefix=${PREFIX} \
 			--extra-cflags="-I${LOCALBASE}/include" \
@@ -81,7 +81,7 @@ CFLAGS_armv6+=		-mcpu=arm1136jf-s
 
 .if ${SLAVE_PORT} == "no"
 PLIST_FILES=	bin/x264
-LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
+LIB_DEPENDS=	libx264.so:multimedia/libx264
 .endif
 
 .if ${PORT_OPTIONS:MGCC}

@@ -1,4 +1,5 @@
 bin/mod_python
+@sample %%APACHEETCDIR%%/modules.d/270_mod_python.conf.sample
 %%PYTHON_SITELIBDIR%%/mod_python-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/mod_python/Cookie.py
 %%PYTHON_SITELIBDIR%%/mod_python/Cookie.pyc
@@ -43,7 +44,4 @@ bin/mod_python
 %%PYTHON_SITELIBDIR%%/mod_python/wsgi.py
 %%PYTHON_SITELIBDIR%%/mod_python/wsgi.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/wsgi.pyo
-@unexec /usr/bin/sed -i '' '/LoadModule %%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
 %%APACHEMODDIR%%/%%AP_MODULE%%
-@exec %D/sbin/apxs -e %%AP_MOD_EN%% -n %%AP_NAME%% %D/%F
-@unexec echo "Don't forget to remove all mod_%%AP_NAME%%-related directives in your httpd.conf"

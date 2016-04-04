@@ -29,9 +29,9 @@ HTMLDOCS_DESC=	Build and install HTML documentation
 EXAMPLES_SUB_FILES=	pkg-message
 EXAMPLES_SUB_LIST=	PORTSDIR=${PORTSDIR}
 
-HTMLDOCS_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-			${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-			docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
+HTMLDOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+			${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
+			docbook-xml>0:textproc/docbook-xml
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^lqr_pkgconfigdir/ s|$$(libdir)|$${exec_prefix}/libdata|' \

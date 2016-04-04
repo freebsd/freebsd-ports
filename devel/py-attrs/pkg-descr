@@ -1,0 +1,24 @@
+attrs is an MIT-licensed Python package with class decorators
+that ease the chores of implementing the most common attribute-related
+object protocols:
+
+>>> import attr
+>>> @attr.s
+... class C(object):
+...     x = attr.ib(default=42)
+...     y = attr.ib(default=attr.Factory(list))
+>>> i = C(x=1, y=2)
+
+(If you don't like the playful attr.s and attr.ib, you can also use their
+no-nonsense aliases attr.attributes and attr.attr).
+
+You just specify the attributes to work with and attrs gives you:
+
+    a nice human-readable __repr__,
+    a complete set of comparison methods,
+    an initializer,
+    and much more
+
+without writing dull boilerplate code again and again.
+
+WWW: https://github.com/hynek/attrs

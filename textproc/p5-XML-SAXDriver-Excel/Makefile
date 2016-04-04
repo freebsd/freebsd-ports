@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl SAX driver for converting Excel files to XML
 
-BUILD_DEPENDS=	p5-Spreadsheet-ParseExcel>=0.2603:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
-		p5-XML-SAX>=0.14:${PORTSDIR}/textproc/p5-XML-SAX
+BUILD_DEPENDS=	p5-Spreadsheet-ParseExcel>=0.2603:textproc/p5-Spreadsheet-ParseExcel \
+		p5-XML-SAX>=0.14:textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 dos2unix

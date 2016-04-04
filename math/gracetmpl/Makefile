@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide an easy way to use existing grace-files as a template
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:math/py-numarray
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:math/py-numarray
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

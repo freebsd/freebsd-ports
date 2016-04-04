@@ -11,11 +11,11 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to start async Mojo servers easily
 
 RUN_DEPENDS=	\
-	p5-AnyEvent>=5.201:${PORTSDIR}/devel/p5-AnyEvent \
-	p5-AnyEvent-HTTP>=1.43:${PORTSDIR}/www/p5-AnyEvent-HTTP \
-	p5-Mojolicious>=0.991251:${PORTSDIR}/www/p5-Mojolicious
-#	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
-#	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
+	p5-AnyEvent>=5.201:devel/p5-AnyEvent \
+	p5-AnyEvent-HTTP>=1.43:www/p5-AnyEvent-HTTP \
+	p5-Mojolicious>=0.991251:www/p5-Mojolicious
+#	p5-Test-Deep>0:devel/p5-Test-Deep \
+#	p5-Test-Exception>0:devel/p5-Test-Exception
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

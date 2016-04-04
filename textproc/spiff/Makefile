@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Declarative YAML templating system tuned for BOSH deployment manifests
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudfoundry-incubator

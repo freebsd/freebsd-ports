@@ -12,8 +12,8 @@ COMMENT=	Program to replace LaTeX formulas in HTML files with images
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgif.so:graphics/giflib \
+		libpng.so:graphics/png
 
 USE_TEX=	latex dvipsk
 BINPATH=	${PREFIX}/bin

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tint2
-PORTVERSION=	0.12.6
+PORTVERSION=	0.12.7
 CATEGORIES=	x11
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/tint/
 
@@ -11,8 +11,8 @@ COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2 \
-		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
+		libstartup-notification-1.so:x11/startup-notification
 
 USES=		alias cmake gettext pkgconfig tar:xz
 USE_GNOME=	glib20 gtk20 librsvg2 pango

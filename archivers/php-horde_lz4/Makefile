@@ -14,6 +14,7 @@ COMMENT=	Horde LZ4 Compression Extension for php
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-horde_lz4
 

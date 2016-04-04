@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Contributed Tk widgets
 
-BUILD_DEPENDS=	p5-Tk>=804:${PORTSDIR}/x11-toolkits/p5-Tk
+BUILD_DEPENDS=	p5-Tk>=804:x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

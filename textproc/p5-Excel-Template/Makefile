@@ -14,11 +14,11 @@ COMMENT=	Perl module for templating Excel files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-Spreadsheet-WriteExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
-		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+BUILD_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-Test-Exception>=0.21:devel/p5-Test-Exception \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-Spreadsheet-WriteExcel>=0:textproc/p5-Spreadsheet-WriteExcel \
+		p5-Test-Deep>=0:devel/p5-Test-Deep
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

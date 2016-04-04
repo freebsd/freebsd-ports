@@ -16,7 +16,7 @@ COMMENT=	Perl binding for GDAL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
-LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS=	libgdal.so:graphics/gdal
 
 USES=		perl5 tar:xz
 

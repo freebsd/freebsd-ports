@@ -65,14 +65,14 @@ TBB_DESC=		TBB support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDC1394}
-LIB_DEPENDS+=	libdc1394.so:${PORTSDIR}/multimedia/libdc1394
+LIB_DEPENDS+=	libdc1394.so:multimedia/libdc1394
 CMAKE_ARGS+=	-DWITH_1394:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_1394:BOOL=Off
 .endif
 
 .if ${PORT_OPTIONS:MEIGEN3}
-BUILD_DEPENDS+=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
+BUILD_DEPENDS+=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
 CMAKE_ARGS+=	-DWITH_EIGEN:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_EIGEN:BOOL=Off
@@ -87,7 +87,7 @@ CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=On \
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=Off
@@ -104,14 +104,14 @@ CMAKE_ARGS+=	-DWITH_GSTREAMER:BOOL=Off
 USE_GNOME+=	gtk20
 CMAKE_ARGS+=	-DWITH_GTK:BOOL=On
 . if ${PORT_OPTIONS:MOPENGL}
-LIB_DEPENDS+=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 . endif
 .else
 CMAKE_ARGS+=	-DWITH_GTK:BOOL=Off
 .endif
 
 .if ${PORT_OPTIONS:MJASPER}
-LIB_DEPENDS+=	libjasper.so:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS+=	libjasper.so:graphics/jasper
 CMAKE_ARGS+=	-DWITH_JASPER:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_JASPER:BOOL=Off
@@ -131,7 +131,7 @@ CMAKE_ARGS+=	-DBUILD_opencv_nonfree:BOOL=Off
 .endif
 
 .if ${PORT_OPTIONS:MOPENEXR}
-LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:graphics/OpenEXR
 CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=Off
@@ -144,7 +144,7 @@ CMAKE_ARGS+=	-DWITH_OPENGL:BOOL=Off
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 CMAKE_ARGS+=	-DWITH_PNG:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_PNG:BOOL=Off
@@ -190,7 +190,7 @@ CMAKE_ARGS+=	-DENABLE_SSE:BOOL=Off \
 .endif
 
 .if ${PORT_OPTIONS:MTBB}
-LIB_DEPENDS+=	libtbb.so:${PORTSDIR}/devel/tbb
+LIB_DEPENDS+=	libtbb.so:devel/tbb
 CMAKE_ARGS+=	-DWITH_TBB:BOOL=On \
 		-DTBB_INCLUDE_DIR:STRING="${LOCALBASE}/include"
 .else
@@ -198,15 +198,15 @@ CMAKE_ARGS+=	-DWITH_TBB:BOOL=Off
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libtiff.so:graphics/tiff
 CMAKE_ARGS+=	-DWITH_TIFF:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_TIFF:BOOL=Off
 .endif
 
 .if ${PORT_OPTIONS:MV4L}
-LIB_DEPENDS+=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 CMAKE_ARGS+=	-DWITH_V4L:BOOL=On \
 		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 .else
@@ -214,7 +214,7 @@ CMAKE_ARGS+=	-DWITH_V4L:BOOL=Off
 .endif
 
 .if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	libxine.so:multimedia/libxine
 CMAKE_ARGS+=	-DWITH_XINE:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_XINE:BOOL=Off
@@ -225,7 +225,7 @@ CMAKE_ARGS+=	-DWITH_XINE:BOOL=Off
 CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
 . endfor
 .elif defined(OCV_PYTHON)
-LIB_DEPENDS+=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv
 BUILD_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYNUMPY}
 USES+=		python
@@ -235,8 +235,8 @@ CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
 . endfor
 INSTALL_WRKSRC=	${WRKSRC}/modules/python
 .elif defined(OCV_JAVA)
-BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
-LIB_DEPENDS+=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
+BUILD_DEPENDS+=	ant:devel/apache-ant
+LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv
 USES+=		python:build
 USE_JAVA=	yes
 CMAKE_ARGS+=	-DBUILD_opencv_java:BOOL=On
@@ -246,7 +246,7 @@ CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
 CONFIGURE_ENV+=	JAVA_HOME="${JAVA_HOME}"
 INSTALL_WRKSRC=	${WRKSRC}/modules/java
 .else
-LIB_DEPENDS+=	libopencv_core.so:${PORTSDIR}/graphics/opencv-core
+LIB_DEPENDS+=	libopencv_core.so:graphics/opencv-core
 . for module in ${OCV_JAVA_MODS} ${OCV_PYTHON_MODS}
 CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
 . endfor

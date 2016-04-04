@@ -1,0 +1,9 @@
+Haskell-mode is a major Emacs mode for editing Haskell source code. It
+provides syntax highlighting and automatic indentation and comes with
+inf-haskell which allows interaction with an inferior Haskell interactive
+loop such as the one of Hugs or GHCi.
+
+Note that if you want to use haskell-mode under XEmacs, you should
+install editors/xemacs-packages instead.
+
+WWW: http://projects.haskell.org/haskellmode-emacs/

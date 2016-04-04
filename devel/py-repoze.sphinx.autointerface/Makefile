@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	repoze.sphinx.autointerface
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Auto-generates API docs from Zope interfaces
 
 LICENSE=	BSD4CLAUSE

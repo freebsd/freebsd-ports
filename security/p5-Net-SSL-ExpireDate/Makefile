@@ -13,12 +13,12 @@ COMMENT=	Obtain expiration date of certificate
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Crypt-OpenSSL-X509>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-X509 \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-Time-Duration-Parse>=0:${PORTSDIR}/devel/p5-Time-Duration-Parse \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-Crypt-OpenSSL-X509>=0:security/p5-Crypt-OpenSSL-X509 \
+		p5-DateTime>=0:devel/p5-DateTime \
+		p5-Time-Duration-Parse>=0:devel/p5-Time-Duration-Parse \
+		p5-TimeDate>=0:devel/p5-TimeDate \
+		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

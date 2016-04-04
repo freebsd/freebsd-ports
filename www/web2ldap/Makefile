@@ -14,10 +14,10 @@ COMMENT=	Python-based WWW gateway to LDAP servers
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.0:${PORTSDIR}/net/py-ldap \
-		${PYTHON_SITELIBDIR}/pyweblib/__init__.py:${PORTSDIR}/www/pyweblib \
-		${PYTHON_PKGNAMEPREFIX}ipaddr>0:${PORTSDIR}/devel/py-ipaddr \
-		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.0:net/py-ldap \
+		${PYTHON_SITELIBDIR}/pyweblib/__init__.py:www/pyweblib \
+		${PYTHON_PKGNAMEPREFIX}ipaddr>0:devel/py-ipaddr \
+		${LOCALBASE}/etc/mime.types:misc/mime-support
 
 OPTIONS_DEFINE=	DOCS
 USES=		cpe python:2 shebangfix

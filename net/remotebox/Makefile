@@ -13,9 +13,9 @@ COMMENT=	Open Source VirtualBox Client with Remote Management
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
-		rdesktop:${PORTSDIR}/net/rdesktop
+RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
+		rdesktop:net/rdesktop
 
 LICENSE_FILE_GPLv2=	${WRKSRC}/docs/COPYING
 

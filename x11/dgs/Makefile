@@ -3,15 +3,15 @@
 
 PORTNAME=	dgs
 PORTVERSION=	0.5.9.1
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	x11
 MASTER_SITES=	GNU/../old-gnu/dgs
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display ghostscript system
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 MAKE_JOBS_UNSAFE=	yes
 

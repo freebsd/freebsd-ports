@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.andre-simon.de/zip/
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
 
-BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USES=		dos2unix gmake lua:52 pkgconfig tar:bzip2
 MAKEFILE=	makefile

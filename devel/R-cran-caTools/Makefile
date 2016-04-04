@@ -11,7 +11,7 @@ COMMENT=	Tools: moving window statistics, GIF, Base64, ROC AUC, etc
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-bitops>0:${PORTSDIR}/devel/R-cran-bitops
+RUN_DEPENDS=	R-cran-bitops>0:devel/R-cran-bitops
 
 USES=	cran:auto-plist
 

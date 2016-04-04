@@ -5,6 +5,7 @@ lib/libmaxminddb.a
 lib/libmaxminddb.so
 lib/libmaxminddb.so.0
 lib/libmaxminddb.so.0.0.7
+libdata/pkgconfig/libmaxminddb.pc
 man/man1/mmdblookup.1.gz
 man/man3/MMDB_aget_value.3.gz
 man/man3/MMDB_close.3.gz

@@ -13,11 +13,11 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py3-dbus \
-		${PYTHON_SITELIBDIR}/gi/overrides/Gst.py:${PORTSDIR}/multimedia/py3-gstreamer1 \
-		${PYTHON_PKGNAMEPREFIX}pylast>0:${PORTSDIR}/audio/py3-pylast \
-		git:${PORTSDIR}/devel/git
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py3-xdg \
+		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py3-dbus \
+		${PYTHON_SITELIBDIR}/gi/overrides/Gst.py:multimedia/py3-gstreamer1 \
+		${PYTHON_PKGNAMEPREFIX}pylast>0:audio/py3-pylast \
+		git:devel/git
 
 USE_GNOME=	gtk30 py3gobject3
 USES=		python:3

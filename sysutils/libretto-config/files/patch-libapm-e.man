@@ -1,5 +1,5 @@
---- libapm-e.man.orig	Fri Jun 19 04:02:48 1998
-+++ libapm-e.man	Thu Aug  2 17:34:01 2001
+--- libapm-e.man.orig	1998-06-19 03:02:48 UTC
++++ libapm-e.man
 @@ -1,80 +1,98 @@
  .\" Written Tue May 12 19:30:00 1998 by ISHIOKA Takashi
  .\" (ishioka@ppp01.infopepper.or.jp )

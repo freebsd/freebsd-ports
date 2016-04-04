@@ -12,23 +12,23 @@ COMMENT=	Open Source Geography Education application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libmspack.so:${PORTSDIR}/archivers/libmspack \
-		libspatialite.so:${PORTSDIR}/databases/spatialite \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libgeos.so:${PORTSDIR}/graphics/geos \
-		libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
-		librasterlite.so:${PORTSDIR}/graphics/librasterlite \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libproj.so:${PORTSDIR}/graphics/proj \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfreexl.so:${PORTSDIR}/textproc/freexl \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libmspack.so:archivers/libmspack \
+		libspatialite.so:databases/spatialite \
+		libsqlite3.so:databases/sqlite3 \
+		libpthread-stubs.so:devel/libpthread-stubs \
+		libpcre.so:devel/pcre \
+		libcairo.so:graphics/cairo \
+		libgeos.so:graphics/geos \
+		libjbig.so:graphics/jbigkit \
+		libgeotiff.so:graphics/libgeotiff \
+		librasterlite.so:graphics/librasterlite \
+		libpng.so:graphics/png \
+		libproj.so:graphics/proj \
+		libtiff.so:graphics/tiff \
+		libfreetype.so:print/freetype2 \
+		libexpat.so:textproc/expat2 \
+		libfreexl.so:textproc/freexl \
+		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake iconv jpeg pkgconfig

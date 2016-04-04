@@ -12,8 +12,8 @@ COMMENT=	Pure perl implement of Tacacs+ client
 
 LICENSE=	ART20
 
-RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+RUN_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor
 
 USES=		perl5
 USE_PERL5=	configure

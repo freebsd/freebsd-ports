@@ -10,9 +10,9 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SIP connection manager based around the Sofia-SIP library
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libsofia-sip-ua-glib.so:${PORTSDIR}/net/sofia-sip \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libsofia-sip-ua-glib.so:net/sofia-sip \
+		libtelepathy-glib.so:net-im/telepathy-glib
 
 USES=		gmake pathfix pkgconfig python:build
 USE_GNOME=	glib20 libxslt:build

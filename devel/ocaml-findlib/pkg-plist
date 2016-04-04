@@ -38,6 +38,7 @@ bin/safe_camlp4
 %%OCAML_SITELIBDIR%%/num-top/num_top_printers.cmi
 %%OCAML_SITELIBDIR%%/num/META
 %%OCAML_SITELIBDIR%%/ocamlbuild/META
+%%OCAML_SITELIBDIR%%/ocamldoc/META
 %%OCAML_SITELIBDIR%%/stdlib/META
 %%OCAML_SITELIBDIR%%/str/META
 %%OCAML_SITELIBDIR%%/threads/META

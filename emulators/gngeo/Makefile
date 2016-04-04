@@ -34,7 +34,7 @@ STAR_DESC=	Use Starscream as 68k emulator (broken)
 
 .if ${PORT_OPTIONS:MI386ASM} || ${PORT_OPTIONS:MRAZE} || \
     ${PORT_OPTIONS:MSTAR}
-BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=		nasm:devel/nasm
 .endif
 
 .if ${PORT_OPTIONS:MI386ASM}

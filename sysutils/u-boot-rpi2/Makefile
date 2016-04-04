@@ -14,7 +14,7 @@ COMMENT=	Cross-build U-Boot loader for Raspberry Pi 2
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	arm-none-eabi-gcc:${PORTSDIR}/devel/arm-none-eabi-gcc
+BUILD_DEPENDS=	arm-none-eabi-gcc:devel/arm-none-eabi-gcc
 
 NO_ARCH=	yes
 

@@ -13,8 +13,8 @@ COMMENT=	Add outlines to PDF files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl \
-		p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2
+BUILD_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
+		p5-PDF-API2>=0:textproc/p5-PDF-API2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

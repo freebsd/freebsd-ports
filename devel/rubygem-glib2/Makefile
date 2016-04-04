@@ -11,7 +11,7 @@ COMMENT=	Ruby binding for GLib2
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-pkg-config>=0:${PORTSDIR}/devel/rubygem-pkg-config
+RUN_DEPENDS=	rubygem-pkg-config>=0:devel/rubygem-pkg-config
 
 USE_GNOME=	glib20
 USE_RUBY=	yes

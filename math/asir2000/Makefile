@@ -18,7 +18,7 @@ LICENSE_NAME=	Risa/Asir Limited Use License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpari.so:${PORTSDIR}/math/pari
+LIB_DEPENDS=	libpari.so:math/pari
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		autoreconf readline tar:bz2

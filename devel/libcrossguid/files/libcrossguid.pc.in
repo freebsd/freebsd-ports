@@ -1,0 +1,10 @@
+prefix=%PREFIX%
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libguid
+Description: minimal and cross platform C++ GUID library
+Version: %VERSION%
+Libs: -L${libdir} -lguid
+Cflags: -I${includedir}
+

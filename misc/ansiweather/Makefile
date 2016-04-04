@@ -9,10 +9,10 @@ COMMENT=	Shell script for displaying the current weather in your terminal
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	jq:${PORTSDIR}/textproc/jq \
-		curl:${PORTSDIR}/ftp/curl \
-		bash:${PORTSDIR}/shells/bash \
-		gprintf:${PORTSDIR}/sysutils/coreutils
+RUN_DEPENDS=	jq:textproc/jq \
+		curl:ftp/curl \
+		bash:shells/bash \
+		gprintf:sysutils/coreutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fcambus

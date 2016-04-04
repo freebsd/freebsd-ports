@@ -13,7 +13,7 @@ DIST_SUBDIR=	perl
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GNU Data Base Manager (gdbm) interface
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/ext/GDBM_File ${DISTNAME}/t/lib
 

@@ -1,5 +1,5 @@
 This package is used by lang/gnatdroid to install the system root of
-Android 2.2 to 5.0 (API Level 8 to API Level 21) of the x86 architecture.
+Android 4.4 to 5.0 (API Level 19 to API Level 23) of the x86 architecture.
 The x86 cross-tools are built using these files, which in turn is required
 for the GNAT FreeBSD->Android(x86) cross-compiler that is gnatdroid.
 

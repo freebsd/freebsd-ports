@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	API for complex flow controls with asynchronous execution of external programs
 
-BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl
+BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+		p5-Locale-libintl>=0:devel/p5-Locale-libintl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

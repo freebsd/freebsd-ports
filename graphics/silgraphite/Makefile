@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig
 
 FREETYPE_CONFIGURE_WITH=freetype
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_USES=		iconv
 
 .include <bsd.port.mk>

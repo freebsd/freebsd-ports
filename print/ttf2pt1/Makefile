@@ -13,8 +13,8 @@ COMMENT=	True Type Font to Postscript Type 1 Converter
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils
+LIB_DEPENDS=	libfreetype.so:print/freetype2
+RUN_DEPENDS=	t1asm:print/t1utils
 
 USES=		pkgconfig shebangfix perl5 uidfix tar:tgz
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LIBS}" \

@@ -1,0 +1,9 @@
+py-adb is mainly targeted to users that need to communicate with
+Android devices in an automated fashion, such as in automated
+testing. It does not have a daemon between the client and the device,
+and therefore does not support multiple simultaneous commands to the
+same device. It does support any number of devices and never
+communicates with a device that it wasn't intended to, unlike the
+Android project's ADB.
+
+WWW: https://pypi.python.org/pypi/adb

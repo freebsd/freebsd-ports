@@ -1,6 +1,6 @@
---- src/constraint.c.orig	2015-03-14 21:24:11 UTC
+--- src/constraint.c.orig	2016-03-28 13:51:51 UTC
 +++ src/constraint.c
-@@ -665,7 +665,7 @@ httpsdate_request(struct httpsdate *http
+@@ -905,7 +905,7 @@ httpsdate_request(struct httpsdate *http
  		 * or ANSI C's asctime() - the latter doesn't include
  		 * the timezone which is required here.
  		 */

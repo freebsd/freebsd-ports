@@ -1,9 +1,0 @@
-bin/openvas-libnasl-config
-bin/openvas-nasl
-include/openvas/nasl.h
-lib/libopenvasnasl.a
-lib/libopenvasnasl.so
-lib/libopenvasnasl.so.2
-lib/libopenvasnasl.so.2.0.1
-man/man1/openvas-libnasl-config.1.gz
-man/man1/openvas-nasl.1.gz

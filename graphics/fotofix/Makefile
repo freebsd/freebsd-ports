@@ -9,8 +9,8 @@ CATEGORIES=	graphics
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 
-RUN_DEPENDS=	IPA>=1.03:${PORTSDIR}/graphics/IPA \
-		p5-Prima>=1.22:${PORTSDIR}/x11-toolkits/p5-Prima
+RUN_DEPENDS=	IPA>=1.03:graphics/IPA \
+		p5-Prima>=1.22:x11-toolkits/p5-Prima
 
 NO_ARCH=	yes
 

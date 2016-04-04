@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	CRUD interface to Hatena::Diary
 
-BUILD_DEPENDS=	p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-WWW-HatenaLogin>=0.02:${PORTSDIR}/www/p5-WWW-HatenaLogin \
-		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-Web-Scraper>=0:${PORTSDIR}/www/p5-Web-Scraper
+BUILD_DEPENDS=	p5-YAML-Syck>=0:textproc/p5-YAML-Syck \
+		p5-URI>=0:net/p5-URI \
+		p5-WWW-HatenaLogin>=0.02:www/p5-WWW-HatenaLogin \
+		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \
+		p5-Web-Scraper>=0:www/p5-Web-Scraper
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

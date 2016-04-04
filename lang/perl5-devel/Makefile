@@ -29,7 +29,7 @@ TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER}
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.23.8-117-gaeefbcf
+GH_TAGNAME=	v5.23.9-43-gef66793
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE
@@ -52,7 +52,7 @@ DEBUG_CONFIGURE_ON=	-Doptimize="-g" -DDEBUGGING
 DEBUG_CONFIGURE_OFF=	-Doptimize="${CFLAGS}"
 GDBM_CONFIGURE_ON=	-Di_gdbm
 GDBM_CONFIGURE_OFF=	-Ui_gdbm
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 PERL_64BITINT_CONFIGURE_ON=	-Duse64bitint
 MULTIPLICITY_CONFIGURE_ON=	-Dusemultiplicity=y
 MULTIPLICITY_CONFIGURE_OFF=	-Dusemultiplicity=n
@@ -270,6 +270,12 @@ post-patch-PTHREAD-on:
 post-patch-PTHREAD-off:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
+
+.if ${CC} == /nxb-bin/usr/bin/cc
+post-build:
+	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
+		${WRKSRC}/lib/Config.pm ${WRKSRC}/lib/Config_heavy.pl
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${SITE_MAN1} ${STAGEDIR}${SITE_MAN3}

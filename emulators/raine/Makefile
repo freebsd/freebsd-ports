@@ -13,8 +13,8 @@ COMMENT=	Arcade Emulator for M68000, M68020 and Z80 based hardware
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	nasm>0:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	nasm>0:devel/nasm
+LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

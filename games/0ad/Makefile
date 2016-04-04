@@ -1,26 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.19
+PORTVERSION=	0.0.20
 CATEGORIES=	games
-MASTER_SITES=	SF/zero-ad/releases
+MASTER_SITES=	SF/zero-ad/releases \
+		http://releases.wildfiregames.com/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
 		${PORTNAME}-${PORTVERSION}-alpha-unix-data.tar.xz
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real-time strategy (RTS) game of ancient warfare
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libgloox.so:${PORTSDIR}/net-im/gloox \
-		libminiupnpc.so:${PORTSDIR}/net/miniupnpc \
-		libnspr4.so:${PORTSDIR}/devel/nspr \
-		libenet.so:${PORTSDIR}/net/enet
+BUILD_DEPENDS=	zip:archivers/zip \
+		cmake:devel/cmake
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libpng.so:graphics/png \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libcurl.so:ftp/curl \
+		libgloox.so:net-im/gloox \
+		libminiupnpc.so:net/miniupnpc \
+		libnspr4.so:devel/nspr \
+		libenet.so:net/enet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
@@ -29,24 +30,13 @@ USES=		compiler:c++11-lib dos2unix execinfo gmake iconv openal:al \
 		pkgconfig tar:xz
 USE_GNOME=	libxml2 gtk20
 USE_GL=		gl
+USE_SDL=	sdl2
 BUNDLE_LIBS=	yes
 DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
 
 USE_WX=		2.8+
 WX_COMPS=	wx:lib
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
-
-OPTIONS_SINGLE=		SDL_VERSION
-OPTIONS_SINGLE_SDL_VERSION=	SDL SDL2
-OPTIONS_DEFAULT=	SDL2
-
-SDL_VERSION_DESC=	SDL version
-SDL_DESC=		Use SDL 1.2 (deprecated)
-SDL2_DESC=		Use SDL 2.0
-
-SDL_USE=		SDL=sdl
-SDL_VARS=		0ADSDLARG=--sdl1
-SDL2_USE=		SDL=sdl2
 
 MANUAL_PACKAGE_BUILD=	huge
 

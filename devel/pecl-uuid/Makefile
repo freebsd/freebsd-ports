@@ -13,7 +13,7 @@ COMMENT=	UUID extension in PHP
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		tar:tgz
 USE_PHP=	yes

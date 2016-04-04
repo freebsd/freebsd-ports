@@ -12,8 +12,8 @@ COMMENT=	Hangul support for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
-		libhangul.so:${PORTSDIR}/korean/libhangul
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
+		libhangul.so:korean/libhangul
 
 USES=		cmake gettext pkgconfig tar:xz
 INSTALLS_ICONS=	yes

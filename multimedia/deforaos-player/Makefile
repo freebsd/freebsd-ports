@@ -14,11 +14,11 @@ COMMENT=	DeforaOS desktop media player
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
-		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+		libDesktop.so:x11/deforaos-libdesktop
+RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
 USE_GNOME=	gtk20

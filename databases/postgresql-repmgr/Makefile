@@ -12,7 +12,7 @@ COMMENT=	PostgreSQL replication manager
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	rsync:net/rsync
 
 USES+=		gmake pgsql:9.0+
 USE_RC_SUBR=	repmgrd

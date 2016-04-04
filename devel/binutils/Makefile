@@ -4,7 +4,7 @@
 PORTNAME=	binutils
 PORTVERSION=	2.25.1
 PORTEPOCH=	1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 
@@ -14,8 +14,8 @@ COMMENT?=	GNU binary tools
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/gmp \
-		${LOCALBASE}/lib/libmpfr.so:${PORTSDIR}/math/mpfr
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
+		${LOCALBASE}/lib/libmpfr.so:math/mpfr
 
 CONFLICTS=	libbfd-[0-9]*
 
@@ -48,6 +48,8 @@ INFO=		as \
 
 CONFIGURE_ARGS+=	--disable-werror \
 			--with-sysroot=/
+
+MAKE_ENV+=	ac_cv_func_sbrk=0
 
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
@@ -82,5 +84,10 @@ post-install:
 .endif
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
 .endif
+.for tool in ${BUREMOVE}
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/${BUTARGET}-${tool} \
+	    ${STAGEDIR}${PREFIX}/man/man1/${BUTARGET}-${tool}.1 \
+	    ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/${tool}
+.endfor
 
 .include <bsd.port.post.mk>

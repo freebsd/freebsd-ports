@@ -12,6 +12,7 @@ COMMENT=	Simple processing of Russian strings
 LICENSE=	MIT
 
 DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=	2016-04-14
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

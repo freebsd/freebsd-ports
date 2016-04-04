@@ -12,14 +12,14 @@ COMMENT=	BTree-based folder implementation with order support
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.memoize>0:${PORTSDIR}/www/py-plone.memoize \
-		${PYTHON_PKGNAMEPREFIX}Products.BTreeFolder2>0:${PORTSDIR}/devel/py-Products.BTreeFolder2 \
-		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>0:${PORTSDIR}/devel/py-Products.CMFCore \
-		${PYTHON_PKGNAMEPREFIX}Products.ZCatalog>0:${PORTSDIR}/devel/py-Products.ZCatalog \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.component>0:${PORTSDIR}/devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.annotation>0:${PORTSDIR}/devel/py-zope.annotation \
-		${PYTHON_PKGNAMEPREFIX}zope.container>0:${PORTSDIR}/devel/py-zope.container
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.memoize>0:www/py-plone.memoize \
+		${PYTHON_PKGNAMEPREFIX}Products.BTreeFolder2>0:devel/py-Products.BTreeFolder2 \
+		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>0:devel/py-Products.CMFCore \
+		${PYTHON_PKGNAMEPREFIX}Products.ZCatalog>0:devel/py-Products.ZCatalog \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component \
+		${PYTHON_PKGNAMEPREFIX}zope.annotation>0:devel/py-zope.annotation \
+		${PYTHON_PKGNAMEPREFIX}zope.container>0:devel/py-zope.container
 
 NO_ARCH=	yes
 USES=		python

@@ -3,6 +3,7 @@ lib/elixir/lib/estree/ebin/Elixir.ESTree.ArrayPattern.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.ArrowFunctionExpression.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.AssignmentExpression.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.AssignmentPattern.beam
+lib/elixir/lib/estree/ebin/Elixir.ESTree.AssignmentProperty.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.AwaitExpression.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.BinaryExpression.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.BlockStatement.beam
@@ -96,6 +97,7 @@ lib/elixir/lib/estree/lib/es_tree/array_pattern.ex
 lib/elixir/lib/estree/lib/es_tree/arrow_function_expression.ex
 lib/elixir/lib/estree/lib/es_tree/assignment_expression.ex
 lib/elixir/lib/estree/lib/es_tree/assignment_pattern.ex
+lib/elixir/lib/estree/lib/es_tree/assignment_property.ex
 lib/elixir/lib/estree/lib/es_tree/await_expression.ex
 lib/elixir/lib/estree/lib/es_tree/binary_expression.ex
 lib/elixir/lib/estree/lib/es_tree/block_statement.ex

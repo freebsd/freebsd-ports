@@ -1,3 +1,4 @@
+lib/elixir/lib/csv/ebin/Elixir.CSV.Decoder.RowLengthError.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Decoder.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Defaults.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Encode.Any.beam
@@ -6,9 +7,10 @@ lib/elixir/lib/csv/ebin/Elixir.CSV.Encode.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Encoder.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Lexer.EncodingError.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Lexer.beam
+lib/elixir/lib/csv/ebin/Elixir.CSV.LineAggregator.CorruptStreamError.beam
+lib/elixir/lib/csv/ebin/Elixir.CSV.LineAggregator.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Parser.SyntaxError.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Parser.beam
-lib/elixir/lib/csv/ebin/Elixir.CSV.Relay.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.beam
 lib/elixir/lib/csv/ebin/csv.app
 lib/elixir/lib/csv/lib/csv.ex
@@ -18,6 +20,6 @@ lib/elixir/lib/csv/lib/csv/encode.ex
 lib/elixir/lib/csv/lib/csv/encoder.ex
 lib/elixir/lib/csv/lib/csv/exceptions.ex
 lib/elixir/lib/csv/lib/csv/lexer.ex
+lib/elixir/lib/csv/lib/csv/line_aggregator.ex
 lib/elixir/lib/csv/lib/csv/parser.ex
-lib/elixir/lib/csv/lib/csv/relay.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md

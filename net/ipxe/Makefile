@@ -5,6 +5,7 @@
 
 PORTNAME=	ipxe
 PORTVERSION=	20160213
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	t@tobik.me
@@ -12,9 +13,9 @@ COMMENT=	Open source network boot firmware
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:${PORTSDIR}/sysutils/syslinux \
-		bash:${PORTSDIR}/shells/bash \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:sysutils/syslinux \
+		bash:shells/bash \
+		mkisofs:sysutils/cdrtools
 
 USE_GITHUB=	yes
 GH_PROJECT=	ipxe
@@ -29,10 +30,12 @@ GH_PROJECT=	ipxe
 GH_TAGNAME=	7ecfe7159f94193a666200a17057d4cd5981b850
 
 USES=		gmake perl5 shebangfix
+USE_BINUTILS=	yes
 USE_GCC=	yes
 MAKE_ARGS=	PERL=${PERL} \
 		CC=${CC} \
 		HOST_CC=${CC} \
+		OBJCOPY="${LOCALBASE}/bin/objcopy" \
 		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 		LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
 WRKSRC_SUBDIR=	src

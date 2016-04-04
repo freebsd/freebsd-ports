@@ -14,7 +14,7 @@ BROKEN=		unfetchable
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

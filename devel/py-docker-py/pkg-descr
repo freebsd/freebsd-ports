@@ -1,0 +1,5 @@
+A Python library for the Docker Remote API. It does everything the docker
+command does, but from within Python: run containers, manage them, pull/push
+images, etc.
+
+WWW: https://github.com/docker/docker-py

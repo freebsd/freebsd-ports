@@ -11,8 +11,8 @@ DISTNAME=	rssowl_${PORTVERSION:S|.|_|g}_src
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	Portable RSS, RDF, Atom Newsfeeds reader
 
-BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
-RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
+BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
+RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 
 BUILD_WRKSRC=	${WRKSRC}/src
 

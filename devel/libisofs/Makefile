@@ -12,7 +12,7 @@ COMMENT=	Libburnia ISO9660 filesystem creation library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libburn.so:${PORTSDIR}/devel/libburn
+LIB_DEPENDS=	libburn.so:devel/libburn
 
 GNU_CONFIGURE=	yes
 USES=		iconv libtool

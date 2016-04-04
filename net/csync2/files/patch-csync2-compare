@@ -1,8 +1,0 @@
---- csync2-compare.orig	2010-05-20 10:55:31.000000000 +0000
-+++ csync2-compare	2010-05-20 10:55:50.000000000 +0000
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- 
- verbose=0
- 

@@ -10,10 +10,10 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU Smalltalk
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libcairo.so:${PORTSDIR}/graphics/cairo
+BUILD_DEPENDS=	zip:archivers/zip \
+		gawk:lang/gawk
+LIB_DEPENDS=	libgdbm.so:databases/gdbm \
+		libcairo.so:graphics/cairo
 
 OPTIONS_DEFINE=	TK PGSQL SDL
 OPTIONS_DEFAULT=TK PGSQL SDL

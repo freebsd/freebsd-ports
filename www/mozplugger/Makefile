@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mozplugger
-PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTVERSION=	2.1.6
 CATEGORIES=	www
 MASTER_SITES=	http://mozplugger.mozdev.org/files/
 

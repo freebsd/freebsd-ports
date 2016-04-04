@@ -3,7 +3,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.4.35
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -16,8 +16,8 @@ COMMENT=	Fast and extensive C++ GUI toolkit
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 MAJORVER=	${PORTVERSION:R}
 SHVER=		${PORTVERSION:S/${MAJORVER}.//}
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--with-xshm=no
 .endif
 #
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:print/cups
 CONFIGURE_ARGS+=	--enable-cups
 .else
 CONFIGURE_ARGS+=	--disable-cups

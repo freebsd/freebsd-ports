@@ -1,5 +1,5 @@
---- libapm.c.orig	Fri Jun 19 02:28:23 1998
-+++ libapm.c	Sun Aug 22 23:31:55 2004
+--- libapm.c.orig	1998-06-19 00:28:23 UTC
++++ libapm.c
 @@ -8,12 +8,19 @@
  /*                                                         */
  /***********************************************************/
@@ -20,7 +20,7 @@
  #include <fcntl.h>
  #include <unistd.h>
  #include <sys/mman.h>
-@@ -63,6 +70,7 @@
+@@ -63,6 +70,7 @@ int main(int argc, char *argv[])
      int r;
      char c;
  
@@ -28,7 +28,7 @@
      struct option longopts[] = {
        { "Help",        0, 0, 'h' },
        { "Version",     0, 0, 'v' },
-@@ -78,6 +86,7 @@
+@@ -78,6 +86,7 @@ int main(int argc, char *argv[])
  #endif /* CMOS_ACCESS */
        {0, 0, 0, 0}
      };
@@ -36,7 +36,7 @@
  
      if( 0 != geteuid() ){
          printf("%s: Only root can execute !!\n", argv[0]);
-@@ -98,8 +107,12 @@
+@@ -98,8 +107,12 @@ int main(int argc, char *argv[])
  
      get_status();
  
@@ -49,7 +49,7 @@
        switch (c) {
          case 'h':
            usage();
-@@ -189,7 +202,7 @@
+@@ -189,7 +202,7 @@ int main(int argc, char *argv[])
          case '?':
            usage();
            break;
@@ -58,7 +58,7 @@
        }
      }
  #ifdef DEBUG
-@@ -215,29 +228,60 @@
+@@ -215,29 +228,60 @@ int main(int argc, char *argv[])
  void usage(void)
  {
  #ifdef CMOS_ACCESS
@@ -140,7 +140,7 @@
  #endif /* CMOS_ACCESS */
      exit(1);
  }
-@@ -246,7 +290,11 @@
+@@ -246,7 +290,11 @@ usage: libapm [-v --Version]
  void init(void)
  {
    /* SMI port */
@@ -152,7 +152,7 @@
  }
  #endif /* CMOS_ACCESS */
  
-@@ -754,29 +802,29 @@
+@@ -754,29 +802,29 @@ void print_status(void)
  #endif /* CMOS_ACCESS */
  
  #ifndef CMOS_ACCESS

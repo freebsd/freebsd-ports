@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swiftclient
-PORTVERSION=	2.7.0
+PORTVERSION=	3.0.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,13 +13,13 @@ COMMENT=	Python client library for OpenStack Object Storage (Swift)
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.21:${PORTSDIR}/devel/py-pbr
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.21:devel/py-pbr
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=2.1.3:${PORTSDIR}/devel/py-futures \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}requests>=1.1:${PORTSDIR}/www/py-requests
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=2.1.3:devel/py-futures \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}requests>=1.1:www/py-requests
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

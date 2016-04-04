@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI-based Virtual Qmail Domains Administrator
 
-BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
-RUN_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:mail/vpopmail
+RUN_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:mail/vpopmail
 
 GNU_CONFIGURE=	YES
 

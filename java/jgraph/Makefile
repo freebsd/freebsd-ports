@@ -28,7 +28,7 @@ JAVA_RUN=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPILE} || ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS+=	${ANT_CMD}:devel/apache-ant
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 JAVA_BUILD=	yes

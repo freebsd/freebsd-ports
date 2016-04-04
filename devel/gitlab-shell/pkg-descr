@@ -1,0 +1,4 @@
+GitLab Shell handles git commands for GitLab
+and modifies the list of authorized keys.
+
+WWW: https://gitlab.com/gitlab-org/gitlab-shell

@@ -11,7 +11,7 @@ COMMENT=	Port of the Linux pstree, killall, and pidof commands
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed
 
 CONFLICTS=	pidof-[0-9]* pstree-2.[0-9]*
 

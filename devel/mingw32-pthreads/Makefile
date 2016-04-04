@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-w32-${PORTVERSION:S/./-/g}-release
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX threads library for Windows compiled with MinGW32
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
-		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
+BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
+		mingwm10.dll:devel/mingw32-bin-msvcrt
 
 USES=		gmake
 

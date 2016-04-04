@@ -12,7 +12,7 @@ COMMENT=	Window manipulation tool
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libwnck-3.so:${PORTSDIR}/x11-toolkits/libwnck3
+LIB_DEPENDS=	libwnck-3.so:x11-toolkits/libwnck3
 
 USES=		gettext gmake pkgconfig tar:xz
 USE_GNOME=	libwnck intltool

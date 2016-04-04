@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Package to parse, edit and create multiple vCards (RFC 2426)
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Text-vFile-asData>=0:${PORTSDIR}/devel/p5-Text-vFile-asData \
-		p5-Unicode-LineBreak>=0:${PORTSDIR}/textproc/p5-Unicode-LineBreak
+BUILD_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-Text-vFile-asData>=0:devel/p5-Text-vFile-asData \
+		p5-Unicode-LineBreak>=0:textproc/p5-Unicode-LineBreak
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

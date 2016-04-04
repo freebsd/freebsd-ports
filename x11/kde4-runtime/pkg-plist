@@ -29,9 +29,9 @@ bin/plasmapkg
 bin/solid-hardware
 etc/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
 etc/xdg/menus/kde-information.menu
-include/knotify_export.h
-include/knotifyconfig.h
-include/knotifyplugin.h
+include/kde4/knotify_export.h
+include/kde4/knotifyconfig.h
+include/kde4/knotifyplugin.h
 lib/attica_kde.so
 lib/kconf_update_bin/phonon_devicepreference_update
 lib/kconf_update_bin/phonon_deviceuids_update

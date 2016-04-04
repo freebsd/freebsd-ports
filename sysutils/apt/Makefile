@@ -11,12 +11,12 @@ DISTNAME=	apt_0.6.46.4-0.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced front-end for dpkg
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/lib/libpub.a:${PORTSDIR}/devel/publib
+BUILD_DEPENDS=	bash:shells/bash \
+		${LOCALBASE}/lib/libpub.a:devel/publib
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		dpkg:${PORTSDIR}/archivers/dpkg \
-		gpg:${PORTSDIR}/security/gnupg1
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+		dpkg:archivers/dpkg \
+		gpg:security/gnupg1
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		gettext iconv gmake shebangfix

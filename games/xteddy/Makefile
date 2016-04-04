@@ -14,7 +14,7 @@ COMMENT=	Cuddlesome teddy for the X desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USES=		localbase pkgconfig
 GNU_CONFIGURE=	yes

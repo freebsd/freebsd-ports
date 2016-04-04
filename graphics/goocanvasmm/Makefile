@@ -11,7 +11,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	C++ bindings for the goocanvas widget for GTK
 
-LIB_DEPENDS=	libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
+LIB_DEPENDS=	libgoocanvas.so:graphics/goocanvas
 
 PORTSCOUT=	ignore:1
 

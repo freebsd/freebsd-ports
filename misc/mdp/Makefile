@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	mdp
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	misc
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Command-line based markdown presentation tool
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	visit1985

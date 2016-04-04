@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	PyGreSQL
-PORTVERSION=	4.1.1
-PORTREVISION=	2
+PORTVERSION=	5.0
 PORTEPOCH=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python interface to PostgreSQL, both classic and DP-API 2.0
 
-USES=		python:2 pgsql tar:tgz
+LICENSE=	PSFL
+
+USES=		pgsql python
 USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	*

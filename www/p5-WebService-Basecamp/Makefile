@@ -14,8 +14,8 @@ COMMENT=	Perl interface to the Basecamp API webservice
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

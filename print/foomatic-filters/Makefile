@@ -3,7 +3,7 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.17
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
@@ -13,7 +13,9 @@ COMMENT=	Foomatic wrapper scripts
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
+
+CONFLICTS=	cups-filters-[0-9]*
 
 USES=		autoreconf ghostscript perl5 pkgconfig
 GNU_CONFIGURE=	yes
@@ -46,35 +48,33 @@ MPAGE_DESC=		Print multiple pages per sheet of paper
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS_IMAGE}
-RUN_DEPENDS+=	${LOCALBASE}/lib/libcupsimage.so:${PORTSDIR}/print/cups-image
+RUN_DEPENDS+=	${LOCALBASE}/lib/libcupsimage.so:print/cups
 .endif
 
 .if ${PORT_OPTIONS:MA2PS}
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps
+RUN_DEPENDS+=	a2ps:print/a2ps
 .endif
 
 .if ${PORT_OPTIONS:MENSCRIPT_A4}
-RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
+RUN_DEPENDS+=	enscript:print/enscript-a4
 .endif
 
 .if ${PORT_OPTIONS:MENSCRIPT_LETTER}
-RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letter
+RUN_DEPENDS+=	enscript:print/enscript-letter
 .endif
 
 .if ${PORT_OPTIONS:MENSCRIPT_LETTERDJ}
-RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letterdj
+RUN_DEPENDS+=	enscript:print/enscript-letterdj
 .endif
 
 .if ${PORT_OPTIONS:MMPAGE}
-RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
+RUN_DEPENDS+=	mpage:print/mpage
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|g' ${WRKSRC}/foomaticrip.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/foomaticrip.c
 	@${REINPLACE_CMD} -e '/filter.conf/ s|if|#if|g' ${WRKSRC}/Makefile.in
-	@${MV} ${WRKSRC}/beh.in ${WRKSRC}/foomatic-beh.in
-	@${REINPLACE_CMD} -e 's|beh|foomatic-beh|' ${WRKSRC}/foomatic-beh.in
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/foomatic-rip

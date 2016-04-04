@@ -15,38 +15,38 @@ COMMENT=	Open Ticket Request System
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Crypt-Eksblowfish>=0:${PORTSDIR}/security/p5-Crypt-Eksblowfish \
-		p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
-		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
-		p5-MIME-Tools>=5.427:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Net-DNS>=0.66:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-CSS-Minifier-XS>=0:${PORTSDIR}/textproc/p5-CSS-Minifier-XS \
-		p5-JavaScript-Minifier-XS>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier-XS \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-Sys-Hostname-Long>=0:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
-		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		p5-IO-Interactive>=0:${PORTSDIR}/devel/p5-IO-Interactive \
-		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-Date-Pcalc>=0:${PORTSDIR}/devel/p5-Date-Pcalc \
-		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
-		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
-		p5-XML-FeedPP>=0:${PORTSDIR}/textproc/p5-XML-FeedPP \
-		p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML \
-		p5-JavaScript-Minifier>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier \
-		p5-CSS-Minifier>=0:${PORTSDIR}/textproc/p5-CSS-Minifier \
-		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA \
-		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Schedule-Cron-Events>=1.94:${PORTSDIR}/sysutils/p5-Schedule-Cron-Events
+BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-Crypt-Eksblowfish>=0:security/p5-Crypt-Eksblowfish \
+		p5-Crypt-PasswdMD5>=0:security/p5-Crypt-PasswdMD5 \
+		p5-Digest-SHA>=0:security/p5-Digest-SHA \
+		p5-MIME-Tools>=5.427:mail/p5-MIME-Tools \
+		p5-libwww>=0:www/p5-libwww \
+		p5-Net-DNS>=0.66:dns/p5-Net-DNS \
+		p5-CSS-Minifier-XS>=0:textproc/p5-CSS-Minifier-XS \
+		p5-JavaScript-Minifier-XS>=0:textproc/p5-JavaScript-Minifier-XS \
+		p5-TimeDate>=0:devel/p5-TimeDate \
+		p5-Sys-Hostname-Long>=0:sysutils/p5-Sys-Hostname-Long \
+		p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
+		p5-JSON-XS>=0:converters/p5-JSON-XS \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS \
+		p5-IO-Interactive>=0:devel/p5-IO-Interactive \
+		p5-Email-Valid>=0:mail/p5-Email-Valid \
+		p5-JSON>=0:converters/p5-JSON \
+		p5-YAML>=0:textproc/p5-YAML \
+		p5-Date-Pcalc>=0:devel/p5-Date-Pcalc \
+		p5-Text-CSV>=0:textproc/p5-Text-CSV \
+		p5-Text-Diff>=0:textproc/p5-Text-Diff \
+		p5-XML-FeedPP>=0:textproc/p5-XML-FeedPP \
+		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML \
+		p5-JavaScript-Minifier>=0:textproc/p5-JavaScript-Minifier \
+		p5-CSS-Minifier>=0:textproc/p5-CSS-Minifier \
+		p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
+		p5-Class-Inspector>=0:devel/p5-Class-Inspector \
+		p5-Mozilla-CA>=0:www/p5-Mozilla-CA \
+		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-Schedule-Cron-Events>=1.94:sysutils/p5-Schedule-Cron-Events
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -92,38 +92,38 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 
 PLIST_SUB+=	VER_CKEDITOR="4.4.5" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
 
-PGSQL_RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+PGSQL_RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 PGSQL_USES=		pgsql
 
-MYSQL_RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+MYSQL_RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
-SSL_RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
+SSL_RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
 
-APACHE_RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:${PORTSDIR}/www/mod_perl2 \
-			p5-Apache-DBI>0:${PORTSDIR}/www/p5-Apache-DBI
+APACHE_RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:www/mod_perl2 \
+			p5-Apache-DBI>0:www/p5-Apache-DBI
 
-REPORTS_RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-			p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
-			p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
+REPORTS_RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD \
+			p5-GD-Graph>=0:graphics/p5-GD-Graph \
+			p5-GD-TextUtil>=0:graphics/p5-GD-TextUtil
 
-SMTP_RUN_DEPENDS+=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-			p5-Net-SSLGlue>=0:${PORTSDIR}/security/p5-Net-SSLGlue
+SMTP_RUN_DEPENDS+=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
+			p5-Net-SSLGlue>=0:security/p5-Net-SSLGlue
 
-POP3_RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-			p5-Net-SSLGlue>=0:${PORTSDIR}/security/p5-Net-SSLGlue
+POP3_RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+			p5-Net-SSLGlue>=0:security/p5-Net-SSLGlue
 
-IMAP_RUN_DEPENDS+=	p5-Mail-IMAPClient>=0:${PORTSDIR}/mail/p5-Mail-IMAPClient \
-			p5-Net-IMAP-Simple>=0:${PORTSDIR}/mail/p5-Net-IMAP-Simple
+IMAP_RUN_DEPENDS+=	p5-Mail-IMAPClient>=0:mail/p5-Mail-IMAPClient \
+			p5-Net-IMAP-Simple>=0:mail/p5-Net-IMAP-Simple
 
-LDAP_RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+LDAP_RUN_DEPENDS+=	p5-perl-ldap>=0:net/p5-perl-ldap
 
-PDF_RUN_DEPENDS+=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2
+PDF_RUN_DEPENDS+=	p5-PDF-API2>=0.57:textproc/p5-PDF-API2
 
-ISPELL_RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
+ISPELL_RUN_DEPENDS+=	ispell:textproc/aspell-ispell
 
-ASPELL_RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+ASPELL_RUN_DEPENDS+=	aspell:textproc/aspell
 
-GNUPG_RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
+GNUPG_RUN_DEPENDS+=	gpg:security/gnupg1
 
 .include <bsd.port.pre.mk>
 
@@ -134,7 +134,7 @@ USE_APACHE_RUN=	22+
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.pm" | \
 		${XARGS} ${REINPLACE_CMD} -i '' \
-      			-e 's|Digest::SHA::PurePerl|Digest::SHA|g'
+			-e 's|Digest::SHA::PurePerl|Digest::SHA|g'
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${RM} -rf ${WRKSRC}/Kernel/cpan-lib/ \
 		${CLEAN_FILES:S!^!${WRKSRC}/!}

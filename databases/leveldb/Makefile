@@ -28,8 +28,8 @@ SHLIB_MINOR=	${PORTVERSION:E}
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
 
-GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
-SNAPPY_LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
+GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
+SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 
 post-patch:
 	@${REINPLACE_CMD} -e '/PLATFORM_IS_LITTLE_ENDIAN/ s|__|_|g' ${WRKSRC}/port/port_posix.h

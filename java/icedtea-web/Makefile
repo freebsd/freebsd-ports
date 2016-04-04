@@ -11,12 +11,12 @@ COMMENT=	Free Java plug-in and Java Web Start for OpenJDK
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		bash:${PORTSDIR}/shells/bash \
-		gsed:${PORTSDIR}/textproc/gsed
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-TEST_DEPENDS=	${HAMCREST_JAR}:${PORTSDIR}/java/hamcrest \
-		${JUNIT_JAR}:${PORTSDIR}/java/junit
+BUILD_DEPENDS=	zip:archivers/zip \
+		bash:shells/bash \
+		gsed:textproc/gsed
+RUN_DEPENDS=	bash:shells/bash
+TEST_DEPENDS=	${HAMCREST_JAR}:java/hamcrest \
+		${JUNIT_JAR}:java/junit
 
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
@@ -58,12 +58,12 @@ TAGSOUP_DESC=	Enable cleaning up of malformed JNLP files
 DOCS_CONFIGURE_ENABLE=	docs
 DOCS_PORTDOCS=		netx
 
-RHINO_BUILD_DEPENDS=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
+RHINO_BUILD_DEPENDS=	${JAVASHAREDIR}/rhino/rhino.jar:lang/rhino
 RHINO_RUN_DEPENDS=	${RHINO_BUILD_DEPENDS}
 RHINO_VARS=		RHINO_JAR="${JAVASHAREDIR}/rhino/rhino.jar"
 RHINO_VARS_OFF=		RHINO_JAR=no
 
-TAGSOUP_BUILD_DEPENDS=	${JAVALIBDIR}/tagsoup.jar:${PORTSDIR}/textproc/tagsoup
+TAGSOUP_BUILD_DEPENDS=	${JAVALIBDIR}/tagsoup.jar:textproc/tagsoup
 TAGSOUP_RUN_DEPENDS=	${TAGSOUP_BUILD_DEPENDS}
 TAGSOUP_VARS=		TAGSOUP_JAR="${JAVALIBDIR}/tagsoup.jar"
 TAGSOUP_VARS_OFF=	TAGSOUP_JAR=no

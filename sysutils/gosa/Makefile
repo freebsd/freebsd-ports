@@ -15,8 +15,8 @@ COMMENT=	Web Based LDAP Administration Program
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-Crypt-SmbHash>=0.12:${PORTSDIR}/security/p5-Crypt-SmbHash \
-		pecl-imagick>=2.2.2:${PORTSDIR}/graphics/pecl-imagick
+RUN_DEPENDS=	p5-Crypt-SmbHash>=0.12:security/p5-Crypt-SmbHash \
+		pecl-imagick>=2.2.2:graphics/pecl-imagick
 
 USES=		tar:bzip2
 USE_PHP=	gettext iconv imap ldap mbstring mhash mysql pcre posix \

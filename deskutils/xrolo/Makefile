@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}.v2p6
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Rolodex
 
-LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/xrolo
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	hydra
 PORTVERSION=	0.1.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	http://hydra.hellug.gr/download/
 PKGNAMESUFFIX=	-web
@@ -11,7 +11,9 @@ PKGNAMESUFFIX=	-web
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance multi-threaded web server
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:security/gnutls
+
+BROKEN=		Needs to be ported to GnuTLS 3.4; abandoned upstream
 
 USES=		perl5 pkgconfig shebangfix
 SHEBANG_FILES=	src/webindex.pl

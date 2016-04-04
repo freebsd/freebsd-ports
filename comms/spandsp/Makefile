@@ -11,7 +11,7 @@ COMMENT=	DSP library and software FAX machine
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

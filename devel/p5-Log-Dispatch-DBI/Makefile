@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gebhart@secnetix.de
 COMMENT=	Log::Dispatch output class for logging to database via DBI interface
 
-BUILD_DEPENDS=	p5-Log-Dispatch>=2.0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-DBI>0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-Log-Dispatch>=2.0:devel/p5-Log-Dispatch \
+		p5-DBI>0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-DBD-CSV>0:${PORTSDIR}/databases/p5-DBD-CSV
+TEST_DEPENDS=	p5-DBD-CSV>0:databases/p5-DBD-CSV
 
 USES=		perl5
 USE_PERL5=	configure

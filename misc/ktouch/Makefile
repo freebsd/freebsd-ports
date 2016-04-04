@@ -9,7 +9,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Touch typing tutor for KDE 4
 
-RUN_DEPENDS=	${LOCALBASE}/lib/kde4/imports/org/kde/charts/qmldir:${PORTSDIR}/graphics/kqtquickcharts
+RUN_DEPENDS=	${LOCALBASE}/lib/kde4/imports/org/kde/charts/qmldir:graphics/kqtquickcharts
 
 USE_KDE4=	kdelibs kdeprefix automoc4
 USES=		cmake:outsource tar:xz

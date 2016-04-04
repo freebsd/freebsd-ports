@@ -11,7 +11,7 @@ COMMENT=	Minimalistic window manager for X11 based on evilwm
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 USES=		pkgconfig:build
 USE_XORG=	x11 xft xinerama xrandr

@@ -11,7 +11,7 @@ COMMENT=	Low-level binding to SDL and related libraries using Ruby-FFI
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-nice-ffi>=0.2:${PORTSDIR}/devel/rubygem-nice-ffi
+RUN_DEPENDS=	rubygem-nice-ffi>=0.2:devel/rubygem-nice-ffi
 
 NO_ARCH=	yes
 

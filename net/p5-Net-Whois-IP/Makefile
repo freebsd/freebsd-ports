@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Perl extension for looking up the whois information for IP addresses
 
-BUILD_DEPENDS=	p5-Regexp-IPv6>=0.02:${PORTSDIR}/textproc/p5-Regexp-IPv6
+BUILD_DEPENDS=	p5-Regexp-IPv6>=0.02:textproc/p5-Regexp-IPv6
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

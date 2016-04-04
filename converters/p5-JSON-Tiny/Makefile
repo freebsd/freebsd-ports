@@ -13,7 +13,7 @@ COMMENT=	Minimalistic JSON
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-Pod>=1.26:${PORTSDIR}/devel/p5-Test-Pod
+TEST_DEPENDS=	p5-Test-Pod>=1.26:devel/p5-Test-Pod
 
 NO_ARCH=	yes
 USE_PERL5=	configure

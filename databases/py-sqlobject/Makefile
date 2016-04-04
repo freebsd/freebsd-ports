@@ -13,7 +13,7 @@ COMMENT=	Python object for manipulation with SQL table row
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formencode>=1.2.2:${PORTSDIR}/www/py-formencode
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formencode>=1.2.2:www/py-formencode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python
@@ -27,23 +27,23 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:databases/py-psycopg2
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MMSSQL}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:databases/py-mssql
 .endif
 
 .if ${PORT_OPTIONS:MSYBASE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sybase>=0.37:${PORTSDIR}/databases/py-sybase
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sybase>=0.37:databases/py-sybase
 .endif
 
 # currently MaxDB(SAP), ADODB are not supported

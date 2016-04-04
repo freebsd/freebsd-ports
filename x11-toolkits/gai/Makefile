@@ -13,7 +13,7 @@ COMMENT=	General Applet Interface Library
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
 USES=		gettext-tools pkgconfig tar:bzip2
 USE_GL=		gl

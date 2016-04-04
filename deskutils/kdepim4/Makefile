@@ -3,7 +3,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -11,14 +11,14 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE PIM applications
 
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
-		libassuan.so:${PORTSDIR}/security/libassuan \
-		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libgrantlee_gui.so:${PORTSDIR}/devel/grantlee \
-		libkgapi2.so:${PORTSDIR}/devel/libkgapi
-RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:${PORTSDIR}/deskutils/kdepim4-runtime \
-		${LOCALBASE}/bin/gmd5sum:${PORTSDIR}/sysutils/coreutils
+LIB_DEPENDS=	libgpgme.so:security/gpgme \
+		libassuan.so:security/libassuan \
+		libsasl2.so:security/cyrus-sasl2 \
+		libboost_thread.so:devel/boost-libs \
+		libgrantlee_gui.so:devel/grantlee \
+		libkgapi2.so:devel/libkgapi
+RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:deskutils/kdepim4-runtime \
+		${LOCALBASE}/bin/gmd5sum:sysutils/coreutils
 
 CONFLICTS_INSTALL=	kdepim44-4.*
 
@@ -48,12 +48,13 @@ post-patch:
 	${REINPLACE_CMD} -e '1 s|^.*/|/|g' \
 		${WRKSRC}/knotes/configdialog/knotecollectionconfigwidget.cpp
 
+# net-im/kopete-kde4 needs Kleopatra's headers for its Cryptography plugin.
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/kleo
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/kde4/kleo
 	${INSTALL_DATA} ${WRKSRC}/libkleo/kleo/*.h \
-		${STAGEDIR}${PREFIX}/include/kleo
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/kleo/ui
+		${STAGEDIR}${PREFIX}/include/kde4/kleo
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/kde4/kleo/ui
 	${INSTALL_DATA} ${WRKSRC}/libkleo/ui/*.h \
-		${STAGEDIR}${PREFIX}/include/kleo/ui
+		${STAGEDIR}${PREFIX}/include/kde4/kleo/ui
 
 .include <bsd.port.mk>

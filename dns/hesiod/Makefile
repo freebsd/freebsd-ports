@@ -5,9 +5,9 @@ PORTNAME=	hesiod
 PORTVERSION=	3.2.1
 PORTREVISION=	2
 CATEGORIES=	dns
-MASTER_SITES=	ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/
+MASTER_SITES=	http://BSDforge.com/projects/source/dns/hesiod/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Directory service built on DNS and BIND
 
 LICENSE=	BSD2CLAUSE
@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 OPTIONS_DEFINE=	IDN
 OPTIONS_DEFAULT=IDN
 
-BROKEN=		Does not fetch
 USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
@@ -29,7 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:dns/libidn
 .else
 CONFIGURE_ARGS+=--without-libidn
 .endif

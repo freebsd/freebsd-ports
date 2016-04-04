@@ -44,7 +44,7 @@ ${lang}_OPT=		${lang:S/@/_/}
 LANG_OPT_ALL+=		${${lang}_OPT}
 ${${lang}_OPT}_DESC=	${${lang}_NAME} localization
 
-${${lang}_OPT}_RUN_DEPENDS=${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
+${${lang}_OPT}_RUN_DEPENDS=${${lang}_DETECT}:${${lang}_PORT}
 ALL_RUN_DEPENDS+=	${${${lang}_OPT}_RUN_DEPENDS}
 .endfor
 

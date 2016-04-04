@@ -7,7 +7,7 @@ CATEGORIES=	databases
 MAINTAINER=	vivek@khera.org
 COMMENT=	Regexp function for SQLite based on PCRE library
 
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 
 USE_SQLITE=	yes
 DIST_SUBDIR=	sqlite-ext

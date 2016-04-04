@@ -12,7 +12,7 @@ MASTER_SITES=	http://BSDforge.com/projects/source/dns/firedns/ \
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	C library for handling asynchronous DNS queries
 
-BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring
+BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:misc/firestring
 
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes

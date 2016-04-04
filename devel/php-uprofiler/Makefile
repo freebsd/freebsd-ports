@@ -20,5 +20,6 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 USES=		tar:tgz
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

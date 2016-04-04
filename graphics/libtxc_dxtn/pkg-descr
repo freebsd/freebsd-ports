@@ -1,7 +1,0 @@
-S2TC is a patent-free S3TC compatible implementation and provides texture
-compression to Mesa.
-
-The library is automatically loaded if present and adds the OpenGL extensions
-GL_S3_s3tc and GL_EXT_texture_compression_s3tc.
-
-WWW: https://github.com/divVerent/s2tc

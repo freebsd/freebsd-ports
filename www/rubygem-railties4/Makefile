@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	railties
-PORTVERSION=	4.2.5.2
+PORTVERSION=	4.2.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -12,10 +12,10 @@ COMMENT=	Rails internals bootup, plugins, generators, and rake tasks
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-actionpack4>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack4 \
-		rubygem-activesupport4>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport4 \
-		rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-thor>=0.18.1:${PORTSDIR}/devel/rubygem-thor
+RUN_DEPENDS=	rubygem-actionpack4>=${PORTVERSION}:www/rubygem-actionpack4 \
+		rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4 \
+		rubygem-rake>=0.8.7:devel/rubygem-rake \
+		rubygem-thor>=0.18.1:devel/rubygem-thor
 
 CONFLICTS_INSTALL=	rubygem-railties-[0-9]* rubygem-railties41-[0-9]*
 

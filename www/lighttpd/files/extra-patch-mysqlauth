@@ -424,13 +424,16 @@ diff -Naur new/lighttpd-1.4.23/src/mod_auth.c old/lighttpd-1.4.23/src/mod_auth.c
  			} else {
  				log_error_write(srv, __FILE__, __LINE__, "sb", "auth.backend not supported:", s->auth_backend_conf);
  
-@@ -534,6 +637,28 @@
+@@ -534,6 +637,31 @@
  				return (ret);
  			break;
  		}
 +               case AUTH_BACKEND_MYSQL: {
 +                       int port = atoi(s->auth_mysql_port->ptr);
 +
++                       /* ignore if auth_mysql_socket is invalid */
++                       if (p->conf.auth_mysql_socket == NULL)
++                           return HANDLER_GO_ON;
 +                       if (p->conf.auth_mysql_socket->ptr != NULL)
 +                           if (0 == strcmp(s->auth_mysql_socket->ptr, "")) s->auth_mysql_socket->ptr = NULL;
 +

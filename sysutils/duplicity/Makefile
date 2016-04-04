@@ -9,8 +9,8 @@ MASTER_SITES=	http://launchpad.net/duplicity/0.7-series/${PORTVERSION}/+download
 MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
 
-LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>=0:${PORTSDIR}/devel/py-lockfile
+LIB_DEPENDS=	librsync.so:net/librsync
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>=0:devel/py-lockfile
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils
@@ -37,18 +37,18 @@ PEXPECT_DESC=		Install pexpect and use ssh binaries
 
 PORTDOCS=	CHANGELOG COPYING README README-REPO README-LOG
 
-CLOUDFILES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudfiles>0:${PORTSDIR}/net/py-cloudfiles
-FTP_RUN_DEPENDS=	ncftp>=3.2.2:${PORTSDIR}/ftp/ncftp3
-FTPS_RUN_DEPENDS=	lftp>=3.7.15:${PORTSDIR}/ftp/lftp
-GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:${PORTSDIR}/devel/py-gdata
-GIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject>0:${PORTSDIR}/devel/py-gobject \
-					dbus>0:${PORTSDIR}/devel/dbus
-GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:${PORTSDIR}/security/gnupg1
-GNUPG2_RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
+CLOUDFILES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudfiles>0:net/py-cloudfiles
+FTP_RUN_DEPENDS=	ncftp>=3.2.2:ftp/ncftp3
+FTPS_RUN_DEPENDS=	lftp>=3.7.15:ftp/lftp
+GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:devel/py-gdata
+GIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject>0:devel/py-gobject \
+					dbus>0:devel/dbus
+GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:security/gnupg1
+GNUPG2_RUN_DEPENDS=	gpg2:security/gnupg
 NLS_USES=		gettext
-PARAMIKO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:${PORTSDIR}/security/py-paramiko
-PEXPECT_RUN_DEPENDS=	pexpect:${PORTSDIR}/misc/py-pexpect
-S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto>=1.6b:${PORTSDIR}/devel/py-boto
+PARAMIKO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:security/py-paramiko
+PEXPECT_RUN_DEPENDS=	pexpect:misc/py-pexpect
+S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto>=1.6b:devel/py-boto
 
 .include <bsd.port.options.mk>
 

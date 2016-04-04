@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aria2
-PORTVERSION=	1.20.0
+PORTVERSION=	1.21.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/release-${PORTVERSION}/
 
@@ -43,7 +43,7 @@ PORTDOCS=	*
 
 CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 NLS_CONFIGURE_OFF=	--disable-nls --without-libintl-prefix
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 NLS_LDFLAGS=		-lintl

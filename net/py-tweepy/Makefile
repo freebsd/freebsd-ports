@@ -12,10 +12,10 @@ COMMENT=	Twitter API library for Python!
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:${PORTSDIR}/devel/py-pip
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.4.1:${PORTSDIR}/www/py-requests-oauthlib \
-		${PYTHON_PKGNAMEPREFIX}six>=1.7.3:${PORTSDIR}/devel/py-six
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.4.1:www/py-requests-oauthlib \
+		${PYTHON_PKGNAMEPREFIX}six>=1.7.3:devel/py-six
 
 USES=		python
 USE_GITHUB=	yes

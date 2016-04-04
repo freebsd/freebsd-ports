@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	rx@rx.cz
 COMMENT=	Milter for amavisd-new
 
-RUN_DEPENDS=	amavisd:${PORTSDIR}/security/amavisd-new
+RUN_DEPENDS=	amavisd:security/amavisd-new
 
 ##
 # Use the following quirks to choose which sendmail to use (ports or system):

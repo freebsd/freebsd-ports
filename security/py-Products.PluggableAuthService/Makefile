@@ -13,8 +13,8 @@ COMMENT=	Pluggable Zope2 authentication / authorization framework
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.PluginRegistry>=0:${PORTSDIR}/devel/py-Products.PluginRegistry \
-		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.PluginRegistry>=0:devel/py-Products.PluginRegistry \
+		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:devel/py-Products.GenericSetup
 
 USES=		python:2 zope
 USE_PYTHON=	distutils autoplist

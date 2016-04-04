@@ -14,8 +14,8 @@ COMMENT=	Deduplicating backup program
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.1.10:${PORTSDIR}/devel/py-msgpack-python
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.1.10:${PORTSDIR}/devel/py-msgpack-python
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.1.10:devel/py-msgpack-python
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.1.10:devel/py-msgpack-python
 
 USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
@@ -27,8 +27,8 @@ PYDISTUTILS_BUILDPATH=${BUILD_WRKSRC}/build/lib.${OPSYS:tl}-${UNAMER}-${ARCH}-${
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000015
-BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
-RUN_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
+BUILD_DEPENDS+=	openssl>=1.0:security/openssl
+RUN_DEPENDS+=	openssl>=1.0:security/openssl
 .endif
 
 .if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}

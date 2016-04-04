@@ -14,11 +14,11 @@ COMMENT=	Sugar Syntax for moose has fields
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Sub-Exporter-Progressive>=0:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive
+BUILD_DEPENDS=	p5-Sub-Exporter-Progressive>=0:devel/p5-Sub-Exporter-Progressive
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-MooseX-Types>=0.44:${PORTSDIR}/devel/p5-MooseX-Types \
-		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+TEST_DEPENDS=	p5-MooseX-Types>=0.44:devel/p5-MooseX-Types \
+		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+		p5-namespace-clean>=0:devel/p5-namespace-clean
 
 USES=		perl5
 USE_PERL5=	configure

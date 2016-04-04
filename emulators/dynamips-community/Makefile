@@ -12,8 +12,8 @@ COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libelf.so:devel/libelf \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 CFLAGS+=	-I${PREFIX}/include/libelf
 

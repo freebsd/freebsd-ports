@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Defer inflating of columns until they are used
 
-BUILD_DEPENDS=	p5-Data-Lazy>=0:${PORTSDIR}/devel/p5-Data-Lazy \
-		p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
+BUILD_DEPENDS=	p5-Data-Lazy>=0:devel/p5-Data-Lazy \
+		p5-Class-DBI>=0:databases/p5-Class-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

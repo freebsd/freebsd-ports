@@ -12,7 +12,7 @@ COMMENT=	Thunderbird Labels plugin for RoundCube webmail
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	roundcube>=0.5:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.5:mail/roundcube
 
 USES=		tar:bzip2
 NO_BUILD=	yes

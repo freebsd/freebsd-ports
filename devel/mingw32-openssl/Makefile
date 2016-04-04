@@ -14,10 +14,10 @@ DIST_SUBDIR=	${DISTNAME}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The OpenSSL library cross-compiled for MinGW32
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
-		${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
-		${LOCALBASE}/mingw32/include/stdlib.h:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt \
-		${LOCALBASE}/mingw32/lib/libz.a:${PORTSDIR}/devel/mingw32-zlib
+BUILD_DEPENDS=	makedepend:devel/makedepend \
+		${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
+		${LOCALBASE}/mingw32/include/stdlib.h:devel/${PKGNAMEPREFIX}bin-msvcrt \
+		${LOCALBASE}/mingw32/lib/libz.a:devel/mingw32-zlib
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	apps/tsget

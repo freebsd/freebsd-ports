@@ -18,7 +18,10 @@ COMMENT=	Security scanner: looks for vulnerabilities in a given network
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnasl.so:${PORTSDIR}/security/nessus-libnasl
+LIB_DEPENDS=	libnasl.so:security/nessus-libnasl
+
+DEPRECATED=	Abandoned, consider using OpenVAS
+EXPIRATION_DATE=2016-09-30
 
 OPTIONS_DEFINE=	GTK2
 OPTIONS_DEFAULT=GTK2

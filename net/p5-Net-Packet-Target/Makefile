@@ -13,8 +13,8 @@ COMMENT=	Target object for all Net-Packet related stuff
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
-		p5-Net-Packet>=3.00:${PORTSDIR}/net/p5-Net-Packet
+BUILD_DEPENDS=	p5-Class-Gomor>=1.00:devel/p5-Class-Gomor \
+		p5-Net-Packet>=3.00:net/p5-Net-Packet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

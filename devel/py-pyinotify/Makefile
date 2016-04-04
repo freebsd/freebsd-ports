@@ -12,7 +12,7 @@ COMMENT=	Python interface to (lib)inotify
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		python
 USE_PYTHON=	distutils

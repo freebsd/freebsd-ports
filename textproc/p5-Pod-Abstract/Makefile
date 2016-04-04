@@ -14,8 +14,8 @@ COMMENT=	Abstract document tree for Perl POD documents
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
-		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
+BUILD_DEPENDS=	p5-IO-String>=0:devel/p5-IO-String \
+		p5-Task-Weaken>=0:devel/p5-Task-Weaken
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

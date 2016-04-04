@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Collection of additional irssi themes
 
-RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
+RUN_DEPENDS=	irssi:irc/irssi
 
 NO_BUILD=	yes
 

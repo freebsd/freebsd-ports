@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add estimation and time tracking functionality to Trac
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	tracd:www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/branches/trac0.12-Permissions
 USES=		python:2 zip

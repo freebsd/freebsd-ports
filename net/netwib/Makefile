@@ -14,28 +14,23 @@ DISTFILES=	${DISTNAME}.tgz ${DISTNAME:S/src/doc_html/}.tgz
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Netwib network programming library
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 WRKSRC_SUBDIR=	src
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
 
 PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-
 post-patch:
-	@${REINPLACE_CMD} -Ee \
-		's|libnet-config|${LIBNET_CONFIG}|; \
-		 s|-lnet|`${LIBNET_CONFIG} --libs`|; \
-		 s|^(gccIncLnet=).*|\1"`${LIBNET_CONFIG} --cflags`"|' \
-		 ${WRKSRC}/genemake
-
-do-configure:
-		@${REINPLACE_CMD} \
+	@${REINPLACE_CMD} '/^gccIncLnet=/s/=""/=`libnet-config --cflags`/' \
+		${WRKSRC}/genemake
+	@${REINPLACE_CMD} \
 		-e 's|%%PREFIX%%|${PREFIX}|' \
 		-e 's|%%CFLAGS%%|${CFLAGS}|' \
 		-e 's|gcc|${CC}|' \
 		${WRKSRC}/config.dat
-		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
+
+do-configure:
+	(cd ${WRKSRC} && ${SH} genemake)
 
 .include <bsd.port.mk>

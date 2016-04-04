@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	qtel
+PORTREVISION=	1
 
 MAINTAINER=	hamradio@freebsd.org
 COMMENT=	Qtel Echolink client
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libecholib.so:${PORTSDIR}/comms/svxlink
+LIB_DEPENDS=	libecholib.so:comms/svxlink
 
 MASTERDIR=	${.CURDIR}/../svxlink
 USE_QT4=	corelib gui network qmake_build linguist_build moc_build rcc_build uic_build

@@ -10,11 +10,11 @@ DISTNAME=	STonX-0.6.7.6
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AtariST emulator
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		gccmakedep:${PORTSDIR}/devel/gccmakedep \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-		${LOCALBASE}/share/fonts/misc/10x20-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+		gccmakedep:devel/gccmakedep \
+		mkfontdir:x11-fonts/mkfontdir \
+		mkfontscale:x11-fonts/mkfontscale \
+		${LOCALBASE}/share/fonts/misc/10x20-ISO8859-1.pcf.gz:x11-fonts/font-misc-misc
 
 RESTRICTED=	Contains ROM (C) by Atari
 

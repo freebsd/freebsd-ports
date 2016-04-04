@@ -15,8 +15,8 @@ COMMENT=	Yahoo! transport for Jabber
 OPTIONS_DEFINE=	EJABBERD
 EJABBERD_DESC=	transport with ejabberd
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \
-		${PYTHON_SITELIBDIR}/DNS/__init__.py:${PORTSDIR}/dns/py-dns
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:net-im/py-xmpppy \
+		${PYTHON_SITELIBDIR}/DNS/__init__.py:dns/py-dns
 
 USES=		python
 NO_BUILD=	yes

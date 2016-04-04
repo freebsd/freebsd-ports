@@ -12,9 +12,9 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console module player
 
-LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		libao.so:${PORTSDIR}/audio/libao
-BUILD_DEPENDS=	${LOCALBASE}/lib/libaiff.a:${PORTSDIR}/audio/libaiff
+LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
+		libao.so:audio/libao
+BUILD_DEPENDS=	${LOCALBASE}/lib/libaiff.a:audio/libaiff
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

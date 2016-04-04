@@ -10,8 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 
-USES=		bison desthack libtool
+USES=		desthack libtool
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	YACC=byacc
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=yes

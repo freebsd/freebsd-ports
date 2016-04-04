@@ -13,7 +13,7 @@ COMMENT=	Opensource Teredo (IPv6 tunneling) implementation
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libJudy.so:${PORTSDIR}/devel/judy
+LIB_DEPENDS=	libJudy.so:devel/judy
 
 USES=		libtool localbase tar:xz
 GNU_CONFIGURE=	yes

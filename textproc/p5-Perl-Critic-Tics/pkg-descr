@@ -1,0 +1,4 @@
+The Perl-Critic-Tics distribution includes extra policies for Perl::Critic to
+address a fairly random assortment of things that make me (rjbs) wince.
+
+WWW: https://metacpan.org/release/Perl-Critic-Tics

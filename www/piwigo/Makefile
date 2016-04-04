@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	piwigo
-PORTVERSION=	2.7.4
+PORTVERSION=	2.8.0
 CATEGORIES=	www
-MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/ \
-		SF/${PORTNAME}/Piwigo/${PORTVERSION}
+MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	PHP based Web Gallery
@@ -44,9 +43,9 @@ PLIST_SUB+=	WWWOWN="${WWWOWN}" \
 
 .if ${PORT_OPTIONS:MIMAGICK}
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick
 .else
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
+RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick-nox11
 .endif
 .endif
 

@@ -13,7 +13,7 @@ COMMENT=	Tryton Application Platform (Account Invoice Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_account_product>=2.8.0:${PORTSDIR}/finance/trytond28_account_product
+RUN_DEPENDS=	trytond28_account_product>=2.8.0:finance/trytond28_account_product
 
 CONFLICTS=	trytond_account_invoice-2.[46].*
 

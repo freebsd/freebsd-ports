@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.5.50.g20160215
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -27,7 +27,8 @@ USE_XORG=	pixman
 USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
+BROKEN_i386=	aarch64 system target is currently broken for i386 hosts, disable for now while dealing with upstream.
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR X86_TARGETS BSD_USER \
@@ -146,13 +147,13 @@ PLIST_SUB+=	GTK2=""
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 .endif
 
 .if empty(PORT_OPTIONS:MSASL)
 CONFIGURE_ARGS+=	--disable-vnc-sasl
 .else
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:security/cyrus-sasl2
 .endif
 
 .if empty(PORT_OPTIONS:MJPEG)
@@ -164,13 +165,13 @@ USES+=		jpeg
 .if empty(PORT_OPTIONS:MPNG)
 CONFIGURE_ARGS+=	--disable-vnc-png
 .else
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 .endif
 
 .if empty(PORT_OPTIONS:MCURL)
 CONFIGURE_ARGS+=	--disable-curl
 .else
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 .endif
 
 .if empty(PORT_OPTIONS:MOPENGL)
@@ -182,8 +183,8 @@ USE_GL=		yes
 .if empty(PORT_OPTIONS:MUSBREDIR)
 CONFIGURE_ARGS+=	--disable-usb-redir
 .else
-BUILD_DEPENDS+=	usbredir>=0.6:${PORTSDIR}/net/usbredir
-RUN_DEPENDS+=	usbredir>=0.6:${PORTSDIR}/net/usbredir
+BUILD_DEPENDS+=	usbredir>=0.6:net/usbredir
+RUN_DEPENDS+=	usbredir>=0.6:net/usbredir
 .endif
 
 .if ${PORT_OPTIONS:MPCAP}
@@ -200,11 +201,11 @@ CONFIGURE_ARGS+=	--static
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
+RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:net/samba36
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+BUILD_DEPENDS+=	texi2html:textproc/texi2html
 USES+=		makeinfo
 .else
 MAKE_ARGS+=	NOPORTDOCS=1

@@ -23,8 +23,8 @@ OPTIONS_DEFAULT=	NAGIOS3X NANOSLEEP
 NAGIOS3X_DESC=		For Nagios 3.X Series
 NAGIOS4X_DESC=		For Nagios 4.X Series
 NANOSLEEP_DESC=		Use of nanosleep in event timing
-NAGIOS3X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
-NAGIOS4X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios4
+NAGIOS3X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios
+NAGIOS4X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios4
 NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
 
 USE_MYSQL=	yes

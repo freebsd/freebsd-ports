@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Track the number of times subs are called
 
-BUILD_DEPENDS=	p5-Hook-LexWrap>=0:${PORTSDIR}/devel/p5-Hook-LexWrap \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-Hook-LexWrap>=0:devel/p5-Hook-LexWrap \
+		p5-Test-Simple>=0:devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

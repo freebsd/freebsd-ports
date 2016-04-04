@@ -12,8 +12,8 @@ COMMENT=	Lightweight GRIBEX in C with portable Fortran interface
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
-		libsz.so:${PORTSDIR}/science/szip
+LIB_DEPENDS=	libjasper.so:graphics/jasper \
+		libsz.so:science/szip
 
 CONFIGURE_ARGS=	--with-jasper=${LOCALBASE} \
 		--with-szlib=${LOCALBASE}

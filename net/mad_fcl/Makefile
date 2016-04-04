@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libcurl.so:ftp/curl
 
 USES=		dos2unix gmake
 USE_OPENSSL=	yes

@@ -14,7 +14,7 @@ COMMENT=	Libsexy bindings for Python
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libsexy.so:${PORTSDIR}/x11-toolkits/libsexy
+LIB_DEPENDS=	libsexy.so:x11-toolkits/libsexy
 
 USES=		libtool pkgconfig python
 USE_GNOME=	pygtk2

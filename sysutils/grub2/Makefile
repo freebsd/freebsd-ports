@@ -13,8 +13,8 @@ COMMENT=	Multiboot boot loader
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		help2man:${PORTSDIR}/misc/help2man
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+		help2man:misc/help2man
 
 CONFLICTS=	grub-0*
 SSP_UNSAFE=	yes
@@ -38,11 +38,11 @@ MKFONT_DESC=	Build grub-mkfont (require freetype2)
 FUSE_DESC=	Build grub-mount (require FUSE)
 
 MKFONT_CONFIGURE_ENABLE=	grub-mkfont
-MKFONT_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
-MKFONT_BUILD_DEPENDS=		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
+MKFONT_LIB_DEPENDS=		libfreetype.so:print/freetype2
+MKFONT_BUILD_DEPENDS=		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
 FUSE_CONFIGURE_ENABLE=		grub-mount
-FUSE_LIB_DEPENDS=		libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
+FUSE_LIB_DEPENDS=		libfuse.so:sysutils/fusefs-libs
 
 .include <bsd.port.pre.mk>
 

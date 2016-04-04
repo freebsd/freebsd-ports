@@ -1,0 +1,11 @@
+#################################
+
+Example configurations are available in:
+
+%%EXAMPLESDIR%%/
+
+A working initial configuration can be installed by running:
+
+( cd %%EXAMPLESDIR%%/vanilla/ && pax -rw -p e . %%ETCDIR%% )
+
+#################################

@@ -1,60 +1,42 @@
-# Created by: Daniel Austin <freebsd-ports@dan.me.uk>
 # $FreeBSD$
 
 PORTNAME=	sas2ircu
 PORTVERSION=	20.00.00.00
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	#http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P20/
+MASTER_SITES=	http://docs.avagotech.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_6g_p20/
 DISTNAME=	SAS2IRCU_P20
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Tool for basic management of mps(4) based LSI RAID controllers
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+LICENSE=	sas2ircu
+LICENSE_NAME=	AVAGO
+LICENSE_TEXT=	${RESTRICTED}
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
+
+RESTRICTED=	Source recipient must acknowledge license.\
+		Reproduction or redistribution prohibited.\
+		See http://www.avagotech.com/cs/Satellite?pagename=AVG2/Utilities/EulaMsg
 
 USES=		zip
 NO_BUILD=	yes
+NO_WRKSRC=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Binaries only available for i386 and amd64 from LSI
 
-RESTRICTED=	May not be redistributed. Must accept license to download.
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
 .include <bsd.port.pre.mk>
-
-.if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
-DISTFILE_INSTRUCTIONS=\n\
-Due to licensing restrictions, certain files must be fetched manually.\n\
-Please visit the following URL and accept the license agreement.\n\n\
-http://www.lsi.com/downloads/Public/Host%%20Bus%%20Adapters/Host%%20Bus%%20Adapters%%20Common%%20Files/SAS_SATA_6G_P20/SAS2IRCU_P20.zip\n\n\
-After the download has completed, please place ${DISTNAME}${EXTRACT_SUFX} in\n\
-${DISTDIR}, then restart the build.\n\n
-.endif
-
-.if defined(DISTFILE_INSTRUCTIONS)
-.if defined(PACKAGE_BUILDING)
-IGNORE=		requires manual fetch
-.else
-pre-fetch:
-	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
-	@exit 1;
-.endif
-.endif
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Readme_Release_Notes_SAS2IRCU_Phase_20.00.00.00.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/SAS2IRCU_Phase20.0-20.00.00.00.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme_Release_Notes_SAS2IRCU_Phase_${PORTVERSION}.txt\
+		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/SAS2IRCU_Phase20.0-${PORTVERSION}.pdf\
+		${STAGEDIR}${DOCSDIR}
 .endif
-.if ${ARCH} == "amd64"
-	${INSTALL_PROGRAM} ${WRKSRC}/sas2ircu_freebsd_amd64_rel/sas2ircu ${STAGEDIR}${PREFIX}/sbin
-.else
-	${INSTALL_PROGRAM} ${WRKSRC}/sas2ircu_freebsd_i386_rel/sas2ircu ${STAGEDIR}${PREFIX}/sbin
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/sas2ircu_freebsd_${ARCH}_rel/sas2ircu\
+		${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.post.mk>

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-the-fly verification system for asynchronous concurrent systems
 
 OPTIONS_DEFINE=	ISPIN DOCS

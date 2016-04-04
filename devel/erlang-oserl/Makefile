@@ -8,10 +8,10 @@ PKGNAMEPREFIX=	erlang-
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	SMPP library for Erlang
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		txt2tags:${PORTSDIR}/textproc/txt2tags
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
-		erlang-common_lib>=3.3.4:${PORTSDIR}/devel/erlang-common_lib
+BUILD_DEPENDS=	erlc:lang/erlang \
+		txt2tags:textproc/txt2tags
+RUN_DEPENDS=	erl:lang/erlang \
+		erlang-common_lib>=3.3.4:devel/erlang-common_lib
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

@@ -14,23 +14,23 @@ COMMENT=	DNS checker from the folks that run the .SE top level domain
 LICENSE=	BSD2CLAUSE
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random \
-		p5-Digest-BubbleBabble>=0:${PORTSDIR}/security/p5-Digest-BubbleBabble \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-IO-Socket-INET6>=2.51:${PORTSDIR}/net/p5-IO-Socket-INET6 \
-		p5-Net-DNS>=0.65:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-DNS-SEC>=0.15:${PORTSDIR}/dns/p5-Net-DNS-SEC \
-		p5-Socket6>=0.19:${PORTSDIR}/net/p5-Socket6 \
-		p5-Sys-Syslog>=0:${PORTSDIR}/sysutils/p5-Sys-Syslog \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
-		p5-Mail-RFC822-Address>=0:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
-		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
-		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
-RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random \
+		p5-Digest-BubbleBabble>=0:security/p5-Digest-BubbleBabble \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-IO-Socket-INET6>=2.51:net/p5-IO-Socket-INET6 \
+		p5-Net-DNS>=0.65:dns/p5-Net-DNS \
+		p5-Net-DNS-SEC>=0.15:dns/p5-Net-DNS-SEC \
+		p5-Socket6>=0.19:net/p5-Socket6 \
+		p5-Sys-Syslog>=0:sysutils/p5-Sys-Syslog \
+		p5-Time-HiRes>=0:devel/p5-Time-HiRes \
+		p5-YAML>=0:textproc/p5-YAML \
+		p5-Text-Template>=0:textproc/p5-Text-Template \
+		p5-Mail-RFC822-Address>=0:mail/p5-Mail-RFC822-Address \
+		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
+		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
 USES=		perl5
 USE_PERL5=	configure

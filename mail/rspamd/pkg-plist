@@ -29,6 +29,7 @@ bin/rspamc
 %%ETCDIR%%/modules.d/ratelimit.conf
 %%ETCDIR%%/modules.d/rbl.conf
 %%ETCDIR%%/modules.d/regexp.conf
+%%ETCDIR%%/modules.d/rspamd_update.conf
 %%ETCDIR%%/modules.d/spf.conf
 %%ETCDIR%%/modules.d/surbl.conf
 %%ETCDIR%%/modules.d/whitelist.conf
@@ -57,6 +58,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/phishing.lua
 %%DATADIR%%/lua/ratelimit.lua
 %%DATADIR%%/lua/rbl.lua
+%%DATADIR%%/lua/rspamd_update.lua
 %%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/spamassassin.lua
 %%DATADIR%%/lua/trie.lua

@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Defer loading of one or more classes
 
-BUILD_DEPENDS=	p5-prefork>=0:${PORTSDIR}/devel/p5-prefork
-RUN_DEPENDS=	p5-prefork>=0:${PORTSDIR}/devel/p5-prefork
+BUILD_DEPENDS=	p5-prefork>=0:devel/p5-prefork
+RUN_DEPENDS=	p5-prefork>=0:devel/p5-prefork
 
 USES=		perl5
 USE_PERL5=	configure

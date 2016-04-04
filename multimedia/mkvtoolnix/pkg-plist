@@ -23,6 +23,11 @@ man/ja/man1/mkvinfo.1.gz
 man/ja/man1/mkvmerge.1.gz
 man/ja/man1/mkvpropedit.1.gz
 %%QT5%%man/ja/man1/mkvtoolnix-gui.1.gz
+man/ko/man1/mkvextract.1.gz
+man/ko/man1/mkvinfo.1.gz
+man/ko/man1/mkvmerge.1.gz
+man/ko/man1/mkvpropedit.1.gz
+%%QT5%%man/ko/man1/mkvtoolnix-gui.1.gz
 man/man1/mkvextract.1.gz
 man/man1/mkvinfo.1.gz
 man/man1/mkvmerge.1.gz
@@ -33,6 +38,11 @@ man/nl/man1/mkvinfo.1.gz
 man/nl/man1/mkvmerge.1.gz
 man/nl/man1/mkvpropedit.1.gz
 %%QT5%%man/nl/man1/mkvtoolnix-gui.1.gz
+man/pl/man1/mkvextract.1.gz
+man/pl/man1/mkvinfo.1.gz
+man/pl/man1/mkvmerge.1.gz
+man/pl/man1/mkvpropedit.1.gz
+%%QT5%%man/pl/man1/mkvtoolnix-gui.1.gz
 man/uk/man1/mkvextract.1.gz
 man/uk/man1/mkvinfo.1.gz
 man/uk/man1/mkvmerge.1.gz
@@ -93,6 +103,7 @@ man/zh_CN/man1/mkvpropedit.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/it/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/mkvtoolnix.mo

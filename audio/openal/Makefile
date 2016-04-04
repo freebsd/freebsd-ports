@@ -33,13 +33,13 @@ ESOUND_USE=		GNOME=esound
 ESOUND_CONFIGURE_ENABLE=esd
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_ENABLE=	sdl
-VORBIS_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=vorbis
-SMPEG_LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+SMPEG_LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 SMPEG_CONFIGURE_ENABLE=	mp3
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
-ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_BUILD_DEPENDS=	nasm:devel/nasm
 
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON_ia64=	does not compile

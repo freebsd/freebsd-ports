@@ -1,14 +1,16 @@
 Gradle is build automation evolved.
 
-Gradle can automate the building, testing, publishing, deployment and more of
-software packages or other types of projects such as generated static websites,
-generated documentation or indeed anything else.
+Gradle can automate the building, testing, publishing, deployment
+and more of software packages or other types of projects such as
+generated static websites, generated documentation or indeed anything
+else.
 
-Gradle combines the power and flexibility of Ant with the dependency management
-and conventions of Maven into a more effective way to build. Powered by a Groo-
-vy DSL and packed with innovation, Gradle provides a declarative way to descri-
-be all kinds of builds through sensible defaults. Gradle is quickly becoming
-the build system of choice for many open source projects, leading edge enterpr-
-ises and legacy automation challenges.
+Gradle combines the power and flexibility of Ant with the dependency
+management and conventions of Maven into a more effective way to
+build. Powered by a Groovy DSL and packed with innovation, Gradle
+provides a declarative way to describe all kinds of builds through
+sensible defaults. Gradle is quickly becoming the build system of
+choice for many open source projects, leading edge enterprises and
+legacy automation challenges.
 
 WWW: http://www.gradle.org/

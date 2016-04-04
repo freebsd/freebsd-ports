@@ -12,7 +12,7 @@ COMMENT=	Perl5 module for gathering information from network devices
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 USES=		perl5
 USE_PERL5=	configure

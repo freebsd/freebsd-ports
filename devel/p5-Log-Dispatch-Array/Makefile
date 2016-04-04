@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch-Array
-PORTVERSION=	1.001
-PORTREVISION=	1
+PORTVERSION=	1.003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,11 +12,13 @@ COMMENT=	Log events to an array (reference)
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+BUILD_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

@@ -8,10 +8,8 @@ DISTNAME=	lighttpd-${PORTVERSION}
 
 COMMENT=	H264 streaming module for lighttpd
 
-BROKEN=		incompatibility with new Lighttpd API
-
-BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
-RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
+RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 
 LICENSE=	CCPL.BY-NC-SA.30
 LICENSE_NAME=	Creative Commons Attribution-NonCommercial-ShareAlike 3.0 \
@@ -26,8 +24,8 @@ PLIST=		${.CURDIR}/pkg-plist
 
 MANUAL_PACKAGE_BUILD=	free for non-commercial use only
 
-PATCH_SITES+=	LOCAL/mm
-PATCHFILES+=	lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz
+PATCH_SITES+=	https://raw.githubusercontent.com/pkubaj/lighttpd-mod_h264_streaming/master/
+PATCHFILES+=	lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch
 
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	${PORTNAME}.la

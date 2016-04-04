@@ -58,10 +58,12 @@ include/dovecot/auth-master.h
 include/dovecot/auth-penalty.h
 include/dovecot/auth-postfix-connection.h
 include/dovecot/auth-request-handler.h
+include/dovecot/auth-request-stats.h
 include/dovecot/auth-request-var-expand.h
 include/dovecot/auth-request.h
 include/dovecot/auth-server-connection.h
 include/dovecot/auth-settings.h
+include/dovecot/auth-stats.h
 include/dovecot/auth-token.h
 include/dovecot/auth-worker-client.h
 include/dovecot/auth-worker-server.h
@@ -152,6 +154,7 @@ include/dovecot/fts-language.h
 include/dovecot/fts-library.h
 include/dovecot/fts-parser.h
 include/dovecot/fts-storage.h
+include/dovecot/fts-tokenizer-common.h
 include/dovecot/fts-tokenizer-generic-private.h
 include/dovecot/fts-tokenizer-private.h
 include/dovecot/fts-tokenizer.h
@@ -198,6 +201,9 @@ include/dovecot/imap-fetch.h
 include/dovecot/imap-id.h
 include/dovecot/imap-keepalive.h
 include/dovecot/imap-list.h
+include/dovecot/imap-login-client.h
+include/dovecot/imap-login-commands.h
+include/dovecot/imap-login-settings.h
 include/dovecot/imap-master-client.h
 include/dovecot/imap-match.h
 include/dovecot/imap-metadata.h
@@ -405,6 +411,7 @@ include/dovecot/message-date.h
 include/dovecot/message-decoder.h
 include/dovecot/message-header-decode.h
 include/dovecot/message-header-encode.h
+include/dovecot/message-header-hash.h
 include/dovecot/message-header-parser.h
 include/dovecot/message-id.h
 include/dovecot/message-parser.h
@@ -427,6 +434,7 @@ include/dovecot/notify-plugin.h
 include/dovecot/numpack.h
 include/dovecot/ostream-cmp.h
 include/dovecot/ostream-dot.h
+include/dovecot/ostream-escaped.h
 include/dovecot/ostream-failure-at.h
 include/dovecot/ostream-hash.h
 include/dovecot/ostream-metawrap.h
@@ -508,6 +516,7 @@ include/dovecot/sql-api-private.h
 include/dovecot/sql-api.h
 include/dovecot/sql-db-cache.h
 include/dovecot/ssl-proxy.h
+include/dovecot/stats-connection.h
 include/dovecot/stats-parser.h
 include/dovecot/stats.h
 include/dovecot/str-find.h
@@ -607,6 +616,10 @@ lib/dovecot/libdovecot-dsync.a
 lib/dovecot/libdovecot-dsync.so
 lib/dovecot/libdovecot-dsync.so.0
 lib/dovecot/libdovecot-dsync.so.0.0.0
+lib/dovecot/libdovecot-fts.a
+lib/dovecot/libdovecot-fts.so
+lib/dovecot/libdovecot-fts.so.0
+lib/dovecot/libdovecot-fts.so.0.0.0
 lib/dovecot/libdovecot-lda.a
 lib/dovecot/libdovecot-lda.so
 lib/dovecot/libdovecot-lda.so.0
@@ -629,6 +642,8 @@ lib/dovecot/libdovecot.so.0
 lib/dovecot/libdovecot.so.0.0.0
 lib/dovecot/libfs_compress.a
 lib/dovecot/libfs_compress.so
+lib/dovecot/stats/libstats_auth.a
+lib/dovecot/stats/libstats_auth.so
 lib/dovecot/stats/libstats_mail.a
 lib/dovecot/stats/libstats_mail.so
 libexec/dovecot/aggregator
@@ -700,6 +715,7 @@ man/man1/doveadm-quota.1.gz
 man/man1/doveadm-reload.1.gz
 man/man1/doveadm-replicator.1.gz
 man/man1/doveadm-search.1.gz
+man/man1/doveadm-stats.1.gz
 man/man1/doveadm-stop.1.gz
 man/man1/doveadm-sync.1.gz
 man/man1/doveadm-user.1.gz

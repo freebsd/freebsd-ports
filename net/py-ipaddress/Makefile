@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipaddress
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.16
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python 3.3's ipaddress for Python 2.6 and 2.7
 
 LICENSE=	PSFL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:-3.3
 USE_PYTHON=	autoplist distutils

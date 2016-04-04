@@ -28,8 +28,8 @@ PEAR_DB_DESC=	Support SQL stores
 
 USE_PHP=	curl dom
 
-PEAR_DB_BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+PEAR_DB_BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
+PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
 
 .include <bsd.port.options.mk>
 

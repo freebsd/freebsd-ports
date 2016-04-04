@@ -10,18 +10,18 @@ MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create OGG media streams
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE} \
-  		--with-vorbis-prefix=${LOCALBASE}
+		--with-vorbis-prefix=${LOCALBASE}
 
 OPTIONS_DEFINE=	DVDREAD
 OPTIONS_DEFAULT=	DVDREAD
 DVDREAD_DESC=	DVD title chapter extraction via libdvdread
 
-DVDREAD_LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 DVDREAD_CONFIGURE_ON=	--with-dvdread \
 			--with-dvdread-includes=${LOCALBASE} \
 			--with-dvdread-libs=${LOCALBASE}

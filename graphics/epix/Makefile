@@ -12,8 +12,8 @@ COMMENT=	Creates math plots and line figures using easy-to-learn syntax
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake makeinfo tar:bzip2
 USE_TEX=	latex dvipsk:build texmf:build

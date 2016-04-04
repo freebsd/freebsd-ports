@@ -4,6 +4,7 @@
 PORTNAME=	jd
 PORTVERSION=	2.8.9
 DISTVERSIONSUFFIX=	-150226
+PORTREVISION=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	SFJP/jd4linux/62877
 
@@ -13,8 +14,8 @@ COMMENT=	2ch browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libgcrypt.so:security/libgcrypt
 
 USES=		autoreconf iconv:translit libtool tar:tgz
 USE_GNOME=	gtk20 gtkmm24 libgnomeui
@@ -28,7 +29,7 @@ ONIGURUMA_DESC=	Use oniguruma regular expressions library
 PANGOLAYOUT_DESC=	Use PANGOLayout instead of PangoGlyphString
 
 ONIGURUMA_CONFIGURE_WITH=	oniguruma
-ONIGURUMA_LIB_DEPENDS=		libonig.so:${PORTSDIR}/devel/oniguruma5
+ONIGURUMA_LIB_DEPENDS=		libonig.so:devel/oniguruma5
 
 PANGOLAYOUT_CONFIGURE_WITH=	pangolayout
 

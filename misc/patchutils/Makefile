@@ -9,7 +9,7 @@ MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Small collection of programs that operate on patch files
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run build patch

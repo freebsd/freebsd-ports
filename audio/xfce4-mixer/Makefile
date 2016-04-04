@@ -13,8 +13,8 @@ COMMENT=	Volume control for the Xfce desktop
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libunique-1.0.so:x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
@@ -27,7 +27,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	KEYBIND NLS
 KEYBIND_DESC=	Multimedia keyboard shortcuts
-KEYBIND_LIB_DEPENDS=	libkeybinder.so:${PORTSDIR}/x11/keybinder
+KEYBIND_LIB_DEPENDS=	libkeybinder.so:x11/keybinder
 KEYBIND_CONFIGURE_ENABLE=	keybinder
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls

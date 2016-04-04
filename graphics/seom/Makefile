@@ -25,7 +25,7 @@ MAKE_ENV=	DATADIR="${DATADIR}"
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 || ${ARCH} == amd64
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS+=	yasm:devel/yasm
 .endif
 
 post-patch:
@@ -41,7 +41,7 @@ post-install:
 # To roll snapshot: as bms: make BOOTSTRAP=defined fetch
 #
 .if defined(BOOTSTRAP)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 SVN_REV=	196		# svn tip at epoch 2009120801
 SVNROOT_URI=	https://devel.neopsis.com/svn/seom
 

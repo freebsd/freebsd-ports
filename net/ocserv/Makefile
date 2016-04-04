@@ -2,24 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.10.11
+PORTVERSION=	0.10.12
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Server implementing the AnyConnect SSL VPN protocol
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
-		gsed:${PORTSDIR}/textproc/gsed \
-		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	liblz4.so:${PORTSDIR}/archivers/liblz4 \
-		libiconv.so:${PORTSDIR}/converters/libiconv \
-		libtalloc.so:${PORTSDIR}/devel/talloc \
-		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libtasn1.so:${PORTSDIR}/security/libtasn1
+BUILD_DEPENDS=	autogen:devel/autogen \
+		gsed:textproc/gsed \
+		bash:shells/bash
+LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
+		libiconv.so:converters/libiconv \
+		libtalloc.so:devel/talloc \
+		libprotobuf-c.so:devel/protobuf-c \
+		libgnutls.so:security/gnutls \
+		libtasn1.so:security/libtasn1
 
 USES=		autoreconf cpe gettext gmake gperf libtool ncurses \
 		pathfix pkgconfig readline tar:xz
@@ -46,7 +47,7 @@ PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 PORTEXAMPLES=	profile.xml sample.config sample.passwd
 
 GSSAPI_USES=		gssapi:mit
-GSSAPI_LIB_DEPENDS=	libkrb5support.so:${PORTSDIR}/security/krb5
+GSSAPI_LIB_DEPENDS=	libkrb5support.so:security/krb5
 GSSAPI_CONFIGURE_OFF=	--without-gssapi
 
 post-patch:

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 module to work with PGP messages
 
-RUN_DEPENDS=	pgpin:${PORTSDIR}/security/pgpin
+RUN_DEPENDS=	pgpin:security/pgpin
 
 PORTSCOUT=	skipv:1.0
 

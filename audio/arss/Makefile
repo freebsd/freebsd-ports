@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Additive Image Synthesizer (convert audio to images, images to audio)
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/src
 

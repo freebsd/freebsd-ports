@@ -17,7 +17,7 @@ COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 CONFLICTS=	libevent-1.*
 
@@ -111,7 +111,7 @@ CONFIGURE_ENV+=	TURN_NO_MYSQL=1
 .endif
 
 .if ${PORT_OPTIONS:MREDIS}
-LIB_DEPENDS+=	libhiredis.so:${PORTSDIR}/databases/hiredis
+LIB_DEPENDS+=	libhiredis.so:databases/hiredis
 .else
 CONFIGURE_ENV+=	TURN_NO_HIREDIS=1
 .endif

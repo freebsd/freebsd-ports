@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.4.8.2
+PORTVERSION=	1.4.9
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
@@ -11,8 +11,8 @@ COMMENT=	Tool suite for maintaining DNSSEC
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	ldns>=1.6.16:${PORTSDIR}/dns/ldns
-LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
+BUILD_DEPENDS=	ldns>=1.6.16:dns/ldns
+LIB_DEPENDS=	libldns.so:dns/ldns
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
@@ -56,7 +56,7 @@ SCRIPTDATA=	migrate_adapters_1.mysql migrate_keyshare_mysql.pl \
 .if ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-database-backend=sqlite3
-BUILD_DEPENDS+=	sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS+=	sqlite3>=3.3.9:databases/sqlite3
 SCRIPTDATA=	database_create.sqlite3 migrate_keyshare_sqlite3.pl \
 		migrate_adapters_1.sqlite3 migrate_to_ng_sqlite.pl \
 		migrate_1_4_8.sqlite3
@@ -64,7 +64,7 @@ SCRIPTDATA=	database_create.sqlite3 migrate_keyshare_sqlite3.pl \
 
 .if ${PORT_OPTIONS:MSOFTHSM}
 CONFIGURE_ARGS+=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm.so
-RUN_DEPENDS+=	softhsm>=1.2.0:${PORTSDIR}/security/softhsm
+RUN_DEPENDS+=	softhsm>=1.2.0:security/softhsm
 .endif
 
 SCRIPTDATA+=	convert_database.pl

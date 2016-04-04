@@ -14,7 +14,7 @@ BROKEN=		unfetchable
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>0:databases/p5-DBI
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

@@ -8,7 +8,7 @@ CATEGORIES=	editors
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Simple Unicode-aware console and X11-based word processor
 
-RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem
+RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	davidgiven

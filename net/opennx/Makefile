@@ -3,7 +3,7 @@
 
 PORTNAME=	opennx
 PORTVERSION=	0.16.0.729
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CI-source
 
@@ -13,11 +13,10 @@ COMMENT=	Open source drop in replacement for NoMachine's NX client
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
-		cups-base>0:${PORTSDIR}/print/cups-base
-RUN_DEPENDS=	cups-base>0:${PORTSDIR}/print/cups-base
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+BUILD_DEPENDS=	${LOCALBASE}/bin/zip:archivers/zip
+LIB_DEPENDS=	libcups.so:print/cups \
+		libcurl.so:ftp/curl \
+		libsmbclient.so:net/samba-libsmbclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.16
 

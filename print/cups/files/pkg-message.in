@@ -1,9 +1,0 @@
-======================================================================
-
-CUPS is now installed.
-
-Please read the documentation in %%PREFIX%%/share/doc/cups/ for information
-on how to set up your printer to use CUPS. Basic template configuration files
-have been installed in %%PREFIX%%/etc/cups/
-
-======================================================================

@@ -11,10 +11,10 @@ COMMENT=	Standalone obby server
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libobby.so:${PORTSDIR}/devel/obby \
-		libnet6.so:${PORTSDIR}/net/net6 \
-		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26
+LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
+		libobby.so:devel/obby \
+		libnet6.so:net/net6 \
+		libxml++-2.6.so:textproc/libxml++26
 
 USES=		pkgconfig
 USE_GNOME=	glibmm

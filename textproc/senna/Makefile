@@ -35,7 +35,7 @@ BROKEN=		Does not compile on ${ARCH}
 
 .if ${PORT_OPTIONS:MMECAB}
 CONFIGURE_ARGS+=	--with-mecab
-LIB_DEPENDS+=	libmecab.so:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS+=	libmecab.so:japanese/mecab
 .else
 CONFIGURE_ARGS+=	--without-mecab
 .endif

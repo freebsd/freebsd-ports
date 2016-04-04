@@ -1,8 +1,7 @@
 bin/softhsm2-dump-file
 bin/softhsm2-keyconv
 bin/softhsm2-util
-%%ETCDIR%%2.conf
-%%ETCDIR%%2.conf.sample
+@sample %%ETCDIR%%2.conf.sample
 lib/softhsm/libsofthsm2.a
 lib/softhsm/libsofthsm2.so
 man/man1/softhsm2-dump-file.1.gz

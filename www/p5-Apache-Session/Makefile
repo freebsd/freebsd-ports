@@ -14,11 +14,11 @@ COMMENT=	Persistence framework for session data
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS+=	p5-Test-Deep>=0.082:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Exception>=0.15:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Database>=0:${PORTSDIR}/databases/p5-Test-Database
+TEST_DEPENDS+=	p5-Test-Deep>=0.082:devel/p5-Test-Deep \
+		p5-Test-Exception>=0.15:devel/p5-Test-Exception \
+		p5-Test-Database>=0:databases/p5-Test-Database
 
 USES=		perl5
 USE_PERL5=	modbuild

@@ -2,6 +2,7 @@
 
 PORTNAME=	puppetdb
 PORTVERSION=	2.3.8
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 
@@ -10,13 +11,14 @@ COMMENT=	PuppetDB storeconfigs backend
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		puppet:${PORTSDIR}/sysutils/puppet38
-BUILD_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
-		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
+RUN_DEPENDS=	bash:shells/bash \
+		puppet:sysutils/puppet38
+BUILD_DEPENDS=	rubygem-facter>=0:sysutils/rubygem-facter \
+		rubygem-rake>=0:devel/rubygem-rake
 
 USE_RC_SUBR=	puppetdb
 
+CONFLICTS_INSTALL=	puppetdb4-*
 USES=		shebangfix
 SHEBANG_FILES=	ext/files/puppetdb \
 		ext/files/puppetdb-anonymize \

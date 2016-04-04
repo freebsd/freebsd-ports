@@ -13,7 +13,7 @@ COMMENT=	Mojolicious plugin to make authentication a bit easier
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mojolicious>=0:${PORTSDIR}/www/p5-Mojolicious
+BUILD_DEPENDS=	p5-Mojolicious>=0:www/p5-Mojolicious
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

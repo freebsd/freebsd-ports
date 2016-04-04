@@ -1,6 +1,6 @@
---- radwho/radwho.c.orig	2010-01-21 22:29:51.000000000 +0100
-+++ radwho/radwho.c	2010-01-21 22:37:37.000000000 +0100
-@@ -41,7 +41,8 @@
+--- radwho/radwho.c.orig	2008-12-15 08:03:24 UTC
++++ radwho/radwho.c
+@@ -41,7 +41,8 @@ void print_header();
  int want_rad_record(struct radutmp *rt);
  
  /* UTMP stuff. Uses utmpx on svr4 */
@@ -10,7 +10,7 @@
  #  include <utmpx.h>
  #  include <sys/fcntl.h>
  #  define utmp utmpx
-@@ -49,7 +50,9 @@
+@@ -49,7 +50,9 @@ int want_rad_record(struct radutmp *rt);
  #  define UT_LINESIZE   32
  #  define UT_HOSTSIZE   257
  #  undef UTMP_FILE
@@ -20,7 +20,7 @@
  #  undef WTMP_FILE
  #  define WTMP_FILE WTMPX_FILE
  #else
-@@ -60,13 +63,19 @@
+@@ -60,13 +63,19 @@ int want_rad_record(struct radutmp *rt);
  #  define UT_LINESIZE   32
  #  define UT_HOSTSIZE   64
  #endif

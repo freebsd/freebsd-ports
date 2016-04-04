@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Get stock quotes from Yahoo! Finance
 
-RUN_DEPENDS=	p5-HTML-Parser>=2.2:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-libwww>=1.62:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-HTML-Parser>=2.2:www/p5-HTML-Parser \
+		p5-libwww>=1.62:www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

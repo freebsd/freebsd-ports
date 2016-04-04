@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.26
+PORTVERSION=	2.27
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/ \
 		LOCAL/sunpoet
@@ -12,8 +12,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Paste to several pastebin services via bash script
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	bash:shells/bash \
+		wget:ftp/wget
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -15,9 +15,9 @@ LICENSE_NAME=	Ayam License
 LICENSE_FILE=	${WRKSRC}/../License.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libaqsis_util.so:${PORTSDIR}/graphics/aqsis \
-		libtiff.so:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libaqsis_util.so:graphics/aqsis \
+		libtiff.so:graphics/tiff
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

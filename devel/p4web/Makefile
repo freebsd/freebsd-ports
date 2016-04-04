@@ -34,7 +34,7 @@ USE_RC_SUBR=	p4web
 
 # 10.x (and higher) needs compat libs
 .if ${OSVERSION} >= 1000054
-LIB_DEPENDS+=	libstdc++.so.6:${PORTSDIR}/misc/compat9x
+LIB_DEPENDS+=	libstdc++.so.6:misc/compat9x
 .endif
 
 # Figure out what to install

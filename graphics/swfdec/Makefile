@@ -11,8 +11,8 @@ MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.8/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
-LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	liboil-0.3.so:devel/liboil \
+		libsoup-2.4.so:devel/libsoup
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -31,7 +31,7 @@ PULSEAUDIO_DESC=Enable the PulseAudio sound module
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=		libpulse.so:audio/pulseaudio
 CONFIGURE_ARGS+=	--with-audio=pulse
 .else
 CONFIGURE_ARGS+=	--with-audio=oss

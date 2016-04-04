@@ -1,6 +1,18 @@
---- ./CMakeLists.txt.orig	2010-12-21 19:45:24.000000000 +0300
-+++ ./CMakeLists.txt	2011-04-17 13:03:32.608958928 +0400
-@@ -318,6 +318,6 @@
+The libvncclient target was removed because it was not used anywhere (aqemu
+links against the systems libvncclient.so, only the definitions and includes
+are needed from this block) and did not declare its dependency on the moc and
+ui files, possibly causing problems in parallel builds.
+--- CMakeLists.txt.orig	2011-01-14 19:38:53 UTC
++++ CMakeLists.txt
+@@ -164,7 +164,6 @@ IF( NOT WITHOUT_EMBEDDED_DISPLAY )
+ 										Embedded_Display/vncclientthread.cpp Embedded_Display/vncview.cpp )
+ 	
+ 	ADD_DEFINITIONS( -DVNC_DISPLAY -DQTONLY )
+-	ADD_LIBRARY( libvncclient SHARED ${aqemu_headers} ${aqemu_sources} )
+ 	
+ 	INCLUDE_DIRECTORIES( ${VNCCLIENT_INCLUDE_DIRS} ${LIBVNCCLIENT_INCLUDE_DIR} )
+ ENDIF( NOT WITHOUT_EMBEDDED_DISPLAY )
+@@ -318,6 +317,6 @@ IF( INSTALL_MAN )
  		MESSAGE( STATUS "MAN_PAGE_COMPRESSOR flag not set. Available values: gzip, bzip2, lzma" )
  		MESSAGE( STATUS "Will be installed not compressed MAN pages" )
  		

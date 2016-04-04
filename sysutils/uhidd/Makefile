@@ -31,8 +31,8 @@ OPTIONS_EXCLUDE+=	CUSE
 .endif
 
 CUSE_DESC=	Use cuse(3) over multimedia/cuse4bsd-kmod
-CUSE_BUILD_DEPENDS_OFF=	cuse4bsd-kmod>=0.1.24:${PORTSDIR}/multimedia/cuse4bsd-kmod
-CUSE_LIB_DEPENDS_OFF=	libcuse4bsd.so:${PORTSDIR}/multimedia/cuse4bsd-kmod
+CUSE_BUILD_DEPENDS_OFF=	cuse4bsd-kmod>=0.1.24:multimedia/cuse4bsd-kmod
+CUSE_LIB_DEPENDS_OFF=	libcuse4bsd.so:multimedia/cuse4bsd-kmod
 CUSE_SUB_LIST_OFF=	LIBCUSE="${LOCALBASE}/lib/libcuse4bsd.so"
 CUSE_SUB_LIST=		LIBCUSE=""
 

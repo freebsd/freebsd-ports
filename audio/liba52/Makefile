@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DJBFFT OPTIMIZED_CFLAGS DOCS
 DJBFFT_DESC=	djb fft support
 
-DJBFFT_BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
-DJBFFT_RUN_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
+DJBFFT_BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:math/djbfft
+DJBFFT_RUN_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:math/djbfft
 DJBFFT_CFLAGS=		-I${LOCALBASE}/include
 DJBFFT_LDFLAGS=		-L${LOCALBASE}/lib
 DJBFFT_CONFIGURE_ON=	--enable-djbfft

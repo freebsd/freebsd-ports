@@ -15,7 +15,7 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	X11
-X11_RUN_DEPENDS=x11vnc:${PORTSDIR}/net/x11vnc
+X11_RUN_DEPENDS=x11vnc:net/x11vnc
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/flvscreen.so

@@ -27,7 +27,7 @@ NVIDIA_DESC=	Nvidia support
 
 .if ${PORT_OPTIONS:MNVIDIA}
 .	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 .	endif
 .else
 USE_LINUX_APPS+=dri

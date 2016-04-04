@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2015-12-21 09:42:05 UTC
++++ CMakeLists.txt
+@@ -153,7 +153,7 @@ if (NOT LIBDIR)
+ endif (NOT LIBDIR)
+ 
+ if (NOT LOCALSTATEDIR)
+-  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
++  set (LOCALSTATEDIR "/var")
+ endif (NOT LOCALSTATEDIR)
+ 
+ if (NOT DATADIR)
+@@ -284,7 +284,7 @@ configure_file (tools/openvas-migrate-to
+ 
+ ## Program
+ 
+-set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
++set (HARDENING_FLAGS            "-Wformat -Wformat-security -Wl,-z,relro -Wl,-z,now")
+ 
+ set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
+ set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -D_BSD_SOURCE -D_ISOC99_SOURCE -D_SVID_SOURCE -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64")

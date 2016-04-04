@@ -13,18 +13,18 @@ PKGNAMESUFFIX=	3
 MAINTAINER=	noackjr@alumni.rice.edu
 COMMENT=	WWW CGI script to browse CVS repository trees version 3
 
-RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run \
+		p5-URI>=0:net/p5-URI
 
 # The following extra dependencies are optional, but CVSweb works the
 # best with them.
-RUN_DEPENDS+=	p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
-		p5-String-Ediff>=0:${PORTSDIR}/devel/p5-String-Ediff \
-		cvsgraph:${PORTSDIR}/devel/cvsgraph
+RUN_DEPENDS+=	p5-MIME-Types>=0:mail/p5-MIME-Types \
+		p5-String-Ediff>=0:devel/p5-String-Ediff \
+		cvsgraph:devel/cvsgraph
 
 # Use PAPERSIZE to avoid a stale dependency on Enscript.
 PAPERSIZE?=	letter
-RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-${PAPERSIZE}
+RUN_DEPENDS+=	enscript:print/enscript-${PAPERSIZE}
 
 CONFLICTS=	cvsweb-2.*
 

@@ -4,4 +4,4 @@ be forwarded to a specific group of DNS servers (with redundancy and
 load balancing) for that domain. It is useful for VPNs and also good
 support for offline and dialup sites.
 
-WWW: http://dnrd.sourceforge.net
+WWW: http://dnrd.sourceforge.net/

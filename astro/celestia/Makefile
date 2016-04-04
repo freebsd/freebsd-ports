@@ -13,7 +13,7 @@ COMMENT=	Scriptable space flight simulator for X11
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gettext gmake jpeg libtool lua pkgconfig
 USE_GL=		gl
@@ -62,8 +62,8 @@ IGNORE=		requires one of the <${UI_LIST}> values for CELESTIA_UI
 
 .if ${CELESTIA_UI} == "gtk" || ${CELESTIA_UI} == "gnome"
 USES+=		pathfix
-LIB_DEPENDS+=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libtheora.so:multimedia/libtheora
 STARTUP_NOTIFY=	true
 PLIST_FILES+=	share/celestia/celestia-logo.png share/celestia/celestiaui.xml
 .else

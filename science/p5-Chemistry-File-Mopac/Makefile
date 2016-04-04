@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	MOPAC 6 input file reader/writer
 
-BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
-		p5-Chemistry-InternalCoords>=0:${PORTSDIR}/science/p5-Chemistry-InternalCoords
-RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
-		p5-Chemistry-InternalCoords>=0:${PORTSDIR}/science/p5-Chemistry-InternalCoords
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
+		p5-Chemistry-InternalCoords>=0:science/p5-Chemistry-InternalCoords
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
+		p5-Chemistry-InternalCoords>=0:science/p5-Chemistry-InternalCoords
 
 USES=		perl5
 USE_PERL5=	configure

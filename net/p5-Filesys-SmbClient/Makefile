@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface for access Samba filesystem with libsmclient.so
 
-LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+BUILD_DEPENDS=	p5-Test-Simple>=0:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

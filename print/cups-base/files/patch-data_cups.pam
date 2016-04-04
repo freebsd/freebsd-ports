@@ -1,7 +1,0 @@
---- data/cups.pam.orig	2006-06-23 00:14:22 UTC
-+++ data/cups.pam
-@@ -1,2 +1,2 @@
--auth	required	/lib/security/pam_pwdb.so nullok shadow
--account	required	/lib/security/pam_pwdb.so
-+auth	include		system
-+account	include		system

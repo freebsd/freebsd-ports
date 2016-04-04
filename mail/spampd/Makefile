@@ -11,8 +11,8 @@ COMMENT=	Spamassassin SMTP Proxy
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin \
-		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server
+RUN_DEPENDS=	spamc:mail/spamassassin \
+		p5-Net-Server>=0:net/p5-Net-Server
 
 NO_BUILD=	yes
 PLIST_FILES=	sbin/spampd

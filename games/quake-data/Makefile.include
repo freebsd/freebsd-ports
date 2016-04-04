@@ -13,5 +13,5 @@ PLIST_SUB+=	Q1DIR="${Q1DIR:S|${LOCALBASE}/||}"
 SUB_LIST+=	Q1DIR="${Q1DIR}"
 
 .if ${PORTNAME} != data
-RUN_DEPENDS+=	${Q1DIR}/id1/pak0.pak:${PORTSDIR}/games/quake-data
+RUN_DEPENDS+=	${Q1DIR}/id1/pak0.pak:games/quake-data
 .endif

@@ -13,8 +13,8 @@ COMMENT=	Madplay MP3 player (part of MAD project)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS=	libmad.so:audio/libmad \
+		libid3tag.so:audio/libid3tag
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

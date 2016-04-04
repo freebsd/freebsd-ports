@@ -17,16 +17,16 @@ EXPIRATION_DATE=2016-04-04
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		mrtg:${PORTSDIR}/net-mgmt/mrtg
+LIB_DEPENDS=	libgd.so:graphics/gd
+RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD \
+		mrtg:net-mgmt/mrtg
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes
 NO_ARCH=	yes
 SHEBANG_FILES=	weathermap
 
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 PORTDOCS=	README INSTALL
 
@@ -37,7 +37,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	WGET DOCS EXAMPLES
 WGET_DESC=	WGET support
-WGET_RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+WGET_RUN_DEPENDS=	wget:ftp/wget
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \

@@ -27,7 +27,7 @@ WITHOUT_SYMUX=	yes
 .endif
 
 .if !defined(WITHOUT_SYMUX)
-LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	librrd.so:databases/rrdtool
 .endif
 
 .if defined(WITHOUT_SYMUX) && defined(WITHOUT_SYMON)

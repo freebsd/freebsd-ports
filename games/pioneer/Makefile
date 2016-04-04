@@ -3,6 +3,7 @@
 
 PORTNAME=	pioneer
 PORTVERSION=	0.0.${GH_TAGNAME}
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	lightside@gmx.com
@@ -28,13 +29,13 @@ LICENSE_PERMS_GLEW=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IUP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/include/GL/glu.h:${PORTSDIR}/graphics/libGLU
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libassimp.so:${PORTSDIR}/multimedia/assimp
+BUILD_DEPENDS=	${LOCALBASE}/include/GL/glu.h:graphics/libGLU
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libsigc-2.0.so:devel/libsigc++20 \
+		libfreetype.so:print/freetype2 \
+		libvorbisfile.so:audio/libvorbis \
+		libpng.so:graphics/png \
+		libassimp.so:multimedia/assimp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
@@ -62,10 +63,12 @@ DESKTOP_ENTRIES="Pioneer" "${COMMENT}" \
 SUB_FILES=	pkg-message
 SUB_LIST=	QUICKSTART_PATH="${QUICKSTART_PATH}"
 
-OPTIONS_DEFINE=		DOCS MODELCOMPILER
+OPTIONS_DEFINE=		DOCS MODELCOMPILER PROFILER
 OPTIONS_DEFAULT=	MODELCOMPILER
 MODELCOMPILER_DESC=	Build/install modelcompiler tool
 MODELCOMPILER_PLIST_FILES=	bin/${PORTNAME}-modelcompiler
+PROFILER_DESC=		Build with internal profiler
+PROFILER_CONFIGURE_ON=	--enable-profiler
 
 .include <bsd.port.options.mk>
 
@@ -92,6 +95,14 @@ post-patch: .SILENT
 post-patch-MODELCOMPILER-off: .SILENT
 	${REINPLACE_CMD} -e 's/pioneer modelcompiler/pioneer/' \
 		${WRKSRC}/src/Makefile.am
+
+post-patch-PROFILER-off: .SILENT
+	${REINPLACE_CMD} -e '/^SUBDIRS/s/ profiler//' \
+		${WRKSRC}/contrib/Makefile.am
+	${REINPLACE_CMD} -i '.p.bak' -e '/libjson.a/s| \\|| ; /libprofiler.a/d' \
+		${WRKSRC}/src/Makefile.am
+	${REINPLACE_CMD} -i '.p.bak' -e '/contrib\/profiler/d' \
+		${WRKSRC}/configure.ac
 
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})

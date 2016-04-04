@@ -12,7 +12,7 @@ COMMENT=	PECL extension to the libssh2 library
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
+LIB_DEPENDS=	libssh2.so:security/libssh2
 
 USES=		tar:tgz
 USE_PHP=	yes

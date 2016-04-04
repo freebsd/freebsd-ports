@@ -12,7 +12,7 @@ COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 USES=		alias cpe
 CPE_VENDOR=	oswald_buddenhagen

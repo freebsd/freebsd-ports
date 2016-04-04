@@ -14,10 +14,10 @@ COMMENT=	Perl module mod_expires for Plack
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Date>=0:${PORTSDIR}/www/p5-HTTP-Date \
-		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-Plack>=0.9937:${PORTSDIR}/www/p5-Plack \
-		p5-Try-Tiny>=0.06:${PORTSDIR}/lang/p5-Try-Tiny
+BUILD_DEPENDS=	p5-HTTP-Date>=0:www/p5-HTTP-Date \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-Plack>=0.9937:www/p5-Plack \
+		p5-Try-Tiny>=0.06:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

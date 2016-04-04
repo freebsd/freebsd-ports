@@ -13,9 +13,9 @@ COMMENT=	Logitech Harmony configuration library
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconf
-LIB_DEPENDS=	libhidapi.so:${PORTSDIR}/comms/hidapi \
-		libzip.so:${PORTSDIR}/archivers/libzip
+BUILD_DEPENDS=	pkg-config:devel/pkgconf
+LIB_DEPENDS=	libhidapi.so:comms/hidapi \
+		libzip.so:archivers/libzip
 
 USE_LDCONFIG=	yes
 USES=		tar:bzip2 libtool shared-mime-info

@@ -10,7 +10,7 @@ MASTER_SITES=	http://hathawaymix.org/Software/TCPWatch/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP monitoring and logging tool with support for HTTP 1.1
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

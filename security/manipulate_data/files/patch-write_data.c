@@ -1,6 +1,6 @@
---- write_data.c.orig	Wed Jul  7 16:58:54 2004
-+++ write_data.c	Sun Jul 25 23:37:48 2004
-@@ -49,7 +49,7 @@
+--- write_data.c.orig	2004-07-07 14:58:54 UTC
++++ write_data.c
+@@ -49,7 +49,7 @@ int main (int argc, char *argv[]) {
      if (sizeof(start) < 8)
        start = atol(c_ptr2);
      else

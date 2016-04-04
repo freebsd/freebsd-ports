@@ -15,8 +15,8 @@ COMMENT=	Wordnik API implementation
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-TEST_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
+TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON
 
 USES=		perl5
 USE_PERL5=	configure

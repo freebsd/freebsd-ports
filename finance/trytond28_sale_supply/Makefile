@@ -13,7 +13,7 @@ COMMENT=	Tryton Application Platform (Sale Supply Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_sale>=2.8.1:${PORTSDIR}/finance/trytond28_sale
+RUN_DEPENDS=	trytond28_sale>=2.8.1:finance/trytond28_sale
 
 CONFLICTS=	trytond_sale_supply-2.[46].*
 

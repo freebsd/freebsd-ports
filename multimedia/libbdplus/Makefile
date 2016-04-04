@@ -12,8 +12,8 @@ COMMENT=	BD+ System research implementation
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
 
 USE_LDCONFIG=	yes
 USES=		autoreconf tar:bzip2 pkgconfig libtool

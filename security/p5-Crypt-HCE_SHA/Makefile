@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl5 interface to one way hash chaining block cipher
 
-BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

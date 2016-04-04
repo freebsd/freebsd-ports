@@ -12,11 +12,11 @@ COMMENT=	Stores, retrieves, generates, and synchronizes passwords securely
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		getopt>=0:${PORTSDIR}/misc/getopt \
-		gnupg>=2:${PORTSDIR}/security/gnupg \
-		pwgen>=0:${PORTSDIR}/sysutils/pwgen \
-		tree>=1.7:${PORTSDIR}/sysutils/tree
+RUN_DEPENDS=	bash:shells/bash \
+		getopt>=0:misc/getopt \
+		gnupg>=2:security/gnupg \
+		pwgen>=0:sysutils/pwgen \
+		tree>=1.7:sysutils/tree
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -28,9 +28,9 @@ GIT_DESC=		Enable git storage
 XCLIP_DESC=		Enable xclip feature
 CONTRIB_DESC=		Include shell completions, import scripts, related projects
 
-GIT_RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
-XCLIP_RUN_DEPENDS=	base64>=0:${PORTSDIR}/converters/base64 \
-			xclip>=0:${PORTSDIR}/x11/xclip
+GIT_RUN_DEPENDS=	git>=0:devel/git
+XCLIP_RUN_DEPENDS=	base64>=0:converters/base64 \
+			xclip>=0:x11/xclip
 
 .include <bsd.port.options.mk>
 

@@ -14,10 +14,10 @@ COMMENT=	Simple, versioned access to configuration data
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-Config-Std>=0:${PORTSDIR}/devel/p5-Config-Std \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Git-PurePerl>=0:${PORTSDIR}/devel/p5-Git-PurePerl
+RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-Config-Std>=0:devel/p5-Config-Std \
+		p5-Path-Class>=0:devel/p5-Path-Class \
+		p5-Git-PurePerl>=0:devel/p5-Git-PurePerl
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,7 +14,7 @@ COMMENT=	Wx backend for TraitsGUI
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=3.2.0:${PORTSDIR}/devel/py-traits
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=3.2.0:devel/py-traits
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

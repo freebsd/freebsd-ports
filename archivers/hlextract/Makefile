@@ -12,7 +12,7 @@ COMMENT=	Utility to extract data from various Half-Life file formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libhl.so:${PORTSDIR}/games/hllib
+LIB_DEPENDS=	libhl.so:games/hllib
 
 USES=		dos2unix zip
 WRKSRC=		${WRKDIR}/HLExtract

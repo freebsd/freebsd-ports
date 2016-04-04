@@ -1,6 +1,6 @@
-etc/cups/mimefx.convs
-etc/cups/mimefx.types
 libexec/cups/filter/pdftopdffx
 libexec/cups/filter/pdftopjlfx
 libexec/cups/filter/pstopdffx
+share/cups/mime/mimefx.convs
+share/cups/mime/mimefx.types
 share/cups/model/FujiXerox/en/fxlinuxprint.ppd

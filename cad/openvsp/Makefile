@@ -15,14 +15,14 @@ LICENSE_NAME=	NASA Open Source Agreement version 1.3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs
-LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs
+LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
+		libdrm.so:graphics/libdrm \
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2 \
+		libexpat.so:textproc/expat2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfltk.so:x11-toolkits/fltk
 
 USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP

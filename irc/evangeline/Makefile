@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		gmake tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
-    		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
+		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
 
 PLIST_FILES=	bin/evangeline
 

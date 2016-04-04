@@ -47,7 +47,6 @@ share/java/zi/America/Campo_Grande
 share/java/zi/America/Cancun
 share/java/zi/America/Caracas
 share/java/zi/America/Cayenne
-share/java/zi/America/Cayman
 share/java/zi/America/Chicago
 share/java/zi/America/Chihuahua
 share/java/zi/America/Costa_Rica
@@ -128,7 +127,6 @@ share/java/zi/America/Recife
 share/java/zi/America/Regina
 share/java/zi/America/Resolute
 share/java/zi/America/Rio_Branco
-share/java/zi/America/Santa_Isabel
 share/java/zi/America/Santarem
 share/java/zi/America/Santiago
 share/java/zi/America/Santo_Domingo
@@ -166,6 +164,7 @@ share/java/zi/Asia/Ashgabat
 share/java/zi/Asia/Baghdad
 share/java/zi/Asia/Baku
 share/java/zi/Asia/Bangkok
+share/java/zi/Asia/Barnaul
 share/java/zi/Asia/Beirut
 share/java/zi/Asia/Bishkek
 share/java/zi/Asia/Brunei
@@ -286,6 +285,7 @@ share/java/zi/Etc/UCT
 share/java/zi/Etc/UTC
 share/java/zi/Europe/Amsterdam
 share/java/zi/Europe/Andorra
+share/java/zi/Europe/Astrakhan
 share/java/zi/Europe/Athens
 share/java/zi/Europe/Belgrade
 share/java/zi/Europe/Berlin
@@ -319,6 +319,7 @@ share/java/zi/Europe/Sofia
 share/java/zi/Europe/Stockholm
 share/java/zi/Europe/Tallinn
 share/java/zi/Europe/Tirane
+share/java/zi/Europe/Ulyanovsk
 share/java/zi/Europe/Uzhgorod
 share/java/zi/Europe/Vienna
 share/java/zi/Europe/Vilnius

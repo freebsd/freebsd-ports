@@ -3,6 +3,7 @@ lib/kde4/ktpaccountskcm_plugin_butterfly.so
 lib/kde4/ktpaccountskcm_plugin_gabble.so
 lib/kde4/ktpaccountskcm_plugin_haze.so
 lib/kde4/ktpaccountskcm_plugin_idle.so
+lib/kde4/ktpaccountskcm_plugin_morse.so
 lib/kde4/ktpaccountskcm_plugin_rakia.so
 lib/kde4/ktpaccountskcm_plugin_salut.so
 lib/kde4/ktpaccountskcm_plugin_sipe.so
@@ -15,6 +16,7 @@ share/kde4/services/ktpaccountskcm_plugin_butterfly.desktop
 share/kde4/services/ktpaccountskcm_plugin_gabble.desktop
 share/kde4/services/ktpaccountskcm_plugin_haze.desktop
 share/kde4/services/ktpaccountskcm_plugin_idle.desktop
+share/kde4/services/ktpaccountskcm_plugin_morse.desktop
 share/kde4/services/ktpaccountskcm_plugin_rakia.desktop
 share/kde4/services/ktpaccountskcm_plugin_salut.desktop
 share/kde4/services/ktpaccountskcm_plugin_sipe.desktop
@@ -78,6 +80,13 @@ share/locale/el/LC_MESSAGES/kcmtelepathyaccounts_plugin_rakia.mo
 share/locale/el/LC_MESSAGES/kcmtelepathyaccounts_plugin_salut.mo
 share/locale/el/LC_MESSAGES/kcmtelepathyaccounts_plugin_sunshine.mo
 share/locale/en_GB/LC_MESSAGES/kcm_ktp_accounts.mo
+share/locale/en_GB/LC_MESSAGES/kcmtelepathyaccounts_plugin_butterfly.mo
+share/locale/en_GB/LC_MESSAGES/kcmtelepathyaccounts_plugin_gabble.mo
+share/locale/en_GB/LC_MESSAGES/kcmtelepathyaccounts_plugin_haze.mo
+share/locale/en_GB/LC_MESSAGES/kcmtelepathyaccounts_plugin_idle.mo
+share/locale/en_GB/LC_MESSAGES/kcmtelepathyaccounts_plugin_rakia.mo
+share/locale/en_GB/LC_MESSAGES/kcmtelepathyaccounts_plugin_salut.mo
+share/locale/en_GB/LC_MESSAGES/kcmtelepathyaccounts_plugin_sunshine.mo
 share/locale/eo/LC_MESSAGES/kcm_ktp_accounts.mo
 share/locale/es/LC_MESSAGES/kcm_ktp_accounts.mo
 share/locale/es/LC_MESSAGES/kcmtelepathyaccounts_plugin_butterfly.mo

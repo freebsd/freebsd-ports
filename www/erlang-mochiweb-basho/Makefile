@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mochiweb
-PORTVERSION=	2.9.0p1
-PORTREVISION=	1
+PORTVERSION=	2.9.0p2
 CATEGORIES=	www devel
 PKGNAMEPREFIX=	erlang-
 PKGNAMESUFFIX=	-basho
@@ -17,7 +16,7 @@ CONFLICTS=	mochiweb-[0-9]*
 USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	basho
-GH_TAGNAME=	ade2a9b	# required
+GH_TAGNAME=	4d38821	# required
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

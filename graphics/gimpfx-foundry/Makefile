@@ -14,7 +14,7 @@ COMMENT=	Collection of scripts for The Gimp 2.6
 
 # Maintainer has requested this use a specific version
 # as the plugins may not always be backwards-compatible
-RUN_DEPENDS=	gimp-2.8:${PORTSDIR}/graphics/gimp-app
+RUN_DEPENDS=	gimp-2.8:graphics/gimp-app
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

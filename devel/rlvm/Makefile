@@ -10,11 +10,11 @@ COMMENT=	RealLive virtual machine clone
 LICENSE=	GPLv2 GPLv3 MIT
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:${PORTSDIR}/devel/utf8cpp
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libboost_serialization.so:${PORTSDIR}/devel/boost-libs \
-		libguichan.so:${PORTSDIR}/devel/guichan
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
+BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+		libboost_serialization.so:devel/boost-libs \
+		libguichan.so:devel/guichan
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eglaysher
@@ -41,19 +41,19 @@ OPTIONS_SUB=	yes
 
 JAPANESE_FONT_DESC=msgothic.ttc alternatives with verified metrics (unless --font)
 KOCHI_DESC=	kochi-gothic-subst.ttf from japanese/font-kochi
-KOCHI_RUN_DEPENDS=${LOCALBASE}/share/fonts/TTF/kochi-gothic-subst.ttf:${PORTSDIR}/japanese/font-kochi
+KOCHI_RUN_DEPENDS=${LOCALBASE}/share/fonts/TTF/kochi-gothic-subst.ttf:japanese/font-kochi
 MONA_DESC=	mona.ttf from japanese/monafonts-ttf
-MONA_RUN_DEPENDS=${LOCALBASE}/share/fonts/TrueType/mona.ttf:${PORTSDIR}/japanese/monafonts-ttf
+MONA_RUN_DEPENDS=${LOCALBASE}/share/fonts/TrueType/mona.ttf:japanese/monafonts-ttf
 SAZANAMI_DESC=	sazanami-gothic.ttf from japanese/font-sazanami
-SAZANAMI_RUN_DEPENDS=${LOCALBASE}/share/fonts/TTF/sazanami-gothic.ttf:${PORTSDIR}/japanese/font-sazanami
+SAZANAMI_RUN_DEPENDS=${LOCALBASE}/share/fonts/TTF/sazanami-gothic.ttf:japanese/font-sazanami
 
 DEBUG_MAKE_ARGS_OFF=--release
 NLS_USES=	gettext
 NLS_EXTRA_PATCHES_OFF=${FILESDIR}/extra-patch-disable-nls
 TEST_USES=	lua:51
-TEST_BUILD_DEPENDS=googletest>=1.7.0:${PORTSDIR}/devel/googletest \
-		googlemock>=1.7.0:${PORTSDIR}/devel/googlemock \
-		luabind>0:${PORTSDIR}/devel/luabind
+TEST_BUILD_DEPENDS=googletest>=1.7.0:devel/googletest \
+		googlemock>=1.7.0:devel/googlemock \
+		luabind>0:devel/luabind
 TEST_EXTRA_PATCHES_OFF=${FILESDIR}/extra-patch-disable-test
 
 post-patch:

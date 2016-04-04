@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for easily overriding subroutines
 
-TEST_DEPENDS=	p5-Test-Fatal>=0.0:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Test-Fatal>=0.0:devel/p5-Test-Fatal
 
 USES=		perl5
 USE_PERL5=	configure

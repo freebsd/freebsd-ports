@@ -13,7 +13,7 @@ COMMENT=	Simple parsing of RFC2822 message format and headers
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Email-Date-Format>=0:${PORTSDIR}/mail/p5-Email-Date-Format
+BUILD_DEPENDS=	p5-Email-Date-Format>=0:mail/p5-Email-Date-Format
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

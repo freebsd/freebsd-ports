@@ -1,7 +1,6 @@
-diff -Nabdur bind-9.6.0-P1.orig/bin/named/config.c bind-9.6.0-P1/bin/named/config.c
---- bin/named/config.c	2009-05-22 12:24:49.000000000 +0400
-+++ bin/named/config.c	2009-05-22 12:31:35.000000000 +0400
-@@ -129,6 +129,8 @@
+--- bin/named/config.c.orig	2016-02-29 00:29:06 UTC
++++ bin/named/config.c
+@@ -151,6 +151,8 @@ options {\n\
  	min-roots 2;\n\
  	lame-ttl 600;\n\
  	max-ncache-ttl 10800; /* 3 hours */\n\
@@ -10,11 +9,10 @@ diff -Nabdur bind-9.6.0-P1.orig/bin/named/config.c bind-9.6.0-P1/bin/named/confi
  	max-cache-ttl 604800; /* 1 week */\n\
  	transfer-format many-answers;\n\
  	max-cache-size 0;\n\
-diff -Nabdur bind-9.6.0-P1.orig/bin/named/server.c bind-9.6.0-P1/bin/named/server.c
---- bin/named/server.c	2009-05-22 12:24:49.000000000 +0400
-+++ bin/named/server.c	2009-05-22 12:32:18.000000000 +0400
-@@ -1727,6 +1727,16 @@
- 		CHECK(mustbesecure(obj, view->resolver));
+--- bin/named/server.c.orig	2016-02-29 00:29:06 UTC
++++ bin/named/server.c
+@@ -2797,6 +2797,16 @@ configure_view(dns_view_t *view, dns_vie
+ 	}
  
  	obj = NULL;
 +	result = ns_config_get(maps, "override-cache-ttl", &obj);
@@ -30,22 +28,20 @@ diff -Nabdur bind-9.6.0-P1.orig/bin/named/server.c bind-9.6.0-P1/bin/named/serve
  	result = ns_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asuint32(obj);
-diff -Nabdur bind-9.6.0-P1.orig/lib/dns/include/dns/view.h bind-9.6.0-P1/lib/dns/include/dns/view.h
---- lib/dns/include/dns/view.h	2009-05-22 12:24:49.000000000 +0400
-+++ lib/dns/include/dns/view.h	2009-05-22 12:29:03.000000000 +0400
-@@ -131,6 +131,8 @@
- 	isc_boolean_t			provideixfr;
+--- lib/dns/include/dns/view.h.orig	2016-02-29 00:29:06 UTC
++++ lib/dns/include/dns/view.h
+@@ -150,6 +150,8 @@ struct dns_view {
  	isc_boolean_t			requestnsid;
+ 	isc_boolean_t			requestsit;
  	dns_ttl_t			maxcachettl;
 +	dns_ttl_t			mincachettl;
 +	dns_ttl_t			overridecachettl;
  	dns_ttl_t			maxncachettl;
- 	in_port_t			dstport;
- 	dns_aclenv_t			aclenv;
-diff -Nabdur bind-9.6.0-P1.orig/lib/dns/resolver.c bind-9.6.0-P1/lib/dns/resolver.c
---- lib/dns/resolver.c	2009-05-22 12:24:49.000000000 +0400
-+++ lib/dns/resolver.c	2009-05-22 12:30:41.000000000 +0400
-@@ -4054,6 +4054,18 @@
+ 	dns_ttl_t			prefetch_trigger;
+ 	dns_ttl_t			prefetch_eligible;
+--- lib/dns/resolver.c.orig	2016-02-29 00:29:06 UTC
++++ lib/dns/resolver.c
+@@ -5345,6 +5345,18 @@ cache_name(fetchctx_t *fctx, dns_name_t 
  		}
  
  		/*
@@ -64,11 +60,10 @@ diff -Nabdur bind-9.6.0-P1.orig/lib/dns/resolver.c bind-9.6.0-P1/lib/dns/resolve
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl)
-diff -Nabdur bind-9.6.0-P1.orig/lib/isccfg/namedconf.c bind-9.6.0-P1/lib/isccfg/namedconf.c
---- lib/isccfg/namedconf.c	2009-05-22 12:24:49.000000000 +0400
-+++ lib/isccfg/namedconf.c	2009-05-22 12:31:21.000000000 +0400
-@@ -821,6 +821,8 @@
- 	{ "lame-ttl", &cfg_type_uint32, 0 },
+--- lib/isccfg/namedconf.c.orig	2016-02-29 00:29:06 UTC
++++ lib/isccfg/namedconf.c
+@@ -1561,6 +1561,8 @@ view_clauses[] = {
+ #endif
  	{ "max-acache-size", &cfg_type_sizenodefault, 0 },
  	{ "max-cache-size", &cfg_type_sizenodefault, 0 },
 +	{ "override-cache-ttl", &cfg_type_uint32, 0 },

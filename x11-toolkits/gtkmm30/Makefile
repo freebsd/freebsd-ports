@@ -18,7 +18,7 @@ PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:devel/m4
 
 USES+=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk30 glibmm cairomm atkmm pangomm

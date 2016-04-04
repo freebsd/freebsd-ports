@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/doc/LICENSE.GPL
 LICENSE_FILE_LGPL21=	${WRKSRC}/doc/LICENSE.LGPL
 
-LIB_DEPENDS=	libscim-1.0.so:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	libscim-1.0.so:textproc/scim
 
 USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes

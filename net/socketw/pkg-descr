@@ -1,0 +1,7 @@
+SocketW is a cross platform (Linux/FreeBSD/Unix/Win32) streaming socket C++
+library designed to be easy to use. It supports Unix sockets and TCP/IP sockets
+with optional SSL/TLS (OpenSSL) support. SocketW allows you to write portable
+and secure network applications quickly without needing to spend time learning
+low-level system functions or reading OpenSSL manuals.
+
+WWW: https://github.com/RigsOfRods/socketw

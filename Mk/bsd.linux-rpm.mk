@@ -127,7 +127,7 @@ EXTRACT_CMD?=			${TAR}
 EXTRACT_BEFORE_ARGS?=	--no-same-permissions --no-same-owner -xf
 EXTRACT_AFTER_ARGS?=
 .else
-EXTRACT_DEPENDS+=	rpm2archive:${PORTSDIR}/archivers/rpm4
+EXTRACT_DEPENDS+=	rpm2archive:archivers/rpm4
 EXTRACT_CMD?=	rpm2archive
 EXTRACT_BEFORE_ARGS?=	<
 EXTRACT_AFTER_ARGS?=	| ${TAR} xf - --no-same-permissions --no-same-owner

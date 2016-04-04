@@ -40,10 +40,10 @@ BMP_DESC=		BMP image format support
 BMP_CONFIGURE_ENABLE=	bmp
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_ENABLE=	jpeg
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_ENABLE=	png
 PRINT_CONFIGURE_ENABLE=	print
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_ENABLE=	tiff
 ZLIB_CONFIGURE_ENABLE=	zlib
 

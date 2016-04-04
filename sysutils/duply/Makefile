@@ -14,8 +14,8 @@ COMMENT=	Shell front end for the duplicity backup tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-RUN_DEPENDS=	duplicity:${PORTSDIR}/sysutils/duplicity \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	duplicity:sysutils/duplicity \
+		bash:shells/bash
 
 USES=		python
 

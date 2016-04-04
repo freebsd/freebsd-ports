@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	johan@stromnet.se
 COMMENT=	Perl modules that resynchronise diverged control flow
 
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
 USE_PERL5=	configure

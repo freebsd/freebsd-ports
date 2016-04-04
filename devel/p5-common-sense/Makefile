@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	common-sense
-PORTVERSION=	3.73
-PORTREVISION=	1
+PORTVERSION=	3.74
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MLEHMANN
@@ -17,5 +16,6 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -28,7 +28,7 @@ PLIST_FILES=	bin/xcowdream \
 
 OPTIONS_DEFINE=	DBUS
 
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 DBUS_CFLAGS=		-DWITH_DBUS
 DBUS_CONFIGURE_ENABLE=	dbus
 

@@ -37,7 +37,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_CDF)
-LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	libnetcdf.so:science/netcdf
 CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE}
 PLIST_SUB+=	CDF=""
 .else
@@ -46,7 +46,7 @@ PLIST_SUB+=	CDF="@comment "
 .endif
 
 .if !defined(WITHOUT_BABEL)
-LIB_DEPENDS+=	libopenbabel.so:${PORTSDIR}/science/openbabel
+LIB_DEPENDS+=	libopenbabel.so:science/openbabel
 CONFIGURE_ARGS+=--with-openbabel
 PLIST_SUB+=	BABEL=""
 .else

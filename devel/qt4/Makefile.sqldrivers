@@ -1,0 +1,27 @@
+# $FreeBSD$
+
+PORTNAME=	${DB:tl}
+DISTVERSION=	${QT4_VERSION}
+CATEGORIES=	databases
+PKGNAMEPREFIX=	qt4-
+PKGNAMESUFFIX=	-plugin
+
+MAINTAINER=	kde@FreeBSD.org
+
+EXTRA_PATCHES=	# empty
+
+USE_QT4=	corelib sql moc_build qmake_build
+QT_DIST=	yes
+USES+=		qmake:outsource
+
+CXXFLAGS+=	-I${WRKSRC}/include  # For private QtSql headers.
+
+EXTRACT_AFTER_ARGS=	${DISTNAME}/include/QtSql \
+			${DISTNAME}/src/corelib ${DISTNAME}/src/plugins \
+			${DISTNAME}/src/qt_targets.pri ${DISTNAME}/src/sql
+QMAKE_SOURCE_PATH=	${WRKSRC}/src/plugins/sqldrivers/${DB}/${DB}.pro
+
+PLIST_FILES=	${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:tl:C/^sql//}.so \
+		%%DEBUG%%${QT_PLUGINDIR_REL}/sqldrivers/libq${DB:tl:C/^sql//}.so.debug
+
+.include <bsd.port.mk>

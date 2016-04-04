@@ -14,7 +14,7 @@ COMMENT=	Arcade 2D shoot-em-up
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		autoreconf
 USE_XORG=	xext xxf86dga

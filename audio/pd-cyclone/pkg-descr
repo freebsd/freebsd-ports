@@ -1,0 +1,9 @@
+Cyclone is a library of PureData classes, bringing some level of
+compatibility between Max/MSP and Pd environments. The original
+goal of cyclone was to create a collection of Max/MSP objects for
+PureData. This was in the 2000s area, Max/MSP version 4.6. Since
+then MAX evolved its architecture and file format to something that
+is incompatible with PureData. Compatibility in patch file level
+is limited to this very old version of Max/MSP.
+
+WWW: http://puredata.info/downloads/cyclone/

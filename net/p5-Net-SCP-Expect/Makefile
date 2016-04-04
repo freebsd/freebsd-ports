@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Perl5 wrapper for scp that allows passwords via Expect
 
-BUILD_DEPENDS=	p5-Expect>=1.14:${PORTSDIR}/lang/p5-Expect \
-		p5-Net-IPv6Addr>=0:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr \
-		p5-Term-ReadPassword>=0.01:${PORTSDIR}/devel/p5-Term-ReadPassword
+BUILD_DEPENDS=	p5-Expect>=1.14:lang/p5-Expect \
+		p5-Net-IPv6Addr>=0:net-mgmt/p5-Net-IPv6Addr \
+		p5-Term-ReadPassword>=0.01:devel/p5-Term-ReadPassword
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

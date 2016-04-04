@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
-PORTVERSION=	1.8.15
+PORTVERSION=	1.8.16
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -71,7 +71,7 @@ AUDIT_CONFIGURE_WITH=	bsm-audit
 OPIE_CONFIGURE_ON=	--with-opie
 OPIE_CONFIGURE_OFF=	--with-pam
 SSSD_CONFIGURE_ON=	--with-sssd
-SSSD_RUN_DEPENDS=	sssd:${PORTSDIR}/security/sssd
+SSSD_RUN_DEPENDS=	sssd:security/sssd
 
 .include <bsd.port.options.mk>
 

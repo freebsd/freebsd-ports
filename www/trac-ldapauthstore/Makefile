@@ -13,10 +13,10 @@ COMMENT=	Trac AccountManager plugin using LDAP authentication store
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		trac-accountmanager>0:${PORTSDIR}/www/trac-accountmanager \
-		trac-ldap>0:${PORTSDIR}/www/trac-ldap \
-		${PYTHON_PKGNAMEPREFIX}ldap>0:${PORTSDIR}/net/py-ldap
+RUN_DEPENDS+=	tracd:www/trac \
+		trac-accountmanager>0:www/trac-accountmanager \
+		trac-ldap>0:www/trac-ldap \
+		${PYTHON_PKGNAMEPREFIX}ldap>0:net/py-ldap
 
 NO_ARCH=	yes
 PORTSCOUT=	ignore:1
@@ -29,7 +29,7 @@ USE_PYTHON=	distutils autoplist
 
 # Retrieve the latest version from SVN and package in a tarball.
 .if defined(BOOTSTRAP)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && \

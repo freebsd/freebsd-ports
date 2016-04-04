@@ -14,12 +14,12 @@ LICENSE=		GPLv2
 SLAVE_PORT?=		no
 
 .if ${SLAVE_PORT} == "no"
-LIB_DEPENDS=		libexpat.so:${PORTSDIR}/textproc/expat2 \
-			libmcpp.so:${PORTSDIR}/devel/mcpp
+LIB_DEPENDS=		libexpat.so:textproc/expat2 \
+			libmcpp.so:devel/mcpp
 USE_OPENSSL=		yes
 .else
 LIB_VRS=		${PORTVERSION:R:S|.||g}
-LIB_DEPENDS+=		libIce.so.${LIB_VRS}:${PORTSDIR}/devel/ice
+LIB_DEPENDS+=		libIce.so.${LIB_VRS}:devel/ice
 PLIST_SUB+=		LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 .endif
 
@@ -31,7 +31,7 @@ USES+=			iconv gmake
 
 .if ${PORT_OPTIONS:MTEST} && ${SLAVE_PORT} == "no"
 USES+=			python:build
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}passlib>0:${PORTSDIR}/security/py-passlib
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib
 .endif
 
 WRKSRC=			${WRKDIR}/ice-${PORTVERSION}

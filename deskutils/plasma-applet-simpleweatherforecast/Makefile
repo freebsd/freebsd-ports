@@ -12,7 +12,7 @@ DISTNAME=	92149-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Weather plasma applet for KDE4
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:ftp/wget
 
 USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs

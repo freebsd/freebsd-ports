@@ -13,13 +13,13 @@ COMMENT=	ClassName type constraint with coercion to load the class
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Types>=0.42:${PORTSDIR}/devel/p5-MooseX-Types \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+RUN_DEPENDS=	p5-Module-Runtime>=0:devel/p5-Module-Runtime \
+		p5-Moose>=0:devel/p5-Moose \
+		p5-MooseX-Types>=0.42:devel/p5-MooseX-Types \
+		p5-namespace-clean>=0:devel/p5-namespace-clean
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+TEST_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
+		p5-namespace-clean>=0:devel/p5-namespace-clean
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

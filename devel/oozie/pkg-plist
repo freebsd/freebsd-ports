@@ -93,7 +93,7 @@ oozie/libext/commons-beanutils-1.7.0.jar
 oozie/libext/commons-beanutils-core-1.8.0.jar
 oozie/libext/commons-cli-1.2.jar
 oozie/libext/commons-codec-1.4.jar
-oozie/libext/commons-collections-3.2.1.jar
+oozie/libext/commons-collections-3.2.2.jar
 oozie/libext/commons-compress-1.4.1.jar
 oozie/libext/commons-configuration-1.6.jar
 oozie/libext/commons-digester-1.8.jar

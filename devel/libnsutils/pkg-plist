@@ -1,0 +1,8 @@
+include/nsutils/base64.h
+include/nsutils/errors.h
+include/nsutils/time.h
+include/nsutils/unistd.h
+lib/libnsutils.so
+lib/libnsutils.so.0
+lib/libnsutils.so.%%VERSION%%
+libdata/pkgconfig/libnsutils.pc

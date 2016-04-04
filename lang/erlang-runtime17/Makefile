@@ -125,7 +125,7 @@ CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=--with-odbc
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 .else
 CONFIGURE_ARGS+=--without-odbc
 .endif
@@ -187,6 +187,11 @@ pre-configure:
 .endif
 .if ! ${PORT_OPTIONS:MWX}
 	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
+.endif
+
+post-configure:
+.if ${PORT_OPTIONS:MODBC}
+	${RM} ${WRKSRC}/lib/odbc/SKIP
 .endif
 
 post-install:

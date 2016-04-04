@@ -11,7 +11,7 @@ COMMENT=	Utilities for running CloudABI programs
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
+LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	CloudABI has not yet been ported to other architectures

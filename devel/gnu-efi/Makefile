@@ -11,7 +11,7 @@ COMMENT=	SDK for EFI applications
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ar:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ar:devel/binutils
 
 USES=		gmake tar:bz2
 USE_GCC=	yes

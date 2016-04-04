@@ -1,5 +1,6 @@
 bin/gst-inspect-%%VERSION%%
 bin/gst-launch-%%VERSION%%
+bin/gst-stats-%%VERSION%%
 bin/gst-typefind-%%VERSION%%
 include/gstreamer-%%VERSION%%/gst/base/base.h
 include/gstreamer-%%VERSION%%/gst/base/gstadapter.h
@@ -91,6 +92,9 @@ include/gstreamer-%%VERSION%%/gst/gsttask.h
 include/gstreamer-%%VERSION%%/gst/gsttaskpool.h
 include/gstreamer-%%VERSION%%/gst/gsttoc.h
 include/gstreamer-%%VERSION%%/gst/gsttocsetter.h
+include/gstreamer-%%VERSION%%/gst/gsttracer.h
+include/gstreamer-%%VERSION%%/gst/gsttracerfactory.h
+include/gstreamer-%%VERSION%%/gst/gsttracerrecord.h
 include/gstreamer-%%VERSION%%/gst/gsttypefind.h
 include/gstreamer-%%VERSION%%/gst/gsttypefindfactory.h
 include/gstreamer-%%VERSION%%/gst/gsturi.h
@@ -113,6 +117,7 @@ lib/girepository-1.0/GstController-%%VERSION%%.typelib
 lib/girepository-1.0/GstNet-%%VERSION%%.typelib
 lib/gstreamer-%%VERSION%%/include/gst/gstconfig.h
 lib/gstreamer-%%VERSION%%/libgstcoreelements.so
+lib/gstreamer-%%VERSION%%/libgstcoretracers.so
 lib/libgstbase-%%VERSION%%.so
 lib/libgstbase-%%VERSION%%.so.0
 lib/libgstbase-%%VERSION%%.so.%%SOVERSION%%

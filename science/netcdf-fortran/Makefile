@@ -9,7 +9,7 @@ CATEGORIES=	science
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fortran library for machine-independent, array-oriented data access
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
 CONFLICTS=	netcdf-ftn-[0-9]* netcdf3-ftn-[0-9]*
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmpp
-PORTVERSION=	3.16.0
-PORTREVISION=	1
+PORTVERSION=	4.2.2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -12,38 +11,30 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PNG/JPEG/TIFF to PDF/EPS
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/bsdlic.txt
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/dktools\
-		--libdir=${PREFIX}/lib\
-		--includedir=${PREFIX}/include\
-		--with-gui=no\
-		--with-fallback-string-functions=yes
-CONFIGURE_ENV=	ac_cv_header_sys_termios_h=no
+
+# We do not want to include sys/termios.h even if it exists, and we do not want
+# to depend on BDB for db.h (it is used by other parts of dktools).
+CONFIGURE_ENV=	ac_cv_header_sys_termios_h=no \
+		ac_cv_header_db_h=no
 
 ALL_TARGET=	bmpp
-MAKEFILE=	GNUmakefile
 USES=		gmake jpeg
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/bmpp %%DATADIR%%/bmpp.txt
+PLIST_FILES=	bin/bmpp
 
-pre-patch:
-	@${REINPLACE_CMD} 's@sz->lsz =@// sz->lsz =@' ${WRKSRC}/dk3sf.c
-	@${REINPLACE_CMD} -e 's@#include <dk3conf.h>@#include <stdio.h>@p'\
-			  -e 's@#include <stdio.h>@#include <dk3conf.h>@'\
-		${WRKSRC}/dk3types.h
-	${REINPLACE_CMD} 's|-e "/^SOVERS/cSOVERS=$$VERSNO"|"s/^\(SOVERS.*\)/SOVERS=$$VERSNO/"|'\
-		${WRKSRC}/configure
+post-patch:
+	${REINPLACE_CMD} 's@sz->lsz =@st->lsz =@' ${WRKSRC}/dk3sf.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bmpp ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bmpp.txt ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

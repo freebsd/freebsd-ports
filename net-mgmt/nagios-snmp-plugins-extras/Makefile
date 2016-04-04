@@ -17,8 +17,8 @@ USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	${PLUGINS}
 
-RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		${LOCALBASE}/libexec/nagios/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins
+RUN_DEPENDS+=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
+		${LOCALBASE}/libexec/nagios/utils.pm:net-mgmt/nagios-plugins
 
 PLUGINS=	check_snmp_boostedge.pl \
 		check_snmp_cpfw.pl \

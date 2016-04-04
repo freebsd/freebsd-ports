@@ -9,7 +9,7 @@ COMMENT=	Small, efficient, and portable regex library for Perl 5 compatible
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

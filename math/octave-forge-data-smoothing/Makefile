@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:${PORTSDIR}/math/octave-forge-optim
+RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:math/octave-forge-optim
 
 do-build:
 	@${DO_NADA}

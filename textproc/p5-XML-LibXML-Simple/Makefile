@@ -13,8 +13,8 @@ COMMENT=	XML::LibXML clone of XML::Simple::XMLin()
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-Slurp-Tiny>=0:${PORTSDIR}/devel/p5-File-Slurp-Tiny \
-		p5-XML-LibXML>=1.64:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	p5-File-Slurp-Tiny>=0:devel/p5-File-Slurp-Tiny \
+		p5-XML-LibXML>=1.64:textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

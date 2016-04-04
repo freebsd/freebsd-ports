@@ -1,0 +1,12 @@
+--- configure.in.orig	2016-03-23 23:36:42 UTC
++++ configure.in
+@@ -58,6 +58,9 @@ SAVE_CFLAGS="$CFLAGS"
+ AC_PROG_CC([$($PG_CONFIG --cc)])
+ CFLAGS="$SAVE_CFLAGS"
+ 
++# Add the Postgres PKGINCLUDEDIR to the include search path
++CPPFLAGS="$CPPFLAGS -I$($PG_CONFIG --pkgincludedir)"
++
+ # check for a number of CFLAGS that make development easier
+ 
+ # CITUSAC_PROG_CC_CFLAGS_OPT

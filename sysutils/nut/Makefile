@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nut
-PORTVERSION=	2.7.3
-PORTREVISION=	3
+PORTVERSION=	2.7.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -63,7 +62,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-dev
 
 .if ${PORT_OPTIONS:MCGI}
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:graphics/gd
 CGIDIR?=	${PREFIX}/www/cgi-bin/${PORTNAME}
 CGIDIR_REL?=	${CGIDIR:S,^${PREFIX}/,,}
 CONFIGURE_ARGS+=	--with-cgi --with-cgipath=${CGIDIR} \
@@ -96,7 +95,7 @@ PLIST_SUB+=	NUT_USB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
-LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-snmp
 PLIST_SUB+=	NUT_SNMP=""
 .else
@@ -105,7 +104,7 @@ PLIST_SUB+=	NUT_SNMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNEON}
-LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon
+LIB_DEPENDS+=	libneon.so:www/neon
 CONFIGURE_ARGS+=	--with-neonxml
 PLIST_SUB+=	NUT_NEON=""
 .else
@@ -115,7 +114,7 @@ PLIST_SUB+=	NUT_NEON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPDU}
-LIB_DEPENDS+=	libpowerman.so:${PORTSDIR}/sysutils/powerman
+LIB_DEPENDS+=	libpowerman.so:sysutils/powerman
 CONFIGURE_ARGS+=	--with-powerman
 PLIST_SUB+=	NUT_PDU=""
 .else
@@ -124,24 +123,24 @@ PLIST_SUB+=	NUT_PDU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBASH}
-BUILD_DEPENDS+=	${LOCALBASE}/share/bash-completion/bash_completion.sh:${PORTSDIR}/shells/bash-completion
-RUN_DEPENDS+=	${LOCALBASE}/share/bash-completion/bash_completion.sh:${PORTSDIR}/shells/bash-completion
+BUILD_DEPENDS+=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
+RUN_DEPENDS+=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
 PLIST_SUB+=	BASH=""
 .else
 PLIST_SUB+=	BASH="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-BUILD_DEPENDS+=	${LOCALBASE}/include/avahi-ui/avahi-ui.h:${PORTSDIR}/net/avahi-header
-BUILD_DEPENDS+=	avahi-daemon:${PORTSDIR}/net/avahi-app
-RUN_DEPENDS+=	avahi-daemon:${PORTSDIR}/net/avahi-app
+BUILD_DEPENDS+=	${LOCALBASE}/include/avahi-ui/avahi-ui.h:net/avahi-header
+BUILD_DEPENDS+=	avahi-daemon:net/avahi-app
+RUN_DEPENDS+=	avahi-daemon:net/avahi-app
 CONFIGURE_ARGS+=	--with-avahi
 .else
 CONFIGURE_ARGS+=	--without-avahi
 .endif
 
 .if ${PORT_OPTIONS:MFREEIPMI}
-LIB_DEPENDS+=	libfreeipmi.so:${PORTSDIR}/sysutils/freeipmi
+LIB_DEPENDS+=	libfreeipmi.so:sysutils/freeipmi
 CONFIGURE_ARGS+=	--with-freeipmi
 PLIST_SUB+=	NUT_FREEIPMI=""
 .else
@@ -150,7 +149,7 @@ PLIST_SUB+=	NUT_FREEIPMI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIPMIPSU}
-LIB_DEPENDS+=	libfreeipmi.so:${PORTSDIR}/sysutils/freeipmi
+LIB_DEPENDS+=	libfreeipmi.so:sysutils/freeipmi
 CONFIGURE_ARGS+=	--with-ipmi
 PLIST_SUB+=	NUT_IPMIPSU=""
 .else

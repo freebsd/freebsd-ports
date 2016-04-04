@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for reading of the call detail records from PBX
 
 BROKEN=		unfetchable
+DEPRECATED=	unfetchable
+EXPIRATION_DATE=2016-04-14
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	unknown

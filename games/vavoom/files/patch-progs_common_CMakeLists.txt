@@ -1,0 +1,8 @@
+--- progs/common/CMakeLists.txt.orig	2016-03-16 16:45:41 UTC
++++ progs/common/CMakeLists.txt
+@@ -17,4 +17,4 @@ add_custom_command(OUTPUT ${OUTDIR}/uiba
+ 	COMMAND ${VCC} ARGS -P${OUTDIR} ${CMAKE_CURRENT_SOURCE_DIR}/uibase/classes.vc ${OUTDIR}/uibase.dat
+ 	DEPENDS vcc uibase/*.vc ${OUTDIR}/engine.dat)
+ add_custom_target(uibase ALL DEPENDS ${OUTDIR}/uibase.dat)
+-add_dependencies(uibase vcc engine)
++add_dependencies(uibase vcc engine linespec)

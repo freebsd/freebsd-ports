@@ -3,6 +3,7 @@ bin/delv
 bin/dig
 bin/host
 bin/isc-config.sh
+bin/mdig
 bin/nslookup
 bin/nsupdate
 include/bind9/check.h
@@ -58,6 +59,7 @@ include/dns/name.h
 include/dns/ncache.h
 include/dns/nsec.h
 include/dns/nsec3.h
+include/dns/nta.h
 include/dns/opcode.h
 include/dns/order.h
 include/dns/peer.h
@@ -157,6 +159,7 @@ include/isc/log.h
 include/isc/magic.h
 include/isc/md5.h
 include/isc/mem.h
+include/isc/meminfo.h
 include/isc/msgcat.h
 include/isc/msgs.h
 include/isc/mutex.h
@@ -401,7 +404,6 @@ sbin/dnssec-verify
 sbin/genrandom
 sbin/isc-hmac-fixup
 sbin/lwresd
-sbin/mdig
 sbin/named
 sbin/named-checkconf
 sbin/named-checkzone

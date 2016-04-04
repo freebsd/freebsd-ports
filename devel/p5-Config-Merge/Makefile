@@ -14,7 +14,7 @@ COMMENT=	Load a configuration directory tree in a number of languages
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any
+BUILD_DEPENDS=	p5-Config-Any>=0:devel/p5-Config-Any
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -79,7 +79,7 @@ KDE4_VERSION?=		4.14.3
 KDE4_ACTIVITES_VERSION=	4.13.3
 KDE4_WORKSPACE_VERSION=	4.11.14
 KDE4_BRANCH?=		stable
-KTP_VERSION?=		0.8.0
+KTP_VERSION?=		0.9.0
 KTP_BRANCH?=		stable
 CALLIGRA_VERSION?=	2.9.11
 CALLIGRA_BRANCH?=	stable
@@ -287,7 +287,7 @@ strigi_PATH=		${LOCALBASE}/lib/libstreamanalyzer.so.0
 . if ${_USE_KDE4_ALL:M${component}} != ""
    # Skip meta-components (e.g. kdeprefix).
 .  if defined(${component}_PORT) && defined(${component}_PATH)
-${component}_DEPENDS=	${${component}_PATH}:${PORTSDIR}/${${component}_PORT}
+${component}_DEPENDS=	${${component}_PATH}:${${component}_PORT}
     # Check if a dependency type is explicitly requested.
 .   if ${USE_KDE4:M${component}_*} != "" && ${USE_KDE4:M${component}} == ""
 ${component}_TYPE=	# empty

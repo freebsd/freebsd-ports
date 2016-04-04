@@ -28,7 +28,7 @@ SDL_DESC=	Enable support for SDL_image
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:print/freetype2
 MAKE_ARGS+=	USE_FT=y
 .else
 MAKE_ARGS+=	USE_FT=n

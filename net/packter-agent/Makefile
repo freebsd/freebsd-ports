@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .if ${PORT_OPTIONS:MPACKTERTC}
 USES+=		perl5
 USE_PERL5=	run
-RUN_DEPENDS+=	p5-XML-Pastor>=0:${PORTSDIR}/devel/p5-XML-Pastor
+RUN_DEPENDS+=	p5-XML-Pastor>=0:devel/p5-XML-Pastor
 PLIST_SUB+=	PACKTERTC=""
 .else
 PLIST_SUB+=	PACKTERTC="@comment "

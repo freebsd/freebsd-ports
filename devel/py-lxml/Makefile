@@ -12,8 +12,8 @@ COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libxslt.so:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+		libxslt.so:textproc/libxslt
 
 USES=		python uniquefiles:dirs
 USE_PYTHON=	autoplist concurrent distutils

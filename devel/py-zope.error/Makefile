@@ -13,10 +13,10 @@ COMMENT=	Error reporting utility for Zope3
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.exceptions>=0:${PORTSDIR}/devel/py-zope.exceptions \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.location>=0:${PORTSDIR}/devel/py-zope.location \
-		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.exceptions>=0:devel/py-zope.exceptions \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}zope.location>=0:devel/py-zope.location \
+		zodb${PYTHON_PKGNAMESUFFIX}>=0:databases/zodb3
 
 USES=		python
 USE_PYTHON=	distutils autoplist

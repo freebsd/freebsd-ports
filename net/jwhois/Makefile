@@ -12,7 +12,7 @@ COMMENT=	Improved WHOIS client capable of selecting server to query
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libidn.so:dns/libidn
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake iconv

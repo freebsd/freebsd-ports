@@ -11,11 +11,10 @@ COMMENT=	Pretty Quick Image Viewer
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phillipberndt
-GH_TAGNAME=	${PORTVERSION}
 
 OPTIONS_SINGLE=		GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3

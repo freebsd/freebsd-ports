@@ -5,16 +5,23 @@ PORTNAME=	check_smartmon
 PORTVERSION=	20100318
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://nognu.de/s/FreeBSD/distfiles/
+MASTER_SITES=	http://ftp.bsdserwis.com/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Nagios plug-in to get status from smartmontools
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/smartctl:${PORTSDIR}/sysutils/smartmontools
+LICENSE=	GPLv2+
 
-USES=		python
+RUN_DEPENDS=	${LOCALBASE}/sbin/smartctl:sysutils/smartmontools
+
+USES=		python shebangfix
 NO_BUILD=	yes
+NO_ARCH=	yes
+
+SHEBANG_FILES=	check_smartmon
+
+PLIST_FILES=	libexec/nagios/check_smartmon
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios

@@ -14,8 +14,8 @@ COMMENT=	GObject-based wrapper around Exiv2 library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+BUILD_DEPENDS=	gm4:devel/m4
+LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
 USES=		gmake libtool:build pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build

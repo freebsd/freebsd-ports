@@ -12,9 +12,9 @@ COMMENT=	Auditing tool for system logs on Unix boxes
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	mime-construct:${PORTSDIR}/mail/mime-construct \
-		lockfile:${PORTSDIR}/mail/procmail \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	mime-construct:mail/mime-construct \
+		lockfile:mail/procmail \
+		bash:shells/bash
 
 LOGCHECK_USER=	logcheck
 LOGCHECK_GROUP=	${LOGCHECK_USER}

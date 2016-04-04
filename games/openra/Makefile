@@ -44,8 +44,8 @@ COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libgdiplus.so:${PORTSDIR}/x11-toolkits/libgdiplus
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libgdiplus.so:x11-toolkits/libgdiplus
 
 USE_GITHUB=	yes
 GH_PROJECT=	OpenRA
@@ -66,14 +66,14 @@ PORTDOCS=	*.html
 OPTIONS_DEFINE=	DOCS TEST ZENITY
 OPTIONS_DEFAULT=ZENITY
 
-DOCS_BUILD_DEPENDS=markdown:${PORTSDIR}/textproc/markdown
+DOCS_BUILD_DEPENDS=markdown:textproc/markdown
 DOCS_ALL_TARGET=docs
 
 TEST_MAKE_ENV=	HOME="${WRKDIR}"
 TEST_ALL_TARGET=test
 
-ZENITY_RUN_DEPENDS=xdg-open:${PORTSDIR}/devel/xdg-utils \
-		zenity:${PORTSDIR}/x11/zenity
+ZENITY_RUN_DEPENDS=xdg-open:devel/xdg-utils \
+		zenity:x11/zenity
 ZENITY_DESC=	Use native crash dialog
 
 post-extract:

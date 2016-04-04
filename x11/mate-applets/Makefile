@@ -11,15 +11,15 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applets components for the MATE Desktop Environment
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
-		libxklavier.so:${PORTSDIR}/x11/libxklavier \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
-		libhal.so:${PORTSDIR}/sysutils/hal \
-		libupower-glib.so:${PORTSDIR}/sysutils/upower \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
+		libxklavier.so:x11/libxklavier \
+		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libpolkit-gobject-1.so:sysutils/polkit \
+		libhal.so:sysutils/hal \
+		libupower-glib.so:sysutils/upower \
+		libnotify.so:devel/libnotify
 
 PORTSCOUT=	limitw:1,even
 

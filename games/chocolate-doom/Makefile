@@ -10,7 +10,7 @@ COMMENT=	Doom/Heretic/Hexen/Strife engine port compatible with the originals
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	python:lang/python
 
 USES=		gmake
 USE_SDL=	mixer net sdl

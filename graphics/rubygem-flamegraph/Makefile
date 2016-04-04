@@ -11,7 +11,7 @@ COMMENT=	Flamegraph support for arbitrary ruby apps
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-fast_stack>=0:${PORTSDIR}/devel/rubygem-fast_stack
+RUN_DEPENDS=	rubygem-fast_stack>=0:devel/rubygem-fast_stack
 
 NO_ARCH=	yes
 

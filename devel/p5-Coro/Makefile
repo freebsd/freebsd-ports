@@ -13,15 +13,15 @@ COMMENT=	Coroutine process abstraction for perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent>=7:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-AnyEvent-AIO>=1.0:${PORTSDIR}/devel/p5-AnyEvent-AIO \
-		p5-EV>=4:${PORTSDIR}/devel/p5-EV \
-		p5-Event>=1.08:${PORTSDIR}/devel/p5-Event \
-		p5-Guard>=0.5:${PORTSDIR}/devel/p5-Guard \
-		p5-IO-AIO>=3.1:${PORTSDIR}/devel/p5-IO-AIO \
-		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-AnyEvent>=7:devel/p5-AnyEvent \
+		p5-AnyEvent-AIO>=1.0:devel/p5-AnyEvent-AIO \
+		p5-EV>=4:devel/p5-EV \
+		p5-Event>=1.08:devel/p5-Event \
+		p5-Guard>=0.5:devel/p5-Guard \
+		p5-IO-AIO>=3.1:devel/p5-IO-AIO \
+		p5-common-sense>=0:devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-Canary-Stability>=0:${PORTSDIR}/devel/p5-Canary-Stability
+BUILD_DEPENDS+=	p5-Canary-Stability>=0:devel/p5-Canary-Stability
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

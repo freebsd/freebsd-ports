@@ -14,15 +14,15 @@ COMMENT=	DeforaOS desktop file browser
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
-		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop \
-		libXrandr.so:${PORTSDIR}/x11/libXrandr
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+		libDesktop.so:x11/deforaos-libdesktop \
+		libXrandr.so:x11/libXrandr
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 NLS_USES=		gettext
-DOCS_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-    ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+    ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 USE_GNOME=	gtk20
 USES=		desktop-file-utils pkgconfig

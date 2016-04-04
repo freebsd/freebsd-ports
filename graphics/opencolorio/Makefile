@@ -38,8 +38,8 @@ SHEBANG_FILES=	share/sphinx/ExtractRstFromSourceCPP.py \
 .include <bsd.port.options.mk>
 
 .if defined(OCIO_SLAVE) && ${OCIO_SLAVE} == tools
-LIB_DEPENDS=	libOpenImageIO.so:${PORTSDIR}/graphics/openimageio \
-		libOpenColorIO.so:${PORTSDIR}/graphics/opencolorio
+LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
+		libOpenColorIO.so:graphics/opencolorio
 CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=ON \
 		-DOCIO_BUILD_SHARED:BOOL=OFF \
 		-DOCIO_BUILD_PYGLUE:BOOL=OFF
@@ -48,7 +48,7 @@ PLIST=		${PKGDIR}/pkg-plist-tools
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt \
 		${FILESDIR}/extra-tools-patch-src_core_CMakeLists.txt
 .elif defined(OCIO_SLAVE) && ${OCIO_SLAVE} == pymodule
-LIB_DEPENDS=	libOpenImageIO.so:${PORTSDIR}/graphics/openimageio
+LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio
 USES+=		python
 CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
 		-DOCIO_BUILD_SHARED:BOOL=OFF \
@@ -56,9 +56,9 @@ CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
 		-DPYTHON:STRING=${PYTHON_CMD}
 PLIST=		${PKGDIR}/pkg-plist-pyglue
 .else # master port
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:${PORTSDIR}/devel/py-Jinja2
-LIB_DEPENDS=	libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
-		libyaml-cpp03.so:${PORTSDIR}/devel/yaml-cpp03
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
+LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
+		libyaml-cpp03.so:devel/yaml-cpp03
 USES+=		python:2,build
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \

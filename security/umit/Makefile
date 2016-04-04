@@ -3,7 +3,7 @@
 
 PORTNAME=	umit
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nmap frontend developed with Python and PyGTK
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${LOCALBASE}/bin/nmap:security/nmap
 
 NO_ARCH=	yes
 
@@ -30,7 +31,7 @@ DESKTOP_ENTRIES="Umit" "GUI frontend for Nmap security/port scanner" "umit" \
 
 OPTIONS_DEFINE=		DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -41,7 +42,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
-	@${LN} -sf ${DATADIR}/pixmaps/umit_48x48.png \
+	@${LN} -sf ${PREFIX}/share/pixmaps/umit/umit_48x48.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/umit.png
 
 .include <bsd.port.mk>

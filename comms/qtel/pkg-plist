@@ -1,7 +1,7 @@
 bin/qtel
 include/svxlink/AsyncQtApplication.h
 %%STATIC%%lib/libasyncqt.a
-lib/libasyncqt.so.1.3.0
+lib/libasyncqt.so.1.3.1
 lib/libasyncqt.so.1.3
 lib/libasyncqt.so
 share/applications/qtel.desktop

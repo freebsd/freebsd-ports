@@ -14,9 +14,9 @@ COMMENT=	Extensions of GTK+3 toolkit
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee
-RUN_DEPENDS=	contractor:${PORTSDIR}/sysutils/contractor
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee
+RUN_DEPENDS=	contractor:sysutils/contractor
 
 USES=	cmake gettext pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30 introspection:build

@@ -5,6 +5,7 @@ include/collection_tools.h
 include/dhash.h
 include/ini_comment.h
 include/ini_config.h
+include/ini_configmod.h
 include/ini_configobj.h
 include/ini_valueobj.h
 include/path_utils.h
@@ -17,7 +18,7 @@ lib/libbasicobjects.so.0.1.0
 lib/libcollection.a
 lib/libcollection.so
 lib/libcollection.so.4
-lib/libcollection.so.4.0.0
+lib/libcollection.so.4.1.0
 lib/libdhash.a
 lib/libdhash.so
 lib/libdhash.so.1
@@ -25,7 +26,7 @@ lib/libdhash.so.1.0.2
 lib/libini_config.a
 lib/libini_config.so
 lib/libini_config.so.5
-lib/libini_config.so.5.0.0
+lib/libini_config.so.5.1.0
 lib/libpath_utils.a
 lib/libpath_utils.so
 lib/libpath_utils.so.1
@@ -33,7 +34,7 @@ lib/libpath_utils.so.1.0.1
 lib/libref_array.a
 lib/libref_array.so
 lib/libref_array.so.1
-lib/libref_array.so.1.2.0
+lib/libref_array.so.1.2.1
 libdata/pkgconfig/basicobjects.pc
 libdata/pkgconfig/collection.pc
 libdata/pkgconfig/dhash.pc

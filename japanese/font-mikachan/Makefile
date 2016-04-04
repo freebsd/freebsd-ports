@@ -10,10 +10,10 @@ DISTNAME=	ver${PORTVERSION}
 EXTRACT_SUFX=	.lzh
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Handwritten Japanese TrueType fonts by Mika-chan
 
-EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=	lha:archivers/lha
 
 USES=		fonts:fc
 FONTNAME=	TTF

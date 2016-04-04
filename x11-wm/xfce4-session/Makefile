@@ -13,12 +13,12 @@ COMMENT=	Xfce's session manager
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
-RUN_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth \
-		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libupower-glib.so:${PORTSDIR}/sysutils/upower \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
+BUILD_DEPENDS=	iceauth:x11/iceauth
+RUN_DEPENDS=	iceauth:x11/iceauth \
+		console-kit-daemon:sysutils/consolekit
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libupower-glib.so:sysutils/upower \
+		libpolkit-gobject-1.so:sysutils/polkit
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

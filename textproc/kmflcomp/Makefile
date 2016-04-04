@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Compiler of Keyman KMFL keyboard sources to use with SCIM/IBus
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
+BUILD_DEPENDS=	bison:devel/bison
 
 USE_XORG=	x11
 USE_LDCONFIG=	yes

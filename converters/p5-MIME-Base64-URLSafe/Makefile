@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Perl version of Python's URL-safe base64 codec
 
-RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	p5-MIME-Base64>=0:converters/p5-MIME-Base64
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/00//}

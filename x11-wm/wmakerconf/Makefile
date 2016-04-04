@@ -15,8 +15,8 @@ COMMENT=	Configuration tool for Window Maker
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libWINGs.so:${PORTSDIR}/x11-wm/windowmaker
-RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm4
+LIB_DEPENDS=	libWINGs.so:x11-wm/windowmaker
+RUN_DEPENDS=	rpm:archivers/rpm4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -40,7 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/chmod 0/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E '/\/usr\/share/d; \
 			      s|/usr/local|${LOCALBASE}|g ; \
-		 	      s|/usr/X11R6|${LOCALBASE}|g; \
+			      s|/usr/X11R6|${LOCALBASE}|g; \
 			      s|(share/pixmaps.*),|\1|g' \
 		${WRKSRC}/data/WMWmakerconf*
 .for file in data/po/ja.po po/ja.po

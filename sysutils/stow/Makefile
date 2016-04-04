@@ -12,7 +12,7 @@ COMMENT=	GNU version of Carnegie Mellon's "Depot" program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output
+TEST_DEPENDS=	p5-Test-Output>0:devel/p5-Test-Output
 
 USES=		gmake perl5 tar:bzip2
 GNU_CONFIGURE=	yes

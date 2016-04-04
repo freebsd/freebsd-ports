@@ -1,0 +1,11 @@
+--- doc/Makefile.orig	2016-03-05 17:04:57 UTC
++++ doc/Makefile
+@@ -30,8 +30,6 @@ distclean: clean
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)todo.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)todo.html"
+-	../tools/subst.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)todo.xml"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "todo.1"

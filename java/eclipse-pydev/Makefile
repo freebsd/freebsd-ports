@@ -14,7 +14,7 @@ COMMENT=	Eclipse plugin for Python and Jython development
 
 LICENSE=	EPL
 
-RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 
 BUNDLES_INFO=	${PREFIX}/lib/eclipse/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
 
@@ -32,7 +32,7 @@ USES=		python zip
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJYTHON}
-RUN_DEPENDS+=	jython:${PORTSDIR}/lang/jython
+RUN_DEPENDS+=	jython:lang/jython
 .endif
 
 pre-install:

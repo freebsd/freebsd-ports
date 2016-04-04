@@ -2,6 +2,7 @@
 
 PORTNAME=	kde-runtime
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -9,17 +10,17 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Runtime components for KDE Plasma Desktop
 
-LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		libwebp.so:${PORTSDIR}/graphics/webp \
-		libslp.so:${PORTSDIR}/net/openslp \
-		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient \
-		libssh.so:${PORTSDIR}/security/libssh \
-		libqzeitgeist.so:${PORTSDIR}/sysutils/qzeitgeist
+LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+		libexiv2.so:graphics/exiv2 \
+		libwebp.so:graphics/webp \
+		libslp.so:net/openslp \
+		libsmbclient.so:net/samba-libsmbclient \
+		libssh.so:security/libssh \
+		libqzeitgeist.so:sysutils/qzeitgeist
 # Explicitly depend on libssh to avoid interference with ssh.4 from
 # compat7x.
-BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
-RUN_DEPENDS=	cagibid:${PORTSDIR}/net/cagibi
+BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
+RUN_DEPENDS=	cagibid:net/cagibi
 
 USE_KDE4=	kactivities kdelibs kdeprefix oxygen \
 		attica automoc4 pimlibs strigi nepomuk-core
@@ -37,13 +38,13 @@ SHEBANG_FILES=	khelpcenter/searchhandlers/*.pl \
 OPTIONS_DEFINE=	PULSEAUDIO ZEITGEIST
 
 PULSEAUDIO_DESC=Audio configuration via PulseAudio
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio \
-			libcanberra.so:${PORTSDIR}/audio/libcanberra
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
+			libcanberra.so:audio/libcanberra
 PULSEAUDIO_USE=	GNOME=glib20
 PULSEAUDIO_CMAKE_OFF=	-DWITH_PulseAudio:BOOL=OFF
 
 ZEITGEIST_DESC=	Event logging via Zeitgeist
-ZEITGEIST_RUN_DEPENDS=	zeitgeist-daemon:${PORTSDIR}/sysutils/zeitgeist
+ZEITGEIST_RUN_DEPENDS=	zeitgeist-daemon:sysutils/zeitgeist
 
 # Explicitly disable ALSA, see for details:
 # http://mail.kde.org/pipermail/kde-freebsd/2010-March/008015.html

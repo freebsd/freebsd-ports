@@ -11,7 +11,7 @@ MASTER_SITES=	http://kartofel.jfedor.org/downloads/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Connect the dots in order without crossing over yourself
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake
 USE_SDL=	sdl gfx mixer image ttf

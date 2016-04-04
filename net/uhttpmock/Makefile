@@ -10,10 +10,10 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	HTTP web service mocking library for GNOME
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		vapigen:${PORTSDIR}/lang/vala \
-		gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
+		vapigen:lang/vala \
+		gtkdoc-rebase:textproc/gtk-doc
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk20 introspection:build

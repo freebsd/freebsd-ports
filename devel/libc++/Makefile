@@ -28,7 +28,7 @@ CXXRT_LIB=	/usr/lib/libcxxrt.so
 .else
 CXXRT_INCS=	${LOCALBASE}/include/cxxrt/
 CXXRT_LIB=	${LOCALBASE}/lib/libcxxrt.so
-LIB_DEPENDS+=	libcxxrt.so:${PORTSDIR}/devel/libcxxrt
+LIB_DEPENDS+=	libcxxrt.so:devel/libcxxrt
 .endif
 
 .include <bsd.port.options.mk>
@@ -44,7 +44,7 @@ SVN_REV!=       LC_ALL=C svn info http://llvm.org/svn/llvm-project/ | ${GREP} Re
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+= svn:devel/subversion
 
 post-patch:
 	# remove .orig files because they can get installed in stagedir

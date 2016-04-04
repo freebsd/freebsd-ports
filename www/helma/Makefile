@@ -41,7 +41,7 @@ OPTIONS_DEFINE=	MYSQL DOCS
 OPTIONS_SUB=	yes
 OPTIONS_DESC=	Install MySQL Connector for Java
 
-MYSQL_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
+MYSQL_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|JAVA_HOME=/usr/lib/j2sdk1.5-sun|JAVA_HOME=${JAVA_HOME}|' \

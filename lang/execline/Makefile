@@ -11,7 +11,7 @@ COMMENT=	Lightweight non-interactive sh(1)-like scripting language
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	skalibs>=2.3.8.3:${PORTSDIR}/devel/skalibs
+BUILD_DEPENDS=	skalibs>=2.3.8.3:devel/skalibs
 
 CONFLICTS_INSTALL=	ImageMagick-* # bin/import
 

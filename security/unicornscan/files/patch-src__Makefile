@@ -1,17 +1,6 @@
---- src/Makefile.orig	Thu Sep 30 07:29:05 2004
-+++ src/Makefile	Fri Sep 29 14:32:21 2006
-@@ -4,8 +4,8 @@
- HDRS=$(SRCS:.c=.h) config.h settings.h
- OBJS=$(SRCS:.c=.o)
- 
--CFLAGS=$(MYCFLAGS)
--LIBS=-lscan -luni -lparse -lpcap -lnet $(LDADD)
-+CFLAGS+=$(MYCFLAGS)
-+LIBS=-lscan -luni -lparse -lpcap `$(LIBNET_CONFIG) --libs` $(LDADD)
- LIBDIRS=-L./unilib -L./scan_progs -L./parse -L../libs/fake/lib
- TARGETNAME=unicornscan
- 
-@@ -19,42 +19,42 @@
+--- src/Makefile.orig	2004-09-30 10:29:05 UTC
++++ src/Makefile
+@@ -19,42 +19,42 @@ compile.h:
  	./compiledby.sh > compile.h
  
  unilib_d:

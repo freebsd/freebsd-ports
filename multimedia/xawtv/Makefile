@@ -10,9 +10,9 @@ MASTER_SITES=	http://linuxtv.org/downloads/xawtv/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	TV viewing application and a few TV utilities
 
-BUILD_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:x11-fonts/tv-fonts
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:x11-fonts/tv-fonts
+LIB_DEPENDS=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	AALIB DV QUICKTIME ZVBI
 OPTIONS_DEFINE_i386=	MMX
@@ -34,7 +34,7 @@ FILES_LIBJPEG=	console/Subdir.mk x11/Subdir.mk libng/plugins/Subdir.mk
 
 .if ${PORT_OPTIONS:MAALIB}
 CONFIGURE_ARGS+=--enable-aa
-LIB_DEPENDS+=	libaa.so:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS+=	libaa.so:graphics/aalib
 PLIST_SUB+=	AA=""
 .else
 CONFIGURE_ARGS+=--disable-aa
@@ -42,7 +42,7 @@ PLIST_SUB+=	AA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MZVBI}
-LIB_DEPENDS+=	libzvbi.so:${PORTSDIR}/devel/libzvbi
+LIB_DEPENDS+=	libzvbi.so:devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
 PLIST_SUB+=	ZVBI=""
 .else
@@ -51,7 +51,7 @@ PLIST_SUB+=	ZVBI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=	libdv.so:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	libdv.so:multimedia/libdv
 CONFIGURE_ARGS+=--enable-dv
 PLIST_SUB+=	DV=
 .else
@@ -66,7 +66,7 @@ CFLAGS+=	-DMMX=1
 
 .if ${PORT_OPTIONS:MQUICKTIME}
 CONFIGURE_ARGS+=--enable-quicktime
-LIB_DEPENDS+=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
+LIB_DEPENDS+=	libquicktime.so:multimedia/libquicktime
 PLIST_SUB+=	QT=
 .else
 CONFIGURE_ARGS+=--enable-quicktime=no

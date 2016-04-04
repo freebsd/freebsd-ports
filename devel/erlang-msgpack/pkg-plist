@@ -4,7 +4,7 @@ lib/erlang/lib/msgpack-%%VERSION%%/ebin/msgpack_ext.beam
 lib/erlang/lib/msgpack-%%VERSION%%/ebin/msgpack_packer.beam
 lib/erlang/lib/msgpack-%%VERSION%%/ebin/msgpack_term.beam
 lib/erlang/lib/msgpack-%%VERSION%%/ebin/msgpack_unpacker.beam
-lib/erlang/lib/msgpack-%%VERSION%%/include/msgpack.hrl
+lib/erlang/lib/msgpack-%%VERSION%%/src/msgpack.hrl
 lib/erlang/lib/msgpack-%%VERSION%%/src/msgpack.app.src
 lib/erlang/lib/msgpack-%%VERSION%%/src/msgpack.erl
 lib/erlang/lib/msgpack-%%VERSION%%/src/msgpack_ext.erl

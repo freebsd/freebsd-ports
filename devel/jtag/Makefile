@@ -13,7 +13,7 @@ COMMENT=	Utility to work with JTAG-aware boards
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:${PORTSDIR}/devel/openwince-include
+BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:devel/openwince-include
 
 ONLY_FOR_ARCHS=	i386
 

@@ -14,16 +14,16 @@ LICENSE_NAME=	ICLI license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Term-Size>=0:${PORTSDIR}/devel/p5-Term-Size \
-		icinga:${PORTSDIR}/net-mgmt/icinga-core
+RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-Term-Size>=0:devel/p5-Term-Size \
+		icinga:net-mgmt/icinga-core
 
 ICINGADIR?=	/var/spool/icinga
 
 CONFIGURE_ARGS+=	--destdir ${STAGEDIR} \
 			--icli-object-file=${ICINGADIR}/objects.cache \
-                	--icli-status-file=${ICINGADIR}/status.dat \
-                	--icli-command-file=${ICINGADIR}/icinga.cmd
+			--icli-status-file=${ICINGADIR}/status.dat \
+			--icli-command-file=${ICINGADIR}/icinga.cmd
 
 USES=		perl5
 USE_PERL5=	modbuild

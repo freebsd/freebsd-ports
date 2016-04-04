@@ -14,11 +14,11 @@ COMMENT=	Object-oriented access to real and tied hashes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-List-MoreUtils>=0.33:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Tie-ToObject>=0.03:${PORTSDIR}/devel/p5-Tie-ToObject
+BUILD_DEPENDS=	p5-List-MoreUtils>=0.33:lang/p5-List-MoreUtils \
+		p5-Tie-ToObject>=0.03:devel/p5-Tie-ToObject
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0.11:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Tie-Hash-MultiValue>=1.02:${PORTSDIR}/devel/p5-Tie-Hash-MultiValue
+TEST_DEPENDS=	p5-Test-Deep>=0.11:devel/p5-Test-Deep \
+		p5-Tie-Hash-MultiValue>=1.02:devel/p5-Tie-Hash-MultiValue
 
 USES=		perl5
 USE_PERL5=	modbuild

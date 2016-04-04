@@ -12,7 +12,7 @@ COMMENT=	Free Liberty Alliance Implementation
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
+BUILD_DEPENDS=	xmlsec1:security/xmlsec1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe libtool pathfix pkgconfig
@@ -41,7 +41,7 @@ PLIST_SUB+=	PERL="@comment "
 CONFIGURE_ARGS+=	--enable-php5 \
 		--with-php5-config="${LOCALBASE}/bin/php-config"
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	libexpat.so:textproc/expat2
 PLIST_SUB+=	PHP5=""
 USE_PHP=	yes
 USE_PHP_BUILD=	yes

@@ -30,8 +30,5 @@ man/man8/watch-multiple-mimedefangs.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stream-by-domain-filter
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/suggested-minimum-filter-for-windows-clients
-@dir %%PORTEXAMPLES%%%%EXAMPLESDIR%%
-@dir %%PORTDOCS%%%%DOCSDIR%%
-@dir %%ETCDIR%%
 @dir(%%USER%%,%%GROUP%%,710) %%MIMEDEFANG_RUNDIR%%
 @dir(%%USER%%,%%GROUP%%,700) %%MIMEDEFANG_QUARANTINEDIR%%

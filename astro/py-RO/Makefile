@@ -12,7 +12,7 @@ COMMENT=	Package of Python astronomical utilities
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:math/py-numpy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=		MATPLOTLIB PYFITS PYGAME
@@ -25,8 +25,8 @@ PYGAME_DESC=		Add Support for PyGame
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-MATPLOTLIB_RUN_DEPENDS=	${PKGNAMEPREFIX}matplotlib>=0.98:${PORTSDIR}/math/py-matplotlib
-PYFITS_RUN_DEPENDS=	${PKGNAMEPREFIX}pyfits>=1.1:${PORTSDIR}/astro/py-pyfits
-PYGAME_RUN_DEPENDS=	${PKGNAMEPREFIX}game>=1.8.1:${PORTSDIR}/devel/py-game
+MATPLOTLIB_RUN_DEPENDS=	${PKGNAMEPREFIX}matplotlib>=0.98:math/py-matplotlib
+PYFITS_RUN_DEPENDS=	${PKGNAMEPREFIX}pyfits>=1.1:astro/py-pyfits
+PYGAME_RUN_DEPENDS=	${PKGNAMEPREFIX}game>=1.8.1:devel/py-game
 
 .include <bsd.port.mk>

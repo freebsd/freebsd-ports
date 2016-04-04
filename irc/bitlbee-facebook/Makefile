@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	jgeboski
 
+MAKE_JOBS_UNSAFE=	yes
+
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/bitlbee/facebook.so

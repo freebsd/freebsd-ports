@@ -3,7 +3,7 @@
 
 PORTNAME=	doxygen
 PORTVERSION=	1.8.10
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	GRAPHVIZ LATEX QT4 DOCS
 OPTIONS_DEFAULT=	GRAPHVIZ LATEX
 QT4_DESC=	Install Doxywizard GUI
 
-GRAPHVIZ_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz
 
 LATEX_USE=	TEX=base,dvipsk,pdftex
 
@@ -42,7 +42,7 @@ QT4_PLIST_FILES=	bin/doxywizard
 
 DOCS_USES=		ghostscript:build
 DOCS_ALL_TARGET=	docs
-DOCS_BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+DOCS_BUILD_DEPENDS=	dot:graphics/graphviz
 DOCS_CMAKE_ON=		-Dbuild_doc:BOOLEAN=ON
 DOCS_CMAKE_OFF=		-Dbuild_doc:BOOLEAN=OFF
 DOCS_PLIST_FILES=	man/man1/doxygen.1.gz \
@@ -55,7 +55,7 @@ PORTDOCS=		*
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE=${LOCALBASE}/bin/flex
 .endif
 

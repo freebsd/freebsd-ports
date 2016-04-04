@@ -14,7 +14,7 @@ COMMENT=	Ameliorated interface to the CPAN
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Signature>=0:${PORTSDIR}/security/p5-Module-Signature
+BUILD_DEPENDS=	p5-Module-Signature>=0:security/p5-Module-Signature
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	TEST_REPORTER YAML
@@ -27,10 +27,10 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-TEST_REPORTER_BUILD_DEPENDS=	p5-Test-Reporter>=0:${PORTSDIR}/devel/p5-Test-Reporter
-TEST_REPORTER_RUN_DEPENDS=	p5-Test-Reporter>=0:${PORTSDIR}/devel/p5-Test-Reporter
-YAML_BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
-YAML_RUN_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+TEST_REPORTER_BUILD_DEPENDS=	p5-Test-Reporter>=0:devel/p5-Test-Reporter
+TEST_REPORTER_RUN_DEPENDS=	p5-Test-Reporter>=0:devel/p5-Test-Reporter
+YAML_BUILD_DEPENDS=	p5-YAML>=0:textproc/p5-YAML
+YAML_RUN_DEPENDS=	p5-YAML>=0:textproc/p5-YAML
 
 post-patch:
 	@${REINPLACE_CMD} -e '/install_script/d' ${WRKSRC}/Makefile.PL

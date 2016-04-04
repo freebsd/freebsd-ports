@@ -12,9 +12,9 @@ COMMENT=	Flexibly reshape data: a reboot of the reshape package
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-plyr>=1.8.1:${PORTSDIR}/devel/R-cran-plyr \
-		R-cran-stringr>0:${PORTSDIR}/textproc/R-cran-stringr \
-		R-cran-Rcpp>0:${PORTSDIR}/devel/R-cran-Rcpp
+RUN_DEPENDS=	R-cran-plyr>=1.8.1:devel/R-cran-plyr \
+		R-cran-stringr>0:textproc/R-cran-stringr \
+		R-cran-Rcpp>0:devel/R-cran-Rcpp
 
 USES=	cran:auto-plist
 

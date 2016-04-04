@@ -11,7 +11,7 @@ COMMENT=	Glib bindings for Libvirt virtualization API
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS=	libvirt.so:devel/libvirt
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection

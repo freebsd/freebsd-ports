@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mapping table between 8-bit chars and Unicode
 
-BUILD_DEPENDS=	p5-Unicode-String>=2:${PORTSDIR}/converters/p5-Unicode-String
+BUILD_DEPENDS=	p5-Unicode-String>=2:converters/p5-Unicode-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

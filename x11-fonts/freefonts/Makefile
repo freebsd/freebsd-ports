@@ -16,7 +16,7 @@ COMMENT=	Collection of ATM fonts (not all free) from the CICA archives
 
 USES=	fonts
 
-BUILD_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
+BUILD_DEPENDS=	type1inst:x11-fonts/p5-type1inst
 
 # Some of the fonts are shareware. Some are freeware. Permission must
 # be obtained before distributing at least four (mazama.license,

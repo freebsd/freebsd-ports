@@ -7,7 +7,7 @@ COMMENT=	X11 CW Tutor using unixcw
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcw.so:${PORTSDIR}/comms/unixcw
+LIB_DEPENDS=	libcw.so:comms/unixcw
 
 MASTERDIR=	${.CURDIR}/../unixcw
 

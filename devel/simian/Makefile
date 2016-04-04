@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simian
-PORTVERSION=	2.3.35
+PORTVERSION=	2.4.0
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.harukizaemon.com/simian/
 
@@ -11,7 +11,7 @@ COMMENT=	Similarity analyser for source and other text files
 
 LICENSE=	SIMIAN
 LICENSE_NAME=	SIMIAN SOFTWARE LICENSE
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/license.pdf
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
 
 NO_BUILD=	yes
@@ -23,10 +23,10 @@ SUB_FILES=	simian
 SUB_LIST+=	VERSION=${PORTVERSION}
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-PORTDOCS=	changes.html customers.html features.html \
+PORTDOCS=	changes.html features.html \
 		get_dotnet.png get_it_now.html \
 		get_java_blue-button.gif index.html installation.html \
-		simian.jpg \
+		simian.dtd simian.jpg simian.xsl \
 		javadoc
 
 OPTIONS_DEFINE=	DOCS
@@ -48,7 +48,7 @@ SUB_LIST+=	JAVA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMONO}
-RUN_DEPENDS+=	mono:${PORTSDIR}/lang/mono
+RUN_DEPENDS+=	mono:lang/mono
 PLIST_SUB+=	MONO=""
 SUB_LIST+=	MONO=""
 .else
@@ -67,7 +67,7 @@ pre-fetch:
 	@${ECHO}	period greater than 15 days, you will purchase a
 	@${ECHO}	license as described following URL.
 	@${ECHO}
-	@${ECHO}	http://www.harukizaemon.com/simian/LICENSE.txt
+	@${ECHO}	http://www.harukizaemon.com/simian/license.pdf
 	@${ECHO}
 	@${ECHO}	Build with SIMIAN_AGREE_LICENSE=yes to continue.
 	@${ECHO}

@@ -13,7 +13,7 @@ COMMENT=	Portaudio toolkit bindings for Python
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 USES=		python
 USE_PYTHON=	distutils autoplist

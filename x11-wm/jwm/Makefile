@@ -2,21 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	jwm
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/projects/jwm/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Joe's Window Manager
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		iconv pkgconfig tar:xz
+USES=		iconv localbase pkgconfig tar:xz
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		CAIRO DEBUG FRIBIDI JPEG NLS PNG SVG XEXT XFT \
 			XINERAMA XMU XPM XRENDER
@@ -27,13 +25,13 @@ CAIRO_USE=		GNOME=cairo
 CAIRO_CONFIGURE_ENABLE=	cairo
 DEBUG_CONFIGURE_ENABLE=	debug
 FRIBIDI_DESC=		Unicode Bidirectional Algorithm support
-FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=fribidi
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_ENABLE=	jpeg
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_ENABLE=	png
 SVG_USE=		GNOME=librsvg2
 SVG_CONFIGURE_ENABLE=	rsvg
@@ -63,17 +61,12 @@ XRENDER_CONFIGURE_ENABLE=xrender
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=yes
 .endif
 
-post-extract:
-	@${LN} -sf pt-br.po ${WRKSRC}/po/pt_BR.po
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/example.jwmrc
 	@${REINPLACE_CMD} -e \
 		's|install -m 644|@INSTALL_DATA@| ; \
 		 s|jwmrc$$|jwmrc.sample|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|pt-br|pt_BR|' ${WRKSRC}/po/LINGUAS
 	@${REINPLACE_CMD} -e \
 		'/EXE/s|install|@INSTALL_PROGRAM@| ; \
 		 /strip/s|^|#|' ${WRKSRC}/src/Makefile.in

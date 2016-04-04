@@ -11,8 +11,8 @@ COMMENT=	Sophisticated paginator for Rails 3
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-actionpack>=3.0.0:${PORTSDIR}/www/rubygem-actionpack \
-		rubygem-activesupport>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport
+RUN_DEPENDS=	rubygem-actionpack>=3.0.0:www/rubygem-actionpack \
+		rubygem-activesupport>=3.0.0:devel/rubygem-activesupport
 
 NO_ARCH=	yes
 

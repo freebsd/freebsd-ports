@@ -1,0 +1,30 @@
+This is a collection of Perl::Critic policies that are not included in the
+Perl::Critic core for a variety of reasons:
+
+  Experimental
+
+    Some policies need some time to work out their kinks, test usability, or
+    gauge community interest. A subset of these will end up in the core
+    Perl::Critic someday.
+
+  Requires special dependencies
+
+    For example, some policies require development versions of PPI (or some
+    other CPAN module). These will likely end up in the Perl::Critic core when
+    their dependencies are fulfilled.
+
+  Peripheral to Perl
+
+    For example, the Editor::RequireEmacsFileVariables policy is metacode.
+    Also, the Miscellanea::RequireRcsKeywords policy pertains to the
+    development process, not the code itself. These are not part of
+    Perl::Critic's mission.
+
+  Special purpose
+
+    For example, policies like CodeLayout::RequireASCII designed to scratch
+    itches not felt by most of the community. These will always remain in a
+    Perl::Critic supplement instead of in the core.
+
+
+WWW: https://metacpan.org/release/Perl-Critic-More

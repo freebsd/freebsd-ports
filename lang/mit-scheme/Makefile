@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=--without-db-4
 .if ${PORT_OPTIONS:MGDBM}
 PLIST_SUB+=	GDBM=""
 CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:databases/gdbm
 .else
 PLIST_SUB+=	GDBM="@comment "
 CONFIGURE_ARGS+=--without-gdbm
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=--without-gdbm
 .if ${PORT_OPTIONS:MMHASH}
 PLIST_SUB+=	MHASH=""
 CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
-LIB_DEPENDS+=	libmhash.so:${PORTSDIR}/security/mhash
+LIB_DEPENDS+=	libmhash.so:security/mhash
 .else
 PLIST_SUB+=	MHASH="@comment "
 CONFIGURE_ARGS+=--without-mhash
@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=--without-mhash
 .if ${PORT_OPTIONS:MMCRYPT}
 PLIST_SUB+=	MCRYPT=""
 CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
-LIB_DEPENDS+=	libmcrypt.so:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS+=	libmcrypt.so:security/libmcrypt
 .else
 PLIST_SUB+=	MCRYPT="@comment "
 CONFIGURE_ARGS+=--without-mcrypt

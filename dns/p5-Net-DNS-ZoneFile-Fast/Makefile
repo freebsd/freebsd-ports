@@ -13,8 +13,8 @@ COMMENT=	Perl module to parse BIND8/9 zone files
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	p5-Net-DNS>=0.65:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-DNS-SEC>=0.15:${PORTSDIR}/dns/p5-Net-DNS-SEC
+BUILD_DEPENDS=	p5-Net-DNS>=0.65:dns/p5-Net-DNS \
+		p5-Net-DNS-SEC>=0.15:dns/p5-Net-DNS-SEC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

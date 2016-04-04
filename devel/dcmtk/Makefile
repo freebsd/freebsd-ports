@@ -10,15 +10,15 @@ MASTER_SITES=	ftp://dicom.offis.de/pub/dicom/offis/software/${PORTNAME}/${PORTNA
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit to work with DICOM objects
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-    		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libpng.so:graphics/png
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USES=		cmake:outsource jpeg
 CMAKE_ARGS+=	-DDCMTK_WITH_DOXYGEN:BOOL=OFF \
-    		-DDCMTK_WITH_OPENSSL:BOOL=ON
+		-DDCMTK_WITH_OPENSSL:BOOL=ON
 
 SHLIBS=		dcmdata dcmdsig dcmimage dcmimgle dcmjpeg dcmnet \
 		dcmpstat dcmqrdb dcmsr dcmtls dcmwlm ijg8 ijg12 \

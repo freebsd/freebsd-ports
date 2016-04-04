@@ -26,7 +26,7 @@ MAKE_ARGS+=	prefix=${STAGEDIR}${PREFIX}/ OBVDIR=${STAGEDIR}${DATADIR}/
 
 OPTIONS_DEFINE=	SOUND
 
-SOUND_LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas
+SOUND_LIB_DEPENDS=	libaudio.so:audio/nas
 
 .include <bsd.port.options.mk>
 

@@ -12,7 +12,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Quake engine modification
 
 # Loads libraries at run-time, thus RUN_DEPENDS.
-RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis
+RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:audio/libvorbis
 
 USES=		gmake jpeg zip:infozip
 USE_XORG=	xxf86dga xpm

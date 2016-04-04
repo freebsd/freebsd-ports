@@ -10,12 +10,12 @@ DISTNAME=	Ettus-USRP-3.4.3
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ettus Research USRP driver framework
 
-LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs \
-		cheetah-analyze:${PORTSDIR}/devel/py-cheetah \
-		rst2html:${PORTSDIR}/textproc/py-docutils \
-		orcc:${PORTSDIR}/devel/orc \
-		sdcc:${PORTSDIR}/lang/sdcc
+LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
+		cheetah-analyze:devel/py-cheetah \
+		rst2html:textproc/py-docutils \
+		orcc:devel/orc \
+		sdcc:lang/sdcc
 
 USES=			compiler:c++0x cmake:outsource gmake pkgconfig dos2unix
 COMPILER_FEATURES=	libc++
@@ -35,14 +35,18 @@ USRP2_DESC=	Build Ettus USRP2 firmware
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
+BROKEN_i386=	does not build on i386 FreeBSD 11.x and later
+.endif
+
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:devel/doxygen
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
 HAVEDOCS=	YES
 .endif
 
 .if ${PORT_OPTIONS:MUSRP1}
-BUILD_DEPENDS+=	sdcc:${PORTSDIR}/lang/sdcc
+BUILD_DEPENDS+=	sdcc:lang/sdcc
 USRP1=	YES
 PLIST_SUB+=	PUSRP1=""
 .else
@@ -50,8 +54,8 @@ PLIST_SUB+=	PUSRP1="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUSRP2}
-BUILD_DEPENDS+=	${LOCALBASE}/zpu/bin/zpu-elf-gcc:${PORTSDIR}/devel/zpu-gcc \
-		${LOCALBASE}/zpu/bin/zpu-elf-as:${PORTSDIR}/devel/zpu-binutils
+BUILD_DEPENDS+=	${LOCALBASE}/zpu/bin/zpu-elf-gcc:devel/zpu-gcc \
+		${LOCALBASE}/zpu/bin/zpu-elf-as:devel/zpu-binutils
 USRP2=	YES
 PLIST_SUB+=	PUSRP2=""
 .else

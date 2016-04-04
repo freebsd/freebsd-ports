@@ -10,9 +10,9 @@ MASTER_SITES=	SF/tomoe/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	UIM helper program for Tomoe
 
-LIB_DEPENDS=	libtomoe.so:${PORTSDIR}/japanese/tomoe \
-		libtomoe-gtk.so:${PORTSDIR}/japanese/libtomoe-gtk \
-		libuim.so:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	libtomoe.so:japanese/tomoe \
+		libtomoe-gtk.so:japanese/libtomoe-gtk \
+		libuim.so:textproc/uim
 
 USES=		gettext gmake libtool pkgconfig
 USE_GNOME=	gtk20 intltool

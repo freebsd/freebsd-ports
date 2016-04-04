@@ -196,7 +196,7 @@ lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.so
 lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
 lib/libgoffice-%%SHORT_VER%%.so
 lib/libgoffice-%%SHORT_VER%%.so.10
-lib/libgoffice-%%SHORT_VER%%.so.10.0.27
+lib/libgoffice-%%SHORT_VER%%.so.10.0.28
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 share/gir-1.0/GOffice-%%SHORT_VER%%.gir
 %%DATADIR%%/%%VERSION%%/mmlitex/README
@@ -216,6 +216,7 @@ share/gtk-doc/html/goffice-%%SHORT_VER%%/GOColorGroup.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/GOComboBox.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/GOComboColor.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/GOComboPixmaps.html
+share/gtk-doc/html/goffice-%%SHORT_VER%%/GOComplex.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/GOComponent.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/GOData.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/GODataMatrix.html
@@ -327,7 +328,6 @@ share/gtk-doc/html/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-Files.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GLib-extras.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOAccumulator.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOColor.html
-share/gtk-doc/html/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOComplex.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GODataCVector.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOFileOpeners.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOPattern.html

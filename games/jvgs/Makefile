@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Minimalistic platform game
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	swig:devel/swig13
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		cmake lua:51
 USE_SDL=	sdl mixer

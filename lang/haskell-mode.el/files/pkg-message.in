@@ -1,0 +1,15 @@
+To use haskell-mode in Emacs, add the following lines to your ~/.emacs:
+
+(add-to-list 'load-path "%%PREFIX%%/share/emacs/site-lisp/haskell-mode/")
+(require 'haskell-mode-autoloads)
+
+Add the following lines according to which modules you want to use:
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(autoload 'turn-on-haskell-indent "hindent" "Indentation mode for Haskell" t)
+(add-hook 'haskell-mode-hook 'font-lock-mode)
+
+Note that the three indentation modules are mutually exclusive - add at
+most one.

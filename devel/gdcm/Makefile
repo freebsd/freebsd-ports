@@ -3,6 +3,7 @@
 
 PORTNAME=	gdcm
 PORTVERSION=	${GDCM_MAJOR}.${GDCM_MINOR}.${GDCM_PATCH}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/gdcm/gdcm%202.x/GDCM%20${PORTVERSION}
 
@@ -11,16 +12,16 @@ COMMENT=	Grassroots DICOM library
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
+		libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=		DOXYGEN
 OPTIONS_RADIO=		VTK
 OPTIONS_RADIO_VTK=	VTK5 VTK6
 OPTIONS_SUB=		yes
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-			docbook-xsl-ns>0:${PORTSDIR}/textproc/docbook-xsl-ns
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			docbook-xsl-ns>0:textproc/docbook-xsl-ns
 DOXYGEN_USES=		ghostscript
 DOXYGEN_USE=		gnome=libxslt:build tex=latex:build
 DOXYGEN_CMAKE_ON=	-DGDCM_DOCUMENTATION:BOOL=ON \
@@ -30,11 +31,11 @@ DOXYGEN_CMAKE_ON=	-DGDCM_DOCUMENTATION:BOOL=ON \
 DOXYGEN_CMAKE_OFF=	-DGDCM_DOCUMENTATION:BOOL=OFF
 
 VTK5_DESC=		Build VTK 5 integration classes
-VTK5_LIB_DEPENDS=	libvtkHybrid.so:${PORTSDIR}/math/vtk5
+VTK5_LIB_DEPENDS=	libvtkHybrid.so:math/vtk5
 VTK5_CMAKE_ON=		-DGDCM_USE_VTK:BOOL=ON \
 			-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-${VTK5_VERSION}
 VTK6_DESC=		Build VTK 6 integration classes
-VTK6_LIB_DEPENDS=	libvtkCommonCore-${VTK6_VERSION}.so:${PORTSDIR}/math/vtk6
+VTK6_LIB_DEPENDS=	libvtkCommonCore-${VTK6_VERSION}.so:math/vtk6
 VTK6_CMAKE_ON=		-DGDCM_USE_VTK:BOOL=ON \
 			-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-${VTK6_VERSION}
 

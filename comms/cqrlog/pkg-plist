@@ -8,8 +8,6 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/ctyfiles/Country.tab
 %%DATADIR%%/ctyfiles/CountryDel.tab
 %%DATADIR%%/ctyfiles/Exceptions.tab
-%%DATADIR%%/ctyfiles/Exceptions.tbl
-%%DATADIR%%/ctyfiles/MASTER.DTA
 %%DATADIR%%/ctyfiles/MASTER.SCP
 %%DATADIR%%/ctyfiles/README
 %%DATADIR%%/ctyfiles/eqsl.txt
@@ -89,7 +87,6 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/help/img/h37.png
 %%DATADIR%%/help/img/h38.png
 %%DATADIR%%/help/img/h39.png
-%%DATADIR%%/help/img/h4.html
 %%DATADIR%%/help/img/h4.png
 %%DATADIR%%/help/img/h40.png
 %%DATADIR%%/help/img/h41.png
@@ -166,7 +163,9 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/images/bck.png
 %%DATADIR%%/images/cqrlog.ico
 %%DATADIR%%/images/cqrlog.png
+%%DATADIR%%/images/connect.png
 %%DATADIR%%/images/delete.png
+%%DATADIR%%/images/disconnect.png
 %%DATADIR%%/images/dxcc_stat.xpm
 %%DATADIR%%/images/edit.png
 %%DATADIR%%/images/edwn.xpm
@@ -174,7 +173,10 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/images/eqsl_up.png
 %%DATADIR%%/images/eupl.xpm
 %%DATADIR%%/images/filter.png
+%%DATADIR%%/images/font.png
+%%DATADIR%%/images/go-bottom.png
 %%DATADIR%%/images/grayline.bmp
+%%DATADIR%%/images/help.png
 %%DATADIR%%/images/menu_new.png
 %%DATADIR%%/images/my_view.png
 %%DATADIR%%/images/options.xpm
@@ -182,6 +184,7 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/images/quit.png
 %%DATADIR%%/images/quit.xpm
 %%DATADIR%%/images/radio.bmp
+%%DATADIR%%/images/rbn_list.png
 %%DATADIR%%/images/search.png
 %%DATADIR%%/images/sort.xpm
 %%DATADIR%%/images/splash.png

@@ -10,7 +10,7 @@ COMMENT=	Pure BASH/ZSH Lets Encrypt client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	curl:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lukas2511
@@ -27,8 +27,8 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		shebangfix
 
-BASH_RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-ZSH_RUN_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
+BASH_RUN_DEPENDS=	bash:shells/bash
+ZSH_RUN_DEPENDS=	zsh:shells/zsh
 
 PERIODIC_DIRS=	etc/periodic/weekly
 PERIODIC_FILES=	000.letsencrypt.sh

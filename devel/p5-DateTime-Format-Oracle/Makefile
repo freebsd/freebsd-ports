@@ -14,9 +14,9 @@ COMMENT=	Parse and format Oracle dates and timestamps
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Convert-NLS_DATE_FORMAT>=0.03:${PORTSDIR}/converters/p5-Convert-NLS_DATE_FORMAT \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Format-Builder>=0:${PORTSDIR}/devel/p5-DateTime-Format-Builder
+BUILD_DEPENDS=	p5-Convert-NLS_DATE_FORMAT>=0.03:converters/p5-Convert-NLS_DATE_FORMAT \
+		p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Format-Builder>=0:devel/p5-DateTime-Format-Builder
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

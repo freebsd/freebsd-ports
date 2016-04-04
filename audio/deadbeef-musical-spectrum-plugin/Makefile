@@ -8,8 +8,8 @@ CATEGORIES=	audio
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Musical spectrum plugin for DeaDBeeF audio player
 
-BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:${PORTSDIR}/audio/deadbeef
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
+LIB_DEPENDS=	libfftw3.so:math/fftw3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes
@@ -21,6 +21,8 @@ USES=		gmake pkgconfig
 
 OPTIONS_DEFINE=	GTK2 GTK3
 OPTIONS_DEFAULT=	GTK2
+
+MAKE_JOBS_UNSAFE=	yes
 
 .for v in 2 3
 GTK${v}_USE=	GNOME=gtk${v}0

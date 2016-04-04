@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mybb
-PORTVERSION=	1.6.9
-PORTREVISION=	1
+PORTVERSION=	1.8.7
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jochen@jochen-neumeister.de
 COMMENT=	PHP-based bulletin board / discussion forum system
 
+LICENSE=	GPLv3
+
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}_1609
+GH_TAGNAME=	${PORTNAME}_1807
 
 USES=		cpe
 NO_BUILD=	yes

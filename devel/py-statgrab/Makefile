@@ -12,7 +12,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Set of Python bindings for libstatgrab
 
-LIB_DEPENDS=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
 USES=		pkgconfig python
 USE_PYTHON=	distutils autoplist

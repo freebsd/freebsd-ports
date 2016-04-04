@@ -11,8 +11,8 @@ COMMENT=	Festival utilities focused on interaction with Speech Dispatcher
 
 OPTIONS_DEFINE=	DOCS
 
-RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
-		sox:${PORTSDIR}/audio/sox
+RUN_DEPENDS=	festival:audio/festival \
+		sox:audio/sox
 
 NO_BUILD=	yes
 USES=		iconv

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extractor from uuencoded files
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	nkf:japanese/nkf
 
 USES=		lha
 NO_WRKSUBDIR=	yes

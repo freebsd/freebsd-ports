@@ -12,7 +12,7 @@ COMMENT=	Perl extension for Apache ZooKeeper
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libzookeeper_mt.so:${PORTSDIR}/devel/libzookeeper
+LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
 USES=		perl5
 USE_PERL5=	configure

@@ -11,11 +11,11 @@ MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
 
-BUILD_DEPENDS=	obabel:${PORTSDIR}/science/openbabel \
-		intltool-update:${PORTSDIR}/textproc/intltool \
-		ld:${PORTSDIR}/devel/binutils
-LIB_DEPENDS=	libmpqc.so:${PORTSDIR}/science/mpqc \
-		libf2c.so:${PORTSDIR}/lang/f2c
+BUILD_DEPENDS=	obabel:science/openbabel \
+		intltool-update:textproc/intltool \
+		ld:devel/binutils
+LIB_DEPENDS=	libmpqc.so:science/mpqc \
+		libf2c.so:lang/f2c
 
 USES=		fortran gettext gmake pathfix pkgconfig libtool
 USE_GL=		gl

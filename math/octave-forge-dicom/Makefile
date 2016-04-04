@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 BROKEN=		does not build with octave-4.0.0
 
-LIB_DEPENDS+=	libgdcmCommon.so:${PORTSDIR}/devel/gdcm
+LIB_DEPENDS+=	libgdcmCommon.so:devel/gdcm
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.

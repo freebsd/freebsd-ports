@@ -12,12 +12,12 @@ COMMENT=	Image Viewer for X Window System with thumbnail preview feature
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	IMAGEMAGICK
 OPTIONS_DEFAULT=IMAGEMAGICK
 
-IMAGEMAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
 
 USES=		gettext
 USE_GNOME=	gtk12 gdkpixbuf

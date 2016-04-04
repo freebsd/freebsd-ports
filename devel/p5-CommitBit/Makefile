@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Project administration tool
 
-RUN_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-Jifty>=0.60728:${PORTSDIR}/www/p5-Jifty \
-		p5-Text-Password-Pronounceable>=0:${PORTSDIR}/security/p5-Text-Password-Pronounceable
+RUN_DEPENDS=	p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require \
+		p5-Jifty>=0.60728:www/p5-Jifty \
+		p5-Text-Password-Pronounceable>=0:security/p5-Text-Password-Pronounceable
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,7 +13,7 @@ COMMENT=	Perl extension to warn and die noisily with stack backtraces
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base
+TEST_DEPENDS=	p5-Test-Base>0:devel/p5-Test-Base
 
 USES=		perl5
 USE_PERL5=	configure

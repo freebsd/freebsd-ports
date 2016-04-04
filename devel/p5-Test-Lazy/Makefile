@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Quick and easy way to compose and run tests with useful output
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-Test-Deep>0:devel/p5-Test-Deep
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

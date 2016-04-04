@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig
+--- CMakeLists.txt.orig	2016-02-19 19:27:37 UTC
 +++ CMakeLists.txt
-@@ -30,7 +30,7 @@
+@@ -38,7 +38,7 @@ GET_PARAMETER(INCLUDE_DIR    include)
  GET_PARAMETER(SHARE_DIR      share)
  # FreeBSD ports adds a patch for this directory
  # so make it configurable

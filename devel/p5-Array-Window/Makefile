@@ -14,7 +14,7 @@ COMMENT=	Calculate windows/subsets/pages of arrays
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Params-Util>=0.12:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-Params-Util>=0.12:devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

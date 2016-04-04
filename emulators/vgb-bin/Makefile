@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
 
-LIB_DEPENDS=	libc.so.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libc.so.5:misc/compat5x
 
 IA32_BINARY_PORT=	yes
 NO_BUILD=	no

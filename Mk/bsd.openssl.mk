@@ -87,7 +87,6 @@ OPENSSLBASE=		${LOCALBASE}
 .if	!defined(OPENSSL_PORT) && \
 	exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so)
 # find installed port and use it for dependency
-PKG_DBDIR?=		${DESTDIR}/var/db/pkg
 .if !defined(OPENSSL_INSTALLED)
 .if defined(DESTDIR)
 PKGARGS=	-c ${DESTDIR}
@@ -100,8 +99,6 @@ OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.s
 OPENSSL_PORT=		${OPENSSL_INSTALLED}
 OPENSSL_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | ${GREP} "^`${PKG_QUERY} "%p" ${OPENSSL_INSTALLED}`/lib/libcrypto.so.[0-9]*$$"
 OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
-.else
-# PKG_DBDIR was not found
 .endif
 .endif
 
@@ -117,8 +114,8 @@ OPENSSL_PORT?=		security/openssl
 OPENSSL_SHLIBVER?=	8
 
 OPENSSLDIR?=		${OPENSSLBASE}/openssl
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
-RUN_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${OPENSSL_PORT}
+RUN_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${OPENSSL_PORT}
 OPENSSLRPATH=		${LOCALBASE}/lib
 
 .endif

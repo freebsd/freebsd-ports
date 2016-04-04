@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tweak
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	editors
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/
 

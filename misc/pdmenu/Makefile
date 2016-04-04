@@ -13,7 +13,7 @@ COMMENT=	Simple console menu program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:devel/libslang2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

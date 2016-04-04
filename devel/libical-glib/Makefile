@@ -9,7 +9,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Introspection bindings for libical
 
-LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical
+LIB_DEPENDS=	libical.so:devel/libical
 
 USES=		compiler:c11 gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2

@@ -10,11 +10,11 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plug-ins for the Eye of GNOME image viewer application
 
-BUILD_DEPENDS=	eog:${PORTSDIR}/graphics/eog
-LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata \
-		libexif.so:${PORTSDIR}/graphics/libexif \
-		libpeas-1.0.so:${PORTSDIR}/devel/libpeas
-RUN_DEPENDS=	eog:${PORTSDIR}/graphics/eog
+BUILD_DEPENDS=	eog:graphics/eog
+LIB_DEPENDS=	libgdata.so:devel/libgdata \
+		libexif.so:graphics/libexif \
+		libpeas-1.0.so:devel/libpeas
+RUN_DEPENDS=	eog:graphics/eog
 
 PORTSCOUT=	limitw:1,even
 
@@ -35,7 +35,7 @@ CHAMPLAIN_DESC=	Champlain map plugin
 
 .if ${PORT_OPTIONS:MCHAMPLAIN}
 USE_GL=		gl
-LIB_DEPENDS+=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain
+LIB_DEPENDS+=	libchamplain-0.12.so:graphics/libchamplain
 PLIST_SUB+=	CHAMPLAIN=""
 .else
 PLIST_SUB+=	CHAMPLAIN="@comment "
@@ -43,7 +43,7 @@ PLIST_SUB+=	CHAMPLAIN="@comment "
 
 PLIST_SUB+=	PYVER=${PYTHON_VER:S|.||}
 .if ${PORT_OPTIONS:MPYTHON}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PORTSDIR}/devel/py3-libpeas
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
 CONFIGURE_ARGS+=--enable-python
 USES+=		python:3
 PLIST_SUB+=	PYTHON=""

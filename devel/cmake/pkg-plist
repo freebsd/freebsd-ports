@@ -39,6 +39,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/command/build_name.rst
 %%DATADIR%%/Help/command/cmake_host_system_information.rst
 %%DATADIR%%/Help/command/cmake_minimum_required.rst
+%%DATADIR%%/Help/command/cmake_parse_arguments.rst
 %%DATADIR%%/Help/command/cmake_policy.rst
 %%DATADIR%%/Help/command/configure_file.rst
 %%DATADIR%%/Help/command/continue.rst
@@ -296,10 +297,10 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/FindHTMLHelp.rst
 %%DATADIR%%/Help/module/FindHg.rst
 %%DATADIR%%/Help/module/FindITK.rst
-%%DATADIR%%/Help/module/FindIntl.rst
 %%DATADIR%%/Help/module/FindIce.rst
 %%DATADIR%%/Help/module/FindIcotool.rst
 %%DATADIR%%/Help/module/FindImageMagick.rst
+%%DATADIR%%/Help/module/FindIntl.rst
 %%DATADIR%%/Help/module/FindJNI.rst
 %%DATADIR%%/Help/module/FindJPEG.rst
 %%DATADIR%%/Help/module/FindJasper.rst
@@ -370,6 +371,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/FindX11.rst
 %%DATADIR%%/Help/module/FindXCTest.rst
 %%DATADIR%%/Help/module/FindXMLRPC.rst
+%%DATADIR%%/Help/module/FindXalanC.rst
 %%DATADIR%%/Help/module/FindXercesC.rst
 %%DATADIR%%/Help/module/FindZLIB.rst
 %%DATADIR%%/Help/module/Findosg.rst
@@ -706,6 +708,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/INTERFACE_SYSTEM_INCLUDE_DIRECTORIES.rst
 %%DATADIR%%/Help/prop_tgt/INTERPROCEDURAL_OPTIMIZATION.rst
 %%DATADIR%%/Help/prop_tgt/INTERPROCEDURAL_OPTIMIZATION_CONFIG.rst
+%%DATADIR%%/Help/prop_tgt/IOS_INSTALL_COMBINED.rst
 %%DATADIR%%/Help/prop_tgt/JOB_POOL_COMPILE.rst
 %%DATADIR%%/Help/prop_tgt/JOB_POOL_LINK.rst
 %%DATADIR%%/Help/prop_tgt/LABELS.rst
@@ -802,6 +805,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/release/3.2.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
+%%DATADIR%%/Help/release/3.5.rst
 %%DATADIR%%/Help/release/dev.txt
 %%DATADIR%%/Help/release/index.rst
 %%DATADIR%%/Help/variable/APPLE.rst
@@ -884,6 +888,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_EXECUTABLE_SUFFIX.rst
 %%DATADIR%%/Help/variable/CMAKE_EXE_LINKER_FLAGS.rst
 %%DATADIR%%/Help/variable/CMAKE_EXE_LINKER_FLAGS_CONFIG.rst
+%%DATADIR%%/Help/variable/CMAKE_EXPORT_COMPILE_COMMANDS.rst
 %%DATADIR%%/Help/variable/CMAKE_EXPORT_NO_PACKAGE_REGISTRY.rst
 %%DATADIR%%/Help/variable/CMAKE_EXTRA_GENERATOR.rst
 %%DATADIR%%/Help/variable/CMAKE_EXTRA_SHARED_LIBRARY_SUFFIXES.rst
@@ -935,6 +940,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_INSTALL_RPATH.rst
 %%DATADIR%%/Help/variable/CMAKE_INSTALL_RPATH_USE_LINK_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_INTERNAL_PLATFORM_ABI.rst
+%%DATADIR%%/Help/variable/CMAKE_IOS_INSTALL_COMBINED.rst
 %%DATADIR%%/Help/variable/CMAKE_JOB_POOL_COMPILE.rst
 %%DATADIR%%/Help/variable/CMAKE_JOB_POOL_LINK.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_ARCHIVE_APPEND.rst

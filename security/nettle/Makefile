@@ -14,7 +14,7 @@ COMMENT=	Low-level cryptographic library
 LICENSE=	LGPL3 GPLv2+
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake makeinfo
 USE_OPENSSL=	yes

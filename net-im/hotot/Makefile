@@ -29,8 +29,8 @@ KDE4_DESC=	KDE 4 integration (implies Qt 4)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/webkit/__init__.py:${PORTSDIR}/www/py-webkitgtk \
-		${PYTHON_SITELIBDIR}/keybinder/__init__.py:${PORTSDIR}/x11/keybinder
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/webkit/__init__.py:www/py-webkitgtk \
+		${PYTHON_SITELIBDIR}/keybinder/__init__.py:x11/keybinder
 PLIST_SUB+=	GTK2=""
 .else
 CMAKE_ARGS+=	-DWITH_GTK=off

@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Collection of standard Unix utilities
 
-BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
+BUILD_DEPENDS=	ksh:shells/pdksh
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake tar:bzip2

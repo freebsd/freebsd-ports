@@ -14,8 +14,8 @@ COMMENT=	Object interface for GPS waypoints
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
+RUN_DEPENDS=	p5-Time-modules>=0:devel/p5-Time-modules \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

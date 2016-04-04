@@ -3,4 +3,6 @@ GNU Ghostscript application. The driver provides printing support for more
 than 200 printer models, including, DeskJet, OfficeJet, Photosmart, Business
 Inkjet and some LaserJet.
 
+HPIJS has been discontinued.  Consider installing HPLIP instead.
+
 WWW: http://hpinkjet.sourceforge.net/

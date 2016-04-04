@@ -12,22 +12,22 @@ COMMENT=	Music player with rich features
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libmp3lame.so:${PORTSDIR}/audio/lame \
-		libcddb.so:${PORTSDIR}/audio/libcddb \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		liboggz.so:${PORTSDIR}/audio/liboggz \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libmac.so:${PORTSDIR}/audio/mac \
-		libmpcdec.so:${PORTSDIR}/audio/musepack \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libwavpack.so:${PORTSDIR}/audio/wavpack \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia \
-		liblrdf.so:${PORTSDIR}/textproc/liblrdf
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libmp3lame.so:audio/lame \
+		libcddb.so:audio/libcddb \
+		libmad.so:audio/libmad \
+		libmodplug.so:audio/libmodplug \
+		liboggz.so:audio/liboggz \
+		libsamplerate.so:audio/libsamplerate \
+		libsndfile.so:audio/libsndfile \
+		libvorbis.so:audio/libvorbis \
+		libmac.so:audio/mac \
+		libmpcdec.so:audio/musepack \
+		libspeex.so:audio/speex \
+		libwavpack.so:audio/wavpack \
+		libavcodec.so:multimedia/ffmpeg \
+		libcdio_paranoia.so:sysutils/libcdio-paranoia \
+		liblrdf.so:textproc/liblrdf
 
 USES=		gettext localbase lua pkgconfig
 USE_GNOME=	gtk20 libxml2 libxslt
@@ -39,13 +39,13 @@ DESKTOP_ENTRIES="Aqualung" "" "${DATADIR}/general.png" "aqualung" \
 
 OPTIONS_DEFINE=		ALSA DOCS JACK PULSEAUDIO
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ON=	--with-alsa=yes
 ALSA_CONFIGURE_OFF=	--with-alsa=no
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ON=	--with-jack=yes
 JACK_CONFIGURE_OFF=	--with-jack=no
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ON=	--with-pulse=yes
 PULSEAUDIO_CONFIGURE_OFF=	--with-pulse=no
 

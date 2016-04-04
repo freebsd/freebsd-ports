@@ -11,8 +11,8 @@ COMMENT=	Frontend to various audio converters (transcoder)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
-		libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
+LIB_DEPENDS=	libtag.so:audio/taglib \
+		libcdda_paranoia.so:audio/cdparanoia
 
 GH_ACCOUNT=	HessiJames
 USES=		cmake compiler:c++11-lang
@@ -41,74 +41,74 @@ REPLAYGAIN_DESC=	Replaygain tools for codecs
 RIPPER_DESC=		CD ripping tools
 
 AFTEN_DESC=		ATSC A/52 audio encoder
-AFTEN_RUN_DEPENDS=	aften:${PORTSDIR}/audio/aften
+AFTEN_RUN_DEPENDS=	aften:audio/aften
 
 AACGAIN_DESC=		AAC audio replaygain
-AACGAIN_RUN_DEPENDS=	aacgain:${PORTSDIR}/audio/aacgain
+AACGAIN_RUN_DEPENDS=	aacgain:audio/aacgain
 
 CDPARANOIA_DESC=	CD ripping support (cdparanoia - implicit)
 
 CDRKIT_DESC=		CD ripping support (cdrkit)
-CDRKIT_RUN_DEPENDS=	icedax:${PORTSDIR}/sysutils/cdrkit
+CDRKIT_RUN_DEPENDS=	icedax:sysutils/cdrkit
 
-FAAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac \
-			faad:${PORTSDIR}/audio/faad
+FAAC_RUN_DEPENDS=	faac:audio/faac \
+			faad:audio/faad
 
-FFMPEG_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
+FLAC_RUN_DEPENDS=	flac:audio/flac
 
 FLAKE_DESC=		FLAC audio codec
-FLAKE_RUN_DEPENDS=	flake:${PORTSDIR}/audio/flake
+FLAKE_RUN_DEPENDS=	flake:audio/flake
 
 FLUIDSYNTH_DESC=	SoundFont 2 audio codec
-FLUIDSYNTH_RUN_DEPENDS=	fluidsynth:${PORTSDIR}/audio/fluidsynth
+FLUIDSYNTH_RUN_DEPENDS=	fluidsynth:audio/fluidsynth
 
-LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
+LAME_RUN_DEPENDS=	lame:audio/lame
 
 LIBAV_DESCR=		LibAV support (WMA, AIFF, AC3, APE...)
-LIBAV_RUN_DEPENDS=	avconv:${PORTSDIR}/multimedia/libav
+LIBAV_RUN_DEPENDS=	avconv:multimedia/libav
 
 MAC_DESC=		Monkey's Audio lossless codec
-MAC_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
+MAC_RUN_DEPENDS=	mac:audio/mac
 
 MP3GAIN_DESC=		MP3 audio replaygain
-MP3GAIN_RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain
+MP3GAIN_RUN_DEPENDS=	mp3gain:audio/mp3gain
 
-MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
-MUSEPACK_RUN_DEPENDS=	mpcenc:${PORTSDIR}/audio/musepack
+MUSEPACK_RUN_DEPENDS=	mpcenc:audio/musepack
 
 NEROAAC_DESC=		Nero AAC MPEG-3 and 3GPP audio codec
-NEROAAC_RUN_DEPENDS=	neroAacEnc:${PORTSDIR}/audio/linux-neroaaccodec
+NEROAAC_RUN_DEPENDS=	neroAacEnc:audio/linux-neroaaccodec
 
 NORMALIZE_DESC=		MP3/Ogg Vorbis audio filter and replaygain
-NORMALIZE_RUN_DEPENDS=	normalize:${PORTSDIR}/audio/normalize
+NORMALIZE_RUN_DEPENDS=	normalize:audio/normalize
 
 OPUSTOOLS_DESC=		Opus audio codec
-OPUSTOOLS_RUN_DEPENDS=	opusenc:${PORTSDIR}/audio/opus-tools
+OPUSTOOLS_RUN_DEPENDS=	opusenc:audio/opus-tools
 
 SHORTEN_DESC=		Shorten (lossless) audio codec
-SHORTEN_RUN_DEPENDS=	shorten:${PORTSDIR}/audio/shorten
+SHORTEN_RUN_DEPENDS=	shorten:audio/shorten
 
 SOX_DESC=		Universal sound sample translator
-SOX_RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
+SOX_RUN_DEPENDS=	sox:audio/sox
 
-SPEEX_RUN_DEPENDS=	speexenc:${PORTSDIR}/audio/speex
+SPEEX_RUN_DEPENDS=	speexenc:audio/speex
 
 TIMIDITY_DESC=		MIDI audio decoder
-TIMIDITY_RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
+TIMIDITY_RUN_DEPENDS=	timidity:audio/timidity
 
-TTA_RUN_DEPENDS=	ttaenc:${PORTSDIR}/audio/tta
+TTA_RUN_DEPENDS=	ttaenc:audio/tta
 
-TWOLAME_RUN_DEPENDS=	twolame:${PORTSDIR}/audio/twolame
+TWOLAME_RUN_DEPENDS=	twolame:audio/twolame
 
 VORBISGAIN_DESC=	Ogg Vorbis audio replaygain
-VORBISGAIN_RUN_DEPENDS=	vorbisgain:${PORTSDIR}/audio/vorbisgain
+VORBISGAIN_RUN_DEPENDS=	vorbisgain:audio/vorbisgain
 
-VORBIS_RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
+VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
 
-WAVPACK_RUN_DEPENDS=	wavpack:${PORTSDIR}/audio/wavpack
+WAVPACK_RUN_DEPENDS=	wavpack:audio/wavpack
 
 NLS_USES=	gettext
 NLS_CMAKE_OFF=	-DBUILD_po=FALSE

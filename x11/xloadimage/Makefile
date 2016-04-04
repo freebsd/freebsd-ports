@@ -15,8 +15,8 @@ COMMENT=	X11 Image Loading Utility
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 CONFLICTS_INSTALL=	xli-*
 

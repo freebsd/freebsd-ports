@@ -13,15 +13,15 @@ COMMENT=	Cross-platform music player based on Amarok 1.4
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
-		libchromaprint.so:${PORTSDIR}/audio/chromaprint \
-		libprotobuf.so:${PORTSDIR}/devel/protobuf \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libqjson.so:${PORTSDIR}/devel/qjson \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libechonest.so:${PORTSDIR}/audio/libechonest
+LIB_DEPENDS=	libtag.so:audio/taglib \
+		libchromaprint.so:audio/chromaprint \
+		libprotobuf.so:devel/protobuf \
+		libqca.so:devel/qca \
+		libqjson.so:devel/qjson \
+		libfftw3.so:math/fftw3 \
+		libechonest.so:audio/libechonest
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}${PKGNAMESUFFIX}
@@ -73,7 +73,7 @@ DROPBOX_CMAKE_OFF=	-DENABLE_DROPBOX=OFF
 MOODBAR_CMAKE_ON=	-DENABLE_MOODBAR=ON
 MOODBAR_CMAKE_OFF=	-DENABLE_MOODBAR=OFF
 
-AUDIOCD_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
+AUDIOCD_LIB_DEPENDS=	libcdio.so:sysutils/libcdio
 AUDIOCD_CMAKE_ON=	-DENABLE_AUDIOCD=ON
 AUDIOCD_CMAKE_OFF=	-DENABLE_AUDIOCD=OFF
 
@@ -90,19 +90,19 @@ GIO_USE=	GNOME=glib20
 GIO_CMAKE_ON=	-DENABLE_GIO=ON
 GIO_CMAKE_OFF=	-DENABLE_GIO=OFF
 
-GOOGLE_DRIVE_BUILD_DEPENDS=	google-sparsehash>=2.0.2:${PORTSDIR}/devel/google-sparsehash
+GOOGLE_DRIVE_BUILD_DEPENDS=	google-sparsehash>=2.0.2:devel/google-sparsehash
 GOOGLE_DRIVE_CMAKE_ON=	-DENABLE_GOOGLE_DRIVE=ON
 GOOGLE_DRIVE_CMAKE_OFF=	-DENABLE_GOOGLE_DRIVE=OFF
 
-GPOD_LIB_DEPENDS=	libgpod.so:${PORTSDIR}/audio/libgpod
+GPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod
 GPOD_CMAKE_ON=	-DENABLE_LIBGPOD=ON
 GPOD_CMAKE_OFF=	-DENABLE_LIBGPOD=OFF
 
-LASTFM_LIB_DEPENDS=	liblastfm.so:${PORTSDIR}/audio/liblastfm
+LASTFM_LIB_DEPENDS=	liblastfm.so:audio/liblastfm
 LASTFM_CMAKE_ON=	-DENABLE_LIBLASTFM=ON
 LASTFM_CMAKE_OFF=	-DENABLE_LIBLASTFM=OFF
 
-MPT_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp
+MPT_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 MTP_CMAKE_ON=	-DENABLE_LIBMTP=ON
 MTP_CMAKE_OFF=	-DENABLE_LIBMTP=OFF
 

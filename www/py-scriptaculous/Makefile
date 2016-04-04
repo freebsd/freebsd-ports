@@ -13,7 +13,7 @@ DISTNAME=	Scriptaculous-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Scriptaculous packaged as TurboGears widgets
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:${PORTSDIR}/www/py-turbogears
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:www/py-turbogears
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PYDISTUTILS_PKGNAME=	Scriptaculous

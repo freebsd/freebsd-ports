@@ -11,8 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension SOAP::Lite transport for Plack
 
 RUN_DEPENDS=	\
-	p5-SOAP-Lite>0:${PORTSDIR}/net/p5-SOAP-Lite \
-	p5-XMLRPC-Lite>0:${PORTSDIR}/net/p5-XMLRPC-Lite
+	p5-SOAP-Lite>0:net/p5-SOAP-Lite \
+	p5-XMLRPC-Lite>0:net/p5-XMLRPC-Lite
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -14,7 +14,7 @@ COMMENT=	Cross-platform multimedia development API
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:devel/nasm
 
 USES=		gmake iconv libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -41,18 +41,18 @@ OPTIONS_DEFAULT+=	VGL
 .endif
 
 AALIB_CONFIGURE_ENABLE=		video-aalib
-AALIB_LIB_DEPENDS=		libaa.so:${PORTSDIR}/graphics/aalib
+AALIB_LIB_DEPENDS=		libaa.so:graphics/aalib
 ESOUND_USE=			GNOME=esound
 ESOUND_CONFIGURE_ENABLE=	esd esdtest
 NAS_CONFIGURE_ENABLE=		nas
-NAS_LIB_DEPENDS=		libaudio.so:${PORTSDIR}/audio/nas
+NAS_LIB_DEPENDS=		libaudio.so:audio/nas
 OPENGL_CONFIGURE_ENABLE=	video-opengl
 OPENGL_USE=			GL=yes
 OSS_CONFIGURE_ENABLE=		oss
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
-PULSEAUDIO_LIB_DEPENDS=		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse-simple.so:audio/pulseaudio
 SVGALIB_CONFIGURE_ENABLE=	video-svga
-SVGALIB_LIB_DEPENDS=		libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_LIB_DEPENDS=		libvga.so:graphics/svgalib
 VGL_CONFIGURE_ENABLE=		video-vgl
 X11_CONFIGURE_ENABLE=		video-x11
 X11_USE=			XORG=x11,xrender,xrandr,xextproto

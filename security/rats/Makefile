@@ -10,11 +10,14 @@ MASTER_SITES=	https://www.fortify.com/downloads2/public/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code auditing tool
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
 USES=		gmake
-CONFIGURE_ARGS+=--with-expat-lib=${LOCALBASE}/lib \
+CONFIGURE_ARGS=	--with-expat-lib=${LOCALBASE}/lib \
 		--with-expat-include=${LOCALBASE}/include/xml \
 		--datadir=${DATADIR}
 
@@ -26,7 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -E '/^CFLAGS/! s,(BIN|LIB|MAN|SHARE)DIR),DESTDIR)$$(&,g' \
 		${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

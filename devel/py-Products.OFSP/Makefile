@@ -13,8 +13,8 @@ COMMENT=	General Zope 2 help screens
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=0:${PORTSDIR}/security/py-AccessControl \
-		${PYTHON_PKGNAMEPREFIX}Persistence>=0:${PORTSDIR}/devel/py-Persistence
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=0:security/py-AccessControl \
+		${PYTHON_PKGNAMEPREFIX}Persistence>=0:devel/py-Persistence
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

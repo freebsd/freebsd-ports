@@ -142,6 +142,7 @@
     SUBDIR += py-serial
     SUBDIR += pyla
     SUBDIR += qico
+    SUBDIR += qpage
     SUBDIR += qrq
     SUBDIR += qsstv
     SUBDIR += qt5-connectivity
@@ -155,6 +156,7 @@
     SUBDIR += rubygem-ruby-termios
     SUBDIR += rxtx
     SUBDIR += scmxx
+    SUBDIR += sdr-wspr
     SUBDIR += ser2net
     SUBDIR += serialoverip
     SUBDIR += seyon

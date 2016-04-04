@@ -9,10 +9,10 @@ CATEGORIES=	archivers
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny sh(1) wrapper to simplify decompression of files
 
-RUN_DEPENDS=	unace:${PORTSDIR}/archivers/unace \
-		unrar:${PORTSDIR}/archivers/unrar \
-		unzip:${PORTSDIR}/archivers/unzip \
-		7z:${PORTSDIR}/archivers/p7zip
+RUN_DEPENDS=	unace:archivers/unace \
+		unrar:archivers/unrar \
+		unzip:archivers/unzip \
+		7z:archivers/p7zip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vitaminmoo

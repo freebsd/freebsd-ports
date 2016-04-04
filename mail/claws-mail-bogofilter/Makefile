@@ -6,7 +6,7 @@ PORTREVISION=	0
 
 COMMENT=	Spam filtering plugin for Claws Mail
 
-RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
+RUN_DEPENDS=	bogofilter:mail/bogofilter
 
 CLAWS_PLUGINS_BUILD=	bogofilter
 

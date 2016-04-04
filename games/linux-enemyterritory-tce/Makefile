@@ -13,7 +13,7 @@ DISTFILES=	tcetest049.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern tactical Enemy Territory modification
 
-RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
+RUN_DEPENDS=	et:games/linux-enemyterritory
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		zip

@@ -79,7 +79,7 @@ SDL_POWER_DESC=		Enable the SDL Power subsystem
 SDL_RENDER_DESC=	Enable the SDL Render subsystem
 SDL_THREADS_DESC=	Enable the SDL Threads subsystem
 SDL_TIMERS_DESC=	Enable the SDL Timers subsystem
-SDL_VIDEO_DESC=		Eanble the SDL Video subsystem
+SDL_VIDEO_DESC=		Enable the SDL Video subsystem
 VIDEO_OPENGL_DESC=	OpenGL rendering support
 VIDEO_X11_DESC=		X11 rendering support
 
@@ -98,7 +98,7 @@ SDL_POWER_CONFIGURE_ENABLE=	power
 SDL_RENDER_CONFIGURE_ENABLE=	render
 SDL_THREADS_CONFIGURE_ENABLE=	threads
 SDL_TIMERS_CONFIGURE_ENABLE=	timers
-SDL_VIDEO_CONFIGURE_EANBLE=	video
+SDL_VIDEO_CONFIGURE_ENABLE=	video
 
 .include <bsd.port.options.mk>
 
@@ -107,7 +107,7 @@ SDL_VIDEO_CONFIGURE_EANBLE=	video
 IGNORE=	option ALSA requires SDL_AUDIO
 .endif
 CONFIGURE_ARGS+=	--enable-alsa --enable-alsa-shared
-LIB_DEPENDS+=		libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=		libasound.so:audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--disable-alsa --disable-alsa-shared
 .endif
@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=	--disable-esd --disable-esd-shared
 IGNORE=	option NAS requires SDL_AUDIO
 .endif
 CONFIGURE_ARGS+=	--enable-nas --enable-nas-shared
-LIB_DEPENDS+=		libaudio.so:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=		libaudio.so:audio/nas
 .else
 CONFIGURE_ARGS+=	--disable-nas --disable-nas-shared
 .endif

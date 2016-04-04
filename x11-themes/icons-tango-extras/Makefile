@@ -11,10 +11,10 @@ DISTNAME=	tango-icon-theme-extras-${PORTVERSION}
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Extra set of icons from the Tango project
 
-BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/icon-naming-utils \
-		${LOCALBASE}/share/icons/Tango/16x16/actions/add.png:${PORTSDIR}/x11-themes/icons-tango \
-		Magick-config:${PORTSDIR}/graphics/ImageMagick
-RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango/16x16/actions/add.png:${PORTSDIR}/x11-themes/icons-tango
+BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:x11-themes/icon-naming-utils \
+		${LOCALBASE}/share/icons/Tango/16x16/actions/add.png:x11-themes/icons-tango \
+		Magick-config:graphics/ImageMagick
+RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango/16x16/actions/add.png:x11-themes/icons-tango
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig

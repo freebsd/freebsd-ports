@@ -13,11 +13,11 @@ COMMENT=	Qt interface for bzr
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
-		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4 \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
+BUILD_DEPENDS=	bzr:devel/bzr \
+		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4 \
+		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments \
+		${PYTHON_PKGNAMEPREFIX}enchant>=0:textproc/py-enchant
+RUN_DEPENDS=	bzr:devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -13,7 +13,7 @@ COMMENT=	Support for having child-tickets in Trac
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	trac>=0.12:www/trac
 
 USES=		python:2 zip
 

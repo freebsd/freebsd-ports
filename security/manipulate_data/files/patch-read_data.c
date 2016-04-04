@@ -1,6 +1,6 @@
---- read_data.c.orig	Wed Jul  7 17:00:30 2004
-+++ read_data.c	Sun Jul 25 23:36:58 2004
-@@ -32,7 +32,7 @@
+--- read_data.c.orig	2004-07-07 15:00:30 UTC
++++ read_data.c
+@@ -32,7 +32,7 @@ int main (int argc, char *argv[]) {
      if (sizeof(start) < 8)
        start = atol(argv[2]);
      else

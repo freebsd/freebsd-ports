@@ -10,7 +10,7 @@ DISTNAME=	CameraKit-20041011
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework that allows to access digital cameras
 
-LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
 USES=		tar:bzip2 gnustep
 USE_GNUSTEP=	build back

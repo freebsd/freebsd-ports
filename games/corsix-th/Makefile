@@ -12,9 +12,9 @@ COMMENT=	Open source clone of Theme Hospital
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem \
-		${LUA_MODLIBDIR}/lpeg.so:${PORTSDIR}/devel/lua-lpeg
+LIB_DEPENDS=	libfreetype.so:print/freetype2
+RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem \
+		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg
 
 USES=		cmake compiler:c++11-lang dos2unix iconv lua pkgconfig
 USE_SDL=	mixer2
@@ -34,7 +34,7 @@ MOVIES_DESC=	Play in-game movies
 
 MOVIES_CMAKE_ON=	-DWITH_MOVIES=ON
 MOVIES_CMAKE_OFF=	-DWITH_MOVIES=OFF
-MOVIES_LIB_DEPENDS=	libswresample.so:${PORTSDIR}/multimedia/ffmpeg
+MOVIES_LIB_DEPENDS=	libswresample.so:multimedia/ffmpeg
 
 post-patch:
 # Allow the game to find its resources without wrapper scripts

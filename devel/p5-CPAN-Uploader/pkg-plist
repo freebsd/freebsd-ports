@@ -1,4 +1,4 @@
 bin/cpan-upload
 %%SITE_PERL%%/CPAN/Uploader.pm
-%%PERL5_MAN3%%/CPAN::Uploader.3.gz
 %%PERL5_MAN1%%/cpan-upload.1.gz
+%%PERL5_MAN3%%/CPAN::Uploader.3.gz

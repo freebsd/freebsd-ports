@@ -10,8 +10,8 @@ COMMENT=	Nagios/Icinga plugin to check IPMI sensors
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
-		ipmi-raw:${PORTSDIR}/sysutils/freeipmi
+RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run \
+		ipmi-raw:sysutils/freeipmi
 
 NO_BUILD=	yes
 

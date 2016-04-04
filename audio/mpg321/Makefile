@@ -10,9 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Command-line MP3 player, compatible with mpg123
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag \
-		libmad.so:${PORTSDIR}/audio/libmad
+LIB_DEPENDS=	libao.so:audio/libao \
+		libid3tag.so:audio/libid3tag \
+		libmad.so:audio/libmad
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mpg123-symlink
@@ -24,7 +24,7 @@ PLIST_FILES=	bin/mpg321 man/man1/mpg321.1.gz
 OPTIONS_DEFINE=	SCROBBLER
 SCROBBLER_DESC=	Last.fm Audioscrobbler support
 
-SCROBBLER_RUN_DEPENDS=	scrobbler-helper:${PORTSDIR}/audio/p5-Audio-Scrobbler
+SCROBBLER_RUN_DEPENDS=	scrobbler-helper:audio/p5-Audio-Scrobbler
 SCROBBLER_PATCHFILES=	mpg321-0.2.10-scrobbler-01.patch:scrobbler
 SCROBBLER_PATCH_SITES=	http://people.FreeBSD.org/~roam/ports/audio/:scrobbler \
 		http://devel.ringlet.net/audio/mpg321-scrobbler/:scrobbler

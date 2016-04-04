@@ -12,11 +12,11 @@ DISTFILES=	${PORTNAME}_${DISTVERSION}.orig.tar.gz
 MAINTAINER=	anarcat@koumbit.org
 COMMENT=	Use the OpenPGP web of trust to verify ssh connections
 
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1 \
-		lockfile:${PORTSDIR}/mail/procmail \
-		bash:${PORTSDIR}/shells/bash \
-		p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS=	gpg:security/gnupg1 \
+		lockfile:mail/procmail \
+		bash:shells/bash \
+		p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 
 USES=		shebangfix
 SHEBANG_FILES=	src/share/checkperms src/transitions/0.23 \

@@ -113,7 +113,7 @@ lib/darktable/plugins/lighttable/libmodule_toolbox.so
 lib/darktable/plugins/lighttable/libmodulegroups.so
 lib/darktable/plugins/lighttable/libmodulelist.so
 lib/darktable/plugins/lighttable/libnavigation.so
-lib/darktable/plugins/lighttable/libprint_settings.so
+%%PRINT%%lib/darktable/plugins/lighttable/libprint_settings.so
 lib/darktable/plugins/lighttable/libratings.so
 lib/darktable/plugins/lighttable/librecentcollect.so
 lib/darktable/plugins/lighttable/libselect.so
@@ -126,7 +126,7 @@ lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/views/libdarkroom.so
 lib/darktable/views/liblighttable.so
 %%GEO%%lib/darktable/views/libmap.so
-lib/darktable/views/libprint.so
+%%PRINT%%lib/darktable/views/libprint.so
 lib/darktable/views/libslideshow.so
 %%GPHOTO%%lib/darktable/views/libtethering.so
 man/man1/darktable-cli.1.gz
@@ -337,6 +337,7 @@ share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/el/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/es/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/he/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/it/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/darktable.mo

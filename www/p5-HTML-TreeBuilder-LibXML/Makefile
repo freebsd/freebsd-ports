@@ -15,9 +15,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 # Do not add p5-Web-Query and p5-Web-Scraper to TEST_DEPENDS to avoid cyclic dependency loop
-BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
-		p5-HTML-TreeBuilder-XPath>=0.14:${PORTSDIR}/www/p5-HTML-TreeBuilder-XPath \
-		p5-XML-LibXML>=1.70:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	p5-Filter>=0:devel/p5-Filter \
+		p5-HTML-TreeBuilder-XPath>=0.14:www/p5-HTML-TreeBuilder-XPath \
+		p5-XML-LibXML>=1.70:textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

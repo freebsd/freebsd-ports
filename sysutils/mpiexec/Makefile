@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mpich2-1.2.*
 
-LIB_DEPENDS=	libtorque.so:${PORTSDIR}/sysutils/torque
+LIB_DEPENDS=	libtorque.so:sysutils/torque
 
 USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes

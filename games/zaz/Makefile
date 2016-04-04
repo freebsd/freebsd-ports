@@ -13,10 +13,10 @@ COMMENT=	Puzzle game where the player has to arrange balls in triplets
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libftgl.so:${PORTSDIR}/graphics/ftgl
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libtheora.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis \
+		libftgl.so:graphics/ftgl
 
 USES=		desktop-file-utils pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

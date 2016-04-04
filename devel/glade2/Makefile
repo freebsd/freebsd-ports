@@ -13,7 +13,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	User interface builder for GTK+
 
-LIB_DEPENDS=	librarian.so:${PORTSDIR}/textproc/rarian
+LIB_DEPENDS=	librarian.so:textproc/rarian
 
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes

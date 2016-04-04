@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the clamav virus scanner
 
-BUILD_DEPENDS=	clamscan:${PORTSDIR}/security/clamav
+BUILD_DEPENDS=	clamscan:security/clamav
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

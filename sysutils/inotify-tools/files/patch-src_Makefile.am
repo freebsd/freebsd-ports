@@ -1,0 +1,16 @@
+--- src/Makefile.am.orig	2014-11-09 20:57:04 UTC
++++ src/Makefile.am
+@@ -2,10 +2,11 @@ bin_PROGRAMS = inotifywait inotifywatch
+ inotifywait_SOURCES = inotifywait.c common.c common.h
+ inotifywatch_SOURCES = inotifywatch.c common.c common.h
+ 
+-AM_CFLAGS = -Wall -Werror -Wpointer-arith -std=c99 -I../libinotifytools/src -L../libinotifytools/src
++AM_CFLAGS = -Wall -Werror -Wpointer-arith -std=c99
+ AM_CPPFLAGS = -I$(top_srcdir)/libinotifytools/src
+ LDADD = ../libinotifytools/src/libinotifytools.la
++AM_LDFLAGS =  -L$(top_srcdir)/libinotifytools/src
+ 
+ if STATIC_BINARY_ENABLE
+-AM_LDFLAGS = -static-libtool-libs
++AM_LDFLAGS += -static-libtool-libs
+ endif

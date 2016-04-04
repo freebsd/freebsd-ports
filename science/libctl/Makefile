@@ -11,7 +11,7 @@ COMMENT=	Control Language Library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2
+LIB_DEPENDS=	libguile-2.0.so:lang/guile2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
@@ -24,7 +24,7 @@ BROKEN_sparc64=	does not build
 OPTIONS_DEFINE=	NLOPT DOCS EXAMPLES
 NLOPT_DESC=	Use NLopt, an external NonLinear OPTimizer
 
-NLOPT_LIB_DEPENDS=	libnlopt.so:${PORTSDIR}/math/nlopt
+NLOPT_LIB_DEPENDS=	libnlopt.so:math/nlopt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

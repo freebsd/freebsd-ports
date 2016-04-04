@@ -35,7 +35,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 DEBUG_CFLAGS_OFF=	-DNDEBUG
-GC_LIB_DEPENDS=		libgc.so:${PORTSDIR}/devel/boehm-gc
+GC_LIB_DEPENDS=		libgc.so:devel/boehm-gc
 GC_CONFIGURE_WITH=	boehm-gc
 
 post-patch:

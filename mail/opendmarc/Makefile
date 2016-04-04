@@ -14,9 +14,9 @@ COMMENT=	DMARC library and milter implementation
 LICENSE=		BSD3CLAUSE SENDMAIL
 LICENSE_COMB=		multi
 
-RUN_DEPENDS=	p5-Switch>=0:${PORTSDIR}/lang/p5-Switch \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-Switch>=0:lang/p5-Switch \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
 LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
 LICENSE_GROUPS_SENDMAIL=	FSF OSI
@@ -34,7 +34,7 @@ OPTIONS_DEFAULT=	SPF
 
 SPF_DESC=		Enable support for SPF record checking
 
-SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
+SPF_LIB_DEPENDS=	libspf2.so:mail/libspf2
 SPF_CONFIGURE_ON=	--with-spf \
 			--with-spf2-include=${LOCALBASE}/include/spf2 \
 			--with-spf2-lib=${LOCALBASE}/lib

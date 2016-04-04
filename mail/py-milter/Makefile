@@ -16,7 +16,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if !exists(/usr/lib/libmilter.so)
-LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/libmilter
+LIB_DEPENDS=	libmilter.so:mail/libmilter
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 

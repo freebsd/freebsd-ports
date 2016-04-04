@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	VLC
 VLC_DESC=	Install vlc media player
 OPTIONS_DEFAULT=	VLC
 
-VLC_RUN_DEPENDS=	vlc:${PORTSDIR}/multimedia/vlc
+VLC_RUN_DEPENDS=	vlc:multimedia/vlc
 
 .include "${MASTERDIR}/Makefile"

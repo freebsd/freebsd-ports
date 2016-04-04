@@ -26,7 +26,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	VORBIS DOCS
 OPTIONS_SUB=	yes
 
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CONFIGURE_ON=	--with-ogg-include=${LOCALBASE}/include \
 			--with-ogg-lib=${LOCALBASE}/lib
 VORBIS_ALL_TARGET=	all libsnackogg.so

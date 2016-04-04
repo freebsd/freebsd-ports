@@ -13,8 +13,8 @@ COMMENT=	JSON serialising/deserialising, done correctly and fast
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Types-Serialiser>=0:${PORTSDIR}/devel/p5-Types-Serialiser \
-		p5-common-sense>0:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-Types-Serialiser>=0:devel/p5-Types-Serialiser \
+		p5-common-sense>0:devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

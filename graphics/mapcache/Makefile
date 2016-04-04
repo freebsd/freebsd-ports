@@ -1,0 +1,84 @@
+# Created by: Ryan Melcer <rmelcer@iteris.com>
+# $FreeBSD$
+
+PORTNAME=		mapcache
+DISTVERSION=		1.4.0-94
+DISTVERSIONSUFFIX=	-g732b3fd
+CATEGORIES=		graphics
+
+MAINTAINER=		gf-admins@iteris.com
+COMMENT=		Server that implements tile caching to speed up access to WMS layers
+
+LICENSE=		MIT
+LICENSE_FILE=		${WRKSRC}/LICENSE
+
+LIB_DEPENDS=		libpng.so:graphics/png \
+			libapr-1.so:devel/apr1 \
+			libaprutil-1.so:devel/apr1 \
+			libpixman-1.so:x11/pixman
+
+USE_GITHUB=		yes
+GH_ACCOUNT=		mapserver
+
+USES=			cmake:outsource jpeg localbase
+USE_LDCONFIG=		yes
+CMAKE_ARGS+=		-DWITH_OGR=1 -DWITH_PIXMAN=1 -DWITH_BERKELEY_DB=0
+
+OPTIONS_DEFINE=		APACHE FASTCGI SQLITE MEMCACHE TIFF TIFF_WRITE \
+			GEOTIFF PCRE GDAL GEOS
+OPTIONS_DEFAULT=	APACHE FASTCGI SQLITE GEOS GDAL
+OPTIONS_SUB=		yes
+
+APACHE_DESC=		Native apache module
+APACHE_USE=		APACHE=22+
+APACHE_CMAKE_ON=	-DWITH_APACHE=1
+APACHE_CMAKE_OFF=	-DWITH_APACHE=0
+
+FASTCGI_LIB_DEPENDS=	libfcgi.so:www/fcgi
+FASTCGI_CMAKE_ON=	-DWITH_FCGI=1
+FASTCGI_CMAKE_OFF=	-DWITH_FCGI=0
+
+SQLITE_DESC=		Use sqlite as a cache backend
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SQLITE_CMAKE_ON=	-DWITH_SQLITE=1
+SQLITE_CMAKE_OFF=	-DWITH_SQLITE=0
+
+MEMCACHE_DESC=		Use memcache as a cache backend
+MEMCACHE_CMAKE_ON=	-DWITH_MEMCACHE=1
+MEMCACHE_CMAKE_OFF=	-DWITH_MEMCACHE=0
+
+TIFF_DESC=		Use TIFFs as a cache backend
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_CMAKE_ON=		-DWITH_TIFF=1
+TIFF_CMAKE_OFF=		-DWITH_TIFF=0
+
+TIFF_WRITE_DESC=	Support for writable TIFF cache backends (implies TIFF)
+TIFF_WRITE_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_WRITE_CMAKE_ON=	-DWITH_TIFF_WRITE_SUPPORT=1
+TIFF_WRITE_CMAKE_OFF=	-DWITH_TIFF_WRITE_SUPPORT=0
+TIFF_WRITE_IMPLIES=	TIFF
+
+GEOTIFF_DESC=		GeoTIFF metadata creation for TIFF cache backends
+GEOTIFF_LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff
+GEOTIFF_CMAKE_ON=	-DWITH_GEOTIFF=1
+GEOTIFF_CMAKE_OFF=	-DWITH_GEOTIFF=0
+
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_CMAKE_ON=		-DWITH_PCRE=1
+PCRE_CMAKE_OFF=		-DWITH_PCRE=0
+
+GDAL_DESC=		GDAL library support
+GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
+GDAL_CMAKE_ON=		-DWITH_GDAL=1 -DWITH_OGR=1
+GDAL_CMAKE_OFF=		-DWITH_GDAL=0 -DWITH_OGR=0
+
+GEOS_LIB_DEPENDS=	libgeos_c.so:graphics/geos
+GEOS_CMAKE_ON=		-DWITH_GEOS=1
+GEOS_CMAKE_OFF=		-DWITH_GEOS=0
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|PATH_SUFFIXES|PATH_SUFFIXES \
+			${APACHE_SUPPORTED_VERSION:S/^/apache&/}|g' \
+		${WRKSRC}/cmake/FindAPACHE.cmake
+
+.include <bsd.port.mk>

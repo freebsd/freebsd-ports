@@ -10,7 +10,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	GNOME frontend for the remote desktop client (rdesktop)
 
-RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
+RUN_DEPENDS=	rdesktop:net/rdesktop
 
 GNU_CONFIGURE=	yes
 USES=		gettext-tools gmake pathfix pkgconfig

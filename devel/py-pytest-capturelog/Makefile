@@ -12,7 +12,7 @@ COMMENT=	Py.test plugin to capture log messages
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py>=1.1.1:${PORTSDIR}/devel/py-py
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py>=1.1.1:devel/py-py
 
 USES=		python
 USE_PYTHON=	autoplist distutils

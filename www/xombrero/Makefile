@@ -3,7 +3,7 @@
 
 PORTNAME=	xombrero
 PORTVERSION=	1.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 
@@ -12,8 +12,8 @@ COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libsoup-2.4.so:devel/libsoup
 
 USES=		pkgconfig perl5 tar:tgz
 USE_PERL5=	build
@@ -31,11 +31,11 @@ SUB_FILES=	xombrero
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20
-LIB_DEPENDS+=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	libwebkitgtk-1.0.so:www/webkit-gtk2
 MAKE_ENV+=	GTK_VERSION="gtk2"
 .else # GTK3
 USE_GNOME=	gtk30
-LIB_DEPENDS+=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+LIB_DEPENDS+=	libwebkitgtk-3.0.so:www/webkit-gtk3
 MAKE_ENV+=	GTK_VERSION="gtk3"
 .endif
 

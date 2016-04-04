@@ -12,7 +12,7 @@ COMMENT=	Library for simple WSDL parsing
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-nokogiri>=1.6.1:${PORTSDIR}/textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-nokogiri>=1.6.1:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.5
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactively transferring files to a remote machine while using ssh
 
-RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
+RUN_DEPENDS=	lrz:comms/lrzsz
 
 HAS_CONFIGURE=	yes
 USES=		readline tar:tgz

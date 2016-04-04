@@ -13,10 +13,10 @@ COMMENT=	Synchronous multi-master replication engine
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	checkmk:${PORTSDIR}/devel/libcheck \
-		doxygen:${PORTSDIR}/devel/doxygen \
-		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>=0:${PORTSDIR}/textproc/py-cloud_sptheme
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	checkmk:devel/libcheck \
+		doxygen:devel/doxygen \
+		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>=0:textproc/py-cloud_sptheme
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 USES=		execinfo python:build scons shebangfix
 

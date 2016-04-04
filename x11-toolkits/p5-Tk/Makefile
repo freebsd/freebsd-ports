@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Re-port of a perl5 interface to Tk8.4
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 OPTIONS_DEFINE=	XFT
 OPTIONS_DEFAULT=	XFT

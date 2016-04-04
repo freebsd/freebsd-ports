@@ -10,7 +10,7 @@ MASTER_SITES=	http://tud.at/programm/fwanalog/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall log summarizer that uses Analog
 
-RUN_DEPENDS=	analog:${PORTSDIR}/www/analog
+RUN_DEPENDS=	analog:www/analog
 
 CONFFILES=	fwanalog-dom.tab \
 		fwanalog.analog.conf \

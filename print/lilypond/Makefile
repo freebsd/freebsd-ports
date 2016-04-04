@@ -3,7 +3,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.18.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 
@@ -14,25 +14,25 @@ LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	NLS
 
-BUILD_DEPENDS=	pdftexi2dvi:${PORTSDIR}/print/texinfo \
-		t1ascii:${PORTSDIR}/print/t1utils \
-		bash:${PORTSDIR}/shells/bash \
-		convert:${PORTSDIR}/graphics/ImageMagick \
-		dblatex:${PORTSDIR}/textproc/dblatex \
-		fontforge:${PORTSDIR}/print/fontforge \
-		help2man:${PORTSDIR}/misc/help2man \
-		pngtopnm:${PORTSDIR}/graphics/netpbm \
-		rsync:${PORTSDIR}/net/rsync \
-		zip:${PORTSDIR}/archivers/zip \
-		texi2html:${PORTSDIR}/textproc/texi2html \
-		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:${PORTSDIR}/print/gsfonts
+BUILD_DEPENDS=	pdftexi2dvi:print/texinfo \
+		t1ascii:print/t1utils \
+		bash:shells/bash \
+		convert:graphics/ImageMagick \
+		dblatex:textproc/dblatex \
+		fontforge:print/fontforge \
+		help2man:misc/help2man \
+		pngtopnm:graphics/netpbm \
+		rsync:net/rsync \
+		zip:archivers/zip \
+		texi2html:textproc/texi2html \
+		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:print/gsfonts
 
-RUN_DEPENDS=	mftrace:${PORTSDIR}/print/mftrace \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:${PORTSDIR}/x11-fonts/dejavu
+RUN_DEPENDS=	mftrace:print/mftrace \
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
 
-LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libguile.so:lang/guile \
+		libgmp.so:math/gmp \
+		libfreetype.so:print/freetype2
 
 INFO=		internals \
 		lilypond-changes \
@@ -47,7 +47,7 @@ INFO=		internals \
 		lilypond-web \
 		music-glossary
 
-USES=		bison:build gettext ghostscript:9 gmake pkgconfig perl5 \
+USES=		bison:build gettext ghostscript gmake pkgconfig perl5 \
 		python:-3
 USE_TEX=	latex
 USE_PERL5=	build

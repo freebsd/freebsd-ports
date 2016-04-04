@@ -11,7 +11,7 @@ COMMENT=	Stow enhancement script
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	stow:${PORTSDIR}/sysutils/stow
+RUN_DEPENDS=	stow:sysutils/stow
 
 OPTIONS_DEFINE=	DOCS
 

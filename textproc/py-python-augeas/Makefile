@@ -12,7 +12,7 @@ COMMENT=	Pure python bindings for Augeas
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libaugeas.so:${PORTSDIR}/textproc/augeas
+LIB_DEPENDS=	libaugeas.so:textproc/augeas
 
 USES=		python
 USE_GITHUB=	yes

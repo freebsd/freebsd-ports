@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Neat script to make self-extracting archives
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=

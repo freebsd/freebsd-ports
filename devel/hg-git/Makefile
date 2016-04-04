@@ -12,8 +12,8 @@ COMMENT=	Mercurial extension to pull from or push to a Git repository
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=*:${PORTSDIR}/devel/dulwich \
-		mercurial>=*:${PORTSDIR}/devel/mercurial
+RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=*:devel/dulwich \
+		mercurial>=*:devel/mercurial
 
 PORTDOCS=	README.md
 

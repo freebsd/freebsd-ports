@@ -12,13 +12,13 @@ COMMENT=	Brings gettext translation tools to all kinds of docs
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
-		libtext-wrapi18n-perl>=0.06:${PORTSDIR}/textproc/libtext-wrapi18n-perl \
-		p5-SGMLSpm>=1.03:${PORTSDIR}/textproc/p5-SGMLSpm \
-		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
-		jade>=0:${PORTSDIR}/textproc/jade \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	p5-Term-ReadKey>=2.30:devel/p5-Term-ReadKey \
+		libtext-wrapi18n-perl>=0.06:textproc/libtext-wrapi18n-perl \
+		p5-SGMLSpm>=1.03:textproc/p5-SGMLSpm \
+		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
+		jade>=0:textproc/jade \
+		xsltproc:textproc/libxslt \
+		docbook-xsl>0:textproc/docbook-xsl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gettext perl5

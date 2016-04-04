@@ -17,7 +17,7 @@
 
 check_process()
 {
-        pgrep -f 'ntpd: \[priv\]'
+        pgrep -f $command
 }
 
 name=openntpd

@@ -12,10 +12,10 @@ COMMENT=	Lightweight opensource gps moving map application
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libexif.so:${PORTSDIR}/graphics/libexif \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libgps.so:${PORTSDIR}/astro/gpsd
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexif.so:graphics/libexif \
+		libsoup-2.4.so:devel/libsoup \
+		libgps.so:astro/gpsd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share

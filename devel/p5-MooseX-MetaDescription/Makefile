@@ -14,9 +14,9 @@ COMMENT=	Framework for adding additional metadata to Moose classes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0.4:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Moose>=0.4:devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USE_PERL5=	configure
 USES=		perl5

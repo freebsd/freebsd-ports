@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but full-featured backup/restore perl scripts (uses gnu tar)
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/eject:${PORTSDIR}/sysutils/eject \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS=	${LOCALBASE}/sbin/eject:sysutils/eject \
+		cdrecord:sysutils/cdrtools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

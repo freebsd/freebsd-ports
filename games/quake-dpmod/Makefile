@@ -12,7 +12,7 @@ DISTNAME=	darkplacesmod${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 1 modification (for DarkPlaces)
 
-RUN_DEPENDS=	darkplaces>=0:${PORTSDIR}/games/darkplaces
+RUN_DEPENDS=	darkplaces>=0:games/darkplaces
 
 USES=		zip
 NO_BUILD=	yes

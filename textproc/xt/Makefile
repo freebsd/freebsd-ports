@@ -13,8 +13,8 @@ COMMENT=	XSL Transformations (XSLT) implementation in Java
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
-		${JAVALIBDIR}/xp.jar:${PORTSDIR}/textproc/xp
+RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j \
+		${JAVALIBDIR}/xp.jar:textproc/xp
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+

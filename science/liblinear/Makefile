@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblinear
-PORTVERSION=	1.94
+PORTVERSION=	2.1
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/liblinear/ \
 		http://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/

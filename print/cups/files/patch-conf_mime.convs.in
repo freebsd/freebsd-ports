@@ -1,0 +1,15 @@
+Lower PostScript-to-PostScript cost such that PostScript files are sent to
+PostScript printers directly without intermediate conversion to PDF, see
+http://www.linuxfoundation.org/collaborate/workgroups/openprinting/pdf_as_standard_print_job_format
+
+--- conf/mime.convs.in.orig	2013-06-07 01:00:33 UTC
++++ conf/mime.convs.in
+@@ -38,7 +38,7 @@
+ # PostScript filters
+ #
+ 
+-application/postscript		application/vnd.cups-postscript	66	pstops
++application/postscript		application/vnd.cups-postscript	65	pstops
+ 
+ ########################################################################
+ #

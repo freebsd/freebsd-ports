@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fw@moov.de
 COMMENT=	Automatically hash password/passphrase columns
 
-RUN_DEPENDS=	p5-DBIx-Class-DynamicDefault>=0.03:${PORTSDIR}/databases/p5-DBIx-Class-DynamicDefault \
-		p5-DBIx-Class>=0.08009:${PORTSDIR}/databases/p5-DBIx-Class
+RUN_DEPENDS=	p5-DBIx-Class-DynamicDefault>=0.03:databases/p5-DBIx-Class-DynamicDefault \
+		p5-DBIx-Class>=0.08009:databases/p5-DBIx-Class
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

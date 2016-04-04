@@ -1,0 +1,10 @@
+OpenHPI provides an open source implementation of the Service Availability
+Forum (SAF) Hardware Platform Interface (HPI).
+
+HPI is an abstracted interface for managing computer hardware, typically
+chassis and rack based servers.  HPI includes resource modeling; access to
+and control over sensor, control, watchdog, and inventory data associated
+with resources; abstracted System Event Log interfaces; hardware events and
+alarms; and a managed hotswap interface.
+
+WWW: http://openhpi.org/

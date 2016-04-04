@@ -40,6 +40,8 @@ XCACHE_DESC=	Use xCache (instead of pecl-APC)
 IMAGICK_DESC=	Use ImageMagick
 SOCKETS_DESC=	Use sockets
 
+MYSQL_VARS=	IGNORE_WITH_PHP+=70
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -60,17 +62,17 @@ USE_PHP+=	ldap
 .endif
 
 .if ${PORT_OPTIONS:MMEMCACHED}
-RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
+RUN_DEPENDS=	memcached:databases/memcached
 .endif
 
 .if ${PORT_OPTIONS:MIMAGICK}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphics/pecl-imagick
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick
 .endif
 
 .if ${PORT_OPTIONS:MAPC}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:www/pecl-APC
 .elif ${PORT_OPTIONS:MXCACHE}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:www/xcache
 .endif
 
 .if ${PORT_OPTIONS:MSOCKETS}

@@ -14,13 +14,13 @@ COMMENT=	Extended HTTP Support
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:${PORTSDIR}/devel/pecl-raphf \
-		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/propro.so:${PORTSDIR}/devel/pecl-propro \
-		re2c:${PORTSDIR}/devel/re2c
-RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:${PORTSDIR}/devel/pecl-raphf \
-		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/propro.so:${PORTSDIR}/devel/pecl-propro
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libevent.so:${PORTSDIR}/devel/libevent2
+BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf \
+		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/propro.so:devel/pecl-propro \
+		re2c:devel/re2c
+RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf \
+		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/propro.so:devel/pecl-propro
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libevent.so:devel/libevent2
 
 USES=		tar:tgz
 USE_PHP=	yes

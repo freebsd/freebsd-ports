@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl access to Google Labs Sets site
 
-BUILD_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

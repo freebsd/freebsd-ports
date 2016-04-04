@@ -11,11 +11,11 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for asynchronous ssh command invocation
 
 RUN_DEPENDS=	\
-	p5-AnyEvent>0:${PORTSDIR}/devel/p5-AnyEvent \
-	p5-AnyEvent-Subprocess>0:${PORTSDIR}/devel/p5-AnyEvent-Subprocess \
-	p5-Coro>0:${PORTSDIR}/devel/p5-Coro \
-	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
-	p5-MooseX-Params-Validate>0:${PORTSDIR}/devel/p5-MooseX-Params-Validate
+	p5-AnyEvent>0:devel/p5-AnyEvent \
+	p5-AnyEvent-Subprocess>0:devel/p5-AnyEvent-Subprocess \
+	p5-Coro>0:devel/p5-Coro \
+	p5-Moose>0:devel/p5-Moose \
+	p5-MooseX-Params-Validate>0:devel/p5-MooseX-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

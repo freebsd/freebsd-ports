@@ -12,8 +12,8 @@ COMMENT=	Simple screenshot program for X11
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	xwd:${PORTSDIR}/x11/xwd \
-		xwdtopnm:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	xwd:x11/xwd \
+		xwdtopnm:graphics/netpbm
 
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes

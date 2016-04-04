@@ -1,0 +1,49 @@
+--- boost/asio/ssl/impl/context.ipp.orig	2013-10-26 23:25:53 UTC
++++ boost/asio/ssl/impl/context.ipp
+@@ -87,6 +87,14 @@ context::context(context::method m)
+     handle_ = ::SSL_CTX_new(::SSLv2_server_method());
+     break;
+ #endif // defined(OPENSSL_NO_SSL2)
++#if defined(OPENSSL_NO_SSL3)
++  case context::sslv3:
++  case context::sslv3_client:
++  case context::sslv3_server:
++    boost::asio::detail::throw_error(
++        boost::asio::error::invalid_argument, "context");
++    break;
++#else // defined(OPENSSL_NO_SSL3)
+   case context::sslv3:
+     handle_ = ::SSL_CTX_new(::SSLv3_method());
+     break;
+@@ -96,6 +104,7 @@ context::context(context::method m)
+   case context::sslv3_server:
+     handle_ = ::SSL_CTX_new(::SSLv3_server_method());
+     break;
++#endif // defined(OPENSSL_NO_SSL3)
+   case context::tlsv1:
+     handle_ = ::SSL_CTX_new(::TLSv1_method());
+     break;
+--- boost/asio/ssl/old/detail/openssl_context_service.hpp.orig	2013-05-20 12:32:20 UTC
++++ boost/asio/ssl/old/detail/openssl_context_service.hpp
+@@ -85,6 +85,13 @@ public:
+       impl = ::SSL_CTX_new(::SSLv2_server_method());
+       break;
+ #endif // defined(OPENSSL_NO_SSL2)
++#if defined(OPENSSL_NO_SSL3)
++    case context_base::sslv3:
++    case context_base::sslv3_client:
++    case context_base::sslv3_server:
++      boost::asio::detail::throw_error(boost::asio::error::invalid_argument);
++      break;
++#else // defined(OPENSSL_NO_SSL3)
+     case context_base::sslv3:
+       impl = ::SSL_CTX_new(::SSLv3_method());
+       break;
+@@ -94,6 +101,7 @@ public:
+     case context_base::sslv3_server:
+       impl = ::SSL_CTX_new(::SSLv3_server_method());
+       break;
++#endif // defined(OPENSSL_NO_SSL3)
+     case context_base::tlsv1:
+       impl = ::SSL_CTX_new(::TLSv1_method());
+       break;

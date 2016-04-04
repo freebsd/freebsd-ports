@@ -11,8 +11,8 @@ COMMENT=	DataMapper Pagination
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-dm-aggregates>=0.10.1:${PORTSDIR}/databases/rubygem-dm-aggregates \
-		rubygem-dm-core>=0.10.1:${PORTSDIR}/databases/rubygem-dm-core
+RUN_DEPENDS=	rubygem-dm-aggregates>=0.10.1:databases/rubygem-dm-aggregates \
+		rubygem-dm-core>=0.10.1:databases/rubygem-dm-core
 
 NO_ARCH=	yes
 

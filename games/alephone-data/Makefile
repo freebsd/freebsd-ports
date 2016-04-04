@@ -13,7 +13,7 @@ DIST_SUBDIR=	alephone
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Released Marathon data files for the Aleph One port
 
-RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
+RUN_DEPENDS=	alephone:games/alephone
 
 NO_ARCH=	yes
 NO_BUILD=	yes

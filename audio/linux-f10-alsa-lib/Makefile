@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Advanced Linux Sound Architecture libraries (Linux Fedora 10)
 
-RUN_DEPENDS=	alsa-lib>0:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS=	alsa-lib>0:audio/alsa-lib
 
 CONFLICTS=	linux-alsa-lib-[0-9]* linux-f8-alsa-lib-[0-9]*
 

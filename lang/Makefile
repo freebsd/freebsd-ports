@@ -42,7 +42,6 @@
     SUBDIR += clang38
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
-    SUBDIR += cloudabi-clang
     SUBDIR += clover
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
@@ -124,6 +123,7 @@
     SUBDIR += guile
     SUBDIR += guile2
     SUBDIR += harbour
+    SUBDIR += haskell-mode.el
     SUBDIR += hla
     SUBDIR += hope
     SUBDIR += hs-brainfuck

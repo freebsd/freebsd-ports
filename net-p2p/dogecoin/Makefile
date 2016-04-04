@@ -11,9 +11,9 @@ COMMENT=	Virtual Peer-to-Peer Currency Client
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
+BUILD_DEPENDS=	protoc:devel/protobuf
 
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 OPTIONS_DEFINE=	GUI UPNP QRCODES
 OPTIONS_DEFAULT=	GUI QRCODES
@@ -55,12 +55,12 @@ PLIST_FILES+=	share/applications/dogecoin-qt.desktop \
 
 QRCODES_CONFIGURE_ENABLE=	qrencode
 .if ${PORT_OPTIONS:MQRCODES}
-LIB_DEPENDS+=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS+=	libqrencode.so:graphics/libqrencode
 .endif
 
 UPNP_CONFIGURE_ENABLE=		miniupnpc
 .if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	libminiupnpc.so:net/miniupnpc
 .endif
 
 SUB_FILES+=	dogecoin-qt.desktop

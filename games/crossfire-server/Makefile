@@ -18,9 +18,9 @@ COMMENT=	Server for multiplayer graphical arcade and adventure game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpng.so:graphics/png
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake libtool perl5 python shebangfix tar:bzip2 \
 		uidfix

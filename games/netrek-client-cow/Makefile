@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.netrek.org/files/COW/ \
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Multi-player battle simulation with a Star Trek theme
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 LICENSE_FILE=	${WRKSRC}/COPYING
 

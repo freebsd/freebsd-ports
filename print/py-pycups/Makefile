@@ -3,6 +3,7 @@
 
 PORTNAME=	pycups
 PORTVERSION=	1.9.73
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	CUPS bindings for Python
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+LIB_DEPENDS=	libcups.so:print/cups
 
 USE_PYTHON=	autoplist concurrent distutils
 USES=		iconv localbase python tar:bzip2

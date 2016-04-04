@@ -1,0 +1,4 @@
+A Nagios/Icinga plugin to monitor ZFS Pools (zpools). It is based on "Check
+Solaris ZFS Pools" but is completely rewritten.
+
+WWW: https://github.com/Napsty/check_zpools

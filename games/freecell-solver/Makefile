@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
+TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 TCMALLOC_CMAKE_OFF=	-DFCS_AVOID_TCMALLOC:BOOL=ON
 
 post-patch:

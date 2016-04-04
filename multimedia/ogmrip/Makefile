@@ -13,18 +13,18 @@ COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
-		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
-RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		mencoder:${PORTSDIR}/multimedia/mencoder \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
-		ogmmerge:${PORTSDIR}/multimedia/ogmtools
+BUILD_DEPENDS=	mencoder:multimedia/mencoder \
+		mplayer:multimedia/mplayer \
+		gsed:textproc/gsed
+LIB_DEPENDS=	libenca.so:converters/enca \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libdvdread.so:multimedia/libdvdread
+RUN_DEPENDS=	lame:audio/lame \
+		oggenc:audio/vorbis-tools \
+		mencoder:multimedia/mencoder \
+		mplayer:multimedia/mplayer \
+		ogmmerge:multimedia/ogmtools
 
 OPTIONS_DEFINE=	GTK2 ENCHANT MATROSKA MP4BOX NLS THEORA FAAC SRT DEBUG
 OPTIONS_DEFAULT=GTK2 NLS
@@ -49,8 +49,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--enable-gtk-support --enable-dbus-support \
 			--enable-libnotify-support
-LIB_DEPENDS+=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-			libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		libdbus-glib-1.so:devel/dbus-glib \
+			libnotify.so:devel/libnotify
 USE_GNOME+=		gconf2 libglade2
 GCONF_SCHEMAS=		ogmrip.schemas
 PLIST_SUB+=		GTK2_SUPPORT=""
@@ -62,7 +62,7 @@ PLIST_SUB+=		GTK2_SUPPORT="@comment "
 
 .if ${PORT_OPTIONS:MENCHANT}
 CONFIGURE_ARGS+=	--enable-enchant-support
-LIB_DEPENDS+=		libenchant.so:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS+=		libenchant.so:textproc/enchant
 PLIST_SUB+=		ENCHANT_SUPPORT=""
 .else
 CONFIGURE_ARGS+=	--disable-enchant-support
@@ -71,7 +71,7 @@ PLIST_SUB+=		ENCHANT_SUPPORT="@comment "
 
 .if ${PORT_OPTIONS:MMATROSKA}
 CONFIGURE_ARGS+=	--enable-mkv-support
-RUN_DEPENDS+=		mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
+RUN_DEPENDS+=		mkvmerge:multimedia/mkvtoolnix
 PLIST_SUB+=		MATROSKA_SUPPORT=""
 .else
 CONFIGURE_ARGS+=	--disable-mkv-support
@@ -80,7 +80,7 @@ PLIST_SUB+=		MATROSKA_SUPPORT="@comment "
 
 .if ${PORT_OPTIONS:MMP4BOX}
 CONFIGURE_ARGS+=	--enable-mp4-support
-RUN_DEPENDS+=		mp4box:${PORTSDIR}/multimedia/gpac-mp4box
+RUN_DEPENDS+=		mp4box:multimedia/gpac-mp4box
 PLIST_SUB+=		MP4BOX_SUPPORT=""
 .else
 CONFIGURE_ARGS+=	--disable-mp4-support
@@ -97,7 +97,7 @@ PLIST_SUB+=		NLS="@comment "
 
 .if ${PORT_OPTIONS:MTHEORA}
 CONFIGURE_ARGS+=	--enable-theora-support
-LIB_DEPENDS+=		libtheora.so:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=		libtheora.so:multimedia/libtheora
 PLIST_SUB+=		THEORA_SUPPORT=""
 .else
 CONFIGURE_ARGS+=	--disable-theora-support
@@ -106,7 +106,7 @@ PLIST_SUB+=		THEORA_SUPPORT="@comment "
 
 .if ${PORT_OPTIONS:MFAAC}
 CONFIGURE_ARGS+=	--enable-aac-support
-RUN_DEPENDS+=		faac:${PORTSDIR}/audio/faac
+RUN_DEPENDS+=		faac:audio/faac
 PLIST_SUB+=		FAAC_SUPPORT=""
 .else
 CONFIGURE_ARGS+=	--disable-aac-support
@@ -115,7 +115,7 @@ PLIST_SUB+=		FAAC_SUPPORT="@comment "
 
 .if ${PORT_OPTIONS:MSRT}
 CONFIGURE_ARGS+=	--enable-srt-support
-RUN_DEPENDS+=		gocr:${PORTSDIR}/graphics/gocr
+RUN_DEPENDS+=		gocr:graphics/gocr
 MAN1+=			subp2pgm.1 subptools.1
 PLIST_SUB+=		SRT_SUPPORT=""
 .else

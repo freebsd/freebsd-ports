@@ -16,12 +16,12 @@ COMMENT=	POE component for non-blocking/concurrent HTTP queries
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-POE>=1.312:${PORTSDIR}/devel/p5-POE \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
-		p5-POE-Component-Client-Keepalive>=0.2710:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive
+BUILD_DEPENDS=	p5-POE>=1.312:devel/p5-POE \
+		p5-libwww>=0:www/p5-libwww \
+		p5-URI>=1.37:net/p5-URI \
+		p5-POE-Component-Client-Keepalive>=0.2710:net/p5-POE-Component-Client-Keepalive
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-POE-Server-TCP>=1.14:${PORTSDIR}/devel/p5-Test-POE-Server-TCP
+TEST_DEPENDS=	p5-Test-POE-Server-TCP>=1.14:devel/p5-Test-POE-Server-TCP
 
 USES=		perl5
 USE_PERL5=	configure

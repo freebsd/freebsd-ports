@@ -14,7 +14,7 @@ COMMENT=	Module for DNS service discovery
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-DNS>=0.5:${PORTSDIR}/dns/p5-Net-DNS
+BUILD_DEPENDS=	p5-Net-DNS>=0.5:dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

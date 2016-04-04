@@ -13,11 +13,11 @@ COMMENT=	Jabber client with whiteboard communication
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	snack>=0:${PORTSDIR}/audio/snack \
-		tcltls>=0:${PORTSDIR}/devel/tcltls \
-		tkpng>=0:${PORTSDIR}/graphics/tkpng \
-		tktray>=0:${PORTSDIR}/x11-toolkits/tktray \
-		tktreectrl>=0:${PORTSDIR}/x11-toolkits/tktreectrl
+RUN_DEPENDS=	snack>=0:audio/snack \
+		tcltls>=0:devel/tcltls \
+		tkpng>=0:graphics/tkpng \
+		tktray>=0:x11-toolkits/tktray \
+		tktreectrl>=0:x11-toolkits/tktreectrl
 
 NO_BUILD=	yes
 USES=		tk

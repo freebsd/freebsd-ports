@@ -10,7 +10,7 @@ MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Displays U.S. Census Bureau populated places on a map
 
-LIB_DEPENDS=	libtkgeomap.so:${PORTSDIR}/astro/tkgeomap
+LIB_DEPENDS=	libtkgeomap.so:astro/tkgeomap
 
 USES+=		tk:run
 NO_BUILD=	yes

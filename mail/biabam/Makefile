@@ -13,7 +13,7 @@ COMMENT=	Command-line attachment mailer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/biabam

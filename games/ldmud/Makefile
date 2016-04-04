@@ -12,8 +12,8 @@ MASTER_SITES=	http://www.bearnip.com/ftp/mud/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Modern version of the LPMud game driver
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	help2man:misc/help2man
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

@@ -18,7 +18,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/odepkg.tar.gz:${PORTSDIR}/math/octave-forge-odepkg
+RUN_DEPENDS+=	${TARBALLS_DIR}/odepkg.tar.gz:math/octave-forge-odepkg
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

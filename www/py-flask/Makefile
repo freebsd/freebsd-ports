@@ -12,9 +12,9 @@ COMMENT=	Micro web framework
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=0.9:${PORTSDIR}/www/py-werkzeug \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.6:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}itsdangerous>=0.21:${PORTSDIR}/security/py-itsdangerous
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=0.9:www/py-werkzeug \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.6:devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}itsdangerous>=0.21:security/py-itsdangerous
 
 USES=	python
 USE_PYTHON=	distutils autoplist

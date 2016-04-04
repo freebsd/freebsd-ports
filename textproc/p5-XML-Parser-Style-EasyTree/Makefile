@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Parse XML to a simple tree
 
-BUILD_DEPENDS=	p5-XML-Parser>0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-ex-lib>=0.03:${PORTSDIR}/devel/p5-ex-lib
+BUILD_DEPENDS=	p5-XML-Parser>0:textproc/p5-XML-Parser \
+		p5-ex-lib>=0.03:devel/p5-ex-lib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

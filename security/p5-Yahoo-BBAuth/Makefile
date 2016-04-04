@@ -14,9 +14,9 @@ COMMENT=	Perl interface to the Yahoo! Browser-Based Authentication
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-libwww>=5.6:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-JSON>=0:converters/p5-JSON \
+		p5-libwww>=5.6:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

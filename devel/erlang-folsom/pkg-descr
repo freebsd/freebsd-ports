@@ -5,4 +5,4 @@ output plugins. folsom is not a persistent store. There are 6 types
 of metrics: counters, gauges, histograms (and timers), histories,
 meter_readers and meters.
 
-WWW: https://github.com/boundary/folsom
+WWW: https://github.com/puzza007/folsom/

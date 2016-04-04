@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check for stale pid files and remove them
 
-RUN_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
+RUN_DEPENDS=	p5-Error>=0:lang/p5-Error
 
 USES=		perl5 shebangfix uidfix
 USE_PERL5=	run

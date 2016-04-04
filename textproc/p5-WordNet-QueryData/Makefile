@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the WordNet database files
 
-LIB_DEPENDS=	libWN.so:${PORTSDIR}/textproc/wordnet
+LIB_DEPENDS=	libWN.so:textproc/wordnet
 
 WNHOME?=	${LOCALBASE}/share/WordNet
 

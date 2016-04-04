@@ -11,8 +11,8 @@ COMMENT=	Implements a sprockets-aware sass importer
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-sprockets>=2.0:${PORTSDIR}/devel/rubygem-sprockets \
-		rubygem-tilt1>=1.1:${PORTSDIR}/devel/rubygem-tilt1
+RUN_DEPENDS=	rubygem-sprockets>=2.0:devel/rubygem-sprockets \
+		rubygem-tilt1>=1.1:devel/rubygem-tilt1
 
 NO_ARCH=	yes
 USE_RUBY=	yes

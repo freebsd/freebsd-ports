@@ -1,0 +1,6 @@
+Epazote automatically update/add services specified in a file call epazote.yml.
+Periodically checks the defined endpoints and execute recovery commands in
+case services responses are not behaving like expected helping with this to
+automate actions in order to keep services/applications up and running.
+
+WWW: http://about.epazote.io

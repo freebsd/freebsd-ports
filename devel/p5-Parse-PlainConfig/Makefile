@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	peter@vereshagin.org
 COMMENT=	Perl5 module to use plain config files
 
-RUN_DEPENDS=	p5-Paranoid>0:${PORTSDIR}/devel/p5-Paranoid \
-		p5-Text-ParseWords>0:${PORTSDIR}/textproc/p5-Text-ParseWords \
-		p5-Text-Tabs+Wrap>0:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
+RUN_DEPENDS=	p5-Paranoid>0:devel/p5-Paranoid \
+		p5-Text-ParseWords>0:textproc/p5-Text-ParseWords \
+		p5-Text-Tabs+Wrap>0:textproc/p5-Text-Tabs+Wrap
 
 USES=		perl5
 USE_PERL5=	configure

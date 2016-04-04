@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Free lightweight bittorrent tracker using libowfat
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
+BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:devel/libowfat
 
 USES=		tar:bzip2
 USE_RC_SUBR=	${PORTNAME}

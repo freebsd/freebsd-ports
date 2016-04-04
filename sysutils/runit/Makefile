@@ -24,7 +24,7 @@ PORTDOCS=	*
 DOCS=		package/CHANGES package/README \
 		package/THANKS doc/*.html
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
-	 	etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish
+		etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish
 
 post-patch:
 	${REINPLACE_CMD} -i '' 's!/service/!${SERVICE_DIR}!' \

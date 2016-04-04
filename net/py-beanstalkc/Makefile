@@ -12,8 +12,8 @@ COMMENT=	Simple beanstalkd client library for Python
 
 LICENSE=	APACHE20
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -22,7 +22,7 @@ OPTIONS_DEFINE=		YAML
 OPTIONS_DEFAULT=	YAML
 YAML_DESC=		Support parsing YAML responses
 
-YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
+YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test

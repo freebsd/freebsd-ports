@@ -15,8 +15,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # requires rgb.txt
-BUILD_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
-		xrdb:${PORTSDIR}/x11/xrdb
+BUILD_DEPENDS=	showrgb:x11/rgb \
+		xrdb:x11/xrdb
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

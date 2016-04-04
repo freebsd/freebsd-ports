@@ -11,7 +11,7 @@ DISTNAME=	disktool-2.0c
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	XView sysadmin tool for monitoring diskfull situations
 
-LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

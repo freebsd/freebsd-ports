@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	gimp/extras/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of additional brushes and patterns files for GIMP
 
-LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 
 USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

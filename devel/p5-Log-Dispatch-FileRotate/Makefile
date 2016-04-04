@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Log::Dispatch plug-in for files that archive/rotate themselves
 
-BUILD_DEPENDS=	p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl
+BUILD_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
+		p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-Params-Validate>=0:devel/p5-Params-Validate \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

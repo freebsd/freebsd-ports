@@ -12,9 +12,9 @@ COMMENT=	BASH script for the Dropbox backup service
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		curl:${PORTSDIR}/ftp/curl \
-		greadlink:${PORTSDIR}/sysutils/coreutils
+RUN_DEPENDS=	bash:shells/bash \
+		curl:ftp/curl \
+		greadlink:sysutils/coreutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreafabrizi

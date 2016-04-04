@@ -24,7 +24,7 @@ CXXFLAGS+=	-Wno-unknown-pragmas
 
 PORTDOCS=	*
 
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOCS_CONFIGURE_ENV_OFF=	ac_cv_prog_DOXYGEN="${ECHO_CMD}"
 
 post-patch:

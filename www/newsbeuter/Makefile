@@ -13,9 +13,9 @@ COMMENT=	RSS feed reader for the text console
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libstfl.so:${PORTSDIR}/devel/stfl \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libjson-c.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS=	libstfl.so:devel/stfl \
+		libcurl.so:ftp/curl \
+		libjson-c.so:devel/json-c
 
 OPTIONS_DEFINE=	PODCAST
 OPTIONS_DEFAULT=PODCAST

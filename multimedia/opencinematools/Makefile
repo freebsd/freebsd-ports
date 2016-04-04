@@ -10,9 +10,9 @@ DISTVERSIONSUFFIX=	-src
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Tools for creating multi-reel DCPs from MXF source material
 
-LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libasdcp.so:${PORTSDIR}/multimedia/asdcplib
+LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
+		libexpat.so:textproc/expat2 \
+		libasdcp.so:multimedia/asdcplib
 
 USES=		dos2unix zip
 

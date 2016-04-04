@@ -10,7 +10,7 @@ MASTER_SITES=	http://linuxmafia.com/pub/linux/security/sshbuddy/
 MAINTAINER=	wrighrc@gmail.com
 COMMENT=	Simple and small GUI utility to manage ssh sessions
 
-RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
+RUN_DEPENDS=	expect:lang/expect
 
 USES=		tk
 

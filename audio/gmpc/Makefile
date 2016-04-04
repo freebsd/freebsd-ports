@@ -12,13 +12,13 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured GTK2 client for musicpd
 
-BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2 \
-		valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
-		libsexy.so:${PORTSDIR}/x11-toolkits/libsexy \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+BUILD_DEPENDS=	gob2:devel/gob2 \
+		valac:lang/vala
+LIB_DEPENDS=	libmpd.so:audio/libmpd \
+		libsexy.so:x11-toolkits/libsexy \
+		libsqlite3.so:databases/sqlite3 \
+		libsoup-2.4.so:devel/libsoup \
+		libunique-1.0.so:x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix pkgconfig
@@ -33,7 +33,7 @@ OPTIONS_DEFAULT=	MMKEYS
 
 MMKEYS_CONFIGURE_ON=--disable-mmkeys
 
-XSPF_LIB_DEPENDS=	libxspf.so:${PORTSDIR}/multimedia/libxspf
+XSPF_LIB_DEPENDS=	libxspf.so:multimedia/libxspf
 XSPF_CONFIGURE_ENABLE=	libxspf
 
 .include <bsd.port.mk>

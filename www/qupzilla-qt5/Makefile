@@ -12,7 +12,7 @@ COMMENT=	Web browser based on WebKit engine and Qt Framework
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt4*
 
@@ -34,7 +34,7 @@ OPTIONS_SUB=	yes
 DBUS_USE=		QT5=dbus
 DBUS_CONFIGURE_ENV_OFF=	DISABLE_DBUS="true"
 
-GNOMEKEYRING_LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+GNOMEKEYRING_LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
 GNOMEKEYRING_CONFIGURE_ENV=	GNOME_INTEGRATION="true"
 
 KWALLET_USE=		KDE5=wallet

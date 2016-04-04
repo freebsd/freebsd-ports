@@ -16,9 +16,9 @@ COMMENT=	POE component for managing connections, with keep-alive
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-IP-Minimal>=0.02:${PORTSDIR}/net/p5-Net-IP-Minimal  \
-		p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
-		p5-POE-Component-Resolver>=0.917:${PORTSDIR}/dns/p5-POE-Component-Resolver
+BUILD_DEPENDS=	p5-Net-IP-Minimal>=0.02:net/p5-Net-IP-Minimal  \
+		p5-POE>=1.311:devel/p5-POE \
+		p5-POE-Component-Resolver>=0.917:dns/p5-POE-Component-Resolver
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

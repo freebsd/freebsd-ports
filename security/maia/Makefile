@@ -9,19 +9,19 @@ MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 MAINTAINER=	ek@purplehat.org
 COMMENT=	Web-based management system based on amavisd-new and SpamAssassin
 
-RUN_DEPENDS=	p5-Unix-Syslog>=0.94:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		p5-MIME-Tools>=4.116:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-Convert-TNEF>=0.08:${PORTSDIR}/converters/p5-Convert-TNEF \
-		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
-		p5-Net-CIDR-Lite>=0.18:${PORTSDIR}/net/p5-Net-CIDR-Lite \
-		p5-forks>=0.34:${PORTSDIR}/devel/p5-forks \
-		p5-Archive-Zip>=0.10:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-IO-stringy>=1.203:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-IO-Socket-INET6>=1.27:${PORTSDIR}/net/p5-IO-Socket-INET6 \
-		p5-Text-CSV>=1.02:${PORTSDIR}/textproc/p5-Text-CSV \
-		p5-Data-UUID>=1.148:${PORTSDIR}/devel/p5-Data-UUID \
-		p5-Template-Toolkit>=2.13:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server
+RUN_DEPENDS=	p5-Unix-Syslog>=0.94:sysutils/p5-Unix-Syslog \
+		p5-MIME-Tools>=4.116:mail/p5-MIME-Tools \
+		p5-Convert-TNEF>=0.08:converters/p5-Convert-TNEF \
+		p5-Convert-UUlib>=1.08,1:converters/p5-Convert-UUlib \
+		p5-Net-CIDR-Lite>=0.18:net/p5-Net-CIDR-Lite \
+		p5-forks>=0.34:devel/p5-forks \
+		p5-Archive-Zip>=0.10:archivers/p5-Archive-Zip \
+		p5-IO-stringy>=1.203:devel/p5-IO-stringy \
+		p5-IO-Socket-INET6>=1.27:net/p5-IO-Socket-INET6 \
+		p5-Text-CSV>=1.02:textproc/p5-Text-CSV \
+		p5-Data-UUID>=1.148:devel/p5-Data-UUID \
+		p5-Template-Toolkit>=2.13:www/p5-Template-Toolkit \
+		p5-Net-Server>=0.93:net/p5-Net-Server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 USES=		perl5 shebangfix
@@ -107,26 +107,26 @@ USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
 		mcrypt pdo pdo_sqlite posix session simplexml sockets \
 		sqlite3 tokenizer xml wddx xmlreader xmlwriter xmlrpc
 
-RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
-		${PEAR_DIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
-		${PEAR_DIR}/DB.php:${PORTSDIR}/databases/pear-DB \
-		${PEAR_DIR}/Pager/Pager.php:${PORTSDIR}/devel/pear-Pager \
-		${PEAR_DIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
-		${PEAR_DIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP \
-		${PEAR_DIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \
-		${PEAR_DIR}/HTMLPurifier.php:${PORTSDIR}/devel/pear-htmlpurifier \
-		${PEAR_DIR}/Net/IMAP.php:${PORTSDIR}/mail/pear-Net_IMAP \
-		${PEAR_DIR}/Net/POP3.php:${PORTSDIR}/net/pear-Net_POP3 \
-		${PEAR_DIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
-		${PEAR_DIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color \
-		${PEAR_DIR}/Image/Canvas.php:${PORTSDIR}/graphics/pear-Image_Canvas \
-		${PEAR_DIR}/Image/Graph.php:${PORTSDIR}/graphics/pear-Image_Graph \
-		${PEAR_DIR}/Numbers/Roman.php:${PORTSDIR}/textproc/pear-Numbers_Roman \
-		${PEAR_DIR}/Numbers/Words.php:${PORTSDIR}/textproc/pear-Numbers_Words \
-		${PEAR_DIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2 \
-		${PEAR_DIR}/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql \
-		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2 \
-		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/scrypt.so:${PORTSDIR}/security/pecl-scrypt
+RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:mail/pear-Mail_Mime \
+		${PEAR_DIR}/Mail/mimeDecode.php:mail/pear-Mail_mimeDecode \
+		${PEAR_DIR}/DB.php:databases/pear-DB \
+		${PEAR_DIR}/Pager/Pager.php:devel/pear-Pager \
+		${PEAR_DIR}/Net/Socket.php:net/pear-Net_Socket \
+		${PEAR_DIR}/Net/SMTP.php:net/pear-Net_SMTP \
+		${PEAR_DIR}/Log.php:sysutils/pear-Log \
+		${PEAR_DIR}/HTMLPurifier.php:devel/pear-htmlpurifier \
+		${PEAR_DIR}/Net/IMAP.php:mail/pear-Net_IMAP \
+		${PEAR_DIR}/Net/POP3.php:net/pear-Net_POP3 \
+		${PEAR_DIR}/Auth/SASL.php:security/pear-Auth_SASL \
+		${PEAR_DIR}/Image/Color.php:graphics/pear-Image_Color \
+		${PEAR_DIR}/Image/Canvas.php:graphics/pear-Image_Canvas \
+		${PEAR_DIR}/Image/Graph.php:graphics/pear-Image_Graph \
+		${PEAR_DIR}/Numbers/Roman.php:textproc/pear-Numbers_Roman \
+		${PEAR_DIR}/Numbers/Words.php:textproc/pear-Numbers_Words \
+		${PEAR_DIR}/MDB2.php:databases/pear-MDB2 \
+		${PEAR_DIR}/MDB2/Driver/mysql.php:databases/pear-MDB2_Driver_mysql \
+		${LOCALBASE}/share/smarty/Smarty.class.php:www/smarty2 \
+		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/scrypt.so:security/pecl-scrypt
 PLIST_SUB+=     WEBHOST=""
 .else
 PLIST_SUB+=     WEBHOST="@comment "
@@ -147,11 +147,11 @@ USE_PHP+=	pgsql
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
+RUN_DEPENDS+=	lighttpd:www/lighttpd
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MMYSQLSERVER}
@@ -159,7 +159,7 @@ USE_MYSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MPGSQLSERVER}
@@ -172,66 +172,66 @@ BROKEN=Please run 'make config' again and choose only one version of Dovecot. Bo
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT}
-RUN_DEPENDS+=	dovecot:${PORTSDIR}/mail/dovecot
+RUN_DEPENDS+=	dovecot:mail/dovecot
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT2}
-RUN_DEPENDS+=	dovecot:${PORTSDIR}/mail/dovecot2
+RUN_DEPENDS+=	dovecot:mail/dovecot2
 .endif
 
 .if ${PORT_OPTIONS:MPOSTFIX}
-RUN_DEPENDS+=	postfix:${PORTSDIR}/mail/postfix
+RUN_DEPENDS+=	postfix:mail/postfix
 .endif
 
 .if ${PORT_OPTIONS:MPFA}
-RUN_DEPENDS+=	${LOCALBASE}/www/postfixadmin/config.inc.php:${PORTSDIR}/mail/postfixadmin
+RUN_DEPENDS+=	${LOCALBASE}/www/postfixadmin/config.inc.php:mail/postfixadmin
 .endif
 
 .if ${PORT_OPTIONS:MFUZZYOCR}
-RUN_DEPENDS+=	p5-FuzzyOcr-devel>=0:${PORTSDIR}/mail/p5-FuzzyOcr-devel
+RUN_DEPENDS+=	p5-FuzzyOcr-devel>=0:mail/p5-FuzzyOcr-devel
 .endif
 
 .if ${PORT_OPTIONS:MCLAMAV}
-RUN_DEPENDS+=	clamd:${PORTSDIR}/security/clamav
+RUN_DEPENDS+=	clamd:security/clamav
 .endif
 
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
-RUN_DEPENDS+=	spamassassin>=0:${PORTSDIR}/mail/spamassassin
+RUN_DEPENDS+=	spamassassin>=0:mail/spamassassin
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
-RUN_DEPENDS+=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
+RUN_DEPENDS+=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB
 .endif
 
 .if ${PORT_OPTIONS:MALTERMIME}
-RUN_DEPENDS+=	altermime:${PORTSDIR}/mail/altermime
+RUN_DEPENDS+=	altermime:mail/altermime
 .endif
 
 .if ${PORT_OPTIONS:MCRYPT}
-RUN_DEPENDS+=	p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
-		p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
-		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC
+RUN_DEPENDS+=	p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \
+		p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
+		p5-Crypt-CBC>=0:security/p5-Crypt-CBC
 .endif
 
 .if ${PORT_OPTIONS:MIPCOUNTRY}
-RUN_DEPENDS+=	p5-IP-Country>=0:${PORTSDIR}/net/p5-IP-Country
+RUN_DEPENDS+=	p5-IP-Country>=0:net/p5-IP-Country
 .endif
 
 .if ${PORT_OPTIONS:MDOMAINKEYS}
-RUN_DEPENDS+=	p5-Mail-DomainKeys>=0:${PORTSDIR}/mail/p5-Mail-DomainKeys
+RUN_DEPENDS+=	p5-Mail-DomainKeys>=0:mail/p5-Mail-DomainKeys
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
-RUN_DEPENDS+=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF
+RUN_DEPENDS+=	p5-Mail-SPF>=0:mail/p5-Mail-SPF
 .endif
 
 .if ${PORT_OPTIONS:MDKIM}
-RUN_DEPENDS+=	p5-Mail-DKIM>=0:${PORTSDIR}/mail/p5-Mail-DKIM
+RUN_DEPENDS+=	p5-Mail-DKIM>=0:mail/p5-Mail-DKIM
 .endif
 
 .if ${PORT_OPTIONS:MFILE}
 # security fix, file > 4.21 needed
-RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
+RUN_DEPENDS+=	file>=4.21:sysutils/file
 .endif
 
 # archviers/rar is a 32-bit binary port, we don't want the install to fail
@@ -239,64 +239,64 @@ RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 # not suit rar.
 .if ${PORT_OPTIONS:MRAR}
 IA32_BINARY_PORT=	yes
-RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
+RUN_DEPENDS+=	rar:archivers/rar
 .endif
 
 .if ${PORT_OPTIONS:MUNRAR}
-RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
+RUN_DEPENDS+=	unrar:archivers/unrar
 .endif
 
 .if ${PORT_OPTIONS:MARJ}
-RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
+RUN_DEPENDS+=	arj:archivers/arj
 .endif
 
 .if ${PORT_OPTIONS:MUNARJ}
-RUN_DEPENDS+=	unarj:${PORTSDIR}/archivers/unarj
+RUN_DEPENDS+=	unarj:archivers/unarj
 .endif
 
 .if ${PORT_OPTIONS:MLHA}
-RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+RUN_DEPENDS+=	lha:archivers/lha
 .endif
 
 .if ${PORT_OPTIONS:MARC}
-RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
+RUN_DEPENDS+=	arc:archivers/arc
 .endif
 
 .if ${PORT_OPTIONS:MNOMARCH}
-RUN_DEPENDS+=	nomarch:${PORTSDIR}/archivers/nomarch
+RUN_DEPENDS+=	nomarch:archivers/nomarch
 .endif
 
 .if ${PORT_OPTIONS:MCAB}
-RUN_DEPENDS+=	cabextract:${PORTSDIR}/archivers/cabextract
+RUN_DEPENDS+=	cabextract:archivers/cabextract
 .endif
 
 .if ${PORT_OPTIONS:MRPM}
-RUN_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+RUN_DEPENDS+=	rpm2cpio.pl:archivers/rpm2cpio
 .endif
 
 .if ${PORT_OPTIONS:MZOO}
 # DOS condition in 2.10.1_2
-RUN_DEPENDS+=	zoo>=2.10.1_2:${PORTSDIR}/archivers/zoo
+RUN_DEPENDS+=	zoo>=2.10.1_2:archivers/zoo
 .endif
 
 .if ${PORT_OPTIONS:MUNZOO}
-RUN_DEPENDS+=	unzoo>=4.4_1:${PORTSDIR}/archivers/unzoo
+RUN_DEPENDS+=	unzoo>=4.4_1:archivers/unzoo
 .endif
 
 .if ${PORT_OPTIONS:MLZOP}
-RUN_DEPENDS+=	lzop:${PORTSDIR}/archivers/lzop
+RUN_DEPENDS+=	lzop:archivers/lzop
 .endif
 
 .if ${PORT_OPTIONS:MFREEZE}
-RUN_DEPENDS+=	unfreeze:${PORTSDIR}/archivers/freeze
+RUN_DEPENDS+=	unfreeze:archivers/freeze
 .endif
 
 .if ${PORT_OPTIONS:MP7ZIP}
-RUN_DEPENDS+=	7zr:${PORTSDIR}/archivers/p7zip
+RUN_DEPENDS+=	7zr:archivers/p7zip
 .endif
 
 .if ${PORT_OPTIONS:MTNEF}
-RUN_DEPENDS+=	tnef:${PORTSDIR}/converters/tnef
+RUN_DEPENDS+=	tnef:converters/tnef
 .endif
 
 .include <bsd.port.pre.mk>

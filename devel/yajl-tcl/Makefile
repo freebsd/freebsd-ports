@@ -11,7 +11,7 @@ COMMENT=	Tcl bindings for Yet Another JSON Library
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl
+LIB_DEPENDS=	libyajl.so:devel/yajl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware

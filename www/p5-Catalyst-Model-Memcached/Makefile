@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Wrapper for memcached imitating Catalyst models
 
-RUN_DEPENDS=	p5-Cache-Memcached-Fast>=0.17:${PORTSDIR}/databases/p5-Cache-Memcached-Fast \
-		p5-Catalyst-Runtime>=5.8:${PORTSDIR}/www/p5-Catalyst-Runtime
+RUN_DEPENDS=	p5-Cache-Memcached-Fast>=0.17:databases/p5-Cache-Memcached-Fast \
+		p5-Catalyst-Runtime>=5.8:www/p5-Catalyst-Runtime
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 tar:tgz

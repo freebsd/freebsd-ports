@@ -31,7 +31,7 @@ FLAGS_ENABLE=		library executable
 
 CURL_DESC=		Use libcurl for HTTP support
 CURL_FLAG_ENABLE=	curl
-CURL_FLAG_LIB=		libcurl.so:${PORTSDIR}/ftp/curl
+CURL_FLAG_LIB=		libcurl.so:ftp/curl
 
 HTTP_DESC=		Use the pure HTTP package
 HTTP_FLAG_ENABLE=	http

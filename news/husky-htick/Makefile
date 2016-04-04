@@ -4,8 +4,8 @@ PORTNAME=	husky-htick
 
 COMMENT=	Husky FTN file ticker
 
-LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf \
-		libareafix.so:${PORTSDIR}/news/husky-areafix
+LIB_DEPENDS=	libfidoconfig.so:news/husky-fidoconf \
+		libareafix.so:news/husky-areafix
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install

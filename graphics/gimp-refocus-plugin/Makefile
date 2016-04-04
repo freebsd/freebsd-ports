@@ -14,8 +14,8 @@ COMMENT=	GIMP plugin to "refocus" images through FIR Wiener filtering
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
 
 OPTIONS_DEFINE=	ATLAS DOCS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
@@ -46,10 +46,10 @@ post-patch:
 # math/atlas library
 .if ${PORT_OPTIONS:MATLAS}
 BUILD_DEPENDS+=	\
-		${LOCALBASE}/include/f2c.h:${PORTSDIR}/lang/f2c \
-		${LOCALBASE}/include/clapack.h:${PORTSDIR}/math/atlas
+		${LOCALBASE}/include/f2c.h:lang/f2c \
+		${LOCALBASE}/include/clapack.h:math/atlas
 RUN_DEPENDS+=	\
-		${LOCALBASE}/include/clapack.h:${PORTSDIR}/math/atlas
+		${LOCALBASE}/include/clapack.h:math/atlas
 
 CONFIGURE_ARGS+=	--with-lapack-libs="-L${LOCALBASE}/lib -latlas -lblas -lcblas -llapack" \
 			--with-lapack-includes="-I${LOCALBASE}/include"

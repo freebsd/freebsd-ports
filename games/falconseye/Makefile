@@ -11,7 +11,7 @@ DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetHack derivative
 
-RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
+RUN_DEPENDS=	timidity:audio/timidity
 
 USES=		ncurses perl5 zip
 DATADIR=	${PREFIX}/share/falconseyedir

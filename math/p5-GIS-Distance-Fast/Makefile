@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	C implementation of GIS::Distance formulas
 
-BUILD_DEPENDS=	p5-GIS-Distance>=0.07:${PORTSDIR}/math/p5-GIS-Distance
+BUILD_DEPENDS=	p5-GIS-Distance>=0.07:math/p5-GIS-Distance
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

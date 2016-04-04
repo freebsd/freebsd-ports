@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Test support for pytest runner in setup.py
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hgtools>=0:${PORTSDIR}/devel/py-hgtools
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hgtools>=0:devel/py-hgtools
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

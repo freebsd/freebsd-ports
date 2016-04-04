@@ -26,8 +26,8 @@ COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
-EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
+EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip
 
 USES=		gmake iconv
 USE_SDL=	image mixer net sdl

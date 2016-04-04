@@ -12,8 +12,8 @@ COMMENT=	Multiple Streaming Engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis
 
 OPTIONS_DEFINE=	X11 LAME SNDFILE DOCS
 OPTIONS_DEFAULT=X11
@@ -31,9 +31,9 @@ PLIST_FILES=	bin/muse man/man1/muse.1.gz
 PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/muse.mo
 .endfor
 
-LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENV=	ac_cv_header_lame_lame_h=no
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 X11_USE=		GNOME=gtk20
 X11_CONFIGURE_OFF=	--without-x --with-rubik
 

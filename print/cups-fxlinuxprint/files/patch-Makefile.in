@@ -9,7 +9,7 @@
 -cupsmimedir = /etc/cups
 +cupsfilterdir = @libexecdir@/cups/filter
 +cupsppddir = @datadir@/cups/model/FujiXerox/en
-+cupsmimedir = @sysconfdir@/cups
++cupsmimedir = @datadir@/cups/mime
  EXTRA_DIST = fxlinuxprint.ppd mimefx.types mimefx.convs
  cupsppd_DATA = fxlinuxprint.ppd
  cupsmime_DATA = mimefx.types mimefx.convs

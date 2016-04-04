@@ -11,7 +11,7 @@ DISTNAME=	FOTAQ_Talkie-${PORTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Flight of the Amazon Queen: a classic graphical adventure
 
-RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
+RUN_DEPENDS=	scummvm:games/scummvm
 
 USES=		zip
 NO_BUILD=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://liquidwar.sunsite.dk/archive/ \
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	You control an army of liquid and have to try and eat your opponents
 
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	liballeg.so:devel/allegro
 
 GNU_CONFIGURE=	yes
 USES=		gmake makeinfo python:build

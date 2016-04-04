@@ -10,7 +10,7 @@ MASTER_SITES=	http://ilk.uvt.nl/downloads/pub/software/
 MAINTAINER=	yuri@tsoft.com
 COMMENT=	Tilburg Memory Based Learner
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

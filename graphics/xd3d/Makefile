@@ -29,10 +29,10 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .if !defined(WITHOUT_IMAGEMAGICK)
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:graphics/ImageMagick
 .endif
 .if !defined(WITHOUT_GIFSICLE)
-RUN_DEPENDS+=	gifsicle:${PORTSDIR}/graphics/gifsicle
+RUN_DEPENDS+=	gifsicle:graphics/gifsicle
 .endif
 
 MASTER_SITES_BACKUP=	http://pompo.net/ports/

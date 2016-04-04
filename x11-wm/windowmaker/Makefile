@@ -3,7 +3,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.95.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/source/release/
 DISTNAME=	WindowMaker-${PORTVERSION}
@@ -13,14 +13,14 @@ COMMENT=	GNUstep-compliant NeXTstep window manager clone
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libwebp.so:${PORTSDIR}/graphics/webp \
-		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
-		libwraster.so.5:${PORTSDIR}/x11-wm/libwraster
-RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
+LIB_DEPENDS=	libgif.so:graphics/giflib \
+		libpng.so:graphics/png \
+		libjbig.so:graphics/jbigkit \
+		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp \
+		libMagickWand-6.so:graphics/ImageMagick \
+		libwraster.so.5:x11-wm/libwraster
+RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:graphics/wmicons
 
 USES=		jpeg libtool shebangfix pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes

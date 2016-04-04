@@ -29,8 +29,8 @@ OPTIONS_SUB=	yes
 NLS_USES=		gettext
 NLS_MAKE_ENV_OFF=	USE_NLS=no
 
-KANJIPAD_RUN_DEPENDS=	${LOCALBASE}/bin/kanjipad:${PORTSDIR}/japanese/kanjipad
-BUILD_DEPENDS=	${LOCALBASE}/bin/xmlto:${PORTSDIR}/textproc/xmlto
+KANJIPAD_RUN_DEPENDS=	${LOCALBASE}/bin/kanjipad:japanese/kanjipad
+BUILD_DEPENDS=	${LOCALBASE}/bin/xmlto:textproc/xmlto
 
 DICTIONARIES=	kanjidic edict compdic
 GJITEN_DICS=	${DATADIR}/dics/
@@ -40,11 +40,11 @@ GJITEN_DICS=	${DATADIR}/dics/
 .if ${PORT_OPTIONS:MUTF8}
 EDICT_DIR=	${LOCALBASE}/share/dict/edict-utf-8
 EDICT_FILE=	${EDICT_DIR}/edict
-RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict-utf-8
+RUN_DEPENDS+=	${EDICT_FILE}:japanese/edict-utf-8
 .else
 EDICT_DIR=	${LOCALBASE}/share/dict/edict
 EDICT_FILE=	${EDICT_DIR}/edict
-RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict
+RUN_DEPENDS+=	${EDICT_FILE}:japanese/edict
 USES+=		iconv:build
 .endif
 

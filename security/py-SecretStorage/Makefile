@@ -12,7 +12,7 @@ COMMENT=	Store passwords using the SecretService DBus API
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto
 
 NO_ARCH=	yes
 USES=		python
@@ -21,9 +21,9 @@ USE_PYTHON=	autoplist distutils
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} > 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:${PORTSDIR}/devel/py3-dbus
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:devel/py3-dbus
 .else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:devel/py-dbus
 .endif
 
 .include <bsd.port.post.mk>

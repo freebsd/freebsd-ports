@@ -1,0 +1,13 @@
+# $FreeBSD$
+#
+# Allow members of group cups to access generic USB printer devices
+
+notify 100 {
+	match "system"		"USB";
+	match "subsystem"	"INTERFACE";
+	match "type"		"ATTACH";
+	match "intclass"	"0x07";
+	match "intsubclass"	"0x01";
+	match "intprotocol"	"(0x01|0x02|0x03)";
+	action "chgrp cups /dev/$cdev; chmod g+rw /dev/$cdev";
+};

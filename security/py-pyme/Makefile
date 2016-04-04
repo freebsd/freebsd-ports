@@ -14,8 +14,8 @@ COMMENT=	Python interface to GPGME library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+BUILD_DEPENDS=	swig1.3:devel/swig13
+LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 USES=		gmake python:2
 USE_PYTHON=	distutils
@@ -23,14 +23,11 @@ PYDISTUTILS_PKGNAME=pygpgme
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e 's,gpgme-config,${PREFIX}/bin/&,' \
+	@${REINPLACE_CMD} 's,gpgme-config,${LOCALBASE}/bin/&,' \
 		${WRKSRC}/Makefile ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e 's,include/,&gpgme/,' ${WRKSRC}/Makefile
 
 pre-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} build
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -12,8 +12,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for centralized input validation for Dancer
 
 RUN_DEPENDS=	\
-	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
-	p5-Validation-Class>0:${PORTSDIR}/devel/p5-Validation-Class
+	p5-Dancer>0:www/p5-Dancer \
+	p5-Validation-Class>0:devel/p5-Validation-Class
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

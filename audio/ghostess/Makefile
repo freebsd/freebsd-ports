@@ -12,15 +12,15 @@ COMMENT=	Graphical DSSI host with JACK MIDI support
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
-		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
-		jackit>=0.109.2:${PORTSDIR}/audio/jack
+BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:audio/dssi \
+		${LOCALBASE}/include/ladspa.h:audio/ladspa \
+		jackit>=0.109.2:audio/jack
 # Between 0.109.0 and earlier versions there was an api change in JACK.
 # However, the library version number was not changed.  The line above
 # is supposed to work around that.
-LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
-		liblo.so:${PORTSDIR}/audio/liblo \
-		libjack.so:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
+		liblo.so:audio/liblo \
+		libjack.so:audio/jack
 
 USE_GNOME=	gtk20
 USES=		tar:bzip2 gmake pkgconfig

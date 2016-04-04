@@ -13,7 +13,7 @@ COMMENT=	Perl extension of Moose type constraints for string-like objects
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-	p5-MooseX-Types>0:${PORTSDIR}/devel/p5-MooseX-Types
+	p5-MooseX-Types>0:devel/p5-MooseX-Types
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

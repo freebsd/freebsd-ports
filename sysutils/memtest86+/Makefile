@@ -42,7 +42,7 @@ SUB_LIST+=	BOOT_DIR=${BOOT_DIR}
 .endif
 
 .if ${PORT_OPTIONS:MISO}
-BUILD_DEPENDS+=	mkisofs:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS+=	mkisofs:sysutils/cdrtools
 ALL_TARGET+=	iso
 .endif
 

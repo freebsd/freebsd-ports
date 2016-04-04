@@ -10,7 +10,7 @@ MASTER_SITES=	http://people.redhat.com/jakub/prelink/
 MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	ELF prelinking utility to speed up dynamic linking
 
-LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS=	libargp.so:devel/argp-standalone
 
 USES=		autoreconf gmake tar:bzip2 libtool
 GNU_CONFIGURE=	yes

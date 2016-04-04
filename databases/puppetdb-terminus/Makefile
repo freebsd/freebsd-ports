@@ -2,6 +2,7 @@
 
 PORTNAME=	puppetdb-terminus
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 DISTNAME=	puppetdb-${PORTVERSION}
@@ -11,8 +12,9 @@ COMMENT=	PuppetDB storeconfigs backend terminus module
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	puppet38>=0:${PORTSDIR}/sysutils/puppet38
+BUILD_DEPENDS=	puppet38>=0:sysutils/puppet38
 
+CONFLICTS_INSTALL=	puppetdb-terminus4-*
 USE_RUBY=	yes
 NO_BUILD=	yes
 

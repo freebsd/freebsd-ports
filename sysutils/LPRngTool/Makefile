@@ -3,7 +3,7 @@
 
 PORTNAME=	LPRngTool
 PORTVERSION=	1.3.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils print
 MASTER_SITES=	SF/lprng/lprngtool/LRPngTool-${PORTVERSION}
 
@@ -12,8 +12,8 @@ COMMENT=	Configuration Tool for LPRng
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps \
-		mpage:${PORTSDIR}/print/mpage
+BUILD_DEPENDS=	a2ps:print/a2ps \
+		mpage:print/mpage
 
 USES=		ghostscript:build tar:tgz tk
 GNU_CONFIGURE=	yes

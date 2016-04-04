@@ -1,0 +1,7 @@
+DSBMixer is a tabbed GTK+ mixer for FreeBSD. For each installed mixer device
+as well as for USB sound devices plugged in at runtime, DSBMixer opens a tab.
+Furthermore, it allows you to configure several aspects of your sound card(s),
+such as selecting recording sources, choosing your default audio device, and
+amplification.
+
+WWW: http://freeshell.de/~mk/projects/dsbmixer.html

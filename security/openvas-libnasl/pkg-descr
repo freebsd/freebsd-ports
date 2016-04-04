@@ -1,6 +1,0 @@
-OpenVAS stands for Open Vulnerability Assessment System and is a network
-security scanner with associated tools like a graphical user fontend. The core
-is a server component with a set of network vulnerability tests (NVTs) to
-detect security problems in remote systems and applications. 
-
-WWW: http://www.openvas.org/

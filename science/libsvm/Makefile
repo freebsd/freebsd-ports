@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsvm
-PORTVERSION=	3.18
+PORTVERSION=	3.21
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 		http://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/

@@ -11,7 +11,7 @@ COMMENT=	Tool for checking, and diagnosing DNS zones
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
 
 USES=		shebangfix perl5
 SHEBANG_FILES=	sleuth

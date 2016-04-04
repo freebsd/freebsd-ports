@@ -13,9 +13,9 @@ COMMENT=	Simple block-diagram image generator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}pillow>=2.2.1:${PORTSDIR}/graphics/py-pillow \
-		${PKGNAMEPREFIX}funcparserlib>=0.3.6:${PORTSDIR}/devel/py-funcparserlib \
-		${PKGNAMEPREFIX}webcolors>=0:${PORTSDIR}/graphics/py-webcolors
+RUN_DEPENDS=	${PKGNAMEPREFIX}pillow>=2.2.1:graphics/py-pillow \
+		${PKGNAMEPREFIX}funcparserlib>=0.3.6:devel/py-funcparserlib \
+		${PKGNAMEPREFIX}webcolors>=0:graphics/py-webcolors
 
 USES=	python
 USE_PYTHON=	autoplist distutils
@@ -39,11 +39,11 @@ IGNORE=	does not support in ${PYTHON_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MPDF}
-RUN_DEPENDS+=	${PKGNAMEPREFIX}reportlab>0:${PORTSDIR}/print/py-reportlab
+RUN_DEPENDS+=	${PKGNAMEPREFIX}reportlab>0:print/py-reportlab
 .endif
 
 .if ${PORT_OPTIONS:MIPAFONT}
-RUN_DEPENDS+=	${LOCALBASE}/share/font-ipa/ipag.otf:${PORTSDIR}/japanese/font-ipa
+RUN_DEPENDS+=	${LOCALBASE}/share/font-ipa/ipag.otf:japanese/font-ipa
 .endif
 
 post-patch:

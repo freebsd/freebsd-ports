@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fio
-PORTVERSION=	2.6
+PORTVERSION=	2.8
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
@@ -16,7 +16,7 @@ USES=		gmake tar:bzip2
 OPTIONS_DEFINE=	GNUPLOT EXAMPLES
 GNUPLOT_DESC=	Support for plotting graphs
 
-GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot
+GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot
 
 .include <bsd.port.options.mk>
 
@@ -26,7 +26,7 @@ MAKE_ARGS+=	YACC=${LOCALBASE}/bin/bison
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>0:textproc/flex
 MAKE_ARGS+=	LEX=${LOCALBASE}/bin/flex
 .endif
 

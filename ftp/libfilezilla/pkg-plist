@@ -8,11 +8,13 @@ include/libfilezilla/iputils.hpp
 include/libfilezilla/libfilezilla.hpp
 include/libfilezilla/local_filesys.hpp
 include/libfilezilla/mutex.hpp
+include/libfilezilla/optional.hpp
 include/libfilezilla/private/defs.hpp
 include/libfilezilla/private/visibility.hpp
 include/libfilezilla/private/windows.hpp
 include/libfilezilla/process.hpp
 include/libfilezilla/recursive_remove.hpp
+include/libfilezilla/shared.hpp
 include/libfilezilla/string.hpp
 include/libfilezilla/thread.hpp
 include/libfilezilla/time.hpp

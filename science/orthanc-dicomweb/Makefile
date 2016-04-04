@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc-dicomweb
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	science net
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-dicom-web/
 DISTNAME=	OrthancDicomWeb-${PORTVERSION}
@@ -14,18 +14,18 @@ COMMENT=	WADO and DICOMweb support for Orthanc
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:${PORTSDIR}/science/orthanc \
-		gtest-config:${PORTSDIR}/devel/googletest
-LIB_DEPENDS=	libgdcmCommon.so:${PORTSDIR}/devel/gdcm \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
-		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		libboost_locale.so:${PORTSDIR}/devel/boost-libs \
-		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libpugixml.so:${PORTSDIR}/textproc/pugixml
+BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc \
+		gtest-config:devel/googletest
+LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
+		libboost_filesystem.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
+		libboost_system.so:devel/boost-libs \
+		libboost_date_time.so:devel/boost-libs \
+		libboost_regex.so:devel/boost-libs \
+		libboost_locale.so:devel/boost-libs \
+		libjsoncpp.so:devel/jsoncpp \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libpugixml.so:textproc/pugixml
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

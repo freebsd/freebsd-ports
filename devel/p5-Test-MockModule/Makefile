@@ -12,7 +12,7 @@ COMMENT=	Override subroutines in a module for unit testing
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	p5-SUPER>=0:${PORTSDIR}/devel/p5-SUPER
+BUILD_DEPENDS=	p5-SUPER>=0:devel/p5-SUPER
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

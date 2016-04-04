@@ -14,7 +14,7 @@ COMMENT=	Python bindings for Gammu library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libGammu.so:${PORTSDIR}/comms/gammu
+LIB_DEPENDS=	libGammu.so:comms/gammu
 
 USES=		pkgconfig python:-2.7 tar:bz2
 USE_PYTHON=	distutils autoplist

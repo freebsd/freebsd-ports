@@ -12,10 +12,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Wrapping library to the System Tools Backends
 
-BUILD_DEPENDS=	system-tools-backends:${PORTSDIR}/sysutils/system-tools-backends
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libhal.so:${PORTSDIR}/sysutils/hal
-RUN_DEPENDS=	system-tools-backends:${PORTSDIR}/sysutils/system-tools-backends
+BUILD_DEPENDS=	system-tools-backends:sysutils/system-tools-backends
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libhal.so:sysutils/hal
+RUN_DEPENDS=	system-tools-backends:sysutils/system-tools-backends
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig tar:bzip2

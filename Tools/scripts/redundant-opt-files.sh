@@ -9,6 +9,12 @@
 # deleted in order to prevent future configuration check failures.
 
 portsdir=${PORTSDIR:-/usr/ports}
+if [ ! -d "${portsdir}" ]; then
+   echo "The ${portsdir} ports directory does not exist"
+   echo "There is nothing more to do."
+   exit
+fi
+
 db_dir=$(/usr/bin/make -C ${portsdir}/devel/gmake -V PORT_DBDIR 2>/dev/null)
 
 if [ ! -d "${db_dir}" ]; then
@@ -32,6 +38,11 @@ catport() {
 
 identical_options() {
    local origin=$(catport $1)
+   if [ ! -d ${origin} ]; then
+       # origin no longer exists, list it anyway without testing further
+       echo $1
+       return
+   fi
    local selected_pristine=$(/usr/bin/make -C ${origin} \
    	-V SELECTED_OPTIONS PORT_DBDIR=/dev/null)
    local selected_now=$(/usr/bin/make -C ${origin} -V SELECTED_OPTIONS)

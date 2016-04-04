@@ -13,11 +13,11 @@ COMMENT=	Sorting files in sophisticated ways
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre \
-    		libuninum.so:${PORTSDIR}/devel/libuninum \
-		libutf8proc.so:${PORTSDIR}/textproc/utf8proc
-RUN_DEPENDS=	iwidgets>=0:${PORTSDIR}/x11-toolkits/iwidgets
-TEST_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libtre.so:textproc/libtre \
+		libuninum.so:devel/libuninum \
+		libutf8proc.so:textproc/utf8proc
+RUN_DEPENDS=	iwidgets>=0:x11-toolkits/iwidgets
+TEST_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 CONFIGURE_ENV=	ac_cv_lib_tre_regwcomp=yes
 CPPFLAGS+=	-I${LOCALBASE}/include

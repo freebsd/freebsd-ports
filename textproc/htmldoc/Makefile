@@ -14,7 +14,7 @@ COMMENT=	Converts HTML to PDF and/or PostScript
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	HTMLDOCGUI
 HTMLDOCGUI_DESC=	Build GUI front-end
@@ -37,7 +37,7 @@ INSTALL_TARGET=	install \
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-HTMLDOCGUI_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+HTMLDOCGUI_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 HTMLDOCGUI_CONFIGURE_ON=	--with-gui=yes
 HTMLDOCGUI_CONFIGURE_OFF=	--with-gui=no
 

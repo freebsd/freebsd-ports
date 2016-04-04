@@ -32,7 +32,7 @@ CPE_VENDOR=	bogofilter_project
 
 UNICODE_USES=	iconv
 UNICODE_CONFIGURE_ENABLE=	unicode
-GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 GSL_CONFIGURE_ARGS_OFF=	--with-included-gsl
 
 PORTDOCS=	*

@@ -12,7 +12,7 @@ COMMENT=	Classpath of SableVM
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
+BUILD_DEPENDS=	jikes:java/jikes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -50,7 +50,7 @@ IGNORE=you need to enable the Gtk+ AWT peer in order to use Cairo based Graphics
 
 .if ${PORT_OPTIONS:MZIP}
 CONFIGURE_ARGS+=	--with-compressed-classes=zip
-BUILD_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS+=		zip:archivers/zip
 PLIST_SUB+=		WITHOUT_ZIP="@comment " WITH_ZIP=""
 .else
 CONFIGURE_ARGS+=	--with-compressed-classes=no

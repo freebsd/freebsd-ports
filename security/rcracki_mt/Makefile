@@ -5,24 +5,18 @@ PORTVERSION=	0.7.0
 CATEGORIES=	security
 MASTER_SITES=	SF/rcracki/rcracki_mt/rcracki_mt_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
-EXTRACT_SUFX=	.7z
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Rainbow table based crack tool
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=7z:${PORTSDIR}/archivers/p7zip
-
 NOT_FOR_ARCHS=	arm sparc64
 NOT_FOR_ARCHS_REASON=	cannot detect endianness
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-USES=		gmake
-EXTRACT_CMD=	${LOCALBASE}/bin/7z
-EXTRACT_BEFORE_ARGS=x -o${WRKDIR}
-EXTRACT_AFTER_ARGS=
+USES=		7z gmake
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	ChangeLog.txt README.txt

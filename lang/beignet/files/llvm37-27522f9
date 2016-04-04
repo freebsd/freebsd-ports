@@ -1,0 +1,1185 @@
+From 27522f9c83303078be7d927a23f2a43c587efc9a Mon Sep 17 00:00:00 2001
+From: Yang Rong <rong.r.yang@intel.com>
+Date: Wed, 16 Sep 2015 16:49:35 +0800
+Subject: GBE: use opencl c to implement llvm.memset and llvm.memcpy.
+
+llvm 3.7 change to llvm IR, need two copies if still use the llvm IR
+to implement llvm.memset and llvm.memcpy. And opencl c is more clearly.
+
+Signed-off-by: Yang Rong <rong.r.yang@intel.com>
+Reviewed-by: Ruiling Song <ruiling.song@intel.com>
+Reviewed-by: Igor Gnatenko <i.gnatenko.brain@gmail.com>
+
+diff --git a/backend/src/libocl/CMakeLists.txt b/backend/src/libocl/CMakeLists.txt
+index 0cd1eef..0fffd9b 100644
+--- a/backend/src/libocl/CMakeLists.txt
++++ b/backend/src/libocl/CMakeLists.txt
+@@ -52,7 +52,8 @@ FOREACH(M ${OCL_COPY_HEADERS})
+     COPY_THE_HEADER(${M})
+ ENDFOREACH(M) 
+ 
+-SET (OCL_COPY_MODULES ocl_workitem ocl_atom ocl_async ocl_sync ocl_misc ocl_vload ocl_geometric ocl_image)
++SET (OCL_COPY_MODULES ocl_workitem ocl_atom ocl_async ocl_sync ocl_memcpy
++                      ocl_memset ocl_misc ocl_vload ocl_geometric ocl_image)
+ FOREACH(M ${OCL_COPY_MODULES})
+     COPY_THE_HEADER(${M})
+     COPY_THE_SOURCE(${M})
+@@ -181,7 +182,7 @@ MACRO(ADD_LL_TO_BC_TARGET M)
+ 	)
+ ENDMACRO(ADD_LL_TO_BC_TARGET)
+ 
+-SET (OCL_LL_MODULES ocl_barrier ocl_memcpy ocl_memset ocl_clz)
++SET (OCL_LL_MODULES ocl_barrier ocl_clz)
+ FOREACH(f ${OCL_LL_MODULES})
+     COPY_THE_LL(${f})
+     ADD_LL_TO_BC_TARGET(${f})
+diff --git a/backend/src/libocl/include/ocl.h b/backend/src/libocl/include/ocl.h
+index a4af4aa..7897567 100644
+--- a/backend/src/libocl/include/ocl.h
++++ b/backend/src/libocl/include/ocl.h
+@@ -30,6 +30,7 @@
+ #include "ocl_image.h"
+ #include "ocl_integer.h"
+ #include "ocl_math.h"
++#include "ocl_memcpy.h"
+ #include "ocl_misc.h"
+ #include "ocl_printf.h"
+ #include "ocl_relational.h"
+diff --git a/backend/src/libocl/include/ocl_memcpy.h b/backend/src/libocl/include/ocl_memcpy.h
+new file mode 100644
+index 0000000..2672298
+--- /dev/null
++++ b/backend/src/libocl/include/ocl_memcpy.h
+@@ -0,0 +1,51 @@
++/*
++ * Copyright © 2012 - 2014 Intel Corporation
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++#ifndef __OCL_MEMCPY_H__
++#define __OCL_MEMCPY_H__
++#include "ocl_types.h"
++
++/////////////////////////////////////////////////////////////////////////////
++// memcopy functions
++/////////////////////////////////////////////////////////////////////////////
++void __gen_memcpy_gg_align(__global uchar* dst, __global uchar* src, size_t size);
++void __gen_memcpy_gp_align(__global uchar* dst, __private uchar* src, size_t size);
++void __gen_memcpy_gl_align(__global uchar* dst, __local uchar* src, size_t size);
++void __gen_memcpy_gc_align(__global uchar* dst, __constant uchar* src, size_t size);
++void __gen_memcpy_pg_align(__private uchar* dst, __global uchar* src, size_t size);
++void __gen_memcpy_pp_align(__private uchar* dst, __private uchar* src, size_t size);
++void __gen_memcpy_pl_align(__private uchar* dst, __local uchar* src, size_t size);
++void __gen_memcpy_pc_align(__private uchar* dst, __constant uchar* src, size_t size);
++void __gen_memcpy_lg_align(__local uchar* dst, __global uchar* src, size_t size);
++void __gen_memcpy_lp_align(__local uchar* dst, __private uchar* src, size_t size);
++void __gen_memcpy_ll_align(__local uchar* dst, __local uchar* src, size_t size);
++void __gen_memcpy_lc_align(__local uchar* dst, __constant uchar* src, size_t size);
++
++void __gen_memcpy_gg(__global uchar* dst, __global uchar* src, size_t size);
++void __gen_memcpy_gp(__global uchar* dst, __private uchar* src, size_t size);
++void __gen_memcpy_gl(__global uchar* dst, __local uchar* src, size_t size);
++void __gen_memcpy_gc(__global uchar* dst, __constant uchar* src, size_t size);
++void __gen_memcpy_pg(__private uchar* dst, __global uchar* src, size_t size);
++void __gen_memcpy_pp(__private uchar* dst, __private uchar* src, size_t size);
++void __gen_memcpy_pl(__private uchar* dst, __local uchar* src, size_t size);
++void __gen_memcpy_pc(__private uchar* dst, __constant uchar* src, size_t size);
++void __gen_memcpy_lg(__local uchar* dst, __global uchar* src, size_t size);
++void __gen_memcpy_lp(__local uchar* dst, __private uchar* src, size_t size);
++void __gen_memcpy_ll(__local uchar* dst, __local uchar* src, size_t size);
++void __gen_memcpy_lc(__local uchar* dst, __constant uchar* src, size_t size);
++
++#endif  /* __OCL_MEMCPY_H__ */
+diff --git a/backend/src/libocl/include/ocl_memset.h b/backend/src/libocl/include/ocl_memset.h
+new file mode 100644
+index 0000000..2d444ad
+--- /dev/null
++++ b/backend/src/libocl/include/ocl_memset.h
+@@ -0,0 +1,33 @@
++/*
++ * Copyright © 2012 - 2014 Intel Corporation
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++#ifndef __OCL_MEMSET_H__
++#define __OCL_MEMSET_H__
++#include "ocl_types.h"
++
++/////////////////////////////////////////////////////////////////////////////
++// memcopy functions
++/////////////////////////////////////////////////////////////////////////////
++void __gen_memset_g_align(__global uchar* dst, uchar val, size_t size);
++void __gen_memset_p_align(__private uchar* dst, uchar val, size_t size);
++void __gen_memset_l_align(__local uchar* dst, uchar val, size_t size);
++
++void __gen_memset_g(__global uchar* dst, uchar val, size_t size);
++void __gen_memset_p(__private uchar* dst, uchar val, size_t size);
++void __gen_memset_l(__local uchar* dst, uchar val, size_t size);
++
++#endif  /* __OCL_MEMSET_H__ */
+diff --git a/backend/src/libocl/src/ocl_memcpy.cl b/backend/src/libocl/src/ocl_memcpy.cl
+new file mode 100644
+index 0000000..85f490f
+--- /dev/null
++++ b/backend/src/libocl/src/ocl_memcpy.cl
+@@ -0,0 +1,49 @@
++/*
++ * Copyright © 2012 - 2014 Intel Corporation
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++#include "ocl_memcpy.h"
++
++#define DECL_TWO_SPACE_MEMCOPY_FN(NAME, DST_SPACE, SRC_SPACE) \
++void __gen_memcpy_ ##NAME## _align (DST_SPACE uchar* dst, SRC_SPACE uchar* src, size_t size) { \
++  size_t index = 0; \
++  while((index + 4) <= size) { \
++    *((DST_SPACE uint *)(dst + index)) = *((SRC_SPACE uint *)(src + index)); \
++    index += 4; \
++  } \
++  while(index < size) { \
++    dst[index] = src[index]; \
++    index++; \
++  } \
++} \
++void __gen_memcpy_ ##NAME (DST_SPACE uchar* dst, SRC_SPACE uchar* src, size_t size) { \
++  size_t index = 0; \
++  while(index < size) { \
++    dst[index] = src[index]; \
++    index++; \
++  } \
++}
++
++#define DECL_ONE_SPACE_MEMCOPY_FN(NAME, DST_SPACE) \
++  DECL_TWO_SPACE_MEMCOPY_FN( NAME## g, DST_SPACE, __global) \
++  DECL_TWO_SPACE_MEMCOPY_FN( NAME## l, DST_SPACE, __local) \
++  DECL_TWO_SPACE_MEMCOPY_FN( NAME## p, DST_SPACE, __private) \
++  DECL_TWO_SPACE_MEMCOPY_FN( NAME## c, DST_SPACE, __constant)
++
++DECL_ONE_SPACE_MEMCOPY_FN(g, __global)
++DECL_ONE_SPACE_MEMCOPY_FN(l, __local)
++DECL_ONE_SPACE_MEMCOPY_FN(p, __private)
++
+diff --git a/backend/src/libocl/src/ocl_memcpy.ll b/backend/src/libocl/src/ocl_memcpy.ll
+deleted file mode 100644
+index b3fadb2..0000000
+--- a/backend/src/libocl/src/ocl_memcpy.ll
++++ /dev/null
+@@ -1,729 +0,0 @@
+-;The memcpy's source code.
+-; INLINE_OVERLOADABLE void __gen_memcpy_align(uchar* dst, uchar* src, size_t size) {
+-;   size_t index = 0;
+-;   while((index + 4) <= size) {
+-;     *((uint *)(dst + index)) = *((uint *)(src + index));
+-;     index += 4;
+-;   }
+-;   while(index < size) {
+-;     dst[index] = src[index];
+-;     index++;
+-;   }
+-; }
+-
+-define void @__gen_memcpy_gg_align(i8 addrspace(1)* %dst, i8 addrspace(1)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(1)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(1)* %add.ptr to i32 addrspace(1)*
+-  %1 = load i32 addrspace(1)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(1)* %add.ptr1 to i32 addrspace(1)*
+-  store i32 %1, i32 addrspace(1)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(1)* %src, i32 %index.1
+-  %3 = load i8 addrspace(1)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(1)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_gp_align(i8 addrspace(1)* %dst, i8 addrspace(0)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(0)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(0)* %add.ptr to i32 addrspace(0)*
+-  %1 = load i32 addrspace(0)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(1)* %add.ptr1 to i32 addrspace(1)*
+-  store i32 %1, i32 addrspace(1)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(0)* %src, i32 %index.1
+-  %3 = load i8 addrspace(0)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(1)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_gl_align(i8 addrspace(1)* %dst, i8 addrspace(3)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(3)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(3)* %add.ptr to i32 addrspace(3)*
+-  %1 = load i32 addrspace(3)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(1)* %add.ptr1 to i32 addrspace(1)*
+-  store i32 %1, i32 addrspace(1)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(3)* %src, i32 %index.1
+-  %3 = load i8 addrspace(3)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(1)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_pg_align(i8 addrspace(0)* %dst, i8 addrspace(1)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(1)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(1)* %add.ptr to i32 addrspace(1)*
+-  %1 = load i32 addrspace(1)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(0)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(0)* %add.ptr1 to i32 addrspace(0)*
+-  store i32 %1, i32 addrspace(0)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(1)* %src, i32 %index.1
+-  %3 = load i8 addrspace(1)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(0)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(0)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_pp_align(i8 addrspace(0)* %dst, i8 addrspace(0)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(0)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(0)* %add.ptr to i32 addrspace(0)*
+-  %1 = load i32 addrspace(0)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(0)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(0)* %add.ptr1 to i32 addrspace(0)*
+-  store i32 %1, i32 addrspace(0)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(0)* %src, i32 %index.1
+-  %3 = load i8 addrspace(0)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(0)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(0)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_pl_align(i8 addrspace(0)* %dst, i8 addrspace(3)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(3)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(3)* %add.ptr to i32 addrspace(3)*
+-  %1 = load i32 addrspace(3)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(0)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(0)* %add.ptr1 to i32 addrspace(0)*
+-  store i32 %1, i32 addrspace(0)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(3)* %src, i32 %index.1
+-  %3 = load i8 addrspace(3)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(0)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(0)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_lg_align(i8 addrspace(3)* %dst, i8 addrspace(1)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(1)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(1)* %add.ptr to i32 addrspace(1)*
+-  %1 = load i32 addrspace(1)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(3)* %add.ptr1 to i32 addrspace(3)*
+-  store i32 %1, i32 addrspace(3)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(1)* %src, i32 %index.1
+-  %3 = load i8 addrspace(1)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(3)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_lp_align(i8 addrspace(3)* %dst, i8 addrspace(0)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(0)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(0)* %add.ptr to i32 addrspace(0)*
+-  %1 = load i32 addrspace(0)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(3)* %add.ptr1 to i32 addrspace(3)*
+-  store i32 %1, i32 addrspace(3)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(0)* %src, i32 %index.1
+-  %3 = load i8 addrspace(0)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(3)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_ll_align(i8 addrspace(3)* %dst, i8 addrspace(3)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(3)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(3)* %add.ptr to i32 addrspace(3)*
+-  %1 = load i32 addrspace(3)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(3)* %add.ptr1 to i32 addrspace(3)*
+-  store i32 %1, i32 addrspace(3)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(3)* %src, i32 %index.1
+-  %3 = load i8 addrspace(3)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(3)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-;The memcpy's source code.
+-; INLINE_OVERLOADABLE void __gen_memcpy(uchar* dst, uchar* src, size_t size) {
+-;   size_t index = 0;
+-;   while(index < size) {
+-;     dst[index] = src[index];
+-;     index++;
+-;   }
+-; }
+-
+-define void @__gen_memcpy_gg(i8 addrspace(1)* %dst, i8 addrspace(1)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(1)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(1)*
+-  %3 = load i8 addrspace(1)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(1)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(1)*
+-  store i8 %3, i8 addrspace(1)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_gp(i8 addrspace(1)* %dst, i8 addrspace(0)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(0)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(0)*
+-  %3 = load i8 addrspace(0)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(1)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(1)*
+-  store i8 %3, i8 addrspace(1)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_gl(i8 addrspace(1)* %dst, i8 addrspace(3)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(3)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(3)*
+-  %3 = load i8 addrspace(3)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(1)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(1)*
+-  store i8 %3, i8 addrspace(1)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_pg(i8 addrspace(0)* %dst, i8 addrspace(1)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(1)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(1)*
+-  %3 = load i8 addrspace(1)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(0)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(0)*
+-  store i8 %3, i8 addrspace(0)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_pp(i8 addrspace(0)* %dst, i8 addrspace(0)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(0)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(0)*
+-  %3 = load i8 addrspace(0)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(0)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(0)*
+-  store i8 %3, i8 addrspace(0)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_pl(i8 addrspace(0)* %dst, i8 addrspace(3)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(3)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(3)*
+-  %3 = load i8 addrspace(3)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(0)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(0)*
+-  store i8 %3, i8 addrspace(0)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_lg(i8 addrspace(3)* %dst, i8 addrspace(1)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(1)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(1)*
+-  %3 = load i8 addrspace(1)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(3)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(3)*
+-  store i8 %3, i8 addrspace(3)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_lp(i8 addrspace(3)* %dst, i8 addrspace(0)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(0)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(0)*
+-  %3 = load i8 addrspace(0)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(3)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(3)*
+-  store i8 %3, i8 addrspace(3)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_ll(i8 addrspace(3)* %dst, i8 addrspace(3)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(3)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(3)*
+-  %3 = load i8 addrspace(3)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(3)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(3)*
+-  store i8 %3, i8 addrspace(3)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_gc_align(i8 addrspace(1)* %dst, i8 addrspace(2)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(2)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(2)* %add.ptr to i32 addrspace(2)*
+-  %1 = load i32 addrspace(2)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(1)* %add.ptr1 to i32 addrspace(1)*
+-  store i32 %1, i32 addrspace(1)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(2)* %src, i32 %index.1
+-  %3 = load i8 addrspace(2)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(1)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_pc_align(i8 addrspace(0)* %dst, i8 addrspace(2)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(2)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(2)* %add.ptr to i32 addrspace(2)*
+-  %1 = load i32 addrspace(2)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(0)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(0)* %add.ptr1 to i32 addrspace(0)*
+-  store i32 %1, i32 addrspace(0)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(2)* %src, i32 %index.1
+-  %3 = load i8 addrspace(2)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(0)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(0)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_lc_align(i8 addrspace(3)* %dst, i8 addrspace(2)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond3, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(2)* %src, i32 %index.0
+-  %0 = bitcast i8 addrspace(2)* %add.ptr to i32 addrspace(2)*
+-  %1 = load i32 addrspace(2)* %0, align 4
+-  %add.ptr1 = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.0
+-  %2 = bitcast i8 addrspace(3)* %add.ptr1 to i32 addrspace(3)*
+-  store i32 %1, i32 addrspace(3)* %2, align 4
+-  br label %while.cond
+-
+-while.cond3:                                      ; preds = %while.cond, %while.body5
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body5 ]
+-  %cmp4 = icmp ult i32 %index.1, %size
+-  br i1 %cmp4, label %while.body5, label %while.end7
+-
+-while.body5:                                      ; preds = %while.cond3
+-  %arrayidx = getelementptr inbounds i8 addrspace(2)* %src, i32 %index.1
+-  %3 = load i8 addrspace(2)* %arrayidx, align 1
+-  %arrayidx6 = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.1
+-  store i8 %3, i8 addrspace(3)* %arrayidx6, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond3
+-
+-while.end7:                                       ; preds = %while.cond3
+-  ret void
+-}
+-
+-define void @__gen_memcpy_pc(i8 addrspace(0)* %dst, i8 addrspace(2)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(2)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(2)*
+-  %3 = load i8 addrspace(2)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(0)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(0)*
+-  store i8 %3, i8 addrspace(0)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_gc(i8 addrspace(1)* %dst, i8 addrspace(2)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(2)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(2)*
+-  %3 = load i8 addrspace(2)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(1)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(1)*
+-  store i8 %3, i8 addrspace(1)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memcpy_lc(i8 addrspace(3)* %dst, i8 addrspace(2)* %src, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp4 = icmp eq i32 %size, 0
+-  br i1 %cmp4, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.05 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(2)* %src to i32
+-  %1 = add i32 %0, %index.05
+-  %2 = inttoptr i32 %1 to i8 addrspace(2)*
+-  %3 = load i8 addrspace(2)* %2, align 1
+-  %4 = ptrtoint i8 addrspace(3)* %dst to i32
+-  %5 = add i32 %4, %index.05
+-  %6 = inttoptr i32 %5 to i8 addrspace(3)*
+-  store i8 %3, i8 addrspace(3)* %6, align 1
+-  %inc = add i32 %index.05, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+diff --git a/backend/src/libocl/src/ocl_memset.cl b/backend/src/libocl/src/ocl_memset.cl
+new file mode 100644
+index 0000000..b41851a
+--- /dev/null
++++ b/backend/src/libocl/src/ocl_memset.cl
+@@ -0,0 +1,44 @@
++/*
++ * Copyright © 2012 - 2014 Intel Corporation
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++#include "ocl_memset.h"
++
++#define DECL_MEMSET_FN(NAME, DST_SPACE) \
++void __gen_memset_ ##NAME## _align (DST_SPACE uchar* dst, uchar val, size_t size) { \
++  size_t index = 0; \
++  uint v = (val << 24) | (val << 16) | (val << 8) | val; \
++  while((index + 4) >= size) { \
++    *((DST_SPACE uint *)(dst + index)) = v; \
++    index += 4; \
++  } \
++  while(index < size) { \
++    dst[index] = val; \
++    index++; \
++ } \
++} \
++void __gen_memset_ ##NAME (DST_SPACE uchar* dst, uchar val, size_t size) { \
++  size_t index = 0; \
++  while(index < size) { \
++    dst[index] = val; \
++    index++; \
++ } \
++}
++
++DECL_MEMSET_FN(g, __global)
++DECL_MEMSET_FN(l, __local)
++DECL_MEMSET_FN(p, __private)
++
+diff --git a/backend/src/libocl/src/ocl_memset.ll b/backend/src/libocl/src/ocl_memset.ll
+deleted file mode 100644
+index 665eac4..0000000
+--- a/backend/src/libocl/src/ocl_memset.ll
++++ /dev/null
+@@ -1,193 +0,0 @@
+-;The memset's source code.
+-; INLINE_OVERLOADABLE void __gen_memset_align(uchar* dst, uchar val, size_t size) {
+-;   size_t index = 0;
+-;   uint v = (val << 24) | (val << 16) | (val << 8) | val;
+-;   while((index + 4) >= size) {
+-;     *((uint *)(dst + index)) = v;
+-;     index += 4;
+-;   }
+-;   while(index < size) {
+-;     dst[index] = val;
+-;     index++;
+-;  }
+-; }
+-
+-define void @__gen_memset_p_align(i8* %dst, i8 zeroext %val, i32 %size) nounwind alwaysinline {
+-entry:
+-  %conv = zext i8 %val to i32
+-  %shl = shl nuw i32 %conv, 24
+-  %shl2 = shl nuw nsw i32 %conv, 16
+-  %or = or i32 %shl, %shl2
+-  %shl4 = shl nuw nsw i32 %conv, 8
+-  %or5 = or i32 %or, %shl4
+-  %or7 = or i32 %or5, %conv
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond10, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8* %dst, i32 %index.0
+-  %0 = bitcast i8* %add.ptr to i32*
+-  store i32 %or7, i32* %0, align 4
+-  br label %while.cond
+-
+-while.cond10:                                     ; preds = %while.cond, %while.body13
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body13 ]
+-  %cmp11 = icmp ult i32 %index.1, %size
+-  br i1 %cmp11, label %while.body13, label %while.end14
+-
+-while.body13:                                     ; preds = %while.cond10
+-  %arrayidx = getelementptr inbounds i8* %dst, i32 %index.1
+-  store i8 %val, i8* %arrayidx, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond10
+-
+-while.end14:                                      ; preds = %while.cond10
+-  ret void
+-}
+-
+-define void @__gen_memset_g_align(i8 addrspace(1)* %dst, i8 zeroext %val, i32 %size) nounwind alwaysinline {
+-entry:
+-  %conv = zext i8 %val to i32
+-  %shl = shl nuw i32 %conv, 24
+-  %shl2 = shl nuw nsw i32 %conv, 16
+-  %or = or i32 %shl, %shl2
+-  %shl4 = shl nuw nsw i32 %conv, 8
+-  %or5 = or i32 %or, %shl4
+-  %or7 = or i32 %or5, %conv
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond10, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.0
+-  %0 = bitcast i8 addrspace(1)* %add.ptr to i32 addrspace(1)*
+-  store i32 %or7, i32 addrspace(1)* %0, align 4
+-  br label %while.cond
+-
+-while.cond10:                                     ; preds = %while.cond, %while.body13
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body13 ]
+-  %cmp11 = icmp ult i32 %index.1, %size
+-  br i1 %cmp11, label %while.body13, label %while.end14
+-
+-while.body13:                                     ; preds = %while.cond10
+-  %arrayidx = getelementptr inbounds i8 addrspace(1)* %dst, i32 %index.1
+-  store i8 %val, i8 addrspace(1)* %arrayidx, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond10
+-
+-while.end14:                                      ; preds = %while.cond10
+-  ret void
+-}
+-
+-define void @__gen_memset_l_align(i8 addrspace(3)* %dst, i8 zeroext %val, i32 %size) nounwind alwaysinline {
+-entry:
+-  %conv = zext i8 %val to i32
+-  %shl = shl nuw i32 %conv, 24
+-  %shl2 = shl nuw nsw i32 %conv, 16
+-  %or = or i32 %shl, %shl2
+-  %shl4 = shl nuw nsw i32 %conv, 8
+-  %or5 = or i32 %or, %shl4
+-  %or7 = or i32 %or5, %conv
+-  br label %while.cond
+-
+-while.cond:                                       ; preds = %while.body, %entry
+-  %index.0 = phi i32 [ 0, %entry ], [ %add, %while.body ]
+-  %add = add i32 %index.0, 4
+-  %cmp = icmp ugt i32 %add, %size
+-  br i1 %cmp, label %while.cond10, label %while.body
+-
+-while.body:                                       ; preds = %while.cond
+-  %add.ptr = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.0
+-  %0 = bitcast i8 addrspace(3)* %add.ptr to i32 addrspace(3)*
+-  store i32 %or7, i32 addrspace(3)* %0, align 4
+-  br label %while.cond
+-
+-while.cond10:                                     ; preds = %while.cond, %while.body13
+-  %index.1 = phi i32 [ %index.0, %while.cond ], [ %inc, %while.body13 ]
+-  %cmp11 = icmp ult i32 %index.1, %size
+-  br i1 %cmp11, label %while.body13, label %while.end14
+-
+-while.body13:                                     ; preds = %while.cond10
+-  %arrayidx = getelementptr inbounds i8 addrspace(3)* %dst, i32 %index.1
+-  store i8 %val, i8 addrspace(3)* %arrayidx, align 1
+-  %inc = add i32 %index.1, 1
+-  br label %while.cond10
+-
+-while.end14:                                      ; preds = %while.cond10
+-  ret void
+-}
+-
+-;The memset's source code.
+-; INLINE_OVERLOADABLE void __gen_memset(uchar* dst, uchar val, size_t size) {
+-;   size_t index = 0;
+-;   while(index < size) {
+-;     dst[index] = val;
+-;     index++;
+-;  }
+-; }
+-
+-define void @__gen_memset_p(i8 addrspace(0)* %dst, i8 zeroext %val, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp3 = icmp eq i32 %size, 0
+-  br i1 %cmp3, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.04 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(0)* %dst to i32
+-  %1 = add i32 %0, %index.04
+-  %2 = inttoptr i32 %1 to i8 addrspace(0)*
+-  store i8 %val, i8 addrspace(0)* %2, align 1
+-  %inc = add i32 %index.04, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memset_g(i8 addrspace(1)* %dst, i8 zeroext %val, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp3 = icmp eq i32 %size, 0
+-  br i1 %cmp3, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.04 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(1)* %dst to i32
+-  %1 = add i32 %0, %index.04
+-  %2 = inttoptr i32 %1 to i8 addrspace(1)*
+-  store i8 %val, i8 addrspace(1)* %2, align 1
+-  %inc = add i32 %index.04, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-
+-define void @__gen_memset_l(i8 addrspace(3)* %dst, i8 zeroext %val, i32 %size) nounwind alwaysinline {
+-entry:
+-  %cmp3 = icmp eq i32 %size, 0
+-  br i1 %cmp3, label %while.end, label %while.body
+-
+-while.body:                                       ; preds = %entry, %while.body
+-  %index.04 = phi i32 [ %inc, %while.body ], [ 0, %entry ]
+-  %0 = ptrtoint i8 addrspace(3)* %dst to i32
+-  %1 = add i32 %0, %index.04
+-  %2 = inttoptr i32 %1 to i8 addrspace(3)*
+-  store i8 %val, i8 addrspace(3)* %2, align 1
+-  %inc = add i32 %index.04, 1
+-  %cmp = icmp ult i32 %inc, %size
+-  br i1 %cmp, label %while.body, label %while.end
+-
+-while.end:                                        ; preds = %while.body, %entry
+-  ret void
+-}
+-- 
+cgit v0.10.2
+

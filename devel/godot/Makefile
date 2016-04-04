@@ -11,8 +11,8 @@ COMMENT=	Game engine and development environment
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libasound.so:audio/alsa-lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	okamstudio

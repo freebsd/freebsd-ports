@@ -10,7 +10,7 @@ MASTER_SITES=	http://point-at-infinity.org/ssss/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Shamir's Secret Sharing Scheme
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 PLIST_FILES=	bin/ssss-combine bin/ssss-split man/man1/ssss.1.gz
 

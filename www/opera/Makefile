@@ -2,7 +2,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 		ftp://opera.inode.at/${MASTER_SITES_VER_PATH}/ \
@@ -16,10 +16,10 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.${ARCH}.freebsd
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
-RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
+BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:misc/shared-mime-info
+RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:misc/shared-mime-info
 
 BUNDLE_LIBS=	yes
 
@@ -42,7 +42,7 @@ NO_OPTIONS_SORT=yes
 CUPS_DESC=	support for printing (requires CUPS)
 VIDEO_DESC=	support for HTML5 video (requires GStreamer)
 
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 VIDEO_USE=	gstreamer=vorbis,ogg,theora,vp8,good
 GTK2_USE=	gnome=gtk20,libxml2
@@ -68,7 +68,7 @@ INSTALLS_ICONS=	yes
 OPERA_ARCH=	${ARCH:S,i386,intel,}
 
 .if ${OSVERSION} >= 1000054
-BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 PLIST_SUB+=	LIBSTDC=""
 .else
 PLIST_SUB+=	LIBSTDC="@comment "

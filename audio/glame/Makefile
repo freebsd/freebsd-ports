@@ -10,12 +10,12 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful, fast, stable, and easily extensible sound editor for GNOME
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libguile.so:${PORTSDIR}/lang/guile
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+LIB_DEPENDS=	libmp3lame.so:audio/lame \
+		libmad.so:audio/libmad \
+		libvorbis.so:audio/libvorbis \
+		libltdl.so:devel/libltdl \
+		libguile.so:lang/guile
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"

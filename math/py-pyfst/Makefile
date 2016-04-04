@@ -12,7 +12,7 @@ COMMENT=	Python interface for the OpenFST library
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libfst.so:${PORTSDIR}/math/openfst
+LIB_DEPENDS=	libfst.so:math/openfst
 
 BROKEN=	does not build
 

@@ -1,0 +1,7 @@
+************************************************************************
+Add the following lines to %%PREFIX%%/etc/mcollective/server.cfg to
+enable the mcollective-actionpolicy-auth plugin:
+
+rpcauthorization = 1
+rpcauthprovider = action_policy
+************************************************************************

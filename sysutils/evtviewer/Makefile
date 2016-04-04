@@ -12,6 +12,7 @@ COMMENT=	Ms event log viewer
 
 LICENSE=	GPLv2
 
+NO_ARCH=	yes
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	evtViewer
 NO_BUILD=	yes

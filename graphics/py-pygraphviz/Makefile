@@ -11,8 +11,8 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to GraphViz agraph
 
 
-LIB_DEPENDS=	libcgraph.so:${PORTSDIR}/graphics/graphviz
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.1:${PORTSDIR}/devel/py-nose
+LIB_DEPENDS=	libcgraph.so:graphics/graphviz
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.1:devel/py-nose
 
 USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent distutils

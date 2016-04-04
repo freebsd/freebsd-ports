@@ -13,12 +13,12 @@ COMMENT=	Simple subroutine alias
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare \
-		p5-Devel-BeginLift>=0:${PORTSDIR}/devel/p5-Devel-BeginLift
-RUN_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare \
-		p5-Devel-BeginLift>=0:${PORTSDIR}/devel/p5-Devel-BeginLift
+BUILD_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
+		p5-Devel-Declare>=0:devel/p5-Devel-Declare \
+		p5-Devel-BeginLift>=0:devel/p5-Devel-BeginLift
+RUN_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
+		p5-Devel-Declare>=0:devel/p5-Devel-Declare \
+		p5-Devel-BeginLift>=0:devel/p5-Devel-BeginLift
 
 USES=		perl5
 USE_PERL5=	configure

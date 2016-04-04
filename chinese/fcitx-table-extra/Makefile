@@ -12,7 +12,7 @@ COMMENT=	Table-based input methods for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx
 
 USES=		tar:xz cmake gettext
 INSTALLS_ICONS=	yes

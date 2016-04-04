@@ -1,6 +1,7 @@
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Bcrypt.Base64.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Bcrypt.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Config.beam
+lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Otp.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Pbkdf2.Base64.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Pbkdf2.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Tools.beam
@@ -10,6 +11,7 @@ lib/elixir/lib/comeonin/lib/comeonin.ex
 lib/elixir/lib/comeonin/lib/comeonin/bcrypt.ex
 lib/elixir/lib/comeonin/lib/comeonin/bcrypt/base64.ex
 lib/elixir/lib/comeonin/lib/comeonin/config.ex
+lib/elixir/lib/comeonin/lib/comeonin/otp.ex
 lib/elixir/lib/comeonin/lib/comeonin/pbkdf2.ex
 lib/elixir/lib/comeonin/lib/comeonin/pbkdf2/base64.ex
 lib/elixir/lib/comeonin/lib/comeonin/tools.ex

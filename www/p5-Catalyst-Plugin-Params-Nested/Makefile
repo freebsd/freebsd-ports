@@ -14,10 +14,10 @@ COMMENT=	Nested params (ala Ruby on Rails or PHP-style param arrays)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI-Expand>=1.06:${PORTSDIR}/www/p5-CGI-Expand \
-		p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
+BUILD_DEPENDS=	p5-CGI-Expand>=1.06:www/p5-CGI-Expand \
+		p5-Catalyst-Runtime>=5.7000:www/p5-Catalyst-Runtime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
+TEST_DEPENDS=	p5-Test-MockObject>=0:devel/p5-Test-MockObject
 
 USES=		perl5
 USE_PERL5=	configure

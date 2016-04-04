@@ -1,0 +1,11 @@
+--- src/wscript.orig	2015-09-23 19:28:42 UTC
++++ src/wscript
+@@ -436,7 +436,7 @@ def apply(self):
+     output_node = self.path.find_or_declare(output_filename)
+     assert output_node is not None, str(self)
+     task = self.create_task('ns3pcfile')
+-    self.bld.install_files('${LIBDIR}/pkgconfig', output_node)
++    self.bld.install_files('${LIBDIR}data/pkgconfig', output_node)
+     task.set_outputs([output_node])
+     task.module = module
+ 

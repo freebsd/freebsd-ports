@@ -1523,7 +1523,7 @@ CO_ENV+=		STAGEDIR=${STAGEDIR} \
 				PORTSDIR="${PORTSDIR}"
 
 .if defined(X_BUILD_FOR)
-BUILD_DEPENDS+=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
+BUILD_DEPENDS+=	${X_BUILD_FOR}-cc:devel/${X_BUILD_FOR}-xdev
 PKG_ENV+=		ABI_FILE=${X_SYSROOT}/usr/lib/crt1.o
 MAKE_ENV+=		NM=${NM} \
 				STRIPBIN=${X_BUILD_FOR}-strip \
@@ -1629,7 +1629,7 @@ CONFIGURE_ENV+=	SHELL=${CONFIGURE_SHELL} CONFIG_SHELL=${CONFIGURE_SHELL}
 MAKE_ENV+=		SHELL=${MAKE_SHELL} NO_LINT=YES
 
 .if defined(PATCHFILES) && ${PATCHFILES:M*.zip}
-PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:archivers/unzip
 .endif
 
 # Check the compatibility layer for amd64/ia64
@@ -1669,7 +1669,7 @@ PKG_ORIGIN=		ports-mgmt/pkg-devel
 .endif
 
 .if !defined(PKG_DEPENDS) && !defined(CLEAN_FETCH_ENV)
-PKG_DEPENDS+=	${LOCALBASE}/sbin/pkg:${PORTSDIR}/${PKG_ORIGIN}
+PKG_DEPENDS+=	${LOCALBASE}/sbin/pkg:${PKG_ORIGIN}
 .endif
 
 .if defined(USE_GCC)
@@ -1677,7 +1677,7 @@ PKG_DEPENDS+=	${LOCALBASE}/sbin/pkg:${PORTSDIR}/${PKG_ORIGIN}
 .endif
 
 .if defined(USE_BINUTILS) && !defined(DISABLE_BINUTILS)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BINUTILS?=	ADDR2LINE AR AS CPPFILT GPROF LD NM OBJCOPY OBJDUMP RANLIB \
 	READELF SIZE STRINGS
 BINUTILS_NO_MAKE_ENV?=
@@ -1742,13 +1742,13 @@ USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 # don't forget to update the Handbook!
 
 .	if exists(${PORTSDIR}/emulators/linux_base-${USE_LINUX})
-LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
+LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:emulators/linux_base-${USE_LINUX}
 .	else
 .		if ${USE_LINUX:tl} == "yes"
 USE_LINUX=	c6
-LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-c6
+LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:emulators/linux_base-c6
 .		elif ${USE_LINUX} == "c6_64"
-LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-c6
+LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:emulators/linux_base-c6
 .		else
 IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT
 .		endif
@@ -1772,19 +1772,19 @@ RUN_DEPENDS+=	${LINUX_BASE_PORT}
 
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
-_GL_gbm_LIB_DEPENDS=		libgbm.so:${PORTSDIR}/graphics/gbm
-_GL_glesv2_BUILD_DEPENDS=		libglesv2>0:${PORTSDIR}/graphics/libglesv2
-_GL_glesv2_RUN_DEPENDS=		libglesv2>0:${PORTSDIR}/graphics/libglesv2
-_GL_egl_BUILD_DEPENDS=		libEGL>0:${PORTSDIR}/graphics/libEGL
-_GL_egl_RUN_DEPENDS=		libEGL>0:${PORTSDIR}/graphics/libEGL
-_GL_gl_BUILD_DEPENDS=		libGL>0:${PORTSDIR}/graphics/libGL
-_GL_gl_RUN_DEPENDS=		libGL>0:${PORTSDIR}/graphics/libGL
+_GL_gbm_LIB_DEPENDS=		libgbm.so:graphics/gbm
+_GL_glesv2_BUILD_DEPENDS=		libglesv2>0:graphics/libglesv2
+_GL_glesv2_RUN_DEPENDS=		libglesv2>0:graphics/libglesv2
+_GL_egl_BUILD_DEPENDS=		libEGL>0:graphics/libEGL
+_GL_egl_RUN_DEPENDS=		libEGL>0:graphics/libEGL
+_GL_gl_BUILD_DEPENDS=		libGL>0:graphics/libGL
+_GL_gl_RUN_DEPENDS=		libGL>0:graphics/libGL
 _GL_gl_USE_XORG=		glproto dri2proto
-_GL_glew_LIB_DEPENDS=		libGLEW.so:${PORTSDIR}/graphics/glew
-_GL_glu_LIB_DEPENDS=		libGLU.so:${PORTSDIR}/graphics/libGLU
+_GL_glew_LIB_DEPENDS=		libGLEW.so:graphics/glew
+_GL_glu_LIB_DEPENDS=		libGLU.so:graphics/libGLU
 _GL_glu_USE_XORG=		glproto dri2proto
-_GL_glw_LIB_DEPENDS=		libGLw.so:${PORTSDIR}/graphics/libGLw
-_GL_glut_LIB_DEPENDS=		libglut.so:${PORTSDIR}/graphics/freeglut
+_GL_glw_LIB_DEPENDS=		libGLw.so:graphics/libGLw
+_GL_glut_LIB_DEPENDS=		libglut.so:graphics/freeglut
 
 .if defined(USE_GL)
 . if ${USE_GL:tl} == "yes"
@@ -1848,7 +1848,7 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 .endif
 
 .if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
-	defined(USE_BDB) || defined(USE_SQLITE) || defined(USE_FIREBIRD)
+	defined(USE_BDB)  || defined(USE_SQLITE) || defined(USE_FIREBIRD)
 .include "${PORTSDIR}/Mk/bsd.database.mk"
 .endif
 
@@ -2651,7 +2651,7 @@ INFO_PATH?=	info
 .endif
 
 .if defined(INFO)
-RUN_DEPENDS+=	indexinfo:${PORTSDIR}/print/indexinfo
+RUN_DEPENDS+=	indexinfo:print/indexinfo
 
 . for D in ${INFO:H}
 RD:=	${D}
@@ -3428,7 +3428,7 @@ check-install-conflicts:
 .if defined(DEFER_CONFLICTS_CHECK)
 	@conflicts_with=$$( \
 	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
-	       	| while read pkgname prfx orgn; do \
+			| while read pkgname prfx orgn; do \
 		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
 			${ECHO_CMD} -n " $${pkgname}"; \
 		fi; \
@@ -3446,7 +3446,7 @@ check-install-conflicts:
 .else
 	@conflicts_with=$$( \
 	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
-	       	| while read pkgname prfx orgn; do \
+			| while read pkgname prfx orgn; do \
 		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
 			${ECHO_CMD} -n " $${pkgname}"; \
 		fi; \
@@ -3524,6 +3524,9 @@ do-package: ${TMPPLIST}
 				fi ; \
 				${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
 			fi; \
+		elif [ ! -d ${PACKAGES} ]; then \
+			${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
+				|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}; \
 		fi; \
 	else \
 		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
@@ -4009,13 +4012,14 @@ fetch-list:
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi; \
+			${ECHO_CMD} -n ${MKDIR} ${_DISTDIR} '&& ' ; \
+			${ECHO_CMD} -n cd ${_DISTDIR} '&& { ' ; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				if [ ! -z "`${ECHO_CMD} ${NOFETCHFILES} | ${GREP} -w $${file}`" ]; then \
 					if [ -z "`${ECHO_CMD} ${MASTER_SITE_OVERRIDE} | ${GREP} -w $${site}`" ]; then \
 						continue; \
 					fi; \
 				fi; \
-				DIR=${DIST_SUBDIR};\
 				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
@@ -4023,7 +4027,7 @@ fetch-list:
 				esac; \
 				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched" ; \
+			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched; }" ; \
 		fi; \
 	done)
 .if defined(PATCHFILES)
@@ -4051,6 +4055,8 @@ fetch-list:
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi; \
+			${ECHO_CMD} -n ${MKDIR} ${_DISTDIR} '&& ' ; \
+			${ECHO_CMD} -n cd ${_DISTDIR} '&& { ' ; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
 				case $${file} in \
@@ -4059,7 +4065,7 @@ fetch-list:
 				esac; \
 				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched" ; \
+			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched; }" ; \
 		fi; \
 	 done)
 .endif
@@ -4419,7 +4425,7 @@ fetch-recursive-list:
 
 # Used by fetch-required and fetch-required list, this script looks
 # at each of the dependencies. If 3 items are specified in the tuple,
-# such as foo:${PORTSDIR}/graphics/foo:extract, the first item (foo)
+# such as foo:graphics/foo:extract, the first item (foo)
 # is examined. Only if it begins with a / and does not exist on the
 # file-system will ``make targ'' proceed.
 # For more usual (dual-item) dependency tuples, the ``make targ''

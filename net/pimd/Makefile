@@ -1,22 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	pimd
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.2
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Lightweight stand-alone PIM-SM v2 multicast routing daemon
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	troglobit
+GH_PROJECT=	libite:libite
+GH_TAGNAME=	v1.4.4:libite
 
 USES=		tar:bzip2
-HAS_CONFIGURE=	yes
+USE_RC_SUBR=	${PORTNAME}
 
-post-patch:
-	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/pathnames.h
+HAS_CONFIGURE=	yes
+MAKE_ARGS+=	prefix="${PREFIX}" sysconfdir="${PREFIX}/etc/"
+
+post-extract:
+	cd ${WRKSRC} && ${RMDIR} libite && \
+	${MV} ${WRKSRC_libite} ${WRKSRC}/libite
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pimd ${STAGEDIR}${PREFIX}/sbin/

@@ -1,29 +1,3 @@
---- base/allocator/allocator_extension.cc   2015-04-15 00:18:47.000000000 +0200
-+++ base/allocator/allocator_extension.cc   2015-04-18 21:44:25.000000000 +0200
-@@ -35,20 +35,20 @@
- void SetGetAllocatorWasteSizeFunction(
-     thunks::GetAllocatorWasteSizeFunction get_allocator_waste_size_function) {
-   DCHECK_EQ(thunks::GetGetAllocatorWasteSizeFunction(),
--            reinterpret_cast<thunks::GetAllocatorWasteSizeFunction>(NULL));
-+            static_cast<thunks::GetAllocatorWasteSizeFunction>(NULL));
-   thunks::SetGetAllocatorWasteSizeFunction(get_allocator_waste_size_function);
- }
- 
- void SetGetStatsFunction(thunks::GetStatsFunction get_stats_function) {
-   DCHECK_EQ(thunks::GetGetStatsFunction(),
--            reinterpret_cast<thunks::GetStatsFunction>(NULL));
-+            static_cast<thunks::GetStatsFunction>(NULL));
-   thunks::SetGetStatsFunction(get_stats_function);
- }
- 
- void SetReleaseFreeMemoryFunction(
-     thunks::ReleaseFreeMemoryFunction release_free_memory_function) {
-   DCHECK_EQ(thunks::GetReleaseFreeMemoryFunction(),
--            reinterpret_cast<thunks::ReleaseFreeMemoryFunction>(NULL));
-+            static_cast<thunks::ReleaseFreeMemoryFunction>(NULL));
-   thunks::SetReleaseFreeMemoryFunction(release_free_memory_function);
- }
- 
 --- base/strings/safe_sprintf_unittest.cc   2015-04-15 00:18:48.000000000 +0200
 +++ base/strings/safe_sprintf_unittest.cc   2015-04-18 22:08:45.000000000 +0200
 @@ -729,12 +729,14 @@
@@ -77,24 +51,6 @@
    }
  
    // Helper function to verify the most common test expectations.
-@@ -240,7 +240,7 @@
-   ThreadData::InitializeAndSetTrackingStatus(ThreadData::PROFILING_ACTIVE);
- 
-   scoped_ptr<DeathData> data(new DeathData());
--  ASSERT_NE(data, reinterpret_cast<DeathData*>(NULL));
-+  ASSERT_NE(data, static_cast<DeathData*>(NULL));
-   EXPECT_EQ(data->run_duration_sum(), 0);
-   EXPECT_EQ(data->run_duration_max(), 0);
-   EXPECT_EQ(data->run_duration_sample(), 0);
-@@ -279,7 +279,7 @@
-   ThreadData::InitializeAndSetTrackingStatus(ThreadData::PROFILING_ACTIVE);
- 
-   scoped_ptr<DeathData> data(new DeathData());
--  ASSERT_NE(data, reinterpret_cast<DeathData*>(NULL));
-+  ASSERT_NE(data, static_cast<DeathData*>(NULL));
- 
-   int32 run_ms = 42;
-   int32 queue_ms = 8;
 --- components/sync_sessions/synced_session_tracker.cc.orig	2016-01-21 13:04:41.772845558 +0100
 +++ components/sync_sessions/synced_session_tracker.cc	2016-01-21 13:05:17.652842509 +0100
 @@ -286,7 +286,7 @@

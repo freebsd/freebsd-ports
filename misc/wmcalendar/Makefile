@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Dockable calendar with interface to iCalendar based calendars
 
-LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical
+LIB_DEPENDS=	libical.so:devel/libical
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 

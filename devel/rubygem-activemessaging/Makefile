@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Event-driven architecture for rails
 
-RUN_DEPENDS=	rubygem-activesupport>=2.3.11:${PORTSDIR}/devel/rubygem-activesupport
+RUN_DEPENDS=	rubygem-activesupport>=2.3.11:devel/rubygem-activesupport
 
 NO_ARCH=	yes
 

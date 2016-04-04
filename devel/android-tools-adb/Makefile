@@ -58,7 +58,7 @@ BASH_VARS=		LICENSE+=MIT LICENSE_COMB=multi
 
 DOCS_MAKE_ARGS_OFF=	FILES="" FILESDIR=""
 
-TEST_BUILD_DEPENDS=	googletest>=1.6.0:${PORTSDIR}/devel/googletest
+TEST_BUILD_DEPENDS=	googletest>=1.6.0:devel/googletest
 TEST_ALL_TARGET=	adb_test
 
 pre-install-TEST-on: do-test

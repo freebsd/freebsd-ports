@@ -13,7 +13,7 @@ COMMENT=	Parse and decompose domain names into TLD, domain, and subdomains
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PATCH_DEPENDS=	public_suffix_list>=0:${PORTSDIR}/dns/public_suffix_list
+PATCH_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
 
 NO_ARCH=	yes
 USE_RUBY=	yes

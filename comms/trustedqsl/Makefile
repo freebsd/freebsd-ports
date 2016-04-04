@@ -15,7 +15,7 @@ LICENSE_NAME=	American Radio Relay League, Inc. All rights reserved.
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_BDB=	5+
 

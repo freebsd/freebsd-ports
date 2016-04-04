@@ -39,8 +39,8 @@ BACKTRACE_VARS=			STRIP= # empty
 OPENGL_USE=			GL=gl
 OPENGL_CONFIGURE_ENABLE=	opengl
 
-SOUND_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-				libogg.so:${PORTSDIR}/audio/libogg
+SOUND_LIB_DEPENDS=		libvorbis.so:audio/libvorbis \
+				libogg.so:audio/libogg
 SOUND_CONFIGURE_ENABLE=		sound
 SOUND_USE=			SDL=mixer
 NLS_USES=			gettext

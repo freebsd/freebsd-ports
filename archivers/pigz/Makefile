@@ -13,7 +13,7 @@ COMMENT=	Parallel GZIP
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libzopfli.so:${PORTSDIR}/archivers/zopfli
+LIB_DEPENDS=	libzopfli.so:archivers/zopfli
 
 USES=		cpe gmake localbase
 CPE_VENDOR=	zlib

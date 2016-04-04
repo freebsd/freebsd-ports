@@ -15,7 +15,7 @@ COMMENT=	Open-source continuous integration server
 
 LICENSE=	MIT
 
-CONFLICTS=	jenkins-[0-9]*
+CONFLICTS=	jenkins-[0-9]* jenkins2-[0-9]*
 USE_JAVA=	yes
 
 NO_BUILD=	yes

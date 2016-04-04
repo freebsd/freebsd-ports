@@ -1,0 +1,20 @@
+# Created by: Tom Judge <tj@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	sudo
+PORTVERSION=	1.2.0
+CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
+DISTNAME=	django-${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	tj@FreeBSD.org
+COMMENT=	Sudo mode is an extra layer of security for Django
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18
+
+USES=		python
+USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

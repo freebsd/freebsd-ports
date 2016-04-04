@@ -12,7 +12,7 @@ COMMENT=	Qt fluidsynth front-end application
 LICENSE=	GPLv2+
 #LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
 USES=		gmake
 QT_NONSTANDARD=	yes

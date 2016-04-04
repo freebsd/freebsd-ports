@@ -35,7 +35,8 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
+PORTREVISION=	1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
@@ -69,7 +70,7 @@ OPTIONS_DEFINE=		DBUS DEBUG GUI IPV6 NLS PORTABILITY TLS
 OPTIONS_DEFAULT=	GUI TLS
 OPTIONS_SUB=		yes
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_OFF=	-Ud_dbus
 DEBUG_CONFIGURE_ON=	-Ud_official
 GUI_USE=		gnome=gtk20
@@ -80,7 +81,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	-Ud_nls
 PORTABILITY_DESC=	Use the PATH variable at run-time
 PORTABILITY_CONFIGURE_ON=	-Dd_portable
-TLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+TLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 TLS_CONFIGURE_OFF=	-Ud_gnutls
 
 .if !defined(INTERACTIVE_CONFIGURE)

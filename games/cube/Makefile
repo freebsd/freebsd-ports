@@ -11,7 +11,7 @@ DISTFILES=	${CUBE_DATA} ${CUBE_SRC}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL 3D FPS (first person shooter) game
 
-LIB_DEPENDS=	libenet.so:${PORTSDIR}/net/enet
+LIB_DEPENDS=	libenet.so:net/enet
 
 USES=		dos2unix gmake
 EXTRACT_AFTER_ARGS=--exclude enet

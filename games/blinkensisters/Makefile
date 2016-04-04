@@ -47,7 +47,7 @@ SDL_NET_PLIST_FILES=	bin/blpmatrix \
 			bin/mcufviewer
 
 THEORA_CMAKE_ON=	-DUSE_THEORA:BOOL=ON
-THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 
 .include <bsd.port.options.mk>
 

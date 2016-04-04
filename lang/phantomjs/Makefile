@@ -11,12 +11,12 @@ COMMENT=	Minimalistic, headless, WebKit-based, JavaScript-driven tool
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libicui18n.so:${PORTSDIR}/devel/icu \
-		libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	bash:shells/bash \
+		python:lang/python
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libicui18n.so:devel/icu \
+		libpng.so:graphics/png
 
 PROJECTHOST=	phantomjs
 USES=		bison:build compiler gmake gperf jpeg perl5 pkgconfig python:build zip

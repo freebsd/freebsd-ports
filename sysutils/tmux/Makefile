@@ -33,8 +33,8 @@ BACKSPACE_DESC=	Build with tty/keys patch
 
 BACKSPACE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tty-keys.c
 
-LIBEVENT_STATIC_LIB_DEPENDS_OFF=	libevent.so:${PORTSDIR}/devel/libevent2
-LIBEVENT_STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent2
+LIBEVENT_STATIC_LIB_DEPENDS_OFF=	libevent.so:devel/libevent2
+LIBEVENT_STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:devel/libevent2
 LIBEVENT_STATIC_VARS=	LESTATIC=${LOCALBASE}/lib/libevent.a
 
 post-patch:

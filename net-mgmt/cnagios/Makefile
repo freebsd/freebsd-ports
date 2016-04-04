@@ -10,7 +10,7 @@ COMMENT=	Curses-based interface for nagios
 
 LICENSE=	ISCL
 
-RUN_DEPENDS=	nagios>=3.0:${PORTSDIR}/net-mgmt/nagios
+RUN_DEPENDS=	nagios>=3.0:net-mgmt/nagios
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dannywarren

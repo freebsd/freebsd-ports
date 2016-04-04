@@ -11,8 +11,8 @@ COMMENT=	Set of client tools to use with Review Board
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.8.0:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.8.0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 ORIGNAME=	RBTools
 

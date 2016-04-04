@@ -13,8 +13,8 @@ COMMENT=	Model to synchronize multiple instances over DBus
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libicutu.so:${PORTSDIR}/devel/icu
+BUILD_DEPENDS=	vapigen:lang/vala
+LIB_DEPENDS=	libicutu.so:devel/icu
 
 USES=		gmake libtool pkgconfig pathfix python:2
 GNU_CONFIGURE=	yes

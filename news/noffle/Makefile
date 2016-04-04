@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28devel%29/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News server for low speed dial-up connections
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 GNU_CONFIGURE=	yes
 

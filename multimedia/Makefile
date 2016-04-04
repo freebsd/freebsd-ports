@@ -173,6 +173,7 @@
     SUBDIR += libcec
     SUBDIR += libdc1394
     SUBDIR += libdca
+    SUBDIR += libdcadec
     SUBDIR += libde265
     SUBDIR += libdv
     SUBDIR += libdvbcsa
@@ -301,6 +302,7 @@
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += plexpy
+    SUBDIR += plexwatch
     SUBDIR += podcastdl
     SUBDIR += poe
     SUBDIR += ppm2fli
@@ -373,6 +375,7 @@
     SUBDIR += subtitleripper
     SUBDIR += subtools
     SUBDIR += swfdec-gnome
+    SUBDIR += syncplay
     SUBDIR += szap-s2
     SUBDIR += tcmplex-panteltje
     SUBDIR += tivodecode

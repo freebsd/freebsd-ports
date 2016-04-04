@@ -11,10 +11,10 @@ COMMENT=	Simple session manager for the ROX desktop
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
-		${PYTHON_PKGNAMEPREFIX}roxlib>=0:${PORTSDIR}/devel/py-roxlib \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
+		${PYTHON_PKGNAMEPREFIX}roxlib>=0:devel/py-roxlib \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus
 
 WRKSRC=		${WRKDIR}/ROX-Session
 DATADIR=	${PREFIX}/apps/ROX-Session
@@ -31,7 +31,7 @@ GDM_DESC=	Install GDM login manager
 
 SUB_FILES=	${PORTNAME} rox.desktop
 
-GDM_RUN_DEPENDS=${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
+GDM_RUN_DEPENDS=${LOCALBASE}/sbin/gdm:x11/gdm
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete

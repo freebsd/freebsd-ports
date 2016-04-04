@@ -12,7 +12,7 @@ COMMENT=	Lumina desktop environment localization files
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	lumina>=0:${PORTSDIR}/x11/lumina
+RUN_DEPENDS=	lumina>=0:x11/lumina
 
 USES=		tar:xz
 NO_BUILD=	yes

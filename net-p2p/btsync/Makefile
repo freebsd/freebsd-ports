@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	btsync
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.6
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://download-cdn.getsyncapp.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/ \
 		http://download-cdn.getsyncapp.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/

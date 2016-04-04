@@ -12,7 +12,7 @@ COMMENT=	Tcl/Tk frontends to Perforce's p4
 
 OPTIONS_DEFINE=	DOCS
 
-RUN_DEPENDS=	p4:${PORTSDIR}/devel/p4
+RUN_DEPENDS=	p4:devel/p4
 
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""

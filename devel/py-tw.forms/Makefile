@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Web Widgets for building and validating forms
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0:${PORTSDIR}/devel/py-ToscaWidgets \
-		${PYTHON_PKGNAMEPREFIX}formencode>=0:${PORTSDIR}/www/py-formencode
-RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0:${PORTSDIR}/devel/py-ToscaWidgets \
-		${PYTHON_PKGNAMEPREFIX}formencode>=0:${PORTSDIR}/www/py-formencode
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0:devel/py-ToscaWidgets \
+		${PYTHON_PKGNAMEPREFIX}formencode>=0:www/py-formencode
+RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0:devel/py-ToscaWidgets \
+		${PYTHON_PKGNAMEPREFIX}formencode>=0:www/py-formencode
 
 USES=		python
 USE_PYTHON=	distutils autoplist

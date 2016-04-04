@@ -1,5 +1,5 @@
---- src/findlib/Makefile.orig	2015-10-25 12:46:54 UTC
-+++ src/findlib/Makefile
+--- src/findlib/Makefile.orig	2016-03-07 14:46:34.000000000 +0100
++++ src/findlib/Makefile	2016-03-10 22:51:25.362057000 +0100
 @@ -19,6 +19,7 @@ OCAMLDEP = ocamldep
  OCAMLLEX = ocamllex
  #CAMLP4O =  camlp4 pa_o.cmo pa_op.cmo pr_o.cmo --

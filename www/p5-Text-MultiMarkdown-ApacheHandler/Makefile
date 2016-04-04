@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for processing files with MultiMarkdown syntax for Apache
 
-BUILD_DEPENDS=	p5-Text-MultiMarkdown>=0:${PORTSDIR}/textproc/p5-Text-MultiMarkdown \
-    		p5-Text-Typography>=0:${PORTSDIR}/textproc/p5-Text-Typography \
-		${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS=	p5-Text-MultiMarkdown>=0:textproc/p5-Text-MultiMarkdown \
+		p5-Text-Typography>=0:textproc/p5-Text-Typography \
+		${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_APACHE_RUN=	22+

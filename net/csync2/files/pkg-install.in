@@ -1,9 +1,5 @@
 #!/bin/sh
 
-: ${PREFIX:="%%PREFIX%%"}
-: ${CSYNC2_DBDIR:="/var/db/csync2"}
-: ${CSYNC2_BACKUPDIR:="/var/backups/csync2"}
-
 create_cert() {
 
 	_errlog=`mktemp /tmp/.${0##*/}.XXXXX`
@@ -11,12 +7,12 @@ create_cert() {
 
 	exec 3>&2 2>${_errlog}
 
-	openssl genrsa -out ${PREFIX}/etc/csync2_ssl_key.pem 1024 || code=1
-	yes '' | openssl req -new -key ${PREFIX}/etc/csync2_ssl_key.pem \
+	openssl genrsa -out ${PKG_PREFIX}/etc/csync2_ssl_key.pem 1024 || code=1
+	yes '' | openssl req -new -key ${PKG_PREFIX}/etc/csync2_ssl_key.pem \
 		-out /tmp/csync2_ssl_cert.csr || code=1
 	openssl x509 -req -days 600 -in /tmp/csync2_ssl_cert.csr \
-		-signkey ${PREFIX}/etc/csync2_ssl_key.pem \
-		-out ${PREFIX}/etc/csync2_ssl_cert.pem || code=1
+		-signkey ${PKG_PREFIX}/etc/csync2_ssl_key.pem \
+		-out ${PKG_PREFIX}/etc/csync2_ssl_cert.pem || code=1
 
 	rm -f /tmp/csync2_ssl_cert.csr
 
@@ -33,8 +29,8 @@ create_cert() {
 
 	rm -f ${_errlog}
 
-	chmod 600 ${PREFIX}/etc/csync2_ssl_key.pem \
-		${PREFIX}/etc/csync2_ssl_cert.pem
+	chmod 600 ${PKG_PREFIX}/etc/csync2_ssl_key.pem \
+		${PKG_PREFIX}/etc/csync2_ssl_cert.pem
 
 	echo "csync2: RSA certificate-key pair installed."
 
@@ -49,11 +45,7 @@ post_install() {
 
 	[ -n "${PACKAGE_BUILDING}" ] && return 0
 
-	for _dir in ${CSYNC2_DBDIR} ${CSYNC2_BACKUPDIR}; do
-		[ ! -d ${_dir} ] && mkdir -p -m 700 ${_dir}
-	done
-
-	if [ ! -f ${PREFIX}/etc/csync2_ssl_cert.pem ]; then
+	if [ ! -f ${PKG_PREFIX}/etc/csync2_ssl_cert.pem ]; then
 		create_cert || return $?
 	fi
 

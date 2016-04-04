@@ -11,7 +11,7 @@ COMMENT=	IMAP mail filtering utility
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		lua
 USE_OPENSSL=	yes

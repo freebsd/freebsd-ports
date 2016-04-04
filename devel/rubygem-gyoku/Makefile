@@ -12,7 +12,7 @@ COMMENT=	Library for translating Ruby hashes to XML
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-builder32>=2.1.2:${PORTSDIR}/devel/rubygem-builder32
+RUN_DEPENDS=	rubygem-builder32>=2.1.2:devel/rubygem-builder32
 
 NO_ARCH=	yes
 

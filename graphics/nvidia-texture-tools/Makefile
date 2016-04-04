@@ -11,9 +11,9 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Texture Tools with support for DirectX 10 texture formats
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libIlmImf.so:graphics/OpenEXR
 
 BROKEN_ia64=	does not build
 BROKEN_powerpc=	does not build

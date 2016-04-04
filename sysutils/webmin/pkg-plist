@@ -980,11 +980,12 @@ lib/webmin/at/save_allow.cgi
 lib/webmin/at/solaris-lib.pl
 lib/webmin/authentic-theme/LICENSE
 lib/webmin/authentic-theme/VERSION.txt
-lib/webmin/authentic-theme/authentic-lib.cgi
-lib/webmin/authentic-theme/authentic.pl
-lib/webmin/authentic-theme/buttons.cgi
-lib/webmin/authentic-theme/changelog.pl
+lib/webmin/authentic-theme/authentic-lib.pm
+lib/webmin/authentic-theme/authentic.pm
+lib/webmin/authentic-theme/buttons.pm
+lib/webmin/authentic-theme/changelog.pm
 lib/webmin/authentic-theme/config
+lib/webmin/authentic-theme/help/file-manager.html
 lib/webmin/authentic-theme/images/__blank.gif
 lib/webmin/authentic-theme/images/__logo.png
 lib/webmin/authentic-theme/images/after.gif
@@ -1768,7 +1769,9 @@ lib/webmin/authentic-theme/images/usage-unix.gif
 lib/webmin/authentic-theme/images/usage-web.gif
 lib/webmin/authentic-theme/images/use.gif
 lib/webmin/authentic-theme/images/users.gif
+lib/webmin/authentic-theme/images/white.gif
 lib/webmin/authentic-theme/index.cgi
+lib/webmin/authentic-theme/lang/ca
 lib/webmin/authentic-theme/lang/cz
 lib/webmin/authentic-theme/lang/cz.UTF-8
 lib/webmin/authentic-theme/lang/da
@@ -1802,14 +1805,14 @@ lib/webmin/authentic-theme/lib/JSON/backportPP.pm
 lib/webmin/authentic-theme/lib/JSON/backportPP/Boolean.pm
 lib/webmin/authentic-theme/lib/JSON/backportPP/Compat5005.pm
 lib/webmin/authentic-theme/lib/JSON/backportPP/Compat5006.pm
-lib/webmin/authentic-theme/navigation.cgi
+lib/webmin/authentic-theme/navigation.pm
 lib/webmin/authentic-theme/session_login.cgi
 lib/webmin/authentic-theme/settings-editor_read.cgi
 lib/webmin/authentic-theme/settings-editor_write.cgi
 lib/webmin/authentic-theme/settings-favorites_save.cgi
 lib/webmin/authentic-theme/settings-upload.cgi
 lib/webmin/authentic-theme/settings-upload_save.cgi
-lib/webmin/authentic-theme/settings.cgi
+lib/webmin/authentic-theme/settings.pm
 lib/webmin/authentic-theme/sysinfo.cgi
 lib/webmin/authentic-theme/theme.info
 lib/webmin/authentic-theme/unauthenticated/css/authentic.css
@@ -1820,6 +1823,11 @@ lib/webmin/authentic-theme/unauthenticated/fonts/fontawesome-webfont.svg
 lib/webmin/authentic-theme/unauthenticated/fonts/fontawesome-webfont.ttf
 lib/webmin/authentic-theme/unauthenticated/fonts/fontawesome-webfont.woff
 lib/webmin/authentic-theme/unauthenticated/fonts/fontawesome-webfont.woff2
+lib/webmin/authentic-theme/unauthenticated/fonts/jsglyph.eot
+lib/webmin/authentic-theme/unauthenticated/fonts/jsglyph.svg
+lib/webmin/authentic-theme/unauthenticated/fonts/jsglyph.ttf
+lib/webmin/authentic-theme/unauthenticated/fonts/jsglyph.woff
+lib/webmin/authentic-theme/unauthenticated/fonts/jsglyph.woff2
 lib/webmin/authentic-theme/unauthenticated/fonts/roboto/1_sFLBJZ_MiiGcnkjN_Mgg.woff
 lib/webmin/authentic-theme/unauthenticated/fonts/roboto/7KXg6nyyqN8gyMoNwQ7aOQ.woff
 lib/webmin/authentic-theme/unauthenticated/fonts/roboto/El-bgsteBznJNL5pgUfFLA.woff2
@@ -1969,6 +1977,7 @@ lib/webmin/authentic-theme/unauthenticated/js/filtermatch.min.js
 lib/webmin/authentic-theme/unauthenticated/js/init.js
 lib/webmin/authentic-theme/unauthenticated/js/init.min.js
 lib/webmin/authentic-theme/unauthenticated/js/package.min.js
+lib/webmin/authentic-theme/unauthenticated/js/settings.js
 lib/webmin/authentic-theme/unauthenticated/js/timeplot.min.js
 lib/webmin/authentic-theme/unauthenticated/js/tinymce/langs/da.js
 lib/webmin/authentic-theme/unauthenticated/js/tinymce/langs/de.js
@@ -2206,6 +2215,8 @@ lib/webmin/bacula-backup/config.info.ms_MY
 lib/webmin/bacula-backup/config.info.ms_MY.UTF-8
 lib/webmin/bacula-backup/config.info.nl
 lib/webmin/bacula-backup/config.info.nl.UTF-8
+lib/webmin/bacula-backup/config.info.no
+lib/webmin/bacula-backup/config.info.no.UTF-8
 lib/webmin/bacula-backup/config.info.pl
 lib/webmin/bacula-backup/config.info.pl.UTF-8
 lib/webmin/bacula-backup/config.info.pt_BR
@@ -2466,6 +2477,8 @@ lib/webmin/bacula-backup/lang/ms_MY
 lib/webmin/bacula-backup/lang/ms_MY.UTF-8
 lib/webmin/bacula-backup/lang/nl
 lib/webmin/bacula-backup/lang/nl.UTF-8
+lib/webmin/bacula-backup/lang/no
+lib/webmin/bacula-backup/lang/no.UTF-8
 lib/webmin/bacula-backup/lang/pl
 lib/webmin/bacula-backup/lang/pl.UTF-8
 lib/webmin/bacula-backup/lang/pt_BR
@@ -7669,6 +7682,9 @@ lib/webmin/filemin/compress.cgi
 lib/webmin/filemin/config
 lib/webmin/filemin/config.cgi
 lib/webmin/filemin/config.info
+lib/webmin/filemin/config.info.ca
+lib/webmin/filemin/config.info.ca.UTF-8
+lib/webmin/filemin/config.info.de
 lib/webmin/filemin/copy.cgi
 lib/webmin/filemin/create_file.cgi
 lib/webmin/filemin/create_folder.cgi
@@ -7951,12 +7967,16 @@ lib/webmin/filemin/images/icons/quick/remove.png
 lib/webmin/filemin/images/icons/quick/rename.png
 lib/webmin/filemin/images/icons/quick/select-all.png
 lib/webmin/filemin/images/icons/quick/upload.png
+lib/webmin/filemin/images/smallicon.gif
 lib/webmin/filemin/index.cgi
 lib/webmin/filemin/lang/ca
 lib/webmin/filemin/lang/ca.UTF-8
+lib/webmin/filemin/lang/de
 lib/webmin/filemin/lang/de.UTF-8
 lib/webmin/filemin/lang/en
 lib/webmin/filemin/lang/en.UTF-8
+lib/webmin/filemin/lang/no
+lib/webmin/filemin/lang/no.UTF-8
 lib/webmin/filemin/lang/ru.UTF-8
 lib/webmin/filemin/lib/File/BaseDir.pm
 lib/webmin/filemin/lib/File/Basename.pm
@@ -8533,6 +8553,8 @@ lib/webmin/firewalld/config.info.ca
 lib/webmin/firewalld/config.info.ca.UTF-8
 lib/webmin/firewalld/config.info.de
 lib/webmin/firewalld/config.info.de.UTF-8
+lib/webmin/firewalld/config.info.no
+lib/webmin/firewalld/config.info.no.UTF-8
 lib/webmin/firewalld/create_zone.cgi
 lib/webmin/firewalld/default_zone.cgi
 lib/webmin/firewalld/delete_rules.cgi
@@ -8550,6 +8572,8 @@ lib/webmin/firewalld/lang/de
 lib/webmin/firewalld/lang/de.UTF-8
 lib/webmin/firewalld/lang/en
 lib/webmin/firewalld/lang/en.UTF-8
+lib/webmin/firewalld/lang/no
+lib/webmin/firewalld/lang/no.UTF-8
 lib/webmin/firewalld/log_parser.pl
 lib/webmin/firewalld/module.info
 lib/webmin/firewalld/open-ports.pl
@@ -11325,6 +11349,8 @@ lib/webmin/iscsi-tgtd/config.info.ca
 lib/webmin/iscsi-tgtd/config.info.ca.UTF-8
 lib/webmin/iscsi-tgtd/config.info.de
 lib/webmin/iscsi-tgtd/config.info.de.UTF-8
+lib/webmin/iscsi-tgtd/config.info.no
+lib/webmin/iscsi-tgtd/config.info.no.UTF-8
 lib/webmin/iscsi-tgtd/delete_targets.cgi
 lib/webmin/iscsi-tgtd/edit_manual.cgi
 lib/webmin/iscsi-tgtd/edit_target.cgi
@@ -11339,6 +11365,8 @@ lib/webmin/iscsi-tgtd/lang/de
 lib/webmin/iscsi-tgtd/lang/de.UTF-8
 lib/webmin/iscsi-tgtd/lang/en
 lib/webmin/iscsi-tgtd/lang/en.UTF-8
+lib/webmin/iscsi-tgtd/lang/no
+lib/webmin/iscsi-tgtd/lang/no.UTF-8
 lib/webmin/iscsi-tgtd/log_parser.pl
 lib/webmin/iscsi-tgtd/module.info
 lib/webmin/iscsi-tgtd/restart.cgi
@@ -24050,6 +24078,7 @@ lib/webmin/webmin-init
 lib/webmin/webmin-pam
 lib/webmin/webmin-search-lib.pl
 lib/webmin/webmin/CHANGELOG
+lib/webmin/webmin/acme_tiny.py
 lib/webmin/webmin/adminupgrade
 lib/webmin/webmin/backup_config.pl
 lib/webmin/webmin/bootup.cgi
@@ -24910,4 +24939,4 @@ lib/webmin/zones/zones-lib.pl
 @dir lib/webmin/mailboxes/xinha/plugins
 @dir lib/webmin/system-status/images
 @dir lib/webmin/webmincron/images
-@exec [ -d %D/etc/webmin ] && %D/lib/webmin/setup.sh || true
+@postexec [ -d %D/etc/webmin ] && %D/lib/webmin/setup.sh || true

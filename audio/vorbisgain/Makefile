@@ -13,7 +13,7 @@ COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
 OPTIONS_DEFINE=	RECURSIVE
 RECURSIVE_DESC=	recursive processing and pattern matching
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

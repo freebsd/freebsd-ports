@@ -7,28 +7,22 @@ PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}.pl/${PORTVERSION}
 DISTNAME=	${PORTNAME}.pl_${PORTVERSION}
-EXTRACT_SUFX=	.7z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Batch file renamer
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=7z:${PORTSDIR}/archivers/p7zip
-RUN_DEPENDS=	p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag \
-		p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
-		p5-Tk-JComboBox>=0:${PORTSDIR}/x11-toolkits/p5-Tk-JComboBox \
-		p5-Tk-DynaTabFrame>=0:${PORTSDIR}/x11-toolkits/p5-Tk-DynaTabFrame
-
-EXTRACT_CMD=	7z
-EXTRACT_BEFORE_ARGS=	x
-EXTRACT_AFTER_ARGS=	-bd -y >/dev/null 2>&1
+RUN_DEPENDS=	p5-MP3-Tag>=0:audio/p5-MP3-Tag \
+		p5-Tk>=0:x11-toolkits/p5-Tk \
+		p5-Tk-JComboBox>=0:x11-toolkits/p5-Tk-JComboBox \
+		p5-Tk-DynaTabFrame>=0:x11-toolkits/p5-Tk-DynaTabFrame
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.pl
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USES=		perl5 shebangfix
+USES=		7z perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	namefix-cli.pl namefix.pl
 

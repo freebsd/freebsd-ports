@@ -12,7 +12,7 @@ COMMENT=	Gems for cool.io
 LICENSE=	MIT
 
 RUN_DEPENDS=	\
-	rubygem-iobuffer>=1.0.0:${PORTSDIR}/devel/rubygem-iobuffer
+	rubygem-iobuffer>=1.0.0:devel/rubygem-iobuffer
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

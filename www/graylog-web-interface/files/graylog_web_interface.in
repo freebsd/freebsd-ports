@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# PROVIDE: graylog
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+
+# graylog_web_interface_enable (bool):
+#   Default value: "NO"
+#   Flag that determines whether graylog is enabled
+#
+# graylog_web_interface_user (username):
+#   Default value: "graylog"
+#   Name of the graylog user account
+#
+# graylog_web_interface_group (group):
+#   Default value: "graylog"
+#   Name of the graylog group
+#
+# graylog_web_interface_config (string)
+#   Default value %%ETCDIR%%/graylog-web-interface.conf
+#   Path to the graylog configuration file
+
+. /etc/rc.subr
+
+name=graylog_web_interface
+rcvar=graylog_web_interface_enable
+load_rc_config $name
+
+: ${graylog_web_interface_enable:="NO"}
+: ${graylog_web_interface_user:="%%GRAYLOGUSER%%"} 
+: ${graylog_web_interface_group:="%%GRAYLOGGROUP%%"}
+: ${graylog_web_interface_config:="%%LOCALBASE%%/etc/graylog-web-interface.conf"}
+
+pidfile=/var/run/${name}.pid
+command=/usr/sbin/daemon
+procname=`env JAVAVM_DRYRUN=true JAVA_VERSION=1.7+ %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -f 2 -d =`
+
+command_args="-p $pidfile -f %%LOCALBASE%%/bin/graylog-web-interface \
+              -Dconfig.file=${graylog_web_interface_config} \
+              -Dpidfile.path=/dev/null \
+              -Dlogger.file=%%LOCALBASE%%/etc/graylog-web-interface-logging.xml"
+
+start_precmd="graylog_web_interface_precmd"
+
+graylog_web_interface_precmd() {
+        touch ${pidfile}
+        chown ${graylog_web_interface_user}:${graylog_web_interface_group} ${pidfile}
+	mkdir -p /var/log/graylog/web/
+	chown ${graylog_web_interface_user}:${graylog_web_interface_group} /var/log/graylog/web/ 
+}
+
+run_rc_command "$1"

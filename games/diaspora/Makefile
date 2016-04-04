@@ -24,11 +24,11 @@ LICENSE_FILE_GPLv2=	${WRKDIR_DIASPORA}/wxlauncher/GPLv2.txt
 LICENSE_PERMS_CCBYNCSAv3=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 LICENSE_PERMS_VOLITION=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-LIB_DEPENDS+=	libjansson.so:${PORTSDIR}/devel/jansson \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	libjansson.so:devel/jansson \
+		libpng.so:graphics/png \
+		libogg.so:audio/libogg \
+		libvorbisfile.so:audio/libvorbis \
+		libtheora.so:multimedia/libtheora
 
 USES=	autoreconf jpeg lua:51 openal pkgconfig tar:lzma
 USE_GL=	yes
@@ -58,7 +58,7 @@ INCJOYBTNS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-increase_joy_buttons_fixed.pat
 SPEECH_DESC=	Text to speech
 SPEECH_CONFIGURE_ENABLE=	speech
 WXLAUNCHER_DESC=	Use wxlauncher to manage application profile
-WXLAUNCHER_RUN_DEPENDS=	wxlauncher:${PORTSDIR}/games/wxlauncher
+WXLAUNCHER_RUN_DEPENDS=	wxlauncher:games/wxlauncher
 
 .include <bsd.port.options.mk>
 

@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-02-18 11:34:25.000000000 -0500
-+++ Makefile.in	2014-04-16 12:45:51.000000000 -0500
+--- Makefile.in.orig	2016-02-14 00:52:59 UTC
++++ Makefile.in
 @@ -7,11 +7,8 @@
  
  VARRUN=		/opt/aprsc/logs	# directory for aprsc.state and pid-file
@@ -12,7 +12,7 @@
  
  # generate version strings
  VERSION:=$(shell cat VERSION)
-@@ -196,16 +193,13 @@
+@@ -197,16 +194,13 @@ aprsc.8 : % : %.in VERSION Makefile
  
  .PHONY:	install install-deb
  install: all

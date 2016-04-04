@@ -1,0 +1,8 @@
+include/SocketW.h
+include/sw_base.h
+include/sw_config.h
+include/sw_inet.h
+include/sw_internal.h
+include/sw_ssl.h
+include/sw_unix.h
+lib/libSocketW.a

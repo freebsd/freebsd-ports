@@ -12,7 +12,7 @@ COMMENT=	Library to use TrueType fonts to render text in SDL applications
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		pkgconfig:build pathfix gmake libtool
 USE_SDL=	sdl2

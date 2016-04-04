@@ -11,10 +11,10 @@ COMMENT=	Line-oriented Web browser and text editor
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libmozjs-24.so:${PORTSDIR}/lang/spidermonkey24 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	${UNZIP_CMD}:archivers/unzip
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libmozjs-24.so:lang/spidermonkey24 \
+		libcurl.so:ftp/curl
 
 USE_OPENSSL=	yes
 USES=		compiler:c11 readline zip

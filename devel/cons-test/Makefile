@@ -16,7 +16,7 @@ COMMENT=	Test bed for `Cons' development
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/bin/cons:${PORTSDIR}/devel/cons
+RUN_DEPENDS=	${LOCALBASE}/bin/cons:devel/cons
 
 USES=		perl5 tar:tgz
 WRKSRC=		${WRKDIR}/cons-${PORTVERSION}/test
@@ -43,7 +43,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/t
 	${PERL} -e 'for (${TESTS}) {$$f=sprintf "t%04d.t", $$_;\
 		    $$x= "${INSTALL_DATA} ${WRKSRC}/t/$$f \
-		    	    ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/t";\
+			    ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/t";\
 		    printf "$$x\n"; system $$x;}'
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/Test/Cmd
 	${INSTALL_DATA} ${WRKSRC}/Test/Cmd.pm \

@@ -48,6 +48,15 @@
  #elif defined (__linux__) || defined (__FreeBSD__) || defined (__NetBSD__) \
    || defined (__OpenBSD__) || defined (__GLIBC__) || defined (__ANDROID__) \
    || defined (__DragonFly__)
+@@ -1443,7 +1484,7 @@
+   utimbuf.modtime = time_stamp;
+ 
+   /* Set access time to now in local time.  */
+-  t = time ((time_t) 0);
++  t = time (NULL);
+   utimbuf.actime = mktime (localtime (&t));
+ 
+   utime (name, &utimbuf);
 --- gcc/ada/cio.c.orig
 +++ gcc/ada/cio.c
 @@ -49,7 +49,7 @@
@@ -1099,3 +1108,22 @@
  
  # List of target dependent sources, overridden below as necessary
  TARGET_ADA_SRCS =
+--- gcc/ada/init.c.orig
++++ gcc/ada/init.c
+@@ -2510,8 +2510,15 @@
+ {
+   mcontext_t *mcontext = &((ucontext_t *) ucontext)->uc_mcontext;
+ 
++#if defined (__i386__)
++  unsigned long *pc = (unsigned long *)mcontext->gregs[REG_EIP];
++  /* The pattern is "orl $0x0,(%esp)" for a probe in 32-bit mode.  */
++  if (signo == SIGSEGV && pc && *pc == 0x00240c83)
++    mcontext->gregs[REG_ESP] += 4096 + 4 * sizeof (unsigned long);
++#elif defined (__ARMEL__)
+   /* ARM Bump has to be an even number because of odd/even architecture.  */
+-  ((mcontext_t *) mcontext)->arm_pc += 2;
++  mcontext->arm_pc += 2;
++#endif
+ }
+ 
+ static void

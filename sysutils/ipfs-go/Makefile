@@ -8,7 +8,9 @@ CATEGORIES=	sysutils
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	IPFS implementation in Go
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BROKEN=		fails to build
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USES=		gmake
 

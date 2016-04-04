@@ -15,11 +15,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small (150k), fast, perl-based IRC client
 
-RUN_DEPENDS=	p5-Perl4-CoreLibs>=0:${PORTSDIR}/devel/p5-Perl4-CoreLibs
+RUN_DEPENDS=	p5-Perl4-CoreLibs>=0:devel/p5-Perl4-CoreLibs
 
 USES=		ncurses perl5
 
-IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>0:${PORTSDIR}/net/p5-IO-Socket-INET6
+IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>0:net/p5-IO-Socket-INET6
 IPV6_EXTRA_PATCHES=	${PATCHDIR}/dsirc-ipv6
 
 SIRC_SCRIPTS_DESC= 	Additional scripts for the client

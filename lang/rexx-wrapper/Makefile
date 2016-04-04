@@ -14,8 +14,8 @@ COMMENT=	Tool that wraps Rexx source or tokenised code into an executable
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
-RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
+BUILD_DEPENDS=	rexx:lang/rexx-regina
+RUN_DEPENDS=	rexx:lang/rexx-regina
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rexx=regina

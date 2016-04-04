@@ -11,9 +11,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to extend Plack::Builder
 
 RUN_DEPENDS=	\
-	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-Net-CIDR-Lite>0:${PORTSDIR}/net/p5-Net-CIDR-Lite \
-	p5-Plack>=0.9941:${PORTSDIR}/www/p5-Plack
+	p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
+	p5-Net-CIDR-Lite>0:net/p5-Net-CIDR-Lite \
+	p5-Plack>=0.9941:www/p5-Plack
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

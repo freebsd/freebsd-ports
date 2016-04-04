@@ -10,7 +10,7 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE keyboard shared library
 
-LIB_DEPENDS=	libxklavier.so:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
 PORTSCOUT=	limitw:1,even
 

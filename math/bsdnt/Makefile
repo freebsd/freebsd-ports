@@ -9,7 +9,7 @@ COMMENT=	Bignum Library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 USES=		gmake shebangfix
 SHEBANG_FILES=	configure

@@ -50,7 +50,7 @@ is started by a script in %%LOCALBASE%%/etc/rc.d
 In order to make private archives searchable with namazu2, you need
 to copy or link %%LOCALBASE%%/libexec/namazu.cgi to
 %%MAILMANDIR%%/archives/private/<ML_name>/ and configure .namazurc.
-Refer to %%LOCALBASE%%/etc/namazu/namazu-sample.
+Refer to %%LOCALBASE%%/etc/namazu/namazurc.sample.
 You can also see the document in Japanese language in
 <http://www.python.jp/pipermail/mailman-users-jp/2004-August/001008.html>
 ----------------------------------------------------------------------------

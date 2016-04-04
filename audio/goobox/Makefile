@@ -10,12 +10,12 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD player and ripper for GNOME Desktop environment
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid \
-		libcoverart.so.0:${PORTSDIR}/audio/libcoverart \
-		libmusicbrainz5.so:${PORTSDIR}/audio/libmusicbrainz5 \
-		libbrasero-media3.so:${PORTSDIR}/sysutils/brasero \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
+		libcoverart.so.0:audio/libcoverart \
+		libmusicbrainz5.so:audio/libmusicbrainz5 \
+		libbrasero-media3.so:sysutils/brasero \
+		libunique-1.0.so:x11-toolkits/unique
 
 USES=		desktop-file-utils gettext gmake gnome pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30 intlhack
@@ -32,7 +32,7 @@ GLIB_SCHEMAS=	org.gnome.Goobox.gschema.xml
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
 
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=notification
 
 .include <bsd.port.mk>

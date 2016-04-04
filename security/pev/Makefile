@@ -12,7 +12,7 @@ COMMENT=	PE analysis toolkit
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

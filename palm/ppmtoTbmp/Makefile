@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.isaac.cs.berkeley.edu/pilot/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPM to Pilot bitmap converter
 
-LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDLIBS=-lnetpbm

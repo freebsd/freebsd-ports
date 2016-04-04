@@ -10,9 +10,9 @@ MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/murrine/
 MAINTAINER=	tstodgell@gmail.com
 COMMENT=	GUI gtkrc configuration tool for the Murrine GTK engine
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/lib/gtk-2.0/2.10.0/engines/libmurrine.so:${PORTSDIR}/x11-themes/gtk-murrine-engine \
-		${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
+		${LOCALBASE}/lib/gtk-2.0/2.10.0/engines/libmurrine.so:x11-themes/gtk-murrine-engine \
+		${LOCALBASE}/bin/zenity:x11/zenity
 
 NO_BUILD=	yes
 USES=	tar:bzip2

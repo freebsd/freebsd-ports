@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 CONFLICTS_INSTALL=	${PORTNAME}-0.13.*
 PORTSCOUT=	limit:^0\.12\.			# track only 0.12.x (legacy)
@@ -23,7 +23,7 @@ USE_QT4=	moc_build rcc_build uic_build qmake_build \
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		MORE_STARS TEXTURES MULTIMEDIA SCRIPTING DOCS
+OPTIONS_DEFINE=		DOCS MORE_STARS MULTIMEDIA SCRIPTING TEXTURES
 OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING TEXTURES
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
 TEXTURES_DESC=		Install better quality textures
@@ -67,20 +67,17 @@ PLIST_SUB+=	SCRIPTS="@comment "
 .endif
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e 's|std::free|::free|' \
-		${WRKSRC}/src/core/renderer/StelQGLInterleavedArrayVertexBufferBackend.cpp
 # Avoid picking up the wrong `fixx11h.h' (`x11/kdelibs3' port installs one
 # that does not handle FontChange)
 	${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/fixx11h\.h/fixx11qt4h.h/'
 	cd ${WRKSRC}/src/core/external && ${MV} fixx11h.h fixx11qt4h.h
 
-post-install:
-.if ${PORT_OPTIONS:MMORE_STARS}
+post-install-MORE_STARS-on:
 	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_1.cat \
 		${STAGEDIR}${DATADIR}/stars/default
-.endif
-.if ${PORT_OPTIONS:MTEXTURES}
+
+post-install-TEXTURES-on:
 	(cd ${WRKDIR} && for f in *.png; do \
 		new=`${STAT} -f '%z' $$f` ; \
 		existing=`${STAT} -qf '%z' \
@@ -93,7 +90,8 @@ post-install:
 	done)
 	@${REINPLACE_CMD} -e '1410s|nomap|vesta|' \
 		${STAGEDIR}${DATADIR}/data/ssystem.ini
-.endif
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

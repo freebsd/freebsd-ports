@@ -12,8 +12,8 @@ COMMENT=	Code generator in the polyhedral model
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libisl.so:${PORTSDIR}/devel/isl
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libisl.so:devel/isl
 
 USE_LDCONFIG=	yes
 USES=		libtool

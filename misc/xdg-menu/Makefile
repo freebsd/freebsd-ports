@@ -17,9 +17,9 @@ COMMENT=	ROX panel applet that displays an applications menu button
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
-		${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus
 
 WRKSRC=		${WRKDIR}/XDG-Menu
 DATADIR=	${PREFIX}/apps/XDG-Menu

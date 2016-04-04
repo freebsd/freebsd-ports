@@ -11,16 +11,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	saper@saper.info
 COMMENT=	5250 terminal emulator for the AS/400 written in Java
 
-BUILD_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \
-		${JYTHON_JAR}:${PORTSDIR}/lang/jython \
-		${JAVAJARDIR}/jt400.jar:${PORTSDIR}/sysutils/jtopen \
-		${JAVAJARDIR}/itext.jar:${PORTSDIR}/devel/itext \
-		${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j
-RUN_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \
-		${JYTHON_JAR}:${PORTSDIR}/lang/jython \
-		${JAVAJARDIR}/jt400.jar:${PORTSDIR}/sysutils/jtopen \
-		${JAVAJARDIR}/itext.jar:${PORTSDIR}/devel/itext \
-		${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j
+BUILD_DEPENDS=	${JAVAJARDIR}/mail.jar:java/javamail \
+		${JYTHON_JAR}:lang/jython \
+		${JAVAJARDIR}/jt400.jar:sysutils/jtopen \
+		${JAVAJARDIR}/itext.jar:devel/itext \
+		${JAVAJARDIR}/log4j.jar:devel/log4j
+RUN_DEPENDS=	${JAVAJARDIR}/mail.jar:java/javamail \
+		${JYTHON_JAR}:lang/jython \
+		${JAVAJARDIR}/jt400.jar:sysutils/jtopen \
+		${JAVAJARDIR}/itext.jar:devel/itext \
+		${JAVAJARDIR}/log4j.jar:devel/log4j
 
 USES=		dos2unix zip
 USE_ANT=	yes

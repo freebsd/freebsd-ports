@@ -11,8 +11,8 @@ COMMENT=	Ruby binding for librsvg2
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-cairo>=1.12.8:${PORTSDIR}/graphics/rubygem-cairo \
-		rubygem-gdk_pixbuf2>=${PORTVERSION}:${PORTSDIR}/graphics/rubygem-gdk_pixbuf2
+RUN_DEPENDS=	rubygem-cairo>=1.12.8:graphics/rubygem-cairo \
+		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2
 
 USE_GNOME=	librsvg2
 USE_RUBY=	yes

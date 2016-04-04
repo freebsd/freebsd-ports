@@ -1,10 +1,11 @@
 #!/bin/sh
+#
+# $FreeBSD$
 
 #set -vx
 
 PKG_BATCH=${BATCH:=NO}
 PKG_PREFIX=${PKG_PREFIX:=%%PREFIX%%}
-EXAMPLESDIR=${EXAMPLESDIR:=%%EXAMPLESDIR%%}
 CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
 
 #
@@ -24,31 +25,12 @@ modify_cyrus_user() {
 	fi
 }
 
-
-checkfile() {
-	diff -bBqw $1 $2 >/dev/null 2>&1
-	case $? in
-		0)	# config file exists, but is the same
-			;;
-		1)	# config file exists and differs
-			echo "** Make sure $1 is in sync with this version";
-			echo "   of the port.  See $1.dist for details.";
-			;;
-		*)	# no config file exists, copy it
-			install -c -m 644 $2 $1
-			;;
-	esac
-}
-
 case $2 in
 	PRE-INSTALL)
 		;;
 
 	POST-INSTALL)
 		modify_cyrus_user
-		cd ${PKG_PREFIX}
-		checkfile ${PKG_PREFIX}/etc/imapd.conf ${EXAMPLESDIR}/imapd.conf
-		checkfile ${PKG_PREFIX}/etc/cyrus.conf ${EXAMPLESDIR}/normal.conf
 		if grep 'sieve' /etc/services; then
 			echo
 		else

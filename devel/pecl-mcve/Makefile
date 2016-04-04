@@ -14,7 +14,7 @@ COMMENT=	PECL Extension for Interface the MCVE/Monetra API
 
 LICENSE=	PHP30
 
-LIB_DEPENDS=	libmonetra.so:${PORTSDIR}/devel/libmonetra
+LIB_DEPENDS=	libmonetra.so:devel/libmonetra
 
 USES=		tar:tgz
 USE_OPENSSL=	yes

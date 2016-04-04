@@ -11,7 +11,7 @@ DISTNAME=	ASFiles-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 file manager. Dockable in WindowMaker
 
-LIB_DEPENDS=	libDnd.so:${PORTSDIR}/x11/libdnd
+LIB_DEPENDS=	libDnd.so:x11/libdnd
 
 USES=		perl5
 GNU_CONFIGURE=	yes

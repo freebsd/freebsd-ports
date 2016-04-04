@@ -12,17 +12,17 @@ COMMENT=	Framework for writing networked applications
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libsearpc.so:${PORTSDIR}/devel/libsearpc \
-		libevhtp.so:${PORTSDIR}/www/libevhtp \
-		libzdb.so:${PORTSDIR}/databases/libzdb \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libinotify.so:${PORTSDIR}/devel/libinotify \
-		libccnet.so:${PORTSDIR}/net-mgmt/ccnet
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestinfo \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
+		libevhtp.so:www/libevhtp \
+		libzdb.so:databases/libzdb \
+		libcurl.so:ftp/curl \
+		libinotify.so:devel/libinotify \
+		libccnet.so:net-mgmt/ccnet
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:devel/py-eggtestinfo \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
@@ -65,10 +65,10 @@ FUSE_DESC=		Use file system in userspace
 RIAK_DESC=		Use distributed noSQL database
 
 FUSE_CONFIGURE_ENABLE=	fuse
-FUSE_LIB_DEPENDS=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
+FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 
 RIAK_CONFIGURE_ENABLE=	riak
-RIAK_RUN_DEPENDS=	riak:${PORTSDIR}/databases/riak
+RIAK_RUN_DEPENDS=	riak:databases/riak
 
 OPTIONS_DEFAULT=FUSE
 .if defined(DFLYVERSION)

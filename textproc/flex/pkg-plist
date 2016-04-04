@@ -4,12 +4,6 @@ include/flex/FlexLexer.h
 lib/libfl.a
 lib/libfl_pic.a
 man/man1/flex.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/ONEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/flex.pdf
 %%NLS%%share/locale/ca/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/da/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/de/LC_MESSAGES/flex.mo

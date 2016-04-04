@@ -1,24 +1,21 @@
 # Created by: Dima Dorfman <dima@unixfreak.org>
 # $FreeBSD$
 
-PORTNAME=	db
+PORTNAME=	foomatic-db
 PORTVERSION=	20160226
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/danilo
-PKGNAMEPREFIX=	foomatic-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${FOOMATICVER}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${FOOMATICVER}-${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Database for integrating printer drivers with common spoolers
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libcurl.so:${PORTSDIR}/ftp/curl
-
-USES=		autoreconf gmake tar:xz
+USES=		gmake tar:xz
 GNU_CONFIGURE=	yes
 
 FOOMATICVER=	4.0
-WRKSRC=	${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

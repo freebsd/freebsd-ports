@@ -3,35 +3,36 @@
 
 PORTNAME=	tomahawk
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	port@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-source, social, and smart music player
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	google-sparsehash>=2.0.2:${PORTSDIR}/devel/google-sparsehash \
-		websocketpp>=0.4.0:${PORTSDIR}/devel/websocketpp
-RUN_DEPENDS=	phonon-vlc>=0.6.1:${PORTSDIR}/multimedia/phonon-vlc
-LIB_DEPENDS=	libattica.so:${PORTSDIR}/x11-toolkits/attica \
-		liblucene++.so:${PORTSDIR}/textproc/luceneplusplus \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libechonest.so:${PORTSDIR}/audio/libechonest \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libjreen.so:${PORTSDIR}/net-im/libjreen \
-		liblastfm.so:${PORTSDIR}/audio/liblastfm \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libqjson.so:${PORTSDIR}/devel/qjson \
-		libqtkeychain.so:${PORTSDIR}/security/qtkeychain-qt4 \
-		libquazip.so:${PORTSDIR}/archivers/quazip \
-		libtag.so:${PORTSDIR}/audio/taglib
+BUILD_DEPENDS=	google-sparsehash>=2.0.2:devel/google-sparsehash \
+		websocketpp>=0.4.0:devel/websocketpp
+RUN_DEPENDS=	phonon-vlc>=0.6.1:multimedia/phonon-vlc
+LIB_DEPENDS=	libattica.so:x11-toolkits/attica \
+		liblucene++.so:textproc/luceneplusplus \
+		libboost_thread.so:devel/boost-libs \
+		libechonest.so:audio/libechonest \
+		libgnutls.so:security/gnutls \
+		libjreen.so:net-im/libjreen \
+		liblastfm.so:audio/liblastfm \
+		libqca.so:devel/qca \
+		libqjson.so:devel/qjson \
+		libqtkeychain.so:security/qtkeychain-qt4 \
+		libquazip.so:archivers/quazip \
+		libtag.so:audio/taglib
 
 CMAKE_ARGS=	-DBUILD_RELEASE="ON"
 CXXFLAGS+=	-Wno-cast-align -I${LOCALBASE}/include
 
 GH_ACCOUNT=	tomahawk-player
 
-TELEPATHY_LIB_DEPENDS=	libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4
+TELEPATHY_LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4
 TELEPATHY_DESC=	Configure Telepathy Settings
 TELEPATHY_USE_KDE4=	kdelibs automoc4
 

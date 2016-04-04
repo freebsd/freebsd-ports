@@ -13,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	TCP wrappers library for Ruby
 
-LIB_DEPENDS=	libident.so:${PORTSDIR}/security/libident
+LIB_DEPENDS=	libident.so:security/libident
 
 OPTIONS_DEFINE=	DOCS
 

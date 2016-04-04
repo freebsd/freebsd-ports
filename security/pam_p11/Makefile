@@ -12,7 +12,7 @@ COMMENT=	PAM module using crypto tokens for auth
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libp11.so:${PORTSDIR}/security/libp11
+LIB_DEPENDS=	libp11.so:security/libp11
 
 OPTIONS_DEFINE=	DOCS
 

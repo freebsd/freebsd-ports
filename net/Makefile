@@ -75,6 +75,7 @@
     SUBDIR += coda6_client
     SUBDIR += coda6_server
     SUBDIR += corkscrew
+    SUBDIR += corosync
     SUBDIR += courier-authlib-ldap
     SUBDIR += crtmpserver
     SUBDIR += cryptcat
@@ -136,11 +137,13 @@
     SUBDIR += fping
     SUBDIR += freebsd-tftp
     SUBDIR += freebsd-uucp
+    SUBDIR += freediameter
     SUBDIR += freenet6
     SUBDIR += freeradius-client
     SUBDIR += freeradius2
     SUBDIR += freeradius3
     SUBDIR += freerdp
+    SUBDIR += freeswitch
     SUBDIR += freevrrpd
     SUBDIR += fspclient
     SUBDIR += fspd
@@ -272,6 +275,7 @@
     SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois
+    SUBDIR += kafkacat
     SUBDIR += kamailio
     SUBDIR += kdenetwork4
     SUBDIR += kdenetwork4-filesharing
@@ -325,7 +329,6 @@
     SUBDIR += libnetdude
     SUBDIR += libnfs
     SUBDIR += libnids
-    SUBDIR += libnids-libnet11
     SUBDIR += libnss-cache
     SUBDIR += libnss-mysql
     SUBDIR += liboauth
@@ -777,7 +780,6 @@
     SUBDIR += p5-Sort-Key-IPv4
     SUBDIR += p5-Test-URI
     SUBDIR += p5-URI
-    SUBDIR += p5-URI-db
     SUBDIR += p5-URI-FromHash
     SUBDIR += p5-URI-Match
     SUBDIR += p5-URI-Nested
@@ -786,6 +788,7 @@
     SUBDIR += p5-URI-SmartURI
     SUBDIR += p5-URI-Template
     SUBDIR += p5-URI-Template-Restrict
+    SUBDIR += p5-URI-db
     SUBDIR += p5-URI-ws
     SUBDIR += p5-VM-EC2
     SUBDIR += p5-VM-EC2-Security-CredentialCache
@@ -811,6 +814,7 @@
     SUBDIR += p5-ldap2pw
     SUBDIR += p5-perl-ldap
     SUBDIR += p5-srv2pf
+    SUBDIR += pacemaker
     SUBDIR += packetdrill
     SUBDIR += packter-agent
     SUBDIR += panoptis
@@ -941,6 +945,7 @@
     SUBDIR += py-impacket
     SUBDIR += py-ipaddress
     SUBDIR += py-iplib
+    SUBDIR += py-kafka-python
     SUBDIR += py-kombu
     SUBDIR += py-ldap
     SUBDIR += py-ldap3
@@ -988,6 +993,7 @@
     SUBDIR += py-ripe.atlas.sagan
     SUBDIR += py-ripe.atlas.tools
     SUBDIR += py-s3cmd
+    SUBDIR += py-s3transfer
     SUBDIR += py-simplesoap
     SUBDIR += py-smbpasswd
     SUBDIR += py-soappy
@@ -1088,12 +1094,15 @@
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-brightbox
+    SUBDIR += rubygem-fog-cloudatcost
     SUBDIR += rubygem-fog-dynect
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-google
     SUBDIR += rubygem-fog-local
+    SUBDIR += rubygem-fog-openstack
     SUBDIR += rubygem-fog-powerdns
     SUBDIR += rubygem-fog-profitbricks
+    SUBDIR += rubygem-fog-rackspace
     SUBDIR += rubygem-fog-radosgw
     SUBDIR += rubygem-fog-riakcs
     SUBDIR += rubygem-fog-sakuracloud
@@ -1115,12 +1124,14 @@
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
+    SUBDIR += rubygem-net-ping
     SUBDIR += rubygem-netrc
     SUBDIR += rubygem-network_interface
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-octokit
     SUBDIR += rubygem-octopress-deploy
+    SUBDIR += rubygem-omniauth-azure-oauth2
     SUBDIR += rubygem-omniauth-facebook
     SUBDIR += rubygem-omniauth-github
     SUBDIR += rubygem-omniauth-github-discourse
@@ -1206,6 +1217,7 @@
     SUBDIR += socat
     SUBDIR += socketbind
     SUBDIR += socketpipe
+    SUBDIR += socketw
     SUBDIR += sofia-sip
     SUBDIR += spideroak
     SUBDIR += splatd

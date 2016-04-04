@@ -5402,9 +5402,9 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/libcc1.so.0
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-g++.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gcc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gcov.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gdb.1-py.gz
+%%PYGDB%%%%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gdb.1-py.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gdb.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gdbserver.1-py.gz
+%%PYGDB%%%%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gdbserver.1-py.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gdbserver.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gprof.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-ld.1.gz
@@ -5419,7 +5419,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/libcc1.so.0
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-strip.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-windmc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-windres.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/man/man5/%%TARGET%%-gdbinit.5-py.gz
+%%PYGDB%%%%PORTDOCS%%%%DOCSDIR%%/man/man5/%%TARGET%%-gdbinit.5-py.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man5/%%TARGET%%-gdbinit.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man7/fsf-funding.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/man7/gfdl.7.gz

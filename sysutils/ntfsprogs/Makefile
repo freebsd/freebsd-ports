@@ -62,14 +62,14 @@ CFLAGS+=	-DUSE_LOCK
 .endif
 
 .if ${PORT_OPTIONS:MUUID}
-LIB_DEPENDS+=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
 CONFIGURE_ARGS+=--enable-uuid
 .else
 CONFIGURE_ARGS+=--disable-uuid
 .endif
 
 .if ${PORT_OPTIONS:MUBLIO}
-LIB_DEPENDS+=	libublio.so:${PORTSDIR}/devel/libublio
+LIB_DEPENDS+=	libublio.so:devel/libublio
 CFLAGS+=	-DUSE_UBLIO
 .else
 pre-everything::

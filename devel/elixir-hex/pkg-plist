@@ -12,6 +12,8 @@ lib/elixir/lib/hex/ebin/Elixir.Hex.API.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Config.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Mix.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Parallel.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.PublicKey.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.Registry.ETS.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Registry.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.RemoteConverger.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Resolver.Backtracks.beam
@@ -21,6 +23,7 @@ lib/elixir/lib/hex/ebin/Elixir.Hex.Shell.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.State.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Tar.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Utils.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.Version.Requirement.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Version.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Hex.Build.beam
@@ -32,6 +35,7 @@ lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Info.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Key.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Outdated.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Owner.beam
+lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.PublicKeys.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Publish.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Registry.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Search.beam
@@ -53,7 +57,9 @@ lib/elixir/lib/hex/lib/hex/api/verify_hostname.ex
 lib/elixir/lib/hex/lib/hex/config.ex
 lib/elixir/lib/hex/lib/hex/mix.ex
 lib/elixir/lib/hex/lib/hex/parallel.ex
+lib/elixir/lib/hex/lib/hex/public_key.ex
 lib/elixir/lib/hex/lib/hex/registry.ex
+lib/elixir/lib/hex/lib/hex/registry/ets.ex
 lib/elixir/lib/hex/lib/hex/remote_converger.ex
 lib/elixir/lib/hex/lib/hex/resolver.ex
 lib/elixir/lib/hex/lib/hex/resolver/backtracks.ex
@@ -73,8 +79,10 @@ lib/elixir/lib/hex/lib/mix/tasks/hex/info.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/key.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/outdated.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/owner.ex
+lib/elixir/lib/hex/lib/mix/tasks/hex/public_keys.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/publish.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/registry.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/search.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/user.ex
+
 %%PORTDOCS%%%%DOCSDIR%%/README.md

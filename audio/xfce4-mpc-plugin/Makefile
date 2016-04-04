@@ -13,8 +13,8 @@ COMMENT=	Musicpd client plugin for the Xfce panel
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
-RUN_DEPENDS=	musicpd:${PORTSDIR}/audio/musicpd
+LIB_DEPENDS=	libmpd.so:audio/libmpd
+RUN_DEPENDS=	musicpd:audio/musicpd
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

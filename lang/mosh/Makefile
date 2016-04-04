@@ -14,8 +14,8 @@ COMMENT=	Fast R6RS Scheme interpreter
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libonig.so:${PORTSDIR}/devel/oniguruma5
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libonig.so:devel/oniguruma5
 
 CONFLICTS_INSTALL=	mosh-1.[0-9].*
 

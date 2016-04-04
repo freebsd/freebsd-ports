@@ -15,7 +15,7 @@ COMMENT=	Library for obtaining a sequence of successive coarse grids
 
 ALL_TARGET=	parallel
 
-LIB_DEPENDS+=	libmpi.so:${PORTSDIR}/net/openmpi
+LIB_DEPENDS+=	libmpi.so:net/openmpi
 USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 

@@ -13,10 +13,10 @@ COMMENT=	Write tests in a declarative specification style
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Package-Stash>=0.23:${PORTSDIR}/devel/p5-Package-Stash \
-		p5-Test-Deep>=0.103:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Trap>=0:${PORTSDIR}/devel/p5-Test-Trap \
-		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
+BUILD_DEPENDS=	p5-Package-Stash>=0.23:devel/p5-Package-Stash \
+		p5-Test-Deep>=0.103:devel/p5-Test-Deep \
+		p5-Test-Trap>=0:devel/p5-Test-Trap \
+		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

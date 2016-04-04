@@ -11,7 +11,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
 
-LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson
 
 USE_KDE4=	kdeprefix automoc4 kdelibs libkonq
 USES=		cmake:outsource libarchive cpe tar:xz
@@ -22,14 +22,14 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	7ZIP RAR ZIP
 
 7ZIP_DESC=	Support for 7-Zip archives
-7ZIP_RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
+7ZIP_RUN_DEPENDS=	7z:archivers/p7zip
 
 RAR_DESC=	Support for RAR archives
-RAR_RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
-			rar:${PORTSDIR}/archivers/rar
+RAR_RUN_DEPENDS=	unrar:archivers/unrar \
+			rar:archivers/rar
 
 ZIP_DESC=	Support for ZIP archives
-ZIP_RUN_DEPENDS=	unzip>0:${PORTSDIR}/archivers/unzip \
-			zip:${PORTSDIR}/archivers/zip
+ZIP_RUN_DEPENDS=	unzip>0:archivers/unzip \
+			zip:archivers/zip
 
 .include <bsd.port.mk>

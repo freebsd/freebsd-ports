@@ -20,6 +20,9 @@ COMMENT=	Libraries for Nessus, the security scanner
 
 LICENSE=	LGPL20
 
+DEPRECATED=	Abandoned, consider using OpenVAS
+EXPIRATION_DATE=2016-09-30
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cipher --localstatedir="${PREFIX}/var"
 .if defined(WITH_NESSUS_BPF_SHARE)

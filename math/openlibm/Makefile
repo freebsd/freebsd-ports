@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openlibm
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 MASTER_SITES=	GH
@@ -24,12 +24,6 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 MAKE_ENV+=	prefix=${PREFIX}
-
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-PLIST_SUB+=	EXTRA_HEADER=""
-.else
-PLIST_SUB+=	EXTRA_HEADER="@comment "
-.endif
 
 TEST_TARGET=	check
 

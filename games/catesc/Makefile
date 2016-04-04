@@ -17,7 +17,7 @@ LICENSE_TEXT_CCbySA40=	https://creativecommons.org/licenses/by-sa/4.0/legalcode
 LICENSE_PERMS_CCbySA30=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_CCbySA40=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	instead:${PORTSDIR}/games/instead
+RUN_DEPENDS=	instead:games/instead
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gl00my

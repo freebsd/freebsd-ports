@@ -11,9 +11,9 @@ COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	etl>=0.04.19_1:${PORTSDIR}/devel/etl
-LIB_DEPENDS=	libsynfig.so:${PORTSDIR}/devel/synfig
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+BUILD_DEPENDS=	etl>=0.04.19_1:devel/etl
+LIB_DEPENDS=	libsynfig.so:devel/synfig
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		desktop-file-utils gmake libtool pathfix pkgconfig shared-mime-info
 USE_GNOME=	gtkmm30 intltool
@@ -29,7 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	DOCS JACK NLS
 OPTIONS_SUB=	yes
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	jack
 
 NLS_USES=		gettext

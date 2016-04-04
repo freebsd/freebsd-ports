@@ -13,10 +13,10 @@ LICENSE=	MIT
 
 USES=		python tar:bzip2
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}networkx>=1.5:${PORTSDIR}/math/py-networkx
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}networkx>=1.5:math/py-networkx
 
 .if target(gen-dist)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 .endif
 
 SVNROOT?=	http://porttree.googlecode.com/svn/trunk/

@@ -12,16 +12,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely simple IRC client
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PLIST_FILES=	bin/simpleirc man/man1/simpleirc.1.gz
-PORTDOCS=	README LICENSE
+PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

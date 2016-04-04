@@ -12,7 +12,7 @@ COMMENT=	Read audio from the CDROM directly as data
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL
 
-LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS=	libcdio.so:sysutils/libcdio
 
 USES=	pathfix tar:bzip2 gmake pkgconfig libtool perl5
 GNU_CONFIGURE=	yes

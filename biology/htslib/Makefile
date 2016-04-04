@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash
+TEST_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	samtools
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=		CURL
 OPTIONS_DEFAULT=	CURL
 
 CURL_DESC=		Use libcurl for network file access (HTTPS and S3 support).
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ENABLE=	libcurl
 
 CPPFLAGS+=	-I${LOCALBASE}/include

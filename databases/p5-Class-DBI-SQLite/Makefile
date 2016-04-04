@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extension to Class::DBI for sqlite
 
-RUN_DEPENDS=	p5-Ima-DBI>=0:${PORTSDIR}/databases/p5-Ima-DBI \
-		p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
-		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-SQL-Statement>=0:${PORTSDIR}/databases/p5-SQL-Statement \
-		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
+RUN_DEPENDS=	p5-Ima-DBI>=0:databases/p5-Ima-DBI \
+		p5-Class-DBI>=0:databases/p5-Class-DBI \
+		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
+		p5-SQL-Statement>=0:databases/p5-SQL-Statement \
+		p5-Clone>=0:devel/p5-Clone
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

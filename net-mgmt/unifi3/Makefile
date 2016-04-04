@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	UniFi Wireless Controller
 
-RUN_DEPENDS=	mongodb>0:${PORTSDIR}/databases/mongodb
+RUN_DEPENDS=	mongodb>0:databases/mongodb
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR}
 

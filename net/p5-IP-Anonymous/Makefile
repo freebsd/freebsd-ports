@@ -14,7 +14,7 @@ COMMENT=	Perl extension to provide anonymous IP addresses
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael
+RUN_DEPENDS=	p5-Crypt-Rijndael>=0:security/p5-Crypt-Rijndael
 
 USES=		perl5
 USE_PERL5=	configure

@@ -1,0 +1,20 @@
+--- logrotate.d/clamav-unofficial-sigs.orig	2016-03-31 01:16:02 UTC
++++ logrotate.d/clamav-unofficial-sigs
+@@ -14,7 +14,7 @@
+ #
+ ##################
+ 
+-/var/log/clamav-unofficial-sigs/clamav-unofficial-sigs.log {
++/var/log/clamav-unofficial-sigs.log {
+      weekly
+      rotate 4
+      missingok
+@@ -24,7 +24,7 @@
+ # UNCOMMENT the specific line for your OS
+ 
+ ## Debian / Ubuntu / Archlinux / Freebsd / Gentoo / Slackware / Raspbian
+-#     create 0644 clamav clamav
++     create 0644 clamav clamav
+ 
+ ## Redhat / CentOS 6
+ #     create 0644 clam clam

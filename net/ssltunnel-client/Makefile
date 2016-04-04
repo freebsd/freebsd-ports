@@ -26,7 +26,7 @@ USE_OPENSSL=	yes
 .if ${PORT_OPTIONS:MGUI}
 USE_GNOME=	gtk12
 USES+=		perl5
-RUN_DEPENDS=	p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
+RUN_DEPENDS=	p5-Gtk>=0:x11-toolkits/p5-Gtk
 MAN1+=		gpppclient.1
 PLIST_SUB+=	PERLGTK=""
 .else

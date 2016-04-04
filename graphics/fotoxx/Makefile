@@ -13,10 +13,10 @@ COMMENT=	Application to organize and edit image collections
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
-		dcraw:${PORTSDIR}/graphics/dcraw \
-		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
-		ufraw-batch:${PORTSDIR}/graphics/ufraw
+RUN_DEPENDS=	xdg-open:devel/xdg-utils \
+		dcraw:graphics/dcraw \
+		exiftool:graphics/p5-Image-ExifTool \
+		ufraw-batch:graphics/ufraw
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

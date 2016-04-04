@@ -11,8 +11,8 @@ COMMENT=	Framework for UPnP devices
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	gobject-introspection>=0.6.7:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+BUILD_DEPENDS=	gobject-introspection>=0.6.7:devel/gobject-introspection
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 OPTIONS_DEFINE=	GTK3 VALA
 OPTIONS_DEFAULT=GTK3
@@ -28,7 +28,7 @@ USES=		gmake libtool pathfix pkgconfig tar:xz
 
 GTK3_CONFIGURE_WITH=	gtk
 GTK3_USE=		GNOME=gtk30
-VALA_BUILD_DEPENDS=	vala>=0.20:${PORTSDIR}/lang/vala
+VALA_BUILD_DEPENDS=	vala>=0.20:lang/vala
 VALA_CONFIGURE_ENV=	ac_cv_path_VAPIGEN=${LOCALBASE}/bin/vapigen
 VALA_CONFIGURE_ENV_OFF=	ac_cv_path_VAPIGEN=""
 

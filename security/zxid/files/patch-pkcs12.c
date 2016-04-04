@@ -1,8 +1,8 @@
---- pkcs12.c.orig
+--- pkcs12.c.orig	2016-02-29 00:16:50 UTC
 +++ pkcs12.c
-@@ -95,6 +95,10 @@
- #define SMIME_INTERNALS  /* we want also our internal helper functions */
- #include "smimeutil.h"
+@@ -99,6 +99,10 @@
+ #define _STACK STACK
+ #endif
  
 +#if defined(OPENSSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER < 0x10000000L
 +#define _STACK STACK

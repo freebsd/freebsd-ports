@@ -12,7 +12,7 @@ COMMENT=	Text-mode interface for git
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+RUN_DEPENDS=	git:devel/git
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
@@ -26,8 +26,8 @@ PLIST_FILES=	bin/tig etc/tigrc
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
-MANPAGES_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-			xmlto:${PORTSDIR}/textproc/xmlto
+MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+			xmlto:textproc/xmlto
 MANPAGES_ALL_TARGET=	doc-man
 MANPAGES_INSTALL_TARGET=	install-doc-man
 MANPAGES_PLIST_FILES=	man/man1/tig.1.gz \

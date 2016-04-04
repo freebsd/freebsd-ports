@@ -9,7 +9,7 @@ MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for making SNMP queries
 
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 USES=		gmake
 

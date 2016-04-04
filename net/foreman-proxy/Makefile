@@ -11,11 +11,11 @@ COMMENT=	Foreman Proxy Agent
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rubygem-bundler_ext>=0.4:${PORTSDIR}/sysutils/rubygem-bundler_ext \
-		rubygem-json>=1.8.1:${PORTSDIR}/devel/rubygem-json \
-		rubygem-rack16>=1.4:${PORTSDIR}/www/rubygem-rack16 \
-		rubygem-sinatra>=1.4.3:${PORTSDIR}/www/rubygem-sinatra \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
+		rubygem-json>=1.8.1:devel/rubygem-json \
+		rubygem-rack16>=1.4:www/rubygem-rack16 \
+		rubygem-sinatra>=1.4.3:www/rubygem-sinatra \
+		${LOCALBASE}/bin/wget:ftp/wget
 
 OPTIONS_DEFINE=	BMC PUPPET
 BMC_DESC=	Depend on rubyipmi for BMC support
@@ -43,9 +43,9 @@ SUB_LIST=	RUBY="${RUBY}" \
 
 PLIST_SUB=	${SUB_LIST} MKDIR="${MKDIR}"
 
-BMC_RUN_DEPENDS=	rubygem-rubyipmi>=0.10.0:${PORTSDIR}/sysutils/rubygem-rubyipmi
-PUPPET_RUN_DEPENDS=	puppet:${PORTSDIR}/sysutils/puppet \
-			rubygem-ruby-augeas>=0.5:${PORTSDIR}/textproc/rubygem-ruby-augeas
+BMC_RUN_DEPENDS=	rubygem-rubyipmi>=0.10.0:sysutils/rubygem-rubyipmi
+PUPPET_RUN_DEPENDS=	puppet:sysutils/puppet \
+			rubygem-ruby-augeas>=0.5:textproc/rubygem-ruby-augeas
 
 post-patch:
 	@${REINPLACE_CMD} \

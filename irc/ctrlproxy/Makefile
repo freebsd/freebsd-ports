@@ -3,7 +3,7 @@
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	3.0.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	irc
 MASTER_SITES=	http://launchpadlibrarian.net/50016234/ \
 		LOCAL/ashish/
@@ -11,7 +11,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/50016234/ \
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Flexible IRC proxy
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

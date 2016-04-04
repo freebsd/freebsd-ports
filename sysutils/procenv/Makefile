@@ -15,7 +15,7 @@ COMMENT=	Utility to show process environment
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	xmlwf:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	xmlwf:textproc/expat2
 
 USES=		autoreconf gmake perl5
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ COMMENT=	Tools for running commands at particular times
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/skalibs:${PORTSDIR}/devel/skalibs
+BUILD_DEPENDS=	${LOCALBASE}/include/skalibs:devel/skalibs
 
 USES=		tar:bzip2
 

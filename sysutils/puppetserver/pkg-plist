@@ -1,0 +1,14 @@
+%%ETCDIR%%/logback.xml
+%%ETCDIR%%/bootstrap.cfg
+%%ETCDIR%%/request-logging.xml
+%%ETCDIR%%/conf.d/global.conf
+%%ETCDIR%%/conf.d/puppetserver.conf
+%%ETCDIR%%/conf.d/web-routes.conf
+%%ETCDIR%%/conf.d/webserver.conf
+%%ETCDIR%%/conf.d/auth.conf
+%%DATADIR%%/puppetserver.jar
+@mode 0750
+@group puppet
+@dir etc/puppet/code
+@owner puppet
+@dir /var/log/puppetserver

@@ -10,50 +10,36 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses CD burning bash script
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		cdialog:${PORTSDIR}/devel/cdialog \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	bash:shells/bash \
+		cdialog:devel/cdialog \
+		cdrecord:sysutils/cdrtools
 
 NO_BUILD=	yes
-PORTDOCS=	COPYING CREDITS ChangeLog FAQ FILES HOWTO INSTALL README TODO
+NO_ARCH=	yes
+
+PORTDOCS=	CREDITS ChangeLog FAQ FILES HOWTO INSTALL README TODO
 
 OPTIONS_DEFINE=	CDRDAO DVDTOOLS EJECT FLAC LAME MPG123 NORMALIZE SUDO VORBIS DOCS
-OPTIONS_DEFAULT=	CDRDAO DVDTOOLS EJECT FLAC LAME MPG123 NORMALIZE SUDO VORBIS
+OPTIONS_DEFAULT=CDRDAO DVDTOOLS EJECT FLAC LAME MPG123 NORMALIZE SUDO VORBIS
+
 CDRDAO_DESC=	Disk-At-Once Recording
 DVDTOOLS_DESC=	Frontend to master DVD media
 EJECT_DESC=	Ejecting the CD/DVD drive
 NORMALIZE_DESC=	An audio file volume normalizer
 SUDO_DESC=	To allow non-privileged users to burn CD's
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCDRDAO}
-RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
-.endif
-.if ${PORT_OPTIONS:MDVDTOOLS}
-RUN_DEPENDS+=	dvd+rw-mediainfo:${PORTSDIR}/sysutils/dvd+rw-tools
-.endif
-.if ${PORT_OPTIONS:MEJECT}
-RUN_DEPENDS+=	eject:${PORTSDIR}/sysutils/eject
-.endif
-.if ${PORT_OPTIONS:MFLAC}
-RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
-.endif
-.if ${PORT_OPTIONS:MLAME}
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-.if ${PORT_OPTIONS:MMPG123}
-RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
-.endif
-.if ${PORT_OPTIONS:MNORMALIZE}
-RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
-.endif
-.if ${PORT_OPTIONS:MSUDO}
-RUN_DEPENDS+=	sudo:${PORTSDIR}/security/sudo
-.endif
-.if ${PORT_OPTIONS:MVORBIS}
-RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
-.endif
+CDRDAO_RUN_DEPENDS=	cdrdao:sysutils/cdrdao
+DVDTOOLS_RUN_DEPENDS=	dvd+rw-mediainfo:sysutils/dvd+rw-tools
+EJECT_RUN_DEPENDS=	eject:sysutils/eject
+FLAC_RUN_DEPENDS=	flac:audio/flac
+LAME_RUN_DEPENDS=	lame:audio/lame
+MPG123_RUN_DEPENDS=	mpg123:audio/mpg123
+NORMALIZE_RUN_DEPENDS=	normalize:audio/normalize
+SUDO_RUN_DEPENDS=	sudo:security/sudo
+VORBIS_RUN_DEPENDS=	ogg123:audio/vorbis-tools
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/|${PREFIX}/etc/|; \
@@ -62,14 +48,14 @@ post-patch:
 		${WRKSRC}/MyBashBurn.sh ${WRKSRC}/etc/mybashburnrc
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/man/mybashburn.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/
 	${INSTALL_SCRIPT} ${WRKSRC}/MyBashBurn.sh ${STAGEDIR}${PREFIX}/bin/mybashburn
 	${INSTALL_DATA} ${WRKSRC}/etc/mybashburnrc ${STAGEDIR}${PREFIX}/etc/mybashburnrc.sample
 	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "burning config convert lang menus misc" ${STAGEDIR}${DATADIR}/)
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

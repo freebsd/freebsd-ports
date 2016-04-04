@@ -9,11 +9,11 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK2 client for the XMMS2 music player
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2 \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee
-RUN_DEPENDS=	gnome-themes-standard>=3.0.0:${PORTSDIR}/x11-themes/gnome-themes-standard \
-		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
+BUILD_DEPENDS=	${LOCALBASE}/bin/valac:lang/vala
+LIB_DEPENDS=	libxmmsclient.so:audio/xmms2 \
+		libgee-0.8.so:devel/libgee
+RUN_DEPENDS=	gnome-themes-standard>=3.0.0:x11-themes/gnome-themes-standard \
+		gnome-icon-theme>=0:misc/gnome-icon-theme
 
 USES=		pkgconfig waf tar:bzip2
 USE_GNOME=	gtk30 intltool

@@ -13,8 +13,8 @@ COMMENT=	Steganography tool to hide data in binary files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
-		libmhash.so:${PORTSDIR}/security/mhash
+LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
+		libmhash.so:security/mhash
 
 USES=		gmake jpeg libtool:build perl5
 GNU_CONFIGURE=	yes

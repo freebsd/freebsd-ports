@@ -28,9 +28,9 @@ USES=		fortran gmake perl5 tar:bzip2
 PORTDOCS=	COPYRIGHT INSTALL README
 
 MPICH2_CONFIGURE_ON=	--with-mpi=${LOCALBASE}
-MPICH2_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
+MPICH2_LIB_DEPENDS=	libmpich.so:net/mpich2
 OPENMPI_CONFIGURE_ON=	--with-mpi=${LOCALBASE}/mpi/openmpi
-OPENMPI_LIB_DEPENDS=	libmpi.so:${PORTSDIR}/net/openmpi
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e '/$$(INSTALL.*$$(...DIR)/ s|$$(...DIR)|$$(DESTDIR)&|'

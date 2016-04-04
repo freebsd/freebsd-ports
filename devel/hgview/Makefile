@@ -12,15 +12,15 @@ COMMENT=	Fast Mercurial log navigator written in pyqt4
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>0:${PORTSDIR}/devel/py-qt4-qscintilla2 \
-		${PYTHON_PKGNAMEPREFIX}mx-base>0:${PORTSDIR}/lang/py-mx-base \
-		${PYTHON_PKGNAMEPREFIX}docutils>0:${PORTSDIR}/textproc/py-docutils
-BUILD_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
-		pyrcc4:${PORTSDIR}/textproc/py-qt4-xml \
-		xmlto:${PORTSDIR}/textproc/xmlto \
-		asciidoc:${PORTSDIR}/textproc/asciidoc
+RUN_DEPENDS=	hg:devel/mercurial \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>0:x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>0:devel/py-qt4-qscintilla2 \
+		${PYTHON_PKGNAMEPREFIX}mx-base>0:lang/py-mx-base \
+		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils
+BUILD_DEPENDS=	hg:devel/mercurial \
+		pyrcc4:textproc/py-qt4-xml \
+		xmlto:textproc/xmlto \
+		asciidoc:textproc/asciidoc
 
 NO_ARCH=	yes
 USE_PYTHON=	distutils

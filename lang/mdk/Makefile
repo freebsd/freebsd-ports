@@ -35,7 +35,7 @@ GLADE_PLIST_FILES=	bin/gmixvm \
 			%%DATADIR%%/mixgtk.glade
 
 GUILE_CONFIGURE_WITH=	guile
-GUILE_LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+GUILE_LIB_DEPENDS=	libguile.so:lang/guile
 GUILE_PLIST_FILES=	bin/mixguile \
 			%%DATADIR%%/mixguile.scm \
 			%%DATADIR%%/mixguile-commands.scm \

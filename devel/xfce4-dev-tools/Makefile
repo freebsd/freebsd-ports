@@ -14,10 +14,10 @@ COMMENT=	Xfce development tools
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	autoconf-2.69:${PORTSDIR}/devel/autoconf \
-		automake-1.15:${PORTSDIR}/devel/automake \
-		libtoolize:${PORTSDIR}/devel/libtool \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	autoconf-2.69:devel/autoconf \
+		automake-1.15:devel/automake \
+		libtoolize:devel/libtool \
+		bash:shells/bash
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

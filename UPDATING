@@ -5,6 +5,89 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160331:
+  AFFECTS: security/clamav-unofficial-sigs
+  AUTHOR: lukasz@wasikowski.net, sf@maxempire.com
+
+  This version of clamav-unofficial-sigs is eXtremeSHOK's fork.
+  Configuration file location has changed from
+  %PREFIX%/clamav-unofficial-sigs.conf to
+  %PREFIX%/clamav-unofficial-sigs/
+
+  master.conf and os.conf hold default values, local changes should
+  be placed in user.conf.
+
+20160324:
+  AFFECTS: print/ghostscript9-base
+  AUTHOR: tijl@FreeBSD.org
+
+  The default Ghostscript port has changed from print/ghostscript9-base,
+  which is no longer developed, to print/ghostscript9-agpl-base.  Package
+  users will upgrade automatically.  Ports users can stick with the old
+  port by adding "DEFAULT_VERSIONS+=ghostscript=9" to /etc/make.conf, or
+  move to the new port with:
+
+      portmaster -o print/ghostscript9-agpl-base ghostscript9-base
+  or: portupgrade -o print/ghostscript9-agpl-base print/ghostscript9-base
+
+  And if you have ghostscript9-x11 installed:
+
+      portmaster -o print/ghostscript9-agpl-x11 ghostscript9-x11
+  or: portupgrade -o print/ghostscript9-agpl-x11 print/ghostscript9-x11
+
+  Note that print/ghostscript9-agpl-base is licensed under the AGPLv3
+  while print/ghostscript9-base is licensed under the GPLv3.
+
+20160317:
+  AFFECTS: security/openvas-client
+  AUTHOR: tijl@FreeBSD.org
+
+  The OpenVAS ports have been updated from version 2 to version 8.  All
+  components have been renamed and rearranged.  The old OpenVAS client
+  no longer exists.  Instead there is a web interface provided by
+  security/greenbone-security-assistant or a command-line interface
+  provided by security/openvas-cli.
+
+20160311:
+  AFFECTS: print/hplip
+  AUTHOR: tijl@FreeBSD.org
+
+  HPLIP has been updated to verion 3.16.2.  As part of the update support
+  for the hpijs/foomatic-rip filter has been dropped.  This has long been
+  unsupported upstream.  If you used this filter with your printer you'll
+  have to remove the printer with HP Device Manager and then add it back as
+  a new device.
+
+20160311:
+  AFFECTS: print/cups-base, print/cups-client, print/cups-image
+  AUTHOR: tijl@FreeBSD.org
+
+  The cups-base, cups-client and cups-image packages have been combined
+  into one cups package.
+
+  If you build your own ports the easiest way to update is to delete these
+  packages first and then build and install print/cups.
+
+  If you are using binary packages, depending on the packages installed on
+  your system, pkg(8)'s solver might get confused. In this case do not proceed
+  with the upgrade but delete first the packages:
+
+  pkg delete -fg "cups*"
+
+  Then usual upgrade process: pkg upgrade
+
+  The device URI of USB printers has changed so you have to adjust the
+  printer configuration.  Go to http://localhost:631/printers/.  Click on
+  your printer and select "Modify Printer" in the Administration drop-down.
+  You should then be able to select the new URI of the printer.  The web
+  interface requires cookies and JavaScript to function properly so make
+  sure your browser does not block them.
+
+  The package also installs a devd(8) configuration file now that gives
+  cups access to USB printers.  Unless you have any special needs you can
+  remove any devd(8), devfs.conf(5) or devfs.rules(5) configuration related
+  to cups that you may have added in the past.
+
 20160306:
   AFFECTS: net-mgmt/yaf
   AUTHOR: pi@FreeBSD.org
@@ -63,6 +146,10 @@ you update your ports collection, before attempting any port upgrades.
    The Dovecot SASL OPTION was removed, Dovecot SASL support is always given
    from now on.  In addition, for each mail/postfix* port there is now a
    mail/postfix*-sasl slave port providing Cyrus SASL as default.
+
+   To stay on postfix-2.11.x run the command:
+
+   # pkg set -o mail/postfix:mail/postfix211
 
 20160217:
   AFFECTS: users of www/nginx-devel

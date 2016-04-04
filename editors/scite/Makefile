@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scite
-PORTVERSION=	3.6.3
+PORTVERSION=	3.6.4
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -15,8 +15,8 @@ LICENSE_NAME=	License for Scintilla and SciTE
 LICENSE_FILE=	${WRKSRC}/../License.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libscintilla.so:${PORTSDIR}/x11-toolkits/scintilla
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libscintilla.so:x11-toolkits/scintilla
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 OPTIONS_DEFINE=	DOCS
 

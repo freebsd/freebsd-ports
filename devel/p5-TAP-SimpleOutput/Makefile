@@ -11,7 +11,7 @@ COMMENT=	Simple closure-driven TAP generator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Sub-Exporter-Progressive>=0:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive
+BUILD_DEPENDS=	p5-Sub-Exporter-Progressive>=0:devel/p5-Sub-Exporter-Progressive
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

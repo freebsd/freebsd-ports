@@ -11,7 +11,7 @@ COMMENT=	High performance DNS/DNSSEC zone validator
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libJudy.so:${PORTSDIR}/devel/judy
+LIB_DEPENDS=	libJudy.so:devel/judy
 
 USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=yes

@@ -16,7 +16,7 @@ COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 OPTIONS_DEFINE=	CA_BUNDLE LIBASR MAILERCONF PAM SSL_PORT
 
@@ -51,11 +51,11 @@ PLIST_SUB+=	SMTPQ_GROUP=${GROUPS}
 
 OPTIONS_SUB=		yes
 
-LIBASR_LIB_DEPENDS_OFF=	libasr.so:${PORTSDIR}/dns/libasr-devel
-LIBASR_LIB_DEPENDS=	libasr.so:${PORTSDIR}/dns/libasr
+LIBASR_LIB_DEPENDS_OFF=	libasr.so:dns/libasr-devel
+LIBASR_LIB_DEPENDS=	libasr.so:dns/libasr
 
 CA_BUNDLE_CONFIGURE_WITH=	path-CAfile=${LOCALBASE}/share/certs/ca-root-nss.crt
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 PAM_CONFIGURE_WITH=	auth-pam=smtpd
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Convenience functions for the Render extension
 
-LIB_DEPENDS=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
+LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
 XORG_CAT=	lib
 USES=		gmake

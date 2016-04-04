@@ -14,7 +14,7 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	SNMP
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_WITH=	snmp
 
 PLIST_FILES=	bin/ifstat man/man1/ifstat.1.gz

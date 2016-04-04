@@ -10,7 +10,7 @@ DISTFILES=	nagios-plugins-1.5.tar.gz
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Nagios plugin for checking memcached
 
-LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 BUILD_DEPENDS=	nagios-plugins>0:${PLUGINS} \
 		${EXTRA_DEPENDS} \
 		${NONEXISTENT}:${PLUGINS}:build
@@ -20,9 +20,9 @@ FILE=		${PORTNAME}.c
 PLUGINS=	${PORTSDIR}/net-mgmt/nagios-plugins
 NDIR_CMD=	cd ${PLUGINS} && ${MAKE} -VWRKSRC
 # Needed for build target on net-mgmt/nagios-plugins
-EXTRA_DEPENDS=	automake>0:${PORTSDIR}/devel/automake \
-		autoconf>0:${PORTSDIR}/devel/autoconf \
-		gmake:${PORTSDIR}/devel/gmake
+EXTRA_DEPENDS=	automake>0:devel/automake \
+		autoconf>0:devel/autoconf \
+		gmake:devel/gmake
 
 do-extract:
 	${MKDIR} ${WRKSRC}

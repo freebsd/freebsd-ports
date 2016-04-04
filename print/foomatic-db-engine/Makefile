@@ -1,23 +1,19 @@
 # Created by: Martin Ranne <gasp@ridcully.dnsalias.org>
 # $FreeBSD$
 
-PORTNAME=	engine
+PORTNAME=	foomatic-db-engine
 PORTVERSION=	4.0.12
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	print
-MASTER_SITES=	http://www.openprinting.org/download/foomatic/ \
-		GOOGLE_CODE \
-		LOCAL/acm/foomatic
-PKGNAMEPREFIX=	foomatic-db-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
-DIST_SUBDIR=	foomatic
+MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Foomatic database engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_GNOME=	libxml2
 USES=		gmake perl5
@@ -36,8 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		"s,/usr/local/bin:,${PREFIX}/bin:,g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
-		"/ln -sf foo/ s,foomatic-ppdfile,$$\(BINDIR\)/foomatic-ppdfile," \
-		-e "/if \[ -d/ s,LIB_CUPS,PREFIX," ${WRKSRC}/Makefile.in
+		"/if \[ -d/ s,LIB_CUPS,PREFIX," ${WRKSRC}/Makefile.in
 
 post-install:
 .for file in foomatic-combo-xml foomatic-perl-data

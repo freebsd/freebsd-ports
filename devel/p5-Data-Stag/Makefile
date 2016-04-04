@@ -14,7 +14,7 @@ COMMENT=	Structured Tags datastructures
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
+RUN_DEPENDS=	p5-IO-String>=0:devel/p5-IO-String
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

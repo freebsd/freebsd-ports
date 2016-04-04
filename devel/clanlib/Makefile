@@ -14,11 +14,11 @@ COMMENT=	Cross-platform game SDK
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libmikmod.so:${PORTSDIR}/audio/libmikmod \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libmikmod.so:audio/libmikmod \
+		libvorbis.so:audio/libvorbis \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libpcre.so:devel/pcre
 
 USES=		execinfo gmake jpeg libtool pathfix pkgconfig sqlite tar:tgz
 USE_GCC=	yes

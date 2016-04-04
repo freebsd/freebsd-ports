@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract metadata from Flash Video files
 
-BUILD_DEPENDS=	p5-AMF-Perl>=0.15:${PORTSDIR}/www/p5-AMF-Perl \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
-		p5-SWF-File>=0.033:${PORTSDIR}/graphics/p5-SWF-File
+BUILD_DEPENDS=	p5-AMF-Perl>=0.15:www/p5-AMF-Perl \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-Readonly>=0:devel/p5-Readonly \
+		p5-SWF-File>=0.033:graphics/p5-SWF-File
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

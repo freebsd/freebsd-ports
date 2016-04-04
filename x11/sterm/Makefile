@@ -15,8 +15,8 @@ LICENSE_NAME=	MIT/X Consortium License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 USES=		pkgconfig ncurses:port
 USE_XORG=	x11 xext xft

@@ -11,10 +11,10 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ Application Framework for use with Gtkmm
 
-LIB_DEPENDS=	libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
-		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm \
-		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26
+LIB_DEPENDS=	libgconfmm-2.6.so:devel/gconfmm26 \
+		libglademm-2.4.so:devel/libglademm24 \
+		libgnomevfsmm-2.6.so:devel/gnome-vfsmm \
+		libxml++-2.6.so:textproc/libxml++26
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack

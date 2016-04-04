@@ -17,5 +17,6 @@ USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	blitz
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

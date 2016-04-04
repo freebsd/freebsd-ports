@@ -12,11 +12,11 @@ COMMENT=	Create javascript/CSS assets for Jekyll sites
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-fastimage>=1.8:${PORTSDIR}/graphics/rubygem-fastimage \
-		rubygem-jekyll>=3.0:${PORTSDIR}/www/rubygem-jekyll \
-		rubygem-sprockets3>=3.3:${PORTSDIR}/devel/rubygem-sprockets3 \
-		rubygem-sprockets-helpers>=1.2:${PORTSDIR}/devel/rubygem-sprockets-helpers \
-		rubygem-tilt>=2.0:${PORTSDIR}/devel/rubygem-tilt
+RUN_DEPENDS=	rubygem-fastimage>=1.8:graphics/rubygem-fastimage \
+		rubygem-jekyll>=3.0:www/rubygem-jekyll \
+		rubygem-sprockets3>=3.3:devel/rubygem-sprockets3 \
+		rubygem-sprockets-helpers>=1.2:devel/rubygem-sprockets-helpers \
+		rubygem-tilt>=2.0:devel/rubygem-tilt
 
 NO_ARCH=	yes
 USE_RUBY=	yes

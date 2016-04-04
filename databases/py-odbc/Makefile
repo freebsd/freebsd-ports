@@ -16,7 +16,7 @@ LICENSE=	MIT
 USES=		python zip
 USE_PYTHON=	distutils autoplist
 
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
-BUILD_DEPENDS+=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:databases/unixODBC
+BUILD_DEPENDS+=	unixODBC>=2.2.14_1:databases/unixODBC
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+--- extra/resources/ping.orig	2016-03-21 16:27:02 UTC
++++ extra/resources/ping
+@@ -262,6 +262,7 @@ ping_check() {
+ 	case `uname` in
+ 	    Linux) p_args="-n -q -W $OCF_RESKEY_timeout -c $OCF_RESKEY_attempts";;
+ 	    Darwin) p_args="-n -q -t $OCF_RESKEY_timeout -c $OCF_RESKEY_attempts -o";;
++	    FreeBSD) p_args="-n -q -t $OCF_RESKEY_timeout -c $OCF_RESKEY_attempts -o";;
+ 	    *) ocf_log err "Unknown host type: `uname`"; exit $OCF_ERR_INSTALLED;;
+ 	esac
+ 

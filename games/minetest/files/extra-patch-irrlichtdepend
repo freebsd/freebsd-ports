@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2014-01-02 01:54:28.000000000 +0400
-+++ CMakeLists.txt	2014-02-07 05:16:36.652533717 +0400
-@@ -57,7 +57,7 @@
- include(${CMAKE_SOURCE_DIR}/cmake/Modules/misc.cmake)
+--- CMakeLists.txt.orig	2015-08-20 02:02:00 UTC
++++ CMakeLists.txt
+@@ -55,7 +55,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PAT
  
- # This is done here so that relative search paths are more reasnable
+ 
+ # This is done here so that relative search paths are more reasonable
 -find_package(Irrlicht)
 +set(IRRLICHT_LIBRARY "")
  
- #
+ 
  # Installation

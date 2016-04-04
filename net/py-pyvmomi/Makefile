@@ -11,8 +11,8 @@ COMMENT=	Python SDK for the VMware vSphere API of ESX, ESXi, and vCenter
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:devel/py-six
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -2,43 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	nagios-snmp-plugins
-PORTVERSION=	1.2
-PORTREVISION=	4
+PORTVERSION=	1.3.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.softwareforge.de/releases/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional SNMP plugins for Nagios
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake perl5
+USES=		autoreconf gmake perl5 localbase
 OPTIONS_DEFINE=	DOCS
 
-NAGIOS_PLUGIN_DIR=	${PREFIX}/libexec/nagios
+USE_GITHUB=	yes
+GH_ACCOUNT=	glensc
 
-CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/nagios/cgi-bin \
-		--libexecdir=${NAGIOS_PLUGIN_DIR} \
-		--datadir=${PREFIX}/share/nagios \
-		--sysconfdir=${PREFIX}/etc/nagios \
-		--localstatedir=/var/spool/nagios \
-		--with-snmp=${PREFIX}
-CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+PORTDOCS=	README NEWS
 
-# Workaround configure.in lameness.
-CPPFLAGS+=	`net-snmp-config --cflags`
+CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec/nagios \
+		--sysconfdir=${PREFIX}/etc/nagios
 
-do-install:
-	${MKDIR} ${STAGEDIR}${NAGIOS_PLUGIN_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/check_snmp_disk ${STAGEDIR}${NAGIOS_PLUGIN_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/check_snmp_proc ${STAGEDIR}${NAGIOS_PLUGIN_DIR}
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/etc/nagios/nagios-snmp-plugins.cfg \
+		${STAGEDIR}${PREFIX}/etc/nagios/nagios-snmp-plugins.cfg.sample
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

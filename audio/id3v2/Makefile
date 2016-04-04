@@ -11,7 +11,7 @@ COMMENT=	Command line id3v2 tag editor
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib
+LIB_DEPENDS=	libid3.so:audio/id3lib
 
 MAKE_JOBS_UNSAFE=	yes
 

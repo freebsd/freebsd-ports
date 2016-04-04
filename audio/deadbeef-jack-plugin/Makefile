@@ -8,8 +8,8 @@ CATEGORIES=	audio
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	JACK output plugin for DeaDBeeF music player
 
-BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:${PORTSDIR}/audio/deadbeef
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
+LIB_DEPENDS=	libjack.so:audio/jack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes

@@ -12,20 +12,6 @@ share/pixmaps/peazip.png
 %%DATADIR%%/res/icons/PeaZip_package.ico
 %%DATADIR%%/res/icons/PeaZip_rar.ico
 %%DATADIR%%/res/icons/PeaZip_zip.ico
-%%DATADIR%%/res/icons/new installer/peazip-256.bmp
-%%DATADIR%%/res/icons/new installer/peazip-icon-green.ico
-%%DATADIR%%/res/icons/new installer/peazip-icon-yellow.ico
-%%DATADIR%%/res/icons/new installer/peazip-installer-green-16.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer-green-24.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer-green-256.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer-green-32.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer-green-48.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer-yellow-16.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer-yellow-24.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer-yellow-256.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer-yellow-32.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer-yellow-48.bmp
-%%DATADIR%%/res/icons/new installer/peazip-installer.png
 %%DATADIR%%/res/icons/peazip_seven.icl
 %%DATADIR%%/res/lang/ar.txt
 %%DATADIR%%/res/lang/bg.txt
@@ -66,12 +52,15 @@ share/pixmaps/peazip.png
 %%DATADIR%%/res/lang/vn.txt
 %%DATADIR%%/res/pea
 %%DATADIR%%/res/pealauncher
+%%DATADIR%%/res/themes/classic.theme.7z
+%%DATADIR%%/res/themes/experience.theme.7z
 %%DATADIR%%/res/themes/firecrystal.theme.7z
 %%DATADIR%%/res/themes/nographic-embedded/fm-theme.bmp
 %%DATADIR%%/res/themes/nographic-embedded/note.readme
-%%DATADIR%%/res/themes/seven-embedded/fm-theme.bmp
-%%DATADIR%%/res/themes/seven-embedded/note.readme
 %%DATADIR%%/res/themes/seven.theme.7z
+%%DATADIR%%/res/themes/ten-embedded/fm-theme.bmp
+%%DATADIR%%/res/themes/ten-embedded/note.readme
+%%DATADIR%%/res/themes/ten.theme.7z
 %%7Z%%%%DATADIR%%/res/7z/7z
 %%ARC%%%%DATADIR%%/res/arc/arc
 %%UNACE%%%%DATADIR%%/res/unace/unace

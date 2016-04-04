@@ -1,23 +1,15 @@
---- ./Makefile.in.orig	2001-03-15 09:34:42.000000000 +0100
-+++ ./Makefile.in	2014-07-22 13:21:21.000000000 +0200
-@@ -8,7 +8,6 @@
- srcdir          = @srcdir@
- VPATH           = @srcdir@
- 
--install_prefix  =
- prefix          = @prefix@
- exec_prefix	= @exec_prefix@
- libdir		= @libdir@
-@@ -26,7 +25,7 @@
+--- Makefile.in.orig	2001-03-15 08:34:42 UTC
++++ Makefile.in
+@@ -26,7 +26,7 @@ LNETINC = @LNETINC@
  LNETLIB = @LNETLIB@
  
  NIDSINC	= @NIDSINC@
 -NIDSLIB	= @NIDSLIB@
-+NIDSLIB	= @NIDSLIB@ `pkg-config --libs gthread-2.0` `pkg-config --libs gthread-2.0` `pkg-config --libs gthread-2.0` `pkg-config --libs gthread-2.0`
++NIDSLIB	= @NIDSLIB@ `pkg-config --libs gthread-2.0`
  
  DBINC	= @DBINC@
  DBLIB	= @DBLIB@
-@@ -37,9 +36,8 @@
+@@ -37,9 +37,8 @@ SSLLIB	= @SSLLIB@
  X11INC	= @X_CFLAGS@
  X11LIB	= @X_LIBS@ @X_PRE_LIBS@ -lXmu -lX11 @X_EXTRA_LIBS@
  
@@ -29,7 +21,7 @@
  
  INSTALL	= @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
-@@ -76,22 +74,23 @@
+@@ -76,22 +75,23 @@ CONFIGS	= dsniff.magic dsniff.services d
  .c.o:
  	$(CC) $(CFLAGS) $(INCS) -c $(srcdir)/$*.c
  
@@ -64,33 +56,7 @@
  
  dsniff: $(HDRS) $(SRCS) $(OBJS)
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(DBLIB) $(SSLLIB)
-@@ -139,24 +138,24 @@
- 	$(CC) $(LDFLAGS) -o $@ webspy.o base64.o buf.o remote.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(X11LIB)
- 
- install:
--	test -d $(install_prefix)$(sbindir) || \
--	   $(INSTALL) -d $(install_prefix)$(sbindir)
-+	test -d $(DESTDIR)$(sbindir) || \
-+	   $(INSTALL) -d $(DESTDIR)$(sbindir)
- 	for file in $(PROGS); do \
--	   $(INSTALL_PROGRAM) -m 755 $$file $(install_prefix)$(sbindir); \
-+	   $(INSTALL_PROGRAM) -m 755 $$file $(DESTDIR)$(sbindir); \
- 	done
--	test -d $(install_prefix)$(libdir) || \
--	   $(INSTALL) -d $(install_prefix)$(libdir)
-+	test -d $(DESTDIR)$(libdir) || \
-+	   $(INSTALL) -d $(DESTDIR)$(libdir)
- 	for file in $(CONFIGS); do \
--	   $(INSTALL_DATA) $$file $(install_prefix)$(libdir); \
-+	   $(INSTALL_DATA) $$file $(DESTDIR)$(libdir); \
- 	done
--	test -d $(install_prefix)$(mandir)/man8 || \
--	   $(INSTALL) -d $(install_prefix)$(mandir)/man8
-+	test -d $(DESTDIR)$(mandir)/man8 || \
-+	   $(INSTALL) -d $(DESTDIR)$(mandir)/man8
- 	for file in *.8; do \
--	   $(INSTALL_DATA) $$file $(install_prefix)$(mandir)/man8; \
-+	   $(INSTALL_DATA) $$file $(DESTDIR)$(mandir)/man8; \
+@@ -156,7 +156,7 @@ install:
  	done
  
  clean:

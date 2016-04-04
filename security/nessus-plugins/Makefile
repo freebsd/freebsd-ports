@@ -16,9 +16,12 @@ DIST_SUBDIR=	nessus
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Plugins for Nessus, the security scanner
 
-BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus
-RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
-		nmap:${PORTSDIR}/security/nmap
+BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:security/nessus
+RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:security/nessus \
+		nmap:security/nmap
+
+DEPRECATED=	Abandoned, consider using OpenVAS
+EXPIRATION_DATE=2016-09-30
 
 USES=		libtool
 WRKSRC=		${WRKDIR}/nessus-plugins

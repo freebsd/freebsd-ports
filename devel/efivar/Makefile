@@ -10,7 +10,7 @@ COMMENT=	Tools and library to manipulate EFI variables
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 USE_GCC=	yes
 USE_GITHUB=	yes

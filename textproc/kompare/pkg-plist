@@ -1,5 +1,5 @@
 bin/kompare
-include/kompare/kompareinterface.h
+include/kde4/kompare/kompareinterface.h
 lib/kde4/komparenavtreepart.so
 lib/kde4/komparepart.so
 lib/libkomparedialogpages.so

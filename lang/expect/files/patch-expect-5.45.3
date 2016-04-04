@@ -1,0 +1,504 @@
+--- ChangeLog.orig	2010-10-26 22:09:36 UTC
++++ ChangeLog
+@@ -1,3 +1,59 @@
++2014-05-01  Andreas Kupries <andreask@activestate.com>
++
++	* exp_main_sub.c: Updated EXP_VERSION to 5.45.3
++	* configure, configure.in: Updated expect to version 5.45.3
++
++	* expect.man [http://sourceforge.net/p/expect/bugs/86/]. Report
++	  and fix by Vitezlav Crhonek.
++
++	* expect.c [http://sourceforge.net/p/expect/bugs/76/]. Report and
++	  fix by Mutsuhito Iikura. On finding a full buffer during
++	  matching the sliding window mechanism slides too far, truncating
++	  the whole buffer and preventing matches across the boundary. Fix
++	  is shortening the slide distance (slide only one 1/3).
++
++	* expect.c: [http://sourceforge.net/p/expect/patches/18/]. Report
++	  and fix both by Nils Carlson <nils.carlson@ludd.ltu.se>.
++	  Replaced a cc==0 check with proper Tcl_Eof() check.
++
++2013-11-04  Andreas Kupries  <andreask@activestate.com>
++
++	* tclconfig/tcl.m4: [http://sourceforge.net/p/expect/patches/17/]
++	* configure: Extended Tcl header detection for OS X Mountain Lion.
++
++	* exp_main_sub.c: Updated EXP_VERSION to 5.45.2
++	* configure, configure.in: Updated expect to version 5.45.2
++
++	* expect.c: [http://sourceforge.net/p/expect/patches/16/]. Report
++	  and fix both by Per Cederqvist. Replaced a memcpy with memmove
++	  as the latter properly handles overlapping memory, whereas the
++	  original code does not.
++
++2012-08-15  Andreas Kupries  <andreask@activestate.com>
++
++	* exp_main_sub.c: Updated EXP_VERSION to 5.45.1
++	* configure, configure.in: Updated expect to version 5.45.1
++
++	* exp_chan.c: Applied patch sent in by Ogawa Hirofumi
++	  <hirofumi@mail.parknet.co.jp>. The patch fixes a problem when
++	  talking a tty where the writer has died. Some operating systems
++	  report the condition as EIO with nothing read, while this
++	  actually an EOF. Without the patch the returned data is
++	  incomplete due to the error reported immediately and dropping
++	  data in buffers.
++
++2012-05-16  Andreas Kupries  <andreask@activestate.com>
++
++	* exp_chan.c: [Bug 3526461]: Applied patch by Michael Cleverly
++	  <cleverly@users.sourceforge.net> fixing a problem with the
++	  iteration over the expect channel list where the loop code may
++	  modify the list, breaking the iterator.
++
++	* exp_chan.c: [Bug 3526707]: Applied patch by Michael Cleverly
++	* exp_command.h: <cleverly@users.sourceforge.net> fixing problem
++	* expect.c: with an insufficient test for a lost channel in
++	  exp_background_channelhandler.
++
+ 2010-10-26  Andreas Kupries  <andreask@activestate.com>
+ 
+ 	* expect.c: [Bug 3095935]: Convert #bytes information to #chars to
+--- configure.in.orig	2010-08-27 21:51:53 UTC
++++ configure.in
+@@ -1,9 +1,9 @@
+ dnl
+ dnl Process this file with autoconf to produce a configure script.
+ dnl
+-AC_REVISION($Id: configure.in,v 5.80 2010/08/27 21:51:53 hobbs Exp $)
++AC_REVISION($Id: configure.in,v 5.83 2014/05/01 19:22:24 andreas_kupries Exp $)
+ 
+-AC_INIT([expect],[5.45])
++AC_INIT([expect],[5.45.3])
+ 
+ TEA_INIT([3.9])
+ 
+--- exp_chan.c.orig	2010-07-01 00:53:49 UTC
++++ exp_chan.c
+@@ -217,6 +217,11 @@ ExpInputProc(instanceData, buf, toRead, 
+ 
+     bytesRead = read(esPtr->fdin, buf, (size_t) toRead);
+     /*printf("ExpInputProc: read(%d,,) = %d\r\n",esPtr->fdin,bytesRead);*/
++
++    /* Emulate EOF on tty for tcl */
++    if ((bytesRead == -1) && (errno == EIO) && isatty(esPtr->fdin)) {
++	bytesRead = 0;
++    }
+     if (bytesRead > -1) {
+ 	/* strip parity if requested */
+ 	if (esPtr->parity == 0) {
+@@ -447,6 +452,34 @@ expChannelCountGet()
+     ThreadSpecificData *tsdPtr = TCL_TSD_INIT(&dataKey);
+     return tsdPtr->channelCount;
+ }
++
++int
++expChannelStillAlive(esBackupPtr, backupName)
++     ExpState *esBackupPtr;
++     char *backupName;
++{
++    ThreadSpecificData *tsdPtr = TCL_TSD_INIT(&dataKey);
++    ExpState *esPtr;
++
++    /* 
++     * This utility function is called from 'exp_background_channelhandler'
++     * and checks to make sure that backupName can still be found in the 
++     * channels linked list at the same address as before.
++     *
++     * If it can't be (or if the memory address has changed) then it
++     * means that it was lost in the background (and possibly another
++     * channel was opened and reassigned the same name).
++     */
++
++    for (esPtr = tsdPtr->firstExpPtr; esPtr; esPtr = esPtr->nextPtr) {
++        if (0 == strcmp(esPtr->name, backupName)) 
++            return (esPtr == esBackupPtr);
++    }
++        
++    /* not found; must have been lost in the background */
++    return 0;
++}
++
+ #if 0 /* Converted to macros */
+ int
+ expSizeGet(esPtr)
+@@ -602,12 +635,38 @@ exp_background_channelhandlers_run_all()
+ {
+     ThreadSpecificData *tsdPtr = TCL_TSD_INIT(&dataKey);
+     ExpState *esPtr;
++    ExpState *esNextPtr;
++    ExpState *esPriorPtr = 0;
+ 
+     /* kick off any that already have input waiting */
+-    for (esPtr = tsdPtr->firstExpPtr;esPtr;esPtr = esPtr->nextPtr) {
++    for (esPtr = tsdPtr->firstExpPtr;esPtr; esPriorPtr = esPtr, esPtr = esPtr->nextPtr) {
+ 	/* is bg_interp the best way to check if armed? */
+ 	if (esPtr->bg_interp && !expSizeZero(esPtr)) {
++            /* 
++             * We save the nextPtr in a local variable before calling
++             * 'exp_background_channelhandler' since in some cases
++             * 'expStateFree' could end up getting called before it
++             * returns, leading to a likely segfault on the next
++             * interaction through the for loop.
++             */
++            esNextPtr = esPtr->nextPtr;
+ 	    exp_background_channelhandler((ClientData)esPtr,0);
++            if (esNextPtr != esPtr->nextPtr) {
++                /* 
++                 * 'expStateFree' must have been called from
++                 * underneath us so we know that esPtr->nextPtr is
++                 * invalid.  However, it is possible that either the
++                 * original nextPtr and/or the priorPtr have been
++                 * freed too.  If the esPriorPtr->nextPtr is now
++                 * esNextPtr it seems safe to proceed.  Otherwise we
++                 * break and end early for safety.
++                 */
++                if (esPriorPtr && esPriorPtr->nextPtr == esNextPtr) {
++                    esPtr = esPriorPtr;
++                } else {
++                    break; /* maybe set esPtr = tsdPtr->firstExpPtr again? */
++                }
++            }
+ 	}
+     }
+ }
+--- exp_command.h.orig	2010-07-01 00:53:49 UTC
++++ exp_command.h
+@@ -244,6 +244,7 @@ EXTERN void		exp_init_unit_random _ANSI_
+ EXTERN void		exp_init_sig _ANSI_ARGS_((void));
+ EXTERN void		expChannelInit _ANSI_ARGS_((void));
+ EXTERN int		expChannelCountGet _ANSI_ARGS_((void));
++EXTERN int              expChannelStillAlive _ANSI_ARGS_((ExpState *, char *));
+ 
+ EXTERN int		exp_tcl2_returnvalue _ANSI_ARGS_((int));
+ EXTERN int		exp_2tcl_returnvalue _ANSI_ARGS_((int));
+--- expect.c.orig	2010-10-26 22:09:36 UTC
++++ expect.c
+@@ -972,21 +972,21 @@ eval_case_string(
+ 	}
+ 	expDiagLogU(no);
+     } else if (e->use == PAT_FULLBUFFER) {
+-      expDiagLogU(Tcl_GetString(e->pat));
+-      expDiagLogU("? ");
+-      /* this must be the same test as in expIRead */
++        expDiagLogU(Tcl_GetString(e->pat));
++	expDiagLogU("? ");
++	/* this must be the same test as in expIRead */
+ 	/* We drop one third when are at least 2/3 full */
+ 	/* condition is (size >= max*2/3) <=> (size*3 >= max*2) */
+ 	if (((expSizeGet(esPtr)*3) >= (esPtr->input.max*2)) && (numchars > 0)) {
+-	o->e = e;
+-	    o->matchlen = numchars;
++	    o->e = e;
++	    o->matchlen = numchars/3;
+ 	    o->matchbuf = str;
+-	o->esPtr = esPtr;
+-	expDiagLogU(yes);
+-	return(EXP_FULLBUFFER);
+-      } else {
+-	expDiagLogU(no);
+-      }
++	    o->esPtr = esPtr;
++	    expDiagLogU(yes);
++	    return(EXP_FULLBUFFER);
++	} else {
++	    expDiagLogU(no);
++	}
+     }
+     return(EXP_NOMATCH);
+ }
+@@ -1093,8 +1093,10 @@ ecases_remove_by_expi(
+ 
+ 			/* shift remaining elements down */
+ 			/* but only if there are any left */
++			/* Use memmove to handle the overlap */
++			/* memcpy breaks */
+ 			if (i+1 != ecmd->ecd.count) {
+-				memcpy(&ecmd->ecd.cases[i],
++				memmove(&ecmd->ecd.cases[i],
+ 				       &ecmd->ecd.cases[i+1],
+ 					((ecmd->ecd.count - i) - 1) * 
+ 					sizeof(struct exp_cmd_descriptor *));
+@@ -1859,17 +1861,8 @@ expRead(
+ 	/* try to read it */
+ 	cc = expIRead(interp,esPtr,timeout,tcl_set_flags);
+ 	
+-	/* the meaning of 0 from i_read means eof.  Muck with it a */
+-	/* little, so that from now on it means "no new data arrived */
+-	/* but it should be looked at again anyway". */
+-	if (cc == 0) {
++	if (Tcl_Eof(esPtr->channel)) {
+ 	    cc = EXP_EOF;
+-	} else if (cc > 0) {
+-	    /* successfully read data */
+-	} else {
+-	    /* failed to read data - some sort of error was encountered such as
+-	     * an interrupt with that forced an error return
+-	     */
+ 	}
+     } else if (cc == EXP_DATA_OLD) {
+ 	cc = 0;
+@@ -1967,6 +1960,8 @@ exp_buffer_shuffle( /* INTL */
+     str      = esPtr->input.buffer;
+     numchars = esPtr->input.use;
+ 
++    /* We discard 1/3 of the data in the buffer.
++     */
+     skiplen = numchars/3;
+     p       = str + skiplen;
+ 
+@@ -1975,7 +1970,7 @@ exp_buffer_shuffle( /* INTL */
+      */
+ 
+     lostChar = *p;
+-    /* temporarily stick null in middle of string */
++    /* Temporarily stick null in middle of string to terminate */
+     *p = 0;
+ 
+     expDiagLog("%s: set %s(buffer) \"",caller_name,array_name);
+@@ -1986,12 +1981,13 @@ exp_buffer_shuffle( /* INTL */
+ 	    save_flags);
+ 
+     /*
+-     * restore damage
++     * Restore damage done fir display above.
+      */
+     *p = lostChar;
+ 
+     /*
+-     * move 2nd half of string down to 1st half
++     * move the higher 2/3 of the string down over the lower 2/3.
++     * This destroys the 1st 1/3.
+      */
+ 
+     newlen = numchars - skiplen;
+@@ -2503,8 +2499,12 @@ do_more_data:
+      */
+ 
+     /* First check that the esPtr is even still valid! */
+-    /* This ought to be sufficient. */
+-    if (0 == Tcl_GetChannel(interp,backup,(int *)0)) {
++    /* 
++     * It isn't sufficient to just check that 'Tcl_GetChannel' still knows about
++     * backup since it is possible that esPtr was lost in the background AND
++     * another process spawned and reassigned the same name. 
++     */
++    if (!expChannelStillAlive(esPtr, backup)) {
+       expDiagLog("expect channel %s lost in background handler\n",backup);
+       return;
+     }
+--- expect.man.orig	2006-01-25 21:51:28 UTC
++++ expect.man
+@@ -173,7 +173,9 @@ way, use the
+ .B \-b
+ flag.
+ (When using Expectk, this option is specified as
+-.BR \-buffer .)  Note that stdio-buffering may still take place however this shouldn't cause problems when reading from a fifo or stdin.
++.BR \-buffer .)
++Note that stdio-buffering may still take place however this shouldn't cause
++problems when reading from a fifo or stdin.
+ .PP
+ If the string "\-" is supplied as a filename, standard input is read instead.
+ (Use "./\-" to read from a file actually named "\-".)
+--- fixcat.orig	2016-03-18 13:19:35 UTC
++++ fixcat
+@@ -0,0 +1,21 @@
++#!expect --
++# Synopsis: fixcat
++# Author: Don Libes
++
++# Description: test to see if /bin/cat is unbuffered (i.e., -u is needed)
++# Return 0 if buffered, 1 if unbuffered.
++#
++# If this file is sitting in an architecture-specific library directory,
++# then it serves as a marker that your /bin/cat buffers by default.
++
++# test for when catting to/from files
++log_user 0
++spawn -open [open "|cat" "r+"]
++send "\r"
++expect "\r" {exit 1}
++
++# test for when catting to real tty
++#log_user 0
++#spawn /bin/cat
++#send "\r"
++#expect "\r\n\r\n" {exit 1}
+--- tclconfig/tcl.m4.orig	2010-11-09 19:42:10 UTC
++++ tclconfig/tcl.m4
+@@ -9,7 +9,7 @@
+ # See the file "license.terms" for information on usage and redistribution
+ # of this file, and for a DISCLAIMER OF ALL WARRANTIES.
+ #
+-# RCS: @(#) $Id: tcl.m4,v 1.6 2010/09/16 20:46:47 hobbs Exp $
++# RCS: @(#) $Id: tcl.m4,v 1.7 2013/11/04 19:42:08 andreas_kupries Exp $
+ 
+ AC_PREREQ(2.57)
+ 
+@@ -1632,7 +1632,7 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 	    # This configuration from FreeBSD Ports.
+ 	    SHLIB_CFLAGS="-fPIC"
+ 	    SHLIB_LD="${CC} -shared"
+-	    TCL_SHLIB_LD_EXTRAS="-soname \$[@]"
++	    TCL_SHLIB_LD_EXTRAS="-Wl,-soname\$[@]"
+ 	    SHLIB_SUFFIX=".so"
+ 	    LDFLAGS=""
+ 	    AS_IF([test $doRpath = yes], [
+@@ -1646,7 +1646,7 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 	    # Version numbers are dot-stripped by system policy.
+ 	    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
+ 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
+-	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
+ 	    TCL_LIB_VERSIONS_OK=nodots
+ 	    ;;
+ 	Darwin-*)
+@@ -3220,9 +3220,9 @@ print("manifest needed")
+ 	    if test x"${TK_BIN_DIR}" != x ; then
+ 		SHLIB_LD_LIBS="${SHLIB_LD_LIBS} \"`${CYGPATH} ${TK_BIN_DIR}/${TK_STUB_LIB_FILE}`\""
+ 	    fi
+-	    eval eval "PKG_LIB_FILE=${PACKAGE_NAME}${SHARED_LIB_SUFFIX}"
++	    eval eval "PKG_LIB_FILE=${PACKAGE_NAME}${EXP_LIB_VERSION}${SHARED_LIB_SUFFIX}"
+ 	else
+-	    eval eval "PKG_LIB_FILE=${PACKAGE_NAME}${UNSHARED_LIB_SUFFIX}"
++	    eval eval "PKG_LIB_FILE=${PACKAGE_NAME}${EXP_LIB_VERSION}${UNSHARED_LIB_SUFFIX}"
+ 	fi
+ 	# Some packages build their own stubs libraries
+ 	eval eval "PKG_STUB_LIB_FILE=${PACKAGE_NAME}stub${UNSHARED_LIB_SUFFIX}"
+@@ -3239,10 +3239,10 @@ print("manifest needed")
+ 	    if test x"${TK_BIN_DIR}" != x ; then
+ 		SHLIB_LD_LIBS="${SHLIB_LD_LIBS} ${TK_STUB_LIB_SPEC}"
+ 	    fi
+-	    eval eval "PKG_LIB_FILE=lib${PACKAGE_NAME}${SHARED_LIB_SUFFIX}"
++	    eval eval "PKG_LIB_FILE=lib${PACKAGE_NAME}${EXP_LIB_VERSION}${SHARED_LIB_SUFFIX}"
+ 	    RANLIB=:
+ 	else
+-	    eval eval "PKG_LIB_FILE=lib${PACKAGE_NAME}${UNSHARED_LIB_SUFFIX}"
++	    eval eval "PKG_LIB_FILE=lib${PACKAGE_NAME}${EXP_LIB_VERSION}${UNSHARED_LIB_SUFFIX}"
+ 	fi
+ 	# Some packages build their own stubs libraries
+ 	eval eval "PKG_STUB_LIB_FILE=lib${PACKAGE_NAME}stub${UNSHARED_LIB_SUFFIX}"
+@@ -3389,9 +3389,12 @@ AC_DEFUN([TEA_PRIVATE_TCL_HEADERS], [
+             # the framework's Headers and PrivateHeaders directories
+             case ${TCL_DEFS} in
+ 	    	*TCL_FRAMEWORK*)
+-		    if test -d "${TCL_BIN_DIR}/Headers" -a \
+-			    -d "${TCL_BIN_DIR}/PrivateHeaders"; then
+-			TCL_INCLUDES="-I\"${TCL_BIN_DIR}/Headers\" -I\"${TCL_BIN_DIR}/PrivateHeaders\" ${TCL_INCLUDES}"
++		    if test -d "${TCL_BIN_DIR}/Headers"; then
++			if test -d "${TCL_BIN_DIR}/PrivateHeaders"; then
++			    TCL_INCLUDES="-I\"${TCL_BIN_DIR}/Headers\" -I\"${TCL_BIN_DIR}/PrivateHeaders\" ${TCL_INCLUDES}"
++			elif test -d "${TCL_BIN_DIR}/Headers/tcl-private"; then
++			    TCL_INCLUDES="-I\"${TCL_BIN_DIR}/Headers\" -I\"${TCL_BIN_DIR}/Headers/tcl-private\" ${TCL_INCLUDES}"
++			fi
+ 		    else
+ 			TCL_INCLUDES="${TCL_INCLUDES} ${TCL_INCLUDE_SPEC} `echo "${TCL_INCLUDE_SPEC}" | sed -e 's/Headers/PrivateHeaders/'`"
+ 		    fi
+--- testsuite/expect.tests/expect-tests.exp.orig	2016-03-18 13:19:35 UTC
++++ testsuite/expect.tests/expect-tests.exp
+@@ -0,0 +1,104 @@
++#   Copyright (C) 1988, 1990, 1991, 1992 Free Software Foundation, Inc.
++
++# This program is free software; you can redistribute it and/or modify
++# it under the terms of the GNU General Public License as published by
++# the Free Software Foundation; either version 2 of the License, or
++# (at your option) any later version.
++# 
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++# 
++# You should have received a copy of the GNU General Public License
++# along with this program; if not, write to the Free Software
++# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
++
++# Please email any bugs, comments, and/or additions to this file to:
++# bug-dejagnu@prep.ai.mit.edu
++
++# This file was written by Rob Savoye. (rob@cygnus.com)
++
++#
++# the initial work on the version of these tests from the tcl release was done
++# by Mary Ann May-Pumphrey of Sun Microsystems.
++#
++if $tracelevel then {
++	strace $tracelevel
++	}
++
++expect_before buffer_full { error "Buffer full" }
++expect_start
++
++set timeoutmsg "Timed out: Never got started, "
++set timeout 20
++set file all
++set command "unidentified test in $file"
++
++if ![file exists ${srcdir}/../tests] {
++    perror "The source for the test cases is missing." 0
++    return -1
++}
++send "cd ${srcdir}/../tests\r"
++expect {
++    -re "set VERBOSE 1\[\r\n\]*1\[\r\n\]*$eprompt" {
++	verbose "Set verbose flag for tests"
++	exp_continue
++    }
++    -re "cd $srcdir/../tests\[\r\n\]*$eprompt" {
++	verbose "Changed directory to $srcdir/../tests" 2
++    }
++    -re "no files matched glob pattern" {
++	warning "Didn't cd to $srcdir/../tests"
++    }
++    timeout {
++	perror "Couldn't change directories" 0
++	return -1
++    }
++}
++
++exp_send "source $file\r"
++expect {
++    -re "source $file\[\r\n\]*$eprompt" {
++	verbose "Sourced test $file ..."
++	set timeoutmsg "Never got to the end of "
++	exp_continue
++    }
++    "install Tcl or set your TCL_LIBRARY environment variable" {
++	perror "You need to set the TCL_LIBRARY environment variable"
++	return -1
++    }
++    -re "no files matched glob pattern" {
++	warning "Didn't cd to $srcdir/../tests"
++    }
++    -re "\[\r\n\]*\\+\\+\\+\\+ (\[a-z\]*-\[.0-9\]*) PASSED\[\r\n\]*" {
++	pass $expect_out(1,string)
++	exp_continue
++    }
++    -re "\[\r\n\]*\\+* (\[a-z\]*-\[.0-9\]*) FAILED\[\r\n\]*" {
++	fail $expect_out(1,string)
++	exp_continue
++    }
++    -re "Test generated error:\[\r\n\]*.*\[\r\n\]*" {
++	regsub "Test generated error:\[\r\n\]+" $expect_out(0,string) "" tmp
++	regsub -all "\[\r\n\]*\[a-z.\]test\[\r\n\]*" $tmp "" tmp
++	regsub -all "\[\r\n\]*" $tmp "" tmp
++	perror "Got a test case bug \"$tmp\""
++	exp_continue
++    }
++    -re "\[x\]+ \[a-i\]+ \[A-K\]+ \[0-9\]+ " {
++	verbose "Got standard output message from exec 8.1 test." 3
++	exp_continue
++    }
++    "*Error: bad option *" {
++	fail "$command (Got a bad option)"
++    }
++    eof {
++	verbose "Done" 2
++    }
++    timeout {
++	warning "$timeoutmsg $file"		    
++    }
++}
++
++catch close

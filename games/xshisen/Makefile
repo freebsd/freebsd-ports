@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/hrs
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Shisen-sho puzzle game for X11
 
 BROKEN=		fails to start

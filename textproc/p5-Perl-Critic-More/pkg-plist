@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Perl/Critic/More.pm
+%%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/RequireASCII.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Editor/RequireEmacsFileVariables.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireUseOfExceptions.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Modules/PerlMinimumVersion.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Modules/RequirePerlVersion.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireConstantOnLeftSideOfEquality.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RestrictLongStrings.pm
+%%PERL5_MAN3%%/Perl::Critic::More.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::CodeLayout::RequireASCII.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Editor::RequireEmacsFileVariables.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::ErrorHandling::RequireUseOfExceptions.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Modules::PerlMinimumVersion.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Modules::RequirePerlVersion.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::ValuesAndExpressions::RequireConstantOnLeftSideOfEquality.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::ValuesAndExpressions::RestrictLongStrings.3.gz

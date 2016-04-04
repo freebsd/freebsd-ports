@@ -10,7 +10,7 @@ COMMENT=	Tool for registry analysis in forensics examinations
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-Parse-Win32Registry>=0:${PORTSDIR}/devel/p5-Parse-Win32Registry
+RUN_DEPENDS=	p5-Parse-Win32Registry>=0:devel/p5-Parse-Win32Registry
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keydet89

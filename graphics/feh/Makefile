@@ -13,8 +13,8 @@ COMMENT=	Image viewer that utilizes Imlib2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libImlib2.so:graphics/imlib2
 
 USE_XORG=	x11 xt xinerama
 USES=		cpe desktop-file-utils gmake perl5 shebangfix tar:bzip2

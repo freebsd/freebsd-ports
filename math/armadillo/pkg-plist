@@ -70,7 +70,7 @@ include/armadillo_bits/cond_rel_bones.hpp
 include/armadillo_bits/cond_rel_meat.hpp
 include/armadillo_bits/config.hpp
 include/armadillo_bits/constants.hpp
-include/armadillo_bits/constants_compat.hpp
+include/armadillo_bits/constants_old.hpp
 include/armadillo_bits/debug.hpp
 include/armadillo_bits/def_arpack.hpp
 include/armadillo_bits/def_atlas.hpp
@@ -169,6 +169,7 @@ include/armadillo_bits/fn_repmat.hpp
 include/armadillo_bits/fn_reshape.hpp
 include/armadillo_bits/fn_resize.hpp
 include/armadillo_bits/fn_schur.hpp
+include/armadillo_bits/fn_shift.hpp
 include/armadillo_bits/fn_shuffle.hpp
 include/armadillo_bits/fn_size.hpp
 include/armadillo_bits/fn_solve.hpp
@@ -179,6 +180,7 @@ include/armadillo_bits/fn_spones.hpp
 include/armadillo_bits/fn_sprandn.hpp
 include/armadillo_bits/fn_sprandu.hpp
 include/armadillo_bits/fn_spsolve.hpp
+include/armadillo_bits/fn_sqrtmat.hpp
 include/armadillo_bits/fn_stddev.hpp
 include/armadillo_bits/fn_strans.hpp
 include/armadillo_bits/fn_sum.hpp
@@ -327,12 +329,16 @@ include/armadillo_bits/op_reshape_bones.hpp
 include/armadillo_bits/op_reshape_meat.hpp
 include/armadillo_bits/op_resize_bones.hpp
 include/armadillo_bits/op_resize_meat.hpp
+include/armadillo_bits/op_shift_bones.hpp
+include/armadillo_bits/op_shift_meat.hpp
 include/armadillo_bits/op_shuffle_bones.hpp
 include/armadillo_bits/op_shuffle_meat.hpp
 include/armadillo_bits/op_sort_bones.hpp
 include/armadillo_bits/op_sort_index_bones.hpp
 include/armadillo_bits/op_sort_index_meat.hpp
 include/armadillo_bits/op_sort_meat.hpp
+include/armadillo_bits/op_sqrtmat_bones.hpp
+include/armadillo_bits/op_sqrtmat_meat.hpp
 include/armadillo_bits/op_stddev_bones.hpp
 include/armadillo_bits/op_stddev_meat.hpp
 include/armadillo_bits/op_strans_bones.hpp
@@ -440,7 +446,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.6
-lib/libarmadillo.so.6.500.5
+lib/libarmadillo.so.6.600.4
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake

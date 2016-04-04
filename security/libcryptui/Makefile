@@ -10,13 +10,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
 
-BUILD_DEPENDS=	seahorse>=3.0.0:${PORTSDIR}/security/seahorse \
-		gpg:${PORTSDIR}/security/gnupg
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
-RUN_DEPENDS=	seahorse>=3.0.0:${PORTSDIR}/security/seahorse \
-		gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	seahorse>=3.0.0:security/seahorse \
+		gpg:security/gnupg
+LIB_DEPENDS=	libgpgme.so:security/gpgme \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libgnome-keyring.so:security/libgnome-keyring
+RUN_DEPENDS=	seahorse>=3.0.0:security/seahorse \
+		gpg:security/gnupg
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack gnomeprefix gtk30 introspection:build
@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	NOTIFY
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:devel/libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify
 .endif

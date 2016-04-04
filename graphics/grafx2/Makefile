@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pixelart-oriented bitmap painting program
 
-LIB_DEPENDS=	libX11.so:${PORTSDIR}/x11/libX11 \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libX11.so:x11/libX11 \
+		libpng.so:graphics/png
 
 USES=		gmake pkgconfig tar:tgz
 USE_SDL=	sdl image

@@ -15,10 +15,10 @@ COMMENT=	VCP destination driver for svn/svk
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-VCP-autrijus>=0:${PORTSDIR}/devel/p5-VCP-autrijus \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
-		svk>=0:${PORTSDIR}/devel/svk
+BUILD_DEPENDS=	p5-VCP-autrijus>=0:devel/p5-VCP-autrijus \
+		p5-YAML>=0:textproc/p5-YAML \
+		p5-subversion>=0:devel/p5-subversion \
+		svk>=0:devel/svk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

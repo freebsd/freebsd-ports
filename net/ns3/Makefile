@@ -11,101 +11,45 @@ COMMENT=	Network simulator for Internet systems
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+		libsqlite3.so:databases/sqlite3
 
-USES=		pkgconfig python tar:bzip2
+USES=		pkgconfig python tar:bzip2 waf
 USE_LDCONFIG=	yes
+WRKSRC_SUBDIR=	ns-${DISTVERSION}
+CONFIGURE_ARGS=	--int64x64=cairo
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
-OPTIONS_DEFINE=	DEBUG EXAMPLES GSL GTK SUDO TESTS
-OPTIONS_DEFAULT=EXAMPLES TESTS
+OPTIONS_DEFINE=	DEBUG EXAMPLES GSL GTK2 SUDO TEST
+OPTIONS_DEFAULT=TEST
+OPTIONS_SUB=	yes
 
-DEBUG_DESC=	Enable debug build profile
-EXAMPLES_DESC=	Enable examples
-GSL_DESC=	GSL support
-GTK_DESC=	GTK support
-SUDO_DESC=	Enable sudo support
-TESTS_DESC=	Enable tests
+DEBUG_CONFIGURE_ON=	--build-profile=debug
+DEBUG_PLIST_SUB=	DEBUG_SUFX="-debug"
+DEBUG_CONFIGURE_OFF=	--build-profile=release
+DEBUG_PLIST_SUB_OFF=	DEBUG_SUFX=""
 
-BUILDARGS+=	--int64x64=cairo
+EXAMPLES_CONFIGURE_ON=	--enable-examples
+EXAMPLES_CONFIGURE_OFF=	--disable-examples
 
-.include <bsd.port.options.mk>
+GSL_DESC=		GNU Scientific Library support
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 
-.if ${PORT_OPTIONS:MDEBUG}
-BUILDARGS+=		-d debug
-PLIST_SUB+=		WITH_DEBUG="-debug"
-.else
-BUILDARGS+=		-d release
-PLIST_SUB+=		WITH_DEBUG=""
-.endif
+GTK2_LIB_DEPENDS=	libgtk-x11-2.0.so:x11-toolkits/gtk20
+GTK2_CONFIGURE_OFF=	--disable-gtk
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-BUILDARGS+=		--enable-examples
-PLIST_SUB+=		WITH_EXAMPLES=""
-.else
-BUILDARGS+=		--disable-examples
-PLIST_SUB+=		WITH_EXAMPLES="@comment "
-.endif
+SUDO_DESC=		Use sudo to set suid bits on executables
+SUDO_BUILD_DEPENDS=	sudo:security/sudo
+SUDO_CONFIGURE_ON=	--enable-sudo
 
-.if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=		libgsl.so:${PORTSDIR}/math/gsl
-.endif
-
-.if ${PORT_OPTIONS:MGTK}
-LIB_DEPENDS+=		libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
-PLIST_SUB+=		WITH_GTK=""
-.else
-BUILDARGS+=		--disable-gtk
-PLIST_SUB+=		WITH_GTK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSUDO}
-BUILDARGS+=		--enable-sudo
-BUILD_DEPENDS+=		${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
-.endif
-
-.if ${PORT_OPTIONS:MTESTS}
-BUILDARGS+=		--enable-tests
-PLIST_SUB+=		WITH_TESTS=""
-.else
-BUILDARGS+=		--disable-tests
-PLIST_SUB+=		WITH_TESTS="@comment "
-.endif
-
-do-configure:
-	(cd ${WRKSRC}/ns-${PORTVERSION}/ && ${PYTHON_CMD} waf configure --prefix=${STAGEDIR}${PREFIX} ${BUILDARGS})
-
-do-build:
-	(cd ${WRKSRC}/ns-${PORTVERSION}/ && ${PYTHON_CMD} waf build)
-
-do-install:
-	(cd ${WRKSRC}/ns-${PORTVERSION}/ && ${PYTHON_CMD} waf install)
-
-post-install-DEBUG-on:
-	@cd ${STAGEDIR}${PREFIX}/bin; \
-		for FILE in *debug; do \
-			${STRIP_CMD} $${FILE}; \
-		done
+TEST_CONFIGURE_ON=	--enable-tests
+TEST_CONFIGURE_OFF=	--disable-tests
 
 post-install:
-	@cd ${STAGEDIR}${PREFIX}/bin; \
-		for FILE in *; do \
-			${STRIP_CMD} $${FILE}; \
-		done
-	@cd ${STAGEDIR}${PREFIX}/lib; \
-		for FILE in *.so; do \
-			${STRIP_CMD} $${FILE}; \
-		done
-	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ns/; \
-		for FILE in *.so; do \
-			${STRIP_CMD} $${FILE}; \
-		done
-	@cd ${STAGEDIR}${PREFIX}/libdata/pkgconfig; \
-		for FILE in *.pc; do \
-			${REINPLACE_CMD} -e "s,${STAGEDIR},," $${FILE}; \
-			${RM} -f $${FILE}.bak; \
-		done
-	${REINPLACE_CMD} -e "s,${STAGEDIR},," ${STAGEDIR}${PREFIX}/include/ns${PORTVERSION}/${PORTNAME}/config-store-config.h
-	${RM} ${STAGEDIR}${PREFIX}/include/ns${PORTVERSION}/${PORTNAME}/config-store-config.h.bak
+	@${FIND} ${STAGEDIR} \( -path '*/bin/*' -or -name '*.so' \) \
+		-type f -exec ${STRIP_CMD} {} +
+	@${FIND} ${STAGEDIR} \( -path '*/pkgconfig/*' -or \
+			-name 'config-store-config.h' \) \
+		-type f -exec ${REINPLACE_CMD} -i '' 's,${STAGEDIR},,' {} +
 
 .include <bsd.port.mk>

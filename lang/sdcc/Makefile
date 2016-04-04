@@ -12,7 +12,7 @@ COMMENT=	Small Device C Compiler
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-libs
 
 CONFLICTS_INSTALL=	sdcc-[0-9]* sdcc-devel-[0-9]*
 GNU_CONFIGURE=	yes
@@ -42,8 +42,8 @@ HC08_CONFIGURE_OFF=	--disable-hc08 --disable-hc08-port		\
 			--disable-s08-port
 MCS51_CONFIGURE_OFF=	--disable-51 --disable-mcs51-port		\
 			--disable-ds390-port --disable-ds400-port
-PIC_BUILD_DEPENDS=	gputils>=1.2.0:${PORTSDIR}/devel/gputils
-PIC_RUN_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
+PIC_BUILD_DEPENDS=	gputils>=1.2.0:devel/gputils
+PIC_RUN_DEPENDS=	gpasm:devel/gputils
 PIC_CONFIGURE_OFF=	--disable-pic14-port --disable-pic16-port
 STM8_CONFIGURE_OFF=	--disable-stm8 --disable-stm8-port
 UCSIM_CONFIGURE_OFF=	--disable-ucsim

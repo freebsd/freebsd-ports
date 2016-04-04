@@ -14,7 +14,7 @@ COMMENT=	Multiplayer Atari 2600 emulator written in pure Java
 
 LICENSE=	AGPLv3
 
-EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -2,6 +2,7 @@
 
 PORTNAME=	baloo
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -11,8 +12,8 @@ COMMENT=	KDE framework for searching and managing user metadata
 
 CONFLICTS_INSTALL=	kde-runtime-4.12.*
 
-LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core \
-		libqjson.so:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libxapian.so:databases/xapian-core \
+		libqjson.so:devel/qjson
 
 USE_KDE4=	kdeprefix akonadi automoc4 kdelibs kfilemetadata \
 		pimlibs

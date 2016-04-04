@@ -10,7 +10,7 @@ COMMENT=	ClusterSSH features using tmux, but not X11
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${LOCALBASE}/bin/tmux:${PORTSDIR}/sysutils/tmux
+RUN_DEPENDS=	${LOCALBASE}/bin/tmux:sysutils/tmux
 
 NO_BUILD=	YES
 

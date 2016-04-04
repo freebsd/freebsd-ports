@@ -12,9 +12,9 @@ LICENSE_NAME=	Creative Commons Attribution 3.0 Unported
 LICENSE_TEXT=	http://creativecommons.org/licenses/by/3.0/
 LICENSE_PERMS=	auto-accept pkg-sell pkg-mirror dist-sell dist-mirror
 
-BUILD_DEPENDS=	xxd:${PORTSDIR}/editors/vim-lite
-LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libcurl.so:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	xxd:editors/vim-lite
+LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt \
+		libcurl.so:ftp/curl
 
 USES=		perl5 shebangfix
 USE_GITHUB=	yes

@@ -11,7 +11,7 @@ DISTNAME=	TleenX2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for polish IM service called Tlen.pl
 
-LIB_DEPENDS=	libtlen.so:${PORTSDIR}/polish/libtlen
+LIB_DEPENDS=	libtlen.so:polish/libtlen
 
 USES=		pkgconfig
 USE_GNOME=	gtk20

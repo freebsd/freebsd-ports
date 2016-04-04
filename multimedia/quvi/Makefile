@@ -13,8 +13,8 @@ COMMENT=	Command line tool for parsing flash media stream URLs
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	libquvi>=0.4.0:${PORTSDIR}/multimedia/libquvi
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	libquvi>=0.4.0:multimedia/libquvi
+LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	limit:0.4.[0-9]*

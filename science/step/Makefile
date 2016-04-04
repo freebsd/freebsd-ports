@@ -9,9 +9,9 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 interactive physics simulator
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
-LIB_DEPENDS=	libqalculate.so:${PORTSDIR}/math/libqalculate \
-		libgsl.so:${PORTSDIR}/math/gsl
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:math/eigen2
+LIB_DEPENDS=	libqalculate.so:math/libqalculate \
+		libgsl.so:math/gsl
 
 USE_KDE4=	kdelibs kdeprefix automoc4
 USES=		cmake:outsource pkgconfig tar:xz

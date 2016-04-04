@@ -14,9 +14,9 @@ COMMENT=	Perl interface to Alec Muffet's cracklib library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
-TEST_DEPENDS=	p5-Pod-Coverage>=0.19:${PORTSDIR}/devel/p5-Pod-Coverage \
-		p5-Test-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+LIB_DEPENDS=	libcrack.so:security/cracklib
+TEST_DEPENDS=	p5-Pod-Coverage>=0.19:devel/p5-Pod-Coverage \
+		p5-Test-Pod-Coverage>=1.08:devel/p5-Test-Pod-Coverage
 
 USES=		perl5
 USE_PERL5=	configure

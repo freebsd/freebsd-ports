@@ -3,6 +3,7 @@
 
 PORTNAME=	git-annex
 PORTVERSION=	5.20150727
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -22,13 +23,13 @@ USE_PERL5=	build
 
 MAN1PAGES=	git-annex.1 git-annex-shell.1
 
-BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync \
-		git:${PORTSDIR}/devel/git \
-		gsha256sum:${PORTSDIR}/sysutils/coreutils
+BUILD_DEPENDS+=	rsync:net/rsync \
+		git:devel/git \
+		gsha256sum:sysutils/coreutils
 
-RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync \
-		git:${PORTSDIR}/devel/git \
-		gsha256sum:${PORTSDIR}/sysutils/coreutils
+RUN_DEPENDS+=	rsync:net/rsync \
+		git:devel/git \
+		gsha256sum:sysutils/coreutils
 
 EXECUTABLE=	git-annex git-annex-shell
 STANDALONE=	yes

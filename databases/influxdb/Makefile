@@ -10,7 +10,7 @@ COMMENT=	Open-source distributed time series database
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	go>=1.5.0:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go>=1.5.0:lang/go
 
 ONLY_FOR_ARCHS=	i386 amd64
 

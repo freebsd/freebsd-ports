@@ -1,0 +1,21 @@
+--- Makefile.am.orig	2016-01-15 14:13:25 UTC
++++ Makefile.am
+@@ -53,7 +53,8 @@ endif
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(datadir)/@PACKAGE@/; \
+ 	for d in $$(cat data-manifest); do \
+-	install -D -m $$(test -x $$d && echo 0755 || echo 0644) $$d $(DESTDIR)$(datadir)/@PACKAGE@/$$d; done; \
++	mkdir -p 755 $(DESTDIR)$(datadir)/@PACKAGE@/$$(dirname $$d); \
++	install -m $$(test -x $$d && echo 0755 || echo 0644) $$d $(DESTDIR)$(datadir)/@PACKAGE@/$$d; done; \
+ 	mv $(DESTDIR)$(datadir)/@PACKAGE@/test $(DESTDIR)$(datadir)/@PACKAGE@/tests; \
+ 	cp test/testcases/xmlonly.sh $(DESTDIR)$(datadir)/@PACKAGE@/tests/testcases/configbasic-xml.filter
+ 
+@@ -72,7 +73,7 @@ all-local:
+ if UNAME_IS_DEBIAN
+ python_prefix = 
+ else
+-python_prefix = --prefix=$(DESTDIR)$(prefix)
++python_prefix = --prefix=$(prefix) --root=$(DESTDIR)
+ endif
+ 
+ install-exec-local:

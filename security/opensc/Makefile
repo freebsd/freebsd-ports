@@ -36,8 +36,8 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS+=	xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 CONFIGURE_ENV+=	XSLTPROC="${LOCALBASE}/bin/xsltproc"
 CONFIGURE_ARGS+=--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
 .else
@@ -53,12 +53,12 @@ PLIST_SUB+=	MANPAGES="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENCT}
-LIB_DEPENDS+=	libopenct.so:${PORTSDIR}/security/openct
+LIB_DEPENDS+=	libopenct.so:security/openct
 CONFIGURE_ARGS+=--enable-openct
 .endif
 
 .if ${PORT_OPTIONS:MPCSC}
-LIB_DEPENDS+=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS+=	libpcsclite.so:devel/pcsc-lite
 .else
 CONFIGURE_ARGS+=--disable-pcsc
 .endif

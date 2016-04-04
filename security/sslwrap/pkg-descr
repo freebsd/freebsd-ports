@@ -1,14 +1,12 @@
-   This is a port of sslwrap.
+"... sslwrap is a simple Unix service that sits over any simple TCP service
+such as POP3, IMAP, SMTP, and encrypts all of the data on the
+connection using TLS/SSL. It uses ssleay to support SSL version 2 and
+3. It can run out of inetd. It can also encrypt data for services
+located on another computer.
 
-   "... sslwrap is a simple Unix service that sits over any simple TCP service
-   such as POP3, IMAP, SMTP, and encrypts all of the data on the
-   connection using TLS/SSL. It uses ssleay to support SSL version 2 and
-   3. It can run out of inetd. It can also encrypt data for services
-   located on another computer.
+It works with the servers you already have, and does not require any
+modifications to your existing servers. ..."
 
-   It works with the servers you already have, and does not require any
-   modifications to your existing servers. ..."
-
-   Of course, it works with OpenSSL, too.
+Of course, it works with OpenSSL, too.
 
 WWW: http://www.rickk.com/sslwrap/

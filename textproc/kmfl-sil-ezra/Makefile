@@ -16,7 +16,7 @@ EXTRACT_ONLY=	EzraSIL251_Src.zip
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL keyboard for Unicode Biblical Hebrew
 
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
+RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
 WRKSRC=		${WRKDIR}/EzraSIL2.51
 USES=		dos2unix zip

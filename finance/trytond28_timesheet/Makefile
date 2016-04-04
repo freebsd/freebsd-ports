@@ -13,7 +13,7 @@ COMMENT=	Tryton Application Platform (Timesheet Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_company_work_time>=2.8.0:${PORTSDIR}/finance/trytond28_company_work_time
+RUN_DEPENDS=	trytond28_company_work_time>=2.8.0:finance/trytond28_company_work_time
 
 CONFLICTS=	trytond_timesheet-2.[46].*
 

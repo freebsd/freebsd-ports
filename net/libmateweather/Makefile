@@ -10,8 +10,8 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to accessing online weather informations
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 PORTSCOUT=	limitw:1,even
 

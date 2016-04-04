@@ -11,10 +11,10 @@ COMMENT=	Easily Harvest (Scrape) Web Pages
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-xml2>0:${PORTSDIR}/textproc/R-cran-xml2 \
-		R-cran-httr>=0.5:${PORTSDIR}/www/R-cran-httr \
-		R-cran-selectr>0:${PORTSDIR}/www/R-cran-selectr \
-		R-cran-magrittr>0:${PORTSDIR}/devel/R-cran-magrittr
+RUN_DEPENDS=	R-cran-xml2>0:textproc/R-cran-xml2 \
+		R-cran-httr>=0.5:www/R-cran-httr \
+		R-cran-selectr>0:www/R-cran-selectr \
+		R-cran-magrittr>0:devel/R-cran-magrittr
 
 USES=	cran:auto-plist
 

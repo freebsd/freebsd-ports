@@ -15,6 +15,9 @@ COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Use newer lang/gcc5-aux or lang/gcc6-aux compilers instead
+EXPIRATION_DATE=	2016-05-15
+
 .include "${.CURDIR}/Makefile.common"
 
 LANGS=			c c++ ada
@@ -57,7 +60,7 @@ BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.dragonfly.36A.tar.bz2
 .if defined(MODERN_BINUTILS)
 # Apparently gcc 4.9 needs binutils 2.23 or greater to link Ada correctly
 USE_BINUTILS=	yes
-RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 EXTRA_CONFIG+=	--with-ld=${LOCALBASE}/bin/ld
 EXTRA_CONFIG+=	--with-as=${LOCALBASE}/bin/as
 .else
@@ -121,7 +124,7 @@ LANGS+=		objc
 .endif
 
 .if ${PORT_OPTIONS:MTESTSUITE} && !${PORT_OPTIONS:MBOOTSTRAP}
-BUILD_DEPENDS+=	dejagnu>=1.4:${PORTSDIR}/misc/dejagnu
+BUILD_DEPENDS+=	dejagnu>=1.4:misc/dejagnu
 APPLY_DIFFS+=	ada-testsuite
 APPLY_DIFFS+=	fortran-testsuite
 APPLY_DIFFS+=	cxx-testsuite

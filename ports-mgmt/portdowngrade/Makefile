@@ -10,7 +10,7 @@ DISTFILES=	# none
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Sets a port back to a previous version
 
-RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion${WITH_SUBVERSION_VER}
+RUN_DEPENDS=	svn:devel/subversion${WITH_SUBVERSION_VER}
 
 NO_BUILD=	yes
 PLIST_FILES=	sbin/portdowngrade

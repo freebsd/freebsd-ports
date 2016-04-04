@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: openvasmd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# openvasmd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=openvasmd
+rcvar=openvasmd_enable
+command="%%PREFIX%%/sbin/openvasmd"
+pidfile=/var/run/openvasmd.pid
+extra_commands="reload"
+
+: ${openvasmd_enable=NO}
+
+load_rc_config $name
+run_rc_command "$1"

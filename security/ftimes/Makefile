@@ -63,7 +63,7 @@ XMAGIC_DESC=		XMagic support
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
 
 STRIP_FILES=		${STAGEDIR}${PREFIX}/bin/ftimes
@@ -80,14 +80,14 @@ PLIST_SUB+=		DBM_TOOLS="@comment "
 .if ${PORT_OPTIONS:MDIG_TOOLS}
 PLIST_SUB+=		DIG_TOOLS=""
 CONFIGURE_ARGS+=	--with-dig-tools
-RUN_DEPENDS+=		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS+=		p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 INSTALL_PERL5_LIBS=	yes
 .else
 PLIST_SUB+=		DIG_TOOLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFILE_HOOKS}
-LIB_DEPENDS+=		libklel.so:${PORTSDIR}/devel/libklel
+LIB_DEPENDS+=		libklel.so:devel/libklel
 CONFIGURE_ARGS+=	--enable-file-hooks --with-klel=${LOCALBASE} --with-perl=${LOCALBASE}/bin/perl
 .else
 PLIST_SUB+=		WITH_FILE_HOOKS="@comment "

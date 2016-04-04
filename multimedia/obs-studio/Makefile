@@ -5,18 +5,18 @@ PORTVERSION=	0.9.1
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Broadcaster Software Multiplatform
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
-		libx264.so:${PORTSDIR}/multimedia/libx264 \
-		libv4l2.so:${PORTSDIR}/multimedia/libv4l \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libfdk-aac.so:${PORTSDIR}/audio/fdk-aac
-BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo \
+		libx264.so:multimedia/libx264 \
+		libv4l2.so:multimedia/libv4l \
+		libpulse.so:audio/pulseaudio \
+		libavcodec.so:multimedia/ffmpeg \
+		libfdk-aac.so:audio/fdk-aac
+BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 
 BROKEN_FreeBSD_9=	does not build
 
