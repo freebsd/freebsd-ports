@@ -24,7 +24,7 @@ you update your ports collection, before attempting any port upgrades.
   upon how you manage your system.
 
   If you use pkgng, simply upgrade:
-  # pkg upgrade -f
+  # pkg upgrade
 
   If you use portmaster, install new ruby, then rebuild all ports that depend
   on ruby:
