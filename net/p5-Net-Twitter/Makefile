@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	4.01010
+PORTVERSION=	4.01020
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
-		p5-JSON>=0:converters/p5-JSON \
+		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Moose>=0.90:devel/p5-Moose \
 		p5-MooseX-Role-Parameterized>=0:devel/p5-MooseX-Role-Parameterized \
