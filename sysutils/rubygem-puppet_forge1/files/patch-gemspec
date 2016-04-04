@@ -1,11 +1,11 @@
---- puppet_forge.gemspec.orig	2015-07-24 17:26:18 UTC
+--- puppet_forge.gemspec.orig	2016-03-31 16:12:36 UTC
 +++ puppet_forge.gemspec
 @@ -22,7 +22,7 @@ Gem::Specification.new do |s|
      s.specification_version = 3
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<her>, ["~> 0.6.8"])
-+      s.add_runtime_dependency(%q<her>, [">= 0.6.8"])
-       s.add_development_dependency(%q<bundler>, ["~> 1.6"])
-       s.add_development_dependency(%q<rake>, [">= 0"])
-       s.add_development_dependency(%q<rspec>, ["~> 3.0"])
+-      s.add_runtime_dependency(%q<her>.freeze, ["~> 0.6.8"])
++      s.add_runtime_dependency(%q<her>.freeze, [">= 0.6.8"])
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.6"])
+       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.0"])

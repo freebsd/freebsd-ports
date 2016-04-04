@@ -1,11 +1,11 @@
---- gitlab_omniauth-ldap.gemspec.orig	2015-05-23 14:49:06 UTC
-+++ gitlab_omniauth-ldap.gemspec
-@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+--- gitlab_omniauth-ldap.gemspec.orig	2016-03-28 14:25:45.658279000 +0000
++++ gitlab_omniauth-ldap.gemspec	2016-03-28 14:33:52.171193000 +0000
+@@ -23,7 +23,7 @@
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<omniauth>, ["~> 1.0"])
--      s.add_runtime_dependency(%q<net-ldap>, ["~> 0.9"])
-+      s.add_runtime_dependency(%q<net-ldap>, [">= 0.9"])
-       s.add_runtime_dependency(%q<pyu-ruby-sasl>, ["~> 0.0.3.1"])
-       s.add_runtime_dependency(%q<rubyntlm>, ["~> 0.3"])
+       s.add_runtime_dependency(%q<omniauth>.freeze, ["~> 1.0"])
+-      s.add_runtime_dependency(%q<net-ldap>.freeze, ["~> 0.9"])
++      s.add_runtime_dependency(%q<net-ldap>.freeze, [">= 0.9"])
+       s.add_runtime_dependency(%q<pyu-ruby-sasl>.freeze, ["~> 0.0.3.1"])
+       s.add_runtime_dependency(%q<rubyntlm>.freeze, ["~> 0.3"])
      else

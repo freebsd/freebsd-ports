@@ -1,4 +1,4 @@
---- bin/kafofy.orig	2014-03-19 15:50:00 UTC
+--- bin/kafofy.orig	2016-04-03 08:33:38 UTC
 +++ bin/kafofy
 @@ -53,8 +53,8 @@ if !File.exists?(options[:config_file])
    File.chmod 0600, options[:config_file]

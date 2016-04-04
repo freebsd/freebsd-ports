@@ -1,11 +1,11 @@
---- ezprint.gemspec.orig	2015-05-25 15:57:15 UTC
+--- ezprint.gemspec.orig	2016-03-31 20:25:21 UTC
 +++ ezprint.gemspec
 @@ -21,7 +21,7 @@ Gem::Specification.new do |s|
      s.specification_version = 3
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<pdfkit>, ["~> 0.5.0"])
-+      s.add_runtime_dependency(%q<pdfkit>, [">= 0.5.0"])
+-      s.add_runtime_dependency(%q<pdfkit>.freeze, ["~> 0.5.0"])
++      s.add_runtime_dependency(%q<pdfkit>.freeze, [">= 0.5.0"])
      else
-       s.add_dependency(%q<pdfkit>, ["~> 0.5.0"])
+       s.add_dependency(%q<pdfkit>.freeze, ["~> 0.5.0"])
      end

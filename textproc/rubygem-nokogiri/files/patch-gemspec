@@ -1,10 +1,10 @@
---- nokogiri.gemspec.orig	2015-12-27 12:22:49 UTC
+--- nokogiri.gemspec.orig	2016-04-02 21:13:44 UTC
 +++ nokogiri.gemspec
 @@ -27,7 +27,6 @@ Gem::Specification.new do |s|
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<mini_portile2>, ["~> 2.0.0.rc2"])
-       s.add_development_dependency(%q<rdoc>, ["~> 4.0"])
-       s.add_development_dependency(%q<hoe-bundler>, [">= 1.1"])
-       s.add_development_dependency(%q<hoe-debugging>, ["~> 1.2.1"])
+-      s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.0.0.rc2"])
+       s.add_development_dependency(%q<rdoc>.freeze, ["~> 4.0"])
+       s.add_development_dependency(%q<hoe-bundler>.freeze, [">= 1.1"])
+       s.add_development_dependency(%q<hoe-debugging>.freeze, ["~> 1.2.1"])
