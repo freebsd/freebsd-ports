@@ -1,11 +1,11 @@
---- oauth2.gemspec.orig	2016-01-31 09:17:41 UTC
-+++ oauth2.gemspec
-@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+--- oauth2.gemspec.orig	2016-03-28 13:38:55.668485000 +0000
++++ oauth2.gemspec	2016-03-28 13:39:16.482912000 +0000
+@@ -22,7 +22,7 @@
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<faraday>, ["< 0.10", ">= 0.8"])
--      s.add_runtime_dependency(%q<jwt>, ["< 1.5.2", "~> 1.0"])
-+      s.add_runtime_dependency(%q<jwt>, ["~> 1.0"])
-       s.add_runtime_dependency(%q<multi_json>, ["~> 1.3"])
-       s.add_runtime_dependency(%q<multi_xml>, ["~> 0.5"])
-       s.add_runtime_dependency(%q<rack>, ["< 3", ">= 1.2"])
+       s.add_runtime_dependency(%q<faraday>.freeze, ["< 0.10", ">= 0.8"])
+-      s.add_runtime_dependency(%q<jwt>.freeze, ["< 1.5.2", "~> 1.0"])
++      s.add_runtime_dependency(%q<jwt>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.3"])
+       s.add_runtime_dependency(%q<multi_xml>.freeze, ["~> 0.5"])
+       s.add_runtime_dependency(%q<rack>.freeze, ["< 3", ">= 1.2"])

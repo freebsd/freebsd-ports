@@ -1,11 +1,11 @@
---- dm-types.gemspec.orig	2016-03-03 19:07:56 UTC
+--- dm-types.gemspec.orig	2016-03-31 16:07:46 UTC
 +++ dm-types.gemspec
 @@ -25,7 +25,7 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<fastercsv>, ["~> 1.5"])
-       s.add_runtime_dependency(%q<multi_json>, ["~> 1.0"])
-       s.add_runtime_dependency(%q<json>, ["~> 1.6"])
--      s.add_runtime_dependency(%q<stringex>, ["~> 1.4"])
-+      s.add_runtime_dependency(%q<stringex>, [">= 1.4"])
-       s.add_runtime_dependency(%q<uuidtools>, ["~> 2.1"])
-       s.add_runtime_dependency(%q<dm-core>, ["~> 1.2.0"])
-       s.add_development_dependency(%q<rake>, ["~> 0.9"])
+       s.add_runtime_dependency(%q<fastercsv>.freeze, ["~> 1.5"])
+       s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<json>.freeze, ["~> 1.6"])
+-      s.add_runtime_dependency(%q<stringex>.freeze, ["~> 1.4"])
++      s.add_runtime_dependency(%q<stringex>.freeze, [">= 1.4"])
+       s.add_runtime_dependency(%q<uuidtools>.freeze, ["~> 2.1"])
+       s.add_runtime_dependency(%q<dm-core>.freeze, ["~> 1.2.0"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 0.9"])

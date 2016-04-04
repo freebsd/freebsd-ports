@@ -1,4 +1,4 @@
---- ext/goocanvas/extconf.rb.orig	2016-01-19 22:58:55 UTC
+--- ext/goocanvas/extconf.rb.orig	2016-03-31 16:13:37 UTC
 +++ ext/goocanvas/extconf.rb
 @@ -31,6 +31,7 @@ rescue LoadError
  end
