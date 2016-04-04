@@ -63,14 +63,13 @@ post-install:
 .if ${PORT_OPTIONS:MGUI}
 	${RM} -r ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/mimetypes
 .endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \
 		"${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>
