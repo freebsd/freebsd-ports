@@ -60,6 +60,7 @@ OPTIONS_DEFINE=	\
 	THREADS \
 	WWW \
 	AJP \
+	AWS_AUTH \
 	CACHE_PURGE \
 	CLOJURE \
 	CT \
@@ -163,6 +164,7 @@ STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
 THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
 AJP_DESC=			3rd party ajp module
+AWS_AUTH_DESC=			3rd party aws auth module
 CACHE_PURGE_DESC=		3rd party cache_purge module
 CLOJURE_DESC=			3rd party clojure module
 CT_DESC=			3rd party cert_transparency module (SSL req.)
@@ -369,6 +371,14 @@ GH_ACCOUNT+=	yaoweibin:ajp
 GH_PROJECT+=	nginx_ajp_module:ajp
 GH_TAGNAME+=	${NGINX_AJP_VERSION}:ajp
 CONFIGURE_ARGS+=--add-module=${WRKSRC_ajp}
+.endif
+
+.if ${PORT_OPTIONS:MAWS_AUTH}
+NGINX_AWS_AUTH_VERSION=	1e62670
+GH_ACCOUNT+=	anomalizer:aws_auth
+GH_PROJECT+=	ngx_aws_auth:aws_auth
+GH_TAGNAME+=	${NGINX_AWS_AUTH_VERSION}:aws_auth
+CONFIGURE_ARGS+=--add-module=${WRKSRC_aws_auth}
 .endif
 
 .if ${PORT_OPTIONS:MCACHE_PURGE}
