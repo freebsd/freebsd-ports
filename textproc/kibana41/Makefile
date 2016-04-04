@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION=	4.1.5
+PORTVERSION=	4.1.6
 DISTVERSIONSUFFIX=	-linux-x86
 CATEGORIES=	textproc www
 MASTER_SITES=	http://download.elastic.co/kibana/kibana/
@@ -13,7 +13,7 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	node010>=0:www/node010
+RUN_DEPENDS=	node4>=4.3.2:www/node4
 
 NO_BUILD=	yes
 NO_ARCH=	yes
