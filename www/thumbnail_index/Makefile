@@ -8,13 +8,13 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/thumbnail_index/
 DISTNAME=	${PORTNAME}_10aug1998
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make an HTML index file for a bunch of images
 
 RUN_DEPENDS=	pnmscale:graphics/netpbm
 
-USES=		jpeg:run
 NO_BUILD=	yes
+USES=		jpeg:run
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
