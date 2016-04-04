@@ -327,7 +327,6 @@
     SUBDIR += vidalia
     SUBDIR += virt-viewer
     SUBDIR += wdiag
-    SUBDIR += weathermap
     SUBDIR += weplab
     SUBDIR += whatmask
     SUBDIR += wifimgr
