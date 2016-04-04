@@ -1,5 +1,6 @@
 bin/check_ciphers_single_domains.pl
 bin/csv-result-to-summary.pl
+bin/tls-check
 bin/tls-check-parallel.pl
 bin/tls-check.pl
 %%SITE_PERL%%/auto/share/module/Net-SSL-CipherSuites/tls-parameters-4.csv
