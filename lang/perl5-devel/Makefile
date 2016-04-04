@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-PORTREVISION=	0
+PORTREVISION=	1
 # XXX Remove second line, uncomment first
 #DISTVERSION=	${PERL_VERSION}
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
@@ -270,6 +270,12 @@ post-patch-PTHREAD-on:
 post-patch-PTHREAD-off:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
+
+.if ${CC} == /nxb-bin/usr/bin/cc
+post-build:
+	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
+		${WRKSRC}/lib/Config.pm ${WRKSRC}/lib/Config_heavy.pl
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${SITE_MAN1} ${STAGEDIR}${SITE_MAN3}
