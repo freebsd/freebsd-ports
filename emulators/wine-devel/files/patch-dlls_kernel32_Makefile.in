@@ -1,12 +1,13 @@
-commit 595a3ccfe8aa02ccc287f9a4b23a3f177ae220b9
 Author: David Naylor <naylor.b.david@gmail.com>
 Date:   Mon Feb 2 22:10:55 2015 +0200
+Author:	Gerald Pfeifer <gerald@pfeifer.com>
+Date:	Sat Apr 2 17:11:55 UTC 2016
 
     kernel32: force 4096 byte page alignment.
     
     FreeBSD prefers to use a 0x200000 (super) page alignment however this causes
-    the image base to be displaced from the requested 0x7b800000.  Forcing a
-    smaller page size ensures FreeBSD can place the image startin at 0x7b800000.
+    the image base to be displaced from the requested 0x7b400000.  Forcing a
+    smaller page size ensures FreeBSD can place the image startin at 0x7b400000.
 
 --- UTC
 diff --git a/dlls/kernel32/Makefile.in b/dlls/kernel32/Makefile.in
@@ -17,8 +18,8 @@ index c09771d..a006c2c 100644
  IMPORTLIB = kernel32
  IMPORTS   = winecrt0 ntdll
  EXTRALIBS = $(COREFOUNDATION_LIBS) $(POLL_LIBS)
--EXTRADLLFLAGS = -nodefaultlibs -Wb,-F,KERNEL32.dll -Wl,--image-base,0x7b800000
-+EXTRADLLFLAGS = -nodefaultlibs -Wb,-F,KERNEL32.dll -Wl,--image-base,0x7b800000 \
+-EXTRADLLFLAGS = -nodefaultlibs -Wb,-F,KERNEL32.dll -Wl,--image-base,0x7b400000
++EXTRADLLFLAGS = -nodefaultlibs -Wb,-F,KERNEL32.dll -Wl,--image-base,0x7b400000 \
 +	-Wl,-z,max-page-size=0x1000
  
  C_SRCS = \

@@ -213,6 +213,7 @@ include/wine/windows/d3dx10.h
 include/wine/windows/d3dx10async.h
 %%STAGING%%include/wine/windows/d3dx10core.h
 %%STAGING%%include/wine/windows/d3dx10core.idl
+include/wine/windows/d3dx10tex.h
 include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9anim.h
 include/wine/windows/d3dx9core.h
@@ -333,6 +334,7 @@ include/wine/windows/fci.h
 include/wine/windows/fdi.h
 include/wine/windows/fileapi.h
 include/wine/windows/fltdefs.h
+include/wine/windows/fontsub.h
 include/wine/windows/fusion.h
 include/wine/windows/fusion.idl
 include/wine/windows/gameux.h
@@ -447,6 +449,8 @@ include/wine/windows/metahost.h
 include/wine/windows/metahost.idl
 include/wine/windows/mfapi.h
 include/wine/windows/mferror.h
+%%STAGING%%include/wine/windows/mfidl.h
+%%STAGING%%include/wine/windows/mfidl.idl
 include/wine/windows/mfobjects.h
 include/wine/windows/mfobjects.idl
 include/wine/windows/midles.h
@@ -645,6 +649,8 @@ include/wine/windows/shdeprecated.idl
 include/wine/windows/shdispid.h
 include/wine/windows/shellapi.h
 %%STAGING%%include/wine/windows/shellscalingapi.h
+include/wine/windows/shimgdata.h
+include/wine/windows/shimgdata.idl
 include/wine/windows/shldisp.h
 include/wine/windows/shldisp.idl
 include/wine/windows/shlguid.h
@@ -1455,6 +1461,7 @@ lib/wine/fakedlls/fltlib.dll
 %%STAGING%%lib/wine/fakedlls/fltmgr.sys
 lib/wine/fakedlls/fntcache.dll
 lib/wine/fakedlls/fontsub.dll
+%%STAGING%%lib/wine/fakedlls/fsutil.exe
 lib/wine/fakedlls/fusion.dll
 lib/wine/fakedlls/fwpuclnt.dll
 lib/wine/fakedlls/gameux.dll
@@ -1881,6 +1888,7 @@ lib/wine/fltlib.dll.so
 %%STAGING%%lib/wine/fltmgr.sys.so
 lib/wine/fntcache.dll.so
 lib/wine/fontsub.dll.so
+%%STAGING%%lib/wine/fsutil.exe.so
 lib/wine/fusion.dll.so
 lib/wine/fwpuclnt.dll.so
 lib/wine/gameux.dll.so
@@ -1977,9 +1985,8 @@ lib/wine/libdbgeng.def
 lib/wine/libdbghelp.def
 lib/wine/libdciman32.def
 lib/wine/libddraw.def
-lib/wine/libdinput.def
-lib/wine/libdinput.def.a
 lib/wine/libdinput8.def
+lib/wine/libdinput.a
 lib/wine/libdmusic32.def
 lib/wine/libdnsapi.def
 lib/wine/libdplay.def
@@ -2081,6 +2088,7 @@ lib/wine/libsti.def
 lib/wine/libstrmbase.a
 lib/wine/libstrmiids.a
 lib/wine/libsxs.def
+lib/wine/libt2embed.def
 lib/wine/libtapi32.def
 lib/wine/libunicows.def
 lib/wine/liburl.def
