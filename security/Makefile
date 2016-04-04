@@ -289,6 +289,7 @@
     SUBDIR += lasso
     SUBDIR += lastpass-cli
     SUBDIR += letsencrypt.sh
+    SUBDIR += libadacrypt
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf

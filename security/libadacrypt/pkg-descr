@@ -1,0 +1,21 @@
+This is a crypto library for Ada with a nice API and is written for the
+i386 and x86_64 hardware architecture.
+
+Symmetric cryptography supported:
+  * Blockciphers: AES, Twofish, 3DES, Serpent
+  * Hash functions: SHA-1, SHA-256, SHA-384, SHA-512, Whirlpool
+  * MACs: RMAC, HMAC, CMAC
+  * Modes of operation: BPS, CFB, Ctr, OFB
+  * Authenticated Encryption Schemes: OCB, SIV, McOE
+
+Assymmetric cryptography supported:
+  * DSA signature scheme
+  * OEAP-RSA
+  * ECDSA, ECDH
+
+Unsigned big number library features:
+  * Primary cyclic group arithmetic (Z_p)
+  * Binary Field arithmetic support
+  * Elliptic Curve arithmetic
+
+WWW: https://github.com/cforler/Ada-Crypto-Library
