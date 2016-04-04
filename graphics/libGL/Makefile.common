@@ -89,8 +89,7 @@ CONFIGURE_ARGS+=	--enable-gles2
 .if ${OPSYS} == DragonFly || \
 	(${OPSYS} == FreeBSD && \
 		(${OSVERSION} >= 1001000 && ${ARCH} == amd64 || \
-		${OSVERSION} >= 1002000 && ${ARCH} == i386))
-# Disabled on 10.1-R i386 because of compile issues with libclc.
+		${OSVERSION} >= 1001000 && ${ARCH} == i386))
 
 BUILD_DEPENDS+=	libclc>=0.0.r222830:devel/libclc
 
@@ -117,9 +116,9 @@ CONFIGURE_ARGS+=	--disable-opencl
 CONFIGURE_ARGS+=	--enable-osmesa
 
 # gallium
-BUILD_DEPENDS+= llvm${MESA_LLVM_VER}>=0:devel/llvm${MESA_LLVM_VER}
+BUILD_DEPENDS+= llvm${MESA_LLVM_VER}>=3.7.l_1:devel/llvm${MESA_LLVM_VER}
 .if ${COMPONENT:Mdri} != "" || ${COMPONENT:Mclover} != "" || ${COMPONENT:Megl} != ""
-RUN_DEPENDS+=   llvm${MESA_LLVM_VER}>=0:devel/llvm${MESA_LLVM_VER}
+RUN_DEPENDS+=   llvm${MESA_LLVM_VER}>=3.7.1_1:devel/llvm${MESA_LLVM_VER}
 .endif
 
 CONFIGURE_ENV+= LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${MESA_LLVM_VER}
