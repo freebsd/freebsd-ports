@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	godep
-PORTVERSION=	0.0.0.2015080301
+PORTVERSION=	0.0.0.2016040401
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
@@ -11,7 +11,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tools
-GH_TAGNAME=	d8799f1
+GH_TAGNAME=	245097c
 
 PLIST_FILES=	bin/godep
 
@@ -19,10 +19,7 @@ STRIP=		# stripping can break go binaries
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
-.for src in .gitignore .travis.yml Godeps License Readme.md dep.go diff.go \
-	diff_test.go doc.go get.go go.go main.go match_test.go path.go pkg.go \
-	restore.go rewrite.go rewrite_test.go save.go save_test.go update.go \
-	update_test.go util.go vcs.go
+.for src in *.go .gitignore .travis.yml Changelog.md Godeps License Readme.md
 	@${MV} ${WRKSRC}/${src} \
 		${WRKSRC}/src/github.com/tools/${PORTNAME}
 .endfor
