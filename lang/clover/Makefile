@@ -25,11 +25,8 @@ ONLY_FOR_ARCHS_REASON=	Clover needs a graphics driver supported by the Radeon KM
 #MESA_BUILD_WRKSRC=	src/util src/glsl src/mesa src/gallium
 MESA_INSTALL_WRKSRC=	src/gallium/targets/opencl src/gallium/targets/pipe-loader
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000 && ${ARCH} == amd64
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000
 IGNORE=		Clover is only supported on FreeBSD 10.1 and newer
-.endif
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000 && ${ARCH} == i386
-IGNORE=		Clover is only supported on FreeBSD 10.2 and newer
 .endif
 
 .include "${.CURDIR}/../../graphics/libGL/Makefile.targets"
