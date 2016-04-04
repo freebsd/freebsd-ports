@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTVERSION=	2.2.6
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	System for Automated Geoscientific Analyses
@@ -35,8 +35,6 @@ USES=		autoreconf libtool localbase compiler:gcc-c++11-lib \
 		iconv:wchar_t dos2unix python:2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-DESKTOP_ENTRIES=	"SAGA GIS" "${COMMENT}" "${DATADIR}/saga.png" \
-			"saga_gui" "Science;Geoscience;Math;" true
 INSTALLS_ICONS=	yes
 DOS2UNIX_GLOB=	*.cpp *.h
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
@@ -80,7 +78,7 @@ post-extract:
 		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile.am
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2832)" + "\\n"|' \
+	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2877)" + "\\n"|' \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 .if ${ARCH} == "powerpc"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
@@ -90,22 +88,17 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e 's|cd $$(pkgdatadir);|cd ${STAGEDIR}${DATADIR};|g' \
 		${WRKSRC}/src/saga_core/saga_gui/Makefile
-	@${REINPLACE_CMD} -e 's|mv saga_srs.txt saga_prj.srs|mv ${STAGEDIR}${DATADIR}/saga_srs.txt ${STAGEDIR}${DATADIR}/saga_prj.srs|g' \
-		${WRKSRC}/src/saga_core/saga_gui/Makefile
-	@${REINPLACE_CMD} -e 's|mv saga_dic.txt saga_prj.dic|mv ${STAGEDIR}${DATADIR}/saga_dic.txt ${STAGEDIR}${DATADIR}/saga_prj.dic|g' \
-		${WRKSRC}/src/saga_core/saga_gui/Makefile
 	@${REINPLACE_CMD} -e 's|^LDFLAGS = .*|& -lopencv_contrib|' \
 		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga_tip.txt ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.lng.txt ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.ger.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga*.txt ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.png ${STAGEDIR}${DATADIR}
+	${RM} ${STAGEDIR}${DATADIR}/saga_dic.txt ${STAGEDIR}${DATADIR}/saga_srs.txt
+# toolchains dir was moved in r2805 (and followups r2810,r2811,r2820)
 	${MKDIR} ${STAGEDIR}${DATADIR}/scripting
 	(cd ${WRKSRC}/src/scripting && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/scripting)
-# toolchains only needed in one place
 	@${RM} -R ${STAGEDIR}${DATADIR}/scripting/toolchains
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
