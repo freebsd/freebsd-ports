@@ -10,11 +10,16 @@ MASTER_SITES=	http://mailtools.anomy.net/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sanitize and clean incoming/outgoing mail
 
+LICENSE=	GPLv2+
+
 USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/sanitizer.pl bin/simplify.pl
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/anomy
-DOCS=		CHANGELOG.sanitizer CREDITS README.sanitizer sanitizer.html
+
+PORTDOCS=	CHANGELOG.sanitizer CREDITS README.sanitizer sanitizer.html UNICODE.TXT
+
 OPTIONS_DEFINE= DOCS
 
 do-install:
@@ -29,13 +34,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/Scoring.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy/Sanitizer/
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sanitizer.pl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/simplify.pl ${STAGEDIR}${PREFIX}/bin
-
-post-install:
 	${INSTALL_DATA} ${FILESDIR}/sanitizer.cfg.sample ${STAGEDIR}${PREFIX}/etc/
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Sample config installed at ${PREFIX}/etc/sanitizer.cfg.sample"
-	@${ECHO_MSG} ""
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
