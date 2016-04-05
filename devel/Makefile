@@ -3735,6 +3735,7 @@
     SUBDIR += pecl-pthreads
     SUBDIR += pecl-qb
     SUBDIR += pecl-raphf
+    SUBDIR += pecl-raphf2
     SUBDIR += pecl-runkit
     SUBDIR += pecl-scream
     SUBDIR += pecl-shape
