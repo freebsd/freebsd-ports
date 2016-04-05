@@ -3,10 +3,11 @@
 
 PORTNAME=	barman
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	pg
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} barman-tutorial.en.pdf
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tutorial.pdf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -29,7 +30,7 @@ USES=		pgsql python
 WANT_PGSQL=	client
 USE_PYTHON=	autoplist distutils
 
-PORTDOCS=	barman-tutorial.en.pdf
+PORTDOCS=	tutorial.pdf
 
 post-extract:
 	${CP} ${DISTDIR}/${PORTDOCS} ${WRKDIR}/
