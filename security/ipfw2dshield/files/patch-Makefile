@@ -1,5 +1,5 @@
---- Makefile.orig	2004-05-29 16:27:21.000000000 +0200
-+++ Makefile	2014-07-11 00:00:21.463847887 +0200
+--- Makefile.orig	2004-05-29 14:27:21 UTC
++++ Makefile
 @@ -4,7 +4,8 @@
  RMCMD	= rm -f
  INSTALL = install
@@ -10,7 +10,7 @@
  sbindir	= $(prefix)/sbin
  
  SUBDIRS	= ipaddr strpdate
-@@ -28,13 +29,13 @@
+@@ -28,13 +29,13 @@ $(RC):
  install: $(RC)
  	@for subdir in $(SUBDIRS); do (cd $$subdir && make install) ; done
  	@[ -d $(sbindir) ] || mkdir -vp $(sbindir)
