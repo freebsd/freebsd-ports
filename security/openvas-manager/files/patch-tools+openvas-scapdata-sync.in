@@ -1,0 +1,52 @@
+--- tools/openvas-scapdata-sync.in.orig	2015-08-03 05:52:10 UTC
++++ tools/openvas-scapdata-sync.in
+@@ -885,7 +885,7 @@ update_sec_db_private () {
+       then
+         for ovalfile in $oval_files_sorted_private
+         do
+-          filedate=`stat -c "%Y" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
++          filedate=`stat -f "%m" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
+           filedate=$(( $filedate - ( $filedate % 60 ) ))
+           if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
+           then
+@@ -1012,13 +1012,13 @@ update_sec_db () {
+   CPEBASE="$SCAP_DIR/official-cpe-dictionary_v2.2.xml"
+   if [ -e $CPEBASE ]
+   then
+-    filedate=`stat -c "%Y" "$CPEBASE" | cut -d " " -f 1 | tr -d "-"`
++    filedate=`stat -f "%m" "$CPEBASE" | cut -d " " -f 1 | tr -d "-"`
+     filedate=$(( $filedate - ( $filedate % 60 ) ))
+     if [ $filedate -gt $DB_LASTUPDATE ]
+     then
+       echo "[i] Updating CPEs"
+ 
+-      filesize=`stat -c "%s" "$CPEBASE"`
++      filesize=`stat -f "%z" "$CPEBASE"`
+       if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024))  ]
+       then
+         echo "[i] File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
+@@ -1075,13 +1075,13 @@ update_sec_db () {
+   then
+     for cvefile in `ls $SCAP_DIR/nvdcve-2.0-*.xml`
+     do
+-      filedate=`stat -c "%Y" "$cvefile" | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -f "%m" "$cvefile" | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ]
+       then
+         echo "[i] Updating $cvefile"
+ 
+-        filesize=`stat -c "%s" "$cvefile"`
++        filesize=`stat -f "%z" "$cvefile"`
+         if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024))  ]
+         then
+           echo "[i] File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
+@@ -1151,7 +1151,7 @@ update_sec_db () {
+ 
+     for ovalfile in $oval_files_sorted
+     do
+-      filedate=`stat -c "%Y" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -f "%m" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
+       then
