@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pyaudio
-PORTVERSION=	0.2.8
-PORTREVISION=	1
+PORTVERSION=	0.2.9
 CATEGORIES=	audio python
-MASTER_SITES=	http://people.csail.mit.edu/hubert/pyaudio/packages/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	PyAudio-${PORTVERSION}
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Portaudio toolkit bindings for Python
