@@ -9,7 +9,3 @@ bin/simplify.pl
 %%SITE_PERL%%/Anomy/Sanitizer/FileTypes.pm
 %%SITE_PERL%%/Anomy/Sanitizer/MacroScanner.pm
 %%SITE_PERL%%/Anomy/Sanitizer/Scoring.pm
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.sanitizer
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/README.sanitizer
-%%PORTDOCS%%%%DOCSDIR%%/sanitizer.html
