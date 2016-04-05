@@ -76,6 +76,9 @@ case "$0" in
 	# so get the name of the script from $_file
 	name="$_file"
 	;;
+*/service)
+	# do not use this as $0
+	;;
 *)
 	name="$0"
 	;;
