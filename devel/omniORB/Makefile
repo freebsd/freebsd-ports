@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	omniORB
-PORTVERSION=	4.2.1
+DISTVERSION=	4.2.1-2
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${DISTVERSION:S/-2//}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Robust high performance CORBA ORB for C++ and Python
@@ -12,7 +12,7 @@ COMMENT=	Robust high performance CORBA ORB for C++ and Python
 LICENSE=	GPLv2
 
 CONFLICTS=	omniORB41-4.1.*
-PLIST_SUB+=	SONUM=${PORTVERSION:C/.*\.//}
+PLIST_SUB+=	SONUM=1
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USES=		gmake pkgconfig python tar:bzip2
@@ -26,6 +26,7 @@ OPTIONS_DEFINE=	DOCS STATIC
 OPTIONS_DEFAULT=	DOCS STATIC
 OPTIONS_SUB=	yes
 STATIC_CONFIGURE_OFF=	--disable-static
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-2//}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
