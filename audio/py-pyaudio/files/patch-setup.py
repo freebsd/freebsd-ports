@@ -1,8 +1,8 @@
---- ./setup.py.orig	2012-11-07 00:17:06.624869638 +0100
-+++ ./setup.py	2012-11-07 00:37:17.129040078 +0100
-@@ -74,6 +74,12 @@ else:
-     external_libraries = ['portaudio']
-     extra_link_args = []
+--- setup.py.orig	2016-04-04 21:15:34 UTC
++++ setup.py
+@@ -63,6 +63,12 @@ extra_link_args = []
+ scripts = []
+ defines = []
  
 +if sys.platform.startswith('dragonfly') or \
 +   sys.platform.startswith('freebsd'):
@@ -12,4 +12,4 @@
 +
  if sys.platform == 'darwin':
      defines += [('MACOSX', '1')]
- 
+     if mac_sysroot_path:
