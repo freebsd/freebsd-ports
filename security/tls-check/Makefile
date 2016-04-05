@@ -4,7 +4,7 @@ PORTNAME=	tls-check
 PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=v
 DISTVERSIONSUFFIX=-Release
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	pi@FreeBSD.org
@@ -12,7 +12,8 @@ COMMENT=	Scan a list of domains for TLS-related compliance stats
 
 LICENSE=	ART20
 
-MY_DEPENDS=	p5-IO-All>=0.86:devel/p5-IO-All \
+MY_DEPENDS=	p5-File-HomeDir>=1.00:devel/p5-File-HomeDir \
+		p5-IO-All>=0.86:devel/p5-IO-All \
 		p5-IO-Socket-Timeout>=0.32:net/p5-IO-Socket-Timeout \
 		p5-IPC-Run>=0.94:devel/p5-IPC-Run \
 		p5-Log-Log4perl>=1.47:devel/p5-Log-Log4perl \
