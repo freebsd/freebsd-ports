@@ -1,6 +1,6 @@
---- configure.orig	2010-04-04 00:21:26.000000000 +0800
-+++ configure	2013-10-21 22:33:39.000000000 +0800
-@@ -12982,12 +12982,12 @@ if test "${with_ncurses+set}" = set; the
+--- configure.orig	2016-03-22 23:25:26 UTC
++++ configure
+@@ -13849,12 +13849,12 @@ if test "${with_ncurses+set}" = set; the
  
      if $search_ncurses
      then
@@ -16,4 +16,4 @@
 +	    CURSES_LIBS="-L$withval/lib -lncurses -ltinfo"
  	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for initscr in -lncurses" >&5
  $as_echo_n "checking for initscr in -lncurses... " >&6; }
- if test "${ac_cv_lib_ncurses_initscr+set}" = set; then :
+ if ${ac_cv_lib_ncurses_initscr+:} false; then :
