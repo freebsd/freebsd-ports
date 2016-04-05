@@ -1200,6 +1200,7 @@
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += yum
+    SUBDIR += zap
     SUBDIR += zbackup
     SUBDIR += zeitgeist
     SUBDIR += zeroer
