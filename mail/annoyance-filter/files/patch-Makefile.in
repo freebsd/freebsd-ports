@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Feb 18 15:57:20 2003
-+++ Makefile.in	Fri Jan  2 02:56:16 2004
-@@ -83,11 +83,11 @@
+--- Makefile.in.orig	2004-08-04 14:42:56 UTC
++++ Makefile.in
+@@ -83,11 +83,11 @@ ipmpar.o:   DCDFlib/src/ipmpar.c
  
  #   Annoyance filter program
  
@@ -15,7 +15,7 @@
  $(PRODUCT).cc: $(PRODUCT).w
  $(PRODUCT).tex: $(PRODUCT).w log.w $(TOOLS)
  $(PRODUCT).view: $(PRODUCT).dvi
-@@ -97,8 +97,8 @@
+@@ -97,8 +97,8 @@ getopt1.o: getopt1.c getopt.h
  
  #   Statistical library
  
@@ -26,11 +26,10 @@
  
  statlib.o: statlib.cc config.h getopt.h
  statlib.cc: statlib.w
-@@ -275,14 +275,6 @@
- 	groff -man $(PRODUCT).1 | lp
+@@ -276,14 +276,6 @@ printman:	$(PRODUCT).1
  	
  #   HTML edition of manual page
--
+ 
 -$(PRODUCT)_man_raw.html: $(PRODUCT).1
 -	$(MAN2HTML) -H $(MAN2HTMLHOST) $(PRODUCT).1 \
 -		>$(PRODUCT)_man_raw.html
@@ -38,6 +37,7 @@
 -$(PRODUCT)_man.html:	$(PRODUCT)_man_raw.html
 -	$(PERL) docutil/fixman2html.pl $(PRODUCT)_man_raw.html \
 -		>$(PRODUCT)_man.html
- 
+-
  manhtml:	$(PRODUCT)_man.html
  
+ # Test it
