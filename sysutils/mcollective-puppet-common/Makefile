@@ -4,7 +4,7 @@ PORTNAME?=	mcollective-puppet-common
 PORTVERSION=	1.10.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	anes@anes.su
+MAINTAINER=	romain@FreeBSD.org
 COMMENT?=	MCollective common files to manage the Puppet Agent
 
 LICENSE=	APACHE20
