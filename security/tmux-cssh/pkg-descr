@@ -1,3 +1,5 @@
 tmux-cssh is simple POSIX shell script, which synchronizes interactive shell
 commands over tmux sessions, making it useful for working on cluster nodes.  It
 offers similar functionality to ClusterSSH, but without depending on X11.
+
+WWW: https://github.com/dennishafemann/tmux-cssh
