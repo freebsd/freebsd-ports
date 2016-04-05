@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-08-27 11:21:39.552449460 +0800
-+++ Makefile.in	2014-08-27 11:22:32.666448424 +0800
+--- Makefile.in.orig	2010-04-12 00:37:45 UTC
++++ Makefile.in
 @@ -9,18 +9,18 @@ all:
  	done
  
