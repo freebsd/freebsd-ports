@@ -1,6 +1,6 @@
---- ipfw2dshield.orig	Sat Oct  9 10:53:48 2004
-+++ ipfw2dshield	Wed Nov 24 21:46:41 2004
-@@ -279,7 +279,8 @@
+--- ipfw2dshield.orig	2004-10-09 08:54:10 UTC
++++ ipfw2dshield
+@@ -279,7 +279,8 @@ else
  fi
  
  # Suck in the config file.
