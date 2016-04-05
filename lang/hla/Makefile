@@ -37,17 +37,18 @@ post-extract:
 	${MKDIR} ${WRKDIR}/stdlib && \
 	    ${TAR} -zxf ${_DISTDIR}/bsd.${PORTNAME}.tar.gz -C ${WRKDIR}/stdlib
 	${CP} ${_DISTDIR}/lex.yy.c ${WRKSRC}
-.if ${PORT_OPTIONS:MTEST}
+	${FIND} ${WRKDIR} -type d -exec ${CHMOD} 755 {} \;
+
+post-extract-TEST-on:
 	${CP} ${_DISTDIR}/hello.hla ${WRKSRC}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-extract-DOCS-on:
 	(${MKDIR} ${WRKDIR}/HLAstdlib && \
 	    ${UNZIP_CMD} -q ${_DISTDIR}/HLAstdlib_html${EXTRACT_SUFX} -d ${WRKDIR}/HLAstdlib \
 	)
 	(${MKDIR} ${WRKDIR}/HLAReference && \
 	    ${UNZIP_CMD} -q ${_DISTDIR}/HLARef_html${EXTRACT_SUFX} -d ${WRKDIR}/HLAReference \
 	)
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/flex/d; s|gcc|${CC}|; s|-O2|${CFLAGS}|; \
@@ -64,13 +65,12 @@ do-install:
 	@${CHMOD} 755 ${WRKDIR}/stdlib/hla/include/include # broken archive
 	(cd ${WRKDIR}/stdlib/hla/include/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/hla)
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/Reference ${STAGEDIR}${DOCSDIR}/stdlib
 	(cd ${WRKDIR}/HLAReference && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/Reference)
 	(cd ${WRKDIR}/HLAstdlib && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/stdlib)
-.endif
-.if ${PORT_OPTIONS:MTEST}
+
+do-test-TEST-on:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Testing HLA installation..."
 	@( \
@@ -78,6 +78,5 @@ post-install:
 	    PATH=${PATH}:${STAGEDIR}${PREFIX}/bin ${WRKSRC}/hla ${WRKSRC}/hello.hla && \
 	    ${WRKSRC}/hello \
 	)
-.endif
 
 .include <bsd.port.mk>
