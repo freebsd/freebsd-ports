@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pspp
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -39,19 +39,16 @@ GUI_LIB_DEPENDS=	libgladeui-2.so:devel/glade
 GUI_RUN_DEPENDS=	yelp:x11/yelp
 GUI_USES=		desktop-file-utils
 GUI_USE=		gnome=gtk30,gtksourceview3
+GUI_VARS=		INSTALLS_ICONS=yes
 GUI_CONFIGURE_WITH=	cairo gui gui-tools
 GUI_INSTALL_TARGET=	install-icons install-ext-icons
+
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_MAKE_ARGS_OFF=	POFILES=""
+
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	libpq
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-INSTALLS_ICONS=	yes
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -60,9 +57,9 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pspp-mode.el \
 		${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-.if ${PORT_OPTIONS:MGUI}
+
+post-install-GUI-on:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/mimetypes
-.endif
 
 post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
