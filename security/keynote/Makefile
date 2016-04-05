@@ -34,6 +34,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/keynote.3 ${STAGEDIR}${MANPREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/man/keynote.4 \
 		${STAGEDIR}${MANPREFIX}/man/man5/keynote.5
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/HOWTO.add.crypto ${WRKSRC}/TODO \
 		${WRKSRC}/doc/rfc*.txt ${STAGEDIR}${DOCSDIR}

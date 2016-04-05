@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Nov 29 11:36:21 1999
-+++ Makefile.in	Fri Mar 24 19:22:32 2000
-@@ -41,7 +41,7 @@
+--- Makefile.in.orig	2000-09-26 23:16:27 UTC
++++ Makefile.in
+@@ -41,7 +41,7 @@ YACCFLAGS2 = -d -p kv -b z
  YACCFLAGS = -d -p kn -b k
  LEXFLAGS2 = -Pkv -s -i
  LEXFLAGS = -Cr -Pkn -s -i
@@ -9,7 +9,7 @@
  RMFLAGS2 = -rf
  RMFLAGS = -f
  NROFFFLAGS = -mandoc
-@@ -87,9 +87,11 @@
+@@ -87,9 +87,11 @@ $(TARGET2): $(TARGET) $(OBJS2)
  
  k.tab.c: keynote.y header.h keynote.h assertion.h config.h
  	$(YACC) $(YACCFLAGS) keynote.y
