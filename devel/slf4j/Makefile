@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slf4j
-PORTVERSION=	1.7.13
+PORTVERSION=	1.7.21
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.slf4j.org/dist/
 
