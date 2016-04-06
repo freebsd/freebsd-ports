@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2
-PORTVERSION=	2.0.3
-PORTREVISION=	6
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -11,9 +10,10 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool pathfix pkgconfig
+USES=		gmake iconv libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--disable-video-opengles \
@@ -45,10 +45,6 @@ CONFIGURE_ARGS+=	--enable-sse2
 .else
 CONFIGURE_ARGS+=	--disable-sse2
 .endif
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 
 OPTIONS_DEFINE=		ALSA ASM DLOPEN ESOUND NAS OSS \
 			PULSEAUDIO PTHREADS SDL_ATOMIC SDL_AUDIO \
@@ -193,10 +189,13 @@ CONFIGURE_ARGS+=	ac_cv_lib_iconv_iconv_open=yes ac_cv_func_iconv=yes
 .endif
 
 post-patch:
-	 @${REINPLACE_CMD} -e '/ CheckInputEvents$$/d' \
+	@${REINPLACE_CMD} -e '/ CheckInputEvents$$/d' \
 		-e 's/-liconv/${ICONV_LIB}/g' ${WRKSRC}/configure
 # Clang does not provide _m_prefetch
 	@${REINPLACE_CMD} 's/_m_prefetch/__builtin_prefetch/' \
 		${WRKSRC}/configure ${WRKSRC}/src/video/SDL_blit_A.c
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSDL2.so
 
 .include <bsd.port.post.mk>

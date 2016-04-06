@@ -8,6 +8,7 @@ include/SDL2/SDL_blendmode.h
 include/SDL2/SDL_clipboard.h
 include/SDL2/SDL_config.h
 include/SDL2/SDL_cpuinfo.h
+include/SDL2/SDL_egl.h
 include/SDL2/SDL_endian.h
 include/SDL2/SDL_error.h
 include/SDL2/SDL_events.h
@@ -27,8 +28,13 @@ include/SDL2/SDL_mouse.h
 include/SDL2/SDL_mutex.h
 include/SDL2/SDL_name.h
 include/SDL2/SDL_opengl.h
+include/SDL2/SDL_opengl_glext.h
 include/SDL2/SDL_opengles.h
 include/SDL2/SDL_opengles2.h
+include/SDL2/SDL_opengles2_gl2.h
+include/SDL2/SDL_opengles2_gl2ext.h
+include/SDL2/SDL_opengles2_gl2platform.h
+include/SDL2/SDL_opengles2_khrplatform.h
 include/SDL2/SDL_pixels.h
 include/SDL2/SDL_platform.h
 include/SDL2/SDL_power.h
@@ -63,8 +69,9 @@ include/SDL2/SDL_version.h
 include/SDL2/SDL_video.h
 include/SDL2/begin_code.h
 include/SDL2/close_code.h
+lib/cmake/SDL2/sdl2-config.cmake
 lib/libSDL2-2.0.so.0
-lib/libSDL2-2.0.so.0.2.1
+lib/libSDL2-2.0.so.0.4.0
 lib/libSDL2.a
 lib/libSDL2.so
 lib/libSDL2_test.a
