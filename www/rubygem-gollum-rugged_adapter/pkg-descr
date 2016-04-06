@@ -1,0 +1,3 @@
+Adapter for Gollum to use Rugged (libgit2) at the backend.
+
+WWW: https://github.com/gollum/rugged_adapter
