@@ -1,0 +1,28 @@
+--- cpp.orig/test/Ice/objects/Makefile.orig	2016-04-05 23:00:02.156584966 +0200
++++ cpp/test/Ice/objects/Makefile	2016-04-05 23:44:31.611624964 +0200
+@@ -12,9 +12,9 @@
+ CLIENT		= $(call mktestname,client)
+ SERVER		= $(call mktestname,server)
+ COLLOCATED	= $(call mktestname,collocated)
+-TESTLIBNAME	= libTestDerived.a
++TESTLIBNAME	= libTestDerived.so
+ 
+-TARGETS		= $(CLIENT) $(SERVER) $(COLLOCATED)
++TARGETS		= $(CLIENT) $(SERVER) $(COLLOCATED) $(TESTLIBNAME)
+ 
+ SLICE_OBJS	= Test.o \
+ 		  Derived.o \
+@@ -47,11 +47,11 @@
+ 
+ $(TESTLIBNAME): $(SLICE_OBJS)
+ 	rm -f $@	
+-	$(call mklib,$@,$(SLICE_OBJS))
++	$(call mkshlib,$@,$(TESTLIBNAME),$(SLICE_OBJS),$(LIBS))
+ 
+ $(CLIENT): $(COBJS) $(TESTLIBNAME)
+ 	rm -f $@
+-	$(call mktest,$@,$(COBJS) -lTestDerived $(LIBS))
++	$(call mktest,$@,-lTestDerived $(COBJS) $(LIBS))
+ 
+ $(SERVER): $(SOBJS)
+ 	rm -f $@
