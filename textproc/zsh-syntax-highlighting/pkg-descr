@@ -1,0 +1,5 @@
+Zsh-syntax-highlighting enables highlighing of commands whilst they
+are typed at an interactive zsh prompt. This helps in reviewing
+commands before running them, particularly in catching syntax errors.
+
+WWW: https://github.com/zsh-users/zsh-syntax-highlighting
