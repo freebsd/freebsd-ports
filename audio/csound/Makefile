@@ -135,12 +135,12 @@ CSOUND_DOCS=	Csound${PORTVERSION:R}_manual_html.zip
 MAKE_ARGS+=	Word64=1
 .endif
 
-.if ${OSVERSION} < 1000033
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	flex>0:textproc/flex
 MAKE_ENV+=	PATH=${LOCALBASE}/bin:$$PATH
 .endif
 
-.if ${OSVERSION} >= 1000054
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054
 CXXLIB=		c++
 .else
 CXXLIB=		# empty
