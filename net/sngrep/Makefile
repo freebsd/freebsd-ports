@@ -11,8 +11,8 @@ COMMENT=	SIP Packet display and capture
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libncurses.so:${PORTSDIR}/devel/ncurses \
-		libpcap.so:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	libncurses.so:devel/ncurses \
+		libpcap.so:net/libpcap
 
 #CPPFLAGS+=      -I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
@@ -31,11 +31,11 @@ OPENSSL_USE=		OPENSSL=yes
 
 PCRE_DESC=	Adds Perl Compatible regex support
 PCRE_CONFIGURE_ON=	--with-pcre
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 
 UNICODE_DESC=	Adds Ncurses UTF-8/Unicode support
 UNICODE_CONFIGURE_ON=	--enable-unicode
-UNICODE_LIB_DEPENDS=	libncursesw.so:${PORTSDIR}/devel/ncurses
+UNICODE_LIB_DEPENDS=	libncursesw.so:devel/ncurses
 
 IPV6_DESC=	Enable IPv6 packet capture support
 IPV6_CONFIGURE_ON=	--enable-ipv6
