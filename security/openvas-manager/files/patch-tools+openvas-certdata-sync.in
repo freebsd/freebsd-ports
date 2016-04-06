@@ -1,0 +1,20 @@
+--- tools/openvas-certdata-sync.in.orig	2015-08-03 05:52:10 UTC
++++ tools/openvas-certdata-sync.in
+@@ -575,7 +575,7 @@ update_sec_db () {
+   then
+     for certfile in `ls $CERT_DIR/CB-K*.xml`
+     do
+-      filedate=`stat -c "%Y" $certfile | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -f "%m" $certfile | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ]
+       then
+@@ -610,7 +610,7 @@ update_sec_db () {
+   then
+     for certfile in `ls $CERT_DIR/dfn-cert-*.xml`
+     do
+-      filedate=`stat -c "%Y" $certfile | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -f "%m" $certfile | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ]
+       then
