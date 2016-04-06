@@ -1,0 +1,7 @@
+A facility to manage possibly persistent resources with a comprehensible API.
+Provides simliar functionality like the zend_list API, but with more flexiblity
+and freedom.
+
+php70+ specific version only.
+
+WWW: http://pecl.php.net/package/propro/

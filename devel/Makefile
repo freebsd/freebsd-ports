@@ -3732,6 +3732,7 @@
     SUBDIR += pecl-params
     SUBDIR += pecl-parsekit
     SUBDIR += pecl-propro
+    SUBDIR += pecl-propro2
     SUBDIR += pecl-pthreads
     SUBDIR += pecl-qb
     SUBDIR += pecl-raphf
