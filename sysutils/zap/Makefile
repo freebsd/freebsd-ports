@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zap
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jrm@ftfl.ca
@@ -14,7 +14,7 @@ NO_BUILD=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jehops
-GH_TAGNAME=	0.1
+GH_TAGNAME=	0.1.1
 
 PLIST_FILES=	bin/zap %%PORTDOCS%%%%DOCSDIR%%/README.org
 
