@@ -1,0 +1,35 @@
+--- simavr/Makefile.orig	2016-01-19 09:41:55 UTC
++++ simavr/Makefile
+@@ -73,12 +73,9 @@ ${OBJ}/libsimavr.so		: ${OBJ}/libsimavr.
+ 	ln -sf libsimavr.so.1 $@
+ 
+ libsimavr	: config ${OBJ}/libsimavr.a
+-# shared library won't work that easily on non-linux
+-ifeq (${shell uname}, Linux)
+ libsimavr	:	${OBJ}/libsimavr.so
+-endif
+ 
+-${OBJ}/${target}.elf	: ${OBJ}/${target}.o
++${OBJ}/${target}.elf	: ${OBJ}/${target}.o | libsimavr
+ 
+ ${target}	: ${OBJ}/${target}.elf
+ 
+@@ -103,15 +100,13 @@ install : all
+ 	$(INSTALL) -m644 sim/avr/*.h $(DESTDIR)/include/simavr/avr/
+ 	$(MKDIR) $(DESTDIR)/lib
+ 	$(INSTALL) ${OBJ}/libsimavr.a $(DESTDIR)/lib/
+-	$(MKDIR) $(DESTDIR)/lib/pkgconfig/
++	$(MKDIR) $(DESTDIR)/libdata/pkgconfig/
+ 	sed -e "s|PREFIX|${PREFIX}|g" -e "s|VERSION|${SIMAVR_VERSION}|g" \
+-		simavr-avr.pc >$(DESTDIR)/lib/pkgconfig/simavr-avr.pc
++		simavr-avr.pc >$(DESTDIR)/libdata/pkgconfig/simavr-avr.pc
+ 	sed -e "s|PREFIX|${PREFIX}|g" -e "s|VERSION|${SIMAVR_VERSION}|g" \
+-		simavr.pc >$(DESTDIR)/lib/pkgconfig/simavr.pc
+-ifeq (${shell uname}, Linux)
++		simavr.pc >$(DESTDIR)/libdata/pkgconfig/simavr.pc
+ 	$(INSTALL) ${OBJ}/libsimavr.so.1 $(DESTDIR)/lib/
+ 	ln -sf libsimavr.so.1 $(DESTDIR)/lib/libsimavr.so
+-endif
+ 	$(MKDIR) $(DESTDIR)/bin
+ 	$(INSTALL) ${OBJ}/${target}.elf $(DESTDIR)/bin/simavr
+ 
