@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTSCOUT=	limit:^2.*
 
-PHP_DEFAULT=	70
 USES=		gmake tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
