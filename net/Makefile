@@ -1211,6 +1211,7 @@
     SUBDIR += smbldap-tools
     SUBDIR += smcroute
     SUBDIR += smm++
+    SUBDIR += sngrep
     SUBDIR += sniffit
     SUBDIR += sntop
     SUBDIR += sobby
