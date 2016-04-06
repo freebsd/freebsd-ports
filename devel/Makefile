@@ -5240,6 +5240,7 @@
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
     SUBDIR += silentbob
+    SUBDIR += simavr
     SUBDIR += simgear
     SUBDIR += simian
     SUBDIR += simple_components
