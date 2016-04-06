@@ -5,6 +5,30 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160406:
+  AFFECTS: All users of www/pecl-http
+  AUTHOR: bofh
+
+  www/pecl-http has been updated to the latest 3.x stable release, which 
+  supports php70+ and a new port www/pecl-http2 has been created for the
+  2.x branch.
+
+  Should users want to continue to use version 2.x, replace www/pecl-http with
+  www/pecl-http2 as follows:
+
+  Using packages:
+
+    # pkg delete pecl-http
+    # pkg install pecl-http2
+
+  Using ports:
+
+    # portupgrade -o www/pecl-http2 www/pecl-http
+
+  OR
+
+    # portmaster -o www/pecl-http2 www/pecl-http
+
 20160404:
   AFFECTS: users of lang/ruby21
   AUTHOR: swills@FreeBSD.org
