@@ -1,0 +1,3 @@
+bin/sngrep
+@sample %%ETCDIR%%rc %%ETCDIR%%rc.sample
+man/man8/sngrep.8.gz
