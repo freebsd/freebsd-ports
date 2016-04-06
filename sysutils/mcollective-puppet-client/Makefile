@@ -6,7 +6,7 @@ COMMENT=	MCollective client to manage the Puppet Agent
 
 # See MASTERDIR for MAINTAINER.
 
-RUN_DEPENDS=	mcollective-puppet-common>=${PORTVERSION}:${PORTSDIR}/sysutils/mcollective-puppet-common
+RUN_DEPENDS=	mcollective-puppet-common>=${PORTVERSION}:sysutils/mcollective-puppet-common
 
 MASTERDIR=	${.CURDIR}/../mcollective-puppet-common
 
