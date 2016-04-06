@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2_mixer
-PORTVERSION=	2.0.0
-PORTREVISION=	11
+PORTVERSION=	2.0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL2_mixer-${PORTVERSION}
@@ -11,12 +10,11 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Sample multi-channel audio mixer library
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		gmake pathfix pkgconfig libtool
+USES=		gmake pathfix pkgconfig libtool localbase
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		FLUIDSYNTH FLAC SMPEG
@@ -64,5 +62,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|"modplug.h"|"libmodplug/modplug.h"|' \
 		${WRKSRC}/dynamic_modplug.h ${WRKSRC}/music_modplug.h
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSDL2_mixer.so
 
 .include <bsd.port.mk>
