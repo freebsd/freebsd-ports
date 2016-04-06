@@ -18,7 +18,6 @@ libexec/%%PORTNAME%%/insert.pl
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testentry.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade.pl
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/show.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showconfig.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showgraph.cgi

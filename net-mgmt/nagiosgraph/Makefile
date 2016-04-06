@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	nagiosgraph
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTVERSION=	1.5.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	hizel@vyborg.ru
 COMMENT=	Generate rrdtool graphs using performance data from nagios plugins
+
+LICENSE=	ART20
 
 RUN_DEPENDS=	rrdtool>=0:databases/rrdtool
 
@@ -91,9 +92,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/${NAGIOSWWWDIR}/images/action-nagiosgraph.gif
 
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for i in utils/testentry.pl utils/upgrade.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/$i ${STAGEDIR}${EXAMPLESDIR}/
-.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/testentry.pl ${STAGEDIR}${EXAMPLESDIR}/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
