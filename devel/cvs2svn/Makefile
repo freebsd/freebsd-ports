@@ -41,7 +41,7 @@ BAZAAR_RUN_DEPENDS=	${LOCALBASE}/bin/bzr:devel/bzr
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} > 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
 RUN_DEPENDS+=	cvs:devel/cvs
 .endif
 
