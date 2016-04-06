@@ -166,6 +166,7 @@
     SUBDIR += kmplayer-kde4
     SUBDIR += kodi
     SUBDIR += kplayer-kde4
+    SUBDIR += l-smash
     SUBDIR += libaacs
     SUBDIR += libass
     SUBDIR += libav
