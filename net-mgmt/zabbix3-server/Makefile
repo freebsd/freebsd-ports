@@ -144,8 +144,6 @@ LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 OPENSSL_CONFIGURE_WITH= openssl
 OPENSSL_USE=            OPENSSL=yes
 
-WITH_OPENSSL_PORT=yes
-
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=     libgnutls.so:security/gnutls
 
@@ -154,8 +152,8 @@ POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=yes
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
+IGNORE=   OpenSSL from the base system is too old, add WITH_OPENSSL_PORT to your /etc/make.conf and rebuild everything that needs SSL.
 .endif
 
 post-patch:
