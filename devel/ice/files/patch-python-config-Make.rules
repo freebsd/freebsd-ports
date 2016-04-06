@@ -1,5 +1,5 @@
---- python/config/Make.rules.orig	2015-06-23 15:30:20.000000000 +0000
-+++ python/config/Make.rules	2015-06-27 23:26:40.586161355 +0000
+--- python/config/Make.rules.orig	2016-04-05 22:33:01.425700968 +0200
++++ python/config/Make.rules	2016-04-05 22:29:23.200712968 +0200
 @@ -11,7 +11,8 @@
  # Select an installation base directory. The directory will be created
  # if it does not exist.
@@ -10,7 +10,7 @@
  
  #
  # The "root directory" for runpath embedded in executables. Can be set
-@@ -49,7 +50,7 @@
+@@ -50,7 +51,7 @@
  # version used for building the Ice extension, then set PYTHON to
  # the specific to the location of the python interpreter.
  #
@@ -19,37 +19,23 @@
  
  PYTHON_VERSION      ?= python$(shell $(PYTHON) -c "import sys; import distutils.sysconfig as ds; sys.stdout.write(ds.get_python_version())")
  
-@@ -91,9 +92,9 @@
-     include $(top_srcdir)/../config/Make.common.rules
- endif
- 
--ifndef usr_dir_install
--RPATH_DIR	= $(prefix)/$(libsubdir)
--endif
-+#ifndef usr_dir_install
-+#RPATH_DIR	= $(prefix)/$(libsubdir)
-+#endif
- 
- install_bindir          = $(prefix)/$(binsubdir)
- 
-@@ -108,17 +109,17 @@
+@@ -105,16 +106,16 @@
  
  libdir                  = $(top_srcdir)/python
  
 -ifndef usr_dir_install
--    install_pythondir		= $(prefix)/python
--    install_libdir			= $(prefix)/python
+-    install_pythondir	= $(prefix)/python
+-    install_libdir	= $(prefix)/python
 -else
 +#ifndef usr_dir_install
-+#    install_pythondir		= $(prefix)/python
-+#    install_libdir			= $(prefix)/python
++#    install_pythondir	= $(prefix)/python
++#    install_libdir	= $(prefix)/python
 +#else
      #
      # The install_dir script says where python wants site-packages installed.
      #
- 
--    install_pythondir = $(shell $(PYTHON) $(top_srcdir)/config/install_dir)
--    install_libdir = $(install_pythondir)
+-    install_pythondir 	= $(shell $(PYTHON) $(top_srcdir)/config/install_dir)
+-    install_libdir 	= $(install_pythondir)
 -endif
 +    install_pythondir = %%PYTHON_SITELIBDIR%%/Ice
 +    install_libdir = %%PYTHON_SITELIBDIR%%/Ice
@@ -57,7 +43,7 @@
  
  ifeq ($(UNAME),SunOS)
      ifeq ($(LP64),yes)
-@@ -127,14 +128,10 @@
+@@ -123,14 +124,10 @@
      endif
  endif
  
@@ -76,7 +62,7 @@
  
  CPPFLAGS		=
  ICECPPFLAGS		= -I$(slicedir)
-@@ -143,10 +140,7 @@
+@@ -139,10 +136,7 @@
  
  ifdef ice_src_dist
      SLICE2PY    = $(PYTHON) $(top_srcdir)/config/s2py.py
@@ -88,7 +74,7 @@
  else
      ifeq ($(UNAME),Darwin)
          SLICE2PY = /usr/local/bin/slice2py
-@@ -171,7 +165,7 @@
+@@ -167,7 +161,7 @@
  
  all:: $(SRCS)
  
