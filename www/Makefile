@@ -1431,6 +1431,7 @@
     SUBDIR += pecl-amfext
     SUBDIR += pecl-http
     SUBDIR += pecl-http1
+    SUBDIR += pecl-http2
     SUBDIR += pecl-solr
     SUBDIR += pecl-sphinx
     SUBDIR += pecl-swish
