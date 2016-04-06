@@ -18,8 +18,6 @@
 %%XPI_XPIDIR%%/assets/ublock/filter-lists.json
 %%XPI_XPIDIR%%/assets/ublock/filters.txt
 %%XPI_XPIDIR%%/assets/ublock/privacy.txt
-%%XPI_XPIDIR%%/assets/ublock/redirect-resources.txt
-%%XPI_XPIDIR%%/assets/ublock/redirect.txt
 %%XPI_XPIDIR%%/assets/ublock/resources.txt
 %%XPI_XPIDIR%%/assets/ublock/unbreak.txt
 %%XPI_XPIDIR%%/background.html
