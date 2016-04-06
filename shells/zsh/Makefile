@@ -22,9 +22,15 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_UNSAFE=	yes
 
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 ZSH_VER=	${PORTVERSION}
+PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
 
 USES=		iconv ncurses shebangfix tar:xz
+
+SHEBANG_LANG=	zsh
+zsh_OLD_CMD=	/bin/zsh
+zsh_CMD=	${PREFIX}/bin/zsh
 SHEBANG_FILES=	Functions/Calendar/calendar_add \
 		Functions/Misc/checkmail \
 		Functions/Misc/run-help \
@@ -32,9 +38,7 @@ SHEBANG_FILES=	Functions/Calendar/calendar_add \
 		Functions/Misc/zcalc \
 		Functions/Misc/zed \
 		Functions/Misc/zkbd
-SHEBANG_LANG=	zsh
-zsh_OLD_CMD=	/bin/zsh
-zsh_CMD=	${PREFIX}/bin/zsh
+
 GNU_CONFIGURE=	yes
 TEST_TARGET=	test
 
@@ -45,40 +49,48 @@ CONFIGURE_ARGS=	--with-tcsetpgrp \
 		--enable-function-subdirs --enable-multibyte \
 		--sysconfdir=${PREFIX}/etc
 
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
-#EXTRA_COMPLETION_FILES=	_sockstat
-#EXTRA_COMPLETION_DIR=	Completion/BSD/Command
+DOCS=		LICENCE META-FAQ README \
+		Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ Etc/completion-style-guide \
+		Doc/zsh*.html Doc/zsh.dvi
 
-OPTIONS_DEFINE=	GDBM MEM SECURE_FREE MAILDIR PCRE STATIC DOCS DEBUG \
-		EXAMPLES
-OPTIONS_DEFAULT=SECURE_FREE MAILDIR
-
-GDBM_DESC=	Enable GDBM support (GPL)
-MEM_DESC=	Enable zsh-mem options
-SECURE_FREE_DESC=	Enable zsh-secure-free
-MAILDIR_DESC=	Enable support for Maildirs in MAIL(PATH)
-
-PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
-
-DOCS=		LICENCE META-FAQ README Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ \
-		Etc/completion-style-guide Doc/zsh*.html Doc/zsh.dvi
 PORTDOCS=	*
 PORTEXAMPLES=	zlogin zshenv zshrc
 
+## Vendor completions to be added into the port (none used now)
+#EXTRA_COMPLETION_FILES=	_sockstat
+#EXTRA_COMPLETION_DIR=	Completion/BSD/Command
+
+OPTIONS_DEFINE=	GDBM MEM SECURE_FREE MAILDIR PCRE STATIC DEBUG \
+		DOCS EXAMPLES
+OPTIONS_DEFAULT=SECURE_FREE MAILDIR
 OPTIONS_SUB=	yes
 
-DOCS_DISTFILES=		${DISTNAME}-doc${EXTRACT_SUFX}:doc
+DEBUG_CONFIGURE_ENABLE=	zsh-debug
+
+DOCS_DISTFILES=	${DISTNAME}-doc${EXTRACT_SUFX}:doc
+
+GDBM_DESC=		Enable GDBM support (GPL)
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ENABLE=	gdbm
+
+MAILDIR_DESC=		Enable support for Maildirs in MAIL(PATH)
+MAILDIR_CONFIGURE_ENABLE=	maildir-support
+
+MEM_DESC=		Enable zsh-mem options
+MEM_CONFIGURE_ENABLE=	zsh-mem
+
+SECURE_FREE_DESC=	Enable zsh-secure-free
+SECURE_FREE_CONFIGURE_ENABLE=	zsh-secure-free
+
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_ENABLE=	pcre
-MEM_CONFIGURE_ENABLE=	zsh-mem
-SECURE_FREE_CONFIGURE_ENABLE=	zsh-secure-free
-MAILDIR_CONFIGURE_ENABLE=	maildir-support
+
+## Some modules can only be built dynamically (such as the regex module).
+## If you enable STATIC, you may get strange errors if scripts/plugins
+## try to use the regex module.
 STATIC_LDFLAGS=		-static
 STATIC_CONFIGURE_ON=	--disable-dynamic --with-term-lib="tinfow tinfo"
 STATIC_CONFIGURE_OFF=	--enable-dynamic  --with-term-lib="ncursesw ncurses"
-DEBUG_CONFIGURE_ENABLE=	zsh-debug
 
 .include <bsd.port.pre.mk>
 
@@ -93,6 +105,8 @@ post-patch:
 		${WRKSRC}/Src/Modules/*.mdd
 	@${SED} -i "" -e "s,/etc/,${LOCALBASE}/etc/," \
 		${WRKSRC}/Functions/MIME/zsh-mime-setup
+
+# Adding vendor completions into the package
 .ifdef EXTRA_COMPLETION_FILES
 	@${ECHO} "===>  Installing extra completion files"
 .for COMPFILE in ${EXTRA_COMPLETION_FILES}
@@ -109,7 +123,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/Completion -type f -iname '*.orig' -delete
 
 post-build:
-	# Fix ".so" macro problem by using "soelim" command.
+# Fix ".so" macro problem by using "soelim" command.
 	${LN} -sf ${WRKSRC}/Doc ${WRKSRC}/man1
 	${MV} ${WRKSRC}/Doc/zshall.1 ${WRKSRC}/Doc/zshall.1.source
 	(cd ${WRKSRC} && ${SOELIM} -r ${WRKSRC}/Doc/zshall.1.source > \
@@ -117,6 +131,7 @@ post-build:
 
 post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/zsh ${STAGEDIR}${PREFIX}/bin/rzsh
+# Precompile completions and functions
 	(${STAGEDIR}${PREFIX}/bin/zsh -fc ' \
 		setopt extendedglob nomark_dirs; \
 		cd ${STAGEDIR}/${DATADIR}/${ZSH_VER} ; \
