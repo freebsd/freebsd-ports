@@ -3374,6 +3374,7 @@
     SUBDIR += p5-Time-Mock
     SUBDIR += p5-Time-Object
     SUBDIR += p5-Time-Out
+    SUBDIR += p5-Time-ParseDate
     SUBDIR += p5-Time-Period
     SUBDIR += p5-Time-Piece
     SUBDIR += p5-Time-Piece-Range
