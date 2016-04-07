@@ -124,13 +124,13 @@ post-patch:
 # new ones. Otherwise, the staging directory is polluted with unneeded
 # files.
 pre-install:
-.for f in manifest-rustc manifest-rust-std-${RUST_TARGET}
-	@if test -f ${STAGEDIR}${PREFIX}/lib/rustlib/${f}; then \
+	@for f in manifest-rustc manifest-rust-std-${RUST_TARGET}; do \
+	    if test -f ${STAGEDIR}${PREFIX}/lib/rustlib/$$f; then \
 		${SED} -E -e 's,^(dir|file:),${STAGEDIR},' \
-		< ${STAGEDIR}${PREFIX}/lib/rustlib/${f} \
+		< ${STAGEDIR}${PREFIX}/lib/rustlib/$$f \
 		| ${XARGS} ${RM}; \
-	fi
-.endfor
+	    fi; \
+	done
 	@${RM} \
 		${STAGEDIR}${PREFIX}/lib/rustlib/components \
 		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rustc \
@@ -139,11 +139,11 @@ pre-install:
 		${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 
 post-install:
-.for f in manifest-rustc manifest-rust-std-${RUST_TARGET}
-	@${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
-		${STAGEDIR}${PREFIX}/lib/rustlib/${f}
-	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/${f}.bak
-.endfor
+	@for f in manifest-rustc manifest-rust-std-${RUST_TARGET}; do \
+		${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
+			${STAGEDIR}${PREFIX}/lib/rustlib/$$f; \
+		${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/$$f.bak; \
+	done
 	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/install.log
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/rustc \
