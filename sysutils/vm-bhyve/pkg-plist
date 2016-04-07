@@ -12,7 +12,7 @@ lib/vm-bhyve/vm-zfs
 man/man8/vm.8.gz
 sbin/vm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alpine.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/centos.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/centos6.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/debian.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/default.conf
