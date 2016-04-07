@@ -1,11 +1,11 @@
---- src/writecabrillo.c.orig	2015-11-03 16:18:24 UTC
+--- src/writecabrillo.c.orig	2016-04-07 07:00:33 UTC
 +++ src/writecabrillo.c
-@@ -21,8 +21,6 @@
- 	 *   write cabrillo  file
- 	 *
+@@ -23,8 +23,6 @@
  	 *--------------------------------------------------------------*/
+ 
+ 
 -#define _XOPEN_SOURCE 500
 -#define _GNU_SOURCE
- #include "writecabrillo.h"
- #include "ui_utils.h"
- #include <glib.h>
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
