@@ -16,6 +16,7 @@ man/man1/tlf.1.gz
 %%DATADIR%%/rules/aadx_as
 %%DATADIR%%/rules/aadx_dx
 %%DATADIR%%/rules/arrl10m_dx
+%%DATADIR%%/rules/arrl160m_usa
 %%DATADIR%%/rules/arrldx_dx
 %%DATADIR%%/rules/arrldx_usa
 %%DATADIR%%/rules/arrlfd
@@ -48,3 +49,4 @@ man/man1/tlf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.ssb
 %%PORTDOCS%%%%DOCSDIR%%/README_QTC.txt
 %%PORTDOCS%%%%DOCSDIR%%/README_QTC_RTTY.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.RTTY
