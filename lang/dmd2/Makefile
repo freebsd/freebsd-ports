@@ -3,18 +3,24 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.070.2
+PORTVERSION=	2.071.0
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		dmd.2.067.1${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}.freebsd-64${EXTRACT_SUFX} \
+		dmd.2.067.1.zip
+# The souces in the following files can be used instead. Either way the
+# binaries in the distribution are ignored. This port builds its own
+# binaries using the sources that come with the distribution.
+# DISTFILES=	${DISTNAME}.freebsd-32${EXTRACT_SUFX}
+# DISTFILES=	${DISTNAME}.linux${EXTRACT_SUFX}
+
+EXTRACT_ONLY=	${DISTNAME}.freebsd-64${EXTRACT_SUFX}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 
-USES=		gmake zip
+USES=		gmake tar:xz zip
 MAKEFILE=	posix.mak
 MAKE_ARGS=	AUTO_BOOTSTRAP=1
 MAKE_ENV+=	WRKDIR=${WRKDIR}
