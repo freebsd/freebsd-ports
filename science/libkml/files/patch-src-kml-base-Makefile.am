@@ -8,11 +8,13 @@
                -I$(top_srcdir)/third_party/zlib-1.2.3/contrib
  
  if GCC
-@@ -32,7 +31,7 @@ libkmlbase_la_SOURCES = \
+@@ -31,8 +30,8 @@ libkmlbase_la_SOURCES = \
+ 	zip_file.cc
  
  libkmlbase_la_LIBADD = \
- 	$(top_builddir)/third_party/libminizip.la \
+-	$(top_builddir)/third_party/libminizip.la \
 -	$(top_builddir)/third_party/liburiparser.la
++	$(top_builddir)/third_party/libkmlminizip.la \
 +	-luriparser
  
  # These header files will be installed in $(includedir)/kml/base
@@ -35,3 +37,12 @@
  	$(top_builddir)/third_party/libgtest.la
  
  util_test_SOURCES = util_test.cc
+@@ -205,7 +204,7 @@ xmlns_test_LDADD= libkmlbase.la \
+ zip_file_test_SOURCES = zip_file_test.cc
+ zip_file_test_CXXFLAGS = -DDATADIR=\"$(DATA_DIR)\" $(AM_TEST_CXXFLAGS)
+ zip_file_test_LDADD= libkmlbase.la \
+-		 $(top_builddir)/third_party/libminizip.la \
++		 $(top_builddir)/third_party/libkmlminizip.la \
+ 		 $(top_builddir)/third_party/libgtest.la
+ 
+ CLEANFILES = check_PROGRAMS
