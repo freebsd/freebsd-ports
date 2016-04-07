@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quisk
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://james.ahlstrom.name/quisk/ \
 		LOCAL/shurd
