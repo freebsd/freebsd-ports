@@ -499,6 +499,7 @@
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Amazon-SQS-Simple
     SUBDIR += p5-AnyEvent-MPRPC
+    SUBDIR += p5-AnyEvent-MQTT
     SUBDIR += p5-AnyEvent-RabbitMQ
     SUBDIR += p5-AnyEvent-Twitter
     SUBDIR += p5-AnyEvent-Twitter-Stream
