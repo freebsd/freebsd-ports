@@ -639,6 +639,7 @@
     SUBDIR += p5-Net-LimeLight-Purge
     SUBDIR += p5-Net-MAC
     SUBDIR += p5-Net-MAC-Vendor
+    SUBDIR += p5-Net-MQTT
     SUBDIR += p5-Net-Mosso-CloudFiles
     SUBDIR += p5-Net-MovableType
     SUBDIR += p5-Net-NBName
