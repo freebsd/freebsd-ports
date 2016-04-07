@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	imp
-PORTVERSION=	6.2.13
+PORTVERSION=	6.2.14
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
