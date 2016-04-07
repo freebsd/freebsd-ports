@@ -1,0 +1,6 @@
+Net::MQTT - Perl modules for MQTT Protocol (http://mqtt.org/)
+
+Low level API for the MQTT protocol described at http://mqtt.org.
+IMPORTANT: This is an early release and the API is still subject to change.
+
+WWW: http://search.cpan.org/dist/Net-MQTT/
