@@ -603,6 +603,7 @@
     SUBDIR += rubygem-mailboxer
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
+    SUBDIR += rubygem-premailer
     SUBDIR += rubygem-rmail
     SUBDIR += rubygem-roadie
     SUBDIR += rubygem-roadie-rails
