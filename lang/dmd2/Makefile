@@ -20,7 +20,7 @@ EXTRACT_ONLY=	${DISTNAME}.freebsd-64${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 
-USES=		gmake tar:xz zip
+USES=		gmake zip
 MAKEFILE=	posix.mak
 MAKE_ARGS=	AUTO_BOOTSTRAP=1
 MAKE_ENV+=	WRKDIR=${WRKDIR}
