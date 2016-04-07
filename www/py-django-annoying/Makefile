@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	django-annoying
-PORTVERSION=	0.8.7
+PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Eliminate annoying things in the Django framework
+
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18
 
