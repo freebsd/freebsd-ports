@@ -22,6 +22,8 @@ PLIST_FILES=	bin/premake4
 
 PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e 's|-ldl||' ${BUILD_WRKSRC}/Premake4.make
 	${REINPLACE_CMD} -e 's|debug|release|' \
