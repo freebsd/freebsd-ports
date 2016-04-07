@@ -33,7 +33,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libcups.so:${PORTSDIR}/print/cups-client \
+		libcups.so:${PORTSDIR}/print/cups \
 		libevent.so:${PORTSDIR}/devel/libevent2 \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libpci.so:${PORTSDIR}/devel/libpci \
