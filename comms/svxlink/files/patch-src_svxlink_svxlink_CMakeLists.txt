@@ -1,6 +1,6 @@
---- ./src/svxlink/svxlink/CMakeLists.txt.orig	2015-01-05 18:06:11.000000000 -0800
-+++ ./src/svxlink/svxlink/CMakeLists.txt	2015-01-05 18:06:33.000000000 -0800
-@@ -24,9 +24,9 @@
+--- src/svxlink/svxlink/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
++++ src/svxlink/svxlink/CMakeLists.txt
+@@ -31,9 +31,9 @@ include_directories(${GCRYPT_INCLUDE_DIR
  add_definitions(${GCRYPT_DEFINITIONS})
  
  # Find the dl library
