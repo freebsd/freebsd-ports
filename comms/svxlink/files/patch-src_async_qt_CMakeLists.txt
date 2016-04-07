@@ -1,6 +1,6 @@
---- src/async/qt/CMakeLists.txt.orig	2014-08-02 12:45:56.000000000 -0700
-+++ src/async/qt/CMakeLists.txt	2015-01-05 21:42:06.000000000 -0800
-@@ -6,7 +6,12 @@
+--- src/async/qt/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
++++ src/async/qt/CMakeLists.txt
+@@ -6,7 +6,12 @@ set(LIBSRC AsyncQtApplication.cpp AsyncQ
  
  set(QTHEADERS AsyncQtApplication.h AsyncQtTimer.h AsyncQtDnsLookupWorker.h)
  

@@ -1,5 +1,5 @@
---- src/async/CMakeLists.txt.orig	2015-01-05 20:59:17.000000000 -0800
-+++ src/async/CMakeLists.txt	2015-01-05 20:59:44.000000000 -0800
+--- src/async/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
++++ src/async/CMakeLists.txt
 @@ -1,7 +1,9 @@
 +if(NOT QT_ONLY)
  add_subdirectory(core)
