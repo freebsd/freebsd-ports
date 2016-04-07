@@ -3,7 +3,7 @@
 
 PORTNAME=	foo2zjs
 PORTVERSION=	20150511
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	GOOGLE_CODE \
 		LOCAL/bsam/${PORTNAME}  \
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcups.so:print/cups
 RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:print/foomatic-db \
-		foomatic-rip:print/foomatic-filters \
+		foomatic-rip:print/cups-filters \
 		gsed:textproc/gsed
 
 PROJECTHOST=	bsdistfiles
