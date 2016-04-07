@@ -1,8 +1,9 @@
 --- include/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
 +++ include/CMakeLists.txt
-@@ -69,10 +69,12 @@ SET(HEADERS 
+@@ -68,11 +68,13 @@ SET(HEADERS 
+   ${HEADERS_GEN_CONFIGURE}
  )
-
+ 
 +IF(FALSE) 
  INSTALL(FILES ../libbinlogevents/export/binary_log_types.h DESTINATION ${INSTALL_INCLUDEDIR})
  INSTALL(FILES ${HEADERS} DESTINATION ${INSTALL_INCLUDEDIR} COMPONENT Development)
