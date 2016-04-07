@@ -3374,6 +3374,7 @@
     SUBDIR += p5-Time-Mock
     SUBDIR += p5-Time-Object
     SUBDIR += p5-Time-Out
+    SUBDIR += p5-Time-ParseDate
     SUBDIR += p5-Time-Period
     SUBDIR += p5-Time-Piece
     SUBDIR += p5-Time-Piece-Range
@@ -3732,9 +3733,11 @@
     SUBDIR += pecl-params
     SUBDIR += pecl-parsekit
     SUBDIR += pecl-propro
+    SUBDIR += pecl-propro2
     SUBDIR += pecl-pthreads
     SUBDIR += pecl-qb
     SUBDIR += pecl-raphf
+    SUBDIR += pecl-raphf2
     SUBDIR += pecl-runkit
     SUBDIR += pecl-scream
     SUBDIR += pecl-shape
@@ -5238,6 +5241,7 @@
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
     SUBDIR += silentbob
+    SUBDIR += simavr
     SUBDIR += simgear
     SUBDIR += simian
     SUBDIR += simple_components

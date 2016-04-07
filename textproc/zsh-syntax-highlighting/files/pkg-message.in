@@ -1,0 +1,9 @@
+================================================================================
+Zsh-syntax-highlighting requires zsh 4.3.17+.
+
+Add the line below to *the end of* your .zshrc to enable hightlighting.
+
+source %%DATADIR%%/zsh-syntax-highlighting.zsh
+
+DATADIR is usually %%PREFIX%%/share/zsh-syntax-highlighting.
+================================================================================

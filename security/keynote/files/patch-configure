@@ -1,6 +1,6 @@
---- configure.orig	Wed Oct 20 22:04:39 1999
-+++ configure	Fri Mar 24 19:38:46 2000
-@@ -1256,7 +1256,7 @@
+--- configure.orig	2000-09-26 23:16:28 UTC
++++ configure
+@@ -1256,7 +1256,7 @@ else
  fi
  
  
@@ -9,7 +9,7 @@
   -L/usr/local/ssl/lib -L/usr/local/openssl/lib -L/usr/pkg/lib -L/pkg/lib"
  
  echo $ac_n "checking for floor in -lm""... $ac_c" 1>&6
-@@ -1421,7 +1421,8 @@
+@@ -1421,7 +1421,8 @@ fi
  
  
  CPPFLAGS="-I/usr/include -I/usr/local/include -I/usr/ssl/include\

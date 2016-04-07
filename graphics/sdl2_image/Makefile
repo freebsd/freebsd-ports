@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2_image
-PORTVERSION=	2.0.0
-PORTREVISION=	8
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL2_image-${PORTVERSION}
@@ -11,12 +10,12 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Simple library to load images of various formats as SDL surfaces
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		pkgconfig:build pathfix gmake libtool
+USES=		pkgconfig:build pathfix gmake libtool localbase
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lm
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	JPEG PNG TIFF WEBP

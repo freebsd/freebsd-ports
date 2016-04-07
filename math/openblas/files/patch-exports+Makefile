@@ -8,3 +8,11 @@
  so : ../$(LIBSONAME)
  
  ifeq (, $(SYMBOLPREFIX)$(SYMBOLSUFFIX))
+@@ -151,6 +152,7 @@ else
+ endif
+ 	$(CC) $(CFLAGS) $(LDFLAGS)  -shared -o ../$(LIBSONAME) \
+ 	-Wl,--whole-archive $< -Wl,--no-whole-archive \
++	-Wl,-soname,$(LIBPREFIX).so.$(MAJOR_VERSION) \
+ 	$(FEXTRALIB) $(EXTRALIB)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -w -o linktest linktest.c ../$(LIBSONAME) $(FEXTRALIB) && echo OK.
+ 	rm -f linktest

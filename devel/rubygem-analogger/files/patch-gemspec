@@ -1,11 +1,11 @@
---- analogger.gemspec.orig	2014-11-29 13:26:51 UTC
+--- analogger.gemspec.orig	2016-03-31 19:36:44 UTC
 +++ analogger.gemspec
 @@ -13,7 +13,7 @@ Gem::Specification.new do |s|
-   s.email = "wyhaines@gmail.com"
-   s.executables = ["analogger"]
-   s.extra_rdoc_files = ["README"]
--  s.files = ["INSTALL", "README", "analogger.gemspec", "bin", "bin/analogger", "doc", "external", "external/package.rb", "external/test_support.rb", "setup.rb", "src", "src/swiftcore", "src/swiftcore/Analogger", "src/swiftcore/Analogger.rb", "src/swiftcore/Analogger/Client.rb", "test", "test/TC_Analogger.rb", "test/analogger.cnf", "test/analogger2.cnf", "test/log", "test/tc_template.rb"]
-+  s.files = ["INSTALL", "README", "analogger.gemspec", "bin", "bin/analogger", "external", "external/package.rb", "external/test_support.rb", "setup.rb", "src", "src/swiftcore", "src/swiftcore/Analogger", "src/swiftcore/Analogger.rb", "src/swiftcore/Analogger/Client.rb", "test", "test/TC_Analogger.rb", "test/analogger.cnf", "test/analogger2.cnf", "test/tc_template.rb"]
-   s.homepage = "http://analogger.swiftcore.org/"
-   s.rdoc_options = ["--title", "Swiftcore::Analogger", "--main", "README", "--line-numbers"]
-   s.required_ruby_version = Gem::Requirement.new("> 0.0.0")
+   s.email = "wyhaines@gmail.com".freeze
+   s.executables = ["analogger".freeze]
+   s.extra_rdoc_files = ["README".freeze]
+-  s.files = ["INSTALL".freeze, "README".freeze, "analogger.gemspec".freeze, "bin".freeze, "bin/analogger".freeze, "doc".freeze, "external".freeze, "external/package.rb".freeze, "external/test_support.rb".freeze, "setup.rb".freeze, "src".freeze, "src/swiftcore".freeze, "src/swiftcore/Analogger".freeze, "src/swiftcore/Analogger.rb".freeze, "src/swiftcore/Analogger/Client.rb".freeze, "test".freeze, "test/TC_Analogger.rb".freeze, "test/analogger.cnf".freeze, "test/analogger2.cnf".freeze, "test/log".freeze, "test/tc_template.rb".freeze]
++  s.files = ["INSTALL".freeze, "README".freeze, "analogger.gemspec".freeze, "bin".freeze, "bin/analogger".freeze, "external".freeze, "external/package.rb".freeze, "external/test_support.rb".freeze, "setup.rb".freeze, "src".freeze, "src/swiftcore".freeze, "src/swiftcore/Analogger".freeze, "src/swiftcore/Analogger.rb".freeze, "src/swiftcore/Analogger/Client.rb".freeze, "test".freeze, "test/TC_Analogger.rb".freeze, "test/analogger.cnf".freeze, "test/analogger2.cnf".freeze, "test/tc_template.rb".freeze]
+   s.homepage = "http://analogger.swiftcore.org/".freeze
+   s.rdoc_options = ["--title".freeze, "Swiftcore::Analogger".freeze, "--main".freeze, "README".freeze, "--line-numbers".freeze]
+   s.required_ruby_version = Gem::Requirement.new("> 0.0.0".freeze)

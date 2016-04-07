@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -57,6 +57,7 @@ OPTIONS_DEFINE=	\
 	THREADS \
 	WWW \
 	AJP \
+	AWS_AUTH \
 	CACHE_PURGE \
 	CLOJURE \
 	CT \
@@ -119,8 +120,9 @@ OPTIONS_DEFINE=	\
 
 OPTIONS_DEFAULT=IPV6 FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
 		HTTP_DAV HTTP_FLV HTTP_GZIP_STATIC HTTP_GUNZIP_FILTER \
-		HTTP_MP4 HTTP_RANDOM_INDEX HTTP_SECURE_LINK HTTP_REWRITE \
-		HTTP_SSL HTTP_STATUS HTTP_SUB MAIL MAIL_SSL SPDY WWW
+		HTTP_MP4 HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK \
+		HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTP_SUB MAIL MAIL_SSL \
+		SPDY WWW
 
 DEBUGLOG_DESC=			Enable debug log (--with-debug)
 FILE_AIO_DESC=			Enable file aio
@@ -154,6 +156,7 @@ SPDY_DESC=			Enable SPDY protocol support (SSL req.)
 THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
 AJP_DESC=			3rd party ajp module
+AWS_AUTH_DESC=			3rd party aws auth module
 CACHE_PURGE_DESC=		3rd party cache_purge module
 CLOJURE_DESC=			3rd party clojure module
 CT_DESC=			3rd party cert_transparency module (SSL req.)
@@ -307,12 +310,11 @@ CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_DIGEST}
-GIT_AUTH_DIGEST_VERSION=	bd1c86a
-GH_ACCOUNT+=	samizdatco:auth_digest
+GIT_AUTH_DIGEST_VERSION=	4edfb18
+GH_ACCOUNT+=	atomx:auth_digest
 GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_auth_digest_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
@@ -357,6 +359,14 @@ GH_ACCOUNT+=	yaoweibin:ajp
 GH_PROJECT+=	nginx_ajp_module:ajp
 GH_TAGNAME+=	${NGINX_AJP_VERSION}:ajp
 CONFIGURE_ARGS+=--add-module=${WRKSRC_ajp}
+.endif
+
+.if ${PORT_OPTIONS:MAWS_AUTH}
+NGINX_AWS_AUTH_VERSION=	1e62670
+GH_ACCOUNT+=	anomalizer:aws_auth
+GH_PROJECT+=	ngx_aws_auth:aws_auth
+GH_TAGNAME+=	${NGINX_AWS_AUTH_VERSION}:aws_auth
+CONFIGURE_ARGS+=--add-module=${WRKSRC_aws_auth}
 .endif
 
 .if ${PORT_OPTIONS:MCACHE_PURGE}
@@ -512,7 +522,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.99.8
+GIT_PUSH_VERSION=	0.99.11
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push

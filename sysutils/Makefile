@@ -554,6 +554,8 @@
     SUBDIR += mcollective-nettest-common
     SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcollective-puppet-agent
+    SUBDIR += mcollective-puppet-client
+    SUBDIR += mcollective-puppet-common
     SUBDIR += mcollective-service-agent
     SUBDIR += mcollective-service-client
     SUBDIR += mcollective-service-common
@@ -1206,6 +1208,7 @@
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += yum
+    SUBDIR += zap
     SUBDIR += zbackup
     SUBDIR += zeitgeist
     SUBDIR += zeroer

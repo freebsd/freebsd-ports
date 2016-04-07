@@ -1,11 +1,11 @@
---- lolcat.gemspec.orig	2015-05-31 20:09:00 UTC
+--- lolcat.gemspec.orig	2016-03-31 18:34:16 UTC
 +++ lolcat.gemspec
-@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
      s.specification_version = 3
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<paint>, ["~> 0.8.3"])
-+      s.add_runtime_dependency(%q<paint>, [">= 0.8.3"])
-       s.add_runtime_dependency(%q<trollop>, ["~> 1.16.2"])
+-      s.add_runtime_dependency(%q<paint>.freeze, ["~> 0.8.3"])
++      s.add_runtime_dependency(%q<paint>.freeze, [">= 0.8.3"])
+       s.add_runtime_dependency(%q<trollop>.freeze, ["~> 1.16.2"])
      else
-       s.add_dependency(%q<paint>, ["~> 0.8.3"])
+       s.add_dependency(%q<paint>.freeze, ["~> 0.8.3"])

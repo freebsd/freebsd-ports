@@ -1,6 +1,6 @@
---- bin/nokogiri.orig	2014-08-26 20:46:38.000000000 +0000
-+++ bin/nokogiri	2014-08-26 20:46:30.000000000 +0000
-@@ -4,6 +4,7 @@
+--- bin/nokogiri.orig	2016-03-31 14:23:13 UTC
++++ bin/nokogiri
+@@ -4,6 +4,7 @@ require 'open-uri'
  require 'irb'
  require 'uri'
  require 'rubygems'

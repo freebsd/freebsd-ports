@@ -2,27 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	mcabber
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Small Jabber console client
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 
-USES=		gettext iconv libtool ncurses pathfix pkgconfig tar:bzip2
+USES=		gettext iconv libtool localbase ncurses pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-hgcset
 INSTALL_TARGET=	install-strip
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		EXAMPLES GPGME OTR
 OPTIONS_RADIO=		SPELL

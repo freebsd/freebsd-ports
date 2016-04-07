@@ -1,6 +1,6 @@
---- README.html.orig	Tue Jun  1 23:51:53 2004
-+++ README.html	Wed Jun  9 12:46:58 2004
-@@ -38,9 +38,22 @@
+--- README.html.orig	2004-06-01 21:52:15 UTC
++++ README.html
+@@ -38,11 +38,24 @@ This will install the following files:
  /usr/local/bin/ipaddr<br>
  ~/.ipfw2dshield.rc.sample
  </dd></dl>
@@ -13,13 +13,15 @@
  Copy or rename the sample configuration file to <em>~/.ipfw2dshield.rc</em>
  and edit this latter file to fit your local demands. Please read section 2
  below for an explanation of the configuration entries.
-+<p>
-+
+ <p>
+ 
 +<b>Note:</b> The FreeBSD ports version does also accept
 +<nobr><em>/usr/local/etc/ipfw2dshield.rc</em></nobr>
 +as its configuration file. However, the preference is for
 +<nobr><em>~/.ipfw2dshield.rc</em></nobr>
 +in case that both these files exist.
- <p>
- 
++<p>
++
  The script creates a stampfile in <em>/var/tmp</em> where it stores date 
+ and time information which will be accessed on a subsequent run to prevent
+ multiple submission of log records. 

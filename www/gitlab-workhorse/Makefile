@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://ports.toco-domains.de/
 

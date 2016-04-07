@@ -1,6 +1,6 @@
---- statlib_test.cc.orig	Thu Sep 25 02:02:10 2003
-+++ statlib_test.cc	Fri Jan  2 02:51:57 2004
-@@ -28,7 +28,7 @@
+--- statlib_test.cc.orig	2004-08-04 12:28:53 UTC
++++ statlib_test.cc
+@@ -28,7 +28,7 @@ using namespace std;
  #include <unistd.h> 
  #endif
  #else

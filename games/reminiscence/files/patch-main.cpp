@@ -1,14 +1,6 @@
---- main.cpp.orig	2011-03-10 23:37:01.000000000 +0300
-+++ main.cpp	2011-05-05 11:40:07.000000000 +0400
-@@ -19,6 +19,7 @@
- #include "fs.h"
- #include "game.h"
- #include "systemstub.h"
-+#include <sys/stat.h>
- 
- static const char *USAGE =
- 	"REminiscence - Flashback Interpreter\n"
-@@ -83,8 +84,15 @@
+--- main.cpp.orig	2016-03-02 09:36:17 UTC
++++ main.cpp
+@@ -125,8 +125,15 @@ static const int DEFAULT_SCALER = SCALER
  
  #undef main
  int main(int argc, char *argv[]) {
@@ -22,12 +14,12 @@
  	const char *dataPath = "DATA";
 -	const char *savePath = ".";
 +	const char *savePath = buf;
- 	const char *levelNum = "0";
- 	for (int i = 1; i < argc; ++i) {
- 		bool opt = false;
-@@ -111,5 +119,6 @@
- 	g->run();
+ 	int levelNum = 0;
+ 	int scaler = DEFAULT_SCALER;
+ 	bool fullscreen = false;
+@@ -191,5 +198,6 @@ int main(int argc, char *argv[]) {
  	delete g;
+ 	stub->destroy();
  	delete stub;
 +	free(buf);
  	return 0;
