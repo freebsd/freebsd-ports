@@ -35,7 +35,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 1100101
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100101
 IGNORE=		db48 is not supported on FreeBSD 11+ with clang 3.8 - upgrade to db5
 .endif
 
