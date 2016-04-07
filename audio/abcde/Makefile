@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcde
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	audio
 MASTER_SITES=	http://abcde.einval.com/download/
 
