@@ -166,6 +166,10 @@ lib/libkmlengine.a
 lib/libkmlengine.so
 lib/libkmlengine.so.0
 lib/libkmlengine.so.0.0.0
+lib/libkmlminizip.a
+lib/libkmlminizip.so
+lib/libkmlminizip.so.0
+lib/libkmlminizip.so.0.0.0
 lib/libkmlregionator.a
 lib/libkmlregionator.so
 lib/libkmlregionator.so.0
@@ -174,7 +178,3 @@ lib/libkmlxsd.a
 lib/libkmlxsd.so
 lib/libkmlxsd.so.0
 lib/libkmlxsd.so.0.0.0
-lib/libminizip.a
-lib/libminizip.so
-lib/libminizip.so.0
-lib/libminizip.so.0.0.0

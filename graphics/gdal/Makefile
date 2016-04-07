@@ -3,7 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -113,6 +113,7 @@ XERCES_LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/GNUmakefile
+	@${REINPLACE_CMD} -e 's|-lminizip|-lkmlminizip|' ${WRKSRC}/configure
 # Cleanup bundled libraries
 	@${RM} -fr ${WRKSRC}/frmts/gif/giflib/
 	@${RM} -fr ${WRKSRC}/frmts/gtiff/libgeotiff/
