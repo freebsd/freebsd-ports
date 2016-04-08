@@ -1,4 +1,4 @@
---- GNUmakefile.orig	2015-03-31 14:07:23 UTC
+--- GNUmakefile.orig	2016-03-24 14:39:02 UTC
 +++ GNUmakefile
 @@ -8,7 +8,7 @@ resdir	=  $(DESTDIR)$(RESDIR)
  
@@ -18,7 +18,7 @@
  JPEG_VER        := $(call ac_jpeg_ver)
  endef
  
-@@ -145,8 +145,8 @@ OBJS_IDA := \
+@@ -145,15 +145,15 @@ OBJS_IDA := \
  OBJS_IDA += $(call ac_lib_mkvar,$(ida_libs),OBJS)
  
  # for X11 + Motif
@@ -29,3 +29,11 @@
  ida : LDLIBS	+= -lXm -lXpm -lXt -lXext -lX11
  
  # jpeg/exif libs
+ ida : LDLIBS	+= -ljpeg -lexif -lm
+ 
+ # RegEdit.c is good old K&R ...
+-RegEdit.o : CFLAGS += -Wno-missing-prototypes -Wno-strict-prototypes -Wno-maybe-uninitialized
++RegEdit.o : CFLAGS += -Wno-missing-prototypes -Wno-strict-prototypes -Wno-uninitialized
+ 
+ ida: $(OBJS_IDA) $(OBJS_READER) $(OBJS_WRITER)
+ 

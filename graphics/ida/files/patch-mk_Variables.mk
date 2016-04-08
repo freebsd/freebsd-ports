@@ -1,5 +1,5 @@
---- mk/Variables.mk.orig	2008-06-09 17:56:36.000000000 +0300
-+++ mk/Variables.mk	2009-05-24 19:03:04.000000000 +0300
+--- mk/Variables.mk.orig	2016-03-24 14:39:02 UTC
++++ mk/Variables.mk
 @@ -4,12 +4,12 @@
  # directories
  DESTDIR	=
