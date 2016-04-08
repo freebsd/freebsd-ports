@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xqilla
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}
@@ -14,7 +14,7 @@ COMMENT=	XQuery and XPath2 library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxerces-c.so.3:textproc/xerces-c3 \
+LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
 		libtidy.so:www/tidy-lib
 
 USES=		libtool
@@ -38,7 +38,6 @@ post-patch:
 		's|[[:blank:]]-R$$with_.*"|"|' ${WRKSRC}/configure
 
 post-install-DOXYGEN-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} "*-api" \
 		${STAGEDIR}${DOCSDIR})
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${DOCSDIR:S|${PREFIX}/||} \
