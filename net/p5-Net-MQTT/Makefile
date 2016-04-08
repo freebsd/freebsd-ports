@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-MQTT
 PORTVERSION=	1.143260
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +15,11 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Getopt-Long>=0:devel/p5-Getopt-Long \
-		p5-Carp>=0:devel/p5-Carp \
-		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
-		p5-Pod-Usage>=0:devel/p5-Pod-Usage \
-		p5-Time-HiRes>=0:devel/p5-Time-HiRes \
+BUILD_DEPENDS=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-Net-Pcap>=0:net/p5-Net-Pcap
+
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Pod-Usage>=0:devel/p5-Pod-Usage
 
 USES=		perl5
 USE_PERL5=	configure
