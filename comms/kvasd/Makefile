@@ -2,6 +2,7 @@
 
 PORTNAME=	kvasd
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://svn.code.sf.net/p/wsjt/wsjt/trunk/kvasd-binary/Linux/ \
 		LOCAL/db
@@ -24,10 +25,11 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/kvasd
 
 do-extract:
+		${MKDIR} ${WRKSRC}
+		${CP} ${DISTDIR}/kvasd ${WRKSRC}
 
-BINMODE=	0644
 do-install:
+		${BRANDELF} -t Linux ${WRKSRC}/kvasd
 		${INSTALL_KLD} ${DISTDIR}/kvasd ${STAGEDIR}${PREFIX}/bin
-		${BRANDELF} -t Linux ${STAGEDIR}${PREFIX}/bin/kvasd
 
 .include <bsd.port.mk>
