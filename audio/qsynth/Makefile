@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsynth
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt fluidsynth front-end application
 
 LICENSE=	GPLv2+
-#LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
@@ -24,7 +24,6 @@ CONFIGURE_ENV=	ac_cv_path_ac_cv_qmake=${QMAKE} \
 		ac_cv_path_ac_lrelease=${LRELEASE}
 CONFIGURE_ARGS=	--localedir=${DATADIR} \
 		--with-fluidsynth=${LOCALBASE}
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		GRADIENT SYSTEM_TRAY
 OPTIONS_SINGLE=		TOOLKIT
@@ -39,9 +38,8 @@ QT4_USE=		qt4=corelib,gui \
 QT4_CONFIGURE_ENABLE=	qt4
 QT5_USE=		qt5=core,gui,widgets,x11extras \
 			qt5=buildtools_build,linguisttools_build,qmake_build
-QT5_CXXFLAGS=		-fPIC
 QT5_CONFIGURE_ENABLE=	qt5
-SYSTEM_TRAY_DESC=	System-tray icon
+SYSTEM_TRAY_DESC=	System-tray icon support
 SYSTEM_TRAY_CONFIGURE_ENABLE=	system-tray
 TOOLKIT_DESC=		Qt toolkit
 
