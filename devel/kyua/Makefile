@@ -2,6 +2,7 @@
 
 PORTNAME=	kyua
 PORTVERSION=	0.11
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
