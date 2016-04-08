@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stepmania
-PORTVERSION=	5.0.10
+PORTVERSION=	5.0.11
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	games
@@ -67,7 +67,6 @@ pre-build:
 do-install:
 	(cd ${WRKDIR}/wrappers && ${INSTALL_SCRIPT} stepmania \
 		${STAGEDIR}${PREFIX}/bin)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/stepmania
 .for i in Announcers BGAnimations BackgroundEffects BackgroundTransitions \
 	Characters Courses Data NoteSkins Scripts Songs Themes
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} \
@@ -85,7 +84,6 @@ post-install-GTK2-on:
 		${STAGEDIR}${PREFIX}/lib/stepmania)
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/Docs && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DOCSDIR} "! -name Licenses.txt")
 
