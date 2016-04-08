@@ -62,7 +62,7 @@ include/yacas/yacasbase.h
 include/yacas/yacasprivate.h
 lib/libyacas.a
 lib/libyacas.so
-lib/libyacas.so.1.0.0
+lib/libyacas.so.%%SHLIB_VERSION%%
 %%DATADIR%%/scripts/Makefile.am
 %%DATADIR%%/scripts/array.rep/code.ys
 %%DATADIR%%/scripts/array.rep/code.ys.def

@@ -1,4 +1,4 @@
---- src/mathcommands.cpp.orig	2016-02-04 14:54:05 UTC
+--- src/mathcommands.cpp.orig	2016-03-11 09:22:12 UTC
 +++ src/mathcommands.cpp
 @@ -23,6 +23,7 @@
  #include "yacas/arggetter.h"
