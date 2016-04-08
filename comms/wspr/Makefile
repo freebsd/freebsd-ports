@@ -39,6 +39,8 @@ do-build:
 	(cd ${WRKSRC};${GMAKE})
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/wspr/WsprMod/w.so
+
 .if defined(BOOTSTRAP)
 #portlint freaks over this but it's only for dev ignore.
 SVN_REV!=	svn info svn://svn.code.sf.net/p/wsjt/wsjt/branches/wspr | ${GREP} Revision | cut -d' ' -f2
