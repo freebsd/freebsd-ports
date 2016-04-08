@@ -23,4 +23,6 @@ CFLAGS+=	-fPIC
 pre-build:
 	mkdir -p ${STAGEDIR}/usr/local/tests/${PORTNAME}
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
