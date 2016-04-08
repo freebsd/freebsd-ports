@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -126,6 +126,7 @@ VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=		--disable-vdpau
 
 X11_USE=			XORG=x11,xv,xxf86vm
+X11_VARS=			INSTALLS_ICONS=yes
 X11_CONFIGURE_OFF=		--disable-x11
 
 XINERAMA_USE=			XORG=xinerama,xineramaproto
@@ -137,8 +138,6 @@ YTDL_RUN_DEPENDS=		youtube-dl:www/youtube_dl
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build
 ZSH_CONFIGURE_ENABLE=		zsh-comp
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
