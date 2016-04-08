@@ -3,6 +3,7 @@
 
 PORTNAME=	quisk
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://james.ahlstrom.name/quisk/ \
 		LOCAL/shurd
