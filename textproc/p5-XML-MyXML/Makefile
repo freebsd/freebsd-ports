@@ -14,6 +14,8 @@ COMMENT=	Simple-to-use XML module parsing and creating XML documents
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+PORTSCOUT=	skipv:0.098061
+
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
