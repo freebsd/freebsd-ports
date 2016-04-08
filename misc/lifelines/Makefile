@@ -12,7 +12,7 @@ COMMENT=	Advanced genealogical system
 LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf bison gmake iconv
+USES=		autoreconf bison gmake iconv ncurses
 
 MAKE_JOBS_UNSAFE=yes
 
