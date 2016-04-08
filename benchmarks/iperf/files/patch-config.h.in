@@ -1,0 +1,12 @@
+--- config.h.in.orig	2010-04-10 19:23:05 UTC
++++ config.h.in
+@@ -268,7 +268,9 @@
+ #undef _REENTRANT
+ 
+ /* */
++#ifndef __cplusplus
+ #undef bool
++#endif
+ 
+ /* Define to empty if `const' does not conform to ANSI C. */
+ #undef const
