@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yacas
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -12,12 +12,20 @@ COMMENT=	Yet Another Computer Algebra System
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+OPTIONS_DEFINE=	DOCS
+DOCS_CMAKE_ON=	-DENABLE_DOCS:BOOL=ON -DDOCSDIR:STRING=${DOCSDIR_REL}
+DOCS_BUILD_DEPENDS=	sphinx-autogen:textproc/py-sphinx
+
+PORTDOCS=	*
+
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake:outsource compiler:c++11-lib
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grzegorzmazur
+
+PLIST_SUB=	SHLIB_VERSION=${PORTVERSION:S/.//}.0
 
 .include <bsd.port.pre.mk>
 
