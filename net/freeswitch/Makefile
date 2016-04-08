@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -20,8 +20,6 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libpcre.so:devel/pcre \
 		libspeex.so:audio/speex \
 		libldns.so:dns/ldns \
-		libyuv.so:graphics/libyuv \
-		libvpx.so:multimedia/libvpx \
 		libopus.so:audio/opus \
 		libsndfile.so:audio/libsndfile \
 		libavformat.so:multimedia/ffmpeg \
