@@ -5,7 +5,7 @@ PORTVERSION=	0.0.6
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Lysdr SDR program for Unix
 
 LICENSE=	GPLv2
