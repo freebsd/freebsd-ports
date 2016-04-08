@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.21.5
+PORTVERSION=	1.21.6
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -45,7 +45,7 @@ IMAGE_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 KONQUEROR_DESC=		Konqueror webarchive format with Python
 KONQUEROR_RUN_DEPENDS=	kwebkitpart>0:www/kwebkitpart
 LATEX_USE=		tex=dvipsk:run,latex:run
-PDF_RUN_DEPENDS=	xpdf:graphics/xpdf
+PDF_RUN_DEPENDS=	pdftotext:graphics/poppler-utils
 PS_RUN_DEPENDS=		pstotext:print/pstotext
 PYTHON_USES=		python
 PYTHON_CONFIGURE_ENABLE=	python-module
@@ -69,7 +69,7 @@ X11MON_CONFIGURE_WITH=	fam
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/recoll.pro/s|^|#|' \
+		's|@QMAKE@|${TRUE}|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/lib|${LOCALBASE}/lib|' \
@@ -79,7 +79,7 @@ post-patch:
 		 s|python setup.py|${PYTHON_CMD} setup.py|' \
 		${WRKSRC}/recollinstall.in
 	@${REINPLACE_CMD} -e \
-		's|python setup.py|${PYTHON_CMD} setup.py|' \
+		's|python setup.py|${PYTHON_CMD} setup.py|; s|sudo||' \
 		${WRKSRC}/python/recoll/Makefile
 
 pre-build-QT4-on:
