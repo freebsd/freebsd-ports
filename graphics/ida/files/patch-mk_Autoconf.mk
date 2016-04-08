@@ -1,6 +1,6 @@
---- mk/Autoconf.mk.orig	2012-02-22 17:13:36 UTC
+--- mk/Autoconf.mk.orig	2016-03-24 14:39:02 UTC
 +++ mk/Autoconf.mk
-@@ -110,20 +110,14 @@
+@@ -110,20 +110,14 @@ ac_binary = $(shell \
  #	$(call ac_fini))
  ac_lib64 = $(shell \
  	$(call ac_init,for libdir name);\
