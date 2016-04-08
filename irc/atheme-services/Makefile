@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	atheme-services
-PORTVERSION=	7.0.7
-PORTREVISION=	2
+PORTVERSION=	7.2.6
 CATEGORIES=	irc
-MASTER_SITES=	http://atheme.net/downloads/
+MASTER_SITES=	http://atheme.github.io/downloads/
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Set of services for IRC networks
 
-USES=		pkgconfig pathfix gmake
+USES=		tar:bzip2 pkgconfig pathfix gmake
 PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
