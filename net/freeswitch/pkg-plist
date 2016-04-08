@@ -175,7 +175,6 @@ lib/freeswitch/mod/mod_vlc.so
 lib/freeswitch/mod/mod_vmd.so
 lib/freeswitch/mod/mod_voicemail.so
 lib/freeswitch/mod/mod_voicemail_ivr.so
-lib/freeswitch/mod/mod_vpx.so
 lib/freeswitch/mod/mod_xml_cdr.so
 lib/freeswitch/mod/mod_xml_curl.so
 lib/freeswitch/mod/mod_xml_ldap.so
