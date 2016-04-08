@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amqp
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,8 @@ COMMENT=	Implementation of the AMQP protocol for RabbitMQ clients
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	rubygem-amq-protocol>=1.9:net/rubygem-amq-protocol \
+RUN_DEPENDS=	rubygem-amq-protocol>=2.0.1:net/rubygem-amq-protocol \
 		rubygem-eventmachine>=0:devel/rubygem-eventmachine
-
-DEPRECATED=	Upstream prefers net/rubygem-bunny
 
 NO_ARCH=	yes
 USE_RUBY=	yes
