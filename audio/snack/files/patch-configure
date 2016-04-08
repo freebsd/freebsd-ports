@@ -1,6 +1,6 @@
---- configure.orig	Tue Feb 10 20:10:42 2004
-+++ configure	Sun Feb 15 13:56:28 2004
-@@ -1418,7 +1418,7 @@
+--- configure.orig	2005-12-14 11:29:39 UTC
++++ configure
+@@ -1487,7 +1487,7 @@ if test "$TCL_SHARED_BUILD" = 0; then
  echo "$as_me: error: Tcl and Tk must be configured with the --enable-shared flag" >&2;}
     { (exit 1); exit 1; }; }
  fi
