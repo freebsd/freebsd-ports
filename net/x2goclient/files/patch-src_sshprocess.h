@@ -1,4 +1,4 @@
---- src/sshprocess.h.orig	2015-05-26 19:13:12 UTC
+--- src/sshprocess.h.orig	2016-03-24 20:39:27 UTC
 +++ src/sshprocess.h
 @@ -18,6 +18,12 @@
  #ifndef SSHPROCESS_H

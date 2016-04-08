@@ -1,4 +1,4 @@
---- src/sshmasterconnection.cpp.orig	2015-05-26 19:13:12 UTC
+--- src/sshmasterconnection.cpp.orig	2016-03-24 20:39:27 UTC
 +++ src/sshmasterconnection.cpp
 @@ -28,6 +28,9 @@
  #include <QDir>
@@ -10,7 +10,7 @@
  #include <arpa/inet.h>
  #endif
  #include <math.h>
-@@ -272,7 +275,11 @@ void SshMasterConnection::addReverseTunn
+@@ -277,7 +280,11 @@ void SshMasterConnection::addReverseTunn
          if(!reverseTunnelRequest[i].listen)
          {
              reverseTunnelRequest[i].listen=true;
