@@ -1,7 +1,7 @@
 bin/bochs
 bin/bximage
-man/man1/bochs-dlx.1.gz
 man/man1/bochs.1.gz
+man/man1/bochs-dlx.1.gz
 man/man1/bximage.1.gz
 man/man5/bochsrc.5.gz
 %%DATADIR%%/BIOS-bochs-latest
