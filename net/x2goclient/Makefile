@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	4.0.5.0
-PORTREVISION=	1
+PORTVERSION=	4.0.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -66,6 +65,8 @@ do-install:
 	(cd ${WRKSRC}/res/img/icons/128x128 && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${DATADIR}/icons)
 .endfor
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} HOWTO.GPGCARD ${STAGEDIR}${DOCSDIR})
 
