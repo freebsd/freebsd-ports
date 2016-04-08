@@ -8273,3 +8273,4 @@ textproc/py-genshi-devel|textproc/py-genshi|2016-03-31|Has expired: The port is 
 www/py-satchmo||2016-04-03|Has expired: Project development unmaintained
 www/py-ua-parser|devel/py-ua_parser|2016-04-04|Duplicate port deleted
 net-mgmt/weathermap||2016-04-04|Has expired: Distfile unavailable, website no longer exists
+accessibility/gnopernicus|accessibility/orca|2016-04-08|Has expired: Not developed upstream anymore. Obsoleted by accessibility/orca
