@@ -68,4 +68,5 @@
 %%PERL5_MAN3%%/MooseX::App::Role.3.gz
 %%PERL5_MAN3%%/MooseX::App::Simple.3.gz
 %%PERL5_MAN3%%/MooseX::App::Tutorial.3.gz
+%%PERL5_MAN3%%/MooseX::App::Utils.3.gz
 %%PERL5_MAN3%%/MooseX::App::WritingPlugins.3.gz
