@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	irssi-otr
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -26,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cryptodotis
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libotr-inc-prefix=${LOCALBASE}/include
+CONFIGURE_ARGS=	--with-libotr-inc-prefix=${LOCALBASE}/include --with-irssi-module-dir=${LOCALBASE}/lib/irssi/modules
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/irssi/modules/libotr.so \
