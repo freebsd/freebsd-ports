@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-04-08 17:50:58 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+ CC             ?= clang
+ TTF_FONT_PATH  ?= res/Anonymous Pro.ttf
+ CFLAGS         += -DTTF_FONT_PATH="\"$(TTF_FONT_PATH)\""
+-CFLAGS         += -Wno-visibility -Wno-incompatible-pointer-types -Wall -Wextra
++CFLAGS         += -Wall -Wextra
+ CFLAGS         += -DINVERT_COLORS -DVT100 -O2
+ LFLAGS         +=
+ 
