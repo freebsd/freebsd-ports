@@ -17,6 +17,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	node012>=0:www/node012
 
+DEPRECATED=	not actively supported - use kibana 4.5 (textproc/kibana45) instead
+EXPIRATION_DATE=2016-06-27
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
