@@ -15,10 +15,10 @@ lib/girepository-1.0/Accounts-1.0.typelib
 lib/libaccounts-glib.so
 lib/libaccounts-glib.so.0
 lib/libaccounts-glib.so.0.1.3
-libdata/pkgconfig/libaccounts-glib.pc
 %%PYTHON_SITELIBDIR%%/gi/overrides/Accounts.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/Accounts.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/Accounts.pyo
+libdata/pkgconfig/libaccounts-glib.pc
 share/backup-framework/applications/accounts.conf
 share/dbus-1/interfaces/com.google.code.AccountsSSO.Accounts.Manager.xml
 share/gir-1.0/Accounts-1.0.gir

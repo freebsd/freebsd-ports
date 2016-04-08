@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libaccounts-glib
-PORTVERSION=	1.18
-PORTREVISION=	1
+PORTVERSION=	1.21
 CATEGORIES=	net-im
-MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B8fX9XOwH_g4U1NzNmg0cWoxNGM&dummy= \
+MASTER_SITES=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/repository/archive${EXTRACT_SUFX}?ref=VERSION_${GL_TAGNAME}&num;/ \
 		LOCAL/rakuco
+DISTNAME=	${GL_PROJECT}-VERSION_${GL_TAGNAME}-${GL_COMMIT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accounts and SSO framework for Linux and POSIX based platforms
@@ -14,25 +14,24 @@ COMMENT=	Accounts and SSO framework for Linux and POSIX based platforms
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-		libsqlite3.so:databases/sqlite3
-
-FETCH_BEFORE_ARGS=	-o ${DISTFILES}
+BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 GNU_CONFIGURE=	YES
-# The line below is a hack required when the port is configure either without
-# devel/libcheck installed or with --disable-tests.
-# A proper fix has been submitted upstream:
-# https://gitlab.com/accounts-sso/libaccounts-glib/merge_requests/1
-CONFIGURE_ENV=	HAVE_GCOV_FALSE='\#'
-CONFIGURE_ARGS=	--disable-tests
+CONFIGURE_ARGS=	--disable-tests --enable-gtk-doc
 INSTALL_TARGET=	install-strip
 
-USES=		gmake libtool pathfix pkgconfig python
+USES=		autoreconf gmake libtool pathfix pkgconfig python sqlite:3
 USE_GNOME=	pygobject3 introspection libxml2
+PATHFIX_MAKEFILEIN=Makefile.am
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||g' \
-		${WRKSRC}/libaccounts-glib/Makefile.in
+# GitLab variables.
+GL_ACCOUNT=	accounts-sso
+GL_PROJECT=	${PORTNAME}
+GL_TAGNAME=	${PORTVERSION}
+GL_COMMIT=	00254a604a7c7bd38c41794a80ad8930e90f21aa
+
+pre-configure:
+	cd ${WRKSRC} && gtkdocize --copy --flavour no-tmpl
 
 .include <bsd.port.mk>
