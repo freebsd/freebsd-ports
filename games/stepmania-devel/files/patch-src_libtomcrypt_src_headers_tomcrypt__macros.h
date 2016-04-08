@@ -1,4 +1,4 @@
---- src/libtomcrypt/src/headers/tomcrypt_macros.h.orig	2015-06-20 16:57:25 UTC
+--- src/libtomcrypt/src/headers/tomcrypt_macros.h.orig	2016-03-30 16:08:58 UTC
 +++ src/libtomcrypt/src/headers/tomcrypt_macros.h
 @@ -262,21 +262,19 @@ static inline __attribute__((always_inli
  

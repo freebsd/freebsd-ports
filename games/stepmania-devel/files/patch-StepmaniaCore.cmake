@@ -1,6 +1,6 @@
---- StepmaniaCore.cmake.orig	2015-10-30 15:55:52.000000000 +0900
-+++ StepmaniaCore.cmake	2015-11-09 01:49:26.062972000 +0900
-@@ -308,7 +308,7 @@
+--- StepmaniaCore.cmake.orig	2016-03-30 16:08:58 UTC
++++ StepmaniaCore.cmake
+@@ -308,7 +308,7 @@ elseif(MACOSX)
      MAC_FRAME_OPENGL
      MAC_FRAME_QUICKTIME
    )
@@ -9,7 +9,7 @@
    if(WITH_GTK2)
      find_package("GTK2" 2.0)
      if (${GTK2_FOUND})
-@@ -350,26 +350,32 @@
+@@ -350,26 +350,32 @@ elseif(LINUX)
      set(HAX_XRANDR FALSE)
    endif()
  
