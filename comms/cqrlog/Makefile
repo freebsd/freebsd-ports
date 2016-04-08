@@ -3,6 +3,7 @@
 
 PORTNAME=	cqrlog
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
@@ -60,5 +61,6 @@ post-patch:
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/fGrayline.pas
 	${REINPLACE_CMD} -e s!%%LAZARUSDIR%%!${LAZARUS_DIR}!g \
 		${WRKSRC}/Makefile
+	${RM} -rf ${WRKSRC}/src/mysql
 
 .include <bsd.port.mk>
