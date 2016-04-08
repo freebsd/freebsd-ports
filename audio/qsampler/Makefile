@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsampler
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://download.linuxsampler.org/packages/
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based front end to LinuxSampler
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgig.so:audio/libgig \
 		liblscp.so:audio/liblscp
@@ -25,7 +26,6 @@ CONFIGURE_ENV=	ac_cv_path_ac_cv_qmake=${QMAKE} \
 		ac_cv_path_ac_rcc=${RCC} \
 		ac_cv_path_ac_lupdate=${LUPDATE} \
 		ac_cv_path_ac_lrelease=${LRELEASE}
-INSTALLS_ICONS=	yes
 
 OPTIONS_SINGLE=		TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
@@ -35,10 +35,9 @@ QT4_USE=		qt4=corelib,gui \
 			qt4=linguisttools_build \
 			qt4=moc_build,qmake_build,rcc_build,uic_build
 QT4_CONFIGURE_ENABLE=	qt4
-QT5_USE=		qt5=core,gui,widgets \
+QT5_USE=		qt5=core,gui,widgets,x11extras \
 			qt5=buildtools_build,linguisttools_build,qmake_build
 QT5_CONFIGURE_ENABLE=	qt5
-QT5_CXXFLAGS=		-fPIC
 TOOLKIT_DESC=		Qt toolkit
 
 post-configure:
