@@ -16,6 +16,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 INFO=		hamlib
 USES=		autoreconf libtool:keepla pathfix perl5 pkgconfig python shebangfix tcl
+USE_PYTHON=	py3kplist
 SHEBANG_FILES=	bindings/perltest.pl
 USE_PERL5=	build run
 USE_GNOME=	libxml2
