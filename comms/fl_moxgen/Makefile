@@ -8,7 +8,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/flmoxgen
 DISTNAME=	Fl_MoxGen-${PORTVERSION}
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Compute the dimensions of a Moxon Rectangle antenna
 
 LICENSE=	GPLv3

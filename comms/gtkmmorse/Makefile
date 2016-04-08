@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Graphical Morse Code Trainer
 
 LIB_DEPENDS=	libao.so:audio/libao \
