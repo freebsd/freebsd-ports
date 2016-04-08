@@ -537,6 +537,7 @@
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
     SUBDIR += pecl-mongo
+    SUBDIR += pecl-mongodb
     SUBDIR += pecl-mysqlnd_ms
     SUBDIR += pecl-mysqlnd_qc
     SUBDIR += pecl-pdo_user
