@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jenkins2
-DISTVERSION=	2.0-beta2
+DISTVERSION=	2.0-rc1
 CATEGORIES=	devel java
 MASTER_SITES=	http://mirrors.jenkins-ci.org/war-rc/${PORTVERSION:R}/
 DISTNAME=	jenkins
