@@ -1,21 +1,6 @@
---- CMakeLists.txt.orig	2011-02-01 21:34:27.000000000 +0100
-+++ CMakeLists.txt	2011-02-08 20:56:22.000000000 +0100
-@@ -632,14 +637,6 @@
- 
- INSTALL(
-     FILES
--        ${docs_to_install}
--        "README.win32.txt"
--    DESTINATION
--        "share/doc/freecell-solver/"
--)
--
--INSTALL(
--    FILES
-         "fcs_cl.h"
-         "fcs_enums.h"
-         "fcs_move.h"
-@@ -654,7 +651,7 @@
+--- CMakeLists.txt.orig	2016-04-05 02:30:11 UTC
++++ CMakeLists.txt
+@@ -893,7 +893,7 @@ INSTALL(
      FILES
          "${CMAKE_CURRENT_BINARY_DIR}/lib${CPACK_PACKAGE_NAME}.pc"
      DESTINATION
