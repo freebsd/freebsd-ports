@@ -1,8 +1,8 @@
+bin/pmat
 bin/pmat-callstack
 bin/pmat-cat-svpv
-bin/pmat-count
+bin/pmat-diff
 bin/pmat-dump-symbols
-bin/pmat-explore-gtk
 bin/pmat-find-pv
 bin/pmat-identify-sv
 bin/pmat-largest-svs
@@ -11,6 +11,7 @@ bin/pmat-list-orphans
 bin/pmat-show-sv
 bin/pmat-sizes
 %%SITE_ARCH%%/Devel/MAT.pm
+%%SITE_ARCH%%/Devel/MAT/Cmd.pod
 %%SITE_ARCH%%/Devel/MAT/Context.pm
 %%SITE_ARCH%%/Devel/MAT/Dumper.pm
 %%SITE_ARCH%%/Devel/MAT/Dumpfile.pm
@@ -56,7 +57,9 @@ bin/pmat-sizes
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-REGEXP.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-SCALAR.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-STASH.svg
+%%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-UNDEF.svg
 %%PERL5_MAN3%%/Devel::MAT.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Cmd.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Context.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Dumper.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Dumpfile.3.gz
