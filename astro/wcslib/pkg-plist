@@ -54,7 +54,7 @@ lib/libwcs-%%VERSION%%.a
 lib/libwcs.a
 lib/libwcs.so
 lib/libwcs.so.5
-lib/libwcs.so.5.14
+lib/libwcs.so.5.15
 libdata/pkgconfig/wcslib.pc
 %%CFITSIO%%man/man1/HPXcvt.1.gz
 man/man1/fitshdr.1.gz
