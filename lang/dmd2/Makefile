@@ -4,6 +4,7 @@
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
 PORTVERSION=	2.071.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -61,6 +62,10 @@ MAKE_ARGS+=	DEBUG_FLAGS=-g\ -DDEBUG=1\ -DUNITTEST
 MODULEDIR=	${PREFIX}/include/d/phobos2
 
 post-patch:
+	@${MKDIR} ${WRKDIR}/dmd2/freebsd/bin32 \
+		${WRKDIR}/dmd2/freebsd/bin64 \
+		${WRKDIR}/dmd2/freebsd/lib32 \
+		${WRKDIR}/dmd2/freebsd/lib64
 	@${REINPLACE_CMD} -e "s|g++|${CXX}|" \
 			  -e "s|/etc|${PREFIX}/etc|" \
 		${WRKSRC}/posix.mak
@@ -77,12 +82,23 @@ post-patch:
 			  ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd.conf
 	@${ECHO_CMD} >> ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd.conf
 
+make-phobos:
+	cd ${WRKSRC}/../phobos && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -f ${MAKEFILE} ${BUILD}
+
+make-druntime:
+	cd ${WRKSRC}/../druntime && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -f ${MAKEFILE} ${BUILD}
+
+make-dmd:
+	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -f ${MAKEFILE} ${BUILD}
+
+do-build: make-dmd make-phobos make-druntime
+
 do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd.1
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man5/dmd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/dmd.conf.5
 	${INSTALL_DATA} ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd.conf ${STAGEDIR}${PREFIX}/etc/dmd.conf.sample
 	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${STAGEDIR}${PREFIX}/bin/dmd
-	${INSTALL_DATA} ${WRKSRC}/../../freebsd/lib${MODEL}/libphobos2.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/../../src/phobos/generated/freebsd/release/${MODEL}/libphobos2.a ${STAGEDIR}${PREFIX}/lib
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/dmd2/freebsd/bin32/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd32.conf
 	${INSTALL_DATA} ${WRKDIR}/dmd2/freebsd/bin64/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd64.conf
