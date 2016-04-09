@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-agent
 
@@ -12,5 +13,4 @@ PLIST=		${PKGDIR}/pkg-plist.agent
 OPTIONS_DEFINE=	IPV6
 OPTIONS_DEFAULT=	IPV6
 
-.include <bsd.port.options.mk>
 .include "${MASTERDIR}/Makefile"
