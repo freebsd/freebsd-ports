@@ -1,0 +1,19 @@
+--- ffmpeg/tests/checkasm/Makefile.orig	2016-04-09 14:32:47 UTC
++++ ffmpeg/tests/checkasm/Makefile
+@@ -20,7 +20,7 @@ AVFILTEROBJS-$(CONFIG_BLEND_FILTER) += v
+ CHECKASMOBJS-$(CONFIG_AVFILTER) += $(AVFILTEROBJS-yes)
+ 
+ 
+--include $(SRC_PATH)/tests/checkasm/$(ARCH)/Makefile
++-include $(SRC_PATH)/tests/checkasm/$(MPLAYER_ARCH)/Makefile
+ 
+ CHECKASMOBJS += $(CHECKASMOBJS-yes) checkasm.o
+ CHECKASMOBJS := $(sort $(CHECKASMOBJS:%=tests/checkasm/%))
+@@ -43,6 +43,6 @@ checkasm: $(CHECKASM)
+ testclean:: checkasmclean
+ 
+ checkasmclean:
+-	$(RM) $(CHECKASM) $(CLEANSUFFIXES:%=tests/checkasm/%) $(CLEANSUFFIXES:%=tests/checkasm/$(ARCH)/%)
++	$(RM) $(CHECKASM) $(CLEANSUFFIXES:%=tests/checkasm/%) $(CLEANSUFFIXES:%=tests/checkasm/$(MPLAYER_ARCH)/%)
+ 
+ .PHONY: checkasm
