@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freecell-solver
-PORTVERSION=	4.0.2
+PORTVERSION=	4.2.0
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 
@@ -10,6 +10,8 @@ MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Open source framework for solving Freecell
 
 LICENSE=	MIT
+
+BUILD_DEPENDS=	p5-Path-Tiny>=0.076:devel/p5-Path-Tiny
 
 OPTIONS_DEFINE=	TCMALLOC DOCS EXAMPLES
 TCMALLOC_DESC=	Use Google's TCMalloc
