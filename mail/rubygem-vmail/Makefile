@@ -3,6 +3,7 @@
 
 PORTNAME=	vmail
 PORTVERSION=	2.9.5
+PORTREVISION=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	rubygem-highline>=1.6.1:devel/rubygem-highline \
 		rubygem-sequel>=3.24.1:devel/rubygem-sequel \
 		rubygem-sqlite3>=1.3.3:databases/rubygem-sqlite3 \
 		rubygem-versionomy>=0.4.4:devel/rubygem-versionomy \
-		${LOCALBASE}/bin/vim:editors/vim-lite
+		vim:editors/vim-lite
 
 NO_ARCH=	yes
 USE_RUBY=	yes
