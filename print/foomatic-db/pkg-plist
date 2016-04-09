@@ -2929,6 +2929,7 @@ share/foomatic/db/source/PPD/Samsung/PS/Samsung_K401_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_K4350_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_K703_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_K7600_Series.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PS/Samsung_M337x_387x_407x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_M403x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_M408x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_M4370_5370_Series.ppd.gz
@@ -2978,10 +2979,13 @@ share/foomatic/db/source/PPD/Samsung/PS/Samsung_X703_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_X7600_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_CLP-610_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_CLP-620_Series_PXL.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PXL/Samsung_K2200_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M262x_282x_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M267x_287x_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M283x_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M288x_Series_PXL.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M301x_Series_PXL.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M306x_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_ML-2525W_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_ML-2580_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_ML-2950_Series_PXL.ppd.gz
@@ -8094,6 +8098,7 @@ share/foomatic/db/source/printer/Samsung-CLX-9252_9352.xml
 share/foomatic/db/source/printer/Samsung-CLX-92x1_93x1.xml
 share/foomatic/db/source/printer/Samsung-CLX-981x.xml
 share/foomatic/db/source/printer/Samsung-CLX-982x.xml
+share/foomatic/db/source/printer/Samsung-K2200.xml
 share/foomatic/db/source/printer/Samsung-K3250.xml
 share/foomatic/db/source/printer/Samsung-K401.xml
 share/foomatic/db/source/printer/Samsung-K4350.xml
@@ -8103,6 +8108,9 @@ share/foomatic/db/source/printer/Samsung-M262x_282x.xml
 share/foomatic/db/source/printer/Samsung-M267x_287x.xml
 share/foomatic/db/source/printer/Samsung-M283x.xml
 share/foomatic/db/source/printer/Samsung-M288x.xml
+share/foomatic/db/source/printer/Samsung-M301x.xml
+share/foomatic/db/source/printer/Samsung-M306x.xml
+share/foomatic/db/source/printer/Samsung-M337x_387x_407x.xml
 share/foomatic/db/source/printer/Samsung-M403x.xml
 share/foomatic/db/source/printer/Samsung-M408x.xml
 share/foomatic/db/source/printer/Samsung-M4370_5370.xml
