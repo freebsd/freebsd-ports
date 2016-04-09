@@ -39,9 +39,6 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-NOT_FOR_ARCHS=		powerpc
-NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64: divide-by-zero error
 .endif
