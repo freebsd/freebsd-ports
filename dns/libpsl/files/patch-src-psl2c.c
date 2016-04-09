@@ -1,11 +1,11 @@
---- src/psl2c.c.orig	2015-09-23 12:52:04 UTC
+--- src/psl2c.c.orig	2016-01-02 13:38:37 UTC
 +++ src/psl2c.c
-@@ -246,7 +246,7 @@ int main(int argc, const char **argv)
+@@ -271,7 +271,7 @@ int main(int argc, const char **argv)
  
- 		_print_psl_entries(fpout, psl->suffixes, "suffixes");
+ 		_print_psl_entries_dafsa(fpout, psl->suffixes);
  
--		snprintf(cmd, cmdsize, "sha1sum %s", argv[1]);
-+		snprintf(cmd, cmdsize, "sha1 %s", argv[1]);
+-		snprintf(cmd, cmdsize, "sha1sum %s", argv[argpos]);
++		snprintf(cmd, cmdsize, "sha1 %s", argv[argpos]);
  		if ((pp = popen(cmd, "r"))) {
  			if (fscanf(pp, "%63[0-9a-zA-Z]", checksum) < 1)
  				*checksum = 0;
