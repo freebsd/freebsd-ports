@@ -1,9 +1,7 @@
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Circle.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.ConfServer.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Cover.beam
-lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Line.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Safe.beam
-lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Source.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.PathHelper.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.beam
@@ -19,6 +17,8 @@ lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Settings.Files.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Settings.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.StatServer.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Stats.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Stats.Line.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Stats.Source.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.StopWords.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.SubApps.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Task.Util.beam
