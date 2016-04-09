@@ -46,14 +46,8 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tls.htm ${STAGEDIR}${DOCSDIR}
 
-do-test check: build
+xregression-test test check: build
 	cd ${WRKSRC}/tests && ${SETENV} TCL_LIBRARY="${WRKSRC}" \
 		tclsh${TCL_VER} all.tcl
 
-.include <bsd.port.pre.mk>
-
-.if "${WITH_OPENSSL_PORT:tl}" == "yes" && "${OPENSSL_PORT}" == "security/libressl"
-CFLAGS+=	-DNO_SSL2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
