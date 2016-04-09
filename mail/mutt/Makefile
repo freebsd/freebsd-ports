@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-PORTVERSION=	1.5.24
-PORTREVISION?=	6
+PORTVERSION=	1.6.0
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
-MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
+MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
@@ -55,13 +55,13 @@ USES+=	ncurses
 OPTIONS_UNSET=	NLS DOCS EXAMPLES
 .else
 OPTIONS_DEFINE=	COMPRESSED_FOLDERS SASL DEBUG DOCS EXAMPLES FLOCK \
-		GPGME GREETING_PATCH HTML ICONV IDN IFDEF_PATCH \
+		FORCEBASE64 GPGME GREETING_PATCH HTML ICONV IDN IFDEF_PATCH \
 		IMAP_HEADER_CACHE LOCALES_FIX MAILBOX_MANPAGES \
 		MAILDIR_HEADER_CACHE MAILDIR_MTIME_PATCH \
 		MIXMASTER NLS NNTP PARENT_CHILD_MATCH_PATCH \
 		QUOTE_PATCH REVERSE_REPLY_PATCH SIDEBAR_PATCH \
-		SIGNATURE_MENU SMART_DATE SMIME_OUTLOOK_COMPAT SMTP \
-		TOKYOCABINET TRASH_PATCH URLVIEW XML
+		SMART_DATE SMIME_OUTLOOK_COMPAT SMTP TOKYOCABINET \
+		TRASH_PATCH URLVIEW XML
 
 OPTIONS_SINGLE=	GSSAPI SCREEN
 OPTIONS_RADIO=	SPELL
@@ -73,6 +73,7 @@ COMPRESSED_FOLDERS_DESC=	Compressed folders
 SASL_DESC=	SASL authentication
 DEBUG_DESC=	Debugging capabilities
 FLOCK_DESC=	flock() usage
+FORCEBASE64_DESC=	Option to force base64 encoding for compose
 GPGME_DESC=	Gpgme interface
 GREETING_PATCH_DESC=	Greeting support
 HTML_DESC=	HTML documentation
@@ -82,7 +83,6 @@ LOCALES_FIX_DESC=	Locales fix
 MAILBOX_MANPAGES_DESC=	Install mbox.5/mmdf.5 manpages
 MAILDIR_HEADER_CACHE_DESC=	Maildir header cache
 MAILDIR_MTIME_PATCH_DESC=	Maildir mtime patch
-MBOX_HOOK_PATCH_DESC=	Enhanced mbox-hook
 MIXMASTER_DESC=	Mixmaster support
 NCURSES_DESC=	Ncurses support
 NLS_DESC=	Native language support
@@ -90,7 +90,6 @@ PARENT_CHILD_MATCH_PATCH_DESC=	Parent/child match
 QUOTE_PATCH_DESC=	Extended quoting
 REVERSE_REPLY_PATCH_DESC=	Reverse_reply
 SIDEBAR_PATCH_DESC=	Sidebar support
-SIGNATURE_MENU_DESC=	Signature menu
 SLANG_DESC=	SLANG support
 SMART_DATE_DESC=	Dynamic date formatting with "%@"
 SMIME_OUTLOOK_COMPAT_DESC=	SMIME outlook compatibility
@@ -205,17 +204,9 @@ SIDEBAR_PATCH_VARS=	XML_NEEDED=yes
 
 DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
-SIGNATURE_MENU_IGNORE=	SIGNATURE_MENU does not work at the moment
-SIGNATURE_MENU_VARS=	XML_NEEDED=yes
-SIGNATURE_MENU_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-signature-menu
-
-MBOX_HOOK_PATCH_IGNORE=	MBOX_HOOK_PATCH does not work at the moment
-MBOX_HOOK_PATCH_PATCHFILES=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
-
 .include <bsd.port.options.mk>
 
 DW_PATCH_VERSION=	1.5.6
-DW_MBOX_PATCH_VERSION=	1.5.18
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -224,9 +215,6 @@ RR_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if !defined(DW_PATCH_VERSION)
 DW_PATCH_VERSION=	${PORTVERSION}
-.endif
-.if !defined(DW_MBOX_PATCH_VERSION)
-DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .endif
 
 # XXX
@@ -268,6 +256,9 @@ post-patch-NNTP-on:
 .if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime-nntp
 .endif
+.if ${PORT_OPTIONS:MFORCEBASE64}
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-forcebase64-nntp
+.endif
 
 post-patch-NNTP-off:
 .if ${PORT_OPTIONS:MSIDEBAR_PATCH}
@@ -276,6 +267,9 @@ post-patch-NNTP-off:
 .endif
 .if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime
+.endif
+.if ${PORT_OPTIONS:MFORCEBASE64}
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-forcebase64
 .endif
 
 post-install:

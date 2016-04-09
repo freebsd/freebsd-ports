@@ -70,17 +70,6 @@
  /usr/local/etc.
 --- doc/manual.txt.orig	2015-08-30 19:25:51.000000000 +0200
 +++ doc/manual.txt	2015-09-10 08:56:32.000000000 +0200
-@@ -3128,8 +3128,8 @@
-    argument.
- 
-    A practical example is the mutt_xtitle script installed in the samples
--   subdirectory of the Mutt documentation: it can be used as filter for
--   $$ssttaattuuss__ffoorrmmaatt to set the current terminal's title, if supported.
-+   share/examples/mutt subdirectory of the Mutt documentation: it can be used as
-+   filter for $$ssttaattuuss__ffoorrmmaatt to set the current terminal's title, if supported.
- 
- 29.4. Padding
- 
 @@ -7736,8 +7736,8 @@
  
     For examples on how to configure these formats for the various versions

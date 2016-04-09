@@ -336,22 +336,6 @@ diff -pruN -x'*.orig' mutt-1.5.20/mx.c mutt-1.5.20-trash/mx.c
 diff -pruN -x'*.orig' mutt-1.5.20/pager.c mutt-1.5.20-trash/pager.c
 --- mutt-1.5.20/pager.c	2009-06-03 16:48:31.000000000 -0400
 +++ mutt-1.5.20-trash/pager.c	2009-07-23 09:44:40.000000000 -0400
-@@ -2309,12 +2309,15 @@ search_next:
- 	MAYBE_REDRAW (redraw);
- 	break;
- 
-+      case OP_PURGE_MESSAGE:
-       case OP_DELETE:
- 	CHECK_MODE(IsHeader (extra));
- 	CHECK_READONLY;
- 	CHECK_ACL(M_ACL_DELETE, _("delete message"));
- 
- 	mutt_set_flag (Context, extra->hdr, M_DELETE, 1);
-+	mutt_set_flag (Context, extra->hdr, M_PURGED,
-+		       ch != OP_PURGE_MESSAGE ? 0 : 1);
-         if (option (OPTDELETEUNTAG))
- 	  mutt_set_flag (Context, extra->hdr, M_TAG, 0);
- 	redraw = REDRAW_STATUS | REDRAW_INDEX;
 @@ -2641,6 +2644,7 @@ search_next:
  	CHECK_ACL(M_ACL_DELETE, _("undelete message"));
  
