@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.2.18.1
+PORTVERSION=	1.2.21
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -62,16 +62,16 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang17/bin:${PATH}
 
 LEOFS_DEPS=	\
-	leo-project/leo_gateway=1.2.18:leo_gateway \
-	leo-project/leo_manager=1.2.18:leo_manager \
-	leo-project/leo_storage=1.2.18:leo_storage \
+	leo-project/leo_gateway=${PORTVERSION}:leo_gateway \
+	leo-project/leo_manager=${PORTVERSION}:leo_manager \
+	leo-project/leo_storage=${PORTVERSION}:leo_storage \
 	DeadZen/goldrush=0.1.7:goldrush \
 	basho/bitcask=2.0.1:bitcask \
 	basho/cuttlefish=2.0.5:cuttlefish \
-	basho/eleveldb=2.1.4:eleveldb \
+	basho/eleveldb=2.1.10:eleveldb \
 	basho/lager=2.2.0:lager \
-	basho/leveldb=2.1.3:leveldb \
-	davisp/jiffy=0.14.4:jiffy \
+	basho/leveldb=2.0.10:leveldb \
+	davisp/jiffy=0.14.7:jiffy \
 	eproxus/meck=0.8.2:meck \
 	extend/cowlib=1.0.0:cowlib \
 	extend/ranch=1.0.0:ranch \
@@ -79,31 +79,31 @@ LEOFS_DEPS=	\
 	jcomellas/getopt=v0.8.2:getopt \
 	leo-project/bear=0.8.2-for-leofs:bear \
 	leo-project/cowboy=for-leofs-1.2.11:cowboy \
-	leo-project/elarm=5953a2f:elarm \
+	leo-project/elarm=d9e8a6f:elarm \
 	leo-project/erlang-lz4=0.2.2:lz4 \
-	leo-project/erpcgen=0.2.3:erpcgen \
-	leo-project/fifo_utils=0d38c3e:fifo_utils \
+	leo-project/erpcgen=0.2.4:erpcgen \
+	leo-project/fifo_utils=d19b92c:fifo_utils \
 	leo-project/folsom=0.8.2-for-leofs:folsom \
-	leo-project/leo_backend_db=1.1.15:leo_backend_db \
-	leo-project/leo_cache=0.6.10:leo_cache \
+	leo-project/leo_backend_db=1.2.1:leo_backend_db \
+	leo-project/leo_cache=0.6.14:leo_cache \
 	leo-project/leo_commons=1.1.6:leo_commons \
-	leo-project/leo_dcerl=0.4.0:leo_dcerl \
+	leo-project/leo_dcerl=0.4.4:leo_dcerl \
 	leo-project/leo_logger=1.2.2:leo_logger \
-	leo-project/leo_mcerl=0.6.0:leo_mcerl \
-	leo-project/leo_mq=1.3.18:leo_mq \
-	leo-project/leo_object_storage=1.2.12:leo_object_storage \
-	leo-project/leo_ordning_reda=1.1.4:leo_ordning_reda \
+	leo-project/leo_mcerl=0.6.2:leo_mcerl \
+	leo-project/leo_mq=1.4.2:leo_mq \
+	leo-project/leo_object_storage=1.2.21:leo_object_storage \
+	leo-project/leo_ordning_reda=1.1.5:leo_ordning_reda \
 	leo-project/leo_pod=0.6.6:leo_pod \
-	leo-project/leo_redundant_manager=1.9.22:leo_redundant_manager \
+	leo-project/leo_redundant_manager=1.9.25:leo_redundant_manager \
 	leo-project/leo_rpc=0.10.7:leo_rpc \
-	leo-project/leo_s3_libs=1.1.10:leo_s3_libs \
-	leo-project/leo_statistics=1.1.10:leo_statistics \
-	leo-project/leo_watchdog=0.12.1:leo_watchdog \
+	leo-project/leo_s3_libs=1.1.12:leo_s3_libs \
+	leo-project/leo_statistics=1.1.11:leo_statistics \
+	leo-project/leo_watchdog=0.12.2:leo_watchdog \
 	leo-project/libcutil=0.4.3:libcutil \
-	leo-project/nfs_rpc_server=0.2.3:nfs_rpc_server \
-	leo-project/savanna_agent=0.4.13:savanna_agent \
-	leo-project/savanna_commons=0.8.16:savanna_commons \
-	manopapad/proper=7d535ac:proper \
+	leo-project/nfs_rpc_server=0.2.4:nfs_rpc_server \
+	leo-project/savanna_agent=0.4.14:savanna_agent \
+	leo-project/savanna_commons=0.10.0:savanna_commons \
+	manopapad/proper=1b773ee:proper \
 	seancribbs/neotoma=1.7.3:neotoma \
 
 .for dep in ${LEOFS_DEPS}
