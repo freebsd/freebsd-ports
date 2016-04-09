@@ -1,6 +1,6 @@
---- src/pprof
+--- src/pprof.orig	2016-03-01 03:36:11 UTC
 +++ src/pprof
-@@ -4405,7 +4405,7 @@
+@@ -4521,7 +4521,7 @@ sub ParseLibraries {
      my $finish;
      my $offset;
      my $lib;
