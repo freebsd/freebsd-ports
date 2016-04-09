@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 MPLAYER_PORT_VERSION=	1.3.0
-MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/releases/ \
-		ftp://ftp.mplayerhq.hu/MPlayer/releases/
-DISTNAME=	MPlayer-${MPLAYER_PORT_VERSION}
+MPLAYER_SNAPSHOT_DATE=	2016-04-09
+MASTER_SITES=	LOCAL/riggs/mplayer
+DISTNAME=	mplayer-${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
+WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
