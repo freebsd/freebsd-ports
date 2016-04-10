@@ -3,7 +3,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.6.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -40,7 +40,8 @@ SHEBANG_FILES=	doc/gen-map-doc smime_keys.pl contrib/smime_keys_test.pl
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-USE_AUTOTOOLS=	automake autoconf
+USES+=		autoreconf
+GNU_CONFIGURE=	yes
 AUTOMAKE_ARGS=	--add-missing --foreign
 USE_OPENSSL=	yes
 
@@ -77,6 +78,7 @@ FORCEBASE64_DESC=	Option to force base64 encoding for compose
 GPGME_DESC=	Gpgme interface
 GREETING_PATCH_DESC=	Greeting support
 HTML_DESC=	HTML documentation
+IDN_DESC+=	International Domain Names (implies ICONV)
 IFDEF_PATCH_DESC=	ifdef feature
 IMAP_HEADER_CACHE_DESC=	IMAP header cache
 LOCALES_FIX_DESC=	Locales fix
@@ -85,7 +87,7 @@ MAILDIR_HEADER_CACHE_DESC=	Maildir header cache
 MAILDIR_MTIME_PATCH_DESC=	Maildir mtime patch
 MIXMASTER_DESC=	Mixmaster support
 NCURSES_DESC=	Ncurses support
-NLS_DESC=	Native language support
+NLS_DESC=	Native language support (implies ICONV)
 PARENT_CHILD_MATCH_PATCH_DESC=	Parent/child match
 QUOTE_PATCH_DESC=	Extended quoting
 REVERSE_REPLY_PATCH_DESC=	Reverse_reply
@@ -126,7 +128,7 @@ PLIST_SUB+=	XML="@comment "
 PLIST_SUB+=	NNTP="@comment "
 # XXX bug in bpm ?
 PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=	--disable-nls --disable-iconv --without-idn
 .endif
 
 DEBUG_CONFIGURE_ON=	--enable-debug
@@ -140,6 +142,7 @@ NCURSES_USES=	ncurses
 
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
+NLS_IMPLIES= 	ICONV
 
 # Handle GSSAPI from various places
 GSSAPI_BASE_USES=	gssapi
@@ -176,6 +179,7 @@ LOCALES_FIX_CONFIGURE_ON=	--enable-locales-fix
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_ON=	--with-idn
 IDN_CONFIGURE_OFF=	--without-idn
+IDN_IMPLIES= 	ICONV
 
 GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_ON=	--enable-gpgme
@@ -232,6 +236,9 @@ CFLAGS+=		${CFLAGS_ADD}
 LDFLAGS+=		${LDFLAGS_ADD}
 
 PATCH_DIST_STRIP=	-p1
+
+pre-patch-ICONV-off:
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-idna_no_iconv
 
 pre-patch-PARENT_CHILD_MATCH_PATCH-on:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-parent-child-match
@@ -298,7 +305,6 @@ post-patch::
 		${WRKSRC}/contrib/Makefile.am
 
 pre-configure::
-	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
 	@${RM} -f ${WRKSRC}/missing
 .if defined(WITH_KRB5_SYS)
 	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
