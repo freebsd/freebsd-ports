@@ -5,9 +5,7 @@ bin/rt-mailgate
 @dir(root,rt,0750) %%RT_ETC_DIR%%
 @mode 0440
 %%RT_ETC_DIR%%/RT_Config.pm
-@unexec if cmp -s %D/%%RT_ETC_DIR%%/RT_SiteConfig.pm-dist %D/%%RT_ETC_DIR%%/RT_SiteConfig.pm ; then rm -f %D/%%RT_ETC_DIR%%/RT_SiteConfig.pm; fi
-%%RT_ETC_DIR%%/RT_SiteConfig.pm-dist
-@exec [ -f %B/RT_SiteConfig.pm ] || cp -p %D/%F %B/RT_SiteConfig.pm
+@sample %%RT_ETC_DIR%%/RT_SiteConfig.pm-dist %%RT_ETC_DIR%%/RT_SiteConfig.pm
 %%RT_ETC_DIR%%/acl.Oracle
 %%RT_ETC_DIR%%/acl.Pg
 %%RT_ETC_DIR%%/acl.mysql
