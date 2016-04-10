@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	consul
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://releases.hashicorp.com/consul/${PORTVERSION}/:web_ui
@@ -20,10 +20,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp:DEFAULT,go_checkpoint,go_msgpack,go_multierror,go_syslog \
 		hashicorp:golang_lru,hcl,logutils,memberlist,raft,raft_mdb,serf \
 		hashicorp:scada,yamux,migrate,msgpackrpc,boltdb,reap,memdb \
-		hashicorp:iradix,chttp,errwrap \
+		hashicorp:iradix,chttp,errwrap,gouuid,hil \
 		armon:circbuf,go_metrics,go_radix,gomdb golang:protobuf,crypto,sys \
 		boltdb:bolt inconshreveable:muxado matttproud:protobuf_ext \
-		miekg:dns mitchellh:cli mitchellh:mapstructure \
+		miekg:dns mitchellh:cli,mapstructure,copystructure,reflectwalk \
 		prometheus:client_golang,client_model,procfs \
 		ryanuber:columnize ugorji:go mattn:isatty \
 		fsouza:dclient elazarl:assetfs bgentry:speakeasy DataDog:datadog
@@ -41,20 +41,22 @@ GH_PROJECT=	circbuf:circbuf protobuf:protobuf go-metrics:go_metrics \
 		go:go go-isatty:isatty go-reap:reap sys:sys go-memdb:memdb \
 		go-immutable-radix:iradix go-cleanhttp:chttp errwrap:errwrap \
 		go-dockerclient:dclient go-bindata-assetfs:assetfs \
-		speakeasy:speakeasy datadog-go:datadog
+		speakeasy:speakeasy datadog-go:datadog go-uuid:gouuid \
+		hil:hil copystructure:copystructure reflectwalk:reflectwalk
 GH_TAGNAME=	bbbad09:circbuf 2402d76:protobuf 345426c:go_metrics \
 		4239b77:go_radix 151f2e0:gomdb e4b2dc3:go_checkpoint \
 		fa3f638:go_msgpack d30f099:go_multierror 42a2b57:go_syslog \
-		bf88e0d:golang_lru aee8c49:hcl 0dc08b1:logutils \
-		9888dc5:memberlist 8023e5e:raft 55f2947:raft_mdb b60fe33:serf \
+		5c7531c:golang_lru 578dd97:hcl 0dc08b1:logutils \
+		cef12ad:memberlist 057b893:raft 55f2947:raft_mdb e4ec8cc:serf \
 		84989fd:scada df94978:yamux 678fb10:migrate \
-		a14192a:msgpackrpc d1e82c1:boltdb 3760e01:crypto 109049b:bolt \
-		f693c7e:muxado d0c3fe8:protobuf_ext 297a77c:dns cb6853d:cli \
+		a14192a:msgpackrpc d1e82c1:boltdb 3760e01:crypto ee4a088:bolt \
+		f693c7e:muxado d0c3fe8:protobuf_ext 75e6e86:dns cb6853d:cli \
 		281073e:mapstructure 67994f1:client_golang \
 		fa8ad6f:client_model 406e5b7:procfs 983d3a5:columnize \
-		646ae4a:go 56b76bd:isatty 2d85522:reap 442cd60:sys 31949d5:memdb \
-		12e9005:iradix ce617e7:chttp 7554cd9:errwrap 2fb7694:dclient \
-		57eb5e1:assetfs 36e9cfd:speakeasy bc97e07:datadog
+		646ae4a:go 56b76bd:isatty 2d85522:reap 20457ee:sys 98f52f5:memdb \
+		8e8ed81:iradix 875fb67:chttp 7554cd9:errwrap 9b6c972:dclient \
+		57eb5e1:assetfs 36e9cfd:speakeasy b050cd8:datadog 3628998:gouuid \
+		0457360:hil 6fc6626:copystructure eecf4c7:reflectwalk
 
 USE_RC_SUBR=	consul
 
@@ -65,10 +67,10 @@ STRIP=		# stripping can break go binaries
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/hashicorp/consul
-.for src in .gitignore .travis.yml CHANGELOG.md LICENSE Makefile README.md \
-	Vagrantfile acl api bench command commands.go consul contrib demo deps \
-	main.go main_test.go make.bat scripts terraform test testutil \
-	tlsutil ui version.go watch website
+.for src in .gitignore .travis.yml CHANGELOG.md GNUmakefile Godeps LICENSE \
+	README.md acl api bench command commands.go consul contrib demo lib \
+	main.go main_test.go make.bat scripts terraform test testutil tlsutil \
+	ui vendor version.go watch website
 	@${MV} ${WRKSRC}/${src} \
 		${WRKSRC}/src/github.com/hashicorp/consul
 .endfor
@@ -174,9 +176,18 @@ post-patch:
 		${WRKSRC}/src/golang.org/x/sys
 	@${MV} ${WRKSRC_crypto} \
 		${WRKSRC}/src/golang.org/x/crypto
+	@${MV} ${WRKSRC_gouuid} \
+		${WRKSRC}/src/github.com/hashicorp/go-uuid
+	@${MV} ${WRKSRC_hil} \
+		${WRKSRC}/src/github.com/hashicorp/hil
+	@${MV} ${WRKSRC_copystructure} \
+		${WRKSRC}/src/github.com/mitchellh/copystructure
+	@${MV} ${WRKSRC_reflectwalk} \
+		${WRKSRC}/src/github.com/mitchellh/reflectwalk
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/hashicorp/consul; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/consul
+	@cd ${WRKSRC}/src/github.com/hashicorp/consul; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build \
+		-ldflags "-X main.GitDescribe v${PORTVERSION}" -o bin/consul
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/consul/bin/consul ${STAGEDIR}${PREFIX}/bin/consul
