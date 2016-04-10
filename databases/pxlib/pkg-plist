@@ -5,7 +5,7 @@ include/pxversion.h
 lib/libpx.a
 lib/libpx.so
 lib/libpx.so.0
-lib/libpx.so.0.6.5
+lib/libpx.so.%%PORTVERSION%%
 libdata/pkgconfig/pxlib.pc
 %%MANPAGES%%man/man3/PX_add_primary_index.3.gz
 %%MANPAGES%%man/man3/PX_close.3.gz
