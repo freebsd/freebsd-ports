@@ -1,28 +1,29 @@
---- qsstv/qsstv.pro.orig	2014-12-06 14:41:00 UTC
+--- qsstv/qsstv.pro.orig	2016-04-08 23:08:29 UTC
 +++ qsstv/qsstv.pro
-@@ -420,20 +420,17 @@ HEADERS  += scope/scopeoffset.h \
- FORMS   += scope/scopeoffset.ui \
- 				scope/plotform.ui
+@@ -15,7 +15,7 @@ QMAKE_CXXFLAGS_RELEASE += -O3
  
-- INCLUDEPATH += /usr/include/qwt
-  LIBS += ../qwt/libqwt.a
- }
+ TARGET = qsstv
+ TEMPLATE = app
+-INCLUDEPATH += config utils sound widgets dsp dispatch logbook mainwidgets rig sstv videocapt drmrx drmtx xmlrpc  /usr/include/openjpeg-2.1
++INCLUDEPATH += config utils sound widgets dsp dispatch logbook mainwidgets rig sstv videocapt drmrx drmtx xmlrpc  %%LOCALBASE%%/include/openjpeg-2.1
  
--CONFIG(debug ,debug|release){
--dox.commands = cd $$PWD/Documentation/manual ;doxygen  manual.doxy;
-+with_docs {
-+dox.commands = cd Documentation/manual ;doxygen  manual.doxy;
- dox.depends= FORCE
--PRE_TARGETDEPS       +=    dox
+ 
+ SOURCES += main.cpp\
+@@ -515,8 +515,8 @@ PRE_TARGETDEPS       +=    dox
  message(dox will be generated)
  }
+ 
 -dox.path=/usr/share/doc/$$TARGET
 -dox.files= $$PWD/manual/*
--QMAKE_EXTRA_TARGETS   +=   dox
-+dox.path=$$PREFIX/share/doc/$$TARGET
-+dox.files= manual/*
++dox.path=%%DOCSDIR%%
++dox.files= documentation/manual/*
+ QMAKE_EXTRA_TARGETS   +=   dox
+ 
+ 
+@@ -524,5 +524,5 @@ QMAKE_EXTRA_TARGETS   +=   dox
+ RESOURCES += \
+     qsstv.qrc
  
 -target.path = /usr/bin
-+target.path = $$PREFIX/bin
++target.path = %%PREFIX%%/bin
  INSTALLS += target dox
- 
