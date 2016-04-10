@@ -262,6 +262,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/binary/pack-aux.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/binary/parse.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/binary/pack.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/cache/apis.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/cache/lru.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/char-set.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/compression/huffman.scm
