@@ -1,11 +1,11 @@
---- bin/uzbl-browser.orig	2010-12-01 00:06:50.000000000 +0100
-+++ bin/uzbl-browser	2010-12-01 00:07:09.000000000 +0100
-@@ -74,7 +74,7 @@
- DAEMON_SOCKET="$XDG_CACHE_HOME"/uzbl/event_daemon
- #if [ ! -f "$DAEMON_SOCKET".pid ]
- #then
--	${UZBL_EVENT_MANAGER:-uzbl-event-manager -va start}
-+	${UZBL_EVENT_MANAGER:-uzbl-event-manager} -va start
- #fi
- 
- exec uzbl-core "$@" ${config_file:+--config "$config_file"} --connect-socket $DAEMON_SOCKET
+--- bin/uzbl-browser.in.orig	2016-02-28 14:27:33 UTC
++++ bin/uzbl-browser.in
+@@ -63,7 +63,7 @@ fi
+ if [ -z "$UZBL_EVENT_SOCKET" ]; then
+ 	UZBL_EVENT_SOCKET="$XDG_CACHE_HOME/uzbl/event_daemon"
+ 	if ! [ -f "$UZBL_EVENT_SOCKET.pid" ] || ! ps -p "$(cat "$UZBL_EVENT_SOCKET.pid")" >/dev/null; then
+-		${UZBL_EVENT_MANAGER:-uzbl-event-manager -va --server-socket "$UZBL_EVENT_SOCKET" start} || \
++		${UZBL_EVENT_MANAGER:-uzbl-event-manager} -va --server-socket "$UZBL_EVENT_SOCKET" start || \
+ 			die_with_status 4 "Error: Could not start uzbl-event-manager"
+ 	fi
+ fi
