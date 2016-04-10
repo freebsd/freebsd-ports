@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	2048-qt
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	swills@FreeBSD.org
@@ -21,8 +20,8 @@ PLIST_FILES=	bin/2048-qt ${DESKTOPDIR}/${PORTNAME}.desktop \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/2048-qt ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/icons/256x256/apps/2048-qt.png \
+	${INSTALL_DATA} ${WRKSRC}/res/icons/256x256/apps/2048-qt.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/res/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
