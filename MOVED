@@ -8274,3 +8274,6 @@ www/py-satchmo||2016-04-03|Has expired: Project development unmaintained
 www/py-ua-parser|devel/py-ua_parser|2016-04-04|Duplicate port deleted
 net-mgmt/weathermap||2016-04-04|Has expired: Distfile unavailable, website no longer exists
 accessibility/gnopernicus|accessibility/orca|2016-04-08|Has expired: Not developed upstream anymore. Obsoleted by accessibility/orca
+textproc/p5-ElasticSearch-SearchBuilder|textproc/p5-Search-Elasticsearch|2016-04-10|Has expired: Use textproc/p5-Search-Elasticsearch which is the official client
+textproc/p5-ElasticSearch-legacy|textproc/p5-Search-Elasticsearch|2016-04-10|Has expired: Use textproc/p5-Search-Elasticsearch which is the official client
+textproc/py-openpyxl1|textproc/py-openpyxl|2016-04-10|Has expired: Use textproc/py-openpyxl instead
