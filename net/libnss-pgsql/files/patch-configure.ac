@@ -1,0 +1,11 @@
+--- configure.ac.orig	2015-12-21 07:52:02 UTC
++++ configure.ac
+@@ -26,7 +26,7 @@ AC_CHECK_LIB([pq], [PQsetdbLogin])
+ 
+ # Checks for header files.
+ AC_HEADER_STDC
+-AC_CHECK_HEADERS([stdlib.h string.h unistd.h nss.h])
++AC_CHECK_HEADERS([stdlib.h string.h unistd.h nss.h shadow.h])
+ 
+ # Checks for typedefs, structures, and compiler characteristics.
+ AC_C_CONST
