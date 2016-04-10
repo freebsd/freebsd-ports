@@ -1,7 +1,5 @@
 sbin/havp
-@unexec if cmp -s %D/etc/havp/havp.config %D/etc/havp/havp.config.default; then rm -f %D/etc/havp/havp.config; fi
-etc/havp/havp.config.default
-@exec [ -f %B/havp.config ] || cp %B/%f %B/havp.config
+@sample etc/havp/havp.config.default etc/havp/havp.config
 @unexec [ ! -f %%RUN_DIR%%/havp.pid ] || %D/etc/rc.d/havp stop
 %%EXAMPLESDIR%%/blacklist.sample
 %%EXAMPLESDIR%%/templates/br/blacklist.html
