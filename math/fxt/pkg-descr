@@ -1,4 +1,4 @@
-fxt is a library package (coming as C++ source code) containing code various
+fxt is a library package (coming as C++ source code) containing various
 algorithms for:
    - Fast Fourier Transform (FFT) incl. real-vlued,
    - multidimensional and weighted variants.
