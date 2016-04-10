@@ -1,5 +1,3 @@
 bin/trafshow
-@unexec if cmp -s %D/etc/trafshow %D/etc/trafshow.dist; then rm -f %D/etc/trafshow; fi
-etc/trafshow.dist
-@exec if [ ! -e %D/etc/trafshow ]; then cp -p %D/%F %B/trafshow; fi
+@sample etc/trafshow.dist etc/trafshow
 man/man1/trafshow.1.gz

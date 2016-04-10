@@ -1,7 +1,1 @@
-@mode 640
-@group %%PLA_GRP%%
-@unexec if cmp -s %D/%%WWWDIR%%/config/config.php.example %D/%%WWWDIR%%/config/config.php ; then rm -f %D/%%WWWDIR%%/config/config.php ; fi
-%%WWWDIR%%/config/config.php.example
-@exec [ ! -f %B/config.php ] && cp -p %B/%f %B/config.php || true
-@mode
-@group
+@sample(,%%PLA_GRP%%,640) %%WWWDIR%%/config/config.php.example %%WWWDIR%%/config/config.php
