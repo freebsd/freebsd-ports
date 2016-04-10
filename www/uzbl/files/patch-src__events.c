@@ -1,10 +1,10 @@
---- src/events.c.orig	2011-03-15 12:19:22.000000000 +0000
-+++ src/events.c	2011-03-15 12:19:36.000000000 +0000
-@@ -3,6 +3,7 @@
-  ** (c) 2009 by Robert Manea
- */
+--- src/events.c.orig	2016-02-28 14:27:33 UTC
++++ src/events.c
+@@ -5,6 +5,7 @@
+ #include "util.h"
+ #include "uzbl-core.h"
  
 +#include <stdarg.h>
- #include "uzbl-core.h"
- #include "events.h"
- #include "util.h"
+ #include <string.h>
+ 
+ const char *event_table[] = {
