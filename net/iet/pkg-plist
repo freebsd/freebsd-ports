@@ -1,16 +1,8 @@
 modules/iet.ko
-@unexec if cmp -s %D/%%DATADIR%%/ietd.conf %D/etc/iet/ietd.conf ; then rm -f %D/etc/iet/ietd.conf ; fi
-%%DATADIR%%/ietd.conf
-@exec if [ ! -f %D/etc/iet/ietd.conf ]; then cp -p %D/%F %D/etc/iet/ietd.conf; fi
-@unexec if cmp -s %D/%%DATADIR%%/initiators.allow %D/etc/iet/initiators.allow ; then rm -f %D/etc/iet/initiators.allow ; fi
-%%DATADIR%%/initiators.allow
-@exec if [ ! -f %D/etc/iet/initiators.allow ]; then cp -p %D/%F %D/etc/iet/initiators.allow; fi
-@unexec if cmp -s %D/%%DATADIR%%/initiators.deny %D/etc/iet/initiators.deny ; then rm -f %D/etc/iet/initiators.deny ; fi
-%%DATADIR%%/initiators.deny
-@exec if [ ! -f %D/etc/iet/initiators.deny ]; then cp -p %D/%F %D/etc/iet/initiators.deny; fi
-@unexec if cmp -s %D/%%DATADIR%%/targets.allow %D/etc/iet/targets.allow ; then rm -f %D/etc/iet/targets.allow ; fi
-%%DATADIR%%/targets.allow
-@exec if [ ! -f %D/etc/iet/targets.allow ]; then cp -p %D/%F %D/etc/iet/targets.allow; fi
+@sample %%DATADIR%%/ietd.conf etc/iet/ietd.conf
+@sample %%DATADIR%%/initiators.allow etc/iet/initiators.allow
+@sample %%DATADIR%%/initiators.deny etc/iet/initiators.deny
+@sample %%DATADIR%%/targets.allow etc/iet/targets.allow
 man/man5/ietd.conf.5.gz
 man/man8/ietadm.8.gz
 man/man8/ietd.8.gz
