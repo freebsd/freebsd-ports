@@ -3,3 +3,5 @@ interest (such as triggering a compiler bug) and automatically produces a much
 smaller C/C++ program that has the same property. It is intended for use by
 people who discover and report bugs in compilers and other tools that process
 C/C++ code.
+
+WWW: https://embed.cs.utah.edu/creduce/
