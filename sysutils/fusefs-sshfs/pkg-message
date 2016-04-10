@@ -1,6 +1,11 @@
 Basic Instructions:
 There are three ways to do this:
 
+From version 2.7 it makes use of the legacy /dev/ptmx. For version 10.0+
+please load the kernel module pty:
+
+% kldload pty
+
 Daemon initiated
 
 1)
