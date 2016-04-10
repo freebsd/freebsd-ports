@@ -1,0 +1,6 @@
+List contents of virtual tables in a C++ shared library
+  
+It is intended for developers of software libraries and maintainers of Linux
+distributions who are interested in ensuring backward binary compatibility.
+  
+WWW: https://github.com/lvc/vtable-dumper
