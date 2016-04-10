@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blockdiag
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.3
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}pillow>=2.2.1:graphics/py-pillow \
 		${PKGNAMEPREFIX}funcparserlib>=0.3.6:devel/py-funcparserlib \
 		${PKGNAMEPREFIX}webcolors>=0:graphics/py-webcolors
 
-USES=	python
+USES=	python:-3.4
 USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
@@ -32,29 +32,22 @@ PDF_DESC=	Enable PDF output
 
 OPTIONS_DEFAULT=	PDF
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} == 3.1
-IGNORE=	does not support in ${PYTHON_VERSION}
-.endif
-
-.if ${PORT_OPTIONS:MPDF}
-RUN_DEPENDS+=	${PKGNAMEPREFIX}reportlab>0:print/py-reportlab
-.endif
-
-.if ${PORT_OPTIONS:MIPAFONT}
-RUN_DEPENDS+=	${LOCALBASE}/share/font-ipa/ipag.otf:japanese/font-ipa
-.endif
+IPAFONT_RUN_DEPENDS=	${LOCALBASE}/share/font-ipa/ipag.otf:japanese/font-ipa
+PDF_RUN_DEPENDS=	${PKGNAMEPREFIX}reportlab>0:print/py-reportlab
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/blockdiag/utils/bootstrap.py
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/examples/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
 	@${ECHO_CMD} man/man1/${PORTNAME}.1.gz >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/examples/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>
