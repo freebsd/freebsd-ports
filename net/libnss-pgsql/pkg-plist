@@ -1,0 +1,11 @@
+lib/libnss_pgsql.a
+lib/libnss_pgsql.so
+lib/libnss_pgsql.so.2
+lib/libnss_pgsql.so.2.0.0
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/caution.png
+%%PORTDOCS%%%%DOCSDIR%%/dbschema.sql
+%%PORTDOCS%%%%DOCSDIR%%/nss-pgsql-root.conf
+%%PORTDOCS%%%%DOCSDIR%%/nss-pgsql.conf
+%%PORTDOCS%%%%DOCSDIR%%/nss-pgsql.html
+%%PORTDOCS%%%%DOCSDIR%%/nsswitch.conf

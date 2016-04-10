@@ -1,0 +1,6 @@
+libNSS-PostgreSQL allows you to authenticate UNIX groups and users
+using a PostgreSQL database. It uses the NSS API which provides an
+abstraction layer between the UNIX authentication API and the related
+data. NSS-PostgreSQL currently supports the passwd and groups services.
+
+WWW: https://ftp.postgresql.org/pub/projects/pgFoundry/sysauth/NSS/

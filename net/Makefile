@@ -331,6 +331,7 @@
     SUBDIR += libnids
     SUBDIR += libnss-cache
     SUBDIR += libnss-mysql
+    SUBDIR += libnss-pgsql
     SUBDIR += liboauth
     SUBDIR += libopennet
     SUBDIR += liboping
