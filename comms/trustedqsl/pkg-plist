@@ -14,6 +14,8 @@ share/TrustedQSL/config.xml
 share/TrustedQSL/help/tqslapp/CertProp.bmp
 share/TrustedQSL/help/tqslapp/EnterPassword.bmp
 share/TrustedQSL/help/tqslapp/LoTWCerts.bmp
+share/TrustedQSL/help/tqslapp/MainNoStatusTab.bmp
+share/TrustedQSL/help/tqslapp/MainWithStatusTab.bmp
 share/TrustedQSL/help/tqslapp/RenewUpload.bmp
 share/TrustedQSL/help/tqslapp/P12.bmp
 share/TrustedQSL/help/tqslapp/Pending.bmp
@@ -124,15 +126,9 @@ share/TrustedQSL/help/tqslapp/update.htm
 share/TrustedQSL/help/tqslapp/update1.bmp
 share/TrustedQSL/help/tqslapp/update2.bmp
 share/locale/de/LC_MESSAGES/tqslapp.mo
-share/locale/de/LC_MESSAGES/wxstd.mo
 share/locale/es/LC_MESSAGES/tqslapp.mo
-share/locale/es/LC_MESSAGES/wxstd.mo
 share/locale/fr/LC_MESSAGES/tqslapp.mo
-share/locale/fr/LC_MESSAGES/wxstd.mo
 share/locale/it/LC_MESSAGES/tqslapp.mo
-share/locale/it/LC_MESSAGES/wxstd.mo
 share/locale/ja/LC_MESSAGES/tqslapp.mo
-share/locale/ja/LC_MESSAGES/wxstd.mo
 share/locale/pt/LC_MESSAGES/tqslapp.mo
-share/locale/pt/LC_MESSAGES/wxstd.mo
 share/pixmaps/TrustedQSL.png
