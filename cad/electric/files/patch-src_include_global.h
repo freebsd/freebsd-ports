@@ -1,5 +1,5 @@
---- src/include/global.h.orig	Fri Jul 14 12:43:20 2006
-+++ src/include/global.h	Fri Jul 14 12:45:34 2006
+--- src/include/global.h.orig	2004-07-16 01:59:53 UTC
++++ src/include/global.h
 @@ -204,7 +204,7 @@
  #define INTSML            short				/* at least 16 bits */
  #define UINTSML  unsigned short
