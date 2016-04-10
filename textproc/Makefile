@@ -548,8 +548,6 @@
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-DocSet
     SUBDIR += p5-EBook-Tools
-    SUBDIR += p5-ElasticSearch-SearchBuilder
-    SUBDIR += p5-ElasticSearch-legacy
     SUBDIR += p5-Excel-Template
     SUBDIR += p5-Excel-Writer-XLSX
     SUBDIR += p5-File-Inplace
@@ -1255,7 +1253,6 @@
     SUBDIR += py-mwparserfromhell
     SUBDIR += py-nltk
     SUBDIR += py-openpyxl
-    SUBDIR += py-openpyxl1
     SUBDIR += py-paragrep
     SUBDIR += py-pdfminer
     SUBDIR += py-pss
