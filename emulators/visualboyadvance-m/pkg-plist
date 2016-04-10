@@ -1,8 +1,6 @@
 %%GVBAM%%bin/gvbam
 %%SDL%%bin/vbam
-@unexec if cmp -s %D/etc/vbam.cfg-example %D/etc/vbam.cfg; then rm -f %D/etc/vbam.cfg; fi
-etc/vbam.cfg-example
-@exec if [ ! -f %D/etc/vbam.cfg ] ; then cp -p %D/%F %B/vbam.cfg; fi
+@sample etc/vbam.cfg-example etc/vbam.cfg
 %%GVBAM%%share/applications/gvbam.desktop
 %%GVBAM%%share/icons/hicolor/16x16/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/22x22/apps/vbam.png
