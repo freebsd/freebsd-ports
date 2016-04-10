@@ -11,15 +11,9 @@ bin/rtmpget
 %%CYGNAL%%bin/flvdumper
 %%CYGNAL%%bin/soldumper
 %%NPAPI%%%%WEBPLUGIN_DIR%%/libgnashplugin.so
-%%CYGNAL%%@unexec if cmp -s %D/etc/cygnalrc.dist %D/etc/cygnalrc; then rm -f %D/etc/cygnalrc; fi
-%%CYGNAL%%etc/cygnalrc.dist
-%%CYGNAL%%@exec if [ ! -f %B/cygnalrc ]; then cp -p %D/%F %B/cygnalrc; fi
-@unexec if cmp -s %D/etc/gnashpluginrc.dist %D/etc/gnashpluginrc; then rm -f %D/etc/gnashpluginrc; fi
-etc/gnashpluginrc.dist
-@exec if [ ! -f %B/gnashpluginrc ]; then cp -p %D/%F %B/gnashpluginrc; fi
-@unexec if cmp -s %D/etc/gnashrc.dist %D/etc/gnashrc; then rm -f %D/etc/gnashrc; fi
-etc/gnashrc.dist
-@exec if [ ! -f %B/gnashrc ]; then cp -p %D/%F %B/gnashrc; fi
+%%CYGNAL%%@sample etc/cygnalrc.dist etc/cygnalrc
+@sample etc/gnashpluginrc.dist etc/gnashpluginrc
+@sample etc/gnashrc.dist etc/gnashrc
 include/gnash/AMF.h
 include/gnash/BevelFilter_as.h
 include/gnash/BitmapData_as.h
