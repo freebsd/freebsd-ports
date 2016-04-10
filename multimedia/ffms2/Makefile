@@ -35,6 +35,6 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${LN} -sf ../libffms2.so ${STAGEDIR}${DATADIR}/
+	${LN} -sf ../lib${PORTNAME}.so ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
