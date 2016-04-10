@@ -563,6 +563,7 @@
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
+    SUBDIR += npm2
     SUBDIR += npm012
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
