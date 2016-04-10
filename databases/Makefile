@@ -249,6 +249,7 @@
     SUBDIR += p5-AnyEvent-DBD-Pg
     SUBDIR += p5-AnyEvent-Memcached
     SUBDIR += p5-AnyEvent-Redis
+    SUBDIR += p5-App-Sqitch
     SUBDIR += p5-AsciiDB-TagFile
     SUBDIR += p5-BDB
     SUBDIR += p5-BSON
