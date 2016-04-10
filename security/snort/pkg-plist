@@ -4,36 +4,16 @@ bin/u2boat
 bin/u2spewfoo
 %%APPID%%bin/u2openappid
 %%APPID%%bin/u2streamer
-@unexec if cmp  -s %D/etc/snort/classification.config-sample %D/etc/snort/classification.config; then rm -f %D/etc/snort/classification.config; fi
-etc/snort/classification.config-sample
-@exec if [ ! -f %D/etc/snort/classification.config ] ; then cp -p %D/%F %B/classification.config; fi
-@unexec if cmp  -s %D/etc/snort/gen-msg.map-sample %D/etc/snort/gen-msg.map; then rm -f %D/etc/snort/gen-msg.map; fi
-etc/snort/gen-msg.map-sample
-@exec if [ ! -f %D/etc/snort/gen-msg.map ] ; then cp -p %D/%F %B/gen-msg.map; fi
-@unexec if cmp  -s %D/etc/snort/preproc_rules/decoder.rules %D/etc/snort/preproc_rules/decoder.rules; then rm -f %D/etc/snort/preproc_rules/decoder.rules;fi
-etc/snort/preproc_rules/decoder.rules-sample
-@exec if [ ! -f %D/etc/snort/preproc_rules/decoder.rules ] ; then cp -p %D/%F %B/decoder.rules; fi
-@unexec if cmp  -s %D/etc/snort/preproc_rules/preprocessor.rules %D/etc/snort/preproc_rules/preprocessor.rules; then rm -f %D/etc/snort/preproc_rules/preprocessor.rules;fi
-etc/snort/preproc_rules/preprocessor.rules-sample
-@exec if [ ! -f %D/etc/snort/preproc_rules/preprocessor.rules ] ; then cp -p %D/%F %B/preprocessor.rules; fi
-@unexec if cmp  -s %D/etc/snort/preproc_rules/sensitive-data.rules %D/etc/snort/preproc_rules/sensitive-data.rules; then rm -f %D/etc/snort/preproc_rules/sensitive-data.rules;fi
-etc/snort/preproc_rules/sensitive-data.rules-sample
-@exec if [ ! -f %D/etc/snort/preproc_rules/decoder.rules ] ; then cp -p %D/%F %B/; fi
-@unexec if cmp  -s %D/etc/snort/reference.config-sample %D/etc/snort/reference.config; then rm -f %D/etc/snort/reference.config; fi
-etc/snort/reference.config-sample
-@exec if [ ! -f %D/etc/snort/reference.config ] ; then cp -p %D/%F %B/reference.config; fi
-@unexec if cmp  -s %D/etc/snort/snort.conf-sample %D/etc/snort/snort.conf; then rm -f %D/etc/snort/snort.conf; fi
-etc/snort/snort.conf-sample
-@exec if [ ! -f %D/etc/snort/snort.conf ] ; then cp -p %D/%F %B/snort.conf; fi
-@unexec if cmp  -s %D/etc/snort/threshold.conf-sample %D/etc/snort/threshold.conf; then rm -f %D/etc/snort/threshold.conf; fi
-etc/snort/threshold.conf-sample
-@exec if [ ! -f %D/etc/snort/threshold.conf ] ; then cp -p %D/%F %B/threshold.conf; fi
-@unexec if cmp  -s %D/etc/snort/unicode.map-sample %D/etc/snort/unicode.map; then rm -f %D/etc/snort/unicode.map; fi
-etc/snort/unicode.map-sample
-@exec if [ ! -f %D/etc/snort/unicode.map ] ; then cp -p %D/%F %B/unicode.map; fi
-@unexec if cmp  -s %D/etc/snort/file_magic.conf-sample %D/etc/snort/file_magic.conf; then rm -f %D/etc/snort/file_magic.conf; fi
-etc/snort/file_magic.conf-sample
-@exec if [ ! -f %D/etc/snort/file_magic.conf ] ; then cp -p %D/%F %B/file_magic.conf; fi
+@sample etc/snort/classification.config-sample etc/snort/classification.config
+@sample etc/snort/gen-msg.map-sample etc/snort/gen-msg.map
+@sample etc/snort/preproc_rules/decoder.rules-sample etc/snort/preproc_rules/decoder.rules
+@sample etc/snort/preproc_rules/preprocessor.rules-sample etc/snort/preproc_rules/preprocessor.rules
+@sample etc/snort/preproc_rules/sensitive-data.rules-sample etc/snort/preproc_rules/sensitive-data.rules
+@sample etc/snort/reference.config-sample etc/snort/reference.config
+@sample etc/snort/snort.conf-sample etc/snort/snort.conf
+@sample etc/snort/threshold.conf-sample etc/snort/threshold.conf
+@sample etc/snort/unicode.map-sample etc/snort/unicode.map
+@sample etc/snort/file_magic.conf-sample etc/snort/file_magic.conf
 include/snort/dynamic_output/bitop.h
 include/snort/dynamic_output/ipv6_port.h
 include/snort/dynamic_output/obfuscation.h
