@@ -5390,6 +5390,7 @@
     SUBDIR += violet
     SUBDIR += visualparadigm
     SUBDIR += vstr
+    SUBDIR += vtable-dumper
     SUBDIR += vtcl
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
