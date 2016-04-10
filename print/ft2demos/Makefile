@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.6
+PORTVERSION=	2.6.3
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION}
 
