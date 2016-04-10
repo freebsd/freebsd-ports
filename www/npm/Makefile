@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	2.14.7
-PORTREVISION=	2
+PORTVERSION=	3.8.6
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -13,6 +12,8 @@ COMMENT=	Node package manager
 LICENSE=	MIT
 
 RUN_DEPENDS=	gmake:devel/gmake
+
+CONFLICTS_INSTALL=	npm2-[0-9]*
 
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	NODE NODE_DEVEL NODE010 NODE012 NODE4
@@ -38,8 +39,7 @@ SHEBANG_FILES=	lib/utils/completion.sh \
 		node_modules/request/node_modules/node-uuid/benchmark/bench.sh \
 		scripts/clean-old.sh \
 		scripts/release.sh \
-		scripts/relocate.sh \
-		test/update-test.sh
+		scripts/relocate.sh
 
 NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:www/node-devel
 NODE_RUN_DEPENDS=	node>=0.8.0:www/node
