@@ -45,9 +45,15 @@ JAVA_ARCH = ${ARCH}
 
 do-build:
 	${MKDIR} ${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
-	${CP} ${LOCALBASE}/lib/libsnappyjava.so ${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven33/bin/mvn --offline -Dmaven.repo.local=${WRKDIR}/m2 clean package -Dhadoop.version=2.7.2 -Pyarn -Phadoop-2.6 -DskipTests
-	${JAR} uvf ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar -C ${WRKDIR}/snappy org
+	${CP} ${LOCALBASE}/lib/libsnappyjava.so \
+		${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${LOCALBASE}/share/java/maven33/bin/mvn --offline \
+		-Dmaven.repo.local=${WRKDIR}/m2 clean package \
+		-Dhadoop.version=2.7.2 -Pyarn -Phadoop-2.6 -DskipTests \
+		-Duser.home=${WRKDIR}
+	${JAR} uvf ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar \
+		-C ${WRKDIR}/snappy org
 
 post-build:
 	${RM} ${WRKSRC}/bin/*.cmd ${WRKSRC}/sbin/spark-daemon.sh.orig
