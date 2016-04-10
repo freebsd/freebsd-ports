@@ -16,27 +16,13 @@
 %%T%%/bin/tomcat-native.tar.gz
 %%T%%/bin/tool-wrapper.sh
 %%T%%/bin/version.sh
-@unexec if cmp -s %D/%%T%%/conf/catalina.policy %D/%%T%%/conf/catalina.policy.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.policy; fi
-%%T%%/conf/catalina.policy.%%CONF_EXT%%
-@exec [ -f %D/%%T%%/conf/catalina.policy ] || cp %D/%%T%%/conf/catalina.policy.%%CONF_EXT%% %D/%%T%%/conf/catalina.policy
-@unexec if cmp -s %D/%%T%%/conf/catalina.properties %D/%%T%%/conf/catalina.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.properties; fi
-%%T%%/conf/catalina.properties.%%CONF_EXT%%
-@exec [ -f %D/%%T%%/conf/catalina.properties ] || cp %D/%%T%%/conf/catalina.properties.%%CONF_EXT%% %D/%%T%%/conf/catalina.properties
-@unexec if cmp -s %D/%%T%%/conf/context.xml %D/%%T%%/conf/context.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/context.xml; else fi
-%%T%%/conf/context.xml.%%CONF_EXT%%
-@exec [ -f %D/%%T%%/conf/context.xml ] || cp %D/%%T%%/conf/context.xml.%%CONF_EXT%% %D/%%T%%/conf/context.xml
-@unexec if cmp -s %D/%%T%%/conf/logging.properties %D/%%T%%/conf/logging.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/logging.properties; fi
-%%T%%/conf/logging.properties.%%CONF_EXT%%
-@exec [ -f %D/%%T%%/conf/logging.properties ] || cp %D/%%T%%/conf/logging.properties.%%CONF_EXT%% %D/%%T%%/conf/logging.properties
-@unexec if cmp -s %D/%%T%%/conf/server.xml %D/%%T%%/conf/server.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server.xml; fi
-%%T%%/conf/server.xml.%%CONF_EXT%%
-@exec [ -f %D/%%T%%/conf/server.xml ] || cp %D/%%T%%/conf/server.xml.%%CONF_EXT%% %D/%%T%%/conf/server.xml
-@unexec if cmp -s %D/%%T%%/conf/tomcat-users.xml %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-users.xml; fi
-%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%
-@exec [ -f %D/%%T%%/conf/tomcat-users.xml ] || cp %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%% %D/%%T%%/conf/tomcat-users.xml
-@unexec if cmp -s %D/%%T%%/conf/web.xml %D/%%T%%/conf/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/web.xml; fi
-%%T%%/conf/web.xml.%%CONF_EXT%%
-@exec [ -f %D/%%T%%/conf/web.xml ] || cp %D/%%T%%/conf/web.xml.%%CONF_EXT%% %D/%%T%%/conf/web.xml
+@sample %%T%%/conf/catalina.policy.%%CONF_EXT%%%%T %%/conf/catalina.policy
+@sample %%T%%/conf/catalina.properties.%%CONF_EXT%% %%T%%/conf/catalina.properties
+@sample %%T%%/conf/context.xml.%%CONF_EXT%% %%T%%/conf/context.xml
+@sample %%T%%/conf/logging.properties.%%CONF_EXT%% %%T%%/conf/logging.properties
+@sample %%T%%/conf/server.xml.%%CONF_EXT%% %%T%%/conf/server.xml
+@sample %%T%%/conf/tomcat-users.xml.%%CONF_EXT%% %%T%%/conf/tomcat-users.xml
+@sample %%T%%/conf/web.xml.%%CONF_EXT%% %%T%%/conf/web.xml
 %%T%%/lib/annotations-api.jar
 %%T%%/lib/catalina-ant.jar
 %%T%%/lib/catalina-ha.jar

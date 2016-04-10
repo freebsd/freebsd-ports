@@ -1,21 +1,11 @@
-@unexec if cmp -s %D/%%ETCDIR%%/fastcgi_params-dist %D/%%ETCDIR%%/fastcgi_params; then rm -f %D/%%ETCDIR%%/fastcgi_params; fi
-%%ETCDIR%%/fastcgi_params-dist
-@exec if [ ! -f %D/%%ETCDIR%%/fastcgi_params ] ; then cp -p %D/%F %B/fastcgi_params; fi
+@sample %%ETCDIR%%/fastcgi_params-dist %%ETCDIR%%/fastcgi_params
 %%ETCDIR%%/koi-utf
 %%ETCDIR%%/koi-win
-@unexec if cmp -s %D/%%ETCDIR%%/scgi_params-dist %D/%%ETCDIR%%/scgi_params; then rm -f %D/%%ETCDIR%%/scgi_params; fi
-%%ETCDIR%%/scgi_params-dist
-@exec if [ ! -f %D/%%ETCDIR%%/scgi_params ] ; then cp -p %D/%F %B/scgi_params; fi
-@unexec if cmp -s %D/%%ETCDIR%%/uwsgi_params-dist %D/%%ETCDIR%%/uwsgi_params; then rm -f %D/%%ETCDIR%%/uwsgi_params; fi
-%%ETCDIR%%/uwsgi_params-dist
-@exec if [ ! -f %D/%%ETCDIR%%/uwsgi_params ] ; then cp -p %D/%F %B/uwsgi_params; fi
+@sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params
+@sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
 %%ETCDIR%%/win-utf
-@unexec if cmp -s %D/%%ETCDIR%%/mime.types-dist %D/%%ETCDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
-%%ETCDIR%%/mime.types-dist
-@exec if [ ! -f %D/%%ETCDIR%%/mime.types ] ; then cp -p %D/%F %B/mime.types; fi
-@unexec if cmp -s %D/%%ETCDIR%%/nginx.conf-dist %D/%%ETCDIR%%/nginx.conf; then rm -f %D/%%ETCDIR%%/nginx.conf; fi
-%%ETCDIR%%/nginx.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/nginx.conf ] ; then cp -p %D/%F %B/nginx.conf; fi
+@sample %%ETCDIR%%/mime.types-dist %%ETCDIR%%/mime.types
+@sample %%ETCDIR%%/nginx.conf-dist %%ETCDIR%%/nginx.conf
 %%WWWDATA%%@exec mkdir -p -m 755 %D/www/nginx-dist
 %%WWWDATA%%@exec if [ ! -d %D/www/nginx/ ] ; then ln -fs %D/www/nginx-dist %D/www/nginx; fi
 %%WWWDATA%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
