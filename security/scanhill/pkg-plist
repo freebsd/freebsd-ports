@@ -1,4 +1,2 @@
 bin/scanhill
-@unexec if cmp -s %D/etc/scanhill.conf-dist %D/etc/scanhill.conf; then rm -f %D/etc/scanhill.conf; fi
-etc/scanhill.conf-dist
-@exec [ -f %B/scanhill.conf ] || cp -f %B/%f %B/scanhill.conf
+@sample etc/scanhill.conf-dist etc/scanhill.conf

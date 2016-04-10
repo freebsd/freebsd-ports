@@ -1,8 +1,6 @@
 bin/screen
 %%MAN%%man/man1/screen.1.gz
-@unexec if cmp -s %D/etc/screenrc %D/%%EXAMPLESDIR%%/screenrc; then rm -f %D/etc/screenrc; else echo If permanently deleting this package, %%PREFIX%%/etc/screenrc must be removed manually; fi
-%%EXAMPLESDIR%%/screenrc
-@exec [ -f %D/etc/screenrc ] || cp %B/%f %D/etc/screenrc
+@sample %%EXAMPLESDIR%%/screenrc etc/screenrc
 %%DATADIR%%/utf8encodings/01
 %%DATADIR%%/utf8encodings/02
 %%DATADIR%%/utf8encodings/03

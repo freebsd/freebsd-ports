@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/portshaker.conf.sample-config %D/etc/portshaker.conf; then rm -f %D/etc/portshaker.conf; fi
-etc/portshaker.conf.sample-config
-@exec if [ ! -f %D/etc/portshaker.conf ] ; then cp -p %D/%F %B/portshaker.conf; fi
+@sample etc/portshaker.conf.sample-config etc/portshaker.conf
 etc/portshaker.d/bsd_sharp
 etc/portshaker.d/bsd_sharp_releng_2_0
 etc/portshaker.d/bsd_sharp_releng_2_2
