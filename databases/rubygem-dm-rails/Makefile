@@ -11,6 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Integrate DataMapper with Rails 3
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack>=3.0:www/rubygem-actionpack \
 		rubygem-dm-active_model>=1.2.0:databases/rubygem-dm-active_model \
@@ -18,7 +19,6 @@ RUN_DEPENDS=	rubygem-actionpack>=3.0:www/rubygem-actionpack \
 		rubygem-railties>=3.0:www/rubygem-railties
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
