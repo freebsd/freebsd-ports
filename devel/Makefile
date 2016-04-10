@@ -5427,6 +5427,7 @@
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += z80ex
+    SUBDIR += zeal
     SUBDIR += zookeeper
     SUBDIR += zpu-binutils
     SUBDIR += zpu-gcc
