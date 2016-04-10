@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/asdf-init.lisp.default %D/etc/asdf-init.lisp; then rm -f %D/etc/asdf-init.lisp; fi
-etc/asdf-init.lisp.default
-@exec [ -f %D/etc/asdf-init.lisp ] || cp %D/etc/asdf-init.lisp.default %D/etc/asdf-init.lisp
+@sample etc/asdf-init.lisp.default etc/asdf-init.lisp
 %%LIB32DIR%%/common-lisp/asdf/asdf-ecl.lisp
 %%LIB32DIR%%/common-lisp/asdf/asdf.asd
 %%LIB32DIR%%/common-lisp/asdf/asdf.lisp
