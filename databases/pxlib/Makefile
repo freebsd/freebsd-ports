@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pxlib
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.6.6
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -29,12 +28,10 @@ MANPAGES_BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man \
 			docbook2man:textproc/docbook-utils
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=	gettext
+INSTALL_TARGET=	install-strip
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.include <bsd.port.options.mk>
-
-pre-build:
-.if !${PORT_OPTIONS:MMANPAGES}
+pre-build-MANPAGES-off:
 	${REINPLACE_CMD} -e 's/^DOCDIR =.*/DOCDIR =/' ${WRKSRC}/Makefile
-.endif
 
 .include <bsd.port.mk>
