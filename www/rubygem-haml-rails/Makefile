@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Haml generator for Rails
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack>=3.1:www/rubygem-actionpack \
 		rubygem-activesupport>=3.1:devel/rubygem-activesupport \
@@ -18,7 +19,6 @@ RUN_DEPENDS=	rubygem-actionpack>=3.1:www/rubygem-actionpack \
 PORTSCOUT=	limit:0.4
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
