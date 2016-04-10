@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/bird6.conf.example %D/etc/bird6.conf; then rm -f %D/etc/bird6.conf; fi
-etc/bird6.conf.example
-@exec if [ ! -f %D/etc/bird6.conf ] ; then cp -p %D/%F %B/bird6.conf; fi
+@sample etc/bird6.conf.example etc/bird6.conf
 sbin/bird6
 sbin/birdc6
 sbin/birdcl6
