@@ -394,6 +394,7 @@
     SUBDIR += v4l_compat
     SUBDIR += vamps
     SUBDIR += vapoursynth
+    SUBDIR += vapoursynth-l-smash-works
     SUBDIR += vcdgear
     SUBDIR += vcdimager
     SUBDIR += vcdpad
