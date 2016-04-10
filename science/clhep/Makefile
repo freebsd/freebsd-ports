@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clhep
-PORTVERSION=	2.2.0.8
+PORTVERSION=	2.3.1.1
 CATEGORIES=	science
 MASTER_SITES=	http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/
 
@@ -19,6 +19,14 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000000
+USES+=	compiler:c++11-lib
+.else
+USES+=	compiler:openmp
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
