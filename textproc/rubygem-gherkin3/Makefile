@@ -12,6 +12,9 @@ COMMENT=	Gherkin parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use textproc/rubygem-gherkin instead
+EXPIRATION_DATE=2016-04-30
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
