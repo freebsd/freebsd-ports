@@ -15,6 +15,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libwebp.so:graphics/webp
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
+BROKEN_sparc64=	cannot build: uses i386 assembler
+
 USE_GL=		gl
 USE_GNOME=	libxml2 libxslt
 USE_PERL5=	build
