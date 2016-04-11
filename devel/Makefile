@@ -765,6 +765,7 @@
     SUBDIR += guiloader-c++
     SUBDIR += gumbo
     SUBDIR += gvfs
+    SUBDIR += gvp
     SUBDIR += gwenhywfar
     SUBDIR += gwenhywfar-fox16
     SUBDIR += gwenhywfar-gtk2
