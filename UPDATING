@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160411:
+  AFFECTS: Users if databases/influxdb
+  AUTHOR: cheffo@freebsd-bg.org
+
+  To upgrade to InfluxDB 0.12, you must be on version 0.10 and all shards must
+  be in TSM format (the default storage engine starting with InfluxDB 0.10).
+  See the 0.10 documentation [1] for how to convert b1 and bz1 shards to TSM. If
+  any b1 or bz1 shards are present, InfluxDB 0.12 will not start.
+
+  [1] https://docs.influxdata.com/influxdb/v0.10/administration/upgrading/#convert-b1-and-bz1-shards-to-tsm1
+
 20160406:
   AFFECTS: All users of www/pecl-http
   AUTHOR: bofh
