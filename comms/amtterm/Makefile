@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amtterm
-PORTVERSION=	1.3
-PORTREVISION=	3
+PORTVERSION=	1.4
 CATEGORIES=	comms
 MASTER_SITES=	https://www.kraxel.org/releases/${PORTNAME}/
 
