@@ -1,0 +1,9 @@
+Test::Requires::Git checks if the version of Git available for testing meets the
+given requirements.
+
+The "current git" is obtained by running git --version (so the first git binary
+found in the PATH will be tested).
+
+If the checks fail, then all tests will be skipped.
+
+WWW: http://search.cpan.org/dist/Test-Requires-Git/
