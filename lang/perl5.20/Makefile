@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
@@ -233,10 +233,15 @@ post-patch-PTHREAD-off:
 		${WRKSRC}/hints/freebsd.sh
 .endif
 
-.if ${CC} == /nxb-bin/usr/bin/cc
 post-build:
+	@${REINPLACE_CMD} -e '/^lddlflags/s|-L${WRKSRC} ||' \
+		${WRKSRC}/lib/Config_heavy.pl
+.if ${CC} == /nxb-bin/usr/bin/cc
 	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
 		${WRKSRC}/lib/Config.pm ${WRKSRC}/lib/Config_heavy.pl
+# Restore Config.pm's timestamp so that Perl's build system does not think it
+# needs to rebuild everything.
+	@${TOUCH} -r ${WRKSRC}/lib/Config.pm.bak ${WRKSRC}/lib/Config.pm
 .endif
 
 post-install:
