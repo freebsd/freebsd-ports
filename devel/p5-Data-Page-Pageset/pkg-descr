@@ -1,0 +1,4 @@
+Data::Page::Pageset is a generic pager object, so it's very
+similar to Data::Page and Data::Pageset. 
+
+WWW: http://search.cpan.org/dist/Data-Page-Pageset/

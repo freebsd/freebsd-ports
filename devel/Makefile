@@ -2004,6 +2004,7 @@
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
+    SUBDIR += p5-Data-Page-Pageset
     SUBDIR += p5-Data-ParseBinary
     SUBDIR += p5-Data-Path
     SUBDIR += p5-Data-Peek
