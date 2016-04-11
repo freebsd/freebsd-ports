@@ -740,6 +740,7 @@
     SUBDIR += goprotobuf
     SUBDIR += gorm
     SUBDIR += gperf
+    SUBDIR += gpm
     SUBDIR += gprbuild
     SUBDIR += gps
     SUBDIR += gpsim
