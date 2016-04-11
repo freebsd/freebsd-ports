@@ -1,20 +1,11 @@
 # $FreeBSD$
 #
-# Note by Clement Laforet: (to generate PLIST_SUB entries for modules)
-#	gsed 's/^\(.*\)mod\(.*\)\.so/%%\MOD\U\2%%\L\1mod\2\.so/' pkg-plist > tmp
-#	mv tmp pkg-plist
-#
-
 # =============================================
 # Maintainer note for OPTION handling:
 # To set additional option use
 #    PORT_OPTIONS+=
-# To unset an OPTION, even the OPTION is set in OPTIONS_FILE use
-#    WITHOUT_MODULES+=
-#  Using OPTIONS_EXCLUDE and OPTIONS_OVERRIDE do not work as expected
-#  if the OPTION is enabled by the user, therefore we calculate
-#  them in bsd.apache.mk with help of WITHOUT_MODULES
-#  The other methode is to set IGNORE's and force the user to adjust OPTIONS
+# To set / unset an OPTION, even the OPTION is set / unset in OPTIONS_FILE use
+#    WITH="MODULE1 MODULE2 ..." or WITHOUT="MODULE1 MODULE2 ..."
 
 .if defined(_PREMKINCLUDED)
 
@@ -37,11 +28,6 @@ IGNORE=	SESSION_CRYPTO requires APR-util to have crypto openssl support build in
 .endif	# exists APU_CONFIG
 
 # =============================================
-# if build with shared MPM the last module will be activated
-# see apache issue 53882
-
-# XXX in case we use OPTIONS for MPM
-# we do not have a WITH_MPM variable
 .if ${PORT_OPTIONS:MMPM_SHARED}
 SUB_LIST+=		MPM_FALLBACK_CHECK=""
 PLIST_SUB+=		MPM_SHARED=""
@@ -51,17 +37,7 @@ SUB_LIST+=		MPM_FALLBACK_CHECK="\#"
 PLIST_SUB+=		MPM_SHARED="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MMPM_PREFORK}
-CONFIGURE_ARGS+=	--with-mpm=prefork
-.elif ${PORT_OPTIONS:MMPM_WORKER}
-CONFIGURE_ARGS+=	--with-mpm=worker
-.elif ${PORT_OPTIONS:MMPM_EVENT}
-CONFIGURE_ARGS+=	--with-mpm=event
-.else
-IGNORE=	Unknown MPM:
-.endif
 # =============================================
-
 # build develop/example modules only with additional confirmation
 .for DEVMOD in ${EXAMPLE_MODULES}
 .  if ${PORT_OPTIONS:M${DEVMOD}}
@@ -92,27 +68,11 @@ WITH_EXCEPTION_HOOK=	yes
 CONFIGURE_ARGS+=	--enable-exception-hook
 .endif
 
-# watchdog modules
-.if ! ${PORT_OPTIONS:MWATCHDOG} || ! ${PORT_OPTIONS:MSTATUS}
-.  if ${PORT_OPTIONS:MHEARTBEAT}
-IGNORE=	HEARTBEAT requires WATCHDOG and STATUS
-.  elif ${PORT_OPTIONS:MHEARTMONITOR}
-IGNORE=	HEARTMONITOR requires WATCHDOG and STATUS
-.  endif
-.endif
-.if ${PORT_OPTIONS:MLBMETHOD_HEARTBEAT} && ! ${PORT_OPTIONS:MHEARTMONITOR}
-IGNORE=	LBMETHOD_HEARTBEAT requires WATCHDOG, STATUS and HEARTMONITOR
-.endif
-
 .if ${PORT_OPTIONS:MAUTH_BASIC} || ${PORT_OPTIONS:MAUTH_DIGEST}
 .  if !${APACHE_MODULES:MAUTHN*}
 IGNORE=	AUTH_BASIC and AUTH_DIGEST need at least one AUTHN provider
 .  endif
 .endif
-
-.  if ${PORT_OPTIONS:MAUTHN_DBD} && ! ${PORT_OPTIONS:MDBD}
-IGNORE=	AUTHN_DBD requires DBD
-.  endif
 
 .if ${PORT_OPTIONS:MAUTH_BASIC}
 .  if !${APACHE_MODULES:MAUTHZ*}
