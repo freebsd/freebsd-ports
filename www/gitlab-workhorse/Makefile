@@ -5,7 +5,7 @@ PORTNAME=	gitlab-workhorse
 PORTVERSION=	0.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	http://ports.toco-domains.de/
+MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=${DISTVERSIONPREFIX}${PORTVERSION}&dummy=/
 
 MAINTAINER=	ports@toco-domains.de
 COMMENT=	Smart reverse proxy for GitLab
@@ -19,6 +19,9 @@ PLIST_FILES=	bin/gitlab-workhorse \
 		bin/gitlab-zip-cat \
 		bin/gitlab-zip-metadata
 PLIST_DIRS=	%%WWWDIR%%
+
+post-extract:
+	@${MV} ${WRKDIR}/${DISTNAME}-* ${WRKDIR}/${DISTNAME}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}
