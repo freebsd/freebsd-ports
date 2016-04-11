@@ -22,6 +22,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		charsetfix iconv libtool localbase readline shebangfix
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	ac_cv_type_max_align_t=yes
 
 PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL \
 		MIRRORS NEWS README README.debug-levels README.modules \
