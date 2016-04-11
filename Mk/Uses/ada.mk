@@ -18,6 +18,8 @@ ADAXX=	gcc5	# framework default
 
 . if ${ada_ARGS:M49}
 ADAXX=	gcc
+. elif ${ada_ARGS:M5}
+ADAXX=	gcc5
 . elif ${ada_ARGS:M6}
 ADAXX=	gcc6
 . elif defined(ADA_DEFAULT)
