@@ -9,7 +9,7 @@ COMMENT=	Server Density Agent for FreeBSD
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	$(LOCALBASE)/sbin/sysinfo:$(PORTSDIR)/sysutils/sysinfo
+RUN_DEPENDS=	$(LOCALBASE)/sbin/sysinfo:sysutils/sysinfo
 
 USERS=		sd-agent
 GROUPS=		sd-agent
