@@ -11,8 +11,8 @@ COMMENT=	Go Package Manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		go:${PORTSDIR}/lang/go
+RUN_DEPENDS=	bash:shells/bash \
+		go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pote
