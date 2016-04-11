@@ -36,7 +36,7 @@ bin/shasum%%BINSUFFIX%%
 bin/splain%%BINSUFFIX%%
 bin/xsubpp%%BINSUFFIX%%
 bin/zipdetails%%BINSUFFIX%%
-etc/man.d/perl%%PERL_VER%%.conf
+etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/AnyDBM_File.pm
 %%PRIV_LIB%%/App/Cpan.pm
 %%PRIV_LIB%%/App/Prove.pm

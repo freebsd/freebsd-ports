@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
@@ -201,6 +201,7 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		SITE_PERL=${SITE_PERL_REL} \
 		SITE_ARCH=${SITE_ARCH_REL} \
 		PRIV_LIB=${_PRIV_LIB} \
+		PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 		ARCH_LIB=${_ARCH_LIB}
 
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.
@@ -272,6 +273,6 @@ post-install:
 			${STRIP_CMD} $$f; \
 			${CHMOD} 444 $$f; \
 		done
-	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
+	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PKGNAMESUFFIX}.conf
 
 .include <bsd.port.mk>
