@@ -23,7 +23,6 @@ NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/config
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/config
 	${RM} -r ${WRKSRC}/config
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \*  ${STAGEDIR}${WWWDIR}/)
 
