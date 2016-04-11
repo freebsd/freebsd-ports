@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mail-GnuPG
-PORTVERSION=	0.21
-PORTREVISION=	1
+PORTVERSION=	0.22
 CATEGORIES=	mail security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +15,7 @@ BUILD_DEPENDS=	p5-GnuPG-Interface>=0:security/p5-GnuPG-Interface \
 		p5-Mail-Tools>=0:mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
