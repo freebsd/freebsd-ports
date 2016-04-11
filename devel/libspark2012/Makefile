@@ -12,6 +12,6 @@ COMMENT=	SPARK 2012 Spark.Ada library
 
 LICENSE=	GPLv3
 
-USES=		ada tar:bzip2
+USES=		ada:5 tar:bzip2
 
 .include <bsd.port.mk>
