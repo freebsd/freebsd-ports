@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	alchemist.el
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 
@@ -26,6 +26,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/alchemist-server/*.exs ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/alchemist-server
 	cd ${WRKSRC}/alchemist-server/lib && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/alchemist-server/lib
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.md ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
