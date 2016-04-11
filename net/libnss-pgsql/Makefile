@@ -13,7 +13,7 @@ COMMENT=	NSS module using a PostgreSQL database for backend
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
+BUILD_DEPENDS=	xmlto:textproc/xmlto
 
 USES=		autoreconf gmake libtool pgsql tar:tgz
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --includedir=${PREFIX}/include --libdir=${PREFIX}/lib --with-docdir=${DOCSDIR}
