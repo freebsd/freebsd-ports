@@ -1448,7 +1448,6 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/pod/perl5220delta.pod
 %%PRIV_LIB%%/pod/perl5221delta.pod
 %%PRIV_LIB%%/pod/perl5230delta.pod
-%%PRIV_LIB%%/pod/perl52310delta.pod
 %%PRIV_LIB%%/pod/perl5231delta.pod
 %%PRIV_LIB%%/pod/perl5232delta.pod
 %%PRIV_LIB%%/pod/perl5233delta.pod
@@ -1458,6 +1457,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/pod/perl5237delta.pod
 %%PRIV_LIB%%/pod/perl5238delta.pod
 %%PRIV_LIB%%/pod/perl5239delta.pod
+%%PRIV_LIB%%/pod/perl5240delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -2126,7 +2126,6 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%MAN1%%/perl5220delta.1.gz
 %%MAN1%%/perl5221delta.1.gz
 %%MAN1%%/perl5230delta.1.gz
-%%MAN1%%/perl52310delta.1.gz
 %%MAN1%%/perl5231delta.1.gz
 %%MAN1%%/perl5232delta.1.gz
 %%MAN1%%/perl5233delta.1.gz
@@ -2136,6 +2135,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%MAN1%%/perl5237delta.1.gz
 %%MAN1%%/perl5238delta.1.gz
 %%MAN1%%/perl5239delta.1.gz
+%%MAN1%%/perl5240delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
