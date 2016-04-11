@@ -15,11 +15,11 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Data-Page>=2:${PORTSDIR}/databases/p5-Data-Page \
-	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
-	p5-Carp>0:${PORTSDIR}/devel/p5-Carp
+	p5-Data-Page>=2:databases/p5-Data-Page \
+	p5-Class-Accessor>0:devel/p5-Class-Accessor \
+	p5-Carp>0:devel/p5-Carp
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure
