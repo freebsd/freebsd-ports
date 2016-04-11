@@ -320,6 +320,7 @@
     SUBDIR += sysmon
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
+    SUBDIR += telegraf
     SUBDIR += torrus
     SUBDIR += unifi3
     SUBDIR += unifi4
