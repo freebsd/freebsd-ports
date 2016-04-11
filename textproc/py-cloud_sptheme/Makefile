@@ -3,6 +3,7 @@
 
 PORTNAME=	cloud_sptheme
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,6 +41,9 @@ DOCSRCDIR4=	${DOCSRCDIR2}/_static
 DOC_FILES4=	*.css *.gif *.js *.png *.svg
 
 OPTIONS_DEFINE=	DOCS
+
+post-extract:
+	@${CHMOD} 644 ${WRKSRC}/cloud_sptheme/themes/greencloud/theme.conf
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR2}
