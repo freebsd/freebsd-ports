@@ -10,7 +10,7 @@ DISTNAME=	whois3-${PORTVERSION}
 MAINTAINER=	lerik@nolink.net
 COMMENT=	The RIPE whois client version 3
 
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
