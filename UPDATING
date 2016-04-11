@@ -14,7 +14,10 @@ you update your ports collection, before attempting any port upgrades.
   See the 0.10 documentation [1] for how to convert b1 and bz1 shards to TSM. If
   any b1 or bz1 shards are present, InfluxDB 0.12 will not start.
 
+  Next, you need to update your metastore *before updating to 0.12.* [2]
+
   [1] https://docs.influxdata.com/influxdb/v0.10/administration/upgrading/#convert-b1-and-bz1-shards-to-tsm1
+  [2] https://docs.influxdata.com/influxdb/v0.12/administration/upgrading/
 
 20160406:
   AFFECTS: All users of www/pecl-http
