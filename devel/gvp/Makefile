@@ -11,8 +11,8 @@ COMMENT=	Go Versioning Manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		go:${PORTSDIR}/lang/go
+RUN_DEPENDS=	bash:shells/bash \
+		go:lang/go
 
 USES=		shebangfix
 
