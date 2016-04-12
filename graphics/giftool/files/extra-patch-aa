@@ -1,27 +1,17 @@
-*** main.c.orig	Sat Mar  8 06:34:28 1997
---- main.c	Sat Mar  8 06:37:33 1997
-***************
-*** 1275,1281 ****
-  	exit(1);
-  }
-  
-! main(int argc, char *argv[]) 
-  {
-  	int		c, i;
-  	int		batchMode = 0;
---- 1275,1281 ----
-  	exit(1);
-  }
-  
-! int main(int argc, char *argv[]) 
-  {
-  	int		c, i;
-  	int		batchMode = 0;
-***************
-*** 1410,1413 ****
---- 1410,1414 ----
-  			GIFFree(stream);
-  		}
-  	}
-+ 	return 0;
-  }
+--- main.c.orig	1994-12-07 18:31:59 UTC
++++ main.c
+@@ -1275,7 +1275,7 @@ static void usage()
+ 	exit(1);
+ }
+ 
+-main(int argc, char *argv[]) 
++int main(int argc, char *argv[]) 
+ {
+ 	int		c, i;
+ 	int		batchMode = 0;
+@@ -1410,4 +1410,5 @@ main(int argc, char *argv[]) 
+ 			GIFFree(stream);
+ 		}
+ 	}
++	return 0;
+ }
