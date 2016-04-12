@@ -96,4 +96,7 @@ post-install::
 	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${STAGEDIR}${DOCSDIR}/contrib/${i}
 .endfor
 
+regression-test: all
+	cd ${WRKSRC} && ${DO_MAKE_BUILD} check
+
 .include <bsd.port.post.mk>
