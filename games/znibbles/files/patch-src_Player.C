@@ -1,5 +1,5 @@
---- src/Player.C	Tue May 11 12:17:08 1999
-+++ src/Player.C	Sat Oct 26 00:41:14 2002
+--- src/Player.C.orig	1999-05-11 02:17:08 UTC
++++ src/Player.C
 @@ -36,7 +36,7 @@
  #include <string.h>
  #include <time.h>
@@ -9,7 +9,7 @@
  
  #include "Player.H"
  
-@@ -78,7 +78,7 @@
+@@ -78,7 +78,7 @@ void Player::add_description(Trame &t)
  void Player::read_description(Trame &t)
  {
    if (t.get_char() != PLAYER_DESC) {
@@ -18,7 +18,7 @@
      exit(1);
    }
  
-@@ -98,10 +98,10 @@
+@@ -98,10 +98,10 @@ void Player::read_description(Trame &t)
  // debug: print a brief representation of the player
  void Player::display()
  {

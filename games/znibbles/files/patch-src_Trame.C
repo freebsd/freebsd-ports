@@ -1,5 +1,5 @@
---- src/Trame.C	Mon May 10 08:57:09 1999
-+++ src/Trame.C	Sat Oct 26 00:41:28 2002
+--- src/Trame.C.orig	1999-05-09 22:57:09 UTC
++++ src/Trame.C
 @@ -39,7 +39,7 @@
  # include <config.h>
  #endif
@@ -9,7 +9,7 @@
  
  #include <stdlib.h>
  #include <stdio.h>
-@@ -93,11 +93,11 @@
+@@ -93,11 +93,11 @@ int Trame::send_to(int socket_number)
  #endif
  
  #ifdef DEBUG_TRACE
@@ -23,7 +23,7 @@
  #endif
  
    // always write at least 4 bytes
-@@ -161,19 +161,19 @@
+@@ -161,19 +161,19 @@ int Trame::receive_from(int socket_numbe
      return -1;
    
    if (retval <= 0) {
@@ -48,7 +48,7 @@
        break;
      }
  
-@@ -196,14 +196,14 @@
+@@ -196,14 +196,14 @@ int Trame::receive_from(int socket_numbe
      
      if (xx < 0) {
        if (errno == 0)
@@ -67,7 +67,7 @@
  	return -1;
        }
      }
-@@ -212,11 +212,11 @@
+@@ -212,11 +212,11 @@ int Trame::receive_from(int socket_numbe
    cursize = len;
    
  #ifdef DEBUG_TRACE
@@ -81,7 +81,7 @@
  #endif
    
  #ifdef DEBUG_LOAD
-@@ -381,7 +381,7 @@
+@@ -381,7 +381,7 @@ short Trame::get_short()
      idx += 2;
    }
    else {
@@ -90,7 +90,7 @@
      sh = -1;
    }
    
-@@ -408,7 +408,7 @@
+@@ -408,7 +408,7 @@ int Trame::peek_int()
      return val;
    }
    else
@@ -99,7 +99,7 @@
    
    return -1;
  }
-@@ -423,7 +423,7 @@
+@@ -423,7 +423,7 @@ int Trame::get_int()
      idx += 4;
    }
    else {
@@ -108,7 +108,7 @@
      sh = -1;
    }
  
-@@ -454,10 +454,10 @@
+@@ -454,10 +454,10 @@ char * Trame::get_string()
  
  void Trame::dump_left()
  {

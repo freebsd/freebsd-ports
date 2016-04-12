@@ -1,6 +1,6 @@
---- src/GTK/NibblesArea.C	Wed May 12 11:48:25 1999
-+++ src/GTK/NibblesArea.C	Sat Oct 26 00:37:26 2002
-@@ -323,7 +323,7 @@
+--- src/GTK/NibblesArea.C.orig	1999-05-12 01:48:25 UTC
++++ src/GTK/NibblesArea.C
+@@ -323,7 +323,7 @@ gint NibblesArea::draw_exp_cb(GtkWidget 
  			      GdkEventExpose *event, 
  			      NibblesArea *mythis)
  {

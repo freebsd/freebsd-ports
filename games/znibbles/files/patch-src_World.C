@@ -1,6 +1,6 @@
---- src/World.C	Wed May 12 11:45:46 1999
-+++ src/World.C	Sat Oct 26 00:41:48 2002
-@@ -145,8 +145,8 @@
+--- src/World.C.orig	1999-05-12 01:45:46 UTC
++++ src/World.C
+@@ -145,8 +145,8 @@ _Object& World::lookup_object(int obj_id
  
    if (!p) { // here it's really bad. Have to raise an exception !
      if (debug)
@@ -11,7 +11,7 @@
      return * objects.front(); /// @@ NNNNOOOOOONNNNNNNNNNNNNNNNNNNNNNNN!
    }
  
-@@ -182,7 +182,7 @@
+@@ -182,7 +182,7 @@ _Object * World::read_new_object(Trame &
      break;
    default:
      if (debug)
@@ -20,7 +20,7 @@
      break;
    }
  
-@@ -201,7 +201,7 @@
+@@ -201,7 +201,7 @@ void World::remove_object(int obj_id)
      remove_object0(p);
    else {
      if (debug)
@@ -29,7 +29,7 @@
    }
  }
  
-@@ -243,8 +243,8 @@
+@@ -243,8 +243,8 @@ Player& World::lookup_player(int player_
  
    if (!p) { // la, c'est tres grave. Faut faire une exception!
      if (debug)
@@ -40,7 +40,7 @@
      return * new Player(*this);  // <- en attendant mieux.
    }
  
-@@ -269,7 +269,7 @@
+@@ -269,7 +269,7 @@ void World::server_add_player(int socknu
  /* unlimited number of players!
    if (nbplayers >= maxplayers) {
      close(socknum);
@@ -49,7 +49,7 @@
      return;
    }
  */
-@@ -278,16 +278,16 @@
+@@ -278,16 +278,16 @@ void World::server_add_player(int socknu
    trame.set_timeout(5000);
    if (-1 == trame.receive_from(socknum)) {
      if (debug)
@@ -70,7 +70,7 @@
      return;
    }
    trame.get_char();
-@@ -321,7 +321,7 @@
+@@ -321,7 +321,7 @@ void World::server_add_player_other(int 
    trameZ.set_timeout(1);
  
    if (debug)
@@ -79,7 +79,7 @@
  
    Player& p = * new Player(*this, socknum);
  
-@@ -357,8 +357,8 @@
+@@ -357,8 +357,8 @@ void World::remove_player(int player_id)
  
    if (!p) { // la, c'est tres grave. Faut faire une exception!
      if (debug)
@@ -90,7 +90,7 @@
      return;
    }
  
-@@ -513,11 +513,11 @@
+@@ -513,11 +513,11 @@ void World::own_cycle()
  	  && ((Movable *) objects(p))->player_id == 0)
  	nbworm++;
      
@@ -104,7 +104,7 @@
        Movable& worm = * new Movable(*this);
        worm.auto_position(map);
        worm.add_type(map);
-@@ -569,7 +569,7 @@
+@@ -569,7 +569,7 @@ void World::read_description(Trame& t)  
  {
    if (t.get_char() != WORLD_DESC) {
      if (debug)
@@ -113,7 +113,7 @@
      exit(1);
    }
  
-@@ -708,11 +708,11 @@
+@@ -708,11 +708,11 @@ void World::read_changes(Trame &t)
      
      default:
        if (debug)
@@ -128,7 +128,7 @@
        t.dump_left();
        break;
      }
-@@ -743,16 +743,16 @@
+@@ -743,16 +743,16 @@ void World::build_maptype() 
  // for debug purposes
  void World::display()
  {
@@ -150,7 +150,7 @@
  
    for (Pix p = objects.first(); p; objects.next(p))
       objects(p)->display();
-@@ -826,7 +826,7 @@
+@@ -826,7 +826,7 @@ void World::get_client_responses()
  
      if (retval < 0) {
        if (debug)
@@ -159,7 +159,7 @@
        return; // bah violent comme d'hab.
      }
  
-@@ -915,7 +915,7 @@
+@@ -915,7 +915,7 @@ void World::read_player_response(Player&
  	int newdir = t.get_char();
  	
  	if (debug)
@@ -168,7 +168,7 @@
  	
  	Movable & mv = (Movable &) lookup_object(worm_id);
  	Player * other_player = NULL;
-@@ -928,8 +928,8 @@
+@@ -928,8 +928,8 @@ void World::read_player_response(Player&
  	    || other_player->socket_number != p.socket_number) {
  	  
  	  if (debug)
@@ -179,7 +179,7 @@
  	}
  	else {
  	  if (!paused) {
-@@ -954,12 +954,12 @@
+@@ -954,12 +954,12 @@ void World::read_player_response(Player&
  
      case TEXT_MESSAGE: 
        {
@@ -194,7 +194,7 @@
  
  	if (!dest_id) { // broadcast message
  	  cycle_trame.put_char(TEXT_MESSAGE);
-@@ -1039,16 +1039,16 @@
+@@ -1039,16 +1039,16 @@ void World::read_player_response(Player&
        
      case TRAME_ERROR:
        if (debug)
@@ -216,7 +216,7 @@
  	t.dump_left();
        }
        break;
-@@ -1117,7 +1117,7 @@
+@@ -1117,7 +1117,7 @@ Pix World::lookup_object0(int obj_id)
  
  void World::remove_object0(Pix& p)
  {
