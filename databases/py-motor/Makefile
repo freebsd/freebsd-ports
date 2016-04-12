@@ -12,6 +12,8 @@ COMMENT=	Non-blocking MongoDB driver for Tornado or asyncio
 
 LICENSE=	APACHE20
 
+RUN_DEPENDS=    ${PYTHON_SITELIBDIR}/pymongo-2.8-py${PYTHON_VER}.egg-info/PKG-INFO:databases/pymongo28
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
