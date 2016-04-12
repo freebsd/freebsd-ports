@@ -11,9 +11,9 @@ COMMENT=	ncurses mpd client, clone of ncmpc with some new features
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
+		libfftw3.so:math/fftw3 \
+		libboost_filesystem.so:devel/boost-libs
 
 USES=		compiler:c++11-lib iconv libtool ncurses:port pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
@@ -34,19 +34,19 @@ PLIST_FILES=	bin/ncmpcpp \
 		man/man1/ncmpcpp.1.gz
 PORTDOCS=	AUTHORS COPYING NEWS bindings config
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	curl
 
 CLOCK_CONFIGURE_ENABLE=	clock
 
 UTF8_CONFIGURE_ENABLE=	unicode
 
-TAGLIB_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
 TAGLIB_CONFIGURE_WITH=	taglib
 
 OUTPUTS_CONFIGURE_ENABLE=	outputs
 
-VISUALIZER_BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
+VISUALIZER_BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 VISUALIZER_CONFIGURE_ENABLE=	visualizer
 
 .include <bsd.port.pre.mk>

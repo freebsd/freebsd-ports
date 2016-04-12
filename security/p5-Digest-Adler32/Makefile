@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Adler32 hash algorithm
 
-BUILD_DEPENDS=	p5-Digest>=0:${PORTSDIR}/security/p5-Digest
+BUILD_DEPENDS=	p5-Digest>=0:security/p5-Digest
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

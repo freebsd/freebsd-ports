@@ -20,7 +20,7 @@ GO_PKGNAME=	github.com/ant0ine/go-json-rest
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${GO_LIBDIR}/${GO_PKGNAME}
 	@${INSTALL_DATA} ${GO_WRKDIR_PKG}/${GO_PKGNAME}/trie.a \
-	    	${STAGEDIR}${PREFIX}/${GO_LIBDIR}/${GO_PKGNAME}
+		${STAGEDIR}${PREFIX}/${GO_LIBDIR}/${GO_PKGNAME}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"

@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface Template Toolkit to Lingua::EN::Inflect module
 
-BUILD_DEPENDS=	p5-Template-Toolkit>0:${PORTSDIR}/www/p5-Template-Toolkit \
- 		p5-HTML-SuperForm>0:${PORTSDIR}/textproc/p5-HTML-SuperForm
+BUILD_DEPENDS=	p5-Template-Toolkit>0:www/p5-Template-Toolkit \
+		p5-HTML-SuperForm>0:textproc/p5-HTML-SuperForm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

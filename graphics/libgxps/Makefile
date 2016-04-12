@@ -10,9 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject based library for rendering XPS documents
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libtiff.so:graphics/tiff \
+		liblcms2.so:graphics/lcms2
 
 USES=		gettext gmake jpeg libtool libarchive pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes

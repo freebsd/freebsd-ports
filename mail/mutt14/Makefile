@@ -51,12 +51,12 @@ PKGNAMESUFFIX=	14-lite
 
 .include <bsd.port.options.mk>
 
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 .if defined(PACKAGE_BUILDING) && !defined (MUTT_LITE)
 WITH_SLANG=	yes
-BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell \
-		urlview:${PORTSDIR}/textproc/urlview
+BUILD_DEPENDS=	ispell:textproc/aspell-ispell
+RUN_DEPENDS+=	ispell:textproc/aspell-ispell \
+		urlview:textproc/urlview
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -70,7 +70,7 @@ USES+=	iconv
 .endif
 
 .if ${PORT_OPTIONS:MSLANG}
-LIB_DEPENDS+=	libslang.so:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS+=	libslang.so:devel/libslang2
 .elif ${PORT_OPTIONS:MNCURSES}
 USES+=	ncurses:port
 .else
@@ -81,8 +81,8 @@ USES+=	ncurses
 IGNORE=	the SASL support for mutt has been withdrawn. Please use the mutt-devel port instead
 .endif
 .if ${PORT_OPTIONS:MMUTT_XFACE}
-PATCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/news/slrnface:extract
-RUN_DEPENDS+=	slrnface:${PORTSDIR}/news/slrnface
+PATCH_DEPENDS+=	${NONEXISTENT}:news/slrnface:extract
+RUN_DEPENDS+=	slrnface:news/slrnface
 PKGMESSAGE=	${PKGDIR}/pkg-message.xface
 .endif
 .endif
@@ -128,7 +128,7 @@ CFLAGS+=	-I${NCURSESINC}
 .endif
 .if ${PORT_OPTIONS:MGSSAPI}
 .if exists(${LOCALBASE}/bin/gss-client)
-LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		libgssapi_krb5.so:security/krb5
 CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
 .elif (defined(MAKE_KERBEROS5)) || exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-gss

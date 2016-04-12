@@ -35,7 +35,7 @@ NLS_USES=	gettext
 
 .if ${PORT_OPTIONS:MGNUTLS}
 PLIST_SUB+=	GNUTLS=""
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 .else
 PLIST_SUB+=	GNUTLS="@comment "
 .endif
@@ -63,7 +63,7 @@ PLIST_SUB+=	OPENSSL="@comment "
 
 .if ${PORT_OPTIONS:MPCRE}
 PLIST_SUB+=	PCRE=""
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 .else
 PLIST_SUB+=	PCRE="@comment "
 .endif
@@ -76,7 +76,7 @@ PLIST_SUB+=	POSIX="@comment "
 
 .if ${PORT_OPTIONS:MSASL}
 PLIST_SUB+=	SASL=""
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:security/cyrus-sasl2
 .else
 PLIST_SUB+=	SASL="@comment "
 .endif
@@ -96,7 +96,7 @@ PLIST_SUB+=	STATS="@comment "
 
 .if ${PORT_OPTIONS:MTRE}
 PLIST_SUB+=	TRE=""
-LIB_DEPENDS+=	libtre.so:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS+=	libtre.so:textproc/libtre
 .else
 PLIST_SUB+=	TRE="@comment "
 .endif

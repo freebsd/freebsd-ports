@@ -11,9 +11,9 @@ COMMENT=	Generic command line non-JVM Apache Kafka producer and consumer
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		pkg-config:${PORTSDIR}/devel/pkgconf
-LIB_DEPENDS=	librdkafka.so:${PORTSDIR}/net/librdkafka
+BUILD_DEPENDS=	bash:shells/bash \
+		pkg-config:devel/pkgconf
+LIB_DEPENDS=	librdkafka.so:net/librdkafka
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	edenhill

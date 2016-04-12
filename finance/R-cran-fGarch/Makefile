@@ -13,9 +13,9 @@ COMMENT=	Autoregressive Conditional Heteroskedastic Modelling
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-timeDate>0:${PORTSDIR}/finance/R-cran-timeDate \
-		R-cran-timeSeries>0:${PORTSDIR}/finance/R-cran-timeSeries \
-		R-cran-fBasics>=2100.78:${PORTSDIR}/finance/R-cran-fBasics
+RUN_DEPENDS=	R-cran-timeDate>0:finance/R-cran-timeDate \
+		R-cran-timeSeries>0:finance/R-cran-timeSeries \
+		R-cran-fBasics>=2100.78:finance/R-cran-fBasics
 
 USES=	cran:auto-plist
 

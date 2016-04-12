@@ -11,18 +11,18 @@ COMMENT=	Weak signal ham radio communication package
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/bin/kvasd:${PORTSDIR}/comms/kvasd \
+RUN_DEPENDS=	${LOCALBASE}/bin/kvasd:comms/kvasd \
 		${WSJT_DEPENDS}
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+BUILD_DEPENDS=	python:lang/python \
 		${WSJT_DEPENDS}
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libportaudio.so:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libsamplerate.so:audio/libsamplerate \
+		libportaudio.so:audio/portaudio
 
-WSJT_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
-		${PYTHON_SITELIBDIR}/PIL:${PORTSDIR}/graphics/py-pillow \
+WSJT_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_tkinter.so:x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/scipy:science/py-scipy \
+		${PYTHON_SITELIBDIR}/PIL:graphics/py-pillow \
 		${PYNUMPY}
 
 USE_GCC=	yes
@@ -44,14 +44,14 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
 #portlint freaks over this but it's only for dev. so ignore.
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 SVN_REV!=	svn info http://svn.code.sf.net/p/wsjt/wsjt/ | ${GREP} Revision | cut -d' ' -f2
 .else
 .include "Makefile.svn_rev"
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 
 do-fetch:
 	${MKDIR} ${WRKDIR}

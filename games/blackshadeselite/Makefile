@@ -14,7 +14,7 @@ COMMENT=	Psychic Bodyguard FPS - protect the VIP
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 USES=		tar:bzip2 gmake openal:al,alut
 USE_SDL=	sdl

@@ -7,11 +7,11 @@ CATEGORIES=	lang
 
 COMMENT=	Mesa "Clover" OpenCL library
 
-BUILD_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
-LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libOpenCL.so:${PORTSDIR}/devel/ocl-icd \
-		libexpat.so:${PORTSDIR}/textproc/expat2
-RUN_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
+BUILD_DEPENDS=	opencl>=0:devel/opencl
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libOpenCL.so:devel/ocl-icd \
+		libexpat.so:textproc/expat2
+RUN_DEPENDS=	opencl>=0:devel/opencl
 
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto \
 		presentproto xvmc xshmfence
@@ -25,11 +25,8 @@ ONLY_FOR_ARCHS_REASON=	Clover needs a graphics driver supported by the Radeon KM
 #MESA_BUILD_WRKSRC=	src/util src/glsl src/mesa src/gallium
 MESA_INSTALL_WRKSRC=	src/gallium/targets/opencl src/gallium/targets/pipe-loader
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000 && ${ARCH} == amd64
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000
 IGNORE=		Clover is only supported on FreeBSD 10.1 and newer
-.endif
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000 && ${ARCH} == i386
-IGNORE=		Clover is only supported on FreeBSD 10.2 and newer
 .endif
 
 .include "${.CURDIR}/../../graphics/libGL/Makefile.targets"

@@ -12,9 +12,9 @@ COMMENT=	Graphical frontend to the objdump disassembler
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>0:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:${PORTSDIR}/www/py-webkitgtk
-LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2 \
+		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:www/py-webkitgtk
+LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
 
 USES=		python
 USE_PYTHON=	distutils

@@ -14,8 +14,8 @@ COMMENT=	Exporter with features of Sub::Exporter but only core dependencies
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-Warnings>=0:${PORTSDIR}/devel/p5-Test-Warnings
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
 USE_PERL5=	configure
 USES=		perl5

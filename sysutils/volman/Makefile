@@ -23,14 +23,14 @@ NTFS3G_DESC=	Use fusefs-ntfs extensions
 
 .if ${PORT_OPTIONS:MOPENBOX}
 VM_SUB_FILES+=	obvolman
-RUN_DEPENDS+=	${LOCALBASE}/bin/xmessage:${PORTSDIR}/x11/xmessage
+RUN_DEPENDS+=	${LOCALBASE}/bin/xmessage:x11/xmessage
 PLIST_SUB+=	OPENBOX=""
 .else
 PLIST_SUB+=	OPENBOX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNTFS3G}
-RUN_DEPENDS+=	${LOCALBASE}/bin/ntfs-3g:${PORTSDIR}/sysutils/fusefs-ntfs
+RUN_DEPENDS+=	${LOCALBASE}/bin/ntfs-3g:sysutils/fusefs-ntfs
 SUB_LIST+=	RCFUSEFS=" fusefs"
 .else
 SUB_LIST+=	RCFUSEFS=""

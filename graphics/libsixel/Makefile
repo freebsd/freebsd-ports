@@ -28,10 +28,10 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	CURL GD JPEG PIXBUF PNG
 OPTIONS_DEFAULT=
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	libcurl
 
-GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
+GD_LIB_DEPENDS=		libgd.so:graphics/gd
 GD_CONFIGURE_WITH=	gd
 
 JPEG_USES=		jpeg
@@ -39,10 +39,10 @@ JPEG_CONFIGURE_WITH=	jpeg
 JPEG_CPPFLAGS=		-I${LOCALBASE}/include
 JPEG_LDFLAGS=		-L${LOCALBASE}/lib
 
-PIXBUF_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:${PORTSDIR}/graphics/gdk-pixbuf2
+PIXBUF_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 PIXBUF_CONFIGURE_WITH=	gdk-pixbuf2
 
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
 
 post-install:

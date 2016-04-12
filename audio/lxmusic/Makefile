@@ -13,8 +13,8 @@ COMMENT=	LXDE music player based on xmms2
 LICENSE=	MIT GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2 \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libxmmsclient.so:audio/xmms2 \
+		libnotify.so:devel/libnotify
 
 USES=		gmake desktop-file-utils pkgconfig
 USE_GNOME=	gtk20 intltool

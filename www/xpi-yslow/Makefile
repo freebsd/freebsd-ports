@@ -9,7 +9,7 @@ CATEGORIES=	www
 MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	Analyzes web pages and why they are slow
 
-RUN_DEPENDS=	xpi-firebug>=1.3.0:${PORTSDIR}/www/xpi-firebug
+RUN_DEPENDS=	xpi-firebug>=1.3.0:www/xpi-firebug
 
 XPI_NUM=	5369
 XPI_ID=		yslow@yahoo-inc.com

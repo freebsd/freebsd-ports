@@ -31,20 +31,20 @@ WITH_BLAS=atlas
 # FIXME compiling error when using dmalloc
 #.if ${PORT_OPTIONS:MDMALLOC}
 #CONFIGURE_ARGS+=--with-dmalloc
-#LIB_DEPENDS+=dmalloc.1:${PORTSDIR}/devel/dmalloc
+#LIB_DEPENDS+=dmalloc.1:devel/dmalloc
 #.endif
 
 .if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas
+LIB_DEPENDS+=	liblapack.so:math/lapack
 BLAS=-lblas
 LAPACK=-llapack
 .elif ${WITH_BLAS} == gotoblas
-LIB_DEPENDS+=	libgoto2.so:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2.so:math/gotoblas
 BLAS=-lgoto2p
 LAPACK=-lgoto2p
 .elif ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=-lptf77blas
 LAPACK=-lalapack -lptcblas
 .endif

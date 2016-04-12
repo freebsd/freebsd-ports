@@ -11,7 +11,7 @@ COMMENT=	RoundCube webmail contextmenu plugin
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=1.1:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=1.1:mail/roundcube
 
 NO_BUILD=	yes
 NO_ARCH=	yes

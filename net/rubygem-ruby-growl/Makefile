@@ -12,7 +12,7 @@ COMMENT=	Pure-ruby growl notifier
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-uuid>=2.3.5:${PORTSDIR}/devel/rubygem-uuid
+RUN_DEPENDS=	rubygem-uuid>=2.3.5:devel/rubygem-uuid
 
 NO_ARCH=	yes
 

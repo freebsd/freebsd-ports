@@ -27,11 +27,11 @@ ANTHY_DESC=	Japanese anthy IM module
 QT_IM_MODULE_DESC=	QT IM module
 
 QT_IM_MODULE_USE=	QT4=inputmethods,qmake_build,moc_build,corelib,gui
-QT_IM_MODULE_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+QT_IM_MODULE_LIB_DEPENDS=	libmng.so:graphics/libmng
 QT_IM_MODULE_CONFIGURE_OFF=	--use_qt4=N
 
-ANTHY_BUILD_DEPENDS=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
-ANTHY_LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy
+ANTHY_BUILD_DEPENDS=	${LOCALBASE}/include/anthy/anthy.h:japanese/anthy
+ANTHY_LIB_DEPENDS=	libanthy.so:japanese/anthy
 ANTHY_CONFIGURE_OFF=	--use_anthy=N
 
 post-patch:

@@ -20,7 +20,7 @@ DISTFILES=	wqy-bitmapsong-pcf-1.0.0-RC1.tar.gz:bitmapfont \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU GPL-licensed font set covering CJK and other Unicode characters
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USE_XORG=	x11
 USES=		fonts perl5

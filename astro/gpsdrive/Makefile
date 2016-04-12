@@ -14,8 +14,8 @@ COMMENT=	GPS navigation system
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libpcre.so:devel/pcre
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake libtool perl5 pkgconfig shebangfix
 SHEBANG_FILES=	src/gpsfetchmap.pl src/geocache2way src/gpssmswatch \

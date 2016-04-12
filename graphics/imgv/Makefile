@@ -13,8 +13,8 @@ COMMENT=	Unique and feature rich Image Viewer
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -12,7 +12,7 @@ COMMENT=	Statically check your python code
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=0.5:${PORTSDIR}/devel/py-pyflakes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=0.5:devel/py-pyflakes
 
 USES=		python
 USE_PYTHON=	distutils autoplist

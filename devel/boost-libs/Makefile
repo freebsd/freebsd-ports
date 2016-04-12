@@ -6,7 +6,7 @@ PORTREVISION=	10
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
-BUILD_DEPENDS+=	bjam:${PORTSDIR}/devel/boost-jam
+BUILD_DEPENDS+=	bjam:devel/boost-jam
 
 OPTIONS_DEFINE=		VERBOSE_BUILD DEBUG OPTIMIZED_CFLAGS
 OPTIONS_MULTI=		LOCALE
@@ -19,7 +19,7 @@ ICU_DESC=		Boost.Regex/Locale with ICU unicode support
 ICONV_USES=		iconv
 ICONV_VARS=		BJAM_ARGS+=-sICONV_PATH=${ICONV_PREFIX}
 ICONV_VARS_OFF=		BJAM_ARGS+=boost.locale.iconv=off
-ICU_LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
+ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
 ICU_VARS=		BJAM_ARGS+=-sICU_PATH=${LOCALBASE}
 ICU_VARS_OFF=		BJAM_ARGS+=boost.locale.icu=off
 

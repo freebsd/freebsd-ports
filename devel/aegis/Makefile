@@ -13,8 +13,8 @@ COMMENT=	Transaction-based software configuration management system
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
+LIB_DEPENDS=	libcurl.so:ftp/curl
+RUN_DEPENDS=	tkdiff:textproc/tkdiff
 
 USES=		gettext ghostscript perl5 tk
 USE_GNOME=	libxml2

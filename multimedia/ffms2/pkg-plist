@@ -1,0 +1,12 @@
+bin/ffmsindex
+include/ffms.h
+include/ffmscompat.h
+lib/libffms2.a
+lib/libffms2.so
+lib/libffms2.so.4
+lib/libffms2.so.4.0.0
+%%DATADIR%%/libffms2.so
+libdata/pkgconfig/ffms2.pc
+%%PORTDOCS%%%%DOCSDIR%%/ffms2-api.md
+%%PORTDOCS%%%%DOCSDIR%%/ffms2-changelog.md
+%%PORTDOCS%%%%DOCSDIR%%/ffms2-vapoursynth.md

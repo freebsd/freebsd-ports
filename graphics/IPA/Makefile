@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.prima.eu.org/IPA/ CPAN/Prima/KARASIK
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Processing Algorithms
 
-RUN_DEPENDS=	p5-Prima>1.24:${PORTSDIR}/x11-toolkits/p5-Prima
+RUN_DEPENDS=	p5-Prima>1.24:x11-toolkits/p5-Prima
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -12,9 +12,9 @@ COMMENT=	Yet Another Telephony Engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libgsm.so:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libspeex.so:audio/speex \
+		libgsm.so:audio/gsm
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64 armv6
 
@@ -54,19 +54,19 @@ SPANDSP_DESC=	Spandsp faxing support
 OPTIONS_SUB=	yes
 
 AMRNB_CONFIGURE_WITH=	amrnb=${LOCALBASE}
-AMRNB_LIB_DEPENDS=	libamrnb.so:${PORTSDIR}/audio/libamrnb
+AMRNB_LIB_DEPENDS=	libamrnb.so:audio/libamrnb
 
 DAHDI_CONFIGURE_ENABLE=	dahdi
-DAHDI_BUILD_DEPENDS=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
-			${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
-DAHDI_LIB_DEPENDS=	libpri.so:${PORTSDIR}/misc/libpri \
-			libopenr2.so:${PORTSDIR}/misc/openr2
+DAHDI_BUILD_DEPENDS=	libpri>=1.4.10:misc/libpri \
+			${LOCALBASE}/include/dahdi/user.h:misc/dahdi
+DAHDI_LIB_DEPENDS=	libpri.so:misc/libpri \
+			libopenr2.so:misc/openr2
 
 H323_CONFIGURE_WITH=	openh323=${LOCALBASE}
-H323_LIB_DEPENDS=	libopenh323.so:${PORTSDIR}/net/h323plus
+H323_LIB_DEPENDS=	libopenh323.so:net/h323plus
 
 ILBC_CONFIGURE_ENABLE=	ilbc
-ILBC_LIB_DEPENDS=	libilbc.so:${PORTSDIR}/net/ilbc
+ILBC_LIB_DEPENDS=	libilbc.so:net/ilbc
 
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_USE=		mysql=yes
@@ -79,10 +79,10 @@ PGSQL_USES=		pgsql
 SCTP_CONFIGURE_ENABLE=	sctp
 
 SPANDSP_CONFIGURE_WITH=	spandsp
-SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
+SPANDSP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 
 SQLITE_CONFIGURE_WITH=	sqlite
-SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}

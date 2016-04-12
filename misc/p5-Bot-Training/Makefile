@@ -15,15 +15,15 @@ COMMENT=	Plain text training material for bots like Hailo and MegaHAL
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-Dir-Self>=0:${PORTSDIR}/devel/p5-Dir-Self \
-		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Moose>=0.82:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Getopt>=0:${PORTSDIR}/devel/p5-MooseX-Getopt \
-		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
-		p5-MouseX-Getopt>=0:${PORTSDIR}/devel/p5-MouseX-Getopt \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+BUILD_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
+		p5-Dir-Self>=0:devel/p5-Dir-Self \
+		p5-File-ShareDir>=0:devel/p5-File-ShareDir \
+		p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-Moose>=0.82:devel/p5-Moose \
+		p5-MooseX-Getopt>=0:devel/p5-MooseX-Getopt \
+		p5-Mouse>=0:devel/p5-Mouse \
+		p5-MouseX-Getopt>=0:devel/p5-MouseX-Getopt \
+		p5-namespace-clean>=0:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

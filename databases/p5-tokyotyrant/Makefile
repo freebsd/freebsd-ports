@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl5 interface to the TokyoTyrant
 
-BUILD_DEPENDS=	tokyotyrant>=1.1.40:${PORTSDIR}/databases/tokyotyrant
-LIB_DEPENDS=	libtokyotyrant.so:${PORTSDIR}/databases/tokyotyrant
+BUILD_DEPENDS=	tokyotyrant>=1.1.40:databases/tokyotyrant
+LIB_DEPENDS=	libtokyotyrant.so:databases/tokyotyrant
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	tcrtest.pl ttutest.pl

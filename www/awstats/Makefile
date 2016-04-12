@@ -13,7 +13,7 @@ COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
 
-RUN_DEPENDS=	p5-Net-XWhois>=0:${PORTSDIR}/net/p5-Net-XWhois
+RUN_DEPENDS=	p5-Net-XWhois>=0:net/p5-Net-XWhois
 
 USES=		cpe dos2unix perl5 shebangfix
 CPE_VENDOR=	laurent_destailleur
@@ -39,8 +39,8 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS IPV6
 
-IPV6_RUN_DEPENDS=	p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
-			p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+IPV6_RUN_DEPENDS=	p5-Net-IP>=0:net-mgmt/p5-Net-IP \
+			p5-Net-DNS>=0:dns/p5-Net-DNS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -76,7 +76,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/*.pm \
 		${STAGEDIR}${WWWDIR}/cgi-bin/plugins
 	(cd ${WRKSRC}/wwwroot/cgi-bin/plugins && ${COPYTREE_SHARE} example \
-	       	${STAGEDIR}${WWWDIR}/cgi-bin/plugins)
+		${STAGEDIR}${WWWDIR}/cgi-bin/plugins)
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/classes
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/classes/awgraphapplet.jar \
 		${STAGEDIR}${WWWDIR}/classes

@@ -22,6 +22,6 @@ MAKE_ENV+=	PYICU_INCLUDES="${PREFIX}/include" \
 		PYICU_CFLAGS="-w:-DPYICU_VER=\"${PORTVERSION}\"" \
 		PYICU_LFLAGS="-L${PREFIX}/lib"
 
-LIB_DEPENDS+=	libicudata.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicudata.so:devel/icu
 
 .include <bsd.port.mk>

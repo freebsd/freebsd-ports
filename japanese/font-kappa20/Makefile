@@ -12,8 +12,8 @@ DISTNAME=	Kappa20-${PORTVERSION}
 MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	20-dot Kanji font Kappa20
 
-BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	mkitalic:x11-fonts/mkbold-mkitalic \
+		bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts tar:bzip2
 FONTNAME=	misc

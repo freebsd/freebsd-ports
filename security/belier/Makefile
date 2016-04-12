@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	romain.garbage@gmail.com
 COMMENT=	easily cross several machines with ssh
 
-RUN_DEPENDS=	expect>=5.42.1:${PORTSDIR}/lang/expect
+RUN_DEPENDS=	expect>=5.42.1:lang/expect
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -17,12 +17,12 @@ COMMENT=	SPDY module for the Apache HTTP server v2.2
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
-		greadlink:${PORTSDIR}/sysutils/coreutils \
-		flock:${PORTSDIR}/sysutils/flock \
-		svn:${PORTSDIR}/devel/subversion \
-		curl:${PORTSDIR}/ftp/curl \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	python:lang/python \
+		greadlink:sysutils/coreutils \
+		flock:sysutils/flock \
+		svn:devel/subversion \
+		curl:ftp/curl \
+		bash:shells/bash
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_OPENSSL=	yes
@@ -50,7 +50,7 @@ OPTIONS_DEFINE=	GCC DEBUG
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGCC}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif

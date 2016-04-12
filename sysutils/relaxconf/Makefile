@@ -10,9 +10,9 @@ MASTER_SITES=	SF/relaxbsd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of text menu based utilities for configuring RelaxBSD LiveCD
 
-BUILD_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
-RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog \
-		disktype:${PORTSDIR}/sysutils/disktype
+BUILD_DEPENDS=	cdialog:devel/cdialog
+RUN_DEPENDS=	cdialog:devel/cdialog \
+		disktype:sysutils/disktype
 
 GNU_CONFIGURE=	yes
 

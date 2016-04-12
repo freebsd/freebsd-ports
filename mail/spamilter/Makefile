@@ -38,7 +38,7 @@ LIBSPF_DESC=	build with libspf
 
 SMTP_AFTER_POP3_CONFIGURE_ON=	--with-popauth
 PAM_CONFIGURE_ON=	--with-pam
-LIBSPF_BUILD_DEPENDS=	${LOCALBASE}/lib/libspf.a:${PORTSDIR}/mail/libspf
+LIBSPF_BUILD_DEPENDS=	${LOCALBASE}/lib/libspf.a:mail/libspf
 LIBSPF_CONFIGURE_ON=	--with-libspf ${LOCALBASE}
 LIBSPF_CFLAGS=		-I${LOCALBASE}/include
 LIBSPF_LDFLAGS=		-L${LOCALBASE}/lib

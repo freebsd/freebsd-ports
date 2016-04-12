@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	MCollective NRPE agent plugin
 
-RUN_DEPENDS=	mcollective>=2:${PORTSDIR}/sysutils/mcollective
+RUN_DEPENDS=	mcollective>=2:sysutils/mcollective
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Nice wrapper for File::Find ala find(1)
 
-RUN_DEPENDS=	p5-Text-Glob>0:${PORTSDIR}/textproc/p5-Text-Glob
+RUN_DEPENDS=	p5-Text-Glob>0:textproc/p5-Text-Glob
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

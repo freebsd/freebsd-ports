@@ -12,8 +12,8 @@ COMMENT=	Python script that converts CHM files into PDF files
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	htmldoc:${PORTSDIR}/textproc/htmldoc \
-		${PYTHON_SITELIBDIR}/chm/chm.py:${PORTSDIR}/textproc/pychm
+RUN_DEPENDS=	htmldoc:textproc/htmldoc \
+		${PYTHON_SITELIBDIR}/chm/chm.py:textproc/pychm
 
 USES=		python
 USE_PYTHON=	distutils

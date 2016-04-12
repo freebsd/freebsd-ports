@@ -1,4 +1,4 @@
---- libao2/ao_oss.c.orig	2013-03-17 22:47:17 UTC
+--- libao2/ao_oss.c.orig	2016-02-26 20:47:16 UTC
 +++ libao2/ao_oss.c
 @@ -57,6 +57,8 @@ static const ao_info_t info =
  	""
@@ -33,7 +33,7 @@
  #endif
  #ifdef AFMT_U32_LE
      case AFMT_U32_LE: return AF_FORMAT_U32_LE;
-@@ -435,9 +447,29 @@ static void uninit(int immed){
+@@ -441,10 +453,30 @@ static void uninit(int immed){
      audio_fd = -1;
  }
  
@@ -58,32 +58,34 @@
 +
  // stop playing and empty buffers (for seeking/pause)
  static void reset(void){
+   int fail = 0;
    int oss_format;
 +    savevol();
      uninit(1);
      audio_fd=open(dsp, O_WRONLY);
      if(audio_fd < 0){
-@@ -449,6 +481,7 @@ static void reset(void){
+@@ -456,6 +488,7 @@ static void reset(void){
    fcntl(audio_fd, F_SETFD, FD_CLOEXEC);
  #endif
  
 +  ioctl (audio_fd, SNDCTL_DSP_SPEED, &ao_data.samplerate);
    oss_format = format2oss(ao_data.format);
    if(AF_FORMAT_IS_AC3(ao_data.format))
-     ioctl (audio_fd, SNDCTL_DSP_SPEED, &ao_data.samplerate);
-@@ -460,13 +493,14 @@ static void reset(void){
+     fail |= ioctl (audio_fd, SNDCTL_DSP_SPEED, &ao_data.samplerate) == -1;
+@@ -467,14 +500,14 @@ static void reset(void){
        int c = ao_data.channels-1;
-       ioctl (audio_fd, SNDCTL_DSP_STEREO, &c);
+       fail |= ioctl (audio_fd, SNDCTL_DSP_STEREO, &c) == -1;
      }
--    ioctl (audio_fd, SNDCTL_DSP_SPEED, &ao_data.samplerate);
+-    fail |= ioctl (audio_fd, SNDCTL_DSP_SPEED, &ao_data.samplerate) == -1;
    }
+-  mp_msg(MSGT_AO,MSGL_WARN, "OSS: Reset failed\n");
 +  restorevol();
  }
  
  // stop playing, keep buffers (for pause)
  static void audio_pause(void)
  {
-+	savevol();
++    savevol();
      prepause_space = get_space();
      uninit(1);
  }

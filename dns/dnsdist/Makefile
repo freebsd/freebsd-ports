@@ -16,9 +16,9 @@ LICENSE_NAME_UNLICENSE=	The Unlicense
 LICENSE_FILE_UNLICENSE=	${WRKSRC}/ext/incbin/UNLICENSE
 LICENSE_PERMS_UNLICENSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:${PORTSDIR}/devel/libatomic_ops
-LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs \
-		libsodium.so:${PORTSDIR}/security/libsodium
+BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
+LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
+		libsodium.so:security/libsodium
 
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 LDFLAGS+=	-L${LOCALBASE}/lib -latomic

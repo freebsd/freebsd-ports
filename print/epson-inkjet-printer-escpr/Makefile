@@ -12,7 +12,7 @@ COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups
+LIB_DEPENDS=	libcupsimage.so:print/cups
 
 USES=		autoreconf dos2unix gmake libtool
 USE_LDCONFIG=	yes

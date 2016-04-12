@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Abstract interface to is.gd, one of URL shortening sites
 
-BUILD_DEPENDS=	p5-WWW-Shorten>=1.97:${PORTSDIR}/www/p5-WWW-Shorten
+BUILD_DEPENDS=	p5-WWW-Shorten>=1.97:www/p5-WWW-Shorten
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

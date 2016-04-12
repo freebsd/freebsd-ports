@@ -10,8 +10,8 @@ MASTER_SITES=	http://download.gna.org/fvwm-crystal/${PORTVERSION}/
 MAINTAINER=	giacomomariani@yahoo.it
 COMMENT=	Easy, eye-candy, light, and powerful window manager for X11
 
-RUN_DEPENDS=	fvwm>=2.5:${PORTSDIR}/x11-wm/fvwm2 \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	fvwm>=2.5:x11-wm/fvwm2 \
+		bash:shells/bash
 
 USES=		gettext gmake python shebangfix
 SHEBANG_FILES=	addons/* bin/* fvwm/scripts/speed_value
@@ -30,13 +30,13 @@ TRAYER_DESC=		Tray (notification area) support
 SUDO_DESC=		Run text-based applications as superuser
 HSETROOT_DESC=		Allow to set desktop wallpaper
 CMUS_DESC=		Play music via audio/cmus player
-MROX_RUN_DEPENDS=	rox:${PORTSDIR}/x11-fm/rox-filer
-IMAGEMAGICK_RUN_DEPENDS=	display:${PORTSDIR}/graphics/ImageMagick
-XSCREENSAVER_RUN_DEPENDS=	xscreensaver:${PORTSDIR}/x11/xscreensaver
-TRAYER_RUN_DEPENDS=	trayer:${PORTSDIR}/x11/trayer
-SUDO_RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
-SETROOT_RUN_DEPENDS=	hsetroot:${PORTSDIR}/graphics/hsetroot
-CMUS_RUN_DEPENDS=	cmus:${PORTSDIR}/audio/cmus
+MROX_RUN_DEPENDS=	rox:x11-fm/rox-filer
+IMAGEMAGICK_RUN_DEPENDS=	display:graphics/ImageMagick
+XSCREENSAVER_RUN_DEPENDS=	xscreensaver:x11/xscreensaver
+TRAYER_RUN_DEPENDS=	trayer:x11/trayer
+SUDO_RUN_DEPENDS=	sudo:security/sudo
+SETROOT_RUN_DEPENDS=	hsetroot:graphics/hsetroot
+CMUS_RUN_DEPENDS=	cmus:audio/cmus
 DOCS_INSTALL_TARGET=	install-doc
 
 post-extract:

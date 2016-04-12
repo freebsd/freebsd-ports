@@ -14,7 +14,7 @@ COMMENT=	Calculate offset polygons
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-YAML>=0:textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

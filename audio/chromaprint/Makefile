@@ -10,7 +10,7 @@ COMMENT=	AcoustID audio fingerprinting library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USES=		cmake:outsource pathfix
 USE_LDCONFIG=	yes

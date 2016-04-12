@@ -11,7 +11,7 @@ DISTNAME=	madfuload-1.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	M-Audio DFU Firmware for Transit, Ozone, Sonica, MobilePre
 
-RUN_DEPENDS=	${LOCALBASE}/bin/dfu-util:${PORTSDIR}/comms/dfu-util
+RUN_DEPENDS=	${LOCALBASE}/bin/dfu-util:comms/dfu-util
 
 WRKSRC=		${WRKDIR}/madfuload-1.2
 PLIST_FILES=	share/maudio/ma003101.bin \

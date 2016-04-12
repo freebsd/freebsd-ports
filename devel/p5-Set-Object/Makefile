@@ -12,8 +12,8 @@ COMMENT=	Perl module to manage sets of objects
 
 LICENSE=	ART20
 
-TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace
+TEST_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
+		p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace
 
 USES=		perl5
 USE_PERL5=	configure

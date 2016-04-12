@@ -13,9 +13,9 @@ COMMENT=	GStreamer plug-in with many audio/video decoders/encoders
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	orc>=0.4.16:${PORTSDIR}/devel/orc
-LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+BUILD_DEPENDS=	orc>=0.4.16:devel/orc
+LIB_DEPENDS=	liborc-0.4.so:devel/orc \
+		libavcodec.so:multimedia/ffmpeg
 
 PORTSCOUT=	limitw:1,even
 

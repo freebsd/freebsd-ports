@@ -13,9 +13,9 @@ COMMENT=	Log to array, with some limits applied
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-Perl-osnames>=0.09:${PORTSDIR}/devel/p5-Perl-osnames
-RUN_DEPENDS=	p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch
+BUILD_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
+		p5-Perl-osnames>=0.09:devel/p5-Perl-osnames
+RUN_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch
 
 USE_PERL5=	configure
 USES=		perl5

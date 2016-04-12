@@ -11,8 +11,8 @@ COMMENT=	VAAPI wrapper and dummy driver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
 USES=		alias autoreconf gmake libtool pkgconfig tar:bzip2
 USE_XORG=	glproto pciaccess xext xfixes

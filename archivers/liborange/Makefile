@@ -10,9 +10,9 @@ MASTER_SITES=	SF/synce/Orange/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to extract CAB files from self-extracting installers
 
-LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
-RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
-		unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	libgsf-1.so:devel/libgsf
+RUN_DEPENDS=	cabextract:archivers/cabextract \
+		unzip:archivers/unzip
 
 OPTIONS_DEFINE=	LIBSYNCE LIBDYNAMITE LIBUNSHIELD INNO VISE MSI
 OPTIONS_DEFAULT=	LIBSYNCE LIBDYNAMITE LIBUNSHIELD
@@ -31,15 +31,15 @@ INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=		--with-libgsf
 
-LIBSYNCE_LIB_DEPENDS=		libsynce.so:${PORTSDIR}/palm/synce-libsynce
+LIBSYNCE_LIB_DEPENDS=		libsynce.so:palm/synce-libsynce
 LIBSYNCE_CONFIGURE_WITH=	libsynce
 LIBSYNCE_VARS=			REQUIRES+=libsynce
 
-LIBDYNAMITE_LIB_DEPENDS=	libdynamite.so:${PORTSDIR}/archivers/libdynamite
+LIBDYNAMITE_LIB_DEPENDS=	libdynamite.so:archivers/libdynamite
 LIBDYNAMITE_CONFIGURE_WITH=	libdynamite
 LIBDYNAMITE_VARS=		REQUIRES+=libdynamite
 
-LIBUNSHIELD_LIB_DEPENDS=	libunshield.so:${PORTSDIR}/archivers/unshield
+LIBUNSHIELD_LIB_DEPENDS=	libunshield.so:archivers/unshield
 LIBUNSHIELD_CONFIGURE_WITH=	libunshield
 LIBUNSHIELD_VARS=		REQUIRES+=libunshield
 

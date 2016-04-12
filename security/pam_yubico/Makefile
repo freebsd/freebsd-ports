@@ -11,8 +11,8 @@ COMMENT=	PAM module for authenticating with a Yubico YubiKey
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libykclient.so:${PORTSDIR}/security/ykclient \
-		libyubikey.so:${PORTSDIR}/security/libyubikey
+LIB_DEPENDS=	libykclient.so:security/ykclient \
+		libyubikey.so:security/libyubikey
 
 GNU_CONFIGURE=	yes
 USES=		libtool pkgconfig
@@ -27,7 +27,7 @@ CR_DESC=	Include Challenge/response support
 OPTIONS_DEFAULT=	CR
 
 CR_CONFIGURE_WITH=	cr
-CR_LIB_DEPENDS=	libykpers-1.so:${PORTSDIR}/security/ykpers
+CR_LIB_DEPENDS=	libykpers-1.so:security/ykpers
 CR_PLIST_FILES=	bin/ykpamcfg \
 		man/man1/ykpamcfg.1.gz
 

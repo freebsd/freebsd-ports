@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for drawing graphical stats for mails/spams
 
-RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
-		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil \
-		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
+RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD \
+		p5-GD-Graph>=0:graphics/p5-GD-Graph \
+		p5-GD-TextUtil>=0:graphics/p5-GD-TextUtil \
+		p5-Date-Calc>=0:devel/p5-Date-Calc
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 shebangfix

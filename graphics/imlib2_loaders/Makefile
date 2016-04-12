@@ -17,7 +17,7 @@ LICENSE_NAME_imlib2=	imlib2 license
 LICENSE_FILE_imlib2=	${WRKSRC}/COPYING
 LICENSE_PERMS_imlib2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig tar:bzip2
@@ -33,7 +33,7 @@ MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEET}
-LIB_DEPENDS+=	libefl.so:${PORTSDIR}/devel/efl
+LIB_DEPENDS+=	libefl.so:devel/efl
 PLIST_SUB+=	EET=""
 .else
 CONFIGURE_ARGS+=	--disable-eet

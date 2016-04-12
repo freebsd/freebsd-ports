@@ -12,7 +12,7 @@ COMMENT=	Instant messaging library for Gadu-Gadu protocol
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c
 
 CONFLICTS=	pl-ekg-1.[0-6]*
 

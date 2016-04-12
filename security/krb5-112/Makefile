@@ -20,8 +20,6 @@ LICENSE=		MIT
 DEPRECATED=		EOL twelve months after release of krb5-1.14
 EXPIRATION_DATE=	2016-11-20
 
-BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
-
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-[0-9].* krb5-11[014-9]-*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/

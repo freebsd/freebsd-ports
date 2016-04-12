@@ -14,8 +14,8 @@ COMMENT=	GUI tool to help LiveJournal users post images
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libcurl.so:ftp/curl
+RUN_DEPENDS=	convert:graphics/ImageMagick
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

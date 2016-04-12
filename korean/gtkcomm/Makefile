@@ -12,7 +12,7 @@ COMMENT=	Serial controlling software, with gtk+ widget
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/baekmukfonts/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/baekmukfonts/gulim12.pcf.gz:korean/baekmukfonts-bdf
 
 USES=		gettext pathfix perl5 pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile*in

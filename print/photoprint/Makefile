@@ -11,12 +11,12 @@ COMMENT=	Utility to print multiple images per sheet
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups \
-		libgutenprint.so:${PORTSDIR}/print/gutenprint-base \
-		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libnetpbm.so:${PORTSDIR}/graphics/netpbm \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libcups.so:print/cups \
+		libgutenprint.so:print/gutenprint-base \
+		liblcms.so:graphics/lcms \
+		libnetpbm.so:graphics/netpbm \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext jpeg libtool pkgconfig

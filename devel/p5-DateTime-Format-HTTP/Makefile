@@ -12,8 +12,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTTP date conversion routines
 
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-libwww>=0:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	modbuild

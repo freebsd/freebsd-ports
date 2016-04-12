@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	Alternative for replaygain
 
-RUN_DEPENDS+=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		wavegain:${PORTSDIR}/audio/wavegain
+RUN_DEPENDS+=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		wavegain:audio/wavegain
 
 USES=		perl5 shebangfix
 USE_PERL5=	run
@@ -27,23 +27,23 @@ OPTIONS_DEFAULT=	MP3 OGG MP4
 MAC_DESC=	Monkey's Audio Encoding and Playback
 CDPLAY_DESC=	CD Playback
 
-MP3_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-			p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
-OGG_RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
-MP4_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac \
-			faad:${PORTSDIR}/audio/faad
-CDDB_RUN_DEPENDS=	cddb.pl:${PORTSDIR}/audio/p5-CDDB_get
-CDPLAY_RUN_DEPENDS=	p5-Audio-CD>=0:${PORTSDIR}/audio/p5-Audio-CD
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
-MAC_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
-MUSEPACK_RUN_DEPENDS=	mppenc:${PORTSDIR}/audio/musepack
+MP3_RUN_DEPENDS=	lame:audio/lame \
+			p5-MP3-Info>=0:audio/p5-MP3-Info
+OGG_RUN_DEPENDS=	oggenc:audio/vorbis-tools
+MP4_RUN_DEPENDS=	faac:audio/faac \
+			faad:audio/faad
+CDDB_RUN_DEPENDS=	cddb.pl:audio/p5-CDDB_get
+CDPLAY_RUN_DEPENDS=	p5-Audio-CD>=0:audio/p5-Audio-CD
+FLAC_RUN_DEPENDS=	flac:audio/flac
+MAC_RUN_DEPENDS=	mac:audio/mac
+MUSEPACK_RUN_DEPENDS=	mppenc:audio/musepack
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCDPARANOIA} || ${PORT_OPTIONS:MCDDA2WAV}
-RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS+=	cdda2wav:sysutils/cdrtools
 .else
-RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
+RUN_DEPENDS+=	cdparanoia:audio/cdparanoia
 .endif
 
 post-patch:

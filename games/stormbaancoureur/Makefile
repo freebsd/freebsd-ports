@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.stolk.org/stormbaancoureur/download/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simulated obstacle course for automobiles
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
+		${LOCALBASE}/lib/libode.a:devel/ode
 
 USE_GL=		glut
 
@@ -27,8 +27,8 @@ PORTDATA=	*
 OPTIONS_DEFINE=	ALSA DOCS
 OPTIONS_DEFAULT=ALSA
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 ALSA_MAKE_ENV=		ALSA_LIBS="-lasound"
 ALSA_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-src-common-soundenginealsa.cxx \
 			${FILESDIR}/extra-patch-src-common-soundenginealsa.h

@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Perl script to colorize the terminal output of GCC
 
-RUN_DEPENDS=	p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor
+RUN_DEPENDS=	p5-Term-ANSIColor>=0:devel/p5-Term-ANSIColor
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		shebangfix

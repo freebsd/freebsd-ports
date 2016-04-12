@@ -12,8 +12,8 @@ COMMENT=	Pure Tcl library to generate PDF files
 
 OPTIONS_DEFINE=	DOCS
 
-BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
-RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/snit/snit.tcl:${PORTSDIR}/devel/tcllib
+BUILD_DEPENDS=	dtplite:devel/tcllib
+RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/snit/snit.tcl:devel/tcllib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//}
 

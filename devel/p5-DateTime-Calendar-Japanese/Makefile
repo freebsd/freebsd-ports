@@ -12,20 +12,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	DateTime Extension for Traditional Japanese Calendars
 
-BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Util-Calc>=0:${PORTSDIR}/devel/p5-DateTime-Util-Calc \
-		p5-DateTime-Calendar-Chinese>=0:${PORTSDIR}/devel/p5-DateTime-Calendar-Chinese \
-		p5-DateTime-Event-Sunrise>=0:${PORTSDIR}/devel/p5-DateTime-Event-Sunrise \
-		ja-p5-DateTime-Calendar-Japanese-Era>=0:${PORTSDIR}/japanese/p5-DateTime-Calendar-Japanese-Era \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Util-Calc>=0:${PORTSDIR}/devel/p5-DateTime-Util-Calc \
-		p5-DateTime-Calendar-Chinese>=0:${PORTSDIR}/devel/p5-DateTime-Calendar-Chinese \
-		p5-DateTime-Event-Sunrise>=0:${PORTSDIR}/devel/p5-DateTime-Event-Sunrise \
-		ja-p5-DateTime-Calendar-Japanese-Era>=0:${PORTSDIR}/japanese/p5-DateTime-Calendar-Japanese-Era \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Util-Calc>=0:devel/p5-DateTime-Util-Calc \
+		p5-DateTime-Calendar-Chinese>=0:devel/p5-DateTime-Calendar-Chinese \
+		p5-DateTime-Event-Sunrise>=0:devel/p5-DateTime-Event-Sunrise \
+		ja-p5-DateTime-Calendar-Japanese-Era>=0:japanese/p5-DateTime-Calendar-Japanese-Era \
+		p5-Params-Validate>=0:devel/p5-Params-Validate \
+		p5-YAML>0:textproc/p5-YAML
+RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Util-Calc>=0:devel/p5-DateTime-Util-Calc \
+		p5-DateTime-Calendar-Chinese>=0:devel/p5-DateTime-Calendar-Chinese \
+		p5-DateTime-Event-Sunrise>=0:devel/p5-DateTime-Event-Sunrise \
+		ja-p5-DateTime-Calendar-Japanese-Era>=0:japanese/p5-DateTime-Calendar-Japanese-Era \
+		p5-Params-Validate>=0:devel/p5-Params-Validate \
+		p5-YAML>0:textproc/p5-YAML
 
 USES=		perl5
 USE_PERL5=	configure

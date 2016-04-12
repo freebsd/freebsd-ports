@@ -26,7 +26,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000034
-LIB_DEPENDS+=	libml.so:${PORTSDIR}/math/ldouble
+LIB_DEPENDS+=	libml.so:math/ldouble
 LDFLAGS+=	-lml
 .endif
 

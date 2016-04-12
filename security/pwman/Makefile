@@ -12,7 +12,7 @@ COMMENT=	Console password management application based on gpg(me)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS=	gpgv:security/gnupg1
 
 USES=		ncurses
 USE_GNOME=	libxml2

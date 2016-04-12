@@ -12,7 +12,7 @@ COMMENT=	Soft deletion mapper for activerecord
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS?=	rubygem-activerecord4>=0:${PORTSDIR}/databases/rubygem-activerecord4
+RUN_DEPENDS?=	rubygem-activerecord4>=0:databases/rubygem-activerecord4
 
 NO_ARCH=	yes
 USE_RUBY=	yes

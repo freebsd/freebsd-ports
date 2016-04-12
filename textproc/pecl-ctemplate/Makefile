@@ -11,7 +11,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	PECL extension for ctemplate library
 
-LIB_DEPENDS=	libctemplate.so:${PORTSDIR}/textproc/google-ctemplate
+LIB_DEPENDS=	libctemplate.so:textproc/google-ctemplate
 
 USES=		tar:xz
 USE_PHP=	yes

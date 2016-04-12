@@ -14,8 +14,8 @@ DISTNAME=	FiSH-XChat.v${DISTVERSION}-source
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Encryption plugin for XChat
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl
-RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:math/miracl
+RUN_DEPENDS=	xchat:irc/xchat
 
 USES=		zip dos2unix
 NO_WRKSUBDIR=	yes

@@ -17,7 +17,7 @@ OPTIONS_DEFAULT=	X11
 
 OPTIONS_SUB=	yes
 
-X11_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+X11_LIB_DEPENDS=	libevent.so:devel/libevent2
 X11_USE=	gnome=gtk12
 X11_CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}"
 

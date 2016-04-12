@@ -3,18 +3,18 @@
 
 PORTNAME=	leptonica
 PORTVERSION=	1.72
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.leptonica.com/source/
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
 
-LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libopenjp2.so:${PORTSDIR}/graphics/openjpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libwebp.so:${PORTSDIR}/graphics/webp
+LIB_DEPENDS=	libgif.so:graphics/giflib \
+		libopenjp2.so:graphics/openjpeg \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp
 
 CONFLICTS=	leptonlib-[0-9]*
 
@@ -27,7 +27,7 @@ INSTALL_TARGET=	install-strip
 
 TESTS?=	generate compare
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot
+BUILD_DEPENDS+=	${LOCALBASE}/bin/gnuplot:math/gnuplot
 .endif
 #the display portion of the regression tests is interactive,
 #and requires the use of xv, xli or xzgv as an image viewer

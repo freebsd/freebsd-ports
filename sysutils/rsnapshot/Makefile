@@ -12,9 +12,9 @@ COMMENT=	Filesystem snapshot utility based on rsync(1)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-		p5-Lchown>=0:${PORTSDIR}/sysutils/p5-Lchown
+BUILD_DEPENDS=	rsync:net/rsync
+RUN_DEPENDS=	rsync:net/rsync \
+		p5-Lchown>=0:sysutils/p5-Lchown
 
 OPTIONS_DEFINE=	DOCS
 

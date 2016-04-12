@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 USES=		gnustep
 USE_GNUSTEP=	back build
 GNU_CONFIGURE=	yes
-LIB_DEPENDS=	libDBKit.so:${PORTSDIR}/deskutils/gworkspace \
-		libPreferencePanes.so:${PORTSDIR}/deskutils/systempreferences
+LIB_DEPENDS=	libDBKit.so:deskutils/gworkspace \
+		libPreferencePanes.so:deskutils/systempreferences
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 USE_SQLITE=	yes

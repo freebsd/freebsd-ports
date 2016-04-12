@@ -11,8 +11,8 @@ MASTER_SITES=	http://regis.damongeot.free.fr/tkdvd/dl/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GUI to dvd+rw-tools and cdrecord
 
-RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	growisofs:sysutils/dvd+rw-tools \
+		cdrecord:sysutils/cdrtools
 
 USES=		tk
 

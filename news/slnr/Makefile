@@ -11,7 +11,7 @@ COMMENT=	Simplistic reader for SOUP (HDPF) mail and news packets
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	zip:archivers/zip
 
 MAKEFILE=	src/Makefile
 

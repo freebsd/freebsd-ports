@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}ijs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Printer filter for EPSON EPL-5700L etc
 
-LIB_DEPENDS=	libijs.so:${PORTSDIR}/print/libijs
+LIB_DEPENDS=	libijs.so:print/libijs
 
 USES=		ghostscript:run uidfix tar:tgz
 

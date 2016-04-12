@@ -12,9 +12,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	GTK+2-based Ruby module browser
 
-BUILD_DEPENDS=	rubygem-gettext>=0:${PORTSDIR}/devel/rubygem-gettext
-RUN_DEPENDS=	rubygem-gettext>=0:${PORTSDIR}/devel/rubygem-gettext \
-		rubygem-gtk2>=0:${PORTSDIR}/x11-toolkits/rubygem-gtk2
+BUILD_DEPENDS=	rubygem-gettext>=0:devel/rubygem-gettext
+RUN_DEPENDS=	rubygem-gettext>=0:devel/rubygem-gettext \
+		rubygem-gtk2>=0:x11-toolkits/rubygem-gtk2
 
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes

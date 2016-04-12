@@ -16,12 +16,12 @@ COMMENT=	Displays current conditions and forecasts with icons and text
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libHermes.so:${PORTSDIR}/graphics/Hermes \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libgif.so:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcre.so:devel/pcre \
+		libtiff.so:graphics/tiff \
+		libHermes.so:graphics/Hermes \
+		libpng.so:graphics/png \
+		libgif.so:graphics/giflib
 
 WRKSRC=		${WRKDIR}/wmweather+-${PORTVERSION}
 
@@ -53,9 +53,9 @@ DESKTOP_ENTRIES="${PORTNAME}" "" "${PORTNAME}" \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWM}
-LIB_DEPENDS+=	libWMaker.so:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS+=	libWMaker.so:x11-wm/windowmaker
 .else
-LIB_DEPENDS+=	libwraster.so:${PORTSDIR}/x11-wm/libwraster
+LIB_DEPENDS+=	libwraster.so:x11-wm/libwraster
 .endif
 
 post-patch:

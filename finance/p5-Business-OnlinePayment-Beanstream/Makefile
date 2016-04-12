@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Business::OnlinePayment backend module for Beanstream
 
-RUN_DEPENDS=	p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	p5-Business-OnlinePayment>=0:finance/p5-Business-OnlinePayment \
+		p5-URI>=0:net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

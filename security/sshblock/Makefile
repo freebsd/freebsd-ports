@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.pl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Block abusive SSH login attempts
 
-RUN_DEPENDS=	p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
+RUN_DEPENDS=	p5-File-Tail>=0:devel/p5-File-Tail
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

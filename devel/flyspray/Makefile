@@ -10,7 +10,7 @@ MASTER_SITES=	http://flyspray.org/packed/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, easy-to-use web based bug tracking system
 
-RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
+RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:databases/adodb
 
 USE_PHP=	pcre session zlib xml gd
 USES=		dos2unix zip
@@ -52,7 +52,7 @@ PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 MYSQL_USE=	PHP=mysql
 MYSQLI_USE=	PHP=mysqli
 PGSQL_USE=	PHP=pgsql
-GRAPHVIZ_RUN_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
+GRAPHVIZ_RUN_DEPENDS=	${LOCALBASE}/bin/dot:graphics/graphviz
 
 post-patch:
 	@${CP} ${PKGDIR}/files/README.FreeBSD ${WRKSRC}/docs/

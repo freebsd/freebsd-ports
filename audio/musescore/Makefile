@@ -13,9 +13,9 @@ COMMENT=	Free music composition & notation software
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
-LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libmp3lame.so:audio/lame \
+		libsndfile.so:audio/libsndfile \
+		libvorbis.so:audio/libvorbis
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
 		pkgconfig shared-mime-info zip
@@ -29,16 +29,16 @@ DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
 OPTIONS_DEFINE=		ALSA JACK PORTAUDIO PULSEAUDIO
 OPTIONS_DEFAULT=	PORTAUDIO
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_ON=		-DBUILD_ALSA:BOOL=ON
 ALSA_CMAKE_OFF=		-DBUILD_ALSA:BOOL=OFF
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_ON=		-DBUILD_JACK:BOOL=ON
 JACK_CMAKE_OFF=		-DBUILD_JACK:BOOL=OFF
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_CMAKE_ON=	-DBUILD_PORTAUDIO:BOOL=ON
 PORTAUDIO_CMAKE_OFF=	-DBUILD_PORTAUDIO:BOOL=OFF
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_ON=	-DBUILD_PULSEAUDIO:BOOL=ON
 PULSEAUDIO_CMAKE_OFF=	-DBUILD_PULSEAUDIO:BOOL=OFF
 

@@ -13,7 +13,7 @@ COMMENT=	Authoritative-only GeoIP-aware DNS server
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	libev.so:devel/libev
 
 FETCH_ARGS=	-Fpr
 
@@ -34,11 +34,11 @@ OPTIONS_DEFINE=	DOCS GEOIP URCU
 OPTIONS_DEFAULT=	GEOIP
 
 GEOIP_DESC=		Enable GeoIP Support
-GEOIP_RUN_DEPENDS=	GeoIP>=0:${PORTSDIR}/net/GeoIP
+GEOIP_RUN_DEPENDS=	GeoIP>=0:net/GeoIP
 
 URCU_DESC=		Read-Copy-Update Support (Faster Zone Parsing)
 URCU_CONFIGURE_WITH=	urcu
-URCU_LIB_DEPENDS=	liburcu.so:${PORTSDIR}/sysutils/liburcu
+URCU_LIB_DEPENDS=	liburcu.so:sysutils/liburcu
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/libgdnsd.so

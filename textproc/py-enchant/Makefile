@@ -12,7 +12,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Spellchecking library for Python based on the Enchant library
 
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 USES=		python
 USE_PYTHON=	distutils autoplist

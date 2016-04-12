@@ -13,7 +13,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Convert-Moji>=0.05:${PORTSDIR}/converters/p5-Convert-Moji
+	p5-Convert-Moji>=0.05:converters/p5-Convert-Moji
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

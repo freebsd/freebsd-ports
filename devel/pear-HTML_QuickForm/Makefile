@@ -10,8 +10,8 @@ COMMENT=	Provide methods for creating, validating, and processing HTML forms
 
 LICENSE=	PHP301
 
-BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
-RUN_DEPENDS:=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
+BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
+RUN_DEPENDS:=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
 
 USES=	pear
 

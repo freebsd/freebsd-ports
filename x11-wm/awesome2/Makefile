@@ -14,12 +14,12 @@ COMMENT=	Tiling window manager initially based on a dwm code rewriting
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xmlto:${PORTSDIR}/textproc/xmlto
-LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+		xmlto:textproc/xmlto
+LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
+		libcairo.so:graphics/cairo \
+		libfreetype.so:print/freetype2 \
+		libImlib2.so:graphics/imlib2
 
 USES=		iconv pkgconfig python:build
 GNU_CONFIGURE=	yes

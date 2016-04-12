@@ -12,34 +12,34 @@ COMMENT=	Open source tool to organize and maintain network information
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
-		mp2bug:${PORTSDIR}/www/mod_perl2 \
-		p5-Apache-Session>=1.6:${PORTSDIR}/www/p5-Apache-Session \
-		p5-Apache-AuthCookie>=0:${PORTSDIR}/www/p5-Apache-AuthCookie \
-		p5-Apache2-SiteControl>=1.0:${PORTSDIR}/www/p5-Apache2-SiteControl \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-SQL-Translator>=0.07:${PORTSDIR}/databases/p5-SQL-Translator \
-		p5-Class-DBI>=3.0.17:${PORTSDIR}/databases/p5-Class-DBI \
-		p5-Class-DBI-AbstractSearch>=0:${PORTSDIR}/databases/p5-Class-DBI-AbstractSearch \
-		p5-SNMP-Info>=2.06:${PORTSDIR}/net-mgmt/p5-SNMP-Info \
-		p5-HTML-Mason>=1.31:${PORTSDIR}/www/p5-HTML-Mason \
-		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
-		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager \
-		p5-Net-IRR>=0:${PORTSDIR}/net/p5-Net-IRR \
-		p5-NetAddr-IP>=4.042:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		p5-Net-Patricia>=1.20:${PORTSDIR}/net/p5-Net-Patricia \
-		p5-Net-Appliance-Session>=3.113.610:${PORTSDIR}/net/p5-Net-Appliance-Session \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-DNS-ZoneFile-Fast>=1.12:${PORTSDIR}/dns/p5-Net-DNS-ZoneFile-Fast \
-		p5-BIND-Config-Parser>=0:${PORTSDIR}/dns/p5-BIND-Config-Parser \
-		p5-Carp-Assert>=0:${PORTSDIR}/devel/p5-Carp-Assert \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6 \
-		p5-GraphViz>=2.02:${PORTSDIR}/graphics/p5-GraphViz \
-		rrdtool:${PORTSDIR}/databases/rrdtool \
-		netdisco-mibs>=0:${PORTSDIR}/net-mgmt/netdisco-mibs
+RUN_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2 \
+		mp2bug:www/mod_perl2 \
+		p5-Apache-Session>=1.6:www/p5-Apache-Session \
+		p5-Apache-AuthCookie>=0:www/p5-Apache-AuthCookie \
+		p5-Apache2-SiteControl>=1.0:www/p5-Apache2-SiteControl \
+		p5-URI>=0:net/p5-URI \
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		p5-SQL-Translator>=0.07:databases/p5-SQL-Translator \
+		p5-Class-DBI>=3.0.17:databases/p5-Class-DBI \
+		p5-Class-DBI-AbstractSearch>=0:databases/p5-Class-DBI-AbstractSearch \
+		p5-SNMP-Info>=2.06:net-mgmt/p5-SNMP-Info \
+		p5-HTML-Mason>=1.31:www/p5-HTML-Mason \
+		p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
+		p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager \
+		p5-Net-IRR>=0:net/p5-Net-IRR \
+		p5-NetAddr-IP>=4.042:net-mgmt/p5-NetAddr-IP \
+		p5-Net-Patricia>=1.20:net/p5-Net-Patricia \
+		p5-Net-Appliance-Session>=3.113.610:net/p5-Net-Appliance-Session \
+		p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Net-DNS-ZoneFile-Fast>=1.12:dns/p5-Net-DNS-ZoneFile-Fast \
+		p5-BIND-Config-Parser>=0:dns/p5-BIND-Config-Parser \
+		p5-Carp-Assert>=0:devel/p5-Carp-Assert \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-Socket6>=0:net/p5-Socket6 \
+		p5-GraphViz>=2.02:graphics/p5-GraphViz \
+		rrdtool:databases/rrdtool \
+		netdisco-mibs>=0:net-mgmt/netdisco-mibs
 
 USES=		gmake perl5 shebangfix
 NO_BUILD=	yes

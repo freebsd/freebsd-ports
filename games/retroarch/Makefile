@@ -13,8 +13,8 @@ COMMENT=	Cross-platform entertainment system based on libretro API
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxkbcommon.so:${PORTSDIR}/x11/libxkbcommon \
-		libdrm.so:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
+		libdrm.so:graphics/libdrm
 
 OPTIONS_DEFINE=	FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO
 OPTIONS_DEFAULT=FFMPEG OSS PULSEAUDIO SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO
@@ -23,14 +23,14 @@ NETPLAY_DESC=	Peer-to-peer netplay
 PYTHON_DESC=	Script support in shaders
 FBO_DESC=	OpenGL render-to-texture
 
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=ffmpeg
 OSS_CONFIGURE_ENABLE=	oss
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	jack
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 SDL_USE=		SDL=sdl2 image2
 SDL_CONFIGURE_ON=	--disable-sdl --enable-sdl2
@@ -42,10 +42,10 @@ OPENAL_CONFIGURE_ENABLE=al
 NETPLAY_CONFIGURE_ENABLE=	netplay
 PYTHON_CONFIGURE_ENABLE=python
 PYTHON_USES=		python:3
-V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
-V4L_BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
+V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 V4L_CONFIGURE_ENABLE=	v4l2
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
 FBO_CONFIGURE_ENABLE=	fbo
 

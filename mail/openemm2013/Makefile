@@ -19,12 +19,12 @@ COMMENT=	OpenEMM a email marketing enterprise app
 LICENSE=	CPAL-1.0
 LICENSE_FILE=	${WRKSRC}/other/LICENSE.txt
 
-LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2 \
-		libsa.so:${PORTSDIR}/net/ossp-sa
-BUILD_DEPENDS=	${TOMCATHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat8 \
-		${ANT_CMD}:${PORTSDIR}/devel/apache-ant
-RUN_DEPENDS=	${TOMCATHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat8 \
-		py27-MySQLdb>=1.2.3:${PORTSDIR}/databases/py-MySQLdb
+LIB_DEPENDS=	libslang.so:devel/libslang2 \
+		libsa.so:net/ossp-sa
+BUILD_DEPENDS=	${TOMCATHOME}/bin/bootstrap.jar:www/tomcat8 \
+		${ANT_CMD}:devel/apache-ant
+RUN_DEPENDS=	${TOMCATHOME}/bin/bootstrap.jar:www/tomcat8 \
+		py27-MySQLdb>=1.2.3:databases/py-MySQLdb
 
 USE_RC_SUBR=	openemm2013
 USE_JAVA=	yes

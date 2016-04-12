@@ -10,9 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to accessing online weather informations
 
-BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib
+BUILD_DEPENDS=	vala:lang/vala
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libgeocode-glib.so:net/geocode-glib
 
 PORTSCOUT=	limitw:1,even
 

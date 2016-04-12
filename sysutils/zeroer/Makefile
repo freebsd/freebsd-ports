@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/ehaupt
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility for wiping unallocated space on a filesystem
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 PLIST_FILES=	bin/zeroer man/man1/zeroer.1.gz
 PORTDOCS=	README

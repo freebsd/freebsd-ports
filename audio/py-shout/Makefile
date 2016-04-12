@@ -14,7 +14,7 @@ COMMENT=	Python bindings for libshout2
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
+LIB_DEPENDS=	libshout.so:audio/libshout
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 

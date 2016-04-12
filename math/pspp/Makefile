@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	pspp
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	texinfo>0:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	libgslcblas.so:${PORTSDIR}/math/gsl
+BUILD_DEPENDS=	texinfo>0:print/texinfo
+LIB_DEPENDS=	libgslcblas.so:math/gsl
 
 USES=		charsetfix gmake iconv libtool perl5 pkgconfig readline
 USE_GNOME=	libxml2
@@ -30,28 +29,26 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 PORTDOCS=	AUTHORS ChangeLog NEWS ONEWS README THANKS TODO
+PORTEXAMPLES=	*
 INFO=		pspp pspp-dev
 
-OPTIONS_DEFINE=		DOCS GUI NLS PGSQL
+OPTIONS_DEFINE=		DOCS EXAMPLES GUI NLS PGSQL
 OPTIONS_SUB=		yes
 
-GUI_LIB_DEPENDS=	libgladeui-1.so:${PORTSDIR}/devel/glade3
-GUI_RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
+GUI_LIB_DEPENDS=	libgladeui-2.so:devel/glade
+GUI_RUN_DEPENDS=	yelp:x11/yelp
 GUI_USES=		desktop-file-utils
-GUI_USE=		gnome=gtksourceview2,libglade2
+GUI_USE=		gnome=gtk30,gtksourceview3
+GUI_VARS=		INSTALLS_ICONS=yes
 GUI_CONFIGURE_WITH=	cairo gui gui-tools
 GUI_INSTALL_TARGET=	install-icons install-ext-icons
+
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_MAKE_ARGS_OFF=	POFILES=""
+
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	libpq
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-INSTALLS_ICONS=	yes
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -60,12 +57,16 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pspp-mode.el \
 		${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-.if ${PORT_OPTIONS:MGUI}
+
+post-install-GUI-on:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/mimetypes
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
-.endif
+
+post-install-EXAMPLES-on:
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \
+		"${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

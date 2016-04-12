@@ -12,7 +12,7 @@ COMMENT=	Fast Memory Array Redcode Simulator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
+BUILD_DEPENDS=	guile:lang/guile
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	x${PORTNAME}

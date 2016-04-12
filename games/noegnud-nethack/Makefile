@@ -17,7 +17,7 @@ COMMENT=	The noeGNUd UI for the vanilla Nethack
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	noegnud-data>0:${PORTSDIR}/games/noegnud-data
+RUN_DEPENDS=	noegnud-data>0:games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
 USES=		bison gmake tar:bzip2

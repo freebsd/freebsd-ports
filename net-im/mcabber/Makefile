@@ -2,27 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	mcabber
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Small Jabber console client
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
+LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 
-USES=		gettext iconv libtool ncurses pathfix pkgconfig tar:bzip2
+USES=		gettext iconv libtool localbase ncurses pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-hgcset
 INSTALL_TARGET=	install-strip
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		EXAMPLES GPGME OTR
 OPTIONS_RADIO=		SPELL
@@ -34,17 +30,17 @@ OTR_DESC=		Off-the-record messaging support
 
 OPTIONS_SUB=		yes
 
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_CONFIGURE_ENABLE=aspell
 
-ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 ENCHANT_CONFIGURE_ENABLE=enchant
 
-GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_ENABLE=	gpgme
 
-OTR_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-			libotr.so.5:${PORTSDIR}/security/libotr
+OTR_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+			libotr.so.5:security/libotr
 OTR_CONFIGURE_ENABLE=	otr
 
 post-patch:

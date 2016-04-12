@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Collection of powerful tools for manipulating EPROM load files
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 USES=		ghostscript libtool:build
 GNU_CONFIGURE=	yes

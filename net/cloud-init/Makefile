@@ -12,21 +12,21 @@ COMMENT=	Init scripts for use on cloud images
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	dmidecode>0:${PORTSDIR}/sysutils/dmidecode \
-		sudo>0:${PORTSDIR}/security/sudo \
-		gpart>0:${PORTSDIR}/sysutils/gpart \
-		${PYTHON_PKGNAMEPREFIX}boto>0:${PORTSDIR}/devel/py-boto \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}prettytable>0:${PORTSDIR}/devel/py-prettytable \
-		${PYTHON_PKGNAMEPREFIX}configobj>0:${PORTSDIR}/devel/py-configobj \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}serial>0:${PORTSDIR}/comms/py-serial \
-		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}oauth>0:${PORTSDIR}/net/py-oauth \
-		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:${PORTSDIR}/devel/py-jsonpatch \
-		${PYTHON_PKGNAMEPREFIX}jsonpointer>0:${PORTSDIR}/devel/py-jsonpointer
+RUN_DEPENDS=	dmidecode>0:sysutils/dmidecode \
+		sudo>0:security/sudo \
+		gpart>0:sysutils/gpart \
+		${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable \
+		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}oauth>0:net/py-oauth \
+		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:devel/py-jsonpatch \
+		${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer
 
 ETCDIR=		${PREFIX}/etc/cloud
 

@@ -372,6 +372,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Bahrain
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Baku
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Bangkok
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Barnaul
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Beirut
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Bishkek
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Brunei
@@ -548,6 +549,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Etc/Zulu
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Amsterdam
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Andorra
+%%TZDATA%%%%DATADIR%%/timezone/Europe/Astrakhan
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Athens
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Belfast
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Belgrade
@@ -595,6 +597,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Tallinn
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Tirane
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Tiraspol
+%%TZDATA%%%%DATADIR%%/timezone/Europe/Ulyanovsk
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Uzhgorod
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Vaduz
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Vatican

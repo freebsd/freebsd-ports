@@ -12,7 +12,7 @@ COMMENT=	Single player racing game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libclanCore.so:${PORTSDIR}/devel/clanlib1
+LIB_DEPENDS=	libclanCore.so:devel/clanlib1
 
 USES=		pkgconfig
 

@@ -12,7 +12,7 @@ DISTNAME=	pylirc-${PORTVERSION}
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Lirc support library for Python
 
-LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIB_DEPENDS=	liblirc_client.so:comms/lirc
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

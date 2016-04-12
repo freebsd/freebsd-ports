@@ -11,8 +11,8 @@ COMMENT=	Not Eriks Windowing Toolkit: console I/O handling library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2 \
-		libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libslang.so:devel/libslang2 \
+		libpopt.so:devel/popt
 
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes

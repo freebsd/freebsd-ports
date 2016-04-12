@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spring
-PORTVERSION=	1.6.4
+PORTVERSION=	1.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

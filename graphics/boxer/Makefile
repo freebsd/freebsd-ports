@@ -17,7 +17,7 @@ COMMENT=	GUI for Box the figure description language
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	box:${PORTSDIR}/graphics/box
+RUN_DEPENDS=	box:graphics/box
 
 USE_GNOME=	pygtk2
 USES=		python

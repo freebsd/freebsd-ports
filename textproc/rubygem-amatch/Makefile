@@ -12,7 +12,7 @@ COMMENT=	Ruby library for approximate string matching and searching
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-tins>=1.0:${PORTSDIR}/devel/rubygem-tins
+RUN_DEPENDS=	rubygem-tins>=1.0:devel/rubygem-tins
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

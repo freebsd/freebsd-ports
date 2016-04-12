@@ -10,8 +10,8 @@ MASTER_SITES=	http://registry.gimp.org/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP Save For Web plugin
 
-LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

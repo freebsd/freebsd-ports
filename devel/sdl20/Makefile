@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2
-PORTVERSION=	2.0.3
-PORTREVISION=	6
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -11,9 +10,10 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool pathfix pkgconfig
+USES=		gmake iconv libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--disable-video-opengles \
@@ -46,10 +46,6 @@ CONFIGURE_ARGS+=	--enable-sse2
 CONFIGURE_ARGS+=	--disable-sse2
 .endif
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-
 OPTIONS_DEFINE=		ALSA ASM DLOPEN ESOUND NAS OSS \
 			PULSEAUDIO PTHREADS SDL_ATOMIC SDL_AUDIO \
 			SDL_CPUINFO SDL_EVENTS SDL_FILE SDL_HAPTIC \
@@ -79,7 +75,7 @@ SDL_POWER_DESC=		Enable the SDL Power subsystem
 SDL_RENDER_DESC=	Enable the SDL Render subsystem
 SDL_THREADS_DESC=	Enable the SDL Threads subsystem
 SDL_TIMERS_DESC=	Enable the SDL Timers subsystem
-SDL_VIDEO_DESC=		Eanble the SDL Video subsystem
+SDL_VIDEO_DESC=		Enable the SDL Video subsystem
 VIDEO_OPENGL_DESC=	OpenGL rendering support
 VIDEO_X11_DESC=		X11 rendering support
 
@@ -98,7 +94,7 @@ SDL_POWER_CONFIGURE_ENABLE=	power
 SDL_RENDER_CONFIGURE_ENABLE=	render
 SDL_THREADS_CONFIGURE_ENABLE=	threads
 SDL_TIMERS_CONFIGURE_ENABLE=	timers
-SDL_VIDEO_CONFIGURE_EANBLE=	video
+SDL_VIDEO_CONFIGURE_ENABLE=	video
 
 .include <bsd.port.options.mk>
 
@@ -107,7 +103,7 @@ SDL_VIDEO_CONFIGURE_EANBLE=	video
 IGNORE=	option ALSA requires SDL_AUDIO
 .endif
 CONFIGURE_ARGS+=	--enable-alsa --enable-alsa-shared
-LIB_DEPENDS+=		libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=		libasound.so:audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--disable-alsa --disable-alsa-shared
 .endif
@@ -127,7 +123,7 @@ CONFIGURE_ARGS+=	--disable-esd --disable-esd-shared
 IGNORE=	option NAS requires SDL_AUDIO
 .endif
 CONFIGURE_ARGS+=	--enable-nas --enable-nas-shared
-LIB_DEPENDS+=		libaudio.so:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=		libaudio.so:audio/nas
 .else
 CONFIGURE_ARGS+=	--disable-nas --disable-nas-shared
 .endif
@@ -193,10 +189,13 @@ CONFIGURE_ARGS+=	ac_cv_lib_iconv_iconv_open=yes ac_cv_func_iconv=yes
 .endif
 
 post-patch:
-	 @${REINPLACE_CMD} -e '/ CheckInputEvents$$/d' \
+	@${REINPLACE_CMD} -e '/ CheckInputEvents$$/d' \
 		-e 's/-liconv/${ICONV_LIB}/g' ${WRKSRC}/configure
 # Clang does not provide _m_prefetch
 	@${REINPLACE_CMD} 's/_m_prefetch/__builtin_prefetch/' \
 		${WRKSRC}/configure ${WRKSRC}/src/video/SDL_blit_A.c
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSDL2.so
 
 .include <bsd.port.post.mk>

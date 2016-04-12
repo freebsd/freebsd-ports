@@ -9,8 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	ScrAPI toolkit for Ruby
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/tidy-1.1.2.gemspec:${PORTSDIR}/textproc/rubygem-tidy \
-		tidy:${PORTSDIR}/www/tidy-lib
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/tidy-1.1.2.gemspec:textproc/rubygem-tidy \
+		tidy:www/tidy-lib
 
 NO_ARCH=	yes
 

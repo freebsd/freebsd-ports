@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remake of classic roguelike game "Sword of Fargoal"
 
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	liballeg.so:devel/allegro
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

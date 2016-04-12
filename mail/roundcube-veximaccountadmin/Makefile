@@ -14,7 +14,7 @@ COMMENT=	Roundcube vexim account admin plugin
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=0.9:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.9:mail/roundcube
 
 NO_BUILD=	yes
 

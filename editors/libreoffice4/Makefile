@@ -19,64 +19,64 @@ COMMENT=	Full integrated office productivity suite
 LICENSE=	LGPL3 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-		zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
-		cppunit-config:${PORTSDIR}/devel/cppunit \
-		dmake:${PORTSDIR}/devel/dmake \
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		mdds>=0.9.0:${PORTSDIR}/devel/mdds \
-		gpatch:${PORTSDIR}/devel/patch \
-		ucpp:${PORTSDIR}/devel/ucpp \
-		vigra-config:${PORTSDIR}/graphics/vigra \
-		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm \
-		bash:${PORTSDIR}/shells/bash \
-		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libicutu.so:${PORTSDIR}/devel/icu \
-		liblangtag.so:${PORTSDIR}/devel/liblangtag \
-		liborcus-0.8.so:${PORTSDIR}/devel/liborcus07 \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libcdr-0.1.so:${PORTSDIR}/graphics/libcdr01 \
-		libetonyek-0.1.so:${PORTSDIR}/graphics/libetonyek01 \
-		libfreehand-0.1.so:${PORTSDIR}/graphics/libfreehand \
-		libgltf-0.0.so:${PORTSDIR}/graphics/libgltf \
-		libwpg-0.3.so:${PORTSDIR}/graphics/libwpg03 \
-		libGeneratedSaxParser.so:${PORTSDIR}/graphics/opencollada \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libpoppler.so:${PORTSDIR}/graphics/poppler \
-		liblpsolve55.so:${PORTSDIR}/math/lp_solve \
-		libcmis-0.5.so:${PORTSDIR}/net/libcmis \
-		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libmspub-0.1.so:${PORTSDIR}/print/libmspub01 \
-		libnss3.so:${PORTSDIR}/security/nss \
-		libclucene-core.so:${PORTSDIR}/textproc/clucene \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
-		libhyphen.so:${PORTSDIR}/textproc/hyphen \
-		libabw-0.1.so:${PORTSDIR}/textproc/libabw \
-		libe-book-0.1.so:${PORTSDIR}/textproc/libe-book \
-		libexttextcat-2.0.so:${PORTSDIR}/textproc/libexttextcat \
-		libmwaw-0.3.so:${PORTSDIR}/textproc/libmwaw03 \
-		libodfgen-0.1.so:${PORTSDIR}/textproc/libodfgen01 \
-		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge \
-		libvisio-0.1.so:${PORTSDIR}/textproc/libvisio01 \
-		libwpd-0.10.so:${PORTSDIR}/textproc/libwpd010 \
-		libwps-0.3.so:${PORTSDIR}/textproc/libwps03 \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libxslt.so:${PORTSDIR}/textproc/libxslt \
-		libmythes-1.2.so:${PORTSDIR}/textproc/mythes \
-		librdf.so:${PORTSDIR}/textproc/redland \
-		libserf-1.so:${PORTSDIR}/www/serf
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-caladea-ttf \
-		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-carlito-ttf \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
-		${LOCALBASE}/share/fonts/GentiumBasic/GenBasI.ttf:${PORTSDIR}/x11-fonts/gentium-basic \
-		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:${PORTSDIR}/x11-fonts/liberation-fonts-ttf \
-		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:${PORTSDIR}/x11-fonts/linuxlibertine-g
+BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+		zip:archivers/zip \
+		${LOCALBASE}/lib/libboost_regex.a:devel/boost-libs \
+		cppunit-config:devel/cppunit \
+		dmake:devel/dmake \
+		${LOCALBASE}/bin/gperf:devel/gperf \
+		mdds>=0.9.0:devel/mdds \
+		gpatch:devel/patch \
+		ucpp:devel/ucpp \
+		vigra-config:graphics/vigra \
+		${LOCALBASE}/include/glm/glm.hpp:math/glm \
+		bash:shells/bash \
+		gsed:textproc/gsed
+LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		libicutu.so:devel/icu \
+		liblangtag.so:devel/liblangtag \
+		liborcus-0.8.so:devel/liborcus07 \
+		libcurl.so:ftp/curl \
+		libcairo.so:graphics/cairo \
+		libgraphite2.so:graphics/graphite2 \
+		liblcms2.so:graphics/lcms2 \
+		libcdr-0.1.so:graphics/libcdr01 \
+		libetonyek-0.1.so:graphics/libetonyek01 \
+		libfreehand-0.1.so:graphics/libfreehand \
+		libgltf-0.0.so:graphics/libgltf \
+		libwpg-0.3.so:graphics/libwpg03 \
+		libGeneratedSaxParser.so:graphics/opencollada \
+		libpng.so:graphics/png \
+		libpoppler.so:graphics/poppler \
+		liblpsolve55.so:math/lp_solve \
+		libcmis-0.5.so:net/libcmis \
+		libharfbuzz.so:print/harfbuzz \
+		libmspub-0.1.so:print/libmspub01 \
+		libnss3.so:security/nss \
+		libclucene-core.so:textproc/clucene \
+		libexpat.so:textproc/expat2 \
+		libhunspell-1.3.so:textproc/hunspell \
+		libhyphen.so:textproc/hyphen \
+		libabw-0.1.so:textproc/libabw \
+		libe-book-0.1.so:textproc/libe-book \
+		libexttextcat-2.0.so:textproc/libexttextcat \
+		libmwaw-0.3.so:textproc/libmwaw03 \
+		libodfgen-0.1.so:textproc/libodfgen01 \
+		librevenge-0.0.so:textproc/librevenge \
+		libvisio-0.1.so:textproc/libvisio01 \
+		libwpd-0.10.so:textproc/libwpd010 \
+		libwps-0.3.so:textproc/libwps03 \
+		libxml2.so:textproc/libxml2 \
+		libxslt.so:textproc/libxslt \
+		libmythes-1.2.so:textproc/mythes \
+		librdf.so:textproc/redland \
+		libserf-1.so:www/serf
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
+		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
+		${LOCALBASE}/share/fonts/GentiumBasic/GenBasI.ttf:x11-fonts/gentium-basic \
+		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
+		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
 CONFLICTS_INSTALL=	libreoffice-5.*
 ONLY_FOR_ARCHS=	amd64 i386
@@ -217,13 +217,13 @@ TEST_DESC=	Run all regression tests
 VERBOSE_DESC=	Increase build verbosity
 WEBDAV_DESC=	Enable webdav protocol
 
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CONFIGURE_ENABLE=	cups
 
 DEBUG_CONFIGURE_ON=	--enable-crashdump --enable-dbgutil --enable-debug
 DEBUG_CONFIGURE_OFF=	--enable-release-build
 
-GNOME_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+GNOME_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 GNOME_USE=	GNOME=gconf2
 GNOME_CONFIGURE_ENABLE=	dbus gconf lockdown
 
@@ -251,8 +251,8 @@ JAVA_DISTFILES=	048751f3271906db5126ab76870444c4-commons-codec-1.9-src.zip:src \
 		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:src \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src
-JAVA_BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-			${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit
+JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
+			${JAVAJARDIR}/junit.jar:java/junit
 # XXX jni.h from GNU classpath causes ABI conflicts.
 JAVA_CONFLICTS_BUILD=	classpath-[0-9]*
 JAVA_CONFIGURE_ON=	--enable-ext-wiki-publisher \
@@ -280,7 +280,7 @@ PGSQL_CONFIGURE_ENABLE=	postgresql-sdbc
 PGSQL_CONFIGURE_WITH=	gssapi krb5
 
 SDK_DISTFILES=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
-SDK_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+SDK_BUILD_DEPENDS=	doxygen:devel/doxygen
 SDK_CONFIGURE_ENABLE=	odk
 SDK_CONFIGURE_ON=	--with-doxygen=${LOCALBASE}/bin/doxygen
 SDK_CONFIGURE_OFF=	--without-doxygen
@@ -289,7 +289,7 @@ SYSTRAY_CONFIGURE_ENABLE=	systray
 
 TEST_CONFIGURE_ENABLE=	cve-tests
 
-WEBDAV_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
+WEBDAV_LIB_DEPENDS=	libneon.so:www/neon
 WEBDAV_CONFIGURE_ENABLE=	neon
 
 # for dynamic plist generation
@@ -339,7 +339,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-configure.ac
 .endif
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
 .endif
 

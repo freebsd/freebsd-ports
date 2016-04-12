@@ -10,7 +10,7 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Set of extensions for Caja
 
-LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp
+LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp
 
 PORTSCOUT=	limitw:1,even
 

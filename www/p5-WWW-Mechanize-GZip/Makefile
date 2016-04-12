@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use WWW::Mechanize by requesting gzip-compression from the webserver
 
-BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
+BUILD_DEPENDS=	p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

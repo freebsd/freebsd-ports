@@ -11,7 +11,7 @@ COMMENT=	Graphical audio file extractor and encoder
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libuchardet.so:${PORTSDIR}/textproc/uchardet
+LIB_DEPENDS=	libuchardet.so:textproc/uchardet
 
 USE_GITHUB=	yes
 

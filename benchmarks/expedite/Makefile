@@ -11,7 +11,7 @@ COMMENT=	Expedite is a benchmark suite for Evas
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl
+LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

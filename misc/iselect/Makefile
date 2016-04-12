@@ -28,7 +28,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	SLANG EXAMPLES
 SLANG_DESC=	Link with slang
-SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_CONFIGURE_ON=	--with-incdir=${LOCALBASE}/include \
 			--with-libdir=${LOCALBASE}/lib
 

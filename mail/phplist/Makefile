@@ -13,7 +13,7 @@ COMMENT=	Full-featured open-source newsletter manager
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
+RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
 
 USES=		cpe tar:tgz
 USE_PHP=	hash iconv imap mysqli pcre session xml zlib

@@ -40,10 +40,10 @@ PLIST_FILES=	man/man1/daily_cleanup.1.gz \
 		man/man1/django-admin.1.gz \
 		man/man1/gather_profile_stats.1.gz
 
-PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
-SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
-FASTCGI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
+PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb
+SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+FASTCGI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:www/py-flup
 
 .include <bsd.port.options.mk>
 
@@ -51,7 +51,7 @@ FASTCGI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 .	if empty(PORT_OPTIONS:MDOCS)
 IGNORE=	you cannot build documentation with DOCS option disabled
 .	endif
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx
 PORTDOCS=	*
 .endif
 

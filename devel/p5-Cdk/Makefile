@@ -14,7 +14,7 @@ COMMENT=	Perl5 module for Curses Development Kit
 
 LICENSE=	BSD4CLAUSE
 
-LIB_DEPENDS=	libcdk.so:${PORTSDIR}/devel/cdk
+LIB_DEPENDS=	libcdk.so:devel/cdk
 
 USES=		perl5 tar:tgz
 GNU_CONFIGURE=	yes

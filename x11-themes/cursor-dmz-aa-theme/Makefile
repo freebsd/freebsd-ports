@@ -14,7 +14,7 @@ LICENSE_NAME=	Creative Commons Attribution-ShareAlike 3.0 Unported
 LICENSE_TEXT=	See http://creativecommons.org/licenses/by-sa/3.0/
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	xcursorgen:${PORTSDIR}/x11/xcursorgen
+BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
 
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}/DMZ-Black

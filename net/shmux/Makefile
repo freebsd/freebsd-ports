@@ -26,11 +26,11 @@ FPING_DESC=	Use fping utility
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFPING}
-RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
+RUN_DEPENDS+=	fping:net/fping
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-pcre=no

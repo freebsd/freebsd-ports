@@ -56,8 +56,8 @@ regression-test: test
 
 .if ${OSVERSION} < 1001000
 # require clang & libc++
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34 \
-		${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:lang/clang34 \
+		${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
 CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1 -L${LOCALBASE}/lib
 .endif
 

@@ -10,30 +10,30 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fork of GNOME Shell with layout similar to GNOME 2
 
-BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
-LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
-		libcaribou.so:${PORTSDIR}/accessibility/caribou \
-		libmuffin.so:${PORTSDIR}/x11-wm/muffin \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libtelepathy-logger.so:${PORTSDIR}/net-im/telepathy-logger \
-		libfolks.so:${PORTSDIR}/net-im/folks \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libcroco-0.6.so:${PORTSDIR}/textproc/libcroco \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter \
-		libcjs.so:${PORTSDIR}/lang/cjs \
-		libcinnamon-menu-3.so:${PORTSDIR}/x11/cinnamon-menus \
-		libaccountsservice.so:${PORTSDIR}/sysutils/accountsservice
-RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
-		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
-		gnome-themes-standard>=3.0.0:${PORTSDIR}/x11-themes/gnome-themes-standard \
-		cinnamon-control-center:${PORTSDIR}/sysutils/cinnamon-control-center \
-		cinnamon-translations>=0:${PORTSDIR}/misc/cinnamon-translations \
-		cinnamon-screensaver:${PORTSDIR}/x11/cinnamon-screensaver \
-		nemo:${PORTSDIR}/x11-fm/nemo \
-		py*-pillow>=0:${PORTSDIR}/graphics/py-pillow \
-		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
+BUILD_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
+		gnome-autogen.sh:devel/gnome-common
+LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
+		libcaribou.so:accessibility/caribou \
+		libmuffin.so:x11-wm/muffin \
+		libtelepathy-glib.so:net-im/telepathy-glib \
+		libtelepathy-logger.so:net-im/telepathy-logger \
+		libfolks.so:net-im/folks \
+		libpulse.so:audio/pulseaudio \
+		libcroco-0.6.so:textproc/libcroco \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libclutter-glx-1.0.so:graphics/clutter \
+		libcjs.so:lang/cjs \
+		libcinnamon-menu-3.so:x11/cinnamon-menus \
+		libaccountsservice.so:sysutils/accountsservice
+RUN_DEPENDS=	py*-dbus>=0:devel/py-dbus \
+		ca_root_nss>=0:security/ca_root_nss \
+		gnome-themes-standard>=3.0.0:x11-themes/gnome-themes-standard \
+		cinnamon-control-center:sysutils/cinnamon-control-center \
+		cinnamon-translations>=0:misc/cinnamon-translations \
+		cinnamon-screensaver:x11/cinnamon-screensaver \
+		nemo:x11-fm/nemo \
+		py*-pillow>=0:graphics/py-pillow \
+		py*-lxml>=0:devel/py-lxml
 
 WRKSRC=		${WRKDIR}/Cinnamon-${PORTVERSION}
 
@@ -59,7 +59,7 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.cinnamon.gschema.xml
 
 OPTIONS_DEFINE=	NLS
-NLS_RUN_DEPENDS=	cinnamon-translations>=0:${PORTSDIR}/misc/cinnamon-translations
+NLS_RUN_DEPENDS=	cinnamon-translations>=0:misc/cinnamon-translations
 
 post-patch:
 # we need this for intltoolize otherwise it can't copy the m4 file ...

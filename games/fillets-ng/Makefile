@@ -39,9 +39,9 @@ DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
 OPTIONS_DEFINE=	DOCS FRIBIDI SMPEG X11
 OPTIONS_DEFAULT=FRIBIDI SMPEG X11
 
-FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 SMPEG_DESC=		Video playback support
-SMPEG_LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+SMPEG_LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 X11_DESC=		X11 window manager support
 X11_USE=		xorg=x11
 X11_CONFIGURE_ON=	--with-X=yes

@@ -1,20 +1,44 @@
---- Makefile.in.orig	2010-08-04 20:17:38.000000000 +0000
-+++ Makefile.in	2010-08-27 14:22:38.000000000 +0000
-@@ -1514,7 +1514,7 @@
- build_vendor = @build_vendor@
- datadir = @datadir@
- datarootdir = @datarootdir@
--docdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
-+docdir = $(prefix)/share/doc/$(PACKAGE)
- dvidir = @dvidir@
- exec_prefix = @exec_prefix@
- host = @host@
-@@ -1609,7 +1609,7 @@
+--- Makefile.in.orig	2016-03-12 20:07:30 UTC
++++ Makefile.in
+@@ -105,10 +105,10 @@ host_triplet = @host@
+ # changes one day.  gcc ignores functions it doesn't understand.
+ @GCC_TRUE@am__append_2 = -Wall -Wwrite-strings -Woverloaded-virtual \
+ @GCC_TRUE@               -Wno-sign-compare \
+-@GCC_TRUE@               -fno-builtin-malloc -fno-builtin-free -fno-builtin-realloc \
+-@GCC_TRUE@               -fno-builtin-calloc -fno-builtin-cfree \
+-@GCC_TRUE@               -fno-builtin-memalign -fno-builtin-posix_memalign \
+-@GCC_TRUE@               -fno-builtin-valloc -fno-builtin-pvalloc
++@GCC_TRUE@                  \
++@GCC_TRUE@                 \
++@GCC_TRUE@                 \
++@GCC_TRUE@                
+ 
+ @GCC_TRUE@am__append_3 = -fno-builtin
+ 
+@@ -1943,7 +1943,7 @@ am__can_run_installinfo = \
+ man1dir = $(mandir)/man1
+ NROFF = nroff
+ MANS = $(dist_man_MANS)
+-am__dist_doc_DATA_DIST = AUTHORS COPYING ChangeLog INSTALL NEWS README \
++am__dist_doc_DATA_DIST = AUTHORS ChangeLog INSTALL NEWS README \
+ 	README_windows.txt TODO doc/index.html doc/designstyle.css \
+ 	doc/pprof_remote_servers.html doc/tcmalloc.html \
+ 	doc/overview.gif doc/pageheap.gif doc/spanmap.gif \
+@@ -2185,7 +2185,7 @@ am__DIST_COMMON = $(dist_man_MANS) $(src
+ 	$(top_srcdir)/src/config.h.in \
+ 	$(top_srcdir)/src/gperftools/tcmalloc.h.in \
+ 	$(top_srcdir)/src/windows/gperftools/tcmalloc.h.in AUTHORS \
+-	COPYING ChangeLog INSTALL NEWS README TODO compile \
++	ChangeLog INSTALL NEWS README TODO compile \
+ 	config.guess config.sub depcomp install-sh ltmain.sh missing \
+ 	test-driver
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -2429,7 +2429,7 @@ googleinclude_HEADERS = \
  # noinst doesn't seem to work with data.  I separate them out anyway, in case
  # one day we figure it out.  Regardless, installing the dot files isn't the
  # end of the world.
 -dist_doc_DATA = AUTHORS COPYING ChangeLog INSTALL NEWS README \
 +dist_doc_DATA = AUTHORS ChangeLog INSTALL NEWS README \
  	README_windows.txt TODO doc/index.html doc/designstyle.css \
- 	$(am__append_12) doc/tcmalloc.html doc/overview.gif \
+ 	$(am__append_18) doc/tcmalloc.html doc/overview.gif \
  	doc/pageheap.gif doc/spanmap.gif doc/threadheap.gif \

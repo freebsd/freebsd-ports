@@ -13,9 +13,9 @@ COMMENT=	Perl5 module for auto-filling HTML form fields from previous values
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Parser>=3.26:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-HTML-Parser>=3.26:www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-CGI>=0:${PORTSDIR}/www/p5-CGI
+TEST_DEPENDS=	p5-CGI>=0:www/p5-CGI
 
 INSTALL_TARGET=	pure_install
 USES=		perl5

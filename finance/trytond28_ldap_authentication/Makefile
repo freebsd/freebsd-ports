@@ -13,7 +13,7 @@ COMMENT=	Tryton Application Platform (LDAP Authentication Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_ldap_connection>=2.8.0:${PORTSDIR}/finance/trytond28_ldap_connection
+RUN_DEPENDS=	trytond28_ldap_connection>=2.8.0:finance/trytond28_ldap_connection
 
 CONFLICTS=	trytond_ldap_authentication-2.[46].*
 

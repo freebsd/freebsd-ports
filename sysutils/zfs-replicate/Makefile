@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	ZFS Snapshot Replication Script
 
-RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
+RUN_DEPENDS=	ksh:shells/pdksh
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

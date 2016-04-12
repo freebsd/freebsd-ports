@@ -25,7 +25,7 @@ DEFAULTCONF_DESC=Install default configuration (requires bash)
 OPTIONS_DEFAULT+=DEFAULTCONF
 OPTIONS_SUB=	yes
 
-DEFAULTCONF_RUN_DEPENDS=bash:${PORTSDIR}/shells/bash
+DEFAULTCONF_RUN_DEPENDS=bash:shells/bash
 
 .include <bsd.port.options.mk>
 

@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/00copyright
 OPTIONS_DEFINE=	DATABASE DOCS STUNNEL
 OPTIONS_DEFAULT=STUNNEL
 DATABASE_DESC=	Support database feature (with Ruby & Sqlite3)
-DATABASE_RUN_DEPENDS=	rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3
+DATABASE_RUN_DEPENDS=	rubygem-sqlite3>=0:databases/rubygem-sqlite3
 STUNNEL_DESC=	Support SSL feature using stunnel
-STUNNEL_RUN_DEPENDS=	stunnel>=0:${PORTSDIR}/security/stunnel
+STUNNEL_RUN_DEPENDS=	stunnel>=0:security/stunnel
 
 # emacs port setup
 USE_EMACS=	yes

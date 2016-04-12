@@ -9,7 +9,7 @@ COMMENT=	LGPLv3 Cortex-M0/M3/M4 runtime library
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${LOCALBASE}/gcc-arm-embedded-${TOOLCHAIN_FULL_VERSION}/bin/arm-none-eabi-gcc:${PORTSDIR}/devel/gcc-arm-embedded
+BUILD_DEPENDS=	${LOCALBASE}/gcc-arm-embedded-${TOOLCHAIN_FULL_VERSION}/bin/arm-none-eabi-gcc:devel/gcc-arm-embedded
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libopencm3

@@ -397,7 +397,7 @@ MOZ_OPTIONS+=	--disable-pulseaudio
 
 .if ${MOZILLA_VER:R:R} >= 40
 .if ${PORT_OPTIONS:MRUST}
-BUILD_DEPENDS+=	rustc:${PORTSDIR}/${RUST_PORT}
+BUILD_DEPENDS+=	rustc:${RUST_PORT}
 RUST_PORT?=		lang/rust
 MOZ_OPTIONS+=	--enable-rust
 .else

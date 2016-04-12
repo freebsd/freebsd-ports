@@ -1,13 +1,13 @@
---- goocanvas.gemspec.orig	2016-01-15 18:40:29 UTC
+--- goocanvas.gemspec.orig	2016-03-31 16:13:37 UTC
 +++ goocanvas.gemspec
 @@ -24,8 +24,8 @@ Gem::Specification.new do |s|
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<gtk3>, ["= 2.2.0"])
--      s.add_runtime_dependency(%q<gobject-introspection>, ["= 2.2.0"])
-+      s.add_runtime_dependency(%q<gtk3>, [">= 2.2.0"])
-+      s.add_runtime_dependency(%q<gobject-introspection>, [">= 2.2.0"])
+-      s.add_runtime_dependency(%q<gtk3>.freeze, ["= 2.2.0"])
+-      s.add_runtime_dependency(%q<gobject-introspection>.freeze, ["= 2.2.0"])
++      s.add_runtime_dependency(%q<gtk3>.freeze, [">= 2.2.0"])
++      s.add_runtime_dependency(%q<gobject-introspection>.freeze, [">= 2.2.0"])
      else
-       s.add_dependency(%q<gtk3>, ["= 2.2.0"])
-       s.add_dependency(%q<gobject-introspection>, ["= 2.2.0"])
+       s.add_dependency(%q<gtk3>.freeze, ["= 2.2.0"])
+       s.add_dependency(%q<gobject-introspection>.freeze, ["= 2.2.0"])

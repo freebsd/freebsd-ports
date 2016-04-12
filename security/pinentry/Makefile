@@ -26,23 +26,23 @@ FRONTEND_DESC=	Default frontend
 
 TTY_DESC=	Console version
 PINENTRY_TTY=	pinentry-tty
-TTY_RUN_DEPENDS=	${PINENTRY_TTY}:${PORTSDIR}/security/pinentry-tty
+TTY_RUN_DEPENDS=	${PINENTRY_TTY}:security/pinentry-tty
 
 NCURSES_DESC=	Curses frontend
 PINENTRY_NCURSES=	pinentry-curses
-NCURSES_RUN_DEPENDS=	${PINENTRY_NCURSES}:${PORTSDIR}/security/pinentry-curses
+NCURSES_RUN_DEPENDS=	${PINENTRY_NCURSES}:security/pinentry-curses
 
 GTK2_DESC=	Gtk+ 2 frontend
 PINENTRY_GTK2=	pinentry-gtk-2
-GTK2_RUN_DEPENDS=	${PINENTRY_GTK2}:${PORTSDIR}/security/pinentry-gtk2
+GTK2_RUN_DEPENDS=	${PINENTRY_GTK2}:security/pinentry-gtk2
 
 QT4_DESC=	Qt 4 frontend
 PINENTRY_QT4=	pinentry-qt
-QT4_RUN_DEPENDS=	${PINENTRY_QT4}:${PORTSDIR}/security/pinentry-qt4
+QT4_RUN_DEPENDS=	${PINENTRY_QT4}:security/pinentry-qt4
 
 GNOME3_DESC=	GNOME 3 frontend
 PINENTRY_GNOME3=	pinentry-gnome3
-GNOME3_RUN_DEPENDS=	${PINENTRY_GNOME3}:${PORTSDIR}/security/pinentry-gnome3
+GNOME3_RUN_DEPENDS=	${PINENTRY_GNOME3}:security/pinentry-gnome3
 
 .include <bsd.port.options.mk>
 
@@ -58,9 +58,9 @@ do-install:
 
 .else # !defined(PINENTRY_GUI)
 PKGNAMESUFFIX=	-${PINENTRY_GUI}
-LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libksba.so:${PORTSDIR}/security/libksba
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libgcrypt.so:security/libgcrypt \
+		libksba.so:security/libksba
 
 USES+=		iconv gmake pkgconfig
 GNU_CONFIGURE=	yes
@@ -73,12 +73,12 @@ OPTIONS_DEFINE=	LIBSECRET
 
 LIBSECRET_DESC=	Saving the passphrase with libsecret
 LIBSECRET_CONFIGURE_ENABLE=	libsecret
-LIBSECRET_LIB_DEPENDS=	libsecret-1.so:${PORTSDIR}/security/libsecret
+LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 
 .if ${PINENTRY_GUI} == "gnome3"
 OPTIONS_SLAVE=	LIBSECRET
 USE_GNOME+=	gtk20
-LIB_DEPENDS+=	libgcr-base-3.so:${PORTSDIR}/security/gcr
+LIB_DEPENDS+=	libgcr-base-3.so:security/gcr
 PLIST_FILES=	bin/pinentry-gnome3
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gnome3

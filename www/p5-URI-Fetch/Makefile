@@ -14,9 +14,9 @@ COMMENT=	Smart URI fetching/caching
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
+		p5-URI>=0:net/p5-URI \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	CACHE
@@ -26,7 +26,7 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-CACHE_BUILD_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
-CACHE_RUN_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
+CACHE_BUILD_DEPENDS=	p5-Cache>=0:devel/p5-Cache
+CACHE_RUN_DEPENDS=	p5-Cache>=0:devel/p5-Cache
 
 .include <bsd.port.mk>

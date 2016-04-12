@@ -11,9 +11,9 @@ COMMENT=	SKK support for Fcitx
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:${PORTSDIR}/japanese/skk-jisyo
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
-		libskk.so:${PORTSDIR}/japanese/libskk
+RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:japanese/skk-jisyo
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
+		libskk.so:japanese/libskk
 
 USES=		tar:xz compiler:c++11-lang cmake gettext pkgconfig
 INSTALLS_ICONS=	yes

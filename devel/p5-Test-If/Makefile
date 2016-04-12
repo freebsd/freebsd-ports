@@ -14,7 +14,7 @@ COMMENT=	Test only if
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-lib-abs>=0:${PORTSDIR}/devel/p5-lib-abs
+BUILD_DEPENDS=	p5-lib-abs>=0:devel/p5-lib-abs
 
 USES=	perl5
 USE_PERL5=	configure

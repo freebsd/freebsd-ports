@@ -13,24 +13,24 @@ COMMENT=	Wiki compiler
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
-		p5-CGI-FormBuilder>=0:${PORTSDIR}/www/p5-CGI-FormBuilder \
-		p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
-		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
-		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		p5-Text-Markdown>=0:${PORTSDIR}/textproc/p5-Text-Markdown \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML
+BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
+		p5-CGI-FormBuilder>=0:www/p5-CGI-FormBuilder \
+		p5-CGI-Session>=0:www/p5-CGI-Session \
+		p5-TimeDate>=0:devel/p5-TimeDate \
+		p5-HTML-Scrubber>=0:www/p5-HTML-Scrubber \
+		p5-HTML-Template>=0:www/p5-HTML-Template \
+		p5-Mail-Sendmail>=0:mail/p5-Mail-Sendmail \
+		p5-Text-Markdown>=0:textproc/p5-Text-Markdown \
+		p5-URI>=0:net/p5-URI \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-YAML>=0:textproc/p5-YAML \
+		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		p5-File-MimeInfo>=0:${PORTSDIR}/devel/p5-File-MimeInfo \
-		p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
-		p5-XML-Feed>=0:${PORTSDIR}/textproc/p5-XML-Feed \
-		p5-Authen-Passphrase>=0:${PORTSDIR}/security/p5-Authen-Passphrase
+		p5-File-MimeInfo>=0:devel/p5-File-MimeInfo \
+		p5-RPC-XML>=0:net/p5-RPC-XML \
+		p5-XML-Feed>=0:textproc/p5-XML-Feed \
+		p5-Authen-Passphrase>=0:security/p5-Authen-Passphrase
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -50,12 +50,12 @@ SEARCH_DESC=	Install search backend
 W3M_DESC=	Install w3m CGI wrapper
 MULTI_DESC=	Install Text::MultiMarkdown
 
-PO4A_RUN_DEPENDS=	po4a>=0.39:${PORTSDIR}/textproc/po4a
-PO4A_BUILD_DEPENDS=	po4a>=0.39:${PORTSDIR}/textproc/po4a
-SEARCH_RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Search-Xapian>=0:${PORTSDIR}/databases/p5-Search-Xapian \
-		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:${PORTSDIR}/www/xapian-omega
-MULTI_RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:${PORTSDIR}/textproc/p5-Text-MultiMarkdown
+PO4A_RUN_DEPENDS=	po4a>=0.39:textproc/po4a
+PO4A_BUILD_DEPENDS=	po4a>=0.39:textproc/po4a
+SEARCH_RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-Search-Xapian>=0:databases/p5-Search-Xapian \
+		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:www/xapian-omega
+MULTI_RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:textproc/p5-Text-MultiMarkdown
 
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	*

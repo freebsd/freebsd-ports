@@ -11,7 +11,7 @@ COMMENT=	Populate values from Consul into a process environment
 LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	armon:gometrics,goradix aws:awssdkgo coreos:etcd fatih:structs \
@@ -36,7 +36,7 @@ GH_TAGNAME=	6c5fa0d:gometrics fbd82e8:goradix 308eaa6:awssdkgo 6afd8e4:etcd \
 		ec11b92:consultemplate c2a1a65:envconsul 7554cd9:errwrap \
 		875fb67:gocleanhttp 8b8de10:gogatedio fa3f638:gomsgpack \
 		d30f099:gomultierror 42a2b57:gosyslog 2951e8b:gouuid \
- 		17e3543:golanglru 4de5195:hcl 0dc08b1:logutils 8d36400:serf \
+		17e3543:golanglru 4de5195:hcl 0dc08b1:logutils 8d36400:serf \
 		97820e2:vault bbaa094:gojmespath ffe986a:pq \
 		6fc6626:copystructure 87b45ff:iochan 281073e:mapstructure \
 		eecf4c7:reflectwalk 913027e:gozookeeper c8b9e63:crypto \

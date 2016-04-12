@@ -19,6 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS+=	libguile-2.0.so:${PORTSDIR}/lang/guile2
+LIB_DEPENDS+=	libguile-2.0.so:lang/guile2
 
 .include <bsd.port.mk>

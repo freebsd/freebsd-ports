@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	4
 MAINTAINER=	xmj@chaot.net
 COMMENT=	P2P VoIP software
 
-RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:${PORTSDIR}/audio/linux-skype_oss_wrapper
+RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:audio/linux-skype_oss_wrapper
 
 CONFLICTS=	skype-devel-[0-9]*
 
@@ -39,13 +39,13 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 BROKEN=		Skype 4.3 requires Linux 2.6.32 emulation.
 .endif
 
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 NVIDIA_GL_USE=		LINUX_APPS=xorglibs
 NVIDIA_GL_USE_OFF=	LINUX_APPS=dri
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MVIDEO}
-RUN_DEPENDS+=	webcamd:${PORTSDIR}/multimedia/webcamd
+RUN_DEPENDS+=	webcamd:multimedia/webcamd
 USE_LINUX_APPS+=	libv4l
 SUB_LIST+=	VIDEO="LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so "
 .else

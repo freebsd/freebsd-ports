@@ -29,11 +29,11 @@ FESTIVAL_DESC=	Festival speech synthesis support
 
 OPTIONS_SUB=	yes
 
-ESPEAK_LIB_DEPENDS=	libespeak.so:${PORTSDIR}/audio/espeak
+ESPEAK_LIB_DEPENDS=	libespeak.so:audio/espeak
 ESPEAK_CONFIGURE_ON=--with-espeak-dir=${LOCALBASE}
 ESPEAK_CONFIGURE_OFF=--without-espeak
 
-FESTIVAL_RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
+FESTIVAL_RUN_DEPENDS=	festival:audio/festival
 FESTIVAL_CONFIGURE_OFF=--without-festival
 
 post-patch:

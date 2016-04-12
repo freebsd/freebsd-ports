@@ -11,7 +11,7 @@ COMMENT=	Compute the distance between two pieces of data
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS=	swig2.0:devel/swig20
 
 USES+=		fakeroot pkgconfig tcl
 USE_LDCONFIG=	yes
@@ -22,5 +22,7 @@ CFLAGS+=	-fPIC
 
 pre-build:
 	mkdir -p ${STAGEDIR}/usr/local/tests/${PORTNAME}
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

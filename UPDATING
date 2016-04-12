@@ -5,6 +5,99 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160411:
+  AFFECTS: Users if databases/influxdb
+  AUTHOR: cheffo@freebsd-bg.org
+
+  To upgrade to InfluxDB 0.12, you must be on version 0.10 and all shards must
+  be in TSM format (the default storage engine starting with InfluxDB 0.10).
+  See the 0.10 documentation [1] for how to convert b1 and bz1 shards to TSM. If
+  any b1 or bz1 shards are present, InfluxDB 0.12 will not start.
+
+  Next, you need to update your metastore *before updating to 0.12.* [2]
+
+  [1] https://docs.influxdata.com/influxdb/v0.10/administration/upgrading/#convert-b1-and-bz1-shards-to-tsm1
+  [2] https://docs.influxdata.com/influxdb/v0.12/administration/upgrading/
+
+20160406:
+  AFFECTS: All users of www/pecl-http
+  AUTHOR: bofh
+
+  www/pecl-http has been updated to the latest 3.x stable release, which 
+  supports php70+ and a new port www/pecl-http2 has been created for the
+  2.x branch.
+
+  Should users want to continue to use version 2.x, replace www/pecl-http with
+  www/pecl-http2 as follows:
+
+  Using packages:
+
+    # pkg delete pecl-http
+    # pkg install pecl-http2
+
+  Using ports:
+
+    # portupgrade -o www/pecl-http2 www/pecl-http
+
+  OR
+
+    # portmaster -o www/pecl-http2 www/pecl-http
+
+20160404:
+  AFFECTS: users of lang/ruby21
+  AUTHOR: swills@FreeBSD.org
+
+  The default ruby version has been updated from 2.1 to 2.2.
+
+  If you compile your own ports you may keep 2.1 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep ruby 2.1 as default version
+  #
+  DEFAULT_VERSIONS+=ruby=2.1
+
+  If you wish to update to the new default version, you need to first stop any
+  software that uses ruby. Then, you will need to follow these steps, depending
+  upon how you manage your system.
+
+  If you use pkgng, simply upgrade:
+  # pkg upgrade
+
+  If you use portmaster, install new ruby, then rebuild all ports that depend
+  on ruby:
+  # portmaster -o lang/ruby22 lang/ruby21
+  # portmaster -R -r ruby-2.2
+
+  If you use portupgrade, install new ruby, then rebuild all ports that depend
+  on ruby:
+
+  # pkg delete -f ruby portupgrade
+  # make -C /usr/ports/ports-mgmt/portupgrade install clean
+  # pkg set -o lang/ruby21:lang/ruby22
+  # portupgrade -x ruby-2.2.\* -fr lang/ruby22
+
+20160404:
+  AFFECTS: mail/spamassassin
+  AUTHOR: adamw@FreeBSD.org
+
+  Support for SSLv3 has been removed from SpamAssassin, because
+  SSLv3 is a Bad Idea. No direct option is provided to re-enable it.
+  If your setup requires use of SSLv3, some instructions are available
+  in FreeBSD PR 208225.
+
+20160331:
+  AFFECTS: security/clamav-unofficial-sigs
+  AUTHOR: lukasz@wasikowski.net, sf@maxempire.com
+
+  This version of clamav-unofficial-sigs is eXtremeSHOK's fork.
+  Configuration file location has changed from
+  %PREFIX%/clamav-unofficial-sigs.conf to
+  %PREFIX%/clamav-unofficial-sigs/
+
+  master.conf and os.conf hold default values, local changes should
+  be placed in user.conf.
+
 20160324:
   AFFECTS: print/ghostscript9-base
   AUTHOR: tijl@FreeBSD.org

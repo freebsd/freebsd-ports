@@ -14,7 +14,7 @@ LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 
 NO_ARCH=	yes
 GNU_CONFIGURE=	yes

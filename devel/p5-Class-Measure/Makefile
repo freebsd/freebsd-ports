@@ -14,7 +14,7 @@ COMMENT=	Create, compare, and convert units of measurement
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Sub-Exporter>=0.982:${PORTSDIR}/devel/p5-Sub-Exporter
+BUILD_DEPENDS=	p5-Sub-Exporter>=0.982:devel/p5-Sub-Exporter
 
 USES=		perl5
 USE_PERL5=	configure

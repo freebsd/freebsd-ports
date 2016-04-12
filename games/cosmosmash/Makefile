@@ -13,10 +13,10 @@ COMMENT=	Clone of the Intellivision(TM) game Astrosmash(TM)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libflatzebra-0.1.so:${PORTSDIR}/devel/flatzebra \
-		libaa.so:${PORTSDIR}/graphics/aalib \
-		libmikmod.so:${PORTSDIR}/audio/libmikmod \
-		libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	libflatzebra-0.1.so:devel/flatzebra \
+		libaa.so:graphics/aalib \
+		libmikmod.so:audio/libmikmod \
+		libaudiofile.so:audio/libaudiofile
 
 USE_SDL=	sdl image mixer
 USE_XORG=	x11 xau xdmcp

@@ -10,10 +10,10 @@ MASTER_SITES=	http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfile
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Modular log file analysis program
 
-LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns \
-		libgd.so:${PORTSDIR}/graphics/gd \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libadns.so:dns/adns \
+		libgd.so:graphics/gd \
+		libpcre.so:devel/pcre \
+		libexpat.so:textproc/expat2
 
 USES=		gettext libtool
 

@@ -12,8 +12,8 @@ COMMENT=	Opus playback library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libopus.so:${PORTSDIR}/audio/opus
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libopus.so:audio/opus
 
 USES=		autoreconf gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	DOXYGEN DOCS
 OPTIONS_DEFAULT=	# empty
 
 DOXYGEN_CONFIGURE_ENABLE=	doc
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 CONFIGURE_ARGS+=	--disable-examples
 INSTALL_TARGET=	install-strip

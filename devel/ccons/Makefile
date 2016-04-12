@@ -13,10 +13,10 @@ COMMENT=	Interactive Console for the C Programming Language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	llvm-config33:${PORTSDIR}/devel/llvm33 \
-		clang++33:${PORTSDIR}/lang/clang33
-RUN_DEPENDS=	clang++33:${PORTSDIR}/lang/clang33
-LIB_DEPENDS=	libncurses.so:${PORTSDIR}/devel/ncurses
+BUILD_DEPENDS=	llvm-config33:devel/llvm33 \
+		clang++33:lang/clang33
+RUN_DEPENDS=	clang++33:lang/clang33
+LIB_DEPENDS=	libncurses.so:devel/ncurses
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		cmake libedit

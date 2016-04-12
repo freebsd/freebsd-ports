@@ -12,8 +12,8 @@ COMMENT=	GTK+-based audio player written in Python
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen
 
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	intltool pygtk2
@@ -40,20 +40,20 @@ SPEEX_USE=	GSTREAMER=speex
 MP3_USE=	GSTREAMER=mp3
 FLAC_USE=	GSTREAMER=flac
 
-MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack
+MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack
 MUSEPACK_USE=		GSTREAMER=musepack
 
-WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_USE=		GSTREAMER=wavpack
 
-AAC_LIB_DEPENDS=	libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
+AAC_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
 AAC_USE=		GSTREAMER=faad
 
-DBUS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus
-DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus
+DBUS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus
+DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus
 
-REMOTE_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>0:${PORTSDIR}/textproc/py-feedparser
-REMOTE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>0:${PORTSDIR}/textproc/py-feedparser
+REMOTE_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>0:textproc/py-feedparser
+REMOTE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>0:textproc/py-feedparser
 REMOTE_USE=		GSTREAMER=gnomevfs
 
 .include <bsd.port.mk>

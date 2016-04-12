@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Quick CSS parser
 
-BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-URI>=0:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	libcroco-0.6.so:${PORTSDIR}/textproc/libcroco
+LIB_DEPENDS=	libcroco-0.6.so:textproc/libcroco
 
 USES=		perl5 pkgconfig
 USE_PERL5=	configure

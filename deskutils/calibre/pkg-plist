@@ -838,6 +838,7 @@ lib/calibre/calibre/gui2/dialogs/tag_list_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
+lib/calibre/calibre/gui2/dialogs/test_email_ui.py
 lib/calibre/calibre/gui2/dialogs/trim_image.py
 lib/calibre/calibre/gui2/dialogs/user_profiles_ui.py
 lib/calibre/calibre/gui2/dnd.py
@@ -1198,6 +1199,7 @@ lib/calibre/calibre/srv/ajax.py
 lib/calibre/calibre/srv/auth.py
 lib/calibre/calibre/srv/auto_reload.py
 lib/calibre/calibre/srv/bonjour.py
+lib/calibre/calibre/srv/books.py
 lib/calibre/calibre/srv/code.py
 lib/calibre/calibre/srv/content.py
 lib/calibre/calibre/srv/errors.py
@@ -1596,9 +1598,9 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/content-server/font-awesome/fontawesome-webfont.ttf
 %%DATADIR%%/content-server/font-awesome/fontawesome-webfont.woff
 %%DATADIR%%/content-server/font-awesome/fontawesome-webfont.woff2
+%%DATADIR%%/content-server/index-generated.html
 %%DATADIR%%/content-server/index.html
 %%DATADIR%%/content-server/locales.zip
-%%DATADIR%%/content-server/main.js
 %%DATADIR%%/content-server/mobile.css
 %%DATADIR%%/content-server/reset.css
 %%DATADIR%%/content_server/av.jpg
@@ -1917,7 +1919,9 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/quick_start/fra.epub
 %%DATADIR%%/quick_start/ita.epub
 %%DATADIR%%/rapydscript/compiler.js.xz
+%%DATADIR%%/rapydscript/lib/aes.pyj
 %%DATADIR%%/rapydscript/lib/elementmaker.pyj
+%%DATADIR%%/rapydscript/lib/encodings.pyj
 %%DATADIR%%/rapydscript/lib/gettext.pyj
 %%DATADIR%%/rapydscript/lib/math.pyj
 %%DATADIR%%/rapydscript/lib/operator.pyj

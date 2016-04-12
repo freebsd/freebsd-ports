@@ -14,7 +14,7 @@ COMMENT=	File path utility
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-FailWarnings>=0:${PORTSDIR}/devel/p5-Test-FailWarnings
+TEST_DEPENDS=	p5-Test-FailWarnings>=0:devel/p5-Test-FailWarnings
 
 NO_ARCH=	yes
 USES=		perl5

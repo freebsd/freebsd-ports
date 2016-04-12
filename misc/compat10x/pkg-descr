@@ -7,6 +7,6 @@ Ports usage example:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1100000
-LIB_DEPENDS+=	libelf.so.1:${PORTSDIR}/misc/compat10x
+LIB_DEPENDS+=	libelf.so.1:misc/compat10x
 .endif
 --

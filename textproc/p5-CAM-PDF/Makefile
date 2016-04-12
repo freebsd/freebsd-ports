@@ -14,12 +14,12 @@ COMMENT=	PDF manipulation library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-RC4>=2.02:${PORTSDIR}/security/p5-Crypt-RC4 \
-		p5-Text-PDF>=0.29:${PORTSDIR}/print/p5-Text-PDF
+BUILD_DEPENDS=	p5-Crypt-RC4>=2.02:security/p5-Crypt-RC4 \
+		p5-Text-PDF>=0.29:print/p5-Text-PDF
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Memory-Cycle>=1.02:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
-		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Memory-Cycle>=1.02:devel/p5-Test-Memory-Cycle \
+		p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
 
 USES=		perl5
 USE_PERL5=	configure

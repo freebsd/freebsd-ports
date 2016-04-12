@@ -14,8 +14,8 @@ COMMENT=	Nmap frontend developed with Python and PyGTK
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${LOCALBASE}/bin/nmap:security/nmap
 
 NO_ARCH=	yes
 
@@ -31,7 +31,7 @@ DESKTOP_ENTRIES="Umit" "GUI frontend for Nmap security/port scanner" "umit" \
 
 OPTIONS_DEFINE=		DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx
 
 post-patch:
 	@${REINPLACE_CMD} -e \

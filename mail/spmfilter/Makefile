@@ -11,8 +11,8 @@ COMMENT=	Spmfilter is a high-performance mail filtering framework, written in C
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	libcmime>=0.1.10:${PORTSDIR}/mail/libcmime \
-		libesmtp>=1.0:${PORTSDIR}/mail/libesmtp
+BUILD_DEPENDS=	libcmime>=0.1.10:mail/libcmime \
+		libesmtp>=1.0:mail/libesmtp
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -64,13 +64,13 @@ CMAKE_ARGS+=	-DWITHOUT_LDAP=TRUE
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-LIB_DEPENDS+=	libzdb.so:${PORTSDIR}/databases/libzdb
+LIB_DEPENDS+=	libzdb.so:databases/libzdb
 USE_MYSQL=	yes
 _REQUIRE+=	mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-LIB_DEPENDS+=	libzdb.so:${PORTSDIR}/databases/libzdb
+LIB_DEPENDS+=	libzdb.so:databases/libzdb
 USES+=		pgsql
 _REQUIRE+=	postgresql
 .endif

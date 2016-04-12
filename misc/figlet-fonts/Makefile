@@ -11,7 +11,7 @@ DIST_SUBDIR=	figlet
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assorted fonts for the figlet(6) program
 
-RUN_DEPENDS=	figlet:${PORTSDIR}/misc/figlet
+RUN_DEPENDS=	figlet:misc/figlet
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

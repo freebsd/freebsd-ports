@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minecraft-server
-PORTVERSION=	1.9
+PORTVERSION=	1.9.2
 CATEGORIES=	games java
 MASTER_SITES=	https://s3.amazonaws.com/Minecraft.Download/versions/${PORTVERSION}/
 DISTFILES=	minecraft_server.${PORTVERSION}.jar
@@ -39,7 +39,7 @@ CONFIG_FILES=	banned-ips.json \
 		whitelist.json
 
 DAEMON_VARS=	USE_RC_SUBR=minecraft
-DAEMON_RUN_DEPENDS=	tmux:${PORTSDIR}/sysutils/tmux
+DAEMON_RUN_DEPENDS=	tmux:sysutils/tmux
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}

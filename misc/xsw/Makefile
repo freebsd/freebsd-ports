@@ -12,7 +12,7 @@ COMMENT=	Tool for creating presentations
 
 OPTIONS_DEFINE=	DOCS
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	convert:graphics/ImageMagick
 
 USE_SDL=	sdl ttf image gfx
 

@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 MAINTAINER=	johnjen@reynoldsnet.org
 COMMENT=	Digital photo gallery tool
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
-		p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
+RUN_DEPENDS=	convert:graphics/ImageMagick \
+		mplayer:multimedia/mplayer \
+		p5-Image-Info>=0:graphics/p5-Image-Info
 
 USES=		jpeg perl5
 USE_PERL5=	run

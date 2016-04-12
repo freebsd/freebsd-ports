@@ -13,9 +13,9 @@ COMMENT=	GUI frontend for efax program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12 \
-		libcxx-gtk-utils-2-2.2.so:${PORTSDIR}/x11-toolkits/c++-gtk-utils
-RUN_DEPENDS=	ggv:${PORTSDIR}/print/ggv
+LIB_DEPENDS=	libsigc-1.2.so:devel/libsigc++12 \
+		libcxx-gtk-utils-2-2.2.so:x11-toolkits/c++-gtk-utils
+RUN_DEPENDS=	ggv:print/ggv
 
 USES=		compiler:c++11-lib ghostscript:run pkgconfig
 USE_GNOME=	gtk20

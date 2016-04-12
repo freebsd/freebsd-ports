@@ -12,7 +12,7 @@ COMMENT=	Lightweight image viewer
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm
+LIB_DEPENDS=	libgnomevfsmm-2.6.so:devel/gnome-vfsmm
 
 USES=		desktop-file-utils gettext pkgconfig
 USE_GNOME=	gconfmm26 gtkmm24

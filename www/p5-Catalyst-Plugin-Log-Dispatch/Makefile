@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Log module of Catalyst that uses Log::Dispatch
 
-BUILD_DEPENDS=	p5-Log-Dispatch>=2.13:${PORTSDIR}/devel/p5-Log-Dispatch		\
-		p5-Log-Dispatch-Config>=0:${PORTSDIR}/devel/p5-Log-Dispatch-Config	\
-		p5-Catalyst-Runtime>=5.65:${PORTSDIR}/www/p5-Catalyst-Runtime	\
-		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
+BUILD_DEPENDS=	p5-Log-Dispatch>=2.13:devel/p5-Log-Dispatch		\
+		p5-Log-Dispatch-Config>=0:devel/p5-Log-Dispatch-Config	\
+		p5-Catalyst-Runtime>=5.65:www/p5-Catalyst-Runtime	\
+		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

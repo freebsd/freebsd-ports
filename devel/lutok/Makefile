@@ -23,8 +23,8 @@ OPTIONS_DEFAULT=TEST
 
 OPTIONS_SUB=		yes
 TEST_CONFIGURE_WITH=	atf
-TEST_BUILD_DEPENDS=	atf>=0.21:${PORTSDIR}/devel/atf
-TEST_RUN_DEPENDS=	atf>=0.21:${PORTSDIR}/devel/atf
+TEST_BUILD_DEPENDS=	atf>=0.21:devel/atf
+TEST_RUN_DEPENDS=	atf>=0.21:devel/atf
 
 .include <bsd.port.options.mk>
 

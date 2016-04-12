@@ -15,8 +15,8 @@ COMMENT=	ACL system for Postfix, as a policy daemon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipy>=0:${PORTSDIR}/net-mgmt/py-ipy \
-		${PYTHON_PKGNAMEPREFIX}pyspf>=0:${PORTSDIR}/mail/py-pyspf
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipy>=0:net-mgmt/py-ipy \
+		${PYTHON_PKGNAMEPREFIX}pyspf>=0:mail/py-pyspf
 
 USES=		python twisted
 USE_PYTHON=	distutils

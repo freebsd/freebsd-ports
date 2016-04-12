@@ -121,9 +121,9 @@ ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO \
 
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI=NO
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
-OQGRAPH_LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-			libJudy.so:${PORTSDIR}/devel/judy
-TOKUDB_LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
+OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+			libJudy.so:devel/judy
+TOKUDB_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 TOKUDB_PORTDOCS=	README.md
 TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
 NOT_FOR_ARCHS=		i386

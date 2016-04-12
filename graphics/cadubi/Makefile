@@ -10,7 +10,7 @@ COMMENT=	ASCII drawing utility
 
 LICENSE=	ART10
 
-RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
+RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
 GH_ACCOUNT=	statico
 GH_PROJECT=	cadubi

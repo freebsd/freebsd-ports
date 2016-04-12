@@ -11,8 +11,8 @@ COMMENT=	Pure console visual file manager
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:${PORTSDIR}/devel/py-urwid
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:${PORTSDIR}/devel/py-urwid
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:devel/py-urwid
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:devel/py-urwid
 
 USES=		python tar:bzip2
 USE_PYTHON=	distutils

@@ -14,8 +14,8 @@ COMMENT=	For DBI to selectively log SQL, parameters, result-sets, transactions
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBI>=1.500:${PORTSDIR}/databases/p5-DBI \
-		p5-Log-Log4perl>=1.04:${PORTSDIR}/devel/p5-Log-Log4perl
+BUILD_DEPENDS=	p5-DBI>=1.500:databases/p5-DBI \
+		p5-Log-Log4perl>=1.04:devel/p5-Log-Log4perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

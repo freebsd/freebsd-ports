@@ -12,7 +12,7 @@ COMMENT=	Lexer/parser utility functions for NetSurf
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	netsurf-buildsystem>=1.5:${PORTSDIR}/devel/netsurf-buildsystem
+BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
 
 USES=		gmake iconv localbase pkgconfig
 USE_LDCONFIG=	yes

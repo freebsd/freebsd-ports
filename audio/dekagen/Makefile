@@ -17,14 +17,14 @@ COMMENT=	Frontend to rip, convert, and name MP3/Ogg
 # both of them are supported by dekagen.
 
 .if !defined(WITHOUT_XMCD)
-RUN_DEPENDS+=	cda:${PORTSDIR}/audio/xmcd
+RUN_DEPENDS+=	cda:audio/xmcd
 .endif
 
 # If you want to use another ripper, eg. tosha or dagrab,
 # you can safely 'make -DWITHOUT_CDPARANOIA'.
 
 .if !defined(WITHOUT_CDPARANOIA)
-RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
+RUN_DEPENDS+=	cdparanoia:audio/cdparanoia
 .endif
 
 NO_BUILD=	Shell Script

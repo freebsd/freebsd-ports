@@ -13,7 +13,7 @@ COMMENT=	Open source JavaScript engine by Google
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicui18n.so:devel/icu
 
 CONFLICTS_INSTALL=	v8-[0-9]*
 

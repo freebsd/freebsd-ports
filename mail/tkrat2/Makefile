@@ -13,9 +13,9 @@ COMMENT=	Mail user agent for X with a Tcl/Tk user interface
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84 \
-		libtk84.so:${PORTSDIR}/x11-toolkits/tk84 \
-		libc-client4.so:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	libtcl84.so:lang/tcl84 \
+		libtk84.so:x11-toolkits/tk84 \
+		libc-client4.so:mail/cclient
 
 USE_XORG=	x11 xt
 

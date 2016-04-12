@@ -12,7 +12,7 @@ COMMENT=	Python libev interface
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	libev.so:devel/libev
 
 USES=		python
 USE_PYTHON=	distutils autoplist

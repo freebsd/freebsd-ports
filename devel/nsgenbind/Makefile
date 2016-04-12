@@ -12,8 +12,8 @@ COMMENT=	NetSurf Generator for JavaScript bindings
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	netsurf-buildsystem>=1.5:${PORTSDIR}/devel/netsurf-buildsystem \
-		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem \
+		${LOCALBASE}/bin/flex:textproc/flex
 
 USES=	bison gmake
 

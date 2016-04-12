@@ -14,8 +14,8 @@ COMMENT=	Create objects that are handles to classes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
-		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
+BUILD_DEPENDS=	p5-Class-ISA>=0:devel/p5-Class-ISA \
+		p5-Class-Inspector>=0:devel/p5-Class-Inspector
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

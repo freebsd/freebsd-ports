@@ -29,7 +29,7 @@ GTK1_PLIST_FILES=	bin/gspades man/man6/gspades.6.gz
 
 SLANG_USES=		readline ncurses
 SLANG_CONFIGURE_OFF=	--without-slang
-SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_LDFLAGS=		-lncurses
 SLANG_PLIST_FILES=	bin/slspades man/man6/slspades.6.gz
 

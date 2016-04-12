@@ -10,8 +10,8 @@ MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to share image and audio files between projects
 
-BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+BUILD_DEPENDS=	texi2html:textproc/texi2html
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		gettext gmake libtool:keepla makeinfo pathfix pkgconfig
 USE_GNOME=	gnomeprefix glib20 libxml2

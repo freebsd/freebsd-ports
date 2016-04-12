@@ -12,7 +12,7 @@ COMMENT=	Windows HTML Help (.chm) viewer for UNIX
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
+LIB_DEPENDS=	libchm.so:misc/chmlib
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

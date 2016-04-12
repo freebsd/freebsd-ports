@@ -9,8 +9,8 @@ MASTER_SITES=	LOCAL/sunpoet
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Decoder for RAW files from digital cameras
 
-LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2
+LIB_DEPENDS=	libjasper.so:graphics/jasper \
+		liblcms2.so:graphics/lcms2
 
 CFLAGS+=	-I${LOCALBASE}/include/jasper
 LDFLAGS+=	-ljasper -ljpeg -llcms2 -lm

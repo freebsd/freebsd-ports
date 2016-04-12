@@ -11,12 +11,12 @@ MASTER_SITES=	http://hal.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Hardware Abstraction Layer for simplifying device access
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 # keep shlib version, to prevent confusion with polkit-* from sysutils/polkit
-LIB_DEPENDS=	libpolkit.so.2:${PORTSDIR}/sysutils/policykit \
-		libvolume_id.so:${PORTSDIR}/devel/libvolume_id \
-		libck-connector.so:${PORTSDIR}/sysutils/consolekit
-RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
+LIB_DEPENDS=	libpolkit.so.2:sysutils/policykit \
+		libvolume_id.so:devel/libvolume_id \
+		libck-connector.so:sysutils/consolekit
+RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig python shebangfix
 USE_GNOME=	intlhack
@@ -71,7 +71,7 @@ FIXED_MOUNTPOINTS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-tools_hal-storage-mount
 .include <bsd.port.pre.mk>
 
 .if (${ARCH}=="i386" || ${ARCH}=="amd64" || ${ARCH}=="ia64")
-RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 .endif
 
 post-patch:
@@ -85,16 +85,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|user="0"|group="operator"|g' \
 		${WRKSRC}/hal.conf.in
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-	    	< ${FILESDIR}/README.fuse > ${WRKDIR}/README.fuse
+		< ${FILESDIR}/README.fuse > ${WRKDIR}/README.fuse
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/dist
 	${INSTALL_DATA} ${WRKSRC}/hal.conf ${STAGEDIR}${DATADIR}/dist
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_DATA} ${FILESDIR}/10-mouse-sysmouse.fdi \
-	    	${STAGEDIR}${PREFIX}/share/hal/fdi/policy/10osvendor
+		${STAGEDIR}${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_SCRIPT} ${FILESDIR}/mount-fuse \
-	    	${STAGEDIR}${PREFIX}/share/hal/mount-fuse
+		${STAGEDIR}${PREFIX}/share/hal/mount-fuse
 	@${MKDIR} ${STAGEDIR}/var/lib/hal
 
 post-install-DOCS-on:
@@ -102,6 +102,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/hald/freebsd/README \
 		${STAGEDIR}${DOCSDIR}/README.freebsd
 	${INSTALL_DATA} ${WRKDIR}/README.fuse \
-	    	${STAGEDIR}${DOCSDIR}/README.fuse
+		${STAGEDIR}${DOCSDIR}/README.fuse
 
 .include <bsd.port.post.mk>

@@ -11,7 +11,7 @@ COMMENT=	Command line wrapper for ipmitool and freeipmi
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/bmc-device:${PORTSDIR}/sysutils/freeipmi
+RUN_DEPENDS=	${LOCALBASE}/sbin/bmc-device:sysutils/freeipmi
 
 NO_ARCH=	yes
 

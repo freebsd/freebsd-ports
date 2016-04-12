@@ -11,10 +11,10 @@ COMMENT=	Library to handle UPnP IGD port mapping
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	gobject-introspection>=0.10:${PORTSDIR}/devel/gobject-introspection \
-		gupnp>=0.18:${PORTSDIR}/net/gupnp
-LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp
-RUN_DEPENDS=	gupnp>=0.18:${PORTSDIR}/net/gupnp
+BUILD_DEPENDS=	gobject-introspection>=0.10:devel/gobject-introspection \
+		gupnp>=0.18:net/gupnp
+LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp
+RUN_DEPENDS=	gupnp>=0.18:net/gupnp
 
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig tar:xz
 
 PYTHON_CONFIGURE_ENABLE=python
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject>=2.12.0:${PORTSDIR}/devel/py-gobject
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject>=2.12.0:devel/py-gobject
 PYTHON_USES=		python:2
 
 post-patch:

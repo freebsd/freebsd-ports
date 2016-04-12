@@ -13,8 +13,8 @@ COMMENT=	Codec for karaoke and text encapsulation for Ogg
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gmake libtool
@@ -33,13 +33,13 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:devel/doxygen
 .else
 CONFIGURE_ARGS+=	--disable-doc
 .endif
 
 .if ${PORT_OPTIONS:MKATEDJ}
-RUN_DEPENDS=	${LOCALBASE}/bin/oggz:${PORTSDIR}/audio/liboggz
+RUN_DEPENDS=	${LOCALBASE}/bin/oggz:audio/liboggz
 USES+=		python
 USE_WX=		2.8
 WX_UNICODE=	yes

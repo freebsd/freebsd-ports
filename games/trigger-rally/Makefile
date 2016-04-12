@@ -10,9 +10,9 @@ MASTER_SITES=	SF/trigger-rally/trigger-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Rally car racing game
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
-RUN_DEPENDS=	${DATADIR}/trigger.config.defs:${PORTSDIR}/games/trigger-data
+BUILD_DEPENDS=	jam:devel/jam
+LIB_DEPENDS=	libphysfs.so:devel/physfs
+RUN_DEPENDS=	${DATADIR}/trigger.config.defs:games/trigger-data
 
 USES=		openal:al,alut tar:bzip2
 USE_SDL=	sdl image

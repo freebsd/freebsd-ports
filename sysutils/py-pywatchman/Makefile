@@ -11,7 +11,7 @@ COMMENT=	Watchman client for Python
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	watchman>=4:${PORTSDIR}/sysutils/watchman
+RUN_DEPENDS=	watchman>=4:sysutils/watchman
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils

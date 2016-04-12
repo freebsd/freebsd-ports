@@ -14,8 +14,8 @@ COMMENT=	Organize Data in Tables
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Text-Aligner>=0.05:${PORTSDIR}/textproc/p5-Text-Aligner
-RUN_DEPENDS=	p5-Text-Aligner>=0.05:${PORTSDIR}/textproc/p5-Text-Aligner
+BUILD_DEPENDS=	p5-Text-Aligner>=0.05:textproc/p5-Text-Aligner
+RUN_DEPENDS=	p5-Text-Aligner>=0.05:textproc/p5-Text-Aligner
 
 USES=		perl5
 USE_PERL5=	configure

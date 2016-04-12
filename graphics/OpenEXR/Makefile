@@ -17,7 +17,7 @@ COMMENT=	High dynamic-range (HDR) image file format
 LICENSE=	BSD3CLAUSE
 
 # exact version required to avoid hard-to-debug issues
-LIB_DEPENDS=	libImath-2_2.so.12:${PORTSDIR}/graphics/ilmbase
+LIB_DEPENDS=	libImath-2_2.so.12:graphics/ilmbase
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

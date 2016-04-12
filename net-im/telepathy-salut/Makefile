@@ -11,9 +11,9 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
 
-LIB_DEPENDS=	libavahi-glib.so:${PORTSDIR}/net/avahi-app \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libavahi-glib.so:net/avahi-app \
+		libtelepathy-glib.so:net-im/telepathy-glib \
+		libsoup-2.4.so:devel/libsoup
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig python:build sqlite

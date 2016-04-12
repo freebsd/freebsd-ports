@@ -14,9 +14,9 @@ COMMENT=	GitHub Command Tools
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-JSON-XS>=2.3:${PORTSDIR}/converters/p5-JSON-XS \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Net-GitHub>=0.12:${PORTSDIR}/net/p5-Net-GitHub
+BUILD_DEPENDS=	p5-JSON-XS>=2.3:converters/p5-JSON-XS \
+		p5-Moose>=0:devel/p5-Moose \
+		p5-Net-GitHub>=0.12:net/p5-Net-GitHub
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

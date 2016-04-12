@@ -11,7 +11,7 @@ COMMENT=	Deprecated sanitizer API extracted from Action View
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport4>=4.2.1:${PORTSDIR}/devel/rubygem-activesupport4
+RUN_DEPENDS=	rubygem-activesupport4>=4.2.1:devel/rubygem-activesupport4
 
 NO_ARCH=	yes
 USE_RUBY=	yes

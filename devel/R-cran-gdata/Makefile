@@ -11,7 +11,7 @@ COMMENT=	Various R programming tools for data manipulation
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-gtools>0:${PORTSDIR}/devel/R-cran-gtools
+RUN_DEPENDS=	R-cran-gtools>0:devel/R-cran-gtools
 
 USES=		cran:auto-plist perl5 shebangfix
 USE_PERL5=	run

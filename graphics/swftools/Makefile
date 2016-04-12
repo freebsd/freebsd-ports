@@ -13,11 +13,11 @@ COMMENT=	SWF manipulation and generation utilities
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libt1.so:devel/t1lib \
+		libgif.so:graphics/giflib \
+		libfftw3.so:math/fftw3 \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		gmake pkgconfig jpeg
 USE_GL=		glut
@@ -37,8 +37,8 @@ BINFILES=	as3compile font2swf gif2swf jpeg2swf pdf2swf png2swf \
 
 OPTIONS_DEFINE=	LAME PDF
 OPTIONS_SUB=	yes
-LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
-PDF_LIB_DEPENDS=	libpdf.so:${PORTSDIR}/print/pdflib
+LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
+PDF_LIB_DEPENDS=	libpdf.so:print/pdflib
 
 .include <bsd.port.options.mk>
 

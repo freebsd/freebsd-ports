@@ -13,12 +13,12 @@ COMMENT=	Terminal-based ripper/encoder/tagger
 OPTIONS_DEFINE=	SOX DOCS
 SOX_DESC=	SoX audio support
 
-RUN_DEPENDS=	p5-CDDB_get>=0:${PORTSDIR}/audio/p5-CDDB_get \
-		cdparanoia:${PORTSDIR}/audio/cdparanoia \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		vorbisgain:${PORTSDIR}/audio/vorbisgain
+RUN_DEPENDS=	p5-CDDB_get>=0:audio/p5-CDDB_get \
+		cdparanoia:audio/cdparanoia \
+		oggenc:audio/vorbis-tools \
+		vorbisgain:audio/vorbisgain
 
-SOX_RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
+SOX_RUN_DEPENDS+=	sox:audio/sox
 PORTDOCS=	Changelog README criprc_example
 
 USES=		shebangfix perl5

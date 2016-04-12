@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	MySQL Squid Access Report
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 WRKROOT=	${WRKDIR}/${PORTNAME:tl}
 WRKSRC=		${WRKROOT}/bin/mysar-binary-importer/

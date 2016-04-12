@@ -11,18 +11,18 @@ PKGNAMESUFFIX=	-node
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Node-specific part of Munin
 
-BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
-		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
-		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
-		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
-		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
-		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
-		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
+		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
+		munin-common>=0:sysutils/munin-common \
+		p5-Net-Server>=0:net/p5-Net-Server \
+		bash:shells/bash
+RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
+		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
+		munin-common>=0:sysutils/munin-common \
+		p5-Net-Server>=0:net/p5-Net-Server \
+		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
+		p5-libwww>=0:www/p5-libwww \
+		bash:shells/bash
 
 USES=		gmake perl5 shebangfix cpe
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -43,12 +43,12 @@ SNMP_DESC=	Include SNMP plugins
 PERL_DESC=	Include all Perl modules (adds dependencies)
 JAVA_DESC=	Include JAVA plugins
 
-SNMP_BUILD_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-PERL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
+SNMP_BUILD_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
+SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
+PERL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
+		p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 JAVA_USE=	java=yes
 JAVA_INSTALL_TARGET=	install-plugins-java
 JAVA_BUILD=	yes

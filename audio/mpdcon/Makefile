@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 USES=		gnustep
 USE_GNUSTEP=	base gui back build
 
-LIB_DEPENDS=	libmpdclient.so.2:${PORTSDIR}/audio/libmpdclient \
-		libSQLClient.so:${PORTSDIR}/databases/sqlclient
+LIB_DEPENDS=	libmpdclient.so.2:audio/libmpdclient \
+		libSQLClient.so:databases/sqlclient
 
 post-patch:
 	${REINPLACE_CMD} -e \

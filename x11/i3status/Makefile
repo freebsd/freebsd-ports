@@ -12,15 +12,15 @@ LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	PULSEAUDIO
 
-LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
-		libyajl.so:${PORTSDIR}/devel/yajl
+LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
+		libyajl.so:devel/yajl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		gmake tar:bzip2
 
 PULSEAUDIO_EXTRA_PATCHES_OFF=	${FILESDIR}/no-pulseaudio.diff
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/i3status.c

@@ -13,9 +13,9 @@ COMMENT=	Set of visitor objects for traversing Tree::Simple hierarchies
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Tree-Simple>=1.22:${PORTSDIR}/devel/p5-Tree-Simple
+BUILD_DEPENDS=	p5-Tree-Simple>=1.22:devel/p5-Tree-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0.15:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0.15:devel/p5-Test-Exception
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure

@@ -10,7 +10,7 @@ COMMENT=	Compression/decompression tool based on snappy library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS=	libsnappy.so:archivers/snappy
 
 OPTIONS_DEFINE=	DOCS
 

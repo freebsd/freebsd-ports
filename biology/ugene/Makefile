@@ -16,7 +16,7 @@ COMMENT=	Free, open-source, cross-platform bioinformatics toolkit
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		desktop-file-utils execinfo qmake
 USE_GL=		glu

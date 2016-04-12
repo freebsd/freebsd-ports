@@ -10,7 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image-generator that uses ASCII input files to create PNGs/EDFs
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
+
+CONFLICTS_INSTALL=	sekrit-twc-zimg-* # include/zimg.h
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \

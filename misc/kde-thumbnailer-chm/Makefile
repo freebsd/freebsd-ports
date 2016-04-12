@@ -10,7 +10,7 @@ DISTNAME=	153410-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE thumbnail generator for CHM files
 
-LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
+LIB_DEPENDS=	libchm.so:misc/chmlib
 
 USES=		cmake
 USE_KDE4=	kdeprefix kdelibs automoc4

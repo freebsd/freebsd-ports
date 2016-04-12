@@ -13,8 +13,8 @@ COMMENT=	Dynamic, minimalist window manager for X11
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libixp.so:${PORTSDIR}/devel/libixp
-RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
+LIB_DEPENDS=	libixp.so:devel/libixp
+RUN_DEPENDS=	dmenu:x11/dmenu
 
 CONFLICTS=	wmii-3.9*
 

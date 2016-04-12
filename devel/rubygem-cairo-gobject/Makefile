@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cairo-gobject
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+PORTVERSION=	3.0.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +10,8 @@ COMMENT=	Ruby binding for cairo-gobject
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-cairo>=0:${PORTSDIR}/graphics/rubygem-cairo \
-		rubygem-glib2>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-glib2
+RUN_DEPENDS=	rubygem-cairo>=0:graphics/rubygem-cairo \
+		rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

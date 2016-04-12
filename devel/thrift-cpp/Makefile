@@ -15,8 +15,8 @@ COMMENT=	C++ interface to Thrift
 
 DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
 
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libevent.so:devel/libevent2
 
 USES=			autoreconf pkgconfig gmake compiler:c++11-lang libtool
 GNU_CONFIGURE=		yes

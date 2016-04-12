@@ -7,6 +7,6 @@ Ports usage example:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800105
-LIB_DEPENDS+=	alias.6:${PORTSDIR}/misc/compat7x
+LIB_DEPENDS+=	alias.6:misc/compat7x
 .endif
 --

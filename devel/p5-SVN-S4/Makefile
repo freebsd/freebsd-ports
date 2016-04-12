@@ -13,10 +13,10 @@ COMMENT=	Wrapper for subversion program
 LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
-RUN_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
-		p5-IO-AIO>=0:${PORTSDIR}/devel/p5-IO-AIO \
-		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
+BUILD_DEPENDS=	p5-subversion>=0:devel/p5-subversion
+RUN_DEPENDS=	p5-Config-Tiny>=0:devel/p5-Config-Tiny \
+		p5-IO-AIO>=0:devel/p5-IO-AIO \
+		p5-subversion>=0:devel/p5-subversion
 
 USES=		perl5
 USE_PERL5=	configure

@@ -75,7 +75,7 @@ USES+=		jpeg
 .if ! ${PORT_OPTIONS:MPNG} || ! ${PORT_OPTIONS:MBACKGROUND}
 CONFIGURE_ARGS+=	--disable-png
 .else
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 .endif
 
 .if ! ${PORT_OPTIONS:MTRANSPARENCY}

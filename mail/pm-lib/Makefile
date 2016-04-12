@@ -13,7 +13,7 @@ COMMENT=	Collection of procmail plug-in modules
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
+RUN_DEPENDS=	procmail:mail/procmail
 
 NO_BUILD=	yes
 PORTDOCS=	*

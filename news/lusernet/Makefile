@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 USES=		gnustep
 USE_GNUSTEP=	back build
-LIB_DEPENDS=	libPantomime.so:${PORTSDIR}/mail/pantomime
+LIB_DEPENDS=	libPantomime.so:mail/pantomime
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/LuserNET.app/LuserNET

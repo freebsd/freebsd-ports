@@ -12,7 +12,7 @@ COMMENT=	SQLite extension for Tcl using the Tcl Extension Architecture (TEA)
 
 LICENSE=	PD
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 OPTIONS_DEFINE=	THREADS
 OPTIONS_DEFAULT=	THREADS

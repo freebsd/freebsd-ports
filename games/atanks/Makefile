@@ -12,7 +12,7 @@ COMMENT=	2D tank game with large, cartoonish weapons
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	liballeg.so:devel/allegro
 
 USES=		gmake
 MAKE_ARGS+=	PREFIX=${PREFIX}/

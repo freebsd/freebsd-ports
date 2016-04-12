@@ -13,7 +13,7 @@ COMMENT=	Install Debian base system into a directory
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/debian/copyright
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:ftp/wget
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes

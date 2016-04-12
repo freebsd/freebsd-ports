@@ -14,8 +14,8 @@ COMMENT=	Xfce's desktop manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libnotify.so:devel/libnotify
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

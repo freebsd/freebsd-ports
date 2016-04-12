@@ -13,7 +13,7 @@ COMMENT=	Ada 95 Booch Components
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	gprbuild:devel/gprbuild
 
 USES=		ada gmake tar:bzip2
 HAS_CONFIGURE=	yes

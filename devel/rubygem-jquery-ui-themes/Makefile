@@ -12,7 +12,7 @@ COMMENT=	Allows inclusion of pre-built jquery themes without editing
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-httparty>=0:${PORTSDIR}/www/rubygem-httparty
+RUN_DEPENDS=	rubygem-httparty>=0:www/rubygem-httparty
 
 NO_ARCH=	yes
 USE_RUBY=	yes

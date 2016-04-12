@@ -8,7 +8,7 @@ CATEGORIES=	net
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Syncthing CLI
 
-BUILD_DEPENDS=	go>=1.5:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go>=1.5:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	syncthing

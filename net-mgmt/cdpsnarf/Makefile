@@ -11,7 +11,7 @@ COMMENT=	Tool to extract information from CDP packets
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	libpcap.so:net/libpcap
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Zapotek

@@ -11,8 +11,8 @@ COMMENT=	DM plugin for active_model compliance and thus rails 3 compatibility
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activemodel>=3.0:${PORTSDIR}/databases/rubygem-activemodel \
-		rubygem-dm-core>=1.2.0:${PORTSDIR}/databases/rubygem-dm-core
+RUN_DEPENDS=	rubygem-activemodel>=3.0:databases/rubygem-activemodel \
+		rubygem-dm-core>=1.2.0:databases/rubygem-dm-core
 
 NO_ARCH=	yes
 

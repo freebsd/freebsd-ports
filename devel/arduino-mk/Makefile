@@ -14,10 +14,10 @@ COMMENT=	Build Arduino sketches from the command line
 LICENSE=	LGPL21
 
 # gmake is needed to use the port, not to build it
-RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		arduino:${PORTSDIR}/devel/arduino
-PATCH_DEPENDS=	${LOCALBASE}/arduino/lib/version.txt:${PORTSDIR}/devel/arduino
+RUN_DEPENDS=	gmake:devel/gmake \
+		p5-YAML>=0:textproc/p5-YAML \
+		arduino:devel/arduino
+PATCH_DEPENDS=	${LOCALBASE}/arduino/lib/version.txt:devel/arduino
 
 USES=		shebangfix
 SHEBANG_FILES=	bin/ard-parse-boards bin/ard-reset-arduino

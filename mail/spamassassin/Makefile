@@ -3,7 +3,7 @@
 
 PORTNAME=	spamassassin
 PORTVERSION=	3.4.1
-PORTREVISION?=	5	# also bump japanese/spamassassin
+PORTREVISION?=	6	# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	APACHE/spamassassin/source CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
@@ -13,14 +13,14 @@ COMMENT?=	Highly efficient mail filter for identifying spam
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
-		p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTTP-Date>=0:${PORTSDIR}/www/p5-HTTP-Date \
-		p5-IO-Socket-IP>=0:${PORTSDIR}/net/p5-IO-Socket-IP \
-		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-NetAddr-IP>=4.010:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+BUILD_DEPENDS=	p5-Encode-Detect>=0:converters/p5-Encode-Detect \
+		p5-HTML-Parser>=3.46:www/p5-HTML-Parser \
+		p5-HTTP-Date>=0:www/p5-HTTP-Date \
+		p5-IO-Socket-IP>=0:net/p5-IO-Socket-IP \
+		p5-Net-DNS>=0.63:dns/p5-Net-DNS \
+		p5-NetAddr-IP>=4.010:net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		re2c>=.12.0:${PORTSDIR}/devel/re2c
+		re2c>=.12.0:devel/re2c
 
 .for dep in DCC DKIM MYSQL PGSQL PYZOR RAZOR RELAY_COUNTRY SPF_QUERY SSL
 TEST_DEPENDS+=	${${dep}_RUN_DEPENDS}
@@ -79,21 +79,21 @@ SUB_LIST+=	SPAMD_OWN="${USERS}:${GROUPS}"
 PLIST_SUB+=	USER=${USERS} GROUP=${GROUPS}
 OPTIONS_SUB=	yes
 
-DCC_RUN_DEPENDS=	dcc-dccd>=1.3.111:${PORTSDIR}/mail/dcc-dccd
-DKIM_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-			p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM \
-			p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
-GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:${PORTSDIR}/security/gnupg1
-GNUPG2_RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
-MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
-PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-PYZOR_RUN_DEPENDS=	pyzor:${PORTSDIR}/mail/pyzor
-RAZOR_RUN_DEPENDS=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
-RELAY_COUNTRY_RUN_DEPENDS=	p5-Geo-IP>=0:${PORTSDIR}/net/p5-Geo-IP
-SPF_QUERY_RUN_DEPENDS=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF
+DCC_RUN_DEPENDS=	dcc-dccd>=1.3.111:mail/dcc-dccd
+DKIM_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+			p5-Mail-DKIM>=0.37:mail/p5-Mail-DKIM \
+			p5-Crypt-OpenSSL-RSA>=0.26_1:security/p5-Crypt-OpenSSL-RSA
+GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:security/gnupg1
+GNUPG2_RUN_DEPENDS=	gpg2:security/gnupg
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+PYZOR_RUN_DEPENDS=	pyzor:mail/pyzor
+RAZOR_RUN_DEPENDS=	razor-agents>=2.84:mail/razor-agents
+RELAY_COUNTRY_RUN_DEPENDS=	p5-Geo-IP>=0:net/p5-Geo-IP
+SPF_QUERY_RUN_DEPENDS=	p5-Mail-SPF>=0:mail/p5-Mail-SPF
 
 SSL_USE=		OPENSSL=yes
-SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 SSL_CONFIGURE_ON=	ENABLE_SSL=yes
 SSL_CONFIGURE_OFF=	ENABLE_SSL=no
 

@@ -12,8 +12,8 @@ COMMENT=	Yet Another SQL*Plus Replacement
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-DBD-Oracle>0:${PORTSDIR}/databases/p5-DBD-Oracle \
-		p5-ReadLine-Gnu>0:${PORTSDIR}/devel/p5-ReadLine-Gnu
+RUN_DEPENDS=	p5-DBD-Oracle>0:databases/p5-DBD-Oracle \
+		p5-ReadLine-Gnu>0:devel/p5-ReadLine-Gnu
 
 NO_ARCH=	yes
 
@@ -26,11 +26,11 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=		CSV HIRES READKEY
 
 CSV_DESC=		Support for in/out CSV files
-CSV_BUILD_DEPENDS=	p5-Text-CSV_XS>0:${PORTSDIR}/textproc/p5-Text-CSV_XS
+CSV_BUILD_DEPENDS=	p5-Text-CSV_XS>0:textproc/p5-Text-CSV_XS
 HIRES_DESC=		Support for high resolution benchmarking
-HIRES_BUILD_DEPENDS=	p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
+HIRES_BUILD_DEPENDS=	p5-Time-HiRes>0:devel/p5-Time-HiRes
 READKEY_DESC=		Better input and output control
-READKEY_BUILD_DEPENDS=	p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey
+READKEY_BUILD_DEPENDS=	p5-Term-ReadKey>0:devel/p5-Term-ReadKey
 
 post-patch:
 	@${REINPLACE_CMD} -e \

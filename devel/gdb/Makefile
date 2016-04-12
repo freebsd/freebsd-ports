@@ -12,7 +12,7 @@ COMMENT=	GNU GDB of newer version than comes with the system
 
 LICENSE=	GPLv3
 
-TEST_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
+TEST_DEPENDS=	runtest:misc/dejagnu
 
 TEST_TARGET=	check
 USES=		cpe iconv gmake libtool tar:xz
@@ -57,10 +57,10 @@ BASE_READLINE_CFLAGS=	-D_rl_echoing_p=readline_echoing_p
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
 DEBUG_CFLAGS=		-g
 EXPAT_CONFIGURE_WITH=	expat
-EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 GUILE_CONFIGURE_WITH=	guile
 GUILE_USES=		pkgconfig
-GUILE_LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2
+GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
 PORT_READLINE_USES=	readline:port
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python

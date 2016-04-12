@@ -15,7 +15,7 @@ COMMENT=	Open source Java written 3D modelling and rendering studio
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjogl.so:${PORTSDIR}/graphics/jogl
+LIB_DEPENDS=	libjogl.so:graphics/jogl
 
 USES=		dos2unix zip
 DOS2UNIX_FILES=	../AoI_Manual/*.html

@@ -13,7 +13,7 @@ COMMENT=	Convert bitmap to vector graphics
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cpe pathfix pkgconfig libtool
 CPE_VENDOR=	autotrace_project
@@ -28,14 +28,14 @@ OPTIONS_DEFAULT=IMAGEMAGICK PSTOEDIT
 MING_DESC=	Enable swf interface
 PSTOEDIT_DESC=	Convert postscript to other formats
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 IMAGEMAGICK_CONFIGURE_OFF=	--without-magick
 
-MING_LIB_DEPENDS=	libming.so:${PORTSDIR}/graphics/ming
+MING_LIB_DEPENDS=	libming.so:graphics/ming
 MING_CPPFLAGS=		-I${LOCALBASE}/include -I${LOCALBASE}/include/ming
 MING_CONFIGURE_OFF=	ac_cv_header_ming_h=no
 
-PSTOEDIT_LIB_DEPENDS=	libpstoedit.so:${PORTSDIR}/graphics/pstoedit
+PSTOEDIT_LIB_DEPENDS=	libpstoedit.so:graphics/pstoedit
 PSTOEDIT_CONFIGURE_OFF=	--without-pstoedit
 
 post-patch:

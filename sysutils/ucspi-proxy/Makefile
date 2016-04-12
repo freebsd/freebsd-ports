@@ -10,7 +10,7 @@ MASTER_SITES=	http://untroubled.org/ucspi-proxy/
 MAINTAINER=	dale.woolridge@gmail.com
 COMMENT=	Proxy program for UCSPI servers and clients
 
-LIB_DEPENDS=	libbg.so:${PORTSDIR}/devel/bglibs
+LIB_DEPENDS=	libbg.so:devel/bglibs
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

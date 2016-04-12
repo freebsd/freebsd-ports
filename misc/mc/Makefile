@@ -54,10 +54,10 @@ NLS_USES=		gettext
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LDFLAGS=		-L${LOCALBASE}/lib
 
-SFTP_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
+SFTP_LIB_DEPENDS=	libssh2.so:security/libssh2
 SFTP_CONFIGURE_ENABLE=	vfs-sftp
 
-SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_CONFIGURE_ON=	--with-screen=slang --with-slang-includes=${LOCALBASE}/include
 
 SMB_CONFIGURE_ENABLE=	vfs-smb

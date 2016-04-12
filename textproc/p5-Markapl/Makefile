@@ -14,11 +14,11 @@ COMMENT=	Markup as Perl
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
-		p5-HTML-Lint>=0:${PORTSDIR}/www/p5-HTML-Lint \
-		p5-B-Hooks-EndOfScope>=0.05:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
-		p5-String-BufferStack>=1.15:${PORTSDIR}/textproc/p5-String-BufferStack \
-		p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare
+BUILD_DEPENDS=	p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \
+		p5-HTML-Lint>=0:www/p5-HTML-Lint \
+		p5-B-Hooks-EndOfScope>=0.05:devel/p5-B-Hooks-EndOfScope \
+		p5-String-BufferStack>=1.15:textproc/p5-String-BufferStack \
+		p5-Devel-Declare>=0:devel/p5-Devel-Declare
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

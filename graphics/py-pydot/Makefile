@@ -13,9 +13,9 @@ COMMENT=	Python interface to the Graphviz Dot language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing \
-		dot:${PORTSDIR}/graphics/graphviz
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing \
+		dot:graphics/graphviz
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

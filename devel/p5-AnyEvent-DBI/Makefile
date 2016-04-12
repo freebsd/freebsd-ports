@@ -14,9 +14,9 @@ COMMENT=	Asynchronous DBI access
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent>=4.15:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-DBI>=1.0:${PORTSDIR}/databases/p5-DBI \
-		p5-common-sense>=3.3:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-AnyEvent>=4.15:devel/p5-AnyEvent \
+		p5-DBI>=1.0:databases/p5-DBI \
+		p5-common-sense>=3.3:devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

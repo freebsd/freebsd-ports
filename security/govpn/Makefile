@@ -12,7 +12,7 @@ COMMENT=	Simple secure, DPI-resistant VPN daemon
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go:lang/go
 
 USES=		tar:xz
 MAKEFILE=	BSDmakefile

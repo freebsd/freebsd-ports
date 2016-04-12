@@ -12,13 +12,13 @@ COMMENT=	Scientific plotting package
 
 LICENSE=	LGPL21+
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${FREEFONT_DIR}/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
-LIB_DEPENDS=	libLASi.so:${PORTSDIR}/devel/lasi \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${FREEFONT_DIR}/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
+BUILD_DEPENDS=	bash:shells/bash \
+		${FREEFONT_DIR}/FreeMono.ttf:x11-fonts/freefont-ttf
+LIB_DEPENDS=	libLASi.so:devel/lasi \
+		libltdl.so:devel/libltdl \
+		libfreetype.so:print/freetype2
+RUN_DEPENDS=	bash:shells/bash \
+		${FREEFONT_DIR}/FreeMono.ttf:x11-fonts/freefont-ttf
 
 USE_GNOME=	pango
 USE_PERL5=	build
@@ -49,7 +49,7 @@ FORTRAN_CONFIGURE_ENV=	CMAKE_Fortran_COMPILER="${FC}"
 FORTRAN_CMAKE_ON=	-DENABLE_f95:BOOL=ON
 FORTRAN_CMAKE_OFF=	-DENABLE_f95:BOOL=OFF
 
-GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
+GD_LIB_DEPENDS=		libgd.so:graphics/gd
 GD_CMAKE_ON=		-DPLD_png:BOOL=ON
 
 LUA_USES=		lua:51
@@ -57,7 +57,7 @@ LUA_CMAKE_ON=		-DLUA_EXECUTABLE:FILEPATH="${LUA_CMD}"
 LUA_CMAKE_OFF=		-DENABLE_lua:BOOL=OFF
 
 PYTHON_USES=		python
-PYTHON_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
+PYTHON_BUILD_DEPENDS=	swig:devel/swig13 \
 			${PYNUMPY}
 PYTHON_RUN_DEPENDS=	${PYNUMPY}
 PYTHON_CONFIGURE_ENV=	PYTHON_VERSION="${PYTHON_VERSION}"
@@ -65,13 +65,13 @@ PYTHON_CMAKE_OFF=	-DENABLE_python:BOOL=OFF
 
 QHULL2003_DESC=		Legacy Qhull support
 QHULL2012_DESC=		Latest Qhull support
-QHULL2012_LIB_DEPENDS=	libqhull.so.6:${PORTSDIR}/math/qhull
-QHULL2003_LIB_DEPENDS=	libqhull.so.5:${PORTSDIR}/math/qhull5
+QHULL2012_LIB_DEPENDS=	libqhull.so.6:math/qhull
+QHULL2003_LIB_DEPENDS=	libqhull.so.5:math/qhull5
 QHULL2012_CMAKE_ON=	-DQHULL_INCLUDE_DIRS="${LOCALBASE}/include/libqhull"
 QHULL2012_2FIX=		lib/nn/delaunay.c src/plgridd.c
 
-TCLTK_LIB_DEPENDS=	libitk.so:${PORTSDIR}/x11-toolkits/itk
-TCLTK_RUN_DEPENDS=	iwidgets>0:${PORTSDIR}/x11-toolkits/iwidgets
+TCLTK_LIB_DEPENDS=	libitk.so:x11-toolkits/itk
+TCLTK_RUN_DEPENDS=	iwidgets>0:x11-toolkits/iwidgets
 TCLTK_USES=		tk
 ITCL_VER=		3.4
 ITK_VER=		3.3
@@ -94,7 +94,7 @@ THREADS_CMAKE_OFF=	-DTHREADS_HAVE_PTHREAD_ARG:BOOL=OFF
 QT4_USE=		QT4=corelib,gui,svg,xml,moc_build,qmake_build,rcc_build,uic_build
 QT4_CMAKE_OFF=		-DENABLE_qt:BOOL=OFF -DDEFAULT_NO_QT_DEVICES:BOOL=ON
 
-WXGTK_LIB_DEPENDS=	libagg.so:${PORTSDIR}/graphics/agg
+WXGTK_LIB_DEPENDS=	libagg.so:graphics/agg
 WXGTK_USE=		WX=2.6+
 WXGTK_CMAKE_ON=		-DwxWidgets_CONFIG_EXECUTABLE:FILEPATH="${WX_CONFIG}"
 WXGTK_CMAKE_OFF=	-DENABLE_wxwidgets:BOOL=OFF

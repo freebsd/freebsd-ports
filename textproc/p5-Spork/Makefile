@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Creating standalone HTML slideshows from Kwiki markup
 
-BUILD_DEPENDS=	p5-Kwiki>=0.38:${PORTSDIR}/www/p5-Kwiki \
-		p5-Spoon>=0.22:${PORTSDIR}/devel/p5-Spoon
+BUILD_DEPENDS=	p5-Kwiki>=0.38:www/p5-Kwiki \
+		p5-Spoon>=0.22:devel/p5-Spoon
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Ralf Engelschall's mm library
 
-LIB_DEPENDS=	libmm.so:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	libmm.so:devel/mm
 
 USES=		perl5
 USE_PERL5=	configure

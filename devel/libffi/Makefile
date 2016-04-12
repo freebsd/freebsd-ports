@@ -12,7 +12,7 @@ COMMENT=	Foreign Function Interface
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
+TEST_DEPENDS=	runtest:misc/dejagnu
 
 USES=		libtool pathfix
 USE_LDCONFIG=	yes

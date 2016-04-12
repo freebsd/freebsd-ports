@@ -14,18 +14,18 @@ COMMENT=	Streaming capable P2P network client based on BitTorrent
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>0:${PORTSDIR}/databases/py-apsw \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.7:${PORTSDIR}/devel/py-pyasn1 \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}gmpy>0:${PORTSDIR}/math/py-gmpy \
-		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \
-		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.16.4:${PORTSDIR}/net-p2p/libtorrent-rasterbar-python \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>0:${PORTSDIR}/security/py-m2crypto \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}feedparser>0:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}cherrypy>0:${PORTSDIR}/www/py-cherrypy \
-		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>0:databases/py-apsw \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.7:devel/py-pyasn1 \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}gmpy>0:math/py-gmpy \
+		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces \
+		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.16.4:net-p2p/libtorrent-rasterbar-python \
+		${PYTHON_PKGNAMEPREFIX}m2crypto>0:security/py-m2crypto \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}feedparser>0:textproc/py-feedparser \
+		${PYTHON_PKGNAMEPREFIX}cherrypy>0:www/py-cherrypy \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -51,8 +51,8 @@ OPTIONS_DEFINE=		DOCS VLC
 OPTIONS_DEFAULT=	VLC
 
 VLC_DESC=		Multimedia support via VLC
-VLC_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-			vlc:${PORTSDIR}/multimedia/vlc
+VLC_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
+			vlc:multimedia/vlc
 
 TRIBLER_DIR=	${PYTHONPREFIX_SITELIBDIR}/tribler
 

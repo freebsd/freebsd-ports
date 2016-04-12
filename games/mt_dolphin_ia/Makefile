@@ -12,7 +12,7 @@ COMMENT=		Basic AI for MaitreTarot, a Tarot card game
 
 LICENSE=		GPLv2
 
-LIB_DEPENDS=		libmt_client.so:${PORTSDIR}/games/libmt_client
+LIB_DEPENDS=		libmt_client.so:games/libmt_client
 
 USES=			pkgconfig tar:bzip2
 GNU_CONFIGURE=		yes

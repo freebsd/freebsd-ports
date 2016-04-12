@@ -11,7 +11,7 @@ MASTER_SITES=	http://jimsun.LinxNet.com/downloads/ \
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Postfix Log Entry Summarizer
 
-RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
+RUN_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes

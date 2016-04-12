@@ -13,13 +13,13 @@ COMMENT=	3D adventure and roleplaying game
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
-		${PYTHON_PKGNAMEPREFIX}openal>0:${PORTSDIR}/audio/py-openal \
-		${PYTHON_PKGNAMEPREFIX}vorbis>0:${PORTSDIR}/audio/py-vorbis \
-		${PYTHON_PKGNAMEPREFIX}tofu>0:${PORTSDIR}/net/py-tofu \
-		${PYTHON_PKGNAMEPREFIX}cerealizer>0:${PORTSDIR}/security/py-cerealizer
+LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
+		libfreetype.so:print/freetype2
+RUN_DEPENDS=	soya_editor:graphics/py-soya3d \
+		${PYTHON_PKGNAMEPREFIX}openal>0:audio/py-openal \
+		${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis \
+		${PYTHON_PKGNAMEPREFIX}tofu>0:net/py-tofu \
+		${PYTHON_PKGNAMEPREFIX}cerealizer>0:security/py-cerealizer
 
 NO_ARCH=	yes
 

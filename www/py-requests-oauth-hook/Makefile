@@ -15,8 +15,8 @@ BROKEN=		unfetchable
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>0:${PORTSDIR}/www/py-requests1 \
-		${PYTHON_PKGNAMEPREFIX}oauth2>0:${PORTSDIR}/net/py-oauth2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>0:www/py-requests1 \
+		${PYTHON_PKGNAMEPREFIX}oauth2>0:net/py-oauth2
 
 USES=		python
 USE_PYTHON=	distutils autoplist

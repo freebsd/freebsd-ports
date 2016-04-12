@@ -15,12 +15,12 @@ DISTFILES=	${VMD_DIST} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Molecular visualization program
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
+BUILD_DEPENDS=	makedepend:devel/makedepend \
 		${PYNUMERIC}
-LIB_DEPENDS=	libtcl85.so:${PORTSDIR}/lang/tcl85 \
-		libtk85.so:${PORTSDIR}/x11-toolkits/tk85 \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libtcl85.so:lang/tcl85 \
+		libtk85.so:x11-toolkits/tk85 \
+		libfltk.so:x11-toolkits/fltk \
+		libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYNUMERIC}
 
 USES=		gmake perl5 python

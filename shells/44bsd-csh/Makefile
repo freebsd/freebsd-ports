@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/cy
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The traditional 4.4BSD /bin/csh C-shell
 
-BUILD_DEPENDS=	rcs:${PORTSDIR}/devel/rcs57
+BUILD_DEPENDS=	rcs:devel/rcs57
 
 USES=		tar:bzip2
 NO_WRKSUBDIR=	yes

@@ -13,7 +13,7 @@ COMMENT=	Physics-based sandbox game
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/caph/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		tar:bzip2 iconv
 USE_SDL=	sdl

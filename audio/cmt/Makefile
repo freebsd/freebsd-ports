@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Computer Music Toolkit - a collection of LADSPA plugins
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}/src

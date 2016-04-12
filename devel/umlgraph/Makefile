@@ -17,8 +17,8 @@ USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.8
 
-BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-		pic2plot:${PORTSDIR}/graphics/plotutils
+BUILD_DEPENDS=	dot:graphics/graphviz \
+		pic2plot:graphics/plotutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_FILES=	bin/umlgraph %%JAVAJARDIR%%/UmlGraph.jar

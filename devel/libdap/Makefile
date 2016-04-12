@@ -13,10 +13,11 @@ COMMENT=	SDK which contains an implementation of DAP 2.0 and 3.1
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libxml2.so:textproc/libxml2
 
+CONFIGURE_ARGS=	ac_cv_type_max_align_t=yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

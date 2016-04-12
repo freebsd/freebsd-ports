@@ -27,9 +27,9 @@ OPTIONS_DEFINE=	MOTIF NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOTIF}
-LIB_DEPENDS+=	libplot.so:${PORTSDIR}/graphics/plotutils \
-		libXbae.so:${PORTSDIR}/x11-toolkits/xbae \
-		libXmHTML.so:${PORTSDIR}/x11-toolkits/xmhtml
+LIB_DEPENDS+=	libplot.so:graphics/plotutils \
+		libXbae.so:x11-toolkits/xbae \
+		libXmHTML.so:x11-toolkits/xmhtml
 USES+=		motif
 CONFIGURE_ARGS+=	--with-motif
 .else

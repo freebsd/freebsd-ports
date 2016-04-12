@@ -13,10 +13,10 @@ COMMENT=	Scientific PYthon Development EnviRonment, an alternative to IDLE
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
-		${PYTHON_SITELIBDIR}/PyQt4/QtWebKit.so:${PORTSDIR}/www/py-qt4-webkit \
-		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui \
+		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:graphics/py-qt4-svg \
+		${PYTHON_SITELIBDIR}/PyQt4/QtWebKit.so:www/py-qt4-webkit \
+		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:net/py-qt4-network
 
 USES=		desktop-file-utils python
 USE_PYTHON=	autoplist distutils
@@ -48,22 +48,22 @@ SCIPY_DESC=	Signal/image processing
 SPHINX_DESC=	Rich text help on the Object Inspector
 SYMPY_DESC=	Symbolic mathematics in the IPython Console
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0.6:${PORTSDIR}/textproc/py-sphinx
-IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=1.0:${PORTSDIR}/devel/ipython \
-	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.11:${PORTSDIR}/net/py-pyzmq
-JEDI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jedi>=0.8.1:${PORTSDIR}/devel/py-jedi
-MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.0:${PORTSDIR}/math/py-matplotlib
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0.6:textproc/py-sphinx
+IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython \
+	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.11:net/py-pyzmq
+JEDI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jedi>=0.8.1:devel/py-jedi
+MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.0:math/py-matplotlib
 NUMPY_RUN_DEPENDS=	${PYNUMPY}
-PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.13.1:${PORTSDIR}/math/py-pandas
-PEP8_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pep8>=0.6:${PORTSDIR}/devel/pep8
-PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.3:${PORTSDIR}/sysutils/py-psutil
-PYFLAKES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=0.5:${PORTSDIR}/devel/py-pyflakes
-PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:${PORTSDIR}/textproc/py-pygments
-PYLINT_RUN_DEPENDS=	pylint${PYTHON_PKGNAMESUFFIX}>=0.25:${PORTSDIR}/devel/pylint
-ROPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rope>=0.9.2:${PORTSDIR}/devel/py-rope
-SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:${PORTSDIR}/science/py-scipy
+PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.13.1:math/py-pandas
+PEP8_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pep8>=0.6:devel/pep8
+PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.3:sysutils/py-psutil
+PYFLAKES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=0.5:devel/py-pyflakes
+PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments
+PYLINT_RUN_DEPENDS=	pylint${PYTHON_PKGNAMESUFFIX}>=0.25:devel/pylint
+ROPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rope>=0.9.2:devel/py-rope
+SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy
 SPHINX_RUN_DEPENDS=	${DOCS_BUILD_DEPENDS}
-SYMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=0.7.3:${PORTSDIR}/math/py-sympy
+SYMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=0.7.3:math/py-sympy
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|'linux'|'${OPSYS:tl}'|" \

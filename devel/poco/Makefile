@@ -12,8 +12,8 @@ COMMENT=	C++ libraries with a network/internet focus
 
 LICENSE=	BSL
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libexpat.so:textproc/expat2
 
 CONFLICTS=	poco-ssl-[0-9]*
 
@@ -32,7 +32,7 @@ OPTIONS_SUB=		yes
 
 MYSQL_USE=		mysql=yes
 MYSQL_CMAKE_OFF=	-DENABLE_DATA_MYSQL:BOOL=OFF
-IODBC_LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+IODBC_LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 IODBC_CMAKE_ON=		-DODBC_INCLUDE_DIRECTORIES:PATH=${LOCALBASE}/include/libiodbc \
 			-DODBC_LIBRARIES:FILEPATH=${LOCALBASE}/lib/libiodbc.so
 SQLITE_USES=		sqlite
@@ -40,7 +40,7 @@ SQLITE_CMAKE_OFF=	-DENABLE_DATA_SQLITE:BOOL=OFF
 SSL_USE=		openssl=yes
 SSL_CMAKE_OFF=		-DENABLE_CRYPTO:BOOL=OFF \
 			-DENABLE_NETSSL:BOOL=OFF
-UNIXODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 UNIXODBC_CMAKE_ON=	-DODBC_INCLUDE_DIRECTORIES:PATH=${LOCALBASE}/include \
 			-DODBC_LIBRARIES:FILEPATH=${LOCALBASE}/lib/libodbc.so
 TEST_CMAKE_ON=		-DENABLE_TESTS:BOOL=ON

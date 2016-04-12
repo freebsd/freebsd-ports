@@ -11,8 +11,8 @@ DISTNAME=		mozjs${PORTVERSION}
 MAINTAINER=		kwm@FreeBSD.org
 COMMENT=		Standalone JavaScript based from Mozilla 17-esr
 
-BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=		libnspr4.so:${PORTSDIR}/devel/nspr
+BUILD_DEPENDS=		zip:archivers/zip
+LIB_DEPENDS=		libnspr4.so:devel/nspr
 
 CONFLICTS=		njs-[0-9]*
 

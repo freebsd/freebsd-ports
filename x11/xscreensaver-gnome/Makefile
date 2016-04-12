@@ -12,7 +12,7 @@ DISTNAME=	xscreensaver-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat (for GNOME users)
 
-LIB_DEPENDS=	libgle.so:${PORTSDIR}/graphics/gle
+LIB_DEPENDS=	libgle.so:graphics/gle
 
 #CONFLICTS?=	xscreensaver-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
@@ -57,7 +57,7 @@ PLIST_SUB+=		PAM="@comment "
 
 .if ${PORT_OPTIONS:MKEYRING}
 SUB_LIST+=		PAM_KEYRING=
-RUN_DEPENDS+=		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
+RUN_DEPENDS+=		${LOCALBASE}/lib/pam_gnome_keyring.so:security/gnome-keyring
 .else
 SUB_LIST+=		PAM_KEYRING=\#
 .endif
@@ -78,11 +78,11 @@ post-patch:
 .if ${PORT_OPTIONS:MPAM}
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
-	    	${WRKSRC}/${f}
+		${WRKSRC}/${f}
 .endfor
 .else
 	@${REINPLACE_CMD} -e 's|install-xml install-pam|install-xml|' \
-	    	${WRKSRC}/driver/Makefile.in
+		${WRKSRC}/driver/Makefile.in
 .endif
 
 pre-build:
@@ -101,7 +101,7 @@ post-install-slave:
 
 post-install: post-install-slave
 	@(if test -x ${STAGEDIR}${PREFIX}/bin/xscreensaver-hacks/webcollage-helper; then \
-	    	${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
+		${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
 			${CAT} - ${TMPPLIST} > ${TMPPLIST}.cat && \
 			${MV} ${TMPPLIST}.cat ${TMPPLIST}; fi)
 

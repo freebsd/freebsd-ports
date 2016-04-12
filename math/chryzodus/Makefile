@@ -13,7 +13,7 @@ COMMENT=	Chryzode (http//www.chryzode.org) explorer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	liballeg.so:devel/allegro
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile.unx

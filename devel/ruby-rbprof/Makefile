@@ -13,8 +13,8 @@ COMMENT=	Flexible Ruby profiler
 
 OPTIONS_DEFINE=	DOCS
 
-#RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:${PORTSDIR}/devel/ruby-unit \
-#		${RUBY_SITELIBDIR}/aspectr.rb:${PORTSDIR}/devel/ruby-aspectr
+#RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:devel/ruby-unit \
+#		${RUBY_SITELIBDIR}/aspectr.rb:devel/ruby-aspectr
 
 USE_RUBY=	yes
 

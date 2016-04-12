@@ -1,11 +1,11 @@
---- config.mk.in.orig	2015-05-07 19:42:23 UTC
+--- config.mk.in.orig	2016-03-24 00:59:48 UTC
 +++ config.mk.in
-@@ -8,7 +8,7 @@ prefix = @prefix@
+@@ -11,7 +11,7 @@ prefix = @prefix@
  exec_prefix= @exec_prefix@
  includedir = @includedir@
  libdir = @libdir@
 -javadir = ${exec_prefix}/java
 +javadir = ${exec_prefix}/share/java/classes
  dotnetdir = $(libdir)
- libexecdir = @libexecdir@/sqlrelay
+ libexecdir = @libexecdir@/$(SQLRELAY)
  bindir = @bindir@

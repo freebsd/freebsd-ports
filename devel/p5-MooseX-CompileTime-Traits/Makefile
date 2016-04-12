@@ -11,8 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to allow compile time traits for classes/roles
 
 RUN_DEPENDS=	\
-	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
-	p5-MooseX-Declare>0:${PORTSDIR}/devel/p5-MooseX-Declare
+	p5-Moose>0:devel/p5-Moose \
+	p5-MooseX-Declare>0:devel/p5-MooseX-Declare
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

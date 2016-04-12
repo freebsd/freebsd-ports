@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.9.12
+PORTVERSION=	1.9.14
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -37,6 +38,7 @@ OPTIONS_DEFINE=	\
 	HTTP_GZIP_STATIC \
 	HTTP_GUNZIP_FILTER \
 	HTTP_IMAGE_FILTER \
+	HTTP_MP4 \
 	HTTP_PERL \
 	HTTP_RANDOM_INDEX \
 	HTTP_REALIP \
@@ -59,6 +61,7 @@ OPTIONS_DEFINE=	\
 	THREADS \
 	WWW \
 	AJP \
+	AWS_AUTH \
 	CACHE_PURGE \
 	CLOJURE \
 	CT \
@@ -76,6 +79,7 @@ OPTIONS_DEFINE=	\
 	HTTP_FOOTER \
 	HTTP_JSON_STATUS \
 	HTTP_MOGILEFS \
+	HTTP_MP4_H264 \
 	HTTP_NOTICE \
 	HTTP_PUSH \
 	HTTP_PUSH_STREAM \
@@ -117,12 +121,13 @@ OPTIONS_DEFINE=	\
 	STATSD \
 	UDPLOG \
 	XRID_HEADER \
-	XSS \
-	VIDEO
+	XSS
 
-OPTIONS_RADIO=		VIDEO
-OPTIONS_RADIO_VIDEO=	HTTP_MP4 HTTP_MP4_H264
-OPTIONS_DEFAULT=	IPV6 HTTP HTTP_CACHE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTPV2 WWW
+OPTIONS_DEFAULT=IPV6 FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
+		HTTP_DAV HTTP_FLV HTTP_GZIP_STATIC HTTP_GUNZIP_FILTER \
+		HTTP_MP4 HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK \
+		HTTP_SLICE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTP_SUB \
+		HTTPV2 MAIL MAIL_SSL STREAM STREAM_SSL THREADS WWW
 
 DEBUGLOG_DESC=			Enable debug log (--with-debug)
 FILE_AIO_DESC=			Enable file aio
@@ -160,6 +165,7 @@ STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
 THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
 AJP_DESC=			3rd party ajp module
+AWS_AUTH_DESC=			3rd party aws auth module
 CACHE_PURGE_DESC=		3rd party cache_purge module
 CLOJURE_DESC=			3rd party clojure module
 CT_DESC=			3rd party cert_transparency module (SSL req.)
@@ -284,7 +290,7 @@ CATEGORIES+=	ipv6
 .endif
 
 .if ${PORT_OPTIONS:MGOOGLE_PERFTOOLS}
-LIB_DEPENDS+=	libprofiler.so:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	libprofiler.so:devel/google-perftools
 CONFIGURE_ARGS+=--with-google_perftools_module
 .endif
 
@@ -316,12 +322,11 @@ CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_DIGEST}
-GIT_AUTH_DIGEST_VERSION=	bd1c86a
-GH_ACCOUNT+=	samizdatco:auth_digest
+GIT_AUTH_DIGEST_VERSION=	4edfb18
+GH_ACCOUNT+=	atomx:auth_digest
 GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_auth_digest_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
@@ -366,6 +371,14 @@ GH_ACCOUNT+=	yaoweibin:ajp
 GH_PROJECT+=	nginx_ajp_module:ajp
 GH_TAGNAME+=	${NGINX_AJP_VERSION}:ajp
 CONFIGURE_ARGS+=--add-module=${WRKSRC_ajp}
+.endif
+
+.if ${PORT_OPTIONS:MAWS_AUTH}
+NGINX_AWS_AUTH_VERSION=	1e62670
+GH_ACCOUNT+=	anomalizer:aws_auth
+GH_PROJECT+=	ngx_aws_auth:aws_auth
+GH_TAGNAME+=	${NGINX_AWS_AUTH_VERSION}:aws_auth
+CONFIGURE_ARGS+=--add-module=${WRKSRC_aws_auth}
 .endif
 
 .if ${PORT_OPTIONS:MCACHE_PURGE}
@@ -423,7 +436,7 @@ CONFIGURE_ARGS+=--with-http_dav_module
 
 .if ${PORT_OPTIONS:MHTTP_DAV_EXT}
 USE_HTTP_DAV=	yes
-LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	libexpat.so:textproc/expat2
 NGINX_DAV_EXT_VERSION=	0.0.3
 GH_ACCOUNT+=	arut:dav_ext
 GH_PROJECT+=	nginx-dav-ext-module:dav_ext
@@ -469,7 +482,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_json_status}
 
 .if ${PORT_OPTIONS:MHTTP_GEOIP}
 CONFIGURE_ARGS+=--with-http_geoip_module=dynamic
-LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_GZIP_STATIC}
@@ -481,7 +494,7 @@ CONFIGURE_ARGS+=--with-http_gunzip_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_IMAGE_FILTER}
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:graphics/gd
 CONFIGURE_ARGS+=--with-http_image_filter_module=dynamic
 .endif
 
@@ -521,7 +534,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.99.8
+GIT_PUSH_VERSION=	0.99.11
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
@@ -567,11 +580,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_subs_filter}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_TARANTOOL}
-LIB_DEPENDS+=	libmsgpuck.so:${PORTSDIR}/devel/msgpuck \
-		libyajl.so:${PORTSDIR}/devel/yajl
+LIB_DEPENDS+=	libmsgpuck.so:devel/msgpuck \
+		libyajl.so:devel/yajl
 GH_ACCOUNT+=	tarantool:nginx_tarantool
 GH_PROJECT+=	nginx_upstream_module:nginx_tarantool
-GH_TAGNAME+=	966f2f5:nginx_tarantool
+GH_TAGNAME+=	3599ba0:nginx_tarantool
 CFLAGS+=	-I${LOCALBASE}/include/msgpuck
 CONFIGURE_ARGS+=--add-module=${WRKSRC_nginx_tarantool}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
@@ -626,12 +639,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-goodies-nginx-sticky-module-ng-c825
 
 .if ${PORT_OPTIONS:MHTTP_VIDEO_THUMBEXTRACTOR}
 NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.7.0
-LIB_DEPENDS+= 	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
-		libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
-		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+= 	libjpeg.so:graphics/jpeg \
+		libavformat.so:multimedia/ffmpeg \
+		libavcodec.so:multimedia/ffmpeg \
+		libavutil.so:multimedia/ffmpeg \
+		libswscale.so:multimedia/ffmpeg \
+		libMagickWand-6.so:graphics/ImageMagick
 GH_ACCOUNT+=	wandenberg:vte
 GH_PROJECT+=	nginx-video-thumbextractor-module:vte
 GH_TAGNAME+=	${NGINX_VIDEO_THUMBEXTRACTOR_VERSION}:vte
@@ -652,7 +665,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MDRIZZLE}
-LIB_DEPENDS+=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
+LIB_DEPENDS+=	libdrizzle.so:databases/libdrizzle
 NGINX_DRIZZLE_VERSION=	0.1.9
 GH_ACCOUNT+=	openresty:drizzle
 GH_PROJECT+=	drizzle-nginx-module:drizzle
@@ -703,7 +716,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 NGINX_LUA_VERSION=	7410339
@@ -723,11 +736,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
 
 .if ${PORT_OPTIONS:MMODSECURITY}
 NGINX_MODSECURITY_VERSION=	2.9.1
-LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libyajl.so:${PORTSDIR}/devel/yajl
+LIB_DEPENDS+=	libapr-1.so:devel/apr1 \
+		libcurl.so:ftp/curl \
+		libluajit-5.1.so:lang/luajit \
+		libpcre.so:devel/pcre \
+		libyajl.so:devel/yajl
 USE_APACHE=	22+
 USE_GNOME+=	libxml2
 MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION:S/RC/rc/}/:modsecurity
@@ -745,7 +758,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_src
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_REWRITE} || defined(USE_HTTP_REWRITE)
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 .else
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
@@ -843,9 +856,9 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 
 .if ${PORT_OPTIONS:MSMALL_LIGHT}
 NGINX_SMALL_LIGHT_VERSION=	0.6.15
-LIB_DEPENDS+=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick \
-		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libMagickCore-6.so:graphics/ImageMagick \
+		libMagickWand-6.so:graphics/ImageMagick \
+		libpcre.so:devel/pcre
 GH_ACCOUNT+=	cubicdaiya:small_light
 GH_PROJECT+=	ngx_small_light:small_light
 GH_TAGNAME+=	v${NGINX_SMALL_LIGHT_VERSION}:small_light
@@ -902,7 +915,7 @@ WITH_OPENSSL_PORT=	yes
 .if ${PORT_OPTIONS:MNJS}
 GH_ACCOUNT+=	nginx:njs
 GH_PROJECT+=	njs:njs
-GH_TAGNAME+=	50fbb3b:njs
+GH_TAGNAME+=	b9a54be:njs
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_njs}/nginx
 .endif
 
@@ -961,9 +974,9 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
 .endif
 
 .if ${PORT_OPTIONS:MBROTLI}
-NGINX_BROTLI_VERSION=	86998c6
-LIB_DEPENDS+=	libbrotlidec.so:${PORTSDIR}/devel/libbrotli \
-		libbrotlienc.so:${PORTSDIR}/devel/libbrotli
+NGINX_BROTLI_VERSION=	2fc6f12
+LIB_DEPENDS+=	libbrotlidec.so:devel/libbrotli \
+		libbrotlienc.so:devel/libbrotli
 GH_ACCOUNT+=	google:brotli
 GH_PROJECT+=	ngx_brotli:brotli
 GH_TAGNAME+=	${NGINX_BROTLI_VERSION}:brotli

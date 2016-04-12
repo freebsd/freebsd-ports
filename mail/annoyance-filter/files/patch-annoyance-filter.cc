@@ -1,6 +1,6 @@
---- annoyance-filter.cc.orig	2004-08-04 16:28:36.000000000 -0400
-+++ annoyance-filter.cc	2014-10-08 12:04:20.000000000 -0400
-@@ -114,7 +114,7 @@
+--- annoyance-filter.cc.orig	2004-08-04 20:28:36 UTC
++++ annoyance-filter.cc
+@@ -114,7 +114,7 @@ using namespace std;
  #define __GNU_LIBRARY__
  #undef __GETOPT_H__
  #endif
@@ -9,7 +9,7 @@
  #include "statlib.h" 
  
  /*237:*/
-@@ -2675,7 +2675,7 @@
+@@ -2675,7 +2675,7 @@ return false;
  fileLength= lseek(fileHandle,0,2);
  lseek(fileHandle,0,0);
  dp= static_cast<char*> (mmap((caddr_t)0,fileLength,
@@ -18,7 +18,7 @@
  fileHandle,0));
  istrstream is(dp,fileLength);
  #else
-@@ -7332,7 +7332,7 @@
+@@ -7332,7 +7332,7 @@ return 1;
  long fileLength= lseek(fileHandle,0,2);
  lseek(fileHandle,0,0);
  char*dp= static_cast<char*> (mmap((caddr_t)0,fileLength,

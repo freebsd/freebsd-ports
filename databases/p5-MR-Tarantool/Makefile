@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Driver for an efficient Tarantool/Box NoSQL in-memory storage
 
-BUILD_DEPENDS=	p5-AnyEvent>=7.04:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-Class-Singleton>=1.4:${PORTSDIR}/devel/p5-Class-Singleton \
-		p5-Mouse>=1.1:${PORTSDIR}/devel/p5-Mouse \
-		p5-String-CRC32>=1.4:${PORTSDIR}/devel/p5-String-CRC32
+BUILD_DEPENDS=	p5-AnyEvent>=7.04:devel/p5-AnyEvent \
+		p5-Class-Singleton>=1.4:devel/p5-Class-Singleton \
+		p5-Mouse>=1.1:devel/p5-Mouse \
+		p5-String-CRC32>=1.4:devel/p5-String-CRC32
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

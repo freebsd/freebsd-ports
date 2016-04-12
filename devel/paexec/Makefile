@@ -11,8 +11,8 @@ COMMENT=	Parallel executor, distributes tasks over network
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	mkcmake:${PORTSDIR}/devel/mk-configure \
-		runawk:${PORTSDIR}/lang/runawk
+BUILD_DEPENDS=	mkcmake:devel/mk-configure \
+		runawk:lang/runawk
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

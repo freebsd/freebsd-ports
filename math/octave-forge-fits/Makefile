@@ -18,7 +18,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=	${WRKDIR}/${OCTSRC}/src
 
-LIB_DEPENDS+=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
+LIB_DEPENDS+=	libcfitsio.so:astro/cfitsio
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

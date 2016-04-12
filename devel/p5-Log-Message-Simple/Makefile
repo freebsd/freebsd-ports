@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides standardized logging facilities using the Log::Message module
 
-BUILD_DEPENDS=	p5-Log-Message>=0:${PORTSDIR}/devel/p5-Log-Message
+BUILD_DEPENDS=	p5-Log-Message>=0:devel/p5-Log-Message
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

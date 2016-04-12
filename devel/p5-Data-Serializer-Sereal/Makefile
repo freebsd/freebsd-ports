@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Creates bridge between Data::Serializer and Sereal
 
-BUILD_DEPENDS=	p5-Data-Serializer>=0:${PORTSDIR}/devel/p5-Data-Serializer \
-		p5-Sereal-Decoder>=0:${PORTSDIR}/converters/p5-Sereal-Decoder \
-		p5-Sereal-Encoder>=0:${PORTSDIR}/converters/p5-Sereal-Encoder
+BUILD_DEPENDS=	p5-Data-Serializer>=0:devel/p5-Data-Serializer \
+		p5-Sereal-Decoder>=0:converters/p5-Sereal-Decoder \
+		p5-Sereal-Encoder>=0:converters/p5-Sereal-Encoder
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -11,10 +11,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
-LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++ \
-		libenet.so:${PORTSDIR}/net/enet
+LIB_DEPENDS=	libxerces-c.so.3:textproc/xerces-c3 \
+		libpng.so:graphics/png \
+		libtolua++-${LUA_VER}.so:lang/tolua++ \
+		libenet.so:net/enet
 
 USES=		gettext gmake lua:51
 USE_SDL=	image mixer sdl ttf

@@ -12,7 +12,7 @@ COMMENT=		Implementation of the Frame Streams data transport protocol in C
 LICENSE=		APACHE20
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-LIB_DEPENDS=		libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=		libevent.so:devel/libevent2
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		farsightsec
@@ -23,7 +23,7 @@ USE_LDCONFIG=		yes
 
 OPTIONS_DEFINE=		DOXYGEN
 DOXYGEN_DESC=		Use doxygen for docs
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	html-local
 
 PORTDOCS=		*

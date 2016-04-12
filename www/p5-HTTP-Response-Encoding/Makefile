@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Adds encoding() to HTTP::Response
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-Encode>=2.0:${PORTSDIR}/converters/p5-Encode
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-Encode>=2.0:converters/p5-Encode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -10,8 +10,8 @@ COMMENT=	Minimalistic DHCP, UDP proxy, etc server implementations
 
 LICENSE=	BSD4CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \
-		${PYTHON_PKGNAMEPREFIX}hexdump>0:${PORTSDIR}/textproc/py-hexdump
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces \
+		${PYTHON_PKGNAMEPREFIX}hexdump>0:textproc/py-hexdump
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict

@@ -11,8 +11,8 @@ COMMENT=	Foreman commands for Hammer CLI
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.16:${PORTSDIR}/devel/rubygem-apipie-bindings \
-		rubygem-hammer_cli>=0.6.0:${PORTSDIR}/sysutils/rubygem-hammer_cli
+RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.16:devel/rubygem-apipie-bindings \
+		rubygem-hammer_cli>=0.6.0:sysutils/rubygem-hammer_cli
 
 NO_ARCH=	yes
 USE_RUBY=	yes

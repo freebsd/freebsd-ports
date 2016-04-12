@@ -11,8 +11,8 @@ COMMENT=	Immutable sorted string table library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	liblz4.so:${PORTSDIR}/archivers/liblz4 \
-		libsnappy.so:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
+		libsnappy.so:archivers/snappy
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

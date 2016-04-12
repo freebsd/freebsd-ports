@@ -12,7 +12,7 @@ COMMENT=	Metaport of Twisted, an event-driven networking engine
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:devel/py-twistedCore
 
 USES=		metaport python:2
 
@@ -27,14 +27,14 @@ PAIR_DESC=	Twisted Pair can do low level TCP work
 RUNNER_DESC=	Process management
 WEB_DESC=	HTTP protocol
 WORDS_DESC=	Chat and Instant Messaging
-CONCH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedConch>=${PORTVERSION}:${PORTSDIR}/security/py-twistedConch
-LORE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedLore>=${PORTVERSION}:${PORTSDIR}/textproc/py-twistedLore
-MAIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedMail>=${PORTVERSION}:${PORTSDIR}/mail/py-twistedMail
-NAMES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedNames>=${PORTVERSION}:${PORTSDIR}/dns/py-twistedNames
-NEWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedNews>=${PORTVERSION}:${PORTSDIR}/news/py-twistedNews
-PAIR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedPair>=${PORTVERSION}:${PORTSDIR}/net/py-twistedPair
-RUNNER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedRunner>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedRunner
-WEB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedWeb>=${PORTVERSION}:${PORTSDIR}/www/py-twistedWeb
-WORDS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedWords>=${PORTVERSION}:${PORTSDIR}/net-im/py-twistedWords
+CONCH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedConch>=${PORTVERSION}:security/py-twistedConch
+LORE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedLore>=${PORTVERSION}:textproc/py-twistedLore
+MAIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedMail>=${PORTVERSION}:mail/py-twistedMail
+NAMES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedNames>=${PORTVERSION}:dns/py-twistedNames
+NEWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedNews>=${PORTVERSION}:news/py-twistedNews
+PAIR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedPair>=${PORTVERSION}:net/py-twistedPair
+RUNNER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedRunner>=${PORTVERSION}:devel/py-twistedRunner
+WEB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedWeb>=${PORTVERSION}:www/py-twistedWeb
+WORDS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedWords>=${PORTVERSION}:net-im/py-twistedWords
 
 .include <bsd.port.mk>

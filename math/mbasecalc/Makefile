@@ -13,7 +13,7 @@ COMMENT=	Simple calculator program inspired by basecalc
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CPPFLAGS} ${CXXFLAGS}" \
 		LIBS="${LDFLAGS}"

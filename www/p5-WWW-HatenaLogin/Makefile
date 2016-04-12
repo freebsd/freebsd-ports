@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	Login/Logout interface to Hatena
 
-BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
+BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
+		p5-URI>=0:net/p5-URI \
+		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -18,7 +18,7 @@ COMMENT=	X-Face encoder/decoder/viewer for Emacsen
 
 EMACS_PORT_NAME?=	emacs24
 
-RUN_DEPENDS=	compface:${PORTSDIR}/mail/faces
+RUN_DEPENDS=	compface:mail/faces
 
 USE_EMACS=	yes
 

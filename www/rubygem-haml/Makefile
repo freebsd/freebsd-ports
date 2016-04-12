@@ -11,7 +11,7 @@ COMMENT=	Markup language to describe HTML
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-tilt>=0:${PORTSDIR}/devel/rubygem-tilt
+RUN_DEPENDS=	rubygem-tilt>=0:devel/rubygem-tilt
 
 NO_ARCH=	yes
 

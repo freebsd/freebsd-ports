@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	MIKMOD ROTATE_FIXED AIBREED
 ROTATE_FIXED_DESC=	Fix position of one blob during rotation
 AIBREED_DESC=	Allow AI breeding
 
-MIKMOD_LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+MIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
 MIKMOD_CONFIGURE_ON=	--with-libmikmod-prefix=${LOCALBASE}
 
 ROTATE_FIXED_CONFIGURE_ENABLE=	rotate-fixed

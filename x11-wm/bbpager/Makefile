@@ -13,7 +13,7 @@ COMMENT=	Pager for the Blackbox window manager
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
-BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
+BUILD_DEPENDS=	blackbox:x11-wm/blackbox
 
 USES=		pathfix pkgconfig
 USE_XORG=	xext sm x11 xau xcursor xi

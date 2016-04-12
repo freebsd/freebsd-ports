@@ -11,7 +11,7 @@ COMMENT=	Realtime sound processor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libjack.so:audio/jack
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	laudrup

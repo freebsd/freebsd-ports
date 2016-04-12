@@ -1,11 +1,11 @@
---- rbpdf.gemspec.orig	2015-11-21 06:06:51 UTC
+--- rbpdf.gemspec.orig	2016-03-31 16:27:35 UTC
 +++ rbpdf.gemspec
 @@ -24,7 +24,7 @@ Gem::Specification.new do |s|
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<htmlentities>, ["= 4.3.1"])
-+      s.add_runtime_dependency(%q<htmlentities>, [">= 4.3.1"])
-       s.add_runtime_dependency(%q<rbpdf-font>, ["~> 1.19.0"])
-       s.add_development_dependency(%q<bundler>, ["~> 1.6"])
-       s.add_development_dependency(%q<rake>, [">= 0"])
+-      s.add_runtime_dependency(%q<htmlentities>.freeze, ["= 4.3.1"])
++      s.add_runtime_dependency(%q<htmlentities>.freeze, [">= 4.3.1"])
+       s.add_runtime_dependency(%q<rbpdf-font>.freeze, ["~> 1.19.0"])
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.6"])
+       s.add_development_dependency(%q<rake>.freeze, [">= 0"])

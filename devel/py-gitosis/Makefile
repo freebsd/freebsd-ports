@@ -14,7 +14,7 @@ COMMENT=	Software for hosting git repositories
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+RUN_DEPENDS=	git:devel/git
 
 USES=		python tar:bzip2
 USE_PYTHON=	distutils autoplist

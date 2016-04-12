@@ -12,8 +12,8 @@ COMMENT=	Java tool for working with PDF documents
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle	\
-		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
+RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:java/bouncycastle	\
+		${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
 
 JAR_NAMES=	pdfbox fontbox jempbox preflight xmpbox
 

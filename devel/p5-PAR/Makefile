@@ -13,8 +13,8 @@ COMMENT=	Perl Archive Toolkit
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Archive-Zip>=1:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-PAR-Dist>=0.32:${PORTSDIR}/devel/p5-PAR-Dist
+BUILD_DEPENDS=	p5-Archive-Zip>=1:archivers/p5-Archive-Zip \
+		p5-PAR-Dist>=0.32:devel/p5-PAR-Dist
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

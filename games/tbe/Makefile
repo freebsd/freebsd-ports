@@ -10,7 +10,7 @@ CATEGORIES=	games
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The Butterfly Effect
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
 USES=		cmake compiler:c++11-lib execinfo gmake tar:tgz
 USE_QT4=	gui linguisttools_build moc_build qmake_build rcc_build \

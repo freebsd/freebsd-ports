@@ -23,10 +23,10 @@ LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	FUSE GCRYPT
 
-FUSE_LIB_DEPENDS=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
+FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 FUSE_CONFIGURE_ENABLE=	fuse
 
-GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 GCRYPT_CONFIGURE_ENABLE=gcrypt
 
 .include <bsd.port.options.mk>

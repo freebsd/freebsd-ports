@@ -15,7 +15,7 @@ COMMENT=	Freely enjoy childlike KISS, French-KISS!
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+RUN_DEPENDS=	lha:archivers/lha
 
 EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}-${PORTVERSION}.diff
 

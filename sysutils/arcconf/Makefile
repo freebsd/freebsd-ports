@@ -42,7 +42,7 @@ DIST_EXT=	_x64
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 # use the 9 i386 version for 10 i386
 DIST_OSVER=	9
-RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 .endif
 .endif
 

@@ -13,12 +13,12 @@ COMMENT=	Project aiming to create a new and versatile RTS Engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libIL.so:${PORTSDIR}/graphics/devil \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libboost_thread.so:devel/boost-libs \
+		libIL.so:graphics/devil \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis
+BUILD_DEPENDS=	7z:archivers/p7zip
 
 # XXX: it should be possible to build it on i386, investigate
 # (currently link fails on undefined reference to __sync_fetch_and_add_8)
@@ -67,16 +67,16 @@ PR_DOWNLOADER_DESC=	Map and game downloader
 
 MANPAGES_CMAKE_ON=	-DCREATE_MAN_PAGES:BOOL=true -DMANDIR:STRING="man"
 MANPAGES_CMAKE_OFF=	-DCREATE_MAN_PAGES:BOOL=false
-MANPAGES_BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip \
-			asciidoc:${PORTSDIR}/textproc/asciidoc \
-			xsltproc:${PORTSDIR}/textproc/libxslt \
-			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-			bash:${PORTSDIR}/shells/bash
+MANPAGES_BUILD_DEPENDS=	7z:archivers/p7zip \
+			asciidoc:textproc/asciidoc \
+			xsltproc:textproc/libxslt \
+			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+			bash:shells/bash
 MANPAGES_DOCS_ON=	-DUSERDOCS_PLAIN:BOOL=true
 MANPAGES_DOCS_OFF=	-DUSERDOCS_PLAIN:BOOL=false
 CXXFLAGS+=	-Wno-deprecated		# Too much noise
 
-PR_DOWNLOADER_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl
+PR_DOWNLOADER_LIB_DEPENDS=libcurl.so:ftp/curl
 
 .include <bsd.port.pre.mk>
 

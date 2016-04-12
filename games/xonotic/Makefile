@@ -10,8 +10,8 @@ MASTER_SITES=	http://nl.dl.xonotic.org/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpng.so:graphics/png
 
 MANUAL_PACKAGE_BUILD=	huge (930M)
 
@@ -37,10 +37,10 @@ OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
 OPTIONS_DEFAULT=	CLIENT DEDICATED ENCRYPTION
 
 CLIENT_DESC=		Build client
-CLIENT_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug \
-			libtheora.so:${PORTSDIR}/multimedia/libtheora \
-			libvorbis.so:${PORTSDIR}/audio/libvorbis \
-			libogg.so:${PORTSDIR}/audio/libogg
+CLIENT_LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
+			libtheora.so:multimedia/libtheora \
+			libvorbis.so:audio/libvorbis \
+			libogg.so:audio/libogg
 CLIENT_USE=		SDL=sdl
 CLIENT_ALL_TARGET=	sdl-release
 CLIENT_PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.ico
@@ -56,7 +56,7 @@ DEDICATED_ALL_TARGET=	sv-release
 DEDICATED_PLIST_FILES=	bin/${PORTNAME}-dedicated
 
 ENCRYPTION_DESC=	Build encryption (required for stats submission)
-ENCRYPTION_LIB_DEPENDS=	libd0_rijndael.so:${PORTSDIR}/security/d0_blind_id
+ENCRYPTION_LIB_DEPENDS=	libd0_rijndael.so:security/d0_blind_id
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \

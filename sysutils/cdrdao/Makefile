@@ -16,9 +16,9 @@ LICENSE=	GPLv2
 USES=		alias gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
-MP3OGG_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
-			libmad.so:${PORTSDIR}/audio/libmad \
-			libvorbis.so:${PORTSDIR}/audio/libvorbis
+MP3OGG_LIB_DEPENDS=	libao.so:audio/libao \
+			libmad.so:audio/libmad \
+			libvorbis.so:audio/libvorbis
 
 .if ${PORTNAME} == "cdrdao"
 OPTIONS_DEFINE=		DOCS TOC2MP3 MP3OGG
@@ -35,14 +35,14 @@ USES+=			pkgconfig shared-mime-info
 WANT_GNOME=		yes
 GCONF_SCHEMAS=		gcdmaster.schemas
 LIB_DEPENDS+=		${MP3OGG_LIB_DEPENDS} \
-			libgnomeuimm-2.6.so:${PORTSDIR}/x11-toolkits/libgnomeuimm26
-RUN_DEPENDS+=		${LOCALBASE}/bin/cdrdao:${PORTSDIR}/sysutils/cdrdao \
-			${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
+			libgnomeuimm-2.6.so:x11-toolkits/libgnomeuimm26
+RUN_DEPENDS+=		${LOCALBASE}/bin/cdrdao:sysutils/cdrdao \
+			${LOCALBASE}/share/mime/packages/freedesktop.org.xml:misc/shared-mime-info
 CONFIGURE_ARGS+=	--with-lame=no
 .else
 CONFIGURE_ARGS+=	--with-xdao=no
 .if ${PORT_OPTIONS:MTOC2MP3}
-LIB_DEPENDS+=		libmp3lame.so:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=		libmp3lame.so:audio/lame
 CONFIGURE_ARGS+=	--with-lame-include=${LOCALBASE}/include \
 			--with-lame-lib=${LOCALBASE}/lib
 PLIST_SUB+=		TOC2MP3=""

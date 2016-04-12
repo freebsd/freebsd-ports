@@ -14,9 +14,9 @@ COMMENT=	Scene-oriented, flexible 3D engine written in C++
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libzzip.so:${PORTSDIR}/devel/zziplib \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfreeimage.so:${PORTSDIR}/graphics/freeimage
+LIB_DEPENDS=	libzzip.so:devel/zziplib \
+		libfreetype.so:print/freetype2 \
+		libfreeimage.so:graphics/freeimage
 
 BROKEN_powerpc=	does not install
 
@@ -29,8 +29,8 @@ WRKSRC=		${WRKDIR}/sinbad-ogre-dd30349ea667
 OPTIONS_DEFINE=	BOOST DOCS
 OPTIONS_SUB=	yes
 
-BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-BOOST_RUN_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+BOOST_RUN_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|include(FindPkgMacros)|return()|g' \

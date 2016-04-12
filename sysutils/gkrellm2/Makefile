@@ -27,7 +27,7 @@ CLIENT_USE=		GNOME=gtk20 XORG=sm,x11
 CLIENT_USE_OFF=		GNOME=glib20
 CLIENT_VARS_OFF=	BUILD_WRKSRC=${WRKSRC}/server \
 			INSTALL_WRKSRC=${WRKSRC}/server
-NTLM_LIB_DEPENDS=	libntlm.so:${PORTSDIR}/security/libntlm
+NTLM_LIB_DEPENDS=	libntlm.so:security/libntlm
 NTLM_VARS_OFF=		MAKE_ENV+=without-ntlm=1
 
 .include <bsd.port.options.mk>

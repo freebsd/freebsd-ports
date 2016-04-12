@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Remote firewall auditing tool
 
-LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet \
-		libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libdnet.so:net/libdnet \
+		libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
 

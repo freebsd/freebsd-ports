@@ -39,10 +39,10 @@ OPTIONS_SUB=		yes
 
 EUCJP_DESC=		EUC-JP encoding support
 EUCJP_CONFIGURE_ON=	--enable-multibyte=euc-jp
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--with-local=${LOCALBASE}
 SLIB_DESC=		Create catalogue for SLIB port
-SLIB_BUILD_DEPENDS=	slib>0:${PORTSDIR}/lang/slib
+SLIB_BUILD_DEPENDS=	slib>0:lang/slib
 SLIB_CONFIGURE_ON=	--with-slib=${LOCALBASE}/share/slib
 SLIB_CONFIGURE_OFF=	--with-slib=${WRKDIR}
 SJIS_DESC=		Shift_JIS encoding support

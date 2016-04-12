@@ -10,15 +10,15 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	GNOME 3 multi-format document viewer
 
-BUILD_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
-		itstool:${PORTSDIR}/textproc/itstool \
-		adwaita-icon-theme>=0:${PORTSDIR}/x11-themes/adwaita-icon-theme \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
-		libspectre.so:${PORTSDIR}/print/libspectre
-RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
-		adwaita-icon-theme>=0:${PORTSDIR}/x11-themes/adwaita-icon-theme \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
+		itstool:textproc/itstool \
+		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
+		libspectre.so:print/libspectre
+RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
+		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no
@@ -72,7 +72,7 @@ USE_TEX=	latex
 CONFIGURE_ARGS+=	--enable-dvi
 PLIST_SUB+=		DVI=""
 . if ${PORT_OPTIONS:MT1LIB}
-LIB_DEPENDS+=	libt1.so:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS+=	libt1.so:devel/t1lib
 CONFIGURE_ARGS+=	--enable-t1lib
 . else
 CONFIGURE_ARGS+=	--disable-t1lib
@@ -83,7 +83,7 @@ PLIST_SUB+=		DVI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MKEYRING}
-LIB_DEPENDS+=	libsecret-1.so:${PORTSDIR}/security/libsecret
+LIB_DEPENDS+=	libsecret-1.so:security/libsecret
 .else
 CONFIGURE_ARGS+=--without-keyring
 .endif
@@ -93,14 +93,14 @@ USE_GNOME+=		nautilus3
 CONFIGURE_ARGS+=	--enable-nautilus
 PLIST_SUB+=		NAUTILUS=""
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
-RUN_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
+BUILD_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:misc/gnome-icon-theme
+RUN_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:misc/gnome-icon-theme
 CONFIGURE_ARGS+=	--disable-nautilus
 PLIST_SUB+=		NAUTILUS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXPS}
-LIB_DEPENDS+=		libgxps.so:${PORTSDIR}/graphics/libgxps
+LIB_DEPENDS+=		libgxps.so:graphics/libgxps
 CONFIGURE_ARGS+=	--enable-xps
 PLIST_SUB+=		XPS=""
 .else
@@ -109,7 +109,7 @@ PLIST_SUB+=		XPS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDJVU}
-LIB_DEPENDS+=		libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
+LIB_DEPENDS+=		libdjvulibre.so:graphics/djvulibre
 CONFIGURE_ARGS+=	--enable-djvu
 PLIST_SUB+=		DJVU=""
 .else

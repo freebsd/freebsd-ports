@@ -48,7 +48,7 @@ IGNORE= 	requires CD mounting with -b option
 ANTHOLOGY=	yes
 RELEASE_MSG=	"Unreal Anthology"
 CDDIRS+=	Manual
-BUILD_DEPENDS+=	${LOCALBASE}/bin/unshield:${PORTSDIR}/archivers/unshield
+BUILD_DEPENDS+=	${LOCALBASE}/bin/unshield:archivers/unshield
 UNSHIELD=	${LOCALBASE}/bin/unshield
 PLIST_SUB+=	ANTHOLOGY="" ORIGINAL="@comment "
 .else

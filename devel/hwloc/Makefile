@@ -12,7 +12,7 @@ COMMENT=	Portable Hardware Locality software package
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpciaccess.so:${PORTSDIR}/devel/libpciaccess
+LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -35,7 +35,7 @@ OPTIONS_SUB=	yes
 
 CAIRO_CONFIGURE_OFF=	--disable-cairo --without-x
 CAIRO_CONFIGURE_ON=	--enable-cairo --with-x
-CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_USE=		XORG=x11
 
 post-install:

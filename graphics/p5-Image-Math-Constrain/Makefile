@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Scaling math used in image size constraining (such as thumbnails)
 
-BUILD_DEPENDS=	p5-PathTools>=3.25:${PORTSDIR}/devel/p5-PathTools
+BUILD_DEPENDS=	p5-PathTools>=3.25:devel/p5-PathTools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

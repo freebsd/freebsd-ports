@@ -18,8 +18,8 @@ OPTIONS_DEFINE=	EXAMPLES
 
 OPTIONS_SUB=	yes
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:devel/py-orbit
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:devel/py-orbit
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig python:2 tar:bzip2
 USE_LDCONFIG=	yes

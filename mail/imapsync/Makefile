@@ -10,12 +10,12 @@ MASTER_SITES=	https://codeload.github.com/imapsync/imapsync/tar.gz/imapsync-${PO
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	IMAP synchronization, copy or migration tool
 
-RUN_DEPENDS=	p5-Mail-IMAPClient>0:${PORTSDIR}/mail/p5-Mail-IMAPClient \
-		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-IO-Tee>0:${PORTSDIR}/devel/p5-IO-Tee \
-		p5-IO-Socket-SSL>0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Unicode-String>0:${PORTSDIR}/converters/p5-Unicode-String \
-		p5-File-Copy-Recursive>0:${PORTSDIR}/devel/p5-File-Copy-Recursive
+RUN_DEPENDS=	p5-Mail-IMAPClient>0:mail/p5-Mail-IMAPClient \
+		p5-Term-ReadKey>0:devel/p5-Term-ReadKey \
+		p5-IO-Tee>0:devel/p5-IO-Tee \
+		p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL \
+		p5-Unicode-String>0:converters/p5-Unicode-String \
+		p5-File-Copy-Recursive>0:devel/p5-File-Copy-Recursive
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 

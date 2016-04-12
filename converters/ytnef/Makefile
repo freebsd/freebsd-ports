@@ -13,8 +13,8 @@ COMMENT=	Unpack data in MS Outlook TNEF format
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libytnef.so:${PORTSDIR}/devel/libytnef
-RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
+LIB_DEPENDS=	libytnef.so:devel/libytnef
+RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	src/ytnef/*.pl

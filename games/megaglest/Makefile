@@ -12,14 +12,14 @@ COMMENT=	Open source 3D real-time strategy game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/docs/gnu_gpl_3.0.txt
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
-		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient \
-		${LOCALBASE}/include/miniupnpc/miniupnpc.h:${PORTSDIR}/net/miniupnpc
-RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:${PORTSDIR}/games/megaglest-data
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpng.so:graphics/png \
+		libxerces-c.so:textproc/xerces-c3 \
+		libftgl.so:graphics/ftgl \
+		libvorbis.so:audio/libvorbis
+BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:irc/libircclient \
+		${LOCALBASE}/include/miniupnpc/miniupnpc.h:net/miniupnpc
+RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:games/megaglest-data
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MegaGlest

@@ -33,7 +33,7 @@ PORTDOCS=	README README.ru CHANGES README.port.eng README.port.ru index.html net
 OPTIONS_DEFINE=	DOCS GD
 OPTIONS_SUB=	yes
 
-GD_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+GD_LIB_DEPENDS=	libgd.so:graphics/gd
 GD_CONFIGURE_OFF=	--without-ifgraph
 
 DOCS_DISTFILES= ${PORTNAME}-2.2-b6.docs${EXTRACT_SUFX}:docs

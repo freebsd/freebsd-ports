@@ -15,14 +15,14 @@ COMMENT=	Catalyst FormBuilder Base Controller
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-CGI-FormBuilder>=3.02:${PORTSDIR}/www/p5-CGI-FormBuilder \
-		p5-Catalyst-Runtime>=5.7:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash
+RUN_DEPENDS=	p5-CGI-FormBuilder>=3.02:www/p5-CGI-FormBuilder \
+		p5-Catalyst-Runtime>=5.7:www/p5-Catalyst-Runtime \
+		p5-Class-Data-Inheritable>=0.04:devel/p5-Class-Data-Inheritable \
+		p5-Class-Inspector>=1.13:devel/p5-Class-Inspector \
+		p5-MRO-Compat>=0.09:devel/p5-MRO-Compat \
+		p5-Tie-IxHash>=1.21:devel/p5-Tie-IxHash
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-WWW-Mechanize-Catalyst>=0.37:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
+TEST_DEPENDS=	p5-Test-WWW-Mechanize-Catalyst>=0.37:devel/p5-Test-WWW-Mechanize-Catalyst
 
 USES=		perl5
 USE_PERL5=	configure

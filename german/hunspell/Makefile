@@ -14,8 +14,8 @@ COMMENT=	German hunspell dictionaries
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell \
-		hunspell:${PORTSDIR}/textproc/hunspell
+BUILD_DEPENDS=	aspell:textproc/aspell \
+		hunspell:textproc/hunspell
 
 USES=		gmake perl5 shebangfix tar:bzip2
 ALL_TARGET=	hunspell-all

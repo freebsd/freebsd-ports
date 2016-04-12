@@ -1,10 +1,10 @@
---- bson.gemspec.orig	2014-11-29 13:32:55 UTC
+--- bson.gemspec.orig	2016-03-31 14:22:34 UTC
 +++ bson.gemspec
-@@ -12,7 +12,6 @@
-   s.date = "2014-09-15"
-   s.description = "A Ruby BSON implementation for MongoDB. For more information about Mongo, see http://www.mongodb.org. For more information on BSON, see http://www.bsonspec.org."
-   s.email = "mongodb-dev@googlegroups.com"
--  s.executables = ["b2json", "j2bson"]
-   s.files = ["LICENSE", "VERSION", "bin/b2json", "bin/j2bson", "bson.gemspec", "lib/bson.rb", "lib/bson/bson_c.rb", "lib/bson/bson_java.rb", "lib/bson/bson_ruby.rb", "lib/bson/byte_buffer.rb", "lib/bson/exceptions.rb", "lib/bson/grow.rb", "lib/bson/ordered_hash.rb", "lib/bson/support/hash_with_indifferent_access.rb", "lib/bson/types/binary.rb", "lib/bson/types/code.rb", "lib/bson/types/dbref.rb", "lib/bson/types/min_max_keys.rb", "lib/bson/types/object_id.rb", "lib/bson/types/regex.rb", "lib/bson/types/timestamp.rb"]
-   s.homepage = "http://www.mongodb.org"
-   s.licenses = ["Apache License Version 2.0"]
+@@ -11,7 +11,6 @@ Gem::Specification.new do |s|
+   s.date = "2015-12-01"
+   s.description = "A Ruby BSON implementation for MongoDB. For more information about Mongo, see http://www.mongodb.org. For more information on BSON, see http://www.bsonspec.org.".freeze
+   s.email = "mongodb-dev@googlegroups.com".freeze
+-  s.executables = ["b2json".freeze, "j2bson".freeze]
+   s.files = ["LICENSE".freeze, "VERSION".freeze, "bin/b2json".freeze, "bin/j2bson".freeze, "bson.gemspec".freeze, "lib/bson.rb".freeze, "lib/bson/bson_c.rb".freeze, "lib/bson/bson_java.rb".freeze, "lib/bson/bson_ruby.rb".freeze, "lib/bson/byte_buffer.rb".freeze, "lib/bson/exceptions.rb".freeze, "lib/bson/grow.rb".freeze, "lib/bson/ordered_hash.rb".freeze, "lib/bson/support/hash_with_indifferent_access.rb".freeze, "lib/bson/types/binary.rb".freeze, "lib/bson/types/code.rb".freeze, "lib/bson/types/dbref.rb".freeze, "lib/bson/types/min_max_keys.rb".freeze, "lib/bson/types/object_id.rb".freeze, "lib/bson/types/regex.rb".freeze, "lib/bson/types/timestamp.rb".freeze]
+   s.homepage = "http://www.mongodb.org".freeze
+   s.licenses = ["Apache License Version 2.0".freeze]

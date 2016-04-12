@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TeXstudio%20${PORTVERSION}
 MAINTAINER=	abiliojr@gmail.com
 COMMENT=	Integrated writing environment for LaTeX documents
 
-LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	libpoppler.so:graphics/poppler
 
 USES=		desktop-file-utils dos2unix execinfo ghostscript:run \
 		pkgconfig qmake
@@ -30,9 +30,9 @@ OPTIONS_DEFAULT=	QT5
 
 TOOLKIT_DESC=	Qt toolkit
 QT4_USE=	${_USE_QT4:S/^/QT4=/}
-QT4_LIB_DEPENDS=libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
+QT4_LIB_DEPENDS=libpoppler-qt4.so:graphics/poppler-qt4
 QT5_USE=	${_USE_QT5:S/^/QT5=/}
-QT5_LIB_DEPENDS=libpoppler-qt5.so:${PORTSDIR}/graphics/poppler-qt5
+QT5_LIB_DEPENDS=libpoppler-qt5.so:graphics/poppler-qt5
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\(utilities.path =\).*,\1 ${DATADIR},' \

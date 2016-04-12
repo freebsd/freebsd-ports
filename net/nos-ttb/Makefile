@@ -12,7 +12,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	NOS teletekst browser
 
 #don't know if pygtk-1.X could also be used
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:x11-toolkits/py-gtk2
 
 NO_BUILD=	yes
 USES=		python

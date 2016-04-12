@@ -30,8 +30,8 @@ FREERADIUS_DESC=depend on FreeRADIUS
 OPENRADIUS_DESC=depend on OpenRADIUS
 
 APACHE_USE=	apache_run=22+
-FREERADIUS_RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius
-OPENRADIUS_RUN_DEPENDS=	radiusd:${PORTSDIR}/net/openradius
+FREERADIUS_RUN_DEPENDS=	radiusd:net/freeradius
+OPENRADIUS_RUN_DEPENDS=	radiusd:net/openradius
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

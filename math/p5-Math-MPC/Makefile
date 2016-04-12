@@ -13,10 +13,10 @@ COMMENT=	Perl interface to MPC Library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-MPFR>=3.23:${PORTSDIR}/math/p5-Math-MPFR
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpc.so:${PORTSDIR}/math/mpc \
-		libmpfr.so:${PORTSDIR}/math/mpfr
+BUILD_DEPENDS=	p5-Math-MPFR>=3.23:math/p5-Math-MPFR
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpc.so:math/mpc \
+		libmpfr.so:math/mpfr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_ENV=	INC="-I${LOCALBASE}/include"

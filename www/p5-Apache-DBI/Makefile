@@ -14,8 +14,8 @@ COMMENT=	DBI persistent connection, authentication and authorization
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-Apache-DBI-mp[12]*

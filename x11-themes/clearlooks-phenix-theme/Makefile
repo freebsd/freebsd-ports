@@ -11,7 +11,7 @@ COMMENT=	Gtk3 port of Clearlooks theme for the Xfce Desktop
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	gtk-engines2>=2.20.2:${PORTSDIR}/x11-themes/gtk-engines2
+RUN_DEPENDS=	gtk-engines2>=2.20.2:x11-themes/gtk-engines2
 
 USE_GITHUB=	yes
 NO_BUILD=	yes

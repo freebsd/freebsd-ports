@@ -36,15 +36,15 @@ OPTIONS_DEFINE=	DOCS
 .if ${PORT_OPTIONS:MTOMCAT6}
 TOMCATVER=	apache-tomcat-6.0
 TCPORT=	8180
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
 .endif
 
 .if ${PORT_OPTIONS:MTOMCAT7}
 TOMCATVER=	apache-tomcat-7.0
 TCPORT=	8080
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
 .endif
 
 post-extract:

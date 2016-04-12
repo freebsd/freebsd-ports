@@ -69,8 +69,8 @@ CONFIGURE_ARGS+=--with-defaults
 PYDISTUTILS_PKGNAME?=		netsnmp-python
 PYDISTUTILS_PKGVERSION?=	1.0a1
 USES+=		python
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX}
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
 CONFIGURE_ARGS+=--with-python-modules
 CONFIGURE_ENV+=	PYTHONPROG="${PYTHON_CMD}"
 MAKE_ENV+=	PYDISTUTILS_INSTALLARGS="${PYDISTUTILS_INSTALLARGS}" STAGEDIR="${STAGEDIR}"
@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=--with-dummy-values
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
 PLIST_SUB+=	WITH_TKMIB="@comment "
 .else
-RUN_DEPENDS+=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS+=	p5-Tk>=0:x11-toolkits/p5-Tk
 PLIST_SUB+=	WITH_TKMIB=""
 .endif
 
@@ -112,7 +112,7 @@ PLIST_SUB+=	WITH_PERL="@comment "
 .endif
 
 #.if ${PORT_OPTIONS:MDMALLOC}
-#LIB_DEPENDS+=	libdmalloc.so:${PORTSDIR}/devel/dmalloc
+#LIB_DEPENDS+=	libdmalloc.so:devel/dmalloc
 #CONFIGURE_ARGS+=--with-dmalloc=${LOCALBASE}
 #.else
 #CONFIGURE_ARGS+=--without-dmalloc

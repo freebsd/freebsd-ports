@@ -11,8 +11,8 @@ COMMENT=	Display Control Panel for X NVidia driver
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
-		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS=	libjansson.so:devel/jansson \
+		libvdpau.so:multimedia/libvdpau
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NVIDIA

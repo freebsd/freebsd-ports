@@ -12,9 +12,9 @@ COMMENT=	Tool for automatic spam reporting via Spamcop.net
 
 LICENSE=	GPLv1
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Getopt-ArgvFile>=0:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
-		p5-HTML-Form>=0:${PORTSDIR}/www/p5-HTML-Form
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-Getopt-ArgvFile>=0:devel/p5-Getopt-ArgvFile \
+		p5-HTML-Form>=0:www/p5-HTML-Form
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	spamcup.pl

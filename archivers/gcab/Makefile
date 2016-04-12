@@ -9,7 +9,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject library to create cabinet files
 
-BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	vala:lang/vala
 
 USES=		cpe gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes

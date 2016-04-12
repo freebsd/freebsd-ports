@@ -11,9 +11,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search system
 
-BUILD_DEPENDS=	qdbm>=1.8.77:${PORTSDIR}/databases/qdbm
+BUILD_DEPENDS=	qdbm>=1.8.77:databases/qdbm
 # check configure for min version of qdbm.
-LIB_DEPENDS=	libqdbm.so.14:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	libqdbm.so.14:databases/qdbm
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -31,11 +31,11 @@ LZO_DESC=	Enable lzo support
 MECAB_DESC=	Enable mecab support
 
 LZO_CONFIGURE_ENABLE=	lzo
-LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 MECAB_CONFIGURE_ENABLE=	mecab
-MECAB_LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
-MECAB_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/matrix.bin:${PORTSDIR}/japanese/mecab-ipadic
+MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
+MECAB_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/matrix.bin:japanese/mecab-ipadic
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \

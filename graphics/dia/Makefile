@@ -15,7 +15,7 @@ COMMENT=	Diagram creation program, similar to Visio
 
 OPTIONS_DEFINE=	DOCS
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
@@ -28,11 +28,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-gnome
 INSTALL_TARGET=	install-strip
 
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 .include <bsd.port.options.mk>
 
 #.if ${ARCH} == "i386"
-#LIB_DEPENDS+=		libEMF.so:${PORTSDIR}/graphics/libemf
+#LIB_DEPENDS+=		libEMF.so:graphics/libemf
 #CONFIGURE_ARGS+=	--enable-libemf
 #PLIST_SUB+=		WMF=""
 #.else

@@ -10,9 +10,9 @@ COMMENT=	EiskaltDC++ Direct Connect command-line interface
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
-		p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC \
-	    	p5-Term-ShellUI>=0:${PORTSDIR}/shells/p5-Term-ShellUI
+RUN_DEPENDS=	p5-RPC-XML>=0:net/p5-RPC-XML \
+		p5-JSON-RPC>=0:devel/p5-JSON-RPC \
+		p5-Term-ShellUI>=0:shells/p5-Term-ShellUI
 
 MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
 

@@ -12,9 +12,9 @@ COMMENT=	Tool to generate (incremental) backup file list
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libnettle.so:${PORTSDIR}/security/nettle
+LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
+		libpcre.so:devel/pcre \
+		libnettle.so:security/nettle
 
 USES=		gmake libarchive pkgconfig tar:bzip2
 USE_AUTOTOOLS=	autoconf

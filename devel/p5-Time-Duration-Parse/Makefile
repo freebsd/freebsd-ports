@@ -13,9 +13,9 @@ COMMENT=	Parse string that represents time duration
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Exporter-Lite>=0.02:${PORTSDIR}/devel/p5-Exporter-Lite
+BUILD_DEPENDS=	p5-Exporter-Lite>=0.02:devel/p5-Exporter-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Time-Duration>=1.0.6:${PORTSDIR}/devel/p5-Time-Duration
+TEST_DEPENDS=	p5-Time-Duration>=1.0.6:devel/p5-Time-Duration
 
 NO_ARCH=	yes
 USES=		perl5

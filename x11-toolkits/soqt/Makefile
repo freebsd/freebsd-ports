@@ -14,7 +14,7 @@ COMMENT=	Qt4 toolkit library for Coin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
-LIB_DEPENDS=	libCoin.so:${PORTSDIR}/graphics/Coin
+LIB_DEPENDS=	libCoin.so:graphics/Coin
 
 USES=		gmake libtool pathfix pkgconfig
 USE_QT4=	corelib opengl moc_build

@@ -20,5 +20,5 @@ SHA256 (relx-3.17.0.tar) = c22f3d8400394787cb67191dea4de1acccf1563f6cd2f1934bf2a
 SIZE (relx-3.17.0.tar) = 71680
 SHA256 (ssl_verify_hostname-1.0.5.tar) = f2cb11e6144e10ab39d1e14bf9fb2437b690979c70bf5428e9dc4bfaf1dfeabf
 SIZE (ssl_verify_hostname-1.0.5.tar) = 10240
-SHA256 (rebar-rebar3-3.0.0_GH0.tar.gz) = 886acd7bb7cfb99d105d9f900b93f8cc6e571330838004a75b6bac2a4ac1baca
-SIZE (rebar-rebar3-3.0.0_GH0.tar.gz) = 222367
+SHA256 (rebar-rebar3-3.1.0_GH0.tar.gz) = b426cf7829d5df0d6d3e50cd501a1688bdbc878b0ca69d63240a0614afbd9c64
+SIZE (rebar-rebar3-3.1.0_GH0.tar.gz) = 224105

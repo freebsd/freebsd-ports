@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 MAINTAINER=	syncer@gmail.com
 COMMENT=	Program for recording streams for KDE4
 
-RUN_DEPENDS=	${LOCALBASE}/bin/streamripper:${PORTSDIR}/audio/streamripper
+RUN_DEPENDS=	${LOCALBASE}/bin/streamripper:audio/streamripper
 
 USES=		cmake gettext-tools tar:bzip2
 USE_KDE4=	kdelibs kdeprefix automoc4

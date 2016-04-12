@@ -14,7 +14,7 @@ COMMENT=	Transparent KDE4 window decoration
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libqimageblitz.so:${PORTSDIR}/x11/qimageblitz
+LIB_DEPENDS=	libqimageblitz.so:x11/qimageblitz
 
 USE_KDE4=	kdelibs kdeprefix automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build

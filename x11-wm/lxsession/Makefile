@@ -10,10 +10,10 @@ MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%20${PORTVERS
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	LXDE Session Manager
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libhal.so:sysutils/hal \
+		libgee-0.8.so:devel/libgee \
+		libdbus-glib-1.so:devel/dbus-glib
 
 USES=		gmake iconv pkgconfig
 USE_GNOME=	gtk20 intlhack libxslt

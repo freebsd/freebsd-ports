@@ -24,7 +24,7 @@ FWDIR?=		${WWWDIR}
 PKGNAMEPREFIX?=	foswiki-
 PNAME=		${PORTNAME}
 FILESDIR?=	${.CURDIR}/../foswiki/files
-BUILD_DEPENDS+=	foswiki>=0:${PORTSDIR}/www/foswiki
+BUILD_DEPENDS+=	foswiki>=0:www/foswiki
 FWDIR?=		${WWWDIR}
 .endif
 
@@ -92,7 +92,7 @@ make-port:
 	echo >> Makefile &&\
 	echo 'COMMENT=	' >> Makefile &&\
 	echo >> Makefile &&\
-	echo 'BUILD_DEPENDS=	foswiki>=0:${PORTSDIR}/www/foswiki' >> Makefile &&\
+	echo 'BUILD_DEPENDS=	foswiki>=0:www/foswiki' >> Makefile &&\
 	echo >> Makefile &&\
 	echo '.include "$${.CURDIR}/../foswiki/bsd.foswiki.mk"' >> Makefile &&\
 	echo '.include <bsd.port.mk>' >> Makefile &&\

@@ -14,7 +14,7 @@ COMMENT=	DockApp that shows the weather at geosynchronous orbit
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
+RUN_DEPENDS=	p5-Time-modules>=0:devel/p5-Time-modules
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 

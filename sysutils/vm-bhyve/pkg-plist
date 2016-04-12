@@ -5,6 +5,7 @@ lib/vm-bhyve/vm-config
 lib/vm-bhyve/vm-core
 lib/vm-bhyve/vm-guest
 lib/vm-bhyve/vm-info
+lib/vm-bhyve/vm-rctl
 lib/vm-bhyve/vm-run
 lib/vm-bhyve/vm-switch
 lib/vm-bhyve/vm-sysrc
@@ -12,7 +13,7 @@ lib/vm-bhyve/vm-zfs
 man/man8/vm.8.gz
 sbin/vm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alpine.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/centos.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/centos6.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/debian.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/default.conf

@@ -22,8 +22,8 @@ PORTDOCS=	Changelog README TODO
 OPTIONS_DEFINE=	FPSYNC
 OPTIONS_DEFAULT=	FPSYNC
 FPSYNC_DESC=	Install fpsync tool
-FPSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-			sudo:${PORTSDIR}/security/sudo
+FPSYNC_RUN_DEPENDS=	rsync:net/rsync \
+			sudo:security/sudo
 FPSYNC_PLIST_FILES=	bin/fpsync man/man1/fpsync.1.gz
 
 post-install:

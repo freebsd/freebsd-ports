@@ -11,9 +11,9 @@ COMMENT=	Clipboard manager that stores all clipboard history
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}gtk2>0:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2 \
+		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg
 
 USES=		python
 PORTDOCS=	ChangeLog README

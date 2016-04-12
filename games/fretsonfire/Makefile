@@ -13,10 +13,10 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game of musical skill and fast fingers
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}game>=0:${PORTSDIR}/devel/py-game \
-		${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
-		${LOCALBASE}/share/${PORTNAME}/default.ttf:${PORTSDIR}/games/fretsonfire-data
+		${PYTHON_PKGNAMEPREFIX}game>=0:devel/py-game \
+		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-opengl \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
+		${LOCALBASE}/share/${PORTNAME}/default.ttf:games/fretsonfire-data
 
 USES=		dos2unix python
 DOS2UNIX_FILES=	*.txt

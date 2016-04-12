@@ -17,12 +17,12 @@ EXTRACT_ONLY=	bigbluebutton.tar.gz red5-0.9.1.tar.gz freeswitch-config.tar.gz
 MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	Web conferencing system for distance education
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pdf2swf:${PORTSDIR}/graphics/swftools \
-		${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick \
-		${LOCALBASE}/etc/rc.d/activemq:${PORTSDIR}/net/activemq \
-		${LOCALBASE}/sbin/nginx:${PORTSDIR}/www/nginx \
-		${LOCALBASE}/etc/rc.d/tomcat6:${PORTSDIR}/www/tomcat6 \
-		${LOCALBASE}/etc/rc.d/red5:${PORTSDIR}/www/red5
+BUILD_DEPENDS=	${LOCALBASE}/bin/pdf2swf:graphics/swftools \
+		${LOCALBASE}/bin/convert:graphics/ImageMagick \
+		${LOCALBASE}/etc/rc.d/activemq:net/activemq \
+		${LOCALBASE}/sbin/nginx:www/nginx \
+		${LOCALBASE}/etc/rc.d/tomcat6:www/tomcat6 \
+		${LOCALBASE}/etc/rc.d/red5:www/red5
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MANUAL_PACKAGE_BUILD=	requires www/tomcat6 with HTTP_PORT=8080
@@ -82,19 +82,19 @@ SUB_FILES=	pkg-message openoffice nginx.conf-dist bbb-conf
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMEETME} || ${PORT_OPTIONS:MKONFERENCE}
-BUILD_DEPENDS+=${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
+BUILD_DEPENDS+=${LOCALBASE}/sbin/asterisk:net/asterisk
 .if  ${PORT_OPTIONS:MMEETME}
 .if !exists(${LOCALBASE}/lib/asterisk/modules/app_meetme.so)
 IGNORE=Option meetme requires app_meetme.so from asterisk port. Rebuild net/asterisk with DAHDI option selected
 .endif
 .endif
 .if  ${PORT_OPTIONS:MKONFERENCE}
-BUILD_DEPENDS+=${LOCALBASE}/lib/asterisk/modules/app_konference.so:${PORTSDIR}/net/appkonference
+BUILD_DEPENDS+=${LOCALBASE}/lib/asterisk/modules/app_konference.so:net/appkonference
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MOPENOFFICE}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/openoffice-4.0.1:${PORTSDIR}/editors/openoffice-4
+BUILD_DEPENDS+=	${LOCALBASE}/bin/openoffice-4.0.1:editors/openoffice-4
 .endif
 
 post-extract:

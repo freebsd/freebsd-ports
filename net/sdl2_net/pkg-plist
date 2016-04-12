@@ -1,6 +1,6 @@
 include/SDL2/SDL_net.h
 lib/libSDL2_net-2.0.so.0
-lib/libSDL2_net-2.0.so.0.0.0
+lib/libSDL2_net-2.0.so.0.0.1
 lib/libSDL2_net.a
 lib/libSDL2_net.so
 libdata/pkgconfig/SDL2_net.pc

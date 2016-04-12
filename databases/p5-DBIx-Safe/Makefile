@@ -15,8 +15,8 @@ COMMENT=	Safer access to your database through a DBI database handle
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-DBD-Pg>=1.49:${PORTSDIR}/databases/p5-DBD-Pg \
-		p5-DBI>=1.490:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBD-Pg>=1.49:databases/p5-DBD-Pg \
+		p5-DBI>=1.490:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

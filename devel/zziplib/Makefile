@@ -13,7 +13,7 @@ COMMENT=	Library to provide transparent read access to zipped files
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:archivers/zip
 
 USES=		gmake libtool pathfix pkgconfig python:2,build tar:bzip2
 GNU_CONFIGURE=	yes

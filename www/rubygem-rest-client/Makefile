@@ -9,9 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Simple Simple HTTP and REST client for Ruby
 
-RUN_DEPENDS=	rubygem-http-cookie>=1.0.2:${PORTSDIR}/www/rubygem-http-cookie \
-		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
-		rubygem-netrc>=0.7:${PORTSDIR}/net/rubygem-netrc
+RUN_DEPENDS=	rubygem-http-cookie>=1.0.2:www/rubygem-http-cookie \
+		rubygem-mime-types>=1.16:misc/rubygem-mime-types \
+		rubygem-netrc>=0.7:net/rubygem-netrc
 
 NO_ARCH=	yes
 

@@ -17,9 +17,9 @@ OPTIONS_DEFINE=	QRCODE UNIQUE
 OPTIONS_DEFAULT=	UNIQUE
 QRCODE_DESC=	QR Code support
 UNIQUE_DESC=	Unique (single instance) support
-QRCODE_LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+QRCODE_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 QRCODE_CONFIGURE_ENABLE=	libqrencode
-UNIQUE_LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+UNIQUE_LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique
 UNIQUE_CONFIGURE_ENABLE=	unique
 
 GNU_CONFIGURE=	yes

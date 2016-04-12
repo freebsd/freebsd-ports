@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.2.22.0
+PORTVERSION=	1.2.23.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet \
@@ -15,9 +15,9 @@ COMMENT=	Perl XS frontend to the Xapian C++ search library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core
-TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+LIB_DEPENDS=	libxapian.so:databases/xapian-core
+TEST_DEPENDS=	p5-Test-Pod>=1.14:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage
 
 PORTSCOUT=	limitw:1,even
 

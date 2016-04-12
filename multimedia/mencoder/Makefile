@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mencoder
-PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTVERSION=	${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -75,7 +74,7 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-enca \
 			--disable-musepack
 
-LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libmp3lame.so:audio/lame
 
 ALL_TARGET=	mencoder
 

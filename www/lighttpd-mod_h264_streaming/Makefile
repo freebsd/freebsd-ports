@@ -8,8 +8,8 @@ DISTNAME=	lighttpd-${PORTVERSION}
 
 COMMENT=	H264 streaming module for lighttpd
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
-RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
+RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 
 LICENSE=	CCPL.BY-NC-SA.30
 LICENSE_NAME=	Creative Commons Attribution-NonCommercial-ShareAlike 3.0 \

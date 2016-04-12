@@ -19,8 +19,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0.a20160327
-HASH=		dd185fb
+ISCVERSION=	9.11.0.a20160408
+HASH=		7f79448
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -32,7 +32,7 @@ CPE_VERSION=	${ISCVERSION:C/-.*//}
 CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 .endif
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
@@ -111,7 +111,7 @@ NEWSTATS_CONFIGURE_ENABLE=	newstats
 
 IDN_USES=		iconv
 IDN_CONFIGURE_ON=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
-IDN_LIB_DEPENDS=	libidnkit.so:${PORTSDIR}/dns/idnkit
+IDN_LIB_DEPENDS=	libidnkit.so:dns/idnkit
 IDN_CONFIGURE_OFF=	--without-idn
 
 LARGE_FILE_CONFIGURE_ENABLE=	largefile
@@ -125,7 +125,7 @@ FILTER_AAAA_CONFIGURE_ENABLE=	filter-aaaa
 NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 
 GEOIP_CONFIGURE_WITH=	geoip
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 GOST_CONFIGURE_ON=	--with-gost
 GOST_ASN1_CONFIGURE_ON=	--with-gost=asn1
@@ -195,21 +195,23 @@ PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
-.if ${PORT_OPTIONS:MGOST} || ${PORT_OPTIONS:MGOST_ASN1}
-WITH_OPENSSL_PORT=yes
-.endif
 .else
 PLIST_SUB+=	NOBASE="@comment " BASE=""
 SUB_LIST+=	NOBASE="@comment " BASE=""
-.if ${PORT_OPTIONS:MSSL}
-WITH_OPENSSL_PORT=	yes
-.endif
 .endif
 
 PKGDEINSTALL=	${PKGINSTALL}
 
 
 PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.if ( ${PORT_OPTIONS:MGOST} || ${PORT_OPTIONS:MGOST_ASN1} ) && defined(WITH_OPENSSL_BASE)
+BROKEN=	OpenSSL from the base system does not support GOST, add \
+	WITH_OPENSSL_PORT=yes to your /etc/make.conf and rebuild everything \
+	that needs SSL.
+.endif
 
 post-extract:
 	echo "SRCID=${HASH}" > ${WRKSRC}/srcid
@@ -260,4 +262,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

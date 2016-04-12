@@ -10,8 +10,8 @@ MASTER_SITES=	GHC http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D OpenGL renderer for OpenStreetMap
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libexpat.so:textproc/expat2
 
 USES=		tar:bzip2 cmake
 USE_GL=		gl

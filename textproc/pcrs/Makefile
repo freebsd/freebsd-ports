@@ -13,7 +13,7 @@ COMMENT=	Perl-compatible regular expression based substitutions
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake
 GNU_CONFIGURE=	yes

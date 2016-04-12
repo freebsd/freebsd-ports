@@ -14,7 +14,7 @@ COMMENT=	Convert geographic coordinates into a graphical heatmap
 LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	convert:graphics/ImageMagick
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 USES=		perl5

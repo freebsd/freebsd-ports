@@ -12,7 +12,7 @@ COMMENT=	Window Maker dockapp that display game scores from excite
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:ftp/wget
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_XORG=	xpm

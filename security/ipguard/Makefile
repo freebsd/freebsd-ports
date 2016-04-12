@@ -12,7 +12,7 @@ COMMENT=	Tool designed to protect LAN IP address space by ARP spoofing
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 USE_RC_SUBR=	${PORTNAME}
 PORTDOCS=	COPYRIGHT NEWS README README.tcpdump README.log ethers.sample rfc826.txt

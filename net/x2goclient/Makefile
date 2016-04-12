@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	4.0.5.0
-PORTREVISION=	1
+PORTVERSION=	4.0.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -14,11 +13,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # Avoid clash with libssh from base
-BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups \
-		libssh.so:${PORTSDIR}/security/libssh
-RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
-		x2goclient-cli:${PORTSDIR}/net/x2goclient-cli
+BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
+LIB_DEPENDS=	libcups.so:print/cups \
+		libssh.so:security/libssh
+RUN_DEPENDS=	nxproxy:net/nxproxy \
+		x2goclient-cli:net/x2goclient-cli
 
 USES=		qmake
 USE_XORG=	xpm
@@ -66,6 +65,8 @@ do-install:
 	(cd ${WRKSRC}/res/img/icons/128x128 && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${DATADIR}/icons)
 .endfor
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} HOWTO.GPGCARD ${STAGEDIR}${DOCSDIR})
 

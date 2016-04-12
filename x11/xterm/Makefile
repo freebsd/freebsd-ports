@@ -47,24 +47,24 @@ SCRNDUMP_DESC=	Enable XHTML and SVG screen dumps
 OPTIONS_DEFAULT=WCHAR LUIT 256COLOR
 
 256COLOR_CONFIGURE_ENABLE=	256-color
-LUIT_BUILD_DEPENDS=		luit:${PORTSDIR}/x11/luit
+LUIT_BUILD_DEPENDS=		luit:x11/luit
 LUIT_CONFIGURE_ENABLE=		luit
 WCHAR_CONFIGURE_ENABLE=		wide-chars
 WCHAR_VARS=			PKGMESSAGE="${PKGDIR}/pkg-message.wchar"
 DECTERM_CONFIGURE_ENABLE=	dec-locator
 PCRE_CONFIGURE_WITH=		pcre
-PCRE_LIB_DEPENDS=		libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=		libpcre.so:devel/pcre
 DABBREV_CONFIGURE_ENABLE=	dabbrev
 SIXEL_CONFIGURE_ENABLE=		sixel-graphics
 GNOME_USES=			desktop-file-utils
 LOGGING_CONFIGURE_ENABLE=	logging
 SCRNDUMP_CONFIGURE_ENABLE=	screen-dumps
 XAW3D_CONFIGURE_WITH=		Xaw3d
-XAW3D_LIB_DEPENDS=		libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d
 XAW3DXFT_CONFIGURE_WITH=	Xaw3dxft
-XAW3DXFT_LIB_DEPENDS=		libXaw3dxft.so:${PORTSDIR}/x11-toolkits/libxaw3dxft
+XAW3DXFT_LIB_DEPENDS=		libXaw3dxft.so:x11-toolkits/libxaw3dxft
 NEXTAW_CONFIGURE_WITH=		neXtaw
-NEXTAW_LIB_DEPENDS=		libneXtaw.so:${PORTSDIR}/x11-toolkits/neXtaw
+NEXTAW_LIB_DEPENDS=		libneXtaw.so:x11-toolkits/neXtaw
 
 .include <bsd.port.options.mk>
 

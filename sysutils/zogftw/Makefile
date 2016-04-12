@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}-2015-11-21-0a21288
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Creates redundant backups on encrypted ZFS pools
 
-RUN_DEPENDS=	mbuffer:${PORTSDIR}/misc/mbuffer \
-		sudo:${PORTSDIR}/security/sudo
+RUN_DEPENDS=	mbuffer:misc/mbuffer \
+		sudo:security/sudo
 
 OPTIONS_DEFINE=		EXECUTE_TESTS GNUPG
 OPTIONS_DEFAULT=	GNUPG
@@ -23,10 +23,10 @@ PLIST_FILES=	sbin/zogftw \
 NO_BUILD=	yes
 PORTSCOUT=	ignore:1
 
-GNUPG_RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+GNUPG_RUN_DEPENDS=	gpg:security/gnupg
 
-EXECUTE_TESTS_BUILD_DEPENDS=	atf-sh:${PORTSDIR}/devel/atf \
-				kyua:${PORTSDIR}/devel/kyua
+EXECUTE_TESTS_BUILD_DEPENDS=	atf-sh:devel/atf \
+				kyua:devel/kyua
 
 .include <bsd.port.options.mk>
 

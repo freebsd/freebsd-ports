@@ -1,7 +1,7 @@
---- media/formats/mp2t/es_parser_adts.cc.orig	2016-01-21 18:00:32.996621604 +0100
-+++ media/formats/mp2t/es_parser_adts.cc	2016-01-21 18:00:53.692621141 +0100
-@@ -61,11 +61,11 @@
-   const uint8* es;
+--- media/formats/mp2t/es_parser_adts.cc.orig	2016-03-04 23:09:52.322624868 +0100
++++ media/formats/mp2t/es_parser_adts.cc	2016-03-04 23:10:00.912499378 +0100
+@@ -62,11 +62,11 @@
+   const uint8_t* es;
    es_queue_->Peek(&es, &es_size);
  
 -  int max_offset = es_size - kADTSHeaderMinSize;
@@ -12,10 +12,10 @@
  
 -  for (int offset = 0; offset < max_offset; offset++) {
 +  for (int offset = 0; offset < _max_offset; offset++) {
-     const uint8* cur_buf = &es[offset];
+     const uint8_t* cur_buf = &es[offset];
      if (!isAdtsSyncWord(cur_buf))
        continue;
-@@ -103,7 +103,7 @@
+@@ -104,7 +104,7 @@
      return true;
    }
  

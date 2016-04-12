@@ -12,7 +12,7 @@ COMMENT=	GNU Linear Programming Kit
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 OPTIONS_DEFINE=	IODBC MYSQL DOCS
 IODBC_DESC=	MathProg iodbc support
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--disable-dl
 
 .if ${PORT_OPTIONS:MIODBC}
 CONFIGURE_ARGS+=	--enable-odbc
-LIB_DEPENDS+=		libiodbc.so:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=		libiodbc.so:databases/libiodbc
 .else
 CONFIGURE_ARGS+=	--disable-odbc
 .endif

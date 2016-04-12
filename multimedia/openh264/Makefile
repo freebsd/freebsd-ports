@@ -31,11 +31,11 @@ OPTIONS_DEFAULT=PLUGINS
 OPTIONS_SUB=	yes
 
 DEBUG_BUILD_DEPENDS_OFF=	${DEBUG_BUILD_DEPENDS_OFF_${ARCH}}
-DEBUG_BUILD_DEPENDS_OFF_amd64=	nasm:${PORTSDIR}/devel/nasm
-DEBUG_BUILD_DEPENDS_OFF_i386=	nasm:${PORTSDIR}/devel/nasm
+DEBUG_BUILD_DEPENDS_OFF_amd64=	nasm:devel/nasm
+DEBUG_BUILD_DEPENDS_OFF_i386=	nasm:devel/nasm
 DEBUG_MAKE_ARGS=BUILDTYPE=Debug
-PLUGINS_BUILD_DEPENDS=gmp-api>=34.0:${PORTSDIR}/multimedia/gmp-api
-#			gmp-api<36.0:${PORTSDIR}/multimedia/gmp-api
+PLUGINS_BUILD_DEPENDS=gmp-api>=34.0:multimedia/gmp-api
+#			gmp-api<36.0:multimedia/gmp-api
 PLUGINS_CFLAGS=	-I${LOCALBASE}/include/gmp-api
 PLUGINS_MAKE_ARGS=HAVE_GMP_API=Yes
 PLUGINS_ALL_TARGET=plugin
@@ -45,7 +45,7 @@ WEBPLUGIN_FILES=gmp${PORTNAME}.info libgmp${PORTNAME}.so
 SUB_FILES+=	gmp${PORTNAME}.js
 SUB_LIST+=	PORTVERSION=${PORTVERSION} TIMESTAMP="`date +%s`"
 
-TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest
+TEST_BUILD_DEPENDS=googletest>=1.6.0:devel/googletest
 TEST_CFLAGS=	-I${LOCALBASE}/include
 TEST_MAKE_ARGS=	HAVE_GTEST=Yes
 TEST_ALL_TARGET=test

@@ -14,7 +14,7 @@ COMMENT=	Object-oriented Python bindings for the ogg library
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:audio/libogg
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

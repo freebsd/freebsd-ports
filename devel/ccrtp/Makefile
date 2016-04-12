@@ -10,8 +10,8 @@ MASTER_SITES=	GNU
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Implementation of the real-time transport protocol
 
-LIB_DEPENDS=	libcommoncpp.so:${PORTSDIR}/devel/ucommon \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libcommoncpp.so:devel/ucommon \
+		libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USES=		gmake gettext libtool iconv pkgconfig

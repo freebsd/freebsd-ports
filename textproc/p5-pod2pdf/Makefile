@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Converts POD to PDF format
 
-RUN_DEPENDS=	p5-PDF-API2>=0.60:${PORTSDIR}/textproc/p5-PDF-API2 \
-		p5-Pod-Escapes>0:${PORTSDIR}/textproc/p5-Pod-Escapes \
-		p5-Getopt-ArgvFile>0:${PORTSDIR}/devel/p5-Getopt-ArgvFile
+RUN_DEPENDS=	p5-PDF-API2>=0.60:textproc/p5-PDF-API2 \
+		p5-Pod-Escapes>0:textproc/p5-Pod-Escapes \
+		p5-Getopt-ArgvFile>0:devel/p5-Getopt-ArgvFile
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

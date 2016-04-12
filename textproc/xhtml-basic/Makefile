@@ -12,8 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	W3C's XHTML Basic DTD
 
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr \
-		${LOCALBASE}/share/xml/dtd/xhtml-modularization/catalog.xml:${PORTSDIR}/textproc/xhtml-modularization
+RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr \
+		${LOCALBASE}/share/xml/dtd/xhtml-modularization/catalog.xml:textproc/xhtml-modularization
 
 RECDATE=	20001219
 

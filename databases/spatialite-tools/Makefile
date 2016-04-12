@@ -10,12 +10,12 @@ COMMENT=	Collection of CLI tools supporting SpatiaLite
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos \
-		libproj.so:${PORTSDIR}/graphics/proj \
-		libfreexl.so:${PORTSDIR}/textproc/freexl \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libspatialite.so:${PORTSDIR}/databases/spatialite \
-		libreadosm.so:${PORTSDIR}/astro/readosm
+LIB_DEPENDS=	libgeos_c.so:graphics/geos \
+		libproj.so:graphics/proj \
+		libfreexl.so:textproc/freexl \
+		libexpat.so:textproc/expat2 \
+		libspatialite.so:databases/spatialite \
+		libreadosm.so:astro/readosm
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig iconv

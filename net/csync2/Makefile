@@ -13,14 +13,14 @@ COMMENT=	Cluster synchronization tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	librsync.so.2:${PORTSDIR}/net/librsync1 \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	librsync.so.2:net/librsync1 \
+		libgnutls.so:security/gnutls \
+		libsqlite3.so:databases/sqlite3
 
 OPTIONS_DEFINE=	CSYNC2_COMPARE DOCS
 OPTIONS_SUB=	yes
 CSYNC2_COMPARE_DESC=		Install csync2-compare script
-CSYNC2_COMPARE_RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+CSYNC2_COMPARE_RUN_DEPENDS=	bash:shells/bash
 
 USES=		pkgconfig shebangfix
 SHEBANG_FILES=	csync2-compare

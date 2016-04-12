@@ -18,7 +18,7 @@ OCTSRC=		octave-${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS+=	gsed:textproc/gsed
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

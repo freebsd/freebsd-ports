@@ -12,7 +12,7 @@ COMMENT=	Perl module to plot graphs using GNUPLOT on the fly
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		perl5
 USE_PERL5=	configure

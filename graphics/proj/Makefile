@@ -12,7 +12,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Cartographic Projections library
 
-EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 DATUM_GRID_FILES=	proj-datumgrid-1.6RC1.zip
 

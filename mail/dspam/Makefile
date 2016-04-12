@@ -185,7 +185,7 @@ _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 .if ${PORT_OPTIONS:MCLAMAV}
 CONFIGURE_ARGS+=	--enable-clamav
 .	if ${PORT_OPTIONS:MCLAMAV_LOCAL}
-RUN_DEPENDS+=	clamav>=0:${PORTSDIR}/security/clamav
+RUN_DEPENDS+=	clamav>=0:security/clamav
 SUB_LIST+=	CLAMD=clamd
 .	else
 SUB_LIST+=	CLAMD=
@@ -302,22 +302,22 @@ CONFIGURE_ARGS+=	--enable-domain-scale
 .endif
 
 .if ${PORT_OPTIONS:MCYRUS23}
-RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd23
+RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:mail/cyrus-imapd23
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
 .endif
 
 .if ${PORT_OPTIONS:MCYRUS24}
-RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd24
+RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:mail/cyrus-imapd24
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT1}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/deliver:${PORTSDIR}/mail/dovecot
+RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/deliver:mail/dovecot
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/libexec/dovecot/deliver'
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT2}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/dovecot-lda:${PORTSDIR}/mail/dovecot2
+RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/dovecot-lda:mail/dovecot2
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/libexec/dovecot/dovecot-lda'
 .endif
 
@@ -327,22 +327,22 @@ _EXIM_EXT=	-mysql
 .	elif ${PORT_OPTIONS:MPGSQL}
 _EXIM_EXT=	-postgresql
 .	endif
-RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim${_EXIM_EXT}
+RUN_DEPENDS+=	exim:mail/exim${_EXIM_EXT}
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/sbin/exim'
 .endif
 
 .if ${PORT_OPTIONS:MMAILDROP}
-RUN_DEPENDS+=	maildrop:${PORTSDIR}/mail/maildrop
+RUN_DEPENDS+=	maildrop:mail/maildrop
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/maildrop'
 .endif
 
 .if ${PORT_OPTIONS:MPROCMAIL}
-RUN_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
+RUN_DEPENDS+=	procmail:mail/procmail
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/procmail'
 .endif
 
 .if ${PORT_OPTIONS:MSAFECAT}
-RUN_DEPENDS+=	safecat:${PORTSDIR}/sysutils/safecat
+RUN_DEPENDS+=	safecat:sysutils/safecat
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/safecat tmp new'
 .endif
 
@@ -372,15 +372,15 @@ CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 
 .if ${PORT_OPTIONS:MWEBUI}
 .	if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 .	else
 USE_APACHE_RUN=	22+
 .	endif
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
-RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
-RUN_DEPENDS+=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
-RUN_DEPENDS+=	p5-GD-Graph3d>=0:${PORTSDIR}/graphics/p5-GD-Graph3d
-RUN_DEPENDS+=	p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
+LIB_DEPENDS+=	libgd.so:graphics/gd
+RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD
+RUN_DEPENDS+=	p5-GD-Graph>=0:graphics/p5-GD-Graph
+RUN_DEPENDS+=	p5-GD-Graph3d>=0:graphics/p5-GD-Graph3d
+RUN_DEPENDS+=	p5-GD-TextUtil>=0:graphics/p5-GD-TextUtil
 CONFIGURE_ARGS+=--enable-logging
 CONFIGURE_ARGS+=--enable-user-logging
 PLIST_SUB+=	WebUI=""

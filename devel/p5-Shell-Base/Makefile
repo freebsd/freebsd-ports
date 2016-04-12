@@ -14,8 +14,8 @@ COMMENT=	Perl module implementing a simple command shell
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Term-Size>=0:${PORTSDIR}/devel/p5-Term-Size \
-		p5-Text-Shellwords>=0:${PORTSDIR}/textproc/p5-Text-Shellwords
+BUILD_DEPENDS=	p5-Term-Size>=0:devel/p5-Term-Size \
+		p5-Text-Shellwords>=0:textproc/p5-Text-Shellwords
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

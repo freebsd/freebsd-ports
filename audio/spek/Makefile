@@ -12,7 +12,7 @@ COMMENT=	Acoustic spectrum analyser
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USES=		tar:xz gmake pkgconfig desktop-file-utils compiler:c++11-lib desktop-file-utils
 USE_GNOME=	intltool

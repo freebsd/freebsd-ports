@@ -12,7 +12,7 @@ DISTNAME=	TracPrivateTickets-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Modified ticket security for Trac
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 USES=		python
 USE_PYTHON=	distutils autoplist

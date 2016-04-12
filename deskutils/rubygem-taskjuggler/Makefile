@@ -12,8 +12,8 @@ COMMENT=	Project management tool for UNIX based operating systems
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-mail>=2.4.3:${PORTSDIR}/mail/rubygem-mail \
-		rubygem-term-ansicolor>=1.0.7:${PORTSDIR}/devel/rubygem-term-ansicolor
+RUN_DEPENDS=	rubygem-mail>=2.4.3:mail/rubygem-mail \
+		rubygem-term-ansicolor>=1.0.7:devel/rubygem-term-ansicolor
 
 NO_ARCH=	yes
 USE_RUBY=	yes

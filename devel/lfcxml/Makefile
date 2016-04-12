@@ -10,7 +10,7 @@ COMMENT=	C++ XML library, used for databases/cego
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase
+LIB_DEPENDS=	liblfcbase.so:devel/lfcbase
 
 USES=		libtool
 GNU_CONFIGURE=	yes

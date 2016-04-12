@@ -14,13 +14,13 @@ COMMENT=	Modular patch bay for Jack
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
-		libraul.so:${PORTSDIR}/audio/raul \
-		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libglibmm-2.4.so:${PORTSDIR}/devel/glibmm \
-		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libflowcanvas.so:${PORTSDIR}/x11-toolkits/flowcanvas
+LIB_DEPENDS=	libjack.so:audio/jack \
+		libraul.so:audio/raul \
+		libboost_date_time.so:devel/boost-libs \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libglibmm-2.4.so:devel/glibmm \
+		libglademm-2.4.so:devel/libglademm24 \
+		libflowcanvas.so:x11-toolkits/flowcanvas
 
 USES=		pkgconfig tar:bzip2 waf
 INSTALLS_ICONS=	yes

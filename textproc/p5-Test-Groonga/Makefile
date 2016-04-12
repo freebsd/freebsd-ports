@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
-	p5-Test-TCP>=1.1:${PORTSDIR}/devel/p5-Test-TCP
+	p5-File-Which>=0:sysutils/p5-File-Which \
+	p5-Test-TCP>=1.1:devel/p5-Test-TCP
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

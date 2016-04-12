@@ -11,7 +11,7 @@ COMMENT=	Utility functions for working with Random Number Generators
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-pkgmaker>=0.20:${PORTSDIR}/devel/R-cran-pkgmaker
+RUN_DEPENDS=	R-cran-pkgmaker>=0.20:devel/R-cran-pkgmaker
 
 USES=	cran:auto-plist
 

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Test your application's warnings
 
-BUILD_DEPENDS=	p5-Plack>0:${PORTSDIR}/www/p5-Plack
+BUILD_DEPENDS=	p5-Plack>0:www/p5-Plack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

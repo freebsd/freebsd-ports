@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perform common time and date operations with additional GPS operations
 
-BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
+BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

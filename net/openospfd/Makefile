@@ -18,7 +18,7 @@ LICENSE=	ISCL
 
 CONFLICTS=	zebra-0* quagga-0*
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man"

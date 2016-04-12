@@ -42,13 +42,13 @@ IROFFER_HTDOCS=	iroffer-state.css robots.txt \
 OPTIONS_DEFINE=	CURL RUBY UPNP GEOIP DOCS EXAMPLES
 OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ON=	-curl
 RUBY_USE=		RUBY=yes LIBRUBY=yes
 RUBY_CONFIGURE_ON=	-ruby
-UPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 UPNP_CONFIGURE_ON=	-upnp
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 GEOIP_CONFIGURE_ON=	-geoip
 
 do-install:

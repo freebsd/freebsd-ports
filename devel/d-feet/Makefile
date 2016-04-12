@@ -9,7 +9,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	thinker@codemud.net
 COMMENT=	D-Feet is a D-Bus debugger python introspection by John (J5) Palmieri
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 
 USES=		gettext gmake gnome perl5 pkgconfig python tar:xz
 USE_GNOME=	gtk30 intlhack introspection:build libxml2:build libwnck3

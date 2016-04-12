@@ -86,6 +86,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/fr/LC_MESSAGES/pg_controldata-9.5.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pg_ctl-9.5.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pg_resetxlog-9.5.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pg_rewind-9.5.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/plpgsql-9.5.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/postgres-9.5.mo
 %%NLS%%share/locale/id/LC_MESSAGES/postgres-9.5.mo
@@ -392,6 +393,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Bahrain
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Baku
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Bangkok
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Barnaul
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Beirut
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Bishkek
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Brunei
@@ -568,6 +570,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Etc/Zulu
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Amsterdam
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Andorra
+%%TZDATA%%%%DATADIR%%/timezone/Europe/Astrakhan
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Athens
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Belfast
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Belgrade
@@ -615,6 +618,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Tallinn
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Tirane
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Tiraspol
+%%TZDATA%%%%DATADIR%%/timezone/Europe/Ulyanovsk
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Uzhgorod
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Vaduz
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Vatican

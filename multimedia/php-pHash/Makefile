@@ -14,7 +14,7 @@ COMMENT=	PHP extension for the pHash perceptual hash library
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpHash.so:${PORTSDIR}/multimedia/pHash
+LIB_DEPENDS=	libpHash.so:multimedia/pHash
 
 USE_PHP=	yes
 USE_PHPIZE=	yes

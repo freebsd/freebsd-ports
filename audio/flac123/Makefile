@@ -11,9 +11,9 @@ MASTER_SITES=	SF/flac-tools/${PORTNAME}/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command-line player for flac audio files
 
-LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libao.so:${PORTSDIR}/audio/libao \
-		libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libao.so:audio/libao \
+		libpopt.so:devel/popt
 
 OPTIONS_DEFINE=	DOCS
 

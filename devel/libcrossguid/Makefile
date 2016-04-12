@@ -10,7 +10,7 @@ COMMENT=	Minimal and cross platform C++ GUID library
 LICENSE=	MIT
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	graeme-hill

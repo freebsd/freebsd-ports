@@ -14,12 +14,12 @@ COMMENT=	Next generation MusicBrainz Tagger
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=0:${PORTSDIR}/audio/py-discid \
-		${PYTHON_PKGNAMEPREFIX}mutagen>=0:${PORTSDIR}/audio/py-mutagen \
-		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
-		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=0:audio/py-discid \
+		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen \
+		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4-core \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:net/py-qt4-network \
+		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:textproc/py-qt4-xml
 
 USES=		gettext python:2 desktop-file-utils
 USE_PYTHON=	distutils
@@ -30,13 +30,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-release-${PORTVERSION}
 OPTIONS_DEFINE=	ACOUSTID REPLAYGAIN
 
 ACOUSTID_DESC=		AcoustID audio fingerprinting support
-ACOUSTID_RUN_DEPENDS=	fpcalc:${PORTSDIR}/audio/chromaprint
+ACOUSTID_RUN_DEPENDS=	fpcalc:audio/chromaprint
 
 REPLAYGAIN_DESC=	ReplayGain audio normalization support
-REPLAYGAIN_RUN_DEPENDS=	metaflac:${PORTSDIR}/audio/flac \
-			mp3gain:${PORTSDIR}/audio/mp3gain \
-			vorbisgain:${PORTSDIR}/audio/vorbisgain \
-			wvgain:${PORTSDIR}/audio/wavpack
+REPLAYGAIN_RUN_DEPENDS=	metaflac:audio/flac \
+			mp3gain:audio/mp3gain \
+			vorbisgain:audio/vorbisgain \
+			wvgain:audio/wavpack
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|distutils\.command\.install |setuptools\.command\.install |' \

@@ -10,7 +10,7 @@ COMMENT=	Secure parasitic rdate replacement
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 OPTIONS_DEFINE=	DOCS
 

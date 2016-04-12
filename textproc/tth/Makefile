@@ -12,7 +12,7 @@ DISTNAME=	tth_C
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	TeX to HTML translator
 
-RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	ppmtogif:graphics/netpbm
 
 USES=		ghostscript:run shebangfix tar:tgz
 #USE_TEX=	latex

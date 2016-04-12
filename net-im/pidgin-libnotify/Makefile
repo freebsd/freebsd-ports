@@ -12,10 +12,10 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	meethune@gmail.com
 COMMENT=	This plugin adds a libnotify interface to Pidgin
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \
-    		${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
-		libpurple.so:${PORTSDIR}/net-im/libpurple
+BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin \
+		${LOCALBASE}/libdata/pkgconfig/libnotify.pc:devel/libnotify
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libpurple.so:net-im/libpurple
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig

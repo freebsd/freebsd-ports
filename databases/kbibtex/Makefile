@@ -10,9 +10,9 @@ MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C,(^[[:digit:]]\
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Bibliography editor for KDE
 
-LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libqoauth.so:${PORTSDIR}/net/qoauth
+LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4 \
+		libqca.so:devel/qca \
+		libqoauth.so:net/qoauth
 
 USES=		cmake iconv shared-mime-info tar:xz
 USE_GNOME=	libxml2 libxslt

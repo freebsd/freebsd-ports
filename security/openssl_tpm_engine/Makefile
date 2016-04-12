@@ -13,8 +13,8 @@ COMMENT=	OpenSSL TPM engine
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:${PORTSDIR}/security/trousers
-LIB_DEPENDS=	libtspi.so:${PORTSDIR}/security/trousers
+RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:security/trousers
+LIB_DEPENDS=	libtspi.so:security/trousers
 
 USES=		autoreconf gmake libtool
 USE_LDCONFIG=	yes

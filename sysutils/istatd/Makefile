@@ -12,7 +12,7 @@ COMMENT=	Daemon for iStat iPhone application
 
 LICENSE=    BSD3CLAUSE
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USE_GITHUB= yes
 GH_ACCOUNT= tiwilliam

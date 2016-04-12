@@ -15,9 +15,9 @@ COMMENT=	Perl compiler's C backend
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-B-Flags>=0:${PORTSDIR}/devel/p5-B-Flags \
-		p5-Opcodes>=0:${PORTSDIR}/devel/p5-Opcodes \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
+BUILD_DEPENDS=	p5-B-Flags>=0:devel/p5-B-Flags \
+		p5-Opcodes>=0:devel/p5-Opcodes \
+		p5-IPC-Run>=0:devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

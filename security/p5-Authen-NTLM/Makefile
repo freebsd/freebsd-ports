@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME:C/.*-//}-${PORTVERSION}
 MAINTAINER=	james@divide.org
 COMMENT=	Perl5 NTLM authentication module
 
-BUILD_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
-RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
+BUILD_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC
+RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC
 
 USES=		perl5
 USE_PERL5=	configure

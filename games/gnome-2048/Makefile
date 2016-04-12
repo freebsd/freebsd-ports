@@ -10,11 +10,11 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Move the tiles until you obtain the 2048 tile
 
-BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libgames-support.so:${PORTSDIR}/games/libgames-support
+BUILD_DEPENDS=	vala:lang/vala \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
+		libgee-0.8.so:devel/libgee \
+		libgames-support.so:games/libgames-support
 
 PORTSCOUT=	limitw:1,even
 

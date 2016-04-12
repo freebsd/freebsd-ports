@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI driver for Oracle RDBMS server
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	OCI8 EXAMPLES
@@ -29,13 +29,13 @@ SHEBANG_FILES=	Oracle.ex/*
 PORTVERSION=	1.19
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ORACLE_HOME=	${LOCALBASE}/oracle8-client
-BUILD_DEPENDS+=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
+BUILD_DEPENDS+=	${ORACLE_HOME}/lib/libclntst8.a:databases/oracle8-client
 CONFIGURE_ARGS=	-V 8.1.7
 PLIST_SUB+=	MKTA=''
 .else
 PORTVERSION=	1.14
 ORACLE_HOME=	${LOCALBASE}/oracle7
-BUILD_DEPENDS+=	${ORACLE_HOME}/rdbms/demo/oracle.mk:${PORTSDIR}/databases/oracle7-client
+BUILD_DEPENDS+=	${ORACLE_HOME}/rdbms/demo/oracle.mk:databases/oracle7-client
 CONFIGURE_ARGS=	-m ${ORACLE_HOME}/rdbms/demo/oracle.mk
 PLIST_SUB+=	MKTA='@comment '
 .endif

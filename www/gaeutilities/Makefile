@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility classes to make working with Google App Engine easier
 
-RUN_DEPENDS=	google-appengine>=1.2.4_1:${PORTSDIR}/www/google-appengine
+RUN_DEPENDS=	google-appengine>=1.2.4_1:www/google-appengine
 
 USES=		python:2 # same as www/google-appengine
 USE_GITHUB=	yes

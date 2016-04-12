@@ -11,10 +11,10 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LibRaw interface for KDE
 
-LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
-		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libraw.so:${PORTSDIR}/graphics/libraw
+LIB_DEPENDS=	libjasper.so:graphics/jasper \
+		liblcms.so:graphics/lcms \
+		libxml2.so:textproc/libxml2 \
+		libraw.so:graphics/libraw
 
 CMAKE_ARGS+=	-DWITH_OpenMP:BOOL=False \
 		-DENABLE_RAWSPEED=True

@@ -12,12 +12,12 @@ COMMENT=	GTK+ terminal emulator with tabs
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>0:${PORTSDIR}/devel/py-lockfile \
-		docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
-		itstool:${PORTSDIR}/textproc/itstool \
-		po4a:${PORTSDIR}/textproc/po4a
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>0:devel/py-lockfile \
+		docbook-xsl>0:textproc/docbook-xsl \
+		itstool:textproc/itstool \
+		po4a:textproc/po4a
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		gettext libtool:build pkgconfig python:build tar:bzip2
 USE_GNOME=	librsvg2:run libxslt:build
@@ -34,7 +34,7 @@ MAITCHFLAGS+=	PARALLEL=${MAKE_JOBS_NUMBER};PREFIX=${PREFIX};
 .if ${PORT_OPTIONS:MGTK3}
 #USE_GNOME+=	vte3
 # use older vte3-290 port until roxterm can support the 2.91 API from vte3
-LIB_DEPENDS+=	libvte2_90.so:${PORTSDIR}/x11-toolkits/vte290
+LIB_DEPENDS+=	libvte2_90.so:x11-toolkits/vte290
 .else
 USE_GNOME+=	vte
 DISABLE_GTK3=	True

@@ -15,7 +15,7 @@ COMMENT=	Import packages into other packages
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime
+BUILD_DEPENDS=	p5-Module-Runtime>=0:devel/p5-Module-Runtime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

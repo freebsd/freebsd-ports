@@ -14,7 +14,7 @@ COMMENT=	Python library that creates call graphs for Python programs
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS+=	dot:graphics/graphviz
 
 USES=		python
 USE_PYTHON=	distutils

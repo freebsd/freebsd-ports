@@ -11,8 +11,8 @@ COMMENT=	Commit patches or partial workspace changes to a VCS repository
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	interdiff:${PORTSDIR}/misc/patchutils \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
+RUN_DEPENDS=	interdiff:misc/patchutils \
+		p5-IPC-Run>=0:devel/p5-IPC-Run
 
 USE_GITHUB=	yes
 USES=		gmake perl5 shebangfix

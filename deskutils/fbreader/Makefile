@@ -12,10 +12,10 @@ COMMENT=	Powerful e-book reader
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libunibreak.so:${PORTSDIR}/textproc/libunibreak
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2 \
+		libfribidi.so:converters/fribidi \
+		libunibreak.so:textproc/libunibreak
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	geometer

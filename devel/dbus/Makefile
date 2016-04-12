@@ -9,7 +9,7 @@ MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Message bus system for inter-application communication
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 PORTSCOUT=	limitw:1,even
 
@@ -43,7 +43,7 @@ OPTIONS_DEFINE=	MANPAGES X11
 OPTIONS_DEFAULT=MANPAGES X11
 X11_DESC=	Support X11 Desktop Environments
 
-MANPAGES_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
+MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto
 MANPAGES_CONFIGURE_ENABLE=	xml-docs
 X11_USE=	xorg=ice,sm,x11
 X11_CONFIGURE_WITH=	x

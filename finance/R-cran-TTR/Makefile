@@ -11,7 +11,7 @@ COMMENT=	Technical Trading Rules
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-xts>=0.9.3:${PORTSDIR}/math/R-cran-xts
+RUN_DEPENDS=	R-cran-xts>=0.9.3:math/R-cran-xts
 
 USES=	cran:auto-plist
 

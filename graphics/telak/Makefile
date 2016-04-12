@@ -13,9 +13,9 @@ COMMENT=	Tool to draw pictures on your root window
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libgcrypt.so:security/libgcrypt \
+		libImlib2.so:graphics/imlib2
 
 USES=		gmake
 

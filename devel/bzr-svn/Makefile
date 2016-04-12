@@ -13,9 +13,9 @@ COMMENT=	Plugin for bzr to work with svn
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=	bzr:${PORTSDIR}/devel/bzr
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/subvertpy/__init__.py:${PORTSDIR}/devel/py-subvertpy \
-		bzr:${PORTSDIR}/devel/bzr
+BUILD_DEPENDS+=	bzr:devel/bzr
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/subvertpy/__init__.py:devel/py-subvertpy \
+		bzr:devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		python

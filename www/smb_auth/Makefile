@@ -11,7 +11,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Proxy authentication module against an SMB server
 
 .if !defined(WITHOUT_REGISTER_SAMBA)
-RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${SAMBA_PORT}
 .endif
 
 ALL_TARGET=	smb_auth

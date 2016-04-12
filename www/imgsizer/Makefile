@@ -12,7 +12,7 @@ COMMENT=	Tool to autogenerate WIDTH and HEIGHT for IMG HTML tags
 
 LICENSE=	BSD4CLAUSE
 
-RUN_DEPENDS=	identify:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	identify:graphics/ImageMagick
 
 USES=		jpeg:run python
 NO_BUILD=	yes

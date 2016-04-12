@@ -14,7 +14,7 @@ COMMENT=	Ada graphical toolkit based on Gtk3 components
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	gprbuild:devel/gprbuild
 
 USES=		ada gmake perl5 pkgconfig
 USE_PERL5=	build
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--with-GL=auto \
 			--enable-static
 
 OPTIONS_DEFINE=		DOCS NLS EXAMPLES DEBUG
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 DOCS_DISTFILES=		gtkada-rm-${RM_VERSION}.tar.bz2
 DOCS_ALL_TARGET=	docs
 NLS_CONFIGURE_ENABLE=	nls

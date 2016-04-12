@@ -10,7 +10,7 @@ COMMENT=	Lightweight XMPP library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	strophe

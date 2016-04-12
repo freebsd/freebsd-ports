@@ -15,7 +15,7 @@ COMMENT=	Eclipse plug-in that provides Subversion support
 
 LICENSE=	EPL
 
-RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	eclipse:java/eclipse
 
 CONNECTORS=	Subversive-connectors-allplatforms-4.0.2.I20140528-1700.zip
 

@@ -13,7 +13,7 @@ COMMENT=	Simple telephone book
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
 USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	telbook

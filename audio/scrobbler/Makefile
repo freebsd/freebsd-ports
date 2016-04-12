@@ -12,7 +12,7 @@ DISTNAME=	xmms-scrobbler-${PORTVERSION}
 MAINTAINER?=	novel@FreeBSD.org
 COMMENT?=	XMMS/BMP plugin for Audioscrobbler.com
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 CONFLICTS=	xmms-scrobbler-[0-9]*
 
@@ -29,7 +29,7 @@ OPTIONS_DEFAULT=XMMS
 XMMS_DESC=	Enable XMMS support
 ENCODINGS_PATCH_DESC=	Enable ID3 tags recoding support
 
-XMMS_LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
+XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
 XMMS_PLIST_FILES=	lib/xmms/General/libxmms_scrobbler.so
 XMMS_CONFIGURE_ENABLE=	xmms-plugin
 

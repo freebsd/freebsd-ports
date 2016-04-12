@@ -14,8 +14,8 @@ COMMENT=	Check HTML documents for broken links
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}requests>=2:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython \
+		${PYTHON_PKGNAMEPREFIX}requests>=2:www/py-requests
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -30,24 +30,24 @@ OPTIONS_DEFAULT=	SQLITE3 SYNTAX
 OPTIONS_SUB=		yes
 
 CLAMAV_DESC=		Clam Antivirus
-CLAMAV_RUN_DEPENDS=	clamscan:${PORTSDIR}/security/clamav
-GEOIP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GeoIP>0:${PORTSDIR}/net/py-GeoIP
+CLAMAV_RUN_DEPENDS=	clamscan:security/clamav
+GEOIP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GeoIP>0:net/py-GeoIP
 GTK2_USE=		gnome=pygtk2
 LOGIN_DESC=		Login form submission
-LOGIN_RUN_DEPENDS=	twill>=0:${PORTSDIR}/www/twill
+LOGIN_RUN_DEPENDS=	twill>=0:www/twill
 NLS_USES=		gettext
 QT4_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-noqt-setup.py
 QT4_RUN_DEPENDS=\
-		${PYTHON_PKGNAMEPREFIX}qt4-sql>=${PYQT_VERSION}:${PORTSDIR}/databases/py-qt4-sql \
-		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT_VERSION}:${PORTSDIR}/devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-help>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-help \
-		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=${QSCI2_VERSION}:${PORTSDIR}/devel/py-qt4-qscintilla2
-SQLITE3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}qt4-sql>=${PYQT_VERSION}:databases/py-qt4-sql \
+		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT_VERSION}:devel/py-qt4-core \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT_VERSION}:x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-help>=${PYQT4_VERSION}:devel/py-qt4-help \
+		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=${QSCI2_VERSION}:devel/py-qt4-qscintilla2
+SQLITE3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 SYNTAX_DESC=		HTML/CSS syntax check
 SYNTAX_RUN_DEPENDS=\
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:${PORTSDIR}/www/py-cssutils \
-		${PYTHON_PKGNAMEPREFIX}utidy>=0.2:${PORTSDIR}/www/py-utidy
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}utidy>=0.2:www/py-utidy
 
 .include <bsd.port.options.mk>
 

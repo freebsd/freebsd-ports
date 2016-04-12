@@ -11,16 +11,16 @@ DISTNAME=	KCemu-${PORTVERSION}
 MAINTAINER=	hardy.schumacher@gmx.de
 COMMENT=	KC85 emulator
 
-BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
-		libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
-		libdirac_encoder.so:${PORTSDIR}/multimedia/dirac \
-		libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libvncserver.so:${PORTSDIR}/net/libvncserver \
-		libxvidcore.so:${PORTSDIR}/multimedia/xvid \
-		libz80ex.so:${PORTSDIR}/devel/z80ex
+BUILD_DEPENDS=	pngtopnm:graphics/netpbm
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
+		libavformat.so:multimedia/ffmpeg \
+		libdirac_encoder.so:multimedia/dirac \
+		libschroedinger-1.0.so:multimedia/schroedinger \
+		libsndfile.so:audio/libsndfile \
+		libtheora.so:multimedia/libtheora \
+		libvncserver.so:net/libvncserver \
+		libxvidcore.so:multimedia/xvid \
+		libz80ex.so:devel/z80ex
 
 GNU_CONFIGURE=	yes
 USE_XORG=	xmu

@@ -11,9 +11,9 @@ COMMENT=	Yubico C client library
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	curl-config:${PORTSDIR}/ftp/curl \
-		help2man:${PORTSDIR}/misc/help2man
+LIB_DEPENDS=	libcurl.so:ftp/curl
+BUILD_DEPENDS=	curl-config:ftp/curl \
+		help2man:misc/help2man
 
 GNU_CONFIGURE=	yes
 USES=		libtool pkgconfig

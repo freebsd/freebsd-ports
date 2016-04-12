@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	sergey@network-asp.biz
 COMMENT=	ODBC driver for MySQL${MYSQL_VER} / ${DRIVER_MANAGER}
 
-BUILD_DEPENDS=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
-LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+BUILD_DEPENDS=	unixODBC>=2.2.14_1:databases/unixODBC
+LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 USE_LDCONFIG=	yes
 USE_MYSQL=	yes

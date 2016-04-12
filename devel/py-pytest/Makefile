@@ -12,10 +12,10 @@ COMMENT=	Simple powerful testing with Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py>=1.4.29:${PORTSDIR}/devel/py-py
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}pexpect>0:${PORTSDIR}/misc/py-pexpect \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.13:${PORTSDIR}/devel/py-pytest-xdist
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py>=1.4.29:devel/py-py
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.13:devel/py-pytest-xdist
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils

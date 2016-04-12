@@ -14,8 +14,8 @@ COMMENT=	SPF (Sender Policy Framework) implemented in Python
 
 LICENSE=	PSFL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authres>=0:${PORTSDIR}/mail/py-authres
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authres>=0:mail/py-authres
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
@@ -28,9 +28,9 @@ SHEBANG_FILES=	spf.py
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}py3dns>=0:${PORTSDIR}/dns/py-py3dns
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}py3dns>=0:dns/py-py3dns
 .else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dns>=0:${PORTSDIR}/dns/py-dns
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dns>=0:dns/py-dns
 .endif
 
 # Make the tests run as a module

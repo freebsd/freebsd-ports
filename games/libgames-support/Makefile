@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Shared code between gnome games
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 
 PORTSCOUT=	limitw:1,even
 

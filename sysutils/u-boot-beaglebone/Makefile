@@ -12,7 +12,7 @@ COMMENT=	Cross-build U-Boot loader for BeagleBone and BeagleBone Black
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${CROSS_GCC}:${PORTSDIR}/devel/arm-none-eabi-gcc492
+BUILD_DEPENDS=	${CROSS_GCC}:devel/arm-none-eabi-gcc492
 
 CROSS_GCC=	arm-none-eabi-gcc-4.9.2
 

@@ -13,9 +13,9 @@ COMMENT=	Data Acquisition abstraction library for snort 2.9+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet \
-		libpcap.so:${PORTSDIR}/net/libpcap
-BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
+LIB_DEPENDS=	libdnet.so:net/libdnet \
+		libpcap.so:net/libpcap
+BUILD_DEPENDS=	flex:textproc/flex
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

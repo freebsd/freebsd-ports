@@ -14,7 +14,7 @@ COMMENT=	Perl wrapper for chinese/cconv
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcconv.so:${PORTSDIR}/chinese/cconv
+LIB_DEPENDS=	libcconv.so:chinese/cconv
 
 USE_PERL5=	configure
 USES=		localbase perl5

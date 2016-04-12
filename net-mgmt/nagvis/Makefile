@@ -38,15 +38,15 @@ PLIST_SUB+=	WWWDIR="${WWWDIR}"
 
 .if ${PORT_OPTIONS:MNDO2DB}
 USE_PHP+=	mysql
-RUN_DEPENDS+=	ndo2db-3x:${PORTSDIR}/net-mgmt/ndoutils
+RUN_DEPENDS+=	ndo2db-3x:net-mgmt/ndoutils
 .endif
 
 .if ${PORT_OPTIONS:MMKLIVESTATUS}
-RUN_DEPENDS+=	mk-livestatus>=0:${PORTSDIR}/net-mgmt/mk-livestatus
+RUN_DEPENDS+=	mk-livestatus>=0:net-mgmt/mk-livestatus
 .endif
 
 .if ${PORT_OPTIONS:MGRAPHVIZ}
-RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS+=	dot:graphics/graphviz
 .endif
 
 post-extract:

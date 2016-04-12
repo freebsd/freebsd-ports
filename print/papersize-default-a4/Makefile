@@ -12,7 +12,7 @@ DISTFILES=	# none
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Default paper size configuration file for libpaper
 
-LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libpaper.so:print/libpaper
 
 NO_BUILD=	yes
 

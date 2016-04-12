@@ -9,8 +9,8 @@ CATEGORIES=	databases net pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR DB compliant interface to LDAP v2 and v3 database
 
-BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
+RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
 
 USE_PHP=	ldap
 USES=		pear

@@ -11,17 +11,17 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GREYC's Magic Image Converter
 
-LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libopencv_legacy.so:${PORTSDIR}/graphics/opencv \
-		libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick \
+		libIlmImf.so:graphics/OpenEXR \
+		libopencv_legacy.so:graphics/opencv \
+		libMagick++-6.so:graphics/ImageMagick \
+		libavcodec.so:multimedia/ffmpeg \
+		libfftw3.so:math/fftw3 \
+		libgimp-2.0.so:graphics/gimp-app
 
 OPTIONS_DEFINE=	BASH
 OPTIONS_SUB=	yes
-BASH_RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BASH_RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

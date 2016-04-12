@@ -11,12 +11,19 @@ MASTER_SITES=	SF/annoyancefilter/annoyancefilter/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive Bayesian Junk Mail Filter
 
+LICENSE=	PD GPLv2+
+LICENSE_COMB=	multi
+LICENSE_FILE_PD=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.GNU
+
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
-DOCS=		COPYING INSTALL README *.pdf
+PORTDOCS=	INSTALL README *.pdf
 
-CFLAGS=		${CPPFLAGS}
+PLIST_FILES=	bin/annoyance-filter \
+		bin/annoyance-filter-run \
+		man/man1/annoyance-filter.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,7 +31,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-run ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

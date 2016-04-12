@@ -14,7 +14,7 @@ COMMENT=	GTK+ client for the Music Player Daemon (MPD)
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:${PORTSDIR}/audio/py-mpd
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:audio/py-mpd
 
 USES=		gettext iconv python:2 tar:tgz
 USE_GNOME=	intltool pygtk2
@@ -25,6 +25,6 @@ OPTIONS_DEFINE=		MPD
 OPTIONS_DEFAULT=	MPD
 
 MPD_DESC=		Install Music Player Daemon
-MPD_RUN_DEPENDS=	musicpd:${PORTSDIR}/audio/musicpd
+MPD_RUN_DEPENDS=	musicpd:audio/musicpd
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ CATEGORIES=	databases python
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Standard PyPy binding to the SQLite3 library
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 CFFI_NAME=	_ffi
 

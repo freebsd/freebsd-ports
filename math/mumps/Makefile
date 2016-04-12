@@ -44,7 +44,7 @@ FFLAGS+=	-O3 -ffast-math
 .endif
 
 .ifdef WITH_METIS
-BUILD_DEPENDS+=	${LOCALBASE}/bin/oemetis:${PORTSDIR}/math/metis4
+BUILD_DEPENDS+=	${LOCALBASE}/bin/oemetis:math/metis4
 MAKE_ENV+=	ORDERINGSF=-Dmetis
 .endif
 
@@ -58,25 +58,25 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS_LIBS=	-lf77blas
 LAPACK_LIBS=	-lalapack -lcblas
 .else
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	libblas.so:math/blas
 BLAS_LIBS=	-lblas
 LAPACK_LIBS=	-llapack
 .endif
 
 .ifdef WITH_MPI
 PKGNAMESUFFIX+=		-mpich
-BUILD_DEPENDS+=	${LOCALBASE}/include/mpif.h:${PORTSDIR}/net/mpich2 \
-		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
-		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+BUILD_DEPENDS+=	${LOCALBASE}/include/mpif.h:net/mpich2 \
+		${LOCALBASE}/lib/libblacs.a:math/blacs \
+		${LOCALBASE}/lib/libscalapack.a:math/scalapack
+LIB_DEPENDS+=	liblapack.so:math/lapack
 # Note: -l?mumps still requires to be linked with -lblacs + -lscalapack
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2 \
-		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
-		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich2 \
+		${LOCALBASE}/lib/libblacs.a:math/blacs \
+		${LOCALBASE}/lib/libscalapack.a:math/scalapack
 CONFLICTS=	mumps-4*
 .else
 CONFLICTS=	mumps-mpich-4*

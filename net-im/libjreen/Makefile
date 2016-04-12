@@ -10,8 +10,8 @@ COMMENT=	Qt4 based jabber library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca \
-		libspeex.so:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	libqca.so:devel/qca \
+		libspeex.so:audio/speex
 
 GH_ACCOUNT=	euroelessar
 GH_PROJECT=	jreen

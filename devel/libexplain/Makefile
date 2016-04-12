@@ -14,8 +14,8 @@ COMMENT=	Library which may be used to explain Unix and Linux system call errors
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
-RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
+BUILD_DEPENDS=	gsed:textproc/gsed
+RUN_DEPENDS=	lsof:sysutils/lsof
 
 USES=		bison gettext ghostscript:build gmake iconv libtool:build
 GNU_CONFIGURE=	yes

@@ -14,9 +14,9 @@ COMMENT=	JPilot plugin to download photos and videos
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
-BUILD_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+RUN_DEPENDS=	jpilot:palm/jpilot
+BUILD_DEPENDS=	jpilot:palm/jpilot
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib

@@ -11,9 +11,9 @@ MASTER_SITE_SUBDIR=	CPAN:NEILB/scripts
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Script for uploading distributions to CPAN
 
-RUN_DEPENDS=	p5-AppConfig-Std>=1.05:${PORTSDIR}/devel/p5-AppConfig-Std \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-AppConfig-Std>=1.05:devel/p5-AppConfig-Std \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		p5-libwww>=0:www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -27,7 +27,7 @@ CPE_VERSION=	${ISCVERSION:C/-.*//}
 CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 .endif
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
@@ -98,7 +98,7 @@ NEWSTATS_CONFIGURE_ENABLE=	newstats
 
 IDN_USES=		iconv
 IDN_CONFIGURE_ON=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
-IDN_LIB_DEPENDS=	libidnkit.so:${PORTSDIR}/dns/idnkit
+IDN_LIB_DEPENDS=	libidnkit.so:dns/idnkit
 IDN_CONFIGURE_OFF=	--without-idn
 
 LARGE_FILE_CONFIGURE_ENABLE=	largefile
@@ -179,20 +179,22 @@ PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
-.if ${PORT_OPTIONS:MGOST}
-WITH_OPENSSL_PORT=yes
-.endif
 .else
 PLIST_SUB+=	NOBASE="@comment " BASE=""
 SUB_LIST+=	NOBASE="@comment " BASE=""
-.if ${PORT_OPTIONS:MSSL}
-WITH_OPENSSL_PORT=	yes
-.endif
 .endif
 
 PKGDEINSTALL=	${PKGINSTALL}
 
 PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.if ( ${PORT_OPTIONS:MGOST} ) && defined(WITH_OPENSSL_BASE)
+BROKEN=	OpenSSL from the base system does not support GOST, add \
+	WITH_OPENSSL_PORT=yes to your /etc/make.conf and rebuild everything \
+	that needs SSL.
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|readline/readline.h|editline/readline.h|; \
@@ -241,4 +243,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

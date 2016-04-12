@@ -201,9 +201,9 @@ zlib_UNIT=	devel/fpc-zlib
 .if defined(_POSTMKINCLUDED) && defined(USE_FPC)
 .	for UNIT in ${USE_FPC}
 .		if ${_FPC_ALL_UNITS:M${UNIT}} != ""
-BUILD_DEPENDS+= ${MKINSTDIR}/${UNIT}.fpm:${PORTSDIR}/${${UNIT:S/-/_/}_UNIT}
+BUILD_DEPENDS+= ${MKINSTDIR}/${UNIT}.fpm:${${UNIT:S/-/_/}_UNIT}
 .			if defined(USE_FPC_RUN)
-RUN_DEPENDS+=   ${MKINSTDIR}/${UNIT}.fpm:${PORTSDIR}/${${UNIT:S/-/_/}_UNIT}
+RUN_DEPENDS+=   ${MKINSTDIR}/${UNIT}.fpm:${${UNIT:S/-/_/}_UNIT}
 .			endif
 
 security-check: fpc-check-install

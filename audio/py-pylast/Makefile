@@ -13,7 +13,7 @@ COMMENT=	Python interface to Last.fm and Libre.fm
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
 USES=		python
 USE_PYTHON=	distutils autoplist

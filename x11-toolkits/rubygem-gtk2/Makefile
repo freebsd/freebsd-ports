@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk2
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+PORTVERSION=	3.0.8
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +10,9 @@ COMMENT=	Ruby binding for GTK+2
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:${PORTSDIR}/accessibility/rubygem-atk \
-		rubygem-gdk_pixbuf2>=${PORTVERSION}:${PORTSDIR}/graphics/rubygem-gdk_pixbuf2 \
-		rubygem-pango>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-pango
+RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
+		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2 \
+		rubygem-pango>=${PORTVERSION}:x11-toolkits/rubygem-pango
 
 USE_GNOME=	gtk20
 USE_RUBY=	yes

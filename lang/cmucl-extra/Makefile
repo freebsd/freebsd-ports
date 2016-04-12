@@ -15,8 +15,8 @@ DISTNAME=	cmucl-${PORTVERSION}-x86-FreeBSD.extra
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optional extras for the CMU implementation of Common Lisp
 
-BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
-RUN_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
+BUILD_DEPENDS=	lisp:lang/cmucl
+RUN_DEPENDS=	lisp:lang/cmucl
 
 USES=		tar:bzip2
 NO_WRKSUBDIR=	yes

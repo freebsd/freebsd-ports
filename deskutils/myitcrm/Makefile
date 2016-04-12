@@ -31,8 +31,8 @@ PHPMOD_DESC=	Use PHP module for Apache
 NGINX_DESC=	Use Nginx
 
 APACHE_USE=	APACHE_RUN=22+
-LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
-NGINX_RUN_DEPENDS=	nginx:${PORTSDIR}/www/nginx
+LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
+NGINX_RUN_DEPENDS=	nginx:www/nginx
 
 .include <bsd.port.options.mk>
 

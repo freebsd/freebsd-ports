@@ -9,7 +9,7 @@ COMMENT=	XEP-0065 SOCKS5 Bytestreams external component for Jabber
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmatuska
@@ -41,13 +41,13 @@ GROUPS=		${PROXY65_GROUP}
 # No jabber depends
 .elif ${PORT_OPTIONS:MJABBER}
 JABBER_REQUIRE?=        jabber
-RUN_DEPENDS+=           jabberd14:${PORTSDIR}/net-im/jabber
+RUN_DEPENDS+=           jabberd14:net-im/jabber
 .elif ${PORT_OPTIONS:MJABBERD}
 JABBER_REQUIRE?=        jabberd
-RUN_DEPENDS+=           jabberd:${PORTSDIR}/net-im/jabberd
+RUN_DEPENDS+=           jabberd:net-im/jabberd
 .elif ${PORT_OPTIONS:MEJABBERD}
 JABBER_REQUIRE?=        ejabberd
-RUN_DEPENDS+=           ejabberdctl:${PORTSDIR}/net-im/ejabberd
+RUN_DEPENDS+=           ejabberdctl:net-im/ejabberd
 .endif
 
 SUB_LIST+=	PYTHON_CMD="${PYTHON_CMD}" \

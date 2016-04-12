@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS printer drivers for Samsung Printer Language printers
 
-LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups
+LIB_DEPENDS=	libcupsimage.so:print/cups
 
 USES=		gmake tar:bzip2
 
@@ -45,7 +45,7 @@ OPTIONS_DEFAULT=	JBIG BLACKOPTIM
 .if ${PORT_OPTIONS:MJBIG}
 PPD_SAMSUNG+=	${PPD_SAMSUNG_JBIG}
 PPD_XEROX+=	${PPD_XEROX_JBIG}
-LIB_DEPENDS+=	libjbig.so:${PORTSDIR}/graphics/jbigkit
+LIB_DEPENDS+=	libjbig.so:graphics/jbigkit
 .else
 MAKE_ARGS+=	DISABLE_JBIG=1
 .endif

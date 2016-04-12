@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Python bindings to access X Window System protocol via libxcb
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
-		xcb-proto>=1.7.1:${PORTSDIR}/x11/xcb-proto
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:x11/xcb-proto \
+		xcb-proto>=1.7.1:x11/xcb-proto
 
 USES=		libtool pathfix pkgconfig python tar:bzip2
 USE_XORG=	xcb

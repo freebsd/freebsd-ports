@@ -12,7 +12,7 @@ COMMENT=	Implementation of a PKCS\#11 engine for OpenSSL
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libp11.so:${PORTSDIR}/security/libp11
+LIB_DEPENDS=	libp11.so:security/libp11
 
 OPTIONS_DEFINE=	DOCS
 

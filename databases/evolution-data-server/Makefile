@@ -14,16 +14,16 @@ COMMENT=	Data backends for the Evolution integrated mail/PIM suite
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gcr>=3.11:${PORTSDIR}/security/gcr \
-		vapigen:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
-		liboauth.so:${PORTSDIR}/net/liboauth \
-		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
-		libgdata.so:${PORTSDIR}/devel/libgdata \
-		libical.so:${PORTSDIR}/devel/libical \
-		libnss3.so:${PORTSDIR}/security/nss \
-		libtasn1.so:${PORTSDIR}/security/libtasn1 \
-		libsecret-1.so:${PORTSDIR}/security/libsecret
+BUILD_DEPENDS=	gcr>=3.11:security/gcr \
+		vapigen:lang/vala
+LIB_DEPENDS=	libsoup-gnome-2.4.so:devel/libsoup-gnome \
+		liboauth.so:net/liboauth \
+		libgoa-1.0.so:net/gnome-online-accounts \
+		libgdata.so:devel/libgdata \
+		libical.so:devel/libical \
+		libnss3.so:security/nss \
+		libtasn1.so:security/libtasn1 \
+		libsecret-1.so:security/libsecret
 
 PORTSCOUT=	limitw:1,even
 
@@ -63,7 +63,7 @@ OPTIONS_DEFINE=	WEATHER KERBEROS
 OPTIONS_DEFAULT=WEATHER KERBEROS
 WEATHER_DESC=	Weather calendar backend
 
-WEATHER_LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather
+WEATHER_LIB_DEPENDS=	libgweather-3.so:net/libgweather
 WEATHER_CONFIGURE_ENABLE=	weather
 
 .include <bsd.port.options.mk>

@@ -15,10 +15,10 @@ COMMENT=	Automated site map for the Dancer web framework
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Dancer>=1.175:${PORTSDIR}/www/p5-Dancer \
-		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
-RUN_DEPENDS=	p5-Dancer>=1.175:${PORTSDIR}/www/p5-Dancer \
-		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
+BUILD_DEPENDS=	p5-Dancer>=1.175:www/p5-Dancer \
+		p5-XML-Simple>0:textproc/p5-XML-Simple
+RUN_DEPENDS=	p5-Dancer>=1.175:www/p5-Dancer \
+		p5-XML-Simple>0:textproc/p5-XML-Simple
 
 USES=		perl5
 USE_PERL5=	configure

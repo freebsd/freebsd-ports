@@ -9,14 +9,14 @@ CATEGORIES=	audio
 MAINTAINER=	miks.mikelsons@gmail.com
 COMMENT=	Airtunes emulator
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
-RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
-		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
-		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		avahi-publish-service:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libao.so:audio/libao
+RUN_DEPENDS=	p5-MIME-Base64>=0:converters/p5-MIME-Base64 \
+		p5-Getopt-Long>=0:devel/p5-Getopt-Long \
+		p5-URI>=0:net/p5-URI \
+		p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
+		p5-Digest-MD5>=0:security/p5-Digest-MD5 \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		avahi-publish-service:net/avahi-app
 
 USES=		gmake perl5 pkgconfig
 USE_PERL5=	run

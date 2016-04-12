@@ -129,7 +129,7 @@ MAKE_ENV+=	WITHOUT_LINUX=yes
 
 .if ${NVVERSION} < 195.022
 # ABI version is hardcoded inside the binary, so specify it explicitly here
-LIB_DEPENDS=	libm.so.3:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libm.so.3:misc/compat5x
 .endif
 
 post-patch: .SILENT

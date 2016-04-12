@@ -12,8 +12,8 @@ DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sergio@softshark.org
 COMMENT=	The eGenix mx Extensions - EXPERIMENTAL Package
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/gmp
-#RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:${PORTSDIR}/lang/py-mx-base
+BUILD_DEPENDS=	${LOCALBASE}/include/gmp.h:math/gmp
+#RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:lang/py-mx-base
 
 USES=		python
 USE_PYTHON=	distutils

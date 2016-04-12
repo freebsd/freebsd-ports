@@ -15,11 +15,11 @@ BROKEN=		unfetchable
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-		p5-Number-Format>=0:${PORTSDIR}/textproc/p5-Number-Format \
-		p5-XML-Dumper>=0:${PORTSDIR}/textproc/p5-XML-Dumper
+RUN_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
+		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
+		p5-Proc-ProcessTable>=0:devel/p5-Proc-ProcessTable \
+		p5-Number-Format>=0:textproc/p5-Number-Format \
+		p5-XML-Dumper>=0:textproc/p5-XML-Dumper
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

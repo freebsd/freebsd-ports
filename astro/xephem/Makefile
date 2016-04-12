@@ -9,7 +9,7 @@ MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Interactive astronomical ephemeris program
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake jpeg motif
 LDFLAGS+=	-lfontconfig

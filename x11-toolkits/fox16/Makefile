@@ -5,7 +5,7 @@ PORTNAME=	fox
 PORTVERSION=	1.6.51
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/ \
-    		http://ftp.fox-toolkit.org/pub/
+		http://ftp.fox-toolkit.org/pub/
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,8 +13,8 @@ COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
 LICENSE=	LGPL3+
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 USES=		jpeg libtool pathfix
 USE_GL=		glu

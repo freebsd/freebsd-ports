@@ -15,12 +15,12 @@ COMMENT=	Micro Objects. Mo is less
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor \
-		p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
-		p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI \
-		p5-Test-NoTabs>=0:${PORTSDIR}/devel/p5-Test-NoTabs
+TEST_DEPENDS=	p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor \
+		p5-IO-All>=0:devel/p5-IO-All \
+		p5-Moose>=0:devel/p5-Moose \
+		p5-Mouse>=0:devel/p5-Mouse \
+		p5-PPI>=0:textproc/p5-PPI \
+		p5-Test-NoTabs>=0:devel/p5-Test-NoTabs
 
 USE_PERL5=	configure
 USES=		perl5

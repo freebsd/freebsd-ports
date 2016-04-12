@@ -13,8 +13,8 @@ COMMENT=	GTK frontend for XNeur keyboard layout switcher
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xneur:${PORTSDIR}/deskutils/xneur
-RUN_DEPENDS=	xneur:${PORTSDIR}/deskutils/xneur
+BUILD_DEPENDS=	xneur:deskutils/xneur
+RUN_DEPENDS=	xneur:deskutils/xneur
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig

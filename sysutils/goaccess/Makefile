@@ -11,7 +11,7 @@ COMMENT=	Real-time Apache web log analyzer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

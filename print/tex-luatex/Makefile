@@ -15,10 +15,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Extended version of pdfTeX using Lua
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libpoppler.so:${PORTSDIR}/graphics/poppler \
-		libmpfr.so:${PORTSDIR}/math/mpfr \
-		libzzip.so:${PORTSDIR}/devel/zziplib
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libpoppler.so:graphics/poppler \
+		libmpfr.so:math/mpfr \
+		libzzip.so:devel/zziplib
 
 USE_TEX=	kpathsea web2c texmf formats texlua texluajit fmtutil
 USE_XORG=	pixman

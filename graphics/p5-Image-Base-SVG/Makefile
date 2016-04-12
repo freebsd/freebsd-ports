@@ -13,9 +13,9 @@ COMMENT=	SVG image file output
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	p5-Image-Base>=0:${PORTSDIR}/graphics/p5-Image-Base \
-		p5-SVG>=2.38:${PORTSDIR}/textproc/p5-SVG \
-		p5-SVG-Parser>=0:${PORTSDIR}/textproc/p5-SVG-Parser
+BUILD_DEPENDS=	p5-Image-Base>=0:graphics/p5-Image-Base \
+		p5-SVG>=2.38:textproc/p5-SVG \
+		p5-SVG-Parser>=0:textproc/p5-SVG-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

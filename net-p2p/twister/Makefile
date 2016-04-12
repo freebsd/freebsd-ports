@@ -14,9 +14,9 @@ LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs	\
-		libleveldb.so:${PORTSDIR}/databases/leveldb	\
-		libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs	\
+		libleveldb.so:databases/leveldb	\
+		libicui18n.so:devel/icu
 
 OPTIONS_DEFINE=	DOCS
 

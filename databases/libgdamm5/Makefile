@@ -10,7 +10,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgda5 library
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:devel/m4
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	libgda5 glibmm
@@ -24,8 +24,8 @@ OPTIONS_DEFINE=	BDB
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB} || exists(${LOCALBASE}/libdata/pkgconfig/libgda-bdb-5.0.pc)
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libgda-bdb-5.0.pc:${PORTSDIR}/databases/libgda5-bdb
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libgda-bdb-5.0.pc:${PORTSDIR}/databases/libgda5-bdb
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libgda-bdb-5.0.pc:databases/libgda5-bdb
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libgda-bdb-5.0.pc:databases/libgda5-bdb
 PLIST_SUB+=	BDB=""
 .else
 PLIST_SUB+=	BDB=""

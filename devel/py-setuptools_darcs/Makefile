@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Setuptools plugin for darcs
 
-BUILD_DEPENDS=		darcsver:${PORTSDIR}/devel/py-darcsver
+BUILD_DEPENDS=		darcsver:devel/py-darcsver
 
 USES=		python
 USE_PYTHON=	distutils autoplist

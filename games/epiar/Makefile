@@ -15,10 +15,10 @@ LICENSE_NAME_CCbyNCSA3=Attribution-NonCommercial-ShareAlike 3.0 Unported
 LICENSE_FILE_CCbyNCSA3=${WRKSRC}/LICENSE.music
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libphysfs.so:${PORTSDIR}/devel/physfs
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libftgl.so:graphics/ftgl \
+		libxml2.so:textproc/libxml2 \
+		libphysfs.so:devel/physfs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	knowknowledge

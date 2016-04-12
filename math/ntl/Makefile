@@ -11,7 +11,7 @@ COMMENT=	Victor Shoup's Number Theory Library
 
 # ntl is faster with libgmp4, but you can disable it
 .if !defined(WITHOUT_GMP)
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFIGURE_ARGS=	NTL_GMP_LIP=on
 .endif

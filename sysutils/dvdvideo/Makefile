@@ -23,6 +23,6 @@ OPTIONS_DEFINE=	DVDCSS
 OPTIONS_DEFAULT=	DVDCSS
 .endif
 # DVDCSS version hardcoded in dvdvideo/libdvdcss.py
-DVDCSS_LIB_DEPENDS=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
+DVDCSS_LIB_DEPENDS=	libdvdcss.so.2:multimedia/libdvdcss
 
 .include <bsd.port.mk>

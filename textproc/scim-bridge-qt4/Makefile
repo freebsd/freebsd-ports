@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/doc/LICENSE.GPL
 LICENSE_FILE_LGPL21=	${WRKSRC}/doc/LICENSE.LGPL
 
-RUN_DEPENDS=	scim-bridge:${PORTSDIR}/textproc/scim-bridge
+RUN_DEPENDS=	scim-bridge:textproc/scim-bridge
 
 USE_QT4=	corelib gui moc_build
 QT_NONSTANDARD=	yes

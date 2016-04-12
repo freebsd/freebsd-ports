@@ -11,7 +11,7 @@ COMMENT=	KDE frontend for Subversion
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
+LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
 
 CONFLICTS=	qsvn-[0-9]*
 

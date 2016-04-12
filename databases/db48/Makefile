@@ -11,15 +11,15 @@ DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	The Berkeley DB package, revision 4.8
+COMMENT=	Berkeley DB package, revision 4.8
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
 DEPRECATED=		Please migrate to db5 or db6
 # The port is not to be removed unless the bitcoin-related ports can
 # go without this.
-EXPIRATION_DATE=	2015-07-31
-
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
+EXPIRATION_DATE=	2016-07-31
 
 BDBVER=		${PORTVERSION:R:R}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
@@ -42,6 +42,7 @@ CONFIGURE_ARGS+=	--enable-posixmutexes
 
 post-patch:
 	${REINPLACE_CMD} -Ee 's|--mode=install cp -p|--mode=install ${INSTALL} -s|;' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -Ee 's/[[:<:]]atomic_init[[:>:]]/db_atomic_init/g' ${WRKSRC}/../dbinc/atomic.h ${WRKSRC}/../mp/mp_*.c ${WRKSRC}/../mutex/mut_*.c
 
 post-install:
 .for i in libdb libdb_cxx

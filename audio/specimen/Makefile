@@ -14,12 +14,12 @@ COMMENT=	MIDI controllable audio sampler
 # However, the library version number was not changed.  The line above
 # is supposed to work around that.
 
-BUILD_DEPENDS=	jackit>=0.109.2:${PORTSDIR}/audio/jack
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
-		liblash.so:${PORTSDIR}/audio/lash \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libphat.so:${PORTSDIR}/x11-toolkits/phat
+BUILD_DEPENDS=	jackit>=0.109.2:audio/jack
+LIB_DEPENDS=	libjack.so:audio/jack \
+		liblash.so:audio/lash \
+		libsamplerate.so:audio/libsamplerate \
+		libsndfile.so:audio/libsndfile \
+		libphat.so:x11-toolkits/phat
 
 USES=		gmake pkgconfig
 USE_GNOME=	libgnomecanvas libxml2

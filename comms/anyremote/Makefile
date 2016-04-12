@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS DBUS X11
 OPTIONS_DEFAULT=	DBUS X11
 
 DBUS_CONFIGURE_ENABLE=dbus
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 X11_CONFIGURE_ENABLE=xtest
 X11_USE=	XORG=x11,xtst

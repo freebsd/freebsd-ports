@@ -17,7 +17,7 @@ USE_RC_SUBR=	oscam
 MAKE_ARGS+=	HOSTCC=clang CC=clang
 
 .if target(gen-dist)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 .endif
 SVN_REV=	11062
 SVN_SRC=	http://www.streamboard.tv/svn/oscam/trunk

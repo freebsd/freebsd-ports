@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mplayer
-PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTVERSION=	${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -69,7 +68,7 @@ CONFIGURE_ARGS+=	--disable-arts \
 PLIST_SUB+=	GMPLAYER=""
 DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
 .if ${PORT_OPTIONS:MSKINS}
-RUN_DEPENDS+=	mplayer-skins>=0:${PORTSDIR}/multimedia/mplayer-skins
+RUN_DEPENDS+=	mplayer-skins>=0:multimedia/mplayer-skins
 .endif
 
 USE_GNOME+=	gtk20

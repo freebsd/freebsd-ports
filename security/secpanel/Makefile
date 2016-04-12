@@ -18,7 +18,7 @@ COMMENT=	GUI for managing and running ssh and related utilities
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass
+RUN_DEPENDS=	ssh-askpass:security/openssh-askpass
 
 WRKSRC=		${WRKDIR}/usr/local
 NO_BUILD=	yes

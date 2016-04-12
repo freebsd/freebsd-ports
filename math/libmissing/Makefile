@@ -11,7 +11,7 @@ COMMENT=	Standard math functions missing from the FreeBSD libm
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libmpc.so:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	libmpc.so:math/mpc
 
 USE_LDCONFIG=	yes
 USES=		tar:xz uidfix

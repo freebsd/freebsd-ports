@@ -12,8 +12,8 @@ COMMENT=	Free cross-platform English thesaurus
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libWN.so:${PORTSDIR}/textproc/wordnet
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libWN.so:textproc/wordnet
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool
@@ -28,6 +28,6 @@ LIBS+=		`pkg-config --libs gio-2.0`
 OPTIONS_DEFINE=	NOTIFY
 NOTIFY_DESC=	Popup word definition as notification
 
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 
 .include <bsd.port.mk>

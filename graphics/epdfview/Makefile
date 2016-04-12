@@ -15,8 +15,8 @@ COMMENT=	Lightweight PDF document viewer
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
-LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+BUILD_DEPENDS=	cppunit-config:devel/cppunit
+LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	CUPS NLS
 OPTIONS_SUB=	yes
 
 CUPS_CONFIGURE_WITH=	cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 NLS_USES=	gettext
 NLS_CPPFLAGS=	-I${LOCALBASE}/include

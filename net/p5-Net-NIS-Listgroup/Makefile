@@ -13,7 +13,7 @@ COMMENT=	Lists hosts/users in a netgroup group
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Net-NIS>0:${PORTSDIR}/net/p5-Net-NIS
+RUN_DEPENDS=	p5-Net-NIS>0:net/p5-Net-NIS
 
 USES=		perl5
 USE_PERL5=	configure

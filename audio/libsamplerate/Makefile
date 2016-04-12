@@ -31,15 +31,15 @@ CONFIGURE_ARGS+=	--disable-cpu-clip
 .endif
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS +=	${LOCALBASE}/lib/libfftw3.so:${PORTSDIR}/math/fftw3
+BUILD_DEPENDS +=	${LOCALBASE}/lib/libfftw3.so:math/fftw3
 .else
 CONFIGURE_ARGS+=	--disable-fftw
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	libsndfile.so:audio/libsndfile
 .elif defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS +=	libsndfile>=0:${PORTSDIR}/audio/libsndfile
+BUILD_DEPENDS +=	libsndfile>=0:audio/libsndfile
 .else
 CONFIGURE_ARGS+=	--disable-sndfile
 .endif

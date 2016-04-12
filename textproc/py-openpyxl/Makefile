@@ -13,8 +13,8 @@ COMMENT=	Python library to read/write Excel 2007 xlsx/xlsm files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jdcal>=0:${PORTSDIR}/devel/py-jdcal \
-		${PYTHON_PKGNAMEPREFIX}et_xmlfile>=0:${PORTSDIR}/textproc/py-et_xmlfile
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jdcal>=0:devel/py-jdcal \
+		${PYTHON_PKGNAMEPREFIX}et_xmlfile>=0:textproc/py-et_xmlfile
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}openpyxl1-[0-9]*
 

@@ -14,7 +14,7 @@ COMMENT=	FInite element Automatic Tabulator
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scientific>=0:${PORTSDIR}/math/py-scientific
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scientific>=0:math/py-scientific
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python:2

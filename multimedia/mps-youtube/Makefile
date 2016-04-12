@@ -13,20 +13,20 @@ COMMENT=	Terminal based YouTube jukebox with playlist management
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	ca_root_nss>=3.17.3:${PORTSDIR}/security/ca_root_nss \
-		${PYTHON_PKGNAMEPREFIX}pafy>=0.5.0:${PORTSDIR}/www/py-pafy
+RUN_DEPENDS=	ca_root_nss>=3.17.3:security/ca_root_nss \
+		${PYTHON_PKGNAMEPREFIX}pafy>=0.5.0:www/py-pafy
 
 CONVERTER_DESC=	Converter to MP3 and other formats
 
-FFMPEG_RUN_DEPENDS=	ffmpeg>=2.3.6:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_RUN_DEPENDS=	ffmpeg>=2.3.6:multimedia/ffmpeg
 
 LIBAV_DESC=	Realtime audio/video conversion library
-LIBAV_RUN_DEPENDS=	libav>=11.2:${PORTSDIR}/multimedia/libav
+LIBAV_RUN_DEPENDS=	libav>=11.2:multimedia/libav
 
-MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 MPV_DESC=	Free and open-source general-purpose video player
-MPV_RUN_DEPENDS=	mpv:${PORTSDIR}/multimedia/mpv
+MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 
 OPTIONS_DEFAULT=	MPV
 OPTIONS_RADIO=	CONVERTER

@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=TOOLBOX
 OPTIONS_SUB=	yes
 TOOLBOX_DESC=	Include toolbox interface (requires OCaml with TK)
 TOOLBOX_CONFIGURE_ON=	-with-toolbox
-TOOLBOX_RUN_DEPENDS=	labltk:${PORTSDIR}/x11-toolkits/ocaml-labltk
+TOOLBOX_RUN_DEPENDS=	labltk:x11-toolkits/ocaml-labltk
 TOOLBOX_BUILD_DEPENDS=	${TOOLBOX_RUN_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes

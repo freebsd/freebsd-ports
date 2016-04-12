@@ -12,16 +12,16 @@ COMMENT=	Fast image processing library
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libagg.so:${PORTSDIR}/graphics/agg \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	swig:devel/swig13
+LIB_DEPENDS=	libagg.so:graphics/agg \
+		libtiff.so:graphics/tiff \
+		libpng.so:graphics/png \
+		libgif.so:graphics/giflib \
+		libjasper.so:graphics/jasper \
+		libIlmImf.so:graphics/OpenEXR \
+		liblcms.so:graphics/lcms \
+		libfreetype.so:print/freetype2 \
+		libexpat.so:textproc/expat2
 
 #hack to get custom exactcode configure script to enable tiff support with
 #broken headers on c++ in base system:

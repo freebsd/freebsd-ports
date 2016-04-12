@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphite2
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	graphics print
 
 MAINTAINER=	office@FreeBSD.org

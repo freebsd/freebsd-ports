@@ -124,6 +124,7 @@ lib/darktable/plugins/lighttable/libtagging.so
 lib/darktable/plugins/lighttable/libview_toolbox.so
 lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/views/libdarkroom.so
+lib/darktable/views/libknight.so
 lib/darktable/views/liblighttable.so
 %%GEO%%lib/darktable/views/libmap.so
 %%PRINT%%lib/darktable/views/libprint.so

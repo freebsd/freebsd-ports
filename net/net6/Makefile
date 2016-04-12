@@ -13,8 +13,8 @@ COMMENT=	Network access framework for IPv4/IPv6
 LICENSE=	LGPL20+ # though COPYING is LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
+		libgnutls.so:security/gnutls
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

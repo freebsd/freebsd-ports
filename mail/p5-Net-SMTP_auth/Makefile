@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Mail Transfer Protocol Client with AUTHentication
 
-BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
+BUILD_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
+		p5-Digest-HMAC>=0:security/p5-Digest-HMAC
 
 USES=		perl5
 USE_PERL5=	configure

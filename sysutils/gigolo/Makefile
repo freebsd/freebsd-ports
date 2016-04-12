@@ -12,7 +12,7 @@ COMMENT=	Frontend to easily manage filesystem connections
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		gmake fuse pkgconfig gettext-tools xfce tar:bzip2
 USE_GNOME=	cairo gtk20 gvfs intlhack

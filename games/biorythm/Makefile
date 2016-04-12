@@ -9,8 +9,8 @@ MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple biorhythm calculation program
 
-LIB_DEPENDS=	libshhmsg.so:${PORTSDIR}/devel/libshhmsg \
-		libshhopt.so:${PORTSDIR}/devel/libshhopt
+LIB_DEPENDS=	libshhmsg.so:devel/libshhmsg \
+		libshhopt.so:devel/libshhopt
 
 PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz

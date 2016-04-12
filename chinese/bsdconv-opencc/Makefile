@@ -11,9 +11,9 @@ COMMENT=	OpenCC conversion module for bsdconv
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bsdconv-mktable:${PORTSDIR}/converters/bsdconv
-LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv \
-		libopencc.so:${PORTSDIR}/chinese/opencc
+BUILD_DEPENDS=	${LOCALBASE}/bin/bsdconv-mktable:converters/bsdconv
+LIB_DEPENDS=	libbsdconv.so:converters/bsdconv \
+		libopencc.so:chinese/opencc
 
 PLIST_FILES=	share/bsdconv/inter/OPENCC \
 		share/bsdconv/inter/OPENCC.man \

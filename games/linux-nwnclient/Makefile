@@ -19,7 +19,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
-RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:${PORTSDIR}/games/nwndata
+RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:games/nwndata
 
 NO_BUILD=	yes
 RESTRICTED=	Distribution not allowed
@@ -28,7 +28,7 @@ USE_LINUX_APPS=	sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
 
 .ifdef WITH_NVIDIA_GL
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 USE_LINUX_APPS+=libglu
 .else
 USE_LINUX_APPS+=dri

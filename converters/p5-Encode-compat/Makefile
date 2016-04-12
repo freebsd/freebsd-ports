@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Compatibility interfaces for Encode.pm on Perl < 5.7.1
 
-BUILD_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
+BUILD_DEPENDS=	p5-Text-Iconv>=0:converters/p5-Text-Iconv
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -27,8 +27,8 @@ post-patch:
 		 s|/var/run/uptimed|/var/run/uptimed.pid|' \
 		${WRKSRC}/etc/uptimed.conf-dist
 	 @${REINPLACE_CMD} -e \
-	 	's|/etc/uprecords-cgi/|${PREFIX}/www/cgi-bin/|' \
-	 	${WRKSRC}/src/uprecords.c
+		's|/etc/uprecords-cgi/|${PREFIX}/www/cgi-bin/|' \
+		${WRKSRC}/src/uprecords.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/cgi-bin

@@ -12,9 +12,9 @@ COMMENT=	Binarization of XML file
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM \
-		p5-I18N-Charset>=0:${PORTSDIR}/misc/p5-I18N-Charset \
-		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper
+BUILD_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM \
+		p5-I18N-Charset>=0:misc/p5-I18N-Charset \
+		p5-Data-Dumper>=0:devel/p5-Data-Dumper
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		dos2unix perl5

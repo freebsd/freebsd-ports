@@ -19,9 +19,9 @@ NO_OPTIONS_SORT=	yes
 
 .for plugin in ${GEANY_PLUGINS_ALL}
 ${plugin:tu}_DESC=	${${plugin}_DESC}
-${plugin:tu}_RUN_DEPENDS=	geany-plugin-${plugin}>=0:${PORTSDIR}/devel/geany-plugin-${plugin}
+${plugin:tu}_RUN_DEPENDS=	geany-plugin-${plugin}>=0:devel/geany-plugin-${plugin}
 .endfor
 
-NLS_RUN_DEPENDS=	geany-plugins-l10n>=0:${PORTSDIR}/devel/geany-plugins-l10n
+NLS_RUN_DEPENDS=	geany-plugins-l10n>=0:devel/geany-plugins-l10n
 
 .include <bsd.port.mk>

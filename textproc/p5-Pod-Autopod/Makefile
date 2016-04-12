@@ -12,7 +12,7 @@ COMMENT=	Generates pod documentation by analysing perl modules
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	p5-Pod-Abstract>=0:${PORTSDIR}/textproc/p5-Pod-Abstract
+BUILD_DEPENDS=	p5-Pod-Abstract>=0:textproc/p5-Pod-Abstract
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

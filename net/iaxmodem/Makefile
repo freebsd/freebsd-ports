@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stucchi@gufi.org
 COMMENT=	Software modem that connects to IAX channel
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 USES=		compiler:features perl5
 USE_PERL5=	patch

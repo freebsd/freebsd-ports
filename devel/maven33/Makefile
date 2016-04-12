@@ -12,7 +12,7 @@ COMMENT=	Java project management tool, 3.3.x branch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven-wrapper
+RUN_DEPENDS=	mvn:devel/maven-wrapper
 
 USES=		cpe
 CPE_PRODUCT=	maven

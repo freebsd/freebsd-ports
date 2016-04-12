@@ -1,7 +1,0 @@
-Libwps is a library (for use by word procesors, for example) for importing the
-Microsoft Works word processor file format. It imports Works format versions 2,
-3, 4, 5 (aka 2000), and 8 with some formatting. The scope of this project is
-just a Works word processor import filter, so there are no plans for supporting
-an export filter, spreadsheets, or databases.
-
-WWW: http://libwps.sourceforge.net/

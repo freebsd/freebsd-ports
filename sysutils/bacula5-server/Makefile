@@ -18,7 +18,7 @@ python_OLD_CMD=	@PYTHON@
 
 CONFLICTS?=	bacula-server-*
 
-LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 
 USERS=		bacula
 GROUPS=		${USERS}
@@ -45,7 +45,7 @@ PYTHON_USES=		python
 PYTHON_CONFIGURE_ON=	--with-python=yes
 
 .if !defined(WITH_CLIENT_ONLY)
-LIB_DEPENDS+=	libbac.so:${PORTSDIR}/sysutils/bacula5-client
+LIB_DEPENDS+=	libbac.so:sysutils/bacula5-client
 USE_RC_SUBR?=	bacula-dir bacula-sd
 .endif
 
@@ -116,11 +116,11 @@ CONFFILES=		sd dir
 MYSQL_CONFIGURE_ON=	--with-mysql=yes
 MYSQL_USE=	MYSQL=yes
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=yes
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 PGSQL_CONFIGURE_ON=	--with-postgresql=yes
 PGSQL_USES=	pgsql
 
-MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
+MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 
 .include <bsd.port.options.mk>
 

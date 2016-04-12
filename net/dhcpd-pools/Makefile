@@ -12,7 +12,7 @@ COMMENT=	Tool to analyze isc-dhcp pool usage based on leases
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:${PORTSDIR}/devel/uthash
+BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 
 USES=		charsetfix shebangfix tar:xz
 SHEBANG_FILES=	contrib/snmptest.pl

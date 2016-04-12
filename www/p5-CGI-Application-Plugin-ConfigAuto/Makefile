@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Plugin that adds Config::Auto support to CGI::Application
 
-RUN_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
-		p5-Config-Auto>=0:${PORTSDIR}/devel/p5-Config-Auto
+RUN_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
+		p5-Config-Auto>=0:devel/p5-Config-Auto
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

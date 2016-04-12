@@ -13,7 +13,7 @@ COMMENT=	Flwrap is a companion utility for fldigi
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 USES=		gmake dos2unix
 GNU_CONFIGURE=	yes

@@ -20,9 +20,9 @@ SHEBANG_FILES=	converters/op2calltree converters/dprof2calltree \
 OPTIONS_DEFINE=	DOT VALGRIND
 
 DOT_DESC=		Use GraphViz/dot to render call graphs
-DOT_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+DOT_RUN_DEPENDS=	dot:graphics/graphviz
 
 VALGRIND_DESC=		Install devel/valgrind
-VALGRIND_RUN_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
+VALGRIND_RUN_DEPENDS=	valgrind:devel/valgrind
 
 .include <bsd.port.mk>

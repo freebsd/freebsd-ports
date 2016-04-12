@@ -15,11 +15,11 @@ COMMENT=	Collection of n-ary tree related modules
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Clone>=0.05:${PORTSDIR}/devel/p5-MooseX-Clone
+BUILD_DEPENDS=	p5-Moose>=2:devel/p5-Moose \
+		p5-MooseX-Clone>=0.05:devel/p5-MooseX-Clone
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Path-Class>=0:devel/p5-Path-Class \
+		p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure

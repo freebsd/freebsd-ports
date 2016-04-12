@@ -14,9 +14,9 @@ COMMENT=	Nagios Plugins to monitor OpenLDAP
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
-		p5-Date-Manip>=6.30:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
+		p5-Date-Manip>=6.30:devel/p5-Date-Manip \
+		p5-Time-HiRes>=0:devel/p5-Time-HiRes
 
 PORTSCOUT=	ignore:1
 

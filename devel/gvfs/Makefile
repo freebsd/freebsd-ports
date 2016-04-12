@@ -11,12 +11,12 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME virtual file system
 
-BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgcr-base-3.so:${PORTSDIR}/security/gcr \
-		libsecret-1.so:${PORTSDIR}/security/libsecret
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libsoup-gnome-2.4.so:devel/libsoup-gnome \
+		libgcrypt.so:security/libgcrypt \
+		libgcr-base-3.so:security/gcr \
+		libsecret-1.so:security/libsecret
 
 PORTSCOUT=	limitw:1,even
 
@@ -53,25 +53,25 @@ GOOGLE_DESC=	Google backend
 FUSE_USES=	fuse
 FUSE_CONFIGURE_ENABLE=	fuse
 
-SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SAMBA_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 SAMBA_CONFIGURE_ENABLE=	samba
 
-CDDA_LIB_DEPENDS=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
+CDDA_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
 CDDA_CONFIGURE_ENABLE=	cdda
 
-GPHOTO2_LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+GPHOTO2_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 GPHOTO2_CONFIGURE_ENABLE=	gphoto2
 
-AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
 
-AFC_LIB_DEPENDS=	libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice \
-			libplist.so:${PORTSDIR}/devel/libplist
+AFC_LIB_DEPENDS=	libimobiledevice.so:comms/libimobiledevice \
+			libplist.so:devel/libplist
 AFC_CONFIGURE_ENABLE=	afc
 
 GOOGLE_CONFIGURE_ENABLE=	google
-GOOGLE_LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata \
-			libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts
+GOOGLE_LIB_DEPENDS=	libgdata.so:devel/libgdata \
+			libgoa-1.0.so:net/gnome-online-accounts
 
 .include <bsd.port.options.mk>
 
@@ -84,8 +84,8 @@ GLIB_SCHEMAS+=	org.gnome.system.dns_sd.gschema.xml
 .endif
 
 .if ${PORT_OPTIONS:MHAL} || ${PORT_OPTIONS:MGPHOTO2} || ${PORT_OPTIONS:MCDDA}
-LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
-RUN_DEPENDS+=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount
+LIB_DEPENDS+=	libhal.so:sysutils/hal
+RUN_DEPENDS+=	gnome-mount:sysutils/gnome-mount
 PLIST_SUB+=	HAL=""
 .else
 CONFIGURE_ARGS+=--disable-hal

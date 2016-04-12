@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:C/\.//}-linux
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Sequel to Transball and Transball 2 THRUST-type games
 
-LIB_DEPENDS=	libSGE.so:${PORTSDIR}/devel/sdl_sge
+LIB_DEPENDS=	libSGE.so:devel/sdl_sge
 
 USES=		gmake dos2unix zip
 DOS2UNIX_FILES=	sources/main.cpp
@@ -33,7 +33,7 @@ post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|demos/|${DATADIR}/&|g; s|graphics/|${DATADIR}/&|g; \
 		s|maps/|${DATADIR}/&|g; s|sound/|${DATADIR}/&|g; \
-	       	s|"maps"|"${DATADIR}/maps"|g'
+		s|"maps"|"${DATADIR}/maps"|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

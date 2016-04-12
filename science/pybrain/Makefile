@@ -10,7 +10,7 @@ COMMENT=	PyBrain is the swiss army knife for neural networking
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.7.1:${PORTSDIR}/science/py-scipy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.7.1:science/py-scipy
 
 USE_GITHUB=	yes
 

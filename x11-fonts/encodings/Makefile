@@ -12,7 +12,7 @@ COMMENT=	X.Org Encoding fonts
 
 USES=		tar:bzip2
 USE_XORG=	fontutil
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+BUILD_DEPENDS=	mkfontscale:x11-fonts/mkfontscale
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontrootdir=${PREFIX}/share/fonts
 

@@ -13,7 +13,7 @@ COMMENT=	Perl5 module to change the nature of data within a structure
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
+TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod
 
 NO_ARCH=	yes
 USES=		perl5

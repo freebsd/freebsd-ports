@@ -14,8 +14,8 @@ COMMENT=	Provides basic needs for a daemon
 
 LICENSE=	ART10
 
-RUN_DEPENDS:=	p5-Log-Report-Optional>=0:${PORTSDIR}/devel/p5-Log-Report-Optional \
-		p5-File-Spec-Native>=0:${PORTSDIR}/devel/p5-File-Spec-Native
+RUN_DEPENDS:=	p5-Log-Report-Optional>=0:devel/p5-Log-Report-Optional \
+		p5-File-Spec-Native>=0:devel/p5-File-Spec-Native
 
 USES=		perl5
 USE_PERL5=	configure

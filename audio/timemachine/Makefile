@@ -12,9 +12,9 @@ COMMENT=	JACK audio capture tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
-		liblo.so:${PORTSDIR}/audio/liblo \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libjack.so:audio/jack \
+		liblo.so:audio/liblo \
+		libsndfile.so:audio/libsndfile
 
 OPTIONS_DEFINE=	LASH
 
@@ -23,7 +23,7 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm
 
-LASH_LIB_DEPENDS=	liblash.so:${PORTSDIR}/audio/lash
+LASH_LIB_DEPENDS=	liblash.so:audio/lash
 LASH_CONFIGURE_OFF=	--disable-lash
 
 post-patch:

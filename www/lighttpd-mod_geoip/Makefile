@@ -8,9 +8,9 @@ DISTNAME=	lighttpd-${PORTVERSION}
 
 COMMENT=	GeoIP module for lighttpd
 
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
-BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
-RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
+RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 
 MASTERDIR=	${.CURDIR}/../lighttpd
 DESCR=		${.CURDIR}/pkg-descr

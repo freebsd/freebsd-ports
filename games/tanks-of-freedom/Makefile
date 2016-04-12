@@ -12,7 +12,7 @@ COMMENT=	Indie Turn Based Strategy in Isometric Pixel Art
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	godot:${PORTSDIR}/devel/godot
+RUN_DEPENDS=	godot:devel/godot
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	w84death

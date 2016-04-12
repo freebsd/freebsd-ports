@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome-based loudspeaker design program
 
-LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
 USES=		autoreconf gmake pkgconfig
 USE_GNOME=	gnomeprefix libxml2
@@ -24,8 +24,8 @@ CFLAGS+=	-O0
 OPTIONS_DEFINE=	SPICE
 SPICE_DESC=	Use spice instead of gnucap
 
-SPICE_RUN_DEPENDS=	spice3:${PORTSDIR}/cad/spice
-SPICE_RUN_DEPENDS_OFF=	gnucap:${PORTSDIR}/cad/gnucap
+SPICE_RUN_DEPENDS=	spice3:cad/spice
+SPICE_RUN_DEPENDS_OFF=	gnucap:cad/gnucap
 
 post-extract:
 	@${FIND} ${WRKSRC} -type l -delete

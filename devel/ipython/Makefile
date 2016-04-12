@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Enhanced Interactive Python shell
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2:${PORTSDIR}/databases/py-sqlite3
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=2:${PORTSDIR}/misc/py-pexpect \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=2:${PORTSDIR}/databases/py-sqlite3
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=2:misc/py-pexpect \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -32,20 +32,20 @@ ZMQ_DESC=		ZMQ support (parallel computing, qt console, notebook)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-svg>=0:${PORTSDIR}/graphics/py-qt4-svg \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-svg>=0:graphics/py-qt4-svg \
+		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments
 .endif
 
 .if ${PORT_OPTIONS:MHTML_NOTEBOOK}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:${PORTSDIR}/www/py-tornado \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:${PORTSDIR}/devel/py-jsonschema \
-		${PYTHON_PKGNAMEPREFIX}mistune>=0:${PORTSDIR}/textproc/py-mistune
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:www/py-tornado \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema \
+		${PYTHON_PKGNAMEPREFIX}mistune>=0:textproc/py-mistune
 .endif
 
 .if ${PORT_OPTIONS:MZMQ} || ${PORT_OPTIONS:MHTML_NOTEBOOK}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:${PORTSDIR}/net/py-pyzmq
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:net/py-pyzmq
 .endif
 
 post-install:

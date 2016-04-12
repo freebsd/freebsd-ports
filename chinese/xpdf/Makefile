@@ -16,11 +16,11 @@ DIST_SUBDIR=	${PORTNAME}-chinese-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Chinese font support for xpdf
 
-RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
-		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
-		${FONTSDIR}/STHeiti-Regular:${PORTSDIR}/chinese/font-std \
-		${FONTSDIR}/STSong-Light:${PORTSDIR}/chinese/font-std \
-		${FONTSDIR}/MSung-Light:${PORTSDIR}/chinese/font-std
+RUN_DEPENDS=	xpdf:graphics/xpdf \
+		${ADOBECMAPDIR}/ai0/CMap/Identity-H:print/adobe-cmaps \
+		${FONTSDIR}/STHeiti-Regular:chinese/font-std \
+		${FONTSDIR}/STSong-Light:chinese/font-std \
+		${FONTSDIR}/MSung-Light:chinese/font-std
 
 NO_BUILD=	yes
 NO_ARCH=	yes

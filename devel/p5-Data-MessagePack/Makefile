@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for MessagePack
 
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-LeakTrace>0:${PORTSDIR}/devel/p5-Test-LeakTrace
+TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
+		p5-Test-LeakTrace>0:devel/p5-Test-LeakTrace
 
 USES=		perl5
 USE_PERL5=	configure

@@ -15,7 +15,7 @@ BROKEN=		unfetchable
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/csiod:${PORTSDIR}/lang/siod
+BUILD_DEPENDS=	${LOCALBASE}/bin/csiod:lang/siod
 
 USES=		perl5 tar:tgz
 USE_PERL5=	run

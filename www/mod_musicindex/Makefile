@@ -26,20 +26,20 @@ MYSQLCACHE_DESC=	MySQL caching support
 OPTIONS_SUB=			yes
 FILECACHE_CONFIGURE_ENABLE=	filecache
 FLAC_CONFIGURE_ENABLE=		flac
-FLAC_LIB_DEPENDS=		libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=		libFLAC.so:audio/flac
 LIBARCHIVE_CONFIGURE_ENABLE=	archive
 MP3_CONFIGURE_ENABLE=		mp3
-MP3_LIB_DEPENDS=		libid3tag.so:${PORTSDIR}/audio/libid3tag \
-				libmad.so:${PORTSDIR}/audio/libmad
+MP3_LIB_DEPENDS=		libid3tag.so:audio/libid3tag \
+				libmad.so:audio/libmad
 MP4_CONFIGURE_ENABLE=		mp4
-MP4_LIB_DEPENDS=		libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
+MP4_LIB_DEPENDS=		libmp4v2.so:multimedia/mp4v2
 MYSQLCACHE_CONFIGURE_ENABLE=	mysqlcache
 MYSQLCACHE_USE=			MYSQL=yes
 NLS_CFLAGS=			-lintl
 NLS_CONFIGURE_ENABLE=		nls
 NLS_USES=			gettext
 VORBIS_CONFIGURE_ENABLE=	vorbis
-VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=		libvorbis.so:audio/libvorbis
 
 .include <bsd.port.options.mk>
 

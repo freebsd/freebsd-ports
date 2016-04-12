@@ -13,9 +13,9 @@ COMMENT=	Java bindings for Libvirt virtualization API
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
-BUILD_DEPENDS=	jna>=4.0:${PORTSDIR}/devel/jna \
-		junit>=4.8.2:${PORTSDIR}/java/junit
+LIB_DEPENDS=	libvirt.so:devel/libvirt
+BUILD_DEPENDS=	jna>=4.0:devel/jna \
+		junit>=4.8.2:java/junit
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+

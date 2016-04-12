@@ -10,12 +10,12 @@ MASTER_SITES=	http://people.debian.org/~kov/gksu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library providing su and sudo functionality
 
-LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
-		libglade-2.0.so:${PORTSDIR}/devel/libglade2 \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
-RUN_DEPENDS=	xauth:${PORTSDIR}/x11/xauth \
-		sudo:${PORTSDIR}/security/sudo
+LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
+		libglade-2.0.so:devel/libglade2 \
+		libgnome-keyring.so:security/libgnome-keyring \
+		libstartup-notification-1.so:x11/startup-notification
+RUN_DEPENDS=	xauth:x11/xauth \
+		sudo:security/sudo
 
 USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 gconf2 intltool

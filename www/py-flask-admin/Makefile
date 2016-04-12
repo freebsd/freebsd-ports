@@ -12,8 +12,8 @@ COMMENT=	Flask extension for adding admin interfaces to Flask applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:${PORTSDIR}/www/py-flask \
-		${PYTHON_PKGNAMEPREFIX}wtforms>0:${PORTSDIR}/textproc/py-wtforms
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:www/py-flask \
+		${PYTHON_PKGNAMEPREFIX}wtforms>0:textproc/py-wtforms
 
 USES=		python
 USE_PYTHON=	autoplist distutils

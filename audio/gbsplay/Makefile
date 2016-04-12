@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	NAS DOCS
 
 .if ${PKGNAMEPREFIX} == ""
 
-NAS_LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas
+NAS_LIB_DEPENDS=	libaudio.so:audio/nas
 NAS_CONFIGURE_ENABLE=	nas
 
 .endif

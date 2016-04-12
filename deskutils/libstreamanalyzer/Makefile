@@ -9,10 +9,10 @@ MASTER_SITES=	${STRIGI_MASTER_SITES}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Strigi desktop search: streamanalyzer library
 
-LIB_DEPENDS=	libavcodec${FFMPEG_SUFFIX}.so:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX} \
-		libclucene-core.so:${PORTSDIR}/textproc/clucene \
-		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		libstreams.so:${PORTSDIR}/deskutils/libstreams
+LIB_DEPENDS=	libavcodec${FFMPEG_SUFFIX}.so:multimedia/ffmpeg${FFMPEG_SUFFIX} \
+		libclucene-core.so:textproc/clucene \
+		libexiv2.so:graphics/exiv2 \
+		libstreams.so:deskutils/libstreams
 
 USES=		pkgconfig iconv
 USE_GNOME=	libxml2

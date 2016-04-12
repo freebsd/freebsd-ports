@@ -13,8 +13,8 @@ COMMENT=	Array 30 SCIM IMEngine module
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+BUILD_DEPENDS=	scim:textproc/scim
+RUN_DEPENDS=	scim:textproc/scim
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake iconv libtool:keepla pkgconfig

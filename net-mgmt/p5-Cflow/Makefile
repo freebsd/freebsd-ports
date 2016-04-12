@@ -21,10 +21,10 @@ FLOW_TOOLS_NG_DESC=	Enable flow-tools-ng support
 USES=		perl5
 USE_PERL5=	configure
 
-FLOW_TOOLS_BUILD_DEPENDS=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
-FLOW_TOOLS_RUN_DEPENDS=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
-FLOW_TOOLS_NG_BUILD_DEPENDS=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools-ng
-FLOW_TOOLS_NG_RUN_DEPENDS=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools-ng
+FLOW_TOOLS_BUILD_DEPENDS=	${LOCALBASE}/lib/libft.a:net-mgmt/flow-tools
+FLOW_TOOLS_RUN_DEPENDS=	${LOCALBASE}/lib/libft.a:net-mgmt/flow-tools
+FLOW_TOOLS_NG_BUILD_DEPENDS=	${LOCALBASE}/lib/libft.a:net-mgmt/flow-tools-ng
+FLOW_TOOLS_NG_RUN_DEPENDS=	${LOCALBASE}/lib/libft.a:net-mgmt/flow-tools-ng
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\.\./\.\./lib|${LOCALBASE}/lib|g' ${WRKSRC}/Makefile.PL

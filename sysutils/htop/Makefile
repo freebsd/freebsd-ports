@@ -10,7 +10,7 @@ COMMENT=	Better top(1) - interactive process viewer
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
+RUN_DEPENDS=	lsof:sysutils/lsof
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

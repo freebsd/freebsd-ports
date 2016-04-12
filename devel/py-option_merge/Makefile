@@ -8,11 +8,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Code to deeply merge multiple python dictionaries
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}delfick_error>=1.6:${PORTSDIR}/devel/py-delfick_error	\
-		${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}noseofyeti>=1.4.9:${PORTSDIR}/devel/py-noseofyeti	\
-		${PYTHON_PKGNAMEPREFIX}nose>=0:${PORTSDIR}/devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}mock>=0:${PORTSDIR}/devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}delfick_error>=1.6:devel/py-delfick_error	\
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}noseofyeti>=1.4.9:devel/py-noseofyeti	\
+		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock
 
 NO_ARCH=	yes
 USES=		python

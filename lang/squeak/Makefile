@@ -21,13 +21,13 @@ COMMENT=	Full Smalltalk 80 with portability to Unix, Mac, and Windows
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake \
-		v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas \
-		libffi.so:${PORTSDIR}/devel/libffi \
-		libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio \
-		libv4l2.so:${PORTSDIR}/multimedia/libv4l
+BUILD_DEPENDS=	cmake:devel/cmake \
+		v4l_compat>=1.0.20120501:multimedia/v4l_compat
+LIB_DEPENDS=	libaudio.so:audio/nas \
+		libffi.so:devel/libffi \
+		libasound.so:audio/alsa-lib \
+		libpulse-simple.so:audio/pulseaudio \
+		libv4l2.so:multimedia/libv4l
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 

@@ -24,9 +24,9 @@ LDFLAGS+=	-shared
 OPTIONS_DEFINE=	ATLAS
 ATLAS_DESC=	Use optimized blas library
 
-ATLAS_LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas
-ATLAS_LIB_DEPENDS_OFF=	libblas.so:${PORTSDIR}/math/blas \
-			liblapack.so:${PORTSDIR}/math/lapack
+ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas
+ATLAS_LIB_DEPENDS_OFF=	libblas.so:math/blas \
+			liblapack.so:math/lapack
 
 .include <bsd.port.options.mk>
 

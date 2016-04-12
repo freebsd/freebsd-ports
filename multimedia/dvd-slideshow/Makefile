@@ -14,16 +14,16 @@ THEMEVERSION=	0.8.4
 MAINTAINER=	oz@nixil.net
 COMMENT=	Script to create slideshow-style DVD with some simple menus
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		identify:${PORTSDIR}/graphics/ImageMagick \
-		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
-		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-		sox:${PORTSDIR}/audio/sox \
-		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		jhead:${PORTSDIR}/graphics/jhead \
-		flvtool2:${PORTSDIR}/multimedia/rubygem-flvtool2 \
-		${LOCALBASE}/share/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	bash:shells/bash \
+		identify:graphics/ImageMagick \
+		mpeg2enc:multimedia/mjpegtools \
+		ffmpeg:multimedia/ffmpeg \
+		sox:audio/sox \
+		dvdauthor:multimedia/dvdauthor \
+		jhead:graphics/jhead \
+		flvtool2:multimedia/rubygem-flvtool2 \
+		${LOCALBASE}/share/fonts/urwfonts-ttf/README:x11-fonts/urwfonts-ttf \
+		cdrecord:sysutils/cdrtools
 
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/apps/${PORTNAME}
@@ -31,9 +31,9 @@ DATADIR=	${PREFIX}/share/apps/${PORTNAME}
 OPTIONS_DEFINE=	LAME THEMES TOOLAME VORBIS
 THEMES_DESC=	Install optional themes
 
-LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
-VORBIS_RUN_DEPENDS=	oggdec:${PORTSDIR}/audio/vorbis-tools
-TOOLAME_RUN_DEPENDS=	toolame:${PORTSDIR}/audio/toolame
+LAME_RUN_DEPENDS=	lame:audio/lame
+VORBIS_RUN_DEPENDS=	oggdec:audio/vorbis-tools
+TOOLAME_RUN_DEPENDS=	toolame:audio/toolame
 
 .include <bsd.port.options.mk>
 

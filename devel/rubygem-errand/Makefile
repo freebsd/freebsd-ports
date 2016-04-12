@@ -9,8 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Ruby bindings for RRD
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
-		rubygem-rrd-ffi>=0.2.13:${PORTSDIR}/devel/rubygem-rrd-ffi
+RUN_DEPENDS=	rrdtool:databases/rrdtool \
+		rubygem-rrd-ffi>=0.2.13:devel/rubygem-rrd-ffi
 
 NO_ARCH=	yes
 

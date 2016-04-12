@@ -12,7 +12,7 @@ COMMENT=	Library for high quality hyphenation and justification
 LICENSE=	LGPL21 LGPL3 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	gawk:lang/gawk
 
 CONFIGURE_ENV=	ac_cv_prog_AWK=gawk
 GNU_CONFIGURE=	yes

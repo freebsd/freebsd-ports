@@ -12,7 +12,7 @@ COMMENT=	3D skeletal animation tool, powered by GTK+ and OpenGL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
 USES=		tar:bzip2 pkgconfig python
 GNU_CONFIGURE=	yes

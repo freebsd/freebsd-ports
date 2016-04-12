@@ -21,9 +21,9 @@ USE_QT4=	moc_build opengl rcc_build
 # no port fow equalizer now, lirc detecting not working
 CONFIGURE_ARGS+=	--without-equalizer --without-liblircclient --docdir=${DOCSDIR}
 
-LIB_DEPENDS+=	libass.so:${PORTSDIR}/multimedia/libass \
-		libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
-		libopenal.so:${PORTSDIR}/audio/openal-soft
+LIB_DEPENDS+=	libass.so:multimedia/libass \
+		libavformat.so:multimedia/ffmpeg \
+		libopenal.so:audio/openal-soft
 
 INFO=	bino
 

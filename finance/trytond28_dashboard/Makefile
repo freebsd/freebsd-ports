@@ -14,7 +14,7 @@ COMMENT=	Tryton Application Platform (Dashboard Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28>=2.8.2:${PORTSDIR}/finance/trytond28
+RUN_DEPENDS=	trytond28>=2.8.2:finance/trytond28
 
 CONFLICTS=	trytond_dashboard-2.[46].*
 

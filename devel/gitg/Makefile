@@ -12,15 +12,15 @@ COMMENT=	GTK-based git repository viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
-		libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
-		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
-		libsecret-1.so:${PORTSDIR}/security/libsecret
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		valac:${PORTSDIR}/lang/vala
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libgee-0.8.so:devel/libgee \
+		libgit2-glib-1.0.so:devel/libgit2-glib \
+		libpeas-1.0.so:devel/libpeas \
+		libgtkspell3-3.so:textproc/gtkspell3 \
+		libsecret-1.so:security/libsecret
+BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		valac:lang/vala
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 CONFLICTS=	gitg0-[0-9]*
 PORTSCOUT=	limitw:1,even

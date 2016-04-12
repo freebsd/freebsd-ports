@@ -537,7 +537,6 @@
     SUBDIR += libvisual04-plugins
     SUBDIR += libwmf
     SUBDIR += libwmf-nox11
-    SUBDIR += libwpg
     SUBDIR += libwpg03
     SUBDIR += libyuv
     SUBDIR += lightzone
@@ -979,6 +978,7 @@
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += seexpr
+    SUBDIR += sekrit-twc-zimg
     SUBDIR += seom
     SUBDIR += separate
     SUBDIR += seq2gif
@@ -1032,6 +1032,7 @@
     SUBDIR += uniconvw
     SUBDIR += unpaper
     SUBDIR += urt
+    SUBDIR += vapoursynth-waifu2x-w2xc
     SUBDIR += variety
     SUBDIR += vcg
     SUBDIR += viewnior

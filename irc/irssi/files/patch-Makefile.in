@@ -1,7 +1,7 @@
---- Makefile.in.orig	2014-10-11 16:58:14.000000000 +0800
-+++ Makefile.in	2014-10-13 11:47:58.867951923 +0800
-@@ -397,7 +397,7 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
- BUILT_SOURCES = default-config.h default-theme.h irssi-version.h
+--- Makefile.in.orig	2016-03-22 23:25:27 UTC
++++ Makefile.in
+@@ -408,7 +408,7 @@ BUILT_SOURCES = default-config.h default
+ CLEANFILES = default-config.h default-theme.h
  SUBDIRS = src docs scripts
  confdir = $(sysconfdir)
 -conf_DATA = irssi.conf
@@ -9,7 +9,7 @@
  themedir = $(datadir)/irssi/themes
  theme_DATA = default.theme colorless.theme
  pkginclude_HEADERS = irssi-config.h irssi-version.h
-@@ -981,8 +981,8 @@ uninstall-am: uninstall-confDATA uninsta
+@@ -994,8 +994,8 @@ uninstall-am: uninstall-confDATA uninsta
  
  @MAINTAINER_MODE_TRUE@.PHONY: irssi-version.h
  

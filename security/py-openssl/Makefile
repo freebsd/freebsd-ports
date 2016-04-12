@@ -13,8 +13,8 @@ COMMENT=	Python interface to the OpenSSL library
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.2.1:${PORTSDIR}/security/py-cryptography \
-		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.2.1:security/py-cryptography \
+		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:devel/py-six
 
 OPTIONS_DEFINE=	EXAMPLES
 

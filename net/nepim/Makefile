@@ -10,7 +10,7 @@ MASTER_SITES=	SAVANNAH/nepim
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring available bandwidth between hosts
 
-LIB_DEPENDS=	liboop.so:${PORTSDIR}/devel/liboop
+LIB_DEPENDS=	liboop.so:devel/liboop
 
 USES=		gmake
 ALL_TARGET=	default

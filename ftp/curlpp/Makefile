@@ -13,7 +13,7 @@ COMMENT=	C++ wrapper for libcurl
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 OPTIONS_DEFINE=	BOOST DOCS EXAMPLES
 
@@ -30,7 +30,7 @@ PORTEXAMPLES=	*
 GH_ACCOUNT=	jpbarrette
 USE_GITHUB=	yes
 
-BOOST_BUILD_DEPENDS=	boost-libs>=1.20.0:${PORTSDIR}/devel/boost-libs
+BOOST_BUILD_DEPENDS=	boost-libs>=1.20.0:devel/boost-libs
 BOOST_RUN_DEPENDS=	${BOOST_BUILD_DEPENDS}
 BOOST_CONFIGURE_ON=	--with-boost=${LOCALBASE}
 BOOST_CONFIGURE_OFF=	--without-boost

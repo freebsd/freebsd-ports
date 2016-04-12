@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Basic method declarations with signatures, without source filters
 
-BUILD_DEPENDS=	p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare
+BUILD_DEPENDS=	p5-Devel-Declare>=0:devel/p5-Devel-Declare
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

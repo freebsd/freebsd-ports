@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 MAKE_JOBS_UNSAFE=yes
 

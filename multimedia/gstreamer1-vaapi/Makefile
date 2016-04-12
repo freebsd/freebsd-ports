@@ -12,7 +12,7 @@ COMMENT=	GStreamer hardware video decoding via VA-API plug-in
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
+LIB_DEPENDS=	libva.so:multimedia/libva
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-wayland \

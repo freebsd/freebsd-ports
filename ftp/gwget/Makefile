@@ -11,8 +11,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME wget front-end
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+RUN_DEPENDS=	wget:ftp/wget
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=	NOTIFY
@@ -29,8 +29,8 @@ CONFIGURE_ARGS=	--disable-epiphany-extension
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 
 NOTIFY_CONFIGURE_ENABLE=	libnotify
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
-NOTIFY_RUN_DEPENDS=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+NOTIFY_RUN_DEPENDS=	${LOCALBASE}/libexec/notification-daemon:deskutils/notification-daemon
 
 post-patch:
 	@${REINPLACE_CMD} 's|glib/gerror|glib|' \

@@ -14,12 +14,12 @@ COMMENT=	Document database server, accessible via a RESTful JSON API
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu \
-		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \
-		libcurl.so:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man \
-		erlang>=15.b.01,2:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erlang>=15.b.01,2:${PORTSDIR}/lang/erlang
+LIB_DEPENDS=	libicudata.so:devel/icu \
+		libmozjs185.so:lang/spidermonkey185 \
+		libcurl.so:ftp/curl
+BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:misc/help2man \
+		erlang>=15.b.01,2:lang/erlang
+RUN_DEPENDS=	erlang>=15.b.01,2:lang/erlang
 
 USERS=		couchdb
 GROUPS=		couchdb

@@ -15,7 +15,7 @@ USES=		execinfo gmake pkgconfig
 USE_GNOME=	gtk20
 
 ALL_TARGET=	#
-#RUN_DEPENDS+=	xdg-desktop-menu:${PORTSDIR}/devel/xdg-utils
+#RUN_DEPENDS+=	xdg-desktop-menu:devel/xdg-utils
 DESKTOP_ENTRIES="Picpuz" \
 		"Jigsaw Puzzle" \
 		"${PREFIX}/share/pixmaps/picpuz.png" \

@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU portability library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
 USES=		gmake perl5 shebangfix
 SHEBANG_FILES=	check-module

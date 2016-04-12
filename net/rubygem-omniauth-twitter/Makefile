@@ -10,8 +10,8 @@ COMMENT=	OmniAuth strategy for Twitter
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-json>=1.3:${PORTSDIR}/devel/rubygem-json \
-		rubygem-omniauth-oauth>=1.1:${PORTSDIR}/net/rubygem-omniauth-oauth
+RUN_DEPENDS=	rubygem-json>=1.3:devel/rubygem-json \
+		rubygem-omniauth-oauth>=1.1:net/rubygem-omniauth-oauth
 
 NO_ARCH=	yes
 USE_RUBY=	yes

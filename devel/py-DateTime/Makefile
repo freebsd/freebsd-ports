@@ -14,8 +14,8 @@ COMMENT=	Zope 2 DateTime data type
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist

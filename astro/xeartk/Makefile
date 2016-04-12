@@ -10,7 +10,7 @@ MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small demo for tkgeomap
 
-LIB_DEPENDS=	libtkgeomap.so:${PORTSDIR}/astro/tkgeomap
+LIB_DEPENDS=	libtkgeomap.so:astro/tkgeomap
 
 USES=		tk:run
 NO_BUILD=	yes

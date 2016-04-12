@@ -13,7 +13,7 @@ COMMENT=	Turn-based strategy game setting on Mars
 
 LICENSE=	GPLv2 # version unspecified actually
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
+BUILD_DEPENDS=	scons:devel/scons
 
 USE_GL=		gl
 USE_SDL=	sdl image ttf

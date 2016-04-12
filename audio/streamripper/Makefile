@@ -15,8 +15,8 @@ COMMENT=	Splits SHOUTcast stream into tracks
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
-		libtre.so:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	libmad.so:audio/libmad \
+		libtre.so:textproc/libtre
 
 OPTIONS_DEFINE=	FAAD VORBIS
 OPTIONS_DEFAULT=FAAD VORBIS
@@ -39,10 +39,10 @@ LDFLAGS+=	-Lcdk-${CDK_VERSION} -L${LOCALBASE}/lib
 CDK_VERSION=	5.0-20060507
 
 FAAD_CONFIGURE_OFF=	ac_cv_lib_faad_NeAACDecDecode2=no
-FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
+FAAD_LIB_DEPENDS=	libfaad.so:audio/faad
 
 VORBIS_CONFIGURE_WITH=	ogg
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 post-extract:
 	${MV} ${WRKDIR}/cdk-${CDK_VERSION} ${WRKSRC}

@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GraphViz::DBI - graph database tables and relations
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-GraphViz>=0:graphics/p5-GraphViz
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-GraphViz>=0:graphics/p5-GraphViz
 
 USES=		perl5
 USE_PERL5=	configure

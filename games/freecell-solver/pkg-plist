@@ -7,6 +7,7 @@ bin/make-aisleriot-freecell-board
 bin/make-gnome-freecell-board
 bin/make_pysol_freecell_board.py
 bin/pi-make-microsoft-freecell-board
+include/freecell-solver/fcs_back_compat.h
 include/freecell-solver/fcs_cl.h
 include/freecell-solver/fcs_dllexport.h
 include/freecell-solver/fcs_enums.h
@@ -40,6 +41,7 @@ man/man6/pi-make-microsoft-freecell-board.6.gz
 %%DATADIR%%/presets/amateur-star.sh
 %%DATADIR%%/presets/blue-yonder.sh
 %%DATADIR%%/presets/children-playing-ball.sh
+%%DATADIR%%/presets/conspiracy-theory.sh
 %%DATADIR%%/presets/cool-jives.sh
 %%DATADIR%%/presets/crooked-nose.sh
 %%DATADIR%%/presets/enlightened-ostrich.sh

@@ -14,7 +14,7 @@ COMMENT=	MediaInfo library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../License.html
 
-LIB_DEPENDS=	libzen.so:${PORTSDIR}/multimedia/libzen
+LIB_DEPENDS=	libzen.so:multimedia/libzen
 
 CONFLICTS_INSTALL=	mediainfo-0.[0-6]* mediainfo-0.7.[0-5]*
 
@@ -31,11 +31,11 @@ USES=		alias libtool localbase pathfix pkgconfig tar:xz
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/MediaInfoLib/Project/GNU/Library
 
 CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 MMS_CONFIGURE_ON=	--with-libmms=${LOCALBASE}
-MMS_LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
+MMS_LIB_DEPENDS=	libmms.so:net/libmms
 TINYXML2_CONFIGURE_ON=	--with-libtinyxml2=yes
-TINYXML2_LIB_DEPENDS=	libtinyxml2.so:${PORTSDIR}/textproc/tinyxml2
+TINYXML2_LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/aclocal.m4

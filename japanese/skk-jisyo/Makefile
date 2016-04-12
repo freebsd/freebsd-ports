@@ -15,7 +15,7 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Jisyo (dictionary) files for the SKK Japanese-input software
 
 .if defined(WITH_SKKJISYO_CDB)
-BUILD_DEPENDS=	${LOCALBASE}/bin/cdb:${PORTSDIR}/databases/tinycdb
+BUILD_DEPENDS=	${LOCALBASE}/bin/cdb:databases/tinycdb
 .endif
 
 SKKDIR?=	share/skk

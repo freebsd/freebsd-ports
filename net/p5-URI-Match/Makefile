@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for matching URLs by parts
 
 RUN_DEPENDS=	\
-	p5-URI>0:${PORTSDIR}/net/p5-URI
+	p5-URI>0:net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

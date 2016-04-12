@@ -14,8 +14,8 @@ COMMENT=	Declare version conflicts for your dist
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Module-Runtime>=0.009:${PORTSDIR}/devel/p5-Module-Runtime
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+RUN_DEPENDS=	p5-Module-Runtime>=0.009:devel/p5-Module-Runtime
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
 USE_PERL5=	configure

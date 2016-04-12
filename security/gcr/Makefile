@@ -9,12 +9,12 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for bits of crypto UI and parsing
 
-BUILD_DEPENDS=	gtk-doc>0:${PORTSDIR}/textproc/gtk-doc \
-		vapigen:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libtasn1.so:${PORTSDIR}/security/libtasn1 \
-		libp11-kit.so:${PORTSDIR}/security/p11-kit \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc \
+		vapigen:lang/vala
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libtasn1.so:security/libtasn1 \
+		libp11-kit.so:security/p11-kit \
+		libgcrypt.so:security/libgcrypt
 
 CONFLICTS=	gnome-keyring-2.[0-9]*
 PORTSCOUT=	limitw:1,even

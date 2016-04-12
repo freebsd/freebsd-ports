@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.16
+PORTVERSION=	0.16.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.osuosl.org/pub/freedroid/freedroidRPG-${PORTVERSION}/ \
+MASTER_SITES=	ftp://ftp.osuosl.org/pub/freedroid/freedroidRPG-${PORTVERSION:R}/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${SF_NAME}-${PORTVERSION}
 
@@ -39,8 +39,8 @@ BACKTRACE_VARS=			STRIP= # empty
 OPENGL_USE=			GL=gl
 OPENGL_CONFIGURE_ENABLE=	opengl
 
-SOUND_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-				libogg.so:${PORTSDIR}/audio/libogg
+SOUND_LIB_DEPENDS=		libvorbis.so:audio/libvorbis \
+				libogg.so:audio/libogg
 SOUND_CONFIGURE_ENABLE=		sound
 SOUND_USE=			SDL=mixer
 NLS_USES=			gettext

@@ -10,9 +10,9 @@ MASTER_SITES=	LOCAL/dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Threaded nntp newsreader for X
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libcompface.so:${PORTSDIR}/mail/faces
-RUN_DEPENDS=	newsp:${PORTSDIR}/print/mp-letter
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libcompface.so:mail/faces
+RUN_DEPENDS=	newsp:print/mp-letter
 
 LICENSE=	GPLv2
 

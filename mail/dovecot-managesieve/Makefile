@@ -11,10 +11,10 @@ DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${DISTVERSIONPREFIX}${DISTVERSION
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Dovecot ManageSieve Server daemon
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:build \
-		${NONEXISTENT}:${PORTSDIR}/mail/dovecot-sieve:build
-RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}.*:${PORTSDIR}/mail/dovecot \
-		dovecot-sieve>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot-sieve
+BUILD_DEPENDS=	${NONEXISTENT}:mail/dovecot:build \
+		${NONEXISTENT}:mail/dovecot-sieve:build
+RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}.*:mail/dovecot \
+		dovecot-sieve>=${DOVECOTVERSION}:mail/dovecot-sieve
 
 DOVECOTVERSION=	1.2
 

@@ -24,7 +24,7 @@ OPTIONS_DEFAULT=APACHE
 
 PGSQL_USE=	PHP=pgsql
 APACHE_USE=	APACHE_RUN=22+
-LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
+LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 
 post-extract:
 	@${MKDIR} ${WRKSRC}

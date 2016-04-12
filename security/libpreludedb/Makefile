@@ -12,7 +12,7 @@ COMMENT=	Library to access Prelude IDMEF database
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libprelude.so:${PORTSDIR}/security/libprelude
+LIB_DEPENDS=	libprelude.so:security/libprelude
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

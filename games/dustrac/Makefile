@@ -7,7 +7,7 @@ CATEGORIES=	games
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	2D top-view racing game
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
 USES=		compiler:c++11-lib cmake:outsource openal pkgconfig
 USE_GL=		glu

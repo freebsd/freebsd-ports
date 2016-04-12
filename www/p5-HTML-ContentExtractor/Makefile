@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Extract text contained within an HTML document
 
-RUN_DEPENDS=	p5-HTML-Tree>=3.13:${PORTSDIR}/www/p5-HTML-Tree			\
-		p5-HTML-TableExtract>=2.10:${PORTSDIR}/www/p5-HTML-TableExtract
+RUN_DEPENDS=	p5-HTML-Tree>=3.13:www/p5-HTML-Tree			\
+		p5-HTML-TableExtract>=2.10:www/p5-HTML-TableExtract
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

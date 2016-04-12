@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Bridges gap between HTML::Template and other modules
 
-RUN_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
-		p5-Data-FormValidator>=0:${PORTSDIR}/textproc/p5-Data-FormValidator
+RUN_DEPENDS=	p5-HTML-Template>=0:www/p5-HTML-Template \
+		p5-Data-FormValidator>=0:textproc/p5-Data-FormValidator
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

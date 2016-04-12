@@ -15,8 +15,8 @@ COMMENT=	Framework for an intelligence driven security - Master Nugget
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
-		libjson-c.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS=	librazorback_api.so:security/razorback-api \
+		libjson-c.so:devel/json-c
 
 USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ DISTNAME=	dbus-python-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Common files for the Python bindings for the D-BUS messaging system
 
-BUILD_DEPENDS=	dbus-glib>=0:${PORTSDIR}/devel/dbus-glib
+BUILD_DEPENDS=	dbus-glib>=0:devel/dbus-glib
 
 SLAVE_PORT?=	no
 
@@ -34,7 +34,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	HTMLDOCS
 HTMLDOCS_DESC=	build html documentation
 HTMLDOCS_CONFIGURE_OFF=	--disable-html-docs
-HTMLDOCS_BUILD_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils
+HTMLDOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
 
 .include <bsd.port.options.mk>
 
@@ -65,8 +65,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 .endif
 .else # slave is defined
-LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS+=	pydbus-common>=0:${PORTSDIR}/devel/pydbus-common
+LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib
+RUN_DEPENDS+=	pydbus-common>=0:devel/pydbus-common
 USE_LDCONFIG=	yes
 .if ${SLAVE_PORT} == python2
 USES+=		python:2

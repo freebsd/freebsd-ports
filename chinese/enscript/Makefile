@@ -6,7 +6,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
+RUN_DEPENDS=	ttfm.sh:chinese/ttfm
 
 PAPERSIZE=	a4
 MASTERDIR=	${.CURDIR}/../../print/enscript-letter

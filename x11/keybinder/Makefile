@@ -11,7 +11,7 @@ COMMENT=	Library for registering keyboard shortcuts
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
+BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	engla

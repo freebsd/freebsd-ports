@@ -16,7 +16,7 @@ USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig perl5
 USE_LDCONFIG=	yes

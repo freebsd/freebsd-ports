@@ -13,8 +13,8 @@ COMMENT=	OCaml subroutines collection
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
-RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
+RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 
 USES=		gmake
 USE_OCAML=	yes

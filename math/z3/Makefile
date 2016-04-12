@@ -28,7 +28,7 @@ GMP_DESC=		Use GMP library for AP arithmetic
 GMP_CONFIGURE_ON=	--gmp
 GMP_CXXFLAGS=		-I${LOCALBASE}include
 GMP_LDFLAGS=		-L${LOCALBASE}/lib
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
 HAS_CONFIGURE=		yes
 USE_LDCONFIG=		yes

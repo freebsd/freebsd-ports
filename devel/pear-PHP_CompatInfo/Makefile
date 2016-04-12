@@ -9,10 +9,10 @@ CATEGORIES=	devel pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to find out the minimum version and extensions required
 
-RUN_DEPENDS=	${PEARDIR}/Console/Table.php:${PORTSDIR}/devel/pear-Console_Table \
-		${PEARDIR}/Console/Getargs.php:${PORTSDIR}/devel/pear-Console_Getargs \
-		${PEARDIR}/File/Find.php:${PORTSDIR}/sysutils/pear-File_Find \
-		${PEARDIR}/Event/Dispatcher.php:${PORTSDIR}/devel/pear-Event_Dispatcher
+RUN_DEPENDS=	${PEARDIR}/Console/Table.php:devel/pear-Console_Table \
+		${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs \
+		${PEARDIR}/File/Find.php:sysutils/pear-File_Find \
+		${PEARDIR}/Event/Dispatcher.php:devel/pear-Event_Dispatcher
 
 PORTSCOUT=	skipv:1.9.0a1,1.9.0b1,1.9.0b2
 USE_PHP=	tokenizer
@@ -26,10 +26,10 @@ PEAR_PHPUNIT_DESC=	PEAR::PHPUnit support
 PEAR_XML_UTIL_DESC=	PEAR::XML_Util support
 PEAR_HTML_TABLE_DESC=	PEAR::HTML_Table
 
-PEAR_XML_BEAUTIFIER_RUN_DEPENDS=	${PEARDIR}/XML/Beautifier.php:${PORTSDIR}/textproc/pear-XML_Beautifier
-PEAR_VAR_DUMP_RUN_DEPENDS=	${PEARDIR}/Var/Dump.php:${PORTSDIR}/devel/pear-Var_Dump
-PEAR_PHPUNIT_RUN_DEPENDS=	${PEARDIR}/PHPUnit/Autoload.php:${PORTSDIR}/devel/pear-PHPUnit3
-PEAR_XML_UTIL_RUN_DEPENDS=	${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
-PEAR_HTML_TABLE_RUN_DEPENDS=	${PEARDIR}/HTML/Table.php:${PORTSDIR}/devel/pear-HTML_Table
+PEAR_XML_BEAUTIFIER_RUN_DEPENDS=	${PEARDIR}/XML/Beautifier.php:textproc/pear-XML_Beautifier
+PEAR_VAR_DUMP_RUN_DEPENDS=	${PEARDIR}/Var/Dump.php:devel/pear-Var_Dump
+PEAR_PHPUNIT_RUN_DEPENDS=	${PEARDIR}/PHPUnit/Autoload.php:devel/pear-PHPUnit3
+PEAR_XML_UTIL_RUN_DEPENDS=	${PEARDIR}/XML/Util.php:devel/pear-XML_Util
+PEAR_HTML_TABLE_RUN_DEPENDS=	${PEARDIR}/HTML/Table.php:devel/pear-HTML_Table
 
 .include <bsd.port.mk>

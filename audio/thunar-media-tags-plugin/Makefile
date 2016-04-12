@@ -14,7 +14,7 @@ COMMENT=	Media tags plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		gmake pkgconfig gettext libtool xfce tar:bzip2
 GNU_CONFIGURE=	yes

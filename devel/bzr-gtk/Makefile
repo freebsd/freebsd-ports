@@ -13,9 +13,9 @@ COMMENT=	GTK interface to Bazaar-NG VCS
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
-		${PYTHON_PKGNAMEPREFIX}cairo>=0:${PORTSDIR}/graphics/py-cairo
+BUILD_DEPENDS=	bzr:devel/bzr
+RUN_DEPENDS=	bzr:devel/bzr \
+		${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo
 
 
 USES=		desktop-file-utils python

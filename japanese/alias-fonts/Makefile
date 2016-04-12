@@ -11,13 +11,13 @@ DISTFILES=	# empty
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Meta-port which setups Japanese fonts
 
-RUN_DEPENDS=	ja-font-elisa8>0:${PORTSDIR}/japanese/font-elisa8 \
-		ja-font-naga10>0:${PORTSDIR}/japanese/font-naga10 \
-		ja-font-shinonome>0:${PORTSDIR}/japanese/font-shinonome \
-		ja-font-kanji18>0:${PORTSDIR}/japanese/font-kanji18 \
-		ja-font-kappa20>0:${PORTSDIR}/japanese/font-kappa20 \
-		ja-font-kanji26>0:${PORTSDIR}/japanese/font-kanji26 \
-		ja-font-jisx0213>0:${PORTSDIR}/japanese/font-jisx0213
+RUN_DEPENDS=	ja-font-elisa8>0:japanese/font-elisa8 \
+		ja-font-naga10>0:japanese/font-naga10 \
+		ja-font-shinonome>0:japanese/font-shinonome \
+		ja-font-kanji18>0:japanese/font-kanji18 \
+		ja-font-kappa20>0:japanese/font-kappa20 \
+		ja-font-kanji26>0:japanese/font-kanji26 \
+		ja-font-jisx0213>0:japanese/font-jisx0213
 
 NO_BUILD=	yes
 

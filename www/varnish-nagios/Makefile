@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN=		fails to build
 
-BUILD_DEPENDS=	varnish4>=0:${PORTSDIR}/www/varnish4
+BUILD_DEPENDS=	varnish4>=0:www/varnish4
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-lm

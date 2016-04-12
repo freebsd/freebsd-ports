@@ -15,8 +15,8 @@ COMMENT=	Run a command with a given environment and capture output
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
-		sudo:${PORTSDIR}/security/sudo
+BUILD_DEPENDS=	p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote \
+		sudo:security/sudo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

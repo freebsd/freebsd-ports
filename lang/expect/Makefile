@@ -28,7 +28,7 @@ PLIST_SUB+=	EXPECT_VER=${PORTVERSION} \
 
 post-install:
 	${LN} -sf expect${PORTVERSION}/libexpect${LIBEXPECT_VER}.so \
-	    	${STAGEDIR}${PREFIX}/lib/libexpect.so.1
+		${STAGEDIR}${PREFIX}/lib/libexpect.so.1
 	${LN} -sf libexpect.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libexpect.so
 

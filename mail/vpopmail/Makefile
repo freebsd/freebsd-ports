@@ -13,8 +13,8 @@ COMMENT=	Easy virtual domain and authentication package for use with qmail
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
-RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+BUILD_DEPENDS=	${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp
+RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp
 
 PATCH_STRIP=	-p1
 
@@ -163,14 +163,14 @@ MAILDROP_CONFIGURE_ON=		--enable-maildrop=y \
 				--enable-maildrop-prog=${LOCALBASE}/bin/maildrop
 MAILDROP_CONFIGURE_OFF=		--enable-maildrop=n
 
-MAILDROP_RUN_DEPENDS=		maildrop:${PORTSDIR}/${MAILDROP_PORT}
-MAILDROP_BUILD_DEPENDS=		maildrop:${PORTSDIR}/${MAILDROP_PORT}
+MAILDROP_RUN_DEPENDS=		maildrop:${MAILDROP_PORT}
+MAILDROP_BUILD_DEPENDS=		maildrop:${MAILDROP_PORT}
 
 SPAMASSASSIN_CONFIGURE_ON=	--enable-spamassassin \
 				--enable-spamc-prog=${LOCALBASE}/bin/spamc \
 				--enable-spam-threshold=${SPAM_THRESHOLD}
-SPAMASSASSIN_BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin
-SPAMASSASSIN_RUN_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin
+SPAMASSASSIN_BUILD_DEPENDS=	spamc:mail/spamassassin
+SPAMASSASSIN_RUN_DEPENDS=	spamc:mail/spamassassin
 SPAMFOLDER_CONFIGURE_ON=	--enable-spam-junkfolder
 
 INSTALL_TARGET=	install-strip

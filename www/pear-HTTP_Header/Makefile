@@ -8,8 +8,8 @@ CATEGORIES=	www devel pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR OO interface to modify and handle HTTP headers and status codes
 
-BUILD_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
-RUN_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
+BUILD_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP
+RUN_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP
 
 USES=	pear
 

@@ -14,9 +14,9 @@ COMMENT=	Simple VNC client
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES \
-		p5-Image-Imlib2>=0:${PORTSDIR}/graphics/p5-Image-Imlib2
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-Crypt-DES>=0:security/p5-Crypt-DES \
+		p5-Image-Imlib2>=0:graphics/p5-Image-Imlib2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

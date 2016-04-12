@@ -11,8 +11,8 @@ DISTFILES=	wizd_sources_v${PORTVERSION}.zip simplicity_v1-2.zip
 MAINTAINER=	kikuchan@uranus.dti.ne.jp
 COMMENT=	Open-source media server for Syabas-based media players
 
-LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
-RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
+RUN_DEPENDS=	nkf:japanese/nkf
 
 DOS2UNIX_FILES=	Makefile nkfwrap/Makefile nkfwrap/nkfwrap_test.c \
 		wizd_http.c wizd_menu.c

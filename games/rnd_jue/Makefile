@@ -22,8 +22,8 @@ COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff jue
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
-EXTRACT_DEPENDS+=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS+=	libsmpeg.so:multimedia/smpeg
+EXTRACT_DEPENDS+=${UNZIP_CMD}:archivers/unzip
 
 USES=		gmake
 USE_SDL=	image mixer net sdl

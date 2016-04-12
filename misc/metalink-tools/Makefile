@@ -14,10 +14,10 @@ COMMENT=	Metalink generation tool
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libglibmm-2.4.so:${PORTSDIR}/devel/glibmm \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
-		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libglibmm-2.4.so:devel/glibmm \
+		libgpg-error.so:security/libgpg-error \
+		libsigc-2.0.so:devel/libsigc++20
 
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

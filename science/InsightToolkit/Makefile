@@ -11,13 +11,13 @@ COMMENT=	Insight Toolkit
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libturbojpeg.so:${PORTSDIR}/graphics/libjpeg-turbo \
-		libgdcmCommon.so:${PORTSDIR}/devel/gdcm \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfftw.so:${PORTSDIR}/math/fftw \
-		libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libturbojpeg.so:graphics/libjpeg-turbo \
+		libgdcmCommon.so:devel/gdcm \
+		libexpat.so:textproc/expat2 \
+		libfftw.so:math/fftw \
+		libhdf5.so:science/hdf5 \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 USES=		cmake:outsource
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \

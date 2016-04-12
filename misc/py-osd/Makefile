@@ -12,7 +12,7 @@ DISTNAME=	pyosd-${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python wrapper for osd, for displaying text on your X display
 
-LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+LIB_DEPENDS=	libxosd.so:misc/xosd
 
 USES=		python twisted:run
 USE_PYTHON=	distutils autoplist

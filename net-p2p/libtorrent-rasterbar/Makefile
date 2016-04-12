@@ -11,8 +11,8 @@ COMMENT?=	C++ library implementing a BitTorrent client
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS?=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
-		libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS?=	libboost_date_time.so:devel/boost-libs \
+		libGeoIP.so:net/GeoIP
 
 USES+=		compiler:c++11-lang iconv:wchar_t libtool pathfix pkgconfig
 USE_OPENSSL=	yes

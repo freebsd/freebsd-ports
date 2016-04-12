@@ -12,8 +12,8 @@ COMMENT=	Store and access your passwords safely
 
 LICENSE=	PSFL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8:${PORTSDIR}/devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.9:${PORTSDIR}/devel/py-setuptools_scm
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8:devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.9:devel/py-setuptools_scm
 
 NO_ARCH=	yes
 USES=		python
@@ -24,8 +24,8 @@ OPTIONS_DEFAULT=	KEYRINGS_ALT
 DBUS_DESC=		Install Python DBUS to support the kwallet backend
 SECRET_SERVICE_DESC=	Install SecretStorage to support the SecretService backend
 
-DBUS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus
-KEYRINGS_ALT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyrings.alt>0:${PORTSDIR}/security/py-keyrings.alt
-SECRET_SERVICE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SecretStorage>=1.0.0:${PORTSDIR}/security/py-SecretStorage
+DBUS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus
+KEYRINGS_ALT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyrings.alt>0:security/py-keyrings.alt
+SECRET_SERVICE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SecretStorage>=1.0.0:security/py-SecretStorage
 
 .include <bsd.port.mk>

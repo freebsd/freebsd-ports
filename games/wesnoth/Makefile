@@ -15,10 +15,10 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+		libboost_thread.so:devel/boost-libs \
+		libpng.so:graphics/png \
+		libfontconfig.so:x11-fonts/fontconfig
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
@@ -50,7 +50,7 @@ CAMPAIGN_DESC=	Campaign server
 CAMPAIGN_CMAKE_ON=-DENABLE_CAMPAIGN_SERVER=on
 DOCS_CMAKE_OFF=	-DDOCDIR=none
 FRIBIDI_DESC=	Bidirectional support
-FRIBIDI_LIB_DEPENDS=libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_LIB_DEPENDS=libfribidi.so:converters/fribidi
 FRIBIDI_CMAKE_OFF=-DENABLE_FRIBIDI=off
 LOWMEM_DESC=	Reduce memory usage (disables animations)
 LOWMEM_CMAKE_ON=-DENABLE_LOW_MEM=on
@@ -58,7 +58,7 @@ NLS_USES=	gettext
 NLS_CMAKE_ON=	-DLOCALEDIR=${PREFIX}/share/locale
 NLS_CMAKE_OFF=	-DENABLE_NLS=off
 NOTIFY_DESC=	Desktop notifications
-NOTIFY_LIB_DEPENDS=libdbus-1.so:${PORTSDIR}/devel/dbus
+NOTIFY_LIB_DEPENDS=libdbus-1.so:devel/dbus
 NOTIFY_CMAKE_OFF=-DENABLE_NOTIFICATIONS=off
 OPENMP_DESC=	OpenMP support
 OPENMP_USES=	compiler:openmp

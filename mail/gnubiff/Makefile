@@ -12,7 +12,7 @@ COMMENT=	Mail notification program for Gnome
 
 OPTIONS_DEFINE=	NLS
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 USE_GNOME=	intlhack libglade2 esound
 USES=		cpe fam gmake pathfix pkgconfig

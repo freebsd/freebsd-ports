@@ -11,7 +11,7 @@ EXTRACT_SUFX=		.Z
 MAINTAINER=		sjroz@verizon.net
 COMMENT=		Program that is used to duplicate magtapes
 
-EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
+EXTRACT_DEPENDS=	gunshar:archivers/sharutils
 
 NO_WRKSUBDIR=		yes
 

@@ -13,8 +13,8 @@ COMMENT=	Tool for intercepting, modifying, and rewriting egress traffic
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet \
-		libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libdnet.so:net/libdnet \
+		libevent.so:devel/libevent2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libdnet=${LOCALBASE} \

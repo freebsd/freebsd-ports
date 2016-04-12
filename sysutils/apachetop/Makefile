@@ -5,12 +5,10 @@ PORTNAME=	apachetop
 PORTVERSION=	0.12.6
 PORTREVISION=	4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.webta.org/apachetop/
+MASTER_SITES=	http://lukasz.wasikowski.net/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Apache RealTime log stats
-
-BROKEN=		unfetchable
 
 GNU_CONFIGURE=	yes
 USES=		readline
@@ -20,13 +18,13 @@ PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 OPTIONS_DEFINE=	ADNS FAM PCRE
 ADNS_DESC=	Asynchronous-capable DNS support
 
-ADNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
+ADNS_LIB_DEPENDS=	libadns.so:dns/adns
 ADNS_CONFIGURE_ON=	--with-adns=${LOCALBASE}
 
-FAM_LIB_DEPENDS=	libfam.so:${PORTSDIR}/devel/fam
+FAM_LIB_DEPENDS=	libfam.so:devel/fam
 FAM_CONFIGURE_ON=	--with-fam=${LOCALBASE}
 
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_COFNIGURE_ON=	--with-pcre=${LOCALBASE}
 
 post-patch:

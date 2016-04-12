@@ -11,7 +11,7 @@ COMMENT=	Curses interface for OpenBSD spamd spam database (spamdb)
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/spamdb:${PORTSDIR}/mail/spamd
+RUN_DEPENDS=	${LOCALBASE}/sbin/spamdb:mail/spamd
 
 USES=		python
 USE_PYTHON=	distutils

@@ -9,11 +9,11 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Compiz Composite/Window Manager
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
-		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
-RUN_DEPENDS=	glxinfo:${PORTSDIR}/graphics/mesa-demos \
-		nvidia-settings:${PORTSDIR}/x11/nvidia-settings
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libgtop-2.0.so:devel/libgtop \
+		libstartup-notification-1.so:x11/startup-notification
+RUN_DEPENDS=	glxinfo:graphics/mesa-demos \
+		nvidia-settings:x11/nvidia-settings
 
 XORG_CAT=	app
 GNU_CONFIGURE=	yes
@@ -98,12 +98,12 @@ CONFIGURE_ARGS+=	--disable-metacity
 
 .if ${PORT_OPTIONS:MDBUS}
 CONFIGURE_ARGS+=	--enable-dbus
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:devel/dbus
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:devel/dbus
 .if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MGNOME}
 CONFIGURE_ARGS+=	--enable-dbus-glib
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:devel/dbus-glib
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:devel/dbus-glib
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-dbus --disable-dbus-glib

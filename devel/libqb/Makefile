@@ -26,7 +26,7 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_SUB=	yes
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 post-install:
 	${MKDIR} ${STAGEDIR}${QB_SOCKET_DIR}

@@ -12,7 +12,7 @@ COMMENT=	Python libdiscid bindings
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid
+LIB_DEPENDS=	libdiscid.so:audio/libdiscid
 
 USES=		python
 USE_PYTHON=	autoplist distutils

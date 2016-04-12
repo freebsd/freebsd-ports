@@ -12,7 +12,7 @@ COMMENT=	Emulator for the Z80 series of Texas Instruments calculators
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libticalcs2.so:${PORTSDIR}/comms/libticalcs2
+LIB_DEPENDS=	libticalcs2.so:comms/libticalcs2
 
 USES=		desktop-file-utils pkgconfig shared-mime-info tar:bzip2
 GNU_CONFIGURE=	yes

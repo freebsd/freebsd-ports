@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dancer2 plugin to defer messages or data across redirections
 
-BUILD_DEPENDS=	p5-Dancer2>=0:${PORTSDIR}/www/p5-Dancer2 \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-Dancer2>=0:www/p5-Dancer2 \
+		p5-URI>=0:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

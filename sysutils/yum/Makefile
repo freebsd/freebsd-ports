@@ -13,14 +13,14 @@ COMMENT=	Installer/updater for rpm
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		intltool-update:${PORTSDIR}/textproc/intltool
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${PYTHON_SITELIBDIR}/rpm/__init__.py:${PORTSDIR}/archivers/rpm4 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_SITELIBDIR}/sqlitecachec.py:${PORTSDIR}/devel/py-yum-metadata-parser \
-		${PYTHON_PKGNAMEPREFIX}iniparse>0:${PORTSDIR}/devel/py-iniparse \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:${PORTSDIR}/www/py-urlgrabber
+BUILD_DEPENDS=	bash:shells/bash \
+		intltool-update:textproc/intltool
+RUN_DEPENDS=	bash:shells/bash \
+		${PYTHON_SITELIBDIR}/rpm/__init__.py:archivers/rpm4 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_SITELIBDIR}/sqlitecachec.py:devel/py-yum-metadata-parser \
+		${PYTHON_PKGNAMEPREFIX}iniparse>0:devel/py-iniparse \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber
 
 USES=		cpe gettext gmake python shebangfix
 SHEBANG_FILES=	etc/yum-updatesd.init

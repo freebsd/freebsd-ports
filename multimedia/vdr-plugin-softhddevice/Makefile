@@ -11,10 +11,10 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - softhddevice plugin
 
-LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		libvdpau.so:${PORTSDIR}/multimedia/libvdpau \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
-		libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libavcodec0.so:multimedia/ffmpeg0 \
+		libvdpau.so:multimedia/libvdpau \
+		libxcb-keysyms.so:x11/xcb-util-keysyms \
+		libasound.so:audio/alsa-lib
 
 USES=		compiler:features pkgconfig tar:tgz
 USE_XORG+=	xv x11 xcb xinerama
@@ -36,7 +36,7 @@ VAAPI_DESC=	Enable vaapi support (experimental)
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
+LIB_DEPENDS+=	libva.so:multimedia/libva
 CONFIG+= 	-DUSE_VAAPI
 .endif
 

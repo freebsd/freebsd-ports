@@ -10,8 +10,8 @@ COMMENT=	Open source Bible study tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libclucene-core.so:${PORTSDIR}/textproc/clucene \
-		libsword.so:${PORTSDIR}/misc/sword
+LIB_DEPENDS=	libclucene-core.so:textproc/clucene \
+		libsword.so:misc/sword
 
 USES=		cmake:outsource tar:xz
 USE_OPENSSL=	yes

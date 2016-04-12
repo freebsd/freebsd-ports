@@ -14,11 +14,11 @@ COMMENT=	Flexible forms validation and rendering library for python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>0:${PORTSDIR}/devel/py-babel
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:${PORTSDIR}/devel/py-coverage \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:${PORTSDIR}/databases/py-sqlalchemy-devel \
-		${PYTHON_PKGNAMEPREFIX}pep8>0:${PORTSDIR}/devel/pep8 \
-		${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:databases/py-sqlalchemy-devel \
+		${PYTHON_PKGNAMEPREFIX}pep8>0:devel/pep8 \
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil
 
 OPTIONS_DEFINE=		DOCS
 

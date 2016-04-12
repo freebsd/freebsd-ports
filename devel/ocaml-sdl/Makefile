@@ -14,7 +14,7 @@ COMMENT=	OCaml interface to the SDL
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	ocaml-lablgl>0:${PORTSDIR}/graphics/ocaml-lablgl
+BUILD_DEPENDS=	ocaml-lablgl>0:graphics/ocaml-lablgl
 
 OPTIONS_DEFINE=	SDL_GFX SDL_IMAGE SDL_MIXER SDL_TTF DOCS
 OPTIONS_DEFAULT=SDL_GFX SDL_IMAGE SDL_MIXER SDL_TTF

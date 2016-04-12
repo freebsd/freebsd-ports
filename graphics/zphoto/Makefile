@@ -14,11 +14,11 @@ OPTIONS_DEFINE=	ZIP
 OPTIONS_DEFAULT=	ZIP
 ZIP_DESC=	Enable zip support
 
-LIB_DEPENDS=	libming.so:${PORTSDIR}/graphics/ming \
-		libpopt.so:${PORTSDIR}/devel/popt \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libming.so:graphics/ming \
+		libpopt.so:devel/popt \
+		libImlib2.so:graphics/imlib2
 
-ZIP_RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+ZIP_RUN_DEPENDS=	zip:archivers/zip
 ZIP_CONFIGURE_OFF=	--disable-zip
 
 GNU_CONFIGURE=	yes

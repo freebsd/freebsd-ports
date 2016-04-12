@@ -10,12 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactively select and save sections of an audio file
 
-RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
-		rawplay:${PORTSDIR}/audio/rawrec \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		flac:${PORTSDIR}/audio/flac \
-		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	sox:audio/sox \
+		rawplay:audio/rawrec \
+		oggenc:audio/vorbis-tools \
+		flac:audio/flac \
+		p5-ReadLine-Gnu>=0:devel/p5-ReadLine-Gnu \
+		p5-Time-HiRes>=0:devel/p5-Time-HiRes
 
 LICENSE=	GPLv2
 

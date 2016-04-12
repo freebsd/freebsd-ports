@@ -8,8 +8,8 @@ CATEGORIES=	graphics
 
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libglapi.so:${PORTSDIR}/graphics/libglapi
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libglapi.so:graphics/libglapi
 
 USE_XORG=	x11 xau xcb xdmcp xvmc
 # libosmesa doesn't link agains libGL but osmesa.h needs GL/gl.h

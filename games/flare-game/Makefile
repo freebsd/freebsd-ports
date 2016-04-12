@@ -14,7 +14,7 @@ COMMENT=	Free Libre Action Roleplaying Engine
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	flare:${PORTSDIR}/games/flare-engine
+RUN_DEPENDS=	flare:games/flare-engine
 
 USES=		cmake
 CMAKE_BUILD_TYPE=	#empty

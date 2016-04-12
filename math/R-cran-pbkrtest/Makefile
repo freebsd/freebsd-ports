@@ -11,7 +11,7 @@ COMMENT=	Parametric bootstrap and Kenward-Roger-based methods for mixed model co
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	R-cran-lme4>=1.1.10:${PORTSDIR}/math/R-cran-lme4
+RUN_DEPENDS=	R-cran-lme4>=1.1.10:math/R-cran-lme4
 
 USES=	cran:auto-plist
 

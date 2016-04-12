@@ -12,7 +12,7 @@ COMMENT=	GD bindings for the Lua programming language
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

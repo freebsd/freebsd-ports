@@ -12,8 +12,8 @@ COMMENT=	Non-blocking streaming JSON codec for OCaml
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${SA_DIR}/uutf/uutf.a:${PORTSDIR}/devel/ocaml-uutf
-RUN_DEPENDS=	${SA_DIR}/uutf/uutf.a:${PORTSDIR}/devel/ocaml-uutf
+BUILD_DEPENDS=	${SA_DIR}/uutf/uutf.a:devel/ocaml-uutf
+RUN_DEPENDS=	${SA_DIR}/uutf/uutf.a:devel/ocaml-uutf
 
 USES=	tar:tbz
 USE_OCAML=		yes

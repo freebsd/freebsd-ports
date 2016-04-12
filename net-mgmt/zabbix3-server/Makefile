@@ -3,7 +3,7 @@
 
 PORTNAME=	zabbix3
 PORTVERSION=	3.0.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--with-iconv=${ICONV_PREFIX}
 
 .if ${ZABBIX_BUILD} != "agent"
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 USES+=		execinfo
 
 CPPFLAGS+=	${EXECINFO_CPPFLAGS}
@@ -72,7 +72,8 @@ CONFIGURE_ARGS+=	--with-net-snmp
 
 OPTIONS_DEFINE=		IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW \
 			LIBXML2
-OPTIONS_DEFAULT=	IPV6 FPING JABBER CURL UNIXODBC MYSQL SSH
+
+OPTIONS_DEFAULT=	IPV6 FPING JABBER CURL UNIXODBC MYSQL SSH OPENSSL
 OPTIONS_SUB=		yes
 
 CURL_DESC=		Support for web monitoring
@@ -86,9 +87,10 @@ ODBC_DESC=		Support for database checks via ODBC
 JAVAGW_DESC=		Support for Java gateway
 LIBXML2_DESC=		Support for libxml2 (required by monitoring VMware)
 
-OPTIONS_SINGLE=		DB ODBC
+OPTIONS_SINGLE=		DB ODBC SSL
 OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
+OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS POLARSSL
 
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_USE=		MYSQL=yes
@@ -102,41 +104,57 @@ SQLITE_USE=		SQLITE=3
 ORACLE_CONFIGURE_WITH=	oracle
 
 CURL_CONFIGURE_WITH=	libcurl
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
 
 IPMI_CONFIGURE_WITH=	openipmi
-IPMI_LIB_DEPENDS=	libOpenIPMI.so:${PORTSDIR}/sysutils/openipmi
+IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
 
 JABBER_CONFIGURE_WITH=	jabber
-JABBER_LIB_DEPENDS=	libiksemel.so:${PORTSDIR}/textproc/iksemel
+JABBER_LIB_DEPENDS=	libiksemel.so:textproc/iksemel
 
-FPING_RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
+FPING_RUN_DEPENDS=	fping:net/fping
 
 SSH_CONFIGURE_WITH=	ssh2
-SSH_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
+SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 
 IODBC_CONFIGURE_WITH=	iodbc
-IODBC_LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+IODBC_LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 
 UNIXODBC_CONFIGURE_WITH=unixodbc
-UNIXODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+.else
+OPTIONS_SINGLE=         SSL
+OPTIONS_SINGLE_SSL=     OPENSSL GNUTLS POLARSSL
 .endif # if ${ZABBIX_BUILD} != "agent"
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-NMAP_RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap \
-			sudo:${PORTSDIR}/security/sudo
+NMAP_RUN_DEPENDS=	nmap:security/nmap \
+			sudo:security/sudo
 
 JAVAGW_CONFIGURE_ENABLE=java
 JAVAGW_USE=		JAVA=yes
 
 LIBXML2_CONFIGURE_WITH=	libxml2
-LIBXML2_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
+
+OPENSSL_CONFIGURE_WITH= openssl
+OPENSSL_USE=            OPENSSL=yes
+
+GNUTLS_CONFIGURE_WITH=	gnutls
+GNUTLS_LIB_DEPENDS=     libgnutls.so:security/gnutls
+
+POLARSSL_CONFIGURE_WITH=mbedtls
+POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
+IGNORE=   OpenSSL from the base system is too old, add WITH_OPENSSL_PORT to your /etc/make.conf and rebuild everything that needs SSL.
+.endif
 
 post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \

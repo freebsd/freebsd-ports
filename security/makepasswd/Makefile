@@ -24,8 +24,8 @@ USE_PERL5=	run
 
 OPTIONS_DEFINE=	DOCS
 
-RUN_DEPENDS+=	p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
-		p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
+RUN_DEPENDS+=	p5-Crypt-PasswdMD5>=0:security/p5-Crypt-PasswdMD5 \
+		p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

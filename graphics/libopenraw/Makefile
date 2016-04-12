@@ -13,7 +13,7 @@ COMMENT=	Library for camera RAW files decoding
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		compiler:c++11-lang jpeg libtool pkgconfig tar:bzip2
 USE_GNOME=	libxml2

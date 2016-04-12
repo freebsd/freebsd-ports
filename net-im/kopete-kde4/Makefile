@@ -10,15 +10,15 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multi-protocol instant messenger
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libotr.so.5:${PORTSDIR}/security/libotr \
-		libgadu.so:${PORTSDIR}/polish/libgadu \
-		libkleo.so:${PORTSDIR}/deskutils/kdepim4 \
-		libmeanwhile.so:${PORTSDIR}/net-im/meanwhile \
-		libv4l2.so:${PORTSDIR}/multimedia/libv4l \
-		libjasper.so:${PORTSDIR}/graphics/jasper
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	libidn.so:dns/libidn \
+		libqca.so:devel/qca \
+		libotr.so.5:security/libotr \
+		libgadu.so:polish/libgadu \
+		libkleo.so:deskutils/kdepim4 \
+		libmeanwhile.so:net-im/meanwhile \
+		libv4l2.so:multimedia/libv4l \
+		libjasper.so:graphics/jasper
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 
 USES=		cmake:outsource jpeg pkgconfig shebangfix sqlite tar:xz webplugin:native
 USE_GNOME=	libxml2 libxslt
@@ -51,7 +51,7 @@ CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES=1
 
 OPTIONS_DEFINE=	XMMS
 XMMS_DESC=	XMMS Kopete nowlistening plugin
-XMMS_LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
+XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
 XMMS_CMAKE_ON=	-DWITH_Xmms:BOOL=ON
 XMMS_CMAKE_OFF=	-DWITH_Xmms:BOOL=OFF
 

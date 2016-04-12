@@ -14,8 +14,8 @@ COMMENT=	Perl extension for manipulating IPv6 addresses
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-IPv4Addr>=0:${PORTSDIR}/net-mgmt/p5-Net-IPv4Addr \
-		p5-Math-Base85>=0:${PORTSDIR}/math/p5-Math-Base85
+BUILD_DEPENDS=	p5-Net-IPv4Addr>=0:net-mgmt/p5-Net-IPv4Addr \
+		p5-Math-Base85>=0:math/p5-Math-Base85
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -28,24 +28,24 @@ OPTIONS_DEFAULT=	EVENT ANYEVENT SSL
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
+BUILD_DEPENDS=	p5-Storable>=0:devel/p5-Storable
 
 .if ${PORT_OPTIONS:MEVENT}
-BUILD_DEPENDS+=	p5-Event>=0:${PORTSDIR}/devel/p5-Event
+BUILD_DEPENDS+=	p5-Event>=0:devel/p5-Event
 .endif
 
 .if ${PORT_OPTIONS:MANYEVENT}
-BUILD_DEPENDS+=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent
+BUILD_DEPENDS+=	p5-AnyEvent>=0:devel/p5-AnyEvent
 .endif
 
 .if ${PORT_OPTIONS:MGLIB}
-BUILD_DEPENDS+=	p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2
+BUILD_DEPENDS+=	p5-Glib2>=0:devel/p5-Glib2
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-BUILD_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+BUILD_DEPENDS+=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 .endif
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}

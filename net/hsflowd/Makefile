@@ -20,14 +20,14 @@ MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' \
-	    	-e '/scripts\/hsflowd /d' \
+		-e '/scripts\/hsflowd /d' \
 		-e 's|hsflowd.conf|hsflowd.conf.sample|g' \
-	    	${WRKSRC}/src/FreeBSD/Makefile ${WRKSRC}/src/sflow/Makefile \
+		${WRKSRC}/src/FreeBSD/Makefile ${WRKSRC}/src/sflow/Makefile \
 		${WRKSRC}/src/json/Makefile
 	@${REINPLACE_CMD} -e 's|/etc|${ETCDIR}|g' ${WRKSRC}/src/FreeBSD/hsflowd.h
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
-	    	${WRKSRC}/src/FreeBSD/scripts/hsflowd
+		${WRKSRC}/src/FreeBSD/scripts/hsflowd
 	@${MV} ${WRKSRC}/src/FreeBSD/scripts/hsflowd.conf \
-	    	${WRKSRC}/src/FreeBSD/scripts/hsflowd.conf.sample
+		${WRKSRC}/src/FreeBSD/scripts/hsflowd.conf.sample
 
 .include <bsd.port.mk>

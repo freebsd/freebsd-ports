@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	showbeastie
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=
 DISTFILES=
@@ -12,9 +12,9 @@ COMMENT=	Preview FreeBSD loader logos
 
 LICENSE=	BSD2CLAUSE
 
-# Let's pretend we build a kernel module, because we require the
-# kernel sources
-USES=		kmod
+.if !exists(${SRC_BASE}/sys/Makefile)
+IGNORE=	requires kernel source files in ${SRC_BASE}
+.endif
 
 NO_FETCH=	yes
 
@@ -22,9 +22,14 @@ ALL_TARGET=	testmain
 
 PLIST_FILES=	bin/${PORTNAME}
 
+# Make sure building succeeds on HEAD
+MAKE_ARGS+=	-m ${SRC_BASE}/share/mk
+
 pre-patch:
 	@${MKDIR} ${WRKSRC}
-	@(cd ${SRC_BASE}/sys/boot/ficl && ${COPYTREE_SHARE} . ${WRKSRC})
+	@${TAR} -C ${SRC_BASE}/sys/boot/ficl \
+		--exclude '*.o' --exclude '*.a' --exclude 'testmain' \
+		-cf - . | ${TAR} -C ${WRKSRC} -xf -
 
 post-patch:
 	${REINPLACE_CMD} 's|-I.*/\.\./common|-I${SRC_BASE}/sys/boot/common|g' \

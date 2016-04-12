@@ -12,7 +12,7 @@
  # define GTEST_OS_OPENBSD 1
  #elif defined __QNX__
  # define GTEST_OS_QNX 1
-+#elif defined __FreeBSD__
++#elif defined __FreeBSD__ || defined __DragonFly__
 +# define GTEST_OS_FREEBSD 1
  #endif  // __CYGWIN__
  

@@ -11,15 +11,15 @@ DISTNAME=	enblend-enfuse-${PORTVERSION}
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	Tool for image blending with multiresolution splines
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
-		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
-		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
-LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libvigraimpex.so:${PORTSDIR}/graphics/vigra \
-		libgsl.so:${PORTSDIR}/math/gsl
-RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
+BUILD_DEPENDS=	help2man:misc/help2man \
+		${LOCALBASE}/bin/makeinfo:print/texinfo \
+		OpenEXR>=1.0:graphics/OpenEXR
+LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
+		libtiff.so:graphics/tiff \
+		libboost_filesystem.so:devel/boost-libs \
+		libvigraimpex.so:graphics/vigra \
+		libgsl.so:math/gsl
+RUN_DEPENDS=	OpenEXR>=1.0:graphics/OpenEXR
 
 USE_AUTOTOOLS=	automake:env autoconf:env
 USES=		compiler:features gmake jpeg makeinfo

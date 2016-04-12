@@ -39,9 +39,9 @@ GDBMAUTH_CONFIGURE_ENABLE=	auth-gdbm
 PASSWDAUTH_CONFIGURE_ENABLE=	auth-passwd
 MBOXINDICES_CONFIGURE_ENABLE=	mbox-bsd-save-indices
 
-DRAC_BUILD_DEPENDS=		${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+DRAC_BUILD_DEPENDS=		${LOCALBASE}/lib/libdrac.a:mail/drac
 GDBMAUTH_CPPFLAGS=		-I${LOCALBASE}/include
-GDBMAUTH_LIB_DEPENDS=		libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBMAUTH_LIB_DEPENDS=		libgdbm.so:databases/gdbm
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ON=	--enable-auth-mysql \
 			--with-mysql-lib-dir=${LOCALBASE}/lib/mysql \
@@ -59,7 +59,7 @@ USE_RC_SUBR=	tpop3d
 DEFAULT_CONFIG=	${PREFIX}/etc/tpop3d.conf.sample
 
 PORTDOCS=	CHANGES CREDITS FAQ HACKING INSTALL PORTABILITY \
-       		README README.POP-before-SMTP README.auth_mysql TODO
+		README README.POP-before-SMTP README.auth_mysql TODO
 
 post-patch:
 	@${REINPLACE_CMD} '/^CFLAGS/ s, -g -O2,,' \

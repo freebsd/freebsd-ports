@@ -12,9 +12,9 @@ COMMENT=	Global way of retrieving the currently active request
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.publisher>0:${PORTSDIR}/devel/py-zope.publisher \
-		${PYTHON_PKGNAMEPREFIX}zope.traversing>0:${PORTSDIR}/devel/py-zope.traversing
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}zope.publisher>0:devel/py-zope.publisher \
+		${PYTHON_PKGNAMEPREFIX}zope.traversing>0:devel/py-zope.traversing
 
 USES=		python
 USE_PYTHON=	autoplist distutils

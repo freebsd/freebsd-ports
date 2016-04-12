@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--disable-instrument-downloads
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC_TOR}
-BUILD_DEPENDS +=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent2
+BUILD_DEPENDS +=	${LOCALBASE}/lib/libevent.a:devel/libevent2
 CONFIGURE_ARGS+=	--enable-static-tor \
 			--with-zlib-dir=/usr/lib --disable-linker-hardening
 TOR_LIBEVENT_LIBS=	${LOCALBASE}/lib/libevent.a
@@ -78,7 +78,7 @@ TOR_LIBEVENT_LIBS:=	${LOCALBASE}/lib/libevent_openssl.a ${TOR_LIBEVENT_LIBS}
 .endif
 .else
 CONFIGURE_ARGS+=	--enable-linker-hardening
-LIB_DEPENDS+=		libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS+=		libevent.so:devel/libevent2
 TOR_LIBEVENT_LIBS=	-levent
 .if ${PORT_OPTIONS:MBUFFEREVENTS}
 TOR_LIBEVENT_LIBS:=	-levent_openssl ${TOR_LIBEVENT_LIBS}
@@ -88,9 +88,9 @@ TOR_LIBEVENT_LIBS:=	-levent_openssl ${TOR_LIBEVENT_LIBS}
 .if ${PORT_OPTIONS:MTCMALLOC}
 CONFIGURE_ARGS+=	--with-tcmalloc
 .if ${PORT_OPTIONS:MSTATIC_TOR}
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libtcmalloc.a:${PORTSDIR}/devel/google-perftools
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libtcmalloc.a:devel/google-perftools
 .else
-LIB_DEPENDS+=		libtcmalloc.so:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=		libtcmalloc.so:devel/google-perftools
 .endif
 .endif
 

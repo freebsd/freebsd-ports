@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tads.org/${PORTNAME}/ \
 MAINTAINER=	kaiwang27@gmail.com
 COMMENT=	TADS interpreter and the compilers for both TADS 2 and 3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 CONFLICTS=	tads-2.*
 

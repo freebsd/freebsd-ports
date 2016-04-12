@@ -13,8 +13,8 @@ COMMENT=	Utility for capturing audio streams from programs with OSS output
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
-RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
+BUILD_DEPENDS=	sox:audio/sox
+RUN_DEPENDS=	sox:audio/sox
 
 USES=		alias libtool
 GNU_CONFIGURE=	yes

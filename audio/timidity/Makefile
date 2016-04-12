@@ -27,7 +27,7 @@ GUSPAT_DESC=	Use audio/guspat instead of included sound fonts (goemon)
 
 # Set up sound fonts from audio/guspat.
 .if ${PORT_OPTIONS:MGUSPAT}
-RUN_DEPENDS+=	${LOCALBASE}/share/guspat/power.cfg:${PORTSDIR}/audio/guspat
+RUN_DEPENDS+=	${LOCALBASE}/share/guspat/power.cfg:audio/guspat
 TDIR=		${LOCALBASE}/share/timidity
 TCONFIG=	timidity.cfg-guspat
 PLIST_SUB+=	GOEMON="@comment "

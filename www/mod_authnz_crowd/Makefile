@@ -13,9 +13,9 @@ COMMENT=	Apache 2.2+ module to use Atlassian Crowd for authentication
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion \
-		libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dav_svn.so:${PORTSDIR}/www/mod_dav_svn
+LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
+		libcurl.so:ftp/curl
+RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dav_svn.so:www/mod_dav_svn
 
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib

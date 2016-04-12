@@ -106,7 +106,7 @@ OQGRAPH_DESC=	Open Query Graph Computation engine
 OQGRAPH_CMAKE_OFF=	-DWITHOUT_OQGRAPH_STORAGE_ENGINE=1
 OQGRAPH_USE=	GCC=yes
 OQGRAPH_CMAKE_ON=	-DWITH_OQGRAPH_STORAGE_ENGINE=1
-OQGRAPH_LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
+OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 MAXKEY_EXTRA_PATCHES=	${FILESDIR}/extra-patch-include_my_compare.h
 .endif

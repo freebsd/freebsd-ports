@@ -8,14 +8,14 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12_Src\&filename=/:1 \
 		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12.pdf\&filename=/:2
 DISTFILES=	IPAUni_Src12.zip:1 \
-   		IPA+Unicode+5.1_ver+1.2_KMN.pdf:2
+		IPA+Unicode+5.1_ver+1.2_KMN.pdf:2
 DIST_SUBDIR=	kmfl
 EXTRACT_ONLY=	IPAUni_Src12.zip
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	IPA Unicode 5.1 mnemonic keyboard for KMFL IMEngine
 
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
+RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
 USES=		dos2unix zip
 WRKSRC=		${WRKDIR}/IPA12

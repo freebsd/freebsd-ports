@@ -13,25 +13,25 @@ COMMENT=	Vagrant Virtual Machine Manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	rubygem-builder32>=2.1.2:${PORTSDIR}/devel/rubygem-builder32 \
-		rubygem-bundler>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler \
-		rubygem-main>=1.0:${PORTSDIR}/devel/rubygem-main
-RUN_DEPENDS=	rubygem-bundler>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler \
-		rubygem-childprocess>=0.5.1:${PORTSDIR}/devel/rubygem-childprocess \
-		rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis \
-		rubygem-hashicorp-checkpoint>=0.1.4:${PORTSDIR}/www/rubygem-hashicorp-checkpoint \
-		rubygem-i18n>=0.6.9:${PORTSDIR}/devel/rubygem-i18n \
-		rubygem-listen>=3.0.2:${PORTSDIR}/devel/rubygem-listen \
-		rubygem-log4r>=1.1.10:${PORTSDIR}/sysutils/rubygem-log4r \
-		rubygem-net-scp>=1.1.0:${PORTSDIR}/security/rubygem-net-scp \
-		rubygem-net-sftp>=2.1:${PORTSDIR}/security/rubygem-net-sftp \
-		rubygem-net-ssh>=3.0.1:${PORTSDIR}/security/rubygem-net-ssh \
-		rubygem-nokogiri>=1.6.3.1:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-rb-kqueue>=0.2.2:${PORTSDIR}/devel/rubygem-rb-kqueue \
-		rubygem-rest-client>=1.6.0:${PORTSDIR}/www/rubygem-rest-client \
-		rubygem-wdm>=0.1.0:${PORTSDIR}/devel/rubygem-wdm \
-		rubygem-winrm>=1.3.0:${PORTSDIR}/sysutils/rubygem-winrm \
-		rubygem-winrm-fs>=0.2.0:${PORTSDIR}/sysutils/rubygem-winrm-fs
+BUILD_DEPENDS=	rubygem-builder32>=2.1.2:devel/rubygem-builder32 \
+		rubygem-bundler>=1.5.3:sysutils/rubygem-bundler \
+		rubygem-main>=1.0:devel/rubygem-main
+RUN_DEPENDS=	rubygem-bundler>=1.5.3:sysutils/rubygem-bundler \
+		rubygem-childprocess>=0.5.1:devel/rubygem-childprocess \
+		rubygem-erubis>=2.7.0:www/rubygem-erubis \
+		rubygem-hashicorp-checkpoint>=0.1.4:www/rubygem-hashicorp-checkpoint \
+		rubygem-i18n>=0.6.9:devel/rubygem-i18n \
+		rubygem-listen>=3.0.2:devel/rubygem-listen \
+		rubygem-log4r>=1.1.10:sysutils/rubygem-log4r \
+		rubygem-net-scp>=1.1.0:security/rubygem-net-scp \
+		rubygem-net-sftp>=2.1:security/rubygem-net-sftp \
+		rubygem-net-ssh>=3.0.1:security/rubygem-net-ssh \
+		rubygem-nokogiri>=1.6.3.1:textproc/rubygem-nokogiri \
+		rubygem-rb-kqueue>=0.2.2:devel/rubygem-rb-kqueue \
+		rubygem-rest-client>=1.6.0:www/rubygem-rest-client \
+		rubygem-wdm>=0.1.0:devel/rubygem-wdm \
+		rubygem-winrm>=1.3.0:sysutils/rubygem-winrm \
+		rubygem-winrm-fs>=0.2.0:sysutils/rubygem-winrm-fs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitchellh

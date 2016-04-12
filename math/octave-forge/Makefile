@@ -35,13 +35,13 @@ TARBALLS_DIR=		${LOCALBASE}/share/octave/tarballs
 .for OPT in ${OPTIONS_DEFINE}
 . if ${OPTIONS_DEFINE:MGENERATE_HTML} == ${OPT} || ${OPTIONS_DEFINE:MPT_BR} == ${OPT}
 ${OPT}_DESC=		Install package: ${OPT:tl}
-${OPT}_RUN_DEPENDS=	${TARBALLS_DIR}/${OPT:tl}.tar.gz:${PORTSDIR}/math/octave-forge-${OPT:tl}
+${OPT}_RUN_DEPENDS=	${TARBALLS_DIR}/${OPT:tl}.tar.gz:math/octave-forge-${OPT:tl}
 . else
 ${OPT}_DESC=		Install package: ${OPT:tl:S/_/-/g}
 .  if ${OPTIONS_DEFINE:MBENCHMARK} == ${OPT}
-${OPT}_RUN_DEPENDS=	${TARBALLS_DIR}/${OPT:tl:S/_/-/g}.tar.gz:${PORTSDIR}/benchmarks/octave-forge-${OPT:tl:S/_/-/g}
+${OPT}_RUN_DEPENDS=	${TARBALLS_DIR}/${OPT:tl:S/_/-/g}.tar.gz:benchmarks/octave-forge-${OPT:tl:S/_/-/g}
 .  else
-${OPT}_RUN_DEPENDS=	${TARBALLS_DIR}/${OPT:tl:S/_/-/g}.tar.gz:${PORTSDIR}/math/octave-forge-${OPT:tl:S/_/-/g}
+${OPT}_RUN_DEPENDS=	${TARBALLS_DIR}/${OPT:tl:S/_/-/g}.tar.gz:math/octave-forge-${OPT:tl:S/_/-/g}
 .  endif
 . endif
 .endfor

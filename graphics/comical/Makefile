@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sequential image viewer
 
-LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar
+LIB_DEPENDS=	libunrar.so:archivers/libunrar
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

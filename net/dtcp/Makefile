@@ -12,7 +12,7 @@ COMMENT=	Dynamic Tunnel Configuration Protocol daemon and client
 LICENSE=	BSD3CLAUSE
 
 .if defined(WITH_QPOPAUTH)
-RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
+RUN_DEPENDS=	qpopauth:mail/qpopper
 .endif
 
 USES=		uidfix

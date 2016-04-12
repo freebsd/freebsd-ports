@@ -11,8 +11,8 @@ MASTER_SITES=	http://dst.lbl.gov/ACSSoftware/nux/nux-download/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small open-source XQuery extension of the XOM library
 
-RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom \
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel
+RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:textproc/xom \
+		${JAVALIBDIR}/saxon9.jar:textproc/saxon-devel
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=		XQUERY_TOOL DOCS
 OPTIONS_DEFAULT=	XQUERY_TOOL
 
 XQUERY_TOOL_DESC=	Install the XQuery command-line tool
-XQUERY_TOOL_RUN_DEPENDS=${JAVALIBDIR}/java-getopt.jar:${PORTSDIR}/java/java-getopt
+XQUERY_TOOL_RUN_DEPENDS=${JAVALIBDIR}/java-getopt.jar:java/java-getopt
 XQUERY_TOOL_PLIST_FILES=bin/fire-xquery
 XQUERY_TOOL_SUB_FILES=	fire-xquery.sh
 

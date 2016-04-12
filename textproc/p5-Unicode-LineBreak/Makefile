@@ -15,7 +15,7 @@ COMMENT=	Unicode-LineBreak package
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-MIME-Charset>=1.006.2:${PORTSDIR}/mail/p5-MIME-Charset
+BUILD_DEPENDS=	p5-MIME-Charset>=1.006.2:mail/p5-MIME-Charset
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
@@ -30,7 +30,7 @@ OPTIONS_DEFAULT=THAI
 
 THAI_DESC=	Thai word segmentation support through libthai
 THAI_USES=	pkgconfig
-THAI_LIB_DEPENDS=	libthai.so:${PORTSDIR}/devel/libthai
+THAI_LIB_DEPENDS=	libthai.so:devel/libthai
 THAI_CONFIGURE_OFF=	--disable-libthai
 
 post-install:

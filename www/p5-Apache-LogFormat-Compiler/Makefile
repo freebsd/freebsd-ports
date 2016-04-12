@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-POSIX-strftime-Compiler>=0.30:${PORTSDIR}/devel/p5-POSIX-strftime-Compiler
+	p5-POSIX-strftime-Compiler>=0.30:devel/p5-POSIX-strftime-Compiler
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

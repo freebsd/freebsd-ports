@@ -58,7 +58,7 @@ CFLAGS_i386+=	-mstack-alignment=16 -mstackrealign
 .endif # ${CHOSEN_COMPILER_TYPE} == clang
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS+=	${LOCALBASE}/bin/yasm:devel/yasm
 .endif
 
 CFLAGS_armv6+=	-no-integrated-as

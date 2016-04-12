@@ -14,7 +14,7 @@ COMMENT=	Simple interface to SVN::Delta::Editor
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
+BUILD_DEPENDS=	p5-subversion>=0:devel/p5-subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -9,21 +9,21 @@ MASTER_SITES=	http://andreas.vdr-developer.org/vdradmin-am/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - webinterface
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
-		p5-Template-Plugin-JavaScript>=0:${PORTSDIR}/www/p5-Template-Plugin-JavaScript \
-		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
-		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
-		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
-		p5-Template-Plugin-JavaScript>=0:${PORTSDIR}/www/p5-Template-Plugin-JavaScript \
-		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
-		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
-		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	bash:shells/bash \
+		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
+		p5-Template-Plugin-JavaScript>=0:www/p5-Template-Plugin-JavaScript \
+		p5-Authen-SASL>=0:security/p5-Authen-SASL \
+		p5-IO-Compress>=0:archivers/p5-IO-Compress \
+		p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-libwww>=0:www/p5-libwww
+RUN_DEPENDS=	p5-Locale-gettext>=0:devel/p5-Locale-gettext \
+		p5-Template-Plugin-JavaScript>=0:www/p5-Template-Plugin-JavaScript \
+		p5-Authen-SASL>=0:security/p5-Authen-SASL \
+		p5-IO-Compress>=0:archivers/p5-IO-Compress \
+		p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-libwww>=0:www/p5-libwww
 
 DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1

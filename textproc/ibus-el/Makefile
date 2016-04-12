@@ -11,8 +11,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IBus client for GNU Emacs
 
-RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus \
-		${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
+RUN_DEPENDS=	ibus-daemon:textproc/ibus \
+		${PYTHON_SITELIBDIR}/Xlib/X.py:x11-toolkits/py-xlib
 
 USES=		python:run
 USE_EMACS=	yes

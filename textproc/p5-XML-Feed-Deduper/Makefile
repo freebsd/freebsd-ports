@@ -14,10 +14,10 @@ COMMENT=	Remove duplicated entries from feed
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mouse>0:${PORTSDIR}/devel/p5-Mouse \
-		p5-XML-Feed>=0.41:${PORTSDIR}/textproc/p5-XML-Feed
-RUN_DEPENDS=	p5-Mouse>0:${PORTSDIR}/devel/p5-Mouse \
-		p5-XML-Feed>=0.41:${PORTSDIR}/textproc/p5-XML-Feed
+BUILD_DEPENDS=	p5-Mouse>0:devel/p5-Mouse \
+		p5-XML-Feed>=0.41:textproc/p5-XML-Feed
+RUN_DEPENDS=	p5-Mouse>0:devel/p5-Mouse \
+		p5-XML-Feed>=0.41:textproc/p5-XML-Feed
 
 USES=		perl5
 USE_PERL5=	modbuild

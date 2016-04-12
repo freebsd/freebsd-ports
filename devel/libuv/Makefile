@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libuv
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.libuv.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -15,8 +15,8 @@ LICENSE_NAME=	NODE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-TEST_DEPENDS=	gyp:${PORTSDIR}/devel/py-gyp-devel	\
-		gmake:${PORTSDIR}/devel/gmake
+TEST_DEPENDS=	gyp:devel/py-gyp-devel	\
+		gmake:devel/gmake
 
 USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes

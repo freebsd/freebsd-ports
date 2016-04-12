@@ -10,8 +10,8 @@ DISTFILES=	ken_all-${PORTVERSION_K}.zip jigyosyo-${PORTVERSION_J}.zip
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	ajaxzip2 (Japanese ZIP code utility) ZIP data
 
-BUILD_DEPENDS=	ja-ajaxzip2-core>0:${PORTSDIR}/japanese/ajaxzip2-core \
-		p5-JSON>0:${PORTSDIR}/converters/p5-JSON
+BUILD_DEPENDS=	ja-ajaxzip2-core>0:japanese/ajaxzip2-core \
+		p5-JSON>0:converters/p5-JSON
 
 NO_WRKSUBDIR=	yes
 USES=		perl5 zip

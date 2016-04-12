@@ -12,7 +12,7 @@ COMMENT=	Network Traffic Accounting and Monitoring Software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	libpcap.so:net/libpcap
 
 SSP_UNSAFE=	kernel module does not support ssp
 USE_SUBMAKE=	yes
@@ -65,22 +65,22 @@ PGSQL_FILES=	cardtool_schema-Pg.sql postgresql_schema.sql
 MAN_8=		netams.8 flowprobe.8 netamsctl.8
 
 .if ${PORT_OPTIONS:MCGI}
-RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
-		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil \
-		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Crypt-GeneratePassword>=0:${PORTSDIR}/security/p5-Crypt-GeneratePassword
+RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD \
+		p5-GD-Graph>=0:graphics/p5-GD-Graph \
+		p5-GD-TextUtil>=0:graphics/p5-GD-TextUtil \
+		p5-Storable>=0:devel/p5-Storable \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-Crypt-GeneratePassword>=0:security/p5-Crypt-GeneratePassword
 
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:graphics/gd
 USES+=		jpeg
 
 . if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 . endif
 
 . if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 . endif
 .endif # CGI
 

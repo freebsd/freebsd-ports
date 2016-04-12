@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	Module to read Mozilla URL history files
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
-RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser
+RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser
 
 USES=		perl5
 USE_PERL5=	configure

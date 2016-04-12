@@ -10,8 +10,8 @@ MASTER_SITES=	RG
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	Ruby DataObjects driver to the SQLite DB engine version 3
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	rubygem-data_objects>=0.10.13:${PORTSDIR}/databases/rubygem-data_objects
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+RUN_DEPENDS=	rubygem-data_objects>=0.10.13:databases/rubygem-data_objects
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

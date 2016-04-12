@@ -13,8 +13,8 @@ COMMENT=	Perl script that extracts URLs from email in MIME or plain text format
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake perl5
@@ -40,10 +40,10 @@ URLVIEW_DESC=		Uses urlview for the URL selector menu
 
 OPTIONS_SUB=	yes
 
-CURSES_UI_RUN_DEPENDS=		p5-Curses-UI>=0:${PORTSDIR}/devel/p5-Curses-UI
-GETOPT_LONG_RUN_DEPENDS=	p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
-URLVIEW_RUN_DEPENDS=		urlview>=0:${PORTSDIR}/textproc/urlview
-URI_FIND_RUN_DEPENDS=		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find
+CURSES_UI_RUN_DEPENDS=		p5-Curses-UI>=0:devel/p5-Curses-UI
+GETOPT_LONG_RUN_DEPENDS=	p5-Getopt-Long>=0:devel/p5-Getopt-Long
+URLVIEW_RUN_DEPENDS=		urlview>=0:textproc/urlview
+URI_FIND_RUN_DEPENDS=		p5-URI-Find>=0:textproc/p5-URI-Find
 
 PORTDOCS=	AUTHORS NEWS README
 

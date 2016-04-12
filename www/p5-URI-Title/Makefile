@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Get the titles of things on the web in a sensible way
 
-COMMON_DEPENDS=	p5-File-Type>=0.22:${PORTSDIR}/devel/p5-File-Type \
-		p5-HTML-Parser>=3.45:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Image-Size>0:${PORTSDIR}/graphics/p5-Image-Size \
-		p5-MP3-Info>0:${PORTSDIR}/audio/p5-MP3-Info \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+COMMON_DEPENDS=	p5-File-Type>=0.22:devel/p5-File-Type \
+		p5-HTML-Parser>=3.45:www/p5-HTML-Parser \
+		p5-Image-Size>0:graphics/p5-Image-Size \
+		p5-MP3-Info>0:audio/p5-MP3-Info \
+		p5-libwww>0:www/p5-libwww
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 

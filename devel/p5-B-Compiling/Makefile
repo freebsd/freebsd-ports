@@ -13,7 +13,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
+	p5-Sub-Exporter>0:devel/p5-Sub-Exporter
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

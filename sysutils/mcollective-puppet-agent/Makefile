@@ -2,23 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	mcollective-puppet-agent
-PORTVERSION=	1.7.0
-CATEGORIES=	sysutils
 
-MAINTAINER=	anes@anes.su
-COMMENT=	Puppet agent manager for mcollective
+COMMENT=	MCollective agent to manage the Puppet Agent
 
-RUN_DEPENDS=	mcollective>=2:${PORTSDIR}/sysutils/mcollective
+# See MASTERDIR for MAINTAINER.
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	puppetlabs
+RUN_DEPENDS=	mcollective-puppet-common>=${PORTVERSION}:sysutils/mcollective-puppet-common
 
-NO_BUILD=	yes
+MASTERDIR=	${.CURDIR}/../mcollective-puppet-common
 
-MCOLLECTIVEDIR=	${STAGEDIR}${PREFIX}/share/mcollective
+PLIST_FILES=	share/mcollective/agent/puppet.rb
 
 do-install:
-	@${MKDIR} ${MCOLLECTIVEDIR}
-	@cd ${WRKSRC} && ${PAX} -r -w . ${MCOLLECTIVEDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "agent/*.rb" ${STAGEDIR}${PREFIX}/share/mcollective
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

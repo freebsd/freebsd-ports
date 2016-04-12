@@ -11,17 +11,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Is a commandline scoreboard viewer for the Apache server
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_APACHE=	22+
 
 PLIST_FILES=	sbin/ftasv
-SUB_FILES=	pkg-message
-PORTDOCS=	AUTHORS COPYING ChangeLog README
+PORTDOCS=	AUTHORS ChangeLog README
+
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+DOCS_SUB_FILES=	pkg-message
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Module for working with UNIX-flavoured mailboxes
 
-BUILD_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-Mail-Mbox-MessageParser>=0:${PORTSDIR}/mail/p5-Mail-Mbox-MessageParser
+BUILD_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+		p5-Mail-Mbox-MessageParser>=0:mail/p5-Mail-Mbox-MessageParser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

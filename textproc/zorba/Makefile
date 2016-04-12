@@ -13,19 +13,19 @@ COMMENT=	General purpose C++ XQuery processor
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
-		libicudata.so:${PORTSDIR}/devel/icu \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libtidy.so:${PORTSDIR}/www/tidy-lib \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
-RUN_DEPENDS=	fop:${PORTSDIR}/textproc/fop
+LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
+		libicudata.so:devel/icu \
+		libcurl.so:ftp/curl \
+		libtidy.so:www/tidy-lib \
+		libuuid.so:misc/e2fsprogs-libuuid
+RUN_DEPENDS=	fop:textproc/fop
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	PHP PYTHON RUBY JAVA DOCS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_BUILD_DEPENDS+=	doxygen:devel/doxygen
 PHP_CMAKE_ON=		-DWITH_PHP5:BOOL=true
 PHP_CMAKE_OFF=		-DWITH_PHP5:BOOL=false
 PYTHON_CMAKE_ON=	-DWITH_PYTHON:BOOL=true
@@ -45,8 +45,8 @@ USES=		cmake:outsource compiler:c++11-lib execinfo
 CXXFLAGS+=	-I${LOCALBASE}/include -O1 # compiler hangs with -O2 on CURRENT
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
-    		-DLOCALBASE:STRING=${LOCALBASE} \
-    		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+		-DLOCALBASE:STRING=${LOCALBASE} \
+		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
@@ -91,7 +91,7 @@ CMAKE_ARGS+=	-DJAVA_LIBDIR:PATH=${JAVALIBDIR}
 .endif
 
 .if defined(WITH_SWIG)
-BUILD_DEPENDS+=	swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS+=	swig2.0:devel/swig20
 .endif
 
 post-patch:

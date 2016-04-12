@@ -13,7 +13,7 @@ COMMENT=	Fax send/receive program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
+RUN_DEPENDS=	xloadimage:x11/xloadimage
 
 DOCSDIR=	${PREFIX}/share/doc/efax
 PORTDOCS=	README printcap.sample efax.html fax.html

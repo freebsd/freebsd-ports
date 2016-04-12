@@ -7,8 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for libplist
 
-LIB_DEPENDS=	libplist.so:${PORTSDIR}/${MASTER_PORT}
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
+LIB_DEPENDS=	libplist.so:${MASTER_PORT}
+BUILD_DEPENDS=	cython:lang/cython
 
 USES=		python
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"

@@ -12,7 +12,7 @@ COMMENT=	x86 CPU identification utility
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpci.so:${PORTSDIR}/devel/libpci
+LIB_DEPENDS=	libpci.so:devel/libpci
 
 ONLY_FOR_ARCHS=	i386 amd64
 

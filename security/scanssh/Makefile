@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.monkey.org/~provos/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scans networks for open proxies, SSH, web, and SMTP servers
 
-LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet \
-		libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libdnet.so:net/libdnet \
+		libevent.so:devel/libevent2
 
 GNU_CONFIGURE=	YES
 PLIST_FILES=	bin/scanssh man/man1/scanssh.1.gz

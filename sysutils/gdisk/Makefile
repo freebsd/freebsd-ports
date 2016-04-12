@@ -12,8 +12,8 @@ COMMENT=	GPT fdisk
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+		libpopt.so:devel/popt
 
 WRKSRC=		${WRKDIR}/gptfdisk-${PORTVERSION}
 
@@ -36,11 +36,11 @@ PROGRAM_LIST=	fixparts gdisk sgdisk
 
 .if ${PORT_OPTIONS:MCGDISK}
 PROGRAM_LIST+=	cgdisk
-LIB_DEPENDS+=	libncurses.so:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS+=	libncurses.so:devel/ncurses
 .endif
 
 .if ${PORT_OPTIONS:MUTF16}
-LIB_DEPENDS+=	libicuuc.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicuuc.so:devel/icu
 .endif
 
 post-patch:

@@ -12,9 +12,7 @@ bin/fvwm-root
 bin/fvwm
 bin/fvwm2
 bin/xpmroot
-@unexec if cmp -s %D/etc/system.fvwm2rc %D/etc/system.fvwm2rc.dist; then rm -f %D/etc/system.fvwm2rc; fi
-etc/system.fvwm2rc.dist
-@exec [ -f %B/system.fvwm2rc ] || cp %B/%f %B/system.fvwm2rc
+@sample etc/system.fvwm2rc.dist etc/system.fvwm2rc
 libexec/fvwm/%%FVWM_VERSION%%/FvwmAnimate
 libexec/fvwm/%%FVWM_VERSION%%/FvwmAudio
 libexec/fvwm/%%FVWM_VERSION%%/FvwmAuto

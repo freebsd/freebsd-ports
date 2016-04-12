@@ -14,10 +14,10 @@ COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-Digest-HMAC>=1.03:${PORTSDIR}/security/p5-Digest-HMAC
+BUILD_DEPENDS=	p5-Digest-HMAC>=1.03:security/p5-Digest-HMAC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Digest-BubbleBabble>=0:${PORTSDIR}/security/p5-Digest-BubbleBabble \
-		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
+TEST_DEPENDS=	p5-Digest-BubbleBabble>=0:security/p5-Digest-BubbleBabble \
+		p5-Test-Pod>=0:devel/p5-Test-Pod
 
 OPTIONS_DEFINE=	GOST IDN IPV6 SSHFP
 GOST_DESC=	GOST support
@@ -28,18 +28,18 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-GOST_BUILD_DEPENDS=	p5-Digest-GOST>=0.06:${PORTSDIR}/security/p5-Digest-GOST
-GOST_RUN_DEPENDS=	p5-Digest-GOST>=0.06:${PORTSDIR}/security/p5-Digest-GOST
-IDN_BUILD_DEPENDS=	p5-Net-LibIDN>=0.12:${PORTSDIR}/dns/p5-Net-LibIDN
-IDN_RUN_DEPENDS=	p5-Net-LibIDN>=0.12:${PORTSDIR}/dns/p5-Net-LibIDN
-SSHFP_BUILD_DEPENDS=	p5-Digest-BubbleBabble>=0.01:${PORTSDIR}/security/p5-Digest-BubbleBabble
-SSHFP_RUN_DEPENDS=	p5-Digest-BubbleBabble>=0.01:${PORTSDIR}/security/p5-Digest-BubbleBabble
+GOST_BUILD_DEPENDS=	p5-Digest-GOST>=0.06:security/p5-Digest-GOST
+GOST_RUN_DEPENDS=	p5-Digest-GOST>=0.06:security/p5-Digest-GOST
+IDN_BUILD_DEPENDS=	p5-Net-LibIDN>=0.12:dns/p5-Net-LibIDN
+IDN_RUN_DEPENDS=	p5-Net-LibIDN>=0.12:dns/p5-Net-LibIDN
+SSHFP_BUILD_DEPENDS=	p5-Digest-BubbleBabble>=0.01:security/p5-Digest-BubbleBabble
+SSHFP_RUN_DEPENDS=	p5-Digest-BubbleBabble>=0.01:security/p5-Digest-BubbleBabble
 
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIPV6} && ${PERL_LEVEL} < 502200
-BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.32:${PORTSDIR}/net/p5-IO-Socket-IP
-RUN_DEPENDS+=	p5-IO-Socket-IP>=0.32:${PORTSDIR}/net/p5-IO-Socket-IP
+BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.32:net/p5-IO-Socket-IP
+RUN_DEPENDS+=	p5-IO-Socket-IP>=0.32:net/p5-IO-Socket-IP
 .endif
 
 .include <bsd.port.post.mk>

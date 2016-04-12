@@ -17,13 +17,13 @@ LICENSE_NAME_CCBYNCSAv3=	Creative Commons Attribution-NonCommercial-ShareAlike L
 LICENSE_FILE_CCBYNCSAv3=	${WRKSRC}/Doc/LICENSE.TXT
 LICENSE_PERMS_CCBYNCSAv3=	dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip \
-			${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=		libespeak.so:${PORTSDIR}/audio/espeak \
-			libnspr4.so:${PORTSDIR}/devel/nspr \
-			libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-			libpng.so:${PORTSDIR}/graphics/png \
-			libminizip.so:${PORTSDIR}/archivers/minizip
+BUILD_DEPENDS=		zip:archivers/zip \
+			${LOCALBASE}/bin/unzip:archivers/unzip
+LIB_DEPENDS=		libespeak.so:audio/espeak \
+			libnspr4.so:devel/nspr \
+			libvorbisfile.so:audio/libvorbis \
+			libpng.so:graphics/png \
+			libminizip.so:archivers/minizip
 
 USES=			gnustep openal:al perl5 python:build tar:bzip2
 USE_GL=			yes
@@ -67,7 +67,7 @@ WITH_PORTS_CLANG=	yes
 .endif
 
 .if defined(WITH_PORTS_CLANG)
-BUILD_DEPENDS+=	clang34:${PORTSDIR}/lang/clang34
+BUILD_DEPENDS+=	clang34:lang/clang34
 CC=		${LOCALBASE}/bin/clang34
 CXX=		${LOCALBASE}/bin/clang++34
 CPP=		${LOCALBASE}/bin/clang-cpp34

@@ -10,7 +10,7 @@ COMMENT=	Convert html code into markdown
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-nokogiri>=1.6.6.2:${PORTSDIR}/textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-nokogiri>=1.6.6.2:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes

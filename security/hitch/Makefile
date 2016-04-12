@@ -12,7 +12,7 @@ COMMENT=		TLS proxy to forward connections to an unencrypted backend
 LICENSE=		BSD2CLAUSE
 
 BUILD_DEPENDS=		rst2man:textproc/py-docutils
-LIB_DEPENDS=		libev.so:${PORTSDIR}/devel/libev
+LIB_DEPENDS=		libev.so:devel/libev
 
 USERS=			nobody
 GROUPS=			nobody

@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=	ALL
 ${game}_PORT?=		games/${game}
 ${game}_DETECT?=	${KDE4_PREFIX}/bin/${game}
 ${game}_DESC?=		Please fix a typo in option name/desc!
-${game}_RUN_DEPENDS=	${${game}_DETECT}:${PORTSDIR}/${${game}_PORT}
+${game}_RUN_DEPENDS=	${${game}_DETECT}:${${game}_PORT}
 ALL_RUN_DEPENDS+=	${${game}_RUN_DEPENDS}
 .endfor
 

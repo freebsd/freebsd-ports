@@ -4,9 +4,7 @@ otrs/.fetchmailrc.dist
 otrs/.mailfilter.dist
 otrs/.procmailrc.dist
 otrs/ARCHIVE
-@unexec if cmp -s %D/otrs/Kernel/Config.pm.dist %D/otrs/Kernel/Config.pm; then rm -f %D/otrs/Kernel/Config.pm; fi
-otrs/Kernel/Config.pm.dist
-@exec if [ ! -f %B/Config.pm ] ; then cp -p %D/%F %B/Config.pm; fi
+@sample otrs/Kernel/Config.pm.dist otrs/Kernel/Config.pm
 otrs/Kernel/Config/Defaults.pm
 otrs/Kernel/Config/Files/CloudServices.xml
 otrs/Kernel/Config/Files/Daemon.xml

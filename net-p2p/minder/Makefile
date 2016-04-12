@@ -12,7 +12,7 @@ COMMENT=	Small network application for automatic maintenance of peer lists
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libSockets.so:${PORTSDIR}/net/Sockets
+LIB_DEPENDS=	libSockets.so:net/Sockets
 
 USES=		gmake pkgconfig
 USE_GNOME=	libxml2

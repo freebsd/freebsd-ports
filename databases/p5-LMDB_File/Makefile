@@ -12,7 +12,7 @@ COMMENT=	Perl wrapper around the OpenLDAP's LMDB
 
 LICENSE=	ART20
 
-LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
+LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 CFLAGS+=	-I${LOCALBASE}/include
 USES=		perl5

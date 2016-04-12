@@ -14,9 +14,9 @@ COMMENT=	DocBook to LaTeX XSL stylesheets
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl
+RUN_DEPENDS=	xsltproc:textproc/libxslt \
+		docbook-xml>0:textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/docbook/VERSION:textproc/docbook-xsl
 
 NO_BUILD=	yes
 

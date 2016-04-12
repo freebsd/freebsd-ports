@@ -15,7 +15,7 @@ COMMENT=	High Quality Rendering Engine for C++
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copying
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool pathfix pkgconfig

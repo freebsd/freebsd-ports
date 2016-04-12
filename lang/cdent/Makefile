@@ -10,7 +10,7 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Portable Module Programming Language
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml
 
 USES=		python
 USE_PYTHON=	distutils autoplist

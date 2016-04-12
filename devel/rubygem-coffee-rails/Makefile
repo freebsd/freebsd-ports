@@ -13,8 +13,8 @@ COMMENT=	Coffee Script adapter for the Rails asset pipeline
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-coffee-script>=2.2.0:${PORTSDIR}/devel/rubygem-coffee-script \
-		rubygem-railties>=3.2.10:${PORTSDIR}/www/rubygem-railties
+RUN_DEPENDS=	rubygem-coffee-script>=2.2.0:devel/rubygem-coffee-script \
+		rubygem-railties>=3.2.10:www/rubygem-railties
 
 NO_ARCH=	yes
 USE_RUBY=	yes

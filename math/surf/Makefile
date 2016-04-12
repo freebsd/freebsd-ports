@@ -12,8 +12,8 @@ COMMENT=	Visualize some real algebraic geometry
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libgmp.so:math/gmp
 
 USES=		jpeg
 USE_XORG=	x11 xmu

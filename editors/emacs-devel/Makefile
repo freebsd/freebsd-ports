@@ -83,13 +83,13 @@ LLDB_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-lldb-gud.el
 
 SOUND_CONFIGURE_OFF=	--with-sound=no
 ALSA_CONFIGURE_ON=	--with-sound=alsa
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 OSS_CONFIGURE_ON=	--with-sound=oss
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=	dbus
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 
 XML_USE=		GNOME=libxml2
@@ -108,7 +108,7 @@ GTK2_CONFIGURE_ON=	-with-x-toolkit=gtk2
 GTK3_USE=		GNOME=gtk30
 GTK3_CONFIGURE_ON=	--with-x-toolkit=gtk3
 
-XAW3D_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_ON=	--with-x-toolkit=athena
 
 XAW_USE=		XORG=xaw
@@ -124,29 +124,29 @@ SYNC_INPUT_CONFIGURE_WITH=sync-input
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=	tiff
 
-GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CONFIGURE_WITH=	gif
 
-PNG_LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS+=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
 
 XPM_USE=		XORG=xpm
 XPM_CONFIGURE_WITH=	xpm
 
 XFT_USE=		XORG=xft
-XFT_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2
 XFT_CONFIGURE_WITH=	xft
 
-M17N_LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
+M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=	m17n-flt
 
-OTF_LIB_DEPENDS=	libotf.so:${PORTSDIR}/print/libotf
+OTF_LIB_DEPENDS=	libotf.so:print/libotf
 OTF_CONFIGURE_WITH=	libotf
 
-MAGICK_LIB_DEPENDS=libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
+MAGICK_LIB_DEPENDS=libMagickCore-6.so:graphics/ImageMagick
 MAGICK_CONFIGURE_WITH=	imagemagick
 
 GSETTINGS_USE=		gnome=glib20
@@ -172,7 +172,7 @@ CAIRO_CONFIGURE_ON=	--with-cairo
 MODULES_CONFIGURE_ON=	--with-modules
 
 XWIDGETS_CONFIGURE_ON=	--with-xwidgets
-XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 
 .include <bsd.port.options.mk>
 

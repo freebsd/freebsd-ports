@@ -13,8 +13,8 @@ COMMENT=	Symfony2 Console Component
 
 LICENSE=	MIT
 
-BUILD_DEPENDS+= ${PEARDIR}/.channels/pear.symfony.com.reg:${PORTSDIR}/devel/pear-channel-symfony2
-RUN_DEPENDS+=	${PEARDIR}/.channels/pear.symfony.com.reg:${PORTSDIR}/devel/pear-channel-symfony2
+BUILD_DEPENDS+= ${PEARDIR}/.channels/pear.symfony.com.reg:devel/pear-channel-symfony2
+RUN_DEPENDS+=	${PEARDIR}/.channels/pear.symfony.com.reg:devel/pear-channel-symfony2
 
 USES=		pear
 PEAR_CHANNEL=	symfony2

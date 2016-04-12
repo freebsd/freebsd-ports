@@ -13,7 +13,7 @@ COMMENT=	PostgreSQL database design and management system
 
 LICENSE=	PostgreSQL
 
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 USES=		compiler:c++11-lib gettext gmake pgsql:9.0+
 GNU_CONFIGURE=	yes

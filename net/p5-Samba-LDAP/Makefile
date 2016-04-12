@@ -11,16 +11,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manage a Samba PDC with an LDAP Backend
 
-BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
-		p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
-		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
-		p5-Crypt-SmbHash>=0:${PORTSDIR}/security/p5-Crypt-SmbHash \
-		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
-		p5-Regexp-DefaultFlags>=0:${PORTSDIR}/textproc/p5-Regexp-DefaultFlags \
-		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-Unicode-MapUTF8>=0:${PORTSDIR}/converters/p5-Unicode-MapUTF8
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-Readonly>=0:devel/p5-Readonly \
+		p5-Class-Base>=0:devel/p5-Class-Base \
+		p5-Config-Tiny>=0:devel/p5-Config-Tiny \
+		p5-Crypt-SmbHash>=0:security/p5-Crypt-SmbHash \
+		p5-perl-ldap>=0:net/p5-perl-ldap \
+		p5-Regexp-DefaultFlags>=0:textproc/p5-Regexp-DefaultFlags \
+		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require \
+		p5-Unicode-MapUTF8>=0:converters/p5-Unicode-MapUTF8
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

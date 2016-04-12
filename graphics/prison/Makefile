@@ -13,8 +13,8 @@ COMMENT=	Barcode library for KDE
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdmtx.so:${PORTSDIR}/graphics/libdmtx \
-		libqrencode.so:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS=	libdmtx.so:graphics/libdmtx \
+		libqrencode.so:graphics/libqrencode
 
 USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 USES=		cmake

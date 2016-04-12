@@ -73,19 +73,19 @@ TMPDIR?=	${WRKDIR}/tmp
 .endif
 
 .if !defined(STANDALONE) || ${PORT_OPTIONS:MDYNAMIC}
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc:lang/ghc
+BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:lang/ghc
+RUN_DEPENDS+=	ghc:lang/ghc
+RUN_DEPENDS+=	ghc>=${GHC_VERSION}:lang/ghc
 .else
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc:lang/ghc
+BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:lang/ghc
 .endif
 
 
 .if ${PORT_OPTIONS:MPCLANG}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:${PORTSDIR}/lang/clang${LLVM_VERSION}
-RUN_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:${PORTSDIR}/lang/clang${LLVM_VERSION}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:lang/clang${LLVM_VERSION}
+RUN_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:lang/clang${LLVM_VERSION}
 CC=		${LOCALBASE}/bin/clang${LLVM_VERSION}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VERSION}
 CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_VERSION}
@@ -109,26 +109,26 @@ CONFIGURE_ARGS+=	--ghc-option=-fllvm \
 			--ghc-option=-pgmlo --ghc-option=${LOCALBASE}/bin/opt${LLVM_VERSION} \
 			--ghc-option=-pgmlc --ghc-option=${LOCALBASE}/bin/llc${LLVM_VERSION}
 
-BUILD_DEPENDS+=		${LOCALBASE}/bin/opt${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
+BUILD_DEPENDS+=		${LOCALBASE}/bin/opt${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 .endif
 
 .if defined(USE_ALEX)
-BUILD_DEPENDS+=	${ALEX_CMD}:${PORTSDIR}/devel/hs-alex
+BUILD_DEPENDS+=	${ALEX_CMD}:devel/hs-alex
 CONFIGURE_ARGS+=	 --with-alex=${ALEX_CMD}
 .endif
 
 .if defined(USE_HAPPY)
-BUILD_DEPENDS+=	${HAPPY_CMD}:${PORTSDIR}/devel/hs-happy
+BUILD_DEPENDS+=	${HAPPY_CMD}:devel/hs-happy
 CONFIGURE_ARGS+=	 --with-happy=${HAPPY_CMD}
 .endif
 
 .if defined(USE_C2HS)
-BUILD_DEPENDS+=	${C2HS_CMD}:${PORTSDIR}/devel/hs-c2hs
+BUILD_DEPENDS+=	${C2HS_CMD}:devel/hs-c2hs
 CONFIGURE_ARGS+=	--with-c2hs=${C2HS_CMD}
 .endif
 
 .if defined(EXECUTABLE)
-LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:math/gmp
 USES+=		iconv
 
 CONFIGURE_ARGS+=	--enable-executable-stripping
@@ -153,7 +153,7 @@ __u_h_r_version:=	${cabal_package:C/^[^<=>]*//g}
 .endif
 
 dependencies:=	${dependencies} \
-${HSPREFIX}${__u_h_r_package}${__u_h_r_version}:${PORTSDIR}/${__u_h_r_port}
+${HSPREFIX}${__u_h_r_package}${__u_h_r_version}:${__u_h_r_port}
 .endfor
 
 BUILD_DEPENDS+=	${dependencies}
@@ -171,7 +171,7 @@ RUN_DEPENDS+=	${dependencies}
 HADDOCK_OPTS=	# empty
 
 .if ${PORT_OPTIONS:MHSCOLOUR}
-BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
+BUILD_DEPENDS+=	HsColour:print/hs-hscolour
 
 HSCOLOUR_DATADIR=	${LOCALBASE}/share/cabal/ghc-${GHC_VERSION}/hscolour-${HSCOLOUR_VERSION}
 HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
@@ -181,8 +181,8 @@ HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.c
 .endif
 
 .if defined(XMLDOCS)
-BUILD_DEPENDS+=	docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS+=	docbook-xsl>0:textproc/docbook-xsl \
+		${LOCALBASE}/bin/xsltproc:textproc/libxslt
 
 USES+=		gmake
 

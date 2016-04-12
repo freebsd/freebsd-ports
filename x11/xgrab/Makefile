@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}sc.2_41
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 image grabber
 
-BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
+BUILD_DEPENDS=	xrdb:x11/xrdb
 
 USES=		display:build imake:notall tar:Z
 USE_XORG=	x11 xaw

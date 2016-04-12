@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for single instance applications
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 USE_XORG=	ice x11
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz

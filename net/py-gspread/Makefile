@@ -12,7 +12,7 @@ COMMENT=	Google Spreadsheets Python API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
 
 USES=	python:2
 USE_PYTHON=	distutils autoplist

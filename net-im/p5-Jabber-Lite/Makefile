@@ -15,10 +15,10 @@ COMMENT=	Standalone library for communicating with Jabber servers
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+BUILD_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-Net-DNS>=0:dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

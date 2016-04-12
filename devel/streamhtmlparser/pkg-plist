@@ -8,9 +8,7 @@ lib/libstreamhtmlparser.so.0
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@unexec %D/%%DOCSDIR%% 2>/dev/null || true
 include/streamhtmlparser/statemachine.h
 include/streamhtmlparser/jsparser.h
 include/streamhtmlparser/htmlparser.h
 include/streamhtmlparser/htmlparser_cpp.h
-@unexec %D/include/streamhtmlparser 2>/dev/null || true

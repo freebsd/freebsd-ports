@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	geoff@sea-incorporated.com
 COMMENT=	Print formatter driven by XSL formatting
 
-EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
 
 OPTIONS_DEFINE=	DOCS
 

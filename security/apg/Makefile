@@ -17,7 +17,7 @@ DOCS=		APG_TIPS pronun.txt rfc0972.txt rfc1750.txt
 
 OPTIONS_DEFINE=	CRACKLIB DOCS
 CRACKLIB_DESC=	CrackLib support for password quality
-CRACKLIB_LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
+CRACKLIB_LIB_DEPENDS=	libcrack.so:security/cracklib
 CRACKLIB_MAKE_ARGS=	-DWITH_CRACKLIB
 
 post-extract:

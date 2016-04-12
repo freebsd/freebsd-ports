@@ -13,9 +13,9 @@ COMMENT=	Lightweight media player for Xfce4 based on GStreamer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libtag.so:audio/taglib \
+		libnotify.so:devel/libnotify \
+		libdbus-glib-1.so:devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -40,8 +40,8 @@ OPTIONS_GROUP=	GST_PLUG
 OPTIONS_GROUP_GST_PLUG=	CDDA HTTP
 # Since 0.5.91 release, GStreamer 1.0 is enabled by default
 OPTIONS_DEFAULT=	GST10 HTTP NLS
-CLUTTER_LIB_DEPENDS=	libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
-	libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
+CLUTTER_LIB_DEPENDS=	libclutter-gst-2.0.so:multimedia/clutter-gst \
+	libclutter-gtk-1.0.so:graphics/clutter-gtk3
 CLUTTER_IMPLIES=	GST10
 CLUTTER_CONFIGURE_ENABLE=	clutter
 NLS_USES=	gettext-runtime

@@ -13,7 +13,7 @@ COMMENT=	Foomatic database engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_GNOME=	libxml2
 USES=		gmake perl5

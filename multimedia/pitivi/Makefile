@@ -11,8 +11,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Gstreamer based non-linear audio/video editor
 
-RUN_DEPENDS=	py*-zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas
+RUN_DEPENDS=	py*-zope.interface>=0:devel/py-zope.interface \
+		${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas
 
 USES=		gettext gmake pkgconfig python tar:bzip2
 USE_GNOME=	intltool pygtk2

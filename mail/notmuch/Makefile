@@ -11,11 +11,11 @@ COMMENT=	Thread-based email index, search, and tagging application
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
-		c++filt:${PORTSDIR}/devel/binutils
-LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
-		libxapian.so:${PORTSDIR}/databases/xapian-core \
-		libtalloc.so:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+		c++filt:devel/binutils
+LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
+		libxapian.so:databases/xapian-core \
+		libtalloc.so:devel/talloc
 
 OPTIONS_DEFINE=	BASH EMACS ZSH
 BASH_DESC=	Install bash completion (requires shells/bash-completion)
@@ -23,7 +23,7 @@ EMACS_DESC=	Install EMACS lisp files (requires emacs)
 ZSH_DESC=	Install zsh completion
 OPTIONS_SUB=	yes
 
-BASH_BUILD_DEPENDS=	bash-completion>=1.90:${PORTSDIR}/shells/bash-completion
+BASH_BUILD_DEPENDS=	bash-completion>=1.90:shells/bash-completion
 BASH_RUN_DEPENDS=	${BASH_BUILD_DEPENDS}
 BASH_CONFIGURE_OFF=	--without-bash-completion
 EMACS_CONFIGURE_OFF=	--without-emacs

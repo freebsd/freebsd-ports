@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=--without-apache
 .endif
 
 .if defined(WITH_PSM_CUPS)
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups
+LIB_DEPENDS+=	libcups.so:print/cups
 CONFIGURE_ARGS+=--with-cups=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-cups

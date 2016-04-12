@@ -8,12 +8,12 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/flmoxgen
 DISTNAME=	Fl_MoxGen-${PORTVERSION}
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Compute the dimensions of a Moxon Rectangle antenna
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 DESKTOP_ENTRIES=	"Fl_MoxGen" "${COMMENT}" "" "${PORTNAME}" \
 			"Network;HamRadio;" false
@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	PDF
 OPTIONS_DEFAULT=	PDF
 PDF_DESC=	Enable PDF Writing (requires libharu)
 
-PDF_LIB_DEPENDS=	libhpdf.so:${PORTSDIR}/print/libharu
+PDF_LIB_DEPENDS=	libhpdf.so:print/libharu
 PDF_ALL_TARGET=	fl_moxgen
 PDF_ALL_TARGET_OFF=	fl_moxgen_no_pdf
 

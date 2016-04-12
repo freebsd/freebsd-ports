@@ -13,9 +13,9 @@ COMMENT=	Session management system for JACK audio applications
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
-		libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libjack.so:audio/jack \
+		libdssialsacompat.so:audio/libdssialsacompat \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		gmake pathfix pkgconfig libtool
 USE_GNOME=	gtk20 libxml2
@@ -34,13 +34,13 @@ OPTIONS_SUB=	yes
 
 PYTHON_DESC=	Build pylash
 PYTHON_USES=	python
-PYTHON_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+PYTHON_BUILD_DEPENDS=	swig:devel/swig13
 PYTHON_CONFIGURE_OFF=	--disable-pylash
 
 READLINE_USES=		readline
 READLINE_CONFIGURE_ENV_OFF=	vl_cv_lib_readline=no
 
-DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
+DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_CONFIGURE_ENV_OFF=	ac_cv_prog_lash_texi2html=no
 
 post-patch:

@@ -9,8 +9,8 @@ MASTER_SITES=	LOCAL/gblach/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Submit system and ports statistics to fbsdmon.org
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libjansson.so:${PORTSDIR}/devel/jansson
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libjansson.so:devel/jansson
 
 SUB_FILES=	600.fbsdmon pkg-message
 USE_RC_SUBR=	fbsdmon

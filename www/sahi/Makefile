@@ -15,7 +15,7 @@ COMMENT=	Web automation and testing tool
 LICENSE=	APACHE20 MPL
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
@@ -84,17 +84,17 @@ post-install:
 
 .if ${PORT_OPTIONS:MCHROME}
 BROWSER=	chrome
-RUN_DEPENDS+=	chrome:${PORTSDIR}/www/chromium
+RUN_DEPENDS+=	chrome:www/chromium
 .endif
 
 .if ${PORT_OPTIONS:MFIREFOX}
 BROWSER=	firefox
-RUN_DEPENDS+=	firefox:${PORTSDIR}/www/firefox
+RUN_DEPENDS+=	firefox:www/firefox
 .endif
 
 .if ${PORT_OPTIONS:MOPERA}
 BROWSER=	opera
-RUN_DEPENDS+=	opera:${PORTSDIR}/www/opera
+RUN_DEPENDS+=	opera:www/opera
 .endif
 
 .include <bsd.port.post.mk>

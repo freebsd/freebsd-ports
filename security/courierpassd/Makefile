@@ -10,13 +10,14 @@ MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User authentication and password changing daemon utility
 
-BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
+RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base
 
 GNU_CONFIGURE=	yes
-USES=	gmake
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		gmake localbase
 
 MINUID?=	100
 DELAY?=		3
@@ -47,7 +48,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} '/chown root/d' ${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

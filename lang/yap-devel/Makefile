@@ -14,7 +14,7 @@ COMMENT=	High-performance Prolog compiler
 LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFLICTS=	yap-6.2.*
 
@@ -23,11 +23,11 @@ OPTIONS_SUB=	yes
 MYDDAS_DESC=	Enable MySQL support
 
 DOCS_USE=		TEX=formats:build,dvipsk:build
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html \
-			${LOCALBASE}/bin/texi2pdf:${PORTSDIR}/print/texinfo
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/texi2html:textproc/texi2html \
+			${LOCALBASE}/bin/texi2pdf:print/texinfo
 DOCS_INSTALL_TARGET=	install install_docs
 
-MYDDAS_LIB_DEPENDS=		libiodbc.so:${PORTSDIR}/databases/libiodbc
+MYDDAS_LIB_DEPENDS=		libiodbc.so:databases/libiodbc
 MYDDAS_CONFIGURE_ENABLE=	myddas myddas-top-level
 
 LDFLAGS+=	-L${LOCALBASE}/lib

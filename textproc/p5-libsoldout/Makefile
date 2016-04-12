@@ -15,7 +15,7 @@ COMMENT=	Convert Markdown text in (X)HTML
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libsoldout.so:${PORTSDIR}/textproc/libsoldout
+LIB_DEPENDS=	libsoldout.so:textproc/libsoldout
 
 USES=		perl5
 USE_PERL5=	configure

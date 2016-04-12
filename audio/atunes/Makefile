@@ -35,12 +35,12 @@ LAME_DESC=		Encoder: Enable lame MP3 encoder
 VORBIS_DESC=		Encoder: Enable vorbis OGG encoder
 FLAC_DESC=		Encoder: Enable FLAC encoder
 
-MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
-XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
-CDDA2WAV_RUN_DEPENDS=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
-LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
-VORBIS_RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
+MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
+XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
+CDDA2WAV_RUN_DEPENDS=	cdda2wav:sysutils/cdrtools
+LAME_RUN_DEPENDS=	lame:audio/lame
+VORBIS_RUN_DEPENDS=	ogg123:audio/vorbis-tools
+FLAC_RUN_DEPENDS=	flac:audio/flac
 
 DESKTOP_ENTRIES="aTunes" \
 		"Audio player and manager" \

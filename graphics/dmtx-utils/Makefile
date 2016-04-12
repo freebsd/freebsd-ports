@@ -10,7 +10,7 @@ MASTER_SITES=	SF/libdmtx/libdmtx/${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Software for reading and writing Data Matrix barcodes
 
-LIB_DEPENDS=	libdmtx.so:${PORTSDIR}/graphics/libdmtx
+LIB_DEPENDS=	libdmtx.so:graphics/libdmtx
 
 USES=		tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes

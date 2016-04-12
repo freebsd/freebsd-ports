@@ -42,7 +42,7 @@ PKGNAMESUFFIX=	-gtk
 .endif
 
 .if ${PORT_OPTIONS:MSVGALIB}
-LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:graphics/svgalib
 MAKE_ARGS+=	TARGET=Linux_svgalib
 PKGNAMESUFFIX=	-svgalib
 .endif

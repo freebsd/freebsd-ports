@@ -10,8 +10,8 @@ MASTER_SITES=	GNU/ccrtp
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	ZRTP extension for GNU ccRTP
 
-LIB_DEPENDS=	libccrtp.so:${PORTSDIR}/devel/ccrtp \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libccrtp.so:devel/ccrtp \
+		libgcrypt.so:security/libgcrypt
 
 USES=		cmake pkgconfig
 USE_OPENSSL=	yes

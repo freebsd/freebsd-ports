@@ -10,7 +10,7 @@ COMMENT=	Build-tool for Erlang that follows OTP principles
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/escript:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	${LOCALBASE}/bin/escript:lang/erlang
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	BASH ZSH

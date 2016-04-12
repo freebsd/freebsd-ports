@@ -14,9 +14,9 @@ COMMENT=	Official Last.fm desktop application suite
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	liblastfm.so:${PORTSDIR}/audio/liblastfm \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libgpod.so:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS=	liblastfm.so:audio/liblastfm \
+		libavcodec.so:multimedia/ffmpeg \
+		libgpod.so:audio/libgpod
 
 USES=		pkgconfig qmake tar:bzip2 gmake
 USE_QT4=	gui linguist_build moc_build network phonon \

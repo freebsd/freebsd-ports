@@ -50,12 +50,12 @@ BUILDNAME=	${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_UNITS_DIR=	${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/lcl/units/${BUILDNAME}
 
 .if !defined(PKGNAMESUFFIX)
-BUILD_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
-		${LCL_UNITS_DIR}/alllclunits.ppu:${PORTSDIR}/editors/lazarus-lcl-units \
-		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
-RUN_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
-		${LCL_UNITS_DIR}/alllclunits.ppu:${PORTSDIR}/editors/lazarus-lcl-units \
-		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
+BUILD_DEPENDS+=	fpcres:lang/fpc-utils \
+		${LCL_UNITS_DIR}/alllclunits.ppu:editors/lazarus-lcl-units \
+		${LCL_UNITS_DIR}/nogui/interfaces.ppu:editors/lazarus-lcl-nogui
+RUN_DEPENDS+=	fpcres:lang/fpc-utils \
+		${LCL_UNITS_DIR}/alllclunits.ppu:editors/lazarus-lcl-units \
+		${LCL_UNITS_DIR}/nogui/interfaces.ppu:editors/lazarus-lcl-nogui
 
 USES+=		gettext iconv
 USE_FPC+=	chm
@@ -65,21 +65,21 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR="${PORTSDIR}"
 
 .if ${PORT_OPTIONS:MGDB}
-RUN_DEPENDS+=	${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
+RUN_DEPENDS+=	${LOCALBASE}/bin/gdb:devel/gdb
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
-RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
+RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+LIB_DEPENDS+=	libQt4Pas.so:x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
-RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
+RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 .endif
 
 post-extract:

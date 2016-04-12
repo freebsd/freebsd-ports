@@ -12,12 +12,12 @@ COMMENT=	Free, object-oriented XML-RPC implementation written in C++
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=
 
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOCS_CMAKE_ARGS_OFF=	-Dbuild_docs=off
 
 USE_GNOME=	libxml2

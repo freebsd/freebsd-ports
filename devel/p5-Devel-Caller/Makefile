@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module which is meatier versions of caller
 
-BUILD_DEPENDS=	p5-PadWalker>=0.08:${PORTSDIR}/devel/p5-PadWalker
+BUILD_DEPENDS=	p5-PadWalker>=0.08:devel/p5-PadWalker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

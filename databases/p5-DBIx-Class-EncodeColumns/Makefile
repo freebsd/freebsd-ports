@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Handle column encodings
 
-RUN_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class
-BUILD_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class
+RUN_DEPENDS=	p5-DBIx-Class>=0.06002:databases/p5-DBIx-Class
+BUILD_DEPENDS=	p5-DBIx-Class>=0.06002:databases/p5-DBIx-Class
 
 USES=		perl5
 USE_PERL5=	modbuild

@@ -45,12 +45,12 @@ DISTFILES+=	scalapack_install.ps scalapackqref.ps  \
 WITH_ATLAS=		yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas
+LIB_DEPENDS+=	liblapack.so:math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
@@ -60,12 +60,12 @@ WITH_OPENMPI=	yes
 .endif
 
 .if defined(WITH_OPENMPI)
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 .else
-#LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
+#LIB_DEPENDS+=	libmpich.so:net/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich2
 .endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "amd64"

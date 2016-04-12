@@ -8,7 +8,7 @@ CATEGORIES=	graphics www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Interface to AT&T's GraphViz tools
 
-RUN_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS=	${LOCALBASE}/bin/dot:graphics/graphviz
 
 USES=	pear
 

@@ -11,7 +11,7 @@ COMMENT=	Amateur Radio sound modem
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 
 CONFIGURE_ARGS=	--disable-alsatest
 WRKSRC=		${WRKDIR}/${DISTNAME}

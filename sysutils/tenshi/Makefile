@@ -9,8 +9,8 @@ MASTER_SITES=		http://dev.inversepath.com/tenshi/
 MAINTAINER=		jadawin@FreeBSD.org
 COMMENT=		Tenshi is a log monitoring program, designed to watch multiple logs
 
-RUN_DEPENDS=		${LOCALBASE}/bin/gtail:${PORTSDIR}/sysutils/coreutils \
-			p5-IO-BufferedSelect>=0:${PORTSDIR}/devel/p5-IO-BufferedSelect
+RUN_DEPENDS=		${LOCALBASE}/bin/gtail:sysutils/coreutils \
+			p5-IO-BufferedSelect>=0:devel/p5-IO-BufferedSelect
 
 USES=			perl5
 USE_PERL5=		run build patch

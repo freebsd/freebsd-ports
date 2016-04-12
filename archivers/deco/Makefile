@@ -14,18 +14,18 @@ COMMENT=	Program to extract various archive file formats
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
-		arj:${PORTSDIR}/archivers/arj \
-		cabextract:${PORTSDIR}/archivers/cabextract \
-		dpkg:${PORTSDIR}/archivers/dpkg \
-		lzop:${PORTSDIR}/archivers/lzop \
-		7z:${PORTSDIR}/archivers/p7zip \
-		rpm:${PORTSDIR}/archivers/rpm4 \
-		rzip:${PORTSDIR}/archivers/rzip \
-		unace:${PORTSDIR}/archivers/unace \
-		unrar:${PORTSDIR}/archivers/unrar \
-		zoo:${PORTSDIR}/archivers/zoo \
-		flac:${PORTSDIR}/audio/flac
+RUN_DEPENDS=	arc:archivers/arc \
+		arj:archivers/arj \
+		cabextract:archivers/cabextract \
+		dpkg:archivers/dpkg \
+		lzop:archivers/lzop \
+		7z:archivers/p7zip \
+		rpm:archivers/rpm4 \
+		rzip:archivers/rzip \
+		unace:archivers/unace \
+		unrar:archivers/unrar \
+		zoo:archivers/zoo \
+		flac:audio/flac
 
 CONFLICTS=	deco-[0-9]*
 

@@ -14,8 +14,8 @@ COMMENT=	C++ API for QDBM
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/COPYING
 
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2 \
-		libqdbm.so:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
+		libqdbm.so:databases/qdbm
 
 USES=		iconv shebangfix
 SHEBANG_FILES=	xapidoc/installdox

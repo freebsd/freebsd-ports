@@ -11,7 +11,7 @@ COMMENT=	QT4 frontend to the backup utility rsync
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	rsync:net/rsync
 
 USES=		qmake
 USE_QT4=	gui network moc_build rcc_build uic_build

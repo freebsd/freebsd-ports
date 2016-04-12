@@ -10,12 +10,12 @@ MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libgd.so:${PORTSDIR}/${GD_PORT}
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libexpat.so:textproc/expat2 \
+		libgd.so:${GD_PORT}
 
 USES=		bison cpe gmake jpeg libtool:keepla pkgconfig pathfix shebangfix
 GNU_CONFIGURE=	yes
@@ -98,14 +98,14 @@ RUBY_USE=	RUBY=yes
 LUA_USES=	lua
 TCL_USES=	tcl:build
 TK_USES=	tk:build
-POPPLER_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
-ANN_LIB_DEPENDS=	libann.so:${PORTSDIR}/math/ann
-GTS_LIB_DEPENDS=	libgts.so:${PORTSDIR}/graphics/gts
-SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:${PORTSDIR}/x11-toolkits/gtkglarea2 \
-			libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
-MING_LIB_DEPENDS=	libming.so:${PORTSDIR}/graphics/ming
-DEVIL_LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil
-GUILE_LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2
+POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
+ANN_LIB_DEPENDS=	libann.so:math/ann
+GTS_LIB_DEPENDS=	libgts.so:graphics/gts
+SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
+			libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
+MING_LIB_DEPENDS=	libming.so:graphics/ming
+DEVIL_LIB_DEPENDS=	libIL.so:graphics/devil
+GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
 
 XPM_CONFIGURE_WITH=		x
 DIGCOLA_CONFIGURE_WITH=		digcola
@@ -174,7 +174,7 @@ BROKEN=	Ming incomplete, uses removed libgraph
 IGNORE=	option TCL is required for option TK
 .endif
 # USES=tk:build is BROKEN: Does not allow to set both tcl and tk depedencies
-BUILD_DEPENDS+=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${_TCLTK_WANTED_VERSION}
+BUILD_DEPENDS+=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
@@ -237,8 +237,8 @@ IGNORE=		option WITH_DIGCOLA is required for option WITH_IPSEPCOLA
 .if ${PORT_OPTIONS:MPERL} || ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || \
     ${PORT_OPTIONS:MRUBY} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MTCL} || \
     ${PORT_OPTIONS:MGUILE}
-BUILD_DEPENDS+=		swig3.0:${PORTSDIR}/devel/swig30
-RUN_DEPENDS+=		swig3.0:${PORTSDIR}/devel/swig30
+BUILD_DEPENDS+=		swig3.0:devel/swig30
+RUN_DEPENDS+=		swig3.0:devel/swig30
 CONFIGURE_ARGS+=	--enable-swig
 CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig3.0"
 .else

@@ -12,7 +12,7 @@ COMMENT=	Popular ICQ-compatible plugin-based program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USES=		cmake iconv
 USE_OPENSSL=	yes
@@ -29,9 +29,9 @@ GPGME_DESC=	Build support for gpgme
 NLS_USES=	gettext
 NLS_CMAKE_OFF=	-DENABLE_NLS:BOOL=OFF
 
-GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
-			libassuan.so:${PORTSDIR}/security/libassuan \
-			libgpg-error.so:${PORTSDIR}/security/libgpg-error
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme \
+			libassuan.so:security/libassuan \
+			libgpg-error.so:security/libgpg-error
 
 .include <bsd.port.options.mk>
 

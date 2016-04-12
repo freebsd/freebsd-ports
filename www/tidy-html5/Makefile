@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tidy-html5
-PORTVERSION=	5.1.25
+PORTVERSION=	5.2.0
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/README/LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	htacg
-GH_TAGNAME=	f567088
+GH_TAGNAME=	abb0316
 
 USES=		cmake
 USE_GNOME=	libxslt
@@ -23,15 +23,9 @@ CMAKE_ARGS=	-DBUILD_SHARED_LIB:BOOL=ON
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|build/cmake/||' ${WRKSRC}/test/testone.sh
-
 post-install:
 	# To avoid conflict ATM - to be removed later
 	${MV} ${STAGEDIR}${PREFIX}/bin/tidy ${STAGEDIR}${PREFIX}/bin/tidy5
 	${MV} ${STAGEDIR}${PREFIX}/lib/libtidy.so ${STAGEDIR}${PREFIX}/lib/libtidy5.so
-
-regression-test:
-	(cd ${WRKSRC}/test && ./testall.sh)
 
 .include <bsd.port.mk>

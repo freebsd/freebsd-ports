@@ -1,0 +1,8 @@
+FFmpegSource (usually known as FFMS or FFMS2) is a cross-platform
+wrapper library around FFmpeg/libav. It gives you an easy, convenient
+way to say "open and decompress this media file for me, I don't care
+how you do it" and get frame- and sample-accurate access (usually),
+without having to bother with the sometimes less than straightforward
+and less than perfectly documented libav API.
+
+WWW: https://github.com/FFMS/ffms2

@@ -11,13 +11,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC server that allows for remote access to your GNOME desktop
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libsecret-1.so:${PORTSDIR}/security/libsecret \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libavahi-glib.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libtelepathy-glib.so:net-im/telepathy-glib \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libsecret-1.so:security/libsecret \
+		libsoup-2.4.so:devel/libsoup \
+		libnotify.so:devel/libnotify \
+		libavahi-glib.so:net/avahi-app
 
 PORTSCOUT=	limitw:1,even
 

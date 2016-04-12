@@ -12,7 +12,7 @@ COMMENT=	Converts flat ASCII text to man page format
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	gawk:lang/gawk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe gmake

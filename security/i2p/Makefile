@@ -22,9 +22,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_DISTFILES=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
-LIB_DEPENDS=	libiconv.so:${PORTSDIR}/converters/libiconv
-RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:math/gmp
+LIB_DEPENDS=	libiconv.so:converters/libiconv
+RUN_DEPENDS=	unzip:archivers/unzip
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	i2p libwrapper.so library binary only available for i386 and amd64

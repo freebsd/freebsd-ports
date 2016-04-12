@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	freebsd.ports@tipstrade.net
 COMMENT=	Access to Clickatell SMS messaging service
 
-TEST_DEPENDS=	p5-libwww>=5.816:${PORTSDIR}/www/p5-libwww
+TEST_DEPENDS=	p5-libwww>=5.816:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure

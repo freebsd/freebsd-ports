@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fdb
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Firebird RDBMS bindings for Python
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
+LIB_DEPENDS=	libfbclient.so:databases/firebird25-client
 
 NO_ARCH=	yes
 USES=		python

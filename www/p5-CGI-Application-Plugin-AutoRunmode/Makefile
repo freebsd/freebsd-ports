@@ -14,7 +14,7 @@ COMMENT=	CGI::App plugin to automatically register runmodes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application
+BUILD_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

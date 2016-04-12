@@ -137,7 +137,7 @@ USES+=		pkgconfig
 
 .if ${KIPI_PLUGIN} != "libkipiplugins"
 EXTRA_PATCHES=	${.CURDIR}/../../graphics/kipi-plugins-kde4/files/extrapatch-CMakeLists.txt
-LIB_DEPENDS+=	libkipiplugins.so:${PORTSDIR}/graphics/libkipiplugins
+LIB_DEPENDS+=	libkipiplugins.so:graphics/libkipiplugins
 .endif
 
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions ${DISTNAME}/extra/kipi-plugins

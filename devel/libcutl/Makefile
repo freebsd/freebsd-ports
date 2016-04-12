@@ -11,8 +11,8 @@ COMMENT=	C++ utility library with generic and independent components
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

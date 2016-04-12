@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	requests-toolbelt
-PORTVERSION=	0.3.1
+PORTVERSION=	0.6.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Utility belt for advanced users of python-requests
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
 
 USES=		python
 USE_PYTHON=	autoplist distutils

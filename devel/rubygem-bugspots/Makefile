@@ -11,8 +11,8 @@ COMMENT=	Bugspots - Bug Prediction Heuristic
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rainbow>=0:${PORTSDIR}/devel/rubygem-rainbow \
-		rubygem-rugged>=0.21.0:${PORTSDIR}/devel/rubygem-rugged
+RUN_DEPENDS=	rubygem-rainbow>=0:devel/rubygem-rainbow \
+		rubygem-rugged>=0.21.0:devel/rubygem-rugged
 
 NO_ARCH=	yes
 USE_RUBY=	yes

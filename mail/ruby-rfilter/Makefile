@@ -12,7 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for filtering and delivering email to mailboxes
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/rmail/parser.rb:${PORTSDIR}/mail/ruby-rmail
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/rmail/parser.rb:mail/ruby-rmail
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

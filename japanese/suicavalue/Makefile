@@ -13,7 +13,7 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to print a statement of Suica
 
-LIB_DEPENDS=	libpasori.so:${PORTSDIR}/devel/libpasori
+LIB_DEPENDS=	libpasori.so:devel/libpasori
 
 USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile

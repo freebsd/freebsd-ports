@@ -24,6 +24,6 @@ RUBYGEM_AUTOPLIST=	yes
 USES=		shebangfix
 SHEBANG_FILES=	support/ssh_tunnel_bug.rb
 
-PROMPT_PASSPHRASES_RUN_DEPENDS=	rubygem-ruby-termios>=0:${PORTSDIR}/comms/rubygem-ruby-termios
+PROMPT_PASSPHRASES_RUN_DEPENDS=	rubygem-ruby-termios>=0:comms/rubygem-ruby-termios
 
 .include <bsd.port.mk>

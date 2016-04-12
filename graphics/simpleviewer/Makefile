@@ -13,9 +13,9 @@ COMMENT=	Small and simple OpenGL image viewer with transparency support
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libgif.so:graphics/giflib \
+		libImlib2.so:graphics/imlib2
 
 USES=		jpeg tar:bzip2
 USE_GL=		glut

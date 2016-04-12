@@ -2,19 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	dot2tex
-PORTVERSION=	2.8.7
-PORTREVISION=	2
+PORTVERSION=	2.9.0
 CATEGORIES=	print
-MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	romain@FreeBSD.org
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Graphviz to LaTeX converter
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing \
-		dot:${PORTSDIR}/graphics/graphviz
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# The .tar.gz sucks!
-USES=		python zip
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=1.4.8:devel/py-pyparsing \
+		dot:graphics/graphviz
+
+NO_ARCH=	yes
+USES=	python:2.7
 USE_PYTHON=	distutils autoplist
+USE_GITHUB=	yes
+GH_ACCOUNT=	kjellmf
 
 .include <bsd.port.mk>

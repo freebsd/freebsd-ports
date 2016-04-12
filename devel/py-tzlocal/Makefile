@@ -11,7 +11,7 @@ COMMENT=	Returns the tzinfo object for the local timezone
 
 LICENSE=	CC0-1.0
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
 
 OPTIONS_DEFINE=		TEST
 OPTIONS_DEFAULT=	TEST

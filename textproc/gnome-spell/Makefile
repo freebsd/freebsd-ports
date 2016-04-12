@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME/Bonobo component for spell checking
 
-LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libaspell.so:textproc/aspell
 
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 USES=		gettext gmake libtool pathfix pkgconfig perl5 tar:bzip2

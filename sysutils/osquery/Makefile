@@ -10,23 +10,23 @@ COMMENT=	SQL powered OS instrumentation, monitoring, and analytics
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	snappy>0:${PORTSDIR}/archivers/snappy \
-		rocksdb>0:${PORTSDIR}/databases/rocksdb \
-		thrift>0:${PORTSDIR}/devel/thrift \
-		thrift-cpp>0:${PORTSDIR}/devel/thrift-cpp \
-		bash>0:${PORTSDIR}/shells/bash \
-		yara>0:${PORTSDIR}/security/yara \
-		doxygen:${PORTSDIR}/devel/doxygen \
-		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:${PORTSDIR}/textproc/py-MarkupSafe \
-		${PYTHON_PKGNAMEPREFIX}psutil>0:${PORTSDIR}/sysutils/py-psutil \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse \
-		${PYTHON_PKGNAMEPREFIX}pexpect>0:${PORTSDIR}/misc/py-pexpect \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:${PORTSDIR}/devel/py-Jinja2  \
-		${PYTHON_PKGNAMEPREFIX}thrift>0:${PORTSDIR}/devel/py-thrift \
-		${PYTHON_PKGNAMEPREFIX}pip>0:${PORTSDIR}/devel/py-pip
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		libgflags.so:${PORTSDIR}/devel/gflags \
-		libicuuc.so:${PORTSDIR}/devel/icu
+BUILD_DEPENDS=	snappy>0:archivers/snappy \
+		rocksdb>0:databases/rocksdb \
+		thrift>0:devel/thrift \
+		thrift-cpp>0:devel/thrift-cpp \
+		bash>0:shells/bash \
+		yara>0:security/yara \
+		doxygen:devel/doxygen \
+		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe \
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil \
+		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
+		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2  \
+		${PYTHON_PKGNAMEPREFIX}thrift>0:devel/py-thrift \
+		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		libgflags.so:devel/gflags \
+		libicuuc.so:devel/icu
 
 USES=		cmake:outsource gmake libtool python:build compiler:c++11-lib
 CONFIGURE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \

@@ -10,10 +10,10 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplement file to use "mypaedia" on lookup
 
-RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
-		timidity:${PORTSDIR}/audio/timidity++ \
-		xanim:${PORTSDIR}/multimedia/xanim \
-		display:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	sox:audio/sox \
+		timidity:audio/timidity++ \
+		xanim:multimedia/xanim \
+		display:graphics/ImageMagick
 
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME=${PKGNAME}

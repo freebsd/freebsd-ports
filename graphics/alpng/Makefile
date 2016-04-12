@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}13
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Library for display PNG images in programs
 
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	liballeg.so:devel/allegro
 
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}

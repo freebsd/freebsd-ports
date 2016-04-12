@@ -14,8 +14,8 @@ COMMENT=	Desktop-wide extension service
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 
 USE_GCC=	yes
 USES=	cmake pkgconfig

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pxlib
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.6.6
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -12,7 +11,7 @@ COMMENT=	C library to read various Paradox files
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		gmake iconv libtool pathfix perl5
 USE_GNOME=	intltool
@@ -25,16 +24,14 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	MANPAGES NLS
 OPTIONS_SUB=	yes
 
-MANPAGES_BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man \
-			docbook2man:${PORTSDIR}/textproc/docbook-utils
+MANPAGES_BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man \
+			docbook2man:textproc/docbook-utils
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=	gettext
+INSTALL_TARGET=	install-strip
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.include <bsd.port.options.mk>
-
-pre-build:
-.if !${PORT_OPTIONS:MMANPAGES}
+pre-build-MANPAGES-off:
 	${REINPLACE_CMD} -e 's/^DOCDIR =.*/DOCDIR =/' ${WRKSRC}/Makefile
-.endif
 
 .include <bsd.port.mk>

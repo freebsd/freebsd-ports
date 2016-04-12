@@ -10,9 +10,9 @@ DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java library for XML Signature and Encryption
 
-BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
-RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
+BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \
+		${JAVALIBDIR}/xalan.jar:textproc/xalan-j
+RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
 
 LICENSE=	APACHE20
 

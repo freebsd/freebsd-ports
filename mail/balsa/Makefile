@@ -11,14 +11,14 @@ MASTER_SITES=	http://pawsa.fedorapeople.org/balsa/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mail reader for the GNOME desktop
 
-BUILD_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnome-keyring \
-		itstool:${PORTSDIR}/textproc/itstool \
-		yelp-tools>=0:${PORTSDIR}/textproc/yelp-tools
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libesmtp.so:${PORTSDIR}/mail/libesmtp \
-		libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
-		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
-RUN_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
+BUILD_DEPENDS=	gnome-keyring:security/gnome-keyring \
+		itstool:textproc/itstool \
+		yelp-tools>=0:textproc/yelp-tools
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libesmtp.so:mail/libesmtp \
+		libgmime-2.6.so:mail/gmime26 \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3
+RUN_DEPENDS=	gnome-keyring:security/gnome-keyring
 
 # Depends on gtkhtml4 (which is being abandonend). When our webkitgtk3
 # in ports gets updated to > 1.10.x, balsa should depend on it.
@@ -45,14 +45,14 @@ GTKSPELL_DESC=	Spell checking support
 GTKSV_DESC=	GtkSourceview support
 GPG_DESC=	GnuPG support
 GPG_CONFIGURE_WITH=	gpgme
-GPG_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPG_LIB_DEPENDS=	libgpgme.so:security/gpgme
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_WITH=	ldap
 GTKSPELL_CONFIGURE_WITH=	gtkspell
-GTKSPELL_LIB_DEPENDS=		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3
+GTKSPELL_LIB_DEPENDS=		libgtkspell3-3.so:textproc/gtkspell3
 GTKSV_USE=		GNOME=gtksourceview3
 GTKSV_CONFIGURE_WITH=	gtksourceview
 NOTIFY_CONFIGURE_WITH=	libnotify
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 
 .include <bsd.port.mk>

@@ -12,8 +12,8 @@ COMMENT=	OmniAuth strategy for SAML
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-omniauth>=1.3:${PORTSDIR}/security/rubygem-omniauth \
-		rubygem-ruby-saml>=1.1.1:${PORTSDIR}/security/rubygem-ruby-saml
+RUN_DEPENDS=	rubygem-omniauth>=1.3:security/rubygem-omniauth \
+		rubygem-ruby-saml>=1.1.1:security/rubygem-ruby-saml
 
 NO_ARCH=	yes
 USE_RUBY=	yes

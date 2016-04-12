@@ -12,7 +12,7 @@ COMMENT=	Toggle TV Out on Mach64 graphics cards
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liblrmi.so:${PORTSDIR}/devel/lrmi
+LIB_DEPENDS=	liblrmi.so:devel/lrmi
 
 WRKSRC=		${WRKDIR}/atitvout
 MAKEFILE=	Makefile.bsd

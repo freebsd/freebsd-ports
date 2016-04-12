@@ -10,14 +10,14 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interface provider to access the user's online accounts
 
-BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-LIB_DEPENDS=	libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3 \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libsecret-1.so:${PORTSDIR}/security/libsecret \
-		librest-0.7.so:${PORTSDIR}/devel/librest
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
+LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libtelepathy-glib.so:net-im/telepathy-glib \
+		libjson-glib-1.0.so:devel/json-glib \
+		libnotify.so:devel/libnotify \
+		libsecret-1.so:security/libsecret \
+		librest-0.7.so:devel/librest
 
 PORTSCOUT=	limitw:1,even
 

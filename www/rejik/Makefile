@@ -13,8 +13,8 @@ COMMENT=	Squid redirector used for blocking unwanted content
 
 LICENSE=	BSD4CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:www/squid
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		perl5 tar:tgz
 USE_GCC=	any

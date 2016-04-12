@@ -30,10 +30,10 @@ PLIST_FILES=	bin/audiotag
 OPTIONS_DEFINE=	VORBIS ID3 MP4 FLAC DOCS
 OPTIONS_DEFAULT=	VORBIS ID3 MP4 FLAC
 
-VORBIS_RUN_DEPENDS=	vorbiscomment:${PORTSDIR}/audio/vorbis-tools
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
-ID3_RUN_DEPENDS=	id3tag:${PORTSDIR}/audio/id3lib
-MP4_RUN_DEPENDS=	AtomicParsley:${PORTSDIR}/multimedia/atomicparsley
+VORBIS_RUN_DEPENDS=	vorbiscomment:audio/vorbis-tools
+FLAC_RUN_DEPENDS=	flac:audio/flac
+ID3_RUN_DEPENDS=	id3tag:audio/id3lib
+MP4_RUN_DEPENDS=	AtomicParsley:multimedia/atomicparsley
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/audiotag ${STAGEDIR}${PREFIX}/bin

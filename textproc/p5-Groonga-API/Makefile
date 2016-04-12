@@ -19,12 +19,12 @@ GH_PROJECT=	${PORTNAME:tl}
 GH_TAGNAME=	314060b
 
 RUN_DEPENDS=	\
-	p5-JSON-XS>0:${PORTSDIR}/converters/p5-JSON-XS \
-	p5-Path-Extended>0:${PORTSDIR}/devel/p5-Path-Extended \
-	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences \
-	p5-Test-UseAllModules>=0.10:${PORTSDIR}/devel/p5-Test-UseAllModules
+	p5-JSON-XS>0:converters/p5-JSON-XS \
+	p5-Path-Extended>0:devel/p5-Path-Extended \
+	p5-Test-Differences>0:devel/p5-Test-Differences \
+	p5-Test-UseAllModules>=0.10:devel/p5-Test-UseAllModules
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	libgroonga.so:${PORTSDIR}/textproc/groonga
+LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
 USES=		perl5
 USE_PERL5=	configure

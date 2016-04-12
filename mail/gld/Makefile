@@ -30,7 +30,7 @@ LOCAL_DB_SERVER_DESC=	RUN_DEPEND also on selected DB server
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 USE_MYSQL=	yes
 .	if ${PORT_OPTIONS:MLOCAL_DB_SERVER}
-RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+RUN_DEPENDS+=	mysql-server>=0:databases/mysql${MYSQL_VER}-server
 SUB_LIST+=	MYSQL=mysql
 SUB_LIST+=	PGSQL=
 .	else
@@ -42,7 +42,7 @@ SUB_LIST+=	MYSQL=
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 USES+=		pgsql
 .	if ${PORT_OPTIONS:MLOCAL_DB_SERVER}
-RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+RUN_DEPENDS+=	postgresql-server>=0:databases/postgresql${PGSQL_VER}-server
 SUB_LIST+=	PGSQL=postgresql
 SUB_LIST+=	MYSQL=
 .	else

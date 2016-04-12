@@ -10,7 +10,7 @@ MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
-LIB_DEPENDS=	libCoin.so:${PORTSDIR}/graphics/Coin
+LIB_DEPENDS=	libCoin.so:graphics/Coin
 
 USES=		libtool motif pathfix perl5 shebangfix
 USE_GL=		yes

@@ -16,10 +16,10 @@ COMMENT=	Structured information storage program
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
-		aspell:${PORTSDIR}/textproc/aspell
+BUILD_DEPENDS=	aspell:textproc/aspell
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:net/py-qt4-network \
+		aspell:textproc/aspell
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT4=	# empty

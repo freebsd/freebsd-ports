@@ -11,7 +11,7 @@ COMMENT=	Microframework for web applications
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack16>=1.6.0:${PORTSDIR}/www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack16>=1.6.0:www/rubygem-rack16
 
 NO_ARCH=	yes
 USE_RUBY=	yes

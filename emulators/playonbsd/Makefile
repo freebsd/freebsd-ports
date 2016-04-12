@@ -10,20 +10,20 @@ COMMENT=	Easily install and run Windows software for use with wine
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip \
-		bash:${PORTSDIR}/shells/bash \
-		glxinfo:${PORTSDIR}/graphics/mesa-demos \
-		gpg:${PORTSDIR}/security/gnupg \
-		gsed:${PORTSDIR}/textproc/gsed \
-		sudo:${PORTSDIR}/security/sudo \
-		xdg-open:${PORTSDIR}/devel/xdg-utils \
-		xterm:${PORTSDIR}/x11/xterm
+RUN_DEPENDS=	7z:archivers/p7zip \
+		bash:shells/bash \
+		glxinfo:graphics/mesa-demos \
+		gpg:security/gnupg \
+		gsed:textproc/gsed \
+		sudo:security/sudo \
+		xdg-open:devel/xdg-utils \
+		xterm:x11/xterm
 
 OPTIONS_DEFINE=	GECKO MONO
 OPTIONS_DEFAULT=	GECKO MONO
 GECKO_DESC=	Wine-gecko HTML rendering support
-MONO_RUN_DEPENDS=	wine-mono-devel>=4.5.6:${PORTSDIR}/emulators/wine-mono-devel
-GECKO_RUN_DEPENDS=	wine-gecko>=2.21:${PORTSDIR}/emulators/wine-gecko
+MONO_RUN_DEPENDS=	wine-mono-devel>=4.5.6:emulators/wine-mono-devel
+GECKO_RUN_DEPENDS=	wine-gecko>=2.21:emulators/wine-gecko
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -39,9 +39,9 @@ GH_PROJECT=	POL-POM-4
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-RUN_DEPENDS+=	wine:${PORTSDIR}/emulators/i386-wine-devel
+RUN_DEPENDS+=	wine:emulators/i386-wine-devel
 .else
-RUN_DEPENDS+=	wine:${PORTSDIR}/emulators/wine
+RUN_DEPENDS+=	wine:emulators/wine
 .endif
 
 NO_BUILD=	true

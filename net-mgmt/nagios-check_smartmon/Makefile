@@ -13,7 +13,7 @@ COMMENT=	Nagios plug-in to get status from smartmontools
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/smartctl:${PORTSDIR}/sysutils/smartmontools
+RUN_DEPENDS=	${LOCALBASE}/sbin/smartctl:sysutils/smartmontools
 
 USES=		python shebangfix
 NO_BUILD=	yes

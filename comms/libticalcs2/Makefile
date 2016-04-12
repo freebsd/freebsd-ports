@@ -11,9 +11,9 @@ COMMENT=	TI calculator library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libticables2.so:${PORTSDIR}/comms/libticables2	\
-		libticonv.so:${PORTSDIR}/converters/libticonv	\
-		libtifiles2.so:${PORTSDIR}/devel/libtifiles2
+LIB_DEPENDS=	libticables2.so:comms/libticables2	\
+		libticonv.so:converters/libticonv	\
+		libtifiles2.so:devel/libtifiles2
 
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

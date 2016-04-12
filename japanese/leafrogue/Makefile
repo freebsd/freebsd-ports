@@ -11,7 +11,7 @@ DISTNAME=	lfrog${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LeafRogue for message separated version of Rogue-clone
 
-RUN_DEPENDS=	rogue_s:${PORTSDIR}/japanese/rogue_s
+RUN_DEPENDS=	rogue_s:japanese/rogue_s
 
 WRKSRC=		${WRKDIR}/lf_rogue
 NO_BUILD=	yes

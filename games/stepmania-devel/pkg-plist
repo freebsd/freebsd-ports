@@ -2668,10 +2668,12 @@ lib/stepmania/Themes/default/Graphics/_rave meter base.png
 lib/stepmania/Themes/default/Graphics/_rave result P1.png
 lib/stepmania/Themes/default/Graphics/_rave result P2.png
 lib/stepmania/Themes/default/Graphics/_rave result draw.png
+lib/stepmania/Themes/default/Graphics/pause_menu.lua
 lib/stepmania/Themes/default/Languages/de.ini
 lib/stepmania/Themes/default/Languages/en.ini
 lib/stepmania/Themes/default/Languages/es.ini
 lib/stepmania/Themes/default/Languages/fr.ini
+lib/stepmania/Themes/default/Languages/id.ini
 lib/stepmania/Themes/default/Languages/ja.ini
 lib/stepmania/Themes/default/Languages/nl.ini
 lib/stepmania/Themes/default/Languages/pl.ini

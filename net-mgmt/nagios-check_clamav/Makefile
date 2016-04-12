@@ -16,9 +16,9 @@ USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	check_clamav
 
-RUN_DEPENDS+=	${LOCALBASE}/libexec/nagios/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins \
-		clamav>=0:${PORTSDIR}/security/clamav \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS+=	${LOCALBASE}/libexec/nagios/utils.pm:net-mgmt/nagios-plugins \
+		clamav>=0:security/clamav \
+		p5-Net-DNS>=0:dns/p5-Net-DNS
 
 PLIST_FILES=	libexec/nagios/check_clamav
 

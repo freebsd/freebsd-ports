@@ -13,11 +13,11 @@ COMMENT=	Zope Version Control
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
-		${PYTHON_PKGNAMEPREFIX}DateTime>=0:${PORTSDIR}/devel/py-DateTime \
-		${PYTHON_PKGNAMEPREFIX}transaction>=0:${PORTSDIR}/devel/py-transaction \
-		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:devel/py-Acquisition \
+		${PYTHON_PKGNAMEPREFIX}DateTime>=0:devel/py-DateTime \
+		${PYTHON_PKGNAMEPREFIX}transaction>=0:devel/py-transaction \
+		zodb${PYTHON_PKGNAMESUFFIX}>=0:databases/zodb3
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

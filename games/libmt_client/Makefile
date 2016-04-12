@@ -12,7 +12,7 @@ COMMENT=	Client-side library of MaitreTarot, a Tarot card game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmaitretarot.so:${PORTSDIR}/games/libmaitretarot
+LIB_DEPENDS=	libmaitretarot.so:games/libmaitretarot
 
 GNU_CONFIGURE=	yes
 USES=		libtool pkgconfig tar:bzip2

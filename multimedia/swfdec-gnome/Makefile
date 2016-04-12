@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk flash player and thumbnailer
 
-LIB_DEPENDS=	libswfdec-0.8.so:${PORTSDIR}/graphics/swfdec
+LIB_DEPENDS=	libswfdec-0.8.so:graphics/swfdec
 
 USE_GNOME=	gnomeprefix gtk20 intlhack gconf2
 INSTALLS_ICONS=	yes

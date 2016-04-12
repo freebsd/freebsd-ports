@@ -28,7 +28,7 @@ XMPP_DESC=	Enable XMPP Jabber support
 .if ${PORT_OPTIONS:MOTR}
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-otr
-LIB_DEPENDS+=		libotr.so.2:${PORTSDIR}/security/libotr3
+LIB_DEPENDS+=		libotr.so.2:security/libotr3
 .else
 CONFIGURE_ARGS+=	--disable-otr
 .endif
@@ -62,10 +62,10 @@ CFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-xmpp --enable-ssl=gnutls \
 			--with-libgcrypt-prefix=${LOCALBASE}
 CONFIGURE_ENV+=		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkgconf gnutls"
-LIB_DEPENDS+=		libiksemel.so:${PORTSDIR}/textproc/iksemel \
-			libgnutls.so:${PORTSDIR}/security/gnutls \
-			libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-			libgpg-error.so:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS+=		libiksemel.so:textproc/iksemel \
+			libgnutls.so:security/gnutls \
+			libgcrypt.so:security/libgcrypt \
+			libgpg-error.so:security/libgpg-error
 .else
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--disable-xmpp --enable-ssl=openssl

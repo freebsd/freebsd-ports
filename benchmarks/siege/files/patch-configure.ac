@@ -1,14 +1,14 @@
---- configure.ac.orig	2015-12-22 20:12:40 UTC
+--- configure.ac.orig	2016-03-25 13:07:35 UTC
 +++ configure.ac
-@@ -17,6 +17,7 @@ AC_CONFIG_AUX_DIR(utils)  
+@@ -12,6 +12,7 @@ AC_CONFIG_AUX_DIR(utils)  
  AM_INIT_AUTOMAKE
  AC_CONFIG_SRCDIR([src/setup.h])
  AC_CONFIG_HEADERS(include/config.h)
 +AC_CONFIG_MACRO_DIRS([m4])
- DATE=`${CONFIG_SHELL} ${srcdir}/utils/mkstamp`
- AC_SUBST(DATE)
- AC_SUBST(PROGRAM)
-@@ -42,7 +43,6 @@ dnl
+ 
+ dnl canonicalize the host
+ AC_CANONICAL_HOST
+@@ -41,7 +42,6 @@ dnl
  dnl Program support
  dnl
  AC_PATH_PROG( PERL, perl, false )

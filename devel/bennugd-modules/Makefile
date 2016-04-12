@@ -12,8 +12,8 @@ DISTNAME=	bennugd-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High level open source game development suite, modules
 
-LIB_DEPENDS=	libbgdrtm.so:${PORTSDIR}/devel/bennugd-core \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libbgdrtm.so:devel/bennugd-core \
+		libpng.so:graphics/png
 
 USES=		tar:bzip2 dos2unix pkgconfig libtool
 USE_SDL=	sdl mixer

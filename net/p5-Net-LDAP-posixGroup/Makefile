@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Creates new Net::LDAP::Entry objects for a posixGroup entry
 
-RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap
 
 USES=		perl5
 USE_PERL5=	configure

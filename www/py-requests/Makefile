@@ -13,7 +13,7 @@ COMMENT=	HTTP library written in Python for human beings
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8.1:${PORTSDIR}/devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8.1:devel/py-pytest
 
 USES=		python
 USE_PYTHON=	autoplist distutils

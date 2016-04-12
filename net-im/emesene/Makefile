@@ -11,14 +11,14 @@ COMMENT=	Instant messenging client written in python
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}notify>0:${PORTSDIR}/devel/py-notify \
-		${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:${PORTSDIR}/www/py-webkitgtk \
-		xprop:${PORTSDIR}/x11/xprop
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython \
+		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}notify>0:devel/py-notify \
+		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:www/py-webkitgtk \
+		xprop:x11/xprop
 
 NO_ARCH=	yes
 NO_BUILD=	yes

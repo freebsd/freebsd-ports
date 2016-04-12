@@ -18,10 +18,10 @@ COMMENT=	Text and graphical program to create or resolve Sudokus
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups
+LIB_DEPENDS+=	libcups.so:print/cups
 RUN_DEPENDS=	${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:${PORTSDIR}/print/py-reportlab1
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:print/py-reportlab1
 
 USES=		python:2 tar:bzip2
 USE_GNOME=	pygtk2

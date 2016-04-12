@@ -11,18 +11,18 @@ DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
 MAINTAINER=		zi@FreeBSD.org
 COMMENT=		VMware vSphere SDK for Perl with CLI tools
 
-BUILD_DEPENDS=		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
-			p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-			p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-			p5-UUID>=0:${PORTSDIR}/devel/p5-UUID \
-			p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-			p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
-RUN_DEPENDS=		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
-			p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-			p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-			p5-UUID>=0:${PORTSDIR}/devel/p5-UUID \
-			p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-			p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
+BUILD_DEPENDS=		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
+			p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
+			p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+			p5-UUID>=0:devel/p5-UUID \
+			p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+			p5-SOAP-Lite>=0:net/p5-SOAP-Lite
+RUN_DEPENDS=		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
+			p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
+			p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+			p5-UUID>=0:devel/p5-UUID \
+			p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+			p5-SOAP-Lite>=0:net/p5-SOAP-Lite
 
 USES=			perl5 shebangfix
 USE_PERL5=		configure

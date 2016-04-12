@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl module to play with Roman dates
 
-BUILD_DEPENDS=	p5-Roman>=0:${PORTSDIR}/math/p5-Roman
+BUILD_DEPENDS=	p5-Roman>=0:math/p5-Roman
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

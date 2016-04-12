@@ -10,9 +10,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SOAP (Simple Object Access Protocol) implementation in C
 
-BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
-RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
+BUILD_DEPENDS=	glib-networking>=2.29.18:net/glib-networking
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+RUN_DEPENDS=	glib-networking>=2.29.18:net/glib-networking
 
 USES=		tar:xz
 PORTSCOUT=	limitw:1,even
@@ -37,7 +37,7 @@ PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
 .if defined(SOUP_SLAVE)
 USE_SQLITE=	yes
-LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup
 CONFIGURE_ARGS+=--with-gnome
 .else
 CONFIGURE_ARGS+=--without-gnome

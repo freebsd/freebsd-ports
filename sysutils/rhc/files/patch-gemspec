@@ -1,11 +1,11 @@
---- rhc.gemspec.orig	2015-05-10 15:57:02 UTC
+--- rhc.gemspec.orig	2016-03-31 19:01:54 UTC
 +++ rhc.gemspec
 @@ -28,7 +28,7 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<net-ssh-multi>, [">= 1.2.0"])
-       s.add_runtime_dependency(%q<archive-tar-minitar>, [">= 0"])
-       s.add_runtime_dependency(%q<commander>, [">= 4.0"])
--      s.add_runtime_dependency(%q<highline>, ["~> 1.6.11"])
-+      s.add_runtime_dependency(%q<highline>, [">= 1.6.11"])
-       s.add_runtime_dependency(%q<httpclient>, [">= 2.4.0"])
-       s.add_runtime_dependency(%q<open4>, [">= 0"])
-       s.add_development_dependency(%q<rake>, [">= 0.8.7"])
+       s.add_runtime_dependency(%q<net-ssh-multi>.freeze, [">= 1.2.0"])
+       s.add_runtime_dependency(%q<archive-tar-minitar>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<commander>.freeze, [">= 4.0"])
+-      s.add_runtime_dependency(%q<highline>.freeze, ["~> 1.6.11"])
++      s.add_runtime_dependency(%q<highline>.freeze, [">= 1.6.11"])
+       s.add_runtime_dependency(%q<httpclient>.freeze, [">= 2.4.0"])
+       s.add_runtime_dependency(%q<open4>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rake>.freeze, [">= 0.8.7"])

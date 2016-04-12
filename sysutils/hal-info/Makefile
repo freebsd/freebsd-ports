@@ -10,7 +10,7 @@ MASTER_SITES=	http://hal.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional FDI files to further classify HAL devices
 
-LIB_PC_DEPENDS=	hal.pc:${PORTSDIR}/sysutils/hal
+LIB_PC_DEPENDS=	hal.pc:sysutils/hal
 
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}

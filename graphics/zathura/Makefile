@@ -12,9 +12,9 @@ COMMENT=	Customizable lightweight pdf viewer
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libgirara-gtk3.so:${PORTSDIR}/x11-toolkits/girara
-BUILD_DEPENDS+=	rst2html:${PORTSDIR}/textproc/py-docutils
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libgirara-gtk3.so:x11-toolkits/girara
+BUILD_DEPENDS+=	rst2html:textproc/py-docutils
 
 USE_GNOME=	glib20 gtk30
 USES=		compiler:c11 gmake pkgconfig
@@ -26,7 +26,7 @@ MAKE_ENV=	SFLAGS="${STRIP}" \
 OPTIONS_DEFINE=	NLS SQLITE
 OPTIONS_SUB=	yes
 
-SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 SQLITE_MAKE_ENV=	WITH_SQLITE=1
 SQLITE_MAKE_ENV_OFF=	WITH_SQLITE=0
 NLS_USES=		gettext

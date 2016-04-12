@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 5 API to WordPress XML-RPC services
 
-BUILD_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
+BUILD_DEPENDS=	p5-SOAP-Lite>=0:net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

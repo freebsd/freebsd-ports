@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.catb.org/~esr/gif2png/
 MAINTAINER=	saper@saper.info
 COMMENT=	Converts GIF images to a PNG format
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		python:run
 GNU_CONFIGURE=	yes

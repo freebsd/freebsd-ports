@@ -15,8 +15,8 @@ COMMENT=	Implementation of the Freedesktop sound theme spec
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+		libltdl.so:devel/libltdl
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk20
@@ -37,13 +37,13 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 .if defined(SLAVEPORT)
 USE_GNOME+=	gtk30
-LIB_DEPENDS+=	libcanberra.so:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS+=	libcanberra.so:audio/libcanberra
 CONFIGURE_ARGS+=--enable-gtk3
 .else
 CONFIGURE_ARGS+=--disable-gtk3
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
 PLIST_SUB+=	PULSE=""
 .else
 CONFIGURE_ARGS+=--disable-pulse
@@ -62,6 +62,6 @@ PLIST_SUB+=	GSTREAMER="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

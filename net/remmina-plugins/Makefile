@@ -31,27 +31,27 @@ PATCHDIR=	# none
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKEYRING}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugins-gnome.so:${PORTSDIR}/net/remmina-plugin-gnome
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugins-gnome.so:net/remmina-plugin-gnome
 .endif
 
 .if ${PORT_OPTIONS:MVNC}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-vnc.so:${PORTSDIR}/net/remmina-plugin-vnc
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-vnc.so:net/remmina-plugin-vnc
 .endif
 
 .if ${PORT_OPTIONS:MXDMCP}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-xdmcp.so:${PORTSDIR}/net/remmina-plugin-xdmcp
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-xdmcp.so:net/remmina-plugin-xdmcp
 .endif
 
 .if ${PORT_OPTIONS:MTELEP}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-telepathy.so:${PORTSDIR}/net/remmina-plugin-telepathy
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-telepathy.so:net/remmina-plugin-telepathy
 .endif
 
 .if ${PORT_OPTIONS:MNX}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-nx.so:${PORTSDIR}/net/remmina-plugin-nx
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-nx.so:net/remmina-plugin-nx
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:${PORTSDIR}/net/remmina-plugin-i18n
+RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:net/remmina-plugin-i18n
 .endif
 
 do-install:	# empty

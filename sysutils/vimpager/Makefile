@@ -10,7 +10,7 @@ COMMENT=	Use ViM as a pager
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
+RUN_DEPENDS=	vim:editors/vim
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rkitover

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	HTML to LaTeX to PDF Converter
 
-LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick
+LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick
 
 USES=		bison gmake
 MAKEFILE=	GNUmakefile

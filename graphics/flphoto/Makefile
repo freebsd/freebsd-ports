@@ -13,9 +13,9 @@ COMMENT=	Basic image management and display program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2 \
+		libfltk.so:x11-toolkits/fltk \
+		libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

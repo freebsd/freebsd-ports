@@ -10,12 +10,12 @@ COMMENT=	GTK3 Twitter client written in Vala
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
-		librest-0.7.so:${PORTSDIR}/devel/librest \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libnotify.so:devel/libnotify \
+		libjson-glib-1.0.so:devel/json-glib \
+		librest-0.7.so:devel/librest \
+		libgee-0.8.so:devel/libgee
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	baedert

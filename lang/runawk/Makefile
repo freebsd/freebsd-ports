@@ -11,7 +11,7 @@ COMMENT=	Wrapper for AWK interpreter that implements a modules system
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	mk-configure>=0.26.0:${PORTSDIR}/devel/mk-configure
+BUILD_DEPENDS=	mk-configure>=0.26.0:devel/mk-configure
 
 MAKE_ENV=	DESTDIR="${STAGEDIR}" EGDIR="${EXAMPLESDIR}"
 INSTALL_TARGET=	install install-doc install-examples

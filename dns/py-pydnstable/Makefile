@@ -12,7 +12,7 @@ COMMENT=	Python wrapper for dns/dnstable
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libdnstable.so:${PORTSDIR}/dns/dnstable
+LIB_DEPENDS=	libdnstable.so:dns/dnstable
 
 USE_PYTHON=	autoplist distutils
 USES=		pkgconfig python

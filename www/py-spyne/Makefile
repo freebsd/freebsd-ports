@@ -13,7 +13,7 @@ COMMENT=	Transport and architecture agnostic RPC library
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

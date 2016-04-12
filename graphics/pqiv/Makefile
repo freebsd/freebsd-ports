@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pqiv
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	graphics
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -11,7 +10,7 @@ COMMENT=	Pretty Quick Image Viewer
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phillipberndt

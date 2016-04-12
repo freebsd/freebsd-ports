@@ -15,8 +15,8 @@ COMMENT=	Compatible client of Ace of Spades
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick # for building icons
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	convert:graphics/ImageMagick # for building icons
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
 

@@ -29,51 +29,51 @@ SMPEG_DESC=	MP3 audio format
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:audio/flac
 .else
 CONFIGURE_ARGS+=--disable-flac
 .endif
 
 .if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS+=	libmikmod.so:audio/libmikmod
 .else
 CONFIGURE_ARGS+=--disable-mikmod
 .endif
 
 .if ${PORT_OPTIONS:MMODPLUG}
-LIB_DEPENDS+=	libmodplug.so:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	libmodplug.so:audio/libmodplug
 .else
 CONFIGURE_ARGS+=--disable-modplug
 .endif
 
 .if ${PORT_OPTIONS:MPHYSFS}
-LIB_DEPENDS+=	libphysfs.so:${PORTSDIR}/devel/physfs
+LIB_DEPENDS+=	libphysfs.so:devel/physfs
 .else
 CONFIGURE_ARGS+=--disable-physfs
 .endif
 
 .if ${PORT_OPTIONS:MSMPEG}
-LIB_DEPENDS+=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS+=	libsmpeg.so:multimedia/smpeg
 CONFIGURE_ARGS+=--disable-mpglib
 .else
 CONFIGURE_ARGS+=--disable-smpeg
 .endif
 
 .if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	libspeex.so:audio/speex
 .else
 CONFIGURE_ARGS+=--disable-speex
 .endif
 
 .if ${PORT_OPTIONS:MMIDI}
-RUN_DEPENDS+=	${LOCALBASE}/lib/timidity/goemon.cfg:${PORTSDIR}/audio/timidity
-BUILD_DEPENDS+=	${LOCALBASE}/lib/timidity/goemon.cfg:${PORTSDIR}/audio/timidity
+RUN_DEPENDS+=	${LOCALBASE}/lib/timidity/goemon.cfg:audio/timidity
+BUILD_DEPENDS+=	${LOCALBASE}/lib/timidity/goemon.cfg:audio/timidity
 .else
 CONFIGURE_ARGS+=--disable-midi
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 .else
 CONFIGURE_ARGS+=--disable-ogg
 .endif

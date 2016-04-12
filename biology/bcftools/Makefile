@@ -11,9 +11,9 @@ COMMENT=	Tools for manipulating next-generation sequencing data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	htslib>=1.3:${PORTSDIR}/biology/htslib
-LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
-TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	htslib>=1.3:biology/htslib
+LIB_DEPENDS=	libhts.so:biology/htslib
+TEST_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	samtools
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	GPL
 GPL_DESC=	Enable modules that rely on GPL code
 OPTIONS_DEFAULT=	GPL
 
-GPL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GPL_LIB_DEPENDS=	libgsl.so:math/gsl
 
 .include <bsd.port.options.mk>
 

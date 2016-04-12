@@ -12,7 +12,7 @@ COMMENT=	Quasar DV codec (libdv): software codec for DV video encoding format
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk

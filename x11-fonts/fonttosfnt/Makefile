@@ -8,7 +8,7 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Wrap a bitmap font in a sftn wrapper
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 XORG_CAT=	app
 USE_XORG=	xproto fontenc

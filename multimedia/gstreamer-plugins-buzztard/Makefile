@@ -14,7 +14,7 @@ COMMENT=	Buzztard gstreamer plugins
 
 OPTIONS_DEFINE=	DOCS
 
-LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
 USES=		pathfix libtool pkgconfig
 GNU_CONFIGURE=	yes

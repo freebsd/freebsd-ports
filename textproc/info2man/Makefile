@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate GNU info files into man pages
 
-RUN_DEPENDS=	p5-Perl4-CoreLibs>0:${PORTSDIR}/devel/p5-Perl4-CoreLibs
+RUN_DEPENDS=	p5-Perl4-CoreLibs>0:devel/p5-Perl4-CoreLibs
 USES=		perl5 shebangfix
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

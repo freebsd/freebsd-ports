@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Vformat plugin for the OpenSync framework
 
-LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync
+LIB_DEPENDS=	libopensync.so:devel/libopensync
 
 USES=		cmake iconv pkgconfig tar:bzip2
 CMAKE_ARGS+=	-Wno-dev

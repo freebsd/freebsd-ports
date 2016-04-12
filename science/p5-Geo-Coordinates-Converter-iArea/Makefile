@@ -14,9 +14,9 @@ COMMENT=	Some utility functions around iArea
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CDB_File>=0.96:${PORTSDIR}/databases/p5-CDB_File \
-		p5-File-ShareDir>=1.02:${PORTSDIR}/devel/p5-File-ShareDir \
-		p5-Geo-Coordinates-Converter>=0.09:${PORTSDIR}/science/p5-Geo-Coordinates-Converter
+BUILD_DEPENDS=	p5-CDB_File>=0.96:databases/p5-CDB_File \
+		p5-File-ShareDir>=1.02:devel/p5-File-ShareDir \
+		p5-Geo-Coordinates-Converter>=0.09:science/p5-Geo-Coordinates-Converter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

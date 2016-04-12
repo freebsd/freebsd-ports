@@ -12,7 +12,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to add guid in query for DoCoMo imode
 
 RUN_DEPENDS=	\
-	p5-HTML-StickyQuery>0:${PORTSDIR}/www/p5-HTML-StickyQuery
+	p5-HTML-StickyQuery>0:www/p5-HTML-StickyQuery
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

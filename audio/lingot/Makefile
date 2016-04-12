@@ -24,12 +24,12 @@ OPTIONS_GROUP=		SOUND
 OPTIONS_GROUP_SOUND=	ALSA JACK
 OPTIONS_DEFAULT=	JACK
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 ALSA_CONFIGURE_ENABLE=	alsa
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
-			libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+JACK_LIB_DEPENDS=	libjack.so:audio/jack \
+			libsamplerate.so:audio/libsamplerate
 JACK_CONFIGURE_ENABLE=	jack
 
 .include <bsd.port.mk>

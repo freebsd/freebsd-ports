@@ -10,7 +10,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 MAINTAINER=	uffe@uffe.org
 COMMENT=	Front-end for qmail-queue to run messages through filters
 
-LIB_DEPENDS=	libbg-sysdeps.so:${PORTSDIR}/devel/bglibs
+LIB_DEPENDS=	libbg-sysdeps.so:devel/bglibs
 
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs

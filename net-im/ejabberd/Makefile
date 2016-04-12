@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	16.02
-PORTREVISION=	1
+PORTVERSION=	16.03
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
 		LOCAL/ashish:deps
-DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-5.tar.xz:deps
+DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-6.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -16,12 +15,12 @@ COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		git:${PORTSDIR}/devel/git
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
-		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libyaml.so:${PORTSDIR}/textproc/libyaml
+BUILD_DEPENDS=	erlc:lang/erlang \
+		git:devel/git
+RUN_DEPENDS=	erl:lang/erlang \
+		bash:shells/bash
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libyaml.so:textproc/libyaml
 
 USERS=		ejabberd
 GROUPS=		${USERS}
@@ -32,7 +31,7 @@ USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 CPE_VENDOR=	process-one
 
-OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL ICONV RIAK REDIS SQLITE TOOLS FULLXML
+OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL ICONV RIAK ZLIB REDIS SQLITE TOOLS FULLXML
 OPTIONS_DEFAULT=	ICONV
 
 EJABBERD_LIBDIR=lib/erlang/lib
@@ -67,6 +66,7 @@ REDIS_CONFIGURE_ENABLE=	redis
 SQLITE_CONFIGURE_ENABLE=sqlite
 TOOLS_CONFIGURE_ENABLE=	tools
 FULLXML_CONFIGURE_ENABLE=	full-xml
+ZLIB_CONFIGURE_ENABLE=	zlib
 SQLITE_USE=		SQLITE=yes
 ICONV_USES=		iconv:wchar_t
 ICONV_LDFLAGS=		${ICONV_LIB}
@@ -82,7 +82,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-	 	${WRKSRC}/ejabberdctl.template
+		${WRKSRC}/ejabberdctl.template
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}

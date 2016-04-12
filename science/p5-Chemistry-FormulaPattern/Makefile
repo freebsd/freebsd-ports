@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Match molecule by formula
 
-BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
-		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern
-RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
-		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
+		p5-Chemistry-Pattern>=0:science/p5-Chemistry-Pattern
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
+		p5-Chemistry-Pattern>=0:science/p5-Chemistry-Pattern
 
 USES=		perl5
 USE_PERL5=	configure

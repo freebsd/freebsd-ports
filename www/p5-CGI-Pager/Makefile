@@ -13,7 +13,7 @@ COMMENT=	Perl extension to generate HTML pagination linkage easily
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-URI>0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-URI>0:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

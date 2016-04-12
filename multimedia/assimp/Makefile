@@ -23,7 +23,7 @@ CMAKE_ARGS+=	"-DCMAKE_SKIP_RPATH=ON"
 
 OPTIONS_DEFINE=	BOOST
 OPTIONS_DEFAULT=	BOOST
-BOOST_LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
+BOOST_LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 BOOST_CMAKE_ON=	-DASSIMP_ENABLE_BOOST_WORKAROUND:BOOL=OFF
 
 .include <bsd.port.options.mk>

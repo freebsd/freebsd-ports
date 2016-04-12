@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	npapi-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embed Xine player into browser
 
-LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	libxine.so:multimedia/libxine
 
 USES=		pkgconfig webplugin:native tar:bzip2
 GNU_CONFIGURE=	yes

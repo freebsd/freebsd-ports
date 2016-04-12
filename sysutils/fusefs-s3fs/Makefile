@@ -12,8 +12,8 @@ COMMENT=	FUSE-based file system backed by Amazon S3
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libxml2.so:textproc/libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3fs-fuse

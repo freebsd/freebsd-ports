@@ -11,10 +11,10 @@ COMMENT=	Helpers for audio/video applications using GUPnP
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	gobject-introspection>=0.9.5:${PORTSDIR}/devel/gobject-introspection \
-		gupnp>=0.19.0:${PORTSDIR}/net/gupnp
-LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp
-RUN_DEPENDS=	gupnp>=0.19.0:${PORTSDIR}/net/gupnp
+BUILD_DEPENDS=	gobject-introspection>=0.9.5:devel/gobject-introspection \
+		gupnp>=0.19.0:net/gupnp
+LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp
+RUN_DEPENDS=	gupnp>=0.19.0:net/gupnp
 
 OPTIONS_DEFINE=	VALA
 OPTIONS_SUB=	yes
@@ -29,7 +29,7 @@ USES=		gmake libtool pathfix pkgconfig tar:xz
 
 PORTDATA=	*
 
-VALA_BUILD_DEPENDS=	vala>=0.22:${PORTSDIR}/lang/vala
+VALA_BUILD_DEPENDS=	vala>=0.22:lang/vala
 VALA_CONFIGURE_ENV=	ac_cv_path_VAPIGEN=${LOCALBASE}/bin/vapigen
 VALA_CONFIGURE_ENV_OFF=	ac_cv_path_VAPIGEN=""
 

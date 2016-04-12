@@ -14,8 +14,8 @@ COMMENT=	PostgreSQL integration for p5-Mojolicious
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-DBD-Pg>=3.5.1:${PORTSDIR}/databases/p5-DBD-Pg \
-		p5-Mojolicious>=6.0:${PORTSDIR}/www/p5-Mojolicious
+BUILD_DEPENDS=	p5-DBD-Pg>=3.5.1:databases/p5-DBD-Pg \
+		p5-Mojolicious>=6.0:www/p5-Mojolicious
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	EXAMPLES

@@ -10,10 +10,10 @@ COMMENT=	Fast spam filtering system dev version
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
-		libevent.so:${PORTSDIR}/devel/libevent2 \
-		libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libgmime-2.4.so:mail/gmime24 \
+		libevent.so:devel/libevent2 \
+		libluajit-5.1.so:lang/luajit
 
 CONFLICTS_INSTALL=	rspamd
 
@@ -59,12 +59,12 @@ WITH_DEBUG=	yes
 
 .if ${PORT_OPTIONS:MGPERF}
  CMAKE_ARGS+=	-DENABLE_GPERF_TOOLS=ON
- LIB_DEPENDS+=	libprofiler.so:${PORTSDIR}/devel/google-perftools
+ LIB_DEPENDS+=	libprofiler.so:devel/google-perftools
 .endif
 
 .if ${PORT_OPTIONS:MHYPERSCAN}
  CMAKE_ARGS+=	-DENABLE_HYPERSCAN=ON
- BUILD_DEPENDS+=	${LOCALBASE}/lib/libhs.a:${PORTSDIR}/devel/hyperscan
+ BUILD_DEPENDS+=	${LOCALBASE}/lib/libhs.a:devel/hyperscan
  ONLY_FOR_ARCHS=	amd64
 .endif
 
@@ -74,17 +74,17 @@ WITH_DEBUG=	yes
  PLIST_SUB+=	REDIRECTOR=""
  USE_RC_SUBR+=	rspamd_redirector
  RUN_DEPENDS+=	\
-	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
-	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-	p5-POE-Component-Client-DNS>=0:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
-	p5-POE-Component-Client-HTTP>=0:${PORTSDIR}/www/p5-POE-Component-Client-HTTP \
-	p5-POE-Component-Server-HTTP>=0:${PORTSDIR}/www/p5-POE-Component-Server-HTTP \
-	p5-Cache-Memcached-Fast>=0:${PORTSDIR}/databases/p5-Cache-Memcached-Fast \
-	p5-Proc-PidUtil>=0:${PORTSDIR}/sysutils/p5-Proc-PidUtil \
-	p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-	p5-SWF-File>=0:${PORTSDIR}/graphics/p5-SWF-File
+	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+	p5-IO-String>=0:devel/p5-IO-String \
+	p5-XML-Parser>=0:textproc/p5-XML-Parser \
+	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+	p5-POE-Component-Client-DNS>=0:dns/p5-POE-Component-Client-DNS \
+	p5-POE-Component-Client-HTTP>=0:www/p5-POE-Component-Client-HTTP \
+	p5-POE-Component-Server-HTTP>=0:www/p5-POE-Component-Server-HTTP \
+	p5-Cache-Memcached-Fast>=0:databases/p5-Cache-Memcached-Fast \
+	p5-Proc-PidUtil>=0:sysutils/p5-Proc-PidUtil \
+	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
+	p5-SWF-File>=0:graphics/p5-SWF-File
 .else
  PLIST_SUB+=		REDIRECTOR="@comment "
 .endif

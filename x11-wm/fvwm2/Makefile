@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	gm4:devel/m4
 
 # Other ports this port cannot coexist with
 CONFLICTS?=	fvwm-1.* fvwm-2.[457].*
@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--disable-iconv
 .endif
 
 .if ${PORT_OPTIONS:MSTROKE}
-LIB_DEPENDS+=	libstroke.so:${PORTSDIR}/devel/libstroke
+LIB_DEPENDS+=	libstroke.so:devel/libstroke
 CONFIGURE_ARGS+=	--with-stroke-library=${LOCALBASE}/lib \
 			--with-stroke-includes=${LOCALBASE}/include
 .else
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--without-stroke-library
 .endif
 
 .if ${PORT_OPTIONS:MRPLAY}
-LIB_DEPENDS+=	librplay.so:${PORTSDIR}/audio/rplay
+LIB_DEPENDS+=	librplay.so:audio/rplay
 CONFIGURE_ARGS+=	--with-rplay-library=${LOCALBASE}/lib \
 			--with-rplay-includes=${LOCALBASE}/include
 .else
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--disable-sm
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 CONFIGURE_ARGS+=	--with-png-includes=${LOCALBASE}/include \
 			--with-png-library=${LOCALBASE}/lib
 .else
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--disable-rsvg
 .endif
 
 .if ${PORT_OPTIONS:MBIDI}
-LIB_DEPENDS+=	libfribidi.so:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	libfribidi.so:converters/fribidi
 CONFIGURE_ARGS+=	--enable-bidi \
 			--with-bidi-bindir=${LOCALBASE}/bin
 .else

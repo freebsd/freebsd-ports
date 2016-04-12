@@ -12,7 +12,7 @@ COMMENT=	Open source DYMO CUPS driver
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups
+LIB_DEPENDS=	libcupsimage.so:print/cups
 
 WRKSRC=		${WRKDIR}/dymo-cups-drivers-1.4.0.5
 

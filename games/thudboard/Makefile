@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.million.nl/file/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	The Discworld Boardgame Board
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 
 NO_WRKSUBDIR=	yes
 USES=		python

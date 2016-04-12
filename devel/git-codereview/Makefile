@@ -1,18 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	git-codereview
-PORTVERSION=	0.0.0.2015062601
+PORTVERSION=	0.0.0.2016030201
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Command-line tool for working with Gerrit
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
 GH_PROJECT=	review
-GH_TAGNAME=	719edc3
+GH_TAGNAME=	77ae237
 
 PLIST_FILES=	bin/git-codereview
 

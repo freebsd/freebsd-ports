@@ -10,7 +10,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Compact Disc Input and Control Library
 
-LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
+LIB_DEPENDS=	libcddb.so:audio/libcddb
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

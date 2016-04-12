@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	Network monitoring library with TCP/IP reassembly
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 LICENSE=	GPLv2
 

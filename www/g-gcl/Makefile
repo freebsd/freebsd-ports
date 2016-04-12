@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/gcl/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sample counter scripts for Graphic Counter Language
 
-RUN_DEPENDS=	gracula:${PORTSDIR}/graphics/gracula
+RUN_DEPENDS=	gracula:graphics/gracula
 
 NO_BUILD= 	yes
 

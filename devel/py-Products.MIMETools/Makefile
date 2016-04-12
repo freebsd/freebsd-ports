@@ -13,7 +13,7 @@ COMMENT=	Provides the <!--#mime--> tag for DocumentTemplate
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DocumentTemplate>=0:${PORTSDIR}/devel/py-DocumentTemplate
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DocumentTemplate>=0:devel/py-DocumentTemplate
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

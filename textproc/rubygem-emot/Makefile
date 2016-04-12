@@ -11,7 +11,7 @@ COMMENT=	Yet another emoji handler
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-thor>=0:${PORTSDIR}/devel/rubygem-thor
+RUN_DEPENDS=	rubygem-thor>=0:devel/rubygem-thor
 
 NO_ARCH=	yes
 

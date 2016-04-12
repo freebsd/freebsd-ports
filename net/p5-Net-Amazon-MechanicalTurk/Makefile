@@ -13,13 +13,13 @@ COMMENT=	Perl interface to the Amazon Mechanical Turk
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
-		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
-		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA \
-		p5-Net-SSLeay>=1.33:${PORTSDIR}/security/p5-Net-SSLeay \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
+		p5-IO-String>=0:devel/p5-IO-String \
+		p5-Mozilla-CA>=0:www/p5-Mozilla-CA \
+		p5-Net-SSLeay>=1.33:security/p5-Net-SSLeay \
+		p5-URI>=0:net/p5-URI \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-libwww>=6:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

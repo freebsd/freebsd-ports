@@ -14,9 +14,9 @@ COMMENT=	FUSE-based filesystem for transcoding flac to mp3 on the fly
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS=	libmp3lame.so:audio/lame \
+		libFLAC.so:audio/flac \
+		libid3tag.so:audio/libid3tag
 
 FETCH_CMD=	fetch -Fpr
 

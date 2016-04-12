@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF/releases/HDF${PORTVERSION}/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
-LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
+LIB_DEPENDS=	libsz.so:science/szip
 
 CONFLICTS_INSTALL=	netcdf-4.[0-9]*
 

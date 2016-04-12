@@ -12,8 +12,8 @@ DISTNAME=		${PORTNAME}_${DISTVERSION}
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		Graphics server for the guifi.net meshnet
 
-RUN_DEPENDS=		mrtg:${PORTSDIR}/net-mgmt/mrtg \
-			rrdtool:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=		mrtg:net-mgmt/mrtg \
+			rrdtool:databases/rrdtool
 
 USE_PHP=		gd simplexml dom
 

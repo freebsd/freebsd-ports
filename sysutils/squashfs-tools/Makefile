@@ -40,7 +40,7 @@ MAKE_ARGS+=	XZ_SUPPORT=1
 
 .if ${PORT_OPTIONS:MLZO}
 MAKE_ARGS+=	LZO_SUPPORT=1 LZO_DIR=${LOCALBASE}
-LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 .endif
 
 post-patch:

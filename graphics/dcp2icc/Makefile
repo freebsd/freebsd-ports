@@ -12,8 +12,8 @@ COMMENT=	DCP to ICC camera profile converter
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		liblcms.so:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		liblcms.so:graphics/lcms
 
 USES=		localbase scons tar:bzip2
 USE_GCC=	any	# segfaults on exit when built with Clang

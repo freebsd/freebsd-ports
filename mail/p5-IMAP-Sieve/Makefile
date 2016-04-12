@@ -12,7 +12,7 @@ DISTNAME=	websieve-063a
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module to edit Sieve scripts on an Cyrus IMAP server
 
-RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 WRKSRC=		${WRKDIR}/${PERLSIEVENAME}
 

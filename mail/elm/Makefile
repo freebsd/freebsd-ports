@@ -16,7 +16,7 @@ LICENSE_NAME=	Elm(tm) Mail System General Public License
 LICENSE_FILE=	${WRKSRC}/NOTICE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
+BUILD_DEPENDS=	ispell:textproc/aspell-ispell
 
 CFLAGS+=	-D_SIZE_T
 

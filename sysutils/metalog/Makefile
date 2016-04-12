@@ -14,7 +14,7 @@ COMMENT=	Modern syslogd replacement with PCRE support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		pkgconfig tar:xz
 USE_RC_SUBR=	${PORTNAME}

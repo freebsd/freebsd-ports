@@ -10,9 +10,9 @@ COMMENT=	Top clone for MySQL
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-DBD-mysql>1.0:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-DBI>=1.13:${PORTSDIR}/databases/p5-DBI \
-		p5-Term-ReadKey>=2.10:${PORTSDIR}/devel/p5-Term-ReadKey
+RUN_DEPENDS=	p5-DBD-mysql>1.0:databases/p5-DBD-mysql \
+		p5-DBI>=1.13:databases/p5-DBI \
+		p5-Term-ReadKey>=2.10:devel/p5-Term-ReadKey
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jzawodn

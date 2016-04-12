@@ -1,23 +1,23 @@
---- tilt.gemspec.orig	2014-11-29 02:13:13.000000000 +0000
-+++ tilt.gemspec	2014-11-29 02:13:29.000000000 +0000
-@@ -11,7 +11,6 @@
+--- tilt.gemspec.orig	2016-04-02 21:22:11 UTC
++++ tilt.gemspec
+@@ -11,7 +11,6 @@ Gem::Specification.new do |s|
    s.date = "2013-05-08"
-   s.description = "Generic interface to multiple Ruby template engines"
-   s.email = "r@tomayko.com"
--  s.executables = ["tilt"]
-   s.files = ["CHANGELOG.md", "COPYING", "Gemfile", "HACKING", "README.md", "Rakefile", "TEMPLATES.md", "bin/tilt", "lib/tilt.rb", "lib/tilt/asciidoc.rb", "lib/tilt/builder.rb", "lib/tilt/coffee.rb", "lib/tilt/css.rb", "lib/tilt/csv.rb", "lib/tilt/erb.rb", "lib/tilt/etanni.rb", "lib/tilt/haml.rb", "lib/tilt/liquid.rb", "lib/tilt/markaby.rb", "lib/tilt/markdown.rb", "lib/tilt/nokogiri.rb", "lib/tilt/plain.rb", "lib/tilt/radius.rb", "lib/tilt/rdoc.rb", "lib/tilt/string.rb", "lib/tilt/template.rb", "lib/tilt/textile.rb", "lib/tilt/wiki.rb", "lib/tilt/yajl.rb", "test/contest.rb", "test/markaby/locals.mab", "test/markaby/markaby.mab", "test/markaby/markaby_other_static.mab", "test/markaby/render_twice.mab", "test/markaby/scope.mab", "test/markaby/yielding.mab", "test/tilt_asciidoctor_test.rb", "test/tilt_blueclothtemplate_test.rb", "test/tilt_buildertemplate_test.rb", "test/tilt_cache_test.rb", "test/tilt_coffeescripttemplate_test.rb", "test/tilt_compilesite_test.rb", "test/tilt_creoletemplate_test.rb", "test/tilt_csv_test.rb", "test/tilt_erbtemplate_test.rb", "test/tilt_erubistemplate_test.rb", "test/tilt_etannitemplate_test.rb", "test/tilt_fallback_test.rb", "test/tilt_hamltemplate_test.rb", "test/tilt_kramdown_test.rb", "test/tilt_lesstemplate_test.less", "test/tilt_lesstemplate_test.rb", "test/tilt_liquidtemplate_test.rb", "test/tilt_markaby_test.rb", "test/tilt_markdown_test.rb", "test/tilt_marukutemplate_test.rb", "test/tilt_nokogiritemplate_test.rb", "test/tilt_radiustemplate_test.rb", "test/tilt_rdiscounttemplate_test.rb", "test/tilt_rdoctemplate_test.rb", "test/tilt_redcarpettemplate_test.rb", "test/tilt_redclothtemplate_test.rb", "test/tilt_sasstemplate_test.rb", "test/tilt_stringtemplate_test.rb", "test/tilt_template_test.rb", "test/tilt_test.rb", "test/tilt_wikiclothtemplate_test.rb", "test/tilt_yajltemplate_test.rb", "tilt.gemspec"]
-   s.homepage = "http://github.com/rtomayko/tilt/"
-   s.licenses = ["MIT"]
-@@ -41,12 +40,10 @@
-       s.add_development_dependency(%q<nokogiri>, [">= 0"])
-       s.add_development_dependency(%q<radius>, [">= 0"])
-       s.add_development_dependency(%q<rdiscount>, [">= 0"])
--      s.add_development_dependency(%q<rdoc>, [">= 0"])
-       s.add_development_dependency(%q<redcarpet>, [">= 0"])
-       s.add_development_dependency(%q<sass>, [">= 0"])
-       s.add_development_dependency(%q<wikicloth>, [">= 0"])
-       s.add_development_dependency(%q<yajl-ruby>, [">= 0"])
--      s.add_development_dependency(%q<rdoc>, [">= 0"])
+   s.description = "Generic interface to multiple Ruby template engines".freeze
+   s.email = "r@tomayko.com".freeze
+-  s.executables = ["tilt".freeze]
+   s.files = ["CHANGELOG.md".freeze, "COPYING".freeze, "Gemfile".freeze, "HACKING".freeze, "README.md".freeze, "Rakefile".freeze, "TEMPLATES.md".freeze, "bin/tilt".freeze, "lib/tilt.rb".freeze, "lib/tilt/asciidoc.rb".freeze, "lib/tilt/builder.rb".freeze, "lib/tilt/coffee.rb".freeze, "lib/tilt/css.rb".freeze, "lib/tilt/csv.rb".freeze, "lib/tilt/erb.rb".freeze, "lib/tilt/etanni.rb".freeze, "lib/tilt/haml.rb".freeze, "lib/tilt/liquid.rb".freeze, "lib/tilt/markaby.rb".freeze, "lib/tilt/markdown.rb".freeze, "lib/tilt/nokogiri.rb".freeze, "lib/tilt/plain.rb".freeze, "lib/tilt/radius.rb".freeze, "lib/tilt/rdoc.rb".freeze, "lib/tilt/string.rb".freeze, "lib/tilt/template.rb".freeze, "lib/tilt/textile.rb".freeze, "lib/tilt/wiki.rb".freeze, "lib/tilt/yajl.rb".freeze, "test/contest.rb".freeze, "test/markaby/locals.mab".freeze, "test/markaby/markaby.mab".freeze, "test/markaby/markaby_other_static.mab".freeze, "test/markaby/render_twice.mab".freeze, "test/markaby/scope.mab".freeze, "test/markaby/yielding.mab".freeze, "test/tilt_asciidoctor_test.rb".freeze, "test/tilt_blueclothtemplate_test.rb".freeze, "test/tilt_buildertemplate_test.rb".freeze, "test/tilt_cache_test.rb".freeze, "test/tilt_coffeescripttemplate_test.rb".freeze, "test/tilt_compilesite_test.rb".freeze, "test/tilt_creoletemplate_test.rb".freeze, "test/tilt_csv_test.rb".freeze, "test/tilt_erbtemplate_test.rb".freeze, "test/tilt_erubistemplate_test.rb".freeze, "test/tilt_etannitemplate_test.rb".freeze, "test/tilt_fallback_test.rb".freeze, "test/tilt_hamltemplate_test.rb".freeze, "test/tilt_kramdown_test.rb".freeze, "test/tilt_lesstemplate_test.less".freeze, "test/tilt_lesstemplate_test.rb".freeze, "test/tilt_liquidtemplate_test.rb".freeze, "test/tilt_markaby_test.rb".freeze, "test/tilt_markdown_test.rb".freeze, "test/tilt_marukutemplate_test.rb".freeze, "test/tilt_nokogiritemplate_test.rb".freeze, "test/tilt_radiustemplate_test.rb".freeze, "test/tilt_rdiscounttemplate_test.rb".freeze, "test/tilt_rdoctemplate_test.rb".freeze, "test/tilt_redcarpettemplate_test.rb".freeze, "test/tilt_redclothtemplate_test.rb".freeze, "test/tilt_sasstemplate_test.rb".freeze, "test/tilt_stringtemplate_test.rb".freeze, "test/tilt_template_test.rb".freeze, "test/tilt_test.rb".freeze, "test/tilt_wikiclothtemplate_test.rb".freeze, "test/tilt_yajltemplate_test.rb".freeze, "tilt.gemspec".freeze]
+   s.homepage = "http://github.com/rtomayko/tilt/".freeze
+   s.licenses = ["MIT".freeze]
+@@ -41,12 +40,10 @@ Gem::Specification.new do |s|
+       s.add_development_dependency(%q<nokogiri>.freeze, [">= 0"])
+       s.add_development_dependency(%q<radius>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rdiscount>.freeze, [">= 0"])
+-      s.add_development_dependency(%q<rdoc>.freeze, [">= 0"])
+       s.add_development_dependency(%q<redcarpet>.freeze, [">= 0"])
+       s.add_development_dependency(%q<sass>.freeze, [">= 0"])
+       s.add_development_dependency(%q<wikicloth>.freeze, [">= 0"])
+       s.add_development_dependency(%q<yajl-ruby>.freeze, [">= 0"])
+-      s.add_development_dependency(%q<rdoc>.freeze, [">= 0"])
      else
-       s.add_dependency(%q<asciidoctor>, [">= 0.1.0"])
-       s.add_dependency(%q<RedCloth>, [">= 0"])
+       s.add_dependency(%q<asciidoctor>.freeze, [">= 0.1.0"])
+       s.add_dependency(%q<RedCloth>.freeze, [">= 0"])

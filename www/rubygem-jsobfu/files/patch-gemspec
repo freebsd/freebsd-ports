@@ -1,11 +1,11 @@
---- jsobfu.gemspec.orig	2015-05-27 11:47:50 UTC
+--- jsobfu.gemspec.orig	2016-03-31 16:31:06 UTC
 +++ jsobfu.gemspec
 @@ -21,7 +21,7 @@ Gem::Specification.new do |s|
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<rkelly-remix>, ["= 0.0.6"])
-+      s.add_runtime_dependency(%q<rkelly-remix>, [">= 0.0.6"])
-       s.add_development_dependency(%q<rspec>, ["~> 3.1"])
-       s.add_development_dependency(%q<simplecov>, [">= 0"])
-       s.add_development_dependency(%q<execjs>, [">= 0"])
+-      s.add_runtime_dependency(%q<rkelly-remix>.freeze, ["= 0.0.6"])
++      s.add_runtime_dependency(%q<rkelly-remix>.freeze, [">= 0.0.6"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.1"])
+       s.add_development_dependency(%q<simplecov>.freeze, [">= 0"])
+       s.add_development_dependency(%q<execjs>.freeze, [">= 0"])

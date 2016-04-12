@@ -10,7 +10,7 @@ MASTER_SITES=	SF/ipa-system/modules/ipa_conv
 MAINTAINER=	misc/ipa_conv
 COMMENT=	IPA accounting/database module for converting statistics
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
+BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:sysutils/ipa
 
 USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes

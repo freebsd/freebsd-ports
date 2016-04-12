@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gebhart@secnetix.de
 COMMENT=	Generate bash completion scripts
 
-BUILD_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
-		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Tree-Trie>=0:${PORTSDIR}/devel/p5-Tree-Trie \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-Test-Block>=0:${PORTSDIR}/devel/p5-Test-Block \
-		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
+BUILD_DEPENDS=	p5-Readonly>=0:devel/p5-Readonly \
+		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
+		p5-Tree-Trie>=0:devel/p5-Tree-Trie \
+		p5-Test-Warn>=0:devel/p5-Test-Warn \
+		p5-Test-Block>=0:devel/p5-Test-Block \
+		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

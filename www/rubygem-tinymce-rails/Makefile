@@ -11,7 +11,7 @@ COMMENT=	Seamlessly integrates TinyMCE into the Rails asset pipeline
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-railties>=3.1.1:${PORTSDIR}/www/rubygem-railties
+RUN_DEPENDS=	rubygem-railties>=3.1.1:www/rubygem-railties
 
 NO_ARCH=	yes
 

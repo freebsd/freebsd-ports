@@ -12,9 +12,9 @@ COMMENT=	Standalone Djvu viewer and plugin based on Qt toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2
-LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	rsvg-convert:graphics/librsvg2
+LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
+		libtiff.so:graphics/tiff
 
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes

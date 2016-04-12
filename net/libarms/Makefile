@@ -11,7 +11,7 @@ MASTER_SITES=	https://dev.smf.jp/dl/ \
 MAINTAINER=	shigeru@iij.ad.jp
 COMMENT=	SMFv2/ARMS client library for C
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool

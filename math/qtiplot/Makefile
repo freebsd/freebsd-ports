@@ -10,12 +10,12 @@ MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data analysis and scientific plotting
 
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
-		libmuparser.so:${PORTSDIR}/math/muparser \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		libmuparser.so:math/muparser \
+		libpng.so:graphics/png
 # use bundled modified libraries
-# 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-# 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4
+# 		qwt.5:x11-toolkits/qwt5 \
+# 		qwtplot3d-qt4:math/qwtplot3d-qt4
 
 USES=		dos2unix gmake qmake tar:bzip2
 USE_QT4=	gui opengl svg qt3support network assistantclient \
@@ -33,12 +33,12 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=	yes
 
 DOCS_DESC=	Install the QtiPlot Handbook
-DOCS_RUN_DEPENDS=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
+DOCS_RUN_DEPENDS=	qtiplot-doc>=0:math/qtiplot-doc
 DOCS_USE=	QT4=assistant-adp_run
 
 PYTHON_DESC=	Python scripting support
 PYTHON_USES=	python
-PYTHON_BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+PYTHON_BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui
 PYTHON_RUN_DEPENDS:=	${PYTHON_BUILD_DEPENDS}
 PYTHON_CONFIGURE_ENV=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
 			PYTHON_VERSION=${PYTHON_VERSION}

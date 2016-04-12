@@ -12,7 +12,7 @@ COMMENT=	Mastermind game for X Window System
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
 USE_XORG=	x11 xpm
 MAKE_ENV=	GRAPHLIBS="${LDFLAGS}"

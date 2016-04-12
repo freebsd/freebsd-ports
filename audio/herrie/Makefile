@@ -26,23 +26,23 @@ HTTP_DESC=	HTTP streams and AudioScrobbler support
 LIBAO_DESC=	LibAO support (breaks chroot)
 XCURSES_DESC=	Build XCurses version
 
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
-			libid3tag.so:${PORTSDIR}/audio/libid3tag
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad \
+			libid3tag.so:audio/libid3tag
 MAD_CONFIGURE_OFF=no_mp3
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CONFIGURE_OFF=no_vorbis
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_OFF=no_sndfile
-MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
+MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 MODPLUG_CFLAGS=		-I${LOCALBASE}/include/libmodplug
 MODPLUG_CONFIGURE_OFF=no_modplug
-HTTP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+HTTP_LIB_DEPENDS=	libcurl.so:ftp/curl
 HTTP_CONFIGURE_OFF=no_http no_scrobbler
-LIBAO_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+LIBAO_LIB_DEPENDS=	libao.so:audio/libao
 LIBAO_CONFIGURE_ON=ao
-XCURSES_LIB_DEPENDS=	libXCurses.so:${PORTSDIR}/devel/pdcurses
+XCURSES_LIB_DEPENDS=	libXCurses.so:devel/pdcurses
 XCURSES_CONFIGURE_ON=xcurses
-XSPF_LIB_DEPENDS=	libxspf.so:${PORTSDIR}/multimedia/libxspf
+XSPF_LIB_DEPENDS=	libxspf.so:multimedia/libxspf
 XSPF_CONFIGURE_OFF=no_xspf
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=no_nls

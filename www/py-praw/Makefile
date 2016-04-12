@@ -13,11 +13,11 @@ COMMENT=	Python Reddit API Wrapper
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>=4.0.9:${PORTSDIR}/devel/py-decorator \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}six>=1.10:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}update_checker>=0.11:${PORTSDIR}/devel/py-update_checker
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:${PORTSDIR}/devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>=4.0.9:devel/py-decorator \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}six>=1.10:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}update_checker>=0.11:devel/py-update_checker
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock
 
 # TEST_DEPENDS to be ported
 # betamax >=0.5.1

@@ -20,9 +20,9 @@ OPTIONS_DEFAULT=	UTF8
 EUCJP_DESC=	Use EUC-JP as dictionary charset.
 SHIFTJIS_DESC=	Use SHIFT-JIS as dictionary charset.
 UTF8_DESC=	Use UTF-8 as dictionary charset.
-EUCJP_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/char.bin:${PORTSDIR}/japanese/mecab-ipadic-eucjp
-SHIFTJIS_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/char.bin:${PORTSDIR}/japanese/mecab-ipadic-sjis
-UTF8_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/char.bin:${PORTSDIR}/japanese/mecab-ipadic-utf8
+EUCJP_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/char.bin:japanese/mecab-ipadic-eucjp
+SHIFTJIS_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/char.bin:japanese/mecab-ipadic-sjis
+UTF8_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/char.bin:japanese/mecab-ipadic-utf8
 .endif
 
 .if !empty(PKGNAMESUFFIX)
@@ -35,7 +35,7 @@ LICENSE_FILE_ICOT=	${WRKSRC}/COPYING
 LICENSE_PERMS_NAIST=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_ICOT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	ja-mecab>=0.94:${PORTSDIR}/japanese/mecab
+BUILD_DEPENDS=	ja-mecab>=0.94:japanese/mecab
 
 USES=			perl5
 USE_PERL5=		build

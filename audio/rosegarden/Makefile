@@ -12,16 +12,16 @@ COMMENT=	General purpose music editor and sequencer suite
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
-		${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		liblrdf.so:${PORTSDIR}/textproc/liblrdf
-RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
-		flac:${PORTSDIR}/audio/flac \
-		wavpack:${PORTSDIR}/audio/wavpack \
-		xdg-open:${PORTSDIR}/devel/xdg-utils \
-		lilypond:${PORTSDIR}/print/lilypond
+BUILD_DEPENDS=	dssi_osc_update:audio/dssi \
+		${LOCALBASE}/include/fftw3.h:math/fftw3
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libfftw3f.so:math/fftw3-float \
+		liblrdf.so:textproc/liblrdf
+RUN_DEPENDS=	dssi_osc_update:audio/dssi \
+		flac:audio/flac \
+		wavpack:audio/wavpack \
+		xdg-open:devel/xdg-utils \
+		lilypond:print/lilypond
 
 USES=		cmake:outsource desktop-file-utils pkgconfig shared-mime-info \
 		tar:bzip2
@@ -34,7 +34,7 @@ OPTIONS_SINGLE=		TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
 OPTIONS_DEFAULT=	QT4
 
-LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CMAKE_ON=		-DENABLE_LIRC:BOOL=ON
 QT4_USE=		qt4=gui,network,testlib,xml \
 			qt4=linguisttools_build,moc_build,qmake_build \

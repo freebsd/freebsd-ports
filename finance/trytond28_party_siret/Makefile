@@ -14,7 +14,7 @@ COMMENT=	Tryton Application Platform (Party Siret Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_party>=2.8.0:${PORTSDIR}/finance/trytond28_party
+RUN_DEPENDS=	trytond28_party>=2.8.0:finance/trytond28_party
 
 CONFLICTS=	trytond_party_siret-2.[46].*
 

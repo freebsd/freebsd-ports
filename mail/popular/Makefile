@@ -10,7 +10,7 @@ MASTER_SITES=	https://www.jochentopf.com/software/popular/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of programs for setting up large POP3 server systems
 
-BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
+BUILD_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM
 
 CONFLICTS=	pserv-[0-9]* synce-librapi2-[0-9]*
 

@@ -16,7 +16,7 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
-LIB_DEPENDS+=	libsybdb.so.5:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	libsybdb.so.5:databases/freetds
 _PROFTPD_MODULE_DISTFILES=	mod_sql_tds-4.13${EXTRACT_SUFX}:sql_tds
 _PROFTPD_MODULE_EXTRACT_ONLY=	mod_sql_tds-4.13${EXTRACT_SUFX}
 _PROFTPD_MODULE_MASTER_SITES=	http://labratsoftware.com/mod_sql_tds/:sql_tds \

@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/system/bbs/mail
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alpha-release reader for reading SOUP and QWK packets
 
-RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	zip:archivers/zip
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5

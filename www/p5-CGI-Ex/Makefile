@@ -13,7 +13,7 @@ COMMENT=	CGI utility suite - makes powerful application writing fun and easy
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Template-Alloy>=1.004:${PORTSDIR}/www/p5-Template-Alloy
+BUILD_DEPENDS=	p5-Template-Alloy>=1.004:www/p5-Template-Alloy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	EXAMPLES

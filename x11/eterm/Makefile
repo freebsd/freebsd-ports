@@ -11,9 +11,9 @@ DISTNAME=	Eterm-${PORTVERSION}
 MAINTAINER?=	enlightenment@FreeBSD.org
 COMMENT?=	X11 terminal emulator based on rxvt/xterm
 
-BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
-LIB_DEPENDS=	libast.so:${PORTSDIR}/devel/libast \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2
+BUILD_DEPENDS=	man2html:textproc/man2html
+LIB_DEPENDS=	libast.so:devel/libast \
+		libImlib2.so:graphics/imlib2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \

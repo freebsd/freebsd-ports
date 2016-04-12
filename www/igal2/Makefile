@@ -11,7 +11,7 @@ COMMENT=	Simple CLI image gallery generator
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	convert:graphics/ImageMagick
 
 OPTIONS_DEFINE=	EXIF
 EXIF_DESC=	Support EXIF data (-e option)
@@ -24,7 +24,7 @@ MAKE_ENV+=	DESTDIR=${STAGEDIR}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXIF}
-RUN_DEPENDS+=	 p5-Image-ExifTool>=7.0:${PORTSDIR}/graphics/p5-Image-ExifTool
+RUN_DEPENDS+=	 p5-Image-ExifTool>=7.0:graphics/p5-Image-ExifTool
 .endif
 
 post-patch:

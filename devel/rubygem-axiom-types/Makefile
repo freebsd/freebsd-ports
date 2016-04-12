@@ -12,9 +12,9 @@ COMMENT=	Abstract types for logic programming in Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-descendants_tracker>=0.0.4:${PORTSDIR}/devel/rubygem-descendants_tracker \
-		rubygem-ice_nine>=0.11.0:${PORTSDIR}/devel/rubygem-ice_nine \
-		rubygem-thread_safe>=0.3.1:${PORTSDIR}/devel/rubygem-thread_safe
+RUN_DEPENDS=	rubygem-descendants_tracker>=0.0.4:devel/rubygem-descendants_tracker \
+		rubygem-ice_nine>=0.11.0:devel/rubygem-ice_nine \
+		rubygem-thread_safe>=0.3.1:devel/rubygem-thread_safe
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -13,8 +13,8 @@ COMMENT=	Swish-e bindings for PHP
 
 LICENSE=	PHP301
 
-BUILD_DEPENDS=	swish-config:${PORTSDIR}/www/swish-e
-RUN_DEPENDS:=	swish-config:${PORTSDIR}/www/swish-e
+BUILD_DEPENDS=	swish-config:www/swish-e
+RUN_DEPENDS:=	swish-config:www/swish-e
 
 USES=		tar:tgz
 USE_PHP=	yes

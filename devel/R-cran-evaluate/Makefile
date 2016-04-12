@@ -11,7 +11,7 @@ COMMENT=	Parsing and Evaluation Tools
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-stringr>=0.6.2:${PORTSDIR}/textproc/R-cran-stringr
+RUN_DEPENDS=	R-cran-stringr>=0.6.2:textproc/R-cran-stringr
 
 USES=	cran:auto-plist
 

@@ -10,7 +10,7 @@ CATEGORIES=	graphics gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" for The Gimp
 
-RUN_DEPENDS=	gimp-2.8:${PORTSDIR}/graphics/gimp-app
+RUN_DEPENDS=	gimp-2.8:graphics/gimp-app
 
 USES+=	metaport
 
@@ -20,9 +20,9 @@ PYTHON_DESC=	Python-fu support
 PRINT_DESC=	Gutenprint (gimp-print) plugin
 HELP_DESC=	Gimp-Help (50+MB distfile)
 
-HELP_RUN_DEPENDS+=	en-gimp-help-html>=0:${PORTSDIR}/misc/gimp-help-en
-PYTHON_RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:${PORTSDIR}/graphics/py-gimp
-PRINT_RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/gutenprint:${PORTSDIR}/print/gimp-gutenprint
-PRINT_RUN_DEPENDS+=	gutenprint>0:${PORTSDIR}/print/gutenprint
+HELP_RUN_DEPENDS+=	en-gimp-help-html>=0:misc/gimp-help-en
+PYTHON_RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:graphics/py-gimp
+PRINT_RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/gutenprint:print/gimp-gutenprint
+PRINT_RUN_DEPENDS+=	gutenprint>0:print/gutenprint
 
 .include <bsd.port.mk>

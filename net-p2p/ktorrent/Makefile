@@ -10,10 +10,10 @@ MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION}/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libktorrent.so:${PORTSDIR}/net-p2p/libktorrent
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:devel/boost-libs
+LIB_DEPENDS=	libtag.so:audio/taglib \
+		libgmp.so:math/gmp \
+		libktorrent.so:net-p2p/libktorrent
 
 USE_KDE4=	kdelibs kdeprefix automoc4 pimlibs workspace
 USE_QT4=	corelib gui network qt3support qtestlib webkit \

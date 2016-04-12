@@ -13,7 +13,7 @@ COMMENT=	Help you update your snort rules after each update
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:ftp/wget
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

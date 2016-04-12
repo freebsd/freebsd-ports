@@ -12,8 +12,8 @@ DISTFILES=	tmdatools.1.0.2-1.4.2.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds TMDA support to SquirrelMail
 
-RUN_DEPENDS=	tmda-filter:${PORTSDIR}/mail/tmda \
-		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=	tmda-filter:mail/tmda \
+		${SQUIRRELDIR}/index.php:mail/squirrelmail
 
 USES=		perl5
 NO_BUILD=	yes

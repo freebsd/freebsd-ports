@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python REST Client
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2
+RUN_DEPENDS=	${PKGNAMEPREFIX}httplib2>=0:www/py-httplib2
 
 USES=		python
 USE_PYTHON=	distutils autoplist

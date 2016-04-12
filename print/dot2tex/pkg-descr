@@ -7,4 +7,4 @@ Graphviz to a series of PSTricks or PGF/TikZ commands. This approach allows:
   - Using backend specific styles to customize the output
 
 
-WWW:	http://www.fauskes.net/code/dot2tex/
+WWW: https://github.com/kjellmf/dot2tex

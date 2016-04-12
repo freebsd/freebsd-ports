@@ -11,16 +11,16 @@ COMMENT=	Graphical score editor
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libaubio.so:${PORTSDIR}/audio/aubio \
-		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
-		libjack.so:${PORTSDIR}/audio/jack \
-		libsmf.so:${PORTSDIR}/audio/libsmf \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libportaudio.so:${PORTSDIR}/audio/portaudio \
-		librubberband.so:${PORTSDIR}/audio/rubberband \
-		libguile.so:${PORTSDIR}/lang/guile \
-		libfftw3.so:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libaubio.so:audio/aubio \
+		libfluidsynth.so:audio/fluidsynth \
+		libjack.so:audio/jack \
+		libsmf.so:audio/libsmf \
+		libsndfile.so:audio/libsndfile \
+		libportaudio.so:audio/portaudio \
+		librubberband.so:audio/rubberband \
+		libguile.so:lang/guile \
+		libfftw3.so:math/fftw3
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		bison gettext gmake pkgconfig
 USE_GNOME=	intltool librsvg2 libxml2
@@ -45,18 +45,18 @@ GTK2_USE=		gnome=gtk20,gtksourceview2
 GTK2_CONFIGURE_ON=	--enable-gtk2
 GTK3_USE=		gnome=gtk30,gtksourceview3
 LILYPOND_DESC=		Install LilyPond (Printing)
-LILYPOND_RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond
+LILYPOND_RUN_DEPENDS=	lilypond:print/lilypond
 PDF_CONFIGURE_OFF=	--disable-evince
 TOOLKIT_DESC=		GTK+ toolkit
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK3} && ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS+=	libevview3.so:${PORTSDIR}/graphics/evince
+LIB_DEPENDS+=	libevview3.so:graphics/evince
 .endif
 
 .if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS+=	libatrilview.so:${PORTSDIR}/graphics/atril
+LIB_DEPENDS+=	libatrilview.so:graphics/atril
 .endif
 
 post-patch:

@@ -12,7 +12,7 @@ COMMENT=	Milter to perform a envelope-from sender verification on target MX
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS=	libspf2.so:mail/libspf2
 
 USES=		tar:xz
 USE_RC_SUBR=	milter-callback

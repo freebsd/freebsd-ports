@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.semprixd.com/shares/ports/
 MAINTAINER=	semprix@gmx.com
 COMMENT=	Fast way to delete entries from OpenSSH known_hosts file
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		shebangfix
 NO_BUILD=	yes

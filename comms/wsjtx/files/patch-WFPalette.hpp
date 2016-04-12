@@ -1,10 +1,6 @@
-Fix build with Qt >= 5.5:
-
-./WFPalette.hpp:53:1: error: unknown type name 'Q_DECLARE_METATYPE'
-Q_DECLARE_METATYPE (WFPalette::Colours);
---- WFPalette.hpp.orig	2016-01-21 09:38:31 UTC
+--- WFPalette.hpp.orig	2015-12-11 00:00:14 UTC
 +++ WFPalette.hpp
-@@ -4,6 +4,7 @@
+@@ -5,6 +5,7 @@
  #include <QList>
  #include <QVector>
  #include <QColor>

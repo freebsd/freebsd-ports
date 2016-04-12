@@ -12,8 +12,8 @@ COMMENT=	Extension widgets for GTK+
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+LIB_DEPENDS=	libenchant.so:textproc/enchant
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

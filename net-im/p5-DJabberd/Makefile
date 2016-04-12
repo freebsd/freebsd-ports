@@ -12,16 +12,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Scalable, extensible Jabber/XMPP server framework
 
-BUILD_DEPENDS=	p5-Danga-Socket>=0:${PORTSDIR}/devel/p5-Danga-Socket \
-		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
-		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
-		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
-		p5-Unicode-Stringprep>=0:${PORTSDIR}/converters/p5-Unicode-Stringprep
+BUILD_DEPENDS=	p5-Danga-Socket>=0:devel/p5-Danga-Socket \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX \
+		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+		p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
+		p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
+		p5-Unicode-Stringprep>=0:converters/p5-Unicode-Stringprep
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+TEST_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 

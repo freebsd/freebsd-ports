@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Python interface for Zinnia
 
-LIB_DEPENDS=	libzinnia.so:${PORTSDIR}/japanese/zinnia
-RUN_DEPENDS=	zinnia:${PORTSDIR}/japanese/zinnia
+LIB_DEPENDS=	libzinnia.so:japanese/zinnia
+RUN_DEPENDS=	zinnia:japanese/zinnia
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

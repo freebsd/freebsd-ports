@@ -15,7 +15,7 @@ USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
 USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gconf2 gnomemimedata intlhack referencehack
@@ -50,18 +50,18 @@ USES+=		fam
 .endif
 
 .if exists(${LOCALBASE}/lib/libkrb5.so)
-LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	libkrb5.so:security/heimdal
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
 CONFIGURE_ARGS+=--enable-hal
-LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:sysutils/hal
 .else
 CONFIGURE_ARGS+=--disable-hal
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+LIB_DEPENDS+=	libsmbclient.so:net/samba-libsmbclient
 PLIST_SUB+=	SAMBA=""
 .else
 PLIST_SUB+=	SAMBA="@comment "
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=--disable-samba
 .endif
 
 .if ${PORT_OPTIONS:MMDNS}
-LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:net/avahi-app
 .else
 CONFIGURE_ARGS+=--disable-avahi
 .endif

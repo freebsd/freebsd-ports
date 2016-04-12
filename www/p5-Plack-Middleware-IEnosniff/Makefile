@@ -12,7 +12,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to add X-Content-Type-Options:nosniff
 
 RUN_DEPENDS=	\
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack
+	p5-Plack>0:www/p5-Plack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

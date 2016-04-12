@@ -28,7 +28,7 @@ CMAKE_ARGS+=	-DVMCS_INSTALL_PREFIX=${PREFIX} \
 OPTIONS_DEFINE=	EXAMPLES DEBUG
 OPTIONS_DEFAULT=	EXAMPLES
 EXAMPLES_DESC=	Install test applications source code (hello_pi)
-EXAMPLES_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+EXAMPLES_LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 DEBUG_CFLAGS_OFF=	-DNDEBUG
 

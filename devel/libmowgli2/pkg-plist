@@ -16,7 +16,6 @@ include/libmowgli-2/core/allocation_policy.h
 include/libmowgli-2/core/allocator.h
 include/libmowgli-2/core/assert.h
 include/libmowgli-2/core/bootstrap.h
-include/libmowgli-2/core/exception.h
 include/libmowgli-2/core/heap.h
 include/libmowgli-2/core/iterator.h
 include/libmowgli-2/core/logger.h
@@ -24,13 +23,15 @@ include/libmowgli-2/core/mowgli_string.h
 include/libmowgli-2/core/process.h
 include/libmowgli-2/core/stdinc.h
 include/libmowgli-2/dns/dns.h
-include/libmowgli-2/dns/dns_evloop_res.h
-include/libmowgli-2/dns/dns_evloop_reslib.h
+include/libmowgli-2/dns/evloop_res.h
+include/libmowgli-2/dns/evloop_reslib.h
 include/libmowgli-2/eventloop/eventloop.h
 include/libmowgli-2/ext/confparse.h
 include/libmowgli-2/ext/error_backtrace.h
 include/libmowgli-2/ext/getopt_long.h
 include/libmowgli-2/ext/global_storage.h
+include/libmowgli-2/ext/json-inline.h
+include/libmowgli-2/ext/json.h
 include/libmowgli-2/ext/proctitle.h
 include/libmowgli-2/ext/program_opts.h
 include/libmowgli-2/linebuf/linebuf.h
@@ -40,6 +41,8 @@ include/libmowgli-2/object/class.h
 include/libmowgli-2/object/message.h
 include/libmowgli-2/object/metadata.h
 include/libmowgli-2/object/object.h
+include/libmowgli-2/platform/attributes.h
+include/libmowgli-2/platform/cacheline.h
 include/libmowgli-2/platform/constructor.h
 include/libmowgli-2/platform/machine.h
 include/libmowgli-2/platform/win32/win32_stdinc.h

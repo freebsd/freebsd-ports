@@ -14,8 +14,8 @@ COMMENT=	High-level cross-protocol url-grabber
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}pycurl>=7.19.0_1:${PORTSDIR}/ftp/py-pycurl
-RUN_DEPENDS=	${PKGNAMEPREFIX}pycurl>=7.19.0_1:${PORTSDIR}/ftp/py-pycurl
+BUILD_DEPENDS=	${PKGNAMEPREFIX}pycurl>=7.19.0_1:ftp/py-pycurl
+RUN_DEPENDS=	${PKGNAMEPREFIX}pycurl>=7.19.0_1:ftp/py-pycurl
 
 USES=		python
 USE_PYTHON=	distutils

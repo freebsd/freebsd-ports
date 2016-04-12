@@ -13,7 +13,7 @@ COMMENT=	Graph based image processing framework
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libbabl-0.1.so:${PORTSDIR}/x11/babl
+LIB_DEPENDS=	libbabl-0.1.so:x11/babl
 
 # ignore new versions until we can replace this version with gegl 3.x
 PORTSCOUT=	ignore:1
@@ -60,7 +60,7 @@ PLIST_SUB+=	GDK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libcairo.so:graphics/cairo
 PLIST_SUB+=	CAIRO=""
 .else
 CONFIGURE_ARGS+=--without-cairo
@@ -83,11 +83,11 @@ PLIST_SUB+=	PANGOCAIRO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MENSCRIPT}
-BUILD_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
+BUILD_DEPENDS+=	enscript:print/enscript-a4
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
 .else
 CONFIGURE_ARGS+=--without-libavformat
@@ -95,13 +95,13 @@ PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGRAPHVIZ}
-LIB_DEPENDS+=	libcgraph.so:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS+=	libcgraph.so:graphics/graphviz
 .else
 CONFIGURE_ARGS+=--without-graphviz
 .endif
 
 .if ${PORT_OPTIONS:MJASPER}
-LIB_DEPENDS+=	libjasper.so:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS+=	libjasper.so:graphics/jasper
 PLIST_SUB+=	JP2=""
 .else
 CONFIGURE_ARGS+=--without-jasper
@@ -123,7 +123,7 @@ CONFIGURE_ARGS+=--without-lua
 .endif
 
 .if ${PORT_OPTIONS:MOPENEXR}
-LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:graphics/OpenEXR
 PLIST_SUB+=	OPENEXR=""
 .else
 CONFIGURE_ARGS+=--without-openexr
@@ -131,7 +131,7 @@ PLIST_SUB+=	OPENEXR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENRAW}
-LIB_DEPENDS+=	libopenraw.so:${PORTSDIR}/graphics/libopenraw
+LIB_DEPENDS+=	libopenraw.so:graphics/libopenraw
 PLIST_SUB+=	OPENRAW=""
 .else
 CONFIGURE_ARGS+=--without-libopenraw
@@ -144,7 +144,7 @@ CONFIGURE_ARGS+=--disable-mmx \
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 PLIST_SUB+=	PNG=""
 .else
 CONFIGURE_ARGS+=--without-libpng
@@ -152,7 +152,7 @@ PLIST_SUB+=	PNG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBRSVG2}
-LIB_DEPENDS+=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS+=	librsvg-2.so:graphics/librsvg2
 PLIST_SUB+=	RSVG=""
 .else
 CONFIGURE_ARGS+=--without-librsvg
@@ -168,13 +168,13 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSPIRO}
-LIB_DEPENDS+=	libspiro.so:${PORTSDIR}/graphics/libspiro
+LIB_DEPENDS+=	libspiro.so:graphics/libspiro
 .else
 CONFIGURE_ARGS+=--without-libspiro
 .endif
 
 .if ${PORT_OPTIONS:MV4L}
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:multimedia/v4l_compat
 PLIST_SUB+=	V4L=""
 .else
 CONFIGURE_ARGS+=--without-libv4l
@@ -183,7 +183,7 @@ PLIST_SUB+=	V4L="@comment "
 
 # umfpack library is broken
 #.if ${PORT_OPTIONS:MUMFPACK}
-#LIB_DEPENDS+=	umfpack:${PORTSDIR}/math/suitesparse
+#LIB_DEPENDS+=	umfpack:math/suitesparse
 #PLIST_SUB+=	UMFPACK=""
 #.else
 CONFIGURE_ARGS+=--without-umfpack
@@ -191,7 +191,7 @@ PLIST_SUB+=	UMFPACK="@comment "
 #.endif
 
 .if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	libexiv2.so:graphics/exiv2
 PLIST_SUB+=	EXIV2=""
 .else
 CONFIGURE_ARGS+=--without-exiv2
@@ -199,9 +199,9 @@ PLIST_SUB+=	EXIV2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		vimdot:${PORTSDIR}/graphics/graphviz
+BUILD_DEPENDS+=	a2x:textproc/asciidoc \
+		${LOCALBASE}/bin/bash:shells/bash \
+		vimdot:graphics/graphviz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 .else

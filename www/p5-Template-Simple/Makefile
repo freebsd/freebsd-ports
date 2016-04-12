@@ -13,7 +13,7 @@ COMMENT=	Fast templating module
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+BUILD_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

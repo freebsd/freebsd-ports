@@ -12,21 +12,21 @@ COMMENT=	Document manager application designed to work with GNOME 3
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3 \
-		libclutter-1.0.so:${PORTSDIR}/graphics/clutter \
-		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
-		libevview3.so:${PORTSDIR}/graphics/evince \
-		libgdata.so:${PORTSDIR}/devel/libgdata \
-		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
-		libgjs.so:${PORTSDIR}/lang/gjs \
-		libtracker-sparql-1.0.so:${PORTSDIR}/sysutils/tracker \
-		libzapojit-0.0.so:${PORTSDIR}/net/libzapojit
-RUN_DEPENDS=	py2?-dbus>0:${PORTSDIR}/devel/py-dbus \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
-		unoconv:${PORTSDIR}/textproc/unoconv
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		docbook-xsl>=0:textproc/docbook-xsl
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libclutter-1.0.so:graphics/clutter \
+		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
+		libevview3.so:graphics/evince \
+		libgdata.so:devel/libgdata \
+		libgoa-1.0.so:net/gnome-online-accounts \
+		libgjs.so:lang/gjs \
+		libtracker-sparql-1.0.so:sysutils/tracker \
+		libzapojit-0.0.so:net/libzapojit
+RUN_DEPENDS=	py2?-dbus>0:devel/py-dbus \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
+		unoconv:textproc/unoconv
 
 PORTSCOUT=	limitw:1,even
 

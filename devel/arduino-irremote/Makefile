@@ -13,7 +13,7 @@ COMMENT=	Multi-protocol infrared remote library for the Arduino
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	arduino:${PORTSDIR}/devel/arduino
+RUN_DEPENDS=	arduino:devel/arduino
 
 WRKSRC=		${WRKDIR}/IRremote
 USES=		zip dos2unix

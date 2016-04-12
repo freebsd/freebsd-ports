@@ -12,7 +12,7 @@ DISTNAME=	xhtml1-20020801
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	W3C's XHTML DTD
 
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
 
 USES=		zip
 NO_MTREE=	YES

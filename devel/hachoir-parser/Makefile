@@ -9,8 +9,8 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Parsers of most common file formats
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_core/__init__.py:${PORTSDIR}/devel/hachoir-core
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_core/__init__.py:${PORTSDIR}/devel/hachoir-core
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_core/__init__.py:devel/hachoir-core
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_core/__init__.py:devel/hachoir-core
 
 USES=		python
 USE_PYTHON=	distutils

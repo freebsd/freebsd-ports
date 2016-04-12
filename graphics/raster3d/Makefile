@@ -13,8 +13,8 @@ COMMENT=	Set of tools for generating raster images of proteins and molecules
 
 LICENSE=	ART20
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libtiff.so:graphics/tiff
 
 OPTIONS_DEFINE=	IMAGEMAGICK DOCS EXAMPLES
 OPTIONS_DEFAULT=IMAGEMAGICK
@@ -29,7 +29,7 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-DLINUX -DNETWORKBYTEORDER -Dgfortran
 FFLAGS+=	-fno-range-check -ffixed-line-length-132
 
-IMAGEMAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
 OPTIONS_SUB=		yes
 
 BROKEN_sparc64=	Does not compile with GCC 4.2: internal compiler error

@@ -3,6 +3,7 @@
 
 PORTNAME=	efl
 PORTVERSION=	1.16.1
+PORTREVISION=	1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 
@@ -12,13 +13,13 @@ COMMENT=	Enlightenment Foundation Libraries
 LICENSE=	BSD2CLAUSE LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libgif.so:graphics/giflib \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libdbus-1.so:devel/dbus \
+		libsndfile.so:audio/libsndfile
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
@@ -50,42 +51,42 @@ PHYSICS_DESC=		Physics effects
 IBUS_DESC=		Intelligent Input Bus
 SCIM_DESC=		Smart Common Input Method
 
-AVAHI_LIB_DEPENDS=		libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_ENABLE=		avahi
 
-FRIBIDI_LIB_DEPENDS=		libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_LIB_DEPENDS=		libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	fribidi
 
-HARFBUZZ_LIB_DEPENDS=		libharfbuzz.so:${PORTSDIR}/print/harfbuzz
+HARFBUZZ_LIB_DEPENDS=		libharfbuzz.so:print/harfbuzz
 HARFBUZZ_CONFIGURE_ENABLE=	harfbuzz
 
 NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ENABLE=		nls
 
-PHYSICS_LIB_DEPENDS=		libBulletDynamics.so:${PORTSDIR}/devel/bullet
+PHYSICS_LIB_DEPENDS=		libBulletDynamics.so:devel/bullet
 PHYSICS_CONFIGURE_ENABLE=	physics
 
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 
 GSTREAMER_USE=			GSTREAMER1=core
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer1
 
-LIBXINE_LIB_DEPENDS=		libxine.so:${PORTSDIR}/multimedia/libxine
+LIBXINE_LIB_DEPENDS=		libxine.so:multimedia/libxine
 LIBXINE_CONFIGURE_ENABLE=	xine
 
-V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_CONFIGURE_ENABLE=		v4l2
 
-IBUS_LIB_DEPENDS=		libibus-1.0.so:${PORTSDIR}/textproc/ibus
+IBUS_LIB_DEPENDS=		libibus-1.0.so:textproc/ibus
 
-SCIM_LIB_DEPENDS=		libscim-1.0.so:${PORTSDIR}/textproc/scim
+SCIM_LIB_DEPENDS=		libscim-1.0.so:textproc/scim
 SCIM_CONFIGURE_ENABLE=		scim
 
-OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
+OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	image-loader-jp2k
 
-WEBP_LIB_DEPENDS=		libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
 WEBP_CONFIGURE_ENABLE=		image-loader-webp
 
 OPENGL_USE=			GL=gl
@@ -134,7 +135,7 @@ USES+=				lua
 CONFIGURE_ARGS+=		--enable-lua-old
 PLIST_SUB+=			ELUA="@comment "
 .else
-LIB_DEPENDS+=			libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LIB_DEPENDS+=			libluajit-5.1.so:lang/luajit
 PLIST_SUB+=			ELUA=""
 .endif
 

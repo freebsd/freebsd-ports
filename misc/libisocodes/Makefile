@@ -11,9 +11,9 @@ COMMENT=	Interaction library for iso-codes
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee
-RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz

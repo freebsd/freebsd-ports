@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vm-bhyve
-PORTVERSION=	0.9.13
+PORTVERSION=	0.12.3
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -16,7 +16,6 @@ EXAMPLES_DESC=	Install example guest templates
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	churchers
-GH_TAGNAME=	6416f62
 
 NO_ARCH=	yes
 NO_BUILD=	yes

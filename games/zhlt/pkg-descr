@@ -1,0 +1,11 @@
+Zoner's Half-Life compile tools offer many improvements over the original
+map compiling tools for Half-Life, such as better lighting quality, faster
+vis times, switchable texture based lighting, support for brush entities
+casting shadows, removal of "sticky" edges, support for 64-bit processors,
+and much more.
+
+Please note that these tools are for use with the Half-Life 1 engine (also
+known as GoldSrc or GoldSource), not for the Source Engine used in Half-
+Life 2.  For the Source Engine, refer to Custom Source Tools (CST).
+
+WWW: http://zhlt.info/

@@ -7,8 +7,8 @@ CATEGORIES=	databases
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
 
-LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxslt.so:textproc/libxslt \
+		libxml2.so:textproc/libxml2
 
 MASTERDIR=	${.CURDIR}/../postgresql94-server
 

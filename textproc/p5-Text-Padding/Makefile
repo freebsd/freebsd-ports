@@ -13,9 +13,9 @@ COMMENT=	Simple way of formatting a text
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Has-Sugar>=0:${PORTSDIR}/devel/p5-MooseX-Has-Sugar \
-		p5-Text-Truncate>=0:${PORTSDIR}/textproc/p5-Text-Truncate
+BUILD_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
+		p5-MooseX-Has-Sugar>=0:devel/p5-MooseX-Has-Sugar \
+		p5-Text-Truncate>=0:textproc/p5-Text-Truncate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	modbuild

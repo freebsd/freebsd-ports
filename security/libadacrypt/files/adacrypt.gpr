@@ -1,0 +1,11 @@
+library project AdaCrypt is
+
+   for Languages use ("Ada");
+
+   for Source_Dirs use ("../../include/adacrypt");
+   for Library_Dir use "../../lib/adacrypt";
+   for Library_Name use "adacrypt";
+   for Library_Kind use "static";
+   for Externally_Built use "True";
+
+end AdaCrypt;

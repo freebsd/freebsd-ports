@@ -23,11 +23,11 @@ OPTIONS_DEFINE=	FLTK DOCS
 OPTIONS_SUB=	yes
 
 FLTK_DESC=		Install FLTK GUI
-FLTK_LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-			libfreetype.so:${PORTSDIR}/print/freetype2 \
-			libexpat.so:${PORTSDIR}/textproc/expat2 \
-			libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-			libfltk_images.so:${PORTSDIR}/x11-toolkits/fltk
+FLTK_LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
+			libfreetype.so:print/freetype2 \
+			libexpat.so:textproc/expat2 \
+			libfontconfig.so:x11-fonts/fontconfig \
+			libfltk_images.so:x11-toolkits/fltk
 FLTK_USE=		XORG=x11,xau,xcb,xdmcp,xext,xft,xinerama,xpm,xrender
 FLTK_MAKE_ENV=		HAVE_FLTK=1 FLTK_NUT="fltk/Nut"
 FLTK_MAKE_ENV_OFF=	HAVE_FLTK=0 FLTK_NUT=""

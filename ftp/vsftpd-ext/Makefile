@@ -42,7 +42,7 @@ CONFLICTS=	vsftpd-3* vsftpd${SSL_SUFFIX}${PKGNAMESUFFIX2}-3*
 .if exists(/usr/bin/clang)
 CC=		clang
 .else
-BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
+BUILD_DEPENDS+=	clang33:lang/clang33
 CC=		clang33
 .endif
 .endif

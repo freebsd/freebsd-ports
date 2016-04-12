@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Somewhat prototypical facility for generating CLI interfaces
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libphk.a:${PORTSDIR}/devel/libphk
+BUILD_DEPENDS=	${LOCALBASE}/lib/libphk.a:devel/libphk
 
 WRKSRC=		${WRKDIR}/ConfigKit
 USES=		uidfix

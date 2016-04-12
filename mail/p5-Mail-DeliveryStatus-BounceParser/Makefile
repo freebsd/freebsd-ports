@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to analyze bounce messages
 
-RUN_DEPENDS=	p5-MIME-Tools>=5.418:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-Mail-Tools>=2.04:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS=	p5-MIME-Tools>=5.418:mail/p5-MIME-Tools \
+		p5-Mail-Tools>=2.04:mail/p5-Mail-Tools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

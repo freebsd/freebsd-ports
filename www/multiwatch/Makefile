@@ -12,7 +12,7 @@ COMMENT=	Spawn-fcgi helper for forking multiple workers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	libev.so:devel/libev
 
 GNU_CONFIGURE=	yes
 

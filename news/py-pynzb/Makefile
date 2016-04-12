@@ -18,6 +18,6 @@ USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	LXML
 LXML_DESC=	Add support for py-lxml
-LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.2.1:${PORTSDIR}/devel/py-lxml
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.2.1:devel/py-lxml
 
 .include <bsd.port.mk>

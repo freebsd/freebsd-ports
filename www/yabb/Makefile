@@ -16,7 +16,7 @@ LICENSE_NAME=	YABB PUBLIC LICENCE
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.yabbforum.com/licenses.php
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
+RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC
 
 USES=		perl5 shebangfix zip
 USE_PERL5=	run

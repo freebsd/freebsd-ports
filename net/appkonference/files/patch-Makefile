@@ -1,33 +1,33 @@
---- ./Makefile.orig	2012-01-25 20:40:01.000000000 +0100
-+++ ./Makefile	2014-08-22 10:44:57.000000000 +0200
-@@ -16,11 +16,11 @@
- ASTERISK_SRC_DIR =
+--- Makefile.orig	2016-01-05 16:43:05 UTC
++++ Makefile
+@@ -13,7 +13,7 @@
+ #
  
- # asterisk release or subversion working copy
--ASTERISK_SRC_VERSION = $(shell if [ -e $(ASTERISK_SRC_DIR)/.version ] ; then echo release; elif [ -e $(ASTERISK_SRC_DIR)/.svn ] ; then echo subversion; else echo unknown; fi)
-+ASTERISK_SRC_VERSION = release
+ # asterisk source directory
+-ASTERISK_SRC_DIR =
++ASTERISK_SRC_DIR = ${LOCALBASE}
  
- # asterisk release version or subversion branch
- ifeq ($(ASTERISK_SRC_VERSION),release)
-- ASTERISK = $(shell cat $(ASTERISK_SRC_DIR)/.version | cut -d "." -f1,2 | sed -e 's/\.//')
-+ ASTERISK = 18
- else
-  ifeq ($(ASTERISK_SRC_VERSION),subversion)
-   ASTERISK = $(shell svn info $(ASTERISK_SRC_DIR) | grep URL | sed -e 's:^.*/::' | cut -d "." -f 1,2 | sed -e 's/\.//')
-@@ -31,10 +31,10 @@
+ ifndef	ASTERISK_SRC_DIR
+   $(warning Asterisk source directory is not set)
+@@ -21,7 +21,7 @@ ifndef	ASTERISK_SRC_DIR
  endif
  
- # asterisk include directory
--ASTERISK_INCLUDE_DIR = $(ASTERISK_SRC_DIR)/include
-+ASTERISK_INCLUDE_DIR = ${LOCALBASE}/include
+ # asterisk version
+-ASTERISK_SRC_VERSION = $(shell if [ -e $(ASTERISK_SRC_DIR)/.version ] ; then cat $(ASTERISK_SRC_DIR)/.version | awk -F. '{printf "%01d%02d",$$1,$$2}' ; fi)
++ASTERISK_SRC_VERSION = 18
+ 
+ ifeq	($(ASTERISK_SRC_VERSION),)
+   $(warning Asterisk version is not set)
+@@ -32,7 +32,7 @@ endif
+ ASTERISK_INCLUDE_DIR = $(ASTERISK_SRC_DIR)/include
  
  # asterisk module directory
 -INSTALL_MODULES_DIR = /usr/lib/asterisk/modules
-+INSTALL_MODULES_DIR = ${LOCALBASE}/lib/asterisk/modules
++INSTALL_MODULES_DIR = ${PREFIX}/lib/asterisk/modules
  
  # module release
- RELEASE = 2.1
-@@ -86,7 +86,7 @@
+ RELEASE = 2.7
+@@ -84,12 +84,12 @@ INCLUDE = -I$(ASTERISK_INCLUDE_DIR)
  # compiler flags
  #
  
@@ -36,16 +36,31 @@
  #CFLAGS += -O3 -march=pentium3 -msse -mfpmath=sse,387 -ffast-math
  # PERF: below is 10% faster than -O2 or -O3 alone.
  #CFLAGS += -O3 -ffast-math -funroll-loops
-@@ -103,7 +103,7 @@
+ # below is another 5% faster or so.
+-CFLAGS += -O3 -ffast-math -funroll-all-loops -fsingle-precision-constant
++#CFLAGS += -O3 -ffast-math -funroll-all-loops -fsingle-precision-constant
+ #CFLAGS += -mcpu=7450 -faltivec -mabi=altivec -mdynamic-no-pic
+ # adding -msse -mfpmath=sse has little effect.
+ #CFLAGS += -O3 -msse -mfpmath=sse
+@@ -102,7 +102,7 @@ CFLAGS += -fPIC
  # preprocessor flags
  #
  
 -CPPFLAGS = $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
 +CPPFLAGS += $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
  CPPFLAGS += -DRELEASE=\"$(RELEASE)\"
- CPPFLAGS += -DASTERISK=$(ASTERISK)
+ CPPFLAGS += -DASTERISK_SRC_VERSION=$(ASTERISK_SRC_VERSION)
  CPPFLAGS += -DCHANNEL_TABLE_SIZE=$(CHANNEL_TABLE_SIZE)
-@@ -182,7 +182,8 @@
+@@ -127,7 +127,7 @@ CPPFLAGS += -DAC_USE_ULAW
+ #
+ # Uncomment this if you want to use *bsd kqueue for timing
+ #
+-# CPPFLAGS += -DKQUEUE
++CPPFLAGS += -DKQUEUE
+ #
+ 
+ #
+@@ -207,7 +207,8 @@ clean:
  $(OBJS): $(INCS)
  
  $(TARGET): $(OBJS)
@@ -53,6 +68,6 @@
 +	$(CC) $(LDFLAGS) $(SOLINK) -o $@ $(OBJS)
  
  install:
--	$(INSTALL) -m 755 $(TARGET) $(INSTALL_MODULES_DIR)
+-	if [ -f $(TARGET) ]; then $(INSTALL) -m 755 $(TARGET) $(INSTALL_MODULES_DIR); fi
 +	mkdir -p $(DESTDIR)$(INSTALL_MODULES_DIR)
-+	$(INSTALL) -m 755 $(TARGET) $(DESTDIR)$(INSTALL_MODULES_DIR)
++	${BSD_INSTALL_LIB} $(TARGET) $(DESTDIR)$(INSTALL_MODULES_DIR)

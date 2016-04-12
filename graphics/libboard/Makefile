@@ -12,7 +12,7 @@ COMMENT=	Vector graphics C++ library
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS=	doxygen:devel/doxygen
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

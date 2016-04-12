@@ -12,8 +12,8 @@ DISTNAME=	dl_class_${PORTVERSION}
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Molecular dynamics simulation package
 
-BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpif90:${PORTSDIR}/net/openmpi
-RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpif90:net/openmpi
+RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 
 OPTIONS_DEFINE=	GUI DOCS EXAMPLES
 OPTIONS_DEFAULT=	GUI

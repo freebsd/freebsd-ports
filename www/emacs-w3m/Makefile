@@ -91,16 +91,16 @@ SEMI_PORT?=	${PORTSDIR}/editors/semi-${EMACS_PORT_NAME}
 MULE_UCS_PORT?=	${PORTSDIR}/converters/mule-ucs-${EMACS_PORT_NAME}
 MULE_UCS_ELISP_FILE=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs/un-define.el
 
-BUILD_DEPENDS+=	w3m:${PORTSDIR}/www/w3m
-RUN_DEPENDS+=	w3m:${PORTSDIR}/www/w3m
+BUILD_DEPENDS+=	w3m:www/w3m
+RUN_DEPENDS+=	w3m:www/w3m
 .if ${PORT_OPTIONS:MSHIMBUN}
 BUILD_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
 RUN_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
 .endif
 .if ${PORT_OPTIONS:MOCTET_VIEWER}
 RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
-		wvHtml:${PORTSDIR}/textproc/wv \
-		xlhtml:${PORTSDIR}/textproc/xlhtml
+		wvHtml:textproc/wv \
+		xlhtml:textproc/xlhtml
 PLIST_SUB+=	OCTET_VIEWER=""
 .else
 PLIST_SUB+=	OCTET_VIEWER="@comment "

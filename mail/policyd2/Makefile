@@ -14,11 +14,11 @@ COMMENT=	Policyd v2 is a multi-platform policy server for popular MTAs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		gsed:${PORTSDIR}/textproc/gsed \
-		p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
-		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
-		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap
+RUN_DEPENDS=	p5-Net-Server>=0:net/p5-Net-Server \
+		gsed:textproc/gsed \
+		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
+		p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
+		p5-Cache-FastMmap>=0:devel/p5-Cache-FastMmap
 
 USES=		perl5 shebangfix tar:xz
 NO_BUILD=	yes
@@ -39,9 +39,9 @@ PGSQL_DESC=	Add a dependency on DBD::Pg
 SQLITE_DESC=	Add a dependency on DBD:SQLite
 WEBUI_DESC=	Add a dependency on the corresponding PHP pdo driver
 
-MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
-SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
-PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 
 .include <bsd.port.options.mk>
 

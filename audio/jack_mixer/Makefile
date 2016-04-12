@@ -13,9 +13,9 @@ COMMENT=	Mixer for the jack audio connection kit
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
-   		${LOCALBASE}/include/pygtk-2.0/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk2
+LIB_DEPENDS=	libjack.so:audio/jack
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:math/py-fpconst \
+		${LOCALBASE}/include/pygtk-2.0/pygtk/pygtk.h:x11-toolkits/py-gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		libtool pkgconfig python

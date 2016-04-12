@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stepmania
-PORTVERSION=	5.0.10
+PORTVERSION=	5.0.11
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	games
@@ -14,8 +14,8 @@ COMMENT=	Rhythm game simulator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Docs/Licenses.txt
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libpng.so:graphics/png
 
 USE_GITHUB=	yes
 
@@ -34,23 +34,23 @@ OPTIONS_DEFINE=		ALSA DOCS FFMPEG GTK2 JACK MAD PULSEAUDIO VAAPI VORBIS
 OPTIONS_DEFAULT=	GTK2 MAD VORBIS
 OPTIONS_SUB=		yes
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_OFF=		-DWITH_ALSA:BOOL=OFF
-FFMEPG_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMEPG_BUILD_DEPENDS=	yasm:devel/yasm
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CMAKE_ON=	-DWITH_SYSTEM_FFMPEG:BOOL=ON
 FFMPEG_CMAKE_OFF=	-DWITH_FFMPEG:BOOL=OFF
 GTK2_USE=		gnome=gtk20
 GTK2_CMAKE_ON=		-DWITH_GTK2:BOOL=ON
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	-DWITH_JACK:BOOL=OFF
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CMAKE_OFF=		-DWITH_MP3:BOOL=OFF
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-DWITH_PULSE:BOOL=OFF
-VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
+VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VAAPI_CMAKE_OFF=	-DVA_FOUND:BOOL=OFF
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CMAKE_OFF=	-DWITH_OGG:BOOL=OFF
 
 pre-build:
@@ -67,7 +67,6 @@ pre-build:
 do-install:
 	(cd ${WRKDIR}/wrappers && ${INSTALL_SCRIPT} stepmania \
 		${STAGEDIR}${PREFIX}/bin)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/stepmania
 .for i in Announcers BGAnimations BackgroundEffects BackgroundTransitions \
 	Characters Courses Data NoteSkins Scripts Songs Themes
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} \
@@ -85,7 +84,6 @@ post-install-GTK2-on:
 		${STAGEDIR}${PREFIX}/lib/stepmania)
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/Docs && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DOCSDIR} "! -name Licenses.txt")
 

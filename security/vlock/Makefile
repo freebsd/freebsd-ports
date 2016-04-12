@@ -31,7 +31,7 @@ ROOTPWD_DESC=	Enable unlock using root password
 ROOTPWD_CONFIGURE_ENABLE=	root-password
 VLOCKSCRIPTS_DESC=	Install sample hook scripts
 CACASAVER_DESC=	Enable libcaca screensaver
-CACASAVER_BUILD_DEPENDS=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
+CACASAVER_BUILD_DEPENDS=	${LOCALBASE}/lib/libcaca.a:graphics/libcaca
 
 # Default scripts/modules
 VLOCKSCRIPTS=

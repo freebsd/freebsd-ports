@@ -13,7 +13,7 @@ COMMENT=	Perl console application which finds, moves, or deletes duplicate files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 
 NO_ARCH=	yes
 NO_BUILD=	yes

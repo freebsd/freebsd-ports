@@ -12,8 +12,8 @@ COMMENT=	Simple virus filter wrapper for ClamAV
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	sigtool:${PORTSDIR}/security/clamav \
-		formail:${PORTSDIR}/mail/procmail
+BUILD_DEPENDS=	sigtool:security/clamav \
+		formail:mail/procmail
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_FILES=	bin/clamassassin

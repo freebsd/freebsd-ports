@@ -13,13 +13,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
 
-LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
-		libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		libmpg123.so:${PORTSDIR}/audio/mpg123 \
-		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libphysfs.so:${PORTSDIR}/devel/physfs \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libIL.so:graphics/devil \
+		libmodplug.so:audio/libmodplug \
+		libmpg123.so:audio/mpg123 \
+		libvorbisfile.so:audio/libvorbis \
+		libphysfs.so:devel/physfs \
+		libfreetype.so:print/freetype2
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 PORTSCOUT=	limit:^0\.7\.
 

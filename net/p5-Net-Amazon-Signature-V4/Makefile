@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-DateTime-Format-Strptime>0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
-	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-	p5-Net>0:${PORTSDIR}/net/p5-Net
+	p5-DateTime-Format-Strptime>0:devel/p5-DateTime-Format-Strptime \
+	p5-File-Slurp>0:devel/p5-File-Slurp \
+	p5-libwww>0:www/p5-libwww \
+	p5-Net>0:net/p5-Net
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

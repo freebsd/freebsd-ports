@@ -19,9 +19,9 @@ USE_LDCONFIG=	yes
 
 post-patch:
 	${REINPLACE_CMD} 's|doc/routino|share/doc/routino|' \
-	      	${WRKSRC}/Makefile.conf
+		${WRKSRC}/Makefile.conf
 	${REINPLACE_CMD} 's|gcc|${CC}|' \
-	      	${WRKSRC}/Makefile.conf
+		${WRKSRC}/Makefile.conf
 post-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC}/web && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} \

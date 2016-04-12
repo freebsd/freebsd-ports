@@ -11,7 +11,7 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple guitar tuning assistant
 
-RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay
+RUN_DEPENDS=	wavplay:audio/wavplay
 
 USES=		compiler:c++11-lib
 USE_CXXSTD=	c++11

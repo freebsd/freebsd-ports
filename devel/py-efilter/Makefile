@@ -12,8 +12,8 @@ COMMENT=	EFILTER query language
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>=2011:${PORTSDIR}/devel/py-pytz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}pytz>=2011:devel/py-pytz
 
 USES=		python
 USE_PYTHON=	distutils autoplist

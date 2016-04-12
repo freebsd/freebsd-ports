@@ -12,7 +12,7 @@ COMMENT=	Multiplayer-capable and modified version of ID's classic DOOM game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
 USES=		gmake
 USE_SDL=	mixer net sdl

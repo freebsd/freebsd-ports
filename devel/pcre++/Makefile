@@ -12,7 +12,7 @@ COMMENT=	Wrapper class around the pcre library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

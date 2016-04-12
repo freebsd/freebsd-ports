@@ -23,7 +23,7 @@ OPTIONS_DEFAULT+=	DOXYGEN
 .endif
 
 OPTIONS_SUB=yes
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CMAKE_OFF=	-DBUILD_DOCUMENTATION=OFF
 
 .include <bsd.port.mk>

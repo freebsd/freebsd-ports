@@ -12,11 +12,11 @@ COMMENT=	Password manager for the GNOME 2 desktop
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
-LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto
+LIB_DEPENDS=	libcrack.so:security/cracklib
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}cracklib>0:${PORTSDIR}/security/py-cracklib
+		${PYTHON_PKGNAMEPREFIX}cracklib>0:security/py-cracklib
 
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig python \
 		shared-mime-info shebangfix tar:bzip2

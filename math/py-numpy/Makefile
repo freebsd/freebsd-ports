@@ -40,10 +40,10 @@ GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.
 
 ATLAS_USES=	blaslapack:atlas
 NETLIB_USES=	blaslapack:netlib
-NETLIB_LIB_DEPENDS=	libcblas.so:${PORTSDIR}/math/cblas
+NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
 OPENBLAS_USES=	blaslapack:openblas
-SUITESPARSE_LIB_DEPENDS=libumfpack.so:${PORTSDIR}/math/suitesparse
-TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:${PORTSDIR}/devel/py-nose
+SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse
+TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose
 
 .include <bsd.port.pre.mk>
 

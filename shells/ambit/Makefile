@@ -12,7 +12,7 @@ COMMENT=	Extended bash brace expansion to expand hostnames or commands
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		tar:tgz
 AMBITDIR?=	/var/spool/${PORTNAME}

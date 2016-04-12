@@ -8,8 +8,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	OCaml library for manipulation of IP address representations
 
-BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/sexplib/sexplib.a:${PORTSDIR}/devel/ocaml-sexplib
-RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/sexplib/sexplib.a:${PORTSDIR}/devel/ocaml-sexplib
+BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/sexplib/sexplib.a:devel/ocaml-sexplib
+RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/sexplib/sexplib.a:devel/ocaml-sexplib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mirage

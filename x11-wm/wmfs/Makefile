@@ -13,7 +13,7 @@ COMMENT=	Floating and tiling Window Manager From Scratch
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xorg62
@@ -34,7 +34,7 @@ XRANDR_USE=		XORG=xrandr
 XRANDR_CONFIGURE_OFF=	--without-xrandr
 XINERAMA_USE=		XORG=xinerama
 XINERAMA_CONFIGURE_OFF=	--without-xinerama
-IMLIB_LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+IMLIB_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 IMLIB_CONFIGURE_OFF=	--without-imlib2
 
 post-patch:

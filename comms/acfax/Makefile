@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Receive faxes using sound card and radio
 
-LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 PLIST_FILES=	bin/acfax
 WRKSRC=		${WRKDIR}/${PORTNAME}

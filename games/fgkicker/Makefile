@@ -12,7 +12,7 @@ COMMENT=	Launcher frontend for FlightGear
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	fgfs:${PORTSDIR}/games/flightgear
+RUN_DEPENDS=	fgfs:games/flightgear
 
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig tar:tgz

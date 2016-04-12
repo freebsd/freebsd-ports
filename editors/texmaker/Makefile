@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.xm1math.net/texmaker/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	LaTeX Development Environment
 
-LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	libpoppler.so:graphics/poppler
 
 USES=		desktop-file-utils ghostscript:x11,run pkgconfig qmake tar:bzip2
 _USE_QT4=	gui network xml webkit \
@@ -28,8 +28,8 @@ OPTIONS_DEFAULT=	QT5
 
 TOOLKIT_DESC=	Qt toolkit
 QT4_USE=	${_USE_QT4:S/^/QT4=/}
-QT4_LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
+QT4_LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
 QT5_USE=	${_USE_QT5:S/^/QT5=/}
-QT5_LIB_DEPENDS=	libpoppler-qt5.so:${PORTSDIR}/graphics/poppler-qt5
+QT5_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 .include <bsd.port.mk>

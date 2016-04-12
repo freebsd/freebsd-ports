@@ -14,7 +14,7 @@ COMMENT=	C/C++ plugin for Eclipse IDE
 
 IGNORE=		plugin malfunctions, but an upgrade is planned
 
-RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	eclipse:java/eclipse
 
 USES=		zip
 USE_JAVA=	YES

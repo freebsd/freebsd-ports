@@ -13,8 +13,8 @@ COMMENT=	Library Provide Complete Braille Transcription Services
 LICENSE=	LGPL3+ GPLv3+
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	liblouis.so:${PORTSDIR}/devel/liblouis
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
+LIB_DEPENDS=	liblouis.so:devel/liblouis
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig

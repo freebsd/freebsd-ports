@@ -12,7 +12,7 @@ COMMENT=	NetSurf project buildsystem
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 MAKE_ENV+=	COMPONENT_TYPE=lib-shared \
 

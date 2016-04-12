@@ -13,8 +13,8 @@ COMMENT=	Cross platform API for managing child processes
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	rubygem-open4>=0.4.0:${PORTSDIR}/devel/rubygem-open4 \
-		rubygem-platform>=0.4.0:${PORTSDIR}/devel/rubygem-platform
+RUN_DEPENDS=	rubygem-open4>=0.4.0:devel/rubygem-open4 \
+		rubygem-platform>=0.4.0:devel/rubygem-platform
 
 NO_ARCH=	yes
 

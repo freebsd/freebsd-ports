@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing Program, compatible with NetMeeting
 
-LIB_DEPENDS=	libh323_r.so:${PORTSDIR}/net/openh323
+LIB_DEPENDS=	libh323_r.so:net/openh323
 
 USES=		bison gmake
 ALL_TARGET=	optshared

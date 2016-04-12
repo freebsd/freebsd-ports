@@ -16,8 +16,8 @@ LICENSE=	GPLv2
 USES=		cpe gnustep
 CPE_VENDOR=	gnu
 USE_GNUSTEP=	back build
-LIB_DEPENDS=	libPantomime.so:${PORTSDIR}/mail/pantomime \
-		libAddresses.so:${PORTSDIR}/mail/addresses
+LIB_DEPENDS=	libPantomime.so:mail/pantomime \
+		libAddresses.so:mail/addresses
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 .include <bsd.port.mk>

@@ -13,8 +13,8 @@ COMMENT=	Perl module to extract data from Macintosh BinHex files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
+TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-Test-Most>=0:devel/p5-Test-Most
 
 NO_ARCH=	yes
 USES=		perl5

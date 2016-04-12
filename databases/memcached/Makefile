@@ -14,7 +14,7 @@ COMMENT=	High-performance distributed memory object cache system
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 CONFLICTS=	memcached-1.2*
 
@@ -40,7 +40,7 @@ CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
 
 DTRACE_CONFIGURE_ENABLE=	dtrace
 
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ENABLE=	sasl
 SASL_CFLAGS=		-I${LOCALBASE}/include
 SASL_CPPFLAGS+=		${CFLAGS}
@@ -59,7 +59,7 @@ BROKEN=			DTRACE broken with gcc/clang - reported upstream
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS=	xml2rfc:${PORTSDIR}/textproc/xml2rfc
+BUILD_DEPENDS=	xml2rfc:textproc/xml2rfc
 .endif
 
 post-install:

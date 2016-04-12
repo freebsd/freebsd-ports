@@ -12,11 +12,11 @@ COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		liblcms.so:${PORTSDIR}/graphics/lcms
-BUILD_DEPENDS=	scanimage:${PORTSDIR}/graphics/sane-backends
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libfreetype.so:print/freetype2 \
+		liblcms.so:graphics/lcms
+BUILD_DEPENDS=	scanimage:graphics/sane-backends
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake jpeg pkgconfig
@@ -34,7 +34,7 @@ OPTIONS_DEFAULT=	GIMP
 
 OPTIONS_SUB=	yes
 
-GIMP_LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp2 gimp
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext

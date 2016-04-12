@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to gnuplot plotting program
 
 BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
+RUN_DEPENDS=	gnuplot:math/gnuplot \
 		${PYNUMPY}
 
 USES=		python

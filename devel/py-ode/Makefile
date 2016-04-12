@@ -13,7 +13,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Python bindings for The Open Dynamics Engine
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
+BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:devel/ode
 
 USES=		python:2 tar:bzip2
 USE_PYTHON=	autoplist distutils

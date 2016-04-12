@@ -9,9 +9,9 @@ COMMENT=	Portable ASS/SSA subtitle renderer
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfribidi.so:converters/fribidi \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
@@ -29,10 +29,10 @@ OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_amd64=	ASM
 OPTIONS_DEFAULT_i386=	ASM
 
-ASM_BUILD_DEPENDS=${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
+ASM_BUILD_DEPENDS=${LOCALBASE}/bin/yasm:devel/yasm
 ASM_CONFIGURE_ENABLE=asm
 
-HARFBUZZ_LIB_DEPENDS=libharfbuzz.so:${PORTSDIR}/print/harfbuzz
+HARFBUZZ_LIB_DEPENDS=libharfbuzz.so:print/harfbuzz
 HARFBUZZ_CONFIGURE_ENABLE=harfbuzz
 HARFBUZZ_DESC?=	Font shaping via HarfBuzz
 

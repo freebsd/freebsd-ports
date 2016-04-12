@@ -13,9 +13,9 @@ COMMENT=	GUI client that supports various hardware logic analyzers
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libsigrok.so:${PORTSDIR}/devel/libsigrok \
-		libsigrokdecode.so:${PORTSDIR}/devel/libsigrokdecode
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libsigrok.so:devel/libsigrok \
+		libsigrokdecode.so:devel/libsigrokdecode
 
 USES=		cmake gmake pkgconfig
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build

@@ -12,13 +12,13 @@ COMMENT=	Python wrapper for OpenCL
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:${PORTSDIR}/devel/opencl \
-		${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy
-LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
-		libOpenCL.so:${PORTSDIR}/devel/ocl-icd
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytools>0:${PORTSDIR}/devel/py-pytools \
-		${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}mako>0:${PORTSDIR}/textproc/py-mako
+BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
+LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
+		libOpenCL.so:devel/ocl-icd
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytools>0:devel/py-pytools \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako
 
 USE_PYTHON=	autoplist distutils
 USES=		python

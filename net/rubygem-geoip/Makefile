@@ -11,7 +11,7 @@ COMMENT=	Geoip implementation for rubygems
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	geoiplookup:${PORTSDIR}/net/GeoIP
+RUN_DEPENDS=	geoiplookup:net/GeoIP
 
 NO_ARCH=	yes
 

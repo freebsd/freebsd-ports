@@ -14,8 +14,8 @@ COMMENT=	Multi-User Conferencing component for Jabber
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libidn.so:dns/libidn
 
 USES=		pkgconfig shebangfix
 SHEBANG_FILES=	scripts/roommaker.pl scripts/roomname.pl
@@ -58,19 +58,19 @@ JABBER_REQUIRE?=        jabber
 JABBER_USER?=           jabber
 JABBER_PIDDIR?=         /var/run/jabberd
 JABBER_SPOOLDIR?=       /var/spool/jabberd
-RUN_DEPENDS+=           jabberd14:${PORTSDIR}/net-im/jabber
+RUN_DEPENDS+=           jabberd14:net-im/jabber
 .elif ${PORT_OPTIONS:MJABBERD}
 JABBER_REQUIRE?=        jabberd
 JABBER_USER?=           jabber
 JABBER_PIDDIR?=         /var/jabberd/pid
 JABBER_SPOOLDIR?=       /var/spool/jabber
-RUN_DEPENDS+=           jabberd:${PORTSDIR}/net-im/jabberd
+RUN_DEPENDS+=           jabberd:net-im/jabberd
 .elif ${PORT_OPTIONS:MEJABBERD}
 JABBER_REQUIRE?=        ejabberd
 JABBER_USER?=           ejabberd
 JABBER_PIDDIR?=         /var/jabberd/pid
 JABBER_SPOOLDIR?=       /var/spool/jabber
-RUN_DEPENDS+=           ejabberdctl:${PORTSDIR}/net-im/ejabberd
+RUN_DEPENDS+=           ejabberdctl:net-im/ejabberd
 .elif ${PORT_OPTIONS:MDAEMON}
 JABBER_REQUIRE?=        DAEMON
 JABBER_USER?=           nobody

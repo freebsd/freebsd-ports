@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pango
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+PORTVERSION=	3.0.8
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +10,8 @@ COMMENT=	Ruby binding for Pango
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-cairo>=1.14.0:${PORTSDIR}/graphics/rubygem-cairo \
-		rubygem-glib2>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-glib2
+RUN_DEPENDS=	rubygem-cairo>=1.14.0:graphics/rubygem-cairo \
+		rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
 
 USE_GNOME=	pango
 USE_RUBY=	yes

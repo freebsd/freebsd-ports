@@ -13,9 +13,9 @@ COMMENT=	Python NUI library for rapid application development
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
-LIB_DEPENDS=	libmtdev.so:${PORTSDIR}/devel/libmtdev
-TEST_DEPENDS=	nosetests-${PYTHON_VER}:${PORTSDIR}/devel/py-nose
+BUILD_DEPENDS=	cython:lang/cython
+LIB_DEPENDS=	libmtdev.so:devel/libmtdev
+TEST_DEPENDS=	nosetests-${PYTHON_VER}:devel/py-nose
 
 MAKE_ENV=	KIVY_NO_CONFIG=yes KIVY_NO_FILELOG=yes USE_OPENGL_ES2=1 \
 		PYTHONPATH=${WRKSRC}
@@ -50,21 +50,21 @@ SPELLING_DESC=	Spell checking support
 TEXT_DESC=	Text rendering support (compulsory)
 WINDOW_DESC=	Window support (compulsory)
 
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 ENCHANT_DESC=		Spell checking support via Enchant
-ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
-FFMPEG_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ffmpeg/__init__.py:${PORTSDIR}/multimedia/py-ffmpeg
+ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:textproc/py-enchant
+FFMPEG_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ffmpeg/__init__.py:multimedia/py-ffmpeg
 GSTREAMER_MAKE_ENV=	USE_GSTREAMER=1
 GSTREAMER_MAKE_ENV_OFF=	USE_GSTREAMER=0
-GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:${PORTSDIR}/multimedia/gstreamer1
-GSTREAMER_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygst.py:${PORTSDIR}/multimedia/py-gstreamer
+GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1
+GSTREAMER_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygst.py:multimedia/py-gstreamer
 GSTREAMER_USES=		pkgconfig
-OPENCV_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cv.py:${PORTSDIR}/graphics/py-opencv
+OPENCV_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cv.py:graphics/py-opencv
 PIL_DESC=		Text and window rendering support via PIL
-PIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
+PIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:graphics/py-imaging
 PYGAME_DESC=		Window, text and image rendering support via PyGame
-PYGAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
-PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>0:${PORTSDIR}/graphics/py-pyglet
+PYGAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
+PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>0:graphics/py-pyglet
 SDL2_DESC=		Simple Direct Media Layer v2.0 support
 SDL2_MAKE_ENV=		USE_SDL2=1
 SDL2_MAKE_ENV_OFF=	USE_SDL2=0

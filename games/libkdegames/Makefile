@@ -19,7 +19,7 @@ OPTIONS_DEFINE=		LOWLATENCY
 OPTIONS_DEFAULT=	LOWLATENCY
 
 LOWLATENCY_DESC=	Use OpenAL and libsndfile for lower latency
-LOWLATENCY_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+LOWLATENCY_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 LOWLATENCY_USES=	openal
 LOWLATENCY_CMAKE_ON=	-DWITH_OpenAL=on \
 			-DWITH_SndFile=on

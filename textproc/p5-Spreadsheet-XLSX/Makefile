@@ -13,8 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-withoutworldwriteables
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl extension for reading MS Excel 2007 files
 
-BUILD_DEPENDS=	p5-Spreadsheet-ParseExcel>0:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
-		p5-Archive-Zip>0:${PORTSDIR}/archivers/p5-Archive-Zip
+BUILD_DEPENDS=	p5-Spreadsheet-ParseExcel>0:textproc/p5-Spreadsheet-ParseExcel \
+		p5-Archive-Zip>0:archivers/p5-Archive-Zip
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

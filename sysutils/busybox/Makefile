@@ -14,7 +14,7 @@ COMMENT=	Busybox for FreeBSD
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed
 
 CONFLICTS_INSTALL=	busybox-unstable-*
 

@@ -331,6 +331,7 @@
     SUBDIR += libnids
     SUBDIR += libnss-cache
     SUBDIR += libnss-mysql
+    SUBDIR += libnss-pgsql
     SUBDIR += liboauth
     SUBDIR += libopennet
     SUBDIR += liboping
@@ -499,6 +500,7 @@
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Amazon-SQS-Simple
     SUBDIR += p5-AnyEvent-MPRPC
+    SUBDIR += p5-AnyEvent-MQTT
     SUBDIR += p5-AnyEvent-RabbitMQ
     SUBDIR += p5-AnyEvent-Twitter
     SUBDIR += p5-AnyEvent-Twitter-Stream
@@ -639,6 +641,7 @@
     SUBDIR += p5-Net-LimeLight-Purge
     SUBDIR += p5-Net-MAC
     SUBDIR += p5-Net-MAC-Vendor
+    SUBDIR += p5-Net-MQTT
     SUBDIR += p5-Net-Mosso-CloudFiles
     SUBDIR += p5-Net-MovableType
     SUBDIR += p5-Net-NBName
@@ -1094,12 +1097,15 @@
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-brightbox
+    SUBDIR += rubygem-fog-cloudatcost
     SUBDIR += rubygem-fog-dynect
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-google
     SUBDIR += rubygem-fog-local
+    SUBDIR += rubygem-fog-openstack
     SUBDIR += rubygem-fog-powerdns
     SUBDIR += rubygem-fog-profitbricks
+    SUBDIR += rubygem-fog-rackspace
     SUBDIR += rubygem-fog-radosgw
     SUBDIR += rubygem-fog-riakcs
     SUBDIR += rubygem-fog-sakuracloud
@@ -1128,6 +1134,7 @@
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-octokit
     SUBDIR += rubygem-octopress-deploy
+    SUBDIR += rubygem-omniauth-auth0
     SUBDIR += rubygem-omniauth-azure-oauth2
     SUBDIR += rubygem-omniauth-facebook
     SUBDIR += rubygem-omniauth-github
@@ -1208,6 +1215,7 @@
     SUBDIR += smbldap-tools
     SUBDIR += smcroute
     SUBDIR += smm++
+    SUBDIR += sngrep
     SUBDIR += sniffit
     SUBDIR += sntop
     SUBDIR += sobby

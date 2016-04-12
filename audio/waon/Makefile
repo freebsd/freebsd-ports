@@ -12,10 +12,10 @@ COMMENT=	Wave-to-Notes transcriber and some utility tools
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libao.so:${PORTSDIR}/audio/libao \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libao.so:audio/libao \
+		libsndfile.so:audio/libsndfile \
+		libsamplerate.so:audio/libsamplerate
 
 USES=		pkgconfig
 USE_GNOME=	gtk20

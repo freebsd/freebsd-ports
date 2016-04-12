@@ -13,8 +13,8 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	koalative@gmail.com
 COMMENT=	Cross-platform library for games and multimedia programming
 
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libpng.so:graphics/png \
+		libvorbis.so:audio/libvorbis
 
 USES=		cmake gmake makeinfo pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
@@ -49,13 +49,13 @@ OPTIONS_SUB=	yes
 
 EXAMPLES_CMAKE_ON=	-DWANT_EXAMPLES=on
 EXAMPLES_CMAKE_OFF=	-DWANT_EXAMPLES=off
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_ON=		-DWANT_ALSA=on
 ALSA_CMAKE_OFF=		-DWANT_ALSA=off
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_ON=		-DWANT_JACK=on
 JACK_CMAKE_OFF=		-DWANT_JACK=off
-OGG_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+OGG_LIB_DEPENDS=	libogg.so:audio/libogg
 OGG_CMAKE_ON=		-DWANT_LOGG=on
 OGG_CMAKE_OFF=		-DWANT_LOGG=of
 

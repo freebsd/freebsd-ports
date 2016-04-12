@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.tundraware.com/Software/twander/
 MAINTAINER=	twander@tundraware.com
 COMMENT=	Better Filesystem Browser
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 
 USES=		python
 NO_ARCH=	yes

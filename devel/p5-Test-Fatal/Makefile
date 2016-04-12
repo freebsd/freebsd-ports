@@ -13,7 +13,7 @@ COMMENT=	Incredibly simple helpers for testing code with exceptions
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Try-Tiny>=0.07:${PORTSDIR}/lang/p5-Try-Tiny
+BUILD_DEPENDS=	p5-Try-Tiny>=0.07:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

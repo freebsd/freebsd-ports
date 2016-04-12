@@ -15,10 +15,10 @@ COMMENT=	MIME Media Types and their file extensions
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
+BUILD_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.22:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=1.22:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.08:devel/p5-Test-Pod-Coverage
 
 USE_PERL5=	configure
 USES=		perl5

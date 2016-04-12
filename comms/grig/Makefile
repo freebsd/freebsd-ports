@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grig
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/groundstation/Grig/${PORTVERSION}
 
@@ -13,7 +12,7 @@ COMMENT=	Amateur Radio control front-end
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
+LIB_DEPENDS=	libhamlib.so:comms/hamlib
 
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes

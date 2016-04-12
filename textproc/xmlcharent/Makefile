@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XML character entities
 
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
 
 USES=		zip
 NO_WRKSUBDIR=	yes

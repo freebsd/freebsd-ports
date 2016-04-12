@@ -15,7 +15,7 @@ LICENSE_TEXT=	Requires license from Microsoft, please see \
 		http://www.microsoft.com/en-us/legal/intellectualproperty/IPLicensing/Programs/exFATFileSystem.aspx
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
-LIB_DEPENDS=	libublio.so:${PORTSDIR}/devel/libublio
+LIB_DEPENDS=	libublio.so:devel/libublio
 
 PROJECTHOST=	exfat
 

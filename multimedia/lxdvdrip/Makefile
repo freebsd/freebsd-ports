@@ -11,14 +11,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command Line Tool to make a copy from a Video DVD
 
-LIB_DEPENDS=	libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav \
-		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
-RUN_DEPENDS=	buffer:${PORTSDIR}/misc/buffer \
-		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		mpgtx:${PORTSDIR}/multimedia/mpgtx \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
-		transcode:${PORTSDIR}/multimedia/transcode
+LIB_DEPENDS=	libdvdnav.so:multimedia/libdvdnav \
+		libdvdread.so:multimedia/libdvdread
+RUN_DEPENDS=	buffer:misc/buffer \
+		dvdauthor:multimedia/dvdauthor \
+		growisofs:sysutils/dvd+rw-tools \
+		mpgtx:multimedia/mpgtx \
+		mplayer:multimedia/mplayer \
+		transcode:multimedia/transcode
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

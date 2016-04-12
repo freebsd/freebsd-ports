@@ -11,7 +11,7 @@ COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 USES=		autoreconf compiler:c++0x gmake libtool pkgconfig shebangfix
 SHEBANG_FILES=	src/test/*.py
@@ -26,8 +26,8 @@ USES+=		desktop-file-utils
 USE_QT4=	corelib gui moc_build linguisttools_build network qmake_build \
 		rcc_build uic_build
 
-BUILD_DEPENDS+=	protoc:${PORTSDIR}/devel/protobuf
-LIB_DEPENDS+=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+BUILD_DEPENDS+=	protoc:devel/protobuf
+LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
 
 TESTS_USE=		QT4=testlib
 TESTS_PLIST_FILES=	%%QT_BINDIR%%/test_bitcoin-qt \
@@ -57,12 +57,12 @@ TESTS_PLIST_FILES=	bin/test_bitcoin
 .endif
 
 UPNP_CONFIGURE_WITH=	miniupnpc
-UPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 UPNP_CPPFLAGS=		-I${LOCALBASE}/include
 UPNP_LIBS=		-L${LOCALBASE}/lib
 
 QRCODES_CONFIGURE_WITH=	qrencode
-QRCODES_LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 
 WALLET_CONFIGURE_ENABLE=	wallet
 WALLET_CXXFLAGS=		-I${BDB_INCLUDE_DIR}

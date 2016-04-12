@@ -12,8 +12,8 @@ COMMENT=	C++ Library for rendering OpenGL models stored in glTF format
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:devel/boost-libs \
+		${LOCALBASE}/include/glm/glm.hpp:math/glm
 
 USES=		compiler:c++0x libtool pathfix pkgconfig tar:bzip2
 USE_GL=		glew

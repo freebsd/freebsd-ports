@@ -12,11 +12,11 @@ COMMENT=	Document Object Model library
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	netsurf-buildsystem>=1.5:${PORTSDIR}/devel/netsurf-buildsystem
-LIB_DEPENDS=	libwapcaplet.so:${PORTSDIR}/textproc/libwapcaplet \
-	libparserutils.so:${PORTSDIR}/devel/libparserutils \
-	libhubbub.so:${PORTSDIR}/www/libhubbub \
-	libexpat.so:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
+LIB_DEPENDS=	libwapcaplet.so:textproc/libwapcaplet \
+	libparserutils.so:devel/libparserutils \
+	libhubbub.so:www/libhubbub \
+	libexpat.so:textproc/expat2
 
 USES=	gmake localbase pkgconfig
 USE_LDCONFIG=	yes

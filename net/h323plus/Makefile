@@ -12,7 +12,7 @@ COMMENT=	H323 Video Conferencing library
 
 LICENSE=	MPL
 
-LIB_DEPENDS=	libpt.so:${PORTSDIR}/devel/ptlib
+LIB_DEPENDS=	libpt.so:devel/ptlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

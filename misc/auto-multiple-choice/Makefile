@@ -11,25 +11,25 @@ COMMENT=	Multiple-choice questionnaire management with automated marking
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libnetpbm.so:${PORTSDIR}/graphics/netpbm \
-		libopencv_highgui.so:${PORTSDIR}/graphics/opencv \
-		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango \
-		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
-RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME \
-		p5-Email-Sender>=0:${PORTSDIR}/mail/p5-Email-Sender \
-		p5-Glib-Object-Introspection>=0:${PORTSDIR}/devel/p5-Glib-Object-Introspection \
-		p5-Gtk2-Notify>=0:${PORTSDIR}/devel/p5-Gtk2-Notify \
-		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
-		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
-		p5-Net-CUPS>=0:${PORTSDIR}/print/p5-Net-CUPS \
-		p5-OpenOffice-OODoc>=0:${PORTSDIR}/textproc/p5-OpenOffice-OODoc \
-		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
-		pdftoppm:${PORTSDIR}/graphics/poppler-utils
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libnetpbm.so:graphics/netpbm \
+		libopencv_highgui.so:graphics/opencv \
+		libpangocairo-1.0.so:x11-toolkits/pango \
+		libpoppler-glib.so:graphics/poppler-glib
+RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-Email-MIME>=0:mail/p5-Email-MIME \
+		p5-Email-Sender>=0:mail/p5-Email-Sender \
+		p5-Glib-Object-Introspection>=0:devel/p5-Glib-Object-Introspection \
+		p5-Gtk2-Notify>=0:devel/p5-Gtk2-Notify \
+		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
+		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
+		p5-Net-CUPS>=0:print/p5-Net-CUPS \
+		p5-OpenOffice-OODoc>=0:textproc/p5-OpenOffice-OODoc \
+		p5-Text-CSV>=0:textproc/p5-Text-CSV \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-XML-Writer>=0:textproc/p5-XML-Writer \
+		pdftoppm:graphics/poppler-utils
 
 WRKSRC=		${WRKDIR}/auto-multiple-choice-${PORTVERSION}
 PORTDOCS=	html auto-multiple-choice.*

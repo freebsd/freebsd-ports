@@ -11,7 +11,7 @@ COMMENT=	Extensions on top of GTK-sharp
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gio-sharp-2.0.pc:${PORTSDIR}/devel/gio-sharp
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gio-sharp-2.0.pc:devel/gio-sharp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

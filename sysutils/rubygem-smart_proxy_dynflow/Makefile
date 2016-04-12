@@ -11,10 +11,10 @@ COMMENT=	Plugin to use Dynflow in Foreman Smart Proxy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	foreman-proxy>=1.9.0:${PORTSDIR}/net/foreman-proxy \
-		rubygem-dynflow>=0.8.4:${PORTSDIR}/devel/rubygem-dynflow \
-		rubygem-sequel>=0:${PORTSDIR}/devel/rubygem-sequel \
-		rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3
+RUN_DEPENDS=	foreman-proxy>=1.9.0:net/foreman-proxy \
+		rubygem-dynflow>=0.8.4:devel/rubygem-dynflow \
+		rubygem-sequel>=0:devel/rubygem-sequel \
+		rubygem-sqlite3>=0:databases/rubygem-sqlite3
 
 NO_ARCH=	yes
 USE_RUBY=	yes

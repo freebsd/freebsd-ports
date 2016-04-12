@@ -15,9 +15,9 @@ LICENSE_NAME=	MIT License (CMU variant)
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept dist-sell pkg-sell
 
-RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
-	${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:${PORTSDIR}/audio/festlex-cmu \
-	${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex
+RUN_DEPENDS=	festival:audio/festival \
+	${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:audio/festlex-cmu \
+	${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:audio/festlex-poslex
 
 USES=	tar:bzip2
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.df.lth.se/~triad/krad/shftool/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter for the Standard Hex Format (SHF)
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
 

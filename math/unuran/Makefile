@@ -11,7 +11,7 @@ MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/ \
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Universal Non-Uniform RANdom number generators
 
-LIB_DEPENDS=	librngstreams.so:${PORTSDIR}/math/rngstreams
+LIB_DEPENDS=	librngstreams.so:math/rngstreams
 
 LICENSE=	GPLv2
 USES=		gmake libtool

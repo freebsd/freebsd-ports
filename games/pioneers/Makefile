@@ -11,7 +11,7 @@ COMMENT=	Internet playable version of the Settlers of Catan
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
+RUN_DEPENDS=	yelp:x11/yelp
 
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk30 intltool libgnome librsvg2

@@ -10,9 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, open source, Java EE blogging tool
 
-PATCH_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-6.0/bin/catalina.sh:${PORTSDIR}/www/tomcat6
+PATCH_DEPENDS=	zip:archivers/zip \
+		unzip:archivers/unzip
+RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-6.0/bin/catalina.sh:www/tomcat6
 
 USES=		cpe zip:infozip
 CPE_VENDOR=	simon_brown

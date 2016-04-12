@@ -11,7 +11,7 @@ COMMENT=	Gvim extension with many features
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
+RUN_DEPENDS=	${LOCALBASE}/bin/gvim:editors/vim
 
 NO_ARCH=	yes
 NO_BUILD=	yes

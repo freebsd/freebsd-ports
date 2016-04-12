@@ -12,10 +12,10 @@ COMMENT=	Online presence and instant messaging server
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libgsasl.so:${PORTSDIR}/security/gsasl \
-		libidn.so:${PORTSDIR}/dns/libidn \
-		libudns.so:${PORTSDIR}/dns/udns
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libgsasl.so:security/gsasl \
+		libidn.so:dns/libidn \
+		libudns.so:dns/udns
 
 OPTIONS_DEFINE=	MYSQL PGSQL LDAP BDB SQLITE PAM PIPE ANON FS DEBUG REQUIRES \
 		DOCS SUPERSEDED EXPERIMENTAL
@@ -71,7 +71,7 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ENABLE=	pgsql
 
 SQLITE_CONFIGURE_ENABLE=sqlite
-SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ENABLE=	mysql

@@ -22,9 +22,9 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
 OPTIONS_DEFINE=	DOCS MYSQL_JDBC PGSQL_JDBC ORACLE_JDBC
-ORACLE_JDBC_RUN_DEPENDS=${JAVALIBDIR}/ojdbc-10.2.0.5.jar:${PORTSDIR}/databases/jdbc-oracle10g
-MYSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
-PGSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
+ORACLE_JDBC_RUN_DEPENDS=${JAVALIBDIR}/ojdbc-10.2.0.5.jar:databases/jdbc-oracle10g
+MYSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
+PGSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/new_sqlworkbench.sh

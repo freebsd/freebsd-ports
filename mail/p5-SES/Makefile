@@ -15,10 +15,10 @@ COMMENT=	Perl module of Amazon Simple Email Services
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
+		p5-URI>=0:net/p5-URI \
+		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+		p5-libwww>=6:www/p5-libwww
 
 USES=		perl5 shebangfix zip
 NO_BUILD=	yes

@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.ccs.neu.edu/pub/sysadmin/
 MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Enhanced su, allows users to su with own password + more
 
-PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
+PATCH_DEPENDS=	rcsdiff:devel/rcs
 
 NO_CDROM=	Do not sell for profit
 BROKEN=		fails to fetch; mastersite disappeared

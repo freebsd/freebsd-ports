@@ -11,8 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for adapter to use Log::Dispatch with Log::Any
 
 RUN_DEPENDS=	\
-	p5-Log-Any>0:${PORTSDIR}/devel/p5-Log-Any \
-	p5-Log-Dispatch>=2.26:${PORTSDIR}/devel/p5-Log-Dispatch
+	p5-Log-Any>0:devel/p5-Log-Any \
+	p5-Log-Dispatch>=2.26:devel/p5-Log-Dispatch
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

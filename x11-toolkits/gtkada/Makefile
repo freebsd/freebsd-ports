@@ -34,7 +34,7 @@ OPTIONS_DEFINE=		DOCS NLS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 .endif
 
 .if ${PORT_OPTIONS:MNLS}

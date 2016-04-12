@@ -13,7 +13,7 @@ COMMENT=	GUI for testing CD/DVD quality and transfer rate
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake tar:bzip2
 USE_QT4=	qmake_build moc_build rcc_build linguisttools_build \

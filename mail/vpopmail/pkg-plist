@@ -31,22 +31,12 @@ vpopmail/etc/inc_deps
 vpopmail/etc/lib_deps
 @exec if [ ! -f %D/vpopmail/etc/defaultdomain ]; then install -o vpopmail -g vchkpw /dev/null %D/vpopmail/etc/defaultdomain; fi
 @unexec if [ -f %D/vpopmail/etc/defaultdomain ] && [ ! -s %D/vpopmail/etc/defaultdomain ]; then rm -f %D/vpopmail/etc/defaultdomain; fi
-@unexec if cmp -s %D/vpopmail/etc/tcp.smtp %D/vpopmail/etc/tcp.smtp-dist; then rm -f %D/vpopmail/etc/tcp.smtp; fi
-vpopmail/etc/tcp.smtp-dist
-@exec if [ ! -f %D/vpopmail/etc/tcp.smtp ] ; then cp -p %D/%F %B/tcp.smtp; fi
-@unexec if cmp -s %D/vpopmail/etc/vlimits.default %D/vpopmail/etc/vlimits.default-dist; then rm -f %D/vpopmail/etc/vlimits.default; fi
-vpopmail/etc/vlimits.default-dist
-@exec if [ ! -f %D/vpopmail/etc/vlimits.default ] ; then cp -p %D/%F %B/vlimits.default; fi
-%%LDAP%%@unexec if cmp -s %D/vpopmail/etc/vpopmail.ldap %D/vpopmail/etc/vpopmail.ldap-dist; then rm -f %D/vpopmail/etc/vpopmail.ldap; fi
-%%LDAP%%vpopmail/etc/vpopmail.ldap-dist
-%%LDAP%%@exec if [ ! -f %D/vpopmail/etc/vpopmail.ldap ] ; then cp -p %D/%F %B/vpopmail.ldap; fi
+@sample vpopmail/etc/tcp.smtp-dist vpopmail/etc/tcp.smtp
+@sample vpopmail/etc/vlimits.default-dist vpopmail/etc/vlimits.default
+%%LDAP%%@sample vpopmail/etc/vpopmail.ldap-dist vpopmail/etc/vpopmail.ldap
 %%LDAP%%@exec echo "You need to specify the LDAP connection settings in the %D/vpopmail/etc/vpopmail.ldap file" | /usr/bin/fmt
-%%MYSQL%%@unexec if cmp -s %D/vpopmail/etc/vpopmail.mysql %D/vpopmail/etc/vpopmail.mysql-dist; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
-%%MYSQL%%vpopmail/etc/vpopmail.mysql-dist
-%%MYSQL%%@exec if [ ! -f %D/vpopmail/etc/vpopmail.mysql ] ; then cp -p %D/%F %B/vpopmail.mysql; fi
-@unexec if cmp -s %D/vpopmail/etc/vusagec.conf %D/vpopmail/etc/vusagec.conf-dist; then rm -f %D/vpopmail/etc/vusagec.conf; fi
-vpopmail/etc/vusagec.conf-dist
-@exec if [ ! -f %D/vpopmail/etc/vusagec.conf ] ; then cp -p %D/%F %B/vusagec.conf; fi
+%%MYSQL%%@sample vpopmail/etc/vpopmail.mysql-dist vpopmail/etc/vpopmail.mysql
+@sample vpopmail/etc/vusagec.conf-dist vpopmail/etc/vusagec.conf
 @owner
 @group
 %%PORTDOCS%%vpopmail/doc/doc_html/vpopmail.html

@@ -11,7 +11,7 @@ COMMENT=	Pure Go termbox implementation
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/mattn/go-runewidth.a:${PORTSDIR}/devel/go-runewidth
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/mattn/go-runewidth.a:devel/go-runewidth
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nsf

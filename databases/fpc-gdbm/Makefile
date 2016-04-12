@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	GDBM
 GDBM_DESC=	Install the GNU database manager
 OPTIONS_DEFAULT=	GDBM
 
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 .include "${MASTERDIR}/Makefile"

@@ -10,10 +10,10 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Plugins for Compiz Composite Window Manager
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
-		${LOCALBASE}/libdata/pkgconfig/bcop.pc:${PORTSDIR}/devel/compiz-bcop
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libpangocairo-1.0.so:x11-toolkits/pango
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz \
+		${LOCALBASE}/libdata/pkgconfig/bcop.pc:devel/compiz-bcop
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

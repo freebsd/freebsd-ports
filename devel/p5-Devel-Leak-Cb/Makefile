@@ -14,9 +14,9 @@ COMMENT=	Detect leaked callbacks
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-common-sense>=2:${PORTSDIR}/devel/p5-common-sense \
-		p5-Devel-Declare>=0.005011:${PORTSDIR}/devel/p5-Devel-Declare
-RUN_DEPENDS=	p5-Devel-Declare>=0.005011:${PORTSDIR}/devel/p5-Devel-Declare
+BUILD_DEPENDS=	p5-common-sense>=2:devel/p5-common-sense \
+		p5-Devel-Declare>=0.005011:devel/p5-Devel-Declare
+RUN_DEPENDS=	p5-Devel-Declare>=0.005011:devel/p5-Devel-Declare
 
 USES=	perl5
 USE_PERL5=	configure

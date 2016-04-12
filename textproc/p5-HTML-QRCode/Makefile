@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate HTML based QR Code
 
-BUILD_DEPENDS=	p5-Text-QRCode>0:${PORTSDIR}/textproc/p5-Text-QRCode
+BUILD_DEPENDS=	p5-Text-QRCode>0:textproc/p5-Text-QRCode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 
 USES=		perl5
 USE_PERL5=	configure

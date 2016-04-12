@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_CONFIGURE_ENABLE=	manual
 DOCS_USE=		TEX=latex:build
-DOCS_BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
+DOCS_BUILD_DEPENDS=	fig2dev:print/transfig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ragel/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

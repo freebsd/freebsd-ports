@@ -49,15 +49,15 @@ OPTIONS_RADIO_RG1=	SASLKRB5 SASLKMIT
 OPTIONS_DEFAULT=	PCRE TLS
 
 BDB_USE=		BDB=yes
-CDB_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
+CDB_LIB_DEPENDS=	libcdb.so:databases/tinycdb
 LDAP_USE=		OPENLDAP=yes
-LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 MYSQL_USE=		MYSQL=yes
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PGSQL_USES=		pgsql
-SASLKMIT_LIB_DEPENDS=	libkrb5.so:${PORTSDIR}/security/krb5
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
+SASLKMIT_LIB_DEPENDS=	libkrb5.so:security/krb5
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+SPF_LIB_DEPENDS=	libspf2.so:mail/libspf2
 SQLITE_USES=		sqlite
 TLS_USE=		OPENSSL=yes
 
@@ -222,7 +222,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
 . if ${PORT_OPTIONS:MLDAP_SASL}
 .  if ! ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 .  endif
 WANT_OPENLDAP_SASL=	yes
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL

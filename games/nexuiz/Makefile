@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt
@@ -45,9 +45,9 @@ CLIENT_DESC=	Build GLX client
 SDL_CLIENT_DESC=Build SDL client
 DEDICATED_DESC=	Build dedicated server
 
-CLIENT_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug \
-			libpng.so:${PORTSDIR}/graphics/png \
-			libtheora.so:${PORTSDIR}/multimedia/libtheora
+CLIENT_LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
+			libpng.so:graphics/png \
+			libtheora.so:multimedia/libtheora
 SDL_CLIENT_LIB_DEPENDS=	${CLIENT_LIB_DEPENDS}
 MAPPACK_DISTFILES=	nexmappack_r2${EXTRACT_SUFX}:mappack
 

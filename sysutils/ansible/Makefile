@@ -12,10 +12,10 @@ COMMENT=	Radically simple IT automation
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}paramiko>0:${PORTSDIR}/security/py-paramiko \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:${PORTSDIR}/devel/py-Jinja2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
 
 NO_ARCH=	yes
 USES=		cpe python:2 shebangfix
@@ -42,7 +42,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES NETADDR
 OPTIONS_DEFAULT=NETADDR
 
 NETADDR_DESC=	Dependency on py-netaddr for ipaddr() filter
-NETADDR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:${PORTSDIR}/net/py-netaddr
+NETADDR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr
 
 post-patch:
 .for f in bin/* docs/man/man1/* examples/* lib/ansible/*.py \

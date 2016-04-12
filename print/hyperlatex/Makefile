@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/2.9a
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce HTML and printed documents from LaTeX source
 
-RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	ppmtogif:graphics/netpbm
 
 USE_TEX=	latex
 USE_EMACS=	yes

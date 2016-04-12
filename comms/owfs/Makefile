@@ -100,7 +100,7 @@ PLIST_SUB+=			OWNETPYTHON="@comment "
 
 # If Perl, Python or PHP is requested, enable SWIG
 .if ${PORT_OPTIONS:MOWPERL} || ${PORT_OPTIONS:MOWPYTHON} || ${PORT_OPTIONS:MOWPHP}
-BUILD_DEPENDS+=			${LOCALBASE}/bin/swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS+=			${LOCALBASE}/bin/swig2.0:devel/swig20
 CONFIGURE_ARGS+=		--enable-swig SWIG=${LOCALBASE}/bin/swig2.0
 .else
 CONFIGURE_ARGS+=		--disable-swig

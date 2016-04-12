@@ -8,11 +8,11 @@ CATEGORIES=	net
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Startup scripts that interact with Google Compute Engine VMs
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
-		curl:${PORTSDIR}/ftp/curl \
-		bash:${PORTSDIR}/shells/bash \
-		flock:${PORTSDIR}/sysutils/flock
+BUILD_DEPENDS=	python:lang/python
+RUN_DEPENDS=	python:lang/python \
+		curl:ftp/curl \
+		bash:shells/bash \
+		flock:sysutils/flock
 
 USES=		python shebangfix
 USE_GITHUB=	yes

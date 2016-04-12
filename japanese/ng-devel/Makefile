@@ -24,7 +24,7 @@ PLIST_FILES=	bin/ng
 OPTIONS_DEFINE=	CANNA DOCS
 
 CANNA_DESC=		Canna support
-CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
+CANNA_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
 CANNA_CONFIGURE_ON=	--enable-canna=${LOCALBASE}
 
 MYPORTDOCS=	CHANGES.1_3 CHANGES.1_4 CHANGES.doc Ng.FAQ Ng.doc \

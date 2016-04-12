@@ -13,15 +13,15 @@ COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:${PORTSDIR}/devel/uthash \
-		${LOCALBASE}/bin/gnulib-tool:${PORTSDIR}/devel/gnulib
-LIB_DEPENDS=	libuninameslist.so:${PORTSDIR}/textproc/libuninameslist \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libspiro.so:${PORTSDIR}/graphics/libspiro \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libltdl.so:${PORTSDIR}/devel/libltdl
+BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash \
+		${LOCALBASE}/bin/gnulib-tool:devel/gnulib
+LIB_DEPENDS=	libuninameslist.so:textproc/libuninameslist \
+		libtiff.so:graphics/tiff \
+		libpng.so:graphics/png \
+		libgif.so:graphics/giflib \
+		libspiro.so:graphics/libspiro \
+		libfreetype.so:print/freetype2 \
+		libltdl.so:devel/libltdl
 
 USE_GITHUB=	yes
 

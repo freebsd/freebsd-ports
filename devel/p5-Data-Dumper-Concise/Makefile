@@ -19,8 +19,8 @@ OPTIONS_DEFINE=	ARGNAMES
 OPTIONS_DEFAULT=ARGNAMES
 ARGNAMES_DESC=	Enable DwarnN subroutine
 
-ARGNAMES_BUILD_DEPENDS=	p5-Devel-ArgNames>=0.03:${PORTSDIR}/devel/p5-Devel-ArgNames
-ARGNAMES_RUN_DEPENDS=	p5-Devel-ArgNames>=0.03:${PORTSDIR}/devel/p5-Devel-ArgNames
+ARGNAMES_BUILD_DEPENDS=	p5-Devel-ArgNames>=0.03:devel/p5-Devel-ArgNames
+ARGNAMES_RUN_DEPENDS=	p5-Devel-ArgNames>=0.03:devel/p5-Devel-ArgNames
 
 USES=		perl5
 USE_PERL5=	configure

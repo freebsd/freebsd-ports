@@ -14,11 +14,11 @@ COMMENT=	GUI editor for digital audio waveforms
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
-		bash:${PORTSDIR}/shells/bash \
-		cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile
+BUILD_DEPENDS=	autogen:devel/autogen \
+		bash:shells/bash \
+		cmake:devel/cmake
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libsndfile.so:audio/libsndfile
 
 BROKEN_powerpc64=	Does not build
 
@@ -77,62 +77,62 @@ CONFIGURE_SHELL?=	${LOCALBASE}/bin/bash
 
 DEBUG_CONFIGURE_WITH=	debug
 
-DOCS_BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man \
-			docbook2man:${PORTSDIR}/textproc/docbook-utils
+DOCS_BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man \
+			docbook2man:textproc/docbook-utils
 
 ALSA_CONFIGURE_OFF=	--disable-alsa
 ALSA_CONFIGURE_WITH=	alsa
 ALSA_CFLAGS=		-I${LOCALBASE}/include
 ALSA_CXXFLAGS=		-I${LOCALBASE}/include
 ALSA_LDFLAGS=		-L${LOCALBASE}/lib
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-DYNLOAD_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libavcodec.pc:${PORTSDIR}/multimedia/ffmpeg
-DYNLOAD_BUILD_DEPENDS=	${LOCALBASE}/include/lame/lame.h:${PORTSDIR}/audio/lame
+DYNLOAD_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libavcodec.pc:multimedia/ffmpeg
+DYNLOAD_BUILD_DEPENDS=	${LOCALBASE}/include/lame/lame.h:audio/lame
 DYNLOAD_CONFIGURE_ENABLE=	dynamic-loading
 DYNLOAD_CPPFLAGS=		-I${LOCALBASE}/include	# for audio/lame using
 DYNLOAD_LDFLAGS=		-L${LOCALBASE}/lib	# for audio/lame using
 
 FFMPEG_CONFIGURE_WITH=	ffmpeg=system
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 FLAC_CONFIGURE_WITH=	libflac=system
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 
 ID3TAG_CONFIGURE_WITH=	libid3tag=system
-ID3TAG_LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag
+ID3TAG_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
 LADSPA_CONFIGURE_ENABLE=	ladspa
-LADSPA_RUN_DEPENDS=	listplugins:${PORTSDIR}/audio/ladspa
+LADSPA_RUN_DEPENDS=	listplugins:audio/ladspa
 
 MAD_CONFIGURE_WITH=	libmad=system
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 
 LAME_CONFIGURE_ON=	--with-lame=system
 LAME_CONFIGURE_OFF=	--with-lame	# --without-lame is broken
 LAME_CPPFLAGS=		-I${LOCALBASE}/include
 LAME_LDFLAGS=		-L${LOCALBASE}/lib
-LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 
 LV2_CONFIGURE_WITH=	lv2
 
 SBSMS_CONFIGURE_WITH=	sbsms
 
 SOUNDTOUCH_CONFIGURE_WITH=	soundtouch=system
-SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
+SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
 
 SSE_CONFIGURE_ENABLE=	sse
 
 TWOLAME_CONFIGURE_WITH=	libtwolame=system
-TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
+TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 
 VAMP_CONFIGURE_WITH=	libvamp=system
-VAMP_LIB_DEPENDS=	libvamp-hostsdk.so:${PORTSDIR}/audio/vamp-plugin-sdk
+VAMP_LIB_DEPENDS=	libvamp-hostsdk.so:audio/vamp-plugin-sdk
 
 VORBIS_CONFIGURE_WITH=	libvorbis=system
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 VST_CONFIGURE_ENABLE=	vst
 

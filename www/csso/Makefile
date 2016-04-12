@@ -13,7 +13,7 @@ COMMENT=	CSS optimizer
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	node:${PORTSDIR}/www/node
+RUN_DEPENDS=	node:www/node
 
 GH_ACCOUNT=	css
 

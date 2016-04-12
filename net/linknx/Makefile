@@ -11,8 +11,8 @@ COMMENT=	Rule-based event handling in a KNX installation
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpthsem.so:${PORTSDIR}/devel/pthsem
-BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS=	libpthsem.so:devel/pthsem
+BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:devel/argp-standalone
 
 USES=	gmake autoreconf pkgconfig
 GNU_CONFIGURE=	yes
@@ -28,11 +28,11 @@ LIBLUA_DESC=	Install liblua for scripting
 MYSQL_DESC=	Install libmysql for logging & persist
 
 LIBESMTP_CONFIGURE_ENABLE=	smtp
-LIBESMTP_LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
+LIBESMTP_LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 LIBCURL_CONFIGURE_WITH=	libcurl
-LIBCURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIBCURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 # autoreconf needs that anyway.
-LIBCURL_BUILD_DEPENDS_OFF=	${LOCALBASE}/share/aclocal/libcurl.m4:${PORTSDIR}/ftp/curl
+LIBCURL_BUILD_DEPENDS_OFF=	${LOCALBASE}/share/aclocal/libcurl.m4:ftp/curl
 LIBLUA_CONFIGURE_WITH=	lua
 LIBLUA_USES=	lua
 LIBLUA_CFLAGS=	-I${LUA_INCDIR}

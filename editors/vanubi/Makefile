@@ -13,7 +13,7 @@ COMMENT=	Programming editor written in Vala
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	valac:lang/vala
 
 GH_TAGNAME=	eedac1d
 

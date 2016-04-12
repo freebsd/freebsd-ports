@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-gst010
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GStreamer 0.10 plugin from libnice
 
-LIB_DEPENDS=	libnice.so:${PORTSDIR}/net-im/libnice
+LIB_DEPENDS=	libnice.so:net-im/libnice
 
 MASTERDIR=	${.CURDIR}/../libnice
 DESCR=		${.CURDIR}/pkg-descr

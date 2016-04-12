@@ -14,10 +14,10 @@ COMMENT=	Perl interface to OpenDKIM C library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	opendkim>=2.10.0:${PORTSDIR}/mail/opendkim
-LIB_DEPENDS=	libopendkim.so:${PORTSDIR}/mail/opendkim
-RUN_DEPENDS=	opendkim>=2.10.0:${PORTSDIR}/mail/opendkim \
-		p5-Error>=0:${PORTSDIR}/lang/p5-Error
+BUILD_DEPENDS=	opendkim>=2.10.0:mail/opendkim
+LIB_DEPENDS=	libopendkim.so:mail/opendkim
+RUN_DEPENDS=	opendkim>=2.10.0:mail/opendkim \
+		p5-Error>=0:lang/p5-Error
 
 USES=		perl5
 USE_PERL5=	configure

@@ -12,10 +12,10 @@ COMMENT=	GTK search utility
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	\
-	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:${PORTSDIR}/devel/py-python-distutils-extra \
-	${PYTHON_PKGNAMEPREFIX}pexpect>0:${PORTSDIR}/misc/py-pexpect \
-	${PYTHON_PKGNAMEPREFIX}gobject3>=0:${PORTSDIR}/devel/py-gobject3 \
-	gksu:${PORTSDIR}/sysutils/gksu
+	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:devel/py-python-distutils-extra \
+	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect \
+	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3 \
+	gksu:sysutils/gksu
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		python

@@ -13,8 +13,8 @@ COMMENT=	Scriptable bar graph generator
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/bin/fig2dev:${PORTSDIR}/print/transfig \
-		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	${LOCALBASE}/bin/fig2dev:print/transfig \
+		${LOCALBASE}/bin/gnuplot:math/gnuplot
 
 USES=		perl5 shebangfix tar:tgz
 NO_WRKSUBDIR=	yes

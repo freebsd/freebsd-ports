@@ -12,10 +12,10 @@ COMMENT=	Mass Cisco Vulnerability Scanner
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \
-		p5-Net-SSH2>=0:${PORTSDIR}/net/p5-Net-SSH2 \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
+RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet \
+		p5-Net-SSH2>=0:net/p5-Net-SSH2 \
+		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
+		p5-Net-SSLeay>=0:security/p5-Net-SSLeay
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${WRKSRC}/cisco-torch.pl

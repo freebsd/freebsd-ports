@@ -12,10 +12,10 @@ COMMENT=	System dedicated to the visualization of huge graphs
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libquazip.so:${PORTSDIR}/archivers/quazip \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libOGDF.so:${PORTSDIR}/math/ogdf \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libquazip.so:archivers/quazip \
+		libpng.so:graphics/png \
+		libOGDF.so:math/ogdf \
+		libfreetype.so:print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-
 

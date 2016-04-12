@@ -12,10 +12,10 @@ COMMENT=	Mock Object library for PHPUnit
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PEARDIR}/Text/Template.php:${PORTSDIR}/textproc/pear-Text_Template \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
-RUN_DEPENDS=	${PEARDIR}/Text/Template.php:${PORTSDIR}/textproc/pear-Text_Template \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
+BUILD_DEPENDS=	${PEARDIR}/Text/Template.php:textproc/pear-Text_Template \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+RUN_DEPENDS=	${PEARDIR}/Text/Template.php:textproc/pear-Text_Template \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
 USES=	pear
 PEAR_CHANNEL=	phpunit

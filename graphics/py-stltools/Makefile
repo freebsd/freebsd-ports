@@ -27,7 +27,7 @@ PYCAIRO_DESC=		Use (py)Cairo to enable stl2pdf to function.
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYCAIRO}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}cairo>1.8:${PORTSDIR}/graphics/py-cairo
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}cairo>1.8:graphics/py-cairo
 .endif
 
 post-install:

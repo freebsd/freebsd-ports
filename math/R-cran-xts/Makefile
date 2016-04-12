@@ -13,7 +13,7 @@ COMMENT=	Extensible Time Series
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-zoo>=1.7.10:${PORTSDIR}/math/R-cran-zoo
+RUN_DEPENDS=	R-cran-zoo>=1.7.10:math/R-cran-zoo
 
 USES=	cran:auto-plist
 

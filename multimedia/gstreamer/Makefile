@@ -36,7 +36,7 @@ OPTIONS_DEFINE=	LIBCHECK NLS
 OPTIONS_SUB=	yes
 LIBCHECK_DESC=	Unit tests support
 
-LIBCHECK_LIB_DEPENDS=	libcheck.so:${PORTSDIR}/devel/libcheck
+LIBCHECK_LIB_DEPENDS=	libcheck.so:devel/libcheck
 LIBCHECK_CONFIGURE_OFF=	--disable-check
 
 NLS_USES=	gettext
@@ -51,7 +51,7 @@ USE_GCC=	any
 .endif
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
 .endif
 

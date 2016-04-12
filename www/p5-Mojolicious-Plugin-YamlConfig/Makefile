@@ -13,10 +13,10 @@ COMMENT=	YAML Configuration Plugin
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mojolicious>=5.54:${PORTSDIR}/www/p5-Mojolicious \
-		p5-YAML-Tiny>=1.60:${PORTSDIR}/textproc/p5-YAML-Tiny
+BUILD_DEPENDS=	p5-Mojolicious>=5.54:www/p5-Mojolicious \
+		p5-YAML-Tiny>=1.60:textproc/p5-YAML-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Compile>=0:${PORTSDIR}/devel/p5-Test-Compile
+TEST_DEPENDS=	p5-Test-Compile>=0:devel/p5-Test-Compile
 
 USES=		perl5
 USE_PERL5=	configure

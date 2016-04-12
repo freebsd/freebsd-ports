@@ -12,8 +12,8 @@ COMMENT=	Very fast DDoS analyzer with sflow/netflow/mirror support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		liblog4cpp.so:${PORTSDIR}/devel/log4cpp
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		liblog4cpp.so:devel/log4cpp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FastVPSEestiOu

@@ -37,10 +37,10 @@ CURL_DESC=		curl support
 P0F_DESC=		P0F support
 POSTFIX_DESC=		Use Postfix instead of Sendmail
 
-P0F_RUN_DEPENDS=	p0f:${PORTSDIR}/net-mgmt/p0f
-SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+P0F_RUN_DEPENDS=	p0f:net-mgmt/p0f
+SPF_LIB_DEPENDS=	libspf2.so:mail/libspf2
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 POSTFIX_CONFIGURE_ENABLE=	postfix
 POSTFIX_LDFLAGS_OFF=		${SENDMAIL_LDFLAGS}

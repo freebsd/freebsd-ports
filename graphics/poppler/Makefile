@@ -13,12 +13,12 @@ COMMENT?=	PDF rendering library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libfontconfig.so:x11-fonts/fontconfig \
+		liblcms2.so:graphics/lcms2 \
+		libfreetype.so:print/freetype2
+RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
 USES=		cpe gmake jpeg libtool pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
@@ -48,7 +48,7 @@ USES+=		iconv
 
 .if defined(SLAVEPORT)
 PORTSCOUT=	ignore:1
-LIB_DEPENDS+=	libpoppler.so:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS+=	libpoppler.so:graphics/poppler
 
 .if ${SLAVEPORT}==glib
 CONFIGURE_ARGS+=--enable-poppler-glib --enable-introspection=yes
@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=--disable-poppler-qt5
 .endif
 
 .if ${SLAVEPORT}==utils
-LIB_DEPENDS+=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+LIB_DEPENDS+=	libpoppler-glib.so:graphics/poppler-glib
 CONFIGURE_ARGS+=--enable-utils
 BUILD_WRKSRC=	${WRKSRC}/utils
 INSTALL_WRKSRC=	${WRKSRC}/utils
@@ -95,7 +95,7 @@ CONFIGURE_ARGS+=--disable-poppler-glib \
 		--disable-utils
 
 .if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libcairo.so:graphics/cairo
 PLIST_SUB+=	CAIRO=""
 .else
 CONFIGURE_ARGS+=--disable-cairo-output
@@ -103,7 +103,7 @@ PLIST_SUB+=	CAIRO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 CONFIGURE_ARGS+=--enable-libcurl
 PLIST_SUB+=	CURL=""
 .else
@@ -115,7 +115,7 @@ PLIST_SUB+=	CURL="@comment "
 # https://bugs.freedesktop.org/show_bug.cgi?id=58906 Comment #35
 .if ${PORT_OPTIONS:MOPENJPEG}
 CONFIGURE_ARGS+=--enable-libopenjpeg=openjpeg1
-LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
+LIB_DEPENDS+=	libopenjpeg.so:graphics/openjpeg15
 .else
 CONFIGURE_ARGS+=--disable-libopenjpeg
 .endif

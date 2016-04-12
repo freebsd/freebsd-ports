@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 support for OAuth-powered network services
 
-LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	libqca.so:devel/qca
 
 USES=		qmake tar:bzip2
 USE_LDCONFIG=	yes

@@ -12,7 +12,7 @@ COMMENT=	Device monitoring addition to Xymon/Hobbit/BigBrother
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session
+RUN_DEPENDS=	p5-SNMP_Session>0:net-mgmt/p5-SNMP_Session
 
 USES=	perl5 shebangfix
 SHEBANG_FILES=	devmon

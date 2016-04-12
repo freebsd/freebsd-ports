@@ -13,7 +13,7 @@ COMMENT=	Wallpaper manipulation utility for X11
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 GNU_CONFIGURE=	yes
 USES=		gmake

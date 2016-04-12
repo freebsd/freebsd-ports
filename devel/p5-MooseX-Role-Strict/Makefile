@@ -14,7 +14,7 @@ COMMENT=	Use strict 'roles'
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0.89:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Moose>=0.89:devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

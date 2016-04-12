@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validate International Securities Identification Numbers
 
-BUILD_DEPENDS=	p5-Locale-Codes>=0:${PORTSDIR}/misc/p5-Locale-Codes
+BUILD_DEPENDS=	p5-Locale-Codes>=0:misc/p5-Locale-Codes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 tar:tgz

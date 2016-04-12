@@ -11,7 +11,7 @@ COMMENT=	Horde Wiki Application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	${PEARDIR}/Text/Wiki.php:${PORTSDIR}/www/pear-Text_Wiki
+RUN_DEPENDS+=	${PEARDIR}/Text/Wiki.php:www/pear-Text_Wiki
 
 USES=	horde cpe
 USE_PHP=	gettext

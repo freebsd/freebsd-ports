@@ -13,7 +13,7 @@ COMMENT=	Tryton Application Platform (Stock Location Sequence Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_stock>=2.8.2:${PORTSDIR}/finance/trytond28_stock
+RUN_DEPENDS=	trytond28_stock>=2.8.2:finance/trytond28_stock
 
 CONFLICTS=	trytond_stock_location_sequence-2.[46].*
 

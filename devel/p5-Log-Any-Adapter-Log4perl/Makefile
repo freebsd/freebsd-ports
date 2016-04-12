@@ -13,8 +13,8 @@ COMMENT=	Log::Any adapter for Log4perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Log-Any>=1.03:${PORTSDIR}/devel/p5-Log-Any \
-		p5-Log-Log4perl>=1.32:${PORTSDIR}/devel/p5-Log-Log4perl
+BUILD_DEPENDS=	p5-Log-Any>=1.03:devel/p5-Log-Any \
+		p5-Log-Log4perl>=1.32:devel/p5-Log-Log4perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

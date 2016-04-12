@@ -36,7 +36,7 @@ SSH2_DESC=		SSH2 support for router access
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSH2}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/ssh2.so:${PORTSDIR}/security/pecl-ssh2
+RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/ssh2.so:security/pecl-ssh2
 .endif
 
 do-install:

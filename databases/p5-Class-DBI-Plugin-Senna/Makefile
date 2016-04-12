@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Add Instant Fulltext Search Capability With Senna to Class::DBI
 
-BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
-	p5-Senna>=0:${PORTSDIR}/textproc/p5-Senna
+BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \
+	p5-Senna>=0:textproc/p5-Senna
 
 USES=		perl5
 USE_PERL5=	configure

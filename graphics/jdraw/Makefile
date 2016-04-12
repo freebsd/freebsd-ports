@@ -35,7 +35,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MPLASTIC3D}
 PLASTIC3D=	"-Dlf=\"com.jgoodies.looks.plastic.Plastic3DLookAndFeel\""
-RUN_DEPENDS+=	${JAVAJARDIR}/looks.jar:${PORTSDIR}/devel/looks
+RUN_DEPENDS+=	${JAVAJARDIR}/looks.jar:devel/looks
 .endif
 JAVA_VERSION=	1.6+
 

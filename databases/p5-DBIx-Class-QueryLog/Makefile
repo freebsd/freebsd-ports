@@ -15,9 +15,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-DBIx-Class>=0.070000:${PORTSDIR}/databases/p5-DBIx-Class \
-		p5-Moo>=2:${PORTSDIR}/devel/p5-Moo \
-		p5-Type-Tiny>=0:${PORTSDIR}/devel/p5-Type-Tiny
+BUILD_DEPENDS=	p5-DBIx-Class>=0.070000:databases/p5-DBIx-Class \
+		p5-Moo>=2:devel/p5-Moo \
+		p5-Type-Tiny>=0:devel/p5-Type-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

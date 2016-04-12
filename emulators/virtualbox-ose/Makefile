@@ -17,16 +17,16 @@ COMMENT=	General-purpose full virtualizer for x86 hardware
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		kmk:${PORTSDIR}/devel/kBuild \
-		gtar:${PORTSDIR}/archivers/gtar \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libxslt.so:${PORTSDIR}/textproc/libxslt \
-		libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:${PORTSDIR}/emulators/virtualbox-ose-kmod \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS=	yasm:devel/yasm \
+		xsltproc:textproc/libxslt \
+		kmk:devel/kBuild \
+		gtar:archivers/gtar \
+		cdrecord:sysutils/cdrtools
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libxslt.so:textproc/libxslt \
+		libcurl.so:ftp/curl
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod \
+		cdrecord:sysutils/cdrtools
 
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
@@ -76,12 +76,12 @@ VNC_DESC=	Build with VNC support
 VPX_DESC=	Use vpx for video capturing
 WEBSERVICE_DESC=	Build Webservice
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-VNC_LIB_DEPENDS=	libvncserver.so:${PORTSDIR}/net/libvncserver
-VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
+VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 
-VDE_RUN_DEPENDS=	vde_switch:${PORTSDIR}/net/vde2
+VDE_RUN_DEPENDS=	vde_switch:net/vde2
 
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DEBUG_CONFIGURE_ON=	--build-debug
@@ -167,7 +167,7 @@ VBOX_WITH_QT4=
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
-BUILD_DEPENDS+=	soapcpp2:${PORTSDIR}/devel/gsoap
+BUILD_DEPENDS+=	soapcpp2:devel/gsoap
 USE_RC_SUBR+=	vboxwebsrv
 VBOX_LINKS+=	vboxwebsrv
 VBOX_UTILS+=	vboxwebsrv webtest
@@ -202,7 +202,7 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:${PORTSDIR}/devel/kBuild
+PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
 		${PATCHDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk \
 		${PATCHDIR}/extrapatch-src-recompiler-Makefile.kmk

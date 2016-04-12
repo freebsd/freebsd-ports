@@ -15,29 +15,29 @@ COMMENT=	Libraries for xine multimedia player
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		liba52.so:${PORTSDIR}/audio/liba52 \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libmng.so:${PORTSDIR}/graphics/libmng \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfame.so:${PORTSDIR}/multimedia/libfame \
-		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia \
-		libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		libvcdinfo.so:${PORTSDIR}/multimedia/vcdimager \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libdca.so:${PORTSDIR}/multimedia/libdca \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libfaad.so:${PORTSDIR}/audio/faad \
-		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+BUILD_DEPENDS=	v4l_compat>=1.0.20100321:multimedia/v4l_compat
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		liba52.so:audio/liba52 \
+		libvorbis.so:audio/libvorbis \
+		libspeex.so:audio/speex \
+		libmng.so:graphics/libmng \
+		libpng.so:graphics/png \
+		libdvdread.so:multimedia/libdvdread \
+		libfreetype.so:print/freetype2 \
+		libfame.so:multimedia/libfame \
+		libcdio_paranoia.so:sysutils/libcdio-paranoia \
+		libmodplug.so:audio/libmodplug \
+		libvcdinfo.so:multimedia/vcdimager \
+		libtheora.so:multimedia/libtheora \
+		libmad.so:audio/libmad \
+		libdca.so:multimedia/libdca \
+		libavcodec.so:multimedia/ffmpeg \
+		libfaad.so:audio/faad \
+		libvdpau.so:multimedia/libvdpau
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
 # and src/input/libdvdnav/dvd_input.c (dlopen'ed)
-LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
+LIB_DEPENDS+=	libdvdcss.so.2:multimedia/libdvdcss
 .endif
 
 USES=		compiler cpe execinfo gmake iconv libtool:keepla \
@@ -75,39 +75,39 @@ OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_LIB_DEPENDS=	libcaca.so:graphics/libcaca
 CACA_CONFIGURE_OFF=	--without-caca --disable-cacatest
 ESOUND_USE=		GNOME=esound
 ESOUND_CONFIGURE_OFF=	--without-esound
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	--without-jack
 GNOMEVFS2_USE=		GNOME=gnomevfs2
 GNOMEVFS2_CONFIGURE_OFF=--disable-gnomevfs
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=--without-pulseaudio
 .if defined(WITH_NVIDIA304_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
 XVMC_CONFIGURE_ON=	--with-xvmc-lib=XvMCNVIDIA
-XVMC_LIB_DEPENDS=	libXvMCNVIDIA.so:${PORTSDIR}/x11/nvidia-driver-304
+XVMC_LIB_DEPENDS=	libXvMCNVIDIA.so:x11/nvidia-driver-304
 .else
 XVMC_CONFIGURE_ON=	--with-xvmc-lib=XvMCW
-XVMC_LIB_DEPENDS=	libXvMC.so:${PORTSDIR}/x11/libXvMC
+XVMC_LIB_DEPENDS=	libXvMC.so:x11/libXvMC
 .endif
 XVMC_CONFIGURE_OFF=	--disable-xvmc
-SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 SMB_CONFIGURE_ENV=	LIBSMBCLIENT_LIBS="-L${LOCALBASE}/lib -lsmbclient" \
 			LIBSMBCLIENT_CFLAGS="-I${LOCALBASE}/include"
 SMB_CONFIGURE_ENABLE=	samba
-AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
+AALIB_LIB_DEPENDS=	libaa.so:graphics/aalib
 AALIB_CONFIGURE_OFF=	--disable-aalib --disable-aalibtest
-IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 IMAGEMAGICK_CONFIGURE_OFF=	--without-imagemagick
 PIXBUF_USE=		GNOME=gdkpixbuf2
 PIXBUF_CONFIGURE_OFF=	--disable-gdkpixbuf
-WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CONFIGURE_WITH=	wavpack
-VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
+VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VAAPI_CONFIGURE_ON=	--enable-vaapi
-LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	bluray
 
 .include <bsd.port.options.mk>

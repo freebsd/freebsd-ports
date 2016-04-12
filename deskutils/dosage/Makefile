@@ -11,7 +11,7 @@ COMMENT=	Application to keep a local mirror of web comics
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
 
 USES=		python
 USE_PYTHON=	distutils autoplist

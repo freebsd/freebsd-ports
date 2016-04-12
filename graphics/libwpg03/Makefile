@@ -12,8 +12,8 @@ COMMENT=	Library and tools to work with WordPerfect Graphics (WPG) files
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge \
-		libwpd-0.10.so:${PORTSDIR}/textproc/libwpd010
+LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge \
+		libwpd-0.10.so:textproc/libwpd010
 
 USES=		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/src/conv/svg/wpg2svgbatch.pl

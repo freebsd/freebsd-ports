@@ -13,7 +13,7 @@ COMMENT=	Lean, flexible frontend to MPlayer written in Python
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jdolan

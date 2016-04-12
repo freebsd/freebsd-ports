@@ -13,8 +13,8 @@ COMMENT=	Simple client API for the DICT protocol
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Differences>=0.620:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-Test-RequiresInternet>=0.05:${PORTSDIR}/devel/p5-Test-RequiresInternet
+TEST_DEPENDS=	p5-Test-Differences>=0.620:devel/p5-Test-Differences \
+		p5-Test-RequiresInternet>=0.05:devel/p5-Test-RequiresInternet
 
 NO_ARCH=	yes
 USE_PERL5=	configure

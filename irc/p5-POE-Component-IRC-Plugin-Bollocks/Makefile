@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE::Component::IRC plugin that talks bollocks
 
-BUILD_DEPENDS=	p5-Dev-Bollocks>=0.06:${PORTSDIR}/textproc/p5-Dev-Bollocks \
-		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
-		p5-POE>=0:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-Dev-Bollocks>=0.06:textproc/p5-Dev-Bollocks \
+		p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC \
+		p5-POE>=0:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"

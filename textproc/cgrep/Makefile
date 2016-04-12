@@ -11,16 +11,16 @@ COMMENT=	Context-aware grep for source codes
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		hs-ansi-terminal>=0.5:${PORTSDIR}/devel/hs-ansi-terminal \
-		hs-cmdargs>=0.10:${PORTSDIR}/devel/hs-cmdargs \
-		hs-dlist>=0.3:${PORTSDIR}/devel/hs-dlist \
-		hs-regex-posix>=0.90:${PORTSDIR}/textproc/hs-regex-posix \
-		hs-safe>=0.3:${PORTSDIR}/devel/hs-safe \
-		hs-split>=0.2:${PORTSDIR}/devel/hs-split \
-		hs-stm>=2.1:${PORTSDIR}/devel/hs-stm \
-		hs-stringsearch>=0.3:${PORTSDIR}/textproc/hs-stringsearch \
-		hs-unordered-containers>=0.1:${PORTSDIR}/devel/hs-unordered-containers
+BUILD_DEPENDS=	ghc:lang/ghc \
+		hs-ansi-terminal>=0.5:devel/hs-ansi-terminal \
+		hs-cmdargs>=0.10:devel/hs-cmdargs \
+		hs-dlist>=0.3:devel/hs-dlist \
+		hs-regex-posix>=0.90:textproc/hs-regex-posix \
+		hs-safe>=0.3:devel/hs-safe \
+		hs-split>=0.2:devel/hs-split \
+		hs-stm>=2.1:devel/hs-stm \
+		hs-stringsearch>=0.3:textproc/hs-stringsearch \
+		hs-unordered-containers>=0.1:devel/hs-unordered-containers
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awgn

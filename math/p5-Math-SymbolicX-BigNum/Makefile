@@ -14,8 +14,8 @@ COMMENT=	Big number support for the Math::Symbolic parser
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-Symbolic>=0:${PORTSDIR}/math/p5-Math-Symbolic \
-		p5-Math-SymbolicX-ParserExtensionFactory>=0:${PORTSDIR}/math/p5-Math-SymbolicX-ParserExtensionFactory
+BUILD_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic \
+		p5-Math-SymbolicX-ParserExtensionFactory>=0:math/p5-Math-SymbolicX-ParserExtensionFactory
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

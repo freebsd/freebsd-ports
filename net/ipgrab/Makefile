@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPgrab is a verbose packet sniffer for UNIX hosts
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pcap.h:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS=	${LOCALBASE}/include/pcap.h:net/libpcap
 
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89

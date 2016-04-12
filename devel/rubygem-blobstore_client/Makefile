@@ -10,10 +10,10 @@ COMMENT=	BOSH blobstore client
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-aws-sdk-resources>=2.2.0:${PORTSDIR}/devel/rubygem-aws-sdk-resources \
-		rubygem-bosh_common>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-bosh_common \
-		rubygem-httpclient>=2.7.1:${PORTSDIR}/www/rubygem-httpclient \
-		rubygem-multi_json>=1.1:${PORTSDIR}/devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-aws-sdk-resources>=2.2.0:devel/rubygem-aws-sdk-resources \
+		rubygem-bosh_common>=${PORTVERSION}:devel/rubygem-bosh_common \
+		rubygem-httpclient>=2.7.1:www/rubygem-httpclient \
+		rubygem-multi_json>=1.1:devel/rubygem-multi_json
 
 NO_ARCH=	yes
 USE_RUBY=	yes

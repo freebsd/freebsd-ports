@@ -13,9 +13,9 @@ COMMENT=	Tiny English grammar checker
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	wn:${PORTSDIR}/textproc/wordnet \
-		${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
+BUILD_DEPENDS=	wn:textproc/wordnet \
+		${PYTHON_SITELIBDIR}/cdbmodule.so:databases/py-cdb
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:databases/py-cdb
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	*.py misc/*.py qq

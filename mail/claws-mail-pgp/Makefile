@@ -6,7 +6,7 @@ PORTREVISION=	0
 
 COMMENT=	PGP plugins for Claws Mail
 
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 CLAWS_PLUGINS_BUILD=	pgpcore pgpinline pgpmime smime
 

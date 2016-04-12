@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=--disable-debug
 
 post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' < \
-	    	${FILESDIR}/fribidi-config > ${WRKDIR}/fribidi-config
+		${FILESDIR}/fribidi-config > ${WRKDIR}/fribidi-config
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/fribidi-config ${STAGEDIR}${PREFIX}/bin

@@ -11,10 +11,10 @@ DISTNAME=	RailroadRampage_${PORTVERSION}_Linux
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tower Defence-like Arcade and Strategy combination
 
-BUILD_DEPENDS=	bgdc:${PORTSDIR}/devel/bennugd-core \
-		${LOCALBASE}/lib/bennugd/libmod_grproc.so:${PORTSDIR}/devel/bennugd-modules
-RUN_DEPENDS=	bgdi:${PORTSDIR}/devel/bennugd-core \
-		${LOCALBASE}/lib/bennugd/libmod_grproc.so:${PORTSDIR}/devel/bennugd-modules
+BUILD_DEPENDS=	bgdc:devel/bennugd-core \
+		${LOCALBASE}/lib/bennugd/libmod_grproc.so:devel/bennugd-modules
+RUN_DEPENDS=	bgdi:devel/bennugd-core \
+		${LOCALBASE}/lib/bennugd/libmod_grproc.so:devel/bennugd-modules
 
 USES=		zip
 

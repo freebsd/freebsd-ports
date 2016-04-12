@@ -12,9 +12,9 @@ COMMENT=	Gimmix is a graphical MPD client written in C using GTK+2
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
-		libtag.so:${PORTSDIR}/audio/taglib \
-		libnxml.so:${PORTSDIR}/textproc/libnxml
+LIB_DEPENDS=	libmpd.so:audio/libmpd \
+		libtag.so:audio/taglib \
+		libnxml.so:textproc/libnxml
 
 USES=		tar:bzip2 desktop-file-utils gmake pkgconfig
 USE_GNOME=	gtk20 intltool libglade2

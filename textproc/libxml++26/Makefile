@@ -17,7 +17,7 @@ PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:devel/m4
 
 USES+=		gmake libtool pathfix pkgconfig
 USE_GNOME=	glibmm libxml2

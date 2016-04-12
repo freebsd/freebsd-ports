@@ -11,7 +11,7 @@ MASTER_SITES=	SF/evocms/${PORTNAME}/b2evo%20${PORTVERSION}-stable
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual, multiuser, multi-blog engine
 
-PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+PATCH_DEPENDS=	unzip:archivers/unzip
 
 USES=		cpe dos2unix zip
 

@@ -8,8 +8,8 @@ CATEGORIES=	audio
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Musical spectrum plugin for DeaDBeeF audio player
 
-BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:${PORTSDIR}/audio/deadbeef
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
+LIB_DEPENDS=	libfftw3.so:math/fftw3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes

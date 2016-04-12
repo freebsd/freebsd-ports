@@ -9,7 +9,7 @@ CATEGORIES=	sysutils archivers
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Another Calendar-based Tarsnap Script
 
-RUN_DEPENDS=	tarsnap>=0:${PORTSDIR}/sysutils/tarsnap
+RUN_DEPENDS=	tarsnap>=0:sysutils/tarsnap
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexjurkiewicz

@@ -11,7 +11,7 @@ COMMENT=	Look up the AS and network prefix of IP address
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	libapr-1.so:devel/apr1
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

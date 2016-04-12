@@ -9,8 +9,11 @@ MASTER_SITES=	http://www.bleb.org/software/bkmrkconv/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netscape bookmarks.html converter
 
+LICENSE=	ART10
+
 USES=		perl5
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -26,6 +29,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/* ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/src
 	${INSTALL_DATA} ${WRKSRC}/src.example/* ${STAGEDIR}${DATADIR}/src
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 

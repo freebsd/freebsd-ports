@@ -14,7 +14,7 @@ COMMENT=	Allows simple management of a robots.txt
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

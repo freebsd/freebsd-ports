@@ -1194,6 +1194,7 @@
     SUBDIR += zatacka
     SUBDIR += zaz
     SUBDIR += zephulor
+    SUBDIR += zhlt
     SUBDIR += znibbles
     SUBDIR += zoom
     SUBDIR += ztrack

@@ -16,12 +16,12 @@ LICENSE_NAME_LinuxdocTools=	The linuxdoc-tools license
 LICENSE_FILE_LinuxdocTools=	${WRKSRC}/COPYING
 LICENSE_PERMS_LinuxdocTools=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
-		nsgmls:${PORTSDIR}/textproc/jade \
-    		sgmlsasp:${PORTSDIR}/textproc/sgmls
-RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
-		nsgmls:${PORTSDIR}/textproc/jade \
-    		sgmlsasp:${PORTSDIR}/textproc/sgmls
+BUILD_DEPENDS=	gawk:lang/gawk \
+		nsgmls:textproc/jade \
+		sgmlsasp:textproc/sgmls
+RUN_DEPENDS=	gawk:lang/gawk \
+		nsgmls:textproc/jade \
+		sgmlsasp:textproc/sgmls
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5
@@ -32,7 +32,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+DOCS_BUILD_DEPENDS=	bash:shells/bash
+DOCS_USES=		makeinfo
 DOCS_MAKE_ENV=		LANG=C BUILD_DOCS=true
 
 post-patch:

@@ -11,9 +11,9 @@ COMMENT=	Skype call recorder
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
-		libid3.so:${PORTSDIR}/audio/id3lib \
-		libvorbisenc.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libmp3lame.so:audio/lame \
+		libid3.so:audio/id3lib \
+		libvorbisenc.so:audio/libvorbis
 
 USES=		cmake
 USE_QT4=	corelib dbus gui network \

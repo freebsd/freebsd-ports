@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-legacy
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgda4 library
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:devel/m4
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	glibmm libgda4

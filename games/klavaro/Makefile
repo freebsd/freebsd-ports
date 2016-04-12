@@ -11,7 +11,7 @@ COMMENT=	Touchtyping trainer
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		pkgconfig gettext gmake iconv tar:bzip2
 USE_GNOME=	gtk30 intlhack

@@ -13,10 +13,10 @@ COMMENT=	Reading and Writing a variety of graph file formats
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Graph>=0.50:${PORTSDIR}/math/p5-Graph \
-		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer
+BUILD_DEPENDS=	p5-Graph>=0.50:math/p5-Graph \
+		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-XML-Writer>=0:textproc/p5-XML-Writer
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

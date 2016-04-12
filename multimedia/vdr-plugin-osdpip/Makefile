@@ -14,7 +14,7 @@ PATCHFILES=	osdpip-vdr-1.7.26.diff
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - picture-in-picture plugin
 
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 
 USES=		pkgconfig tar:tgz
 DIST_SUBDIR=	vdr

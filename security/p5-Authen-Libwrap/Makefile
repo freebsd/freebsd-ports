@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Authen::Libwrap - access to TCP Wrappers library
 
-TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	modbuild

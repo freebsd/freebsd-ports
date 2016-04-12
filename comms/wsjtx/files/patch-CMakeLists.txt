@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2015-11-25 02:16:23 UTC
+--- CMakeLists.txt.orig	2015-12-11 00:00:13 UTC
 +++ CMakeLists.txt
 @@ -93,6 +93,13 @@ if (CMAKE_BUILD_TYPE MATCHES "[Dd][Ee][B
    set (is_debug_build 1)
@@ -9,52 +9,43 @@
 +endif()
 +
 +if (FREEBSD)
-+	set (WSJT_INCLUDE_KVASD Off)
++       set (WSJT_INCLUDE_KVASD Off)
 +endif ()
  
  #
  # Options & features
-@@ -152,7 +159,14 @@ set (WSJT_BIN_DESTINATION bin)
- set (WSJT_LIB_DESTINATION lib)
- set (WSJT_SHARE_DESTINATION share)
- set (WSJT_DOC_DESTINATION doc/${CMAKE_PROJECT_NAME})
--set (WSJT_MANPAGE_DESTINATION share)
+@@ -153,7 +160,14 @@ set (LIB_DESTINATION lib)
+ set (SHARE_DESTINATION share)
+ set (DOC_DESTINATION doc/${CMAKE_PROJECT_NAME})
+ set (DATA_DESTINATION ${CMAKE_PROJECT_NAME})
+-set (MANPAGE_DESTINATION ${SHARE_DESTINATION})
 +if (NOT FREEBSD)
 +  message (STATUS "NOT FREEBSD")
-+  set (WSJT_MANPAGE_DESTINATION share)
++  set (MANPAGE_DESTINATION share)
 +else()
 +  message (STATUS "FREEBSD")
-+  set (WSJT_MANPAGE_DESTINATION "${CMAKE_INSTALL_PREFIX}" )
++  set (MANPAGE_DESTINATION "${CMAKE_INSTALL_PREFIX}" )
 +endif()
-+message (STATUS WSJT_MANPAGE_DESTINATION ${WSJT_MANPAGE_DESTINATION})
- set (WSJT_PLUGIN_DESTINATION lib/plugins)
- set (WSJT_QT_CONF_DESTINATION bin)
++message (STATUS MANPAGE_DESTINATION ${MANPAGE_DESTINATION})
+ set (PLUGIN_DESTINATION lib/plugins)
+ set (QT_CONF_DESTINATION bin)
  
-@@ -881,7 +895,13 @@ set_target_properties (wsjtx PROPERTIES
+@@ -937,7 +951,13 @@ set_target_properties (wsjtx PROPERTIES
    MACOSX_BUNDLE_GUI_IDENTIFIER "org.k1jt.wsjtx"
    )
  
--target_link_libraries (wsjtx wsjt_fort wsjt_cxx wsjt_qt ${hamlib_LIBRARIES} ${FFTW3_LIBRARIES})
+-target_link_libraries (wsjtx wsjt_fort wsjt_cxx wsjt_qt ${hamlib_LIBRARIES} ${FFTW3_LIBRARIES} Qt5::Multimedia)
 +if(FREEBSD)
 +  set (extraLIBS "ltdl" "usb")
 +else()
 +  set (extraLIBS "")
 +endif()
 +
-+target_link_libraries (wsjtx wsjt_fort wsjt_cxx wsjt_qt ${hamlib_LIBRARIES} ${extraLIBS} ${FFTW3_LIBRARIES})
- qt5_use_modules (wsjtx Widgets OpenGL Network Multimedia SerialPort)
++target_link_libraries (wsjtx wsjt_fort wsjt_cxx wsjt_qt ${hamlib_LIBRARIES} ${extraLIBS} ${FFTW3_LIBRARIES} Qt5::Multimedia)
+ qt5_use_modules (wsjtx SerialPort) # not sure why the interface link library syntax above doesn't work
  
  add_resources (message_aggregator_RESOURCES /qss ${message_aggregator_STYLESHEETS})
-@@ -942,7 +962,7 @@ install (TARGETS jt9 jt65code jt9code me
-   )
- 
- if (WSJT_INCLUDE_KVASD)
--  install (PROGRAMS
-+    install (PROGRAMS
-     ${CMAKE_BINARY_DIR}/${KVASD_BINARY}
-     DESTINATION ${WSJT_BIN_DESTINATION} COMPONENT runtime
-   )
-@@ -956,20 +976,6 @@ else (WSJT_INCLUDE_KVASD)
+@@ -1011,20 +1031,6 @@ else (WSJT_INCLUDE_KVASD)
    endif (APPLE)
  endif (WSJT_INCLUDE_KVASD)
  

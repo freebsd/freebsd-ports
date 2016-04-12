@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension of libSigC++
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12
+BUILD_DEPENDS=	gm4:devel/m4
+LIB_DEPENDS=	libsigc-1.2.so:devel/libsigc++12
 
 OPTIONS_DEFINE=	STATIC
 

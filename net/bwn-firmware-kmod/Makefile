@@ -13,7 +13,7 @@ EXTRACT_ONLY=
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Broadcom AirForce IEEE 802.11 Firmware Kernel Module
 
-BUILD_DEPENDS=	b43-fwcutter:${PORTSDIR}/sysutils/b43-fwcutter
+BUILD_DEPENDS=	b43-fwcutter:sysutils/b43-fwcutter
 
 FIRMWARES=								\
 	ucode ucode5 ucode11 ucode13 ucode14 ucode15			\

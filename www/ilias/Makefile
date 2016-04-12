@@ -11,14 +11,14 @@ COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		zip:${PORTSDIR}/archivers/zip \
-		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/share/pear/PEAR.php:${PORTSDIR}/devel/pear \
-		${LOCALBASE}/share/pear/Auth/Auth.php:${PORTSDIR}/security/pear-Auth \
-		${LOCALBASE}/share/pear/MDB2.php:${PORTSDIR}/databases/pear-MDB2 \
-		${LOCALBASE}/share/pear/HTML/Template/IT.php:${PORTSDIR}/devel/pear-HTML_Template_IT
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	convert:graphics/ImageMagick \
+		zip:archivers/zip \
+		${UNZIP_CMD}:archivers/unzip \
+		${LOCALBASE}/share/pear/PEAR.php:devel/pear \
+		${LOCALBASE}/share/pear/Auth/Auth.php:security/pear-Auth \
+		${LOCALBASE}/share/pear/MDB2.php:databases/pear-MDB2 \
+		${LOCALBASE}/share/pear/HTML/Template/IT.php:devel/pear-HTML_Template_IT
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ILIAS-eLearning
@@ -38,8 +38,8 @@ SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
 OPTIONS_DEFINE=		SCORM2004 Checker Mail
 SCORM2004_USE=		php=json
-Checker_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
-Mail_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:${PORTSDIR}/mail/pear-Mail
+Checker_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request
+Mail_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail
 
 pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}

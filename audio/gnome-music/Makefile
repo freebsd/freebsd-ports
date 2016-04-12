@@ -10,9 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgrilo-0.2.so:${PORTSDIR}/net/grilo \
-		libmediaart-2.0.so:${PORTSDIR}/multimedia/libmediaart
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgrilo-0.2.so:net/grilo \
+		libmediaart-2.0.so:multimedia/libmediaart
 
 PORTSCOUT=	limitw:1,even
 

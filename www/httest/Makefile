@@ -11,8 +11,8 @@ COMMENT=	HTTP Test Tool
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		libpcre.so:devel/pcre
 
 OPTIONS_DEFINE=	EXAMPLES
 

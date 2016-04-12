@@ -15,8 +15,8 @@ COMMENT=	SDL/OpenGL space shoot'em up game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpng.so:graphics/png
 
 USES=		dos2unix tar:bzip2
 DOS2UNIX_FILES=	tinyxml/*.cpp tinyxml/*.h

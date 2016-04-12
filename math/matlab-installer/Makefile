@@ -12,9 +12,9 @@ COMMENT=	Easy installation of Linux Matlab(r) on FreeBSD
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	mount_cd9660_image:${PORTSDIR}/sysutils/diskimage-tools \
-		auto-ask:${PORTSDIR}/sysutils/auto-admin \
-		webbrowser:${PORTSDIR}/www/webbrowser \
+RUN_DEPENDS=	mount_cd9660_image:sysutils/diskimage-tools \
+		auto-ask:sysutils/auto-admin \
+		webbrowser:www/webbrowser \
 
 USES=		tar:xz
 USE_LINUX=	yes

@@ -13,12 +13,12 @@ COMMENT=	Tools for use with the SCUMMVM game emulator
 LICENSE=	GPLv2
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-		flac:${PORTSDIR}/audio/flac \
-		oggenc:${PORTSDIR}/audio/vorbis-tools
+BUILD_DEPENDS=	lame:audio/lame \
+		flac:audio/flac \
+		oggenc:audio/vorbis-tools
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libvorbis.so:audio/libvorbis
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes

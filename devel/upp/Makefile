@@ -14,9 +14,9 @@ COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${BUILD_WRKSRC}/Core/Copying
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libexpat.so:textproc/expat2 \
+		libnotify.so:devel/libnotify
 
 USES=		execinfo gmake
 USE_XORG=	xft

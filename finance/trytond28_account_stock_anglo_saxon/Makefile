@@ -13,8 +13,8 @@ COMMENT=	Tryton Application Platform (Account Stock Anglo Saxon Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_account_invoice>=2.8.2:${PORTSDIR}/finance/trytond28_account_invoice \
-		trytond28_account_stock_continental>=2.8.1:${PORTSDIR}/finance/trytond28_account_stock_continental
+RUN_DEPENDS=	trytond28_account_invoice>=2.8.2:finance/trytond28_account_invoice \
+		trytond28_account_stock_continental>=2.8.1:finance/trytond28_account_stock_continental
 
 CONFLICTS=	trytond_account_stock_anglo_saxon-2.[46].*
 

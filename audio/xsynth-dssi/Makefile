@@ -10,11 +10,11 @@ MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic analog style software synthesizer
 
-BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
-		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
-		liblo.so:${PORTSDIR}/audio/liblo \
-		libjack.so:${PORTSDIR}/audio/jack
+BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:audio/dssi \
+		${LOCALBASE}/include/ladspa.h:audio/ladspa
+LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
+		liblo.so:audio/liblo \
+		libjack.so:audio/jack
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

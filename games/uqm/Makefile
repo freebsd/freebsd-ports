@@ -14,9 +14,9 @@ COMMENT=	Port of the original Star Control 2 for 3DO consoles
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libmikmod.so:${PORTSDIR}/audio/libmikmod \
-		libpth.so:${PORTSDIR}/devel/pth
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libmikmod.so:audio/libmikmod \
+		libpth.so:devel/pth
 
 USES=		gmake pkgconfig
 USE_SDL=	image sdl

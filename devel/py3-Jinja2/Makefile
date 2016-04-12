@@ -14,8 +14,8 @@ COMMENT=	Fast and easy to use stand-alone template engine
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:${PORTSDIR}/textproc/py3-MarkupSafe
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:${PORTSDIR}/textproc/py3-MarkupSafe
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:textproc/py3-MarkupSafe
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:textproc/py3-MarkupSafe
 
 NO_ARCH=	yes
 USES=		python:3
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	BABEL EXAMPLES
 OPTIONS_DEFAULT=	BABEL
 BABEL_DESC=		Enable Babel extension
 
-BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:${PORTSDIR}/devel/py3-babel
+BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py3-babel
 
 PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
 PY2TO3_ARGS=	--fix=all --no-diffs --nobackups --verbose --write

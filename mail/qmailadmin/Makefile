@@ -15,10 +15,10 @@ COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	autorespond:${PORTSDIR}/mail/autorespond \
-		${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
-RUN_DEPENDS=	autorespond:${PORTSDIR}/mail/autorespond \
-		${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+BUILD_DEPENDS=	autorespond:mail/autorespond \
+		${VPOPMAIL_DIR}/lib/libvpopmail.a:mail/vpopmail
+RUN_DEPENDS=	autorespond:mail/autorespond \
+		${VPOPMAIL_DIR}/lib/libvpopmail.a:mail/vpopmail
 
 USES=		autoreconf gmake qmail:vars
 
@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=	--enable-spam-command="${SPAM_COMMAND}"
 
 .if ${PORT_OPTIONS:MCRACKLIB}
 EXTRA_PATCHES+=		${FILESDIR}/cracklib.patch
-BUILD_DEPENDS+=		${LOCALBASE}/include/crack.h:${PORTSDIR}/security/cracklib
+BUILD_DEPENDS+=		${LOCALBASE}/include/crack.h:security/cracklib
 CONFIGURE_ARGS+=	--enable-cracklib=${LOCALBASE}/libdata/cracklib/pw_dict
 CFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lcrack
@@ -131,11 +131,11 @@ PLIST_SUB+=	CGIBINDIR="${CGIBINDIR}" CGIBINSUBDIR="${CGIBINSUBDIR}" \
 # End of user-configurable variables
 
 .if empty(PORT_OPTIONS:MIDX)
-BUILD_DEPENDS+=	ezmlm-send:${PORTSDIR}/mail/ezmlm
-RUN_DEPENDS+=	ezmlm-send:${PORTSDIR}/mail/ezmlm
+BUILD_DEPENDS+=	ezmlm-send:mail/ezmlm
+RUN_DEPENDS+=	ezmlm-send:mail/ezmlm
 .else
-BUILD_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
-RUN_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
+BUILD_DEPENDS+=	ezmlm-idx:mail/ezmlm-idx
+RUN_DEPENDS+=	ezmlm-idx:mail/ezmlm-idx
 .endif
 
 .include <bsd.port.mk>

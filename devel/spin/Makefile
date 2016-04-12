@@ -2,52 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	spin
-PORTVERSION=	6.4.3
+PORTVERSION=	6.4.5
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}
+DIST_SUBDIR=	spin
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-the-fly verification system for asynchronous concurrent systems
 
-OPTIONS_DEFINE=	ISPIN DOCS
-OPTIONS_DEFAULT=	ISPIN
-ISPIN_DESC=	Install xspin and TCL/Tk dependency
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MISPIN}
-USES=		shebangfix tk
-SHEBANG_FILES=	../iSpin/ispin.tcl
-tk_OLD_CMD=	/bin/sh
-tk_CMD=		${WISH} -f
-PLIST_SUB+=	ISPIN=""
-.else
-PLIST_SUB+=	ISPIN="@comment "
-.endif
-
-DIST_SUBDIR=	spin
 WRKSRC=		${WRKDIR}/Spin/Src${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	spin
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNXT"
 
-post-patch:
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES ISPIN
+OPTIONS_DEFAULT=	ISPIN
+OPTIONS_SUB=	yes
+ISPIN_DESC=	Install ispin and TCL/Tk dependency
+ISPIN_USES=	shebangfix tk
+
+SHEBANG_FILES=	../iSpin/ispin.tcl
+tk_OLD_CMD=	/bin/sh
+tk_CMD=		${WISH} -f
+
+post-patch-ISPIN-on:
 	${REINPLACE_CMD} -e "s|exec wish|#exec wish|" ${WRKDIR}/Spin/iSpin/ispin.tcl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/../iSpin/ispin.tcl ${STAGEDIR}${PREFIX}/bin/ispin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/Doc
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/Examples
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/Examples/Book_1991
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/Examples/Exercises
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/Examples/LTL
-	${INSTALL_DATA} ${WRKDIR}/Spin/Doc/* ${STAGEDIR}${DOCSDIR}/Doc
-	(cd ${WRKDIR}/Spin/Examples && ${FIND} . -type f | ${CPIO} -pdm ${STAGEDIR}${DOCSDIR}/Examples)
-	(cd ${WRKDIR}/Spin/Examples/Book_1991 && ${FIND} . -type f | ${CPIO} -pdm ${STAGEDIR}${DOCSDIR}/Examples/Book_1991)
-	(cd ${WRKDIR}/Spin/Examples/Exercises && ${FIND} . -type f | ${CPIO} -pdm ${STAGEDIR}${DOCSDIR}/Examples/Exercises)
-	(cd ${WRKDIR}/Spin/Examples/LTL && ${FIND} . -type f | ${CPIO} -pdm ${STAGEDIR}${DOCSDIR}/Examples/LTL)
 	${INSTALL_MAN} ${WRKDIR}/Spin/Man/spin.1 ${STAGEDIR}${PREFIX}/man/man1
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/Spin/Doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKDIR}/Spin/Examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-ISPIN-on:
+	${INSTALL_SCRIPT} ${WRKDIR}/Spin/iSpin/ispin.tcl ${STAGEDIR}${PREFIX}/bin/ispin
 
 .include <bsd.port.mk>

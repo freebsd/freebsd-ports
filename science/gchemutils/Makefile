@@ -10,13 +10,13 @@ DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	C++ classes and Gtk3 widgets related to chemistry
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
-		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
-		libopenbabel.so:${PORTSDIR}/science/openbabel \
-		libgoffice-0.10.so:${PORTSDIR}/devel/goffice010
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
-		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:science/bodr \
+		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libopenbabel.so:science/openbabel \
+		libgoffice-0.10.so:devel/goffice010
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:science/bodr \
+		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 
 PORTSCOUT=	limitw:1,even
 
@@ -52,7 +52,7 @@ XUL_CONFIGURE_OFF=--disable-mozilla-plugin
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUMERIC} || exists(${LOCALBASE}/lib/libspreadsheet.so)
-LIB_DEPENDS+=	libspreadsheet.so:${PORTSDIR}/math/gnumeric
+LIB_DEPENDS+=	libspreadsheet.so:math/gnumeric
 PLIST_SUB+=	GNUMERIC=""
 .else
 PLIST_SUB+=	GNUMERIC="@comment "

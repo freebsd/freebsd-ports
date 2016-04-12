@@ -27,7 +27,7 @@ MYSQL_USE=	PHP=mysql MYSQL=yes
 PGSQL_USE=	PHP=pgsql,pdo_pgsql
 PGSQL_USES=	pgsql
 APACHE_USE=	APACHE_RUN=22
-LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/ww/lighttpd
+LIGHTTPD_RUN_DEPENDS=	lighttpd:ww/lighttpd
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

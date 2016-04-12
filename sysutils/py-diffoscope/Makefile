@@ -13,12 +13,12 @@ COMMENT=	In-depth comparison of files, archives, and directories
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libarchive-c>=0:${PORTSDIR}/archivers/py3-libarchive-c \
-		${PYTHON_PKGNAMEPREFIX}python-magic>=0:${PORTSDIR}/devel/py3-python-magic
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:${PORTSDIR}/devel/py-pytest \
-		zipinfo:${PORTSDIR}/archivers/unzip \
-		isoinfo:${PORTSDIR}/sysutils/cdrkit \
-		rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libarchive-c>=0:archivers/py3-libarchive-c \
+		${PYTHON_PKGNAMEPREFIX}python-magic>=0:devel/py3-python-magic
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest \
+		zipinfo:archivers/unzip \
+		isoinfo:sysutils/cdrkit \
+		rpm2cpio:archivers/rpm2cpio
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist distutils

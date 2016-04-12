@@ -43,3 +43,21 @@ Example Apache config:
         Allow from 127.0.0.1 .example.com
     </Directory>
 
+    # if you wish to serve ActiveSync request (mobile devices), add this:
+    RewriteRule /Microsoft-Server-ActiveSync(.*) %%WWWDIR%%/index.php?frontend=activesync [E=REDIRECT_ACTIVESYNC:true,E=REMOTE_USER:%{HTTP:Authorization},L,QSA]
+
+    # if you wish to serve CalDAV requests (thunderbird lighting), add this:
+    RewriteCond %{REQUEST_METHOD} !^(GET|POST)$
+    RewriteRule ^/tine20/$                  %%WWWDIR%%/index.php?frontend=webdav [E=REMOTE_USER:%{HTTP:Authorization},L,QSA]
+    RewriteRule ^/tine20/addressbooks       %%WWWDIR%%/index.php?frontend=webdav [E=REMOTE_USER:%{HTTP:Authorization},L,QSA]
+    RewriteRule ^/tine20/calendars          %%WWWDIR%%/index.php?frontend=webdav [E=REMOTE_USER:%{HTTP:Authorization},L,QSA]
+    RewriteRule ^/tine20/principals         %%WWWDIR%%/index.php?frontend=webdav [E=REMOTE_USER:%{HTTP:Authorization},L,QSA]
+    RewriteRule ^/tine20/webdav             %%WWWDIR%%/index.php?frontend=webdav [E=REMOTE_USER:%{HTTP:Authorization},L,QSA]
+
+More information on how to setup ActiveSync can be found here:
+
+https://wiki.tine20.org/Admins/Synchronisation
+
+More information on how to setup CalDAV can be found here:
+
+https://wiki.tine20.org/Admins/Thunderbird-Synchronisation

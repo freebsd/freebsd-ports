@@ -10,8 +10,8 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Model-airplane flight simulation program
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
+LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 GNU_CONFIGURE=	yes
 USES=		gmake jpeg

@@ -15,8 +15,8 @@ EXTRACT_ONLY=	texlive-${DISTVERSION_TEXLIVE_SOURCE}-source${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Engine including Omega and e-TeX features
 
-LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libmpfr.so:math/mpfr \
+		libpng.so:graphics/png
 
 USES=		tar:xz pkgconfig
 USE_TEX=	kpathsea web2c texmf formats fmtutil

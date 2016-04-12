@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style, top-scrolling space shooter
 
-LIB_DEPENDS=	libglpng.so:${PORTSDIR}/graphics/glpng \
-		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libglpng.so:graphics/glpng \
+		libftgl.so:graphics/ftgl \
+		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig

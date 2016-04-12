@@ -118,7 +118,6 @@ lib/vulture-nethackdir/perm
 lib/vulture-nethackdir/record
 @mode
 lib/vulture-nethackdir/recover
-@exec mkdir -p %D/lib/vulture-nethackdir/save
 lib/vulture-nethackdir/sound/bell.ogg
 lib/vulture-nethackdir/sound/cat.ogg
 lib/vulture-nethackdir/sound/cldoor.ogg

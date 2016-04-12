@@ -13,7 +13,7 @@ COMMENT=	Regression testing utility for use with the Scala Language
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	scala>=2.9.0:${PORTSDIR}/lang/scala
+RUN_DEPENDS=	scala>=2.9.0:lang/scala
 
 USES=		zip
 USE_JAVA=	yes

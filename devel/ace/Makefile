@@ -42,7 +42,7 @@ OPTIONS_DEFAULT=	SSL
 OPTIONS_SUB=		yes
 
 FLTK_DESC=		FLTK GUI toolkit
-FLTK_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+FLTK_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 FLTK_MAKE_ENV=		fl=1
 QT4_USE=		QT4=corelib,gui,moc_build
 QT4_MAKE_ENV=		qt=1 qt4=1 QTDIR="${QT_PREFIX}"
@@ -53,7 +53,7 @@ SSL_MAKE_ENV=		ssl=1
 TK_USES=		tk
 TK_MAKE_ENV=		tk=1
 TRIO_DESC=		Trio portable string functions
-TRIO_BUILD_DEPENDS=	trio>=0:${PORTSDIR}/devel/trio
+TRIO_BUILD_DEPENDS=	trio>=0:devel/trio
 TRIO_MAKE_ENV=		trio=1
 X11_USE=		XORG=xt
 X11_MAKE_ENV=		xt=1

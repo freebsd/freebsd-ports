@@ -13,7 +13,7 @@ COMMENT=	EZWGL-based file manager for X Window System
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libEZ.so:${PORTSDIR}/graphics/EZWGL
+LIB_DEPENDS=	libEZ.so:graphics/EZWGL
 
 USES=		gmake jpeg tar:tgz
 

@@ -11,10 +11,10 @@ COMMENT=	Network message encapsulation system
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
-		libxs.so:${PORTSDIR}/devel/libxs \
-		libwdns.so:${PORTSDIR}/dns/wdns \
-		libyajl.so:${PORTSDIR}/devel/yajl
+LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c \
+		libxs.so:devel/libxs \
+		libwdns.so:dns/wdns \
+		libyajl.so:devel/yajl
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -33,12 +33,12 @@ OPTIONS_SUB=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include/yajl
 
 ALL_TARGET=	all
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	html-local
 DOCBOOK_XML=	${LOCALBASE}/share/xml/docbook/4.2
-MANPAGES_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-			docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
-			docbook-xsl-ns>0:${PORTSDIR}/textproc/docbook-xsl-ns
+MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+			docbook-xml>0:textproc/docbook-xml \
+			docbook-xsl-ns>0:textproc/docbook-xsl-ns
 MANPAGES_CONFIGURE_WITH=	xsltproc
 
 post-install:

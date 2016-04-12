@@ -13,8 +13,8 @@ COMMENT=	Additional loader for Evas (ps)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
-		libspectre.so:${PORTSDIR}/print/libspectre
+LIB_DEPENDS=	libefl.so:devel/efl \
+		libspectre.so:print/libspectre
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	avk@vl.ru
 COMMENT=	Hold Data Set To Calculate Average
 
-BUILD_DEPENDS=	p5-UNIVERSAL-isa>=0:${PORTSDIR}/devel/p5-UNIVERSAL-isa
-RUN_DEPENDS=	p5-UNIVERSAL-isa>=0:${PORTSDIR}/devel/p5-UNIVERSAL-isa
+BUILD_DEPENDS=	p5-UNIVERSAL-isa>=0:devel/p5-UNIVERSAL-isa
+RUN_DEPENDS=	p5-UNIVERSAL-isa>=0:devel/p5-UNIVERSAL-isa
 
 USES=		perl5
 USE_PERL5=	configure

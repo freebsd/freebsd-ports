@@ -25,7 +25,7 @@ DESKTOP_ENTRIES="XAbacus" "" "abacus" "${PORTNAME}" "" ""
 OPTIONS_DEFINE=		ESOUND MOTIF
 OPTIONS_DEFAULT=	MOTIF
 
-ESOUND_LIB_DEPENDS_OFF=	librplay.so:${PORTSDIR}/audio/rplay
+ESOUND_LIB_DEPENDS_OFF=	librplay.so:audio/rplay
 ESOUND_USE=		gnome=esound
 ESOUND_CONFIGURE_ON=	--without-rplay --with-esound
 ESOUND_CONFIGURE_OFF=	--with-rplay --without-esound

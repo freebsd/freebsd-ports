@@ -14,8 +14,8 @@ COMMENT=	Window sitter for X11
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 RESTRICTED=	'contains commercial character data'
 
@@ -40,7 +40,7 @@ LIBS+=		-L${LOCALBASE}/lib -lX11 ${ICONV_LIB}
 
 OPTIONS_DEFINE=	DOCS GNUTLS GTK1
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ON=	--with-gnutls
 
 GTK1_USE=		GNOME=gtk12,gdkpixbuf

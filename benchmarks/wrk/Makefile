@@ -11,7 +11,7 @@ COMMENT=	Modern HTTP benchmarking tool
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wg

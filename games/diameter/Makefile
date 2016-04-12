@@ -10,8 +10,8 @@ MASTER_SITES=	SF/game${PORTNAME}/game${PORTNAME}/${PORTNAME}-0.4.0
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style game with elements of economy and adventure
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libguichan.so:${PORTSDIR}/devel/guichan
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libguichan.so:devel/guichan
 
 USES=		tar:bzip2 gmake pkgconfig python
 GNU_CONFIGURE=	yes

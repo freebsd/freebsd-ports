@@ -11,7 +11,7 @@ MASTER_SITES=	http://cdrkit.org/releases/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT?=	Command-line CD/DVD writing suite
 
-RUN_DEPENDS?=	${PORTNAME}-genisoimage>0:${PORTSDIR}/sysutils/genisoimage
+RUN_DEPENDS?=	${PORTNAME}-genisoimage>0:sysutils/genisoimage
 
 USES=		cmake iconv perl5 shebangfix
 USE_PERL5=	run

@@ -1,0 +1,8 @@
+Use zap to maintain ZFS snapshots with cron.
+
+- Uses no configuration files
+- Uses namespaces to avoid collisions with other snapshots.
+- Creates and destroys snapshots only when it makes sense to.
+- Written in POSIX sh.
+
+WWW: https://github.com/Jehops/zap

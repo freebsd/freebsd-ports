@@ -12,7 +12,7 @@ COMMENT=	Quickly generate sanity tests for the API of a C/C++ shared library
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-compliance-checker
+RUN_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:devel/abi-compliance-checker
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${PORTNAME}.pl
@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lvc
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-compliance-checker
+BUILD_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:devel/abi-compliance-checker
 .else
 USE_PERL5=	run
 .endif

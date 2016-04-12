@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ALSA
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 post-patch-ALSA-off:
 	${REINPLACE_CMD} -e '/find_package(Alsa)/d' \

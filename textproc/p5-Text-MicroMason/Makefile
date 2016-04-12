@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Class-MixinFactory>=0.9:${PORTSDIR}/devel/p5-Class-MixinFactory
+	p5-Class-MixinFactory>=0.9:devel/p5-Class-MixinFactory
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -13,8 +13,8 @@ COMMENT=	Dynamic Adaptive Compression Tool
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
-		liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
+		liblzo2.so:archivers/lzo2
 
 USES=		desthack gmake localbase
 GNU_CONFIGURE=	yes

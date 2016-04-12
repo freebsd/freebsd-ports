@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	botan
-PORTVERSION=	1.10.9
+PORTVERSION=	1.10.12
 CATEGORIES=	security
-MASTER_SITES=	http://files.randombit.net/botan/v1.10/
+MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	110
 DISTNAME=	Botan-${PORTVERSION}
 
@@ -18,14 +18,14 @@ OPTIONS_DEFINE=		SSL GMP ECC DOCS
 OPTIONS_DEFAULT=	SSL GMP ECC
 ECC_DESC=	ECC support
 
-USES=		compiler gmake python:build tar:tbz
+USES=		compiler gmake python:build tar:tgz
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-bzip2 --with-zlib
 MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}"
 USE_LDCONFIG=	yes
-PLIST_FILES=	bin/botan-config-1.10 lib/libbotan-1.10.a lib/libbotan-1.10.so lib/libbotan-1.10.so.0 \
-		lib/libbotan-1.10.so.0.9 libdata/pkgconfig/botan-1.10.pc
+PLIST_FILES=	bin/botan-config-1.10 lib/libbotan-1.10.a lib/libbotan-1.10.so lib/libbotan-1.10.so.1 \
+		lib/libbotan-1.10.so.1.12 libdata/pkgconfig/botan-1.10.pc
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
@@ -38,13 +38,13 @@ CONFIGURE_ARGS+=--with-openssl
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:math/gmp
 CONFIGURE_ARGS+=--with-gnump
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
 .if ${PORT_OPTIONS:MECC}
-BUILD_DEPENDS+=	${LOCALBASE}/include/boost/tr1/memory.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/tr1/memory.hpp:devel/boost-libs
 CONFIGURE_ARGS+=--with-tr1-implementation=boost
 CXXFLAGS+=	-I${LOCALBASE}/include
 .else

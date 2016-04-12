@@ -10,8 +10,8 @@ MASTER_SITES=	http://thewalter.net/stef/software/rtfx/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RTF to XML converter
 
-LIB_DEPENDS=	libmba.so:${PORTSDIR}/devel/libmba \
-		libdomc.so:${PORTSDIR}/textproc/domc
+LIB_DEPENDS=	libmba.so:devel/libmba \
+		libdomc.so:textproc/domc
 
 GNU_CONFIGURE=	yes
 USES=		gmake

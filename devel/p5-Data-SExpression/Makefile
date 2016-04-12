@@ -11,9 +11,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to parse lisp S-expressions into perl data structures
 
 RUN_DEPENDS=	\
-	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
+	p5-Class-Accessor>0:devel/p5-Class-Accessor
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 USES=		perl5
 USE_PERL5=	configure

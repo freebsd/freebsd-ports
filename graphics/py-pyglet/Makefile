@@ -13,9 +13,9 @@ COMMENT=	Cross-platform windowing and multimedia library for Python
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${LOCALBASE}/lib/libavbin.so:${PORTSDIR}/multimedia/avbin
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	${LOCALBASE}/lib/libavbin.so:multimedia/avbin
 
 ONLY_FOR_ARCHS=	i386
 

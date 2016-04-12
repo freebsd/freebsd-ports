@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
 
-RUN_DEPENDS=	${DATADIR}/${Q3BASE}/pak0.pk3:${PORTSDIR}/games/openarena-data
+RUN_DEPENDS=	${DATADIR}/${Q3BASE}/pak0.pk3:games/openarena-data
 
 MASTERDIR=	${.CURDIR}/../ioquake3
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

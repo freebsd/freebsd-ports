@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User account information retrieval utility
 
-BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
+RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base
 
 GNU_CONFIGURE=	yes
 USES=		gmake

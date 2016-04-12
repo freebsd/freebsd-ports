@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Catalyst-Runtime>=5.80007:${PORTSDIR}/www/p5-Catalyst-Runtime \
-	p5-Catalyst-Action-RenderView>0:${PORTSDIR}/www/p5-Catalyst-Action-RenderView
+	p5-Catalyst-Runtime>=5.80007:www/p5-Catalyst-Runtime \
+	p5-Catalyst-Action-RenderView>0:www/p5-Catalyst-Action-RenderView
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -11,8 +11,8 @@ COMMENT=	Library providing ability to interpret Abiword documents
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
+LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge
 
 USES=		gperf perl5 libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes

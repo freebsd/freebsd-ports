@@ -13,7 +13,7 @@ COMMENT=	Sphinx search engine php client
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libsphinxclient.so:${PORTSDIR}/textproc/libsphinxclient
+LIB_DEPENDS=	libsphinxclient.so:textproc/libsphinxclient
 
 USES=		tar:tgz
 USE_PHP=	yes

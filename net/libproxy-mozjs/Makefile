@@ -9,8 +9,8 @@ PKGNAMESUFFIX=	-mozjs
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla JavaScript plug-in for libproxy
 
-LIB_DEPENDS=	libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \
-		libproxy.so:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libmozjs185.so:lang/spidermonkey185 \
+		libproxy.so:net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr

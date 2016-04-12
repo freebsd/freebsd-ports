@@ -12,7 +12,7 @@ COMMENT=	Light Color Management System (python bindings)
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS=	liblcms.so:graphics/lcms
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python

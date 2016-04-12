@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook SGML DTD into nroff/troff -man macros converter
 
-RUN_DEPENDS=	docbook>0:${PORTSDIR}/textproc/docbook
+RUN_DEPENDS=	docbook>0:textproc/docbook
 
 USES=		imake
 XFREE86_HTML_MAN=	no
@@ -26,10 +26,10 @@ OPENJADE_DESC=	Use OpenJade SGML/XML/DSSSL toolkit instead of Jade
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENJADE}
-RUN_DEPENDS+=	onsgmls:${PORTSDIR}/textproc/openjade
+RUN_DEPENDS+=	onsgmls:textproc/openjade
 NSGMLS=		onsgmls
 .else
-RUN_DEPENDS+=	nsgmls:${PORTSDIR}/textproc/jade
+RUN_DEPENDS+=	nsgmls:textproc/jade
 NSGMLS=		nsgmls
 .endif
 

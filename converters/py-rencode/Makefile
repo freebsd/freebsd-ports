@@ -11,7 +11,7 @@ COMMENT=	R-encoding and r-decoding implementation
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
+BUILD_DEPENDS=	cython:lang/cython
 
 USE_PYTHON=	autoplist distutils
 USES=		python tar:xz

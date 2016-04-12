@@ -13,17 +13,17 @@ COMMENT=	Lightweight web browser
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	duk:${PORTSDIR}/lang/duktape \
-		nsgenbind:${PORTSDIR}/devel/nsgenbind \
-		p5-HTML-Parser>=3.72:${PORTSDIR}/www/p5-HTML-Parser
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libnsutils.so:${PORTSDIR}/devel/libnsutils \
-		libutf8proc.so:${PORTSDIR}/textproc/libutf8proc \
-		libnsgif.so:${PORTSDIR}/graphics/libnsgif \
-		libnsbmp.so:${PORTSDIR}/graphics/libnsbmp \
-		libdom.so:${PORTSDIR}/www/libdom \
-		libcss.so:${PORTSDIR}/textproc/libcss
+BUILD_DEPENDS=	duk:lang/duktape \
+		nsgenbind:devel/nsgenbind \
+		p5-HTML-Parser>=3.72:www/p5-HTML-Parser
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpng.so:graphics/png \
+		libnsutils.so:devel/libnsutils \
+		libutf8proc.so:textproc/libutf8proc \
+		libnsgif.so:graphics/libnsgif \
+		libnsbmp.so:graphics/libnsbmp \
+		libdom.so:www/libdom \
+		libcss.so:textproc/libcss
 
 ALL_TARGET=	#empty
 LDFLAGS+=	-lssl -lcrypto -L${LOCALBASE}/lib ${ICONV_LIB}

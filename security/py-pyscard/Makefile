@@ -13,9 +13,9 @@ COMMENT=	Smartcard module for Python
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13 \
-		pcsc-lite>0:${PORTSDIR}/devel/pcsc-lite
-RUN_DEPENDS=	pcsc-lite>0:${PORTSDIR}/devel/pcsc-lite
+BUILD_DEPENDS=	swig1.3:devel/swig13 \
+		pcsc-lite>0:devel/pcsc-lite
+RUN_DEPENDS=	pcsc-lite>0:devel/pcsc-lite
 
 ## Python3 is supported
 USES=		python:2.7+

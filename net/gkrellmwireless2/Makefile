@@ -10,8 +10,8 @@ MASTER_SITES=	http://gkrellm.luon.net/files/
 MAINTAINER=	ktsin@acm.org
 COMMENT=	GKrellM wireless plugin
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 WRKSRC=		${WRKDIR}/gkrellmwireless
 USE_XORG=	x11

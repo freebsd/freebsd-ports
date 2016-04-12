@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	REminiscence
-PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTVERSION=	0.3.0
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -11,7 +10,9 @@ MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Rewritten engine for Flashback
 
-USES=		tar:bzip2 gmake
+LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
+
+USES=		gmake pkgconfig tar:bzip2
 USE_SDL=	sdl
 
 ALL_TARGET=	rs
@@ -30,8 +31,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rs ${STAGEDIR}${PREFIX}/bin/remin
-	${MKDIR} ${STAGEDIR}${DATADIR}/data
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

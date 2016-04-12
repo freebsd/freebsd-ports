@@ -10,7 +10,7 @@ MASTER_SITES=	http://atterer.org/sites/atterer/files/2009-08/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility used to retrieve large files over the Internet
 
-RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	${LOCALBASE}/bin/wget:ftp/wget
 
 USES=		gmake tar:bzip2
 USE_SUBMAKE=	yes
@@ -26,8 +26,8 @@ GUI_DESC=		GTK2 Graphical User Interface
 BDB_DESC=		Berkeley DB support (for jigdo-file cache)
 
 GUI_CONFIGURE_WITH=	gui
-GUI_LIB_DEPENDS=	libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20 \
-			libcurl.so:${PORTSDIR}/ftp/curl
+GUI_LIB_DEPENDS=	libgtk-x11-2.0.so:x11-toolkits/gtk20 \
+			libcurl.so:ftp/curl
 GUI_USES=		pkgconfig
 
 BDB_CONFIGURE_ON=	--with-libdb=-l${BDB_LIB_CXX_NAME}

@@ -1,5 +1,5 @@
---- src/doc/CMakeLists.txt.orig	2015-01-05 21:49:06.000000000 -0800
-+++ src/doc/CMakeLists.txt	2015-01-05 21:49:20.000000000 -0800
+--- src/doc/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
++++ src/doc/CMakeLists.txt
 @@ -2,6 +2,7 @@
  add_custom_target(doc)
  
@@ -8,9 +8,9 @@
  find_package(Doxygen)
  if(DOXYGEN_FOUND)
    configure_file(doxygen.echolib.in doxygen.echolib @ONLY)
-@@ -32,5 +33,6 @@
-     "echolib;async"
-     )
+@@ -36,5 +37,6 @@ else(DOXYGEN_FOUND)
+   message("--   It is an optional dependency and SvxLink will build without")
+   message("--   it. Not needed for normal use.")
  endif(DOXYGEN_FOUND)
 +endif(NOT QT_ONLY)
  

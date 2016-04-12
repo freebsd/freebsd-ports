@@ -14,7 +14,7 @@ COMMENT=	Crypto and SSL toolkit for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	swig3.0:${PORTSDIR}/devel/swig30
+BUILD_DEPENDS=	swig3.0:devel/swig30
 
 PYDISTUTILS_BUILDARGS=	build_ext --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig3.0
 USE_OPENSSL=	yes

@@ -14,9 +14,9 @@ LICENSE=	GPLv3
 
 CONFLICTS=	fvwm-1.* fvwm-2.*
 
-LIB_DEPENDS=	libNucleo.so:${PORTSDIR}/x11-toolkits/nucleo \
-		libpng.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	xorg-fonts>0:${PORTSDIR}/x11-fonts/xorg-fonts
+LIB_DEPENDS=	libNucleo.so:x11-toolkits/nucleo \
+		libpng.so:graphics/png
+RUN_DEPENDS=	xorg-fonts>0:x11-fonts/xorg-fonts
 
 USES=		gettext libtool pathfix pkgconfig python shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.4.in \
@@ -64,9 +64,9 @@ MMX_CONFIGURE_ENABLE=	mmx
 GLX_CONFIGURE_ENABLE=	glx
 GLX_X86_CONFIGURE_ENABLE=	glx-x86
 ATSPI_USE=	GNOME=atspi
-STROKE_LIB_DEPENDS=	libstroke.so:${PORTSDIR}/devel/libstroke
-MRPLAY_LIB_DEPENDS=	librplay.so:${PORTSDIR}/audio/rplay
-FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+STROKE_LIB_DEPENDS=	libstroke.so:devel/libstroke
+MRPLAY_LIB_DEPENDS=	librplay.so:audio/rplay
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 GLIB_USE=	GNOME=glib20
 GTK2_USE=	GNOME=gtk20
 

@@ -12,8 +12,8 @@ COMMENT=	Utilities for working with Excel files that require both xlrd and xlwt
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}xlrd>=0.7.2:${PORTSDIR}/textproc/py-xlrd \
-				${PYTHON_PKGNAMEPREFIX}xlwt>=0.7.4:${PORTSDIR}/textproc/py-xlwt
+BUILD_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}xlrd>=0.7.2:textproc/py-xlrd \
+				${PYTHON_PKGNAMEPREFIX}xlwt>=0.7.4:textproc/py-xlwt
 RUN_DEPENDS:=   ${BUILD_DEPENDS}
 
 USES=		python:2

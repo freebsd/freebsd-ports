@@ -13,7 +13,7 @@ COMMENT=	Synchronizes a local and a remote FTP directory trees
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=5.805:www/p5-libwww
 
 USES=		perl5 shebangfix tar:bzip2
 NO_BUILD=	yes

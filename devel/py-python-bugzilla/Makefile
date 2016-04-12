@@ -13,7 +13,7 @@ COMMENT=	Bugzilla XMLRPC access module
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
 
 USES=		python zip
 USE_PYTHON=	autoplist distutils

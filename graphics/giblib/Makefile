@@ -14,7 +14,7 @@ COMMENT=	Utility library that includes a wrapper for imlib2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes

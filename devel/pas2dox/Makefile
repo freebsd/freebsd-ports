@@ -21,7 +21,7 @@ PLIST_FILES=	bin/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>0:textproc/flex
 MAKE_ENV+=	LEX="${LOCALBASE}/bin/flex"
 .endif
 

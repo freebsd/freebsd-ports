@@ -10,11 +10,11 @@ COMMENT=	Chewing engine for IBus
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2 \
-		${LOCALBASE}/share/cmake/Modules/ManageEnvironmentCommon.cmake:${PORTSDIR}/devel/cmake-fedora \
-		ibus-daemon:${PORTSDIR}/textproc/ibus
-LIB_DEPENDS=	libchewing.so:${PORTSDIR}/chinese/libchewing
-RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
+BUILD_DEPENDS=	gob2:devel/gob2 \
+		${LOCALBASE}/share/cmake/Modules/ManageEnvironmentCommon.cmake:devel/cmake-fedora \
+		ibus-daemon:textproc/ibus
+LIB_DEPENDS=	libchewing.so:chinese/libchewing
+RUN_DEPENDS=	ibus-daemon:textproc/ibus
 
 CMAKE_ARGS=	-DSYSCONF_INSTALL_DIR=${PREFIX}/etc \
 		-DLIB_DIR=${PREFIX}/lib

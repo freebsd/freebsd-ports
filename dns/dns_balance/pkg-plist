@@ -1,10 +1,6 @@
 sbin/dns_balance
-@unexec if cmp -s %%ETCDIR%%/addrdb.rb %%ETCDIR%%/addrdb.rb.dist; then rm -f %%ETCDIR%%/addrdb.rb; fi
-etc/dns_balance/addrdb.rb.dist
-@exec [ ! -f %B/addrdb.rb ] && cp %B/%f %B/addrdb.rb
-@unexec if cmp -s %%ETCDIR%%/namespace.rb %%ETCDIR%%/namespace.rb.dist; then rm -f %%ETCDIR%%/namespace.rb; fi
-etc/dns_balance/namespace.rb.dist
-@exec [ ! -f %B/namespace.rb ] && cp %B/%f %B/namespace.rb
+@sample etc/dns_balance/addrdb.rb.dist etc/dns_balance/addrdb.rb
+@sample etc/dns_balance/namespace.rb.dist etc/dns_balance/namespace.rb
 lib/dns_balance/as_search.rb
 lib/dns_balance/cache.rb
 lib/dns_balance/datatype.rb

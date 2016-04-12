@@ -418,7 +418,7 @@ LDAPFLAGS+=	-D${param}
 . endfor
 
 . if ${PORT_OPTIONS:MSRS}
-BUILD_DEPENDS+=	srs:${PORTSDIR}/mail/libsrs2
+BUILD_DEPENDS+=	srs:mail/libsrs2
 MASTER_SITES+=	http://qmail-ldap-smtpauthuser.googlecode.com/svn/trunk/:srs_ldap
 SRS_LDAP_PATCH=		qmail-ldap-1.03-20060201-SRS.patch
 DISTFILES+=	${SRS_LDAP_PATCH}:srs_ldap
@@ -604,7 +604,7 @@ DISTFILES+=	${UCSPI_SSL_DIST}:ucspi_ssl
 UCSPISRC=	${WRKDIR}/host/superscript.com/net/ucspi-ssl-${UCSPI_SSL_VER}
 # XXX not yet, needs more cleanup
 #UCSPISRC!=	${MAKE} -C ${PORTSDIR}/sysutils/ucspi-ssl-tls -V WRKSRC
-#PATCH_DEPENDS+=	${UCSPISRC}/compile/ucspissl.a:${PORTSDIR}/sysutils/ucspi-ssl-tls:build
+#PATCH_DEPENDS+=	${UCSPISRC}/compile/ucspissl.a:sysutils/ucspi-ssl-tls:build
 .endif
 
 # Some default values, these can be modified by make command line

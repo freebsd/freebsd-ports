@@ -11,7 +11,7 @@ MASTER_SITES=	LOCAL/fluffy
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KIO slave to access UPnP MediaServers
 
-LIB_DEPENDS=	libHUpnp.so:${PORTSDIR}/net/hupnp
+LIB_DEPENDS=	libHUpnp.so:net/hupnp
 
 USES=		cmake tar:bzip2
 USE_KDE4=	automoc4 kdeprefix kdelibs

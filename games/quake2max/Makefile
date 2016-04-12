@@ -16,7 +16,7 @@ COMMENT=	OpenGL-only Quake II engine modification
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+EXTRACT_DEPENDS=	unrar:archivers/unrar
 
 USES=		gmake tar:bzip2
 USE_XORG=	xxf86dga
@@ -42,7 +42,7 @@ SDLGL_DESC=	Build SDL OpenGL renderer
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 USES+=		jpeg
 USE_GL=		glu
 .endif

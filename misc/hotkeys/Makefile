@@ -14,7 +14,7 @@ COMMENT=	Allows usage of special keys on internet/multimedia keyboards
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS=	--with-db3-inc=${BDB_INCLUDE_DIR} \
@@ -29,7 +29,7 @@ USES=		gmake
 OPTIONS_DEFINE=	OSD
 OPTIONS_DEFAULT=	OSD
 
-OSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+OSD_LIB_DEPENDS=	libxosd.so:misc/xosd
 OSD_CONFIGURE_WITH=	xosd
 
 post-extract:

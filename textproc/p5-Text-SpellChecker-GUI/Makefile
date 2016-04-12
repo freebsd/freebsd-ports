@@ -15,10 +15,10 @@ COMMENT=	Implements a user interface to Text::SpellChecker using ZConf::GUI
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Curses-UI>=0:${PORTSDIR}/devel/p5-Curses-UI \
-		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
-		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
-		p5-Text-SpellChecker>=0:${PORTSDIR}/textproc/p5-Text-SpellChecker
+BUILD_DEPENDS=	p5-Curses-UI>=0:devel/p5-Curses-UI \
+		p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote \
+		p5-ZConf-GUI>=0:devel/p5-ZConf-GUI \
+		p5-Text-SpellChecker>=0:textproc/p5-Text-SpellChecker
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/curses-textspellchecker bin/textspellchecker

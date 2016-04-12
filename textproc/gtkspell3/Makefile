@@ -9,8 +9,8 @@ MASTER_SITES=	SF/gtkspell/${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ 3 spell checking component
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+BUILD_DEPENDS=	vapigen:lang/vala
+LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 USE_GNOME=	gtk30 intlhack introspection:build
 USES=		gettext gmake libtool pathfix pkgconfig

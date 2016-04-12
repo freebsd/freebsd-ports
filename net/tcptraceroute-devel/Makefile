@@ -14,7 +14,7 @@ COMMENT=	Traceroute implementation using TCP packets
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 CONFLICTS=	tcptraceroute-1.4*
 

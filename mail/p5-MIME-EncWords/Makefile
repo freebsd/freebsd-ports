@@ -13,7 +13,7 @@ COMMENT=	Deal with RFC 2047 encoded words (improved)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-MIME-Charset>=1.010.1:${PORTSDIR}/mail/p5-MIME-Charset
+BUILD_DEPENDS=	p5-MIME-Charset>=1.010.1:mail/p5-MIME-Charset
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

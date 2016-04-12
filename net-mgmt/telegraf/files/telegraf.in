@@ -1,0 +1,33 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: telegraf
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable telegrafb:
+# telegraf_enable="YES"
+#
+# telegraf_enable (bool):	Set to YES to enable telegraf
+#				Default: NO
+# telegraf_conf (str):		telegraf configuration file
+#				Default: ${PREFIX}/etc/telegraf.conf
+# telegraf_flags (str):		Extra flags passed to telegraf
+
+. /etc/rc.subr
+
+name="telegraf"
+rcvar=telegraf_enable
+load_rc_config $name
+
+: ${telegraf_enable:="NO"}
+: ${telegraf_flags:=""}
+: ${telegraf_conf:="%%PREFIX%%/etc/${name}.conf"}
+
+# daemon
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+command_args="-crP ${pidfile} %%PREFIX%%/bin/${name} ${telegraf_flags} -config=${telegraf_conf} 2>> /var/log/telegraf.log"
+
+run_rc_command "$1"

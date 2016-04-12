@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to SVMLight Machine-Learning Package
 
-BUILD_DEPENDS=	svmlight>=6.01_2:${PORTSDIR}/science/svmlight
-LIB_DEPENDS=	libsvmlight.so:${PORTSDIR}/science/svmlight
+BUILD_DEPENDS=	svmlight>=6.01_2:science/svmlight
+LIB_DEPENDS=	libsvmlight.so:science/svmlight
 
 USES=		perl5
 USE_PERL5=	modbuild

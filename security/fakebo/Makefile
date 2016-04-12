@@ -27,6 +27,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fakebo ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/fakebo.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/fakebo.conf.dist ${STAGEDIR}${PREFIX}/etc/fakebo.conf.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/custom.replies ${STAGEDIR}${DOCSDIR}

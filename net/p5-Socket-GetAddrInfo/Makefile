@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RFC 2553's getaddrinfo and getnameinfo functions
 
-BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0.06:${PORTSDIR}/devel/p5-ExtUtils-CChecker
+BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0.06:devel/p5-ExtUtils-CChecker
 
 USES=		perl5 shebangfix
 USE_PERL5=	modbuild

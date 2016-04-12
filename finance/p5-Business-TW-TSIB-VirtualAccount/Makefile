@@ -14,8 +14,8 @@ COMMENT=	Module for Taishin Bank Virtual Account Management
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-DateTime>=0:devel/p5-DateTime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

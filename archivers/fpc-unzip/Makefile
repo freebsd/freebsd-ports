@@ -18,6 +18,6 @@ OPTIONS_DEFINE=	UNZIP
 UNZIP_DESC=	Install unzip tools
 OPTIONS_DEFAULT=	UNZIP
 
-UNZIP_RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+UNZIP_RUN_DEPENDS=	unzip:archivers/unzip
 
 .include "${MASTERDIR}/Makefile"

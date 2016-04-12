@@ -10,7 +10,7 @@ MASTER_SITES=	SF/enlightenment/e16-docs/${PORTVERSION}
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Data files of enlightenment DOX
 
-RUN_DEPENDS=	${LOCALBASE}/bin/e16:${PORTSDIR}/x11-wm/e16
+RUN_DEPENDS=	${LOCALBASE}/bin/e16:x11-wm/e16
 
 USES=		gmake
 USE_XORG=	x11

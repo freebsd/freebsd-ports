@@ -48,7 +48,7 @@ GSTREAMER_USE=	GSTREAMER=yes
 # Base ld(1) segfaults on PowerPC:
 # http://bugs.freebsd.org/173042
 .if ${ARCH} == "powerpc"
-BUILD_DEPENDS+= ${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+= ${LOCALBASE}/bin/ld:devel/binutils
 .endif
 
 .if ${ARCH} == powerpc64

@@ -11,8 +11,8 @@ COMMENT=	Bash Screenshot Information Tool
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
+RUN_DEPENDS=	bash:shells/bash \
+		xdpyinfo:x11/xdpyinfo
 
 OPTIONS_DEFINE=	DOCS
 

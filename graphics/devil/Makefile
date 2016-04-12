@@ -44,22 +44,22 @@ SIMD_DESC=	Enable SIMD autodetection (AltiVec, SSE3,...)
 
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_ENABLE=	jpeg
-JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 JASPER_CONFIGURE_ENABLE=jp2
-LCMS_LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms
+LCMS_LIB_DEPENDS=	liblcms.so:graphics/lcms
 LCMS_CONFIGURE_ENABLE=	lcms
-MNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+MNG_LIB_DEPENDS=	libmng.so:graphics/libmng
 MNG_CONFIGURE_ENABLE=	mng
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_ENABLE=	png
 PNG_CONFIGURE_OFF=	libpng_app=no
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_ENABLE=	tiff
-EXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+EXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
 EXR_CONFIGURE_ENABLE=	exr
-#SQUISH_BUILD_DEPENDS=	${LOCALBASE}/lib/libsquish.a:${PORTSDIR}/graphics/squish
+#SQUISH_BUILD_DEPENDS=	${LOCALBASE}/lib/libsquish.a:graphics/squish
 #SQUISH_CONFIGURE_WITH=	libsquish
-NVTT_LIB_DEPENDS=	libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
+NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
 NVTT_CONFIGURE_WITH=	nvtt
 X11_USE=		GL=glut
 X11_CONFIGURE_OFF=-	-disable-opengl --disable-x11 --disable-xpm --disable-shm

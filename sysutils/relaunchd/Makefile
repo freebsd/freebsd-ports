@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	relaunchd
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -10,7 +10,7 @@ COMMENT=	Service management daemon similar to Darwin's launchd(8)
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libucl.so:${PORTSDIR}/textproc/libucl
+LIB_DEPENDS=	libucl.so:textproc/libucl
 
 HAS_CONFIGURE=	YES
 USE_GITHUB=	YES

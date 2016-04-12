@@ -12,8 +12,8 @@ COMMENT=	Monitor, analyze, or transform the communication of MySQL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
-		libglib-2.0.so:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	libevent.so:devel/libevent2 \
+		libglib-2.0.so:devel/glib20
 
 CONFIGURE_ARGS+=	--with-lua=lua-${LUA_VER} --with-mysql=${LOCALBASE}/bin/mysql_config --docdir=${DATADIR} --enable-self-contained
 CFLAGS+=	-I${LOCALBASE}/include

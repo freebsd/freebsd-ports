@@ -11,8 +11,8 @@ COMMENT=	Documentation tool for grape APIs
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-grape>=0.8.0:${PORTSDIR}/devel/rubygem-grape \
-		rubygem-grape-entity>=0:${PORTSDIR}/devel/rubygem-grape-entity
+RUN_DEPENDS=	rubygem-grape>=0.8.0:devel/rubygem-grape \
+		rubygem-grape-entity>=0:devel/rubygem-grape-entity
 
 NO_ARCH=	yes
 USE_RUBY=	yes

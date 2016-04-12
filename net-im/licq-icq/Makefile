@@ -9,7 +9,7 @@ COMMENT=	ICQ plugin for Licq
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USES=		cmake
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

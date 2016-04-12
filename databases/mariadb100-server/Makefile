@@ -107,8 +107,8 @@ INNODB_CMAKE_OFF=	-DWITHOUT_INNOBASE=1
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 MROONGA_CMAKE_OFF=	-DWITHOUT_MROONGA=1
 OQGRAPH_CMAKE_OFF=	-DWITHOUT_OQGRAPH=1
-OQGRAPH_LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-			libJudy.so:${PORTSDIR}/devel/judy
+OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+			libJudy.so:devel/judy
 # Currently OQGraph does not build using clang.
 # See See https://mariadb.atlassian.net/browse/MDEV-8051.
 OQGRPAH_USE=		gcc

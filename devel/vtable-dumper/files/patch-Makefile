@@ -1,0 +1,20 @@
+--- Makefile.orig	2015-06-29 15:11:48 UTC
++++ Makefile
+@@ -1,7 +1,9 @@
+ prefix ?= /usr
+ 
++CC ?=	gcc
++
+ all:
+-	gcc dump-vtable.c -o vtable-dumper -ldl -lelf -lstdc++ -Wall
++	${CC} dump-vtable.c -o vtable-dumper -lelf -lstdc++ -Wall
+ 
+ install: all
+ 	mkdir -p $(prefix)/bin/
+@@ -11,4 +13,4 @@ uninstall:
+ 	rm -f $(prefix)/bin/vtable-dumper
+ 
+ clean:
+-	rm -f vtable-dumper
+\ No newline at end of file
++	rm -f vtable-dumper

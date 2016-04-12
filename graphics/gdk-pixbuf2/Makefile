@@ -29,13 +29,13 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	JASPER JPEG PNG TIFF NLS
 OPTIONS_DEFAULT=JASPER JPEG PNG TIFF NLS
 JASPER_CONFIGURE_WITH=	libjasper
-JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 JPEG_CONFIGURE_WITH=	libjpeg
 JPEG_USES=		jpeg
 PNG_CONFIGURE_WITH=	libpng
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 TIFF_CONFIGURE_WITH=	libtiff
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 

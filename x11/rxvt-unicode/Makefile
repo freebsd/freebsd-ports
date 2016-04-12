@@ -12,8 +12,8 @@ COMMENT=	Clone of the terminal emulator rxvt modified to support Unicode
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig
+RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig
 
 USES=			cpe pkgconfig shebangfix tar:bzip2 terminfo
 USE_XORG=		xpm xft xrender
@@ -62,8 +62,8 @@ PORTDOCS=	README.xvt ${PORTDOCS1}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMLOCALE_FIX}
-PATCH_DEPENDS+=	p5-Encode-HanExtra>=0:${PORTSDIR}/chinese/p5-Encode-HanExtra \
-		p5-Encode-JIS2K>=0:${PORTSDIR}/converters/p5-Encode-JIS2K
+PATCH_DEPENDS+=	p5-Encode-HanExtra>=0:chinese/p5-Encode-HanExtra \
+		p5-Encode-JIS2K>=0:converters/p5-Encode-JIS2K
 .endif
 
 # disable the embedded perl interpreter
@@ -149,7 +149,7 @@ CONFIGURE_ARGS+=	--enable-pixbuf
 CONFIGURE_ARGS+=	--disable-startup-notification
 .else
 CONFIGURE_ARGS+=	--enable-startup-notification
-LIB_DEPENDS+=		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=		libstartup-notification-1.so:x11/startup-notification
 .endif
 
 # enable support for 256 colors

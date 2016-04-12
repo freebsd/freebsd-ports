@@ -39,31 +39,31 @@ OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_i386=	ASM
 OPTIONS_SUB=		yes
 
-ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_BUILD_DEPENDS=	nasm:devel/nasm
 ASM_MAKE_ARGS_OFF=	USE_X86_ASM=no
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_MAKE_ARGS=		USE_CODEC_FLAC=yes
 HEXEN2_DESC=		Build Hexen II clients and servers
 HEXEN2_MAKE_ARGS=	BUILD_HEXEN2=yes
 HW_DESC=		Build HexenWorld clients and servers
 HW_DISTFILES=		hexenworld-pakfiles-0.15${EXTRACT_SUFX}:hw
 HW_MAKE_ARGS=		BUILD_HW=yes
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_MAKE_ARGS=		MP3LIB=mad
-MIKMOD_LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+MIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
 MIDMOD_MAKE_ARGS=	USE_CODEC_MIKMOD=yes
 MP3LIB_DESC=		MP3 audio codec
-MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 MPG123_MAKE_ARGS=	MP3LIB=mpg123
-OGG_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+OGG_LIB_DEPENDS=	libogg.so:audio/libogg
 OGG_MAKE_ARGS_OFF=	USE_CODEC_OGG=no
-OPUS_LIB_DEPENDS=	libopusfile.so:${PORTSDIR}/audio/opusfile
+OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
 OPUS_MAKE_ARGS=		USE_CODEC_OPUS=yes
 OPUS_IMPLIES=		OGG
-TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 TREMOR_MAKE_ARGS=	VORBISLIB=tremor
 TREMOR_IMPLIES=		OGG
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_MAKE_ARGS=	VORBISLIB=vorbis
 VORBIS_IMPLIES=		OGG
 VORBISLIB_DESC=		Vorbis audio codec

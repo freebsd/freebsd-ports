@@ -12,7 +12,7 @@ COMMENT=	Store and retrieve data in a key/value format in a hash database
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake shebangfix
 SHEBANG_FILES=	samples/account-db/accdb
@@ -35,8 +35,8 @@ BDB_USE=		bdb=yes
 BDB_CONFIGURE_ON=	--with-berkeley \
 			--with-bdb-include-dir=${BDB_INCLUDE_DIR} \
 			--with-bdb-lib-dir=${BDB_LIB_DIR}
-EXAMPLES_RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+EXAMPLES_RUN_DEPENDS=	bash:shells/bash
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--with-gdbm \
 			--with-gdbm-dir=${LOCALBASE}
 

@@ -14,7 +14,7 @@ COMMENT=	Roundcube login info plugin
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	roundcube>=0.5:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.5:mail/roundcube
 
 NO_BUILD=	yes
 NO_ARCH=	yes

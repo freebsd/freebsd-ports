@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 OO interface for spell-checking a block of text
 
-RUN_DEPENDS=	p5-Text-Aspell>=0:${PORTSDIR}/textproc/p5-Text-Aspell
+RUN_DEPENDS=	p5-Text-Aspell>=0:textproc/p5-Text-Aspell
 
 USES=		perl5
 USE_PERL5=	configure

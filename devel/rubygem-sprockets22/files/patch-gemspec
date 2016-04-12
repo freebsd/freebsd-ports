@@ -1,10 +1,10 @@
---- sprockets.gemspec.orig	2015-01-24 20:05:48.000000000 +0000
-+++ sprockets.gemspec	2015-01-24 20:05:51.000000000 +0000
-@@ -11,7 +11,6 @@
+--- sprockets.gemspec.orig	2016-03-31 14:13:40 UTC
++++ sprockets.gemspec
+@@ -11,7 +11,6 @@ Gem::Specification.new do |s|
    s.date = "2014-10-28"
-   s.description = "Sprockets is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, LESS, Sass, and SCSS."
-   s.email = ["sstephenson@gmail.com", "josh@joshpeek.com"]
--  s.executables = ["sprockets"]
-   s.files = ["LICENSE", "README.md", "bin/sprockets", "lib/rake/sprocketstask.rb", "lib/sprockets.rb", "lib/sprockets/asset.rb", "lib/sprockets/asset_attributes.rb", "lib/sprockets/base.rb", "lib/sprockets/bundled_asset.rb", "lib/sprockets/cache/file_store.rb", "lib/sprockets/caching.rb", "lib/sprockets/charset_normalizer.rb", "lib/sprockets/context.rb", "lib/sprockets/directive_processor.rb", "lib/sprockets/eco_template.rb", "lib/sprockets/ejs_template.rb", "lib/sprockets/engines.rb", "lib/sprockets/environment.rb", "lib/sprockets/errors.rb", "lib/sprockets/index.rb", "lib/sprockets/jst_processor.rb", "lib/sprockets/manifest.rb", "lib/sprockets/mime.rb", "lib/sprockets/processed_asset.rb", "lib/sprockets/processing.rb", "lib/sprockets/processor.rb", "lib/sprockets/safety_colons.rb", "lib/sprockets/server.rb", "lib/sprockets/static_asset.rb", "lib/sprockets/trail.rb", "lib/sprockets/utils.rb", "lib/sprockets/version.rb"]
-   s.homepage = "http://getsprockets.org/"
-   s.rubyforge_project = "sprockets"
+   s.description = "Sprockets is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, LESS, Sass, and SCSS.".freeze
+   s.email = ["sstephenson@gmail.com".freeze, "josh@joshpeek.com".freeze]
+-  s.executables = ["sprockets".freeze]
+   s.files = ["LICENSE".freeze, "README.md".freeze, "bin/sprockets".freeze, "lib/rake/sprocketstask.rb".freeze, "lib/sprockets.rb".freeze, "lib/sprockets/asset.rb".freeze, "lib/sprockets/asset_attributes.rb".freeze, "lib/sprockets/base.rb".freeze, "lib/sprockets/bundled_asset.rb".freeze, "lib/sprockets/cache/file_store.rb".freeze, "lib/sprockets/caching.rb".freeze, "lib/sprockets/charset_normalizer.rb".freeze, "lib/sprockets/context.rb".freeze, "lib/sprockets/directive_processor.rb".freeze, "lib/sprockets/eco_template.rb".freeze, "lib/sprockets/ejs_template.rb".freeze, "lib/sprockets/engines.rb".freeze, "lib/sprockets/environment.rb".freeze, "lib/sprockets/errors.rb".freeze, "lib/sprockets/index.rb".freeze, "lib/sprockets/jst_processor.rb".freeze, "lib/sprockets/manifest.rb".freeze, "lib/sprockets/mime.rb".freeze, "lib/sprockets/processed_asset.rb".freeze, "lib/sprockets/processing.rb".freeze, "lib/sprockets/processor.rb".freeze, "lib/sprockets/safety_colons.rb".freeze, "lib/sprockets/server.rb".freeze, "lib/sprockets/static_asset.rb".freeze, "lib/sprockets/trail.rb".freeze, "lib/sprockets/utils.rb".freeze, "lib/sprockets/version.rb".freeze]
+   s.homepage = "http://getsprockets.org/".freeze
+   s.rubyforge_project = "sprockets".freeze

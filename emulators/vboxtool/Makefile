@@ -13,8 +13,8 @@ COMMENT=	Provides effective control of VirtualBox machines
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-RUN_DEPENDS=	VBoxManage:${PORTSDIR}/emulators/virtualbox-ose\
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	VBoxManage:emulators/virtualbox-ose\
+		bash:shells/bash
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

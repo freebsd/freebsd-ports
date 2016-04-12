@@ -16,7 +16,6 @@
     SUBDIR += eflite
     SUBDIR += gnome-mag
     SUBDIR += gnome-speech
-    SUBDIR += gnopernicus
     SUBDIR += gok
     SUBDIR += java-access-bridge
     SUBDIR += jovie

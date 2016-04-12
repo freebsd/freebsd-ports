@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 COMMENT=	D 2.0 compiler bootstrap
 
 WRKDIR=		${BOOTDIR}/.host_dmd-2.067.1
-PATCHDIR=	${MASTERDIR}/bootstrap
+PATCHDIR=	${MASTERDIR}/files.bootstrap
 USES=		gmake zip
 MAKEFILE=	posix.mak
 EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
@@ -21,9 +21,6 @@ WRKSRC=		${WRKDIR}/dmd2/src/${PORTNAME}
 .undef		DEVELOPER
 
 .include <bsd.port.pre.mk>
-
-NOT_FOR_ARCHS=		powerpc
-NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64: divide-by-zero error
@@ -54,6 +51,17 @@ post-patch:
 			  -e "s|%@P%/../../src/druntime|${STAGEDIR}${PREFIX}/include/d/druntime|"	\
 			  ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd.conf
 	@${ECHO_CMD} >> ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd.conf
+
+make-phobos:
+	cd ${WRKSRC}/../phobos && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -f ${MAKEFILE} ${BUILD}
+
+make-druntime:
+	cd ${WRKSRC}/../druntime && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -f ${MAKEFILE} ${BUILD}
+
+make-dmd:
+	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -f ${MAKEFILE} ${BUILD}
+
+do-build: make-dmd make-phobos make-druntime
 
 do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd.1

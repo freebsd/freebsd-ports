@@ -13,10 +13,10 @@ COMMENT=	The DBCP Component
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool \
-		${JAVALIBDIR}/jta.jar:${PORTSDIR}/java/jta
-RUN_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool \
-		${JAVALIBDIR}/jta.jar:${PORTSDIR}/java/jta
+BUILD_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:java/jakarta-commons-pool \
+		${JAVALIBDIR}/jta.jar:java/jta
+RUN_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:java/jakarta-commons-pool \
+		${JAVALIBDIR}/jta.jar:java/jta
 
 OPTIONS_DEFINE=	DOCS
 

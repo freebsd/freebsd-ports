@@ -12,9 +12,9 @@ COMMENT=	Common interface to speech synthesis
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libdotconf.so:${PORTSDIR}/devel/dotconf \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libdotconf.so:devel/dotconf \
+		libltdl.so:devel/libltdl \
+		libsndfile.so:audio/libsndfile
 
 USE_GNOME=	glib20 intltool
 USES=		alias gettext gmake pathfix pkgconfig libtool
@@ -44,28 +44,28 @@ OPTIONS_DEFINE=	ALSA AO DOCS ESPEAK FESTIVAL FLITE NAS PULSEAUDIO
 OPTIONS_DEFAULT=ESPEAK
 OPTIONS_SUB=	yes
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_WITH=	alsa
 
-AO_LIB_DEPENDS=		libao.so:${PORTSDIR}/audio/libao
+AO_LIB_DEPENDS=		libao.so:audio/libao
 AO_CONFIGURE_WITH=	libao
 
 ESPEAK_DESC=		eSpeak speech synthesizer support
-ESPEAK_LIB_DEPENDS=	libespeak.so:${PORTSDIR}/audio/espeak
+ESPEAK_LIB_DEPENDS=	libespeak.so:audio/espeak
 ESPEAK_CONFIGURE_WITH=	espeak
 
 FESTIVAL_DESC=		Festival Speech Synthesis System support
-FESTIVAL_RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
-			${LOCALBASE}/share/festival/lib/${PORTNAME}.scm:${PORTSDIR}/audio/festival-freebsoft-utils
+FESTIVAL_RUN_DEPENDS=	festival:audio/festival \
+			${LOCALBASE}/share/festival/lib/${PORTNAME}.scm:audio/festival-freebsoft-utils
 
 FLITE_DESC=		Flite speech synthesis engine support
-FLITE_LIB_DEPENDS=	libflite.so:${PORTSDIR}/audio/flite
+FLITE_LIB_DEPENDS=	libflite.so:audio/flite
 FLITE_CONFIGURE_WITH=	flite
 
-NAS_LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas
+NAS_LIB_DEPENDS=	libaudio.so:audio/nas
 NAS_CONFIGURE_WITH=	nas
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=pulse
 
 post-patch:
@@ -85,8 +85,8 @@ post-install:
 .else
 
 USES+=		python:3
-LIB_DEPENDS+=	libspeechd.so:${PORTSDIR}/accessibility/speech-dispatcher
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg
+LIB_DEPENDS+=	libspeechd.so:accessibility/speech-dispatcher
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py3-xdg
 
 USE_PYTHON=	py3kplist
 PLIST_SUB=	PYVER=${PYTHON_VER:S|.||}

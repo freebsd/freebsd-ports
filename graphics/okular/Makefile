@@ -10,16 +10,16 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 universal document viewer
 
-LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre \
-		libkscreen.so:${PORTSDIR}/graphics/libkscreen \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
-		libspectre.so:${PORTSDIR}/print/libspectre \
-		libchm.so:${PORTSDIR}/misc/chmlib \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libepub.so:${PORTSDIR}/textproc/ebook-tools \
-		libqmobipocket.so:${PORTSDIR}/graphics/kdegraphics4-mobipocket
+LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
+		libkscreen.so:graphics/libkscreen \
+		libqca.so:devel/qca \
+		libtiff.so:graphics/tiff \
+		libpoppler-qt4.so:graphics/poppler-qt4 \
+		libspectre.so:print/libspectre \
+		libchm.so:misc/chmlib \
+		libfreetype.so:print/freetype2 \
+		libepub.so:textproc/ebook-tools \
+		libqmobipocket.so:graphics/kdegraphics4-mobipocket
 
 USE_KDE4=	kdelibs kdeprefix automoc4 qimageblitz kactivities \
 		libkexiv2

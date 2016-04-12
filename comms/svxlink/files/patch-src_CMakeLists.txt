@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2014-08-02 12:45:56.000000000 -0700
-+++ src/CMakeLists.txt	2015-01-05 21:58:48.000000000 -0800
-@@ -37,6 +37,7 @@
+--- src/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
++++ src/CMakeLists.txt
+@@ -37,6 +37,7 @@ set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_B
  list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
  
  # Optional parts
@@ -8,7 +8,7 @@
  option(USE_QT "Build Qt applications and libs" ON)
  option(BUILD_STATIC_LIBS "Build static libraries in addition to dynamic" OFF)
  
-@@ -46,12 +47,6 @@
+@@ -46,12 +47,6 @@ if(NOT DEFINED INTERNAL_SAMPLE_RATE)
  endif(NOT DEFINED INTERNAL_SAMPLE_RATE)
  add_definitions(-DINTERNAL_SAMPLE_RATE=${INTERNAL_SAMPLE_RATE})
  
@@ -21,8 +21,8 @@
  # Warnings should be enabled for GCC. Also turning off the NDEBUG flag
  # since that remove asserts.
  if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-@@ -83,6 +78,15 @@
-   set(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/include)
+@@ -87,6 +82,15 @@ if(NOT DEFINED INCLUDE_INSTALL_DIR)
+   set(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR})
  endif(NOT DEFINED INCLUDE_INSTALL_DIR)
  
 +# Set up include directories
@@ -36,8 +36,8 @@
 +
  # Where to install libraries
  if(NOT DEFINED LIB_INSTALL_DIR)
-   set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
-@@ -312,10 +316,12 @@
+   #set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
+@@ -324,10 +328,12 @@ include(FindCHOWN)
  
  # Add directories to build
  add_subdirectory(async)

@@ -7,12 +7,12 @@ PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Graphical Morse Code Trainer
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
-		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26
+LIB_DEPENDS=	libao.so:audio/libao \
+		libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
+		libgconfmm-2.6.so:devel/gconfmm26
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig tar:bzip2

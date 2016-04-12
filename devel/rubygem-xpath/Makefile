@@ -11,7 +11,7 @@ COMMENT=	DSL for generating XPath Expressions
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-nokogiri>=1.3:${PORTSDIR}/textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-nokogiri>=1.3:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes

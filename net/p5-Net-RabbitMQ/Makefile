@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module to interact with RabbitMQ over AMQP using librabbitmq
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/rabbitmqctl:${PORTSDIR}/net/rabbitmq
-RUN_DEPENDS=	${LOCALBASE}/sbin/rabbitmqctl:${PORTSDIR}/net/rabbitmq
+BUILD_DEPENDS=	${LOCALBASE}/sbin/rabbitmqctl:net/rabbitmq
+RUN_DEPENDS=	${LOCALBASE}/sbin/rabbitmqctl:net/rabbitmq
 
 USES=		perl5
 USE_PERL5=	configure

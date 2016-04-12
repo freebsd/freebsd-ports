@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdp
-PORTVERSION=	3.3
-PORTREVISION=	1
+PORTVERSION=	3.5
 CATEGORIES=	science python
 MASTER_SITES=	SF/${PORTNAME}-toolkit/${PORTNAME}-toolkit/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,9 +24,9 @@ LIBSVM_DESC=	Provide the LibSVMClassifier node
 PP_DESC=	Provide the Parallel Python PPScheduler
 SCIPY_DESC=	Instal SciPy versions of eigensolver, FFT and convolution
 
-LIBSVM_RUN_DEPENDS=	libsvm>2.91:${PORTSDIR}/science/libsvm \
-			libsvm-python>2.91:${PORTSDIR}/science/libsvm-python
-PP_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pp>0:${PORTSDIR}/devel/py-pp
-SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.5.2:${PORTSDIR}/science/py-scipy
+LIBSVM_RUN_DEPENDS=	libsvm>2.91:science/libsvm \
+			libsvm-python>2.91:science/libsvm-python
+PP_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pp>0:devel/py-pp
+SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.5.2:science/py-scipy
 
 .include <bsd.port.mk>

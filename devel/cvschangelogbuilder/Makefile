@@ -12,7 +12,7 @@ COMMENT=	Utility to generate changelogs and reports from a CVS repository
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.TXT
 
-RUN_DEPENDS=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
+RUN_DEPENDS=	p5-GD-Graph>=0:graphics/p5-GD-Graph
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${PORTNAME}.pl

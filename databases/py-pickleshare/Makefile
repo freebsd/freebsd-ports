@@ -12,7 +12,7 @@ COMMENT=	Tiny shelve-like database with concurrency support
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}path.py>0:${PORTSDIR}/devel/py-path.py
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}path.py>0:devel/py-path.py
 
 USES=		python
 USE_PYTHON=	distutils autoplist

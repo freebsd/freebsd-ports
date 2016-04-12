@@ -9,13 +9,13 @@ MASTER_SITES=	http://files.freedv.org/freedv/ \
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Narrow band digital voice
 
-LIB_DEPENDS=	libcodec2.so:${PORTSDIR}/audio/codec2 \
-		libportaudio.so:${PORTSDIR}/audio/portaudio \
-		libhamlib.so:${PORTSDIR}/comms/hamlib \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsox.so:${PORTSDIR}/audio/sox \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libspeexdsp.so:${PORTSDIR}/audio/speexdsp
+LIB_DEPENDS=	libcodec2.so:audio/codec2 \
+		libportaudio.so:audio/portaudio \
+		libhamlib.so:comms/hamlib \
+		libsamplerate.so:audio/libsamplerate \
+		libsox.so:audio/sox \
+		libsndfile.so:audio/libsndfile \
+		libspeexdsp.so:audio/speexdsp
 
 USE_WX=		3.0+
 USES=		cmake:outsource compiler:c++11-lib tar:xz

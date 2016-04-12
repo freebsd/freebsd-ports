@@ -12,7 +12,7 @@ COMMENT=	Cross Platform Mac Address Determination for Ruby
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	rubygem-systemu>=2.6.2:${PORTSDIR}/devel/rubygem-systemu
+RUN_DEPENDS=	rubygem-systemu>=2.6.2:devel/rubygem-systemu
 
 NO_ARCH=	yes
 

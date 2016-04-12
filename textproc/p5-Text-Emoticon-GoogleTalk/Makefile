@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Emoticon filter of GoogleTalk
 
-BUILD_DEPENDS=	p5-Text-Emoticon>=0:${PORTSDIR}/textproc/p5-Text-Emoticon
+BUILD_DEPENDS=	p5-Text-Emoticon>=0:textproc/p5-Text-Emoticon
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

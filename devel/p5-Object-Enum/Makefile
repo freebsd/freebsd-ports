@@ -15,10 +15,10 @@ COMMENT=	Replacement for if ($$foo eq 'bar')
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
-		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+RUN_DEPENDS=	p5-Sub-Install>=0:devel/p5-Sub-Install \
+		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
+		p5-Class-Data-Inheritable>=0:devel/p5-Class-Data-Inheritable \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -13,10 +13,10 @@ COMMENT=	Orthogonal Object Persistence in Relational Databases
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Class-Date>=0:${PORTSDIR}/devel/p5-Class-Date \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Data-Lazy>=0.6:${PORTSDIR}/devel/p5-Data-Lazy \
-		p5-Set-Object>=1.1:${PORTSDIR}/devel/p5-Set-Object
+BUILD_DEPENDS=	p5-Class-Date>=0:devel/p5-Class-Date \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-Data-Lazy>=0.6:devel/p5-Data-Lazy \
+		p5-Set-Object>=1.1:devel/p5-Set-Object
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

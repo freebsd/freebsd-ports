@@ -14,14 +14,14 @@ LICENSE_NAME=	Beerware
 LICENSE_TEXT=	http://www.sax.de/~joerg/beerware-license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		gawk:${PORTSDIR}/lang/gawk
-TEST_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	gawk:lang/gawk
+RUN_DEPENDS=	bash:shells/bash \
+		gawk:lang/gawk
+TEST_DEPENDS=	gawk:lang/gawk
 
 ALL_TARGET=	build
 
-FRIBIDI_RUN_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi
+FRIBIDI_RUN_DEPENDS=	fribidi:converters/fribidi
 
 GH_ACCOUNT=	soimort
 GH_PROJECT=	translate-shell
@@ -31,10 +31,10 @@ OPTIONS_DEFINE=	DOCS FRIBIDI READLINE TEXT2SPEECH
 
 PLIST_FILES=	bin/trans man/man1/trans.1.gz
 
-READLINE_RUN_DEPENDS=	rlwrap:${PORTSDIR}/devel/rlwrap
+READLINE_RUN_DEPENDS=	rlwrap:devel/rlwrap
 
 TEXT2SPEECH_DESC=	Enable Text-to-Speech functionality via espeak
-TEXT2SPEECH_RUN_DEPENDS=	espeak:${PORTSDIR}/audio/espeak
+TEXT2SPEECH_RUN_DEPENDS=	espeak:audio/espeak
 
 USE_GITHUB=	yes
 

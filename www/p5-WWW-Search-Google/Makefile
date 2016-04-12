@@ -13,9 +13,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl WWW::Search class for searching Google
 
-BUILD_DEPENDS=	p5-WWW-Search>=0:${PORTSDIR}/www/p5-WWW-Search \
-		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-Net-Google>=0:${PORTSDIR}/net/p5-Net-Google
+BUILD_DEPENDS=	p5-WWW-Search>=0:www/p5-WWW-Search \
+		p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
+		p5-Net-Google>=0:net/p5-Net-Google
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

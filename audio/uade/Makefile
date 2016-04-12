@@ -13,7 +13,7 @@ COMMENT=	Unix Amiga Delitracker Emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libao.so:audio/libao
 
 USES=		gmake pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
@@ -45,7 +45,7 @@ TEXTSCOPE_CONFIGURE_WITH=	text-scope
 FUSE_USES=		fuse
 FUSE_CONFIGURE_WITH=	uadefs
 
-XMMS_LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
+XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
 XMMS_CONFIGURE_WITH=	xmms
 
 post-extract:

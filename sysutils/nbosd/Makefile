@@ -10,7 +10,7 @@ MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Displays battery life and CPU frequency with an OSD
 
-LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+LIB_DEPENDS=	libxosd.so:misc/xosd
 
 PLIST_FILES=	bin/nbosd
 PORTDOCS=	*

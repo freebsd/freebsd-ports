@@ -13,8 +13,8 @@ COMMENT=	Scientific plotting package
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-svg>0:${PORTSDIR}/graphics/py-qt4-svg
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-svg>0:graphics/py-qt4-svg
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		python

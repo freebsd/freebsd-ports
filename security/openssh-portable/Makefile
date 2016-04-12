@@ -50,7 +50,7 @@ OPTIONS_SUB=		yes
 TCP_WRAPPERS_EXTRA_PATCHES=${FILESDIR}/extra-patch-tcpwrappers
 
 LDNS_CONFIGURE_WITH=	ldns
-LDNS_LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
+LDNS_LIB_DEPENDS=	libldns.so:dns/ldns
 LDNS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ldns
 LDNS_CFLAGS=		-I${LOCALBASE}/include
 LDNS_CONFIGURE_ON=	--with-ldflags='-L${LOCALBASE}/lib'
@@ -70,8 +70,8 @@ SCTP_PATCHFILES=	${PORTNAME}-6.8p1-sctp-2573.patch.gz:-p1
 SCTP_CONFIGURE_WITH=	sctp
 SCTP_BROKEN=		SCTP does not apply with 7.2+
 
-MIT_LIB_DEPENDS=		libkrb5.so.3:${PORTSDIR}/security/krb5
-HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:${PORTSDIR}/security/heimdal
+MIT_LIB_DEPENDS=		libkrb5.so.3:security/krb5
+HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:security/heimdal
 
 PAM_CONFIGURE_WITH=	pam
 TCP_WRAPPERS_CONFIGURE_WITH=	tcp-wrappers

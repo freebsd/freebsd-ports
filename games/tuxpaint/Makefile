@@ -13,10 +13,10 @@ COMMENT=	Drawing program designed for young children
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
-LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libpaper.so:${PORTSDIR}/print/libpaper
-RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm \
-		bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libfribidi.so:converters/fribidi \
+		libpaper.so:print/libpaper
+RUN_DEPENDS=	anytopnm:graphics/netpbm \
+		bash:shells/bash
 
 USES=		gettext gmake gperf pkgconfig shebangfix
 SHEBANG_FILES=	src/tuxpaint-import.sh

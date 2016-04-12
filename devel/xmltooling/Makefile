@@ -9,12 +9,12 @@ MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/2.5.5/
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Low level XML support for SAML
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		liblog4shib.so:${PORTSDIR}/devel/log4shib \
-		libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
-		libxml-security-c.so:${PORTSDIR}/security/apache-xml-security-c
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		liblog4shib.so:devel/log4shib \
+		libxerces-c.so.3:textproc/xerces-c3 \
+		libxml-security-c.so:security/apache-xml-security-c
 
-BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} --with-curl=${LOCALBASE} --disable-doxygen-doc

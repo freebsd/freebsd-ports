@@ -17,8 +17,8 @@ PEAR_TRANSLATION2_DESC=	PEAR::Translation2 support
 
 USES=	pear
 
-PEAR_HTML_JAVASCRIPT_RUN_DEPENDS=	${PEARDIR}/HTML/Javascript.php:${PORTSDIR}/devel/pear-HTML_Javascript
-PEAR_FILE_GETTEXT_RUN_DEPENDS=	${PEARDIR}/File/Gettext.php:${PORTSDIR}/sysutils/pear-File_Gettext
-PEAR_TRANSLATION2_RUN_DEPENDS=	${PEARDIR}/Translation2.php:${PORTSDIR}/sysutils/pear-Translation2
+PEAR_HTML_JAVASCRIPT_RUN_DEPENDS=	${PEARDIR}/HTML/Javascript.php:devel/pear-HTML_Javascript
+PEAR_FILE_GETTEXT_RUN_DEPENDS=	${PEARDIR}/File/Gettext.php:sysutils/pear-File_Gettext
+PEAR_TRANSLATION2_RUN_DEPENDS=	${PEARDIR}/Translation2.php:sysutils/pear-Translation2
 
 .include <bsd.port.mk>

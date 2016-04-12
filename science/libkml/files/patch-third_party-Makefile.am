@@ -1,6 +1,6 @@
 --- third_party/Makefile.am.orig	2010-02-19 15:52:05 UTC
 +++ third_party/Makefile.am
-@@ -1,11 +1,8 @@
+@@ -1,40 +1,16 @@
 -uriparser = uriparser-0.7.5
 -
  AM_CPPFLAGS = -I$(top_srcdir)/third_party/zlib-1.2.3/contrib \
@@ -9,14 +9,17 @@
  	      -I$(top_srcdir)/third_party/googletest-r108/include
  
 -lib_LTLIBRARIES = libminizip.la liburiparser.la
-+lib_LTLIBRARIES = libminizip.la
++lib_LTLIBRARIES = libkmlminizip.la
  noinst_LTLIBRARIES = libgtest.la
  
- libminizip_la_SOURCES = \
-@@ -15,27 +12,6 @@ libminizip_la_SOURCES = \
+-libminizip_la_SOURCES = \
++libkmlminizip_la_SOURCES = \
+ 	zlib-1.2.3/contrib/minizip/unzip.c \
+ 	zlib-1.2.3/contrib/minizip/ioapi.c \
+ 	zlib-1.2.3/contrib/minizip/iomem_simple.c \
  	zlib-1.2.3/contrib/minizip/zip.c
- libminizip_la_LDFLAGS = -lz
- 
+-libminizip_la_LDFLAGS = -lz
+-
 -liburiparser_la_SOURCES = \
 -	$(uriparser)/lib/UriCommon.c \
 -	$(uriparser)/lib/UriCommon.h \
@@ -37,10 +40,10 @@
 -	$(uriparser)/lib/UriResolve.c \
 -	$(uriparser)/lib/UriShorten.c
 -liburiparser_la_LDFLAGS = -version-info 1:5:0
--
++libkmlminizip_la_LDFLAGS = -lz
+ 
  boost_root = boost_1_34_1
  boost = $(boost_root)/boost
- boostinc = $(includedir)/kml/third_party/$(boost)
 @@ -79,13 +55,13 @@ libboostconfigplatforminclude_HEADERS = 
  
  googletest = googletest-r108

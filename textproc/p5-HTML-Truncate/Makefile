@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Truncate HTML by character count while preserving well-formedness
 
-BUILD_DEPENDS=	p5-HTML-Parser>=2:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTML-Tagset>=3:${PORTSDIR}/www/p5-HTML-Tagset
+BUILD_DEPENDS=	p5-HTML-Parser>=2:www/p5-HTML-Parser \
+		p5-HTML-Tagset>=3:www/p5-HTML-Tagset
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

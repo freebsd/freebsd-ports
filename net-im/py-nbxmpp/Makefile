@@ -13,7 +13,7 @@ COMMENT=	Non blocking Jabber/XMPP module
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl
 
 NO_ARCH=	yes
 USES=		python

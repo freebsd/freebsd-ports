@@ -12,7 +12,7 @@ COMMENT=	Meta-commands handler for Postgres Database
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=4.1:${PORTSDIR}/devel/py-click
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=4.1:devel/py-click
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

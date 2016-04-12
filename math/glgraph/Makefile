@@ -14,8 +14,8 @@ COMMENT=	OpenGL based function grapher
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-OpenGL>=0:${PORTSDIR}/graphics/p5-OpenGL \
-		import:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	p5-OpenGL>=0:graphics/p5-OpenGL \
+		import:graphics/ImageMagick
 
 USES=		perl5 shebangfix tar:bzip2
 USE_PERL5=	run

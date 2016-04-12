@@ -12,9 +12,9 @@ COMMENT=	Tcpdump like perl implementation
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
-		p5-Net-Frame>=0:${PORTSDIR}/net/p5-Net-Frame \
-    		p5-Net-Pcap>=0.12:${PORTSDIR}/net/p5-Net-Pcap
+BUILD_DEPENDS=	p5-Class-Gomor>=1.00:devel/p5-Class-Gomor \
+		p5-Net-Frame>=0:net/p5-Net-Frame \
+		p5-Net-Pcap>=0.12:net/p5-Net-Pcap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

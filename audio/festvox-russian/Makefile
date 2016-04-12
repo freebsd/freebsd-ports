@@ -13,7 +13,7 @@ DIST_SUBDIR=	festival
 MAINTAINER=	yerenkow@gmail.com
 COMMENT=	Russian male voice for Festival speech synthesis system
 
-RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
+RUN_DEPENDS=	festival:audio/festival
 
 USES=		tar:bzip2
 

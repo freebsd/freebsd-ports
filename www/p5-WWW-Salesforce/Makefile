@@ -13,11 +13,11 @@ COMMENT=        Simple abstraction layer between SOAP::Lite and Salesforce.com
 LICENSE=        ART10 GPLv1
 LICENSE_COMB=   dual
 
-BUILD_DEPENDS=	p5-SOAP-Lite>=0.68:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-Crypt-SSLeay>=0.56:${PORTSDIR}/security/p5-Crypt-SSLeay
+BUILD_DEPENDS=	p5-SOAP-Lite>=0.68:net/p5-SOAP-Lite \
+		p5-Crypt-SSLeay>=0.56:security/p5-Crypt-SSLeay
 RUN_DEPENDS:=   ${BUILD_DEPENDS}
-TEST_DEPENDS=   p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=   p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
 
 NO_ARCH=        yes
 USES=           perl5

@@ -12,8 +12,8 @@ COMMENT=	Network surveillance engine
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:net/libnids
+LIB_DEPENDS=	libnet.so:net/libnet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.9.0
 USE_GNOME=	glib20

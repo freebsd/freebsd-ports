@@ -13,8 +13,8 @@ COMMENT=	Write your linewise code for handles; this does the rest
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-PerlIO-utf8_strict>=0:${PORTSDIR}/devel/p5-PerlIO-utf8_strict \
-		p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter
+BUILD_DEPENDS=	p5-PerlIO-utf8_strict>=0:devel/p5-PerlIO-utf8_strict \
+		p5-Sub-Exporter>=0.900:devel/p5-Sub-Exporter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

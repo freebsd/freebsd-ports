@@ -8,8 +8,8 @@ CATEGORIES=	devel
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Required library functions for OpenCL C programming language
 
-BUILD_DEPENDS=	clang${LLVMVER}:${PORTSDIR}/devel/llvm${LLVMVER} \
-		libedit>=0:${PORTSDIR}/devel/libedit
+BUILD_DEPENDS=	clang${LLVMVER}:devel/llvm${LLVMVER} \
+		libedit>=0:devel/libedit
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	llvm-mirror

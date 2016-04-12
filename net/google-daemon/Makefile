@@ -9,9 +9,9 @@ CATEGORIES=	net
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Google daemon for use with Google Cloud Compute Engine
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
-		sudo:${PORTSDIR}/security/sudo
+BUILD_DEPENDS=	python:lang/python
+RUN_DEPENDS=	python:lang/python \
+		sudo:security/sudo
 
 USES=		python shebangfix
 USE_GITHUB=	yes

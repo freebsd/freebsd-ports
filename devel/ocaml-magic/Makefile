@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 # This really is overzealous but I work this way
 .if !exists(/usr/lib/libmagic.so)
-LIB_DEPENDS+=	libmagic.so:${PORTSDIR}/sysutils/file
+LIB_DEPENDS+=	libmagic.so:sysutils/file
 .endif
 
 post-install:

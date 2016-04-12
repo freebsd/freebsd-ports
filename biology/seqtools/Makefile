@@ -10,8 +10,8 @@ COMMENT=	Tools for visualising sequence alignments
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libsqlite3.so:databases/sqlite3
 
 USES=		execinfo libtool pkgconfig
 GNU_CONFIGURE=	yes

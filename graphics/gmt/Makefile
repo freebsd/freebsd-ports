@@ -25,8 +25,8 @@ LICENSE_COMB=	multi
 LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_DISTFILES_LGPL3=	${GSHHG_DISTNAME}${EXTRACT_SUFX}
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libnetcdf.so:science/netcdf
+RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -52,12 +52,12 @@ DEBUG_CONFIGURE_ON=	--enable-debug --enable-devdebug
 EPS_DESC=		Set .eps as default output format, otherwise .ps
 EPS_CONFIGURE_ON=	--enable-eps
 GDAL_DESC=		Compile in experimental GDAL support
-GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
 GDAL_CONFIGURE_ON=	--enable-gdal
 IMPERIAL_DESC=		Choose Imperial (inch) units over metric (cm)
 IMPERIAL_CONFIGURE_ON=	--enable-US
 OCTAVE_DESC=		Build GMT-octave interface
-OCTAVE_RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
+OCTAVE_RUN_DEPENDS=	octave:math/octave
 OCTAVE_CONFIGURE_ON=	--enable-octave --enable-mex
 OCTAVE_CONFIGURE_OFF=	--disable-mex
 SHARED_DESC=		Build shared (dynamic) libraries

@@ -14,7 +14,7 @@ COMMENT=	GNUstep application for digital still cameras
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Documentation/COPYING
 
-LIB_DEPENDS=	libgphoto2_port.so:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libgphoto2_port.so:graphics/libgphoto2
 
 USES=		tar:bzip2 gnustep
 USE_GNUSTEP=	back build

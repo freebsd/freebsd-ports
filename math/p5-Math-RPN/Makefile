@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Reverse polish math expression evaluation
 
-TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	configure

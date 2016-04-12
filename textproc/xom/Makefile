@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.cafeconleche.org/XOM/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Open source (LGPL), tree-based API for processing XML with Java
 
-RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
-		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
+RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j \
+		${JAVALIBDIR}/xalan.jar:textproc/xalan-j
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

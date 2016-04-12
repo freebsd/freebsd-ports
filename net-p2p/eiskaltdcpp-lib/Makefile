@@ -15,7 +15,7 @@ COMMENT=	Direct Connect client shared library
 LICENSE=	GPLv3
 
 .if !defined (MASTERDIR)
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		cmake gettext compiler:c++11-lib
 USE_OPENSSL=	yes
@@ -37,18 +37,18 @@ LUA_USES=	lua:51
 LUA_CMAKE_ON=	-DLUA_SCRIPT:BOOL=ON
 LUA_CMAKE_OFF=	-DLUA_SCRIPT:BOOL=OFF
 
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CMAKE_ON=	-DPERL_REGEX:BOOL=ON
 PCRE_CMAKE_OFF=	-DPERL_REGEX:BOOL=OFF
 
-IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CMAKE_ON=	-DUSE_IDNA:BOOL=ON
 IDN_CMAKE_OFF=	-DUSE_IDNA:BOOL=OFF
 
 DHT_CMAKE_ON=	-DWITH_DHT:BOOL=ON
 DHT_CMAKE_OFF=	-DWITH_DHT:BOOL=OFF
 
-MINIUPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+MINIUPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 MINIUPNP_CMAKE_ON=	-DUSE_MINIUPNP:BOOL=ON -DLOCAL_MINIUPNP:BOOL=OFF
 MINIUPNP_CMAKE_OFF=	-DUSE_MINIUPNP:BOOL=OFF
 .endif

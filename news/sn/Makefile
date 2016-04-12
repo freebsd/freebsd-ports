@@ -14,7 +14,7 @@ COMMENT=	Small news system for small sites serving
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake tar:bzip2
 MAKE_ARGS+=	PREFIX="${PREFIX}" LD="${CC}" CC="${CC}"

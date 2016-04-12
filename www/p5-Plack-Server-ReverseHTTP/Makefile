@@ -12,9 +12,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of reversehttp gateway for PSGI application
 
 RUN_DEPENDS=	\
-	p5-AnyEvent>0:${PORTSDIR}/devel/p5-AnyEvent \
-	p5-AnyEvent-ReverseHTTP>0:${PORTSDIR}/www/p5-AnyEvent-ReverseHTTP \
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack
+	p5-AnyEvent>0:devel/p5-AnyEvent \
+	p5-AnyEvent-ReverseHTTP>0:www/p5-AnyEvent-ReverseHTTP \
+	p5-Plack>0:www/p5-Plack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

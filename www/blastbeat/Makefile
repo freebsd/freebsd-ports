@@ -14,9 +14,9 @@ LICENSE_NAME=	UNBIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept
 
-LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libzmq.so:${PORTSDIR}/net/libzmq2
+LIB_DEPENDS=	libev.so:devel/libev \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libzmq.so:net/libzmq2
 
 USES=		gmake
 USE_OPENSSL=	yes

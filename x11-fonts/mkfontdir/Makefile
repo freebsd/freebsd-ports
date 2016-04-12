@@ -8,7 +8,7 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Create an index of X font files in a directory
 
-RUN_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	mkfontscale:x11-fonts/mkfontscale
 
 XORG_CAT=	app
 

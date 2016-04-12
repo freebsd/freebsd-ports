@@ -11,12 +11,12 @@ COMMENT=	Utility to split mp3 and ogg files (via GTK Interface)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmp3splt.so:${PORTSDIR}/audio/libmp3splt \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag \
-		libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libmp3splt.so:audio/libmp3splt \
+		libmad.so:audio/libmad \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libid3tag.so:audio/libid3tag \
+		libltdl.so:devel/libltdl
 
 INSTALLS_OMF=	yes
 USE_GSTREAMER1=	yes
@@ -39,8 +39,8 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
-#DOCS_LIB_DEPENDS=	libgvc.so:${PORTSDIR}/graphics/graphviz
-#DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+#DOCS_LIB_DEPENDS=	libgvc.so:graphics/graphviz
+#DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
 #DOCS_CONFIGURE_OFF=	--disable-doxygen-doc
 
 .include <bsd.port.mk>
