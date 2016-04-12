@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	linpct@gmail.com
+MAINTAINER=	bradleythughes@fastmail.fm
 COMMENT=	V8 JavaScript for client and server (4.x LTS)
 
 LICENSE=	MIT
