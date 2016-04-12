@@ -17,11 +17,16 @@
 name="php_fpm"
 rcvar=php_fpm_enable
 
+start_precmd="php_fpm_checkconfig"
+restart_precmd="php_fpm_checkconfig"
+reload_precmd="php_fpm_checkconfig"
+configtest_cmd="php_fpm_checkconfig"
+
 load_rc_config "$name"
 
 : ${php_fpm_enable="NO"}
 
-extra_commands="reload logrotate"
+extra_commands="reload configtest logrotate"
 
 command="%%PREFIX%%/sbin/php-fpm"
 pidfile="/var/run/php-fpm.pid"
@@ -38,6 +43,12 @@ php_fpm_logrotate() {
         fi
         echo "Rotating logs $name."
         kill -USR1 $rc_pid
+}
+
+php_fpm_checkconfig()
+{
+        echo "Performing sanity check on php-fpm configuration:"
+        eval ${command} -t
 }
 
 run_rc_command "$1"
