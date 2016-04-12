@@ -5,14 +5,12 @@ PORTNAME=	quat
 PORTVERSION=	1.20
 PORTREVISION=	14
 CATEGORIES=	graphics
-#MASTER_SITES=	http://www.physcip.uni-stuttgart.de/phy11733/download/
-MASTER_SITES=	http://www.sourcefiles.org/Graphics/Fractals/
+MASTER_SITES=	https://www.physcip.uni-stuttgart.de/pages/~phy11733/download/
 PKGNAMESUFFIX=	-gui
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three-dimensional fractal creator (X11 GUI)
 
-BROKEN=		unfetchable
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
@@ -35,11 +33,7 @@ PLIST_FILES=	bin/quat
 
 DESKTOP_ENTRIES="Quat" "3D Fractal Generator" "" "${PORTNAME}" "" ""
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -ffast-math
-.endif
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math
 
 post-patch:
 	@${REINPLACE_CMD} -E -e \
@@ -62,7 +56,7 @@ post-patch:
 		's|@PACKAGE@|${PKGBASE}|' \
 		${WRKSRC}/doc/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
