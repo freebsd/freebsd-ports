@@ -44,6 +44,7 @@ bin/rspamc
 /usr/local/etc/newsyslog.conf.d/rspamd.newsyslog.conf
 lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/effective_tld_names.dat
+%%DATADIR%%/lua/dcc.lua
 %%DATADIR%%/lua/dmarc.lua
 %%DATADIR%%/lua/emails.lua
 %%DATADIR%%/lua/fann_scores.lua
