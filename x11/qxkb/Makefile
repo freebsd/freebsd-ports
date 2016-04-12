@@ -3,8 +3,8 @@
 
 PORTNAME=	qxkb
 PORTVERSION=	0.4.6
+DISTVERSIONPREFIX=	qxkb-
 CATEGORIES=	x11
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4-based advanced keyboard layout switcher
@@ -13,9 +13,12 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libxkbfile.so:x11/libxkbfile
 
-USES=		cmake tar:bzip2
+USES=		cmake
 USE_QT4=	linguisttools_build moc_build qmake_build rcc_build uic_build \
 		corelib gui svg
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	disels
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
