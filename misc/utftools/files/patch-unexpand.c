@@ -1,5 +1,5 @@
---- unexpand.c.orig	Sat May 10 13:52:43 2003
-+++ unexpand.c	Sat May 10 13:52:58 2003
+--- unexpand.c.orig	1997-02-25 18:47:26 UTC
++++ unexpand.c
 @@ -5,6 +5,7 @@
  #include <stdio.h>
  #include <string.h>
