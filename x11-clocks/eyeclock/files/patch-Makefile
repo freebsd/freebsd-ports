@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Dec 25 03:18:57 1999
-+++ Makefile	Sun Dec 26 16:33:49 1999
+--- Makefile.orig	1999-12-25 09:18:57 UTC
++++ Makefile
 @@ -15,8 +15,8 @@
  ###############################################################################
  
@@ -11,7 +11,7 @@
  BINDIR  = ${PREFIX}/bin
  LIBDIR  = ${PREFIX}/lib/X11/EyeClock
  RESDIR  = ${PREFIX}/lib/X11/app-defaults
-@@ -26,15 +26,15 @@
+@@ -26,15 +26,15 @@ VERSION = EyeClock-2.0
  
  # Choose a default face from below lines.
  
@@ -31,7 +31,7 @@
  
  # Choose icon pixmap from below lines.
  
-@@ -93,14 +93,15 @@
+@@ -93,14 +93,15 @@ clean :
  backup :
  		cp COPYRIGHT* *.jpn CHANGE EyeClock* Makefile *.h *.c *.man bak
  
@@ -51,7 +51,7 @@
  umeharaclock :
  		ln -s eyeclock umeharaclock
  
-@@ -131,7 +132,7 @@
+@@ -131,7 +132,7 @@ octopusclock :
  clearclock :
  		rm -f ${BINDIR}/eyeclock
  		rm -f ${BINDIR}/daemonclock
