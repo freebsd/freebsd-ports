@@ -2,24 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	gnofract4d
-PORTVERSION=	3.14.1
-PORTREVISION=	3
+DISTVERSIONPREFIX=	V_
+DISTVERSION=	3_14_1
+PORTREVISION=	4
 CATEGORIES=	graphics gnome
-MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
-BROKEN=		unfetchable
-
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl
 LIB_DEPENDS=	libpng.so:graphics/png
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		desktop-file-utils jpeg pathfix pkgconfig python shared-mime-info
-USE_GNOME=	gnomeprefix intlhack libgnomeui pygtk2
+USE_GITHUB=	yes
+GH_ACCOUNT=	edyoung
+
+USES=		desktop-file-utils display:build jpeg pathfix pkgconfig \
+		python shared-mime-info
+USE_GNOME=	intlhack libxslt:build pygtk2
 USE_PYTHON=	distutils autoplist
-USE_GCC=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
@@ -27,8 +30,6 @@ PLIST_FILES=	man/man1/gnofract4d.1.gz
 
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD}  -e 's|/usr/include/|${LOCALBASE}/include/|; \
@@ -42,6 +43,9 @@ post-patch:
 		${WRKSRC}/fract4d/test_codegen.py \
 		${WRKSRC}/fract4d/fractconfig.py
 
+post-build:
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} createdocs.py)
+
 post-install:
 .for l in fract4d_stdlib fract4dc
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/fract4d/${l}.so
@@ -50,6 +54,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
