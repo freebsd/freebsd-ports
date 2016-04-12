@@ -1,7 +1,7 @@
---- ranger/ext/img_display.py.orig	2014-02-05 11:33:29.000000000 +0800
-+++ ranger/ext/img_display.py	2014-02-05 11:34:00.000000000 +0800
-@@ -13,7 +13,7 @@
- import termios, fcntl, struct, sys, os
+--- ranger/ext/img_display.py.orig	2015-10-03 23:46:45 UTC
++++ ranger/ext/img_display.py
+@@ -21,7 +21,7 @@ import termios
+ from ranger.core.shared import FileManagerAware
  from subprocess import Popen, PIPE
  
 -W3MIMGDISPLAY_PATH = '/usr/lib/w3m/w3mimgdisplay'
