@@ -10,7 +10,7 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Berkeley DB package, revision 4.8
 
 LICENSE=	BSD3CLAUSE
