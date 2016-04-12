@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.busybox.net/downloads/ LOCAL/mandree
 PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Busybox for FreeBSD
 
 LICENSE=	GPLv2

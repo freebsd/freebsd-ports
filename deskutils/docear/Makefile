@@ -11,7 +11,7 @@ MASTER_SITES=	http://docear.org/downloads/${PORTVERSION}${_suffix}/ \
 DISTNAME=	docear_linux
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}${_suffix}
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mind Mapping tool with Reference, Library, and PDF Management
 
 LICENSE=	GPLv2
