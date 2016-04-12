@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	38.7.1
+PORTVERSION=	45.0
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}/linux-i686/xpi \
 		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build1/linux-i686/xpi
