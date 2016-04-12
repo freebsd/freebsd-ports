@@ -1,5 +1,5 @@
---- main.c.orig	Sun Dec 26 16:34:55 1999
-+++ main.c	Sun Dec 26 16:37:01 1999
+--- main.c.orig	1999-12-25 09:18:56 UTC
++++ main.c
 @@ -76,7 +76,7 @@
  /*===========================================================================*/
  
@@ -9,7 +9,7 @@
  
  /*===========================================================================*/
  /* Number ヴィジェットのヴィジェットごとの名前                               */
-@@ -616,9 +616,9 @@
+@@ -616,9 +616,9 @@ static void die(Widget w)
    Display * display;
    int i;
  
@@ -22,7 +22,7 @@
  
    if (toplevel)
      if (XtIsRealized(toplevel)) {
-@@ -650,8 +650,8 @@
+@@ -650,8 +650,8 @@ static void restore(Widget w, XEvent * e
    unsigned int width;
    unsigned int height;
  
@@ -33,7 +33,7 @@
  
    if (width && height)
      XtVaSetValues(toplevel, XtNwidth, width, XtNheight, height, NULL);
-@@ -730,23 +730,23 @@
+@@ -730,23 +730,23 @@ int main(int argc, char * argv[])
    }
  
    /* Clock ヴィジェットの作成 */
@@ -61,7 +61,7 @@
  
    /* ポインタのフォーカスを有効にする */
    XtVaSetValues(toplevel, XtNinput, True, NULL);
-@@ -788,7 +788,7 @@
+@@ -788,7 +788,7 @@ int main(int argc, char * argv[])
    XSetWMProtocols(display, XtWindow(toplevel), &wm_delete_window, 1);
  
    /* 時計をスタートさせる */
