@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.18
+PORTVERSION=	2.4.20
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -51,6 +51,17 @@ WITH_SSL_PORT?=		443
 
 .include "${APACHEDIR}/Makefile.options"
 .include "${APACHEDIR}/Makefile.options.desc"
+
+# IMPLIES
+AUTHN_DBD_IMPLIES=		DBD
+HEARTBEAT_IMPLIES=		WATCHDOG STATUS
+HEARTMONITOR_IMPLIES=		WATCHDOG STATUS
+LBMETHOD_HEARTBEAT_IMPLIES=	WATCHDOG STATUS HEARTMONITOR
+
+# MPM
+MPM_PREFORK_CONFIGURE_ON=	--with-mpm=prefork
+MPM_WORKER_CONFIGURE_ON=	--with-mpm=worker
+MPM_EVENT_CONFIGURE_ON=		--with-mpm=event
 
 AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
 
@@ -184,7 +195,7 @@ post-install-LOG_FORENSIC-on:
 modlist: extract
 	@${AWK} '/: checking whether to enable mod_/ \
 		{printf "%%%%%s%%%%libexec/apache24/%s.so\n", \
-		toupper($$8), $$8}' ${WRKSRC}/configure \
+		toupper($$8), $$8}' ${WRKSRC}/configure.upstream \
 		| ${TR} -d '"' \
 		| ${SORT} -u \
 		| ${GREP} -E -v '^%%MOD_(HTTP|ISAPI|LOG_CONFIG|PRIVILEGES|SO|UNIXD)%%'
