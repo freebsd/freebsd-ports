@@ -1,4 +1,4 @@
 The qxkb program is keyboard layout switcher, similar to xxkb, but written
 against Qt4 libraries; it also provides user-friendly configuration dialog.
 
-WWW: http://code.google.com/p/qxkb/
+WWW: https://github.com/disels/qxkb
