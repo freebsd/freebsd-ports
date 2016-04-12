@@ -1,7 +1,8 @@
-DeVeDe is a program to create video DVDs and CDs (VCD, sVCD or CVD), suitables
-for home players, from any number of video files, in any of the formats
-supported by Mplayer. The big advantage over other utilites is that it only
-needs Mplayer, Mencoder, DVDAuthor, VCDImager and MKisofs (well, and
-Python 2.4, PyGTK and PyGlade), so its dependencies are really small.
+DeVeDe is a program to create video DVDs and CDs (VCD, sVCD or CVD),
+suitables for home players, from any number of video files, in any of
+the formats supported by Mplayer. The big advantage over other utilites
+is that it only needs Mplayer, Mencoder, DVDAuthor, VCDImager and
+MKisofs (well, and Python 2.4, PyGTK and PyGlade), so its dependencies
+are really small.
 
 WWW: http://www.rastersoft.com/programas/devede.html
