@@ -1,8 +1,8 @@
---- devede.py.orig	2009-05-25 09:50:34.000000000 -0300
-+++ devede.py	2009-06-13 08:40:49.000000000 -0300
-@@ -69,7 +69,19 @@
+--- devede.orig	2012-10-20 18:32:49 UTC
++++ devede
+@@ -59,7 +59,19 @@ if found==False:
  	except:
- 		found=False	
+ 		found=False
  
 -if tipo==0:
 +tipo=3
