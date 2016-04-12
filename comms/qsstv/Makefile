@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsstv
-PORTVERSION=	9.1.1
+PORTVERSION=	9.1.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/ \
 		LOCAL/shurd
@@ -12,16 +12,17 @@ COMMENT=	Amateur Radio SSTV/FAX reception program for unix
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libhamlib.so:comms/hamlib \
-		libasound.so:audio/alsa-lib \
+		libopenjp2.so.7:graphics/openjpeg \
 		libpulse.so:audio/pulseaudio \
-		libopenjp2.so.7:graphics/openjpeg
+		libv4l2.so:multimedia/libv4l
 BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 
 USES=		qmake
-USE_QT5=	buildtools core gui network xml
+USE_QT5=	buildtools core gui network widgets xml
 
 OPTIONS_DEFINE=	DOCS
 DOCS_CXXFLAGS=	-DWITH_DOCS
