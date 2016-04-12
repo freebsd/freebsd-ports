@@ -12,7 +12,7 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Oracle Berkeley DB, revision ${BDBVER}
 
 BDBVER=		${PORTVERSION:R}
