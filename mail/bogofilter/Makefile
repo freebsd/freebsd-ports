@@ -12,9 +12,8 @@ COMMENT=	Fast, teachable, learning spam detector
 
 .if !defined(MASTERDIR) || ${MASTERDIR} == ${.CURDIR}
 # building master port
-USE_BDB=	41+
-EXPIRATION_DATE?=	2016-10-31
-DEPRECATED?=		With the BerkeleyDB port outside the maintainer's control, proper function of the bogofilter is not guaranteed under FreeBSD. Please migrate to either of the sibling ports that use a different database. Use bogoutil before and after the switch for dumping and re-loading your databases.
+USE_BDB=	5+
+INVALID_BDB_VER=48
 .endif
 
 OPTIONS_DEFINE=		GSL UNICODE DOCS
