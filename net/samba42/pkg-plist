@@ -1,4 +1,3 @@
-bin/async_connect_send_test
 bin/cifsdd
 bin/dbwrap_tool
 bin/eventlogadm
@@ -672,6 +671,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/bare.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/dnsserver.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/misc.py
+%%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/raw_protocol.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/registry.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/rpc_talloc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/rpcecho.py
@@ -683,7 +683,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%PYTHON_SITELIBDIR%%/samba/tests/docs.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dsdb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/gensec.py
-%%PYTHON_SITELIBDIR%%/samba/tests/getopt.py
+%%PYTHON_SITELIBDIR%%/samba/tests/get_opt.py
 %%PYTHON_SITELIBDIR%%/samba/tests/hostconfig.py
 %%PYTHON_SITELIBDIR%%/samba/tests/libsmb_samba_internal.py
 %%PYTHON_SITELIBDIR%%/samba/tests/messaging.py
