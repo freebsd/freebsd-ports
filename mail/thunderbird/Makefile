@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	38.7.1
+DISTVERSION=	45.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -12,35 +12,36 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
-BUILD_DEPENDS=	nspr>=4.10.10:devel/nspr \
-		nss>=3.19.2.3:security/nss \
+BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
+		nss>=3.21.1:security/nss \
 		libevent2>=2.0.21_2:devel/libevent2 \
-		soundtouch>=1.8.0:audio/soundtouch \
-		harfbuzz>=0.9.34:print/harfbuzz \
-		graphite2>=1.2.4:graphics/graphite2 \
+		soundtouch>=1.9.0:audio/soundtouch \
+		harfbuzz>=1.1.0:print/harfbuzz \
+		graphite2>=1.3.7:graphics/graphite2 \
+		png>=1.6.19:graphics/png \
 		libvorbis>=1.3.5,3:audio/libvorbis \
-		libvpx>=1.3.0:multimedia/libvpx \
-		sqlite3>=3.8.9:databases/sqlite3 \
+		libvpx>=1.5.0:multimedia/libvpx \
+		sqlite3>=3.9.1:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
+		yasm:devel/yasm \
 		zip:archivers/zip \
 		unzip:archivers/unzip
-#		opus>=1.1:audio/opus \
 
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 EM_VERSION=	1.9.1
-L_VERSION=	4.0.7.1
+L_VERSION=	4.7
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
-USE_MOZILLA=	-opus
+USE_MOZILLA=	# empty
 
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
 USE_GL=		gl
-USES=		tar:bzip2
+USES=		tar:xz
 
 MOZ_OPTIONS=	--program-transform-name='s/thunderbird/${MOZILLA}/' \
 	--enable-single-profile --disable-profilesharing \
@@ -55,24 +56,19 @@ PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 
-OPTIONS_DEFINE=	ENIGMAIL LIGHTNING
-OPTIONS_DEFAULT=CANBERRA ENIGMAIL LIGHTNING
+OPTIONS_EXCLUDE=GSTREAMER LOGGING
+OPTIONS_DEFINE=	ENIGMAIL LIGHTNING RUST
+OPTIONS_SINGLE=	TOOLKIT
+OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
+OPTIONS_DEFAULT=BUNDLED_CAIRO CANBERRA ENIGMAIL GTK2 LIGHTNING
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
-
-OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/GSTREAMER//}
-
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/comm-esr38
+WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
-
-.if ${PORTVERSION:R:R} < 33
-CONFIGURE_TARGET:=${CONFIGURE_TARGET:S/portbld/unknown/}
-MOZ_OPTIONS:=	${MOZ_OPTIONS:S/${CONFIGURE_TARGET}//}
-.endif
 
 .if ${PORT_OPTIONS:MENIGMAIL}
 MASTER_SITES+=	https://www.enigmail.net/download/source/:enigmail
@@ -108,8 +104,6 @@ post-extract:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/MOZPNG/s/=[0-9]*/=10511/' \
-		${MOZSRC}/configure.in ${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/mail/app/nsMailApp.cpp
 .if ${PORT_OPTIONS:MENIGMAIL}
