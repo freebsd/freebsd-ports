@@ -16,6 +16,8 @@ COMMENT=	JavaFX (OpenJFX) SDK overlay for OpenJDK 8
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build
+
 BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
 		antlr3>0:devel/antlr3 \
 		gradle:devel/gradle \
