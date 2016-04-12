@@ -1,5 +1,5 @@
---- src/Object.C	Mon May 10 13:41:22 1999
-+++ src/Object.C	Sat Oct 26 00:40:49 2002
+--- src/Object.C.orig	1999-05-10 03:41:22 UTC
++++ src/Object.C
 @@ -28,7 +28,7 @@
   */
  
@@ -9,7 +9,7 @@
  
  #include "Object.H"
  #include "World.H"
-@@ -89,7 +89,7 @@
+@@ -89,7 +89,7 @@ void _Object::auto_position(Map& map)
  
    do {
      //    if (yes)

@@ -1,6 +1,6 @@
---- src/Movable.C	Tue May 11 12:15:20 1999
-+++ src/Movable.C	Sat Oct 26 00:40:14 2002
-@@ -51,7 +51,7 @@
+--- src/Movable.C.orig	1999-05-11 02:15:20 UTC
++++ src/Movable.C
+@@ -51,7 +51,7 @@ void Movable::add_description(Trame& t)
  void Movable::read_description(Trame& t)
  {
    if (t.get_char() != NEW_MOVABLE) {
@@ -9,7 +9,7 @@
      exit(1);
    }
    
-@@ -91,19 +91,19 @@
+@@ -91,19 +91,19 @@ void Movable::read_description0(Trame& t
  // for debug purposes
  void Movable::display()
  {
@@ -33,7 +33,7 @@
  }
  
  
-@@ -282,7 +282,7 @@
+@@ -282,7 +282,7 @@ int Movable::auto_dir()
  	       && !update_pos(p = pos, D_RIGHT))
  	newdir = D_RIGHT;
  //       else
@@ -42,7 +42,7 @@
  
      if (direction != newdir) {
        direction = newdir;
-@@ -401,7 +401,7 @@
+@@ -401,7 +401,7 @@ void Movable::getcut(_Position cutpos)
    _Position pos2 = pos;
    
    if (length == 1) {
@@ -51,7 +51,7 @@
      return;
    }
    
-@@ -415,7 +415,7 @@
+@@ -415,7 +415,7 @@ void Movable::getcut(_Position cutpos)
  
    // should never happen. (should be an assertion)
    if (!p) {
@@ -60,7 +60,7 @@
      return;
    }
      
-@@ -447,7 +447,7 @@
+@@ -447,7 +447,7 @@ void Movable::getcut(_Position cutpos)
      //evidemment ca bug!    world.add_object(worm);
    }
    //else

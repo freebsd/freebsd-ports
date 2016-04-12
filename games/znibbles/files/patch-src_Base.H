@@ -1,5 +1,5 @@
---- src/Base.H	Wed May 12 11:40:22 1999
-+++ src/Base.H	Sat Oct 26 00:30:09 2002
+--- src/Base.H.orig	1999-05-12 01:40:22 UTC
++++ src/Base.H
 @@ -32,7 +32,7 @@
  #define __H_BASE__
  
@@ -9,7 +9,7 @@
  
  
  // #define DEBUG
-@@ -55,8 +55,8 @@
+@@ -55,8 +55,8 @@ public:
    inline ~Base()
    {
      total--;
@@ -20,7 +20,7 @@
    }
  #else
  
-@@ -65,7 +65,7 @@
+@@ -65,7 +65,7 @@ public:
  
  #endif
  

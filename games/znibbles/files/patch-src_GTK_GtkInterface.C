@@ -1,5 +1,5 @@
---- src/GTK/GtkInterface.C	Wed May 12 21:43:29 1999
-+++ src/GTK/GtkInterface.C	Sat Oct 26 00:36:57 2002
+--- src/GTK/GtkInterface.C.orig	1999-05-12 11:43:29 UTC
++++ src/GTK/GtkInterface.C
 @@ -37,7 +37,7 @@
  #include <gtk/gtk.h>
  #include <gdk/gdkkeysyms.h>
@@ -9,7 +9,7 @@
  
  #include <unistd.h>
  #include <stdlib.h>
-@@ -138,7 +138,7 @@
+@@ -138,7 +138,7 @@ void GtkInterface::init(int argc, char *
    display_version();
      
    if (_two_key)
@@ -18,7 +18,7 @@
  
  
    // connect pipe_handler to SIGPIPE signal
-@@ -154,9 +154,9 @@
+@@ -154,9 +154,9 @@ void GtkInterface::init(int argc, char *
      exit(2); 
    }
  
@@ -30,7 +30,7 @@
    
    // create and bind socket to any port 
    port = 0;
-@@ -168,8 +168,8 @@
+@@ -168,8 +168,8 @@ void GtkInterface::init(int argc, char *
    } 
  
    if (_debug)
@@ -41,7 +41,7 @@
    
    // Build server address 
    server_address.sin_family = AF_INET;
-@@ -186,7 +186,7 @@
+@@ -186,7 +186,7 @@ void GtkInterface::init(int argc, char *
  
    display_play_help();
  
@@ -50,7 +50,7 @@
  
    _hack_socket_client = _socket_client; // hack for signal handling
    action.sa_handler = stop_handler;
-@@ -196,7 +196,7 @@
+@@ -196,7 +196,7 @@ void GtkInterface::init(int argc, char *
  
    init_messages(options.get_message_file());
  
@@ -59,7 +59,7 @@
    make(argc, argv);
  }
  
-@@ -294,7 +294,7 @@
+@@ -294,7 +294,7 @@ gint GtkInterface::key_cb(GtkWidget *wid
    case 'z':
      {
  //       if (_debug)
@@ -68,7 +68,7 @@
  	
  	Trame tzz;
  	tzz.reset();
-@@ -315,7 +315,7 @@
+@@ -315,7 +315,7 @@ gint GtkInterface::key_cb(GtkWidget *wid
  
    default:
      if (mythis._debug)
@@ -77,7 +77,7 @@
      return FALSE;
    }
    
-@@ -337,7 +337,7 @@
+@@ -337,7 +337,7 @@ gint GtkInterface::configure_event (GtkW
  				   GtkInterface *pthis) 
  {
    if (pthis->_debug)
@@ -86,7 +86,7 @@
  
    return FALSE;
  }
-@@ -349,7 +349,7 @@
+@@ -349,7 +349,7 @@ gint GtkInterface::expose_event (GtkWidg
  				 GtkInterface *pthis)
  {
    if (pthis->_debug)
@@ -95,7 +95,7 @@
    
    return FALSE;
  }
-@@ -476,7 +476,7 @@
+@@ -476,7 +476,7 @@ void GtkInterface::make(int argc, char *
    // GTK, the proper way to do this would be to use the
    // gdk_input_add() function.
  
@@ -104,7 +104,7 @@
  
    gdk_input_add(_socket_client, 
  		GDK_INPUT_READ,
-@@ -487,57 +487,57 @@
+@@ -487,57 +487,57 @@ void GtkInterface::make(int argc, char *
  // display version numbers (long format)
  void GtkInterface::display_version() 
  {
@@ -196,7 +196,7 @@
  }
  
  
-@@ -547,7 +547,7 @@
+@@ -547,7 +547,7 @@ void GtkInterface::display_play_help()
  
  void GtkInterface::pipe_handler(int sig)
  {
@@ -205,7 +205,7 @@
    sig++; // warnings..
    _dead_server = 1;
  }
-@@ -555,7 +555,7 @@
+@@ -555,7 +555,7 @@ void GtkInterface::pipe_handler(int sig)
  
  void GtkInterface::stop_handler(int sig)
  {
@@ -214,7 +214,7 @@
  
    if (_hack_socket_client) {
      struct timeval tv;
-@@ -647,11 +647,11 @@
+@@ -647,11 +647,11 @@ void GtkInterface::display_message(Playe
    char buf[300];
    
    if (priv) {
@@ -228,7 +228,7 @@
      sprintf(buf, "%s> %s\n", from.get_name(), msg);
    }
    
-@@ -707,7 +707,7 @@
+@@ -707,7 +707,7 @@ void GtkInterface::run(void)
  void GtkInterface::join_game()
  {
    if (_debug)
@@ -237,7 +237,7 @@
    
    t.put_char(JOIN_GAME);
    t.put_string(_own_name);
-@@ -740,21 +740,21 @@
+@@ -740,21 +740,21 @@ void GtkInterface::handle_server_input_s
  					      gint source,
  					      GdkInputCondition cond)
  {
@@ -263,7 +263,7 @@
      if (_errors >= 5) {
        pipe_handler(SIGPIPE);
      }
-@@ -762,9 +762,9 @@
+@@ -762,9 +762,9 @@ void GtkInterface::handle_server_input()
    }
  
    _errors = 0;
@@ -275,7 +275,7 @@
    
    switch(t.peek_char()) {
    case TRAME_ERROR:
-@@ -802,14 +802,14 @@
+@@ -802,14 +802,14 @@ void GtkInterface::handle_server_input()
  
    case QUIT_GAME:
      if (_debug)
@@ -293,7 +293,7 @@
      break;
    }
  }
-@@ -840,7 +840,7 @@
+@@ -840,7 +840,7 @@ void GtkInterface::do_your_other_player(
    int my_other_player_id = t.get_int();
  
    if (_debug)
@@ -302,7 +302,7 @@
  
    Player& p = world.lookup_player(my_other_player_id);
  
-@@ -848,8 +848,8 @@
+@@ -848,8 +848,8 @@ void GtkInterface::do_your_other_player(
  
    if (_other_player == NULL) {
      if (_debug)
@@ -313,7 +313,7 @@
      return;
    }
  
-@@ -870,7 +870,7 @@
+@@ -870,7 +870,7 @@ void GtkInterface::do_your_other_player(
  void GtkInterface::do_void_trame() 
  {
    if (_debug)
@@ -322,7 +322,7 @@
    t.get_char();
    char *p = t.get_string();
    if (p && strcmp(p, "w") == 0)
-@@ -978,8 +978,8 @@
+@@ -978,8 +978,8 @@ void GtkInterface::set_own_player(Player
    
    if (gtk_player == NULL) {
      if (_debug)
@@ -333,7 +333,7 @@
      return;
    }
  
-@@ -999,7 +999,7 @@
+@@ -999,7 +999,7 @@ void GtkInterface::activate_other_player
  {
    if (_other_player == NULL) {
      if (_debug)

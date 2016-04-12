@@ -1,6 +1,6 @@
---- src/LongObject.C	Mon May 10 08:59:45 1999
-+++ src/LongObject.C	Sat Oct 26 00:39:11 2002
-@@ -128,7 +128,7 @@
+--- src/LongObject.C.orig	1999-05-09 22:59:45 UTC
++++ src/LongObject.C
+@@ -128,7 +128,7 @@ void LongObject::add_description(Trame &
  void LongObject::read_description(Trame &t)
  {
    if (t.get_char() != NEW_LONGOBJ) {
@@ -9,7 +9,7 @@
      exit(1);
    }
  
-@@ -161,17 +161,17 @@
+@@ -161,17 +161,17 @@ void LongObject::read_description0(Trame
  
  void LongObject::display()
  {
