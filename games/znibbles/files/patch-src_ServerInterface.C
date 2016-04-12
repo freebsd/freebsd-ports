@@ -1,5 +1,5 @@
---- src/ServerInterface.C	Tue May 11 12:13:52 1999
-+++ src/ServerInterface.C	Sat Oct 26 00:50:26 2002
+--- src/ServerInterface.C.orig	1999-05-11 02:13:52 UTC
++++ src/ServerInterface.C
 @@ -48,6 +48,9 @@
  #include <errno.h>
  
@@ -10,7 +10,7 @@
  
  #include "DLList.h" // Doubly linked lists
  
-@@ -118,9 +121,9 @@
+@@ -118,9 +121,9 @@ void ServerInterface::init(int argc, cha
  
    display_version();
      
@@ -22,7 +22,7 @@
    
    srand(time(NULL));
  
-@@ -144,12 +147,12 @@
+@@ -144,12 +147,12 @@ void ServerInterface::init(int argc, cha
    sigaction(SIGCHLD, &action, NULL);
  */  
  
@@ -38,7 +38,7 @@
      exit(2);
    } 
  
-@@ -170,36 +173,36 @@
+@@ -170,36 +173,36 @@ void ServerInterface::init(int argc, cha
  // display version numbers (long format)
  void ServerInterface::display_version() 
  {
@@ -92,7 +92,7 @@
  }
  
  
-@@ -230,9 +233,15 @@
+@@ -230,9 +233,15 @@ void ServerInterface::run()
      socket_service = -1;
      while (socket_service == -1) {
        // wait for connection
@@ -108,7 +108,7 @@
        
        // Reception d'un signal (probablement SIGCHLD) 
        if(socket_service == -1 && errno == EINTR) {
-@@ -277,7 +286,7 @@
+@@ -277,7 +286,7 @@ void ServerInterface::run()
  	char *peol;
  
   	if (debug) {
@@ -117,7 +117,7 @@
   	}
  
  	fgets(line, MAXLINE, stdin);
-@@ -305,28 +314,28 @@
+@@ -305,28 +314,28 @@ void ServerInterface::run()
  	} else if (strcmp(line, "p") == 0) { // pause
  	  xpaused = !xpaused;
  	  display_system_message(((xpaused) 
@@ -152,7 +152,7 @@
   	    }
  	  } else
  	    display_system_message("Can't go faster :)\n");
-@@ -388,7 +397,7 @@
+@@ -388,7 +397,7 @@ void ServerInterface::run()
  void ServerInterface::pipe_handler(int sig)
  {
    sig++;
@@ -161,7 +161,7 @@
    //   pipe_rw_error = 1;
  }
  
-@@ -407,9 +416,9 @@
+@@ -407,9 +416,9 @@ void ServerInterface::set_timer(int nbse
  // void ServerInterface::alarm_handler(int sig)
  // {
  //   if (curworld) {
@@ -173,7 +173,7 @@
  //     startcycle = curworld->playcycle;
  //   }
  // }
-@@ -433,9 +442,15 @@
+@@ -433,9 +442,15 @@ int ServerInterface::accept_new(int sock
  
    while (read_ready(socketnum)) {
  
@@ -189,7 +189,7 @@
  
      // s'il y a une erreur, ce n'est pas une EINTR (cf appel a read_ready())
      if(socket_service == -1) { 
-@@ -475,9 +490,9 @@
+@@ -475,9 +490,9 @@ void ServerInterface::display_message(Pl
      return;
    
    if (priv) 
@@ -201,7 +201,7 @@
  }
  
  void ServerInterface::display_system_message(char   * msg, 
-@@ -488,8 +503,8 @@
+@@ -488,8 +503,8 @@ void ServerInterface::display_system_mes
      return;
  
    color++;

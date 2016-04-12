@@ -1,6 +1,6 @@
---- src/Motif/menus.C.orig	1999-04-14 23:50:14.000000000 +0900
-+++ src/Motif/menus.C	2011-08-11 02:41:55.000000000 +0900
-@@ -52,7 +52,7 @@
+--- src/Motif/menus.C.orig	1999-04-14 14:50:14 UTC
++++ src/Motif/menus.C
+@@ -52,7 +52,7 @@ void Menus::file_handler(Widget w, XtPoi
  {
    w = w; cbs = cbs;
  
@@ -9,7 +9,7 @@
    case ItemFileQuit:
      quit();
      break;
-@@ -64,7 +64,7 @@
+@@ -64,7 +64,7 @@ void Menus::help_handler(Widget w, XtPoi
  {
    w = w; cbs = cbs;
  

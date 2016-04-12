@@ -1,5 +1,5 @@
---- src/X11/X11Interface.C	Wed May 12 21:43:42 1999
-+++ src/X11/X11Interface.C	Sat Oct 26 00:32:49 2002
+--- src/X11/X11Interface.C.orig	1999-05-12 11:43:42 UTC
++++ src/X11/X11Interface.C
 @@ -38,7 +38,7 @@
  # include <config.h>
  #endif
@@ -9,7 +9,7 @@
  
  #include <unistd.h>
  #include <stdlib.h>
-@@ -109,7 +109,7 @@
+@@ -109,7 +109,7 @@ void X11Interface::init(int argc, char *
    display_version();
  
    if (_two_key)
@@ -18,7 +18,7 @@
  
    
    // connect pipe_handler to SIGPIPE signal
-@@ -125,8 +125,8 @@
+@@ -125,8 +125,8 @@ void X11Interface::init(int argc, char *
      exit(2); 
    }
  
@@ -29,7 +29,7 @@
    
    // create and bind socket to any port 
    port = 0;
-@@ -136,7 +136,7 @@
+@@ -136,7 +136,7 @@ void X11Interface::init(int argc, char *
    } 
  
  //   if (debug)
@@ -38,7 +38,7 @@
    
    // Build server address 
    server_address.sin_family = AF_INET;
-@@ -153,7 +153,7 @@
+@@ -153,7 +153,7 @@ void X11Interface::init(int argc, char *
  
    display_play_help();
  
@@ -47,7 +47,7 @@
  
  //   hack_socket_client = socket_client; // hack for signal handling
  //   action.sa_handler = stop_handler;
-@@ -163,7 +163,7 @@
+@@ -163,7 +163,7 @@ void X11Interface::init(int argc, char *
  
    init_messages(options.get_message_file());
  
@@ -56,7 +56,7 @@
    X11Init(argc, argv);
  }
  
-@@ -201,56 +201,56 @@
+@@ -201,56 +201,56 @@ void X11Interface::X11Init(int argc, cha
  // display version number (long format)
  void X11Interface::display_version() 
  {
@@ -146,7 +146,7 @@
  }
  
  
-@@ -261,7 +261,7 @@
+@@ -261,7 +261,7 @@ void X11Interface::display_play_help()
  
  void X11Interface::pipe_handler(int sig)
  {
@@ -155,7 +155,7 @@
    sig++; // warnings..
    dead_server = 1;
  }
-@@ -285,7 +285,7 @@
+@@ -285,7 +285,7 @@ void X11Interface::run()
  
      z++;
      if (t.receive_from(socket_client)) {
@@ -164,7 +164,7 @@
  
        handle_Xevent();
        
-@@ -309,7 +309,7 @@
+@@ -309,7 +309,7 @@ void X11Interface::run()
  	}
  	
  	if (dir) {
@@ -173,7 +173,7 @@
  	  tx.reset();
  	  tx.put_char(PLAYER_CHANGEDIR);
  	  tx.put_char(dir);
-@@ -323,7 +323,7 @@
+@@ -323,7 +323,7 @@ void X11Interface::run()
  	  break; // on verra ca plus tard.
  	  
  	case WORLD_DESC: 
@@ -182,7 +182,7 @@
  	  w.read_description(t);
  	  tx.reset();
  	  tx.put_char(CYCLE_ACK);
-@@ -333,14 +333,14 @@
+@@ -333,14 +333,14 @@ void X11Interface::run()
  	  break;
  	  
  	case CHANGE_NOTIFY:
@@ -199,7 +199,7 @@
  	    t.get_char();
  	    char *p = t.get_string();
  	    if (p && strcmp(p, "w") == 0)
-@@ -358,10 +358,10 @@
+@@ -358,10 +358,10 @@ void X11Interface::run()
  	
  	case TEXT_MESSAGE:
  	  {
@@ -212,7 +212,7 @@
  	  }
  	break;
  
-@@ -393,13 +393,13 @@
+@@ -393,13 +393,13 @@ void X11Interface::run()
  	break;
  
  	case QUIT_GAME:
@@ -229,7 +229,7 @@
  	  break;
  	}
      }
-@@ -427,13 +427,13 @@
+@@ -427,13 +427,13 @@ void X11Interface::handle_Xevent()
  	nibblesarea.redraw2();
        break;
      case ButtonPress:
@@ -245,7 +245,7 @@
        break;
      }
    }
-@@ -442,30 +442,30 @@
+@@ -442,30 +442,30 @@ void X11Interface::handle_Xevent()
  
  void X11Interface::add_player(Player& p)
  {

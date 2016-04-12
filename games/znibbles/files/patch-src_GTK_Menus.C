@@ -1,6 +1,6 @@
---- src/GTK/Menus.C.orig	2008-09-15 17:23:52.000000000 +0000
-+++ src/GTK/Menus.C	2008-09-15 17:25:14.000000000 +0000
-@@ -61,7 +61,7 @@
+--- src/GTK/Menus.C.orig	1999-05-12 01:51:42 UTC
++++ src/GTK/Menus.C
+@@ -61,7 +61,7 @@ GtkInterface * Menus::_interface;
  // Obligatory basic callback 
  void Menus::menu_callback_static(gpointer data, gpointer action, GtkWidget *w) {
    

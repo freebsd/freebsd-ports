@@ -1,5 +1,5 @@
---- src/Map.C	Mon May 10 13:39:48 1999
-+++ src/Map.C	Sat Oct 26 00:40:04 2002
+--- src/Map.C.orig	1999-05-10 03:39:48 UTC
++++ src/Map.C
 @@ -32,7 +32,7 @@
  #endif 
  
@@ -9,7 +9,7 @@
  #include <string.h>
  
  #include "Map.H"
-@@ -61,7 +61,7 @@
+@@ -61,7 +61,7 @@ void Map::make(int x, int y)
  
    // @@ do something appropriate here
    if (_types == NULL)
@@ -18,7 +18,7 @@
  
    clear();
  }
-@@ -112,39 +112,39 @@
+@@ -112,39 +112,39 @@ void Map::draw_point(int x, int y, int c
  // Text based display of this map (debug purposes)
  void Map::display()
  {
@@ -67,7 +67,7 @@
    }
  
    _types[_types_index].object = &obj;
-@@ -170,15 +170,15 @@
+@@ -170,15 +170,15 @@ void Map::print_type(int x, int y) 
    MapType * mt = get_type(x, y);
  
    if (mt == NULL) 

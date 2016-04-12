@@ -1,4 +1,4 @@
---- src/Motif/MotifInterface.C.orig
+--- src/Motif/MotifInterface.C.orig	1999-05-12 11:43:51 UTC
 +++ src/Motif/MotifInterface.C
 @@ -32,7 +32,7 @@
  # include <config.h>
@@ -9,7 +9,7 @@
  
  #include <unistd.h>
  #include <stdlib.h>
-@@ -131,7 +131,7 @@
+@@ -131,7 +131,7 @@ void MotifInterface::init(int argc, char
    display_version();
  
    if (two_key)
@@ -18,7 +18,7 @@
  
    
    // connect pipe_handler to SIGPIPE signal
-@@ -147,8 +147,8 @@
+@@ -147,8 +147,8 @@ void MotifInterface::init(int argc, char
      exit(2); 
    }
  
@@ -29,7 +29,7 @@
    
    // create and bind socket to any port 
    port = 0;
-@@ -158,7 +158,7 @@
+@@ -158,7 +158,7 @@ void MotifInterface::init(int argc, char
    } 
  
    if (debug)
@@ -38,7 +38,7 @@
    
    // Build server address 
    server_address.sin_family = AF_INET;
-@@ -175,7 +175,7 @@
+@@ -175,7 +175,7 @@ void MotifInterface::init(int argc, char
  
    display_play_help();
  
@@ -47,7 +47,7 @@
  
    hack_socket_client = socket_client; // hack for signal handling
    action.sa_handler = stop_handler;
-@@ -185,7 +185,7 @@
+@@ -185,7 +185,7 @@ void MotifInterface::init(int argc, char
  
    init_messages(options.get_message_file());
  
@@ -56,7 +56,7 @@
    make(argc, argv);
  }
  
-@@ -262,54 +262,54 @@
+@@ -262,54 +262,54 @@ void MotifInterface::make(int argc, char
  
  void MotifInterface::display_version() 
  {
@@ -144,7 +144,7 @@
  }
  
  
-@@ -318,7 +318,7 @@
+@@ -318,7 +318,7 @@ void MotifInterface::display_play_help()
  
  void MotifInterface::pipe_handler(int sig)
  {
@@ -153,7 +153,7 @@
    sig++; // warnings..
    dead_server = 1;
  }
-@@ -326,7 +326,7 @@
+@@ -326,7 +326,7 @@ void MotifInterface::pipe_handler(int si
  
  void MotifInterface::stop_handler(int sig)
  {
@@ -162,7 +162,7 @@
  
    if (hack_socket_client) {
      struct timeval tv;
-@@ -391,11 +391,11 @@
+@@ -391,11 +391,11 @@ void MotifInterface::display_message(Pla
    char buf[300];
    
    if (priv) {
@@ -176,7 +176,7 @@
      sprintf(buf, "%s> %s\n", from.get_name(), msg);
    }
    textarea.add_line(buf);
-@@ -545,7 +545,7 @@
+@@ -545,7 +545,7 @@ Boolean MotifInterface::myWorkProc(XtPoi
        case VOID_TRAME:
  	{
  	  if (mythis.debug)
@@ -185,7 +185,7 @@
  	  mt.get_char();
  	  char *p = mt.get_string();
  	  if (p && strcmp(p, "w") == 0)
-@@ -595,14 +595,14 @@
+@@ -595,14 +595,14 @@ Boolean MotifInterface::myWorkProc(XtPoi
        
        case QUIT_GAME:
  	if (mythis.debug)
@@ -203,7 +203,7 @@
  	break;
        }
      }
-@@ -661,7 +661,7 @@
+@@ -661,7 +661,7 @@ void MotifInterface::pause_request(int p
  void MotifInterface::join_game()
  {
    if (debug)

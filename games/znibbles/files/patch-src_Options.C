@@ -1,5 +1,5 @@
---- src/Options.C	Wed May 12 11:40:13 1999
-+++ src/Options.C	Sat Oct 26 00:41:03 2002
+--- src/Options.C.orig	1999-05-12 01:40:13 UTC
++++ src/Options.C
 @@ -35,7 +35,7 @@
  
  #include <stdio.h>
@@ -9,7 +9,7 @@
  
  #include "Options.H"
  
-@@ -150,7 +150,7 @@
+@@ -150,7 +150,7 @@ bool Options::parse(int argc, char **arg
  	case 'p':
  	  _port = atoi(optarg);
  	  if (_port == 0) { // cannot be 0
@@ -18,7 +18,7 @@
  	    bad_params = true;
  	  }
  	  break;
-@@ -160,7 +160,7 @@
+@@ -160,7 +160,7 @@ bool Options::parse(int argc, char **arg
  	  if (2 != (ooo = sscanf(optarg, "%dx%d", &_width, &_height)) ||
  	      _height == 0 ||
  	      _width  == 0) {
@@ -27,7 +27,7 @@
  	    bad_params = true;
  	  }
  	  break;
-@@ -168,8 +168,8 @@
+@@ -168,8 +168,8 @@ bool Options::parse(int argc, char **arg
  	case 'g': // height (server only)
  	  _height = atoi(optarg);
  	  if (_height == 0) { // cannot be 0
@@ -38,7 +38,7 @@
  	    bad_params = true;
  	  }
  	  break;
-@@ -177,8 +177,8 @@
+@@ -177,8 +177,8 @@ bool Options::parse(int argc, char **arg
  	case 'w': // width (server only)
  	  _width = atoi(optarg);
  	  if (_width == 0) { // cannot be 0
@@ -49,7 +49,7 @@
  	    bad_params = true;
  	  }
  	  break;
-@@ -194,7 +194,7 @@
+@@ -194,7 +194,7 @@ bool Options::parse(int argc, char **arg
  
    if (_set == OPTIONS_CLIENT_SET) {
      if (argv[optind] == NULL) {
@@ -58,7 +58,7 @@
        bad_params = true;
      }
      else {
-@@ -208,7 +208,7 @@
+@@ -208,7 +208,7 @@ bool Options::parse(int argc, char **arg
        if (p != 0)
  	_port = p;
        else {
@@ -67,7 +67,7 @@
  	bad_params = true;
        }
      }
-@@ -227,34 +227,34 @@
+@@ -227,34 +227,34 @@ int main(int argc, char **argv)
    options.set_option_set(0);
    
    if (!options.parse(argc, argv)) {
