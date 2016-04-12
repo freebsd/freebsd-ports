@@ -1,6 +1,6 @@
---- gamemain.c.orig	Sat Nov 16 14:37:16 1996
-+++ gamemain.c	Mon Nov  3 15:30:25 2003
-@@ -793,14 +793,13 @@
+--- gamemain.c.orig	1996-11-16 05:37:16 UTC
++++ gamemain.c
+@@ -793,14 +793,13 @@ void stageScoreCheck(void)
  void openingString(void)
  {
    XRectangle   	tempRect;
@@ -18,7 +18,7 @@
      {
        /**  not yet clear map  **/
        drawShadowText(display,mWin,120,300,
-@@ -812,15 +811,15 @@
+@@ -812,15 +811,15 @@ void openingString(void)
  
        x = 120;
        drawShadowText(display,mWin,x,300,
