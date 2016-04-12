@@ -111,19 +111,6 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/manual/folderclosed.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/frect.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2blank.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2doc.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2folderclosed.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2folderopen.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2lastnode.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2link.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2mlastnode.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2mnode.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2node.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2plastnode.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2pnode.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2splitbar.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ftv2vertline.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/gallery.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/gettingstarted.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/hybrid_checkbox.png
@@ -171,7 +158,6 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/manual/todo1.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/tone.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/transmitdrm.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/tx-with-template.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/txdrm_compression.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/txdrm_options.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/txdrm_status.png
