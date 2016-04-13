@@ -29,6 +29,7 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	autoplist concurrent distutils
 USES=		autoreconf libtool localbase python
 
+AUTORECONF_WRKSRC=	${CONFIGURE_WRKSRC}
 CONFIGURE_WRKSRC=	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/py_ext
 
