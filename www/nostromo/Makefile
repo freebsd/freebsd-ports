@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nostromo
-PORTVERSION=	1.9.5
-PORTREVISION=	4
+PORTVERSION=	1.9.6
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.nazgul.ch/dev/
 
