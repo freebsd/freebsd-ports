@@ -952,6 +952,7 @@
     SUBDIR += tarantool
     SUBDIR += tarantool-c
     SUBDIR += tcl-Mysql
+    SUBDIR += tcl-lmdb
     SUBDIR += tcl-sqlite3
     SUBDIR += tdb
     SUBDIR += tdbc
