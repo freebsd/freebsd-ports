@@ -184,10 +184,17 @@ update:
 	@echo "--------------------------------------------------------------"
 	cd ${.CURDIR}; ${SVN} update
 .elif exists(${.CURDIR}/.git)
+.  if exists(${.CURDIR}/.git/svn)
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Updating ${.CURDIR} from git+svn repository"
 	@echo "--------------------------------------------------------------"
 	cd ${.CURDIR}; ${GIT} svn rebase
+.  else
+	@echo "--------------------------------------------------------------"
+	@echo ">>> Updating ${.CURDIR} from git repository"
+	@echo "--------------------------------------------------------------"
+	cd ${.CURDIR}; ${GIT} pull
+.  endif
 .elif defined(RSYNC_UPDATE) && defined(PORTS_RSYNC_SOURCE)
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Updating with ${RSYNC} from ${PORTS_RSYNC_SOURCE}"
