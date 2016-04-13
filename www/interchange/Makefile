@@ -59,7 +59,7 @@ do-configure:
 # INTERCH_CONFIGURE_ARGS instead of CONFIGURE_ARGS.
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
-		${PERL5} ./${CONFIGURE_SCRIPT} ${INTERCH_CONFIGURE_ARGS}
+		${PERL5} ${CONFIGURE_CMD} ${INTERCH_CONFIGURE_ARGS}
 
 post-install:
 # This directory has to be created here for check-plist to pass, otherwise it

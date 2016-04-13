@@ -34,7 +34,7 @@ pre-configure:
 	    INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+	    ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS})
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|package require Tcl 8\.4|package require Tcl ${TCL_VER}|g" ${WRKSRC}/Makefile

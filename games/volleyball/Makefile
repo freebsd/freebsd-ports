@@ -41,7 +41,7 @@ post-patch:
 
 post-configure:
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
-		${SETENV} ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}
 
 post-install:
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
