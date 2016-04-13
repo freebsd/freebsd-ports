@@ -22,7 +22,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
 USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5 shebangfix tar:xz
-SHEBANG_FILES=	tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 
 SUB_FILES=	llvm-wrapper.sh
@@ -156,6 +155,7 @@ CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|so
 
 .if ${PORT_OPTIONS:MEXTRAS}
 COMMANDS+=	${EXTRAS_COMMANDS}
+SHEBANG_FILES+=	tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
