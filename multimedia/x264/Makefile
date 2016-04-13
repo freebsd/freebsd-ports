@@ -55,7 +55,7 @@ OPTIONS_DEFINE+=	ASM DEBUG GCC GPAC LAVF PGO
 OPTIONS_DEFAULT+=	ASM GPAC
 
 GPAC_DESC=		MPEG-4 output support
-LAVF_DESC=		libav* format input/output support (requires FFmpeg)
+LAVF_DESC=		libav* format input support (requires FFmpeg)
 
 ASM_CONFIGURE_OFF=	--disable-asm
 
