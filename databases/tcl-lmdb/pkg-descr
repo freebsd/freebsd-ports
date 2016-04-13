@@ -1,0 +1,4 @@
+This is the Lightning Memory-Mapped Database (LMDB) extension for Tcl using the
+Tcl Extension Architecture (TEA).
+
+WWW: https://sites.google.com/site/ray2501/tcl-lmdb
