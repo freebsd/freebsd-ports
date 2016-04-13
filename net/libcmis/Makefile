@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	libcmis
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	net devel
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Client library for the CMIS interface
