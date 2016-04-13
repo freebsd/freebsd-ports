@@ -546,8 +546,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # INSTALL_LIB	- As INSTALL_DATA, but also strips the file.
 # INSTALL_SCRIPT
 #				- A command to install executable scripts.
-# INSTALL_DATA	- A command to install sharable data.
-# INSTALL_MAN	- A command to install manpages.
+# INSTALL_DATA	- A command to install sharable data and static libs.
+# INSTALL_MAN	- A command to install manpages and documentation.
 # COPYTREE_BIN
 # COPYTREE_SHARE
 #				- Similiar to INSTALL_PROGRAM and INSTALL_DATA commands but
