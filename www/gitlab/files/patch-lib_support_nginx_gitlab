@@ -1,4 +1,4 @@
---- lib/support/nginx/gitlab.orig	2016-03-10 19:32:49 UTC
+--- lib/support/nginx/gitlab.orig	2016-04-04 10:12:21 UTC
 +++ lib/support/nginx/gitlab
 @@ -17,7 +17,7 @@
  ## See installation.md#using-https for additional HTTPS configuration details.
@@ -9,12 +9,12 @@
  }
  
  ## Normal HTTP host
-@@ -30,7 +30,7 @@ server {
-   listen [::]:80 default_server;
-   server_name YOUR_SERVER_FQDN; ## Replace this with something like gitlab.example.com
-   server_tokens off; ## Don't show the nginx version number, a security best practice
--  root /home/git/gitlab/public;
-+  root /usr/local/www/gitlab/public;
- 
-   ## See app/controllers/application_controller.rb for headers set
+@@ -62,7 +62,7 @@ server {
+   error_page 500 /500.html;
+   error_page 502 /502.html;
+   location ~ ^/(404|422|500|502)\.html$ {
+-    root /home/git/gitlab/public;
++    root /usr/local/www/gitlab/public;
+     internal;
+   }
  

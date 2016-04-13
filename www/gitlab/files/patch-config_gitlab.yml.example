@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2016-03-10 19:32:49 UTC
+--- config/gitlab.yml.example.orig	2016-04-04 10:12:21 UTC
 +++ config/gitlab.yml.example
-@@ -402,11 +402,11 @@ production: &base
+@@ -408,11 +408,11 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -14,7 +14,7 @@
  
      # File that contains the secret key for verifying access for gitlab-shell.
      # Default is '.gitlab_shell_secret' relative to Rails.root (i.e. root of the GitLab app).
-@@ -423,7 +423,7 @@ production: &base
+@@ -429,7 +429,7 @@ production: &base
    # CAUTION!
    # Use the default values unless you really know what you are doing
    git:
