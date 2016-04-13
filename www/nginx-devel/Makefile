@@ -89,6 +89,7 @@ OPTIONS_DEFINE=	\
 	HTTP_TARANTOOL \
 	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
+	HTTP_UPSTREAM_CHECK \
 	HTTP_UPSTREAM_FAIR \
 	HTTP_UPSTREAM_STICKY \
 	HTTP_VIDEO_THUMBEXTRACTOR \
@@ -193,6 +194,7 @@ HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
 HTTP_TARANTOOL_DESC=		3rd party tarantool upstream module
 HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
+HTTP_UPSTREAM_CHECK_DESC=	3rd party upstream check module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_VIDEO_THUMBEXTRACTOR_DESC=	3rd party video_thumbextractor module
@@ -622,11 +624,28 @@ GH_TAGNAME+=	v${NGINX_UPLOADPROGRESS_VERSION}:uploadprogress
 CONFIGURE_ARGS+=--add-module=${WRKSRC_uploadprogress}
 .endif
 
+.if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_CHECK)
+# WWW: https://github.com/yaoweibin/nginx_upstream_check_module
+NGINX_UPSTREAM_CHECK_VERSION=	10782ea
+GH_ACCOUNT+=	yaoweibin:upstreamcheck
+GH_PROJECT+=	nginx_upstream_check_module:upstreamcheck
+GH_TAGNAME+=	${NGINX_UPSTREAM_CHECK_VERSION}:upstreamcheck
+CONFIGURE_ARGS+=--add-module=${WRKSRC_upstreamcheck}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_hash_module.c \
+		${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_ip_hash_module.c \
+		${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_least_conn_module.c \
+		${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.c \
+		${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.h
+.endif
+
 .if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR)
 NGINX_UPSTREAM_FAIR_VERSION=	20090923
 MASTER_SITES+=	LOCAL/osa:upstreamfair
 DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
+.if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_CHECK)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream_fair_module.c
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY}
