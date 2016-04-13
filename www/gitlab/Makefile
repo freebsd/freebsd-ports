@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	8.5.5
+PORTVERSION=	8.6.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -19,13 +19,14 @@ RUN_DEPENDS=	git>=2.4.3:devel/git \
 	rubygem-rails4>=4.2.5.2:www/rubygem-rails4 \
 	rubygem-rails-deprecated_sanitizer>=1.0.3:devel/rubygem-rails-deprecated_sanitizer \
 	rubygem-responders>=2.0:www/rubygem-responders \
-	rubygem-sprockets>=2.12.3:devel/rubygem-sprockets \
+	rubygem-sprockets3>=3.3.5:devel/rubygem-sprockets3 \
 	rubygem-default_value_for>=3.0.1:devel/rubygem-default_value_for \
 	rubygem-pg>=0.18.2:databases/rubygem-pg \
 	rubygem-devise-rails4>=3.5.4:devel/rubygem-devise-rails4 \
 	rubygem-devise-async-rails4>=0.9.0:devel/rubygem-devise-async-rails4 \
 	rubygem-doorkeeper>=2.2.0:security/rubygem-doorkeeper \
 	rubygem-omniauth>=1.3.1:security/rubygem-omniauth \
+	rubygem-omniauth-auth0>=1.4.1:net/rubygem-omniauth-auth0 \
 	rubygem-omniauth-azure-oauth2>=0.0.6:net/rubygem-omniauth-azure-oauth2 \
 	rubygem-omniauth-bitbucket>=0.0.2:security/rubygem-omniauth-bitbucket \
 	rubygem-omniauth-cas3>=1.1.2:security/rubygem-omniauth-cas3 \
@@ -33,7 +34,7 @@ RUN_DEPENDS=	git>=2.4.3:devel/git \
 	rubygem-omniauth-github>=1.1.1:net/rubygem-omniauth-github \
 	rubygem-omniauth-gitlab>=1.0.0:security/rubygem-omniauth-gitlab \
 	rubygem-omniauth-google-oauth2>=0.2.0:net/rubygem-omniauth-google-oauth2 \
-	rubygem-omniauth-saml>=1.4.2:security/rubygem-omniauth-saml \
+	rubygem-omniauth-saml>=1.5.0:security/rubygem-omniauth-saml \
 	rubygem-omniauth-shibboleth>=1.2.0:security/rubygem-omniauth-shibboleth \
 	rubygem-omniauth-twitter>=1.2.0:net/rubygem-omniauth-twitter \
 	rubygem-omniauth_crowd>=2.2.0:devel/rubygem-omniauth_crowd \
@@ -44,16 +45,17 @@ RUN_DEPENDS=	git>=2.4.3:devel/git \
 	rubygem-rqrcode-rails3>=0.1.7:www/rubygem-rqrcode-rails3 \
 	rubygem-attr_encrypted>=1.3.4:security/rubygem-attr_encrypted \
 	rubygem-browser>=1.0.0:www/rubygem-browser \
-	rubygem-gitlab_git>=8.2:devel/rubygem-gitlab_git \
+	rubygem-gitlab_git>=10.0:devel/rubygem-gitlab_git \
 	rubygem-gitlab_omniauth-ldap>=1.2.1:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-gollum-lib>=4.1.0:www/rubygem-gollum-lib \
+	rubygem-gollum-rugged_adapter>=0.4.2:www/rubygem-gollum-rugged_adapter \
 	rubygem-github-linguist>=4.7.0:textproc/rubygem-github-linguist \
 	rubygem-grape>=0.13.0:devel/rubygem-grape \
 	rubygem-grape-entity>=0.4.2:devel/rubygem-grape-entity \
 	rubygem-rack-cors>=0.4.0:www/rubygem-rack-cors \
 	rubygem-kaminari-rails4>=0.16.3:www/rubygem-kaminari-rails4 \
 	rubygem-haml-rails-rails4>=0.9.0:www/rubygem-haml-rails-rails4 \
-	rubygem-carrierwave>=0.9.0:www/rubygem-carrierwave \
+	rubygem-carrierwave>=0.10.0:www/rubygem-carrierwave \
 	rubygem-dropzonejs-rails>=0.7.1:www/rubygem-dropzonejs-rails \
 	rubygem-fog>=1.36:devel/rubygem-fog \
 	rubygem-unf>=0.1.4:textproc/rubygem-unf \
@@ -72,7 +74,7 @@ RUN_DEPENDS=	git>=2.4.3:devel/git \
 	rubygem-rouge>=1.10.1:textproc/rubygem-rouge \
 	rubygem-nokogiri>=1.6.7.2:textproc/rubygem-nokogiri  \
 	rubygem-diffy>=3.0.3:textproc/rubygem-diffy \
-	rubygem-unicorn>=4.8.2:www/rubygem-unicorn \
+	rubygem-unicorn>=4.9.0:www/rubygem-unicorn \
 	rubygem-unicorn-worker-killer>=0.4.2:www/rubygem-unicorn-worker-killer \
 	rubygem-state_machines-activerecord>=0.3.0:databases/rubygem-state_machines-activerecord \
 	rubygem-after_commit_queue>=0:databases/rubygem-after_commit_queue \
@@ -117,13 +119,13 @@ RUN_DEPENDS=	git>=2.4.3:devel/git \
 	rubygem-jquery-rails4>=4.0.0:www/rubygem-jquery-rails4 \
 	rubygem-jquery-scrollto-rails>=1.4.3:www/rubygem-jquery-scrollto-rails \
 	rubygem-jquery-ui-rails-rails4>=5.0.0:www/rubygem-jquery-ui-rails-rails4 \
-	rubygem-nprogress-rails>=0.1.6.7:devel/rubygem-nprogress-rails \
 	rubygem-raphael-rails>=2.1.2:www/rubygem-raphael-rails \
 	rubygem-request_store>=1.2.0:devel/rubygem-request_store \
 	rubygem-select2-rails>=3.5.9:www/rubygem-select2-rails \
 	rubygem-virtus>=1.0.1:devel/rubygem-virtus \
 	rubygem-net-ssh>=3.0.1:security/rubygem-net-ssh \
 	rubygem-sentry-raven>=0.15.4:devel/rubygem-sentry-raven \
+	rubygem-premailer-rails>=1.9.0:mail/rubygem-premailer-rails \
 	rubygem-gitlab_meta>=7.0:devel/rubygem-gitlab_meta \
 	rubygem-newrelic_rpm>=3.9.4.245:devel/rubygem-newrelic_rpm \
 	rubygem-newrelic-grape>=0:devel/rubygem-newrelic-grape \
@@ -140,6 +142,8 @@ RUN_DEPENDS=	git>=2.4.3:devel/git \
 
 USE=	pgsql=yes
 WANT=	pgsql=9.1+
+
+USE_RUBY=	yes
 
 USE_RC_SUBR=	gitlab
 USE_GITHUB=	yes
@@ -168,7 +172,6 @@ do-install:
 
 post-install:
 	${MKDIR} ${STAGEDIR}/home/git/repositories
-	${MKDIR} ${STAGEDIR}/home/git/gitlab-satellites
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/public/assets
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/tmp/cache
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/tmp/sessions
