@@ -19,7 +19,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION=	1
+PORTREVISION?=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -80,8 +80,8 @@ CFLAGS_armv6+=		-mcpu=arm1136jf-s
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == "no"
-PLIST_FILES=	bin/x264
-LIB_DEPENDS=	libx264.so:multimedia/libx264
+PLIST_FILES+=	bin/x264
+LIB_DEPENDS+=	libx264.so:multimedia/libx264
 .endif
 
 .if ${PORT_OPTIONS:MGCC}
