@@ -2,18 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	honggfuzz
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	General-purpose fuzzer with simple, command-line interface
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	gmake tar:tgz
+USES=		gmake tar:tgz
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+GC_TAGNAME=	6d01e82
+
 OPTIONS_DEFINE=	EXAMPLES
+
+BROKEN_FreeBSD_9=Does not build on 9.x: compiler options unrecognized
 
 # inplace replacement to remove relative binary path in examples scripts
 post-patch:
