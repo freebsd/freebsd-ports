@@ -23,8 +23,6 @@ USE_PERL5=	build # pod2man
 BASH_CMD?=	bash # can be zsh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON3="${PYTHON_CMD}"
-# XXX D4158: --mandir as SET_LATE_CONFIGURE_ARGS doesn't respect CONFIGURE_CMD
-CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man"
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

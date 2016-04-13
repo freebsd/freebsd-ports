@@ -139,7 +139,7 @@ PLIST_SUB+=	POSIX="@comment "
 
 pre-configure:
 	@if [ ${EXTRAS} ]; then \
-		cd ${WRKSRC} && ./${CONFIGURE_SCRIPT} --enable-extras=${EXTRAS} ; \
+		cd ${WRKSRC} && ${CONFIGURE_CMD} --enable-extras=${EXTRAS} ; \
 	fi
 
 post-patch:

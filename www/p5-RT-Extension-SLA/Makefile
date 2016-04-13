@@ -55,7 +55,7 @@ SUB_FILES+=	pkg-message
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 	    unset PREFIX && \
-	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
+	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ${CONFIGURE_CMD} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
 post-configure:
