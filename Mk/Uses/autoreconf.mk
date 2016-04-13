@@ -65,6 +65,7 @@ BUILD_DEPENDS+=	libtoolize:devel/libtool
 .endif
 
 AUTORECONF?=	${LOCALBASE}/bin/autoreconf
+AUTORECONF_WRKSRC?=	${WRKSRC}
 
 .endif
 
@@ -76,16 +77,16 @@ _USES_configure+=	470:do-autoreconf
 do-autoreconf:
 .for f in AUTHORS ChangeLog INSTALL NEWS README
 # Don't modify time stamps if the files already exist
-	@test -e ${CONFIGURE_WRKSRC}/${f} || ${TOUCH} ${CONFIGURE_WRKSRC}/${f}
+	@test -e ${AUTORECONF_WRKSRC}/${f} || ${TOUCH} ${AUTORECONF_WRKSRC}/${f}
 .endfor
 .if defined(_USE_GNOME) && ${_USE_GNOME:Mintltool}
-	@(cd ${CONFIGURE_WRKSRC} && \
+	@(cd ${AUTORECONF_WRKSRC} && \
 		if test -f configure.ac; then configure=configure.ac; \
 		else configure=configure.in; fi && \
 		if ${EGREP} -q '^(AC|IT)_PROG_INTLTOOL' $${configure}; \
 		then ${LOCALBASE}/bin/intltoolize -f -c; fi)
 .endif
-	@(cd ${CONFIGURE_WRKSRC} && ${AUTORECONF} -f -i)
+	@(cd ${AUTORECONF_WRKSRC} && ${AUTORECONF} -f -i)
 .endif
 
 .endif
