@@ -27,25 +27,19 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PLIST_SUB=	SONUM=${PORTVERSION:C/.*\.//}
 
-CONFIGURE_WRKSRC=	${WRKSRC}/build
-BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB-4.1 && ${MAKE} -V WRKSRC
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 USES=		gmake python tar:bzip2
 
-CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} --with-omniorb=${LOCALBASE}
 
-.include <bsd.port.options.mk>
-
 pre-configure:
-	${MKDIR} ${CONFIGURE_WRKSRC}
 	cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
 
 post-install:
@@ -54,17 +48,17 @@ post-install:
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming/__init__.py',None,'CosNaming/__init__.pyc',True)"
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming__POA/__init__.py',None,'CosNaming__POA/__init__.pyc',True)"
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('omniidl_be/python.py',None,'omniidl_be/python.pyc',True)"
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tex
 	${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy.* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy/* ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/tex/* ${STAGEDIR}${DOCSDIR}/tex
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${FIND} . \
 	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
