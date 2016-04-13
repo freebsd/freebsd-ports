@@ -28,6 +28,6 @@ post-patch:
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_ARGS} \
-		${PERL5} ./${CONFIGURE_SCRIPT}
+		${PERL5} ${CONFIGURE_CMD}
 
 .include <bsd.port.mk>
