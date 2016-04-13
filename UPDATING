@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160413:
+  AFFECTS: All users of www/node-devel
+  AUTHOR: bradleythughes@fastmail.fm
+
+  www/node-devel was outdated and has been removed. Upstream no longer
+  releases a development version. You can use the www/node port to get
+  node.js 5.x by running one of the following commands:
+
+  # pkg install node
+    or
+  # portmaster -o www/node www/node-devel
+    or
+  # portupgrade -o www/node www/node-devel
+
 20160412:
   AFFECTS: Users of net/samba42 and net/samba/43
   AUTHOR: timur@FreeBSD.org

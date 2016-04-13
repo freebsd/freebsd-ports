@@ -8278,3 +8278,4 @@ textproc/p5-ElasticSearch-SearchBuilder|textproc/p5-Search-Elasticsearch|2016-04
 textproc/p5-ElasticSearch-legacy|textproc/p5-Search-Elasticsearch|2016-04-10|Has expired: Use textproc/p5-Search-Elasticsearch which is the official client
 textproc/py-openpyxl1|textproc/py-openpyxl|2016-04-10|Has expired: Use textproc/py-openpyxl instead
 devel/libmcs||2016-04-13|Development no longer active and is not used any more
+www/node-devel|www/node|2016-04-13|Upstream no longer releases a development version
