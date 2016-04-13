@@ -8,6 +8,7 @@ usr/bin/parec
 usr/bin/parecord
 usr/bin/pasuspender
 usr/bin/pax11publish
+usr/lib/libpulsedsp.so
 usr/lib64/libpulsedsp.so
 usr/share/man/man1/pacat.1.gz
 usr/share/man/man1/pacmd.1.gz

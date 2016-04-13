@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/pulseaudio-utils-0.9.21-21.el6.x86_64.rpm) = 449fdb518b34061ab3933efb484a859843fbefe5b1368b0adf241de312cac66b
 SIZE (rpm/x86_64/centos/6.7/pulseaudio-utils-0.9.21-21.el6.x86_64.rpm) = 72740
+SHA256 (rpm/x86_64/centos/6.7/pulseaudio-utils-0.9.21-21.el6.i686.rpm) = b3badf869a14b2992de00f4c32910af0cbda62e17e74d60b604fb6597b93c25a
+SIZE (rpm/x86_64/centos/6.7/pulseaudio-utils-0.9.21-21.el6.i686.rpm) = 72156
 SHA256 (rpm/x86_64/centos/6.7/pulseaudio-0.9.21-21.el6.src.rpm) = 8528b5febbcff3b6f345d9b4e7d2e375609bbc392c2b4ed583a242502266f54c
 SIZE (rpm/x86_64/centos/6.7/pulseaudio-0.9.21-21.el6.src.rpm) = 2385218
