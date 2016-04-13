@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-base
-PORTVERSION=	2020151023
+PORTVERSION=	20160413
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -10,84 +10,83 @@ DISTFILES=
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Base system packages
 
-RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
-		pc-updatemanager:${PORTSDIR}/sysutils/pcbsd-utils \
-                ${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh \
-		syscache:${PORTSDIR}/sysutils/pcbsd-syscache \
-		lpreserver:${PORTSDIR}/sysutils/life-preserver \
-		${LOCALBASE}/share/appcafe/dispatcher:${PORTSDIR}/sysutils/pcbsd-appweb \
-		git:${PORTSDIR}/devel/git \
-		beadm:${PORTSDIR}/sysutils/beadm \
-		samba42>=0:${PORTSDIR}/net/samba42 \
-		xorg>=0:${PORTSDIR}/x11/xorg \
-		xf86-input-synaptics>=0:${PORTSDIR}/x11-drivers/xf86-input-synaptics \
-		xf86-video-intel>=0:${PORTSDIR}/x11-drivers/xf86-video-intel \
-		xf86-video-scfb>=0:${PORTSDIR}/x11-drivers/xf86-video-scfb \
-		noto>=0:${PORTSDIR}/x11-fonts/noto \
-		droid-fonts-ttf>=0:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
-		xv:${PORTSDIR}/graphics/xv \
-		libvdpau>=0:${PORTSDIR}/multimedia/libvdpau \
-		rdesktop:${PORTSDIR}/net/rdesktop \
-		gtk2-qtcurve-theme>=0:${PORTSDIR}/x11-themes/qtcurve-gtk2 \
-		qt4-style-qtcurve>=0:${PORTSDIR}/x11-themes/qtcurve-qt4 \
-		gtk-theme-switch>=0:${PORTSDIR}/x11/gtk-theme-switch2 \
-		alsa-lib>=0:${PORTSDIR}/audio/alsa-lib \
-		fluxbox:${PORTSDIR}/x11-wm/fluxbox \
-		fluxbox-tenr-styles-pack>=0:${PORTSDIR}/x11-themes/fluxbox-tenr-styles-pack \
-		${LOCALBASE}/etc/rc.d/fail2ban:${PORTSDIR}/security/py-fail2ban \
-		vorbis-tools>=0:${PORTSDIR}/audio/vorbis-tools \
-		zip:${PORTSDIR}/archivers/zip \
-		unzip:${PORTSDIR}/archivers/unzip \
-		sudo:${PORTSDIR}/security/sudo \
-		cdrdao:${PORTSDIR}/sysutils/cdrdao \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		ssh-askpass:${PORTSDIR}/security/openssh-askpass \
-		cups-pdf>=0:${PORTSDIR}/print/cups-pdf \
-		cups-filters>=0:${PORTSDIR}/print/cups-filters \
-		cups-bjnp>=0:${PORTSDIR}/print/cups-bjnp \
-		fusefs-ntfs>=0:${PORTSDIR}/sysutils/fusefs-ntfs \
-		xdg-open:${PORTSDIR}/devel/xdg-utils \
-		rsync:${PORTSDIR}/net/rsync \
-		pwcview:${PORTSDIR}/multimedia/pwcview \
-		mtools>=0:${PORTSDIR}/emulators/mtools \
-		nss_mdns>=0:${PORTSDIR}/dns/nss_mdns \
-		rar:${PORTSDIR}/archivers/rar \
-		cursor-jimmac-theme>=0:${PORTSDIR}/x11-themes/cursor-jimmac-theme \
-		cuse4bsd-kmod>=0:${PORTSDIR}/multimedia/cuse4bsd-kmod \
-		webcamd>=0:${PORTSDIR}/multimedia/webcamd \
-		system-config-printer:${PORTSDIR}/print/system-config-printer \
-		numlockx:${PORTSDIR}/x11/numlockx \
-		pciutils>=0:${PORTSDIR}/sysutils/pciutils \
-		gpg:${PORTSDIR}/security/gnupg \
-		linux_dvbwrapper-kmod>=0:${PORTSDIR}/multimedia/linux_dvbwrapper-kmod \
-		xvkbd:${PORTSDIR}/x11/xvkbd \
-		volman>=0:${PORTSDIR}/sysutils/volman \
-		fribidi>=0:${PORTSDIR}/converters/fribidi \
-		libdvdcss>=0:${PORTSDIR}/multimedia/libdvdcss \
-		pam_ldap>=0:${PORTSDIR}/security/pam_ldap \
-		pam_mkhomedir>=0:${PORTSDIR}/security/pam_mkhomedir \
-		nss_ldap>=0:${PORTSDIR}/net/nss_ldap \
-		rpm2cpio>=0:${PORTSDIR}/archivers/rpm2cpio \
-		gsmartcontrol:${PORTSDIR}/sysutils/gsmartcontrol \
-		xsane:${PORTSDIR}/graphics/xsane \
-		libaacs>=0:${PORTSDIR}/multimedia/libaacs \
-		xbrightness>=0:${PORTSDIR}/x11/xbrightness \
-		x11vnc>=0:${PORTSDIR}/net/x11vnc \
-		ataidle>=0:${PORTSDIR}/sysutils/ataidle \
-		tk84>=0:${PORTSDIR}/x11-toolkits/tk84 \
-		tk85>=0:${PORTSDIR}/x11-toolkits/tk85 \
-		tk86>=0:${PORTSDIR}/x11-toolkits/tk86 \
-		pulseaudio>=0:${PORTSDIR}/audio/pulseaudio \
-		paprefs>=0:${PORTSDIR}/audio/paprefs \
-		pavucontrol>=0:${PORTSDIR}/audio/pavucontrol \
-		disktype>=0:${PORTSDIR}/sysutils/disktype \
-		unrar:${PORTSDIR}/archivers/unrar \
-		7z:${PORTSDIR}/archivers/p7zip \
-		avahi-browse:${PORTSDIR}/net/avahi-app \
-		anacron:${PORTSDIR}/sysutils/anacron \
-		openntpd>=0:${PORTSDIR}/net/openntpd \
-		socat>=0:${PORTSDIR}/net/socat \
-		tor>=0:${PORTSDIR}/security/tor
+RUN_DEPENDS=	${LOCALBASE}/bin/pc-updategui:/sysutils/pcbsd-utils-qt5 \
+		${LOCALBASE}/bin/pc-updatemanager:/sysutils/pcbsd-utils \
+                ${LOCALBASE}/share/pcbsd/scripts/functions.sh:/sysutils/pcbsd-libsh \
+		${LOCALBASE}/bin/sysadm-binary:/sysutils/sysadm \
+		${LOCALBASE}/bin/lpreserver:/sysutils/life-preserver \
+		${LOCALBASE}/bin/git:/devel/git \
+		${LOCALBASE}/bin/beadm:/sysutils/beadm \
+		${LOCALBASE}/bin/xv:/graphics/xv \
+		${LOCALBASE}/etc/rc.d/fail2ban:/security/py-fail2ban \
+		${LOCALBASE}/bin/zip:/archivers/zip \
+		${LOCALBASE}/bin/unzip:/archivers/unzip \
+		${LOCALBASE}/bin/sudo:/security/sudo \
+		${LOCALBASE}/bin/cdrdao:/sysutils/cdrdao \
+		${LOCALBASE}/bin/growisofs:/sysutils/dvd+rw-tools \
+		${LOCALBASE}/bin/ssh-askpass:/security/openssh-askpass \
+		${LOCALBASE}/bin/xdg-open:/devel/xdg-utils \
+		${LOCALBASE}/bin/rsync:/net/rsync \
+		${LOCALBASE}/bin/pwcview:/multimedia/pwcview \
+		${LOCALBASE}/bin/rar:/archivers/rar \
+		${LOCALBASE}/bin/system-config-printer:/print/system-config-printer \
+		${LOCALBASE}/bin/numlockx:/x11/numlockx \
+		${LOCALBASE}/bin/gpg:/security/gnupg \
+		${LOCALBASE}/bin/xvkbd:/x11/xvkbd \
+		${LOCALBASE}/bin/unrar:/archivers/unrar \
+		${LOCALBASE}/bin/7z:/archivers/p7zip \
+		${LOCALBASE}/bin/avahi-browse:/net/avahi-app \
+		${LOCALBASE}/bin/anacron:/sysutils/anacron \
+		${LOCALBASE}/bin/gsmartcontrol:/sysutils/gsmartcontrol \
+		${LOCALBASE}/bin/xsane:/graphics/xsane \
+		${LOCALBASE}/bin/rdesktop:/net/rdesktop \
+		${LOCALBASE}/bin/fluxbox:/x11-wm/fluxbox \
+		samba42>=0:/net/samba42 \
+		xorg>=0:/x11/xorg \
+		xf86-input-synaptics>=0:/x11-drivers/xf86-input-synaptics \
+		xf86-video-intel>=0:/x11-drivers/xf86-video-intel \
+		xf86-video-scfb>=0:/x11-drivers/xf86-video-scfb \
+		noto>=0:/x11-fonts/noto \
+		droid-fonts-ttf>=0:/x11-fonts/droid-fonts-ttf \
+		libvdpau>=0:/multimedia/libvdpau \
+		gtk2-qtcurve-theme>=0:/x11-themes/qtcurve-gtk2 \
+		qt4-style-qtcurve>=0:/x11-themes/qtcurve-qt4 \
+		gtk-theme-switch>=0:/x11/gtk-theme-switch2 \
+		alsa-lib>=0:/audio/alsa-lib \
+		fluxbox-tenr-styles-pack>=0:/x11-themes/fluxbox-tenr-styles-pack \
+		vorbis-tools>=0:/audio/vorbis-tools \
+		cups-pdf>=0:/print/cups-pdf \
+		cups-filters>=0:/print/cups-filters \
+		cups-bjnp>=0:/print/cups-bjnp \
+		fusefs-ntfs>=0:/sysutils/fusefs-ntfs \
+		mtools>=0:/emulators/mtools \
+		nss_mdns>=0:/dns/nss_mdns \
+		cursor-jimmac-theme>=0:/x11-themes/cursor-jimmac-theme \
+		cuse4bsd-kmod>=0:/multimedia/cuse4bsd-kmod \
+		webcamd>=0:/multimedia/webcamd \
+		pciutils>=0:/sysutils/pciutils \
+		linux_dvbwrapper-kmod>=0:/multimedia/linux_dvbwrapper-kmod \
+		volman>=0:/sysutils/volman \
+		fribidi>=0:/converters/fribidi \
+		libdvdcss>=0:/multimedia/libdvdcss \
+		pam_ldap>=0:/security/pam_ldap \
+		pam_mkhomedir>=0:/security/pam_mkhomedir \
+		nss_ldap>=0:/net/nss_ldap \
+		rpm2cpio>=0:/archivers/rpm2cpio \
+		libaacs>=0:/multimedia/libaacs \
+		xbrightness>=0:/x11/xbrightness \
+		x11vnc>=0:/net/x11vnc \
+		ataidle>=0:/sysutils/ataidle \
+		tk84>=0:/x11-toolkits/tk84 \
+		tk85>=0:/x11-toolkits/tk85 \
+		tk86>=0:/x11-toolkits/tk86 \
+		pulseaudio>=0:/audio/pulseaudio \
+		paprefs>=0:/audio/paprefs \
+		pavucontrol>=0:/audio/pavucontrol \
+		disktype>=0:/sysutils/disktype \
+		openntpd>=0:/net/openntpd \
+		socat>=0:/net/socat \
+		tor>=0:/security/tor
 
 NO_BUILD=	yes
 

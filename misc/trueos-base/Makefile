@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-base
-PORTVERSION=	2020151124
+PORTVERSION=	20160413
 CATEGORIES=	misc
 MASTER_SITES=	# Empty
 DISTFILES=	# Empty
@@ -13,23 +13,23 @@ DISTFILES=	# Empty
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD / TrueOS Command-Line Utilities
 
-RUN_DEPENDS=	pc-updatemanager:${PORTSDIR}/sysutils/pcbsd-utils \
-		${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh \
-		lpreserver:${PORTSDIR}/sysutils/life-preserver \
-		beadm:${PORTSDIR}/sysutils/beadm \
-		sudo:${PORTSDIR}/security/sudo \
-		bash:${PORTSDIR}/shells/bash \
-		zsh:${PORTSDIR}/shells/zsh \
-		rsync:${PORTSDIR}/net/rsync \
-		smartd:${PORTSDIR}/sysutils/smartmontools \
-		jailme:${PORTSDIR}/sysutils/jailme \
-		screen:${PORTSDIR}/sysutils/screen \
-		nano:${PORTSDIR}/editors/nano \
-		mosh:${PORTSDIR}/net/mosh \
-		zfs-stats:${PORTSDIR}/sysutils/zfs-stats \
-		ataidle>=0:${PORTSDIR}/sysutils/ataidle \
-		anacron:${PORTSDIR}/sysutils/anacron \
-		openntpd>=0:${PORTSDIR}/net/openntpd
+RUN_DEPENDS=	${LOCALBASE}/bin/pc-updatemanager:/sysutils/pcbsd-utils \
+		${LOCALBASE}/share/pcbsd/scripts/functions.sh:/sysutils/pcbsd-libsh \
+		${LOCALBASE}/bin/lpreserver:/sysutils/life-preserver \
+		${LOCALBASE}/bin/beadm:/sysutils/beadm \
+		${LOCALBASE}/bin/sudo:/security/sudo \
+		${LOCALBASE}/bin/bash:/shells/bash \
+		${LOCALBASE}/bin/zsh:/shells/zsh \
+		${LOCALBASE}/bin/rsync:/net/rsync \
+		${LOCALBASE}/bin/smartd:/sysutils/smartmontools \
+		${LOCALBASE}/bin/jailme:/sysutils/jailme \
+		${LOCALBASE}/bin/screen:/sysutils/screen \
+		${LOCALBASE}/bin/tmux:/sysutils/tmux \
+		${LOCALBASE}/bin/nano:/editors/nano \
+		${LOCALBASE}/bin/mosh:/net/mosh \
+		${LOCALBASE}/bin/zfs-stats:/sysutils/zfs-stats \
+		ataidle>=0:/sysutils/ataidle \
+		openntpd>=0:/net/openntpd
 
 NO_BUILD=	yes
 
