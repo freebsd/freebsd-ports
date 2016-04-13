@@ -4,4 +4,4 @@ It runs using either a native code library or a 100% Pure Java driver
 based on NestedVM emulation (but in this package only the native version 
 is installed).
 
-WWW: http://www.zentus.com/sqlitejdbc/
+WWW: http://web.archive.org/web/20120721075310/http://www.zentus.com/sqlitejdbc/
