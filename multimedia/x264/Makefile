@@ -19,7 +19,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -51,27 +51,40 @@ HAS_CONFIGURE=	yes
 SHEBANG_FILES=	configure
 PLIST_FILES?=	bin/x264
 
-OPTIONS_DEFINE+=	ASM DEBUG GCC GPAC LAVF PGO
-OPTIONS_DEFAULT+=	ASM GPAC
+OPTIONS_DEFINE+=	ASM DEBUG FFMS GCC LAVF PGO SWSCALE
+OPTIONS_RADIO+=		MP4
+OPTIONS_RADIO_MP4+=	GPAC LSMASH
+OPTIONS_DEFAULT+=	ASM LSMASH
 
-GPAC_DESC=		MPEG-4 output support
+FFMS_DESC=		FFmpeg Source input support
+GPAC_DESC=		GPAC library support
 LAVF_DESC=		libav* format input support (requires FFmpeg)
+LSMASH_DESC=		L-SMASH library support
+MP4_DESC=		MPEG-4 output
+SWSCALE_DESC=		Resize video filter
 
 ASM_CONFIGURE_OFF=	--disable-asm
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 DEBUG_CONFIGURE_OFF=	--enable-strip
 
+FFMS_LIB_DEPENDS=	libffms2.so:multimedia/ffms2
+FFMS_CONFIGURE_OFF=	--disable-ffms
+FFMS_IMPLIES=		SWSCALE
+
 GCC_VARS=		USE_GCC=yes
 
 GPAC_CONFIGURE_OFF=	--disable-gpac
 GPAC_LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac
 
-LAVF_CONFIGURE_OFF=	--disable-swscale --disable-lavf
+LAVF_CONFIGURE_OFF=	--disable-lavf
 LAVF_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 			libavformat.so:multimedia/ffmpeg \
-			libavutil.so:multimedia/ffmpeg \
-			libswscale.so:multimedia/ffmpeg
+			libavutil.so:multimedia/ffmpeg
+LAVF_IMPLIES=		SWSCALE
+
+LSMASH_LIB_DEPENDS=	liblsmash.so:multimedia/l-smash
+LSMASH_CONFIGURE_OFF=	--disable-lsmash
 
 PGO_DISTFILES=		${Y4M_VIDEO_DISTFILE}:pgo
 PGO_MAKE_ENV=		VIDS="${WRKDIR}/${Y4M_VIDEO}"
@@ -82,6 +95,10 @@ Y4M_VIDEO_DISTFILE=	example.y4m.bz2
 PGO_VARS=		USE_GCC=any \
 			RESTRICTED="${Y4M_VIDEO_DISTFILE} file may not be mirrored" \
 			RESTRICTED_FILES="${Y4M_VIDEO_DISTFILE}"
+
+SWSCALE_CONFIGURE_OFF=	--disable-swscale
+SWSCALE_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
+			libswscale.so:multimedia/ffmpeg
 
 CONFIGURE_ARGS?=	--system-libx264
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
