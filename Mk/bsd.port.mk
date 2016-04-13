@@ -780,6 +780,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  configure stage will not do anything if this is not set.
 # GNU_CONFIGURE	- If set, you are using GNU configure (optional).  Implies
 #				  HAS_CONFIGURE.
+# CONFIGURE_OUTSOURCE - If set, this port builds in an empty ${CONFIGURE_WRKSRC}
+#				  not being under ${WRKSRC}.
 # CONFIGURE_WRKSRC
 #				- Directory to run configure in.
 #				  Default: ${WRKSRC}
@@ -1552,6 +1554,14 @@ EXTRACT_WRKDIR:=		${WRKDIR}
 .endif
 .if defined(WRKSRC_SUBDIR)
 WRKSRC:=		${WRKSRC}/${WRKSRC_SUBDIR}
+.endif
+
+.if defined(CONFIGURE_OUTSOURCE)
+CONFIGURE_CMD?=		${WRKSRC}/${CONFIGURE_SCRIPT}
+CONFIGURE_WRKSRC?=	${WRKDIR}/.build
+BUILD_WRKSRC?=		${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC?=	${CONFIGURE_WRKSRC}
+TEST_WRKSRC?=		${CONFIGURE_WRKSRC}
 .endif
 
 PATCH_WRKSRC?=	${WRKSRC}
@@ -3334,6 +3344,7 @@ do-configure:
 	done
 .endif
 .if defined(HAS_CONFIGURE)
+	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@(cd ${CONFIGURE_WRKSRC} && \
 	    ${SET_LATE_CONFIGURE_ARGS} \
 		if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
