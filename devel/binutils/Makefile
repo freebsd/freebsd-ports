@@ -89,7 +89,7 @@ post-install:
 	    ${STAGEDIR}${PREFIX}/man/man1/${BUTARGET}-${tool}.1 \
 	    ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/${tool}
 .endfor
-.if ${BUREMOVE:Mld}
+.if defined(BUREMOVE) && ${BUREMOVE:Mld}
 	@${RM} -rf ${STAGEDIR}${PREFIX}/${BUTARGET}/lib/ldscripts
 .endif
 
