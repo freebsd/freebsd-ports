@@ -60,9 +60,9 @@ TEST_TARGET=	unittests
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
 # Cannot be built
-IGNORE=	unsupported on FreeBSD 9 or older
+IGNORE=	unsupported on FreeBSD 10.1 or older
 .endif
 
 post-install:
