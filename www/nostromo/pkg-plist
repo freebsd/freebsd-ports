@@ -2,7 +2,7 @@ man/man8/nhttpd.8.gz
 sbin/crypt
 sbin/nhttpd
 %%NOSTROMODIR%%/conf/mimes
-@sample %%NOSTROMODIR%%/conf/nhttpd.conf.sample
+@sample %%NOSTROMODIR%%/conf/nhttpd.conf-dist
 %%NOSTROMODIR%%/htdocs/index.html
 %%NOSTROMODIR%%/htdocs/nostromo.gif
 %%NOSTROMODIR%%/htdocs/cgi-bin/printenv
