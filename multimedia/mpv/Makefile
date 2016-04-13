@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player waf-project:waf
 GH_PROJECT=	waf:waf
-GH_TAGNAME=	waf-1.8.19:waf
+GH_TAGNAME=	waf-1.9.0pre1:waf
 
 WAF_CMD=	${WRKSRC_waf}/waf-light
 
@@ -34,8 +33,18 @@ CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--mandir=${MANPREFIX}/man \
 		--prefix=${PREFIX} \
 		--disable-debug-build \
+		--disable-d3d11va-hwaccel \
+		--disable-dxva2-hwaccel \
+		--disable-gpl3 \
 		--disable-optimize \
 		--disable-pdf \
+		--disable-rubberband \
+		--disable-vaapi-wayland \
+		--disable-vapoursynth \
+		--disable-vapoursynth-lazy \
+		--disable-videotoolbox-hwaccel \
+		--disable-videotoolbox-gl \
+		--disable-wayland \
 		--enable-libmpv-shared
 
 OPTIONS_DEFINE=		ASS DOCS ENCA LCMS2 \
