@@ -39,9 +39,6 @@ USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
 
-PATCH_WRKSRC=	${SRCDIR}
-CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
-
 OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
@@ -73,11 +70,10 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
-SRCDIR=		${WRKDIR}/gcc-${DISTVERSION}
-WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 .if empty(PORT_OPTIONS:MBOOTSTRAP)
 CONFIGURE_ARGS+=--disable-bootstrap
 .else
@@ -137,14 +133,13 @@ pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${CONFIGURE_TARGET} [${LANGUAGES}]"
 
 pre-configure:
-	cd ${SRCDIR} ; contrib/gcc_update --touch
-	@${RM} -f ${SRCDIR}/gcc/*/*.info*
-	@${MKDIR} ${CONFIGURE_WRKSRC}
+	cd ${WRKSRC} ; contrib/gcc_update --touch
+	@${RM} -f ${WRKSRC}/gcc/*/*.info*
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${MAKE_CMD} -sk check \
-	; ${SRCDIR}/contrib/test_summary
+	cd ${TEST_WRKSRC}; ${MAKE_CMD} -sk check \
+	; ${WRKSRC}/contrib/test_summary
 .endif
 
 post-stage:
