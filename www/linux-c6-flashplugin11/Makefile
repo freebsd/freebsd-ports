@@ -7,7 +7,7 @@ CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:S/r/./}/:plugin \
 		LOCAL/nox:suplib
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
-DISTFILES?=	install_flash_player_11_linux.${LINUX_REPO_ARCH}.tar.gz:plugin
+DISTFILES?=	install_flash_player_11_linux.i386.tar.gz:plugin
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org

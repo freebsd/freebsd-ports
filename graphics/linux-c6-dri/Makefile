@@ -4,7 +4,8 @@
 PORTNAME=	dri
 PORTVERSION=	10.4.3
 CATEGORIES=	graphics linux
-DISTFILES=	mesa-libGL-10.4.3-1.el6.${LINUX_RPM_ARCH}.rpm \
+DISTFILES=	#
+LIB_DISTFILES=	mesa-libGL-10.4.3-1.el6.${LINUX_RPM_ARCH}.rpm \
 		mesa-libGLU-10.4.3-1.el6.${LINUX_RPM_ARCH}.rpm \
 		mesa-dri-drivers-10.4.3-1.el6.${LINUX_RPM_ARCH}.rpm \
 		libdrm-2.4.59-2.el6.${LINUX_RPM_ARCH}.rpm \

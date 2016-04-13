@@ -1,3 +1,6 @@
+lib/libnspr4.so
+lib/libplc4.so
+lib/libplds4.so
 lib64/libnspr4.so
 lib64/libplc4.so
 lib64/libplds4.so

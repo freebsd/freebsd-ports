@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/tcp_wrappers-libs-7.6-57.el6.x86_64.rpm) = a76713ff2e476970a507e2491369b92424b59e6e1418ea47f1a754cd8b63f144
 SIZE (rpm/x86_64/centos/6.7/tcp_wrappers-libs-7.6-57.el6.x86_64.rpm) = 63484
+SHA256 (rpm/x86_64/centos/6.7/tcp_wrappers-libs-7.6-57.el6.i686.rpm) = 0af672d37c071d898a6207b36f98afa70544531d958138a7a98f897703b0bd00
+SIZE (rpm/x86_64/centos/6.7/tcp_wrappers-libs-7.6-57.el6.i686.rpm) = 63364
 SHA256 (rpm/x86_64/centos/6.7/tcp_wrappers-7.6-57.el6.src.rpm) = b5dc9f2893acf4fbbe7e727273793d21cfdd932c66ddb18ef4d0394f13b12988
 SIZE (rpm/x86_64/centos/6.7/tcp_wrappers-7.6-57.el6.src.rpm) = 140453

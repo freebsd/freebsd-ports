@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/nas-1.9.1-7.el6.x86_64.rpm) = 55fdc433567495bbab33b880a61cd8744057f54e993995abed8846382b5314af
 SIZE (rpm/x86_64/centos/6.7/nas-1.9.1-7.el6.x86_64.rpm) = 333456
+SHA256 (rpm/x86_64/centos/6.7/nas-1.9.1-7.el6.i686.rpm) = f9830ef307755aa66c0b8356912c2591c9b00be426dff36c988e0d7e58a126f9
+SIZE (rpm/x86_64/centos/6.7/nas-1.9.1-7.el6.i686.rpm) = 339968
 SHA256 (rpm/x86_64/centos/6.7/nas-1.9.1-7.el6.src.rpm) = 051cc5ab26e5296ecb22044daaf2781f2c7124cb6b3a18fe73b7e1f795749747
 SIZE (rpm/x86_64/centos/6.7/nas-1.9.1-7.el6.src.rpm) = 1442022
