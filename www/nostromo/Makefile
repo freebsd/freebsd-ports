@@ -29,6 +29,7 @@ post-extract:
 		${WRKSRC}/conf/nhttpd.conf-dist
 	@${REINPLACE_CMD} -e "s@/var/nostromo@${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}@g" \
 		-e "s@-o [^ ]* -g [^ ]*@ -o ${BINOWN} -g ${BINGRP}@" \
+		-e 's@conf-dist$$@conf.sample@'	\
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
