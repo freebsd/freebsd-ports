@@ -36,6 +36,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm>=1.2.0:devel/yasm \
 		bash:shells/bash
+LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
 X264_BUILD=	144
 X264_REV=	2533
@@ -43,12 +44,15 @@ X264_COMMIT=	c8a773ebfca148ef04f5a60d42cbd7336af0baf6
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
 X264_SNAPSHOT=	20150629
 
-USES?=		gmake pkgconfig tar:bzip2
+USES?=		pkgconfig
+USES+=		gmake localbase shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
+SHEBANG_FILES=	configure
+PLIST_FILES?=	bin/x264
 
-OPTIONS_DEFINE?=	ASM DEBUG GCC GPAC LAVF PGO
-OPTIONS_DEFAULT?=	ASM GPAC
+OPTIONS_DEFINE+=	ASM DEBUG GCC GPAC LAVF PGO
+OPTIONS_DEFAULT+=	ASM GPAC
 
 GPAC_DESC=		MPEG-4 output support
 LAVF_DESC=		libav* format input/output support (requires FFmpeg)
@@ -57,6 +61,8 @@ ASM_CONFIGURE_OFF=	--disable-asm
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 DEBUG_CONFIGURE_OFF=	--enable-strip
+
+GCC_VARS=		USE_GCC=yes
 
 GPAC_CONFIGURE_OFF=	--disable-gpac
 GPAC_LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac
@@ -67,50 +73,30 @@ LAVF_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 			libavutil.so:multimedia/ffmpeg \
 			libswscale.so:multimedia/ffmpeg
 
-CONFIGURE_COMMON_ARGS=	--prefix=${PREFIX} \
-			--extra-cflags="-I${LOCALBASE}/include" \
-			--extra-ldflags="-L${LOCALBASE}/lib" \
-			--disable-opencl \
-
-CONFIGURE_ARGS?=	${CONFIGURE_COMMON_ARGS} \
-			--system-libx264
-
-CFLAGS_armv6+=		-mcpu=arm1136jf-s
-
-.include <bsd.port.options.mk>
-
-.if ${SLAVE_PORT} == "no"
-PLIST_FILES+=	bin/x264
-LIB_DEPENDS+=	libx264.so:multimedia/libx264
-.endif
-
-.if ${PORT_OPTIONS:MGCC}
-USE_GCC=	yes
-.elif ${PORT_OPTIONS:MPGO}
-USE_GCC=	any
-.endif
-
-.if ${PORT_OPTIONS:MPGO}
+PGO_DISTFILES=		${Y4M_VIDEO_DISTFILE}:pgo
+PGO_MAKE_ENV=		VIDS="${WRKDIR}/${Y4M_VIDEO}"
+PGO_ALL_TARGET=		fprofiled
 # y4m sample video
 Y4M_VIDEO=		example.y4m
 Y4M_VIDEO_DISTFILE=	example.y4m.bz2
+PGO_VARS=		USE_GCC=any \
+			RESTRICTED="${Y4M_VIDEO_DISTFILE} file may not be mirrored" \
+			RESTRICTED_FILES="${Y4M_VIDEO_DISTFILE}"
 
-DISTFILES+=	${Y4M_VIDEO_DISTFILE}:pgo
-ALL_TARGET=	fprofiled
-MAKE_ENV+=	VIDS="${WRKDIR}/${Y4M_VIDEO}"
+CONFIGURE_ARGS?=	--system-libx264
+CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
+			--extra-cflags="${CPPFLAGS} ${CFLAGS}" \
+			--extra-ldflags="${LDFLAGS}" \
+			--disable-opencl \
 
-RESTRICTED=		${Y4M_VIDEO_DISTFILE} file may not be mirrored
-RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
-.endif
+CFLAGS_armv6+=		-mcpu=arm1136jf-s
 
-post-extract:
-.if ${PORT_OPTIONS:MPGO}
-	@( cd ${WRKDIR} && ${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${Y4M_VIDEO_DISTFILE} > ${Y4M_VIDEO} )
-.endif
+post-extract-PGO-on:
+	@${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${Y4M_VIDEO_DISTFILE} \
+		>${WRKDIR}/${Y4M_VIDEO}
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \
-		s|/bin/bash|${LOCALBASE}/bin/bash|; \
 		s|gpac_static|gpac|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e ' \
@@ -119,7 +105,7 @@ post-patch:
 		s|VERSION=""|VERSION=" r${X264_REV} ${X264_GITVER}"|' \
 		${WRKSRC}/version.sh
 
-.if ${SLAVE_PORT} == "no"
+.if !target(pre-build)
 pre-build:
 	@(${RM} ${WRKSRC}/x264_config.h)
 .endif
