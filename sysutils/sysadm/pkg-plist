@@ -1,4 +1,7 @@
+bin/sysadm-binary
 bin/sysadm-server
+etc/launchd/daemons/org.pcbsd.sysadm.json.dist
+etc/launchd/daemons/org.pcbsd.sysadm-rest.json.dist
 etc/sysadm.conf.dist
 etc/rc.d/sysadm
 etc/rc.d/sysadm-rest

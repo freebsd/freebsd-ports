@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	sysadm
-PORTVERSION=	1459182001
+PORTVERSION=	1460572205
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD SysAdm API server
 
 LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	${LOCALBASE}/bin/launchctl:sysutils/relaunchd
 
 WRKSRC_SUBDIR=	src
 USE_QT5=	concurrent core network buildtools qmake gui websockets
@@ -18,7 +20,7 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
 GH_PROJECT=	sysadm
-GH_TAGNAME=	f66656675baf8c180104554cffd114a3bab1801c
+GH_TAGNAME=	57cc4212bb2b83359cee4f95b19978885af6fd77
 
 .include <bsd.port.pre.mk>
 
