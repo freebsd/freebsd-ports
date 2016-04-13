@@ -25,7 +25,6 @@ REINPLACE_ARGS= -i ""
 NO_WRKSUBDIR=	yes
 USES=		imake tar:Z
 USE_XORG=	xpm
-MAN1=		olvwm.1 olvwmrc.1
 XFREE86_HTML_MAN=	no
 
 IMAKECPPFLAGS+=	-DXVDestDir=${STAGEDIR}${PREFIX}
