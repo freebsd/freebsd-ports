@@ -6,8 +6,8 @@ PORTVERSION=	6.7
 PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	CENTOS_LINUX CENTOS_LINUX_UPDATES
-MASTER_SITE_SUBDIR=	${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/\
-			${LINUX_DIST_VER}/updates/${LINUX_REPO_ARCH}/Packages/
+MASTER_SITE_SUBDIR=	centos/${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/\
+			centos/${LINUX_DIST_VER}/updates/${LINUX_REPO_ARCH}/Packages/
 
 PKGNAMEPREFIX=	linux_base-
 DISTFILES=	${PRE_BIN_DISTFILES} ${BIN_DISTFILES} ${SRC_DISTFILES}
@@ -28,30 +28,34 @@ PRE_BIN_DISTFILES=	filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm \
 BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		bash-4.1.2-33.el6_7.1.${LINUX_RPM_ARCH}.rpm \
 		bzip2-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
-		bzip2-libs-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
 		centos-release-6-7.el6.centos.12.3.${LINUX_RPM_ARCH}.rpm \
-		compat-db43-4.3.29-15.el6.${LINUX_RPM_ARCH}.rpm \
-		compat-libstdc++-33-3.2.3-69.el6.${LINUX_RPM_ARCH}.rpm \
-		compat-libstdc++-296-2.96-144.el6.i686.rpm \
 		coreutils-8.4-37.el6_7.3.${LINUX_RPM_ARCH}.rpm \
-		db4-4.7.25-20.el6_7.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-1.41.12-22.el6.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-libs-1.41.12-22.el6.${LINUX_RPM_ARCH}.rpm \
 		elfutils-0.161-3.el6.${LINUX_RPM_ARCH}.rpm \
 		findutils-4.4.2-6.el6.${LINUX_RPM_ARCH}.rpm \
+		glibc-common-2.12-1.166.el6_7.7.${LINUX_RPM_ARCH}.rpm \
+		grep-2.20-3.el6_7.1.${LINUX_RPM_ARCH}.rpm \
+		info-4.13a-8.el6.${LINUX_RPM_ARCH}.rpm \
+		keyutils-1.4-5.el6.${LINUX_RPM_ARCH}.rpm \
+		less-436-13.el6.${LINUX_RPM_ARCH}.rpm \
+		ncurses-5.7-4.20090207.el6.${LINUX_RPM_ARCH}.rpm \
+		sed-4.2.1-10.el6.${LINUX_RPM_ARCH}.rpm \
+		setserial-2.17-25.el6.${LINUX_RPM_ARCH}.rpm \
+		which-2.19-6.el6.${LINUX_RPM_ARCH}.rpm \
+		compat-libstdc++-296-2.96-144.el6.i686.rpm
+LIB_DISTFILES=	bzip2-libs-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
+		compat-db43-4.3.29-15.el6.${LINUX_RPM_ARCH}.rpm \
+		compat-libstdc++-33-3.2.3-69.el6.${LINUX_RPM_ARCH}.rpm \
+		db4-4.7.25-20.el6_7.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-libs-1.41.12-22.el6.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.3.11-15.el6_6.1.${LINUX_RPM_ARCH}.rpm \
 		gamin-0.1.10-9.el6.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-38.el6.${LINUX_RPM_ARCH}.rpm \
 		glib2-2.28.8-4.el6.${LINUX_RPM_ARCH}.rpm \
 		glibc-2.12-1.166.el6_7.7.${LINUX_RPM_ARCH}.rpm \
-		glibc-common-2.12-1.166.el6_7.7.${LINUX_RPM_ARCH}.rpm \
 		gmp-4.3.1-7.el6_2.2.${LINUX_RPM_ARCH}.rpm \
-		grep-2.20-3.el6_7.1.${LINUX_RPM_ARCH}.rpm \
-		info-4.13a-8.el6.${LINUX_RPM_ARCH}.rpm \
-		keyutils-1.4-5.el6.${LINUX_RPM_ARCH}.rpm \
 		keyutils-libs-1.4-5.el6.${LINUX_RPM_ARCH}.rpm \
 		krb5-libs-1.10.3-42.el6.${LINUX_RPM_ARCH}.rpm \
-		less-436-13.el6.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.49-6.el6.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.44-7.el6.${LINUX_RPM_ARCH}.rpm \
 		libblkid-2.17.2-12.18.el6.${LINUX_RPM_ARCH}.rpm \
@@ -63,18 +67,17 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		libsepol-2.0.41-4.el6.${LINUX_RPM_ARCH}.rpm \
 		libstdc++-4.4.7-16.el6.${LINUX_RPM_ARCH}.rpm \
 		libuuid-2.17.2-12.18.el6.${LINUX_RPM_ARCH}.rpm \
-		ncurses-5.7-4.20090207.el6.${LINUX_RPM_ARCH}.rpm \
 		ncurses-libs-5.7-4.20090207.el6.${LINUX_RPM_ARCH}.rpm \
 		pcre-7.8-7.el6.${LINUX_RPM_ARCH}.rpm \
 		popt-1.13-7.el6.${LINUX_RPM_ARCH}.rpm \
 		readline-6.0-4.el6.${LINUX_RPM_ARCH}.rpm \
 		redhat-lsb-core-4.0-7.el6.centos.${LINUX_RPM_ARCH}.rpm \
-		sed-4.2.1-10.el6.${LINUX_RPM_ARCH}.rpm \
-		setserial-2.17-25.el6.${LINUX_RPM_ARCH}.rpm \
 		slang-2.2.1-1.el6.${LINUX_RPM_ARCH}.rpm \
 		util-linux-ng-2.17.2-12.18.el6.${LINUX_RPM_ARCH}.rpm \
-		which-2.19-6.el6.${LINUX_RPM_ARCH}.rpm \
 		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm
+
+BIN_DISTFILES+=	${LIB_DISTFILES}
+
 
 .if defined(PACKAGE_BUILDING)
 SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm:SOURCE \
@@ -131,10 +134,23 @@ ONLY_FOR_ARCHS=		i386 amd64
 PKGNAMESUFFIX=		_64
 LINUX_RPM_ARCH=	x86_64
 LINUX_REPO_ARCH=	x86_64
+
+# hack to add i686 distfiles
+
+_32BIT_LINUX_RPM_ARCH=  i686
+_32BIT_DISTFILES=   ${LIB_DISTFILES:S/${LINUX_RPM_ARCH}/${_32BIT_LINUX_RPM_ARCH}/g}
+.       if ${_32BIT_DISTFILES} != ${LIB_DISTFILES}
+# they could be the same if above regexp doesn't match
+BIN_DISTFILES+=         ${_32BIT_DISTFILES}
+.       endif
+
+
 .	else
 LINUX_RPM_ARCH=		i686
 LINUX_REPO_ARCH=	i386
 .	endif
+
+
 USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}

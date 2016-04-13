@@ -1,5 +1,46 @@
 etc/ld.so.conf.d/0_qt47-x86_64.conf
+etc/ld.so.conf.d/0_qt47-i386.conf
 usr/bin/qdbus-qt47
+usr/lib/qt47/bin/qdbus
+usr/lib/qt47/etc/Trolltech.conf
+usr/lib/qt47/libQtCore.so.4
+usr/lib/qt47/libQtCore.so.4.7
+usr/lib/qt47/libQtCore.so.4.7.2
+usr/lib/qt47/libQtDBus.so.4
+usr/lib/qt47/libQtDBus.so.4.7
+usr/lib/qt47/libQtDBus.so.4.7.2
+usr/lib/qt47/libQtNetwork.so.4
+usr/lib/qt47/libQtNetwork.so.4.7
+usr/lib/qt47/libQtNetwork.so.4.7.2
+usr/lib/qt47/libQtScript.so.4
+usr/lib/qt47/libQtScript.so.4.7
+usr/lib/qt47/libQtScript.so.4.7.2
+usr/lib/qt47/libQtSql.so.4
+usr/lib/qt47/libQtSql.so.4.7
+usr/lib/qt47/libQtSql.so.4.7.2
+usr/lib/qt47/libQtTest.so.4
+usr/lib/qt47/libQtTest.so.4.7
+usr/lib/qt47/libQtTest.so.4.7.2
+usr/lib/qt47/libQtXml.so.4
+usr/lib/qt47/libQtXml.so.4.7
+usr/lib/qt47/libQtXml.so.4.7.2
+usr/lib/qt47/libQtXmlPatterns.so.4
+usr/lib/qt47/libQtXmlPatterns.so.4.7
+usr/lib/qt47/libQtXmlPatterns.so.4.7.2
+usr/lib/qt47/phrasebooks/danish.qph
+usr/lib/qt47/phrasebooks/dutch.qph
+usr/lib/qt47/phrasebooks/finnish.qph
+usr/lib/qt47/phrasebooks/french.qph
+usr/lib/qt47/phrasebooks/german.qph
+usr/lib/qt47/phrasebooks/hungarian.qph
+usr/lib/qt47/phrasebooks/italian.qph
+usr/lib/qt47/phrasebooks/japanese.qph
+usr/lib/qt47/phrasebooks/norwegian.qph
+usr/lib/qt47/phrasebooks/polish.qph
+usr/lib/qt47/phrasebooks/russian.qph
+usr/lib/qt47/phrasebooks/spanish.qph
+usr/lib/qt47/phrasebooks/swedish.qph
+usr/lib/qt47/plugins/sqldrivers/libqsqlite.so
 usr/lib64/qt47/bin/qdbus
 usr/lib64/qt47/etc/Trolltech.conf
 usr/lib64/qt47/libQtCore.so.4
@@ -64,4 +105,5 @@ usr/share/qt47/translations/qt_uk.qm
 usr/share/qt47/translations/qt_zh_CN.qm
 usr/share/qt47/translations/qt_zh_TW.qm
 @dir usr/lib64/qt47/plugins/crypto
+@dir usr/lib/qt47/plugins/crypto
 %%PORTDOCS%%@dir usr/%%DOCSDIR%%/qch

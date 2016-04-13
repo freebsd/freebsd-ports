@@ -420,6 +420,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				    - appropriate invocation of the Linux ldconfig
 # USE_LINUX_RPM	- Set to yes to pull in variables and targets useful to Linux
 #				  RPM ports.
+# 				  Set to nolib if your port does not contain an architecture-
+#				  specific library.
 #				  Implies inclusion of bsd.linux-rpm.mk.
 #
 # LINUX_OSRELEASE	- Contains the value of compat.linux.osrelease sysctl.

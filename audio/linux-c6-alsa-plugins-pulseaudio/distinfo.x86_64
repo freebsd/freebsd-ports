@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/alsa-plugins-pulseaudio-1.0.21-3.el6.x86_64.rpm) = 070122ab7aa8fb95cf70a9dd3f7df969c2ba8963638b7bebbd08a3e0b71fc324
 SIZE (rpm/x86_64/centos/6.7/alsa-plugins-pulseaudio-1.0.21-3.el6.x86_64.rpm) = 35836
+SHA256 (rpm/x86_64/centos/6.7/alsa-plugins-pulseaudio-1.0.21-3.el6.i686.rpm) = e0696f6ee9685d976320f84a17e1f5a6024686e094aa66284cd13903cf3746cc
+SIZE (rpm/x86_64/centos/6.7/alsa-plugins-pulseaudio-1.0.21-3.el6.i686.rpm) = 35156
 SHA256 (rpm/x86_64/centos/6.7/alsa-plugins-1.0.21-3.el6.src.rpm) = ef92534d1459f389f7a69176760f6247981b70c864aa4ae9bfe0565b4e7bd0e6
 SIZE (rpm/x86_64/centos/6.7/alsa-plugins-1.0.21-3.el6.src.rpm) = 340131

@@ -1,4 +1,6 @@
 etc/openal/alsoft.conf
 usr/bin/openal-info
+usr/lib/libopenal.so.1
+usr/lib/libopenal.so.1.12.854
 usr/lib64/libopenal.so.1
 usr/lib64/libopenal.so.1.12.854

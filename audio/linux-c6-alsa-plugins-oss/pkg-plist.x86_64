@@ -1,3 +1,5 @@
+usr/lib/alsa-lib/libasound_module_ctl_oss.so
+usr/lib/alsa-lib/libasound_module_pcm_oss.so
 usr/lib64/alsa-lib/libasound_module_ctl_oss.so
 usr/lib64/alsa-lib/libasound_module_pcm_oss.so
 usr/share/doc/alsa-plugins-oss-1.0.21/COPYING

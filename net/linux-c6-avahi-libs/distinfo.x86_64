@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/avahi-libs-0.6.25-15.el6.x86_64.rpm) = a8ef064f4c382bf39ee2c17f646ef01afc17067eb7a0d3a591130da90e6eefb6
 SIZE (rpm/x86_64/centos/6.7/avahi-libs-0.6.25-15.el6.x86_64.rpm) = 55948
+SHA256 (rpm/x86_64/centos/6.7/avahi-libs-0.6.25-15.el6.i686.rpm) = 9a51cb6d9fd7f109e220906f923365e42c5b6ec0c850638194e9ac5a9f15619e
+SIZE (rpm/x86_64/centos/6.7/avahi-libs-0.6.25-15.el6.i686.rpm) = 55916
 SHA256 (rpm/x86_64/centos/6.7/avahi-0.6.25-15.el6.src.rpm) = d274512f9456da9742d38ee3fbfbc483719cfc9f9918987d385c8ee89179263b
 SIZE (rpm/x86_64/centos/6.7/avahi-0.6.25-15.el6.src.rpm) = 1138822

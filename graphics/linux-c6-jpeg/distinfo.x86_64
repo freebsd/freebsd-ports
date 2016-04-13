@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/libjpeg-turbo-1.2.1-3.el6_5.x86_64.rpm) = c3dcce9a0f3cbcc5c618fd75ed57dd993b5b74bb4cb195800b5fedef501fc825
 SIZE (rpm/x86_64/centos/6.7/libjpeg-turbo-1.2.1-3.el6_5.x86_64.rpm) = 178512
+SHA256 (rpm/x86_64/centos/6.7/libjpeg-turbo-1.2.1-3.el6_5.i686.rpm) = 1b2a598ac9baeccd782a2ea160f9e4d2da442577ee2c745d24f44da3fd275306
+SIZE (rpm/x86_64/centos/6.7/libjpeg-turbo-1.2.1-3.el6_5.i686.rpm) = 180776
 SHA256 (rpm/x86_64/centos/6.7/libjpeg-turbo-1.2.1-3.el6_5.src.rpm) = e619abbdcebe1a4b2dacf7f3a3495380fa6d68919170c81378bead39ddbe5176
 SIZE (rpm/x86_64/centos/6.7/libjpeg-turbo-1.2.1-3.el6_5.src.rpm) = 1759144

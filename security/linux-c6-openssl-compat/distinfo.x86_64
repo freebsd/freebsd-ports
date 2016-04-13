@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/openssl098e-0.9.8e-18.el6_5.2.x86_64.rpm) = 5da4e81c728ae6199597cdd1107e244b7920e1d3425828db435bff7b22c62509
 SIZE (rpm/x86_64/centos/6.7/openssl098e-0.9.8e-18.el6_5.2.x86_64.rpm) = 779620
+SHA256 (rpm/x86_64/centos/6.7/openssl098e-0.9.8e-18.el6_5.2.i686.rpm) = 4911acddf50a3f48cc5d2ce6f4011193a06112142a2d93e7e9f36aa7fd44e1bd
+SIZE (rpm/x86_64/centos/6.7/openssl098e-0.9.8e-18.el6_5.2.i686.rpm) = 791692
 SHA256 (rpm/x86_64/centos/6.7/openssl098e-0.9.8e-18.el6_5.2.src.rpm) = 25cdd2928d00f8aec7e84cd5937ecf9ad869256c980634a9c7132e75cfeccce2
 SIZE (rpm/x86_64/centos/6.7/openssl098e-0.9.8e-18.el6_5.2.src.rpm) = 3101400
