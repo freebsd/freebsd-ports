@@ -12,6 +12,7 @@ PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
 BUTARGET=	aarch64-unknown-cloudabi
-BUREMOVE=	ar dlltool nlmconv nm objdump ranlib size windmc windres
+BUREMOVE=	ar dlltool ld ld.bfd nlmconv nm objdump ranlib size windmc \
+		windres
 
 .include "${MASTERDIR}/Makefile"
