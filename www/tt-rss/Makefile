@@ -3,6 +3,7 @@
 
 PORTNAME=	tt-rss
 PORTVERSION=	16.1.2016.02.23
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://tt-rss.org/gitlab/fox/tt-rss/repository/archive${EXTRACT_SUFX}?ref=${GL_TAGNAME}&num;/
 
@@ -26,13 +27,12 @@ WRKSRC=		${WRKDIR}/tt-rss.git
 
 USE_RC_SUBR=	ttrssd
 
-OPTIONS_DEFINE=	CURL GD DBLOCAL
+OPTIONS_DEFINE=	CURL GD
 OPTIONS_SINGLE=	DB
 OPTIONS_SINGLE_DB=	MYSQL PGSQL
-OPTIONS_DEFAULT=	CURL GD MYSQL DBLOCAL
+OPTIONS_DEFAULT=	CURL GD MYSQL
 CURL_DESC=	Use SimplePie instead of Magpie
 GD_DESC=	Use OTP QR code generation
-DBLOCAL_DESC=	Database is local?
 
 .include <bsd.port.options.mk>
 
@@ -58,14 +58,8 @@ USE_PHP+=	curl
 USE_PHP+=	gd
 .endif
 
-.if ${PORT_OPTIONS:MDBLOCAL}
-DBLOCAL=
-.else
-DBLOCAL=	"\#"
-.endif
-
 SUB_FILES=	httpd-tt-rss.conf pkg-message
-SUB_LIST=	DB=${DB} WWWOWN=${WWWOWN} MYSQL=${MYSQL} PGSQL=${PGSQL} DBLOCAL=${DBLOCAL}
+SUB_LIST=	DB=${DB} WWWOWN=${WWWOWN} MYSQL=${MYSQL} PGSQL=${PGSQL}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
