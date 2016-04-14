@@ -374,6 +374,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading-smarttv.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/objectassign.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/page.js/page.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/prompt/icons.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/prompt/nativeprompt.js
@@ -697,6 +698,7 @@ lib/emby-server/dashboard-ui/bower_components/iron-input/test/disabled-input.htm
 lib/emby-server/dashboard-ui/bower_components/iron-input/test/index.html
 lib/emby-server/dashboard-ui/bower_components/iron-input/test/iron-input.html
 lib/emby-server/dashboard-ui/bower_components/iron-input/test/letters-only.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/iron-media-query/.bower.json
 lib/emby-server/dashboard-ui/bower_components/iron-media-query/.gitignore
 lib/emby-server/dashboard-ui/bower_components/iron-media-query/.travis.yml
