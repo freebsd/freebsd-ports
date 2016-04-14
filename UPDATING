@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160414:
+  AFFECTS: Users of graphics/kipi-plugin-googledrive and graphics/kipi-plugin-picasaweb
+  AUTHOR: kde@FreeBSD.org
+
+  DigiKam and its related ports have been updated to 4.14.0, the latest
+  stable upstream release.
+
+  The graphics/kipi-plugin-googledrive and graphics/kipi-plugin-picasaweb
+  have both been merged into the new graphics/kipi-plugin-googleservices
+  following a move done upstream.
+
+  Those two ports must be removed, and graphics/kipi-plugin-googleservices
+  should be used instead.
+
 20160413:
   AFFECTS: All users of www/node-devel
   AUTHOR: bradleythughes@fastmail.fm

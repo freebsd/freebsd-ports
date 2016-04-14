@@ -1,0 +1,20 @@
+Do not expanding the variables in the if() clause twice, otherwise if OpenCV is
+not found we end up with an error like this:
+
+CMake Error at CMakeLists.txt:186 (if):
+  if given arguments:
+
+    "FALSE" "AND" "VERSION_GREATER" "2.4.99"
+
+  Unknown arguments specified
+--- ./CMakeLists.txt.orig      2016-03-28 21:43:04.153625000 +0000
++++ ./CMakeLists.txt   2016-03-28 21:43:15.768736000 +0000
+@@ -182,7 +182,7 @@
+         set(OPENCV_MIN_VERSION "2.4.9")
+         DETECT_OPENCV(${OPENCV_MIN_VERSION} core highgui objdetect contrib legacy imgproc)
+ 
+-        if(${OpenCV_FOUND} AND ${OpenCV_VERSION} VERSION_GREATER 2.4.99)
++        if(OpenCV_FOUND AND OpenCV_VERSION VERSION_GREATER 2.4.99)
+             message(STATUS "ENABLE_OPENCV3 option is disabled and OpenCV >= 3.0.0 have been found. Enabled ENABLE_OPENCV3")
+             set(OpenCV_FOUND FALSE)
+         endif()

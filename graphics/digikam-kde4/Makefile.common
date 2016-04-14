@@ -1,7 +1,6 @@
 # $FreeBSD$
 #
 # Make sure when DIGIKAM_VER is updated that the following ports are updated:
-#	astro/libkgeomap
 #	graphics/digikam-kde4
 #	graphics/digikam-kde4-doc
 #	graphics/digikam-kde4-l10n
@@ -9,11 +8,13 @@
 #	graphics/kipi-plugins-kde4
 #	graphics/libkface
 #	graphics/libkipiplugins
-#	net/libkvkontakte
-#	net/libmediawiki
+# These ports now lead independent lives:
+#	astro/libkgeomap (part of KDE Applications)
+#	net/libkvkontakte (part of KDE Applications)
+#	net/libmediawiki (part of digiKam 4.12)
 
-DIGIKAM_VER=	4.2.0
-MASTER_SITES=	KDE/Attic/digikam
+DIGIKAM_VER=	4.14.0
+MASTER_SITES=	KDE/stable/digikam
 
 KIPI_PLUGINS_ALL=	acquireimages \
 			advancedslideshow \
@@ -27,7 +28,7 @@ KIPI_PLUGINS_ALL=	acquireimages \
 			flashexport \
 			flickrexport \
 			galleryexport \
-			googledrive \
+			googleservices \
 			gpssync \
 			htmlexport \
 			imageshackexport \
@@ -43,7 +44,6 @@ KIPI_PLUGINS_ALL=	acquireimages \
 			metadataedit \
 			panorama \
 			photolayoutseditor \
-			picasawebexport \
 			piwigoexport \
 			printimages \
 			rajceexport \
@@ -70,8 +70,6 @@ advancedslideshow_DESC=	Slide images with 2D and 3D effects using OpenGL
 batchprocess_DESC=	Batch process images (convert, resize, rename, etc.)
 calendar_DESC=		Create calendars
 debianscreenshots_DESC=	Export images to Debian Screenshots web service
-# builds and media server shows up, but files are not accessible
-# dlnaexport_DESC=	Export collection on DLNA network service
 dngconverter_DESC=	Convert Raw Image to Digital NeGative
 dropbox_DESC=		Export images to Dropbox cloud service
 expoblending_DESC=	Create pseudo HDR image with a stack of bracketed images
@@ -79,7 +77,7 @@ facebook_DESC=		Import/export images to/from a remote Facebook web service
 flashexport_DESC=	Export images to Flash using SimpleViewer
 flickrexport_DESC=	Export images to a remote Flickr based web service
 galleryexport_DESC=	Export images to a remote Gallery
-googledrive_DESC=	Export images to Google Drive cloud service
+googleservices_DESC=	Export images to Google Services (drive/picasa)
 gpssync_DESC=		Geolocalize images
 htmlexport_DESC=	Export images collections into a static XHTML page
 imageshackexport_DESC=	Export images to ImageShack web service
@@ -97,7 +95,6 @@ panorama_DESC=		Assemble panoramic photo automatically
 # not ready for production yet
 # photivointegration_DESC=	Integration of the Photivo RAW-Processor
 photolayoutseditor_DESC=Assemble images together
-picasawebexport_DESC=	Export images to a remote Picasa web service
 piwigoexport_DESC=	Export images to a remote Piwigo (PHPWebGallery) server
 printimages_DESC=	Print images in various format
 rajceexport_DESC=	Export images to Rajce web service
@@ -139,6 +136,7 @@ USES+=		pkgconfig
 EXTRA_PATCHES=	${.CURDIR}/../../graphics/kipi-plugins-kde4/files/extrapatch-CMakeLists.txt
 LIB_DEPENDS+=	libkipiplugins.so:graphics/libkipiplugins
 .endif
+EXTRA_PATCHES+=	${.CURDIR}/../../graphics/kipi-plugins-kde4/files/extrapatch-extra_kipi_plugins_cmakelists.patch
 
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions ${DISTNAME}/extra/kipi-plugins
 WRKSRC=		${WRKDIR}/${DISTNAME}/extra/kipi-plugins
@@ -146,14 +144,5 @@ BUILD_WRKSRC=	${WRKSRC}/${${KIPI_PLUGIN}_DIR}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 ${KIPI_PLUGIN}_DIR?=		${KIPI_PLUGIN}
-
-post-configure: post-kipi-configure
-
-post-kipi-configure:
-	${ECHO_CMD} '#define GITVERSION "unknown"' > ${WRKSRC}/common/libkipiplugins/gitversion.h
-.if ${KIPI_PLUGIN} != "libkipiplugins"
-	${LN} -s ${KDE4_PREFIX}/lib/libkipiplugins.so ${WRKSRC}/lib/libkipiplugins.so
-.endif
-
 . endif # defined(KIPI_PLUGIN)
 .endif # !defined(NO_BUILD)
