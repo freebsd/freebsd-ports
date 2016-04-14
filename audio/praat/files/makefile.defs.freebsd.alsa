@@ -8,17 +8,18 @@ CC ?= gcc
 
 CXX ?= g++
 
-CFLAGS = -std=gnu99 -DUNIX -Dlinux -DALSA `pkg-config --cflags gtk+-2.0` -Werror=implicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1
+CFLAGS = -std=gnu99 -DUNIX -Dlinux -DHAVE_SYS_SOUNDCARD_H `pkg-config --cflags gtk+-2.0` -Werror=implicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1
 
-CXXFLAGS = -std=gnu++11 -Wshadow -DUNIX -Dlinux -DALSA `pkg-config --cflags gtk+-2.0` -Werror=implicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -I%%WRKSRC%%/sys -I%%WRKSRC%%/dwsys -I%%WRKSRC%%/num -I%%WRKSRC%%/stat -I%%WRKSRC%%/kar -I%%WRKSRC%%/dwtools -I%%WRKSRC%%/fon -I%%WRKSRC%%/LPC -I%%WRKSRC%%/EEG -I%%WRKSRC%%/external/espeak -I%%WRKSRC%%/external/flac -I%%WRKSRC%%/external/mp3 -I%%WRKSRC%%/external/gsl -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/unicode
+CXXFLAGS = -std=gnu++11 -Wshadow -DUNIX -Dlinux -DHAVE_SYS_SOUNDCARD_H `pkg-config --cflags gtk+-2.0` -Werror=implicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -I%%WRKSRC%%/sys -I%%WRKSRC%%/dwsys -I%%WRKSRC%%/num -I%%WRKSRC%%/stat -I%%WRKSRC%%/kar -I%%WRKSRC%%/dwtools -I%%WRKSRC%%/fon -I%%WRKSRC%%/LPC -I%%WRKSRC%%/EEG -I%%WRKSRC%%/external/espeak -I%%WRKSRC%%/external/flac -I%%WRKSRC%%/external/mp3 -I%%WRKSRC%%/external/gsl -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/unicode
 
 LINK ?= $(CXX)
 
 EXECUTABLE = praat
 
-LIBS = `pkg-config --libs gtk+-2.0` -L%%LOCALBASE%%/lib -lm -lasound -lpthread -ltinfow
+LIBS = `pkg-config --libs gtk+-2.0` -L%%LOCALBASE%%/lib -lm -lpthread -ltinfow
 
 AR = ar
 RANLIB = ls
 ICON =
 MAIN_ICON =
+PA_BACKEND = pa_unix_oss.o
