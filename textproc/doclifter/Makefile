@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doclifter
-PORTVERSION=	2.15
-PORTREVISION=	1
+PORTVERSION=	2.17
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 
