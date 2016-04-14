@@ -10,7 +10,7 @@ COMMENT=	Time-series data collection
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	go>=1.5.0:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go>=1.5.0:lang/go
 
 ONLY_FOR_ARCHS=	amd64
 
