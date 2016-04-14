@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20160414:
+  AFFECTS: Users of www/tt-rss
+  AUTHOR: thierry@FreeBSD.org
+
+  Tiny Tiny RSS can use a database running on a separate server.
+  Previously, in this case, you had to set the option DBLOCAL; this option
+  has been removed and replaced by a settable run-time flag: now you
+  should set
+  ttrssd_local_db="NO"
+  in your /etc/rc.conf .
+
+
+20160414:
   AFFECTS: Users of graphics/kipi-plugin-googledrive and graphics/kipi-plugin-picasaweb
   AUTHOR: kde@FreeBSD.org
 
