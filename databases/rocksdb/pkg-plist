@@ -48,6 +48,7 @@ include/rocksdb/utilities/checkpoint.h
 include/rocksdb/utilities/convenience.h
 include/rocksdb/utilities/db_ttl.h
 include/rocksdb/utilities/document_db.h
+include/rocksdb/utilities/env_mirror.h
 include/rocksdb/utilities/flashcache.h
 include/rocksdb/utilities/geo_db.h
 include/rocksdb/utilities/info_log_finder.h
