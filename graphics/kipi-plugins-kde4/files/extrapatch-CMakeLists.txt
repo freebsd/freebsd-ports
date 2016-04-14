@@ -1,15 +1,19 @@
---- ./CMakeLists.txt.orig	2013-03-11 08:24:11.000000000 +0000
-+++ ./CMakeLists.txt	2013-04-05 19:33:30.200669787 +0000
-@@ -410,7 +410,6 @@
+--- ./CMakeLists.txt.orig	2015-02-25 22:15:14.659030000 +0100
++++ ./CMakeLists.txt	2015-02-25 22:17:07.071209000 +0100
+@@ -356,7 +356,6 @@
  
-     # Plugins which will be always compiled
+         # Plugins which will be always compiled
  
--    ADD_SUBDIRECTORY(common)
-     ADD_SUBDIRECTORY(timeadjust)
-     ADD_SUBDIRECTORY(jpeglossless)
-     ADD_SUBDIRECTORY(rawconverter)
-@@ -515,3 +514,4 @@
-     ENDIF(NOT WIN32)
+-        add_subdirectory(common)
+         add_subdirectory(timeadjust)
+         add_subdirectory(jpeglossless)
+         add_subdirectory(rawconverter)
+@@ -468,7 +467,7 @@
+         endif()
  
- ENDIF(KIPIPLUGINS_CAN_BE_COMPILED)
-+CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/common/libkipiplugins/tools/kpversion.h.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/common/libkipiplugins/kpversion.h)
+     endif()
+-
++    CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/common/libkipiplugins/tools/kpversion.h.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/common/libkipiplugins/kpversion.h)
+ else()
+ 
+     message(STATUS "")
