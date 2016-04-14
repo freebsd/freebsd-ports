@@ -1535,6 +1535,7 @@
     SUBDIR += py-django-configurations
     SUBDIR += py-django-contact-form
     SUBDIR += py-django-contrib-comments
+    SUBDIR += py-django-cors-headers
     SUBDIR += py-django-countries
     SUBDIR += py-django-crispy-forms
     SUBDIR += py-django-datetime-widget
