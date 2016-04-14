@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		${LOCALBASE}/bin/gperf:devel/gperf \
-		mdds>=0.9.0:devel/mdds \
+		${LOCALBASE}/include/mdds/global.hpp:devel/mdds0 \
 		gpatch:devel/patch \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \

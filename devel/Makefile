@@ -1481,6 +1481,7 @@
     SUBDIR += maven33
     SUBDIR += mcpp
     SUBDIR += mdds
+    SUBDIR += mdds0
     SUBDIR += memcheck
     SUBDIR += menhir
     SUBDIR += mercator
