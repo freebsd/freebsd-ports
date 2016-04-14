@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	escape_utils
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
