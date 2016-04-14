@@ -1,5 +1,5 @@
---- ../macros/python.m4.orig	2015-05-15 09:43:14 UTC
-+++ ../macros/python.m4
+--- macros/python.m4.orig	2015-05-15 09:43:14 UTC
++++ macros/python.m4
 @@ -94,8 +94,8 @@ AC_DEFUN([AC_PYTHON_DEVEL],[
  	#
  	AC_MSG_CHECKING([for a version of Python >= '2.1.0'])
