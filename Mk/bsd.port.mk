@@ -4665,7 +4665,6 @@ create-manifest:
 	for a in ${PKGPOSTDEINSTALL}; do \
 		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+POST_DEINSTALL ; \
 	done ; \
-	[ -f ${PKGPOSTDEINSTALL} ] && ${CP} ${PKGPOSTDEINSTALL} ${METADIR}/+POST_DEINSTALL; \
 	[ -f ${PKGUPGRADE} ] && ${CP} ${PKGUPGRADE} ${METADIR}/+UPGRADE; \
 	[ -f ${PKGPREUPGRADE} ] && ${CP} ${PKGPREUPGRADE} ${METADIR}/+PRE_UPGRADE; \
 	[ -f ${PKGPOSTUPGRADE} ] && ${CP} ${PKGPOSTUPGRADE} ${METADIR}/+POST_UPGRADE; \
