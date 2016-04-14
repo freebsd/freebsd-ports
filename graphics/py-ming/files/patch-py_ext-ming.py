@@ -1,5 +1,5 @@
---- ming.py.orig	2015-05-15 09:43:14 UTC
-+++ ming.py
+--- py_ext/ming.py.orig	2015-05-15 09:43:14 UTC
++++ py_ext/ming.py
 @@ -112,57 +112,57 @@ class SWFFilter(SWFBase):
          if type == SWFFILTER_TYPE_DROPSHADOW:
              #color, blur, shadow, flags
