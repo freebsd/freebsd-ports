@@ -67,6 +67,8 @@ _INCLUDE_USES_TCL_MK=	yes
 #
 # List the currently available versions.
 #
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 _TCLTK_VALID_VERSIONS=	84 85 86
 
 #

@@ -28,6 +28,8 @@
 _INCLUDE_USES_GHOSTSCRIPT_MK=	yes
 
 # allowed versions
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 _GS_VERSION=	7 8 9 agpl
 
 _GS_ARGS=		${ghostscript_ARGS}
