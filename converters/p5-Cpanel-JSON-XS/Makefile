@@ -24,6 +24,8 @@ TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage \
 		p5-common-sense>=3.50:devel/p5-common-sense
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USE_PERL5=	configure
 USES=		perl5
 
