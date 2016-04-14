@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spdep
-DISTVERSION=	0.5-92
+DISTVERSION=	0.6-4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,7 +14,8 @@ LICENSE=	GPLv2+
 RUN_DEPENDS=	R-cran-sp>=1.0:math/R-cran-sp \
 		R-cran-LearnBayes>0:math/R-cran-LearnBayes \
 		R-cran-deldir>0:math/R-cran-deldir \
-		R-cran-coda>0:math/R-cran-coda
+		R-cran-coda>0:math/R-cran-coda \
+		R-cran-gmodels>0:devel/R-cran-gmodels
 
 USES=	cran:auto-plist
 
