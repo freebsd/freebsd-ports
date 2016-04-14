@@ -1708,7 +1708,7 @@ MAKE_ENV+=	${b}="${${b}}"
 .include "${PORTSDIR}/Mk/bsd.ldap.mk"
 .endif
 
-.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
+.if defined(USE_RC_SUBR)
 SUB_FILES+=	${USE_RC_SUBR}
 .endif
 
@@ -4931,7 +4931,7 @@ add-plist-post:
 .endif
 
 .if !target(install-rc-script)
-.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
+.if defined(USE_RC_SUBR)
 install-rc-script:
 	@${ECHO_MSG} "===> Staging rc.d startup script(s)"
 	@for i in ${USE_RC_SUBR}; do \
