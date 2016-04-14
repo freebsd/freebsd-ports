@@ -16,13 +16,22 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	p5-Tk>0:x11-toolkits/p5-Tk \
 		p5-PGPLOT>=2.21:graphics/p5-PGPLOT	\
 		PDL>0:math/PDL \
-		${LOCALBASE}/bin/mcstas:science/mcstas
+		mcstas:science/mcstas
 
-USES=		cmake gmake perl5
+USES=		cmake gmake perl5 shebangfix
 CMAKE_ARGS=	-Denable_mcstas=1
 GNU_CONFIGURE=	yes
+SHEBANG_FILES=	${EXECS:S/$/.pl/}
 
-SUB_FILES=	pkg-install
-SUB_LIST=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+EXECS=		mcdaemon mcdisplay mcdoc mcformatgui mcgui mcplot mcresplot mcrun mcstas2vitess
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/doc/man/man1/*.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${RMDIR} -p ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/doc/man/man1 || : > /dev/null 2>&1
+.for target in ${EXECS}
+	${LN} -s ${PREFIX}/mcstas/${PORTVERSION}/bin/${target} ${STAGEDIR}${PREFIX}/bin/${target}
+.endfor
 
 .include <bsd.port.mk>
