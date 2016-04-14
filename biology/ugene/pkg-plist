@@ -53,8 +53,6 @@ lib/ugene/libugenedb.so.1.0
 lib/ugene/libugenedb.so.1.0.0
 lib/ugene/plugins/CoreTests.license
 lib/ugene/plugins/CoreTests.plugin
-lib/ugene/plugins/GUITestBase.license
-lib/ugene/plugins/GUITestBase.plugin
 lib/ugene/plugins/annotator.license
 lib/ugene/plugins/annotator.plugin
 lib/ugene/plugins/api_tests.license
@@ -83,8 +81,6 @@ lib/ugene/plugins/dotplot.license
 lib/ugene/plugins/dotplot.plugin
 lib/ugene/plugins/enzymes.license
 lib/ugene/plugins/enzymes.plugin
-lib/ugene/plugins/expert_discovery.license
-lib/ugene/plugins/expert_discovery.plugin
 lib/ugene/plugins/external_tool_support.license
 lib/ugene/plugins/external_tool_support.plugin
 lib/ugene/plugins/genome_aligner.license
@@ -101,10 +97,6 @@ lib/ugene/plugins/libCoreTests.so
 lib/ugene/plugins/libCoreTests.so.1
 lib/ugene/plugins/libCoreTests.so.1.0
 lib/ugene/plugins/libCoreTests.so.1.0.0
-lib/ugene/plugins/libGUITestBase.so
-lib/ugene/plugins/libGUITestBase.so.1
-lib/ugene/plugins/libGUITestBase.so.1.0
-lib/ugene/plugins/libGUITestBase.so.1.0.0
 lib/ugene/plugins/libannotator.so
 lib/ugene/plugins/libannotator.so.1
 lib/ugene/plugins/libannotator.so.1.0
@@ -161,10 +153,6 @@ lib/ugene/plugins/libenzymes.so
 lib/ugene/plugins/libenzymes.so.1
 lib/ugene/plugins/libenzymes.so.1.0
 lib/ugene/plugins/libenzymes.so.1.0.0
-lib/ugene/plugins/libexpert_discovery.so
-lib/ugene/plugins/libexpert_discovery.so.1
-lib/ugene/plugins/libexpert_discovery.so.1.0
-lib/ugene/plugins/libexpert_discovery.so.1.0.0
 lib/ugene/plugins/libexternal_tool_support.so
 lib/ugene/plugins/libexternal_tool_support.so.1
 lib/ugene/plugins/libexternal_tool_support.so.1.0
@@ -310,10 +298,8 @@ lib/ugene/plugins/weight_matrix.plugin
 lib/ugene/plugins/workflow_designer.license
 lib/ugene/plugins/workflow_designer.plugin
 lib/ugene/plugins_checker
-lib/ugene/transl_cs.qm
 lib/ugene/transl_en.qm
 lib/ugene/transl_ru.qm
-lib/ugene/transl_zh.qm
 lib/ugene/ugene
 lib/ugene/ugenecl
 lib/ugene/ugenem
@@ -374,7 +360,6 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/cmdline/align.uwl
 %%DATADIR%%/cmdline/convert-msa.uwl
 %%DATADIR%%/cmdline/convert-seq.uwl
-%%DATADIR%%/cmdline/das_annotation.uwl
 %%DATADIR%%/cmdline/extract-sequence.uwl
 %%DATADIR%%/cmdline/extract_consensus_sequence.uwl
 %%DATADIR%%/cmdline/extract_consensus_string.uwl
