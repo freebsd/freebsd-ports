@@ -40,6 +40,8 @@ FPC_Include_MAINTAINER=	freebsd-fpc@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
 DEFAULT_FPC_VER=	${FPC_DEFAULT}
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 FPC_VER=		${DEFAULT_FPC_VER}
 FPC_ARCH=		${ARCH:S/amd64/x86_64/}
 

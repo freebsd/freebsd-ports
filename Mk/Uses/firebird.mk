@@ -15,6 +15,8 @@ FIREBIRD_VER=	${firebird_ARGS}
 
 FIREBIRD_VER?=	${FIREBIRD_DEFAULT:S/.//}
 
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 .if ${FIREBIRD_VER} == 25
 LIB_DEPENDS+=	libfbclient.so:databases/firebird25-client
 .else

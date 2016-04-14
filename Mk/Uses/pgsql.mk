@@ -31,6 +31,8 @@ _INCLUDE_USES_PGSQL_MK=	yes
 #	to add dependencies; use WANT_PGSQL as explained above
 #
 
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 VALID_PGSQL_VER=	9.0 9.1 9.2 9.3 9.4 9.5
 
 # Override non-default LIBVERS like this:

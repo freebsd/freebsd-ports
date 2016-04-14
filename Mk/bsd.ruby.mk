@@ -167,6 +167,8 @@ _RUBY_VENDORDIR!=	${_RUBY_CONFIG} 'puts C["vendordir"]'
 RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 
 .if defined(RUBY_VER)
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 . if ${RUBY_VER} == 2.0
 #
 # Ruby 2.0
@@ -207,6 +209,8 @@ RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	0
 RUBY23=			""	# PLIST_SUB helpers
 
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 . else
 #
 # Other versions
