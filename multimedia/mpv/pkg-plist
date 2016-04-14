@@ -1,4 +1,5 @@
 bin/mpv
+%%ETCDIR%%/encoding-profiles.conf
 include/mpv/client.h
 include/mpv/opengl_cb.h
 include/mpv/qthelper.hpp
