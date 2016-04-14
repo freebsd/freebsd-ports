@@ -1,5 +1,5 @@
-%%WWWDIR%%/.htaccess
-%%WWWDIR%%/.user.ini
+@(,,644) %%WWWDIR%%/.htaccess
+@(,,644) %%WWWDIR%%/.user.ini
 %%WWWDIR%%/3rdparty/.gitignore
 %%WWWDIR%%/3rdparty/LICENSE INFO
 %%WWWDIR%%/3rdparty/README.md
