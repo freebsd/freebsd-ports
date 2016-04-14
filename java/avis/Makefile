@@ -11,7 +11,6 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	benjsc@FreeBSD.org
 COMMENT=	Elvin Publish/Subscribe Message Bus server based on the Elvin protocol
 
-USE_RC_SUBR=	yes
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
