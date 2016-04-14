@@ -1,21 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-PORTVERSION=	4.0.24
-PORTREVISION=	1
+DISTVERSION=	4.4.0
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
-PKGNAMESUFFIX=	40
+PKGNAMESUFFIX=	44
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	mikael.urankar@gmail.com
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
-CONFLICTS_INSTALL=	rt-3.8* rt42-4.2* rt44-4.4* brlcad-[0-9]*
+LICENSE=	GPLv2
+
+CONFLICTS_INSTALL=	rt-3.8* rt40-4.0* rt42-4.2* brlcad-[0-9]*
 
 NO_ARCH=	yes
 
 # See doc/web_deployment.pod for info on the choices of webserver /
-# webapp combinations.  Note: if using apache, apache-2.2+ is
+# webapp combinations.  Note: if using apache, apache-2.4+ is
 # recommended.  For deployment with nginx, use the SPAWN_FCGI method
 # or the builtin webserver with a FCGI handler.
 #
@@ -32,7 +33,7 @@ NO_ARCH=	yes
 # mentioned in the docs is currently unsupported in the ports, but see
 # http://www.infracaninophile.co.uk/articles/sphinxse.html
 
-OPTIONS_DEFINE=		DEV GD GPG GRAPHVIZ SSL_MAILGATE DOCS
+OPTIONS_DEFINE=		DEVELOPER GD GPG GRAPHVIZ SMIME DOCS
 OPTIONS_SINGLE=		DB
 OPTIONS_SINGLE_DB=	MYSQL ORACLE PGSQL SQLITE
 OPTIONS_RADIO=		WEB
@@ -47,14 +48,11 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/jsmin:devel/jsmin
 
 .include "${.CURDIR}/Makefile.cpan"
 
-RUN_DEPENDS+=	${CORE_DEPS}       \
-		${MASON_DEPS}      \
-		${PSGI_DEPS}       \
-		${MAILGATE_DEPS}   \
-		${CLI_DEPS}        \
-		${ICAL_DEPS}       \
-		${SMTP_DEPS}       \
+RUN_DEPENDS+=	${CLI_DEPS}        \
+		${CORE_DEPS}       \
 		${DASHBOARDS_DEPS} \
+		${ICAL_DEPS}       \
+		${MAILGATE_DEPS}   \
 		${USERLOGO_DEPS}   \
 		${HTML_DOC_DEPS}
 
@@ -69,38 +67,35 @@ RT_ETC_PATH=	${PREFIX}/${RT_ETC_DIR}
 
 AP_MODPERL_DESC=		Deploy with apache and mod_perl
 AP_MODPERL_RUN_DEPENDS=		${MODPERL2_DEPS}
-AP_MODPERL_CONFIGURE_ON=	--with-apachectl=${LOCALBASE}/sbin/apachectl
 
 AP_MODFASTCGI_DESC=		Deploy with apache and mod_fastcgi
 AP_MODFASTCGI_USE=		APACHE_RUN=22+
 AP_MODFASTCGI_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:www/mod_fastcgi \
 				${FASTCGI_DEPS}
-AP_MODFASTCGI_CONFIGURE_ON=	--with-apachectl=${LOCALBASE}/sbin/apachectl
 
 LIGHTTPD_DESC=			Deploy with lighttpd and mod_fastcgi
-LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:www/lighttpd
+LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:www/lighttpd \
+				${FASTCGI_DEPS}
 
 SPAWN_FCGI_DESC=		Deploy with spawn_fcgi
-SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:www/spawn-fcgi
+SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:www/spawn-fcgi \
+				${FASTCGI_DEPS}
 
-MYSQL_USE=			MYSQL=yes
 MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
 
-PGSQL_USES=			pgsql
 PGSQL_RUN_DEPENDS=		${PGSQL_DEPS}
 
 ORACLE_RUN_DEPENDS=		${ORACLE_DEPS}
 
-SQLITE_USE=			SQLITE=yes
 SQLITE_RUN_DEPENDS=		${SQLITE_DEPS}
 
-DEV_DESC=			Configure for Developers
-DEV_RUN_DEPENDS=		${DEV_DEPS}
-DEV_CONFIGURE_ON=		--enable-developer-mode
+DEVELOPER_DESC=			Configure for Developers
+DEVELOPER_RUN_DEPENDS=		${DEVELOPER_DEPS}
+DEVELOPER_CONFIGURE_ENABLE=	developer
 
-SSL_MAILGATE_DESC=		Enable HTTPS support for rt-mailgate
-SSL_MAILGATE_RUN_DEPENDS=	${SSL_MAILGATE_DEPS}
-SSL_MAILGATE_CONFIGURE_ENABLE=	ssl-mailgate
+SMIME_DESC=			Enable Secure MIME support
+SMIME_RUN_DEPENDS=		${SMIME_DEPS}
+SMIME_CONFIGURE_ENABLE=		smime
 
 GRAPHVIZ_RUN_DEPENDS=		${GRAPHVIZ_DEPS}
 GRAPHVIZ_CONFIGURE_ENABLE=	graphviz
@@ -137,7 +132,6 @@ DB_TYPE=	Oracle
 .if ${PORT_OPTIONS:MSQLITE}
 DB_TYPE=	SQLite
 .endif
-
 
 .if ${PORT_OPTIONS:MPGSQL}
 DB_DBA_USER?=	pgsql
@@ -178,7 +172,7 @@ PLIST_SUB=	RT_ETC_DIR=${RT_ETC_DIR}
 
 pre-fetch:
 	@${ECHO} ""
-	@${ECHO} "      DB_TYPE=type                    mysql, Oracle, Pg or SQLite (mysql)"
+	@${ECHO} "Additional database related settings you can use:"
 	@${ECHO} "      DB_HOST=hostname                The database host (localhost)"
 	@${ECHO} "      DB_PORT=port                    The database port"
 	@${ECHO} "      DB_DATABASE=dbname              The database name (rt4)"
@@ -212,7 +206,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 502200
-CORE_DEPS+=	p5-CGI>0:www/p5-CGI
+CORE_DEPS+=	p5-CGI>4.0:www/p5-CGI
 .endif
 
 .include <bsd.port.post.mk>

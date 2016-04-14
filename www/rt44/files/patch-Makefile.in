@@ -1,0 +1,102 @@
+--- ./Makefile.in.orig	2014-05-06 17:59:04 UTC
++++ ./Makefile.in
+@@ -59,7 +59,7 @@
+ 
+ CONFIG_FILE_PATH	=	@CONFIG_FILE_PATH_R@
+ CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
+-SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
++SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm-dist
+ 
+ 
+ RT_VERSION_MAJOR	=	@RT_VERSION_MAJOR@
+@@ -106,7 +106,7 @@
+ RT_LEXICON_PATH		=	@RT_LEXICON_PATH_R@
+ RT_STATIC_PATH		=	@RT_STATIC_PATH_R@
+ RT_LOCAL_PATH		=	@RT_LOCAL_PATH_R@
+-LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/plugins
++LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/share/rt44/plugins
+ LOCAL_ETC_PATH		=	@LOCAL_ETC_PATH_R@
+ LOCAL_LIB_PATH		=	@LOCAL_LIB_PATH_R@
+ LOCAL_LEXICON_PATH	=	@LOCAL_LEXICON_PATH_R@
+@@ -269,16 +269,13 @@
+ depends: fixdeps
+ 
+ fixdeps:
+-	$(PERL) ./sbin/rt-test-dependencies --verbose --install --with-$(DB_TYPE) $(my_with_web_handlers)
++	$(PERL) ./sbin/rt-test-dependencies --verbose --with-$(DB_TYPE) $(my_with_web_handlers)
+ 
+ #}}}
+ 
+ fixperms:
+ 	# Make the libraries readable
+ 	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_PATH)
+-	chown -R $(LIBS_OWNER) $(DESTDIR)$(RT_LIB_PATH)
+-	chgrp -R $(LIBS_GROUP) $(DESTDIR)$(RT_LIB_PATH)
+-	chmod -R  u+rwX,go-w,go+rX $(DESTDIR)$(RT_LIB_PATH)
+ 
+ 
+ 	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
+@@ -300,14 +297,6 @@
+ 	# Make the system binaries executable also
+ 	cd $(DESTDIR)$(RT_SBIN_PATH) && ( chmod 0755 $(SYSTEM_BINARIES) ; chown $(BIN_OWNER) $(SYSTEM_BINARIES);  chgrp $(RTGROUP) $(SYSTEM_BINARIES))
+ 
+-	# Make upgrade scripts executable if they are in the source.
+-	#
+-	# Note that we use the deprecated (by GNU/POSIX find) -perm +0NNN syntax
+-	# instead of -perm /0NNN since BSD find doesn't support the latter.
+-	( cd etc/upgrade && find . -type f -not -name '*.in' -perm +0111 -print ) | while read file ; do \
+-		chmod a+x "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
+-	done
+-
+ 	# Make the web ui readable by all. 
+ 	chmod -R  u+rwX,go-w,go+rX 	$(DESTDIR)$(MASON_HTML_PATH) \
+ 					$(DESTDIR)$(MASON_LOCAL_HTML_PATH) \
+@@ -359,14 +348,14 @@
+ 	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/etc/*
+ 	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/obj/*
+ 
+-install: testdeps config-install dirs files-install fixperms instruct
++install: config-install dirs files-install
+ 
+ files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install po-install static-install
+ 
+ config-install:
+-@COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
+-@COMMENT_INPLACE_LAYOUT@	-$(INSTALL) -m 0440 -o $(BIN_OWNER) -g $(RTGROUP)  etc/RT_Config.pm $(DESTDIR)$(CONFIG_FILE)
+-@COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 -o $(BIN_OWNER) -g $(RTGROUP) etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
++@COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(CONFIG_FILE_PATH)
++@COMMENT_INPLACE_LAYOUT@	-$(INSTALL) -m 0440 etc/RT_Config.pm $(DESTDIR)$(CONFIG_FILE)
++@COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
+ @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
+ 
+ test: 
+@@ -457,19 +446,12 @@
+ @COMMENT_INPLACE_LAYOUT@	for file in $(ETC_FILES) ; do \
+ @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/$$file" "$(DESTDIR)$(RT_ETC_PATH)/" ; \
+ @COMMENT_INPLACE_LAYOUT@	done
+-@COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(RT_ETC_PATH)/upgrade ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(RT_ETC_PATH)/upgrade
+-@COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type d -print ) | while read dir ; do \
+-@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 -d "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$dir" ; \
+-@COMMENT_INPLACE_LAYOUT@	done
+-@COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type f -not -name '*.in' -print ) | while read file ; do \
+-@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/upgrade/$$file" "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
+-@COMMENT_INPLACE_LAYOUT@	done
+ 
+ 
+ sbin-install:
+ @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(RT_SBIN_PATH)
+ @COMMENT_INPLACE_LAYOUT@	for file in $(SYSTEM_BINARIES) ; do \
+-@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -o $(BIN_OWNER) -g $(RTGROUP) -m 0755 "sbin/$$file" "$(DESTDIR)$(RT_SBIN_PATH)/" ; \
++@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 "sbin/$$file" "$(DESTDIR)$(RT_SBIN_PATH)/" ; \
+ @COMMENT_INPLACE_LAYOUT@	done
+ 
+ 
+@@ -477,7 +459,7 @@
+ bin-install:
+ @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(RT_BIN_PATH)
+ @COMMENT_INPLACE_LAYOUT@	for file in $(BINARIES) ; do \
+-@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -o $(BIN_OWNER) -g $(RTGROUP) -m 0755 "bin/$$file" "$(DESTDIR)$(RT_BIN_PATH)/" ; \
++@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 "bin/$$file" "$(DESTDIR)$(RT_BIN_PATH)/" ; \
+ @COMMENT_INPLACE_LAYOUT@	done
+ 
+ 
