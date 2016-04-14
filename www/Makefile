@@ -1848,6 +1848,7 @@
     SUBDIR += rsstool
     SUBDIR += rt40
     SUBDIR += rt42
+    SUBDIR += rt44
     SUBDIR += rtv
     SUBDIR += ruby-aws
     SUBDIR += ruby-google
