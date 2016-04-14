@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-DISTVERSION=	1.17.0
-PORTREVISION=	1
+DISTVERSION=	1.22.0
 CATEGORIES=	biology science
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} QueryDesigner_UserManual.pdf \
@@ -20,16 +19,13 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		desktop-file-utils execinfo qmake
 USE_GL=		glu
-USE_QT4=	corelib gui network script webkit xml \
-		linguisttools_build moc_build qmake_build qtestlib_build \
-		rcc_build scripttools_build uic_build \
+USE_QT5=	buildtools_build linguisttools_build scripttools_build \
+		gui network printsupport script sql svg webkit widgets xml \
 		imageformats_run
-USE_XORG=	xtst
-USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 QMAKE_ARGS=	INSTALL_PREFIX="${PREFIX}" UGENE_INSTALL_DATA="${DATADIR}" \
-		INSTALL_MANDIR="${MAN1PREFIX}/man"
+		INSTALL_MANDIR="${MAN1PREFIX}/man" LRELEASE="${LRELEASE}" \
+		LUPDATE="${LUPDATE}"
 ALL_TARGET=	release
 
 DOCSDIR=	${DATADIR}/manuals
@@ -60,6 +56,7 @@ PLIST_SUB+=	SSE2="@comment "
 .endif
 
 post-extract:
+	@${MKDIR} ${WRKSRC}/data/manuals
 	${CP} -p ${_DISTDIR}/*.pdf ${WRKSRC}/data/manuals
 
 post-patch:
@@ -67,12 +64,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/usr/bin/env bash|' \
 		${WRKSRC}/src/gen_bin_script.cmd \
 		${WRKSRC}/installer/_common_data/ugene
-	@${REINPLACE_CMD} -e 's|-bit version|& for ${OPSYS}|' \
+	@${REINPLACE_CMD} -e 's|-bit version|& for ${OPSYS}/${ARCH}|' \
 		${WRKSRC}/src/ugeneui/src/main_window/AboutDialogController.cpp
 	@${REINPLACE_CMD} -e '/unix_not_mac/,+11d' \
 		${WRKSRC}/src/corelibs/U2Core/U2Core.pri
-.for x in ugenecl ugeneui plugins_checker
-	@${ECHO_CMD} 'LIBS += -lexecinfo' >> ${WRKSRC}/src/${x}/${x}.pro
-.endfor
+	@${REINPLACE_CMD} 's, -lbreakpad,,' \
+		${WRKSRC}/src/corelibs/U2Private/U2Private.pri \
+		${WRKSRC}/src/plugins_checker/plugins_checker.pri \
+		${WRKSRC}/src/ugenecl/ugenecl.pri \
+		${WRKSRC}/src/ugeneui/ugeneui.pri
 
 .include <bsd.port.post.mk>
