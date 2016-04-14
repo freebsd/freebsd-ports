@@ -3000,6 +3000,20 @@ ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} ${WRKSRC}:
 
 .if !target(check-deprecated)
 check-deprecated:
+.if ${MAINTAINER} == "ports@FreeBSD.org"
+	@${ECHO_MSG} "===>   NOTICE:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "The ${PORTNAME} port currently does not have a maintainer. As a result, it is"
+	@${ECHO_MSG} "more likely to have unresolved issues, not be up-to-date, or even be removed in"
+	@${ECHO_MSG} "the future. To volunteer to maintain this port, please create an issue at:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "https://bugs.freebsd.org/bugzilla"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "More information about port maintainership is available at:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port"
+	@${ECHO_MSG}
+.endif
 .if defined(DEPRECATED)
 	@${ECHO_MSG} "===>   NOTICE:"
 	@${ECHO_MSG}
