@@ -11,7 +11,7 @@ COMMENT=	Standalone file import filter library for spreadsheet documents
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/include/mdds/global.hpp:devel/mdds
+BUILD_DEPENDS=	${LOCALBASE}/include/mdds/global.hpp:devel/mdds0
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 BROKEN_sparc64=	cannot link with boost
