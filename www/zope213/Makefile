@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zope213
-PORTVERSION=	2.13.23
+PORTVERSION=	2.13.24
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Zope2-${PORTVERSION}
@@ -80,7 +80,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=2.13.2:security/py-AccessCont
 		${PYTHON_PKGNAMEPREFIX}Products.StandardCacheManagers>=0:devel/py-Products.StandardCacheManagers \
 		${PYTHON_PKGNAMEPREFIX}manuel>=0:devel/py-manuel
 
-USES=		python:2
+USES=		python:-2.7
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
