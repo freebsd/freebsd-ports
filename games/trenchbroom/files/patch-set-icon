@@ -1,0 +1,95 @@
+--- common/src/View/AboutFrame.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/AboutFrame.cpp
+@@ -26,6 +26,7 @@
+ #include <wx/sizer.h>
+ #include <wx/statline.h>
+ #include <wx/stattext.h>
++#include <wx/stdpaths.h>
+ #include <wx/textctrl.h>
+ 
+ #include <iostream>
+@@ -63,6 +64,8 @@ namespace TrenchBroom {
+         
+         void AboutFrame::createGui() {
+             SetBackgroundColour(*wxWHITE);
++            SetIcon(wxIcon(wxStandardPaths::Get().GetInstallPrefix() + "/share/icons/hicolor/128x128/apps/trenchbroom.png", wxBITMAP_TYPE_PNG));
++
+             AppInfoPanel* infoPanel = new AppInfoPanel(this);
+             
+             wxStaticText* creditsText = new wxStaticText(this, wxID_ANY, "");
+--- common/src/View/GameDialog.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/GameDialog.cpp
+@@ -33,6 +33,7 @@
+ #include <wx/choice.h>
+ #include <wx/sizer.h>
+ #include <wx/stattext.h>
++#include <wx/stdpaths.h>
+ 
+ #include <cassert>
+ 
+@@ -120,6 +121,8 @@ namespace TrenchBroom {
+         }
+         
+         void GameDialog::createGui(const wxString& title, const wxString& infoText) {
++            SetIcon(wxIcon(wxStandardPaths::Get().GetInstallPrefix() + "/share/icons/hicolor/128x128/apps/trenchbroom.png", wxBITMAP_TYPE_PNG));
++
+             wxWindow* infoPanel = createInfoPanel(this, title, infoText);
+             wxWindow* selectionPanel = createSelectionPanel(this);
+ 
+--- common/src/View/MapFrame.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/MapFrame.cpp
+@@ -52,6 +52,7 @@
+ #include <wx/msgdlg.h>
+ #include <wx/persist.h>
+ #include <wx/sizer.h>
++#include <wx/stdpaths.h>
+ #include <wx/timer.h>
+ 
+ #include <cassert>
+@@ -296,6 +297,8 @@ namespace TrenchBroom {
+         }
+ 
+         void MapFrame::createGui() {
++            SetIcon(wxIcon(wxStandardPaths::Get().GetInstallPrefix() + "/share/icons/hicolor/128x128/apps/trenchbroom.png", wxBITMAP_TYPE_PNG));
++
+             m_hSplitter = new SplitterWindow2(this);
+             m_hSplitter->setSashGravity(1.0);
+             m_hSplitter->SetName("MapFrameHSplitter");
+--- common/src/View/PreferenceDialog.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/PreferenceDialog.cpp
+@@ -36,6 +36,7 @@
+ #include <wx/panel.h>
+ #include <wx/sizer.h>
+ #include <wx/simplebook.h>
++#include <wx/stdpaths.h>
+ #include <wx/toolbar.h>
+ 
+ namespace TrenchBroom {
+@@ -149,6 +150,8 @@ namespace TrenchBroom {
+         }
+ 
+         void PreferenceDialog::createGui() {
++            SetIcon(wxIcon(wxStandardPaths::Get().GetInstallPrefix() + "/share/icons/hicolor/128x128/apps/trenchbroom.png", wxBITMAP_TYPE_PNG));
++
+             const wxBitmap gamesImage = IO::loadImageResource("GeneralPreferences.png");
+             const wxBitmap generalImage = IO::loadImageResource("GeneralPreferences.png");
+             const wxBitmap mouseImage = IO::loadImageResource("MousePreferences.png");
+--- common/src/View/WelcomeFrame.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/WelcomeFrame.cpp
+@@ -28,6 +28,7 @@
+ 
+ #include <wx/panel.h>
+ #include <wx/sizer.h>
++#include <wx/stdpaths.h>
+ 
+ namespace TrenchBroom {
+     namespace View {
+@@ -41,6 +42,8 @@ namespace TrenchBroom {
+         }
+ 
+         void WelcomeFrame::createGui() {
++            SetIcon(wxIcon(wxStandardPaths::Get().GetInstallPrefix() + "/share/icons/hicolor/128x128/apps/trenchbroom.png", wxBITMAP_TYPE_PNG));
++
+             wxPanel* container = new wxPanel(this);
+             container->SetBackgroundColour(*wxWHITE);
+             
