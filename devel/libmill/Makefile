@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmill
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	devel
 MASTER_SITES=	http://libmill.org/
 
