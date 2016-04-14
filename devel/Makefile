@@ -4305,8 +4305,8 @@
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
-    SUBDIR += py-pytemplate
     SUBDIR += py-pyte
+    SUBDIR += py-pytemplate
     SUBDIR += py-pytest
     SUBDIR += py-pytest-cache
     SUBDIR += py-pytest-capturelog
@@ -5368,6 +5368,7 @@
     SUBDIR += ua_parser-core
     SUBDIR += uatraits
     SUBDIR += uboot-mkimage
+    SUBDIR += uclcmd
     SUBDIR += uclmmbase
     SUBDIR += ucommon
     SUBDIR += ucpp
