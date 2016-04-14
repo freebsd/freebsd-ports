@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.1.24
+PORTVERSION=		1.1.26
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
@@ -33,7 +33,7 @@ OPTIONS_DEFINE=		MANPAGES
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
 BUILD_DEPENDS+=		talloc>=2.1.5:devel/talloc \
-			tevent>=0.9.26:devel/tevent \
+			tevent>=0.9.27:devel/tevent \
 			tdb>=1.3.8,1:databases/tdb \
 			popt>=0:devel/popt
 RUN_DEPENDS:=		${BUILD_DEPENDS}
