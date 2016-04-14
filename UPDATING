@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160412:
+  AFFECTS: Users of net/samba42 and net/samba/43
+  AUTHOR: timur@FreeBSD.org
+
+  Samba 4.2.x and 4.3.x ports have been updated to address
+  BadLock(http://badlock.org) vulnerability, as well as few other
+  discovered.
+
+  Please note that Samba 4.1.x and older versions are also affected by 
+  the issues fixed with this release but are not supported anymore. It is
+  strongly recommend to upgrade to a recent version at your earliest 
+  convenience.
+
+  The security updates include new smb.conf options and a number of
+  stricter behaviours to prevent Man in the Middle attacks. Between these
+  changes, compatibility with a large number of older software versions
+  has been lost in the default configuration.
+
+  For more information about the related behaviour changes and the
+  security issues please visit:
+
+     https://www.samba.org/samba/latest_news.html#4.4.2
+     https://www.samba.org/samba/history/samba-4.3.8.html
+     https://www.samba.org/samba/history/samba-4.2.11.html
+
 20160404:
   AFFECTS: mail/spamassassin
   AUTHOR: adamw@FreeBSD.org
