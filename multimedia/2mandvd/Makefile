@@ -4,7 +4,7 @@
 PORTNAME=	2ManDVD
 PORTVERSION=	1.8.5
 PORTREVISION=	2
-CATEGORIES=	multimedia kde
+CATEGORIES=	multimedia
 MASTER_SITES=	http://download.tuxfamily.org/2mandvd/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -61,18 +61,16 @@ post-patch:
 		's|Ne slideshow|New slideshow|' ${WRKSRC}/2mandvd_en.ts
 
 pre-build:
-	(cd ${WRKSRC} && ${LRELEASE} 2mandvd_en.ts)
+	${LRELEASE} ${WRKSRC}/2mandvd_en.ts
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} 2ManDVD ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/2ManDVD ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} fake.pl ${STAGEDIR}${DATADIR})
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.qm ${STAGEDIR}${DATADIR})
+	${INSTALL_SCRIPT} ${WRKSRC}/fake.pl ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.qm ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} Bibliotheque ${STAGEDIR}${DATADIR})
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} 2ManDVD.desktop \
-		${STAGEDIR}${DESKTOPDIR})
-	(cd ${WRKSRC}/Interface && ${INSTALL_DATA} mandvdico.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps)
+	${INSTALL_DATA} ${WRKSRC}/2ManDVD.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/Interface/mandvdico.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
