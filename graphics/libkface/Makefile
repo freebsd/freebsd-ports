@@ -1,21 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	libkface
-PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	1
+PORTVERSION=	${KDE4_APPLICATIONS_VERSION}
 CATEGORIES=	graphics kde
+MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${PORTVERSION}/src
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 library for face recognition
 
-.include "${.CURDIR}/../digikam-kde4/Makefile.common"
+LICENSE=	GPLv2+ LGPL20+
+LICENSE_COMB=	multi
 
-USES+=		pkgconfig
 LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
-USE_LDCONFIG=	yes
 
-post-patch:
-	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
-		${WRKSRC}/CMakeLists.txt
+USE_KDE4=	kdelibs kdeprefix automoc4 marble
+USES=		cmake:outsource pathfix pkgconfig tar:xz
+USE_LDCONFIG=	yes
+USE_QT4=	network phonon xml moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

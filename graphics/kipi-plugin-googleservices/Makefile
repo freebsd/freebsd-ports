@@ -9,6 +9,9 @@ COMMENT=	${${KIPI_PLUGIN}_DESC}
 
 LIB_DEPENDS=	libqjson.so:devel/qjson
 
-KIPI_PLUGIN=	googledrive
+CONFLICTS_INSTALL=	kipi-plugin-googledrive-* \
+			kipi-plugin-picasawebexport-*
+
+KIPI_PLUGIN=	googleservices
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"
 .include <bsd.port.mk>
