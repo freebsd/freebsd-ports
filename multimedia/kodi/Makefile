@@ -53,6 +53,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 USE_GITHUB=	yes
 GH_TUPLE=	xbmc:xbmc:f4dda26 xbmc:FFmpeg:2.6.4-Isengard:ffmpeg
 
+SAMBA_PORT?=	net/samba43
+
 USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
 		libtool pkgconfig python:2
 GNU_CONFIGURE=	yes
@@ -118,7 +120,7 @@ RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	rtmp
 
 SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
-SMB_RUN_DEPENDS=	nmblookup:${PORTSDIR}/net/samba41
+SMB_RUN_DEPENDS=	nmblookup:${SAMBA_PORT}
 SMB_CONFIGURE_ENABLE=	samba
 
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva

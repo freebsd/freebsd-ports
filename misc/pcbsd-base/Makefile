@@ -41,7 +41,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pc-updategui:sysutils/pcbsd-utils-qt5 \
 		${LOCALBASE}/bin/xsane:graphics/xsane \
 		${LOCALBASE}/bin/rdesktop:net/rdesktop \
 		${LOCALBASE}/bin/fluxbox:x11-wm/fluxbox \
-		samba42>=0:net/samba42 \
 		xorg>=0:x11/xorg \
 		xf86-input-synaptics>=0:x11-drivers/xf86-input-synaptics \
 		xf86-video-intel>=0:x11-drivers/xf86-video-intel \
