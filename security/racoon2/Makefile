@@ -11,7 +11,6 @@ MAINTAINER= 	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
 USES=		perl5 tar:tgz
-USE_RC_SUBR=	YES
 USE_OPENSSL=	YES
 CONFIGURE_ARGS+=	--disable-kinkd
 PLIST_SUB+=	KINK="@comment "
