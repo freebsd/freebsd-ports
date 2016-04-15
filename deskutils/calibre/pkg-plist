@@ -425,6 +425,7 @@ lib/calibre/calibre/ebooks/oeb/__init__.py
 lib/calibre/calibre/ebooks/oeb/base.py
 lib/calibre/calibre/ebooks/oeb/display/__init__.py
 lib/calibre/calibre/ebooks/oeb/display/test-cfi/run.py
+lib/calibre/calibre/ebooks/oeb/display/test-cfi/run_rapydscript.py
 lib/calibre/calibre/ebooks/oeb/display/webview.py
 lib/calibre/calibre/ebooks/oeb/iterator/__init__.py
 lib/calibre/calibre/ebooks/oeb/iterator/book.py
@@ -433,6 +434,7 @@ lib/calibre/calibre/ebooks/oeb/iterator/spine.py
 lib/calibre/calibre/ebooks/oeb/normalize_css.py
 lib/calibre/calibre/ebooks/oeb/parse_utils.py
 lib/calibre/calibre/ebooks/oeb/polish/__init__.py
+lib/calibre/calibre/ebooks/oeb/polish/cascade.py
 lib/calibre/calibre/ebooks/oeb/polish/check/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/check/base.py
 lib/calibre/calibre/ebooks/oeb/polish/check/fonts.py
@@ -463,6 +465,7 @@ lib/calibre/calibre/ebooks/oeb/polish/stats.py
 lib/calibre/calibre/ebooks/oeb/polish/subset.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/base.py
+lib/calibre/calibre/ebooks/oeb/polish/tests/cascade.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/container.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/main.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/parsing.py
@@ -1574,7 +1577,6 @@ lib/calibre/tinycss/tests/tokenizing.py
 lib/calibre/tinycss/token_data.py
 lib/calibre/tinycss/tokenizer.py
 lib/calibre/tinycss/version.py
-%%PYTHON_SITELIBDIR%%/init_calibre.py
 %%DATADIR%%/builtin_recipes.xml
 %%DATADIR%%/builtin_recipes.zip
 %%DATADIR%%/calibre-ebook-root-CA.crt
@@ -1591,13 +1593,6 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/content-server/autoreload.js
 %%DATADIR%%/content-server/calibre.png
 %%DATADIR%%/content-server/empty.html
-%%DATADIR%%/content-server/font-awesome/FontAwesome.otf
-%%DATADIR%%/content-server/font-awesome/fa.css
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.eot
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.svg
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.ttf
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.woff
-%%DATADIR%%/content-server/font-awesome/fontawesome-webfont.woff2
 %%DATADIR%%/content-server/index-generated.html
 %%DATADIR%%/content-server/index.html
 %%DATADIR%%/content-server/locales.zip
@@ -1925,8 +1920,10 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/rapydscript/lib/gettext.pyj
 %%DATADIR%%/rapydscript/lib/math.pyj
 %%DATADIR%%/rapydscript/lib/operator.pyj
+%%DATADIR%%/rapydscript/lib/pythonize.pyj
 %%DATADIR%%/rapydscript/lib/random.pyj
 %%DATADIR%%/rapydscript/lib/re.pyj
+%%DATADIR%%/rapydscript/lib/traceback.pyj
 %%DATADIR%%/scripts.pickle
 %%DATADIR%%/template-functions.json
 %%DATADIR%%/templates/book_details.css
@@ -2151,6 +2148,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/fontdata.js
 %%DATADIR%%/viewer/mathjax/jax/output/SVG/jax.js
 %%DATADIR%%/viewer/referencing.js
+%%PYTHON_SITELIBDIR%%/init_calibre.py
 share/bash-completion/completions/calibre
 share/appdata/calibre-ebook-edit.appdata.xml
 share/appdata/calibre-ebook-viewer.appdata.xml
