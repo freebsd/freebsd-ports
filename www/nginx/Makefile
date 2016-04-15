@@ -524,7 +524,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.99.11
+GIT_PUSH_VERSION=	0.99.12
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
@@ -714,7 +714,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	7410339
+NGINX_LUA_VERSION=	d44f8e0
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
 GH_TAGNAME+=	${NGINX_LUA_VERSION}:lua
@@ -834,10 +834,10 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 .endif
 
 .if ${PORT_OPTIONS:MSHIBBOLETH}
-GIT_SHIBBOLETH_VERSION=	20150121
+GIT_SHIBBOLETH_VERSION=	4f1119b
 GH_ACCOUNT+=	nginx-shib:shib
 GH_PROJECT+=	nginx-http-shibboleth:shib
-GH_TAGNAME+=	v${GIT_SHIBBOLETH_VERSION}:shib
+GH_TAGNAME+=	${GIT_SHIBBOLETH_VERSION}:shib
 CONFIGURE_ARGS+=--add-module=${WRKSRC_shib}
 .endif
 
