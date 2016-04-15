@@ -2,4 +2,4 @@ Yell - Your Extensible Logging Library for Ruby is a library to define
 multiple adapters, various log level combinations or message formatting
 options.
 
-WWW: http://rudionrails.github.io/yell/
+WWW: https://github.com/rudionrails/yell
