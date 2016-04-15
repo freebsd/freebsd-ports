@@ -26,6 +26,7 @@ USE_LDCONFIG=	${PREFIX}/lib/thread${PORTVERSION}
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
 INSTALL_TARGET=	install-binaries install-libraries install-doc
+TEST_TARGET=	test
 
 OPTIONS_DEFINE=	GDBM DOCS
 OPTIONS_DEFAULT=GDBM
@@ -47,8 +48,5 @@ post-install:
 .for FILE in thread.html tpool.html tsv.html ttrace.html
 	${INSTALL_DATA} ${WRKSRC}/doc/html/${FILE} ${STAGEDIR}${DOCSDIR}/html
 .endfor
-
-regression-test: build
-	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
