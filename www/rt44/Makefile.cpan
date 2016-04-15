@@ -1,0 +1,312 @@
+###############################################################################
+### --- Core_DEPS ---
+### Apache::Session 1.53
+### Business::Hours
+### CGI 3.38                                    perl std (perl<5.22)
+### CGI::Cookie 1.20                            perl std (perl<5.22)
+### CGI::Emulate::PSGI
+### CGI::PSGI 0.12
+### Class::Accessor::Fast
+### Crypt::Eksblowfish
+### CSS::Minifier::XS
+### CSS::Squish 0.06
+### Data::GUID
+### Data::Page::Pageset
+### Date::Extract 0.02
+### Date::Manip
+### DateTime 0.44
+### DateTime::Format::Natural 0.67
+### DateTime::Locale 0.40
+### DBI 1.37
+### DBIx::SearchBuilder 1.65
+### Devel::GlobalDestruction
+### Devel::StackTrace 1.19
+### Digest::base                                perl std
+### Digest::MD5 2.27                            perl std
+### Digest::SHA                                 perl std
+### Email::Address 1.897
+### Email::Address::List 0.02
+### Encode 2.64                                 perl std (needs newer version)
+### Errno                                       perl std
+### File::Glob                                  perl std
+### File::ShareDir
+### File::Spec 0.8                              perl std
+### File::Temp 0.19                             perl std
+### HTML::Entities
+### HTML::FormatText::WithLinks 0.14
+### HTML::FormatText::WithLinks::AndTables 0.06
+### HTML::Mason 1.43
+### HTML::Mason::PSGIHandler 0.52
+### HTML::Quoted
+### HTML::RewriteAttributes 0.05
+### HTML::Scrubber 0.08
+### HTTP::Message 6.0
+### IPC::Run3
+### JavaScript::Minifier::XS
+### JSON
+### LWP::Simple
+### List::MoreUtils
+### Locale::Maketext 1.06                      perl std
+### Locale::Maketext::Fuzzy 0.11
+### Locale::Maketext::Lexicon 0.32
+### Log::Dispatch 2.30
+### Mail::Header 2.12
+### Mail::Mailer 1.57
+### MIME::Entity 5.504
+### Module::Refresh 0.03
+### Module::Versions::Report 1.05
+### Encode 2.64
+### Net::CIDR
+### Net::IP
+### Plack 1.0002
+### Plack::Handler::Starlet
+### Regexp::Common
+### Regexp::Common::net::CIDR
+### Regexp::IPv6
+### Role::Basic 0.12
+### Scalar::Util                               perl std
+### Scope::Upper
+### Storable 2.08                              perl std
+### Symbol::Global::Name 0.04
+### Sys::Syslog 0.16                           perl std
+### Text::Password::Pronounceable
+### Text::Quoted 2.07
+### Text::Template 1.44
+### Text::WikiFormat 0.76
+### Text::Wrapper
+### Time::HiRes                                perl std
+### Time::ParseDate
+### Tree::Simple 1.04
+### UNIVERSAL::require
+### XML::RSS 1.05
+
+CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
+		p5-Business-Hours>0:misc/p5-Business-Hours				\
+		p5-CGI-Emulate-PSGI>0:www/p5-CGI-Emulate-PSGI				\
+		p5-CGI-PSGI>=0.12:www/p5-CGI-PSGI						\
+		p5-CSS-Minifier-XS>=0:textproc/p5-CSS-Minifier-XS			\
+		p5-Crypt-Eksblowfish>0:security/p5-Crypt-Eksblowfish			\
+		p5-DBI>=1.37:databases/p5-DBI						\
+		p5-DBIx-SearchBuilder>=1.66:databases/p5-DBIx-SearchBuilder			\
+		p5-Data-GUID>0:devel/p5-Data-GUID						\
+		p5-Data-Page-Pageset>0:devel/p5-Data-Page-Pageset				\
+		p5-Date-Extract>=0.02:devel/p5-Date-Extract					\
+		p5-Date-Manip>0:devel/p5-Date-Manip						\
+		p5-DateTime>=0.44:devel/p5-DateTime						\
+		p5-DateTime-Format-Natural>=0.67:devel/p5-DateTime-Format-Natural		\
+		p5-DateTime-Locale>=0.40:devel/p5-DateTime-Locale				\
+		p5-DateTime>=0.44:devel/p5-DateTime						\
+		p5-Devel-GlobalDestruction>0:devel/p5-Devel-GlobalDestruction		\
+		p5-Devel-StackTrace>=1.30:devel/p5-Devel-StackTrace				\
+		p5-Email-Address>=1.89.7:mail/p5-Email-Address				\
+		p5-Email-Address-List>=0.03:mail/p5-Email-Address-List			\
+		p5-Encode>=2.64:converters/p5-Encode					\
+		p5-File-ShareDir>0:devel/p5-File-ShareDir					\
+		p5-HTML-FormatText-WithLinks-AndTables>0:textproc/p5-HTML-FormatText-WithLinks-AndTables	\
+		p5-HTML-FormatText-WithLinks>=0.14:textproc/p5-HTML-FormatText-WithLinks	\
+		p5-HTML-Mason-PSGIHandler>=0.52:www/p5-HTML-Mason-PSGIHandler		\
+		p5-HTML-Mason>=1.43:www/p5-HTML-Mason					\
+		p5-HTML-Parser>0:www/p5-HTML-Parser						\
+		p5-HTML-Quoted>0:textproc/p5-HTML-Quoted					\
+		p5-HTML-Scrubber>=0.08:www/p5-HTML-Scrubber					\
+		p5-HTTP-Message>=6.0:www/p5-HTTP-Message					\
+		p5-IPC-Run3>0:devel/p5-IPC-Run3						\
+		p5-JavaScript-Minifier-XS>=0:textproc/p5-JavaScript-Minifier-XS		\
+		p5-JSON>0:converters/p5-JSON						\
+		p5-libwww>0:www/p5-libwww							\
+		p5-List-MoreUtils>0:lang/p5-List-MoreUtils					\
+		p5-Locale-Maketext-Fuzzy>=0.11:devel/p5-Locale-Maketext-Fuzzy		\
+		p5-Locale-Maketext-Lexicon>=0.32:devel/p5-Locale-Maketext-Lexicon		\
+		p5-Log-Dispatch>=2.30:devel/p5-Log-Dispatch					\
+		p5-MIME-Tools>=5.504,2:mail/p5-MIME-Tools					\
+		p5-Mail-Tools>=2.12:mail/p5-Mail-Tools					\
+		p5-Module-Refresh>=0.03:devel/p5-Module-Refresh				\
+		p5-Module-Versions-Report>=1.05:devel/p5-Module-Versions-Report		\
+		p5-Net-CIDR>0:net-mgmt/p5-Net-CIDR						\
+		p5-Net-IP>=0:net-mgmt/p5-Net-IP						\
+		p5-Plack>=1.0002:www/p5-Plack						\
+		p5-Starlet>0:www/p5-Starlet							\
+		p5-Regexp-Common-net-CIDR>0:textproc/p5-Regexp-Common-net-CIDR		\
+		p5-Regexp-Common>0:textproc/p5-Regexp-Common				\
+		p5-Regexp-IPv6>0:textproc/p5-Regexp-IPv6					\
+		p5-Role-Basic>=0.12:devel/p5-Role-Basic					\
+		p5-Scope-Upper>=0.06:devel/p5-Scope-Upper				\
+		p5-Symbol-Global-Name>=0.05:devel/p5-Symbol-Global-Name			\
+		p5-Text-Password-Pronounceable>0:security/p5-Text-Password-Pronounceable	\
+		p5-Text-Quoted>=2.07:textproc/p5-Text-Quoted				\
+		p5-Text-Template>=1.44:textproc/p5-Text-Template				\
+		p5-Text-WikiFormat>=0.76:textproc/p5-Text-WikiFormat			\
+		p5-Text-Wrapper>0:textproc/p5-Text-Wrapper					\
+		p5-Time-modules>0:devel/p5-Time-modules					\
+		p5-Tree-Simple>=1.04:devel/p5-Tree-Simple					\
+		p5-UNIVERSAL-require>0:devel/p5-UNIVERSAL-require				\
+		p5-XML-RSS>=1.05:textproc/p5-XML-RSS
+
+### --- MAILGATE ---
+### Crypt::SSLeay
+### Getopt::Long                           perl std
+### LWP::Protocol::https
+### LWP::UserAgent 6.0
+### Mozilla::CA
+### Net::SSL
+### Pod::Usage                             perl std
+
+MAILGATE_DEPS=	p5-libwww>6.0:www/p5-libwww \
+		p5-Crypt-SSLeay>0:security/p5-Crypt-SSLeay \
+		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
+		p5-Mozilla-CA>0:www/p5-Mozilla-CA
+
+### --- CLI ---
+### Getopt::Long 2.24                     perl std
+### HTTP::Request::Common
+### LWP
+### Term::ReadKey
+### Term::ReadLine                        perl std
+### Text::ParseWords                      perl std
+
+CLI_DEPS=	p5-HTTP-Message>0:www/p5-HTTP-Message \
+		p5-libwww>0:www/p5-libwww \
+		p5-Term-ReadKey>0:devel/p5-Term-ReadKey
+
+### --- DEVELOPER ---
+### Email::Abstract
+### File::Find                            perl std
+### File::Which
+### Locale::PO
+### Log::Dispatch::Perl
+### Mojo::DOM
+### Plack::Middleware::Test::StashWarnings 0.08
+### Set::Tiny
+### String::ShellQuote 0 # needed for gnupg-incoming.t
+### Test::Builder 0.90 # needed for is_passing          perl std
+### Test::Deep 0 # needed for shredder tests
+### Test::Email
+### Test::Expect 0.31
+### Test::LongString
+### Test::MockTime
+### Test::NoWarnings
+### Test::Pod
+### Test::Warn
+### Test::WWW::Mechanize 1.30
+### Test::WWW::Mechanize::PSGI
+### WWW::Mechanize 1.52
+### XML::Simple
+
+DEVELOPER_DEPS=	p5-Email-Abstract>0:mail/p5-Email-Abstract				\
+		p5-File-Which>0:sysutils/p5-File-Which				\
+		p5-Locale-PO>0:devel/p5-Locale-PO					\
+		p5-Log-Dispatch-Perl>0:devel/p5-Log-Dispatch-Perl			\
+		p5-Mojolicious>0:www/p5-Mojolicious					\
+		p5-Plack-Middleware-Test-StashWarnings>=0.08:www/p5-Plack-Middleware-Test-StashWarnings	\
+		p5-Set-Tiny>0:devel/p5-Set-Tiny					\
+		p5-String-ShellQuote>0:textproc/p5-String-ShellQuote		\
+		p5-Test-Deep>0:devel/p5-Test-Deep					\
+		p5-Test-Email>0:mail/p5-Test-Email					\
+		p5-Test-Expect>=0.31:devel/p5-Test-Expect				\
+		p5-Test-LongString>0:devel/p5-Test-LongString			\
+		p5-Test-MockTime>0:devel/p5-Test-MockTime				\
+		p5-Test-NoWarnings>0:devel/p5-Test-NoWarnings			\
+		p5-Test-Pod>0:devel/p5-Test-Pod                                     \
+		p5-Test-WWW-Mechanize-PSGI>0:devel/p5-Test-WWW-Mechanize-PSGI	\
+		p5-Test-WWW-Mechanize>=1.30:devel/p5-Test-WWW-Mechanize		\
+		p5-Test-Warn>0:devel/p5-Test-Warn					\
+		p5-WWW-Mechanize>=1.52:www/p5-WWW-Mechanize				\
+		p5-XML-Simple>0:textproc/p5-XML-Simple
+
+### --- FASTCGI ---
+### FCGI 0.74
+### FCGI::ProcManager
+
+FASTCGI_DEPS=	p5-FCGI-ProcManager>0:www/p5-FCGI-ProcManager \
+		p5-FCGI>=0.74:www/p5-FCGI
+
+
+### --- MODPERL2 ---
+### Apache::DBI
+
+MODPERL2_DEPS=	p5-libapreq2>0:www/p5-libapreq2 \
+		p5-Apache-DBI>0:www/p5-Apache-DBI
+
+### --- MYSQL ---
+### DBD::mysql 2.1018
+
+MYSQL_DEPS=	p5-DBD-mysql>=2.1018:databases/p5-DBD-mysql
+
+### --- ORACLE ---
+### DBD::Oracle  (avoid 1.23 -- ports has 1.19)
+
+ORACLE_DEPS=	p5-DBD-Oracle>0:databases/p5-DBD-Oracle
+
+### --- PGSQL ---
+### DBD::Pg 3.3.1
+
+PGSQL_DEPS=	p5-DBD-Pg>=3.3.1:databases/p5-DBD-Pg
+
+### --- SQLITE ---
+### DBD::SQLite 1.00
+
+SQLITE_DEPS=	p5-DBD-SQLite>=1.00:databases/p5-DBD-SQLite
+
+### --- GPG ---
+### File::Which
+### GnuPG::Interface
+### PerlIO::eol
+
+GPG_DEPS=	p5-File-Which>0:sysutils/p5-File-Which \
+		p5-GnuPG-Interface>0:security/p5-GnuPG-Interface \
+		p5-PerlIO-eol>0:devel/p5-PerlIO-eol
+
+### --- SMIME---
+### Crypt::X509
+### File::Which
+### String::ShellQuote
+
+SMIME_DEPS=	p5-Crypt-X509>0:security/p5-Crypt-X509 \
+		p5-File-Which>0:sysutils/p5-File-Which \
+		p5-String-ShellQuote>0:textproc/p5-String-ShellQuote
+
+### --- ICAL ---
+### Data::ICal
+
+ICAL_DEPS=	p5-Data-ICal>0:deskutils/p5-Data-ICal
+
+### --- DASHBOARDS ---
+### MIME::Types
+### URI 1.59
+### URI::QueryParam
+
+DASHBOARDS_DEPS=	p5-HTML-RewriteAttributes>=0.05:textproc/p5-HTML-RewriteAttributes \
+		p5-MIME-Types>0:mail/p5-MIME-Types \
+		p5-URI>=1.59:net/p5-URI
+
+### --- GRAPHVIZ ---
+### GraphViz
+### IPC::Run 0.90
+
+GRAPHVIZ_DEPS=	p5-GraphViz>0:graphics/p5-GraphViz \
+		p5-IPC-Run>=0.90:devel/p5-IPC-Run
+
+### -- GD --
+### GD
+### GD::Graph 1.47
+### GD::Text
+
+GD_DEPS=	p5-GD>0:graphics/p5-GD \
+		p5-GD-Graph>0:graphics/p5-GD-Graph \
+		p5-GD-TextUtil>0:graphics/p5-GD-TextUtil
+
+### --- USERLOGO ---
+### Convert::Color
+
+USERLOGO_DEPS=	p5-Convert-Color>0:graphics/p5-Convert-Color
+
+### --- HTML-DOC ---
+### HTML::Entities
+### Pod::Simple 3.24                        perl std
+
+HTML_DOC_DEPS=	p5-HTML-Parser>0:www/p5-HTML-Parser
+
+### --- AVOID ---
+###     'DBD::Oracle' => [qw(1.23)],
+###     'Devel::StackTrace' => [qw(1.28 1.29)],
+###	'DBD::Pg' => [qw(3.3.0)],
