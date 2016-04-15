@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netsurf
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -54,6 +54,8 @@ post-patch:
 		-e '/OpenSSL/d' -e 's| -g||' \
 		-e 's/-DG_DISABLE_DEPRECATED//' \
 		${WRKSRC}/gtk/Makefile.target
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/gtk/gui.c
 
 do-configure:
 	@${CP} ${FILESDIR}/Makefile.config  ${WRKSRC}
