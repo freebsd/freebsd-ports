@@ -17,8 +17,12 @@ GNU_CONFIGURE=	yes
 USES=		gmake
 USE_LDCONFIG=	yes
 
+PORTDOCS=	*
+
 OPTIONS_DEFINE=	DEBUG DEVEL FASTEST LZMA LZO PTHREAD PROFILE SHARED SWAB UYIELD DOCS
 OPTIONS_DEFAULT=	PTHREAD SHARED
+OPTIONS_SUB=	yes
+
 DEBUG_DESC=	Debugging support
 DEVEL_DESC=	Development build
 FASTEST_DESC=	Fastest run
@@ -30,51 +34,32 @@ SHARED_DESC=	Shared build
 SWAB_DESC=	Swapping byte-orders build
 UYIELD_DESC=	Detecting race conditions
 
-.include <bsd.port.options.mk>
+DEBUG_CONFIGURE_ENABLE=		debug
+DEBUG_PREVENTS=			LZMA
 
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
-.endif
+DEVEL_CONFIGURE_ENABLE=		devel
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-.if ${PORT_OPTIONS:MDEVEL}
-CONFIGURE_ARGS+=	--enable-devel
-.endif
-.if ${PORT_OPTIONS:MFASTEST}
-CONFIGURE_ARGS+=	--enable-fastest
-.endif
+FASTEST_CONFIGURE_ENABLE=	fastest
+
 # to not confuse with system liblzma
-.if ${PORT_OPTIONS:MLZMA}
-CONFIGURE_ARGS+=	--enable-exlzma
-LIB_DEPENDS+=		liblzma.so.1:archivers/lzmalib
-.else
-CONFIGURE_ARGS+=	--disable-exlzma
-.endif
-.if ${PORT_OPTIONS:MLZO}
-CONFIGURE_ARGS+=	--enable-exlzo
-LIB_DEPENDS+=		liblzo2.so:archivers/lzo2
-.else
-CONFIGURE_ARGS+=	--disable-exlzo
-.endif
-.if ! ${PORT_OPTIONS:MPTHREAD}
-CONFIGURE_ARGS+=	--disable-pthread
-.endif
-.if ${PORT_OPTIONS:MPROFILE}
-CONFIGURE_ARGS+=	--enable-profile
-.endif
-.if ! ${PORT_OPTIONS:MSHARED}
-CONFIGURE_ARGS+=	--disable-shared
-.endif
-.if ${PORT_OPTIONS:MSWAB}
-CONFIGURE_ARGS+=	--enable-swab
-.endif
-.if ${PORT_OPTIONS:MUYIELD}
-CONFIGURE_ARGS+=	--enable-uyield
-.endif
+LZMA_CONFIGURE_ENABLE=		exlzma
+LZMA_LIB_DEPENDS=		liblzma.so.1:archivers/lzmalib
+LZMA_PREVENTS=			DEBUG
+
+LZO_CONFIGURE_ENABLE=		exlzo
+LZO_LIB_DEPENDS=		liblzo2.so:archivers/lzo2
+
+PTHREAD_CONFIGURE_ENABLE=	pthread
+
+PROFILE_CONFIGURE_ENABLE=	profile
+PROFILE_PREVENTS=		SHARED
+
+SHARED_CONFIGURE_ENABLE=	shared
+SHARED_PREVENTS=		PROFILE
+
+SWAB_CONFIGURE_ENABLE=		swab
+
+UYIELD_CONFIGURE_ENABLE=	uyield
 
 SHLIB_VER=	9.11.0
 SHLIB_VER_MAJ=	9
@@ -88,8 +73,13 @@ post-patch:
 		-e 's|@datarootdir@|@datarootdir@/doc|' \
 		${WRKSRC}/Makefile.in
 
+post-patch-FASTEST-on:
+	${REINPLACE_CMD} -e 's|-fforce-addr||' ${WRKSRC}/configure
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so \
-		${STAGEDIR}${PREFIX}/libexec/tcawmgr.cgi
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/libexec/tcawmgr.cgi
+
+post-install-SHARED-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>
