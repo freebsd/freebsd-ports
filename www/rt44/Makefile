@@ -11,7 +11,7 @@ COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=	rt-3.8* rt40-4.0* rt42-4.2* brlcad-[0-9]*
+CONFLICTS_INSTALL=	rt40-4.0* rt42-4.2* brlcad-[0-9]*
 
 NO_ARCH=	yes
 
