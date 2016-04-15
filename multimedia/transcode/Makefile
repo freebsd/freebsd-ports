@@ -5,7 +5,7 @@ PORTNAME=	transcode
 PORTVERSION=	1.1.7
 PORTREVISION=	25
 CATEGORIES=	multimedia
-MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
+MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Text-console utility for video stream processing
