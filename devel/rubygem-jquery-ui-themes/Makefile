@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jquery-ui-themes
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
