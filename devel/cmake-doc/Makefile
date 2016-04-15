@@ -12,7 +12,7 @@ COMMENT=	HTML and Qt Creator helpfiles for CMake
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-DISTINFO_FILE=	${PORTSDIR}/devel/cmake/distinfo
+DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
