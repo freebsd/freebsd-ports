@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-Business-Hours>0:misc/p5-Business-Hours
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE=	GPLv2
+# SLA functionality comes as standard in RT 4.4.x
+CONFLICTS_INSTALL=	rt44-4.4.*
 
 NO_ARCH=	yes
 
