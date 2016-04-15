@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160415:
+  AFFECTS: users of audio/chromaprint
+  AUTHOR: jhale@FreeBSD.org
+
+  chromaprint has been updated to version 1.3.1 and includes a shared
+  library bump. PORTREVISIONS have been bumped on affected ports.
+  If you are using binary pkg, 'pkg upgrade' will do the right thing.
+  Users of portmaster/portupgrade must rebuild all ports which depend
+  on chromaprint.
+
+  Portmaster users:
+      portmaster -w -r chromaprint
+  Portupgrade users:
+      portupgrade -fr audio/chromaprint
+
 20160414:
   AFFECTS: Users of www/tt-rss
   AUTHOR: thierry@FreeBSD.org
