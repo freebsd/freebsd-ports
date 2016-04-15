@@ -3,6 +3,7 @@
 
 PORTNAME=	libgroove
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
