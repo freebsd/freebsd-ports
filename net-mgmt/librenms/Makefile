@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	201601
+PORTVERSION=	201604
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.librenms.org/
 
@@ -39,14 +39,12 @@ NO_BUILD=	yes
 
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 		dot:graphics/graphviz \
-		Magick-config:graphics/ImageMagick \
-		mtr:net/mtr-nox11 \
 		${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4 \
 		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6 \
 		snmpget:net-mgmt/net-snmp \
 		bash:shells/bash
 
-OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES
+OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES X11
 OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES
 APACHEMOD_DESC=	Use PHP with Apache 2.2+ module
 FPING_DESC=	Enable fping support ping monitoring
@@ -61,6 +59,11 @@ LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
+X11_RUN_DEPENDS=	Magick-config:${PORTSDIR}/graphics/ImageMagick \
+			mtr:${PORTSDIR}/net/mtr
+X11_RUN_DEPENDS_OFF=	Magick-config:${PORTSDIR}/graphics/ImageMagick-nox11 \
+			mtr:${PORTSDIR}/net/mtr-nox11
+
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 MYSQLD_USE=		MYSQL=server
 MYSQLD_USE_OFF=		MYSQL=client
@@ -69,7 +72,7 @@ SUB_FILES+=	pkg-message
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 
 ROOT_FILES=	addhost.php adduser.php	alerts.php build-base.php build.sql \
-		billing-calculate.php callback.php \
+		billing-calculate.php \
 		check-services.php config_to_json.php daily.php daily.sh \
 		delhost.php discovery.php dist-pollers.php irc.php \
 		poll-billing.php poller.php poller-service.py poller-wrapper.py renamehost.php \
@@ -133,6 +136,9 @@ post-install:
 	       ${STAGEDIR}/${WWWDIR}/config.php.sample
 	@${ECHO} @sample ${WWWDIR}/config.php.sample >> ${TMPPLIST}
 	@${ECHO} @dir ${WWWDIR}/rrd >> ${TMPPLIST}
+	@${ECHO} @dir ${WWWDIR}/lib/influxdb-php/vendor/guzzlehttp/guzzle/build >> ${TMPPLIST}
+	@${ECHO} @dir ${WWWDIR}/lib/influxdb-php/vendor/guzzlehttp/guzzle/docs >> ${TMPPLIST}
+	@${ECHO} @dir ${WWWDIR}/lib/influxdb-php/vendor/guzzlehttp/guzzle/tests >> ${TMPPLIST}
 	@${ECHO_CMD} "@group" >> ${TMPPLIST}
 	@${ECHO_CMD} "@owner" >> ${TMPPLIST}
 
