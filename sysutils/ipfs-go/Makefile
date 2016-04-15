@@ -10,6 +10,8 @@ COMMENT=	IPFS implementation in Go
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
+BROKEN_i386=	does not build
+
 USES=		gmake
 
 USE_GITHUB=	yes
