@@ -3,7 +3,6 @@
 
 PORTNAME=	kdevplatform
 PORTVERSION=	${KDEVELOP_VERSION:S/4./1./}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/${KDEVELOP_BRANCH}/kdevelop/${KDEVELOP_VERSION}/src
 DIST_SUBDIR=	KDE/kdevelop/${KDEVELOP_VERSION}
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 USE_KDE4=	kate_run kdelibs kdeprefix automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		corelib designer_build gui webkit
-USES=		cmake:outsource compiler:c++11-lib shebangfix tar:xz
+USES=		cmake:outsource compiler:c++11-lib shebangfix tar:bz2
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	util/kdev_format_source util/kdevplatform_shell_environment.sh
