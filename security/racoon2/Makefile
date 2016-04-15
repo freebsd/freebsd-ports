@@ -3,7 +3,7 @@
 
 PORTNAME=	racoon2
 PORTVERSION=	20100526a
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 
@@ -18,7 +18,7 @@ USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${PREFIX}
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/racoon2
-CONFIGURE_ENV=	YACC=/usr/bin/yacc
+CONFIGURE_ENV=	YACC=/usr/bin/yacc perl_bindir=${LOCALBASE}/bin/perl5
 
 OPTIONS_DEFINE=	KINK DOCS
 KINK_DESC=	Enable KINK support
