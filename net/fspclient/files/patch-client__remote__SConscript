@@ -1,0 +1,9 @@
+--- client/remote/SConscript.orig	2009-09-15 13:34:20.000000000 -0700
++++ client/remote/SConscript	2016-04-14 23:12:46.139184000 -0700
+@@ -9,5 +9,6 @@
+ 
+ curdir=Dir('.').srcnode().path
+ env.Command('table.h',sources,'cd %s;../maketable r' % curdir)
++env.Ignore('table.h','table.h')
+ 
+ env.Export("remote")

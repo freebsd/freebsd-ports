@@ -1,0 +1,10 @@
+--- client/local/SConscript.orig	2009-09-15 13:34:20.000000000 -0700
++++ client/local/SConscript	2016-04-14 23:12:32.843629000 -0700
+@@ -10,6 +10,7 @@
+ 
+ curdir=Dir('.').srcnode().path
+ env.Command('table.h',sources,'cd %s;../maketable l' % curdir)
++env.Ignore('table.h','table.h')
+ 
+ local=env.StaticLibrary(target = 'local', source = sources)
+ env.Export("local")
