@@ -44,6 +44,6 @@ man/man8/iked.8.gz
 @dir etc/racoon2/hook/child-rekey.d
 @dir etc/racoon2/hook/child-down.d
 @dir etc/racoon2/cert
-@exec test -f %%PFX%%/etc/racoon2/spmd.pwd && mv %%PFX%%/etc/racoon2/spmd.pwd %%PFX%%/etc/racoon2/spmd.pwd.bak && %%PFX%%/pskgen -r -o %%PFX%%/etc/racoon2/spmd.pwd
+@exec test -f %%PFX%%/etc/racoon2/spmd.pwd && mv %%PFX%%/etc/racoon2/spmd.pwd %%PFX%%/etc/racoon2/spmd.pwd.bak && %%PFX%%/sbin/pskgen -r -o %%PFX%%/etc/racoon2/spmd.pwd
 @unexec rm -f %%PFX/etc/racoon2/spmd.pwd
 @dir(root,wheel,700) /var/run/racoon2
