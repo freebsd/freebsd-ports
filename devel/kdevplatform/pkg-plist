@@ -565,6 +565,7 @@ share/kde4/servicetypes/kdevelopplugin.desktop
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevpatchreview.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevplatform.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevproblemreporter.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/kdevprojectdashboard.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevprojectfilter.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevprojectmanagerview.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevquickopen.mo
@@ -630,6 +631,7 @@ share/kde4/servicetypes/kdevelopplugin.desktop
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevpatchreview.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevplatform.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevproblemreporter.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevprojectdashboard.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevprojectfilter.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevprojectmanagerview.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevquickopen.mo
@@ -923,6 +925,7 @@ share/kde4/servicetypes/kdevelopplugin.desktop
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevpatchreview.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevplatform.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevproblemreporter.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/kdevprojectdashboard.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevprojectfilter.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevprojectmanagerview.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevquickopen.mo
