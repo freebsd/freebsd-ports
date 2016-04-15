@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.380 2015/12/19 21:08:11 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.385 2016/04/15 18:20:46 jclarke Exp $
 #
 
 use strict;
@@ -49,8 +49,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 16;
-my $micro = 8;
+my $minor = 17;
+my $micro = 0;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -159,7 +159,7 @@ my @varlist =  qw(
 	OPTIONS_GROUP OPTIONS_SUB INSTALLS_OMF USE_RC_SUBR USES DIST_SUBDIR
 	ALLFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS GNU_CONFIGURE
 	CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB NO_STAGE
-	DEVELOPER
+	DEVELOPER SUB_FILES
 );
 
 my %makevar;
@@ -1071,6 +1071,27 @@ sub check_depends_syntax {
 			$m{'dep'} = $l[0];
 			$m{'dir'} = $l[1];
 			$m{'tgt'} = $l[2] // '';
+			my %depmvars = ();
+			foreach my $dv ($m{'dep'}, $m{'dir'}, $m{'tgt'}) {
+				foreach my $mv ($dv =~ /\$\{([^}]+)\}/g) {
+					my $mvar = $1;
+					if (defined($depmvars{$mvar})) {
+						next;
+					}
+					if (defined($makevar{$mvar})) {
+						$depmvars{$mvar} = $makevar{$mvar};
+					} else {
+						$depmvars{$mvar} = &get_makevar($mvar);
+					}
+				}
+			}
+
+			foreach my $dv ($m{'dep'}, $m{'dir'}, $m{'tgt'}) {
+				foreach my $dmv (keys %depmvars) {
+					$dv =~ s/\$\{$dmv\}/$depmvars{$dmv}/g;
+				}
+			}
+
 			print "OK: dep=\"$m{'dep'}\", ".
 				"dir=\"$m{'dir'}\", tgt=\"$m{'tgt'}\"\n"
 				if ($verbose);
@@ -1169,9 +1190,7 @@ sub check_depends_syntax {
 			}
 
 			# Check port dir existence
-			$k = $m{'dir'};
-			$k =~ s/\$\{PORTSDIR}/$ENV{'PORTSDIR'}/;
-			$k =~ s/\$[\({]PORTSDIR[\)}]/$ENV{'PORTSDIR'}/;
+			$k = $ENV{'PORTSDIR'}.'/'.$m{'dir'};
 			if (! -d $k) {
 				&perror("WARN", $file, -1, "no port directory $k ".
 					"found, even though it is ".
@@ -3123,22 +3142,7 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 				"should be a corresponding file in the files/ directory.");
 		} else {
 			foreach my $i (split(/\s/, $subr_value)) {
-				my $mvar;
-				if ($i =~ /\$\{([^}]+)\}/) {
-					$mvar = $1;
-					if (defined($makevar{$mvar})) {
-						$i = $makevar{$mvar};
-					} else {
-						$i = &getMakevar($mvar);
-					}
-				}
-				if ($i ne '' && ! -f "files/$i.in") {
-					&perror("FATAL", $file, -1, "$i listed in USE_RC_SUBR, ".
-						"but files/$i.in is missing.");
-				} elsif ($i eq '' && $mvar && $mvar ne '') {
-					&perror("WARN", $file, -1, "possible undefined make variable ".
-						"$mvar used as the value for USE_RC_SUBR.");
-				} elsif ($i ne '' && -f "files/$i.in") {
+				if ($i ne '' && -f "files/$i.in") {
 					if (open(RCIN, "< files/$i.in")) {
 						my @rccontents = <RCIN>;
 						my $found_provide = 0;
@@ -3157,7 +3161,33 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 						close(RCIN);
 					}
 				}
+			}
+		}
+	}
 
+	# check for health of SUB_FILES
+
+	if ($tmp =~ /\nSUB_FILES=([\s]*)(.*)/) {
+		my $subr_value = $makevar{SUB_FILES};
+		if ($subr_value eq '') {
+			$subr_value = $2;
+		}
+		foreach my $i (split(/\s/, $subr_value)) {
+			my $mvar;
+			if ($i =~ /\$\{([^}]+)\}/) {
+				$mvar = $1;
+				if (defined($makevar{$mvar})) {
+					$i = $makevar{$mvar};
+				} else {
+					$i = &get_makevar($mvar);
+				}
+			}
+			if ($i ne '' && ! -f "files/$i.in") {
+				&perror("FATAL", $file, -1, "$i listed in SUB_FILES/USE_RC_SUBR, ".
+					"but files/$i.in is missing.");
+			} elsif ($i eq '' && $mvar && $mvar ne '') {
+				&perror("WARN", $file, -1, "possible undefined make variable ".
+					"$mvar used as the value for SUB_FILES/USE_RC_SUBR.");
 			}
 		}
 	}
@@ -3445,7 +3475,7 @@ sub urlcheck {
 	if ($url !~ m#^\w+://#) {
 		&perror("WARN", $file, -1, "\"$url\" doesn't appear to be a URL to me.");
 	}
-	if ($url !~ m#/(:[^/:]+)?$#) {
+	if ($url !~ m#/(:[^/:]+)?$# && $url !~ m#:$#) {
 		&perror("FATAL", $file, -1, "URL \"$url\" should ".
 			"end with \"/\" or a group name (e.g. :something).");
 	}
