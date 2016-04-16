@@ -46,6 +46,7 @@
 %%SITE_PERL%%/Test2/Tools/Compare.pm
 %%SITE_PERL%%/Test2/Tools/Defer.pm
 %%SITE_PERL%%/Test2/Tools/Encoding.pm
+%%SITE_PERL%%/Test2/Tools/Event.pm
 %%SITE_PERL%%/Test2/Tools/Exception.pm
 %%SITE_PERL%%/Test2/Tools/Exports.pm
 %%SITE_PERL%%/Test2/Tools/Grab.pm
@@ -108,6 +109,7 @@
 %%PERL5_MAN3%%/Test2::Tools::Compare.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Defer.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Encoding.3.gz
+%%PERL5_MAN3%%/Test2::Tools::Event.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Exception.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Exports.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Grab.3.gz
