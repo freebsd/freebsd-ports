@@ -67,7 +67,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/dists/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

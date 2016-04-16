@@ -34,7 +34,6 @@ IBUS_RUN_DEPENDS=	ibus-daemon:textproc/ibus
 NLS_USES=	gettext-runtime:run
 OPTIONS_SUB=	yes
 
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	rastersoft
 GH_PROJECT=	Devede
@@ -62,13 +61,9 @@ do-install:
 # File locations in devede are a mess...
 	${INSTALL_SCRIPT} ${WRKSRC}/devede.py ${STAGEDIR}${PREFIX}/bin/devede
 	${INSTALL_SCRIPT} ${WRKSRC}/devede-debug ${STAGEDIR}${PREFIX}/bin/
-#
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/devede
-	${INSTALL_DATA} ${WRKSRC}/devede_*.py \
-		${STAGEDIR}${PREFIX}/lib/devede
-#
+	${INSTALL_DATA} ${WRKSRC}/devede_*.py ${STAGEDIR}${PREFIX}/lib/devede
 	${INSTALL_DATA} ${WRKSRC}/devede.desktop ${STAGEDIR}${DESKTOPDIR}
-#
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/devedesans.ttf ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/devede.svg ${STAGEDIR}${DATADIR}
