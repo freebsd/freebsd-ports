@@ -4,7 +4,7 @@
 PORTNAME=	rsync
 PORTVERSION=	3.1.2
 CATEGORIES=	net ipv6
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.samba.org/pub/rsync/ \
 		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
@@ -84,9 +84,7 @@ SSH_CONFIGURE_OFF=	--with-rsh=rsh
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if empty(ICONV_LIB)
+.if ! ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=ac_cv_search_libiconv_open=no
 .endif
 
@@ -104,4 +102,4 @@ post-install:
 test: build
 	@(cd ${WRKSRC} && ${MAKE_CMD} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
