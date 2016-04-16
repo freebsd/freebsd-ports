@@ -162,6 +162,7 @@
     SUBDIR += ppunpack
     SUBDIR += pxz
     SUBDIR += py-attic
+    SUBDIR += py-borgbackup
     SUBDIR += py-bz2file
     SUBDIR += py-libarchive-c
     SUBDIR += py-librtfcomp
