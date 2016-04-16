@@ -1,10 +1,14 @@
 Configuring ModSecurity on FreeBSD
 ----------------------------------
 
-To enable ModSecurity in Apache, add the following to your httpd.conf:
+To enable ModSecurity in Apache, follow the instructions in
 
-  LoadModule security2_module %%APACHEMODDIR%%/mod_security2.so
-  Include etc/modsecurity/*.conf
+ %%PREFIX%%/%%APACHEETCDIR%%/modules.d/%%APMOD_FILE%%
+
+ModSecurity has various configuration options.
+To change them, edit the following file:
+
+ %%ETCDIR%%/modsecurity.conf
 
 Getting the Core Rule Set
 -------------------------
@@ -16,10 +20,12 @@ for all our ModSecurity related stuff, and clone the CRS repository
 under it.
 
   pkg install git
-  cd /usr/local/etc/modsecurity
+  cd %%ETCDIR%%
   git clone https://github.com/SpiderLabs/owasp-modsecurity-crs
   cp owasp-modsecurity-crs/modsecurity_crs_10_setup.conf.example \
     crs.conf
+
+The CRS has various config options. To change them, edit crs.conf.
 
 To activate the CRS base rules, add the following to your httpd.conf:
 
@@ -78,6 +84,6 @@ exceptions.
 You probably want to keep the CRS updated from time to time. You can
 do this with Git:
 
-  cd /usr/local/etc/modsecurity/owasp-modsecurity-crs
+  cd %%ETCDIR%%/owasp-modsecurity-crs
   git pull
   apachectl restart
