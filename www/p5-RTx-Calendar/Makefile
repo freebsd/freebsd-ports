@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RTx-Calendar
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,11 +27,12 @@ OPTIONS_SINGLE=			RTVERSION
 OPTIONS_SINGLE_RTVERSION=	RT40 RT42
 RT40_DESC=			Install for rt-4.0.x (www/rt40)
 RT42_DESC=			Install for rt-4.2.x (www/rt42)
-OPTIONS_DEFAULT=		RT42
+RT44_DESC=			Install for rt-4.4.x (www/rt44)
+OPTIONS_DEFAULT=		RT44
 
 .include <bsd.port.options.mk>
 
-.for opt in 40 42
+.for opt in 40 42 44
 .if ${PORT_OPTIONS:MRT${opt}}
 RT_VER=		${opt}
 .endif
@@ -51,7 +52,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 # Note: You can install using an arbitrary $PREFIX but only if it
-# matches the $PREFIX used to install www/rt{38,40,42}.  Hence ignore
+# matches the $PREFIX used to install www/rt{40,42,44}.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
