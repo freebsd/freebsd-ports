@@ -13,19 +13,20 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for interfacing with memcached via libmemcached library
 
 LICENSE=	PHP30
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 OPTIONS_DEFINE=	IGBINARY SASL
 IGBINARY_DESC=	Binary serializer support
 
-CONFIGURE_ARGS=	--disable-memcached-sasl --with-libmemcached-dir=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libmemcached-dir=${LOCALBASE}
+IGNORE_WITH_PHP=70
 USE_PHP=	json session
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 USES=		pkgconfig tar:tgz
-IGNORE_WITH_PHP=	70
 
 IGBINARY_CONFIGURE_ENABLE=	memcached-igbinary
 IGBINARY_USE=		PHP=igbinary
