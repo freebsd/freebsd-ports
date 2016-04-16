@@ -4538,6 +4538,7 @@
     SUBDIR += py-zope.app.dependable
     SUBDIR += py-zope.app.error
     SUBDIR += py-zope.app.exception
+    SUBDIR += py-zope.app.file
     SUBDIR += py-zope.app.folder
     SUBDIR += py-zope.app.form
     SUBDIR += py-zope.app.generations
