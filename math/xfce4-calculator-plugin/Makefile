@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-calculator-plugin
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	math xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
