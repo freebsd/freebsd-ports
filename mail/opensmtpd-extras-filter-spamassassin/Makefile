@@ -24,5 +24,9 @@ post-patch:
 		-e '/^#define SPAMASSASSIN_HOST/s/127.0.0.1/${FILTER_SPAMASSASSIN_HOST}/' \
 		-e '/^#define SPAMASSASSIN_PORT/s/783/${FILTER_SPAMASSASSIN_PORT}/' \
 		${WRKSRC}/extras/wip/filters/filter-spamassassin/filter_spamassassin.c
+	@${REINPLACE_CMD} \
+		-e 's/127.0.0.1/${FILTER_SPAMASSASSIN_HOST}/' \
+		-e 's/783/${FILTER_SPAMASSASSIN_PORT}/' \
+		${WRKSRC}/extras/wip/filters/filter-spamassassin/filter-spamassassin.8
 		
 .include "${MASTERDIR}/Makefile"

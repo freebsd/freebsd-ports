@@ -293,6 +293,8 @@
     SUBDIR += opensmtpd
     SUBDIR += opensmtpd-devel
     SUBDIR += opensmtpd-extras
+    SUBDIR += opensmtpd-extras-filter-clamav
+    SUBDIR += opensmtpd-extras-filter-dkim
     SUBDIR += opensmtpd-extras-filter-dnsbl
     SUBDIR += opensmtpd-extras-filter-pause
     SUBDIR += opensmtpd-extras-filter-regex
