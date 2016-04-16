@@ -95,7 +95,6 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xmms/Skins
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${FILESDIR}/xmms.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
