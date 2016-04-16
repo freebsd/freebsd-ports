@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.scale
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:devel/py-zope.annotation 
 		${PYTHON_PKGNAMEPREFIX}Persistence>=0:devel/py-Persistence
 
 NO_ARCH=	yes
-USES=		python:2.7 zip
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

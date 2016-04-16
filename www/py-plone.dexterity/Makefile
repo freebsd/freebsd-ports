@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.dexterity
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.6
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,7 +42,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.alterego>0:www/py-plone.alterego \
 		zodb${PYTHON_PKGNAMESUFFIX}>0:databases/zodb3
 
 NO_ARCH=	yes
-USES=		python zip zope
+USES=		python:2.7 zope
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
