@@ -1,6 +1,5 @@
-KLog is a simple amateur radio logging program for KDE
-
-It supports QSL management, DXCC, WAZ and local awards, DX Clusters,
-Basic IOTA, Satellite support, and import from ADIF, TLF, and Cabrillo formats.
+KLog is a simple amateur radio logging program for KDE.  It supports QSL
+management, DXCC, WAZ and local awards, DX Clusters, Basic IOTA, Satellite
+support, and import from ADIF, TLF, and Cabrillo formats.
 
 WWW: http://jaime.robles.es/klog/
