@@ -1570,6 +1570,7 @@
     SUBDIR += py-django-pipeline
     SUBDIR += py-django-pipeline13
     SUBDIR += py-django-piston
+    SUBDIR += py-django-post_office
     SUBDIR += py-django-profiles
     SUBDIR += py-django-recaptcha
     SUBDIR += py-django-redis
