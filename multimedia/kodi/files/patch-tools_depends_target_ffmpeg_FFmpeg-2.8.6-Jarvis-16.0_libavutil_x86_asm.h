@@ -1,6 +1,6 @@
---- tools/depends/target/ffmpeg/FFmpeg-2.6.4-Isengard/libavutil/x86/asm.h.orig	2015-08-02 10:35:17 UTC
-+++ tools/depends/target/ffmpeg/FFmpeg-2.6.4-Isengard/libavutil/x86/asm.h
-@@ -71,7 +71,7 @@ typedef int32_t x86_reg;
+--- tools/depends/target/ffmpeg/FFmpeg-2.8.6-Jarvis-16.0/libavutil/x86/asm.h.orig	2016-02-03 20:33:07 UTC
++++ tools/depends/target/ffmpeg/FFmpeg-2.8.6-Jarvis-16.0/libavutil/x86/asm.h
+@@ -72,7 +72,7 @@ typedef int32_t x86_reg;
  typedef int x86_reg;
  #endif
  

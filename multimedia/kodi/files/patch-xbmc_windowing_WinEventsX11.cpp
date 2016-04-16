@@ -1,4 +1,4 @@
---- xbmc/windowing/WinEventsX11.cpp.orig	2015-04-13 10:40:08 UTC
+--- xbmc/windowing/WinEventsX11.cpp.orig	2016-02-20 15:21:19 UTC
 +++ xbmc/windowing/WinEventsX11.cpp
 @@ -23,6 +23,7 @@
  
