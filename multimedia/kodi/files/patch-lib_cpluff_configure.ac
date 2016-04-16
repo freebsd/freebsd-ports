@@ -1,6 +1,4 @@
-diff --git lib/cpluff/configure.ac lib/cpluff/configure.ac
-index bb69d19a..4316766 100644
---- lib/cpluff/configure.ac
+--- lib/cpluff/configure.ac.orig	2016-02-20 15:21:19 UTC
 +++ lib/cpluff/configure.ac
 @@ -109,12 +109,12 @@ if test "$enable_threads" != no; then
      AC_LINK_IFELSE(

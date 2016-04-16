@@ -1,4 +1,4 @@
---- xbmc/dialogs/GUIDialogGamepad.cpp.orig	2015-04-13 10:34:31 UTC
+--- xbmc/dialogs/GUIDialogGamepad.cpp.orig	2016-02-20 15:21:19 UTC
 +++ xbmc/dialogs/GUIDialogGamepad.cpp
 @@ -18,6 +18,7 @@
   *

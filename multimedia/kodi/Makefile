@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	15.2
-PORTREVISION=	2
+DISTVERSION=	16.0
 CATEGORIES=	multimedia java
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -18,22 +17,24 @@ BUILD_DEPENDS=	enca:converters/enca \
 		unzip:archivers/unzip \
 		nasm:devel/nasm \
 		gtk-update-icon-cache:x11-toolkits/gtk20 \
-		swig2.0:devel/swig20
+		swig3.0:devel/swig30
 LIB_DEPENDS=	libass.so:multimedia/libass \
+		libFLAC.so:audio/flac \
 		libboost_thread.so:devel/boost-libs \
 		libcdio.so:sysutils/libcdio	\
+		libcrossguid.so:devel/libcrossguid \
 		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
+		libdcadec.so:multimedia/libdcadec \
 		libdrm.so:graphics/libdrm \
 		libenca.so:converters/enca \
-		libFLAC.so:audio/flac \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
 		libgnutls.so:security/gnutls \
-		liblzo2.so:archivers/lzo2 \
 		libjasper.so:graphics/jasper \
 		libltdl.so:devel/libltdl \
+		liblzo2.so:archivers/lzo2 \
 		libmodplug.so:audio/libmodplug \
 		libmpeg2.so:multimedia/libmpeg2 \
 		libpcre.so:devel/pcre \
@@ -51,7 +52,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		xdpyinfo:x11/xdpyinfo
 
 USE_GITHUB=	yes
-GH_TUPLE=	xbmc:xbmc:f4dda26 xbmc:FFmpeg:2.6.4-Isengard:ffmpeg
+GH_TUPLE=	xbmc:xbmc:a5f3a99 xbmc:FFmpeg:2.8.6-Jarvis-${DISTVERSION}:ffmpeg
 
 USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
 		libtool pkgconfig python:2
@@ -81,8 +82,8 @@ CEC_DESC=	CEC adapter support
 NONFREE_DESC=	Enable non-free components (rar, ccx, ffmpeg)
 SFTP_DESC=	SSH SFTP support via libssh
 
-OPTIONS_DEFAULT=	AIRPLAY AIRTUNES AVAHI LIBBLURAY LIRC MYSQL \
-			NFS PULSEAUDIO RTMP SFTP SMB VAAPI VDPAU WEBSERVER
+OPTIONS_DEFAULT=	AIRPLAY AIRTUNES AVAHI CEC LIBBLURAY LIRC \
+		MYSQL NFS RTMP SFTP SMB VAAPI VDPAU WEBSERVER
 
 AIRPLAY_LIB_DEPENDS=	libplist.so:devel/libplist
 AIRPLAY_CONFIGURE_ENABLE=	airplay
@@ -93,8 +94,7 @@ AIRTUNES_CONFIGURE_ENABLE=	airtunes
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
 
-CEC_BROKEN=		libcec >= 3.0.0 has not been ported yet
-CEC_BUILD_DEPENDS=	libcec>=3.0.0:multimedia/libcec
+CEC_BUILD_DEPENDS=	libcec>=3.1.0:multimedia/libcec
 CEC_LIB_DEPENDS=	libcec.so:multimedia/libcec
 CEC_CONFIGURE_ENABLE=	libcec
 
@@ -136,7 +136,7 @@ SFTP_BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 SFTP_CONFIGURE_ENABLE=	ssh
 
-CONFIGURE_ARGS+=	--disable-debug --disable-alsa
+CONFIGURE_ARGS+=	--disable-debug --disable-alsa --disable-texturepacker
 
 post-extract:
 	${MV} ${WRKSRC_ffmpeg} ${WRKSRC}/tools/depends/target/ffmpeg/
@@ -146,7 +146,7 @@ post-patch:
 		${WRKSRC}/bootstrap \
 		${WRKSRC}/codegenerator.mk \
 		${WRKSRC}/xbmc/Makefile.in
-	${REINPLACE_CMD} 's;which swig;&2.0;' ${WRKSRC}/codegenerator.mk
+	${REINPLACE_CMD} 's;which swig;&3.0;' ${WRKSRC}/codegenerator.mk
 
 pre-configure:
 	cd ${WRKSRC} && ${SH} ./bootstrap

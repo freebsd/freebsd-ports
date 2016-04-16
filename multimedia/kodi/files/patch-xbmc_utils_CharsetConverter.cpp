@@ -1,6 +1,6 @@
---- xbmc/utils/CharsetConverter.cpp.orig	2015-08-10 08:41:28 UTC
+--- xbmc/utils/CharsetConverter.cpp.orig	2016-02-20 15:21:19 UTC
 +++ xbmc/utils/CharsetConverter.cpp
-@@ -67,7 +67,7 @@
+@@ -70,7 +70,7 @@
    #define UTF16_CHARSET "UTF-16" ENDIAN_SUFFIX
    #define UTF32_CHARSET "UTF-32" ENDIAN_SUFFIX
    #define UTF8_SOURCE "UTF-8"

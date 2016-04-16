@@ -1,4 +1,4 @@
---- tools/depends/target/ffmpeg/autobuild.sh.orig	2015-08-16 14:37:32 UTC
+--- tools/depends/target/ffmpeg/autobuild.sh.orig	2016-02-20 15:21:19 UTC
 +++ tools/depends/target/ffmpeg/autobuild.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
@@ -66,8 +66,8 @@
  
  CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" \
  ./configure --prefix=$FFMPEG_PREFIX \
-@@ -161,11 +170,11 @@ CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LD
- 	--disable-mipsdspr2 \
+@@ -162,11 +171,11 @@ CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LD
+ 	--enable-libdcadec \
          ${FLAGS}
  
 -make -j ${BUILDTHREADS} 

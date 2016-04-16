@@ -1,4 +1,4 @@
---- xbmc/threads/platform/pthreads/ThreadImpl.cpp.orig	2014-12-22 23:11:35 UTC
+--- xbmc/threads/platform/pthreads/ThreadImpl.cpp.orig	2016-02-20 15:21:19 UTC
 +++ xbmc/threads/platform/pthreads/ThreadImpl.cpp
 @@ -31,9 +31,8 @@
  #include <sys/param.h>
