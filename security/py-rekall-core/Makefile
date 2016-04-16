@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rekall-core
-PORTVERSION=	1.4.1
+DISTVERSION=	1.5.0.post5
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,22 +13,25 @@ COMMENT=	CORE component of the Rekall framework
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	cabextract:archivers/cabextract \
-		${PYTHON_PKGNAMEPREFIX}acora>=1.8:textproc/py-acora \
-		${PYTHON_PKGNAMEPREFIX}PyAFF4>=0.17:security/py-pyaff4 \
-		${PYTHON_PKGNAMEPREFIX}capstone>=0:devel/py-capstone \
-		${PYTHON_PKGNAMEPREFIX}distorm>=0:devel/py-distorm \
-		${PYTHON_PKGNAMEPREFIX}efilter>=1438631774:devel/py-efilter \
-		${PYTHON_PKGNAMEPREFIX}intervaltree>=2.0.4:devel/py-intervaltree \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.3.1:security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}pyelftools>=0.22:devel/py-pyelftools \
-		${PYTHON_PKGNAMEPREFIX}pytz>=2012:devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}yaml>=2.10:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara
+		${PYTHON_PKGNAMEPREFIX}PyAFF4>=0.23:security/py-pyaff4 \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}acora>=1.9:textproc/py-acora \
+		${PYTHON_PKGNAMEPREFIX}arrow>=0.7.0:devel/py-arrow \
+		${PYTHON_PKGNAMEPREFIX}efilter>=1453815385:devel/py-efilter \
+		${PYTHON_PKGNAMEPREFIX}intervaltree>=2.1.0:devel/py-intervaltree \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}pyelftools>=0.23:devel/py-pyelftools \
+		${PYTHON_PKGNAMEPREFIX}pytz>=2015.7:devel/py-pytz \
+		${PYTHON_PKGNAMEPREFIX}capstone>=3.0.4:devel/py-capstone \
+		${PYTHON_PKGNAMEPREFIX}yara>=3.4.0:security/py-yara \
+		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=1.4.4:devel/py-sortedcontainers \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.4.2:devel/py-dateutil
 
-USES=		python:2
+NO_ARCH=	yes
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
-post-patch:
-	@${REINPLACE_CMD} '/argparse/d' ${WRKSRC}/setup.py
+post-extract:
+	@${CHMOD} -R a+rX ${WRKSRC}
 
 .include <bsd.port.mk>
