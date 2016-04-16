@@ -27,6 +27,7 @@ CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 .ifndef EXTRA_PATCHES
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-base_include_base_logging.h
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-base_file__test.cpp
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-liblog_logd__write.c
 .endif
 
 USES=		compiler:c++11-lib uidfix
