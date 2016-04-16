@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -30,10 +30,12 @@ GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		couchbase:goutils:5823a0c:goutils \
 		dancannon:gorethink:e7cac92:gorethink \
 		davecgh:go-spew:5215b55:go_spew \
+		docker:engine-api:8924d69:engine_api \
+		docker:go-connections:f549a93:go_connections \
+		docker:go-units:5d2041e:go_units \
 		eapache:go-resiliency:b86b1ec:go_resiliency \
 		eapache:queue:ded5959:queue \
-		eclipse:paho.mqtt.golang:4ab3e86:paho_mqtt_golang \
-		fsouza:go-dockerclient:a49c826:go_dockerclient \
+		eclipse:paho.mqtt.golang:0f7a459:paho_mqtt_golang \
 		go-sql-driver:mysql:1fca743:mysql \
 		golang:protobuf:552c7b9:protobuf \
 		golang:snappy:427fb6f:snappy \
@@ -53,6 +55,7 @@ GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		nats-io:nats:b13fc9d:nats \
 		nats-io:nuid:4f84f5f:nuid \
 		nsqio:go-nsq:0b80d6f:go_nsq \
+		opencontainers:runc:89ab7f2:runc \
 		prometheus:client_golang:18acf99:client_golang \
 		prometheus:client_model:fa8ad6f:client_model \
 		prometheus:common:e8eabff:common \
@@ -69,8 +72,9 @@ GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
 		golang:crypto:5dc8cb4:crypto \
 		golang:net:6acef71:net \
 		golang:text:a71fd10:text \
-		golang:tools:13c24a6:tools \
-		fatih:pool:cba550e:pool \
+		golang:tools:764c4cc:tools \
+		dancannon:gorethink:7d1af5b:gorethink_v1 \
+		fatih:pool:cba550e:pool_v2 \
 		go-mgo:mgo:d90005c:mgo \
 		go-yaml:yaml:a83829b:yaml
 
@@ -91,9 +95,9 @@ post-patch:
 	${WRKSRC}/src/github.com/couchbase \
 	${WRKSRC}/src/github.com/dancannon \
 	${WRKSRC}/src/github.com/davecgh \
+	${WRKSRC}/src/github.com/docker \
 	${WRKSRC}/src/github.com/eapache \
 	${WRKSRC}/src/github.com/eclipse \
-	${WRKSRC}/src/github.com/fsouza \
 	${WRKSRC}/src/github.com/go-sql-driver \
 	${WRKSRC}/src/github.com/golang \
 	${WRKSRC}/src/github.com/gonuts \
@@ -108,6 +112,7 @@ post-patch:
 	${WRKSRC}/src/github.com/naoina \
 	${WRKSRC}/src/github.com/nats-io \
 	${WRKSRC}/src/github.com/nsqio \
+	${WRKSRC}/src/github.com/opencontainers \
 	${WRKSRC}/src/github.com/prometheus \
 	${WRKSRC}/src/github.com/samuel \
 	${WRKSRC}/src/github.com/shirou \
@@ -135,10 +140,12 @@ post-patch:
 	${MV} ${WRKSRC_goutils} ${WRKSRC}/src/github.com/couchbase/goutils ;\
 	${MV} ${WRKSRC_gorethink} ${WRKSRC}/src/github.com/dancannon/gorethink ;\
 	${MV} ${WRKSRC_go_spew} ${WRKSRC}/src/github.com/davecgh/go-spew ;\
+	${MV} ${WRKSRC_engine_api} ${WRKSRC}/src/github.com/docker/engine-api ;\
+	${MV} ${WRKSRC_go_connections} ${WRKSRC}/src/github.com/docker/go-connections ;\
+	${MV} ${WRKSRC_go_units} ${WRKSRC}/src/github.com/docker/go-units ;\
 	${MV} ${WRKSRC_go_resiliency} ${WRKSRC}/src/github.com/eapache/go-resiliency ;\
 	${MV} ${WRKSRC_queue} ${WRKSRC}/src/github.com/eapache/queue ;\
 	${MV} ${WRKSRC_paho_mqtt_golang} ${WRKSRC}/src/github.com/eclipse/paho.mqtt.golang ;\
-	${MV} ${WRKSRC_go_dockerclient} ${WRKSRC}/src/github.com/fsouza/go-dockerclient ;\
 	${MV} ${WRKSRC_mysql} ${WRKSRC}/src/github.com/go-sql-driver/mysql ;\
 	${MV} ${WRKSRC_protobuf} ${WRKSRC}/src/github.com/golang/protobuf ;\
 	${MV} ${WRKSRC_snappy} ${WRKSRC}/src/github.com/golang/snappy ;\
@@ -158,6 +165,7 @@ post-patch:
 	${MV} ${WRKSRC_nats} ${WRKSRC}/src/github.com/nats-io/nats ;\
 	${MV} ${WRKSRC_nuid} ${WRKSRC}/src/github.com/nats-io/nuid ;\
 	${MV} ${WRKSRC_go_nsq} ${WRKSRC}/src/github.com/nsqio/go-nsq ;\
+	${MV} ${WRKSRC_runc} ${WRKSRC}/src/github.com/opencontainers/runc ;\
 	${MV} ${WRKSRC_client_golang} ${WRKSRC}/src/github.com/prometheus/client_golang ;\
 	${MV} ${WRKSRC_client_model} ${WRKSRC}/src/github.com/prometheus/client_model ;\
 	${MV} ${WRKSRC_common} ${WRKSRC}/src/github.com/prometheus/common ;\
@@ -175,10 +183,10 @@ post-patch:
 	${MV} ${WRKSRC_net} ${WRKSRC}/src/golang.org/x/net ;\
 	${MV} ${WRKSRC_text} ${WRKSRC}/src/golang.org/x/text ;\
 	${MV} ${WRKSRC_tools} ${WRKSRC}/src/golang.org/x/tools ;\
-	${MV} ${WRKSRC_pool} ${WRKSRC}/src/gopkg.in/fatih/pool.v2 ;\
+	${MV} ${WRKSRC_gorethink_v1} ${WRKSRC}/src/gopkg.in/dancannon/gorethink.v1 ;\
+	${MV} ${WRKSRC_pool_v2} ${WRKSRC}/src/gopkg.in/fatih/pool.v2 ;\
 	${MV} ${WRKSRC_mgo} ${WRKSRC}/src/gopkg.in/mgo.v2 ;\
-	${MV} ${WRKSRC_yaml} ${WRKSRC}/src/gopkg.in/yaml.v2 ;\
-	${LN} -s ${WRKSRC}/src/github.com/dancannon/gorethink ${WRKSRC}/src/gopkg.in/dancannon/gorethink.v1
+	${MV} ${WRKSRC_yaml} ${WRKSRC}/src/gopkg.in/yaml.v2
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/influxdata/${PORTNAME} && ${SETENV} GOPATH=${WRKSRC} go install ./...
