@@ -293,6 +293,9 @@
     SUBDIR += opensmtpd
     SUBDIR += opensmtpd-devel
     SUBDIR += opensmtpd-extras
+    SUBDIR += opensmtpd-extras-filter-dnsbl
+    SUBDIR += opensmtpd-extras-filter-pause
+    SUBDIR += opensmtpd-extras-filter-regex
     SUBDIR += opensmtpd-extras-filter-spamassassin
     SUBDIR += opensmtpd-extras-table-mysql
     SUBDIR += opensmtpd-extras-table-passwd
