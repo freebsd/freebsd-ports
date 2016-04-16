@@ -3,7 +3,7 @@
 
 PORTNAME=	prestashop
 PORTVERSION=	1.6.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance www
 MASTER_SITES=	http://www.prestashop.com/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,7 +15,7 @@ USES=		cpe zip
 NO_BUILD=	yes
 PRESTADIR=	www/${PORTNAME}
 PLIST=		${WRKDIR}/plist
-USE_PHP=	dom gd mysqli
+USE_PHP=	dom gd mysqli session simplexml
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
