@@ -3,7 +3,7 @@
 
 PORTNAME=	opensmtpd-extras
 PORTVERSION=	201602042118
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
 
@@ -22,11 +22,13 @@ GNU_CONFIGURE=	yes
 
 .if empty(SLAVE_PORT)
 OPTIONS_GROUP=		FILTER TABLE
-OPTIONS_GROUP_FILTER=	DNSBL PAUSE REGEX SPAMASSASSIN
+OPTIONS_GROUP_FILTER=	CLAMAV DKIM DNSBL PAUSE REGEX SPAMASSASSIN
 OPTIONS_GROUP_TABLE=	LDAP MYSQL PASSWD PGSQL PYTHON REDIS SMAP SQLITE
 OPTIONS_DEFAULT=	${OPTIONS_GROUP_FILTER} ${OPTIONS_GROUP_TABLE}
 
 # Filters
+CLAMAV_DESC=		Check messages with ClamAV
+DKIM_DESC=		Sign messages with DKIM
 DNSBL_DESC=		Check messages against DNSBLs
 PAUSE_DESC=		Pause incoming messages to reduce spam
 SPAMASSASSIN_DESC=	Check messages with SpamAssassin
@@ -44,6 +46,8 @@ NO_ARCH=	yes
 #
 # Filters
 #
+CLAMAV_RUN_DEPENDS=		${INSTALL_DIR}/filter-clamav:mail/opensmtpd-extras-filter-clamav
+DKIM_RUN_DEPENDS=		${INSTALL_DIR}/filter-dkim-signer:mail/opensmtpd-extras-filter-dkim
 DNSBL_RUN_DEPENDS=		${INSTALL_DIR}/filter-dnsbl:mail/opensmtpd-extras-filter-dnsbl
 PAUSE_RUN_DEPENDS=		${INSTALL_DIR}/filter-pause:mail/opensmtpd-extras-filter-pause
 REGEX_RUN_DEPENDS=		${INSTALL_DIR}/filter-regex:mail/opensmtpd-extras-filter-regex
