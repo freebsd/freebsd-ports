@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	scss_lint
-PORTVERSION=	0.47.1
+PORTVERSION=	0.48.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
