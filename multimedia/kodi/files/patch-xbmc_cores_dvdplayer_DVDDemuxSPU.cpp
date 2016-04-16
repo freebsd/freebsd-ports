@@ -1,4 +1,4 @@
---- xbmc/cores/dvdplayer/DVDDemuxSPU.cpp.orig	2015-06-23 09:40:13 UTC
+--- xbmc/cores/dvdplayer/DVDDemuxSPU.cpp.orig	2016-02-20 15:21:19 UTC
 +++ xbmc/cores/dvdplayer/DVDDemuxSPU.cpp
 @@ -18,6 +18,7 @@
   *

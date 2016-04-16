@@ -1,4 +1,4 @@
---- xbmc/main/main.cpp.orig	2015-04-13 12:43:35 UTC
+--- xbmc/main/main.cpp.orig	2016-02-20 15:21:19 UTC
 +++ xbmc/main/main.cpp
 @@ -28,6 +28,7 @@
  #ifdef TARGET_POSIX

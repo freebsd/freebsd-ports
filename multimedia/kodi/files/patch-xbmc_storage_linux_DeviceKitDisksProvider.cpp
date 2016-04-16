@@ -1,4 +1,4 @@
---- xbmc/storage/linux/DeviceKitDisksProvider.cpp.orig	2015-04-13 10:45:50 UTC
+--- xbmc/storage/linux/DeviceKitDisksProvider.cpp.orig	2016-02-20 15:21:19 UTC
 +++ xbmc/storage/linux/DeviceKitDisksProvider.cpp
 @@ -19,6 +19,7 @@
   */

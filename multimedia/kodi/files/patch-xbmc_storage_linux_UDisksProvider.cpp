@@ -1,4 +1,4 @@
---- xbmc/storage/linux/UDisksProvider.cpp.orig	2015-04-13 12:39:11 UTC
+--- xbmc/storage/linux/UDisksProvider.cpp.orig	2016-02-20 15:21:19 UTC
 +++ xbmc/storage/linux/UDisksProvider.cpp
 @@ -19,6 +19,7 @@
   */
