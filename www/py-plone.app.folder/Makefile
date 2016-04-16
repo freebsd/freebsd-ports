@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.folder
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>0:devel/py-Products.CMFCore
 		${PYTHON_PKGNAMEPREFIX}plone.app.layout>0:www/py-plone.app.layout
 
 NO_ARCH=	yes
-USES=		python zip zope
+USES=		python:2.7 zope
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
