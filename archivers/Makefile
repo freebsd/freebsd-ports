@@ -170,6 +170,7 @@
     SUBDIR += py-pyliblzma
     SUBDIR += py-python-snappy
     SUBDIR += py-rarfile
+    SUBDIR += py-rcssmin
     SUBDIR += py-warctools
     SUBDIR += py3-libarchive-c
     SUBDIR += qpress
