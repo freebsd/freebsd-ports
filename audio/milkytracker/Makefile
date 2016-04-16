@@ -39,7 +39,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/resources/pictures/${f} \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${f:C/carton/milkytracker/}
 .endfor
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/resources/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}

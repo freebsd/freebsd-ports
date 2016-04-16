@@ -98,7 +98,6 @@ post-patch:
 	    ${WRKSRC}/*.desktop.in
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.desktop ${STAGEDIR}${DESKTOPDIR}
 .for lang in cs de en pl
 .for man in javaws policyeditor
