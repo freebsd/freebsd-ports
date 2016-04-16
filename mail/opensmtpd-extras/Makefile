@@ -3,14 +3,24 @@
 
 PORTNAME=	opensmtpd-extras
 PORTVERSION=	201602042118
-CATEGORIES=	mail
+PORTREVISION?=	1
+CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
 
-MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	Addons for OpenSMTPD
+MAINTAINER?=	gahr@FreeBSD.org
+COMMENT?=	Addons for OpenSMTPD
 
-LICENSE=	ISCL
+LICENSE?=	ISCL
 
+LIB_DEPENDS+=	libevent.so:devel/libevent2
+RUN_DEPENDS+=	${LOCALBASE}/sbin/smtpctl:mail/opensmtpd
+
+USES+=		autoreconf libtool pkgconfig
+USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=	yes
+GNU_CONFIGURE=	yes
+
+.if empty(SLAVE_PORT)
 OPTIONS_GROUP=		TABLE
 OPTIONS_GROUP_TABLE=	LDAP MYSQL PASSWD PGSQL PYTHON REDIS SMAP SQLITE
 OPTIONS_DEFAULT=	LDAP MYSQL PASSWD PGSQL PYTHON REDIS SMAP SQLITE
@@ -20,50 +30,41 @@ SMAP_DESC=	Socketmap protocol support
 
 OPTIONS_SUB=	yes
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
-RUN_DEPENDS=	${LOCALBASE}/sbin/smtpctl:mail/opensmtpd
-
-USES=		autoreconf libtool pkgconfig
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
-GNU_CONFIGURE=	yes
 PLIST_FILES=	man/man3/filter_api.3.gz
-INSTALL_DIR=	libexec/opensmtpd
+INSTALL_DIR=	${LOCALBASE}/libexec/opensmtpd
+
+NO_ARCH=	yes
 
 #
 # Tables
 #
-MYSQL_CONFIGURE_WITH=	table-mysql
-MYSQL_VARS=		USE_MYSQL=client \
-			LDFLAGS+=-L${LOCALBASE}/lib/mysql \
-			PLIST_FILES+=${INSTALL_DIR}/table-mysql
 
-PASSWD_CONFIGURE_WITH=	table-passwd
-PASSWD_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-passwd \
-			PLIST_FILES+=man/man5/table-passwd.5.gz
+MYSQL_BUILD_DEPENDS=	${INSTALL_DIR}/table-mysql:mail/opensmtpd-extras-table-mysql
+MYSQL_RUN_DEPENDS=	${MYSQL_BUILD_DEPENDS}
 
-PGSQL_CONFIGURE_WITH= 	table-postgres
-PGSQL_USES=		pgsql
-PGSQL_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-postgres
+PASSWD_BUILD_DEPENDS=	${INSTALL_DIR}/table-passwd:mail/opensmtpd-extras-table-passwd
+PASSWD_RUN_DEPENDS=	${PASSWD_BUILD_DEPENDS}
 
-PYTHON_CONFIGURE_WITH=	table-python python-type=${PYTHON_VERSION}
-PYTHON_USES=		python
-PYTHON_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-python
+PGSQL_BUILD_DEPENDS=	${INSTALL_DIR}/table-postgres:mail/opensmtpd-extras-table-postgresql
+PGSQL_RUN_DEPENDS=	${PGSQL_BUILD_DEPENDS}
 
-REDIS_CONFIGURE_WITH=	table-redis
-REDIS_CONFIGURE_ENV=	REDIS_CONFIG=${LOCALBASE}/bin/pkgconf
-REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
-REDIS_VARS=		CFLAGS+=-I${LOCALBASE}/include/hiredis \
-			PLIST_FILES+=${INSTALL_DIR}/table-redis \
-			PLIST_FILES+=man/man5/table-redis.5.gz
+PYTHON_BUILD_DEPENDS=	${INSTALL_DIR}/table-python:mail/opensmtpd-extras-table-python
+PYTHON_RUN_DEPENDS=	${PYTHON_BUILD_DEPENDS}
 
-SMAP_CONFIGURE_WITH=	table-socketmap
-SMAP_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-socketmap \
-			PLIST_FILES+=man/man5/table-socketmap.5.gz
+REDIS_BUILD_DEPENDS=	${INSTALL_DIR}/table-redis:mail/opensmtpd-extras-table-redis
+REDIS_RUN_DEPENDS=	${REDIS_BUILD_DEPENDS}
 
-SQLITE_CONFIGURE_WITH=	table-sqlite
-SQLITE_USES=		sqlite
-SQLITE_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-sqlite \
-			PLIST_FILES+=man/man5/table-sqlite.5.gz
+SMAP_BUILD_DEPENDS=	${INSTALL_DIR}/table-socketmap:mail/opensmtpd-extras-table-socketmap
+SMAP_RUN_DEPENDS=	${SMAP_BUILD_DEPENDS}
+
+SQLITE_BUILD_DEPENDS=	${INSTALL_DIR}/table-sqlite:mail/opensmtpd-extras-table-sqlite
+SQLITE_RUN_DEPENDS=	${SQLITE_BUILD_DEPENDS}
+.else
+
+# Only install this for the opensmtpd-extras master port
+post-install:
+	@${RM} ${STAGEDIR}${MAN3PREFIX}/man/man3/filter_api.3
+
+.endif
 
 .include <bsd.port.mk>
