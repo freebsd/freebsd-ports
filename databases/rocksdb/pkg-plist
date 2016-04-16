@@ -1,10 +1,15 @@
+bin/cache_bench
 bin/db_bench
 bin/db_repl_stress
 bin/db_sanity_test
 bin/db_stress
 bin/ldb
+bin/memtablerep_bench
+bin/rocksdb_dump
+bin/rocksdb_undump
 bin/sst_dump
 bin/table_reader_bench
+bin/write_stress
 include/rocksdb/c.h
 include/rocksdb/cache.h
 include/rocksdb/compaction_filter.h
