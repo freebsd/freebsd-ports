@@ -1510,6 +1510,7 @@
     SUBDIR += py-bottle-cork
     SUBDIR += py-cachecontrol
     SUBDIR += py-cactus
+    SUBDIR += py-caldav
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
     SUBDIR += py-clientform
