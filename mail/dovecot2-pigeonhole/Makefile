@@ -29,7 +29,13 @@ USES=		libtool
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 USE_OPENSSL=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS MANAGESIEVE
+OPTIONS_DEFAULT=MANAGESIEVE
+OPTIONS_SUB=	yes
+
+MANAGESIEVE_DESC=		ManageSieve support
+MANAGESIEVE_CONFIGURE_WITH=	managesieve
+
 PORTDOCS=	sieve/extensions/* sieve/plugins/* sieve/locations/*
 
 post-patch:
