@@ -1,21 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet
-PORTVERSION=	4.0.6
+PORTVERSION=	5.1.1
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	6
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Framework for writing networked applications
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libglib-2.0.so:devel/glib20 \
-		libgobject-2.0.so:devel/glib20 \
 		libsqlite3.so:databases/sqlite3 \
 		libzdb.so:databases/libzdb \
 		libuuid.so:misc/e2fsprogs-libuuid \
@@ -26,25 +25,24 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 
-USES=		autoreconf libtool pkgconfig pathfix python:2
-PATHFIX_MAKEFILEIN=	Makefile.am
+USES=		autoreconf libtool localbase pathfix pkgconfig python:-2.7 \
+		shebangfix
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
+SHEBANG_FILES=	tools/*.py
+PATHFIX_MAKEFILEIN=	Makefile.am
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/event2
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/event2
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-server --enable-ldap
+CONFIGURE_ARGS+=	--enable-server --enable-ldap
 INSTALL_TARGET=	install-strip
-
-USE_OPENSSL=	yes
 
 HAIWENDIR=	www/haiwen
 SEAFILE_SERVER=	${HAIWENDIR}/seafile-server
 SEABIN=		${SEAFILE_SERVER}/seafile/bin
 SEALIB=		${SEAFILE_SERVER}/seafile/lib
 
-SEAFILE_USERNAME?=	www
+SEAFILE_USERNAME?=	seafile
 SEAFILE_GROUPNAME?=	${SEAFILE_USERNAME}
 
 PLIST_SUB=	SEAFILE_USERNAME=${SEAFILE_USERNAME} \
@@ -69,5 +67,6 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX}/lib && \
 		${COPYTREE_SHARE} ${PYTHON_VERSION} ${STAGEDIR}${PREFIX}/${SEALIB})
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}
+	${LN} -s ${PREFIX}/${SEABIN}/ccnet-server ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
