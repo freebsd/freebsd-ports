@@ -23,7 +23,7 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USES=		python:2
 USE_JAVA=	yes
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.7+
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
 
 USERS=		spark
