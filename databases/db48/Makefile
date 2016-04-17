@@ -34,10 +34,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100101
-IGNORE=		db48 is not supported on FreeBSD 11+ with clang 3.8 - upgrade to db5
-.endif
-
 .if ${ARCH} == "aarch64" || ${ARCH} == "armv6"
 # db48 uses a deprecated instruction for mutexes on ARM, fbsd bug#197227
 CONFIGURE_ARGS+=	--enable-posixmutexes
@@ -45,6 +41,7 @@ CONFIGURE_ARGS+=	--enable-posixmutexes
 
 post-patch:
 	${REINPLACE_CMD} -Ee 's|--mode=install cp -p|--mode=install ${INSTALL} -s|;' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -Ee 's/[[:<:]]atomic_init[[:>:]]/db_atomic_init/g' ${WRKSRC}/../dbinc/atomic.h ${WRKSRC}/../mp/mp_*.c ${WRKSRC}/../mutex/mut_*.c
 
 post-install:
 .for i in libdb libdb_cxx
