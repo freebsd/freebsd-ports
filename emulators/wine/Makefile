@@ -118,7 +118,12 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
 PLIST_SUB+=		WINE32="@comment " WINE64=""
 
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 38
+# Force the use of GCC where it is the system compiler since
+# COMPILER_VERSION will be 42 (the GCC version) even if clang
+# is CHOSEN_COMPILER_TYPE in that case.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
+USE_GCC=		any
+.elseif ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 38
 CPPFLAGS+=		-D__builtin_ms_va_list=__builtin_va_list \
 			-D__builtin_ms_va_start=__builtin_va_start \
 			-D__builtin_ms_va_end=__builtin_va_end \
