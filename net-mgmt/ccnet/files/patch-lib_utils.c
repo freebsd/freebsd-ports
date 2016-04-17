@@ -1,5 +1,5 @@
---- lib/utils.c.orig	2015-01-27 23:13:50.000000000 -0500
-+++ lib/utils.c	2015-01-27 23:18:04.000000000 -0500
+--- lib/utils.c.orig	2016-01-08 11:43:49 UTC
++++ lib/utils.c
 @@ -43,6 +43,16 @@
  
  #include <event2/util.h>
@@ -17,7 +17,7 @@
  extern int inet_pton(int af, const char *src, void *dst);
  
  
-@@ -1465,14 +1475,20 @@
+@@ -1469,14 +1479,20 @@ get_argv_utf8 (int *argc)
  }
  #endif  /* ifdef WIN32 */
  
@@ -40,7 +40,7 @@
          return -1;
      }
  
-@@ -1496,7 +1512,8 @@
+@@ -1500,7 +1516,8 @@ find_process_in_dirent(struct dirent *di
  }
  
  /* read the /proc fs to determine whether some process is running */
@@ -50,7 +50,7 @@
  {
      DIR *proc_dir = opendir("/proc");
      if (!proc_dir) {
-@@ -1510,7 +1527,7 @@
+@@ -1514,7 +1531,7 @@ gboolean process_is_running (const char 
          /* /proc/[1-9][0-9]* */
          if (first > '9' || first < '1')
              continue;
@@ -59,7 +59,7 @@
          if (pid > 0) {
              closedir(proc_dir);
              return TRUE;
-@@ -1520,6 +1537,18 @@
+@@ -1524,6 +1541,18 @@ gboolean process_is_running (const char 
      closedir(proc_dir);
      return FALSE;
  }
@@ -78,14 +78,19 @@
  #endif
  
  #ifdef __APPLE__
-@@ -1530,6 +1559,108 @@
+@@ -1534,6 +1563,113 @@ gboolean process_is_running (const char 
  }
  #endif
  
 +#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#if defined(__FreeBSD__)
++#if __FreeBSD_version < 1100097
 +#define PSKIP(kp) ((kp)->ki_pid == mypid ||               \
 +                   (!kthreads && ((kp)->ki_flag & P_KTHREAD) != 0))
++#else
++#define PSKIP(kp) ((kp)->ki_pid == mypid ||               \
++                   (!kthreads && ((kp)->ki_flag & P_KPROC) != 0))
++#endif
 +#define KVM_OPENFILES(exec, coref, buf) \
 +		kvm_openfiles(exec, coref, NULL, O_RDONLY, buf)
 +#define KVM_GETPROCS(kd, plist, nproc) \
