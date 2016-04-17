@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cffi
-PORTVERSION=	1.2.1
+PORTVERSION=	1.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,8 +23,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-regression-test: patch
-	cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} build_ext -i &&
+do-test: patch
+	cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} build_ext -i && \
 	${LOCALBASE}/bin/py.test
 
 .include <bsd.port.mk>
