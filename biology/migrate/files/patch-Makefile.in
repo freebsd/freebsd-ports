@@ -1,6 +1,6 @@
---- Makefile.in.orig	2013-05-25 14:59:22.000000000 +0000
-+++ Makefile.in	2013-05-25 14:59:37.000000000 +0000
-@@ -89,7 +89,7 @@
+--- Makefile.in.orig	2015-06-24 02:57:05 UTC
++++ Makefile.in
+@@ -89,7 +89,7 @@ PAPERFORMAT       = @PAPERFORMAT@
  # -DINTEGRATEDLIKE may be used to get a marginal likelihood different to the current thermodynamic integr and harmonic mean [does not work]
  # -UEP calculates unique event polymorphism [not checked in a long time -- most likely does not work]
  NEWSTUFF          =  -DNEXUSTREE
@@ -9,7 +9,7 @@
  #
  # combine the common flags with the version number and subversion number
  COMMONVFLAGS      =  $(COMMONFLAGS)  -DMIGRATESUBVERSION=\"\\\"$(MIGRATESUBVERSION)\\\"\" 
-@@ -544,4 +544,4 @@
+@@ -544,4 +544,4 @@ parallel_short_test::
  #----------------------------------------------------------------
  # BEAGLE
  beagle:
