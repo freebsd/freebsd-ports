@@ -24,7 +24,7 @@ USES+=		perl5
 USE_PERL5=	configure
 
 OPTIONS_SINGLE=			RTVERSION
-OPTIONS_SINGLE_RTVERSION=	RT40 RT42
+OPTIONS_SINGLE_RTVERSION=	RT40 RT42 RT44
 RT40_DESC=			Install for rt-4.0.x (www/rt40)
 RT42_DESC=			Install for rt-4.2.x (www/rt42)
 RT44_DESC=			Install for rt-4.4.x (www/rt44)
