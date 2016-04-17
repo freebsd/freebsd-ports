@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	grib_api
-PORTVERSION=	1.13.1
+PORTVERSION=	1.14.7
+DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
 MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/3473437/ \
 		LOCAL/sunpoet
@@ -11,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ECMWF API for WMO FM-92 GRIB messages
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf \
 		libpng.so:graphics/png
