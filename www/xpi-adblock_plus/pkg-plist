@@ -59,6 +59,14 @@
 %%XPI_XPIDIR%%/chrome/locale/ar/sendReport.dtd
 %%XPI_XPIDIR%%/chrome/locale/ar/sidebar.dtd
 %%XPI_XPIDIR%%/chrome/locale/ar/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/az/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/az/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/az/firstRun.properties
+%%XPI_XPIDIR%%/chrome/locale/az/global.properties
+%%XPI_XPIDIR%%/chrome/locale/az/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/az/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/az/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/az/subscriptionSelection.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg/composer.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg/filters.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg/firstRun.properties
@@ -139,6 +147,14 @@
 %%XPI_XPIDIR%%/chrome/locale/en-US/sendReport.dtd
 %%XPI_XPIDIR%%/chrome/locale/en-US/sidebar.dtd
 %%XPI_XPIDIR%%/chrome/locale/en-US/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-ZA/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-ZA/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-ZA/firstRun.properties
+%%XPI_XPIDIR%%/chrome/locale/en-ZA/global.properties
+%%XPI_XPIDIR%%/chrome/locale/en-ZA/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-ZA/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-ZA/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-ZA/subscriptionSelection.dtd
 %%XPI_XPIDIR%%/chrome/locale/eo/composer.dtd
 %%XPI_XPIDIR%%/chrome/locale/eo/filters.dtd
 %%XPI_XPIDIR%%/chrome/locale/eo/firstRun.properties
@@ -515,6 +531,7 @@
 %%XPI_XPIDIR%%/lib/child/bootstrap.js
 %%XPI_XPIDIR%%/lib/child/contentPolicy.js
 %%XPI_XPIDIR%%/lib/child/contextMenu.js
+%%XPI_XPIDIR%%/lib/child/dataCollector.js
 %%XPI_XPIDIR%%/lib/child/elemHide.js
 %%XPI_XPIDIR%%/lib/child/flasher.js
 %%XPI_XPIDIR%%/lib/child/main.js
@@ -524,6 +541,7 @@
 %%XPI_XPIDIR%%/lib/contentPolicy.js
 %%XPI_XPIDIR%%/lib/cssRules.js
 %%XPI_XPIDIR%%/lib/customizableUI.js
+%%XPI_XPIDIR%%/lib/dataCollector.js
 %%XPI_XPIDIR%%/lib/downloader.js
 %%XPI_XPIDIR%%/lib/elemHide.js
 %%XPI_XPIDIR%%/lib/ext_background.js
