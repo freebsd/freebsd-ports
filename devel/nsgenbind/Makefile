@@ -24,6 +24,8 @@ MAKE_ENV+=	COMPONENT_TYPE="lib-shared" \
 
 PLIST_FILES=	bin/nsgenbind
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
