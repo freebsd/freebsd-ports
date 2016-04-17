@@ -20,6 +20,11 @@ USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=	yes
 GNU_CONFIGURE=	yes
 
+# NB: Please *DO NOT* add the following; they are NOT for end-users:
+# filter-monkey, filter-stub, filter-trace, filter-void
+# queue-null, queue-stub
+# scheduler-stub
+# table-stub
 .if empty(SLAVE_PORT)
 OPTIONS_GROUP=		FILTER TABLE
 OPTIONS_GROUP_FILTER=	CLAMAV DKIM DNSBL PAUSE REGEX SPAMASSASSIN
