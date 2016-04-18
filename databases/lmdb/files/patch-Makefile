@@ -1,22 +1,34 @@
---- Makefile.orig	2014-09-20 06:24:32 UTC
+--- Makefile.orig	2016-02-05 21:22:15 UTC
 +++ Makefile
-@@ -16,14 +16,12 @@
+@@ -18,40 +18,40 @@
  # There may be other macros in mdb.c of interest. You should
  # read mdb.c before changing any of them.
  #
 -CC	= gcc
++CC	?= gcc
+ AR	= ar
  W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast -Wuninitialized
  THREADS = -pthread
  OPT = -O2 -g
 -CFLAGS	= $(THREADS) $(OPT) $(W) $(XCFLAGS)
-+CFLAGS	= $(XCFLAGS)
++CFLAGS	+= $(THREADS) $(W)
  LDLIBS	=
  SOLIBS	=
 -prefix	= /usr/local
++prefix	?= /usr/local
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+ libdir = $(exec_prefix)/lib
+ includedir = $(prefix)/include
+ datarootdir = $(prefix)/share
+-mandir = $(datarootdir)/man
++mandir = $(prefix)/man
  
  ########################################################################
  
-@@ -32,13 +30,13 @@ ILIBS	= liblmdb.a liblmdb.so
+ IHDRS	= lmdb.h
+-ILIBS	= liblmdb.a liblmdb.so
++ILIBS	= liblmdb.a liblmdb.so.0
  IPROGS	= mdb_stat mdb_copy mdb_dump mdb_load
  IDOCS	= mdb_stat.1 mdb_copy.1 mdb_dump.1 mdb_load.1
  PROGS	= $(IPROGS) mtest mtest2 mtest3 mtest4 mtest5
@@ -24,19 +36,29 @@
 +all:	$(ILIBS) $(IPROGS)
  
  install: $(ILIBS) $(IPROGS) $(IHDRS)
--	for f in $(IPROGS); do cp $$f $(DESTDIR)$(prefix)/bin; done
--	for f in $(ILIBS); do cp $$f $(DESTDIR)$(prefix)/lib; done
--	for f in $(IHDRS); do cp $$f $(DESTDIR)$(prefix)/include; done
--	for f in $(IDOCS); do cp $$f $(DESTDIR)$(prefix)/man/man1; done
-+	for f in $(IPROGS); do ${INSTALL_PROGRAM} $$f $(DESTDIR)$(prefix)/bin; done
-+	for f in $(ILIBS); do ${INSTALL_LIB} $$f $(DESTDIR)$(prefix)/lib; done
-+	for f in $(IHDRS); do ${INSTALL_DATA} $$f $(DESTDIR)$(prefix)/include; done
-+	for f in $(IDOCS); do ${INSTALL_MAN} $$f $(DESTDIR)$(prefix)/man/man1; done
+ 	mkdir -p $(DESTDIR)$(bindir)
+ 	mkdir -p $(DESTDIR)$(libdir)
+ 	mkdir -p $(DESTDIR)$(includedir)
+ 	mkdir -p $(DESTDIR)$(mandir)/man1
+-	for f in $(IPROGS); do cp $$f $(DESTDIR)$(bindir); done
+-	for f in $(ILIBS); do cp $$f $(DESTDIR)$(libdir); done
+-	for f in $(IHDRS); do cp $$f $(DESTDIR)$(includedir); done
+-	for f in $(IDOCS); do cp $$f $(DESTDIR)$(mandir)/man1; done
++	for f in $(IPROGS); do $(INSTALL_PROGRAM) $$f $(DESTDIR)$(bindir); done
++	for f in $(ILIBS); do $(INSTALL_LIB) $$f $(DESTDIR)$(libdir); done
++	for f in $(IHDRS); do $(INSTALL_DATA) $$f $(DESTDIR)$(includedir); done
++	for f in $(IDOCS); do $(INSTALL_MAN) $$f $(DESTDIR)$(mandir)/man1; done
  
  clean:
- 	rm -rf $(PROGS) *.[ao] *.so *~ testdb
-@@ -55,9 +53,13 @@ liblmdb.so:	mdb.o midl.o
- 	$(CC) $(LDFLAGS) -pthread -shared -o $@ mdb.o midl.o $(SOLIBS)
+ 	rm -rf $(PROGS) *.[ao] *.[ls]o *~ testdb
+@@ -63,14 +63,18 @@ test:	all
+ liblmdb.a:	mdb.o midl.o
+ 	$(AR) rs $@ mdb.o midl.o
+ 
+-liblmdb.so:	mdb.lo midl.lo
++liblmdb.so.0:	mdb.lo midl.lo
+ #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
+ 	$(CC) $(LDFLAGS) -pthread -shared -o $@ mdb.lo midl.lo $(SOLIBS)
  
  mdb_stat: mdb_stat.o liblmdb.a
 +	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
