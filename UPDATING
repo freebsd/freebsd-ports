@@ -1306,7 +1306,8 @@ you update your ports collection, before attempting any port upgrades.
   once converted.
 
 20150331:
-AUTHOR: ohauer@FreeBSD.org
+  AFFECTS: Users of www/mod_dav_svn
+  AUTHOR: ohauer@FreeBSD.org
 
   Subversion modules are no longer activated in httpd.conf!
   To activate the subversion apache modules a dedicated file
