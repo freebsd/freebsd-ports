@@ -23,12 +23,16 @@ USES=		tcl tar:xz
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
 USE_LDCONFIG?=	${PREFIX}/lib/Tclxml${PORTVERSION}
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--exec-prefix=${PREFIX} \
+		--with-tcl=${TCL_LIBDIR} \
 		XML_CONFIG="${XML_CONFIG}"
 PLIST_SUB=	VER=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
-MAKE_ENV+=	TCLLIBPATH=${STAGEDIR}/usr/local/lib
+MAKE_ENV+=	TCLLIBPATH=${STAGEDIR}/${PREFIX}/lib
+
+TEST_TARGET=	test
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^TCLSH_ENV[[:blank:]]*=/,/[^\]$$/d' \
@@ -36,12 +40,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/FreeBSD-\*/FreeBSD-*|DragonFly-*/g' \
 		${WRKSRC}/configure
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} doc)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-
-check test: install
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test)
+.endif
 
 .include <bsd.port.mk>
