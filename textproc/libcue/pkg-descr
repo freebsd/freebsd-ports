@@ -3,4 +3,4 @@ pointer. For handling of the parsed data a convenient API is available. This
 project is meant as a fork of cuetools by Svend Sorensen which saw it last 
 release in 02/2006. 
 
-WWW: http://sourceforge.net/projects/libcue/
+WWW: https://github.com/lipnitsk/libcue
