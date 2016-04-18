@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	newt
-PORTVERSION=	0.52.18
+PORTVERSION=	0.52.19
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/n/e/newt/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libslang.so:devel/libslang2 \
 		libpopt.so:devel/popt
 
-USES=		gmake ncurses
+USES=		gmake ncurses pathfix
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PCFLAGS="${CFLAGS}"
 USE_LDCONFIG=	yes
@@ -50,8 +50,7 @@ post-patch:
 		 s|-DUSE_INTERP_RESULT||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|@CPP@|@CC@ -E| ; \
-		 s|-I/usr/include/slang|| ; \
-		 /^pkgconfigdir/s|=.*|=${PREFIX}/libdata/pkgconfig| ; \
+		 s|-D_GNU_SOURCE|| ; \
 		 s| -g | |g ; \
 		 /make -C/s|^|#| ; \
 		 /whiptcl.$$(SOEXT)/s|install|${TRUE}|' ${WRKSRC}/Makefile.in
