@@ -1,6 +1,6 @@
---- Utilities/src/makeGlobalLib.orig	Thu Sep 17 21:26:39 1998
-+++ Utilities/src/makeGlobalLib	Thu Sep 30 23:34:16 2004
-@@ -14,6 +14,7 @@
+--- Utilities/src/makeGlobalLib.orig	1998-09-17 19:26:39 UTC
++++ Utilities/src/makeGlobalLib
+@@ -14,6 +14,7 @@ SRC = CV.c \
        PIV.c \
        IP.c \
        I2OP.c \
