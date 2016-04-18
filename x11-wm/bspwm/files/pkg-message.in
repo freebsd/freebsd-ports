@@ -1,5 +1,5 @@
 #######################################################################
-Copy the files bspwmrc and sxhkdrc from ${EXAMPLESDIR} to
+Copy the files bspwmrc and sxhkdrc from %%EXAMPLESDIR%% to
 ~/.config/bspwm/ and ~/.config/sxhkd/ and configure them as you wish.
 
 And add these lines to you .xinitrc:
