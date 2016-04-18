@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lmdb
-PORTVERSION=	0.9.16
+PORTVERSION=	0.9.18
 DISTVERSIONPREFIX=	${PORTNAME:tu}_
 CATEGORIES=	databases
 
@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 CFLAGS+=	-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME:tu}_${PORTVERSION}/libraries/liblmdb
 MAKE_ENV+=	CC="${CC}"
-MAKE_ENV+=	XCFLAGS="${CFLAGS} -pthread" prefix="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+MAKE_ENV+=	prefix="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 MAKE_ENV+=	INSTALL_LIB="${INSTALL_LIB}" INSTALL_DATA="${INSTALL_DATA}" INSTALL_MAN="${INSTALL_MAN}"
 
 USE_LDCONFIG=	yes
@@ -26,18 +26,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 
-MDB_APPS=	copy dump load stat
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/liblmdb.a ${STAGEDIR}${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/liblmdb.so ${STAGEDIR}${PREFIX}/lib/liblmdb.so.0
+post-install:
 	${LN} -sf liblmdb.so.0 ${STAGEDIR}${PREFIX}/lib/liblmdb.so
-.for f in ${MDB_APPS}
-	${INSTALL_PROGRAM} ${WRKSRC}/mdb_${f} ${STAGEDIR}${PREFIX}/bin
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/lmdb.h ${STAGEDIR}${PREFIX}/include
-.for f in ${MDB_APPS}
-	${INSTALL_MAN} ${WRKSRC}/mdb_${f}.1 ${STAGEDIR}${PREFIX}/man/man1
-.endfor
 
 .include <bsd.port.mk>
