@@ -18,6 +18,7 @@ LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
 		libpcre.so:devel/pcre \
 		libnettle.so:security/nettle
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		autoreconf gmake libarchive pkgconfig
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
