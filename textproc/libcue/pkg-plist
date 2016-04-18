@@ -1,10 +1,6 @@
-include/libcue-1.4/libcue/cd.h
-include/libcue-1.4/libcue/cdtext.h
-include/libcue-1.4/libcue/libcue.h
-include/libcue-1.4/libcue/rem.h
-include/libcue-1.4/libcue/time.h
-lib/libcue.a
+include/libcue.h
+include/libcue/libcue.h
 lib/libcue.so
-lib/libcue.so.1
-lib/libcue.so.1.0.4
+lib/libcue.so.2
+lib/libcue.so.2.1.0
 libdata/pkgconfig/libcue.pc
