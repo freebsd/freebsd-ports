@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	luasql
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION?=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-${LUASQL_DRIVER}
 
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	keplerproject
 
 USES=		lua gmake
-ALL_TARGET=	lib
+ALL_TARGET=	${LUASQL_DRIVER}
 
 LUASQL_DRIVER?=	mysql
 
@@ -37,18 +37,18 @@ PLIST_SUB+=	LUA_MIDLIBDIR=${LUA_MODLIBDIR}
 .if ${LUASQL_DRIVER} == "mysql"
 COMMENT=	Lua interface to MySQL
 USE_MYSQL=	yes
-MAKE_ARGS+=	DRIVER_LIBS="-L ${LOCALBASE}/lib/mysql -lmysqlclient" \
-		DRIVER_INCS="-I ${LOCALBASE}/include/mysql"
+MAKE_ARGS+=	DRIVER_LIBS_mysql="-L ${LOCALBASE}/lib/mysql -lmysqlclient" \
+		DRIVER_INCS_mysql="-I ${LOCALBASE}/include/mysql"
 .elif ${LUASQL_DRIVER} == "postgres"
 COMMENT=	Lua interface to PostgreSQL
 USES+=		pgsql
-MAKE_ARGS+=	DRIVER_LIBS="-L ${LOCALBASE}/lib -lpq" \
-		DRIVER_INCS="-I ${LOCALBASE}/include"
+MAKE_ARGS+=	DRIVER_LIBS_postgres="-L ${LOCALBASE}/lib -lpq" \
+		DRIVER_INCS_postgres="-I ${LOCALBASE}/include"
 .elif ${LUASQL_DRIVER} == "sqlite3"
 COMMENT=	Lua interface to SQLite3
-USE_SQLITE=	3
-MAKE_ARGS+=	DRIVER_LIBS="-L ${LOCALBASE}/lib -lsqlite3" \
-		DRIVER_INCS="-I ${LOCALBASE}/include"
+USES+=		sqlite
+MAKE_ARGS+=	DRIVER_LIBS_sqlite3="-L ${LOCALBASE}/lib -lsqlite3" \
+		DRIVER_INCS_sqlite3="-I ${LOCALBASE}/include"
 .else
 IGNORE=		unknown or unsupported luasql driver
 .endif
