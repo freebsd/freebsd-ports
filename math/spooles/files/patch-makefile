@@ -1,5 +1,5 @@
---- makefile.orig	Tue Jan 26 05:39:39 1999
-+++ makefile	Mon May  5 08:30:58 2003
+--- makefile.orig	1999-01-25 20:39:39 UTC
++++ makefile
 @@ -1,169 +1,169 @@
  drivers :
 -	cd A2               ; make all_drivers

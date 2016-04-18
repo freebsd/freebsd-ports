@@ -1,5 +1,5 @@
---- Make.inc.orig	Tue Jan 19 06:48:55 1999
-+++ Make.inc	Tue Jan  9 12:57:18 2007
+--- Make.inc.orig	1999-01-18 21:48:55 UTC
++++ Make.inc
 @@ -12,7 +12,7 @@
  # for solaris
  #
