@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	gthumb
-PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTVERSION=	3.4.3
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
