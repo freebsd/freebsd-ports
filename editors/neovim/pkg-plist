@@ -59,7 +59,7 @@ share/nvim/runtime/autoload/provider/clipboard.vim
 share/nvim/runtime/autoload/provider/python.vim
 share/nvim/runtime/autoload/provider/python3.vim
 share/nvim/runtime/autoload/provider/pythonx.vim
-share/nvim/runtime/autoload/provider/script_host.py
+share/nvim/runtime/autoload/provider/ruby.vim
 share/nvim/runtime/autoload/python3complete.vim
 share/nvim/runtime/autoload/pythoncomplete.vim
 share/nvim/runtime/autoload/remote/define.vim
@@ -167,6 +167,7 @@ share/nvim/runtime/compiler/xbuild.vim
 share/nvim/runtime/compiler/xmllint.vim
 share/nvim/runtime/compiler/xmlwf.vim
 share/nvim/runtime/delmenu.vim
+share/nvim/runtime/doc/api.txt
 share/nvim/runtime/doc/arabic.txt
 share/nvim/runtime/doc/autocmd.txt
 share/nvim/runtime/doc/change.txt
@@ -210,7 +211,6 @@ share/nvim/runtime/doc/nvim_provider.txt
 share/nvim/runtime/doc/nvim_python.txt
 share/nvim/runtime/doc/nvim_terminal_emulator.txt
 share/nvim/runtime/doc/options.txt
-share/nvim/runtime/doc/os_dos.txt
 share/nvim/runtime/doc/os_win32.txt
 share/nvim/runtime/doc/pattern.txt
 share/nvim/runtime/doc/pi_gzip.txt
