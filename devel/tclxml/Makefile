@@ -23,8 +23,7 @@ USES=		tcl tar:xz
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
 USE_LDCONFIG?=	${PREFIX}/lib/Tclxml${PORTVERSION}
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--exec-prefix=${PREFIX} \
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--with-tcl=${TCL_LIBDIR} \
 		XML_CONFIG="${XML_CONFIG}"
 PLIST_SUB=	VER=${PORTVERSION}
