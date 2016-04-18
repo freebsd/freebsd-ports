@@ -1,2 +1,4 @@
 SHA256 (bundy-dns-bundy-0.20160125-d310c5d_GH0.tar.gz) = e5670ee9fb53eab8a07ac3956218c3dc1655d798c5e753a5fb8876a5db1d5afc
 SIZE (bundy-dns-bundy-0.20160125-d310c5d_GH0.tar.gz) = 5310800
+SHA256 (boost_1_55_0.tar.bz2) = fff00023dd79486d444c8e29922f4072e1d451fc5a4d2b6075852ead7f2b7b52
+SIZE (boost_1_55_0.tar.bz2) = 58146647
