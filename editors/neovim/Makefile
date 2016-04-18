@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	neovim
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
-MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Next generation Vim
@@ -21,11 +21,11 @@ LIB_DEPENDS=	libunibilium.so:devel/unibilium \
 		libuv.so:devel/libuv \
 		libmsgpack.so:devel/msgpack
 
-USES=		cmake gettext-tools lua gmake pkgconfig
+USES=		cmake:outsource compiler gettext iconv lua pathfix pkgconfig
 USE_GITHUB=	yes
-GH_TAGNAME=	b33c777
 
-CMAKE_ARGS+=	-DLUA_PRG=${LUA_CMD} \
-		-DUSE_BUNDLED_DEPS=OFF
+CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
+		-DCMAKE_INSTALL_MANDIR:PATH="${MANPREFIX}/man" \
+		-DDEPS_PREFIX:PATH="${LOCALBASE}"
 
 .include <bsd.port.mk>
