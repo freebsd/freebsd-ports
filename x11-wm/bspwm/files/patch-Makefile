@@ -1,20 +1,72 @@
---- Makefile.orig	2015-03-20 21:29:14 UTC
+--- Makefile.orig	2016-03-15 16:06:25 UTC
 +++ Makefile
-@@ -8,7 +8,7 @@ LDFLAGS += -L$(PREFIX)/lib
+@@ -1,15 +1,16 @@
+ VERSION := $(shell git describe 2> /dev/null || cat VERSION)
  
- PREFIX   ?= /usr/local
- BINPREFIX = $(PREFIX)/bin
--MANPREFIX = $(PREFIX)/share/man
-+MANPREFIX = $(PREFIX)/man
- BASHCPL = $(PREFIX)/share/bash-completion/completions
- ZSHCPL = $(PREFIX)/share/zsh/site-functions
- DOCPREFIX = $(PREFIX)/share/doc/bspwm
-@@ -56,7 +56,7 @@ install:
- 	cp -p contrib/zsh_completion "$(DESTDIR)$(ZSHCPL)"/_bspc
+-CPPFLAGS += -D_POSIX_C_SOURCE=200112L -DVERSION=\"$(VERSION)\"
++CPPFLAGS += $(shell pkg-config --cflags xcb-ewmh xcb-event xcb-icccm xcb-randr xcb-util xcb-xinerama) -DVERSION=\"$(VERSION)\"
+ CFLAGS   += -std=c99 -pedantic -Wall -Wextra
+-LDLIBS    = -lm -lxcb -lxcb-util -lxcb-icccm -lxcb-ewmh -lxcb-randr -lxcb-xinerama
++LDLIBS    = $(shell pkg-config --libs xcb-ewmh xcb-event xcb-icccm xcb-randr xcb-util xcb-xinerama) -lm
+ 
+ PREFIX    ?= /usr/local
+-BINPREFIX ?= $(PREFIX)/bin
+-MANPREFIX ?= $(PREFIX)/share/man
+-DOCPREFIX ?= $(PREFIX)/share/doc/bspwm
+-BASHCPL   ?= $(PREFIX)/share/bash-completion/completions
+-ZSHCPL    ?= $(PREFIX)/share/zsh/site-functions
++BINPREFIX  = $(PREFIX)/bin
++MANPREFIX  = $(PREFIX)/man
++DOCPREFIX  = $(PREFIX)/share/doc/bspwm
++EXPREFIX   = $(PREFIX)/share/examples/bspwm
++BASHCPL    = $(PREFIX)/share/bash-completion/completions
++ZSHCPL     = $(PREFIX)/share/zsh/site-functions
+ 
+ MD_DOCS = README.md doc/CHANGELOG.md doc/CONTRIBUTING.md doc/INSTALL.md doc/MISC.md doc/TODO.md
+ XSESSIONS ?= $(PREFIX)/share/xsessions
+@@ -35,20 +36,36 @@ bspc: $(CLI_OBJ)
+ 
+ install:
+ 	mkdir -p "$(DESTDIR)$(BINPREFIX)"
+-	cp -pf bspwm "$(DESTDIR)$(BINPREFIX)"
+-	cp -pf bspc "$(DESTDIR)$(BINPREFIX)"
++	${BSD_INSTALL_PROGRAM} bspwm "$(DESTDIR)$(BINPREFIX)"
++	${BSD_INSTALL_PROGRAM} bspc "$(DESTDIR)$(BINPREFIX)"
+ 	mkdir -p "$(DESTDIR)$(MANPREFIX)"/man1
+-	cp -p doc/bspwm.1 "$(DESTDIR)$(MANPREFIX)"/man1
+-	cp -Pp doc/bspc.1 "$(DESTDIR)$(MANPREFIX)"/man1
++	${BSD_INSTALL_MAN} doc/bspwm.1 "$(DESTDIR)$(MANPREFIX)"/man1
++	${BSD_INSTALL_MAN} doc/bspc.1 "$(DESTDIR)$(MANPREFIX)"/man1
+ 	mkdir -p "$(DESTDIR)$(BASHCPL)"
+-	cp -p contrib/bash_completion "$(DESTDIR)$(BASHCPL)"/bspc
++	${BSD_INSTALL_DATA} contrib/bash_completion "$(DESTDIR)$(BASHCPL)"/bspc
+ 	mkdir -p "$(DESTDIR)$(ZSHCPL)"
+-	cp -p contrib/zsh_completion "$(DESTDIR)$(ZSHCPL)"/_bspc
++	${BSD_INSTALL_DATA} contrib/zsh_completion "$(DESTDIR)$(ZSHCPL)"/_bspc
  	mkdir -p "$(DESTDIR)$(DOCPREFIX)"
- 	cp -p $(MD_DOCS) "$(DESTDIR)$(DOCPREFIX)"
+-	cp -p $(MD_DOCS) "$(DESTDIR)$(DOCPREFIX)"
 -	cp -pr examples "$(DESTDIR)$(DOCPREFIX)"/examples
-+	cp -pr examples "$(DESTDIR)$(EXAMPLESDIR)"
++	${BSD_INSTALL_DATA} $(MD_DOCS) "$(DESTDIR)$(DOCPREFIX)"
++	mkdir -p "$(DESTDIR)$(EXPREFIX)/external_rules"
++	${BSD_INSTALL_DATA} examples/external_rules/bspwmrc \
++		"$(DESTDIR)$(EXPREFIX)/external_rules"
++	${BSD_INSTALL_DATA} examples/external_rules/external_rules \
++		"$(DESTDIR)$(EXPREFIX)/external_rules"
++	mkdir -p "$(DESTDIR)$(EXPREFIX)/external_rules/pseudo_automatic_mode"
++	${BSD_INSTALL_DATA} examples/external_rules/pseudo_automatic_mode/* \
++		"$(DESTDIR)$(EXPREFIX)/external_rules/pseudo_automatic_mode"
++	mkdir -p "$(DESTDIR)$(EXPREFIX)/loop"
++	${BSD_INSTALL_DATA} examples/loop/* \
++		"$(DESTDIR)$(EXPREFIX)/loop"
++	mkdir -p "$(DESTDIR)$(EXPREFIX)/overlapping_borders"
++	${BSD_INSTALL_DATA} examples/overlapping_borders/* \
++		"$(DESTDIR)$(EXPREFIX)/overlapping_borders"
++	mkdir -p "$(DESTDIR)$(EXPREFIX)/panel"
++	${BSD_INSTALL_DATA} examples/panel/* \
++		"$(DESTDIR)$(EXPREFIX)/panel"
  	mkdir -p "$(DESTDIR)$(XSESSIONS)"
- 	cp -p contrib/freedesktop/bspwm.desktop "$(DESTDIR)$(XSESSIONS)"
+-	cp -p contrib/freedesktop/bspwm.desktop "$(DESTDIR)$(XSESSIONS)"
++	${BSD_INSTALL_DATA} contrib/freedesktop/bspwm.desktop "$(DESTDIR)$(XSESSIONS)"
  
+ uninstall:
+ 	rm -f "$(DESTDIR)$(BINPREFIX)"/bspwm
