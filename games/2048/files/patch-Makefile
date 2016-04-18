@@ -1,4 +1,4 @@
---- Makefile.orig	2016-04-08 17:50:58 UTC
+--- Makefile.orig	2016-03-30 07:46:31 UTC
 +++ Makefile
 @@ -1,7 +1,7 @@
  CC             ?= clang
@@ -9,3 +9,12 @@
  CFLAGS         += -DINVERT_COLORS -DVT100 -O2
  LFLAGS         +=
  
+@@ -13,7 +13,7 @@ FILTERED_C_FILES := $(filter-out src/gfx
+ all: terminal
+ 
+ curses: $(FILTERED_C_FILES) src/gfx_curses.c
+-	$(CC) $(CFLAGS) $(FILTERED_C_FILES) $(MERGE_FILE) src/gfx_curses.c -o $(PROGRAM) $(LDFLAGS) -lcurses
++	$(CC) $(CFLAGS) $(FILTERED_C_FILES) $(MERGE_FILE) src/gfx_curses.c -o $(PROGRAM) $(LDFLAGS) -lncurses
+ 
+ terminal: $(FILTERED_C_FILES) src/gfx_terminal.c
+ 	$(CC) $(CFLAGS) $(FILTERED_C_FILES) $(MERGE_FILE) src/gfx_terminal.c -o $(PROGRAM) $(LDFLAGS)
