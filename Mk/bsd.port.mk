@@ -1243,7 +1243,7 @@ GID_OFFSET?=	0
 
 # predefined accounts from src/etc/master.passwd
 # alpha numeric sort order
-USERS_BLACKLIST=	_dhcp _pflogd auditdistd bin bind daemon games hast kmem mailnull man news nobody operator pop proxy root smmsp sshd toor tty uucp www
+USERS_BLACKLIST=	_dhcp _pflogd auditdistd bin bind daemon games hast kmem mailnull man news nobody operator pop proxy root smmsp sshd toor tty unbound uucp www
 
 # predefined accounts from src/etc/group
 # alpha numeric sort order
