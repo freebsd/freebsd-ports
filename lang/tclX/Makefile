@@ -17,13 +17,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}${PORTVERSION:R}
 
-USES=		alias tcl tar:bzip2
+USES=		autoreconf alias tcl:tea tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/tclx${PORTVERSION:R}
-USE_AUTOTOOLS=	autoconf
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
-		--enable-shared \
-		--with-help=Help \
-		--with-tcl="${TCL_LIBDIR}"
+CONFIGURE_ARGS+=--enable-shared \
+		--with-help=Help
 PLIST_SUB=	TCLX_VER=${PORTVERSION:R}
 ALL_TARGET=	binaries libraries
 INSTALL_TARGET=	install-binaries install-libraries

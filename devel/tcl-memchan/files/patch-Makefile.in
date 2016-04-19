@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-12-10 22:24:41.000000000 +0100
-+++ Makefile.in	2014-02-17 15:55:10.000000000 +0100
-@@ -237,7 +237,7 @@
+--- Makefile.in.orig	2010-12-10 21:24:41 UTC
++++ Makefile.in
+@@ -237,7 +237,7 @@ install-doc: doc
  	@for i in $(DOC_NROFF); do \
  	    echo "Installing $$i"; \
  	    rm -f $(DESTDIR)$(mandir)/mann/`basename $$i`; \
@@ -9,7 +9,7 @@
  	done
  
  test: binaries libraries
-@@ -419,6 +419,7 @@
+@@ -419,6 +419,7 @@ install-lib-binaries:
  	  if test -f $$p; then \
  	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
  	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p; \
