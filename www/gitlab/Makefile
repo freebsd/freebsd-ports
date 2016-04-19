@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	8.6.5
+PORTVERSION=	8.6.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -12,9 +12,9 @@ COMMENT=	Web GUI for managing git repositories
 LICENSE=	MIT
 
 BUILD_DEPENDS=	gem:devel/ruby-gems
-RUN_DEPENDS=	git>=2.4.3:devel/git \
-	gitlab-shell>=2.6.10:devel/gitlab-shell\
-	gitlab-workhorse>=0.6.4:www/gitlab-workhorse \
+RUN_DEPENDS=	git>=2.7.4:devel/git \
+	gitlab-shell>=2.7.1:devel/gitlab-shell\
+	gitlab-workhorse>=0.7.1:www/gitlab-workhorse \
 	redis>=2.8.23:databases/redis \
 	rubygem-rails4>=4.2.5.2:www/rubygem-rails4 \
 	rubygem-rails-deprecated_sanitizer>=1.0.3:devel/rubygem-rails-deprecated_sanitizer \
