@@ -1,11 +1,11 @@
---- Makefile.orig	2015-04-13 20:49:26 UTC
+--- Makefile.orig	2016-04-18 20:35:34 UTC
 +++ Makefile
-@@ -245,7 +245,7 @@ install-static: static
+@@ -265,7 +265,7 @@ install-static: static
  install-shared: shared
  	$(call colorecho,INSTALL,"Install shared library")
  	$(QUIET)mkdir -m 755 -p ${DESTDIR}${LIBDIR}
--	$(QUIET)install -m 644 ${BUILDDIR_RELEASE}/${BINDIR}/lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}
-+	$(QUIET)install ${SFLAGS} -m 644 ${BUILDDIR_RELEASE}/${BINDIR}/lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}
- 	$(QUIET)ln -sf lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so.${SOMAJOR} || \
- 		echo "Failed to create lib${PROJECT}.so.${SOMAJOR}. Please check if it exists and points to the correct version of lib${PROJECT}.so."
- 	$(QUIET)ln -sf lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so || \
+-	$(QUIET)install -m 644 ${BUILDDIR_RELEASE}/${BINDIR}/${SOVERSIONFILE} ${DESTDIR}${LIBDIR}
++	$(QUIET)install ${SFLAGS} -m 644 ${BUILDDIR_RELEASE}/${BINDIR}/${SOVERSIONFILE} ${DESTDIR}${LIBDIR}
+ 	$(QUIET)ln -sf ${SOVERSIONFILE} ${DESTDIR}${LIBDIR}/${SOMAJORFILE} || \
+ 		echo "Failed to create ${SOMAJORFILE}. Please check if it exists and points to the correct version of ${SOFILE}."
+ 	$(QUIET)ln -sf ${SOVERSIONFILE} ${DESTDIR}${LIBDIR}/${SOFILE} || \
