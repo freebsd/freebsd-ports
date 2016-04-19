@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.formwidget.namedfile
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.15
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.namedfile>0:www/py-plone.namedfile \
 		${PYTHON_PKGNAMEPREFIX}plone.z3cform>0:www/py-plone.z3cform
 
 NO_ARCH=	yes
-USES=		python zip
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

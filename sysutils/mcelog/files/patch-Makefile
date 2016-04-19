@@ -1,4 +1,4 @@
---- Makefile.orig	2016-02-10 18:38:43 UTC
+--- Makefile.orig	2016-04-15 20:19:32 UTC
 +++ Makefile
 @@ -1,5 +1,4 @@
 -CFLAGS := -g -Os
@@ -7,7 +7,7 @@
  etcprefix :=
  MANDIR := ${prefix}/share/man
  # Define appropiately for your distribution
-@@ -32,13 +31,19 @@ all: mcelog
+@@ -32,13 +31,20 @@ all: mcelog
  
  .PHONY: install clean depend FORCE
  
@@ -16,23 +16,22 @@
         nehalem.o dunnington.o tulsa.o config.o memutil.o msg.o   \
 -       eventloop.o leaky-bucket.o memdb.o server.o trigger.o 	 \
 -       client.o cache.o sysfs.o yellow.o page.o rbtree.o 	 \
--       xeon75xx.o sandy-bridge.o ivy-bridge.o haswell.o		 \
--       broadwell_de.o broadwell_epex.o msr.o bus.o \
--       unknown.o
-+       eventloop.o leaky-bucket.o memdb.o server.o client.o 	 \
-+       cache.o rbtree.o xeon75xx.o sandy-bridge.o ivy-bridge.o	\
-+       haswell.o broadwell_de.o broadwell_epex.o msr.o
++       eventloop.o leaky-bucket.o memdb.o server.o 	 \
++       client.o cache.o rbtree.o 	 \
+        xeon75xx.o sandy-bridge.o ivy-bridge.o haswell.o		 \
+        broadwell_de.o broadwell_epex.o skylake_xeon.o		 \
+-       msr.o bus.o unknown.o
++       msr.o
 +ifndef FREEBSD
 +OBJ += page.o trigger.o sysfs.o yellow.o bus.o unknown.o
 +endif
 +ifdef FREEBSD
 +OBJ += memstream.o
-+LIBS += -lkvm
 +endif
  DISKDB_OBJ := diskdb.o dimm.o db.o
  CLEAN := mcelog dmi tsc dbquery .depend .depend.X dbquery.o ${DISKDB_OBJ} \
  	version.o version.c version.tmp
-@@ -55,7 +60,7 @@ endif
+@@ -55,7 +61,7 @@ endif
  
  SRC := $(OBJ:.o=.c)
  
@@ -41,7 +40,7 @@
  
  # dbquery intentionally not installed by default
  install: mcelog mcelog.conf mcelog.conf.5 mcelog.triggers.5
-@@ -94,7 +99,7 @@ depend: .depend
+@@ -94,7 +100,7 @@ depend: .depend
  
  version.tmp: FORCE
  	( echo -n "char version[] = \"" ; 	\
@@ -50,7 +49,7 @@
  	if [ -d .git ] ; then 			\
  		git describe --tags HEAD | tr -d '\n'; 	\
  	else 					\
-@@ -110,8 +115,6 @@ version.c: version.tmp
+@@ -110,8 +116,6 @@ version.c: version.tmp
  .depend: ${SRC}
  	${CC} -MM -I. ${SRC} > .depend.X && mv .depend.X .depend
  

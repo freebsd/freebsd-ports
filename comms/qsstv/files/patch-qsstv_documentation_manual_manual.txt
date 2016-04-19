@@ -1,0 +1,11 @@
+--- qsstv/documentation/manual/manual.txt.orig	2016-04-09 01:25:30 UTC
++++ qsstv/documentation/manual/manual.txt
+@@ -213,7 +213,7 @@ The following tabs are available
+ - TX Images: directory for images to transmit
+ - Templates: directory where the template files are stored
+ - Audio Records: directory for audio files (where you save/read recorded audio files)
+-- Documentation: URL of the user manual (if you copied the manual locally then you can point to it with e.g. file:///usr/share/doc/qsstv/manual
++- Documentation: URL of the user manual (if you copied the manual locally then you can point to it with e.g. file://%%DOCSDIR%%/manual
+ <br><br>
+ 
+ \li Gui

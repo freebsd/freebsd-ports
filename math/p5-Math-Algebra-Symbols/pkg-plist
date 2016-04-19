@@ -1,9 +1,6 @@
 %%PERL5_MAN3%%/Math::Algebra::Symbols.3.gz
 %%PERL5_MAN3%%/Math::Algebra::Symbols::Sum.3.gz
-%%PERL5_MAN3%%/Math::Algebra::Symbols::Symbols.3.gz
 %%PERL5_MAN3%%/Math::Algebra::Symbols::Term.3.gz
 %%SITE_PERL%%/Math/Algebra/Symbols.pm
 %%SITE_PERL%%/Math/Algebra/Symbols/Sum.pm
-%%SITE_PERL%%/Math/Algebra/Symbols/Symbols.pm
 %%SITE_PERL%%/Math/Algebra/Symbols/Term.pm
-%%SITE_PERL%%/Math/Algebra/symbols.pl

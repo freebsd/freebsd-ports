@@ -3,67 +3,78 @@
 
 PORTNAME=	opensmtpd-extras
 PORTVERSION=	201602042118
-CATEGORIES=	mail
+PORTREVISION?=	4
+CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
 
-MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	Addons for OpenSMTPD
+MAINTAINER?=	gahr@FreeBSD.org
+COMMENT?=	Addons for OpenSMTPD
 
-LICENSE=	ISCL
+LICENSE?=	ISCL
 
-OPTIONS_GROUP=		TABLE
-OPTIONS_GROUP_TABLE=	LDAP MYSQL PASSWD PGSQL PYTHON REDIS SMAP SQLITE
-OPTIONS_DEFAULT=	LDAP MYSQL PASSWD PGSQL PYTHON REDIS SMAP SQLITE
+LIB_DEPENDS+=	libevent.so:devel/libevent2
+RUN_DEPENDS+=	${LOCALBASE}/sbin/smtpctl:mail/opensmtpd
 
-PASSWD_DESC=	passwd(5) table support
-SMAP_DESC=	Socketmap protocol support
-
-OPTIONS_SUB=	yes
-
-LIB_DEPENDS=	libevent.so:devel/libevent2
-RUN_DEPENDS=	${LOCALBASE}/sbin/smtpctl:mail/opensmtpd
-
-USES=		autoreconf libtool pkgconfig
+USES+=		autoreconf libtool pkgconfig
 USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=	yes
 GNU_CONFIGURE=	yes
+
+# NB: Please *DO NOT* add the following; they are NOT for end-users:
+# filter-monkey, filter-stub, filter-trace, filter-void
+# queue-null, queue-stub
+# scheduler-stub
+# table-stub
+.if empty(SLAVE_PORT)
+OPTIONS_GROUP=		FILTER TABLE
+OPTIONS_GROUP_FILTER=	CLAMAV DKIM DNSBL PAUSE REGEX SPAMASSASSIN
+OPTIONS_GROUP_TABLE=	LDAP MYSQL PASSWD PGSQL PYTHON REDIS SMAP SQLITE
+OPTIONS_DEFAULT=	${OPTIONS_GROUP_FILTER} ${OPTIONS_GROUP_TABLE}
+
+# Filters
+CLAMAV_DESC=		Check messages with ClamAV
+DKIM_DESC=		Sign messages with DKIM
+DNSBL_DESC=		Check messages against DNSBLs
+PAUSE_DESC=		Pause incoming messages to reduce spam
+SPAMASSASSIN_DESC=	Check messages with SpamAssassin
+# Tables
+PASSWD_DESC=		passwd(5) table support
+SMAP_DESC=		Socketmap protocol support
+
+OPTIONS_SUB=	yes
+
 PLIST_FILES=	man/man3/filter_api.3.gz
-INSTALL_DIR=	libexec/opensmtpd
+INSTALL_DIR=	${LOCALBASE}/libexec/opensmtpd
+
+NO_ARCH=	yes
+
+#
+# Filters
+#
+CLAMAV_RUN_DEPENDS=		${INSTALL_DIR}/filter-clamav:mail/opensmtpd-extras-filter-clamav
+DKIM_RUN_DEPENDS=		${INSTALL_DIR}/filter-dkim-signer:mail/opensmtpd-extras-filter-dkim
+DNSBL_RUN_DEPENDS=		${INSTALL_DIR}/filter-dnsbl:mail/opensmtpd-extras-filter-dnsbl
+PAUSE_RUN_DEPENDS=		${INSTALL_DIR}/filter-pause:mail/opensmtpd-extras-filter-pause
+REGEX_RUN_DEPENDS=		${INSTALL_DIR}/filter-regex:mail/opensmtpd-extras-filter-regex
+SPAMASSASSIN_RUN_DEPENDS=	${INSTALL_DIR}/filter-spamassassin:mail/opensmtpd-extras-filter-spamassassin
 
 #
 # Tables
 #
-MYSQL_CONFIGURE_WITH=	table-mysql
-MYSQL_VARS=		USE_MYSQL=client \
-			LDFLAGS+=-L${LOCALBASE}/lib/mysql \
-			PLIST_FILES+=${INSTALL_DIR}/table-mysql
+MYSQL_RUN_DEPENDS=	${INSTALL_DIR}/table-mysql:mail/opensmtpd-extras-table-mysql
+PASSWD_RUN_DEPENDS=	${INSTALL_DIR}/table-passwd:mail/opensmtpd-extras-table-passwd
+PGSQL_RUN_DEPENDS=	${INSTALL_DIR}/table-postgres:mail/opensmtpd-extras-table-postgresql
+PYTHON_RUN_DEPENDS=	${INSTALL_DIR}/table-python:mail/opensmtpd-extras-table-python
+REDIS_RUN_DEPENDS=	${INSTALL_DIR}/table-redis:mail/opensmtpd-extras-table-redis
+SMAP_RUN_DEPENDS=	${INSTALL_DIR}/table-socketmap:mail/opensmtpd-extras-table-socketmap
+SQLITE_RUN_DEPENDS=	${INSTALL_DIR}/table-sqlite:mail/opensmtpd-extras-table-sqlite
+.else
 
-PASSWD_CONFIGURE_WITH=	table-passwd
-PASSWD_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-passwd \
-			PLIST_FILES+=man/man5/table-passwd.5.gz
+# Only install this for the opensmtpd-extras master port
+pre-patch:
+	@${REINPLACE_CMD} -e '/man_MANS.*filter_api.3/s/^/#/' \
+		${WRKSRC}/extras/wip/filters/Makefile.am
 
-PGSQL_CONFIGURE_WITH= 	table-postgres
-PGSQL_USES=		pgsql
-PGSQL_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-postgres
-
-PYTHON_CONFIGURE_WITH=	table-python python-type=${PYTHON_VERSION}
-PYTHON_USES=		python
-PYTHON_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-python
-
-REDIS_CONFIGURE_WITH=	table-redis
-REDIS_CONFIGURE_ENV=	REDIS_CONFIG=${LOCALBASE}/bin/pkgconf
-REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
-REDIS_VARS=		CFLAGS+=-I${LOCALBASE}/include/hiredis \
-			PLIST_FILES+=${INSTALL_DIR}/table-redis \
-			PLIST_FILES+=man/man5/table-redis.5.gz
-
-SMAP_CONFIGURE_WITH=	table-socketmap
-SMAP_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-socketmap \
-			PLIST_FILES+=man/man5/table-socketmap.5.gz
-
-SQLITE_CONFIGURE_WITH=	table-sqlite
-SQLITE_USES=		sqlite
-SQLITE_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-sqlite \
-			PLIST_FILES+=man/man5/table-sqlite.5.gz
+.endif
 
 .include <bsd.port.mk>

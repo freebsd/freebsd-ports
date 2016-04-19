@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/libtheora-1.1.0-2.el6.x86_64.rpm) = 942e4bb9415f0aaec7924f70f91aa923946f245ff8fed271e70991eedb6416ad
 SIZE (rpm/x86_64/centos/6.7/libtheora-1.1.0-2.el6.x86_64.rpm) = 131752
+SHA256 (rpm/x86_64/centos/6.7/libtheora-1.1.0-2.el6.i686.rpm) = 0d7e7b9daa9d0d4d1dc52bb00e3022f11e1b3401ca7c646f5538c0042c3a29b7
+SIZE (rpm/x86_64/centos/6.7/libtheora-1.1.0-2.el6.i686.rpm) = 134564
 SHA256 (rpm/x86_64/centos/6.7/libtheora-1.1.0-2.el6.src.rpm) = 2f903b66160f5f5f19684a8cbe96c8c746c9fd77e8d93da15ac4fbbc67c2a16b
 SIZE (rpm/x86_64/centos/6.7/libtheora-1.1.0-2.el6.src.rpm) = 1381855

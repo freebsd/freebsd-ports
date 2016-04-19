@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	net
-MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/
+MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/ \
+		http://files.freeswitch.org/releases/sounds/:sounds
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	corsmith@gmail.com
@@ -20,8 +21,6 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libpcre.so:devel/pcre \
 		libspeex.so:audio/speex \
 		libldns.so:dns/ldns \
-		libyuv.so:graphics/libyuv \
-		libvpx.so:multimedia/libvpx \
 		libopus.so:audio/opus \
 		libsndfile.so:audio/libsndfile \
 		libavformat.so:multimedia/ffmpeg \
@@ -101,15 +100,15 @@ BITRATES+=	48000
 .endif
 
 .for rate in ${BITRATES}
-EXTRADISTFILES+=	../sounds/${EDPRE}-music-${rate}-${EDPOST}
+EXTRADISTFILES+=	${EDPRE}-music-${rate}-${EDPOST}:sounds
 .if ${PORT_OPTIONS:MENGLISH}
-EXTRADISTFILES+=	../sounds/${EDPRE}-en-us-callie-${rate}-${EDPOST}
+EXTRADISTFILES+=	${EDPRE}-en-us-callie-${rate}-${EDPOST}:sounds
 .endif
 .if ${PORT_OPTIONS:MFRENCH}
-EXTRADISTFILES+=	../sounds/${EDPRE}-fr-ca-june-${rate}-${EDPOST}
+EXTRADISTFILES+=	${EDPRE}-fr-ca-june-${rate}-${EDPOST}:sounds
 .endif
 .if ${PORT_OPTIONS:MRUSSIAN}
-EXTRADISTFILES+=	../sounds/${EDPRE}-ru-RU-elena-${rate}-${EDPOST}
+EXTRADISTFILES+=	${EDPRE}-ru-RU-elena-${rate}-${EDPOST}:sounds
 .endif
 .endfor
 

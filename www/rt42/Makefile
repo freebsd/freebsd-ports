@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	42
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
-CONFLICTS_INSTALL=	rt-3.8* rt40-4.0* brlcad-[0-9]*
+CONFLICTS_INSTALL=	rt40-4.0* rt44-4.4* brlcad-[0-9]*
 
 NO_ARCH=	yes
 

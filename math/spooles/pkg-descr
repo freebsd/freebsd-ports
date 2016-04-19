@@ -17,4 +17,4 @@
        methods. The preconditioner is a drop tolerance factorization,
        with or without pivoting for stability.
 
-WWW:	http://www.netlib.org/linalg/spooles/spooles.2.2.html
+WWW: http://www.netlib.org/linalg/spooles/spooles.2.2.html

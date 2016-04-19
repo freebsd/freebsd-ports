@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	4.0.5.0
-PORTREVISION=	1
+PORTVERSION=	4.0.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -25,7 +24,6 @@ USE_XORG=	xpm
 USE_QT4=	gui network svg \
 		linguisttools_build moc_build rcc_build uic_build
 QMAKE_ARGS=	QMAKE_LRELEASE="${LRELEASE}"
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		DOCS LDAP
 OPTIONS_DEFAULT=	LDAP
@@ -47,26 +45,26 @@ pre-build:
 	@(cd ${WRKSRC} && ${DO_MAKE_BUILD} compiler_TSQM_make_all)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} x2goclient \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} x2goclient.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKSRC}/desktop && ${INSTALL_DATA} x2goclient.desktop \
-		${STAGEDIR}${DESKTOPDIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/x2goclient ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/man1/x2goclient.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/desktop/x2goclient.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 .for i in 16x16 32x32 48x48 64x64 128x128
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}/apps
-	(cd ${WRKSRC}/res/img/icons/${i} && ${INSTALL_DATA} x2goclient.png \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}/apps)
+	${INSTALL_DATA} ${WRKSRC}/res/img/icons/${i}/x2goclient.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}/apps
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
-	(cd ${WRKSRC}/res/img/icons && ${INSTALL_DATA} x2goclient.xpm \
-		${STAGEDIR}${DATADIR}/icons)
+	${INSTALL_DATA} ${WRKSRC}/res/img/icons/x2goclient.xpm \
+		${STAGEDIR}${DATADIR}/icons
 .for i in x2goclient.png x2gosession.png
-	(cd ${WRKSRC}/res/img/icons/128x128 && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DATADIR}/icons)
+	${INSTALL_DATA} ${WRKSRC}/res/img/icons/128x128/${i} \
+		${STAGEDIR}${DATADIR}/icons
 .endfor
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} HOWTO.GPGCARD ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/HOWTO.GPGCARD ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

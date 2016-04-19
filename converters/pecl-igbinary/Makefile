@@ -13,12 +13,13 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Replacement for the standard PHP serializer
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+IGNORE_WITH_PHP=70
 USE_PHP=	session
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USES=		tar:tgz
-IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

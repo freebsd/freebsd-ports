@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	49.0.2623.110
-PORTREVISION=	1
+PORTVERSION=	49.0.2623.112
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -57,8 +56,19 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 		xdg-open:devel/xdg-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		bison compiler:c++14-lang cpe desktop-file-utils execinfo jpeg \
+USES=		bison cpe desktop-file-utils execinfo jpeg \
 		ninja perl5 pkgconfig python:2,build shebangfix tar:xz
+# chromium requires a recent compiler (C++11 capable, but clang 3.4 is
+# not able to build chromium. OTOH clang36 on FreeBSD 9.3 cannot build
+# chromium as the libc++ includes are not up to the task. USES flags
+# have to be set before bsd.ports.pre.mk and thereby cannot depend on
+# bsd.ports.pre.mk's variables, so I'm using a hack here.
+.if exists(/usr/lib/libc++.a)
+USES+=	compiler:c++14-lang
+.else
+USES+=	compiler:c++11-lib
+.endif
+
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
 USE_PERL5=	build
@@ -386,7 +396,6 @@ do-install:
 		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/out/${BUILDTYPE} && \
 		${COPYTREE_SHARE} "locales resources" ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/chromium-browser.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/chrome ${STAGEDIR}${PREFIX}/bin

@@ -4,10 +4,9 @@
  SRCS= strcutl.c strcutw.c strcuts.c strcuti.c strcutf.c flog.c flogd.c fparse.c strlower.c strb64d.c
  
  CFLAGS+= -Wall -Werror -Wstrict-prototypes
--NOMAN= 1
+ MAN=
 -NOPIC= 1
 -NOPROFILE= 1
-+NO_MAN= 1
 +NO_PIC= 1
 +NO_PROFILE= 1
  

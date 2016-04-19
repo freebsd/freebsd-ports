@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/libtiff-3.9.4-10.el6_5.x86_64.rpm) = 720e58adbb1f8a477c48d74ea35b5ed153e0daf8334402cf8c090497a6bd8b64
 SIZE (rpm/x86_64/centos/6.7/libtiff-3.9.4-10.el6_5.x86_64.rpm) = 350816
+SHA256 (rpm/x86_64/centos/6.7/libtiff-3.9.4-10.el6_5.i686.rpm) = da3a998c6169d15e3db4280c64e7595a4a5e83c2afd106db8bcaba4c56430565
+SIZE (rpm/x86_64/centos/6.7/libtiff-3.9.4-10.el6_5.i686.rpm) = 347108
 SHA256 (rpm/x86_64/centos/6.7/libtiff-3.9.4-10.el6_5.src.rpm) = f86c5ce4adf609108553cf772def54b27b1555eda290a8b40202a96f366e9c52
 SIZE (rpm/x86_64/centos/6.7/libtiff-3.9.4-10.el6_5.src.rpm) = 1480097

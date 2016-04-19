@@ -420,6 +420,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				    - appropriate invocation of the Linux ldconfig
 # USE_LINUX_RPM	- Set to yes to pull in variables and targets useful to Linux
 #				  RPM ports.
+# 				  Set to nolib if your port does not contain an architecture-
+#				  specific library.
 #				  Implies inclusion of bsd.linux-rpm.mk.
 #
 # LINUX_OSRELEASE	- Contains the value of compat.linux.osrelease sysctl.
@@ -544,8 +546,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # INSTALL_LIB	- As INSTALL_DATA, but also strips the file.
 # INSTALL_SCRIPT
 #				- A command to install executable scripts.
-# INSTALL_DATA	- A command to install sharable data.
-# INSTALL_MAN	- A command to install manpages.
+# INSTALL_DATA	- A command to install sharable data and static libs.
+# INSTALL_MAN	- A command to install manpages and documentation.
 # COPYTREE_BIN
 # COPYTREE_SHARE
 #				- Similiar to INSTALL_PROGRAM and INSTALL_DATA commands but
@@ -778,6 +780,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  configure stage will not do anything if this is not set.
 # GNU_CONFIGURE	- If set, you are using GNU configure (optional).  Implies
 #				  HAS_CONFIGURE.
+# CONFIGURE_OUTSOURCE - If set, this port builds in an empty ${CONFIGURE_WRKSRC}
+#				  not being under ${WRKSRC}.
 # CONFIGURE_WRKSRC
 #				- Directory to run configure in.
 #				  Default: ${WRKSRC}
@@ -1239,7 +1243,11 @@ GID_OFFSET?=	0
 
 # predefined accounts from src/etc/master.passwd
 # alpha numeric sort order
-USERS_BLACKLIST=	_dhcp _pflogd auditdistd bin bind daemon games hast kmem mailnull man news nobody operator pop proxy root smmsp sshd toor tty uucp www
+USERS_BLACKLIST=	_dhcp _pflogd auditdistd bin bind daemon games hast kmem mailnull man news nobody operator pop proxy root smmsp sshd toor tty unbound uucp www
+
+# predefined accounts from src/etc/group
+# alpha numeric sort order
+GROUPS_BLACKLIST=	_dhcp _pflogd audit authpf bin bind daemon dialer ftp games guest hast kmem mail mailnull man network news nobody nogroup operator proxy smmsp sshd staff sys tty unbound uucp wheel www
 
 LDCONFIG_DIR=	libdata/ldconfig
 LDCONFIG32_DIR=	libdata/ldconfig32
@@ -1552,6 +1560,14 @@ EXTRACT_WRKDIR:=		${WRKDIR}
 WRKSRC:=		${WRKSRC}/${WRKSRC_SUBDIR}
 .endif
 
+.if defined(CONFIGURE_OUTSOURCE)
+CONFIGURE_CMD?=		${WRKSRC}/${CONFIGURE_SCRIPT}
+CONFIGURE_WRKSRC?=	${WRKDIR}/.build
+BUILD_WRKSRC?=		${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC?=	${CONFIGURE_WRKSRC}
+TEST_WRKSRC?=		${CONFIGURE_WRKSRC}
+.endif
+
 PATCH_WRKSRC?=	${WRKSRC}
 CONFIGURE_WRKSRC?=	${WRKSRC}
 BUILD_WRKSRC?=	${WRKSRC}
@@ -1696,7 +1712,7 @@ MAKE_ENV+=	${b}="${${b}}"
 .include "${PORTSDIR}/Mk/bsd.ldap.mk"
 .endif
 
-.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
+.if defined(USE_RC_SUBR)
 SUB_FILES+=	${USE_RC_SUBR}
 .endif
 
@@ -2605,16 +2621,16 @@ HAS_CONFIGURE=		yes
 SET_LATE_CONFIGURE_ARGS= \
      _LATE_CONFIGURE_ARGS="" ; \
 	if [ -z "${CONFIGURE_ARGS:M--localstatedir=*:Q}" ] && \
-	   ./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- --localstatedir > /dev/null; then \
+	   ${CONFIGURE_CMD} --help 2>&1 | ${GREP} -- --localstatedir > /dev/null; then \
 	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --localstatedir=/var" ; \
 	fi ; \
-	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--mandir'`" ]; then \
+	if [ ! -z "`${CONFIGURE_CMD} --help 2>&1 | ${GREP} -- '--mandir'`" ]; then \
 	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --mandir=${GNU_CONFIGURE_MANPREFIX}/man" ; \
 	fi ; \
-	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--infodir'`" ]; then \
+	if [ ! -z "`${CONFIGURE_CMD} --help 2>&1 | ${GREP} -- '--infodir'`" ]; then \
 	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --infodir=${GNU_CONFIGURE_PREFIX}/${INFO_PATH}/${INFO_SUBDIR}" ; \
 	fi ; \
-	if [ -z "`./${CONFIGURE_SCRIPT} --version 2>&1 | ${EGREP} -i '(autoconf.*2\.13|Unrecognized option)'`" ]; then \
+	if [ -z "`${CONFIGURE_CMD} --version 2>&1 | ${EGREP} -i '(autoconf.*2\.13|Unrecognized option)'`" ]; then \
 		_LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --build=${CONFIGURE_TARGET}" ; \
 	else \
 		_LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} ${CONFIGURE_TARGET}" ; \
@@ -2992,6 +3008,20 @@ ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} ${WRKSRC}:
 
 .if !target(check-deprecated)
 check-deprecated:
+.if ${MAINTAINER} == "ports@FreeBSD.org"
+	@${ECHO_MSG} "===>   NOTICE:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "The ${PORTNAME} port currently does not have a maintainer. As a result, it is"
+	@${ECHO_MSG} "more likely to have unresolved issues, not be up-to-date, or even be removed in"
+	@${ECHO_MSG} "the future. To volunteer to maintain this port, please create an issue at:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "https://bugs.freebsd.org/bugzilla"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "More information about port maintainership is available at:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port"
+	@${ECHO_MSG}
+.endif
 .if defined(DEPRECATED)
 	@${ECHO_MSG} "===>   NOTICE:"
 	@${ECHO_MSG}
@@ -3336,6 +3366,7 @@ do-configure:
 	done
 .endif
 .if defined(HAS_CONFIGURE)
+	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@(cd ${CONFIGURE_WRKSRC} && \
 	    ${SET_LATE_CONFIGURE_ARGS} \
 		if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
@@ -3642,96 +3673,28 @@ install-ldconfig-file:
 
 .if !target(create-users-groups)
 .if defined(GROUPS) || defined(USERS)
-_UG_OUTPUT=	${WRKDIR}/users-groups.sh
-PKGPREINSTALL+=	${_UG_OUTPUT}
+_UG_INSTALL=	${WRKDIR}/users-groups-install.sh
+_UG_DEINSTALL=	${WRKDIR}/users-groups-deinstall.sh
+PKGPREINSTALL+=	${_UG_INSTALL}
+PKGPOSTDEINSTALL+=	${_UG_DEINSTALL}
 create-users-groups:
-	@${RM} -f ${_UG_OUTPUT} || ${TRUE}
-.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1002000
-	@${ECHO_CMD} "PW=${PW}" >> ${_UG_OUTPUT}
-.else
-	@${ECHO_CMD} -e "if [ -n \"\$${PKG_ROOTDIR}\" -a \"\$${PKG_ROOTDIR}\" != \"/\" ]; then PW=\"${PW} -R \$${PKG_ROOTDIR}\"; else PW=${PW}; fi" >> ${_UG_OUTPUT}
-.endif
-.if defined(GROUPS)
-.for _file in ${GID_FILES}
-.if !exists(${_file})
-	@${ECHO_CMD} "** ${_file} doesn't exist. Exiting."; exit 1
-.endif
-.endfor
-	@${ECHO_MSG} "===> Creating users and/or groups."
-	@${ECHO_CMD} "echo \"===> Creating users and/or groups.\"" >> ${_UG_OUTPUT}
-.for _group in ${GROUPS}
-# _bgpd:*:130:
-	@if ! ${GREP} -h ^${_group}: ${GID_FILES} >/dev/null 2>&1; then \
-		${ECHO_CMD} "** Cannot find any information about group \`${_group}' in ${GID_FILES}."; \
-		exit 1; \
-	fi
-	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
-		gid=$$(($$gid+${GID_OFFSET})); \
-		${ECHO_CMD} -e "if ! \$${PW} groupshow $$group >/dev/null 2>&1; then \n \
-			echo \"Creating group '$$group' with gid '$$gid'.\" \n \
-			\$${PW} groupadd $$group -g $$gid; else echo \"Using existing group '$$group'.\"\nfi" >> ${_UG_OUTPUT}; \
-	done
-.endfor
-.endif
-.if defined(USERS)
-.for _file in ${UID_FILES}
-.if !exists(${_file})
-	@${ECHO_CMD} "** ${_file} doesn't exist. Exiting."; exit 1
-.endif
-.endfor
-.for _user in ${USERS}
-# _bgpd:*:130:130:BGP Daemon:/var/empty:/sbin/nologin
-	@if ! ${GREP} -h ^${_user}: ${UID_FILES} >/dev/null 2>&1; then \
-		${ECHO_CMD} "** Cannot find any information about user \`${_user}' in ${UID_FILES}."; \
-		exit 1; \
-	fi
-	@IFS=":"; ${GREP} -h ^${_user}: ${UID_FILES} | head -n 1 | while read login passwd uid gid class change expire gecos homedir shell; do \
-		uid=$$(($$uid+${UID_OFFSET})); \
-		gid=$$(($$gid+${GID_OFFSET})); \
-		class="$${class:+-L }$$class"; \
-		homedir=$$(echo $$homedir | sed "s|^/usr/local|${PREFIX}|"); \
-		${ECHO_CMD} -e "if ! \$${PW} usershow $$login >/dev/null 2>&1; then \n \
-			echo \"Creating user '$$login' with uid '$$uid'.\" \n \
-			\$${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell \n \
-			else \necho \"Using existing user '$$login'.\" \nfi" >> ${_UG_OUTPUT}; \
-		case $$homedir in /|/nonexistent|/var/empty) ;; *) ${ECHO_CMD} "${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${_UG_OUTPUT};; esac; \
-	done
-.endfor
-.if defined(GROUPS)
-.for _group in ${GROUPS}
-# mail:*:6:postfix,clamav
-	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
-		gid=$$(($$gid+${GID_OFFSET})); \
-		IFS=","; for _login in $$members; do \
-			for _user in ${USERS}; do \
-				if [ "x$${_user}" = "x$${_login}" ]; then \
-					${ECHO_CMD} -e "if ! \$${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \n \
-						echo \"Adding user '$${_login}' to group '${_group}'.\" \n \
-						\$${PW} groupmod ${_group} -m $${_login} \nfi" >> ${_UG_OUTPUT}; \
-				fi; \
-			done; \
-		done; \
-	done
-.endfor
-.endif
-.if defined(USERS)
-.for _user in ${USERS}
-.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1002000
-	@if [ ! ${USERS_BLACKLIST:M${_user}} ]; then \
-		${ECHO_CMD} "@unexec PW=${PW}; \
-			if \$${PW} usershow ${_user} >/dev/null 2>&1; then \
-			echo \"==> You should manually remove the \\\"${_user}\\\" user. \"; fi" >> ${TMPPLIST}; \
-	fi
-.else
-	@if [ ! ${USERS_BLACKLIST:M${_user}} ]; then \
-		${ECHO_CMD} "@unexec if [ -n \"\$${PKG_ROOTDIR}\" -a \"\$${PKG_ROOTDIR}\" != \"/\" ]; then PW=\"${PW} -R \$${PKG_ROOTDIR}\"; else PW=${PW}; fi; \
-			if \$${PW} usershow ${_user} >/dev/null 2>&1; then \
-			echo \"==> You should manually remove the \\\"${_user}\\\" user. \"; fi" >> ${TMPPLIST}; \
-	fi
-.endif
-.endfor
-.endif
-.endif
+	@${SETENV} \
+			dp_ECHO_MSG="${ECHO_MSG}" \
+			dp_GID_FILES="${GID_FILES}" \
+			dp_GID_OFFSET="${GID_OFFSET}" \
+			dp_GROUPS_BLACKLIST="${GROUPS_BLACKLIST}" \
+			dp_INSTALL="${INSTALL}" \
+			dp_OPSYS="${OPSYS}" \
+			dp_OSVERSION="${OSVERSION}" \
+			dp_PREFIX="${PREFIX}" \
+			dp_PW="${PW}" \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			dp_UG_DEINSTALL="${_UG_DEINSTALL}" \
+			dp_UG_INSTALL="${_UG_INSTALL}" \
+			dp_UID_FILES="${UID_FILES}" \
+			dp_UID_OFFSET="${UID_OFFSET}" \
+			dp_USERS_BLACKLIST="${USERS_BLACKLIST}" \
+			${SH} ${SCRIPTSDIR}/do-users-groups.sh "${USERS}" "${GROUPS}"
 .endif
 .endif
 
@@ -4642,7 +4605,6 @@ create-manifest:
 	for a in ${PKGPOSTDEINSTALL}; do \
 		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+POST_DEINSTALL ; \
 	done ; \
-	[ -f ${PKGPOSTDEINSTALL} ] && ${CP} ${PKGPOSTDEINSTALL} ${METADIR}/+POST_DEINSTALL; \
 	[ -f ${PKGUPGRADE} ] && ${CP} ${PKGUPGRADE} ${METADIR}/+UPGRADE; \
 	[ -f ${PKGPREUPGRADE} ] && ${CP} ${PKGPREUPGRADE} ${METADIR}/+PRE_UPGRADE; \
 	[ -f ${PKGPOSTUPGRADE} ] && ${CP} ${PKGPOSTUPGRADE} ${METADIR}/+POST_UPGRADE; \
@@ -4922,7 +4884,7 @@ add-plist-post:
 .endif
 
 .if !target(install-rc-script)
-.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
+.if defined(USE_RC_SUBR)
 install-rc-script:
 	@${ECHO_MSG} "===> Staging rc.d startup script(s)"
 	@for i in ${USE_RC_SUBR}; do \

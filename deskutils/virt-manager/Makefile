@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-manager
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.2
 PORTREVISION=	1
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/ \
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr \
 		${PYTHON_PKGNAMEPREFIX}urlgrabber>=0:www/py-urlgrabber \
 		${PYTHON_PKGNAMEPREFIX}libvirt>=0:devel/py-libvirt \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
 		gtk-vnc>=0.4.4:net/gtk-vnc \
 		libvirt-glib>=0.1.9:devel/libvirt-glib \
 		libosinfo>=0:devel/libosinfo \
@@ -27,8 +28,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus \
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--prefix=${PREFIX}
+INSTALLS_ICONS=	yes
 USES=		python:2.7 gettext shebangfix
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	noegginfo autoplist distutils
+
 NO_ARCH=	yes
 
 USE_GNOME=	introspection:run intltool librsvg2 pygobject3

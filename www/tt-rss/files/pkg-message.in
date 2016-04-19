@@ -21,6 +21,7 @@ Then, you should be able to check <http://localhost/tt-rss/> and
 And to update your feeds, you have to enable the daemon ttrssd in
 /etc/rc.conf and start %%PREFIX%%/etc/rc.d/ttrssd . You may also add an entry
 for /var/log/ttrssd.log in your /etc/newsyslog.conf .
+Note: set `ttrssd_local_db="NO"' if your database is on another server.
 
 Important note: after an upgrade, you have to set SINGLE_USER_MODE to true
 in your config.php; remember to modify after that if needed. And your

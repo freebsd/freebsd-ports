@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/spark2012/spark.ads:devel/libspark2012
 
-USES=		ada dos2unix zip
+USES=		ada:5 dos2unix zip
 DOS2UNIX_FILES=	dfcs.usafa.edu.zonefile ironsides.1
 SNAPSHOT=	2015_04_15
 WRKSRC=		${WRKDIR}/${DISTFILES:S/.zip//}

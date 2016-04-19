@@ -157,6 +157,10 @@ DEV_ERROR+=	"INSTALLS_EGGINFO is no longer supported, please add the entry direc
 DEV_ERROR+=	"WANT_SDL is no longer supported. If you need SDL, use USE_SDL, if you need optional dependency, use options"
 .endif
 
+.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} == YES
+DEV_ERROR+=	"USE_RC_SUBR=yes has not been supported for a long time, remove it."
+.endif
+
 SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
 		USE_READLINE USE_ICONV PERL_CONFIGURE PERL_MODBUILD \
 		USE_PERL5_BUILD USE_PERL5_RUN USE_DISPLAY USE_FUSE \

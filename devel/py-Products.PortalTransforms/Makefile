@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.PortalTransforms
-PORTVERSION=	2.1.10
+PORTVERSION=	2.1.11
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.intelligenttext>=0:www/py-plone.intell
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:databases/zodb3 \
 		${PYTHON_PKGNAMEPREFIX}markdown>=1.7:textproc/py-markdown
 
-USES=		python
+NO_ARCH=	yes
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

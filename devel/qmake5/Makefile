@@ -56,7 +56,7 @@ post-build:
 	@cd ${WRKSRC} && \
 		${SETENV} CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
-		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+		${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}
 # Cleanup qmodule.pri to make it module agnostic.
 	@${REINPLACE_CMD} -En -e '/^(CONFIG|QT_BUILD_PARTS|.*_DIR) / p' \
 		${WRKSRC}/mkspecs/qmodule.pri

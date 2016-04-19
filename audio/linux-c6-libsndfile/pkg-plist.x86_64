@@ -5,6 +5,8 @@ usr/bin/sndfile-metadata-get
 usr/bin/sndfile-metadata-set
 usr/bin/sndfile-play
 usr/bin/sndfile-regtest
+usr/lib/libsndfile.so.1
+usr/lib/libsndfile.so.1.0.20
 usr/lib64/libsndfile.so.1
 usr/lib64/libsndfile.so.1.0.20
 %%PORTDOCS%%usr/%%DOCSDIR%%-1.0.20/AUTHORS

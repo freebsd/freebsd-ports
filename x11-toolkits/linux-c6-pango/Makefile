@@ -18,10 +18,9 @@ USE_LINUX_APPS=	cairo expat fontconfig xorglibs
 USE_LINUX_RPM=	yes
 RPMVERSION=	10.el6
 
-.if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64"
-BRANDELF_FILES=	usr/bin/pango-querymodules-64
-.else
 BRANDELF_FILES=	usr/bin/pango-querymodules-32
+.if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64"
+BRANDELF_FILES+=	usr/bin/pango-querymodules-64
 .endif
 
 USE_LDCONFIG=	yes

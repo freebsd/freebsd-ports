@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fabiankeil.de/sourcecode/zfs-snapshot-destroyer/
 DISTNAME=	${PORTNAME}-2014-12-07-c2d3662
 
-MAINTAINER=	fk@fabiankeil.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroys ZFS snapshots
 
 LICENSE=	BSD2CLAUSE

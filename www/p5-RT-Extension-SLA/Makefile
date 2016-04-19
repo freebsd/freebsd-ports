@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-Business-Hours>0:misc/p5-Business-Hours
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE=	GPLv2
+# SLA functionality comes as standard in RT 4.4.x
+CONFLICTS_INSTALL=	rt44-4.4.*
 
 NO_ARCH=	yes
 
@@ -55,7 +56,7 @@ SUB_FILES+=	pkg-message
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 	    unset PREFIX && \
-	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
+	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ${CONFIGURE_CMD} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
 post-configure:

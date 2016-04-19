@@ -1,7 +1,7 @@
---- Makefile.in.orig	2009-08-09 16:33:08.000000000 +0400
-+++ Makefile.in	2009-08-17 18:56:33.497493279 +0400
-@@ -213,7 +213,7 @@
- 	     ev.3 ev.pod
+--- Makefile.in.orig	2015-12-20 21:12:45 UTC
++++ Makefile.in
+@@ -343,7 +343,7 @@ EXTRA_DIST = LICENSE Changes libev.m4 au
+ 	     ev.3 ev.pod Symbols.ev Symbols.event
  
  man_MANS = ev.3
 -include_HEADERS = ev.h ev++.h event.h

@@ -45,8 +45,6 @@ do-install:
 	(cd ${WRKSRC}/po && ${INSTALL_DATA} ${i}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES/isomaster.mo)
 .endfor
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} isomaster.desktop \
-		${STAGEDIR}${DESKTOPDIR})
+	${INSTALL_DATA} ${WRKSRC}/isomaster.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>

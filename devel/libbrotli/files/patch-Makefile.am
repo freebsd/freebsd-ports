@@ -1,26 +1,6 @@
---- Makefile.am.orig	2016-02-13 06:10:48.000000000 -0500
-+++ Makefile.am	2016-02-14 10:28:29.982409000 -0500
-@@ -14,8 +14,7 @@
-  brotli/enc/encode.cc brotli/enc/static_dict.cc				\
-  brotli/enc/encode_parallel.cc brotli/enc/streams.cc			\
-  brotli/enc/entropy_encode.cc brotli/enc/dictionary.cc			\
-- brotli/enc/utf8_util.cc brotli/enc/compress_fragment.cc			\
-- brotli/enc/compress_fragment_two_pass.cc
-+ brotli/enc/utf8_util.cc
- 
- DECODEHEADERS = brotli/dec/decode.h brotli/dec/state.h			\
-  brotli/dec/streams.h brotli/dec/types.h brotli/dec/bit_reader.h	\
-@@ -32,16 +31,14 @@
-  brotli/enc/literal_cost.h brotli/enc/cluster.h brotli/enc/bit_cost.h   \
-  brotli/enc/entropy_encode.h brotli/enc/brotli_bit_stream.h             \
-  brotli/enc/write_bits.h brotli/enc/static_dict_lut.h                   \
-- brotli/enc/encode_parallel.h brotli/enc/types.h brotli/enc/utf8_util.h \
-- brotli/enc/compress_fragment.h brotli/enc/compress_fragment_two_pass.h \
-- brotli/enc/entropy_encode_static.h
-+ brotli/enc/encode_parallel.h brotli/enc/types.h brotli/enc/utf8_util.h
- 
- EXTRA_DIST = AUTHORS README
- 
+--- Makefile.am.orig	2016-04-16 19:40:04.016418000 -0400
++++ Makefile.am	2016-04-16 19:40:13.154082000 -0400
+@@ -41,7 +41,7 @@
  # install headers in $(includedir) with subdirs
  nobase_include_HEADERS = $(DECODEHEADERS) $(ENCODEHEADERS)
  

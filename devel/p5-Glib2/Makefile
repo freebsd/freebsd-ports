@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Glib
-PORTVERSION=	1.311
+PORTVERSION=	1.321
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
 MASTER_SITE_SUBDIR=	CPAN:XAOC
@@ -13,6 +13,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	This module provides access to Glib and GObject libraries
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1:devel/p5-ExtUtils-PkgConfig

@@ -34,6 +34,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/solution.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/trademarks.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-cautions.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-conclusion.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-posix.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-testing.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html
@@ -114,7 +119,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-pre.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-start.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch10s07.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/colophon.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/common-tasks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/config-tuning.html
@@ -174,10 +178,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/legalnotice.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-maple.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-mathematica.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-oracle.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-changingmta.html
@@ -233,7 +235,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/quotas.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/raid.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/sapr3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/scanners.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/securing-freebsd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-intro.html

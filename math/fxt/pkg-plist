@@ -1622,6 +1622,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A003043-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A005351-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A005351-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A005576-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A005576-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A005943-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A005943-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A006951-demo.cc
@@ -1698,6 +1700,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A240949-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A247386-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A247386-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A259095-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A259095-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bracelets-demo.cc

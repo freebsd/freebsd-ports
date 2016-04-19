@@ -876,8 +876,8 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_UtfCharComplete.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_UtfFindFirst.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_UtfFindLast.tcl86.3.gz
-%%TCLMAN%%man/man3/Tcl_UtfNcasecmp.tcl86.3.gz                                                                                                                
-%%TCLMAN%%man/man3/Tcl_UtfNcmp.tcl86.3.gz  
+%%TCLMAN%%man/man3/Tcl_UtfNcasecmp.tcl86.3.gz
+%%TCLMAN%%man/man3/Tcl_UtfNcmp.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_UtfNext.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_UtfPrev.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_UtfToExternal.tcl86.3.gz

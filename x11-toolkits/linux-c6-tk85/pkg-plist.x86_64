@@ -1,5 +1,7 @@
 usr/bin/wish
 usr/bin/wish8.5
+usr/lib/libtk8.5.so
+usr/lib/tk8.5/pkgIndex.tcl
 usr/lib64/libtk8.5.so
 usr/lib64/tk8.5/pkgIndex.tcl
 usr/share/doc/tk-8.5.7/README

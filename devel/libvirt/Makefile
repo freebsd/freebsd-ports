@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
 RUN_DEPENDS=	dnsmasq:dns/dnsmasq \
 		dmidecode:sysutils/dmidecode
 
-OPTIONS_DEFINE=	DOCS GNUTLS NLS QEMU SASL
+OPTIONS_DEFINE=	DOCS GNUTLS NLS NSS QEMU SASL
 OPTIONS_DEFAULT=	GNUTLS
 OPTIONS_DEFINE_amd64=	XEN
 .if exists(/usr/sbin/bhyve)
@@ -35,6 +34,7 @@ CONFIGURE_ARGS+=	--without-bhyve
 QEMU_DESC=	QEMU driver
 BHYVE_DESC=	bhyve driver
 XEN_DESC=	Xen support via libxl
+NSS_DESC=	Name Service Switch plugin
 
 OPTIONS_SUB=	yes
 
@@ -53,6 +53,8 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
+
+NSS_CONFIGURE_WITH=	nss-plugin
 
 SASL_CONFIGURE_WITH=	sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
@@ -113,6 +115,9 @@ CONF_FILES=	\
 		qemu.conf \
 		virtlockd.conf \
 		virtlogd.conf
+
+post-extract:
+	@${CP} ${FILESDIR}/libvirt_nss_bsd.syms ${WRKSRC}/tools/nss
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ln -s ../default.xml|true|' \

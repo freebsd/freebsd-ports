@@ -824,7 +824,7 @@ post-patch:
 pre-configure:
 .if ${PORT_OPTIONS:MMODSECURITY}
 	( cd ${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION} && \
-		CC="${CC}" ./${CONFIGURE_SCRIPT} --enable-standalone-module && \
+		CC="${CC}" ${CONFIGURE_CMD} --enable-standalone-module && \
 		${MAKE} )
 .endif
 

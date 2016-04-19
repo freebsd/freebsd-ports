@@ -90,11 +90,10 @@ do-install:
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	@${FIND} ${STAGEDIR}${TRIBLER_DIR}/Tribler -type d -print0 | \
 		${XARGS} -0 ${CHMOD} a+rx
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKSRC}/usr/share/applications && ${INSTALL_DATA} \
-		*.desktop ${STAGEDIR}${PREFIX}/share/applications)
-	(cd ${WRKSRC}/usr/share/pixmaps && ${INSTALL_DATA} \
-		*.xpm ${STAGEDIR}${PREFIX}/share/pixmaps)
+	${INSTALL_DATA} ${WRKSRC}/usr/share/applications/*.desktop \
+		${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/usr/share/pixmaps/*.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})

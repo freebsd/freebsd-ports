@@ -13,8 +13,8 @@ include/kde4/libkgeomap/track_reader.h
 include/kde4/libkgeomap/tracks.h
 include/kde4/libkgeomap/version.h
 lib/libkgeomap.so
-lib/libkgeomap.so.1
-lib/libkgeomap.so.1.0.0
+lib/libkgeomap.so.2
+lib/libkgeomap.so.2.1.0
 libdata/pkgconfig/libkgeomap.pc
 share/apps/cmake/modules/FindKGeoMap.cmake
 share/apps/libkgeomap/backend-googlemaps-js.js

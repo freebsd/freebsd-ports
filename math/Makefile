@@ -599,6 +599,7 @@
     SUBDIR += py-graphillion
     SUBDIR += py-gsl
     SUBDIR += py-igraph
+    SUBDIR += py-luminol
     SUBDIR += py-mathdom
     SUBDIR += py-matplotlib
     SUBDIR += py-mpmath

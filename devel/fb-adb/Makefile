@@ -18,13 +18,12 @@ RUN_DEPENDS=	adb:devel/android-tools-adb
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 
-USES=		autoreconf:outsource gmake ncurses perl5 python:3,build
+USES=		autoreconf gmake ncurses perl5 python:3,build
 USE_PERL5=	build # pod2man
 BASH_CMD?=	bash # can be zsh
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ENV=	PYTHON3="${PYTHON_CMD}"
-# XXX D4158: --mandir as SET_LATE_CONFIGURE_ARGS doesn't respect CONFIGURE_CMD
-CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man"
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
@@ -91,25 +90,6 @@ post-patch:
 post-patch-NDK-off:
 	@${REINPLACE_CMD} -i '.aux.bak' -e 's/linux-android/aux-&/' \
 		${WRKSRC}/stub-*/configure
-
-# XXX D4157: Similar to USES=qmake:outsource, merge into Mk/Uses/autoreconf.mk
-.if defined(USES) && ${USES:Mautoreconf\:outsource}
-USES:=			autoreconf:build ${USES:Nautoreconf*}
-CONFIGURE_CMD=		${AUTORECONF_WRKSRC}/${CONFIGURE_SCRIPT}
-CONFIGURE_WRKSRC=	${WRKDIR}/.build
-BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
-AUTORECONF_WRKSRC?=	${WRKSRC}
-
-_USES_configure+=	470:do-autoreconf
-do-autoreconf:
-.for f in AUTHORS ChangeLog INSTALL NEWS README
-# Don't modify time stamps if the files already exist
-	@test -e ${AUTORECONF_WRKSRC}/${f} || ${TOUCH} ${AUTORECONF_WRKSRC}/${f}
-.endfor
-	@(cd ${AUTORECONF_WRKSRC} && ${LOCALBASE}/bin/autoreconf -f -i)
-	@${MKDIR} ${CONFIGURE_WRKSRC}
-.endif
 
 .include <bsd.port.mk>
 

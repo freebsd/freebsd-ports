@@ -3,8 +3,8 @@
 PORTNAME=	btsync
 PORTVERSION=	2.3.6
 CATEGORIES=	net-p2p
-MASTER_SITES=	https://download-cdn.getsyncapp.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/ \
-		http://download-cdn.getsyncapp.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/
+MASTER_SITES=	https://download-cdn.getsync.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/ \
+		http://download-cdn.getsync.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/
 DISTNAME=	BitTorrent-Sync_freebsd_${CONFIG_ARCH}
 
 MAINTAINER=	joshruehlig@gmail.com

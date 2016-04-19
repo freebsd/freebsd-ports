@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${BZR_SRC_REV}
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	LOCAL/mr
 PKGNAMESUFFIX=	-devel
@@ -13,7 +13,8 @@ MAINTAINER=		mr@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
 
 BUILD_DEPENDS=	bzr:devel/bzr \
-		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/bzrlib/plugins/bzrtools/bzrtools.py:devel/bzrtools
+		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/bzrlib/plugins/bzrtools/bzrtools.py:devel/bzrtools \
+		${LOCALBASE}/include/glm/glm.hpp:math/glm
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 

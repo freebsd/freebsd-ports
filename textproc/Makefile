@@ -156,6 +156,7 @@
     SUBDIR += elasticsearch-plugin-head
     SUBDIR += elasticsearch-plugin-hq
     SUBDIR += elasticsearch-plugin-marvel
+    SUBDIR += elasticsearch-plugin-migration
     SUBDIR += elasticsearch-plugin-sql
     SUBDIR += elasticsearch-river-rabbitmq
     SUBDIR += elasticsearch2
@@ -547,8 +548,6 @@
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-DocSet
     SUBDIR += p5-EBook-Tools
-    SUBDIR += p5-ElasticSearch-SearchBuilder
-    SUBDIR += p5-ElasticSearch-legacy
     SUBDIR += p5-Excel-Template
     SUBDIR += p5-Excel-Writer-XLSX
     SUBDIR += p5-File-Inplace
@@ -1254,7 +1253,6 @@
     SUBDIR += py-mwparserfromhell
     SUBDIR += py-nltk
     SUBDIR += py-openpyxl
-    SUBDIR += py-openpyxl1
     SUBDIR += py-paragrep
     SUBDIR += py-pdfminer
     SUBDIR += py-pss
@@ -1425,8 +1423,8 @@
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-html-pipeline
-    SUBDIR += rubygem-html-pipeline1
     SUBDIR += rubygem-html-pipeline-gitlab
+    SUBDIR += rubygem-html-pipeline1
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml

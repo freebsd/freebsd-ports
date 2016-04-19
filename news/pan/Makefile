@@ -3,8 +3,7 @@
 #   $MCom: ports/news/pan/Makefile,v 1.7 2008/01/19 22:45:42 mezz Exp $
 
 PORTNAME=	pan
-PORTVERSION=	0.139
-PORTREVISION=	4
+PORTVERSION=	0.140
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -22,11 +21,10 @@ USE_GNOME=	intlhack
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-static-libgcc -static-libstdc++ -L${LOCALBASE}/lib \
-		-lgnuregex ${ICONV_LIB}
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${ICONV_LIB}
 
 OPTIONS_DEFINE=	GTKSPELL GNUTLS NLS
-OPTIONS_RADIO= GTK
+OPTIONS_RADIO=	GTK
 OPTIONS_RADIO_GTK=	GTK2 GTK3
 OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=GTKSPELL GNUTLS GTK2

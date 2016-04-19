@@ -1,6 +1,6 @@
---- src/blockdiag/utils/bootstrap.py.orig	2013-09-30 22:19:06.000000000 +0900
-+++ src/blockdiag/utils/bootstrap.py	2014-01-02 16:19:04.000000000 +0900
-@@ -222,11 +222,7 @@
+--- src/blockdiag/utils/bootstrap.py.orig	2014-11-21 02:20:16 UTC
++++ src/blockdiag/utils/bootstrap.py
+@@ -254,11 +254,7 @@ class Options(object):
  def detectfont(options):
      import glob
      fontdirs = [

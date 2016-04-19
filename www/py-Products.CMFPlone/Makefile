@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFPlone
-PORTVERSION=	4.3.7
+PORTVERSION=	4.3.9
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}Products.DCWorkflow>=0:devel/py-Products.DCWorkflow \
 		${PYTHON_PKGNAMEPREFIX}Products.ExtendedPathIndex>=0:devel/py-Products.ExtendedPathIndex \
 		${PYTHON_PKGNAMEPREFIX}Products.ExternalEditor>=0:devel/py-Products.ExternalEditor \
-		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=1.4:devel/py-Products.GenericSetup \
+		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=1.8.0:devel/py-Products.GenericSetup \
 		${PYTHON_PKGNAMEPREFIX}Products.MimetypesRegistry>=0:devel/py-Products.MimetypesRegistry \
 		${PYTHON_PKGNAMEPREFIX}Products.PasswordResetTool>=0:devel/py-Products.PasswordResetTool \
 		${PYTHON_PKGNAMEPREFIX}Products.PlacelessTranslationService>=0:devel/py-Products.PlacelessTranslationService \
@@ -116,7 +116,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:devel/py-zope.traversing
 
 NO_ARCH=	yes
-USES=		python:2.7 zip
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

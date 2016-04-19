@@ -1,0 +1,37 @@
+--- mutt-1.5.24/init.h.orig	2016-03-31 22:09:51.864031000 +0200
++++ mutt-1.5.24/init.h	2016-03-31 22:12:01.242952000 +0200
+@@ -838,6 +838,11 @@
+   ** sent to both the list and your address, resulting in two copies
+   ** of the same email for you.
+   */
++  { "force_base64",   DT_BOOL, R_NONE, OPTFORCEBASE64, 0 },
++  /*
++  ** .pp
++  ** If you need to encode all text parts to base64, set this option.
++  */
+   { "force_name",	DT_BOOL, R_NONE, OPTFORCENAME, 0 },
+   /*
+   ** .pp
+--- mutt-1.5.24-orig/mutt.h    2015-08-30 19:06:38.000000000 +0200
++++ mutt-1.5.24/mutt.h 2016-02-09 13:48:24.758051324 +0100
+@@ -339,6 +339,7 @@ enum
+   OPTFASTREPLY,
+   OPTFCCCLEAR,
+   OPTFOLLOWUPTO,
++  OPTFORCEBASE64,
+   OPTFORCENAME,
+   OPTFORWDECODE,
+   OPTFORWQUOTE,
+--- mutt-1.5.24-orig/sendlib.c 2015-08-30 19:06:38.000000000 +0200
++++ mutt-1.5.24/sendlib.c      2016-02-09 13:48:24.759051309 +0100
+@@ -1168,7 +1168,9 @@ static void mutt_set_encoding (BODY *b,
+   if (b->type == TYPETEXT)
+   {
+     char *chsname = mutt_get_body_charset (send_charset, sizeof (send_charset), b);
+-    if ((info->lobin && ascii_strncasecmp (chsname, "iso-2022", 8)) || info->linemax > 990 || (info->from && option (OPTENCODEFROM)))
++    if (option (OPTFORCEBASE64))
++      b->encoding = ENCBASE64;
++    else if ((info->lobin && ascii_strncasecmp (chsname, "iso-2022", 8)) || info->linemax > 990 || (info->from && option (OPTENCODEFROM)))
+       b->encoding = ENCQUOTEDPRINTABLE;
+     else if (info->hibin)
+       b->encoding = option (OPTALLOW8BIT) ? ENC8BIT : ENCQUOTEDPRINTABLE;

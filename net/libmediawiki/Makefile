@@ -1,19 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	libmediawiki
-PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	1
+PORTVERSION=	4.12.0
 CATEGORIES=	net kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 library for accessing MediaWiki sites
 
-.include "${.CURDIR}/../../graphics/digikam-kde4/Makefile.common"
-
+USES=		pathfix
 USE_LDCONFIG=	yes
 
-post-patch:
-	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
-		${WRKSRC}/CMakeLists.txt
+.include "${.CURDIR}/../../graphics/digikam-kde4/Makefile.common"
+
+# Replace some values set up by Makefile.common
+DIGIKAM_VER=	${PORTVERSION}
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 .include <bsd.port.mk>

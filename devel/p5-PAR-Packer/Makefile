@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PAR-Packer
-PORTVERSION=	1.030
+PORTVERSION=	1.031
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.02:archivers/p5-Archive-Zip \
 		p5-Getopt-ArgvFile>=1.07:devel/p5-Getopt-ArgvFile \
-		p5-Module-ScanDeps>=1.20:devel/p5-Module-ScanDeps \
+		p5-Module-ScanDeps>=1.21:devel/p5-Module-ScanDeps \
 		p5-Module-Signature>=0:security/p5-Module-Signature \
 		p5-PAR-Dist>=0.22:devel/p5-PAR-Dist \
 		p5-PAR>=1.010:devel/p5-PAR

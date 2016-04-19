@@ -1,13 +1,14 @@
---- ../work/gctpc/source/cproj.h	Fri Nov 19 14:32:06 1993
-+++ cproj.h	Sun Feb 11 12:32:19 2001
-@@ -1,3 +1,6 @@
+--- cproj.h.orig	1998-06-24 21:25:45 UTC
++++ cproj.h
+@@ -1,4 +1,7 @@
+ #include <math.h>
 +#ifndef INCLUDED_CPROJ_H
 +#define INCLUDED_CPROJ_H
 +
- #include <math.h>
+ #include "proj.h"
  
  #define PI 	3.141592653589793238
-@@ -26,3 +29,32 @@
+@@ -27,3 +30,32 @@
  
  #define IMOD(A, B)      (A) - (((A) / (B)) * (B)) /* Integer mod function */
  

@@ -55,6 +55,8 @@ PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBA
 .else
 DEFAULT_PHP_VER?=	${PHP_DEFAULT:S/.//}
 
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 PHP_VER?=	${DEFAULT_PHP_VER}
 .if ${PHP_VER} == 70
 PHP_EXT_DIR=   20151012

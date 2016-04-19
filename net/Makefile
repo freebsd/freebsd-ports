@@ -331,6 +331,7 @@
     SUBDIR += libnids
     SUBDIR += libnss-cache
     SUBDIR += libnss-mysql
+    SUBDIR += libnss-pgsql
     SUBDIR += liboauth
     SUBDIR += libopennet
     SUBDIR += liboping
@@ -499,6 +500,7 @@
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Amazon-SQS-Simple
     SUBDIR += p5-AnyEvent-MPRPC
+    SUBDIR += p5-AnyEvent-MQTT
     SUBDIR += p5-AnyEvent-RabbitMQ
     SUBDIR += p5-AnyEvent-Twitter
     SUBDIR += p5-AnyEvent-Twitter-Stream
@@ -639,6 +641,7 @@
     SUBDIR += p5-Net-LimeLight-Purge
     SUBDIR += p5-Net-MAC
     SUBDIR += p5-Net-MAC-Vendor
+    SUBDIR += p5-Net-MQTT
     SUBDIR += p5-Net-Mosso-CloudFiles
     SUBDIR += p5-Net-MovableType
     SUBDIR += p5-Net-NBName

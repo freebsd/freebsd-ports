@@ -4,7 +4,7 @@
 PORTNAME=	binutils
 PORTVERSION=	2.25.1
 PORTEPOCH=	1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 
@@ -89,5 +89,8 @@ post-install:
 	    ${STAGEDIR}${PREFIX}/man/man1/${BUTARGET}-${tool}.1 \
 	    ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/${tool}
 .endfor
+.if defined(BUREMOVE) && ${BUREMOVE:Mld}
+	@${RM} -rf ${STAGEDIR}${PREFIX}/${BUTARGET}/lib/ldscripts
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFQuickInstallerTool
-PORTVERSION=	3.0.12
+PORTVERSION=	3.0.13
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:devel/py-zope.annotation 
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:devel/py-Products.CMFCore \
 		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:devel/py-Products.GenericSetup
 
-USES=		python zope
+NO_ARCH=	yes
+USES=		python:2.7 zope
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

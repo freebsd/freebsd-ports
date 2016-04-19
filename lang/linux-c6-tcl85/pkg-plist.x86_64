@@ -1,5 +1,6 @@
 usr/bin/tclsh
 usr/bin/tclsh8.5
+usr/lib/libtcl8.5.so
 usr/lib64/libtcl8.5.so
 usr/share/doc/tcl-8.5.7/README
 usr/share/doc/tcl-8.5.7/changes
@@ -923,5 +924,6 @@ usr/%%DATADIR%%8/8.4/platform-1.0.4.tm
 usr/%%DATADIR%%8/8.4/platform/shell-1.1.4.tm
 usr/%%DATADIR%%8/8.5/msgcat-1.4.2.tm
 usr/%%DATADIR%%8/8.5/tcltest-2.3.1.tm
+@dir usr/lib/tcl8.5
 @dir usr/lib64/tcl8.5
 @dir usr/%%DATADIR%%8/8.3

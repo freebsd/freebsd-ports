@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player waf-project:waf
 GH_PROJECT=	waf:waf
-GH_TAGNAME=	waf-1.8.19:waf
+GH_TAGNAME=	waf-1.9.0pre1:waf
 
 WAF_CMD=	${WRKSRC_waf}/waf-light
 
@@ -34,8 +34,18 @@ CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--mandir=${MANPREFIX}/man \
 		--prefix=${PREFIX} \
 		--disable-debug-build \
+		--disable-d3d11va-hwaccel \
+		--disable-dxva2-hwaccel \
+		--disable-gpl3 \
 		--disable-optimize \
 		--disable-pdf \
+		--disable-rubberband \
+		--disable-vaapi-wayland \
+		--disable-vapoursynth \
+		--disable-vapoursynth-lazy \
+		--disable-videotoolbox-hwaccel \
+		--disable-videotoolbox-gl \
+		--disable-wayland \
 		--enable-libmpv-shared
 
 OPTIONS_DEFINE=		ASS DOCS ENCA LCMS2 \
@@ -126,6 +136,7 @@ VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=		--disable-vdpau
 
 X11_USE=			XORG=x11,xv,xxf86vm
+X11_VARS=			INSTALLS_ICONS=yes
 X11_CONFIGURE_OFF=		--disable-x11
 
 XINERAMA_USE=			XORG=xinerama,xineramaproto
@@ -137,8 +148,6 @@ YTDL_RUN_DEPENDS=		youtube-dl:www/youtube_dl
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build
 ZSH_CONFIGURE_ENABLE=		zsh-comp
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \

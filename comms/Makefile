@@ -199,6 +199,7 @@
     SUBDIR += xnec2c
     SUBDIR += xnecview
     SUBDIR += xwota
+    SUBDIR += yaac
     SUBDIR += yagiuda
     SUBDIR += yaps
     SUBDIR += yfklog

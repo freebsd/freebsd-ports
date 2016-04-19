@@ -22,6 +22,6 @@ BROKEN_ia64=	fails to configure with coredump
 do-configure:
 	cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
-		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+		${PERL5} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>

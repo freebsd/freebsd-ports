@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsstv
-PORTVERSION=	8.2.12
+PORTVERSION=	9.1.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/ \
 		LOCAL/shurd
@@ -12,15 +12,38 @@ COMMENT=	Amateur Radio SSTV/FAX reception program for unix
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libhamlib.so:comms/hamlib \
-		libasound.so:audio/alsa-lib \
-		libjasper.so:graphics/jasper
+		libopenjp2.so.7:graphics/openjpeg \
+		libpulse.so:audio/pulseaudio \
+		libv4l2.so:multimedia/libv4l
 BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 
 USES=		qmake
-USE_QT4=	gui network xml moc_build rcc_build uic_build
-PLIST_FILES=	bin/qsstv
+USE_QT5=	buildtools core gui network widgets xml
+
+OPTIONS_DEFINE=	DOCS
+DOCS_CXXFLAGS=	-DWITH_DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+			-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+			-e 's|%%DOCSDIR%%|${DOCSDIR}|g' \
+			-e 's|%%PERL%%|${PERL}|g' \
+		${WRKSRC}/qsstv/qsstv.pro ${WRKSRC}/qwt/qwt.pro \
+		${WRKSRC}/qsstv/config/directoriesconfig.cpp \
+		${WRKSRC}/qsstv/documentation/manual/manual.doxy \
+		${WRKSRC}/qsstv/documentation/manual/manual/gettingstarted.html \
+		${WRKSRC}/qsstv/documentation/manual/manual.txt
+	${RM} ${WRKSRC}/qsstv/documentation/manual/manual.txt.*
+	${RM} ${WRKSRC}/qsstv/documentation/manual/manual.*.orig
+
+post-stage:
+	-${RM} ${STAGEDIR}/${DOCSDIR}/manual.doxy
+	-${RM} ${STAGEDIR}/${DOCSDIR}/doxygen_sqlite3.db
+	-${RM} ${STAGEDIR}/${DOCSDIR}/*.bak
+	-${RM} ${STAGEDIR}/${DOCSDIR}/*.orig
 
 .include <bsd.port.mk>

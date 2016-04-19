@@ -7,7 +7,7 @@ MASTER_SITES=	http://members.shaw.ca/swstuff/ \
 		LOCAL/makc
 DISTNAME=	${PORTNAME}-2-15sept2010
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	EEPROM programmer for GE Phoenix SX Radios
 
 USES=		pkgconfig

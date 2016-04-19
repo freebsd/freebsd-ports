@@ -2,6 +2,7 @@
 
 PORTNAME=	arel-helpers
 PORTVERSION=	2.3.0
+PORTREVISION=	2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

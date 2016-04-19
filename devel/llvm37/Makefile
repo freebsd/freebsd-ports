@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -21,7 +21,7 @@ LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
-USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5 tar:xz
+USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5 shebangfix tar:xz
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 
 SUB_FILES=	llvm-wrapper.sh
@@ -155,6 +155,7 @@ CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|so
 
 .if ${PORT_OPTIONS:MEXTRAS}
 COMMANDS+=	${EXTRAS_COMMANDS}
+SHEBANG_FILES+=	tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}

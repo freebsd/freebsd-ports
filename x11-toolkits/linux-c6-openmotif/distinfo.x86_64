@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/openmotif-2.3.3-8.el6.x86_64.rpm) = fd5d2d0cb2aad05cee5da8f6e971923c0883a7334e1d12a9b28d5fb3956959c0
 SIZE (rpm/x86_64/centos/6.7/openmotif-2.3.3-8.el6.x86_64.rpm) = 1417252
+SHA256 (rpm/x86_64/centos/6.7/openmotif-2.3.3-8.el6.i686.rpm) = a3110d8051e806bb87da96f65da5c1f912f530ceeb78d12cf3f372e1ceacf42d
+SIZE (rpm/x86_64/centos/6.7/openmotif-2.3.3-8.el6.i686.rpm) = 1417316
 SHA256 (rpm/x86_64/centos/6.7/openmotif-2.3.3-8.el6.src.rpm) = 3225eb7285d58c40b08e765d866bffe85f8fb96f19b769ed8899253c568a1eea
 SIZE (rpm/x86_64/centos/6.7/openmotif-2.3.3-8.el6.src.rpm) = 6059385

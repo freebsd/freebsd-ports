@@ -119,13 +119,5 @@ man/man3/Tspi_TPM_StirRandom.3.gz
 man/man3/Tspi_TPM_TakeOwnership.3.gz
 man/man5/tcsd.conf.5.gz
 man/man8/tcsd.8.gz
-@unexec cmp -s %D/etc/tcsd.conf %D/etc/tcsd.conf.dist && rm -f %D/etc/tcsd.conf || true
-@owner _tss
-@group _tss
-@mode 0600
-etc/tcsd.conf.dist
-@exec [ -f %D/etc/tcsd.conf ] || cp -p %D/etc/tcsd.conf.dist %D/etc/tcsd.conf
-@owner
-@group
-@mode
+@sample(_tss,_tss,0600) etc/tcsd.conf.dist etc/tcsd.conf
 @dir(_tss,_tss,0700) var/lib/tpm

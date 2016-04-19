@@ -1,18 +1,6 @@
---- ../../src/dmd/posix.mak.orig	2016-01-27 07:22:54.000000000 -0800
-+++ ../../src/dmd/posix.mak	2016-01-28 12:32:14.044394178 -0800
-@@ -31,9 +31,9 @@
- endif
- 
- #ifeq (osx,$(OS))
--#	HOST_CC=clang++
-+#	HOST_CC=clanc++
- #else
--	HOST_CC=g++
-+	HOST_CC=c++
- #endif
- CC=$(HOST_CC)
- AR=ar
-@@ -56,14 +56,11 @@
+--- ../../src/dmd/posix.mak.orig	2016-04-05 20:46:46.000000000 -0700
++++ ../../src/dmd/posix.mak	2016-04-07 06:19:55.204336000 -0700
+@@ -66,14 +66,11 @@
    HOST_DMD_RUN:=$(HOST_DMD)
  else
    # Auto-bootstrapping, will download dmd automatically
@@ -30,43 +18,7 @@
    HOST_DMD_RUN=$(HOST_DMD) -conf=$(dir $(HOST_DMD))dmd.conf
  endif
  
-@@ -92,7 +89,7 @@
- 	-Wno-unused-value \
- 	-Wno-unused-variable
- # GCC Specific
--ifeq ($(HOST_CC), g++)
-+ifeq ($(HOST_CC), c++)
- WARNINGS := $(WARNINGS) \
- 	-Wno-logical-op \
- 	-Wno-narrowing \
-@@ -100,7 +97,7 @@
- 	-Wno-uninitialized
- endif
- # Clang Specific
--ifeq ($(HOST_CC), clang++)
-+ifeq ($(HOST_CC), clanc++)
- WARNINGS := $(WARNINGS) \
- 	-Wno-tautological-constant-out-of-range-compare \
- 	-Wno-tautological-compare \
-@@ -112,7 +109,7 @@
- # Default Warnings
- WARNINGS := -Wno-deprecated -Wstrict-aliasing
- # Clang Specific
--ifeq ($(HOST_CC), clang++)
-+ifeq ($(HOST_CC), clanc++)
- WARNINGS := $(WARNINGS) \
-     -Wno-logical-op-parentheses \
-     -Wno-dynamic-class-memaccess \
-@@ -130,7 +127,7 @@
- 	-D__pascal= -DMARS=1 -DTARGET_$(OS_UPCASE)=1 -DDM_TARGET_CPU_$(TARGET_CPU)=1 \
- 	$(MODEL_FLAG)
- # GCC Specific
--ifeq ($(HOST_CC), g++)
-+ifeq ($(HOST_CC), c++)
- CFLAGS := $(CFLAGS) \
-     -std=gnu++98
- endif
-@@ -321,19 +318,6 @@
+@@ -333,19 +330,6 @@
  		verstr.h SYSCONFDIR.imp core *.cov *.deps *.gcda *.gcno *.a *.lst
  	@[ ! -d ${PGO_DIR} ] || echo You should issue manually: rm -rf ${PGO_DIR}
  
@@ -86,7 +38,7 @@
  ######## generate a default dmd.conf
  
  define DEFAULT_DMD_CONF
-@@ -440,7 +424,7 @@
+@@ -452,7 +436,7 @@
  	$(eval bin_dir=$(if $(filter $(OS),osx), bin, bin$(MODEL)))
  	mkdir -p $(INSTALL_DIR)/$(OS)/$(bin_dir)
  	cp dmd $(INSTALL_DIR)/$(OS)/$(bin_dir)/dmd

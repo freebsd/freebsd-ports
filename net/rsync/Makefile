@@ -4,7 +4,7 @@
 PORTNAME=	rsync
 PORTVERSION=	3.1.2
 CATEGORIES=	net ipv6
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.samba.org/pub/rsync/ \
 		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
@@ -69,6 +69,7 @@ ICONV_USES=	iconv
 ICONV_CPPFLAGS=	-I${LOCALBASE}/include
 ICONV_LDFLAGS=	-L${LOCALBASE}/lib
 ICONV_CONFIGURE_ENABLE=	iconv iconv-open
+ICONV_CONFIGURE_OFF=	ac_cv_search_libiconv_open=no
 
 POPT_PORT_LIB_DEPENDS=	libpopt.so:devel/popt
 POPT_PORT_CPPFLAGS=	-I${LOCALBASE}/include
@@ -82,12 +83,6 @@ SSH_CONFIGURE_OFF=	--with-rsh=rsh
 
 .if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED}
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if empty(ICONV_LIB)
-CONFIGURE_ARGS+=ac_cv_search_libiconv_open=no
 .endif
 
 post-patch:
@@ -104,4 +99,4 @@ post-install:
 test: build
 	@(cd ${WRKSRC} && ${MAKE_CMD} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

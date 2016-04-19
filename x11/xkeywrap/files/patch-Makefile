@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Apr 22 16:52:58 2001
-+++ Makefile	Sun Apr 22 16:55:06 2001
+--- Makefile.orig	2001-04-22 07:16:47 UTC
++++ Makefile
 @@ -6,16 +6,16 @@
  ###############################################################################
  
@@ -22,7 +22,7 @@
  
  all :		xkeywrap xkeywrap.1.gz
  
-@@ -40,7 +40,7 @@
+@@ -40,7 +40,7 @@ copyright.h :	COPYRIGHT mkstr
  		cat COPYRIGHT | ./mkstr copyright > copyright.h
  
  mkstr :		mkstr.c

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.autoform
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
 		${PYTHON_PKGNAMEPREFIX}z3c.form>=0:devel/py-z3c.form
 
 NO_ARCH=	yes
-USES=		python zip
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

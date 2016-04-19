@@ -5,7 +5,6 @@ PORTVERSION=	${DIGIKAM_VER}
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
-DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 kipi graphics plugins (meta port)

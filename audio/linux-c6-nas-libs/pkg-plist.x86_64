@@ -1,4 +1,7 @@
 etc/nas/nasd.conf
+usr/lib/X11/AuErrorDB
+usr/lib/libaudio.so.2
+usr/lib/libaudio.so.2.4
 usr/lib64/X11/AuErrorDB
 usr/lib64/libaudio.so.2
 usr/lib64/libaudio.so.2.4

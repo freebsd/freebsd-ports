@@ -49,6 +49,8 @@ PERL5_DEPEND=	${PERL5}
 THIS_IS_OLD_PERL=	yes
 .else
 # end of remove
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 .if ${PERL5_DEFAULT} == 5.18
 .include "${PORTSDIR}/lang/perl5.18/version.mk"
@@ -88,6 +90,8 @@ PERL_ARCH?=	mach
 # there must always be a default to prevent dependency failures such
 # as "ports/lang: not found".  Also, perl5-devel is taken care in the
 # perl5_default file, or up there in the default versions selection.
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 .if   ${PERL_LEVEL} >= 502200
 PERL_PORT?=	perl5.22
 .elif   ${PERL_LEVEL} >= 502000
@@ -255,7 +259,7 @@ do-configure:
 	fi
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
-		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+		${PERL5} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}
 .if !${_USE_PERL5:Mmodbuild*}
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile

@@ -272,7 +272,7 @@ post-patch:
 pre-configure:
 	@${MKDIR} ${TMPDIR}
 .if empty(PORT_OPTIONS:MBOOT)
-	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS_BOOT})
+	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS_BOOT})
 	@(cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install)
 .endif
 

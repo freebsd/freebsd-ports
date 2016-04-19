@@ -1,3 +1,5 @@
+lib/libwrap.so.0
+lib/libwrap.so.0.7.6
 lib64/libwrap.so.0
 lib64/libwrap.so.0.7.6
 usr/share/doc/tcp_wrappers-libs-7.6/BLURB

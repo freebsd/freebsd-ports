@@ -1,4 +1,11 @@
 etc/pulse/client.conf
+usr/lib/libpulse-simple.so.0
+usr/lib/libpulse-simple.so.0.0.3
+usr/lib/libpulse.so.0
+usr/lib/libpulse.so.0.12.2
+usr/lib/libpulsecommon-0.9.21.so
+usr/lib/libpulse-mainloop-glib.so.0
+usr/lib/libpulse-mainloop-glib.so.0.0.4
 usr/lib64/libpulse-simple.so.0
 usr/lib64/libpulse-simple.so.0.0.3
 usr/lib64/libpulse.so.0

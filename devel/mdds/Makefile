@@ -1,32 +1,36 @@
 # $FreeBSD$
 
 PORTNAME=	mdds
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://kohei.us/files/mdds/src/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Multi-dimensional data index algorithm
 
 LICENSE=	MIT
 
-PROJECTHOST=	multidimalgorithm
-
 USES=		tar:bzip2
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+API_VERSION=	1.0
+PLIST_SUB=	API_VERSION=${API_VERSION}
+
 do-configure:
-	@${SED} -e 's|@prefix@|${PREFIX}|' \
-	    -e 's|@includedir@|$${prefix}/include|' \
+	@${SED} -e 's|@API_VERSION@|${API_VERSION}|' \
 	    -e 's|@VERSION@|${PORTVERSION}|' \
-	    ${WRKSRC}/misc/mdds.pc.in > ${WRKSRC}/misc/mdds.pc
+	    -e 's|@includedir@|$${prefix}/include|' \
+	    -e 's|@prefix@|${PREFIX}|' \
+	    ${WRKSRC}/misc/mdds.pc.in > \
+	    ${WRKSRC}/misc/mdds-${API_VERSION}.pc
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} include ${STAGEDIR}${PREFIX}
-	${INSTALL_DATA} ${WRKSRC}/misc/mdds.pc \
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/mdds-${API_VERSION}/mdds
+	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} . \
+	    ${STAGEDIR}${PREFIX}/include/mdds-${API_VERSION} \
+	    "-not -name *.orig")
+	${INSTALL_DATA} ${WRKSRC}/misc/mdds-${API_VERSION}.pc \
 	    ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>

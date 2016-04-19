@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafo
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -1,8 +1,13 @@
 @comment file listing
 etc/asound.conf
+lib/libasound.so.2
+lib/libasound.so.2.0.0
 lib64/libasound.so.2
 lib64/libasound.so.2.0.0
 usr/bin/aserver
+usr/lib/alsa-lib/smixer/smixer-ac97.so
+usr/lib/alsa-lib/smixer/smixer-hda.so
+usr/lib/alsa-lib/smixer/smixer-sbase.so
 usr/lib64/alsa-lib/smixer/smixer-ac97.so
 usr/lib64/alsa-lib/smixer/smixer-hda.so
 usr/lib64/alsa-lib/smixer/smixer-sbase.so

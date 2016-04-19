@@ -203,7 +203,7 @@ include/sbml/xml/XercesTranscode.h
 lib/libsbml-static.a
 lib/libsbml.so
 lib/libsbml.so.5
-lib/libsbml.so.5.12.0
+lib/libsbml.so.%%PORTVERSION%%
 libdata/pkgconfig/libsbml.pc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/_libsbml.so

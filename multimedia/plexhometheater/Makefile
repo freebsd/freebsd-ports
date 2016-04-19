@@ -3,7 +3,7 @@
 
 PORTNAME=	plexhometheater
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=v
 DISTVERSIONSUFFIX=.469-47a90f01
 CATEGORIES=	multimedia
@@ -103,7 +103,7 @@ CEC_DESC=	Control plexhometheater over HDMI with TV remote
 
 OPTIONS_DEFAULT=	CEC LIRC
 
-CEC_BUILD_DEPENDS=	libcec>=2.2.0:multimedia/libcec
+CEC_BUILD_DEPENDS=	libcec>=3.0.0:multimedia/libcec
 CEC_LIB_DEPENDS=	libcec.so:multimedia/libcec
 CEC_CMAKE_OFF=		-DCMAKE_DISABLE_FIND_PACKAGE_CEC:BOOL=true
 

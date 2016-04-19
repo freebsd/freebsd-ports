@@ -44,9 +44,9 @@ USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=			yes
 
-.	if ${USE_LINUX} == "c6" || ${USE_LINUX} == "yes" # default to CentOS
+.	if ${USE_LINUX} == "c6" || ${USE_LINUX} == "c6_64" || ${USE_LINUX} == "yes" # default to CentOS
 # Do not build CentOS 6 ports if overridden by f10
-.		if defined(OVERRIDE_LINUX_NONBASE_PORT) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
+.		if defined(OVERRIDE_LINUX_NONBASE_PORTS) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
 IGNORE=	This port requires CentOS ${LINUX_DIST_VER}. Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
 .		endif
 .	endif
@@ -111,10 +111,32 @@ PKGNAMEPREFIX?=			linux-${USE_LINUX}-
 DISTVERSION=	${PORTVERSION}-${RPMVERSION}
 DISTNAME?=		${PORTNAME}-${DISTVERSION}
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
-BIN_DISTFILES:=		${DISTFILES}
+BIN_DISTFILES:=		${DISTFILES} ${LIB_DISTFILES}
 SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}:SOURCE
 EXTRACT_ONLY?=		${BIN_DISTFILES:C/:[^:]+$//}
 WRKSRC:=		${WRKSRC:S/-${RPMVERSION}$//}
+
+# Define files to install.
+# Ports can want to install 32bit things only (if OVERRIDE_LINUX_NONBASE_PORTS) is off,
+# they can want to install both 32bit and 64bit things of only one package,
+# or they can want to install a 64bit only binary and e.g. 32/64bit libraries.
+
+# The following glue is supposed to handle this.
+# FIXME: Sensibly refactor this part, it looks like spaghetti.
+
+.   if defined(OVERRIDE_LINUX_NONBASE_PORTS) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "c6_64"
+_32BIT_LINUX_RPM_ARCH=  i686
+.       if ${DISTFILES} == ${DISTNAME}${EXTRACT_SUFX} && ${USE_LINUX_RPM} != "nolib"
+_32BIT_LIB_DISTFILES:=   ${DISTFILES:S/${LINUX_RPM_ARCH}/${_32BIT_LINUX_RPM_ARCH}/g}
+.       elif defined(LIB_DISTFILES)
+_32BIT_LIB_DISTFILES=   ${LIB_DISTFILES:S/${LINUX_RPM_ARCH}/${_32BIT_LINUX_RPM_ARCH}/g}
+.       endif
+
+BIN_DISTFILES:=         ${BIN_DISTFILES} ${_32BIT_LIB_DISTFILES}
+DISTFILES+=             ${_32BIT_LIB_DISTFILES}
+.   endif
+DISTFILES+=             ${LIB_DISTFILES}
+
 
 .	if defined(PACKAGE_BUILDING)
 DISTFILES+=		${SRC_DISTFILES}

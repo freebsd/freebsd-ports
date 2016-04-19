@@ -1,3 +1,4 @@
+bin/devcal
 bin/svxlink
 bin/remotetrx
 bin/siglevdetcal
@@ -64,14 +65,18 @@ include/svxlink/EchoLinkDispatcher.h
 include/svxlink/EchoLinkQso.h
 include/svxlink/EchoLinkStationData.h
 include/svxlink/EchoLinkProxy.h
-lib/libasynccore.so.1.3.1
-lib/libasynccore.so.1.3
+include/svxlink/AsyncAudioGenerator.h
+include/svxlink/AsyncAudioNoiseAdder.h
+include/svxlink/AsyncPty.h
+include/svxlink/AsyncPtyStreamBuf.h
+lib/libasynccore.so.1.4.0
+lib/libasynccore.so.1.4
 lib/libasynccore.so
-lib/libasynccpp.so.1.3.1
-lib/libasynccpp.so.1.3
+lib/libasynccpp.so.1.4.0
+lib/libasynccpp.so.1.4
 lib/libasynccpp.so
-lib/libasyncaudio.so.1.3.1
-lib/libasyncaudio.so.1.3
+lib/libasyncaudio.so.1.4.0
+lib/libasyncaudio.so.1.4
 lib/libasyncaudio.so
 lib/svxlink/ModuleHelp.so
 lib/svxlink/ModuleParrot.so
@@ -79,7 +84,7 @@ lib/svxlink/ModuleEchoLink.so
 lib/svxlink/ModuleTcl.so
 lib/svxlink/ModuleDtmfRepeater.so
 lib/svxlink/ModuleMetarInfo.so
-lib/libecholib.so.1.3.1
+lib/libecholib.so.1.3.2
 lib/libecholib.so.1.3
 lib/libecholib.so
 %%STATIC%%lib/libasyncaudio.a
@@ -107,6 +112,7 @@ lib/libecholib.so
 %%DATADIR%%/modules.d/ModuleTclVoiceMail.tcl
 %%DATADIR%%/modules.d/ModulePropagationMonitor.tcl
 %%DATADIR%%/modules.d/ModuleSelCallEnc.tcl
+man/man1/devcal.1.gz
 man/man1/svxlink.1.gz
 man/man1/remotetrx.1.gz
 man/man1/siglevdetcal.1.gz

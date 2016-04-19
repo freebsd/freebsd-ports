@@ -557,7 +557,6 @@
     SUBDIR += nginx-devel
     SUBDIR += nibbleblog
     SUBDIR += node
-    SUBDIR += node-devel
     SUBDIR += node010
     SUBDIR += node012
     SUBDIR += node4
@@ -566,6 +565,7 @@
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
+    SUBDIR += npm2
     SUBDIR += npm012
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
@@ -1513,6 +1513,7 @@
     SUBDIR += py-bottle-cork
     SUBDIR += py-cachecontrol
     SUBDIR += py-cactus
+    SUBDIR += py-caldav
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
     SUBDIR += py-clientform
@@ -1536,8 +1537,10 @@
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
     SUBDIR += py-django-configurations
+    SUBDIR += py-django-constance
     SUBDIR += py-django-contact-form
     SUBDIR += py-django-contrib-comments
+    SUBDIR += py-django-cors-headers
     SUBDIR += py-django-countries
     SUBDIR += py-django-crispy-forms
     SUBDIR += py-django-datetime-widget
@@ -1570,6 +1573,7 @@
     SUBDIR += py-django-pipeline
     SUBDIR += py-django-pipeline13
     SUBDIR += py-django-piston
+    SUBDIR += py-django-post_office
     SUBDIR += py-django-profiles
     SUBDIR += py-django-recaptcha
     SUBDIR += py-django-redis
@@ -1850,6 +1854,7 @@
     SUBDIR += rsstool
     SUBDIR += rt40
     SUBDIR += rt42
+    SUBDIR += rt44
     SUBDIR += rtv
     SUBDIR += ruby-aws
     SUBDIR += ruby-google

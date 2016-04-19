@@ -1,0 +1,14 @@
+--- tools/depends/target/ffmpeg/Makefile.orig	2016-02-20 15:21:19 UTC
++++ tools/depends/target/ffmpeg/Makefile
+@@ -24,6 +24,11 @@ ffmpg_config += --enable-libdcadec
+ ifeq ($(CROSS_COMPILING), yes)
+   ffmpg_config += --arch=$(CPU) --enable-cross-compile
+ endif
++ifeq ($(OS), freebsd)
++  ffmpg_config += --target-os=$(OS) --cpu=$(CPU)
++  ffmpg_config += --enable-vdpau --enable-vaapi --enable-gnutls
++  ffmpg_config += --enable-libvorbis --enable-muxer=ogg --enable-encoder=libvorbis
++endif
+ ifeq ($(OS), linux)
+   ffmpg_config += --target-os=$(OS) --cpu=$(CPU)
+   ffmpg_config += --enable-vdpau --enable-vaapi

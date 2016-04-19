@@ -1,4 +1,2 @@
-@unexec if cmp -s %D/etc/tcpxd.conf %D/etc/tcpxd.conf.dist; then rm -f %D/etc/tcpxd.conf; fi
-etc/tcpxd.conf.dist
-@exec [ -f %B/tcpxd.conf ] || cp %B/%f %B/tcpxd.conf
+@sample etc/tcpxd.conf.dist etc/tcpxd.conf
 sbin/tcpxd

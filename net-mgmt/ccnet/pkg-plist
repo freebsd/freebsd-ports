@@ -2,6 +2,7 @@ bin/ccnet
 bin/ccnet-demo-client
 bin/ccnet-demo-server
 bin/ccnet-tool
+bin/ccnet-server
 include/ccnet.h
 include/ccnet/async-rpc-proc.h
 include/ccnet/ccnet-client.h

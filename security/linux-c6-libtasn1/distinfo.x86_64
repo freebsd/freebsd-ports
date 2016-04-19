@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/libtasn1-2.3-6.el6_5.x86_64.rpm) = ee516dac9b0d36fbee5f77e443be13a7e4ca60c3f3105bdc50e112c7ae834780
 SIZE (rpm/x86_64/centos/6.7/libtasn1-2.3-6.el6_5.x86_64.rpm) = 243868
+SHA256 (rpm/x86_64/centos/6.7/libtasn1-2.3-6.el6_5.i686.rpm) = 159a21c14eec8ba904bb9940116d1e43ea73c164522f5665c0556bf478e23ca4
+SIZE (rpm/x86_64/centos/6.7/libtasn1-2.3-6.el6_5.i686.rpm) = 245140
 SHA256 (rpm/x86_64/centos/6.7/libtasn1-2.3-6.el6_5.src.rpm) = 24fe6cafdf3ed4c45d49395bdfd7a73e1a4b8c7fab9503fea801a6b68234b199
 SIZE (rpm/x86_64/centos/6.7/libtasn1-2.3-6.el6_5.src.rpm) = 1501312

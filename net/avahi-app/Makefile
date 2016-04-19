@@ -44,8 +44,6 @@ CONFLICTS=	howl-[0-9]*
 
 DAEMON_CONFIG_FILES=	hosts avahi-daemon.conf
 .endif
-
-USE_RC_SUBR=yes
 .endif # !avahi-header
 
 .include <bsd.port.options.mk>

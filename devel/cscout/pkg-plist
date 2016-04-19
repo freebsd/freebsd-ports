@@ -4,17 +4,13 @@ bin/cswc
 etc/cscout/SWILL-License
 etc/cscout/acl
 etc/cscout/cscout_defs.BORLAND
-@unexec if cmp -s %D/etc/cscout/cscout_defs.h %D/etc/cscout/cscout_defs.FBSD_GCC ; then rm -f %D/etc/cscout/cscout_defs.h; fi
-etc/cscout/cscout_defs.FBSD_GCC
-@exec [ -f %D/etc/cscout/cscout_defs.h ] || cp %B/%f %B/cscout_defs.h
+@sample etc/cscout/cscout_defs.FBSD_GCC etc/cscout/cscout_defs.h
 etc/cscout/cscout_defs.GENERIC
 etc/cscout/cscout_defs.GENERIC_GCC
 etc/cscout/cscout_defs.LINUX_GCC
 etc/cscout/cscout_defs.WIN32_MINGW
 etc/cscout/cscout_defs.WIN32_MSC
-@unexec if cmp -s %D/etc/cscout/cscout_incs.h %D/etc/cscout/cscout_incs.FBSD_GCC ; then  rm -f %D/etc/cscout/cscout_incs.h; fi
-etc/cscout/cscout_incs.FBSD_GCC
-@exec [ -f %D/etc/cscout/cscout_incs.h ] || cp %B/%f %B/cscout_incs.h
+@sample etc/cscout/cscout_incs.FBSD_GCC etc/cscout/cscout_incs.h
 etc/cscout/cscout_incs.GENERIC
 etc/cscout/cscout_incs.LINUX_GCC
 etc/cscout/cscout_incs.WIN32_MINGW

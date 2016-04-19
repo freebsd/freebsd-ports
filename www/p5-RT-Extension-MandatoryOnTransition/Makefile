@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RT-Extension-MandatoryOnTransition
-DISTVERSION=	0.09
-PORTREVISION=	1
+DISTVERSION=	0.10
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -46,7 +45,7 @@ PLIST_SUB+=	RT_VER=${RT_VER}
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		unset PREFIX && \
-		${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
+		${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ${CONFIGURE_CMD} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
 post-configure:

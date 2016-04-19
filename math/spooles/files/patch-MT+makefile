@@ -1,5 +1,5 @@
---- MT/makefile.orig	Mon Feb 20 16:39:12 2006
-+++ MT/makefile	Mon Feb 20 16:43:07 2006
+--- MT/makefile.orig	1998-12-17 15:47:48 UTC
++++ MT/makefile
 @@ -1,8 +1,8 @@
  all_drivers :
 -	cd drivers ; make drivers

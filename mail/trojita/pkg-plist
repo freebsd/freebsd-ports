@@ -8,8 +8,10 @@ share/applications/trojita.desktop
 share/icons/hicolor/32x32/apps/trojita.png
 share/icons/hicolor/scalable/apps/trojita.svg
 %%DATADIR%%/locale/trojita_common_ar.qm
+%%DATADIR%%/locale/trojita_common_ast.qm
 %%DATADIR%%/locale/trojita_common_bs.qm
 %%DATADIR%%/locale/trojita_common_ca.qm
+%%DATADIR%%/locale/trojita_common_ca@valencia.qm
 %%DATADIR%%/locale/trojita_common_cs.qm
 %%DATADIR%%/locale/trojita_common_da.qm
 %%DATADIR%%/locale/trojita_common_de.qm

@@ -98,7 +98,7 @@ DEV_DEPS=	p5-Email-Abstract>0:mail/p5-Email-Abstract \
 		p5-Test-MockTime>0:devel/p5-Test-MockTime \
 		p5-Test-WWW-Mechanize-PSGI>0:devel/p5-Test-WWW-Mechanize-PSGI \
 		p5-Test-WWW-Mechanize>=1.30:devel/p5-Test-WWW-Mechanize \
-		p5-Test-Warn>0:${PORTSDIR}devel/p5-Test-Warn \
+		p5-Test-Warn>0:devel/p5-Test-Warn \
 		p5-WWW-Mechanize>=1.52:www/p5-WWW-Mechanize \
 		p5-Plack-Middleware-Test-StashWarnings>=0.08:www/p5-Plack-Middleware-Test-StashWarnings     \
 		p5-XML-Simple>0:textproc/p5-XML-Simple

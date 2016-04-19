@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	hbase
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION} \
-		LOCAL/demon/:maven
+		http://kev009.com/freebsd/:maven
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 DIST_SUBDIR=	hadoop
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	bash:shells/bash \
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.7+
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-XX:MaxPermSize=256m"
 
 OPTIONS_DEFINE=	DOCS

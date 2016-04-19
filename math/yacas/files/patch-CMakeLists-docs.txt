@@ -1,0 +1,18 @@
+--- CMakeLists-docs.txt.orig	2016-04-08 09:58:59 UTC
++++ CMakeLists-docs.txt
+@@ -39,7 +39,7 @@ add_custom_target(yacas_docs ALL
+         "${SPHINX_SINGLEHTML_DIR}"
+     COMMENT "Building HTML documentation with Sphinx")
+ 
+-install (DIRECTORY "${SPHINX_SINGLEHTML_DIR}" DESTINATION share/yacas/documentation COMPONENT doc)
++install (DIRECTORY "${SPHINX_SINGLEHTML_DIR}" DESTINATION ${DOCSDIR} COMPONENT doc)
+ 
+ if (ENABLE_OLD_DOCS)
+ 
+@@ -161,4 +161,4 @@ if (ENABLE_OLD_DOCS)
+ 
+     install (FILES ${HTML_BOOKS} ${HTML_CHAPTERS} DESTINATION share/yacas/documentation COMPONENT doc)
+ 
+-endif ()
+\ No newline at end of file
++endif ()

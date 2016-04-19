@@ -92,6 +92,8 @@ WARNING+=	"DEFAULT_APACHE_VER is defined, consider using DEFAULT_VERSIONS+=apach
 .endif
 
 DEFAULT_APACHE_VERSION?=	${APACHE_DEFAULT:S/.//}
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 APACHE_SUPPORTED_VERSION=	24 22 # preferred version first
 
 # Print warnings

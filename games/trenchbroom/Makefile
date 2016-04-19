@@ -3,7 +3,8 @@
 
 PORTNAME=	trenchbroom
 PORTVERSION=	2.0.0.b
-CATEGORIES=	games
+PORTREVISION=	1
+CATEGORIES=	games cad
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cross-platform level editor for Quake-engine based games
@@ -20,7 +21,8 @@ GH_TAGNAME=	ed46601
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_GL=		glew
 USE_WX=		3.0+
-CMAKE_ARGS=	-DAPP_BUILD_CHANNEL:STRING="for ${OPSYS}/${ARCH}"
+CMAKE_ARGS=	-DAPP_BUILD_CHANNEL:STRING="Beta for ${OPSYS}/${ARCH}"
+INSTALLS_ICONS=	yes
 
 PORTDOCS=	README.md
 
@@ -38,6 +40,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/TrenchBroom ${STAGEDIR}${PREFIX}/bin
 	@${RMDIR} ${WRKSRC}/Resources/help || :
 	cd ${WRKSRC}/Resources && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+.for n in 16 22 24 32 36 48 64 72 96 128 192 256 512
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${n}x${n}/apps
+	${INSTALL_DATA} ${WRKSRC}/app/resources/linux/icons/icon_${n}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${n}x${n}/apps/${PORTNAME}.png
+.endfor
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

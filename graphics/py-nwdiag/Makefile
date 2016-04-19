@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nwdiag
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}pillow>=2.2.1:graphics/py-pillow \
 		${PKGNAMEPREFIX}funcparserlib>=0.3.6:devel/py-funcparserlib \
-		${PKGNAMEPREFIX}blockdiag>=1.4.1:graphics/py-blockdiag
+		${PKGNAMEPREFIX}blockdiag>=1.5.0:graphics/py-blockdiag
 
-USES=	python
+USES=	python:-3.4
 USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
@@ -28,15 +28,17 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} == 3.1
-IGNORE=	does not support in ${PYTHON_VERSION}
-.endif
-
 post-install:
+.for f in ${PORTNAME} rackdiag
+	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${PREFIX}/man/man1/
+	@${ECHO_CMD} man/man1/${f}.1.gz >> ${TMPPLIST}
+.endfor
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for d in ${PORTNAME} packetdiag
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${d}
@@ -44,9 +46,5 @@ post-install:
 		${INSTALL_WRKSRC}/examples/${d}/${PORTEXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}/${d}
 .endfor
-.for f in ${PORTNAME} rackdiag
-	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${PREFIX}/man/man1/
-	@${ECHO_CMD} man/man1/${f}.1.gz >> ${TMPPLIST}
-.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

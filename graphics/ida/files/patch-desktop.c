@@ -1,6 +1,6 @@
---- desktop.c.orig	2009-05-24 18:56:39.000000000 +0300
-+++ desktop.c	2009-05-24 18:56:44.000000000 +0300
-@@ -26,7 +26,7 @@
+--- desktop.c.orig	2016-03-24 14:39:02 UTC
++++ desktop.c
+@@ -27,7 +27,7 @@ extern int debug;
  /* desktop files are in utf-8                                                */
  
  static int iconv_string(char *to, char *from,

@@ -1,4 +1,4 @@
---- configure.ac.orig	2015-07-27 16:22:02 UTC
+--- configure.ac.orig	2016-04-08 05:56:23 UTC
 +++ configure.ac
 @@ -10,18 +10,33 @@ dnl ------------------------------------
  dnl path vars
@@ -193,7 +193,7 @@
  	;;
 +	*freebsd* )
 +		CFLAGS="${CFLAGS} -fpic"
-+		FFLAGS="-O2 -m64 -Wall -fbounds-check -fno-second-underscore \
++		FFLAGS="-O2 -m"$(/usr/bin/getconf LONG_BIT)" -Wall -fbounds-check -fno-second-underscore \
 +-Wno-conversion -Wno-character-truncation -fPIC"	;;
  	*)
  		AC_MSG_ERROR([Unsupported System: ${host_os}.])

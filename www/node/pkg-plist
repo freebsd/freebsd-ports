@@ -29,6 +29,8 @@ include/node/openssl/archs/linux-ppc/opensslconf.h
 include/node/openssl/archs/linux-ppc64/opensslconf.h
 include/node/openssl/archs/linux-x32/opensslconf.h
 include/node/openssl/archs/linux-x86_64/opensslconf.h
+include/node/openssl/archs/linux32-s390x/opensslconf.h
+include/node/openssl/archs/linux64-s390x/opensslconf.h
 include/node/openssl/archs/solaris-x86-gcc/opensslconf.h
 include/node/openssl/archs/solaris64-x86_64-gcc/opensslconf.h
 include/node/openssl/asn1.h

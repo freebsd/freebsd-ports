@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	onioncat
-PORTVERSION=	0.2.2.r554
+PORTVERSION=	0.2.2.r569
 CATEGORIES=	net security
 MASTER_SITES=	https://www.cypherpunk.at/ocat/download/Source/stable/
 

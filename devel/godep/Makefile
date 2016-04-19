@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	godep
-PORTVERSION=	0.0.0.2016040401
+PORTVERSION=	62
 CATEGORIES=	devel
+DISTVERSIONPREFIX=	v
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Godep helps build packages reproducibly
@@ -11,7 +12,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tools
-GH_TAGNAME=	245097c
 
 PLIST_FILES=	bin/godep
 

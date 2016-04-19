@@ -13,7 +13,7 @@ LIB_DEPENDS=	libkdevplatforminterfaces.so:devel/kdevplatform
 
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USES=		cmake:outsource compiler:c++11-lib tar:xz
+USES=		cmake:outsource compiler:c++11-lib tar:bz2
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

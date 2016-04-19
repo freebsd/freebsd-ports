@@ -1,28 +1,27 @@
---- Makefile.orig	2012-04-28 20:27:17.000000000 +0200
-+++ Makefile	2012-05-21 21:18:51.000000000 +0200
-@@ -7,13 +7,14 @@
- RUN_PREFIX?=$(PREFIX)
+--- Makefile.orig	2016-02-28 14:27:33 UTC
++++ Makefile
+@@ -22,13 +22,13 @@
+ # --- configuration ends here ---
  
- # use GTK3-based webkit when it is available
--USE_GTK3 = $(shell pkg-config --exists gtk+-3.0 webkitgtk-3.0 && echo 1)
-+# USE_GTK3 = $(shell pkg-config --exists gtk+-3.0 webkitgtk-3.0 && echo 1)
-+USE_GTK3 = 0
- 
- ifeq ($(USE_GTK3),1)
- 	REQ_PKGS += gtk+-3.0 webkitgtk-3.0 javascriptcoregtk-3.0
- 	CPPFLAGS = -DG_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
- else
--	REQ_PKGS += gtk+-2.0 webkit-1.0 javascriptcoregtk-1.0
-+	REQ_PKGS += gtk+-2.0 webkit-1.0
- 	CPPFLAGS =
+ ifeq ($(ENABLE_GTK3),auto)
+-ENABLE_GTK3 := $(shell pkg-config --exists gtk+-3.0 && echo yes)
++# ENABLE_GTK3 := $(shell pkg-config --exists gtk+-3.0 && echo yes)
  endif
  
-@@ -25,7 +26,7 @@
+ ifeq ($(ENABLE_GTK3),yes)
+ REQ_PKGS += 'webkitgtk-3.0 >= 1.2.4' javascriptcoregtk-3.0
+ else
+-REQ_PKGS += 'webkit-1.0 >= 1.2.4' javascriptcoregtk-1.0
++REQ_PKGS += 'webkit-1.0 >= 1.2.4'
+ endif
  
- COMMIT_HASH:=$(shell ./misc/hash.sh)
+ ifeq ($(ENABLE_GTK3),yes)
+@@ -46,7 +46,7 @@
  
--CPPFLAGS += -D_BSD_SOURCE -D_POSIX_SOURCE -DARCH=\"$(ARCH)\" -DCOMMIT=\"$(COMMIT_HASH)\"
-+CPPFLAGS += -D_BSD_SOURCE -DARCH=\"$(ARCH)\" -DCOMMIT=\"$(COMMIT_HASH)\"
+ COMMIT_HASH := $(shell ./misc/hash.sh)
  
- PKG_CFLAGS:=$(shell pkg-config --cflags $(REQ_PKGS))
+-CPPFLAGS += -D_XOPEN_SOURCE=500 -DARCH=\"$(ARCH)\" -DCOMMIT=\"$(COMMIT_HASH)\" -DLIBDIR=\"$(LIBDIR)\"
++CPPFLAGS += -DARCH=\"$(ARCH)\" -DCOMMIT=\"$(COMMIT_HASH)\" -DLIBDIR=\"$(LIBDIR)\"
  
+ HAVE_LIBSOUP_VERSION := $(shell pkg-config --exists 'libsoup-2.4 >= 2.41.1' && echo yes)
+ ifeq ($(HAVE_LIBSOUP_VERSION),yes)

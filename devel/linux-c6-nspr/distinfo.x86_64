@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/nspr-4.10.8-2.el6_7.x86_64.rpm) = bfdb7611d0a5f624f7193a504c12dbf44c863caf3077c5572bc485fb29ae6704
 SIZE (rpm/x86_64/centos/6.7/nspr-4.10.8-2.el6_7.x86_64.rpm) = 116196
+SHA256 (rpm/x86_64/centos/6.7/nspr-4.10.8-2.el6_7.i686.rpm) = 4918a807ce01bae46183b6a1340c9df45625542a2ef912f305666dba8c60329b
+SIZE (rpm/x86_64/centos/6.7/nspr-4.10.8-2.el6_7.i686.rpm) = 118892
 SHA256 (rpm/x86_64/centos/6.7/nspr-4.10.8-2.el6_7.src.rpm) = 999b3e49fd18fc6982167b3e4059fb770ca228060b832804b2857018417ec3e9
 SIZE (rpm/x86_64/centos/6.7/nspr-4.10.8-2.el6_7.src.rpm) = 888909

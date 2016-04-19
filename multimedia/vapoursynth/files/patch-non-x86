@@ -1,0 +1,31 @@
+--- src/core/cpufeatures.c.orig	2016-02-02 16:12:42 UTC
++++ src/core/cpufeatures.c
+@@ -60,7 +60,7 @@ void getCPUFeatures(CPUFeatures *cpuFeat
+         }
+     }
+ }
+-#elif defined(VS_TARGET_OS_LINUX)
++#elif defined(VS_TARGET_OS_LINUX) && defined(__linux__)
+ #include <sys/auxv.h>
+ 
+ void getCPUFeatures(CPUFeatures *cpuFeatures) {
+@@ -89,5 +89,7 @@ void getCPUFeatures(CPUFeatures *cpuFeat
+ #endif
+ }
+ #else
+-#error Do not know how to get CPU features.
++void getCPUFeatures(CPUFeatures *cpuFeatures) {
++    memset(cpuFeatures, 0, sizeof(CPUFeatures));
++}
+ #endif
+--- src/core/cpufeatures.h.orig	2016-02-02 16:12:42 UTC
++++ src/core/cpufeatures.h
+@@ -51,8 +51,6 @@ typedef struct CPUFeatures {
+     char efp_double;
+     char dfp;
+     char vsx;
+-#else
+-#error No VS_TARGET_CPU_* defined/handled!
+ #endif
+ } CPUFeatures;
+ 

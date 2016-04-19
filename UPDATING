@@ -5,6 +5,100 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160415:
+  AFFECTS: users of audio/chromaprint
+  AUTHOR: jhale@FreeBSD.org
+
+  chromaprint has been updated to version 1.3.1 and includes a shared
+  library bump. PORTREVISIONS have been bumped on affected ports.
+  If you are using binary pkg, 'pkg upgrade' will do the right thing.
+  Users of portmaster/portupgrade must rebuild all ports which depend
+  on chromaprint.
+
+  Portmaster users:
+      portmaster -w -r chromaprint
+  Portupgrade users:
+      portupgrade -fr audio/chromaprint
+
+20160414:
+  AFFECTS: Users of www/tt-rss
+  AUTHOR: thierry@FreeBSD.org
+
+  Tiny Tiny RSS can use a database running on a separate server.
+  Previously, in this case, you had to set the option DBLOCAL; this option
+  has been removed and replaced by a settable run-time flag: now you
+  should set
+  ttrssd_local_db="NO"
+  in your /etc/rc.conf .
+
+
+20160414:
+  AFFECTS: Users of graphics/kipi-plugin-googledrive and graphics/kipi-plugin-picasaweb
+  AUTHOR: kde@FreeBSD.org
+
+  DigiKam and its related ports have been updated to 4.14.0, the latest
+  stable upstream release.
+
+  The graphics/kipi-plugin-googledrive and graphics/kipi-plugin-picasaweb
+  have both been merged into the new graphics/kipi-plugin-googleservices
+  following a move done upstream.
+
+  Those two ports must be removed, and graphics/kipi-plugin-googleservices
+  should be used instead.
+
+20160413:
+  AFFECTS: All users of www/node-devel
+  AUTHOR: bradleythughes@fastmail.fm
+
+  www/node-devel was outdated and has been removed. Upstream no longer
+  releases a development version. You can use the www/node port to get
+  node.js 5.x by running one of the following commands:
+
+  # pkg install node
+    or
+  # portmaster -o www/node www/node-devel
+    or
+  # portupgrade -o www/node www/node-devel
+
+20160412:
+  AFFECTS: Users of net/samba42 and net/samba/43
+  AUTHOR: timur@FreeBSD.org
+
+  Samba 4.2.x and 4.3.x ports have been updated to address
+  BadLock(http://badlock.org) vulnerability, as well as few other
+  discovered.
+
+  Please note that Samba 4.1.x and older versions are also affected by 
+  the issues fixed with this release but are not supported anymore. It is
+  strongly recommend to upgrade to a recent version at your earliest 
+  convenience.
+
+  The security updates include new smb.conf options and a number of
+  stricter behaviours to prevent Man in the Middle attacks. Between these
+  changes, compatibility with a large number of older software versions
+  has been lost in the default configuration.
+
+  For more information about the related behaviour changes and the
+  security issues please visit:
+
+     https://www.samba.org/samba/latest_news.html#4.4.2
+     https://www.samba.org/samba/history/samba-4.3.8.html
+     https://www.samba.org/samba/history/samba-4.2.11.html
+
+20160411:
+  AFFECTS: Users if databases/influxdb
+  AUTHOR: cheffo@freebsd-bg.org
+
+  To upgrade to InfluxDB 0.12, you must be on version 0.10 and all shards must
+  be in TSM format (the default storage engine starting with InfluxDB 0.10).
+  See the 0.10 documentation [1] for how to convert b1 and bz1 shards to TSM. If
+  any b1 or bz1 shards are present, InfluxDB 0.12 will not start.
+
+  Next, you need to update your metastore *before updating to 0.12.* [2]
+
+  [1] https://docs.influxdata.com/influxdb/v0.10/administration/upgrading/#convert-b1-and-bz1-shards-to-tsm1
+  [2] https://docs.influxdata.com/influxdb/v0.12/administration/upgrading/
+
 20160406:
   AFFECTS: All users of www/pecl-http
   AUTHOR: bofh
@@ -1212,7 +1306,8 @@ you update your ports collection, before attempting any port upgrades.
   once converted.
 
 20150331:
-AUTHOR: ohauer@FreeBSD.org
+  AFFECTS: Users of www/mod_dav_svn
+  AUTHOR: ohauer@FreeBSD.org
 
   Subversion modules are no longer activated in httpd.conf!
   To activate the subversion apache modules a dedicated file

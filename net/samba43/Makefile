@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}43
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		2
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -15,11 +15,11 @@ LICENSE=		GPLv3
 
 CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba42-4.2.*
 
-EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-progress:-p1
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.3.3
+SAMBA4_VERSION=		4.3.8
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -430,7 +430,7 @@ SAMBA_MAN7+=		samba.7 winbind_krb5_locator.7
 SAMBA_MAN8+=		eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 			idmap_ldap.8 idmap_nss.8 idmap_rfc2307.8 idmap_rid.8 \
 			idmap_tdb.8 idmap_tdb2.8 net.8 nmbd.8 pam_winbind.8 pdbedit.8 \
-			samba-regedit.8 samba-tool.8 samba.8 smbd.8 smbpasswd.8 \
+			samba-regedit.8 samba-tool.8 samba.8 smbd.8 smbpasswd.8 smbspool_krb5_wrapper.8 \
 			smbspool.8 smbta-util.8 vfs_acl_tdb.8 vfs_acl_xattr.8 \
 			vfs_aio_fork.8 vfs_aio_linux.8 vfs_aio_pthread.8 \
 			vfs_audit.8 vfs_cacheprime.8 vfs_cap.8 vfs_catia.8 vfs_ceph.8 \

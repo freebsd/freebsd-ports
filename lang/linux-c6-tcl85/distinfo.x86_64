@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/tcl-8.5.7-6.el6.x86_64.rpm) = 4b5384f02b1c2641af9d20e15cc547027e945acc08d07ff939f7332d41affc14
 SIZE (rpm/x86_64/centos/6.7/tcl-8.5.7-6.el6.x86_64.rpm) = 2007772
+SHA256 (rpm/x86_64/centos/6.7/tcl-8.5.7-6.el6.i686.rpm) = 2f1e77463e3875822811fc5cd972a1792e9c4b3c3ac8b92719698f1a8087a0cc
+SIZE (rpm/x86_64/centos/6.7/tcl-8.5.7-6.el6.i686.rpm) = 2012712
 SHA256 (rpm/x86_64/centos/6.7/tcl-8.5.7-6.el6.src.rpm) = cf38cc7fafeb8aaa69be738008a12e36812d5c297aadad51156116dd6531392b
 SIZE (rpm/x86_64/centos/6.7/tcl-8.5.7-6.el6.src.rpm) = 4417400

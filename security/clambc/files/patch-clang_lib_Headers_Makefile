@@ -1,5 +1,5 @@
---- ../clang/lib/Headers/Makefile.orig
-+++ ../clang/lib/Headers/Makefile
+--- clang/lib/Headers/Makefile.orig	2014-11-10 18:04:47 UTC
++++ clang/lib/Headers/Makefile
 @@ -12,7 +12,7 @@ include $(LEVEL)/Makefile.common
  
  CLANG_VERSION := $(shell cat $(PROJ_SRC_DIR)/../../VER)

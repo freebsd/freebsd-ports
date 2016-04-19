@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Shorthand for common attribute options
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	p5-List-AllUtils>=0:devel/p5-List-AllUtils \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-Meta-TypeConstraint-Mooish>=0:devel/p5-MooseX-Meta-TypeConstraint-Mooish \
@@ -26,6 +29,7 @@ TEST_DEPENDS=	p5-MooseX-Types-Path-Class>=0:devel/p5-MooseX-Types-Path-Class \
 		p5-Test-Moose-More>=0.018:devel/p5-Test-Moose-More \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

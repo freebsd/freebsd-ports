@@ -76,7 +76,7 @@ post-install:
 .endfor
 .endif
 .for extra in ${EXTRAS}
-	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} EBOARDCONFIG=${STAGEDIR}${PREFIX}/bin/eboard-config ./${CONFIGURE_SCRIPT} --prefix=${PREFIX}
+	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} EBOARDCONFIG=${STAGEDIR}${PREFIX}/bin/eboard-config ${CONFIGURE_CMD} --prefix=${PREFIX}
 	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} ${MAKE_ENV} ${MAKE} install DATADIR=${STAGEDIR}${DATADIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${STAGEDIR}${PREFIX}/share/pixmaps/eboard.xpm

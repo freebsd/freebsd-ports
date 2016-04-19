@@ -1,3 +1,4 @@
+lib/elixir/lib/gettext/ebin/Elixir.Gettext.Backend.beam
 lib/elixir/lib/gettext/ebin/Elixir.Gettext.Compiler.beam
 lib/elixir/lib/gettext/ebin/Elixir.Gettext.Error.beam
 lib/elixir/lib/gettext/ebin/Elixir.Gettext.Extractor.beam
@@ -12,6 +13,7 @@ lib/elixir/lib/gettext/ebin/Elixir.Gettext.PO.Tokenizer.beam
 lib/elixir/lib/gettext/ebin/Elixir.Gettext.PO.Translation.beam
 lib/elixir/lib/gettext/ebin/Elixir.Gettext.PO.Translations.beam
 lib/elixir/lib/gettext/ebin/Elixir.Gettext.PO.beam
+lib/elixir/lib/gettext/ebin/Elixir.Gettext.Plural.UnknownLocaleError.beam
 lib/elixir/lib/gettext/ebin/Elixir.Gettext.Plural.beam
 lib/elixir/lib/gettext/ebin/Elixir.Gettext.beam
 lib/elixir/lib/gettext/ebin/Elixir.Mix.Tasks.Compile.Gettext.beam
@@ -20,6 +22,7 @@ lib/elixir/lib/gettext/ebin/Elixir.Mix.Tasks.Gettext.Merge.beam
 lib/elixir/lib/gettext/ebin/gettext.app
 lib/elixir/lib/gettext/ebin/gettext_po_parser.beam
 lib/elixir/lib/gettext/lib/gettext.ex
+lib/elixir/lib/gettext/lib/gettext/backend.ex
 lib/elixir/lib/gettext/lib/gettext/compiler.ex
 lib/elixir/lib/gettext/lib/gettext/extractor.ex
 lib/elixir/lib/gettext/lib/gettext/extractor_agent.ex

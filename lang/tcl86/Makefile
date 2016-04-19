@@ -18,7 +18,7 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=	TCLMAN TZDATA MODULES THREADS
+OPTIONS_DEFINE=	TCLMAN TZDATA MODULES THREADS DEBUG
 OPTIONS_DEFAULT=MODULES THREADS
 TCLMAN_DESC=	Install Tcl function manpages
 TZDATA_DESC=	Install Tcl timezone data
@@ -30,12 +30,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install-strip install-libraries
+TEST_TARGET=	test-tcl
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--enable-man-suffix=.${MAN_SUFFIX} \
-		--includedir=${PREFIX}/include/tcl${TCL_VER} \
+		--includedir=${PREFIX}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 
 TCL_VER=	${PORTVERSION:R}
@@ -53,6 +54,7 @@ TCLMAN_INSTALL_TARGET=	install-doc
 TZDATA_INSTALL_TARGET=	install-tzdata
 MODULES_INSTALL_TARGET=	install-modules
 THREADS_CONFIGURE_ENABLE=	threads
+DEBUG_CONFIGURE_ENABLE=	symbols
 
 post-patch:
 	${REINPLACE_CMD} -e \
@@ -70,8 +72,5 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test-tcl
 
 .include <bsd.port.mk>

@@ -10,12 +10,12 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sophisticated paginator for Rails 3
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack>=3.0.0:www/rubygem-actionpack \
 		rubygem-activesupport>=3.0.0:devel/rubygem-activesupport
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

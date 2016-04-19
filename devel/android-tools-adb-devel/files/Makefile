@@ -58,6 +58,12 @@ TEST_SRCS+= strings_test.cpp
 TEST_SRCS+= test_main.cpp
 TEST_SRCS+= test_utils.cpp
 
+.PATH: ${.CURDIR}/../libcrypto_utils
+SRCS+= android_pubkey.c
+
+.PATH: ${.CURDIR}/../libcrypto_utils/tests
+TEST_SRCS+= android_pubkey_test.cpp
+
 .PATH: ${.CURDIR}/../libcutils
 SRCS+= socket_inaddr_any_server_unix.c
 SRCS+= socket_local_client_unix.c
@@ -70,9 +76,13 @@ SRCS+= threads.c
 
 # required by base/file.cpp
 .PATH: ${.CURDIR}/../liblog
+SRCS+= config_write.c
 SRCS+= fake_log_device.c
-SRCS+= logd_write.c
-CPPFLAGS.logd_write.c+= -DFAKE_LOG_DEVICE=1
+SRCS+= fake_writer.c
+SRCS+= logger_lock.c
+SRCS+= logger_name.c
+SRCS+= logger_write.c
+CPPFLAGS.config_write.c+= -DFAKE_LOG_DEVICE=1
 
 REVISION?= $$(${GIT} rev-parse --short=12 HEAD 2>/dev/null || echo unknown)
 
@@ -86,6 +96,7 @@ CPPFLAGS+= -D_FILE_OFFSET_BITS=64
 CPPFLAGS+= -I${.CURDIR}
 CPPFLAGS+= -I${.CURDIR}/../include
 CPPFLAGS+= -I${.CURDIR}/../base/include
+CPPFLAGS+= -I${.CURDIR}/../libcrypto_utils/include
 CPPFLAGS+= ${CPPFLAGS.${.IMPSRC:T}}
 CPPFLAGS+= $$(${PKG_CONFIG} libcrypto --cflags 2>/dev/null)
 CPPFLAGS+= $$(${PKG_CONFIG} libusb-1.0 --cflags 2>/dev/null)

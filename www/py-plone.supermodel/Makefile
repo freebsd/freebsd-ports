@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.supermodel
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml
 
 NO_ARCH=	yes
-USES=		python zip
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

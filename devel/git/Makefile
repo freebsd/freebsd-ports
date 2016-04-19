@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.7.4
-PORTREVISION=	1
+DISTVERSION=	2.8.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -42,8 +41,8 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
 OPTIONS_DEFINE=	GUI SVN GITWEB CONTRIB P4 CVS HTMLDOCS PERL ICONV CURL \
-		ETCSHELLS SEND_EMAIL NLS
-OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL ICONV CURL ETCSHELLS SEND_EMAIL NLS
+		SEND_EMAIL NLS
+OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL ICONV CURL SEND_EMAIL NLS
 OPTIONS_SUB=	yes
 
 GITWEB_DESC=	Install gitweb
@@ -51,7 +50,6 @@ CONTRIB_DESC=	Install contributed scripts
 P4_DESC=	Enable Perforce support
 CVS_DESC=	Enable CVS support
 HTMLDOCS_DESC=	Install additional documentation
-ETCSHELLS_DESC=	Modify /etc/shells
 SEND_EMAIL_DESC=Enable the git-send-email(1) script
 
 NLS_USES=		gettext

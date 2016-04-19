@@ -1,23 +1,10 @@
---- src/tools/Makefile.orig	2011-03-20 11:22:18.000000000 +0100
-+++ src/tools/Makefile	2011-03-20 11:26:24.000000000 +0100
-@@ -5,17 +5,18 @@
- 
- PIPE= -pipe
- 
--NOMAN= 1
-+NO_MAN= 1
- 
- BINOWN=	root
+--- src/tools/Makefile	2016-04-12 15:02:58.000000000 -0400
++++ src/tools/Makefile	2016-04-13 12:33:40.546452000 -0400
+@@ -12,5 +12,5 @@
+-BINOWN=	root
++BINOWN?=	root
  BINMOD=	0555
 -BINDIR=	/usr/local/sbin
 +BINDIR=	${PREFIX}/sbin
  
  OS!= uname -s
- 
- .if ${OS} == "FreeBSD"
- LDADD+=	-lcrypt
- .endif
-+
- .if ${OS} == "NetBSD"
- LDADD+=	-lcrypt
- .endif

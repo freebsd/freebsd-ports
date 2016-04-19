@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Code coverage metrics for Perl
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 TEST_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences
 
@@ -27,7 +28,7 @@ CPANCOVER_BUILD_DEPENDS=	p5-Parallel-Iterator>=0:devel/p5-Parallel-Iterator \
 				p5-Template-Toolkit>=2:www/p5-Template-Toolkit
 CPANCOVER_RUN_DEPENDS=		${CPANCOVER_BUILD_DEPENDS}
 
-HTML_REPORTS=			Build HTML reports with p5-HTML-Parser
+HTML_REPORTS_DESC=		Build HTML reports with p5-HTML-Parser
 HTML_REPORTS_BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser
 HTML_REPORTS_RUN_DEPENDS=	${HTML_REPORTS_BUILD_DEPENDS}
 
