@@ -366,6 +366,7 @@ lib/virtualbox/VBoxHostChannel.so
 lib/virtualbox/VBoxManage
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetAdpCtl
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetDHCP
+@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetNAT
 lib/virtualbox/VBoxNetDHCP.so
 lib/virtualbox/VBoxNetNAT.so
 %%X11%%lib/virtualbox/VBoxOGLhostcrutil.so
