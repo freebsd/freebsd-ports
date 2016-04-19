@@ -248,6 +248,7 @@
     SUBDIR += igmpproxy
     SUBDIR += ilbc
     SUBDIR += imapproxy
+    SUBDIR += intel-ixl-kmod
     SUBDIR += iodine
     SUBDIR += ip2location
     SUBDIR += ip6_int
