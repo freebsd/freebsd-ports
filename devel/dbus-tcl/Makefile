@@ -21,10 +21,7 @@ PORTDOCS=	*
 
 TEST_TARGET=	do-test
 
-USES=		pkgconfig tcl:85+
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--exec-prefix=${PREFIX}
+USES=		pkgconfig tcl:85+,tea
 
 PLIST_FILES=	lib/dbus/libdbus21.so.1 \
 		lib/dbus/pkgIndex.tcl \
@@ -36,8 +33,8 @@ post-patch:
 
 do-test:
 	DBUS=$$(${LOCALBASE}/bin/dbus-daemon --session --print-address --fork --print-pid); \
-	DBUS_ADDR=$$(echo $$DBUS | awk '{print $$1}'); \
-	DBUS_PID=$$(echo $$DBUS | awk '{print $$2}'); \
+	DBUS_ADDR=$$(echo $$DBUS | ${AWK} '{print $$1}'); \
+	DBUS_PID=$$(echo $$DBUS | ${AWK} '{print $$2}'); \
 	DBUS_ENV=DBUS_SESSION_BUS_ADDRESS=$$DBUS_ADDR; \
 	${SETENV} ${MAKE_ENV} $$DBUS_ENV ${MAKE} -C ${WRKSRC} test; \
 	kill $$DBUS_PID

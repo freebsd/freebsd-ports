@@ -1,6 +1,6 @@
-lib/thread%%VERSION%%/libthread%%VERSION%%.so
-lib/thread%%VERSION%%/ttrace.tcl
-lib/thread%%VERSION%%/pkgIndex.tcl
+lib/%%TCL_PKG%%/lib%%TCL_PKG%%.so
+lib/%%TCL_PKG%%/ttrace.tcl
+lib/%%TCL_PKG%%/pkgIndex.tcl
 man/mann/thread.n.gz
 man/mann/tpool.n.gz
 man/mann/tsv.n.gz

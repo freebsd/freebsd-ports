@@ -19,14 +19,12 @@ PORTDOCS=	README.xml html.xsl man.macros nroff.xsl tcldoc-1.0.dtd \
 		tcldom.html tcldom.xml tclxml.css tclxml.html tclxml.xml \
 		tclxslt.html tclxslt.xml transform.tcl txt.xsl
 
-USES=		tcl tar:xz
+USES=		tcl:tea tar:xz
+TCL_PKG=	Tclxml${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
-GNU_CONFIGURE=	yes
-USE_LDCONFIG?=	${PREFIX}/lib/Tclxml${PORTVERSION}
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
-		--with-tcl=${TCL_LIBDIR} \
-		XML_CONFIG="${XML_CONFIG}"
-PLIST_SUB=	VER=${PORTVERSION}
+USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
+CONFIGURE_ARGS+=XML_CONFIG="${XML_CONFIG}"
 
 OPTIONS_DEFINE=	DOCS
 MAKE_ENV+=	TCLLIBPATH=${STAGEDIR}/${PREFIX}/lib
@@ -39,13 +37,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/FreeBSD-\*/FreeBSD-*|DragonFly-*/g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} doc)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
