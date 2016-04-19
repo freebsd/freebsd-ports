@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.72
+PORTVERSION=	1.73
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -20,7 +20,7 @@ USE_CXXSTD=	c++11
 ALL_TARGET=	cppcheck
 TEST_TARGET=	test
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
-MAKE_ENV+=	TINYXML=-ltinyxml2 CFGDIR="${DATADIR}/cfg"
+MAKE_ENV=	TINYXML=-ltinyxml2 CFGDIR="${DATADIR}/cfg"
 
 PLIST_FILES=	bin/cppcheck bin/cppcheck-htmlreport
 PORTDATA=	*
@@ -58,11 +58,11 @@ post-patch-MATCHCOMPILER-on:
 
 post-patch-RULES-on:
 	@${REINPLACE_CMD} \
-	-e '\|CXXFLAGS +=| \
-	s| -DTIXML_USE_STL $$(shell pcre-config --cflags)||' \
-	-e '\|$$(SRCDIR)/cppcheck.cpp| \
-	s|$${INCLUDE_FOR_LIB}|& $$(shell pcre-config --cflags)|' \
-			${WRKSRC}/Makefile
+		-e '\|CXXFLAGS +=| \
+			s| -DTIXML_USE_STL $$(shell pcre-config --cflags)||' \
+		-e '\|$$(SRCDIR)/cppcheck.cpp| \
+			s|$${INCLUDE_FOR_LIB}|& $$(shell pcre-config --cflags)|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${STAGEDIR}${PREFIX}/bin
