@@ -13,6 +13,7 @@ share/locale/bs/LC_MESSAGES/tint2conf.mo
 share/locale/fr/LC_MESSAGES/tint2conf.mo
 share/locale/hr/LC_MESSAGES/tint2conf.mo
 share/locale/pl/LC_MESSAGES/tint2conf.mo
+share/locale/ru/LC_MESSAGES/tint2conf.mo
 share/locale/sr/LC_MESSAGES/tint2conf.mo
 %%DATADIR%%/default_icon.png
 %%EXAMPLES%%%%DATADIR%%/horizontal-dark-opaque.tint2rc
@@ -39,3 +40,4 @@ share/locale/sr/LC_MESSAGES/tint2conf.mo
 %%EXAMPLES%%%%DATADIR%%/vertical-dark-transparent.tint2rc
 %%EXAMPLES%%%%DATADIR%%/vertical-light-opaque.tint2rc
 %%EXAMPLES%%%%DATADIR%%/vertical-light-transparent.tint2rc
+%%EXAMPLES%%%%DATADIR%%/vertical-neutral-icons.tint2rc
