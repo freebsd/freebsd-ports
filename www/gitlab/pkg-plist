@@ -564,6 +564,7 @@
 %%WWWDIR%%/app/models/network/graph.rb
 %%WWWDIR%%/app/models/note.rb
 %%WWWDIR%%/app/models/notification.rb
+%%WWWDIR%%/app/models/oauth_access_token.rb
 %%WWWDIR%%/app/models/personal_snippet.rb
 %%WWWDIR%%/app/models/project.rb
 %%WWWDIR%%/app/models/project_group_link.rb
@@ -2674,6 +2675,7 @@
 %%WWWDIR%%/lib/gitlab/gitorious_import/client.rb
 %%WWWDIR%%/lib/gitlab/gitorious_import/project_creator.rb
 %%WWWDIR%%/lib/gitlab/gitorious_import/repository.rb
+%%WWWDIR%%/lib/gitlab/gon_helper.rb
 %%WWWDIR%%/lib/gitlab/google_code_import/client.rb
 %%WWWDIR%%/lib/gitlab/google_code_import/importer.rb
 %%WWWDIR%%/lib/gitlab/google_code_import/project_creator.rb
@@ -2907,6 +2909,8 @@
 %%WWWDIR%%/spec/factories/milestones.rb
 %%WWWDIR%%/spec/factories/namespaces.rb
 %%WWWDIR%%/spec/factories/notes.rb
+%%WWWDIR%%/spec/factories/oauth_access_tokens.rb
+%%WWWDIR%%/spec/factories/oauth_applications.rb
 %%WWWDIR%%/spec/factories/personal_snippets.rb
 %%WWWDIR%%/spec/factories/project_group_links.rb
 %%WWWDIR%%/spec/factories/project_hooks.rb
@@ -2953,6 +2957,7 @@
 %%WWWDIR%%/spec/features/notes_on_merge_requests_spec.rb
 %%WWWDIR%%/spec/features/password_reset_spec.rb
 %%WWWDIR%%/spec/features/profile_spec.rb
+%%WWWDIR%%/spec/features/profiles/oauth_applications_spec.rb
 %%WWWDIR%%/spec/features/profiles/preferences_spec.rb
 %%WWWDIR%%/spec/features/projects_spec.rb
 %%WWWDIR%%/spec/features/runners_spec.rb
