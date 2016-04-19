@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.3.36
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -55,8 +56,8 @@ GROUPS=		${VBOXGROUP}
 VBOX_DIR=	${PREFIX}/lib/virtualbox
 VBOX_LINKS=	VBoxVRDP
 VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxHeadless VBoxManage
-VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxSVC \
-		VBoxXPCOMIPCD
+VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
+		VBoxSVC VBoxXPCOMIPCD
 
 VBOX_GUEST_VER=	${PORTVERSION}
 
