@@ -55,6 +55,8 @@
     SUBDIR += polygraph
     SUBDIR += postal
     SUBDIR += postmark
+    SUBDIR += py-naarad
+    SUBDIR += py-zopkio
     SUBDIR += pybench
     SUBDIR += raidtest
     SUBDIR += ramspeed
