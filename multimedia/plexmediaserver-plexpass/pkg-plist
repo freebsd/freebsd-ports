@@ -620,6 +620,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/american_zoetrope.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/anchor_bay_entertainment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/animal_planet.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/animax.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/anonymous_content.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/antena_3.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/apatow_productions.png
@@ -664,6 +665,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blue_underground.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blumhouse_productions.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bnn.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bold_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/boomerang.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bravo.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/brightlight.png
@@ -791,6 +793,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/france_3.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/france_4.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/franchise_pictures.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/freeform.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/fuji_tv.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/future_flix.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/fx.png
@@ -993,6 +996,8 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/radical_media.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rai_cinema.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rankin.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/ratpac_dune_entertainment.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/ratpac_entertainment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/red_hour.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/red_wagon_entertainment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/redrum.png
@@ -1009,6 +1014,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rick_mill.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rickety_shack_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/river_road_entertainment.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rko_radio_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/roadside_attractions.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rogue_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/romar.png
@@ -1026,6 +1032,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/saturn_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/saul_zaentz.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sbs.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/scholastic.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/scifi.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/scott_free.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/screen_australia.png
@@ -1138,6 +1145,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/warner_independent_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/water_walk_productions.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/wdr.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/we_tv.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/weinstein_company.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/wfdif.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/wgn.png
@@ -1700,7 +1708,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.17dc895a940c1a1ff2112611a5d346e6.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.cd2cc651fa4a48f2d4c0e7a22dfae4c6.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.8a15495ac101fa04d0fdd60953ffe6e0.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon-mask.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon.ico
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/plex-logo.96faf245690b14fdd33eccd3294ac57f.svg
@@ -1787,9 +1795,9 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/gracenote.18089cb7063ad397523859fa93f2d54c.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/vevo.0aa36b37d6a9aedfe67df4c5ff2ae8e0.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.69108ed027f1568792bb.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest.eb0310e28acba2f9b1a0.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.55530c19c0a35ff892b1.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.64626698ddf4e9a7e118.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest.41a0b9187a1b9e94d122.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.9e967496c0f98e36a534.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/mp3/null.2036f08ba858d37814b7f6982d26414a.mp3
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
