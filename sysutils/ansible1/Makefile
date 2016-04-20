@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	1
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 PORTREVISION=
 
 CONFLICTS=	ansible-*
@@ -15,6 +15,6 @@ SHEBANG_FILES=	lib/ansible/runner/action_plugins/synchronize.py
 EXTRA_PATCHES=
 
 DEPRECATED=		please upgrade to sysutils/ansible
-EXPIRATION_DATE=	2016-09-01
+EXPIRATION_DATE=	2016-10-01
 
 .include "${MASTERDIR}/Makefile"
