@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libp11
-PORTVERSION=	0.2.8
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	security devel
-MASTER_SITES=	SF/opensc/${PORTNAME}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Small layer on top of PKCS\#11 API
@@ -16,28 +14,32 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	OpenSC
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
+
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig
+USES=		autoreconf libtool pkgconfig
 USE_LDCONFIG=	yes
+
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
 		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+
+CONFIGURE_ARGS=	--with-enginesdir=${PREFIX}/lib/engines
+
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
 
-DOCS_CONFIGURE_ON=	--enable-doc
-
-post-patch:
-	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA install-dist_docDATA|install-data-am: install-dist_docDATA|' \
-		${WRKSRC}/doc/Makefile.in
-
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA}	${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA}	${WRKSRC}/examples/README ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA}	${WRKSRC}/examples/Makefile ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA}	${WRKSRC}/examples/*.c ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
