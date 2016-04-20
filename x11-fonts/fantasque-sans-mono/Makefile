@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	fantasque-sans-mono
-PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTVERSION=	1.7.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://fontlibrary.org/assets/downloads/${PORTNAME}/db52617ba875d08cbd8e080ca3d9f756/
-DISTNAME=	fantasque-sans-mono
+MASTER_SITES=	https://github.com/belluzj/fantasque-sans/releases/download/v${PORTVERSION}/
+DISTNAME=	FantasqueSansMono
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Programming font, designed with functionality in mind
@@ -14,7 +13,7 @@ LICENSE=	OFL11
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USES=		fonts zip
+USES=		fonts
 
 OPTIONS_DEFINE=	DOCS
 
