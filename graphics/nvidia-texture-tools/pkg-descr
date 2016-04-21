@@ -9,4 +9,4 @@ DXT compression is based on Simon Brown's squish library. The library
 also contains an alternative GPU-accelerated compressor that uses
 CUDA and is one order of magnitude faster.
 
-WWW: http://code.google.com/p/nvidia-texture-tools/
+WWW: https://github.com/castano/nvidia-texture-tools
