@@ -12,6 +12,8 @@ PATCH_SITES=	http://sourceforge.net/p/beecrypt/patches/_discuss/thread/bff89ba1/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	BeeCrypt is an open source cryptography library
 
+BROKEN_powerpc64=	Does not build
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-java --without-python
 INSTALL_TARGET=	install-strip

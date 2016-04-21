@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.chillispot.info/download/ \
 MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Wireless LAN Access Point Controller
 
+BROKEN_powerpc64=	Does not build
+
 CONFLICTS=	coovachilli-[0-9]*
 
 USES=		shebangfix

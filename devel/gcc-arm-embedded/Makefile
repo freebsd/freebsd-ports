@@ -13,6 +13,8 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=EXAMPLES PYGDB
 PURE_DESC=	Use all libraries from bundle, do not depend on anything

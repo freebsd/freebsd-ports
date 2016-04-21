@@ -13,6 +13,8 @@ COMMENT=	PHP-based survey building and runing system
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe
 
 # http://docs.limesurvey.org/Installation&structure=English+Instructions+for+LimeSurvey

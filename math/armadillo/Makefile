@@ -11,6 +11,8 @@ COMMENT=	C++ linear algebra library
 
 LICENSE=	MPL
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libarpack.so:math/arpack \
 		libhdf5.so:science/hdf5 \

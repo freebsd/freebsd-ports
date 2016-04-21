@@ -10,6 +10,8 @@ COMMENT=	Scalable High-Availability cluster resource manager
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	bash:shells/bash \
 		corosync:net/corosync
 LIB_DEPENDS=	libgnutls.so:security/gnutls \

@@ -11,6 +11,8 @@ COMMENT=	Highly scalable, fault-tolerant distributed file system
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang17/bin/erlc:lang/erlang-runtime17 \
 		${LOCALBASE}/bin/cmake:devel/cmake \
 		${LOCALBASE}/lib/libcheck.a:devel/libcheck

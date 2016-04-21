@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SOAP Toolkit for PHP
 
+BROKEN_powerpc64=	Does not build
+
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

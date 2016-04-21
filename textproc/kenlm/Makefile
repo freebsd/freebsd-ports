@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	KenLM Language Model Toolkit
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	bjam:devel/boost-jam \
 		bash:shells/bash
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs

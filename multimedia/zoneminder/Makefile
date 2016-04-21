@@ -14,6 +14,8 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
 		libpcre.so:devel/pcre \

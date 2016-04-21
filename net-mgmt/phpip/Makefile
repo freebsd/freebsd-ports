@@ -14,6 +14,8 @@ COMMENT=	Complete IPv4 IPAM (IP address management) suite
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 SNAPSHOT=	200611081420
 NO_BUILD=	yes
 USE_PHP=	mysql

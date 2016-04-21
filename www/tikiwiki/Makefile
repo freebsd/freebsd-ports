@@ -13,6 +13,8 @@ COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_powerpc64=	Does not build
+
 USE_PHP=	gettext pcre posix session xml zlib
 WANT_PHP_WEB=	yes
 

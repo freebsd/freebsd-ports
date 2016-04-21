@@ -10,6 +10,8 @@ COMMENT=	The Qore Programming Language
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libmpfr.so:math/mpfr
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \

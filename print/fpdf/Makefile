@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S|.||}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Free PHP class to generate PDF files with pure PHP
 
+BROKEN_powerpc64=	Does not build
+
 USE_PHP=	zlib
 
 FETCH_CMD=	${FETCH_BINARY} -ARr -o ${DISTDIR}/${DISTFILES}

@@ -10,6 +10,8 @@ COMMENT=	Monitoring and management system for hosts, services and networks
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libyajl.so:devel/yajl \
 		libexecinfo.so:devel/libexecinfo # for better debugging

@@ -15,6 +15,8 @@ COMMENT=	SQLite 3 extension of minimal OGC GeoPackage implementation
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	GEOS
 OPTIONS_DEFAULT=GEOS
 

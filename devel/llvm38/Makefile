@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
+BROKEN_powerpc64=	Does not build
+
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 RCDIR=		${DISTVERSION:S/${LLVM_RELEASE}//:C|(rc.*)|\1/|}
 PRE_=		${DISTVERSION:C/.*rc.*/pre-/:N*[0-9]*}

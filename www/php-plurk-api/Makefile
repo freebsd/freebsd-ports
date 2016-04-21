@@ -12,6 +12,8 @@ COMMENT=	Plurk API Implementation with PHP
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	json curl

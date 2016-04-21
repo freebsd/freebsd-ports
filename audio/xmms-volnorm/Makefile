@@ -13,6 +13,8 @@ COMMENT=	Volume Normalizer plugin for XMMS
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libxmms.so:multimedia/xmms
 
 USES=		libtool

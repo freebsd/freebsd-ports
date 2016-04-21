@@ -13,6 +13,8 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 SLAVEDIRS=	databases/mysql55-client
 USES=		cmake readline shebangfix
 CXXFLAGS+=	${CPPFLAGS}

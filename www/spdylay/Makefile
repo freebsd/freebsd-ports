@@ -13,6 +13,8 @@ COMMENT=	SPDY protocol version 2, 3 and 3.1 implementation in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	libevent2>=2.0.8:devel/libevent2
 LIB_DEPENDS=	libevent_openssl.so:devel/libevent2
 RUN_DEPENDS=	libevent2>=2.0.8:devel/libevent2

@@ -13,6 +13,8 @@ COMMENT=	Server framework
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libguile.so:lang/guile
 
 USES=		tar:xz libtool

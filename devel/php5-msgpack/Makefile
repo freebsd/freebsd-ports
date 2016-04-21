@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	php5-
 MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP extension for interfacing with MessagePack
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_TAGNAME=	980a652
 WRKSRC_SUBDIR=	php

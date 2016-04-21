@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Webserver with CGI as own user and SSL support
 
+BROKEN_powerpc64=	Does not build
+
 RUN_DEPENDS=	run-mailcap:misc/mime-support \
 		ppmtogif:graphics/netpbm
 
