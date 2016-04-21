@@ -15,11 +15,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 TCL_DVER=	${TCL_VER:S/.//}
 
-USES=		gmake tcl:84,85,86
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf gmake tcl:tea
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
-CONFIGURE_ARGS+=--with-tclinclude=${TCL_INCLUDEDIR} \
-		--with-tcl=${TCL_LIBDIR}
 USE_LDCONFIG=	yes
 SUB_FILES=	httpd.conf pkgIndex.tcl pkg-message
 SUB_LIST+=	TCL_DVER=${TCL_DVER} WS_VER=${PORTVERSION}

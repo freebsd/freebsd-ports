@@ -16,12 +16,8 @@ OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	xotcl-1.*
 
-USES+=		gmake tcl:85+
+USES+=		gmake tcl:85+,tea
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
-		--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR}
 TEST_TARGET=	test
 PLIST_SUB+=	PKGNAME=${DISTNAME}
 PORTDOCS=	*

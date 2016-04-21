@@ -11,19 +11,13 @@ DISTNAME=	itcl${PORTVERSION}
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
 
-USES+=		tcl
+USES+=		tcl:84+,tea
 
 USE_LDCONFIG=	${PREFIX}/lib/itcl${PORTVERSION:R}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+TEST_TARGET=	test
 
-GNU_CONFIGURE=	yes
-CFLAGS+=	-I${TCL_INCLUDEDIR}/generic
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR} \
-		--prefix=${PREFIX} \
-		--exec-prefix=${PREFIX}
-CONFIGURE_ENV+=	ac_cv_c_tclh=${TCL_INCLUDEDIR}/unix
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		VERSION=${PORTVERSION:R} \
 		MAJOR=${PORTVERSION:R:R} \
@@ -35,10 +29,6 @@ MAN_3=		Itcl_RegisterC.3 Itcl_Stack.3 Itcl_Class.3 \
 post-patch:
 	${REINPLACE_CMD} -E '/^includedir/s|/include|/include/itcl${PORTVERSION:R}|' \
 	    ${WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-build test:
-	(cd ${WRKSRC} && ${SETENV} ITCL_LIBRARY=${WRKSRC}/library \
-		${TCLSH} tests/all.tcl -load "load ./libitcl.so.1")
 
 post-install:
 	${LN} -s libitcl.so.1 \

@@ -15,14 +15,13 @@ LIB_DEPENDS=	libTix8.4.3.so:x11-toolkits/tix \
 OCC_BROKEN=	Does not compile because of issues with cad/opencascade
 
 USE_LDCONFIG=	yes
-USES=		gmake jpeg libtool tk
+USES=		gmake jpeg libtool tk:tea
 USE_GL=		yes
 USE_XORG=	xmu xi
-GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${LOCALBASE}/lib/Togl-1.7
-CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} --enable-jpeglib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/lib/Togl-1.7
+CONFIGURE_ARGS=	--enable-jpeglib
 
 FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
