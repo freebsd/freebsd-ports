@@ -2,6 +2,7 @@
 
 PORTNAME=	django-annotations
 PORTVERSION=	0.0.0.2016041401
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +23,7 @@ GH_ACCOUNT=	TheDataShed
 GH_TAGNAME=	cdb04b4
 
 NO_ARCH=	yes
-PLIST_FILES=	"@sample etc/annotations/default/__init__.py.sample"\
+PLIST_FILES=	"@sample etc/annotations/default/__init__.py.sample"
 
 .include <bsd.port.pre.mk>
 
