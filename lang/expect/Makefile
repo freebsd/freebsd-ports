@@ -14,25 +14,16 @@ LIBEXPECT_VER=	${PORTVERSION:S/.//g}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		tcl autoreconf
+USES=		tcl:tea autoreconf
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared \
-		--exec-prefix=${PREFIX} \
-		--datadir=${DATADIR} \
-		--with-tclconfig=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR}
-CONFIGURE_ENV=	ac_cv_sys_long_file_names=yes
+CONFIGURE_ARGS=	--datadir=${DATADIR}
 PLIST_SUB+=	EXPECT_VER=${PORTVERSION} \
 		LIBEXPECT_VER=${LIBEXPECT_VER}
+TEST_TARGET=	test
 
 post-install:
 	${LN} -sf expect${PORTVERSION}/libexpect${LIBEXPECT_VER}.so \
 		${STAGEDIR}${PREFIX}/lib/libexpect.so.1
-	${LN} -sf libexpect.so.1 \
-		${STAGEDIR}${PREFIX}/lib/libexpect.so
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
+	${LN} -sf libexpect.so.1 ${STAGEDIR}${PREFIX}/lib/libexpect.so
 
 .include <bsd.port.mk>

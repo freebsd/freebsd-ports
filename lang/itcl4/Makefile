@@ -11,14 +11,9 @@ DISTNAME=	itcl${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
 
-USES+=		tcl:86
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR} \
-		--includedir=${PREFIX}/include/itcl${PORTVERSION:R}
+USES+=		tcl:86,tea
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include/itcl${PORTVERSION:R}
 PLIST_SUB+=	PKGVER=${PORTVERSION}
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
+TEST_TARGET=	test
 
 .include <bsd.port.mk>
