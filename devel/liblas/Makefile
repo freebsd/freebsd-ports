@@ -12,6 +12,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 CONFLICTS=	liblas12-1.2*
 
 USES=		cmake libtool

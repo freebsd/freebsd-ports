@@ -8,6 +8,8 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang with support for the CHERI architecture
 
+BROKEN_powerpc64=	Does not build
+
 LLVM_SUFFIX=	-cheri
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 COMMAND_SUFFIX=	${LLVM_SUFFIX}

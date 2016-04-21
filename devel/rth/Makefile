@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based requirement, test, and bugtracking system
 
+BROKEN_powerpc64=	Does not build
+
 USES=		zip
 NO_BUILD=	yes
 USE_PHP=	mysqli gd

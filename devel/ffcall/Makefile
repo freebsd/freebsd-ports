@@ -12,6 +12,8 @@ COMMENT=	Foreign function call libraries
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
 

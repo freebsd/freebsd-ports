@@ -13,6 +13,8 @@ COMMENT=	Library to import various 3D model formats in a uniform manner
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		cmake pkgconfig zip

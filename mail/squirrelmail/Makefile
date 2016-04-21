@@ -13,6 +13,8 @@ COMMENT=	Webmail system which accesses mail over IMAP
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 # This snapshot tarball contains php 5.4 and 5.5 compatibility
 # patches, but the only guaranteed compatibility is with php 5.3.
 # If you encounter problems, downgrade to php 5.3.

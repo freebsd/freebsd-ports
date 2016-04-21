@@ -12,6 +12,8 @@ COMMENT=	Set of PHP-scripts to manage FTP over the web
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 USES=		zip
 NO_BUILD=	yes
 NO_ARCH=	yes

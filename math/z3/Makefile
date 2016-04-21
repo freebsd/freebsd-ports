@@ -11,6 +11,8 @@ COMMENT=	Z3 Theorem Prover
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Z3Prover
 

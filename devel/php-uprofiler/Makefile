@@ -11,6 +11,8 @@ COMMENT=	Lightweight profiler for PHP
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	FriendsOfPHP
 GH_TAGNAME=	483c1e5

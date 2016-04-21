@@ -12,6 +12,8 @@ COMMENT=	Simpler web photo gallery
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BROKEN_powerpc64=	Does not build
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	gd gettext json mbstring mysqli pcre session

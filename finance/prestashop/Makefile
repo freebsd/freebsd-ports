@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-Source e-Commerce Software for Web 2.0
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe zip
 NO_BUILD=	yes
 PRESTADIR=	www/${PORTNAME}

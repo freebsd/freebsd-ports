@@ -11,6 +11,8 @@ DISTNAME=	mos201src
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Lightweight implementation of Standard ML
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libgdbm.so:databases/gdbm
 

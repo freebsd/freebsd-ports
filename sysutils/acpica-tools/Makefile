@@ -14,6 +14,8 @@ COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 
+BROKEN_powerpc64=	Does not build
+
 USES=		gmake
 
 BUILD_WRKSRC=	${WRKSRC}/generate/unix

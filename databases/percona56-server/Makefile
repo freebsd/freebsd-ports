@@ -12,6 +12,8 @@ DISTNAME=	percona-server-${DISTVERSION}
 MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+BROKEN_powerpc64=	Does not build
+
 SLAVEDIRS=	databases/percona56-client
 USES=		bison cmake perl5 shebangfix
 

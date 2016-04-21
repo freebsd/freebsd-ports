@@ -12,6 +12,8 @@ COMMENT=	Multimedia streaming server for KiSS/Linksys player
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libdvdread.so:multimedia/libdvdread
 

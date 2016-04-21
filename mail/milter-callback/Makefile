@@ -12,6 +12,8 @@ COMMENT=	Milter to perform a envelope-from sender verification on target MX
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libspf2.so:mail/libspf2
 
 USES=		tar:xz

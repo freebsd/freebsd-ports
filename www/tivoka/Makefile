@@ -11,6 +11,8 @@ COMMENT=	JSON-RPC client/server library for PHP
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	EXAMPLES
 
 USE_PHP=	json filter

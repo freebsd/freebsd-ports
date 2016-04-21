@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gaod@hychen.org
 COMMENT=	The Apache Solr PHP extension
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml2.so:textproc/libxml2
 

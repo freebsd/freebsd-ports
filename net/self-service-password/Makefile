@@ -13,6 +13,8 @@ COMMENT=	Set of PHP-scripts to change LDAP password over the web
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

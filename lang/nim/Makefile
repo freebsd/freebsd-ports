@@ -11,6 +11,8 @@ COMMENT=	Nim programming language
 
 LICENSE=	MIT
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_UNSAFE=	yes

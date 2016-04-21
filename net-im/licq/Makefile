@@ -12,6 +12,8 @@ COMMENT=	Popular ICQ-compatible plugin-based program
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USES=		cmake iconv

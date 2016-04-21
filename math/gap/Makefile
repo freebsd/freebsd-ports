@@ -12,6 +12,8 @@ DISTNAME=	${GAP_VERSION}p${PORTVERSION:R:E}_${GAP_DISTTIME}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GAP is a system for computational discrete algebra
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake shebangfix tar:bzip2

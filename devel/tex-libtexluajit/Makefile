@@ -14,6 +14,8 @@ COMMENT=	LuaJIT library for TeXLive
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LuaJIT-2.0.3/COPYRIGHT
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:xz libtool pkgconfig
 USE_LDCONFIG=	yes
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}

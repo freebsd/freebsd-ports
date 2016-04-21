@@ -13,6 +13,8 @@ COMMENT=	Wrapper to the Tokyo Tyrant client library
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libtokyotyrant.so:databases/tokyotyrant
 
 USES=		pkgconfig tar:tgz

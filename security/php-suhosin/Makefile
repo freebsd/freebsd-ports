@@ -12,6 +12,8 @@ COMMENT=	PHP extension that implements high-level protections
 
 LICENSE=	PHP301
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	EXAMPLES
 
 USE_PHP=	session

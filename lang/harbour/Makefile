@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Open source Clipper-compatible compiler
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libslang.so:devel/libslang2\
 		libpcre.so:devel/pcre
 BUILD_DEPENDS=	bash:shells/bash

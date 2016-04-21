@@ -13,6 +13,8 @@ COMMENT=	Open-Source Web-Based ERP System
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 PORTSCOUT=	skipv:3.12
 
 USES=		gettext shebangfix zip

@@ -12,6 +12,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Multi-threaded functional programming language
 
 BROKEN_powerpc=		does not configure
+BROKEN_powerpc64=	Does not build
 
 USES=		compiler:c++11-lang gmake tar:tgz
 USE_LDCONFIG=	yes

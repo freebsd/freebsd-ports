@@ -17,6 +17,8 @@ COMMENT=	RESTful DICOM server for healthcare and medical research
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	gtest-config:devel/googletest
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \

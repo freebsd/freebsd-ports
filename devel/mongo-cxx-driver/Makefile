@@ -11,6 +11,8 @@ COMMENT=	C++ Driver for MongoDB
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 MAKE_JOBS_UNSAFE=	yes

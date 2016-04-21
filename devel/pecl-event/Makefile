@@ -13,6 +13,8 @@ COMMENT=	Provides interface to libevent library
 
 LICENSE=	PHP301
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USES=		tar:tgz

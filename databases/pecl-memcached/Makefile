@@ -15,6 +15,8 @@ COMMENT=	PHP extension for interfacing with memcached via libmemcached library
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 OPTIONS_DEFINE=	IGBINARY SASL

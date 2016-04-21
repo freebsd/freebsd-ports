@@ -13,6 +13,8 @@ COMMENT=	MyIT CRM is a CRM project designed for Computer Servicing and Repairs
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	Does not build
+
 USES=		dos2unix zip
 USE_PHP=	mysqli session xml
 NO_BUILD=	yes

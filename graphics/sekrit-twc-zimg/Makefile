@@ -14,6 +14,8 @@ LICENSE_NAME=	Do What The Fuck You Want To Public License version 2
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	sekrit-twc
 

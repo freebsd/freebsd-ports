@@ -11,6 +11,8 @@ COMMENT=	Thread-based email index, search, and tagging application
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 		c++filt:devel/binutils
 LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \

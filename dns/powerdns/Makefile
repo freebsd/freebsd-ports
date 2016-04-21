@@ -12,6 +12,8 @@ COMMENT=	Advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
 USES=		cpe gmake libtool lua pkgconfig tar:bzip2
