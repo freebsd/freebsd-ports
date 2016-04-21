@@ -185,26 +185,19 @@ NOT_FOR_ARCH=	ia64
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MEXTRAS}
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 COMMANDS+=	${EXTRAS_COMMANDS}
 MAN1SRCS+=	extraclangtools.1
 PORTDOCS+=	clang-tools
 .endif
-.endif
 
 .if ${PORT_OPTIONS:MLLD}
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 COMMANDS+=	lld \
 		lld-link
 PORTDOCS+=	lld
 .endif
-.endif
 
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
-# Evil hack around gcc48 not providing a usable c++11 environment on 9.x
-PLIST_SUB:=	${PLIST_SUB:NEXTRAS=*} EXTRAS="@comment "
-PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
-PLIST_SUB:=	${PLIST_SUB:NLLD=*} LLD="@comment "
+BROKEN=	Working C++11 compiler and library required
 .endif
 
 .if ${PORT_OPTIONS:MLLDB} && ${PYTHON_REL} >= 3000
@@ -215,19 +208,13 @@ post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
 
 post-extract-EXTRAS-on:
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang/tools/extra
-.endif
 
 post-extract-LLD-on:
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
-.endif
 
 post-extract-LLDB-on:
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
-.endif
 
 post-extract-OPENMP-on:
 	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/tools/openmp
