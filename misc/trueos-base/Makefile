@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pc-updatemanager:sysutils/pcbsd-utils \
 		${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/bin/zsh:shells/zsh \
 		${LOCALBASE}/bin/rsync:net/rsync \
-		${LOCALBASE}/bin/smartd:sysutils/smartmontools \
+		${LOCALBASE}/sbin/smartd:sysutils/smartmontools \
 		${LOCALBASE}/bin/screen:sysutils/screen \
 		${LOCALBASE}/bin/tmux:sysutils/tmux \
 		${LOCALBASE}/bin/nano:editors/nano \
