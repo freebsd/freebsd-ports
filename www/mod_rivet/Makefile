@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_rivet
-PORTVERSION=	2.3.1
+PORTVERSION=	2.2.3
 CATEGORIES=	www tcl
 MASTER_SITES=	APACHE/tcl/rivet
 DISTNAME=	rivet-${PORTVERSION}
@@ -23,7 +23,7 @@ INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS=	--with-apxs=${APXS} \
+CONFIGURE_ARGS+=--with-apache-version=2 --with-apxs=${APXS} \
 		--with-rivet-target-dir=${PREFIX}/lib/rivet
 
 post-patch:
