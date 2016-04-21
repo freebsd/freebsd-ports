@@ -3,7 +3,6 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	EXIM/exim4/:exim
 DISTNAME=	${PORTNAME}-${EXIM_VERSION}
@@ -96,7 +95,7 @@ MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.86.2
+EXIM_VERSION=	4.87
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
@@ -200,7 +199,7 @@ SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DCC=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MPROXY}
-SEDLIST+=	-e 's,^\# (EXPERIMENTAL_PROXY=),\1,'
+SEDLIST+=	-e 's,^\# (SUPPORT_PROXY=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MCERTNAMES}
@@ -215,19 +214,19 @@ SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DSN=),\1,'
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DANE=),\1,'
 .endif
 
-.if ${PORT_OPTIONS:MEVENT}
-SEDLIST+=	-e 's,^\# (EXPERIMENTAL_EVENT=),\1,'
+.if !${PORT_OPTIONS:MEVENT}
+SEDLIST+=	-e 's,^\# (DISABLE_EVENT=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MINTERNATIONAL}
-SEDLIST+=	-e 's,^\# (EXPERIMENTAL_INTERNATIONAL=),\1,' \
+SEDLIST+=	-e 's,^\# (SUPPORT_I18N=),\1,' \
 		-e 's,XX_IDN_LIBS_XX,-L${LOCALBASE}/lib -lidn,'
 .else
 SEDLIST+=	-e 's,XX_IDN_LIBS_XX,,'
 .endif
 
 .if ${PORT_OPTIONS:MSOCKS}
-SEDLIST+=	-e 's,^\# (EXPERIMENTAL_SOCKS=),\1,'
+SEDLIST+=	-e 's,^\# (SUPPORT_SOCKS=),\1,'
 .endif
 
 .if !${PORT_OPTIONS:MPRDR}
@@ -438,7 +437,7 @@ SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,,' \
 .if ${PORT_OPTIONS:MREDIS}
 SEDLIST+=	-e 's,XX_REDIS_LIBS_XX,-L${LOCALBASE}/lib -lhiredis,' \
 		-e 's,^\# (LOOKUP_REDIS=),\1,' \
-		-e 's,^\# (EXPERIMENTAL_REDIS=),\1,'
+		-e 's,^\# (REDIS=),\1,'
 .else
 SEDLIST+=	-e 's,XX_REDIS_LIBS_XX,,'
 .endif
