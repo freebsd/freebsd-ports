@@ -1,6 +1,6 @@
---- src/nvtt/CMakeLists.txt.orig	2008-12-01 11:04:29.000000000 +0300
-+++ src/nvtt/CMakeLists.txt	2009-03-06 22:58:45.000000000 +0300
-@@ -105,9 +105,11 @@
+--- src/nvtt/CMakeLists.txt.orig	2010-05-15 09:12:05 UTC
++++ src/nvtt/CMakeLists.txt
+@@ -105,9 +105,11 @@ IF(QT4_FOUND AND NOT MSVC)
  	QT4_WRAP_CPP(MOCS tools/configdialog.h)
  	#QT4_ADD_RESOURCES(RCCS tools/configdialog.rc)
  
