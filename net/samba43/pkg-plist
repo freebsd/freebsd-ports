@@ -26,6 +26,7 @@ bin/smbcquotas
 bin/smbget
 bin/smbpasswd
 bin/smbspool
+%%CUPS%%bin/smbspool_krb5_wrapper
 bin/smbstatus
 bin/smbta-util
 bin/smbtar

@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}43
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -13,9 +13,9 @@ COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba42-4.2.*
+CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba42-4.2.* samba44-4.4.*
 
-EXTRA_PATCHES=		${PATCHDIR}/extra-patch-progress:-p1
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-progress:-p1 ${PATCHDIR}/extra-patch-talloc:-p1
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
@@ -277,8 +277,10 @@ CONFIGURE_ARGS+=	--disable-dnssd
 .if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=		libcups.so:print/cups
 CONFIGURE_ARGS+=	--enable-cups --enable-iprint
+PLIST_SUB+=		CUPS=""
 .else
 CONFIGURE_ARGS+=	--disable-cups --disable-iprint
+PLIST_SUB+=		CUPS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDNSUPDATE}
