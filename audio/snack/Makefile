@@ -14,11 +14,8 @@ COMMENT=	Sound toolkit for scripting languages
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		tk
+USES=		tk:tea
 USE_LDCONFIG=	${PREFIX}/lib/snack${PORTVERSION:R}
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR}
 MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

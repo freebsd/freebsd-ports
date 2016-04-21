@@ -16,17 +16,13 @@ LIB_DEPENDS=	libyajl.so:devel/yajl
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 
-USES+=		pkgconfig tcl:85+
-USE_AUTOTOOLS=	autoconf
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--exec-prefix=${PREFIX}
+USES+=		autoreconf pkgconfig tcl:85+,tea
+
+TEST_TARGET=	test
+TEST_DEPENDS=	dtplite:devel/tcllib
 
 PLIST_FILES=	lib/yajltcl${PORTVERSION}/libyajltcl.so.1 \
 		lib/yajltcl${PORTVERSION}/pkgIndex.tcl \
 		lib/yajltcl${PORTVERSION}/yajl.tcl
-
-regression-test: build
-#	Requires devel/tcllib
-	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
