@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rmilter
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -10,7 +10,8 @@ COMMENT=	Milter that performs rspamd, clamav, and other checks
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libopendkim.so:mail/opendkim
+		libopendkim.so:mail/opendkim \
+		libmemcached.so:databases/libmemcached
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
