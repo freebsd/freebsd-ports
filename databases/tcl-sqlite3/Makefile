@@ -19,14 +19,13 @@ OPTIONS_DEFAULT=	THREADS
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/tea
 
-USES=		pkgconfig tcl
+USES=		pkgconfig tcl:tea
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 
 CFLAGS+=	-Os
 CFLAGS+=	`pkg-config --cflags sqlite3`
 LDFLAGS+=	`pkg-config --libs sqlite3`
-CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} --with-system-sqlite
+CONFIGURE_ARGS=	--with-system-sqlite
 
 THREADS_CONFIGURE_ENABLE=	threads
 

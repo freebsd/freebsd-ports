@@ -11,10 +11,7 @@ COMMENT=	Read, manipulate, and display geo data
 
 LICENSE=	GPLv2
 
-USES+=		tcl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR}
+USES+=		tcl:tea
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_LDCONFIG=	yes
 
