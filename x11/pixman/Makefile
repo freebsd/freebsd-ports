@@ -23,4 +23,10 @@ INSTALL_TARGET=	install-strip
 # where the build of the tests crashes ld; see PR bin/202284.
 MAKE_ARGS=      SUBDIRS=pixman
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc64" || ${ARCH} == "powerpc"
+CONFIGURE_ARGS+=	--disable-vmx
+.endif
+
+.include <bsd.port.post.mk>
