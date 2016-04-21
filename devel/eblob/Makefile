@@ -11,6 +11,8 @@ COMMENT=	Append-only low-level I/O library
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 USE_GITHUB=	yes

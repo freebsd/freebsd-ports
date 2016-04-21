@@ -10,6 +10,8 @@ MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 #RUN_DEPENDS=	povray:graphics/povray-meta

@@ -14,6 +14,8 @@ COMMENT=	Anonymizing overlay network for TCP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe gmake
 CPE_VENDOR=	torproject
 #CPE_VERSION=	${DISTVERSION:C/-.*//}

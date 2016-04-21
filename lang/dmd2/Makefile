@@ -35,6 +35,8 @@ LICENSE_NAME_DMD=	Digital Mars license
 LICENSE_FILE_DMD=	${WRKSRC}/backendlicense.txt
 LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>

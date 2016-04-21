@@ -11,6 +11,8 @@ COMMENT=	Open source firmware for Vex robotics controllers
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	sdcc:lang/sdcc \
 		gpasm:devel/gputils
 RUN_DEPENDS=	vexctl:devel/roboctl \

@@ -15,6 +15,8 @@ COMMENT=	Themes for the Fvwm2 window manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	gm4:devel/m4 \
 		fvwm2:x11-wm/fvwm2
 RUN_DEPENDS=	fvwm2:x11-wm/fvwm2

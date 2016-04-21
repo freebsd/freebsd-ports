@@ -11,6 +11,8 @@ COMMENT=	Open source PHP-based online shopping cart system
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencart
 

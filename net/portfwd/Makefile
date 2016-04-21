@@ -12,6 +12,8 @@ COMMENT=	Port Forwarding Daemon
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 GNU_CONFIGURE=	yes

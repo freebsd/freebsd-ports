@@ -11,6 +11,8 @@ COMMENT=	C++ implementation of I2P client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 BROKEN_FreeBSD_9=	does not build

@@ -14,6 +14,8 @@ COMMENT=	Interactive shell for PHP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 USES=		python tar:bzip2
 USE_PYTHON=	distutils autoplist
 USE_PHP=	pcre posix tokenizer

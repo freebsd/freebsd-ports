@@ -11,6 +11,8 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Memcached extension
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	EXAMPLES
 
 CONFIGURE_ARGS=	--with-zlib-dir=/usr

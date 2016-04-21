@@ -10,6 +10,8 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/2575/ \
 MAINTAINER=	pea@raveland.org
 COMMENT=	PostgreSQL log analyzer
 
+BROKEN_powerpc64=	Does not build
+
 NO_BUILD=	Yes
 USE_PHP=	gd pcre
 

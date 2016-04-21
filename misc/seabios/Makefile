@@ -10,6 +10,8 @@ COMMENT=	Open source implementation of a 16bit X86 BIOS
 
 LICENSE=	LGPL3
 
+BROKEN_powerpc64=	Does not build
+
 USES=	gmake python:build
 
 MAKE_ARGS=	HOSTCC="${CC}" LD32BIT_FLAG="-melf_i386_fbsd" \

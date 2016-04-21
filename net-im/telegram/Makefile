@@ -10,6 +10,8 @@ COMMENT=	Command-line interface for Telegram
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libevent.so:devel/libevent2 \
 		libjansson.so:devel/jansson

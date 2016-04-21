@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-editi
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+BROKEN_powerpc64=	Does not build
+
 DEPRECATED=	EOL, no longer supported by bababit.hu
 EXPIRATION_DATE=	2016-06-30
 

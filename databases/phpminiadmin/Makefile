@@ -16,6 +16,8 @@ COMMENT=	Lightweight alternative to phpMyAdmin
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual
 
+BROKEN_powerpc64=	Does not build
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_PHP=	mysql pcre session

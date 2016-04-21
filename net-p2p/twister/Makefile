@@ -14,6 +14,8 @@ LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs	\
 		libleveldb.so:databases/leveldb	\
 		libicui18n.so:devel/icu

@@ -12,6 +12,8 @@ COMMENT=	Open Source Human Resource Management
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.TXT
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe zip
 USE_PHP=	mysql
 NO_BUILD=	yes

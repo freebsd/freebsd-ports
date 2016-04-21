@@ -10,6 +10,8 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for collecting and analyzing calls from different PBX models
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	EXAMPLES LIBWRAP WWW WWWGD DOCS
 OPTIONS_DEFAULT=	LIBWRAP MYSQL WWW WWWGD
 OPTIONS_MULTI=	DB

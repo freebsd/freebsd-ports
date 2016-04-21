@@ -11,6 +11,8 @@ COMMENT=	Drivers and tools for Meinberg PTP/GPS cards
 
 LICENSE=	BSD
 
+BROKEN_powerpc64=	Does not build
+
 USE_RC_SUBR=	mbgsvcd
 
 USES=		kmod uidfix

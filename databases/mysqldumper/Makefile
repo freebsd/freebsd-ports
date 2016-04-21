@@ -12,6 +12,8 @@ COMMENT=	Tool for backing up MySQL databases
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 RUN_DEPENDS=	p5-DBI>=1.48:databases/p5-DBI
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD

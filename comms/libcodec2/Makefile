@@ -12,6 +12,8 @@ COMMENT=	Codec 2 speech codec
 
 LICENSE=	LGPL21
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 
 USE_LDCONFIG=	yes

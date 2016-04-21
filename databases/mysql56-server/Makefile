@@ -11,6 +11,8 @@ PKGNAMESUFFIX?=	56-server
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+BROKEN_powerpc64=	Does not build
+
 SLAVEDIRS=	databases/mysql56-client
 USES=		cmake shebangfix
 

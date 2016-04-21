@@ -13,6 +13,8 @@ COMMENT=	PECL extension to create and decode MIME messages
 
 LICENSE=	PHP202
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:tgz
 USE_PHP=	mbstring
 USE_PHPIZE=	yes

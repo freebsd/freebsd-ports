@@ -13,6 +13,8 @@ COMMENT=	OpenVAS libraries
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libhiredis.so:databases/hiredis \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libnetsnmp.so:net-mgmt/net-snmp \

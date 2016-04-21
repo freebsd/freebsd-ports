@@ -15,6 +15,8 @@ COMMENT=	Powerful IRC daemon, based on ircd-ratbox
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 CONFLICTS=	ircd-ratbox-[0-9]* ircd-ratbox-devel-[0-9]* \
 		nefarious-[0-9]* ircd-hybrid-[0-9]* \
 		ptlink-ircd-[0-9]* bnc-[0-9]* \

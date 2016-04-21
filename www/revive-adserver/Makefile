@@ -13,6 +13,8 @@ COMMENT=	Free, opensource ad server in PHP
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	Does not build
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 SUB_LIST+=	PKGNAME=${PKGNAME}

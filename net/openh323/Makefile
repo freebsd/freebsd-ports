@@ -13,6 +13,8 @@ DIST_SUBDIR=	openh323
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing library
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libpt_r.so:devel/pwlib
 
 CONFLICTS=	h323plus-1.*

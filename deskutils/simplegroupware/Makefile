@@ -11,6 +11,8 @@ DISTNAME=	SimpleGroupware_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Groupware is an open source enterprise application
 
+BROKEN_powerpc64=	Does not build
+
 NO_BUILD=	yes
 USE_APACHE_RUN=	22
 USE_MYSQL=	yes

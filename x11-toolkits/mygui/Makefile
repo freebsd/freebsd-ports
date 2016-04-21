@@ -13,6 +13,8 @@ COMMENT?=	Fast, simple and flexible GUI system for games and 3D applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.MIT
 
+BROKEN_powerpc64=	Does not build
+
 .if !defined(MASTERDIR)
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libOIS.so:devel/ois

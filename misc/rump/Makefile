@@ -12,6 +12,8 @@ COMMENT=	Virtualized NetBSD kernel components in userspace
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 USE_LDCONFIG=	yes
 USE_GCC=	any
 

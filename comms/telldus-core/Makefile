@@ -12,6 +12,8 @@ COMMENT=	Tellstick Telldus daemon + library
 
 LICENSE=	LGPL21
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libftdi.so:devel/libftdi \
 		libconfuse.so:devel/libconfuse \

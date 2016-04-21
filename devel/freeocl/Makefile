@@ -13,6 +13,8 @@ COMMENT=	Free Open Computing Language (OpenCL) implementation for CPU
 
 LICENSE=	LGPL3
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops \
 		${LOCALBASE}/include/CL/opencl.h:devel/opencl
 
