@@ -13,17 +13,7 @@ COMMENT=	Extension to the Tk toolkit
 
 WRKSRC=		${WRKDIR}/Tix${DISTVERSION}
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USES=		tk
-CONFIGURE_ARGS=	--enable-shared --enable-sam \
-		--with-tclconfig="${TCL_LIBDIR}" \
-		--with-tkconfig="${TK_LIBDIR}" \
-		--with-tclinclude="${TCL_INCLUDEDIR}" \
-		--with-tkinclude="${TK_INCLUDEDIR}" \
-		--prefix=${PREFIX} \
-		--exec-prefix=${PREFIX}
-# this should probably be added to bsd.port.mk
-CONFIGURE_ENV=	PREFIX=${PREFIX}
+USES=		tk:tea
 
 TIX_LIB=	libTix${PORTVERSION}.so
 TIX_LIB_FILE=	${TIX_LIB}.0

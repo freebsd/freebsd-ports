@@ -14,12 +14,8 @@ COMMENT=	Iwidgets - [incr Widgets] companion to [incr Tk]
 LIB_DEPENDS=	libitk.so:x11-toolkits/itk
 
 NO_BUILD=	yes
-HAS_CONFIGURE=	yes
-USES=		tk
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR} \
-		--with-itcl=${LOCALBASE}
+USES=		tk:tea
+CONFIGURE_ARGS=	--with-itcl=${LOCALBASE}
 SUB_LIST=	IWIDGETS=${DISTNAME}
 SUB_FILES=	pkg-message
 PLIST_SUB=	IWIDGETS=${DISTNAME}
