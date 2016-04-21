@@ -1,4 +1,4 @@
---- src/InstallServer.sh.orig	2015-06-10 15:38:32 UTC
+--- src/InstallServer.sh.orig	2015-10-12 21:21:06 UTC
 +++ src/InstallServer.sh
 @@ -44,13 +44,13 @@ fi
  
@@ -21,7 +21,7 @@
  
  elif [ "$UNAME" = "SunOS" ]; then
      grep "^${USER_REM}" /etc/passwd > /dev/null 2>&1
-@@ -121,63 +121,47 @@ for i in ${subdirs}; do
+@@ -121,66 +121,49 @@ for i in ${subdirs}; do
  done
  
  # Default for all directories
@@ -70,6 +70,10 @@
  chmod -R 750 ${DIR}/queue/agentless
  chmod 740 ${DIR}/queue/agentless/* > /dev/null 2>&1
  
+-chown -R root:${GROUP} ${DIR}/tmp
+-chmod 1550 ${DIR}/tmp
++chmod 1750 ${DIR}/tmp
+ 
  
  # For the stats directory
 -chown -R ${USER}:${GROUP} ${DIR}/stats
@@ -87,7 +91,7 @@
  chmod 660 ${DIR}/logs/active-responses.log
  
  # For the rules directory
-@@ -195,7 +179,7 @@ if [ $? = 0 ]; then
+@@ -198,7 +181,7 @@ if [ $? = 0 ]; then
      fi    
  fi
      
@@ -96,7 +100,7 @@
  find ${DIR}/rules/ -type f -exec chmod 440 {} \;
  
  # If the local_rules is saved, moved it back
-@@ -204,37 +188,33 @@ if [ $? = 0 ]; then
+@@ -207,37 +190,33 @@ if [ $? = 0 ]; then
      mv ${DIR}/rules/saved_local_rules.xml.$$ ${DIR}/rules/local_rules.xml
  fi    
  
@@ -138,7 +142,7 @@
  
  # Moving the binary files
  cp -pr addagent/manage_agents agentlessd/ossec-agentlessd \
-@@ -257,7 +237,6 @@ cp -pr util/rootcheck_control ${DIR}/bin
+@@ -260,7 +239,6 @@ cp -pr util/rootcheck_control ${DIR}/bin
  cp -pr external/lua/src/ossec-lua ${DIR}/bin/
  cp -pr external/lua/src/ossec-luac ${DIR}/bin/
  cp -pr ../contrib/util.sh ${DIR}/bin/
@@ -146,7 +150,7 @@
  chmod +x ${DIR}/bin/util.sh
  
  # Local install chosen
-@@ -287,23 +266,15 @@ fi
+@@ -290,23 +268,15 @@ fi
    
  cp -pr ../etc/internal_options.conf ${DIR}/etc/
  cp -pr rootcheck/db/*.txt ${DIR}/etc/shared/
@@ -172,7 +176,7 @@
  rm ${DIR}/etc/shared/merged.mg >/dev/null 2>&1
  chmod 700 ${DIR}/.ssh
  
-@@ -313,11 +284,9 @@ sh ./init/fw-check.sh execute > /dev/nul
+@@ -316,11 +286,9 @@ sh ./init/fw-check.sh execute > /dev/nul
  cp -p ../active-response/*.sh ${DIR}/active-response/bin/
  cp -p ../active-response/firewalls/*.sh ${DIR}/active-response/bin/
  
@@ -186,7 +190,7 @@
  
  
  # Moving the config file
-@@ -328,12 +297,11 @@ fi
+@@ -331,12 +299,11 @@ fi
  
  ls ../etc/ossec.mc > /dev/null 2>&1
  if [ $? = 0 ]; then
