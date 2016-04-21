@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysadm-client
-PORTVERSION=	1460580653
+PORTVERSION=	1461260803
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -18,7 +18,7 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
 GH_PROJECT=	sysadm-ui-qt
-GH_TAGNAME=	c35622e4dd18e92ee9d4a737f3c187720c8e6cd7
+GH_TAGNAME=	420782ddfe881bdbef7f6d7a4c5d2959f8deb913
 
 .include <bsd.port.pre.mk>
 
