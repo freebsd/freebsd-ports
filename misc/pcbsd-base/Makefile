@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
 		${LOCALBASE}/bin/lpreserver:sysutils/life-preserver \
 		${LOCALBASE}/bin/git:devel/git \
 		${LOCALBASE}/sbin/beadm:sysutils/beadm \
+		${LOCALBASE}/sbin/anacron:sysutils/anacron \
 		${LOCALBASE}/bin/xv:graphics/xv \
 		${LOCALBASE}/etc/rc.d/fail2ban:security/py-fail2ban \
 		${LOCALBASE}/bin/zip:archivers/zip \
@@ -37,7 +38,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
 		${LOCALBASE}/bin/unrar:archivers/unrar \
 		${LOCALBASE}/bin/7z:archivers/p7zip \
 		${LOCALBASE}/bin/avahi-browse:net/avahi-app \
-		${LOCALBASE}/bin/anacron:sysutils/anacron \
 		${LOCALBASE}/bin/gsmartcontrol:sysutils/gsmartcontrol \
 		${LOCALBASE}/bin/xsane:graphics/xsane \
 		${LOCALBASE}/bin/rdesktop:net/rdesktop \
