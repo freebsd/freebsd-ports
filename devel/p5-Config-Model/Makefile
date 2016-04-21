@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.082
+PORTVERSION=	2.083
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Carp-Assert-More>=0:devel/p5-Carp-Assert-More \
-		p5-Exception-Class>=0:devel/p5-Exception-Class \
 		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
-		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Hash-Merge>=0.12:textproc/p5-Hash-Merge \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
@@ -29,15 +27,15 @@ BUILD_DEPENDS=	p5-Carp-Assert-More>=0:devel/p5-Carp-Assert-More \
 		p5-Pod-POM>=0:textproc/p5-Pod-POM \
 		p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl \
 		p5-Text-Diff>=0:textproc/p5-Text-Diff \
-		p5-Text-Levenshtein-Damerau>=0:devel/p5-Text-Levenshtein-Damerau \
-		p5-YAML>=0.30.3:textproc/p5-YAML
+		p5-Text-Levenshtein-Damerau>=0:devel/p5-Text-Levenshtein-Damerau
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Config-Model-Tester>=2.046:devel/p5-Config-Model-Tester \
+TEST_DEPENDS=	p5-Config-Model-Tester>=2.053:devel/p5-Config-Model-Tester \
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-File-Contents>=0:devel/p5-Test-File-Contents \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
-		p5-Test-Warn>=0:devel/p5-Test-Warn
+		p5-Test-Warn>=0.11:devel/p5-Test-Warn \
+		p5-YAML>=0.30.3:textproc/p5-YAML
 
 NO_ARCH=	yes
 USES=		perl5
