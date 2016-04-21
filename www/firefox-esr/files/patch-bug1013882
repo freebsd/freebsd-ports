@@ -2,7 +2,7 @@ diff --git b2g/installer/Makefile.in b2g/installer/Makefile.in
 index 754312a..c69904c 100644
 --- b2g/installer/Makefile.in
 +++ b2g/installer/Makefile.in
-@@ -63,6 +63,10 @@ ifneq (,$(filter rtsp,$(NECKO_PROTOCOLS)))
+@@ -101,6 +101,10 @@ ifneq (,$(filter rtsp,$(NECKO_PROTOCOLS)
  DEFINES += -DMOZ_RTSP
  endif
  
@@ -10,21 +10,21 @@ index 754312a..c69904c 100644
 +DEFINES += -DMOZ_DEBUG=1
 +endif
 +
- ifdef GKMEDIAS_SHARED_LIBRARY
- DEFINES += -DGKMEDIAS_SHARED_LIBRARY
- endif
+ DEFINES += -DMOZ_ICU_VERSION=$(MOZ_ICU_VERSION)
+ ifdef MOZ_NATIVE_ICU
+ DEFINES += -DMOZ_NATIVE_ICU
 diff --git b2g/installer/package-manifest.in b2g/installer/package-manifest.in
 index 17d433c..0416187 100644
 --- b2g/installer/package-manifest.in
 +++ b2g/installer/package-manifest.in
-@@ -576,7 +576,7 @@
- @BINPATH@/components/MozKeyboard.js
- @BINPATH@/components/InputMethod.manifest
+@@ -660,7 +660,7 @@
+ @RESPATH@/components/EngineeringModeAPI.js
+ @RESPATH@/components/EngineeringModeService.js
  
 -#ifdef MOZ_DEBUG
 +#if defined(ENABLE_TESTS) && defined(MOZ_DEBUG)
- @BINPATH@/components/TestInterfaceJS.js
- @BINPATH@/components/TestInterfaceJS.manifest
+ @RESPATH@/components/TestInterfaceJS.js
+ @RESPATH@/components/TestInterfaceJS.manifest
  #endif
 diff --git browser/installer/package-manifest.in browser/installer/package-manifest.in
 index b509fd4..195345c 100644
