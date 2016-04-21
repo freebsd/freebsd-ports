@@ -106,12 +106,12 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
 INNODB_CMAKE_OFF=	-DWITHOUT_INNOBASE=1
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 MROONGA_CMAKE_OFF=	-DWITHOUT_MROONGA=1
-OQGRAPH_CMAKE_OFF=	-DWITHOUT_OQGRAPH=1
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 # Currently OQGraph does not build using clang.
 # See See https://mariadb.atlassian.net/browse/MDEV-8051.
-OQGRPAH_USE=		gcc
+OQGRAPH_USE=		gcc
+OQGRAPH_BROKEN=		does not build
 
 post-install:
 	# Remove programs to avoid conflict with mariadb100-client
@@ -135,6 +135,9 @@ CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
 .if ${ARCH} == 'i386' && ${OSVERSION} >= 1001000
 USE_GCC=	yes
 .endif
+
+post-extract-OQGRAPH-off:
+	@${RM} -rf ${WRKSRC}/storage/oqgraph
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
