@@ -16,15 +16,7 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES+=		tk tar:tgz
-GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR} \
-		--with-tkinclude=${TK_INCLUDEDIR} \
-		--exec-prefix=${PREFIX} \
-		--enable-shared
+USES=		tk:tea tar:tgz
 
 TKPKG=		${PORTNAME}${PORTVERSION}
 PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG} TKLIBVER=${TKLIBVER}
