@@ -212,7 +212,7 @@ CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
 		--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}
 .  if ${_TCLTK_PORT} == "tk"
-CONFIGURE_ARGS+=--with-tk=${TK_LIBDIR}
+CONFIGURE_ARGS+=--with-tk=${TK_LIBDIR} --with-tkinclude=${TK_INCLUDEDIR}
 .  endif
 .endif
 

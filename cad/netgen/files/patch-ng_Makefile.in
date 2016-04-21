@@ -1,5 +1,14 @@
 --- ng/Makefile.in.orig	2014-10-06 11:04:37 UTC
 +++ ng/Makefile.in
+@@ -303,7 +303,7 @@ include_HEADERS = 
+ AM_CPPFLAGS = -I$(top_srcdir)/libsrc/include \
+ 	-I$(top_srcdir)/libsrc/interface -DOPENGL \
+ 	-D$(TOGL_WINDOWINGSYSTEM) $(TCL_INCLUDES) $(MPI_INCLUDES) \
+-	$(FFMPEG_INCLUDES) $(JPEGLIB_INCLUDES) $(am__append_1)
++	$(FFMPEG_INCLUDES) $(JPEGLIB_INCLUDES) $(TK_INCLUDES) $(am__append_1)
+ netgen_SOURCES = demoview.cpp ngappinit.cpp onetcl.cpp parallelfunc.cpp ngpkg.cpp demoview.hpp parallelfunc.hpp togl_1_7.h
+ @NGMKL_TRUE@MKL_LIBS = -L$(MKLROOT)/lib/intel64  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lmkl_def
+ # -lpardiso500-GNU472-X86-64 -lgfortran
 @@ -312,7 +312,7 @@ netgen_LDADD = $(top_builddir)/libsrc/vi
  	$(top_builddir)/libsrc/csg/libcsg.la \
  	$(top_builddir)/libsrc/interface/libinterface.la \
