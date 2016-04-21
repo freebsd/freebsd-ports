@@ -48,10 +48,6 @@
 %%PORTNAME%%/etc/shared/cis_debian_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel5_linux_rcl.txt
-@owner ossec
-@mode 660
-%%PORTNAME%%/logs/active-responses.log
-%%PORTNAME%%/logs/ossec.log
 @owner
 @group
 @mode
@@ -116,6 +112,8 @@
 %%PORTNAME%%/rules/web_rules.xml
 %%PORTNAME%%/rules/wordpress_rules.xml
 %%PORTNAME%%/rules/zeus_rules.xml
+@owner root
+@group ossec
 %%PORTNAME%%/agentless/main.exp
 %%PORTNAME%%/agentless/register_host.sh
 %%PORTNAME%%/agentless/ssh.exp
@@ -128,8 +126,6 @@
 %%PORTNAME%%/agentless/ssh_pixconfig_diff
 %%PORTNAME%%/agentless/sshlogin.exp
 %%PORTNAME%%/agentless/su.exp
-@owner root
-@group ossec
 @mode 550
 @dir %%PORTNAME%%/.ssh
 @dir %%PORTNAME%%/active-response/bin
