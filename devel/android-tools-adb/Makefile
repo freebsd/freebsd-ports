@@ -73,7 +73,7 @@ post-patch:
 	fi
 # XXX Hidden by poudriere/tinderbox, see lindev(4) for FreeBSD < 11.0
 	@if [ ! -e /dev/full ]; then \
-		${REINPLACE_CMD} -e '/^TEST/s/[^ ]*ENOSPC/DISABLED_&/' \
+		${REINPLACE_CMD} -e '/TEST/s/[^ ]*ENOSPC/DISABLED_&/' \
 			${WRKSRC}/adb/adb_io_test.cpp; \
 	fi
 
