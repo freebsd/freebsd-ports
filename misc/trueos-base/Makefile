@@ -16,13 +16,12 @@ COMMENT=	PC-BSD / TrueOS Command-Line Utilities
 RUN_DEPENDS=	${LOCALBASE}/bin/pc-updatemanager:sysutils/pcbsd-utils \
 		${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh \
 		${LOCALBASE}/bin/lpreserver:sysutils/life-preserver \
-		${LOCALBASE}/bin/beadm:sysutils/beadm \
+		${LOCALBASE}/sbin/beadm:sysutils/beadm \
 		${LOCALBASE}/bin/sudo:security/sudo \
 		${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/bin/zsh:shells/zsh \
 		${LOCALBASE}/bin/rsync:net/rsync \
 		${LOCALBASE}/bin/smartd:sysutils/smartmontools \
-		${LOCALBASE}/bin/jailme:sysutils/jailme \
 		${LOCALBASE}/bin/screen:sysutils/screen \
 		${LOCALBASE}/bin/tmux:sysutils/tmux \
 		${LOCALBASE}/bin/nano:editors/nano \

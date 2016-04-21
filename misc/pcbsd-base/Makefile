@@ -10,13 +10,13 @@ DISTFILES=
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Base system packages
 
-RUN_DEPENDS=	${LOCALBASE}/bin/pc-updategui:sysutils/pcbsd-utils-qt5 \
+RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
 		${LOCALBASE}/bin/pc-updatemanager:sysutils/pcbsd-utils \
                 ${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh \
 		${LOCALBASE}/bin/sysadm-binary:sysutils/sysadm \
 		${LOCALBASE}/bin/lpreserver:sysutils/life-preserver \
 		${LOCALBASE}/bin/git:devel/git \
-		${LOCALBASE}/bin/beadm:sysutils/beadm \
+		${LOCALBASE}/sbin/beadm:sysutils/beadm \
 		${LOCALBASE}/bin/xv:graphics/xv \
 		${LOCALBASE}/etc/rc.d/fail2ban:security/py-fail2ban \
 		${LOCALBASE}/bin/zip:archivers/zip \
