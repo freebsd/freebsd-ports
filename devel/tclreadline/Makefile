@@ -11,6 +11,7 @@ MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GNU readline for TCL
 
 USES=		libtool tcl:tea readline
+CONFIGURE_ARGS=	--with-tcl-includes=${TCL_INCLUDEDIR}
 USE_LDCONFIG=	yes
 TCL_PKG=	${PORTNAME}${PORTVERSION}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
