@@ -1,100 +1,101 @@
 # Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
 
+# this is sorted on the name of the xpi files, not the option name
 OPTIONS_DEFINE=	LANG_ACH \
 		LANG_AF \
 		LANG_AN \
-		LANG_SQ \
 		LANG_AR \
 		LANG_AS \
-		LANG_AM \
 		LANG_AST \
 		LANG_AZ \
-		LANG_EU \
-		LANG_BN \
-		LANG_BB \
-		LANG_BS \
-		LANG_BR \
-		LANG_BG \
 		LANG_BE \
+		LANG_BG \
+		LANG_BB \
+		LANG_BN \
+		LANG_BR \
+		LANG_BS \
 		LANG_CA \
-		LANG_CN \
 		LANG_CS \
+		LANG_CY \
 		LANG_DA \
-		LANG_NL \
-		LANG_GB \
-		LANG_US \
-		LANG_EO \
-		LANG_ET \
-		LANG_GL \
 		LANG_DE \
 		LANG_DSB \
 		LANG_EL \
-		LANG_GU \
+		LANG_GB \
+		LANG_US \
+		LANG_ZA \
+		LANG_EO \
+		LANG_SA \
+		LANG_SC \
+		LANG_ES \
+		LANG_SM \
+		LANG_ET \
+		LANG_EU \
+		LANG_FA \
 		LANG_FF \
 		LANG_FI \
 		LANG_FR \
 		LANG_FY \
 		LANG_GA \
 		LANG_GD \
+		LANG_GL \
+		LANG_GN \
+		LANG_GU \
 		LANG_HE \
 		LANG_HI \
 		LANG_HR \
 		LANG_HSB \
 		LANG_HU \
-		LANG_IS \
+		LANG_AM \
 		LANG_ID \
+		LANG_IS \
 		LANG_IT \
 		LANG_JA \
-		LANG_KN \
 		LANG_KK \
 		LANG_KM \
+		LANG_KN \
 		LANG_KO \
-		LANG_LV \
-		LANG_LT \
 		LANG_LIJ \
-		LANG_MK \
+		LANG_LT \
+		LANG_LV \
 		LANG_MAI \
+		LANG_MK \
 		LANG_ML \
 		LANG_MR \
-		LANG_MN \
 		LANG_MS \
 		LANG_NB \
+		LANG_NL \
 		LANG_NN \
 		LANG_OR \
-		LANG_FA \
-		LANG_PL \
-		LANG_PT \
-		LANG_PBR\
 		LANG_PA \
-		LANG_RO \
+		LANG_PL \
+		LANG_PBR\
+		LANG_PT \
 		LANG_RM \
+		LANG_RO \
 		LANG_RU \
-		LANG_SR \
 		LANG_SI \
-		LANG_ES \
-		LANG_SON \
-		LANG_SA \
-		LANG_SC \
-		LANG_SM \
 		LANG_SK \
 		LANG_SL \
+		LANG_SON \
+		LANG_SQ \
+		LANG_SR \
 		LANG_SV \
-		LANG_TW \
 		LANG_TA \
 		LANG_TE \
 		LANG_TH \
 		LANG_TR \
 		LANG_UK \
+		LANG_UZ \
 		LANG_VI \
-		LANG_CY \
 		LANG_XH \
-		LANG_ZA \
-		LANG_ZU
+		LANG_CN \
+		LANG_TW
 
 OPTIONS_DEFAULT=LANG_AR LANG_BN LANG_BR LANG_CN LANG_ET LANG_DE LANG_FR \
 		LANG_HI LANG_ID LANG_IT LANG_JA LANG_KO LANG_MK LANG_MR \
-		LANG_MN LANG_PBR LANG_PA LANG_RU LANG_ES LANG_SON LANG_TE
+		LANG_PBR LANG_PA LANG_RU LANG_ES LANG_SON LANG_TE
 
 LANG_ACH_DESC?=	Acholi language support
 LANG_AN_DESC?=	Aragonese language support
@@ -103,9 +104,11 @@ LANG_AZ_DESC?=	Azerbaijani language support
 LANG_CSB_DESC?=	Kashubian language support
 LANG_DSB_DESC?=	Lower Sorbian language support
 LANG_FF_DESC?=	Fulah language support
+LANG_GN_DESC?=	Guarani (Paraguay) language support
 LANG_HSB_DESC?=	Upper Sorbian language support
 LANG_KM_DESC?=	Khmer language support
 LANG_LIJ_DESC?=	Ligurian (Genoa) language support
 LANG_MS_DESC?=	Malay language support
 LANG_SW_DESC?=	Swahili language support
+LANG_UZ_DESC?=  Uzbek language support
 LANG_XH_DESC?=	Xhosa language support
