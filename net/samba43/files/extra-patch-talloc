@@ -1,0 +1,431 @@
+From 6108281171db83394a0a814b5f272c5afb9c4f51 Mon Sep 17 00:00:00 2001
+From: Andrew Bartlett <abartlet@samba.org>
+Date: Tue, 22 Sep 2015 15:25:30 +1200
+Subject: [PATCH 1/3] pydsdb: Also accept ldb.MessageElement values to dsdb
+ routines
+
+This shows the correct way to accept a value that may be a list of strings
+or a proper ldb.MessageElement.
+
+Andrew Bartlett
+
+Signed-off-by: Andrew Bartlett <abartlet@samba.org>
+Reviewed-by: Garming Sam <garming@catalyst.net.nz>
+(cherry picked from commit b48776d78b446ad4abd4a6bc2ba6b488a29b11d2)
+---
+ python/samba/dbchecker.py |   4 +-
+ source4/dsdb/pydsdb.c	   | 113 +++++++++++++++++++++++++---------------------
+ 2 files changed, 63 insertions(+), 54 deletions(-)
+
+diff --git a/python/samba/dbchecker.py b/python/samba/dbchecker.py
+index 4fb9d12..69b4c61 100644
+--- a/python/samba/dbchecker.py
++++ b/python/samba/dbchecker.py
+@@ -1286,8 +1286,8 @@ newSuperior: %s""" % (str(from_dn), str(to_rdn), str(to_base)))
+                 continue
+ 
+             if str(attrname).lower() == 'objectclass':
+-                normalised = self.samdb.dsdb_normalise_attributes(self.samdb_schema, attrname, list(obj[attrname]))
+-                if list(normalised) != list(obj[attrname]):
++                normalised = self.samdb.dsdb_normalise_attributes(self.samdb_schema, attrname, obj[attrname])
++                if normalised != obj[attrname]:
+                     self.err_normalise_mismatch_replace(dn, attrname, list(obj[attrname]))
+                     error_count += 1
+                 continue
+diff --git a/source4/dsdb/pydsdb.c b/source4/dsdb/pydsdb.c
+index 9a3b509..4d38c4a 100644
+--- a/source4/dsdb/pydsdb.c
++++ b/source4/dsdb/pydsdb.c
+@@ -529,11 +529,6 @@ static PyObject *py_dsdb_DsReplicaAttribute(PyObject *self, PyObject *args)
+
+	PyErr_LDB_OR_RAISE(py_ldb, ldb);
+
+-	if (!PyList_Check(el_list)) {
+-		PyErr_Format(PyExc_TypeError, "ldif_elements must be a list");
+-		return NULL;
+-	}
+-
+	schema = dsdb_get_schema(ldb, NULL);
+	if (!schema) {
+		PyErr_SetString(PyExc_RuntimeError, "Failed to find a schema from ldb");
+@@ -555,32 +550,42 @@ static PyObject *py_dsdb_DsReplicaAttribute(PyObject *self, PyObject *args)
+		return NULL;
+	}
+
+-	el = talloc_zero(tmp_ctx, struct ldb_message_element);
+-	if (el == NULL) {
+-		PyErr_NoMemory();
+-		talloc_free(tmp_ctx);
+-		return NULL;
+-	}
+-
+-	el->name = ldap_display_name;
+-	el->num_values = PyList_Size(el_list);
++	/* If we were not given an LdbMessageElement */
++	if (!PyList_Check(el_list)) {
++		if (!py_check_dcerpc_type(el_list, "ldb", "MessageElement")) {
++			PyErr_SetString(py_ldb_get_exception(),
++					"list of strings or ldb MessageElement object required");
++			return NULL;
++		}
++		el = pyldb_MessageElement_AsMessageElement(el_list);
++	} else {
++		el = talloc_zero(tmp_ctx, struct ldb_message_element);
++		if (el == NULL) {
++			PyErr_NoMemory();
++			talloc_free(tmp_ctx);
++			return NULL;
++		}
+
+-	el->values = talloc_array(el, struct ldb_val, el->num_values);
+-	if (el->values == NULL) {
+-		PyErr_NoMemory();
+-		talloc_free(tmp_ctx);
+-		return NULL;
+-	}
++		el->name = ldap_display_name;
++		el->num_values = PyList_Size(el_list);
+
+-	for (i = 0; i < el->num_values; i++) {
+-		PyObject *item = PyList_GetItem(el_list, i);
+-		if (!PyString_Check(item)) {
+-			PyErr_Format(PyExc_TypeError, "ldif_elements should be strings");
++		el->values = talloc_array(el, struct ldb_val, el->num_values);
++		if (el->values == NULL) {
++			PyErr_NoMemory();
+			talloc_free(tmp_ctx);
+			return NULL;
+		}
+-		el->values[i].data = (uint8_t *)PyString_AsString(item);
+-		el->values[i].length = PyString_Size(item);
++
++		for (i = 0; i < el->num_values; i++) {
++			PyObject *item = PyList_GetItem(el_list, i);
++			if (!PyString_Check(item)) {
++				PyErr_Format(PyExc_TypeError, "ldif_elements should be strings");
++				talloc_free(tmp_ctx);
++				return NULL;
++			}
++			el->values[i].data = (uint8_t *)PyString_AsString(item);
++			el->values[i].length = PyString_Size(item);
++		}
+	}
+
+	attr = talloc_zero(tmp_ctx, struct drsuapi_DsReplicaAttribute);
+@@ -624,11 +629,6 @@ static PyObject *py_dsdb_normalise_attributes(PyObject *self, PyObject *args)
+
+	PyErr_LDB_OR_RAISE(py_ldb, ldb);
+
+-	if (!PyList_Check(el_list)) {
+-		PyErr_Format(PyExc_TypeError, "ldif_elements must be a list");
+-		return NULL;
+-	}
+-
+	schema = dsdb_get_schema(ldb, NULL);
+	if (!schema) {
+		PyErr_SetString(PyExc_RuntimeError, "Failed to find a schema from ldb");
+@@ -650,32 +650,41 @@ static PyObject *py_dsdb_normalise_attributes(PyObject *self, PyObject *args)
+		return NULL;
+	}
+
+-	el = talloc_zero(tmp_ctx, struct ldb_message_element);
+-	if (el == NULL) {
+-		PyErr_NoMemory();
+-		talloc_free(tmp_ctx);
+-		return NULL;
+-	}
+-
+-	el->name = ldap_display_name;
+-	el->num_values = PyList_Size(el_list);
++	if (!PyList_Check(el_list)) {
++		if (!py_check_dcerpc_type(el_list, "ldb", "MessageElement")) {
++			PyErr_SetString(py_ldb_get_exception(),
++					"list of strings or ldb MessageElement object required");
++			return NULL;
++		}
++		el = pyldb_MessageElement_AsMessageElement(el_list);
++	} else {
++		el = talloc_zero(tmp_ctx, struct ldb_message_element);
++		if (el == NULL) {
++			PyErr_NoMemory();
++			talloc_free(tmp_ctx);
++			return NULL;
++		}
+
+-	el->values = talloc_array(el, struct ldb_val, el->num_values);
+-	if (el->values == NULL) {
+-		PyErr_NoMemory();
+-		talloc_free(tmp_ctx);
+-		return NULL;
+-	}
++		el->name = ldap_display_name;
++		el->num_values = PyList_Size(el_list);
+
+-	for (i = 0; i < el->num_values; i++) {
+-		PyObject *item = PyList_GetItem(el_list, i);
+-		if (!PyString_Check(item)) {
+-			PyErr_Format(PyExc_TypeError, "ldif_elements should be strings");
++		el->values = talloc_array(el, struct ldb_val, el->num_values);
++		if (el->values == NULL) {
++			PyErr_NoMemory();
+			talloc_free(tmp_ctx);
+			return NULL;
+		}
+-		el->values[i].data = (uint8_t *)PyString_AsString(item);
+-		el->values[i].length = PyString_Size(item);
++
++		for (i = 0; i < el->num_values; i++) {
++			PyObject *item = PyList_GetItem(el_list, i);
++			if (!PyString_Check(item)) {
++				PyErr_Format(PyExc_TypeError, "ldif_elements should be strings");
++				talloc_free(tmp_ctx);
++				return NULL;
++			}
++			el->values[i].data = (uint8_t *)PyString_AsString(item);
++			el->values[i].length = PyString_Size(item);
++		}
+	}
+
+	/* Normalise "objectClass" attribute if needed */
+--
+1.9.1
+
+From 34f741104e4212fb28d9fc06f60c0503e02fb556 Mon Sep 17 00:00:00 2001
+From: Andrew Bartlett <abartlet@samba.org>
+Date: Mon, 4 Jan 2016 13:23:50 +1300
+Subject: [PATCH 2/3] python: Remove Python 2.4 support macros
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+We require Python 2.6
+
+Signed-off-by: Andrew Bartlett <abartlet@samba.org>
+Reviewed-by: Jelmer Vernoo <jelmer@samba.org>
+(cherry picked from commit 0e58705a5bc11a9556d0774f9cb2fbb3897839c8)
+---
+ source3/passdb/py_passdb.c | 7 -------
+ source4/auth/pyauth.c	    | 7 -------
+ source4/dsdb/pydsdb.c	    | 7 -------
+ source4/param/pyparam.c    | 6 ------
+ source4/web_server/wsgi.c  | 7 -------
+ 5 files changed, 34 deletions(-)
+
+diff --git a/source3/passdb/py_passdb.c b/source3/passdb/py_passdb.c
+index ca43f70..0d4ca3b 100644
+--- a/source3/passdb/py_passdb.c
++++ b/source3/passdb/py_passdb.c
+@@ -27,13 +27,6 @@
+ #include "secrets.h"
+ #include "idmap.h"
+
+-/* There's no Py_ssize_t in 2.4, apparently */
+-#if PY_MAJOR_VERSION == 2 && PY_MINOR_VERSION < 5
+-typedef int Py_ssize_t;
+-typedef inquiry lenfunc;
+-typedef intargfunc ssizeargfunc;
+-#endif
+-
+ #ifndef Py_TYPE /* Py_TYPE is only available on Python > 2.6 */
+ #define Py_TYPE(ob)		 (((PyObject*)(ob))->ob_type)
+ #endif
+diff --git a/source4/auth/pyauth.c b/source4/auth/pyauth.c
+index d79d417..37f19fa 100644
+--- a/source4/auth/pyauth.c
++++ b/source4/auth/pyauth.c
+@@ -36,13 +36,6 @@ void initauth(void);
+
+ staticforward PyTypeObject PyAuthContext;
+
+-/* There's no Py_ssize_t in 2.4, apparently */
+-#if PY_MAJOR_VERSION == 2 && PY_MINOR_VERSION < 5
+-typedef int Py_ssize_t;
+-typedef inquiry lenfunc;
+-typedef intargfunc ssizeargfunc;
+-#endif
+-
+ static PyObject *PyAuthSession_FromSession(struct auth_session_info *session)
+ {
+	return py_return_ndr_struct("samba.dcerpc.auth", "session_info", session, session);
+diff --git a/source4/dsdb/pydsdb.c b/source4/dsdb/pydsdb.c
+index 4d38c4a..ea30898 100644
+--- a/source4/dsdb/pydsdb.c
++++ b/source4/dsdb/pydsdb.c
+@@ -31,13 +31,6 @@
+
+ void initdsdb(void);
+
+-/* There's no Py_ssize_t in 2.4, apparently */
+-#if PY_MAJOR_VERSION == 2 && PY_MINOR_VERSION < 5
+-typedef int Py_ssize_t;
+-typedef inquiry lenfunc;
+-typedef intargfunc ssizeargfunc;
+-#endif
+-
+ /* FIXME: These should be in a header file somewhere */
+ #define PyErr_LDB_OR_RAISE(py_ldb, ldb) \
+	if (!py_check_dcerpc_type(py_ldb, "ldb", "Ldb")) { \
+diff --git a/source4/param/pyparam.c b/source4/param/pyparam.c
+index 14ffb2d..d1ba009 100644
+--- a/source4/param/pyparam.c
++++ b/source4/param/pyparam.c
+@@ -26,12 +26,6 @@
+
+ void initparam(void);
+
+-/* There's no Py_ssize_t in 2.4, apparently */
+-#if PY_MAJOR_VERSION == 2 && PY_MINOR_VERSION < 5
+-typedef int Py_ssize_t;
+-typedef inquiry lenfunc;
+-#endif
+-
+ #define PyLoadparmContext_AsLoadparmContext(obj) pytalloc_get_type(obj, struct loadparm_context)
+ #define PyLoadparmService_AsLoadparmService(obj) pytalloc_get_type(obj, struct loadparm_service)
+
+diff --git a/source4/web_server/wsgi.c b/source4/web_server/wsgi.c
+index f0e7bd5..0b1c5d2 100644
+--- a/source4/web_server/wsgi.c
++++ b/source4/web_server/wsgi.c
+@@ -28,13 +28,6 @@
+ #include "lib/tsocket/tsocket.h"
+ #include "python/modules.h"
+
+-/* There's no Py_ssize_t in 2.4, apparently */
+-#if PY_MAJOR_VERSION == 2 && PY_MINOR_VERSION < 5
+-typedef int Py_ssize_t;
+-typedef inquiry lenfunc;
+-typedef intargfunc ssizeargfunc;
+-#endif
+-
+ typedef struct {
+	PyObject_HEAD
+	struct websrv_context *web;
+--
+1.9.1
+
+From 259b7ff44095214e80615f5dad946f09b2d33f6f Mon Sep 17 00:00:00 2001
+From: Andrew Bartlett <abartlet@samba.org>
+Date: Tue, 16 Feb 2016 15:15:44 +1300
+Subject: [PATCH 3/3] pydsdb: Fix returning of ldb.MessageElement.
+
+This object is not based on pytalloc_Object and so this causes
+a segfault (later a failure) when the struct definitions diverge.
+We must also not reuse the incoming ldb_message_element as a talloc
+context and overwrite the values, instead we should create a new
+object and return that.
+
+Signed-off-by: Andrew Bartlett <abartlet@samba.org>
+Reviewed-by: Garming Sam <garming@catalyst.net.nz>
+(cherry picked from commit b96b1e88f760c92c7d9bb7e732f72d7e73a68907)
+---
+ source4/dsdb/pydsdb.c | 49 +++++++++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 43 insertions(+), 6 deletions(-)
+
+diff --git a/source4/dsdb/pydsdb.c b/source4/dsdb/pydsdb.c
+index ea30898..e6055d9 100644
+--- a/source4/dsdb/pydsdb.c
++++ b/source4/dsdb/pydsdb.c
+@@ -550,6 +550,11 @@ static PyObject *py_dsdb_DsReplicaAttribute(PyObject *self, PyObject *args)
+					"list of strings or ldb MessageElement object required");
+			return NULL;
+		}
++		/*
++		 * NOTE:
++		 * el may not be a valid talloc context, it
++		 * could be part of an array
++		 */
+		el = pyldb_MessageElement_AsMessageElement(el_list);
+	} else {
+		el = talloc_zero(tmp_ctx, struct ldb_message_element);
+@@ -604,17 +609,20 @@ static PyObject *py_dsdb_DsReplicaAttribute(PyObject *self, PyObject *args)
+  */
+ static PyObject *py_dsdb_normalise_attributes(PyObject *self, PyObject *args)
+ {
+-	PyObject *py_ldb, *el_list, *ret;
++	PyObject *py_ldb, *el_list, *py_ret;
+	struct ldb_context *ldb;
+	char *ldap_display_name;
+	const struct dsdb_attribute *a;
+	struct dsdb_schema *schema;
+	struct dsdb_syntax_ctx syntax_ctx;
+-	struct ldb_message_element *el;
++	struct ldb_message_element *el, *new_el;
+	struct drsuapi_DsReplicaAttribute *attr;
++	PyLdbMessageElementObject *ret;
+	TALLOC_CTX *tmp_ctx;
+	WERROR werr;
+	Py_ssize_t i;
++	PyTypeObject *py_type = NULL;
++	PyObject *module = NULL;
+
+	if (!PyArg_ParseTuple(args, "OsO", &py_ldb, &ldap_display_name, &el_list)) {
+		return NULL;
+@@ -649,6 +657,11 @@ static PyObject *py_dsdb_normalise_attributes(PyObject *self, PyObject *args)
+					"list of strings or ldb MessageElement object required");
+			return NULL;
+		}
++		/*
++		 * NOTE:
++		 * el may not be a valid talloc context, it
++		 * could be part of an array
++		 */
+		el = pyldb_MessageElement_AsMessageElement(el_list);
+	} else {
+		el = talloc_zero(tmp_ctx, struct ldb_message_element);
+@@ -680,10 +693,17 @@ static PyObject *py_dsdb_normalise_attributes(PyObject *self, PyObject *args)
+		}
+	}
+
++	new_el = talloc_zero(tmp_ctx, struct ldb_message_element);
++	if (new_el == NULL) {
++		PyErr_NoMemory();
++		talloc_free(tmp_ctx);
++		return NULL;
++	}
++
+	/* Normalise "objectClass" attribute if needed */
+	if (ldb_attr_cmp(a->lDAPDisplayName, "objectClass") == 0) {
+		int iret;
+-		iret = dsdb_sort_objectClass_attr(ldb, schema, el, tmp_ctx, el);
++		iret = dsdb_sort_objectClass_attr(ldb, schema, el, new_el, new_el);
+		if (iret != LDB_SUCCESS) {
+			PyErr_SetString(PyExc_RuntimeError, ldb_errstring(ldb));
+			talloc_free(tmp_ctx);
+@@ -706,14 +726,31 @@ static PyObject *py_dsdb_normalise_attributes(PyObject *self, PyObject *args)
+	PyErr_WERROR_NOT_OK_RAISE(werr);
+
+	/* now convert back again */
+-	werr = a->syntax->drsuapi_to_ldb(&syntax_ctx, a, attr, el, el);
++	werr = a->syntax->drsuapi_to_ldb(&syntax_ctx, a, attr, new_el, new_el);
+	PyErr_WERROR_NOT_OK_RAISE(werr);
+
+-	ret = py_return_ndr_struct("ldb", "MessageElement", el, el);
++	module = PyImport_ImportModule("ldb");
++	if (module == NULL) {
++		return NULL;
++	}
++
++	py_type = (PyTypeObject *)PyObject_GetAttrString(module, "MessageElement");
++	if (py_type == NULL) {
++		return NULL;
++	}
++	py_ret = py_type->tp_alloc(py_type, 0);
++	ret = (PyLdbMessageElementObject *)py_ret;
++
++	ret->mem_ctx = talloc_new(NULL);
++	if (talloc_reference(ret->mem_ctx, new_el) == NULL) {
++		PyErr_NoMemory();
++		return NULL;
++	}
++	ret->el = new_el;
+
+	talloc_free(tmp_ctx);
+
+-	return ret;
++	return py_ret;
+ }
+
+
+--
+1.9.1
+
