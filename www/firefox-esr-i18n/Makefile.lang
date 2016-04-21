@@ -3,11 +3,11 @@
 
 FIREFOX_I18N_ALL_=	ach af an ar as ast az be bg bn-BD bn-IN br bs ca cs	\
 			cy da de dsb el en-GB en-US en-ZA eo es-AR es-CL	\
-			es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl		\
+			es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl	gn	\
 			gu-IN he hi-IN hr hsb hu hy-AM id is it ja kk km	\
 			kn ko lij lt lv mai mk ml mr ms nb-NO nl nn-NO	\
 			or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq	\
-			sr sv-SE ta te th tr uk vi xh zh-CN zh-TW
+			sr sv-SE ta te th tr uk uz vi xh zh-CN zh-TW
 
 .if defined(FIREFOX_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 FIREFOX_I18N=   ${FIREFOX_I18N_ALL_}
@@ -56,9 +56,6 @@ FIREFOX_I18N+=  ca
 .endif
 .if ${PORT_OPTIONS:MLANG_CS}
 FIREFOX_I18N+=  cs
-.endif
-.if ${PORT_OPTIONS:MLANG_CSB}
-FIREFOX_I18N+=  csb
 .endif
 .if ${PORT_OPTIONS:MLANG_CY}
 FIREFOX_I18N+=  cy
@@ -129,6 +126,9 @@ FIREFOX_I18N+=  gd
 .if ${PORT_OPTIONS:MLANG_GL}
 FIREFOX_I18N+=  gl
 .endif
+.if ${PORT_OPTIONS:MLANG_GN}
+FIREFOX_I18N+=  gn
+.endif
 .if ${PORT_OPTIONS:MLANG_GU}
 FIREFOX_I18N+=  gu-IN
 .endif
@@ -173,9 +173,6 @@ FIREFOX_I18N+=  kn
 .endif
 .if ${PORT_OPTIONS:MLANG_KO}
 FIREFOX_I18N+=  ko
-.endif
-.if ${PORT_OPTIONS:MLANG_KU}
-FIREFOX_I18N+=  ku
 .endif
 .if ${PORT_OPTIONS:MLANG_LIJ}
 FIREFOX_I18N+=  lij
@@ -240,11 +237,11 @@ FIREFOX_I18N+=  si
 .if ${PORT_OPTIONS:MLANG_SK}
 FIREFOX_I18N+=  sk
 .endif
-.if ${PORT_OPTIONS:MLANG_SON}
-FIREFOX_I18N+=  son
-.endif
 .if ${PORT_OPTIONS:MLANG_SL}
 FIREFOX_I18N+=  sl
+.endif
+.if ${PORT_OPTIONS:MLANG_SON}
+FIREFOX_I18N+=  son
 .endif
 .if ${PORT_OPTIONS:MLANG_SQ}
 FIREFOX_I18N+=  sq
@@ -254,9 +251,6 @@ FIREFOX_I18N+=  sr
 .endif
 .if ${PORT_OPTIONS:MLANG_SV}
 FIREFOX_I18N+=  sv-SE
-.endif
-.if ${PORT_OPTIONS:MLANG_SW}
-FIREFOX_I18N+=  sw
 .endif
 .if ${PORT_OPTIONS:MLANG_TA}
 FIREFOX_I18N+=  ta
@@ -273,6 +267,9 @@ FIREFOX_I18N+=  tr
 .if ${PORT_OPTIONS:MLANG_UK}
 FIREFOX_I18N+=  uk
 .endif
+.if ${PORT_OPTIONS:MLANG_UZ}
+FIREFOX_I18N+=  uz
+.endif
 .if ${PORT_OPTIONS:MLANG_VI}
 FIREFOX_I18N+=  vi
 .endif
@@ -284,8 +281,5 @@ FIREFOX_I18N+=  zh-CN
 .endif
 .if ${PORT_OPTIONS:MLANG_TW}
 FIREFOX_I18N+=  zh-TW
-.endif
-.if ${PORT_OPTIONS:MLANG_ZU}
-FIREFOX_I18N+=  zu
 .endif
 .endif

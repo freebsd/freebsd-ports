@@ -17,10 +17,10 @@ diff --git config/system-headers config/system-headers
 index 55e4cd1..76567b3 100644
 --- config/system-headers
 +++ config/system-headers
-@@ -635,6 +635,7 @@ libgnomevfs/gnome-vfs-mime-handlers.h
- libgnomevfs/gnome-vfs-mime-utils.h
- libgnomevfs/gnome-vfs-ops.h
- libgnomevfs/gnome-vfs-standard-callbacks.h
+@@ -627,6 +627,7 @@ libgnome/libgnome.h
+ libgnomeui/gnome-icon-lookup.h
+ libgnomeui/gnome-icon-theme.h
+ libgnomeui/gnome-ui-init.h
 +libv4l2.h
  lib$routines.h
  limits
@@ -51,13 +51,13 @@ index b483cd1..f1dd1f0 100644
      # basic stuff for everything
      'include_internal_video_render': 0,
      'clang_use_chrome_plugins': 0,
-diff --git media/webrtc/signaling/test/moz.build media/webrtc/signaling/test/moz.build
+diff --git media/webrtc/signaling/test/common.build media/webrtc/signaling/test/common.build
 index b483cd1..f1dd1f0 100644
---- media/webrtc/signaling/test/moz.build
-+++ media/webrtc/signaling/test/moz.build
-@@ -122,6 +122,7 @@ if CONFIG['JS_SHARED_LIBRARY']:
-         'js',
-     ]
+--- media/webrtc/signaling/test/common.build
++++ media/webrtc/signaling/test/common.build
+@@ -99,6 +99,7 @@ if CONFIG['JS_SHARED_LIBRARY']:
+ 
+ USE_LIBS += ['mozglue']
  
 +OS_LIBS += CONFIG['MOZ_LIBV4L2_LIBS']
  OS_LIBS += CONFIG['MOZ_WEBRTC_X11_LIBS']
@@ -145,26 +145,26 @@ index d46b5aa..e452223 100644
    'targets': [
      {
        'target_name': 'video_capture_module',
-@@ -69,6 +72,19 @@
-             'linux/video_capture_linux.cc',
-             'linux/video_capture_linux.h',
-           ],
-+          'conditions': [
-+            ['use_libv4l2==1', {
-+              'defines': [
-+                'HAVE_LIBV4L2',
+@@ -75,6 +78,19 @@
+                 'linux/video_capture_linux.cc',
+                 'linux/video_capture_linux.h',
+               ],
++              'conditions': [
++                ['use_libv4l2==1', {
++                  'defines': [
++                    'HAVE_LIBV4L2',
++                  ],
++                  'cflags_mozilla': [
++                    '$(MOZ_LIBV4L2_CFLAGS)',
++                  ],
++                  'libraries': [
++                    '-lv4l2',
++                  ],
++                }],
 +              ],
-+              'cflags_mozilla': [
-+                '$(MOZ_LIBV4L2_CFLAGS)',
-+              ],
-+              'libraries': [
-+                '-lv4l2',
-+              ],
-+            }],
-+          ],
-         }],  # linux
-         ['OS=="mac"', {
-           'sources': [
+             }],  # linux
+             ['OS=="mac"', {
+               'sources': [
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 9c16ffa..1db3794 100644
 --- toolkit/library/moz.build

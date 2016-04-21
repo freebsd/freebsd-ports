@@ -46,7 +46,7 @@ index ac38f40..87536b7 100644
 +MOZ_NATIVE_HARFBUZZ=)
 +
 +if test -n "$MOZ_NATIVE_HARFBUZZ"; then
-+    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 1.1.0)
++    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 1.1.3)
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_HARFBUZZ)
@@ -70,7 +70,7 @@ index ac38f40..87536b7 100644
 +                               * 100 + GR2_VERSION_BUGFIX >= \
 +                               (major) * 10000 + (minor) * 100 + (bugfix) )
 +                   ], [
-+                     #if !GR2_VERSION_REQUIRE(1,3,6)
++                     #if !GR2_VERSION_REQUIRE(1,3,7)
 +                     #error "Insufficient graphite2 version."
 +                     #endif
 +                   ], [],

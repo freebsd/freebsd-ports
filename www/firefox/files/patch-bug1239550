@@ -1,0 +1,144 @@
+diff --git a/media/ffvpx/config.asm b/media/ffvpx/config.asm
+--- media/ffvpx/config.asm
++++ media/ffvpx/config.asm
+@@ -192,7 +192,6 @@
+ %define HAVE_MACH_MACH_TIME_H 0
+ %define HAVE_MACHINE_IOCTL_BT848_H 0
+ %define HAVE_MACHINE_IOCTL_METEOR_H 0
+-%define HAVE_MALLOC_H 1
+ %define HAVE_OPENJPEG_1_5_OPENJPEG_H 0
+ %define HAVE_OPENGL_GL3_H 0
+ %define HAVE_POLL_H 1
+@@ -268,18 +267,15 @@
+ %define HAVE_ISATTY 1
+ %define HAVE_JACK_PORT_GET_LATENCY_RANGE 0
+ %define HAVE_KBHIT 0
+-%define HAVE_LOCALTIME_R 1
+ %define HAVE_LSTAT 1
+ %define HAVE_LZO1X_999_COMPRESS 0
+ %define HAVE_MACH_ABSOLUTE_TIME 0
+ %define HAVE_MAPVIEWOFFILE 0
+-%define HAVE_MEMALIGN 1
+ %define HAVE_MKSTEMP 1
+ %define HAVE_MMAP 1
+ %define HAVE_MPROTECT 1
+ %define HAVE_NANOSLEEP 1
+ %define HAVE_PEEKNAMEDPIPE 0
+-%define HAVE_POSIX_MEMALIGN 1
+ %define HAVE_PTHREAD_CANCEL 1
+ %define HAVE_SCHED_GETAFFINITY 1
+ %define HAVE_SETCONSOLETEXTATTRIBUTE 0
+diff --git a/media/ffvpx/config_unix32.h b/media/ffvpx/config_unix32.h
+--- media/ffvpx/config_unix32.h
++++ media/ffvpx/config_unix32.h
+@@ -216,7 +216,6 @@
+ #define HAVE_MACH_MACH_TIME_H 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+ #define HAVE_OPENJPEG_2_1_OPENJPEG_H 0
+ #define HAVE_OPENJPEG_2_0_OPENJPEG_H 0
+ #define HAVE_OPENJPEG_1_5_OPENJPEG_H 0
+@@ -269,7 +268,6 @@
+ #define HAVE_TRUNCF 1
+ #define HAVE_ACCESS 1
+ #define HAVE_ALIGNED_MALLOC 0
+-#define HAVE_ARC4RANDOM 0
+ #define HAVE_CLOCK_GETTIME 1
+ #define HAVE_CLOSESOCKET 0
+ #define HAVE_COMMANDLINETOARGVW 0
+@@ -295,18 +293,15 @@
+ #define HAVE_ISATTY 1
+ #define HAVE_JACK_PORT_GET_LATENCY_RANGE 0
+ #define HAVE_KBHIT 0
+-#define HAVE_LOCALTIME_R 1
+ #define HAVE_LSTAT 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACH_ABSOLUTE_TIME 0
+ #define HAVE_MAPVIEWOFFILE 0
+-#define HAVE_MEMALIGN 0
+ #define HAVE_MKSTEMP 1
+ #define HAVE_MMAP 1
+ #define HAVE_MPROTECT 1
+ #define HAVE_NANOSLEEP 1
+ #define HAVE_PEEKNAMEDPIPE 0
+-#define HAVE_POSIX_MEMALIGN 0
+ #define HAVE_PTHREAD_CANCEL 1
+ #define HAVE_SCHED_GETAFFINITY 1
+ #define HAVE_SETCONSOLETEXTATTRIBUTE 0
+diff --git a/media/ffvpx/config_unix64.asm b/media/ffvpx/config_unix64.asm
+--- media/ffvpx/config_unix64.asm
++++ media/ffvpx/config_unix64.asm
+@@ -200,7 +200,6 @@
+ %define HAVE_MACH_MACH_TIME_H 0
+ %define HAVE_MACHINE_IOCTL_BT848_H 0
+ %define HAVE_MACHINE_IOCTL_METEOR_H 0
+-%define HAVE_MALLOC_H 1
+ %define HAVE_OPENJPEG_2_1_OPENJPEG_H 0
+ %define HAVE_OPENJPEG_2_0_OPENJPEG_H 0
+ %define HAVE_OPENJPEG_1_5_OPENJPEG_H 0
+@@ -253,7 +252,6 @@
+ %define HAVE_TRUNCF 1
+ %define HAVE_ACCESS 1
+ %define HAVE_ALIGNED_MALLOC 0
+-%define HAVE_ARC4RANDOM 0
+ %define HAVE_CLOCK_GETTIME 1
+ %define HAVE_CLOSESOCKET 0
+ %define HAVE_COMMANDLINETOARGVW 0
+@@ -279,18 +277,15 @@
+ %define HAVE_ISATTY 1
+ %define HAVE_JACK_PORT_GET_LATENCY_RANGE 0
+ %define HAVE_KBHIT 0
+-%define HAVE_LOCALTIME_R 1
+ %define HAVE_LSTAT 1
+ %define HAVE_LZO1X_999_COMPRESS 0
+ %define HAVE_MACH_ABSOLUTE_TIME 0
+ %define HAVE_MAPVIEWOFFILE 0
+-%define HAVE_MEMALIGN 1
+ %define HAVE_MKSTEMP 1
+ %define HAVE_MMAP 1
+ %define HAVE_MPROTECT 1
+ %define HAVE_NANOSLEEP 1
+ %define HAVE_PEEKNAMEDPIPE 0
+-%define HAVE_POSIX_MEMALIGN 1
+ %define HAVE_PTHREAD_CANCEL 1
+ %define HAVE_SCHED_GETAFFINITY 1
+ %define HAVE_SETCONSOLETEXTATTRIBUTE 0
+diff --git a/media/ffvpx/config_unix64.h b/media/ffvpx/config_unix64.h
+--- media/ffvpx/config_unix64.h
++++ media/ffvpx/config_unix64.h
+@@ -216,7 +216,6 @@
+ #define HAVE_MACH_MACH_TIME_H 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+ #define HAVE_OPENJPEG_2_1_OPENJPEG_H 0
+ #define HAVE_OPENJPEG_2_0_OPENJPEG_H 0
+ #define HAVE_OPENJPEG_1_5_OPENJPEG_H 0
+@@ -269,7 +268,6 @@
+ #define HAVE_TRUNCF 1
+ #define HAVE_ACCESS 1
+ #define HAVE_ALIGNED_MALLOC 0
+-#define HAVE_ARC4RANDOM 0
+ #define HAVE_CLOCK_GETTIME 1
+ #define HAVE_CLOSESOCKET 0
+ #define HAVE_COMMANDLINETOARGVW 0
+@@ -295,18 +293,15 @@
+ #define HAVE_ISATTY 1
+ #define HAVE_JACK_PORT_GET_LATENCY_RANGE 0
+ #define HAVE_KBHIT 0
+-#define HAVE_LOCALTIME_R 1
+ #define HAVE_LSTAT 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACH_ABSOLUTE_TIME 0
+ #define HAVE_MAPVIEWOFFILE 0
+-#define HAVE_MEMALIGN 1
+ #define HAVE_MKSTEMP 1
+ #define HAVE_MMAP 1
+ #define HAVE_MPROTECT 1
+ #define HAVE_NANOSLEEP 1
+ #define HAVE_PEEKNAMEDPIPE 0
+-#define HAVE_POSIX_MEMALIGN 1
+ #define HAVE_PTHREAD_CANCEL 1
+ #define HAVE_SCHED_GETAFFINITY 1
+ #define HAVE_SETCONSOLETEXTATTRIBUTE 0

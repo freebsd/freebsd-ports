@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 FIREFOX_I18N_ALL_=	ach af an ar as ast az be bg bn-BD bn-IN br bs ca cs	\
-			cy da de dsb el en-GB en-US en-ZA eo es-AR es-CL	\
-			es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl		\
+			cy da de dsb el en-GB en-ZA eo es-AR es-CL	\
+			es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl	gn	\
 			gu-IN he hi-IN hr hsb hu hy-AM id is it ja kk km	\
 			kn ko lij lt lv mai mk ml mr ms nb-NO nl nn-NO	\
 			or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq	\
@@ -75,9 +75,6 @@ FIREFOX_I18N+=  el
 .if ${PORT_OPTIONS:MLANG_GB}
 FIREFOX_I18N+=  en-GB
 .endif
-.if ${PORT_OPTIONS:MLANG_US}
-FIREFOX_I18N+=  en-US
-.endif
 .if ${PORT_OPTIONS:MLANG_ZA}
 FIREFOX_I18N+=  en-ZA
 .endif
@@ -125,6 +122,9 @@ FIREFOX_I18N+=  gd
 .endif
 .if ${PORT_OPTIONS:MLANG_GL}
 FIREFOX_I18N+=  gl
+.endif
+.if ${PORT_OPTIONS:MLANG_GN}
+FIREFOX_I18N+=  gn
 .endif
 .if ${PORT_OPTIONS:MLANG_GU}
 FIREFOX_I18N+=  gu-IN
