@@ -23,6 +23,7 @@
 
 name="influxd"
 rcvar=influxd_enable
+load_rc_config $name
 
 : ${influxd_enable:="NO"}
 : ${influxd_user:="%%INFLUXD_USER%%"}
@@ -35,7 +36,7 @@ rcvar=influxd_enable
 influxd_pidfile="%%INFLUXD_PIDDIR%%${name}.pid"
 procname="%%PREFIX%%/bin/${name}"
 command=/usr/sbin/daemon
-command_args=" -c -p ${influxd_pidfile} ${procname} ${influxd_options}"
+command_args="-c -p ${influxd_pidfile} ${procname} ${influxd_options}"
 start_precmd="influxd_precmd"
 
 influxd_precmd()
@@ -43,5 +44,4 @@ influxd_precmd()
     install -o ${influxd_user} /dev/null ${influxd_pidfile}
 }
 
-load_rc_config $name
 run_rc_command "$1"
