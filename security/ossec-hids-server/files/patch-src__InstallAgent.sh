@@ -1,4 +1,4 @@
---- src/InstallAgent.sh.orig	2015-06-10 15:38:32 UTC
+--- src/InstallAgent.sh.orig	2015-10-12 21:21:06 UTC
 +++ src/InstallAgent.sh
 @@ -37,11 +37,11 @@ fi
  
@@ -41,7 +41,7 @@
  chmod -R 750 ${DIR}/queue/diff
  chmod 740 ${DIR}/queue/diff/* > /dev/null 2>&1
  
-@@ -129,8 +124,7 @@ chmod 740 ${DIR}/queue/diff/* > /dev/nul
+@@ -131,8 +126,7 @@ chmod 1550 ${DIR}/tmp
  
  
  # For the etc dir
@@ -51,7 +51,7 @@
  
  ls /etc/localtime > /dev/null 2>&1
  if [ $? = 0 ]; then
-@@ -142,13 +136,11 @@ if [ "$UNAME" = "SunOS" ]; then
+@@ -144,13 +138,11 @@ if [ "$UNAME" = "SunOS" ]; then
      mkdir -p ${DIR}/usr/share/lib/zoneinfo/
      chmod -R 555 ${DIR}/usr/
      cp -pr /usr/share/lib/zoneinfo/* ${DIR}/usr/share/lib/zoneinfo/
@@ -65,7 +65,7 @@
      chmod 555 ${DIR}/etc/TIMEZONE
  fi
              
-@@ -168,25 +160,17 @@ cp -pr ../etc/local_internal_options.con
+@@ -170,25 +162,17 @@ cp -pr ../etc/local_internal_options.con
  cp -pr ../etc/client.keys ${DIR}/etc/ > /dev/null 2>&1
  cp -pr agentlessd/scripts/* ${DIR}/agentless/
  
@@ -93,7 +93,7 @@
  
  
  # Moving the binary files
-@@ -200,7 +184,6 @@ cp -pr addagent/manage_agents ${DIR}/bin
+@@ -202,7 +186,6 @@ cp -pr addagent/manage_agents ${DIR}/bin
  cp -pr ../contrib/util.sh ${DIR}/bin/
  cp -pr external/lua/src/ossec-lua ${DIR}/bin/
  cp -pr external/lua/src/ossec-luac ${DIR}/bin/
@@ -101,7 +101,7 @@
  chmod +x ${DIR}/bin/util.sh
  
  # Copying active response modules
-@@ -208,10 +191,8 @@ sh ./init/fw-check.sh execute > /dev/nul
+@@ -210,10 +193,8 @@ sh ./init/fw-check.sh execute > /dev/nul
  cp -pr ../active-response/*.sh ${DIR}/active-response/bin/
  cp -pr ../active-response/firewalls/*.sh ${DIR}/active-response/bin/
  chmod 755 ${DIR}/active-response/bin/*
@@ -113,7 +113,7 @@
  
  
  # Moving the config file
-@@ -227,7 +208,6 @@ if [ $? = 0 ]; then
+@@ -229,7 +210,6 @@ if [ $? = 0 ]; then
  else    
      cp -pr ../etc/ossec-agent.conf ${DIR}/etc/ossec.conf
  fi
