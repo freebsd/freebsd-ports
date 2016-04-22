@@ -10,8 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go client for the Redis database
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/redis
+USES=		go
 GO_PKGNAME=	github.com/garyburd/${PORTNAME}/redis
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

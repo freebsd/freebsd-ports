@@ -10,11 +10,10 @@ MASTER_SITES=	LOCAL/jlaffaye
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redis client library written in Go
 
+USES=		go
 GO_PKGNAME=	github.com/simonz05/${PORTNAME}
 
 pre-install:
 	@${RM} ${WRKSRC}/fmt.sh
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

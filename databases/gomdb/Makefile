@@ -13,7 +13,7 @@ BUILD_DEPENDS=	go:lang/go
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		compiler
+USES=		compiler go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	szferi
@@ -32,5 +32,4 @@ USE_GCC=	yes
 CONFIGURE_ENV+=	CC=${CC}
 GO_ENV+=	${CONFIGURE_ENV}
 
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
 .include <bsd.port.post.mk>
