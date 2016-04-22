@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.18.0
+PORTVERSION=	3.19.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		relx-cache-11.tar.gz:deps
+DISTFILES=	relx-cache-11.tar.gz:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		relx-cache-11.tar.gz
 
