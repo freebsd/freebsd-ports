@@ -31,7 +31,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/include/eigen3/Eigen/Array:math/eigen3
 
 BROKEN_FreeBSD_9=	dependency graphics/code-eli needs additional math functions
-ONLY_FOR_ARCHS=	amd64
 
 USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP
