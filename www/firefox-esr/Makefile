@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	38.7.1
+DISTVERSION=	45.1.0
 DISTVERSIONSUFFIX=esr.source
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
@@ -14,35 +13,36 @@ PKGNAMESUFFIX=	-esr
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.10.10:devel/nspr \
-		nss>=3.19.2.1:security/nss \
+BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
+		nss>=3.21.1:security/nss \
 		libevent2>=2.0.21_2:devel/libevent2 \
-		soundtouch>=1.8.0:audio/soundtouch \
-		harfbuzz>=0.9.34:print/harfbuzz \
-		graphite2>=1.2.4:graphics/graphite2 \
+		soundtouch>=1.9.0:audio/soundtouch \
+		harfbuzz>=1.1.0:print/harfbuzz \
+		graphite2>=1.3.6:graphics/graphite2 \
+		png>=1.6.19:graphics/png \
 		libvorbis>=1.3.5,3:audio/libvorbis \
-		libvpx>=1.3.0:multimedia/libvpx \
-		sqlite3>=3.8.9:databases/sqlite3 \
+		libvpx>=1.5.0:multimedia/libvpx \
+		sqlite3>=3.9.1:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
+		yasm:devel/yasm \
 		zip:archivers/zip \
 		unzip:archivers/unzip
-#		opus>=1.1:audio/opus \
 
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 USE_GECKO=	gecko
 CPE_PRODUCT=	${PORTNAME}_esr
-CONFLICTS_INSTALL=	firefox-4[0-46-9].* firefox-3[02-9].* firefox-2[0-35-9].*
+CONFLICTS_INSTALL=	firefox-[0-9]*
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	-opus
+USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
 
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
 USE_GL=		gl
-USES=		tar:bzip2
+USES=		tar:xz
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
@@ -50,14 +50,16 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_DEFAULT=	GTK2
+OPTIONS_EXCLUDE=	GSTREAMER LOGGING
+OPTIONS_DEFINE=		RUST
+OPTIONS_DEFAULT=	BUNDLED_CAIRO GTK2
 
 OPTIONS_SINGLE+=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
-WRKSRC:=	${WRKDIR}/mozilla-esr38
+WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}esr
 
 post-extract:
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
@@ -65,8 +67,6 @@ post-extract:
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
 post-patch:
-	@${REINPLACE_CMD} -e '/MOZPNG/s/=[0-9]*/=10511/' \
-		${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
 

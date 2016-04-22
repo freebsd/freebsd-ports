@@ -23,7 +23,6 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_DSB \
 		LANG_EL \
 		LANG_GB \
-		LANG_US \
 		LANG_ZA \
 		LANG_EO \
 		LANG_SA \
@@ -40,6 +39,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_GA \
 		LANG_GD \
 		LANG_GL \
+		LANG_GN \
 		LANG_GU \
 		LANG_HE \
 		LANG_HI \
@@ -103,6 +103,7 @@ LANG_AZ_DESC?=	Azerbaijani language support
 LANG_CSB_DESC?=	Kashubian language support
 LANG_DSB_DESC?=	Lower Sorbian language support
 LANG_FF_DESC?=	Fulah language support
+LANG_GN_DESC?=	Guarani (Paraguay) language support
 LANG_HSB_DESC?=	Upper Sorbian language support
 LANG_KM_DESC?=	Khmer language support
 LANG_LIJ_DESC?=	Ligurian (Genoa) language support
