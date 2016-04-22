@@ -1,0 +1,9 @@
+--- src/xmlvsp/CMakeLists.txt.orig	2016-02-14 00:01:30 UTC
++++ src/xmlvsp/CMakeLists.txt
+@@ -14,3 +14,6 @@ XmlUtil.h
+ XmlUtil.cpp
+ 
+ )
++
++set_target_properties( xmlvsp PROPERTIES COMPILE_FLAGS "-fPIC")
++

@@ -1,0 +1,10 @@
+--- src/external/glfont2/CMakeLists.txt.orig	2016-02-14 00:01:30 UTC
++++ src/external/glfont2/CMakeLists.txt
+@@ -3,6 +3,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+ SET(GLFONT2_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR} CACHE PATH "Path to glfont2 headers")
+ 
+ INCLUDE_DIRECTORIES( ${GLFONT2_INCLUDE_DIR}
++	/usr/local/include
+ )
+ 
+ ADD_LIBRARY( glfont2
