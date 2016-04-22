@@ -1,6 +1,6 @@
---- main.h.orig	Sun Mar 23 02:41:37 2003
-+++ main.h	Mon Mar 31 10:37:08 2003
-@@ -9,9 +9,15 @@
+--- main.h.orig	2016-02-19 06:57:49.938584000 -0800
++++ main.h	2016-04-21 19:31:22.393058000 -0700
+@@ -10,9 +10,15 @@
  
  /* Paths */
  
@@ -16,3 +16,13 @@
  
  /* i18n */
  
+@@ -377,7 +383,9 @@
+ /* Data structures */
+ 
+ #include <time.h>
++#define _KERNEL
+ #include <netinet/in.h>
++#undef _KERNEL
+ 
+ struct log_line {
+   time_t time;

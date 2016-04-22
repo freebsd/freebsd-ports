@@ -2,15 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	fwlogwatch
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.kybs.de/boris/sw/
+MASTER_SITES=	http://fwlogwatch.inside-security.de/sw/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Packet filter and firewall log analyzer
-
-BROKEN=		unfetchable
 
 USES=		gettext tar:bzip2
 MAKE_ENV=	MKDIR="${MKDIR}"
