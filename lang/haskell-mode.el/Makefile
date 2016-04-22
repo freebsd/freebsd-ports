@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	haskell-mode
-PORTVERSION=	13.18
+PORTVERSION=	13.20
 DISTVERSIONPREFIX=v
 CATEGORIES=	lang elisp
 
@@ -23,6 +23,7 @@ ALL_TARGET=	haskell-mode-autoloads.el
 
 ELISPDIR=	${PREFIX}/${PLIST_DIRS}
 ELISPFILES=	ghc-core.el ghci-script-mode.el haskell-align-imports.el \
+		haskell-c2hs.el \
 		haskell-cabal.el haskell-checkers.el \
 		haskell-collapse.el haskell-commands.el \
 		haskell-compile.el haskell-compat.el \
@@ -35,7 +36,7 @@ ELISPFILES=	ghc-core.el ghci-script-mode.el haskell-align-imports.el \
 		haskell-menu.el haskell-mode-pkg.el haskell-mode.el \
 		haskell-mode-autoloads.el haskell-modules.el \
 		haskell-move-nested.el haskell-navigate-imports.el \
-		haskell-package.el haskell-presentation-mode.el \
+		haskell-presentation-mode.el \
 		haskell-process.el haskell-repl.el haskell-sandbox.el \
 		haskell-session.el \
 		haskell-sort-imports.el haskell-string.el \
