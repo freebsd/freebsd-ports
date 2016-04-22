@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.c-s.li/ports/
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Additional cryptography packages for Go
 
+USES=		go
 GO_PKGNAME=	golang.org/x/crypto
 GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/blowfish		\
@@ -43,7 +44,4 @@ GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/xtea		\
 		${GO_PKGNAME}/xts
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
