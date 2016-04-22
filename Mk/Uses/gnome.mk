@@ -670,19 +670,14 @@ SUB_LIST+=		GNOME_SUBR=${GNOME_SUBR}
 _INCLUDE_USES_GNOME_POST_MK=     yes
 
 .if defined(GNOME_PRE_PATCH)
-
 _USES_patch+=	290:gnome-pre-patch
-
 gnome-pre-patch:
 	@${GNOME_PRE_PATCH:C/^;//1}
 .endif
 
-.if defined(GCONF_SCHEMAS) || defined(INSTALLS_OMF) || defined(INSTALLS_ICONS) \
-	|| defined(GLIB_SCHEMAS)
-_USES_install+=	690:gnome-post-install
-
-gnome-post-install:
-.  if defined(GCONF_SCHEMAS)
+.if defined(GCONF_SCHEMAS)
+_USES_install+=	690:gnome-post-gconf-schemas
+gnome-post-gconf-schemas:
 	@for i in ${GCONF_SCHEMAS}; do \
 		${ECHO_CMD} "@postunexec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} HOME=${WRKDIR} gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
@@ -690,27 +685,33 @@ gnome-post-install:
 		${ECHO_CMD} "@postexec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} HOME=${WRKDIR} gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 	done
-.  endif
+.endif
 
 # we put the @unexec behind the plist schema entry, because it compiles files 
 # in the directory. So we should remove the port file first before recompiling.
-.  if defined(GLIB_SCHEMAS)
+.if defined(GLIB_SCHEMAS)
+_USES_install+=	690:gnome-post-glib-schemas
+gnome-post-glib-schemas:
 	@for i in ${GLIB_SCHEMAS}; do \
 		${ECHO_CMD} "share/glib-2.0/schemas/$${i}" >> ${TMPPLIST}; \
 	done
 	@${ECHO_CMD} "@glib-schemas" >> ${TMPPLIST};
 .endif
 
-.  if defined(INSTALLS_OMF)
+.if defined(INSTALLS_OMF)
+_USES_install+=	690:gnome-post-omf
+gnome-post-omf:
 	@for i in `${GREP} "\.omf$$" ${TMPPLIST}`; do \
 		${ECHO_CMD} "@postexec scrollkeeper-install -q %D/$${i} 2>/dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 		${ECHO_CMD} "@postunexec scrollkeeper-uninstall -q %D/$${i} 2>/dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 	done
-.  endif
+.endif
 
-.  if defined(INSTALLS_ICONS)
+.if defined(INSTALLS_ICONS)
+_USES_install+=	690:gnome-post-icons
+gnome-post-icons:
 	@${RM} -f ${TMPPLIST}.icons1
 	@for i in `${GREP} "^share/icons/.*/" ${TMPPLIST} | ${CUT} -d / -f 1-3 | ${SORT} -u`; do \
 		${ECHO_CMD} "@rmtry $${i}/icon-theme.cache" \
@@ -725,7 +726,6 @@ gnome-post-install:
 		${RM} -f ${TMPPLIST}.icons1; \
 		${MV} -f ${TMPPLIST}.icons2 ${TMPPLIST}; \
 	fi
-.  endif
 .endif
 
 .endif
