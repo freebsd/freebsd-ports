@@ -16,8 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
 	${PYTHON_PKGNAMEPREFIX}pytz>=2013.8:devel/py-pytz \
 	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
 	${PYTHON_PKGNAMEPREFIX}luminol>0:math/py-luminol \
-	bash:${PORTSDIR}/shells/bash \
-	gawk:${PORTSDIR}/lang/gawk
+	bash:shells/bash \
+	gawk:lang/gawk
 
 USES=		shebangfix python
 

@@ -36,32 +36,32 @@ KRB5_USES=		gssapi:mit
 KRB5_CONFIGURE_ON=	--enable-kinkd
 KRB5_MAKE_ENV=	WITH_KINK=yes
 KRB5_PLIST_SUB=		KINK=""
-KRB5_LIB_DEPENDS=	libkrb5support.so:${PORTSDIR}/security/krb5
-KRB5_RUN_DEPENDS=	kinit:${PORTSDIR}/security/krb5
+KRB5_LIB_DEPENDS=	libkrb5support.so:security/krb5
+KRB5_RUN_DEPENDS=	kinit:security/krb5
 KRB5_VARS=		KINK=yes
 
 KRB5_112_USES=		gssapi:mit
 KRB5_112_CONFIGURE_ON=	--enable-kinkd
 KRB5_112_MAKE_ENV=	WITH_KINK=yes
 KRB5_112_PLIST_SUB=	KINK=""
-KRB5_112_LIB_DEPENDS=	libkrb5support.so:${PORTSDIR}/security/krb5-112
-KRB5_112_RUN_DEPENDS=	kinit:${PORTSDIR}/security/krb5-112
+KRB5_112_LIB_DEPENDS=	libkrb5support.so:security/krb5-112
+KRB5_112_RUN_DEPENDS=	kinit:security/krb5-112
 KRB5_112_VARS=		KINK=yes
 
 KRB5_113_USES=		gssapi:mit
 KRB5_113_CONFIGURE_ON=	--enable-kinkd
 KRB5_113_MAKE_ENV=	WITH_KINK=yes
 KRB5_113_PLIST_SUB=	KINK=""
-KRB5_113_LIB_DEPENDS=	libkrb5support.so:${PORTSDIR}/security/krb5-113
-KRB5_113_RUN_DEPENDS=	kinit:${PORTSDIR}/security/krb5-113
+KRB5_113_LIB_DEPENDS=	libkrb5support.so:security/krb5-113
+KRB5_113_RUN_DEPENDS=	kinit:security/krb5-113
 KRB5_113_VARS=		KINK=yes
 
 KRB5_114_USES=		gssapi:mit
 KRB5_114_CONFIGURE_ON=	--enable-kinkd
 KRB5_114_MAKE_ENV=	WITH_KINK=yes
 KRB5_114_PLIST_SUB=	KINK=""
-KRB5_114_LIB_DEPENDS=	libkrb5support.so:${PORTSDIR}/security/krb5-114
-KRB5_114_RUN_DEPENDS= 	kinit:${PORTSDIR}/security/krb5-113
+KRB5_114_LIB_DEPENDS=	libkrb5support.so:security/krb5-114
+KRB5_114_RUN_DEPENDS= 	kinit:security/krb5-113
 KRB5_114_VARS=		KINK=yes
 
 HEIMDAL_PORT_USES=	gssapi:heimdal
