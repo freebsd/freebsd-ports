@@ -193,6 +193,9 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/adc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/can.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/cec.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/adc_common_v1.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/adc_common_v2.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/adc_common_v2_multi.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/adc_common_v2_single.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/crc_common_all.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/crs_common_all.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/crypto_common_f24.h
@@ -228,6 +231,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/tim
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/usart_common_all.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/usart_common_f124.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/usart_common_f24.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/common/usart_common_v2.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/comparator.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/crc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/crs.h
@@ -364,6 +368,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/gpio.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/hash.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/i2c.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/iwdg.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l0/adc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l0/doc-stm32l0.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l0/exti.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l0/gpio.h
@@ -397,11 +402,16 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/st_usbf
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/syscfg.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/timer.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l1/usart.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/adc.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/doc-stm32l4.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/flash.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/gpio.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/irq.json
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/memorymap.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/nvic.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/pwr.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/rcc.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/l4/timer.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/ltdc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/memorymap.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/otg_common.h
@@ -465,15 +475,12 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/stm32/l4/irqha
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/vf6xx/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32g.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32g.ld
-gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32g880f128.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32gg.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32gg.ld
-gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32gg990f1024.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32lg.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32lg.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32tg.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32tg.ld
-gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_efm32tg840f32.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_lm3s.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_lm3s.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_lm4f.a
@@ -517,5 +524,3 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32l4.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32l4.ld
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_vf6xx.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_vf6xx.ld
-gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/%%DATADIR%%/scripts/black_magic_probe_debug.scr
-gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/%%DATADIR%%/scripts/black_magic_probe_flash.scr
