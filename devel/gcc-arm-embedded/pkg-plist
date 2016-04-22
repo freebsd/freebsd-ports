@@ -11,6 +11,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/bin/strip
 @dir gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/bits
 @dir gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/rpc
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/_ansi.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/_newlib_version.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/_syslist.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/alloca.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/ar.h
@@ -1194,6 +1195,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/langinfo.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libgen.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/limits.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/locale.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_arc4random.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_default_types.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_types.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/ansi.h
@@ -2174,6 +2176,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/include-fix
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/include-fixed/limits.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/include-fixed/syslimits.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/include/arm_acle.h
+gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/include/arm_cmse.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/include/arm_neon.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/include/float.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/include/iso646.h
@@ -5078,6 +5081,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/libcc1.so.0
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/rawmemchr.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/Reentrancy.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/Reentrant-Syscalls.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/random.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/remove.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/rename.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/rewind.html
@@ -5233,6 +5237,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/libcc1.so.0
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/cexp.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/cimag.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/clog.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/clog10.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/Complex.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/conj.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/copysign.html
