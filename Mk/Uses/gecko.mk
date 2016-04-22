@@ -31,18 +31,18 @@ GECKO_CONFING?=	${LOCALBASE}/bin/${GECKO}-config
 XPIDL?=		${LOCALBASE}/lib/${GECKO}/xpidl
 XPIDL_INCL?=	`${GECKO_CONFIG} --idlflags`
 
-BUILD_DEPENDS+=	libxul>=38:www/libxul
-RUN_DEPENDS+=	libxul>=38:www/libxul
+BUILD_DEPENDS+=	libxul>=45:www/libxul
+RUN_DEPENDS+=	libxul>=45:www/libxul
 
 .elif ${gecko_ARGS:Mfirefox}
 
-_GECKO_DEFAULT_VERSION=	38
-_GECKO_VERSIONS=		38 45
+_GECKO_DEFAULT_VERSION=	45
+_GECKO_VERSIONS=		45 46
 _GECKO_TYPE=	firefox
 
 # Dependence lines for different Firefox versions
-38_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:www/firefox-esr
-45_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:www/firefox
+45_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:www/firefox-esr
+46_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:www/firefox
 
 .if exists(${LOCALBASE}/bin/firefox)
 _GECKO_INSTALLED_VER!=	${LOCALBASE}/bin/firefox --version 2>/dev/null

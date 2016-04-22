@@ -20,16 +20,13 @@ diff --git config/external/moz.build config/external/moz.build
 index f67c5c7..eb909ce 100644
 --- config/external/moz.build
 +++ config/external/moz.build
-@@ -19,10 +19,16 @@ if CONFIG['MOZ_UPDATER']:
+@@ -20,12 +20,21 @@ if CONFIG['MOZ_UPDATER']:
  # There's no "native brotli" yet, but probably in the future...
  external_dirs += ['modules/brotli']
  
 -if CONFIG['MOZ_VORBIS']:
 +if not CONFIG['MOZ_NATIVE_OGG']:
 +    external_dirs += ['media/libogg']
-+
-+if not CONFIG['MOZ_NATIVE_THEORA']:
-+    external_dirs += ['media/libtheora']
 +
 +if CONFIG['MOZ_VORBIS'] and not CONFIG['MOZ_NATIVE_VORBIS']:
      external_dirs += ['media/libvorbis']
@@ -38,17 +35,19 @@ index f67c5c7..eb909ce 100644
 +if CONFIG['MOZ_TREMOR'] and not CONFIG['MOZ_NATIVE_TREMOR']:
      external_dirs += ['media/libtremor']
  
- if CONFIG['MOZ_WEBM']:
-@@ -37,15 +46,15 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ
- if not CONFIG['MOZ_NATIVE_PNG']:
-     external_dirs += ['media/libpng']
- 
++if not CONFIG['MOZ_NATIVE_THEORA']:
++    external_dirs += ['media/libtheora']
++
 +if not CONFIG['MOZ_NATIVE_SOUNDTOUCH']:
 +    external_dirs += ['media/libsoundtouch']
 +
- external_dirs += [
+ if CONFIG['MOZ_WEBM_ENCODER']:
+     external_dirs += ['media/libmkv']
+ 
+@@ -51,12 +60,9 @@ external_dirs += [
      'media/kiss_fft',
      'media/libcubeb',
+     'media/libnestegg',
 -    'media/libogg',
      'media/libopus',
 -    'media/libtheora',
@@ -84,10 +83,11 @@ diff --git configure.in configure.in
 index 87db361..7947626 100644
 --- configure.in
 +++ configure.in
-@@ -5223,6 +5223,111 @@ if test "${ac_cv_c_attribute_aligned}" !
+@@ -5401,6 +5401,111 @@ if test -n "$MOZ_OMX_PLUGIN"; then
+     fi
  fi
  
- dnl ========================================================
++dnl ========================================================
 +dnl Check for libogg
 +dnl ========================================================
 +
@@ -192,10 +192,9 @@ index 87db361..7947626 100644
 +fi
 +AC_SUBST(MOZ_NATIVE_SOUNDTOUCH)
 +
-+dnl ========================================================
- dnl = Disable VP8 decoder support
+ dnl system libvpx Support
  dnl ========================================================
- MOZ_ARG_DISABLE_BOOL(webm,
+ MOZ_ARG_WITH_BOOL(system-libvpx,
 diff --git dom/media/AudioStream.cpp dom/media/AudioStream.cpp
 index 2127256..1ec09fe 100644
 --- dom/media/AudioStream.cpp
@@ -266,11 +265,10 @@ diff --git dom/media/moz.build dom/media/moz.build
 index 7526cff..e0a0ca0 100644
 --- dom/media/moz.build
 +++ dom/media/moz.build
-@@ -212,3 +212,18 @@ if CONFIG['ANDROID_VERSION'] > '15':
+@@ -300,6 +300,21 @@ if CONFIG['MOZ_WEBRTC']:
  
- CFLAGS += CONFIG['GSTREAMER_CFLAGS']
- CXXFLAGS += CONFIG['GSTREAMER_CFLAGS']
-+
+ DEFINES['MOZILLA_INTERNAL_API'] = True
+ 
 +if CONFIG['MOZ_NATIVE_OGG']:
 +    CXXFLAGS += CONFIG['MOZ_OGG_CFLAGS']
 +
@@ -285,6 +283,10 @@ index 7526cff..e0a0ca0 100644
 +
 +if CONFIG['MOZ_NATIVE_SOUNDTOUCH']:
 +    CXXFLAGS += CONFIG['MOZ_SOUNDTOUCH_CFLAGS']
++
+ if CONFIG['OS_TARGET'] == 'WINNT':
+     DEFINES['WEBRTC_WIN'] = True
+ else:
 diff --git media/libogg/README_MOZILLA media/libogg/README_MOZILLA
 index 0833e4d..7ece97b 100644
 --- media/libogg/README_MOZILLA

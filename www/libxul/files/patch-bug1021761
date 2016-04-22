@@ -561,8 +561,8 @@ index a962553..1f780f4 100644
  
    /* get a pcm, disabling resampling, so we get a rate the
     * hardware/dmix/pulse/etc. supports. */
--  r = snd_pcm_open(&pcm, "default", SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
-+  r = WRAP(snd_pcm_open)(&pcm, "default", SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
+-  r = snd_pcm_open(&pcm, CUBEB_ALSA_PCM_NAME, SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
++  r = WRAP(snd_pcm_open)(&pcm, CUBEB_ALSA_PCM_NAME, SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
    if (r < 0) {
      return CUBEB_ERROR;
    }
@@ -1070,11 +1070,11 @@ index 8b7a0dd..31212ce 100644
 +CFLAGS += CONFIG['MOZ_OSS_CFLAGS']
  CFLAGS += CONFIG['MOZ_ALSA_CFLAGS']
  CFLAGS += CONFIG['MOZ_PULSEAUDIO_CFLAGS']
-diff --git media/webrtc/signaling/test/moz.build media/webrtc/signaling/test/moz.build
+diff --git media/webrtc/signaling/test/common.build media/webrtc/signaling/test/common.build
 index 991f03f..3d99eb5 100644
---- media/webrtc/signaling/test/moz.build
-+++ media/webrtc/signaling/test/moz.build
-@@ -112,8 +112,8 @@ if CONFIG['JS_SHARED_LIBRARY']:
+--- media/webrtc/signaling/test/common.build
++++ media/webrtc/signaling/test/common.build
+@@ -102,8 +102,8 @@ USE_LIBS += ['mozglue']
  OS_LIBS += CONFIG['MOZ_WEBRTC_X11_LIBS']
  OS_LIBS += CONFIG['REALTIME_LIBS']
  
