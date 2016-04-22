@@ -8282,3 +8282,4 @@ www/node-devel|www/node|2016-04-13|Upstream no longer releases a development ver
 graphics/kipi-plugin-googledrive||2016-04-14|Merged into graphics/kipi-plugin-googleservices
 graphics/kipi-plugin-picasawebexport||2016-04-14|Merged into graphics/kipi-plugin-googleservices
 security/engine_pkcs11|security/libp11|2016-04-20|Merged
+devel/elixir-timex-interval||2016-04-22|Merged into devel/elixir-timex upstream
