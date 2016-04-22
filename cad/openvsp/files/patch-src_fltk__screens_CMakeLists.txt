@@ -1,0 +1,12 @@
+--- src/fltk_screens/CMakeLists.txt.orig	2016-02-14 00:01:30 UTC
++++ src/fltk_screens/CMakeLists.txt
+@@ -4,6 +4,9 @@ INCLUDE_DIRECTORIES( ${FLTK_INCLUDE_DIR}
+ 
+ SET(SCREENS_INCLUDE_DIR ${CMAKE_CURRENT_BINARY_DIR} CACHE PATH "Path to FLTK generated *.h files")
+ 
++SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
++SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
++
+ FLTK_WRAP_UI( screens
+ aboutScreen.fl
+ awaveFlScreen.fl

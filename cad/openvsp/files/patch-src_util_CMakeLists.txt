@@ -1,0 +1,8 @@
+--- src/util/CMakeLists.txt.orig	2016-02-14 00:01:30 UTC
++++ src/util/CMakeLists.txt
+@@ -63,3 +63,5 @@ XferSurf.h
+ ADD_DEPENDENCIES( util
+ STEPCODE
+ )
++
++set_target_properties( util PROPERTIES COMPILE_FLAGS "-fPIC")
