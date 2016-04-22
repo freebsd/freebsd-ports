@@ -3003,6 +3003,7 @@ ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} ${WRKSRC}:
 # Warn user about deprecated packages.  Advisory only.
 
 .if !target(check-deprecated)
+# Try and keep these messages in sync with the ones in create-manifest
 check-deprecated:
 .if ${MAINTAINER} == "ports@FreeBSD.org"
 	@${ECHO_MSG} "===>   NOTICE:"
@@ -4606,6 +4607,41 @@ create-manifest:
 	[ -f ${PKGPOSTUPGRADE} ] && ${CP} ${PKGPOSTUPGRADE} ${METADIR}/+POST_UPGRADE; \
 	${CP} ${DESCR} ${METADIR}/+DESC; \
 	[ -f ${PKGMESSAGE} ] && ${CP} ${PKGMESSAGE} ${METADIR}/+DISPLAY || return 0
+# Try and keep these messages in sync with check-deprecated
+.if ${MAINTAINER} == "ports@FreeBSD.org"
+	@( \
+		if [ -f "${METADIR}/+DISPLAY" ]; then ${ECHO_CMD}; fi; \
+		${ECHO_CMD} "===>   NOTICE:"; \
+		${ECHO_CMD}; \
+		${ECHO_CMD} "The ${PORTNAME} port currently does not have a maintainer. As a result, it is"; \
+		${ECHO_CMD} "more likely to have unresolved issues, not be up-to-date, or even be removed in"; \
+		${ECHO_CMD} "the future. To volunteer to maintain this port, please create an issue at:"; \
+		${ECHO_CMD}; \
+		${ECHO_CMD} "https://bugs.freebsd.org/bugzilla"; \
+		${ECHO_CMD}; \
+		${ECHO_CMD} "More information about port maintainership is available at:"; \
+		${ECHO_CMD}; \
+		${ECHO_CMD} "https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port"; \
+	) >> ${METADIR}/+DISPLAY
+.endif
+.if defined(DEPRECATED)
+	@( \
+		if [ -f "${METADIR}/+DISPLAY" ]; then ${ECHO_CMD}; fi; \
+		${ECHO_CMD} "===>   NOTICE:"; \
+		${ECHO_CMD}; \
+		${ECHO_CMD} "This port is deprecated; you may wish to reconsider installing it:"; \
+		${ECHO_CMD}; \
+		${ECHO_CMD} ${DEPRECATED:Q}.; \
+		${ECHO_CMD}; \
+	) >> ${METADIR}/+DISPLAY
+.if defined(EXPIRATION_DATE)
+	@( \
+		${ECHO_CMD} "It is scheduled to be removed on or after ${EXPIRATION_DATE}."; \
+		${ECHO_CMD}; \
+	) >> ${METADIR}/+DISPLAY
+.endif
+.endif
+
 
 # Print out package names.
 
