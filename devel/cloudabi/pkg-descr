@@ -1,0 +1,11 @@
+Nuxi CloudABI is an application binary interface for UNIX-like operating
+systems built around the concept of capability-based security. In a
+nutshell, it means that you can run processes directly on top of a UNIX
+kernel while keeping complete control over the actions the process is
+allowed to perform.
+
+This port installs a set of header files that contain the definitions
+that describe the ABI itself: all of the constants, types, structures
+and system calls.
+
+WWW: https://github.com/NuxiNL/cloudabi

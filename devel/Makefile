@@ -270,6 +270,7 @@
     SUBDIR += clinfo
     SUBDIR += clisp-hyperspec
     SUBDIR += clojure-cider
+    SUBDIR += cloudabi
     SUBDIR += cloudabi-binutils-aarch64
     SUBDIR += cloudabi-binutils-x86_64
     SUBDIR += cloudabi-toolchain
