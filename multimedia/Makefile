@@ -55,6 +55,7 @@
     SUBDIR += emby-server
     SUBDIR += emotion_generic_players-vlc
     SUBDIR += emovix
+    SUBDIR += ffdec
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg0
     SUBDIR += ffmpeg2theora
