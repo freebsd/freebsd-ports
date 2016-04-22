@@ -1,7 +1,0 @@
-lib/elixir/lib/timex_interval/ebin/Elixir.Enumerable.TimexInterval.DateTimeInterval.beam
-lib/elixir/lib/timex_interval/ebin/Elixir.TimexInterval.DateTimeInterval.beam
-lib/elixir/lib/timex_interval/ebin/Elixir.TimexInterval.beam
-lib/elixir/lib/timex_interval/ebin/timex_interval.app
-lib/elixir/lib/timex_interval/lib/datetime.ex
-lib/elixir/lib/timex_interval/lib/interval.ex
-%%PORTDOCS%%%%DOCSDIR%%/README.md
