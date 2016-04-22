@@ -1,5 +1,12 @@
+# $FreeBSD$
+#
 # This file contains logic to ease porting of Go packages or binaries using
 # the `go` command.
+#
+# Feature:	go
+# Usage:	USES=go
+# Valid ARGS:	none
+#
 # You can set the following variables to control the process.
 #
 # GO_PKGNAME
@@ -16,6 +23,11 @@
 # CGO_LDFLAGS
 #	Addional LDFLAGS variables to be passed to the C compiler by the `go`
 #	command
+#
+# MAINTAINER: jlaffaye@FreeBSD.org
+
+.if !defined(_INCLUDE_USES_GO_MK)
+_INCLUDE_USES_GO_MK=	yes
 
 .if ${ARCH} == "i386"
 GOARCH=	386
@@ -76,4 +88,6 @@ do-install:
 		${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${_TARGET:T} ${STAGEDIR}/${LOCALBASE}/bin; \
 	fi;
 .endfor
+.endif
+
 .endif

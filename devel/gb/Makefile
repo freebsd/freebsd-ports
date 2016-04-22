@@ -12,6 +12,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
+USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	constabulary
 
@@ -28,6 +29,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	( cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/ ; )
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
