@@ -21,10 +21,18 @@ RUN_DEPENDS=	llvm-config37:devel/llvm37 \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_FLAGS=	--with-llvm=${LOCALBASE}
+CONFIGURE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config37 \
+		CC=${LOCALBASE}/bin/clang37 \
+		CXX=${LOCALBASE}/bin/clang++37 \
+		CPP=${LOCALBASE}/bin/clang-cpp37
 
-USES=	gmake perl5
+USES=	autoreconf gmake libtool perl5
 
-post-patch:
-	${REINPLACE_CMD} 's,llvm-config,llvm-config37,g' ${WRKSRC}/configure
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 1000000
+CONFIGURE_ENV+=	CPPFLAGS="-stdlib=libstdc++ -I${LOCALBASE}/lib/gcc48/include/c++/ -I${LOCALBASE}/lib/gcc48/include/ -I${LOCALBASE}/lib/gcc48/include/c++/${ARCH:C/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}/ -L${LOCALBASE}/lib -L${LOCALBASE}/lib/gcc48" \
+		LDFLAGS="-L/usr/local/lib/gcc48 -lstdc++"
+.endif
+
+.include <bsd.port.post.mk>
