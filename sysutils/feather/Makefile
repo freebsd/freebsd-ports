@@ -15,16 +15,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml \
 
 USES=		python
 NO_BUILD=	yes
-NO_INSTALL=	yes
-STRIP=
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/feather ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/feather ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/feather.yaml.dist ${STAGEDIR}${PREFIX}/etc
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
