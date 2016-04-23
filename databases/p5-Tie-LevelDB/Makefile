@@ -14,9 +14,9 @@ COMMENT=	Perl Interface to the Google LevelDB NoSQL database
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
+
+BROKEN_powerpc64=	does not build
 
 MAKE_ARGS=	CC="${CXX}"
 USE_PERL5=	configure
