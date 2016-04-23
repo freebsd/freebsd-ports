@@ -29,11 +29,6 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-version>=0.99.02:devel/p5-version
-RUN_DEPENDS+=	p5-version>=0.99.02:devel/p5-version
-.endif
-
 .if ${PERL_LEVEL} < 502000
 BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.21:net/p5-IO-Socket-IP
 RUN_DEPENDS+=	p5-IO-Socket-IP>=0.21:net/p5-IO-Socket-IP
