@@ -4771,6 +4771,7 @@
     SUBDIR += rubygem-apipie-bindings
     SUBDIR += rubygem-apipie-params
     SUBDIR += rubygem-app_config
+    SUBDIR += rubygem-arr-pm
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-ascii85
     SUBDIR += rubygem-asetus
