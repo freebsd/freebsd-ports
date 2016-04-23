@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GeoIP2
-PORTVERSION=	2.002000
+PORTVERSION=	2.003000
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -13,6 +13,7 @@ COMMENT=	Perl API for MaxMind GeoIP2 web services and databases
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Data-Validate-IP>=0.19:net-mgmt/p5-Data-Validate-IP \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
