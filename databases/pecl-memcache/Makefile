@@ -11,7 +11,10 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Memcached extension
 
-BROKEN_powerpc64=	Does not build
+LICENSE=	PHP30
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_powerpc64=	does not build
 
 OPTIONS_DEFINE=	EXAMPLES
 
