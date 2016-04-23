@@ -3,7 +3,7 @@
 
 PORTNAME=	lens
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.pitecan.com/Lens/ \
 		LOCAL/tota/lens
@@ -12,10 +12,13 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Mail filter written in Ruby
 
 NO_BUILD=	yes
+BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
 USE_RUBY=	yes
+USES=		shebangfix
 
 LIB_FILES=	lens.rb maildir.rb message.rb parsedate.rb classify.rb
-RUBY_SHEBANG_FILES=	lens
+SHEBANG_FILES=	lens
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
