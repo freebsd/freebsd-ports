@@ -15,7 +15,6 @@
     SUBDIR += bluegps
     SUBDIR += bluez-firmware
     SUBDIR += bpl+
-    SUBDIR += cdr_read
     SUBDIR += chirp
     SUBDIR += chu
     SUBDIR += comserv
@@ -82,7 +81,6 @@
     SUBDIR += libcodec2
     SUBDIR += libconcord
     SUBDIR += libfap
-    SUBDIR += libfec
     SUBDIR += libimobiledevice
     SUBDIR += libirman
     SUBDIR += libmodbus

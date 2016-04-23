@@ -38,7 +38,6 @@
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += anki
-    SUBDIR += annelid
     SUBDIR += antipolix
     SUBDIR += aop
     SUBDIR += apoolGL

@@ -8284,3 +8284,21 @@ graphics/kipi-plugin-picasawebexport||2016-04-14|Merged into graphics/kipi-plugi
 security/engine_pkcs11|security/libp11|2016-04-20|Merged
 devel/elixir-timex-interval||2016-04-22|Merged into devel/elixir-timex upstream
 devel/p5-Test-Stream|devel/p5-Test2-Suite|2016-04-23|Use devel/p5-Test2-Suite instead
+deskutils/qlabels||2016-04-23|Has expired: Does not fetch, unmaintained
+french/tvdownloader||2016-04-23|Has expired: Many channels have modified their protocols and cannot be DL anymore
+comms/cdr_read||2016-04-23|Has expired: unfetchable
+russian/rubygem-rutils||2016-04-23|Has expired: Deprecated by upstream
+devel/rubygem-dotenv-deployment||2016-04-23|Has expired: Deprecated by upstream in latest version (0.3.0)
+www/p5-LWP-ConsoleLogger||2016-04-23|Has expired: Depends on expiring www/p5-HTTP-CookieMonster
+www/p5-WWW-Mechanize-Cached||2016-04-23|Has expired: Depends on expiring www/p5-HTTP-CookieMonster
+www/p5-HTTP-CookieMonster||2016-04-23|Has expired: Broken for more than 6 months
+misc/diary-hercules||2016-04-23|Has expired: Broken for more than 6 months
+graphics/ffff||2016-04-23|Has expired: Broken for more than 6 months
+net-im/sigram||2016-04-23|Has expired: Broken for more than 6 months
+games/annelid||2016-04-23|Has expired: Broken for more than 6 months
+science/py-pydap||2016-04-23|Has expired: Broken for more than 6 months
+sysutils/su2||2016-04-23|Has expired: Broken for more than 6 months
+www/download-gemist||2016-04-23|Has expired: Broken for more than 6 months
+databases/p5-qdbm||2016-04-23|Has expired: Broken for more than 6 months
+comms/libfec||2016-04-23|Has expired: Broken for more than 6 months
+deskutils/ladon||2016-04-23|Has expired: Broken for more than 6 months

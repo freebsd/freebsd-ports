@@ -1017,7 +1017,6 @@
     SUBDIR += stow
     SUBDIR += stowES
     SUBDIR += stress
-    SUBDIR += su2
     SUBDIR += superiotool
     SUBDIR += swapd
     SUBDIR += swapexd
