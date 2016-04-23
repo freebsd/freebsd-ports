@@ -35,7 +35,6 @@ aestats-*		games/aestats		Commercial use is prohibited
 agrep-*			textproc/agrep		No redistribution for profit
 alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
 alephone/Marathon*.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
-annelid-*		games/annelid		No redistribution allowed
 apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
 armyops*-linux.run	games/linux-americasarmy Redistribution is limited
 astah-community-*.zip	devel/astah-community	License restrictions -- See http://astah.net/faq/community/enduser-license-agreement
@@ -218,7 +217,6 @@ squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware,
 stardict-longman-*	textproc/stardict-longman	Possible copyright infringement
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Only unmodified original package can be distributed
-su2-1.3.tar.gz		sysutils/su2		Do not sell for profit
 susv2.tar.bz2		misc/susv2		Redistribution of the documents is not permitted
 susv3.tar.bz2		misc/susv3		Redistribution of the documents is not permitted
 susv4tc1.tar.bz2	misc/susv4		Redistribution of the documents is not permitted

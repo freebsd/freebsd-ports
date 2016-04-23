@@ -155,7 +155,6 @@
     SUBDIR += rubygem-tinder
     SUBDIR += sayaka
     SUBDIR += sendxmpp
-    SUBDIR += sigram
     SUBDIR += skype
     SUBDIR += skype-devel
     SUBDIR += skype4

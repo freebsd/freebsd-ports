@@ -174,7 +174,6 @@
     SUBDIR += exrtools
     SUBDIR += farbfeld
     SUBDIR += feh
-    SUBDIR += ffff
     SUBDIR += fig2sxd
     SUBDIR += figurine
     SUBDIR += flam3

@@ -22,7 +22,6 @@
     SUBDIR += mythes
     SUBDIR += php_doc
     SUBDIR += trytond28_account_fr
-    SUBDIR += tvdownloader
     SUBDIR += verbiste
 
 .include <bsd.port.subdir.mk>
