@@ -102,6 +102,7 @@
     SUBDIR += gcc5-devel
     SUBDIR += gcc6-aux
     SUBDIR += gcc6-devel
+    SUBDIR += gcc7-devel
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
