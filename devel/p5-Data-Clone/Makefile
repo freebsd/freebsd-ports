@@ -20,13 +20,7 @@ TEST_DEPENDS=	p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=3.18:devel/p5-ExtUtils-ParseXS
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/Clone/Clone.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
