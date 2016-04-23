@@ -12,15 +12,16 @@ COMMENT=	Tool for backing up MySQL databases
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 RUN_DEPENDS=	p5-DBI>=1.48:databases/p5-DBI
+
+BROKEN_powerpc64=	does not build
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 OPTIONS_DEFAULT=APACHE
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	ftp mysql session zlib
