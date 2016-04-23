@@ -3,7 +3,7 @@
 
 PORTNAME=	rbison
 PORTVERSION=	0.0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -12,16 +12,19 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generates a Ruby parser class from a Bison-like specification file
 
-USES=		bison
+USES=		bison shebangfix
 USE_RUBY=	yes
 
-RUBY_SHEBANG_FILES=	${WRKSRC}/rbison
+SHEBANG_FILES=	rbison
 
 DOCS=		ChangeLog README
 EXAMPLES=	CalcFileLexer.rb CalcStringLexer.rb	\
 		calc.in calc.ry calc_test.rb
 
 NO_BUILD=	yes
+
+BROKEN_RUBY22=	Builds but does not run
+BROKEN_RUBY23=	Builds but does not run
 
 OPTIONS_DEFINE=	DOCS
 
