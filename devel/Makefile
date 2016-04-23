@@ -4808,6 +4808,7 @@
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-builder32
     SUBDIR += rubygem-byebug
+    SUBDIR += rubygem-cabin
     SUBDIR += rubygem-caesars
     SUBDIR += rubygem-cairo-gobject
     SUBDIR += rubygem-capybara
