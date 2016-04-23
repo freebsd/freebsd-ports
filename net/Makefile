@@ -415,6 +415,7 @@
     SUBDIR += nakenchat
     SUBDIR += nanomsg
     SUBDIR += nast
+    SUBDIR += nats
     SUBDIR += nbd-server
     SUBDIR += nc
     SUBDIR += ncp
