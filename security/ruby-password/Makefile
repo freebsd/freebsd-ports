@@ -3,7 +3,7 @@
 
 PORTNAME=	password
 PORTVERSION=	0.5.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,9 +17,13 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 LIB_DEPENDS=	libcrack.so:security/cracklib
 RUN_DEPENDS=	rubygem-ruby-termios>=0:comms/rubygem-ruby-termios
 
+BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
+
 USE_RUBY=	yes
+USES=		shebangfix
 USE_RUBY_EXTCONF=	yes
-RUBY_SHEBANG_FILES=	example/*
+SHEBANG_FILES=	example/*
 SADIR=	lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 
 CONFIGURE_ARGS=	--with-crack-dict="${LOCALBASE}/libdata/cracklib/cracklib-words.pwd"
