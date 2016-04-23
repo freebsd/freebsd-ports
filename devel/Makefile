@@ -4407,6 +4407,7 @@
     SUBDIR += py-sh
     SUBDIR += py-shapely
     SUBDIR += py-should_dsl
+    SUBDIR += py-simpleeval
     SUBDIR += py-simplegeneric
     SUBDIR += py-simplejson
     SUBDIR += py-simpleparse
