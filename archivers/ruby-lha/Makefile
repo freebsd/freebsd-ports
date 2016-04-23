@@ -3,7 +3,7 @@
 
 PORTNAME=	lha
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers ruby
 MASTER_SITES=	http://arton.no-ip.info/data/lhalib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension to unpack LHA-compressed files
 
-USES=		zip
+USES=		zip shebangfix
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_EXTCONF=	ext/extconf.rb
@@ -21,7 +21,7 @@ RUBY_EXTCONF=	ext/extconf.rb
 CONFIGURE_ARGS=	--rubyprog=${RUBY}
 
 EXAMPLES=	test/test.rb
-RUBY_SHEBANG_FILES=	${EXAMPLES}
+SHEBANG_FILES=	${EXAMPLES}
 
 OPTIONS_DEFINE=	DOCS
 
