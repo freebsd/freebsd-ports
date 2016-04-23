@@ -3,6 +3,7 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	http://www.tdiary.org/download/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -22,17 +23,16 @@ RUN_DEPENDS=	rubygem-emot>=0.0.4:textproc/rubygem-emot \
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
+USES=		shebangfix
 
-RUBY_SHEBANG_FILES=	index.fcgi \
-			index.rb \
-			update.fcgi \
-			update.rb \
-			bin/tdiary \
-			misc/convert2.rb \
-			misc/migrate.rb \
-			misc/plugin/amazon/amazonimg.rb \
-			misc/plugin/squeeze.rb \
-			misc/plugin/xmlrpc/xmlrpc.rb
+SHEBANG_FILES=	index.fcgi \
+		index.rb \
+		update.fcgi \
+		update.rb \
+		bin/tdiary \
+		misc/plugin/amazon/amazonimg.rb \
+		misc/plugin/squeeze.rb \
+		misc/plugin/xmlrpc/xmlrpc.rb
 
 DOCFILES=	HOWTO-authenticate-in-rack HOWTO-make-io \
 		HOWTO-make-plugin HOWTO-make-theme \
@@ -88,8 +88,9 @@ pre-patch:
 pre-install:
 	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
 		${WRKDIR}/tdiaryinst.rb > ${WRKDIR}/${TDIARY_SCRIPT}
-	@${REINPLACE_CMD} '/#!\/usr\/bin\/env ruby/d' ${WRKSRC}/misc/convert2.rb
-	@${REINPLACE_CMD} '/#!\/usr\/bin\/env ruby/d' ${WRKSRC}/misc/migrate.rb
+	@${REINPLACE_CMD} 's!%%LOCALBASE%%!${LOCALBASE}!g' \
+		${WRKSRC}/misc/convert2.rb \
+		${WRKSRC}/misc/migrate.rb
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
