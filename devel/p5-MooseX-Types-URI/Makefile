@@ -27,10 +27,6 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501800
-TEST_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.120.900:devel/p5-CPAN-Meta-Requirements
-.endif
-
 .if ${PERL_LEVEL} < 502200
 TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:devel/p5-Test-Simple
 .endif
