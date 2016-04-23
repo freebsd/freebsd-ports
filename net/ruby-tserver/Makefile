@@ -3,6 +3,7 @@
 
 PORTNAME=	tserver
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.tmtm.org/ruby/tserver/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -12,8 +13,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for writing a preforking server like Apache
 
 USE_RUBY=	yes
+USES=		shebangfix
 
-RUBY_SHEBANG_FILES=	${WRKSRC}/sample/*
+SHEBANG_FILES=	${WRKSRC}/sample/*
 
 NO_BUILD=	yes
 
