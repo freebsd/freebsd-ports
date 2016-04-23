@@ -1,5 +1,5 @@
-@unexec %%SGMLCAT_RM%%
-@unexec %%XMLCAT_RM%%
+@preunexec %%SGMLCAT_RM%%
+@preunexec %%XMLCAT_RM%%
 share/xml/xhtml/1.1/dtd/VERSION
 share/xml/xhtml/1.1/dtd/catalog.xml
 share/xml/xhtml/1.1/dtd/xhtml11-flat.dtd
@@ -8,8 +8,9 @@ share/xml/xhtml/1.1/dtd/xhtml11.cat
 share/xml/xhtml/1.1/dtd/xhtml11.dtd
 share/xml/xhtml/1.1/dtd/xml1.dcl
 share/xml/xhtml/1.1/dtd/xml1n.dcl
+share/xml/xhtml/1.1/xsd/xhtml-ruby-1.xsd
 share/xml/xhtml/1.1/xsd/xhtml11-model-1.xsd
 share/xml/xhtml/1.1/xsd/xhtml11-modules-1.xsd
 share/xml/xhtml/1.1/xsd/xhtml11.xsd
-@exec %%XMLCAT_ADD%%
-@exec %%SGMLCAT_ADD%%
+@postexec %%XMLCAT_ADD%%
+@postexec %%SGMLCAT_ADD%%
