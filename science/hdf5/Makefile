@@ -29,7 +29,7 @@ INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool tar:bzip2
+USES=		libtool localbase tar:bzip2
 
 PORTEXAMPLES=	*
 
