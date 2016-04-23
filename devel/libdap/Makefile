@@ -13,11 +13,11 @@ COMMENT=	SDK which contains an implementation of DAP 2.0 and 3.1
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libxml2.so:textproc/libxml2
+
+BROKEN_powerpc64=	does not build
 
 CONFIGURE_ARGS=	ac_cv_type_max_align_t=yes
 GNU_CONFIGURE=	yes
