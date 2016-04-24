@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -33,11 +33,14 @@ CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=
 
 OPTIONS_DEFINE=	CLANG DOCS EXTRAS GOLD LIT LLD LLDB
-OPTIONS_DEFINE_amd64=	OPENMP
+OPTIONS_DEFINE_amd64=	COMPILER_RT OPENMP
+OPTIONS_DEFINE_i386=	COMPILER_RT
 OPTIONS_DEFAULT=	CLANG EXTRAS GOLD LIT LLD LLDB
-OPTIONS_DEFAULT_amd64=	OPENMP
-OPTIONS_DEFAULT_i386=	
+OPTIONS_DEFAULT_amd64=	COMPILER_RT OPENMP
+OPTIONS_DEFAULT_i386=	COMPILER_RT
 OPTIONS_SUB=	yes
+
+PLIST_FILES=
 
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
@@ -49,6 +52,9 @@ CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_DISTFILES=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
 CLANG_PORTDOCS=		clang
+COMPILER_RT_DESC=	Sanitizer libraries
+COMPILER_RT_DISTFILES=	compiler-rt-${DISTVERSION}.src${EXTRACT_SUFX}
+COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|}
 DOCS_PORTDOCS=		llvm
 DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DSPHINX_WARNINGS_AS_ERRORS=OFF \
@@ -70,7 +76,7 @@ GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	ld.gold:devel/binutils
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
-.for option in CLANG EXTRAS LLD LLDB OPENMP
+.for option in CLANG COMPILER_RT EXTRAS LLD LLDB OPENMP
 WRKSRC_${option:tl}=		${WRKDIR}/${${option}_DISTFILES:S/${EXTRACT_SUFX}//}
 .endfor
 
@@ -187,6 +193,43 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
+_CRTLIBDIR=    ${LLVM_PREFIX:S|${PREFIX}/||}/lib/freebsd
+.if ${ARCH} == "amd64"
+_COMPILER_RT_LIBS= \
+	libclang_rt.asan-preinit-x86_64.a \
+	libclang_rt.asan-x86_64.a \
+	libclang_rt.asan-x86_64.a.syms \
+	libclang_rt.asan-x86_64.so \
+	libclang_rt.asan_cxx-x86_64.a \
+	libclang_rt.asan_cxx-x86_64.a.syms \
+	libclang_rt.builtins-x86_64.a \
+	libclang_rt.dd-x86_64.a \
+	libclang_rt.dyndd-x86_64.so \
+	libclang_rt.lsan-x86_64.a \
+	libclang_rt.profile-x86_64.a \
+	libclang_rt.safestack-x86_64.a \
+	libclang_rt.tsan-x86_64.a \
+	libclang_rt.tsan-x86_64.a.syms \
+	libclang_rt.tsan_cxx-x86_64.a \
+	libclang_rt.tsan_cxx-x86_64.a.syms \
+	libclang_rt.ubsan_standalone-x86_64.a \
+	libclang_rt.ubsan_standalone-x86_64.a.syms \
+	libclang_rt.ubsan_standalone_cxx-x86_64.a \
+	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms
+.endif
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+_COMPILER_RT_LIBS+= \
+	libclang_rt.asan-i386.a \
+	libclang_rt.asan-i386.so \
+	libclang_rt.asan-preinit-i386.a \
+	libclang_rt.asan_cxx-i386.a \
+	libclang_rt.builtins-i386.a \
+	libclang_rt.profile-i386.a \
+	libclang_rt.safestack-i386.a \
+	libclang_rt.ubsan_standalone-i386.a \
+	libclang_rt.ubsan_standalone_cxx-i386.a
+.endif
+
 .if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 .if ${PORT_OPTIONS:MEXTRAS}
 COMMANDS+=	${EXTRAS_COMMANDS}
@@ -243,6 +286,17 @@ post-patch:
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
+post-patch-COMPILER_RT-on:
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-svn-261229
+
+post-build-COMPILER_RT-on:
+	${MKDIR} ${WRKDIR}/compiler-rt-build
+	cd ${WRKDIR}/compiler-rt-build && \
+	${CMAKE_BIN} ${CMAKE_ARGS} \
+	    -DLLVM_CONFIG_PATH=${CONFIGURE_WRKSRC}/bin/llvm-config \
+	    ${WRKSRC_compiler_rt} && \
+	${MAKE_ENV} ${MAKE_CMD}
+
 post-install:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
@@ -283,6 +337,10 @@ post-install-CLANG-on:
 	   ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/clang-tblgen \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
+
+post-install-COMPILER_RT-on:
+	cd ${WRKDIR}/compiler-rt-build && \
+	${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET}
 
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/utils/lit/lit.py \
@@ -330,7 +388,9 @@ build-plist:
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	awk '{ \
-	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(omp.h|libclang_rt|sanitizer|blacklist.txt|${EXTRAS_PATTERN})/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(omp.h|${EXTRAS_PATTERN}|libclang_rt)/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /asan_blacklist.txt|sanitizer/) \
+		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
@@ -338,6 +398,7 @@ build-plist:
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${RM} -f ${PLIST}.tmp
+
 
 check-commands:
 .for command in ${COMMANDS}
@@ -374,8 +435,7 @@ _PATCH_FILE=${FILESDIR}/lldb-patch-svn-${PATCH_REV}
 _LLVM_BASE=http://llvm.org/svn/llvm-project/lldb/trunk
 svn-patch-lldb:
 	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
-	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
-	    sed -E -e 's;^(---|\+\+\+) ;\1 tools/lldb/;' >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | >> ${_PATCH_FILE}
 .endif
 
 .include <bsd.port.post.mk>
