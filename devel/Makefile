@@ -292,7 +292,6 @@
     SUBDIR += commit-patch
     SUBDIR += commoncpp
     SUBDIR += compiler-rt
-    SUBDIR += compiler-rt-devel
     SUBDIR += compiz-bcop
     SUBDIR += concurrencykit
     SUBDIR += configkit
