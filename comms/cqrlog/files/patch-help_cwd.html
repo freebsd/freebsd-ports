@@ -1,0 +1,11 @@
+--- help/cwd.html.orig	2016-04-20 16:06:15 UTC
++++ help/cwd.html
+@@ -88,7 +88,7 @@ echo "starting cwdaemon" 
+ # rmmod lp 
+ cd /dev 
+ mknod -m 0660 parport0 c 99 0 
+-/usr/local/sbin/cwdaemon -x n </pre>
++%%LOCALBASE%%/sbin/cwdaemon -x n </pre>
+ 
+ Remember the cwdaemon options:<br><br>
+ <img src="img/cwdaem.png"><br><br>

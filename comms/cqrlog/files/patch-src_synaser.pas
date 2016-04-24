@@ -1,4 +1,4 @@
---- src/synaser.pas.orig	2015-03-04 15:17:21 UTC
+--- src/synaser.pas.orig	2016-04-20 16:06:15 UTC
 +++ src/synaser.pas
 @@ -302,7 +302,7 @@ type
      procedure DcbToTermios(const dcb: TDCB; var term: termios); virtual;
