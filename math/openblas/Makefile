@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.15
+PORTVERSION=	0.2.18
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	GH NL/lapack/timing/:lapack_tmg
@@ -115,8 +114,8 @@ post-patch:
 		${WRKSRC}/lapack-netlib/SRC/Makefile \
 		${WRKSRC}/lapack-netlib/SRC/VARIANTS/Makefile \
 		${WRKSRC}/lapack-netlib/TESTING/MATGEN/Makefile \
-		${WRKSRC}/lapack-netlib/lapacke/src/Makefile \
-		${WRKSRC}/lapack-netlib/lapacke/utils/Makefile \
+		${WRKSRC}/lapack-netlib/LAPACKE/src/Makefile \
+		${WRKSRC}/lapack-netlib/LAPACKE/utils/Makefile \
 		${WRKSRC}/reference/Makefile
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
 	-e 's+%%LDFLAGS%%+${LDFLAGS}+' \
