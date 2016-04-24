@@ -49,7 +49,7 @@ share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/xmethods.py
 %%JAVA%%bin/gtnameserv%%SUFFIX%%
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
 %%JAVA%%bin/jv-convert%%SUFFIX%%
-%%JAVA%%libdata/pkgconfig/libgcj-6.pc
+%%JAVA%%libdata/pkgconfig/libgcj-7.pc
 %%JAVA%%man/man1/aot-compile%%SUFFIX%%.1.gz
 %%JAVA%%man/man1/gappletviewer%%SUFFIX%%.1.gz
 %%JAVA%%man/man1/gc-analyze%%SUFFIX%%.1.gz
