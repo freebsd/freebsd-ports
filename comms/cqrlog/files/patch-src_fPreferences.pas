@@ -14,7 +14,7 @@
    cmbRTSR2.ItemIndex := cqrini.ReadInteger('TRX2', 'RTS', 0);
  
 -  edtRotCtldPath.Text := cqrini.ReadString('ROT', 'RotCtldPath', '/usr/bin/rotctld');
-+  edtRotCtldPath.Text := cqrini.ReadString('ROT', 'RotCtldPath', '$$LOCALBASE%%/bin/rotctld');
++  edtRotCtldPath.Text := cqrini.ReadString('ROT', 'RotCtldPath', '%%LOCALBASE%%/bin/rotctld');
  
    edtRot1Device.Text := cqrini.ReadString('ROT1', 'device', '');
    edtRot1ID.Text := cqrini.ReadString('ROT1', 'model', '');
