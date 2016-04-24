@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-DISTVERSION=	1.1.0-pre3
+DISTVERSION=	1.1.0-pre5
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -15,11 +15,11 @@ COMMENT=	SSL and crypto library (1.1.x)
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	libressl-[0-9]* openssl-[0-9]*
+CONFLICTS=	libressl-[0-9]* libressl-devel-[0-9]* openssl-[0-9]*
 
 OPTIONS_GROUP=	CIPHERS HASHES OPTIMIZE PROTOCOLS
 OPTIONS_GROUP_CIPHERS=	IDEA JPAKE RC2 RC4 RC5
-OPTIONS_GROUP_HASHES=	MD2 MD4 MDC2 MD_GHOST94 RMD160
+OPTIONS_GROUP_HASHES=	MD2 MD4 MDC2 RMD160
 OPTIONS_GROUP_OPTIMIZE=	ASM SSE2
 OPTIONS_GROUP_PROTOCOLS=	NEXTPROTONEG SCTP SSL3
 
@@ -65,7 +65,6 @@ OPTIONS_SUB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 
-MAKE_JOBS_UNSAFE=	yes
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
 
@@ -103,23 +102,12 @@ CONFIGURE_ARGS+=	--openssldir=${OPENSSLDIR}
 OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
-OPENSSL_SHLIBVER?=	8
+OPENSSL_SHLIBVER?=	9
 
 .if ${ARCH} == "i386"
 OPTIONS_GROUP_OPTIMIZE+=	I386
 .endif
 I386_CONFIGURE_ON=	386
-
-.if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
-pre-everything::
-	@${ECHO_CMD} "#"
-	@${ECHO_CMD} "# this ports conflicts with your base system"
-	@${ECHO_CMD} "# please undefine OPENSSL_OVERWRITE_PORT"
-	@${ECHO_CMD} "# and use WITH_OPENSSL_BASE=yes instead."
-	@${ECHO_CMD} "#"
-	@${FALSE}
-
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
@@ -130,9 +118,14 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(PREFIX)/man|' \
-		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
 		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
+		-e 's|$$(SHLIB_MAJOR).$$(SHLIB_MINOR)|$(OPENSSL_SHLIBVER)|g' \
+		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
+		-e 's| install_html_docs$$||' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} \
+		-e 's|^LIBVERSION=$$|LIBVERSION=$(OPENSSL_SHLIBVER) |' \
+		${WRKSRC}/Makefile.shared
 
 post-install-SHARED-on:
 .for i in libcrypto libssl
@@ -140,7 +133,7 @@ post-install-SHARED-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/$i.so.${OPENSSL_SHLIBVER}
 	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib/$i.so
 .endfor
-.for i in libcapi libdasync libpadlock
+.for i in capi dasync padlock
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines/${i}.so
 .endfor
 
