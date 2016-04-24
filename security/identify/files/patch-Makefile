@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jul 20 09:01:27 1992
-+++ Makefile	Fri Apr  2 10:50:40 1999
+--- Makefile.orig	1992-07-20 16:01:27 UTC
++++ Makefile
 @@ -1,2 +1,11 @@
 -identify: identify.c
 -	$(CC) -o identify identify.c -lauthuser
