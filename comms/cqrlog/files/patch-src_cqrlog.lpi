@@ -1,0 +1,11 @@
+--- src/cqrlog.lpi.orig	2016-04-20 16:06:15 UTC
++++ src/cqrlog.lpi
+@@ -32,7 +32,7 @@
+       <local>
+         <FormatVersion Value="1"/>
+         <CommandLineParams Value="--DEBUG=1"/>
+-        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
++        <LaunchingApplication PathPlusParams="%%LOCALBASE%%/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+       </local>
+       <environment>
+         <UserOverrides Count="2">

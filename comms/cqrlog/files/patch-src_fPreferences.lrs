@@ -1,0 +1,11 @@
+--- src/fPreferences.lrs.orig	2016-04-20 16:06:15 UTC
++++ src/fPreferences.lrs
+@@ -1024,7 +1024,7 @@ LazarusResources.Add('TfrmPreferences','
+   +#2#14#6'Height'#2'Y'#3'Top'#2#11#5'Width'#3#9#2#7'Caption'#6#23' Path for th'
+   +'e xplanet  '#12'ClientHeight'#2'F'#11'ClientWidth'#3#5#2#8'TabOrder'#2#0#0#5
+   +'TEdit'#14'edtXplanetPath'#4'Left'#2#6#6'Height'#2#27#3'Top'#2#15#5'Width'#3
+-  +#176#1#8'TabOrder'#2#0#4'Text'#6#16'/usr/bin/xplanet'#0#0#0#9'TGroupBox'#10
++  +#176#1#8'TabOrder'#2#0#4'Text'#6#16'%%LOCALBASE%%/bin/xplanet'#0#0#0#9'TGroupBox'#10
+   ,'GroupBox22'#4'Left'#2#14#6'Height'#2'p'#3'Top'#2'k'#5'Width'#2'q'#7'Caption'
+   +#6#13' Window size '#12'ClientHeight'#2']'#11'ClientWidth'#2'm'#8'TabOrder'#2
+   +#1#0#6'TLabel'#7'Label66'#4'Left'#2#6#6'Height'#2#17#3'Top'#2#15#5'Width'#2

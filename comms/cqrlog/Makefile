@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cqrlog
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
@@ -56,7 +55,11 @@ post-patch:
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/dUtils.pas \
 		${WRKSRC}/src/fLoTWExport.pas ${WRKSRC}/src/fPreferences.pas \
 		${WRKSRC}/src/fRotControl.pas ${WRKSRC}/src/fTRXControl.pas \
-		${WRKSRC}/src/fGrayline.pas
+		${WRKSRC}/src/fGrayline.pas ${WRKSRC}/help/cwd.html \
+		${WRKSRC}/help/h1.html ${WRKSRC}/src/fPreferences.pas \
+		${WRKSRC}/src/fLoTWExport.lrs ${WRKSRC}/src/fPreferences.lfm \
+		${WRKSRC}/src/fPreferences.lrs ${WRKSRC}/src/fLoTWExport.lfm \
+		${WRKSRC}/src/cqrlog.lpi
 	${REINPLACE_CMD} -e s!%%PREFIX%%!${PREFIX}!g \
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/fGrayline.pas
 	${REINPLACE_CMD} -e s!%%LAZARUSDIR%%!${LAZARUS_DIR}!g \

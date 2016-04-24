@@ -1,5 +1,5 @@
---- Makefile.orig	2015-11-28 17:28:12.000000000 -0500
-+++ Makefile	2016-03-17 12:05:09.138035000 -0500
+--- Makefile.orig	2016-04-20 16:06:15 UTC
++++ Makefile
 @@ -1,12 +1,13 @@
 -CC=lazbuild
 +CC=lazbuild -d
@@ -19,7 +19,7 @@
  	$(ST) src/cqrlog
  	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
  
-@@ -30,7 +31,7 @@
+@@ -30,7 +31,7 @@ install:
  	install -d -v         $(sharedir)/pixmaps/cqrlog
  	install -d -v         $(sharedir)/icons
  	install -d -v         $(sharedir)/applications
@@ -28,7 +28,7 @@
  	install    -v -m 0755 src/cqrlog $(bindir)
  	install    -v -m 0755 tools/cqrlog-apparmor-fix $(datadir)/cqrlog-apparmor-fix
  	install    -v -m 0644 ctyfiles/* $(datadir)/ctyfiles/
-@@ -47,7 +48,7 @@
+@@ -47,7 +48,7 @@ install:
  	install    -v -m 0644 images/cqrlog.png $(sharedir)/pixmaps/cqrlog/cqrlog.png
  	install    -v -m 0644 images/cqrlog.png $(sharedir)/icons/cqrlog.png  
  	install    -v -m 0644 src/changelog.html $(datadir)/changelog.html
