@@ -10,6 +10,8 @@ MASTER_SITES=	http://ftp.nluug.nl/ftp/pub/pub/security/coast/daemons/pidentd/too
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client side ident protocol daemon wrapper
 
+LICENSE=	PD
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:security/libident
 
 PORTDOCS=	README
@@ -19,6 +21,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/identify ${STAGEDIR}${PREFIX}/libexec
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
