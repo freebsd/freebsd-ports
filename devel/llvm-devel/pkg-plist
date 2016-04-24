@@ -54,6 +54,7 @@ bin/sancov-devel
 %%LIT%%llvm-devel/bin/llvm-lit
 %%LIT%%bin/FileCheck-devel
 %%LIT%%llvm-devel/bin/FileCheck
+%%COMPILER_RT%%llvm-devel/asan_blacklist.txt
 llvm-devel/bin/bugpoint
 %%CLANG%%llvm-devel/bin/c-index-test
 %%CLANG%%llvm-devel/bin/clang
@@ -1574,6 +1575,7 @@ llvm-devel/include/llvm/IR/ModuleSummaryIndex.h
 llvm-devel/include/llvm/IR/NoFolder.h
 llvm-devel/include/llvm/IR/OperandTraits.h
 llvm-devel/include/llvm/IR/Operator.h
+llvm-devel/include/llvm/IR/OptBisect.h
 llvm-devel/include/llvm/IR/PassManager.h
 llvm-devel/include/llvm/IR/PassManagerInternal.h
 llvm-devel/include/llvm/IR/PatternMatch.h
@@ -1895,11 +1897,13 @@ llvm-devel/include/llvm/Transforms/Instrumentation.h
 llvm-devel/include/llvm/Transforms/ObjCARC.h
 llvm-devel/include/llvm/Transforms/Scalar.h
 llvm-devel/include/llvm/Transforms/Scalar/ADCE.h
+llvm-devel/include/llvm/Transforms/Scalar/DCE.h
 llvm-devel/include/llvm/Transforms/Scalar/EarlyCSE.h
 llvm-devel/include/llvm/Transforms/Scalar/GVN.h
 llvm-devel/include/llvm/Transforms/Scalar/LowerExpectIntrinsic.h
 llvm-devel/include/llvm/Transforms/Scalar/SROA.h
 llvm-devel/include/llvm/Transforms/Scalar/SimplifyCFG.h
+llvm-devel/include/llvm/Transforms/Scalar/Sink.h
 llvm-devel/include/llvm/Transforms/Utils/ASanStackFrameLayout.h
 llvm-devel/include/llvm/Transforms/Utils/BasicBlockUtils.h
 llvm-devel/include/llvm/Transforms/Utils/BuildLibCalls.h
@@ -1929,6 +1933,15 @@ llvm-devel/include/llvm/Transforms/Utils/UnifyFunctionExitNodes.h
 llvm-devel/include/llvm/Transforms/Utils/UnrollLoop.h
 llvm-devel/include/llvm/Transforms/Utils/ValueMapper.h
 llvm-devel/include/llvm/Transforms/Vectorize.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/allocator_interface.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/asan_interface.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/common_interface_defs.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/coverage_interface.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/dfsan_interface.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/linux_syscall_hooks.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/lsan_interface.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/msan_interface.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/tsan_interface_atomic.h
 llvm-devel/lib/BugpointPasses.so
 llvm-devel/lib/LLVMHello.so
 %%GOLD%%llvm-devel/lib/LLVMgold.so
@@ -1952,6 +1965,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512fintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512ifmaintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512ifmavlintrin.h
+%%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512pfintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512vbmiintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512vbmivlintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512vlbwintrin.h
@@ -2166,6 +2180,7 @@ llvm-devel/lib/libLTO.so
 %%CLANG%%llvm-devel/lib/libclangFormat.a
 %%CLANG%%llvm-devel/lib/libclangFrontend.a
 %%CLANG%%llvm-devel/lib/libclangFrontendTool.a
+%%CLANG%%llvm-devel/lib/libclangIncludeFixer.a
 %%CLANG%%llvm-devel/lib/libclangIndex.a
 %%CLANG%%llvm-devel/lib/libclangLex.a
 %%CLANG%%llvm-devel/lib/libclangParse.a
