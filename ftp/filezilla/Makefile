@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.16.0
-PORTREVISION=	1
+PORTVERSION=	3.17.0
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libfilezilla.so:ftp/libfilezilla \
 		libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
 		libidn.so:dns/libidn \
+		libnettle.so:security/nettle \
 		libpugixml.so:textproc/pugixml
 
 BROKEN_FreeBSD_9=	requires C++14 complier, 9.x lacks C++11 standard library
