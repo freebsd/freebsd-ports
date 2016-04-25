@@ -1,0 +1,193 @@
+--- makefile.in.orig	2006-10-13 01:10:53 UTC
++++ makefile.in
+@@ -8,7 +8,7 @@ prefix = @prefix@
+ exec_prefix=@exec_prefix@
+ VPATH = @srcdir@
+ CC=@CC@
+-LIBS=@MLIBS@ fec.o sim.o viterbi27.o viterbi27_port.o viterbi29.o viterbi29_port.o \
++LIBS=@MLIBS@ cpu_mode.o fec.o sim.o viterbi27.o viterbi27_port.o viterbi29.o viterbi29_port.o \
+ 	viterbi39.o viterbi39_port.o \
+ 	viterbi615.o viterbi615_port.o encode_rs_char.o encode_rs_int.o encode_rs_8.o \
+ 	decode_rs_char.o decode_rs_int.o decode_rs_8.o \
+@@ -43,52 +43,50 @@ test: vtest27 vtest29 vtest39 vtest615 r
+ install: all
+ 	mkdir -p @libdir@ 
+ 	install -m 644 -p $(SHARED_LIB) libfec.a @libdir@
+-#	(cd @libdir@;ln -f -s $(SHARED_LIB) libfec.so)
+-	@REBIND@
+ 	mkdir -p @includedir@
+ 	install -m 644 -p fec.h @includedir@
+ 	mkdir -m 0755 -p @mandir@/man3
+ 	install -m 644 -p simd-viterbi.3 rs.3 dsp.3 @mandir@/man3
+ 
+ peaktest: peaktest.o libfec.a
+-	gcc -g -o $@ $^
++	${CC} -g -o $@ $^
+ 
+ sumsq_test: sumsq_test.o libfec.a
+-	gcc -g -o $@ $^
++	${CC} -g -o $@ $^
+ 
+ dtest: dtest.o libfec.a
+-	gcc -g -o $@ $^ -lm
++	${CC} -g -o $@ $^ -lm
+ 
+ vtest27: vtest27.o libfec.a
+-	gcc -g -o $@ $^ -lm
++	${CC} -g -o $@ $^ -lm
+ 
+ vtest29: vtest29.o libfec.a
+-	gcc -g -o $@ $^ -lm
++	${CC} -g -o $@ $^ -lm
+ 
+ vtest39: vtest39.o libfec.a
+-	gcc -g -o $@ $^ -lm
++	${CC} -g -o $@ $^ -lm
+ 
+ vtest615: vtest615.o libfec.a
+-	gcc -g -o $@ $^ -lm
++	${CC} -g -o $@ $^ -lm
+ 
+ rstest: rstest.o libfec.a
+-	gcc -g -o $@ $^
++	${CC} -g -o $@ $^
+ 
+ rs_speedtest: rs_speedtest.o libfec.a
+-	gcc -g -o $@ $^	
++	${CC} -g -o $@ $^	
+ 
+ # for some reason, the test programs without args segfault on the PPC with -O2 optimization. Dunno why - compiler bug?
+ vtest27.o: vtest27.c fec.h
+-	gcc -g -c $<
++	${CC} -g -c $<
+ 
+ vtest29.o: vtest29.c fec.h
+-	gcc -g -c $<
++	${CC} -g -c $<
+ 
+ vtest39.o: vtest39.c fec.h
+-	gcc -g -c $<
++	${CC} -g -c $<
+ 
+ vtest615.o: vtest615.c fec.h
+-	gcc -g -c $<
++	${CC} -g -c $<
+ 
+ libfec.a: $(LIBS)
+ 	ar rv $@ $^
+@@ -100,7 +98,7 @@ libfec.dylib: $(LIBS)
+ 
+ # for Linux et al
+ libfec.so: $(LIBS)
+-	gcc -shared -Xlinker -soname=$@ -o $@ -Wl,-whole-archive $^ -Wl,-no-whole-archive -lc
++	${CC} -shared -Xlinker -soname=$@ -o $@ -Wl,-whole-archive $^ -Wl,-no-whole-archive -lc
+ 
+ dotprod.o: dotprod.c fec.h
+ 
+@@ -146,10 +144,10 @@ ccsds_tab.c: gen_ccsds
+ 	./gen_ccsds > ccsds_tab.c
+ 
+ gen_ccsds: gen_ccsds.o init_rs_char.o
+-	gcc -o $@ $^
++	${CC} -o $@ $^
+ 
+ gen_ccsds.o: gen_ccsds.c
+-	gcc  $(CFLAGS) -c -o $@ $<
++	${CC}  $(CFLAGS) -c -o $@ $<
+ 
+ ccsds_tal.o: ccsds_tal.c
+ 
+@@ -157,16 +155,16 @@ ccsds_tal.c: gen_ccsds_tal
+ 	./gen_ccsds_tal > ccsds_tal.c
+ 
+ exercise_char.o: exercise.c
+-	gcc $(CFLAGS) -c -o $@ $<
++	${CC} $(CFLAGS) -c -o $@ $<
+ 
+ exercise_int.o: exercise.c
+-	gcc -DBIGSYM=1 $(CFLAGS) -c -o $@ $<
++	${CC} -DBIGSYM=1 $(CFLAGS) -c -o $@ $<
+ 
+ exercise_8.o: exercise.c
+-	gcc -DFIXED=1 $(CFLAGS) -c -o $@ $<
++	${CC} -DFIXED=1 $(CFLAGS) -c -o $@ $<
+ 
+ exercise_ccsds.o: exercise.c
+-	gcc -DCCSDS=1 $(CFLAGS) -c -o $@ $<
++	${CC} -DCCSDS=1 $(CFLAGS) -c -o $@ $<
+ 
+ viterbi27.o: viterbi27.c fec.h
+ 
+@@ -175,13 +173,13 @@ viterbi27_port.o: viterbi27_port.c fec.h
+ viterbi27_av.o: viterbi27_av.c fec.h
+ 
+ viterbi27_mmx.o: viterbi27_mmx.c fec.h
+-	gcc $(CFLAGS) -mmmx -c -o $@ $<
++	${CC} $(CFLAGS) -mmmx -c -o $@ $<
+ 
+ viterbi27_sse.o: viterbi27_sse.c fec.h
+-	gcc $(CFLAGS) -msse -c -o $@ $<
++	${CC} $(CFLAGS) -msse -c -o $@ $<
+ 
+ viterbi27_sse2.o: viterbi27_sse2.c fec.h
+-	gcc $(CFLAGS) -msse2 -c -o $@ $<
++	${CC} $(CFLAGS) -msse2 -c -o $@ $<
+ 
+ viterbi29.o: viterbi29.c fec.h
+ 
+@@ -190,13 +188,13 @@ viterbi29_port.o: viterbi29_port.c fec.h
+ viterbi29_av.o: viterbi29_av.c fec.h
+ 
+ viterbi29_mmx.o: viterbi29_mmx.c fec.h
+-	gcc $(CFLAGS) -mmmx -c -o $@ $<
++	${CC} $(CFLAGS) -mmmx -c -o $@ $<
+ 
+ viterbi29_sse.o: viterbi29_sse.c fec.h
+-	gcc $(CFLAGS) -msse -c -o $@ $<
++	${CC} $(CFLAGS) -msse -c -o $@ $<
+ 
+ viterbi29_sse2.o: viterbi29_sse2.c fec.h
+-	gcc $(CFLAGS) -msse2 -c -o $@ $<
++	${CC} $(CFLAGS) -msse2 -c -o $@ $<
+ 
+ viterbi39.o: viterbi39.c fec.h
+ 
+@@ -205,13 +203,13 @@ viterbi39_port.o: viterbi39_port.c fec.h
+ viterbi39_av.o: viterbi39_av.c fec.h
+ 
+ viterbi39_mmx.o: viterbi39_mmx.c fec.h
+-	gcc $(CFLAGS) -mmmx -c -o $@ $<
++	${CC} $(CFLAGS) -mmmx -c -o $@ $<
+ 
+ viterbi39_sse.o: viterbi39_sse.c fec.h
+-	gcc $(CFLAGS) -msse -c -o $@ $<
++	${CC} $(CFLAGS) -msse -c -o $@ $<
+ 
+ viterbi39_sse2.o: viterbi39_sse2.c fec.h
+-	gcc $(CFLAGS) -msse2 -c -o $@ $<
++	${CC} $(CFLAGS) -msse2 -c -o $@ $<
+ 
+ viterbi615.o: viterbi615.c fec.h
+ 
+@@ -220,17 +218,15 @@ viterbi615_port.o: viterbi615_port.c fec
+ viterbi615_av.o: viterbi615_av.c fec.h
+ 
+ viterbi615_mmx.o: viterbi615_mmx.c fec.h
+-	gcc $(CFLAGS) -mmmx -c -o $@ $<
++	${CC} $(CFLAGS) -mmmx -c -o $@ $<
+ 
+ viterbi615_sse.o: viterbi615_sse.c fec.h
+-	gcc $(CFLAGS) -msse -c -o $@ $<
++	${CC} $(CFLAGS) -msse -c -o $@ $<
+ 
+ viterbi615_sse2.o: viterbi615_sse2.c fec.h
+-	gcc $(CFLAGS) -msse2 -c -o $@ $<
+-
+-cpu_mode_x86.o: cpu_mode_x86.c fec.h
++	${CC} $(CFLAGS) -msse2 -c -o $@ $<
+ 
+-cpu_mode_ppc.o: cpu_mode_ppc.c fec.h
++cpu_mode.o: cpu_mode.c fec.h
+ 
+ 
+ clean:
