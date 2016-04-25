@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	uget
-PORTVERSION=	2.0.7.2
-DISTVERSION=	${PORTVERSION:S/.2$//}
-DISTVERSIONSUFFIX=	-2
+DISTVERSION=	2.0.7-2
 CATEGORIES=	net
-MASTER_SITES=	SF/urlget/${PORTNAME}%20%28stable%29/${DISTVERSION}
+MASTER_SITES=	SF/urlget/${PORTNAME}%20%28stable%29/${DISTVERSION:S/-2//}
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Download manager application
@@ -26,7 +24,7 @@ USE_GNOME=	glib20 gtk30 intltool intlhack
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-2$//}
 
 # Avoid warning, with redefinition of typedef (C11 feature)
 CFLAGS+=	-Wno-typedef-redefinition
