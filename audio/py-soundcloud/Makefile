@@ -7,7 +7,7 @@ CATEGORIES=	audio devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	Bernard Spil <brnrd@FreeBSD.org>
+MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	A friendly wrapper library for the Soundcloud API
 
 LICENSE=	BSD3CLAUSE
