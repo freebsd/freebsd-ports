@@ -27,8 +27,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		bash:shells/bash \
 		gsed:textproc/gsed
-LIB_DEPENDS=	libfbembed.so:databases/firebird25-client \
-		libapr-1.so:devel/apr1 \
+LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
@@ -96,7 +95,7 @@ USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
-USES=		bison compiler:c++11-lib cpe gmake jpeg perl5 pkgconfig \
+USES=		bison compiler:c++11-lib cpe firebird gmake jpeg perl5 pkgconfig \
 		python shared-mime-info tar:xz
 WANT_GNOME=	yes
 

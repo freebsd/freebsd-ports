@@ -72,7 +72,7 @@ IGNORE=		your system does not support sysvipc
 
 .if !defined(CLIENT_ONLY)
 # Server part stuff
-LIB_DEPENDS+=	libfbembed.so:databases/firebird25-client
+USES+=		firebird
 
 CONFIGURE_ARGS+=--enable-superserver --without-editline
 

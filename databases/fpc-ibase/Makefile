@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	IBASE
 IBASE_DESC=	Install Interbase/Firebird client
 OPTIONS_DEFAULT=	IBASE
 
-IBASE_USE=	FIREBIRD=yes
+IBASE_USES=	firebird
 
 .include "${MASTERDIR}/Makefile"
