@@ -4,8 +4,10 @@
 PORTNAME=	iourbanterror
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	kami@freebsd.org
 COMMENT=	Urban Terror dedicated server
+
+LICENSE=	GPLv2
 
 MASTERDIR=	${.CURDIR}/../${PORTNAME}
 

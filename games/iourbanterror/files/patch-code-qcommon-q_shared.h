@@ -1,6 +1,6 @@
---- code/qcommon/q_shared.h.orig	2014-03-23 17:10:02.000000000 +0100
-+++ code/qcommon/q_shared.h	2014-03-23 17:12:24.000000000 +0100
-@@ -27,11 +27,12 @@
+--- code/qcommon/q_shared.h.orig	2008-11-03 17:03:54 UTC
++++ code/qcommon/q_shared.h
+@@ -27,11 +27,12 @@ Foundation, Inc., 51 Franklin St, Fifth 
  // A user mod should never modify this file
  
  #ifdef STANDALONE

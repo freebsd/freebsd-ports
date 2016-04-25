@@ -8,19 +8,22 @@ PORTEPOCH=	1
 CATEGORIES=	games
 DISTNAME=	ioquake3-${DISTVERSION}
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	kami@freebsd.org
 COMMENT=	Quake 3 engine modified for Urban Terror (based on ioquake3)
 
 RUN_DEPENDS=	urbanterror-data>0:games/urbanterror-data
 
+LICENSE?=	GPLv2
+
 MASTERDIR=	${.CURDIR}/../ioquake3
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 
 IOQ3?=		CLIENT
 
 # The docs belong to ioquake3
 OPTIONS_EXCLUDE=	DOCS
-GAMEVERSION=	4.2.018
+GAMEVERSION=	4.2.023
 Q3ENGINEVER=	${DISTVERSION}+${GAMEVERSION}
 Q3TOTALCONV=	yes
 Q3DIR=		${PREFIX}/share/quake3
@@ -34,11 +37,12 @@ HOMEPATH=	/.ioUrbanTerror
 MAKE_ARGS+=	BUILD_MISSIONPACK=0 \
 		BUILD_STANDALONE=1
 
-post-patch:
+pre-patch:
 	@(cd ${WRKSRC} && \
-	for pfile in ${.CURDIR}/../${PORTNAME}/files/patch-*; do \
+	for pfile in ${MASTERDIR}/files/patch-*; do \
 		${PATCH} < $${pfile}; \
 	done)
+	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${REINPLACE_CMD} \
 		-e 's/ioquake3/${Q3CLIENT}/g' \
 		-e 's/ioq3ded/${Q3SERVER}/g' \

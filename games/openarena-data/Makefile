@@ -11,8 +11,10 @@ MASTER_SITES=	SF/oarena:data \
 DISTFILES=	${OA_DATA}:data
 EXTRACT_ONLY=
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	kami@freebsd.org
 COMMENT=	OpenArena game data files
+
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/baseoa
 NO_BUILD=	yes
