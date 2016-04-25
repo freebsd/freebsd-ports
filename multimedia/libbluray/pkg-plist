@@ -11,6 +11,6 @@ include/libbluray/player_settings.h
 lib/libbluray.a
 lib/libbluray.so
 lib/libbluray.so.1
-lib/libbluray.so.1.7.0
+lib/libbluray.so.1.9.2
 libdata/pkgconfig/libbluray.pc
-%%JAVA%%%%JAVASHAREDIR%%/libbluray-j2se-0.7.0.jar
+%%JAVA%%%%JAVASHAREDIR%%/libbluray-j2se-0.9.2.jar

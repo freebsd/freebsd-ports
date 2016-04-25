@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libaacs
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
 		http://blu.opsec.eu/
