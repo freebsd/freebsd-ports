@@ -3,6 +3,7 @@
 
 PORTNAME=	carddav
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=${PORTNAME}_
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
@@ -21,6 +22,8 @@ GH_PROJECT=	rcmcarddav
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+USE_PHP=	simplexml sockets curl
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/carddav
 
