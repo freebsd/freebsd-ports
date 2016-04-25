@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Crypt/Curve25519.pm
+%%SITE_ARCH%%/auto/Crypt/Curve25519/Curve25519.so
+%%SITE_ARCH%%/auto/Crypt/Curve25519/autosplit.ix
+%%PERL5_MAN3%%/Crypt::Curve25519.3.gz
