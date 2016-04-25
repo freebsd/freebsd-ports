@@ -25,8 +25,7 @@ OPTIONS_DEFINE=	DOCS
 USE_GITHUB=	yes
 GH_ACCOUNT=	miguelfreitas
 
-USE_BDB=	yes
-WANT_BDB_VER=	48
+USE_BDB=	48
 USE_OPENSSL=	yes
 USES=		autoreconf:build gmake iconv libtool
 
