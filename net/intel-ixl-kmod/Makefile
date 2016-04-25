@@ -24,6 +24,9 @@ MANPAGENAME?=	${PORTNAME}
 PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko \
 		man/man4/${MANPAGENAME}.4.gz
 
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 only.
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1002000
