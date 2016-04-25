@@ -1,6 +1,6 @@
---- code/qcommon/qcommon.h.orig	2009-01-17 23:09:58 UTC
+--- code/qcommon/qcommon.h.orig	2011-12-24 12:29:32 UTC
 +++ code/qcommon/qcommon.h
-@@ -1069,6 +1069,9 @@ char	*Sys_DefaultInstallPath(void);
+@@ -1099,6 +1099,9 @@ char	*Sys_DefaultInstallPath(void);
  char    *Sys_DefaultAppPath(void);
  #endif
  
@@ -9,4 +9,4 @@
 +
  void  Sys_SetDefaultHomePath(const char *path);
  char	*Sys_DefaultHomePath(void);
- const char *Sys_Dirname( char *path );
+ const char	*Sys_TempPath(void);
