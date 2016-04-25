@@ -28,7 +28,7 @@ WANT_GNOME=	yes
 OPTIONS_DEFINE=	FIREBIRD SSH SVN X11
 OPTIONS_DEFAULT=SSH
 OPTIONS_EXCLUDE=NLS DOCS
-FIREBIRD_LIB_DEPENDS=	libfbclient.so:databases/firebird25-client
+FIREBIRD_USES=	firebird
 SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
 
 .include <bsd.port.options.mk>

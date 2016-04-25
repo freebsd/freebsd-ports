@@ -75,15 +75,6 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #			  the Berkeley DB library directory.
 # BDB_VER
 #			- Detected Berkeley DB version.
-##
-# USE_FIREBIRD		- Add dependency on Firebird library.  Valid values are:
-#			  2 and 1.  If no version is given by the maintainer (if
-#			  USE_FIREBIRD= yes) and the user did not define
-#			  WITH_FIREBIRD_VER variable, fall back to default "2".
-# WITH_FIREBIRD_VER
-#			- User defined variable to set Firebird version.
-# FIREBIRD_VER
-#			- Detected Firebird version.
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
@@ -374,25 +365,5 @@ IGNORE=	${_IGNORE_MSG}
 .endif
 
 .endif # USE_BDB
-
-.if defined(USE_FIREBIRD)
-
-.if defined(WITH_FIREBIRD_VER)
-USE_FIREBIRD=	${WITH_FIREBIRD_VER}
-.endif
-
-.if ${USE_FIREBIRD:tl} == "yes"
-FIREBIRD_VER=	${FIREBIRD_DEFAULT:S/.//}
-.else
-FIREBIRD_VER=	${USE_FIREBIRD}
-.endif
-
-.if ${FIREBIRD_VER} == "25"
-LIB_DEPENDS+=	libfbclient.so:databases/firebird25-client
-.else
-IGNORE=		cannot install: unknown Firebird version: ${FIREBIRD_VER}
-.endif
-
-.endif # defined(USE_FIREBIRD)
 
 .endif # defined(_POSTMKINCLUDED) && !defined(Database_Post_Include)
