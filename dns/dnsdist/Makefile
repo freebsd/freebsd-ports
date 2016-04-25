@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdist
-DISTVERSION=	1.0.0-alpha2
+DISTVERSION=	1.0.0
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/ \
 		LOCAL/cpm
@@ -25,8 +25,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib -latomic
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
 USES=		bison cpe gmake libedit libtool lua:52 pkgconfig tar:bz2
-CONFIGURE_ARGS=	--enable-dnscrypt --enable-libsodium
+CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin --enable-dnscrypt --enable-libsodium --without-protobuf
 INSTALL_TARGET=	install-strip
+
+USERS=		_dnsdist
+GROUPS=		_dnsdist
 
 USE_RC_SUBR=	dnsdist
 

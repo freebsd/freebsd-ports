@@ -6,22 +6,23 @@
 # REQUIRE: NETWORKING DAEMON
 # KEYWORD: shutdown
 #
-# Add the following to /etc/rc.conf to enable dnsdist:
+# Add the following line to /etc/rc.conf to enable dnsdist:
 #
 # dnsdist_enable="YES"
-#
 
 . /etc/rc.subr
 
-name="dnsdist"
-rcvar="dnsdist_enable"
+desc="dnsdist is a powerful, scriptable DNS loadbalancer"
+name=dnsdist
+rcvar=dnsdist_enable
 
 load_rc_config ${name}
 
-: ${dnsdist_enable:="NO"}
-: ${dnsdist_pidfile:=/var/run/${name}/pid}
+: ${dnsdist_priv_user:=_dnsdist}
+: ${dnsdist_priv_group:=_dnsdist}
+: ${dnsdist_enable:=NO}
 
 command=/usr/local/sbin/${name}
-command_args="-l 127.0.0.1:53"
+command_args="-u ${dnsdist_priv_user} -g ${dnsdist_priv_group} -d"
 
 run_rc_command "$1"
