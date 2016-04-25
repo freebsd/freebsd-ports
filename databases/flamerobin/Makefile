@@ -16,8 +16,7 @@ LICENSE_NAME=	FlameRobin Expat
 LICENSE_FILE=	${WRKSRC}/docs/fr_license.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler
-USE_FIREBIRD=	yes
+USES=		compiler firebird
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_CONF_ARGS=	absolute
