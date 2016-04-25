@@ -52,7 +52,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #			  expression will be set to RUBY_PROVIDED, which is
 #			  left undefined if the result is nil, false or a
 #			  zero-length string.  Implies USE_RUBY.
-# RUBY_SHEBANG_FILES	- Specify the files which shebang lines you want to fix.
 # RUBY_RD_FILES		- Specify the RD files which you want to generate HTML
 #			  documents from. If this is defined and not empty,
 #			  USE_RUBY_RDTOOL is implied and RUBY_RD_HTML_FILES is
@@ -386,37 +385,6 @@ RUBY_PROVIDED=		"should be"	# the latest version is going to be installed
 .if empty(RUBY_PROVIDED)
 .undef RUBY_PROVIDED
 .endif
-.endif
-
-# fix shebang lines
-.if defined(RUBY_SHEBANG_FILES) && !empty(RUBY_SHEBANG_FILES)
-USE_RUBY=		yes
-
-post-patch:	ruby-shebang-patch
-
-ruby-shebang-patch:
-	@cd ${WRKSRC}; for f in ${RUBY_SHEBANG_FILES}; do \
-	${ECHO_MSG} "===>  Fixing the #! line of $$f"; \
-	TMPFILE=`mktemp -t rubyshebang`; \
-	cp $$f $$TMPFILE; \
-	${AWK} 'BEGIN {flag = 0;}								\
-		{										\
-			if (flag == 0) {							\
-				if ($$0 ~ /^#!/) {						\
-					sub(/#!(.*\/)?(env[[:space:]]+)?ruby/, "#!${RUBY}", $$0);\
-					print $$0;						\
-				}								\
-				else {								\
-					print "#!${RUBY}";					\
-					print $$0;						\
-				}								\
-				flag = 1;							\
-			} else {								\
-				print $$0;							\
-			}									\
-		}' $$TMPFILE > $$f; \
-	rm -f $$TMPFILE; \
-	done
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
