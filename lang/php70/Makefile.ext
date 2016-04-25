@@ -459,7 +459,7 @@ CONFIGURE_ARGS+=--enable-zip \
 CONFIGURE_ARGS+=--with-zlib=/usr
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PHP_MODNAME} == "dba"
 .	if empty(PORT_OPTIONS:MCDB)
@@ -493,6 +493,8 @@ CONFIGURE_ARGS+=--disable-inifile
 CONFIGURE_ARGS+=--disable-flatfile
 .	endif
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "gd"
 .	if ${PORT_OPTIONS:MT1LIB}

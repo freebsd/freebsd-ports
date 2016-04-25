@@ -1403,6 +1403,10 @@ USES+=	gnome
 USES+=	mate
 .endif
 
+.if defined(USE_BDB)
+USES+=bdb:${USE_BDB}
+.endif
+
 .if defined(WANT_WX) || defined(USE_WX) || defined(USE_WX_NOT)
 .include "${PORTSDIR}/Mk/bsd.wx.mk"
 .endif
@@ -1863,8 +1867,7 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 .include "${PORTSDIR}/Mk/bsd.xorg.mk"
 .endif
 
-.if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
-	defined(USE_BDB)
+.if defined(USE_MYSQL) || defined(WANT_MYSQL_VER)
 .include "${PORTSDIR}/Mk/bsd.database.mk"
 .endif
 
