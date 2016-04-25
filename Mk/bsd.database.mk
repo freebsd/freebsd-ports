@@ -76,12 +76,6 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # BDB_VER
 #			- Detected Berkeley DB version.
 ##
-# USE_SQLITE		- Add dependency on SQLite library.  Valid values are:
-#			  3 and 2.  If version is not specified directly then
-#			  SQLite-3 is used (if USE_SQLITE= yes).
-# SQLITE_VER
-#			- Detected SQLite version.
-##
 # USE_FIREBIRD		- Add dependency on Firebird library.  Valid values are:
 #			  2 and 1.  If no version is given by the maintainer (if
 #			  USE_FIREBIRD= yes) and the user did not define
@@ -380,28 +374,6 @@ IGNORE=	${_IGNORE_MSG}
 .endif
 
 .endif # USE_BDB
-
-# Handling SQLite dependency
-.if defined(USE_SQLITE)
-
-.if ${USE_SQLITE:tl} == "yes"
-_SQLITE_VER=	3
-.else
-_SQLITE_VER=	 ${USE_SQLITE}
-.endif
-
-# USE_SQLITE is specified incorrectly, so mark this as IGNORE
-.if ${_SQLITE_VER} == "3"
-LIB_DEPENDS+=	libsqlite3.so:databases/sqlite${_SQLITE_VER}
-SQLITE_VER=	${_SQLITE_VER}
-.elif ${_SQLITE_VER} == "2"
-LIB_DEPENDS+=	libsqlite.so:databases/sqlite${_SQLITE_VER}
-SQLITE_VER=	${_SQLITE_VER}
-.else
-IGNORE=		cannot install: unknown SQLite version: ${_SQLITE_VER}
-.endif
-
-.endif # defined(USE_SQLITE)
 
 .if defined(USE_FIREBIRD)
 

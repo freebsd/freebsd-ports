@@ -18,9 +18,8 @@ LIB_DEPENDS=	libical.so:devel/libical \
 		libgtkspell.so:textproc/gtkspell \
 		libwebkitgtk-1.0.so:www/webkit-gtk2
 
-USES=		gettext gmake libarchive pkgconfig
+USES=		gettext gmake libarchive pkgconfig sqlite
 USE_GNOME=	gtk20 libxml2
-USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

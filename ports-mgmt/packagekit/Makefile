@@ -21,12 +21,11 @@ RUN_DEPENDS=	lsof:sysutils/lsof \
 IGNORE=		does not build with new polkit
 
 USES=		cpe execinfo gettext gmake iconv libtool pathfix pkgconfig \
-		python:build shared-mime-info shebangfix
+		python:build shared-mime-info shebangfix sqlite:3
 CPE_VENDOR=	packagekit_project
 SHEBANG_FILES=	backends/test/helpers/search-name.sh \
 		contrib/cron/packagekit-background.cron
 USE_GNOME=	glib20 intltool introspection
-USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

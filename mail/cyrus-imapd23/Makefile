@@ -82,7 +82,7 @@ SNMP_5_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_5_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_5_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_DESC=		Enable SQLite backend (experimental)
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 
 # Autocreate Inbox and Autosieve patches from UoA

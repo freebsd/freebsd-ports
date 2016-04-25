@@ -77,7 +77,7 @@ REPLICATION_CONFIGURE_ENABLE=replication
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_CONFIGURE_OFF=	--with-snmp=no
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 
 OPTIONS_RADIO=			GSSAPI

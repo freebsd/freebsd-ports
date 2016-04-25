@@ -39,7 +39,7 @@ MYSQL_USE=		MYSQL=yes
 PGSQL_CONFIGURE_ON=	--with-pgsql
 PGSQL_USES=		pgsql
 SQLITE_CONFIGURE_ON=	--with-sqlite
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 ODBC_CONFIGURE_ON=	--with-odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
