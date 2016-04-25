@@ -109,7 +109,7 @@ SOLR_CONFIGURE_WITH=	solr
 SOLR_BUILD_DEPENDS=	curl:ftp/curl
 SOLR_LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-SQLITE_USE=		SQLITE=3
+SQLITE_USES=		sqlite:3
 SQLITE_CONFIGURE_WITH=	sqlite
 
 SSL_CONFIGURE_WITH=	ssl=openssl

@@ -55,8 +55,7 @@ REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
 SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:security/cyrus-sasl2-saslauthd
 SA_EXIM_RUN_DEPENDS=	${LOCALBASE}/bin/spamc:mail/spamassassin
 SPF_LIB_DEPENDS=	libspf2.so:mail/libspf2
-SQLITE_USE=	sqlite=yes
-SQLITE_USES=	pkgconfig
+SQLITE_USES=	pkgconfig sqlite
 
 .include <bsd.port.options.mk>
 

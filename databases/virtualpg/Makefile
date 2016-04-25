@@ -13,8 +13,7 @@ LICENSE=	MPL LGPL21 GPLv2
 LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pathfix pkgconfig libtool pgsql
-USE_SQLITE=	yes
+USES=		gmake iconv pathfix pkgconfig libtool pgsql sqlite
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${WRKSRC}/src/headers -I${LOCALBASE}/include

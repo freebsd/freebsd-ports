@@ -22,9 +22,8 @@ OPTIONS_DEFAULT=	JACK
 DSSI_DESC=	Enable DSSI support
 LV2CORE_DESC=	Enable LV2 support
 
-USES=		tar:bzip2 libtool gmake pathfix pkgconfig
+USES=		tar:bzip2 libtool gmake pathfix pkgconfig sqlite:3
 GNU_CONFIGURE=	yes
-USE_SQLITE=	3
 CONFIGURE_ENV=	HAVE_UNIX98=1
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

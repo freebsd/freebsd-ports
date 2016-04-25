@@ -66,7 +66,7 @@ MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 MPG123_CONFIGURE_OFF=	--disable-mpg123
 OPENSSL_USE=		OPENSSL=yes
 OPENSSL_CONFIGURE_OFF=	--disable-ssl
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_OFF=	--disable-pkglib --disable-sqlite
 
 .include <bsd.port.options.mk>

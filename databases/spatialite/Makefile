@@ -19,8 +19,7 @@ LIB_DEPENDS=	libgeos_c.so:graphics/geos \
 
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pathfix pkgconfig libtool
-USE_SQLITE=	yes
+USES=		gmake iconv pathfix pkgconfig libtool sqlite
 USE_GNOME=	libxml2
 
 CFLAGS+=	-I${WRKSRC}/src/headers -I${LOCALBASE}/include

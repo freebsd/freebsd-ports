@@ -47,9 +47,8 @@ CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
-USES=		gettext libarchive libtool pkgconfig python shebangfix
+USES=		gettext libarchive libtool pkgconfig python shebangfix sqlite:3
 USE_OPENSSL=	yes
-USE_SQLITE=	3
 USE_XORG=	pixman
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 SHEBANG_FILES=	scripts/bash/*.sh
