@@ -90,6 +90,7 @@ MAKE_ENV=	HB_ARCHITECTURE=${HB_ARCH} \
 
 PGSQL_USES=	pgsql
 FIREBIRD_USES=	firebird
+MYSQL_USES=	mysql
 
 .include <bsd.port.pre.mk>
 
@@ -115,7 +116,6 @@ PLIST_SUB+=	SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
 MAKE_ENV+=	HB_WITH_MYSQL=nolocal
 .else
 MAKE_ENV+=	HB_WITH_MYSQL=no
