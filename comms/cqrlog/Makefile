@@ -4,6 +4,7 @@
 PORTNAME=	cqrlog
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -65,5 +66,7 @@ post-patch:
 	${REINPLACE_CMD} -e s!%%LAZARUSDIR%%!${LAZARUS_DIR}!g \
 		${WRKSRC}/Makefile
 	${RM} -rf ${WRKSRC}/src/mysql
+	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fLoTWExport.lrs ${WRKSRC}/src/fLoTWExport.lfm
+	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fPreferences.lrs ${WRKSRC}/src/fPreferences.lfm
 
 .include <bsd.port.mk>
