@@ -774,6 +774,7 @@
     SUBDIR += polkit-kde
     SUBDIR += polkit-qt
     SUBDIR += polkit-qt5
+    SUBDIR += powerdxx
     SUBDIR += powerman
     SUBDIR += pp
     SUBDIR += pprotectd
