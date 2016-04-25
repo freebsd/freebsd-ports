@@ -41,7 +41,7 @@ MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ENABLE=	use-mysql
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ENABLE=	use-pgsql
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ENABLE=use-sqlite
 
 .include <bsd.port.options.mk>

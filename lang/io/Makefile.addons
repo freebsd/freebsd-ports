@@ -94,7 +94,7 @@ Python_USES=		python
 QDBM_LIB_DEPENDS=	libqdbm.so:databases/qdbm
 ReadLine_USES=		readline:port
 Regex_LIB_DEPENDS=	libpcre.so:devel/pcre
-SQLite3_USE=		SQLITE=3
+SQLite3_USES=		sqlite:3
 SampleRateConverter_LIB_DEPENDS=\
 			libsamplerate.so:audio/libsamplerate
 Socket_LIB_DEPENDS=	libevent.so:devel/libevent2

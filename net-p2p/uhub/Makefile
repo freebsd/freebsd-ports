@@ -30,7 +30,7 @@ OPTIONS_SUB=		yes
 
 OPENSSL_USE=		openssl=yes
 OPENSSL_CMAKE_OFF=	-DSSL_SUPPORT:BOOL=OFF
-SQLITE_USE=		sqlite=yes
+SQLITE_USES=		sqlite
 SQLITE_CMAKE_OFF=	-DSQLITE_SUPPORT:BOOL=OFF
 
 .include <bsd.port.options.mk>

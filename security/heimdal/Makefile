@@ -61,7 +61,7 @@ BDB_CONFIGURE_ON=	--with-berkeley-db \
 BDB_CONFIGURE_OFF=	--without-berkeley-db
 
 SQLITE_DESC=		Enable SQLite KDC backend support
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite3 \
 			--with-sqlite3-include="${LOCALBASE}/include" \
 			--with-sqlite3-lib="${LOCALBASE}/lib"

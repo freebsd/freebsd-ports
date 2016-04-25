@@ -17,9 +17,8 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libcurl.so:ftp/curl
 
-USES=		desktop-file-utils gettext gmake iconv localbase pkgconfig
+USES=		desktop-file-utils gettext gmake iconv localbase pkgconfig sqlite
 USE_GNOME=	gtk20 intltool
-USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
 # Cannot enable -Werror yet: Clang does not like the code `printf(_("..."))',
 # see this bug for details: http://llvm.org/bugs/show_bug.cgi?id=3814

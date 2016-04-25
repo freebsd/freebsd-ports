@@ -52,7 +52,7 @@ MYSQL_USE=		MYSQL=yes
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=4.0001:databases/p5-DBD-mysql
 PGSQL_USES=		pgsql:91+
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=3.4.2:databases/p5-DBD-Pg
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=1.29:databases/p5-DBD-SQLite \
 			sqlite3>=3:databases/sqlite3
 GRAPH_REPORTS_RUN_DEPENDS=	p5-GD>=1.20:graphics/p5-GD \

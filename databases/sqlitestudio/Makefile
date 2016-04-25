@@ -37,10 +37,9 @@ OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/SQLiteStudio3
 
-USES=		compiler:c++11-lib gmake ncurses qmake
+USES=		compiler:c++11-lib gmake ncurses qmake sqlite
 USE_QT5=	core gui svg sql xml network sql-sqlite3_run widgets script \
 		concurrent uitools buildtools_build linguisttools_build
-USE_SQLITE=	yes
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
