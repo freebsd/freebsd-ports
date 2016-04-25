@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 # Hint: git describe --abbrev=12 --match android-n-preview-2
-DISTVERSION=	n-preview-2-45
-DISTVERSIONSUFFIX=	-g643bc369ef8d
+DISTVERSION=	n-preview-2-74
+DISTVERSIONSUFFIX=	-gd61bfb9a79e3
 PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 

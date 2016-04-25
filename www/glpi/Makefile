@@ -13,6 +13,8 @@ COMMENT=	Free IT and asset management software
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe
 CPE_VENDOR=	glpi-project
 USE_PHP=	mysqli mbstring pcre session xml json ctype gd

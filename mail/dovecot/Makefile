@@ -77,7 +77,7 @@ MYSQL_USE=		MYSQL=yes
 PGSQL_CONFIGURE_WITH=	pgsql
 PGSQL_USES=		pgsql
 SQLITE_CONFIGURE_WITH=	sqlite
-SQLITE_USE=		SQLITE=3
+SQLITE_USES=		sqlite:3
 SSL_CONFIGURE_OFF=	--without-ssl
 SSL_CONFIGURE_ON=	--with-ssl=openssl
 VPOPMAIL_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/bin/vchkpw:mail/vpopmail

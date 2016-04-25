@@ -11,6 +11,7 @@ COMMENT=	gem5 Simulator System
 BUILD_DEPENDS=	swig2.0:devel/swig20 \
 		scons:devel/scons
 
+BROKEN_powerpc64=	Does not build
 BROKEN_i386=	does not build
 
 DATE=		20140422

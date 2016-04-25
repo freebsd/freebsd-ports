@@ -8,7 +8,7 @@
 +        // warn once every million at critical level, then push down a level each repeated event
          static int warningLevel = DBG_CRITICAL;
          debugs(89, warningLevel, "IPF (IPFilter v4) NAT does not support IPv6. Please upgrade to IPFilter v5.1");
--        warningLevel = ++warningLevel % 10;
+-        warningLevel = (warningLevel + 1) % 10;
 +        warningLevel = (warningLevel + 1) % 1048576;
          return false;
  #else

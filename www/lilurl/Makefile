@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple PHP/MySQL script for generating lil? URLs
 
+BROKEN_powerpc64=	Does not build
+
 USE_PHP=	mysql pcre
 NO_BUILD=	yes
 NO_ARCH=	yes

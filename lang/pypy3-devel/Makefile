@@ -14,6 +14,8 @@ COMMENT=	Fast, compliant implementation of the Python language
 LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi \
 		libsqlite3.so:databases/sqlite3

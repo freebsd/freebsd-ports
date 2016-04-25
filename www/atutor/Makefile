@@ -12,6 +12,8 @@ COMMENT=	Open Source Web-based Learning Content Management System (LCMS)
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe
 
 USE_PHP=	session mbstring zlib mysql

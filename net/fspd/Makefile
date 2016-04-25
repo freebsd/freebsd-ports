@@ -13,6 +13,8 @@ COMMENT=	FSP daemon, clients, and scanner
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN_powerpc64=	Does not build
+
 CLIENTS=	fcatcmd fcdcmd fducmd ffindcmd fgetcmd fgrabcmd fhostcmd \
 		flscmd fmkdir fprocmd fput frmcmd frmdircmd fver fspmerge \
 		fstatcmd fmvcmd fbye fsetupcmd

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lldpd
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/ \
 		http://mirror.1labs.ch/${PORTNAME}/

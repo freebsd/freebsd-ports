@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	jsi@jules.de
 COMMENT=	Web-based tool for requirement and use case tracking
 
+BROKEN_powerpc64=	Does not build
+
 NO_BUILD=	yes
 USE_PHP=	mysqli gd
 

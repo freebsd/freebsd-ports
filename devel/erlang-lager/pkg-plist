@@ -12,6 +12,7 @@ lib/erlang/lib/lager-%%VERSION%%/ebin/lager_file_backend.beam
 lib/erlang/lib/lager-%%VERSION%%/ebin/lager_format.beam
 lib/erlang/lib/lager-%%VERSION%%/ebin/lager_handler_watcher.beam
 lib/erlang/lib/lager-%%VERSION%%/ebin/lager_handler_watcher_sup.beam
+lib/erlang/lib/lager-%%VERSION%%/ebin/lager_manager_killer.beam
 lib/erlang/lib/lager-%%VERSION%%/ebin/lager_msg.beam
 lib/erlang/lib/lager-%%VERSION%%/ebin/lager_stdlib.beam
 lib/erlang/lib/lager-%%VERSION%%/ebin/lager_sup.beam
@@ -33,6 +34,7 @@ lib/erlang/lib/lager-%%VERSION%%/src/lager_file_backend.erl
 lib/erlang/lib/lager-%%VERSION%%/src/lager_format.erl
 lib/erlang/lib/lager-%%VERSION%%/src/lager_handler_watcher.erl
 lib/erlang/lib/lager-%%VERSION%%/src/lager_handler_watcher_sup.erl
+lib/erlang/lib/lager-%%VERSION%%/src/lager_manager_killer.erl
 lib/erlang/lib/lager-%%VERSION%%/src/lager_msg.erl
 lib/erlang/lib/lager-%%VERSION%%/src/lager_stdlib.erl
 lib/erlang/lib/lager-%%VERSION%%/src/lager_sup.erl

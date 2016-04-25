@@ -5,15 +5,15 @@ PORTNAME=	libgpkg
 PORTVERSION=	0.9.18
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	https://bitbucket.org/luciad/libgpkg/get/ \
-		LOCAL/sunpoet/${PORTNAME}
-DISTNAME=	${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	https://bitbucket.org/luciad/libgpkg/get/${PORTVERSION}.tar.bz2?dummy=/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SQLite 3 extension of minimal OGC GeoPackage implementation
 
 LICENSE=	APACHE20
+
+BROKEN_powerpc64=	does not build
 
 OPTIONS_DEFINE=	GEOS
 OPTIONS_DEFAULT=GEOS

@@ -1,0 +1,21 @@
+commit a5c6f19
+Author: Dragana Damjanovic <dd.mozilla@gmail.com>
+Date:   Wed Jan 27 01:47:00 2016 +0100
+
+    Bug 1243312 - nsNetCID is missing in toolkit/system/unixproxy/nsLibProxySettings.cpp. r=jduell
+---
+ toolkit/system/unixproxy/nsLibProxySettings.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git toolkit/system/unixproxy/nsLibProxySettings.cpp toolkit/system/unixproxy/nsLibProxySettings.cpp
+index f6ec377..e9179c1 100644
+--- mozilla/toolkit/system/unixproxy/nsLibProxySettings.cpp
++++ mozilla/toolkit/system/unixproxy/nsLibProxySettings.cpp
+@@ -9,6 +9,7 @@
+ #include "nsIURI.h"
+ #include "nsString.h"
+ #include "nsCOMPtr.h"
++#include "nsNetCID.h"
+ #include "nspr.h"
+ 
+ extern "C" {

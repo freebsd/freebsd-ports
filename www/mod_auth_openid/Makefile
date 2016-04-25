@@ -14,6 +14,8 @@ COMMENT=	Authentication module for the Apache 2 webserver with OpenID
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libopkele.so:devel/libopkele \
 		libsqlite3.so:databases/sqlite3
 

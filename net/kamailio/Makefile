@@ -13,6 +13,8 @@ COMMENT=	Very fast and configurable open source SIP proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxml2.so:textproc/libxml2 \
 		libcurl.so:ftp/curl

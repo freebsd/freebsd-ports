@@ -436,6 +436,7 @@
     SUBDIR += iat
     SUBDIR += inotify-tools
     SUBDIR += installwatch
+    SUBDIR += intel-nvmupdate
     SUBDIR += intel-pcm
     SUBDIR += iocage
     SUBDIR += iocage-devel
@@ -1022,7 +1023,6 @@
     SUBDIR += stow
     SUBDIR += stowES
     SUBDIR += stress
-    SUBDIR += su2
     SUBDIR += superiotool
     SUBDIR += swapd
     SUBDIR += swapexd

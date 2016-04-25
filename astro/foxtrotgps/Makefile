@@ -20,14 +20,13 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
 CONFIGURE_ARGS=	--disable-schemas-install
-USES=		gettext gmake pkgconfig shebangfix
+USES=		gettext gmake pkgconfig shebangfix sqlite:3
 SHEBANG_FILES=	contrib/convert2gpx \
 		contrib/convert2osm \
 		contrib/georss2foxtrotgps-poi\
 		contrib/gpx2osm
 
 USE_GNOME=	gtk20 gconf2 libxml2 intltool libglade2
-USE_SQLITE=	3
 INSTALLS_ICONS=	yes
 
 GCONF_SCHEMAS=	apps_foxtrotgps.schemas

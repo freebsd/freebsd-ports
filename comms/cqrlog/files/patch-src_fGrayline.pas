@@ -1,4 +1,4 @@
---- src/fGrayline.pas.orig	2015-03-04 15:17:21 UTC
+--- src/fGrayline.pas.orig	2016-04-20 16:06:15 UTC
 +++ src/fGrayline.pas
 @@ -383,7 +383,7 @@ begin
      RBNSpotList[i].band := '';

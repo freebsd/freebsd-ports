@@ -3,7 +3,7 @@
 
 PORTNAME=	hplip-plugin
 PORTVERSION=	3.16.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://hplipopensource.com/hplip-web/plugin/
 DISTNAME=	hplip-${DISTVERSION}-plugin
@@ -33,7 +33,7 @@ PLUGINS=	fax/plugins/fax_marvell \
 
 PLIST_SUB+=	LINARCH="${LINARCH}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 LINARCH=	x86_32
@@ -59,9 +59,10 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/hplip/data/firmware
 	${MKDIR} ${PLUGINS:H:S,^,${STAGEDIR}${PREFIX}/share/hplip/,}
 .for p in ${PLUGINS}
-	${INSTALL_LIB} ${WRKSRC}/${p:T}-${LINARCH}.so \
+# -m 555 because HPLIP checks that the plugins are +x.
+	${INSTALL_LIB} -m 555 ${WRKSRC}/${p:T}-${LINARCH}.so \
 		${STAGEDIR}${PREFIX}/share/hplip/${p}-${LINARCH}.so
-	${INSTALL_LIB} ${WRKSRC}/${p:T}.so \
+	${INSTALL_LIB} -m 555 ${WRKSRC}/${p:T}.so \
 		${STAGEDIR}${PREFIX}/share/hplip/${p}.so
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/plugin.spec ${STAGEDIR}${PREFIX}/share/hplip
@@ -71,4 +72,4 @@ do-install:
 	${ECHO_CMD} 'eula = 1' >> ${STAGEDIR}/var/lib/hp/hplip.state
 	${ECHO_CMD} 'version = ${PORTVERSION}' >> ${STAGEDIR}/var/lib/hp/hplip.state
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

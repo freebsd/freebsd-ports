@@ -12,6 +12,8 @@ COMMENT=	Network discovery and monitoring tool
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
 		p5-Net-Telnet-Cisco>=0:net-mgmt/p5-Telnet-Cisco \
 		p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \

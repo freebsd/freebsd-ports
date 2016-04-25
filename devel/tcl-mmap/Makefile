@@ -11,17 +11,14 @@ COMMENT=	New TCL channel type using mmap-ed files
 
 LICENSE=	GPLv3
 
-USES+=		tcl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--prefix=${PREFIX} \
-		--exec-prefix=${PREFIX}
+USES+=		tcl:tea
 
-PLIST_FILES=	lib/mmap${PORTVERSION}/pkgIndex.tcl \
-		lib/mmap${PORTVERSION}/libmmap${PORTVERSION}.so \
-		man/mann/tcl-mmap.n.gz
+PLIST_FILES=	lib/${TCL_PKG}/pkgIndex.tcl \
+		lib/${TCL_PKG}/lib${TCL_PKG}.so \
+		man/mann/${PORTNAME}.n.gz
+TEST_TARGET=	do-test
 
-regression-test: build
+do-test:
 	cd ${WRKSRC}/tests; \
 	for t in *.tcl; \
 	do \

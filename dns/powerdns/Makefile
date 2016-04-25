@@ -12,6 +12,8 @@ COMMENT=	Advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
 USES=		cpe gmake libtool lua pkgconfig tar:bzip2
@@ -89,7 +91,7 @@ POLARSSL_LIB_DEPENDS_OFF=	libmbedtls.so:security/polarssl13
 
 REMOTE_VARS=		MODULES+=remote
 
-SQLITE3_USE=		SQLITE=3
+SQLITE3_USES=		sqlite:3
 SQLITE3_VARS=		MODULES+=gsqlite3
 
 TINYDNS_CONFIGURE_ON=	CDB_LIBS="-L${LOCALBASE}/lib -lcdb" CDB_CFLAGS="-I${LOCALBASE}/include"

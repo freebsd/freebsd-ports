@@ -32,7 +32,6 @@ bin/dbiproxy
 %%SITE_ARCH%%/DBI/DBD/SqlEngine.pm
 %%SITE_ARCH%%/DBI/DBD/SqlEngine/Developers.pod
 %%SITE_ARCH%%/DBI/DBD/SqlEngine/HowTo.pod
-%%SITE_ARCH%%/DBI/FAQ.pm
 %%SITE_ARCH%%/DBI/Gofer/Execute.pm
 %%SITE_ARCH%%/DBI/Gofer/Request.pm
 %%SITE_ARCH%%/DBI/Gofer/Response.pm
@@ -95,7 +94,6 @@ bin/dbiproxy
 %%PERL5_MAN3%%/DBI::DBD::SqlEngine.3.gz
 %%PERL5_MAN3%%/DBI::DBD::SqlEngine::Developers.3.gz
 %%PERL5_MAN3%%/DBI::DBD::SqlEngine::HowTo.3.gz
-%%PERL5_MAN3%%/DBI::FAQ.3.gz
 %%PERL5_MAN3%%/DBI::Gofer::Execute.3.gz
 %%PERL5_MAN3%%/DBI::Gofer::Request.3.gz
 %%PERL5_MAN3%%/DBI::Gofer::Response.3.gz

@@ -3,6 +3,7 @@
 
 PORTNAME=	rttool
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.rubyist.net/~rubikitch/archive/ \
 		LOCAL/tota/ruby-rttool
@@ -15,10 +16,11 @@ COMMENT=	RT into HTML and plain text converter
 LICENSE=	RUBY
 
 USE_RUBY=	yes
+USES=		shebangfix
 USE_RUBY_SETUP=	yes
 USE_RUBY_RDTOOL=	yes
 
-RUBY_SHEBANG_FILES=	bin/rt/* lib/rt/*
+SHEBANG_FILES=	bin/rt/* lib/rt/*
 RUBY_MODNAME=	rt
 
 DOCS_EN=	rttool.en.html rttool.en.rd

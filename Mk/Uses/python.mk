@@ -494,11 +494,12 @@ PYDISTUTILS_PKGVERSION?=${PORTVERSION}
 PYDISTUTILS_EGGINFO?=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}.egg-info
 PYDISTUTILS_EGGINFODIR?=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-add-plist-egginfo:
 .if !defined(_PYTHON_FEATURE_NOEGGINFO) && \
 	!defined(_PYTHON_FEATURE_AUTOPLIST) && \
 	defined(_PYTHON_FEATURE_DISTUTILS) && \
 	defined(PYTHON_REL)
+_USES_stage+=	933:add-plist-egginfo
+add-plist-egginfo:
 . for egginfo in ${PYDISTUTILS_EGGINFO}
 	if [ -d "${PYDISTUTILS_EGGINFODIR}/${egginfo}" ]; then \
 		${LS} ${PYDISTUTILS_EGGINFODIR}/${egginfo} | while read f; do \
@@ -506,15 +507,13 @@ add-plist-egginfo:
 		done; \
 	fi;
 . endfor
-.else
-	@${DO_NADA}
 .endif
 
 .if defined(_PYTHON_FEATURE_AUTOPLIST) && defined(_PYTHON_FEATURE_DISTUTILS)
 _RELSITELIBDIR=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 _RELLIBDIR=		${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}
 
-add-plist-post:	add-plist-pymod
+_USES_stage+=	934:add-plist-pymod
 add-plist-pymod:
 	@${SED} -e 's|^${STAGEDIR}${PREFIX}/||' \
 		-e 's|^${PREFIX}/||' \
@@ -533,7 +532,8 @@ PYOEXTENSION=	pyo
 .else
 PYOEXTENSION=	opt-1.pyc
 .endif
-add-plist-post:
+_USES_stage+=	935:add-plist-python
+add-plist-python:
 	@${AWK} '\
 		/\.py[co]$$/ && !($$0 ~ "/" pc "/") {id = match($$0, /\/[^\/]+\.py[co]$$/); if (id != 0) {d = substr($$0, 1, RSTART - 1); dirs[d] = 1}; sub(/\.pyc$$/,  "." mt "&"); sub(/\.pyo$$/, "." mt "." pyo); sub(/[^\/]+\.py[co]$$/, pc "/&"); print; next} \
 		/^@dirrm / {d = substr($$0, 8); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
@@ -622,7 +622,5 @@ do-build:
 do-install:
 	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 .endif
-
-add-plist-post: add-plist-egginfo
 .endif # defined(_PYTHON_FEATURE_DISTUTILS)
 .endif # defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_PYTHON_POST_MK)

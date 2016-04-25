@@ -10,6 +10,7 @@ COMMENT=	Additional textproc packages for Go
 
 LICENSE=	BSD3CLAUSE
 
+USES=		go
 GO_PKGNAME=	code.google.com/p/go.text
 GO_TARGET=	${GO_PKGNAME}/cldr				\
 		${GO_PKGNAME}/collate				\
@@ -26,6 +27,4 @@ GO_TARGET=	${GO_PKGNAME}/cldr				\
 		${GO_PKGNAME}/transform				\
 		${GO_PKGNAME}/unicode/norm
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

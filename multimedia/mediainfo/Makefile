@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/../../../License.html
 LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
 		libzen.so:multimedia/libzen
 
+BROKEN_powerpc64=	does not build
+
 CONFIGURE_ARGS=	--enable-shared
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

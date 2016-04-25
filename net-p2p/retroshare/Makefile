@@ -26,7 +26,6 @@ USE_GNOME=	glib20 libxml2 libxslt
 USE_XORG=	x11 xscrnsaver
 USE_QT4=	corelib gui network xml script designer_build uic_build \
 		qmake_build moc_build rcc_build multimedia
-HAS_CONFIGURE=	yes
 
 BINARY=		RetroShare
 SRC_REVISION=	0.7068

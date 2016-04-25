@@ -5,12 +5,12 @@ PORTNAME=	nsnake
 PORTVERSION=	1.4
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://releases.malikania.fr/nsnake/
+MASTER_SITES=	http://releases.malikania.fr/nsnake/1.4.0/
 
 MAINTAINER=	demelier.david@gmail.com
 COMMENT=	Snake game written in C and ncurses
 
-LICENSE=	MIT
+LICENSE=	ISCL
 
 USES=		ncurses tar:tgz
 

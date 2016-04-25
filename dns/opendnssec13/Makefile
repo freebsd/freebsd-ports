@@ -46,7 +46,7 @@ MYSQL_CONFIGURE_OFF=	--with-sqlite3=${LOCALBASE} --with-database-backend=sqlite3
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE} --with-database-backend=mysql
 MYSQL_LIB_DEPENDS_OFF=	libsqlite3.so:databases/sqlite3
 MYSQL_USE=		MYSQL=compat
-MYSQL_USE_OFF=		SQLITE=yes
+MYSQL_USES_OFF=		sqlite
 SOFTHSM_CONFIGURE_ON=	--with-softhsm --with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm.so
 SOFTHSM_RUN_DEPENDS=	softhsm>=1.2.0:security/softhsm
 

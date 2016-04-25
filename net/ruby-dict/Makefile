@@ -22,10 +22,11 @@ OPTIONS_DEFINE=	DOCS
 
 NO_ARCH=	yes
 USE_RUBY=	yes
+USES=		shebangfix
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
-RUBY_SHEBANG_FILES=	${WRKSRC}/rdict
+SHEBANG_FILES=	${WRKSRC}/rdict
 
 DOCS=		Changelog README doc/dict.html doc/rdict.html
 

@@ -60,7 +60,7 @@ PLIST_SUB+=	PGSQL="@comment "
 #.endif
 
 #.if defined(WITH_SQLITE)
-#USE_SQLITE=	3
+#USES+=		sqlite:3
 #CONFIGURE_ARGS+=--with-sqlite=3
 #PLIST_SUB+=	SQLITE=""
 #.else

@@ -23,12 +23,16 @@ bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
+%%TOKUDB%%bin/tokuft_logprint
+%%TOKUDB%%bin/tokuftdump
+%%TOKUDB%%lib/mysql/libHotBackup.so
 lib/mysql/libmysqld.a
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/audit_log.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/daemon_example.ini
+%%TOKUDB%%lib/mysql/plugin/ha_tokudb.so
 lib/mysql/plugin/handlersocket.so
 %%INNODBMEMCACHED%%lib/mysql/plugin/innodb_engine.so
 lib/mysql/plugin/libdaemon_example.so
@@ -45,6 +49,7 @@ lib/mysql/plugin/query_response_time.so
 lib/mysql/plugin/scalability_metrics.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
+%%TOKUDB%%lib/mysql/plugin/tokudb_backup.so
 lib/mysql/plugin/validate_password.so
 libexec/mysqld
 man/man1/my_print_defaults.1.gz
@@ -74,6 +79,7 @@ man/man1/replace.1.gz
 man/man1/resolve_stack_dump.1.gz
 man/man1/resolveip.1.gz
 man/man8/mysqld.8.gz
+%%TOKUDB%%share/doc/mysql/README_tokudb_backup
 %%DATADIR%%/binary-configure
 %%DATADIR%%/bulgarian/errmsg.sys
 %%DATADIR%%/charsets/Index.xml

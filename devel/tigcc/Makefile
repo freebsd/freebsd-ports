@@ -15,6 +15,8 @@ DISTFILES=		gcc-core-4.1-20060728.tar.bz2:gcc \
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
+BROKEN_powerpc64=	Does not build
+
 USE_GCC=	any
 USES=		bison gmake tar:bzip2
 NO_WRKSUBDIR=	yes

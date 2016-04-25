@@ -10,4 +10,6 @@ LIBRMATH_SLAVEPORT=	yes
 MASTERDIR=	${.CURDIR}/../R
 PLIST=	${.CURDIR}/pkg-plist
 
+BROKEN_powerpc64=	Does not build
+
 .include "${MASTERDIR}/Makefile"

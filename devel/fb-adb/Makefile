@@ -11,6 +11,8 @@ COMMENT=	Better shell for Android devices
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	xxd:editors/vim-lite \
 		${BASH_CMD}:shells/${BASH_CMD:T}
 RUN_DEPENDS=	adb:devel/android-tools-adb

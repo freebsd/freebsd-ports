@@ -1,0 +1,4 @@
+This library allows to you to read and write rpm packages. Written in pure ruby
+because librpm is not available on all systems
+
+WWW: https://rubygems.org/gems/arr-pm

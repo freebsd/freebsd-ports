@@ -11,6 +11,8 @@ COMMENT=	TV streaming server supporting DVB, IPTV and V4L
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 

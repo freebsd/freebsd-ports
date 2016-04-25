@@ -9,6 +9,8 @@ DISTNAME=	pgp263in${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PGP International version - improved for use in IN-CA
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:tgz
 WRKSRC=		${WRKDIR}/pgp263in/src
 MAKEFILE=	makefile

@@ -11,6 +11,8 @@ COMMENT=	FreeBSD-compatible replacement for IntelliJ's bundled Pty4J
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	idea4bsd
 GH_PROJECT=	pty4j

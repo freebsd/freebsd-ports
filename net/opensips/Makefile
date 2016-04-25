@@ -12,6 +12,8 @@ COMMENT=		Open SIP Server
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 			libxmlrpc.so:net/xmlrpc-c-devel \
 			libpcre.so:devel/pcre \

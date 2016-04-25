@@ -110,7 +110,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
 .if ${PORT_OPTIONS:MFIREBIRD}
-USE_FIREBIRD=	yes
+USES+=		firebird
 CONFIGURE_ARGS+=	--with-firebird-prefix="${LOCALBASE}"
 TOSTRIP+=		libexec/sqlrelay/sqlrconnection_firebird.so
 .else

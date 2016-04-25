@@ -13,6 +13,8 @@ COMMENT=	Advanced JPEG encoder for the Web
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
 

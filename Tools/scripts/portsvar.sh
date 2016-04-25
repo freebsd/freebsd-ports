@@ -58,7 +58,7 @@ do
         apache) setvar="$setvar USE_APACHE=yes";;
         autotools) setvar="$setvar USE_AUTOTOOLS=yes";;
         database) setvar="$setvar USE_MYSQL=yes USE_PGSQL=yes"
-                  setvar="$setvar USE_BDB=yes USE_SQLITE=yes";;
+                  setvar="$setvar USE_BDB=yes";;
         emacs) setvar="$setvar EMACS_PORT_NAME=yes";;
         gcc) setvar="$setvar USE_GCC=yes";;
         gnome) setvar="$setvar USE_GNOME=yes";;

@@ -189,6 +189,7 @@
     SUBDIR += rubygem-bzip2-ruby
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
+    SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip2
     SUBDIR += rvm

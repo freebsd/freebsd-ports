@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	6.0.0.s20160410
+PORTVERSION=	6.0.1.s20160421
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/snapshots/${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -12,6 +12,8 @@ COMMENT=	GNU Compiler Collection 6
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
+
+BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \

@@ -1,11 +1,10 @@
 --- kafo_parsers.gemspec.orig	2016-04-03 08:11:36 UTC
 +++ kafo_parsers.gemspec
-@@ -26,8 +26,6 @@ Gem::Specification.new do |s|
-       s.add_development_dependency(%q<minitest>.freeze, ["~> 4.0"])
+@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
        s.add_development_dependency(%q<simplecov>.freeze, ["< 0.9"])
        s.add_development_dependency(%q<ci_reporter>.freeze, ["~> 1.9.0"])
--      s.add_runtime_dependency(%q<puppet>.freeze, ["< 4.0.0"])
+       s.add_development_dependency(%q<puppet>.freeze, ["< 5.0.0"])
 -      s.add_runtime_dependency(%q<rdoc>.freeze, [">= 3.9.0"])
+       s.add_runtime_dependency(%q<json>.freeze, [">= 0"])
      else
        s.add_dependency(%q<bundler>.freeze, ["~> 1.5"])
-       s.add_dependency(%q<rake>.freeze, [">= 0"])

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seqtools
-PORTVERSION=	4.41.1
+PORTVERSION=	4.42.1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/seqtools/PRODUCTION/
 
@@ -13,9 +13,9 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsqlite3.so:databases/sqlite3
 
-USES=		execinfo libtool pkgconfig
+USES=		compiler:c++14-lang execinfo libtool pkgconfig
 GNU_CONFIGURE=	yes
-USE_GCC=	any
+#USE_GCC=	any
 USE_GNOME=	gtk20
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lcurl -lsqlite3 -lm

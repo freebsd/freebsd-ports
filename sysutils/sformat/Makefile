@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Allows formatting/partitioning/analysis/repairing of SCSI disks
 
+BROKEN_powerpc64=	Does not build
+
 LIBSCHILY=	libschily-2.01.01a07.tar.gz
 USES=		gmake
 

@@ -12,15 +12,8 @@ COMMENT=	Themed widget set for Tk
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES=		autoreconf tk
+USES=		autoreconf tk:tea
 
-GNU_CONFIGURE=	yes
-TKPKG=		${PORTNAME}${PORTVERSION}
-PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG}
-
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR} \
-		--exec-prefix=${PREFIX} --enable-shared
 CONFIGURE_ENV+=	TCL_INCLUDEDIR="${TCL_INCLUDEDIR}" \
 		TK_INCLUDEDIR="${TK_INCLUDEDIR}"
 

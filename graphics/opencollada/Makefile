@@ -9,6 +9,8 @@ COMMENT=	Library for reading and writing COLLADA files
 
 LICENSE=	MIT
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GITHUB=	yes

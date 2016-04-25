@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.5.16
+PORTVERSION=	3.5.17
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -17,12 +17,15 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://master.squid-cache.org/~amosjeffries/patches/:nosid
 PATCH_SITE_SUBDIR=	Versions/v3/${PORTVERSION:R}/changesets
+#PATCHFILES=
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	HTTP Caching Proxy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_powerpc64=	Does not build
 
 USES=		compiler cpe perl5 shebangfix tar:xz
 CPE_VENDOR=	squid-cache

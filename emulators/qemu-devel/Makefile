@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 DISTVERSION=	2.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 PKGNAMESUFFIX=	-devel
@@ -33,7 +33,7 @@ CDROM_DMA_DESC=		IDE CDROM DMA
 PCAP_DESC=		pcap dependency (networking with bpf)
 USBREDIR_DESC=		usb device network redirection (experimental!)
 GNS3_DESC=		gns3 patches (promiscuous multicast)
-X86_TARGETS_DESC=	Don't build non-x86 system targets
+X86_TARGETS_DESC=	Build only x86 system targets
 STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP GNS3
 OPTIONS_SUB=	yes

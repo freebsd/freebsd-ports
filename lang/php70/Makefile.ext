@@ -459,7 +459,7 @@ CONFIGURE_ARGS+=--enable-zip \
 CONFIGURE_ARGS+=--with-zlib=/usr
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PHP_MODNAME} == "dba"
 .	if empty(PORT_OPTIONS:MCDB)
@@ -493,6 +493,27 @@ CONFIGURE_ARGS+=--disable-inifile
 CONFIGURE_ARGS+=--disable-flatfile
 .	endif
 .endif
+
+.if ${PHP_MODNAME} == "mysqli"
+.	if ${PORT_OPTIONS:MMYSQLND}
+CONFIGURE_ARGS+=--with-mysqli=mysqlnd
+.	else
+CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
+USES+=	mysql
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "pdo_mysql"
+.	if ${PORT_OPTIONS:MMYSQLND}
+CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
+.	else
+CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
+USES+=	mysql
+.	endif
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "gd"
 .	if ${PORT_OPTIONS:MT1LIB}
@@ -532,25 +553,6 @@ LIB_DEPENDS+=	libonig.so:devel/oniguruma5
 CONFIGURE_ARGS+=--with-onig=${LOCALBASE}
 .	else
 CONFIGURE_ARGS+=--disable-mbregex
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "mysqli"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-mysqli=mysqlnd
-.	else
-CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
-USE_MYSQL=	yes
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "pdo_mysql"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
-.	else
-CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-USE_MYSQL=	yes
 .	endif
 .endif
 

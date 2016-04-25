@@ -20,3 +20,14 @@
          
          return new_string;
      } // toUTF8String
+@@ -166,8 +167,8 @@ namespace TagLookup
+         
+         bool operator() (const FileRefLengthPair &f1, const FileRefLengthPair &f2)
+         {
+-            if( abs(f1.second - x_) <
+-                abs(f2.second - x_) )
++            if( abs((int)(f1.second - x_)) <
++                abs((int)(f2.second - x_)) )
+                 return true;
+             else
+                 return false;

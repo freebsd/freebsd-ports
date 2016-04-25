@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	5.2.20151219
-PORTREVISION=	1
+PORTVERSION=	5.3.20160330
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/5.0/5-2015-q4-major/+download/
+MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/5.0/5-2016-q1-update/+download/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -12,6 +12,8 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
+
+BROKEN_powerpc64=	Does not build
 
 OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=EXAMPLES PYGDB
@@ -31,8 +33,9 @@ PURE_LIB_DEPENDS_OFF=	\
 
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
-OPTIONS_SUB=		yes
 PYGDB_USES=		python:2
+
+OPTIONS_SUB=		yes
 
 NOT_FOR_ARCHS=		aarch64 arm armeb armv6 armv6hf \
 			mips mips64 mips64el mipsel mipsn32
@@ -45,8 +48,8 @@ GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
-GCC_VERSION=		5.2.1
-FULL_VERSION=		5_2-2015q4-20151219
+GCC_VERSION=		5.3.1
+FULL_VERSION=		5_3-2016q1-20160330
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
@@ -55,8 +58,8 @@ CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
 
 INFO_PATH=	${PORTNAME}-${FULL_VERSION}/share/doc/gcc-${TARGET}/info
-INFO=		annotate as bfd binutils configure cpp cppinternals gcc \
-		gccinstall gccint gdb gprof ld stabs standards
+INFO=		annotate as bfd binutils cpp cppinternals gcc \
+		gccinstall gccint gdb gprof ld stabs
 
 MANPREFIX=	${PREFIX}/${PORTNAME}-${FULL_VERSION}/${DOCS_SUFFIX}
 DOCSDIR=	${PREFIX}/${PORTNAME}-${FULL_VERSION}/${DOCS_SUFFIX}

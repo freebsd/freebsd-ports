@@ -12,6 +12,8 @@ COMMENT=	Apache module for WebWare WebKit AppServer
 
 LICENSE=	PSFL
 
+BROKEN_powerpc64=	Does not build
+
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

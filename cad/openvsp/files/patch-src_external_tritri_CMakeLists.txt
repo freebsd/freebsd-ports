@@ -1,0 +1,11 @@
+--- src/external/tritri/CMakeLists.txt.orig	2016-02-14 00:01:30 UTC
++++ src/external/tritri/CMakeLists.txt
+@@ -10,4 +10,6 @@ intersect_AABB.cpp
+ intersect_triangle.cpp
+ Tritri.cpp
+ Tritri.h
+-)
+\ No newline at end of file
++)
++
++set_target_properties( tritri PROPERTIES COMPILE_FLAGS "-fPIC")

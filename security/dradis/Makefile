@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dradis
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1
 CATEGORIES=	security
@@ -33,7 +34,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
-RUBY_SHEBANG_FILES=	server/script/rails server/script/delayed_job
+USES=		shebangfix
+SHEBANG_FILES=	server/script/rails server/script/delayed_job
 RUBY_NO_BUILD_DEPENDS=	yes
 
 USES=		dos2unix

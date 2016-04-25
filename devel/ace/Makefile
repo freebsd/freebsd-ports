@@ -16,6 +16,8 @@ LICENSE_NAME=	ACE
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_powerpc64=	Does not build
+
 WRKSRC=		${WRKDIR}/ACE_wrappers
 
 USES=		gmake perl5 pkgconfig shebangfix tar:bzip2

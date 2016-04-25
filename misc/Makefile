@@ -65,7 +65,6 @@
     SUBDIR += dejagnu
     SUBDIR += delay
     SUBDIR += detachtty
-    SUBDIR += diary-hercules
     SUBDIR += diction
     SUBDIR += digitemp
     SUBDIR += display

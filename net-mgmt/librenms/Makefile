@@ -59,10 +59,10 @@ LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
-X11_RUN_DEPENDS=	Magick-config:${PORTSDIR}/graphics/ImageMagick \
-			mtr:${PORTSDIR}/net/mtr
-X11_RUN_DEPENDS_OFF=	Magick-config:${PORTSDIR}/graphics/ImageMagick-nox11 \
-			mtr:${PORTSDIR}/net/mtr-nox11
+X11_RUN_DEPENDS=	Magick-config:graphics/ImageMagick \
+			mtr:net/mtr
+X11_RUN_DEPENDS_OFF=	Magick-config:graphics/ImageMagick-nox11 \
+			mtr:net/mtr-nox11
 
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 MYSQLD_USE=		MYSQL=server

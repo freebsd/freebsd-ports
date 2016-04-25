@@ -14,6 +14,8 @@ COMMENT=	Universal SQL/Application Server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 BUILD_DEPENDS=	gawk:lang/gawk\
 		htmldoc:textproc/htmldoc\
 		flex>2.5.4:textproc/flex\

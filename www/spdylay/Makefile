@@ -17,6 +17,8 @@ BUILD_DEPENDS=	libevent2>=2.0.8:devel/libevent2
 LIB_DEPENDS=	libevent_openssl.so:devel/libevent2
 RUN_DEPENDS=	libevent2>=2.0.8:devel/libevent2
 
+BROKEN_powerpc64=	does not build
+
 CONFIGURE_ARGS=	--enable-examples \
 		--enable-src
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \

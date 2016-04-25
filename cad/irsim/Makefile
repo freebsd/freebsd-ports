@@ -5,7 +5,6 @@ PORTNAME=	irsim
 PORTVERSION=	9.7.93
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Event-driven logic-level simulator for MOS circuis
@@ -20,14 +19,12 @@ TCL_DESC=	Tcl interpreter
 OPTIONS_SUB=	yes
 
 SCHEME_CONFIGURE_ON=	--with-interpreter=scheme
-TCL_CONFIGURE_ON=	--with-interpreter=tcl --with-tcl=${TCL_LIBDIR} \
-			--with-tk=${TK_LIBDIR} --with-tclincls=${TCL_INCLUDEDIR} \
-			--with-tkincls=${TK_INCLUDEDIR} --with-tcllibs=${LOCALBASE}/lib \
-			--with-tklibs=${LOCALBASE}/lib
+TCL_CONFIGURE_ON=	--with-interpreter=tcl
+TCL_USES=		tk:tea
 
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
-USES=	gmake
+USES=	gmake tar:tgz
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
@@ -37,7 +34,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCL}
-USES+=	tk
 PLIST_SUB+=	NOTCL="@comment "
 .else
 WISH=		${FALSE}

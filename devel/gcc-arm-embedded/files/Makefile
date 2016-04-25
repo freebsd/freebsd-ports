@@ -295,7 +295,7 @@ build-gcc-first:
 	 --with-multilib-list=${MULTILIB_LIST} \
 	 --with-pkgversion="${PKGVERSION}"
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-first all ${MAKE_ARGS}
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-first all-gcc ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into stage directory"
 	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-first install-gcc ${MAKE_ARGS}
 	@${RM} -f ${INTERIM_PREFIX}/bin/${TARGET}-gccbug
@@ -469,6 +469,7 @@ build-libstdcxx:
 	 --disable-libquadmath \
 	 --disable-libssp \
 	 --disable-libstdcxx-pch \
+	 --disable-libstdcxx-verbose \
 	 --disable-nls \
 	 --disable-shared \
 	 --disable-threads \

@@ -1,4 +1,4 @@
---- src/nvimage/ImageIO.cpp.orig	2010-05-14 17:59:28 UTC
+--- src/nvimage/ImageIO.cpp.orig	2010-05-15 09:12:05 UTC
 +++ src/nvimage/ImageIO.cpp
 @@ -603,7 +603,7 @@ static void user_read_data(png_structp p
  {

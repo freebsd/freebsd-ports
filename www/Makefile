@@ -118,7 +118,6 @@
     SUBDIR += domoticz
     SUBDIR += dotclear
     SUBDIR += dotproject
-    SUBDIR += download-gemist
     SUBDIR += drood
     SUBDIR += drraw
     SUBDIR += drupal6
@@ -987,7 +986,6 @@
     SUBDIR += p5-HTTP-BrowserDetect
     SUBDIR += p5-HTTP-Cache-Transparent
     SUBDIR += p5-HTTP-CookieJar
-    SUBDIR += p5-HTTP-CookieMonster
     SUBDIR += p5-HTTP-Cookies
     SUBDIR += p5-HTTP-Cookies-Mozilla
     SUBDIR += p5-HTTP-Cookies-iCab
@@ -1047,7 +1045,6 @@
     SUBDIR += p5-LWP-Authen-OAuth
     SUBDIR += p5-LWP-Authen-Wsse
     SUBDIR += p5-LWP-ConnCache-MaxKeepAliveRequests
-    SUBDIR += p5-LWP-ConsoleLogger
     SUBDIR += p5-LWP-MediaTypes
     SUBDIR += p5-LWP-Online
     SUBDIR += p5-LWP-Protocol-PSGI
@@ -1283,7 +1280,6 @@
     SUBDIR += p5-WWW-LongURL
     SUBDIR += p5-WWW-Mechanize
     SUBDIR += p5-WWW-Mechanize-CGI
-    SUBDIR += p5-WWW-Mechanize-Cached
     SUBDIR += p5-WWW-Mechanize-DecodedContent
     SUBDIR += p5-WWW-Mechanize-FormFiller
     SUBDIR += p5-WWW-Mechanize-GZip
@@ -1525,6 +1521,7 @@
     SUBDIR += py-cssutils
     SUBDIR += py-django
     SUBDIR += py-django-allauth
+    SUBDIR += py-django-annotations
     SUBDIR += py-django-annoying
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-appconf
@@ -1776,6 +1773,7 @@
     SUBDIR += py-scriptaculous
     SUBDIR += py-seafdav
     SUBDIR += py-seafobj
+    SUBDIR += py-searx
     SUBDIR += py-selector
     SUBDIR += py-selenium
     SUBDIR += py-slimit

@@ -57,6 +57,7 @@ lib/elixir/lib/plug/ebin/Elixir.Plug.Static.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Supervisor.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Test.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Upload.beam
+lib/elixir/lib/plug/ebin/Elixir.Plug.UploadError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.beam
 lib/elixir/lib/plug/ebin/plug.app
 lib/elixir/lib/plug/lib/plug.ex

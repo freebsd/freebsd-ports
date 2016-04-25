@@ -15,6 +15,8 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_powerpc64=	Does not build
+
 CONFLICTS_INSTALL=	wordpress-[0-9].* de-wordpress-[0-9].* ru-wordpress-[0-9].*
 
 NO_ARCH=	yes

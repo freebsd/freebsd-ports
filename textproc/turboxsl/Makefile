@@ -11,6 +11,8 @@ COMMENT=	Fast, multithreaded XML+XSLT transformation library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libmemcached.so:databases/libmemcached
 

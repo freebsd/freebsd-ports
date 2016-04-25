@@ -3,7 +3,7 @@
 
 PORTNAME=	opentsdb
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases java
 MASTER_SITES=	https://github.com/OpenTSDB/opentsdb/releases/download/v${PORTVERSION}/
 
@@ -18,8 +18,11 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libhadoop.so:devel/hadoop2
 RUN_DEPENDS=	hbase>0:databases/hbase
 
-USES=		gmake python
+USES=		gmake python shebangfix
 USE_JAVA=	yes
+JAVA_VERSION=	1.8+
+SHEBANG_FILES=	tools/check_tsd tools/opentsdb_restart.py \
+		tools/tsddrain.py
 
 OPTIONS_DEFINE=		GNUPLOT
 OPTIONS_DEFAULT=	GNUPLOT
@@ -47,6 +50,7 @@ SUB_LIST=	OPENTSDB_USER="${OPENTSDB_USER}" \
 post-patch:
 	${REINPLACE_CMD} -i "" -e "s|python|${PYTHON_CMD}|" ${WRKSRC}/build-aux/gen_build_data.sh
 	${REINPLACE_CMD} -i "" -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/src/utils/Config.java
+	${REINPLACE_CMD} -e "s#%%JAVA_VERSION%%#${JAVA_VERSION}#" ${WRKSRC}/tsdb.in
 	${REINPLACE_CMD} -i "" -e "s|tsd.http.staticroot =|tsd.http.staticroot = ${DATADIR}/static|; s|tsd.http.cachedir =|tsd.http.cachedir = /tmp/opentsdb|; s|tsd.network.port =|tsd.network.port = 4242|;" ${WRKSRC}/src/opentsdb.conf
 
 post-install:

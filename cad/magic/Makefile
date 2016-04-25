@@ -16,13 +16,10 @@ LICENSE_FILE=	${FILESDIR}/license.txt
 
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt
 
-USES=		gmake tk:build tar:tgz
+USES=		gmake tk:tea tar:tgz
 USE_XORG=	ice xext xi xmu
 USE_GL=		gl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR} \
-		--with-opengl
+CONFIGURE_ARGS=	--with-opengl
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 ALL_TARGET=	tcllibrary
 

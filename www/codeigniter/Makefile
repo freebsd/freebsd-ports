@@ -11,6 +11,8 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:tgz
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcit-ci

@@ -21,6 +21,8 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 
 CONFLICTS=	tint2-[0-9]*
 
+IGNORE=		-devel version is older than x11/tint
+
 USES=		alias cmake pkgconfig tar:xz
 USE_GNOME=	glib20 gtk20 pango
 USE_XORG=	xcomposite xdamage xinerama xrandr

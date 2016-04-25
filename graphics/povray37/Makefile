@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Persistence of Vision Ray Tracer
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 OPTIONS_DEFINE=	X11 PNG JPEG TIFF OPENEXR STATIC IO EXAMPLES DOCS

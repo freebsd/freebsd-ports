@@ -13,10 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libcassandra.so:databases/cassandra-cpp-driver
 
-USES=		autoreconf tcl:85+
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--exec-prefix=${PREFIX}
+USES=		autoreconf tcl:85+,tea
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware

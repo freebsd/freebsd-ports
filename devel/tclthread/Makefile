@@ -14,14 +14,10 @@ COMMENT=	Scripting level thread extension for Tcl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES=		autoreconf tcl
+USES=		autoreconf tcl:tea
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--prefix=${PREFIX} \
-		--exec-prefix=${PREFIX}
-USE_LDCONFIG=	${PREFIX}/lib/thread${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${TCL_PKG}
+USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
 
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 

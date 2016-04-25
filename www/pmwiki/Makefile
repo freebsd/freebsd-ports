@@ -13,6 +13,8 @@ COMMENT=	WikiWikiWeb clone using PHP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe tar:tgz
 USE_PHP=	mbstring session
 WANT_PHP_WEB=	yes

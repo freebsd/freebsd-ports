@@ -11,6 +11,8 @@ DISTNAME=	skkinput-${PORTVERSION}
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	SKK-like Japanese input method for X11
 
+BROKEN_powerpc64=	Does not build
+
 USES=		imake
 USE_GCC=	any
 USE_CSTD=	gnu89

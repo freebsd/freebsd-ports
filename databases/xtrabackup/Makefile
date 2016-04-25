@@ -13,6 +13,8 @@ COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 # quilt is required by build.sh
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake \

@@ -19,6 +19,8 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -101,12 +103,12 @@ OPTIONS_DEFINE+=	MAXKEY OQGRAPH
 OPTIONS_DEFAULT+=	MAXKEY
 
 MAXKEY_DESC=	Change max key length from 1000 to 4000
+
 OQGRAPH_DESC=	Open Query Graph Computation engine
 
-OQGRAPH_CMAKE_OFF=	-DWITHOUT_OQGRAPH_STORAGE_ENGINE=1
 OQGRAPH_USE=	GCC=yes
-OQGRAPH_CMAKE_ON=	-DWITH_OQGRAPH_STORAGE_ENGINE=1
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+OQGRAPH_BROKEN=	yes
 
 MAXKEY_EXTRA_PATCHES=	${FILESDIR}/extra-patch-include_my_compare.h
 .endif
@@ -123,6 +125,9 @@ CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
 .if ${ARCH} == 'i386' && ${OSVERSION} >= 1001000
 USE_GCC=	yes
 .endif
+
+post-extract-OQGRAPH-off:
+	@${RM} -rf ${WRKSRC}/storage/oqgraph
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt

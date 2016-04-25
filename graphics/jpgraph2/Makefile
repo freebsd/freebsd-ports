@@ -16,6 +16,8 @@ LICENSE_NAME=	JpGraph license
 LICENSE_FILE=	${WRKSRC}/README
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:bzip2
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -11,4 +11,6 @@ MASTERDIR=	${.CURDIR}/../R
 PLIST=	${.CURDIR}/pkg-plist
 PLIST_FILES=	lib/R/lib/libR.a
 
+BROKEN_powerpc64=	Does not build
+
 .include "${MASTERDIR}/Makefile"

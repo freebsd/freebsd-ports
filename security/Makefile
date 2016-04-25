@@ -119,7 +119,6 @@
     SUBDIR += elixir-comeonin
     SUBDIR += elixir-comeonin_i18n
     SUBDIR += elixir-jose
-    SUBDIR += engine_pkcs11
     SUBDIR += erlang-jose
     SUBDIR += erlang-p1tls
     SUBDIR += esteidfirefoxplugin
@@ -493,6 +492,7 @@
     SUBDIR += p5-Crypt-CipherSaber
     SUBDIR += p5-Crypt-Cracklib
     SUBDIR += p5-Crypt-Ctr
+    SUBDIR += p5-Crypt-Curve25519
     SUBDIR += p5-Crypt-DES
     SUBDIR += p5-Crypt-DES_EDE3
     SUBDIR += p5-Crypt-DES_PP

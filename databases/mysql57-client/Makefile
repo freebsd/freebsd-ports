@@ -9,6 +9,8 @@ COMMENT=	Multithreaded SQL database (client)
 
 LICENSE+=	LGPL21
 
+BROKEN_powerpc64=	Does not build
+
 MASTERDIR=	${.CURDIR}/../mysql57-server
 
 PKGMESSAGE=	${.CURDIR}/pkg-message

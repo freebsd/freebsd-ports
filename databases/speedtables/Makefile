@@ -18,11 +18,8 @@ LIB_DEPENDS=	libtclx8.4.so:lang/tclX \
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 
-USES=		autoreconf tcl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
-		--with-boost=${PREFIX} \
-		--with-tcl=${TCL_LIBDIR}
+USES=		autoreconf tcl:tea
+CONFIGURE_ARGS=	--with-boost=${LOCALBASE}
 
 PORTDOCS=	*
 

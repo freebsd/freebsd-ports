@@ -13,6 +13,8 @@ COMMENT=	Modern style C++ library for working with XML data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 OPTIONS_DEFINE=	XSLT DOCS

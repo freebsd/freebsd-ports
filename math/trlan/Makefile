@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Thick-restart Lanczos method for eigenproblems
 
+BROKEN_powerpc64=	Does not build
+
 USES=		fortran
 USE_LDCONFIG=	yes
 

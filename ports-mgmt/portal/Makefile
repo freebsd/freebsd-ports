@@ -9,6 +9,8 @@ COMMENT=	Front-end to pkg(8)
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 

@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encrypted pass-through FUSE filesystem
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	librlog.so:devel/rlog \
 		libboost_serialization.so:devel/boost-libs
 

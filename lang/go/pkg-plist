@@ -3778,6 +3778,7 @@ go/src/runtime/testdata/testprog/misc.go
 go/src/runtime/testdata/testprog/signal.go
 go/src/runtime/testdata/testprog/stringconcat.go
 go/src/runtime/testdata/testprog/syscall_windows.go
+go/src/runtime/testdata/testprogcgo/aprof.go
 go/src/runtime/testdata/testprogcgo/callback.go
 go/src/runtime/testdata/testprogcgo/cgo.go
 go/src/runtime/testdata/testprogcgo/crash.go

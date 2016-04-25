@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Role-Tiny
-PORTVERSION=	2.000001
+PORTVERSION=	2.000003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
@@ -16,10 +16,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.05:devel/p5-Class-Method-Modifiers
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Fatal>=0.003:devel/p5-Test-Fatal \
-		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
-		p5-strictures>=0:devel/p5-strictures
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

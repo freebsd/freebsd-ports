@@ -14,6 +14,8 @@ COMMENT=	Convert HTML (or live webpages) to PDF or image
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png

@@ -467,7 +467,7 @@ CONFIGURE_ARGS+=--enable-zip \
 CONFIGURE_ARGS+=--with-zlib=/usr
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PHP_MODNAME} == "dba"
 .	if empty(PORT_OPTIONS:MCDB)
@@ -501,6 +501,42 @@ CONFIGURE_ARGS+=--disable-inifile
 CONFIGURE_ARGS+=--disable-flatfile
 .	endif
 .endif
+
+.if ${PHP_MODNAME} == "mysql"
+.	if ${PORT_OPTIONS:MMYSQLND}
+CONFIGURE_ARGS+=--with-mysql=mysqlnd
+.	else
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
+
+USES+=	mysql
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "mysqli"
+.	if ${PORT_OPTIONS:MMYSQLND}
+CONFIGURE_ARGS+=--with-mysqli=mysqlnd
+.	else
+CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
+
+USES+=	mysql
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "pdo_mysql"
+.	if ${PORT_OPTIONS:MMYSQLND}
+CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
+
+USE_PHP+=	mysql
+.	else
+CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
+
+USES+=	mysql
+.	endif
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "gd"
 .	if ${PORT_OPTIONS:MT1LIB}
@@ -543,27 +579,6 @@ CONFIGURE_ARGS+=--disable-mbregex
 .	endif
 .endif
 
-.if ${PHP_MODNAME} == "mysql"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-mysql=mysqlnd
-.	else
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-
-USE_MYSQL=	yes
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "mysqli"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-mysqli=mysqlnd
-.	else
-CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
-
-USE_MYSQL=	yes
-.	endif
-.endif
-
 .if ${PHP_MODNAME} == "openssl" || ${PHP_MODNAME} == "sqlite3"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
@@ -574,19 +589,6 @@ post-extract:
 LIB_DEPENDS+=	libsybdb.so:databases/freetds
 .	else
 LIB_DEPENDS+=	libct.so:databases/freetds
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "pdo_mysql"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
-
-USE_PHP+=	mysql
-.	else
-CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-
-USE_MYSQL=	yes
 .	endif
 .endif
 

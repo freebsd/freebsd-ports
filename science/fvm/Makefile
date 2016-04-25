@@ -3,7 +3,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.15.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science parallel
 MASTER_SITES=	http://code-saturne.org/releases/
 

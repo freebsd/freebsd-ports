@@ -14,12 +14,8 @@ COMMENT=	Http-server implemented in TCL
 RUN_DEPENDS=	dtplite:devel/tcllib
 
 USE_RC_SUBR=	tclhttpd
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl="${TCL_LIBDIR}"	\
-		--with-tclinclude="${TCL_INCLUDEDIR}" \
-		--exec-prefix=${PREFIX}
 
-USES=		tcl
+USES=		tcl:tea
 
 .include <bsd.port.pre.mk>
 

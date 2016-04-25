@@ -16,10 +16,10 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/htree.rb:textproc/ruby-htree
 
-USES=	gmake
+USES=	gmake shebangfix
 USE_RUBY=	yes
 
-RUBY_SHEBANG_FILES=	main.rb rb-link rb2rm rm2rb
+SHEBANG_FILES=	main.rb rb-link rb2rm rm2rb
 PORTDOCS=	README README.ja
 PORTEXAMPLES=	config.yml t.latest.html
 

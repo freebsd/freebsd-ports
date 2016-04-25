@@ -16,16 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/tcllib/doctools/pkgIndex.tcl:devel/tcllib
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 ALL_TARGET=	binaries libraries doc-old
+TEST_TARGET=	test
 
-USES+=		tcl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--exec-prefix=${PREFIX}
-
-# Too bad, n is no longer an acceptable section for bsd.man.mk
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-regression-test test:
-	${MAKE} -C ${WRKSRC} test
+USES+=		tcl:tea
+TCL_PKG=	Memchan${PORTVERSION}
 
 .include <bsd.port.mk>

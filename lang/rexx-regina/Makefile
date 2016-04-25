@@ -13,6 +13,8 @@ COMMENT=	Rexx interpreter
 
 LICENSE=	LGPL21+
 
+BROKEN_powerpc64=	Does not build
+
 USES=		gmake iconv tar:bzip2
 USE_RC_SUBR=	rxstack
 GNU_CONFIGURE=	yes

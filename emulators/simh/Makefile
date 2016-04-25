@@ -7,7 +7,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
 DISTNAME=	${PORTNAME}v${PORTVERSION:R:S/.//}-${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bob@eager.cx
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
 NO_WRKSUBDIR=	yes
