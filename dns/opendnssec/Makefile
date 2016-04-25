@@ -47,7 +47,7 @@ SQLITE_USE=	yes
 
 .if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--with-database-backend=mysql
-USE_MYSQL=	compat
+USES+=		mysql
 SCRIPTDATA=	migrate_adapters_1.mysql migrate_keyshare_mysql.pl \
 		migrate_zone_delete.mysql migrate_id_mysql.pl \
 		migrate_to_ng_mysql.pl migrate_1_4_8.mysql
