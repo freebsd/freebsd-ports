@@ -81,6 +81,7 @@
     SUBDIR += libcodec2
     SUBDIR += libconcord
     SUBDIR += libfap
+    SUBDIR += libfec
     SUBDIR += libimobiledevice
     SUBDIR += libirman
     SUBDIR += libmodbus
