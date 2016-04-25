@@ -1,44 +1,56 @@
 # $FreeBSD$
 #
-
-.if defined(_POSTMKINCLUDED) && !defined(Database_Post_Include)
-
-Database_Post_Include=		bsd.database.mk
-Database_Include_MAINTAINER=	ports@FreeBSD.org
-
-# This file contains some routines to interact with different databases, such
-# as MySQL.  To include this file, define macro
-# USE_[DATABASE], for example USE_MYSQL.  Defining macro like
-# USE_[DATABASE]_VER or WANT_[DATABASE]_VER will include this file as well.
+# Provide support for MySQL
+# Feature:	mysql
+# Usage:	USES=mysql or USES=mysql:args
+# Valid ARGS:	<version>, server, embedded
 #
-##
-# USE_MYSQL		- Add MySQL (client/server/embedded) dependency (default:
-#			  client).
-#			  If no version is given (by the maintainer via the port or
-#			  by the user via defined variable), try to find the
-#			  currently installed version.  Fall back to default if
-#			  necessary (MySQL-5.6 = 56).
-# DEFAULT_MYSQL_VER
-#			- MySQL default version.  Can be overridden within a port.
-#			  Default: 56.
-# WANT_MYSQL_VER
-#			- Maintainer can set an arbitrary version of MySQL to always
-#			  build this port with (overrides WITH_MYSQL_VER).
+# version	If no version is given (by the maintainer via the port), try to
+#		find the currently installed version.  Fall back to default if
+#		necessary (MySQL-5.6 = 56).
+# server/embedded
+#		Depend on the server at run/build time. If none of these is
+#		set, depends on the client.
+#
 # IGNORE_WITH_MYSQL
-#			- This variable can be defined if the ports does not support
-#			  one or more versions of MySQL.
+#		This variable can be defined if the ports does not support one
+#		or more versions of MySQL.
 # WITH_MYSQL_VER
-#			- User defined variable to set MySQL version.
+#		User defined variable to set MySQL version.
 # MYSQL_VER
-#			- Detected MySQL version.
+#		Detected MySQL version.
+#
+# MAINTAINER:	ports@FreeBSD.org
+
+.if !defined(_INCLUDE_USES_MYSQL_MK)
+_INCLUDE_USES_MYSQL_MK=	yes
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+
+.if !empty(mysql_ARGS)
+.undef _WANT_MYSQL_VER
+.undef _WANT_MYSQL_SERVER
+.undef _WANT_MYSQL_EMBEDDED
+_MYSQL_ARGS=		${mysql_ARGS:S/,/ /g}
+.if ${_MYSQL_ARGS:Mserver}
+_WANT_MYSQL_SERVER=	yes
+_MYSQL_ARGS:=	${_MYSQL_ARGS:Nserver}
+.endif
+.if ${_MYSQL_ARGS:Membedded}
+_WANT_MYSQL_EMBEDDED=	yes
+_MYSQL_ARGS:=	${_MYSQL_ARGS:Nembedded}
+.endif
+
+# Port requested a version
+.if !empty(_MYSQL_ARGS)
+_WANT_MYSQL_VER=	${_MYSQL_ARGS}
+.endif
+.endif # !empty(mysql_ARGS)
 
 .if defined(DEFAULT_MYSQL_VER)
 WARNING+=	"DEFAULT_MYSQL_VER is defined, consider using DEFAULT_VERSIONS=mysql=${DEFAULT_MYSQL_VER} instead"
 .endif
 
-.if defined(USE_MYSQL)
 DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # MySQL client version currently supported.
 # When adding a version, please keep the comment in
@@ -68,11 +80,11 @@ _MYSQL_VER=	${_MYSQL}
 .endif
 .endif
 
-.if defined(WANT_MYSQL_VER)
-.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER} != ${WANT_MYSQL_VER}
-IGNORE=		cannot install: the port wants mysql${WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client
+.if defined(_WANT_MYSQL_VER)
+.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER} != ${_WANT_MYSQL_VER}
+IGNORE=		cannot install: the port wants mysql${_WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client
 .endif
-MYSQL_VER=	${WANT_MYSQL_VER}
+MYSQL_VER=	${_WANT_MYSQL_VER}
 .elif defined(WITH_MYSQL_VER)
 MYSQL_VER=	${WITH_MYSQL_VER}
 .else
@@ -81,7 +93,7 @@ MYSQL_VER=	${_MYSQL_VER}
 .else
 MYSQL_VER=	${DEFAULT_MYSQL_VER}
 .endif
-.endif # WANT_MYSQL_VER
+.endif # _WANT_MYSQL_VER
 
 .if defined(_MYSQL_VER)
 .if ${_MYSQL_VER} != ${MYSQL_VER}
@@ -109,9 +121,9 @@ IGNORE=		cannot install: does not work with MySQL version ${MYSQL_VER} (MySQL ${
 .		endif
 .	endfor
 .endif # IGNORE_WITH_MYSQL
-.if (${USE_MYSQL} == "server" || ${USE_MYSQL} == "embedded")
+.if defined(_WANT_MYSQL_SERVER) || defined(_WANT_MYSQL_EMBEDDED)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${_MYSQL_SERVER}
-.if (${USE_MYSQL} == "embedded")
+.if defined(_WANT_MYSQL_EMBEDDED)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqld.a:${_MYSQL_SERVER}
 .endif
 .else
@@ -120,6 +132,5 @@ LIB_DEPENDS+=	libmysqlclient.so.${MYSQL${MYSQL_VER}_LIBVER}:${_MYSQL_CLIENT}
 .else
 IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
 .endif # Check for correct libs
-.endif # USE_MYSQL
 
-.endif # defined(_POSTMKINCLUDED) && !defined(Database_Post_Include)
+.endif

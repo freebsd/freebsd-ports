@@ -65,7 +65,7 @@ OPTIONS_SET_FORCE= LIBSTEMMER
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql
-MYSQL_USE=		mysql
+MYSQL_USES=		mysql
 
 OPTIMIZED_CFLAGS_CXXFLAGS=-O3 -fomit-frame-pointer
 

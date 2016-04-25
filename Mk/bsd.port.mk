@@ -1407,6 +1407,18 @@ USES+=	mate
 USES+=bdb:${USE_BDB}
 .endif
 
+.if defined(USE_MYSQL)
+USE_MYSQL:=		${USE_MYSQL:N[yY][eE][sS]:Nclient}
+.if defined(WANT_MYSQL_VER)
+.if empty(USE_MYSQL)
+USE_MYSQL:=${WANT_MYSQL_VER}
+.else
+USE_MYSQL:=${USE_MYSQL},${WANT_MYSQL_VER}
+.endif
+.endif
+USES+=mysql:${USE_MYSQL}
+.endif
+
 .if defined(WANT_WX) || defined(USE_WX) || defined(USE_WX_NOT)
 .include "${PORTSDIR}/Mk/bsd.wx.mk"
 .endif
@@ -1865,10 +1877,6 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 
 .if defined(USE_XORG) || defined(XORG_CAT)
 .include "${PORTSDIR}/Mk/bsd.xorg.mk"
-.endif
-
-.if defined(USE_MYSQL) || defined(WANT_MYSQL_VER)
-.include "${PORTSDIR}/Mk/bsd.database.mk"
 .endif
 
 .if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER) || defined(USE_GSTREAMER1)
