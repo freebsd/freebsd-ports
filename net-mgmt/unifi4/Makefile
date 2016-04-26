@@ -5,7 +5,8 @@ PORTNAME=	unifi4
 PORTVERSION=	4.8.15
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
-MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}/
+MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}/ \
+		LOCAL/feld/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	UniFi.unix
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
