@@ -1,6 +1,6 @@
---- mypaint.py.orig	2013-04-16 20:22:02.000000000 +0200
-+++ mypaint.py	2013-04-16 20:22:19.000000000 +0200
-@@ -172,11 +172,6 @@
+--- mypaint.py.orig	2012-12-31 16:35:54 UTC
++++ mypaint.py
+@@ -172,11 +172,6 @@ if __name__ == '__main__':
      print "DEBUG: localepath: ", localepath
      print "DEBUG: localepath_brushlib: ", localepath_brushlib
  
