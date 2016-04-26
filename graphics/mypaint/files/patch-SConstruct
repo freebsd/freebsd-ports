@@ -1,6 +1,6 @@
---- SConstruct.orig	2012-12-31 19:03:38.000000000 +0200
-+++ SConstruct	2013-01-11 20:45:33.000000000 +0200
-@@ -39,7 +39,7 @@
+--- SConstruct.orig	2012-12-31 16:35:54 UTC
++++ SConstruct
+@@ -39,7 +39,7 @@ opts.Add('python_config', 'python-config
  
  tools = ['default', 'textfile']
  
@@ -9,7 +9,7 @@
  print('building for %r (use scons python_binary=xxx to change)' % env['python_binary'])
  print('using %r (use scons python_config=xxx to change)' % env['python_config'])
  if sys.platform == "win32":
-@@ -47,9 +47,9 @@
+@@ -47,9 +47,9 @@ if sys.platform == "win32":
      env = Environment(tools=tools + ['mingw'], ENV=os.environ, options=opts)
  opts.Update(env)
  
