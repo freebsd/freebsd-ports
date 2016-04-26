@@ -1,6 +1,6 @@
---- xlhtml/nsopen.orig	Sun Jun 22 01:17:52 2003
-+++ xlhtml/nsopen	Sun Jun 22 01:18:51 2003
-@@ -12,9 +12,9 @@
+--- xlhtml/nsopen.orig	2002-03-20 15:32:50 UTC
++++ xlhtml/nsopen
+@@ -12,9 +12,9 @@ if (!(-r $file)) then
  endif
  
  #Try to open file in an existing netscape window
