@@ -1,0 +1,11 @@
+#!/bin/sh
+ 
+_TRIBLERPATH="%%PYTHON_SITELIBDIR%%/tribler"
+ 
+export PYTHONPATH="$PYTHONPATH":$_TRIBLERPATH
+ 
+echo "Starting Tribler..."
+STATEDIR="$HOME/.Tribler"
+[ ! -d $STATEDIR ] && mkdir -p $STATEDIR
+cd $_TRIBLERPATH
+exec %%PYTHON_VERSION%% -O Tribler/Main/tribler.py "$@" > $STATEDIR/tribler.log 2>&1
