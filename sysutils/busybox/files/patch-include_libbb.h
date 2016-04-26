@@ -1,4 +1,4 @@
---- include/libbb.h.orig	2015-10-24 00:24:35 UTC
+--- include/libbb.h.orig	2016-03-17 20:35:49 UTC
 +++ include/libbb.h
 @@ -51,6 +51,9 @@
  #include <termios.h>
