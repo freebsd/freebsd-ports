@@ -93,6 +93,7 @@ include/wolfssl/callbacks.h
 include/wolfssl/certs_test.h
 include/wolfssl/crl.h
 include/wolfssl/error-ssl.h
+include/wolfssl/mem_track.h
 include/wolfssl/ocsp.h
 include/wolfssl/openssl/asn1.h
 include/wolfssl/openssl/bio.h
@@ -191,5 +192,5 @@ include/wolfssl/wolfcrypt/wc_port.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.3
-lib/libwolfssl.so.3.1.0
+lib/libwolfssl.so.3.2.0
 libdata/pkgconfig/wolfssl.pc
