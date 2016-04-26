@@ -1,0 +1,13 @@
+--- ../set-misc-nginx-module-0.29/config.orig       2011-12-09 10:27:53.861265188 +0300
++++ ../set-misc-nginx-module-0.29/config    2011-12-09 10:28:07.107259301 +0300
+@@ -1,10 +1,3 @@
+-if echo $HTTP_MODULES | grep " ndk_http_module" > /dev/null; then
+-    echo "found ngx_devel_kit for ngx_set_misc; looks good."
+-else
+-    echo "error: ngx_devel_kit is required to build ngx_set_misc; please put it before ngx_set_misc." 1>&2
+-    exit 1
+-fi
+-
+ ngx_addon_name=ngx_http_set_misc_module
+ HTTP_AUX_FILTER_MODULES="$HTTP_AUX_FILTER_MODULES ngx_http_set_misc_module"
+ NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/src/ngx_http_set_base32.c $ngx_addon_dir/src/ngx_http_set_default_value.c $ngx_addon_dir/src/ngx_http_set_hashed_upstream.c $ngx_addon_dir/src/ngx_http_set_quote_sql.c $ngx_addon_dir/src/ngx_http_set_quote_json.c $ngx_addon_dir/src/ngx_http_set_unescape_uri.c $ngx_addon_dir/src/ngx_http_set_misc_module.c $ngx_addon_dir/src/ngx_http_set_escape_uri.c $ngx_addon_dir/src/ngx_http_set_hash.c $ngx_addon_dir/src/ngx_http_set_local_today.c $ngx_addon_dir/src/ngx_http_set_hex.c $ngx_addon_dir/src/ngx_http_set_base64.c $ngx_addon_dir/src/ngx_http_set_random.c"
