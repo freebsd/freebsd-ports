@@ -141,6 +141,7 @@ include/dovecot/file-set-size.h
 include/dovecot/fs-api-private.h
 include/dovecot/fs-api.h
 include/dovecot/fs-sis-common.h
+include/dovecot/fs-test.h
 include/dovecot/fsync-mode.h
 include/dovecot/fts-api-private.h
 include/dovecot/fts-api.h
@@ -438,6 +439,7 @@ include/dovecot/ostream-escaped.h
 include/dovecot/ostream-failure-at.h
 include/dovecot/ostream-hash.h
 include/dovecot/ostream-metawrap.h
+include/dovecot/ostream-null.h
 include/dovecot/ostream-private.h
 include/dovecot/ostream-rawlog.h
 include/dovecot/ostream-zlib.h
@@ -734,6 +736,13 @@ share/aclocal/dovecot.m4
 %%DATADIR%%/stopwords/stopwords_no.txt
 %%DATADIR%%/stopwords/stopwords_sv.txt
 %%LIBWRAP%%libexec/dovecot/tcpwrap
+%%LDAP%%include/dovecot/ldap-client.h
+%%LDAP%%lib/dovecot/dict/libdict_ldap.a
+%%LDAP%%lib/dovecot/dict/libdict_ldap.so
+%%LDAP%%lib/dovecot/libdovecot-ldap.a
+%%LDAP%%lib/dovecot/libdovecot-ldap.so
+%%LDAP%%lib/dovecot/libdovecot-ldap.so.0
+%%LDAP%%lib/dovecot/libdovecot-ldap.so.0.0.0
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.a
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.so
 %%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.a
