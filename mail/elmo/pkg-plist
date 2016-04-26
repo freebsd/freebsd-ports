@@ -1,8 +1,11 @@
 bin/elmo
 bin/elmoconf.pl
+man/man1/elmo.1.gz
+man/man1/elmoconf.pl.1.gz
 %%DATADIR%%/template
+%%DATADIR%%/themes/80x25
+%%DATADIR%%/themes/README
+%%DATADIR%%/themes/outlook
 %%DATADIR%%/tutorial
 %%NLS%%share/locale/de/LC_MESSAGES/elmo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/elmo.mo
-man/man1/elmo.1.gz
-man/man1/elmoconf.pl.1.gz
