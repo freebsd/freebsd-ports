@@ -6,4 +6,4 @@ maildir or Berkeley-formatted mailboxes.
 Before running elmo, users should run elmoconf.pl to generate an 
 ~/.elmorc file.
 
-WWW:  http://elmo.sourceforge.net/
+WWW: http://elmo.sourceforge.net/
