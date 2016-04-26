@@ -8300,7 +8300,6 @@ science/py-pydap||2016-04-23|Has expired: Broken for more than 6 months
 sysutils/su2||2016-04-23|Has expired: Broken for more than 6 months
 www/download-gemist||2016-04-23|Has expired: Broken for more than 6 months
 databases/p5-qdbm||2016-04-23|Has expired: Broken for more than 6 months
-comms/libfec||2016-04-23|Has expired: Broken for more than 6 months
 deskutils/ladon||2016-04-23|Has expired: Broken for more than 6 months
 java/linux-sun-jdk17||2016-04-24|Has expired: Unsupported and known for multiple security vulnerabilities
 devel/compiler-rt-devel|devel/llvm-devel|2016-04-24|Folded back in to devel/llvm-devel
