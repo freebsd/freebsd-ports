@@ -286,6 +286,7 @@
     SUBDIR += rate
     SUBDIR += rcpd
     SUBDIR += remarp
+    SUBDIR += resource-agents
     SUBDIR += riemann
     SUBDIR += rotorouter
     SUBDIR += routers2
