@@ -1,0 +1,11 @@
+--- tools/ocf-tester.in.orig	2016-04-05 14:11:59 UTC
++++ tools/ocf-tester.in
+@@ -216,7 +216,7 @@ lrm_test_command() {
+ test_permissions() {
+     action=meta-data
+     debug ${1:-"Testing permissions with uid nobody"}
+-    su nobody -s /bin/sh $agent $action > /dev/null
++    su -m nobody -c "$agent $action" > /dev/null
+ }
+ 
+ test_metadata() {
