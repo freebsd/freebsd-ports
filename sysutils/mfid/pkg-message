@@ -1,0 +1,33 @@
+! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
+!                                                                     !
+!  Please note that a previous version of mfid disabled the RAID      !
+!  controller's Patrol Reads. The original mfid implementation was    !
+!  used in a high performance environment without the need for the    !
+!  data safety and integrity features that Patrol Reads provide.      !
+!                                                                     !
+!  If you value data safety and integrity over performance, you       !
+!  you should re-enable Patrol Reads.                                 !
+!                                                                     !
+!  Check if patrol is disabled:                                       !
+!                                                                     !
+!  # /usr/sbin/mfiutil -u 0 show patrol                               !
+!  Operation Mode: disabled                                           !
+!  Runs Completed: 0                                                  !
+!  Current State: stopped                                             !
+!                                                                     !
+!                                                                     !
+!  Turn patrol back on:                                               !
+!                                                                     !
+!  # /usr/sbin/mfiutil -u 0 patrol auto                               !
+!                                                                     !
+!                                                                     !
+!  Confirm patrol status:                                             !
+!                                                                     !
+!  # /usr/sbin/mfiutil -u 0 show patrol                               !
+!  Operation Mode: auto                                               !
+!  Next Run Starts: Sat Apr 30 02:58:41 2016                          !
+!  Runs Start Every 604800 seconds                                    !
+!  Runs Completed: 0                                                  !
+!  Current State: stopped                                             !
+!                                                                     !
+! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
