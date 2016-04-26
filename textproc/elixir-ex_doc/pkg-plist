@@ -24,8 +24,8 @@ lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates.ex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/api_reference_entry_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/api_reference_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/detail_template.eex
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-1e374caa3d.css
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-6d2e071366.js
+lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-918614602f.js
+lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-ddd9717ad9.css
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/extra_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/fonts/icomoon.eot
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/fonts/icomoon.svg
