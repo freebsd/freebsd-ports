@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.20
-PORTREVISION=	4
+PORTVERSION=	1.2.22
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
