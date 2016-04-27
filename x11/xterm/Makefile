@@ -28,7 +28,7 @@ LIBS+=		-L${LOCALBASE}/lib
 ICONVERSION=	1
 
 OPTIONS_DEFINE=	WCHAR LUIT DECTERM PCRE DABBREV 256COLOR SIXEL GNOME LOGGING \
-		SCRNDUMP
+		SCRNDUMP REGIS
 OPTIONS_RADIO=	3D
 OPTIONS_RADIO_3D=	XAW3D XAW3DXFT NEXTAW
 
@@ -36,6 +36,7 @@ DABBREV_DESC=	Enable support for dabbrev-expand
 DECTERM_DESC=	Enable DECterm Locator support
 LUIT_DESC=	Use LUIT for locale convertion from/to UTF-8
 SIXEL_DESC=	Enable Sixel graphics support
+REGIS_DESC=	Enable ReGIS graphics support
 WCHAR_DESC=	Enable wide-character support
 256COLOR_DESC=	Enable 256-color support
 LOGGING_DESC=	Enable logging terminal I/O to a file
@@ -56,6 +57,7 @@ PCRE_CONFIGURE_WITH=		pcre
 PCRE_LIB_DEPENDS=		libpcre.so:devel/pcre
 DABBREV_CONFIGURE_ENABLE=	dabbrev
 SIXEL_CONFIGURE_ENABLE=		sixel-graphics
+REGIS_CONFIGURE_ENABLE=		regis-graphics
 GNOME_USES=			desktop-file-utils
 LOGGING_CONFIGURE_ENABLE=	logging
 SCRNDUMP_CONFIGURE_ENABLE=	screen-dumps
