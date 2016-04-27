@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-docile>=1.1.0:devel/rubygem-docile \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 .include <bsd.port.mk>

@@ -18,8 +18,7 @@ RUN_DEPENDS=	rubygem-paint>=1.0.0:devel/rubygem-paint \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 PLIST_FILES=	bin/shellcat bin/shellexport bin/shellplay bin/shellrecord
 
 .include <bsd.port.mk>

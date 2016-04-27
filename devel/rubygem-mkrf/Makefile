@@ -11,10 +11,8 @@ COMMENT=	Replacement to mkmf generates Rakefiles to build C Extensions
 
 LICENSE=	MIT
 
-USES=		python
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
 USE_RAKE=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist python
 
 .include <bsd.port.mk>

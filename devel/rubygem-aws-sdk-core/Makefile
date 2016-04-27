@@ -14,8 +14,7 @@ RUN_DEPENDS=	rubygem-jmespath>=1.0:devel/rubygem-jmespath
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 PLIST_FILES=	bin/aws.rb
 

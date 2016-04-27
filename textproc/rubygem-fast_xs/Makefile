@@ -14,7 +14,6 @@ COMMENT=	Systems integration framework. Expander
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 .include <bsd.port.mk>
