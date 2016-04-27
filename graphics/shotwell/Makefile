@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.22.0.99
+PORTVERSION=	0.23.0
 CATEGORIES=	graphics gnome
-#MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
-MASTER_SITES=	http://rainbow-runner.nl/freebsd/
+MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	Open source photo manager for GNOME
@@ -27,8 +26,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libraw.so:graphics/libraw \
 		librest-0.7.so:devel/librest
 
-USES=		shebangfix gettext desktop-file-utils gmake pkgconfig sqlite \
-		tar:xz
+USES=		shebangfix gettext desktop-file-utils gmake pkgconfig sqlite tar:xz
 USE_GNOME=	dconf gtk30 gnomedocutils
 USE_GSTREAMER1=	yes
 HAS_CONFIGURE=	yes
