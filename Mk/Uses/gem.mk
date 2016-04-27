@@ -123,8 +123,8 @@ do-install:
 .endif
 
 .if ${gem_ARGS} == "autoplist"
-.if !target(post-install-script)
-post-install-script:
+_USES_install+=	820:gem-autoplist
+gem-autoplist:
 	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${DOC_DIR} -type f -print | ${SED} -E -e \
@@ -136,7 +136,6 @@ post-install-script:
 		${FIND} -ds ${STAGEDIR}${PREFIX}/${EXT_DIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST} ; \
 	fi
-.endif
 .else
 IGNORE= Incorrect 'USES+=gem:${gem_ARGS}' expecting 'USES+=gem[:autoplist]'
 .endif
