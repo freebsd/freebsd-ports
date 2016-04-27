@@ -3,6 +3,7 @@
 
 PORTNAME=	execjs
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,5 +19,9 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#' \
+		${WRKSRC}/lib/${PORTNAME}/runtimes.rb
 
 .include <bsd.port.mk>
