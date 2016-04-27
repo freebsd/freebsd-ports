@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mma
-PORTVERSION=	15.01
+PORTVERSION=	15.12
 PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/
@@ -13,12 +13,12 @@ COMMENT=	Musical MIDI Accompaniment generator
 
 LICENSE=	GPLv2
 
-BROKEN=		unfetchable
-
 RUN_DEPENDS=	aplaymidi:audio/alsa-utils \
 		timidity:audio/timidity++
 
 MMABIN=	${PREFIX}/bin/mma
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
