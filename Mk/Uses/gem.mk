@@ -12,6 +12,15 @@
 
 _INCLUDE_USES_GEM_MK=        yes
 
+_valid_ARGS=			autoplist noautoplist
+
+# Sanity check
+.for arg in ${gem_ARGS}
+.    if empty(_valid_ARGS:M${arg})
+IGNORE= Incorrect 'USES+= gem:${gem_ARGS}' usage: argument [${arg}] is not recognized
+.    endif
+.endfor
+
 BUILD_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
 RUN_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
 
@@ -122,7 +131,7 @@ do-install:
 .endif
 .endif
 
-.if ${gem_ARGS} == "autoplist"
+.if empty(gem_ARGS:Mnoautoplist)
 _USES_install+=	820:gem-autoplist
 gem-autoplist:
 	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
@@ -136,8 +145,6 @@ gem-autoplist:
 		${FIND} -ds ${STAGEDIR}${PREFIX}/${EXT_DIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST} ; \
 	fi
-.else
-IGNORE= Incorrect 'USES+=gem:${gem_ARGS}' expecting 'USES+=gem[:autoplist]'
 .endif
 
 .endif
