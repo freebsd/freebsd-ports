@@ -161,6 +161,14 @@ DEV_ERROR+=	"WANT_SDL is no longer supported. If you need SDL, use USE_SDL, if y
 DEV_ERROR+=	"USE_RC_SUBR=yes has not been supported for a long time, remove it."
 .endif
 
+.if defined(USE_RUBYGEMS) && !defined(RUBYGEM_AUTOPLIST)
+DEV_ERROR+=	"USE_RUBYGEMS is no longer supported, please use USES=gem:noautoplist"
+.endif
+
+.if defined(RUBYGEM_AUTOPLIST)
+DEV_ERROR+=	"RUBYGEM_AUTOPLIST is no longer supported, please use USES=gem"
+.endif
+
 SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
 		USE_READLINE USE_ICONV PERL_CONFIGURE PERL_MODBUILD \
 		USE_PERL5_BUILD USE_PERL5_RUN USE_DISPLAY USE_FUSE \
