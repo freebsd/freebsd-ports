@@ -1,5 +1,5 @@
---- ../passenger-5.0.26/src/nginx_module/config.orig	2016-03-04 17:28:49.527086000 -0500
-+++ ../passenger-5.0.26/src/nginx_module/config	2016-03-04 17:29:16.364138000 -0500
+--- ../passenger-5.0.27/src/nginx_module/config.orig	2016-03-04 17:28:49.527086000 -0500
++++ ../passenger-5.0.27/src/nginx_module/config	2016-03-04 17:29:16.364138000 -0500
 @@ -20,6 +20,10 @@
      if ! cd $ngx_addon_dir; then
          exit 1
