@@ -177,6 +177,7 @@
     SUBDIR += cramfs
     SUBDIR += crashme
     SUBDIR += createrepo
+    SUBDIR += cronic
     SUBDIR += cronolog
     SUBDIR += cronolog-devel
     SUBDIR += curly
