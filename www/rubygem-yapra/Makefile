@@ -15,8 +15,7 @@ RUN_DEPENDS=	rubygem-mechanize>=0:www/rubygem-mechanize
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 PLIST_FILES=	bin/yapra
 

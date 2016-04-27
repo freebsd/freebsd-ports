@@ -18,8 +18,7 @@ RUN_DEPENDS=	rubygem-little-plugger>=1.1:devel/rubygem-little-plugger \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 PLIST_FILES=	bin/bones
 

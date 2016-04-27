@@ -12,8 +12,7 @@ COMMENT=	Ruby wrapper for posix_spawnp(2) for faster process spawning
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 PLIST_FILES=	bin/posix-spawn-benchmark
 

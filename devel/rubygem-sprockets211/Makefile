@@ -22,8 +22,7 @@ CONFLICTS_INSTALL=	rubygem-sprockets-[0-9]*
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 PLIST_FILES=	bin/sprockets
 

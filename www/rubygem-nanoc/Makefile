@@ -16,9 +16,8 @@ RUN_DEPENDS=	rubygem-cri>=2.3:devel/rubygem-cri
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
 USE_RAKE=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 PLIST_FILES=	bin/nanoc
 

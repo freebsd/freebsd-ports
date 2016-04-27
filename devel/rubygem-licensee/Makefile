@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-rugged>=0.23:devel/rubygem-rugged
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 PLIST_FILES=	bin/licensee
 
