@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/oletool \
 		test/*.rb
 

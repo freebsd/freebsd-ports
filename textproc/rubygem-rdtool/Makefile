@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/rd2 bin/rdswap.rb
 ruby_OLD_CMD=	/usr/bin/ruby1.9.1
 

@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-redis-actionpack>=4:databases/rubygem-redis-actionpack \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

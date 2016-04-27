@@ -12,6 +12,6 @@ COMMENT=	Ruby interface to HTML Tidy Library Project
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

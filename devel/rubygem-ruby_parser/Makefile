@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-sexp_processor>=4.1:devel/rubygem-sexp_processor
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/ruby_parse*
 
 PLIST_FILES=	bin/ruby_parse \

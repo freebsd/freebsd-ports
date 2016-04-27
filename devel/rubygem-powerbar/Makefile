@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-hashie>=1.1.0:devel/rubygem-hashie
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/powerbar-demo
 

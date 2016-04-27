@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-domain_name>=0.5.1:net/rubygem-domain_name
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

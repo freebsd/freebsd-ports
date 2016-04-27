@@ -19,6 +19,6 @@ RUN_DEPENDS=	rubygem-arrayfields>=4.7.4:devel/rubygem-arrayfields \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

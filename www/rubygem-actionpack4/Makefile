@@ -22,6 +22,6 @@ RUN_DEPENDS=	rubygem-actionview>=${PORTVERSION}:devel/rubygem-actionview \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

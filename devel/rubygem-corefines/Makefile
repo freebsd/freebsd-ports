@@ -9,6 +9,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Refinements for extending Rubys built-in classes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

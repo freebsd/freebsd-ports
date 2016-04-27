@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-mail>=2.4.3:mail/rubygem-mail \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/tj3 \
 		bin/tj3client \

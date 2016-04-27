@@ -14,6 +14,6 @@ RUN_DEPENDS=	rubygem-cairo>=0:graphics/rubygem-cairo \
 		rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-rubyinline>=3.9:devel/rubygem-rubyinline
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/image_science_thumb
 

@@ -26,7 +26,7 @@ RUN_DEPENDS=	rubygem-amazon-ec2>=0.9.10:net/rubygem-amazon-ec2 \
 		rubygem-sysinfo>=0.7.3:devel/rubygem-sysinfo
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 PLIST_FILES=	bin/rudy bin/rudy-ec2 bin/rudy-s3 bin/rudy-sdb
 SHEBANG_FILES=	bin/* tryouts/exploration/machine.rb
 NO_ARCH=	yes

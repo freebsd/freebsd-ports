@@ -14,7 +14,7 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.6.6.2:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 PLIST_FILES=	bin/reverse_markdown
 
 .include <bsd.port.mk>

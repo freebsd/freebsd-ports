@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-listen>=3.0:devel/rubygem-listen
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

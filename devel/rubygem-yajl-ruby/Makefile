@@ -12,6 +12,6 @@ COMMENT=	Streaming JSON parsing and encoding library for Ruby
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

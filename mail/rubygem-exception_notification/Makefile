@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-actionmailer4>=4.0:mail/rubygem-actionmailer4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

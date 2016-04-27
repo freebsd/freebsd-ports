@@ -11,7 +11,7 @@ COMMENT=	HTML, XML, SAX, and Reader parser
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USES=		gem:autoplist pkgconfig
+USES=		gem pkgconfig
 USE_GNOME=	libxml2 libxslt
 CONFIGURE_ARGS=	--use-system-libraries
 

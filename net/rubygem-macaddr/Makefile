@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-systemu>=2.6.2:devel/rubygem-systemu
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-gemojione>=2.2.1:graphics/rubygem-gemojione
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

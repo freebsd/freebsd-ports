@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-rack15>=1.5.1:www/rubygem-rack15
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

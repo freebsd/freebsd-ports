@@ -23,7 +23,7 @@ RUN_DEPENDS=	gsed:textproc/gsed \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		cpe gem:autoplist
+USES=		cpe gem
 
 CPE_VENDOR=	theforeman
 

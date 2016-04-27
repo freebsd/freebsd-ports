@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-haml>=4.0.0:www/rubygem-haml
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

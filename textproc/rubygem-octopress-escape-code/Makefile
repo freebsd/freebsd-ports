@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-jekyll>=3.0:www/rubygem-jekyll
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

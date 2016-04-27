@@ -13,6 +13,6 @@ LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RAKE=	yes
-USES=		gem:autoplist python
+USES=		gem python
 
 .include <bsd.port.mk>

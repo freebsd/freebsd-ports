@@ -20,6 +20,6 @@ RUN_DEPENDS=	rubygem-gibbler>=0.8.6:devel/rubygem-gibbler \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

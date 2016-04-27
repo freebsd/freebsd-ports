@@ -19,6 +19,6 @@ RUN_DEPENDS=	rubygem-actionpack4>=4:www/rubygem-actionpack4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

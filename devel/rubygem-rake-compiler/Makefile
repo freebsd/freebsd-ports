@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/rake-compiler
 

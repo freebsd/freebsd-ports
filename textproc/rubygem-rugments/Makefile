@@ -15,7 +15,7 @@ GEM_NAME=	${PORTNAME}-${DISTVERSION}
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/rugmentize
 

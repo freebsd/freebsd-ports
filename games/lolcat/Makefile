@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-trollop1>=1.9:devel/rubygem-trollop1 \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/lolcat
 

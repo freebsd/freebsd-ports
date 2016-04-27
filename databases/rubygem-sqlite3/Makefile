@@ -17,6 +17,6 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 CONFIGURE_ARGS=	--with-sqlite3-dir=${LOCALBASE}
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

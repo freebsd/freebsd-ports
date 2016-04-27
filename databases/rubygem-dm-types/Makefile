@@ -23,6 +23,6 @@ RUN_DEPENDS=	rubygem-bcrypt-ruby>=3.0:security/rubygem-bcrypt-ruby \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

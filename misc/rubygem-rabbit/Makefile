@@ -27,7 +27,7 @@ RUN_DEPENDS=	rubygem-coderay>=1.0.0:textproc/rubygem-coderay \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist gettext
+USES=		gem gettext
 PLIST_FILES=	bin/rabbit bin/rabbirc bin/rabbit-command bin/rabbit-slide \
 		bin/rabbit-theme
 

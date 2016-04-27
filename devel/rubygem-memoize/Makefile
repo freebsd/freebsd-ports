@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-test-unit>=2.0.2:devel/rubygem-test-unit
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

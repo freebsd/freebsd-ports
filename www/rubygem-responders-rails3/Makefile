@@ -19,6 +19,6 @@ PORTSCOUT=	limit:^1\.[0-9]*
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

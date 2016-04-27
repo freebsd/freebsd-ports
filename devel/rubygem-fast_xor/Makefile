@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake \
 		rubygem-rake-compiler>=0:devel/rubygem-rake-compiler
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

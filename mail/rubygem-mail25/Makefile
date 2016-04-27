@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-mime-types1>=1.16:misc/rubygem-mime-types1 \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PORTSCOUT=      limit:^2\.5
 

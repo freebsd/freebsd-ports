@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-locale>=2.0.5:devel/rubygem-locale \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	samples/*.rb samples/cgi/*.rb
 PLIST_FILES=	bin/rmsgcat bin/rmsgfmt bin/rmsginit bin/rmsgmerge bin/rxgettext
 

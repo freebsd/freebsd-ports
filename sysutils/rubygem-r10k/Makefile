@@ -21,7 +21,7 @@ RUN_DEPENDS=	rubygem-colored>=1.2:textproc/rubygem-colored \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 
 PLIST_FILES=	bin/r10k
 

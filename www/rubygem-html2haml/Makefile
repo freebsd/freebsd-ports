@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-erubis>=2.7.0:www/rubygem-erubis \
 USE_RUBY=	yes
 NO_ARCH=	yes
 
-USES=		gem:autoplist
+USES=		gem
 PLIST_FILES=	bin/html2haml
 
 .include <bsd.port.mk>

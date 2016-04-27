@@ -23,7 +23,7 @@ USE_RUBY=	yes
 PLIST_FILES=	bin/fluent-cat bin/fluent-debug bin/fluent-gem bin/fluentd \
 		"@sample etc/fluentd/fluent.conf.sample"
 PLIST_DIRS=	etc/fluentd/plugin
-USES=		gem:autoplist
+USES=		gem
 USE_RC_SUBR=	fluentd
 USERS=		fluentd
 GROUPS=		fluentd

@@ -9,6 +9,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for the liblzma library
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

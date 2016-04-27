@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-multipart-post>=1.2:www/rubygem-multipart-post
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

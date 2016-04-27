@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-guess_html_encoding>=0.0.4:devel/rubygem-guess_html_encodin
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/readability
 

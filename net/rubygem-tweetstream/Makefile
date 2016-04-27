@@ -20,6 +20,6 @@ RUN_DEPENDS=	rubygem-daemons>=1.1:devel/rubygem-daemons \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

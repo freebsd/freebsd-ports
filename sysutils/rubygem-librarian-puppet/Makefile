@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}librarianp>=0.6.3:devel/rubygem-librarianp \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 PLIST_FILES=	bin/librarian-puppet
 
 .include <bsd.port.mk>

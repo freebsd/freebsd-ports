@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-highline>=1.5:devel/rubygem-highline \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/larch
 

@@ -13,6 +13,6 @@ LICENSE=	MIT
 LIB_DEPENDS=	libfcgi.so:www/fcgi
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

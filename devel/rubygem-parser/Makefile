@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-ast>=2.2:devel/rubygem-ast
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/ruby-parse bin/ruby-rewrite
 

@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-fastercsv>=0:devel/rubygem-fastercsv \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-activerecord>=3.2.9:databases/rubygem-activerecord \
 		rubygem-mysql>=2.9.0:databases/rubygem-mysql
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

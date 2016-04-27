@@ -21,6 +21,6 @@ RUN_DEPENDS=	rubygem-github-markup>=1.4.0:textproc/rubygem-github-markup \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

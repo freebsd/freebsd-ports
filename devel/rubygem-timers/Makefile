@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-hitimes>=0:devel/rubygem-hitimes
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

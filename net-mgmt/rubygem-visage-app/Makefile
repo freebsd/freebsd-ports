@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-errand>=0.7.3:devel/rubygem-errand \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/visage-app
 

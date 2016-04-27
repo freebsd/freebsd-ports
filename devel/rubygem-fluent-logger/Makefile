@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-msgpack>=0.5.4:devel/rubygem-msgpack
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/fluent-post
 

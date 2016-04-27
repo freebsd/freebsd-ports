@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-railties>=3.2.16:www/rubygem-railties
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-rugged>=0.21:devel/rubygem-rugged
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

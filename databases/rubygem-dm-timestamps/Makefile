@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-dm-core>=${PORTVERSION}:databases/rubygem-dm-core
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

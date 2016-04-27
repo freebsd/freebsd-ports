@@ -13,6 +13,6 @@ RUN_DEPENDS=	\
 	rubygem-fluent-mixin-plaintextformatter>0:sysutils/rubygem-fluent-mixin-plaintextformatter
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

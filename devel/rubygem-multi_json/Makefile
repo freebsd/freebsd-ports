@@ -20,7 +20,7 @@ YAJL_RUBY_DESC=	Yajl JSON stream-based parser library
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 JSON_RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 JSON_PURE_RUN_DEPENDS=	rubygem-json_pure>=0:devel/rubygem-json_pure

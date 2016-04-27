@@ -23,7 +23,7 @@ RUN_DEPENDS=	rubygem-formatador>=0.2.4:devel/rubygem-formatador \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/guard \
 		bin/_guard-core

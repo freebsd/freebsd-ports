@@ -18,7 +18,7 @@ RUN_DEPENDS=	foreman-proxy>=1.9.0:net/foreman-proxy \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	"@sample etc/foreman-proxy/settings.d/remote_execution_ssh.yml.sample" \
 		share/foreman-proxy/bundler.d/remote_execution_ssh.rb

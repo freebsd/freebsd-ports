@@ -10,6 +10,6 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Extracting binary integers from binary string and packing back
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

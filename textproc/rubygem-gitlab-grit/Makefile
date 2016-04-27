@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.6:textproc/rubygem-charlock_holmes \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

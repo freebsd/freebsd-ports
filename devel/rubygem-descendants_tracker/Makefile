@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-thread_safe>=0.3.1:devel/rubygem-thread_safe
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

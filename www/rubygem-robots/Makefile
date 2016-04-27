@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 post-extract:
 	${CHMOD} -R a+r ${WRKSRC}

@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-cairo>=1.14.0:graphics/rubygem-cairo \
 
 USE_GNOME=	pango
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

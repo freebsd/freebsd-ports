@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-activerecord>=3.0.0:databases/rubygem-activerecord \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

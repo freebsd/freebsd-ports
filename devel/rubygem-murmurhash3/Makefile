@@ -10,6 +10,6 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Implementation of murmur3 hashing function
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-rmagick>=2.13.4:graphics/rubygem-rmagick
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	test/image_compare.rb
 ruby_OLD_CMD=	ruby
 

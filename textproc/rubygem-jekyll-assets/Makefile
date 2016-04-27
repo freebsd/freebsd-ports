@@ -20,6 +20,6 @@ RUN_DEPENDS=	rubygem-fastimage>=1.8:graphics/rubygem-fastimage \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

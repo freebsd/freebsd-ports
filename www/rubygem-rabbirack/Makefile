@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-haml>0:www/rubygem-haml \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist gettext
+USES=		gem gettext
 PLIST_FILES=	bin/rabbirack
 
 .include <bsd.port.mk>

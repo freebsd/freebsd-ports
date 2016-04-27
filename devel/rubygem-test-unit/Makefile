@@ -19,6 +19,6 @@ RUN_DEPENDS=	rubygem-power_assert>=0:devel/rubygem-power_assert
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

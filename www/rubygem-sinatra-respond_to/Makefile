@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-sinatra>=1.3:www/rubygem-sinatra
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

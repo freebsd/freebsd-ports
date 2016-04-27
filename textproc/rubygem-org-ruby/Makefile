@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-rubypants>=0.2.0:textproc/rubygem-rubypants
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/org-ruby
 

@@ -13,6 +13,6 @@ RUN_DEPENDS=	rubygem-log4r>=1.1.9:sysutils/rubygem-log4r \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

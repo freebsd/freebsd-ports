@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-net-ldap>=0.9:net/rubygem-net-ldap \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>
