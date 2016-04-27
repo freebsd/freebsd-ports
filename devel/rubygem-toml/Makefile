@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-parslet>=1.5.0:textproc/rubygem-parslet
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

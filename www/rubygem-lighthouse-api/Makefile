@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-activeresource4>=3.0.0:www/rubygem-activeresource4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

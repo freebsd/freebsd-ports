@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-io-like>=0.3.0:devel/rubygem-io-like
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

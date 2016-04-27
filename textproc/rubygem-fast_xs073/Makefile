@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-hoe>=2.3.2:devel/rubygem-hoe
 PORTSCOUT=	limit:^0.7
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

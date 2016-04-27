@@ -19,6 +19,6 @@ RUN_DEPENDS=	rubygem-buftok>=0.2:devel/rubygem-buftok \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

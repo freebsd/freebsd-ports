@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.adoc
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES+=	bin/asciidoctor bin/asciidoctor-safe
 

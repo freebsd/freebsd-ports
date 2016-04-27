@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.3:textproc/rubygem-charlock_holmes \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/git-linguist bin/linguist
 

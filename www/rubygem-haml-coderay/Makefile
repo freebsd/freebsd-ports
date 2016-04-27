@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-coderay>=0:textproc/rubygem-coderay \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

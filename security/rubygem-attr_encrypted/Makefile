@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-encryptor>=1.3.0:security/rubygem-encryptor
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

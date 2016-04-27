@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/fastri-server bin/fri bin/qri bin/ri-emacs
 

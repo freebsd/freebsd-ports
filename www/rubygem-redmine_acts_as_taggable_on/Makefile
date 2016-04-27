@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-acts-as-taggable-on>=2.3:www/rubygem-acts-as-taggable-on
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-json>=1.7.7:devel/rubygem-json
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/sdoc bin/sdoc-merge
 

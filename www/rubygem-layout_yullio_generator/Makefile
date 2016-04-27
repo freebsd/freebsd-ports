@@ -14,6 +14,6 @@ RUN_DEPENDS=	rubygem-hoe>=1.1.6:devel/rubygem-hoe
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

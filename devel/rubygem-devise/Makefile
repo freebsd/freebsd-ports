@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-bcrypt>=3.0:security/rubygem-bcrypt \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 BROKEN_RUBY23=	yes
 

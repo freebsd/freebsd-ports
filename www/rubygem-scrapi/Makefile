@@ -16,7 +16,7 @@ NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_LDCONFIG=	yes
-USES=		gem:autoplist
+USES=		gem
 PLIST_FILES=	${GEM_LIB_DIR}/lib/tidy/libtidy.so
 
 .include <bsd.port.pre.mk>

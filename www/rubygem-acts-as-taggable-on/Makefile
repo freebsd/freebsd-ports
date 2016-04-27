@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-rails>=3.0:www/rubygem-rails
 
 NO_ARCH=	yes
 USE_RUBY=	YES
-USES=		gem:autoplist
+USES=		gem
 
 BROKEN_RUBY23=	yes
 

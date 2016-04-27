@@ -20,7 +20,7 @@ GEM_NAME=	${DISTNAME}
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	tutorial/example1.rb \
 		tutorial/example2.rb
 

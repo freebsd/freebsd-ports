@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-activesupport>=2.3.5:devel/rubygem-activesupport
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/install_rubigen_scripts \
 		bin/ruby_app \

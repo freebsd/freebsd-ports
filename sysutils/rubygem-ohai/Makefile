@@ -25,7 +25,7 @@ RUN_DEPENDS=	rubygem-ffi>=1.9.0:devel/rubygem-ffi \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/ohai
 

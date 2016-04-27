@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	script/console script/examples
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-bson1>=${PORTVERSION}:devel/rubygem-bson1
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/mongo_console
 

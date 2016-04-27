@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 
 PLIST_FILES=	bin/puma bin/pumactl
 

@@ -21,6 +21,6 @@ RUN_DEPENDS=	rubygem-celluloid-essentials>=0:devel/rubygem-celluloid-essentials 
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

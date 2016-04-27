@@ -10,7 +10,7 @@ COMMENT=	Structured+contextual logging experiments in Ruby
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 PLIST_FILES=	bin/rubygems-cabin-test
 
 .include <bsd.port.mk>

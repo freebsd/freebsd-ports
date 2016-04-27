@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-algorithms>=0.6.1:devel/rubygem-algorithms \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

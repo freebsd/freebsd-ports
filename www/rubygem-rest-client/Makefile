@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-http-cookie>=1.0.2:www/rubygem-http-cookie \
 NO_ARCH=	yes
 
 USE_RUBY=		yes
-USES=		gem:autoplist
+USES=		gem
 PLIST_FILES=	bin/restclient
 
 .include <bsd.port.mk>

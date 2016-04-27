@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-timers>=4.1.1:devel/rubygem-timers
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-ruby-sdl-ffi>=0.1.0:devel/rubygem-ruby-sdl-ffi
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 USE_SDL=	gfx image mixer ttf
 
 .include <bsd.port.mk>

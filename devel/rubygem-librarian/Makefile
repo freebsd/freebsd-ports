@@ -16,6 +16,6 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}highline>=0:devel/rubygem-highline \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

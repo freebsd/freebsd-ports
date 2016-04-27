@@ -10,6 +10,6 @@ MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Unicode string manipulation library for Ruby
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

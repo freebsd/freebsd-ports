@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-awesome_print>=0:devel/rubygem-awesome_print \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

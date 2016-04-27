@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-rainbow>=0:devel/rubygem-rainbow \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/bugspots bin/git-bugspots
 

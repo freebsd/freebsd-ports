@@ -21,7 +21,7 @@ RUN_DEPENDS=	rubygem-metasploit-concern>=0.4.0:security/rubygem-metasploit-conce
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PORTSCOUT=	ignore:1
 

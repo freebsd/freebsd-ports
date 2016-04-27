@@ -14,6 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 NO_ARCHI=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

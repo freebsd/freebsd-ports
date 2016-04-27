@@ -23,7 +23,7 @@ RUN_DEPENDS=	rubygem-backports>=0:devel/rubygem-backports \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/travis
 

@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-sass>=3.2:textproc/rubygem-sass
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

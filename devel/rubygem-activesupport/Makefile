@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-i18n>=0.6.4:devel/rubygem-i18n \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

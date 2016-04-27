@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-cairo>=1.14.0:graphics/rubygem-cairo \
 		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

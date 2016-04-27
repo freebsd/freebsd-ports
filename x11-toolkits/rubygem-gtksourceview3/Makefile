@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject
 NO_ARCH=	yes
 USE_GNOME=	gtksourceview3
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

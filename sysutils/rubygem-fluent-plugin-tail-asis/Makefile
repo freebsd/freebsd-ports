@@ -12,6 +12,6 @@ RUN_DEPENDS=	\
 	rubygem-fluentd>0:sysutils/rubygem-fluentd
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-nenv>=0.1:devel/rubygem-nenv \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 
 SHEBANG_FILES=	update.sh
 

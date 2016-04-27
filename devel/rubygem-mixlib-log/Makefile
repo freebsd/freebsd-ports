@@ -12,6 +12,6 @@ COMMENT=	Provides a simple mixin for log functionality
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

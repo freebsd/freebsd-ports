@@ -12,6 +12,6 @@ COMMENT=	Optimized replacement for thread.rb primitives
 LICENSE=	LGPL21
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

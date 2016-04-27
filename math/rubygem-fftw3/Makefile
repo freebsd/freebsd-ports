@@ -14,6 +14,6 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USE_RUBY=	yes
 USE_RAKE=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

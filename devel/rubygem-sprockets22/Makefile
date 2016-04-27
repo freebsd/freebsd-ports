@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-hike>=1.2:devel/rubygem-hike \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PORTSCOUT=	limit:^2\.2
 

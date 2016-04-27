@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-unf>=0.1.0:textproc/rubygem-unf
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -12,6 +12,6 @@ COMMENT=	Provides methods for creating type-enforced Arrays
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

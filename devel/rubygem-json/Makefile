@@ -15,6 +15,6 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

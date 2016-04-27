@@ -12,7 +12,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library which implements the HMAC algorithm
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 GEM_NAME=	${DISTNAME}
 
 .include <bsd.port.mk>

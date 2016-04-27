@@ -16,6 +16,6 @@ RUN_DEPENDS=	git>=1.6:devel/git
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -11,6 +11,6 @@ COMMENT=	Ruby metaprogramming helpers
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

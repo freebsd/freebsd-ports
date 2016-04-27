@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-coffee-rails4>=3.2:devel/rubygem-coffee-rails4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

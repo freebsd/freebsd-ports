@@ -13,7 +13,7 @@ COMMENT=	Rapid DSL prototyping in Ruby
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/example
 
 .include <bsd.port.mk>

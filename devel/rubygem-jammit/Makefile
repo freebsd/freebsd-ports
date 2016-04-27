@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-cssmin>=1.0:textproc/rubygem-cssmin \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/jammit
 

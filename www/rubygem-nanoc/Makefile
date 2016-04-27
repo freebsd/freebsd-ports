@@ -17,7 +17,7 @@ NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RAKE=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/nanoc
 

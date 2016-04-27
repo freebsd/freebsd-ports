@@ -19,6 +19,6 @@ RUN_DEPENDS=	rubygem-narray>=0.5.5:math/rubygem-narray \
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

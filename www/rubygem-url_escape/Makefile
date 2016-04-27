@@ -12,6 +12,6 @@ COMMENT=	Fast replacement for CGI.escape and Rack::Utils.escape
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

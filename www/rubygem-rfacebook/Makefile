@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-hpricot>=0.6.0:www/rubygem-hpricot \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

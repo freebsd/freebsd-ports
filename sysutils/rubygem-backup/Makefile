@@ -76,7 +76,7 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:devel/rubygem-CFPropertyList \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/backup
 

@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-cinch>=2.0:irc/rubygem-cinch \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

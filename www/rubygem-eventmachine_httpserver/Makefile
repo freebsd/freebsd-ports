@@ -12,6 +12,6 @@ COMMENT=	EventMachine HTTP Server
 LICENSE=	GPLv2
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

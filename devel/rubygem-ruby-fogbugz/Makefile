@@ -14,6 +14,6 @@ RUN_DEPENDS=	rubygem-crack>=0.4:devel/rubygem-crack
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

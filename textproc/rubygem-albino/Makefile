@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6:devel/rubygem-posix-spawn \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist python
+USES=		gem python
 
 .include <bsd.port.mk>

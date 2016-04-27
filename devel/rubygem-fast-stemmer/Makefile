@@ -11,6 +11,6 @@ COMMENT=	Fast Porter stemmer based on a C version of algorithm
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

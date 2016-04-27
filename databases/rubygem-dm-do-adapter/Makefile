@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-data_objects>=0.10.6:databases/rubygem-data_objects \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

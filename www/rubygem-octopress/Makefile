@@ -22,7 +22,7 @@ RUN_DEPENDS=	rubygem-jekyll>=2.0:www/rubygem-jekyll \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/octopress
 

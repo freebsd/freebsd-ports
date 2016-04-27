@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-rails4>0:www/rubygem-rails4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 OPTIONS_DEFINE=		GEOKIT IPADDRESSES TERMINFO
 GEOKIT_DESC=		Run with geokit

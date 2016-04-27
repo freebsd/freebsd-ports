@@ -15,6 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 
 USE_RUBY=	yes
-USES=		gem:autoplist pkgconfig
+USES=		gem pkgconfig
 
 .include <bsd.port.mk>

@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.5.9:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

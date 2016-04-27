@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-crass>=1.0.2:www/rubygem-crass \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

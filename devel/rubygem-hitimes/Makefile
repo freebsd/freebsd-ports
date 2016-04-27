@@ -12,6 +12,6 @@ COMMENT=	High resolution timer library for Ruby
 LICENSE=	ISCL
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

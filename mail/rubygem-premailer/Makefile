@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-css_parser>=1.3.6:textproc/rubygem-css_parser \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/premailer
 

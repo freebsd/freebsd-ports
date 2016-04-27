@@ -13,6 +13,6 @@ COMMENT=	Library for implementing daemon management capabilities
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>
