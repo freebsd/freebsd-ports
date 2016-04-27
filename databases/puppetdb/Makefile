@@ -28,7 +28,6 @@ SHEBANG_FILES=	ext/files/puppetdb \
 		ext/files/puppetdb-legacy \
 		ext/files/puppetdb-ssl-setup
 USE_JAVA=	yes
-USE_RAKE=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.7+
