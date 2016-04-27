@@ -6,6 +6,7 @@ bin/sieve-filter
 bin/sieve-test
 bin/sievec
 include/dovecot-2.2-pigeonhole/sieve/edit-mail.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-address-source.h
 include/dovecot-2.2-pigeonhole/sieve/pigeonhole-config.h
 include/dovecot-2.2-pigeonhole/sieve/pigeonhole-version.h
 include/dovecot-2.2-pigeonhole/sieve/sieve-ext-imap4flags.h
@@ -65,6 +66,10 @@ lib/dovecot-2.2-pigeonhole/libdovecot-sieve.so.0
 lib/dovecot-2.2-pigeonhole/libdovecot-sieve.so.0.0.0
 lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.a
 lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.so
+lib/dovecot/lib95_imap_sieve_plugin.a
+lib/dovecot/lib95_imap_sieve_plugin.so
+lib/dovecot/sieve/lib90_sieve_imapsieve_plugin.a
+lib/dovecot/sieve/lib90_sieve_imapsieve_plugin.so
 lib/dovecot/lib90_sieve_plugin.a
 lib/dovecot/lib90_sieve_plugin.so
 %%MANAGESIEVE%%lib/dovecot/settings/libmanagesieve_login_settings.a
