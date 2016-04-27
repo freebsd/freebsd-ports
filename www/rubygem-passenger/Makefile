@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	5.0.26
+PORTVERSION=	5.0.27
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -27,6 +27,7 @@ USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+NOPORTDOCS=	yes
 
 .include <bsd.port.options.mk>
 
