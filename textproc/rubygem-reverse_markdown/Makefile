@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	reverse_markdown
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
