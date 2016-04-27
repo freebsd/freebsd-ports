@@ -21,12 +21,19 @@ load_rc_config "${name}"
 : ${resourcemanager_user:=%%MAPRED_USER%%}
 
 command="%%PREFIX%%/sbin/yarn-daemon.sh"
+command_interpreter_execution="%%JAVA_HOME%%/bin/java"
 command_args='--config %%ETCDIR%% start resourcemanager'
 
 stop_cmd=resourcemanager_stop
+start_postcmd="start_postcmd"
+status_precmd=find_pid
 
 resourcemanager_stop () {
   su -m ${resourcemanager_user} -c "${command} --config %%ETCDIR%% stop resourcemanager"
+}
+
+find_pid () {
+  rc_pid=$(check_pidfile $pidfile $command_interpreter_execution)
 }
 
 run_rc_command "$1"
