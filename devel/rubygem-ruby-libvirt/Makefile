@@ -13,10 +13,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
-USES=		pkgconfig
-
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist pkgconfig
 
 .include <bsd.port.mk>

@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-temple>=0.7.3:devel/rubygem-temple \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem:autoplist
 
 PLIST_FILES=	bin/slimrb
 

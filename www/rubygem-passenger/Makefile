@@ -10,8 +10,6 @@ PKGNAMEPREFIX=	rubygem-
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
 
-USES+=		cpe
-
 CPE_VENDOR=	phusion
 CPE_PRODUCT=	passenger
 
@@ -25,8 +23,7 @@ OPTIONS_DEFAULT=	APACHE22
 
 USE_RUBY=	yes
 USE_RAKE=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		cpe gem:autoplist
 NOPORTDOCS=	yes
 
 .include <bsd.port.options.mk>
