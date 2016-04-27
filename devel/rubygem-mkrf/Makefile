@@ -1,4 +1,3 @@
-# Created by: Steve Wills <steve@meatwad.mouf.net>
 # $FreeBSD$
 
 PORTNAME=	mkrf
@@ -12,7 +11,6 @@ COMMENT=	Replacement to mkmf generates Rakefiles to build C Extensions
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USE_RAKE=	yes
 USES=		gem python
 
 .include <bsd.port.mk>
