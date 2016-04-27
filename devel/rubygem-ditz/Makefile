@@ -18,7 +18,7 @@ NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RAKE=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/ditz
 ruby_OLD_CMD=	/usr/bin/ruby1.8
 

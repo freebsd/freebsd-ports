@@ -11,7 +11,7 @@ COMMENT=	Numerical N-dimensional array library for Ruby
 
 USE_RUBY=	yes
 USE_RAKE=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include "${.CURDIR}/Makefile.version"
 

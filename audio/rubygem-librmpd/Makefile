@@ -12,6 +12,6 @@ COMMENT=	Is a simple yet powerful Music Player Daemon library
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

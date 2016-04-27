@@ -18,7 +18,7 @@ RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist python
+USES=		gem python
 
 post-patch:
 		@${REINPLACE_CMD} \

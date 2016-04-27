@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-multi_json>=1.7:devel/rubygem-multi_json \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

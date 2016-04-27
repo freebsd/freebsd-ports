@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=	APACHE22
 
 USE_RUBY=	yes
 USE_RAKE=	yes
-USES=		cpe gem:autoplist
+USES=		cpe gem
 NOPORTDOCS=	yes
 
 .include <bsd.port.options.mk>

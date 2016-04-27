@@ -14,6 +14,6 @@ RUN_DEPENDS=	rubygem-rails>=3.2.0:www/rubygem-rails
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

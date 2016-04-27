@@ -14,6 +14,6 @@ RUN_DEPENDS=	rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2 \
 		rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-d3_rails>=3.4.6:www/rubygem-d3_rails
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

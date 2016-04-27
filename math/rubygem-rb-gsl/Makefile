@@ -15,6 +15,6 @@ LIB_DEPENDS=	libgsl.so:math/gsl
 RUN_DEPENDS=	rubygem-narray>=0.5.9:math/rubygem-narray
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

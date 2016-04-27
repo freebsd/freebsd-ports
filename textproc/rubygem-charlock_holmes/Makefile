@@ -12,7 +12,7 @@ COMMENT=	Gems for character encoding detection
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 CONFIGURE_ARGS=	--with-icu-include=${LOCALBASE}/include
 
 .include <bsd.port.mk>

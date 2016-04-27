@@ -13,6 +13,6 @@ COMMENT=	Shell interface that also collects stdout and stderr
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-cliprompt>=0.1.2:devel/rubygem-cliprompt \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 PLIST_FILES=	bin/hpcli
 
 .include <bsd.port.mk>

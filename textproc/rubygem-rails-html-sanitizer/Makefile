@@ -14,6 +14,6 @@ RUN_DEPENDS=	rubygem-loofah>=2.0:textproc/rubygem-loofah
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -13,6 +13,6 @@ COMMENT=	This Ruby gem is a tiny command-line interface library
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

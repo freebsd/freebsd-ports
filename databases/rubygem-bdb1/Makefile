@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 USE_RUBY=	yes
-USES=		execinfo gem:autoplist
+USES=		execinfo gem
 
 .include <bsd.port.pre.mk>
 

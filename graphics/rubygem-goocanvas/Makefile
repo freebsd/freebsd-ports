@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject
 		rubygem-gtk3>=${PORTVERSION}:x11-toolkits/rubygem-gtk3
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

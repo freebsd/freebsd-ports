@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		cpe gem:autoplist
+USES=		cpe gem
 
 CPE_PRODUCT=	gitlab
 CPE_VENDOR=	gitlab

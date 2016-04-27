@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-oauth>=0:net/rubygem-oauth \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

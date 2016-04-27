@@ -21,7 +21,7 @@ RUN_DEPENDS=	flog>=0:sysutils/flog \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/rubyrep rubyrep
 
 USE_RC_SUBR=	rubyrep

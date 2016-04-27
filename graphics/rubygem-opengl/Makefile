@@ -15,6 +15,6 @@ LICENSE=	MIT
 
 USE_GL=		glut
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

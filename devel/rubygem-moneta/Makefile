@@ -13,7 +13,7 @@ COMMENT=	Unified interface to key/value stores
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	script/install-kyotocabinet \
 		script/kill-travis \
 		script/start-services \

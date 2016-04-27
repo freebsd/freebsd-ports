@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-coffee-script-source>=0:devel/rubygem-coffee-script-source 
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

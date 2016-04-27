@@ -10,6 +10,6 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Consistent spreading for server balancing
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

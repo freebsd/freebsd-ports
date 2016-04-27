@@ -14,7 +14,7 @@ LICENSE=	LGPL3
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	samples/actions/launch/calc.rb \
 		samples/actions/launch/winparams.rb \
 		samples/actions/named/named.rb \

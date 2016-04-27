@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgd.so:graphics/gd
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 post-patch:
 	@${REINPLACE_CMD} 's|libgd.so.2|libgd.so.5|' ${WRKSRC}/lib/gd2.rb

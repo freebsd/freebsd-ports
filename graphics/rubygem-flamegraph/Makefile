@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-fast_stack>=0:devel/rubygem-fast_stack
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

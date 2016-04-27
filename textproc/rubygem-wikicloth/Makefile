@@ -19,6 +19,6 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

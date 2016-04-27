@@ -22,7 +22,7 @@ RUN_DEPENDS=	rubygem-faraday>=0.9.0:www/rubygem-faraday \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/tumblr
 

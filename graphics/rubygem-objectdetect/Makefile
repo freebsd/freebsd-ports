@@ -15,7 +15,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
 
 USE_RUBY=	yes
-USES=		gem:autoplist pkgconfig
+USES=		gem pkgconfig
 
 post-patch:
 	${REINPLACE_CMD} -E 's|(objectdetect)|\1/version|' ${WRKSRC}/test/test_helper.rb

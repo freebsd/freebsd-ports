@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-gherkin>=3.2.0:textproc/rubygem-gherkin
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

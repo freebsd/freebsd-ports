@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-safe_yaml>=1.0.0:devel/rubygem-safe_yaml
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

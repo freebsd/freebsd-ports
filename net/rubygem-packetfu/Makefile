@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	test/func_lldp.rb
 
 .include <bsd.port.mk>

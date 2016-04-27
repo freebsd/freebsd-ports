@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-faraday_middleware>0:www/rubygem-faraday_middleware \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

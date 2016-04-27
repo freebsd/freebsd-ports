@@ -23,7 +23,7 @@ RUN_DEPENDS=	rubygem-activerecord4>=4.1.0:databases/rubygem-activerecord4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/termtter bin/termtter_frame
 

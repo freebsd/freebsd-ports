@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-axiom-types>=0.1:devel/rubygem-axiom-types \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

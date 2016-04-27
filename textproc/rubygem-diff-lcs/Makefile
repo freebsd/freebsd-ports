@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 ruby_OLD_CMD=	ruby
 SHEBANG_FILES=	bin/htmldiff bin/ldiff
 

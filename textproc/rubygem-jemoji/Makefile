@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-gemoji>=2.0:textproc/rubygem-gemoji \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

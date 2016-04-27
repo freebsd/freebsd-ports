@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-net-http-persistent>=2.9:www/rubygem-net-http-persistent
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

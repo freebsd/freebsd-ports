@@ -12,6 +12,6 @@ COMMENT=	Simple callback-based HTTP request/response parser
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

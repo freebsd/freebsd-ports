@@ -12,6 +12,6 @@ COMMENT=	Fast JSON parser and serializer
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

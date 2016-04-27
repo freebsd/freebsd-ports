@@ -21,7 +21,7 @@ CONFLICTS_INSTALL=	rubygem-hiera-*
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 HIERA_DBDIR=	/var/db/hiera
 PLIST_FILES=	bin/hiera
 PLIST_DIRS=	${HIERA_DBDIR}

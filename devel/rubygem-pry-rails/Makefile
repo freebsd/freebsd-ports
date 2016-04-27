@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-pry>=0.9.10:devel/rubygem-pry
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

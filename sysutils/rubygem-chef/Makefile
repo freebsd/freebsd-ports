@@ -33,7 +33,7 @@ RUN_DEPENDS=	rubygem-chef-zero>=2.1.0:sysutils/rubygem-chef-zero \
 
 NO_ARCH=		yes
 USE_RUBY=		yes
-USES=		gem:autoplist
+USES=		gem
 
 SUB_LIST=	RUBY=${RUBY}
 USE_RC_SUBR=	chef_client

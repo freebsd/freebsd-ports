@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-gitlab-grit>=2.7.1:textproc/rubygem-gitlab-grit
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-delayer>=0:devel/rubygem-delayer \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

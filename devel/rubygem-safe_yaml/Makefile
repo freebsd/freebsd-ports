@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bundle_install_all_ruby_versions.sh \
 		run_specs_all_ruby_versions.sh
 PLIST_FILES=	bin/safe_yaml

@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-epp-client-secdns=${PORTVERSION}:net/rubygem-epp-client-secdns \
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

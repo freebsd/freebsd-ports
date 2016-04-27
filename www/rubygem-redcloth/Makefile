@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 GEM_NAME=	${DISTNAME}
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/redcloth
 

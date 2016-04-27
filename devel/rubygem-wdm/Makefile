@@ -12,6 +12,6 @@ COMMENT=	Library for monitoring directories for changes
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

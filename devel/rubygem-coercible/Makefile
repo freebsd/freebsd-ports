@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-descendants_tracker>=0.0.1:devel/rubygem-descendants_tracke
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

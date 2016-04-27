@@ -14,7 +14,7 @@ OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 
 USE_RUBY=	yes
-USES=		gem:autoplist pkgconfig
+USES=		gem pkgconfig
 
 X11_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:graphics/ImageMagick-nox11

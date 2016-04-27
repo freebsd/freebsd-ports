@@ -29,7 +29,7 @@ RUN_DEPENDS=	rubygem-blobstore_client>=${PORTVERSION}:devel/rubygem-blobstore_cl
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/bosh
 

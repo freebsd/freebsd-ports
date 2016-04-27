@@ -15,6 +15,6 @@ RUN_DEPENDS=	\
 	rubygem-ltsv>0:textproc/rubygem-ltsv
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

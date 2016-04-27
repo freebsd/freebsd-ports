@@ -13,6 +13,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-debug_inspector>=0.0.1:devel/rubygem-debug_inspector
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

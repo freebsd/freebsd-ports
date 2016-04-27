@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-diff-lcs>=1.1:textproc/rubygem-diff-lcs \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

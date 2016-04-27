@@ -9,6 +9,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Gems for iobuffer
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

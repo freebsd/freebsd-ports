@@ -19,6 +19,6 @@ RUN_DEPENDS=	rubygem-em-websocket>=0.5:www/rubygem-em-websocket \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

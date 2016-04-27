@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-fission>=0:emulators/rubygem-fission \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-logging>=1.8.2:devel/rubygem-logging \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

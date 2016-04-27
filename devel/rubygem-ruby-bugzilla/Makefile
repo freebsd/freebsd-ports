@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-gruff>=0:graphics/rubygem-gruff \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/bzconsole
 

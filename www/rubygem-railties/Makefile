@@ -21,7 +21,7 @@ CONFLICTS_INSTALL=	rubygem-railties4-[0-9]* rubygem-railties41-[0-9]*
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/rails
 

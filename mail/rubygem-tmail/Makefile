@@ -10,6 +10,6 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	RFC2822/MIME compliant mail manipulating library for Ruby
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

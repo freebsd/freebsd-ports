@@ -14,6 +14,6 @@ RUN_DEPENDS=	rubygem-mixlib-log>=0:devel/rubygem-mixlib-log
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

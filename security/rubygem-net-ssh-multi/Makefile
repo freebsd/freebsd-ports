@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-net-ssh>=2.6.5:security/rubygem-net-ssh \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

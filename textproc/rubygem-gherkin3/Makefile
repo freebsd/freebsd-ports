@@ -17,6 +17,6 @@ EXPIRATION_DATE=2016-04-30
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

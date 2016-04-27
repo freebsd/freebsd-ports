@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-ruby_parser>=3.1:devel/rubygem-ruby_parser \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 
 PLIST_FILES=	bin/r2r_show
 

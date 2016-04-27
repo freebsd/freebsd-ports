@@ -13,6 +13,6 @@ LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-nice-ffi>=0.2:devel/rubygem-nice-ffi
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

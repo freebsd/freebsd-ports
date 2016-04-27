@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-pkg-config>=1.1.5:devel/rubygem-pkg-config
 
 USE_GNOME=	cairo
 USE_RUBY=	yes
-USES=		gem:autoplist pkgconfig
+USES=		gem pkgconfig
 
 .include <bsd.port.mk>

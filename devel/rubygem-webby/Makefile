@@ -23,7 +23,7 @@ RUN_DEPENDS=	rubygem-bones>=2.5.0:devel/rubygem-bones \
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RAKE=	yes
-USES=		gem:autoplist
+USES=		gem
 PLIST_FILES=	bin/webby bin/webby-gen
 
 .include <bsd.port.mk>

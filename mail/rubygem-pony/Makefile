@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-mail>=2.0:mail/rubygem-mail
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

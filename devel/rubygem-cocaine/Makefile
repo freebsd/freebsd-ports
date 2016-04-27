@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-climate_control>=0.0.3:devel/rubygem-climate_control
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

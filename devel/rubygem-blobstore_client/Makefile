@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-resources>=2.2.0:devel/rubygem-aws-sdk-resources \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/blobstore_client_console
 

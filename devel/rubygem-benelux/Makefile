@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-attic>=0.5.3:devel/rubygem-attic \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

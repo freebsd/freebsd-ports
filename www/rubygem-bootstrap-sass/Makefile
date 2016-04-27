@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-autoprefixer-rails>=5.2.1:textproc/rubygem-autoprefixer-rai
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

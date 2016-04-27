@@ -15,7 +15,7 @@ GEM_NAME=		${DISTNAME}
 NO_ARCH=	yes
 
 USE_RUBY=		yes
-USES=		gem:autoplist shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	lib/razorback.rb
 
 .include <bsd.port.mk>

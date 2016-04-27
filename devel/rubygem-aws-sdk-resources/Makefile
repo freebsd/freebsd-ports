@@ -14,6 +14,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-core>=${PORTVERSION}:devel/rubygem-aws-sdk-core
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ xRUN_DEPENDS=	rubygem-ffi>=1.0.6:devel/rubygem-ffi \
 		rubygem-trollop>=1.16.2:devel/rubygem-trollop
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/rbtrace
 

@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-sprockets>=2.0:devel/rubygem-sprockets \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

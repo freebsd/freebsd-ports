@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-carrierwave>=0.5.8:www/rubygem-carrierwave \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

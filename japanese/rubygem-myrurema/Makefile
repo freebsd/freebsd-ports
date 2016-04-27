@@ -13,7 +13,7 @@ RUN_DEPENDS=	rubygem-launchy>=2.3:devel/rubygem-launchy
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/rurema
 

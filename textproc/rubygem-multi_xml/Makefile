@@ -16,7 +16,7 @@ NOKOGIRI_DESC=	Nokogiri is a HTML, XML, SAX, and Reader parser
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 NOKOGIRI_RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 

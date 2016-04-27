@@ -11,7 +11,7 @@ COMMENT=	Gems for MessagePack
 LICENSE=	APACHE20
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 STRIPDIR=	${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}
 
 post-install:

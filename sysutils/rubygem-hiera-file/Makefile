@@ -13,7 +13,7 @@ COMMENT=	Data backend for Hiera that returns whole files
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}hiera1>=0:sysutils/rubygem-hiera1
 

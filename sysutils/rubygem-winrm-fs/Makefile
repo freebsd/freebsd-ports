@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-erubis>=2.7:www/rubygem-erubis \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 PLIST_FILES=	bin/rwinrmcp
 

@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-html-pipeline>=2.3:textproc/rubygem-html-pipeline \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

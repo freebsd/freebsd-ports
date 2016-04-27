@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-guard-compat>=1.2:sysutils/rubygem-guard-compat \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-her>=0.6.8:databases/rubygem-her
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

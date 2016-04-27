@@ -12,6 +12,6 @@ COMMENT=	Provides hostname, IP address, and other information for a given host
 LICENSE=	ART20
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

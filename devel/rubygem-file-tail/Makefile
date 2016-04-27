@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-tins>=1.0:devel/rubygem-tins
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>

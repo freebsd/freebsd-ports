@@ -17,6 +17,6 @@ RUN_DEPENDS=	rubygem-dm-aggregates>=0.10.1:databases/rubygem-dm-aggregates \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem:autoplist
+USES=		gem
 
 .include <bsd.port.mk>
