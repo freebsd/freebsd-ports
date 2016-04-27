@@ -28,8 +28,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000100
-IGNORE=		CloudABI will never support this version of FreeBSD
+.if ${OSVERSION} < 1001511
+IGNORE=		requires a recent implementation of Capsicum
 .endif
 
 .include <bsd.port.post.mk>
