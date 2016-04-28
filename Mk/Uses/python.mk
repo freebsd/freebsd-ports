@@ -225,7 +225,7 @@ _INCLUDE_USES_PYTHON_MK=	yes
 _PYTHON_VERSIONS=		2.7 3.4 3.5 3.3	# preferred first
 _PYTHON_PORTBRANCH=		2.7		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
-_PYTHON_RELPORTDIR=		${PORTSDIR}/lang/python
+_PYTHON_RELPORTDIR=		lang/python
 
 # Make each individual feature available as _PYTHON_FEATURE_<FEATURENAME>
 .for var in ${USE_PYTHON}
@@ -396,8 +396,8 @@ PYTHON_REL=		# empty
 PYTHON_ABIVER=		# empty
 PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
 # Protect partial checkouts from Mk/Scripts/functions.sh:export_ports_env().
-.if !defined(_PORTS_ENV_CHECK) || exists(${PYTHON_PORTSDIR})
-.include "${PYTHON_PORTSDIR}/Makefile.version"
+.if !defined(_PORTS_ENV_CHECK) || exists(${PORTSDIR}/${PYTHON_PORTSDIR})
+.include "${PORTSDIR}/${PYTHON_PORTSDIR}/Makefile.version"
 .endif
 # Create a 4 integer version string, prefixing 0 to the last token if
 # it's a single character. Only use the the first 3 tokens of
