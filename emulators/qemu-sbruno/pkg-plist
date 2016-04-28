@@ -1,9 +1,9 @@
+%%SOFTMMU%%bin/ivshmem-client
+%%SOFTMMU%%bin/ivshmem-server
 %%SOFTMMU%%bin/qemu-ga
 %%SOFTMMU%%bin/qemu-img
 %%SOFTMMU%%bin/qemu-io
 %%SOFTMMU%%bin/qemu-nbd
-%%SOFTMMU%%bin/ivshmem-client
-%%SOFTMMU%%bin/ivshmem-server
 %%NONX86%%bin/qemu-system-aarch64
 %%NONX86%%bin/qemu-system-alpha
 %%NONX86%%bin/qemu-system-arm
@@ -29,6 +29,9 @@
 %%NONX86%%bin/qemu-system-sparc64
 %%NONX86%%bin/qemu-system-tricore
 %%NONX86%%bin/qemu-system-unicore32
+%%SOFTMMU%%bin/qemu-system-x86_64
+%%NONX86%%bin/qemu-system-xtensa
+%%NONX86%%bin/qemu-system-xtensaeb
 %%BSD_USER64%%bin/qemu-aarch64%%STATIC%%
 %%BSD_USER%%bin/qemu-arm%%STATIC%%
 %%BSD_USER%%bin/qemu-i386%%STATIC%%
@@ -41,19 +44,15 @@
 %%BSD_USER%%bin/qemu-sparc%%STATIC%%
 %%BSD_USER64%%bin/qemu-sparc64%%STATIC%%
 %%BSD_USER64%%bin/qemu-x86_64%%STATIC%%
-%%SOFTMMU%%bin/qemu-system-x86_64
-%%NONX86%%bin/qemu-system-xtensa
-%%NONX86%%bin/qemu-system-xtensaeb
+%%SOFTMMU%%@sample etc/qemu-ifup.sample
+%%SOFTMMU%%@sample etc/qemu-ifdown.sample
 %%SOFTMMU%%man/man1/qemu.1.gz
 %%SOFTMMU%%man/man1/qemu-img.1.gz
 %%SOFTMMU%%man/man8/qemu-ga.8.gz
 %%SOFTMMU%%man/man8/qemu-nbd.8.gz
-%%SOFTMMU%%@sample etc/qemu-ifup.sample
-%%SOFTMMU%%@sample etc/qemu-ifdown.sample
 %%SOFTMMU%%%%DATADIR%%/QEMU,tcx.bin
 %%SOFTMMU%%%%DATADIR%%/QEMU,cgthree.bin
 %%SOFTMMU%%%%DATADIR%%/acpi-dsdt.aml
-%%SOFTMMU%%%%DATADIR%%/q35-acpi-dsdt.aml
 %%SOFTMMU%%%%DATADIR%%/bios-256k.bin
 %%SOFTMMU%%%%DATADIR%%/bios.bin
 %%SOFTMMU%%%%DATADIR%%/efi-e1000.rom
