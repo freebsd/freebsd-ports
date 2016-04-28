@@ -13,5 +13,6 @@ WWWDIR=		${PREFIX}/www/bugzilla
 
 BINMODE=	700
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
