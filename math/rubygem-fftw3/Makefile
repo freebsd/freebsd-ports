@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-narray>0:math/rubygem-narray
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USE_RUBY=	yes
-USE_RAKE=	yes
 USES=		gem
 
 .include <bsd.port.mk>
