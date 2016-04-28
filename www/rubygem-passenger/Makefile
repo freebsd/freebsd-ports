@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	rubygem-
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
 
+BUILD_DEPENDS=		${LOCALBASE}/bin/rake:devel/rubygem-rake
+
 CPE_VENDOR=	phusion
 CPE_PRODUCT=	passenger
 
@@ -22,7 +24,7 @@ SYMLINK_DESC=	Create passenger symlink
 OPTIONS_DEFAULT=	APACHE22
 
 USE_RUBY=	yes
-USE_RAKE=	yes
+RAKE_BIN=	${LOCALBASE}/bin/rake
 USES=		cpe gem
 NOPORTDOCS=	yes
 
