@@ -3,6 +3,7 @@
 
 PORTNAME=	resource-agents
 PORTVERSION=	3.9.7
+DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dpejesh@yahoo.com
@@ -18,7 +19,6 @@ CONFLICTS=	heartbeat-[0-9]*
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClusterLabs
 GH_PROJECT=	resource-agents
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		autoreconf gmake pkgconfig python shebangfix
 USE_GCC=	yes
