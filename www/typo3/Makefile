@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	7.6.4
+PORTVERSION=	7.6.5
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -16,7 +16,7 @@ USES=		cpe shebangfix
 SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/xlfcheck.sh
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml
+USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml zip simplexml
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${TYPO3SRC}
 
@@ -30,6 +30,7 @@ GROUPS=		${WWWGRP}
 DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX}
 
 OPTIONS_DEFINE=	APC CURL GD GMP IMAGICK MBSTRING MYSQL ZLIB
+OPTIONS_DEFAULT=	GD ZLIB
 APC_DESC=	Alternative PHP Cache
 GD_DESC=	GDlib/freetype support
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
@@ -69,5 +70,16 @@ post-install:
 	@cd ${STAGEDIR}${PREFIX}; \
 		${FIND} * \( -type f -or -type l \) -path "${TYPO3WWW}/${TYPO3SRC}/*" | \
 		${SORT} >> ${TMPPLIST}
+
+	${TOUCH} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}/FIRST_INSTALL
+	@${ECHO_CMD} ${TYPO3WWW}/${TYPO3DIR}/FIRST_INSTALL >> ${TMPPLIST}
+
+	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group ${WWWGRP}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@mode 755" >> ${TMPPLIST}
+	@${ECHO} "@dir ${TYPO3WWW}/${TYPO3DIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@mode" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group" >> ${TMPPLIST}
+	@${ECHO_CMD} "@owner" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
