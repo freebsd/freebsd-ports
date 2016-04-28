@@ -3,8 +3,8 @@
 # Support rubygem packages
 #
 # Feature:	gem
-# Usage:	USES=gem[:autoplist]
-# Valid args:	autoplist	Automatically generate packing list
+# Usage:	USES=gem[:noautoplist]
+# Valid args:	noautoplist	Don't generate the plist automatically
 #
 # MAINTAINER: portmgr@FreeBSD.org
 
@@ -12,7 +12,7 @@
 
 _INCLUDE_USES_GEM_MK=        yes
 
-_valid_ARGS=			autoplist noautoplist
+_valid_ARGS=			noautoplist
 
 # Sanity check
 .for arg in ${gem_ARGS}
