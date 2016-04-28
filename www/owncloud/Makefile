@@ -45,7 +45,7 @@ MYSQL_USE=	MYSQL=client PHP=pdo_mysql
 PGSQL_USES=	pgsql
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
-SMB_RUN_DEPENDS=	pecl-smbclient>=0.8.0:${PORTSDIR}/net/pecl-smbclient
+SMB_RUN_DEPENDS=	pecl-smbclient>=0.8.0:net/pecl-smbclient
 SSL_USE=	PHP=openssl
 
 .include <bsd.port.options.mk>
