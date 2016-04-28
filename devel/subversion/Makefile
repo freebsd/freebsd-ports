@@ -1,7 +1,7 @@
 # Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
-PORTREVISION=	3
+#PORTREVISION=	0
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
