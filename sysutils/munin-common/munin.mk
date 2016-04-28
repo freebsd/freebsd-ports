@@ -31,3 +31,5 @@ GROUPS=		munin
 PLIST_SUB=	${MUNIN_DIRS} USER=${USERS} GROUP=${GROUPS}
 
 CPE_VENDOR=	munin-monitoring
+
+MAKE_JOBS_UNSAFE=	Try to use things before making thems.
