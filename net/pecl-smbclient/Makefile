@@ -11,8 +11,9 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Smbclient wrapper extension
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+RUN_DEPENDS=	smbclient:${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba36
 
