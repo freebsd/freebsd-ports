@@ -1,6 +1,7 @@
 bin/construct_mohawk
 bin/create_sjisfnt
 bin/decine
+bin/decompile
 bin/degob
 bin/dekyra
 bin/deriven
