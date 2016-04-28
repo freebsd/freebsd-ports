@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-progressbar
-PORTVERSION=	1.7.5
+PORTVERSION=	1.8.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Progressbar library for Ruby
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 CONFLICTS_INSTALL=	${RUBY_PKGNAMEPREFIX}progressbar-*
 
