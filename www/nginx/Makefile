@@ -236,7 +236,8 @@ WANT_GNOME=	yes
 .if ${PORT_OPTIONS:MPASSENGER}
 CATEGORIES+=	ruby
 USE_RUBY=	yes
-USE_RAKE=	yes
+BUILD_DEPENDS+=		${LOCALBASE}/bin/rake:devel/rubygem-rake
+RAKE_BIN=	${LOCALBASE}/bin/rake
 .endif
 
 NGINX_VARDIR?=	/var
