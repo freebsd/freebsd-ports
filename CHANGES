@@ -10,6 +10,11 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160428
+AUTHOR: mat@FreeBSD.org
+
+  USE_RUBYGEMS has been replaced by USES=gem.
+
 20160426:
 AUTHOR: mat@FreeBSD.org
 
