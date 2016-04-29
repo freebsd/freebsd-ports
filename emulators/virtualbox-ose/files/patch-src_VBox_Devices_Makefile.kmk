@@ -1,0 +1,18 @@
+--- src/VBox/Devices/Makefile.kmk.orig	2016-04-20 10:01:06 UTC
++++ src/VBox/Devices/Makefile.kmk
+@@ -801,11 +801,13 @@ if !defined(VBOX_ONLY_EXTPACKS)         
+ 	$(call MSG_TOOL,iasl,VBoxDD,$<,$@)
+ 	$(QUIET)$(RM) -f $@ $@.tmp $@.pre
+ 	$(QUIET)$(TOOL_$(VBOX_GCC_TOOL)_CC) -E -P -x c -o $@.pre $<
+-	$(QUIET)$(VBOX_IASLCMD) -tc -vs -p $@ $@.pre
++	$(QUIET)$(SED) "s/<NL>/\n/g" \
++		--output $@.pre1 $@.pre
++	$(QUIET)$(VBOX_IASLCMD) -tc -vs -p $@ $@.pre1
+ 	$(QUIET)$(MV) -f $@ $@.tmp
+ 	$(QUIET)$(SED) "s/AmlCode/AmlCodeSsdtCpuHotPlug/g" \
+ 		--output $@ $@.tmp
+-	$(QUIET)$(RM) -f $@.tmp $@.pre
++	$(QUIET)$(RM) -f $@.tmp $@.pre $@.pre1
+ 
+ 
+   vboxssdt-cpuhotplug.hex:: $$(VBoxDD_0_OUTDIR)/vboxssdt-cpuhotplug.hex
