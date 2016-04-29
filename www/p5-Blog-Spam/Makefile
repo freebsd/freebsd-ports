@@ -14,6 +14,7 @@ COMMENT=	Blog & Forum SPAM Detection
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Net-CIDR-Lite>=0:net/p5-Net-CIDR-Lite \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
