@@ -3,7 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	2.14.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMESUFFIX=	2
@@ -18,9 +18,8 @@ RUN_DEPENDS=	gmake:devel/gmake
 CONFLICTS_INSTALL=	npm-[0-9]*
 
 OPTIONS_SINGLE=	BACKEND
-OPTIONS_SINGLE_BACKEND=	NODE NODE010 NODE012 NODE4
-OPTIONS_DEFAULT=NODE
-NODE_DESC=	Use www/node as backend
+OPTIONS_SINGLE_BACKEND=	NODE010 NODE012 NODE4
+OPTIONS_DEFAULT=NODE4
 NODE010_DESC=	Use www/node010 as backend
 NODE012_DESC=	Use www/node012 as backend
 NODE4_DESC=	Use www/node4 as backend
@@ -43,7 +42,6 @@ SHEBANG_FILES=	lib/utils/completion.sh \
 		scripts/relocate.sh \
 		test/update-test.sh
 
-NODE_RUN_DEPENDS=	node>=0.8.0:www/node
 NODE010_RUN_DEPENDS=	node010>=0.8.0:www/node010
 NODE012_RUN_DEPENDS=	node012>=0.8.0:www/node012
 NODE4_RUN_DEPENDS=	node4>=0.8.0:www/node4
