@@ -3,9 +3,10 @@
 
 PORTNAME=	zip-ada
 PORTVERSION=	50
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SF/unzip-ada/
-DISTNAME=	zipada${PORTVERSION}
+DISTNAME=	zipada${PORTVERSION}_f1
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Zip compressed archive file format library written in Ada
