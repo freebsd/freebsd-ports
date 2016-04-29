@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcdio
-PORTVERSION=	0.92
-PORTREVISION=	1
+PORTVERSION=	0.93
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -25,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 INFO=		libcdio
 CPE_VENDOR=	gnu
+INSTALL_TARGET=install-strip 
 
 .include <bsd.port.pre.mk>
 
