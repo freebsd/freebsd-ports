@@ -5624,7 +5624,7 @@ show-dev-warnings:
 	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile warnings, please consider fixing /!\\"
 	@${ECHO_MSG}
 .for m in ${DEV_WARNING}
-	@${ECHO_MSG} "${m}"
+	@${ECHO_MSG} ${m}
 .endfor
 	@${ECHO_MSG}
 .if defined(DEV_WARNING_FATAL)
