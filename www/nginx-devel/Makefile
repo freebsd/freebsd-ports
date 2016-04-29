@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -270,7 +271,7 @@ CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--user=${WWWOWN} --group=${WWWGRP}
 
 .if !empty(PORT_OPTIONS:MDSO)
-MODULESDIR=	${ETCDIR}/modules
+MODULESDIR=	${PREFIX}/libexec/${PORTNAME}
 CONFIGURE_ARGS+=--modules-path=${MODULESDIR}
 .endif
 
@@ -1282,9 +1283,9 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX} && ${FIND} ${MODULESDIR:S|${PREFIX}/||} \
 		! -type d >>${TMPPLIST})
 # Update nginx.conf-dist with a list of staged dynamic modules
-	(cd ${STAGEDIR}${ETCDIR} && \
-		${FIND} ${MODULESDIR:S|${ETCDIR}/||} -type f -name '*.so' \
-			-exec ${ECHO_CMD} "load_module {};" \; \
+	(cd ${STAGEDIR} && \
+		${FIND} ${MODULESDIR:S|^/||} -type f -name '*.so' \
+			-exec ${ECHO_CMD} "load_module /{};" \; \
 			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist && \
 		${CAT} ${WRKSRC}/conf/nginx.conf \
 			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist)
