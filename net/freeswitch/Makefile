@@ -3,6 +3,7 @@
 
 PORTNAME=	freeswitch
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -118,7 +119,7 @@ DISTFILES+=	${EXTRADISTFILES}
 post-install:
 		${MKDIR} ${STAGEDIR}${DATADIR}/sounds
 .for distfile in ${EXTRADISTFILES}
-		${TAR} --cd ${STAGEDIR}${DATADIR}/sounds -xf ${DISTDIR}/${distfile}
+		${TAR} --cd ${STAGEDIR}${DATADIR}/sounds -xf ${DISTDIR}/${distfile:S/:sounds$//}
 .endfor
 		${FIND} ${STAGEDIR}${DATADIR}/sounds -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
 		${RM} -r ${STAGEDIR}${ETCDIR}
