@@ -478,6 +478,20 @@ _initialize_i386_kgdb_tdep(void)
 	    i386fbsd_pspace_data_cleanup);
 
 #ifdef __i386__
+	/*
+	 * FreeBSD/i386 kernels prior to the introduction of AVX
+	 * support used a different layout for the PCB.  If gdb is
+	 * compiled on these systems, these asserts will fail.  The
+	 * package builders build packages on older systems which are
+	 * then run on newer systems.  These binaries trip over these
+	 * assertions even when debugging user programs and even
+	 * though the running kernel is new enough.  To cope, disable
+	 * the assertion checks unless gdb is built against a new
+	 * enough world.  Note that this means kgdb is not going to
+	 * parse PCBs correctly on FreeBSD/i386 kernels before AVX was
+	 * merged.
+	 */
+#if __FreeBSD_version >= 1001505
 	gdb_assert(offsetof(struct pcb, pcb_ebx)
 		   == i386fbsd_pcb_offset[I386_EBX_REGNUM]);
 	gdb_assert(offsetof(struct pcb, pcb_esp)
@@ -490,6 +504,7 @@ _initialize_i386_kgdb_tdep(void)
 		   == i386fbsd_pcb_offset[I386_EDI_REGNUM]);
 	gdb_assert(offsetof(struct pcb, pcb_eip)
 		   == i386fbsd_pcb_offset[I386_EIP_REGNUM]);
+#endif
 	gdb_assert(CODE_SEL == GSEL(GCODE_SEL, SEL_KPL));
 	gdb_assert(DATA_SEL == GSEL(GDATA_SEL, SEL_KPL));
 	gdb_assert(PRIV_SEL == GSEL(GPRIV_SEL, SEL_KPL));
