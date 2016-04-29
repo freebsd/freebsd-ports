@@ -2,7 +2,7 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-PORTVERSION=	${ISCVERSION:S/-P/P/}
+PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/}
 PORTREVISION=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
@@ -19,8 +19,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0.a20160408
-HASH=		7f79448
+ISCVERSION=	9.11.0.a20160428
+HASH=		a27dc50
 
 MAKE_JOBS_UNSAFE=	yes
 
