@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-assets
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,11 +12,12 @@ COMMENT=	Create javascript/CSS assets for Jekyll sites
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-fastimage>=1.8:graphics/rubygem-fastimage \
-		rubygem-jekyll>=3.0:www/rubygem-jekyll \
+RUN_DEPENDS=	rubygem-extras>=0.1:devel/rubygem-extras \
+		rubygem-fastimage>=2.0:graphics/rubygem-fastimage \
+		rubygem-jekyll>=3.1:www/rubygem-jekyll \
+		rubygem-pathutil>=0.8:devel/rubygem-pathutil \
 		rubygem-sprockets3>=3.3:devel/rubygem-sprockets3 \
-		rubygem-sprockets-helpers>=1.2:devel/rubygem-sprockets-helpers \
-		rubygem-tilt>=2.0:devel/rubygem-tilt
+		rubygem-sprockets-helpers>=1.2:devel/rubygem-sprockets-helpers
 
 NO_ARCH=	yes
 USE_RUBY=	yes
