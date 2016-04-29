@@ -22,6 +22,7 @@ USE_GITHUB=	nodefault
 
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=	\
+	DSO \
 	DEBUG \
 	DEBUGLOG \
 	FILE_AIO \
@@ -123,12 +124,14 @@ OPTIONS_DEFINE=	\
 	XRID_HEADER \
 	XSS
 
-OPTIONS_DEFAULT=IPV6 FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
+OPTIONS_DEFAULT=DSO IPV6 FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
 		HTTP_DAV HTTP_FLV HTTP_GZIP_STATIC HTTP_GUNZIP_FILTER \
 		HTTP_MP4 HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK \
 		HTTP_SLICE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTP_SUB \
 		HTTPV2 MAIL MAIL_SSL STREAM STREAM_SSL THREADS WWW
 
+DSO_DESC=			Enable dynamic modules support
+DEBUG_DESC=			Build with debugging support
 DEBUGLOG_DESC=			Enable debug log (--with-debug)
 FILE_AIO_DESC=			Enable file aio
 GOOGLE_PERFTOOLS_DESC=		Enable google perftools module
@@ -257,16 +260,19 @@ SUB_LIST+=	WWWOWN=${WWWOWN} \
 		NGINX_TMPDIR=${NGINX_TMPDIR}
 
 HAS_CONFIGURE=	yes
-MODULESDIR=	${ETCDIR}/modules
 CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--with-cc-opt="-I ${LOCALBASE}/include" \
 		--with-ld-opt="-L ${LOCALBASE}/lib" \
 		--conf-path=${ETCDIR}/nginx.conf \
-		--modules-path=${MODULESDIR} \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
 		--error-log-path=${NGINX_ERRORLOG} \
 		--user=${WWWOWN} --group=${WWWGRP}
+
+.if !empty(PORT_OPTIONS:MDSO)
+MODULESDIR=	${ETCDIR}/modules
+CONFIGURE_ARGS+=--modules-path=${MODULESDIR}
+.endif
 
 .if empty(PORT_OPTIONS:MHTTP) && empty(PORT_OPTIONS:MMAIL)
 IGNORE=		requires at least HTTP or MAIL to \
@@ -410,7 +416,11 @@ GIT_CT_VERSION=	f3cad5e
 GH_ACCOUNT+=	grahamedgecombe:ct
 GH_PROJECT+=	nginx-ct:ct
 GH_TAGNAME+=	${GIT_CT_VERSION}:ct
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_ct}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_ct}
+.endif
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 WITH_OPENSSL_PORT=	yes
@@ -421,7 +431,11 @@ NGINX_ECHO_VERSION=	4f7aa50
 GH_ACCOUNT+=	openresty:echo
 GH_PROJECT+=	echo-nginx-module:echo
 GH_TAGNAME+=	${NGINX_ECHO_VERSION}:echo
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_echo}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_echo}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
@@ -429,7 +443,11 @@ NGINX_HEADERS_MORE_VERSION=	f5559ec
 GH_ACCOUNT+=	openresty:headers_more
 GH_PROJECT+=	headers-more-nginx-module:headers_more
 GH_TAGNAME+=	${NGINX_HEADERS_MORE_VERSION}:headers_more
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_headers_more}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_headers_more}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_DAV} || defined(USE_HTTP_DAV)
@@ -451,7 +469,11 @@ NGINX_EVAL_VERSION=	342c812
 GH_ACCOUNT+=	openresty:eval
 GH_PROJECT+=	nginx-eval-module:eval
 GH_TAGNAME+=	${NGINX_EVAL_VERSION}:eval
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_eval}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_eval}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_FANCYINDEX}
@@ -483,7 +505,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_json_status}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_GEOIP}
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--with-http_geoip_module=dynamic
+.else
+CONFIGURE_ARGS+=--with-http_geoip_module
+.endif
 LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 .endif
 
@@ -497,7 +523,11 @@ CONFIGURE_ARGS+=--with-http_gunzip_module
 
 .if ${PORT_OPTIONS:MHTTP_IMAGE_FILTER}
 LIB_DEPENDS+=	libgd.so:graphics/gd
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--with-http_image_filter_module=dynamic
+.else
+CONFIGURE_ARGS+=--with-http_image_filter_module
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_MP4}
@@ -531,7 +561,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 
 .if ${PORT_OPTIONS:MHTTP_PERL}
 CATEGORIES+=	perl5
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--with-http_perl_module=dynamic
+.else
+CONFIGURE_ARGS+=--with-http_perl_module
+.endif
 USES+=		perl5
 .endif
 
@@ -563,7 +597,11 @@ CONFIGURE_ARGS+=--with-http_realip_module
 NGINX_REDIS_VERSION=	0.3.8
 MASTER_SITES+=	LOCAL/osa:redis
 DISTFILES+=	ngx_http_redis-${NGINX_REDIS_VERSION}.tar.gz:redis
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKDIR}/ngx_http_redis-${NGINX_REDIS_VERSION}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_redis-${NGINX_REDIS_VERSION}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_RESPONSE}
@@ -673,7 +711,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_vte} --with-cc-opt="-I ${LOCALBASE}/includ
 
 .if ${PORT_OPTIONS:MHTTP_XSLT}
 USE_GNOME+=	libxml2 libxslt
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--with-http_xslt_module=dynamic
+.else
+CONFIGURE_ARGS+=--with-http_xslt_module
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_ZIP}
@@ -698,7 +740,11 @@ NGINX_DYNAMIC_UPSTREAM_VERSION=	0.1.3
 GH_ACCOUNT+=	cubicdaiya:dyn_upstream
 GH_PROJECT+=	ngx_dynamic_upstream:dyn_upstream
 GH_TAGNAME+=	v${NGINX_DYNAMIC_UPSTREAM_VERSION}:dyn_upstream
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_dyn_upstream}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_dyn_upstream}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
@@ -742,7 +788,11 @@ NGINX_LUA_VERSION=	d44f8e0
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
 GH_TAGNAME+=	${NGINX_LUA_VERSION}:lua
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_lua}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
@@ -789,9 +839,13 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 PASSENGER_VERSION=	5.0.27
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
-		${PATCHDIR}/extra-patch-passenger-src-nginx_module-config
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-src-nginx_module-config
+.else
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
+.endif
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb
 .if empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
@@ -845,7 +899,11 @@ NGINX_SET_MISC_VERSION=	6582fb4
 GH_ACCOUNT+=	openresty:setmisc
 GH_PROJECT+=	set-misc-nginx-module:setmisc
 GH_TAGNAME+=	${NGINX_SET_MISC_VERSION}:setmisc
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_setmisc}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_setmisc}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MSFLOW}
@@ -881,7 +939,11 @@ LIB_DEPENDS+=	libMagickCore-6.so:graphics/ImageMagick \
 GH_ACCOUNT+=	cubicdaiya:small_light
 GH_PROJECT+=	ngx_small_light:small_light
 GH_TAGNAME+=	v${NGINX_SMALL_LIGHT_VERSION}:small_light
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_small_light}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_small_light}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MSRCACHE}
@@ -935,11 +997,19 @@ WITH_OPENSSL_PORT=	yes
 GH_ACCOUNT+=	nginx:njs
 GH_PROJECT+=	njs:njs
 GH_TAGNAME+=	c4a5f2b:njs
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_njs}/nginx
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_njs}/nginx
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MSTREAM}
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--with-stream=dynamic
+.else
+CONFIGURE_ARGS+=--with-stream
+.endif
 .if ${PORT_OPTIONS:MSTREAM_SSL}
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
@@ -963,7 +1033,11 @@ PLIST_SUB+=	WWWDATA="@comment "
 .endif		# WITH_HTTP
 
 .if ${PORT_OPTIONS:MMAIL}
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--with-mail=dynamic
+.else
+CONFIGURE_ARGS+=--with-mail
+.endif
 .if empty(PORT_OPTIONS:MMAIL_IMAP)
 CONFIGURE_ARGS+=--without-mail_imap_module
 .endif
@@ -999,7 +1073,11 @@ LIB_DEPENDS+=	libbrotlidec.so:devel/libbrotli \
 GH_ACCOUNT+=	google:brotli
 GH_PROJECT+=	ngx_brotli:brotli
 GH_TAGNAME+=	${NGINX_BROTLI_VERSION}:brotli
+.if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_brotli}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_brotli}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}
@@ -1149,7 +1227,9 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
+.if !empty(PORT_OPTIONS:MDSO)
 	${MKDIR} ${STAGEDIR}${MODULESDIR}
+.endif
 	${MKDIR} ${STAGEDIR}${NGINX_TMPDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${STAGEDIR}${PREFIX}/sbin
 .for i in koi-utf koi-win win-utf
@@ -1175,8 +1255,10 @@ do-install:
 .endif
 
 # Install dynamic modules
+.if !empty(PORT_OPTIONS:MDSO)
 	(cd ${WRKSRC}/objs/ && ${FIND} . -name '*.so' -maxdepth 1 -type f \
 		-exec ${INSTALL_PROGRAM} "{}" ${STAGEDIR}${MODULESDIR} \;)
+.endif
 
 .if ${PORT_OPTIONS:MNAXSI}
 	${INSTALL_DATA} \
@@ -1196,6 +1278,7 @@ post-install:
 .endif
 
 # Add dynamic modules to the plist
+.if !empty(PORT_OPTIONS:MDSO)
 	(cd ${STAGEDIR}${PREFIX} && ${FIND} ${MODULESDIR:S|${PREFIX}/||} \
 		! -type d >>${TMPPLIST})
 # Update nginx.conf-dist with a list of staged dynamic modules
@@ -1205,5 +1288,6 @@ post-install:
 			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist && \
 		${CAT} ${WRKSRC}/conf/nginx.conf \
 			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist)
+.endif
 
 .include <bsd.port.mk>
