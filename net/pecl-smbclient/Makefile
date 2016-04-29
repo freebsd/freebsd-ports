@@ -13,9 +13,7 @@ COMMENT=	Smbclient wrapper extension
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	smbclient:${SAMBA_PORT}
-
-SAMBA_PORT?=	net/samba36
+LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
