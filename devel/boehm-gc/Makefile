@@ -3,7 +3,7 @@
 
 PORTNAME=	gc
 PORTVERSION=	7.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/
 PKGNAMEPREFIX=	boehm-
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	boehm-
 PKGNAMESUFFIX=	-${GC_VARIANT}
 .endif
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
 LICENSE=	BDWGC
@@ -91,7 +91,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 
 .else # ! GC_VARIANT
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/gc.man
 	@${REINPLACE_CMD} \
