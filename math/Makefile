@@ -20,6 +20,7 @@
     SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-RcppArmadillo
     SUBDIR += R-cran-RcppEigen
+    SUBDIR += R-cran-Rmpfr
     SUBDIR += R-cran-SparseM
     SUBDIR += R-cran-SuppDists
     SUBDIR += R-cran-VGAM
