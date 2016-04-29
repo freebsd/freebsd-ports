@@ -46,27 +46,18 @@ KRB5_114_PORT_DESC=		Depend on security/krb5-114
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MKRB5_PORT}
-LIB_DEPENDS=		libkrb5support.so:security/krb5
-RUN_DEPENDS=		kinit:security/krb5
-.elif ${PORT_OPTIONS:MKRB5_112_PORT}
-LIB_DEPENDS=		libkrb5support.so:security/krb5-112
-RUN_DEPENDS=		kinit:security/krb5-112
-.elif ${PORT_OPTIONS:MKRB5_113_PORT}
-LIB_DEPENDS=		libkrb5support.so:security/krb5-113
-RUN_DEPENDS=		kinit:security/krb5-113
-.elif ${PORT_OPTIONS:MKRB5_114_PORT}
-LIB_DEPENDS=		libkrb5support.so:security/krb5-114
-RUN_DEPENDS=		kinit:security/krb5-113
-.else
-BROKEN=			krb5 dependency not selected
-.endif
+KRB5_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5
+KRB5_PORT_RUN_DEPENDS=		kinit:security/krb5
+KRB5_112_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5-112
+KRB5_112_PORT_RUN_DEPENDS=		kinit:security/krb5-112
+KRB5_113_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5-113
+KRB5_113_PORT_RUN_DEPENDS=		kinit:security/krb5-113
+KRB5_114_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5-114
+KRB5_114_PORT_RUN_DEPENDS=		kinit:security/krb5-113
 
-.if ${PORT_OPTIONS:MKRB5_DOC}
-BUILD_DEPENDS+=		texi2dvi:print/texinfo \
+KRB5_DOC_BUILD_DEPENDS+=	texi2dvi:print/texinfo \
 			dvips:print/dvipsk-tetex
-INFO=			krb5-admin krb5-install krb5-user
-.endif
+KRB5_DOC_INFO=			krb5-admin krb5-install krb5-user
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
