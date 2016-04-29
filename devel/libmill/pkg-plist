@@ -1,6 +1,6 @@
 include/libmill.h
 lib/libmill.a
 lib/libmill.so
-lib/libmill.so.15
-lib/libmill.so.15.0.4
+lib/libmill.so.16
+lib/libmill.so.16.0.0
 libdata/pkgconfig/libmill.pc
