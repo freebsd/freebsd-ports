@@ -5040,6 +5040,7 @@
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-paperclip
     SUBDIR += rubygem-parser
+    SUBDIR += rubygem-pathutil
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
