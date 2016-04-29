@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rake-compiler
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
