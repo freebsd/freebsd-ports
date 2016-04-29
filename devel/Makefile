@@ -4887,6 +4887,7 @@
     SUBDIR += rubygem-excon
     SUBDIR += rubygem-execjs
     SUBDIR += rubygem-extlib
+    SUBDIR += rubygem-extras
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-faraday_middleware-multi_json
     SUBDIR += rubygem-fast-stemmer
