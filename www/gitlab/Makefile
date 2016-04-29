@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	8.6.6
+PORTVERSION=	8.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -13,13 +13,13 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	gem:devel/ruby-gems
 RUN_DEPENDS=	git>=2.7.4:devel/git \
-	gitlab-shell>=2.7.1:devel/gitlab-shell\
+	gitlab-shell>=2.7.0:devel/gitlab-shell\
 	gitlab-workhorse>=0.7.1:www/gitlab-workhorse \
 	redis>=2.8.23:databases/redis \
-	rubygem-rails4>=4.2.5.2:www/rubygem-rails4 \
+	rubygem-rails4>=4.2.6:www/rubygem-rails4 \
 	rubygem-rails-deprecated_sanitizer>=1.0.3:devel/rubygem-rails-deprecated_sanitizer \
 	rubygem-responders>=2.0:www/rubygem-responders \
-	rubygem-sprockets3>=3.3.5:devel/rubygem-sprockets3 \
+	rubygem-sprockets3>=3.6:devel/rubygem-sprockets3 \
 	rubygem-default_value_for>=3.0.1:devel/rubygem-default_value_for \
 	rubygem-pg>=0.18.2:databases/rubygem-pg \
 	rubygem-devise-rails4>=3.5.4:devel/rubygem-devise-rails4 \
@@ -88,6 +88,8 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
 	rubygem-version_sorter>=2.0.0:textproc/rubygem-version_sorter \
 	rubygem-redis-rails>=4.0.0:www/rubygem-redis-rails \
+	rubygem-redis>=3.2:databases/rubygem-redis \
+	rubygem-connection_pool>=2.0:net/rubygem-connection_pool \
 	rubygem-tinder>=1.10.0:net-im/rubygem-tinder \
 	rubygem-hipchat>=1.5.0:net-im/rubygem-hipchat \
 	rubygem-gitlab-flowdock-git-hook>=1.0.1:www/rubygem-gitlab-flowdock-git-hook \
@@ -101,6 +103,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-sanitize>=2.0:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2:textproc/rubygem-babosa \
 	rubygem-loofah>=2.0.3:textproc/rubygem-loofah \
+	rubygem-licensee>=8.0:devel/rubygem-licensee \
 	rubygem-rack-attack>=4.3.1:www/rubygem-rack-attack \
 	rubygem-ace-rails-ap>=2.0.1:www/rubygem-ace-rails-ap \
 	rubygem-mousetrap-rails>=1.4.6:www/rubygem-mousetrap-rails \
@@ -120,7 +123,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-jquery-scrollto-rails>=1.4.3:www/rubygem-jquery-scrollto-rails \
 	rubygem-jquery-ui-rails-rails4>=5.0.0:www/rubygem-jquery-ui-rails-rails4 \
 	rubygem-raphael-rails>=2.1.2:www/rubygem-raphael-rails \
-	rubygem-request_store>=1.2.0:devel/rubygem-request_store \
+	rubygem-request_store>=1.3.0:devel/rubygem-request_store \
 	rubygem-select2-rails>=3.5.9:www/rubygem-select2-rails \
 	rubygem-virtus>=1.0.1:devel/rubygem-virtus \
 	rubygem-net-ssh>=3.0.1:security/rubygem-net-ssh \
@@ -130,7 +133,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-newrelic_rpm>=3.9.4.245:devel/rubygem-newrelic_rpm \
 	rubygem-newrelic-grape>=0:devel/rubygem-newrelic-grape \
 	rubygem-newrelic_rpm>=3.14:devel/rubygem-newrelic_rpm \
-	rubygem-octokit>=3.8.0:net/rubygem-octokit \
+	rubygem-octokit>=4.3.0:net/rubygem-octokit \
 	rubygem-mail_room>=0.6.1:mail/rubygem-mail_room \
 	rubygem-email_reply_parser>=0.5.8:mail/rubygem-email_reply_parser \
 	rubygem-activerecord-deprecated_finders>=1.0.3:devel/rubygem-activerecord-deprecated_finders \
