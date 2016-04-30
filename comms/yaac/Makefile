@@ -7,7 +7,9 @@ MASTER_SITES=	SF/yetanotheraprsc/
 DISTNAME=	YAACSrc_20160321
 
 MAINTAINER=	hamradio@FreeBSD.org
-COMMENT=	Amateur Radio Station electronic trusted logbook
+COMMENT=	Platform-independent Java application for the APRS network
+
+LICENSE=	LGPL3
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
