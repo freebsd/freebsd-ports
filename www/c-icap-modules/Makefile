@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/0.4.x/
 PKGNAMESUFFIX=	-modules
 DISTNAME=	c_icap_modules-${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modules for c-icap: virus_scan and srv_url_check
 
 LICENSE=	GPLv2+
