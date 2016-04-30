@@ -3,6 +3,7 @@
 
 PORTNAME=	anet
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libanet-${PORTVERSION}

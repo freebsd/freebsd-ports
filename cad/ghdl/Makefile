@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
 
-USES=		ada gmake
+USES=		ada:5 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	tgingold
 
