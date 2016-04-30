@@ -1,5 +1,5 @@
---- Makefile.orig	1994-04-26 04:25:12.000000000 +0800
-+++ Makefile	2014-06-11 20:24:14.438631971 +0800
+--- Makefile.orig	1994-04-25 20:25:12 UTC
++++ Makefile
 @@ -15,7 +15,7 @@ MANDIR=$(PREFIX)/man/man$(MANEXT)
  # Permissions mode to use for man pages.
  MANMODE=444
