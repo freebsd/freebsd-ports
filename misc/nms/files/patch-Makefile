@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-04-30 01:05:20 UTC
++++ Makefile
+@@ -2,7 +2,7 @@ BIN=bin
+ OBJ=obj
+ SRC=src
+ 
+-CC = gcc
++CC ?= gcc
+ CFLAGS = -Wextra -Wall
+ LDLIBS = -lncurses
+ NCURSES_H = /usr/include/ncurses.h
