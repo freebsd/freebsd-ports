@@ -1,0 +1,6 @@
+bin/geth
+%%BOOTNODE%%bin/bootnode
+%%ETHTEST%%bin/ethtest
+%%EVM%%bin/evm
+%%DISASM%%bin/disasm
+%%RLPDUMP%%bin/rlpdump
