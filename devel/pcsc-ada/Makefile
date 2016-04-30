@@ -3,6 +3,7 @@
 
 PORTNAME=	pcsc-ada
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libpcscada-${PORTVERSION}

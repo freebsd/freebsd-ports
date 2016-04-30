@@ -3,7 +3,7 @@
 
 PORTNAME=	templates_parser
 PORTVERSION=	11.10.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
