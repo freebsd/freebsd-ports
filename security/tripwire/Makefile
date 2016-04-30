@@ -15,7 +15,6 @@ GH_ACCOUNT=	Tripwire
 GH_PROJECT=	tripwire-open-source
 
 NO_LICENSES_INSTALL=	yes
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
