@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	proj
-PORTVERSION=	4.9.1
+PORTVERSION=	4.9.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/proj/ \
 		http://download.osgeo.org/proj/
