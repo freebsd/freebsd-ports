@@ -231,6 +231,7 @@ include/wine/windows/d3drmdef.h
 include/wine/windows/d3drmobj.h
 include/wine/windows/d3drmwin.h
 include/wine/windows/d3dtypes.h
+include/wine/windows/d3dukmdt.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx10.h
 include/wine/windows/d3dx10async.h
@@ -265,6 +266,7 @@ include/wine/windows/dde.rh
 include/wine/windows/ddeml.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/csq.h
+include/wine/windows/ddk/d3dkmthk.h
 include/wine/windows/ddk/hidclass.h
 include/wine/windows/ddk/hidpi.h
 include/wine/windows/ddk/hidport.h
@@ -798,6 +800,7 @@ include/wine/windows/wia_lh.idl
 include/wine/windows/wia_xp.h
 include/wine/windows/wia_xp.idl
 include/wine/windows/wiadef.h
+include/wine/windows/wimgapi.h
 include/wine/windows/winbase.h
 include/wine/windows/wincodec.h
 include/wine/windows/wincodec.idl
@@ -1698,6 +1701,7 @@ lib32/wine/fakedlls/ext-ms-win-gdi-devcaps-l1-1-0.dll
 %%STAGING%%lib32/wine/fakedlls/ext-ms-win-xaml-pal-l1-1-0.dll
 lib32/wine/fakedlls/extrac32.exe
 lib32/wine/fakedlls/faultrep.dll
+%%STAGING%%lib32/wine/fakedlls/feclient.dll
 lib32/wine/fakedlls/findstr.exe
 lib32/wine/fakedlls/fltlib.dll
 %%STAGING%%lib32/wine/fakedlls/fltmgr.sys
@@ -2001,6 +2005,7 @@ lib32/wine/fakedlls/twain.dll16
 lib32/wine/fakedlls/twain_32.dll
 lib32/wine/fakedlls/typelib.dll16
 %%STAGING%%lib32/wine/fakedlls/ucrtbase.dll
+%%STAGING%%lib32/wine/fakedlls/uiautomationcore.dll
 lib32/wine/fakedlls/unicows.dll
 lib32/wine/fakedlls/uninstaller.exe
 lib32/wine/fakedlls/unlodctr.exe
@@ -2122,6 +2127,7 @@ lib32/wine/fakedlls/xolehlp.dll
 lib32/wine/fakedlls/xpsprint.dll
 lib32/wine/fakedlls/xpssvcs.dll
 lib32/wine/faultrep.dll.so
+%%STAGING%%lib32/wine/feclient.dll.so
 lib32/wine/findstr.exe.so
 lib32/wine/fltlib.dll.so
 %%STAGING%%lib32/wine/fltmgr.sys.so
@@ -2609,6 +2615,7 @@ lib32/wine/twain.dll16.so
 lib32/wine/twain_32.dll.so
 lib32/wine/typelib.dll16.so
 %%STAGING%%lib32/wine/ucrtbase.dll.so
+%%STAGING%%lib32/wine/uiautomationcore.dll.so
 lib32/wine/unicows.dll.so
 lib32/wine/uninstaller.exe.so
 lib32/wine/unlodctr.exe.so
