@@ -1286,9 +1286,9 @@ post-install:
 	(cd ${STAGEDIR} && \
 		${FIND} ${MODULESDIR:S|^/||} -type f -name '*.so' \
 			-exec ${ECHO_CMD} "load_module /{};" \; \
-			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist && \
-		${CAT} ${WRKSRC}/conf/nginx.conf \
 			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist)
 .endif
+	${CAT} ${WRKSRC}/conf/nginx.conf \
+		>>${STAGEDIR}${ETCDIR}/nginx.conf-dist
 
 .include <bsd.port.mk>
