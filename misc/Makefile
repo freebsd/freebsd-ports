@@ -275,6 +275,7 @@
     SUBDIR += mtx
     SUBDIR += najitool
     SUBDIR += newer
+    SUBDIR += nms
     SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nut
