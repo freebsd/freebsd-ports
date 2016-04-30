@@ -3,7 +3,7 @@
 
 PORTNAME=	ahven
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ahven-framework.com/releases/
 
