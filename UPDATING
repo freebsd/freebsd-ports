@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20160414:
+20160424:
   AFFECTS: Users of net-mgmt/icinga2
   AUTHOR: lme@FreeBSD.org
 
@@ -68,6 +68,16 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o www/node www/node-devel
     or
   # portupgrade -o www/node www/node-devel
+
+20160413:
+  AFFECTS: multimedia/x264
+  AUTHOR: jbeich@FreeBSD.org
+
+  LSMASH replaced GPAC by default. If you use BATCH=y in /etc/make.conf
+  and hit below error make sure to re-run "make config".
+
+  ====> You cannot select multiple options from the MP4 radio
+  *** Error code 1
 
 20160412:
   AFFECTS: Users of net/samba42 and net/samba/43
