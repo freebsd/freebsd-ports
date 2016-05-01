@@ -850,6 +850,7 @@
     SUBDIR += rnd_jue
     SUBDIR += robocalypto
     SUBDIR += robocode
+    SUBDIR += robocode-naval
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
     SUBDIR += rocksndiamonds

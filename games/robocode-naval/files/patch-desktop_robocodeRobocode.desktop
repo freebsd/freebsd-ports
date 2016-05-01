@@ -1,0 +1,16 @@
+--- desktop/robocodeRobocode.desktop.orig	2015-03-03 01:06:18 UTC
++++ desktop/robocodeRobocode.desktop
+@@ -1,9 +1,9 @@
+ [Desktop Entry]
+ Type=Application
+ Version=1.0
+-Name=Robocode
+-GenericName=Tank AI programming game for Java and .NET
++Name=Robocode-Naval
++GenericName=Naval AI programming game for Java and .NET
+ Comment=Build the best - destroy the rest!
+-Icon=robocode
+-Exec=robocode-Robocode
++Icon=robocode-naval
++Exec=robocode-NavalRobocode
+ Categories=Game;StrategyGame;
