@@ -633,6 +633,7 @@
     SUBDIR += py-pylast
     SUBDIR += py-pyliblo
     SUBDIR += py-shout
+    SUBDIR += py-soundcloud
     SUBDIR += py-speex
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
