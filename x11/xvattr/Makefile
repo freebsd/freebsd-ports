@@ -5,13 +5,11 @@ PORTNAME=	xvattr
 PORTVERSION=	1.3
 PORTREVISION=	8
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
-		http://www.dtek.chalmers.se/groups/dvd/dist/
+MASTER_SITES=	http://xvattr.sourcearchive.com/downloads/1.3/
+DISTFILES=	xvattr_1.3.orig.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Getting and setting Xv attributes
-
-BROKEN=		unfetchable
 
 USE_XORG=	x11 xv
 WANT_GNOME=	yes
