@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: bitcoind
+# REQUIRE: LOGIN
+
+. /etc/rc.subr
+
+name="bitcoind"
+rcvar=bitcoind_enable
+command="%%PREFIX%%/bin/bitcoind"
+
+load_rc_config $name
+run_rc_command "$1"
