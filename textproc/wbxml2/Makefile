@@ -3,6 +3,7 @@
 
 PORTNAME=	wbxml2
 PORTVERSION=	0.11.4
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	SF/libwbxml/libwbxml/${PORTVERSION}
 DISTNAME=	libwbxml-${PORTVERSION}
