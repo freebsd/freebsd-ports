@@ -18,3 +18,10 @@
  IF( ENABLE_INSTALL_DOC )
  	ADD_DOCUMENTATION( TEXT FILE ${CMAKE_SOURCE_DIR}/BUGS )
  	ADD_DOCUMENTATION( TEXT FILE ${CMAKE_SOURCE_DIR}/ChangeLog )
+@@ -260,6 +260,3 @@ INCLUDE( CPack )
+ ### CTest ########################################
+ 
+ ADD_SUBDIRECTORY( test/tools )
+-IF(CHECK_FOUND)
+-    ADD_SUBDIRECTORY( test/api )
+-ENDIF(CHECK_FOUND)
