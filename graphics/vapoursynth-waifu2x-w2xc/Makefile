@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	waifu2x-w2xc
-DISTVERSION=	r5
+DISTVERSION=	r6
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
