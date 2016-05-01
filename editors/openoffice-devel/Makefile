@@ -180,7 +180,7 @@ PDFIMPORT_CONFIGURE_ENABLE=	pdfimport
 WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
 
 # Don't run gnome-post-icons until after post-install generates the plist
-TARGET_ORDER_OVERRIDE= 710:gnome-post-icons
+TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
 
 .include <bsd.port.pre.mk>
 
