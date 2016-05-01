@@ -153,9 +153,14 @@ for branch in 9.x 10.x 11.x; do
     eval _osver=\$OSVERSION${release}
     export OSVERSION=${_osver}
 
+    if [ "${release}" = "9" ]; then
+        MAKE_CMD=fmake
+    else
+        MAKE_CMD=make
+    fi
     echo "Building INDEX for ${branch} with OSVERSION=${OSVERSION}"
     cd ${PORTSDIR}
-    ((make index 2> index.err) > index.out) || indexfail ${branch}
+    ((${MAKE_CMD} index 2> index.err) > index.out) || indexfail ${branch}
     if [ -s index.err ]; then
         indexfail ${branch}
     fi
