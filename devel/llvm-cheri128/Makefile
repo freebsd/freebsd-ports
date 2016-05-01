@@ -8,4 +8,4 @@ COMMENT=	LLVM and Clang with support for the CHERI architecture (128-bit)
 
 MASTERDIR=	${.CURDIR}/../llvm-cheri
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"

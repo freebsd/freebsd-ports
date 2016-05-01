@@ -1417,6 +1417,7 @@
     SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
+    SUBDIR += llvm-cheri128
     SUBDIR += llvm-devel
     SUBDIR += llvm33
     SUBDIR += llvm34
