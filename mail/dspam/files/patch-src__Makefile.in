@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2014-05-14 17:35:13.000000000 -0300
-+++ src/Makefile.in	2014-05-14 17:35:48.000000000 -0300
-@@ -1117,11 +1117,11 @@
+--- src/Makefile.in.orig        2012-04-23 17:53:45 UTC
++++ src/Makefile.in
+@@ -1249,11 +1249,11 @@ install-exec-hook:
  		mkdir -p $(DESTDIR)$(sysconfdir); \
  		chmod 755 $(DESTDIR)$(sysconfdir); \
  	fi

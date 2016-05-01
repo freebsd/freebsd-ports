@@ -2,7 +2,8 @@
 %%HASH%%bin/csscompress
 %%HASH%%bin/cssconvert
 %%HASH%%bin/cssstat
-@(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%,%%DSPAM_MODE%%) bin/dspam
+%%SETUID%%@(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%,%%DSPAM_MODE%%) bin/dspam
+%%NOSETUID%%bin/dspam
 bin/dspamc
 bin/dspam_2sql
 bin/dspam_admin
@@ -65,10 +66,14 @@ man/man3/libdspam.3.gz
 %%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so
 %%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so.7
 %%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so.7.0.0
-%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.a
-%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so
-%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so.7
-%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so.7.0.0
+%%DYNAMIC%%%%SQLITE2%%lib/dspam/libsqlite_drv.so.7.0.0
+%%DYNAMIC%%%%SQLITE2%%lib/dspam/libsqlite_drv.a
+%%DYNAMIC%%%%SQLITE2%%lib/dspam/libsqlite_drv.so
+%%DYNAMIC%%%%SQLITE2%%lib/dspam/libsqlite_drv.so.7
+%%DYNAMIC%%%%SQLITE3%%lib/dspam/libsqlite3_drv.a
+%%DYNAMIC%%%%SQLITE3%%lib/dspam/libsqlite3_drv.so
+%%DYNAMIC%%%%SQLITE3%%lib/dspam/libsqlite3_drv.so.7
+%%DYNAMIC%%%%SQLITE3%%lib/dspam/libsqlite3_drv.so.7.0.0
 libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -206,8 +211,9 @@ libdata/pkgconfig/dspam.pc
 %%WebUI%%%%WWWDIR%%/templates/ro/nav_preferences.html
 %%WebUI%%%%WWWDIR%%/templates/ro/nav_quarantine.html
 %%WebUI%%%%WWWDIR%%/templates/ro/nav_viewmessage.html
-%%DSPAM_HOME%%/firstrun.txt.sample
-%%DSPAM_HOME%%/firstspam.txt.sample
-%%DSPAM_HOME%%/quarantinefull.txt.sample
+@(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%) %%DSPAM_HOME%%/firstrun.txt.sample
+@(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%) %%DSPAM_HOME%%/firstspam.txt.sample
+@(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%) %%DSPAM_HOME%%/quarantinefull.txt.sample
 @dir(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%,%%DSPAM_HOME_MODE%%) %%DSPAM_HOME%%
-@dir(%%DSPAM_HOME_OWNER%%,%%DSPAM_HOME_GROUP%%) %%LOG_DIR%%
+@dir(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%) %%LOG_DIR%%
+@dir(%%DSPAM_OWNER%%,%%DSPAM_GROUP%%) %%RUN_DIR%%
