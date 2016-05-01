@@ -138,6 +138,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/html/home.png
 %%DOCSDIR%%%%PORTVERSION%%/html/html/index.html
 %%DOCSDIR%%%%PORTVERSION%%/html/html/left.png
+%%DOCSDIR%%%%PORTVERSION%%/html/html/libvirt-libvirt-common.html
 %%DOCSDIR%%%%PORTVERSION%%/html/html/libvirt-virterror.html
 %%DOCSDIR%%%%PORTVERSION%%/html/html/right.png
 %%DOCSDIR%%%%PORTVERSION%%/html/html/up.png
