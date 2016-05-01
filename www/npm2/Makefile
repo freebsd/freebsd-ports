@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	2.14.7
-PORTREVISION=	3
+PORTVERSION=	2.15.3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMESUFFIX=	2
@@ -39,8 +38,7 @@ SHEBANG_FILES=	lib/utils/completion.sh \
 		node_modules/request/node_modules/node-uuid/benchmark/bench.sh \
 		scripts/clean-old.sh \
 		scripts/release.sh \
-		scripts/relocate.sh \
-		test/update-test.sh
+		scripts/relocate.sh
 
 NODE010_RUN_DEPENDS=	node010>=0.8.0:www/node010
 NODE012_RUN_DEPENDS=	node012>=0.8.0:www/node012
