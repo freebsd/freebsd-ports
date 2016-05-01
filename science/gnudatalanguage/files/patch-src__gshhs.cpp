@@ -1,4 +1,4 @@
---- src/gshhs.cpp.orig	2015-04-22 19:37:22 UTC
+--- src/gshhs.cpp.orig	2016-04-29 17:03:25 UTC
 +++ src/gshhs.cpp
 @@ -175,7 +175,7 @@ private:
          double ss = h.south * GSHHS_SCL;

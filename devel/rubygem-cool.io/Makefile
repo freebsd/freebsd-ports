@@ -15,7 +15,6 @@ RUN_DEPENDS=	\
 	rubygem-iobuffer>=1.0.0:devel/rubygem-iobuffer
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

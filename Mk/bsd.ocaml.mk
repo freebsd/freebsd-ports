@@ -64,25 +64,25 @@ OCAML_SITELIBDIR?=	${OCAML_LIBDIR}/site-lib
 #
 # OCaml compiler port dependency
 #
-OCAMLC_PORT?=		${PORTSDIR}/lang/ocaml
+OCAMLC_PORT?=		lang/ocaml
 OCAMLC_DEPEND?=		${OCAMLC}:${OCAMLC_PORT}
 
 #
 # OCaml package manager port dependency
 #
-OCAMLFIND_PORT?=	${PORTSDIR}/devel/ocaml-findlib
+OCAMLFIND_PORT?=	devel/ocaml-findlib
 OCAMLFIND_DEPEND?=	${OCAMLFIND}:${OCAMLFIND_PORT}
 
 #
 # OCaml camlp4 port dependency
 #
-CAMLP4_PORT?=		${PORTSDIR}/devel/ocaml-camlp4
+CAMLP4_PORT?=		devel/ocaml-camlp4
 CAMLP4_DEPEND?=		${CAMLP4}:${CAMLP4_PORT}
 
 #
 # OCaml TK bindings dependency
 #
-OCAMLTK_PORT?=		${PORTSDIR}/x11-toolkits/ocaml-labltk
+OCAMLTK_PORT?=		x11-toolkits/ocaml-labltk
 OCAMLTK_DEPENDS?=	${OCAMLTK}:${OCAMLTK_PORT}
 
 #

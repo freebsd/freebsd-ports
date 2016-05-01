@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LGPL-2.1
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		pkgconfig
+USES=		gem pkgconfig
 
 .include <bsd.port.mk>

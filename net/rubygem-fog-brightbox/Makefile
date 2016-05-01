@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-fog-core>=1.22:devel/rubygem-fog-core \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

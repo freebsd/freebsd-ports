@@ -3,6 +3,7 @@
 
 PORTNAME=	twitter
 PORTVERSION=	5.16.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -25,7 +26,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

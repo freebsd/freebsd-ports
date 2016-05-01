@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elixir
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES+=	http://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc

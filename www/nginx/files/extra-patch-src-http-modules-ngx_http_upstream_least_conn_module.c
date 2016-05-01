@@ -1,4 +1,4 @@
---- src/http/modules/ngx_http_upstream_least_conn_module.c.orig	2016-01-26 14:39:32 UTC
+--- src/http/modules/ngx_http_upstream_least_conn_module.c.orig	2016-02-24 14:53:24 UTC
 +++ src/http/modules/ngx_http_upstream_least_conn_module.c
 @@ -9,6 +9,9 @@
  #include <ngx_core.h>
@@ -8,9 +8,9 @@
 +#include "ngx_http_upstream_check_module.h"
 +#endif
  
- typedef struct {
-     ngx_uint_t                        *conns;
-@@ -203,6 +206,16 @@ ngx_http_upstream_get_least_conn_peer(ng
+ static ngx_int_t ngx_http_upstream_init_least_conn_peer(ngx_http_request_t *r,
+     ngx_http_upstream_srv_conf_t *us);
+@@ -148,6 +151,16 @@ ngx_http_upstream_get_least_conn_peer(ng
              continue;
          }
  
@@ -27,7 +27,7 @@
          if (peer->max_fails
              && peer->fails >= peer->max_fails
              && now - peer->checked <= peer->fail_timeout)
-@@ -256,6 +269,16 @@ ngx_http_upstream_get_least_conn_peer(ng
+@@ -199,6 +212,16 @@ ngx_http_upstream_get_least_conn_peer(ng
                  continue;
              }
  
@@ -41,6 +41,6 @@
 +            }
 +#endif
 +
-             if (lcp->conns[i] * best->weight != lcp->conns[p] * peer->weight) {
+             if (peer->conns * best->weight != best->conns * peer->weight) {
                  continue;
              }

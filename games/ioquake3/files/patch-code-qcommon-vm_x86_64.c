@@ -1,6 +1,6 @@
---- code/qcommon/vm_x86_64.c.orig	2009-08-30 20:50:41.000000000 +0200
-+++ code/qcommon/vm_x86_64.c	2009-08-30 20:51:43.000000000 +0200
-@@ -246,7 +246,7 @@
+--- code/qcommon/vm_x86_64.c.orig	2008-08-06 16:09:29 UTC
++++ code/qcommon/vm_x86_64.c
+@@ -246,7 +246,7 @@ void emit(const char* fmt, ...)
  #else
  #define JMPIARG \
  	emit("movq $%lu, %%rax", vm->codeBase+vm->instructionPointers[iarg]); \

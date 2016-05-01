@@ -23,8 +23,7 @@ RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.14:devel/rubygem-apipie-bindings \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hammer/cli.modules.d

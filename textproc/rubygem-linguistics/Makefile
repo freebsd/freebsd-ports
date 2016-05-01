@@ -17,9 +17,7 @@ RUN_DEPENDS=	rubygem-loggability>=0.11:textproc/rubygem-loggability
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	lib/linguistics.rb \
 		lib/linguistics/en/linkparser.rb
 

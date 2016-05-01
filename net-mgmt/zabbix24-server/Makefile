@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix24
-PORTVERSION=	2.4.7
-PORTREVISION?=	1
+PORTVERSION=	2.4.8
+PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
 DISTNAME=	zabbix-${PORTVERSION}
 
-MAINTAINER=	pakhom@pakhom.spb.ru
+MAINTAINER=	pg@pakhom.spb.ru
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//})
 
 LICENSE=	GPLv2

@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-amq-protocol>=2.0.1:net/rubygem-amq-protocol \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

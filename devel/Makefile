@@ -1206,6 +1206,7 @@
     SUBDIR += libfsntfs
     SUBDIR += libftdi
     SUBDIR += libftdi1
+    SUBDIR += libfwnt
     SUBDIR += libfwsi
     SUBDIR += libg19
     SUBDIR += libg19draw
@@ -1416,6 +1417,7 @@
     SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
+    SUBDIR += llvm-cheri128
     SUBDIR += llvm-devel
     SUBDIR += llvm33
     SUBDIR += llvm34
@@ -4887,6 +4889,7 @@
     SUBDIR += rubygem-excon
     SUBDIR += rubygem-execjs
     SUBDIR += rubygem-extlib
+    SUBDIR += rubygem-extras
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-faraday_middleware-multi_json
     SUBDIR += rubygem-fast-stemmer
@@ -4911,6 +4914,7 @@
     SUBDIR += rubygem-foreigner
     SUBDIR += rubygem-foreman
     SUBDIR += rubygem-formatador
+    SUBDIR += rubygem-forwardable-extended
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-gemcutter
@@ -5038,6 +5042,7 @@
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-paperclip
     SUBDIR += rubygem-parser
+    SUBDIR += rubygem-pathutil
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform

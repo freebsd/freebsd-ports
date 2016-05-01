@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	c-icap
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.4.x/
 DISTNAME=	c_icap-${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICAP server implementation
 
 LICENSE=	LGPL21
@@ -20,10 +20,11 @@ CPE_VENDOR=	c-icap_project
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	c-icap
 
-OPTIONS_DEFINE=	BDB IPV6 LDAP PERL POSIXSEM LARGE_FILES
+OPTIONS_DEFINE=	BDB IPV6 LDAP PERL POSIXSEM LARGE_FILES MEMCACHE
 OPTIONS_DEFAULT=	IPV6
 LARGE_FILES_DESC=	Enable large files support
 POSIXSEM_DESC=		Use POSIX Semaphores instead of SYSV IPC
+MEMCACHE_DESC=		Enable memcached
 
 CICAP_USER=	c_icap
 CICAP_UID=	959
@@ -52,6 +53,15 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--enable-large-files
 .else
 CONFIGURE_ARGS+=	--disable-large-files
+.endif
+
+.if ${PORT_OPTIONS:MMEMCACHE}
+CONFIGURE_ARGS+=	--with-memcached
+BUILD_DEPENDS=		memcached:databases/memcached
+PLIST_SUB+=		MEMCACHE=""
+.else
+CONFIGURE_ARGS+=	--without-memcached
+PLIST_SUB+=		MEMCACHE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}

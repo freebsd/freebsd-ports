@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_gnat
 PORTVERSION=	2013
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 

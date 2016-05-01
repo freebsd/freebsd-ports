@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.3.1.s20160419
+PORTVERSION=	5.3.1.s20160426
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/snapshots/${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -64,8 +64,6 @@ CONFIGURE_ARGS+=	--disable-multilib
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == powerpc64

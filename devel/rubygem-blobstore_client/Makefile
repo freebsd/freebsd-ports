@@ -2,6 +2,7 @@
 
 PORTNAME=	blobstore_client
 PORTVERSION=	1.3215.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +18,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-resources>=2.2.0:devel/rubygem-aws-sdk-resources \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/blobstore_client_console
 

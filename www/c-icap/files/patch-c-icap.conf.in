@@ -1,0 +1,19 @@
+--- c-icap.conf.in.orig	2016-03-29 09:27:15 UTC
++++ c-icap.conf.in
+@@ -123,6 +123,16 @@ MaxRequestsPerChild  0
+ # Default:
+ #	InterProcessLockingScheme file
+ 
++# TAG: ListenAddress
++# Format: ListenAddress address
++# Description:
++#	Network address that the c-icap server uses to listen to requests.
++#	By default c-icap will bind to all available network addresses. Use
++#	this directive to restrict it to specific network address.
++# Default:
++#	No value 
++ListenAddress 127.0.0.1
++
+ # TAG: Port
+ # Format: Port port
+ # Description:

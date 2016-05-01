@@ -11,11 +11,9 @@ COMMENT=	Large scale deploys using BitTorrent
 
 LICENSE=	APACHE20
 
-USES=		python
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem python
 
 .include <bsd.port.mk>

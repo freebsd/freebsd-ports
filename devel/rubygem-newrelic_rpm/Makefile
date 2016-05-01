@@ -17,9 +17,7 @@ LICENSE_PERMS_NEWRELIC=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-acc
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	test/script/*.sh
 
 PLIST_FILES=	bin/mongrel_rpm bin/newrelic bin/newrelic_cmd bin/nrdebug

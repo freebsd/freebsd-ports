@@ -14,6 +14,7 @@
     SUBDIR += 54321
     SUBDIR += 7kaa
     SUBDIR += CaribbeanStud
+    SUBDIR += Cockatrice
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += abbayedesmorts
@@ -849,6 +850,7 @@
     SUBDIR += rnd_jue
     SUBDIR += robocalypto
     SUBDIR += robocode
+    SUBDIR += robocode-naval
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
     SUBDIR += rocksndiamonds

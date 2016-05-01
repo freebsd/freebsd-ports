@@ -19,8 +19,7 @@ RUN_DEPENDS=	rubygem-railties>=3.2.0:www/rubygem-railties \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PORTSCOUT=	limit:^3\.
 

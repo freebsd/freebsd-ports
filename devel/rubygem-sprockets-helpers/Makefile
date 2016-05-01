@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-sprockets3>=2.2:devel/rubygem-sprockets3
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

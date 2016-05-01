@@ -17,8 +17,7 @@ RUN_DEPENDS=	rubygem-ffi-compiler>=0.0.2:devel/rubygem-ffi-compiler \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	invokes SSE compiler flags

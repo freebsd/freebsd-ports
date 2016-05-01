@@ -1,0 +1,6 @@
+Airbrussh is a concise log formatter for Capistrano and SSHKit. It displays
+well-formatted, useful log output that is easy to read. Airbrussh also saves
+Capistrano's verbose output to a separate log file just in case you need
+additional details for troubleshooting.
+
+WWW: https://github.com/mattbrictson/airbrussh

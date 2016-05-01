@@ -1,0 +1,20 @@
+--- bin/python/isc/Makefile.in.orig	2016-04-29 05:30:53 UTC
++++ bin/python/isc/Makefile.in
+@@ -30,7 +30,9 @@ TARGETS =	parsetab.py parsetab.pyc \
+ 
+ @BIND9_MAKE_RULES@
+ 
+-%.pyc: %.py
++.SUFFIXES: .py .pyc
++
++.py.pyc:
+ 	$(PYTHON) -m compileall .
+ 
+ parsetab.py parsetab.pyc: policy.py
+@@ -64,4 +66,4 @@ clean distclean::
+ 	rm -f *.pyc parser.out parsetab.py
+ 
+ distclean::
+-	rm -Rf utils.py
+\ No newline at end of file
++	rm -Rf utils.py

@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-sawyer>=0.7.0:www/rubygem-sawyer
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

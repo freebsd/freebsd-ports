@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gap
-PORTVERSION=	4.8.2.${GAP_DISTDATE}
+PORTVERSION=	4.8.3.${GAP_DISTDATE}
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap48/tar.bz2/ \
 		ftp://ftp.stack.nl/pub/users/johans/gap/ \
@@ -12,9 +12,9 @@ DISTNAME=	${GAP_VERSION}p${PORTVERSION:R:E}_${GAP_DISTTIME}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GAP is a system for computational discrete algebra
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libgmp.so:math/gmp
+
+BROKEN_powerpc64=	Does not build
 
 USES=		gmake shebangfix tar:bzip2
 SHEBANG_FILES=	configure \
@@ -34,7 +34,7 @@ ALL_TARGET=	default
 MAKE_JOBS_UNSAFE=yes
 
 GAP_VERSION=	${PORTNAME}${PORTVERSION:R:R:S/./r/}	# gap4r5
-GAP_DISTTIME=	2016_02_20-18_51
+GAP_DISTTIME=	2016_03_19-22_17
 GAP_DISTDATE=	${GAP_DISTTIME:C/-.*//:S/_//g}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
 WRKSRC=		${WRKDIR}/${GAP_VERSION}

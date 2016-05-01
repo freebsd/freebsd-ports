@@ -18,10 +18,8 @@ RUN_DEPENDS=	rubygem-haml>0:www/rubygem-haml \
 		rubygem-sinatra>0:www/rubygem-sinatra
 
 NO_ARCH=	yes
-USES=		gettext
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem gettext
 PLIST_FILES=	bin/rabbirack
 
 .include <bsd.port.mk>

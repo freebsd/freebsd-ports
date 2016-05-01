@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexmock
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

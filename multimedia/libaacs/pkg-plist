@@ -5,5 +5,5 @@ include/libaacs/filesystem.h
 lib/libaacs.a
 lib/libaacs.so
 lib/libaacs.so.0
-lib/libaacs.so.0.5.0
+lib/libaacs.so.0.5.1
 libdata/pkgconfig/libaacs.pc

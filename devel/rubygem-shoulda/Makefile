@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-shoulda-context>=1.0.1:devel/rubygem-shoulda-context \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

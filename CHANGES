@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160428
+AUTHOR: mat@FreeBSD.org
+
+  USE_RUBYGEMS has been replaced by USES=gem.
+
+20160426:
+AUTHOR: mat@FreeBSD.org
+
+  USE_MYSQL and USE_BDB have been replaced by USES=mysql and USES=bdb.
+
+  WANT_BDB_VER=XX should be replaced by USES=bdb:XX.
+
 20160414:
 AUTHOR: mat@FreeBSD.org
 

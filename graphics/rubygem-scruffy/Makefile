@@ -15,8 +15,7 @@ LICENSE=	MIT
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#{options|0 0 #{options|' ${WRKSRC}/lib/scruffy/renderers/base.rb

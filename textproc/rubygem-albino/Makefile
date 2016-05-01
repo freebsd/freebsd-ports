@@ -14,11 +14,9 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6:devel/rubygem-posix-spawn \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0.8:textproc/py-pygments
 
-USES=		python
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem python
 
 .include <bsd.port.mk>

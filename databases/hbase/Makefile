@@ -3,6 +3,7 @@
 
 PORTNAME=	hbase
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION} \
 		http://kev009.com/freebsd/:maven

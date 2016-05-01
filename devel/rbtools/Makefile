@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	${ORIGNAME:tl}
-DISTVERSION=	0.7.5
+DISTVERSION=	0.7.6
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION:R}/
 DISTNAME=	${ORIGNAME}-${DISTVERSION}

@@ -17,6 +17,19 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.10.2_2
+#
+
+Port Changes:
+- Runs as dspam:dspam instead of root:mail [1]
+- Default run directory is now /var/run/dspam [1]
+- Default daemon/client communication port is now 2424 [1]
+- New SETUID option to enable old insecure behavior [1]
+
+[1] Questionable ownership and security on mail/dspam (PR #115957)
+
+
+###########################################################################
 # dspam-3.10.2
 #
 

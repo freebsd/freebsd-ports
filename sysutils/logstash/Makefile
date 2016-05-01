@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logstash
-PORTVERSION=	2.1.0
+PORTVERSION=	2.3.2
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://download.elastic.co/logstash/logstash/
 

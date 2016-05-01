@@ -21,9 +21,7 @@ RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler \
 		rubygem-rake>=0:devel/rubygem-rake
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	spec10/public/webrat/test_app/gems/gems/erubis-2.6.2/bin/erubis \
 		spec10/public/webrat/test_app/gems/gems/erubis-2.6.2/contrib/erubis
 

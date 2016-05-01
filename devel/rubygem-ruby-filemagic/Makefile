@@ -13,7 +13,6 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

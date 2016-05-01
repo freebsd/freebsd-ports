@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-devise>=1.3:devel/rubygem-devise \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

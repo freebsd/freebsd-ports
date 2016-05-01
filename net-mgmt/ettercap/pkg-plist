@@ -1,5 +1,5 @@
 bin/ettercap
-%%DESKTOP%%bin/ettercap-pkexec
+%%DESKTOP%%%%GTK2%%bin/ettercap-pkexec
 bin/etterfilter
 bin/etterlog
 @sample etc/etter.conf.sample
@@ -50,6 +50,7 @@ man/man8/ettercap_curses.8.gz
 man/man8/etterfilter.8.gz
 man/man8/etterlog.8.gz
 %%PLUGINS%%man/man8/ettercap_plugins.8.gz
-%%DESKTOP%%share/applications/ettercap.desktop
-%%DESKTOP%%share/pixmaps/ettercap.svg
-%%DESKTOP%%share/polkit-1/actions/org.pkexec.ettercap.policy
+%%DESKTOP%%%%GTK2%%share/appdata/ettercap.appdata.xml
+%%DESKTOP%%%%GTK2%%share/applications/ettercap.desktop
+%%DESKTOP%%%%GTK2%%share/pixmaps/ettercap.svg
+%%DESKTOP%%%%GTK2%%share/polkit-1/actions/org.pkexec.ettercap.policy

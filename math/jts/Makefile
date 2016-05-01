@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jts
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	math databases
 MASTER_SITES=	SF/${PORTNAME}-topo-suite/${PORTNAME}/${PORTVERSION}
 
@@ -20,7 +20,7 @@ USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
 
 VER=		${PORTVERSION:tl}
-JARFILES=	JTS_Test acme jts-${VER}
+JARFILES=	JTS_Test jts-${VER} jtsio-${VER}
 
 OPTIONS_DEFINE=	DOCS
 

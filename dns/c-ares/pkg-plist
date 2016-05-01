@@ -23,6 +23,7 @@ man/man3/ares_free_data.3.gz
 man/man3/ares_free_hostent.3.gz
 man/man3/ares_free_string.3.gz
 man/man3/ares_get_servers.3.gz
+man/man3/ares_get_servers_ports.3.gz
 man/man3/ares_gethostbyaddr.3.gz
 man/man3/ares_gethostbyname.3.gz
 man/man3/ares_gethostbyname_file.3.gz
@@ -49,8 +50,16 @@ man/man3/ares_query.3.gz
 man/man3/ares_save_options.3.gz
 man/man3/ares_search.3.gz
 man/man3/ares_send.3.gz
+man/man3/ares_set_local_dev.3.gz
+man/man3/ares_set_local_ip4.3.gz
+man/man3/ares_set_local_ip6.3.gz
 man/man3/ares_set_servers.3.gz
+man/man3/ares_set_servers_csv.3.gz
+man/man3/ares_set_servers_ports.3.gz
+man/man3/ares_set_servers_ports_csv.3.gz
 man/man3/ares_set_socket_callback.3.gz
+man/man3/ares_set_socket_configure_callback.3.gz
+man/man3/ares_set_sortlist.3.gz
 man/man3/ares_strerror.3.gz
 man/man3/ares_timeout.3.gz
 man/man3/ares_version.3.gz

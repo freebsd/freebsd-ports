@@ -12,8 +12,7 @@ COMMENT=	LALR(1) parser generator for Ruby
 LICENSE=	LGPL21
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/racc bin/racc2y bin/y2racc
 
 .include <bsd.port.mk>

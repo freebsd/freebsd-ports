@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-data_objects>=0.10.13:databases/rubygem-data_objects
 
 USE_MYSQL=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -747,6 +747,5 @@
 %%WWWDIR%%/usergrps.php
 %%WWWDIR%%/users.php
 %%WWWDIR%%/zabbix.php
-@dir %%WWWDIR%%/images/flash
 @dir %%WWWDIR%%/local/app/controllers
 @dir %%WWWDIR%%/local/app/views

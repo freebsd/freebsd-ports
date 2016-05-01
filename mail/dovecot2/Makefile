@@ -13,7 +13,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.23
+PORTVERSION=	2.2.24
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -99,7 +99,7 @@ LUCENE_LIB_DEPENDS=	libclucene-core.so:textproc/clucene
 
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	mysql
 
 PGSQL_USES=		pgsql

@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-merb-core>=1.1.3:www/rubygem-merb-core
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

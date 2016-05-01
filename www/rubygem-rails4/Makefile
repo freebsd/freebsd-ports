@@ -44,9 +44,7 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:mail/rubygem-actionmailer4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		cpe
+USES=		cpe gem
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails

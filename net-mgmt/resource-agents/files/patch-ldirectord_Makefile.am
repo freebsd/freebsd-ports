@@ -1,0 +1,13 @@
+Disable installation of init.d script.
+
+--- ldirectord/Makefile.am.orig	2016-02-03 10:57:55 UTC
++++ ldirectord/Makefile.am
+@@ -22,7 +22,7 @@ CLEANFILES	       	= ldirectord.8
+ 
+ EXTRA_DIST              = ldirectord ldirectord.cf
+ 
+-SUBDIRS			= logrotate.d init.d OCF systemd
++SUBDIRS			= logrotate.d OCF systemd
+ 
+ ldirectord.8: ldirectord
+ 	$(POD2MAN) --section=8 $< > $@

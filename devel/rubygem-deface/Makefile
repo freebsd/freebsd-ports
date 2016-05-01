@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-colorize>=0.5.8:devel/rubygem-colorize \
 		rubygem-rails4>=3.1:www/rubygem-rails4
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

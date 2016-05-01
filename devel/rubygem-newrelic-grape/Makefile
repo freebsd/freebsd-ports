@@ -16,7 +16,6 @@ RUN_DEPENDS?=	rubygem-grape>=0:devel/rubygem-grape \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	redis>=0:databases/redis
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		gmake
+USES=		gem gmake
 
 .include <bsd.port.mk>

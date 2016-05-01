@@ -15,9 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/tidy-1.1.2.gemspec:textproc/rubygem-tidy
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
 USE_LDCONFIG=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	${GEM_LIB_DIR}/lib/tidy/libtidy.so
 
 .include <bsd.port.pre.mk>

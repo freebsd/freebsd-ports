@@ -3,6 +3,7 @@
 
 PORTNAME=	matreshka
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://forge.ada-ru.org/matreshka/downloads/
 

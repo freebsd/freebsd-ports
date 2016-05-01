@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Locale-SubCountry
-PORTVERSION=	1.64
+PORTVERSION=	1.65
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,8 @@ COMMENT=	Convert state, province, county etc. names to/from code
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USES=		perl5
+NO_ARCH=	yes
+USES=		dos2unix perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

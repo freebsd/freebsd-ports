@@ -26,9 +26,7 @@ RUN_DEPENDS=	rubygem-benelux>=0.6.1:devel/rubygem-benelux \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 
 PLIST_FILES=	bin/stella
 
