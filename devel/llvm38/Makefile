@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -217,7 +217,7 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.ubsan_standalone_cxx-x86_64.a \
 	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms
 .endif
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == "i386"
 _COMPILER_RT_LIBS+= \
 	libclang_rt.asan-i386.a \
 	libclang_rt.asan-i386.so \
@@ -288,6 +288,7 @@ post-patch:
 
 post-patch-COMPILER_RT-on:
 	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-svn-261229
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-no-m32
 
 post-build-COMPILER_RT-on:
 	${MKDIR} ${WRKDIR}/compiler-rt-build
