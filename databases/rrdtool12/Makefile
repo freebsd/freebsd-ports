@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libart_lgpl_2.so:graphics/libart_lgpl \
 		libpng.so:graphics/png
 
-CONFLICTS=	rrdtool10-* rrdtool-1.*
+CONFLICTS=	rrdtool-1.*
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
