@@ -23,9 +23,10 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == gcc
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt
-.endif
+post-patch:
+	${REINPLACE_CMD} "/cotire/d" ${WRKSRC}/src/contrib/CMakeLists.txt \
+		${WRKSRC}/src/core/CMakeLists.txt \
+		${WRKSRC}/src/test/CMakeLists.txt
 
 post-install:
 	cd ${WRKSRC}/include &&${INSTALL_DATA} *.h \
