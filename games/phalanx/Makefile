@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	phalanx
-PORTVERSION=	24
+PORTVERSION=	25
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Version%20XXIV
-DISTNAME=	${PORTNAME}-XXIV-source
+MASTER_SITES=	SF/${PORTNAME}/Version%20XXV
+DISTNAME=	${PORTNAME}-XXV-source
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Xboard-compatible chess playing program
