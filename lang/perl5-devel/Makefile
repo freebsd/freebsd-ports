@@ -30,7 +30,7 @@ TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.24.0-RC3
+GH_TAGNAME=	v5.24.0-RC3-19-g10d36cf
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE
@@ -86,10 +86,12 @@ _ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
 # XXX releases are .tar.xz, add: tar:xz
 USES=	cpe
 
+LIBPERL_VER=	${PORTVERSION:C/[^0-9.]//}
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
-	-Dlibperl=libperl.so.${PORTVERSION} \
+	-Dlibperl=libperl.so.${LIBPERL_VER} \
 	-Darchlib=${PREFIX}/${_ARCH_LIB} \
 	-Dprivlib=${PREFIX}/${_PRIV_LIB} \
 	-Dman3dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man3 \
@@ -164,7 +166,7 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PRIV_LIB=${_PRIV_LIB} \
 		PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 		ARCH_LIB=${_ARCH_LIB}
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} # XXX Remove
+PLIST_SUB+=	LIBPERL_VER=${LIBPERL_VER} # XXX Remove
 
 _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 
@@ -247,8 +249,8 @@ pre-everything::
 # portmaster/portupgrade will remove the installed Perl version, and it will
 # remove any way to guess what the default Perl version is needed.
 post-extract:
-	${LN} -s libperl.so.${PORTVERSION} ${WRKSRC}/libperl.so
-	${LN} -s libperl.so.${PORTVERSION} ${WRKSRC}/libperl.so.${PERL_VER}
+	${LN} -s libperl.so.${LIBPERL_VER} ${WRKSRC}/libperl.so
+	${LN} -s libperl.so.${LIBPERL_VER} ${WRKSRC}/libperl.so.${PERL_VER}
 .if !defined(PACKAGE_BUILDING)
 	@${ECHO_CMD} "PERL5_DEFAULT=${PERL5_DEFAULT}" > ${_PERL5_DEFAULT_FILE}
 .endif
@@ -289,8 +291,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/auto
 	${MKDIR} ${STAGEDIR}${SITE_PERL}/auto
 	${LN} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION} ${STAGEDIR}${PREFIX}/bin/perl5
-	${LN} -sf libperl.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so
-	${LN} -sf libperl.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so.${PERL_VER}
+	${LN} -sf libperl.so.${LIBPERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so
+	${LN} -sf libperl.so.${LIBPERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so.${PERL_VER}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 	# XXX Remove the ECHO_CMD
 	# Force PERL_PORT in case the devel has the same version as the latest release
