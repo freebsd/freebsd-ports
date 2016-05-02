@@ -257,18 +257,6 @@ include/pkcs11/cryptoki.h
 include/pkcs11/pkcs11.h
 include/pkcs11/pkcs11f.h
 include/pkcs11/pkcs11t.h
-%%PYTHON%%lib/__init__.py
-%%PYTHON%%lib/__init__.pyc
-%%PYTHON%%lib/dnskey.py
-%%PYTHON%%lib/dnskey.pyc
-%%PYTHON%%lib/eventlist.py
-%%PYTHON%%lib/eventlist.pyc
-%%PYTHON%%lib/keydict.py
-%%PYTHON%%lib/keydict.pyc
-%%PYTHON%%lib/keyevent.py
-%%PYTHON%%lib/keyevent.pyc
-%%PYTHON%%lib/keyzone.py
-%%PYTHON%%lib/keyzone.pyc
 lib/libbind9.a
 lib/libdns.a
 lib/libirs.a
@@ -276,10 +264,6 @@ lib/libisc.a
 lib/libisccc.a
 lib/libisccfg.a
 lib/liblwres.a
-%%PYTHON%%lib/parsetab.py
-%%PYTHON%%lib/parsetab.pyc
-%%PYTHON%%lib/policy.py
-%%PYTHON%%lib/policy.pyc
 man/man1/arpaname.1.gz
 man/man1/bind9-config.1.gz
 man/man1/delv.1.gz
@@ -385,6 +369,7 @@ man/man8/dnssec-dsfromkey.8.gz
 man/man8/dnssec-importkey.8.gz
 man/man8/dnssec-keyfromlabel.8.gz
 man/man8/dnssec-keygen.8.gz
+%%PYTHON%%man/man8/dnssec-keymgr.8.gz
 man/man8/dnssec-revoke.8.gz
 man/man8/dnssec-settime.8.gz
 man/man8/dnssec-signzone.8.gz
