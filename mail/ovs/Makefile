@@ -3,7 +3,7 @@
 
 PORTNAME=	ovs
 PORTVERSION=	1.05
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/ \
 		http://mirror.amdmi3.ru/distfiles/

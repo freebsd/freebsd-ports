@@ -3,6 +3,7 @@
 
 PORTNAME=	bindgraph
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.linux.it/~md/software/
 
