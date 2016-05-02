@@ -2075,7 +2075,6 @@
     SUBDIR += snarf
     SUBDIR += sogo2
     SUBDIR += sogo3
-    SUBDIR += sogo-activesync
     SUBDIR += sogo2-activesync
     SUBDIR += sogo3-activesync
     SUBDIR += spawn-fcgi
