@@ -7,10 +7,12 @@ PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
 
 LICENSE=	ISCL
+
+BROKEN=		Does not build
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libsoup-2.4.so:devel/libsoup
