@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afnix
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
