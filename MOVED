@@ -8303,4 +8303,4 @@ databases/p5-qdbm||2016-04-23|Has expired: Broken for more than 6 months
 deskutils/ladon||2016-04-23|Has expired: Broken for more than 6 months
 java/linux-sun-jdk17||2016-04-24|Has expired: Unsupported and known for multiple security vulnerabilities
 devel/compiler-rt-devel|devel/llvm-devel|2016-04-24|Folded back in to devel/llvm-devel
-databases/rrdtool10||2016-05-02|Old version, not maintained any more
+databases/rrdtool10|databases/rrdtool|2016-05-02|Old version, not maintained any more
