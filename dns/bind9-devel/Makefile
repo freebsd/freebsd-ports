@@ -19,8 +19,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0.a20160428
-HASH=		a27dc50
+ISCVERSION=	9.11.0.a20160430
+HASH=		9e6e088
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -263,5 +263,9 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
+
+# Can't use USE_PYTHON=autoplist
+post-install-PYTHON-on:
+	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type f | ${SED} -e 's|${STAGEDIR}||' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
