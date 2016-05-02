@@ -7,4 +7,11 @@
   rc.d script installed at %%PREFIX%%/etc/rc.d/sshguard .
   
   See sshguard(8) and http://www.sshguard.net/docs/setup for additional info.
+
+  Please note that a few rc script parameters have been renamed to
+  better reflect the documentation:
+  
+  sshguard_safety_thresh -> sshguard_danger_thresh
+  sshguard_pardon_min_interval -> sshguard_release_interval
+  sshguard_prescribe_interval -> sshguard_reset_interval
 ##########################################################################

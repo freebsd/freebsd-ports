@@ -1,0 +1,20 @@
+--- man/sshguard.8.orig	2016-05-02 15:44:01 UTC
++++ man/sshguard.8
+@@ -84,7 +84,7 @@ at \fI\%http://www.sshguard.net/\fP\&.
+ .SH OPTIONS
+ .INDENT 0.0
+ .TP
+-.B \fB\-a\fP \fIthresh\fP (default 40)
++.B \fB\-a\fP \fIthresh\fP (default 30)
+ Block an attacker when its dangerousness exceeds \fIthresh\fP\&. Each attack
+ pattern that is matched contributes a fixed dangerousness of 10.
+ .TP
+@@ -112,7 +112,7 @@ monitor instead. \fBsshguard\fP transpar
+ using this option, standard input is ignored, but can be re\-added by
+ giving \(aq\fB\-l\fP \-\(aq.
+ .TP
+-.B \fB\-p\fP \fIinterval\fP (default 420 secs, or 7 minutes)
++.B \fB\-p\fP \fIinterval\fP (default 120 secs, or 2 minutes)
+ Wait at least \fIinterval\fP seconds before releasing a blocked address.
+ Repeat attackers are blocked for 1.5 times longer after each attack.
+ Because \fBsshguard\fP unblocks attackers only at infrequent intervals,
