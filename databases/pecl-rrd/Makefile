@@ -2,7 +2,7 @@
 
 PORTNAME=	rrd
 DISTVERSION=	1.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
