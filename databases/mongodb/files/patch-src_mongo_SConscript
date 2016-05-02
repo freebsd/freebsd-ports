@@ -1,15 +1,15 @@
---- src/mongo/SConscript.orig	2013-03-22 20:55:25.000000000 +0100
-+++ src/mongo/SConscript	2013-03-25 17:46:04.000000000 +0100
+--- src/mongo/SConscript.orig	2016-03-21 17:09:46.000000000 +0100
++++ src/mongo/SConscript	2016-05-02 12:44:35.405331527 +0200
 @@ -13,7 +13,7 @@ Import("has_option")
- Import("usesm usev8")
- Import("installSetup")
+ Import("get_option")
+ Import("usev8")
  Import("enforce_glibc")
 -Import("darwin windows solaris linux nix")
 +Import("darwin windows solaris linux freebsd nix")
  
  env.SConscript(['base/SConscript',
                  'db/auth/SConscript',
-@@ -765,7 +765,7 @@ def installBinary( e, name ):
+@@ -1183,7 +1183,7 @@ def installBinary( e, name ):
      if enforce_glibc:
          e.AddPostAction( name, checkGlibc )
  
