@@ -20,6 +20,8 @@ ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
 
 # Possible values: 2.2, 2.4
 APACHE_DEFAULT?=	2.4
+# Possible values: 48, 5, 6
+BDB_DEFAULT?=		5
 # Possible values: 2.5
 FIREBIRD_DEFAULT?=	2.5
 # Possible values: 3.0.0
