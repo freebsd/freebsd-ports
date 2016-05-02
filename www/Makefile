@@ -2074,6 +2074,7 @@
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += sogo
+    SUBDIR += sogo2
     SUBDIR += sogo3
     SUBDIR += sogo-activesync
     SUBDIR += sogo3-activesync
