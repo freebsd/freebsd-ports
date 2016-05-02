@@ -3,7 +3,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU_ALPHA/emacs/pretest
@@ -15,15 +14,12 @@ COMMENT=	GNU editing macros
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=	fails to compile at bootstrap phase
-BROKEN_ia64=	Emacs 24.X does not currently build on ia64
+BROKEN_sparc64=	Emacs does not currently build on sparc64
+BROKEN_ia64=	Emacs does not currently build on ia64
 
-CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]*              \
-		emacs23-[0-9]* emacs24-[0-9]* xemacs-[0-9]*           \
-		xemacs-devel-[0-9]* xemacs-mule-[0-9]*                \
-		xemacs-devel-mule-[0-9]* emacs-nox11-[0-9]*
+CONFLICTS=	emacs24-[0-9]* emacs-nox11-[0-9]*
 
-EMACS_VER=	25.0.92
+EMACS_VER=	25.0.93
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
 INFO_PATH=	${DATADIR_REL}/info
@@ -32,147 +28,178 @@ CPE_VENDOR=	gnu
 SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/\
 		${CONFIGURE_TARGET}
 
-CONFIGURE_ARGS=	--localstatedir=/var --with-gameuser=games:games
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-gameuser=games:games
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 
 MAKE_ENV=	LC_ALL=C
 
-INFO=		ada-mode auth autotype bovine calc ccmode cl dbus     \
-		dired-x ebrowse ede ediff edt efaq eieio eintr elisp  \
-		emacs emacs-gnutls emacs-mime epa erc ert eshell eudc \
-		eww flymake forms gnus htmlfontify idlwave ido info   \
-		mairix-el message mh-e newsticker nxml-mode           \
-		octave-mode org pcl-cvs pgg rcirc reftex remember     \
-		sasl sc semantic ses sieve smtpmail speedbar srecode  \
-		todo-mode tramp url vhdl-mode vip viper widget wisent \
-		woman
+INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
+	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc	\
+	ert eshell eudc eww flymake forms gnus htmlfontify idlwave ido info	\
+	mairix-el message mh-e newsticker nxml-mode octave-mode org pcl-cvs pgg	\
+	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar	\
+	srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
-OPTIONS_DEFINE=	X11 ACL DBUS GCONF GIF JPEG M17N OTF PNG SOUND        \
-		SOURCES SVG TIFF SCROLLBARS XFT XIM XML XPM MAGICK    \
-		GNUTLS GSETTINGS LTO FILENOTIFY LLDB CAIRO MODULES XWIDGETS
+OPTIONS_DEFINE=	ACL DBUS GNUTLS LLDB LTO MODULES SOURCES X11 XML
 
-OPTIONS_SINGLE=	X11 SOUND
+OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
+OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
+OPTIONS_RADIO_SOUND=		ALSA OSS
+OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
 
-ACL_DESC=	ACL support
-GSETTINGS_DESC= GSettings support
-SCROLLBARS_DESC=Toolkit scroll-bars
-SOUND_DESC=	Sound support
-SOURCES_DESC=	Install sources
-XAW_DESC=	Athena widgets
-XAW3D_DESC=	Athena3D widgets
-XIM_DESC=	X Input Method Support
-M17N_DESC=	M17N support for text-shaping
-OTF_DESC=	Opentype fonts suport
+OPTIONS_GROUP=			GRAPHICS NEEDX11
+OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
+OPTIONS_GROUP_NEEDX11= 		GCONF GSETTINGS M17N OTF SCROLLBARS XFT XIM     \
+				XWIDGETS
+
+ACL_DESC=	Access control list support
+CAIRO_DESC=	Cairo library support         (experimental)
 FILENOTIFY_DESC=File notification support
+GCONF_DESC=	GConf configuration support
+GFILE_DESC=	File notification via gfile
+GRAPHICS_DESC=	Graphics support (each implies X11)
+GSETTINGS_DESC=	GSettings support             (implies DBUS)
+KQUEUE_DESC=	File notification via kqueue
+LLDB_DESC=	Enable LLDB support for GUD
 LTO_DESC=	Enable link-time optimization (requires GCC 4.6+)
-LLDB_DESC=	Enable lldb support for GUD (from llvm.org)
+MAGICK_DESC=	ImageMagick support
+M17N_DESC=	M17N support for text-shaping
 MODULES_DESC=	Dynamic modules support
-XWIDGETS_DESC=  Enable use of some GTK widgets in Emacs buffers
+NEEDX11_DESC=	Other X11-dependent (each implies X11)
+OTF_DESC=	Opentype fonts support
+SCROLLBARS_DESC=Toolkit scroll-bars
+SOURCES_DESC=	Install sources
+X11_DESC=	X11 support                   (choose toolkit below)
+X11TOOLKIT_DESC=X11 toolkit (each implies X11)
+XAW3D_DESC=	Athena3D widgets
+XAW_DESC=	Athena widgets
+XIM_DESC=	X Input Method Support
+XWIDGETS_DESC=	GTK widgets in Emacs buffers  (requires GTK3)
 
-OPTIONS_SINGLE_X11=	GTK2 GTK3 XAW XAW3D MOTIF
-OPTIONS_SINGLE_SOUND=	ALSA OSS
+OPTIONS_DEFAULT=ACL DBUS FREEDESKTOP GCONF GIF GNUTLS GSETTINGS GTK2 JPEG	\
+		KQUEUE M17N MAGICK MODULES OSS OTF PNG SCROLLBARS SOURCES SVG	\
+		TIFF X11 XFT XIM XML XPM
 
-OPTIONS_DEFAULT=ACL DBUS FILENOTIFY GCONF GIF GNUTLS GSETTINGS GTK2   \
-		JPEG M17N MAGICK MODULES OSS OTF PNG SCROLLBARS SOUND \
-		SOURCES SVG TIFF X11 XFT XIM XML XPM
+OPTIONS_SUB=		YES
 
-OPTIONS_SUB=	YES
+ACL_CONFIGURE_ENABLE=	acl
 
-LLDB_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-lldb-gud.el
-
-SOUND_CONFIGURE_OFF=	--with-sound=no
 ALSA_CONFIGURE_ON=	--with-sound=alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-OSS_CONFIGURE_ON=	--with-sound=oss
+
+CAIRO_USE=		GNOME=cairo
+CAIRO_CONFIGURE_WITH=	cairo
+CAIRO_IMPLIES=		X11
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=	dbus
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_CONFIGURE_WITH=	gnutls
+GCONF_USE=		gnome=gconf2
+GCONF_CONFIGURE_WITH=	gconf
+GCONF_IMPLIES=		X11
 
-XML_USE=		GNOME=libxml2
-XML_CONFIGURE_WITH=	xml2
-
-SVG_USE=		GNOME=librsvg2
-SVG_CONFIGURE_WITH=	rsvg
-
-X11_CONFIGURE_WITH=	x
-X11_USE=		XORG=x11
-X11_USES=		desktop-file-utils
-
-GTK2_USE=		GNOME=gtk20
-GTK2_CONFIGURE_ON=	-with-x-toolkit=gtk2
-
-GTK3_USE=		GNOME=gtk30
-GTK3_CONFIGURE_ON=	--with-x-toolkit=gtk3
-
-XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
-XAW3D_CONFIGURE_ON=	--with-x-toolkit=athena
-
-XAW_USE=		XORG=xaw
-XAW_CONFIGURE_ON+=	--with-x-toolkit=athena --without-xaw3d
-
-MOTIF_USES=		motif
-MOTIF_CONFIGURE_ON+=	--with-x-toolkit=motif
-
-SCROLLBARS_CONFIGURE_WITH=toolkit-scroll-bars
-
-SYNC_INPUT_CONFIGURE_WITH=sync-input
-
-JPEG_USES=		jpeg
-JPEG_CONFIGURE_WITH=	jpeg
-
-TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-TIFF_CONFIGURE_WITH=	tiff
+GFILE_CONFIGURE_ON=	--with-file-notification=gfile
 
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CONFIGURE_WITH=	gif
+GIF_IMPLIES=		X11
 
-PNG_LIB_DEPENDS+=	libpng.so:graphics/png
-PNG_CONFIGURE_WITH=	png
-
-XPM_USE=		XORG=xpm
-XPM_CONFIGURE_WITH=	xpm
-
-XFT_USE=		XORG=xft
-XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2
-XFT_CONFIGURE_WITH=	xft
-
-M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
-M17N_CONFIGURE_WITH=	m17n-flt
-
-OTF_LIB_DEPENDS=	libotf.so:print/libotf
-OTF_CONFIGURE_WITH=	libotf
-
-MAGICK_LIB_DEPENDS=libMagickCore-6.so:graphics/ImageMagick
-MAGICK_CONFIGURE_WITH=	imagemagick
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_WITH=	gnutls
 
 GSETTINGS_USE=		gnome=glib20
 GSETTINGS_CONFIGURE_WITH=gsettings
+GSETTINGS_IMPLIES=	DBUS X11
 
-GCONF_USE=		gnome=gconf2
-GCONF_CONFIGURE_WITH=	gconf
+GTK2_USE=		GNOME=gtk20
+GTK2_CONFIGURE_ON=	--with-x-toolkit=gtk2
+GTK2_IMPLIES=		X11
 
-XIM_CONFIGURE_WITH=	xim
+GTK3_USE=		GNOME=gtk30
+GTK3_CONFIGURE_ON=	--with-x-toolkit=gtk3
+GTK3_IMPLIES=		X11
+
+JPEG_USES=		jpeg
+JPEG_CONFIGURE_WITH=	jpeg
+JPEG_IMPLIES=		X11
+
+KQUEUE_CONFIGURE_ON=	--with-file-notification=kqueue
+
+LLDB_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-lldb-gud.el
 
 LTO_CONFIGURE_ON=	--enable-link-time-optimization
 LTO_USE=		GCC=4.6+
 
-ACL_CONFIGURE_OFF=	--disable-acl
+M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
+M17N_CONFIGURE_WITH=	m17n-flt
+M17N_IMPLIES=		XFT X11
 
-FILENOTIFY_CONFIGURE_ON=--with-file-notification=gfile
-FILENOTIFY_CONFIGURE_OFF=--without-file-notification
-FILENOTIFY_USE=		GNOME=glib20
+MAGICK_LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick
+MAGICK_CONFIGURE_WITH=	imagemagick
+MAGICK_IMPLIES=		X11
 
-CAIRO_USE=		GNOME=cairo
-CAIRO_CONFIGURE_ON=	--with-cairo
+MODULES_CONFIGURE_WITH=	modules
 
-MODULES_CONFIGURE_ON=	--with-modules
+MOTIF_USES=		motif
+MOTIF_CONFIGURE_ON=	--with-x-toolkit=motif
+MOTIF_IMPLIES=		X11
 
-XWIDGETS_CONFIGURE_ON=	--with-xwidgets
+OSS_CONFIGURE_ON=	--with-sound=oss
+
+OTF_LIB_DEPENDS=	libotf.so:print/libotf
+OTF_CONFIGURE_WITH=	libotf
+OTF_IMPLIES=		XFT
+
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_CONFIGURE_WITH=	png
+PNG_IMPLIES=		X11
+
+SCROLLBARS_CONFIGURE_WITH=toolkit-scroll-bars
+SCROLLBARS_IMPLIES=	X11
+
+SVG_USE=		GNOME=librsvg2
+SVG_CONFIGURE_WITH=	rsvg
+SVG_IMPLIES=		X11
+
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_CONFIGURE_WITH=	tiff
+TIFF_IMPLIES=		X11
+
+X11_CONFIGURE_OFF=	--without-x --with-x-toolkit=no
+X11_CONFIGURE_ON=	--with-x
+X11_USE=		XORG=x11
+X11_USES=		desktop-file-utils
+X11_VARS=		installs_icons=yes
+X11_VARS_OFF=		without_x11=yes
+
+XAW_USE=		XORG=xaw
+XAW_CONFIGURE_ON=	--with-x-toolkit=athena --without-xaw3d
+XAW_IMPLIES=		X11
+
+XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
+XAW3D_CONFIGURE_ON=	--with-x-toolkit=athena
+XAW3D_IMPLIES=		X11
+
+XFT_USE=		XORG=xft
+XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2
+XFT_CONFIGURE_WITH=	xft
+XFT_IMPLIES=		X11
+
+XIM_CONFIGURE_WITH=	xim
+XIM_IMPLIES=		X11
+
+XML_USE=		GNOME=libxml2
+XML_CONFIGURE_WITH=	xml2
+
+XPM_USE=		XORG=xpm
+XPM_CONFIGURE_WITH=	xpm
+XPM_IMPLIES=		X11
+
+XWIDGETS_CONFIGURE_WITH=xwidgets
 XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
+XWIDGETS_IMPLIES=	X11
 
 .include <bsd.port.options.mk>
 
@@ -181,39 +208,16 @@ XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 # http://llvm.org/bugs/show_bug.cgi?id=18171 fixed in r263312
 # (11-CURRENT), and fixed in r263765 (10-STABLE)
 .if ${ARCH} == "i386"
-.if (${OSVERSION} < 1000706) || (${OSVERSION} >= 1100000 &&           \
+.if (${OSVERSION} < 1000706) || (${OSVERSION} >= 1100000 && \
 ${OSVERSION} < 1100015)
-USE_GCC=	any
+USE_GCC=any
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-INSTALLS_ICONS=	yes
-.if !${PORT_OPTIONS:MXFT}
-.if ${PORT_OPTIONS:MM17N}
-IGNORE=		m17n requires Xft. Please run 'make config'
-.elif ${PORT_OPTIONS:MOTF}
-IGNORE=		support for Opentype fonts require Xft. Please run 'make config'
-.endif
-.endif
-.else
-.for OPT in 	GCONF GIF GSETTINGS GTK2 GTK3 JPEG M17N MAGICK MOTIF  \
-		PNG SCROLLBARS SVG TIFF XAW XAW3D XFT XIM XPM
-.if ${PORT_OPTIONS:M${OPT}}
-IGNORE=		option ${OPT} requires X11 option
-.endif
-.endfor
-.endif
-
-.if !${PORT_OPTIONS:MDBUS}
-.if ${PORT_OPTIONS:MGSETTINGS}
-IGNORE=		support for GSettings requires DBUS. Please run 'make config'
-.endif
-.endif
-
-.if !${PORT_OPTIONS:MGTK3}
-.if ${PORT_OPTIONS:MXWIDGETS}
-IGNORE=		support for XWidgets requires GTK3. Please run 'make config'
+.if ! ${PORT_OPTIONS:MGTK2} && ! ${PORT_OPTIONS:MGTK3} && \
+! ${PORT_OPTIONS:MMOTIF} && ! ${PORT_OPTIONS:MXAW} && ! ${PORT_OPTIONS:MXAW3D}
+IGNORE=option X11 requires an X11 toolkit
 .endif
 .endif
 
@@ -221,34 +225,30 @@ IGNORE=		support for XWidgets requires GTK3. Please run 'make config'
 
 # Building with GCC 4.6+ requires it
 .if ${ncurses_ARGS} == "port"
-LDFLAGS+=	-ltinfo
+LDFLAGS+=-ltinfo
 .endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
-	@${REINPLACE_CMD} -e "s/%%EMACS_VER%%/${EMACS_VER}/g" -e      \
+	@${REINPLACE_CMD} -e "s/%%EMACS_VER%%/${EMACS_VER}/g" -e \
 		"s/%%DATADIR%%/${DATADIR:C/\//\\\//g}/g" ${WRKSRC}/sources.el
-.if empty(PORT_OPTIONS:MX11)
-	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/'        \
+## stage-qa will give a warning, but don't pull in desktop-file-utils
+## portlint -AC will give a warning about INSTALL_ICONS, but don't pull in those
+## dependencies
+.if ! ${PORT_OPTIONS:MX11}
+	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/' \
 		${WRKSRC}/etc/emacs.desktop
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MSOURCES}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
-	${INSTALL_DATA} ${WRKSRC}/src/*.[ch]                          \
+	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] \
 		${STAGEDIR}${DATADIR}/${EMACS_VER}/src
-	${INSTALL_DATA} ${WRKSRC}/sources.el                          \
+	${INSTALL_DATA} ${WRKSRC}/sources.el \
 		${STAGEDIR}${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
 .endif
-	@${FIND} ${STAGEDIR}${PREFIX}/${INFO_PATH} -type f -name      \
+	@${FIND} ${STAGEDIR}${PREFIX}/${INFO_PATH} -type f -name \
 		'*.gz' -exec ${GUNZIP_CMD} '{}' \;
-
-.if !defined(WITHOUT_X11)
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "====> Define WITHOUT_X11 to disable X11 support."
-	@${ECHO_MSG}
-.endif
 
 .include <bsd.port.post.mk>
