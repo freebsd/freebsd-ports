@@ -54,7 +54,7 @@
 # sshguard_reset_interval (int):
 #				Interval before a suspected attack is
 #				forgotten and danger is reset to 0.
-#				Set to "1200" by default.
+#				Set to "1800" by default.
 # sshguard_whitelistfile (str):	Path to the whitelist.
 #				Set to "%%PREFIX%%/etc/sshguard.whitelist"
 #				by default.
@@ -73,7 +73,7 @@ load_rc_config sshguard
 : ${sshguard_blacklist=30:/var/db/sshguard/blacklist.db}
 : ${sshguard_danger_thresh=30}
 : ${sshguard_release_interval=120}
-: ${sshguard_reset_interval=1200}
+: ${sshguard_reset_interval=1800}
 : ${sshguard_whitelistfile="%%PREFIX%%/etc/sshguard.whitelist"}
 : ${sshguard_watch_logs=/var/log/auth.log:/var/log/maillog}
 
