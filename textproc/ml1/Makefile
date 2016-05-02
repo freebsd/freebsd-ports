@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	ml1
-PORTVERSION=	4.10
+PORTVERSION=	4.11
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ml1.org.uk/tgz/ \
-		http://www.tavi.co.uk/tgz/
+		http://www.ancientgeek.org.uk/tgz/
 
 MAINTAINER=	bob@eager.cx
-COMMENT=	The original general purpose macro processor
+COMMENT=	Original general purpose macro processor
 
 PLIST_FILES=	bin/ml1 man/man1/ml1.1.gz
 
