@@ -311,7 +311,7 @@
 %%WWWDIR%%/app/controllers/admin/groups_controller.rb
 %%WWWDIR%%/app/controllers/admin/hooks_controller.rb
 %%WWWDIR%%/app/controllers/admin/identities_controller.rb
-%%WWWDIR%%/app/controllers/admin/impersonation_controller.rb
+%%WWWDIR%%/app/controllers/admin/impersonations_controller.rb
 %%WWWDIR%%/app/controllers/admin/keys_controller.rb
 %%WWWDIR%%/app/controllers/admin/labels_controller.rb
 %%WWWDIR%%/app/controllers/admin/logs_controller.rb
@@ -2904,7 +2904,7 @@
 %%WWWDIR%%/spec/config/mail_room_spec.rb
 %%WWWDIR%%/spec/controllers/abuse_reports_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/identities_controller_spec.rb
-%%WWWDIR%%/spec/controllers/admin/impersonation_controller_spec.rb
+%%WWWDIR%%/spec/controllers/admin/impersonations_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/projects_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/spam_logs_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/users_controller_spec.rb
@@ -3056,10 +3056,11 @@
 %%WWWDIR%%/spec/features/profile_spec.rb
 %%WWWDIR%%/spec/features/profiles/oauth_applications_spec.rb
 %%WWWDIR%%/spec/features/profiles/preferences_spec.rb
-%%WWWDIR%%/spec/features/project/commits/cherry_pick_spec.rb
 %%WWWDIR%%/spec/features/projects/badges/list_spec.rb
+%%WWWDIR%%/spec/features/projects/commits/cherry_pick_spec.rb
 %%WWWDIR%%/spec/features/projects/files/project_owner_creates_license_file_spec.rb
 %%WWWDIR%%/spec/features/projects/files/project_owner_sees_link_to_create_license_file_in_empty_project_spec.rb
+%%WWWDIR%%/spec/features/projects/members/anonymous_user_sees_members_spec.rb
 %%WWWDIR%%/spec/features/projects_spec.rb
 %%WWWDIR%%/spec/features/runners_spec.rb
 %%WWWDIR%%/spec/features/search_spec.rb
@@ -3353,7 +3354,6 @@
 %%WWWDIR%%/spec/models/email_spec.rb
 %%WWWDIR%%/spec/models/event_spec.rb
 %%WWWDIR%%/spec/models/external_issue_spec.rb
-%%WWWDIR%%/spec/models/external_wiki_service_spec.rb
 %%WWWDIR%%/spec/models/forked_project_link_spec.rb
 %%WWWDIR%%/spec/models/generic_commit_status_spec.rb
 %%WWWDIR%%/spec/models/global_milestone_spec.rb
@@ -3383,14 +3383,20 @@
 %%WWWDIR%%/spec/models/project_services/bamboo_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/buildkite_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/builds_email_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/campfire_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/custom_issue_tracker_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/drone_ci_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/emails_on_push_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/external_wiki_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/flowdock_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/gemnasium_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/gitlab_issue_tracker_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/hipchat_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/irker_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/jira_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/pivotaltracker_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/pushover_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/redmine_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/slack_service/build_message_spec.rb
 %%WWWDIR%%/spec/models/project_services/slack_service/issue_message_spec.rb
 %%WWWDIR%%/spec/models/project_services/slack_service/merge_message_spec.rb
@@ -3526,6 +3532,7 @@
 %%WWWDIR%%/spec/support/gitlab_stubs/projects.json
 %%WWWDIR%%/spec/support/gitlab_stubs/session.json
 %%WWWDIR%%/spec/support/gitlab_stubs/user.json
+%%WWWDIR%%/spec/support/issue_tracker_service_shared_example.rb
 %%WWWDIR%%/spec/support/jira_service_helper.rb
 %%WWWDIR%%/spec/support/login_helpers.rb
 %%WWWDIR%%/spec/support/markdown_feature.rb
@@ -3603,7 +3610,6 @@
 @dir %%WWWDIR%%/tmp/pids
 @dir %%WWWDIR%%/tmp/sessions
 @dir %%WWWDIR%%/tmp/sockets
-@dir %%WWWDIR%%/vendor/assets/stylesheets
 @dir /home
 @dir(git,git,) /home/git
 @dir(,git,2770) /home/git/repositories
