@@ -86,12 +86,12 @@ svscan_start () {
 	EP="/usr/bin/env \
 	PATH=%%PREFIX%%/sbin:%%PREFIX%%/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 	if [ -z "${svscan_logdir}" ]; then
-		${EP} /usr/sbin/daemon /bin/sh -c "$command $svscan_servicedir 2>&1 | %%PREFIX%%/bin/readproctitle service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................ &" > /dev/null
+		${EP} /usr/sbin/daemon -f /bin/sh -c "$command $svscan_servicedir 2>&1 | %%PREFIX%%/bin/readproctitle service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................ &"
 	else
 		logmax=${svscan_logmax+s$svscan_logmax}
 		lognum=${svscan_lognum+n$svscan_lognum}
-		${EP} /usr/sbin/daemon /bin/sh -c "$command $svscan_servicedir 2>&1 \
-		| %%PREFIX%%/bin/multilog t $logmax $lognum '${svscan_logdir}' &" > /dev/null
+		${EP} /usr/sbin/daemon -f /bin/sh -c "$command $svscan_servicedir 2>&1 \
+		| %%PREFIX%%/bin/multilog t $logmax $lognum '${svscan_logdir}' &"
 	fi
 }
 
