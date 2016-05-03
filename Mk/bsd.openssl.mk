@@ -102,11 +102,13 @@ OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
 .endif
 .endif
 
-# LibreSSL specific SHLIBVER
+# LibreSSL and OpenSSL-BETA specific SHLIBVER
 .if   defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
-OPENSSL_SHLIBVER?=	35
+OPENSSL_SHLIBVER?=	37
 .elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl-devel
 OPENSSL_SHLIBVER?=	37
+.elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/openssl-devel
+OPENSSL_SHLIBVER?=	9
 .endif
 
 # default
