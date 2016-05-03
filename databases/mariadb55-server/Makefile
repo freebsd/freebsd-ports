@@ -59,7 +59,8 @@ BROKEN_armv6=		Does not compile on arm
 
 .if !defined(CLIENT_ONLY)
 # MySQL-Server part
-USES+=		mysql:55m
+USE_MYSQL=	yes
+WANT_MYSQL_VER=	55m
 
 CONFLICTS_INSTALL=	mariadb5[0-46-9]-server-* \
 			mariadb1*-server-* \
