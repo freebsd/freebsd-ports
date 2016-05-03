@@ -12,7 +12,7 @@ COMMENT=	Nagios plugin to check status of Varnish
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	varnish4>=0:www/varnish4
-RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
+RUN_DEPENDS=	sudo:security/sudo
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-lm
