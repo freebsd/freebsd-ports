@@ -1,0 +1,10 @@
+--- config/delegates.xml.in.orig	2016-05-03 23:33:12.300197000 +0200
++++ config/delegates.xml.in	2016-05-03 23:33:29.641438000 +0200
+@@ -90,7 +90,6 @@
+   <delegate decode="hpgl" command="&quot;@HPGLDecodeDelegate@&quot; -q -m eps -f `basename &quot;%o&quot;` &quot;%i&quot;;     mv -f `basename &quot;%o&quot;` &quot;%o&quot;"/>
+   <delegate decode="htm" command="&quot;@HTMLDecodeDelegate@&quot; -U -o &quot;%o&quot; &quot;%i&quot;"/>
+   <delegate decode="html" command="&quot;@HTMLDecodeDelegate@&quot; -U -o &quot;%o&quot; &quot;%i&quot;"/>
+-  <delegate decode="https" command="&quot;@WWWDecodeDelegate@&quot; -s -k -L -o &quot;%o&quot; &quot;https:%F&quot;"/>
+   <delegate decode="ilbm" command="&quot;@ILBMDecodeDelegate@&quot; &quot;%i&quot; &gt; &quot;%o&quot;"/>
+   <delegate decode="jxr" command="mv &quot;%i&quot; &quot;%i.jxr&quot;; &quot;@JXRDecodeDelegate@&quot; -i &quot;%i.jxr&quot; -o &quot;%o.pnm&quot;; mv &quot;%i.jxr&quot; &quot;%i&quot;; mv &quot;%o.pnm&quot; &quot;%o&quot;"/>
+   <delegate decode="man" command="&quot;@MANDelegate@&quot; -man -Tps &quot;%i&quot; &gt; &quot;%o&quot;"/>
