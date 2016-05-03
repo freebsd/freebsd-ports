@@ -2,7 +2,7 @@
 
 PORTNAME=	mednafen
 PORTVERSION=	0.9.33.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	http://mednafen.fobby.net/releases/files/

@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlada
 PORTVERSION=	4.6.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	xmlada-gpl-2015-src

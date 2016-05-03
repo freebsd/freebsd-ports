@@ -1,6 +1,6 @@
---- src/http/ngx_http_upstream_round_robin.h.orig	2016-01-26 14:39:33 UTC
+--- src/http/ngx_http_upstream_round_robin.h.orig	2016-02-24 14:53:24 UTC
 +++ src/http/ngx_http_upstream_round_robin.h
-@@ -31,6 +31,10 @@ typedef struct {
+@@ -35,6 +35,10 @@ struct ngx_http_upstream_rr_peer_s {
      ngx_uint_t                      max_fails;
      time_t                          fail_timeout;
  

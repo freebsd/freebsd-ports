@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.226.0
+PORTVERSION=	5.0.231.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		http://freebsd.uzsolt.hu/src/
@@ -15,8 +15,6 @@ LICENSE=	GEOGEBRA
 LICENSE_NAME=	GeoGebra Non-Commercial License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
-
-RUN_DEPENDS=	bash:shells/bash
 
 USE_LINUX?=	c6
 
@@ -32,14 +30,15 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 JAVADIR=	jre1.7.0_45-i686
 SHEBANG_FILES=	geogebra-portable geogebra/geogebra
 
+SUB_FILES=	geogebra.desktop geogebra.sh
+SUB_LIST=	JAVADIR=${DATADIR}/${JAVADIR}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,arch,/compat/linux/bin/arch,' ${WRKSRC}/geogebra-portable
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/geogebra/geogebra ${STAGEDIR}${DATADIR}/${PORTNAME}/geogebra
-	${INSTALL_SCRIPT} ${WRKSRC}/geogebra-portable ${STAGEDIR}${DATADIR}
-	${LN} -s ${DATADIR}/geogebra-portable ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/geogebra.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/geogebra/*.jar ${STAGEDIR}${DATADIR}/${PORTNAME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${JAVADIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/${JAVADIR}/bin/java ${STAGEDIR}${DATADIR}/${JAVADIR}/bin

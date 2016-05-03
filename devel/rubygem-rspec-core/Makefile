@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-rspec-support>=${PORTVERSION:R}:devel/rubygem-rspec-support
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/rspec
 

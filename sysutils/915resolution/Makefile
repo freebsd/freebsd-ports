@@ -6,12 +6,10 @@ PORTVERSION=	0.5.3
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/ehaupt
+MASTER_SITES=	LOCAL/cy
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolution tool for Intel i915 video cards
-
-BROKEN=		unfetchable
 
 USE_RC_SUBR=	915resolution
 

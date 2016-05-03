@@ -19,9 +19,7 @@ PROMPT_PASSPHRASES_DESC=	Prompt for passphrases on keys
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	support/ssh_tunnel_bug.rb
 
 PROMPT_PASSPHRASES_RUN_DEPENDS=	rubygem-ruby-termios>=0:comms/rubygem-ruby-termios

@@ -17,8 +17,7 @@ CONFLICTS_INSTALL=	svn2git-[0-9]*
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/svn2git
 
 .include <bsd.port.mk>

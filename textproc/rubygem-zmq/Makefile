@@ -14,7 +14,6 @@ LICENSE=	LGPL3
 LIB_DEPENDS=	libzmq.so:net/libzmq2
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

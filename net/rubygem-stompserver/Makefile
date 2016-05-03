@@ -17,8 +17,7 @@ RUN_DEPENDS=	rubygem-daemons>=1.0.2:devel/rubygem-daemons \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/stompserver
 

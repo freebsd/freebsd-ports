@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	libetpan
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	1.7
 CATEGORIES=	mail ipv6
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Mail framework for C language
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
@@ -18,13 +18,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USE_GITHUB=	yes
 GH_ACCOUNT=	dinhviethoa
 
-USES=		autoreconf gmake iconv libtool
+USES=		autoreconf gmake iconv libtool localbase
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 OPTIONS_DEFINE=		IPV6
 OPTIONS_SINGLE=		CRYPTO

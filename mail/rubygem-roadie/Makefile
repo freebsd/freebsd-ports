@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-css_parser>=1.3.4:textproc/rubygem-css_parser \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

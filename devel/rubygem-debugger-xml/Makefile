@@ -17,8 +17,7 @@ RUN_DEPENDS=	rubygem-builder32>=2.0.0:devel/rubygem-builder32 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/rdebug-ide bin/rdebug-vim
 

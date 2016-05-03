@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-haml>=2.0.3:www/rubygem-haml \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

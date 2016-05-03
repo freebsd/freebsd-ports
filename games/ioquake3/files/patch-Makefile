@@ -1,6 +1,6 @@
---- Makefile.orig	2009-04-22 22:54:48.000000000 +0400
-+++ Makefile	2015-09-28 20:24:27.956819000 +0300
-@@ -187,6 +187,8 @@
+--- Makefile.orig	2009-04-22 18:54:48 UTC
++++ Makefile
+@@ -187,6 +187,8 @@ ifeq ($(shell which pkg-config > /dev/nu
    # FIXME: introduce CLIENT_CFLAGS
    SDL_CFLAGS=$(shell pkg-config --cflags sdl|sed 's/-Dmain=SDL_main//')
    SDL_LIBS=$(shell pkg-config --libs sdl)
@@ -9,7 +9,7 @@
  endif
  
  # version info
-@@ -521,44 +523,25 @@
+@@ -521,44 +523,25 @@ else # ifeq mingw32
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -72,7 +72,7 @@
  
    SHLIBEXT=so
    SHLIBCFLAGS=-fPIC
-@@ -568,20 +551,52 @@
+@@ -568,20 +551,52 @@ ifeq ($(PLATFORM),freebsd)
    # don't need -ldl (FreeBSD)
    LIBS=-lm
  
@@ -131,7 +131,7 @@
  else # ifeq freebsd
  
  #############################################################################
-@@ -831,7 +846,7 @@
+@@ -831,7 +846,7 @@ endif
  ifeq ($(USE_VOIP),1)
    BASE_CFLAGS += -DUSE_VOIP
    ifeq ($(USE_INTERNAL_SPEEX),1)
@@ -140,7 +140,7 @@
    else
      CLIENT_LIBS += -lspeex
    endif
-@@ -1442,6 +1457,9 @@
+@@ -1442,6 +1457,9 @@ ifeq ($(HAVE_VM_COMPILED),true)
    ifeq ($(ARCH),x86_64)
      Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
    endif
@@ -150,7 +150,7 @@
    ifeq ($(ARCH),ppc)
      Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
    endif
-@@ -1591,6 +1609,9 @@
+@@ -1591,6 +1609,9 @@ ifeq ($(HAVE_VM_COMPILED),true)
    ifeq ($(ARCH),x86_64)
      Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/ded/vm_x86_64_assembler.o
    endif

@@ -1,8 +1,6 @@
 bin/geogebra
 share/applications/geogebra.desktop
-%%DATADIR%%/geogebra-portable
 %%DATADIR%%/geogebra/OpenGeoProver.jar
-%%DATADIR%%/geogebra/geogebra
 %%DATADIR%%/geogebra/geogebra.jar
 %%DATADIR%%/geogebra/geogebra_3d.jar
 %%DATADIR%%/geogebra/geogebra_algos.jar

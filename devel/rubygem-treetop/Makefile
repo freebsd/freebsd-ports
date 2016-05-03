@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-polyglot>=0.3:devel/rubygem-polyglot
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/tt
 

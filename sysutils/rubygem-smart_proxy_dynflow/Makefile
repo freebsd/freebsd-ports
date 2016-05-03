@@ -18,8 +18,7 @@ RUN_DEPENDS=	foreman-proxy>=1.9.0:net/foreman-proxy \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	"@sample etc/foreman-proxy/settings.d/dynflow.yml.sample" \
 		share/foreman-proxy/bundler.d/dynflow.rb

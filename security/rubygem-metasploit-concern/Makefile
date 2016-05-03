@@ -17,8 +17,7 @@ RUN_DEPENDS=	rubygem-activesupport>=3.0.0:devel/rubygem-activesupport \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PORTSCOUT=	ignore:1
 

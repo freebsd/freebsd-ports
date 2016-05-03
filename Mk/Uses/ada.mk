@@ -14,7 +14,7 @@
 _INCLUDE_USES_ADA_MK=    yes
 
 CC=	ada
-ADAXX=	gcc5	# framework default
+ADAXX=	gcc6	# framework default
 
 . if ${ada_ARGS:M49}
 ADAXX=	gcc
@@ -25,8 +25,8 @@ ADAXX=	gcc6
 . elif defined(ADA_DEFAULT)
 .  if ${ADA_DEFAULT} == 49
 ADAXX=	gcc
-.  elif ${ADA_DEFAULT} == 6
-ADAXX=	gcc6
+.  elif ${ADA_DEFAULT} == 5
+ADAXX=	gcc5
 .  endif
 . endif
 

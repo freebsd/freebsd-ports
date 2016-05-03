@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-#PORTREVISION=	1
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -55,6 +55,7 @@ BUILD_DEPENDS=								\
 		${LOCALBASE}/bin/unzip:archivers/unzip	\
 		zip:archivers/zip				\
 		ant:devel/apache-ant			\
+		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \
 		dmake:devel/dmake				\
 		epm:devel/epm				\
 		${LOCALBASE}/bin/gperf:devel/gperf		\
@@ -175,13 +176,11 @@ MMEDIA_USE=			GSTREAMER=yes
 SDK_CONFIGURE_ENABLE=		odk
 
 PDFIMPORT_CONFIGURE_ENABLE=	pdfimport
-PDFIMPORT_LIB_DEPENDS=		libboost_system.so:devel/boost-libs
-PDFIMPORT_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
 
-# Don't run gnome-post-install until after post-install generates the plist
-TARGET_ORDER_OVERRIDE=	710:gnome-post-install
+# Don't run gnome-post-icons until after post-install generates the plist
+TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
 
 .include <bsd.port.pre.mk>
 
@@ -410,7 +409,6 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
-		${STAGEDIR}${DESKTOPDIR} \
 		${STAGEDIR}${PREFIX}/share/mime/packages
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
 		for i in *.tar.?z ; do \

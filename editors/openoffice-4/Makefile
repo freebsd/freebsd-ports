@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -165,8 +165,8 @@ SDK_CONFIGURE_ENABLE=		odk
 WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
 WIKI_PUBLISHER_VARS=	BUNDLED_EXTENSIONS+=swext/wiki-publisher.oxt
 
-# Don't run gnome-post-install until after post-install generates the plist
-TARGET_ORDER_OVERRIDE=	710:gnome-post-install
+# Don't run gnome-post-icons until after post-install generates the plist
+TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
 
 .include <bsd.port.pre.mk>
 
@@ -399,7 +399,6 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
-		${STAGEDIR}${DESKTOPDIR} \
 		${STAGEDIR}${PREFIX}/share/mime/packages
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
 		for i in *.tar.?z ; do \

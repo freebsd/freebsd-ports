@@ -21,8 +21,7 @@ RUN_DEPENDS=	rubygem-chunky_png>=1.2:graphics/rubygem-chunky_png \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/compass
 

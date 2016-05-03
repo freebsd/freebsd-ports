@@ -22,9 +22,7 @@ RUN_DEPENDS=	rubygem-annoy>=0:devel/rubygem-annoy \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	try/*.rb tst/*.rb
 
 .include <bsd.port.mk>

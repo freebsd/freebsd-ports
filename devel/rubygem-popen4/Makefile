@@ -19,8 +19,7 @@ RUN_DEPENDS=	rubygem-open4>=0.4.0:devel/rubygem-open4 \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 GEM_NAME=	POpen4-${PORTVERSION}
 
 .include <bsd.port.mk>

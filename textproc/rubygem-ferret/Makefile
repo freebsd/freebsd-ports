@@ -12,8 +12,7 @@ COMMENT=	Ferret is a ruby port of Lucene
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/ferret-browser
 

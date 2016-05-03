@@ -43,12 +43,9 @@ NOPORTDOCS=	yes
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBY_RDOC=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		cpe gem
 
 PLIST_DIRS=	${GEM_LIB_DIR}
-
-USES=		cpe
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails

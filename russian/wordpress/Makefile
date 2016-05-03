@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.5
+PORTVERSION=	4.5.1
 DISTVERSIONSUFFIX=	-ru_RU
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/

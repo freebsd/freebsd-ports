@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblnk
-PORTVERSION=	20160107
+PORTVERSION=	20160420
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/liblnk/releases/download/${PORTVERSION}/ \
@@ -11,7 +11,7 @@ MASTER_SITES=	https://github.com/libyal/liblnk/releases/download/${PORTVERSION}/
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the Windows shortcut file (LNK) format
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
 
 LIB_DEPENDS=	libfwsi.so:devel/libfwsi
 

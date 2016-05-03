@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	4.4.1
+PORTVERSION=	4.5.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,10 +12,10 @@ COMMENT=	Persistent key-value store for fast storage environments
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libsnappy.so:archivers/snappy
+
+BROKEN_powerpc64=	does not build
 
 OPTIONS_DEFINE=	DEBUG
 

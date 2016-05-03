@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 CATEGORIES=	sysutils
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Gstreamer compact disc input and control library
 

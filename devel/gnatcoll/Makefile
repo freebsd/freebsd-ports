@@ -3,7 +3,7 @@
 
 PORTNAME=	gnatcoll
 PORTVERSION=	2015
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src

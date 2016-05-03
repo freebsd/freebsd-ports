@@ -1,0 +1,14 @@
+include/libfwnt.h
+include/libfwnt/definitions.h
+include/libfwnt/error.h
+include/libfwnt/extern.h
+include/libfwnt/features.h
+include/libfwnt/types.h
+lib/libfwnt.a
+lib/libfwnt.so
+lib/libfwnt.so.1
+lib/libfwnt.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pyfwnt.a
+%%PYTHON_SITELIBDIR%%/pyfwnt.so
+libdata/pkgconfig/libfwnt.pc
+man/man3/libfwnt.3.gz

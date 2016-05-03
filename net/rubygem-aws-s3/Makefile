@@ -16,8 +16,7 @@ RUN_DEPENDS=	rubygem-xml-simple>=0:textproc/rubygem-xml-simple \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/s3sh
 
 .include <bsd.port.mk>

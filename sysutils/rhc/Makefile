@@ -24,8 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/minitar:archivers/rubygem-archive-tar-minitar \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/rhc
 

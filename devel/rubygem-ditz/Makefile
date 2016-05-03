@@ -14,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-trollop>=1.9:devel/rubygem-trollop
 
+BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
+
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RAKE=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/ditz
 ruby_OLD_CMD=	/usr/bin/ruby1.8
 

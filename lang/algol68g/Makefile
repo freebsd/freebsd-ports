@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	algol68g
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	lang
 MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 

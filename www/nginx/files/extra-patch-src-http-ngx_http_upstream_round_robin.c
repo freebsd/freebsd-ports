@@ -1,4 +1,4 @@
---- src/http/ngx_http_upstream_round_robin.c.orig	2016-01-26 14:39:33 UTC
+--- src/http/ngx_http_upstream_round_robin.c.orig	2016-02-24 14:53:24 UTC
 +++ src/http/ngx_http_upstream_round_robin.c
 @@ -9,6 +9,9 @@
  #include <ngx_core.h>
@@ -10,69 +10,70 @@
  
  #define ngx_http_upstream_tries(p) ((p)->number                               \
                                      + ((p)->next ? (p)->next->number : 0))
-@@ -92,6 +95,14 @@ ngx_http_upstream_init_round_robin(ngx_c
+@@ -96,7 +99,14 @@ ngx_http_upstream_init_round_robin(ngx_c
                  peer[n].fail_timeout = server[i].fail_timeout;
                  peer[n].down = server[i].down;
                  peer[n].server = server[i].name;
+-
 +#if (NGX_HTTP_UPSTREAM_CHECK)
 +                if (!server[i].down) {
-+                    peers->peer[n].check_index =
++                    peer[n].check_index =
 +                        ngx_http_upstream_check_add_peer(cf, us, &server[i].addrs[j]);
 +                } else {
-+                    peers->peer[n].check_index = (ngx_uint_t) NGX_ERROR;
++                    peer[n].check_index = (ngx_uint_t) NGX_ERROR;
 +                }
 +#endif
+                 *peerp = &peer[n];
+                 peerp = &peer[n].next;
                  n++;
-             }
-         }
-@@ -148,6 +159,15 @@ ngx_http_upstream_init_round_robin(ngx_c
+@@ -159,7 +169,15 @@ ngx_http_upstream_init_round_robin(ngx_c
                  peer[n].fail_timeout = server[i].fail_timeout;
                  peer[n].down = server[i].down;
                  peer[n].server = server[i].name;
+-
 +#if (NGX_HTTP_UPSTREAM_CHECK)
 +                if (!server[i].down) {
-+                    backup->peer[n].check_index =
++                    peer[n].check_index =
 +                        ngx_http_upstream_check_add_peer(cf, us, &server[i].addrs[j]);
 +                }
 +                else {
-+                    backup->peer[n].check_index = (ngx_uint_t) NGX_ERROR;
++                    peer[n].check_index = (ngx_uint_t) NGX_ERROR;
 +                }
 +#endif
+                 *peerp = &peer[n];
+                 peerp = &peer[n].next;
                  n++;
-             }
-         }
-@@ -207,6 +227,9 @@ ngx_http_upstream_init_round_robin(ngx_c
+@@ -225,6 +243,9 @@ ngx_http_upstream_init_round_robin(ngx_c
          peer[i].current_weight = 0;
          peer[i].max_fails = 1;
          peer[i].fail_timeout = 10;
 +#if (NGX_HTTP_UPSTREAM_CHECK)
-+        peers->peer[i].check_index = (ngx_uint_t) NGX_ERROR;
++        peer[i].check_index = (ngx_uint_t) NGX_ERROR;
 +#endif
+         *peerp = &peer[i];
+         peerp = &peer[i].next;
      }
- 
-     us->peer.data = peers;
-@@ -316,7 +339,9 @@ ngx_http_upstream_create_round_robin_pee
+@@ -339,6 +360,9 @@ ngx_http_upstream_create_round_robin_pee
          peer[0].current_weight = 0;
          peer[0].max_fails = 1;
          peer[0].fail_timeout = 10;
--
 +#if (NGX_HTTP_UPSTREAM_CHECK)
-+        peers->peer[0].check_index = (ngx_uint_t) NGX_ERROR;
++        peer[0].check_index = (ngx_uint_t) NGX_ERROR;
 +#endif
-     } else {
+         peers->peer = peer;
  
-         for (i = 0; i < ur->naddrs; i++) {
-@@ -356,6 +381,9 @@ ngx_http_upstream_create_round_robin_pee
+     } else {
+@@ -381,6 +405,9 @@ ngx_http_upstream_create_round_robin_pee
              peer[i].current_weight = 0;
              peer[i].max_fails = 1;
              peer[i].fail_timeout = 10;
 +#if (NGX_HTTP_UPSTREAM_CHECK)
-+            peers->peer[i].check_index = (ngx_uint_t) NGX_ERROR;
++            peer[i].check_index = (ngx_uint_t) NGX_ERROR;
 +#endif
+             *peerp = &peer[i];
+             peerp = &peer[i].next;
          }
-     }
- 
-@@ -415,6 +443,12 @@ ngx_http_upstream_get_round_robin_peer(n
+@@ -441,6 +468,12 @@ ngx_http_upstream_get_round_robin_peer(n
              goto failed;
          }
  
@@ -82,10 +83,10 @@
 +        }
 +#endif
 +
-     } else {
+         rrp->current = peer;
  
-         /* there are several peers */
-@@ -507,6 +541,12 @@ ngx_http_upstream_get_peer(ngx_http_upst
+     } else {
+@@ -542,6 +575,12 @@ ngx_http_upstream_get_peer(ngx_http_upst
              continue;
          }
  

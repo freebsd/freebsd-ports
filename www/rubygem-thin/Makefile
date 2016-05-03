@@ -17,8 +17,7 @@ RUN_DEPENDS=	rubygem-daemons>=1.0.9:devel/rubygem-daemons \
 		rubygem-rack16>=1.0:www/rubygem-rack16
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/thin
 

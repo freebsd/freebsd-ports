@@ -22,8 +22,7 @@ RUN_DEPENDS=	rubygem-highline>=1.6.1:devel/rubygem-highline \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/vmail bin/vmail_client bin/vmailsend
 

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-colorator>=0:textproc/rubygem-colorator
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

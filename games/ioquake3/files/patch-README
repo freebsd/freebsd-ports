@@ -1,6 +1,6 @@
---- README.orig	2009-04-08 05:36:16.000000000 +0200
-+++ README	2011-10-27 13:13:59.000000000 +0200
-@@ -79,6 +79,8 @@
+--- README.orig	2009-04-08 03:36:16 UTC
++++ README
+@@ -79,6 +79,8 @@ Makefile.local:
    CFLAGS            - use this for custom CFLAGS
    V                 - set to show cc command line when building
    DEFAULT_BASEDIR   - extra path to search for baseq3 and such

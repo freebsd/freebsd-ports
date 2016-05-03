@@ -19,9 +19,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 
 SHEBANG_FILES=	dev/test_rails
 ruby_OLD_CMD=	"env ruby"

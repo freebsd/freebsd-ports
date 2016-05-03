@@ -50,7 +50,7 @@ EMPTY_DIRS_LIST=data graphs contrib lib t xt
 MODPERL_USE=		APACHE_RUN=22+
 MYSQL_USE=		MYSQL=yes
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=4.0001:databases/p5-DBD-mysql
-PGSQL_USES=		pgsql:91+
+PGSQL_USES=		pgsql:9.1+
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=3.4.2:databases/p5-DBD-Pg
 SQLITE_USES=		sqlite
 SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=1.29:databases/p5-DBD-SQLite \

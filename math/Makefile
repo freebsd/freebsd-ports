@@ -20,6 +20,7 @@
     SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-RcppArmadillo
     SUBDIR += R-cran-RcppEigen
+    SUBDIR += R-cran-Rmpfr
     SUBDIR += R-cran-SparseM
     SUBDIR += R-cran-SuppDists
     SUBDIR += R-cran-VGAM
@@ -34,6 +35,7 @@
     SUBDIR += R-cran-forecast
     SUBDIR += R-cran-fracdiff
     SUBDIR += R-cran-geepack
+    SUBDIR += R-cran-gmp
     SUBDIR += R-cran-gpclib
     SUBDIR += R-cran-gss
     SUBDIR += R-cran-gtable

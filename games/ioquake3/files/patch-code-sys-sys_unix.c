@@ -1,6 +1,6 @@
---- code/sys/sys_unix.c.orig	2008-11-11 00:55:22.000000000 +0100
-+++ code/sys/sys_unix.c	2011-10-27 13:11:15.000000000 +0200
-@@ -53,7 +53,9 @@
+--- code/sys/sys_unix.c.orig	2008-11-10 23:55:22 UTC
++++ code/sys/sys_unix.c
+@@ -53,7 +53,9 @@ char *Sys_DefaultHomePath(void)
  		if( ( p = getenv( "HOME" ) ) != NULL )
  		{
  			Q_strncpyz( homePath, p, sizeof( homePath ) );

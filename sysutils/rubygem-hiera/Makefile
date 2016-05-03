@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiera
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -18,8 +18,7 @@ CONFLICTS_INSTALL=	rubygem-hiera1-*
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 HIERA_DBDIR=	/var/db/hiera
 PLIST_FILES=	bin/hiera

@@ -1,0 +1,4 @@
+etc/rc.d/powerd++
+man/man8/powerd++.8.gz
+sbin/powerd++
+%%DOCSDIR%%/README.md

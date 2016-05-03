@@ -13,7 +13,6 @@ LICENSE=	MIT
 
 USE_GNOME=	libxml2
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

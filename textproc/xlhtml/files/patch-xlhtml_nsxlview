@@ -1,6 +1,6 @@
---- xlhtml/nsxlview.orig	Sun Jun 22 08:36:31 2003
-+++ xlhtml/nsxlview	Sun Jun 22 08:44:57 2003
-@@ -12,10 +12,8 @@
+--- xlhtml/nsxlview.orig	2002-03-20 15:32:50 UTC
++++ xlhtml/nsxlview
+@@ -12,10 +12,8 @@ set source = $argv[1]
  #set tmp = /tmp/$com:t.$$
  #set html = $tmp.html
  

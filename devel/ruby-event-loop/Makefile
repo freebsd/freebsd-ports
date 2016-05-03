@@ -15,11 +15,8 @@ BROKEN=		unfetchable
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_RUBY22=	yes
-
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RAKE=	yes
 
 do-configure:
 	@cd ${WRKSRC} && ${RUBY} setup.rb config --prefix=${PREFIX}

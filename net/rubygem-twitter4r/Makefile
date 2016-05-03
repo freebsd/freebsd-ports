@@ -17,8 +17,7 @@ RUN_DEPENDS=	rubygem-json>=1.1.1:devel/rubygem-json \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/t4r-oauth-access bin/t4rsh
 

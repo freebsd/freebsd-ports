@@ -16,9 +16,7 @@ LICENSE_COMB=	dual
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	sample/biofetch.rb
 ruby_OLD_CMD=	/usr/proj/bioruby/bin/ruby
 

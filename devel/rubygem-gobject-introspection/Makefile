@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
 
 USE_GNOME=	introspection
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

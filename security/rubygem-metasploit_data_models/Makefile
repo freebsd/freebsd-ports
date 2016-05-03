@@ -23,8 +23,7 @@ RUN_DEPENDS=	rubygem-activerecord>=3.2.13:databases/rubygem-activerecord \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/mdm_console
 
 PORTSCOUT=	ignore:1

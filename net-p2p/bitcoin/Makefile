@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.11.2
+PORTVERSION=	0.12.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p finance
 
@@ -11,7 +11,8 @@ COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
+		libevent.so:devel/libevent2
 
 USES=		autoreconf compiler:c++0x gmake libtool pkgconfig shebangfix
 SHEBANG_FILES=	src/test/*.py
@@ -34,14 +35,15 @@ TESTS_PLIST_FILES=	%%QT_BINDIR%%/test_bitcoin-qt \
 			bin/test_bitcoin
 .endif
 
-OPTIONS_DEFINE?=	DBUS DEBUG HARDENING QRCODES TESTS UPNP WALLET
-OPTIONS_DEFAULT?=	HARDENING QRCODES WALLET
+OPTIONS_DEFINE?=	DBUS DEBUG HARDENING QRCODES TESTS UPNP WALLET ZMQ
+OPTIONS_DEFAULT?=	DBUS HARDENING QRCODES UPNP WALLET
 OPTIONS_SUB=		yes
 
 HARDENING_DESC=	Attempt to harden binaries (PIE for ASLR, NX Stack)
 QRCODES_DESC=	Display QR Codes
 TESTS_DESC=	Build test binary and unit tests
 WALLET_DESC=	Wallet Management Support
+ZMQ_DESC=	Block and transaction broadcasting with ZeroMQ
 
 DBUS_CONFIGURE_WITH=	qtdbus
 DBUS_USE=		QT4=dbus
@@ -51,10 +53,11 @@ DEBUG_INSTALL_TARGET_OFF=	install-strip
 
 HARDENING_CONFIGURE_ENABLE=	hardening
 
-TESTS_CONFIGURE_ENABLE=	tests
+TESTS_CONFIGURE_ENABLE=	tests bench
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "yes"
 TESTS_PLIST_FILES=	bin/test_bitcoin
 .endif
+TESTS_PLIST_FILES+=	bin/bench_bitcoin
 
 UPNP_CONFIGURE_WITH=	miniupnpc
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
@@ -69,11 +72,14 @@ WALLET_CXXFLAGS=		-I${BDB_INCLUDE_DIR}
 WALLET_LIBS=			-L${BDB_LIB_DIR}
 WALLET_USE=			BDB=48
 
+ZMQ_CONFIGURE_ENABLE=	zmq
+ZMQ_BUILD_DEPENDS=	libzmq4>0:net/libzmq4
+ZMQ_RUN_DEPENDS=	libzmq4>0:net/libzmq4
+
 GH_ACCOUNT=	bitcoin
 
 CONFIGURE_ARGS?=	--without-libs \
-			--disable-reduce-exports \
-			--with-gui \
+			--with-gui=qt4 \
 			--without-daemon \
 			--without-utils
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	casstcl
 PORTVERSION=	2.11
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
@@ -18,7 +19,7 @@ USES=		autoreconf tcl:85+,tea
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/casstcl${PORTVERSION}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>

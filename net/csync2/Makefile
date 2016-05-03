@@ -3,7 +3,7 @@
 
 PORTNAME=	csync2
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://oss.linbit.com/csync2/
 

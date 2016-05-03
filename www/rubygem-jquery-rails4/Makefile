@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-rails-dom-testing>=1.0:textproc/rubygem-rails-dom-testing \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

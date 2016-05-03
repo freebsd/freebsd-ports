@@ -4,8 +4,10 @@
 PORTNAME=	openarena
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	kami@freebsd.org
 COMMENT=	OpenArena dedicated server
+
+LICENSE=	GPLv2
 
 MASTERDIR=	${.CURDIR}/../${PORTNAME}
 

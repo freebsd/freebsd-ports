@@ -14,23 +14,23 @@ USES=		tar:Z
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install install.man
+TEST_TARGET=	test
 
 PROGS=		sgmls sgmlsasp rast
-PORTDOCS=	ChangeLog INSTALL LICENSE NEWS README TODO
+PORTDOCS=	ChangeLog LICENSE NEWS README TODO
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
 
 post-build:
 .for file in ${PROGS}
-	${STRIP_CMD} ${WRKSRC}/${file}
+	@${STRIP_CMD} ${WRKSRC}/${file}
 .endfor
-	cd ${WRKSRC} && ${MAKE} test
 
-post-install:
-	@-${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

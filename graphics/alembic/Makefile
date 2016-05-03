@@ -25,4 +25,8 @@ USE_GL=		glew glut
 
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON -DUSE_PYALEMBIC:BOOL=OFF
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,H5Rdereference,&1,' \
+		${WRKSRC}/lib/Alembic/AbcCoreHDF5/HDF5Util.cpp
+
 .include <bsd.port.mk>

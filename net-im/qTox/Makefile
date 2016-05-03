@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qTox
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im net-p2p
 
@@ -21,19 +20,23 @@ LIB_DEPENDS=	libtoxcore.so:net-im/tox \
 		libfilteraudio.so:audio/libfilteraudio \
 		libsodium.so:security/libsodium \
 		libqrencode.so:graphics/libqrencode \
-		libsqlcipher.so:databases/sqlcipher
+		libsqlcipher.so:databases/sqlcipher \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tux3
 
 SUB_FILES=	pkg-message
 
-USES=		compiler:c++11-lib desktop-file-utils openal:soft qmake gmake
+USES=		compiler:c++11-lib desktop-file-utils gettext gmake openal:soft pkgconfig qmake
 USE_GNOME=	glib20 gtk20 cairo gdkpixbuf2
 USE_XORG=	x11 xscrnsaver
+USE_GL=		gl
 USE_QT5=	core gui network xml opengl sql sql-sqlite3_run widgets svg \
 		concurrent buildtools_build linguisttools_build
 ICON_SIZES=	14x14 16x16 22x22 24x24 32x32 36x36 48x48 64x64 72x72 96x96 128x128 192x192 256x256 512x512
+QMAKE_ARGS=	FREEBSD_PKGVERSION=${PKGVERSION}
 
 PLIST_FILES=	bin/qtox \
 		share/applications/qTox.desktop \
@@ -66,7 +69,7 @@ post-install:
 	@${GZIP_CMD} ${GZIP} < ${WRKSRC}/img/icons/qtox.svg > ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/qtox.svgz
 .for SZ in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps
-	@${CP} ${WRKSRC}/img/icons/qtox-${SZ}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps/qtox.png
+	@${CP} ${WRKSRC}/img/icons/${SZ}/qtox.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps/qtox.png
 .endfor
 
 .include <bsd.port.mk>

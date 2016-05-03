@@ -3,7 +3,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	6.1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	gps-6.1.1-src
