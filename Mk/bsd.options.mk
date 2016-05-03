@@ -216,6 +216,16 @@ OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${ARCH}}
 _ALL_EXCLUDE=	${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} \
 		${OPTIONS_SLAVE} ${OPTIONS_EXCLUDE_${OPSYS}}
 
+.for opt in ${OPTIONS_DEFINE:O:u}
+.  if !${_ALL_EXCLUDE:M${opt}}
+.    for opt_implied in ${${opt}_IMPLIES}
+.       if ${_ALL_EXCLUDE:M${opt_implied}}
+_ALL_EXCLUDE+=	${opt}
+.       endif
+.    endfor
+.  endif
+.endfor
+
 # Remove options the port maintainer doesn't want
 .for opt in ${_ALL_EXCLUDE:O:u}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
