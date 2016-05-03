@@ -100,7 +100,6 @@
     SUBDIR += nsping
     SUBDIR += nss_mdns
     SUBDIR += nss_resinit
-    SUBDIR += odsclient
     SUBDIR += opendd
     SUBDIR += opendnssec
     SUBDIR += opendnssec13
