@@ -1,5 +1,5 @@
 # Created by: ijliao
-# $FreeBSD: head/net/socat/Makefile 384479 2015-04-22 06:55:23Z ehaupt $
+# $FreeBSD: head/net/socat/Makefile 414484 2016-05-02 21:09:31Z brnrd $
 
 PORTNAME=	socat
 PORTVERSION=	1.7.3.1
@@ -13,10 +13,12 @@ COMMENT=	Multipurpose relay and more
 
 LICENSE=	GPLv2
 
-USES=		compiler tar:bzip2 cpe
+USES=		compiler cpe tar:bzip2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	socat
 USE_OPENSSL=	yes
+
+CPE_VENDOR=	dest-unreach
 
 PORTSCOUT=	skipv:2.0.0-b2
 
