@@ -23,6 +23,7 @@ bin/stream
 @sample etc/ImageMagick-6/policy.xml.sample
 @sample etc/ImageMagick-6/quantization-table.xml.sample
 @sample etc/ImageMagick-6/thresholds.xml.sample
+@sample etc/ImageMagick-6/type-apple.xml.sample
 @sample etc/ImageMagick-6/type-dejavu.xml.sample
 @sample etc/ImageMagick-6/type-ghostscript.xml.sample
 @sample etc/ImageMagick-6/type-windows.xml.sample
