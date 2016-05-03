@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smplayer
-DISTVERSION=	16.1.0
+DISTVERSION=	16.4.0
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
