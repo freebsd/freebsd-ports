@@ -2,7 +2,7 @@
 
 py-fishcrypt has been installed.
 
-To make FiSH work with with py-fishcrypt please symlink as user
+To make FiSH work with py-fishcrypt please do symlink as user
 
     su user
 
