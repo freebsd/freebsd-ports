@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sngrep
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	net
 
 MAINTAINER=	tad@vif.com
@@ -11,13 +11,9 @@ COMMENT=	SIP Packet display and capture
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libncurses.so:devel/ncurses \
-		libpcap.so:net/libpcap
-
-#CPPFLAGS+=      -I${LOCALBASE}/include
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	irontec
@@ -44,7 +40,7 @@ EEP_DESC=	Enable EEP packet send/receive support
 EEP_CONFIGURE_ON=	--enable-eep
 
 GNU_CONFIGURE=	yes
-USES=autoreconf
+USES=autoreconf ncurses
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ncursesw/ncurses.h|ncurses.h|g' \
