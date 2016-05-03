@@ -1419,6 +1419,7 @@
 %%WWWDIR%%/config/initializers/public_key.rb
 %%WWWDIR%%/config/initializers/rack_attack_git_basic_auth.rb
 %%WWWDIR%%/config/initializers/rack_lineprof.rb
+%%WWWDIR%%/config/initializers/redis_config.rb
 %%WWWDIR%%/config/initializers/relative_url.rb.sample
 %%WWWDIR%%/config/initializers/secret_token.rb
 %%WWWDIR%%/config/initializers/sentry.rb
@@ -2548,6 +2549,7 @@
 %%WWWDIR%%/lib/gitlab/email/message/repository_push.rb
 %%WWWDIR%%/lib/gitlab/email/receiver.rb
 %%WWWDIR%%/lib/gitlab/email/reply_parser.rb
+%%WWWDIR%%/lib/gitlab/exclusive_lease.rb
 %%WWWDIR%%/lib/gitlab/fogbugz_import/client.rb
 %%WWWDIR%%/lib/gitlab/fogbugz_import/importer.rb
 %%WWWDIR%%/lib/gitlab/fogbugz_import/project_creator.rb
@@ -2775,6 +2777,7 @@
 %%WWWDIR%%/spec/controllers/projects_controller_spec.rb
 %%WWWDIR%%/spec/controllers/root_controller_spec.rb
 %%WWWDIR%%/spec/controllers/sent_notification_controller_spec.rb
+%%WWWDIR%%/spec/controllers/sessions_controller_spec.rb
 %%WWWDIR%%/spec/controllers/snippets_controller_spec.rb
 %%WWWDIR%%/spec/controllers/uploads_controller_spec.rb
 %%WWWDIR%%/spec/controllers/users_controller_spec.rb
@@ -2884,6 +2887,7 @@
 %%WWWDIR%%/spec/helpers/blob_helper_spec.rb
 %%WWWDIR%%/spec/helpers/broadcast_messages_helper_spec.rb
 %%WWWDIR%%/spec/helpers/ci_status_helper_spec.rb
+%%WWWDIR%%/spec/helpers/commits_helper_spec.rb
 %%WWWDIR%%/spec/helpers/diff_helper_spec.rb
 %%WWWDIR%%/spec/helpers/emails_helper_spec.rb
 %%WWWDIR%%/spec/helpers/events_helper_spec.rb
@@ -2994,6 +2998,7 @@
 %%WWWDIR%%/spec/lib/gitlab/email/message/repository_push_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/email/receiver_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/email/reply_parser_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/exclusive_lease_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git_access_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git_access_wiki_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/github_import/client_spec.rb
