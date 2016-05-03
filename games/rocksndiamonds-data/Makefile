@@ -28,7 +28,7 @@ EXTRACT_ONLY_7z=Emerald_Mine_Club-2.1.1.7z
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Additional Player Levels for Rocks'n'Diamonds and R'n'D jue
 
-EXTRACT_DEPENDS+=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=${UNZIP_CMD}:archivers/unzip
 
 USES=		7z:partial
 NO_BUILD=	yes
