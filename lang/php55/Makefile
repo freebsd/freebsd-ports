@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php55
-PORTVERSION=	5.5.34
+PORTVERSION=	5.5.35
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
