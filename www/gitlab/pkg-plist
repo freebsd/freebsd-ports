@@ -290,7 +290,7 @@
 %%WWWDIR%%/app/controllers/admin/groups_controller.rb
 %%WWWDIR%%/app/controllers/admin/hooks_controller.rb
 %%WWWDIR%%/app/controllers/admin/identities_controller.rb
-%%WWWDIR%%/app/controllers/admin/impersonation_controller.rb
+%%WWWDIR%%/app/controllers/admin/impersonations_controller.rb
 %%WWWDIR%%/app/controllers/admin/keys_controller.rb
 %%WWWDIR%%/app/controllers/admin/labels_controller.rb
 %%WWWDIR%%/app/controllers/admin/logs_controller.rb
@@ -2731,7 +2731,7 @@
 %%WWWDIR%%/spec/benchmarks/services/projects/create_service_spec.rb
 %%WWWDIR%%/spec/controllers/abuse_reports_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/identities_controller_spec.rb
-%%WWWDIR%%/spec/controllers/admin/impersonation_controller_spec.rb
+%%WWWDIR%%/spec/controllers/admin/impersonations_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/spam_logs_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/users_controller_spec.rb
 %%WWWDIR%%/spec/controllers/application_controller_spec.rb
@@ -2827,6 +2827,7 @@
 %%WWWDIR%%/spec/features/issues_spec.rb
 %%WWWDIR%%/spec/features/login_spec.rb
 %%WWWDIR%%/spec/features/markdown_spec.rb
+%%WWWDIR%%/spec/features/merge_requests/create_new_mr_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/filter_by_milestone_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/merge_when_build_succeeds_spec.rb
 %%WWWDIR%%/spec/features/notes_on_merge_requests_spec.rb
@@ -3088,7 +3089,6 @@
 %%WWWDIR%%/spec/models/email_spec.rb
 %%WWWDIR%%/spec/models/event_spec.rb
 %%WWWDIR%%/spec/models/external_issue_spec.rb
-%%WWWDIR%%/spec/models/external_wiki_service_spec.rb
 %%WWWDIR%%/spec/models/forked_project_link_spec.rb
 %%WWWDIR%%/spec/models/generic_commit_status_spec.rb
 %%WWWDIR%%/spec/models/global_milestone_spec.rb
@@ -3116,14 +3116,20 @@
 %%WWWDIR%%/spec/models/project_services/bamboo_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/buildkite_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/builds_email_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/campfire_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/custom_issue_tracker_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/drone_ci_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/emails_on_push_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/external_wiki_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/flowdock_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/gemnasium_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/gitlab_issue_tracker_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/hipchat_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/irker_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/jira_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/pivotaltracker_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/pushover_service_spec.rb
+%%WWWDIR%%/spec/models/project_services/redmine_service_spec.rb
 %%WWWDIR%%/spec/models/project_services/slack_service/build_message_spec.rb
 %%WWWDIR%%/spec/models/project_services/slack_service/issue_message_spec.rb
 %%WWWDIR%%/spec/models/project_services/slack_service/merge_message_spec.rb
@@ -3166,6 +3172,7 @@
 %%WWWDIR%%/spec/requests/api/notes_spec.rb
 %%WWWDIR%%/spec/requests/api/project_hooks_spec.rb
 %%WWWDIR%%/spec/requests/api/project_members_spec.rb
+%%WWWDIR%%/spec/requests/api/project_snippets_spec.rb
 %%WWWDIR%%/spec/requests/api/projects_spec.rb
 %%WWWDIR%%/spec/requests/api/repositories_spec.rb
 %%WWWDIR%%/spec/requests/api/runners_spec.rb
@@ -3246,6 +3253,7 @@
 %%WWWDIR%%/spec/support/gitlab_stubs/projects.json
 %%WWWDIR%%/spec/support/gitlab_stubs/session.json
 %%WWWDIR%%/spec/support/gitlab_stubs/user.json
+%%WWWDIR%%/spec/support/issue_tracker_service_shared_example.rb
 %%WWWDIR%%/spec/support/jira_service_helper.rb
 %%WWWDIR%%/spec/support/login_helpers.rb
 %%WWWDIR%%/spec/support/markdown_feature.rb
