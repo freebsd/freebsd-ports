@@ -1,7 +1,0 @@
-A dynamic DNS client for the service provided by the Open Domain Server.
-This client is the official ODS client, it is a simple command-line client that
-can easily be placed into any scripts necessary.
-
-Account signup, Host creation, etc can be found at:
-
-WWW: http://www.ods.org/
