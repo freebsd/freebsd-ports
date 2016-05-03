@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.3-8
-PORTREVISION=	1
+DISTVERSION=	6.9.3-9
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -30,7 +29,7 @@ MASTER_SITES=	http://www.imagemagick.org/download/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	Image processing tools
+COMMENT=	Image processing tools (legacy version)
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -40,7 +39,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
-USES=		cpe gmake libtool:keepla pathfix perl5 pkgconfig:both shebangfix tar:xz
+USES=		cpe gmake libtool:keepla localbase pathfix perl5 \
+		pkgconfig:both shebangfix tar:xz
 CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
@@ -49,11 +49,6 @@ CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
-
-# make sure LOCALBASE is placed at the end of the compiler lookup so the configure
-# script can find openjpeg2 headers before the openjpeg15 headers
-CPPFLAGS+=	-isystem${LOCALBASE}/include
-LDFLAGS+=	-Wl,-Y${LOCALBASE}/lib
 
 SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
 		policy.xml quantization-table.xml thresholds.xml type-apple.xml \
@@ -366,11 +361,11 @@ USES+=			ghostscript
 
 .if ! ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--without-x
-CONFLICTS+=		ImageMagick-6*
+CONFLICTS_INSTALL+=	ImageMagick-6*
 PLIST_SUB+=		X11='@comment '
 PKGNAMESUFFIX=		-nox11
 .else
-CONFLICTS+=		ImageMagick-nox11-6*
+CONFLICTS_INSTALL+=	ImageMagick-nox11-6*
 CONFLICTS+=		display-[0-9]*
 CONFIGURE_ARGS+=	--with-x
 USE_XORG=		xext xt
