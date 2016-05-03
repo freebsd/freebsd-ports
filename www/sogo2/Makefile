@@ -12,16 +12,16 @@ COMMENT=		Groupware server with a focus on scalability and open standards
 
 LICENSE=		GPLv2
 
-LIB_DEPENDS=		libmemcached.so:${PORTSDIR}/databases/libmemcached \
-			libcurl.so:${PORTSDIR}/ftp/curl \
-			libDOM.so:${PORTSDIR}/devel/sope2
+LIB_DEPENDS=		libmemcached.so:databases/libmemcached \
+			libcurl.so:ftp/curl \
+			libDOM.so:devel/sope2
 
 OPTIONS_DEFINE=		ACTIVESYNC
 OPTIONS_SUB=		yes
 
 ACTIVESYNC_DESC=	Enable support for ActiveSync protocol
 
-ACTIVESYNC_LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
+ACTIVESYNC_LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
 
 USERS=			sogod
 GROUPS=			sogod
