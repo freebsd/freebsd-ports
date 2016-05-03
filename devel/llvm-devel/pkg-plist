@@ -505,6 +505,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Serialization/ModuleFileExtension.h
 %%CLANG%%llvm-devel/include/clang/Serialization/ModuleManager.h
 %%CLANG%%llvm-devel/include/clang/Serialization/SerializationDiagnostic.h
+%%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Checkers/Checkers.inc
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Checkers/ClangCheckers.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Checkers/LocalCheckers.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Checkers/ObjCRetainCount.h
@@ -1464,6 +1465,18 @@ llvm-devel/include/llvm/DebugInfo/PDB/PDBSymbolTypeVTableShape.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDBSymbolUnknown.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDBSymbolUsingNamespace.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDBTypes.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/ByteStream.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/DbiStream.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/InfoStream.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/MappedBlockStream.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/ModInfo.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/NameHashTable.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/NameMap.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/PDBFile.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/RawConstants.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/RawSession.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/StreamInterface.h
+llvm-devel/include/llvm/DebugInfo/PDB/Raw/StreamReader.h
 llvm-devel/include/llvm/DebugInfo/Symbolize/DIPrinter.h
 llvm-devel/include/llvm/DebugInfo/Symbolize/SymbolizableModule.h
 llvm-devel/include/llvm/DebugInfo/Symbolize/Symbolize.h
@@ -1708,9 +1721,9 @@ llvm-devel/include/llvm/PassInfo.h
 llvm-devel/include/llvm/PassRegistry.h
 llvm-devel/include/llvm/PassSupport.h
 llvm-devel/include/llvm/Passes/PassBuilder.h
-llvm-devel/include/llvm/ProfileData/CoverageMapping.h
-llvm-devel/include/llvm/ProfileData/CoverageMappingReader.h
-llvm-devel/include/llvm/ProfileData/CoverageMappingWriter.h
+llvm-devel/include/llvm/ProfileData/Coverage/CoverageMapping.h
+llvm-devel/include/llvm/ProfileData/Coverage/CoverageMappingReader.h
+llvm-devel/include/llvm/ProfileData/Coverage/CoverageMappingWriter.h
 llvm-devel/include/llvm/ProfileData/InstrProf.h
 llvm-devel/include/llvm/ProfileData/InstrProfData.inc
 llvm-devel/include/llvm/ProfileData/InstrProfReader.h
@@ -1883,6 +1896,7 @@ llvm-devel/include/llvm/Transforms/IPO.h
 llvm-devel/include/llvm/Transforms/IPO/ForceFunctionAttrs.h
 llvm-devel/include/llvm/Transforms/IPO/FunctionAttrs.h
 llvm-devel/include/llvm/Transforms/IPO/FunctionImport.h
+llvm-devel/include/llvm/Transforms/IPO/GlobalOpt.h
 llvm-devel/include/llvm/Transforms/IPO/InferFunctionAttrs.h
 llvm-devel/include/llvm/Transforms/IPO/InlinerPass.h
 llvm-devel/include/llvm/Transforms/IPO/Internalize.h
@@ -1901,6 +1915,7 @@ llvm-devel/include/llvm/Transforms/Scalar/DCE.h
 llvm-devel/include/llvm/Transforms/Scalar/EarlyCSE.h
 llvm-devel/include/llvm/Transforms/Scalar/GVN.h
 llvm-devel/include/llvm/Transforms/Scalar/LowerExpectIntrinsic.h
+llvm-devel/include/llvm/Transforms/Scalar/Reassociate.h
 llvm-devel/include/llvm/Transforms/Scalar/SROA.h
 llvm-devel/include/llvm/Transforms/Scalar/SimplifyCFG.h
 llvm-devel/include/llvm/Transforms/Scalar/Sink.h
@@ -1969,6 +1984,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512vbmiintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512vbmivlintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512vlbwintrin.h
+%%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512vlcdintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512vldqintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avx512vlintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/avxintrin.h
@@ -2019,7 +2035,6 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/xsaveoptintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/xsavesintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.9.0/include/xtestintrin.h
-%%CLANG%%llvm-devel/lib/clang/3.9.0/vtables_blacklist.txt
 %%CLANG%%llvm-devel/lib/cmake/clang/ClangConfig.cmake
 %%CLANG%%llvm-devel/lib/cmake/clang/ClangTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%CLANG%%llvm-devel/lib/cmake/clang/ClangTargets.cmake
@@ -2078,6 +2093,7 @@ llvm-devel/lib/libLLVMBitReader.a
 llvm-devel/lib/libLLVMBitWriter.a
 llvm-devel/lib/libLLVMCodeGen.a
 llvm-devel/lib/libLLVMCore.a
+llvm-devel/lib/libLLVMCoverage.a
 llvm-devel/lib/libLLVMCppBackendCodeGen.a
 llvm-devel/lib/libLLVMCppBackendInfo.a
 llvm-devel/lib/libLLVMDebugInfoCodeView.a
@@ -2194,6 +2210,7 @@ llvm-devel/lib/libLTO.so
 %%CLANG%%llvm-devel/lib/libclangStaticAnalyzerCore.a
 %%CLANG%%llvm-devel/lib/libclangStaticAnalyzerFrontend.a
 %%EXTRAS%%llvm-devel/lib/libclangTidy.a
+%%EXTRAS%%llvm-devel/lib/libclangTidyBoostModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyCERTModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyCppCoreGuidelinesModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyGoogleModule.a
@@ -2206,6 +2223,7 @@ llvm-devel/lib/libLTO.so
 %%EXTRAS%%llvm-devel/lib/libclangTidyUtils.a
 %%CLANG%%llvm-devel/lib/libclangTooling.a
 %%CLANG%%llvm-devel/lib/libclangToolingCore.a
+llvm-devel/lib/libfindAllSymbols.a
 %%OPENMP%%llvm-devel/lib/libgomp.so
 %%OPENMP%%llvm-devel/lib/libiomp5.so
 %%LLD%%llvm-devel/lib/liblldCOFF.a
