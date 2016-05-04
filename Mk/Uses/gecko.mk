@@ -65,8 +65,8 @@ _GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9]*:C/[0-9].([0-9][0-9]).*/\1/
 
 .elif ${gecko_ARGS:Mthunderbird}
 
-_GECKO_DEFAULT_VERSION=	38
-_GECKO_VERSIONS=	38
+_GECKO_DEFAULT_VERSION=	45
+_GECKO_VERSIONS=	45
 _GECKO_TYPE=	thunderbird
 
 .if exists(${LOCALBASE}/bin/thunderbird)
@@ -75,7 +75,7 @@ _GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9][0-9]*:C/([0-9][0-9]).*/\1/g
 .endif
 
 # Dependence lines for different Thunderbird versions
-38_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:mail/thunderbird
+45_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:mail/thunderbird
 
 .else
 IGNORE=	Unknown type of gecko dependency you may specify either libxul, firefox, seamonkey or thunderbird
