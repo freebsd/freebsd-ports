@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe gmake libtool lua pkgconfig tar:bzip2
 USE_LDCONFIG=	YES
 USE_SUBMAKE=	YES
@@ -119,8 +121,6 @@ TINYDNS_DESC=		TinyDNS backend
 TOOLS_DESC=		Build extra tools
 REMOTEOPT_DESC=		Remote backend connectors
 ZEROMQ_DESC=		Enable ZeroMQ connector (Implies REMOTE enabled)
-
-.include <bsd.port.options.mk>
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
