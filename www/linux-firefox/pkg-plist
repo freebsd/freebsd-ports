@@ -12,8 +12,6 @@ lib/%%APP_NAME%%/browser/components/libbrowsercomps.so
 lib/%%APP_NAME%%/browser/crashreporter-override.ini
 lib/%%APP_NAME%%/browser/defaults/preferences/browser-prefs.js
 lib/%%APP_NAME%%/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
-lib/%%APP_NAME%%/browser/features/e10srollout@mozilla.org.xpi
-lib/%%APP_NAME%%/browser/features/firefox@getpocket.com.xpi
 lib/%%APP_NAME%%/browser/features/loop@mozilla.org.xpi
 lib/%%APP_NAME%%/browser/icons/mozicon128.png
 lib/%%APP_NAME%%/browser/omni.ja
@@ -28,7 +26,6 @@ lib/%%APP_NAME%%/firefox
 lib/%%APP_NAME%%/firefox-bin
 lib/%%APP_NAME%%/gmp-clearkey/0.1/clearkey.info
 lib/%%APP_NAME%%/gmp-clearkey/0.1/libclearkey.so
-lib/%%APP_NAME%%/gtk2/libmozgtk.so
 lib/%%APP_NAME%%/icons/updater.png
 lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
@@ -37,9 +34,6 @@ lib/%%APP_NAME%%/libfreebl3.so
 %%GTK218%%lib/%%APP_NAME%%/libglib-2.0.so.0
 %%GTK218%%lib/%%APP_NAME%%/libgtk-x11-2.0.so.0
 lib/%%APP_NAME%%/liblgpllibs.so
-lib/%%APP_NAME%%/libmozavcodec.so
-lib/%%APP_NAME%%/libmozavutil.so
-lib/%%APP_NAME%%/libmozgtk.so
 lib/%%APP_NAME%%/libmozsqlite3.so
 lib/%%APP_NAME%%/libnspr4.so
 lib/%%APP_NAME%%/libnss3.so
