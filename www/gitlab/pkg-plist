@@ -3061,6 +3061,8 @@
 %%WWWDIR%%/spec/features/projects/files/project_owner_creates_license_file_spec.rb
 %%WWWDIR%%/spec/features/projects/files/project_owner_sees_link_to_create_license_file_in_empty_project_spec.rb
 %%WWWDIR%%/spec/features/projects/members/anonymous_user_sees_members_spec.rb
+%%WWWDIR%%/spec/features/projects/wiki/user_creates_wiki_page_spec.rb
+%%WWWDIR%%/spec/features/projects/wiki/user_updates_wiki_page_spec.rb
 %%WWWDIR%%/spec/features/projects_spec.rb
 %%WWWDIR%%/spec/features/runners_spec.rb
 %%WWWDIR%%/spec/features/search_spec.rb
