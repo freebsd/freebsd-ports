@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	idjc
-PORTVERSION=	0.8.15
+PORTVERSION=	0.8.16
 CATEGORIES=	audio python
 MASTER_SITES=	SF/idjc/idjc/0.8
 
