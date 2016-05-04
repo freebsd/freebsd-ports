@@ -1,4 +1,18 @@
+visualparadigm/.install4j/31bab9c2.lprop
+visualparadigm/.install4j/3d2b280e.lprop
+visualparadigm/.install4j/4d758a31.lprop
+visualparadigm/.install4j/66843048.lprop
+visualparadigm/.install4j/692a15a2.lprop
+visualparadigm/.install4j/7020a737.lprop
+visualparadigm/.install4j/72bbf39c.lprop
+visualparadigm/.install4j/75bf547e.lprop
 visualparadigm/.install4j/MessagesDefault
+visualparadigm/.install4j/a59835df.lprop
+visualparadigm/.install4j/b8ec6630.lprop
+visualparadigm/.install4j/bd18d62a.lprop
+visualparadigm/.install4j/cbc69af6.lprop
+visualparadigm/.install4j/e01511f4.lprop
+visualparadigm/.install4j/e4d34e6a.lprop
 visualparadigm/.install4j/firstrun
 visualparadigm/.install4j/i4j_extf_0_aprh35.utf8
 visualparadigm/.install4j/i4j_extf_10_aprh35_1prcdfd.png
@@ -50,6 +64,7 @@ visualparadigm/Application/bundled/3rdPartyLicense/bcel_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/commons-codec_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/commons-httpclient_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/commons-io_license.txt
+visualparadigm/Application/bundled/3rdPartyLicense/commons-lang.txt
 visualparadigm/Application/bundled/3rdPartyLicense/commons-logging_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/crazybeans_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/flamingo_license.txt
@@ -59,6 +74,7 @@ visualparadigm/Application/bundled/3rdPartyLicense/gson_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/httpclient_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/httpcore_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/httpmime_license.txt
+visualparadigm/Application/bundled/3rdPartyLicense/jackcess-2.1.3.txt
 visualparadigm/Application/bundled/3rdPartyLicense/javamail_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/javassist_license.txt
 visualparadigm/Application/bundled/3rdPartyLicense/jcommon_license.txt
@@ -474,7 +490,6 @@ visualparadigm/Application/scripts/ExportDocComposer.sh
 visualparadigm/Application/scripts/ExportExcel.sh
 visualparadigm/Application/scripts/ExportXMI.sh
 visualparadigm/Application/scripts/ExportXML.sh
-visualparadigm/Application/scripts/GenerateDocument.sh
 visualparadigm/Application/scripts/GenerateORM.sh
 visualparadigm/Application/scripts/ImportExcel.sh
 visualparadigm/Application/scripts/ImportXMI.sh
