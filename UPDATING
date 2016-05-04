@@ -40,7 +40,16 @@ you update your ports collection, before attempting any port upgrades.
   port and the /var/run/dspam directory for PID and socket files.  If you
   need dspam to run as root for your mail setup, you can use the SETUID
   config option to enable the old insecure behavior.
-  
+
+20160229:
+  AFFECTS: users of www/nginx and www/nginx-devel
+  AUTHOR: osa@FreeBSD.org
+
+  The ${MODULESDIR}, default directory for dynamic modules, has been
+  changed from ${ETCDIR}/modules to ${PREFIX}/libexec/${PORTNAME}.
+  It's highly recommended to review existing configuration files of
+  nginx, i.e. ${PREFIX}/etc/nginx/nginx.conf.
+
 20160424:
   AFFECTS: Users of net-mgmt/icinga2
   AUTHOR: lme@FreeBSD.org
