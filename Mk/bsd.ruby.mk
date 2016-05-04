@@ -439,11 +439,6 @@ RUN_DEPENDS+=		${DEPEND_RUBY}
 .endif
 .endif
 
-.if defined(USE_RAKE)
-BUILD_DEPENDS+=		${LOCALBASE}/bin/rake:devel/rubygem-rake
-RAKE_BIN=	${LOCALBASE}/bin/rake
-.endif
-
 # documents
 
 RUBY_NO_RD_HTML=	yes
