@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meld
-PORTVERSION=	3.14.2
+PORTVERSION=	3.16.0
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -10,6 +10,7 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	GNOME visual diff and merge tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
