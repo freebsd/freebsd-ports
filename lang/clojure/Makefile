@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clojure
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://repo1.maven.org/maven2/org/clojure/clojure/${PORTVERSION}/
 EXTRACT_SUFX=	.jar
@@ -35,7 +35,7 @@ CLOJURE_JLINE_RUNNER=jline.ConsoleRunner
 SUB_LIST+=	CLOJURE_JLINE_RUNNER=${CLOJURE_JLINE_RUNNER}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/clojure-bin ${STAGEDIR}${PREFIX}/bin/clojure
-	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${JAVAJARDIR}/clojure.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/clojure-bin ${STAGEDIR}${PREFIX}/bin/clojure
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${JAVAJARDIR}/clojure.jar
 
 .include <bsd.port.mk>
