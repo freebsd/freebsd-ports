@@ -113,8 +113,8 @@ SITE_MAN1_REL?=	${SITE_PERL_REL}/man/man1
 .endif
 SITE_MAN1?=	${PREFIX}/${SITE_MAN1_REL}
 
-PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
-PERL=		${LOCALBASE}/bin/perl
+PERL5?=		${LOCALBASE}/bin/perl${PERL_VERSION}
+PERL?=		${LOCALBASE}/bin/perl
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL} ac_cv_path_PERL_PATH=${PERL}
 
 QA_ENV+=	SITE_ARCH_REL=${SITE_ARCH_REL} LIBPERL=libperl.so.${PERL_VER}
