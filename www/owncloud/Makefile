@@ -2,7 +2,7 @@
 
 PORTNAME=	owncloud
 PORTVERSION=	9.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -21,6 +21,8 @@ USE_OPENSSL=	yes
 
 OWNCLOUD_USERNAME?=	${WWWOWN}
 OWNCLOUD_GROUPNAME?=	${WWWGRP}
+
+IGNORE_FILES=	! -name *\.orig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
@@ -56,7 +58,8 @@ WITH_OPENSSL_PORT=	yes
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} '${IGNORE_FILES}'
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
