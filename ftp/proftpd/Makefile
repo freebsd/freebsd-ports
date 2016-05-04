@@ -154,6 +154,8 @@ MEMCACHE_CONFIGURE_ENABLE=	memcache
 MEMCACHE_VARS=		MODULES+="mod_memcache mod_tls_memcache" \
 			LIBS+="-L${LOCALBASE}/lib -lmemcached -lmemcachedutil"	
 
+.include <bsd.port.options.mk>
+
 # Generate modules configuration string
 .for m in ${MODULES}
 _MODULES:=${_MODULES}:${m}
