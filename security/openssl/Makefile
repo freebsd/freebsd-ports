@@ -3,8 +3,8 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.2
-DISTVERSIONSUFFIX=	g
-PORTREVISION=	11
+DISTVERSIONSUFFIX=	h
+PORTREVISION=	12
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -14,15 +14,18 @@ DIST_SUBDIR=	${DISTNAME}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
 
+LICENSE=	OpenSSL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+MAKE_JOBS_UNSAFE=	yes
+CPE_VERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
+CONFLICTS=	libressl-[0-9]* \
+		libressl-devel-[0-9]* \
+		openssl-devel-[0-9]*
+
 .ifdef USE_OPENSSL
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
-
-CONFLICTS?=	libressl-[0-9]* \
-		libressl-devel-[0-9]* \
-		openssl-devel-[0-9]*
-LICENSE=	OpenSSL
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB GMP SCTP SSL2 SSL3 RFC3779 MD2 RC5 EXPCIPHERS DOCS MAN3
 OPTIONS_DEFAULT=SHARED THREADS SSE2 SCTP SSL2 SSL3 MD2 MAN3
@@ -56,17 +59,11 @@ MAN3_DESC?=	Install API manpages (section 3)
 
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
-MAKE_JOBS_UNSAFE=	yes
-NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
-NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
-
 USES=		perl5 cpe
 USE_PERL5=	build
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
 SUB_FILES=	pkg-message
-
-CPE_VERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
 
 .include <bsd.port.pre.mk>
 
