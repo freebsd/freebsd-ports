@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	010
 
 MAINTAINER=	bradleythughes@fastmail.fm
 COMMENT=	V8 JavaScript for client and server
+DEPRECATED=	Upstream has placed 0.10.x in maintenance mode, see https://github.com/nodejs/LTS#lts_schedule
+EXPIRATION_DATE=	2016-10-01
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
