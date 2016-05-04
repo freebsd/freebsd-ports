@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1605
+PORTVERSION=	2.1801
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -31,6 +31,7 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Package-Stash>=0.32:devel/p5-Package-Stash \
 		p5-Package-Stash-XS>=0.24:devel/p5-Package-Stash-XS \
 		p5-Params-Util>=1.00:devel/p5-Params-Util \
+		p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils \
 		p5-Sub-Exporter>=0.980:devel/p5-Sub-Exporter \
 		p5-Sub-Identify>=0:devel/p5-Sub-Identify \
 		p5-Sub-Name>=0.05:devel/p5-Sub-Name \
@@ -70,14 +71,7 @@ USE_PERL5=	configure extract
 post-patch:
 	@${REINPLACE_CMD} -e '/^check_conflicts()/d' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.35:lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.35:lang/p5-Scalar-List-Utils
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Moose/Moose.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
