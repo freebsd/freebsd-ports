@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.18.4
-PORTREVISION=	1
+PORTVERSION=	1.18.6
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	dpkg_${PORTVERSION}
@@ -12,6 +11,7 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Debian package maintenance system
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	po4a:textproc/po4a
 RUN_DEPENDS=	gtar:archivers/gtar \
@@ -27,7 +27,7 @@ PLIST_SUB+=	DPKGDIR=${DPKGDIR}
 
 CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
 		--with-libintl-prefix=${LOCALBASE} \
-		--with-logdir=/var/log
+		--with-logdir=/var/log --with-libmd
 CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
 OPTIONS_DEFINE=	NLS
