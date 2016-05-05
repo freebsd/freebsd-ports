@@ -3,11 +3,12 @@
 
 PORTNAME=		sope3
 PORTVERSION=		3.0.2
+PORTREVISION=		1
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
 
-MAINTAINER=		acm@FreeBSD.org
+MAINTAINER=		euan@potensol.com
 COMMENT=		Extensive set of GNUstep web application frameworks
 
 LICENSE=		LGPL20
@@ -30,7 +31,7 @@ USES=			gmake gnustep
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}
 
-CONFLICTS=		sope-[0-9]*
+CONFLICTS=		sope2-[0-9]*
 
 SUB_LIST+=		GNUSTEP_LOCAL_TOOLS=${GNUSTEP_LOCAL_TOOLS} \
 			GNUSTEP_MAKEFILES=${GNUSTEP_MAKEFILES}
