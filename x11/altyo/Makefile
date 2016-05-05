@@ -1,4 +1,4 @@
-# Created by: Nicola Stanislao Vitale,,+393928766927 <root@www.nivit.eu>
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	altyo
