@@ -1,2 +1,3 @@
 /%%KMODDIR%%/%%KMODNAME%%.ko
 /%%KMODDIR%%/%%KMODNAME_LP%%.ko
+/%%KMODDIR%%/%%KMODNAME_N%%.ko
