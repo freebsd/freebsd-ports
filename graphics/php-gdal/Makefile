@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal
 
 ALL_TARGET=	php_gdal.so php_gdalconst.so php_ogr.so php_osr.so
 CFLAGS+=	-fPIC
-#IGNORE_WITH_PHP=70
+IGNORE_WITH_PHP=70
 MAKEFILE=	GNUmakefile
 PHP_MOD_NAME=	php_${PORTNAME}
 USE_PHP=	yes
