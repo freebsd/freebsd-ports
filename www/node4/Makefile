@@ -20,7 +20,7 @@ USES=		compiler execinfo gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node-* node-0.[02-9][0-9]* node-devel-0.[0-9]* node010-[0-9]* node012-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node-[0-9]* node-devel-0.[0-9]* node010-[0-9]* node012-[0-9]* iojs-[0-9]* node5-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
