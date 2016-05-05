@@ -1,5 +1,5 @@
---- deps/v8/src/compiler/js-type-feedback.h.orig	2016-03-16 21:22:58.000000000 +0100
-+++ deps/v8/src/compiler/js-type-feedback.h	2016-03-24 22:54:54.529827000 +0100
+--- deps/v8/src/compiler/js-type-feedback.h.orig	2016-04-21 17:45:24 UTC
++++ deps/v8/src/compiler/js-type-feedback.h
 @@ -33,9 +33,10 @@ class JSTypeFeedbackTable : public ZoneO
   private:
    friend class JSTypeFeedbackSpecializer;
