@@ -9,6 +9,7 @@ bin/gdal_calc.py
 bin/gdal_edit.py
 bin/gdal_fillnodata.py
 bin/gdal_merge.py
+bin/gdal_pansharpen.py
 bin/gdal_polygonize.py
 bin/gdal_proximity.py
 bin/gdal_retile.py
