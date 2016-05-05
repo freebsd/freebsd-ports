@@ -122,6 +122,7 @@ include/node/uv-version.h
 include/node/uv-win.h
 include/node/uv.h
 include/node/v8-debug.h
+include/node/v8-experimental.h
 include/node/v8-platform.h
 include/node/v8-profiler.h
 include/node/v8-testing.h

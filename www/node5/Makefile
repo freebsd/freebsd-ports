@@ -1,24 +1,34 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	6.0.0
+PORTVERSION=	5.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	bradleythughes@fastmail.fm
-COMMENT=	V8 JavaScript for client and server (6.x)
+COMMENT=	V8 JavaScript for client and server (5.x)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	DOCS
+DEPRECATED=	Upstream provides limited support after the release of v6.0.0, see https://nodejs.org/en/blog/release/v6.0.0/#what-about-node-js-v5
+EXPIRATION_DATE=	2016-07-01
+
+OPTIONS_DEFINE=	BUNDLED_SSL DOCS
+OPTIONS_DEFAULT=BUNDLED_SSL
+OPTIONS_SUB=	yes
+
+BUNDLED_SSL_DESC=	Use node's bundled OpenSSL implementation
+BUNDLED_SSL_USE_OFF=	OPENSSL=yes
+BUNDLED_SSL_VARS_OFF=	WITH_OPENSSL_PORT=yes
 
 USES=		compiler execinfo gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node4-* node-0.[02-9][0-9]* node-devel-0.[0-9]* node010-[0-9]* node012-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node-[0-9]* node-devel-[0-9]* node010-[0-9]* node012-[0-9]* iojs-[0-9]* node4-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
@@ -40,6 +50,12 @@ CFLAGS+=	-Wno-unused-const-variable
 .else
 MAKE_ARGS+=	strictaliasing=off
 USE_GCC=	yes
+.endif
+
+.if empty(PORT_OPTIONS:MBUNDLED_SSL)
+CONFIGURE_ARGS+=	--shared-openssl \
+			--shared-openssl-includes=${OPENSSLINC} \
+			--shared-openssl-libpath=${OPENSSLLIB}
 .endif
 
 post-patch:
