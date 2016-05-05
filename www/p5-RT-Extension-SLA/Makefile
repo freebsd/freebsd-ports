@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=                RT42
 
 .include <bsd.port.options.mk>
 
-.for opt in OPTIONS_SINGLE_RTVERSION
+.for opt in ${OPTIONS_SINGLE_RTVERSION}
 .if ${PORT_OPTIONS:M${opt}}
 RT_VER=         ${opt:S/RT//}
 .endif
