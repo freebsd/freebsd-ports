@@ -43,7 +43,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libsamplerate.so:audio/libsamplerate \
 		libx264.so:multimedia/libx264 \
 		libmp3lame.so:audio/lame
-CONFLICTS_BUILD=	x265
 
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread-5.0.0-6-gcb1ae87/src/dvd_input.c (dlopen'ed)
@@ -66,6 +65,9 @@ ALL_TARGET=	#
 MAKE_JOBS_UNSAFE=	yes
 
 NOPRECIOUSMAKEVARS=	yes			# for ffmpeg and x264
+
+# Enforce linking to bundled libraries instead of system libraries
+LDFLAGS+=	-L${BUILD_WRKSRC}/contrib/lib
 
 # Enforce linking to the system c++ standard lib
 LDFLAGS+=	-l${COMPILER_FEATURES:Mlib*c++:S/lib//}
