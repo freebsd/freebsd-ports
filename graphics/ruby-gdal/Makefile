@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libgdal.so:graphics/gdal
+
+EXPIRATION_DATE=2016-05-31
 
 IGNORE=		disabled by upstream (https://trac.osgeo.org/gdal/changeset/28756)
 
