@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160505:
+  AFFECTS: Users of www/node
+  AUTHOR: bradleythughes@fastmail.fm
+
+  The www/node port has been updated to node.js v6.0.0, the latest
+  upstream release. Users of node.js v5.x are encouraged to upgrade as
+  soon as possible, as upstream support will end two months from now.
+
+  The www/node5 port has been created to aid users transition. Use one of
+  the following commands to continue using node.js v5.x:
+
+  # pkg install node5
+    or
+  # portmaster -o www/node5 www/node
+    or
+  # portupgrade -o www/node5 www/node
+
 20160503:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
