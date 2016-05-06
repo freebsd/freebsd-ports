@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
-PORTREVISION?=	4
 PKGNAMESUFFIX=	57-client
 
 COMMENT=	Multithreaded SQL database (client)
 
 LICENSE+=	LGPL21
+
+BROKEN_powerpc64=	Does not build
 
 MASTERDIR=	${.CURDIR}/../mysql57-server
 
@@ -15,12 +16,12 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
-CONFLICTS_INSTALL=	mysql5.[0-57-9]-client-* mysql[0-46-9][0-9]-client-* mariadb[0-9][0-9]-client-* percona[0-9][0-9]-client-*
+CONFLICTS_INSTALL=	mysql5[0-68-9]-client-* \
+			mysql[0-46-9][0-9]-client-* \
+			mariadb[0-9][0-9]-client-* \
+			percona[0-9][0-9]-client-*
 
-CMAKE_ARGS+=	-DINSTALL_PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig \
-		-DINSTALL_LDCONFIGDIR=${PREFIX}/libdata/ldconfig/ \
-		-DWITHOUT_SERVER=1 \
-		-DWITH_SYSTEMD=0
+CMAKE_ARGS+=	-DWITHOUT_SERVER=1
 
 USE_LDCONFIG+=	${PREFIX}/lib/mysql
 
@@ -30,7 +31,7 @@ MMAN1=		comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_config_editor.1 mys
 
 CLIENT_ONLY=	yes
 
-# issue 166367: adding symlinks for back-compatibility with $(lib)_r
+# issue 166367: adding symlinks for back-compatibility with ${lib}_r
 post-install:
 	@${LN} -s libmysqlclient.a ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.a
 	@${LN} -s libmysqlclient.so ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so
