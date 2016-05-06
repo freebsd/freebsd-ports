@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2016/ http://www2.sqlite.org/2016/ http://www3.sqlite.org/2016/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
@@ -106,9 +106,11 @@ READLINEP_PREVENTS=	READLINES EDITLINE
 EDITLINE_PREVENTS=	READLINES READLINEP
 
 OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS \
-			EXTENSION TS1 UNICODE61 RTREE DBSTAT STSHELL READLINES
+			EXTENSION TS1 UNICODE61 RTREE DBSTAT STSHELL READLINES \
+			FTS3_TOKEN
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
+# FTS3_TOKEN used by audio/clementine-player
 
 PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
 		lib/libsqlite3.a lib/libsqlite3.so lib/libsqlite3.so.0 \
