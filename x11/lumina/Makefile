@@ -4,8 +4,8 @@
 PORTNAME=	lumina
 PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-Release
-PORTREVISION=	2
+DISTVERSIONSUFFIX=	-Release-p1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	xorg>=0:x11/xorg \
 		xscreensaver:x11/xscreensaver \
 		xscreensaver-demo:x11/xscreensaver \
 		xbrightness:x11/xbrightness \
+		xcompmgr:x11-wm/xcompmgr \
 		numlockx:x11/numlockx
 
 CONFLICTS=      lumina-devel-0*
