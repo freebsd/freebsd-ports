@@ -1,6 +1,6 @@
---- storage/innobase/buf/buf0buf.cc.orig	2015-11-29 19:16:24 UTC
+--- storage/innobase/buf/buf0buf.cc.orig	2016-03-28 18:06:12 UTC
 +++ storage/innobase/buf/buf0buf.cc
-@@ -300,7 +300,7 @@ typedef std::map<
+@@ -338,7 +338,7 @@ typedef std::map<
  	const byte*,
  	buf_chunk_t*,
  	std::less<const byte*>,
