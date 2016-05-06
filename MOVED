@@ -8309,3 +8309,4 @@ www/sogo|www/sogo2|2016-05-02|Renamed to www/sogo2
 www/sogo-activesync|www/sogo2-activesync|2016-05-02|Renamed to www/sogo2-activesync
 textproc/rubygem-gherkin3|textproc/rubygem-gherkin|2016-05-03|Has expired: Use textproc/rubygem-gherkin instead
 dns/odsclient||2016-05-03|Has expired: ODS shuts service down, so client is probably useless
+games/Cockatrice|games/cockatrice|2016-05-05|Renamed to games/cockatrice
