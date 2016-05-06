@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	httplib2
-PORTVERSION=	0.9.1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.9.2
 CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -15,8 +15,5 @@ LICENSE=	MIT
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	jcgregorio
 
 .include <bsd.port.mk>
