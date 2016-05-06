@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.23
+PORTVERSION=	10.0.25
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -24,23 +24,18 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb100-client
-USES=		bison:build cmake cpe execinfo gmake shebangfix
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo gmake shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/mysql ${PREFIX}/lib/mysql/plugin
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
 
 OPTIONS_DEFINE=		FASTMTX
-OPTIONS_RADIO=		SSL
-OPTIONS_RADIO_SSL=	BUNDLED_SSL OPENSSL WITHOUT_SSL
-OPTIONS_DEFAULT+=	OPENSSL
 NO_OPTIONS_SORT=	yes
 
-BUNDLED_SSL_DESC=	SSL/TLS support via (bundled) CyaSSL
 FASTMTX_DESC=		Replace mutexes with spinlocks
-WITHOUT_SSL_DESC=	No SSL/TLS support
 
-CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
-		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
+CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mariadb" \
+		-DINSTALL_DOCREADMEDIR="share/doc/mariadb" \
 		-DINSTALL_INCLUDEDIR="include/mysql" \
 		-DINSTALL_INFODIR="info" \
 		-DINSTALL_LIBDIR="lib/mysql" \
@@ -56,6 +51,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
 		-DWITH_UNIT_TESTS=0 \
 		-DWITH_LIBEDIT=0 \
+		-DWITH_SSL=${OPENSSLBASE} \
 		-DWITH_LIBWRAP=1 \
 		-DEXECINFO_ROOT=${LOCALBASE} \
 		-DCOMPILATION_COMMENT="FreeBSD Ports"
@@ -73,31 +69,36 @@ CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 
 .if !defined(CLIENT_ONLY)
 # MySQL-Server options
-USE_MYSQL=		yes
 USE_LDCONFIG+=		${PREFIX}/lib/mysql/plugin
-OPTIONS_DEFINE+=	INNODB MAXKEY MROONGA OQGRAPH
+OPTIONS_DEFINE+=	MAXKEY
 OPTIONS_DEFAULT+=	MAXKEY
-OPTIONS_SUB=		yes
+OPTIONS_GROUP=		ENGINES
+OPTIONS_GROUP_ENGINES=	INNOBASE MROONGA OQGRAPH SPHINX SPIDER TOKUDB
 
-INNODB_DESC=		Build InnoDB engine next to XtraDB
-MAXKEY_DESC=		Change max key length from 1000 to 4000
-MROONGA_DESC=		Mroonga Full Text Search engine (gcc)
-OQGRAPH_DESC=		Open Query Graph Computation engine (gcc)
+ENGINES_DESC=	Optional MariaDB storage engines
+INNOBASE_DESC=	Build InnoDB engine next to XtraDB
+MAXKEY_DESC=	Change max key length from 1000 to 4000
+MROONGA_DESC=	Mroonga Full Text Search engine
+OQGRAPH_DESC=	Open Query Graph Computation engine (Requires GCC)
+SPHINX_DESC=	SphinxSE engine
+SPIDER_DESC=	Partitioning and XA-transactions engine
+TOKUDB_DESC=	Fractal tree index tree data structure engine
+
+OPTIONS_SUB=	yes
+
+TOKUDB_PORTDOCS=	PATENTS README.md
+
 .endif
 
-BUNDLED_SSL_CMAKE_ON=	-DWITH_SSL=bundled
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
-OPENSSL_CMAKE_ON=	-DWITH_SSL=yes
-OPENSSL_USE=	OPENSSL=yes
-WITHOUT_SSL_CMAKE_ON=	-DWITH_SSL=no
+USE_OPENSSL=		yes
 
 .if defined(CLIENT_ONLY)
 # MySQL-Client part
 USES+=		readline
 .else
 # MySQL-Server part
-USE_MYSQL=	yes
-WANT_MYSQL_VER=	100m
+USES+=		mysql:100m
 USE_RC_SUBR=	mysql-server
 USERS=		mysql
 GROUPS=		mysql
@@ -105,7 +106,10 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
 		-DCMAKE_SKIP_BUILD_RPATH:BOOL=YES \
 		-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1
 
-INNODB_CMAKE_OFF=	-DWITHOUT_INNOBASE=1
+.for ENGINE in ${OPTIONS_GROUP_ENGINES}
+${ENGINE}_CMAKE_OFF=    -DWITHOUT_${ENGINE}=1
+.endfor
+
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 MROONGA_CMAKE_OFF=	-DWITHOUT_MROONGA=1
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -113,7 +117,7 @@ OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 # Currently OQGraph does not build using clang.
 # See See https://mariadb.atlassian.net/browse/MDEV-8051.
 OQGRAPH_USE=		gcc
-OQGRAPH_BROKEN=		does not build
+OQGRAPH_BROKEN=		OQGraph does not build
 
 post-install:
 	# Remove programs to avoid conflict with mariadb100-client
@@ -122,7 +126,9 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/msql2mysql \
 		${STAGEDIR}${PREFIX}/bin/mysql_config \
 		${STAGEDIR}${PREFIX}/bin/mysql_find_rows \
-		${STAGEDIR}${PREFIX}/bin/mysqlaccess
+		${STAGEDIR}${PREFIX}/bin/mysqlaccess \
+		${STAGEDIR}${DOCSDIR}/COPYING.AGPLv3 \
+		${STAGEDIR}${DOCSDIR}/COPYING.GPLv2
 .endif
 
 .include <bsd.port.pre.mk>
@@ -133,8 +139,14 @@ CMAKE_ARGS+=	-DWITH_JEMALLOC="system"
 CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
 .endif
 
-# Server segfaults on i386 when built with clang >= 3.4
+.if ${PORT_OPTIONS:MTOKUDB}
+NOT_FOR_ARCHS=  i386
+NOT_FOR_ARCHS_REASON=   TokuDB not supported on 32-bit platforms, see \
+                        https://github.com/percona/PerconaFT/blob/master/README.md
+.endif
+
 .if ${ARCH} == 'i386' && ${OSVERSION} >= 1001000
+# Server segfaults on i386 when built with clang >= 3.4
 USE_GCC=	yes
 .endif
 
