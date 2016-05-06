@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcln.so:math/cln
 
 USES=		gmake libtool makeinfo pathfix pkgconfig python:build \
-		tar:bzip2 compiler:c++11-lang
+		tar:bzip2 compiler:c++11-lang compiler:c++11-lib
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
