@@ -2826,7 +2826,7 @@
    // the installation of the klass pointer into the new klass "k"
 --- hotspot/src/share/vm/oops/klass.hpp
 +++ hotspot/src/share/vm/oops/klass.hpp
-@@ -167,7 +167,7 @@
+@@ -168,7 +168,7 @@
    bool null_vtbl() { return *(intptr_t*)this == 0; }
  
   protected:
@@ -2835,6 +2835,20 @@
  };
  
  
+@@ -419,11 +419,11 @@
+   }
+   static bool layout_helper_is_typeArray(jint lh) {
+     // _lh_array_tag_type_value == (lh >> _lh_array_tag_shift);
+-    return (juint)lh >= (juint)(_lh_array_tag_type_value << _lh_array_tag_shift);
++    return (juint)lh >= (juint)((juint)_lh_array_tag_type_value << _lh_array_tag_shift);
+   }
+   static bool layout_helper_is_objArray(jint lh) {
+     // _lh_array_tag_obj_value == (lh >> _lh_array_tag_shift);
+-    return (jint)lh < (jint)(_lh_array_tag_type_value << _lh_array_tag_shift);
++    return (jint)lh < (jint)((juint)_lh_array_tag_type_value << _lh_array_tag_shift);
+   }
+   static int layout_helper_header_size(jint lh) {
+     assert(lh < (jint)_lh_neutral_value, "must be array");
 --- hotspot/src/share/vm/oops/symbol.cpp
 +++ hotspot/src/share/vm/oops/symbol.cpp
 @@ -36,7 +36,7 @@
@@ -2948,15 +2962,6 @@
      Node* n = (Node*)C->node_arena()->Amalloc_D(x);
  #ifdef ASSERT
      n->_in = (Node**)n; // magic cookie for assertion check
-@@ -218,7 +218,7 @@
- 
-   // New Operator that takes a Compile pointer, this will eventually
-   // be the "new" New operator.
--  inline void* operator new( size_t x, Compile* C, int y) {
-+  inline void* operator new( size_t x, Compile* C, int y) throw() {
-     Node* n = (Node*)C->node_arena()->Amalloc_D(x + y*sizeof(void*));
-     n->_in = (Node**)(((char*)n) + x);
- #ifdef ASSERT
 --- hotspot/src/share/vm/opto/parse3.cpp
 +++ hotspot/src/share/vm/opto/parse3.cpp
 @@ -487,7 +487,8 @@
@@ -9031,7 +9036,7 @@
   * Function prototypes.
 --- jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java
 +++ jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java
-@@ -403,7 +403,7 @@
+@@ -413,7 +413,7 @@
          if (fontID != null) {
              fileName = (String)fontNameMap.get(fontID);
              /* On Linux check for the Lucida Oblique fonts */
@@ -9040,7 +9045,7 @@
                  if (oblmap == null) {
                      initObliqueLucidaFontMap();
                  }
-@@ -639,7 +639,7 @@
+@@ -649,7 +649,7 @@
          if (fontConfigDirs == null) {
              return;
          }
@@ -9049,6 +9054,15 @@
              fontConfigDirs.add(jreLibDirName+File.separator+"oblique-fonts");
          }
          fontdirs = (String[])fontConfigDirs.toArray(new String[0]);
+@@ -930,7 +930,7 @@
+          */
+         FontConfiguration mFontConfig = new MFontConfiguration(this);
+         if (isOpenSolaris ||
+-            (isLinux &&
++            (isLinuxOrBSD &&
+              (!mFontConfig.foundOsSpecificFile() ||
+               !mFontConfig.fontFilesArePresent()) ||
+              (isSolaris && !mFontConfig.fontFilesArePresent()))) {
 --- jdk/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java
 +++ jdk/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java
 @@ -47,6 +47,10 @@
