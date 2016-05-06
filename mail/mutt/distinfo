@@ -1,5 +1,5 @@
-SHA256 (mutt/mutt-1.6.0.tar.gz) = 29afb6238ab7a540c0e3a78ce25c970f975ab6c0f0bc9f919993aab772136c19
-SIZE (mutt/mutt-1.6.0.tar.gz) = 3954591
+SHA256 (mutt/mutt-1.6.1.tar.gz) = 98b26cecc6b1713082fc880344fa345c20bd7ded6459abe18c84429c7cf8ed20
+SIZE (mutt/mutt-1.6.1.tar.gz) = 3956840
 SHA256 (mutt/patch-1.6.0.rr.compressed.gz) = c57ad6b19b2dbd812c27a098273b68b2d3b45ce2d36c3a4bff3493ad2cb75b85
 SIZE (mutt/patch-1.6.0.rr.compressed.gz) = 9977
 SHA256 (mutt/patch-1.6.0.vvv.nntp.gz) = 6a69429c2942f438d5c22cfc3f97564bbbf689b2ea482d440692048bd92f5355
