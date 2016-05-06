@@ -1,4 +1,2 @@
-SHA256 (mysql-5.7.10.tar.gz) = 1ea1644884d086a23eafd8ccb04d517fbd43da3a6a06036f23c5c3a111e25c74
-SIZE (mysql-5.7.10.tar.gz) = 48919371
-SHA256 (boost_1_59_0.tar.gz) = 47f11c8844e579d02691a607fbd32540104a9ac7a2534a8ddaef50daf502baac
-SIZE (boost_1_59_0.tar.gz) = 83709983
+SHA256 (mysql-boost-5.7.12.tar.gz) = 3990c78b4064e4e972e763d62449cb8f930717b3dd2ddcbbaeeaa0f644d5333d
+SIZE (mysql-boost-5.7.12.tar.gz) = 60604385
