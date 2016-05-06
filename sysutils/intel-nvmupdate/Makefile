@@ -40,6 +40,10 @@ NVMUPDATE_DIR=	intel-nvmupdate
 IGNORE=		is not supported on FreeBSD 10.1 and older
 .endif
 
+.if ${OSVERSION} >= 1100000
+BROKEN=		core dump on application startup
+.endif
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${NVMUPDATE_DIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${NVMUPDATE_DIR} "! -name 'nvmupdate64e'"
