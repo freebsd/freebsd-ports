@@ -105,7 +105,8 @@ MASTER_SITE_BERLIOS+= \
 # Removal of the PyPI Mirror Auto Discovery and Naming Scheme
 # Reference: https://www.python.org/dev/peps/pep-0449/
 MASTER_SITE_CHEESESHOP+= \
-	https://pypi.python.org/packages/%SUBDIR%/
+	https://pypi.python.org/packages/%SUBDIR%/ \
+	https://pypi.io/packages/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
