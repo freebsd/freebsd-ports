@@ -1,4 +1,4 @@
---- mysys_ssl/my_default.cc.orig	2015-11-29 19:16:24 UTC
+--- mysys_ssl/my_default.cc.orig	2016-03-28 18:06:12 UTC
 +++ mysys_ssl/my_default.cc
 @@ -122,7 +122,7 @@ static my_bool is_login_file= FALSE;
  

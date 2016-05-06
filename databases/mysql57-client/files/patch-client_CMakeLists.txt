@@ -1,6 +1,6 @@
---- client/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
+--- client/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
 +++ client/CMakeLists.txt
-@@ -121,6 +121,7 @@ IF(UNIX)
+@@ -47,6 +47,7 @@ IF(UNIX)
    TARGET_LINK_LIBRARIES(mysql ${EDITLINE_LIBRARY})
  ENDIF(UNIX)
  
@@ -8,7 +8,7 @@
  IF(NOT WITHOUT_SERVER)
    MYSQL_ADD_EXECUTABLE(mysql_upgrade
      upgrade/program.cc
-@@ -131,10 +132,13 @@ ADD_COMPILE_FLAGS(
+@@ -57,10 +58,13 @@ ADD_COMPILE_FLAGS(
  TARGET_LINK_LIBRARIES(mysql_upgrade mysqlclient client_base mysqlcheck_core)
  ADD_DEPENDENCIES(mysql_upgrade GenFixPrivs GenSysSchema)
  ENDIF()
@@ -22,7 +22,7 @@
  
  ADD_CONVENIENCE_LIBRARY(mysqlcheck_core check/mysqlcheck_core.cc)
  TARGET_LINK_LIBRARIES(mysqlcheck_core mysqlclient)
-@@ -152,8 +156,10 @@ TARGET_LINK_LIBRARIES(mysqlimport mysqlc
+@@ -78,8 +82,10 @@ TARGET_LINK_LIBRARIES(mysqlimport mysqlc
  MYSQL_ADD_EXECUTABLE(mysqlshow mysqlshow.c)
  TARGET_LINK_LIBRARIES(mysqlshow mysqlclient)
  
@@ -33,7 +33,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  ADD_COMPILE_FLAGS(
-@@ -172,8 +178,10 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlcli
+@@ -98,8 +104,10 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlcli
  MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
  TARGET_LINK_LIBRARIES(mysql_config_editor mysqlclient)
  
@@ -44,7 +44,7 @@
  
  IF(UNIX AND NOT WITHOUT_SERVER)
    MYSQL_ADD_EXECUTABLE(mysql_install_db
-@@ -196,7 +204,6 @@ IF(WIN32)
+@@ -122,7 +130,6 @@ IF(WIN32)
  ENDIF(WIN32)
  
  SET_TARGET_PROPERTIES (
