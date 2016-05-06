@@ -1,0 +1,13 @@
+This module implements the spellfix1 VIRTUAL TABLE that can be used
+to search a large vocabulary for close matches using Levenshtein distance.
+
+Virtual table:
+
+  spellfix1
+
+Functions:
+
+  editdist, editdist3, spellfix1_translit, spellfix1_phonehash,
+  spellfix1_scriptcode
+
+WWW: http://www.sqlite.org/spellfix1.html
