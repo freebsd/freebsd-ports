@@ -21,6 +21,7 @@
     SUBDIR += clustalw
     SUBDIR += consed
     SUBDIR += crux
+    SUBDIR += diamond
     SUBDIR += emboss
     SUBDIR += fasta
     SUBDIR += fasta3
