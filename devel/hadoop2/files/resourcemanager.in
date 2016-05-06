@@ -25,7 +25,6 @@ command_interpreter_execution="%%JAVA_HOME%%/bin/java"
 command_args='--config %%ETCDIR%% start resourcemanager'
 
 stop_cmd=resourcemanager_stop
-start_postcmd="start_postcmd"
 status_precmd=find_pid
 
 resourcemanager_stop () {
