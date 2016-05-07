@@ -1,0 +1,17 @@
+--- nsswitch/wscript_build.orig	2016-04-26 09:19:33.392727000 +0000
++++ nsswitch/wscript_build	2016-04-26 09:21:04.212241000 +0000
+@@ -54,12 +54,14 @@
+ 			  source='winbind_nss_linux.c winbind_nss_freebsd.c',
+ 			  deps='winbind-client',
+ 			  realname='nss_winbind.so.1',
++			  install_path='${PAMMODULESDIR}',
+ 			  vnum='1')
+ 
+ 	bld.SAMBA3_LIBRARY('nss_wins',
+ 			  source='wins.c wins_freebsd.c',
+ 			  deps='''wbclient''',
+ 			  realname='nss_wins.so.1',
++			  install_path='${PAMMODULESDIR}',
+ 			  vnum='1')
+ 
+ elif (host_os.rfind('netbsd') > -1):

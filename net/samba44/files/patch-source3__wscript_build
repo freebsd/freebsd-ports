@@ -1,0 +1,27 @@
+--- source3/wscript_build.orig	2016-03-16 11:40:12.000000000 +0200
++++ source3/wscript_build	2016-03-24 22:51:34.639595607 +0200
+@@ -623,6 +623,7 @@
+                    smbd_conn
+                    param_service
+                    AVAHI
++                   dns_sd
+                    PRINTBASE
+                    PROFILE
+                    LOCKING
+@@ -1076,6 +1077,7 @@
+                  msrpc3
+                  RPC_NDR_SRVSVC
+                  cli_smb_common
++                 dns_sd
+ 		 archive
+                  ''')
+ 
+@@ -1496,7 +1498,7 @@
+ 
+ bld.SAMBA3_PYTHON('pylibsmb',
+                   source='libsmb/pylibsmb.c',
+-                  deps='smbclient samba-credentials pytalloc-util',
++                  deps='smbclient samba-credentials pytalloc-util libsmb errors3',
+                   realname='samba/samba3/libsmb_samba_internal.so'
+                   )
+ 
