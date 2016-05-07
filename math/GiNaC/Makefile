@@ -29,6 +29,11 @@ INFO=		ginac ginac-examples
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 1000000
+USE_GCC=	4.8+
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
 .if ${ARCH} != "i386"
