@@ -28,7 +28,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	squid*-3.*
 
-USES=		compiler:c++11-lang cpe perl5 shebangfix tar:xz
+USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
@@ -205,6 +205,10 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--disable-arch-native
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+IGNORE=		Doesn't build, messes C++ headers and libs
+.endif
 
 # Authentication methods and modules:
 
