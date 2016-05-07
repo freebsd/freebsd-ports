@@ -915,85 +915,45 @@ Based on http://lunar-linux.org/~tchan/mutt/patch-1.5.24.sidebar.20151111.txt
         mutt_index_menu ();
         if (Context)
   	FREE (&Context);
-*** mutt-1.5.24-orig/Makefile.am	2015-08-30 12:06:38.000000000 -0500
---- mutt-1.5.24/Makefile.am	2015-09-16 23:18:13.000000000 -0500
-***************
-*** 33,38 ****
---- 33,39 ----
-  	rfc822.c rfc1524.c rfc2047.c rfc2231.c rfc3676.c \
-  	score.c send.c sendlib.c signal.c sort.c \
-  	status.c system.c thread.c charset.c history.c lib.c \
-+ 	sidebar.c \
-  	muttlib.c editmsg.c mbyte.c \
-  	url.c ascii.c crypt-mod.c crypt-mod.h safe_asprintf.c
-  
-*** mutt-1.5.24-orig/Makefile.in	2015-08-30 12:24:26.000000000 -0500
---- mutt-1.5.24/Makefile.in	2015-09-16 23:18:13.000000000 -0500
-***************
-*** 83,92 ****
-  	$(srcdir)/Makefile.am $(top_srcdir)/configure \
-  	$(am__configure_deps) $(srcdir)/config.h.in \
-  	$(top_srcdir)/intl/Makefile.in $(srcdir)/hcachever.sh.in \
-! 	$(srcdir)/muttbug.sh.in strtok_r.c strcasecmp.c regex.c \
-! 	snprintf.c wcscasecmp.c strcasestr.c setenv.c mkdtemp.c \
-! 	strsep.c strdup.c depcomp ABOUT-NLS ChangeLog INSTALL NEWS \
-! 	README TODO compile config.guess config.sub install-sh missing
-  EXTRA_PROGRAMS = mutt_dotlock$(EXEEXT) pgpring$(EXEEXT) \
-  	pgpewrap$(EXEEXT) mutt_md5$(EXEEXT)
-  bin_PROGRAMS = mutt$(EXEEXT) $(DOTLOCK_TARGET) $(PGPAUX_TARGET)
---- 83,92 ----
-  	$(srcdir)/Makefile.am $(top_srcdir)/configure \
-  	$(am__configure_deps) $(srcdir)/config.h.in \
-  	$(top_srcdir)/intl/Makefile.in $(srcdir)/hcachever.sh.in \
-! 	$(srcdir)/muttbug.sh.in snprintf.c strtok_r.c regex.c strdup.c \
-! 	strcasecmp.c setenv.c strcasestr.c wcscasecmp.c mkdtemp.c \
-! 	strsep.c depcomp ABOUT-NLS ChangeLog INSTALL NEWS README TODO \
-! 	compile config.guess config.sub install-sh missing
-  EXTRA_PROGRAMS = mutt_dotlock$(EXEEXT) pgpring$(EXEEXT) \
-  	pgpewrap$(EXEEXT) mutt_md5$(EXEEXT)
-  bin_PROGRAMS = mutt$(EXEEXT) $(DOTLOCK_TARGET) $(PGPAUX_TARGET)
-***************
-*** 128,136 ****
-  	score.$(OBJEXT) send.$(OBJEXT) sendlib.$(OBJEXT) \
-  	signal.$(OBJEXT) sort.$(OBJEXT) status.$(OBJEXT) \
-  	system.$(OBJEXT) thread.$(OBJEXT) charset.$(OBJEXT) \
-! 	history.$(OBJEXT) lib.$(OBJEXT) muttlib.$(OBJEXT) \
-! 	editmsg.$(OBJEXT) mbyte.$(OBJEXT) url.$(OBJEXT) \
-! 	ascii.$(OBJEXT) crypt-mod.$(OBJEXT) safe_asprintf.$(OBJEXT)
-  am__objects_1 =
-  am__objects_2 = patchlist.$(OBJEXT) conststrings.$(OBJEXT) \
-  	$(am__objects_1)
---- 128,137 ----
-  	score.$(OBJEXT) send.$(OBJEXT) sendlib.$(OBJEXT) \
-  	signal.$(OBJEXT) sort.$(OBJEXT) status.$(OBJEXT) \
-  	system.$(OBJEXT) thread.$(OBJEXT) charset.$(OBJEXT) \
-! 	history.$(OBJEXT) lib.$(OBJEXT) sidebar.$(OBJEXT) \
-! 	muttlib.$(OBJEXT) editmsg.$(OBJEXT) mbyte.$(OBJEXT) \
-! 	url.$(OBJEXT) ascii.$(OBJEXT) crypt-mod.$(OBJEXT) \
-! 	safe_asprintf.$(OBJEXT)
-  am__objects_1 =
-  am__objects_2 = patchlist.$(OBJEXT) conststrings.$(OBJEXT) \
-  	$(am__objects_1)
-***************
-*** 474,479 ****
---- 475,481 ----
-  	rfc822.c rfc1524.c rfc2047.c rfc2231.c rfc3676.c \
-  	score.c send.c sendlib.c signal.c sort.c \
-  	status.c system.c thread.c charset.c history.c lib.c \
-+ 	sidebar.c \
-  	muttlib.c editmsg.c mbyte.c \
-  	url.c ascii.c crypt-mod.c crypt-mod.h safe_asprintf.c
-  
-***************
-*** 804,809 ****
---- 806,812 ----
-  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/send.Po@am__quote@
-  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendlib.Po@am__quote@
-  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sha1.Po@am__quote@
-+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sidebar.Po@am__quote@
-  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/signal.Po@am__quote@
-  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smime.Po@am__quote@
-  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smtp.Po@am__quote@
+*** mutt-1.6.0-orig/Makefile.am.orig	2016-04-09 10:50:09.604018596 +0200
+--- mutt-1.6.0/Makefile.am	2016-04-09 10:51:03.718016605 +0200
+@@ -32,7 +32,7 @@
+ 	main.c mbox.c menu.c mh.c mx.c pager.c parse.c pattern.c \
+ 	postpone.c query.c recvattach.c recvcmd.c \
+ 	rfc822.c rfc1524.c rfc2047.c rfc2231.c rfc3676.c \
+-	score.c send.c sendlib.c signal.c sort.c \
++	score.c send.c sendlib.c sidebar.c signal.c sort.c \
+ 	status.c system.c thread.c charset.c history.c lib.c \
+ 	muttlib.c editmsg.c mbyte.c mutt_idna.c \
+ 	url.c ascii.c crypt-mod.c crypt-mod.h safe_asprintf.c
+*** mutt-1.6.0-orig/Makefile.in.orig	2016-04-09 10:50:09.495008024 +0200
+--- mutt-1.6.0/Makefile.in	2016-04-09 10:53:55.074988370 +0200
+@@ -134,7 +134,7 @@
+ 	recvcmd.$(OBJEXT) rfc822.$(OBJEXT) rfc1524.$(OBJEXT) \
+ 	rfc2047.$(OBJEXT) rfc2231.$(OBJEXT) rfc3676.$(OBJEXT) \
+ 	score.$(OBJEXT) send.$(OBJEXT) sendlib.$(OBJEXT) \
+-	signal.$(OBJEXT) sort.$(OBJEXT) status.$(OBJEXT) \
++	sidebar.$(OBJEXT) signal.$(OBJEXT) sort.$(OBJEXT) status.$(OBJEXT) \
+ 	system.$(OBJEXT) thread.$(OBJEXT) charset.$(OBJEXT) \
+ 	history.$(OBJEXT) lib.$(OBJEXT) muttlib.$(OBJEXT) \
+ 	editmsg.$(OBJEXT) mbyte.$(OBJEXT) mutt_idna.$(OBJEXT) \
+@@ -489,7 +489,7 @@
+ 	main.c mbox.c menu.c mh.c mx.c pager.c parse.c pattern.c \
+ 	postpone.c query.c recvattach.c recvcmd.c \
+ 	rfc822.c rfc1524.c rfc2047.c rfc2231.c rfc3676.c \
+-	score.c send.c sendlib.c signal.c sort.c \
++	score.c send.c sendlib.c sidebar.c signal.c sort.c \
+ 	status.c system.c thread.c charset.c history.c lib.c \
+ 	muttlib.c editmsg.c mbyte.c mutt_idna.c \
+ 	url.c ascii.c crypt-mod.c crypt-mod.h safe_asprintf.c
+@@ -820,6 +820,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/send.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendlib.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sha1.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sidebar.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/signal.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smime.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smtp.Po@am__quote@
 *** mutt-1.5.24-orig/mbox.c	2015-08-30 12:06:38.000000000 -0500
 --- mutt-1.5.24/mbox.c	2015-09-16 23:18:13.000000000 -0500
 ***************

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dliakh@ukr.net
 COMMENT=	Detects 7 Cyrillic codings as well as the language
 
-RUN_DEPENDS=	p5-Unicode-Map8>=0:${PORTSDIR}/converters/p5-Unicode-Map8 \
-		p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String
+RUN_DEPENDS=	p5-Unicode-Map8>=0:converters/p5-Unicode-Map8 \
+		p5-Unicode-String>=0:converters/p5-Unicode-String
 
 USES=		perl5
 USE_PERL5=	configure

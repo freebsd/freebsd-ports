@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	freesynd
-PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTVERSION=	0.7.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Reimplementation of the classic Bullfrog game Syndicate
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake
 USE_SDL=	sdl image mixer

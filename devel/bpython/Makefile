@@ -13,12 +13,12 @@ COMMENT=	Fancy interface to the Python interpreter
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:${PORTSDIR}/textproc/py-sphinx
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curtsies>=0.1.18:${PORTSDIR}/devel/py-curtsies \
-		${PYTHON_PKGNAMEPREFIX}greenlet>=0:${PORTSDIR}/devel/py-greenlet \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}six>=1.5:${PORTSDIR}/devel/py-six
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curtsies>=0.1.18:devel/py-curtsies \
+		${PYTHON_PKGNAMEPREFIX}greenlet>=0:devel/py-greenlet \
+		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}six>=1.5:devel/py-six
 
 OPTIONS_DEFINE=	EXAMPLES NLS
 OPTIONS_SUB=	yes

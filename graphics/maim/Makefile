@@ -10,7 +10,9 @@ COMMENT=	Screenshot utility with performance improvements over scrot
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	naelstrof

@@ -1,0 +1,53 @@
+--- configure.ac.orig	2014-10-16 17:24:17 UTC
++++ configure.ac
+@@ -320,6 +320,12 @@ REBOOT_OPTIONS="-f"
+ POWEROFF_OPTIONS="-f"
+ 
+ case "$host_os" in
++*freebsd*|*dragonfly*)
++		POWEROFF_CMD=/sbin/shutdown
++		POWEROFF_OPTIONS="-p now"
++		REBOOT=/sbin/shutdown
++		REBOOT_OPTIONS="-r now"
++		;;
+ *bsd*)		LIBS="-L/usr/local/lib"
+ 		CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ 		INIT_EXT=".sh"
+@@ -497,7 +503,7 @@ export PATH
+ 
+ dnl Replacing AC_PROG_LIBTOOL with AC_CHECK_PROG because LIBTOOL
+ dnl was NOT being expanded all the time thus causing things to fail.
+-AC_CHECK_PROGS(LIBTOOL, glibtool libtool libtool15 libtool13)
++dnl AC_CHECK_PROGS(LIBTOOL, glibtool libtool libtool15 libtool13)
+ 
+ AM_PATH_PYTHON
+ AC_CHECK_PROGS(MAKE, gmake make)
+@@ -1230,7 +1236,6 @@ else
+ 
+ 	# We had to eliminate -Wnested-externs because of libtool changes
+         EXTRA_FLAGS="-fgnu89-inline
+-		-fstack-protector-all
+ 		-Wall
+ 		-Waggregate-return
+ 		-Wbad-function-cast 
+@@ -1267,11 +1272,6 @@ else
+ 	  fi
+ 	done
+ 
+-dnl In lib/ais/Makefile.am there's a gcc option available as of v4.x
+-
+-	GCC_MAJOR=`gcc -v 2>&1 | awk 'END{print $3}' | sed 's/[.].*//'`
+-	AM_CONDITIONAL(GCC_4, test "${GCC_MAJOR}" = 4)
+-
+ dnl System specific options
+ 
+ 	case "$host_os" in
+@@ -1345,8 +1345,6 @@ AC_MSG_RESULT(Supress make details: ${en
+ AC_MSG_RESULT(Pretty print compiler output: ${enable_pretty})
+ 
+ dnl Put the above variables to use
+-LIBTOOL="${LIBTOOL} --tag=CC \$(QUIET_LIBTOOL_OPTS)"
+-MAKE="${MAKE} \$(QUIET_MAKE_OPTS)"
+ 
+ AC_SUBST(CC)
+ AC_SUBST(MAKE)

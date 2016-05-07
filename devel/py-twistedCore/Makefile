@@ -15,14 +15,14 @@ COMMENT=	Asynchronous networking framework for Python (Core Module)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:${PORTSDIR}/devel/py-zope.interface
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:devel/py-zope.interface
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	VERIFY
 OPTIONS_DEFAULT=VERIFY
 
 VERIFY_DESC=		Server (SNI) and Service Verification Support (RFC6125+)
-VERIFY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}service_identity>=0:${PORTSDIR}/security/py-service_identity
+VERIFY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}service_identity>=0:security/py-service_identity
 
 # - Note that Twisted ships with some graphical examples and clients that
 #   require PyGNOME to run.  These are not central to the functioning of

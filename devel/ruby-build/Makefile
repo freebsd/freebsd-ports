@@ -11,14 +11,14 @@ COMMENT=	Compile and install different ruby versions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	autoconf>0:${PORTSDIR}/devel/autoconf \
-		curl:${PORTSDIR}/ftp/curl \
-		gmake:${PORTSDIR}/devel/gmake
+RUN_DEPENDS=	autoconf>0:devel/autoconf \
+		curl:ftp/curl \
+		gmake:devel/gmake
 
 OPTIONS_DEFINE=	RBENV
 RBENV_DESC=	Install rbenv for installation support
 OPTIONS_DEFAULT=	RBENV
-RBENV_RUN_DEPENDS=	rbenv:${PORTSDIR}/devel/rbenv
+RBENV_RUN_DEPENDS=	rbenv:devel/rbenv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sstephenson

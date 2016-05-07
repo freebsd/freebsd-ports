@@ -12,7 +12,7 @@ COMMENT=	RSS to HTML converter
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	"-I${LOCALBASE}/include" "-L${LOCALBASE}/lib"

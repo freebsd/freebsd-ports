@@ -8,8 +8,8 @@ CATEGORIES=	databases
 MAINTAINER=	ports@toco-domains.de
 COMMENT=	URI datatype for PostgreSQL
 
-BUILD_DEPENDS=	uriparser>=0.8.0:${PORTSDIR}/net/uriparser
-RUN_DEPENDS=	uriparser>=0.8.0:${PORTSDIR}/net/uriparser
+BUILD_DEPENDS=	uriparser>=0.8.0:net/uriparser
+RUN_DEPENDS=	uriparser>=0.8.0:net/uriparser
 
 USES=		gmake pgsql pkgconfig
 

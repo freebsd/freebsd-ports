@@ -10,7 +10,7 @@ DISTNAME=	privoxy-${PORTVERSION}-stable-src
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
@@ -65,7 +65,7 @@ TOGGLE_CONFIGURE_OFF=	--disable-toggle
 
 PRIVOXY_TOOLS_USES=	perl5
 PRIVOXY_TOOLS_USE=	PERL5=run
-PRIVOXY_TOOLS_RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+PRIVOXY_TOOLS_RUN_DEPENDS=	curl:ftp/curl
 
 post-patch:
 	${REINPLACE_CMD} \

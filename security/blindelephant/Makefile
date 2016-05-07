@@ -16,14 +16,15 @@ LICENSE=	LGPL3
 
 USES=		python tar:bzip2
 USE_PYTHON=	distutils
+NO_ARCH=	yes
 
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		PATH=${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	README Blind_Elephant_BlackHat_2010.pdf
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${MV} ${WRKSRC}/src/* ${WRKSRC}
@@ -32,9 +33,11 @@ post-extract:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.	for I in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${I} ${STAGEDIR}${DOCSDIR}
-.	endfor
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

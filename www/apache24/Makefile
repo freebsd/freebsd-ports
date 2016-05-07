@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.18
+PORTVERSION=	2.4.20
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -10,9 +11,9 @@ DIST_SUBDIR=	apache24
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Version 2.4.x of Apache web server
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libapr-1.so:devel/apr1 \
+		libpcre.so:devel/pcre
 
 CONFLICTS_INSTALL=	caudium14-1.* \
 			apache-*-2.2.* apache22-*
@@ -52,6 +53,17 @@ WITH_SSL_PORT?=		443
 .include "${APACHEDIR}/Makefile.options"
 .include "${APACHEDIR}/Makefile.options.desc"
 
+# IMPLIES
+AUTHN_DBD_IMPLIES=		DBD
+HEARTBEAT_IMPLIES=		WATCHDOG STATUS
+HEARTMONITOR_IMPLIES=		WATCHDOG STATUS
+LBMETHOD_HEARTBEAT_IMPLIES=	WATCHDOG STATUS HEARTMONITOR
+
+# MPM
+MPM_PREFORK_CONFIGURE_ON=	--with-mpm=prefork
+MPM_WORKER_CONFIGURE_ON=	--with-mpm=worker
+MPM_EVENT_CONFIGURE_ON=		--with-mpm=event
+
 AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
 
 # http://httpd.apache.org/docs/2.4/bind.html
@@ -60,13 +72,13 @@ IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 
 HTTP2_CONFIGURE_ON=		--with-nghttp2=${LOCALBASE}
-HTTP2_LIB_DEPENDS=		libnghttp2.so:${PORTSDIR}/www/nghttp2
-LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
+HTTP2_LIB_DEPENDS=		libnghttp2.so:www/nghttp2
+LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
 LUA_CONFIGURE_WITH=		lua
 LUA_USES=			lua
 
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
-SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:${PORTSDIR}/security/distcache
+SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
 
 # Note:
 # OpenSSL version (base/ports) depends how devel/apr1 was build
@@ -184,7 +196,7 @@ post-install-LOG_FORENSIC-on:
 modlist: extract
 	@${AWK} '/: checking whether to enable mod_/ \
 		{printf "%%%%%s%%%%libexec/apache24/%s.so\n", \
-		toupper($$8), $$8}' ${WRKSRC}/configure \
+		toupper($$8), $$8}' ${WRKSRC}/configure.upstream \
 		| ${TR} -d '"' \
 		| ${SORT} -u \
 		| ${GREP} -E -v '^%%MOD_(HTTP|ISAPI|LOG_CONFIG|PRIVILEGES|SO|UNIXD)%%'

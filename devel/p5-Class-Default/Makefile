@@ -14,7 +14,7 @@ COMMENT=	Static calls apply to a default instantiation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
+BUILD_DEPENDS=	p5-Class-Inspector>=0:devel/p5-Class-Inspector
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

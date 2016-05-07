@@ -12,7 +12,7 @@ DISTNAME=	autocompleteusersplugin-r${REL}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Plugin for autocompletion of user names in ticket fields
 
-RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	trac>=0.11:www/trac
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist

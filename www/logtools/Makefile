@@ -6,7 +6,7 @@ PORTVERSION=	0.13d
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.coker.com.au/logtools/ \
-  		LOCAL/chinsan/logtools/
+		LOCAL/chinsan/logtools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tools to deal with CLF files (Common Log File format)

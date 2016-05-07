@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Tools for use with mutt external mail address query feature
 
-RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+RUN_DEPENDS=	gsed:textproc/gsed
 
 OPTIONS_DEFINE=	ABOOK EVOLUTION GPG LDAP
 ABOOK_DESC=	abook address book support
@@ -32,24 +32,24 @@ WITH_GETENT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MGPG}
-BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS+=	gpg:security/gnupg
+RUN_DEPENDS+=	gpg:security/gnupg
 PLIST_SUB+=	GPG=""
 .else
 PLIST_SUB+=	GPG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MABOOK}
-BUILD_DEPENDS+=	abook:${PORTSDIR}/mail/abook
-RUN_DEPENDS+=	abook:${PORTSDIR}/mail/abook
+BUILD_DEPENDS+=	abook:mail/abook
+RUN_DEPENDS+=	abook:mail/abook
 PLIST_SUB+=	ABOOK=""
 .else
 PLIST_SUB+=	ABOOK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MEVOLUTION}
-BUILD_DEPENDS+=	evolution:${PORTSDIR}/mail/evolution
-RUN_DEPENDS+=	evolution:${PORTSDIR}/mail/evolution
+BUILD_DEPENDS+=	evolution:mail/evolution
+RUN_DEPENDS+=	evolution:mail/evolution
 PLIST_SUB+=	EVOLUTION=""
 .else
 PLIST_SUB+=	EVOLUTION="@comment "
@@ -62,7 +62,7 @@ PLIST_SUB+=	GETENT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
-RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS+=	p5-perl-ldap>=0:net/p5-perl-ldap
 .endif
 
 post-patch:

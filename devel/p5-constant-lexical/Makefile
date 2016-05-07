@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl pragma to declare lexical compile-time constants
 
-BUILD_DEPENDS=	p5-Sub-Delete>=0:${PORTSDIR}/devel/p5-Sub-Delete \
-		p5-Lexical-Var>=0:${PORTSDIR}/devel/p5-Lexical-Var
+BUILD_DEPENDS=	p5-Sub-Delete>=0:devel/p5-Sub-Delete \
+		p5-Lexical-Var>=0:devel/p5-Lexical-Var
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

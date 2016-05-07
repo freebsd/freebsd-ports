@@ -1,5 +1,6 @@
 bin/atheme-services
 bin/dbverify
+bin/ecdsakeygen
 @group ircservices
 @mode 640
 @sample etc/atheme/atheme.conf.example etc/atheme/atheme.conf
@@ -50,17 +51,13 @@ include/atheme/privs.h
 include/atheme/protocol/asuka.h
 include/atheme/protocol/bahamut.h
 include/atheme/protocol/charybdis.h
-include/atheme/protocol/dreamforge.h
 include/atheme/protocol/hybrid.h
 include/atheme/protocol/inspircd.h
 include/atheme/protocol/ircd-seven.h
 include/atheme/protocol/ircnet.h
 include/atheme/protocol/nefarious.h
-include/atheme/protocol/officeirc.h
 include/atheme/protocol/ratbox.h
 include/atheme/protocol/shadowircd.h
-include/atheme/protocol/sporksircd.h
-include/atheme/protocol/ultimate3.h
 include/atheme/protocol/undernet.h
 include/atheme/protocol/unreal.h
 include/atheme/res.h
@@ -83,6 +80,7 @@ include/atheme/users.h
 lib/atheme/modules/alis/main.so
 lib/atheme/modules/auth/dummy.so
 %%LDAP%%lib/atheme/modules/auth/ldap.so
+lib/atheme/modules/backend/corestorage.so
 lib/atheme/modules/backend/flatfile.so
 lib/atheme/modules/backend/opensex.so
 lib/atheme/modules/botserv/bottalk.so
@@ -97,8 +95,10 @@ lib/atheme/modules/botserv/set_private.so
 lib/atheme/modules/chanfix/main.so
 lib/atheme/modules/chanserv/access.so
 lib/atheme/modules/chanserv/akick.so
+lib/atheme/modules/chanserv/antiflood.so
 lib/atheme/modules/chanserv/ban.so
 lib/atheme/modules/chanserv/clear.so
+lib/atheme/modules/chanserv/clear_akicks.so
 lib/atheme/modules/chanserv/clear_bans.so
 lib/atheme/modules/chanserv/clear_flags.so
 lib/atheme/modules/chanserv/clear_users.so
@@ -131,7 +131,6 @@ lib/atheme/modules/chanserv/set_core.so
 lib/atheme/modules/chanserv/set_email.so
 lib/atheme/modules/chanserv/set_entrymsg.so
 lib/atheme/modules/chanserv/set_fantasy.so
-lib/atheme/modules/chanserv/set_founder.so
 lib/atheme/modules/chanserv/set_gameserv.so
 lib/atheme/modules/chanserv/set_guard.so
 lib/atheme/modules/chanserv/set_keeptopic.so
@@ -140,6 +139,7 @@ lib/atheme/modules/chanserv/set_mlock.so
 lib/atheme/modules/chanserv/set_prefix.so
 lib/atheme/modules/chanserv/set_private.so
 lib/atheme/modules/chanserv/set_property.so
+lib/atheme/modules/chanserv/set_pubacl.so
 lib/atheme/modules/chanserv/set_restricted.so
 lib/atheme/modules/chanserv/set_secure.so
 lib/atheme/modules/chanserv/set_topiclock.so
@@ -162,6 +162,7 @@ lib/atheme/modules/chanserv/xop.so
 %%CONTRIB%%lib/atheme/modules/contrib/cs_badwords.so
 %%CONTRIB%%lib/atheme/modules/contrib/cs_fregister.so
 %%CONTRIB%%lib/atheme/modules/contrib/cs_kickdots.so
+%%CONTRIB%%lib/atheme/modules/contrib/cs_modesync.so
 %%CONTRIB%%lib/atheme/modules/contrib/cs_ping.so
 %%CONTRIB%%lib/atheme/modules/contrib/cs_regmode.so
 %%CONTRIB%%lib/atheme/modules/contrib/cs_regnotice.so
@@ -185,11 +186,13 @@ lib/atheme/modules/chanserv/xop.so
 %%CONTRIB%%lib/atheme/modules/contrib/ns_fregister.so
 %%CONTRIB%%lib/atheme/modules/contrib/ns_generatehash.so
 %%CONTRIB%%lib/atheme/modules/contrib/ns_generatepass.so
+%%CONTRIB%%lib/atheme/modules/contrib/ns_goodmail.so
 %%CONTRIB%%lib/atheme/modules/contrib/ns_guestnoreg.so
 %%CONTRIB%%lib/atheme/modules/contrib/ns_listlogins.so
 %%CONTRIB%%lib/atheme/modules/contrib/ns_mxcheck.so
 %%CONTRIB%%lib/atheme/modules/contrib/ns_mxcheck_async.so
 %%CONTRIB%%lib/atheme/modules/contrib/ns_regnotice.so
+%%CONTRIB%%lib/atheme/modules/contrib/ns_sendpassmail.so
 %%CONTRIB%%lib/atheme/modules/contrib/ns_waitreg.so
 %%CONTRIB%%lib/atheme/modules/contrib/on_db_save.so
 %%CONTRIB%%lib/atheme/modules/contrib/os_akillnicklist.so
@@ -209,6 +212,8 @@ lib/atheme/modules/chanserv/xop.so
 %%CONTRIB%%lib/atheme/modules/contrib/os_trace.so
 %%CONTRIB%%lib/atheme/modules/contrib/wumpus.so
 lib/atheme/modules/crypto/ircservices.so
+lib/atheme/modules/crypto/pbkdf2.so
+lib/atheme/modules/crypto/pbkdf2v2.so
 lib/atheme/modules/crypto/posix.so
 lib/atheme/modules/crypto/rawmd5.so
 lib/atheme/modules/crypto/rawsha1.so
@@ -217,6 +222,7 @@ lib/atheme/modules/exttarget/channel.so
 lib/atheme/modules/exttarget/main.so
 lib/atheme/modules/exttarget/oper.so
 lib/atheme/modules/exttarget/registered.so
+lib/atheme/modules/exttarget/server.so
 lib/atheme/modules/gameserv/dice.so
 lib/atheme/modules/gameserv/eightball.so
 lib/atheme/modules/gameserv/gamecalc.so
@@ -245,6 +251,7 @@ lib/atheme/modules/groupserv/set.so
 lib/atheme/modules/groupserv/set_channel.so
 lib/atheme/modules/groupserv/set_description.so
 lib/atheme/modules/groupserv/set_email.so
+lib/atheme/modules/groupserv/set_groupname.so
 lib/atheme/modules/groupserv/set_joinflags.so
 lib/atheme/modules/groupserv/set_open.so
 lib/atheme/modules/groupserv/set_public.so
@@ -273,6 +280,7 @@ lib/atheme/modules/memoserv/send.so
 lib/atheme/modules/memoserv/sendall.so
 lib/atheme/modules/memoserv/sendgroup.so
 lib/atheme/modules/memoserv/sendops.so
+lib/atheme/modules/misc/canon_gmail.so
 lib/atheme/modules/misc/httpd.so
 lib/atheme/modules/nickserv/access.so
 lib/atheme/modules/nickserv/badmail.so
@@ -287,6 +295,7 @@ lib/atheme/modules/nickserv/help.so
 lib/atheme/modules/nickserv/hold.so
 lib/atheme/modules/nickserv/identify.so
 lib/atheme/modules/nickserv/info.so
+lib/atheme/modules/nickserv/info_lastquit.so
 lib/atheme/modules/nickserv/list.so
 lib/atheme/modules/nickserv/listchans.so
 lib/atheme/modules/nickserv/listgroups.so
@@ -296,6 +305,7 @@ lib/atheme/modules/nickserv/login.so
 lib/atheme/modules/nickserv/logout.so
 lib/atheme/modules/nickserv/main.so
 lib/atheme/modules/nickserv/mark.so
+lib/atheme/modules/nickserv/multimark.so
 lib/atheme/modules/nickserv/register.so
 lib/atheme/modules/nickserv/regnolimit.so
 lib/atheme/modules/nickserv/resetpass.so
@@ -316,10 +326,12 @@ lib/atheme/modules/nickserv/set_neverop.so
 lib/atheme/modules/nickserv/set_nogreet.so
 lib/atheme/modules/nickserv/set_nomemo.so
 lib/atheme/modules/nickserv/set_noop.so
+lib/atheme/modules/nickserv/set_nopassword.so
 lib/atheme/modules/nickserv/set_password.so
 lib/atheme/modules/nickserv/set_private.so
 lib/atheme/modules/nickserv/set_privmsg.so
 lib/atheme/modules/nickserv/set_property.so
+lib/atheme/modules/nickserv/set_pubkey.so
 lib/atheme/modules/nickserv/set_quietchg.so
 lib/atheme/modules/nickserv/setpass.so
 lib/atheme/modules/nickserv/status.so
@@ -367,10 +379,9 @@ lib/atheme/modules/protocol/asuka.so
 lib/atheme/modules/protocol/bahamut.so
 lib/atheme/modules/protocol/base36uid.so
 lib/atheme/modules/protocol/charybdis.so
-lib/atheme/modules/protocol/dreamforge.so
+lib/atheme/modules/protocol/elemental-ircd.so
 lib/atheme/modules/protocol/hybrid.so
 lib/atheme/modules/protocol/inspircd.so
-lib/atheme/modules/protocol/inspircd12.so
 lib/atheme/modules/protocol/ircd-seven.so
 lib/atheme/modules/protocol/ircnet.so
 lib/atheme/modules/protocol/mixin_nohalfops.so
@@ -382,7 +393,6 @@ lib/atheme/modules/protocol/ngircd.so
 lib/atheme/modules/protocol/p10-generic.so
 lib/atheme/modules/protocol/ratbox.so
 lib/atheme/modules/protocol/shadowircd.so
-lib/atheme/modules/protocol/sporksircd.so
 lib/atheme/modules/protocol/ts6-generic.so
 lib/atheme/modules/protocol/undernet.so
 lib/atheme/modules/protocol/unreal.so
@@ -396,7 +406,7 @@ lib/atheme/modules/rpgserv/main.so
 lib/atheme/modules/rpgserv/search.so
 lib/atheme/modules/rpgserv/set.so
 lib/atheme/modules/saslserv/authcookie.so
-lib/atheme/modules/saslserv/dh-blowfish.so
+lib/atheme/modules/saslserv/ecdsa-nist256p-challenge.so
 lib/atheme/modules/saslserv/external.so
 lib/atheme/modules/saslserv/main.so
 lib/atheme/modules/saslserv/plain.so
@@ -406,6 +416,7 @@ lib/atheme/modules/saslserv/plain.so
 %%PERL%%lib/atheme/modules/scripting/lib/Atheme/Account.pm
 %%PERL%%lib/atheme/modules/scripting/lib/Atheme/ChanAcs.pm
 %%PERL%%lib/atheme/modules/scripting/lib/Atheme/ChannelRegistration.pm
+%%PERL%%lib/atheme/modules/scripting/lib/Atheme/ChanMode.pm
 %%PERL%%lib/atheme/modules/scripting/lib/Atheme/Command.pm
 %%PERL%%lib/atheme/modules/scripting/lib/Atheme/Entity.pm
 %%PERL%%lib/atheme/modules/scripting/lib/Atheme/Fault.pm
@@ -421,10 +432,12 @@ lib/atheme/modules/saslserv/plain.so
 %%PERL%%lib/atheme/modules/scripting/lib/Atheme/Service.pm
 %%PERL%%lib/atheme/modules/scripting/lib/init.pl
 %%PERL%%lib/atheme/modules/scripting/perl.so
+lib/atheme/modules/security/cmdperm.so
 lib/atheme/modules/statserv/channel.so
 lib/atheme/modules/statserv/main.so
 lib/atheme/modules/statserv/netsplit.so
 lib/atheme/modules/statserv/server.so
+lib/atheme/modules/transport/jsonrpc.so
 lib/atheme/modules/transport/p10.so
 lib/atheme/modules/transport/rfc1459.so
 lib/atheme/modules/transport/xmlrpc.so
@@ -432,6 +445,11 @@ lib/libathemecore.so
 lib/libathemecore.so.1
 lib/libathemecore.so.1.0.0
 libdata/pkgconfig/atheme-services.pc
+share/atheme/email/memo
+share/atheme/email/register
+share/atheme/email/sendpass
+share/atheme/email/setemail
+share/atheme/email/setpass
 share/atheme/help/alis/list
 share/atheme/help/botserv/act
 share/atheme/help/botserv/assign
@@ -491,6 +509,7 @@ share/atheme/help/cservice/access_list
 share/atheme/help/cservice/access_set
 share/atheme/help/cservice/akick
 share/atheme/help/cservice/ban
+share/atheme/help/cservice/clear_akicks
 share/atheme/help/cservice/clear_bans
 share/atheme/help/cservice/clear_flags
 share/atheme/help/cservice/clear_users
@@ -522,6 +541,7 @@ share/atheme/help/cservice/role_add
 share/atheme/help/cservice/role_del
 share/atheme/help/cservice/role_list
 share/atheme/help/cservice/role_set
+share/atheme/help/cservice/set_antiflood
 share/atheme/help/cservice/set_email
 share/atheme/help/cservice/set_entrymsg
 share/atheme/help/cservice/set_fantasy
@@ -535,6 +555,7 @@ share/atheme/help/cservice/set_nosync
 share/atheme/help/cservice/set_prefix
 share/atheme/help/cservice/set_private
 share/atheme/help/cservice/set_property
+share/atheme/help/cservice/set_pubacl
 share/atheme/help/cservice/set_restricted
 share/atheme/help/cservice/set_secure
 share/atheme/help/cservice/set_topiclock
@@ -547,6 +568,7 @@ share/atheme/help/cservice/template
 share/atheme/help/cservice/topic
 share/atheme/help/cservice/topicappend
 share/atheme/help/cservice/topicprepend
+share/atheme/help/cservice/topicswap
 share/atheme/help/cservice/unban
 share/atheme/help/cservice/unban_self
 share/atheme/help/cservice/unquiet
@@ -929,6 +951,7 @@ share/atheme/help/nickserv/listvhost
 share/atheme/help/nickserv/login
 share/atheme/help/nickserv/logout
 share/atheme/help/nickserv/mark
+share/atheme/help/nickserv/multimark
 share/atheme/help/nickserv/regain
 share/atheme/help/nickserv/register
 share/atheme/help/nickserv/regnolimit
@@ -950,10 +973,12 @@ share/atheme/help/nickserv/set_neverop
 share/atheme/help/nickserv/set_nogreet
 share/atheme/help/nickserv/set_nomemo
 share/atheme/help/nickserv/set_noop
+share/atheme/help/nickserv/set_nopassword
 share/atheme/help/nickserv/set_password
 share/atheme/help/nickserv/set_private
 share/atheme/help/nickserv/set_privmsg
 share/atheme/help/nickserv/set_property
+share/atheme/help/nickserv/set_pubkey
 share/atheme/help/nickserv/set_quietchg
 share/atheme/help/nickserv/setpass
 share/atheme/help/nickserv/status
@@ -980,6 +1005,7 @@ share/atheme/help/oservice/modreload
 share/atheme/help/oservice/modunload
 share/atheme/help/oservice/noop
 share/atheme/help/oservice/override
+share/atheme/help/oservice/perl
 share/atheme/help/oservice/rakill
 share/atheme/help/oservice/raw
 share/atheme/help/oservice/readonly
@@ -988,7 +1014,6 @@ share/atheme/help/oservice/restart
 share/atheme/help/oservice/rmatch
 share/atheme/help/oservice/rnc
 share/atheme/help/oservice/rwatch
-share/atheme/help/oservice/script
 share/atheme/help/oservice/set_akicktime
 share/atheme/help/oservice/set_chanexpire
 share/atheme/help/oservice/set_commitinterval
@@ -1221,6 +1246,7 @@ share/atheme/help/userserv/verify
 share/atheme/help/userserv/vhost
 %%PORTDOCS%%share/doc/atheme/FAQ
 %%PORTDOCS%%share/doc/atheme/IRCD
+%%PORTDOCS%%share/doc/atheme/JSONRPC
 %%PORTDOCS%%share/doc/atheme/LICENSE
 %%PORTDOCS%%share/doc/atheme/PCOMMANDS
 %%PORTDOCS%%share/doc/atheme/PRIVILEGES
@@ -1239,5 +1265,6 @@ share/atheme/help/userserv/vhost
 %%NLS%%share/locale/da/LC_MESSAGES/atheme.mo
 %%NLS%%share/locale/de/LC_MESSAGES/atheme.mo
 %%NLS%%share/locale/es/LC_MESSAGES/atheme.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/atheme.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/atheme.mo
 @dir(,ircservices,) etc/atheme

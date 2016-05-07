@@ -12,14 +12,13 @@ COMMENT=	SSH host commands for Hammer CLI
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	rubygem-hammer_cli>=0.0.6:${PORTSDIR}/sysutils/rubygem-hammer_cli \
-		rubygem-hammer_cli_foreman>=0:${PORTSDIR}/sysutils/rubygem-hammer_cli_foreman \
-		rubygem-net-ssh-multi>=1.2.1:${PORTSDIR}/security/rubygem-net-ssh-multi
+RUN_DEPENDS=	rubygem-hammer_cli>=0.0.6:sysutils/rubygem-hammer_cli \
+		rubygem-hammer_cli_foreman>=0:sysutils/rubygem-hammer_cli_foreman \
+		rubygem-net-ssh-multi>=1.2.1:security/rubygem-net-ssh-multi
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	"@sample etc/hammer/cli.modules.d/foreman_ssh.yml.sample"
 

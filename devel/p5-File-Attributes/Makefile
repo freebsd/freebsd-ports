@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	File::Attributes - Manipulate file metadata
 
-BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-Directory-Scratch>=0:${PORTSDIR}/devel/p5-Directory-Scratch \
-		p5-Best>=0:${PORTSDIR}/devel/p5-Best \
-		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
+BUILD_DEPENDS=	p5-YAML>=0:textproc/p5-YAML \
+		p5-Directory-Scratch>=0:devel/p5-Directory-Scratch \
+		p5-Best>=0:devel/p5-Best \
+		p5-YAML-Syck>0:textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

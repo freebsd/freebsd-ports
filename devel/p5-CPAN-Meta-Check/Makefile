@@ -13,23 +13,19 @@ COMMENT=	Verify requirements in a CPAN::Meta object
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Metadata>=1.000023:${PORTSDIR}/devel/p5-Module-Metadata
+BUILD_DEPENDS=	p5-Module-Metadata>=1.000023:devel/p5-Module-Metadata
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
+TEST_DEPENDS=	p5-Test-Deep>0:devel/p5-Test-Deep
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements
-RUN_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements
-.endif
-
 .if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-CPAN-Meta>=2.132830:${PORTSDIR}/devel/p5-CPAN-Meta
-RUN_DEPENDS+=	p5-CPAN-Meta>=2.132830:${PORTSDIR}/devel/p5-CPAN-Meta
+BUILD_DEPENDS+=	p5-CPAN-Meta>=2.132830:devel/p5-CPAN-Meta
+RUN_DEPENDS+=	p5-CPAN-Meta>=2.132830:devel/p5-CPAN-Meta
 .endif
 
 .include <bsd.port.post.mk>

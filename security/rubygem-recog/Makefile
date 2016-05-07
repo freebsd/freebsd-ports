@@ -11,11 +11,10 @@ COMMENT=	Framework for fingerprinting products
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/recog_export \
 		bin/recog_match \
 		bin/recog_verify

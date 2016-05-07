@@ -3,7 +3,7 @@
 
 PORTNAME=	POE-Component-RRDTool
 PORTVERSION=	0.18
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases perl5 devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE interface to Round Robin Database Tools
 
-BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
-		p5-POE>=0:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	rrdtool:databases/rrdtool \
+		p5-POE>=0:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

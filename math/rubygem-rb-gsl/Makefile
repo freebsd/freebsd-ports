@@ -11,11 +11,10 @@ COMMENT=	Ruby extension library for GSL (GNU Scientific Library)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
-RUN_DEPENDS=	rubygem-narray>=0.5.9:${PORTSDIR}/math/rubygem-narray
+LIB_DEPENDS=	libgsl.so:math/gsl
+RUN_DEPENDS=	rubygem-narray>=0.5.9:math/rubygem-narray
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

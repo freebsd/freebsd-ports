@@ -11,7 +11,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Replacement and extension for Tripwire
 
-LIB_DEPENDS=	libmhash.so:${PORTSDIR}/security/mhash
+LIB_DEPENDS=	libmhash.so:security/mhash
 
 USES=		bison gmake
 

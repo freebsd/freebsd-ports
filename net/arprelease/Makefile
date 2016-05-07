@@ -10,13 +10,13 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libnet tool to flush arp cache entries from devices (eg. routers)
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/arprelease
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 
 do-build:
 	(cd ${WRKSRC} && \

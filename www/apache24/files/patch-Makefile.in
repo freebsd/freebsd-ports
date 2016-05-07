@@ -1,4 +1,4 @@
---- Makefile.in.orig	2015-04-15 18:06:04 UTC
+--- Makefile.in.orig	2016-03-20 15:51:49 UTC
 +++ Makefile.in
 @@ -32,12 +32,9 @@ include $(top_srcdir)/build/program.mk
  install-conf:
@@ -90,7 +90,7 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -251,12 +222,7 @@ install-man:
+@@ -252,12 +223,7 @@ install-man:
  	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
  	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8

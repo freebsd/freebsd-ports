@@ -13,11 +13,11 @@ COMMENT=	GNUstep CD player with CDDB support
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio \
-		libPrefsModule.so:${PORTSDIR}/deskutils/preferences
+LIB_DEPENDS=	libcdaudio.so:audio/libcdaudio \
+		libPrefsModule.so:deskutils/preferences
 
-BUILD_DEPENDS=	cddb-bundle>0:${PORTSDIR}/audio/cddb-bundle
-RUN_DEPENDS=	cddb-bundle>0:${PORTSDIR}/audio/cddb-bundle
+BUILD_DEPENDS=	cddb-bundle>0:audio/cddb-bundle
+RUN_DEPENDS=	cddb-bundle>0:audio/cddb-bundle
 
 USES=		tar:bzip2 gnustep
 USE_GNUSTEP=	back build

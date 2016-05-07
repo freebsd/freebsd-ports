@@ -9,10 +9,10 @@ MASTER_SITES=	OSSP/tool/${PORTNAME}
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	OSSP mail to news gateway
 
-LIB_DEPENDS=	libstr.so:${PORTSDIR}/devel/str \
-		libex.so:${PORTSDIR}/devel/ossp-ex \
-		libsa.so:${PORTSDIR}/net/ossp-sa \
-		libvar.so:${PORTSDIR}/devel/ossp-var
+LIB_DEPENDS=	libstr.so:devel/str \
+		libex.so:devel/ossp-ex \
+		libsa.so:net/ossp-sa \
+		libvar.so:devel/ossp-var
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE} --with-str=${LOCALBASE} \

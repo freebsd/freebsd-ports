@@ -10,7 +10,7 @@ MASTER_SITES=	SF/desk3d/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Virtual Desktop Switcher
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USES=		localbase
 USE_XORG=	xmu

@@ -12,7 +12,7 @@ COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:audio/libogg
 
 GIT_COMMIT=	b56ffc
 USES=		autoreconf libtool pathfix pkgconfig

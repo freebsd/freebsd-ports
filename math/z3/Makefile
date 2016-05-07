@@ -11,6 +11,8 @@ COMMENT=	Z3 Theorem Prover
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	Does not build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Z3Prover
 
@@ -28,7 +30,7 @@ GMP_DESC=		Use GMP library for AP arithmetic
 GMP_CONFIGURE_ON=	--gmp
 GMP_CXXFLAGS=		-I${LOCALBASE}include
 GMP_LDFLAGS=		-L${LOCALBASE}/lib
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
 HAS_CONFIGURE=		yes
 USE_LDCONFIG=		yes

@@ -12,7 +12,7 @@ COMMENT=	PHP based weblog software
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
+RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:archivers/pear-File_Archive
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
@@ -41,7 +41,7 @@ USE_PHP+=	sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:graphics/ImageMagick
 .endif
 
 do-install:

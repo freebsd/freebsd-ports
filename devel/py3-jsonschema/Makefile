@@ -12,7 +12,7 @@ COMMENT=	JSON Schema validation for Python
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vcversioner>0:${PORTSDIR}/devel/py3-vcversioner
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vcversioner>0:devel/py3-vcversioner
 
 USES=		python:3
 USE_PYTHON=	autoplist distutils

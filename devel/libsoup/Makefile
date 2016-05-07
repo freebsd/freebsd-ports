@@ -10,9 +10,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SOAP (Simple Object Access Protocol) implementation in C
 
-BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
-RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
+BUILD_DEPENDS=	glib-networking>=2.29.18:net/glib-networking
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+RUN_DEPENDS=	glib-networking>=2.29.18:net/glib-networking
 
 USES=		tar:xz
 PORTSCOUT=	limitw:1,even
@@ -20,10 +20,9 @@ PORTSCOUT=	limitw:1,even
 .if !defined(REFERENCE_PORT)
 
 USES+=		gettext gmake gnome libtool pathfix pkgconfig \
-		python:3:build tar:xz
+		python:3:build sqlite:3 tar:xz
 USE_GNOME=	glib20 intlhack introspection:build \
 		libxml2 referencehack
-USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-more-warnings \
@@ -36,8 +35,8 @@ LIBVERSION=	1.7.0
 PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
 .if defined(SOUP_SLAVE)
-USE_SQLITE=	yes
-LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+USES+=		sqlite
+LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup
 CONFIGURE_ARGS+=--with-gnome
 .else
 CONFIGURE_ARGS+=--without-gnome

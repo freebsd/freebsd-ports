@@ -15,13 +15,13 @@ COMMENT=	FSF GCC 4.x for Atmel AVR 8-bit RISC cross-development
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
-		avr-ld:${PORTSDIR}/devel/avr-binutils
-LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libmpc.so:${PORTSDIR}/math/mpc
-RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
-		avr-ld:${PORTSDIR}/devel/avr-binutils
+BUILD_DEPENDS=	avr-as:devel/avr-binutils \
+		avr-ld:devel/avr-binutils
+LIB_DEPENDS=	libmpfr.so:math/mpfr \
+		libgmp.so:math/gmp \
+		libmpc.so:math/mpc
+RUN_DEPENDS=	avr-as:devel/avr-binutils \
+		avr-ld:devel/avr-binutils
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of

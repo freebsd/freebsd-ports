@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME desktop shell extensions
 
-LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
-RUN_DEPENDS=	gnome-shell>=3.12.0:${PORTSDIR}/x11/gnome-shell
+LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
+RUN_DEPENDS=	gnome-shell>=3.12.0:x11/gnome-shell
 
 PORTSCOUT=	limitw:1,even
 

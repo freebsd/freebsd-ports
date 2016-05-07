@@ -13,8 +13,8 @@ DISTNAME=	Imaging-${PORTVERSION}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	The Python Imaging Library
 
-LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	liblcms.so:graphics/lcms \
+		libfreetype.so:print/freetype2
 
 DEPRECATED=	Unmaintained upstream; use graphics/py-pillow
 EXPIRATION_DATE=2016-03-11
@@ -34,8 +34,8 @@ TKINTER_DESC=	tkinter for X support
 
 OPTIONS_DEFAULT=	TKINTER
 
-TKINTER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
-TKINTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+TKINTER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+TKINTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 
 .include <bsd.port.options.mk>
 

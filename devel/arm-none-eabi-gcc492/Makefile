@@ -14,24 +14,22 @@ COMMENT=	GNU Compiler Collection for bare metal arm cross-development
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr \
-		libmpc.so:${PORTSDIR}/math/mpc
-BUILD_DEPENDS=	${BU_PREFIX}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
-RUN_DEPENDS=	${BU_PREFIX}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libmpc.so:math/mpc
+BUILD_DEPENDS=	${BU_PREFIX}-as:devel/${PKGNAMEPREFIX}binutils
+RUN_DEPENDS=	${BU_PREFIX}-as:devel/${PKGNAMEPREFIX}binutils
 
 USES=	compiler gmake iconv libtool makeinfo tar:bzip2
 PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
 		OPSYS=${OPSYS:tl} \
 		GCC_TARGET=${GCC_TARGET}
 
-PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKSRC=	${WRKDIR}/build-gcc
-
 GCC_TARGET=	arm-none-eabi
 BU_PREFIX?=	${GCC_TARGET}
 
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 # libstdcxx won't build, but we don't need it or multiple float-abi libs.
 CONFIGURE_ARGS= --target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--without-headers \
@@ -43,8 +41,6 @@ CONFIGURE_ARGS= --target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--disable-libstdcxx \
 		--disable-multilib
 
-CONFIGURE_SCRIPT=	../${PORTNAME}-${PORTVERSION}/configure
-
 PLIST=	${.CURDIR}/pkg-plist
 
 # U-Boot requires libgcc, crossbuild and install it along with the compiler.
@@ -54,9 +50,6 @@ INSTALL_TARGET=	install-gcc install-target-libgcc
 .include <bsd.port.pre.mk>
 
 CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
-
-post-extract:
-	@${MKDIR} ${WRKSRC}
 
 post-stage:
 	@if [ -f ${STAGEDIR}${PREFIX}/bin/cpp ] ; then \

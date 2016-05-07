@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 RUN_DEPENDS=	${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
+		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-opengl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-post-${DISTVERSION}
 

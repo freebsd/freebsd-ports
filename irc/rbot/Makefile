@@ -10,12 +10,12 @@ CATEGORIES=	irc ruby
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Ruby IRC bot similar to infobot
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tokyocabinet.so:${PORTSDIR}/databases/ruby-tokyocabinet \
-		rubygem-mechanize>=0:${PORTSDIR}/www/rubygem-mechanize \
-		rubygem-tzinfo>=0:${PORTSDIR}/devel/rubygem-tzinfo \
-		rubygem-oauth>=0:${PORTSDIR}/net/rubygem-oauth \
-		rubygem-oauth2>=0:${PORTSDIR}/net/rubygem-oauth2
-LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tokyocabinet.so:databases/ruby-tokyocabinet \
+		rubygem-mechanize>=0:www/rubygem-mechanize \
+		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
+		rubygem-oauth>=0:net/rubygem-oauth \
+		rubygem-oauth2>=0:net/rubygem-oauth2
+LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

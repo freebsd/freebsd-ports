@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Tarantool interface for Catalyst based application
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90001:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-MR-Tarantool>=0.0.24:${PORTSDIR}/databases/p5-MR-Tarantool
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90001:www/p5-Catalyst-Runtime \
+		p5-MR-Tarantool>=0.0.24:databases/p5-MR-Tarantool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

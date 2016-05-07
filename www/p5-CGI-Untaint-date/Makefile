@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validate a date
 
-BUILD_DEPENDS=	p5-CGI-Untaint>=0:${PORTSDIR}/www/p5-CGI-Untaint \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-Date-Simple>=0:${PORTSDIR}/devel/p5-Date-Simple
+BUILD_DEPENDS=	p5-CGI-Untaint>=0:www/p5-CGI-Untaint \
+		p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-Date-Simple>=0:devel/p5-Date-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

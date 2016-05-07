@@ -3,7 +3,7 @@
 
 PORTNAME=	couriergraph
 PORTVERSION=	20060202
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.arschkrebs.de/postfix/${PORTNAME}/
 DISTNAME=	${PORTNAME}
@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RRDtool frontend for Courier statistics
 
-RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
-		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
+RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
+		p5-File-Tail>=0:devel/p5-File-Tail
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

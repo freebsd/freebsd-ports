@@ -13,7 +13,7 @@ COMMENT=	Bindings for CHMLIB library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
+LIB_DEPENDS=	libchm.so:misc/chmlib
 
 NO_BUILD=	yes
 USES=		python:2

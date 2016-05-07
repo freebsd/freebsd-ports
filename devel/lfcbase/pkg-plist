@@ -27,6 +27,7 @@ include/lfcbase/SharedMemory.h
 include/lfcbase/SigHandler.h
 include/lfcbase/Sleeper.h
 include/lfcbase/StackT.h
+include/lfcbase/TextIndex.h
 include/lfcbase/Thread.h
 include/lfcbase/ThreadLock.h
 include/lfcbase/Timer.h

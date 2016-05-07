@@ -12,12 +12,11 @@ COMMENT=	Rails wrapper for the PDFKit library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-pdfkit>=0.5.0:${PORTSDIR}/graphics/rubygem-pdfkit
+RUN_DEPENDS=	rubygem-pdfkit>=0.5.0:graphics/rubygem-pdfkit
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

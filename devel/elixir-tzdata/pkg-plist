@@ -31,5 +31,5 @@ lib/elixir/lib/tzdata/lib/tzdata/table_data.ex
 lib/elixir/lib/tzdata/lib/tzdata/table_parser.ex
 lib/elixir/lib/tzdata/lib/tzdata/tzdata_app.ex
 lib/elixir/lib/tzdata/lib/tzdata/util.ex
-lib/elixir/lib/tzdata/priv/release_ets/2015g.ets
+lib/elixir/lib/tzdata/priv/release_ets/2016c.ets
 %%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -10,10 +10,10 @@ MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Library supporting common-utility raster handling methods
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
-		libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libgeotiff.so:graphics/libgeotiff \
+		libcairo.so:graphics/cairo
 
 USES=		gmake iconv jpeg pathfix pkgconfig libtool
 USE_LDCONFIG=	yes

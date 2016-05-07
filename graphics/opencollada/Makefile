@@ -9,7 +9,9 @@ COMMENT=	Library for reading and writing COLLADA files
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup

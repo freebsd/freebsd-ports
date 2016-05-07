@@ -11,7 +11,7 @@ DISTNAME=	MobileCubeBeta%23${THEME_BUILD}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme for RoundCube Web Mail
 
-RUN_DEPENDS=	roundcube>=0.3:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.3:mail/roundcube
 
 THEME_VERSION?=	3.1.0
 THEME_BUILD?=	030110A

@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CIA World Fact Book to SQL Conversion Utility
 
-BUILD_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General
+BUILD_DEPENDS=	p5-Config-General>=0:devel/p5-Config-General
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

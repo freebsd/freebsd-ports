@@ -3,7 +3,7 @@
 
 PORTNAME=	cinepaint
 DISTVERSION=	1.0-4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${DISTVERSION}
 
@@ -13,12 +13,12 @@ COMMENT=	Editing tool used for painting and retouching of movies
 LICENSE=	GPLv2 LGPL21 MIT
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-    		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+		libftgl.so:graphics/ftgl \
+		liblcms.so:graphics/lcms \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libfltk.so:x11-toolkits/fltk
 
 OPTIONS_DEFINE=	OYRANOS PRINT
 OYRANOS_DESC=	ICC profile support via Oyranos
@@ -40,13 +40,13 @@ PLIST_SUB=	VER="${DISTVERSION}"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOYRANOS}
-LIB_DEPENDS+=	liboyranos.so:${PORTSDIR}/graphics/oyranos
+LIB_DEPENDS+=	liboyranos.so:graphics/oyranos
 .else
 CONFIGURE_ENV+=	ac_cv_path_OY_CONFIG=no
 .endif
 
 .if ${PORT_OPTIONS:MPRINT}
-LIB_DEPENDS+=	libgutenprint.so:${PORTSDIR}/print/gutenprint-base
+LIB_DEPENDS+=	libgutenprint.so:print/gutenprint-base
 PLIST_SUB+=	PRINT=""
 .else
 CONFIGURE_ARGS+=	--disable-print

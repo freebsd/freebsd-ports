@@ -2,7 +2,7 @@
 
 PORTNAME=	texvc
 PORTVERSION=	20050202
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	SF/wikipedia/Support%20files/${PORTNAME}%20Linux-x86%20source%20%2B%20binary
 DISTNAME=	${PORTNAME}-linux-x86-${PORTVERSION}
@@ -23,7 +23,7 @@ OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
 RASTER_DESC=	rasterization support
 RASTER_USES=	ghostscript:run
 RASTER_USE=	TEX=latex,dvipsk
-RASTER_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RASTER_RUN_DEPENDS=	convert:graphics/ImageMagick
 
 MAKE_JOBS_UNSAFE=	yes
 

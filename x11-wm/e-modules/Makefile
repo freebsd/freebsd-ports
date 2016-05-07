@@ -33,7 +33,7 @@ ${M:tu:S,-,_,g}_DESC=	Install ${M} module
 ${M:tu:S,-,_,g}_PATH=	${M}
 . endif
 . if ${PORT_OPTIONS:M${M:tu:S,-,_,g}}
-RUN_DEPENDS+=	${LOCALBASE}/lib/enlightenment/modules/${${M:tu:S,-,_,g}_PATH}/${ENLIGHTENMENT_ARCH}/module.so:${PORTSDIR}/x11-wm/e-module-${M}
+RUN_DEPENDS+=	${LOCALBASE}/lib/enlightenment/modules/${${M:tu:S,-,_,g}_PATH}/${ENLIGHTENMENT_ARCH}/module.so:x11-wm/e-module-${M}
 . endif
 .endfor
 

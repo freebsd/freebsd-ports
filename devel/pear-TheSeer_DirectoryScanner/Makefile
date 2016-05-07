@@ -12,8 +12,8 @@ COMMENT=	Recursive directory scanner and filter
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/pear.netpirates.net.reg:${PORTSDIR}/devel/pear-channel-theseer
-RUN_DEPENDS=	${PEARDIR}/.channels/pear.netpirates.net.reg:${PORTSDIR}/devel/pear-channel-theseer
+BUILD_DEPENDS=	${PEARDIR}/.channels/pear.netpirates.net.reg:devel/pear-channel-theseer
+RUN_DEPENDS=	${PEARDIR}/.channels/pear.netpirates.net.reg:devel/pear-channel-theseer
 
 USE_PHP=	fileinfo
 PEAR_CHANNEL=	theseer

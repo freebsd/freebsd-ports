@@ -13,7 +13,7 @@ COMMENT=	Perl module for parsing RTF files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-RTF-Tokenizer>=1.16:${PORTSDIR}/textproc/p5-RTF-Tokenizer
+BUILD_DEPENDS=	p5-RTF-Tokenizer>=1.16:textproc/p5-RTF-Tokenizer
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

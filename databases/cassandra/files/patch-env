@@ -1,7 +1,0 @@
---- conf/cassandra-env.sh.orig	2011-11-04 11:47:16.000000000 +0100
-+++ conf/cassandra-env.sh	2011-11-09 16:50:50.124144710 +0100
-@@ -192,3 +192,4 @@
- JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.port=$JMX_PORT" 
- JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.ssl=false" 
- JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.authenticate=false" 
-+JVM_OPTS="$JVM_OPTS $JVM_OVERRIDE_OPTS" 

@@ -8,6 +8,7 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/ai/compat_1.3.nut
 %%DATADIR%%/ai/compat_1.4.nut
 %%DATADIR%%/ai/compat_1.5.nut
+%%DATADIR%%/ai/compat_1.6.nut
 %%DATADIR%%/baseset/no_music.obm
 %%DATADIR%%/baseset/no_sound.obs
 %%DATADIR%%/baseset/openttd.grf

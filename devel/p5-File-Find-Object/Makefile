@@ -14,7 +14,7 @@ COMMENT=	Object oriented File::Find replacement
 LICENSE=	ART20 GPLv2
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor
+BUILD_DEPENDS=	p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

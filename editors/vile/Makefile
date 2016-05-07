@@ -16,7 +16,7 @@ COMMENT=	VI Like Emacs -- console version
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	reflex:${PORTSDIR}/textproc/reflex
+BUILD_DEPENDS=	reflex:textproc/reflex
 
 USES=		ncurses pkgconfig shebangfix tar:tgz
 SHEBANG_FILES=	perl/vileget

@@ -15,14 +15,14 @@ COMMENT=	GNU Compiler Collection 4.6
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr \
-		libmpc.so:${PORTSDIR}/math/mpc
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libmpc.so:math/mpc
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 
 .if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
+BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
 CPE_VENDOR=	gnu
@@ -38,9 +38,6 @@ USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
 
-PATCH_WRKSRC=	${SRCDIR}
-CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
-
 OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
@@ -53,16 +50,13 @@ BOOTSTRAP_DESC=		Build using a full bootstrap
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
-SRCDIR=		${WRKDIR}/gcc-${DISTVERSION}
-WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 .if empty(PORT_OPTIONS:MBOOTSTRAP)
 CONFIGURE_ARGS+=--disable-bootstrap
 .else
@@ -99,9 +93,9 @@ INFO+=		gcc${SUFFIX}/libquadmath
 
 .if ${PORT_OPTIONS:MJAVA}
 ECJ_JAR=	${LOCALBASE}/share/java/ecj-4.5.jar
-BUILD_DEPENDS+=	${ECJ_JAR}:${PORTSDIR}/lang/gcc-ecj45 \
-		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS+=	${ECJ_JAR}:${PORTSDIR}/lang/gcc-ecj45
+BUILD_DEPENDS+=	${ECJ_JAR}:lang/gcc-ecj45 \
+		zip:archivers/zip
+RUN_DEPENDS+=	${ECJ_JAR}:lang/gcc-ecj45
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 CONFIGURE_ARGS+=--with-ecj-jar=${ECJ_JAR}
 LANGUAGES:=	${LANGUAGES},java
@@ -118,14 +112,13 @@ pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${CONFIGURE_TARGET} [${LANGUAGES}]"
 
 pre-configure:
-	cd ${SRCDIR} ; contrib/gcc_update --touch
-	@${RM} -f ${SRCDIR}/gcc/*/*.info*
-	@${MKDIR} ${CONFIGURE_WRKSRC}
+	cd ${WRKSRC} ; contrib/gcc_update --touch
+	@${RM} -f ${WRKSRC}/gcc/*/*.info*
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${MAKE_CMD} -sk check \
-	; ${SRCDIR}/contrib/test_summary
+	cd ${TEST_WRKSRC}; ${MAKE_CMD} -sk check \
+	; ${WRKSRC}/contrib/test_summary
 .endif
 
 post-stage:

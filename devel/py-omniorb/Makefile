@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	omniorb
-PORTVERSION=	4.2.1
+DISTVERSION=	4.2.1-2
 CATEGORIES=	devel python
-MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${DISTVERSION:S/-2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	omniORBpy-${PORTVERSION}
+DISTNAME=	omniORBpy-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python bindings for omniORB4, a CORBA 2.6 ORB
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libomniORB4.so:${PORTSDIR}/devel/omniORB
-RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
+LIB_DEPENDS=	libomniORB4.so:devel/omniORB
+RUN_DEPENDS=	omniidl:devel/omniORB
 # parts of omniORB4 source tree is required to build omniORBpy;
 # see also the "post-extract" target below.
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:patch
+BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB:patch
 
 CONFLICTS=	py*-orbit-2* py${PYTHON_SUFFIX}-omniorb3-3*
 
@@ -25,23 +25,20 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PLIST_SUB=	SONUM=2
 
-CONFIGURE_WRKSRC=	${WRKSRC}/build
-BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-2//}
 OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 USES=		gmake python tar:bzip2
 
-CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} --with-omniorb=${LOCALBASE}
 
 pre-configure:
-	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
 
 post-install:

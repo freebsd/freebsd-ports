@@ -11,12 +11,11 @@ COMMENT=	Fork of Official OmniAuth strategy for GitHub
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-omniauth>=1.0:${PORTSDIR}/security/rubygem-omniauth \
-		rubygem-omniauth-oauth2>=1.1:${PORTSDIR}/net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-omniauth>=1.0:security/rubygem-omniauth \
+		rubygem-omniauth-oauth2>=1.1:net/rubygem-omniauth-oauth2
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

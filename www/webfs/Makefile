@@ -10,7 +10,7 @@ MASTER_SITES=	http://dl.bytesex.org/releases/webfs/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple http server for static content
 
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USES=		gmake

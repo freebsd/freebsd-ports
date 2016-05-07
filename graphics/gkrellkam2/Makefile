@@ -14,8 +14,8 @@ COMMENT=	GKrellM plugin that display thumbnails of periodically updated images
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	gkrellm2>0:${PORTSDIR}/sysutils/gkrellm2
-RUN_DEPENDS=	gkrellm2>0:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	gkrellm2>0:sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm2>0:sysutils/gkrellm2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -12,7 +12,7 @@ COMMENT=	Autonumbering figures in Sphinx
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.3.1:${PORTSDIR}/textproc/py-sphinx
+RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx
 
 USES=		python tar:tgz
 NO_BUILD=	yes
@@ -21,7 +21,7 @@ PLIST_FILES=	${SPHINXDIR}/ext/numfig.py ${SPHINXDIR}/ext/numfig.pyc
 
 do-install:
 	cd ${WRKDIR}/sphinx_numfig-r13 && \
-       	${MKDIR} ${STAGEDIR}${SPHINXDIR}/ext && \
-      	${PYTHON_CMD} setup.py install ${STAGEDIR}${SPHINXDIR} ${SPHINXDIR}/ext
+		${MKDIR} ${STAGEDIR}${SPHINXDIR}/ext && \
+		${PYTHON_CMD} setup.py install ${STAGEDIR}${SPHINXDIR} ${SPHINXDIR}/ext
 
 .include <bsd.port.mk>

@@ -14,31 +14,31 @@ LICENSE=	APACHE20
 # These are JAR-files installed by other ports. The list should keep
 # growing until all Java applications install just their own JARs -- not
 # the 3rd-party ones:
-RUN_DEPENDS=	${JAVAJARDIR}/activation.jar:${PORTSDIR}/java/jaf	\
-		${JAVAJARDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework	\
-		${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-codec	\
-		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections	\
-		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient	\
-		${JAVALIBDIR}/commons-io.jar:${PORTSDIR}/devel/jakarta-commons-io \
-		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang	\
-		${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging	\
-		${JAVAJARDIR}/commons-net.jar:${PORTSDIR}/net/jakarta-commons-net	\
-		${JAVAJARDIR}/httpclient.jar:${PORTSDIR}/www/httpclient	\
-		${JAVAJARDIR}/httpcore.jar:${PORTSDIR}/www/httpcore	\
-		${JAVAJARDIR}/httpmime.jar:${PORTSDIR}/www/httpclient	\
-		${JAVAJARDIR}/jakarta-oro.jar:${PORTSDIR}/java/jakarta-oro	\
-		${JAVAJARDIR}/jdom.jar:${PORTSDIR}/java/jdom	\
-		${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit	\
-		${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail	\
-		${JAVAJARDIR}/serializer.jar:${PORTSDIR}/textproc/xalan-j	\
-		${JAVAJARDIR}/slf4j-api.jar:${PORTSDIR}/devel/slf4j	\
-		${LOCALBASE}/share/slf4j/slf4j-nop.jar:${PORTSDIR}/devel/slf4j	\
-		${JAVAJARDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j	\
-		${JAVAJARDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j	\
-		${JAVAJARDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j	\
-		${JAVAJARDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons	\
-		${JAVAJARDIR}/xstream.jar:${PORTSDIR}/textproc/xstream	\
-		${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
+RUN_DEPENDS=	${JAVAJARDIR}/activation.jar:java/jaf	\
+		${JAVAJARDIR}/avalon-framework.jar:devel/avalon-framework	\
+		${JAVAJARDIR}/commons-codec.jar:java/jakarta-commons-codec	\
+		${JAVALIBDIR}/commons-collections.jar:java/jakarta-commons-collections	\
+		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient	\
+		${JAVALIBDIR}/commons-io.jar:devel/jakarta-commons-io \
+		${JAVALIBDIR}/commons-lang.jar:java/jakarta-commons-lang	\
+		${JAVAJARDIR}/commons-logging.jar:java/jakarta-commons-logging	\
+		${JAVAJARDIR}/commons-net.jar:net/jakarta-commons-net	\
+		${JAVAJARDIR}/httpclient.jar:www/httpclient	\
+		${JAVAJARDIR}/httpcore.jar:www/httpcore	\
+		${JAVAJARDIR}/httpmime.jar:www/httpclient	\
+		${JAVAJARDIR}/jakarta-oro.jar:java/jakarta-oro	\
+		${JAVAJARDIR}/jdom.jar:java/jdom	\
+		${JAVAJARDIR}/junit.jar:java/junit	\
+		${JAVAJARDIR}/mail.jar:java/javamail	\
+		${JAVAJARDIR}/serializer.jar:textproc/xalan-j	\
+		${JAVAJARDIR}/slf4j-api.jar:devel/slf4j	\
+		${LOCALBASE}/share/slf4j/slf4j-nop.jar:devel/slf4j	\
+		${JAVAJARDIR}/xalan.jar:textproc/xalan-j	\
+		${JAVAJARDIR}/xercesImpl.jar:textproc/xerces-j	\
+		${JAVAJARDIR}/xml-apis.jar:textproc/xerces-j	\
+		${JAVAJARDIR}/xmlgraphics-commons.jar:graphics/xmlgraphics-commons	\
+		${JAVAJARDIR}/xstream.jar:textproc/xstream	\
+		${JAVASHAREDIR}/rhino/rhino.jar:lang/rhino
 
 USES=		tar:tgz
 USE_JAVA=	yes

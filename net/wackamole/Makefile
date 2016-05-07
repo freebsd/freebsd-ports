@@ -10,7 +10,7 @@ MASTER_SITES=	http://bsdforge.com/projects/source/net/wackamole/ \
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Peer-to-peer high availability cluster
 
-LIB_DEPENDS=	libspread.so:${PORTSDIR}/net/spread
+LIB_DEPENDS=	libspread.so:net/spread
 
 USES=		tar:xz
 GNU_CONFIGURE=	yes

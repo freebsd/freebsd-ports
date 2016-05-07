@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-DISTVERSION=	1.5.3
+DISTVERSION=	1.6.0
 CATEGORIES=	games
 MASTER_SITES=	http://ca.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
 		http://cz.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
@@ -18,8 +18,8 @@ COMMENT=	Open source clone of Microprose Transport Tycoon Deluxe
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		liblzo2.so:archivers/lzo2
 
 USES=		cpe gmake pkgconfig tar:xz
 HAS_CONFIGURE=	yes
@@ -58,16 +58,16 @@ CONFIGURE_ARGS+=	--enable-dedicated
 CFLAGS+=	-I${LOCALBASE}/include
 USE_RC_SUBR=	${PORTNAME}
 .else
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 USE_SDL=	sdl
 INSTALLS_ICONS=	yes
 .endif
 
 .if defined(WITH_OPEN_GAME_FILES)
-RUN_DEPENDS+=	${LOCALBASE}/share/${PORTNAME}/baseset/opengfx/opengfx.obg:${PORTSDIR}/games/opengfx \
-		${LOCALBASE}/share/${PORTNAME}/baseset/openmsx/openmsx.obm:${PORTSDIR}/games/openmsx \
-		${LOCALBASE}/share/${PORTNAME}/baseset/opensfx/opensfx.obs:${PORTSDIR}/games/opensfx
+RUN_DEPENDS+=	${LOCALBASE}/share/${PORTNAME}/baseset/opengfx/opengfx.obg:games/opengfx \
+		${LOCALBASE}/share/${PORTNAME}/baseset/openmsx/openmsx.obm:games/openmsx \
+		${LOCALBASE}/share/${PORTNAME}/baseset/opensfx/opensfx.obs:games/opensfx
 .endif
 
 .if defined(WITH_SAVE_PASSWORDS)

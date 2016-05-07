@@ -15,10 +15,10 @@ LICENSE_COMB=	multi
 LICENSE_FILE_${L}=	${WRKSRC}/LICENSE.${L}
 .endfor
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
-		libqdbm.so:${PORTSDIR}/databases/qdbm \
-		libestraier.so:${PORTSDIR}/textproc/hyperestraier
-RUN_DEPENDS=	mewl:${PORTSDIR}/mail/mew
+LIB_DEPENDS=	libevent.so:devel/libevent2 \
+		libqdbm.so:databases/qdbm \
+		libestraier.so:textproc/hyperestraier
+RUN_DEPENDS=	mewl:mail/mew
 
 USES=		iconv fakeroot
 USE_EMACS=	yes

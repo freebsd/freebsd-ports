@@ -9,12 +9,11 @@ MASTER_SITES=	RG
 MAINTAINER=	rodnic@gmail.com
 COMMENT=	Glue to allow mounted rack applications to know where they're mounted
 
-RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0:www/rubygem-rack
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

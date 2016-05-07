@@ -11,7 +11,7 @@ MASTER_SITES=	http://libdlna.geexbox.org/releases/ \
 MAINTAINER=	malus.x@gmail.com
 COMMENT=	Reference DLNA open-source implementation
 
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 
 HAS_CONFIGURE=	yes
 USES=		tar:bzip2 gmake pkgconfig

@@ -37,7 +37,7 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	nasm:devel/nasm
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

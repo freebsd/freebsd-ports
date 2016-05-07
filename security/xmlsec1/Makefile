@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.20
-PORTREVISION=	3
+PORTVERSION=	1.2.22
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -13,16 +12,16 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	XML Security Library
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 OPTIONS_DEFINE=	DOCS GNUTLS NSS
 OPTIONS_SUB=	yes
 GNUTLS_DESC=		Enable GNUTLS support
 GNUTLS_CONFIGURE_WITH=	gnutls="${LOCALBASE}"
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 NSS_DESC=		Enable Mozilla's NSS support
 NSS_CONFIGURE_WITH=	nss="${LOCALBASE}" nspr="${LOCALBASE}"
-NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+NSS_LIB_DEPENDS=	libnss3.so:security/nss
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

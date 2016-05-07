@@ -3,6 +3,7 @@
 
 PORTNAME=	bindgraph
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.linux.it/~md/software/
 
@@ -12,8 +13,8 @@ COMMENT=	RRDtool frontend for BIND statistics
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
-		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
+RUN_DEPENDS=	rrdtool>=0:databases/rrdtool	\
+		p5-File-Tail>=0:devel/p5-File-Tail
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix tar:tgz

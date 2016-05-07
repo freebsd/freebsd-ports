@@ -19,9 +19,9 @@ DRIVERS_DESC=	Additional modules
 OPTIONS_GROUP_DRIVERS=	SERIAL USB
 
 SERIAL_DESC=		Access to devices via RS-232
-SERIAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serial>0:${PORTSDIR}/comms/py-serial
+SERIAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial
 
 USB_DESC=		Access to devices via USB
-USB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}usb>0:${PORTSDIR}/devel/py-usb
+USB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}usb>0:devel/py-usb
 
 .include <bsd.port.mk>

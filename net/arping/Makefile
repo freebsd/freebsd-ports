@@ -12,14 +12,11 @@ COMMENT=	ARP level "ping" utility
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include \
-		`${LIBNET_CONFIG} --cflags` `${LIBNET_CONFIG} --defines`
-LIBS+=		-L${LOCALBASE}/lib `${LIBNET_CONFIG} --libs` -lpcap
-
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	sbin/arping man/man8/arping.8.gz
 

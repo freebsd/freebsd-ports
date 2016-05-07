@@ -10,7 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SANE library interface for KDE
 
-LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
+LIB_DEPENDS=	libsane.so:graphics/sane-backends
 
 USE_KDE4=	kdelibs kdeprefix automoc4
 USES=		cmake:outsource tar:xz

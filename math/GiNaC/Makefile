@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.6.6
+PORTVERSION=	1.7.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -14,9 +14,10 @@ COMMENT=	C++ library for symbolic mathematical calculations
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcln.so:${PORTSDIR}/math/cln
+LIB_DEPENDS=	libcln.so:math/cln
 
-USES=		gmake libtool makeinfo pathfix pkgconfig python:build tar:bzip2
+USES=		gmake libtool makeinfo pathfix pkgconfig python:build \
+		tar:bzip2 compiler:c++11-lang compiler:c++11-lib
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

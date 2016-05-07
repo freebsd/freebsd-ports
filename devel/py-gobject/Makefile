@@ -16,9 +16,9 @@ COMMENT=	Python bindings for GObject
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
-LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo
+LIB_DEPENDS+=	libffi.so:devel/libffi
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo
 
 PORTSCOUT=	ignore:1
 

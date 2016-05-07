@@ -11,8 +11,8 @@ COMMENT=	Enhances tmux to make multi-user terminal multiplexing easier
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	tmux:${PORTSDIR}/sysutils/tmux \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	tmux:sysutils/tmux \
+		bash:shells/bash
 
 NO_BUILD=	yes
 USE_GITHUB=	yes

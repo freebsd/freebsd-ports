@@ -12,7 +12,7 @@ COMMENT=	Batch SMTP support for sendmail, incoming and outgoing
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/bin/uux:${PORTSDIR}/net/freebsd-uucp
+RUN_DEPENDS=	${LOCALBASE}/bin/uux:net/freebsd-uucp
 
 CONFLICTS=	smail-3.*
 

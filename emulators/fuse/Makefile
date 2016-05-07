@@ -12,9 +12,9 @@ COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libspectrum.so:${PORTSDIR}/emulators/libspectrum \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libspectrum.so:emulators/libspectrum \
+		libpng.so:graphics/png \
+		libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USES=		gmake localbase pkgconfig
@@ -31,7 +31,7 @@ OPTIONS_SINGLE_UI=	GTK2 GTK3 SDL SVGALIB
 
 OPTIONS_SUB=		yes
 AO_CONFIGURE_WITH=	libao
-AO_LIB_DEPENDS=		libao.so:${PORTSDIR}/audio/libao
+AO_LIB_DEPENDS=		libao.so:audio/libao
 ICONS_USES=		desktop-file-utils shared-mime-info
 ICONS_CONFIGURE_ENABLE=	desktop-integration
 GTK2_USE=		GNOME=gtk20
@@ -42,10 +42,10 @@ GTK3_CONFIGURE_ENABLE=	gtk3
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_WITH=	sdl
 SDL_CONFIGURE_ON=	--without-gtk
-SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_WITH=	svgalib
 SVGALIB_CONFIGURE_ON=	--without-gtk
-ROMS_RUN_DEPENDS=	fuse-roms>0:${PORTSDIR}/emulators/fuse-roms
+ROMS_RUN_DEPENDS=	fuse-roms>0:emulators/fuse-roms
 
 PORTDOCS=	AUTHORS ChangeLog README THANKS README.copyright
 

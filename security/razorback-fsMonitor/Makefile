@@ -15,9 +15,9 @@ COMMENT=	Framework for an intelligence driven security - File System Monitor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
-		libjson-c.so:${PORTSDIR}/devel/json-c \
-		libfam.so:${PORTSDIR}/devel/fam
+LIB_DEPENDS=	librazorback_api.so:security/razorback-api \
+		libjson-c.so:devel/json-c \
+		libfam.so:devel/fam
 
 USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes

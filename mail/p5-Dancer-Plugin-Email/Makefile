@@ -12,11 +12,11 @@ COMMENT=	Simple email handling for Dancer applications
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Dancer>=0:${PORTSDIR}/www/p5-Dancer \
-		p5-Email-Date-Format>=0:${PORTSDIR}/mail/p5-Email-Date-Format \
-		p5-Email-Sender>=0:${PORTSDIR}/mail/p5-Email-Sender \
-		p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type \
-		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
+BUILD_DEPENDS=	p5-Dancer>=0:www/p5-Dancer \
+		p5-Email-Date-Format>=0:mail/p5-Email-Date-Format \
+		p5-Email-Sender>=0:mail/p5-Email-Sender \
+		p5-File-Type>=0:devel/p5-File-Type \
+		p5-MIME-Tools>=0:mail/p5-MIME-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

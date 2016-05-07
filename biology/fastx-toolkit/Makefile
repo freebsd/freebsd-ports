@@ -8,11 +8,12 @@ CATEGORIES=	biology
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	CLI tools for Short-Reads FASTA/FASTQ files preprocessing
 
-LICENSE=	AGPLv3
+LICENSE=	AGPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgtextutils.so:${PORTSDIR}/biology/libgtextutils
+LIB_DEPENDS=	libgtextutils.so:biology/libgtextutils
 
-USES=		autoreconf libtool perl5 pkgconfig shebangfix tar:bzip2
+USES=		autoreconf libtool perl5 pkgconfig shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
 
@@ -20,7 +21,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	agordon
 
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>

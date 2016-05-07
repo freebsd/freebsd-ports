@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	peco
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -11,10 +11,12 @@ COMMENT=	Simplistic interactive filtering tool
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/jessevdk/go-flags.a:${PORTSDIR}/devel/go-flags \
-		${LOCALBASE}/${GO_LIBDIR}/github.com/mattn/go-runewidth.a:${PORTSDIR}/devel/go-runewidth \
-		${LOCALBASE}/${GO_LIBDIR}/github.com/nsf/termbox-go.a:${PORTSDIR}/devel/go-termbox
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/jessevdk/go-flags.a:devel/go-flags \
+		${LOCALBASE}/${GO_LIBDIR}/github.com/mattn/go-runewidth.a:devel/go-runewidth \
+		${LOCALBASE}/${GO_LIBDIR}/github.com/nsf/termbox-go.a:devel/go-termbox \
+		${LOCALBASE}/${GO_LIBDIR}/github.com/google/btree.a:devel/go-btree
 
+USES=		go
 USE_GITHUB=	yes
 
 WRKSRC_SUBDIR=	cmd/peco
@@ -25,6 +27,4 @@ post-extract:
 	@${MKDIR} ${GO_WRKSRC:H:H:H}
 	@${LN} -sf ${WRKSRC:H:H} ${GO_WRKSRC:H:H}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

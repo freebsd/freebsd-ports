@@ -12,7 +12,7 @@ COMMENT=	Generalized Method of Moments and Generalized Empirical Likelihood
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-sandwich>0:${PORTSDIR}/math/R-cran-sandwich
+RUN_DEPENDS=	R-cran-sandwich>0:math/R-cran-sandwich
 
 USES=	cran:auto-plist
 

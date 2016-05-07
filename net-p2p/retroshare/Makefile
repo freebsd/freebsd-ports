@@ -13,20 +13,19 @@ COMMENT=	Private and secure decentralised communication platform
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libupnp.so:${PORTSDIR}/devel/upnp \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libxslt.so:${PORTSDIR}/textproc/libxslt \
-		libssh_threads.so:${PORTSDIR}/security/libssh
+BUILD_DEPENDS=	protoc:devel/protobuf
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libupnp.so:devel/upnp \
+		libgnome-keyring.so:security/libgnome-keyring \
+		libspeex.so:audio/speex \
+		libxslt.so:textproc/libxslt \
+		libssh_threads.so:security/libssh
 
 USES=		compiler:features dos2unix pkgconfig qmake
 USE_GNOME=	glib20 libxml2 libxslt
 USE_XORG=	x11 xscrnsaver
 USE_QT4=	corelib gui network xml script designer_build uic_build \
 		qmake_build moc_build rcc_build multimedia
-HAS_CONFIGURE=	yes
 
 BINARY=		RetroShare
 SRC_REVISION=	0.7068

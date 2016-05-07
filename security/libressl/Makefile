@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.2.6
+PORTVERSION=	2.3.4
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -14,26 +14,28 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CPE_VENDOR=	openbsd
 
-OPTIONS_DEFINE=	MAN3
-OPTIONS_DEFAULT=	MAN3
+OPTIONS_DEFINE=	MAN3 NC
+OPTIONS_DEFAULT=	MAN3 NC
 MAN3_DESC=	Install API manpages (section 3)
+NC_DESC=	Install TLS-enabled netcat
 
 CONFLICTS?=	libressl-devel-[0-9]* \
 		openssl-[0-9]* \
 		openssl-devel-[0-9]*
+MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+OPTIONS_SUB=	yes
+CFLAGS+=	-fpic -DPIC
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.endif
+post-install-NC-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/apps/nc/.libs/nc ${STAGEDIR}/${PREFIX}/bin/nc
+	${INSTALL_MAN} ${WRKSRC}/apps/nc/nc.1 ${STAGEDIR}/${PREFIX}/man/man1/nc.1
 
 post-install-MAN3-off:
 	${RM} -rf ${STAGEDIR}/${PREFIX}/man/man3
@@ -42,4 +44,4 @@ post-install-MAN3-off:
 post-install:
 	${RM} -rf ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

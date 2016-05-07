@@ -14,7 +14,7 @@ COMMENT=	Perform consistency checks on DNS zones
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL
 
-RUN_DEPENDS=	rubygem-dnsruby>=1.47:${PORTSDIR}/dns/rubygem-dnsruby
+RUN_DEPENDS=	rubygem-dnsruby>=1.47:dns/rubygem-dnsruby
 
 USES=		gmake tar:tgz
 USE_RUBY=	yes

@@ -12,10 +12,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - xineliboutput plugin/viewer
 
-LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine \
-		libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS+=	libxine.so:multimedia/libxine \
+		libavutil.so:multimedia/ffmpeg \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libvdpau.so:multimedia/libvdpau
 
 PATCH_STRIP=	-p1
 USES=		pkgconfig tar:bzip2
@@ -39,13 +39,13 @@ PLIST_SUB+=	XINE_PLUGINSDIR=${XINE_PLUGINSDIR}
 CONFIGURE_ARGS+=	--cc="${CC}" --cxx="${CXX}" --add-cflags=-I${VDRDIR}
 
 .if ${PORT_OPTIONS:MLIBEXTRACTOR}
-LIB_DEPENDS+=	libextractor.so:${PORTSDIR}/textproc/libextractor
+LIB_DEPENDS+=	libextractor.so:textproc/libextractor
 .else
 CONFIGURE_ARGS+=	--disable-libextractor
 .endif
 
 .if ${PORT_OPTIONS:MLIBBLURAY}
-LIB_DEPENDS+=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	libbluray.so:multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-libbluray
 .endif

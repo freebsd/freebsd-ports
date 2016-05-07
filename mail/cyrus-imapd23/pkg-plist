@@ -103,3 +103,5 @@ lib/libcyrus_min.a
 %%SITE_ARCH%%/Cyrus/SIEVE/managesieve.pm
 %%SITE_ARCH%%/auto/Cyrus/IMAP/IMAP.so
 %%SITE_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.so
+@sample %%EXAMPLESDIR%%/imapd.conf etc/imapd.conf
+@sample %%EXAMPLESDIR%%/normal.conf etc/cyrus.conf

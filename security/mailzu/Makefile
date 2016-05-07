@@ -14,11 +14,11 @@ COMMENT=	Simple and intuitive web interface to manage amavisd-new quarantine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:${PORTSDIR}/security/amavisd-new \
-		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
-		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
-		${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
-		${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode
+RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:security/amavisd-new \
+		${PEARDIR}/DB.php:databases/pear-DB \
+		${PEARDIR}/Mail/mime.php:mail/pear-Mail_Mime \
+		${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
+		${PEARDIR}/Mail/mimeDecode.php:mail/pear-Mail_mimeDecode
 
 PEARDIR?=	${LOCALBASE}/share/pear
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

@@ -71,7 +71,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
 # Work around a GnuPG configure buglet
 CONFIGURE_ENV+=	_libcurl_config=${LOCALBASE}/bin/curl-config

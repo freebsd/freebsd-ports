@@ -12,9 +12,9 @@ COMMENT=	Brute force attack utility working on multiple network services
 
 LICENSE=	AGPLv3
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libidn.so:dns/libidn \
+		libpcre.so:devel/pcre \
+		libsasl2.so:security/cyrus-sasl2
 
 CONFLICTS_INSTALL=	hydra-web-[0-9]*
 
@@ -28,14 +28,14 @@ WANT_GNOME=	yes
 OPTIONS_DEFINE=	FIREBIRD SSH SVN X11
 OPTIONS_DEFAULT=SSH
 OPTIONS_EXCLUDE=NLS DOCS
-FIREBIRD_LIB_DEPENDS=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
-SVN_LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
+FIREBIRD_USES=	firebird
+SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSH}
 CFLAGS+=	-I${LOCALBASE}/include
-LIB_DEPENDS+=	libssh.so.4:${PORTSDIR}/security/libssh
+LIB_DEPENDS+=	libssh.so.4:security/libssh
 .endif
 
 .if ${PORT_OPTIONS:MX11}

@@ -2,6 +2,7 @@
 
 PORTNAME=	kid3
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -51,7 +52,7 @@ PHONON_USE=	QT4=phonon
 # Qt 4 and Qt 5
 CONFLICTS_INSTALL+=	kid3-3.*
 
-BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
 USES+=		desktop-file-utils
 USE_GNOME=	libxslt:build
@@ -71,33 +72,33 @@ CLI_DESC=	Build and install command line utility
 CLI_USES=	readline
 
 FLAC_DESC=	Support for FLAC files
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CMAKE_ON=		-DWITH_FLAC=ON
 FLAC_CMAKE_OFF=		-DWITH_FLAC=OFF
 
 ID3LIB_DESC=	Support for mp3 files
-ID3LIB_LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib
+ID3LIB_LIB_DEPENDS=	libid3.so:audio/id3lib
 ID3LIB_CMAKE_ON=	-DWITH_ID3LIB=ON
 ID3LIB_CMAKE_OFF=	-DWITH_ID3LIB=OFF
 
 MP4V2_DESC=	Support for mp4 files
-MP4V2_LIB_DEPENDS=	libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
+MP4V2_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
 MP4V2_CMAKE_ON=		-DWITH_MP4V2=ON
 MP4V2_CMAKE_OFF=	-DWITH_MP4V2=OFF
 
 VORBIS_DESC=	Support for Ogg/Vorbis files
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-			libogg.so:${PORTSDIR}/audio/libogg
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+			libogg.so:audio/libogg
 VORBIS_CMAKE_ON=	-DWITH_VORBIS=ON
 VORBIS_CMAKE_OFF=	-DWITH_VORBIS=OFF
 
 TAGLIB_DESC=	Support for various audio formats
-TAGLIB_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
 TAGLIB_CMAKE_ON=	-DWITH_TAGLIB=ON
 TAGLIB_CMAKE_OFF=	-DWITH_TAGLIB=OFF
 
 CHROMAPRINT_DESC=	Support for Chromaprint audio fingerprints
-CHROMAPRINT_LIB_DEPENDS=	libchromaprint.so:${PORTSDIR}/audio/chromaprint
+CHROMAPRINT_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint
 CHROMAPRINT_CMAKE_ON=	-DWITH_CHROMAPRINT=ON
 CHROMAPRINT_CMAKE_OFF=	-DWITH_CHROMAPRINT=OFF
 

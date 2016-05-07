@@ -1,0 +1,38 @@
+--- makefiles/Makefile.tools.orig	2016-02-14 22:21:24 UTC
++++ makefiles/Makefile.tools
+@@ -109,6 +109,17 @@ ifeq ($(BUILD),$(HOST))
+     CFLAGS := $(CFLAGS) -I$(GCCSDK_INSTALL_ENV)/include -I/usr/local/include
+     CXXFLAGS := $(CXXFLAGS) -I$(GCCSDK_INSTALL_ENV)/include -I/usr/local/include
+     LDFLAGS := $(LDFLAGS) -L$(GCCSDK_INSTALL_ENV)/lib -L/usr/local/lib
++
++    PKGCONFIG ?= PKG_CONFIG_PATH="$(PREFIX)/libdata/pkgconfig:$(PKG_CONFIG_PATH)" pkgconf
++  endif
++
++  ifeq ($(findstring dragonfly,$(HOST)),dragonfly)
++    # Building on+for DragonFly BSD
++    CFLAGS := $(CFLAGS) -I$(GCCSDK_INSTALL_ENV)/include -I/usr/local/include
++    CXXFLAGS := $(CXXFLAGS) -I$(GCCSDK_INSTALL_ENV)/include -I/usr/local/include
++    LDFLAGS := $(LDFLAGS) -L$(GCCSDK_INSTALL_ENV)/lib -L/usr/local/lib
++
++    PKGCONFIG ?= PKG_CONFIG_PATH="$(PREFIX)/libdata/pkgconfig:$(PKG_CONFIG_PATH)" pkgconf
+   endif
+ 
+   ifeq ($(findstring arwin,$(HOST)),arwin)
+@@ -130,7 +141,7 @@ else
+   endif
+ 
+   # Search the path for the compiler
+-  toolpath_ := $(shell /bin/which $(CC__))
++  toolpath_ := $(shell /usr/bin/which $(CC__))
+   ifeq ($(toolpath_),)
+     toolpath_ := /opt/netsurf/$(HOST)/cross/bin/
+     CC__  := $(toolpath_)$(HOST)-gcc
+@@ -141,7 +152,7 @@ else
+     toolpath_ := $(dir $(CC__))
+     toolprefix_ := $(subst :,/,$(dir $(subst -,/,$(subst /,:,$(CC__)))))
+     ifeq ($(origin AR),default)
+-      AR__ := $(toolprefix_)-ar
++      AR__ := $(shell /usr/bin/which ar)
+     endif
+     ifeq ($(origin CXX),default)
+       CXX__ := $(toolprefix_)-g++

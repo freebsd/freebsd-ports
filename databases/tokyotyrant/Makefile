@@ -10,8 +10,8 @@ MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network interface of Tokyo Cabinet
 
-BUILD_DEPENDS=	tokyocabinet>=1.4.20:${PORTSDIR}/databases/tokyocabinet
-LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+BUILD_DEPENDS=	tokyocabinet>=1.4.20:databases/tokyocabinet
+LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

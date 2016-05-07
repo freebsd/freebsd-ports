@@ -13,7 +13,9 @@ DIST_SUBDIR=	openh323
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing library
 
-LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libpt_r.so:devel/pwlib
 
 CONFLICTS=	h323plus-1.*
 
@@ -32,10 +34,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	BUILDTIME="YES"
 
 OPTIONS_DEFINE=		FFMPEG SPEEX
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ON=	--enable-rfc2190avcodec=${LOCALBASE}/include/ffmpeg
 
-SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_CONFIGURE_ON=	--enable-localspeex=no
 SPEEX_CONFIGURE_OFF=	--enable-localspeex=yes
 

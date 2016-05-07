@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	raspberrypi-userland
-PORTVERSION=	20151105
-PORTREVISION=	2
+PORTVERSION=	20160306
 CATEGORIES=	misc
 
 MAINTAINER=	mikael.urankar@gmail.com
@@ -18,7 +17,7 @@ CONFLICTS_INSTALL=	libglesv2 libEGL
 USE_GITHUB=	yes
 GH_ACCOUNT=	gonzoua
 GH_PROJECT=	userland
-GH_TAGNAME=	fcbf8a3
+GH_TAGNAME=	c702cd3
 
 USE_LDCONFIG=	yes
 
@@ -26,10 +25,12 @@ USES=		cmake:outsource
 CMAKE_ARGS+=	-DVMCS_INSTALL_PREFIX=${PREFIX} \
 		-DCMAKE_TOOLCHAIN_FILE=${WRKSRC}/makefiles/cmake/toolchains/arm-freebsd.cmake
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES DEBUG
 OPTIONS_DEFAULT=	EXAMPLES
 EXAMPLES_DESC=	Install test applications source code (hello_pi)
-EXAMPLES_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+EXAMPLES_LIB_DEPENDS=	libfreetype.so:print/freetype2
+
+DEBUG_CFLAGS_OFF=	-DNDEBUG
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/opt/vc|${PREFIX}|g" \

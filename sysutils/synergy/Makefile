@@ -10,6 +10,8 @@ COMMENT=	Mouse and keyboard sharing utility
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cmake cpe
 CPE_VENDOR=	synergy-foss
 USE_XORG=	ice xtst x11 sm
@@ -18,7 +20,7 @@ USE_GITHUB=	yes
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 MAKE_JOBS_UNSAFE=yes
 

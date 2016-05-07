@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multi_json
-PORTVERSION=	1.11.2
+PORTVERSION=	1.11.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -20,11 +20,10 @@ YAJL_RUBY_DESC=	Yajl JSON stream-based parser library
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
-JSON_RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
-JSON_PURE_RUN_DEPENDS=	rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
-YAJL_RUBY_RUN_DEPENDS=	rubygem-yajl-ruby>=0:${PORTSDIR}/devel/rubygem-yajl-ruby
+JSON_RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
+JSON_PURE_RUN_DEPENDS=	rubygem-json_pure>=0:devel/rubygem-json_pure
+YAJL_RUBY_RUN_DEPENDS=	rubygem-yajl-ruby>=0:devel/rubygem-yajl-ruby
 
 .include <bsd.port.mk>

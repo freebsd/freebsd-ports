@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wbxml2
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.4
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	SF/libwbxml/libwbxml/${PORTVERSION}
 DISTNAME=	libwbxml-${PORTVERSION}
@@ -13,7 +14,7 @@ COMMENT=	Library & tools for converting wbxml<->xml
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		cmake:outsource iconv tar:bzip2
 USE_LDCONFIG=	yes
@@ -25,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in AUTHORS BUGS ChangeLog NEWS README References THANKS TODO
+.for file in BUGS ChangeLog README References THANKS TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 

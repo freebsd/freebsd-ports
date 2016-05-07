@@ -17,7 +17,6 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-USE_RC_SUBR=	yes
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RUBY_WITHOUT_SUFFIX%%,${RUBY_WITHOUT_SUFFIX},g'
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.cs.utah.edu/~regehr/hourglass/
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Real-time application to learn how CPU scheduling works
 
-RUN_DEPENDS=	jgraph:${PORTSDIR}/graphics/jgraph
+RUN_DEPENDS=	jgraph:graphics/jgraph
 
 ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes

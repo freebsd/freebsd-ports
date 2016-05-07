@@ -3,14 +3,15 @@
 
 PORTNAME=	smartmontools
 PORTVERSION=	6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	S.M.A.R.T. disk monitoring tools
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	smartmontools-devel-[0-9]*
 
@@ -32,7 +33,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| install-initdDATA| |' ${WRKSRC}/Makefile.in
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/smart \
 		${STAGEDIR}${PREFIX}/etc/periodic/daily
 

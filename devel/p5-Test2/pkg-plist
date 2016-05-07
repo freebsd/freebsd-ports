@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Test2.pm
 %%SITE_PERL%%/Test2/API.pm
+%%SITE_PERL%%/Test2/API/Breakage.pm
 %%SITE_PERL%%/Test2/API/Context.pm
 %%SITE_PERL%%/Test2/API/Instance.pm
 %%SITE_PERL%%/Test2/API/Stack.pm
@@ -22,12 +23,14 @@
 %%SITE_PERL%%/Test2/IPC.pm
 %%SITE_PERL%%/Test2/IPC/Driver.pm
 %%SITE_PERL%%/Test2/IPC/Driver/Files.pm
+%%SITE_PERL%%/Test2/Transition.pod
 %%SITE_PERL%%/Test2/Util.pm
 %%SITE_PERL%%/Test2/Util/ExternalMeta.pm
 %%SITE_PERL%%/Test2/Util/HashBase.pm
 %%SITE_PERL%%/Test2/Util/Trace.pm
 %%PERL5_MAN3%%/Test2.3.gz
 %%PERL5_MAN3%%/Test2::API.3.gz
+%%PERL5_MAN3%%/Test2::API::Breakage.3.gz
 %%PERL5_MAN3%%/Test2::API::Context.3.gz
 %%PERL5_MAN3%%/Test2::API::Instance.3.gz
 %%PERL5_MAN3%%/Test2::API::Stack.3.gz
@@ -50,6 +53,7 @@
 %%PERL5_MAN3%%/Test2::IPC.3.gz
 %%PERL5_MAN3%%/Test2::IPC::Driver.3.gz
 %%PERL5_MAN3%%/Test2::IPC::Driver::Files.3.gz
+%%PERL5_MAN3%%/Test2::Transition.3.gz
 %%PERL5_MAN3%%/Test2::Util.3.gz
 %%PERL5_MAN3%%/Test2::Util::ExternalMeta.3.gz
 %%PERL5_MAN3%%/Test2::Util::HashBase.3.gz

@@ -11,12 +11,11 @@ COMMENT=	Mirror rubygems
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-net-http-persistent>=2.9:${PORTSDIR}/www/rubygem-net-http-persistent
+RUN_DEPENDS=	rubygem-net-http-persistent>=2.9:www/rubygem-net-http-persistent
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

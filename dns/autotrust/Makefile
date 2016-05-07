@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.nlnetlabs.nl/downloads/autotrust/
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool to automatically update DNSSEC trust anchors
 
-LIB_DEPENDS+=	libldns.so:${PORTSDIR}/dns/ldns \
-		libunbound.so:${PORTSDIR}/dns/unbound
+LIB_DEPENDS+=	libldns.so:dns/ldns \
+		libunbound.so:dns/unbound
 
 GNU_CONFIGURE=	yes
 CFLAGS=		-I${LOCALBASE}/include

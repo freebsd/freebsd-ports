@@ -13,18 +13,16 @@ COMMENT=	Safely run SSH commands on a bunch of machines at the same time
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-annoy>=0:${PORTSDIR}/devel/rubygem-annoy \
-		rubygem-docile>=1.0.1:${PORTSDIR}/devel/rubygem-docile \
-		rubygem-highline>=1.5.1:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-net-scp>=1.0.2:${PORTSDIR}/security/rubygem-net-scp \
-		rubygem-net-ssh>=2.0.13:${PORTSDIR}/security/rubygem-net-ssh \
-		rubygem-sysinfo>=0.8.1:${PORTSDIR}/devel/rubygem-sysinfo
+RUN_DEPENDS=	rubygem-annoy>=0:devel/rubygem-annoy \
+		rubygem-docile>=1.0.1:devel/rubygem-docile \
+		rubygem-highline>=1.5.1:devel/rubygem-highline \
+		rubygem-net-scp>=1.0.2:security/rubygem-net-scp \
+		rubygem-net-ssh>=2.0.13:security/rubygem-net-ssh \
+		rubygem-sysinfo>=0.8.1:devel/rubygem-sysinfo
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	try/*.rb tst/*.rb
 
 .include <bsd.port.mk>

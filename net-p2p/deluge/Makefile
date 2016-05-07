@@ -12,11 +12,11 @@ COMMENT=	Bittorrent client using Python, GTK2, and libtorrent-rasterbar
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0:${PORTSDIR}/net-p2p/libtorrent-rasterbar-python \
-		${PYTHON_PKGNAMEPREFIX}openssl>=0.8:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:${PORTSDIR}/textproc/py-chardet \
-		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:${PORTSDIR}/textproc/py-mako
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:devel/py-xdg \
+		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0:net-p2p/libtorrent-rasterbar-python \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0.8:security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:textproc/py-chardet \
+		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:textproc/py-mako
 
 USE_RC_SUBR=	deluged deluge_web
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
@@ -35,10 +35,10 @@ PORTDOCS=	ChangeLog README
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}game>=1.8.1:${PORTSDIR}/devel/py-game \
-		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:${PORTSDIR}/devel/py-notify \
-		xdg-utils>=1.0.2:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}game>=1.8.1:devel/py-game \
+		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:devel/py-notify \
+		xdg-utils>=1.0.2:devel/xdg-utils
 
 USE_GNOME+=	intltool librsvg2 pygnome2 pygtk2
 USES+=		desktop-file-utils

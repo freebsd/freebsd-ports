@@ -12,7 +12,7 @@ DISTNAME=	libLASi-${PORTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	C++ stream output interface for creating Postscript documents
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -28,7 +28,7 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_DATADIR:PATH=${DATADIR}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:devel/doxygen
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmake+modules+lasi.cmake
 .endif

@@ -1,0 +1,16 @@
+Gitlab was installed successfully.
+
+You now need to set up the various components of Gitlab, so please
+follow the instructions in the guide at:
+
+https://github.com/t-zuehlsdorff/gitlabhq/blob/master/doc/install/installation-freebsd.md
+
+If you just installed an minor upgrade of GitLab please follow
+the instructions in the guide at:
+
+https://github.com/t-zuehlsdorff/gitlabhq/blob/master/doc/update/freebsd_patch_versions.md
+
+If you just installed an major upgrade of GitLab, for example you
+switched from 8.6.x to 8.7.x, please follow the instructions in the guide at:
+
+https://github.com/t-zuehlsdorff/gitlabhq/blob/master/doc/update/8.6-to-8.7-freebsd.md

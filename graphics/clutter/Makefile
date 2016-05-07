@@ -12,8 +12,8 @@ COMMENT=	OpenGL based interactive canvas library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
-		libcogl.so:${PORTSDIR}/graphics/cogl
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libcogl.so:graphics/cogl
 
 PORTSCOUT=	limit:1,even
 

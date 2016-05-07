@@ -9,7 +9,7 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Top-down survival shoot 'em up
 
-LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ooxi
@@ -33,7 +33,6 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/icon-light.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 

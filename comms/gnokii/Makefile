@@ -16,7 +16,7 @@ COMMENT=	Tools to talk to GSM cellular phones
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 GROUPS=		${PORTNAME}
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
@@ -46,10 +46,10 @@ SMSDDB_DESC=	Enable database support in smsd (select one or more)
 X11_DESC=	Build graphical version (xgnokii)
 
 ICAL_CONFIGURE_ENABLE=	libical
-ICAL_LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical
+ICAL_LIB_DEPENDS=	libical.so:devel/libical
 USB_CONFIGURE_ENABLE=	libusb
 PCSC_CONFIGURE_ENABLE=	libpcsclite
-PCSC_LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+PCSC_LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 .include <bsd.port.options.mk>
 
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-smsd
 .else
 PLIST_SUB+=	SMSD=''
 . if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 PLIST_SUB+=	MSM=''
 . else
 CONFIGURE_ARGS+=	--disable-mysql
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--disable-postgres
 PLIST_SUB+=	PGM='@comment '
 . endif
 . if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
 PLIST_SUB+=	SQLT=''
 . else
 CONFIGURE_ARGS+=	--disable-sqlite

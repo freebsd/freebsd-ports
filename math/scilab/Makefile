@@ -3,6 +3,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.5.2
+PORTREVISION=	1
 CATEGORIES=	math cad java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -12,19 +13,21 @@ COMMENT=	Scientific software package for numerical computations
 
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libarpack.so:${PORTSDIR}/math/arpack \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libmatio.so:${PORTSDIR}/math/matio \
-		libamd.so:${PORTSDIR}/math/suitesparse
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+		libpcre.so:devel/pcre \
+		libcurl.so:ftp/curl \
+		libhdf5.so:science/hdf5 \
+		libarpack.so:math/arpack \
+		libfftw3.so:math/fftw3 \
+		libmatio.so:math/matio \
+		libamd.so:math/suitesparse
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		cpe desktop-file-utils fortran gettext gmake iconv \
 		libtool pathfix pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
+
+INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -52,39 +55,39 @@ GUI_DESC=	Java-based Graphical User Interface
 OCAML_DESC=	Scicos - dynamical system simulator (requires GUI)
 
 # Java dependencies:
-_GUI_DEPENDS+=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
-		${JAVALIBDIR}/jogl2.jar:${PORTSDIR}/graphics/jogamp-jogl \
-		foprep:${PORTSDIR}/math/jeuclid \
-		${JAVALIBDIR}/jhall.jar:${PORTSDIR}/java/javahelp \
-		${JAVALIBDIR}/jrosetta-api.jar:${PORTSDIR}/java/jrosetta \
-		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVALIBDIR}/jgraphx.jar:${PORTSDIR}/java/jgraphx \
-		${JAVALIBDIR}/jlatexmath.jar:${PORTSDIR}/math/jlatexmath \
-		${LOCALBASE}/share/java/ecj-4.5.jar:${PORTSDIR}/lang/gcc-ecj45
+_GUI_DEPENDS+=	${JAVALIBDIR}/flexdock.jar:devel/flexdock \
+		${JAVALIBDIR}/jogl2.jar:graphics/jogamp-jogl \
+		foprep:math/jeuclid \
+		${JAVALIBDIR}/jhall.jar:java/javahelp \
+		${JAVALIBDIR}/jrosetta-api.jar:java/jrosetta \
+		${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \
+		${JAVALIBDIR}/jgraphx.jar:java/jgraphx \
+		${JAVALIBDIR}/jlatexmath.jar:math/jlatexmath \
+		${LOCALBASE}/share/java/ecj-4.5.jar:lang/gcc-ecj45
 # Documentation, graphic export:
-_GUI_DEPENDS+=	${LOCALBASE}/share/java/fop/build/fop.jar:${PORTSDIR}/textproc/fop \
-		${JAVALIBDIR}/jlatexmath-fop.jar:${PORTSDIR}/math/jlatexmath \
-		${LOCALBASE}/share/java/batik/lib/batik-all.jar:${PORTSDIR}/graphics/batik \
-		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
-		${JAVALIBDIR}/commons-io.jar:${PORTSDIR}/devel/jakarta-commons-io \
-		${JAVALIBDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons
+_GUI_DEPENDS+=	${LOCALBASE}/share/java/fop/build/fop.jar:textproc/fop \
+		${JAVALIBDIR}/jlatexmath-fop.jar:math/jlatexmath \
+		${LOCALBASE}/share/java/batik/lib/batik-all.jar:graphics/batik \
+		${JAVALIBDIR}/avalon-framework.jar:devel/avalon-framework \
+		${JAVALIBDIR}/commons-io.jar:devel/jakarta-commons-io \
+		${JAVALIBDIR}/xmlgraphics-commons.jar:graphics/xmlgraphics-commons
 # Code quality:
-_GUI_DEPENDS+=	${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-commons-beanutils \
-		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr \
-		${JAVALIBDIR}/junit4.jar:${PORTSDIR}/java/junit \
-		${LOCALBASE}/bin/splint:${PORTSDIR}/devel/splint
+_GUI_DEPENDS+=	${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils \
+		${JAVALIBDIR}/antlr.jar:devel/antlr \
+		${JAVALIBDIR}/junit4.jar:java/junit \
+		${LOCALBASE}/bin/splint:devel/splint
 # Documentation building:
-_GUI_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${JAVALIBDIR}/saxon9he.jar:${PORTSDIR}/textproc/saxon-he \
-		${JAVALIBDIR}/xml-apis-ext.jar:${PORTSDIR}/textproc/xml-commons \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+_GUI_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:textproc/docbook-xsl \
+		${JAVALIBDIR}/saxon9he.jar:textproc/saxon-he \
+		${JAVALIBDIR}/xml-apis-ext.jar:textproc/xml-commons \
+		xsltproc:textproc/libxslt
 # Other gui deps:
-_GUI_DEPENDS+=	${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks \
-		${JAVALIBDIR}/skinlf.jar:${PORTSDIR}/x11-toolkits/skinlf
+_GUI_DEPENDS+=	${JAVALIBDIR}/looks.jar:devel/looks \
+		${JAVALIBDIR}/skinlf.jar:x11-toolkits/skinlf
 
 # Can't use USE_ANT because it overrides do-build target
 GUI_BUILD_DEPENDS=	${_GUI_DEPENDS} \
-			ant:${PORTSDIR}/devel/apache-ant
+			ant:devel/apache-ant
 GUI_RUN_DEPENDS=	${_GUI_DEPENDS}
 
 GUI_ALL_TARGET=	all doc
@@ -100,8 +103,8 @@ GUI_CONFIGURE_OFF=	--without-gui \
 
 OCAML_IMPLIES=		GUI
 OCAML_CONFIGURE_WITH=	modelica
-OCAML_BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
-OCAML_RUN_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
+OCAML_BUILD_DEPENDS=	ocaml:lang/ocaml
+OCAML_RUN_DEPENDS=	ocaml:lang/ocaml
 
 TK_CONFIGURE_OFF=	--without-tk
 TK_CONFIGURE_ON=	--with-tk-library=${LOCALBASE}/lib \
@@ -117,7 +120,7 @@ CONFIGURE_ARGS+=	--without-openmp
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION:M1.8.*}
+.if ${PORT_OPTIONS:MGUI} && ${JAVA_PORT_VERSION:M1.8.*}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
 .endif
 

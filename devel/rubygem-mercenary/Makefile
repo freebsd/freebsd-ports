@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercenary
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,9 +13,7 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	script/console script/examples
 
 .include <bsd.port.mk>

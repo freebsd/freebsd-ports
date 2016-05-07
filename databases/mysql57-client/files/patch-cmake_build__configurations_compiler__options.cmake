@@ -1,4 +1,4 @@
---- cmake/build_configurations/compiler_options.cmake.orig	2015-11-29 19:16:24 UTC
+--- cmake/build_configurations/compiler_options.cmake.orig	2016-03-28 18:06:12 UTC
 +++ cmake/build_configurations/compiler_options.cmake
 @@ -28,7 +28,7 @@ IF(UNIX)  
  

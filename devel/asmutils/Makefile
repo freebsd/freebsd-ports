@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:devel/nasm
 
 USES=		gmake
 USE_GCC=	any

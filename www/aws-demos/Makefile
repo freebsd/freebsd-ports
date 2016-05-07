@@ -3,6 +3,7 @@
 
 PORTNAME=	aws
 PORTVERSION=	3.3.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	-demos
@@ -13,9 +14,9 @@ COMMENT=	Adacore Ada Web Server demos
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild \
-		xmlada>=4.4:${PORTSDIR}/textproc/xmlada \
-		aws>=3.1:${PORTSDIR}/www/aws
+BUILD_DEPENDS=	gprbuild:devel/gprbuild \
+		xmlada>=4.4:textproc/xmlada \
+		aws>=3.1:www/aws
 
 USES=		ada gmake tar:bzip2
 

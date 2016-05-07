@@ -3,15 +3,15 @@
 
 PORTNAME=	rancid
 PORTVERSION=	2.3.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Really Awesome New Cisco confIg Differ
 
-LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
-RUN_DEPENDS=	p5-LockFile-Simple>=0:${PORTSDIR}/devel/p5-LockFile-Simple
+LIB_DEPENDS=	libexpect.so:lang/expect
+RUN_DEPENDS=	p5-LockFile-Simple>=0:devel/p5-LockFile-Simple
 
 USES=		gmake perl5 shebangfix
 perl_OLD_CMD=	@PERLV_PATH@
@@ -38,11 +38,11 @@ SVN_DESC=		Use Subversion instead of CVS
 
 .if ${PORT_OPTIONS:MSVN}
 CONFIGURE_ARGS+=	--with-svn
-BUILD_DEPENDS+=		svn:${PORTSDIR}/devel/subversion
+BUILD_DEPENDS+=		svn:devel/subversion
 .else
 CONFIGURE_ARGS+=	--without-svn
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-RUN_DEPENDS+=	cvs>0:${PORTSDIR}/devel/cvs
+RUN_DEPENDS+=	cvs>0:devel/cvs
 .endif
 .endif
 

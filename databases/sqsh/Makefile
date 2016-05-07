@@ -11,7 +11,7 @@ COMMENT=	Interactive tool for querying Sybase database servers
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libct.so:${PORTSDIR}/databases/freetds
+LIB_DEPENDS=	libct.so:databases/freetds
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11

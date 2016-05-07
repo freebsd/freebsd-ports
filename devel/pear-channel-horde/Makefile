@@ -3,6 +3,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	20120210
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

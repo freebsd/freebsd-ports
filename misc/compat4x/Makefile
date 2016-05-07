@@ -13,7 +13,7 @@ DIST_SUBDIR=	${COMPAT4X_ARCH}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convenience package to install the compat4x libraries
 
-RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
+RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:misc/localedata
 
 WRKSRC=		${WRKDIR}/usr/lib/compat
 

@@ -13,8 +13,8 @@ COMMENT=	Ping-like program that uses TCP and/or HTTP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libidn.so:dns/libidn
 
 USES=		cpe libtool
 CPE_VENDOR=	echoping_project

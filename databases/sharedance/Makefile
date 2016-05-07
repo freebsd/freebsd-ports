@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.pureftpd.org/pub/sharedance/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon to centralize keys and associated data
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 CONFIGURE_ARGS=	--with-largefile
 GNU_CONFIGURE=	yes

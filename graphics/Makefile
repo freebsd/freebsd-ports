@@ -174,7 +174,6 @@
     SUBDIR += exrtools
     SUBDIR += farbfeld
     SUBDIR += feh
-    SUBDIR += ffff
     SUBDIR += fig2sxd
     SUBDIR += figurine
     SUBDIR += flam3
@@ -343,8 +342,6 @@
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
     SUBDIR += hugin
-    SUBDIR += hugin-2016
-    SUBDIR += hugin-devel
     SUBDIR += icat
     SUBDIR += icc-profiles-basiccolor
     SUBDIR += icc-profiles-openicc
@@ -414,7 +411,7 @@
     SUBDIR += kipi-plugin-flashexport
     SUBDIR += kipi-plugin-flickrexport
     SUBDIR += kipi-plugin-galleryexport
-    SUBDIR += kipi-plugin-googledrive
+    SUBDIR += kipi-plugin-googleservices
     SUBDIR += kipi-plugin-gpssync
     SUBDIR += kipi-plugin-htmlexport
     SUBDIR += kipi-plugin-imageshackexport
@@ -430,7 +427,6 @@
     SUBDIR += kipi-plugin-metadataedit
     SUBDIR += kipi-plugin-panorama
     SUBDIR += kipi-plugin-photolayoutseditor
-    SUBDIR += kipi-plugin-picasawebexport
     SUBDIR += kipi-plugin-piwigoexport
     SUBDIR += kipi-plugin-printimages
     SUBDIR += kipi-plugin-rajceexport
@@ -514,6 +510,8 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
+    SUBDIR += libnsbmp
+    SUBDIR += libnsgif
     SUBDIR += libopenraw
     SUBDIR += libosmesa
     SUBDIR += libpano13
@@ -532,13 +530,11 @@
     SUBDIR += libspiro
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
-    SUBDIR += libtxc_dxtn
     SUBDIR += libvisual
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins
     SUBDIR += libwmf
     SUBDIR += libwmf-nox11
-    SUBDIR += libwpg
     SUBDIR += libwpg03
     SUBDIR += libyuv
     SUBDIR += lightzone
@@ -741,6 +737,7 @@
     SUBDIR += panomatic
     SUBDIR += partio
     SUBDIR += pdf2svg
+    SUBDIR += pdfpc
     SUBDIR += pear-Horde_Image
     SUBDIR += pear-Image_3D
     SUBDIR += pear-Image_Barcode
@@ -918,6 +915,8 @@
     SUBDIR += renrot
     SUBDIR += repng2jpeg
     SUBDIR += rgbpaint
+    SUBDIR += rigsofrods-caelum
+    SUBDIR += rigsofrods-pagedgeometry
     SUBDIR += ristretto
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdal
@@ -955,6 +954,7 @@
     SUBDIR += rubygem-ruby-graphviz
     SUBDIR += rubygem-scruffy
     SUBDIR += s10sh
+    SUBDIR += s2tc
     SUBDIR += sage
     SUBDIR += sam2p
     SUBDIR += sampleicc
@@ -976,6 +976,7 @@
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += seexpr
+    SUBDIR += sekrit-twc-zimg
     SUBDIR += seom
     SUBDIR += separate
     SUBDIR += seq2gif
@@ -1029,6 +1030,7 @@
     SUBDIR += uniconvw
     SUBDIR += unpaper
     SUBDIR += urt
+    SUBDIR += vapoursynth-waifu2x-w2xc
     SUBDIR += variety
     SUBDIR += vcg
     SUBDIR += viewnior

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -13,8 +13,8 @@ COMMENT=	Total Commander like file manager for the X Window System
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
-		fpcres:${PORTSDIR}/lang/fpc-utils
+BUILD_DEPENDS=	lazbuild:editors/lazarus \
+		fpcres:lang/fpc-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -29,7 +29,7 @@ WANT_GNOME=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
 PROJECT_FILE=	src/doublecmd.lpi
-LAZARUS_VER=	1.6RC2
+LAZARUS_VER=	1.6.0
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
@@ -99,14 +99,14 @@ OPTIONS_DEFAULT=	GTK2 \
 			DSX_LOCATE
 
 GTK2_USE=		fpc=gtk2 gnome=gtk20
-GTK2_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+GTK2_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
 
-QT4_LIB_DEPENDS=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
-QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
+QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 
-WCX_UNRAR_LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar
-WFX_SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-WLX_MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+WCX_UNRAR_LIB_DEPENDS=	libunrar.so:archivers/libunrar
+WFX_SAMBA_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 .include <bsd.port.options.mk>
 
@@ -290,7 +290,6 @@ pre-install:
 	@${ECHO_CMD} "man/man1/doublecmd.1.gz" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wfx
@@ -376,8 +375,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/share/pixmaps/
 .endfor
 
-	${INSTALL_PROGRAM} ${WRKSRC}/doublecmd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/install/linux/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
 	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 

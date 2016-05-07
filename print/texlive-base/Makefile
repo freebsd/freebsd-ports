@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
@@ -12,18 +12,18 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, base binaries
 
-RUN_DEPENDS=	psbook:${PORTSDIR}/print/psutils
-LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
-		libt1.so:${PORTSDIR}/devel/t1lib \
-		libTECkit.so:${PORTSDIR}/textproc/teckit \
-		libgd.so:${PORTSDIR}/graphics/gd \
-		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libzzip.so:${PORTSDIR}/devel/zziplib \
-		libpoppler.so:${PORTSDIR}/graphics/poppler \
-		libpotrace.so:${PORTSDIR}/graphics/libpotrace
+RUN_DEPENDS=	psbook:print/psutils
+LIB_DEPENDS=	libicuio.so:devel/icu \
+		libt1.so:devel/t1lib \
+		libTECkit.so:textproc/teckit \
+		libgd.so:graphics/gd \
+		libgraphite2.so:graphics/graphite2 \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libpng.so:graphics/png \
+		libzzip.so:devel/zziplib \
+		libpoppler.so:graphics/poppler \
+		libpotrace.so:graphics/libpotrace
 
 CONFLICTS_INSTALL=	texlive-texmf-201[234]*
 

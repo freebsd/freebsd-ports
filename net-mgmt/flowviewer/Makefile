@@ -3,7 +3,7 @@
 
 PORTNAME=	flowviewer
 PORTVERSION=	4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	FlowViewer_${DISTVERSION}
@@ -12,8 +12,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Web-based user interface for the flow-tools NetFlow data
 
-RUN_DEPENDS=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
-		rrdtool:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=	p5-GD-Graph>=0:graphics/p5-GD-Graph \
+		rrdtool:databases/rrdtool
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=	NETFLOWv
@@ -21,8 +21,8 @@ OPTIONS_SINGLE_NETFLOWv=	NETFLOWv5 NETFLOWv9
 OPTIONS_DEFAULT=	NETFLOWv5
 NETFLOWv5_DESC=	Support for NETFLOWv5
 NETFLOWv9_DESC=	Support for IPFIX/NETFLOWv9
-NETFLOWv5_RUN_DEPENDS=	flow-cat:${PORTSDIR}/net-mgmt/flow-tools-ng
-NETFLOWv9_RUN_DEPENDS=	rwptoflow:${PORTSDIR}/security/silktools
+NETFLOWv5_RUN_DEPENDS=	flow-cat:net-mgmt/flow-tools-ng
+NETFLOWv9_RUN_DEPENDS=	rwptoflow:security/silktools
 
 FLOWVIEWERDIR?=	${PREFIX}/www/flowviewer
 

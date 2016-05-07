@@ -1,4 +1,4 @@
---- GNUmakefile.orig	2015-03-31 14:07:23 UTC
+--- GNUmakefile.orig	2016-04-05 09:59:50 UTC
 +++ GNUmakefile
 @@ -8,7 +8,7 @@ resdir	=  $(DESTDIR)$(RESDIR)
  
@@ -7,9 +7,9 @@
 -CFLAGS	+= -Wno-pointer-sign
 +CFLAGS	+= -idirafter /usr/include/sys
  
- # default target
- all: build
-@@ -51,7 +51,7 @@ HAVE_LIBWEBP	:= $(call ac_lib,WebPDecode
+ # hard build deps
+ PKG_CONFIG = pkg-config
+@@ -73,7 +73,7 @@ HAVE_LIBWEBP	:= $(call ac_pkg_config,lib
  HAVE_LIBSANE	:= $(call ac_lib,sane_init,sane)
  HAVE_LIBCURL	:= $(call ac_lib,curl_easy_init,curl)
  HAVE_LIBLIRC	:= $(call ac_lib,lirc_init,lirc_client)
@@ -18,7 +18,7 @@
  JPEG_VER        := $(call ac_jpeg_ver)
  endef
  
-@@ -145,8 +145,8 @@ OBJS_IDA := \
+@@ -169,8 +169,8 @@ OBJS_IDA := \
  OBJS_IDA += $(call ac_lib_mkvar,$(ida_libs),OBJS)
  
  # for X11 + Motif
@@ -29,3 +29,12 @@
  ida : LDLIBS	+= -lXm -lXpm -lXt -lXext -lX11
  
  # jpeg/exif libs
+@@ -179,7 +179,7 @@ ida : LDLIBS += $(shell $(PKG_CONFIG) --
+ ida : LDLIBS += -ljpeg -lm
+ 
+ # RegEdit.c is good old K&R ...
+-RegEdit.o : CFLAGS += -Wno-missing-prototypes -Wno-strict-prototypes -Wno-maybe-uninitialized
++RegEdit.o : CFLAGS += -Wno-missing-prototypes -Wno-strict-prototypes -Wno-uninitialized
+ 
+ ida: $(OBJS_IDA) $(OBJS_READER) $(OBJS_WRITER)
+ 

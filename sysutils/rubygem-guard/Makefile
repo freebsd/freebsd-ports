@@ -12,19 +12,18 @@ COMMENT=	Command line tool to easily handle events on file system modifications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-formatador>=0.2.4:${PORTSDIR}/devel/rubygem-formatador \
-		rubygem-listen>=2.7:${PORTSDIR}/devel/rubygem-listen \
-		rubygem-lumberjack>=1.0:${PORTSDIR}/devel/rubygem-lumberjack \
-		rubygem-nenv>=0.1:${PORTSDIR}/devel/rubygem-nenv \
-		rubygem-notiffany>=0:${PORTSDIR}/devel/rubygem-notiffany \
-		rubygem-pry>=0.9.12:${PORTSDIR}/devel/rubygem-pry \
-		rubygem-shellany>=0:${PORTSDIR}/sysutils/rubygem-shellany \
-		rubygem-thor>=0.18.1:${PORTSDIR}/devel/rubygem-thor
+RUN_DEPENDS=	rubygem-formatador>=0.2.4:devel/rubygem-formatador \
+		rubygem-listen>=2.7:devel/rubygem-listen \
+		rubygem-lumberjack>=1.0:devel/rubygem-lumberjack \
+		rubygem-nenv>=0.1:devel/rubygem-nenv \
+		rubygem-notiffany>=0:devel/rubygem-notiffany \
+		rubygem-pry>=0.9.12:devel/rubygem-pry \
+		rubygem-shellany>=0:sysutils/rubygem-shellany \
+		rubygem-thor>=0.18.1:devel/rubygem-thor
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/guard \
 		bin/_guard-core

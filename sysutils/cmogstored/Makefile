@@ -12,6 +12,8 @@ COMMENT=	Alternative mogstored implementation for MogileFS
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 PLIST_FILES=	sbin/cmogstored \
 		man/man1/cmogstored.1.gz
 

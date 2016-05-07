@@ -10,7 +10,9 @@ MASTER_SITES=	http://root.cern.ch/drupal/sites/default/files/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	C/C++ interpreter
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	bash:shells/bash
 
 EXTRACT_SUFX=	.tgz
 HAS_CONFIGURE=	yes

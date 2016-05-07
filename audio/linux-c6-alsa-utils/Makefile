@@ -19,7 +19,7 @@ USE_LINUX_APPS=	alsalib alsa-plugins-oss
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
-USE_LINUX_RPM=	yes
+USE_LINUX_RPM=	nolib
 RPMVERSION=	9.el6_6
 
 .include <bsd.port.mk>

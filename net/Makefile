@@ -75,6 +75,7 @@
     SUBDIR += coda6_client
     SUBDIR += coda6_server
     SUBDIR += corkscrew
+    SUBDIR += corosync
     SUBDIR += courier-authlib-ldap
     SUBDIR += crtmpserver
     SUBDIR += cryptcat
@@ -136,6 +137,7 @@
     SUBDIR += fping
     SUBDIR += freebsd-tftp
     SUBDIR += freebsd-uucp
+    SUBDIR += freediameter
     SUBDIR += freenet6
     SUBDIR += freeradius-client
     SUBDIR += freeradius2
@@ -246,9 +248,11 @@
     SUBDIR += igmpproxy
     SUBDIR += ilbc
     SUBDIR += imapproxy
+    SUBDIR += intel-ixl-kmod
     SUBDIR += iodine
     SUBDIR += ip2location
     SUBDIR += ip6_int
+    SUBDIR += ipdecap
     SUBDIR += ipgrab
     SUBDIR += iplog
     SUBDIR += ipsorc
@@ -327,9 +331,9 @@
     SUBDIR += libnetdude
     SUBDIR += libnfs
     SUBDIR += libnids
-    SUBDIR += libnids-libnet11
     SUBDIR += libnss-cache
     SUBDIR += libnss-mysql
+    SUBDIR += libnss-pgsql
     SUBDIR += liboauth
     SUBDIR += libopennet
     SUBDIR += liboping
@@ -412,6 +416,7 @@
     SUBDIR += nakenchat
     SUBDIR += nanomsg
     SUBDIR += nast
+    SUBDIR += nats
     SUBDIR += nbd-server
     SUBDIR += nc
     SUBDIR += ncp
@@ -498,6 +503,7 @@
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Amazon-SQS-Simple
     SUBDIR += p5-AnyEvent-MPRPC
+    SUBDIR += p5-AnyEvent-MQTT
     SUBDIR += p5-AnyEvent-RabbitMQ
     SUBDIR += p5-AnyEvent-Twitter
     SUBDIR += p5-AnyEvent-Twitter-Stream
@@ -638,6 +644,7 @@
     SUBDIR += p5-Net-LimeLight-Purge
     SUBDIR += p5-Net-MAC
     SUBDIR += p5-Net-MAC-Vendor
+    SUBDIR += p5-Net-MQTT
     SUBDIR += p5-Net-Mosso-CloudFiles
     SUBDIR += p5-Net-MovableType
     SUBDIR += p5-Net-NBName
@@ -778,6 +785,7 @@
     SUBDIR += p5-Socks
     SUBDIR += p5-Sort-Key-IPv4
     SUBDIR += p5-Test-URI
+    SUBDIR += p5-TFTP
     SUBDIR += p5-URI
     SUBDIR += p5-URI-FromHash
     SUBDIR += p5-URI-Match
@@ -813,6 +821,7 @@
     SUBDIR += p5-ldap2pw
     SUBDIR += p5-perl-ldap
     SUBDIR += p5-srv2pf
+    SUBDIR += pacemaker
     SUBDIR += packetdrill
     SUBDIR += packter-agent
     SUBDIR += panoptis
@@ -877,6 +886,7 @@
     SUBDIR += pecl-mosquitto
     SUBDIR += pecl-oauth
     SUBDIR += pecl-radius
+    SUBDIR += pecl-smbclient
     SUBDIR += pecl-yaz
     SUBDIR += pecl-yp
     SUBDIR += pecl-zmq
@@ -1092,12 +1102,15 @@
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-brightbox
+    SUBDIR += rubygem-fog-cloudatcost
     SUBDIR += rubygem-fog-dynect
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-google
     SUBDIR += rubygem-fog-local
+    SUBDIR += rubygem-fog-openstack
     SUBDIR += rubygem-fog-powerdns
     SUBDIR += rubygem-fog-profitbricks
+    SUBDIR += rubygem-fog-rackspace
     SUBDIR += rubygem-fog-radosgw
     SUBDIR += rubygem-fog-riakcs
     SUBDIR += rubygem-fog-sakuracloud
@@ -1119,12 +1132,14 @@
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
+    SUBDIR += rubygem-net-ping
     SUBDIR += rubygem-netrc
     SUBDIR += rubygem-network_interface
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-octokit
     SUBDIR += rubygem-octopress-deploy
+    SUBDIR += rubygem-omniauth-auth0
     SUBDIR += rubygem-omniauth-azure-oauth2
     SUBDIR += rubygem-omniauth-facebook
     SUBDIR += rubygem-omniauth-github
@@ -1171,6 +1186,7 @@
     SUBDIR += samba41
     SUBDIR += samba42
     SUBDIR += samba43
+    SUBDIR += samba44
     SUBDIR += samplicator
     SUBDIR += sbd
     SUBDIR += scamper
@@ -1205,6 +1221,7 @@
     SUBDIR += smbldap-tools
     SUBDIR += smcroute
     SUBDIR += smm++
+    SUBDIR += sngrep
     SUBDIR += sniffit
     SUBDIR += sntop
     SUBDIR += sobby

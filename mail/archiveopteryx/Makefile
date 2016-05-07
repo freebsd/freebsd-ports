@@ -12,7 +12,9 @@ COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	jam:devel/jam
 
 USES=		perl5 tar:bzip2 pgsql:9.1+
 USE_OPENSSL=	yes

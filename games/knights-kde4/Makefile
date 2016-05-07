@@ -10,7 +10,7 @@ MASTER_SITES=	http://dl.dropbox.com/u/2888238/Knights/
 MAINTAINER=	syncer@gmail.com
 COMMENT=	KDE4 chess interface
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
+RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:games/gnuchess
 
 LICENSE=	GPLv2
 

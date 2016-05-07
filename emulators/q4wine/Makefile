@@ -13,11 +13,11 @@ COMMENT=	QT4 front-end for WINE
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	icotool:${PORTSDIR}/graphics/icoutils
-RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo \
-		wget:${PORTSDIR}/ftp/wget \
-		cabextract:${PORTSDIR}/archivers/cabextract \
-		icotool:${PORTSDIR}/graphics/icoutils
+BUILD_DEPENDS=	icotool:graphics/icoutils
+RUN_DEPENDS=	sudo:security/sudo \
+		wget:ftp/wget \
+		cabextract:archivers/cabextract \
+		icotool:graphics/icoutils
 
 USES=		cmake desktop-file-utils
 CMAKE_ARGS+=	-DMANPAGE_ENTRY_PATH=${MANPREFIX}/man
@@ -41,7 +41,7 @@ DBUS_USE=		QT4=dbus
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
-RUN_DEPENDS+=	wine:${PORTSDIR}/emulators/wine-devel
+RUN_DEPENDS+=	wine:emulators/wine-devel
 .endif
 
 post-patch:

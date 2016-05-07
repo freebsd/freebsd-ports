@@ -12,7 +12,7 @@ COMMENT=	Simple C Expat Wrapper
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -32,7 +32,7 @@ post-install:
 .endfor
 
 .ifdef MAINTAINER_MODE
-LIB_DEPENDS+=	libcheck.so:${PORTSDIR}/devel/libcheck
+LIB_DEPENDS+=	libcheck.so:devel/libcheck
 regression-test: build
 	${MAKE_CMD} -C ${WRKSRC}/tests check
 .endif

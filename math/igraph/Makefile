@@ -11,7 +11,7 @@ COMMENT=	Package For Manipulating Undirected And Directed Graphs
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool

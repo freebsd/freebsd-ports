@@ -15,7 +15,7 @@ COMMENT=	Multi-player networked Risk game for X11
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 NO_CDROM=	Possible trademark infringement
 

@@ -12,8 +12,8 @@ COMMENT=	C-library for generating multi page PostScript documents
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 USES=		gettext gmake jpeg libtool pathfix pkgconfig
 USE_GNOME=	intlhack
@@ -35,8 +35,8 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} ${EX_NAME}${EXTRACT_SUFX}
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/docbook-to-man:${PORTSDIR}/textproc/docbook-to-man \
-		${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/docbook-to-man:textproc/docbook-to-man \
+		${LOCALBASE}/bin/docbook2man:textproc/docbook-utils
 .else
 # Avoid building the manpages.
 CONFIGURE_ENV+=	ac_cv_prog_DOC_TO_MAN=""

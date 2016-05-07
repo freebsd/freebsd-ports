@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server-side RSS aggregator written in PHP with MySQL
 
+BROKEN_powerpc64=	Does not build
+
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
@@ -28,10 +30,10 @@ USE_PHP+=	gd
 .endif
 
 .if ${PORT_OPTIONS:MMYSQLSERVER}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:databases/mysql${MYSQL_VER}-server
 .endif
 
-RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS+=	curl:ftp/curl
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADE

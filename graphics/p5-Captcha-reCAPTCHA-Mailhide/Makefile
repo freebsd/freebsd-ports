@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gerard@seibercom.net
 COMMENT=	Perl implementation of the reCAPTCHA Mailhide API
 
-BUILD_DEPENDS=	p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
-		p5-HTML-Tiny>=0.904:${PORTSDIR}/textproc/p5-HTML-Tiny
+BUILD_DEPENDS=	p5-Crypt-Rijndael>=0:security/p5-Crypt-Rijndael \
+		p5-HTML-Tiny>=0.904:textproc/p5-HTML-Tiny
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

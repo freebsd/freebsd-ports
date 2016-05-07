@@ -12,7 +12,7 @@ COMMENT=	Unix-domain socket client-server command-line tools
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:${PORTSDIR}/devel/bglibs
+BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:devel/bglibs
 
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs

@@ -12,11 +12,10 @@ COMMENT=	Protect attributes from mass assignment
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activemodel4>=4.0.1:${PORTSDIR}/databases/rubygem-activemodel4
+RUN_DEPENDS=	rubygem-activemodel4>=4.0.1:databases/rubygem-activemodel4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

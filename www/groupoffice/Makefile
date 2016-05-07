@@ -10,6 +10,11 @@ MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 MAINTAINER=	jochen@jochen-neumeister.de
 COMMENT=	Modular web application framework vor office
 
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.AGPL
+
+BROKEN_powerpc64=	Does not build
+
 RESTRICTED=	Free for personal use only
 
 NO_ARCH=	yes
@@ -40,7 +45,7 @@ WBXML_DESC=	Synchronization Support
 CALENDAR_USE=		PHP=calendar
 GD_USE=			PHP=gd
 IMAP_USE=		PHP=iconv imap
-WBXML_LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
+WBXML_LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \

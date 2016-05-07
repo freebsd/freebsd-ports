@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grsync
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		LOCAL/martymac
@@ -12,12 +12,12 @@ COMMENT=	GTK frontend for rsync
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	rsync:net/rsync \
+		bash:shells/bash
 
 USE_GNOME=	gtk20 intltool
 USES=		desktop-file-utils gettext gmake \
-		shared-mime-info pkgconfig shebangfix
+		pkgconfig shared-mime-info shebangfix
 SHEBANG_FILES=	src/grsync-batch
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-unity

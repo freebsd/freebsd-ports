@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	jts
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	math databases
 MASTER_SITES=	SF/${PORTNAME}-topo-suite/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JTS Topology Suite
 
-RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom		\
-	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit		\
-	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
+RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom		\
+	${JAVALIBDIR}/junit.jar:java/junit		\
+	${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j
 
 USES=		zip
 NO_BUILD=	yes
@@ -20,7 +20,7 @@ USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
 
 VER=		${PORTVERSION:tl}
-JARFILES=	JTS_Test acme jts-${VER}
+JARFILES=	JTS_Test jts-${VER} jtsio-${VER}
 
 OPTIONS_DEFINE=	DOCS
 

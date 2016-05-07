@@ -10,11 +10,11 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 desktop planetarium
 
-LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio \
-		libwcs.so:${PORTSDIR}/astro/wcslib
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:${PORTSDIR}/math/eigen3 \
-		xplanet:${PORTSDIR}/astro/xplanet
-RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet
+LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
+		libwcs.so:astro/wcslib
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3 \
+		xplanet:astro/xplanet
+RUN_DEPENDS=	xplanet:astro/xplanet
 
 USE_KDE4=	kdelibs kdeprefix automoc4
 USES=		cmake:outsource compiler:c++11-lib tar:xz

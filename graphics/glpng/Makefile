@@ -14,7 +14,7 @@ COMMENT=	Library to easily load PNG files as an OpenGL textures
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_GL=		gl
 USES=		dos2unix zip

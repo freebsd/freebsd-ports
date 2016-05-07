@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.vigor.nu/dxpc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compressing X protocol proxy designed to support X11 over slow links
 
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 LICENSE=	BSD2CLAUSE
 

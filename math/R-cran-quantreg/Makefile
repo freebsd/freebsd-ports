@@ -11,8 +11,8 @@ COMMENT=	Quantile Regression
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	R-cran-SparseM>0:${PORTSDIR}/math/R-cran-SparseM \
-		R-cran-MatrixModels>0:${PORTSDIR}/math/R-cran-MatrixModels
+RUN_DEPENDS=	R-cran-SparseM>0:math/R-cran-SparseM \
+		R-cran-MatrixModels>0:math/R-cran-MatrixModels
 
 USES=	cran:auto-plist
 

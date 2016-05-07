@@ -11,13 +11,17 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS repository activity report generator
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/etc/LICENSE
 
 USES=		zip
 USE_JAVA=	yes
 USE_ANT=	yes
 JAVA_VERSION=	1.6+
+NO_ARCH=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 ALL_TARGET=	jar
 
@@ -27,12 +31,7 @@ PORTDOCS=	*
 PLIST_FILES=	%%DATADIR%%/statcvs.jar
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	javadoc
-.endif
+DOCS_ALL_TARGET=javadoc
 
 .include <bsd.port.pre.mk>
 
@@ -44,8 +43,8 @@ PLIST_SUB=	JDK6="@comment "
 
 do-install:
 	(cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.post.mk>

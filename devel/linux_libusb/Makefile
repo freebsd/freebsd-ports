@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/nox
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility libusb
 
-BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux-c6-devtools
+BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:devel/linux-c6-devtools
 
 USES=		tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
@@ -68,7 +68,7 @@ do-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/usr/lib/libusb.so ${STAGEDIR}${PREFIX}/usr/lib/libusb-0.1.so.4
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
-#FETCH_DEPENDS+=		svn:${PORTSDIR}/devel/subversion
+#FETCH_DEPENDS+=		svn:devel/subversion
 SVN?=		svnlite
 
 do-fetch:

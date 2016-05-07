@@ -18,10 +18,10 @@ bin/tshark
 %%TEXT2PCAP%%
 lib/libwireshark.so
 lib/libwireshark.so.6
-lib/libwireshark.so.6.0.2
+lib/libwireshark.so.6.1.0
 lib/libwiretap.so
 lib/libwiretap.so.5
-lib/libwiretap.so.5.0.2
+lib/libwiretap.so.5.0.3
 lib/libwsutil.so
 lib/libwsutil.so.6
 lib/libwsutil.so.6.0.0
@@ -38,6 +38,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/unistim.so
 lib/wireshark/plugins/%%PORTVERSION%%/wimax.so
 lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 lib/wireshark/plugins/%%PORTVERSION%%/wimaxmacphy.so
+%%ANDROIDDUMP_MAN%%man/man1/androiddump.1.gz
 %%CAPINFOS_MAN%%man/man1/capinfos.1.gz
 man/man1/dumpcap.1.gz
 %%EDITCAP_MAN%%man/man1/editcap.1.gz

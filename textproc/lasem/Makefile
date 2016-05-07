@@ -13,7 +13,7 @@ COMMENT=	SVG/Mathml renderer and editor
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	stixfonts>0:${PORTSDIR}/x11-fonts/stix-fonts
+RUN_DEPENDS=	stixfonts>0:x11-fonts/stix-fonts
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

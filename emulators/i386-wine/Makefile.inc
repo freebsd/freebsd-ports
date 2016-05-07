@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
+MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/
 PKGNAMEPREFIX=	i386-
 DISTNAME=	${PKGNAME}
 EXTRACT_SUFX=	.txz
@@ -41,8 +41,8 @@ USE_LDCONFIG32=	${PREFIX}/lib32 ${PREFIX}/lib32/wine
 USES=		tar:xz
 BUNDLE_LIBS=	yes
 
-GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.40-x86.msi:${PORTSDIR}/emulators/wine-gecko
-MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.6.msi:${PORTSDIR}/emulators/wine-mono
+GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.40-x86.msi:emulators/wine-gecko
+MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.6.msi:emulators/wine-mono
 
 PORTSCOUT=	limitw:1,even
 

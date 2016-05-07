@@ -12,11 +12,11 @@ COMMENT=	Puzzle solver
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	netpbm>0:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libxmlwrapp.so:${PORTSDIR}/textproc/xmlwrapp \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+BUILD_DEPENDS=	netpbm>0:graphics/netpbm
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libpng.so:graphics/png \
+		libxmlwrapp.so:textproc/xmlwrapp \
+		libfltk.so:x11-toolkits/fltk
 
 USES=		gmake
 USE_XORG=	x11 xt xext xmu xi

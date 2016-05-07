@@ -13,10 +13,9 @@ COMMENT=	MySQL database connector for C++
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-USE_MYSQL=	51+
-USES=		cmake:outsource
+USES=		cmake:outsource mysql
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DDOC_DESTINATION="${DOCSDIR}"
 

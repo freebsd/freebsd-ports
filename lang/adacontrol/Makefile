@@ -3,7 +3,7 @@
 
 PORTNAME=	adacontrol
 PORTVERSION=	1.17r3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF/adacontrol
 DISTNAME=	adactl-${PORTVERSION}-src
@@ -15,7 +15,7 @@ COMMENT=	Tool for detecting use or non-use of specific Ada constructs
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	asis>=2013:${PORTSDIR}/lang/asis
+BUILD_DEPENDS=	asis>=2013:lang/asis
 
 USES=		ada tar:tgz
 WRKSRC=		${WRKDIR}/adactl-${PORTVERSION}

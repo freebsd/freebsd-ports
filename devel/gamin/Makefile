@@ -41,7 +41,7 @@ CPPFLAGS+=	-DUSE_GAMIN_POLLER=1
 .if ${PORT_OPTIONS:MLIBINOTIFY}
 CONFIGURE_ARGS+=--enable-inotify
 LIBS+=		-linotify
-LIB_DEPENDS+=	libinotify.so:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
 .else
 CONFIGURE_ARGS+=--disable-inotify
 .endif

@@ -1,0 +1,11 @@
+--- data/Makefile.am.orig	2016-04-23 16:57:50 UTC
++++ data/Makefile.am
+@@ -13,7 +13,7 @@ appicondir = $(datarootdir)/pixmaps
+ dist_appicon_DATA = wxmaxima.svg wxmaxima.png text-x-wxmaxima-batch.svg text-x-wxmathml.svg wxmaxima-16.xpm wxmaxima-32.xpm
+ 
+ 
+-mandatadir = $(datadir)/man/man1
++mandatadir = $(mandir)/man1
+ dist_mandata_DATA = wxmaxima.1
+ 
+ mimedatadir = $(datarootdir)/mime/packages

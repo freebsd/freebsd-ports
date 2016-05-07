@@ -14,9 +14,11 @@ COMMENT=	Convert HTML (or live webpages) to PDF or image
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng.so:${PORTSDIR}/graphics/png
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png
 
 USES=		gmake iconv jpeg perl5 pkgconfig tar:bzip2
 USE_XORG=	x11 xext xrender

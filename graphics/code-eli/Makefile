@@ -11,7 +11,7 @@ COMMENT=	Library with functionalities for geometries
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	eigen>3:${PORTSDIR}/math/eigen3
+BUILD_DEPENDS=	eigen>3:math/eigen3
 
 USE_GITHUB=	yes
 GH_PROJECT=	Code-Eli
@@ -28,8 +28,8 @@ VSPPOD_DIR=	vsp_pod
 
 # Build options
 OPTIONS_DEFINE=		DOCS EXAMPLES
-EXAMPLES_LIB_DEPENDS=	libcpptest.so:${PORTSDIR}/devel/cpptest
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+EXAMPLES_LIB_DEPENDS=	libcpptest.so:devel/cpptest
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
 DOCS_ALL_TARGET=	doc
 
 # The code uses std::cbrt(). Even if one passes some additional macros for

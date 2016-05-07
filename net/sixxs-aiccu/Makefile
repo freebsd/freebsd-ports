@@ -3,7 +3,7 @@
 
 PORTNAME=	aiccu
 PORTVERSION=	20070115
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.sixxs.net/archive/sixxs/aiccu/unix/
 PKGNAMEPREFIX=	sixxs-
@@ -34,7 +34,7 @@ OPTIONS_DEFAULT+=	GNUTLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls-openssl.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 CFLAGS+=	-DAICCU_GNUTLS
 LDFLAGS+=	-lgnutls
 .endif

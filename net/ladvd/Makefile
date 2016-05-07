@@ -12,7 +12,7 @@ COMMENT=	Minimal LLDP/CDP/EDP/FDP/NDP sender daemon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USERS=		ladvd
 GROUPS=		${USERS}

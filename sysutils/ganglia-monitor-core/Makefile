@@ -2,6 +2,7 @@
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
@@ -16,10 +17,10 @@ COMMENT=	Ganglia cluster monitor, monitoring daemon
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libconfuse.so:${PORTSDIR}/devel/libconfuse \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		libconfuse.so:devel/libconfuse \
+		libpcre.so:devel/pcre \
+		libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=	GMETAD
 OPTIONS_DEFAULT=	GMETAD
@@ -50,7 +51,7 @@ USE_RC_SUBR=	gmond
 .if ${PORT_OPTIONS:MGMETAD}
 USE_RC_SUBR+=	gmetad
 
-LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	librrd.so:databases/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 PLIST_SUB+=	GMETAD=""
 SUB_LIST+=	GMETAD=""

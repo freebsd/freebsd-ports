@@ -15,9 +15,9 @@ LICENSE_NAME=	Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre] C license, version 1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	ocaml-zarith>1.2:${PORTSDIR}/math/ocaml-zarith \
-		ocaml-ocamlgraph>1.8:${PORTSDIR}/math/ocaml-ocamlgraph
-RUN_DEPENDS=	ocaml-ocamlgraph>1.8:${PORTSDIR}/math/ocaml-ocamlgraph
+BUILD_DEPENDS=	ocaml-zarith>1.2:math/ocaml-zarith \
+		ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph
+RUN_DEPENDS=	ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph
 
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -32,8 +32,8 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}
-BUILD_DEPENDS +=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-RUN_DEPENDS+=		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+BUILD_DEPENDS +=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+RUN_DEPENDS+=		lablgtk2:x11-toolkits/ocaml-lablgtk2
 ALL_TARGET+=		gui
 INSTALL_TARGET+=	install-gui
 .endif

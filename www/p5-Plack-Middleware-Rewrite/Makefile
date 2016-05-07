@@ -14,7 +14,7 @@ COMMENT=	mod_rewrite for Plack
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Plack>=0.9942:${PORTSDIR}/www/p5-Plack
+BUILD_DEPENDS=	p5-Plack>=0.9942:www/p5-Plack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

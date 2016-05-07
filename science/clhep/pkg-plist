@@ -193,6 +193,7 @@ include/CLHEP/Random/EngineFactory.h
 include/CLHEP/Random/Hurd160Engine.h
 include/CLHEP/Random/Hurd288Engine.h
 include/CLHEP/Random/JamesRandom.h
+include/CLHEP/Random/MixMaxRng.h
 include/CLHEP/Random/MTwistEngine.h
 include/CLHEP/Random/NonRandomEngine.h
 include/CLHEP/Random/RandBinomial.h
@@ -248,6 +249,8 @@ include/CLHEP/Random/StaticRandomStates.h
 include/CLHEP/Random/TripleRand.h
 include/CLHEP/Random/defs.h
 include/CLHEP/Random/engineIDulong.h
+include/CLHEP/Random/mixmax.h
+include/CLHEP/Random/mixmax_skip_N256.icc
 include/CLHEP/RandomObjects/RandMultiGauss.h
 include/CLHEP/RandomObjects/RandomVector.h
 include/CLHEP/RandomObjects/RandomVector.icc
@@ -268,7 +271,6 @@ include/CLHEP/Utility/keywords.h
 include/CLHEP/Utility/memory.h
 include/CLHEP/Utility/noncopyable.h
 include/CLHEP/Utility/thread_local.h
-include/CLHEP/Utility/type_traits.h
 include/CLHEP/Vector/AxisAngle.h
 include/CLHEP/Vector/AxisAngle.icc
 include/CLHEP/Vector/Boost.h
@@ -331,3 +333,13 @@ libdata/CLHEP-%%VERSION%%/CLHEPConfigVersion.cmake
 libdata/CLHEP-%%VERSION%%/CLHEPLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 libdata/CLHEP-%%VERSION%%/CLHEPLibraryDepends.cmake
 libdata/pkgconfig/clhep.pc
+libdata/pkgconfig/clhep-cast.pc
+libdata/pkgconfig/clhep-evaluator.pc
+libdata/pkgconfig/clhep-exceptions.pc
+libdata/pkgconfig/clhep-genericfunctions.pc
+libdata/pkgconfig/clhep-geometry.pc
+libdata/pkgconfig/clhep-matrix.pc
+libdata/pkgconfig/clhep-random.pc
+libdata/pkgconfig/clhep-randomobjects.pc
+libdata/pkgconfig/clhep-refcount.pc
+libdata/pkgconfig/clhep-vector.pc

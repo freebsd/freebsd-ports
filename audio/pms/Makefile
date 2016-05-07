@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	REGEX
 
 REGEX_DESC=	Support boost regex pattern matching
 
-REGEX_LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
+REGEX_LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 REGEX_CONFIGURE_ENABLE=	regex
 
 INSTALL_TARGET=	install-strip

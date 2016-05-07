@@ -101,9 +101,9 @@ VIDEO_DRIVERS+=	sunffb
 . for i in ${${type:tu}_DRIVERS}
 .  if ${PORT_OPTIONS:M${i:tu}} != ""
 .   if ${QUIRKS:M${i}\:*:C/.*://} != ""
-RUN_DEPENDS+=	${${type:tu}DIR}/${QUIRKS:M${i}\:*:C/.*://}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
+RUN_DEPENDS+=	${${type:tu}DIR}/${QUIRKS:M${i}\:*:C/.*://}_drv.so:x11-drivers/xf86-${type}-${i}
 .   else
-RUN_DEPENDS+=	${${type:tu}DIR}/${i}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-${i}
+RUN_DEPENDS+=	${${type:tu}DIR}/${i}_drv.so:x11-drivers/xf86-${type}-${i}
 .   endif
 .  endif
 . endfor

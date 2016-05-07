@@ -36,13 +36,13 @@ MYSQL_LDFLAGS=	-L${LOCALBASE}/lib/mysql
 
 PGSQL_USES=	pgsql
 
-SQLITE_LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
+SQLITE_LIB_DEPENDS=	libsqlite.so:databases/sqlite2
 
-SQLITE3_USE=	SQLITE=3
+SQLITE3_USES=	sqlite:3
 
-MSSQL_LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
+MSSQL_LIB_DEPENDS=	libsybdb.so:databases/freetds
 
-SYBASE_LIB_DEPENDS=	libct.so:${PORTSDIR}/databases/freetds
+SYBASE_LIB_DEPENDS=	libct.so:databases/freetds
 
 NLS_USES=		gettext
 NLS_CONFIGURE_DISABLE=	nls

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-mptt
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +12,7 @@ COMMENT=	Utilities for implementing Modified Preorder Tree Traversal in Django
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django18 # >= 1.8
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18 # >= 1.8
 
 USE_GITHUB=	yes
 

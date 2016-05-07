@@ -3,6 +3,7 @@
 
 PORTNAME=	libgroove
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,10 +12,10 @@ COMMENT=	Audio dispatching library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libchromaprint.so:${PORTSDIR}/audio/chromaprint \
-		libebur128.so:${PORTSDIR}/audio/libebur128 \
-		libspeexdsp.so:${PORTSDIR}/audio/speexdsp
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libchromaprint.so:audio/chromaprint \
+		libebur128.so:audio/libebur128 \
+		libspeexdsp.so:audio/speexdsp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	andrewrk

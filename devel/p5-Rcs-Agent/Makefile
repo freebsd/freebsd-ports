@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	nick@foobar.org
 COMMENT=	Perl module for RCS archive manipulation
 
-BUILD_DEPENDS=	p5-String-ShellQuote>1.00:${PORTSDIR}/textproc/p5-String-ShellQuote
+BUILD_DEPENDS=	p5-String-ShellQuote>1.00:textproc/p5-String-ShellQuote
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

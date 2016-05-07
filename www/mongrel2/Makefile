@@ -13,12 +13,13 @@ COMMENT=	Is an application, language, and network arch
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
 BROKEN_armv6=	does not build
 BROKEN_mips=	does not build (tests segfault)
 BROKEN_mips64=	does not build (tests segfault)
 
-LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq2 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libzmq.so:net/libzmq2 \
+		libsqlite3.so:databases/sqlite3
 
 USES=		gmake tar:bzip2
 MAKE_FLAGS=	freebsd

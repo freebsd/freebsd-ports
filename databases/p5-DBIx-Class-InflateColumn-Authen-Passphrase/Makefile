@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fw@moov.de
 COMMENT=	Inflate/deflate columns to Authen::Passphrase instances
 
-RUN_DEPENDS=	p5-DBIx-Class-DynamicDefault>=0.03:${PORTSDIR}/databases/p5-DBIx-Class-DynamicDefault \
-		p5-DBIx-Class>=0.08009:${PORTSDIR}/databases/p5-DBIx-Class \
-		p5-Authen-Passphrase>=0:${PORTSDIR}/security/p5-Authen-Passphrase
-BUILD_DEPENDS:=	p5-DBIx-Class-DynamicDefault>=0.03:${PORTSDIR}/databases/p5-DBIx-Class-DynamicDefault \
-		p5-DBIx-Class>=0.08009:${PORTSDIR}/databases/p5-DBIx-Class \
-		p5-Authen-Passphrase>=0:${PORTSDIR}/security/p5-Authen-Passphrase
+RUN_DEPENDS=	p5-DBIx-Class-DynamicDefault>=0.03:databases/p5-DBIx-Class-DynamicDefault \
+		p5-DBIx-Class>=0.08009:databases/p5-DBIx-Class \
+		p5-Authen-Passphrase>=0:security/p5-Authen-Passphrase
+BUILD_DEPENDS:=	p5-DBIx-Class-DynamicDefault>=0.03:databases/p5-DBIx-Class-DynamicDefault \
+		p5-DBIx-Class>=0.08009:databases/p5-DBIx-Class \
+		p5-Authen-Passphrase>=0:security/p5-Authen-Passphrase
 
 USES=		perl5
 USE_PERL5=	configure

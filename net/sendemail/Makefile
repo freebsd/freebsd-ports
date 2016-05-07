@@ -23,8 +23,8 @@ PORTDOCS=	CHANGELOG README TODO
 OPTIONS_DEFINE=	SSL DOCS
 SSL_DESC=	SSL/TLS support for communicating with the SMTP server
 
-SSL_RUN_DEPENDS=p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
+SSL_RUN_DEPENDS=p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

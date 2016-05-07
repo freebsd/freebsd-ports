@@ -13,8 +13,8 @@ COMMENT=	Advanced DNS recursor
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
-		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	bjam:devel/boost-jam \
+		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 USES=		cpe gmake tar:bzip2
 GNU_CONFIGURE=	YES

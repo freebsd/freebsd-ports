@@ -12,7 +12,7 @@ COMMENT=	Perl module providing hash access to Lingua::EN::Numbers objects
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-Lingua-EN-Numbers>=1.01:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers
+BUILD_DEPENDS=	p5-Lingua-EN-Numbers>=1.01:textproc/p5-Lingua-EN-Numbers
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

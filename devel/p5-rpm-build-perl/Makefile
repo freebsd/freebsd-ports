@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module is required to build Perl RPM packages
 
-TEST_DEPENDS=	p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+TEST_DEPENDS=	p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
 USES=		perl5
 USE_PERL5=	configure

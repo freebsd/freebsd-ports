@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/bland
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Additional charset modules for the iconv library (from RFC1345)
 
-LIB_DEPENDS=	libbiconv.so:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	libbiconv.so:converters/iconv
 
 USES=		perl5 uidfix
 

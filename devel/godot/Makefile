@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-PORTVERSION=	1.1
+PORTVERSION=	2.0
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel games
 
@@ -11,8 +11,8 @@ COMMENT=	Game engine and development environment
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libasound.so:audio/alsa-lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	okamstudio
@@ -23,6 +23,7 @@ USE_GL=		glu
 USE_OPENSSL=	yes
 
 MAKE_ARGS+=	platform=x11
+CXXFLAGS+=	-DRTAUDIO_ENABLED
 
 OPTIONS_DEFINE=	EXAMPLES TOOLS
 OPTIONS_DEFAULT=	EXAMPLES TOOLS

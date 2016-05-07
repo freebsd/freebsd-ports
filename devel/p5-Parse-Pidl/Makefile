@@ -12,7 +12,7 @@ COMMENT=		IDL compiler written in Perl
 
 LICENSE=		GPLv3
 
-BUILD_DEPENDS=		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp
+BUILD_DEPENDS=		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 CONFLICTS=

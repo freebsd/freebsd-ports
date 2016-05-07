@@ -3,7 +3,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,9 +12,9 @@ COMMENT=	Read and manipulate raw images from various digital cameras
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libpng.so:graphics/png \
+		liblcms2.so:graphics/lcms2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --enable-extras
@@ -43,25 +43,25 @@ CONFIGURE_ARGS+=	--enable-dst-correction
 .endif
 
 .if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	libexiv2.so:graphics/exiv2
 .else
 PC_FALSE+=	exiv2
 .endif
 
 .if ${PORT_OPTIONS:MLENSFUN}
-LIB_DEPENDS+=	liblensfun.so:${PORTSDIR}/graphics/lensfun
+LIB_DEPENDS+=	liblensfun.so:graphics/lensfun
 .else
 PC_FALSE+=	lensfun
 .endif
 
 .if ${PORT_OPTIONS:MFITS}
-LIB_DEPENDS+=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
+LIB_DEPENDS+=	libcfitsio.so:astro/cfitsio
 .else
 PC_FALSE+=	cfitsio
 .endif
 
 .if ${PORT_OPTIONS:MGIMP}
-LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS+=	libgimp-2.0.so:graphics/gimp-app
 PLIST_SUB+=	GIMP=""
 .else
 CONFIGURE_ARGS+=--without-gimp
@@ -70,7 +70,7 @@ PLIST_SUB+=	GIMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=	libgtkimageview.so:${PORTSDIR}/x11-toolkits/gtkimageview
+LIB_DEPENDS+=	libgtkimageview.so:x11-toolkits/gtkimageview
 PLIST_SUB+=	MGTK2=""
 .else
 PLIST_SUB+=	MGTK2="@comment "

@@ -29,6 +29,7 @@ bin/rspamc
 %%ETCDIR%%/modules.d/ratelimit.conf
 %%ETCDIR%%/modules.d/rbl.conf
 %%ETCDIR%%/modules.d/regexp.conf
+%%ETCDIR%%/modules.d/rspamd_update.conf
 %%ETCDIR%%/modules.d/spf.conf
 %%ETCDIR%%/modules.d/surbl.conf
 %%ETCDIR%%/modules.d/whitelist.conf
@@ -43,6 +44,7 @@ bin/rspamc
 /usr/local/etc/newsyslog.conf.d/rspamd.newsyslog.conf
 lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/effective_tld_names.dat
+%%DATADIR%%/lua/dcc.lua
 %%DATADIR%%/lua/dmarc.lua
 %%DATADIR%%/lua/emails.lua
 %%DATADIR%%/lua/fann_scores.lua
@@ -57,6 +59,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/phishing.lua
 %%DATADIR%%/lua/ratelimit.lua
 %%DATADIR%%/lua/rbl.lua
+%%DATADIR%%/lua/rspamd_update.lua
 %%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/spamassassin.lua
 %%DATADIR%%/lua/trie.lua

@@ -3,12 +3,12 @@
 
 PORTNAME=	arpwatch
 DISTVERSION=	2.1a15
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		GENTOO
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests
 
 LICENSE=	BSD3CLAUSE

@@ -168,6 +168,7 @@ include/ace/Based_Pointer_T.inl
 include/ace/Basic_Stats.h
 include/ace/Basic_Stats.inl
 include/ace/Basic_Types.h
+include/ace/Bound_Ptr.cpp
 include/ace/Bound_Ptr.h
 include/ace/Bound_Ptr.inl
 include/ace/CDR_Base.h
@@ -644,6 +645,8 @@ include/ace/OS_NS_arpa_inet.h
 include/ace/OS_NS_arpa_inet.inl
 include/ace/OS_NS_ctype.h
 include/ace/OS_NS_ctype.inl
+include/ace/OS_NS_devctl.h
+include/ace/OS_NS_devctl.inl
 include/ace/OS_NS_dirent.h
 include/ace/OS_NS_dirent.inl
 include/ace/OS_NS_dlfcn.h
@@ -1089,6 +1092,8 @@ include/ace/config-aix-7.h
 include/ace/config-all.h
 include/ace/config-android.h
 include/ace/config-cygwin32.h
+include/ace/config-face-conftest.h
+include/ace/config-face-safety.h
 include/ace/config-freebsd.h
 include/ace/config-g++-common.h
 include/ace/config-hpux-11.00.h
@@ -1098,6 +1103,7 @@ include/ace/config-kfreebsd.h
 include/ace/config-linux.h
 include/ace/config-lite.h
 include/ace/config-lynxos.h
+include/ace/config-lynxos-178.h
 include/ace/config-macosx-elcapitan.h
 include/ace/config-macosx-iOS-hardware.h
 include/ace/config-macosx-iOS-simulator.h

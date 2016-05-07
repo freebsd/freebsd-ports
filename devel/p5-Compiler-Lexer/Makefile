@@ -12,7 +12,7 @@ COMMENT=	Perl extension for lexical analyzer
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Build-XSUtil>0:${PORTSDIR}/devel/p5-Module-Build-XSUtil
+BUILD_DEPENDS=	p5-Module-Build-XSUtil>0:devel/p5-Module-Build-XSUtil
 
 USES=		perl5
 USE_PERL5=	modbuild

@@ -12,7 +12,7 @@ COMMENT=	Ganglia cluster monitor, web frontend
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
+RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:sysutils/ganglia-monitor-core
 
 USE_PHP=	filter gd xml
 NO_BUILD=	YES

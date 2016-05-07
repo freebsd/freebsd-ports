@@ -20,9 +20,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable foreign function interface for Common Lisp
 
-BUILD_DEPENDS=	cl-alexandria>=0:${PORTSDIR}/devel/cl-alexandria \
-		cl-trivial-features>=0:${PORTSDIR}/devel/cl-trivial-features \
-		cl-babel>=0:${PORTSDIR}/converters/cl-babel
+BUILD_DEPENDS=	cl-alexandria>=0:devel/cl-alexandria \
+		cl-trivial-features>=0:devel/cl-trivial-features \
+		cl-babel>=0:converters/cl-babel
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes

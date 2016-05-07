@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromaprint
-PORTVERSION=	1.1
+PORTVERSION=	1.3.1
 CATEGORIES=	audio
 MASTER_SITES=	http://bitbucket.org/acoustid/${PORTNAME}/downloads/
 
@@ -10,7 +10,7 @@ COMMENT=	AcoustID audio fingerprinting library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USES=		cmake:outsource pathfix
 USE_LDCONFIG=	yes

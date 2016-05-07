@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-PORTVERSION=	1.5.24
-PORTREVISION?=	5
+PORTVERSION=	1.6.1
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
-MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
+MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
@@ -40,7 +40,8 @@ SHEBANG_FILES=	doc/gen-map-doc smime_keys.pl contrib/smime_keys_test.pl
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-USE_AUTOTOOLS=	automake autoconf
+USES+=		autoreconf
+GNU_CONFIGURE=	yes
 AUTOMAKE_ARGS=	--add-missing --foreign
 USE_OPENSSL=	yes
 
@@ -55,13 +56,13 @@ USES+=	ncurses
 OPTIONS_UNSET=	NLS DOCS EXAMPLES
 .else
 OPTIONS_DEFINE=	COMPRESSED_FOLDERS SASL DEBUG DOCS EXAMPLES FLOCK \
-		GPGME GREETING_PATCH HTML ICONV IDN IFDEF_PATCH \
+		FORCEBASE64 GPGME GREETING_PATCH HTML ICONV IDN IFDEF_PATCH \
 		IMAP_HEADER_CACHE LOCALES_FIX MAILBOX_MANPAGES \
 		MAILDIR_HEADER_CACHE MAILDIR_MTIME_PATCH \
 		MIXMASTER NLS NNTP PARENT_CHILD_MATCH_PATCH \
 		QUOTE_PATCH REVERSE_REPLY_PATCH SIDEBAR_PATCH \
-		SIGNATURE_MENU SMART_DATE SMIME_OUTLOOK_COMPAT SMTP \
-		TOKYOCABINET TRASH_PATCH URLVIEW XML
+		SMART_DATE SMIME_OUTLOOK_COMPAT SMTP TOKYOCABINET \
+		TRASH_PATCH URLVIEW XML
 
 OPTIONS_SINGLE=	GSSAPI SCREEN
 OPTIONS_RADIO=	SPELL
@@ -73,24 +74,24 @@ COMPRESSED_FOLDERS_DESC=	Compressed folders
 SASL_DESC=	SASL authentication
 DEBUG_DESC=	Debugging capabilities
 FLOCK_DESC=	flock() usage
+FORCEBASE64_DESC=	Option to force base64 encoding for compose
 GPGME_DESC=	Gpgme interface
 GREETING_PATCH_DESC=	Greeting support
 HTML_DESC=	HTML documentation
+IDN_DESC+=	International Domain Names (implies ICONV)
 IFDEF_PATCH_DESC=	ifdef feature
 IMAP_HEADER_CACHE_DESC=	IMAP header cache
 LOCALES_FIX_DESC=	Locales fix
 MAILBOX_MANPAGES_DESC=	Install mbox.5/mmdf.5 manpages
 MAILDIR_HEADER_CACHE_DESC=	Maildir header cache
 MAILDIR_MTIME_PATCH_DESC=	Maildir mtime patch
-MBOX_HOOK_PATCH_DESC=	Enhanced mbox-hook
 MIXMASTER_DESC=	Mixmaster support
 NCURSES_DESC=	Ncurses support
-NLS_DESC=	Native language support
+NLS_DESC=	Native language support (implies ICONV)
 PARENT_CHILD_MATCH_PATCH_DESC=	Parent/child match
 QUOTE_PATCH_DESC=	Extended quoting
 REVERSE_REPLY_PATCH_DESC=	Reverse_reply
 SIDEBAR_PATCH_DESC=	Sidebar support
-SIGNATURE_MENU_DESC=	Signature menu
 SLANG_DESC=	SLANG support
 SMART_DATE_DESC=	Dynamic date formatting with "%@"
 SMIME_OUTLOOK_COMPAT_DESC=	SMIME outlook compatibility
@@ -108,15 +109,14 @@ OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV IDN IFDEF_PATCH \
 		SASL SMTP TRASH_PATCH URLVIEW XML GSSAPI_NONE
 .endif
 
-RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
 .if !defined (LITE)
-RUN_DEPENDS+=	${LOCALBASE}/etc/mailcap:${PORTSDIR}/mail/metamail
-ASPELL_BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
-ASPELL_RUN_DEPENDS=		aspell:${PORTSDIR}/textproc/aspell
-ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
-ISPELL_RUN_DEPENDS=		ispell:${PORTSDIR}/textproc/aspell-ispell
-URLVIEW_RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
+ASPELL_BUILD_DEPENDS=	aspell:textproc/aspell
+ASPELL_RUN_DEPENDS=		aspell:textproc/aspell
+ISPELL_BUILD_DEPENDS=	ispell:textproc/aspell-ispell
+ISPELL_RUN_DEPENDS=		ispell:textproc/aspell-ispell
+URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
 .endif
 
 .if defined (LITE)
@@ -128,20 +128,21 @@ PLIST_SUB+=	XML="@comment "
 PLIST_SUB+=	NNTP="@comment "
 # XXX bug in bpm ?
 PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=	--disable-nls --disable-iconv --without-idn
 .endif
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
 # Handle ncurses/ncurses-port/slang
 SLANG_CONFIGURE_ON=	--with-slang=${LOCALBASE}
-SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_VARS=	PKGMESSAGE=${FILESDIR}/pkg-message.slang
 
 NCURSES_USES=	ncurses
 
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
+NLS_IMPLIES=	ICONV
 
 # Handle GSSAPI from various places
 GSSAPI_BASE_USES=	gssapi
@@ -160,11 +161,11 @@ ASPELL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aspell
 ##PARENT_CHILD_MATCH_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-parent-child-match
 REVERSE_REPLY_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-reverse_reply
 
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
 
-#MIXMASTER_BUILD_DEPENDS=	mixmaster:${PORTSDIR}/mail/mixmaster
-MIXMASTER_RUN_DEPENDS=	mixmaster:${PORTSDIR}/mail/mixmaster
+#MIXMASTER_BUILD_DEPENDS=	mixmaster:mail/mixmaster
+MIXMASTER_RUN_DEPENDS=	mixmaster:mail/mixmaster
 MIXMASTER_CONFIGURE_ON=	--with-mixmaster=${LOCALBASE}
 
 SMIME_OUTLOOK_COMPAT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-smime-outlook
@@ -175,11 +176,12 @@ FLOCK_CONFIGURE_OFF=	--disable-flock
 
 LOCALES_FIX_CONFIGURE_ON=	--enable-locales-fix
 
-IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_ON=	--with-idn
 IDN_CONFIGURE_OFF=	--without-idn
+IDN_IMPLIES=	ICONV
 
-GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_ON=	--enable-gpgme
 GPGME_CONFIGURE_OFF=	--disable-gpgme
 
@@ -196,7 +198,7 @@ QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 		patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
 QUOTE_PATCH_VARS=	XML_NEEDED=yes
 
-NNTP_DISTFILES= patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv \
+NNTP_DISTFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv \
 		patch-${VVV_PATCH_VERSION}.vvv.nntp_ru.gz:vvv
 NNTP_CONFIGURE_ON=	--enable-nntp
 NNTP_VARS=	XML_NEEDED=yes
@@ -206,17 +208,11 @@ SIDEBAR_PATCH_VARS=	XML_NEEDED=yes
 
 DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
-SIGNATURE_MENU_IGNORE=	SIGNATURE_MENU does not work at the moment
-SIGNATURE_MENU_VARS=	XML_NEEDED=yes
-SIGNATURE_MENU_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-signature-menu
-
-MBOX_HOOK_PATCH_IGNORE=	MBOX_HOOK_PATCH does not work at the moment
-MBOX_HOOK_PATCH_PATCHFILES=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
-
 .include <bsd.port.options.mk>
 
 DW_PATCH_VERSION=	1.5.6
-DW_MBOX_PATCH_VERSION=	1.5.18
+VVV_PATCH_VERSION:=	1.6.0
+RR_PATCH_VERSION:=	1.6.0
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -225,9 +221,6 @@ RR_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if !defined(DW_PATCH_VERSION)
 DW_PATCH_VERSION=	${PORTVERSION}
-.endif
-.if !defined(DW_MBOX_PATCH_VERSION)
-DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .endif
 
 # XXX
@@ -269,6 +262,9 @@ post-patch-NNTP-on:
 .if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime-nntp
 .endif
+.if ${PORT_OPTIONS:MFORCEBASE64}
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-forcebase64-nntp
+.endif
 
 post-patch-NNTP-off:
 .if ${PORT_OPTIONS:MSIDEBAR_PATCH}
@@ -278,6 +274,12 @@ post-patch-NNTP-off:
 .if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime
 .endif
+.if ${PORT_OPTIONS:MFORCEBASE64}
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-forcebase64
+.endif
+
+post-install:
+	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
 
 post-install-NNTP-on:
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog.nntp ${STAGEDIR}${DOCSDIR}
@@ -302,7 +304,6 @@ post-patch::
 		${WRKSRC}/contrib/Makefile.am
 
 pre-configure::
-	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
 	@${RM} -f ${WRKSRC}/missing
 .if defined(WITH_KRB5_SYS)
 	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
@@ -313,9 +314,9 @@ pre-configure::
 .if ${PORT_OPTIONS:MIMAP_HEADER_CACHE} || ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
 .if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --without-bdb --with-tokyocabinet
-LIB_DEPENDS+=		libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS+=		libtokyocabinet.so:databases/tokyocabinet
 .else
-USE_BDB=		42+
+USES+=			bdb:42+
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
 CONFIGURE_SED=	-e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /'
 pre-configure::
@@ -326,9 +327,9 @@ CONFIGURE_ARGS+=	--disable-hcache
 .endif
 
 .if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		lynx:${PORTSDIR}/www/lynx
+BUILD_DEPENDS+=	xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
+		lynx:www/lynx
 .else
 pre-build::
 	@${REINPLACE_CMD} -E -e 's|-xsltproc|@-true xsltproc|g' \

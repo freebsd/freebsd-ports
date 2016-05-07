@@ -1,0 +1,45 @@
+--- src/Makefile.orig	2010-02-02 14:00:41 UTC
++++ src/Makefile
+@@ -20,8 +20,8 @@ LIBS           = 
+ # How they are invoked on the compile line (eg: -lspecial)
+ LLIBS          =
+ 
+-# Local additions for the CFLAG options
+-LOCAL_CFLAGS   = -Wall 
++# Local additions for the CXXFLAGS options
++#LOCAL_CXXFLAGS   = -Wall 
+ #-static
+ 
+ 
+@@ -34,8 +34,8 @@ BIN           = ${PROJECT_ROOT}/bin
+ INCLUDE       = ${PROJECT_ROOT}/include
+ 
+ DEBUG         = DEBUG
+-CFLAGS        = -I${INCLUDE} ${LOCAL_CFLAGS}
+-CC            = g++ ${CFLAGS}
++CXXFLAGS      += -I${INCLUDE} ${LOCAL_CXXFLAGS}
++CXX           ?= g++
+ 
+ MAKEFILE      = Makefile
+ 
+@@ -43,10 +43,10 @@ MAKEFILE      = Makefile
+ # Suffix rules
+ 
+ .cc.o:
+-	${CC} -c $<
++	${CXX} -c ${CXXFLAGS} $<
+ 
+ .cpp.o:
+-	${CC} -c $<
++	${CXX} -c ${CXXFLAGS} $<
+ 
+ # Target dependencies
+ 
+@@ -65,6 +65,6 @@ clean :
+ ${OBJ} : ${MAKEFILE}
+ 
+ ${EXECUTABLE} : ${OBJS}
+-	${CC} ${OBJS} ${LIBS} -o ${EXECUTABLE}	
++	${CXX} ${OBJS} ${LIBS} -o ${EXECUTABLE}	
+ 	chmod 755 ${EXECUTABLE}
+ 

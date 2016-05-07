@@ -10,7 +10,7 @@ MASTER_SITES=	http://immure.com/ports/tkmerge/
 MAINTAINER=	bob@immure.com
 COMMENT=	Tk script to aid in merging changes between two files
 
-RUN_DEPENDS+=	${LOCALBASE}/lib/bwidget/label.tcl:${PORTSDIR}/x11-toolkits/bwidget
+RUN_DEPENDS+=	${LOCALBASE}/lib/bwidget/label.tcl:x11-toolkits/bwidget
 
 USES=		tk:run
 

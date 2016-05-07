@@ -11,9 +11,11 @@ COMMENT=	System for detecting network intruders in real-time
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison \
-		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/bison:devel/bison \
+		${LOCALBASE}/bin/swig:devel/swig13
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 USES=		cmake:outsource compiler:c++11-lang perl5 python
 
@@ -69,7 +71,7 @@ OPTIONS_EXCLUDE=NLS DOCS
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBROCCOLI}
-LIB_DEPENDS+=	libbroccoli.so:${PORTSDIR}/security/broccoli
+LIB_DEPENDS+=	libbroccoli.so:security/broccoli
 .endif
 
 .if ${PORT_OPTIONS:MBROCTL}
@@ -79,10 +81,10 @@ IGNORE=		the BROCTL option requires BROCCOLI
 .if empty(PORT_OPTIONS:MIPSUMDUMP)
 IGNORE=		the BROCTL option requires IPSUMDUMP
 .endif
-BUILD_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
-RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+BUILD_DEPENDS+=	${LOCALBASE}/bin/bash:shells/bash \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+RUN_DEPENDS+=	${LOCALBASE}/bin/bash:shells/bash \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 PLIST_SUB+=	BROCTL=""
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-D INSTALL_BROCTL:BOOL=true
@@ -93,13 +95,13 @@ PLIST_SUB+=	BROCTL="@comment "
 
 .if ${PORT_OPTIONS:MBROKER}
 CMAKE_ARGS+=	-D ENABLE_BROKER:BOOL=true
-BUILD_DEPENDS+=	caf>=0.14.1:${PORTSDIR}/devel/caf
+BUILD_DEPENDS+=	caf>=0.14.1:devel/caf
 PLIST_SUB+=	BROKER=""
 
 .if ${OSVERSION} < 1001000
 # Bro 2.4 with BROKER requires caf, clang and libc++
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang++34:${PORTSDIR}/lang/clang34 \
-		${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang++34:lang/clang34 \
+		${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
 
 CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1 -L${LOCALBASE}/lib
 CXX=		${LOCALBASE}/bin/clang++34
@@ -116,24 +118,24 @@ CMAKE_ARGS+=	-D ENABLE_DEBUG:BOOL=false
 .endif
 
 .if ${PORT_OPTIONS:MLBL_HF}
-RUN_DEPENDS+=	${LOCALBASE}/bin/hf:${PORTSDIR}/sysutils/lbl-hf
+RUN_DEPENDS+=	${LOCALBASE}/bin/hf:sysutils/lbl-hf
 .endif
 
 .if ${PORT_OPTIONS:MLBL_CF}
-RUN_DEPENDS+=	${LOCALBASE}/bin/cf:${PORTSDIR}/sysutils/lbl-cf
+RUN_DEPENDS+=	${LOCALBASE}/bin/cf:sysutils/lbl-cf
 .endif
 
 .if ${PORT_OPTIONS:MPERFTOOLS}
 CMAKE_ARGS+=	-D ENABLE_PERFTOOLS:BOOL=true
-RUN_DEPENDS+=	${LOCALBASE}/bin/pprof:${PORTSDIR}/devel/google-perftools
+RUN_DEPENDS+=	${LOCALBASE}/bin/pprof:devel/google-perftools
 .else
 CMAKE_ARGS+=	-D ENABLE_PERFTOOLS:BOOL=false
 .endif
 
 .if ${PORT_OPTIONS:MPORTS_SSL}
 CMAKE_ARGS+=	-D CMAKE_EXE_LINKER_FLAGS="${OPENSSL_LDFLAGS}"
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcrypto.so:${PORTSDIR}/security/openssl
-RUN_DEPENDS+=	${LOCALBASE}/lib/libcrypto.so:${PORTSDIR}/security/openssl
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcrypto.so:security/openssl
+RUN_DEPENDS+=	${LOCALBASE}/lib/libcrypto.so:security/openssl
 .else
 .if defined(WITH_OPENSSL_PORT)
 IGNORE=		the SSL option is requred when WITH_OPENSSL_PORT is enabled
@@ -141,8 +143,8 @@ IGNORE=		the SSL option is requred when WITH_OPENSSL_PORT is enabled
 .endif
 
 .if ${PORT_OPTIONS:MIPSUMDUMP}
-BUILD_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
-RUN_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
+BUILD_DEPENDS+=	ipsumdump:net/ipsumdump
+RUN_DEPENDS+=	ipsumdump:net/ipsumdump
 .endif
 
 post-install-BROCTL-on:

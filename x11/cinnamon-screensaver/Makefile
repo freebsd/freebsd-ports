@@ -9,14 +9,14 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen saver and locker
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
-		libcinnamon-desktop.so:${PORTSDIR}/x11/cinnamon-desktop \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	pam_helper:${PORTSDIR}/security/pam_helper \
-		gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		gnome-keyring>=0:${PORTSDIR}/security/gnome-keyring
+BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas \
+		gnome-autogen.sh:devel/gnome-common
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libcinnamon-desktop.so:x11/cinnamon-desktop \
+		libdbus-glib-1.so:devel/dbus-glib
+RUN_DEPENDS=	pam_helper:security/pam_helper \
+		gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas \
+		gnome-keyring>=0:security/gnome-keyring
 
 USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GITHUB=	yes

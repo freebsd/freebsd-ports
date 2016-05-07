@@ -11,8 +11,8 @@ COMMENT=	GTK2 (bootable) CD ISO Image editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libiniparser.so:${PORTSDIR}/devel/iniparser
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libiniparser.so:devel/iniparser
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		desktop-file-utils gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
@@ -45,8 +45,6 @@ do-install:
 	(cd ${WRKSRC}/po && ${INSTALL_DATA} ${i}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES/isomaster.mo)
 .endfor
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} isomaster.desktop \
-		${STAGEDIR}${DESKTOPDIR})
+	${INSTALL_DATA} ${WRKSRC}/isomaster.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>

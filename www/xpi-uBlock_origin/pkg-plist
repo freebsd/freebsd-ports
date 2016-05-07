@@ -18,8 +18,6 @@
 %%XPI_XPIDIR%%/assets/ublock/filter-lists.json
 %%XPI_XPIDIR%%/assets/ublock/filters.txt
 %%XPI_XPIDIR%%/assets/ublock/privacy.txt
-%%XPI_XPIDIR%%/assets/ublock/redirect-resources.txt
-%%XPI_XPIDIR%%/assets/ublock/redirect.txt
 %%XPI_XPIDIR%%/assets/ublock/resources.txt
 %%XPI_XPIDIR%%/assets/ublock/unbreak.txt
 %%XPI_XPIDIR%%/background.html
@@ -47,6 +45,7 @@
 %%XPI_XPIDIR%%/epicker.html
 %%XPI_XPIDIR%%/frameModule.js
 %%XPI_XPIDIR%%/frameScript.js
+%%XPI_XPIDIR%%/frameScript0.js
 %%XPI_XPIDIR%%/icon.png
 %%XPI_XPIDIR%%/img/browsericons/icon16-off.svg
 %%XPI_XPIDIR%%/img/browsericons/icon16.svg

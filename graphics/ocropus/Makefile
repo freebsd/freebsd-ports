@@ -10,10 +10,10 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	The OCRopus(tm) open source document analysis and OCR system
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libiulib.so:${PORTSDIR}/graphics/iulib \
-		libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libiulib.so:graphics/iulib \
+		libgsl.so:math/gsl
 
 WRKSRC=		${WRKDIR}/ocropus-0.4/ocropus
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=--without-SDL
 .endif
 
 .if ${PORT_OPTIONS:MLEPTONICA}
-LIB_DEPENDS+=	liblept.so:${PORTSDIR}/graphics/leptonica
+LIB_DEPENDS+=	liblept.so:graphics/leptonica
 .else
 CONFIGURE_ARGS+=--without-leptonica
 .endif

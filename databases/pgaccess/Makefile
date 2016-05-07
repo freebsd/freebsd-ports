@@ -11,7 +11,7 @@ COMMENT=	Powerful PostgreSQL database GUI administration tool and toolkit
 
 LICENSE=	BSD4CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl:${PORTSDIR}/databases/pgtcl
+RUN_DEPENDS=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl:databases/pgtcl
 
 USES=		pgsql tk:84+ tar:xz
 

@@ -11,6 +11,7 @@ bin/web-service-request
 %%SITE_PERL%%/GeoIP2/Model/ConnectionType.pm
 %%SITE_PERL%%/GeoIP2/Model/Country.pm
 %%SITE_PERL%%/GeoIP2/Model/Domain.pm
+%%SITE_PERL%%/GeoIP2/Model/Enterprise.pm
 %%SITE_PERL%%/GeoIP2/Model/ISP.pm
 %%SITE_PERL%%/GeoIP2/Model/Insights.pm
 %%SITE_PERL%%/GeoIP2/Record/City.pm
@@ -45,6 +46,7 @@ bin/web-service-request
 %%PERL5_MAN3%%/GeoIP2::Model::ConnectionType.3.gz
 %%PERL5_MAN3%%/GeoIP2::Model::Country.3.gz
 %%PERL5_MAN3%%/GeoIP2::Model::Domain.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::Enterprise.3.gz
 %%PERL5_MAN3%%/GeoIP2::Model::ISP.3.gz
 %%PERL5_MAN3%%/GeoIP2::Model::Insights.3.gz
 %%PERL5_MAN3%%/GeoIP2::Record::City.3.gz

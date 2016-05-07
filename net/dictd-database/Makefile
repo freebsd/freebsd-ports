@@ -21,7 +21,7 @@ DISTFILES=	devils-dict-pre.tar.gz \
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Dictd words database
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd
+RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:net/dictd
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

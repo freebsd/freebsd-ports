@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Information about running processes on BSD platforms
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor
+RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

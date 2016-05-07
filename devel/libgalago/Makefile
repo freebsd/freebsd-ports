@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.galago-project.org/files/releases/source/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Galago desktop presence library
 
-LIB_PC_DEPENDS=	dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
+LIB_PC_DEPENDS=	dbus-glib-1.pc:devel/dbus-glib
 
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}

@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>=0:textproc/flex
 CONFIGURE_ENV+=	ac_cv_prog_LEX="${LOCALBASE}/bin/flex"
 .endif
 

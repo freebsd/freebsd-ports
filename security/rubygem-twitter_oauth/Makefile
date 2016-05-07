@@ -12,13 +12,12 @@ COMMENT=	Twitter OAuth REST API client library for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-json>=1.8.0:${PORTSDIR}/devel/rubygem-json \
-		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
-		rubygem-oauth>=0.4.7:${PORTSDIR}/net/rubygem-oauth
+RUN_DEPENDS=	rubygem-json>=1.8.0:devel/rubygem-json \
+		rubygem-mime-types>=1.16:misc/rubygem-mime-types \
+		rubygem-oauth>=0.4.7:net/rubygem-oauth
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

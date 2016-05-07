@@ -13,7 +13,7 @@ COMMENT=	Command line client for the musicpd
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
+LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
 USES=		pkgconfig tar:xz
 GNU_CONFIGURE=	yes

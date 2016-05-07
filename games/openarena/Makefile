@@ -7,14 +7,16 @@ PORTREVISION=	2
 PORTEPOCH=	1
 MASTER_SITES=	SF/oarena/src \
 		http://files.poulsander.com/~poul19/public_files/oa/dev088/
-DISTNAME=	${PORTNAME}-engine-source-0.8.8
+DISTNAME=	${PORTNAME}-engine-source-${GAMEVERSION}
 # Master port defines EXTRACT_SUFX unless already defined
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	kami@freebsd.org
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
 
-RUN_DEPENDS=	${DATADIR}/${Q3BASE}/pak0.pk3:${PORTSDIR}/games/openarena-data
+LICENSE?=	GPLv2
+
+RUN_DEPENDS=	${DATADIR}/${Q3BASE}/pak0.pk3:games/openarena-data
 
 MASTERDIR=	${.CURDIR}/../ioquake3
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
@@ -37,5 +39,8 @@ Q3BASE=		baseoa
 Q3DIR=		${DATADIR}
 # No icon included with OpenArena
 Q3ICON=
+
+pre-patch:
+	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 .include "${MASTERDIR}/Makefile"

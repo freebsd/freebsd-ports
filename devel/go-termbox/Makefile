@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	termbox
-PORTVERSION=	0.0.0.20140715
+PORTVERSION=	0.0.0.20160123
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
@@ -11,15 +11,14 @@ COMMENT=	Pure Go termbox implementation
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/mattn/go-runewidth.a:${PORTSDIR}/devel/go-runewidth
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/mattn/go-runewidth.a:devel/go-runewidth
 
+USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	nsf
 GH_PROJECT=	${PORTNAME}-go
-GH_TAGNAME=	e9227d6
+GH_TAGNAME=	362329b
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

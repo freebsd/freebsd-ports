@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	entangle
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://entangle-photo.org/download/sources/
 
@@ -12,16 +11,16 @@ COMMENT=	Digital camera tethered control and capture program
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/share/icons/mate/scalable/devices/camera-photo-symbolic.svg:${PORTSDIR}/x11-themes/mate-icon-theme \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libgexiv2.so:${PORTSDIR}/graphics/gexiv2 \
-		libraw_r.so:${PORTSDIR}/graphics/libraw \
-		libpeas-1.0.so:${PORTSDIR}/devel/libpeas
+BUILD_DEPENDS=	${LOCALBASE}/share/icons/mate/scalable/devices/camera-photo-symbolic.svg:x11-themes/mate-icon-theme \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2 \
+		libdbus-glib-1.so:devel/dbus-glib \
+		liblcms2.so:graphics/lcms2 \
+		libgexiv2.so:graphics/gexiv2 \
+		libraw_r.so:graphics/libraw \
+		libpeas-1.0.so:devel/libpeas
 RUN_DEPENDS:=	${BUILD_DEPENDS:Nitstool*} \
-		${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PORTSDIR}/devel/py3-libpeas
+		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
 
 USES=		gettext-tools gmake libtool pkgconfig python:3
 GNU_CONFIGURE=	yes

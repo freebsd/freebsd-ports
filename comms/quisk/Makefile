@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quisk
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://james.ahlstrom.name/quisk/ \
 		LOCAL/shurd
@@ -12,10 +12,10 @@ COMMENT=	Software Defined Radio (SDR)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libportaudio.so:${PORTSDIR}/audio/portaudio \
-		libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libportaudio.so:audio/portaudio \
+		libasound.so:audio/alsa-lib \
+		libpulse.so:audio/pulseaudio
 
 USES=		python
 USE_PYTHON=	distutils autoplist

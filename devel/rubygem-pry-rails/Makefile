@@ -12,11 +12,10 @@ COMMENT=	Use Pry as your rails console
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	rubygem-pry>=0.9.10:${PORTSDIR}/devel/rubygem-pry
+RUN_DEPENDS=	rubygem-pry>=0.9.10:devel/rubygem-pry
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

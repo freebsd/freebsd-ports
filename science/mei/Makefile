@@ -12,8 +12,8 @@ COMMENT=	Code_Saturne Mathematical Expression Interpreter
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libbft.so:${PORTSDIR}/science/bft
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+LIB_DEPENDS=	libbft.so:science/bft
+BUILD_DEPENDS=	swig:devel/swig13
 
 USES=		libtool python
 USE_LDCONFIG=	yes

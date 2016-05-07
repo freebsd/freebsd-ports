@@ -1,0 +1,7 @@
+Capistrano::Harrow is a plugin for tighter integration with Harrow.io whilst
+using Capistrano.
+
+Harrow.io is a continuous integration and deployment solution for people who
+like software that works like Capistrano does.
+
+WWW: https://github.com/harrowio/capistrano-harrow

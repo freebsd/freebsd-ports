@@ -108,13 +108,11 @@ squid_prestart()
 
 squid_reload()
 {
-
 	$command $required_args $squid_flags -k reconfigure
 }
 
 squid_configtest()
 {
-
 	echo "Performing sanity check on ${name} configuration."
 	if $command $required_args $squid_flags -k check; then
 		echo "Configuration for ${name} passes."
@@ -142,7 +140,7 @@ squid_getpid()
 squid_prestop()
 {
 	command_args="$command_args -k shutdown"
-	$command $required_args $squid_flags -k check 2>/dev/null
+	squid_configtest
 }
 
 load_rc_config $name

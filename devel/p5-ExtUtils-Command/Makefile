@@ -13,6 +13,8 @@ COMMENT=	Utilities to replace common UNIX commands
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+CONFLICTS=	p5-ExtUtils-MakeMaker-[7-9].[1-9]*
+
 USES=		perl5
 USE_PERL5=	configure
 

@@ -29,6 +29,8 @@ include/node/openssl/archs/linux-ppc/opensslconf.h
 include/node/openssl/archs/linux-ppc64/opensslconf.h
 include/node/openssl/archs/linux-x32/opensslconf.h
 include/node/openssl/archs/linux-x86_64/opensslconf.h
+include/node/openssl/archs/linux32-s390x/opensslconf.h
+include/node/openssl/archs/linux64-s390x/opensslconf.h
 include/node/openssl/archs/solaris-x86-gcc/opensslconf.h
 include/node/openssl/archs/solaris64-x86_64-gcc/opensslconf.h
 include/node/openssl/asn1.h
@@ -120,6 +122,7 @@ include/node/uv-version.h
 include/node/uv-win.h
 include/node/uv.h
 include/node/v8-debug.h
+include/node/v8-experimental.h
 include/node/v8-platform.h
 include/node/v8-profiler.h
 include/node/v8-testing.h

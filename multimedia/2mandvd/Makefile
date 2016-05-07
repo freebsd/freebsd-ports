@@ -4,7 +4,7 @@
 PORTNAME=	2ManDVD
 PORTVERSION=	1.8.5
 PORTREVISION=	2
-CATEGORIES=	multimedia kde
+CATEGORIES=	multimedia
 MASTER_SITES=	http://download.tuxfamily.org/2mandvd/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,21 +12,21 @@ COMMENT=	DVD authoring and slideshow tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
-		notify-send:${PORTSDIR}/devel/libnotify \
-		exif:${PORTSDIR}/graphics/exif \
-		netpbm>=10.26:${PORTSDIR}/graphics/netpbm \
-		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		ffmpegthumbnailer:${PORTSDIR}/multimedia/ffmpegthumbnailer \
-		mencoder:${PORTSDIR}/multimedia/mencoder \
-		ppmtoy4m:${PORTSDIR}/multimedia/mjpegtools \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
-		tcprobe:${PORTSDIR}/multimedia/transcode \
-		xine:${PORTSDIR}/multimedia/xine \
-		bash:${PORTSDIR}/shells/bash \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+RUN_DEPENDS=	sox:audio/sox \
+		notify-send:devel/libnotify \
+		exif:graphics/exif \
+		netpbm>=10.26:graphics/netpbm \
+		dvdauthor:multimedia/dvdauthor \
+		ffmpegthumbnailer:multimedia/ffmpegthumbnailer \
+		mencoder:multimedia/mencoder \
+		ppmtoy4m:multimedia/mjpegtools \
+		mplayer:multimedia/mplayer \
+		tcprobe:multimedia/transcode \
+		xine:multimedia/xine \
+		bash:shells/bash \
+		cdrecord:sysutils/cdrtools \
+		growisofs:sysutils/dvd+rw-tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -61,18 +61,16 @@ post-patch:
 		's|Ne slideshow|New slideshow|' ${WRKSRC}/2mandvd_en.ts
 
 pre-build:
-	(cd ${WRKSRC} && ${LRELEASE} 2mandvd_en.ts)
+	${LRELEASE} ${WRKSRC}/2mandvd_en.ts
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} 2ManDVD ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/2ManDVD ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} fake.pl ${STAGEDIR}${DATADIR})
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.qm ${STAGEDIR}${DATADIR})
+	${INSTALL_SCRIPT} ${WRKSRC}/fake.pl ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.qm ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} Bibliotheque ${STAGEDIR}${DATADIR})
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} 2ManDVD.desktop \
-		${STAGEDIR}${DESKTOPDIR})
-	(cd ${WRKSRC}/Interface && ${INSTALL_DATA} mandvdico.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps)
+	${INSTALL_DATA} ${WRKSRC}/2ManDVD.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/Interface/mandvdico.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

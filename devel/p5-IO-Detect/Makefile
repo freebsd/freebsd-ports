@@ -14,11 +14,11 @@ COMMENT=	Detect if a given scalar is a filehandle
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
+		p5-URI>=0:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
+TEST_DEPENDS=	p5-IO-All>=0:devel/p5-IO-All \
+		p5-Path-Class>=0:devel/p5-Path-Class
 
 CONFLICTS_INSTALL=	p5-Scalar-Does-0.[1-9]*
 

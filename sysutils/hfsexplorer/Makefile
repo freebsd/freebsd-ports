@@ -11,7 +11,7 @@ COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS=	ant:devel/apache-ant
 
 DESKTOP_ENTRIES="hfsexplorer" "reader Mac-formatted harddisk" \
 		"${DATADIR}/res/icon.png" "${PORTNAME}" \

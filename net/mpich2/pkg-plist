@@ -98,11 +98,7 @@ bin/parkill
 %%JAVA%%bin/slog2navigator
 %%JAVA%%bin/slog2print
 %%JAVA%%bin/slog2updater
-@unexec if cmp -s %D/etc/mpd.conf %D/etc/mpd.conf.dist ; then rm -f %D/etc/mpd.conf ; fi
-@mode 600
-etc/mpd.conf.dist
-@exec if [ ! -f %D/etc/mpd.conf ]; then cp -p %D/%F %B/mpd.conf; fi
-@mode
+@sample(,,600) etc/mpd.conf.dist etc/mpd.conf
 etc/mpe_callstack_ldflags.conf
 etc/mpe_f77env.conf
 etc/mpe_graphics.conf

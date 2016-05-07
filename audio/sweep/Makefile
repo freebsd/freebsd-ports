@@ -13,11 +13,11 @@ COMMENT=	Sound editor for the GNOME/GTK+2 desktop
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libspeex.so:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	libmad.so:audio/libmad \
+		libsamplerate.so:audio/libsamplerate \
+		libsndfile.so:audio/libsndfile \
+		libvorbis.so:audio/libvorbis \
+		libspeex.so:audio/speex
 
 USES=		pathfix gettext pkgconfig gmake tar:bzip2 libtool \
 		desktop-file-utils

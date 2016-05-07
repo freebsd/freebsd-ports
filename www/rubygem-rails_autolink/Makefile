@@ -11,11 +11,10 @@ COMMENT=	Extraction of the auto_link method from rails, removed in 3.1
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rails4>=${PORTVERSION}:${PORTSDIR}/www/rubygem-rails4
+RUN_DEPENDS=	rubygem-rails4>=${PORTVERSION}:www/rubygem-rails4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

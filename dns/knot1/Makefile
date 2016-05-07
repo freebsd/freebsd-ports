@@ -13,8 +13,8 @@ COMMENT=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	flex>=2.5.35_1:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	liburcu.so:${PORTSDIR}/sysutils/liburcu
+BUILD_DEPENDS=	flex>=2.5.35_1:textproc/flex
+LIB_DEPENDS=	liburcu.so:sysutils/liburcu
 
 CONFLICTS=	knot-2.* knot2-.*
 
@@ -48,14 +48,14 @@ DNSTAP_DESC=		dnstap support (see dnstap.info)
 LMDB_DESC=		Enable LMDB backend
 
 DNSTAP_CONFIGURE_ENABLE=	dnstap
-DNSTAP_LIB_DEPENDS=	libfstrm.so:${PORTSDIR}/devel/fstrm \
-			libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
+			libprotobuf-c.so:devel/protobuf-c
 
 IDN_CONFIGURE_WITH=	libidn
-IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 
 LMDB_CONFIGURE_ENABLE=	lmdb
-LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 post-patch:
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \

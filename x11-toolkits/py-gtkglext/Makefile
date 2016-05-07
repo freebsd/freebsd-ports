@@ -12,9 +12,9 @@ DISTNAME=	pygtkglext-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding for GtkGLExt
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-opengl
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-opengl
 
 USES=		gmake libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	pygtk2

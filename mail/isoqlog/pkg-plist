@@ -1,10 +1,6 @@
 bin/isoqlog
-@unexec if cmp -s %D/etc/isoqlog.conf %D/etc/isoqlog.conf-dist; then rm -f %D/etc/isoqlog.conf; fi
-etc/isoqlog.conf-dist
-@exec [ -f %B/isoqlog.conf ] || cp %B/%f %B/isoqlog.conf
-@unexec if cmp -s %D/etc/isoqlog.domains %D/etc/isoqlog.domains-dist; then rm -f %D/etc/isoqlog.domains; fi
-etc/isoqlog.domains-dist
-@exec [ -f %B/isoqlog.domains ] || cp %B/%f %B/isoqlog.domains
+@sample etc/isoqlog.conf-dist etc/isoqlog.conf
+@sample etc/isoqlog.domains-dist  etc/isoqlog.domains
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

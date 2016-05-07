@@ -12,7 +12,7 @@ COMMENT=	Bayesian spam filter written in Ruby
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}gdbm>=0:${PORTSDIR}/databases/ruby-gdbm
+RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}gdbm>=0:databases/ruby-gdbm
 
 NO_BUILD=	yes
 USE_RUBY=	yes
@@ -26,7 +26,7 @@ MECAB_DESC=	Part-of-Speech and Morphological Analyzer
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMECAB}
-RUN_DEPENDS+=	ja-${RUBY_PKGNAMEPREFIX}mecab>=0:${PORTSDIR}/japanese/ruby-mecab
+RUN_DEPENDS+=	ja-${RUBY_PKGNAMEPREFIX}mecab>=0:japanese/ruby-mecab
 .endif
 
 do-install:

@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	polyml
-PORTVERSION=	5.5.2
-PORTREVISION=	2
+PORTVERSION=	5.6
 CATEGORIES=	lang
-MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -14,9 +12,12 @@ COMMENT=	Fast open-source implementation of Standard ML
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+USE_GITHUB=	yes
+GH_TUPLE=	polyml:polyml:v5.6
 
 USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes

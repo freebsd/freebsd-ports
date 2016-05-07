@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	kamila@ksp.sk
 COMMENT=	Simple way of making tarsnap backups using the periodic system
 
-RUN_DEPENDS=    tarsnap:${PORTSDIR}/sysutils/tarsnap
+RUN_DEPENDS=    tarsnap:sysutils/tarsnap
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	anotherkamila

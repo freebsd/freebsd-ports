@@ -20,12 +20,12 @@ OPTIONS_DEFINE=	MYSQL PGSQL SQLITE ODBC
 OPTIONS_DEFAULT=MYSQL PGSQL SQLITE ODBC
 OPTIONS_SUB=	yes
 
-USES=		tcl:86
+USES=		tcl:86,tea
 USE_LDCONFIG=	yes
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} --with-tcloo=${TCL_LIBDIR} \
-		--prefix=${PREFIX} --exec-prefix=${PREFIX} \
-		--with-tdbc=${WRKDIR}/tdbc${PORTVERSION} --enable-threads \
+CONFIGURE_ARGS+=--with-tcloo=${TCL_LIBDIR} \
+		--with-tdbc=${WRKDIR}/tdbc${PORTVERSION} \
+		--enable-threads \
 		--mandir=${PREFIX}/man \
 		--includedir=${PREFIX}/include/tdbc
 PLIST_SUB+=	VERSION=${DISTVERSION} \
@@ -40,7 +40,7 @@ MYSQL_DISTFILES=	${PORTNAME}mysql${PORTVERSION}${EXTRACT_SUFX}
 
 # ODBC
 ODBC_VARS=		MODULES+=tdbcodbc
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_DISTFILES=		${PORTNAME}odbc${PORTVERSION}${EXTRACT_SUFX}
 
 # PostgreSQL
@@ -52,7 +52,7 @@ PGSQL_DISTFILES=	${PORTNAME}postgres${PORTVERSION}${EXTRACT_SUFX}
 SQLITE_VARS=		MODULES+=tdbcsqlite3
 SQLITE_DISTFILES=	${PORTNAME}sqlite3-${PORTVERSION}${EXTRACT_SUFX}
 SQLITE_PLIST_SUB=	TCL_LIBDIR="${TCL_LIBDIR:S/${LOCALBASE}\///}"
-SQLITE_RUN_DEPENDS=	${LOCALBASE}/lib/sqlite3/pkgIndex.tcl:${PORTSDIR}/databases/tcl-sqlite3
+SQLITE_RUN_DEPENDS=	${LOCALBASE}/lib/sqlite3/pkgIndex.tcl:databases/tcl-sqlite3
 
 .include <bsd.port.options.mk>
 

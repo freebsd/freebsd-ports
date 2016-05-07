@@ -2,7 +2,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	0.9.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -39,7 +39,7 @@ PORTEXAMPLES=	demo
 
 OPTIONS_DEFINE=	DOCS EXAMPLES FFMPEG FREI0R GTK2 JACK KDE4 QT4 \
 		SAMPLERATE SOX SWFDEC VDPAU VIDSTAB
-OPTIONS_DEFAULT=FFMPEG FREI0R GTK2 QT4 SAMPLERATE SOX SWFDEC VIDSTAB
+OPTIONS_DEFAULT=FFMPEG FREI0R GTK2 QT4 SAMPLERATE SOX SWFDEC VDPAU VIDSTAB
 OPTIONS_SUB=	yes
 
 GTK2_DESC=	Images and text rendering via GTK+ 2
@@ -49,43 +49,43 @@ SOX_DESC=	SoX audio effects support
 VIDSTAB_DESC=	Video stabilization support via Vid.Stab
 
 FFMPEG_SUFX=		# Currently empty.
-FFMPEG_LIB_DEPENDS=	libavformat${FFMPEG_SUFX}.so:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
+FFMPEG_LIB_DEPENDS=	libavformat${FFMPEG_SUFX}.so:multimedia/ffmpeg${FFMPEG_SUFX}
 FFMPEG_CONFIGURE_ENABLE=avformat
 FFMPEG_CONFIGURE_ON=	--avformat-suffix="${FFMPEG_SUFX}"
 
-FREI0R_BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+FREI0R_BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:graphics/frei0r
 FREI0R_CONFIGURE_ENABLE=frei0r
 
-GTK2_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+GTK2_LIB_DEPENDS=	libexif.so:graphics/libexif
 GTK2_USE=		GNOME=gdkpixbuf2,gtk20,pango
 GTK2_CONFIGURE_ENABLE=	gtk2
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
-JACK_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
+JACK_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 JACK_CONFIGURE_ENABLE=	jackrack
 
 KDE4_CONFIGURE_ENV=	PATH="${KDE4_PREFIX}/bin:$$PATH"
 KDE4_CONFIGURE_WITH=	kde
 
-QT4_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+QT4_LIB_DEPENDS=	libexif.so:graphics/libexif
 QT4_USE=		QT4=corelib,gui,opengl,svg,xml
 QT4_CONFIGURE_ENABLE=	qt
 QT4_CONFIGURE_ON=	--qt-libdir="${QT_LIBDIR}" \
 			--qt-includedir="${QT_INCDIR}"
 
-SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=resample
 
-SOX_LIB_DEPENDS=	libsox.so:${PORTSDIR}/audio/sox
+SOX_LIB_DEPENDS=	libsox.so:audio/sox
 SOX_CONFIGURE_ENABLE=	sox
 
-SWFDEC_LIB_DEPENDS=	libswfdec-0.8.so:${PORTSDIR}/graphics/swfdec
+SWFDEC_LIB_DEPENDS=	libswfdec-0.8.so:graphics/swfdec
 SWFDEC_CONFIGURE_ENABLE=swfdec
 
 VDPAU_CONFIGURE_ON=	--avformat-vdpau
 VDPAU_CONFIGURE_OFF=	--avformat-no-vdpau
 
-VIDSTAB_LIB_DEPENDS=	libvidstab.so:${PORTSDIR}/multimedia/vid.stab
+VIDSTAB_LIB_DEPENDS=	libvidstab.so:multimedia/vid.stab
 VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
 .include <bsd.port.options.mk>

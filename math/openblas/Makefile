@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.15
+PORTVERSION=	0.2.18
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	math
@@ -40,7 +40,7 @@ OPENMP_DESC=		Use OpenMP for threading
 AVX_DESC=		Support Advanced Vector Extensions (AVX)
 AVX2_DESC=		Support Advanced Vector Extensions 2 (AVX2)
 
-.if defined(PACKAGE_BUILDING)
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT=	DYNAMIC_ARCH
 .endif
 
@@ -76,11 +76,6 @@ USES+=		compiler:openmp
 BUILDFLAGS_THREAD+=	USE_OPENMP=1
 .endif
 
-.if ${PORT_OPTIONS:MQUAD_PRECISION}
-BROKEN=		QUAD_PRECISION is broken; please disable this option
-BUILDFLAGS+=	QUAD_PRECISION=1
-.endif
-
 .if ! ${PORT_OPTIONS:MAVX}
 BUILDFLAGS+=	NO_AVX=1
 .endif
@@ -114,8 +109,8 @@ post-patch:
 		${WRKSRC}/lapack-netlib/SRC/Makefile \
 		${WRKSRC}/lapack-netlib/SRC/VARIANTS/Makefile \
 		${WRKSRC}/lapack-netlib/TESTING/MATGEN/Makefile \
-		${WRKSRC}/lapack-netlib/lapacke/src/Makefile \
-		${WRKSRC}/lapack-netlib/lapacke/utils/Makefile \
+		${WRKSRC}/lapack-netlib/LAPACKE/src/Makefile \
+		${WRKSRC}/lapack-netlib/LAPACKE/utils/Makefile \
 		${WRKSRC}/reference/Makefile
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
 	-e 's+%%LDFLAGS%%+${LDFLAGS}+' \
@@ -123,7 +118,7 @@ post-patch:
 	-e 's+%%FIND%%+${FIND}+' \
 	-e 's+%%XARGS%%+${XARGS}+' \
 	-e 's+%%REINPLACE_CMD%%+${REINPLACE_CMD}+' \
-	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
+	-e 's+$${CROSS_SUFFIX}+${LOCALBASE}/bin/+' \
 		${WRKSRC}/Makefile.system
 .if ${PORT_OPTIONS:MOPENMP}
 	${REINPLACE_CMD} -e "s+OPENBLAS_NUM_THREADS+OMP_NUM_THREADS+g" \

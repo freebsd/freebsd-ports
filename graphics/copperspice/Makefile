@@ -11,9 +11,9 @@ COMMENT=	Modern cross-platform C++ GUI library (derived from Qt 4.8)
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	fc-cache:x11-fonts/fontconfig
+LIB_DEPENDS=	libaudio.so:audio/nas \
+		libfreetype.so:print/freetype2
 
 USES=		compiler:c++11-lib gmake iconv libtool pkgconfig tar:bz2
 USE_XORG=	ice sm x11 xcursor xext xi xinerama xrandr

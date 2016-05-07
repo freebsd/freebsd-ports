@@ -3,7 +3,7 @@
 
 PORTNAME=	assaultcube
 PORTVERSION=	1.2.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
 DISTNAME=	AssaultCube_v${PORTVERSION}
@@ -41,8 +41,8 @@ OPTIONS_DEFAULT=	CLIENT DEDICATED
 CLIENT_DESC=	Build client
 CLIENT_USES=		gettext-runtime openal:al
 CLIENT_USE=		GL=gl SDL=image,sdl XORG=x11
-CLIENT_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-			libcurl.so:${PORTSDIR}/ftp/curl
+CLIENT_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+			libcurl.so:ftp/curl
 CLIENT_ALL_TARGET=	client
 CLIENT_PLIST_FILES=	bin/${PORTNAME}_client libexec/${PORTNAME}_client \
 			share/pixmaps/${PORTNAME}.png
@@ -63,7 +63,7 @@ DESKTOP_ENTRIES="AssaultCube" "${COMMENT}" \
 .endif
 
 .if ${PORT_OPTIONS:MPORT_ENET}
-LIB_DEPENDS+=	libenet.so:${PORTSDIR}/net/enet
+LIB_DEPENDS+=	libenet.so:net/enet
 .else
 ALL_TARGET+=	libenet
 GNU_CONFIGURE=		yes

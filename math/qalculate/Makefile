@@ -13,9 +13,9 @@ COMMENT=	Multi-purpose desktop calculator (Gnome frontend)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libqalculate.so:${PORTSDIR}/math/libqalculate
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		wget:${PORTSDIR}/ftp/wget
+LIB_DEPENDS=	libqalculate.so:math/libqalculate
+RUN_DEPENDS=	gnuplot:math/gnuplot \
+		wget:ftp/wget
 
 USES=		gettext gmake
 USE_GNOME=	intltool libglade2 libgnome

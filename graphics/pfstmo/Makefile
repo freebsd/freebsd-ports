@@ -10,10 +10,10 @@ MASTER_SITES=	SF/pfstools/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Tone mapping operators
 
-LIB_DEPENDS=	libpfs-1.2.so:${PORTSDIR}/graphics/pfstools \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libpfs-1.2.so:graphics/pfstools \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libgsl.so:math/gsl
 
 PFS_CPPFLAGS=	-I${LOCALBASE}/include
 PFS_LDFLAGS=	-L${LOCALBASE}/lib

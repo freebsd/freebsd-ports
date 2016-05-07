@@ -23,6 +23,7 @@
     SUBDIR += bestfit
     SUBDIR += bibletime
     SUBDIR += biblical-curse
+    SUBDIR += binclock
     SUBDIR += biosfont-demos
     SUBDIR += birthday
     SUBDIR += bogosort
@@ -64,7 +65,6 @@
     SUBDIR += dejagnu
     SUBDIR += delay
     SUBDIR += detachtty
-    SUBDIR += diary-hercules
     SUBDIR += diction
     SUBDIR += digitemp
     SUBDIR += display
@@ -275,6 +275,7 @@
     SUBDIR += mtx
     SUBDIR += najitool
     SUBDIR += newer
+    SUBDIR += nms
     SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nut
@@ -419,6 +420,7 @@
     SUBDIR += shc
     SUBDIR += shuffle
     SUBDIR += shuffle-db
+    SUBDIR += seabios
     SUBDIR += since
     SUBDIR += skyutils
     SUBDIR += sloccount

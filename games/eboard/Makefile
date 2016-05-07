@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 EXTRAS=		1pl2 2
 USES=		shebangfix pkgconfig perl5 tar:bzip2
@@ -44,8 +44,8 @@ DESKTOP_ENTRIES="eboard" \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJOYSTICK}
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
-RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:devel/linux-js
+RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:devel/linux-js
 .endif
 
 post-extract:
@@ -76,7 +76,7 @@ post-install:
 .endfor
 .endif
 .for extra in ${EXTRAS}
-	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} EBOARDCONFIG=${STAGEDIR}${PREFIX}/bin/eboard-config ./${CONFIGURE_SCRIPT} --prefix=${PREFIX}
+	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} EBOARDCONFIG=${STAGEDIR}${PREFIX}/bin/eboard-config ${CONFIGURE_CMD} --prefix=${PREFIX}
 	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} ${MAKE_ENV} ${MAKE} install DATADIR=${STAGEDIR}${DATADIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${STAGEDIR}${PREFIX}/share/pixmaps/eboard.xpm

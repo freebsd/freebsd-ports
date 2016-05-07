@@ -21,11 +21,8 @@ MAKE_ARGS=	GCC="${CC}" GPP="${CXX}" \
 		CFLAGS="${CFLAGS} -c" LDFLAGS="${LDFLAGS}" \
 		TUN_DEV_FILE="src/tun_dev_freebsd.c"
 PLIST_FILES=	bin/hans
-
+TARGET_ORDER_OVERRIDE=	040:dos2unix # Fix formatting for 050:ask-license
 MAKE_JOBS_UNSAFE=	yes
-
-# Remove CRs before ask-license to fix formatting in dialog(1)
-post-extract:	dos2unix
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hans ${STAGEDIR}${PREFIX}/bin

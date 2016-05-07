@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcf77pi
-PORTVERSION=	3.4.2
+PORTVERSION=	3.5.0
 CATEGORIES=	comms
 
 MAINTAINER=	rene@FreeBSD.org
@@ -15,7 +15,7 @@ GH_ACCOUNT=	rene0
 
 OPTIONS_DEFINE=	DOXYGEN
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	all doxygen
 
 USES=		ncurses

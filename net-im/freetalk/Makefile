@@ -13,9 +13,9 @@ COMMENT=	GNU console based Jabber client
 
 OPTIONS_DEFINE=	NLS
 
-LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
-BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
+BUILD_DEPENDS=	guile>=1.8.6:lang/guile
+RUN_DEPENDS=	guile>=1.8.6:lang/guile
 
 USES=		pkgconfig
 USE_GNOME=	glib20

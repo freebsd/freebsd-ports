@@ -250,42 +250,18 @@ bin/hadoop
 %%EXAMPLESDIR%%/conf/task-log4j.properties
 %%EXAMPLESDIR%%/conf/ssl-client.xml.example
 %%EXAMPLESDIR%%/conf/ssl-server.xml.example
-@unexec if cmp -s %D/%%ETCDIR%%/capacity-scheduler.xml %D/%%EXAMPLESDIR%%/conf/capacity-scheduler.xml; then rm -f %D/%%ETCDIR%%/capacity-scheduler.xml; fi
-%%EXAMPLESDIR%%/conf/capacity-scheduler.xml
-@exec [ -f %D/%%ETCDIR%%/capacity-scheduler.xml ] || cp %D/%%EXAMPLESDIR%%/conf/capacity-scheduler.xml %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/configuration.xsl %D/%%EXAMPLESDIR%%/conf/configuration.xsl; then rm -f %D/%%ETCDIR%%/configuration.xsl; fi
-%%EXAMPLESDIR%%/conf/configuration.xsl
-@exec [ -f %D/%%ETCDIR%%/configuration.xsl ] || cp %D/%%EXAMPLESDIR%%/conf/configuration.xsl %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/core-site.xml %D/%%EXAMPLESDIR%%/conf/core-site.xml; then rm -f %D/%%ETCDIR%%/core-site.xml; fi
-%%EXAMPLESDIR%%/conf/core-site.xml
-@exec [ -f %D/%%ETCDIR%%/core-site.xml ] || cp %D/%%EXAMPLESDIR%%/conf/core-site.xml %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/hadoop-env.sh %D/%%EXAMPLESDIR%%/conf/hadoop-env.sh; then rm -f %D/%%ETCDIR%%/hadoop-env.sh; fi
-%%EXAMPLESDIR%%/conf/hadoop-env.sh
-@exec [ -f %D/%%ETCDIR%%/hadoop-env.sh ] || cp %D/%%EXAMPLESDIR%%/conf/hadoop-env.sh %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/hadoop-metrics2.properties %D/%%EXAMPLESDIR%%/conf/hadoop-metrics2.properties; then rm -f %D/%%ETCDIR%%/hadoop-metrics2.properties; fi
-%%EXAMPLESDIR%%/conf/hadoop-metrics2.properties
-@exec [ -f %D/%%ETCDIR%%/hadoop-metrics2.properties ] || cp %D/%%EXAMPLESDIR%%/conf/hadoop-metrics2.properties %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/hadoop-policy.xml %D/%%EXAMPLESDIR%%/conf/hadoop-policy.xml; then rm -f %D/%%ETCDIR%%/hadoop-policy.xml; fi
-%%EXAMPLESDIR%%/conf/hadoop-policy.xml
-@exec [ -f %D/%%ETCDIR%%/hadoop-policy.xml ] || cp %D/%%EXAMPLESDIR%%/conf/hadoop-policy.xml %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/hdfs-site.xml %D/%%EXAMPLESDIR%%/conf/hdfs-site.xml; then rm -f %D/%%ETCDIR%%/hdfs-site.xml; fi
-%%EXAMPLESDIR%%/conf/hdfs-site.xml
-@exec [ -f %D/%%ETCDIR%%/hdfs-site.xml ] || cp %D/%%EXAMPLESDIR%%/conf/hdfs-site.xml %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/log4j.properties %D/%%EXAMPLESDIR%%/conf/log4j.properties; then rm -f %D/%%ETCDIR%%/log4j.properties; fi
-%%EXAMPLESDIR%%/conf/log4j.properties
-@exec [ -f %D/%%ETCDIR%%/log4j.properties ] || cp %D/%%EXAMPLESDIR%%/conf/log4j.properties %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/mapred-queue-acls.xml %D/%%EXAMPLESDIR%%/conf/mapred-queue-acls.xml; then rm -f %D/%%ETCDIR%%/mapred-queue-acls.xml; fi
-%%EXAMPLESDIR%%/conf/mapred-queue-acls.xml
-@exec [ -f %D/%%ETCDIR%%/mapred-queue-acls.xml ] || cp %D/%%EXAMPLESDIR%%/conf/mapred-queue-acls.xml %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/mapred-site.xml %D/%%EXAMPLESDIR%%/conf/mapred-site.xml; then rm -f %D/%%ETCDIR%%/mapred-site.xml; fi
-%%EXAMPLESDIR%%/conf/mapred-site.xml
-@exec [ -f %D/%%ETCDIR%%/mapred-site.xml ] || cp %D/%%EXAMPLESDIR%%/conf/mapred-site.xml %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/taskcontroller.cfg %D/%%EXAMPLESDIR%%/conf/taskcontroller.cfg; then rm -f %D/%%ETCDIR%%/taskcontroller.cfg; fi
-%%EXAMPLESDIR%%/conf/taskcontroller.cfg
-@exec [ -f %D/%%ETCDIR%%/taskcontroller.cfg ] || cp %D/%%EXAMPLESDIR%%/conf/taskcontroller.cfg %D/%%ETCDIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/fair-scheduler.xml %D/%%EXAMPLESDIR%%/conf/fair-scheduler.xml; then rm -f %D/%%ETCDIR%%/fair-scheduler.xml; fi
-%%EXAMPLESDIR%%/conf/fair-scheduler.xml
-@exec [ -f %D/%%ETCDIR%%/fair-scheduler.xml ] || cp %D/%%EXAMPLESDIR%%/conf/fair-scheduler.xml %D/%%ETCDIR%%
+@sample %%EXAMPLESDIR%%/conf/capacity-scheduler.xml %%ETCDIR%%/capacity-scheduler.xml
+@sample %%EXAMPLESDIR%%/conf/configuration.xsl %%ETCDIR%%/configuration.xsl
+@sample %%EXAMPLESDIR%%/conf/core-site.xml %%ETCDIR%%/core-site.xml
+@sample %%EXAMPLESDIR%%/conf/hadoop-env.sh %%ETCDIR%%/hadoop-env.sh
+@sample %%EXAMPLESDIR%%/conf/hadoop-metrics2.properties %%ETCDIR%%/hadoop-metrics2.properties
+@sample %%EXAMPLESDIR%%/conf/hadoop-policy.xml %%ETCDIR%%/hadoop-policy.xml
+@sample %%EXAMPLESDIR%%/conf/hdfs-site.xml %%ETCDIR%%/hdfs-site.xml
+@sample %%EXAMPLESDIR%%/conf/log4j.properties %%ETCDIR%%/log4j.properties
+@sample %%EXAMPLESDIR%%/conf/mapred-queue-acls.xml %%ETCDIR%%/mapred-queue-acls.xml
+@sample %%EXAMPLESDIR%%/conf/mapred-site.xml %%ETCDIR%%/mapred-site.xml
+@sample %%EXAMPLESDIR%%/conf/taskcontroller.cfg %%ETCDIR%%/taskcontroller.cfg
+@sample %%EXAMPLESDIR%%/conf/fair-scheduler.xml %%ETCDIR%%/fair-scheduler.xml
 include/hadoop/hdfs.h
 include/hadoop/StringUtils.hh
 include/hadoop/SerialUtils.hh

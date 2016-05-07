@@ -11,7 +11,7 @@ MASTER_SITES=	http://fossies.org/unix/www/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple drawing language to generate GIFs on the fly
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

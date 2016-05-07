@@ -2,7 +2,7 @@
 
 PORTNAME=	acoustid-fingerprinter
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://bitbucket.org/acoustid/${PORTNAME}/downloads/ \
 		GHC
@@ -12,9 +12,9 @@ COMMENT=	AcoustID audio fingerprint submission tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libchromaprint.so:${PORTSDIR}/audio/chromaprint \
-		libtag.so:${PORTSDIR}/audio/taglib \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
+		libtag.so:audio/taglib \
+		libavcodec.so:multimedia/ffmpeg
 
 USES=		cmake
 USE_QT4=	gui network \

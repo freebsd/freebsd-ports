@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log::Agent::Logger - a logging interface for perl
 
-BUILD_DEPENDS=	p5-Log-Agent>=0:${PORTSDIR}/devel/p5-Log-Agent
+BUILD_DEPENDS=	p5-Log-Agent>=0:devel/p5-Log-Agent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -10,9 +10,9 @@ COMMENT=	Temporally Enhanced Security Logic Assertions
 
 USES=		cmake:outsource execinfo ninja
 
-BUILD_DEPENDS=	clang33:${PORTSDIR}/lang/clang33
-RUN_DEPENDS=	clang33:${PORTSDIR}/lang/clang33
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+BUILD_DEPENDS=	clang33:lang/clang33
+RUN_DEPENDS=	clang33:lang/clang33
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-TESLA

@@ -12,7 +12,7 @@ COMMENT=	Tool for issuing HTTP requests and dealing with the result
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	tclsh:${PORTSDIR}/lang/tcl-wrapper
+RUN_DEPENDS=	tclsh:lang/tcl-wrapper
 
 NO_BUILD=	YES
 

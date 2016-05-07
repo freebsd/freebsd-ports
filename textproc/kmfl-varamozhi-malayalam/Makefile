@@ -13,7 +13,7 @@ DIST_SUBDIR=	kmfl
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL Malayalam keyboard according to the Mozhi scheme
 
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
+RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
 USES=		dos2unix zip
 DOS2UNIX_FILES=	mozhi_1.1.0.kmn

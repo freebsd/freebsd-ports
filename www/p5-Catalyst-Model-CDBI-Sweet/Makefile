@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CDBI model class for Catalyst that makes things sweeter
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-DBI-Sweet>=0:${PORTSDIR}/databases/p5-Class-DBI-Sweet
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime \
+		p5-Class-DBI-Sweet>=0:databases/p5-Class-DBI-Sweet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

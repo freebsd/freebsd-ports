@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp to display album covers for XMMS
 
-LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
-		libgdk_pixbuf_xlib.so:${PORTSDIR}/graphics/gdk-pixbuf
+LIB_DEPENDS=	libxmms.so:multimedia/xmms \
+		libgdk_pixbuf_xlib.so:graphics/gdk-pixbuf
 
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89

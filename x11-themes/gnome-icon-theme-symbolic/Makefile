@@ -11,7 +11,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Symbolic Icons
 
-BUILD_DEPENDS=	icon-naming-utils>=0.8.7:${PORTSDIR}/x11-themes/icon-naming-utils
+BUILD_DEPENDS=	icon-naming-utils>=0.8.7:x11-themes/icon-naming-utils
 
 INSTALLS_ICONS=	yes
 USES=		gmake pathfix pkgconfig tar:xz

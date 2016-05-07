@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool_lgpl
 PORTVERSION=	1.0b1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases python
 MASTER_SITES=	SF/py-rrdtool/py-rrdtool/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ COMMENT=	Python interface to RRDTool, the graphing and logging utility
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS=	librrd.so:databases/rrdtool
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

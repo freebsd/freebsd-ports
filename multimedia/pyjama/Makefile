@@ -11,10 +11,10 @@ DISTNAME=	pyjama-0.3.0.1_all
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to the Jamendo music network
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson	\
-		${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:${PORTSDIR}/multimedia/py-gstreamer
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson	\
+		${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:multimedia/py-gstreamer
 
 NO_BUILD=	yes
 USE_GSTREAMER=	core good bad gnomevfs

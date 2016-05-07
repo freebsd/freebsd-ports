@@ -12,14 +12,12 @@ COMMENT=	Fast, flexible, easy to use logging service for Ruby
 
 LICENSE=	RUBY
 
-RUN_DEPENDS=	rubygem-eventmachine>=0.0.0:${PORTSDIR}/devel/rubygem-eventmachine
+RUN_DEPENDS=	rubygem-eventmachine>=0.0.0:devel/rubygem-eventmachine
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/analogger
 ruby_OLD_CMD=	ruby
 

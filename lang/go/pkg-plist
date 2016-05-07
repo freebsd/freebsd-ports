@@ -811,6 +811,7 @@ go/pkg/%%opsys_ARCH%%/index/suffixarray.a
 go/pkg/%%opsys_ARCH%%/internal/golang.org/x/net/http2/hpack.a
 go/pkg/%%opsys_ARCH%%/internal/race.a
 go/pkg/%%opsys_ARCH%%/internal/singleflight.a
+go/pkg/%%opsys_ARCH%%/internal/syscall/windows/sysdll.a
 go/pkg/%%opsys_ARCH%%/internal/testenv.a
 go/pkg/%%opsys_ARCH%%/internal/trace.a
 go/pkg/%%opsys_ARCH%%/io.a
@@ -2514,6 +2515,7 @@ go/src/internal/syscall/windows/registry/syscall.go
 go/src/internal/syscall/windows/registry/value.go
 go/src/internal/syscall/windows/registry/zsyscall_windows.go
 go/src/internal/syscall/windows/syscall_windows.go
+go/src/internal/syscall/windows/sysdll/sysdll.go
 go/src/internal/syscall/windows/zsyscall_windows.go
 go/src/internal/testenv/testenv.go
 go/src/internal/trace/goroutines.go
@@ -3776,6 +3778,7 @@ go/src/runtime/testdata/testprog/misc.go
 go/src/runtime/testdata/testprog/signal.go
 go/src/runtime/testdata/testprog/stringconcat.go
 go/src/runtime/testdata/testprog/syscall_windows.go
+go/src/runtime/testdata/testprogcgo/aprof.go
 go/src/runtime/testdata/testprogcgo/callback.go
 go/src/runtime/testdata/testprogcgo/cgo.go
 go/src/runtime/testdata/testprogcgo/crash.go

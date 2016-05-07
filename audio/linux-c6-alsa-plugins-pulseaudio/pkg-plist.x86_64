@@ -1,3 +1,6 @@
+usr/lib/alsa-lib/libasound_module_conf_pulse.so
+usr/lib/alsa-lib/libasound_module_ctl_pulse.so
+usr/lib/alsa-lib/libasound_module_pcm_pulse.so
 usr/lib64/alsa-lib/libasound_module_conf_pulse.so
 usr/lib64/alsa-lib/libasound_module_ctl_pulse.so
 usr/lib64/alsa-lib/libasound_module_pcm_pulse.so

@@ -12,12 +12,12 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VoIP and video conferencing application
 
-BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat \
-		gnome-icon-theme>=3.0.0:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	libboost_signals.so:${PORTSDIR}/devel/boost-libs \
-		libopal.so:${PORTSDIR}/net/opal \
-		libv4l2.so:${PORTSDIR}/multimedia/libv4l
-RUN_DEPENDS=	gnome-icon-theme>=3.0.0:${PORTSDIR}/misc/gnome-icon-theme
+BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat \
+		gnome-icon-theme>=3.0.0:misc/gnome-icon-theme
+LIB_DEPENDS=	libboost_signals.so:devel/boost-libs \
+		libopal.so:net/opal \
+		libv4l2.so:multimedia/libv4l
+RUN_DEPENDS=	gnome-icon-theme>=3.0.0:misc/gnome-icon-theme
 
 GNU_CONFIGURE=	yes
 USES=		cpe gettext gmake libtool pathfix perl5 pkgconfig \
@@ -78,21 +78,21 @@ CONFIGURE_ARGS+=--disable-gstreamer
 
 .if ${PORT_OPTIONS:MXCAP}
 CONFIGURE_ARGS+=--enable-xcap
-LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup
 .else
 CONFIGURE_ARGS+=--disable-xcap
 .endif
 
 .if ${PORT_OPTIONS:MLOUDMOUTH}
 CONFIGURE_ARGS+=--enable-loudmouth
-LIB_DEPENDS+=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
+LIB_DEPENDS+=	libloudmouth-1.so:net-im/loudmouth
 .else
 CONFIGURE_ARGS+=--disable-loudmouth
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=--enable-ldap --with-ldap-dir="${LOCALBASE}" --with-libsasl2-dir="${LOCALBASE}"
 PLIST_SUB+=	LDAP=""
 WITH_PLUGINS=	1
@@ -108,7 +108,7 @@ PLIST_SUB+=	PLUGINS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:devel/libnotify
 CONFIGURE_ARGS+=--enable-notify
 PLIST_SUB+=	NOTIFY=""
 WITH_PLUGINS=	1
@@ -118,7 +118,7 @@ PLIST_SUB+=	NOTIFY="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	libdbus-1.so:devel/dbus
 CONFIGURE_ARGS+=--enable-dbus --enable-dbus-service
 PLIST_SUB+=	DBUS=""
 .else
@@ -138,7 +138,7 @@ PLIST_SUB+=	GCONF=""
 
 .if ${PORT_OPTIONS:MEVOLUTION}
 USE_GNOME+=	evolutiondataserver3
-LIB_DEPENDS+=	libgcr-3.so:${PORTSDIR}/security/gcr
+LIB_DEPENDS+=	libgcr-3.so:security/gcr
 CONFIGURE_ARGS+=--enable-eds
 PLIST_SUB+=	EVOLUTION=""
 WITH_PLUGINS=	1
@@ -149,7 +149,7 @@ PLIST_SUB+=	EVOLUTION="@comment "
 
 .if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=--enable-avahi
-LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:net/avahi-app
 PLIST_SUB+=	AVAHI=""
 WITH_PLUGINS=	1
 .else

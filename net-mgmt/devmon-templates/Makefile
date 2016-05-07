@@ -9,7 +9,7 @@ MASTER_SITES=	SF/devmon/${PORTNAME}/templates/
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Device templates for use with devmon
 
-RUN_DEPENDS=	devmon>0:${PORTSDIR}/net-mgmt/devmon
+RUN_DEPENDS=	devmon>0:net-mgmt/devmon
 
 NO_BUILD=	yes
 

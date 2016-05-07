@@ -11,7 +11,6 @@ COMMENT=	Self-contained Markdown parser for GitHub
 DEPRECATED=	This gem is not maintained and not supported by upstream
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

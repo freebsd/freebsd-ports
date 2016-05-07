@@ -12,12 +12,12 @@ COMMENT=	NativeTrait-like behavior for Moo
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Perl>=0.002006:${PORTSDIR}/devel/p5-Data-Perl \
-		p5-Moo>=1.003000:${PORTSDIR}/devel/p5-Moo
+BUILD_DEPENDS=	p5-Data-Perl>=0.002006:devel/p5-Data-Perl \
+		p5-Moo>=1.003000:devel/p5-Moo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-MooX-Types-MooseLike>=0.23:${PORTSDIR}/devel/p5-MooX-Types-MooseLike
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+		p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-MooX-Types-MooseLike>=0.23:devel/p5-MooX-Types-MooseLike
 
 USES=		perl5
 USE_PERL5=	configure

@@ -12,7 +12,7 @@ COMMENT=	Graphics device for R for creating bitmap output
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	libgd>=2.0.35_8,1:${PORTSDIR}/graphics/gd
+BUILD_DEPENDS=	libgd>=2.0.35_8,1:graphics/gd
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

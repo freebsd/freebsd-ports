@@ -11,8 +11,9 @@ COMMENT=	Additional Net packages for Go
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.text:${PORTSDIR}/textproc/go.text
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.text:textproc/go.text
 
+USES=		go
 GO_PKGNAME=	code.google.com/p/go.net
 GO_TARGET=	${GO_PKGNAME}/dict		\
 		${GO_PKGNAME}/html		\
@@ -27,6 +28,4 @@ GO_TARGET=	${GO_PKGNAME}/dict		\
 		${GO_PKGNAME}/spdy		\
 		${GO_PKGNAME}/websocket
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

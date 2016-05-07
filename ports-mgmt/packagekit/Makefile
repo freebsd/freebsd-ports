@@ -11,22 +11,21 @@ MASTER_SITES=	http://www.packagekit.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	DBUS packaging abstraction layer
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
-		libck-connector.so:${PORTSDIR}/sysutils/consolekit
-RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:textproc/docbook-utils
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libpolkit-gobject-1.so:sysutils/polkit \
+		libck-connector.so:sysutils/consolekit
+RUN_DEPENDS=	lsof:sysutils/lsof \
+		bash:shells/bash
 
 IGNORE=		does not build with new polkit
 
 USES=		cpe execinfo gettext gmake iconv libtool pathfix pkgconfig \
-		python:build shared-mime-info shebangfix
+		python:build shared-mime-info shebangfix sqlite:3
 CPE_VENDOR=	packagekit_project
 SHEBANG_FILES=	backends/test/helpers/search-name.sh \
 		contrib/cron/packagekit-background.cron
 USE_GNOME=	glib20 intltool introspection
-USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -52,9 +51,9 @@ PORTS_DESC=Use portupgrade for management, dummy if disabled
 .include <bsd.port.options.mk>
 
 . if ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS+=	docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS+=	docbook-sgml>0:textproc/docbook-sgml \
+		xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 PLIST_SUB+=	MAN=''
 . else
 CONFIGURE_ARGS+=--disable-man-pages
@@ -62,7 +61,7 @@ PLIST_SUB+=	MAN='@comment '
 . endif
 
 . if ${PORT_OPTIONS:MPORTS}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
+RUN_DEPENDS+=	${LOCALBASE}/sbin/portupgrade:ports-mgmt/portupgrade
 USE_RUBY=	yes
 CONFIGURE_ARGS+=--enable-ports --with-default-backend=ports
 PLIST_SUB+=	PORTS=""
@@ -77,10 +76,10 @@ PLIST_SUB+=	GTK="@comment "
 CONFIGURE_ARGS+=--disable-qt
 
 .elif defined(${SLAVEPORT}) && ${SLAVEPORT}=="qt4"
-LIB_DEPENDS+=	libpackagekit-glib2.so:${PORTSDIR}/ports-mgmt/packagekit
+LIB_DEPENDS+=	libpackagekit-glib2.so:ports-mgmt/packagekit
 
 CONFIGURE_ARGS+=--enable-qt
-LIB_DEPENDS+=	libcppunit.so:${PORTSDIR}/devel/cppunit
+LIB_DEPENDS+=	libcppunit.so:devel/cppunit
 USE_QT4+=	dbus gui xml sql moc_build
 #.include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
@@ -94,12 +93,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|girepositry|girepository|g' \
 		${WRKSRC}/lib/packagekit-glib2/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-	    	'/xsltproc/s|.xsl [$$]? &> /dev|.xsl $$? > /dev|g'
+		'/xsltproc/s|.xsl [$$]? &> /dev|.xsl $$? > /dev|g'
 
 post-install:
 .if !defined(SLAVEPORT)
 	@${INSTALL_DATA} ${WRKSRC}/data/transactions.db \
-	    	${STAGEDIR}${PREFIX}/share/PackageKit/transactions.db
+		${STAGEDIR}${PREFIX}/share/PackageKit/transactions.db
 .endif
 
 .include <bsd.port.mk>

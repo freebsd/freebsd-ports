@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst Plugin to subvert NEXT to use Class::C3
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7006:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-C3>=0.19:${PORTSDIR}/devel/p5-Class-C3
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7006:www/p5-Catalyst-Runtime \
+		p5-Class-C3>=0.19:devel/p5-Class-C3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

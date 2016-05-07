@@ -13,8 +13,8 @@ COMMENT=	POV-Ray oriented modeller
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	lib3ds.so:${PORTSDIR}/graphics/lib3ds
-BUILD_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
+LIB_DEPENDS=	lib3ds.so:graphics/lib3ds
+BUILD_DEPENDS=	povray:graphics/povray-meta
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gettext gmake libtool perl5 pkgconfig

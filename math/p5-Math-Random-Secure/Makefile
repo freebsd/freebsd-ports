@@ -13,11 +13,11 @@ COMMENT=	Cryptographically-secure rand function
 
 LICENSE=	ART20
 
-TEST_DEPENDS=	p5-Test-Warn>0:${PORTSDIR}/devel/p5-Test-Warn
-BUILD_DEPENDS=	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils
-RUN_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-Math-Random-ISAAC>=1.0.1:${PORTSDIR}/math/p5-Math-Random-ISAAC \
-		p5-Crypt-Random-Source>=0.07:${PORTSDIR}/security/p5-Crypt-Random-Source
+TEST_DEPENDS=	p5-Test-Warn>0:devel/p5-Test-Warn
+BUILD_DEPENDS=	p5-List-MoreUtils>0:lang/p5-List-MoreUtils
+RUN_DEPENDS=	p5-Any-Moose>0:devel/p5-Any-Moose \
+		p5-Math-Random-ISAAC>=1.0.1:math/p5-Math-Random-ISAAC \
+		p5-Crypt-Random-Source>=0.07:security/p5-Crypt-Random-Source
 
 USES=		perl5
 USE_PERL5=	configure

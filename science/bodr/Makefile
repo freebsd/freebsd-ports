@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chemistry data like element and isotope properties, atomic radii, etc
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
 OPTIONS_DEFINE=	DOCS
 

@@ -13,11 +13,11 @@ DISTNAME=	Pike-v${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Dynamic programming language with a syntax similar to C++
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libnettle.so:${PORTSDIR}/security/nettle
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libgdbm.so:databases/gdbm \
+		libpcre.so:devel/pcre \
+		libgmp.so:math/gmp \
+		libnettle.so:security/nettle
 
 CONFLICTS=	pike7[26]-[0-9]*
 
@@ -25,9 +25,9 @@ OPTIONS_DEFINE=	TTF FREETYPE MYSQL PGSQL
 OPTIONS_DEFAULT=TTF FREETYPE MYSQL
 NO_OPTIONS_SORT=yes
 TTF_DESC?=		Enable FreeType 1 (libttf) font rendering engine
-TTF_LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
+TTF_LIB_DEPENDS=	libttf.so:print/freetype
 TTF_CONFIGURE_WITH=	ttflib
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_WITH=freetype
 MYSQL_USE=		mysql=yes
 MYSQL_CONFIGURE_WITH=	mysql

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	TCL interface to the Thomas Boutell's Gd library
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		tcl:84+ uidfix
 

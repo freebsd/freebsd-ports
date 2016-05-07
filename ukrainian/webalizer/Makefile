@@ -6,7 +6,7 @@ CATEGORIES=	ukrainian
 
 MAINTAINER=	mikef@LITech.lviv.ua
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/ukrainian/gd
+LIB_DEPENDS=	libgd.so:ukrainian/gd
 
 WEBALIZER_LANG=	ukrainian
 

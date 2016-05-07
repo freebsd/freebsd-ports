@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Shortcuts for when using p5-SNMP
 
-RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp
+RUN_DEPENDS=	net-snmp>=0:net-mgmt/net-snmp
 
 USES=		perl5
 USE_PERL5=	configure

@@ -12,8 +12,8 @@ COMMENT=	Scripts to work locally on Subversion checkouts using Mercurial
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion \
-		hg:${PORTSDIR}/devel/mercurial
+RUN_DEPENDS=	svn:devel/subversion \
+		hg:devel/mercurial
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

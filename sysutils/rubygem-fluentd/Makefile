@@ -11,20 +11,19 @@ COMMENT=	Fluent event collector
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-	rubygem-msgpack>=0.5.11:${PORTSDIR}/devel/rubygem-msgpack \
-	rubygem-json>=1.4.3:${PORTSDIR}/devel/rubygem-json \
-	rubygem-yajl-ruby>=1.0:${PORTSDIR}/devel/rubygem-yajl-ruby \
-	rubygem-cool.io>=1.2.2:${PORTSDIR}/devel/rubygem-cool.io \
-	rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb \
-	rubygem-sigdump>=0.2.2:${PORTSDIR}/devel/rubygem-sigdump \
-	rubygem-tzinfo>=1.0.0:${PORTSDIR}/devel/rubygem-tzinfo
+	rubygem-msgpack>=0.5.11:devel/rubygem-msgpack \
+	rubygem-json>=1.4.3:devel/rubygem-json \
+	rubygem-yajl-ruby>=1.0:devel/rubygem-yajl-ruby \
+	rubygem-cool.io>=1.2.2:devel/rubygem-cool.io \
+	rubygem-http_parser.rb>=0.5.1:net/rubygem-http_parser.rb \
+	rubygem-sigdump>=0.2.2:devel/rubygem-sigdump \
+	rubygem-tzinfo>=1.0.0:devel/rubygem-tzinfo
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
 PLIST_FILES=	bin/fluent-cat bin/fluent-debug bin/fluent-gem bin/fluentd \
 		"@sample etc/fluentd/fluent.conf.sample"
 PLIST_DIRS=	etc/fluentd/plugin
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 USE_RC_SUBR=	fluentd
 USERS=		fluentd
 GROUPS=		fluentd
@@ -35,7 +34,7 @@ NO_LATEST_LINK=	YES
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 2.0
-RUN_DEPENDS+=	rubygem-string-scrub>=0.0.3:${PORTSDIR}/textproc/rubygem-string-scrub
+RUN_DEPENDS+=	rubygem-string-scrub>=0.0.3:textproc/rubygem-string-scrub
 .endif
 
 post-install:

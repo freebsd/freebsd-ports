@@ -12,7 +12,7 @@ COMMENT=	Small weblog engine written in Bash for the command line
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 NO_BUILD=	yes
 

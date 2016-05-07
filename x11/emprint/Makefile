@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/gblach/e17/extra/
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Utility for taking screenshots for E17
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl
+LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes

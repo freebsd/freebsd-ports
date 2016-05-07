@@ -12,10 +12,10 @@ COMMENT=	OOP MediaWiki engine client
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
+TEST_DEPENDS=	p5-JSON-Any>=0:converters/p5-JSON-Any
 
 NO_ARCH=	yes
 USES=		perl5

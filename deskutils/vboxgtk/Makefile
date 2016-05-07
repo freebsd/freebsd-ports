@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK frontend for VirtualBox
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtualbox-ose
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:emulators/virtualbox-ose
 
 USES=		python
 USE_PYTHON=	distutils autoplist

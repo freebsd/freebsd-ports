@@ -11,14 +11,13 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	benjsc@FreeBSD.org
 COMMENT=	Elvin Publish/Subscribe Message Bus server based on the Elvin protocol
 
-USE_RC_SUBR=	yes
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(WITHOUT_COMPILE)
-BUILD_DEPENDS+=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS+=	${ANT_CMD}:devel/apache-ant
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 ANT_TARGETS=	jar-server

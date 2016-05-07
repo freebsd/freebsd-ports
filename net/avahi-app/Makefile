@@ -14,10 +14,10 @@ COMMENT?=	Service discovery on a local network
 AVAHI_SLAVE?=	no
 
 .if ${AVAHI_SLAVE} != header
-LIB_DEPENDS?=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libdaemon.so:${PORTSDIR}/devel/libdaemon \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS?=	libexpat.so:textproc/expat2 \
+		libdaemon.so:devel/libdaemon \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libgdbm.so:databases/gdbm
 
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
@@ -44,8 +44,6 @@ CONFLICTS=	howl-[0-9]*
 
 DAEMON_CONFIG_FILES=	hosts avahi-daemon.conf
 .endif
-
-USE_RC_SUBR=yes
 .endif # !avahi-header
 
 .include <bsd.port.options.mk>
@@ -103,14 +101,14 @@ avahi-post-patch:
 	@${REINPLACE_CMD} -e 's|have_inotify=yes|have_inotify=no|' \
 		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
-	    	${REINPLACE_CMD} -e 's|(LIBINTL)|(INTLLIBS)|g ; \
+		${REINPLACE_CMD} -e 's|(LIBINTL)|(INTLLIBS)|g ; \
 		s|(LIBICONV)|(LTLIBICONV)|g'
 	@${REINPLACE_CMD} -e 's|%%RC_SUBR%%|/etc/rc.subr| ; \
-	    	s|%%GNOME_SUBR%%|${GNOME_SUBR}|' \
+		s|%%GNOME_SUBR%%|${GNOME_SUBR}|' \
 		${WRKSRC}/initscript/freebsd/avahi-dnsconfd.sh.in \
 		${WRKSRC}/initscript/freebsd/avahi-daemon.sh.in
 	@${REINPLACE_CMD} -e 's|dbus_connection_disconnect|dbus_connection_close|g' \
-	    	${WRKSRC}/avahi-client/client.c \
+		${WRKSRC}/avahi-client/client.c \
 		${WRKSRC}/avahi-daemon/dbus-protocol.c
 	@${REINPLACE_CMD} -e 's|^_||g' \
 		${WRKSRC}/avahi-ui/*.desktop.in.in

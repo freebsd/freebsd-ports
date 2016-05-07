@@ -16,7 +16,7 @@ COMMENT=	Help a bird to recover his magical feathers
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	avbin>=0:${PORTSDIR}/multimedia/avbin
+RUN_DEPENDS=	avbin>=0:multimedia/avbin
 
 USES=		python shebangfix zip
 SHEBANG_FILES=	run_game.py

@@ -14,7 +14,9 @@ COMMENT=	Converts 32-bit RGBA PNGs into 8-bit RGBA-palette PNGs
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

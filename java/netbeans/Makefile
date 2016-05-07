@@ -5,7 +5,7 @@ PORTNAME=	netbeans
 PORTVERSION=	8.1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
-    		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
+		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
 DISTNAME=	netbeans-${PORTVERSION}-201510222201
 
 MAINTAINER=	kwm@FreeBSD.org

@@ -13,9 +13,9 @@ COMMENT=	Toolkit for Oracle
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
-LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	cppunit-config:devel/cppunit
+LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2 \
+		libpcre.so:devel/pcre
 
 OPTIONS_DEFINE=	PGSQL MYSQL DOCS
 OPTIONS_DEFINE_i386=	ORACLE
@@ -33,14 +33,14 @@ PREFIX2FIX=	doc/help/preferences.texi doc/help/preferences.html
 DOCS_USES=	makeinfo
 DOCS_INFO=	tora
 
-MYSQL_RUN_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
-PGSQL_RUN_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt4-pgsql-plugin
+MYSQL_RUN_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlmysql.so:databases/qt4-mysql-plugin
+PGSQL_RUN_DEPENDS=	${QT_PLUGINDIR}/sqldrivers/libqsqlpsql.so:databases/qt4-pgsql-plugin
 
 ORACLE_HOME?=	${LOCALBASE}/oracle8-client
 ORACLE_VER=	8i	# Client version
 
-ORACLE_BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
-ORACLE_RUN_DEPENDS=	${ORACLE_HOME}/network/admin/tnsnames.ora:${PORTSDIR}/databases/oracle8-client
+ORACLE_BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntsh.a:databases/oracle8-client
+ORACLE_RUN_DEPENDS=	${ORACLE_HOME}/network/admin/tnsnames.ora:databases/oracle8-client
 ORACLE_CONFIGURE_ON=	--with-oracle=${ORACLE_HOME} --with-oci-version=${ORACLE_VER:tu}
 
 post-patch-DOCS-on:

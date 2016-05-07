@@ -8,12 +8,12 @@ PKGNAMESUFFIX=		-stage2
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
-BUILD_DEPENDS=		psp-cpp:${PORTSDIR}/devel/psptoolchain-gcc-stage2 \
-			psp-gcc:${PORTSDIR}/devel/psptoolchain-gcc-stage2 \
-			psp-gcov:${PORTSDIR}/devel/psptoolchain-gcc-stage2 \
-			psp-g++:${PORTSDIR}/devel/psptoolchain-gcc-stage2 \
-			psp-ar:${PORTSDIR}/devel/psptoolchain-binutils \
-			${LOCALBASE}/psp/lib/libc.a:${PORTSDIR}/devel/psptoolchain-newlib
+BUILD_DEPENDS=		psp-cpp:devel/psptoolchain-gcc-stage2 \
+			psp-gcc:devel/psptoolchain-gcc-stage2 \
+			psp-gcov:devel/psptoolchain-gcc-stage2 \
+			psp-g++:devel/psptoolchain-gcc-stage2 \
+			psp-ar:devel/psptoolchain-binutils \
+			${LOCALBASE}/psp/lib/libc.a:devel/psptoolchain-newlib
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-pspdev="${LOCALBASE}"
 

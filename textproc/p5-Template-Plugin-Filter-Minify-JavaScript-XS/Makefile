@@ -14,8 +14,8 @@ COMMENT=	JavaScript::Minifier::XS filter for Template Toolkit
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-JavaScript-Minifier-XS>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier-XS \
-		p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit
+BUILD_DEPENDS=	p5-JavaScript-Minifier-XS>=0:textproc/p5-JavaScript-Minifier-XS \
+		p5-Template-Toolkit>=2:www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

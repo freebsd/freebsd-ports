@@ -1,0 +1,31 @@
+------------------------------------------------------------------------
+r261229 | emaste | 2016-02-18 17:35:30 +0000 (Thu, 18 Feb 2016) | 10 lines
+
+[tsan] Disable sysroot flag on FreeBSD
+
+FreeBSD does not install a number of Clang-provided headers for the
+compiler in the base system due to incompatibilities between FreeBSD's     
+and Clang's versions. As a workaround do not use --sysroot=. on FreeBSD    
+until this is addressed.
+
+llvm.org/pr26651
+Differential Revision:	http://reviews.llvm.org/D17383
+
+------------------------------------------------------------------------
+Index: lib/tsan/CMakeLists.txt
+===================================================================
+--- lib/tsan/CMakeLists.txt	(revision 261228)
++++ lib/tsan/CMakeLists.txt	(revision 261229)
+@@ -192,7 +192,11 @@
+ add_dependencies(compiler-rt tsan)
+ 
+ # Make sure that non-platform-specific files don't include any system headers.
+-if(COMPILER_RT_HAS_SYSROOT_FLAG)
++# FreeBSD does not install a number of Clang-provided headers for the compiler
++# in the base system due to incompatibilities between FreeBSD's and Clang's
++# versions. As a workaround do not use --sysroot=. on FreeBSD until this is
++# addressed.                                                        
++if(COMPILER_RT_HAS_SYSROOT_FLAG AND NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+   file(GLOB _tsan_generic_sources rtl/tsan*)
+   file(GLOB _tsan_platform_sources rtl/tsan*posix* rtl/tsan*mac*
+                                    rtl/tsan*linux*)

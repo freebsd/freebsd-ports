@@ -1,0 +1,5 @@
+django-configurations eases Django project configuration by relying on the
+composability of Python classes. It extends the notion of Django's module based
+settings loading with well established object oriented programming patterns.
+
+WWW: https://github.com/jazzband/django-configurations

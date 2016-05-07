@@ -10,10 +10,10 @@ COMMENT=	Imports svn repositories into git
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
-RUN_DEPENDS+=	git:${PORTSDIR}/devel/git \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
+LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
+RUN_DEPENDS+=	git:devel/git \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		p5-subversion>=0:devel/p5-subversion
 
 USES=		qmake tar:xz
 USE_GITHUB=	yes

@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.honeyplanet.jp/
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	Pidgin plugin to help twitting via pidgin
 
-BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+BUILD_DEPENDS=	pidgin:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin
 
 USES=		gmake pkgconfig
 USE_GNOME=	glib20 libxml2

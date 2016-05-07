@@ -12,13 +12,12 @@ COMMENT=	Scrypt key derivation function
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-ffi-compiler>=0.0.2:${PORTSDIR}/devel/rubygem-ffi-compiler \
-		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
+RUN_DEPENDS=	rubygem-ffi-compiler>=0.0.2:devel/rubygem-ffi-compiler \
+		rubygem-rake>=0:devel/rubygem-rake
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	invokes SSE compiler flags

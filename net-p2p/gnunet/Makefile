@@ -3,7 +3,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p ipv6 security
 MASTER_SITES=	GNU
 
@@ -12,17 +12,17 @@ COMMENT=	Anonymous, distributed, reputation-based network
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libopus.so:${PORTSDIR}/audio/opus \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libunistring.so:${PORTSDIR}/devel/libunistring \
-		libidn.so:${PORTSDIR}/dns/libidn \
-		libglpk.so:${PORTSDIR}/math/glpk \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libextractor.so:${PORTSDIR}/textproc/libextractor
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libopus.so:audio/opus \
+		libpulse.so:audio/pulseaudio \
+		libltdl.so:devel/libltdl \
+		libunistring.so:devel/libunistring \
+		libidn.so:dns/libidn \
+		libglpk.so:math/glpk \
+		libgmp.so:math/gmp \
+		libgnutls.so:security/gnutls \
+		libgcrypt.so:security/libgcrypt \
+		libextractor.so:textproc/libextractor
 
 USES=		gmake iconv libtool pathfix pkgconfig
 USE_GNOME=	glib20
@@ -56,7 +56,7 @@ OPTIONS_DEFAULT=	SQLITE
 OPTIONS_SUB=		yes
 
 HTTP_DESC=		Enable HTTP transport via libmicrohttpd
-HTTP_LIB_DEPENDS=	libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd
+HTTP_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 HTTP_CONFIGURE_ON=	--with-microhttpd=${LOCALBASE}
 HTTP_CONFIGURE_OFF=	--without-microhttpd
 MYSQL_DESC=		Use MySQL for the data store and cache
@@ -71,7 +71,7 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgres=${LOCALBASE}
 PGSQL_CONFIGURE_OFF=	--without-postgres
 SQLITE_DESC=		Use SQLite for the data store and cache
-SQLITE_USE=		sqlite=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 SQLITE_CONFIGURE_OFF=	--without-sqlite
 

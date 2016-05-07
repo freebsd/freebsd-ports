@@ -14,13 +14,13 @@ DIST_SUBDIR=	python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very high level 3D engine for Python
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
-LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-editobj \
-		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
-		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer
+BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:devel/ode \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
+		libfreetype.so:print/freetype2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:graphics/py-editobj \
+		${PYTHON_SITELIBDIR}/tofu/client.py:net/py-tofu \
+		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:security/py-cerealizer
 
 USES=		gmake openal:al,alut python tar:bzip2
 USE_GL=		glew glu

@@ -3,7 +3,7 @@
 
 PORTNAME=	ted
 PORTVERSION=	2.23
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/ \
 		http://fossies.org/linux/misc/
@@ -13,20 +13,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 based RTF editor
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpaper.so:${PORTSDIR}/print/libpaper
-RUN_DEPENDS=	gsfonts>0:${PORTSDIR}/print/gsfonts
-
-OPTIONS_DEFINE=	GTK2 DOCS
-GTK2_DESC=	Use GTK2 instead of MOTIF
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libpaper.so:print/libpaper
+RUN_DEPENDS=	gsfonts>0:print/gsfonts
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
 USE_XORG=	xext xft
-USES=		ghostscript:x11,run iconv
+USES=		ghostscript:x11,run iconv pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}/\\\"\"" \
 		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}/\\\"\"" \
@@ -42,15 +40,13 @@ DOCSDIR=	${PREFIX}/share/doc/Ted
 AFMDIR=		${DATADIR}/afm
 INDDIR=		${DATADIR}/dfa
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME=	gtk20
-CONFIGURE_ARGS+=--with-GTK
-.else
-USES+=		motif
-CONFIGURE_ARGS+=--with-MOTIF
-.endif
+OPTIONS_DEFINE=	GTK2 DOCS
+GTK2_DESC=	Use GTK2 instead of MOTIF
+GTK2_USE=		GNOME=gtk20
+GTK2_CONFIGURE_ON=	--with-GTK
+GTK2_CPPFLAGS=		`pkg-config --cflags gtk+-2.0 | ${SED} -e 's|-I|-isystem |g'`
+GTK2_USES_OFF=		motif
+GTK2_CONFIGURE_OFF=	--with-MOTIF
 
 .include <bsd.port.pre.mk>
 
@@ -81,9 +77,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/afm/*.afm ${STAGEDIR}${AFMDIR}
 	@${MKDIR} ${STAGEDIR}${INDDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/dfa/*.dfa ${STAGEDIR}${INDDIR}
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/TedDocument-en_US.rtf ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

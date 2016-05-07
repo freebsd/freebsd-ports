@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	library for reading and writing quicktime files
 
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 .endif
 
 LICENSE=	LGPL21
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--without-gtk
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS=	libasound.so:audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--without-alsa
 .endif
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--without-opengl
 .endif
 
 .if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=	libdv.so:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	libdv.so:multimedia/libdv
 CONFIGURE_ARGS+=	--with-libdv
 .else
 CONFIGURE_ARGS+=	--without-libdv
@@ -85,42 +85,42 @@ CONFIGURE_ARGS+=	--without-libjpeg
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 CONFIGURE_ARGS+=	--with-libpng
 .else
 CONFIGURE_ARGS+=	--without-libpng
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-ffmpeg
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MFAAC}
-LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	libfaac.so:audio/faac
 CONFIGURE_ARGS+=	--with-faac
 .else
 CONFIGURE_ARGS+=	--without-faac
 .endif
 
 .if ${PORT_OPTIONS:MFAAD}
-LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	libfaad.so:audio/faad
 CONFIGURE_ARGS+=	--with-faad2
 .else
 CONFIGURE_ARGS+=	--without-faad2
 .endif
 
 .if ${PORT_OPTIONS:MX264}
-LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/libx264
+LIB_DEPENDS+=	libx264.so:multimedia/libx264
 CONFIGURE_ARGS+=	--with-x264
 .else
 CONFIGURE_ARGS+=	--without-x264
 .endif
 
 .if ${PORT_OPTIONS:MSCHROEDINGER}
-LIB_DEPENDS+=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	libschroedinger-1.0.so:multimedia/schroedinger
 .else
 CONFIGURE_ARGS+=	--without-schroedinger
 .endif

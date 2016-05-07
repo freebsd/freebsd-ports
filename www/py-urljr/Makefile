@@ -15,7 +15,7 @@ COMMENT=	Common interface to HTTP fetchers for PycURL or urllib2
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycurl>=0:${PORTSDIR}/ftp/py-pycurl
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycurl>=0:ftp/py-pycurl
 
 USES=		python
 USE_PYTHON=	autoplist distutils

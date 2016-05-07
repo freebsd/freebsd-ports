@@ -14,6 +14,8 @@ COMMENT=	Modular packet filter
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	Does not build
+
 SSP_UNSAFE=	kernel module does not support ssp
 USES=		cmake:outsource kmod tar:xz uidfix
 USE_LDCONFIG=	yes

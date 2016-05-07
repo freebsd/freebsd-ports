@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_build18016_community
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Elearning and Human Capital Development platform
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe shebangfix zip
 SHEBANG_FILES=	www/phplivedocx/samples/mail-merge/supported-file-formats/generate-documents.php \
 		www/phplivedocx/samples/mail-merge/supported-file-formats/show-supported-file-formats.php \

@@ -3,8 +3,7 @@
 #   $MCom: ports/news/pan/Makefile,v 1.7 2008/01/19 22:45:42 mezz Exp $
 
 PORTNAME=	pan
-PORTVERSION=	0.139
-PORTREVISION=	3
+PORTVERSION=	0.140
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -14,38 +13,39 @@ COMMENT=	Threaded GTK+ newsreader based on Agent for Windows
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libgmime-2.6.so:${PORTSDIR}/mail/gmime26
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libgmime-2.6.so:mail/gmime26
 
-USES=		gmake gettext iconv pathfix pkgconfig tar:bzip2
+USES=		gmake iconv pathfix pkgconfig tar:bzip2
 USE_GNOME=	intlhack
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-static-libgcc -static-libstdc++ -L${LOCALBASE}/lib \
-		-lgnuregex ${ICONV_LIB}
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${ICONV_LIB}
 
-OPTIONS_DEFINE=	GTKSPELL GTK3
-OPTIONS_DEFAULT=GTKSPELL
+OPTIONS_DEFINE=	GTKSPELL GNUTLS NLS
+OPTIONS_RADIO=	GTK
+OPTIONS_RADIO_GTK=	GTK2 GTK3
+OPTIONS_SUB=	yes
+OPTIONS_DEFAULT=GTKSPELL GNUTLS GTK2
 GTKSPELL_DESC=	Spell checking support (gtk+2 only)
-GTK3_DESC=	Use gtk+3 based UI instead of gtk+2
 
-.include <bsd.port.options.mk>
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_USES=	pkgconfig
+GNUTLS_CONFIGURE_WITH=	gnutls
 
-.if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gtk30
-CONFIGURE_ARGS+=--with-gtk3
-.else
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=--without-gtk3
-.endif
+GTK3_CONFIGURE_WITH=	gtk3
+GTK3_USE=	gnome=gtk30
 
-.if !${PORT_OPTIONS:MGTKSPELL} || ${PORT_OPTIONS:MGTK3}
-CONFIGURE_ARGS+=	--without-gtkspell
-.else
-LIB_DEPENDS+=		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
-CONFIGURE_ARGS+=	--with-gtkspell
-.endif
+GTK2_USE=	gnome=gtk20
+
+GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
+GTKSPELL_CONFIGURE_WITH=	gtkspell
+
+GTK3_PREVENTS=	GTKSPELL
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in"| ${XARGS} ${REINPLACE_CMD} -e \

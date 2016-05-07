@@ -1,0 +1,5 @@
+Exam is a Python toolkit for writing better tests. It aims to remove a lot of
+the boiler plate testing code one often writes, while still following Python
+conventions and adhering to the unit testing interface.
+
+WWW: https://github.com/fluxx/exam

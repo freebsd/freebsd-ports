@@ -16,14 +16,14 @@ COMMENT=	Fast big data processing engine
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:${PORTSDIR}/devel/maven33 \
-		${LOCALBASE}/lib/libsnappyjava.so:${PORTSDIR}/archivers/snappy-java
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		yarn:${PORTSDIR}/devel/hadoop2
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33 \
+		${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java
+RUN_DEPENDS=	bash:shells/bash \
+		yarn:devel/hadoop2
 
 USES=		python:2
 USE_JAVA=	yes
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.7+
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
 
 USERS=		spark
@@ -45,9 +45,15 @@ JAVA_ARCH = ${ARCH}
 
 do-build:
 	${MKDIR} ${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
-	${CP} ${LOCALBASE}/lib/libsnappyjava.so ${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven33/bin/mvn --offline -Dmaven.repo.local=${WRKDIR}/m2 clean package -Dhadoop.version=2.7.2 -Pyarn -Phadoop-2.6 -DskipTests
-	${JAR} uvf ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar -C ${WRKDIR}/snappy org
+	${CP} ${LOCALBASE}/lib/libsnappyjava.so \
+		${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${LOCALBASE}/share/java/maven33/bin/mvn --offline \
+		-Dmaven.repo.local=${WRKDIR}/m2 clean package \
+		-Dhadoop.version=2.7.2 -Pyarn -Phadoop-2.6 -DskipTests \
+		-Duser.home=${WRKDIR}
+	${JAR} uvf ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar \
+		-C ${WRKDIR}/snappy org
 
 post-build:
 	${RM} ${WRKSRC}/bin/*.cmd ${WRKSRC}/sbin/spark-daemon.sh.orig

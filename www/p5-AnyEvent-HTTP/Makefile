@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Simple but non-blocking HTTP/HTTPS client
 
-BUILD_DEPENDS=	p5-AnyEvent>=5.33:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-common-sense>=3.3:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-AnyEvent>=5.33:devel/p5-AnyEvent \
+		p5-common-sense>=3.3:devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

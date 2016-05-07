@@ -11,7 +11,7 @@ MASTER_SITES=	http://cairographics.org/snapshots/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Render an SVG image to a PNG image (using cairo)
 
-LIB_DEPENDS=	libsvg-cairo.so:${PORTSDIR}/graphics/libsvg-cairo
+LIB_DEPENDS=	libsvg-cairo.so:graphics/libsvg-cairo
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig

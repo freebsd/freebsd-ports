@@ -594,6 +594,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/ameiru00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amel_s00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amfort00.pm
+%%SITE_PERL%%/Date/Manip/TZ/amfort01.pm
 %%SITE_PERL%%/Date/Manip/TZ/amglac00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amgodt00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amgoos00.pm
@@ -662,7 +663,6 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/amsant00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amsant01.pm
 %%SITE_PERL%%/Date/Manip/TZ/amsant02.pm
-%%SITE_PERL%%/Date/Manip/TZ/amsant03.pm
 %%SITE_PERL%%/Date/Manip/TZ/amsao_00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amscor00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amsitk00.pm
@@ -936,5 +936,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZdata.pod
 %%SITE_PERL%%/Date/Manip/Zones.pm
 %%SITE_PERL%%/Date/Manip/Zones.pod
+%%SITE_PERL%%/Date/Manip/History.pod
+%%PERL5_MAN3%%/Date::Manip::History.3.gz
 %%PERL5_MAN1%%/dm_date.1.gz
 %%PERL5_MAN1%%/dm_zdump.1.gz

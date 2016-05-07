@@ -2,6 +2,7 @@
 
 PORTNAME=	kvasd
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://svn.code.sf.net/p/wsjt/wsjt/trunk/kvasd-binary/Linux/ \
 		LOCAL/db
@@ -18,16 +19,17 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 BUILD_DEPENDS=	${KVASD_DEPENDS}
 RUN_DEPENDS=	${KVASD_DEPENDS}
 
-KVASD_DEPENDS=	linux-${USE_LINUX}-libgfortran>0:${PORTSDIR}/devel/linux-c6-libgfortran
+KVASD_DEPENDS=	linux-${USE_LINUX}-libgfortran>0:devel/linux-c6-libgfortran
 USE_LINUX=	c6
 NO_BUILD=	yes
 PLIST_FILES=	bin/kvasd
 
 do-extract:
+		${MKDIR} ${WRKSRC}
+		${CP} ${DISTDIR}/kvasd ${WRKSRC}
 
-BINMODE=	0644
 do-install:
+		${BRANDELF} -t Linux ${WRKSRC}/kvasd
 		${INSTALL_KLD} ${DISTDIR}/kvasd ${STAGEDIR}${PREFIX}/bin
-		${BRANDELF} -t Linux ${STAGEDIR}${PREFIX}/bin/kvasd
 
 .include <bsd.port.mk>

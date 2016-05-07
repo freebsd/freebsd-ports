@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Simple template engine
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
-RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
+BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
 USES=	pear
 PEAR_CHANNEL=	phpunit

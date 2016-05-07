@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	5.0.26
+PORTVERSION=	5.0.27
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	rubygem-
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
 
-USES+=		cpe
+BUILD_DEPENDS=		${LOCALBASE}/bin/rake:devel/rubygem-rake
 
 CPE_VENDOR=	phusion
 CPE_PRODUCT=	passenger
@@ -24,9 +24,9 @@ SYMLINK_DESC=	Create passenger symlink
 OPTIONS_DEFAULT=	APACHE22
 
 USE_RUBY=	yes
-USE_RAKE=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+RAKE_BIN=	${LOCALBASE}/bin/rake
+USES=		cpe gem
+NOPORTDOCS=	yes
 
 .include <bsd.port.options.mk>
 
@@ -34,9 +34,9 @@ RUBYGEM_AUTOPLIST=	yes
 USE_APACHE=	22+
 .endif
 
-LIB_DEPENDS+=	libuv.so:${PORTSDIR}/devel/libuv \
-		libcurl.so:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS+= rubygem-rack16>=0:${PORTSDIR}/www/rubygem-rack16
+LIB_DEPENDS+=	libuv.so:devel/libuv \
+		libcurl.so:ftp/curl
+BUILD_DEPENDS+= rubygem-rack16>=0:www/rubygem-rack16
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}

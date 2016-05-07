@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	ftp
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,8 +11,8 @@ COMMENT=	Modern and Flexible Web Client for R
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/include/curl/curl.h:${PORTSDIR}/ftp/curl
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	${LOCALBASE}/include/curl/curl.h:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=	cran:auto-plist
 

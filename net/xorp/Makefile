@@ -11,8 +11,8 @@ COMMENT=	EXtensible Open Router Platform
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		libpcap.so:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		libpcap.so:net/libpcap
 
 CONFLICTS_INSTALL=	xorp-devel-*
 

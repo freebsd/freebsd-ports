@@ -3,7 +3,7 @@
 
 PORTNAME=	gnomint
 PORTVERSION=	1.2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -13,9 +13,9 @@ COMMENT=	X.509 Certification Authority management tool
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libgnutls.so:security/gnutls \
+		libsqlite3.so:databases/sqlite3
 
 GNU_CONFIGURE=	yes
 USES=		gettext-tools gmake perl5 pkgconfig readline

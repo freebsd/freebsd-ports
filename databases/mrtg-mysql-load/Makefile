@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.bitbybit.dk/mysql/mrtg-mysql-load/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL load analysis fetcher for MRTG
 
-RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg
+RUN_DEPENDS=	mrtg:net-mgmt/mrtg
 
 USES=		perl5
 NO_BUILD=	yes

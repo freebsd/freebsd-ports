@@ -3,7 +3,7 @@
 
 PORTNAME=	ovs
 PORTVERSION=	1.05
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -14,8 +14,8 @@ COMMENT=	RRDtool frontend for mail statistics
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
-		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
+RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
+		p5-File-Tail>=0:devel/p5-File-Tail
 
 NO_BUILD=	yes
 NO_ARCH=	yes

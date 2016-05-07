@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmixer
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	audio
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -10,7 +10,7 @@ COMMENT=	Tabbed GTK+ mixer for FreeBSD
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	dsbwrtsysctl:${PORTSDIR}/sysutils/dsbwrtsysctl
+RUN_DEPENDS=	dsbwrtsysctl:sysutils/dsbwrtsysctl
 
 USES=		tar:tgz pkgconfig
 USE_GNOME=	gtk20

@@ -25,14 +25,14 @@ OPTIONS_DEFAULT=	FOP
 OPTIONS_SUB=	yes
 
 FOP_DESC=		textproc/fop plugin (required for math/scilab)
-FOP_BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
-			${JAVALIBDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons
+FOP_BUILD_DEPENDS=	fop:textproc/fop \
+			${JAVALIBDIR}/xmlgraphics-commons.jar:graphics/xmlgraphics-commons
 FOP_RUN_DEPENDS:=	${FOP_BUILD_DEPENDS} \
-			${JAVASHAREDIR}/batik/batik.jar:${PORTSDIR}/graphics/batik \
-			${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
-			${JAVALIBDIR}/commons-io.jar:${PORTSDIR}/devel/jakarta-commons-io \
-			${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-			${JAVALIBDIR}/xml-apis-ext.jar:${PORTSDIR}/textproc/xml-commons
+			${JAVASHAREDIR}/batik/batik.jar:graphics/batik \
+			${JAVALIBDIR}/avalon-framework.jar:devel/avalon-framework \
+			${JAVALIBDIR}/commons-io.jar:devel/jakarta-commons-io \
+			${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \
+			${JAVALIBDIR}/xml-apis-ext.jar:textproc/xml-commons
 FOP_ALL_TARGET=		fop
 
 post-patch:

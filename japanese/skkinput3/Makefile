@@ -11,6 +11,8 @@ DISTNAME=	skkinput-${PORTVERSION}
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	SKK-like Japanese input method for X11
 
+BROKEN_powerpc64=	Does not build
+
 USES=		imake
 USE_GCC=	any
 USE_CSTD=	gnu89
@@ -37,11 +39,11 @@ PLIST_SUB=	SKK8="" SKK10="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDBSKKD}
-RUN_DEPENDS=	${LOCALBASE}/libexec/dbskkd-cdb:${PORTSDIR}/japanese/dbskkd-cdb
+RUN_DEPENDS=	${LOCALBASE}/libexec/dbskkd-cdb:japanese/dbskkd-cdb
 .elif ${PORT_OPTIONS:MRSKKSERV}
-RUN_DEPENDS=	${LOCALBASE}/libexec/rskkserv:${PORTSDIR}/japanese/rskkserv
+RUN_DEPENDS=	${LOCALBASE}/libexec/rskkserv:japanese/rskkserv
 .else
-RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skkserv
+RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:japanese/skkserv
 .endif
 
 post-patch:

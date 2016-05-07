@@ -3,7 +3,7 @@
 
 PORTNAME=	etask
 PORTVERSION=	0.3.91
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://members.chello.at/rene.weichselbaum/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -11,7 +11,7 @@ MASTER_SITES=	http://members.chello.at/rene.weichselbaum/ \
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Manage your projects or tasks within GNU Emacs
 
-RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
+RUN_DEPENDS=	xpdf:graphics/xpdf
 
 USE_EMACS=	yes
 USES=		ghostscript:run

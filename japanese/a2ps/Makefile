@@ -15,7 +15,7 @@ COMMENT=	Text file to postscript converter (with Japanese support)
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	paperconf:${PORTSDIR}/print/libpaper
+RUN_DEPENDS=	paperconf:print/libpaper
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

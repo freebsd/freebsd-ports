@@ -44,10 +44,8 @@ man/man3/verbiste.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-french-deconjugator.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trans-tenses.pl
 %%DATADIR%%-0.1/COPYING
-%%DATADIR%%-0.1/conjugation-el.xml
 %%DATADIR%%-0.1/conjugation-fr.xml
 %%DATADIR%%-0.1/conjugation-it.xml
-%%DATADIR%%-0.1/verbs-el.xml
 %%DATADIR%%-0.1/verbs-fr.xml
 %%DATADIR%%-0.1/verbs-it.xml
 %%HASGTK%%share/texmf/tex/latex/verbiste/verbiste.cls

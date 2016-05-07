@@ -10,10 +10,12 @@ MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:${PORTSDIR}/textproc/py-sphinx
-LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \
-		libevent.so:${PORTSDIR}/devel/libevent2 \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
+		libevent.so:devel/libevent2 \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.1.*
 
@@ -46,15 +48,15 @@ TOKYOCAB_DESC=	Tokyo Cabinet support for persistent queue
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDRIZZLE}
-LIB_DEPENDS+=		libdrizzle.so:${PORTSDIR}/databases/libdrizzle
+LIB_DEPENDS+=		libdrizzle.so:databases/libdrizzle
 CONFIGURE_ARGS+=	--enable-libdrizzle
 .else
 CONFIGURE_ARGS+=	--disable-libdrizzle
 .endif
 
 .if ${PORT_OPTIONS:MMEMCACHED}
-LIB_DEPENDS+=		libmemcached.so:${PORTSDIR}/databases/libmemcached
-BUILD_DEPENDS+=		memcached>=0:${PORTSDIR}/databases/memcached
+LIB_DEPENDS+=		libmemcached.so:databases/libmemcached
+BUILD_DEPENDS+=		memcached>=0:databases/memcached
 CONFIGURE_ARGS+=	--enable-libmemcached
 # This hack is required for the test programs invoked by configure,
 # in the event that libmemcached was compiled with SASL support.
@@ -87,15 +89,15 @@ CONFIGURE_ARGS+=	--disable-libpq
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-BUILD_DEPENDS+=		sqlite3>=3.0.0:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS+=		sqlite3>=3.0.0:databases/sqlite3
+LIB_DEPENDS+=		libsqlite3.so:databases/sqlite3
 CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MTOKYOCAB}
-LIB_DEPENDS+=		libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS+=		libtokyocabinet.so:databases/tokyocabinet
 CONFIGURE_ARGS+=	--enable-libtokyocabinet
 CONFIGURE_ENV+=		LIBTOKYOCABINET_CPPFLAGS=-I${LOCALBASE}/include \
 			LIBTOKYOCABINET_LDFLAGS=-L${LOCALBASE}/lib
@@ -104,7 +106,7 @@ CONFIGURE_ARGS+=	--disable-libtokyocabinet
 .endif
 
 .if ${PORT_OPTIONS:MHIREDIS}
-LIB_DEPENDS+=		libhiredis.so:${PORTSDIR}/databases/hiredis
+LIB_DEPENDS+=		libhiredis.so:databases/hiredis
 CONFIGURE_ARGS+=	--enable-hires
 CONFIGURE_ENV+=		LIBHIREDIS_CPPFLAGS=-I${LOCALBASE}/include/hiredis \
 			LIBHIREDIS_LDFLAGS=-L${LOCALBASE}/lib

@@ -13,11 +13,11 @@ COMMENT=	BitTorrent client written in Java
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
-BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
-		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
-		${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
-RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:devel/log4j \
+		${JAVALIBDIR}/commons-cli.jar:java/jakarta-commons-cli \
+		${JAVALIBDIR}/junit.jar:java/junit \
+		${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
+RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
 
 USES=		zip
 USE_JAVA=	yes

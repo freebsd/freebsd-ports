@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	FFmpeg wrapper
 
-LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0
 
 LIBNAME=	libavbin.so.${PORTVERSION}
 PLIST_FILES=	include/avbin.h \

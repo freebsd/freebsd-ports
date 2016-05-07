@@ -10,6 +10,8 @@ MASTER_SITES=	SFJP/senna/46945
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Embeddable Fulltext Search Engine
 
+BROKEN_powerpc64=	Does not build
+
 GNU_CONFIGURE=	YES
 USE_GCC=	any
 USES=		gmake libtool
@@ -35,7 +37,7 @@ BROKEN=		Does not compile on ${ARCH}
 
 .if ${PORT_OPTIONS:MMECAB}
 CONFIGURE_ARGS+=	--with-mecab
-LIB_DEPENDS+=	libmecab.so:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS+=	libmecab.so:japanese/mecab
 .else
 CONFIGURE_ARGS+=	--without-mecab
 .endif

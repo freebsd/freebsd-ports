@@ -14,8 +14,8 @@ COMMENT=	Python API for YouTube
 LICENSE=	GPLv3
 
 # At the moment the internal backend does not work
-BUILD_DEPENDS=	youtube_dl>=2016.02.22:${PORTSDIR}/www/youtube_dl
-RUN_DEPENDS=	youtube_dl>=2016.02.22:${PORTSDIR}/www/youtube_dl
+BUILD_DEPENDS=	youtube_dl>=2016.02.22:www/youtube_dl
+RUN_DEPENDS=	youtube_dl>=2016.02.22:www/youtube_dl
 
 USES=	python
 USE_PYTHON=	autoplist concurrent distutils

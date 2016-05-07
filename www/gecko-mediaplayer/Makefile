@@ -11,11 +11,11 @@ COMMENT=	Multimedia browser plugin for Gecko based browsers
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libnspr4.so:${PORTSDIR}/devel/nspr \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libgmlib.so:${PORTSDIR}/multimedia/gmtk
-RUN_DEPENDS=	gnome-mplayer:${PORTSDIR}/multimedia/gnome-mplayer
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libnspr4.so:devel/nspr \
+		libcurl.so:ftp/curl \
+		libgmlib.so:multimedia/gmtk
+RUN_DEPENDS=	gnome-mplayer:multimedia/gnome-mplayer
 
 USES=		compiler:c++11-lang gecko gettext pkgconfig webplugin:native
 USE_GNOME=	glib20

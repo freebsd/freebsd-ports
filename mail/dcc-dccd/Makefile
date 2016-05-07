@@ -62,7 +62,7 @@ CONFIGURE_ARGS=	--with-uid=${DCCUSER} \
 ALT_HOME_CONFIGURE_ON=	--libexecdir=${PREFIX}/dcc/libexec --with-cgibin=${PREFIX}/dcc/cgi-bin
 DCCM_CONFIGURE_ENABLE=	dccm
 DCCM_USE=	rc_subr=dccm
-PORTS_SENDMAIL_BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/libmilter
+PORTS_SENDMAIL_BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:mail/libmilter
 PORTS_SENDMAIL_CONFIGURE_ON=	--with-sendmail=yes
 DCCIFD_CONFIGURE_ENABLE=	dccifd
 DCCIFD_USE=	rc_subr=dccifd

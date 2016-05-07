@@ -13,10 +13,10 @@ COMMENT=	Open source drop in replacement for NoMachine's NX client
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+BUILD_DEPENDS=	${LOCALBASE}/bin/zip:archivers/zip
+LIB_DEPENDS=	libcups.so:print/cups \
+		libcurl.so:ftp/curl \
+		libsmbclient.so:net/samba-libsmbclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.16
 

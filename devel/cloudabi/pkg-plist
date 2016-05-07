@@ -1,0 +1,10 @@
+include/cloudabi32_types.h
+include/cloudabi64_types.h
+include/cloudabi_syscalls.h
+include/cloudabi_syscalls_info.h
+include/cloudabi_syscalls_native.h
+include/cloudabi_syscalls_native_aarch64.h
+include/cloudabi_syscalls_native_x86_64.h
+include/cloudabi_syscalls_struct.h
+include/cloudabi_types.h
+include/cloudabi_types_common.h

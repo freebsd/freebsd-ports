@@ -3,7 +3,7 @@
 
 PORTNAME=	sasp
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/ahze \
 		http://people.freebsd.org/~ahze/distfiles/
@@ -11,12 +11,16 @@ MASTER_SITES=	LOCAL/ahze \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that permits to use a gateway whatever IP we have
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 NO_WRKSUBDIR=	yes
-MAKE_ENV=	LIBNET_CONFIG="${LIBNET_CONFIG}"
 PLIST_FILES=	sbin/sasp
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+do-build:
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include -o sasp sasp.c \
+		${LDFLAGS} -L${LOCALBASE}/lib -lpcap -lnet)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/sasp ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

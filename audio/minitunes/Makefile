@@ -10,7 +10,7 @@ MASTER_SITES=	http://flavio.tordini.org/files/${PORTNAME}/
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Just another music player
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		qmake
 USE_QT4=	dbus gui moc_build network phonon rcc_build \

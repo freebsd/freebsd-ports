@@ -53,7 +53,7 @@ COMMENT=	Selection of additional aircraft for the FlightGear flight simulator
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:${PORTSDIR}/games/flightgear-data
+RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 NO_BUILD=	yes
 USES=		zip

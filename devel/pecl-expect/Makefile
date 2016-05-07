@@ -3,6 +3,7 @@
 
 PORTNAME=	expect
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,7 +14,7 @@ COMMENT=	PHP extension for expect library
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
+LIB_DEPENDS=	libexpect.so:lang/expect
 
 USES=		tar:tgz tcl:86
 USE_PHP=	yes

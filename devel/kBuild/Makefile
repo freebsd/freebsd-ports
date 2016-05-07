@@ -13,7 +13,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}r2695-src
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	Makefile framework
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 USES=		autoreconf:build gmake makeinfo
 

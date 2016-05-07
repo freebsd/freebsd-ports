@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.abisource.com/downloads/wv/${PORTVERSION}/
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Library and executables to access Microsoft Word files
 
-LIB_DEPENDS=	libwmf.so:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS=	libwmf.so:graphics/libwmf
 
 USE_GNOME=	libgsf
 GNU_CONFIGURE=	yes

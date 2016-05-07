@@ -1,6 +1,6 @@
---- Makefile.orig	2015-03-04 15:17:21 UTC
+--- Makefile.orig	2016-04-20 16:06:15 UTC
 +++ Makefile
-@@ -1,11 +1,12 @@
+@@ -1,12 +1,13 @@
 -CC=lazbuild
 +CC=lazbuild -d
  ST=strip
@@ -10,15 +10,16 @@
 +datadir  = $(DESTDIR)${PREFIX}/share/cqrlog
 +bindir   = $(DESTDIR)${PREFIX}/bin
 +sharedir = $(DESTDIR)${PREFIX}/share
+ tmpdir   = /tmp
 +mandir   = $(DESTDIR)${PREFIX}
  
  cqrlog: src/cqrlog.lpi
--	$(CC) --ws=gtk2 src/cqrlog.lpi
+-	$(CC) --ws=gtk2 --pcp=$(tmpdir)/.lazarus src/cqrlog.lpi
 +	$(CC) --pcp=. --ws=${PLATFORM} src/cqrlog.lpi --lazarusdir=%%LAZARUSDIR%%
  	$(ST) src/cqrlog
  	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
  
-@@ -29,7 +30,7 @@ install:
+@@ -30,7 +31,7 @@ install:
  	install -d -v         $(sharedir)/pixmaps/cqrlog
  	install -d -v         $(sharedir)/icons
  	install -d -v         $(sharedir)/applications
@@ -27,7 +28,7 @@
  	install    -v -m 0755 src/cqrlog $(bindir)
  	install    -v -m 0755 tools/cqrlog-apparmor-fix $(datadir)/cqrlog-apparmor-fix
  	install    -v -m 0644 ctyfiles/* $(datadir)/ctyfiles/
-@@ -46,7 +47,7 @@ install:
+@@ -47,7 +48,7 @@ install:
  	install    -v -m 0644 images/cqrlog.png $(sharedir)/pixmaps/cqrlog/cqrlog.png
  	install    -v -m 0644 images/cqrlog.png $(sharedir)/icons/cqrlog.png  
  	install    -v -m 0644 src/changelog.html $(datadir)/changelog.html

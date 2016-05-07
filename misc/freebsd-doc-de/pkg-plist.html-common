@@ -65,6 +65,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-final-confirmation.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-final-modification-shell.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-finalconfiguration.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-keymap-10.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-keymap-select-default.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-mainexit.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-netinstall-files.png
@@ -82,6 +83,14 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-country.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-region.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-zone.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-disk_info.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-disk_select.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-geli_password.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-menu.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-partmenu.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-vdev_invalid.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-vdev_type.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-warning.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom/striping.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/imagelib/callouts/1.png

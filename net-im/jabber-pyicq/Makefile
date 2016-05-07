@@ -16,8 +16,8 @@ COMMENT=	Python ICQ-Transport for Jabber
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 
 PROJECTHOST=	pyicqt
 OPTIONS_DEFINE=	DOCS EXAMPLES MYSQL TWISTED
@@ -43,7 +43,7 @@ INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 PORTDOCS=	NEWS README
 PORTEXAMPLES=	db-setup.mysql jabber-pyicq.xml
 
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb
 TWISTED_USES=		twisted:web,words
 
 .include <bsd.port.options.mk>
@@ -53,19 +53,19 @@ JABBER_REQUIRE?=	jabber
 JABBER_USER?=		jabber
 JABBER_PIDDIR?=		/var/run/jabberd
 JABBER_SPOOLDIR?=	/var/spool/jabberd
-RUN_DEPENDS+=		jabberd14:${PORTSDIR}/net-im/jabber
+RUN_DEPENDS+=		jabberd14:net-im/jabber
 .elif ${PORT_OPTIONS:MJABBERD}
 JABBER_REQUIRE?=	jabberd
 JABBER_USER?=		jabber
 JABBER_PIDDIR?=		/var/jabberd/pid
 JABBER_SPOOLDIR?=	/var/spool/jabber
-RUN_DEPENDS+=		jabberd:${PORTSDIR}/net-im/jabberd
+RUN_DEPENDS+=		jabberd:net-im/jabberd
 .elif ${PORT_OPTIONS:MEJABBERD}
 JABBER_REQUIRE?=	ejabberd
 JABBER_USER?=		ejabberd
 JABBER_PIDDIR?=		/var/jabberd/pid
 JABBER_SPOOLDIR?=	/var/spool/jabber
-RUN_DEPENDS+=		ejabberdctl:${PORTSDIR}/net-im/ejabberd
+RUN_DEPENDS+=		ejabberdctl:net-im/ejabberd
 .elif ${PORT_OPTIONS:MDAEMON}
 JABBER_REQUIRE?=	DAEMON
 JABBER_USER?=		nobody

@@ -13,12 +13,11 @@ COMMENT=	Extensible wrapper for Atom and RSS parsers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-RUN_DEPENDS=	rubygem-hpricot>=0.6:${PORTSDIR}/www/rubygem-hpricot \
-		rubygem-simple-rss>=1.1:${PORTSDIR}/www/rubygem-simple-rss
+RUN_DEPENDS=	rubygem-hpricot>=0.6:www/rubygem-hpricot \
+		rubygem-simple-rss>=1.1:www/rubygem-simple-rss
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

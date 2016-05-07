@@ -11,14 +11,17 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Drawing library for Python
 
+LICENSE=	GPLv2+
+
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -14,9 +14,9 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@thepentagon.org
 COMMENT=	Perl script for downloading nzb files
 
-RUN_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		uudeview:${PORTSDIR}/converters/uudeview
+RUN_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		uudeview:converters/uudeview
 
 PLIST_FILES=	bin/${PORTNAME}
 NO_BUILD=	yes
@@ -26,7 +26,7 @@ SHEBANG_FILES=	${DISTNAME}
 WRKSRC=		${WRKDIR}
 
 OPTIONS_DEFINE=	SSL
-SSL_RUN_DEPENDS=p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
+SSL_RUN_DEPENDS=p5-Net-SSLeay>=0:security/p5-Net-SSLeay
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

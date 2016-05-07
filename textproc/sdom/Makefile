@@ -12,7 +12,7 @@ COMMENT=	Implementation of the W3C DOM recommendation in Scheme
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	guile-lib>=0:${PORTSDIR}/devel/guile-lib
+RUN_DEPENDS=	guile-lib>=0:devel/guile-lib
 
 NO_BUILD=	yes
 

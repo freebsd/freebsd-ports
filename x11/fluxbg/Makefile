@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Background changer for fluxbox/blackbox
 
-LIB_DEPENDS=	libgtkmm-2.0.so:${PORTSDIR}/x11-toolkits/gtkmm20
-RUN_DEPENDS=	fbsetbg:${PORTSDIR}/x11-wm/fluxbox
+LIB_DEPENDS=	libgtkmm-2.0.so:x11-toolkits/gtkmm20
+RUN_DEPENDS=	fbsetbg:x11-wm/fluxbox
 
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig

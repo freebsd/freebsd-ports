@@ -6,7 +6,7 @@ PORTVERSION=	0.5.1
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE \
-    		http://mirrors.rit.edu/zi/
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Utility to manage Active Directory interoperability

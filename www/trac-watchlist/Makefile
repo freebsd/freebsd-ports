@@ -17,7 +17,7 @@ LICENSE=	GPLv3
 
 SVN_REV=	11526
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	tracd:www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
 USES=		python:2 zip

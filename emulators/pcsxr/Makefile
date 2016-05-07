@@ -3,7 +3,7 @@
 
 PORTNAME=	pcsxr
 PORTVERSION=	1.9.94.r87113
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -13,9 +13,9 @@ COMMENT=	Playstation (PSX) emulator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libcdio.so:${PORTSDIR}/sysutils/libcdio
+BUILD_DEPENDS=	gawk:lang/gawk
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libcdio.so:sysutils/libcdio
 
 ONLY_FOR_ARCHS=	i386 amd64
 

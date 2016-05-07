@@ -12,7 +12,7 @@ DISTNAME=	netcdf-perl-${PORTVERSION}
 MAINTAINER=	rand@meridian-enviro.com
 COMMENT=	Perl5 module to read and write netCDF files
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
 USES=		perl5 fakeroot
 

@@ -11,11 +11,10 @@ COMMENT=	Memoize method return values
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-thread_safe>=0.3.1:${PORTSDIR}/devel/rubygem-thread_safe
+RUN_DEPENDS=	rubygem-thread_safe>=0.3.1:devel/rubygem-thread_safe
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

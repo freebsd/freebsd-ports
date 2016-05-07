@@ -11,7 +11,7 @@ COMMENT=	HTTP video streaming daemon
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:multimedia/v4l_compat
 
 APP_BINARY=	mjpg_streamer
 CFLAGS+=	-I${LOCALBASE}/include

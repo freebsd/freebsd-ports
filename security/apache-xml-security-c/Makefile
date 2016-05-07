@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 
 USE_OPENSSL=	yes
 
-LIB_DEPENDS+=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS+=	libxerces-c.so.3:textproc/xerces-c3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-xerces=${LOCALBASE}

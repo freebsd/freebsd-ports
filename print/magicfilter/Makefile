@@ -3,7 +3,7 @@
 
 PORTNAME=	magicfilter
 PORTVERSION=	2.3.h
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/magicfilter/
 
@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 
 .if exists(${LOCALBASE}/lib/libmagic.so)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:${PORTSDIR}/sysutils/file
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:sysutils/file
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 

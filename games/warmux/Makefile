@@ -11,8 +11,8 @@ MASTER_SITES=	http://download.gna.org/${PORTNAME}/ \
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Turn-based artillery game with free software mascots
 
-LIB_DEPENDS=	libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26 \
+		libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	cxx_present=yes
@@ -28,7 +28,7 @@ OPTIONS_SUB=	yes
 DEBUG_CONFIGURE_ENABLE=	debug logging
 
 FRIBIDI_DESC=	Enable bi-directional unicode support
-FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	fribidi
 
 NLS_USES=		gettext

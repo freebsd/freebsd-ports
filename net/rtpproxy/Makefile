@@ -12,7 +12,7 @@ COMMENT=	High-performance RTP proxy server for the SIP Express Router (SER)
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	libgsm.so:audio/gsm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sippy

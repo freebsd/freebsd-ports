@@ -70,41 +70,41 @@ OPTIONAL_ADDONS=BigNum \
 
 OPTIONS_GROUP_ADDONS=${OPTIONAL_ADDONS}
 
-BigNum_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
-CFFI_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
-Clutter_LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
-DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
+BigNum_LIB_DEPENDS=	libgmp.so:math/gmp
+CFFI_LIB_DEPENDS=	libffi.so:devel/libffi
+Clutter_LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter
+DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 EditLine_USES=		libedit
-Font_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+Font_LIB_DEPENDS=	libfreetype.so:print/freetype2
 Font_USE=		GL=glut XORG=xmu
-GLFW_LIB_DEPENDS=	libglfw.so.0:${PORTSDIR}/graphics/glfw2
-Image_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-			libtiff.so:${PORTSDIR}/graphics/tiff
+GLFW_LIB_DEPENDS=	libglfw.so.0:graphics/glfw2
+Image_LIB_DEPENDS=	libpng.so:graphics/png \
+			libtiff.so:graphics/tiff
 Image_USES=		jpeg
-LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
-LibSndFile_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
+LibSndFile_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 Libxml2_USE=		GNOME=libxml2
-Loudmouth_LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
-Memcached_LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
+Loudmouth_LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
+Memcached_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 MySQL_USE=		MYSQL=client
-Ogg_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+Ogg_LIB_DEPENDS=	libogg.so:audio/libogg
 OpenGL_USE=		GL=glut XORG=xmu
 PostgreSQL_USES=	pgsql
 Python_USES=		python
-QDBM_LIB_DEPENDS=	libqdbm.so:${PORTSDIR}/databases/qdbm
+QDBM_LIB_DEPENDS=	libqdbm.so:databases/qdbm
 ReadLine_USES=		readline:port
-Regex_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-SQLite3_USE=		SQLITE=3
+Regex_LIB_DEPENDS=	libpcre.so:devel/pcre
+SQLite3_USES=		sqlite:3
 SampleRateConverter_LIB_DEPENDS=\
-			libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-Socket_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
-TagLib_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
-Theora_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+			libsamplerate.so:audio/libsamplerate
+Socket_LIB_DEPENDS=	libevent.so:devel/libevent2
+TagLib_LIB_DEPENDS=	libtag.so:audio/taglib
+Theora_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 TokyoCabinet_LIB_DEPENDS=	\
-			libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
-UUID_LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
-Vorbis_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-Yajl_LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl
+			libtokyocabinet.so:databases/tokyocabinet
+UUID_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+Vorbis_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+Yajl_LIB_DEPENDS=	libyajl.so:devel/yajl
 
 .include <bsd.port.options.mk>
 

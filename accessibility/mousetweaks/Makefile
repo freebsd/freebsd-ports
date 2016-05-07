@@ -11,8 +11,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mouse accessibility enhancements for the GNOME desktop
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0.1.0:${PORTSDIR}/devel/gsettings-desktop-schemas
-RUN_DEPENDS=	gsettings-desktop-schemas>=0.1.0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gsettings-desktop-schemas>=0.1.0:devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gsettings-desktop-schemas>=0.1.0:devel/gsettings-desktop-schemas
 
 USE_XORG=	x11 xfixes xcursor xtst
 USE_GNOME=	gnomeprefix gtk30 intlhack

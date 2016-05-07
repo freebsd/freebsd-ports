@@ -1,0 +1,14 @@
+--- configure.orig	2016-03-22 04:58:27.000000000 -0700
++++ configure	2016-03-23 20:51:10.722420000 -0700
+@@ -14996,9 +14996,9 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for LIBNET" >&5
+ $as_echo_n "checking for LIBNET... " >&6; }
+ if test "x$with_libnet" = "x"; then
+-        LIBNET_CONFIG="`which libnet-config`"
++        LIBNET_CONFIG="`which libnet11-config`"
+ else
+-        LIBNET_CONFIG="$with_libnet/libnet-config"
++        LIBNET_CONFIG="$with_libnet/libnet11-config"
+ fi
+ 
+ if test -n "$LIBNET_CONFIG" -a -x "$LIBNET_CONFIG"; then

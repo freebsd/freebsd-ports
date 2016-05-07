@@ -37,7 +37,7 @@ m=	${RDEP_MAPPING:M${o}*}
 .if ${m}
 b=	${m:C/^[A-Z]*://:C/:.*//:tl}
 p=	${m:C/^[A-Z]*://:C/.*://:tl}
-RUN_DEPENDS+=	${b}:${PORTSDIR}/audio/${p}
+RUN_DEPENDS+=	${b}:audio/${p}
 RUN_DEPENDS:=	${RUN_DEPENDS}
 .endif
 .endfor

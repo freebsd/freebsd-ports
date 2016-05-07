@@ -8,10 +8,10 @@ CATEGORIES=	textproc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGML DTDs catalogs
 
-RUN_DEPENDS=	${ISO8879_CAT}:${PORTSDIR}/textproc/iso8879 \
-		${ISO12083_CAT}:${PORTSDIR}/textproc/iso12083 \
-		${HTML_CAT}:${PORTSDIR}/textproc/html \
-		${LINUXDOC_CAT}:${PORTSDIR}/textproc/linuxdoc
+RUN_DEPENDS=	${ISO8879_CAT}:textproc/iso8879 \
+		${ISO12083_CAT}:textproc/iso12083 \
+		${HTML_CAT}:textproc/html \
+		${LINUXDOC_CAT}:textproc/linuxdoc
 
 USES=		metaport
 

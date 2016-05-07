@@ -11,7 +11,7 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Emacs lisp module for editing RD files
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/textproc/ruby-rdtool:patch
+BUILD_DEPENDS=	${NONEXISTENT}:textproc/ruby-rdtool:patch
 
 USE_RUBY=	yes
 

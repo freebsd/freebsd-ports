@@ -6,10 +6,8 @@ PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	grog@FreeBSD.org
 COMMENT=	Utility to set title on an xterm
-
-BROKEN=		unfetchable
 
 NO_WRKSUBDIR=	yes
 

@@ -7,7 +7,7 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
-LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson
 
 KIPI_PLUGIN=	imgurexport
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"

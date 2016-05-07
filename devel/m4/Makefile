@@ -22,7 +22,7 @@ EXAMPLESDIR=	share/examples/gm4
 
 OPTIONS_DEFINE=			LIBSIGSEGV EXAMPLES
 LIBSIGSEGV_DESC=		Use alternative page fault handler (GNU libsigsegv)
-LIBSIGSEGV_LIB_DEPENDS=		libsigsegv.so:${PORTSDIR}/devel/libsigsegv
+LIBSIGSEGV_LIB_DEPENDS=		libsigsegv.so:devel/libsigsegv
 LIBSIGSEGV_CONFIGURE_ON=	--with-libsigsegv-prefix=${LOCALBASE}
 LIBSIGSEGV_CONFIGURE_OFF=	--without-libsigsegv-prefix
 

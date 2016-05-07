@@ -15,7 +15,7 @@ COMMENT=	Bomberman clone written in C++
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Keruspe

@@ -12,10 +12,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Backend system admin scripts for gnome-system-tools
 
-BUILD_DEPENDS=	p5-Net-DBus>=0:${PORTSDIR}/devel/p5-Net-DBus
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
-RUN_DEPENDS=	p5-Net-DBus>=0:${PORTSDIR}/devel/p5-Net-DBus
+BUILD_DEPENDS=	p5-Net-DBus>=0:devel/p5-Net-DBus
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libpolkit-gobject-1.so:sysutils/polkit
+RUN_DEPENDS=	p5-Net-DBus>=0:devel/p5-Net-DBus
 
 USES=		gettext-tools gmake pathfix perl5 pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	SystemToolsBackends.pl.in

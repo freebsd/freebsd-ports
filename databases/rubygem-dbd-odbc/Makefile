@@ -10,13 +10,12 @@ COMMENT=	ODBC driver for DBI-for-Ruby
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-dbi>=0:${PORTSDIR}/databases/rubygem-dbi \
-		${RUBY_SITEARCHLIBDIR}/odbc.so:${PORTSDIR}/databases/ruby-odbc
+RUN_DEPENDS=	rubygem-dbi>=0:databases/rubygem-dbi \
+		${RUBY_SITEARCHLIBDIR}/odbc.so:databases/ruby-odbc
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

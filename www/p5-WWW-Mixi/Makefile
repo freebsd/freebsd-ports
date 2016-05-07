@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module of Automated interface to the Mixi
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-				ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+				ja-p5-Jcode>=0:japanese/p5-Jcode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

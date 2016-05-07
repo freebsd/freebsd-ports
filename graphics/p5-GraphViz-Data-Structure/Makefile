@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Visualise data structures
 
-BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
+BUILD_DEPENDS=	dot:graphics/graphviz \
+		p5-GraphViz>=0:graphics/p5-GraphViz
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -12,9 +12,9 @@ DISTNAME=	Gondola-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Create and optimize a distribution network of gondolas
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rabbyt>=0.8.1:${PORTSDIR}/graphics/py-rabbyt \
-		${PYTHON_PKGNAMEPREFIX}pyglet>=1.1:${PORTSDIR}/graphics/py-pyglet \
-		avbin>=7:${PORTSDIR}/multimedia/avbin
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rabbyt>=0.8.1:graphics/py-rabbyt \
+		${PYTHON_PKGNAMEPREFIX}pyglet>=1.1:graphics/py-pyglet \
+		avbin>=7:multimedia/avbin
 
 USES=		python:run zip
 NO_BUILD=	yes

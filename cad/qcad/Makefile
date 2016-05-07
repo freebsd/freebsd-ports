@@ -13,9 +13,9 @@ COMMENT=	Professional CAD system
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
-		${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs
-LIB_DEPENDS=	libquazip.so:${PORTSDIR}/archivers/quazip
+BUILD_DEPENDS=	bash:shells/bash	\
+		${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs
+LIB_DEPENDS=	libquazip.so:archivers/quazip
 
 MAKE_JOBS_UNSAFE=yes
 

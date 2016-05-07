@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	johntabularasa@users.sf.net
 COMMENT=	Library that allows application developers to connect to PG
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

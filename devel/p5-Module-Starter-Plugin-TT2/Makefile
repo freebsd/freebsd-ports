@@ -14,9 +14,9 @@ COMMENT=	TT2 templates for Module::Starter::Template
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Starter>=1.47:${PORTSDIR}/devel/p5-Module-Starter \
-		p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit
-RUN_DEPENDS=	p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit
+BUILD_DEPENDS=	p5-Module-Starter>=1.47:devel/p5-Module-Starter \
+		p5-Template-Toolkit>=2:www/p5-Template-Toolkit
+RUN_DEPENDS=	p5-Template-Toolkit>=2:www/p5-Template-Toolkit
 
 USES=		perl5
 USE_PERL5=	configure

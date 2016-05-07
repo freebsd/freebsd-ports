@@ -12,7 +12,7 @@ COMMENT=	Interactive viewer for 3- and 4-D geometric objects
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		libtool makeinfo motif tar:bzip2
 USE_GL=		glu

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualmin
-PORTVERSION=	5.0
+PORTVERSION=	5.02
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/
@@ -13,7 +13,7 @@ COMMENT=	Virtual hosting management system based on webmin
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:${PORTSDIR}/sysutils/webmin
+RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:sysutils/webmin
 
 USES=		shebangfix
 SHEBANG_FILES=	*.cgi

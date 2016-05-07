@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	.Final-dist
 CATEGORIES=	java devel
 MASTER_SITES=	http://dl.bintray.com/netty/downloads/
 
-MAINTAINER=	m.tsatsenko@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java NIO client server framework
 
 LICENSE=	APACHE20

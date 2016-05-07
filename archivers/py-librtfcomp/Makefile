@@ -14,8 +14,8 @@ COMMENT=	Python bindings for library for handling compressed RTF documents
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS=	librtfcomp.so:${PORTSDIR}/archivers/librtfcomp
+BUILD_DEPENDS=	pyrexc:devel/pyrex
+LIB_DEPENDS=	librtfcomp.so:archivers/librtfcomp
 
 CONFIGURE_ARGS=	--enable-python-bindings
 GNU_CONFIGURE=	yes

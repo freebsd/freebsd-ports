@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	hbase
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION} \
-		LOCAL/demon/:maven
-DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-hbase-${PORTVERSION}-maven-repository.tar.gz:maven
+		http://kev009.com/freebsd/:maven
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 DIST_SUBDIR=	hadoop
 
 MAINTAINER=	demon@FreeBSD.org
@@ -14,16 +15,16 @@ COMMENT=	Hadoop database, a distributed, scalable, big data store
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		cmake:${PORTSDIR}/devel/cmake \
-		${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		yarn:${PORTSDIR}/devel/hadoop2
+BUILD_DEPENDS=	bash:shells/bash \
+		cmake:devel/cmake \
+		${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3
+RUN_DEPENDS=	bash:shells/bash \
+		yarn:devel/hadoop2
 
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.7+
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-XX:MaxPermSize=256m"
 
 OPTIONS_DEFINE=	DOCS
@@ -55,8 +56,8 @@ PLIST_SUB=	HBASE_USER=${HBASE_USER} \
 .include <bsd.port.pre.mk>
 
 .if ${JAVA_PORT_VERSION:M1.8.*}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-hbase-annotations-pom.xml
-MVN_JDK18=	-DcompileSource=1.8
+JDK18_PROFILE=	,build-with-jdk8
+JDK18_SOURCE=	-DcompileSource=1.8
 .endif
 
 post-patch:
@@ -64,8 +65,8 @@ post-patch:
 	${RM} ${WRKSRC}/conf/hbase-env.sh.bak ${WRKSRC}/conf/hbase-env.sh.orig
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean install -Prelease,native -DskipTests ${MVN_JDK18}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline install -DskipTests site assembly:single -Prelease,native ${MVN_JDK18}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean install -Prelease,native${JDK18_PROFILE} -DskipTests ${JDK18_SOURCE}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline install -DskipTests site assembly:single -Prelease,native${JDK18_PROFILE} ${JDK18_SOURCE}
 
 post-build:
 	cd ${WRKSRC}/hbase-assembly/target && ${TAR} xf ${PORTNAME}-${PORTVERSION}-bin.tar.gz

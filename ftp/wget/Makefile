@@ -3,6 +3,7 @@
 
 PORTNAME=	wget
 DISTVERSION=	1.16.3
+PORTREVISION=	1
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	GNU
 
@@ -33,11 +34,11 @@ NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LDFLAGS=		-L${LOCALBASE}/lib
 
 IDN_USES=		iconv
-IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_ENABLE=	iri
 IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE}
 
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CPPFLAGS=		-I${LOCALBASE}/include
 PCRE_LDFLAGS=		-L${LOCALBASE}/lib
 PCRE_CONFIGURE_ENV_OFF=	ac_cv_header_pcre_h=no
@@ -51,7 +52,7 @@ CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 .elif ${PORT_OPTIONS:MGNUTLS}
 USES+=		pkgconfig
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 CONFIGURE_ARGS+=--with-ssl=gnutls
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -64,7 +65,7 @@ INFO=		wget
 # eliminate gmakism
 post-patch:
 	${REINPLACE_CMD} -e 's,$$<,$$(srcdir)/wget.texi,' \
-	    		 -e 's,WGETRC = $$(sysconfdir)/wgetrc,&.sample,' \
+			 -e 's,WGETRC = $$(sysconfdir)/wgetrc,&.sample,' \
 		${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e 's,/usr/local/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
 			 -e 's,@file{},@file{${PREFIX}},' \

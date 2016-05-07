@@ -11,10 +11,9 @@ COMMENT=	Extension for dynamic libraries & binding functions
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

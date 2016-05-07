@@ -11,14 +11,13 @@ COMMENT=	Box enhancer for jQuery and Protoype
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-coffee-rails4>=3.2:${PORTSDIR}/devel/rubygem-coffee-rails4 \
-		rubygem-compass-rails>=2.0.4:${PORTSDIR}/textproc/rubygem-compass-rails \
-		rubygem-railties4>=3.0:${PORTSDIR}/www/rubygem-railties4 \
-		rubygem-sass-rails5>=3.2:${PORTSDIR}/textproc/rubygem-sass-rails5
+RUN_DEPENDS=	rubygem-coffee-rails4>=3.2:devel/rubygem-coffee-rails4 \
+		rubygem-compass-rails>=2.0.4:textproc/rubygem-compass-rails \
+		rubygem-railties4>=3.0:www/rubygem-railties4 \
+		rubygem-sass-rails5>=3.2:textproc/rubygem-sass-rails5
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

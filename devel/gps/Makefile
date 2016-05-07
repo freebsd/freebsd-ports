@@ -3,7 +3,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	6.1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	gps-6.1.1-src
@@ -14,16 +14,16 @@ COMMENT=	GNAT Programming Studio - IDE for Ada and many other languages
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild \
-		xmlada>=4.4:${PORTSDIR}/textproc/xmlada \
-		gnatcoll>=2015:${PORTSDIR}/devel/gnatcoll \
-		templates_parser>11:${PORTSDIR}/textproc/templates_parser
-LIB_DEPENDS=	libgtkada.so:${PORTSDIR}/x11-toolkits/gtkada3
-RUN_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
-		gdb${PORTGDB}:${PORTSDIR}/devel/gdb \
-		gprbuild:${PORTSDIR}/devel/gprbuild \
-		${PYTHON_PKGNAMEPREFIX}pep8>0:${PORTSDIR}/devel/pep8 \
-		${PYTHON_PKGNAMEPREFIX}jedi>0:${PORTSDIR}/devel/py-jedi
+BUILD_DEPENDS=	gprbuild:devel/gprbuild \
+		xmlada>=4.4:textproc/xmlada \
+		gnatcoll>=2015:devel/gnatcoll \
+		templates_parser>11:textproc/templates_parser
+LIB_DEPENDS=	libgtkada.so:x11-toolkits/gtkada3
+RUN_DEPENDS=	rsvg-convert:graphics/librsvg2 \
+		gdb${PORTGDB}:devel/gdb \
+		gprbuild:devel/gprbuild \
+		${PYTHON_PKGNAMEPREFIX}pep8>0:devel/pep8 \
+		${PYTHON_PKGNAMEPREFIX}jedi>0:devel/py-jedi
 
 GNU_CONFIGURE=	yes
 USES=		ada:run gmake perl5 pkgconfig python
@@ -45,7 +45,7 @@ PORTGDB=	${GDBVER:S/.//}
 
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES
 OPTIONS_SUB=		yes
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-aux-${OPSYS:tl}${OSREL}
 CONFIGURE_ENV+=		AWK=/usr/bin/awk

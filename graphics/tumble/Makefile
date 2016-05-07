@@ -13,8 +13,8 @@ COMMENT=	Creates a PDF file from image files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libnetpbm.so:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libnetpbm.so:graphics/netpbm
 
 USES=		bison gmake
 

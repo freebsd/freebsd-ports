@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	file
-PORTVERSION=	5.22
+PORTVERSION=	5.25
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
@@ -16,7 +16,7 @@ USES=		libtool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-fsect-man5
+CONFIGURE_ARGS+=--enable-fsect-man5
 MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
 
 CONFLICTS=	tct-[0-9]*

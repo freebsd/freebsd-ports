@@ -8,8 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Makes the design of HTML tables easy, flexible, reusable, and efficient
 
-BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
-RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
+BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
+RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
 
 USES=	pear
 

@@ -14,8 +14,8 @@ COMMENT=	Photomosaic generator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgif.so:graphics/giflib \
+		libpng.so:graphics/png
 
 USES=		gmake jpeg shebangfix
 SHEBANG_FILES=	metapixel-prepare metapixel-sizesort

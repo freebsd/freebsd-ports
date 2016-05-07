@@ -13,9 +13,9 @@ COMMENT=	Shufflepuck Cafe Clone
 BROKEN=		unfetchable
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libvorbis.so:audio/libvorbis \
+		libfreetype.so:print/freetype2
 
 USE_SDL=	sdl
 USES=		gmake jpeg

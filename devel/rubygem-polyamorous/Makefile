@@ -12,11 +12,10 @@ COMMENT=	Extraction of shared code from the Active Record Hackery gems
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord4>=3.0:${PORTSDIR}/databases/rubygem-activerecord4
+RUN_DEPENDS=	rubygem-activerecord4>=3.0:databases/rubygem-activerecord4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

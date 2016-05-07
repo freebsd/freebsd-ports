@@ -11,13 +11,12 @@ MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/ \
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	PIM data synchronization framework
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libexslt.so:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	swig1.3:devel/swig13
+LIB_DEPENDS=	libexslt.so:textproc/libxslt
 
 CONFLICTS=	libopensync-0.22*
 
-USE_SQLITE=	3
-USES=		cmake pkgconfig python tar:bzip2
+USES=		cmake pkgconfig python tar:bzip2 sqlite:3
 CMAKE_ARGS+=	-Wno-dev
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes

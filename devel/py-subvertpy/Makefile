@@ -12,7 +12,7 @@ COMMENT=	Python bindings for subversion
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+BUILD_DEPENDS+=	svn:devel/subversion
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		python

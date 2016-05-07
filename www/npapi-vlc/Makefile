@@ -10,8 +10,8 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc-webplugins/${PORTVER
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeds vlc-player in web-browsers
 
-LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc \
-		libxul.so:${PORTSDIR}/www/libxul
+LIB_DEPENDS=	libvlc.so:multimedia/vlc \
+		libxul.so:www/libxul
 
 USES=		libtool pkgconfig tar:xz webplugin:native
 USE_GNOME=	gtk20

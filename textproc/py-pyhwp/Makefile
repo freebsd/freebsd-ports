@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	HWP Document Format v5 parser & processor
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:${PORTSDIR}/devel/py-wheel \
-		${PYTHON_PKGNAMEPREFIX}olefile>=0.40:${PORTSDIR}/devel/py-olefile \
-		${PYTHON_PKGNAMEPREFIX}hypua2jamo>0:${PORTSDIR}/textproc/py-hypua2jamo \
-		${PYTHON_PKGNAMEPREFIX}docopt>0:${PORTSDIR}/devel/py-docopt
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel \
+		${PYTHON_PKGNAMEPREFIX}olefile>=0.40:devel/py-olefile \
+		${PYTHON_PKGNAMEPREFIX}hypua2jamo>0:textproc/py-hypua2jamo \
+		${PYTHON_PKGNAMEPREFIX}docopt>0:devel/py-docopt
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		python zip

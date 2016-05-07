@@ -2,30 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-texture-tools
-DISTVERSION=	2.0.8-1
+PORTVERSION=	2.0.8.1 # needed to not bump PORTEPOCH; remove on next update
+DISTVERSION=	2.0.8
 PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE \
-		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Texture Tools with support for DirectX 10 texture formats
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/NVIDIA_Texture_Tools_LICENSE.txt
+
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libIlmImf.so:graphics/OpenEXR
 
 BROKEN_ia64=	does not build
 BROKEN_powerpc=	does not build
 BROKEN_sparc64=	does not build
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	castano
 
 USES=		alias cmake jpeg
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
 
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	NVIDIA_Texture_Tools_README.txt ChangeLog
 
@@ -46,7 +49,7 @@ post-patch-COMPRESSUI-off:
 		${WRKSRC}/src/CMakeLists.txt
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

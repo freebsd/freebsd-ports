@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanfm
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/PCManFM/
 
@@ -11,7 +11,7 @@ COMMENT=	PCMan File Manager
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfm-gtk.so:${PORTSDIR}/x11/libfm
+LIB_DEPENDS=	libfm-gtk.so:x11/libfm
 
 USES=		autoreconf desktop-file-utils gettext gmake libtool pkgconfig \
 		tar:xz
@@ -41,6 +41,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/default/
 	${INSTALL_DATA} ${WRKSRC}/data/pcmanfm.conf \
 		${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/default/pcmanfm.conf.sample
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

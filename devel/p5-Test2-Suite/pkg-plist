@@ -13,6 +13,7 @@
 %%SITE_PERL%%/Test2/Compare/Meta.pm
 %%SITE_PERL%%/Test2/Compare/Number.pm
 %%SITE_PERL%%/Test2/Compare/Object.pm
+%%SITE_PERL%%/Test2/Compare/OrderedSubset.pm
 %%SITE_PERL%%/Test2/Compare/Pattern.pm
 %%SITE_PERL%%/Test2/Compare/Ref.pm
 %%SITE_PERL%%/Test2/Compare/Regex.pm
@@ -45,6 +46,7 @@
 %%SITE_PERL%%/Test2/Tools/Compare.pm
 %%SITE_PERL%%/Test2/Tools/Defer.pm
 %%SITE_PERL%%/Test2/Tools/Encoding.pm
+%%SITE_PERL%%/Test2/Tools/Event.pm
 %%SITE_PERL%%/Test2/Tools/Exception.pm
 %%SITE_PERL%%/Test2/Tools/Exports.pm
 %%SITE_PERL%%/Test2/Tools/Grab.pm
@@ -74,6 +76,7 @@
 %%PERL5_MAN3%%/Test2::Compare::Meta.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Number.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Object.3.gz
+%%PERL5_MAN3%%/Test2::Compare::OrderedSubset.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Pattern.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Ref.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Regex.3.gz
@@ -106,6 +109,7 @@
 %%PERL5_MAN3%%/Test2::Tools::Compare.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Defer.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Encoding.3.gz
+%%PERL5_MAN3%%/Test2::Tools::Event.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Exception.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Exports.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Grab.3.gz

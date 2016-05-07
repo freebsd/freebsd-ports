@@ -10,7 +10,7 @@ COMMENT=	Tool to compile and run C programs like a shell script
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ryanmjacobs

@@ -2,20 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	tcloo
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
-MASTER_SITES=	SF/tcl/TclOO%20Package/${PORTVERSION}/
-DISTNAME=	TclOO${PORTVERSION}
+MASTER_SITES=	http://core.tcl.tk/tcloo/tarball/
+DISTNAME=	TclOO+Package-${FOSSIL_CHECKIN}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Implementation of TclOO for Tcl 8.5
 
-USES+=		tcl:85
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--exec-prefix=${PREFIX}
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+FOSSIL_CHECKIN=	0a6e9f1ea3
+WRKSRC=		${WRKDIR}/${DISTNAME:S/+/_/}
+USE_LDCONFIG=	yes
+USES+=		tcl:85,tea
+TCL_PKG=	TclOO${PORTVERSION}
+
+TEST_TARGET=	test
 
 .include <bsd.port.mk>

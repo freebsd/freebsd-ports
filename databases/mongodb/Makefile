@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.12
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
@@ -14,15 +14,15 @@ COMMENT=	NOSQL distributed document-oriented database
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libsnappy.so:${PORTSDIR}/archivers/snappy \
-		libv8.so:${PORTSDIR}/lang/v8 \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libsnappy.so:archivers/snappy \
+		libv8.so:lang/v8 \
 # boost 1.52/1.55 from ports make mongod segfaulting with many tests
-# LIB_DEPENDS+=	libboost_system.so:${PORTSDIR}/devel/boost-libs
+# LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
 # MAKE_ARGS+=	--use-system-boost
 # use bundled yaml
 # MAKE_ARGS+=	--use-system-yaml
-# LIB_DEPENDS+=	libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp
+# LIB_DEPENDS+=	libyaml-cpp.so:devel/yaml-cpp
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
@@ -51,12 +51,12 @@ MAKE_ARGS+=	--ssl
 
 .if ${PORT_OPTIONS:MSASL}
 MAKE_ARGS+=	--use-sasl-client
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:security/cyrus-sasl2
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
 USES+=		python:build
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=2.5:${PORTSDIR}/databases/pymongo
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=2.5:databases/pymongo
 TEST_TARGET=	smokeAll smokeCppUnittests
 .	if ${PORT_OPTIONS:MSSL}
 TEST_TARGET+=	smokeSsl

@@ -1,65 +1,65 @@
-# $FreeBSD: head/net/ntp/Makefile.inc 374987 2014-12-20 00:41:16Z cy $
+# $FreeBSD$
 
 OPTIONS_DEFINE=	NTPSNMPD \
 		SSL \
 		IPV6 \
 		NTP_SIGND \
-  		BANCOMM	 \
-  		GPSVME \
-  		ACTS \
-  		ARBITER	 \
-  		ARCRON_MSF \
-  		AS2201 \
-  		ATOM \
-  		CHRONOLOG \
-  		CHU \
-  		AUDIO_CHU \
-  		DATUM \
-  		DUMBCLOCK \
-  		FG \
-  		HEATH \
-  		HOPFSERIAL \
-  		HOPFPCI	 \
-  		HPGPS \
-  		IRIG \
-  		JJY \
-  		JUPITER \
-  		LEITCH \
-  		LOCAL_CLOCK \
-  		MX4200 \
-  		NEOCLOCK4X \
-  		NMEA \
-  		ONCORE \
-  		PALISADE \
-  		PCF \
+		BANCOMM	 \
+		GPSVME \
+		ACTS \
+		ARBITER	 \
+		ARCRON_MSF \
+		AS2201 \
+		ATOM \
+		CHRONOLOG \
+		CHU \
+		AUDIO_CHU \
+		DATUM \
+		DUMBCLOCK \
+		FG \
+		HEATH \
+		HOPFSERIAL \
+		HOPFPCI	 \
+		HPGPS \
+		IRIG \
+		JJY \
+		JUPITER \
+		LEITCH \
+		LOCAL_CLOCK \
+		MX4200 \
+		NEOCLOCK4X \
+		NMEA \
+		ONCORE \
+		PALISADE \
+		PCF \
 		PERL_UTILS \
-  		PST \
-  		RIPENCC \
-  		SHM \
-  		SPECTRACOM \
-  		TRUETIME \
-  		ULINK \
-  		WWV \
-  		ZYFER \
-  		COMPUTIME \
-  		DCF7000	 \
-  		HOPF6021 \
-  		MEINBERG \
-  		RAWDCF	 \
-  		RCC8000 \
-  		SCHMID \
+		PST \
+		RIPENCC \
+		SHM \
+		SPECTRACOM \
+		TRUETIME \
+		ULINK \
+		WWV \
+		ZYFER \
+		COMPUTIME \
+		DCF7000	 \
+		HOPF6021 \
+		MEINBERG \
+		RAWDCF	 \
+		RCC8000 \
+		SCHMID \
 		SEL240X \
-  		TRIMTAIP \
-  		TRIMTSIP \
-  		WHARTON	 \
-  		VARITEXT \
-  		DOCS \
-  		EXAMPLES
+		TRIMTAIP \
+		TRIMTSIP \
+		WHARTON	 \
+		VARITEXT \
+		DOCS \
+		EXAMPLES
 
 OPTIONS_DEFAULT=	SSL \
-  		ATOM \
+		ATOM \
 		PERL_UTILS \
-  		NMEA
+		NMEA
 
 NTPSNMPD_DESC=	Build and install ntpsnmpd
 NTP_SIGND_DESC=	Enable signed NTP
@@ -117,51 +117,51 @@ VARITEXT_DESC=	Enable VARITEXT clock
 # XXX Broken under FreeBSD: TT560	Enable TrueTime 560 IRIG-B decoder
 
 NTP_DRIVERS= \
-  		BANCOMM \
-  		GPSVME \
-  		ACTS \
-  		ARBITER \
-  		ARCRON_MSF \
-  		AS2201 \
-  		ATOM \
-  		CHRONOLOG \
-  		CHU \
-  		AUDIO_CHU \
-  		DATUM \
-  		DUMBCLOCK \
-  		FG \
-  		HEATH \
-  		HOPFSERIAL \
-  		HOPFPCI \
-  		HPGPS \
-  		IRIG \
-  		JJY \
-  		JUPITER \
-  		LEITCH \
-  		LOCAL_CLOCK \
-  		MX4200 \
-  		NEOCLOCK4X \
-  		NMEA \
-  		ONCORE \
-  		PALISADE \
-  		PCF \
-  		PST \
-  		RIPENCC \
-  		SHM \
-  		SPECTRACOM \
-  		TRUETIME \
-  		ULINK \
-  		WWV \
-  		ZYFER \
-  		COMPUTIME \
-  		DCF7000 \
-  		HOPF6021 \
-  		MEINBERG \
-  		RAWDCF \
-  		RCC8000 \
-  		SCHMID \
+		BANCOMM \
+		GPSVME \
+		ACTS \
+		ARBITER \
+		ARCRON_MSF \
+		AS2201 \
+		ATOM \
+		CHRONOLOG \
+		CHU \
+		AUDIO_CHU \
+		DATUM \
+		DUMBCLOCK \
+		FG \
+		HEATH \
+		HOPFSERIAL \
+		HOPFPCI \
+		HPGPS \
+		IRIG \
+		JJY \
+		JUPITER \
+		LEITCH \
+		LOCAL_CLOCK \
+		MX4200 \
+		NEOCLOCK4X \
+		NMEA \
+		ONCORE \
+		PALISADE \
+		PCF \
+		PST \
+		RIPENCC \
+		SHM \
+		SPECTRACOM \
+		TRUETIME \
+		ULINK \
+		WWV \
+		ZYFER \
+		COMPUTIME \
+		DCF7000 \
+		HOPF6021 \
+		MEINBERG \
+		RAWDCF \
+		RCC8000 \
+		SCHMID \
 		SEL240X \
-  		TRIMTAIP \
-  		TRIMTSIP \
-  		WHARTON \
-  		VARITEXT
+		TRIMTAIP \
+		TRIMTSIP \
+		WHARTON \
+		VARITEXT

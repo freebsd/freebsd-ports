@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediathek
-PORTVERSION=	10
+PORTVERSION=	11
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	MediathekView_${PORTVERSION}
@@ -10,7 +10,7 @@ DISTNAME=	MediathekView_${PORTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Filme der oeff. rechtlichen Sender herunterladen und ansehen
 
-RUN_DEPENDS=	flvstreamer:${PORTSDIR}/multimedia/flvstreamer
+RUN_DEPENDS=	flvstreamer:multimedia/flvstreamer
 
 NO_BUILD=	yes
 USES=		zip:infozip
@@ -32,11 +32,11 @@ OPTIONS_DEFAULT=	VLC
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMPLAYER}
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
+RUN_DEPENDS+=	mplayer:multimedia/mplayer
 .endif
 
 .if ${PORT_OPTIONS:MVLC}
-RUN_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
+RUN_DEPENDS+=	vlc:multimedia/vlc
 .endif
 
 DESKTOP_ENTRIES="MediathekView" \

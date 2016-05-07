@@ -5,13 +5,12 @@ PORTNAME=	libproplist
 PORTVERSION=	0.10.1
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	TUCOWS/gnome/dev
+MASTER_SITES=	http://distfiles.macports.org/libproplist/
 DISTNAME=	libPropList-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Property library for gnome and Window Maker
 
-BROKEN=		unfetchable
 GNU_CONFIGURE=	yes
 USES=		libtool
 USE_LDCONFIG=	yes

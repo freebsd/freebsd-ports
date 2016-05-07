@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.4.9
-PORTREVISION=	1
+PORTVERSION=	2.4.11
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk3
@@ -12,24 +11,24 @@ DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 
-BUILD_DEPENDS=	gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc \
-		p5-Switch>0:${PORTSDIR}/lang/p5-Switch \
-		geoclue>=0:${PORTSDIR}/net/geoclue
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
-		libsecret-1.so:${PORTSDIR}/security/libsecret \
-		libicutu.so:${PORTSDIR}/devel/icu \
-		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libwebp.so:${PORTSDIR}/graphics/webp \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
+BUILD_DEPENDS=	gtkdoc-rebase:textproc/gtk-doc \
+		p5-Switch>0:lang/p5-Switch \
+		geoclue>=0:net/geoclue
+LIB_DEPENDS=	libenchant.so:textproc/enchant \
+		libsecret-1.so:security/libsecret \
+		libicutu.so:devel/icu \
+		libharfbuzz.so:print/harfbuzz \
+		libwebp.so:graphics/webp \
+		libcurl.so:ftp/curl \
+		libsoup-2.4.so:devel/libsoup
+RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limit:1.4.*$$
 
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
-USES=		bison compiler:c++11-lib gettext gmake gperf libtool perl5 \
-		pkgconfig shebangfix sqlite tar:xz
+USES=		bison compiler:c++11-lib gettext gmake gperf libtool localbase \
+		perl5 pkgconfig shebangfix sqlite tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 USE_GNOME=	cairo gtk20 gtk30 introspection:build libxslt
@@ -37,9 +36,8 @@ USE_GL=		gl
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_DOLT_BASH=""
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	AR=/usr/bin/ar \
+		ac_cv_path_DOLT_BASH=""
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-gtk=3.0 \
 		--enable-svg-fonts \
@@ -87,7 +85,7 @@ CFLAGS+=	-mminimal-toc
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>=0:textproc/flex
 CONFIGURE_ENV+=	FLEX="${LOCALBASE}/bin/flex"
 .endif
 
@@ -104,6 +102,9 @@ CXXFLAGS+=	-Qunused-arguments
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%BROWSER_PLUGINS_DIR%%|${BROWSER_PLUGINS_DIR}|' \
 		${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp
+# Since ruby 2.2 there is no ruby symlink
+	@${REINPLACE_CMD} -e 's|ruby|${RUBY_NAME}|g' \
+		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name GNUmakefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 

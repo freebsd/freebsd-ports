@@ -13,11 +13,10 @@ COMMENT=	Feature-rich Qt4 based dictionary lookup program
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell \
+		libvorbis.so:audio/libvorbis
 
 NO_WRKSUBDIR=	yes
-HAS_CONFIGURE=	yes
 USES=		dos2unix execinfo iconv pkgconfig qmake tar:bzip2
 DOS2UNIX_FILES=	processwrapper.cc
 USE_XORG=	xtst

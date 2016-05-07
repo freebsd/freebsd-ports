@@ -15,11 +15,11 @@ DISTFILES=	${PORTNAME}_source_${PORTVERSION}.7z:ezquake \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern QuakeWorld client
 
-EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
-		7z:${PORTSDIR}/archivers/p7zip
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng.so:${PORTSDIR}/graphics/png
+EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip \
+		7z:archivers/p7zip
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libpcre.so:devel/pcre \
+		libpng.so:graphics/png
 
 USES=		gmake tcl dos2unix
 DOS2UNIX_GLOB=	*.[ch] Makefile*

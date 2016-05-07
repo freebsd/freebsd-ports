@@ -21,15 +21,15 @@ OPTIONS_DEFAULT=SQLITE NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPRREFIX}psycopg>0:${PORTSDIR}/databases/py-psycopg
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPRREFIX}psycopg>0:databases/py-psycopg
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
 .endif
 
 .if ${PORT_OPTIONS:MNLS}

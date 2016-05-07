@@ -14,7 +14,7 @@ COMMENT=	MPlayer version of the libdvdnav project
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

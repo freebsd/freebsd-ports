@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	SMS::Send driver for Device::Gsm
 
-BUILD_DEPENDS=	p5-SMS-Send>=0.04:${PORTSDIR}/comms/p5-SMS-Send \
-		p5-Device-Gsm>=1.45:${PORTSDIR}/comms/p5-Device-Gsm
+BUILD_DEPENDS=	p5-SMS-Send>=0.04:comms/p5-SMS-Send \
+		p5-Device-Gsm>=1.45:comms/p5-Device-Gsm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

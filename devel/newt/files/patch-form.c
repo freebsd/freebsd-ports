@@ -1,5 +1,5 @@
---- form.c.orig	Tue Jun 11 22:15:33 2002
-+++ form.c	Sat Jun 22 06:36:12 2002
+--- form.c.orig	2016-03-23 15:46:24 UTC
++++ form.c
 @@ -10,7 +10,6 @@
  #endif
  #include <sys/time.h>

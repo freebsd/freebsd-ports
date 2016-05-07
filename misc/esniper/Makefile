@@ -11,7 +11,7 @@ COMMENT=	Lightweight console application for sniping ebay auctions
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		tar:tgz
 GNU_CONFIGURE=	yes

@@ -12,14 +12,14 @@ PKGNAMESUFFIX=	0
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
-LICENSE=		GPLv2 LGPL21
+LICENSE=		GPLv2+ LGPL21+
 LICENSE_COMB=		multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils \
-		${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html
+BUILD_DEPENDS=	yasm:devel/yasm \
+		${LOCALBASE}/bin/as:devel/binutils \
+		${LOCALBASE}/bin/texi2html:textproc/texi2html
 
 PORTSCOUT=	limit:^0\.7.*
 
@@ -74,14 +74,14 @@ OPTIONS_SUB=		yes
 FFSERVER_DESC=		Build and install ffserver
 X11GRAB_DESC=		Enable x11 grabbing
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--disable-indev=alsa \
 			--disable-outdev=alsa
 
-CELT_LIB_DEPENDS=	libcelt0.so:${PORTSDIR}/audio/celt
+CELT_LIB_DEPENDS=	libcelt0.so:audio/celt
 CELT_CONFIGURE_ENABLE=	libcelt
 
-DIRAC_LIB_DEPENDS=	libdirac_encoder.so:${PORTSDIR}/multimedia/dirac
+DIRAC_LIB_DEPENDS=	libdirac_encoder.so:multimedia/dirac
 DIRAC_CONFIGURE_ENABLE=	libdirac
 
 DEBUG_CONFIGURE_ON=	--disable-stripping
@@ -89,48 +89,48 @@ DEBUG_CONFIGURE_OFF=	--disable-debug
 
 FFSERVER_CONFIGURE_OFF=	--disable-ffserver
 
-FREETYPE_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=		libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	libfreetype
 
-FREI0R_BUILD_DEPENDS=		${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+FREI0R_BUILD_DEPENDS=		${LOCALBASE}/include/frei0r.h:graphics/frei0r
 FREI0R_CONFIGURE_ENABLE=	frei0r
 
-GSM_LIB_DEPENDS=		libgsm.so:${PORTSDIR}/audio/gsm
+GSM_LIB_DEPENDS=		libgsm.so:audio/gsm
 GSM_CONFIGURE_ENABLE=		libgsm
 
-LAME_LIB_DEPENDS=		libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=		libmp3lame
 
-OPENCV_LIB_DEPENDS=		libopencv_imgproc.so:${PORTSDIR}/graphics/opencv-core
+OPENCV_LIB_DEPENDS=		libopencv_imgproc.so:graphics/opencv-core
 OPENCV_CONFIGURE_ENABLE=	libopencv
 
-OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
+OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
 RTMP_USE=			OPENSSL=yes
 
-SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
+SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
 
-SPEEX_LIB_DEPENDS=		libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=		libspeex.so:audio/speex
 SPEEX_CONFIGURE_ENABLE=		libspeex
 
-THEORA_LIB_DEPENDS=		libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_LIB_DEPENDS=		libtheora.so:multimedia/libtheora
 THEORA_CONFIGURE_ENABLE=	libtheora
 
 X11GRAB_USE=		XORG=x11,xext,xfixes
 X11GRAB_CONFIGURE_ON=	--enable-x11grab
 
-X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
+X264_LIB_DEPENDS=	libx264.so:multimedia/libx264
 X264_CONFIGURE_ENABLE=	libx264
 
-XVID_LIB_DEPENDS=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
+XVID_LIB_DEPENDS=	libxvidcore.so:multimedia/xvid
 XVID_CONFIGURE_ENABLE=	libxvid
 
-VDPAU_BUILD_DEPENDS=	${LOCALBASE}/include/vdpau/vdpau.h:${PORTSDIR}/multimedia/libvdpau
+VDPAU_BUILD_DEPENDS=	${LOCALBASE}/include/vdpau/vdpau.h:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
-VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CONFIGURE_ENABLE=	libvpx
 
 COMPAT_HEADERS=libavcodec/avcodec.h \
@@ -206,7 +206,7 @@ CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
 #aacplus
 .if ${PORT_OPTIONS:MAACPLUS}
 FFMPEG_NONFREE=	yes
-LIB_DEPENDS+=	libaacplus.so:${PORTSDIR}/audio/libaacplus
+LIB_DEPENDS+=	libaacplus.so:audio/libaacplus
 CONFIGURE_ARGS+=	--enable-libaacplus
 .else
 CONFIGURE_ARGS+=	--disable-libaacplus
@@ -215,7 +215,7 @@ CONFIGURE_ARGS+=	--disable-libaacplus
 # Opencore AMR NB
 .if ${PORT_OPTIONS:MAMR_NB}
 FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
+LIB_DEPENDS+=	libopencore-amrnb.so:audio/opencore-amr
 CONFIGURE_ARGS+=	--enable-libopencore-amrnb
 .else
 CONFIGURE_ARGS+=	--disable-libopencore-amrnb
@@ -224,7 +224,7 @@ CONFIGURE_ARGS+=	--disable-libopencore-amrnb
 # Opencore AMR WB
 .if ${PORT_OPTIONS:MAMR_WB}
 FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	libopencore-amrwb.so:${PORTSDIR}/audio/opencore-amr
+LIB_DEPENDS+=	libopencore-amrwb.so:audio/opencore-amr
 CONFIGURE_ARGS+=	--enable-libopencore-amrwb
 .else
 CONFIGURE_ARGS+=	--disable-libopencore-amrwb
@@ -233,7 +233,7 @@ CONFIGURE_ARGS+=	--disable-libopencore-amrwb
 # faac
 .if ${PORT_OPTIONS:MFAAC}
 FFMPEG_NONFREE=	yes
-LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	libfaac.so:audio/faac
 CONFIGURE_ARGS+=	--enable-libfaac
 .else
 CONFIGURE_ARGS+=	--disable-libfaac
@@ -241,7 +241,7 @@ CONFIGURE_ARGS+=	--disable-libfaac
 
 # rtmp
 .if ${PORT_OPTIONS:MRTMP}
-LIB_DEPENDS+=	librtmp.so:${PORTSDIR}/multimedia/librtmp
+LIB_DEPENDS+=	librtmp.so:multimedia/librtmp
 CONFIGURE_ARGS+=	--enable-librtmp
 . if ${OPENSSLBASE} != "/usr"
 FFMPEG_CFLAGS+=		-I${OPENSSLINC}
@@ -263,7 +263,7 @@ CONFIGURE_ARGS+=	--disable-ffplay
 # vaapi
 .if ${PORT_OPTIONS:MVAAPI}
 FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
+LIB_DEPENDS+=	libva.so:multimedia/libva
 CONFIGURE_ARGS+=	--enable-vaapi
 .else
 CONFIGURE_ARGS+=	--disable-vaapi
@@ -272,7 +272,7 @@ CONFIGURE_ARGS+=	--disable-vaapi
 # vo-aacenc
 .if ${PORT_OPTIONS:MVO_AACENC}
 FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	libvo-aacenc.so:${PORTSDIR}/audio/vo-aacenc
+LIB_DEPENDS+=	libvo-aacenc.so:audio/vo-aacenc
 CONFIGURE_ARGS+=	--enable-libvo-aacenc
 .else
 CONFIGURE_ARGS+=	--disable-libvo-aacenc
@@ -281,7 +281,7 @@ CONFIGURE_ARGS+=	--disable-libvo-aacenc
 # vo-amrwbenc
 .if ${PORT_OPTIONS:MVO_AMRWBENC}
 FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	libvo-amrwbenc.so:${PORTSDIR}/audio/vo-amrwbenc
+LIB_DEPENDS+=	libvo-amrwbenc.so:audio/vo-amrwbenc
 CONFIGURE_ARGS+=	--enable-libvo-amrwbenc
 .else
 CONFIGURE_ARGS+=	--disable-libvo-amrwbenc
@@ -289,7 +289,7 @@ CONFIGURE_ARGS+=	--disable-libvo-amrwbenc
 
 # vorbis
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbisenc.so:audio/libvorbis
 CONFIGURE_ARGS+=	--enable-libvorbis
 FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .else
@@ -303,7 +303,7 @@ CONFIGURE_ARGS+=	--enable-nonfree
 .endif
 
 .if defined(FFMPEG_LICENSE_GPL3)
-LICENSE+=		GPLv3 LGPL3
+LICENSE+=		GPLv3+ LGPL3+
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 CONFIGURE_ARGS+=	--enable-version3

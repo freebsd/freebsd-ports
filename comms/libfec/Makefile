@@ -3,25 +3,22 @@
 
 PORTNAME=	libfec
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms astro hamradio math
 MASTER_SITES=	http://www.ka9q.net/code/fec/ \
 		LOCAL/db
 DISTNAME=	fec-${PORTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Several forward error correction (FEC) decoders
 
-BROKEN=		produces unusable library
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-04-15
+LICENSE=	LGPL21
 
 MAKEFILE=	makefile
 
 GNU_CONFIGURE=	yes
-USES=		gmake tar:bzip2
+USES=		autoreconf gmake tar:bzip2
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386 amd64
 PLIST_FILES=	include/fec.h		\
 		lib/libfec.so		\
 		lib/libfec.a		\
@@ -36,7 +33,7 @@ CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/makefile.in
+	@${CP} ${FILESDIR}/cpu_mode.c ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include

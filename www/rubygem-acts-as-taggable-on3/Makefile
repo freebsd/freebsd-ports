@@ -12,11 +12,10 @@ COMMENT=	Tag a single model on several contexts
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-activerecord4>=4.1.6:${PORTSDIR}/databases/rubygem-activerecord4
+RUN_DEPENDS=	rubygem-activerecord4>=4.1.6:databases/rubygem-activerecord4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

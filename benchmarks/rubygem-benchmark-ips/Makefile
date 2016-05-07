@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	benchmark-ips
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.1
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

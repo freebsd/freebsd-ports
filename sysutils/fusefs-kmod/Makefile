@@ -10,7 +10,7 @@ MASTER_SITES=	https://googledrive.com/host/0B0OQnKtejJEMQlpoTy11SG1nN2s/
 MAINTAINER=	dpejesh@yahoo.com
 COMMENT=	FUSE kernel module
 
-BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
+BUILD_DEPENDS=	fusefs-libs>2.4.1:sysutils/fusefs-libs
 
 ONLY_FOR_ARCHS=	amd64 i386
 

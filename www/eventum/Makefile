@@ -10,6 +10,8 @@ MASTER_SITES=	MYSQL/eventum
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eventum issue tracking system
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe
 CPE_VENDOR=	mysql
 NO_BUILD=	yes

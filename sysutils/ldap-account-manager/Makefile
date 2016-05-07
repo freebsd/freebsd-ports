@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	5.2
+PORTVERSION=	5.3
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
@@ -11,8 +11,10 @@ COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota \
-		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+BROKEN_powerpc64=	Does not build
+
+RUN_DEPENDS=	p5-Quota>=0:sysutils/p5-Quota \
+		p5-perl-ldap>=0:net/p5-perl-ldap
 
 NO_BUILD=	yes
 NO_ARCH=	yes

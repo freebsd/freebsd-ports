@@ -3,6 +3,7 @@
 
 PORTNAME=	ngircd
 PORTVERSION=	23
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://arthur.barton.de/pub/${PORTNAME}/ \
@@ -38,12 +39,12 @@ OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	ICONV IRCPLUS LIBWRAP OPENSSL SYSLOG ZLIB
 
 DEBUG_CONFIGURE_EBABLE=		debug
-GNUTLS_LIB_DEPENDS=		libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=		gnutls
 ICONV_USES=			iconv
 ICONV_CONFIGURE_WITH=		iconv
 IDENT_DESC=			IDENT (AUTH) protocol support
-IDENT_LIB_DEPENDS=		libident.so:${PORTSDIR}/security/libident
+IDENT_LIB_DEPENDS=		libident.so:security/libident
 INDENT_CONFIGURE_WITH=		dent
 IPV6_CONFIGURE_ENABLE=		ipv6
 IRCPLUS_DESC=			IRC+ protocol

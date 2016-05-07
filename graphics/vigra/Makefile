@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vigra
-DISTVERSION=	1.10.0
-PORTREVISION=	6
+DISTVERSION=	1.11.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -30,14 +30,14 @@ NUMPY_DESC=		NumPy mathematical computing (USE Fortran/GCC47+)
 
 .if ${PORT_OPTIONS:MHDF5}
 CMAKE_ARGS+=	-DWITH_HDF5=1
-LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5
+LIB_DEPENDS+=	libhdf5.so:science/hdf5
 .else
 CMAKE_ARGS+=	-DWITH_HDF5=0
 .endif
 
 .if ${PORT_OPTIONS:MOPENEXR}
 CMAKE_ARGS+=	-DWITH_OPENEXR=1
-LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:graphics/OpenEXR
 .else
 CMAKE_ARGS+=	-DWITH_OPENEXR=0
 .endif
@@ -47,10 +47,10 @@ CMAKE_ARGS+=	-DWITH_OPENEXR=0
 #CONFLICTS_BUILD=	python3*
 CMAKE_ARGS+=	-DWITH_VIGRANUMPY=1
 USES+=		compiler:gcc-c++11-lib python:2
-BUILD_DEPENDS+=	nosetests:${PORTSDIR}/devel/py-nose
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
-#BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
+BUILD_DEPENDS+=	nosetests:devel/py-nose
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:math/py-numpy
+#BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
+LIB_DEPENDS+=	libboost_python.so:devel/boost-python-libs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 PLIST_SUB+=	PYTHON=""
 .else
@@ -70,7 +70,7 @@ PLIST_SUB+=	PYTHON="@comment "
 # do not have graphics/tiff installed and do not want TIFF support in Vigra.
 
 .if !defined(WITHOUT_VIGRA_TIFF)
-LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libtiff.so:graphics/tiff
 .endif
 
 .if !defined(WITHOUT_VIGRA_JPEG)
@@ -78,12 +78,12 @@ USES+=		jpeg
 .endif
 
 .if !defined(WITHOUT_VIGRA_PNG)
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 .endif
 
 .if !defined(WITHOUT_VIGRA_FFTW)
-LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3
-LIB_DEPENDS+=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	libfftw3.so:math/fftw3
+LIB_DEPENDS+=	libfftw3f.so:math/fftw3-float
 .endif
 
 pre-everything::

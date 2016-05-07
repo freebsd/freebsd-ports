@@ -2,29 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	enigma
-PORTVERSION=	1.01
-PORTREVISION=	16
+PORTVERSION=	1.21
 CATEGORIES=	games
-MASTER_SITES=	BERLIOS/enigma-game
-DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
+MASTER_SITES=	SF/enigma-game/Release%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
-LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++ \
-		libenet.so:${PORTSDIR}/net/enet
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake lua:51
+LIB_DEPENDS=	libxerces-c.so.3:textproc/xerces-c3 \
+		libpng.so:graphics/png \
+		libenet.so:net/enet \
+		libcurl.so:ftp/curl
+BUILD_DEPENDS=	convert:graphics/ImageMagick
+
+USES=		gmake localbase pkgconfig
 USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-cxxlua \
-		--with-libintl-prefix="${LOCALBASE}"
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+CONFIGURE_ARGS=	--with-system-enet
 
 SUB_FILES=	pkg-message
 
@@ -37,14 +34,11 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=nls
 
-post-extract:
-	@${RM} -rf ${WRKSRC}/lib-src/lua \
-		${WRKSRC}/lib-src/enet ${WRKSRC}/tools ${WRKSRC}/intl
-
 post-patch:
 	@${REINPLACE_CMD} -e '/Exec=/s,enigma,${PREFIX}/bin/enigma,g' \
 		${WRKSRC}/etc/enigma.desktop
-	@${REINPLACE_CMD} -e 's|-llua|&-${LUA_VER}|; s|-ltolua++|&-${LUA_VER}|' \
-		${WRKSRC}/src/Makefile.in
+
+post-install:
+	@${RM} -d ${STAGEDIR}${DOCSDIR}/COPYING
 
 .include <bsd.port.mk>

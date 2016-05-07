@@ -10,14 +10,15 @@ COMMENT=	Puppet Server running in the JVM
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	bash>=0:${PORTSDIR}/shells/bash \
-		puppet4>=0:${PORTSDIR}/sysutils/puppet4
-BUILD_DEPENDS=	rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
+RUN_DEPENDS=	bash>=0:shells/bash \
+		puppet4>=0:sysutils/puppet4
+BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 
 USE_RC_SUBR=	puppetserver
 
 USE_JAVA=	yes
 USE_RUBY=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.7+
 
@@ -36,15 +37,11 @@ OPTIONS_RADIO_FACTER=	CFACTER RFACTER
 RFACTER_DESC=	Use facter 2.x (written in Ruby)
 CFACTER_DESC=	Use facter 3.x (experimental rewrite in C++)
 
-RFACTER_BUILD_DEPENDS=	rubygem-facter>=2.0:${PORTSDIR}/sysutils/rubygem-facter
-RFACTER_RUN_DEPENDS=	rubygem-facter>=2.0:${PORTSDIR}/sysutils/rubygem-facter
+RFACTER_BUILD_DEPENDS=	rubygem-facter>=2.0:sysutils/rubygem-facter
+RFACTER_RUN_DEPENDS=	rubygem-facter>=2.0:sysutils/rubygem-facter
 
-CFACTER_BUILD_DEPENDS=	facter>=3.0:${PORTSDIR}/sysutils/facter
-CFACTER_RUN_DEPENDS=	facter>=3.0:${PORTSDIR}/sysutils/facter
-
-.include <bsd.port.options.mk>
-
-.include <bsd.port.pre.mk>
+CFACTER_BUILD_DEPENDS=	facter>=3.0:sysutils/facter
+CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
 
 post-patch:
 .for file in ext/config/bootstrap.cfg ext/config/logback.xml \
@@ -73,4 +70,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/webserver.conf ${STAGEDIR}${ETCDIR}/conf.d/webserver.conf
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/auth.conf ${STAGEDIR}${ETCDIR}/conf.d/auth.conf
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

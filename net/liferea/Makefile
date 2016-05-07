@@ -11,12 +11,12 @@ COMMENT=	Simple RSS/RDF feed reader
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
-		libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PORTSDIR}/devel/py-libpeas
+BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3 \
+		libpeas-1.0.so:devel/libpeas \
+		libjson-glib-1.0.so:devel/json-glib
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		python:2 sqlite tar:bzip2
@@ -34,7 +34,7 @@ INSTALLS_ICONS=	yes
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
 
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=libnotify
 
 .include <bsd.port.mk>

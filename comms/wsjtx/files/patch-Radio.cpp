@@ -1,17 +1,20 @@
---- Radio.cpp.orig	2015-11-25 02:16:24 UTC
+--- Radio.cpp.orig	2015-12-11 00:00:13 UTC
 +++ Radio.cpp
-@@ -38,12 +38,12 @@ namespace Radio
- 
-   Frequency frequency (QVariant const& v, int scale)
-   {
--    return std::llround (v.toDouble () * std::pow (10., scale));
-+    return llround (v.toDouble () * std::pow (10., scale));
+@@ -33,7 +33,7 @@ namespace Radio
+       {
+         value = v.toDouble ();
+       }
+-    return std::llround (value * std::pow (10., scale));
++    return llround (value * std::pow (10., scale));
    }
  
-   FrequencyDelta frequency_delta (QVariant const& v, int scale)
-   {
--    return std::llround (v.toDouble () * std::pow (10., scale));
-+    return llround (v.toDouble () * std::pow (10., scale));
+   FrequencyDelta frequency_delta (QVariant const& v, int scale, QLocale const& locale)
+@@ -47,7 +47,7 @@ namespace Radio
+       {
+         value = v.toDouble ();
+       }
+-    return std::llround (value * std::pow (10., scale));
++    return llround (value * std::pow (10., scale));
    }
  
  

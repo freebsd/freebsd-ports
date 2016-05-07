@@ -1,6 +1,6 @@
---- configure.orig	Wed Jun 21 16:32:38 2006
-+++ configure	Fri Jul  7 09:57:50 2006
-@@ -1419,7 +1419,7 @@
+--- configure.orig	2006-06-21 20:32:38 UTC
++++ configure
+@@ -1419,7 +1419,7 @@ if test "${with_gcc+set}" = set; then
    withval="$with_gcc"
  
  fi;
@@ -9,7 +9,7 @@
      V_INCLS=""
      if test "${srcdir}" != "." ; then
  	    V_INCLS="-I\$\(srcdir\)"
-@@ -5299,7 +5299,7 @@
+@@ -5299,7 +5299,7 @@ echo "${ECHO_T}$ac_cv_lbl_gcc_vers" >&6
  		    fi
  		    V_CCOPT="$V_CCOPT -Wall"
  		    if test "$ac_cv_lbl_gcc_vers" -gt 1 ; then

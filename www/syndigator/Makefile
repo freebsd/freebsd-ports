@@ -11,14 +11,14 @@ MASTER_SITES=	SF/${PORTNAME}/Syndigator/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSS feed reader based on Gtk2
 
-RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Gnome2>=0:${PORTSDIR}/x11-toolkits/p5-Gnome2 \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-Gtk2-Html2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-Html2
+RUN_DEPENDS=	p5-Text-Iconv>=0:converters/p5-Text-Iconv \
+		p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-XML-RSS>=0:textproc/p5-XML-RSS \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-libwww>=0:www/p5-libwww \
+		p5-Gnome2>=0:x11-toolkits/p5-Gnome2 \
+		p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-Gtk2-Html2>=0:x11-toolkits/p5-Gtk2-Html2
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	syndigator

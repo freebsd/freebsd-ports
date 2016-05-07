@@ -11,8 +11,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for Qt
 
-LIB_DEPENDS=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
-		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5 \
+		libqscintilla2.so:devel/qscintilla2
 
 USE_KDE4=	kdeprefix smokeqt
 USE_QT4=	corelib dbus declarative gui network phonon script webkit xml \

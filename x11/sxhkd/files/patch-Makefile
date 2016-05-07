@@ -1,11 +1,42 @@
---- Makefile.orig	2014-12-15 21:21:15 UTC
+--- Makefile.orig	2016-03-15 16:20:41 UTC
 +++ Makefile
-@@ -9,7 +9,7 @@ LDFLAGS += -L$(PREFIX)/lib
+@@ -1,14 +1,14 @@
+ NAME     = sxhkd
+ VERSION := $(shell git describe 2> /dev/null || cat VERSION)
+ 
+-CPPFLAGS += -D_POSIX_C_SOURCE=200112L -DVERSION=\"$(VERSION)\"
++CPPFLAGS += $(shell pkg-config --cflags xcb-keysyms) -DVERSION=\"$(VERSION)\"
+ CFLAGS   += -std=c99 -pedantic -Wall -Wextra
+-LDLIBS    = -lxcb -lxcb-keysyms
++LDLIBS    = $(shell pkg-config --libs xcb-keysyms)
  
  PREFIX    ?= /usr/local
- BINPREFIX  = $(PREFIX)/bin
--MANPREFIX  = $(PREFIX)/share/man
+-BINPREFIX ?= $(PREFIX)/bin
+-MANPREFIX ?= $(PREFIX)/share/man
+-DOCPREFIX ?= $(PREFIX)/share/doc/$(NAME)
++BINPREFIX  = $(PREFIX)/bin
 +MANPREFIX  = $(PREFIX)/man
++EXPREFIX  = $(PREFIX)/share/examples/$(NAME)
  
  SRC = $(wildcard *.c)
  OBJ = $(SRC:.c=.o)
+@@ -27,11 +27,15 @@ $(NAME): $(OBJ)
+ 
+ install:
+ 	mkdir -p "$(DESTDIR)$(BINPREFIX)"
+-	cp -pf $(NAME) "$(DESTDIR)$(BINPREFIX)"
++	${BSD_INSTALL_PROGRAM} $(NAME) "$(DESTDIR)$(BINPREFIX)"
+ 	mkdir -p "$(DESTDIR)$(MANPREFIX)"/man1
+-	cp -p doc/$(NAME).1 "$(DESTDIR)$(MANPREFIX)"/man1
+-	mkdir -p "$(DESTDIR)$(DOCPREFIX)"
+-	cp -pr examples "$(DESTDIR)$(DOCPREFIX)"/examples
++	${BSD_INSTALL_MAN} doc/$(NAME).1 "$(DESTDIR)$(MANPREFIX)"/man1
++	mkdir -p "$(DESTDIR)$(EXPREFIX)/background_shell"
++	${BSD_INSTALL_DATA} examples/background_shell/* \
++		"$(DESTDIR)$(EXPREFIX)/background_shell"
++	mkdir -p "$(DESTDIR)$(EXPREFIX)/notification"
++	${BSD_INSTALL_DATA} examples/notification/* \
++		"$(DESTDIR)$(EXPREFIX)/notification"
+ 
+ uninstall:
+ 	rm -f "$(DESTDIR)$(BINPREFIX)"/$(NAME)

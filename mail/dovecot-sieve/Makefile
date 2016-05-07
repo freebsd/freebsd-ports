@@ -14,8 +14,8 @@ COMMENT=	Sieve plugin for the Dovecot 'deliver' LDA
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:build
-RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}.*:${PORTSDIR}/mail/dovecot
+BUILD_DEPENDS=	${NONEXISTENT}:mail/dovecot:build
+RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}.*:mail/dovecot
 
 DOVECOTVERSION=	1.2
 

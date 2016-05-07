@@ -20,7 +20,7 @@ INSTALL_TARGET=	install-strip
 .if !defined(LIBNICE_SLAVE)
 OPTIONS_DEFINE=	GUPNP
 GUPNP_DESC=	UPnP IGD port mapping support
-GUPNP_LIB_DEPENDS+=	libgupnp-igd-1.0.so:${PORTSDIR}/net/gupnp-igd
+GUPNP_LIB_DEPENDS+=	libgupnp-igd-1.0.so:net/gupnp-igd
 GUPNP_CONFIGURE_ENABLE=	gupnp
 .endif
 
@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	--without-gstreamer --without-gstreamer-0.10
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-	    	's|-Wno-missing-field-initializers|#|g'
+		's|-Wno-missing-field-initializers|#|g'
 	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

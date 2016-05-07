@@ -11,15 +11,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Remote firewall auditing tool
 
-LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet \
-		libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libdnet.so:net/libdnet \
+		libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/firewalk man/man8/firewalk.8.gz
 PORTDOCS=	BUGS README TODO
@@ -27,10 +25,6 @@ PORTDOCS=	BUGS README TODO
 WRKSRC=		${WRKDIR}/Firewalk
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/firewalk ${STAGEDIR}${PREFIX}/bin

@@ -11,15 +11,15 @@ DISTNAME=	tkimg${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library of image format handlers for Tk4.1 and later
 
-BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	dtplite:devel/tcllib
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 PLIST_SUB+=	SHLIB_NAME="${SHLIB_NAME}" \
 		SHLIB_LINK="${SHLIB_LINK}"
 
 WRKSRC=		${WRKDIR}/tkimg${PORTVERSION:R}
-USES=		jpeg tk tar:bzip2
+USES=		autoreconf jpeg tk:tea tar:bzip2
 
 # We don't need the bundled libraries:
 EXTRACT_AFTER_ARGS=	--exclude '*/libz/*' --exclude zlib \
@@ -27,8 +27,6 @@ EXTRACT_AFTER_ARGS=	--exclude '*/libz/*' --exclude zlib \
 		--exclude '*/compat/*' --exclude '*/libtiff/*' \
 		--exclude '*/libjpeg/*' --exclude '*/libpng/*'
 MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}"
-USE_AUTOTOOLS=	autoconf
-CONFIGURE_ARGS=	--with-tcl="${TCL_LIBDIR}" --with-tk="${TK_LIBDIR}"
 CONFIGURE_ENV=	WRKDIR="${WRKDIR}"
 
 post-patch:

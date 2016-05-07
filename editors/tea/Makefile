@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tea
-PORTVERSION=	41.1.0
+PORTVERSION=	41.1.1
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
@@ -25,11 +25,11 @@ PORTDOCS=	*
 DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
 		"${PORTNAME}" "" ""
 
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_QMAKE_ON=	USE_ASPELL=true
 ASPELL_QMAKE_OFF=	USE_ASPELL=false
 
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 HUNSPELL_QMAKE_ON=	USE_HUNSPELL=true
 HUNSPELL_QMAKE_OFF=	USE_HUNSPELL=false
 

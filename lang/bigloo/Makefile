@@ -15,8 +15,8 @@ COMMENT=	Scheme interpreter and native code compiler
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libgmp.so:math/gmp
 
 USES=		compiler:c++0x gmake
 USE_EMACS=	yes
@@ -48,25 +48,25 @@ OPTIONS_DEFINE=		ALSA AVAHI CUSTOMGC DOCS FLAC GSTREAMER MPG123 \
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_SUB=		yes
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--disable-alsa --disable-wav
-AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_OFF=	--disable-avahi
 CUSTOMGC_DESC=		Build with custom garbage collector
 CUSTOMGC_LIB_DEPENDS_OFF=\
-			libgc.so:${PORTSDIR}/devel/boehm-gc
+			libgc.so:devel/boehm-gc
 CUSTOMGC_CONFIGURE_OFF=	--customgc=no \
 			--gcincdir=${LOCALBASE}/include \
 			--gclibdir=${LOCALBASE}/lib
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CONFIGURE_OFF=	--disable-flac
 GSTREAMER_USE=		GSTREAMER=yes
 GSTREAMER_CONFIGURE_OFF=--disable-gstreamer
-MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 MPG123_CONFIGURE_OFF=	--disable-mpg123
 OPENSSL_USE=		OPENSSL=yes
 OPENSSL_CONFIGURE_OFF=	--disable-ssl
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_OFF=	--disable-pkglib --disable-sqlite
 
 .include <bsd.port.options.mk>

@@ -11,13 +11,12 @@ COMMENT=	Ramaze is a simple and modular web framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-innate>=2012.12:${PORTSDIR}/www/rubygem-innate \
-		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
+RUN_DEPENDS=	rubygem-innate>=2012.12:www/rubygem-innate \
+		rubygem-rake>=0:devel/rubygem-rake
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/ramaze
 

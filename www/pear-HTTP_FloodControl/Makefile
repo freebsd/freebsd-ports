@@ -8,8 +8,8 @@ CATEGORIES=	www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR classes to detect and protect from attempts to flood a site
 
-BUILD_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
-RUN_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
+BUILD_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP
+RUN_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP
 
 DOCS=		README LICENSE
 OPTIONS_DEFINE=	PEAR_DB PEAR_MDB PEAR_MDB2
@@ -19,9 +19,9 @@ PEAR_MDB2_DESC=	PEAR::MDB2 support
 
 USES=	pear
 
-PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-PEAR_MDB_RUN_DEPENDS=	${PEARDIR}/MDB.php:${PORTSDIR}/databases/pear-MDB
-PEAR_MDB2_RUN_DEPENDS=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
+PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
+PEAR_MDB_RUN_DEPENDS=	${PEARDIR}/MDB.php:databases/pear-MDB
+PEAR_MDB2_RUN_DEPENDS=	${PEARDIR}/MDB2.php:databases/pear-MDB2
 
 post-extract:
 	${MKDIR} ${WRKSRC}/docs

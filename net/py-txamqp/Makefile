@@ -13,7 +13,7 @@ DISTNAME=	python-${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	horus.li@gmail.com
 COMMENT=	Twisted Python library for the AMQP messaging protocol
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}thrift>0:${PORTSDIR}/devel/py-thrift
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}thrift>0:devel/py-thrift
 
 USES=		python:2 twisted
 USE_PYTHON=	distutils autoplist

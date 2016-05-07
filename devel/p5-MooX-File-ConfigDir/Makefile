@@ -13,9 +13,9 @@ COMMENT=	Moo eXtension for File::ConfigDir
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-ConfigDir>=0.011:${PORTSDIR}/devel/p5-File-ConfigDir \
-		p5-Moo>=1.003000:${PORTSDIR}/devel/p5-Moo \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+BUILD_DEPENDS=	p5-File-ConfigDir>=0.011:devel/p5-File-ConfigDir \
+		p5-Moo>=1.003000:devel/p5-Moo \
+		p5-namespace-clean>=0:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

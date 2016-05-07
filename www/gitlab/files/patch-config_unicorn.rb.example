@@ -1,0 +1,34 @@
+--- config/unicorn.rb.example.orig	2016-04-22 10:01:37 UTC
++++ config/unicorn.rb.example
+@@ -33,12 +33,12 @@ worker_processes 3
+ 
+ # Help ensure your application will always spawn in the symlinked
+ # "current" directory that Capistrano sets up.
+-working_directory "/home/git/gitlab" # available in 0.94.0+
++working_directory "/usr/local/www/gitlab" # available in 0.94.0+
+ 
+ # Listen on both a Unix domain socket and a TCP port.
+ # If you are load-balancing multiple Unicorn masters, lower the backlog
+ # setting to e.g. 64 for faster failover.
+-listen "/home/git/gitlab/tmp/sockets/gitlab.socket", :backlog => 1024
++listen "/usr/local/www/gitlab/tmp/sockets/gitlab.socket", :backlog => 1024
+ listen "127.0.0.1:8080", :tcp_nopush => true
+ 
+ # nuke workers after 30 seconds instead of 60 seconds (the default)
+@@ -59,13 +59,13 @@ listen "127.0.0.1:8080", :tcp_nopush => 
+ timeout 60
+ 
+ # feel free to point this anywhere accessible on the filesystem
+-pid "/home/git/gitlab/tmp/pids/unicorn.pid"
++pid "/usr/local/www/gitlab/tmp/pids/unicorn.pid"
+ 
+ # By default, the Unicorn logger will write to stderr.
+ # Additionally, some applications/frameworks log to stderr or stdout,
+ # so prevent them from going to /dev/null when daemonized here:
+-stderr_path "/home/git/gitlab/log/unicorn.stderr.log"
+-stdout_path "/home/git/gitlab/log/unicorn.stdout.log"
++stderr_path "/usr/local/www/gitlab/log/unicorn.stderr.log"
++stdout_path "/usr/local/www/gitlab/log/unicorn.stdout.log"
+ 
+ # combine Ruby 2.0.0dev or REE with "preload_app true" for memory savings
+ # http://rubyenterpriseedition.com/faq.html#adapt_apps_for_cow

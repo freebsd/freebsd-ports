@@ -43,7 +43,7 @@ USE_PHP+=	pdo_pgsql
 .endif
 
 .if ${PORT_OPTIONS:MZENDFRAMEWORK}
-RUN_DEPENDS=	${LOCALBASE}/share/ZendFramework/bin/classmap_generator.php:${PORTSDIR}/www/zend-framework
+RUN_DEPENDS=	${LOCALBASE}/share/ZendFramework/bin/classmap_generator.php:www/zend-framework
 .endif
 
 post-extract:

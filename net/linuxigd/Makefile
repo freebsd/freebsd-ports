@@ -10,7 +10,7 @@ MASTER_SITES=	SF/linux-igd/linux-igd/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux UPnP Internet Gateway Device
 
-LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
+LIB_DEPENDS=	libupnp.so:devel/upnp
 
 USE_RC_SUBR=	linuxigd
 USES=		gmake

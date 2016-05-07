@@ -3,20 +3,20 @@
 
 PORTNAME=	meep
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/meep/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	FDTD simulation software to model electromagnetic systems
 
-BUILD_DEPENDS=	harminv:${PORTSDIR}/science/harminv \
-		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2 \
-		libblas.so:${PORTSDIR}/math/blas \
-		libctl.so:${PORTSDIR}/science/libctl \
-		libhdf5.so:${PORTSDIR}/science/hdf5
-RUN_DEPENDS=	harminv:${PORTSDIR}/science/harminv
+BUILD_DEPENDS=	harminv:science/harminv \
+		gsed:textproc/gsed
+LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+		libblas.so:math/blas \
+		libctl.so:science/libctl \
+		libhdf5.so:science/hdf5
+RUN_DEPENDS=	harminv:science/harminv
 
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
@@ -49,14 +49,14 @@ PLIST_SUB+=		MPI="@comment " NOMPI=""
 .endif
 
 .if ${PORT_OPTIONS:MMPICH2}
-LIB_DEPENDS+=	libmpich.so.8:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	libmpich.so.8:net/mpich2
 CONFIGURE_ENV+=	MPICXX=${LOCALBASE}/bin/mpicc
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
 .if ${PORT_OPTIONS:MOPENMPI}
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpiCC:net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 CONFIGURE_ENV+=	MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpiCC
 CFLAGS+=	-I${LOCALBASE}/mpi/openmpi/include
 .endif

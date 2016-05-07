@@ -10,8 +10,8 @@ DISTNAME=	wiki${PORTVERSION:S|.|_|g}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	FreeStyle Wiki (perl based wiki clone)
 
-RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
-		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
+RUN_DEPENDS=	ja-p5-Jcode>=0:japanese/p5-Jcode \
+		p5-HTML-Template>=0:www/p5-HTML-Template
 
 USES=		perl5 shebangfix zip
 SHEBANG_FILES=	wiki.cgi

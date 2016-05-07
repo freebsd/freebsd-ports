@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SSLGlue
-PORTVERSION=	1.055
+PORTVERSION=	1.057
 CATEGORIES=	security net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Add/extend SSL support for common perl modules
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.190:${PORTSDIR}/security/p5-IO-Socket-SSL
+BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.190:security/p5-IO-Socket-SSL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

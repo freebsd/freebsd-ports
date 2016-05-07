@@ -39,7 +39,6 @@ load_rc_config ${name}
 pidfile=${sabnzbd_pidfile}
 
 start_precmd="${name}_prestart"
-extra_commands="status"
 command_interpreter="%%PYTHON_CMD%%"
 command="%%PREFIX%%/bin/SABnzbd.py"
 command_args="--daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini --pidfile ${pidfile}"

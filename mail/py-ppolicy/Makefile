@@ -8,36 +8,33 @@ CATEGORIES=	mail python
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~vokac/activities/ppolicy/download/%SUBDIR%/ \
 		http://www.chifeng.name/dist/ppolicy/%SUBDIR%/
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPolicy is tool for extending Postfix checking capabilities
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:dns/py-dnspython
 
 USES=		python twisted
 USE_PYTHON=	distutils autoplist
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_RC_SUBR=	ppolicyd
-DOCSDIR?=	${PREFIX}/share/doc/py-${PORTNAME}
 
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	GEOIP LDAP MYSQL DOCS
 OPTIONS_DEFAULT=	GEOIP LDAP
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGEOIP}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/GeoIP.so:${PORTSDIR}/net/py-GeoIP
-.endif
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
-.endif
-.if ${PORT_OPTIONS:MLDAP}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:${PORTSDIR}/net/py-ldap
-.endif
+GEOIP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GeoIP.so:net/py-GeoIP
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb
+LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:net/py-ldap
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/ppolicy.conf ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/ppolicy.tap ${STAGEDIR}${PREFIX}/sbin
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MODULES ${STAGEDIR}${DOCSDIR}
@@ -45,7 +42,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/TODO ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/TESTS ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ppolicy.sql ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ppolicy.conf ${STAGEDIR}${PREFIX}/etc
-	${INSTALL_DATA} ${WRKSRC}/ppolicy.tap ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

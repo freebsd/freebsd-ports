@@ -11,9 +11,9 @@ COMMENT=	Quantitative Financial Modelling and Trading Framework for R
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-xts>=0.9.0:${PORTSDIR}/math/R-cran-xts \
-		R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo \
-		R-cran-TTR>=0.2:${PORTSDIR}/finance/R-cran-TTR
+RUN_DEPENDS=	R-cran-xts>=0.9.0:math/R-cran-xts \
+		R-cran-zoo>0:math/R-cran-zoo \
+		R-cran-TTR>=0.2:finance/R-cran-TTR
 
 USES=	cran:auto-plist
 

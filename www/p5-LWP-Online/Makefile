@@ -15,8 +15,8 @@ COMMENT=	Checks if process has access to the web
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS+=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
-		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS+=	p5-libwww>=5.805:www/p5-libwww \
+		p5-URI>=1.35:net/p5-URI
 
 USES=		perl5
 USE_PERL5=	configure

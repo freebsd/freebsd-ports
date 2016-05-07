@@ -1,0 +1,12 @@
+--- configure.orig	2014-06-03 20:08:54 UTC
++++ configure
+@@ -15639,6 +15639,9 @@ else
+ fi
+ 
+ case "${host}" in
++  *-freebsd*)
++    gc_use_mmap=yes
++    ;;
+   *-linux*)
+     # FIXME: This seems to be no longer needed as configured in gcconfig.h
+     #gc_use_mmap=yes

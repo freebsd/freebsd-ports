@@ -13,8 +13,8 @@ LICENSE_NAME=	The Kannel Software License, Version 1.0
 LICENSE_FILE=	${WRKSRC}/KannelLICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/include/kannel/gw-config.h:${PORTSDIR}/www/kannel
-RUN_DEPENDS=	${LOCALBASE}/sbin/bearerbox:${PORTSDIR}/www/kannel
+BUILD_DEPENDS=	${LOCALBASE}/include/kannel/gw-config.h:www/kannel
+RUN_DEPENDS=	${LOCALBASE}/sbin/bearerbox:www/kannel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dbaio
@@ -31,7 +31,7 @@ MYSQL_USE=	mysql=yes
 
 PGSQL_USE=	pgsql=yes
 
-SQLITE3_USE=	sqlite=3
+SQLITE3_USES=	sqlite:3
 
 USE_RC_SUBR=	kannel_sqlbox
 

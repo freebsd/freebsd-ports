@@ -14,11 +14,9 @@ OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		pkgconfig
+USES=		gem pkgconfig
 
-X11_LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
-X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick-nox11
+X11_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
+X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:graphics/ImageMagick-nox11
 
 .include <bsd.port.mk>

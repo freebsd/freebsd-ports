@@ -12,7 +12,7 @@ COMMENT=	Python extension that wraps hiredis
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
+LIB_DEPENDS=	libhiredis.so:databases/hiredis
 
 USES=		python
 USE_PYTHON=	distutils autoplist

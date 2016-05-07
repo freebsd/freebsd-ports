@@ -13,8 +13,8 @@ COMMENT=	Highly flexible CSV parser for large files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Params-Util>=1:${PORTSDIR}/devel/p5-Params-Util \
-		p5-Text-CSV_XS>=0.80:${PORTSDIR}/textproc/p5-Text-CSV_XS
+BUILD_DEPENDS=	p5-Params-Util>=1:devel/p5-Params-Util \
+		p5-Text-CSV_XS>=0.80:textproc/p5-Text-CSV_XS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

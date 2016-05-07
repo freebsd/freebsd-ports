@@ -5,6 +5,8 @@ bin/gammu-smsd
 bin/gammu-smsd-inject
 bin/gammu-smsd-monitor
 bin/jadmaker
+%%BASH%%etc/bash_completion.d/gammu
+include/gammu/gammu.h
 include/gammu/gammu-backup.h
 include/gammu/gammu-bitmap.h
 include/gammu/gammu-calendar.h
@@ -32,7 +34,6 @@ include/gammu/gammu-statemachine.h
 include/gammu/gammu-types.h
 include/gammu/gammu-unicode.h
 include/gammu/gammu-wap.h
-include/gammu/gammu.h
 lib/libGammu.so
 lib/libGammu.so.7
 lib/libGammu.so.7.%%VERSION%%
@@ -41,12 +42,12 @@ lib/libgsmsd.so.7
 lib/libgsmsd.so.7.%%VERSION%%
 libdata/pkgconfig/gammu.pc
 libdata/pkgconfig/gammu-smsd.pc
+man/man1/gammu.1.gz
 man/man1/gammu-config.1.gz
 man/man1/gammu-detect.1.gz
 man/man1/gammu-smsd-inject.1.gz
 man/man1/gammu-smsd-monitor.1.gz
 man/man1/gammu-smsd.1.gz
-man/man1/gammu.1.gz
 man/man1/jadmaker.1.gz
 man/man5/gammu-backup.5.gz
 man/man5/gammu-smsbackup.5.gz

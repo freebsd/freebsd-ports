@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt core non-graphical module
 
-LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USE_GNOME=	glib20
 USE_QT4=	qmake_build moc_build

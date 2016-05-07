@@ -3,10 +3,11 @@
 
 PORTNAME=	barman
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	pg
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} barman-tutorial.en.pdf
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tutorial.pdf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -14,11 +15,11 @@ COMMENT=	Backup and recovery manager for PostgreSQL
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync						\
-		${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2	\
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil	\
-		${PYTHON_PKGNAMEPREFIX}argh>=0.21.2:${PORTSDIR}/devel/py-argh \
-		${PYTHON_PKGNAMEPREFIX}argcomplete>0:${PORTSDIR}/devel/py-argcomplete
+RUN_DEPENDS=	rsync:net/rsync						\
+		${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2	\
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil	\
+		${PYTHON_PKGNAMEPREFIX}argh>=0.21.2:devel/py-argh \
+		${PYTHON_PKGNAMEPREFIX}argcomplete>0:devel/py-argcomplete
 
 NO_ARCH=	yes
 
@@ -29,7 +30,7 @@ USES=		pgsql python
 WANT_PGSQL=	client
 USE_PYTHON=	autoplist distutils
 
-PORTDOCS=	barman-tutorial.en.pdf
+PORTDOCS=	tutorial.pdf
 
 post-extract:
 	${CP} ${DISTDIR}/${PORTDOCS} ${WRKDIR}/

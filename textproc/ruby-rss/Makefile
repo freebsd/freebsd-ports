@@ -3,7 +3,7 @@
 
 PORTNAME=	rss
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.chadfowler.com/ruby/rss/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,16 +15,17 @@ COMMENT=	Ruby library for parsing, creating, downloading, and caching RSS
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:textproc/ruby-xmlparser
 
 CONFLICTS=	ruby-rss.alt-*
 
 USE_RUBY=	yes
+USES=		shebangfix
 
 NO_BUILD=	yes
 INSTALL_TARGET=	site-install
 
-RUBY_SHEBANG_FILES=	${WRKSRC}/rssdrb.rb ${WRKSRC}/samples/rsstest.rb
+SHEBANG_FILES=	${WRKSRC}/rssdrb.rb ${WRKSRC}/samples/rsstest.rb
 DOCS=		ChangeLog README
 
 do-install:

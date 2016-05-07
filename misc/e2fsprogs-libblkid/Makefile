@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-libblkid
 
 COMMENT=	Blkid library from e2fsprogs package
 
-LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 CONFIGURE_ARGS=	--enable-elf-shlibs
 

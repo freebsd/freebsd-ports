@@ -10,9 +10,11 @@ COMMENT=	Secure password generator with a true random number generator
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libboost_program_options.so:devel/boost-libs
 
 BROKEN_sparc64=	cannot link with boost
 

@@ -11,12 +11,11 @@ COMMENT=	UUID Generator for Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-macaddr>=1.0:${PORTSDIR}/net/rubygem-macaddr
+RUN_DEPENDS=	rubygem-macaddr>=1.0:net/rubygem-macaddr
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/uuid
 

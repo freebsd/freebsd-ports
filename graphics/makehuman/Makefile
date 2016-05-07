@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/MakeHuman%20Source/MakeHuman_091
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Application for parametrical modeling of 3D humanoid characters
 
-LIB_DEPENDS=	libanimorph.so:${PORTSDIR}/graphics/animorph \
-		libmhgui.so:${PORTSDIR}/graphics/mhgui
+LIB_DEPENDS=	libanimorph.so:graphics/animorph \
+		libmhgui.so:graphics/mhgui
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@
     SUBDIR += biojava
     SUBDIR += blat
     SUBDIR += bowtie
+    SUBDIR += bowtie2
     SUBDIR += bwa
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
@@ -20,6 +21,7 @@
     SUBDIR += clustalw
     SUBDIR += consed
     SUBDIR += crux
+    SUBDIR += diamond
     SUBDIR += emboss
     SUBDIR += fasta
     SUBDIR += fasta3
@@ -37,6 +39,7 @@
     SUBDIR += htslib
     SUBDIR += iolib
     SUBDIR += jalview
+    SUBDIR += jellyfish
     SUBDIR += lagan
     SUBDIR += lamarc
     SUBDIR += libgtextutils
@@ -89,6 +92,7 @@
     SUBDIR += seqio
     SUBDIR += seqtools
     SUBDIR += sim4
+    SUBDIR += slclust
     SUBDIR += ssaha
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee

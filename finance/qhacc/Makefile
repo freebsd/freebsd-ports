@@ -13,8 +13,8 @@ COMMENT=	Simple Qt-based financial manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
-		libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6
+LIB_DEPENDS=	libgpgme.so:security/gpgme \
+		libqwt6.so:x11-toolkits/qwt6
 
 USES=		compiler:c++11-lib qmake:norecursive tar:tgz
 USE_QT4=	corelib gui sql moc_build rcc_build uic_build

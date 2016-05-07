@@ -3,7 +3,7 @@
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-${PORTVERSION:R}
 
@@ -44,7 +44,7 @@ OPENSSL_CONFIGURE_ENABLE=	openssl
 OPENSSL_USE=		OPENSSL=yes
 
 GNUTLS_CONFIGURE_ENABLE=	gnutls
-GNUTLS_LIB_DEPENDS=		libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
@@ -59,15 +59,15 @@ PGSQL_CONFIGURE_OFF=	--disable-pgsql
 PGSQL_USES=		pgsql
 
 SQLITE_CONFIGURE_ENABLE=	sqlite3
-SQLITE_USE=			SQLITE=3
+SQLITE_USES=			sqlite:3
 
 AVAHI_CONFIGURE_ON=	--with-zeroconf --enable-avahi
-AVAHI_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-			libavahi-core.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+			libavahi-core.so:net/avahi-app
 
 HOWL_CONFIGURE_ON=	--with-zeroconf --enable-howl
 HOWL_CPPFLAGS=		-I${LOCALBASE}/include/howl
-HOWL_LIB_DEPENDS=	libhowl.so:${PORTSDIR}/net/howl
+HOWL_LIB_DEPENDS=	libhowl.so:net/howl
 
 .include <bsd.port.options.mk>
 

@@ -10,9 +10,11 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A toolkit for building randomized language models
 
-BUILD_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:${PORTSDIR}/devel/google-sparsehash
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:${PORTSDIR}/devel/google-sparsehash
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/google-sparsehash
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/google-sparsehash
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	run

@@ -12,7 +12,7 @@ COMMENT=	Utility to mirror directory hierarchy with FTP
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
+RUN_DEPENDS=	p5-Socket6>=0:net/p5-Socket6
 
 OPTIONS_DEFINE=	DOCS
 

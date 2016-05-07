@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-Algebra-Symbols
-PORTVERSION=	1.21
-PORTREVISION=	2
+PORTVERSION=	1.27
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +13,8 @@ COMMENT=	Symbolic Algebra in Pure Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-USES=		perl5 shebangfix
-SHEBANG_FILES=	symbols.pl
-perl_OLD_CMD=	perl
-USE_PERL5=	configure
+USES=		perl5
+USE_PERL5=	modbuild
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

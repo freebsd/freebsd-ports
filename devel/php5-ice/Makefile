@@ -9,9 +9,9 @@ COMMENT=	Ice (Internet Communications Engine) language mapping for PHP
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp \
-		slice2php:${PORTSDIR}/devel/ice
-LIB_DEPENDS=	libIce.so.${LIB_VRS}:${PORTSDIR}/devel/ice
+BUILD_DEPENDS=	mcpp:devel/mcpp \
+		slice2php:devel/ice
+LIB_DEPENDS=	libIce.so.${LIB_VRS}:devel/ice
 
 OPTIONS_DEFINE=	DEBUG NAMESPACES
 OPTIONS_DEFAULT=

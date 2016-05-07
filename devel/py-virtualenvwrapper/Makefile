@@ -13,15 +13,15 @@ COMMENT=	Set of extensions to virtualenv
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:${PORTSDIR}/devel/py-pbr
-RUN_DEPENDS=	${PKGNAMEPREFIX}stevedore>0:${PORTSDIR}/devel/py-stevedore \
-		${PKGNAMEPREFIX}virtualenv>0:${PORTSDIR}/devel/py-virtualenv \
-		${PKGNAMEPREFIX}virtualenv-clone>0:${PORTSDIR}/devel/py-virtualenv-clone
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr
+RUN_DEPENDS=	${PKGNAMEPREFIX}stevedore>0:devel/py-stevedore \
+		${PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv \
+		${PKGNAMEPREFIX}virtualenv-clone>0:devel/py-virtualenv-clone
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
-			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-bitbucket>=1.0:${PORTSDIR}/textproc/py-sphinxcontrib-bitbucket
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-bitbucket>=1.0:textproc/py-sphinxcontrib-bitbucket
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils

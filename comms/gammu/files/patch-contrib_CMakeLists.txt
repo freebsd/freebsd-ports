@@ -1,0 +1,14 @@
+--- contrib/CMakeLists.txt.orig	2016-04-13 11:37:33 UTC
++++ contrib/CMakeLists.txt
+@@ -83,10 +83,7 @@ if (INSTALL_PHP_EXAMPLES)
+ endif (INSTALL_PHP_EXAMPLES)
+ 
+ if (INSTALL_BASH_COMPLETION)
+-    macro_optional_find_package (BashCompletion)
+-    if (NOT BASH_COMPLETION_FOUND)
+-      set (BASH_COMPLETION_COMPLETIONSDIR "/etc/bash_completion.d" CACHE PATH "Location of bash_completion.d")
+-    endif (NOT BASH_COMPLETION_FOUND)
++      set (BASH_COMPLETION_COMPLETIONSDIR "etc/bash_completion.d" CACHE PATH "Location of bash_completion.d")
+     install (
+         FILES bash-completion/gammu
+         DESTINATION ${BASH_COMPLETION_COMPLETIONSDIR}

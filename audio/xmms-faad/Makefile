@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS plugin for MP4/M4A/AAC files
 
-LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
-		libfaad.so:${PORTSDIR}/audio/faad
+LIB_DEPENDS=	libxmms.so:multimedia/xmms \
+		libfaad.so:audio/faad
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/plugins/xmms/src
 

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	4.0.5
+PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	http://www.tdiary.org/download/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -13,25 +14,25 @@ COMMENT=	Web-based diary system (like weblog) written in Ruby
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-fastimage>=1.6.3:${PORTSDIR}/graphics/rubygem-fastimage \
-		rubygem-hikidoc>=0.1.0:${PORTSDIR}/textproc/rubygem-hikidoc \
-		rubygem-multi_json>=1.10.1:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-emot>=0.0.4:textproc/rubygem-emot \
+		rubygem-fastimage>=1.8.1:graphics/rubygem-fastimage \
+		rubygem-hikidoc>=0.1.0:textproc/rubygem-hikidoc \
+		rubygem-mail>=2.6.3:mail/rubygem-mail \
+		rubygem-sprockets3>=3.5.2:devel/rubygem-sprockets3
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
+USES=		shebangfix
 
-RUBY_SHEBANG_FILES=	index.fcgi \
-			index.rb \
-			update.fcgi \
-			update.rb \
-			bin/tdiary \
-			misc/convert2.rb \
-			misc/migrate.rb \
-			misc/plugin/amazon/amazonimg.rb \
-			misc/plugin/squeeze.rb \
-			misc/plugin/xmlrpc/xmlrpc.rb
+SHEBANG_FILES=	index.fcgi \
+		index.rb \
+		update.fcgi \
+		update.rb \
+		bin/tdiary \
+		misc/plugin/amazon/amazonimg.rb \
+		misc/plugin/squeeze.rb \
+		misc/plugin/xmlrpc/xmlrpc.rb
 
 DOCFILES=	HOWTO-authenticate-in-rack HOWTO-make-io \
 		HOWTO-make-plugin HOWTO-make-theme \
@@ -49,7 +50,7 @@ PLIST_SUB=	TDIARY_SCRIPT=${TDIARY_SCRIPT} \
 SUB_FILES=	pkg-message tdiaryinst.rb
 SUB_LIST+=	TDIARY_LANG=${TDIARY_LANG} \
 		TDIARY_SCRIPT=${TDIARY_SCRIPT}
-WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}.1
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 WWWDIR=		${PREFIX}/www/${PKGBASE}
 
@@ -76,7 +77,7 @@ pre-patch:
 	@${RM} ${WRKSRC}/tdiary.gemspec
 	@${RM} ${WRKSRC}/tmp/.gitkeep
 	@${RM} -rf ${WRKSRC}/.bundle
-	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.7.2
+	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.11.2
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test
@@ -84,14 +85,13 @@ pre-patch:
 	@${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
 
-post-patch:
-	@${RUBY} -i -pe "sub %r|(.*< ::Rack::Request)|, %Q|\trequire 'rack'\n\\\1|" ${WRKSRC}/tdiary/request.rb
-
 pre-install:
 	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
 		${WRKDIR}/tdiaryinst.rb > ${WRKDIR}/${TDIARY_SCRIPT}
-	@${REINPLACE_CMD} '/#!\/usr\/bin\/env ruby/d' ${WRKSRC}/misc/convert2.rb
-	@${REINPLACE_CMD} '/#!\/usr\/bin\/env ruby/d' ${WRKSRC}/misc/migrate.rb
+	@${REINPLACE_CMD} 's!%%LOCALBASE%%!${LOCALBASE}!g' \
+		${WRKSRC}/misc/convert2.rb \
+		${WRKSRC}/misc/migrate.rb
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${TDIARY_SCRIPT} ${STAGEDIR}${PREFIX}/bin

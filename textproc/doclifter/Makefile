@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	doclifter
-PORTVERSION=	2.15
-PORTREVISION=	1
+PORTVERSION=	2.17
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Translates documents written in troff macros to DocBook
 
-RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
+RUN_DEPENDS+=	python2:lang/python2
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	manlifter

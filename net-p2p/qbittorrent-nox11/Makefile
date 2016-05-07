@@ -5,6 +5,8 @@ PKGNAMESUFFIX=	-nox11
 
 COMMENT=	Bittorrent client using libtorrent-rasterbar, web UI version
 
+BROKEN_powerpc64=	Does not build
+
 MASTERDIR=	${.CURDIR}/../qbittorrent
 
 DESCR=		${.CURDIR}/../qbittorrent/pkg-descr

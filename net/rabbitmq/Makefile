@@ -3,6 +3,7 @@
 
 PORTNAME=	rabbitmq
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -12,13 +13,13 @@ COMMENT=	RabbitMQ is an implementation of AMQP
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
-		xmlto:${PORTSDIR}/textproc/xmlto \
-		unzip:${PORTSDIR}/archivers/unzip \
-		zip:${PORTSDIR}/archivers/zip \
-		rsync:${PORTSDIR}/net/rsync
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erl:lang/erlang \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson \
+		xmlto:textproc/xmlto \
+		unzip:archivers/unzip \
+		zip:archivers/zip \
+		rsync:net/rsync
+RUN_DEPENDS=	erl:lang/erlang
 
 OPTIONS_DEFINE=	ADMIN
 OPTIONS_SUB=	yes

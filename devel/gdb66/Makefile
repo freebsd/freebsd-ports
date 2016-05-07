@@ -12,6 +12,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT?=	GNU GDB of newer version than comes with the system
 
+BROKEN_powerpc64=	Does not build
+
 PKGNAMESUFFIX=	66
 
 OPTIONS_DEFINE=	INSIGHT
@@ -43,8 +45,8 @@ CFLAGS+=	-Dreadline_echoing_p=_rl_echoing_p
 .if ${PORT_OPTIONS:MINSIGHT}
 PKGNAMESUFFIX=	-insight
 USES+=		tk
-LIB_DEPENDS=	libitk.so:${PORTSDIR}/x11-toolkits/itk
-RUN_DEPENDS=	iwidgets>0:${PORTSDIR}/x11-toolkits/iwidgets
+LIB_DEPENDS=	libitk.so:x11-toolkits/itk
+RUN_DEPENDS=	iwidgets>0:x11-toolkits/iwidgets
 DISTFILES+=	gdbtk-6.6${EXTRACT_SUFX}:gdbtk
 PLIST_SUB+=	INSIGHT=''
 EXTRA_PATCHES=	${FILESDIR}/itcl33-patch \

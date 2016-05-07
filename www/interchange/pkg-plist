@@ -198,6 +198,7 @@ interchange/code/SystemTag/row.coretag
 interchange/code/SystemTag/salestax.coretag
 interchange/code/SystemTag/scratch.coretag
 interchange/code/SystemTag/scratchd.coretag
+interchange/code/SystemTag/search.coretag
 interchange/code/SystemTag/search_region.coretag
 interchange/code/SystemTag/selected.coretag
 interchange/code/SystemTag/set.coretag

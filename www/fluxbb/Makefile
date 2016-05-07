@@ -12,6 +12,8 @@ COMMENT=	Fast and lightweight PHP-powered discussion board
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe
 SUB_FILES=	pkg-message
 NO_BUILD=	yes

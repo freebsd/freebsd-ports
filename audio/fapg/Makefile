@@ -11,7 +11,7 @@ COMMENT=	Fast Audio Playlist Generator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liburiparser.so:${PORTSDIR}/net/uriparser
+LIB_DEPENDS=	liburiparser.so:net/uriparser
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-uriparser="${LOCALBASE}"

@@ -9,12 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Ruby interface to the FFTW ver.3
 
-RUN_DEPENDS=	rubygem-narray>0:${PORTSDIR}/math/rubygem-narray
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+RUN_DEPENDS=	rubygem-narray>0:math/rubygem-narray
+LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USE_RUBY=	yes
-USE_RAKE=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

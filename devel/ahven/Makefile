@@ -3,7 +3,7 @@
 
 PORTNAME=	ahven
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ahven-framework.com/releases/
 
@@ -12,7 +12,7 @@ COMMENT=	Ada unit test framework
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	adactl:${PORTSDIR}/lang/adacontrol
+BUILD_DEPENDS=	adactl:lang/adacontrol
 
 USES=		ada gmake
 MAKE_ENV=	OS_VERSION=unix
@@ -23,8 +23,8 @@ NO_OPTIONS_SORT=	yes
 TRACE_DESC=		Build with GNAT-specific symbolic tracing functionality
 
 DOCS_USES=		python:build
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
-			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-adadomain>0:${PORTSDIR}/textproc/py-sphinxcontrib-adadomain
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-adadomain>0:textproc/py-sphinxcontrib-adadomain
 TRACE_EXTRA_PATCHES=	${FILESDIR}/extra-src_ahven-framework.adb
 
 do-build:

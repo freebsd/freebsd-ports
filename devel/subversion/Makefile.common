@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	subversion
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	APACHE/subversion
@@ -19,9 +19,9 @@ CPE_VENDOR=	apache
 
 CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^9].[0-9]*
 
-LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
-			libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-			libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=		libapr-1.so:devel/apr1 \
+			libsqlite3.so:databases/sqlite3 \
+			libexpat.so:textproc/expat2
 
 CONFIGURE_ARGS+=	--without-swig \
 			--with-sqlite=${LOCALBASE} \
@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=	--without-swig \
 
 .if defined(SVN_BUILD_ADDONS)
 CONFLICTS_BUILD+=	${PORTNAME}-1.[^9].[0-9]*
-LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion
+LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion
 OPTIONS_NAME=		devel_subversion
 .endif
 
@@ -46,11 +46,11 @@ NLS_USES=			gettext
 
 SASL_CONFIGURE_OFF=		--without-sasl
 SASL_CONFIGURE_ON=		--with-sasl=${LOCALBASE}
-SASL_LIB_DEPENDS=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 
 SERF_CONFIGURE_OFF=		--without-serf
 SERF_CONFIGURE_ON=		--with-serf
-SERF_LIB_DEPENDS=		libserf-1.so:${PORTSDIR}/www/serf
+SERF_LIB_DEPENDS=		libserf-1.so:www/serf
 
 STATIC_CONFIGURE_ON=		--enable-all-static PKG_CONFIG="${LOCALBASE}/bin/pkg-config --static"
 

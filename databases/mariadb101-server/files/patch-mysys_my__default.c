@@ -1,6 +1,6 @@
 Obey hier(7)
 
---- mysys/my_default.c.orig	2015-10-15 15:43:45 UTC
+--- mysys/my_default.c.orig	2016-03-24 09:12:11 UTC
 +++ mysys/my_default.c
 @@ -90,7 +90,7 @@ static my_bool defaults_already_read= FA
  
@@ -11,7 +11,7 @@ Obey hier(7)
  #define DEFAULT_DIRS_SIZE (MAX_DEFAULT_DIRS + 1)  /* Terminate with NULL */
  static const char **default_directories = NULL;
  
-@@ -784,7 +784,7 @@ static int search_default_file_with_ext(
+@@ -785,7 +785,7 @@ static int search_default_file_with_ext(
    {
      MY_STAT stat_info;
      if (!my_stat(name,&stat_info,MYF(0)))
@@ -20,7 +20,7 @@ Obey hier(7)
      /*
        Ignore world-writable regular files.
        This is mainly done to protect us to not read a file created by
-@@ -802,6 +802,14 @@ static int search_default_file_with_ext(
+@@ -803,6 +803,14 @@ static int search_default_file_with_ext(
    if (!(fp= mysql_file_fopen(key_file_cnf, name, O_RDONLY, MYF(0))))
      return 1;					/* Ignore wrong files */
  
@@ -35,7 +35,7 @@ Obey hier(7)
    while (mysql_file_fgets(buff, sizeof(buff) - 1, fp))
    {
      line++;
-@@ -1066,7 +1074,8 @@ void my_print_default_files(const char *
+@@ -1067,7 +1075,8 @@ void my_print_default_files(const char *
            if (name[0] == FN_HOMELIB)	/* Add . to filenames in home */
              *end++= '.';
            strxmov(end, conf_file, *ext, " ", NullS);
@@ -45,7 +45,7 @@ Obey hier(7)
          }
        }
      }
-@@ -1222,13 +1231,10 @@ static const char **init_default_directo
+@@ -1223,13 +1232,10 @@ static const char **init_default_directo
  
  #else
  

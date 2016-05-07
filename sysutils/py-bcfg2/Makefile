@@ -12,10 +12,10 @@ COMMENT=	Configuration management system written in Python
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}daemon>=0:${PORTSDIR}/devel/py-daemon \
-		${PYTHON_PKGNAMEPREFIX}gamin>=0:${PORTSDIR}/devel/py-gamin \
-		${PYTHON_PKGNAMEPREFIX}lockfile>=0:${PORTSDIR}/devel/py-lockfile \
-		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}daemon>=0:devel/py-daemon \
+		${PYTHON_PKGNAMEPREFIX}gamin>=0:devel/py-gamin \
+		${PYTHON_PKGNAMEPREFIX}lockfile>=0:devel/py-lockfile \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml
 
 OPTIONS_DEFINE=	CHEETAH GENSHI
 CHEETAH_DESC=	Support Cheetah Templates
@@ -28,8 +28,8 @@ USE_RC_SUBR=	bcfg2
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 PORTDOCS=	COPYRIGHT README
 
-CHEETAH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=0:${PORTSDIR}/devel/py-cheetah
-GENSHI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0:${PORTSDIR}/textproc/py-genshi
+CHEETAH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=0:devel/py-cheetah
+GENSHI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0:textproc/py-genshi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/setup.py

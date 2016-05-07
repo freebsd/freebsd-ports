@@ -16,11 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL= why3-gpl-*
 
-BUILD_DEPENDS=	ocaml-zarith>1.2:${PORTSDIR}/math/ocaml-zarith \
-		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
-		ocaml-sqlite3>2:${PORTSDIR}/databases/ocaml-sqlite3 \
-		ocaml-ocamlgraph>1.8:${PORTSDIR}/math/ocaml-ocamlgraph \
-		camlp5o:${PORTSDIR}/devel/ocaml-camlp5
+BUILD_DEPENDS=	ocaml-zarith>1.2:math/ocaml-zarith \
+		lablgtk2:x11-toolkits/ocaml-lablgtk2 \
+		ocaml-sqlite3>2:databases/ocaml-sqlite3 \
+		ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph \
+		camlp5o:devel/ocaml-camlp5
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-all
@@ -48,8 +48,8 @@ OPTIONS_DEFINE=	DOCS
 # also removed from ALL_TARGET
 #
 #DOCS_CONFIGURE_ENABLE=		doc
-#DOCS_BUILD_DEPENDS=		rubber:${PORTSDIR}/textproc/rubber \
-#				hevea:${PORTSDIR}/textproc/hevea
+#DOCS_BUILD_DEPENDS=		rubber:textproc/rubber \
+#				hevea:textproc/hevea
 
 MAKE_JOBS_UNSAFE=	yes
 

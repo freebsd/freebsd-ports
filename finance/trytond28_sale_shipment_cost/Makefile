@@ -14,10 +14,10 @@ COMMENT=	Tryton Application Platform (Sale Shipment Cost Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_carrier>=2.8.0:${PORTSDIR}/finance/trytond28_carrier \
-		trytond28_sale>=2.8.1:${PORTSDIR}/finance/trytond28_sale \
-		trytond28_account_invoice>=2.8.2:${PORTSDIR}/finance/trytond28_account_invoice \
-		trytond28_stock>=2.8.2:${PORTSDIR}/finance/trytond28_stock
+RUN_DEPENDS=	trytond28_carrier>=2.8.0:finance/trytond28_carrier \
+		trytond28_sale>=2.8.1:finance/trytond28_sale \
+		trytond28_account_invoice>=2.8.2:finance/trytond28_account_invoice \
+		trytond28_stock>=2.8.2:finance/trytond28_stock
 
 CONFLICTS=	trytond_sale_shipment_cost-2.[46].*
 

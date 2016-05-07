@@ -11,7 +11,7 @@ DISTNAME=	qt-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 bindings for GStreamer 1.x multimedia library
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 CONFLICTS_INSTALL=	gstreamer-qt4-*
 

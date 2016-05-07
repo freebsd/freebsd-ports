@@ -12,14 +12,14 @@ COMMENT=	Desktop bitcoin management system
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig3.0:${PORTSDIR}/devel/swig30 \
-		${LOCALBASE}/bin/pyrcc4:${PORTSDIR}/textproc/py-qt4-xml \
-		${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}twistedCore>=14.0.0:${PORTSDIR}/devel/py-twistedCore \
-		${PYTHON_PKGNAMEPREFIX}psutil>1.2.1:${PORTSDIR}/sysutils/py-psutil \
-		${LOCALBASE}/bin/bitcoind:${PORTSDIR}/net-p2p/bitcoin-daemon
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig3.0:devel/swig30 \
+		${LOCALBASE}/bin/pyrcc4:textproc/py-qt4-xml \
+		${LOCALBASE}/bin/rsync:net/rsync
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:devel/py-qt4-core \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT4_VERSION}:x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}twistedCore>=14.0.0:devel/py-twistedCore \
+		${PYTHON_PKGNAMEPREFIX}psutil>1.2.1:sysutils/py-psutil \
+		${LOCALBASE}/bin/bitcoind:net-p2p/bitcoin-daemon
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	etotheipi

@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Tool that automates the creation of control points
 
-BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
-		${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	bjam:devel/boost-jam \
+		${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include

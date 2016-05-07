@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/mesa-libGLU-10.4.3-1.el6.x86_64.rpm) = 49d3865cb194d7d3c77127991fd82cdc4e106fa371ee24728a68f9b7f1e88345
 SIZE (rpm/x86_64/centos/6.7/mesa-libGLU-10.4.3-1.el6.x86_64.rpm) = 201608
+SHA256 (rpm/x86_64/centos/6.7/mesa-libGLU-10.4.3-1.el6.i686.rpm) = 96342b291392e8f67bbc4f0e4ec5dcbddb61ffd5b01d5781adb61470be0202b9
+SIZE (rpm/x86_64/centos/6.7/mesa-libGLU-10.4.3-1.el6.i686.rpm) = 198232
 SHA256 (rpm/x86_64/centos/6.7/mesa-10.4.3-1.el6.src.rpm) = 4d591bd3cefe88d5c54f5eeb0ac685a46c9df9036c6111bcbd773f3823cbea09
 SIZE (rpm/x86_64/centos/6.7/mesa-10.4.3-1.el6.src.rpm) = 24458958

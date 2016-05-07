@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	Alex.Bakhtin@gmail.com
 COMMENT=	Build and install Perl applications
 
-RUN_DEPENDS=	p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options \
-		p5-Module-Build>=0.28:${PORTSDIR}/devel/p5-Module-Build
-BUILD_DEPENDS=	p5-Test-Differences>=0.47:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options \
-		p5-Module-Build>=0.28:${PORTSDIR}/devel/p5-Module-Build
+RUN_DEPENDS=	p5-App-Options>=0:devel/p5-App-Options \
+		p5-Module-Build>=0.28:devel/p5-Module-Build
+BUILD_DEPENDS=	p5-Test-Differences>=0.47:devel/p5-Test-Differences \
+		p5-App-Options>=0:devel/p5-App-Options \
+		p5-Module-Build>=0.28:devel/p5-Module-Build
 
 USES=		perl5
 USE_PERL5=	modbuild

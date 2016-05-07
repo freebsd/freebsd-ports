@@ -10,7 +10,7 @@ MASTER_SITES=	SF/chemical-mime/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Collection of chemical MIME types for UNIX desktops
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc:${PORTSDIR}/graphics/librsvg2
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc:graphics/librsvg2
 
 USES=		gettext-tools gmake pkgconfig tar:bzip2 shared-mime-info
 USE_GNOME=	gnomemimedata intlhack libxslt:build

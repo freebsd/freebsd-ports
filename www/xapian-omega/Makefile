@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.2.22
+PORTVERSION=	1.2.23
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -13,8 +13,8 @@ COMMENT=	CGI search application built on Xapian
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libxapian.so:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libxapian.so:databases/xapian-core
 
 OPTIONS_DEFINE=	DOCS EXAMPLES ICONV
 OPTIONS_DEFAULT=ICONV

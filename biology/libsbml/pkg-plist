@@ -81,6 +81,7 @@ include/sbml/conversion/SBMLFunctionDefinitionConverter.h
 include/sbml/conversion/SBMLIdConverter.h
 include/sbml/conversion/SBMLInferUnitsConverter.h
 include/sbml/conversion/SBMLInitialAssignmentConverter.h
+include/sbml/conversion/SBMLLevel1Version1Converter.h
 include/sbml/conversion/SBMLLevelVersionConverter.h
 include/sbml/conversion/SBMLLocalParameterConverter.h
 include/sbml/conversion/SBMLReactionConverter.h
@@ -164,6 +165,7 @@ include/sbml/validator/SBMLExternalValidator.h
 include/sbml/validator/SBMLInternalValidator.h
 include/sbml/validator/SBMLValidator.h
 include/sbml/validator/SBOConsistencyValidator.h
+include/sbml/validator/StrictUnitConsistencyValidator.h
 include/sbml/validator/UnitConsistencyValidator.h
 include/sbml/validator/VConstraint.h
 include/sbml/validator/Validator.h
@@ -201,7 +203,7 @@ include/sbml/xml/XercesTranscode.h
 lib/libsbml-static.a
 lib/libsbml.so
 lib/libsbml.so.5
-lib/libsbml.so.5.11.4
+lib/libsbml.so.%%PORTVERSION%%
 libdata/pkgconfig/libsbml.pc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/_libsbml.so
@@ -248,6 +250,7 @@ libdata/pkgconfig/libsbml.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/callExternalValidator.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/convertReactions.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/convertSBML.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/convertToL1V1.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/createExampleSBML.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/echoSBML.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/getAllElementsWithNotes.cpp

@@ -23,8 +23,8 @@ PORTEXAMPLES=	AUP INTRO KernighanRitchie MISC MULTICORE TEST
 
 OPTIONS_DEFINE=	GMP PCRE DOCS EXAMPLES
 OPTIONS_DEFAULT=	GMP PCRE
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 
 .include <bsd.port.pre.mk>
 

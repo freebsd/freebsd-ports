@@ -14,9 +14,9 @@ COMMENT=	Futuristic real-time strategy game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtheora.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis
 
 USES=		lua:51 scons shebangfix
 SHEBANG_FILES=	languages/updatepo.sh

@@ -13,7 +13,7 @@ COMMENT=	Tracking system based on Subversion repository
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS=	svn:devel/subversion
 
 USES=		python tar:tgz
 USE_PYTHON=	distutils

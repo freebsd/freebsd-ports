@@ -10,9 +10,9 @@ MASTER_SITES=	GNU
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator
 
-BUILD_DEPENDS=	autoconf-2.69:${PORTSDIR}/devel/autoconf
-RUN_DEPENDS=	autoconf-2.69:${PORTSDIR}/devel/autoconf \
-		automake-wrapper:${PORTSDIR}/devel/automake-wrapper
+BUILD_DEPENDS=	autoconf-2.69:devel/autoconf
+RUN_DEPENDS=	autoconf-2.69:devel/autoconf \
+		automake-wrapper:devel/automake-wrapper
 
 BUILD_VERSION=	1.15
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}

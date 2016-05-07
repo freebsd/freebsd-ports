@@ -13,8 +13,8 @@ COMMENT=	Perl extension to manipulate SVN Access files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash \
-		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
+BUILD_DEPENDS=	p5-Tie-IxHash>=1.21:devel/p5-Tie-IxHash \
+		p5-subversion>=0:devel/p5-subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -12,6 +12,8 @@ COMMENT=	Simple and easy to use wiki, no database required
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 DIST_VER=	${PORTNAME}-2015-08-10a
 USE_PHP=	gd mbstring openssl pcre session xml zlib
 NO_ARCH=	YES

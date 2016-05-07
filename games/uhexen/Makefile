@@ -19,7 +19,7 @@ PLIST_FILES=	bin/uhexen
 OPTIONS_DEFINE=	MUSIC
 OPTIONS_DEFAULT=	MUSIC
 MUSIC_DESC=	In-game MIDI music support
-MUSIC_RUN_DEPENDS=	${LOCALBASE}/lib/timidity/goemon.cfg:${PORTSDIR}/audio/timidity
+MUSIC_RUN_DEPENDS=	${LOCALBASE}/lib/timidity/goemon.cfg:audio/timidity
 
 .include <bsd.port.pre.mk>
 

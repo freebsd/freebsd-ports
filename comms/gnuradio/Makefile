@@ -11,26 +11,26 @@ COMMENT=	Amateur Radio Software defined radio
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	sdl-config:${PORTSDIR}/devel/sdl12 \
-		swig2.0:${PORTSDIR}/devel/swig20 \
-		cheetah:${PORTSDIR}/devel/py-cheetah \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}qt4>0:${PORTSDIR}/devel/py-qt4 \
-		xdg-open:${PORTSDIR}/devel/xdg-utils \
-		guile:${PORTSDIR}/lang/guile \
-		aconnect:${PORTSDIR}/audio/alsa-utils \
-		git:${PORTSDIR}/devel/git \
+BUILD_DEPENDS=	sdl-config:devel/sdl12 \
+		swig2.0:devel/swig20 \
+		cheetah:devel/py-cheetah \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}qt4>0:devel/py-qt4 \
+		xdg-open:devel/xdg-utils \
+		guile:lang/guile \
+		aconnect:audio/alsa-utils \
+		git:devel/git \
 		${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem
-LIB_DEPENDS=	libcppunit.so:${PORTSDIR}/devel/cppunit \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
-		libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
-		libportaudio.so:${PORTSDIR}/audio/portaudio \
-		libjack.so:${PORTSDIR}/audio/jack \
-		libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libgsl.so:${PORTSDIR}/math/gsl
+		${PYTHON_SITELIBDIR}/ephem/__init__.py:astro/pyephem
+LIB_DEPENDS=	libcppunit.so:devel/cppunit \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libqwt.so:x11-toolkits/qwt5 \
+		libboost_python.so:devel/boost-python-libs \
+		libportaudio.so:audio/portaudio \
+		libjack.so:audio/jack \
+		libasound.so:audio/alsa-lib \
+		libgsl.so:math/gsl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 # USES=compiler:c11 is necessary because base GCC fails:
@@ -70,11 +70,11 @@ TESTING_DESC=	Include testing support
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-			${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
-			dot:${PORTSDIR}/graphics/graphviz \
-			xmlto:${PORTSDIR}/textproc/xmlto \
-			freefont-ttf>0:${PORTSDIR}/x11-fonts/freefont-ttf
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			${LOCALBASE}/bin/sphinx-apidoc:textproc/py-sphinx \
+			dot:graphics/graphviz \
+			xmlto:textproc/xmlto \
+			freefont-ttf>0:x11-fonts/freefont-ttf
 DOCS_CMAKE_ON=	-DENABLE_DOXYGEN:STRING="ON" \
 		-DENABLE_DOCS:STRING="ON" \
 		-DENABLE_BAD_BOOST="ON"
@@ -85,11 +85,11 @@ HAVE_PORTDOCS=	YES
 
 USRP_CMAKE_ON=	-DENABLE_GR_UHD:STRING="ON"
 USRP_CMAKE_OFF=	-DENABLE_GR_UHD:STRING="OFF"
-USRP_BUILD_DEPENDS=	${LOCALBASE}/include/uhd/config.hpp:${PORTSDIR}/comms/usrp
+USRP_BUILD_DEPENDS=	${LOCALBASE}/include/uhd/config.hpp:comms/usrp
 
 TESTING_CMAKE_ON=	-DENABLE_TESTING:STRING="ON"
 TESTING_CMAKE_OFF=	-DENABLE_TESTING:STRING="OFF"
-TESTING_BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
+TESTING_BUILD_DEPENDS=	cppunit-config:devel/cppunit
 
 .include <bsd.port.pre.mk>
 

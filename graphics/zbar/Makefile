@@ -28,11 +28,11 @@ X11_USE=	XORG=ice,sm,x11,xau,xcb,xdmcp,xext,xv
 X11_CONFIGURE_ON=	--with-x=yes
 X11_CONFIGURE_OFF=	--with-x=no --without-xshm --without-xv
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 IMAGEMAGICK_CONFIGURE_ON=	--with-imagemagick=yes
 IMAGEMAGICK_CONFIGURE_OFF=	--with-imagemagick=no
 
-V4L_BUILD_DEPENDS=	v4l_compat>=1.0.20101027:${PORTSDIR}/multimedia/v4l_compat
+V4L_BUILD_DEPENDS=	v4l_compat>=1.0.20101027:multimedia/v4l_compat
 V4L_CONFIGURE_ON=	--enable-video=yes
 V4L_CONFIGURE_OFF=	--enable-video=no
 

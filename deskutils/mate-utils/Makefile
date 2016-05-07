@@ -10,9 +10,9 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE support utilities
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
-		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
+		libcanberra-gtk.so:audio/libcanberra
 
 PORTSCOUT=	limitw:1,even
 

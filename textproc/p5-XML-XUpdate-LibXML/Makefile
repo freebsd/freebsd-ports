@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Simple implementation of XUpdate format based on and XML::LibXML
 
-BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-XML-LibXML-Iterator>=0:${PORTSDIR}/textproc/p5-XML-LibXML-Iterator
+BUILD_DEPENDS=	p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+		p5-XML-LibXML-Iterator>=0:textproc/p5-XML-LibXML-Iterator
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

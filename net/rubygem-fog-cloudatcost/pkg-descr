@@ -1,0 +1,3 @@
+Fog::CloudAtCost is a module for the 'fog' gem to support CloudAtCost services.
+
+WWW: https://github.com/fog/fog-cloudatcost

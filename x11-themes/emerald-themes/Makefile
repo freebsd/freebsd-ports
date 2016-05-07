@@ -8,7 +8,7 @@ MASTER_SITES=	http://cgit.compiz.org/fusion/decorators/emerald-themes/snapshot/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themes for the Emerald Window Decorator
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake shebangfix tar:bzip2
 SHEBANG_FILES=	themes/import.sh

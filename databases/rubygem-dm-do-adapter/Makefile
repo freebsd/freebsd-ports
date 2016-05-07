@@ -11,13 +11,12 @@ COMMENT=	DataObjects Adapter for DataMapper
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-data_objects>=0.10.6:${PORTSDIR}/databases/rubygem-data_objects \
-		rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core
+RUN_DEPENDS=	rubygem-data_objects>=0.10.6:databases/rubygem-data_objects \
+		rubygem-dm-core>=${PORTVERSION}:databases/rubygem-dm-core
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

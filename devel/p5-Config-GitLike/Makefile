@@ -14,10 +14,10 @@ COMMENT=	Simple git-compatible config file parser for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	devel/p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
-		devel/p5-MooX-Types-MooseLike>=0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike
+BUILD_DEPENDS=	devel/p5-Moo>=0:devel/p5-Moo \
+		devel/p5-MooX-Types-MooseLike>=0:devel/p5-MooX-Types-MooseLike
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS+=	devel/p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS+=	devel/p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure

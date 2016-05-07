@@ -6,7 +6,7 @@
 # french/eric6, german/eric6, russian/eric6
 
 PORTNAME=	eric6
-PORTVERSION=	6.1.2
+PORTVERSION=	6.1.4
 MASTER_SITES=	SF/eric-ide/${PORTNAME}/stable/${PORTVERSION}
 DISTNAME?=	${PORTNAME}-i18n-${I18N_LANG}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -16,7 +16,7 @@ COMMENT=	Full featured Python and Ruby editor and IDE based on Qt4
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS?=	${PREFIX}/bin/eric6:${PORTSDIR}/devel/eric6
+RUN_DEPENDS?=	${PREFIX}/bin/eric6:devel/eric6
 
 I18N_LANG?=	ru
 INSTALL_CMD?=	install-i18n.py -p ${STAGEDIR}

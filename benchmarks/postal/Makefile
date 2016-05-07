@@ -3,7 +3,7 @@
 
 PORTNAME=	postal
 PORTVERSION=	0.73
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
 
@@ -28,7 +28,7 @@ OPTIONS_RADIO=		TLS
 OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=		pkgconfig
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 GNUTLS_CPPFLAGS=	$$(pkg-config --cflags gnutls)

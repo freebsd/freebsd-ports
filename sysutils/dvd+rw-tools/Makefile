@@ -14,8 +14,8 @@ COMMENT=	DVD burning software
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS=	cdrecord:sysutils/cdrtools
+RUN_DEPENDS=	cdrecord:sysutils/cdrtools
 
 # On some systems, among them one 900044 i386, the do-build-invoked
 # "make" will just do nothing for reasons not yet found, as of

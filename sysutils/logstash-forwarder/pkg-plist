@@ -1,4 +1,2 @@
 bin/logstash-forwarder
-@unexec if cmp  -s %D/etc/logstash-forwarder.conf.example %D/etc/logstash-forwarder.conf; then rm -f %D/etc/logstash-forwarder.conf; fi
-etc/logstash-forwarder.conf.example
-@exec if [ ! -f %D/etc/logstash-forwarder.conf ] ; then cp -p %D/%F %B/logstash-forwarder.conf; fi
+@sample etc/logstash-forwarder.conf.example etc/logstash-forwarder.conf

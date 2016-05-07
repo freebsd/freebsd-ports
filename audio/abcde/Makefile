@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcde
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	audio
 MASTER_SITES=	http://abcde.einval.com/download/
 
@@ -12,12 +12,12 @@ COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
-		cdparanoia:${PORTSDIR}/audio/cdparanoia \
-		lame:${PORTSDIR}/audio/lame \
-		${PYTHON_PKGNAMEPREFIX}eyed3>=0.7:${PORTSDIR}/audio/py-eyed3 \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	cd-discid:audio/cd-discid \
+		cdparanoia:audio/cdparanoia \
+		lame:audio/lame \
+		${PYTHON_PKGNAMEPREFIX}eyed3>=0.7:audio/py-eyed3 \
+		oggenc:audio/vorbis-tools \
+		bash:shells/bash
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -35,18 +35,18 @@ OPTIONS_GROUP_CODEC=	AAC FLAC MPP OPUS SPEEX
 OPTIONS_GROUP_RIPPER=	CDDA2WAV DAGRAB
 OPTIONS_DEFINE=		NORMALIZE REPLAYGAIN
 
-AAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac
-CDDA2WAV_RUN_DEPENDS=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
-DAGRAB_RUN_DEPENDS=	dagrab:${PORTSDIR}/audio/dagrab
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
-MPP_RUN_DEPENDS=	mpcenc:${PORTSDIR}/audio/musepack
+AAC_RUN_DEPENDS=	faac:audio/faac
+CDDA2WAV_RUN_DEPENDS=	cdda2wav:sysutils/cdrtools
+DAGRAB_RUN_DEPENDS=	dagrab:audio/dagrab
+FLAC_RUN_DEPENDS=	flac:audio/flac
+MPP_RUN_DEPENDS=	mpcenc:audio/musepack
 NORMALIZE_DESC=		Enable normalize support
-NORMALIZE_RUN_DEPENDS=	normalize:${PORTSDIR}/audio/normalize
-OPUS_RUN_DEPENDS=	opusenc:${PORTSDIR}/audio/opus-tools
+NORMALIZE_RUN_DEPENDS=	normalize:audio/normalize
+OPUS_RUN_DEPENDS=	opusenc:audio/opus-tools
 REPLAYGAIN_DESC=	Enable (vorbis|mp3)gain support
-REPLAYGAIN_RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain \
-			vorbisgain:${PORTSDIR}/audio/vorbisgain
-SPEEX_RUN_DEPENDS=	speexenc:${PORTSDIR}/audio/speex
+REPLAYGAIN_RUN_DEPENDS=	mp3gain:audio/mp3gain \
+			vorbisgain:audio/vorbisgain
+SPEEX_RUN_DEPENDS=	speexenc:audio/speex
 
 post-extract:
 	@${LN} -sf abcde.conf ${WRKSRC}/abcde.conf.sample

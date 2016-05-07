@@ -11,7 +11,7 @@ DISTNAME=	Cultivation_${PORTVERSION}_UnixSource
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Unique game of conflict and cooperation in a gardening community
 
-LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 USES=		gmake
 USE_XORG=	x11 xi xext xmu
@@ -36,7 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|font\.tga|${DATADIR}/font.tga|; \
 		s|language\.txt|${DATADIR}/language.txt|; \
 		s|features\.txt|${DATADIR}/features.txt|' \
-	       	${BUILD_WRKSRC}/game.cpp
+		${BUILD_WRKSRC}/game.cpp
 	@${REINPLACE_CMD} -e 's|"languages"|"${DATADIR}/languages"|' \
 		${WRKSRC}/../minorGems/util/TranslationManager.cpp
 

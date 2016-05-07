@@ -12,7 +12,7 @@ COMMENT=	VoIP abstraction library
 
 LICENSE=	MPL
 
-LIB_DEPENDS=	libpt.so:${PORTSDIR}/devel/ptlib
+LIB_DEPENDS=	libpt.so:devel/ptlib
 
 USES=		gmake pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
@@ -86,20 +86,20 @@ PLIST_SUB+=	DEBUG="@comment "
 .if !defined(SAFE_ZRTP)
 IGNORE=	please build devel/libzrtpcpp WITHOUT ports SSL and re-run build with SAFE_ZRTP set
 .endif
-LIB_DEPENDS+=	libzrtpcpp.so:${PORTSDIR}/devel/libzrtpcpp
+LIB_DEPENDS+=	libzrtpcpp.so:devel/libzrtpcpp
 CONFIGURE_ARGS+=	--enable-zrtp
 .else
 CONFIGURE_ARGS+=	--disable-zrtp
 .endif
 
 .if ${PORT_OPTIONS:MGSM}
-LIB_DEPENDS+=	libgsm.so:${PORTSDIR}/audio/gsm
+LIB_DEPENDS+=	libgsm.so:audio/gsm
 .else
 CONFIGURE_ARGS+=	--enable-localgsm
 .endif
 
 .if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	libspeex.so:audio/speex
 .else
 CONFIGURE_ARGS+=	--enable-localspeex
 .endif
@@ -117,7 +117,7 @@ CONFIGURE_ARGS+=	--disable-ruby
 .endif
 
 .if ${PORT_OPTIONS:MCELT}
-LIB_DEPENDS+=	libcelt0.so:${PORTSDIR}/audio/celt
+LIB_DEPENDS+=	libcelt0.so:audio/celt
 CONFIGURE_ARGS+=	--enable-celt
 PLIST_SUB+=	CELT=""
 .else
@@ -126,13 +126,13 @@ PLIST_SUB+=	CELT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MILBC}
-LIB_DEPENDS+=	libilbc.so:${PORTSDIR}/net/ilbc
+LIB_DEPENDS+=	libilbc.so:net/ilbc
 .else
 CONFIGURE_ARGS+=	--enable-localilbc
 .endif
 
 .if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	libtheora.so:multimedia/libtheora
 CONFIGURE_ARGS+=	--enable-theora
 PLIST_SUB+=	THEORA=""
 WITH_VIDEO=	yes
@@ -142,7 +142,7 @@ PLIST_SUB+=	THEORA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX264} && ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/libx264
+LIB_DEPENDS+=	libx264.so:multimedia/libx264
 CONFIGURE_ARGS+=	--enable-x264
 PLIST_SUB+=	X264=""
 WITH_VIDEO=	yes
@@ -156,8 +156,8 @@ PLIST_SUB+=	X264="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-BUILD_DEPENDS+=		ffmpeg>=2:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS+=		ffmpeg>=2:${PORTSDIR}/multimedia/ffmpeg
+BUILD_DEPENDS+=		ffmpeg>=2:multimedia/ffmpeg
+RUN_DEPENDS+=		ffmpeg>=2:multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-libavcodec
 PLIST_SUB+=	FFMPEG=""
 WITH_VIDEO=	yes
@@ -206,7 +206,7 @@ CONFIGURE_ARGS+=	--disable-h281
 .endif
 
 .if ${PORT_OPTIONS:MFAX}
-LIB_DEPENDS+=		libspandsp.so:${PORTSDIR}/comms/spandsp
+LIB_DEPENDS+=		libspandsp.so:comms/spandsp
 CONFIGURE_ARGS+=	--enable-spandsp --enable-fax --enable-t38
 PLIST_SUB+=	FAX=""
 .else

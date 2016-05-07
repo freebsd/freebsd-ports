@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test the script with run
 
-RUN_DEPENDS=	p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+RUN_DEPENDS=	p5-IPC-Run3>=0:devel/p5-IPC-Run3 \
+		p5-Test-Exception>=0:devel/p5-Test-Exception
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

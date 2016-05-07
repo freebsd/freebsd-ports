@@ -12,8 +12,8 @@ COMMENT=	Remote control and convenience wrapper for ezjail
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	ezjail-admin:${PORTSDIR}/sysutils/ezjail \
-		${PYTHON_PKGNAMEPREFIX}fabric>0:${PORTSDIR}/devel/py-fabric
+RUN_DEPENDS=	ezjail-admin:sysutils/ezjail \
+		${PYTHON_PKGNAMEPREFIX}fabric>0:devel/py-fabric
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomster

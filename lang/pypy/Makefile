@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-PORTVERSION=	5.0.0	# Also update bsd.pypy.cffi.mk
+PORTVERSION=	5.0.1	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/
 DISTVERSIONSUFFIX=	-src
@@ -10,11 +10,13 @@ DISTVERSIONSUFFIX=	-src
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libffi.so:${PORTSDIR}/devel/libffi
-TEST_DEPENDS=	${PREFIX}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.pypy-${PYPY_CFFI_VER}.so:${PORTSDIR}/databases/pypy-gdbm \
-		${PREFIX}/${PYPY_DIR}/lib_pypy/_sqlite3_cffi.pypy-${PYPY_CFFI_VER}.so:${PORTSDIR}/databases/pypy-sqlite3 \
-		${PREFIX}/${PYPY_DIR}/lib_pypy/_tkinter/tklib_cffi.pypy-${PYPY_CFFI_VER}.so:${PORTSDIR}/x11-toolkits/pypy-tkinter
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libffi.so:devel/libffi
+TEST_DEPENDS=	${PREFIX}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.pypy-${PYPY_CFFI_VER}.so:databases/pypy-gdbm \
+		${PREFIX}/${PYPY_DIR}/lib_pypy/_sqlite3_cffi.pypy-${PYPY_CFFI_VER}.so:databases/pypy-sqlite3 \
+		${PREFIX}/${PYPY_DIR}/lib_pypy/_tkinter/tklib_cffi.pypy-${PYPY_CFFI_VER}.so:x11-toolkits/pypy-tkinter
 
 ONLY_FOR_ARCHS=	i386 amd64 armv6 powerpc64
 ONLY_FOR_ARCHS_REASON=	PyPy JIT only supported on these architectures
@@ -36,7 +38,7 @@ OPTIONS_SLAVE=	PYTHON
 CONFLICTS_INSTALL=	pypy3-[0-9]*
 
 ALL_TARGET=	pypy-c
-BUILD_WRKSRC=	${WRKDIR}/build/usession-release-5.0-0/testing_1
+BUILD_WRKSRC=	${WRKDIR}/build/usession-release-${PORTVERSION:C/0\.0/0/}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
 USES=		gettext-runtime gmake tar:bzip2

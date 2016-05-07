@@ -5,15 +5,15 @@ PORTNAME=	xdu
 PORTVERSION=	3.0
 PORTREVISION=	4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://sd.wareonearth.com/~phil/xdu/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Graphically display output of du
 
-BROKEN=		unfetchable
+USE_GITHUB=	yes
+GH_ACCOUNT=	vlasovskikh
+GH_PROJECT=	xdu
 
-NO_WRKSUBDIR=	yes
-USES=		imake tar:Z
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 PLIST_FILES=	bin/xdu lib/X11/app-defaults/XDu man/man1/xdu.1.gz
 

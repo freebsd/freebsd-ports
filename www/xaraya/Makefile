@@ -11,6 +11,8 @@ COMMENT=	Framework to create fully dynamic Content Management Solutions
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	PGSQL MYSQL
 
 USES=		cpe tar:bzip2

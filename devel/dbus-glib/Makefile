@@ -9,7 +9,7 @@ MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib bindings for the D-BUS messaging system
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 GNU_CONFIGURE=	yes
 USES=		cpe gettext gmake libtool pathfix pkgconfig

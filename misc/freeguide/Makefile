@@ -12,7 +12,7 @@ COMMENT=	Interactive TV guide which will create personalized TV listings
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
+RUN_DEPENDS=	tv_cat:textproc/p5-xmltv
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

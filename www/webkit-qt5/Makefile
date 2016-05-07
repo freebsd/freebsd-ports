@@ -2,17 +2,20 @@
 
 PORTNAME=	webkit
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt WebKit implementation
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libicui18n.so:${PORTSDIR}/devel/icu \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libwebp.so:${PORTSDIR}/graphics/webp
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libicui18n.so:devel/icu \
+		libpng.so:graphics/png \
+		libwebp.so:graphics/webp
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+
+BROKEN_sparc64=	cannot build: uses i386 assembler
 
 USE_GL=		gl
 USE_GNOME=	libxml2 libxslt
@@ -23,7 +26,7 @@ QT_DIST=	${PORTNAME}
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_XORG=	x11 xcomposite xrender
-USES=		bison gmake gperf jpeg perl5 pkgconfig python:build qmake:outsource \
+USES=		bison gperf jpeg perl5 pkgconfig python:build qmake:outsource \
 		sqlite
 # Use flex(1) from ports.
 MAKE_ENV=	PATH="${LOCALBASE}/bin:${PATH}"
@@ -45,7 +48,7 @@ GSTREAMER_USE=	GNOME=glib20 GSTREAMER1=yes
 # Base ld(1) segfaults on PowerPC (inherited from Qt 4):
 # http://bugs.freebsd.org/173042
 .if ${ARCH} == "powerpc"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
 .endif
 
 post-patch:

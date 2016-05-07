@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiera
-PORTVERSION=	3.0.6
+PORTVERSION=	3.1.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,15 +10,15 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pluggable data store for hierarchical data
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
+RUN_DEPENDS=	rubygem-json_pure>=0:devel/rubygem-json_pure
 
 CONFLICTS_INSTALL=	rubygem-hiera1-*
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 HIERA_DBDIR=	/var/db/hiera
 PLIST_FILES=	bin/hiera

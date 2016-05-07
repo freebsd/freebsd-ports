@@ -1,0 +1,27 @@
+--- src/geom_api/CMakeLists.txt.orig	2016-02-14 00:01:30 UTC
++++ src/geom_api/CMakeLists.txt
+@@ -29,6 +29,8 @@ GuiInterface.h
+ VSP_Geom_API.h
+ )
+ 
++set_target_properties( geom_api PROPERTIES COMPILE_FLAGS "-fPIC")
++
+ ADD_DEPENDENCIES( geom_api
+ util
+ )
+@@ -49,7 +51,7 @@ IF( NOT VSP_NO_GRAPHICS )
+ 	util
+ 	)
+ 
+-	set_target_properties( geom_api_g PROPERTIES COMPILE_FLAGS "-DVSP_USE_FLTK=1")
++set_target_properties( geom_api_g PROPERTIES COMPILE_FLAGS "-DVSP_USE_FLTK=1 -fPIC")
+ 
+ 	ADD_LIBRARY( gui_interface_g
+ 	GuiInterface.cpp
+@@ -61,5 +63,5 @@ IF( NOT VSP_NO_GRAPHICS )
+ 	util
+ 	)
+ 
+-	set_target_properties( gui_interface_g PROPERTIES COMPILE_FLAGS "-DVSP_USE_FLTK=1")
++set_target_properties( gui_interface_g PROPERTIES COMPILE_FLAGS "-DVSP_USE_FLTK=1 -fPIC")
+ ENDIF()

@@ -19,9 +19,9 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
-BUILD_DEPENDS=	libffi>=0:${PORTSDIR}/devel/libffi
-LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
-RUN_DEPENDS=	libffi>=0:${PORTSDIR}/devel/libffi
+BUILD_DEPENDS=	libffi>=0:devel/libffi
+LIB_DEPENDS=	libyaml.so:textproc/libyaml
+RUN_DEPENDS=	libffi>=0:devel/libffi
 
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
@@ -59,19 +59,22 @@ RDOC_DESC=		Build and install Rdoc indexes
 EDIT_DESC=		Which line editing lib to use
 LIBEDIT_DESC=		Use libedit
 READLINE_DESC=		Use libreadline
-CAPIDOCS_BUILD_DEPENDS=	doxygen>0:${PORTSDIR}/devel/doxygen \
-			dot:${PORTSDIR}/graphics/graphviz
+CAPIDOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen \
+			dot:graphics/graphviz
 CAPIDOCS_CONFIGURE_ENABLE=	install-capi
 LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-dir=${LOCALBASE}
 LIBEDIT_USES=		libedit
 RDOC_CONFIGURE_ENABLE=	install-rdoc
-READLINE_BUILD_DEPENDS=	readline>=0:${PORTSDIR}/devel/readline
+READLINE_BUILD_DEPENDS=	readline>=0:devel/readline
 READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-dir=${LOCALBASE}
-READLINE_RUN_DEPENDS=	readline>=0:${PORTSDIR}/devel/readline
+READLINE_RUN_DEPENDS=	readline>=0:devel/readline
 
 CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}
 CPE_UPDATE=	p${RUBY_PATCHLEVEL}
+
+DEPRECATED=	Upstream support ended
+EXPIRATION_DATE=	2016-06-01
 
 .include <bsd.port.pre.mk>
 
@@ -236,9 +239,9 @@ regression-test test:
 
 validate:
 	@${MKDIR} ${WRKSRC}/rubyspec
-	rm -rf ${WRKSRC}/rubyspec/*
+	${RM} -rf ${WRKSRC}/rubyspec/*
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/rubyspec.git)
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/mspec.git)
-	(cd ${WRKSRC}/rubyspec/rubyspec && env PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${PREFIX}/bin/ruby${RUBY_SUFFIX} .)
+	(cd ${WRKSRC}/rubyspec/rubyspec && ${SETENV} PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${PREFIX}/bin/ruby${RUBY_SUFFIX} .)
 
 .include <bsd.port.post.mk>

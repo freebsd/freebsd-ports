@@ -9,9 +9,9 @@ COMMENT=	Feature-rich compositing window manager for X11
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig
-RUN_DEPENDS=	xprop:${PORTSDIR}/x11/xprop \
-		xwininfo:${PORTSDIR}/x11/xwininfo
+LIB_DEPENDS=	libconfig.so:devel/libconfig
+RUN_DEPENDS=	xprop:x11/xprop \
+		xwininfo:x11/xwininfo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chjj
@@ -34,13 +34,13 @@ DOCS_DESC=	Build manpages (requires AsciiDoc/DocBook)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 .else
 MAKE_ARGS+=	NO_REGEX_PCRE=yes
 .endif
 
 .if ${PORT_OPTIONS:MDRM}
-LIB_DEPENDS+=	libdrm.so:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .else
 MAKE_ARGS+=	NO_VSYNC_DRM=yes
 .endif
@@ -52,16 +52,16 @@ MAKE_ARGS+=	NO_VSYNC_OPENGL=yes
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	libdbus-1.so:devel/dbus
 .else
 MAKE_ARGS+=	NO_DBUS=yes
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS=	a2x:${PORTSDIR}/textproc/asciidoc \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	a2x:textproc/asciidoc \
+		xsltproc:textproc/libxslt \
+		docbook-xml>0:textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 MAKE_ARGS+=	DOCDIR=${DOCSDIR} MANDIR=${MANPREFIX}/man/man1
 ALL_TARGET+=	docs
 PLIST_FILES+=	man/man1/compton.1.gz man/man1/compton-trans.1.gz

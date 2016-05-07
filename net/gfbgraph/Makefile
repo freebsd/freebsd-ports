@@ -9,10 +9,10 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject library for Facebook Graph API
 
-BUILD_DEPENDS=	gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc
-LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
-		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+BUILD_DEPENDS=	gtkdoc-rebase:textproc/gtk-doc
+LIB_DEPENDS=	librest-0.7.so:devel/librest \
+		libgoa-1.0.so:net/gnome-online-accounts \
+		libjson-glib-1.0.so:devel/json-glib
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 intlhack introspection:build

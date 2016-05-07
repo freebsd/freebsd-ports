@@ -13,8 +13,8 @@ COMMENT=	Pd library of clones of Max/MSP 4.5 objects
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	pd:${PORTSDIR}/audio/pd
-RUN_DEPENDS=	pd:${PORTSDIR}/audio/pd
+BUILD_DEPENDS=	pd:audio/pd
+RUN_DEPENDS=	pd:audio/pd
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-0.2beta1
 

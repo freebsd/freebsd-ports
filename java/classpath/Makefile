@@ -83,7 +83,7 @@ PLIST_SUB+=		GJDOC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=		libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=		libgmp.so:math/gmp
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 PLIST_SUB+=		GMP=""
 .else
@@ -118,7 +118,7 @@ PLIST_SUB+=		QT4="@comment "
 .endif
 
 .if !defined(WITH_GCJ) && (${ARCH} == "amd64" || ${ARCH} == "i386")
-BUILD_DEPENDS+=		${LOCALBASE}/bootstrap-openjdk/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
+BUILD_DEPENDS+=		${LOCALBASE}/bootstrap-openjdk/bin/javac:java/bootstrap-openjdk
 JAR?=			${LOCALBASE}/bootstrap-openjdk/bin/jar
 JAVA?=			${LOCALBASE}/bootstrap-openjdk/bin/java
 JAVAC?=			${LOCALBASE}/bootstrap-openjdk/bin/javac

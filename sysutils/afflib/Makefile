@@ -11,8 +11,8 @@ COMMENT=	Advanced Forensics Format library and utilities
 
 LICENSE=	BSD4CLAUSE
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sshock

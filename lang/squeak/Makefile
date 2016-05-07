@@ -21,13 +21,13 @@ COMMENT=	Full Smalltalk 80 with portability to Unix, Mac, and Windows
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake \
-		v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas \
-		libffi.so:${PORTSDIR}/devel/libffi \
-		libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio \
-		libv4l2.so:${PORTSDIR}/multimedia/libv4l
+BUILD_DEPENDS=	cmake:devel/cmake \
+		v4l_compat>=1.0.20120501:multimedia/v4l_compat
+LIB_DEPENDS=	libaudio.so:audio/nas \
+		libffi.so:devel/libffi \
+		libasound.so:audio/alsa-lib \
+		libpulse-simple.so:audio/pulseaudio \
+		libv4l2.so:multimedia/libv4l
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
@@ -35,6 +35,7 @@ USES=		pkgconfig
 USE_GNOME=	cairo pango
 USE_GL=		gl
 HAS_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 USE_GSTREAMER=	yes
 
 VM_VERSION=	${PORTVERSION}.${SVN_VERSION}
@@ -46,12 +47,9 @@ SQUEAK_SRC=	SqueakV46.sources
 SQUEAK_LIB_DIR=	${PORTVERSION}-${SVN_VERSION}
 
 WRKSRC=			${WRKDIR}/Squeak-${VM_VERSION}-src
-CONFIGURE_WRKSRC=	${WRKSRC}/build
-BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
-CONFIGURE_SCRIPT=	../unix/cmake/configure
+CONFIGURE_SCRIPT=	unix/cmake/configure
 CONFIGURE_ARGS=		--prefix=${PREFIX}
-CMAKE_SOURCE_PATH=	../unix
+CMAKE_SOURCE_PATH=	unix
 
 SUB_FILES=	pkg-message
 SUB_LIST=	SQUEAK_LIB_DIR=${SQUEAK_LIB_DIR} \
@@ -71,9 +69,6 @@ post-patch:
 		${WRKSRC}/Cross/plugins/Mpeg3Plugin/libmpeg/audio/layer3.c
 	@${REINPLACE_CMD} -e 's,return;,return 1;,' \
 		${WRKSRC}/Cross/plugins/Mpeg3Plugin/libmpeg/video/getpicture.c
-
-pre-configure:
-	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/so.* \

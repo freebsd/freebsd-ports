@@ -1,7 +1,7 @@
 # Created by: TAOKA Fumiyoshi
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese mail perl5
 PKGNAMEPREFIX=	ja-
 
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 MASTERDIR=	${.CURDIR}/../../mail/spamassassin
 
-BUILD_DEPENDS=	ja-p5-MeCab>=0.98:${PORTSDIR}/japanese/p5-MeCab
+BUILD_DEPENDS=	ja-p5-MeCab>=0.98:japanese/p5-MeCab
 
 CONFLICTS=	spamassassin-[0-9]*
 

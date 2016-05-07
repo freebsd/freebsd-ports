@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: openhpid
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# openhpid_enable="YES"
+#
+
+. /etc/rc.subr
+
+: ${openhpid_enable:=NO} ${openhpid_config:=%%ETCDIR%%/openhpi.conf}
+
+name=openhpid
+rcvar=openhpid_enable
+command="%%PREFIX%%/sbin/openhpid"
+command_args="-c ${openhpid_config}"
+required_files="${openhpid_config}"
+
+load_rc_config ${name}
+run_rc_command "$1"

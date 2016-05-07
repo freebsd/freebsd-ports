@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Nls
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.horde.org/get/
 PKGNAMEPREFIX=	pear-
@@ -18,6 +18,6 @@ OPTIONS_DEFINE=	GEOIP
 GEOIP_DESC=	Depend on geoip PHP extension
 
 GEOIP_USE=	PHP=yes
-GEOIP_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/geoip.so:${PORTSDIR}/net/pecl-geoip
+GEOIP_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/geoip.so:net/pecl-geoip
 
 .include <bsd.port.mk>

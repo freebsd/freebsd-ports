@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocamlgraph
-PORTVERSION=	1.8.6
-PORTREVISION=	1
+PORTVERSION=	1.8.7
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/ocamlgraph/
@@ -16,8 +15,8 @@ OPTIONS_DEFINE=	GUI DOCS
 OPTIONS_DEFAULT=GUI
 OPTIONS_SUB=	yes
 GUI_DESC=		Include GUI user programs: viewer and editor
-GUI_BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-GUI_RUN_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+GUI_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+GUI_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 GUI_CONFIGURE_OFF=	LABLGTK2=no
 
 USES=		gmake

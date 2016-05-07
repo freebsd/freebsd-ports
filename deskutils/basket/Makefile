@@ -12,7 +12,7 @@ COMMENT=	Desktop organization tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 USES=		cmake gettext-tools tar:bzip2
 USE_XORG=	xft xpm

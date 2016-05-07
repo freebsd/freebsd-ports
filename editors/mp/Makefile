@@ -29,7 +29,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_WITH=	gettext
 GTK2_USE=		gnome=gtk20
 GTK3_USE=		gnome=gtk30
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	pcre
 QT4_USE=		qt4=corelib,gui,moc_build
 QT4_CONFIGURE_ENV=	CPP="${CXX}" CCLINK="${CXX}"

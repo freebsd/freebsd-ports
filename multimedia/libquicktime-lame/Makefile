@@ -9,8 +9,8 @@ PKGNAMESUFFIX=	-lame
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LAME plugin for libquicktime
 
-LIB_DEPENDS=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime \
-		libmp3lame.so:${PORTSDIR}/audio/lame
+LIB_DEPENDS=	libquicktime.so:multimedia/libquicktime \
+		libmp3lame.so:audio/lame
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

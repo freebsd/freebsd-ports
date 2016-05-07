@@ -15,8 +15,8 @@ COMMENT=	Plugin to allow manual resizing of Pidgin's message input area
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin
 
 MAKEFILE=	makefile
 

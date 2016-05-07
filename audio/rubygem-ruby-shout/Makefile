@@ -12,11 +12,10 @@ COMMENT=	Ruby binding to the libshout library
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
+LIB_DEPENDS=	libshout.so:audio/libshout
 
 CONFIGURE_ARGS=	--with-opt-include="${LOCALBASE}/include"
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	mailgraph
 PORTVERSION=	1.14
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail
 MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 		http://mailgraph.schweikert.ch/pub/old/
@@ -11,8 +11,8 @@ MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	RRDtool frontend for Postfix statistics
 
-RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
-		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
+RUN_DEPENDS=	rrdtool>=0:databases/rrdtool	\
+		p5-File-Tail>=0:devel/p5-File-Tail
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

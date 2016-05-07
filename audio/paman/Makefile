@@ -10,8 +10,8 @@ MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Gtk frontend for PulseAudio
 
-LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS=	libglademm-2.4.so:devel/libglademm24 \
+		libpulse.so:audio/pulseaudio
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig

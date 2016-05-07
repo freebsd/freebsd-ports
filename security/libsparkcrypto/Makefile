@@ -3,7 +3,7 @@
 
 PORTNAME=	libsparkcrypto
 PORTVERSION=	0.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://senier.net/libsparkcrypto/
 
@@ -28,7 +28,7 @@ MAKE_ENV+=	SPARKARCH=${SPARKARCH} \
 
 OPTIONS_DEFINE=		DOCS
 
-DOCS_BUILD_DEPENDS=	adabrowse:${PORTSDIR}/textproc/adabrowse
+DOCS_BUILD_DEPENDS=	adabrowse:textproc/adabrowse
 DOCS_MAKE_ENV_OFF=	NO_APIDOC=true
 
 post-patch:

@@ -15,10 +15,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Exporter-Tiny>=0:${PORTSDIR}/devel/p5-Exporter-Tiny \
-		p5-XML-LibXML>=1.62:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	p5-Exporter-Tiny>=0:devel/p5-Exporter-Tiny \
+		p5-XML-LibXML>=1.62:textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Warnings>=0:${PORTSDIR}/devel/p5-Test-Warnings
+TEST_DEPENDS=	p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
 NO_ARCH=	yes
 USE_PERL5=	configure

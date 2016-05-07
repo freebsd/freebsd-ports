@@ -11,18 +11,17 @@ COMMENT=	Lightweight music player
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
-	libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
-	libnotify.so:${PORTSDIR}/devel/libnotify \
-	libkeybinder-3.0.so:${PORTSDIR}/x11/keybinder-gtk3 \
-	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-	libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser
+LIB_DEPENDS=	libtag.so:audio/taglib \
+	libpeas-1.0.so:devel/libpeas \
+	libnotify.so:devel/libnotify \
+	libkeybinder-3.0.so:x11/keybinder-gtk3 \
+	libsoup-2.4.so:devel/libsoup \
+	libtotem-plparser.so:multimedia/totem-pl-parser
 
 USES=	compiler:c11 desktop-file-utils gettext-tools gmake libtool \
-	pkgconfig tar:bz2
+	pkgconfig sqlite tar:bz2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 intltool intlhack
-USE_SQLITE=	yes
 USE_GSTREAMER1=	yes faad flac libav mad ogg speex
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

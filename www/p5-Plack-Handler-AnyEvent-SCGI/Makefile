@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-AnyEvent-SCGI>0:${PORTSDIR}/www/p5-AnyEvent-SCGI \
-	p5-Plack>=0.9901:${PORTSDIR}/www/p5-Plack
+	p5-AnyEvent-SCGI>0:www/p5-AnyEvent-SCGI \
+	p5-Plack>=0.9901:www/p5-Plack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
+TEST_DEPENDS=	p5-Test-TCP>0:devel/p5-Test-TCP
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

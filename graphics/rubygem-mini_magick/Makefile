@@ -16,10 +16,9 @@ OPTIONS_DEFAULT=X11
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
-X11_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
-X11_RUN_DEPENDS_OFF=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
+X11_RUN_DEPENDS=	convert:graphics/ImageMagick
+X11_RUN_DEPENDS_OFF=	convert:graphics/ImageMagick-nox11
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	xcircuit
 PORTVERSION=	3.8.78
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
@@ -17,15 +17,12 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	EXAMPLES
 
 USE_XORG=	xpm xscrnsaver xt
-USES=	tk ghostscript:x11,run gmake tar:tgz
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR}
+USES=	tk:tea ghostscript:x11,run gmake tar:tgz
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
 DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/${PORTNAME}.gif" \
-		"${PORTNAME}" "" "false"
+		"${PORTNAME}" "" false
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even

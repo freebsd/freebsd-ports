@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bandlimited oscillator plugins for LADSPA-aware audio applications
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
 USES=		gmake
 GNU_CONFIGURE=	yes

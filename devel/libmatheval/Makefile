@@ -10,8 +10,8 @@ MASTER_SITES=	GNU
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library to evaluate mathematical functions
 
-BUILD_DEPENDS=	flex>=2.5.39_1:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+BUILD_DEPENDS=	flex>=2.5.39_1:textproc/flex
+LIB_DEPENDS=	libguile.so:lang/guile
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LEXLIB=-lfl_pic MAKEINFO="makeinfo --no-split"

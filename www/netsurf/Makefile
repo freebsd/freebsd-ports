@@ -2,75 +2,70 @@
 # $FreeBSD$
 
 PORTNAME=	netsurf
-PORTVERSION=	3.0
-PORTREVISION=	6
+PORTVERSION=	3.5
 CATEGORIES=	www
-MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source-full/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-full-src
+MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Lightweight web browser
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	duk:lang/duktape \
+		nsgenbind:devel/nsgenbind \
+		p5-HTML-Parser>=3.72:www/p5-HTML-Parser
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpng.so:graphics/png \
+		libnsutils.so:devel/libnsutils \
+		libutf8proc.so:textproc/libutf8proc \
+		libnsgif.so:graphics/libnsgif \
+		libnsbmp.so:graphics/libnsbmp \
+		libdom.so:www/libdom \
+		libcss.so:textproc/libcss
 
 ALL_TARGET=	#empty
-CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lssl -lcrypto -L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
 		WARNFLAGS="" Q="" OPTCFLAGS="${CFLAGS}"
-USES=		bison gmake gperf iconv jpeg pkgconfig
-USE_GNOME=	gtk20 librsvg2
+MAKE_ENV+=	COMPONENT_TYPE="lib-shared" \
+		FLEX="${LOCALBASE}/bin/flex"
+USES=		bison desktop-file-utils gmake iconv jpeg \
+		localbase perl5 pkgconfig shebangfix
+USE_GNOME=	glib20 gtk20 librsvg2
 
-NSFB_VERSION=	0.1.0
-WRKSRC=		${WRKDIR}/${PORTNAME}-full-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
-DESKTOP_ENTRIES="NetSurf" "${COMMENT}" "${DATADIR}/${PORTNAME}.xpm" \
-		"${PORTNAME}" "" true
+SHEBANG_FILES=	utils/split-messages.pl
+perl_CMD=	${SETENV} perl
 
-OPTIONS_DEFINE=	GSTREAMER WEBP
+OPTIONS_DEFINE=	GSTREAMER
 GSTREAMER_USE=		GSTREAMER=yes
-WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} '/^NSFB_LINUX_AVAILABLE/ s|yes|no| ; s| -g||' \
-		${WRKSRC}/src/libnsfb-${NSFB_VERSION}/Makefile
-	@${REINPLACE_CMD} 's|endian|sys/endian|' \
-		${WRKSRC}/src/libnsfb-${NSFB_VERSION}/src/plot/*bpp*.c
 	@${REINPLACE_CMD} '/CFLAGS/d' \
-		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.defaults
+		${WRKSRC}//Makefile.defaults
 	@${REINPLACE_CMD} 's| -O2||' \
-		${WRKSRC}/src/netsurf-${PORTVERSION}/gtk/Makefile.defaults
+		${WRKSRC}/gtk/Makefile.defaults
 	@${REINPLACE_CMD} \
-		-e '/OpenSSL/d' -e '/lcms/d' -e 's| -g||' \
+		-e '/OpenSSL/d' -e 's| -g||' \
 		-e 's/-DG_DISABLE_DEPRECATED//' \
-		-e 's/-DGDK_PIXBUF_DISABLE_DEPRECATED//' \
-		${WRKSRC}/src/netsurf-${PORTVERSION}/gtk/Makefile.target
-	@${REINPLACE_CMD} -e 's| -g|| ; s|flex|${LOCALBASE}/bin/&|' \
-		${WRKSRC}/src/nsgenbind-0.0.1/src/Makefile
+		${WRKSRC}/gtk/Makefile.target
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/gtk/gui.c
 
 do-configure:
-	@${CP} ${FILESDIR}/Makefile.config  ${WRKSRC}/src/netsurf-${PORTVERSION}
+	@${CP} ${FILESDIR}/Makefile.config  ${WRKSRC}
 .if empty(ICONV_LIB)
 	@${REINPLACE_CMD} '/NETSURF_USE_LIBICONV_PLUG/ s|NO|YES|' \
-		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config
+		${WRKSRC}/Makefile.config
 .endif
 .if ${PORT_OPTIONS:MGSTREAMER}
 	@${REINPLACE_CMD} '/NETSURF_USE_VIDEO/ s|NO|YES|' \
-		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config
+		${WRKSRC}/Makefile.config
 .endif
-.if ${PORT_OPTIONS:MWEBP}
-	@${REINPLACE_CMD} '/NETSURF_USE_WEBP/ s|NO|YES|' \
-		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config
-.endif
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/netsurf
 
 .include <bsd.port.post.mk>

@@ -10,7 +10,7 @@ MASTER_SITES=	http://darkshed.net/files/c_cpp/fbcmd/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Commandline utility for controlling fluxbox
 
-RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
+RUN_DEPENDS=	fluxbox:x11-wm/fluxbox
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	first

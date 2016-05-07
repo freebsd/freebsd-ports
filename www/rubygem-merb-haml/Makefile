@@ -11,13 +11,12 @@ COMMENT=	Merb plugin for HAML support
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-haml>=2.0.3:${PORTSDIR}/www/rubygem-haml \
-		rubygem-merb-core>=1.1.3:${PORTSDIR}/www/rubygem-merb-core
+RUN_DEPENDS=	rubygem-haml>=2.0.3:www/rubygem-haml \
+		rubygem-merb-core>=1.1.3:www/rubygem-merb-core
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

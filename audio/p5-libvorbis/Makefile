@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Ogg Vorbis streams
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 USES=		perl5
 USE_PERL5=	configure

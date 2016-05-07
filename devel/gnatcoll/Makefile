@@ -3,7 +3,7 @@
 
 PORTNAME=	gnatcoll
 PORTVERSION=	2015
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -13,11 +13,11 @@ COMMENT=	GNAT Component Collection from Adacore
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
-		gnat_util>=20140422:${PORTSDIR}/lang/gnat_util
-LIB_DEPENDS=	libgtkada.so:${PORTSDIR}/x11-toolkits/gtkada3 \
-		libgmp.so:${PORTSDIR}/math/gmp
-RUN_DEPENDS=	gnat_util>=20140422:${PORTSDIR}/lang/gnat_util
+BUILD_DEPENDS=	gprbuild>=20120510:devel/gprbuild \
+		gnat_util>=20140422:lang/gnat_util
+LIB_DEPENDS=	libgtkada.so:x11-toolkits/gtkada3 \
+		libgmp.so:math/gmp
+RUN_DEPENDS=	gnat_util>=20140422:lang/gnat_util
 
 USES=		ada gmake pkgconfig python
 USE_GNOME=	pygobject3
@@ -32,7 +32,7 @@ MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER} \
 OPTIONS_DEFINE=		READLINE SYSLOG PGSQL ICONV DOCS EXAMPLES
 OPTIONS_DEFAULT=	READLINE SYSLOG
 OPTIONS_SUB=		yes
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 SYSLOG_CONFIGURE_ENABLE=	syslog
 
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-aux-${OPSYS:tl}${OSREL}

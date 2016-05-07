@@ -14,14 +14,13 @@ COMMENT=	Ruby email handler
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mime-types1>=1.16:${PORTSDIR}/misc/rubygem-mime-types1 \
-		rubygem-treetop>=1.4.8:${PORTSDIR}/devel/rubygem-treetop
+RUN_DEPENDS=	rubygem-mime-types1>=1.16:misc/rubygem-mime-types1 \
+		rubygem-treetop>=1.4.8:devel/rubygem-treetop
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PORTSCOUT=      limit:^2\.5
 

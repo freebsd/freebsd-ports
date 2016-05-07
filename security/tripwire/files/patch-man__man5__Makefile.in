@@ -1,11 +1,13 @@
---- man/man5/Makefile.in.orig	Tue Nov 22 23:02:51 2005
-+++ man/man5/Makefile.in	Fri Jan  6 13:49:39 2006
-@@ -147,7 +147,7 @@
+--- man/man5/Makefile.in.orig	2016-04-23 19:12:41.000000000 -0700
++++ man/man5/Makefile.in	2016-04-29 23:17:14.071690000 -0700
+@@ -159,8 +159,8 @@
  target_os = @target_os@
  target_vendor = @target_vendor@
  AUTOMAKE_OPTIONS = foreign no-dependencies
 -man_MANS = twfiles.5
+-dist_man_MANS = twfiles.5
 +man_MANS = twfiles.5 twconfig.5 twpolicy.5
++dist_man_MANS = twfiles.5 twconfig.5 twpolicy.5
  all: all-am
  
  .SUFFIXES:

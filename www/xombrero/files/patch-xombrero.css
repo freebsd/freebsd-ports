@@ -1,0 +1,16 @@
+Upstream commit, that is fixing warnings on modern gtk3
+https://github.com/conformal/xombrero/commit/aa57b80c
+
+--- xombrero.css.orig	2015-02-17 16:11:49 UTC
++++ xombrero.css
+@@ -25,8 +25,8 @@
+ 
+ * {
+ 	border-width: 1px;
+-	padding: 1;
+-	margin: 1;
++	padding: 1px;
++	margin: 1px;
+ 	-GtkScrolledWindow-scrollbar-spacing: 1;
+ 	-GtkWidget-line-width: 1;
+ }

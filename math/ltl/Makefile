@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 MAINTAINER=	rossiya@gmail.com
 COMMENT=	C++ class SSE library for scientific computing
 
-LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack \
-		libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS=	liblapack.so:math/lapack \
+		libblas.so:math/blas
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

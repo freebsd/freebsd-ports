@@ -13,9 +13,9 @@ COMMENT=	DeforaOS desktop todo list
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
-		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop
-BUILD_DEPENDS=	${LOCALBASE}/include/Desktop/Mailer/plugin.h:${PORTSDIR}/mail/deforaos-mailer
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+		libDesktop.so:x11/deforaos-libdesktop
+BUILD_DEPENDS=	${LOCALBASE}/include/Desktop/Mailer/plugin.h:mail/deforaos-mailer
 
 USES=		desktop-file-utils pkgconfig
 USE_GNOME=	gtk20
@@ -27,8 +27,8 @@ MAKE_ENV=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
-DOCS_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 post-patch-DOCS-off:
 	${REINPLACE_CMD} 's|= data doc|= data|' \

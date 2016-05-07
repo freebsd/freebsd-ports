@@ -15,7 +15,7 @@ COMMENT=	Python mhash module
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libmhash.so:${PORTSDIR}/security/mhash
+LIB_DEPENDS=	libmhash.so:security/mhash
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -11,7 +11,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/librsb.a:${PORTSDIR}/math/librsb
+BUILD_DEPENDS=	${LOCALBASE}/lib/librsb.a:math/librsb
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.

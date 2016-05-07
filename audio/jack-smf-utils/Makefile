@@ -13,8 +13,8 @@ COMMENT=	Standard MIDI File file player and recorder for JACK MIDI
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
-		liblash.so:${PORTSDIR}/audio/lash
+LIB_DEPENDS=	libjack.so:audio/jack \
+		liblash.so:audio/lash
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

@@ -12,15 +12,14 @@ COMMENT=	Ruby interface to the SQLite DB engine version 3
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	rubygem-sqlite3>=1.3.3:${PORTSDIR}/databases/rubygem-sqlite3
+BUILD_DEPENDS=	swig:devel/swig13
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+RUN_DEPENDS=	rubygem-sqlite3>=1.3.3:databases/rubygem-sqlite3
 
 CONFIGURE_ARGS=	--with-sqlite3-dir=${LOCALBASE}
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/sqlite3_ruby
 

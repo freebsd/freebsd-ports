@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.litech.org/radvd/dist/
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Linux/BSD IPv6 router advertisement daemon
 
-LIB_DEPENDS=	libdaemon.so:${PORTSDIR}/devel/libdaemon
+LIB_DEPENDS=	libdaemon.so:devel/libdaemon
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=

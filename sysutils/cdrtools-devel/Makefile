@@ -65,13 +65,13 @@ RSCSI_DESC=	Build rscsi suid root remote SCSI access daemon
 
 .if ${PORT_OPTIONS:MCDDA2MP3}
 PLIST_SUB+=	CDDA2MP3=""
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
+RUN_DEPENDS+=	lame:audio/lame
 .else
 PLIST_SUB+=	CDDA2MP3="@comment "
 .endif
 .if ${PORT_OPTIONS:MCDDA2OGG}
 PLIST_SUB+=	CDDA2OGG=""
-RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
+RUN_DEPENDS+=	oggenc:audio/vorbis-tools
 .else
 PLIST_SUB+=	CDDA2OGG="@comment "
 .endif

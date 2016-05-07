@@ -1,0 +1,7 @@
+%%SITE_PERL%%/WWW/Salesforce.pm
+%%SITE_PERL%%/WWW/Salesforce/Constants.pm
+%%SITE_PERL%%/WWW/Salesforce/Deserializer.pm
+%%SITE_PERL%%/WWW/Salesforce/Serializer.pm
+%%SITE_PERL%%/WWW/Salesforce/Simple.pm
+%%PERL5_MAN3%%/WWW::Salesforce.3.gz
+%%PERL5_MAN3%%/WWW::Salesforce::Simple.3.gz

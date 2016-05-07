@@ -14,8 +14,8 @@ LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libquvi-scripts>=0.4.0:${PORTSDIR}/multimedia/libquvi-scripts
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	libquvi-scripts>=0.4.0:multimedia/libquvi-scripts
+LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS LUAJIT
@@ -30,7 +30,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_USES_OFF=	lua
 
 post-patch-LUAJIT-off:

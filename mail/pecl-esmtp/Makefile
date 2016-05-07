@@ -14,7 +14,7 @@ COMMENT=	PECL ESMTP client extension
 
 LICENSE=	PHP30
 
-LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 
 USES=		tar:tgz
 USE_PHP=	yes
@@ -28,7 +28,7 @@ RE2C_DESC=	Use re2c to regenerate PHP parsers
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRE2C}
-BUILD_DEPENDS+=	re2c:${PORTSDIR}/devel/re2c
+BUILD_DEPENDS+=	re2c:devel/re2c
 .endif
 
 post-patch:

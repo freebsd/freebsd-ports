@@ -3,7 +3,7 @@
 
 PORTNAME=	med
 DISTVERSION=	3.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Modelisation et Echanges de Donnees
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
+LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

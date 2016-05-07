@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s3cmd
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.1
 CATEGORIES=	net python
 MASTER_SITES=	SF/s3tools/${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Unix-like tools to manipulate stored files from the command line
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils

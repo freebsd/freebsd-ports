@@ -14,9 +14,9 @@ DISTFILES=	121881-${DISTNAME}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Equinox GTK+ 2.x engine and themes
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2 \
-		${LOCALBASE}/share/icons/Faenza/index.theme:${PORTSDIR}/x11-themes/gnome-icons-faenza
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:x11-themes/gtk-engines2
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:x11-themes/gtk-engines2 \
+		${LOCALBASE}/share/icons/Faenza/index.theme:x11-themes/gnome-icons-faenza
 
 USES=		pkgconfig libtool
 USE_GNOME=	gtk20

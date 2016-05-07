@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unicorn
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,15 +11,14 @@ COMMENT=	Unicorn is an HTTP server for Rack applications
 
 LICENSE=	GPLv2 GPLv3 RUBY
 LICENSE_COMB=	dual
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
+LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-kgio>=2.6:${PORTSDIR}/devel/rubygem-kgio \
-		rubygem-rack16>=0:${PORTSDIR}/www/rubygem-rack16 \
-		rubygem-raindrops>=0.7:${PORTSDIR}/www/rubygem-raindrops
+RUN_DEPENDS=	rubygem-kgio>=2.6:devel/rubygem-kgio \
+		rubygem-raindrops>=0.7:www/rubygem-raindrops
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 
 PLIST_FILES=	bin/unicorn bin/unicorn_rails
 

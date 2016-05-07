@@ -10,13 +10,12 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Flamegraph support for arbitrary ruby apps
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-fast_stack>=0:${PORTSDIR}/devel/rubygem-fast_stack
+RUN_DEPENDS=	rubygem-fast_stack>=0:devel/rubygem-fast_stack
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

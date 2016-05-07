@@ -2,82 +2,49 @@
 # $FreeBSD$
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.2.17.1
+PORTVERSION=	1.2.19.0
 CATEGORIES=	mail
-MASTER_SITES=	http://mlmmj.org/releases/ \
-		LOCAL/brix
+MASTER_SITES=	http://mlmmj.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Mailing list managing made joyful
+COMMENT=	Simple and slim mailing list manager
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe gmake tar:bzip2
+USES=		cpe gmake iconv shebangfix tar:bzip2
+SHEBANG_FILES=	contrib/web/perl-user/mlmmj.cgi
+GNU_CONFIGURE=	yes
 
-.if defined(WITH_PHP_WEBINTERFACE)
-USE_PHP=	yes
-WANT_PHP_WEB=	yes
-.endif
+CPPFLAGS+=	-I${ICONV_INCLUDE_PATH}
+LDFLAGS+=	${ICONV_LIB_PATH}
 
-.if defined(WITH_PERL_WEBINTERFACE)
-RUN_DEPENDS+=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-CGI-FastTemplate>=0:${PORTSDIR}/www/p5-CGI-FastTemplate
-.endif
+OPTIONS_DEFINE=		DOCS PERL PHP
+OPTIONS_SUB=		yes
 
-.if defined(WITH_PERL_WEBINTERFACE)
-PLIST_SUB+=	PERLWEB=""
-.else
-PLIST_SUB+=	PERLWEB="@comment "
-.endif
-
-.if defined(WITH_PHP_WEBINTERFACE)
-PLIST_SUB+=	PHPWEB=""
-.else
-PLIST_SUB+=	PHPWEB="@comment "
-.endif
-
-.if !defined(WITH_PERL_WEBINTERFACE) && !defined(WITH_PHP_WEBINTERFACE)
-PLIST_SUB+=	WEB="@comment "
-.else
-PLIST_SUB+=	WEB=""
-.endif
-
-HAS_CONFIGURE=	yes
-
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
-
-.include <bsd.port.pre.mk>
+PERL_RUN_DEPENDS=	p5-URI>0:net/p5-URI \
+			p5-CGI-FastTemplate>0:www/p5-CGI-FastTemplate \
+			p5-HTML-Parser>0:www/p5-HTML-Parser
+PHP_USE=		php=yes
+PHP_VERS=		WANT_PHP_WEB=yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/mlmmj-make-ml.sh
+	@${REINPLACE_CMD} -e \
+		'/^AM_CFLAGS/s|-g ||' ${WRKSRC}/src/Makefile.in
 
-post-install:
-.if defined(WITH_PERL_WEBINTERFACE)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/README ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/htdocs
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/web/perl-admin/htdocs/* ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/htdocs
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/templates
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/templates/* ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/templates
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/conf
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/conf/* ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/conf
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-user
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/web/perl-user/mlmmj.cgi ${STAGEDIR}${PREFIX}/www/mlmmj/perl-user
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-user/config.pl ${STAGEDIR}${PREFIX}/www/mlmmj/perl-user
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-user/example.html ${STAGEDIR}${PREFIX}/www/mlmmj/perl-user
-.endif
-.if defined(WITH_PHP_WEBINTERFACE)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-user
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-user/* ${STAGEDIR}${PREFIX}/www/mlmmj/php-user
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/README ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/htdocs
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/htdocs/* ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/htdocs
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/templates
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/templates/* ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/templates
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/conf
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/conf/* ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/conf
-.endif
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} \
+		ChangeLog FAQ README* TODO TUNABLES UPGRADE \
+		${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+post-install-PERL-on:
+	@(cd ${WRKSRC}/contrib/web && ${COPYTREE_SHARE} "perl-*" \
+		${STAGEDIR}${WWWDIR})
+	@${CHMOD} ${BINMODE} ${STAGEDIR}${WWWDIR}/perl-user/mlmmj.cgi
+
+post-install-PHP-on:
+	@(cd ${WRKSRC}/contrib/web && ${COPYTREE_SHARE} "php-*" \
+		${STAGEDIR}${WWWDIR})
+
+.include <bsd.port.mk>

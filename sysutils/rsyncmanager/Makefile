@@ -11,7 +11,7 @@ COMMENT=	Flexible rsync resource manager daemon written in ruby
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	rsync:net/rsync
 
 USE_RUBY=	yes
 

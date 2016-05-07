@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.5.9
+PORTVERSION=	2.5.10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Command-line frontend to libgphoto2
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libgphoto2.so:graphics/libgphoto2
 
 USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	AALIB READLINE THREADS
 OPTIONS_SUB=		yes
 
 AALIB_DESC=		Text mode capture preview support
-AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
+AALIB_LIB_DEPENDS=	libaa.so:graphics/aalib
 AALIB_CONFIGURE_WITH=	aalib
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls

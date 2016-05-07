@@ -14,10 +14,10 @@ COMMENT=	Facebook API implementation in Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
-		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
+		p5-JSON-Any>=0:converters/p5-JSON-Any \
+		p5-Readonly>=0:devel/p5-Readonly \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

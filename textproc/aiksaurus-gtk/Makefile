@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-gtk
 
 COMMENT=	GTK+2 front-end for Aiksaurus, a thesaurus
 
-LIB_DEPENDS=	libAiksaurus.so:${PORTSDIR}/textproc/aiksaurus
+LIB_DEPENDS=	libAiksaurus.so:textproc/aiksaurus
 
 MASTERDIR=	${.CURDIR}/../aiksaurus
 PKGDIR=		${.CURDIR}

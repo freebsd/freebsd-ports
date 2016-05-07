@@ -32,7 +32,7 @@ bin/shasum%%BINSUFFIX%%
 bin/splain%%BINSUFFIX%%
 bin/xsubpp%%BINSUFFIX%%
 bin/zipdetails%%BINSUFFIX%%
-etc/man.d/perl%%PERL_VER%%.conf
+etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/AnyDBM_File.pm
 %%PRIV_LIB%%/App/Cpan.pm
 %%PRIV_LIB%%/App/Prove.pm
@@ -1448,6 +1448,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/pod/perl5203delta.pod
 %%PRIV_LIB%%/pod/perl5220delta.pod
 %%PRIV_LIB%%/pod/perl5221delta.pod
+%%PRIV_LIB%%/pod/perl5222delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -2066,6 +2067,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%MAN1%%/perl5203delta.1.gz
 %%MAN1%%/perl5220delta.1.gz
 %%MAN1%%/perl5221delta.1.gz
+%%MAN1%%/perl5222delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz

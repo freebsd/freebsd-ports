@@ -10,10 +10,10 @@ COMMENT=	Modern editor for Doom-engine based games and source ports
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libsfml-system.so:${PORTSDIR}/devel/sfml \
-		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libfreeimage.so:${PORTSDIR}/graphics/freeimage
+BUILD_DEPENDS=	zip:archivers/zip
+LIB_DEPENDS=	libsfml-system.so:devel/sfml \
+		libftgl.so:graphics/ftgl \
+		libfreeimage.so:graphics/freeimage
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sirjuddington
@@ -28,7 +28,7 @@ PLIST_FILES=	bin/slade share/slade3/slade.pk3
 OPTIONS_DEFINE=	FLUIDSYNTH
 OPTIONS_DEFAULT=	FLUIDSYNTH
 
-FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_CMAKE_OFF=	-DNO_FLUIDSYNTH:BOOL=ON
 
 post-patch:

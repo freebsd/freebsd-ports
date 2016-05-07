@@ -10,10 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	X Amateur Station Tracking and Information Reporting
 
-BUILD_DEPENDS=	xfontsel:${PORTSDIR}/x11-fonts/xfontsel
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	xfontsel:x11-fonts/xfontsel
+RUN_DEPENDS=	wget:ftp/wget
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake jpeg motif shebangfix
@@ -40,27 +40,27 @@ OPTCFLAGS_DESC=	Use optimized CFLAGS (-O2 -pipe)
 
 OPTIONS_DEFAULT=	SHAPELIB DBFAWK MAGICK CURL RTREE BDB
 
-SHAPELIB_LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib
+SHAPELIB_LIB_DEPENDS=	libshp.so:devel/shapelib
 SHAPELIB_CONFIGURE_WITH=	shapelib
 
-MAGICK_LIB_DEPENDS=	libGraphicsMagickWand.so:${PORTSDIR}/graphics/GraphicsMagick
+MAGICK_LIB_DEPENDS=	libGraphicsMagickWand.so:graphics/GraphicsMagick
 MAGICK_CONFIGURE_WITH=	imagemagick graphicsmagick
 
-DBFAWK_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+DBFAWK_LIB_DEPENDS=	libpcre.so:devel/pcre
 DBFAWK_CONFIGURE_WITH=	dbfawk
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
-GEOTIFF_LIB_DEPENDS=	libgeotiff.so:${PORTSDIR}/graphics/libgeotiff
+GEOTIFF_LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff
 
-GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
 GDAL_CONFIGURE_WITH=	gdal
 
-GPSMAN_BUILD_DEPENDS=	${LOCALBASE}/share/doc/gpsmanshp/GPSManSHP.pdf:${PORTSDIR}/graphics/gpsmanshp
+GPSMAN_BUILD_DEPENDS=	${LOCALBASE}/share/doc/gpsmanshp/GPSManSHP.pdf:graphics/gpsmanshp
 GPSMAN_IMPLIES=		SHAPELIB
 GPSMAN_CONFIGURE_WITH=	gpsman
 
-FESTIVAL_BUILD_DEPENDS=	festival:${PORTSDIR}/audio/festival
+FESTIVAL_BUILD_DEPENDS=	festival:audio/festival
 FESTIVAL_CONFIGURE_WITH=festival
 
 RTREE_CONFIGURE_WITH=	rtree

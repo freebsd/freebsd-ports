@@ -3,6 +3,7 @@
 
 PORTNAME=	alog
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libalog-${PORTVERSION}
@@ -12,7 +13,7 @@ COMMENT=	Stackable logging framework for Ada
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	gprbuild:devel/gprbuild
 
 USES=		ada tar:bzip2
 ALL_TARGET=	all
@@ -26,9 +27,9 @@ TEST_DESC=	Run unit test suite before installation
 NO_OPTIONS_SORT=yes
 
 DOCS_USES=		gmake
-DOCS_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-			source-highlight:${PORTSDIR}/textproc/source-highlight
-TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/ahven.gpr:${PORTSDIR}/devel/ahven
+DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+			source-highlight:textproc/source-highlight
+TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
 
 MAKE_JOBS_UNSAFE=	yes
 

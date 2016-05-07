@@ -11,7 +11,7 @@ COMMENT?=	Cross-build U-Boot loader for Cubieboard
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	arm-none-eabi-gcc:${PORTSDIR}/devel/arm-none-eabi-gcc
+BUILD_DEPENDS=	arm-none-eabi-gcc:devel/arm-none-eabi-gcc
 
 MODEL?=		cubieboard
 CONF_TARGET?=	Cubieboard_defconfig

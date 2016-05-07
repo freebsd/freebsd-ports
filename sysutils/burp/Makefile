@@ -11,8 +11,8 @@ COMMENT=	Network backup and restore program
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:${PORTSDIR}/devel/uthash
-LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync1
+BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
+LIB_DEPENDS=	librsync.so:net/librsync1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grke

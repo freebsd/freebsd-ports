@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.3.3
+PORTVERSION=	6.3.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -33,16 +33,17 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 CONFLICTS=	ace+tao-5*
 
-BROKEN_ia64=	Does not compile on ${ARCH}
-BROKEN_powerpc=	Does not compile on ${ARCH}
-BROKEN_sparc64=	Does not compile on ${ARCH}
+BROKEN_ia64=		Does not compile on ${ARCH}
+BROKEN_powerpc=		Does not compile on ${ARCH}
+BROKEN_powerpc64=	Does not build on ${ARCH}
+BROKEN_sparc64=		Does not compile on ${ARCH}
 
 OPTIONS_DEFINE=		FLTK QT4 SSL TK TRIO X11
 OPTIONS_DEFAULT=	SSL
 OPTIONS_SUB=		yes
 
 FLTK_DESC=		FLTK GUI toolkit
-FLTK_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+FLTK_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 FLTK_MAKE_ENV=		fl=1
 QT4_USE=		QT4=corelib,gui,moc_build
 QT4_MAKE_ENV=		qt=1 qt4=1 QTDIR="${QT_PREFIX}"
@@ -53,7 +54,7 @@ SSL_MAKE_ENV=		ssl=1
 TK_USES=		tk
 TK_MAKE_ENV=		tk=1
 TRIO_DESC=		Trio portable string functions
-TRIO_BUILD_DEPENDS=	trio>=0:${PORTSDIR}/devel/trio
+TRIO_BUILD_DEPENDS=	trio>=0:devel/trio
 TRIO_MAKE_ENV=		trio=1
 X11_USE=		XORG=xt
 X11_MAKE_ENV=		xt=1

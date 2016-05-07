@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce-Emacs Integration
 
-RUN_DEPENDS=	p4:${PORTSDIR}/devel/p4
+RUN_DEPENDS=	p4:devel/p4
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

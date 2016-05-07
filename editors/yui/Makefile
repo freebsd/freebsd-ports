@@ -17,6 +17,7 @@ ACLOCAL_ARGS+=	-I m4
 MAKE_ENV+=	LIBPATH=${PREFIX}/lib
 
 BROKEN_sparc64=	Does not compile on sparc64
+BROKEN_powerpc64=	Does not build
 
 OPTIONS_DEFINE=	DOCS
 

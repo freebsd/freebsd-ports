@@ -20,7 +20,7 @@ NO_BUILD=	YES
 SUB_FILES+=	pkg-message
 
 # user should choose their own version
-#RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter
+#RUN_DEPENDS=	enscript:print/enscript-letter
 
 do-install:
 	@${MKDIR} -p ${STAGEDIR}${PREFIX}/share/enscript/xenscript

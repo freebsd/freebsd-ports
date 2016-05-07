@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	valac:lang/vala
 USE_GNOME=	vte
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"

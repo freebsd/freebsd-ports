@@ -24,12 +24,12 @@ WITH_OPENJADE=	yes
 .endif
 
 .if defined(WITH_OPENJADE)
-RUN_DEPENDS=	openjade>0:${PORTSDIR}/textproc/openjade
+RUN_DEPENDS=	openjade>0:textproc/openjade
 .else
-RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
+RUN_DEPENDS=	nsgmls:textproc/jade
 .endif
-RUN_DEPENDS+=	linuxdoc>0:${PORTSDIR}/textproc/linuxdoc \
-		docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml
+RUN_DEPENDS+=	linuxdoc>0:textproc/linuxdoc \
+		docbook-sgml>0:textproc/docbook-sgml
 
 .if defined(WITH_OPENJADE)
 post-patch:

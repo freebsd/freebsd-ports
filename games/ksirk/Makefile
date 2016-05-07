@@ -9,7 +9,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
-LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	libqca.so:devel/qca
 
 USE_KDE4=	kdelibs kdeprefix libkdegames automoc4
 USES=		cmake:outsource tar:xz

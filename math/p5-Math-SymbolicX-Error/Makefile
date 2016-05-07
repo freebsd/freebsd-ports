@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parser extension for dealing with numeric errors
 
-BUILD_DEPENDS=	p5-Math-Symbolic>=0:${PORTSDIR}/math/p5-Math-Symbolic \
-		p5-Math-SymbolicX-ParserExtensionFactory>=0:${PORTSDIR}/math/p5-Math-SymbolicX-ParserExtensionFactory \
-		p5-Number-WithError>=0:${PORTSDIR}/math/p5-Number-WithError
+BUILD_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic \
+		p5-Math-SymbolicX-ParserExtensionFactory>=0:math/p5-Math-SymbolicX-ParserExtensionFactory \
+		p5-Number-WithError>=0:math/p5-Number-WithError
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

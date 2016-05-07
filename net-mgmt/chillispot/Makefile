@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.chillispot.info/download/ \
 MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Wireless LAN Access Point Controller
 
+BROKEN_powerpc64=	Does not build
+
 CONFLICTS=	coovachilli-[0-9]*
 
 USES=		shebangfix
@@ -30,8 +32,8 @@ FREERADIUS_DESC=depend on FreeRADIUS
 OPENRADIUS_DESC=depend on OpenRADIUS
 
 APACHE_USE=	apache_run=22+
-FREERADIUS_RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius
-OPENRADIUS_RUN_DEPENDS=	radiusd:${PORTSDIR}/net/openradius
+FREERADIUS_RUN_DEPENDS=	radiusd:net/freeradius
+OPENRADIUS_RUN_DEPENDS=	radiusd:net/openradius
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

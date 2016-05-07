@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate HTML and JavaScript for the Prototype library
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-HTML-Tree>=0:www/p5-HTML-Tree
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

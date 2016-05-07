@@ -3,7 +3,7 @@
 
 PORTNAME=	templates_parser
 PORTVERSION=	11.10.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -12,9 +12,9 @@ COMMENT=	Web page template engine module for the Ada Web Server
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild \
-		xmlada>=4.4:${PORTSDIR}/textproc/xmlada
-RUN_DEPENDS=	xmlada>=4.4:${PORTSDIR}/textproc/xmlada
+BUILD_DEPENDS=	gprbuild:devel/gprbuild \
+		xmlada>=4.4:textproc/xmlada
+RUN_DEPENDS=	xmlada>=4.4:textproc/xmlada
 
 USES=		ada gmake tar:bzip2
 DESTINC=	${STAGEDIR}${PREFIX}/include/templates_parser
@@ -28,7 +28,7 @@ MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER} \
 PORTDOCS=	html
 
 OPTIONS_DEFINE=		DOCS
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 do-build:
 	# Override build target to avoid -jX getting passed to makefile

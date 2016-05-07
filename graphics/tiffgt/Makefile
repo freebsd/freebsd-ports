@@ -13,8 +13,8 @@ COMMENT=	X11 Tools for working with TIFF images
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjbig.so:graphics/jbigkit \
+		libtiff.so:graphics/tiff
 
 USES=		cpe jpeg libtool
 CPE_PRODUCT=	libtiff

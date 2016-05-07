@@ -11,9 +11,9 @@ COMMENT=	Cross-platform GUI front-end for the Subversion revision system
 
 BROKEN=		fails to build
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion \
+		xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/VERSION:textproc/docbook-xsl
 
 USE_WX=		2.8
 WX_UNICODE=	yes

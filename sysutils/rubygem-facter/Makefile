@@ -14,8 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/facter
 
@@ -28,7 +27,7 @@ OPTIONS_DEFAULT=	ZFS_FACTS
 
 # Restrict dmidecode dependency to Intel based systems
 .if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64"
-RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 .endif
 
 post-patch-ZFS_FACTS-off:

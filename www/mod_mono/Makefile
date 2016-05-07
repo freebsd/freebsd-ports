@@ -12,10 +12,10 @@ COMMENT=	Apache module for serving ASP.NET applications
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
-		xsp:${PORTSDIR}/www/xsp
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
-		xsp:${PORTSDIR}/www/xsp
+BUILD_DEPENDS=	mono:lang/mono \
+		xsp:www/xsp
+RUN_DEPENDS=	mono:lang/mono \
+		xsp:www/xsp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --man=${PREFIX}/man

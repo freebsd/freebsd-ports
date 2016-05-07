@@ -16,9 +16,9 @@ LICENSE_NAME_CCbySA3=	Attribution-ShareAlike 3.0 Unported
 LICENSE_FILE_CCbySA3=	${WRKSRC}/CCPL
 LICENSE_PERMS_CCbySA3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
-LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libclaw_application.so:${PORTSDIR}/devel/libclaw
+BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libclaw_application.so:devel/libclaw
 
 USE_SDL=	sdl mixer
 USE_GL=		gl glu

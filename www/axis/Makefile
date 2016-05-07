@@ -24,12 +24,12 @@ CPE_VENDOR=	apache
 
 .if ${PORT_OPTIONS:MTOMCAT6}
 WEBAPPDIR=	${PREFIX}/apache-tomcat-6.0/webapps
-RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:www/tomcat6
 .endif
 
 .if ${PORT_OPTIONS:MTOMCAT7}
 WEBAPPDIR=	${PREFIX}/apache-tomcat-7.0/webapps
-RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
+RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:www/tomcat7
 .endif
 
 NO_BUILD=	yes

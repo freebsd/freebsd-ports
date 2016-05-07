@@ -12,9 +12,9 @@ COMMENT=	Drivers for Conexant CX23880/1/2/3/5/7/8-based TV/radio capture cards
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c
-BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:${PORTSDIR}/textproc/ezxml \
-		libtuner>=1.1.2:${PORTSDIR}/multimedia/libtuner
+LIB_DEPENDS=	libjson-c.so:devel/json-c
+BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:textproc/ezxml \
+		libtuner>=1.1.2:multimedia/libtuner
 
 MAKE_ARGS+=	LIBTUNER_LIB=${LOCALBASE}/lib/libtuner LIBTUNER_HEADER=${LOCALBASE}/include/libtuner KMODDIR=${KMODDIR} PREFIX=${STAGEDIR}${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
@@ -36,12 +36,12 @@ MAKE_ARGS+=	DIAGNOSTIC=0x7f -DDEBUG
 .endif
 
 .if ${PORT_OPTIONS:MLINUX_COMPAT}
-LIB_DEPENDS+=	libcuse4bsd.so:${PORTSDIR}/multimedia/cuse4bsd-kmod
-BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS+=	libcuse4bsd.so:multimedia/cuse4bsd-kmod
+BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:multimedia/v4l_compat
 MAKE_ARGS+=	-D WITH_LINUX_COMPAT
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal \
-		libdbus-1.so:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	libhal.so:sysutils/hal \
+		libdbus-1.so:devel/dbus
 MAKE_ARGS+=	-D WITH_HAL
 .endif
 .endif

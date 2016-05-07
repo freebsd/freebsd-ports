@@ -3,7 +3,7 @@
 
 PORTNAME=	xpaint
 PORTVERSION=	2.9.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -12,14 +12,14 @@ COMMENT=	Simple paint program
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libXaw3dxft.so:${PORTSDIR}/x11-toolkits/libxaw3dxft
-RUN_DEPENDS=	psselect:${PORTSDIR}/print/psutils \
-		bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libopenjpeg.so:graphics/openjpeg15 \
+		libtiff.so:graphics/tiff \
+		libfreetype.so:print/freetype2 \
+		libjbig.so:graphics/jbigkit \
+		libXaw3dxft.so:x11-toolkits/libxaw3dxft
+RUN_DEPENDS=	psselect:print/psutils \
+		bash:shells/bash
 
 USE_XORG=	xft xmu xpm
 GNU_CONFIGURE=	yes

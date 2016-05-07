@@ -3,7 +3,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	4.16.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -11,10 +11,10 @@ MASTER_SITES=	SF/courier/imap/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 
-BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base \
-		${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool
-LIB_DEPENDS=	libcourier-unicode.so:${PORTSDIR}/devel/courier-unicode
+BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
+RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
+		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
+LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode
 
 USES=		gmake perl5 tar:bzip2
 GNU_CONFIGURE=	yes
@@ -65,7 +65,7 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 
 .if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=--with-gnutls
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 USES+=		pkgconfig
 .endif
 
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=--with-syslog=${WITH_SYSLOG_FACILITY}
 .if ${PORT_OPTIONS:MAUTH_USERDB}
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=--with-db=gdbm --with-userdb=${USERDB}
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:databases/gdbm
 .else
 CONFIGURE_ARGS+=--with-db=db  --with-userdb=${USERDB}
 .endif

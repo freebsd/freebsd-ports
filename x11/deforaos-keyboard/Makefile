@@ -14,7 +14,7 @@ COMMENT=	DeforaOS desktop virtual keyboardr
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop
+LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop
 
 USE_GNOME=	gtk20
 USES=		desktop-file-utils gettext pkgconfig

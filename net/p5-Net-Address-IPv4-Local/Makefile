@@ -14,7 +14,7 @@ COMMENT=	Class for discovering the local system's IP address
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
+BUILD_DEPENDS=	p5-Error>=0:lang/p5-Error
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

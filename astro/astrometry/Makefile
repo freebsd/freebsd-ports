@@ -2,22 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	astrometry
-PORTVERSION=	0.50
-PORTREVISION=	1
+PORTVERSION=	0.65
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for describing astronomical images
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libcfitsio.so:${PORTSDIR}/astro/cfitsio \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libnetpbm.so:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libcfitsio.so:astro/cfitsio \
+		libpng.so:graphics/png \
+		libnetpbm.so:graphics/netpbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake jpeg pkgconfig python tar:bzip2

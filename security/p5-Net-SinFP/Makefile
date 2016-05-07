@@ -30,10 +30,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 .if ${PORTNAME} == "Net-SinFP"
 PKGNAMEPREFIX=	p5-
 
-BUILD_DEPENDS+=	p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
-		p5-DBIx-SQLite-Simple>=0.33:${PORTSDIR}/databases/p5-DBIx-SQLite-Simple \
-		p5-Net-Packet>=3.00:${PORTSDIR}/net/p5-Net-Packet \
-		p5-Net-Packet-Target>=1.00:${PORTSDIR}/net/p5-Net-Packet-Target
+BUILD_DEPENDS+=	p5-Class-Gomor>=1.00:devel/p5-Class-Gomor \
+		p5-DBIx-SQLite-Simple>=0.33:databases/p5-DBIx-SQLite-Simple \
+		p5-Net-Packet>=3.00:net/p5-Net-Packet \
+		p5-Net-Packet-Target>=1.00:net/p5-Net-Packet-Target
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

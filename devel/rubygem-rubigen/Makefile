@@ -10,14 +10,13 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby generic generator framework
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport>=2.3.5:${PORTSDIR}/devel/rubygem-activesupport
+RUN_DEPENDS=	rubygem-activesupport>=2.3.5:devel/rubygem-activesupport
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/install_rubigen_scripts \
 		bin/ruby_app \

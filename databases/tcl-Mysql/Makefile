@@ -13,10 +13,9 @@ COMMENT=	TCL module for accessing MySQL databases
 
 OPTIONS_DEFINE=	DOCS
 
-PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
+PATCH_DEPENDS=	rcsdiff:devel/rcs
 
-USE_MYSQL=	41+
-USES=		tcl tar:tgz
+USES=		mysql tcl tar:tgz
 TCL_NODOT=	tcl${TCL_VER:S/.//}
 WRKSRC=		${WRKDIR}/tcl-sql
 LIB_NAME=	libTclMySQL.so.1

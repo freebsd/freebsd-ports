@@ -13,9 +13,9 @@ COMMENT=	C++ Portable Components library
 
 LICENSE=	BSL
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libexpat.so:textproc/expat2
 
 CONFLICTS=	poco-ssl-[0-9]* poco-[0-9]*
 
@@ -49,11 +49,11 @@ CONFIGURE_ARGS+=	--omit=Data/ODBC
 .endif
 
 .if ${PORT_OPTIONS:MUODBC} && ! ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	libodbcinst.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbcinst.so:databases/unixODBC
 .endif
 
 .if ${PORT_OPTIONS:MIODBC} && ! ${PORT_OPTIONS:MUODBC}
-LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so:databases/libiodbc
 CFLAGS+=	-I${LOCALBASE}/include/libiodbc
 LDFLAGS+=	-L${LOCALBASE}/lib/libiodbc
 .endif
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--omit=Data/MySQL
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
+USES+=		sqlite
 .else
 CONFIGURE_ARGS+=	--omit=Data/SQLite
 .endif

@@ -7,7 +7,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.catb.org/~esr/morse/ \
 		LOCAL/db
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Morse Code Trainer
 
 LICENSE=	BSD3CLAUSE
@@ -31,7 +31,7 @@ X11_CFLAGS=	-I${LOCALBASE}/include
 X11_LDFLAGS=	-L${LOCALBASE}/lib
 
 PULSEAUDIO_MAKE_ARGS=	DEVICE=PA
-PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_USES=	pkgconfig
 
 do-install:

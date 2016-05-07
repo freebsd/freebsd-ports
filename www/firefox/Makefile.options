@@ -28,3 +28,4 @@ INTEGER_SAMPLES_DESC?=	Integer audio sample format
 LIBPROXY_DESC?=		Proxy support via libproxy
 LIGHTNING_DESC?=	Calendar extension
 LOGGING_DESC?=		Additional log messages
+RUST_DESC?=		Build with components written in Rust language

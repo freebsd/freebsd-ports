@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for validating XML documents against a W3C XML Schema
 
-BUILD_DEPENDS=	p5-Tree-DAG_Node>=0:${PORTSDIR}/devel/p5-Tree-DAG_Node \
-		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
-		p5-XML-Filter-BufferText>=0:${PORTSDIR}/textproc/p5-XML-Filter-BufferText
+BUILD_DEPENDS=	p5-Tree-DAG_Node>=0:devel/p5-Tree-DAG_Node \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX \
+		p5-XML-Filter-BufferText>=0:textproc/p5-XML-Filter-BufferText
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

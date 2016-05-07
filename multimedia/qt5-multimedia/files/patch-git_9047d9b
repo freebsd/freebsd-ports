@@ -1,0 +1,36 @@
+commit 9047d9b84e9d94d193e77abd81f5980eff77d73a
+Author: Stephen Hurd <shurd@freebsd.org>
+Date:   Thu Apr 14 19:11:01 2016 -0700
+
+    ALSA: Call snd_pcm_drain() on suspend
+
+    The ALSA plugin previously didn't suspend the ALSA device when the
+    ::suspend() method is called.  This results in underrun errors when
+    it's resumed.
+
+    In ALSA, stopping a pcm doesn't close it, so the ALSA stop/start
+    functions map to the QAudioInput suspend/resume functions.
+
+    Change-Id: I2507065a1b7472af29eef70c531b9f6e8e5b3072
+    Reviewed-by: Christian Stromme <christian.stromme@theqtcompany.com>
+
+--- src/plugins/alsa/qalsaaudioinput.cpp
++++ src/plugins/alsa/qalsaaudioinput.cpp
+@@ -701,6 +701,7 @@ qint64 QAlsaAudioInput::processedUSecs() const
+ void QAlsaAudioInput::suspend()
+ {
+     if(deviceState == QAudio::ActiveState||resuming) {
++        snd_pcm_drain(handle);
+         timer->stop();
+         deviceState = QAudio::SuspendedState;
+         emit stateChanged(deviceState);
+--- src/plugins/alsa/qalsaaudiooutput.cpp
++++ src/plugins/alsa/qalsaaudiooutput.cpp
+@@ -673,6 +673,7 @@ QAudioFormat QAlsaAudioOutput::format() const
+ void QAlsaAudioOutput::suspend()
+ {
+     if(deviceState == QAudio::ActiveState || deviceState == QAudio::IdleState || resuming) {
++        snd_pcm_drain(handle);
+         timer->stop();
+         deviceState = QAudio::SuspendedState;
+         errorState = QAudio::NoError;

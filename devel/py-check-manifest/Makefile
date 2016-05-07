@@ -13,7 +13,7 @@ COMMENT=	Check MANIFEST.in in a Python source package for completeness
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.rst
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 OPTIONS_DEFINE=	DOCS
 

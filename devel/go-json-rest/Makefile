@@ -12,6 +12,7 @@ MASTER_SITES=	GH \
 MAINTAINER=	lattera@gmail.com
 COMMENT=	Quick and easy way to setup a RESTful JSON API
 
+USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	ant0ine
 
@@ -20,8 +21,6 @@ GO_PKGNAME=	github.com/ant0ine/go-json-rest
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${GO_LIBDIR}/${GO_PKGNAME}
 	@${INSTALL_DATA} ${GO_WRKDIR_PKG}/${GO_PKGNAME}/trie.a \
-	    	${STAGEDIR}${PREFIX}/${GO_LIBDIR}/${GO_PKGNAME}
+		${STAGEDIR}${PREFIX}/${GO_LIBDIR}/${GO_PKGNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

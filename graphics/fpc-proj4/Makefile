@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	PROJ
 PROJ_DESC=	Install proj library
 OPTIONS_DEFAULT=	PROJ
 
-PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
+PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 
 .include "${MASTERDIR}/Makefile"

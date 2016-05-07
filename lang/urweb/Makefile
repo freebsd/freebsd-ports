@@ -12,7 +12,7 @@ COMMENT=	Ultimate host for embedded domain-specific languages
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	mlton:${PORTSDIR}/lang/mlton
+BUILD_DEPENDS=	mlton:lang/mlton
 
 CONFIGURE_ENV=	CCARGS="-I${LOCALBASE}/include"
 

@@ -15,11 +15,11 @@ LICENSE=	GPLv3
 
 USES=		shebangfix
 
-RUN_DEPENDS=	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
-		p5-File-LibMagic>0:${PORTSDIR}/devel/p5-File-LibMagic \
-		p5-IO-Socket-SSL>0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-MIME-Lite>0:${PORTSDIR}/mail/p5-MIME-Lite \
-		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey
+RUN_DEPENDS=	p5-Digest-HMAC>0:security/p5-Digest-HMAC \
+		p5-File-LibMagic>0:devel/p5-File-LibMagic \
+		p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL \
+		p5-MIME-Lite>0:mail/p5-MIME-Lite \
+		p5-Term-ReadKey>0:devel/p5-Term-ReadKey
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}

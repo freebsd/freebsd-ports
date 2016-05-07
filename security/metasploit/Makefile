@@ -12,28 +12,28 @@ COMMENT=	Exploit-Framework for Penetration-Testing
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
-		nmap:${PORTSDIR}/security/nmap \
-		rubygem-activesupport>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-actionpack>=0:${PORTSDIR}/www/rubygem-actionpack \
-		rubygem-bcrypt>=0:${PORTSDIR}/security/rubygem-bcrypt \
-		rubygem-bundler>=0:${PORTSDIR}/sysutils/rubygem-bundler \
-		rubygem-jsobfu>=0.2.0:${PORTSDIR}/www/rubygem-jsobfu \
-		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
-		rubygem-metasploit-concern>=0.4.0:${PORTSDIR}/security/rubygem-metasploit-concern \
-		rubygem-metasploit-model>=0.29.0:${PORTSDIR}/security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=0.0.3:${PORTSDIR}/security/rubygem-metasploit-payloads \
-		rubygem-msgpack>=0:${PORTSDIR}/devel/rubygem-msgpack \
-		rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-network_interface>=0.0.1:${PORTSDIR}/net/rubygem-network_interface \
-		rubygem-packetfu>=1.1.9:${PORTSDIR}/net/rubygem-packetfu \
-		rubygem-pcaprub>=0:${PORTSDIR}/net/rubygem-pcaprub \
-		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties \
-		rubygem-recog>=1.0:${PORTSDIR}/security/rubygem-recog \
-		rubygem-robots>=0:${PORTSDIR}/www/rubygem-robots \
-		rubygem-rubyzip>=1.1:${PORTSDIR}/archivers/rubygem-rubyzip \
-		rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3 \
-		rubygem-tzinfo03>=0:${PORTSDIR}/devel/rubygem-tzinfo03
+RUN_DEPENDS=	nasm:devel/nasm \
+		nmap:security/nmap \
+		rubygem-activesupport>=3.0.0:devel/rubygem-activesupport \
+		rubygem-actionpack>=0:www/rubygem-actionpack \
+		rubygem-bcrypt>=0:security/rubygem-bcrypt \
+		rubygem-bundler>=0:sysutils/rubygem-bundler \
+		rubygem-jsobfu>=0.2.0:www/rubygem-jsobfu \
+		rubygem-json>=0:devel/rubygem-json \
+		rubygem-metasploit-concern>=0.4.0:security/rubygem-metasploit-concern \
+		rubygem-metasploit-model>=0.29.0:security/rubygem-metasploit-model \
+		rubygem-metasploit-payloads>=0.0.3:security/rubygem-metasploit-payloads \
+		rubygem-msgpack>=0:devel/rubygem-msgpack \
+		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
+		rubygem-network_interface>=0.0.1:net/rubygem-network_interface \
+		rubygem-packetfu>=1.1.9:net/rubygem-packetfu \
+		rubygem-pcaprub>=0:net/rubygem-pcaprub \
+		rubygem-railties>=3.0.0:www/rubygem-railties \
+		rubygem-recog>=1.0:security/rubygem-recog \
+		rubygem-robots>=0:www/rubygem-robots \
+		rubygem-rubyzip>=1.1:archivers/rubygem-rubyzip \
+		rubygem-sqlite3>=0:databases/rubygem-sqlite3 \
+		rubygem-tzinfo03>=0:devel/rubygem-tzinfo03
 
 SCRIPTS=	msfbinscan msfcli msfconsole msfd msfelfscan msfencode \
 		msfmachscan msfpayload msfpescan msfrop msfrpc msfrpcd msfvenom
@@ -61,10 +61,10 @@ OPTIONS_DEFINE=	DB
 OPTIONS_DEFAULT=DB
 DB_DESC=	Database support
 
-DB_RUN_DEPENDS=	rubygem-activerecord>=3.0.0:${PORTSDIR}/databases/rubygem-activerecord \
-		rubygem-metasploit-credential>=0.14.5:${PORTSDIR}/security/rubygem-metasploit-credential \
-		rubygem-metasploit_data_models>=0.24.0,2:${PORTSDIR}/security/rubygem-metasploit_data_models \
-		rubygem-pg>=0.11:${PORTSDIR}/databases/rubygem-pg
+DB_RUN_DEPENDS=	rubygem-activerecord>=3.0.0:databases/rubygem-activerecord \
+		rubygem-metasploit-credential>=0.14.5:security/rubygem-metasploit-credential \
+		rubygem-metasploit_data_models>=0.24.0,2:security/rubygem-metasploit_data_models \
+		rubygem-pg>=0.11:databases/rubygem-pg
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \

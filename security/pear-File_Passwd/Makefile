@@ -13,6 +13,6 @@ USES=	pear
 OPTIONS_DEFINE=	PEAR_CRYPT_CHAP
 PEAR_CRYPT_CHAP_DESC=	PEAR::Crypt_CHAP support
 
-PEAR_CRYPT_CHAP_RUN_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:${PORTSDIR}/security/pear-Crypt_CHAP
+PEAR_CRYPT_CHAP_RUN_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP
 
 .include <bsd.port.mk>

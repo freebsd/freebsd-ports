@@ -23,15 +23,17 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/var/qmail,${QMAIL_PREFIX},' \
-	    ${WRKSRC}/src/usendmail.c
+		${WRKSRC}/src/usendmail.c
 	@${REINPLACE_CMD} -e 's,^CC=,CC\?=,' \
-	    ${WRKSRC}/src/Makefile
+		${WRKSRC}/src/Makefile
 
-regression-test: build
+do-test:
 	cd ${WRKSRC} && ./package/check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/usendmail ${STAGEDIR}${PREFIX}/sbin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

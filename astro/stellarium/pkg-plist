@@ -39,6 +39,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/garching/description.ar.utf8
 %%DATADIR%%/landscapes/garching/description.be.utf8
 %%DATADIR%%/landscapes/garching/description.bg.utf8
+%%DATADIR%%/landscapes/garching/description.bn.utf8
 %%DATADIR%%/landscapes/garching/description.de.utf8
 %%DATADIR%%/landscapes/garching/description.en.utf8
 %%DATADIR%%/landscapes/garching/description.fr.utf8
@@ -56,6 +57,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/garching/landscape.ini
 %%DATADIR%%/landscapes/geneva/description.ar.utf8
 %%DATADIR%%/landscapes/geneva/description.be.utf8
+%%DATADIR%%/landscapes/geneva/description.bn.utf8
 %%DATADIR%%/landscapes/geneva/description.de.utf8
 %%DATADIR%%/landscapes/geneva/description.en.utf8
 %%DATADIR%%/landscapes/geneva/description.fr.utf8
@@ -67,6 +69,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/geneva/landscape.ini
 %%DATADIR%%/landscapes/grossmugl/description.ar.utf8
 %%DATADIR%%/landscapes/grossmugl/description.be.utf8
+%%DATADIR%%/landscapes/grossmugl/description.bn.utf8
 %%DATADIR%%/landscapes/grossmugl/description.de.utf8
 %%DATADIR%%/landscapes/grossmugl/description.en.utf8
 %%DATADIR%%/landscapes/grossmugl/description.fr.utf8
@@ -74,6 +77,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/grossmugl/description.pt_BR.utf8
 %%DATADIR%%/landscapes/grossmugl/description.ru.utf8
 %%DATADIR%%/landscapes/grossmugl/description.uk.utf8
+%%DATADIR%%/landscapes/grossmugl/gazetteer.bn.utf8
 %%DATADIR%%/landscapes/grossmugl/gazetteer.de.utf8
 %%DATADIR%%/landscapes/grossmugl/gazetteer.en.utf8
 %%DATADIR%%/landscapes/grossmugl/gazetteer.fr.utf8
@@ -85,6 +89,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/guereins/description.ar.utf8
 %%DATADIR%%/landscapes/guereins/description.be.utf8
 %%DATADIR%%/landscapes/guereins/description.bg.utf8
+%%DATADIR%%/landscapes/guereins/description.bn.utf8
 %%DATADIR%%/landscapes/guereins/description.de.utf8
 %%DATADIR%%/landscapes/guereins/description.en.utf8
 %%DATADIR%%/landscapes/guereins/description.fr.utf8
@@ -108,6 +113,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/hurricane/description.ar.utf8
 %%DATADIR%%/landscapes/hurricane/description.be.utf8
 %%DATADIR%%/landscapes/hurricane/description.bg.utf8
+%%DATADIR%%/landscapes/hurricane/description.bn.utf8
 %%DATADIR%%/landscapes/hurricane/description.de.utf8
 %%DATADIR%%/landscapes/hurricane/description.en.utf8
 %%DATADIR%%/landscapes/hurricane/description.fr.utf8
@@ -129,6 +135,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/hurricane/landscape.ini
 %%DATADIR%%/landscapes/jupiter/description.ar.utf8
 %%DATADIR%%/landscapes/jupiter/description.be.utf8
+%%DATADIR%%/landscapes/jupiter/description.bn.utf8
 %%DATADIR%%/landscapes/jupiter/description.en.utf8
 %%DATADIR%%/landscapes/jupiter/description.fr.utf8
 %%DATADIR%%/landscapes/jupiter/description.hu.utf8
@@ -140,6 +147,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/mars/description.ar.utf8
 %%DATADIR%%/landscapes/mars/description.be.utf8
 %%DATADIR%%/landscapes/mars/description.bg.utf8
+%%DATADIR%%/landscapes/mars/description.bn.utf8
 %%DATADIR%%/landscapes/mars/description.de.utf8
 %%DATADIR%%/landscapes/mars/description.en.utf8
 %%DATADIR%%/landscapes/mars/description.fr.utf8
@@ -154,6 +162,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/moon/description.ar.utf8
 %%DATADIR%%/landscapes/moon/description.be.utf8
 %%DATADIR%%/landscapes/moon/description.bg.utf8
+%%DATADIR%%/landscapes/moon/description.bn.utf8
 %%DATADIR%%/landscapes/moon/description.de.utf8
 %%DATADIR%%/landscapes/moon/description.en.utf8
 %%DATADIR%%/landscapes/moon/description.fr.utf8
@@ -165,6 +174,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/moon/landscape.ini
 %%DATADIR%%/landscapes/neptune/description.ar.utf8
 %%DATADIR%%/landscapes/neptune/description.be.utf8
+%%DATADIR%%/landscapes/neptune/description.bn.utf8
 %%DATADIR%%/landscapes/neptune/description.en.utf8
 %%DATADIR%%/landscapes/neptune/description.fr.utf8
 %%DATADIR%%/landscapes/neptune/description.hu.utf8
@@ -176,6 +186,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/ocean/description.ar.utf8
 %%DATADIR%%/landscapes/ocean/description.be.utf8
 %%DATADIR%%/landscapes/ocean/description.bg.utf8
+%%DATADIR%%/landscapes/ocean/description.bn.utf8
 %%DATADIR%%/landscapes/ocean/description.de.utf8
 %%DATADIR%%/landscapes/ocean/description.en.utf8
 %%DATADIR%%/landscapes/ocean/description.fr.utf8
@@ -198,6 +209,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/saturn/description.ar.utf8
 %%DATADIR%%/landscapes/saturn/description.be.utf8
 %%DATADIR%%/landscapes/saturn/description.bg.utf8
+%%DATADIR%%/landscapes/saturn/description.bn.utf8
 %%DATADIR%%/landscapes/saturn/description.de.utf8
 %%DATADIR%%/landscapes/saturn/description.en.utf8
 %%DATADIR%%/landscapes/saturn/description.fr.utf8
@@ -211,6 +223,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/trees/description.ar.utf8
 %%DATADIR%%/landscapes/trees/description.be.utf8
 %%DATADIR%%/landscapes/trees/description.bg.utf8
+%%DATADIR%%/landscapes/trees/description.bn.utf8
 %%DATADIR%%/landscapes/trees/description.de.utf8
 %%DATADIR%%/landscapes/trees/description.en.utf8
 %%DATADIR%%/landscapes/trees/description.fr.utf8
@@ -225,6 +238,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/trees/trees_illum_512.png
 %%DATADIR%%/landscapes/uranus/description.ar.utf8
 %%DATADIR%%/landscapes/uranus/description.be.utf8
+%%DATADIR%%/landscapes/uranus/description.bn.utf8
 %%DATADIR%%/landscapes/uranus/description.en.utf8
 %%DATADIR%%/landscapes/uranus/description.fr.utf8
 %%DATADIR%%/landscapes/uranus/description.hu.utf8
@@ -235,6 +249,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/uranus/uranus-256.png
 %%DATADIR%%/landscapes/zero/description.ar.utf8
 %%DATADIR%%/landscapes/zero/description.be.utf8
+%%DATADIR%%/landscapes/zero/description.bn.utf8
 %%DATADIR%%/landscapes/zero/description.de.utf8
 %%DATADIR%%/landscapes/zero/description.en.utf8
 %%DATADIR%%/landscapes/zero/description.fr.utf8
@@ -440,7 +455,9 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/textures.json
 %%DATADIR%%/scenery3d/Sterngarten/Sterngarten_20100320.png
 %%DATADIR%%/scenery3d/Sterngarten/Sterngarten_Wien_innerArea-optimized.mtl
-%%DATADIR%%/scenery3d/Sterngarten/Sterngarten_Wien_innerArea-optimized.obj.gz
+%%DATADIR%%/scenery3d/Sterngarten/Sterngarten_Wien_innerArea-optimized.obj
+%%DATADIR%%/scenery3d/Sterngarten/Sterngarten_Wien_innerArea.mtl
+%%DATADIR%%/scenery3d/Sterngarten/Sterngarten_Wien_innerArea.obj
 %%DATADIR%%/scenery3d/Sterngarten/Sterngarten_Wien_innerArea/Concrete_White.jpg
 %%DATADIR%%/scenery3d/Sterngarten/Sterngarten_Wien_innerArea/Fencing_Mesh.png
 %%DATADIR%%/scenery3d/Sterngarten/Sterngarten_Wien_innerArea/Google_Earth_Snapshot_1.jpg
@@ -473,7 +490,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/scenery3d/Testscene/Stellarium-Testscene_withGrid.obj
 %%DATADIR%%/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump-separateSpheres.mtl
 %%DATADIR%%/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump-separateSpheres.obj
-%%DATADIR%%/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump-separateSpheres.obj.gz
 %%DATADIR%%/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump.mtl
 %%DATADIR%%/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump.obj
 %%DATADIR%%/scenery3d/Testscene/TX_Stellarium-Testscene/Bodenbelag_Schotter_Indisch.jpg
@@ -501,36 +517,36 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/scenery3d/Testscene/description.pt_BR.utf8
 %%DATADIR%%/scenery3d/Testscene/description.ru.utf8
 %%DATADIR%%/scenery3d/Testscene/scenery3d.ini
-%%DATADIR%%/scripts/analemma.ssc
-%%DATADIR%%/scripts/common_objects.inc
-%%DATADIR%%/scripts/constellations_tour.ssc
-%%DATADIR%%/scripts/earth_1.ssc
-%%DATADIR%%/scripts/earth_2.ssc
-%%DATADIR%%/scripts/earth_3.ssc
-%%DATADIR%%/scripts/earth_4.ssc
-%%DATADIR%%/scripts/earth_5.ssc
-%%DATADIR%%/scripts/earth_6.ssc
-%%DATADIR%%/scripts/earth_7.ssc
-%%DATADIR%%/scripts/landscapes.ssc
-%%DATADIR%%/scripts/lunar_partial.ssc
-%%DATADIR%%/scripts/lunar_total.ssc
-%%DATADIR%%/scripts/phobos_phun_1.ssc
-%%DATADIR%%/scripts/phobos_phun_2.ssc
-%%DATADIR%%/scripts/phobos_phun_3.ssc
-%%DATADIR%%/scripts/phobos_phun_4.ssc
-%%DATADIR%%/scripts/phobos_phun_5.ssc
-%%DATADIR%%/scripts/save_state.inc
-%%DATADIR%%/scripts/screensaver.ssc
-%%DATADIR%%/scripts/sky_cultures.ssc
-%%DATADIR%%/scripts/solar_eclipse.ssc
-%%DATADIR%%/scripts/solar_system_screensaver.ssc
-%%DATADIR%%/scripts/startup.ssc
-%%DATADIR%%/scripts/sun.ssc
-%%DATADIR%%/scripts/supernova.ssc
-%%DATADIR%%/scripts/transit_of_venus.ssc
-%%DATADIR%%/scripts/translation.inc
-%%DATADIR%%/scripts/triple_sunrise_and_sunsets.ssc
-%%DATADIR%%/scripts/zodiac.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/analemma.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/common_objects.inc
+%%SCRIPTS%%%%DATADIR%%/scripts/constellations_tour.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_1.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_2.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_3.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_4.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_5.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_6.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_7.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/landscapes.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/lunar_partial.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/lunar_total.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_1.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_2.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_3.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_4.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_5.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/save_state.inc
+%%SCRIPTS%%%%DATADIR%%/scripts/screensaver.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/sky_cultures.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/solar_eclipse.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/solar_system_screensaver.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/startup.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/sun.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/supernova.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/transit_of_venus.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/translation.inc
+%%SCRIPTS%%%%DATADIR%%/scripts/triple_sunrise_and_sunsets.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/zodiac.ssc
 %%DATADIR%%/skycultures/arabic/Bearer-of-the-Demons-Head.png
 %%DATADIR%%/skycultures/arabic/Book_of_Fixed_Stars3.png
 %%DATADIR%%/skycultures/arabic/CentaurAndThe-Beast-of-Prey.png
@@ -586,6 +602,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/arabic/constellationship.fab
 %%DATADIR%%/skycultures/arabic/description.ar.utf8
 %%DATADIR%%/skycultures/arabic/description.be.utf8
+%%DATADIR%%/skycultures/arabic/description.bn.utf8
 %%DATADIR%%/skycultures/arabic/description.de.utf8
 %%DATADIR%%/skycultures/arabic/description.en.utf8
 %%DATADIR%%/skycultures/arabic/description.fr.utf8
@@ -599,6 +616,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/arabic_moon_stations/constellations_boundaries.dat
 %%DATADIR%%/skycultures/arabic_moon_stations/constellationship.fab
 %%DATADIR%%/skycultures/arabic_moon_stations/description.ar.utf8
+%%DATADIR%%/skycultures/arabic_moon_stations/description.bn.utf8
 %%DATADIR%%/skycultures/arabic_moon_stations/description.en.utf8
 %%DATADIR%%/skycultures/arabic_moon_stations/description.ru.utf8
 %%DATADIR%%/skycultures/arabic_moon_stations/description.uk.utf8
@@ -619,6 +637,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/aztec/constellationship.fab
 %%DATADIR%%/skycultures/aztec/description.ar.utf8
 %%DATADIR%%/skycultures/aztec/description.be.utf8
+%%DATADIR%%/skycultures/aztec/description.bn.utf8
 %%DATADIR%%/skycultures/aztec/description.de.utf8
 %%DATADIR%%/skycultures/aztec/description.en.utf8
 %%DATADIR%%/skycultures/aztec/description.es.utf8
@@ -650,6 +669,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/boorong/cwar.png
 %%DATADIR%%/skycultures/boorong/cwarepil.png
 %%DATADIR%%/skycultures/boorong/description.be.utf8
+%%DATADIR%%/skycultures/boorong/description.bn.utf8
 %%DATADIR%%/skycultures/boorong/description.de.utf8
 %%DATADIR%%/skycultures/boorong/description.en.utf8
 %%DATADIR%%/skycultures/boorong/description.hu.utf8
@@ -686,6 +706,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/chinese/constellationship.fab
 %%DATADIR%%/skycultures/chinese/description.ar.utf8
 %%DATADIR%%/skycultures/chinese/description.be.utf8
+%%DATADIR%%/skycultures/chinese/description.bn.utf8
 %%DATADIR%%/skycultures/chinese/description.en.utf8
 %%DATADIR%%/skycultures/chinese/description.fr.utf8
 %%DATADIR%%/skycultures/chinese/description.it.utf8
@@ -699,6 +720,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/egyptian/constellationship.fab
 %%DATADIR%%/skycultures/egyptian/description.ar.utf8
 %%DATADIR%%/skycultures/egyptian/description.be.utf8
+%%DATADIR%%/skycultures/egyptian/description.bn.utf8
 %%DATADIR%%/skycultures/egyptian/description.bs.utf8
 %%DATADIR%%/skycultures/egyptian/description.de.utf8
 %%DATADIR%%/skycultures/egyptian/description.en.utf8
@@ -723,6 +745,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/indian/constellationship.fab
 %%DATADIR%%/skycultures/indian/description.ar.utf8
 %%DATADIR%%/skycultures/indian/description.be.utf8
+%%DATADIR%%/skycultures/indian/description.bn.utf8
 %%DATADIR%%/skycultures/indian/description.bs.utf8
 %%DATADIR%%/skycultures/indian/description.de.utf8
 %%DATADIR%%/skycultures/indian/description.en.utf8
@@ -752,6 +775,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/inuit/constellationship.fab
 %%DATADIR%%/skycultures/inuit/description.ar.utf8
 %%DATADIR%%/skycultures/inuit/description.be.utf8
+%%DATADIR%%/skycultures/inuit/description.bn.utf8
 %%DATADIR%%/skycultures/inuit/description.de.utf8
 %%DATADIR%%/skycultures/inuit/description.en.utf8
 %%DATADIR%%/skycultures/inuit/description.fr.utf8
@@ -773,6 +797,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/japanese_moon_stations/constellation_names.eng.fab
 %%DATADIR%%/skycultures/japanese_moon_stations/constellations_boundaries.dat
 %%DATADIR%%/skycultures/japanese_moon_stations/constellationship.fab
+%%DATADIR%%/skycultures/japanese_moon_stations/description.bn.utf8
 %%DATADIR%%/skycultures/japanese_moon_stations/description.en.utf8
 %%DATADIR%%/skycultures/japanese_moon_stations/description.uk.utf8
 %%DATADIR%%/skycultures/japanese_moon_stations/info.ini
@@ -812,6 +837,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/korean/constellationship.fab
 %%DATADIR%%/skycultures/korean/description.ar.utf8
 %%DATADIR%%/skycultures/korean/description.be.utf8
+%%DATADIR%%/skycultures/korean/description.bn.utf8
 %%DATADIR%%/skycultures/korean/description.de.utf8
 %%DATADIR%%/skycultures/korean/description.en.utf8
 %%DATADIR%%/skycultures/korean/description.fr.utf8
@@ -827,6 +853,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/lakota/constellationship.fab
 %%DATADIR%%/skycultures/lakota/description.ar.utf8
 %%DATADIR%%/skycultures/lakota/description.be.utf8
+%%DATADIR%%/skycultures/lakota/description.bn.utf8
 %%DATADIR%%/skycultures/lakota/description.bs.utf8
 %%DATADIR%%/skycultures/lakota/description.de.utf8
 %%DATADIR%%/skycultures/lakota/description.en.utf8
@@ -844,6 +871,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/maori/constellationship.fab
 %%DATADIR%%/skycultures/maori/description.ar.utf8
 %%DATADIR%%/skycultures/maori/description.be.utf8
+%%DATADIR%%/skycultures/maori/description.bn.utf8
 %%DATADIR%%/skycultures/maori/description.de.utf8
 %%DATADIR%%/skycultures/maori/description.en.utf8
 %%DATADIR%%/skycultures/maori/description.fr.utf8
@@ -859,6 +887,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/mongolian/constellation_names.fr.fab
 %%DATADIR%%/skycultures/mongolian/constellations_boundaries.dat
 %%DATADIR%%/skycultures/mongolian/constellationship.fab
+%%DATADIR%%/skycultures/mongolian/description.bn.utf8
 %%DATADIR%%/skycultures/mongolian/description.en.utf8
 %%DATADIR%%/skycultures/mongolian/description.fr.utf8
 %%DATADIR%%/skycultures/mongolian/description.hu.utf8
@@ -872,6 +901,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/navajo/constellationship.fab
 %%DATADIR%%/skycultures/navajo/description.ar.utf8
 %%DATADIR%%/skycultures/navajo/description.be.utf8
+%%DATADIR%%/skycultures/navajo/description.bn.utf8
 %%DATADIR%%/skycultures/navajo/description.bs.utf8
 %%DATADIR%%/skycultures/navajo/description.de.utf8
 %%DATADIR%%/skycultures/navajo/description.en.utf8
@@ -887,6 +917,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/norse/constellationship.fab
 %%DATADIR%%/skycultures/norse/description.ar.utf8
 %%DATADIR%%/skycultures/norse/description.be.utf8
+%%DATADIR%%/skycultures/norse/description.bn.utf8
 %%DATADIR%%/skycultures/norse/description.bs.utf8
 %%DATADIR%%/skycultures/norse/description.de.utf8
 %%DATADIR%%/skycultures/norse/description.en.utf8
@@ -904,6 +935,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/polynesian/constellationship.fab
 %%DATADIR%%/skycultures/polynesian/description.ar.utf8
 %%DATADIR%%/skycultures/polynesian/description.be.utf8
+%%DATADIR%%/skycultures/polynesian/description.bn.utf8
 %%DATADIR%%/skycultures/polynesian/description.de.utf8
 %%DATADIR%%/skycultures/polynesian/description.en.utf8
 %%DATADIR%%/skycultures/polynesian/description.fr.utf8
@@ -941,6 +973,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/romanian/crucea-mare.png
 %%DATADIR%%/skycultures/romanian/crucea-mica.png
 %%DATADIR%%/skycultures/romanian/description.be.utf8
+%%DATADIR%%/skycultures/romanian/description.bn.utf8
 %%DATADIR%%/skycultures/romanian/description.en.utf8
 %%DATADIR%%/skycultures/romanian/description.pt_BR.utf8
 %%DATADIR%%/skycultures/romanian/description.ro.utf8
@@ -971,6 +1004,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/sami/constellationship.fab
 %%DATADIR%%/skycultures/sami/description.ar.utf8
 %%DATADIR%%/skycultures/sami/description.be.utf8
+%%DATADIR%%/skycultures/sami/description.bn.utf8
 %%DATADIR%%/skycultures/sami/description.en.utf8
 %%DATADIR%%/skycultures/sami/description.fr.utf8
 %%DATADIR%%/skycultures/sami/description.hu.utf8
@@ -984,6 +1018,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/siberian/constellations_boundaries.dat
 %%DATADIR%%/skycultures/siberian/constellationship.fab
 %%DATADIR%%/skycultures/siberian/description.be.utf8
+%%DATADIR%%/skycultures/siberian/description.bn.utf8
 %%DATADIR%%/skycultures/siberian/description.en.utf8
 %%DATADIR%%/skycultures/siberian/description.hu.utf8
 %%DATADIR%%/skycultures/siberian/description.pt_BR.utf8
@@ -998,6 +1033,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/tongan/constellationship.fab
 %%DATADIR%%/skycultures/tongan/description.ar.utf8
 %%DATADIR%%/skycultures/tongan/description.be.utf8
+%%DATADIR%%/skycultures/tongan/description.bn.utf8
 %%DATADIR%%/skycultures/tongan/description.de.utf8
 %%DATADIR%%/skycultures/tongan/description.en.utf8
 %%DATADIR%%/skycultures/tongan/description.fr.utf8
@@ -1013,6 +1049,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/tukano/constellationsart.fab
 %%DATADIR%%/skycultures/tukano/constellationship.fab
 %%DATADIR%%/skycultures/tukano/description.be.utf8
+%%DATADIR%%/skycultures/tukano/description.bn.utf8
 %%DATADIR%%/skycultures/tukano/description.en.utf8
 %%DATADIR%%/skycultures/tukano/description.uk.utf8
 %%DATADIR%%/skycultures/tukano/info.ini
@@ -1023,6 +1060,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/tupi/constellationship.fab
 %%DATADIR%%/skycultures/tupi/description.ar.utf8
 %%DATADIR%%/skycultures/tupi/description.be.utf8
+%%DATADIR%%/skycultures/tupi/description.bn.utf8
 %%DATADIR%%/skycultures/tupi/description.de.utf8
 %%DATADIR%%/skycultures/tupi/description.en.utf8
 %%DATADIR%%/skycultures/tupi/description.fr.utf8
@@ -1070,6 +1108,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/western/delphinus.png
 %%DATADIR%%/skycultures/western/description.ar.utf8
 %%DATADIR%%/skycultures/western/description.be.utf8
+%%DATADIR%%/skycultures/western/description.bn.utf8
 %%DATADIR%%/skycultures/western/description.en.utf8
 %%DATADIR%%/skycultures/western/description.fr.utf8
 %%DATADIR%%/skycultures/western/description.hu.utf8
@@ -1138,6 +1177,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/western_rey/constellation_names.eng.fab
 %%DATADIR%%/skycultures/western_rey/constellationship.fab
 %%DATADIR%%/skycultures/western_rey/description.be.utf8
+%%DATADIR%%/skycultures/western_rey/description.bn.utf8
 %%DATADIR%%/skycultures/western_rey/description.de.utf8
 %%DATADIR%%/skycultures/western_rey/description.en.utf8
 %%DATADIR%%/skycultures/western_rey/description.ru.utf8

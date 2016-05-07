@@ -10,11 +10,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.3-4
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Convert DVD subtitles into text format (subrip srt) or VobSub format
 
-LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm \
-		libpng.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	gocr:${PORTSDIR}/graphics/gocr \
-		xv:${PORTSDIR}/graphics/xv \
-		transcode:${PORTSDIR}/multimedia/transcode
+LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
+		libpng.so:graphics/png
+RUN_DEPENDS=	gocr:graphics/gocr \
+		xv:graphics/xv \
+		transcode:multimedia/transcode
 
 USES=		gmake tar:tgz
 

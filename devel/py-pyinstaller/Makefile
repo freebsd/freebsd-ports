@@ -14,6 +14,8 @@ COMMENT=	Program to create standalone executables from Python scripts
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	DOCS
 
 EXTRACT_AFTER_ARGS=	--exclude doc/source --no-same-owner --no-same-permissions

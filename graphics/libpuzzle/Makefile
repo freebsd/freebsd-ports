@@ -12,7 +12,7 @@ COMMENT=	Library to find similar pictures
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		libtool tar:bzip2
 GNU_CONFIGURE=	yes

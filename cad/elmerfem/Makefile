@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	elmerfem
-PORTVERSION=	7.0.20141202
+PORTVERSION=	8.1.20160311
 CATEGORIES=	cad science
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ELMER FEM package
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack		\
-		libparpack.so:${PORTSDIR}/math/arpack-ng-mpich	\
-		libmpich.so.8:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	libparpack.so:math/arpack-ng-mpich	\
+		libmpich.so.8:net/mpich2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
-GH_TAGNAME=	0300707
+GH_TAGNAME=	dee8ceb
 
-USES=		cmake fortran gmake tcl
+USES=		blaslapack:netlib cmake fortran gmake tcl
 
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/elmersolver
 ALL_TARGET=
 
 .if !defined(MAINTAINER_MODE)

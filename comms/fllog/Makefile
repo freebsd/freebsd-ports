@@ -12,7 +12,7 @@ COMMENT=	Ham Radio logging program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 USES=		gmake
 GNU_CONFIGURE=	yes

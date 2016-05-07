@@ -13,10 +13,10 @@ COMMENT=	GTK Widget to Render MathML Documents
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libt1.so:${PORTSDIR}/devel/t1lib \
-		libgmetadom_gdome_cpp_smart.so:${PORTSDIR}/textproc/gmetadom
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libt1.so:devel/t1lib \
+		libgmetadom_gdome_cpp_smart.so:textproc/gmetadom
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig

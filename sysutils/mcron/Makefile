@@ -10,7 +10,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	100% compatible replacement for Vixie cron
 
-RUN_DEPENDS=	guile2>=2.0:${PORTSDIR}/lang/guile2
+RUN_DEPENDS=	guile2>=2.0:lang/guile2
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		pkgconfig

@@ -12,16 +12,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Group of Perl modules for XML parsing
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml \
-		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp
-RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml \
-		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-libwww>=0:www/p5-libwww \
+		p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-libxml>=0:textproc/p5-libxml \
+		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
+RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-libwww>=0:www/p5-libwww \
+		p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-libxml>=0:textproc/p5-libxml \
+		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
 
 CONFLICTS=	p5-XML-DOM-[0-9]* p5-XML-Filter-DetectWS-[0-9]* \
 		p5-XML-Filter-Reindent-[0-9]* p5-XML-Filter-SAXT-[0-9]* \

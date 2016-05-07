@@ -14,9 +14,9 @@ COMMENT=	Xfce 4 settings application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-	libxklavier.so:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+	libfontconfig.so:x11-fonts/fontconfig \
+	libxklavier.so:x11/libxklavier
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -33,11 +33,11 @@ OPTIONS_DEFAULT=	NOTIFY NLS
 
 UPOWER_DESC=	Power management tasks
 
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	libnotify
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext-runtime
-UPOWER_LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower
+UPOWER_LIB_DEPENDS=	libupower-glib.so:sysutils/upower
 UPOWER_CONFIGURE_ENABLE=	upower-glib
 OPTIONS_SUB=	yes
 

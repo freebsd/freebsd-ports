@@ -13,7 +13,7 @@ COMMENT=	Extract data from an HTML table
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	p5-HTML-Parser>=3.36:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-HTML-Parser>=3.36:www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

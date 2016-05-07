@@ -13,7 +13,7 @@ DIST_SUBDIR=	openh323
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform C++ library, used by OpenH323
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 CONFLICTS=	ptlib-2.*
 
@@ -55,7 +55,7 @@ ESOUND_USE=	GNOME=esound
 ESOUND_CONFIGURE_ENABLE=	esd
 
 V4L_CONFIGURE_ENABLE=	v4l
-V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:multimedia/v4l_compat
 
 #explicity build OSS
 CONFIGURE_ARGS+=	--enable-oss
@@ -73,8 +73,8 @@ CONFIGURE_ARGS+=	--disable-odbc
 #
 ##enable libavc1394
 #.if defined(WITH_AVC1394)
-#LIB_DEPENDS+=	avc1394.2:${PORTSDIR}/devel/libavc1394 \
-#		dv.4:${PORTSDIR}/multimedia/libdv
+#LIB_DEPENDS+=	avc1394.2:devel/libavc1394 \
+#		dv.4:multimedia/libdv
 #CONFIGURE_ARGS+=	--enable-avc
 #PLIST_SUB+=	AVC1394=""
 #.else
@@ -84,7 +84,7 @@ PLIST_SUB+=	AVC1394="@comment "
 #
 ##enable libdc1394
 #.if defined(WITH_DC1394)
-#LIB_DEPENDS+=	dc1394_control.13:${PORTSDIR}/devel/libdc1394
+#LIB_DEPENDS+=	dc1394_control.13:devel/libdc1394
 #CONFIGURE_ARGS+=	--enable-dc
 #PLIST_SUB+=	DC1394=""
 #.else

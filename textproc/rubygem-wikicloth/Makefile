@@ -11,15 +11,14 @@ COMMENT=	Ruby parser for the MediaWiki markup language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-expression_parser>=0:${PORTSDIR}/math/rubygem-expression_parser \
-		rubygem-htmlentities>=0:${PORTSDIR}/textproc/rubygem-htmlentities \
-		rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-twitter-text>=0:${PORTSDIR}/textproc/rubygem-twitter-text
+RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
+		rubygem-expression_parser>=0:math/rubygem-expression_parser \
+		rubygem-htmlentities>=0:textproc/rubygem-htmlentities \
+		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
+		rubygem-twitter-text>=0:textproc/rubygem-twitter-text
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

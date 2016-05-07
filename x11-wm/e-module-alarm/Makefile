@@ -11,8 +11,8 @@ COMMENT=	Module to set Alarms in Enlightenment
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	enlightenment:x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment:x11-wm/enlightenment
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

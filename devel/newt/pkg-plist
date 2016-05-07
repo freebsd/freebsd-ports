@@ -43,6 +43,7 @@ man/man1/whiptail.1.gz
 %%NLS%%share/locale/id/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/it/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/newt.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/km/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/newt.mo

@@ -12,7 +12,7 @@ COMMENT=	KDE library for accessing vk.com
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson
 
 USES=		cmake:outsource gettext pkgconfig tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build

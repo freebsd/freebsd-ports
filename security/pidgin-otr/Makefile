@@ -14,10 +14,10 @@ LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # explicitly use libotr.so.5 (see ports/186944)
-BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	libotr.so.5:${PORTSDIR}/security/libotr \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libpurple.so:${PORTSDIR}/net-im/libpurple
+BUILD_DEPENDS=	pidgin:net-im/pidgin
+LIB_DEPENDS=	libotr.so.5:security/libotr \
+		libgcrypt.so:security/libgcrypt \
+		libpurple.so:net-im/libpurple
 
 USES=		cpe gmake libtool pkgconfig
 CPE_VENDOR=	cypherpunks

@@ -21,7 +21,7 @@ IGNORE=	Incorrect 'USES+= ninja:${ninja_ARGS}' ninja takes no arguments
 MAKE_ARGS+=	-v
 .endif
 
-BUILD_DEPENDS+=	ninja:${PORTSDIR}/devel/ninja
+BUILD_DEPENDS+=	ninja:devel/ninja
 
 CMAKE_ARGS+=	-GNinja
 MAKEFILE=

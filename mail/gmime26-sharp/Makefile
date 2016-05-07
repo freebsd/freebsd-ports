@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	26-sharp
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for gmime
 
-LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26
+LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26
 
 USES=		mono
 MASTERDIR=	${.CURDIR}/../gmime26

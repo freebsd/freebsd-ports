@@ -13,9 +13,9 @@ COMMENT=	Small, fast GDK/Imlib2 image viewer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2 \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libexif.so:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
+		liblcms2.so:graphics/lcms2 \
+		libexif.so:graphics/libexif
 
 USES=		gmake pkgconfig tar:tgz
 USE_GNOME=	gtk20

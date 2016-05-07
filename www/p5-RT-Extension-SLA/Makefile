@@ -12,10 +12,11 @@ COMMENT=	RT extension to automate due dates using service levels
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Business-Hours>0:${PORTSDIR}/misc/p5-Business-Hours
+BUILD_DEPENDS=	p5-Business-Hours>0:misc/p5-Business-Hours
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE=	GPLv2
+# SLA functionality comes as standard in RT 4.4.x
+CONFLICTS_INSTALL=	rt44-4.4.*
 
 NO_ARCH=	yes
 
@@ -30,17 +31,17 @@ OPTIONS_DEFAULT=                RT42
 
 .include <bsd.port.options.mk>
 
-.for opt in 40 42
-.if ${PORT_OPTIONS:MRT${opt}}
-RT_VER=         ${opt}
+.for opt in ${OPTIONS_SINGLE_RTVERSION}
+.if ${PORT_OPTIONS:M${opt}}
+RT_VER=         ${opt:S/RT//}
 .endif
 .endfor
 
 ### Temporary for debugging
 #WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work${RT_VER}
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
-RUN_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:www/rt${RT_VER}
+RUN_DEPENDS+=	${LOCALBASE}/bin/rt:www/rt${RT_VER}
 
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
@@ -55,7 +56,7 @@ SUB_FILES+=	pkg-message
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 	    unset PREFIX && \
-	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
+	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ${CONFIGURE_CMD} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
 post-configure:

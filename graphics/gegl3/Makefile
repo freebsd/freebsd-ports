@@ -3,6 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 PKGNAMESUFFIX=	3
@@ -11,8 +12,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.a1//}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
 
-LIB_DEPENDS=	libbabl-0.1.so:${PORTSDIR}/x11/babl \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+LIB_DEPENDS=	libbabl-0.1.so:x11/babl \
+		libjson-glib-1.0.so:devel/json-glib
 
 USES=		gettext gmake libtool pathfix pkgconfig shebangfix tar:bzip2
 USE_GNOME=	glib20 intltool introspection:build
@@ -57,33 +58,33 @@ CAIRO_CONFIGURE_WITH=	cairo
 PANGO_USE=	GNOME=pango
 PANGO_CONFIGURE_WITH=	pango
 
-MENSCRIPT_BUILD_DEPENDS=	enscript:${PORTSDIR}/print/enscript-a4
+MENSCRIPT_BUILD_DEPENDS=	enscript:print/enscript-a4
 
-FFMPEG_LIB_DEPENDS=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_WITH=	libavformat
 
-GRAPHVIZ_LIB_DEPENDS=	libcgraph.so:${PORTSDIR}/graphics/graphviz
+GRAPHVIZ_LIB_DEPENDS=	libcgraph.so:graphics/graphviz
 GRAPHVIZ_CONFIGURE_WITH=	graphviz
 
-JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 JASPER_CONFIGURE_WITH=	jasper
 
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	libjpeg
 
-LCMS2_LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 LCMS2_CONFIGURE_WITH=	lcms
 
 LUA_USES=		lua
 LUA_CONFIGURE_WITH=	lua
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
 OPENEXR_CONFIGURE_WITH=	openexr
 
-RAW_LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw
+RAW_LIB_DEPENDS=	libraw.so:graphics/libraw
 RAW_CONFIGURE_WITH=	libraw
 
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	libpng
 
 LIBRSVG2_USE=		GNOME=librsvg2
@@ -92,29 +93,29 @@ LIBRSVG2_CONFIGURE_WITH=	librsvg
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_WITH=	sdl
 
-SPIRO_LIB_DEPENDS=	libspiro.so:${PORTSDIR}/graphics/libspiro
+SPIRO_LIB_DEPENDS=	libspiro.so:graphics/libspiro
 SPIRO_CONFIGURE_WITH=	libspiro
 
-V4L_BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
-V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 V4L_CONFIGURE_WITH=	libv4l
 
-WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CONFIGURE_WITH=	webp
 
 # UMFPACK has two "problems"
 # 1) it build with port gcc 2) needed libs aren't recorded in the libraries.
-#UMFPACK_LIB_DEPENDS=	libumfpack.so:${PORTSDIR}/math/suitesparse
+#UMFPACK_LIB_DEPENDS=	libumfpack.so:math/suitesparse
 #UMFPACK_CONFIGURE_WITH=	umfpack
 CONFIGURE_ARGS+=	--without-umfpack
 
-EXIV2_LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_CONFIGURE_WITH=	exiv2
 
-GEXIV2_LIB_DEPENDS=	libgexiv2.so:${PORTSDIR}/graphics/gexiv2
+GEXIV2_LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2
 GEXIV2_CONFIGURE_WITH=	gexiv2
 
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=	libtiff
 
 .include <bsd.port.options.mk>

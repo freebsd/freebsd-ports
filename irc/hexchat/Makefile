@@ -11,7 +11,7 @@ COMMENT=	IRC chat program with GTK and Text Frontend
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libproxy.so:net/libproxy
 
 USES=		gmake desktop-file-utils libtool pkgconfig tar:xz
 USE_GNOME=	gtk20 intltool libxml2
@@ -43,21 +43,21 @@ FISHLIM_DESC=		FiSHLiM plugin
 TEXTFE_DESC=		Text frontend
 SOCKS_DESC=		SOCKS proxy support, FORBIDDEN in FreeBSD 10+
 
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-CANBERRA_LIB_DEPENDS=	libcanberra.so:${PORTSDIR}/audio/libcanberra
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 CANBERRA_CONFIGURE_ENABLE=	libcanberra
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 DBUS_CONFIGURE_ENABLE=	dbus
 DOAT_CONFIGURE_ENABLE=	doat
 FISHLIM_CONFIGURE_ENABLE=	fishlim
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools # doesn't build otherwise
-NOTIFY_RUN_DEPENDS=	notify-send:${PORTSDIR}/devel/libnotify
+NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	libnotify
 PERL_CONFIGURE_ENABLE=	perl
 PYTHON_CONFIGURE_ENABLE=	python
-SOCKS_LIB_DEPENDS=	libsocks.so:${PORTSDIR}/net/dante
+SOCKS_LIB_DEPENDS=	libsocks.so:net/dante
 SOCKS_CONFIGURE_ENABLE=	socks
 TEXTFE_CONFIGURE_ENABLE=	textfe
 

@@ -14,9 +14,11 @@ COMMENT=	Fast, compliant implementation of the Python language
 LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libffi.so:${PORTSDIR}/devel/libffi \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libffi.so:devel/libffi \
+		libsqlite3.so:databases/sqlite3
 
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
 PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
@@ -99,7 +101,7 @@ WITH_BOEHM_GC=	yes
 .endfor # inst in ${PYPY_INST}
 
 .if defined(WITH_BOEHM_GC)
-LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS+=	libgc.so:devel/boehm-gc
 .endif
 
 # Translate FreeBSD ARCH types to PyPy ARCH types

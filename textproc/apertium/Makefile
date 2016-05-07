@@ -12,10 +12,10 @@ COMMENT=	Toolbox to build shallow-transfer machine translation systems
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	liblttoolbox3.so:${PORTSDIR}/textproc/lttoolbox \
-		libpcre.so:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	liblttoolbox3.so:textproc/lttoolbox \
+		libpcre.so:devel/pcre
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf pathfix pkgconfig libtool
 USE_GNOME=	libxml2 libxslt

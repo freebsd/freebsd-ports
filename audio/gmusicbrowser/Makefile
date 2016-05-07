@@ -11,7 +11,7 @@ COMMENT=	Jukebox for large collections of mp3/ogg/flac/mpc files
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-Gtk2>=1.0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS=	p5-Gtk2>=1.0:x11-toolkits/p5-Gtk2
 
 NO_BUILD=	yes
 
@@ -27,11 +27,11 @@ OPTIONS_DEFAULT=LIBNOTIFY
 LIBNOTIFY_DESC=	Desktop notification
 WEBKIT_DESC=	Enable embedded web browser
 
-GSTREAMER_RUN_DEPENDS=	p5-GStreamer>=0:${PORTSDIR}/multimedia/p5-GStreamer
-DBUS_RUN_DEPENDS=	p5-Net-DBus>=1.0:${PORTSDIR}/devel/p5-Net-DBus
-WEBKIT_RUN_DEPENDS=	p5-Gtk2-WebKit>=0:${PORTSDIR}/www/p5-Gtk2-WebKit
-LIBNOTIFY_RUN_DEPENDS=	p5-Gtk2-Notify>=0.05:${PORTSDIR}/devel/p5-Gtk2-Notify
-NLS_RUN_DEPENDS=	p5-Locale-gettext>=1.0:${PORTSDIR}/devel/p5-Locale-gettext
+GSTREAMER_RUN_DEPENDS=	p5-GStreamer>=0:multimedia/p5-GStreamer
+DBUS_RUN_DEPENDS=	p5-Net-DBus>=1.0:devel/p5-Net-DBus
+WEBKIT_RUN_DEPENDS=	p5-Gtk2-WebKit>=0:www/p5-Gtk2-WebKit
+LIBNOTIFY_RUN_DEPENDS=	p5-Gtk2-Notify>=0.05:devel/p5-Gtk2-Notify
+NLS_RUN_DEPENDS=	p5-Locale-gettext>=1.0:devel/p5-Locale-gettext
 OPTIONS_SUB=	yes
 
 do-install:

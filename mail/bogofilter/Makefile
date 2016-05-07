@@ -10,9 +10,12 @@ MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-${PORTVERSION}
 MAINTAINER?=	mandree@FreeBSD.org
 COMMENT=	Fast, teachable, learning spam detector
 
+LICENSE=	GPLv2
+
 .if !defined(MASTERDIR) || ${MASTERDIR} == ${.CURDIR}
 # building master port
-USE_BDB=	41+
+USE_BDB=	5+
+INVALID_BDB_VER=48
 .endif
 
 OPTIONS_DEFINE=		GSL UNICODE DOCS
@@ -32,10 +35,12 @@ CPE_VENDOR=	bogofilter_project
 
 UNICODE_USES=	iconv
 UNICODE_CONFIGURE_ENABLE=	unicode
-GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 GSL_CONFIGURE_ARGS_OFF=	--with-included-gsl
 
 PORTDOCS=	*
+
+TEST_TARGET=	check
 
 .include <bsd.port.pre.mk>
 

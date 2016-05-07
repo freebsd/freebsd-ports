@@ -3,38 +3,32 @@
 
 PORTNAME=	dhcp_probe
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.net.princeton.edu/software/dhcp_probe/
 
 MAINTAINER=	khung@nullaxiom.com
 COMMENT=	Attempts to discover DHCP and BootP servers on a network
 
-LICENSE=	GPLv2 addl
+LICENSE=	GPLv2 LGPL20 addl
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=${WRKSRC}/COPYING.GPL
+LICENSE_FILE_LGPL20=${WRKSRC}/COPYING.LIB
 LICENSE_NAME_addl=Additional legal notices for copyrighted code
 LICENSE_FILE_addl=${WRKSRC}/COPYING
 LICENSE_PERMS_addl=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
-USE_AUTOTOOLS=	aclocal automake
-AUTOMAKE_ARGS=	-a
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libnet-include=${LOCALBASE}/include/libnet11/ --with-libnet-lib=${LOCALBASE}/lib/libnet11/
-MANPREFIX=	${PREFIX}
+INSTALL_TARGET=	install-strip
 
 USE_RC_SUBR=	dhcp_probe
 
 SUB_FILES=	pkg-message
 
-# Put additional licenses in DOCS
-PORTDOCS=	COPYING*
-
-# Can't use INSTALL_PROGRAM macro as we need to patch Makefile.am and
-# regenerate Makefile.in
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/dhcp_probe
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/COPYING* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/extras/dhcp_probe.cf.sample \
+		${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

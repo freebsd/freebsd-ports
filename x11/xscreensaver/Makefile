@@ -9,9 +9,9 @@ MASTER_SITES=	http://www.jwz.org/xscreensaver/
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
 
-RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-		giftopnm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	libgle.so:${PORTSDIR}/graphics/gle
+RUN_DEPENDS=	p5-libwww>0:www/p5-libwww \
+		giftopnm:graphics/netpbm
+LIB_DEPENDS=	libgle.so:graphics/gle
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
@@ -44,31 +44,31 @@ PAM_CONFIGURE_WITH=		pam
 SETUID_HACKS_DESC=		Install sonar hack suid so it can ping
 
 FIREF_DESC=			Add extra port x11/fireflies
-FIREF_RUN_DEPENDS=		${LOCALBASE}/bin/xscreensaver-hacks/fireflies:${PORTSDIR}/x11/fireflies
+FIREF_RUN_DEPENDS=		${LOCALBASE}/bin/xscreensaver-hacks/fireflies:x11/fireflies
 
 NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ENABLE=		nls
 
 XAOS1_DESC=			Add extra port graphics/xaos
-XAOS1_RUN_DEPENDS=		xaos:${PORTSDIR}/graphics/xaos
+XAOS1_RUN_DEPENDS=		xaos:graphics/xaos
 
 XDALI_DESC=			Add extra port x11-clocks/xdaliclock
-XDALI_RUN_DEPENDS=		xdaliclock:${PORTSDIR}/x11-clocks/xdaliclock
+XDALI_RUN_DEPENDS=		xdaliclock:x11-clocks/xdaliclock
 
 XFT_CONFIGURE_WITH=		xft
 XFT_USE=			XORG=xft
 
 XEARTH_DESC=			Add extra port astro/xearth
-XEARTH_RUN_DEPENDS=		xearth:${PORTSDIR}/astro/xearth
+XEARTH_RUN_DEPENDS=		xearth:astro/xearth
 
 XMOUN_DESC=			Add extra port graphics/xmountains
-XMOUN_RUN_DEPENDS=		xmountains:${PORTSDIR}/graphics/xmountains
+XMOUN_RUN_DEPENDS=		xmountains:graphics/xmountains
 
 XPLANET_DESC=			Add extra port astro/xplanet
-XPLANET_RUN_DEPENDS=		xplanet:${PORTSDIR}/astro/xplanet
+XPLANET_RUN_DEPENDS=		xplanet:astro/xplanet
 
 XSNOW_DESC=			Add extra port x11/xsnow
-XSNOW_RUN_DEPENDS=		xsnow:${PORTSDIR}/x11/xsnow
+XSNOW_RUN_DEPENDS=		xsnow:x11/xsnow
 
 SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
 		xscreensaver-start.desktop xscreensaver-stop.desktop

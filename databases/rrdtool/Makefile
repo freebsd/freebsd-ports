@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -13,7 +12,7 @@ COMMENT=	Round Robin Database Tools
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	rrdtool10-* rrdtool12-*
+CONFLICTS=	rrdtool12-*
 
 CONFIGURE_ARGS=	--disable-tcl --disable-silent-rules
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
@@ -39,10 +38,10 @@ PERL_DESC=	Build PERL module
 PYTHON_DESC=	Build PYTHON bindings
 RUBY_DESC=	Build RUBY bindings
 
-DEJAVU_RUN_DEPENDS=	dejavu>0:${PORTSDIR}/x11-fonts/dejavu
+DEJAVU_RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu
 GRAPH_CONFIGURE_OFF=	--disable-rrdcgi --disable-rrd_graph
-GRAPH_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-			libpng.so:${PORTSDIR}/graphics/png
+GRAPH_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+			libpng.so:graphics/png
 GRAPH_USE=		GNOME=cairo,pango
 GRAPH_USES=		gnome
 MMAP_CONFIGURE_ENABLE=	mmap

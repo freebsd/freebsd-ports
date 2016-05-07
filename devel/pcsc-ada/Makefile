@@ -3,6 +3,7 @@
 
 PORTNAME=	pcsc-ada
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libpcscada-${PORTVERSION}
@@ -27,7 +28,7 @@ NO_OPTIONS_SORT=yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUNIT_TEST} || ${PORT_OPTIONS:MINTF_TEST}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/gnat/ahven.gpr:${PORTSDIR}/devel/ahven
+BUILD_DEPENDS+=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
 . if ${PORT_OPTIONS:MUNIT_TEST}
 ALL_TARGET+=	utests
 . endif
@@ -36,11 +37,11 @@ ALL_TARGET+=	itests
 . endif
 .endif
 
-LIB_DEPENDS+=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS+=	libpcsclite.so:devel/pcsc-lite
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+= asciidoc:${PORTSDIR}/textproc/asciidoc \
-		source-highlight:${PORTSDIR}/textproc/source-highlight
+BUILD_DEPENDS+= asciidoc:textproc/asciidoc \
+		source-highlight:textproc/source-highlight
 ALL_TARGET+=	doc
 USES+=		gmake
 .endif

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt4 based configuration manager for DOSBox
 
-RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
+RUN_DEPENDS=	dosbox:emulators/dosbox
 
 USE_QT4=	gui network xml uic_build moc_build qmake_build rcc_build
 USES=		qmake tar:bzip2

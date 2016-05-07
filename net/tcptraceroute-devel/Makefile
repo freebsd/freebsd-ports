@@ -14,7 +14,7 @@ COMMENT=	Traceroute implementation using TCP packets
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 CONFLICTS=	tcptraceroute-1.4*
 
@@ -25,9 +25,7 @@ OPTIONS_DEFINE=	DOCS
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-
-CONFIGURE_ARGS=	--with-libpcap=/usr --bindir=${PREFIX}/sbin
+CONFIGURE_ARGS=	--with-libnet=${LOCALBASE} --with-libpcap=/usr --bindir=${PREFIX}/sbin
 
 post-install:
 	@${CHMOD} u+s ${STAGEDIR}${PREFIX}/sbin/tcptraceroute

@@ -11,12 +11,11 @@ COMMENT=	Faraday response parser using MultiJson
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-faraday_middleware>0:${PORTSDIR}/www/rubygem-faraday_middleware \
-		rubygem-multi_json>0:${PORTSDIR}/devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-faraday_middleware>0:www/rubygem-faraday_middleware \
+		rubygem-multi_json>0:devel/rubygem-multi_json
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

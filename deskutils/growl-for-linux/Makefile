@@ -11,9 +11,9 @@ COMMENT=	Notification system compatible with Growl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	desktop-file-install:${PORTSDIR}/devel/desktop-file-utils
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libdbus-glib-1.so:devel/dbus-glib
 
 CONFIGURE_ARGS=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
@@ -23,19 +23,18 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 LIBNOTIFY_DESC=		Use notify-osd for libnotify display plugin
-LIBNOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
-LIBNOTIFY_RUN_DEPENDS=	notify-osd>=0.9.29_3:${PORTSDIR}/deskutils/notify-osd
+LIBNOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+LIBNOTIFY_RUN_DEPENDS=	notify-osd>=0.9.29_3:deskutils/notify-osd
 
 OPTIONS_DEFAULT=LIBNOTIFY
 OPTIONS_DEFINE=	LIBNOTIFY
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,^${PREFIX}/,,}
 
-USES=		autoreconf compiler:nestedfct libtool pkgconfig
+USES=		autoreconf compiler:nestedfct libtool pkgconfig sqlite:3
 USE_GITHUB=	yes
 USE_GNOME=	gtk20
 USE_OPENSSL=	yes
-USE_SQLITE=	3
 
 post-patch:
 	@${REINPLACE_CMD} '/^gol_LDADD =/s/$$/ -lgmodule-2.0/' \

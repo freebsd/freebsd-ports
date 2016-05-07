@@ -13,9 +13,9 @@ COMMENT=	Tool designed to simplify the creation and maintenance of programs
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libguile-2.0.so:lang/guile2
 
 USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:xz
 USE_PERL5=	build

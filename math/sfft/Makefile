@@ -14,7 +14,7 @@ COMMENT=	Optimized Sparse Fast Fourier Transform
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USES=		uidfix zip
 USE_GCC=	yes
@@ -49,7 +49,7 @@ appropriately
 
 LIBM=	-lm
 .if ${OSVERSION} < 1000034
-LIB_DEPENDS+=	libmissing.so:${PORTSDIR}/math/libmissing
+LIB_DEPENDS+=	libmissing.so:math/libmissing
 LIBM+=		-lmissing
 .endif
 

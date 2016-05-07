@@ -9,8 +9,8 @@ CATEGORIES=	www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR classes providing an easy way to perform HTTP requests
 
-BUILD_DEPENDS=	${PEARDIR}/Net/URL2.php:${PORTSDIR}/net/pear-Net_URL2
-RUN_DEPENDS=	${PEARDIR}/Net/URL2.php:${PORTSDIR}/net/pear-Net_URL2
+BUILD_DEPENDS=	${PEARDIR}/Net/URL2.php:net/pear-Net_URL2
+RUN_DEPENDS=	${PEARDIR}/Net/URL2.php:net/pear-Net_URL2
 
 OPTIONS_DEFINE=	CURL FILEINFO ZLIB
 CURL_DESC=	PHP CURL extension support

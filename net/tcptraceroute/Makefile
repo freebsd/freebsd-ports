@@ -12,14 +12,14 @@ COMMENT=	Traceroute implementation using TCP packets
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 OPTIONS_DEFINE=	DOCS
 
 PORTSCOUT=	limit:^[0-9]
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake localbase
 
 PORTDOCS=	*
 

@@ -1,4 +1,7 @@
-Mpv is a free and open-source general-purpose video player.
 Mpv is based on the MPlayer and mplayer2 projects which it greatly improves.
+It supports a wide variety of video file formats, audio and video codecs, and
+subtitle types. Special input URL types are available to read input from
+a variety of sources other than disk files. Depending on platform, a variety of
+different video and audio output methods are supported.
 
 WWW: http://mpv.io/

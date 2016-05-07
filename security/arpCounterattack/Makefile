@@ -11,7 +11,7 @@ MASTER_SITES=	http://isis.poly.edu/~bk/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detects and remedies ARP attacks
 
-LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	libdnet.so:net/libdnet
 
 USES=		compiler:c++11-lib tar:tbz
 USE_CSTD=	c++11

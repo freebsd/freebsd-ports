@@ -12,11 +12,11 @@ COMMENT=	Write Perl subroutines and classes in C++
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Inline>=0.78:${PORTSDIR}/devel/p5-Inline \
-		p5-Inline-C>=0.67:${PORTSDIR}/devel/p5-Inline-C \
-		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
+BUILD_DEPENDS=	p5-Inline>=0.78:devel/p5-Inline \
+		p5-Inline-C>=0.67:devel/p5-Inline-C \
+		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-ExtUtils-CppGuess>=0.11:${PORTSDIR}/devel/p5-ExtUtils-CppGuess
+BUILD_DEPENDS+=	p5-ExtUtils-CppGuess>=0.11:devel/p5-ExtUtils-CppGuess
 
 NO_ARCH=	yes
 USES=		perl5

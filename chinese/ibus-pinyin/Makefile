@@ -12,11 +12,11 @@ COMMENT=	PinYin engine for IBus
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg \
-		${LOCALBASE}/share/gir-1.0/IBus-1.0.gir:${PORTSDIR}/textproc/ibus
-LIB_DEPENDS=	libpyzy-1.0.so:${PORTSDIR}/chinese/pyzy \
-		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg \
+		${LOCALBASE}/share/gir-1.0/IBus-1.0.gir:textproc/ibus
+LIB_DEPENDS=	libpyzy-1.0.so:chinese/pyzy \
+		libibus-1.0.so:textproc/ibus \
+		libsqlite3.so:databases/sqlite3
 
 USES=		compiler:c++11-lib gmake pkgconfig python
 GNU_CONFIGURE=	yes

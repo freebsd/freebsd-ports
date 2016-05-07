@@ -14,12 +14,12 @@ COMMENT=	Set of Perl scripts for using an Apple iPod
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	p5-MP3-Info>=0:audio/p5-MP3-Info \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-TimeDate>=0:devel/p5-TimeDate \
+		p5-Unicode-String>=0:converters/p5-Unicode-String \
+		p5-libwww>=0:www/p5-libwww \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 INFO=		gnupod
@@ -34,12 +34,12 @@ CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 
 OPTIONS_DEFINE=	FLAC VORBIS DOCS
 
-FLAC_BUILD_DEPENDS=	p5-Audio-FLAC-Header>=0:${PORTSDIR}/audio/p5-Audio-FLAC-Header
-FLAC_RUN_DEPENDS=	p5-Audio-FLAC-Header>=0:${PORTSDIR}/audio/p5-Audio-FLAC-Header
-VORBIS_BUILD_DEPENDS=	p5-Ogg-Vorbis-Header-PurePerl>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl \
-			oggdec:${PORTSDIR}/audio/vorbis-tools
-VORBIS_RUN_DEPENDS=	p5-Ogg-Vorbis-Header-PurePerl>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl \
-			oggdec:${PORTSDIR}/audio/vorbis-tools
+FLAC_BUILD_DEPENDS=	p5-Audio-FLAC-Header>=0:audio/p5-Audio-FLAC-Header
+FLAC_RUN_DEPENDS=	p5-Audio-FLAC-Header>=0:audio/p5-Audio-FLAC-Header
+VORBIS_BUILD_DEPENDS=	p5-Ogg-Vorbis-Header-PurePerl>=0:audio/p5-Ogg-Vorbis-Header-PurePerl \
+			oggdec:audio/vorbis-tools
+VORBIS_RUN_DEPENDS=	p5-Ogg-Vorbis-Header-PurePerl>=0:audio/p5-Ogg-Vorbis-Header-PurePerl \
+			oggdec:audio/vorbis-tools
 
 post-install:
 	# It tries to guess where it should install it's Perl modules, gets it

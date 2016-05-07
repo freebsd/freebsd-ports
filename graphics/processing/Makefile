@@ -13,8 +13,8 @@ COMMENT=	Programming environment for images, animation, and interactions
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	jikes>=1.22:${PORTSDIR}/java/jikes \
-		${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:${PORTSDIR}/comms/rxtx
+RUN_DEPENDS=	jikes>=1.22:java/jikes \
+		${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx
 
 USES=		tar:tgz
 USE_JAVA=	1.6+

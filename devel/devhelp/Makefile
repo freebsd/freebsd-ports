@@ -10,7 +10,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Developer help browser for GNOME 3
 
-LIB_DEPENDS=	libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3
+LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 PORTSCOUT=	limitw:1,even
 

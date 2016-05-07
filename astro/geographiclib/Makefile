@@ -16,7 +16,7 @@ COMMENT=	Library for geographic projections
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_compile_flag.m4:${PORTSDIR}/devel/autoconf-archive
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_compile_flag.m4:devel/autoconf-archive
 
 USES=		autoreconf compiler:c++11-lang gmake libtool python
 PORTDOCS=	*
@@ -34,7 +34,7 @@ OPTIONS_DEFAULT=	DOXYGEN PERL\
 PERL_DESC=	Build documentation with pod2man and pod2html
 OPTIONS_GROUP=	DATASETS
 OPTIONS_SUB=	yes
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_DOXYGEN=
 PERL_USE=	PERL5=build
 PERL_USES=	perl5

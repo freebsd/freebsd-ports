@@ -3,7 +3,7 @@
 
 PORTNAME=	aws
 PORTVERSION=	3.3.0.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -13,13 +13,13 @@ COMMENT=	Adacore Ada Web Server and framework
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild \
-		templates_parser>11:${PORTSDIR}/textproc/templates_parser \
-		xmlada>=4.4:${PORTSDIR}/textproc/xmlada \
-		asis>=2013:${PORTSDIR}/lang/asis \
-		gnatpython>=20101207:${PORTSDIR}/devel/gnatpython
-RUN_DEPENDS=	templates_parser>11:${PORTSDIR}/textproc/templates_parser \
-		xmlada>=4.4:${PORTSDIR}/textproc/xmlada
+BUILD_DEPENDS=	gprbuild:devel/gprbuild \
+		templates_parser>11:textproc/templates_parser \
+		xmlada>=4.4:textproc/xmlada \
+		asis>=2013:lang/asis \
+		gnatpython>=20101207:devel/gnatpython
+RUN_DEPENDS=	templates_parser>11:textproc/templates_parser \
+		xmlada>=4.4:textproc/xmlada
 
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
@@ -40,7 +40,7 @@ OPTIONS_DEFINE=		IP6 DEBUG LDAP SHARED DOCS
 OPTIONS_DEFAULT=	SSL SHARED
 OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 OPTIONS_SINGLE_Secure-Socket-Layer= SSL GNUTLS NOSSL
 
 NOSSL_DESC=		Disable SSL support
@@ -74,7 +74,7 @@ LINK_SSL=
 .endif
 .if ${PORT_OPTIONS:MGNUTLS}
 CONF_ARGS+=	SOCKET=gnutls
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 LINK_TLS=
 .endif
 .if ${PORT_OPTIONS:MNOSSL}
@@ -134,7 +134,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|@ADDITIONAL_RPATH@|${ADDL_RPATH}|' \
 	    -e 's|@PREFIX@|${LOCALBASE}|g' \
-	   	${WRKSRC}/aws.gpr \
+		${WRKSRC}/aws.gpr \
 		${WRKSRC}/src/src.gpr \
 		${WRKSRC}/include/include.gpr
 	@${SED} -e 's|@PREFIX@|${LOCALBASE}|g' ${FILESDIR}/temparse.gpr.in \

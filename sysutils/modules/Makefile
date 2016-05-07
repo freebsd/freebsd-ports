@@ -11,7 +11,7 @@ COMMENT=	Dynamic modification of a user environment
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	libtcl84.so:lang/tcl84
 
 TCL_DVER?=	8.4
 TCL_VER=	${TCL_DVER:S/.//}

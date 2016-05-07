@@ -9,20 +9,17 @@ MASTER_SITES=	GHC http://mirrors.rit.edu/zi/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake tar:tgz tcl
+USES=		gmake tar:tgz tcl:tea
 USE_GITHUB=	yes
 GH_PROJECT=	tdom
 
-HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	../configure
-
 pre-configure:
-	${RM} -f ${WRKSRC}/../generic/domalloc.?
+	${RM} -f ${WRKSRC}/generic/domalloc.?
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
@@ -34,10 +31,7 @@ HTMLDOCS=	category-index.html dom.html domDoc.html domNode.html \
 post-build test:
 	${SETENV} LANG=C ${MAKE} -C ${WRKSRC} test
 
-CONFIGURE_ARGS+=--enable-threads --disable-tdomalloc \
-		--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR} \
-		--prefix=${PREFIX} --exec-prefix=${PREFIX}
+CONFIGURE_ARGS+=--enable-threads --disable-tdomalloc
 
 post-install:
 	${CHMOD} 755 ${STAGEDIR}${TDOMBASE}
@@ -46,10 +40,10 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for FILE in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/../${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 .endfor
 .for FILE in ${HTMLDOCS}
-	${INSTALL_DATA} ${WRKSRC}/../doc/${FILE} ${STAGEDIR}${DOCSDIR}/html/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}/html/${FILE}
 .endfor
 
 .include <bsd.port.mk>

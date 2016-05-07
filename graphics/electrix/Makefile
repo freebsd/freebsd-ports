@@ -22,16 +22,16 @@ OPTIONS_DEFINE=		DBUS NLS PDF PS
 OPTIONS_DEFAULT=	DBUS PDF
 OPTIONS_SUB=		yes
 
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 DBUS_CONFIGURE_OFF=	--disable-dbus
 
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-PDF_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 PDF_CONFIGURE_OFF=	--disable-pdf
 
-PS_LIB_DEPENDS=		libspectre.so:${PORTSDIR}/print/libspectre
+PS_LIB_DEPENDS=		libspectre.so:print/libspectre
 PS_CONFIGURE_OFF=	--disable-ps
 
 post-install:

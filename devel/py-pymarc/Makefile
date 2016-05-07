@@ -13,7 +13,7 @@ COMMENT=	Read Write And Modify MARC Bibliographic Data
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
 
 NO_ARCH=	yes
 USES=		python

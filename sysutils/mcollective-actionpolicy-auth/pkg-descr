@@ -1,0 +1,5 @@
+This is a plugin that provides fine grained action level authorization for
+agents. Any MCollective agent plugins based on SimpleRPC can be restricted with
+authorization plugins like this one.
+
+WWW: https://github.com/puppetlabs/mcollective-actionpolicy-auth

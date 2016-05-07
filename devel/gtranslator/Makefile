@@ -11,14 +11,14 @@ COMMENT=	GNOME application for creating GNU gettext translation files
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		itstool:${PORTSDIR}/textproc/itstool \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
-		libgdl-3.so:${PORTSDIR}/x11-toolkits/gdl \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
-RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		itstool:textproc/itstool \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
+		libgdl-3.so:x11-toolkits/gdl \
+		libjson-glib-1.0.so:devel/json-glib
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 USE_GNOME=	intlhack gnomeprefix gtk30 libgda5 gtksourceview3 libxml2 \
 		introspection:build
@@ -46,9 +46,9 @@ DICT_DESC=	Build dictionary plugin
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDICT}
-BUILD_DEPENDS+=	gnome-dictionary>=3.4.0:${PORTSDIR}/deskutils/gnome-dictionary
-LIB_DEPENDS+=	libgdict-1.0.so:${PORTSDIR}/deskutils/gnome-dictionary
-RUN_DEPENDS+=	gnome-dictionary>=3.4.0:${PORTSDIR}/deskutils/gnome-dictionary
+BUILD_DEPENDS+=	gnome-dictionary>=3.4.0:deskutils/gnome-dictionary
+LIB_DEPENDS+=	libgdict-1.0.so:deskutils/gnome-dictionary
+RUN_DEPENDS+=	gnome-dictionary>=3.4.0:deskutils/gnome-dictionary
 GLIB_SCHEMAS+=	org.gnome.gtranslator.plugins.dictionary.gschema.xml
 CONFIGURE_ARGS+=--with-dictionary
 PLIST_SUB+=	DICT=""

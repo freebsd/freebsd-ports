@@ -3,6 +3,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	${RELEASE}
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 PKGNAMESUFFIX=	-ada
@@ -12,7 +13,7 @@ COMMENT=	Ada bindings for PLplot
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libplplot.so:${PORTSDIR}/math/plplot
+LIB_DEPENDS=	libplplot.so:math/plplot
 
 USES=		ada
 

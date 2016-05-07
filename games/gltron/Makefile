@@ -14,7 +14,7 @@ COMMENT=	3D worm game for two players for X Window System
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake
 USE_GL=		gl

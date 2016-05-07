@@ -15,9 +15,9 @@ COMMENT=	Automatic Dia XML - from Source Code and Data
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason
+BUILD_DEPENDS=	p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-HTML-Mason>=0:www/p5-HTML-Mason
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
@@ -32,9 +32,9 @@ OPTIONS_DEFAULT=	GRAPHVIZ SPRINGGRAPH VCG
 SPRINGGRAPH_DESC=	SpringGraph support
 VCG_DESC=		VCG support
 
-GRAPHVIZ_RUN_DEPENDS=	p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
-SPRINGGRAPH_RUN_DEPENDS=	p5-SpringGraph>=0:${PORTSDIR}/graphics/p5-SpringGraph
-VCG_RUN_DEPENDS=	p5-VCG>=0:${PORTSDIR}/graphics/p5-VCG
+GRAPHVIZ_RUN_DEPENDS=	p5-GraphViz>=0:graphics/p5-GraphViz
+SPRINGGRAPH_RUN_DEPENDS=	p5-SpringGraph>=0:graphics/p5-SpringGraph
+VCG_RUN_DEPENDS=	p5-VCG>=0:graphics/p5-VCG
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete

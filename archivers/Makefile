@@ -162,6 +162,7 @@
     SUBDIR += ppunpack
     SUBDIR += pxz
     SUBDIR += py-attic
+    SUBDIR += py-borgbackup
     SUBDIR += py-bz2file
     SUBDIR += py-libarchive-c
     SUBDIR += py-librtfcomp
@@ -170,6 +171,8 @@
     SUBDIR += py-pyliblzma
     SUBDIR += py-python-snappy
     SUBDIR += py-rarfile
+    SUBDIR += py-rcssmin
+    SUBDIR += py-rjsmin
     SUBDIR += py-warctools
     SUBDIR += py3-libarchive-c
     SUBDIR += qpress
@@ -186,6 +189,7 @@
     SUBDIR += rubygem-bzip2-ruby
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
+    SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip2
     SUBDIR += rvm

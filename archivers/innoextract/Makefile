@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	innoextract
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	archivers
 MASTER_SITES=	http://constexpr.org/innoextract/files/
 
@@ -12,10 +12,12 @@ COMMENT=	Program to extract Inno Setup files
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
+		libboost_filesystem.so:devel/boost-libs \
+		libboost_system.so:devel/boost-libs \
+		libboost_program_options.so:devel/boost-libs
 
 USES=		cmake iconv
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man

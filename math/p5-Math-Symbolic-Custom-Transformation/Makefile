@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Transform Math::Symbolic trees
 
-RUN_DEPENDS=	p5-Math-Symbolic>=0.507:${PORTSDIR}/math/p5-Math-Symbolic \
-		p5-Math-Symbolic-Custom-Pattern>=1.20:${PORTSDIR}/math/p5-Math-Symbolic-Custom-Pattern
+RUN_DEPENDS=	p5-Math-Symbolic>=0.507:math/p5-Math-Symbolic \
+		p5-Math-Symbolic-Custom-Pattern>=1.20:math/p5-Math-Symbolic-Custom-Pattern
 
 USES=		perl5
 USE_PERL5=	configure

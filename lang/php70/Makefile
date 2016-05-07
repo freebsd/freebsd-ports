@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php70
-PORTVERSION=	7.0.4
+PORTVERSION=	7.0.6
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -13,6 +13,8 @@ COMMENT=	PHP Scripting Language
 
 LICENSE=	PHP301
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:bzip2 cpe
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
@@ -22,7 +24,7 @@ USE_AUTOTOOLS=	autoconf
 #USES+=		autoreconf gmake
 #GNU_CONFIGURE=	yes
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFIGURE_ARGS+=--with-layout=GNU \
 		--localstatedir=/var \

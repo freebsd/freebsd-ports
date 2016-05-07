@@ -11,11 +11,10 @@ COMMENT=	Deferred for Delayer
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-delayer>=0:${PORTSDIR}/devel/rubygem-delayer
+RUN_DEPENDS=	rubygem-delayer>=0:devel/rubygem-delayer
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

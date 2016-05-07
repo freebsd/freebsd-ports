@@ -7,6 +7,7 @@
 # no problems encountered so far.  Thanks.
 PORTNAME=	hadoop
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/common/stable \
 		LOCAL/demon/:maven \
@@ -23,19 +24,21 @@ COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3 \
-		cmake:${PORTSDIR}/devel/cmake \
-		${LOCALBASE}/protobuf25/bin/protoc:${PORTSDIR}/devel/protobuf25
-LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		ssid:${PORTSDIR}/sysutils/ssid
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3 \
+		cmake:devel/cmake \
+		${LOCALBASE}/protobuf25/bin/protoc:devel/protobuf25
+LIB_DEPENDS=	libsnappy.so:archivers/snappy
+RUN_DEPENDS=	bash:shells/bash \
+		ssid:sysutils/ssid
+
+BROKEN_FreeBSD_9=	fails to build
 
 CONFLICTS_INSTALL=	hadoop-1*
 
 USES=		cpe shebangfix
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.7+
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/sbin/httpfs.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/libexec/httpfs-config.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/conf/httpfs-env.sh hadoop-common-project/hadoop-kms/src/main/sbin/kms.sh hadoop-common-project/hadoop-kms/src/main/libexec/kms-config.sh hadoop-common-project/hadoop-kms/src/main/conf/kms-env.sh hadoop-tools/hadoop-sls/src/main/bin/rumen2sls.sh hadoop-tools/hadoop-sls/src/main/bin/slsrun.sh
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} HADOOP_PROTOC_PATH=${LOCALBASE}/protobuf25/bin/protoc

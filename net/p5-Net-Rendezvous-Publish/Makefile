@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	Publish Rendezvous services
 
-BUILD_DEPENDS=	p5-Class-Accessor-Lvalue>=0:${PORTSDIR}/devel/p5-Class-Accessor-Lvalue
+BUILD_DEPENDS=	p5-Class-Accessor-Lvalue>=0:devel/p5-Class-Accessor-Lvalue
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

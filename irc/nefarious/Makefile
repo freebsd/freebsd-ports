@@ -12,8 +12,8 @@ COMMENT=	IRC server used by evilnet based off of Undernet's ircu
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes

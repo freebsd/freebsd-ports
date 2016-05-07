@@ -39,7 +39,7 @@ PCRE_CONFIGURE_ENABLE=	pcre
 
 PORTS_PCAP_CONFIGURE_ON=	--with-pcap-includes=${LOCALBASE}/include
 PORTS_PCAP_CONFIGURE_OFF=	--with-pcap-includes=/usr/include
-PORTS_PCAP_BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+PORTS_PCAP_BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:net/libpcap
 
 .include <bsd.port.options.mk>
 

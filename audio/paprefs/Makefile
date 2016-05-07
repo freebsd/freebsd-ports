@@ -9,8 +9,8 @@ MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK configuration dialog for PulseAudio
 
-LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS=	libglademm-2.4.so:devel/libglademm24 \
+		libpulse.so:audio/pulseaudio
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	PK NLS
 OPTIONS_SUB=	yes
 PK_DESC=	Force dependency on PackageKit
 
-PK_LIB_DEPENDS=	libpackagekit-glib2.so:${PORTSDIR}/ports-mgmt/packagekit
+PK_LIB_DEPENDS=	libpackagekit-glib2.so:ports-mgmt/packagekit
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls

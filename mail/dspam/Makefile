@@ -7,7 +7,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,13 +16,16 @@ COMMENT=	Bayesian spam filter
 
 LICENSE=	AGPLv3
 
+USERS=		dspam
+GROUPS=		dspam
+
 OPTIONS_SUB=	yes
 
 OPTIONS_DEFINE=	SYSLOG DEBUG VERBOSE_DEBUG BNR_DEBUG PREF_EXT DAEMON \
 		CLAMAV CLAMAV_LOCAL EXTERNAL_LOOKUP \
 		USER_HOMEDIR TRUSTED_USERS VIRT_USERS LONG_USERNAMES \
 		LARGE_SCALE DOMAIN_SCALE NICESENDMAIL POSTFIX_MBC \
-		QMAIL WEBUI LIGHTTPD DOCS EXAMPLES
+		QMAIL WEBUI LIGHTTPD DOCS EXAMPLES SETUID
 
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	HASH MYSQL MYSQL_COMPRESS MYSQL_LOCAL \
@@ -70,6 +73,7 @@ POSTFIX_MBC_DESC=	Dspam as mailbox_command in Postfix
 QMAIL_DESC=		Play nice with Qmail mail server
 WEBUI_DESC=		Install WebUI (RUN_DEPEND on Apache/Lighttpd)
 LIGHTTPD_DESC=		RUN_DEPEND on Lighttpd instead of Apache
+SETUID_DESC=		Run as root:mail with setuid (insecure)
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5 libtool shebangfix
@@ -97,13 +101,24 @@ CONFLICTS=	dspam-devel-[0-9]*
 
 SIGNATURE_LIFE?=	15
 
+.include <bsd.port.options.mk>
+
 _VAR_DIR=	/var
+
+RUN_DIR?=	${_VAR_DIR}/run/dspam
+
 LOG_DIR?=	${_VAR_DIR}/log/dspam
 LOGFILE?=	${LOG_DIR}/dspam.log
 
-DSPAM_MODE?=	4510
+.if ${PORT_OPTIONS:MSETUID}
 DSPAM_OWNER?=	root
 DSPAM_GROUP?=	mail
+DSPAM_MODE?=	4510
+.else
+DSPAM_OWNER?=	${USERS}
+DSPAM_GROUP?=	${GROUPS}
+DSPAM_MODE?=	0555
+.endif
 
 DSPAM_ETC?=	${LOCALBASE}/etc
 DSPAM_HOME?=	${_VAR_DIR}/db/dspam
@@ -124,6 +139,7 @@ PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME} \
 CONFIGURE_ARGS+=	--sysconfdir=${DSPAM_ETC}
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
+PLIST_SUB+=	RUN_DIR=${RUN_DIR}
 
 CONFIGURE_ARGS+=	--with-dspam-home=${DSPAM_HOME}
 CONFIGURE_ARGS+=	--with-dspam-home-owner=${DSPAM_HOME_OWNER}
@@ -148,7 +164,6 @@ _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g' \
 		-e '/^%%FreeBSD/D'
 
-.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--enable-syslog
@@ -178,6 +193,8 @@ CONFIGURE_ARGS+=	--enable-daemon
 USE_RC_SUBR=	${PORTNAME}
 _SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
 SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
+SUB_LIST+=	DSPAM_OWNER=${DSPAM_OWNER}
+SUB_LIST+=	DSPAM_GROUP=${DSPAM_GROUP}
 .else
 _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 .endif
@@ -185,7 +202,7 @@ _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 .if ${PORT_OPTIONS:MCLAMAV}
 CONFIGURE_ARGS+=	--enable-clamav
 .	if ${PORT_OPTIONS:MCLAMAV_LOCAL}
-RUN_DEPENDS+=	clamav>=0:${PORTSDIR}/security/clamav
+RUN_DEPENDS+=	clamav>=0:security/clamav
 SUB_LIST+=	CLAMD=clamd
 .	else
 SUB_LIST+=	CLAMD=
@@ -215,20 +232,24 @@ _DBDRV:=	${_DBDRV:S/pgsql_drv,//}
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-USE_SQLITE=	3
+USES+=		sqlite:3
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
+PLIST_SUB+=	SQLITE3=""
 .else
 _DBDRV:=	${_DBDRV:S/sqlite3_drv,//}
+PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE2}
-USE_SQLITE=	2
+USES+=		sqlite:2
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
+PLIST_SUB+=	SQLITE2=""
 .else
 _DBDRV:=	${_DBDRV:S/sqlite_drv,//}
+PLIST_SUB+=	SQLITE2="@comment "
 .endif
 
-.if defined(USE_SQLITE)
+.if ${USES:Msqlite*}
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
 PLIST_SUB+=	SQLITE=""
@@ -246,7 +267,7 @@ PLIST_SUB+=	HASH="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 PLIST_SUB+=	MYSQL=""
@@ -255,7 +276,7 @@ _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 CONFIGURE_ARGS+=	--enable-client-compression
 .	endif
 .	if ${PORT_OPTIONS:MMYSQL_LOCAL}
-USE_MYSQL=	server
+WANT_MYSQL=	server
 SUB_LIST+=	MYSQL=mysql
 .	else
 SUB_LIST+=	MYSQL=
@@ -272,6 +293,14 @@ CONFIGURE_ARGS+=	--with-storage-driver=${_DBDRV:S/,$//}
 PLIST_SUB+=	DYNAMIC=""
 .else
 PLIST_SUB+=	DYNAMIC="@comment "
+.endif
+
+.if %{PORT_OPTIONS:MSETUID}
+PLIST_SUB+=	SETUID=""
+PLIST_SUB+=	NOSETUID="@comment "
+.else
+PLIST_SUB+=	SETUID="@comment "
+PLIST_SUB+=	NOSETUID=""
 .endif
 
 .if ${PORT_OPTIONS:MEXTERNAL_LOOKUP}
@@ -302,22 +331,22 @@ CONFIGURE_ARGS+=	--enable-domain-scale
 .endif
 
 .if ${PORT_OPTIONS:MCYRUS23}
-RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd23
+RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:mail/cyrus-imapd23
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
 .endif
 
 .if ${PORT_OPTIONS:MCYRUS24}
-RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd24
+RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:mail/cyrus-imapd24
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT1}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/deliver:${PORTSDIR}/mail/dovecot
+RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/deliver:mail/dovecot
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/libexec/dovecot/deliver'
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT2}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/dovecot-lda:${PORTSDIR}/mail/dovecot2
+RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/dovecot-lda:mail/dovecot2
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/libexec/dovecot/dovecot-lda'
 .endif
 
@@ -327,22 +356,22 @@ _EXIM_EXT=	-mysql
 .	elif ${PORT_OPTIONS:MPGSQL}
 _EXIM_EXT=	-postgresql
 .	endif
-RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim${_EXIM_EXT}
+RUN_DEPENDS+=	exim:mail/exim${_EXIM_EXT}
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/sbin/exim'
 .endif
 
 .if ${PORT_OPTIONS:MMAILDROP}
-RUN_DEPENDS+=	maildrop:${PORTSDIR}/mail/maildrop
+RUN_DEPENDS+=	maildrop:mail/maildrop
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/maildrop'
 .endif
 
 .if ${PORT_OPTIONS:MPROCMAIL}
-RUN_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
+RUN_DEPENDS+=	procmail:mail/procmail
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/procmail'
 .endif
 
 .if ${PORT_OPTIONS:MSAFECAT}
-RUN_DEPENDS+=	safecat:${PORTSDIR}/sysutils/safecat
+RUN_DEPENDS+=	safecat:sysutils/safecat
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/safecat tmp new'
 .endif
 
@@ -372,15 +401,15 @@ CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 
 .if ${PORT_OPTIONS:MWEBUI}
 .	if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 .	else
 USE_APACHE_RUN=	22+
 .	endif
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
-RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
-RUN_DEPENDS+=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
-RUN_DEPENDS+=	p5-GD-Graph3d>=0:${PORTSDIR}/graphics/p5-GD-Graph3d
-RUN_DEPENDS+=	p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
+LIB_DEPENDS+=	libgd.so:graphics/gd
+RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD
+RUN_DEPENDS+=	p5-GD-Graph>=0:graphics/p5-GD-Graph
+RUN_DEPENDS+=	p5-GD-Graph3d>=0:graphics/p5-GD-Graph3d
+RUN_DEPENDS+=	p5-GD-TextUtil>=0:graphics/p5-GD-TextUtil
 CONFIGURE_ARGS+=--enable-logging
 CONFIGURE_ARGS+=--enable-user-logging
 PLIST_SUB+=	WebUI=""
@@ -421,6 +450,7 @@ pre-extract:
 	@${ECHO_CMD} "DSPAM_HOME_GROUP=${DSPAM_HOME_GROUP}"
 	@${ECHO_CMD} "DSPAM_HOME_MODE=${DSPAM_HOME_MODE} (default: 0770)"
 	@${ECHO_CMD} "LOG_DIR=${LOG_DIR} (default: ${_VAR_DIR}/log/dspam)"
+	@${ECHO_CMD} "RUN_DIR=${RUN_DIR} (default: ${_VAR_DIR}/run/dspam)"
 .	ifdef(WITHOUT_SYSLOG)
 	@${ECHO_CMD} "LOGFILE=${LOGFILE} (default: ${_VAR_DIR}/log/dspam/dspam.log)"
 .	endif
@@ -448,24 +478,24 @@ post-patch:
 		${WRKSRC}/src/tools/dspam_notify.in
 
 pre-configure:
-.if ${PORT_OPTIONS:MVIRT_USERS} && !( defined(USE_MYSQL) || \
+.if ${PORT_OPTIONS:MVIRT_USERS} && !( ${PORT_OPTIONS:MMYSQL} || \
 	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MHASH} )
 	@${ECHO_CMD} "You need MySQL, POSTGRESQL or HASH for virtual users."
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MPREF_EXT} && !( defined(USE_MYSQL) || \
+.if ${PORT_OPTIONS:MPREF_EXT} && !( ${PORT_OPTIONS:MMYSQL} || \
 	${PORT_OPTIONS:MPGSQL} )
 	@${ECHO_CMD} "You need MySQL or Postgres for preferences extension"
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MDAEMON} && !( defined(USE_MYSQL) || \
+.if ${PORT_OPTIONS:MDAEMON} && !( ${PORT_OPTIONS:MMYSQL} || \
 	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MHASH} )
 	@${ECHO_CMD} "You need MySQL, PostgreSQL or Hash for Daemon mode, because multithreading support is needed"
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MEXTERNAL_LOOKUP} && !( defined(USE_MYSQL) || \
-	${PORT_OPTIONS:MPGSQL} || defined(USE_SQLITE) )
-	@${ECHO_CMD} "You need MySQL, Postgres or SQLITE for EXTERNAL_LOOKUP."
+.if ${PORT_OPTIONS:MEXTERNAL_LOOKUP} && !( ${PORT_OPTIONS:MMYSQL} || \
+	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MSQLITE*} )
+	@${ECHO_CMD} "You need MySQL, Postgres or SQLite for EXTERNAL_LOOKUP."
 	@${FALSE}
 .endif
 .if ${PORT_OPTIONS:MUSER_HOMEDIR} && ${PORT_OPTIONS:MWEBUI}
@@ -490,7 +520,7 @@ post-install:
 		${RM} -R ${STAGEDIR}${PREFIX}/lib/pkgconfig || true
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-.ifdef(USE_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/mysql
 	cd  ${WRKSRC}/src/tools.mysql_drv && \
 		${INSTALL_DATA} mysql_objects-4.1.sql \
@@ -505,7 +535,7 @@ post-install:
 	@cd  ${WRKSRC}/src/tools.pgsql_drv && \
 		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/pgsql
 .endif
-.ifdef(USE_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE*}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sqlite
 	cd ${WRKSRC}/src/tools.sqlite_drv && \
 		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/sqlite
@@ -558,7 +588,8 @@ post-install:
 		${INSTALL_DATA} ${_file}.sample ${STAGEDIR}${DSPAM_HOME}
 .endfor
 
-	@${MKDIR} -m ${DSPAM_HOME_MODE} ${STAGEDIR}${LOG_DIR}
+	@${MKDIR} ${STAGEDIR}${RUN_DIR}
+	@${MKDIR} ${STAGEDIR}${LOG_DIR}
 
 	@${CAT} ${WRKSRC}/README.FreeBSD
 

@@ -11,13 +11,12 @@ COMMENT=	Redis for Ruby on Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-redis-actionpack>=4:${PORTSDIR}/databases/rubygem-redis-actionpack \
-		rubygem-redis-activesupport>=4:${PORTSDIR}/devel/rubygem-redis-activesupport \
-		rubygem-redis-store>=1.1.0:${PORTSDIR}/devel/rubygem-redis-store
+RUN_DEPENDS=	rubygem-redis-actionpack>=4:databases/rubygem-redis-actionpack \
+		rubygem-redis-activesupport>=4:devel/rubygem-redis-activesupport \
+		rubygem-redis-store>=1.1.0:devel/rubygem-redis-store
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

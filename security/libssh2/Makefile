@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libssh2
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
@@ -13,6 +12,7 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	ZLIB
 TRACE_DESC=	Enable debug packet traces
 
 TRACE_CONFIGURE_ENABLE=	debug
-GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 GCRYPT_CONFIGURE_ON=	--with-libgcrypt --without-openssl
 GCRYPT_CONFIGURE_OFF=	--without-libgcrypt --with-openssl
 GCRYPT_CPPFLAGS=	-I${LOCALBASE}/include
@@ -51,5 +51,10 @@ post-patch:
 post-build:
 	@${REINPLACE_CMD} -E -e '/Requires.private:/{s/[[:<:]]zlib[[:>:]]//;s/,,/,/;s/ ,/ /;s/,$$//;}' \
 		${WRKSRC}/libssh2.pc
+
+# allow maintainer to generate MAN3 manpages list (make extract is required before)
+x-generate-man3: extract
+	@(cd ${WRKSRC}/docs && ${LS} -1F *.3 | ${SORT} | ${CUT} -d '/' -f4 \
+		| ${GREP} -v template)
 
 .include <bsd.port.post.mk>

@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}client/GQ%20Unstable/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based LDAP client
 
-LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
 
 OPTIONS_DEFINE=	DND CACHE
 OPTIONS_DEFAULT=	DND CACHE

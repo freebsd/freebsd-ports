@@ -1,8 +1,0 @@
-bin/weathermap
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/overlib_mini.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap-background.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap-overlib.html
-@sample etc/weathermap/weathermap.conf.sample

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zipcodes
-PORTVERSION=	20160229
+PORTVERSION=	20160428
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/kuriyama
 DISTFILES=	ken_all-${PORTVERSION_K}.zip jigyosyo-${PORTVERSION_J}.zip
@@ -9,7 +9,7 @@ DISTFILES=	ken_all-${PORTVERSION_K}.zip jigyosyo-${PORTVERSION_J}.zip
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	nkf:japanese/nkf
 
 NO_WRKSUBDIR=	yes
 

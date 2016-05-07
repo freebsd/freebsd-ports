@@ -3,7 +3,7 @@
 
 PORTNAME=	ecs
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://code-saturne.org/releases/
 
@@ -12,11 +12,11 @@ COMMENT=	Code_Saturne Preprocessor
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
-LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med	\
-		libbft.so:${PORTSDIR}/science/bft	\
-		libhdf5.so:${PORTSDIR}/science/hdf5	\
-		libcgns.so:${PORTSDIR}/science/cgnslib
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:cad/scotch
+LIB_DEPENDS=	libmed.so:french/med	\
+		libbft.so:science/bft	\
+		libhdf5.so:science/hdf5	\
+		libcgns.so:science/cgnslib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -42,7 +42,7 @@ NLS_USES=	gettext iconv
 NLS_CONFIGURE_ENABLE=	nls
 
 DOCS_USE=	TEX=tex:build
-DOCS_BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
+DOCS_BUILD_DEPENDS=	fig2dev:print/transfig
 
 .include <bsd.port.options.mk>
 
@@ -59,10 +59,10 @@ MAKE_JOBS_UNSAFE=yes
 
 .if exists(${LOCALBASE}/bin/graphchk)
 # The regular metis is present, so we cannot depend on metis-edf
-LIB_DEPENDS+=	libmetis.so.1:${PORTSDIR}/math/metis4
+LIB_DEPENDS+=	libmetis.so.1:math/metis4
 .else
 # Prefer metis-edf to avoid conflict with Code_Aster
-LIB_DEPENDS+=	libmetis.so.0:${PORTSDIR}/math/metis-edf
+LIB_DEPENDS+=	libmetis.so.0:math/metis-edf
 .endif
 
 pre-configure:

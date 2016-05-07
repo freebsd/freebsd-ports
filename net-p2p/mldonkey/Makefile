@@ -70,8 +70,8 @@ PLIST_SUB+=	CORE="@comment " GUI="" GUICORE="@comment "
 .endif # ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MCORE}
 
 .if ${PORT_OPTIONS:MGUI}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/lablrsvg.cma:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-LIB_DEPENDS+=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
+BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/lablrsvg.cma:x11-toolkits/ocaml-lablgtk2
+LIB_DEPENDS+=	librsvg-2.so:graphics/librsvg2
 
 CONFIGURE_ARGS+=--enable-gui=newgui2
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
@@ -83,7 +83,7 @@ USE_RC_SUBR=	mlnet
 SUB_LIST+=	SH=${SH:Q}
 
 . if ${PORT_OPTIONS:MGD}
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:graphics/gd
 . else
 CONFIGURE_ARGS+=--disable-gd
 . endif

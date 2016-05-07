@@ -13,10 +13,12 @@ COMMENT=	High-throughput computing on distributively owned resources
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
-LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
+		libpcre.so:devel/pcre \
+		libcurl.so:ftp/curl \
+		libboost_python.so:devel/boost-python-libs
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes

@@ -1,8 +1,10 @@
 bin/honggfuzz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalfuzzers/lowBytesIncrease.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalfuzzers/o20.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalfuzzers/rangeFuzz.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/inputfiles/badcode1.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run-honggfuzz-on-badcode1-with-externalfuzzer.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run-honggfuzz-on-badcode1.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/targets/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/targets/badcode1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/targets/badcode2.c

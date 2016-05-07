@@ -1,6 +1,6 @@
 --- components/storage_monitor/storage_monitor_freebsd.cc.orig	1970-01-01 01:00:00.000000000 +0100
 +++ components/storage_monitor/storage_monitor_freebsd.cc	2015-04-19 19:38:05.000000000 +0200
-@@ -0,0 +1,102 @@
+@@ -0,0 +1,101 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -13,7 +13,6 @@
 +
 +#include <list>
 +
-+#include "base/basictypes.h"
 +#include "base/bind.h"
 +#include "base/metrics/histogram.h"
 +#include "base/process/kill.h"
@@ -64,7 +63,7 @@
 +  if (!process.WaitForExitWithTimeout(base::TimeDelta::FromMilliseconds(3000),
 +                                      &exit_code)) {
 +    process.Terminate(-1, false);
-+    base::EnsureProcessTerminated(process.Pass());
++    base::EnsureProcessTerminated(std::move(process));
 +    return StorageMonitor::EJECT_FAILURE;
 +  }
 +

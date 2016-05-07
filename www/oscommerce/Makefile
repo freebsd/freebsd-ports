@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	oscommerce
-DISTVERSION=	2.3.3.4
-PORTREVISION=	2
+DISTVERSION=	2.3.4
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.oscommerce.com/files/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Full-featured open source e-commerce system
+
+BROKEN_powerpc64=	Does not build
 
 USES=		cpe zip
 USE_PHP=	mysql session pcre gd curl openssl
@@ -24,10 +25,12 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR}
-	${CP} -R ${WRKSRC}/catalog ${STAGEDIR}/${WWWDIR}
+	@cd ${WRKSRC}/catalog && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

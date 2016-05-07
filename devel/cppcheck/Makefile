@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.72
+PORTVERSION=	1.73
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	Static analysis of C/C++ code
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtinyxml2.so:${PORTSDIR}/textproc/tinyxml2
+LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 
 USES=		compiler:c++11-lib execinfo gmake tar:bzip2
 USE_CXXSTD=	c++11
@@ -20,7 +20,7 @@ USE_CXXSTD=	c++11
 ALL_TARGET=	cppcheck
 TEST_TARGET=	test
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
-MAKE_ENV+=	TINYXML=-ltinyxml2 CFGDIR="${DATADIR}/cfg"
+MAKE_ENV=	TINYXML=-ltinyxml2 CFGDIR="${DATADIR}/cfg"
 
 PLIST_FILES=	bin/cppcheck bin/cppcheck-htmlreport
 PORTDATA=	*
@@ -32,15 +32,15 @@ MATCHCOMPILER_DESC=	Build-time optimizations via Python
 RULES_DESC=		User-defined rule support (requires PCRE)
 
 MANPAGES_ALL_TARGET=	man
-MANPAGES_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 MANPAGES_MAKE_ENV=	DB2MAN="${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl"
 MANPAGES_PLIST_FILES=	man/man1/cppcheck.1.gz
 
 MATCHCOMPILER_MAKE_ENV=	SRCDIR=build
 MATCHCOMPILER_USES=	python:2,build
 
-RULES_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+RULES_LIB_DEPENDS=	libpcre.so:devel/pcre
 RULES_MAKE_ENV=		HAVE_RULES=yes
 
 post-patch:
@@ -58,11 +58,11 @@ post-patch-MATCHCOMPILER-on:
 
 post-patch-RULES-on:
 	@${REINPLACE_CMD} \
-	-e '\|CXXFLAGS +=| \
-	s| -DTIXML_USE_STL $$(shell pcre-config --cflags)||' \
-	-e '\|$$(SRCDIR)/cppcheck.cpp| \
-	s|$${INCLUDE_FOR_LIB}|& $$(shell pcre-config --cflags)|' \
-			${WRKSRC}/Makefile
+		-e '\|CXXFLAGS +=| \
+			s| -DTIXML_USE_STL $$(shell pcre-config --cflags)||' \
+		-e '\|$$(SRCDIR)/cppcheck.cpp| \
+			s|$${INCLUDE_FOR_LIB}|& $$(shell pcre-config --cflags)|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${STAGEDIR}${PREFIX}/bin

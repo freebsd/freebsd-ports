@@ -15,10 +15,10 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PKGNAMEPREFIX}scipy>=0.7.0:${PORTSDIR}/science/py-scipy \
-		${PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PKGNAMEPREFIX}pyfits>=1.1:${PORTSDIR}/astro/py-pyfits \
-		${PKGNAMEPREFIX}matplotlib>=0.98:${PORTSDIR}/math/py-matplotlib
+		${PKGNAMEPREFIX}scipy>=0.7.0:science/py-scipy \
+		${PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PKGNAMEPREFIX}pyfits>=1.1:astro/py-pyfits \
+		${PKGNAMEPREFIX}matplotlib>=0.98:math/py-matplotlib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:0.15,0.17,0.17.1 # incorrect versioning upstream

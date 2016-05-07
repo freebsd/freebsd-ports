@@ -14,7 +14,7 @@ COMMENT=	Term::Screen based screen positioning and coloring module
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Term-Screen>=0:${PORTSDIR}/devel/p5-Term-Screen
+RUN_DEPENDS=	p5-Term-Screen>=0:devel/p5-Term-Screen
 
 USES=		perl5
 USE_PERL5=	configure

@@ -12,9 +12,9 @@ COMMENT=	GUI tool for NetFlow data visualisation
 
 OPTIONS_DEFINE=	DOCS
 
-LIB_DEPENDS+=	libBLT25.so:${PORTSDIR}/x11-toolkits/blt \
-		libTktable2.10.so:${PORTSDIR}/x11-toolkits/tktable
-RUN_DEPENDS=	flowdumper:${PORTSDIR}/net-mgmt/p5-Cflow
+LIB_DEPENDS+=	libBLT25.so:x11-toolkits/blt \
+		libTktable2.10.so:x11-toolkits/tktable
+RUN_DEPENDS=	flowdumper:net-mgmt/p5-Cflow
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix tk:85

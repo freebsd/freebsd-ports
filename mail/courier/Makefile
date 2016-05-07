@@ -3,20 +3,20 @@
 
 PORTNAME=	courier
 PORTVERSION=	0.65.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
 MAINTAINER=	bsd@dino.sk
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
 
-BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base \
-		${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
-		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
-		p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
-		ca_root_nss>=3.*:${PORTSDIR}/security/ca_root_nss
+BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
+LIB_DEPENDS=	libpcre.so:devel/pcre
+RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
+		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool \
+		${LOCALBASE}/etc/mime.types:misc/mime-support \
+		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
+		ca_root_nss>=3.*:security/ca_root_nss
 
 CONFLICTS=	courier-imap-2.* couriermlm-0.* \
 		exim-4.* maildrop-1.* \
@@ -136,7 +136,7 @@ PERIODIC_DESC=	modify/create periodic.conf
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 WITH_AUTH_LDAP=	yes
-RUN_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthldap.so:${PORTSDIR}/net/courier-authlib-ldap
+RUN_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthldap.so:net/courier-authlib-ldap
 CONFIGURE_ARGS+=--with-ldapaliasd
 PLIST_SUB+=	WITHLDAP=""
 SUB_LIST+=	WITHLDAP=""
@@ -167,31 +167,31 @@ SUB_LIST+=	WITHEMPTYALIASES="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNUPG}
-BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS+=	gpg:security/gnupg
+RUN_DEPENDS+=	gpg:security/gnupg
 .endif
 
 .if ${PORT_OPTIONS:MASPELL}
-BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+BUILD_DEPENDS+=	aspell:textproc/aspell
+RUN_DEPENDS+=	aspell:textproc/aspell
 CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/aspell
 .elif ${PORT_OPTIONS:MISPELL}
-BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
+BUILD_DEPENDS+=	ispell:textproc/aspell-ispell
+RUN_DEPENDS+=	ispell:textproc/aspell-ispell
 CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/ispell
 .else
 CONFIGURE_ARGS+=--without-ispell
 .endif
 
 .if ${PORT_OPTIONS:MPROCMAIL}
-BUILD_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
-RUN_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
+BUILD_DEPENDS+=	procmail:mail/procmail
+RUN_DEPENDS+=	procmail:mail/procmail
 .endif
 
 .if ${PORT_OPTIONS:MSENDFAX}
 USES+=		ghostscript
-SENDFAX_DEPENDS=sendfax:${PORTSDIR}/comms/mgetty+sendfax \
-		pnmscale:${PORTSDIR}/graphics/netpbm
+SENDFAX_DEPENDS=sendfax:comms/mgetty+sendfax \
+		pnmscale:graphics/netpbm
 BUILD_DEPENDS+=	${SENDFAX_DEPENDS}
 RUN_DEPENDS+=	${SENDFAX_DEPENDS}
 WITH_TRANSPORT+=fax
@@ -204,8 +204,8 @@ SUB_LIST+=	WITHFAX="@comment "
 
 .if ${PORT_OPTIONS:MUUCP}
 .if !exists(/usr/bin/uux)
-BUILD_DEPENDS+=	uux:${PORTSDIR}/net/freebsd-uucp
-RUN_DEPENDS+=	uux:${PORTSDIR}/net/freebsd-uucp
+BUILD_DEPENDS+=	uux:net/freebsd-uucp
+RUN_DEPENDS+=	uux:net/freebsd-uucp
 .endif
 WITH_TRANSPORT+=uucp
 PLIST_SUB+=	WITHUUCP=""

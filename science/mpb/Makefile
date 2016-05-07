@@ -3,7 +3,7 @@
 
 PORTNAME=	mpb
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 
@@ -12,11 +12,11 @@ COMMENT=	MIT Photonic-Bands
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw \
-		libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libctl.so:${PORTSDIR}/science/libctl \
-		libguile-2.0.so:${PORTSDIR}/lang/guile2
+BUILD_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libfftw.so:math/fftw \
+		libhdf5.so:science/hdf5 \
+		libctl.so:science/libctl \
+		libguile-2.0.so:lang/guile2
 
 OPTIONS_DEFINE=	ATLAS NLOPT
 ATLAS_DESC=	Use math/atlas instead of math/lapack
@@ -29,16 +29,16 @@ MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NLOPT_LIB_DEPENDS=	libnlopt.so:${PORTSDIR}/math/nlopt
+NLOPT_LIB_DEPENDS=	libnlopt.so:math/nlopt
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 CONFIGURE_ARGS+=	--with-lapack=-lalapack
 .else
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas \
+		liblapack.so:math/lapack
 CONFIGURE_ARGS+=	--with-lapack=-llapack
 .endif
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	fmoo-audiotools
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	SF/audiotools/audiotools
 DISTNAME=	audiotools-${PORTVERSION}
@@ -19,12 +20,12 @@ USE_PYTHON=	autoplist concurrent distutils
 OPTIONS_DEFINE=	CDIO LAME MPG123 OPUS TWOLAME VORBIS
 OPTIONS_DEFAULT=CDIO MPG123 OPUS TWOLAME VORBIS
 
-CDIO_LIB_DEPENDS=	libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia
-LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
-MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
-OPUS_LIB_DEPENDS=	libopusfile.so:${PORTSDIR}/audio/opusfile
-TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
-VORBIS_LIB_DEPENDS=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
+CDIO_LIB_DEPENDS=	libcdio_cdda.so:sysutils/libcdio-paranoia
+LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
+OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
+TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
+VORBIS_LIB_DEPENDS=	libvorbisenc.so:audio/libvorbis
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 

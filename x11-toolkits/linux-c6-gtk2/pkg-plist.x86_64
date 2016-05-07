@@ -1,6 +1,31 @@
+usr/bin/gtk-query-immodules-2.0-32
 usr/bin/gtk-query-immodules-2.0-64
 usr/bin/gtk-update-icon-cache
 usr/bin/update-gtk-immodules
+usr/lib/gtk-2.0/2.10.0/engines/libclearlooks.so
+usr/lib/gtk-2.0/2.10.0/engines/libcrux-engine.so
+usr/lib/gtk-2.0/2.10.0/engines/libglide.so
+usr/lib/gtk-2.0/2.10.0/engines/libhcengine.so
+usr/lib/gtk-2.0/2.10.0/engines/libindustrial.so
+usr/lib/gtk-2.0/2.10.0/engines/libmist.so
+usr/lib/gtk-2.0/2.10.0/engines/libpixmap.so
+usr/lib/gtk-2.0/2.10.0/engines/libredmond95.so
+usr/lib/gtk-2.0/2.10.0/engines/libthinice.so
+usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so
+usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-file.so
+usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.so
+usr/lib/gtk-2.0/modules/libferret.so
+usr/lib/gtk-2.0/modules/libgail.so
+usr/lib/libgailutil.so.18
+usr/lib/libgailutil.so.18.0.1
+usr/lib/libgdk-x11-2.0.so.0
+usr/lib/libgdk-x11-2.0.so.0.2400.23
+usr/lib/libgtk-x11-2.0.so.0
+usr/lib/libgtk-x11-2.0.so.0.2400.23
+usr/lib/libjasper.so.1
+usr/lib/libjasper.so.1.0.0
+usr/lib/libpixman-1.so.0
+usr/lib/libpixman-1.so.0.32.4
 usr/lib64/gtk-2.0/2.10.0/engines/libclearlooks.so
 usr/lib64/gtk-2.0/2.10.0/engines/libcrux-engine.so
 usr/lib64/gtk-2.0/2.10.0/engines/libglide.so
@@ -207,6 +232,7 @@ usr/share/locale/zh_HK/LC_MESSAGES/gtk-engines.mo
 usr/share/locale/zh_HK/LC_MESSAGES/gtk20.mo
 usr/share/locale/zh_TW/LC_MESSAGES/gtk-engines.mo
 usr/share/locale/zh_TW/LC_MESSAGES/gtk20.mo
+usr/share/man/man1/gtk-query-immodules-2.0-32.1.gz
 usr/share/man/man1/gtk-query-immodules-2.0-64.1.gz
 usr/share/man/man1/gtk-query-immodules-2.0.1.gz
 usr/share/man/man1/gtk-update-icon-cache.1.gz
@@ -219,6 +245,9 @@ usr/share/themes/Industrial/gtk-2.0/gtkrc
 usr/share/themes/Mist/gtk-2.0/gtkrc
 usr/share/themes/Raleigh/gtk-2.0/gtkrc
 usr/share/themes/ThinIce/gtk-2.0/gtkrc
+@dir usr/lib/gtk-2.0/2.10.0/filesystems
+@dir usr/lib/gtk-2.0/2.10.0/immodules
+@dir usr/lib/gtk-2.0/immodules
 @dir usr/lib64/gtk-2.0/2.10.0/filesystems
 @dir usr/lib64/gtk-2.0/2.10.0/immodules
 @dir usr/lib64/gtk-2.0/immodules

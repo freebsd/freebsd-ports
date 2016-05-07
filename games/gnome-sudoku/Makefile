@@ -10,10 +10,10 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sudoku game for gnome
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libqqwing.so:${PORTSDIR}/games/qqwing \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+		libqqwing.so:games/qqwing \
+		libjson-glib-1.0.so:devel/json-glib
 
 PORTSCOUT=	limitw:1,even
 

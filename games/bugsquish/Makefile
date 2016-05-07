@@ -16,7 +16,7 @@ COMMENT=	Action game not unlike light gun arcade games
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:audio/libogg
 
 USES=		gmake
 USE_SDL=	image mixer sdl

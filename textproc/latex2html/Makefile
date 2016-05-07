@@ -3,14 +3,14 @@
 
 PORTNAME=	latex2html
 PORTVERSION=	2008
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	TEX_CTAN/support/${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert LaTeX documents to HTML
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS=	${LOCALBASE}/bin/anytopnm:graphics/netpbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	ja-latex2html-[0-9]*

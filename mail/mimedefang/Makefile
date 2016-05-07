@@ -14,11 +14,11 @@ COMMENT=	Milter based anti-spam and anti-virus filtering program
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	\
-	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-	p5-MIME-Tools>=5.417:${PORTSDIR}/mail/p5-MIME-Tools \
-	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
-	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-	spamassassin>=3.0:${PORTSDIR}/mail/spamassassin
+	p5-IO-stringy>=0:devel/p5-IO-stringy \
+	p5-MIME-Tools>=5.417:mail/p5-MIME-Tools \
+	p5-Mail-Tools>=0:mail/p5-Mail-Tools \
+	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+	spamassassin>=3.0:mail/spamassassin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	CLAMAV EXAMPLES DOCS
@@ -56,7 +56,7 @@ CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 .include <bsd.port.options.mk>
 
 .if !exists( /usr/include/libmilter/mfapi.h )
-BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/libmilter
+BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:mail/libmilter
 .endif
 
 .if exists( ${LOCALBASE}/include/libmilter/mfapi.h )
@@ -68,8 +68,8 @@ CONFIGURE_ARGS+=	--disable-antivirus \
 			--disable-clamav \
 			--disable-clamd
 .else
-BUILD_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
-RUN_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
+BUILD_DEPENDS+=	clamscan:security/clamav
+RUN_DEPENDS+=	clamscan:security/clamav
 .endif
 
 post-patch:

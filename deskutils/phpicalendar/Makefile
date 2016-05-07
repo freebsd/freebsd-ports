@@ -19,6 +19,8 @@ COMMENT=	Webbased calendar with iCal support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:bz2
 NO_BUILD=	yes
 NO_ARCH=	yes

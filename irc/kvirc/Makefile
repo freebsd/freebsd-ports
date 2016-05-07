@@ -31,11 +31,11 @@ OPTIONS_DEFINE=	AUDIOFILE GSM PERL PYTHON DEBUG
 OPTIONS_SUB=	yes
 
 AUDIOFILE_DESC=		Support for various audio formats
-AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 AUDIOFILE_CMAKE_OFF=	-DWITHOUT_AUDIOFILE=yes
 
 GSM_DESC=		u-law to gsm audio converter support
-GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 GSM_CMAKE_OFF=		-DWANT_GSM=no
 
 PERL_DESC=	Perl scripting support

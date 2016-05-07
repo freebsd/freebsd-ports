@@ -8,8 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR data validation class for US
 
-BUILD_DEPENDS=	pear-Validate>=0.5.0:${PORTSDIR}/devel/pear-Validate
-RUN_DEPENDS=	pear-Validate>=0.5.0:${PORTSDIR}/devel/pear-Validate
+BUILD_DEPENDS=	pear-Validate>=0.5.0:devel/pear-Validate
+RUN_DEPENDS=	pear-Validate>=0.5.0:devel/pear-Validate
 
 USES=	pear
 

@@ -11,9 +11,9 @@ COMMENT=	Command Line Interface to work with an openSUSE Build Service
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>0:${PORTSDIR}/security/py-m2crypto \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:${PORTSDIR}/www/py-urlgrabber
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>0:${PORTSDIR}/www/py-urlgrabber
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>0:security/py-m2crypto \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openSUSE
@@ -35,7 +35,7 @@ CA_BUNDLE_DESC=	Install CA Certificates
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCA_BUNDLE}
-RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CA_PATH=	${LOCALBASE}/share/certs/ca-root-nss.crt
 .else
 CA_PATH=	/etc/ssl

@@ -12,12 +12,10 @@ COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake dos2unix jpeg tar:bzip2
 DOS2UNIX_REGEX=	((.*\.(c|cpp|h|s|asm|inc|vc|ls|acs|cfg|txt|vs|mak|mgw"))$$|\/(makefile\..*|makefile|Makefile)$$)
-
-MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	FLAC LAUNCHER MAD MIKMOD OPENAL OPTIMIZED_CFLAGS VORBIS SDL DOCS
 OPTIONS_DEFAULT=	OPENGL SDL
@@ -35,7 +33,7 @@ CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 CXXFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:audio/flac
 CMAKE_ARGS+=	-DWITH_FLAC=Y
 .else
 CMAKE_ARGS+=	-DWITH_FLAC=N
@@ -53,14 +51,14 @@ PLIST_SUB+=	LAUNCHER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=	libmad.so:audio/libmad
 CMAKE_ARGS+=	-DWITH_LIBMAD=Y
 .else
 CMAKE_ARGS+=	-DWITH_LIBMAD=N
 .endif
 
 .if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS+=	libmikmod.so:audio/libmikmod
 CMAKE_ARGS+=	-DWITH_MIKMOD=Y
 .else
 CMAKE_ARGS+=	-DWITH_MIKMOD=N
@@ -78,7 +76,7 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 CMAKE_ARGS+=	-DWITH_VORBIS=Y
 .else
 CMAKE_ARGS+=	-DWITH_VORBIS=N

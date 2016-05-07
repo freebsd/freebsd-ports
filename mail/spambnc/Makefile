@@ -15,7 +15,7 @@ COMMENT=	Set of procmail recipes which handle known/suspected spam
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
+RUN_DEPENDS=	procmail:mail/procmail
 
 EXTRACT_DIR=	${WRKDIRPREFIX}${.CURDIR}/worktmp/${DISTNAME}
 EXTRACT_BEFORE_ARGS=	-C ${EXTRACT_DIR} -xf

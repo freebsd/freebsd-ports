@@ -14,7 +14,7 @@ COMMENT=	Python libraries for ROX
 USES=		python tar:bzip2
 USE_GNOME=	pygtk2:run
 
-RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
+RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

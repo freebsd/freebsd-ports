@@ -3,7 +3,7 @@
 
 PORTNAME=	nucleo
 PORTVERSION=	0.7.6
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/nucleo/
 
@@ -12,9 +12,9 @@ COMMENT=	Toolkit to explore video and human-computer interaction
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 USES=		gmake jpeg libtool pathfix pkgconfig shebangfix tar:bzip2
 USE_GL=		glu
@@ -33,23 +33,23 @@ OPTIONS_RADIO_DNSSD=	AVAHI MDNSRESPONDER
 OPTIONS_SUB=	yes
 DNSSD_DESC=		Service discovery
 
-AVAHI_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/avahi-libdns
+AVAHI_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
 AVAHI_CPPFLAGS=		-I${LOCALBASE}/include/avahi-compat-libdns_sd
 
 FFMPEG_DESC=		Build FFmpeg plugin
-FFMPEG_LIB_DEPENDS=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_OFF=	--without-ffmpeg
 
 GD_DESC=		Build GD plugin
-GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
+GD_LIB_DEPENDS=		libgd.so:graphics/gd
 
 QT4_DESC=		Build Qt 4 plugin
 GD_CONFIGURE_OFF=	--without-gd
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_OFF=	--without-gnutls
 
-MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
 QT4_USE=		QT4=moc_build,corelib
 QT4_CONFIGURE_OFF=	--without-qt

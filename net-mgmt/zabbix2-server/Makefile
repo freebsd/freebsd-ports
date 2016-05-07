@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix2
-PORTVERSION=	2.0.16
+PORTVERSION=	2.0.17
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
 DISTNAME=	zabbix-${PORTVERSION}
 
-MAINTAINER=	pakhom@pakhom.spb.ru
+MAINTAINER=	pg@pakhom.spb.ru
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//})
 
 LICENSE=	GPLv2
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--datadir=${ETCDIR}
 
 .if ${ZABBIX_BUILD} != "agent"
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 USES+=		execinfo
 
 CPPFLAGS+=	${EXECINFO_CPPFLAGS}
@@ -93,38 +93,38 @@ PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES=	pgsql
 
 SQLITE_CONFIGURE_WITH=	sqlite3
-SQLITE_USE=	SQLITE=3
+SQLITE_USES=	sqlite:3
 
 ORACLE_CONFIGURE_WITH=	oracle
 
 CURL_CONFIGURE_WITH=	libcurl
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=	OPENLDAP=yes
 
 IPMI_CONFIGURE_WITH=	openipmi
-IPMI_LIB_DEPENDS=	libOpenIPMI.so:${PORTSDIR}/sysutils/openipmi
+IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
 
 JABBER_CONFIGURE_WITH=	jabber
-JABBER_LIB_DEPENDS=	libiksemel.so:${PORTSDIR}/textproc/iksemel
+JABBER_LIB_DEPENDS=	libiksemel.so:textproc/iksemel
 
-FPING_RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
+FPING_RUN_DEPENDS=	fping:net/fping
 
 SSH_CONFIGURE_WITH=	ssh2
-SSH_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
+SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 
 IODBC_CONFIGURE_WITH=	iodbc
-IODBC_LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+IODBC_LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 
 UNIXODBC_CONFIGURE_WITH=	unixodbc
-UNIXODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 .endif # if ${ZABBIX_BUILD} != "agent"
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-NMAP_RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap \
-			sudo:${PORTSDIR}/security/sudo
+NMAP_RUN_DEPENDS=	nmap:security/nmap \
+			sudo:security/sudo
 
 JAVAGW_CONFIGURE_ENABLE=	java
 JAVAGW_USE=	JAVA=yes

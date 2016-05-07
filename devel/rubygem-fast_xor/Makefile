@@ -12,11 +12,10 @@ COMMENT=	Fast String XOR operator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-rake-compiler>=0:${PORTSDIR}/devel/rubygem-rake-compiler
+RUN_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake \
+		rubygem-rake-compiler>=0:devel/rubygem-rake-compiler
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

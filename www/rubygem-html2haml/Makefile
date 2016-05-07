@@ -12,16 +12,15 @@ COMMENT=	Converts HTML into Haml
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis \
-		rubygem-haml>=4.0.0:${PORTSDIR}/www/rubygem-haml \
-		rubygem-nokogiri>=1.6.0:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-ruby_parser>=3.5:${PORTSDIR}/devel/rubygem-ruby_parser
+RUN_DEPENDS=	rubygem-erubis>=2.7.0:www/rubygem-erubis \
+		rubygem-haml>=4.0.0:www/rubygem-haml \
+		rubygem-nokogiri>=1.6.0:textproc/rubygem-nokogiri \
+		rubygem-ruby_parser>=3.5:devel/rubygem-ruby_parser
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
 NO_ARCH=	yes
 
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/html2haml
 
 .include <bsd.port.mk>

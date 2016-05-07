@@ -12,11 +12,10 @@ COMMENT=	Parallel HTTP request library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-ethon>=0.8.0:${PORTSDIR}/www/rubygem-ethon
+RUN_DEPENDS=	rubygem-ethon>=0.8.0:www/rubygem-ethon
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

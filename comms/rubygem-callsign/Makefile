@@ -11,12 +11,11 @@ COMMENT=	Provides a Ruby-Frontend to callook.info ham Radio Callsign Lookup
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-hashie>=0:${PORTSDIR}/devel/rubygem-hashie \
-		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-hashie>=0:devel/rubygem-hashie \
+		rubygem-json>=0:devel/rubygem-json
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

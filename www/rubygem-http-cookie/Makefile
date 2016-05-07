@@ -11,12 +11,11 @@ COMMENT=	Ruby library to handle HTTP Cookies
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-domain_name>=0.5.1:${PORTSDIR}/net/rubygem-domain_name
+RUN_DEPENDS=	rubygem-domain_name>=0.5.1:net/rubygem-domain_name
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

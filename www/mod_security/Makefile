@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_security
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -12,10 +12,10 @@ COMMENT=	Intrusion detection and prevention engine
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libyajl.so:${PORTSDIR}/devel/yajl \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libpcre.so:devel/pcre \
+		libapr-1.so:devel/apr1 \
+		libyajl.so:devel/yajl \
+		libcurl.so:ftp/curl
 
 USE_APACHE=	22+
 USE_GNOME=	libxml2
@@ -34,18 +34,16 @@ DOCSDIR=	${PREFIX}/share/doc/${MODULENAME}
 
 SUB_FILES+=	pkg-message
 SUB_FILES+=	README
-SUB_LIST+=	APACHEETCDIR="${APACHEETCDIR}"
-SUB_LIST+=	APACHEMODDIR="${APACHEMODDIR}"
-
-PLIST_SUB+=	APXS="${APXS}"
-PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}"
+SUB_FILES+=	${APMOD_FILE}.sample
+APMOD_FILE=	280_${PORTNAME}.conf
+SUB_LIST+=	APMOD_FILE=${APMOD_FILE}
 
 OPTIONS_DEFINE=	DOCS FUZZYHASH LUA MLOGC
 OPTIONS_SUB=	yes
 
 LUA_CONFIGURE_ON=	--with-lua=${LOCALBASE}
 LUA_CONFIGURE_OFF+=	--without-lua
-LUA_USES=		lua:51
+LUA_USES=		lua:51+
 
 MLOGC_DESC=		Build ModSecurity Log Collector
 MLOGC_CONFIGURE_ON=	--disable-errors
@@ -54,7 +52,7 @@ MLOGC_CONFIGURE_OFF=	--disable-mlogc
 FUZZYHASH_DESC=		Allow matching contents using fuzzy hashes with ssdeep
 FUZZYHASH_CONFIGURE_ON=	--with-ssdeep=${LOCALBASE}
 FUZZYHASH_CONFIGURE_OFF=--without-ssdeep
-FUZZYHASH_LIB_DEPENDS=	libfuzzy.so:${PORTSDIR}/security/ssdeep
+FUZZYHASH_LIB_DEPENDS=	libfuzzy.so:security/ssdeep
 
 ETCDIR=		${PREFIX}/etc/modsecurity
 
@@ -78,5 +76,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${WRKDIR}/README ${STAGEDIR}${DOCSDIR}
+
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE}.sample ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 
 .include <bsd.port.mk>

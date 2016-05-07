@@ -16,9 +16,9 @@ COMMENT=	Vulnerability and eXposure Markup Language DTD
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr \
-		${LOCALBASE}/share/xml/dtd/xhtml-modularization/VERSION:${PORTSDIR}/textproc/xhtml-modularization \
-		${LOCALBASE}/share/xml/dtd/xhtml-basic/xhtml-basic10.dtd:${PORTSDIR}/textproc/xhtml-basic
+RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr \
+		${LOCALBASE}/share/xml/dtd/xhtml-modularization/VERSION:textproc/xhtml-modularization \
+		${LOCALBASE}/share/xml/dtd/xhtml-basic/xhtml-basic10.dtd:textproc/xhtml-basic
 
 USES=		python:run
 

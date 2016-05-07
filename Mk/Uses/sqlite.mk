@@ -14,9 +14,9 @@ SQLITE_VER=	${sqlite_ARGS}
 SQLITE_VER?=	3
 
 .if ${SQLITE_VER} == 3
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite${SQLITE_VER}
+LIB_DEPENDS+=	libsqlite3.so:databases/sqlite${SQLITE_VER}
 .elif ${SQLITE_VER} == 2
-LIB_DEPENDS+=	libsqlite.so:${PORTSDIR}/databases/sqlite${SQLITE_VER}
+LIB_DEPENDS+=	libsqlite.so:databases/sqlite${SQLITE_VER}
 .else
 IGNORE=		cannot install: unknown SQLite version: ${SQLITE_VER}
 .endif

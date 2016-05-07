@@ -13,14 +13,13 @@ COMMENT=	Spatial Extensions for SQLite
 LICENSE=	MPL LGPL20 GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos \
-		libproj.so:${PORTSDIR}/graphics/proj \
-		libfreexl.so:${PORTSDIR}/textproc/freexl
+LIB_DEPENDS=	libgeos_c.so:graphics/geos \
+		libproj.so:graphics/proj \
+		libfreexl.so:textproc/freexl
 
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pathfix pkgconfig libtool
-USE_SQLITE=	yes
+USES=		gmake iconv pathfix pkgconfig libtool sqlite
 USE_GNOME=	libxml2
 
 CFLAGS+=	-I${WRKSRC}/src/headers -I${LOCALBASE}/include
@@ -31,7 +30,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=LWGEOM
 LWGEOM_DESC=Enable lwgeom (PostGIS) functions
 LWGEOM_CONFIGURE_ENABLE=	lwgeom
-LWGEOM_LIB_DEPENDS=	liblwgeom.so:${PORTSDIR}/databases/postgis21
+LWGEOM_LIB_DEPENDS=	liblwgeom.so:databases/postgis21
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.am

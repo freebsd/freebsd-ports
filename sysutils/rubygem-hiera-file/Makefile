@@ -13,9 +13,8 @@ COMMENT=	Data backend for Hiera that returns whole files
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}hiera1>=0:${PORTSDIR}/sysutils/rubygem-hiera1
+RUN_DEPENDS=	${PKGNAMEPREFIX}hiera1>=0:sysutils/rubygem-hiera1
 
 .include <bsd.port.mk>

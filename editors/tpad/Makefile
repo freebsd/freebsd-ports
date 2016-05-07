@@ -13,7 +13,7 @@ MASTER_SITES=	SF/tclpad/tclpad/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows XP (TM) enhanced Notepad clone written in Tcl/Tk
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
 
 NO_BUILD=	yes
 

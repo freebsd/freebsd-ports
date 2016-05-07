@@ -11,7 +11,7 @@ COMMENT=	High performance webserver with scalability benchmark tools
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	libowfat>=0.29:${PORTSDIR}/devel/libowfat
+BUILD_DEPENDS=	libowfat>=0.29:devel/libowfat
 
 USES=		gmake tar:bzip2
 USE_OPENSSL=	yes

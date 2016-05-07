@@ -14,8 +14,8 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN=		fails to build
 
-BUILD_DEPENDS=	varnish4>=4.0.2:${PORTSDIR}/www/varnish4 \
-		rst2man:${PORTSDIR}/textproc/py-docutils
+BUILD_DEPENDS=	varnish4>=4.0.2:www/varnish4 \
+		rst2man:textproc/py-docutils
 
 USES=		autoreconf gmake libtool pkgconfig python:2,build
 GNU_CONFIGURE=	yes

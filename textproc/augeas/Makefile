@@ -11,8 +11,8 @@ COMMENT=	Configuration editing tool
 
 LICENSE=	LGPL21
 
-TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		gsed:${PORTSDIR}/textproc/gsed
+TEST_DEPENDS=	bash:shells/bash \
+		gsed:textproc/gsed
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf cpe gmake libtool pkgconfig readline

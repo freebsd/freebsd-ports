@@ -11,8 +11,8 @@ COMMENT=	Program to generate a cross-referenced HTML mail archive
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libgdbm.so:databases/gdbm \
+		libpcre.so:devel/pcre
 
 USES=		desthack
 

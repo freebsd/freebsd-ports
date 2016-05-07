@@ -8,7 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to provide fine-grained control of page titles
 
-RUN_DEPENDS=	drupal6-token>=0:${PORTSDIR}/www/drupal6-token
+RUN_DEPENDS=	drupal6-token>=0:www/drupal6-token
 
 USES=		drupal:6,module
 MODULE_FILES=	page_title-admin-settings-form.tpl.php page_title.install page_title.views.inc \

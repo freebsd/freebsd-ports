@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Computer game visualizing quantum mechanics
 
-LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libfftw3.so:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
+		libfftw3.so:math/fftw3
 
 USES=		gmake compiler:env
 USE_SDL=	sdl ttf

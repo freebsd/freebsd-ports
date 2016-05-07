@@ -14,7 +14,7 @@ COMMENT=	Utility library for Battle.net clients in C++
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 PROJECTHOST=	ghostplusplus
 PROJECTVERSION=	17.1

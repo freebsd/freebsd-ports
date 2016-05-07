@@ -1,8 +1,0 @@
-Network Weathermap is a perl tool that displays in a visual way the utilization
-of the network links of your network. The required data are acquired from 
-graphs created by the MRTG package and are displayed as two ways colored arrows
-on a map representing the logical topology of the network. The resulted image 
-is presented in a web page using extra DHTML and JavaScript code for web-over 
-pop-ups, based on the OverLib JavaScript library.
-
-WWW:	http://netmon.grnet.gr/weathermap/

@@ -116,7 +116,6 @@
     SUBDIR += domoticz
     SUBDIR += dotclear
     SUBDIR += dotproject
-    SUBDIR += download-gemist
     SUBDIR += drood
     SUBDIR += drraw
     SUBDIR += drupal6
@@ -153,7 +152,6 @@
     SUBDIR += dummyflash
     SUBDIR += e107
     SUBDIR += e2guardian
-    SUBDIR += eaccelerator
     SUBDIR += edbrowse
     SUBDIR += efront
     SUBDIR += elgg
@@ -226,6 +224,7 @@
     SUBDIR += get_flash_videos
     SUBDIR += getleft
     SUBDIR += gist
+    SUBDIR += gitlab
     SUBDIR += gitlab-workhorse
     SUBDIR += glassfish
     SUBDIR += glpi
@@ -366,12 +365,14 @@
     SUBDIR += larbin
     SUBDIR += lessc
     SUBDIR += libapreq2
+    SUBDIR += libdom
     SUBDIR += libecap
     SUBDIR += libepc
     SUBDIR += libevhtp
     SUBDIR += libgtkhtml
     SUBDIR += libhpack
     SUBDIR += libhtp-suricata
+    SUBDIR += libhubbub
     SUBDIR += libmicrohttpd
     SUBDIR += libsocialweb
     SUBDIR += libwww
@@ -552,15 +553,16 @@
     SUBDIR += nginx-devel
     SUBDIR += nibbleblog
     SUBDIR += node
-    SUBDIR += node-devel
     SUBDIR += node010
     SUBDIR += node012
     SUBDIR += node4
+    SUBDIR += node5
     SUBDIR += nostromo
     SUBDIR += npapi-vlc
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
+    SUBDIR += npm2
     SUBDIR += npm012
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
@@ -982,7 +984,6 @@
     SUBDIR += p5-HTTP-BrowserDetect
     SUBDIR += p5-HTTP-Cache-Transparent
     SUBDIR += p5-HTTP-CookieJar
-    SUBDIR += p5-HTTP-CookieMonster
     SUBDIR += p5-HTTP-Cookies
     SUBDIR += p5-HTTP-Cookies-Mozilla
     SUBDIR += p5-HTTP-Cookies-iCab
@@ -1042,7 +1043,6 @@
     SUBDIR += p5-LWP-Authen-OAuth
     SUBDIR += p5-LWP-Authen-Wsse
     SUBDIR += p5-LWP-ConnCache-MaxKeepAliveRequests
-    SUBDIR += p5-LWP-ConsoleLogger
     SUBDIR += p5-LWP-MediaTypes
     SUBDIR += p5-LWP-Online
     SUBDIR += p5-LWP-Protocol-PSGI
@@ -1278,7 +1278,6 @@
     SUBDIR += p5-WWW-LongURL
     SUBDIR += p5-WWW-Mechanize
     SUBDIR += p5-WWW-Mechanize-CGI
-    SUBDIR += p5-WWW-Mechanize-Cached
     SUBDIR += p5-WWW-Mechanize-DecodedContent
     SUBDIR += p5-WWW-Mechanize-FormFiller
     SUBDIR += p5-WWW-Mechanize-GZip
@@ -1302,6 +1301,7 @@
     SUBDIR += p5-WWW-Robot
     SUBDIR += p5-WWW-RobotRules
     SUBDIR += p5-WWW-RobotRules-Parser
+    SUBDIR += p5-WWW-Salesforce
     SUBDIR += p5-WWW-Scraper-ISBN
     SUBDIR += p5-WWW-Scraper-ISBN-Amazon_Driver
     SUBDIR += p5-WWW-Scraper-ISBN-ORA_Driver
@@ -1428,6 +1428,7 @@
     SUBDIR += pecl-amfext
     SUBDIR += pecl-http
     SUBDIR += pecl-http1
+    SUBDIR += pecl-http2
     SUBDIR += pecl-solr
     SUBDIR += pecl-sphinx
     SUBDIR += pecl-swish
@@ -1466,6 +1467,7 @@
     SUBDIR += piwigo
     SUBDIR += piwik
     SUBDIR += planet
+    SUBDIR += plexwatchweb
     SUBDIR += pligg
     SUBDIR += plone
     SUBDIR += plugger
@@ -1505,6 +1507,7 @@
     SUBDIR += py-bottle-cork
     SUBDIR += py-cachecontrol
     SUBDIR += py-cactus
+    SUBDIR += py-caldav
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
     SUBDIR += py-clientform
@@ -1516,6 +1519,7 @@
     SUBDIR += py-cssutils
     SUBDIR += py-django
     SUBDIR += py-django-allauth
+    SUBDIR += py-django-annotations
     SUBDIR += py-django-annoying
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-appconf
@@ -1527,8 +1531,11 @@
     SUBDIR += py-django-caching-app-plugins
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
+    SUBDIR += py-django-configurations
+    SUBDIR += py-django-constance
     SUBDIR += py-django-contact-form
     SUBDIR += py-django-contrib-comments
+    SUBDIR += py-django-cors-headers
     SUBDIR += py-django-countries
     SUBDIR += py-django-crispy-forms
     SUBDIR += py-django-datetime-widget
@@ -1543,6 +1550,7 @@
     SUBDIR += py-django-haystack
     SUBDIR += py-django-htmlmin
     SUBDIR += py-django-json-rpc
+    SUBDIR += py-django-jsonfield
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-ldapdb
     SUBDIR += py-django-livesettings
@@ -1554,13 +1562,15 @@
     SUBDIR += py-django-mptt
     SUBDIR += py-django-openid-auth
     SUBDIR += py-django-overextends
+    SUBDIR += py-django-paging
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
     SUBDIR += py-django-pipeline13
-    SUBDIR += py-django-pipeline14
     SUBDIR += py-django-piston
+    SUBDIR += py-django-post_office
     SUBDIR += py-django-profiles
+    SUBDIR += py-django-recaptcha
     SUBDIR += py-django-redis
     SUBDIR += py-django-registration
     SUBDIR += py-django-registration-defaults
@@ -1570,14 +1580,17 @@
     SUBDIR += py-django-signals-ahoy
     SUBDIR += py-django-simple-captcha
     SUBDIR += py-django-simple-history
+    SUBDIR += py-django-social-auth
     SUBDIR += py-django-sortedm2m
     SUBDIR += py-django-statici18n
     SUBDIR += py-django-storages
     SUBDIR += py-django-subdomains
+    SUBDIR += py-django-sudo
     SUBDIR += py-django-tables2
     SUBDIR += py-django-tagging
     SUBDIR += py-django-taggit
     SUBDIR += py-django-tastypie
+    SUBDIR += py-django-templatetag-sugar
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django-tinymce
     SUBDIR += py-django-voting
@@ -1753,12 +1766,12 @@
     SUBDIR += py-rfc3987
     SUBDIR += py-rhodecode
     SUBDIR += py-routes
-    SUBDIR += py-satchmo
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
     SUBDIR += py-scriptaculous
     SUBDIR += py-seafdav
     SUBDIR += py-seafobj
+    SUBDIR += py-searx
     SUBDIR += py-selector
     SUBDIR += py-selenium
     SUBDIR += py-slimit
@@ -1837,6 +1850,7 @@
     SUBDIR += rsstool
     SUBDIR += rt40
     SUBDIR += rt42
+    SUBDIR += rt44
     SUBDIR += rtv
     SUBDIR += ruby-aws
     SUBDIR += ruby-google
@@ -1844,7 +1858,6 @@
     SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionpack4
-    SUBDIR += rubygem-actionpack41
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
@@ -1893,6 +1906,7 @@
     SUBDIR += rubygem-gitlab-grack
     SUBDIR += rubygem-gollum-grit_adapter
     SUBDIR += rubygem-gollum-lib
+    SUBDIR += rubygem-gollum-rugged_adapter
     SUBDIR += rubygem-gon
     SUBDIR += rubygem-gon-rails4
     SUBDIR += rubygem-hackpad-cli
@@ -1979,7 +1993,6 @@
     SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-railties
     SUBDIR += rubygem-railties4
-    SUBDIR += rubygem-railties41
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
@@ -2018,7 +2031,6 @@
     SUBDIR += rubygem-totoridipjp
     SUBDIR += rubygem-tumblr_client
     SUBDIR += rubygem-turbolinks
-    SUBDIR += rubygem-turbolinks-rails41
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
     SUBDIR += rubygem-underscore-rails
@@ -2048,7 +2060,6 @@
     SUBDIR += serendipity
     SUBDIR += serf
     SUBDIR += servlet-api
-    SUBDIR += session2
     SUBDIR += sfnt2woff
     SUBDIR += shellinabox
     SUBDIR += shttpd
@@ -2063,14 +2074,17 @@
     SUBDIR += smarty3
     SUBDIR += smb_auth
     SUBDIR += snarf
-    SUBDIR += sogo
-    SUBDIR += sogo-activesync
+    SUBDIR += sogo2
+    SUBDIR += sogo3
+    SUBDIR += sogo2-activesync
+    SUBDIR += sogo3-activesync
     SUBDIR += spawn-fcgi
     SUBDIR += spdylay
     SUBDIR += speedtest-mini
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
+    SUBDIR += squid-devel
     SUBDIR += squid_radius_auth
     SUBDIR += squidanalyzer
     SUBDIR += squidclamav

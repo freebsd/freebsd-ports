@@ -25,7 +25,7 @@ NETLIB_USES=	blaslapack:netlib
 ATLAS_USES=	blaslapack:atlas
 
 .if defined (WITH_METIS)
-LIB_DEPENDS=	libmetis.so:${PORTSDIR}/math/metis4
+LIB_DEPENDS=	libmetis.so:math/metis4
 
 RESTRICTED=	GPL and METIS licenses are contradictory
 .endif

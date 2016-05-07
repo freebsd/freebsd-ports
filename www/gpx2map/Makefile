@@ -9,9 +9,9 @@ COMMENT=	Put GPX track on Google Map or OpenStreetMap
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
-		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Geo-Distance>=0:${PORTSDIR}/math/p5-Geo-Distance
+RUN_DEPENDS=	p5-XML-Twig>=0:textproc/p5-XML-Twig \
+		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-Geo-Distance>=0:math/p5-Geo-Distance
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sd2k9
@@ -28,7 +28,7 @@ PLIST_FILES=	bin/gpx2map \
 OPTIONS_DEFINE=	GNUPLOT
 
 GNUPLOT_DESC=	Enable draw track profiles
-GNUPLOT_RUN_DEPENDS=	p5-Chart-Gnuplot>=0:${PORTSDIR}/graphics/p5-Chart-Gnuplot
+GNUPLOT_RUN_DEPENDS=	p5-Chart-Gnuplot>=0:graphics/p5-Chart-Gnuplot
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|gpx2map.google.template|${DATADIR}/gpx2map.google.template|" \

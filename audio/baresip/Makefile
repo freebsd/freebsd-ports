@@ -12,8 +12,8 @@ COMMENT=	Small SIP client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-BUILD_DEPENDS=	re>=0.4.6:${PORTSDIR}/audio/re \
-		rem>=0.4.4:${PORTSDIR}/audio/rem
+BUILD_DEPENDS=	re>=0.4.6:audio/re \
+		rem>=0.4.4:audio/rem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake pkgconfig

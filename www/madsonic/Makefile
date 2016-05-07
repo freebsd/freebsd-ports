@@ -38,27 +38,27 @@ APE_DESC=	Depend on mac for Monkey's Audio transcoding #'
 OPTIONS_DEFAULT=	FFMPEG JETTY
 OPTIONS_SUB=	yes
 
-RUN_DEPENDS+=	${JAVAJARDIR}/servlet-api.jar:${PORTSDIR}/www/servlet-api \
-	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
-TOMCAT8_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat8
-TOMCAT8_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat8
-TOMCAT7_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
-TOMCAT7_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
-TOMCAT6_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-TOMCAT6_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
-JETTY_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/start.jar:${PORTSDIR}/www/jetty8
-JETTY_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/start.jar:${PORTSDIR}/www/jetty8
-RESIN3_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/lib/resin.jar:${PORTSDIR}/www/resin3
-RESIN3_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/lib/resin.jar:${PORTSDIR}/www/resin3
-FFMPEG_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
-LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
-VORBIS_RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
-FAAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac
-FAAD_RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad
-XMP_RUN_DEPENDS=	xmp:${PORTSDIR}/audio/xmp
-MPC_RUN_DEPENDS=	mpcdec:${PORTSDIR}/audio/musepack
-APE_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
+RUN_DEPENDS+=	${JAVAJARDIR}/servlet-api.jar:www/servlet-api \
+	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
+TOMCAT8_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8
+TOMCAT8_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8
+TOMCAT7_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat7
+TOMCAT7_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat7
+TOMCAT6_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat6
+TOMCAT6_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat6
+JETTY_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/start.jar:www/jetty8
+JETTY_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/start.jar:www/jetty8
+RESIN3_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/lib/resin.jar:www/resin3
+RESIN3_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/lib/resin.jar:www/resin3
+FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
+FLAC_RUN_DEPENDS=	flac:audio/flac
+LAME_RUN_DEPENDS=	lame:audio/lame
+VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
+FAAC_RUN_DEPENDS=	faac:audio/faac
+FAAD_RUN_DEPENDS=	faad:audio/faad
+XMP_RUN_DEPENDS=	xmp:audio/xmp
+MPC_RUN_DEPENDS=	mpcdec:audio/musepack
+APE_RUN_DEPENDS=	mac:audio/mac
 
 .include <bsd.port.options.mk>
 

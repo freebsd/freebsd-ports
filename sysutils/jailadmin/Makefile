@@ -21,7 +21,7 @@ PORTDOCS=	INSTALL README
 PLIST_FILES=	etc/jailadmin.conf.sample etc/rc.d/zzz-jail.sh \
 		sbin/jailadmin ${SITE_PERL_REL}/Jail.pm
 
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_PLIST_FILES=	sbin/jail-snmp sbin/jail-snmp-persist share/snmp/mibs/JAIL-MIB.txt
 
 do-install:

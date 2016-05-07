@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-dict
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	textproc xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
 PKGNAMESUFFIX=	-plugin
@@ -21,5 +21,6 @@ USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	panel
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

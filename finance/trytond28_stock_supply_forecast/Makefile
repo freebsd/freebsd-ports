@@ -14,8 +14,8 @@ COMMENT=	Tryton Application Platform (Stock Supply Forecast Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_stock_supply>=2.8.1:${PORTSDIR}/finance/trytond28_stock_supply \
-		trytond28_stock_forecast>=2.8.0:${PORTSDIR}/finance/trytond28_stock_forecast
+RUN_DEPENDS=	trytond28_stock_supply>=2.8.1:finance/trytond28_stock_supply \
+		trytond28_stock_forecast>=2.8.0:finance/trytond28_stock_forecast
 
 CONFLICTS=	trytond_stock_supply_forecast-2.[46].*
 

@@ -8,23 +8,31 @@ MASTER_SITES=	http://embed.cs.utah.edu/creduce/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Produces small test cases
 
-BUILD_DEPENDS=	llvm-config37:${PORTSDIR}/devel/llvm37
-RUN_DEPENDS=	llvm-config37:${PORTSDIR}/devel/llvm37 \
-		topformflat:${PORTSDIR}/devel/delta \
-		astyle:${PORTSDIR}/devel/astyle \
-		p5-Benchmark-Timer>=0:${PORTSDIR}/devel/p5-Benchmark-Timer \
-		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
-		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
-		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
-		devel/p5-Sys-Cpu>=0:${PORTSDIR}/devel/p5-Sys-Cpu \
-		p5-Getopt-Tabular>=0:${PORTSDIR}/devel/p5-Getopt-Tabular
+BUILD_DEPENDS=	llvm-config37:devel/llvm37
+RUN_DEPENDS=	llvm-config37:devel/llvm37 \
+		topformflat:devel/delta \
+		astyle:devel/astyle \
+		p5-Benchmark-Timer>=0:devel/p5-Benchmark-Timer \
+		p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \
+		p5-File-Which>=0:sysutils/p5-File-Which \
+		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
+		devel/p5-Sys-Cpu>=0:devel/p5-Sys-Cpu \
+		p5-Getopt-Tabular>=0:devel/p5-Getopt-Tabular
 
 GNU_CONFIGURE=	yes
 CONFIGURE_FLAGS=	--with-llvm=${LOCALBASE}
+CONFIGURE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config37 \
+		CC=${LOCALBASE}/bin/clang37 \
+		CXX=${LOCALBASE}/bin/clang++37 \
+		CPP=${LOCALBASE}/bin/clang-cpp37
 
-USES=	gmake perl5
+USES=	autoreconf gmake libtool perl5
 
-post-patch:
-	${REINPLACE_CMD} 's,llvm-config,llvm-config37,g' ${WRKSRC}/configure
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 1000000
+CONFIGURE_ENV+=	CPPFLAGS="-stdlib=libstdc++ -I${LOCALBASE}/lib/gcc48/include/c++/ -I${LOCALBASE}/lib/gcc48/include/ -I${LOCALBASE}/lib/gcc48/include/c++/${ARCH:C/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}/ -L${LOCALBASE}/lib -L${LOCALBASE}/lib/gcc48" \
+		LDFLAGS="-L/usr/local/lib/gcc48 -lstdc++"
+.endif
+
+.include <bsd.port.post.mk>

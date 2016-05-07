@@ -12,12 +12,11 @@ COMMENT=	Sinatra extension that provides i18n support to your web application
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-r18n-core=${PORTVERSION}:${PORTSDIR}/devel/rubygem-r18n-core \
-		rubygem-sinatra>=1.3:${PORTSDIR}/www/rubygem-sinatra
+RUN_DEPENDS=	rubygem-r18n-core=${PORTVERSION}:devel/rubygem-r18n-core \
+		rubygem-sinatra>=1.3:www/rubygem-sinatra
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

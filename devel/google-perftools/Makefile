@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	google-perftools
-PORTVERSION=	2.4
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	devel
-MASTER_SITES=	https://googledrive.com/host/0B6NtGsLhIcf7MWxMMF9JdTN3UVk/
+MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}
 
 MAINTAINER=	yuri@rawbw.com
@@ -14,7 +13,9 @@ COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PROJECTHOST=	gperftools
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libunwind.so:devel/libunwind
 
 WRKSRC=		${WRKDIR}/gperftools-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/gperftools
@@ -48,11 +49,11 @@ post-patch:
 		's|-fno-builtin-[a-z_]+||g' \
 		${WRKSRC}/Makefile.in
 .endif
-.if empty(PORT_OPTIONS:MDOCS)
+
+post-patch-DOCS-off:
 	${REINPLACE_CMD} -e \
 		'/^install-data-am:/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
-.endif
 
 post-build:
 	@${ECHO}
@@ -64,11 +65,12 @@ post-build:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libdata
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata
+	${MV} ${STAGEDIR}${PREFIX}/bin/pprof ${STAGEDIR}${PREFIX}/bin/perftools-pprof
 
 post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
-# four of the tests are known to fail on 7.0, uncomment this as soon as this is fixed
+# Two of the tests are known to fail on FreeBSD 10, uncomment this as soon as this is fixed
 #regression-test: check
 
 check: build

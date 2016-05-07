@@ -1,0 +1,44 @@
+--- Xmt.tmpl.orig	2001-09-25 19:47:00.000000000 -0700
++++ Xmt.tmpl	2016-03-26 22:28:27.571053000 -0700
+@@ -13,7 +13,7 @@
+  * set to YES.
+  */
+ #define DoNormalLib YES
+-#define DoSharedLib NO
++#define DoSharedLib YES
+ #define DoDebugLib NO
+ #define DoProfileLib NO
+ 
+@@ -35,10 +35,10 @@
+  * the make install and make install.man from the Xmt and man
+  * subdirectories, respectively.
+  */
+-    XMTLIBDIR = /usr/lib
+-    XMTINCDIR = /usr/include
+-    XMTMANDIR = /usr/man/man3
+-    XMTMANSUFFIX = 3x
++    XMTLIBDIR = /usr/local/lib
++    XMTINCDIR = /usr/local/include
++    XMTMANDIR = /usr/local/man/man3
++    XMTMANSUFFIX = 3
+ /*
+  * These variables specify where the compiler should look for your
+  * installed Motif and Xt libraries and header files.  They are 
+@@ -51,13 +51,13 @@
+  * files, but not all sites have those templates installed properly,
+  * so Xmt requires that you explicitly specify the information here.)
+  */
+-    XMTXTLIB = -L/usr/X11R6/lib
+-    XMTXTINC = -I/usr/X11R6/include
+-    XMTXMLIB = -L/usr/X11R6/Motif1.2/lib
+-    XMTXMINC = -I/usr/X11R6/Motif1.2/include
++    XMTXTLIB = -L${LOCALBASE}/lib
++    XMTXTINC = -I${LOCALBASE}/include
++    XMTXMLIB = -L${LOCALBASE}/lib
++    XMTXMINC = -I${LOCALBASE}/include
+ /*
+     XMTXMLIB = -L/usr/X11R6/LessTif/Motif1.2/lib
+     XMTXMINC = -I/usr/X11R6/LessTif/Motif1.2/include
+ */
+ 
+ /*

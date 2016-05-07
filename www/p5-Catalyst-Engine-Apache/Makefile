@@ -14,8 +14,8 @@ COMMENT=	Catalyst Apache Engines
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80:${PORTSDIR}/www/p5-Catalyst-Runtime
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80:${PORTSDIR}/www/p5-Catalyst-Runtime
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80:www/p5-Catalyst-Runtime
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80:www/p5-Catalyst-Runtime
 
 USES=		perl5
 USE_PERL5=	configure

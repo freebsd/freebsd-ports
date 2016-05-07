@@ -13,8 +13,8 @@ COMMENT=	Low-level event loop management library for POSIX-based OS
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns \
-		libwwwcore.so:${PORTSDIR}/www/libwww
+LIB_DEPENDS=	libadns.so:dns/adns \
+		libwwwcore.so:www/libwww
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwww

@@ -1,5 +1,5 @@
---- l5.c.orig	Fri Nov 21 05:56:24 2003
-+++ l5.c	Fri Nov 21 05:56:41 2003
+--- l5.c.orig	1996-01-31 20:43:46 UTC
++++ l5.c
 @@ -9,11 +9,6 @@
  #include <stdio.h>
  #include <fcntl.h>

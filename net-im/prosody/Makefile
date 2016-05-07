@@ -13,12 +13,12 @@ COMMENT=	Simple extensible XMPP server written in Lua
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket \
-		${LUA_MODLIBDIR}/ssl.so:${PORTSDIR}/security/luasec \
-		${LUA_MODLIBDIR}/lxp.so:${PORTSDIR}/textproc/luaexpat \
-		${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem-51
+RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket \
+		${LUA_MODLIBDIR}/ssl.so:security/luasec \
+		${LUA_MODLIBDIR}/lxp.so:textproc/luaexpat \
+		${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem-51
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libidn.so:dns/libidn
 
 USERS=		prosody
 GROUPS=		${USERS}
@@ -27,7 +27,7 @@ USE_RC_SUBR=	prosody
 
 OPTIONS_DEFINE=	LUAJIT
 LUAJIT_DESC=	Run prosody using luajit
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 
 .include <bsd.port.options.mk>
 

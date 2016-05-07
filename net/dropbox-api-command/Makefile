@@ -11,11 +11,11 @@ COMMENT=	Dropbox API wrapper command
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-WebService-Dropbox>=1.17:${PORTSDIR}/net/p5-WebService-Dropbox \
-		p5-Path-Class>=0.26:${PORTSDIR}/devel/p5-Path-Class
+BUILD_DEPENDS=	p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
+		p5-Encode-Locale>=0:converters/p5-Encode-Locale \
+		p5-JSON>=0:converters/p5-JSON \
+		p5-WebService-Dropbox>=1.17:net/p5-WebService-Dropbox \
+		p5-Path-Class>=0.26:devel/p5-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes

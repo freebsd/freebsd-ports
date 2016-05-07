@@ -7,7 +7,7 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
-LIB_DEPENDS=	libgpod.so:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS=	libgpod.so:audio/libgpod
 
 KIPI_PLUGIN=	ipodexport
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"

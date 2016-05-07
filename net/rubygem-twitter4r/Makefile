@@ -12,13 +12,12 @@ COMMENT=	Twitter client API in pure Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-json>=1.1.1:${PORTSDIR}/devel/rubygem-json \
-		rubygem-oauth>=0.4.1:${PORTSDIR}/net/rubygem-oauth
+RUN_DEPENDS=	rubygem-json>=1.1.1:devel/rubygem-json \
+		rubygem-oauth>=0.4.1:net/rubygem-oauth
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/t4r-oauth-access bin/t4rsh
 

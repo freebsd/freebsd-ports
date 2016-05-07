@@ -10,7 +10,7 @@ MASTER_SITES=   SF/tkcon/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk program browser
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
 
 # this would do an interactive install:
 #do-install:

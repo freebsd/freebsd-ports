@@ -5,6 +5,7 @@
 
     SUBDIR += SoXt
     SUBDIR += Xaw3d
+    SUBDIR += Xmt
     SUBDIR += attica
     SUBDIR += bakery
     SUBDIR += blt
@@ -148,6 +149,7 @@
     SUBDIR += p5-Gtk2-PathButtonBar
     SUBDIR += p5-Gtk2-TrayIcon
     SUBDIR += p5-Gtk2-Unique
+    SUBDIR += p5-Gtk3
     SUBDIR += p5-Pango
     SUBDIR += p5-Prima
     SUBDIR += p5-Tk

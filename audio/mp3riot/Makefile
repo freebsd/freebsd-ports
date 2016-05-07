@@ -13,7 +13,7 @@ COMMENT=	Mp3riot creates mp3 playlists, HTML files, etc
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
+RUN_DEPENDS=	p5-MP3-Info>=0:audio/p5-MP3-Info
 
 USES=		perl5 shebangfix zip
 SHEBANG_FILES=	mp3riot

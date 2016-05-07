@@ -14,8 +14,8 @@ COMMENT=	Display PDF files and convert them to other formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 USES=		gmake cpe
@@ -39,9 +39,9 @@ OPTIONS_SUB=		yes
 
 SUB_FILES=	xpdf-man.conf
 
-TYPE1_RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n021003l.pfb:${PORTSDIR}/print/gsfonts
+TYPE1_RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n021003l.pfb:print/gsfonts
 
-LIBPAPER_LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
+LIBPAPER_LIB_DEPENDS=	libpaper.so:print/libpaper
 LIBPAPER_CONFIGURE_ON=--with-libpaper-library="${LOCALBASE}/lib" \
 		--with-libpaper-includes="${LOCALBASE}/include"
 LIBPAPER_CONFIGURE_OFF=--without-libpaper-library

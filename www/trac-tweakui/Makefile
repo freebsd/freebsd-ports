@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily tweak Trac pages with JavaScript expressions
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	tracd:www/trac
 
 USES=		dos2unix python zip
 DOS2UNIX_REGEX=	.*\.(css|html|js|py|txt)$

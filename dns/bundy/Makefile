@@ -3,9 +3,10 @@
 
 PORTNAME=	bundy
 PORTVERSION=	0.20160125
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
-MASTER_SITES=	LOCAL/mat/bundy GH
+MASTER_SITES=	LOCAL/mat/bundy SF/boost/boost/1.55.0:boost
+DISTFILES+=	boost_1_55_0.tar.bz2:boost
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Bundy DNS server suite
@@ -16,16 +17,15 @@ LICENSE_NAME=	ISC License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/interprocess/sync/interprocess_upgradable_mutex.hpp:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/include/log4cplus/logger.h:${PORTSDIR}/devel/log4cplus \
-		sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/${PYTHON_PKGNAMEPREFIX}sqlite3
-LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110 \
-		liblog4cplus.so:${PORTSDIR}/devel/log4cplus \
-		libicuuc.so:${PORTSDIR}/devel/icu \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/${PYTHON_PKGNAMEPREFIX}sqlite3
+BUILD_DEPENDS=	${LOCALBASE}/include/log4cplus/logger.h:devel/log4cplus \
+		sqlite3>=3.3.9:databases/sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
+LIB_DEPENDS=	libbotan-1.10.so:security/botan110 \
+		liblog4cplus.so:devel/log4cplus \
+		libicuuc.so:devel/icu \
+		libgmp.so:math/gmp \
+		libsqlite3.so:databases/sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bundy-dns
@@ -42,6 +42,8 @@ CONFIGURE_ARGS=	--localstatedir=/var	\
 		--without-werror \
 		--enable-install-configurations
 INSTALL_TARGET=	install-strip
+
+CPPFLAGS+=	-I${WRKDIR}/boost_1_55_0
 
 OPTIONS_DEFINE=	DOCS
 

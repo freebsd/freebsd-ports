@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	JavaScript plugin for WWW::Scripter
 
-RUN_DEPENDS=	p5-WWW-Scripter>0:${PORTSDIR}/www/p5-WWW-Scripter \
-		p5-JE>0:${PORTSDIR}/www/p5-JE
+RUN_DEPENDS=	p5-WWW-Scripter>0:www/p5-WWW-Scripter \
+		p5-JE>0:www/p5-JE
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -14,8 +14,8 @@ COMMENT=	Converts gff-formated genomic data-sets to PostScript
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	gawk:lang/gawk \
+		bash:shells/bash
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

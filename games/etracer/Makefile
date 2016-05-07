@@ -12,8 +12,8 @@ COMMENT=	Latest and greatest fork of the classic Tux Racer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 USE_SDL=	mixer sdl image
 USE_GCC=	yes

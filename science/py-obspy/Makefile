@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	obspy
-PORTVERSION=	0.10.2
+PORTVERSION=	1.0.1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,22 +13,28 @@ COMMENT=	Python framework for seismological observatories
 LICENSE=	LGPL3
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.6.0:${PORTSDIR}/science/py-scipy \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:${PORTSDIR}/math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}suds>=0.4.0:${PORTSDIR}/net/py-suds \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.9.0:science/py-scipy \
+		${PYTHON_PKGNAMEPREFIX}future>=0.12.4:devel/py-future \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1.0:math/py-matplotlib \
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}suds>=0.4.0:net/py-suds \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:databases/py-sqlalchemy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=			fortran python shebangfix zip
-SHEBANG_FILES=		obspy/taup/tests/data/TauP_test_data/gendata.sh
-USE_LDCONFIG=		yes
-LDFLAGS+=		-shared
-USE_PYTHON=		autoplist distutils
+USES=		fortran python shebangfix zip
+SHEBANG_FILES=	obspy/taup/tests/data/TauP_test_data/gendata.sh
+USE_LDCONFIG=	yes
+LDFLAGS+=	-shared
+USE_PYTHON=	autoplist distutils
 
 LDFLAGS+=	-shared
 
 post-patch:
 	${REINPLACE_CMD} -e "s#FC#${FC}#g" ${WRKSRC}/setup.py
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/obspy/lib/*.so
 
 .include <bsd.port.mk>

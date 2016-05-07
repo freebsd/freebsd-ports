@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Three-way merge and diff
 
-RUN_DEPENDS=	p5-Algorithm-Diff>=1.15:${PORTSDIR}/devel/p5-Algorithm-Diff
+RUN_DEPENDS=	p5-Algorithm-Diff>=1.15:devel/p5-Algorithm-Diff
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

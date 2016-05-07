@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		Ice
-PORTVERSION=		3.6.1
+PORTVERSION=		3.6.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 
@@ -14,12 +14,12 @@ LICENSE=		GPLv2
 SLAVE_PORT?=		no
 
 .if ${SLAVE_PORT} == "no"
-LIB_DEPENDS=		libexpat.so:${PORTSDIR}/textproc/expat2 \
-			libmcpp.so:${PORTSDIR}/devel/mcpp
+LIB_DEPENDS=		libexpat.so:textproc/expat2 \
+			libmcpp.so:devel/mcpp
 USE_OPENSSL=		yes
 .else
 LIB_VRS=		${PORTVERSION:R:S|.||g}
-LIB_DEPENDS+=		libIce.so.${LIB_VRS}:${PORTSDIR}/devel/ice
+LIB_DEPENDS+=		libIce.so.${LIB_VRS}:devel/ice
 PLIST_SUB+=		LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 .endif
 
@@ -31,13 +31,12 @@ USES+=			iconv gmake
 
 .if ${PORT_OPTIONS:MTEST} && ${SLAVE_PORT} == "no"
 USES+=			python:build
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}passlib>0:${PORTSDIR}/security/py-passlib
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib
 .endif
 
 WRKSRC=			${WRKDIR}/ice-${PORTVERSION}
 
-USE_BDB=		yes
-WANT_BDB_VER=		5
+USE_BDB=		5
 INVALID_BDB_VER=	40 41 42 43 44 46 47 48 6
 USE_LDCONFIG=		yes
 BUILD_WRKSRC?=		${WRKSRC}/cpp

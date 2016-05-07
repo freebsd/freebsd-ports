@@ -12,7 +12,7 @@ DISTNAME=	docbook-simple-${PORTVERSION}
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	"Simplified" DocBook XML DTD
 
-RUN_DEPENDS+=	${LOCALBASE}/${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS+=	${LOCALBASE}/${XMLCATMGR}:textproc/xmlcatmgr
 
 USES=		zip
 NO_MTREE=	yes

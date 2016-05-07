@@ -1,9 +1,7 @@
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Circle.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.ConfServer.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Cover.beam
-lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Line.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Safe.beam
-lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Source.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.PathHelper.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.beam
@@ -15,10 +13,13 @@ lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.PathReader.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Post.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Poster.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.ReportUploadError.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Semaphore.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Settings.Files.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Settings.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.StatServer.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Stats.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Stats.Line.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Stats.Source.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.StopWords.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.SubApps.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Task.Util.beam
@@ -28,6 +29,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Circle.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Detail.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Html.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Post.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Semaphore.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Travis.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.beam
 lib/elixir/lib/excoveralls/ebin/excoveralls.app
@@ -44,6 +46,7 @@ lib/elixir/lib/excoveralls/lib/excoveralls/local.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/path_reader.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/post.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/poster.ex
+lib/elixir/lib/excoveralls/lib/excoveralls/semaphore.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/settings.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/stat_server.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/stats.ex

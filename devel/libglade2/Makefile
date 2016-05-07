@@ -17,7 +17,7 @@ USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-RUN_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 GNU_CONFIGURE=	yes
 USES+=		gmake libtool:keepla pathfix pkgconfig

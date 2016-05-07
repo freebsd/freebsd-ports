@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 # base flex(1) v2.5.4 is not sufficient
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!flex!${LOCALBASE}/bin/&!' \

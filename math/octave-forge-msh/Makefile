@@ -19,8 +19,8 @@ OCTSRC=		${OCTAVE_PKGNAME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 GNU_CONFIGURE=	yes
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/splines.tar.gz:${PORTSDIR}/math/octave-forge-splines
-RUN_DEPENDS+=	gmsh:${PORTSDIR}/cad/gmsh
+RUN_DEPENDS+=	${TARBALLS_DIR}/splines.tar.gz:math/octave-forge-splines
+RUN_DEPENDS+=	gmsh:cad/gmsh
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

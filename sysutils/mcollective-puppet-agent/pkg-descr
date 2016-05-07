@@ -1,4 +1,0 @@
-This agent manages the puppet agent, unlike the older puppetd plugin this one
-supports Puppet 3 and recent changes made to its locking and status files.
-
-WWW: https://github.com/puppetlabs/mcollective-puppet-agent/

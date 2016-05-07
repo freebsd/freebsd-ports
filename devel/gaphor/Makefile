@@ -19,9 +19,9 @@ COMMENT=	UML modeling environment written in Python
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.4:${PORTSDIR}/devel/py-nose
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:${PORTSDIR}/devel/py-decorator \
-		${PYTHON_PKGNAMEPREFIX}zope.component>3.4.0:${PORTSDIR}/devel/py-zope.component
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.4:devel/py-nose
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator \
+		${PYTHON_PKGNAMEPREFIX}zope.component>3.4.0:devel/py-zope.component
 
 USE_GNOME=	pygtk2
 USES=		python

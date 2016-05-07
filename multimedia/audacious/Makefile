@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -24,9 +24,10 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 OPTIONS_MULTI=	TOOLKITS
 OPTIONS_MULTI_TOOLKITS=	GTK2 QT5
+OPTIONS_EXCLUDE=	QT5
 OPTIONS_DEFINE=	DBUS ICONV NLS EXECINFO
 OPTIONS_DEFAULT=DBUS GTK2 ICONV NLS EXECINFO
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 ICONV_USES=	iconv
 GTK2_USE=	gnome=gtk20
 GTK2_IMPLIES=	DBUS

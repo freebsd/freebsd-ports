@@ -3,7 +3,7 @@
 
 PORTNAME=	gprbuild
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	gprbuild-gpl-${YEAR}-src
@@ -13,7 +13,7 @@ COMMENT=	Adacore multi-language software build tool
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	xmlada>=4.4:${PORTSDIR}/textproc/xmlada
+BUILD_DEPENDS=	xmlada>=4.4:textproc/xmlada
 
 YEAR=		2015
 SNAPSHOT=	20150506

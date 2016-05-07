@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	grib_api
-PORTVERSION=	1.13.1
+PORTVERSION=	1.14.7
+DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
 MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/3473437/ \
 		LOCAL/sunpoet
@@ -11,9 +12,10 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ECMWF API for WMO FM-92 GRIB messages
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libnetcdf.so:science/netcdf \
+		libpng.so:graphics/png
 
 OPTIONS_SINGLE=	JPEG
 OPTIONS_SINGLE_JPEG=	JASPER OPENJPEG
@@ -30,9 +32,9 @@ USES=		libtool pathfix
 PORTDATA=	*
 
 JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
-JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 OPENJPEG_CONFIGURE_ON=	--with-openjpeg=${LOCALBASE}
-OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
+OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/grib1to2 ${STAGEDIR}${PREFIX}/bin/grib1to2

@@ -15,8 +15,8 @@ COMMENT=	Automates creation of webpage and RSS feed for a podcast
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
-		p5-MP4-Info>=0:${PORTSDIR}/multimedia/p5-MP4-Info
+RUN_DEPENDS=	p5-MP3-Info>=0:audio/p5-MP3-Info \
+		p5-MP4-Info>=0:multimedia/p5-MP4-Info
 
 USES=		perl5 zip
 USE_PERL5=	run

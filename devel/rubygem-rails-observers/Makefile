@@ -12,11 +12,10 @@ COMMENT=	Observer classes for Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel4>=4.0:${PORTSDIR}/databases/rubygem-activemodel4
+RUN_DEPENDS=	rubygem-activemodel4>=4.0:databases/rubygem-activemodel4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

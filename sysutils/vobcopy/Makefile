@@ -11,7 +11,7 @@ MASTER_SITES=	http://vobcopy.org/download/ \
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Decrypts and copies DVD .vob files
 
-LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh

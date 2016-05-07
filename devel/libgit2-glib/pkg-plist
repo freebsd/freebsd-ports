@@ -77,6 +77,7 @@ libdata/pkgconfig/libgit2-glib-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitBranch.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitCloneOptions.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitCommit.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/GgitCommitParents.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitConfig.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitConfigEntry.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitCred.html
@@ -96,6 +97,7 @@ libdata/pkgconfig/libgit2-glib-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitObjectFactory.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitObjectFactoryBase.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitPatch.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/GgitPushOptions.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitRef.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitRefSpec.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitReflog.html
@@ -118,10 +120,11 @@ libdata/pkgconfig/libgit2-glib-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%-1.0/left.png
 %%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-Ggit-Main.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-GgitAnnotatedCommit.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-GgitBlameOptions.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-GgitError.html
-%%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-GgitMergeTreeOptions.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-GgitMergeOptions.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-GgitMessage.html
-%%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-GgitPush.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-GgitStatusOptions.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%-1.0/right-insensitive.png

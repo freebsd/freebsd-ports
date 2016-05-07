@@ -3,7 +3,7 @@
 
 PORTNAME=	adabrowse
 PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://home.datacomm.ch/t_wolf/tw/ada95/adabrowse/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -13,7 +13,7 @@ COMMENT=	HTML generator for Ada 95 library unit specifications
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	asis>=2011:${PORTSDIR}/lang/asis
+BUILD_DEPENDS=	asis>=2011:lang/asis
 
 USES=		ada
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}

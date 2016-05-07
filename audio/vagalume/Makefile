@@ -14,8 +14,8 @@ COMMENT=	GTK+-based client for the Last.fm online radio
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+		libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig desktop-file-utils
@@ -28,12 +28,12 @@ OPTIONS_DEFAULT=	DBUS TRAY
 OPTIONS_SUB=	NLS DBUS
 TRAY_DESC=	Tray icon and libnotify support
 
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 DBUS_CONFIGURE_ON=	--enable-dbus --enable-im-status
 DBUS_CONFIGURE_OFF=	--disable-dbus --disable-im-status
 
-TRAY_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
-TRAY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+TRAY_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libnotify.pc:devel/libnotify
+TRAY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 TRAY_CONFIGURE_ENABLE=	tray-icon
 
 NLS_USES=		gettext

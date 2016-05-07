@@ -12,11 +12,10 @@ COMMENT=	Loads gems installed on the system using Bundler Gemfile DSL
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-bundler>=0:${PORTSDIR}/sysutils/rubygem-bundler
+RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

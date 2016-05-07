@@ -13,10 +13,10 @@ COMMENT=	Plugin for bzr to work with git trees
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
-		${PYTHON_PKGNAMEPREFIX}dulwich>=0.8.0:${PORTSDIR}/devel/dulwich \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+BUILD_DEPENDS=	bzr:devel/bzr
+RUN_DEPENDS=	bzr:devel/bzr \
+		${PYTHON_PKGNAMEPREFIX}dulwich>=0.8.0:devel/dulwich \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		python

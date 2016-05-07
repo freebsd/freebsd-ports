@@ -12,9 +12,9 @@ COMMENT=	Provide fast loading of revision control data into bzr
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
-		${PYTHON_SITELIBDIR}/fastimport/__init__.py:${PORTSDIR}/devel/py-fastimport
+BUILD_DEPENDS=	bzr:devel/bzr
+RUN_DEPENDS=	bzr:devel/bzr \
+		${PYTHON_SITELIBDIR}/fastimport/__init__.py:devel/py-fastimport
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

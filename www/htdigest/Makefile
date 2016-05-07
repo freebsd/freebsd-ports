@@ -13,8 +13,8 @@ COMMENT=	Utility from the Apache distribution for creating htdigest files
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libaprutil-1.so:${PORTSDIR}/devel/apr1 \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libaprutil-1.so:devel/apr1 \
+		libexpat.so:textproc/expat2
 
 USES=		iconv
 

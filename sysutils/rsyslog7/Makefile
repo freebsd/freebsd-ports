@@ -2,20 +2,20 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	7.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Syslogd supporting SQL, TCP, and TLS
 
-BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt \
-		rst2man:${PORTSDIR}/textproc/py-docutils
+BUILD_DEPENDS=	libgcrypt-config:security/libgcrypt \
+		rst2man:textproc/py-docutils
 
-LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
-		libestr.so:${PORTSDIR}/devel/libestr \
-		libjson-c.so:${PORTSDIR}/devel/json-c \
-		liblogging-stdlog.so:${PORTSDIR}/devel/liblogging
+LIB_DEPENDS=	libee.so:devel/libee \
+		libestr.so:devel/libestr \
+		libjson-c.so:devel/json-c \
+		liblogging-stdlog.so:devel/liblogging
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
@@ -41,7 +41,7 @@ USES=		alias libtool pkgconfig
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBI}
-LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=	libdbi.so:databases/libdbi
 CONFIGURE_ARGS+=--enable-libdbi
 PLIST_FILES+=	lib/rsyslog/omlibdbi.so
 .else
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=--disable-libdbi
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls
 PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.so
 .else
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=--disable-pgsql
 .endif
 
 .if ${PORT_OPTIONS:MRELP}
-LIB_DEPENDS+=	librelp.so:${PORTSDIR}/devel/librelp
+LIB_DEPENDS+=	librelp.so:devel/librelp
 CONFIGURE_ARGS+=--enable-relp
 PLIST_FILES+=	lib/rsyslog/imrelp.so \
 		lib/rsyslog/omrelp.so
@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=--disable-relp
 .endif
 
 .if ${PORT_OPTIONS:MRFC3195}
-LIB_DEPENDS+=	liblogging.so:${PORTSDIR}/devel/liblogging
+LIB_DEPENDS+=	liblogging.so:devel/liblogging
 CONFIGURE_ARGS+=--enable-rfc3195
 PLIST_FILES+=	lib/rsyslog/im3195.so
 .else
@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=--disable-rfc3195
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
-LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 CONFIGURE_ARGS+=--enable-snmp
 PLIST_FILES+=	lib/rsyslog/omsnmp.so
 .else
@@ -107,7 +107,7 @@ CONFIGURE_ARGS+=--disable-snmp
 .endif
 
 .if ${PORT_OPTIONS:MUUID}
-LIB_DEPENDS+=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
 .else
 CONFIGURE_ARGS+=--disable-uuid
 .endif

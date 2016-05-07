@@ -37,9 +37,7 @@ man/man1/pdns_server.1.gz
 man/man1/pdnssec.1.gz
 man/man1/zone2ldap.1.gz
 man/man1/zone2sql.1.gz
-@unexec if cmp -s %D/etc/pdns/pdns.conf %D/etc/pdns/pdns.conf-dist; then rm -f %D/etc/pdns/pdns.conf; fi
-etc/pdns/pdns.conf-dist
-@exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf
+@sample etc/pdns/pdns.conf-dist etc/pdns/pdns.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdns.conf
 %%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.mysql.sql
@@ -52,4 +50,3 @@ etc/pdns/pdns.conf-dist
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/schema.pgsql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/schema.sqlite3.sql
-@dir etc/pdns

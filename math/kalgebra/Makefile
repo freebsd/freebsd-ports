@@ -9,7 +9,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE graph calculator
 
-LIB_DEPENDS=	libanalitza.so:${PORTSDIR}/math/analitza
+LIB_DEPENDS=	libanalitza.so:math/analitza
 
 CMAKE_ARGS=	-DBUILD_mobile:BOOL=FALSE
 USE_GL=		glu

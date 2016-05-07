@@ -14,6 +14,7 @@ bin/mysqld_multi
 bin/mysqld_safe
 bin/mysqldumpslow
 bin/mysqltest
+bin/mysqlxtest
 bin/perror
 bin/replace
 bin/resolve_stack_dump
@@ -25,6 +26,7 @@ lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/daemon_example.ini
 %%NO_EXAMPLE%%lib/mysql/plugin/ha_example.so
+lib/mysql/plugin/keyring_file.so
 lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/libtest_framework.so
 lib/mysql/plugin/libtest_services.so
@@ -50,6 +52,7 @@ lib/mysql/plugin/libtest_x_sessions_init.so
 lib/mysql/plugin/locking_service.so
 lib/mysql/plugin/mypluglib.so
 lib/mysql/plugin/mysql_no_login.so
+lib/mysql/plugin/mysqlx.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
@@ -150,3 +153,7 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
 %%DATADIR%%/uninstall_rewriter.sql
+@sample(root,wheel,0640) %%ETCDIR%%/my.cnf.sample
+@dir(mysql,mysql,0750) %%ETCDIR%%/keyring
+@dir(mysql,mysql,0750) %%MY_SECDIR%%
+@dir(mysql,mysql,0750) %%MY_TMPDIR%%

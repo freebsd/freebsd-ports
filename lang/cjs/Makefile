@@ -9,9 +9,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	JavaScript bindings based on gobject-introspection
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libmozjs-24.so:${PORTSDIR}/lang/spidermonkey24
+BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libmozjs-24.so:lang/spidermonkey24
 
 CONFLICTS_BUILD=spidermonkey17-1.7.*
 

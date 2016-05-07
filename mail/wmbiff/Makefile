@@ -3,7 +3,7 @@
 
 PORTNAME=	wmbiff
 PORTVERSION=	0.4.27
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	SF
 
@@ -27,8 +27,8 @@ PLIST_FILES=	bin/wmbiff \
 		%%DATADIR%%/skins/wmbiff-master-contrast.xpm \
 		%%DATADIR%%/skins/wmbiff-master-led.xpm
 
-GNUTLS_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-			libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+			libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ON=	--with-libgnutls-prefix=${LOCALBASE} \
 			--with-libgcrypt-prefix=${LOCALBASE}
 GNUTLS_CONFIGURE_OFF=	--disable-crypto

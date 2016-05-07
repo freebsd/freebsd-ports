@@ -13,8 +13,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME On-Screen Keyboard (GOK)
 
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
-    		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
+		libdbus-glib-1.so:devel/dbus-glib
 
 USES=		gmake gettext libtool pathfix pkgconfig tar:bzip2
 INSTALLS_OMF=	yes

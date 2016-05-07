@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Add Instant Fulltext Search Capability With Senna to Class::DBI
 
-BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
-	p5-Senna>=0:${PORTSDIR}/textproc/p5-Senna
+BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \
+	p5-Senna>=0:textproc/p5-Senna
 
 USES=		perl5
 USE_PERL5=	configure
@@ -22,6 +22,6 @@ BROKEN_ia64=	fails to configure with coredump
 do-configure:
 	cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
-		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+		${PERL5} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>

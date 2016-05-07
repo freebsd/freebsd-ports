@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/qKismet/${PORTVERSION}
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Qt 4 GUI client for Kismet
 
-RUN_DEPENDS=	kismet:${PORTSDIR}/net-mgmt/kismet
+RUN_DEPENDS=	kismet:net-mgmt/kismet
 
 USES=		qmake tar:bzip2
 USE_QT4=	gui xml uic_build moc_build rcc_build network

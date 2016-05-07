@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.x86_64.rpm) = 414b4892afff1ea1938616177855ae3b46a5a7b9ada54c5435a69c1ee01f95d8
 SIZE (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.x86_64.rpm) = 359616
+SHA256 (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.i686.rpm) = fed6b64dd11c7674f083e247f88155f694926a371d0011d9c963675273a2afe4
+SIZE (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.i686.rpm) = 359024
 SHA256 (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.src.rpm) = 4fa4091e3df6a9aca36fcc4f97bce5ff3204c9e9d59501852cec75627ee55201
 SIZE (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.src.rpm) = 1441149

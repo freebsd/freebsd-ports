@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdmerge
 PORTVERSION=	0.0.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.sippysoft.com/thirdparty/
 DISTNAME=	${PORTNAME}-${GITREVISION}
@@ -13,7 +13,7 @@ COMMENT=	Utility to merge existing RRD data from backups into new RRD files
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=	rrdtool:databases/rrdtool
 
 USES=		python shebangfix tar:tbz2
 SHEBANG_FILES=	rrdmergetree

@@ -3,7 +3,7 @@
 
 PORTNAME=	glom
 PORTVERSION=	1.28.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,18 +11,18 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME database designer and user interface
 
-BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		itstool:${PORTSDIR}/textproc/itstool \
-		libepc>=0.4.0:${PORTSDIR}/www/libepc \
-		libgda5-mysql>=0:${PORTSDIR}/databases/libgda5-mysql \
-		libgda5-postgresql>=0:${PORTSDIR}/databases/libgda5-postgresql
-LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
-		libepc-1.0.so:${PORTSDIR}/www/libepc \
-		libgoocanvasmm-2.0.so:${PORTSDIR}/graphics/goocanvasmm2 \
-		libevview3.so:${PORTSDIR}/graphics/evince
-RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		libgda5-mysql>=0:${PORTSDIR}/databases/libgda5-mysql \
-		libgda5-postgresql>=0:${PORTSDIR}/databases/libgda5-postgresql
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		itstool:textproc/itstool \
+		libepc>=0.4.0:www/libepc \
+		libgda5-mysql>=0:databases/libgda5-mysql \
+		libgda5-postgresql>=0:databases/libgda5-postgresql
+LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
+		libepc-1.0.so:www/libepc \
+		libgoocanvasmm-2.0.so:graphics/goocanvasmm2 \
+		libevview3.so:graphics/evince
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		libgda5-mysql>=0:databases/libgda5-mysql \
+		libgda5-postgresql>=0:databases/libgda5-postgresql
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake libarchive libtool pathfix \

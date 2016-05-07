@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, not functional, video OpenQuicktime (TM) player
 
-LIB_DEPENDS=	libopenquicktime.so:${PORTSDIR}/multimedia/openquicktime
+LIB_DEPENDS=	libopenquicktime.so:multimedia/openquicktime
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -13,7 +13,7 @@ COMMENT=	python bindings for libnotify
 
 OPTIONS_DEFINE=	DOCS
 
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libnotify.so:devel/libnotify
 
 USES=		gmake libtool:keepla pathfix pkgconfig python:2 tar:bzip2
 USE_GNOME=	pygtk2

@@ -12,7 +12,7 @@ COMMENT=	Compute molecular dynamics
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	boost-libs>=1.44:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 
 USES=		cmake fortran perl5 pkgconfig shebangfix
 SHEBANG_FILES=	admin/*.sh scripts/*.pl scripts/*.sh src/gromacs/selection/*.sh
@@ -36,18 +36,18 @@ ATLAS_CMAKE_ON=		-DBLAS_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libcblas.so;${LOCAL
 ATLAS_CMAKE_OFF=	-DBLAS_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libblas.so" \
 			-DLAPACK_LIBRARIES:FILEPATH="${LOCALBASE}/lib/liblapack.so"
 FLOAT_DESC=		Use single instead of double precision
-FLOAT_BUILD_DEPENDS=	fftw3>0:${PORTSDIR}/math/fftw3
-FLOAT_LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
-FLOAT_LIB_DEPENDS_OFF=	libfftw3.so:${PORTSDIR}/math/fftw3
+FLOAT_BUILD_DEPENDS=	fftw3>0:math/fftw3
+FLOAT_LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
+FLOAT_LIB_DEPENDS_OFF=	libfftw3.so:math/fftw3
 FLOAT_CMAKE_ON=		-DGMX_DOUBLE:BOOL=OFF
 FLOAT_CMAKE_OFF=	-DGMX_DOUBLE:BOOL=ON
-MPICH2_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
+MPICH2_LIB_DEPENDS=	libmpich.so:net/mpich2
 MPICH2_CMAKE_ON=	-DMPI_C_COMPILER:FILEPATH="${LOCALBASE}/bin/mpicc"
 OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_ON=	-DGMX_CXX11:BOOL=OFF
 OPENMP_CMAKE_OFF=	-DGMX_OPENMP:BOOL=OFF
-OPENMPI_BUILD_DEPENDS=	openmpi>0:${PORTSDIR}/net/openmpi
-OPENMPI_RUN_DEPENDS=	openmpi>0:${PORTSDIR}/net/openmpi
+OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
+OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_CMAKE_ON=	-DMPI_C_COMPILER:FILEPATH="${LOCALBASE}/mpi/openmpi/bin/mpicc"
 SIMD_CMAKE_OFF=		-DGMX_SIMD:STRING="None"
 X11_USE=		XORG=xext,x11

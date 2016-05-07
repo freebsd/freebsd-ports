@@ -11,9 +11,9 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GKrellM XMMS Plugin
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
+LIB_DEPENDS=	libxmms.so:multimedia/xmms
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 WRKSRC=		${WRKDIR}/gkrellmms
 

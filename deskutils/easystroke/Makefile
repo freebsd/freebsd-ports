@@ -12,11 +12,11 @@ COMMENT=	Easystroke is a gesture-recognition application for X11
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
-		${LOCALBASE}/include/xorg/xserver-properties.h:${PORTSDIR}/x11-servers/xorg-server
-LIB_DEPENDS=	libgtkmm-3.0.so:${PORTSDIR}/x11-toolkits/gtkmm30 \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libboost_serialization.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	help2man:misc/help2man \
+		${LOCALBASE}/include/xorg/xserver-properties.h:x11-servers/xorg-server
+LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30 \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libboost_serialization.so:devel/boost-libs
 
 USE_XORG=	x11 xtst
 USES=		gettext gmake pkgconfig
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-BUILD_DEPENDS+=	intltool-merge:${PORTSDIR}/textproc/intltool
+BUILD_DEPENDS+=	intltool-merge:textproc/intltool
 PLIST_SUB+=		NLS=""
 ALL_TARGET=		easystroke.desktop all man
 .else

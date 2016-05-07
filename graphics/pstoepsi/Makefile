@@ -3,7 +3,7 @@
 
 PORTNAME=	pstoepsi
 PORTVERSION=	20020711
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/tools/pstoepsi/
 DISTFILES=	pstoepsi README.this-site
@@ -13,7 +13,7 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wiliam Chia-Wei Cheng's yet another PS to EPSI converter
 
-RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	pbmtoepsi:graphics/netpbm
 
 USES=		ghostscript:run
 NO_WRKSUBDIR=	yes

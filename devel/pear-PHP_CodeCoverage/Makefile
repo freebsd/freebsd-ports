@@ -12,14 +12,14 @@ COMMENT=	Library that provides PHP code coverage information
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	pear-File_Iterator>=1.3.0:${PORTSDIR}/devel/pear-File_Iterator \
-		pear-PHP_TokenStream>=1.1.3:${PORTSDIR}/devel/pear-PHP_TokenStream \
-		pear-Text_Template>=1.1.1:${PORTSDIR}/textproc/pear-Text_Template \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
-RUN_DEPENDS=	pear-File_Iterator>=1.3.0:${PORTSDIR}/devel/pear-File_Iterator \
-		pear-PHP_TokenStream>=1.1.3:${PORTSDIR}/devel/pear-PHP_TokenStream \
-		pear-Text_Template>=1.1.1:${PORTSDIR}/textproc/pear-Text_Template \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
+BUILD_DEPENDS=	pear-File_Iterator>=1.3.0:devel/pear-File_Iterator \
+		pear-PHP_TokenStream>=1.1.3:devel/pear-PHP_TokenStream \
+		pear-Text_Template>=1.1.1:textproc/pear-Text_Template \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+RUN_DEPENDS=	pear-File_Iterator>=1.3.0:devel/pear-File_Iterator \
+		pear-PHP_TokenStream>=1.1.3:devel/pear-PHP_TokenStream \
+		pear-Text_Template>=1.1.1:textproc/pear-Text_Template \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
 USES=	pear
 PEAR_CHANNEL=	phpunit
@@ -29,6 +29,6 @@ DOM_DESC=	Enable DOM support
 XDEBUG_DESC=	Enable Xdebug support
 
 DOM_USE=	PHP=dom
-XDEBUG_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdebug.so:${PORTSDIR}/devel/php-xdebug
+XDEBUG_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdebug.so:devel/php-xdebug
 
 .include <bsd.port.mk>

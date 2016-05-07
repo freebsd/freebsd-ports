@@ -15,7 +15,7 @@ COMMENT=	Free explicit/implicit Finite Element Program
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c
+BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:lang/f2c
 
 OPTIONS_DEFINE=	ATLAS EXAMPLES THREADS
 ATLAS_DESC=	Use ATLAS instead of BLAS/LAPACK
@@ -36,25 +36,25 @@ GID_PTYPES=	${PREFIX}/${GIDDIR}/problemtypes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 .if ${PORT_OPTIONS:MTHREADS}
 BLAS_LIBS=	-lptf77blas
 .else
 BLAS_LIBS=	-lf77blas
 .endif
 .else
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas	\
-		liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas	\
+		liblapack.so:math/lapack
 BLAS_LIBS=	-llapack -lblas
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
 ALL_TARGET=	freebsd_parallel
-LIB_DEPENDS+=	libsuperlu_mt.so:${PORTSDIR}/math/superlu_mt
+LIB_DEPENDS+=	libsuperlu_mt.so:math/superlu_mt
 SUPERLU=	superlu_mt
 .else
 ALL_TARGET=	freebsd_old
-LIB_DEPENDS+=	libsuperlu.so:${PORTSDIR}/math/superlu
+LIB_DEPENDS+=	libsuperlu.so:math/superlu
 SUPERLU=	superlu
 .endif
 

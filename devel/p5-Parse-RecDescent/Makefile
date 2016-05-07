@@ -15,7 +15,7 @@ COMMENT=	Recursive descent parsing framework for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn
 
 OPTIONS_DEFINE=	DOCS
 

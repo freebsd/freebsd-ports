@@ -13,7 +13,7 @@ COMMENT=	Documentation gettext tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		perl5
+USES=		perl5 tar:bz2
 USE_PERL5=	configure
 
 post-extract:

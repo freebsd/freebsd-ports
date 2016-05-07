@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library for the Unix socket API
 
-LIB_DEPENDS=	libex.so:${PORTSDIR}/devel/ossp-ex
+LIB_DEPENDS=	libex.so:devel/ossp-ex
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}

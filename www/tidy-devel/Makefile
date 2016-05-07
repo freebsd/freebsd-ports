@@ -14,7 +14,7 @@ PKGNAMESUFFIX?=	-devel
 MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Utility to clean up and pretty print HTML/XHTML/XML
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
 USES=		tar:bzip2
 

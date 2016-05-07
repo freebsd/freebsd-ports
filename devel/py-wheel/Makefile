@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wheel
-PORTVERSION=	0.24.0
+PORTVERSION=	0.29.0
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
@@ -16,12 +16,13 @@ LICENSE=	MIT
 OPTIONS_DEFINE=	PIP SIGNATURE
 
 PIP_DESC=	Use pip to install wheels
-PIP_RUN_DEPENDS=	pip:${PORTSDIR}/devel/py-pip
+PIP_RUN_DEPENDS=	pip:devel/py-pip
 
 SIGNATURE_DESC=	Enable digital signature of wheels
-SIGNATURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dirspec>=13.05:${PORTSDIR}/devel/py-dirspec \
-			${PYTHON_PKGNAMEPREFIX}keyring>=1.3:${PORTSDIR}/security/py-keyring \
-			${PYTHON_PKGNAMEPREFIX}xdg>=0.25:${PORTSDIR}/devel/py-xdg
+SIGNATURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dirspec>=13.05:devel/py-dirspec \
+			${PYTHON_PKGNAMEPREFIX}ed25519ll>=0.6_1:security/py-ed25519ll \
+			${PYTHON_PKGNAMEPREFIX}keyring>=1.3:security/py-keyring \
+			${PYTHON_PKGNAMEPREFIX}xdg>=0.25:devel/py-xdg
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -3,7 +3,7 @@
 
 PORTNAME=	pnp
 PORTVERSION=	0.6.25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/pnp4nagios/PNP-0.6
 DISTNAME=	pnp4nagios-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -13,9 +13,9 @@ COMMENT?=	Nagios / Icinga performance data collector and grapher
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
-RUN_DEPENDS?=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
-		nagios:${PORTSDIR}/net-mgmt/nagios
+BUILD_DEPENDS=	${LOCALBASE}/bin/rrdtool:databases/rrdtool
+RUN_DEPENDS?=	${LOCALBASE}/bin/rrdtool:databases/rrdtool \
+		nagios:net-mgmt/nagios
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5 dos2unix

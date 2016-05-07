@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	johntabularasa@users.sf.net
 COMMENT=	Fetch listings and books from Project Gutenberg
 
-LIB_DEPENDS=	libgutenfetch.so:${PORTSDIR}/devel/libgutenfetch
+LIB_DEPENDS=	libgutenfetch.so:devel/libgutenfetch
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

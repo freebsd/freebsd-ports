@@ -3,7 +3,7 @@
 
 PORTNAME=	drraw
 DISTVERSION=	2.2b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://web.taranis.org/drraw/dist/ \
 		http://christianserving.org/ports/mail/imapsync/
@@ -11,7 +11,7 @@ MASTER_SITES=	http://web.taranis.org/drraw/dist/ \
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Simple web-based presentation front-end for RRDtool
 
-RUN_DEPENDS+=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS+=	rrdtool>=0:databases/rrdtool
 
 OPTIONS_DEFINE=	ZOOM_PATCH DOCS
 ZOOM_PATCH_DESC=	Zoom support using jQuery via external patch

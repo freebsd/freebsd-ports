@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-manager
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.2
 PORTREVISION=	1
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/ \
@@ -12,23 +12,26 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:${PORTSDIR}/textproc/py-libxml2 \
-		vte3>=0:${PORTSDIR}/x11-toolkits/vte3 \
-		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:${PORTSDIR}/devel/py-ipaddr \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>=0:${PORTSDIR}/www/py-urlgrabber \
-		${PYTHON_PKGNAMEPREFIX}libvirt>=0:${PORTSDIR}/devel/py-libvirt \
-		gtk-vnc>=0.4.4:${PORTSDIR}/net/gtk-vnc \
-		libvirt-glib>=0.1.9:${PORTSDIR}/devel/libvirt-glib \
-		libosinfo>=0:${PORTSDIR}/devel/libosinfo \
-		spice-gtk>=0.26:${PORTSDIR}/deskutils/spice-gtk
+LIB_DEPENDS=	libvirt.so:devel/libvirt
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:textproc/py-libxml2 \
+		vte3>=0:x11-toolkits/vte3 \
+		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>=0:www/py-urlgrabber \
+		${PYTHON_PKGNAMEPREFIX}libvirt>=0:devel/py-libvirt \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
+		gtk-vnc>=0.4.4:net/gtk-vnc \
+		libvirt-glib>=0.1.9:devel/libvirt-glib \
+		libosinfo>=0:devel/libosinfo \
+		spice-gtk>=0.26:deskutils/spice-gtk
 
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--prefix=${PREFIX}
+INSTALLS_ICONS=	yes
 USES=		python:2.7 gettext shebangfix
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	noegginfo autoplist distutils
+
 NO_ARCH=	yes
 
 USE_GNOME=	introspection:run intltool librsvg2 pygobject3

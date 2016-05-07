@@ -14,7 +14,7 @@ COMMENT=	The Chinese PinYin and Bopomofo conversion library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USES=		compiler:c++11-lib gmake libtool pkgconfig python:build shebangfix
 SHEBANG_FILES=	data/db/android/create_db.py
@@ -40,7 +40,7 @@ OPENPHRASE_DB_CONFIGURE_ENABLE=	db-open-phrase
 OPENPHRASE_DB_DISTFILES=	${OPENPHRASE_DBFILE}
 
 OPENCC_CONFIGURE_ENABLE=	opencc
-OPENCC_LIB_DEPENDS=		libopencc.so:${PORTSDIR}/chinese/opencc
+OPENCC_LIB_DEPENDS=		libopencc.so:chinese/opencc
 
 post-extract-OPENPHRASE_DB-on:
 	@${CP} ${DISTDIR}/${OPENPHRASE_DBFILE} ${WRKSRC}/data/db/open-phrase

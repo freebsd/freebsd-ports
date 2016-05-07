@@ -1,8 +1,6 @@
 bin/geogebra
 share/applications/geogebra.desktop
-%%DATADIR%%/geogebra-portable
 %%DATADIR%%/geogebra/OpenGeoProver.jar
-%%DATADIR%%/geogebra/geogebra
 %%DATADIR%%/geogebra/geogebra.jar
 %%DATADIR%%/geogebra/geogebra_3d.jar
 %%DATADIR%%/geogebra/geogebra_algos.jar
@@ -18,8 +16,6 @@ share/applications/geogebra.desktop
 %%DATADIR%%/geogebra/javagiac-linux32.jar
 %%DATADIR%%/geogebra/javagiac-linux64.jar
 %%DATADIR%%/geogebra/jlatexmath.jar
-%%DATADIR%%/geogebra/jlm_cyrillic.jar
-%%DATADIR%%/geogebra/jlm_greek.jar
 %%DATADIR%%/geogebra/jogl.all-natives-linux-amd64.jar
 %%DATADIR%%/geogebra/jogl.all-natives-linux-i586.jar
 %%DATADIR%%/geogebra/jogl.all.jar

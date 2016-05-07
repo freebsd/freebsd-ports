@@ -92,7 +92,6 @@
     SUBDIR += langspec
     SUBDIR += linux-oracle-jdk18
     SUBDIR += linux-oracle-jre18
-    SUBDIR += linux-sun-jdk17
     SUBDIR += linux-sun-jre17
     SUBDIR += mmake
     SUBDIR += mx4j
@@ -107,6 +106,7 @@
     SUBDIR += openjdk7-jre
     SUBDIR += openjdk8
     SUBDIR += openjdk8-jre
+    SUBDIR += openjfx8-devel
     SUBDIR += phpeclipse
     SUBDIR += proguard
     SUBDIR += rubygem-rjb

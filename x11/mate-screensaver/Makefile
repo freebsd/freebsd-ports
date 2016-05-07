@@ -10,9 +10,9 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE screen saver and locker
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libnotify.so:devel/libnotify
 
 PORTSCOUT=	limitw:1,even
 
@@ -43,11 +43,11 @@ OPTIONS_DEFINE=	PAM XSCREENSAVER
 OPTIONS_DEFAULT=PAM
 PAM_DESC=	Pluggable Authentication Module support
 
-XSCREENSAVER_RUN_DEPENDS=	xscreensaver-gnome-hacks>=0:${PORTSDIR}/x11/xscreensaver-gnome-hacks
+XSCREENSAVER_RUN_DEPENDS=	xscreensaver-gnome-hacks>=0:x11/xscreensaver-gnome-hacks
 
 OPTIONS_SUB=	yes
 
-PAM_RUN_DEPENDS=	pam_helper:${PORTSDIR}/security/pam_helper
+PAM_RUN_DEPENDS=	pam_helper:security/pam_helper
 PAM_CONFIGURE_ON=--enable-authentication-scheme=helper \
 		--with-passwd-helper=${LOCALBASE}/bin/pam_helper
 PAM_CONFIGURE_OFF=--disable-pam

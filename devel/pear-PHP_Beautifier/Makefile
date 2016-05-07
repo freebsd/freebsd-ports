@@ -9,8 +9,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR beautifier for PHP
 
-BUILD_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
-RUN_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
+BUILD_DEPENDS=	${PEARDIR}/Log.php:sysutils/pear-Log
+RUN_DEPENDS=	${PEARDIR}/Log.php:sysutils/pear-Log
 
 USES=	pear
 USE_PHP=	tokenizer bz2

@@ -10,7 +10,7 @@ MASTER_SITES=	http://cutecom.sourceforge.net/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Graphical serial terminal
 
-RUN_DEPENDS=	lsz:${PORTSDIR}/comms/lrzsz
+RUN_DEPENDS=	lsz:comms/lrzsz
 
 USE_QT4=	qt3support qmake_build moc_build rcc_build uic_build
 USES=		cmake

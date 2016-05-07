@@ -11,8 +11,10 @@ DISTNAME=	mos201src
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Lightweight implementation of Standard ML
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libgdbm.so:${PORTSDIR}/databases/gdbm
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libgdbm.so:databases/gdbm
 
 RESTRICTED=	Restrictions on for-profit distribution
 

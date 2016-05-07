@@ -10,9 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	tmh.public@gmail.com
 COMMENT=	Graphical frontend for the Music Player Daemon
 
-LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libmpd.so:audio/libmpd \
+		libcurl.so:ftp/curl \
+		libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

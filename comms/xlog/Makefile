@@ -12,7 +12,7 @@ COMMENT=	Amateur Radio logging application
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
+LIB_DEPENDS=	libhamlib.so:comms/hamlib
 
 USES=		pkgconfig shared-mime-info
 USE_GNOME=	gtk20

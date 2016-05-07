@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-MAT
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,26 +12,24 @@ COMMENT=	Perl Memory Analysis Tool
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-List-UtilsBy>=0:${PORTSDIR}/devel/p5-List-UtilsBy \
-		p5-Struct-Dumb>=0:${PORTSDIR}/devel/p5-Struct-Dumb
+BUILD_DEPENDS=	p5-File-ShareDir>=0:devel/p5-File-ShareDir \
+		p5-List-UtilsBy>=0:devel/p5-List-UtilsBy \
+		p5-Scalar-List-Utils>=1.44:lang/p5-Scalar-List-Utils \
+		p5-Struct-Dumb>=0.07:devel/p5-Struct-Dumb
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
-		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
+TEST_DEPENDS=	p5-Test-Identity>=0:devel/p5-Test-Identity \
+		p5-Test-Pod>=1:devel/p5-Test-Pod
 
 USE_PERL5=	modbuild
 USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.29:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.29:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.else
-BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+.if ${PERL_LEVEL} >= 502000
+BUILD_DEPENDS+=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
+RUN_DEPENDS+=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
 .endif
 
 post-install:

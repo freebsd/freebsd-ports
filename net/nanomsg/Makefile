@@ -29,16 +29,16 @@ OPTIONS_SUB=			yes
 
 DOCS_DESC=			Build and/or install HTML documentation
 
-MANPAGES_BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-				xmlto:${PORTSDIR}/textproc/xmlto
+MANPAGES_BUILD_DEPENDS+=	asciidoc:textproc/asciidoc \
+				xmlto:textproc/xmlto
 
 .include <bsd.port.options.mk>
 
 # Avoid duplication
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
 CONFIGURE_ARGS+=	--enable-doc
-BUILD_DEPENDS+=		asciidoc:${PORTSDIR}/textproc/asciidoc \
-			xmlto:${PORTSDIR}/textproc/xmlto
+BUILD_DEPENDS+=		asciidoc:textproc/asciidoc \
+			xmlto:textproc/xmlto
 .endif
 
 post-extract:

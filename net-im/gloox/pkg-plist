@@ -150,6 +150,6 @@ include/gloox/vcardupdate.h
 include/gloox/xhtmlim.h
 lib/libgloox.a
 lib/libgloox.so
-lib/libgloox.so.13
-lib/libgloox.so.13.0.0
+lib/libgloox.so.14
+lib/libgloox.so.14.0.0
 libdata/pkgconfig/gloox.pc

@@ -11,12 +11,11 @@ COMMENT=	Backport of Ruby 1.9's Open3 methods for Ruby 1.8
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}open4>=1.3:${PORTSDIR}/devel/rubygem-open4
+RUN_DEPENDS=	${PKGNAMEPREFIX}open4>=1.3:devel/rubygem-open4
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

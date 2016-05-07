@@ -9,7 +9,7 @@ MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 MAINTAINER=	info@mschuette.name
 COMMENT=	CRM114 C-callable Library
 
-LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	libtre.so:textproc/libtre
 
 LICENSE=	LGPL3
 

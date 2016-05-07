@@ -37,14 +37,14 @@ ASTERISK18_DESC=	Depend on Asterisk 1.8
 ASTERISK11_DESC=	Depend on Asterisk 11
 ASTERISK13_DESC=	Depend on Asterisk 13
 
-ASTERISK18_BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
-ASTERISK18_RUN_DEPENDS=		asterisk:${PORTSDIR}/net/asterisk
+ASTERISK18_BUILD_DEPENDS=	asterisk:net/asterisk
+ASTERISK18_RUN_DEPENDS=		asterisk:net/asterisk
 
-ASTERISK11_BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk11
-ASTERISK11_RUN_DEPENDS=		asterisk:${PORTSDIR}/net/asterisk11
+ASTERISK11_BUILD_DEPENDS=	asterisk:net/asterisk11
+ASTERISK11_RUN_DEPENDS=		asterisk:net/asterisk11
 
-ASTERISK13_BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk13
-ASTERISK13_RUN_DEPENDS=		asterisk:${PORTSDIR}/net/asterisk13
+ASTERISK13_BUILD_DEPENDS=	asterisk:net/asterisk13
+ASTERISK13_RUN_DEPENDS=		asterisk:net/asterisk13
 
 post-build:
 	${STRIP_CMD} ${WRKSRC}/src/.libs/chan_sccp.so

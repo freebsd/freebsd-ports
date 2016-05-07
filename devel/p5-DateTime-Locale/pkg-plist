@@ -244,6 +244,7 @@
 %%SITE_PERL%%/DateTime/Locale/es_419.pod
 %%SITE_PERL%%/DateTime/Locale/es_AR.pod
 %%SITE_PERL%%/DateTime/Locale/es_BO.pod
+%%SITE_PERL%%/DateTime/Locale/es_BR.pod
 %%SITE_PERL%%/DateTime/Locale/es_CL.pod
 %%SITE_PERL%%/DateTime/Locale/es_CO.pod
 %%SITE_PERL%%/DateTime/Locale/es_CR.pod
@@ -546,8 +547,11 @@
 %%SITE_PERL%%/DateTime/Locale/pt.pod
 %%SITE_PERL%%/DateTime/Locale/pt_AO.pod
 %%SITE_PERL%%/DateTime/Locale/pt_BR.pod
+%%SITE_PERL%%/DateTime/Locale/pt_CH.pod
 %%SITE_PERL%%/DateTime/Locale/pt_CV.pod
+%%SITE_PERL%%/DateTime/Locale/pt_GQ.pod
 %%SITE_PERL%%/DateTime/Locale/pt_GW.pod
+%%SITE_PERL%%/DateTime/Locale/pt_LU.pod
 %%SITE_PERL%%/DateTime/Locale/pt_MO.pod
 %%SITE_PERL%%/DateTime/Locale/pt_MZ.pod
 %%SITE_PERL%%/DateTime/Locale/pt_PT.pod
@@ -700,6 +704,8 @@
 %%SITE_PERL%%/DateTime/Locale/yo.pod
 %%SITE_PERL%%/DateTime/Locale/yo_BJ.pod
 %%SITE_PERL%%/DateTime/Locale/yo_NG.pod
+%%SITE_PERL%%/DateTime/Locale/yue.pod
+%%SITE_PERL%%/DateTime/Locale/yue_HK.pod
 %%SITE_PERL%%/DateTime/Locale/zgh.pod
 %%SITE_PERL%%/DateTime/Locale/zgh_MA.pod
 %%SITE_PERL%%/DateTime/Locale/zh.pod
@@ -959,6 +965,7 @@
 %%PERL5_MAN3%%/DateTime::Locale::es_419.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::es_AR.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::es_BO.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::es_BR.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::es_CL.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::es_CO.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::es_CR.3.gz
@@ -1261,8 +1268,11 @@
 %%PERL5_MAN3%%/DateTime::Locale::pt.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt_AO.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt_BR.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::pt_CH.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt_CV.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::pt_GQ.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt_GW.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::pt_LU.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt_MO.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt_MZ.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt_PT.3.gz
@@ -1415,6 +1425,8 @@
 %%PERL5_MAN3%%/DateTime::Locale::yo.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::yo_BJ.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::yo_NG.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::yue.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::yue_HK.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::zgh.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::zgh_MA.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::zh.3.gz

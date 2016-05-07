@@ -1,4 +1,0 @@
-PyICU is a python extension wrapping IBM's ICU C++ API.
-PyICU is supported on Mac OS X, Linux (32- and 64-bit) and Windows.
-
-WWW: http://pyicu.osafoundation.org/

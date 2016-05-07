@@ -12,7 +12,7 @@ DISTNAME=	TECkit_${PORTVERSION:S|.|_|g}
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Toolkit for converting data between 8-bit legacy encodings and Unicode
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		libtool
 GNU_CONFIGURE=	yes

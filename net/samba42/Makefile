@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}42
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		1
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -13,13 +13,13 @@ COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba43-4.3.*
+CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba43-4.3.* samba44-4.4.*
 
-EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-progress:-p1
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.2.7
+SAMBA4_VERSION=		4.2.12
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -72,45 +72,42 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 # XXX: Unconditional dependencies which can't be switched off(if present
 # in the system)
 # popt
-LIB_DEPENDS+=		libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS+=		libpopt.so:devel/popt
 # inotify
-LIB_DEPENDS+=		libinotify.so:${PORTSDIR}/devel/libinotify
-# SASL
-LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libinotify.so:devel/libinotify
 # GNUTLS
-LIB_DEPENDS+=		libgcrypt.so:${PORTSDIR}/security/libgcrypt
-LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		libgnutls.so:security/gnutls
 # NFS4 ACL glue
-LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
+LIB_DEPENDS+=		libsunacl.so:sysutils/libsunacl
 # Libarchive
-BUILD_DEPENDS+=		libarchive>=3.1.2:${PORTSDIR}/archivers/libarchive
-RUN_DEPENDS+=		libarchive>=3.1.2:${PORTSDIR}/archivers/libarchive
+BUILD_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
+RUN_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 # External Samba dependencies
 # IDL compiler
-BUILD_DEPENDS+=		p5-Parse-Pidl>=4.0.0:${PORTSDIR}/devel/p5-Parse-Pidl
+BUILD_DEPENDS+=		p5-Parse-Pidl>=4.0.0:devel/p5-Parse-Pidl
 #
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
 PLIST_SUB+=		PY_DNSPYTHON="@comment "
 # talloc
-BUILD_DEPENDS+=		talloc>=2.1.5:${PORTSDIR}/devel/talloc
-RUN_DEPENDS+=		talloc>=2.1.5:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS+=		talloc>=2.1.5:devel/talloc
+RUN_DEPENDS+=		talloc>=2.1.5:devel/talloc
 SAMBA4_BUNDLED_LIBS+=	!talloc
 # tevent
-BUILD_DEPENDS+=		tevent>=0.9.25:${PORTSDIR}/devel/tevent
-RUN_DEPENDS+=		tevent>=0.9.25:${PORTSDIR}/devel/tevent
+BUILD_DEPENDS+=		tevent>=0.9.28:devel/tevent
+RUN_DEPENDS+=		tevent>=0.9.28:devel/tevent
 SAMBA4_BUNDLED_LIBS+=	!tevent
 # tdb
-BUILD_DEPENDS+=		tdb>=1.3.8:${PORTSDIR}/databases/tdb
-RUN_DEPENDS+=		tdb>=1.3.8:${PORTSDIR}/databases/tdb
+BUILD_DEPENDS+=		tdb>=1.3.8:databases/tdb
+RUN_DEPENDS+=		tdb>=1.3.8:databases/tdb
 SAMBA4_BUNDLED_LIBS+=	!tdb
 # ntdb
-BUILD_DEPENDS+=		ntdb>=1.0:${PORTSDIR}/databases/ntdb
-RUN_DEPENDS+=		ntdb>=1.0:${PORTSDIR}/databases/ntdb
+BUILD_DEPENDS+=		ntdb>=1.0:databases/ntdb
+RUN_DEPENDS+=		ntdb>=1.0:databases/ntdb
 SAMBA4_BUNDLED_LIBS+=	!ntdb
 # ldb
-BUILD_DEPENDS+=		ldb>=1.1.24:${PORTSDIR}/databases/ldb
-RUN_DEPENDS+=		ldb>=1.1.24:${PORTSDIR}/databases/ldb
+BUILD_DEPENDS+=		ldb>=1.1.24:databases/ldb
+RUN_DEPENDS+=		ldb>=1.1.24:databases/ldb
 SAMBA4_BUNDLED_LIBS+=	!ldb
 # Don't use external libcom_err
 SAMBA4_BUNDLED_LIBS+=	com_err
@@ -168,13 +165,13 @@ CFLAGS+=		-fno-omit-frame-pointer
 .endif
 
 .if ${PORT_OPTIONS:MBIND99}
-RUN_DEPENDS+=		bind99>=9.9.0.0:${PORTSDIR}/dns/bind99
+RUN_DEPENDS+=		bind99>=9.9.0.0:dns/bind99
 SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MBIND910}
-RUN_DEPENDS+=		bind910>=9.10.0.0:${PORTSDIR}/dns/bind910
+RUN_DEPENDS+=		bind910>=9.10.0.0:dns/bind910
 SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MNSUPDATE}
-RUN_DEPENDS+=		samba-nsupdate:${PORTSDIR}/dns/samba-nsupdate
+RUN_DEPENDS+=		samba-nsupdate:dns/samba-nsupdate
 SUB_LIST+=		NSUPDATE=""
 .else
 SUB_LIST+=		NSUPDATE="@comment "
@@ -193,8 +190,8 @@ CONFIGURE_ARGS+=	--enable-debug
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
 # XXX: Still may break, if the link isn't installed - blame devel/gdb maintainer then.
 GDB_CMD?=		${LOCALBASE}/bin/gdb
-BUILD_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
-RUN_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
+BUILD_DEPENDS+=		${GDB_CMD}:devel/gdb
+RUN_DEPENDS+=		${GDB_CMD}:devel/gdb
 SAMBA4_MODULES+=	auth_skel perfcount_test pdb_test vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent vfs_fake_acls
 CONFIGURE_ARGS+=	--enable-developer --enable-selftest
 PLIST_SUB+=		DEVELOPER=""
@@ -232,7 +229,7 @@ WANT_EXP_MODULES=	vfs_cacheprime gpext_scripts gpext_security gpext_registry
 .endif
 
 .if ${PORT_OPTIONS:MACL_SUPPORT}
-LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
+LIB_DEPENDS+=		libsunacl.so:sysutils/libsunacl
 WANT_EXP_MODULES+=	vfs_zfsacl
 SAMBA4_MODULES+=	vfs_zfsacl
 CONFIGURE_ARGS+=	--with-acl-support
@@ -265,24 +262,26 @@ CONFIGURE_ARGS+=	--without-aio-support
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=		libavahi-client.so:net/avahi-app
 CONFIGURE_ARGS+=	--enable-avahi
 .else
 CONFIGURE_ARGS+=	--disable-avahi
 .endif
 
 .if ${PORT_OPTIONS:MMDNSRESPONDER}
-LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=		libdns_sd.so:net/mDNSResponder
 CONFIGURE_ARGS+=	--enable-dnssd
 .else
 CONFIGURE_ARGS+=	--disable-dnssd
 .endif
 
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=		libcups.so:${PORTSDIR}/print/cups
+LIB_DEPENDS+=		libcups.so:print/cups
 CONFIGURE_ARGS+=	--enable-cups --enable-iprint
+PLIST_SUB+=		CUPS=""
 .else
 CONFIGURE_ARGS+=	--disable-cups --disable-iprint
+PLIST_SUB+=		CUPS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDNSUPDATE}
@@ -358,8 +357,8 @@ PLIST_SUB+=		LDAP="@comment "
 .if ! ${PORT_OPTIONS:MMANPAGES}
 CONFIGURE_ENV+=		XSLTPROC="true"
 .else
-BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-			xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+			xsltproc:textproc/libxslt
 .endif
 
 .if defined(SAMBA4_BUNDLED_LIBS) && !empty(SAMBA4_BUNDLED_LIBS)
@@ -433,7 +432,7 @@ SAMBA_MAN7+=		samba.7 winbind_krb5_locator.7
 
 SAMBA_MAN8+=		eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 			idmap_ldap.8 idmap_nss.8 idmap_rfc2307.8 idmap_rid.8 \
-			idmap_tdb.8 idmap_tdb2.8 net.8 nmbd.8 pam_winbind.8 pdbedit.8 \
+			idmap_tdb.8 idmap_tdb2.8 net.8 nmbd.8 pam_winbind.8 pdbedit.8 smbspool_krb5_wrapper.8 \
 			samba-regedit.8 samba-tool.8 samba.8 smbd.8 smbpasswd.8 \
 			smbspool.8 smbta-util.8 vfs_acl_tdb.8 vfs_acl_xattr.8 \
 			vfs_aio_fork.8 vfs_aio_linux.8 vfs_aio_pthread.8 \

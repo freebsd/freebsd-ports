@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	watchman
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -38,8 +37,10 @@ BACKTRACE_CPPFLAGS=	${EXECINFO_CPPFLAGS}
 BACKTRACE_LDFLAGS=	${EXECINFO_LDFLAGS}
 BACKTRACE_LIBS=		-lexecinfo
 
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	pcre
+
+CPPFLAGS+=	-Wno-error
 
 post-patch:
 # https://www.gnu.org/prep/standards/html_node/Directory-Variables.html

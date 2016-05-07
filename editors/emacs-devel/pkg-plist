@@ -1548,7 +1548,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/dframe.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired-aux.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired-aux.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/dired-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired-x.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired.el.gz
@@ -1658,7 +1657,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-custom.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-datadebug.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-datadebug.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-opt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-opt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-speedbar.el.gz
@@ -2278,14 +2276,12 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/hl-line.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/htmlfontify.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/htmlfontify.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/htmlfontify-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuf-ext.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuf-ext.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuf-macs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuf-macs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuffer.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuffer.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/ibuffer-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/icomplete.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/icomplete.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ido.el.gz
@@ -2294,6 +2290,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/ielm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/iimage.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/iimage.elc
+@dir %%DATADIR%%/%%EMACS_VER%%/lisp/image
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-dired.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-dired.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-file.el.gz
@@ -2652,7 +2649,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc2368.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc822.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc822.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmail-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmail-spam-filter.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmail-spam-filter.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmail.el.gz
@@ -3064,8 +3060,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-mapper.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mcvs.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mcvs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.el.gz
@@ -3543,7 +3537,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-mule.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-print.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-print.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/ps-print-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-samp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-samp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/recentf.el.gz
@@ -3716,7 +3709,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-global.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-index.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-index.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-parse.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-parse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-ref.el.gz

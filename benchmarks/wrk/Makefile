@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wrk
-PORTVERSION=	4.0.1
-PORTREVISION=	3
+PORTVERSION=	4.0.2
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -11,14 +10,16 @@ COMMENT=	Modern HTTP benchmarking tool
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wg
 
 USES=		gmake
 USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=	yes
 CFLAGS+=	-std=c99 -D_DECLARE_C99_LDBL_MATH
+MAKE_ENV+=	WITH_OPENSSL=${LOCALBASE} WITH_LUAJIT=${LOCALBASE} VER=${PORTVERSION}
 
 PLIST_FILES=	bin/wrk
 

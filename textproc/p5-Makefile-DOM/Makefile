@@ -15,9 +15,9 @@ COMMENT=	Simple DOM parser for Makefiles
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Clone>=0.18:${PORTSDIR}/devel/p5-Clone \
-		p5-List-MoreUtils>=0.21:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Params-Util>=0.22:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-Clone>=0.18:devel/p5-Clone \
+		p5-List-MoreUtils>=0.21:lang/p5-List-MoreUtils \
+		p5-Params-Util>=0.22:devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

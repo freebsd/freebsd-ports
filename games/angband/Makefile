@@ -12,6 +12,8 @@ COMMENT=	Rogue-like game with color, X11 support
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	SDL X11 DOCS
 OPTIONS_DEFAULT=X11
 
@@ -23,13 +25,13 @@ CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${NCURSESINC}
 LDFLAGS+=	-L${NCURSESLIB} -lncursesw
 
-DOCS_BUILD_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils
+DOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
 
 SDL_USE=		SDL=image,mixer,ttf,sdl
 SDL_CONFIGURE_ENABLE=	sdl
 
 X11_USE=		XORG=sm,x11
-X11_RUN_DEPENDS=	xorg-fonts-miscbitmaps>=0:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps
+X11_RUN_DEPENDS=	xorg-fonts-miscbitmaps>=0:x11-fonts/xorg-fonts-miscbitmaps
 X11_CONFIGURE_ENABLE=	x11
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

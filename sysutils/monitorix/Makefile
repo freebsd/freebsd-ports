@@ -2,7 +2,7 @@
 
 PORTNAME=	monitorix
 PORTVERSION=	3.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.monitorix.org/old_versions/ \
@@ -13,15 +13,15 @@ COMMENT=	Web based monitoring system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
-RUN_DEPENDS=	p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA \
-		p5-CGI>=0:${PORTSDIR}/www/p5-CGI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General
+LIB_DEPENDS=	librrd.so:databases/rrdtool
+RUN_DEPENDS=	p5-ParallelUA>=0:www/p5-ParallelUA \
+		p5-CGI>=0:www/p5-CGI \
+		p5-libwww>=0:www/p5-libwww \
+		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-HTTP-Server-Simple>=0:www/p5-HTTP-Server-Simple \
+		p5-Config-General>=0:devel/p5-Config-General
 
 USES=		perl5
 USE_PERL5=	run

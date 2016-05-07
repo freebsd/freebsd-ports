@@ -11,8 +11,8 @@ MASTER_SITES=	http://dist.bsdlab.org/ \
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The Linuxdoc SGML DTD
 
-RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
-		${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	${ISOCAT}:textproc/iso8879 \
+		${XMLCATMGR}:textproc/xmlcatmgr
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes

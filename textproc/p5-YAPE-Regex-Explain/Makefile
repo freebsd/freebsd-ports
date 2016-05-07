@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Explanation of a Regular Expression
 
-RUN_DEPENDS=	p5-YAPE-Regex>=0:${PORTSDIR}/textproc/p5-YAPE-Regex
+RUN_DEPENDS=	p5-YAPE-Regex>=0:textproc/p5-YAPE-Regex
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

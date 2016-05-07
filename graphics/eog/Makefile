@@ -10,11 +10,11 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The Eye Of Gnome image viewer
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libpeas-gtk-1.0.so:${PORTSDIR}/devel/libpeas \
-		liblcms.so:${PORTSDIR}/graphics/lcms
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libpeas-gtk-1.0.so:devel/libpeas \
+		liblcms.so:graphics/lcms
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 
@@ -44,7 +44,7 @@ _WITH_EXEMPI=	no
 
 .if ${PORT_OPTIONS:MEXIF}
 CONFIGURE_ARGS+=--with-libexif
-LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	libexif.so:graphics/libexif
 PLIST_SUB+=	EXIF=""
 _WITH_EXIF=	yes
 .else
@@ -54,7 +54,7 @@ PLIST_SUB+=	EXIF="@comment "
 
 .if ${PORT_OPTIONS:MEXEMPI}
 CONFIGURE_ARGS+=--with-xmp
-LIB_DEPENDS+=	libexempi.so:${PORTSDIR}/textproc/exempi
+LIB_DEPENDS+=	libexempi.so:textproc/exempi
 _WITH_EXEMPI=	yes
 .else
 CONFIGURE_ARGS+=--without-xmp

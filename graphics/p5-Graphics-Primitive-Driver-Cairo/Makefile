@@ -13,12 +13,12 @@ COMMENT=	Cairo backend for Graphics::Primitive
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
-		p5-Graphics-Primitive>=0:${PORTSDIR}/graphics/p5-Graphics-Primitive \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Text-Flow>=0:${PORTSDIR}/textproc/p5-Text-Flow
+BUILD_DEPENDS=	p5-Cairo>=0:graphics/p5-Cairo \
+		p5-Graphics-Primitive>=0:graphics/p5-Graphics-Primitive \
+		p5-Moose>=0:devel/p5-Moose \
+		p5-Text-Flow>=0:textproc/p5-Text-Flow
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Graphics-Color>=0:${PORTSDIR}/graphics/p5-Graphics-Color
+TEST_DEPENDS=	p5-Graphics-Color>=0:graphics/p5-Graphics-Color
 
 USES=		perl5
 USE_PERL5=	configure

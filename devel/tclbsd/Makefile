@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tclbsd
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,18 +14,15 @@ LICENSE=	MIT
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	bsd.pdf
 
-USES=		tcl
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf tcl:tea
+TCL_PKG=	BSD${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 
-CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
-		--with-tcl=${TCL_LIBDIR}
-
-PLIST_FILES=	lib/BSD${PORTVERSION}/bsd_procs.tcl \
-		lib/BSD${PORTVERSION}/libBSD${PORTVERSION}.so \
-		lib/BSD${PORTVERSION}/pkgIndex.tcl \
+PLIST_FILES=	lib/${TCL_PKG}/bsd_procs.tcl \
+		lib/${TCL_PKG}/lib${TCL_PKG}.so \
+		lib/${TCL_PKG}/pkgIndex.tcl \
 		man/mann/bsd.n.gz
 
 post-install:

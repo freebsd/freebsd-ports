@@ -18,7 +18,7 @@ SHEBANG_FILES=	kcode
 
 PLIST_FILES=	bin/kcode man/ja/man1/kcode.1.gz
 
-RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
+RUN_DEPENDS=	ja-p5-Jcode>=0:japanese/p5-Jcode
 
 do-extract:
 	${MKDIR} ${WRKSRC}

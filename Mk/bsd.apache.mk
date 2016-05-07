@@ -92,6 +92,8 @@ WARNING+=	"DEFAULT_APACHE_VER is defined, consider using DEFAULT_VERSIONS+=apach
 .endif
 
 DEFAULT_APACHE_VERSION?=	${APACHE_DEFAULT:S/.//}
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 APACHE_SUPPORTED_VERSION=	24 22 # preferred version first
 
 # Print warnings
@@ -383,11 +385,11 @@ PKGNAMEPREFIX?=	${APACHE_PKGNAMEPREFIX}
 .endif
 
 .if defined(USE_APACHE) || defined(USE_APACHE_BUILD)
-BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+BUILD_DEPENDS+=	${APXS}:${APACHE_PORT}
 .endif
 
 .if defined(USE_APACHE) || defined(USE_APACHE_RUN)
-RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS+=	${APXS}:${APACHE_PORT}
 .endif
 
 PLIST_SUB+=	AP_NAME="${SHORTMODNAME}"

@@ -17,8 +17,8 @@ OPTIONS_DEFINE=	APPLET NLS
 OPTIONS_DEFAULT=	APPLET
 OPTIONS_SUB=	yes
 
-BUILD_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
-RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
+BUILD_DEPENDS=	yelp:x11/yelp
+RUN_DEPENDS=	yelp:x11/yelp
 
 USES=		gmake pathfix python
 USE_GNOME=	gnomeprefix pygnome2 gnomedocutils intltool

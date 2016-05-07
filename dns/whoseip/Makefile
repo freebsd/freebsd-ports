@@ -12,8 +12,8 @@ COMMENT=	Get information about IP addresses: country code and network
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-Net-CIDR>0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
-		p5-Data-UUID>0:${PORTSDIR}/devel/p5-Data-UUID
+RUN_DEPENDS=	p5-Net-CIDR>0:net-mgmt/p5-Net-CIDR \
+		p5-Data-UUID>0:devel/p5-Data-UUID
 
 USES=		perl5
 USE_PERL5=	configure

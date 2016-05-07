@@ -37,21 +37,24 @@
 # Add the following lines to /etc/rc.conf to enable sshguard:
 # sshguard_enable (bool):	Set to "NO" by default.
 #				Set it to "YES" to enable sshguard
+# sshguard_pidfile (str):	Path to PID file.
+#				Set to "/var/run/sshguard.pid" by default
 # sshguard_watch_logs (str):	Colon splitted list of logs to watch.
 #				Set to "/var/log/auth.log:/var/log/maillog"
 #				by default.
 # The following options directly maps to their command line options,
 # please read manual page sshguard(8) for detailed information:
 # sshguard_blacklist (str):	[thr:]/path/to/blacklist.
-#				Set to "40:/var/db/sshguard/blacklist.db"
+#				Set to "30:/var/db/sshguard/blacklist.db"
 #				by default.
-# sshguard_safety_thresh (int):	Safety threshold.  Set to "40" by default.
-# sshguard_pardon_min_interval (int):
-#				Minimum pardon interval.  Set to "420"
-#				by default.
-# sshguard_prescribe_interval (int):
-#				Prescribe interval.  Set to "1200" by
-#				default.
+# sshguard_danger_thresh (int):	Danger threshold.  Set to "30" by default.
+# sshguard_release_interval (int):
+#				Minimum interval an address remains
+#				blocked.  Set to "120" by default.
+# sshguard_reset_interval (int):
+#				Interval before a suspected attack is
+#				forgotten and danger is reset to 0.
+#				Set to "1800" by default.
 # sshguard_whitelistfile (str):	Path to the whitelist.
 #				Set to "%%PREFIX%%/etc/sshguard.whitelist"
 #				by default.
@@ -67,18 +70,20 @@ rcvar=sshguard_enable
 load_rc_config sshguard
 
 : ${sshguard_enable:=NO}
-: ${sshguard_blacklist=40:/var/db/sshguard/blacklist.db}
-: ${sshguard_safety_thresh=40}
-: ${sshguard_pardon_min_interval=420}
-: ${sshguard_prescribe_interval=1200}
+: ${sshguard_blacklist=30:/var/db/sshguard/blacklist.db}
+: ${sshguard_danger_thresh=30}
+: ${sshguard_release_interval=120}
+: ${sshguard_reset_interval=1800}
 : ${sshguard_whitelistfile="%%PREFIX%%/etc/sshguard.whitelist"}
 : ${sshguard_watch_logs=/var/log/auth.log:/var/log/maillog}
+
+pidfile=${sshguard_pidfile:="/var/run/sshguard.pid"}
 
 command=/usr/sbin/daemon
 actual_command="%%PREFIX%%/sbin/sshguard"
 procname="${actual_command}"
 start_precmd=sshguard_prestart
-command_args="-c ${actual_command} \${sshguard_flags} \${sshguard_blacklist_params} \${sshguard_watch_params} -a ${sshguard_safety_thresh} -p ${sshguard_pardon_min_interval} -s ${sshguard_prescribe_interval} -w ${sshguard_whitelistfile}"
+command_args="-c ${actual_command} \${sshguard_flags} \${sshguard_blacklist_params} \${sshguard_watch_params} -a ${sshguard_danger_thresh} -p ${sshguard_release_interval} -s ${sshguard_reset_interval} -w ${sshguard_whitelistfile} -i ${pidfile}"
 
 sshguard_prestart()
 {

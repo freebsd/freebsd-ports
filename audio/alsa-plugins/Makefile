@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	alsa-plugins
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	audio
-MASTER_SITES=	ALSA/plugins \
+MASTER_SITES=	ftp://ftp.alsa-project.org/pub/plugins/ \
 		GENTOO
 
 MAINTAINER=	jbeich@FreeBSD.org

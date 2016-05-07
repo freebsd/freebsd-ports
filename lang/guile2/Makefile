@@ -13,10 +13,12 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libunistring.so:${PORTSDIR}/devel/libunistring \
-		libffi.so.6:${PORTSDIR}/devel/libffi
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libltdl.so:devel/libltdl \
+		libunistring.so:devel/libunistring \
+		libffi.so.6:devel/libffi
 
 CONFLICTS_INSTALL=	guile-[0-9]*
 
@@ -37,8 +39,8 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 THREADS_CONFIGURE_WITH=	threads
-THREADS_LIB_DEPENDS=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
-THREADS_LIB_DEPENDS_OFF=	libgc.so:${PORTSDIR}/devel/boehm-gc
+THREADS_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
+THREADS_LIB_DEPENDS_OFF=	libgc.so:devel/boehm-gc
 
 REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
 			libguile/mallocs.c libguile/eval.c libguile/gc-malloc.c \

@@ -12,7 +12,7 @@ DISTNAME=	hping3-20051105
 MAINTAINER=	ecu@200ok.org
 COMMENT=	Network auditing tool
 
-LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	libtcl84.so:lang/tcl84
 
 CONFLICTS=	hping-[0-9]*
 

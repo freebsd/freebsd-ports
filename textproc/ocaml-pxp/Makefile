@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Validating XML parser for OCaml
 
-BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
-RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
+BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:www/ocaml-net
+RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:www/ocaml-net
 
 OPTIONS_DEFINE=	ULEX
 OPTIONS_DEFAULT=ULEX
@@ -23,8 +23,8 @@ USE_OCAML_FINDLIB=	true
 USE_OCAML_LDCONFIG=	true
 USE_OCAML_CAMLP4=	true
 
-ULEX_BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex
-ULEX_RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex
+ULEX_BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:devel/ocaml-ulex
+ULEX_RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:devel/ocaml-ulex
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=-without-wlex-compat -without-wlex

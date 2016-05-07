@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	podcastdl
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
 		http://files.bebik.net/podcastdl/
@@ -12,7 +12,7 @@ COMMENT=	Simple command line podcast client written in plain C
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libmrss.so:${PORTSDIR}/textproc/libmrss
+LIB_DEPENDS=	libmrss.so:textproc/libmrss
 
 USES=		cmake
 

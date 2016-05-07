@@ -1,15 +1,15 @@
---- ./Makefile.orig	2013-07-28 22:22:29.000000000 +0900
-+++ ./Makefile	2014-03-05 18:40:32.000000000 +0900
-@@ -51,7 +51,7 @@
+--- Makefile.orig	2016-03-16 08:18:02 UTC
++++ Makefile
+@@ -43,7 +43,7 @@ CXXFLAGS ?= -O2
  # try to find right names for OpenCV libs 
  
  ifeq ($(GCC_OPENCV_LIBS),auto)
--ifeq ($(shell echo 'main(){}' | gcc -xc -lopencv_core - -o /dev/null 2>/dev/null && echo "OK"),OK)
-+ifeq ($(shell echo 'main(){}' | $(CC) -xc $(LDFLAGS) -lopencv_core - -o /dev/null 2>/dev/null && echo "OK"),OK)
+-ifeq ($(shell echo 'int main(){}' | gcc -xc -lopencv_core - && ( rm -f a.out ; echo "OK")),OK)
++ifeq ($(shell echo 'int main(){}' | $(CC) -xc $(LDFLAGS) -lopencv_core - && ( rm -f a.out ; echo "OK")),OK)
    GCC_OPENCV_LIBS:=-lopencv_core -lopencv_highgui -lopencv_imgproc
  else
    GCC_OPENCV_LIBS:=-lcv -lhighgui -lcxcore
-@@ -199,7 +199,7 @@
+@@ -210,13 +210,13 @@ endif
  	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(MODSDIR)/perl
  	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(MODSDIR)/exec
  	install    -m 0755 $(USER_GROUP) $(MODS) $(DESTDIR)/$(MODSDIR)/perl
@@ -18,8 +18,6 @@
  	install    -m 0644 $(USER_GROUP) $(GLADE) $(DESTDIR)/$(MODSDIR)/perl
  	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(TEXDIR)
  	install    -m 0644 $(USER_GROUP) $(STY) $(DESTDIR)/$(TEXDIR)
-@@ -209,7 +209,7 @@
- endif
  ifneq ($(DESKTOPDIR),)
  	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(DESKTOPDIR)
 -	install    -m 0644 $(USER_GROUP) -T auto-multiple-choice.desktop $(DESTDIR)/$(DESKTOPDIR)/auto-multiple-choice.desktop
@@ -27,7 +25,7 @@
  endif
  	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(BINDIR)
  	install    -m 0755 $(USER_GROUP) auto-multiple-choice $(DESTDIR)/$(BINDIR)
-@@ -217,7 +217,7 @@
+@@ -224,7 +224,7 @@ endif
  	install    -m 0644 $(USER_GROUP) icons/*.svg $(DESTDIR)/$(ICONSDIR)
  ifneq ($(PIXDIR),)
  	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(PIXDIR)
@@ -36,7 +34,15 @@
  endif
  	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(PERLDIR)/AMC
  	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(PERLDIR)/AMC/Export
-@@ -247,7 +247,19 @@
+@@ -253,6 +253,7 @@ endif
+ ifneq ($(SYSTEM_TYPE),deb) # with debian, done with dh_install{doc,man}
+ 	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(DOCDIR)
+ 	install    -m 0644 $(USER_GROUP) $(wildcard doc/auto-multiple-choice.??.xml doc/auto-multiple-choice.??.pdf) $(DESTDIR)/$(DOCDIR)
++	rm -f doc/html/images/callouts/.hgempty
+ 	cp -r doc/html $(DESTDIR)/$(DOCDIR)
+ ifeq ($(INSTALL_USER),)
+ else
+@@ -263,7 +264,19 @@ else
  	chgrp -hR $(INSTALL_GROUP) $(DESTDIR)/$(DOCDIR)
  endif
  	install -d -m 0755 $(USER_GROUP) $(DESTDIR)/$(MAN1DIR)
@@ -56,4 +62,4 @@
 +	done
  endif
  
- # Test
+ install: install_nodoc install_doc ;

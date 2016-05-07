@@ -25,7 +25,7 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS PNG DOCS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS PNG
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_OFF=	--disable-libpng
 
 .include <bsd.port.options.mk>

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Development environment entirely dedicated to Qt 4
 
-RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
+RUN_DEPENDS=	exctags:devel/ctags
 
 USE_QT4=	gui sql network xml designer sql-sqlite3_run \
 		moc_build uic_build rcc_build

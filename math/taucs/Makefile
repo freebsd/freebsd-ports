@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
 
-LIB_DEPENDS=	libmetis.so:${PORTSDIR}/math/metis4
+LIB_DEPENDS=	libmetis.so:math/metis4
 
 HAS_CONFIGURE=	yes
 USES=		fortran tar:tgz
@@ -37,12 +37,12 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .elif ${WITH_BLAS} == reference
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif

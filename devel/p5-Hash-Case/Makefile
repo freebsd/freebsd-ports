@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0*$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class for hashes with key-casing requirements
 
-BUILD_DEPENDS=	p5-Log-Report>=0.26:${PORTSDIR}/devel/p5-Log-Report
+BUILD_DEPENDS=	p5-Log-Report>=0.26:devel/p5-Log-Report
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

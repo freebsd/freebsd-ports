@@ -12,14 +12,13 @@ COMMENT=	Ruby wrapper for bsdconv
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	libbsdconv.so:converters/bsdconv
 
 CONFIGURE_ARGS+=--with-bsdconv-dir=${LOCALBASE}
 
 GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

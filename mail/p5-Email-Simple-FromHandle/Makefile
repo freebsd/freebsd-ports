@@ -14,8 +14,8 @@ COMMENT=	Perl library for making email objects from a filehandle
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Email-Simple>=0:${PORTSDIR}/mail/p5-Email-Simple \
-		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
+BUILD_DEPENDS=	p5-Email-Simple>=0:mail/p5-Email-Simple \
+		p5-IO-String>=0:devel/p5-IO-String
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	transfig
 PORTVERSION=	3.2.5e
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	SF/mcj/mcj-source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Tools to convert Xfig .fig files
 
-RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	ppmtogif:graphics/netpbm
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		alias ghostscript:run imake
 CFLAGS+=	-Wno-return-type

@@ -1,0 +1,10 @@
+--- src/vsp_aero/CMakeLists.txt.orig	2016-02-14 00:01:30 UTC
++++ src/vsp_aero/CMakeLists.txt
+@@ -1,4 +1,7 @@
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+ 
++SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
++SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
++
+ ADD_SUBDIRECTORY( solver )
+ ADD_SUBDIRECTORY( viewer )

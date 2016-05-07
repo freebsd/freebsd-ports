@@ -1,0 +1,5 @@
+Python-LLFUSE is a set of Python bindings for the low level FUSE API. It
+requires at least FUSE 2.8.0 and supports both Python 2.x and 3.x. It runs
+under Linux, OS-X, FreeBSD and NetBSD.
+
+WWW: https://bitbucket.org/nikratio/python-llfuse

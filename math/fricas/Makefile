@@ -13,8 +13,8 @@ COMMENT=	Computer algebra system, forked from axiom
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.AXIOM
 
-BUILD_DEPENDS=	noweb:${PORTSDIR}/devel/noweb \
-		sbcl:${PORTSDIR}/lang/sbcl
+BUILD_DEPENDS=	noweb:devel/noweb \
+		sbcl:lang/sbcl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -12,9 +12,10 @@ COMMENT=	Keep track of your Tk widgets
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Moose>=0.92:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Has-Sugar>=0:${PORTSDIR}/devel/p5-MooseX-Has-Sugar
+BUILD_DEPENDS=	p5-Moose>=0.92:devel/p5-Moose \
+		p5-MooseX-Has-Sugar>=0:devel/p5-MooseX-Has-Sugar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

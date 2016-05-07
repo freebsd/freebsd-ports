@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: gsad
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# gsad_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=gsad
+rcvar=gsad_enable
+command="%%PREFIX%%/sbin/gsad"
+pidfile=/var/run/gsad.pid
+
+: ${gsad_enable=NO}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -12,7 +12,7 @@ COMMENT=	DNS SRV record command line wrapper
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BUILD_DEPENDS=	docbook2mdoc:${PORTSDIR}/textproc/docbook2mdoc
+BUILD_DEPENDS=	docbook2mdoc:textproc/docbook2mdoc
 
 PLIST_FILES=	bin/wrapsrv man/man1/wrapsrv.1.gz
 

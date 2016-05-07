@@ -4,7 +4,7 @@ PORTNAME=	husky-fidoconf
 
 COMMENT=	Husky FTN configuration library
 
-LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi
+LIB_DEPENDS=	libsmapi.so:news/husky-smapi
 
 USES+=		perl5 shebangfix
 SHEBANG_FILES=	util/fconf2areasbbs.pl util/fconf2na.pl util/sq2fc.pl

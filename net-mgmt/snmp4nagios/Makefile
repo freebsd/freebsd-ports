@@ -3,15 +3,15 @@
 
 PORTNAME=	SNMP4Nagios
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Vendor specific SNMP plugins for Nagios
 
-BUILD_DEPENDS=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp
+BUILD_DEPENDS=	snmpcheck:net-mgmt/net-snmp
+RUN_DEPENDS=	snmpcheck:net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
 
@@ -39,7 +39,7 @@ LIBS+=		-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MRRDTOOL}
-LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	librrd.so:databases/rrdtool
 CONFIGURE_ARGS+=--with-rrd
 PLIST_SUB+=	RRD=""
 .else

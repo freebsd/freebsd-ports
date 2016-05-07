@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.multiprecision.org/mpc/download/
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Library of complex numbers with arbitrarily high precision
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr
 
 PORTSCOUT=	site:http://www.multiprecision.org/index.php?prog=mpc&page=download
 

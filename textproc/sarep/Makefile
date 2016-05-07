@@ -10,7 +10,7 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line search and replace tool; written in Perl; handles regexps
 
-RUN_DEPENDS=	p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS
+RUN_DEPENDS=	p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty

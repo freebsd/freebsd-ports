@@ -13,8 +13,8 @@ COMMENT=	Web validation in a Perl object using tidy
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-LIB_DEPENDS=	libtidyp.so:${PORTSDIR}/textproc/tidyp
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww
+LIB_DEPENDS=	libtidyp.so:textproc/tidyp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS

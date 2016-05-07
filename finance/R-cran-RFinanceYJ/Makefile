@@ -12,8 +12,8 @@ COMMENT=	Japanese stock market from Yahoo!-finance-Japan
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	R-cran-XML>0:${PORTSDIR}/textproc/R-cran-XML \
-		R-cran-xts>0:${PORTSDIR}/math/R-cran-xts
+RUN_DEPENDS=	R-cran-XML>0:textproc/R-cran-XML \
+		R-cran-xts>0:math/R-cran-xts
 
 USES=	cran:auto-plist
 

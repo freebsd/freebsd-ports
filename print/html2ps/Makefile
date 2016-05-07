@@ -3,7 +3,7 @@
 
 PORTNAME=	html2ps
 DISTVERSION=	1.0b7
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://user.it.uu.se/~jan/ \
@@ -15,10 +15,10 @@ COMMENT=	HTML to PostScript converter
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		weblint++:${PORTSDIR}/www/weblint++ \
-		paperconf:${PORTSDIR}/print/libpaper
+RUN_DEPENDS=	mogrify:graphics/ImageMagick \
+		p5-libwww>=0:www/p5-libwww \
+		weblint++:www/weblint++ \
+		paperconf:print/libpaper
 
 NO_BUILD=	yes
 USES=		ghostscript:run perl5

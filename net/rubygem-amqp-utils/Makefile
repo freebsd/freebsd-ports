@@ -12,18 +12,17 @@ COMMENT=	Command line utilies for interacting with AMQP compliant queues
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-amqp>=0.7.1:${PORTSDIR}/net/rubygem-amqp \
-		rubygem-clio>=0.3.0:${PORTSDIR}/devel/rubygem-clio \
-		rubygem-facets>=2.9:${PORTSDIR}/devel/rubygem-facets \
-		rubygem-heredoc_unindent>=1.1.2:${PORTSDIR}/textproc/rubygem-heredoc_unindent \
-		rubygem-json>=1.5:${PORTSDIR}/devel/rubygem-json \
-		rubygem-msgpack>=0.4.5:${PORTSDIR}/devel/rubygem-msgpack \
-		rubygem-trollop1>=1.16.2:${PORTSDIR}/devel/rubygem-trollop1
+RUN_DEPENDS=	rubygem-amqp>=0.7.1:net/rubygem-amqp \
+		rubygem-clio>=0.3.0:devel/rubygem-clio \
+		rubygem-facets>=2.9:devel/rubygem-facets \
+		rubygem-heredoc_unindent>=1.1.2:textproc/rubygem-heredoc_unindent \
+		rubygem-json>=1.5:devel/rubygem-json \
+		rubygem-msgpack>=0.4.5:devel/rubygem-msgpack \
+		rubygem-trollop1>=1.16.2:devel/rubygem-trollop1
 
 NO_ARCH=		yes
 USE_RUBY=		yes
-USE_RUBYGEMS=		yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES+=	bin/amqp-deleteq bin/amqp-dequeue bin/amqp-enqueue bin/amqp-peek bin/amqp-pop \
 		bin/amqp-purge bin/amqp-spy bin/amqp-statq bin/amqp-unbind \

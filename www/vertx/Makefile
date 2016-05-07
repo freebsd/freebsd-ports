@@ -13,7 +13,7 @@ COMMENT=	Effortless asynchronous application development for the modern web
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
@@ -47,8 +47,8 @@ PHP_DESC=	Use PHP to write verticles (experimental)
 RHINO_DESC=	Use Rhino to write verticles
 SCALA_DESC=	Use Scala to write verticles
 
-JYTHON_RUN_DEPENDS=	jython:${PORTSDIR}/lang/jython
-JRUBY_RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby
+JYTHON_RUN_DEPENDS=	jython:lang/jython
+JRUBY_RUN_DEPENDS=	jruby:lang/jruby
 
 .include <bsd.port.options.mk>
 

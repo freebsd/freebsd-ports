@@ -11,16 +11,16 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Synchronization application for GNOME
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
-		${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
-		${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
-		xdg-open:${PORTSDIR}/devel/xdg-utils
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:deskutils/py-vobject \
+		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:deskutils/py-vobject \
+		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus \
+		xdg-open:devel/xdg-utils
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pathfix pkgconfig python:2
@@ -38,8 +38,8 @@ EOG_DESC=	Build Eye-Of-Gnome Plugin
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEOG}
-BUILD_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
-RUN_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
+BUILD_DEPENDS+=	eog:graphics/eog
+RUN_DEPENDS+=	eog:graphics/eog
 CONFIGURE_ARGS+=	--enable-eog-plugin
 .endif
 

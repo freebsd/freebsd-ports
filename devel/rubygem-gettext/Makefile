@@ -12,15 +12,13 @@ COMMENT=	Ruby implementation of the gettext library
 LICENSE=	RUBY LGPL3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	rubygem-locale>=2.0.5:${PORTSDIR}/devel/rubygem-locale \
-		rubygem-text>=1.3.0:${PORTSDIR}/textproc/rubygem-text
+RUN_DEPENDS=	rubygem-locale>=2.0.5:devel/rubygem-locale \
+		rubygem-text>=1.3.0:textproc/rubygem-text
 
-USES=	shebangfix
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem shebangfix
 SHEBANG_FILES=	samples/*.rb samples/cgi/*.rb
 PLIST_FILES=	bin/rmsgcat bin/rmsgfmt bin/rmsginit bin/rmsgmerge bin/rxgettext
 

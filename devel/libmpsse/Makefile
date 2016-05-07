@@ -10,8 +10,8 @@ COMMENT=	Open source library for SPI/I2C control via FTDI chips
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
-LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi
+BUILD_DEPENDS=	swig2.0:devel/swig20
+LIB_DEPENDS=	libftdi.so:devel/libftdi
 
 USES=		gmake pkgconfig python:2
 USE_AUTOTOOLS=	autoconf

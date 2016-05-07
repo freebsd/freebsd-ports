@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-qt4
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Qt 4 bindings to the Avahi mDNS system
 
-LIB_DEPENDS=	libavahi-common.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libavahi-common.so:net/avahi-app
 
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-qt

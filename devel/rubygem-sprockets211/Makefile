@@ -13,17 +13,16 @@ COMMENT=	Ruby library that preprocesses and concatenates JavaScript files
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-hike>=1.2:${PORTSDIR}/devel/rubygem-hike \
-		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-rack16>=1.0:${PORTSDIR}/www/rubygem-rack16 \
-		rubygem-tilt1>=1.1:${PORTSDIR}/devel/rubygem-tilt1
+RUN_DEPENDS=	rubygem-hike>=1.2:devel/rubygem-hike \
+		rubygem-multi_json>=1.0:devel/rubygem-multi_json \
+		rubygem-rack16>=1.0:www/rubygem-rack16 \
+		rubygem-tilt1>=1.1:devel/rubygem-tilt1
 
 CONFLICTS_INSTALL=	rubygem-sprockets-[0-9]*
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/sprockets
 

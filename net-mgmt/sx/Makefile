@@ -12,8 +12,10 @@ COMMENT=	Skylable Sx is a reliable, fully distributed cluster solution
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libfcgi.so:${PORTSDIR}/www/fcgi
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfcgi.so:www/fcgi
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes

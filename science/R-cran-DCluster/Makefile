@@ -12,7 +12,7 @@ COMMENT=	Functions for the detection of spatial clusters of diseases
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-spdep>0:${PORTSDIR}/math/R-cran-spdep
+RUN_DEPENDS=	R-cran-spdep>0:math/R-cran-spdep
 
 USES=	cran:auto-plist
 

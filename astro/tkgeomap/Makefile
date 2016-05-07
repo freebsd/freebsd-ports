@@ -11,13 +11,10 @@ COMMENT=	Read, manipulate, and display geo data
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtclgeomap.so:${PORTSDIR}/astro/tclgeomap
+LIB_DEPENDS=	libtclgeomap.so:astro/tclgeomap
 
-USES+=		tk
-GNU_CONFIGURE=	yes
+USES+=		tk:tea
 CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x \
-		--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR} \
-		--with-tk=${TK_LIBDIR} --with-tkinclude=${TK_INCLUDEDIR} \
 		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
 MAKE_ENV+=	TCLGEOMAP_LIB="-L ${LOCALBASE}/lib -ltclgeomap"
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

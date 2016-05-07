@@ -17,7 +17,7 @@ LICENSE_NAME=	Snes9x License
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/docs/snes9x-license.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_XORG=	x11 sm ice xext
 USES=		gettext gmake perl5 desktop-file-utils pkgconfig tar:bzip2 desktop-file-utils
@@ -49,12 +49,12 @@ XV_USE=	XORG=xv
 XRANDR_CONFIGURE_WITH=	xrandr
 XRANDR_USE=	XORG=xrandr
 ALSA_CONFIGURE_WITH=	alsa
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_USES=	compiler:c++11-lang
 PORTAUDIO_CONFIGURE_WITH=	portaudio
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so.2:audio/portaudio2
 PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 PLIST_FILES=	bin/snes9x-gtk \
 		share/pixmaps/snes9x.svg \

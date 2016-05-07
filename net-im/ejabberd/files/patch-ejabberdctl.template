@@ -1,19 +1,21 @@
---- ejabberdctl.template.orig	2016-03-09 03:31:00 UTC
+--- ejabberdctl.template.orig   2016-03-09 03:31:00 UTC
 +++ ejabberdctl.template
-@@ -16,6 +16,7 @@ IEX={{bindir}}/iex
+@@ -15,7 +15,8 @@
+ IEX={{bindir}}/iex
  EPMD={{bindir}}/epmd
  INSTALLUSER={{installuser}}
- ERL_LIBS={{libdir}}
+-ERL_LIBS={{libdir}}
++ERL_LIBS={{libdir}}/ejabberd
 +ERL_LIBS=$ERL_LIBS:{{libdir}}/ejabberd/lib
  
  # check the proper system user is used if defined
  if [ "$INSTALLUSER" != "" ] ; then
-@@ -31,14 +32,14 @@ if [ "$INSTALLUSER" != "" ] ; then
+@@ -31,14 +32,14 @@
          fi
      done
      if [ `id -g` -eq `id -g $INSTALLUSER` ] ; then
 -        EXEC_CMD="bash -c"
-+        EXEC_CMD="/usr/local/bin/bash -c"
++        EXEC_CMD="%%LOCALBASE%%/bin/bash -c"
      fi
      if [ "$EXEC_CMD" = "false" ] ; then
          echo "This command can only be run by root or the user $INSTALLUSER" >&2
@@ -21,11 +23,11 @@
      fi
  else
 -    EXEC_CMD="bash -c"
-+    EXEC_CMD="/usr/local/bin/bash -c"
++    EXEC_CMD="%%LOCALBASE%%/bin/bash -c"
  fi
  
  # parse command line parameters
-@@ -73,10 +74,10 @@ if [ "$EJABBERD_CONFIG_PATH" = "" ] ; th
+@@ -73,10 +74,10 @@
      EJABBERD_CONFIG_PATH=$ETC_DIR/ejabberd.yml
  fi
  if [ "$LOGS_DIR" = "" ] ; then
@@ -38,7 +40,7 @@
  fi
  if [ "$EJABBERD_DOC_PATH" = "" ] ; then
      EJABBERD_DOC_PATH={{docdir}}
-@@ -354,7 +355,7 @@ ctl()
+@@ -354,7 +355,7 @@
      # using flock if available. Expects a linux-style
      # flock that can lock a file descriptor.
      MAXCONNID=100

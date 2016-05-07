@@ -11,12 +11,11 @@ COMMENT=	YARD plugin for Chef
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-yard>=0.8:${PORTSDIR}/textproc/rubygem-yard
+RUN_DEPENDS=	rubygem-yard>=0.8:textproc/rubygem-yard
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -55,6 +55,8 @@ lib/libvirt-qemu.so.%%SHLIB_VER%%
 lib/libvirt.so
 lib/libvirt.so.0
 lib/libvirt.so.%%SHLIB_VER%%
+%%NSS%%lib/libnss_libvirt.so.1
+%%NSS%%lib/nss_libvirt.so.1
 libdata/pkgconfig/libvirt.pc
 libdata/pkgconfig/libvirt-lxc.pc
 libdata/pkgconfig/libvirt-qemu.pc
@@ -116,10 +118,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/drvvirtuozzo.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvxen.html
 %%DOCSDIR%%%%PORTVERSION%%/html/errors.html
-%%DOCSDIR%%%%PORTVERSION%%/html/et.png
 %%DOCSDIR%%%%PORTVERSION%%/html/firewall.html
-%%DOCSDIR%%%%PORTVERSION%%/html/footer_corner.png
-%%DOCSDIR%%%%PORTVERSION%%/html/footer_pattern.png
 %%DOCSDIR%%%%PORTVERSION%%/html/format.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatcaps.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatdomain.html
@@ -139,6 +138,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/html/home.png
 %%DOCSDIR%%%%PORTVERSION%%/html/html/index.html
 %%DOCSDIR%%%%PORTVERSION%%/html/html/left.png
+%%DOCSDIR%%%%PORTVERSION%%/html/html/libvirt-libvirt-common.html
 %%DOCSDIR%%%%PORTVERSION%%/html/html/libvirt-virterror.html
 %%DOCSDIR%%%%PORTVERSION%%/html/html/right.png
 %%DOCSDIR%%%%PORTVERSION%%/html/html/up.png
@@ -183,6 +183,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2015.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news.html
 %%DOCSDIR%%%%PORTVERSION%%/html/node.gif
+%%DOCSDIR%%%%PORTVERSION%%/html/nss.html
 %%DOCSDIR%%%%PORTVERSION%%/html/pending.html
 %%DOCSDIR%%%%PORTVERSION%%/html/php.html
 %%DOCSDIR%%%%PORTVERSION%%/html/python.html

@@ -15,7 +15,7 @@ COMMENT=	Python-based parsing at the speed of C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
+BUILD_DEPENDS=	pyrex>=0.9.6.2:devel/pyrex
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

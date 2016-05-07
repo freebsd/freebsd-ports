@@ -10,7 +10,7 @@ MASTER_SITES=	http://research.wand.net.nz/software/libtrace/
 MAINTAINER=	matt@peterson.org
 COMMENT=	C library for network packet capture and processing
 
-LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	libpcap.so:net/libpcap
 
 CONFIGURE_ARGS=	--with-libpcap=${LOCALBASE} \
 		libtrace_doxygen=false

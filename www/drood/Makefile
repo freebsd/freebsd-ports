@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drood
-PORTVERSION=	5.20
+PORTVERSION=	5.22
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -12,7 +12,7 @@ COMMENT=	Lightweight kqueue-based http/1.1 server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libserver.so:${PORTSDIR}/devel/libserver
+LIB_DEPENDS=	libserver.so:devel/libserver
 
 USE_LDCONFIG=	yes
 

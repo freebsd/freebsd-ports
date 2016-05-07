@@ -14,12 +14,12 @@ COMMENT=	Perl module for FastAGI handling
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Asterisk>=0:${PORTSDIR}/misc/p5-Asterisk \
-		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		p5-File-Remove>=0:${PORTSDIR}/devel/p5-File-Remove
-RUN_DEPENDS=	p5-Asterisk>=0:${PORTSDIR}/misc/p5-Asterisk \
-		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server
+BUILD_DEPENDS=	p5-Module-Install>=0:devel/p5-Module-Install \
+		p5-Asterisk>=0:misc/p5-Asterisk \
+		p5-Net-Server>=0:net/p5-Net-Server \
+		p5-File-Remove>=0:devel/p5-File-Remove
+RUN_DEPENDS=	p5-Asterisk>=0:misc/p5-Asterisk \
+		p5-Net-Server>=0:net/p5-Net-Server
 
 USES=		perl5
 USE_PERL5=	configure

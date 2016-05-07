@@ -11,12 +11,12 @@ COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
-		ffmpeg:${PORTSDIR}/multimedia/ffmpeg
-LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52 \
-		libao.so:${PORTSDIR}/audio/libao \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+BUILD_DEPENDS=	mplayer:multimedia/mplayer \
+		ffmpeg:multimedia/ffmpeg
+LIB_DEPENDS=	liba52.so:audio/liba52 \
+		libao.so:audio/libao \
+		libmad.so:audio/libmad \
+		libavutil.so:multimedia/ffmpeg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes

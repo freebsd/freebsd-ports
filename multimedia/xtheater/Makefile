@@ -15,7 +15,7 @@ COMMENT=	MPEG-1 player in GTK+ capable of playing MPEG-1 format streams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
 USE_SDL=	sdl
 USE_GNOME=	gtk12

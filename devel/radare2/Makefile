@@ -12,6 +12,8 @@ COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	Does not build
+
 CONFLICTS_BUILD=capstone-*
 
 USES=		gmake pkgconfig tar:xz

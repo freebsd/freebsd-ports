@@ -3,7 +3,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -43,25 +43,25 @@ ARGB_CONFIGURE_ENABLE=	argb
 
 AUDACIOUS_DESC=		Control Audacious sound player
 AUDACIOUS_CONFIGURE_ENABLE=audacious
-AUDACIOUS_LIB_DEPENDS=	libaudclient.so:${PORTSDIR}/multimedia/audacious
+AUDACIOUS_LIB_DEPENDS=	libaudclient.so:multimedia/audacious
 
 DOUBLE_BUFFER_DESC=	Enable X11 double buffering
 DOUBLE_BUFFER_CONFIGURE_ENABLE=double-buffer
 
 INOTIFY_DESC=		Monitor file changes via Inotify
 INOTIFY_CONFIGURE_ENABLE=inotify
-INOTIFY_LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
+INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 LUA_CAIRO_DESC=		Lua-Cairo binding
 LUA_CAIRO_CONFIGURE_ENABLE=lua-cairo
-LUA_CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+LUA_CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 
 LUA_IMLIB2_DESC=	Lua-Imlib2 binding
 LUA_IMLIB2_CONFIGURE_ENABLE=lua-imlib2
 
 METAR_DESC=		Display METAR weather reports
 METAR_CONFIGURE_ENABLE=	weather-metar
-METAR_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+METAR_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 MOC_DESC=		Control MOC (Music On Console)
 MOC_CONFIGURE_ENABLE=	moc
@@ -75,20 +75,20 @@ NCURSES_CONFIGURE_ENABLE=ncurses
 RSS_DESC=		Display RSS feeds
 RSS_CONFIGURE_ENABLE=	rss
 RSS_USE=		GNOME=glib20
-RSS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-			libxml2.so:${PORTSDIR}/textproc/libxml2
+RSS_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			libxml2.so:textproc/libxml2
 
 XFT_CONFIGURE_ENABLE=	xft
-XFT_LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
+XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
 
 XMMS2_DESC=		Control XMMS2 media player
 XMMS2_CONFIGURE_ENABLE=	xmms2
-XMMS2_LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2
+XMMS2_LIB_DEPENDS=	libxmmsclient.so:audio/xmms2
 
 XOAP_DESC=		Display XOAP weather reports
 XOAP_CONFIGURE_ENABLE=	weather-xoap
-XOAP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-			libxml2.so:${PORTSDIR}/textproc/libxml2
+XOAP_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			libxml2.so:textproc/libxml2
 
 .include <bsd.port.options.mk>
 
@@ -102,7 +102,7 @@ EXAMPLE_CONF_FILE=	${WRKSRC}/data/conky_no_x11.conf
 .endif
 
 .if ${PORT_OPTIONS:MIMLIB2} || ${PORT_OPTIONS:MLUA_IMLIB2}
-LIB_DEPENDS+=		libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=		libImlib2.so:graphics/imlib2
 CONFIGURE_ARGS+=	--enable-imlib2
 .else
 CONFIGURE_ARGS+=	--disable-imlib2
@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=	--disable-lua
 .endif
 
 .if ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2}
-LIB_DEPENDS+=		libtolua++-5.1.so:${PORTSDIR}/lang/tolua++
+LIB_DEPENDS+=		libtolua++-5.1.so:lang/tolua++
 .endif
 
 post-patch:

@@ -13,12 +13,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight HTML rendering/printing/editing engine
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libenchant.so:${PORTSDIR}/textproc/enchant
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libenchant.so:textproc/enchant
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme
 
 PORTSCOUT=	ignore:1
 
@@ -35,14 +35,14 @@ PLIST_SUB=	VERSION="3.14"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@INTLTOOL_LIBDIR@|${LOCALBASE}/libdata|' \
-	    	${WRKSRC}/intltool-merge.in
+		${WRKSRC}/intltool-merge.in
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g ; \
 		s|-DGTK_DISABLE_DEPRECATED||g ; \
 		s|-DG_DISABLE_DEPRECATED||g ; \
-	    	s|-DGDK_DISABLE_DEPRECATED||g' \
+		s|-DGDK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gtkhtml-editor-test[$$]|gtkhtml3-editor-test$$|' \
-	    	${WRKSRC}/components/editor/Makefile.in
+		${WRKSRC}/components/editor/Makefile.in
 	@${REINPLACE_CMD} '/g_thread_init/d' ${WRKSRC}/components/editor/main.c
 	@${REINPLACE_CMD} -e 's|G_CONST_RETURN||g' \
 		${WRKSRC}/a11y/*.[ch]

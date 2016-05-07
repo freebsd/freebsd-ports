@@ -10,9 +10,9 @@ COMMENT=	KDE professional quality non-linear video editing suite
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmlt.so:${PORTSDIR}/multimedia/mlt \
-		libqjson.so:${PORTSDIR}/devel/qjson
-RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
+LIB_DEPENDS=	libmlt.so:multimedia/mlt \
+		libqjson.so:devel/qjson
+RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX}
 
 USE_KDE4=	automoc4 kdelibs kdeprefix nepomuk-core
 USE_QT4=	corelib dbus gui opengl script svg xml \
@@ -35,23 +35,23 @@ XINE_DESC=	DVD preview support via xine
 
 DOCS_CMAKE_OFF=		-DBUILD_doc:BOOL=FALSE
 
-DVDWIZARD_RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-			cdrecord:${PORTSDIR}/sysutils/cdrtools
+DVDWIZARD_RUN_DEPENDS=	dvdauthor:multimedia/dvdauthor \
+			cdrecord:sysutils/cdrtools
 
-FREI0R_RUN_DEPENDS=	frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins
+FREI0R_RUN_DEPENDS=	frei0r-plugins>=0:graphics/frei0r-plugins
 
-LADSPA_RUN_DEPENDS=	swhplugins>=0:${PORTSDIR}/audio/swhplugins
+LADSPA_RUN_DEPENDS=	swhplugins>=0:audio/swhplugins
 
 NLS_USES=		gettext
 NLS_CMAKE_OFF=		-DBUILD_po:BOOL=FALSE
 
-SCREENCAST_RUN_DEPENDS=	recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
+SCREENCAST_RUN_DEPENDS=	recordmydesktop:multimedia/recordmydesktop
 
-V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
-V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_CMAKE_OFF=		-DWITH_LibV4L2:BOOL=FALSE
 
-XINE_RUN_DEPENDS=	xine:${PORTSDIR}/multimedia/xine
+XINE_RUN_DEPENDS=	xine:multimedia/xine
 
 post-patch:
 	@${REINPLACE_CMD} -E -e '/${PORTNAME}.(menu|xpm)/ d' \

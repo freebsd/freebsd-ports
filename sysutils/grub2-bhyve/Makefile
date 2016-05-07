@@ -11,8 +11,8 @@ COMMENT=	Grub-emu loader for bhyve
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		help2man:${PORTSDIR}/misc/help2man
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+		help2man:misc/help2man
 
 ONLY_FOR_ARCHS=	amd64
 SSP_UNSAFE=	yes

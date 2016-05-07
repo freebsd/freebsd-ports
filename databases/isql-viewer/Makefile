@@ -14,9 +14,9 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JDBC 2.x compliant database front end
 
-RUN_DEPENDS=	${JYTHON_PREFIX}/${JYTHON_JAR}:${PORTSDIR}/lang/jython \
-		${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc \
-		${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
+RUN_DEPENDS=	${JYTHON_PREFIX}/${JYTHON_JAR}:lang/jython \
+		${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc \
+		${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

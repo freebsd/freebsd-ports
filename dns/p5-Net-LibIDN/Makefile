@@ -13,7 +13,7 @@ COMMENT=	This module provides access to the libidn library
 
 LICENSE=	ART10
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libidn.so:dns/libidn
 
 USES=		perl5
 USE_PERL5=	configure

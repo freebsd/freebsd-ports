@@ -26,7 +26,7 @@ X11_DESC=	X11 textmode support
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON=	does not build on ia64
 
-LZO2_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO2_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LZO2_CONFIGURE_OFF=	--with-included-lzo
 X11_USE=		XORG=x11
 X11_CPPFLAGS=		-I${LOCALBASE}/include

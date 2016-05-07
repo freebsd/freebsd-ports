@@ -11,7 +11,7 @@ DISTNAME=	elisau10
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Elisa 10-dot Kanji font
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts tar:tgz
 FONTNAME=	misc

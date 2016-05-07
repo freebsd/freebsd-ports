@@ -14,7 +14,7 @@ COMMENT=	This glpi plugin allows data import into GLPI using CSV files
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	glpi>=0.72:${PORTSDIR}/www/glpi
+RUN_DEPENDS=	glpi>=0.72:www/glpi
 
 WRKSRC=		${WRKDIR}/datainjection
 NO_BUILD=	yes

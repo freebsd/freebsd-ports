@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates, converts, and filters files
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnaji.a:${PORTSDIR}/devel/libnaji
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnaji.a:devel/libnaji
 
 PLIST_FILES=	bin/najitool
 

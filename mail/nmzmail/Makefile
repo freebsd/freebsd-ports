@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast mail searching for mutt
 
-RUN_DEPENDS=	namazu:${PORTSDIR}/databases/namazu2
+RUN_DEPENDS=	namazu:databases/namazu2
 
 GNU_CONFIGURE=	yes
 USES=		gmake readline

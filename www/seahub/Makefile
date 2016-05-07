@@ -39,8 +39,8 @@ COMMENT=	Web frontend for Seafile
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:${PORTSDIR}/net-mgmt/seafile \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:net-mgmt/seafile \
+		bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
@@ -59,10 +59,10 @@ SEAFDAV_DESC=		Enable Seafile WsgiDav-based support
 SITEPACKAGES_DESC=	Install python packages under thirdpart directory
 
 SEAFOBJ_CONFIGURE_WITH=	seafobj
-SEAFOBJ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}seafobj>0:${PORTSDIR}/www/py-seafobj
+SEAFOBJ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}seafobj>0:www/py-seafobj
 
 SEAFDAV_CONFIGURE_WITH=	seafdav
-SEAFDAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}seafdav>0:${PORTSDIR}/www/py-seafdav
+SEAFDAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}seafdav>0:www/py-seafdav
 
 NLS_USES=		gettext iconv
 NLS_CONFIGURE_OFF=	--disable-nls
@@ -109,7 +109,7 @@ post-install-sitepackages:
 		if [ "$$sp_pkg" == "Djblets-0.6.14" ]; then ${REINPLACE_CMD} -e "s|PIL|Pillow|" ./Djblets.egg-info/requires.txt; \
 			${REINPLACE_CMD} -e "s|PIL|Pillow|" ./setup.py; fi && \
 		${PYTHON_CMD} setup.py install; \
-	       	done))
+		done))
 	(cd ${VIRTUALENV}${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITEPACKAGEDIR})
 

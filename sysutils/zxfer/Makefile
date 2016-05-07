@@ -18,7 +18,7 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	RSYNC
 
 RSYNC_DESC=		Enable RSYNC Support
-RSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RSYNC_RUN_DEPENDS=	rsync:net/rsync
 
 .include <bsd.port.options.mk>
 

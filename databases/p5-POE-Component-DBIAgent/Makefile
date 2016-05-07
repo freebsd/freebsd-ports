@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE Component for running asynchronous DBI calls
 
-BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
-		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
+		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
+		p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -12,12 +12,12 @@ COMMENT=	Unofficial open source engine reimplementation of the game Morrowind
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/docs/license/GPL3.txt
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libBulletCollision.so:${PORTSDIR}/devel/bullet \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libMyGUIEngine.so:${PORTSDIR}/x11-toolkits/mygui \
-		libosg.so:${PORTSDIR}/graphics/osg \
-		libunshield.so:${PORTSDIR}/archivers/unshield
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libBulletCollision.so:devel/bullet \
+		libboost_thread.so:devel/boost-libs \
+		libMyGUIEngine.so:x11-toolkits/mygui \
+		libosg.so:graphics/osg \
+		libunshield.so:archivers/unshield
 
 BROKEN_FreeBSD_9=	does not build
 

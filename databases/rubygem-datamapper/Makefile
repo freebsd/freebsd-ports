@@ -12,20 +12,19 @@ COMMENT=	Fast, thread-safe, object-relational mapper
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-dm-aggregates>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-aggregates \
-		rubygem-dm-constraints>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-constraints \
-		rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core \
-		rubygem-dm-migrations>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-migrations \
-		rubygem-dm-serializer>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-serializer \
-		rubygem-dm-timestamps>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-timestamps \
-		rubygem-dm-transactions>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-transactions \
-		rubygem-dm-types>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-types \
-		rubygem-dm-validations>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-validations
+RUN_DEPENDS=	rubygem-dm-aggregates>=${PORTVERSION}:databases/rubygem-dm-aggregates \
+		rubygem-dm-constraints>=${PORTVERSION}:databases/rubygem-dm-constraints \
+		rubygem-dm-core>=${PORTVERSION}:databases/rubygem-dm-core \
+		rubygem-dm-migrations>=${PORTVERSION}:databases/rubygem-dm-migrations \
+		rubygem-dm-serializer>=${PORTVERSION}:databases/rubygem-dm-serializer \
+		rubygem-dm-timestamps>=${PORTVERSION}:databases/rubygem-dm-timestamps \
+		rubygem-dm-transactions>=${PORTVERSION}:databases/rubygem-dm-transactions \
+		rubygem-dm-types>=${PORTVERSION}:databases/rubygem-dm-types \
+		rubygem-dm-validations>=${PORTVERSION}:databases/rubygem-dm-validations
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

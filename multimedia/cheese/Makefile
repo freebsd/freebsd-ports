@@ -10,15 +10,15 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Photobooth-inspired app for taking pictures and videos from webcam
 
-BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat \
-		gnome-video-effects>=0:${PORTSDIR}/graphics/gnome-video-effects \
-		vala>=0.14.0:${PORTSDIR}/lang/vala \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
-		libhal.so:${PORTSDIR}/sysutils/hal \
-		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
-		libclutter-gst-3.0.so:${PORTSDIR}/multimedia/clutter-gst3
-RUN_DEPENDS=	gnome-video-effects>=0:${PORTSDIR}/graphics/gnome-video-effects
+BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat \
+		gnome-video-effects>=0:graphics/gnome-video-effects \
+		vala>=0.14.0:lang/vala \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libhal.so:sysutils/hal \
+		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
+		libclutter-gst-3.0.so:multimedia/clutter-gst3
+RUN_DEPENDS=	gnome-video-effects>=0:graphics/gnome-video-effects
 
 PORTSCOUT=	limitw:1,even
 
@@ -41,8 +41,8 @@ OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_CONFIGURE_ENABLE=	man
-MANPAGES_BUILD_DEPENDS=	docbook-xml>=0:${PORTSDIR}/textproc/docbook-xml \
-			docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+MANPAGES_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
+			docbook-xsl>=0:textproc/docbook-xsl
 MANPAGES_USE=	GNOME=libxslt:build
 
 post-install:

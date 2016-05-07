@@ -16,7 +16,7 @@ COMMENT=	The Mongrel of Mail User Agents with Chinese support
 
 CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-lite-[0-9]*
 
-LIB_DEPENDS+=	libhz.so:${PORTSDIR}/chinese/autoconvert
+LIB_DEPENDS+=	libhz.so:chinese/autoconvert
 
 LDFLAGS_ADD+=	-lhz
 

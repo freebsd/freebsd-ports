@@ -11,12 +11,12 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for jQuery File Upload plugin
 
 RUN_DEPENDS=	\
-	convert:${PORTSDIR}/graphics/ImageMagick \
-	p5-Data-GUID>0:${PORTSDIR}/devel/p5-Data-GUID \
-	p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
-	p5-JSON-XS>0:${PORTSDIR}/converters/p5-JSON-XS \
-	p5-Net-SSH2>0:${PORTSDIR}/net/p5-Net-SSH2 \
-	p5-URI>0:${PORTSDIR}/net/p5-URI
+	convert:graphics/ImageMagick \
+	p5-Data-GUID>0:devel/p5-Data-GUID \
+	p5-JSON>0:converters/p5-JSON \
+	p5-JSON-XS>0:converters/p5-JSON-XS \
+	p5-Net-SSH2>0:net/p5-Net-SSH2 \
+	p5-URI>0:net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

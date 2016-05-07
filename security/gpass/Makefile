@@ -5,21 +5,22 @@ PORTNAME=	gpass
 PORTVERSION=	0.5.1
 PORTREVISION=	11
 CATEGORIES=	security gnome
-MASTER_SITES=	http://projects.netlab.jp/gpass/release/
+MASTER_SITES=	https://github.com/raffael-sfm/gpass/releases/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password manager for GNOME2
 
-BROKEN=		unfetchable
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
-		libmhash.so:${PORTSDIR}/security/mhash
+LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
+		libmhash.so:security/mhash
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 
 USES=		desktop-file-utils gmake pathfix pkgconfig
-USE_GNOME=	gnomeprefix gtk20 libgnomeui intltool libglade2
+USE_GNOME=	gtk20 intltool libglade2 libgnomeui
 GCONF_SCHEMAS=	gpass.schemas
 
 post-patch:

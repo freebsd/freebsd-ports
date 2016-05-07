@@ -14,8 +14,8 @@ COMMENT=	Diff two arrays
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Algorithm-Diff>=1.19:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-Algorithm-Diff>=1.19:devel/p5-Algorithm-Diff \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

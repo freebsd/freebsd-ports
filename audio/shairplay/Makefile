@@ -10,7 +10,7 @@ COMMENT=	Portable AirPlay server implementation
 LICENSE=	BSD3CLAUSE LGPL21 MIT
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libao.so:audio/libao
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	juhovh
@@ -24,7 +24,7 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFAULT=	MDNSRESPONDER
 OPTIONS_SINGLE=		ZEROCONF
 OPTIONS_SINGLE_ZEROCONF=	AVAHI MDNSRESPONDER
-AVAHI_LIB_DEPENDS=		libdns_sd.so:${PORTSDIR}/net/avahi-libdns
-MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+AVAHI_LIB_DEPENDS=		libdns_sd.so:net/avahi-libdns
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
 .include <bsd.port.mk>

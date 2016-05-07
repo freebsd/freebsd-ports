@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-chinese-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	True Type Font to Postscript Type 1 converter with Chinese maps
 
-RUN_DEPENDS=	ttf2pt1:${PORTSDIR}/print/ttf2pt1
+RUN_DEPENDS=	ttf2pt1:print/ttf2pt1
 
 USES=		tar:tgz
 MAKE_ARGS=	INSTDIR="${PREFIX}"

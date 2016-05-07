@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	usermin
-PORTVERSION=	1.690
+PORTVERSION=	1.701
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -14,9 +14,9 @@ COMMENT=	Web-based interface for performing some user tasks
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
-		p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty \
-		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
+RUN_DEPENDS=	p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
+		p5-IO-Tty>=0:devel/p5-IO-Tty \
+		p5-Authen-PAM>=0:security/p5-Authen-PAM
 
 NO_ARCH=	yes
 NO_BUILD=	yes

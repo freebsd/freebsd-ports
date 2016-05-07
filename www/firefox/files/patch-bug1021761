@@ -11,7 +11,7 @@ index 48e60c0..ec08417 100644
 +
 +dnl If using Linux, Solaris or BSDs, ensure that OSS is available
 +case "$OS_TARGET" in
-+Linux|SunOS|DragonFly|FreeBSD|NetBSD|GNU/kFreeBSD)
++Linux|SunOS|DragonFly|FreeBSD|GNU/kFreeBSD)
 +    MOZ_OSS=1
 +    ;;
 +esac
@@ -503,23 +503,21 @@ index a962553..1f780f4 100644
    assert(r == 0);
  
    /* Ugly hack: the PA ALSA plugin allows buffer configurations that can't
-@@ -848,23 +954,23 @@ alsa_stream_init(cubeb * ctx, cubeb_stream ** stream, char const * stream_name,
+@@ -859,7 +965,7 @@ alsa_stream_init(cubeb * ctx, cubeb_stre
      latency = latency < 500 ? 500 : latency;
    }
  
 -  r = snd_pcm_set_params(stm->pcm, format, SND_PCM_ACCESS_RW_INTERLEAVED,
--                         stm->params.channels, stm->params.rate, 1,
--                         latency * 1000);
 +  r = WRAP(snd_pcm_set_params)(stm->pcm, format, SND_PCM_ACCESS_RW_INTERLEAVED,
-+                               stm->params.channels, stm->params.rate, 1,
-+                               latency * 1000);
+                          stm->params.channels, stm->params.rate, 1,
+                          latency * 1000);
    if (r < 0) {
-     alsa_stream_destroy(stm);
+@@ -867,15 +973,15 @@ alsa_stream_init(cubeb * ctx, cubeb_stre
      return CUBEB_ERROR_INVALID_FORMAT;
    }
  
--  r = snd_pcm_get_params(stm->pcm, &stm->buffer_size, &stm->period_size);
-+  r = WRAP(snd_pcm_get_params)(stm->pcm, &stm->buffer_size, &stm->period_size);
+-  r = snd_pcm_get_params(stm->pcm, &stm->buffer_size, &period_size);
++  r = WRAP(snd_pcm_get_params)(stm->pcm, &stm->buffer_size, &period_size);
    assert(r == 0);
  
 -  stm->nfds = snd_pcm_poll_descriptors_count(stm->pcm);
@@ -643,7 +641,7 @@ new file mode 100644
 index 0000000..5e38e27
 --- /dev/null
 +++ media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,402 @@
+@@ -0,0 +1,412 @@
 +/*
 + * Copyright © 2014 Mozilla Foundation
 + *
@@ -664,6 +662,7 @@ index 0000000..5e38e27
 +#include <errno.h>
 +#include <pthread.h>
 +#include <stdio.h>
++#include <assert.h>
 +
 +#include "cubeb/cubeb.h"
 +#include "cubeb-internal.h"
@@ -762,7 +761,7 @@ index 0000000..5e38e27
 +  pthread_mutex_lock(&stream->state_mutex);
 +  if (stream->data_callback && stream->running && !stream->stopped) {
 +    pthread_mutex_unlock(&stream->state_mutex);
-+    got = stream->data_callback(stream, stream->user_ptr, buffer, nframes);
++    got = stream->data_callback(stream, stream->user_ptr, NULL, buffer, nframes);
 +  } else {
 +    pthread_mutex_unlock(&stream->state_mutex);
 +  }
@@ -862,7 +861,10 @@ index 0000000..5e38e27
 +
 +static int oss_stream_init(cubeb * context, cubeb_stream ** stm,
 +                           char const * stream_name,
-+                           cubeb_stream_params stream_params,
++                           cubeb_devid input_device,
++                           cubeb_stream_params * input_stream_params,
++                           cubeb_devid output_device,
++                           cubeb_stream_params * output_stream_params,
 +                           unsigned int latency,
 +                           cubeb_data_callback data_callback,
 +                           cubeb_state_callback state_callback, void * user_ptr)
@@ -872,6 +874,12 @@ index 0000000..5e38e27
 +  stream->data_callback = data_callback;
 +  stream->state_callback = state_callback;
 +  stream->user_ptr = user_ptr;
++
++  assert(!input_stream_params && "not supported.");
++  if (input_device || output_device) {
++    /* Device selection not yet implemented. */
++    return CUBEB_ERROR_DEVICE_UNAVAILABLE;
++  }
 +
 +  if ((stream->fd = open(CUBEB_OSS_DEFAULT_OUTPUT, O_WRONLY)) == -1) {
 +    free(stream);
@@ -884,16 +892,16 @@ index 0000000..5e38e27
 +      free(stream); \
 +      return CUBEB_ERROR_INVALID_FORMAT; } } while (0)
 +
-+  stream->params = stream_params;
++  stream->params = *output_stream_params;
 +  stream->volume = 1.0;
 +  stream->panning = 0.0;
 +
 +  oss_try_set_latency(stream, latency); 
 +
 +  stream->floating = 0;
-+  SET(SNDCTL_DSP_CHANNELS, stream_params.channels);
-+  SET(SNDCTL_DSP_SPEED, stream_params.rate);
-+  switch (stream_params.format) {
++  SET(SNDCTL_DSP_CHANNELS, output_stream_params->channels);
++  SET(SNDCTL_DSP_SPEED, output_stream_params->rate);
++  switch (output_stream_params->format) {
 +    case CUBEB_SAMPLE_S16LE:
 +      SET(SNDCTL_DSP_SETFMT, AFMT_S16_LE);
 +    break;

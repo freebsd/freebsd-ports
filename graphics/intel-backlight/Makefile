@@ -8,8 +8,8 @@ CATEGORIES=		graphics
 MAINTAINER=		freebsd@grem.de
 COMMENT=		Control backlight on various modern Intel(R) GPUs
 
-LIB_DEPENDS=		libdrm.so:${PORTSDIR}/graphics/libdrm \
-			libpciaccess.so:${PORTSDIR}/devel/libpciaccess
+LIB_DEPENDS=		libdrm.so:graphics/libdrm \
+			libpciaccess.so:devel/libpciaccess
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		grembo

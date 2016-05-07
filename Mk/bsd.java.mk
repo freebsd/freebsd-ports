@@ -172,8 +172,6 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_1_7_INFO=		PORT=java/openjdk7			HOME=${LOCALBASE}/
 											VERSION=1.7.0	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_1_8_INFO=		PORT=java/openjdk8			HOME=${LOCALBASE}/openjdk8 \
 											VERSION=1.8.0	OS=native	VENDOR=openjdk
-_JAVA_PORT_LINUX_SUN_JDK_1_7_INFO=			PORT=java/linux-sun-jdk17	HOME=${LOCALBASE}/linux-sun-jdk1.7.0 \
-											VERSION=1.7.0	OS=linux	VENDOR=sun
 _JAVA_PORT_LINUX_ORACLE_JDK_1_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
 											VERSION=1.8.0	OS=linux	VENDOR=oracle
 
@@ -190,7 +188,6 @@ _JAVA_OS_linux=		Linux
 __JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_OPENJDK_JDK_1_8 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_1_7 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
-					JAVA_PORT_LINUX_SUN_JDK_1_7 \
 					JAVA_PORT_LINUX_ORACLE_JDK_1_8
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
 					${__JAVA_PORTS_ALL}
@@ -368,7 +365,7 @@ JAVA_BUILD=		jdk
 .		endif
 
 # Add the JDK port to the dependencies
-DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
+DEPEND_JAVA=	${JAVA}:${JAVA_PORT}
 .		if defined(JAVA_EXTRACT)
 EXTRACT_DEPENDS+=	${DEPEND_JAVA}
 .		endif
@@ -389,7 +386,7 @@ RUN_DEPENDS+=		${DEPEND_JAVA}
 DESTDIRNAME?=		-Dfreebsd.ports.destdir
 ANT?=				${LOCALBASE}/bin/ant
 MAKE_ENV+=			JAVA_HOME=${JAVA_HOME}
-BUILD_DEPENDS+=		${ANT}:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS+=		${ANT}:devel/apache-ant
 ALL_TARGET?=
 .			if !target(do-build)
 do-build:

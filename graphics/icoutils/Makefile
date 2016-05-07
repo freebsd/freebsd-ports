@@ -12,7 +12,7 @@ COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	extresso/*.in
@@ -31,7 +31,7 @@ RESSCRIPTS_DESC=	Additional resource scripts written in Perl
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRESSCRIPTS}
-RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS+=	p5-libwww>=0:www/p5-libwww
 USES+=		perl5
 USE_PERL5=	run
 PLIST_FILES+=	bin/extresso bin/genresscript \

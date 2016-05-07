@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-Xaw
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	The `Athena' port of the xminesweeper game
 
-LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice

@@ -13,8 +13,8 @@ COMMENT=	Free and opensource telegram client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libqtelegram-ae.so:${PORTSDIR}/net-im/libqtelegram-ae \
-		libtelegramqml.so:${PORTSDIR}/net-im/telegramqml
+LIB_DEPENDS=	libqtelegram-ae.so:net-im/libqtelegram-ae \
+		libtelegramqml.so:net-im/telegramqml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Aseman-Land

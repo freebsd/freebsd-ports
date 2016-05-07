@@ -11,7 +11,7 @@ MASTER_SITES=	http://s01.de/~gottox/files/bgs/ \
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Simple X11 BackGround Setter using Imlib2
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USE_XORG=	x11 xinerama
 

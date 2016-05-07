@@ -3,6 +3,7 @@
 
 PORTNAME=	portfwd
 PORTVERSION=	0.29
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -11,10 +12,13 @@ COMMENT=	Port Forwarding Daemon
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+USE_RC_SUBR=	${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-Wall -ggdb -O3|${CFLAGS}|g" \
@@ -25,6 +29,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/cfg/*.cfg ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/cfg/*.cfg ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>

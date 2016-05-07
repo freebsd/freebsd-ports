@@ -1,20 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	algol68g
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	lang
 MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Algol 68 Genie compiler
 
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 OPTIONS_DEFINE=	PLOTUTILS PGSQL
 OPTIONS_DEFAULT=PLOTUTILS PGSQL
 
 PLOTUTILS_DESC=		Plotting support via plotutils
-PLOTUTILS_LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
+PLOTUTILS_LIB_DEPENDS=	libplot.so:graphics/plotutils
 PLOTUTILS_CONFIGURE_ENABLE=plotutils
 
 PGSQL_USES=		pgsql

@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Common email validation written in Perl
 
-RUN_DEPENDS=	p5-Data-Validate-Domain>=0:${PORTSDIR}/dns/p5-Data-Validate-Domain \
-		p5-Email-Address>=0:${PORTSDIR}/mail/p5-Email-Address \
-		p5-Net-Domain-TLD>=0:${PORTSDIR}/dns/p5-Net-Domain-TLD
+RUN_DEPENDS=	p5-Data-Validate-Domain>=0:dns/p5-Data-Validate-Domain \
+		p5-Email-Address>=0:mail/p5-Email-Address \
+		p5-Net-Domain-TLD>=0:dns/p5-Net-Domain-TLD
 
 USES=		perl5
 USE_PERL5=	configure

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.24.1
-PORTREVISION=	2
+PORTVERSION=	1.0.20160315
 CATEGORIES=	net ipv6
 MASTER_SITES=	SAVANNAH
 
@@ -12,7 +11,7 @@ COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	gawk:lang/gawk
 
 CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-re-[0-9]*
 
@@ -69,9 +68,9 @@ PAM_CONFIGURE_WITH=	libpam
 OSPF_OPAQUE_LSA_CONFIGURE_ENABLE=	opaque-lsa
 RTADV_CONFIGURE_ENABLE=	rtadv
 SNMP_CONFIGURE_ENABLE=	snmp
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 TCPSOCKETS_CONFIGURE_ENABLE=	tcp-zebra
-DLMALLOC_LIB_DEPENDS=	libdlmalloc.so:${PORTSDIR}/devel/libdlmalloc
+DLMALLOC_LIB_DEPENDS=	libdlmalloc.so:devel/libdlmalloc
 DLMALLOC_LIBS=		-L${LOCALBASE}/lib -ldlmalloc
 OSPF_NEXTHOP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ospf-nexthop
 # inverse option.

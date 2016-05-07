@@ -2,20 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	xarchiver
-PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTVERSION=	0.5.4.6
 CATEGORIES=	archivers
-MASTER_SITES=	SF/${PORTNAME:tl}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK+2 frontend to various archiving tools
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
-		7zr:${PORTSDIR}/archivers/p7zip \
-		zip:${PORTSDIR}/archivers/zip \
-		zipinfo:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS=	xdg-open:devel/xdg-utils \
+		7zr:archivers/p7zip \
+		zip:archivers/zip \
+		zipinfo:archivers/unzip
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ib
+GH_TAGNAME=	bb5fce0
 
 USES=		desktop-file-utils gmake pkgconfig tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool
@@ -32,10 +34,10 @@ ARJ_DESC=	ARJ compression support
 LZO_DESC=	LZO compression support
 RAR_DESC=	RAR compression support
 
-ARJ_RUN_DEPENDS=	arj:${PORTSDIR}/archivers/arj
-LZO_RUN_DEPENDS=	lzop:${PORTSDIR}/archivers/lzop
-RAR_RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
-			rar:${PORTSDIR}/archivers/rar
+ARJ_RUN_DEPENDS=	arj:archivers/arj
+LZO_RUN_DEPENDS=	lzop:archivers/lzop
+RAR_RUN_DEPENDS=	unrar:archivers/unrar \
+			rar:archivers/rar
 
 NLS_USES=	gettext
 NLS_CPPFLAGS+=	-I${LOCALBASE}/include

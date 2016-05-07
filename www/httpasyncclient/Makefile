@@ -13,7 +13,7 @@ COMMENT=	Java components implementing an asynchronous HTTP client
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${JAVAJARDIR}/httpclient.jar:${PORTSDIR}/www/httpclient
+RUN_DEPENDS=	${JAVAJARDIR}/httpclient.jar:www/httpclient
 
 USES=		cpe
 CPE_VENDOR=	apache

@@ -68,7 +68,6 @@ lib/saga/libio_esri_e00.so
 lib/saga/libio_gdal.so
 lib/saga/libio_gps.so
 lib/saga/libio_grid.so
-lib/saga/libio_grid_grib2.so
 lib/saga/libio_grid_image.so
 lib/saga/libio_shapes.so
 lib/saga/libio_shapes_dxf.so
@@ -113,10 +112,23 @@ man/man1/saga_cmd.1.gz
 man/man1/saga_gui.1.gz
 share/appdata/saga.appdata.xml
 share/applications/saga.desktop
+share/icons/hicolor/128x128/apps/saga.png
+share/icons/hicolor/16x16/apps/saga.png
+share/icons/hicolor/192x192/apps/saga.png
+share/icons/hicolor/24x24/apps/saga.png
+share/icons/hicolor/256x256/apps/saga.png
+share/icons/hicolor/32x32/apps/saga.png
+share/icons/hicolor/48x48/apps/saga.png
+share/icons/hicolor/64x64/apps/saga.png
+share/icons/hicolor/72x72/apps/saga.png
+share/icons/hicolor/80x80/apps/saga.png
+share/icons/hicolor/8x8/apps/saga.png
+share/icons/hicolor/96x96/apps/saga.png
 share/pixmaps/saga.png
 @mode 0777
 @dir %%DATADIR%%
 @mode 0666
+%%DATADIR%%/saga.bra.txt
 %%DATADIR%%/saga.ger.txt
 %%DATADIR%%/saga.lng.txt
 @mode

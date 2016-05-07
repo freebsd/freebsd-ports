@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/gnutls-2.8.5-18.el6.x86_64.rpm) = cab4e1d03500f85296e0f46203e6ac009b89aca5fdeca717a2955954b3acec92
 SIZE (rpm/x86_64/centos/6.7/gnutls-2.8.5-18.el6.x86_64.rpm) = 355380
+SHA256 (rpm/x86_64/centos/6.7/gnutls-2.8.5-18.el6.i686.rpm) = 8b349c15aa647ff247d657cc2a97990d87a702aa728adc78f60b791e49dee5f5
+SIZE (rpm/x86_64/centos/6.7/gnutls-2.8.5-18.el6.i686.rpm) = 349588
 SHA256 (rpm/x86_64/centos/6.7/gnutls-2.8.5-18.el6.src.rpm) = 1b2911b1a6716d382dd5aaafc17d87035de618a689d0a47eed2f91ed457299b7
 SIZE (rpm/x86_64/centos/6.7/gnutls-2.8.5-18.el6.src.rpm) = 6329737

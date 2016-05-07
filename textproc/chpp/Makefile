@@ -14,7 +14,7 @@ COMMENT=	Non-intrusive full-featured text preprocessor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
 USES=		autoreconf gmake makeinfo
 GNU_CONFIGURE=	yes

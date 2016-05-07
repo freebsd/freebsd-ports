@@ -1,0 +1,8 @@
+CalDAV (RFC4791) client library for Python.
+
+Calendaring extensions to WebDAV, or CalDAV, is an Internet standard
+allowing a client to access scheduling information on a remote
+server. It extends WebDAV (HTTP-based protocol for data manipulation)
+specification and uses iCalendar format for the data.
+
+WWW: https://bitbucket.org/cyrilrbt/caldav/wiki/Home

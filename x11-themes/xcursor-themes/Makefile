@@ -10,7 +10,7 @@ COMMENT=	X.org cursors themes
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	xcursorgen:${PORTSDIR}/x11/xcursorgen
+BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
 
 USE_XORG=	xextproto
 

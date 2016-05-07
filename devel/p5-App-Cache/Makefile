@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy application-level caching
 
-RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
-		p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:devel/p5-Class-Accessor-Chained \
+		p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
+		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
+		p5-Path-Class>=0:devel/p5-Path-Class \
+		p5-libwww>=0:www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

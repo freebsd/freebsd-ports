@@ -14,11 +14,11 @@ COMMENT=	Client for managing and downloading certificate revocation lists
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
-		libksba.so:${PORTSDIR}/security/libksba \
-		libpth.so:${PORTSDIR}/devel/pth
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
+		libksba.so:security/libksba \
+		libpth.so:devel/pth
 
 USES=		gmake iconv tar:bzip2
 USE_OPENLDAP=	yes

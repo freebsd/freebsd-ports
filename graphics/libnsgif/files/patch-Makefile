@@ -1,0 +1,10 @@
+--- Makefile.orig	2016-01-03 11:46:21 UTC
++++ Makefile
+@@ -45,5 +45,5 @@ include $(NSBUILD)/Makefile.top
+ # Extra installation rules
+ I := /$(INCLUDEDIR)
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libnsgif.h
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR)/pkgconfig:lib$(COMPONENT).pc.in
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR):$(OUTPUT)
++INSTALL_ITEMS := $(INSTALL_ITEMS) /libdata/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)

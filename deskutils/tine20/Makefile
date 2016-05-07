@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	tine20
-PORTVERSION=	0.0.2012.10.04
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	2012.10.4
+PORTVERSION=	0.0.2015.07.07
+DISTVERSIONSUFFIX=	2015.07.7
 CATEGORIES=	deskutils www
-MASTER_SITES=	http://www.tine20.org/downloads/${DISTVERSIONSUFFIX}/
+MASTER_SITES=	http://packages.tine20.org/source/${DISTVERSIONSUFFIX}/
 DISTNAME=	${PORTNAME}-allinone_${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	udo.rader@bestsolution.at
 COMMENT=	Professional Open Source Groupware and CRM
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:bzip2
+USES=		tar:bzip2 gettext
 NO_BUILD=	yes
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions -C ${WRKSRC}
 

@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	libcdio
-PORTVERSION=	0.92
-PORTREVISION=	1
+PORTVERSION=	0.93
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Compact Disc Input and Control Library
 
-LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
+LIB_DEPENDS=	libcddb.so:audio/libcddb
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -25,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 INFO=		libcdio
 CPE_VENDOR=	gnu
+INSTALL_TARGET=install-strip 
 
 .include <bsd.port.pre.mk>
 

@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome2 front-end to mplayer/mencoder
 
-BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
+BUILD_DEPENDS=	mencoder:multimedia/mencoder
+RUN_DEPENDS=	mencoder:multimedia/mencoder
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

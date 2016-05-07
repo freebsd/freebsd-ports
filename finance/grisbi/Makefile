@@ -12,7 +12,7 @@ COMMENT=	Personal accounting application
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
+LIB_DEPENDS=	libofx.so:finance/libofx
 
 USES=		tar:bzip2 desktop-file-utils gmake iconv pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes

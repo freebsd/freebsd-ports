@@ -14,6 +14,8 @@ COMMENT=	Web-based user authentication/password protection system
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BROKEN_powerpc64=	Does not build
+
 WRKSRC=		${WRKDIR}/Deadlock-1.01
 DLURL?=		${PORTNAME}
 DLDIR=		www/${DLURL}
@@ -23,12 +25,15 @@ USES=		dos2unix
 USE_APACHE_RUN=	22+
 USE_PHP=	mysql session ctype pcre
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 IGNORE_WITH_PHP=	70
 
 SUB_FILES=	pkg-message
 SUB_LIST=	DLURL=${DLURL} DLDIR=${DLDIR}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@cd ${WRKDIR} && ${MV} "Deadlock v1.01" Deadlock-1.01
@@ -38,7 +43,9 @@ post-patch:
 
 do-install:
 	@cd ${WRKSRC}/deadlock && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

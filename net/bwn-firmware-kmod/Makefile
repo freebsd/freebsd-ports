@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	bwn-firmware
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.openwrt.org/sources/ \
 		http://mirror2.openwrt.org/sources/
 PKGNAMESUFFIX=	-kmod
-DISTFILES=	${FWFILE} ${FWFILE_LP}
+DISTFILES=	${FWFILE} ${FWFILE_LP} ${FWFILE_N}
 EXTRACT_ONLY=
 
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Broadcom AirForce IEEE 802.11 Firmware Kernel Module
 
-BUILD_DEPENDS=	b43-fwcutter:${PORTSDIR}/sysutils/b43-fwcutter
+BUILD_DEPENDS=	b43-fwcutter:sysutils/b43-fwcutter
 
 FIRMWARES=								\
 	ucode ucode5 ucode11 ucode13 ucode14 ucode15			\
@@ -33,17 +33,30 @@ FIRMWARES_LP=								\
 	lp0bsinitvals14 lp0bsinitvals15					\
 	n0bsinitvals11
 
+FIRMWARES_N=								\
+	ucode16_mimo							\
+	n0initvals16 n0initvals24					\
+	n0bsinitvals16 n0bsinitvals24					\
+
 WRKSRC=		${WRKDIR}
 FWNAME=		bwn_v4
 FWFILE=		broadcom-wl-${FWVERSION}.tar.bz2
 FWVERSION=	4.150.10.5
 KMODNAME=	${FWNAME}_ucode
+
 FWNAME_LP=	bwn_v4_lp
 FWFILE_LP=	broadcom-wl-${FWVERSION_LP}.tar.bz2
 FWVERSION_LP=	4.178.10.4
 KMODNAME_LP=	${FWNAME_LP}_ucode
+
+FWNAME_N=	bwn_v4_n
+FWFILE_N=	broadcom-wl-${FWVERSION_N}.tar.bz2
+FWVERSION_N=	5.100.138
+KMODNAME_N=	${FWNAME_N}_ucode
+
 PLIST_SUB=	KMODNAME="${KMODNAME}" \
-		KMODNAME_LP="${KMODNAME_LP}"
+		KMODNAME_LP="${KMODNAME_LP}" \
+		KMODNAME_N="${KMODNAME_N}"
 
 NO_PACKAGE=	this is a modified version of a restricted firmware
 
@@ -75,8 +88,22 @@ do-build:
 	@${ECHO_CMD} ".include <bsd.kmod.mk>" >> ${WRKSRC}/lp/v4/Makefile
 	@cd ${WRKSRC}/lp/v4; make all
 
+	cd ${WRKSRC} && \
+	tar xjf ${DISTDIR}/${FWFILE_N}
+	mkdir -p ${WRKSRC}/n
+	b43-fwcutter -w ${WRKSRC}/n \
+	   ${WRKSRC}/broadcom-wl-${FWVERSION_N}/linux/wl_apsta.o
+	${TOUCH} ${WRKSRC}/n/v4/ucode.fw
+	@${ECHO_CMD} "KMOD= ${KMODNAME_N}" > ${WRKSRC}/n/v4/Makefile
+	@${ECHO_CMD} "FIRMWS= ${FIRMWARES_N:C/.*/&.fw:${FWNAME}_&/}" >> \
+		${WRKSRC}/n/v4/Makefile
+	@${ECHO_CMD} ".include <bsd.kmod.mk>" >> ${WRKSRC}/n/v4/Makefile
+	@cd ${WRKSRC}/n/v4; make all
+
+
 do-install:
 	@cd ${WRKSRC}/bg/v4; ${SETENV} ${MAKE_ENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
 	@cd ${WRKSRC}/lp/v4; ${SETENV} ${MAKE_ENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
+	@cd ${WRKSRC}/n/v4; ${SETENV} ${MAKE_ENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
 
 .include <bsd.port.mk>

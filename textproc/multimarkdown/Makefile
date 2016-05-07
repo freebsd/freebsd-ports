@@ -9,7 +9,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended Markdown processor with more features, written in C
 
-LICENSE=	MIT
+LICENSE=	MIT GPLv2+
+LICENSE_COMB=	dual
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fletcher:DEFAULT nddrylliog:greg
@@ -61,10 +62,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multimarkdown ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/bin
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
-post-install-EXTRAS-on:
+do-install-EXTRAS-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/Support/bin/* ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}/XSLT
 	${INSTALL_DATA} ${WRKSRC}/Support/XSLT/* ${STAGEDIR}${DATADIR}/XSLT

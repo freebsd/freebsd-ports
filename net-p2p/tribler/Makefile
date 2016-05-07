@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tribler
-PORTVERSION=	6.4.3
-PORTREVISION=	2
+PORTVERSION=	6.5.1
 CATEGORIES=	net-p2p
-MASTER_SITES=	https://github.com/Tribler/tribler/releases/download/${PORTVERSION:S/^/v/}/
-DISTFILES=	${PORTNAME}_${PORTVERSION}_all.deb
+MASTER_SITES=	https://github.com/Tribler/tribler/releases/download/v${PORTVERSION}/
+DISTNAME=	Tribler-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Streaming capable P2P network client based on BitTorrent
@@ -14,87 +13,85 @@ COMMENT=	Streaming capable P2P network client based on BitTorrent
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>0:${PORTSDIR}/databases/py-apsw \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.7:${PORTSDIR}/devel/py-pyasn1 \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}gmpy>0:${PORTSDIR}/math/py-gmpy \
-		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \
-		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.16.4:${PORTSDIR}/net-p2p/libtorrent-rasterbar-python \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>0:${PORTSDIR}/security/py-m2crypto \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}feedparser>0:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}cherrypy>0:${PORTSDIR}/www/py-cherrypy \
-		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+BUILD_DEPENDS=	xpmtoppm:graphics/netpbm
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>0:databases/py-apsw \
+		${PYTHON_PKGNAMEPREFIX}leveldb>0:databases/py-leveldb \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}gmpy>0:math/py-gmpy \
+		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces \
+		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.16.4:net-p2p/libtorrent-rasterbar-python \
+		libsodium>0:security/libsodium \
+		${PYTHON_PKGNAMEPREFIX}m2crypto>0:security/py-m2crypto \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}feedparser>0:textproc/py-feedparser \
+		${PYTHON_PKGNAMEPREFIX}cherrypy>0:www/py-cherrypy \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
 
 NO_ARCH=	yes
-NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-USES=		desktop-file-utils python:2 shebangfix twisted:run
-SHEBANG_FILES=	usr/share/tribler/Tribler/Core/DecentralizedTracking/pymdht/*.py \
-		usr/share/tribler/Tribler/Core/DecentralizedTracking/pymdht/*/*.py \
-		usr/share/tribler/Tribler/Debug/memory.py \
-		usr/share/tribler/Tribler/Main/*.py \
-		usr/share/tribler/Tribler/dispersy/*/*.py \
-		usr/share/tribler/Tribler/vlc.py
+USES=		desktop-file-utils python:2,run tar:xz twisted:run,web
 USE_OPENSSL=	yes
-USE_PYTHON=	run
 USE_WX=		2.8
 WX_COMPS=	python
+INSTALLS_ICONS=	yes
 
-CFLAGS+=	-D__STDC_LIMIT_MACROS=1
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+SUB_FILES=	tribler
+SUB_LIST=	PYTHON_SITELIBDIR="${PYTHON_SITELIBDIR}" \
+		PYTHON_VERSION="${PYTHON_VERSION}"
 
 OPTIONS_DEFINE=		DOCS VLC
 OPTIONS_DEFAULT=	VLC
 
 VLC_DESC=		Multimedia support via VLC
-VLC_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-			vlc:${PORTSDIR}/multimedia/vlc
-
-TRIBLER_DIR=	${PYTHONPREFIX_SITELIBDIR}/tribler
-
-post-extract:
-	@(cd ${WRKSRC} && ${TAR} -xf data.tar.xz)
+VLC_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
+			vlc:multimedia/vlc
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|%%OPSYS%%|${OPSYS}| ; \
-		 s|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}| ; \
-		 s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|' \
-		${WRKSRC}/usr/bin/tribler
 	@${REINPLACE_CMD} -e \
 		's|Application;|| ; \
 		 /^Categories/s|$$|;| ; \
 		 /^MimeType/s|$$|;|' \
-		${WRKSRC}/usr/share/applications/tribler.desktop
-	@${REINPLACE_CMD} -i '' -e \
+		${WRKSRC}/tribler/Tribler/Main/Build/Ubuntu/tribler.desktop
+	@${REINPLACE_CMD} -e \
 		's|linux|${OPSYS:tl}|' \
-		${WRKSRC}/usr/share/tribler/Tribler/vlc.py
+		${WRKSRC}/tribler/Tribler/vlc.py
+
+do-build:
+	@${MKDIR} ${WRKDIR}/icons/hicolor/32x32/apps
+	(cd ${WRKDIR} && xpmtoppm --alphaout=tribler.pgm \
+		${WRKSRC}/tribler/Tribler/Main/Build/Ubuntu/tribler.xpm \
+		> tribler.ppm)
+	(cd ${WRKDIR} && pnmtopng -alpha=tribler.pgm tribler.ppm \
+		> ${WRKDIR}/icons/hicolor/32x32/apps/tribler.png)
+	@${MKDIR} ${WRKDIR}/icons/hicolor/48x48/apps
+	(cd ${WRKDIR} && xpmtoppm --alphaout=tribler_big.pgm \
+		${WRKSRC}/tribler/Tribler/Main/Build/Ubuntu/tribler_big.xpm \
+		> tribler_big.ppm)
+	(cd ${WRKDIR} && pnmtopng -alpha=tribler_big.pgm tribler_big.ppm \
+		> ${WRKDIR}/icons/hicolor/48x48/apps/tribler.png)
 
 do-install:
-	(cd ${WRKSRC}/usr/bin && ${INSTALL_SCRIPT} tribler \
+	(cd ${WRKDIR} && ${INSTALL_SCRIPT} tribler \
 		${STAGEDIR}${PREFIX}/bin)
-	@${MKDIR} ${STAGEDIR}${TRIBLER_DIR}/Tribler
-	@(${TAR} -C ${WRKSRC}/usr/share/tribler/Tribler \
-		--exclude "Build" \
-		--exclude "LGPL-2.1.txt" \
-		--exclude "SwiftEngine" \
-		--exclude "readme.txt" \
-		--exclude "*LICENSE*.txt" \
-		--exclude "*.orig" \
-		-cf - . | ${TAR} -C ${STAGEDIR}${TRIBLER_DIR}/Tribler -xf -)
-	@${FIND} ${STAGEDIR}${TRIBLER_DIR}/Tribler -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	@${FIND} ${STAGEDIR}${TRIBLER_DIR}/Tribler -type d -print0 | \
-		${XARGS} -0 ${CHMOD} a+rx
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKSRC}/usr/share/applications && ${INSTALL_DATA} \
-		*.desktop ${STAGEDIR}${PREFIX}/share/applications)
-	(cd ${WRKSRC}/usr/share/pixmaps && ${INSTALL_DATA} \
-		*.xpm ${STAGEDIR}${PREFIX}/share/pixmaps)
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tribler
+	(cd ${WRKSRC}/tribler && ${INSTALL_DATA} logger.conf \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tribler)
+	@(cd ${WRKSRC}/tribler/Tribler && ${COPYTREE_SHARE} \
+		"Category Core Test Utilities community dispersy" \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tribler/Tribler)
+	@(cd ${WRKSRC}/tribler/Tribler/Main && ${COPYTREE_SHARE} "[^B]*" \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tribler/Tribler/Main)
+	(cd ${WRKSRC}/tribler/Tribler && ${INSTALL_DATA} *.sql *.py \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tribler/Tribler)
+	(cd ${WRKSRC}/tribler/Tribler/Main/Build/Ubuntu && ${INSTALL_MAN} \
+		tribler.1 ${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC}/tribler/Tribler/Main/Build/Ubuntu && ${INSTALL_DATA} \
+		tribler.desktop ${STAGEDIR}${PREFIX}/share/applications)
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} icons \
+		${STAGEDIR}${PREFIX}/share)
 	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
@@ -104,7 +101,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/usr/share/tribler/Tribler && ${INSTALL_DATA} \
-		*LICENSE*.txt readme.txt ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/tribler/Tribler/*.txt \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

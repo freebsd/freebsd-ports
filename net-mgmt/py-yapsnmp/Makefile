@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Python SNMP module based on net-snmp
 
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

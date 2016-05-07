@@ -12,7 +12,7 @@ COMMENT=	IO::Socket with read/write timeout
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-PerlIO-via-Timeout>=0.32:${PORTSDIR}/devel/p5-PerlIO-via-Timeout
+BUILD_DEPENDS=	p5-PerlIO-via-Timeout>=0.32:devel/p5-PerlIO-via-Timeout
 
 NO_ARCH=	yes
 

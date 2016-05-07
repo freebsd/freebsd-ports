@@ -12,7 +12,7 @@ MAINTAINER=	sawp@sawp.com.br
 COMMENT=	Computer vision and image processing library for Python
 
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libfreeimage.so:${PORTSDIR}/graphics/freeimage
+LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 
 USE_GCC=	yes
 USES=		python

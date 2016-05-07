@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}.tar.bz2\
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Digium/Asterisk Hardware Device Interface
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/dahdi_cfg:${PORTSDIR}/misc/dahdi
+RUN_DEPENDS=	${LOCALBASE}/sbin/dahdi_cfg:misc/dahdi
 
 DAHDI_VERSION=		2.6.1-r10747
 DAHDI_TOOLS_VERSION=	2.4.0-rc1

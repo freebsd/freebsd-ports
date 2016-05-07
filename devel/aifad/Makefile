@@ -11,11 +11,11 @@ COMMENT=	Machine learning system
 
 LICENSE=	LGPL21+
 
-BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
-		ocaml-cfg>0:${PORTSDIR}/devel/ocaml-cfg \
-		ocaml-pcre>0:${PORTSDIR}/devel/ocaml-pcre \
-		ocaml-res>0:${PORTSDIR}/devel/ocaml-res
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	menhir:devel/menhir \
+		ocaml-cfg>0:devel/ocaml-cfg \
+		ocaml-pcre>0:devel/ocaml-pcre \
+		ocaml-res>0:devel/ocaml-res
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl

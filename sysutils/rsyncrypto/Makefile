@@ -12,9 +12,9 @@ COMMENT=	Rsync Friendly File Encryption
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.so:${PORTSDIR}/devel/argtable
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-		gzip:${PORTSDIR}/archivers/gzip
+BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.so:devel/argtable
+RUN_DEPENDS=	rsync:net/rsync \
+		gzip:archivers/gzip
 
 LDFLAGS+=	-L${LOCALBASE}/lib/
 CPPFLAGS+=	-I${LOCALBASE}/include/

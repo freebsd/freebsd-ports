@@ -1,0 +1,12 @@
+lib/kde4/kipiplugin_googleservices.so
+share/apps/kipi/kipiplugin_googleservicesui.rc
+share/icons/hicolor/16x16/apps/kipi-googledrive.png
+share/icons/hicolor/16x16/apps/kipi-picasa.png
+share/icons/hicolor/22x22/apps/kipi-googledrive.png
+share/icons/hicolor/22x22/apps/kipi-picasa.png
+share/icons/hicolor/32x32/apps/kipi-googledrive.png
+share/icons/hicolor/32x32/apps/kipi-picasa.png
+share/icons/hicolor/48x48/apps/kipi-googledrive.png
+share/icons/hicolor/48x48/apps/kipi-picasa.png
+share/icons/hicolor/scalable/apps/kipi-picasa.svgz
+share/kde4/services/kipiplugin_googleservices.desktop

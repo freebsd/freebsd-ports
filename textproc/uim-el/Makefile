@@ -17,7 +17,7 @@ CONFLICTS?=	uim-el-xemacs21-mule-[0-9]* \
 		uim-el-emacs22-[0-9]* \
 		uim-el-emacs21-[0-9]*
 
-RUN_DEPENDS=	uim-el-agent:${PORTSDIR}/textproc/uim
+RUN_DEPENDS=	uim-el-agent:textproc/uim
 
 OPTIONS_DEFINE=	DOCS
 

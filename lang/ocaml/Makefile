@@ -18,6 +18,8 @@ LICENSE_NAME_QPL10=	Q Public License, Version 1.0
 LICENSE_FILE_QPL10=	${WRKSRC}/LICENSE
 LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_powerpc64=	Does not build
+
 BROKEN_sparc64=	ocamlc.opt seg-faults, please try to fix
 BROKEN_mips64=	No ASM support
 BROKEN_mips=	No ASM support
@@ -98,8 +100,8 @@ CONFIGURE_ARGS+=-no-graph
 
 OCAML_ARCH=	${ARCH:S/x86_64/amd64/:S/powerpc/power/:S/armv6/arm/}
 
-.if defined(NO_PROFILE) || ${OCAML_ARCH:Mpower} || ${OCAML_ARCH:Mamd64} \
-	|| ${OCAML_ARCH:Marm}
+.if defined(NO_PROFILE) || ${OCAML_ARCH:Mpower} || ${OCAML_ARCH:Mamd64}
+
 PLIST_SUB+=	PROF="@comment "
 .else
 PLIST_SUB+=	PROF=""

@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Profile and configuration utilities for GNU Screen
 
-RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	screen:sysutils/screen \
+		bash:shells/bash
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf python shebangfix

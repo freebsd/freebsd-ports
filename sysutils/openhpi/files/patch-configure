@@ -1,0 +1,65 @@
+--- configure.orig	2015-09-14 22:59:50 UTC
++++ configure
+@@ -15704,51 +15704,6 @@ fi
+ 	fi
+ 
+ 
+-# check for gcc version
+-
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking gcc >= 3.2" >&5
+-$as_echo_n "checking gcc >= 3.2... " >&6; }
+-
+-    GCCVERSIONOK=`gcc -dumpversion | \
+-    sed 's/\./ /g' | \
+-    awk '{ \
+-        if ( $1 > 3) { \
+-            print "OK"; \
+-        } \
+-        if ( $1 == 3 ) { \
+-            if( $2 > 2 ) { \
+-                print "OK"; \
+-            } \
+-            if( $2 == 2 ) { \
+-                print "OK"; \
+-            } \
+-        } \
+-    }'` \
+-
+-    if test "$GCCVERSIONOK" = "OK"; then
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-    else
+-
+-    OH_MSG=`echo -e "- gcc >= 3.2 is required to build OpenHPI not found!\n"`
+-    if test "x" != "x"; then
+-        OH_MSG=`echo -e "$OH_MSG\n- "`
+-    fi
+-    if test "x" != "x"; then
+-        OH_MSG=`echo -e "$OH_MSG\n- Try installing the  package\n"`
+-    fi
+-    if test "x" != "x"; then
+-        OH_MSG=`echo -e "$OH_MSG\n- or get the latest software from \n"`
+-    fi
+-
+-    as_fn_error $? "!
+-************************************************************
+-$OH_MSG
+-************************************************************
+-" "$LINENO" 5
+-
+-
+-    fi
+ 
+ 
+ GLIB_REQUIRED_VERSION=2.12
+@@ -17337,10 +17292,6 @@ if test "${enable_werror+set}" = set; th
+ fi
+ 
+ 
+-if test -n "`gcc --version | grep ' 3.2'`" ; then
+-        CC_WARNINGS=`echo $CC_WARNINGS | sed -e 's/-Wno-strict-aliasing//g'`
+-        CXX_WARNINGS=`echo $CC_WARNINGS | sed -e 's/-Wno-strict-aliasing//g'`
+-fi
+ 
+ case $host_os in
+     solaris*)

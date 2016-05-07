@@ -10,7 +10,7 @@ MASTER_SITES=	SF/rusxmms/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Charset conversion utility with language and encoding autodetection
 
-LIB_DEPENDS=	librcc.so:${PORTSDIR}/devel/librcc
+LIB_DEPENDS=	librcc.so:devel/librcc
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes

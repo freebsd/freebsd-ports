@@ -14,6 +14,7 @@
     SUBDIR += 54321
     SUBDIR += 7kaa
     SUBDIR += CaribbeanStud
+    SUBDIR += cockatrice
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += abbayedesmorts
@@ -38,7 +39,6 @@
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += anki
-    SUBDIR += annelid
     SUBDIR += antipolix
     SUBDIR += aop
     SUBDIR += apoolGL
@@ -850,6 +850,7 @@
     SUBDIR += rnd_jue
     SUBDIR += robocalypto
     SUBDIR += robocode
+    SUBDIR += robocode-naval
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
     SUBDIR += rocksndiamonds
@@ -986,6 +987,7 @@
     SUBDIR += traindirector
     SUBDIR += traingame
     SUBDIR += tremulous
+    SUBDIR += trenchbroom
     SUBDIR += trigger-data
     SUBDIR += trigger-rally
     SUBDIR += trimines
@@ -1193,6 +1195,7 @@
     SUBDIR += zatacka
     SUBDIR += zaz
     SUBDIR += zephulor
+    SUBDIR += zhlt
     SUBDIR += znibbles
     SUBDIR += zoom
     SUBDIR += ztrack

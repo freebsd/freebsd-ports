@@ -15,11 +15,11 @@ COMMENT=	Stash your lexical goodness
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Array-RefElem>=0:${PORTSDIR}/misc/p5-Array-RefElem \
-		p5-Devel-Caller>=0:${PORTSDIR}/devel/p5-Devel-Caller \
-		p5-Devel-LexAlias>=0:${PORTSDIR}/devel/p5-Devel-LexAlias \
-		p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime \
+		p5-Array-RefElem>=0:misc/p5-Array-RefElem \
+		p5-Devel-Caller>=0:devel/p5-Devel-Caller \
+		p5-Devel-LexAlias>=0:devel/p5-Devel-LexAlias \
+		p5-PadWalker>=0:devel/p5-PadWalker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
@@ -28,7 +28,7 @@ USE_PERL5=	modbuild
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

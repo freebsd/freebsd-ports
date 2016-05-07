@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jbig2dec
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://downloads.ghostscript.com/public/${PORTNAME}/ \
 		LOCAL/sunpoet:tests
@@ -28,7 +28,7 @@ python_CMD=	${PYTHON_CMD}
 
 PNG_CONFIGURE_OFF=	--without-libpng
 PNG_CONFIGURE_ON=	--with-libpng=${LOCALBASE}
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 TESTS_DISTFILES=	jb2streams${EXTRACT_SUFX}:tests
 TESTS_TEST_TARGET=	check-TESTS
 TESTS_USES=		python:build shebangfix

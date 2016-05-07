@@ -10,7 +10,7 @@ COMMENT=	Convert DocBook refentry to mdoc
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 PLIST_FILES=	bin/docbook2mdoc \
 		man/man1/docbook2mdoc.1.gz

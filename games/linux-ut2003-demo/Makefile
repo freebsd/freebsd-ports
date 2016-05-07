@@ -36,7 +36,7 @@ LIBDIRS=	Animations Benchmark ForceFeedback KarmaData Maps Music \
 
 OPTIONS_DEFINE=	DOCS NVIDIA_GL
 
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 
 .include <bsd.port.options.mk>
 

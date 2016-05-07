@@ -11,7 +11,9 @@ MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/ \
 MAINTAINER=	avk@vl.ru
 COMMENT=	Stylesheet for the Subversion index web page
 
-RUN_DEPENDS=	subversion>=0:${PORTSDIR}/devel/subversion
+BROKEN_powerpc64=	Does not build
+
+RUN_DEPENDS=	subversion>=0:devel/subversion
 
 USES=		zip
 NO_BUILD=	YES

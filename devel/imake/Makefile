@@ -9,10 +9,10 @@ CATEGORIES=	devel
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Imake and other utilities from X.Org
 
-BUILD_DEPENDS=	tradcpp:${PORTSDIR}/devel/tradcpp
-RUN_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \
-		makedepend:${PORTSDIR}/devel/makedepend \
-		${LOCALBASE}/lib/X11/config/xorg.cf:${PORTSDIR}/x11/xorg-cf-files
+BUILD_DEPENDS=	tradcpp:devel/tradcpp
+RUN_DEPENDS=	gccmakedep:devel/gccmakedep \
+		makedepend:devel/makedepend \
+		${LOCALBASE}/lib/X11/config/xorg.cf:x11/xorg-cf-files
 
 USES=	shebangfix perl5 pkgconfig
 USE_PERL5=	run

@@ -13,8 +13,8 @@ COMMENT=	Library of assorted spiffy things
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libImlib2.so:graphics/imlib2
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

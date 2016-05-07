@@ -85,6 +85,7 @@ share/applications/devede.desktop
 %%NLS%%share/locale/es/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/devede.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/it/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/devede.mo
@@ -96,5 +97,4 @@ share/applications/devede.desktop
 %%NLS%%share/locale/sv/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/devede.mo
-%%NLS%%share/pixmaps/devede.svg
-@dir %%DATADIR%%/interface
+share/pixmaps/devede.svg

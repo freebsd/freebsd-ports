@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implements an algorithm to find good values for chart axis
 
-BUILD_DEPENDS=	p5-Params-Util>=0.15:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-Params-Util>=0.15:devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

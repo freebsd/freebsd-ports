@@ -12,7 +12,7 @@ COMMENT=	Program to create mrtg graphs for qmail activity
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg
+RUN_DEPENDS=	mrtg:net-mgmt/mrtg
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -6,11 +6,13 @@ PORTVERSION=	1.2
 CATEGORIES=	security sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/l5/
 DISTNAME=	L5
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File Integrity Assessment Tool
 
+BROKEN_amd64=	incorrect runtime output
+
+USES=		tar:tgz
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd
 
@@ -19,15 +21,11 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == 'amd64'
-BROKEN=	incorrect runtime output
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

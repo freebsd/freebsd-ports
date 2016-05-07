@@ -3,7 +3,7 @@
 
 PORTNAME=	mous
 PORTVERSION=	1.1a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	GHC
 
@@ -29,40 +29,40 @@ OPTIONS_DEFAULT_i386=	ASSEMBLY WMA
 
 OPTIONS_SUB=		yes
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_ON=		-DWithPluginAlsaRenderer=1
 ALSA_CMAKE_OFF=		-DWithPluginAlsaRenderer=0
 
-AO_LIB_DEPENDS=		libao.so:${PORTSDIR}/audio/libao
+AO_LIB_DEPENDS=		libao.so:audio/libao
 AO_CMAKE_ON=		-DWithPluginAoRenderer=1
 AO_CMAKE_OFF=		-DWithPluginAoRenderer=0
 
 ASSEMBLY_DESC=		Enable assembly optimizations
-ASSEMBLY_BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
+ASSEMBLY_BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:devel/yasm
 ASSEMBLY_CMAKE_ON=	-DWithAssembly=1
 ASSEMBLY_CMAKE_OFF=	-DWithAssembly=0
 
-CUE_LIB_DEPENDS=	libcue.so:${PORTSDIR}/textproc/libcue
+CUE_LIB_DEPENDS=	libcue.so:textproc/libcue
 CUE_CMAKE_ON=		-DWithPluginCuePack=1
 CUE_CMAKE_OFF=		-DWithPluginCuePack=0
 
-FAAC_LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac
+FAAC_LIB_DEPENDS=	libfaac.so:audio/faac
 FAAC_CMAKE_ON=		-DWithPluginFaacEncoder=1
 FAAC_CMAKE_OFF=		-DWithPluginFaacEncoder=0
 
-FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
+FAAD_LIB_DEPENDS=	libfaad.so:audio/faad
 FAAD_CMAKE_ON=		-DWithPluginFaadDecoder=1
 FAAD_CMAKE_OFF=		-DWithPluginFaadEncoder=0
 
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CMAKE_ON=		-DWithPluginFlacDecoder=1
 FLAC_CMAKE_OFF=		-DWithPluginFlacDecoder=0
 
-LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CMAKE_ON=		-DWithPluginLameEncoder=1
 LAME_CMAKE_OFF=		-DWithPluginLameEncoder=0
 
-MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 MPG123_CMAKE_ON=	-DWithPluginMpg123Decoder=1
 MPG123_CMAKE_OFF=	-DWithPluginMpg123Decoder=0
 
@@ -71,7 +71,7 @@ MAC4DECODER_CMAKE_ON=	-DWithPluginMac4Decoder=1
 MAC4DECODER_CMAKE_OFF=	-DWithPluginMac4Decoder=0
 
 MACDECODER_DESC=	Old mac3.99 ape decoder (*.ape)
-MACDECODER_LIB_DEPENDS=	libmac.so:${PORTSDIR}/audio/mac
+MACDECODER_LIB_DEPENDS=	libmac.so:audio/mac
 MACDECODER_CMAKE_ON=	-DWithPluginMacDecoder=1
 MACDECODER_CMAKE_OFF=	-DWithPluginMacDecoder=0
 
@@ -94,11 +94,11 @@ SDK_CMAKE_ON=		-DWithHeadFiles=1
 SDK_CMAKE_OFF=		-DWithHeadFiles=0
 
 TAGLIB_DESC=		TagLib plugin (recommended)
-TAGLIB_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
 TAGLIB_CMAKE_ON=	-DWithPluginTagLibParser=1
 TAGLIB_CMAKE_OFF=	-DWithPluginTagLibParser=0
 
-VORBIS_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 VORBIS_CMAKE_ON=	-DWithPluginOggDecoder=1
 VORBIS_CMAKE_OFF=	-DWithPluginOggDecoder=0
 

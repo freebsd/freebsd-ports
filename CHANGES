@@ -10,6 +10,49 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160428
+AUTHOR: mat@FreeBSD.org
+
+  USE_RUBYGEMS has been replaced by USES=gem.
+
+20160426:
+AUTHOR: mat@FreeBSD.org
+
+  USE_MYSQL and USE_BDB have been replaced by USES=mysql and USES=bdb.
+
+  WANT_BDB_VER=XX should be replaced by USES=bdb:XX.
+
+20160414:
+AUTHOR: mat@FreeBSD.org
+
+  USE_RC_SUBR=yes has not done anything for a long time, it will now give an error.
+
+20160413:
+AUTHOR: jbeich@FreeBSD.org
+
+  Introducing CONFIGURE_OUTSOURCE. It changes HAS_CONFIGURE and GNU_CONFIGURE
+  by invoking configure, build and install stage outside of source tree e.g.,
+
+    $ mkdir ../.build
+    $ cd ../.build
+    $ ${OLDPWD}/configure
+    $ gmake
+    $ gmake install
+
+20160402:
+AUTHOR: bapt@FreeBSD.org
+
+  Adding ${PORTSDIR} in dependency lines is no longer necessary meaning
+
+  RUN_DEPENDS=  foo:${PORTSDIR}/bar/foo
+
+  can now be written
+
+  RUN_DEPENDS=  foo:bar/foo
+
+  if the path after ':' is not absolute the framework will automatically
+  prepend ${PORTSDIR}/
+
 20160301:
 AUTHOR: mat@FreeBSD.org
 

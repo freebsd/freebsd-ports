@@ -14,7 +14,7 @@ COMMENT=	Lightweight field hash implementation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-LeakTrace>=0.07:${PORTSDIR}/devel/p5-Test-LeakTrace
+TEST_DEPENDS=	p5-Test-LeakTrace>=0.07:devel/p5-Test-LeakTrace
 
 USE_PERL5=	modbuild
 USES=		perl5

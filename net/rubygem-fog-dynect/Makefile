@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-dynect
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,13 +12,12 @@ COMMENT=	Module for the 'fog' gem to support Dynect DNS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-fog-core>=0:${PORTSDIR}/devel/rubygem-fog-core \
-		rubygem-fog-json>=0:${PORTSDIR}/devel/rubygem-fog-json \
-		rubygem-fog-xml>=0:${PORTSDIR}/textproc/rubygem-fog-xml
+RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
+		rubygem-fog-json>=0:devel/rubygem-fog-json \
+		rubygem-fog-xml>=0:textproc/rubygem-fog-xml
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

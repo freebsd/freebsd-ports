@@ -12,7 +12,7 @@ COMMENT=	Program to handle your X background to prevent boredom
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv
+RUN_DEPENDS=	xv:graphics/xv
 
 USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl

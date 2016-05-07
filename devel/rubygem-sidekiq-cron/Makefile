@@ -12,13 +12,12 @@ COMMENT=	Enables to set jobs to be run in specified time (using CRON notation)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-redis-namespace>=1.5.2:${PORTSDIR}/databases/rubygem-redis-namespace \
-		rubygem-rufus-scheduler>=2.0.24:${PORTSDIR}/devel/rubygem-rufus-scheduler \
-		rubygem-sidekiq>=4.0.0:${PORTSDIR}/devel/rubygem-sidekiq
+RUN_DEPENDS=	rubygem-redis-namespace>=1.5.2:databases/rubygem-redis-namespace \
+		rubygem-rufus-scheduler>=2.0.24:devel/rubygem-rufus-scheduler \
+		rubygem-sidekiq>=4.0.0:devel/rubygem-sidekiq
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

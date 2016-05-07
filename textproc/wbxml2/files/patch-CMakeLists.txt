@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2012-07-20 12:29:52 UTC
+--- CMakeLists.txt.orig	2015-04-08 16:34:34 UTC
 +++ CMakeLists.txt
 @@ -44,7 +44,7 @@ SET( CMAKE_MODULE_PATH "${CMAKE_SOURCE_D
  
@@ -16,5 +16,12 @@
 -OPTION( ENABLE_INSTALL_DOC "install documentation" ON )
 +OPTION( ENABLE_INSTALL_DOC "install documentation" OFF )
  IF( ENABLE_INSTALL_DOC )
- 	ADD_DOCUMENTATION( TEXT FILE ${CMAKE_SOURCE_DIR}/AUTHORS )
  	ADD_DOCUMENTATION( TEXT FILE ${CMAKE_SOURCE_DIR}/BUGS )
+ 	ADD_DOCUMENTATION( TEXT FILE ${CMAKE_SOURCE_DIR}/ChangeLog )
+@@ -260,6 +260,3 @@ INCLUDE( CPack )
+ ### CTest ########################################
+ 
+ ADD_SUBDIRECTORY( test/tools )
+-IF(CHECK_FOUND)
+-    ADD_SUBDIRECTORY( test/api )
+-ENDIF(CHECK_FOUND)

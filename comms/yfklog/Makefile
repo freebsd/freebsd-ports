@@ -15,11 +15,11 @@ COMMENT=	Amateur Radio curses based logging program
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
-		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		hamlib>=0:${PORTSDIR}/comms/hamlib \
-		p5-Net-FTP-File>=0:${PORTSDIR}/net/p5-Net-FTP-File
+RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses \
+		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
+		p5-DBI>=0:databases/p5-DBI \
+		hamlib>=0:comms/hamlib \
+		p5-Net-FTP-File>=0:net/p5-Net-FTP-File
 
 USES=		perl5
 NO_BUILD=	yes

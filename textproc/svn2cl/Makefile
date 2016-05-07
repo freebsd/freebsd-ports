@@ -9,8 +9,8 @@ MASTER_SITES=	http://arthurdejong.org/svn2cl/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Subversion ChangeLog generator
 
-RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS=	xsltproc:textproc/libxslt \
+		svn:devel/subversion
 
 NO_BUILD=	yes
 PORTDOCS=	ChangeLog NEWS README TODO

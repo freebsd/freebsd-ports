@@ -10,7 +10,7 @@ MASTER_SITES=	http://sites.google.com/site/e3editor/Home/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured text editor written in assembler
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:devel/nasm
 
 USES=		gmake tar:tgz
 MAKE_ARGS=	OS=FREEBSD

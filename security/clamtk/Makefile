@@ -13,15 +13,15 @@ COMMENT=	GTK front-end for Clam Antivirus
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
-		p5-Date-Calc>=5.5.1:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-File-Find-Rule>=0.30:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
-		p5-Net-DNS>=0.65:${PORTSDIR}/dns/p5-Net-DNS \
-		clamscan:${PORTSDIR}/security/clamav \
-		p5-libwww>=5.822:${PORTSDIR}/www/p5-libwww \
-		zenity:${PORTSDIR}/x11/zenity \
-		p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS=	p5-Config-Tiny>=2.12:devel/p5-Config-Tiny \
+		p5-Date-Calc>=5.5.1:devel/p5-Date-Calc \
+		p5-File-Find-Rule>=0.30:devel/p5-File-Find-Rule \
+		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
+		p5-Net-DNS>=0.65:dns/p5-Net-DNS \
+		clamscan:security/clamav \
+		p5-libwww>=5.822:www/p5-libwww \
+		zenity:x11/zenity \
+		p5-Gtk2>=1.144:x11-toolkits/p5-Gtk2
 
 NO_BUILD=	yes
 USES=		gettext-runtime:run perl5 shebangfix

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uglifier
-PORTVERSION=	2.7.2
+PORTVERSION=	3.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,14 +10,12 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby wrapper for UglifyJS JavaScript compressor
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-execjs>=0.3.0:${PORTSDIR}/devel/rubygem-execjs \
-		rubygem-json>=1.8.0:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-execjs>=0.3.0:devel/rubygem-execjs
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

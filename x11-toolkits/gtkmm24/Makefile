@@ -19,7 +19,7 @@ PORTSCOUT=	ignore:1
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:devel/m4
 
 GNU_CONFIGURE=	yes
 USES+=		gettext gmake libtool:keepla pathfix pkgconfig

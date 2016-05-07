@@ -1,0 +1,77 @@
+--- common/src/IO/SystemPaths.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/IO/SystemPaths.cpp
+@@ -28,6 +28,9 @@
+ #include <Windows.h>
+ #elif defined __linux__
+ #include <unistd.h>
++#elif defined __FreeBSD__
++#include <sys/types.h>
++#include <sys/sysctl.h>
+ #endif
+ 
+ namespace TrenchBroom {
+@@ -74,6 +77,19 @@ namespace TrenchBroom {
+                 const Path appPath(appPathStr);
+                 return appPath.deleteLastComponent();
+             }
++#elif defined __FreeBSD__
++            Path appDirectory() {
++                char buf[1024];
++                const int mib[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
++                size_t len = sizeof(buf);
++
++                const int result = sysctl(mib, 4, buf, &len, 0x0, 0);
++                assert(result == 0);
++
++                const String appPathStr(buf);
++                const Path appPath(appPathStr);
++                return appPath.deleteLastComponent();
++            }
+ #endif
+             
+ #if defined __APPLE__
+@@ -99,9 +115,9 @@ namespace TrenchBroom {
+             Path resourceDirectory() {
+                 return appDirectory() + Path("Resources");
+             }
+-#elif defined __linux__
++#elif defined __linux__ || defined __FreeBSD__
+             Path resourceDirectory() {
+-                return appDirectory() + Path("Resources");
++                return Path("%%DATADIR%%");
+             }
+ #endif
+             
+--- common/src/View/ViewConstants.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/ViewConstants.cpp
+@@ -32,7 +32,7 @@ namespace TrenchBroom {
+ 
+             const wxColour& highlightText() {
+                 static const wxColour col =
+-#if defined __APPLE__
++#if defined __APPLE__ || defined __FreeBSD__
+                 wxColour(26, 79, 189);
+ #else
+                 wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT);
+--- common/src/View/KeyboardShortcut.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/KeyboardShortcut.cpp
+@@ -74,7 +74,7 @@ namespace TrenchBroom {
+         }
+         
+         bool KeyboardShortcut::isShortcutValid(const int key, const int modifier1, const int modifier2, const int modifier3) {
+-#ifdef __linux__
++#if defined __linux__ || defined __FreeBSD__
+             // TAB and Escape are never allowed on GTK2:
+             if (key == WXK_TAB || key == WXK_ESCAPE)
+                 return false;
+--- common/src/View/ViewConstants.h.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/ViewConstants.h
+@@ -63,7 +63,7 @@ namespace TrenchBroom {
+             static const int TextBoxInnerMargin                 = 0;
+             static const int TabBarBarLeftMargin                = 10;
+             static const int ToggleButtonStyle                  = 0x08000000; // wxBORDER_SUNKEN
+-#elif defined __linux__
++#elif defined __linux__ || defined __FreeBSD__
+             static const int DialogOuterMargin                  = 10;
+             static const int DialogButtonTopMargin              = 10;
+             static const int DialogButtonSideMargin             = 0;

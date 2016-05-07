@@ -13,7 +13,7 @@ COMMENT=	Pure Python Off-The-Record encryption
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto
 
 USES=		python zip
 USE_PYTHON=	autoplist distutils

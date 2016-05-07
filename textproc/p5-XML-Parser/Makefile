@@ -12,7 +12,7 @@ COMMENT=	Perl extension interface to James Clark's XML parser, expat
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		perl5
 USE_PERL5=	configure

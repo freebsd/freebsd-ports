@@ -12,7 +12,7 @@ COMMENT=	High performance realtime 3D engine
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/readme.txt
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 DOS2UNIX_GLOB=	Makefile *.cpp *.h *.txt
 USES=		alias dos2unix gmake jpeg zip

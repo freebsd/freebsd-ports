@@ -23,7 +23,7 @@ USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/v4l-utils-${PORTVERSION}
 
 .if ${LIBV4L_SLAVE} != compat
-BUILD_DEPENDS+=	v4l_compat>=${PORTVERSION}:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS+=	v4l_compat>=${PORTVERSION}:multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -36,9 +36,9 @@ CONFIGURE_ARGS=	--enable-libdvbv5 \
 INSTALL_TARGET=	install-strip
 
 . if ${LIBV4L_SLAVE} == utils
-BUILD_DEPENDS+=	libv4l>=${PORTVERSION}:${PORTSDIR}/multimedia/libv4l
-LIB_DEPENDS+=	libargp.so:${PORTSDIR}/devel/argp-standalone \
-		libv4l2.so:${PORTSDIR}/multimedia/libv4l
+BUILD_DEPENDS+=	libv4l>=${PORTVERSION}:multimedia/libv4l
+LIB_DEPENDS+=	libargp.so:devel/argp-standalone \
+		libv4l2.so:multimedia/libv4l
 # Disabling building libv4l in the utils slave is too much hackery
 # Lets wait for subpackages
 CONFIGURE_ARGS+=--enable-v4l-utils

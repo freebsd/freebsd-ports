@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libvterm
-PORTVERSION=	git20150828
+PORTVERSION=	git20160104
 CATEGORIES=	devel
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
 
 LICENSE=	MIT
@@ -13,13 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	neovim
-GH_TAGNAME=	342e61e
+GH_TAGNAME=	a9c7c6f
 
-USES=		gmake libtool:build perl5
+USES=		gmake libtool:build pathfix perl5
+PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
-
-pre-build:
-	${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/Makefile
+MAKE_ARGS=	PREFIX=${PREFIX}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/unterm

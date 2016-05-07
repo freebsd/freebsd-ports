@@ -13,7 +13,7 @@ COMMENT=	PNG palette optimizer
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		localbase zip
 

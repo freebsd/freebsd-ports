@@ -11,18 +11,17 @@ COMMENT=	Credential models for metasploit-framework and Metasploit Pro
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-metasploit-concern>=0.4.0:${PORTSDIR}/security/rubygem-metasploit-concern \
-		rubygem-metasploit_data_models>=0.24.0,2:${PORTSDIR}/security/rubygem-metasploit_data_models \
-		rubygem-metasploit-model>=0.29.0:${PORTSDIR}/security/rubygem-metasploit-model \
-		rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg \
-		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties \
-		rubygem-rubyntlm>=0:${PORTSDIR}/net/rubygem-rubyntlm \
-		rubygem-rubyzip>=1.1:${PORTSDIR}/archivers/rubygem-rubyzip
+RUN_DEPENDS=	rubygem-metasploit-concern>=0.4.0:security/rubygem-metasploit-concern \
+		rubygem-metasploit_data_models>=0.24.0,2:security/rubygem-metasploit_data_models \
+		rubygem-metasploit-model>=0.29.0:security/rubygem-metasploit-model \
+		rubygem-pg>=0:databases/rubygem-pg \
+		rubygem-railties>=3.0.0:www/rubygem-railties \
+		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
+		rubygem-rubyzip>=1.1:archivers/rubygem-rubyzip
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PORTSCOUT=	ignore:1
 

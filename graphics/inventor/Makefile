@@ -14,7 +14,7 @@ COMMENT=	SGI's Open Inventor (TM)
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 CONFLICTS=	Coin-[0-9]* SoXt-[0-9]*
 

@@ -1,5 +1,5 @@
---- ./src/metalog.c.orig	2013-10-29 09:50:12.000000000 -0400
-+++ ./src/metalog.c	2013-10-29 09:52:28.000000000 -0400
+--- src/metalog.c.orig	2012-08-18 16:19:00 UTC
++++ src/metalog.c
 @@ -6,6 +6,9 @@
  #ifdef WITH_DMALLOC
  # include <dmalloc.h>

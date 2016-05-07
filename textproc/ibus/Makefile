@@ -13,16 +13,16 @@ COMMENT=	Intelligent Input Bus for Linux / Unix OS
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
-		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
-		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
-		${LOCALBASE}/share/xml/iso-codes/iso_639.xml:${PORTSDIR}/misc/iso-codes \
-		setxkbmap:${PORTSDIR}/x11/setxkbmap
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus \
+		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:devel/py-notify \
+		${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg \
+		${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes \
+		setxkbmap:x11/setxkbmap
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
-USES=		compiler cpe gmake libtool pathfix pkgconfig python
+USES=		compiler cpe gmake libtool pathfix pkgconfig python:2
 USE_GNOME=	glib20 intltool librsvg2 pygobject3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -58,14 +58,14 @@ GTK2_CONFIGURE_ENABLE=	gtk2
 
 GTK3_USE=		GNOME=gtk30 XORG=x11
 GTK3_CONFIGURE_ENABLE=	gtk3 libnotify
-GTK3_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+GTK3_LIB_DEPENDS=	libnotify.so:devel/libnotify
 GTK3_LIBS=		-lX11
 
-VALA_BUILD_DEPENDS=	vala>=0.20:${PORTSDIR}/lang/vala
+VALA_BUILD_DEPENDS=	vala>=0.20:lang/vala
 VALA_CONFIGURE_ENABLE=	vala
 
-GINTRO_BUILD_DEPENDS=	gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
-GINTRO_RUN_DEPENDS=	gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
+GINTRO_BUILD_DEPENDS=	gobject-introspection>=0.6.8:devel/gobject-introspection
+GINTRO_RUN_DEPENDS=	gobject-introspection>=0.6.8:devel/gobject-introspection
 GINTRO_CONFIGURE_ON=	--enable-introspection=yes
 GINTRO_CONFIGURE_OFF=	--enable-introspection=no
 

@@ -1,0 +1,10 @@
+--- Makefile.orig	2016-02-16 10:48:07 UTC
++++ Makefile
+@@ -76,5 +76,5 @@ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):i
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/hubbub/parser.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/hubbub/tree.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/hubbub/types.h
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR)/pkgconfig:lib$(COMPONENT).pc.in
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR):$(OUTPUT)
++INSTALL_ITEMS := $(INSTALL_ITEMS) /libdata/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)

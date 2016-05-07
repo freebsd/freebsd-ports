@@ -13,7 +13,7 @@ EXTRACT_ONLY=
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Generates top spam/ham rules fired for SpamAssassin installations
 
-RUN_DEPENDS=	p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
+RUN_DEPENDS=	p5-Getopt-Long>=0:devel/p5-Getopt-Long
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	sa-stats-1.0.txt

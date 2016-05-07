@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Object oriented interface to a directory based queue in Perl
 
-BUILD_DEPENDS=	p5-No-Worries>=0:${PORTSDIR}/devel/p5-No-Worries
+BUILD_DEPENDS=	p5-No-Worries>=0:devel/p5-No-Worries
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

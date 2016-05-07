@@ -11,6 +11,8 @@ COMMENT=	PHP-based looking glass for Cisco, Juniper and Quagga/Zebra routers
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_powerpc64=	Does not build
+
 USES=		tar:txz
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre sockets xml
@@ -36,7 +38,7 @@ SSH2_DESC=		SSH2 support for router access
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSH2}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/ssh2.so:${PORTSDIR}/security/pecl-ssh2
+RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/ssh2.so:security/pecl-ssh2
 .endif
 
 do-install:

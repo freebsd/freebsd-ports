@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplejson
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +16,10 @@ LICENSE=	MIT
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/simplejson/_speedups.so
 
-regression-test test: build
+do-test:
 	cd ${WRKSRC}/ && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>

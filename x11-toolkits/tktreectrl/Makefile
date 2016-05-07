@@ -9,16 +9,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-column hierarchical listbox widget
 
-USES=		tk:86
+USES=		tk:86,tea
 USE_XORG=	x11
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR} \
-		--exec-prefix=${PREFIX} \
-		--enable-shared
-TKPKG=		treectrl${PORTVERSION}
-USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
-PLIST_SUB=	TKPKG=${TKPKG}
+TCL_PKG=	treectrl${PORTVERSION}
+USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
+PLIST_SUB=	TCL_PKG=${TCL_PKG}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/FreeBSD-\*/FreeBSD-*|DragonFly-*/' \

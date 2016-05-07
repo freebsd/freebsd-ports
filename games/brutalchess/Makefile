@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-alpha/${PORTNAME}-alpha-${PORTVERSION}
 DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}-src
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Nice looking OpenGL chess game

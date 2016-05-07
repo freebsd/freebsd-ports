@@ -13,7 +13,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The xine backend for Phonon
 
-LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	libxine.so:multimedia/libxine
 
 USES=		cmake pkgconfig tar:bzip2
 USE_KDE4=	automoc4 kdeprefix

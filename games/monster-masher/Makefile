@@ -12,9 +12,9 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Gnomemm puzzle game where you have to clean the caves of monsters
 
-LIB_DEPENDS=	libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26 \
-		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
-		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24
+LIB_DEPENDS=	libgnomecanvasmm-2.6.so:graphics/libgnomecanvasmm26 \
+		libgconfmm-2.6.so:devel/gconfmm26 \
+		libglademm-2.4.so:devel/libglademm24
 
 USES=		pathfix gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnome esound

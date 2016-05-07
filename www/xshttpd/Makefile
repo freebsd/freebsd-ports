@@ -12,8 +12,10 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Webserver with CGI as own user and SSL support
 
-RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
-		ppmtogif:${PORTSDIR}/graphics/netpbm
+BROKEN_powerpc64=	Does not build
+
+RUN_DEPENDS=	run-mailcap:misc/mime-support \
+		ppmtogif:graphics/netpbm
 
 CONFLICTS_INSTALL=	xshttpd-devel-[0-9]* publicfile-[0-9]*
 
@@ -35,9 +37,9 @@ M4_CONFIG_CONFIGURE_WITH=preprocessor
 PERSISTENT_PERL_DESC=	Enable persistent Perl interpreter
 PERSISTENT_PERL_USES=	perl5
 PERSISTENT_PERL_CONFIGURE_WITH=	perl
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	pcre
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	curl
 
 PORTDOCS=	README ChangeLog

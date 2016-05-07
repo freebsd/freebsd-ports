@@ -11,7 +11,9 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Persistence of Vision Ray Tracer
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 OPTIONS_DEFINE=	X11 PNG JPEG TIFF OPENEXR STATIC IO EXAMPLES DOCS
 OPTIONS_DEFAULT=PNG JPEG EXAMPLES DOCS
@@ -56,9 +58,9 @@ CONFIGURE_ARGS+=--disable-io-restrictions
 
 .if ${PORT_OPTIONS:MPNG}
 .if ${PORT_OPTIONS:MSTATIC}
-BUILD_DEPENDS+=	png>=1.4:${PORTSDIR}/graphics/png
+BUILD_DEPENDS+=	png>=1.4:graphics/png
 .else
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 .endif
 .else
 CONFIGURE_ARGS+=--without-libpng
@@ -76,9 +78,9 @@ CONFIGURE_ARGS+=--without-libjpeg
 
 .if ${PORT_OPTIONS:MTIFF}
 .if ${PORT_OPTIONS:MSTATIC}
-BUILD_DEPENDS+=	tiff>=4:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS+=	tiff>=4:graphics/tiff
 .else
-LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libtiff.so:graphics/tiff
 .endif
 .else
 CONFIGURE_ARGS+=--without-libtiff
@@ -86,9 +88,9 @@ CONFIGURE_ARGS+=--without-libtiff
 
 .if ${PORT_OPTIONS:MOPENEXR}
 .if ${PORT_OPTIONS:MSTATIC}
-BUILD_DEPENDS+=	OpenEXR>=1.6:${PORTSDIR}/graphics/OpenEXR
+BUILD_DEPENDS+=	OpenEXR>=1.6:graphics/OpenEXR
 .else
-LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:graphics/OpenEXR
 CPPFLAGS+=	-I${LOCALBASE}/include/OpenEXR
 .endif
 .else

@@ -3,6 +3,9 @@
 %%PERL5_MAN3%%/Crypt::AuthEnc::EAX.3.gz
 %%PERL5_MAN3%%/Crypt::AuthEnc::GCM.3.gz
 %%PERL5_MAN3%%/Crypt::AuthEnc::OCB.3.gz
+%%PERL5_MAN3%%/Crypt::Checksum.3.gz
+%%PERL5_MAN3%%/Crypt::Checksum::Adler32.3.gz
+%%PERL5_MAN3%%/Crypt::Checksum::CRC32.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::AES.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::Anubis.3.gz
@@ -53,6 +56,7 @@
 %%PERL5_MAN3%%/Crypt::Mac::PMAC.3.gz
 %%PERL5_MAN3%%/Crypt::Mac::Pelican.3.gz
 %%PERL5_MAN3%%/Crypt::Mac::XCBC.3.gz
+%%PERL5_MAN3%%/Crypt::Misc.3.gz
 %%PERL5_MAN3%%/Crypt::Mode.3.gz
 %%PERL5_MAN3%%/Crypt::Mode::CBC.3.gz
 %%PERL5_MAN3%%/Crypt::Mode::CFB.3.gz
@@ -70,11 +74,15 @@
 %%PERL5_MAN3%%/Crypt::PRNG::Sober128.3.gz
 %%PERL5_MAN3%%/Crypt::PRNG::Yarrow.3.gz
 %%PERL5_MAN3%%/CryptX.3.gz
+%%PERL5_MAN3%%/Math::BigInt::LTM.3.gz
 %%SITE_ARCH%%/Crypt/AuthEnc.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/CCM.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/EAX.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/GCM.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/OCB.pm
+%%SITE_ARCH%%/Crypt/Checksum.pm
+%%SITE_ARCH%%/Crypt/Checksum/Adler32.pm
+%%SITE_ARCH%%/Crypt/Checksum/CRC32.pm
 %%SITE_ARCH%%/Crypt/Cipher.pm
 %%SITE_ARCH%%/Crypt/Cipher/AES.pm
 %%SITE_ARCH%%/Crypt/Cipher/Anubis.pm
@@ -125,6 +133,7 @@
 %%SITE_ARCH%%/Crypt/Mac/PMAC.pm
 %%SITE_ARCH%%/Crypt/Mac/Pelican.pm
 %%SITE_ARCH%%/Crypt/Mac/XCBC.pm
+%%SITE_ARCH%%/Crypt/Misc.pm
 %%SITE_ARCH%%/Crypt/Mode.pm
 %%SITE_ARCH%%/Crypt/Mode/CBC.pm
 %%SITE_ARCH%%/Crypt/Mode/CFB.pm
@@ -142,4 +151,5 @@
 %%SITE_ARCH%%/Crypt/PRNG/Sober128.pm
 %%SITE_ARCH%%/Crypt/PRNG/Yarrow.pm
 %%SITE_ARCH%%/CryptX.pm
+%%SITE_ARCH%%/Math/BigInt/LTM.pm
 %%SITE_ARCH%%/auto/CryptX/CryptX.so

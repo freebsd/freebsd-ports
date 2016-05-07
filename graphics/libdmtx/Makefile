@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Library for reading and writing Data Matrix barcodes
 
-LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 
 USES=		tar:bzip2 libtool
 GNU_CONFIGURE=	yes

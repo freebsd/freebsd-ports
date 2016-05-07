@@ -11,7 +11,7 @@ DISTNAME=	RubyInlineAcceleration-${PORTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Extension to RubyInline
 
-RUN_DEPENDS=	rubygem-rubyinline>=3.6.3:${PORTSDIR}/devel/rubygem-rubyinline
+RUN_DEPENDS=	rubygem-rubyinline>=3.6.3:devel/rubygem-rubyinline
 
 LICENSE=	GPLv2
 
@@ -20,7 +20,6 @@ GEM_NAME=	${DISTNAME}
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

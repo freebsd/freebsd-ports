@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	GD
 USES=		perl5
 USE_PERL5=	configure
 
-GD_BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
-GD_RUN_DEPENDS=		p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+GD_BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD
+GD_RUN_DEPENDS=		p5-GD>=0:graphics/p5-GD
 
 .include <bsd.port.mk>

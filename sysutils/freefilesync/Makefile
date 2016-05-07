@@ -12,9 +12,9 @@ COMMENT=	Backup software to synchronize files and folders
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/zenxml/xml.h:${PORTSDIR}/textproc/zenxml
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+BUILD_DEPENDS=	${LOCALBASE}/include/zenxml/xml.h:textproc/zenxml
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libnotify.so:devel/libnotify
 
 WRKSRC=		${WRKDIR}/FreeFileSync/Source
 DOS2UNIX_WRKSRC=${WRKDIR}

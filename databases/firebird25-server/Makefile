@@ -3,7 +3,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	2.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -22,7 +22,7 @@ LICENSE_FILE_IPL=	${WRKSRC}/builds/install/misc/IPLicense.txt
 LICENSE_PERMS_IDPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicuuc.so:devel/icu
 
 USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
@@ -72,7 +72,7 @@ IGNORE=		your system does not support sysvipc
 
 .if !defined(CLIENT_ONLY)
 # Server part stuff
-LIB_DEPENDS+=	libfbembed.so:${PORTSDIR}/databases/firebird25-client
+USES+=		firebird
 
 CONFIGURE_ARGS+=--enable-superserver --without-editline
 
@@ -90,7 +90,7 @@ UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
 PKGINSTALL?=	${PKGDIR}/pkg-install-server
 .else
 # Client part stuff
-LIB_DEPENDS+=	libedit.so.0:${PORTSDIR}/devel/libedit
+LIB_DEPENDS+=	libedit.so.0:devel/libedit
 LDFLAGS+=	-L${LOCALBASE}/lib # to link in lncurses pulled in by libedit
 
 CONFIGURE_ARGS+=	--with-system-editline

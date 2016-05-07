@@ -3,17 +3,17 @@
 
 PORTNAME=	cricket
 PORTVERSION=	1.0.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance, flexible monitoring system
 
-RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
+		p5-libwww>=0:www/p5-libwww \
+		p5-SNMP_Session>=0:net-mgmt/p5-SNMP_Session \
+		p5-TimeDate>=0:devel/p5-TimeDate
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	util/metaQuery.pl

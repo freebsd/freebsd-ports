@@ -5,7 +5,7 @@
  #endif
  
 +// Note: FreeBSD machines will be both OGDF_SYSTEM_UNIX and OGDF_SYSTEM_OSX
-+#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__DragonFly__)
 +#define OGDF_SYSTEM_FREEBSD
 +#endif
 +

@@ -2,7 +2,7 @@
 
 PORTNAME=	hpenc
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://highsecure.ru/distfiles/
 
@@ -10,6 +10,8 @@ MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast authenticated encryption CLI tool
 
 LICENSE=	BSD2CLAUSE
+
+BROKEN_powerpc64=	Does not build
 
 BROKEN_FreeBSD_9=	does not build
 NOT_FOR_ARCHS=		sparc64

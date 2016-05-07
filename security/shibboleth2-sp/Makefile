@@ -9,8 +9,8 @@ MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
-BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libsaml.so.8:${PORTSDIR}/security/opensaml2 libodbc.so:${PORTSDIR}/databases/unixODBC
+BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
+LIB_DEPENDS=	libsaml.so.8:security/opensaml2 libodbc.so:databases/unixODBC
 
 USES=		gmake
 GNU_CONFIGURE=	yes

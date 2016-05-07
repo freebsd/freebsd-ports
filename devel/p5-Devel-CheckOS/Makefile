@@ -13,8 +13,8 @@ COMMENT=	Check currently running OS
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Compare>=1.2100:${PORTSDIR}/devel/p5-Data-Compare \
-		p5-File-Find-Rule>=0.28:${PORTSDIR}/devel/p5-File-Find-Rule
+BUILD_DEPENDS=	p5-Data-Compare>=1.2100:devel/p5-Data-Compare \
+		p5-File-Find-Rule>=0.28:devel/p5-File-Find-Rule
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -11,11 +11,11 @@ DISTNAME=	openvanilla-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM OpenVanilla input method (IM)/output filter (OF) framework
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim	\
-		${LOCALBASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
-RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	scim:textproc/scim	\
+		${LOCALBASE}/include/OpenVanilla/OpenVanilla.h:textproc/openvanilla-framework
+RUN_DEPENDS=	scim:textproc/scim
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libexpat.so:textproc/expat2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Loaders/SCIM
 USES=		pkgconfig gettext iconv gmake libtool:keepla

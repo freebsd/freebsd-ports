@@ -13,8 +13,8 @@ COMMENT=	Perl module that provides an interface to the GMP library
 LICENSE=	LGPL20 LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-CheckLib>=0.9:${PORTSDIR}/devel/p5-Devel-CheckLib
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+BUILD_DEPENDS=	p5-Devel-CheckLib>=0.9:devel/p5-Devel-CheckLib
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFIGURE_ARGS=	INC=-I${LOCALBASE}/include LIBS="-L${LOCALBASE}/lib -lgmp"
 USES=		perl5

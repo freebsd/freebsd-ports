@@ -2,27 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Filter-SSL
-PORTVERSION=	0.28
-PORTREVISION=	2
+PORTVERSION=	0.29.1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PRIVI
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	The easiest and flexiblest way to SSL in POEIntegrate SSL into POE
+COMMENT=	Esiest and flexiblest way to SSL in POEIntegrate SSL into POE
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-POE>=0:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
+		p5-POE>=0:devel/p5-POE \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 USES=		perl5
-USE_PERL5=	configure
 USE_OPENSSL=	yes
-MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
+USE_PERL5=	configure
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/POE/Filter/SSL/SSL.so
 
 .include <bsd.port.mk>

@@ -18,15 +18,3 @@
    // No thread should be created before this call, as SetupSandbox()
    // will end-up using fork().
    SetupSandbox(parsed_command_line_);
-@@ -808,9 +808,9 @@
-   }
- #endif
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
-   ZygoteHostImpl::GetInstance()->TearDownAfterLastChild();
--#endif  // defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#endif  // defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
- 
-   // The device monitors are using |system_monitor_| as dependency, so delete
-   // them before |system_monitor_| goes away.

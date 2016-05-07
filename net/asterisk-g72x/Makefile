@@ -9,7 +9,7 @@ MASTER_SITES=	http://asterisk.hosting.lv/src/
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	G.729 codec for Asterisk PBX
 
-LIB_DEPENDS=	libbcg729.so:${PORTSDIR}/audio/bcg729
+LIB_DEPENDS=	libbcg729.so:audio/bcg729
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bcg729
@@ -29,14 +29,14 @@ ASTERISK18_DESC=	Depend on Asterisk 1.8
 ASTERISK11_DESC=	Depend on Asterisk 11
 ASTERISK13_DESC=	Depend on Asterisk 13
 
-ASTERISK18_BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
-ASTERISK18_RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+ASTERISK18_BUILD_DEPENDS=	asterisk:net/asterisk
+ASTERISK18_RUN_DEPENDS=	asterisk:net/asterisk
 ASTERISK18_CONFIGURE_ON=	--with-asterisk18
-ASTERISK11_BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk11
-ASTERISK11_RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk11
+ASTERISK11_BUILD_DEPENDS=	asterisk:net/asterisk11
+ASTERISK11_RUN_DEPENDS=	asterisk:net/asterisk11
 ASTERISK11_CONFIGURE_ON=	--with-asterisk100
-ASTERISK13_BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk13
-ASTERISK13_RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk13
+ASTERISK13_BUILD_DEPENDS=	asterisk:net/asterisk13
+ASTERISK13_RUN_DEPENDS=	asterisk:net/asterisk13
 ASTERISK13_CONFIGURE_ON=	--with-asterisk130
 
 .include <bsd.port.pre.mk>

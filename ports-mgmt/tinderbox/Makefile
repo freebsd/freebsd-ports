@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Port build tinderbox system
 
-RUN_DEPENDS=	dialog4ports-static:${PORTSDIR}/ports-mgmt/dialog4ports-static
+RUN_DEPENDS=	dialog4ports-static:ports-mgmt/dialog4ports-static
 
 CONFLICTS=	tinderbox-devel-[0-9]*
 
@@ -61,7 +61,7 @@ USES+=		pgsql
 .if defined(WEBUI)
 USE_PHP+=	pgsql pdo_pgsql
 .endif
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -69,36 +69,36 @@ RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 USE_PHP+=	mysql pdo_mysql
 .endif
 USE_MYSQL=	yes
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 .if defined(WEBUI)
 USE_PHP+=	sqlite3 pdo_sqlite
 .endif
-RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 .elif ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
+RUN_DEPENDS+=	lighttpd:www/lighttpd
 .elif ${PORT_OPTIONS:MHIAWATHA}
-RUN_DEPENDS+=	hiawatha:${PORTSDIR}/www/hiawatha
+RUN_DEPENDS+=	hiawatha:www/hiawatha
 .elif ${PORT_OPTIONS:MNGINX}
-RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
+RUN_DEPENDS+=	nginx:www/nginx
 .endif
 
 .if ${PORT_OPTIONS:MEMAILS}
-RUN_DEPENDS+=	p5-Net>=0:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS+=	p5-Net>=0:net/p5-Net
 .endif
 
 .if ${PORT_OPTIONS:MLSOF}
-RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
+RUN_DEPENDS+=	lsof:sysutils/lsof
 .endif
 
 .if ${PORT_OPTIONS:MLOG_COMPRESS}
-RUN_DEPENDS+=	p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2
+RUN_DEPENDS+=	p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2
 .endif
 
 post-patch:

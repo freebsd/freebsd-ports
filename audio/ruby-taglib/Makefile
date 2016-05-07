@@ -15,7 +15,7 @@ COMMENT=	Ruby library wrapping the Taglib library
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:audio/taglib
 
 NO_ARCH=	yes
 NO_BUILD=	yes

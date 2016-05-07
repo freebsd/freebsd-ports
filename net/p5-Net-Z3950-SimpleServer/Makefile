@@ -14,7 +14,7 @@ COMMENT=	Perl module for developing Z39.50 servers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libyaz.so:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	libyaz.so:net/yaz
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	ztest.pl grs_test.pl logging-server.pl

@@ -14,7 +14,7 @@ COMMENT=	Extension for inclusive/exclusive canonicalization of XML
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USE_PERL5=	configure
 USES=		perl5

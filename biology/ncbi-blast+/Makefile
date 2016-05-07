@@ -16,9 +16,9 @@ COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libbz2.so:${PORTSDIR}/archivers/bzip2
-RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libbz2.so:archivers/bzip2
+RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
 

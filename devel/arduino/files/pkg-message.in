@@ -1,7 +1,7 @@
 Notes on using the Arduino IDE:
 
 To allow serial port locking, add your user to the dialer group:
-    pw usermod myuser -G dialer
+    pw groupmod dialer -m myuser
 
 User settings are in ~/.arduino/preferences.txt.  Edit the file
 when the IDE is not running.

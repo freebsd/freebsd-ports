@@ -25,8 +25,8 @@ USES=		zip
 
 PLIST_FILES=	bin/scare
 
-XGLK_BUILD_DEPENDS=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
-XGLK_RUN_DEPENDS=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
+XGLK_BUILD_DEPENDS=	${LOCALBASE}/lib/libxglk.a:games/xglk
+XGLK_RUN_DEPENDS=	${LOCALBASE}/lib/libxglk.a:games/xglk
 XGLK_ALL_TARGET=	scare glkscare
 XGLK_PLIST_FILES=	bin/glkscare
 

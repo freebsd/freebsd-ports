@@ -12,16 +12,16 @@ MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Pluggable data store for hierarchical data
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
+RUN_DEPENDS=	rubygem-json_pure>=0:devel/rubygem-json_pure
 
 CONFLICTS_INSTALL=	rubygem-hiera-*
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 HIERA_DBDIR=	/var/db/hiera
 PLIST_FILES=	bin/hiera
 PLIST_DIRS=	${HIERA_DBDIR}

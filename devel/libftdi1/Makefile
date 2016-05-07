@@ -10,7 +10,9 @@ COMMENT=	Library (using libusb) to talk to FTDI chips
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 
 OPTIONS_DEFINE=		PYTHON BOOST DOCS EXAMPLES
 OPTIONS_DEFAULT=	PYTHON BOOST DOCS EXAMPLES
@@ -41,14 +43,14 @@ CMAKE_ARGS+=	-DEXAMPLES:BOOL=false
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=		python:2
 CMAKE_ARGS+=	-DPYTHON_BINDINGS:BOOL=true
-BUILD_DEPENDS+=	swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS+=	swig2.0:devel/swig20
 .else
 CMAKE_ARGS+=	-DPYTHON_BINDINGS:BOOL=false
 .endif
 
 .if ${PORT_OPTIONS:MBOOST}
 CMAKE_ARGS+=		-DFTDIPP:BOOL=true
-LIB_DEPENDS+=	libboost_system.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
 .else
 CMAKE_ARGS+=		-DFTDIPP:BOOL=false
 .endif

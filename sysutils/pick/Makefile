@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pick
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://github.com/thoughtbot/pick/releases/download/v${PORTVERSION}/
 

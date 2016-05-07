@@ -13,7 +13,7 @@ MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Collection of Python modules for scientific computing
 
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python

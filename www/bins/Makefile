@@ -11,20 +11,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate HTML photo albums with XML support
 
 RUN_DEPENDS=	\
-	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-	convert:${PORTSDIR}/graphics/ImageMagick \
-	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
-	p5-Text-Unaccent>=0:${PORTSDIR}/textproc/p5-Text-Unaccent \
-	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-	p5-HTML-Clean>0:${PORTSDIR}/www/p5-HTML-Clean \
-	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
-	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
-	p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info \
-	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
-	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-	p5-XML-Grove>=0:${PORTSDIR}/textproc/p5-XML-Grove \
-	p5-XML-Handler-YAWriter>=0:${PORTSDIR}/textproc/p5-XML-Handler-YAWriter \
-	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml
+	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+	convert:graphics/ImageMagick \
+	p5-Text-Iconv>=0:converters/p5-Text-Iconv \
+	p5-Text-Unaccent>=0:textproc/p5-Text-Unaccent \
+	p5-TimeDate>=0:devel/p5-TimeDate \
+	p5-HTML-Clean>0:www/p5-HTML-Clean \
+	p5-HTML-Template>=0:www/p5-HTML-Template \
+	p5-IO-String>=0:devel/p5-IO-String \
+	p5-Image-Info>=0:graphics/p5-Image-Info \
+	p5-Image-Size>=0:graphics/p5-Image-Size \
+	p5-URI>=0:net/p5-URI \
+	p5-XML-Grove>=0:textproc/p5-XML-Grove \
+	p5-XML-Handler-YAWriter>=0:textproc/p5-XML-Handler-YAWriter \
+	p5-libxml>=0:textproc/p5-libxml
 
 USES=		tar:bzip2 perl5
 USE_PERL5=	run
@@ -76,7 +76,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-install.sh
 
 # localization support
 .if ${PORT_OPTIONS:MI18N}
-RUN_DEPENDS+=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
+RUN_DEPENDS+=	p5-Locale-gettext>=0:devel/p5-Locale-gettext
 .endif
 
 .include <bsd.port.post.mk>

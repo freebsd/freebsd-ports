@@ -17,7 +17,7 @@ COMMENT=	Subtitles searching module
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	distutils autoplist
@@ -26,7 +26,7 @@ USES=		desktop-file-utils python
 
 OPTIONS_DEFINE=	UNRAR
 UNRAR_DESC=	rar support (.rar) for compressed subtitles
-UNRAR_RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+UNRAR_RUN_DEPENDS=	unrar:archivers/unrar
 
 OPTIONS_DEFAULT=	UNRAR
 

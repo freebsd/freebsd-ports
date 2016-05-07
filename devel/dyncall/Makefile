@@ -3,6 +3,7 @@
 
 PORTNAME=	dyncall
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dyncall.org/r${PORTVERSION}/ \
 		http://www.potion-studios.com/
@@ -13,6 +14,8 @@ COMMENT=	Highly dynamic multi-platform foreign function call interface library
 LICENSE=	ISCL
 
 HAS_CONFIGURE=	yes
+
+CFLAGS+=	-fPIC
 
 # There is no install target in the BSD makefile for this version of the dyncall
 # library, so install it manually.

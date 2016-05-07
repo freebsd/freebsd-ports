@@ -12,9 +12,9 @@ COMMENT=	Futuristic zoomable user environment
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libfreetype.so:print/freetype2
 
 USES=		compiler:features jpeg perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
@@ -40,9 +40,9 @@ OPTIONS_SUB=	yes
 RSVG_DESC=	SVG support through librsvg
 PDF_DESC=	PDF support through poppler-glib
 
-XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
 RSVG_USE=		GNOME=librsvg2
-PDF_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 PDF_USE=		GNOME=gtk20
 
 .include <bsd.port.pre.mk>

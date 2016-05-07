@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 USE_GNOME=	libxslt
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

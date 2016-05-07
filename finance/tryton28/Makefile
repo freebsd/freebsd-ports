@@ -13,8 +13,8 @@ COMMENT=	Tryton Application Platform (Gtk+ Client)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>=2012:${PORTSDIR}/devel/py-pytz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}pytz>=2012:devel/py-pytz
 
 CONFLICTS=	tryton-2.[46].*
 

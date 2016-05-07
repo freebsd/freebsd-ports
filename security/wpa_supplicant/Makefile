@@ -2,6 +2,7 @@
 
 PORTNAME=	wpa_supplicant
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://w1.fi/releases/
 
@@ -90,7 +91,7 @@ TNC_DESC=		Trusted Network Connect
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSIM} || ${PORT_OPTIONS:MAKA} || ${PORT_OPTIONS:MAKA_PRIME}
-LIB_DEPENDS+=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS+=	libpcsclite.so:devel/pcsc-lite
 CFLAGS+=	-I${LOCALBASE}/include/PCSC
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

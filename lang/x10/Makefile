@@ -34,8 +34,8 @@ USE_GCC=	yes
 USE_LDCONFIG=	${PREFIX}/stdlib/lib
 
 # Can't have USE_GMAKE with USE_ANT: They imply conflicting do-build actions.
-BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS+=	gmake:devel/gmake \
+		bash:shells/bash
 
 WRKSRC=		${WRKDIR}/x10.dist
 

@@ -20,15 +20,15 @@ COMMENT=	Web viewer plugin for Orthanc
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:${PORTSDIR}/science/orthanc \
-		gtest-config:${PORTSDIR}/devel/googletest
-LIB_DEPENDS=	libgdcmCommon.so:${PORTSDIR}/devel/gdcm \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc \
+		gtest-config:devel/googletest
+LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
+		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
+		libboost_filesystem.so:devel/boost-libs \
+		libjsoncpp.so:devel/jsoncpp \
+		libsqlite3.so:databases/sqlite3 \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

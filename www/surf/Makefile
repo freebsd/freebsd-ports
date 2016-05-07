@@ -13,8 +13,8 @@ COMMENT=	Simple Web browser based on WebKit/Gtk+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
-RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
+LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
+RUN_DEPENDS=	dmenu:x11/dmenu
 
 USE_GNOME=	gtk20
 USE_XORG=	x11
@@ -37,11 +37,11 @@ OPTIONS_DEFAULT=	GTK2
 # http://surf.suckless.org/patches/smoothscrolling-via-GTK3
 BUILTIN_DOWNLOAD_DESC=	Built-in download support
 BUILTIN_DOWNLOAD_CFLAGS=	-DBUILTIN_DOWNLOAD
-GTK2_LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+GTK2_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 GTK2_USE=		gnome=gtk20
 GTK2_MAKE_ENV=		GTKINC="$$(pkg-config --cflags webkit-1.0)" \
 			GTKLIB="$$(pkg-config --libs webkit-1.0)"
-GTK3_LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+GTK3_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 GTK3_USE=		gnome=gtk30
 GTK3_MAKE_ENV=		GTKINC="$$(pkg-config --cflags webkitgtk-3.0)" \
 			GTKLIB="$$(pkg-config --libs webkitgtk-3.0)"

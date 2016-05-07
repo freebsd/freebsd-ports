@@ -12,7 +12,7 @@ COMMENT=	Flexible and efficient upload handling for Flask
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:${PORTSDIR}/www/py-flask
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:www/py-flask
 
 USES=	python
 USE_PYTHON=	distutils autoplist

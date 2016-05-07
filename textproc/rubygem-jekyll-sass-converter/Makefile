@@ -11,11 +11,10 @@ COMMENT=	Basic Sass converter for Jekyll
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-sass>=3.4:${PORTSDIR}/textproc/rubygem-sass
+RUN_DEPENDS=	rubygem-sass>=3.4:textproc/rubygem-sass
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ MASTER_SITES=	http://phantom.dragonsdawn.net/~gordon/courier-patches/courier-pyt
 MAINTAINER=	bsd@dino.sk
 COMMENT=	Framework for courier filter development in python
 
-BUILD_DEPENDS=	courier-config:${PORTSDIR}/mail/courier
+BUILD_DEPENDS=	courier-config:mail/courier
 
 USES=		python
 USE_PYTHON=	distutils
@@ -66,11 +66,11 @@ OPTIONS_DEFAULT=	DEBUG WHITELIST_RELAY WHITELIST_AUTH
 PYDISTUTILS_INSTALLARGS:=${PYDISTUTILS_INSTALLARGS} --install-scripts=${PYSCRIPTSDIR}
 
 .if ${PORT_OPTIONS:MCLAMAV_CLAMD} && ! ${PORT_OPTIONS:MCLAMAV_LIB}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pyclamd.py:${PORTSDIR}/security/py-pyclamd
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pyclamd.py:security/py-pyclamd
 .endif
 
 .if ${PORT_OPTIONS:MCLAMAV_LIB} && ! ${PORT_OPTIONS:MCLAMAV_CLAMD}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pyclamav.so:${PORTSDIR}/security/py-clamav
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pyclamav.so:security/py-clamav
 .endif
 
 post-extract:

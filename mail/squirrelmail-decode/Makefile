@@ -13,7 +13,7 @@ COMMENT=	Decoders to display extra character sets in SquirrelMail
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=	${SQUIRRELDIR}/index.php:mail/squirrelmail
 
 USES=		tar:bzip2
 NO_BUILD=	yes

@@ -1,5 +1,5 @@
---- src/nvcore/nvcore.h.orig	2008-12-01 11:04:27.000000000 +0300
-+++ src/nvcore/nvcore.h	2009-03-06 22:45:11.000000000 +0300
+--- src/nvcore/nvcore.h.orig	2010-05-15 09:12:05 UTC
++++ src/nvcore/nvcore.h
 @@ -38,6 +38,9 @@
  #if defined POSH_OS_LINUX
  #	define NV_OS_LINUX 1

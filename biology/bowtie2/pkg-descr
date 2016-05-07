@@ -1,0 +1,5 @@
+Bowtie is an ultrafast, memory-efficient short read aligner. It aligns short
+DNA sequences (reads) to the human genome at a rate of over 25 million 35-bp
+reads per hour.
+
+WWW: https://github.com/BenLangmead/bowtie2

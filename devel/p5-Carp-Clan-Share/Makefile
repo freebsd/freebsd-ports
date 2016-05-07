@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Share your Carp::Clan settings with your whole Clan
 
-BUILD_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan
+BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

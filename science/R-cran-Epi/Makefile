@@ -11,9 +11,9 @@ COMMENT=	Package for statistical analysis in epidemiology
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-cmprsk>0:${PORTSDIR}/science/R-cran-cmprsk \
-		R-cran-etm>0:${PORTSDIR}/science/R-cran-etm \
-		R-cran-plyr>0:${PORTSDIR}/devel/R-cran-plyr
+RUN_DEPENDS=	R-cran-cmprsk>0:science/R-cran-cmprsk \
+		R-cran-etm>0:science/R-cran-etm \
+		R-cran-plyr>0:devel/R-cran-plyr
 
 USES=	cran:auto-plist
 

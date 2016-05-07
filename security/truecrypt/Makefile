@@ -18,8 +18,8 @@ EXTRACT_ONLY=	${TC_SRCFILE} wxWidgets-${WX_VER}.tar.bz2
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Free open-source disk encryption software
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
+BUILD_DEPENDS=	nasm:devel/nasm
+RUN_DEPENDS=	sudo:security/sudo
 
 WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 

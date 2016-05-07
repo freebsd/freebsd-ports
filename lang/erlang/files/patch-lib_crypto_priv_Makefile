@@ -1,0 +1,11 @@
+--- lib/crypto/priv/Makefile.orig	2016-03-14 20:11:15 UTC
++++ lib/crypto/priv/Makefile
+@@ -61,7 +61,7 @@ OBJS = $(OBJDIR)/crypto.o
+ # ----------------------------------------------------
+ 
+ $(SO_NIFLIB): $(OBJS)
+-	$(SO_LD) $(SO_LDFLAGS) -L$(SO_SSL_LIBDIR) -Wl,-R$(SO_SSL_LIBDIR) \
++	$(SO_LD) $(SO_LDFLAGS) -L$(SO_SSL_LIBDIR) \
+ 	-o $@ $^ -lcrypto
+ 
+ $(DLL_NIFLIB): $(OBJS)

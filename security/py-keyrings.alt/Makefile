@@ -12,7 +12,7 @@ COMMENT=	Alternate Python keyring implementations
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.9:${PORTSDIR}/devel/py-setuptools_scm
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.9:devel/py-setuptools_scm
 
 NO_ARCH=	yes
 USES=		python
@@ -25,10 +25,10 @@ KDE_KWALLET_DESC=	Install KDE KWallet to support the kwallet backend
 KEYCZAR_DESC=		Install keyczar to support keyring encryption
 PYFS_DESC=		Install pyfilesystem to support the pyfs backend
 
-ENCRYPTED_FILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:${PORTSDIR}/security/py-pycrypto
+ENCRYPTED_FILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:security/py-pycrypto
 GNOME_KEYRING_USE=		GNOME=pygobject3
 KDE_KWALLET_USE=		KDE4=pykde4
-KEYCZAR_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}keyczar>=0.71c:${PORTSDIR}/security/py-keyczar
-PYFS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}fs>=0.5:${PORTSDIR}/devel/py-fs
+KEYCZAR_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}keyczar>=0.71c:security/py-keyczar
+PYFS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}fs>=0.5:devel/py-fs
 
 .include <bsd.port.mk>

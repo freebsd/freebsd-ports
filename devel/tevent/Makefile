@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tevent
-PORTVERSION=		0.9.26
+PORTVERSION=		0.9.28
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 OPTIONS_DEFINE=		MANPAGES
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
-BUILD_DEPENDS+=		talloc>=2.1.5:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS+=		talloc>=2.1.5:devel/talloc
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 .include <bsd.port.options.mk>
@@ -50,8 +50,8 @@ PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/_tevent.so \
 .if ! ${PORT_OPTIONS:MMANPAGES}
 CONFIGURE_ENV+=		XSLTPROC="true"
 .else
-BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-			xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+			xsltproc:textproc/libxslt
 .endif
 
 PLIST_FILES+=		include/tevent.h \

@@ -16,8 +16,8 @@ COMMENT=	Account management and creation tool
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
-		p5-Crypt-RandPasswd>=0:${PORTSDIR}/security/p5-Crypt-RandPasswd
+RUN_DEPENDS=	p5-Crypt-PasswdMD5>=0:security/p5-Crypt-PasswdMD5 \
+		p5-Crypt-RandPasswd>=0:security/p5-Crypt-RandPasswd
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	userneu.pl smbrepair.pl

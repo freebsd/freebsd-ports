@@ -1,0 +1,11 @@
+--- libsrc/visualization/Makefile.in.orig	2016-04-21 11:00:04 UTC
++++ libsrc/visualization/Makefile.in
+@@ -275,7 +275,7 @@ noinst_HEADERS = meshdoc.hpp mvdraw.hpp 
+ visual.hpp vssolution.hpp
+ 
+ include_HEADERS = soldata.hpp
+-AM_CPPFLAGS = $(MPI_INCLUDES) -I$(top_srcdir)/libsrc/include  -DOPENGL -D$(TOGL_WINDOWINGSYSTEM) $(OCCFLAGS) $(TCL_INCLUDES)
++AM_CPPFLAGS = $(MPI_INCLUDES) -I$(top_srcdir)/libsrc/include  -DOPENGL -D$(TOGL_WINDOWINGSYSTEM) $(OCCFLAGS) $(TCL_INCLUDES) $(TK_INCLUDES)
+ METASOURCES = AUTO
+ @NGGUI_TRUE@noinst_LTLIBRARIES = libvisual.la
+ libvisual_la_SOURCES = meshdoc.cpp mvdraw.cpp \

@@ -11,7 +11,7 @@
 .if !defined(_INCLUDE_USES_PKGCONFIG_MK)
 _INCLUDE_USES_PKGCONFIG_MK=	yes
 
-_PKGCONFIG_DEPENDS=	pkgconf:${PORTSDIR}/devel/pkgconf
+_PKGCONFIG_DEPENDS=	pkgconf>=0.9.10:devel/pkgconf
 
 .if empty(pkgconfig_ARGS)
 pkgconfig_ARGS=	build

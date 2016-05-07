@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lwt
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -11,10 +11,10 @@ COMMENT=	Cooperative threading library for OCaml
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
-		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
-RUN_DEPENDS=	${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
-		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
+BUILD_DEPENDS=	${SA_DIR}/react/react.a:devel/ocaml-react \
+		${SA_DIR}/ssl/ssl.a:security/ocaml-ssl
+RUN_DEPENDS=	${SA_DIR}/react/react.a:devel/ocaml-react \
+		${SA_DIR}/ssl/ssl.a:security/ocaml-ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocsigen
@@ -45,8 +45,8 @@ OPTIONS_DEFINE=		DOCS
 DOCS_CONFIGURE_ENABLE=	docs
 DOCS_CONFIGURE_ON=	--docdir ${STAGEDIR}${DOCSDIR}
 # For some reason, ocaml-text is needed when building documentation
-DOCS_BUILD_DEPENDS=	${SA_DIR}/text/text.a:${PORTSDIR}/textproc/ocaml-text
-DOCS_RUN_DEPENDS=	${SA_DIR}/text/text.a:${PORTSDIR}/textproc/ocaml-text
+DOCS_BUILD_DEPENDS=	${SA_DIR}/text/text.a:textproc/ocaml-text
+DOCS_RUN_DEPENDS=	${SA_DIR}/text/text.a:textproc/ocaml-text
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"install" :: findlib_name,"install" :: "-destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib" :: "-ldconf /dev/null" :: findlib_name,' \

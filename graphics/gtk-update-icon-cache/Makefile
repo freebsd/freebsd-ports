@@ -14,8 +14,8 @@ COMMENT=	Gtk-update-icon-cache utility from the Gtk+ toolkit
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info \
-		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
+		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
 PORTSCOUT=	ignore:1
 

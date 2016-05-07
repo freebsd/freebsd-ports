@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fira
-PORTVERSION=	4.105
+PORTVERSION=	4.106
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.carrois.com/downloads/%SUBDIR%/:sans,mono \
 		SF/horia/${CATEGORIES}/${PORTNAME}/%SUBDIR%/:sans,mono
@@ -28,7 +28,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	*.pdf *.rtf
 PORTEXAMPLES=	*
 
-MONO_VERSION=	3205
+MONO_VERSION=	3206
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 EXAMPLES_DESC=	UFO source files

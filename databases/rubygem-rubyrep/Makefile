@@ -13,17 +13,15 @@ COMMENT=	Multi-master replication and sync for MySQL and PostgreSQL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-BUILD_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-activerecord>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activerecord
-RUN_DEPENDS=	flog>=0:${PORTSDIR}/sysutils/flog \
-		rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-activerecord>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activerecord
+BUILD_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:devel/rubygem-activesupport \
+		rubygem-activerecord>=${PORTVERSION}:databases/rubygem-activerecord
+RUN_DEPENDS=	flog>=0:sysutils/flog \
+		rubygem-activesupport>=${PORTVERSION}:devel/rubygem-activesupport \
+		rubygem-activerecord>=${PORTVERSION}:databases/rubygem-activerecord
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
-USES=		shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	bin/rubyrep rubyrep
 
 USE_RC_SUBR=	rubyrep
@@ -33,7 +31,7 @@ OPTIONS_DEFAULT=PGSQL
 
 PLIST_FILES=	bin/rubyrep
 
-PGSQL_RUN_DEPENDS=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
-MYSQL_RUN_DEPENDS=	ruby-mysql>=0:${PORTSDIR}/databases/ruby-mysql
+PGSQL_RUN_DEPENDS=	rubygem-pg>=0:databases/rubygem-pg
+MYSQL_RUN_DEPENDS=	ruby-mysql>=0:databases/ruby-mysql
 
 .include <bsd.port.mk>

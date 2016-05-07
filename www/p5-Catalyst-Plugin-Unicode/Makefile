@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Unicode aware Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:www/p5-Catalyst-Runtime \
+		p5-MRO-Compat>=0.10:devel/p5-MRO-Compat
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
+TEST_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-Test-WWW-Mechanize-Catalyst>=0:devel/p5-Test-WWW-Mechanize-Catalyst
 
 USES=		perl5
 USE_PERL5=	configure
@@ -26,7 +26,7 @@ post-extract:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

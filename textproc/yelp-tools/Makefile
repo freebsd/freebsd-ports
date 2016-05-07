@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Utilities to help manage documentation for Yelp and the web
 
-BUILD_DEPENDS=	yelp-xsl>=0:${PORTSDIR}/textproc/yelp-xsl \
-		itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl \
+		itstool:textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 

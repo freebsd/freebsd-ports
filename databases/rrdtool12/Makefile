@@ -11,11 +11,11 @@ PKGNAMESUFFIX=	12
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Round Robin Database Tools v1.2
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libart_lgpl_2.so:${PORTSDIR}/graphics/libart_lgpl \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libart_lgpl_2.so:graphics/libart_lgpl \
+		libpng.so:graphics/png
 
-CONFLICTS=	rrdtool10-* rrdtool-1.*
+CONFLICTS=	rrdtool-1.*
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

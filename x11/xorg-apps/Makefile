@@ -43,7 +43,7 @@ check=${comp:C/.*://}
 .  if ${port:M*/*}==""
 port:=x11/${port}
 .  endif
-RUN_DEPENDS:=	${RUN_DEPENDS} ${check}:${PORTSDIR}/${port}
+RUN_DEPENDS:=	${RUN_DEPENDS} ${check}:${port}
 . endif
 .endfor
 

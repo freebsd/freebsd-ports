@@ -13,7 +13,7 @@ COMMENT=	Python wrapper for HTML Tidy (tidylib)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
 USES=		python
 USE_PYTHON=	distutils autoplist

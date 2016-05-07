@@ -13,7 +13,7 @@ COMMENT=	Simple and minimal IRC client for X
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
 USES=		pathfix pkgconfig gettext
 USE_GNOME=	gnomeprefix

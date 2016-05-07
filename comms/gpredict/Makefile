@@ -11,9 +11,9 @@ COMMENT=	Amateur Radio satellite tracking and prediction
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
+LIB_DEPENDS=	libhamlib.so:comms/hamlib \
+		libcurl.so:ftp/curl \
+		libgoocanvas.so:graphics/goocanvas
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -11,7 +11,7 @@ MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	MIFARE contactless tag access library
 
-LIB_DEPENDS=	libnfc.so:${PORTSDIR}/devel/libnfc
+LIB_DEPENDS=	libnfc.so:devel/libnfc
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

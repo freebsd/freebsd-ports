@@ -12,7 +12,7 @@ DIST_SUBDIR=	festival
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oxford Advanced Learner's pronunciation dictionary for Festival
 
-RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
+RUN_DEPENDS=	festival:audio/festival
 
 RESTRICTED=	No commercial use
 

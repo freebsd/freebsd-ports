@@ -9,11 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Gems for character encoding detection
 
-LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 CONFIGURE_ARGS=	--with-icu-include=${LOCALBASE}/include
 
 .include <bsd.port.mk>

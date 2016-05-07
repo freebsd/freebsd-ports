@@ -11,8 +11,8 @@ DISTNAME=	Getleft-v${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Web site downloader
 
-RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:${PORTSDIR}/x11-toolkits/tktable \
-		${LOCALBASE}/lib/libttkstub.a:${PORTSDIR}/x11-toolkits/tile
+RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:x11-toolkits/tktable \
+		${LOCALBASE}/lib/libttkstub.a:x11-toolkits/tile
 
 USES=		tk
 PORTSCOUT=	ignore:1

@@ -12,13 +12,12 @@ COMMENT=	Whitelist based HTML sanitizer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-crass>=1.0.2:${PORTSDIR}/www/rubygem-crass \
-		rubygem-nokogiri>=1.4.4:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-nokogumbo>=1.4.1:${PORTSDIR}/textproc/rubygem-nokogumbo
+RUN_DEPENDS=	rubygem-crass>=1.0.2:www/rubygem-crass \
+		rubygem-nokogiri>=1.4.4:textproc/rubygem-nokogiri \
+		rubygem-nokogumbo>=1.4.1:textproc/rubygem-nokogumbo
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

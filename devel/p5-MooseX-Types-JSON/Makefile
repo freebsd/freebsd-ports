@@ -15,11 +15,11 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-JSON>=2.00:${PORTSDIR}/converters/p5-JSON \
-		p5-Moose>=0.82:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Types>=0.15:${PORTSDIR}/devel/p5-MooseX-Types
+BUILD_DEPENDS=	p5-JSON>=2.00:converters/p5-JSON \
+		p5-Moose>=0.82:devel/p5-Moose \
+		p5-MooseX-Types>=0.15:devel/p5-MooseX-Types
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.00:${PORTSDIR}/devel/p5-Test-Pod
+TEST_DEPENDS=	p5-Test-Pod>=1.00:devel/p5-Test-Pod
 
 NO_ARCH=	yes
 USES=		perl5

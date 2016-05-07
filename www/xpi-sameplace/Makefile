@@ -9,7 +9,7 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber client
 
-RUN_DEPENDS=	xpi-xmpp4moz>=0.5.2:${PORTSDIR}/www/xpi-xmpp4moz
+RUN_DEPENDS=	xpi-xmpp4moz>=0.5.2:www/xpi-xmpp4moz
 
 XPI_NUM=	3633
 XPI_ID=		sameplace@hyperstruct.net

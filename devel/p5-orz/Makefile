@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Method of annotation as /* */ in perl
 
-BUILD_DEPENDS=	p5-Module-Compile>=0.21:${PORTSDIR}/devel/p5-Module-Compile
+BUILD_DEPENDS=	p5-Module-Compile>=0.21:devel/p5-Module-Compile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

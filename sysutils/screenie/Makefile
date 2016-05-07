@@ -12,7 +12,7 @@ COMMENT=	Small and lightweight screen(1) wrapper
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
+RUN_DEPENDS=	screen:sysutils/screen
 
 NO_BUILD=	yes
 

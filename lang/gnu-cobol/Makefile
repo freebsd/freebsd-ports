@@ -10,7 +10,7 @@ MASTER_SITES=	GNU/gnucobol
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Open-source COBOL compiler
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USE_BDB=	yes
 USES=		gmake libtool ncurses

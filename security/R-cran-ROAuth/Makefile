@@ -11,8 +11,8 @@ COMMENT=	R interface for OAuth
 
 LICENSE=	ART20
 
-RUN_DEPENDS=	R-cran-RCurl>0:${PORTSDIR}/ftp/R-cran-RCurl \
-		R-cran-digest>0:${PORTSDIR}/security/R-cran-digest
+RUN_DEPENDS=	R-cran-RCurl>0:ftp/R-cran-RCurl \
+		R-cran-digest>0:security/R-cran-digest
 
 USES=	cran:auto-plist
 

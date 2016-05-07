@@ -9,7 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU diff utilities
 
-LIB_DEPENDS=	libsigsegv.so:${PORTSDIR}/devel/libsigsegv
+LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
 
 USES=		charsetfix tar:xz
 GNU_CONFIGURE=	yes

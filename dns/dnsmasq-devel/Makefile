@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.76test12
-PORTVERSION=	2.76.0test12
+DISTVERSION=	2.76test13
+PORTVERSION=	2.76.0test13
 CATEGORIES=	dns ipv6
 #MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
@@ -50,7 +50,7 @@ CFLAGS+=	-DNO_IPV6
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext gmake iconv pkgconfig
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:dns/libidn
 PLIST_SUB+=	NLS=""
 ALL_TARGET=	all-i18n
 _intllibs=	-lintl
@@ -60,13 +60,13 @@ PLIST_SUB+=	NLS="@comment "
 .if ${PORT_OPTIONS:MIDN}
 USES+=		iconv
 CFLAGS+=	-DHAVE_IDN
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:dns/libidn
 _intllibs+=	-lidn
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	libdbus-1.so:devel/dbus
 USES+=		pkgconfig
 CPPFLAGS+=	`pkg-config --cflags dbus-1`
 CFLAGS+=	-DHAVE_DBUS
@@ -83,8 +83,8 @@ USES+=		lua
 .if ${PORT_OPTIONS:MDNSSEC}
 CFLAGS+=	-DHAVE_DNSSEC
 USES+=		pkgconfig
-LIB_DEPENDS+=	libnettle.so:${PORTSDIR}/security/nettle
-LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libnettle.so:security/nettle
+LIB_DEPENDS+=	libgmp.so:math/gmp
 .endif
 
 USE_RC_SUBR=	dnsmasq

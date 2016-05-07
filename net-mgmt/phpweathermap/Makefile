@@ -3,7 +3,7 @@
 
 PORTNAME=	phpweathermap
 PORTVERSION=	0.97a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.network-weathermap.com/files/
 DISTNAME=	php-weathermap-${PORTVERSION}
@@ -14,8 +14,8 @@ COMMENT=	Network visualisation tool with web editor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Getopt.php:${PORTSDIR}/devel/pear \
-		rrdtool:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Getopt.php:devel/pear \
+		rrdtool:databases/rrdtool
 
 NO_BUILD=	yes
 NO_ARCH=	yes

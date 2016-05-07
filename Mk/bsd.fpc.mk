@@ -40,6 +40,8 @@ FPC_Include_MAINTAINER=	freebsd-fpc@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
 DEFAULT_FPC_VER=	${FPC_DEFAULT}
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
 FPC_VER=		${DEFAULT_FPC_VER}
 FPC_ARCH=		${ARCH:S/amd64/x86_64/}
 
@@ -60,7 +62,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 .endif
 
-BUILD_DEPENDS+=		${PPNAME}:${PORTSDIR}/lang/fpc
+BUILD_DEPENDS+=		${PPNAME}:lang/fpc
 
 BUILDNAME=		${FPC_ARCH}-${OPSYS:tl}
 UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
@@ -201,9 +203,9 @@ zlib_UNIT=	devel/fpc-zlib
 .if defined(_POSTMKINCLUDED) && defined(USE_FPC)
 .	for UNIT in ${USE_FPC}
 .		if ${_FPC_ALL_UNITS:M${UNIT}} != ""
-BUILD_DEPENDS+= ${MKINSTDIR}/${UNIT}.fpm:${PORTSDIR}/${${UNIT:S/-/_/}_UNIT}
+BUILD_DEPENDS+= ${MKINSTDIR}/${UNIT}.fpm:${${UNIT:S/-/_/}_UNIT}
 .			if defined(USE_FPC_RUN)
-RUN_DEPENDS+=   ${MKINSTDIR}/${UNIT}.fpm:${PORTSDIR}/${${UNIT:S/-/_/}_UNIT}
+RUN_DEPENDS+=   ${MKINSTDIR}/${UNIT}.fpm:${${UNIT:S/-/_/}_UNIT}
 .			endif
 
 security-check: fpc-check-install

@@ -11,6 +11,8 @@ COMMENT=	PEAR framework for PHP
 
 LICENSE=	PHP301
 
+BROKEN_powerpc64=	Does not build
+
 USES=		cpe tar:bzip2
 CPE_VENDOR=	php
 NO_BUILD=	yes

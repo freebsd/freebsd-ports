@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Text-MicroTemplate>=0.18:${PORTSDIR}/textproc/p5-Text-MicroTemplate
+	p5-Text-MicroTemplate>=0.18:textproc/p5-Text-MicroTemplate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

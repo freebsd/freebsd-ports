@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-CheckVersion
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,9 +13,9 @@ COMMENT=	Check module (e.g. latest version) with CPAN (or equivalent repo)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-Perl-osnames>=0.09:${PORTSDIR}/devel/p5-Perl-osnames
-RUN_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+BUILD_DEPENDS=	p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
+		p5-Perl-osnames>=0.09:devel/p5-Perl-osnames
+RUN_DEPENDS=	p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
 
 NO_ARCH=	yes
 USE_PERL5=	configure

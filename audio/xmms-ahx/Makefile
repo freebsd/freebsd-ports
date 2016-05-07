@@ -12,8 +12,8 @@ COMMENT=	XMMS plugin for playing AHX tunes
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	xmms:multimedia/xmms
+RUN_DEPENDS=	xmms:multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Input/libahx.so
 

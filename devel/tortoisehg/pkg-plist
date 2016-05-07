@@ -371,6 +371,7 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/win32ill.pyo
 share/applications/tortoisehg.desktop
 %%NLS%%share/locale/ar/LC_MESSAGES/tortoisehg.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/da/LC_MESSAGES/tortoisehg.mo

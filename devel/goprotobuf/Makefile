@@ -11,13 +11,12 @@ COMMENT=	Go support for Google's protocol buffers
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
+RUN_DEPENDS=	protoc:devel/protobuf
 
+USES=		go
 GO_PKGNAME=	github.com/golang/protobuf
 GO_TARGET=	${GO_PKGNAME}/proto \
 		${GO_PKGNAME}/protoc-gen-go \
 		${GO_PKGNAME}/jsonpb
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

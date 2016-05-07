@@ -13,7 +13,7 @@ COMMENT=	Gnome-based scientific calculator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gunits:${PORTSDIR}/math/units
+RUN_DEPENDS=	${LOCALBASE}/bin/gunits:math/units
 
 USES=		pkgconfig
 USE_GNOME=	libgnomeui

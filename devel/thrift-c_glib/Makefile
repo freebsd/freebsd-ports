@@ -12,11 +12,13 @@ DISTNAME=	thrift-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C glib interface to Thrift
 
+BROKEN_powerpc64=	Does not build
+
 PKGNAMESUFFIX=	-c_glib
 
 BUILDIR=	${WRKDIR}/${DISTNAME}/lib/c_glib
 
-LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	libglib-2.0.so:devel/glib20
 
 DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
 

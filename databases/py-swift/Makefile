@@ -12,20 +12,20 @@ COMMENT=	Highly available, distributed, eventually consistent object/blob store
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.21:${PORTSDIR}/devel/py-pbr
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.21:devel/py-pbr
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:${PORTSDIR}/www/py-pastedeploy \
-		${PYTHON_PKGNAMEPREFIX}dnspython>=1.10.0:${PORTSDIR}/dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.8:${PORTSDIR}/net/py-eventlet \
-		${PYTHON_PKGNAMEPREFIX}netifaces>=0:${PORTSDIR}/net/py-netifaces \
-		${PYTHON_PKGNAMEPREFIX}swiftclient>=0:${PORTSDIR}/databases/py-swiftclient \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}webob>=0.9.8:${PORTSDIR}/www/py-webob \
-		${PYTHON_PKGNAMEPREFIX}xattr>=0:${PORTSDIR}/devel/py-xattr \
-		memcached>=0:${PORTSDIR}/databases/memcached \
-		rsync>=3.0:${PORTSDIR}/net/rsync
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:www/py-pastedeploy \
+		${PYTHON_PKGNAMEPREFIX}dnspython>=1.10.0:dns/py-dnspython \
+		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.8:net/py-eventlet \
+		${PYTHON_PKGNAMEPREFIX}netifaces>=0:net/py-netifaces \
+		${PYTHON_PKGNAMEPREFIX}swiftclient>=0:databases/py-swiftclient \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}webob>=0.9.8:www/py-webob \
+		${PYTHON_PKGNAMEPREFIX}xattr>=0:devel/py-xattr \
+		memcached>=0:databases/memcached \
+		rsync>=3.0:net/rsync
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

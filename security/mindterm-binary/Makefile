@@ -28,6 +28,8 @@ post-extract:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/java/mindterm
 	${INSTALL_DATA} ${WRKSRC}/mindterm.jar ${STAGEDIR}${PREFIX}/share/java/mindterm/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DOC in CHANGES FAQ FEATURES PLATFORMS TODO mindterm-ssh.html
 	${INSTALL_DATA} ${WRKSRC}/${DOC} ${STAGEDIR}${DOCSDIR}

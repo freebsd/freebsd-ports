@@ -12,8 +12,8 @@ MASTER_SITES=	http://www.bearnip.com/ftp/mud/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Modern version of the LPMud game driver
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	help2man:misc/help2man
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -41,7 +41,7 @@ MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ENABLE=	use-mysql
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ENABLE=	use-pgsql
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ENABLE=use-sqlite
 
 .include <bsd.port.options.mk>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtecla
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 

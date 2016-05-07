@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform frontend to mencoder
 
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
+RUN_DEPENDS=	mencoder:multimedia/mencoder
 
 USE_JAVA=	yes
 GNU_CONFIGURE=	yes
@@ -25,15 +25,15 @@ CONFIGURE_ARGS=	--with-swt="${JAVALIBDIR}/${SWT_JAR}"
 
 .if ${PORT_OPTIONS:MSWTDEVEL}
 BUILD_DEPENDS+=	\
-		${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+		${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
 RUN_DEPENDS+=	\
-		${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+		${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
 SWT_JAR=	swt-devel.jar
 .else
 BUILD_DEPENDS+=	\
-		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
+		${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 RUN_DEPENDS+=	\
-		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
+		${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 SWT_JAR=	swt.jar
 .endif
 

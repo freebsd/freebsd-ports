@@ -35,7 +35,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MALLEGRO}
-LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro
+LIB_DEPENDS+=	liballeg.so:devel/allegro
 CONFIGURE_ARGS+=--enable-allegro
 PLIST_SUB+=	ALLEGRO=""
 .else

@@ -12,7 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dgerow@afflictions.org
 COMMENT=	Ruby interface to the Tokyo Cabinet DB engine
 
-LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

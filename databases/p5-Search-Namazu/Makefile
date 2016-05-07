@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Namazu library module for perl
 
-LIB_DEPENDS=	libnmz.so:${PORTSDIR}/databases/namazu2
+LIB_DEPENDS=	libnmz.so:databases/namazu2
 
 USES=		perl5
 USE_PERL5=	configure

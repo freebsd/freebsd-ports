@@ -12,7 +12,6 @@ COMMENT=	Fast and smart autolinking drop-in replacement for Rails auto_link
 LICENSE=	ISCL
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

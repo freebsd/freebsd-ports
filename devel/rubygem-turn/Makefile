@@ -12,13 +12,12 @@ COMMENT=	New output format for Test::Unit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-ansi>=0:${PORTSDIR}/devel/rubygem-ansi \
-		rubygem-minitest>=4:${PORTSDIR}/devel/rubygem-minitest
+RUN_DEPENDS=	rubygem-ansi>=0:devel/rubygem-ansi \
+		rubygem-minitest>=4:devel/rubygem-minitest
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/turn
 

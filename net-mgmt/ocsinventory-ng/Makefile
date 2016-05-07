@@ -11,18 +11,19 @@ COMMENT=	Open Computer and Software Inventory Next Generation
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI \
-		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-XML-Entities>=0:${PORTSDIR}/textproc/p5-XML-Entities
+BROKEN_powerpc64=	Does not build
 
-USES=		perl5
+RUN_DEPENDS=	p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-Compress-Raw-Zlib>=0:archivers/p5-Compress-Raw-Zlib \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		p5-Apache-DBI>=0:www/p5-Apache-DBI \
+		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
+		p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
+		p5-XML-Entities>=0:textproc/p5-XML-Entities
+
+USES=		mysql perl5
 USE_APACHE_RUN=	22+
-USE_MYSQL=	41+
 WANT_PHP_WEB=	yes
 USE_PHP=	mysql pcre zlib session xml gd zip openssl mbstring
 NO_BUILD=	yes

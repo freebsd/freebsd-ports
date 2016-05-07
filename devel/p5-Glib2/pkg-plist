@@ -1,6 +1,7 @@
 %%SITE_ARCH%%/Glib.pm
 %%SITE_ARCH%%/Glib/BookmarkFile.pod
 %%SITE_ARCH%%/Glib/Boxed.pod
+%%SITE_ARCH%%/Glib/Bytes.pod
 %%SITE_ARCH%%/Glib/CodeGen.pm
 %%SITE_ARCH%%/Glib/Error.pod
 %%SITE_ARCH%%/Glib/Flags.pod
@@ -42,6 +43,7 @@
 %%PERL5_MAN3%%/Glib.3.gz
 %%PERL5_MAN3%%/Glib::BookmarkFile.3.gz
 %%PERL5_MAN3%%/Glib::Boxed.3.gz
+%%PERL5_MAN3%%/Glib::Bytes.3.gz
 %%PERL5_MAN3%%/Glib::CodeGen.3.gz
 %%PERL5_MAN3%%/Glib::Error.3.gz
 %%PERL5_MAN3%%/Glib::Flags.3.gz

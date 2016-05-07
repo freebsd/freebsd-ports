@@ -1,0 +1,11 @@
+--- cups-config.in.orig	2013-05-29 11:51:34 UTC
++++ cups-config.in
+@@ -105,7 +105,7 @@ while test $# -gt 0; do
+ 	    ;;
+ 	--libs)
+ 	    if test $static = no; then
+-	        libs="@EXTLINKCUPS@ $LIBS";
++	        libs="@EXTLINKCUPS@";
+  	        if test $image = yes; then
+  	            libs="@EXTLINKCUPSIMAGE@ $libs"
+ 		fi

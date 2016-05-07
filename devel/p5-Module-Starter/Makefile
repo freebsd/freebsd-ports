@@ -13,7 +13,7 @@ COMMENT=	Simple starter kit for any Perl module
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
+BUILD_DEPENDS=	p5-Path-Class>=0:devel/p5-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.470

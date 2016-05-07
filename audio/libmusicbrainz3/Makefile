@@ -13,8 +13,8 @@ COMMENT=	MusicBrainz client library for audio metadata lookup
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid \
-		libneon.so:${PORTSDIR}/www/neon
+LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
+		libneon.so:www/neon
 
 USES=		cmake pathfix
 USE_LDCONFIG=	yes

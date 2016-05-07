@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zope.app.locales
-PORTVERSION=	3.7.3
-PORTREVISION=	1
+PORTVERSION=	3.7.5
 CATEGORIES=	textproc python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +11,16 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope locale extraction and management utilities
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.i18n>=0:${PORTSDIR}/devel/py-zope.i18n \
-		${PYTHON_PKGNAMEPREFIX}zope.configuration>=0:${PORTSDIR}/devel/py-zope.configuration \
-		${PYTHON_PKGNAMEPREFIX}zope.tal>=0:${PORTSDIR}/textproc/py-zope.tal \
-		${PYTHON_PKGNAMEPREFIX}zope.app.applicationcontrol>=0:${PORTSDIR}/devel/py-zope.app.applicationcontrol \
-		${PYTHON_PKGNAMEPREFIX}zope.app.appsetup>=0:${PORTSDIR}/devel/py-zope.app.appsetup
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}zope.i18nmessageid>0:textproc/py-zope.i18nmessageid \
+		${PYTHON_PKGNAMEPREFIX}zope.i18n>=0:devel/py-zope.i18n \
+		${PYTHON_PKGNAMEPREFIX}zope.configuration>=0:devel/py-zope.configuration \
+		${PYTHON_PKGNAMEPREFIX}zope.tal>=0:textproc/py-zope.tal
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python:-2.7
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

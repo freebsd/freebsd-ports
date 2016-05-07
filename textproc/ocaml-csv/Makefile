@@ -10,7 +10,7 @@ MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/420/
 MAINTAINER=	tcrimi@gmail.com
 COMMENT=	OCaml library to read and write CSV files
 
-BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/extlib:${PORTSDIR}/devel/ocaml-extlib
+BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/extlib:devel/ocaml-extlib
 
 WRKSRC=		${WRKDIR}/csv-${PORTVERSION}
 USES=		gmake

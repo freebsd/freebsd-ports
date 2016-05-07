@@ -2,4 +2,4 @@ pefile is a Python module to read and work with PE files.  Most of the
 information in the PE Header is accessible, as well as all the sections,
 section's information and data.
 
-WWW: http://code.google.com/p/pefile/
+WWW: https://github.com/erocarrera/pefile

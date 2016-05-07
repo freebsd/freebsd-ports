@@ -15,8 +15,8 @@ LICENSE_NAME=	noweb
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon
-RUN_DEPENDS=	iconx:${PORTSDIR}/lang/icon
+BUILD_DEPENDS=	icont:lang/icon
+RUN_DEPENDS=	iconx:lang/icon
 
 USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

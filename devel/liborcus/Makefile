@@ -10,8 +10,8 @@ COMMENT=	Standalone file import filter library for spreadsheet documents
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/include/mdds/global.hpp:${PORTSDIR}/devel/mdds
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/mdds/global.hpp:devel/mdds0
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lang gmake libtool pathfix pkgconfig tar:xz

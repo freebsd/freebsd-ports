@@ -13,10 +13,10 @@ COMMENT=	Collection of graph-generating scripts
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL
 
-RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
-		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
-		p5-IP-Anonymous>=0:${PORTSDIR}/net/p5-IP-Anonymous
+RUN_DEPENDS=	dot:graphics/graphviz \
+		p5-Text-CSV>=0:textproc/p5-Text-CSV \
+		p5-Crypt-Rijndael>=0:security/p5-Crypt-Rijndael \
+		p5-IP-Anonymous>=0:net/p5-IP-Anonymous
 
 USES=		shebangfix
 SHEBANG_FILES=	data/generate.pl \

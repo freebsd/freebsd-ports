@@ -14,7 +14,7 @@ COMMENT=	DeforaOS desktop audio mixer
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop
+LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 USES=		desktop-file-utils gettext pkgconfig

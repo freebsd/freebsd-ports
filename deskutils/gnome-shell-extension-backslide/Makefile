@@ -12,10 +12,10 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome-shell extension for background slideshow
 
-BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
-		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
-RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
-		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
+		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
+		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
 WRKSRC=		${WRKDIR}/LukasKnuth-backslide-7e36a49fc5e1
 

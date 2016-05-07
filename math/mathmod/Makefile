@@ -21,6 +21,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME:tl}-branches-${BRANCHE}-trunk
 
 PLIST_FILES=	bin/MathMod
 
+# LL / ULL suffix would be needed for integer constants
+BROKEN_FreeBSD_9_i386=	YES
+
 pre-build:
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE}
 

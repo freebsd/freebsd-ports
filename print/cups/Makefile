@@ -4,7 +4,7 @@
 PORTNAME=	cups
 PORTVERSION=	2.1.3
 DISTVERSIONSUFFIX=-source
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.cups.org/software/${PORTVERSION}/
 
@@ -16,8 +16,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE.txt
 LICENSE_FILE_LGPL20=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
-
 CONFLICTS=	LPRng-[0-9]*
 
 DESTDIRNAME=	DSTROOT
@@ -26,7 +24,6 @@ CONFIGURE_ARGS=	--disable-dnssd						\
 		--disable-gssapi					\
 		--disable-launchd					\
 		--disable-systemd					\
-		--enable-gnutls						\
 		--with-cups-user=${USERS}				\
 		--with-cups-group=${GROUPS}				\
 		--with-system-groups=wheel				\
@@ -39,6 +36,7 @@ CONFIGURE_ARGS=	--disable-dnssd						\
 		--with-pam-module="unix"				\
 		ac_cv_path_JAVA= ac_cv_path_PERL= ac_cv_path_PHPCGI=	\
 		ac_cv_path_PHP= ac_cv_path_PYTHON=
+CPPFLAGS+=	-isystem ${LOCALBASE}/include # libpaper mainly
 LIBS+=		-L${LOCALBASE}/lib
 USES=		cpe gmake iconv pkgconfig tar:bzip2
 CPE_VENDOR=	apple
@@ -49,33 +47,43 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GROUPS=		cups
 USERS=		cups
 
-OPTIONS_DEFINE=		AVAHI DBUS DOCS IPPTOOL LIBPAPER NLS X11
-OPTIONS_DEFAULT=	AVAHI DBUS LIBPAPER
+OPTIONS_DEFINE=		AVAHI DBUS DOCS GNUTLS IPPTOOL LIBPAPER NLS X11
+OPTIONS_DEFAULT=	AVAHI DBUS GNUTLS LIBPAPER
 OPTIONS_SUB=		yes
 
-AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
 AVAHI_SUB_LIST=		AVAHI_DAEMON=avahi_daemon
 AVAHI_SUB_LIST_OFF=	AVAHI_DAEMON=
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_ENABLE=	dbus
 DBUS_SUB_LIST=		DBUS_DAEMON=dbus
 DBUS_SUB_LIST_OFF=	DBUS_DAEMON=
 
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_ON=	--enable-gnutls
+GNUTLS_CONFIGURE_OFF=	--disable-ssl
+
 IPPTOOL_DESC=		Internet Printing Protocol testing tool
 
-LIBPAPER_LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
+LIBPAPER_LIB_DEPENDS=	libpaper.so:print/libpaper
 LIBPAPER_CONFIGURE_ENABLE=libpaper
 
 X11_DESC=		Install desktop menu item
-X11_BUILD_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
-X11_RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+X11_BUILD_DEPENDS=	xdg-open:devel/xdg-utils
+X11_RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 .if defined(CUPS_OVERWRITE_BASE)
 PLIST_SUB+=	OVERWRITE=""
 .else
 PLIST_SUB+=	OVERWRITE="@comment "
+.endif
+
+.if exists(/usr/lib/libusb.so)
+PLIST_SUB+=	USB=""
+.else
+PLIST_SUB+=	USB="@comment "
 .endif
 
 .include <bsd.port.pre.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	h5py
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,12 +14,12 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/licenses/license.txt
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		cython:${PORTSDIR}/lang/cython \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}pkgconfig>0:${PORTSDIR}/devel/py-pkgconfig
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
+		cython:lang/cython \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}pkgconfig>0:devel/py-pkgconfig
+LIB_DEPENDS=	libhdf5.so:science/hdf5
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
 USE_GITHUB=	yes
 

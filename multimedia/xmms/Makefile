@@ -45,7 +45,7 @@ ESOUND_USE=		GNOME=esound
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 MIKMOD_CONFIGURE_ENABLE=mikmod
-MIKMOD_LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+MIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
@@ -60,7 +60,7 @@ VFILEINFO_DESC=		Enable Extended Vorbis Fileinfo
 VFILEINFO_CPPFLAGS=	-DALL_VORBIS_TAGS
 
 VORBIS_CONFIGURE_ENABLE=vorbis
-VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 .if !defined(WITH_DEBUG)
 INSTALL_TARGET=	install-strip
@@ -95,7 +95,6 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xmms/Skins
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${FILESDIR}/xmms.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -31,18 +31,18 @@ LICENSE=	GPLv2
 #
 #-----------------------------------------------------------------------
 
-BUILD_DEPENDS+=	astk-serveur>0:${PORTSDIR}/cad/astk-serveur	\
-		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
-		${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch		\
-		python:${PORTSDIR}/lang/python					\
+BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
+		${SHELL_INSTALL_ASTER}:shells/${SHIADEP}		\
+		${LOCALBASE}/lib/libscotch.a:cad/scotch		\
+		python:lang/python					\
 		${PYNUMPY}
-LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5				\
-		libmed.so:${PORTSDIR}/french/med				\
-		libmetis.so.0:${PORTSDIR}/math/metis-edf
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:${PORTSDIR}/math/py-gnuplot	\
-		${LOCALBASE}/bin/onmetis:${PORTSDIR}/math/metis-edf		\
-		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
-		astk-serveur>0:${PORTSDIR}/cad/astk-serveur
+LIB_DEPENDS+=	libhdf5.so:science/hdf5				\
+		libmed.so:french/med				\
+		libmetis.so.0:math/metis-edf
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:math/py-gnuplot	\
+		${LOCALBASE}/bin/onmetis:math/metis-edf		\
+		${SHELL_INSTALL_ASTER}:shells/${SHIADEP}		\
+		astk-serveur>0:cad/astk-serveur
 
 USES=		bison fortran tk python:2
 USE_BINUTILS=	yes
@@ -81,25 +81,25 @@ FLAGARCH=	-DLINUX64
 .endif
 
 .if !defined(WITHOUT_ASTK_CLI)
-RUN_DEPENDS+=	astk-client>0:${PORTSDIR}/cad/astk-client
+RUN_DEPENDS+=	astk-client>0:cad/astk-client
 PLIST_SUB+=	ASTK_CLIENT=""  ASTKDIR=${ASTKDIR}
 .else
 PLIST_SUB+=	ASTK_CLIENT="@comment " ASTKDIR=""
 .endif
 .if !defined(WITHOUT_EFICAS)
-RUN_DEPENDS+=	fr-eficas>0:${PORTSDIR}/french/eficas
+RUN_DEPENDS+=	fr-eficas>0:french/eficas
 PLIST_SUB+=	EFICAS=""
 .else
 PLIST_SUB+=	EFICAS="@comment "
 .endif
 .if !defined(WITHOUT_GMSH)
-RUN_DEPENDS+=	${LOCALBASE}/bin/gmsh:${PORTSDIR}/cad/gmsh
+RUN_DEPENDS+=	${LOCALBASE}/bin/gmsh:cad/gmsh
 PLIST_SUB+=	GMSH=""
 .else
 PLIST_SUB+=	GMSH="@comment "
 .endif
 .if !defined(WITHOUT_GRACE)
-RUN_DEPENDS+=	xmgrace:${PORTSDIR}/math/grace
+RUN_DEPENDS+=	xmgrace:math/grace
 PLIST_SUB+=	GRACE=""
 .else
 PLIST_SUB+=	GRACE="@comment "
@@ -111,15 +111,15 @@ RUN_DEPENDS+=	${PYNUMPY}
 .if !defined(WITH_MPI)
 MUMPS_PORT=	mumps
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs	\
-		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:math/blacs	\
+		${LOCALBASE}/lib/libscalapack.a:math/scalapack
 MUMPS_PORT=	mumps-mpich
 MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/lib -lmpich -lmpl
 .endif
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:math/${MUMPS_PORT}
 
 .if defined(WITH_MPI)
-LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	libmpich.so:net/mpich2
 HOME_MPI=	${LOCALBASE}
 .endif
 
@@ -143,19 +143,19 @@ SHIADEP=	${SHIA}
 .if !defined(WITH_ED)
 . if exists(${LOCALBASE}/bin/nedit)
 WITH_ED=	nedit
-RUN_DEPENDS+=	${LOCALBASE}/bin/nedit:${PORTSDIR}/editors/nedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/nedit:editors/nedit
 . elif exists(${LOCALBASE}/bin/gvim)
 WITH_ED=	gvim
-RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
+RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:editors/vim
 . elif exists(${LOCALBASE}/bin/emacs)
 WITH_ED=	emacs
-RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:${PORTSDIR}/editors/emacs
+RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:editors/emacs
 . elif exists(${LOCALBASE}/bin/gedit)
 WITH_ED=	gedit
-RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:${PORTSDIR}/editors/gedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:editors/gedit
 . elif exists(${LOCALBASE}/bin/xedit)
 WITH_ED=	xedit
-RUN_DEPENDS+=	${LOCALBASE}/bin/xedit:${PORTSDIR}/x11/xedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/xedit:x11/xedit
 . else
 WITH_ED=	vi
 . endif

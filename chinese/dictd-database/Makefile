@@ -14,7 +14,7 @@ COMMENT=	Chinese <-> English dictd words database
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd
+RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:net/dictd
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

@@ -17,10 +17,10 @@ LIBGDA5_SLAVE?=	no
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libsoup-2.4.so:devel/libsoup \
+		libjson-glib-1.0.so:devel/json-glib
 
 USES+=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 libxslt intlhack referencehack
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--without-postgres
 
 # MDB (MS Access)
 .if ${LIBGDA5_SLAVE}==mdb
-LIB_DEPENDS+=		libmdbsql.so:${PORTSDIR}/databases/mdbtools
+LIB_DEPENDS+=		libmdbsql.so:databases/mdbtools
 CONFIGURE_ARGS+=	--with-mdb=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-mdb
@@ -99,14 +99,14 @@ CONFIGURE_ARGS+=	--without-java
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"db.h|"db${BDB_VER}/db.h|g' \
 		-e 's|ldb47|l${BDB_LIB_NAME}|g' \
 		-e 's|ldb|l${BDB_LIB_NAME}|g' \
 		-e 's|libdb|lib${BDB_LIB_NAME}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<db\.h>|<db${BDB_VER}/db.h>|' \
-	    	${WRKSRC}/providers/bdb/gda-bdb-provider.c \
+		${WRKSRC}/providers/bdb/gda-bdb-provider.c \
 		${WRKSRC}/providers/bdb/gda-bdb-test.c
 .if ${LIBGDA5_SLAVE} == jdbc
 	@${REINPLACE_CMD} -e 's|lib/amd64|lib/${ARCH}|g' \

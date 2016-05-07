@@ -1,12 +1,14 @@
+bin/mpd-dump-ratings
 bin/mpd-dynamic
 bin/mpd-rate
 %%SITE_PERL%%/Audio/MPD.pm
 %%SITE_PERL%%/Audio/MPD/Collection.pm
 %%SITE_PERL%%/Audio/MPD/Playlist.pm
 %%SITE_PERL%%/Audio/MPD/Types.pm
+%%PERL5_MAN1%%/mpd-dump-ratings.1.gz
+%%PERL5_MAN1%%/mpd-dynamic.1.gz
+%%PERL5_MAN1%%/mpd-rate.1.gz
 %%PERL5_MAN3%%/Audio::MPD.3.gz
 %%PERL5_MAN3%%/Audio::MPD::Collection.3.gz
 %%PERL5_MAN3%%/Audio::MPD::Playlist.3.gz
 %%PERL5_MAN3%%/Audio::MPD::Types.3.gz
-%%PERL5_MAN1%%/mpd-dynamic.1.gz
-%%PERL5_MAN1%%/mpd-rate.1.gz

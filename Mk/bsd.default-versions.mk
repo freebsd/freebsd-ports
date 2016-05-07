@@ -18,11 +18,23 @@ _l=		${lang:C/=.*//g}
 ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
 .endfor
 
+# Possible values: 2.2, 2.4
 APACHE_DEFAULT?=	2.4
+# Possible values: 48, 5, 6
+BDB_DEFAULT?=		5
+# Possible values: 2.5
+FIREBIRD_DEFAULT?=	2.5
+# Possible values: 3.0.0
 FPC_DEFAULT?=		3.0.0
+# Possible values: 4.6, 4.7, 4.8, 4.9, 5
 GCC_DEFAULT?=		4.8
+# Possible values: 7, 8, 9, agpl
+GHOSTSCRIPT_DEFAULT?=	agpl
+# Possible values: 5.1, 5.2, 5.3
 LUA_DEFAULT?=		5.2
+# Possible values: 5.1, 5.5, 5.6, 5.7, 5.5m, 10.0m, 10.1m, 5.5p, 5.6p
 MYSQL_DEFAULT?=		5.6
+# Possible values: 5.18, 5.20, 5.22, devel
 .if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
 PERL5_DEFAULT?=		5.20
@@ -37,15 +49,20 @@ _PERL5_FROM_BIN!=	perl -e 'printf "%vd\n", $$^V;'
 _EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .endif
+# Possible values: 9.0, 9.1, 9.2, 9.3, 9.4, 9.5
 PGSQL_DEFAULT?=		9.3
+# Possible values: 5.5, 5.6, 7.0
 PHP_DEFAULT?=		5.6
+# Possible values: 2.7, 3.3, 3.4, 3.5
 PYTHON_DEFAULT?=	2.7
+# Possible values: 2.7
 PYTHON2_DEFAULT?=	2.7
+# Possible values: 3.3, 3.4, 3.5
 PYTHON3_DEFAULT?=	3.4
-RUBY_DEFAULT?=		2.1
+# Possible values: 2.0, 2.1, 2.2, 2.3
+RUBY_DEFAULT?=		2.2
+# Possible values: 8.4, 8.5, 8.6
 TCLTK_DEFAULT?=		8.6
-FIREBIRD_DEFAULT?=	2.5
-GHOSTSCRIPT_DEFAULT?=	9
 
 # Version of lang/gcc.  Do not override!
 LANG_GCC_IS=		4.8

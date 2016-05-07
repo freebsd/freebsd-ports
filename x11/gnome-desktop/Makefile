@@ -16,15 +16,15 @@ USES=		tar:xz
 .if !defined(REFERENCE_PORT)
 PORTSCOUT=	limitw:1,even
 
-BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
-		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile \
-		itstool:${PORTSDIR}/textproc/itstool
-RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
-		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		xkeyboard-config>=0:x11/xkeyboard-config \
+		libxkbfile>=0:x11/libxkbfile \
+		itstool:textproc/itstool
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		xkeyboard-config>=0:x11/xkeyboard-config \
+		libxkbfile>=0:x11/libxkbfile
 
 USES+=		bison gettext gmake gnome libtool pathfix pkgconfig python:3
 USE_GNOME=	gtk30 intlhack introspection:build referencehack

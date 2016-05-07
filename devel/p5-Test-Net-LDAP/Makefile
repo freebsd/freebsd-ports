@@ -12,7 +12,7 @@ COMMENT=	Perl extension of Net::LDAP subclass for testing
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-perl-ldap>=0.5800:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS=	p5-perl-ldap>=0.5800:net/p5-perl-ldap
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

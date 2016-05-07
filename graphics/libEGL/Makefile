@@ -8,10 +8,10 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenEGL library
 
-LIB_DEPENDS+=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libdevq.so:${PORTSDIR}/devel/libdevq \
-		libdrm.so:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS+=	libpthread-stubs.so:devel/libpthread-stubs \
+		libexpat.so:textproc/expat2 \
+		libdevq.so:devel/libdevq \
+		libdrm.so:graphics/libdrm
 
 USE_GL=		gbm
 USE_XORG=	x11 xau xcb xdmcp

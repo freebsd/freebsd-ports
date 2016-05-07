@@ -3,7 +3,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 DIST_SUBDIR=	apsfilter
@@ -16,8 +16,8 @@ LICENSE_NAME=	Postcard License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		hpijs:${PORTSDIR}/print/hpijs
+RUN_DEPENDS=	bash:shells/bash \
+		hpijs:print/hpijs
 
 USES=		tar:bzip2
 USE_SUBMAKE=	yes
@@ -77,42 +77,42 @@ PSUFX=	-letter
 PSUFX=	-letterdj
 .endif
 
-_DEPENDS_ASCII=	a2ps:${PORTSDIR}/print/a2ps \
-		enscript:${PORTSDIR}/print/enscript${PSUFX} \
-		mpage:${PORTSDIR}/print/mpage \
-		recode:${PORTSDIR}/converters/recode
+_DEPENDS_ASCII=	a2ps:print/a2ps \
+		enscript:print/enscript${PSUFX} \
+		mpage:print/mpage \
+		recode:converters/recode
 _DEPENDS_COMPRESS= \
-		melt:${PORTSDIR}/archivers/freeze \
-		lzop:${PORTSDIR}/archivers/lzop \
-		arc:${PORTSDIR}/archivers/arc \
-		cabextract:${PORTSDIR}/archivers/cabextract \
-		lha:${PORTSDIR}/archivers/lha \
-		rar:${PORTSDIR}/archivers/rar \
-		rpm:${PORTSDIR}/archivers/rpm4 \
-		unarj:${PORTSDIR}/archivers/unarj \
-		unzip:${PORTSDIR}/archivers/unzip \
-		zoo:${PORTSDIR}/archivers/zoo
+		melt:archivers/freeze \
+		lzop:archivers/lzop \
+		arc:archivers/arc \
+		cabextract:archivers/cabextract \
+		lha:archivers/lha \
+		rar:archivers/rar \
+		rpm:archivers/rpm4 \
+		unarj:archivers/unarj \
+		unzip:archivers/unzip \
+		zoo:archivers/zoo
 _DEPENDS_PSUTILS= \
-		psnup:${PORTSDIR}/print/psutils \
-		fitstopnm:${PORTSDIR}/graphics/netpbm \
-		htmldoc:${PORTSDIR}/textproc/htmldoc
+		psnup:print/psutils \
+		fitstopnm:graphics/netpbm \
+		htmldoc:textproc/htmldoc
 _DEPENDS_CONVERT= \
-		convert:${PORTSDIR}/graphics/ImageMagick \
-		wmf2eps:${PORTSDIR}/graphics/libwmf \
-		tgif:${PORTSDIR}/graphics/tgif \
-		transfig:${PORTSDIR}/print/transfig
+		convert:graphics/ImageMagick \
+		wmf2eps:graphics/libwmf \
+		tgif:graphics/tgif \
+		transfig:print/transfig
 # XXX: recent versions of skencil do not include sk2ps.
-#		sk2ps:${PORTSDIR}/graphics/skencil
-_DEPENDS_DVIPS=	dvips:${PORTSDIR}/print/dvipsk-tetex
+#		sk2ps:graphics/skencil
+_DEPENDS_DVIPS=	dvips:print/dvipsk-tetex
 _DEPENDS_FIG2DEV= \
-		fig2dev:${PORTSDIR}/print/transfig
+		fig2dev:print/transfig
 _DEPENDS_HTML2PS= \
-		html2ps:${PORTSDIR}/print/html2ps
-_DEPENDS_ATALK=	pap:${PORTSDIR}/net/netatalk
-_DEPENDS_SAMBA= smbclient:${PORTSDIR}/net/samba36
-_DEPENDS_MP3=	mpg321:${PORTSDIR}/audio/mpg321
-_DEPENDS_OGG=	ogg123:${PORTSDIR}/audio/vorbis-tools
-_DEPENDS_WAV=	wavplay:${PORTSDIR}/audio/wavplay
+		html2ps:print/html2ps
+_DEPENDS_ATALK=	pap:net/netatalk
+_DEPENDS_SAMBA= smbclient:net/samba36
+_DEPENDS_MP3=	mpg321:audio/mpg321
+_DEPENDS_OGG=	ogg123:audio/vorbis-tools
+_DEPENDS_WAV=	wavplay:audio/wavplay
 
 .for D in ${OPTIONS_DEFINE:NCONVERT}
 .if (!empty(PORT_OPTIONS:M$D) || \

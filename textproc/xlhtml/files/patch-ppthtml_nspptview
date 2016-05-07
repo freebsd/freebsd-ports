@@ -1,5 +1,5 @@
---- ppthtml/nspptview.orig	Sun Jun 22 08:47:02 2003
-+++ ppthtml/nspptview	Sun Jun 22 08:49:18 2003
+--- ppthtml/nspptview.orig	2002-03-20 15:32:43 UTC
++++ ppthtml/nspptview
 @@ -1,7 +1,7 @@
  #!/bin/csh
  
@@ -9,7 +9,7 @@
      exit 1
  endif
  
-@@ -12,9 +12,8 @@
+@@ -12,9 +12,8 @@ set source = $argv[1]
  #set tmp = /tmp/$com:t.$$
  #set html = $tmp.html
  

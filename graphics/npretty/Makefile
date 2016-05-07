@@ -11,9 +11,9 @@ COMMENT=	Simple web-gallery generator written in perl
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
-		p5-forks>=0:${PORTSDIR}/devel/p5-forks
-LIB_DEPENDS=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool \
+		p5-forks>=0:devel/p5-forks
+LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gammy

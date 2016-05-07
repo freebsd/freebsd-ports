@@ -1,0 +1,52 @@
+--- lib-src/FileDialog/Makefile.am.orig	2016-01-08 22:05:48 UTC
++++ lib-src/FileDialog/Makefile.am
+@@ -1,5 +1,7 @@
+ ACLOCAL_AMFLAGS = -I m4
+ 
++SUBDIRS=	$(GTK_SUBDIR) $(MAC_SUBDIR) $(WINDOWS_SUBDIR)
++DIST_SUBDIRS=	gtk mac win
+ lib_LTLIBRARIES = libFileDialog.la
+ 
+ libFileDialog_la_CPPFLAGS = $(WX_CXXFLAGS) -Wno-deprecated-declarations
+@@ -7,22 +9,32 @@ libFileDialog_la_LIBADD = $(WX_LIBS)
+ libFileDialog_la_SOURCES = FileDialog.cpp FileDialog.h
+ 
+ if GTK
+-libFileDialog_la_CPPFLAGS += $(GTK_CFLAGS)
+-libFileDialog_la_LIBADD += $(GTK_LIBS)
++GTK_SUBDIR=	gtk
++libFileDialog_la_LIBADD += \
++	gtk/libFileDialog.la \
++	$(NULL)
+ libFileDialog_la_SOURCES += \
+-	gtk/FileDialogPrivate.cpp \
+ 	gtk/FileDialogPrivate.h \
+ 	$(NULL)
+ endif
+ 
+ if MAC
+-libFileDialog_la_SOURCES += mac/FileDialogPrivate.mm \
+-									 mac/FileDialogPrivate.h \
+-									 $(NULL)
++MAC_SUBDIR=	mac
++libFileDialog_la_LIBADD+= \
++	mac/libFileDialog.la \
++	$(NULL)
++libFileDialog_la_SOURCES += \
++	mac/FileDialogPrivate.h \
++	$(NULL)
++#nodist_EXTRA_libFileDialog_la_SOURCES = dummy.mm
+ endif
+ 
+ if WINDOWS
+-libFileDialog_la_SOURCES += win/FileDialogPrivate.cpp \
+-									 win/FileDialogPrivate.h \
+-									 $(NULL)
++WINDOWS_SUBDIR=	win
++libFileDialog_la_LIBADD+= \
++	win/libFileDialog.la \
++	$(NULL)
++libFileDialog_la_SOURCES += \
++	win/FileDialogPrivate.h \
++	$(NULL)
+ endif

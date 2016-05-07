@@ -13,14 +13,14 @@ COMMENT=	Complete open source solution for HDR photography
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libgsl.so:${PORTSDIR}/math/gsl \
-		libraw_r.so:${PORTSDIR}/graphics/libraw \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
+LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
+		libexiv2.so:graphics/exiv2 \
+		libIlmImf.so:graphics/OpenEXR \
+		libtiff.so:graphics/tiff \
+		libgsl.so:math/gsl \
+		libraw_r.so:graphics/libraw \
+		libboost_system.so:devel/boost-libs
 
 USES=		cmake:outsource jpeg pkgconfig tar:bzip2
 USE_QT5=	concurrent declarative gui printsupport sql webkit xml \

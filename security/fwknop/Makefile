@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fwknop
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 
@@ -38,7 +38,11 @@ IPFW_CONFIGURE_WITH=	ipfw=/sbin/ipfw
 
 PF_CONFIGURE_WITH=	pf=/sbin/pfctl
 
-GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_WITH=	gpgme
+
+post-stage:
+	(cd ${STAGEDIR}${PREFIX}/etc/fwknop && ${MV} access.conf access.conf.sample)
+	(cd ${STAGEDIR}${PREFIX}/etc/fwknop && ${MV} fwknopd.conf fwknopd.conf.sample)
 
 .include <bsd.port.mk>

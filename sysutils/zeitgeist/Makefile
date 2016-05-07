@@ -13,12 +13,12 @@ COMMENT=	Event logging framework
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala \
-		dee-tool:${PORTSDIR}/devel/dee \
-		rapper:${PORTSDIR}/textproc/raptor2 \
-		${PYTHON_PKGNAMEPREFIX}rdflib>=4.1.1:${PORTSDIR}/textproc/py-rdflib
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
+BUILD_DEPENDS=	valac:lang/vala \
+		dee-tool:devel/dee \
+		rapper:textproc/raptor2 \
+		${PYTHON_PKGNAMEPREFIX}rdflib>=4.1.1:textproc/py-rdflib
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg \
+		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus
 
 USE_GNOME=	intlhack glib20 introspection:build
 GNU_CONFIGURE=	yes
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--disable-fts --disable-telepathy \
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DATAHUB
 OPTIONS_DEFAULT=DATAHUB
-DATAHUB_LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+DATAHUB_LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 DATAHUB_USE=	gnome=gtk30
 DATAHUB_CONFIGURE_ENABLE=	datahub
 DATAHUB_DESC=	Passive loggers for Zeitgeist

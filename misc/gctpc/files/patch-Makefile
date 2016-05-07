@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Feb 24 17:05:37 1995
-+++ Makefile	Thu May 31 15:33:40 2001
+--- Makefile.orig	1998-03-13 21:02:27 UTC
++++ Makefile
 @@ -1,10 +1,12 @@
  
  INCDIR  = 
@@ -15,7 +15,7 @@
  
  OBJECTS=		\
  		$(ARCHIVE)(alberfor.o) $(ARCHIVE)(alberinv.o) \
-@@ -56,6 +58,11 @@
+@@ -56,6 +58,11 @@ SOURCES = gctp.c alberfor.c alberinv.c a
  	  cproj.c report.c lamccfor.c lamccinv.c paksz.c untfz.c sphdz.c \
  	  br_gctp.c Makefile cproj.h proj.h
  

@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extension to Class::DBI for sqlite
 
-RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
-		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
-		p5-NEXT>=0:${PORTSDIR}/devel/p5-NEXT
+RUN_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \
+		p5-XML-SAX-Writer>=0:textproc/p5-XML-SAX-Writer \
+		p5-NEXT>=0:devel/p5-NEXT
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

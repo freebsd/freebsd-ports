@@ -1,9 +1,0 @@
---- examples/Makefile.am.orig	2002-02-26 10:21:25 UTC
-+++ examples/Makefile.am
-@@ -6,5 +6,5 @@
- 
- EXTRA_DIST =  cgi-demo.cgi.in    piped-demo.pl.in   shared-demo.pl.in stripes.pl.in bigtops.pl.in minmax.pl.in
- 
--examplesdir = $(prefix)/examples
-+examplesdir = $(prefix)/share/examples/rrdtool
- examples_SCRIPTS = cgi-demo.cgi piped-demo.pl shared-demo.pl stripes.pl bigtops.pl minmax.pl

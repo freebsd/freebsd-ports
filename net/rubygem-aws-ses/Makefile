@@ -11,14 +11,13 @@ COMMENT=	Client library for REST API of Amazon SES
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
-		rubygem-mail>=2.2.5:${PORTSDIR}/mail/rubygem-mail \
-		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types \
-		rubygem-xml-simple>=0:${PORTSDIR}/textproc/rubygem-xml-simple
+RUN_DEPENDS=	rubygem-builder32>=0:devel/rubygem-builder32 \
+		rubygem-mail>=2.2.5:mail/rubygem-mail \
+		rubygem-mime-types>=0:misc/rubygem-mime-types \
+		rubygem-xml-simple>=0:textproc/rubygem-xml-simple
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

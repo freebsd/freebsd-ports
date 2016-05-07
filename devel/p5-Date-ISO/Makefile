@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Converts dates between ISO and Gregorian formats
 
-BUILD_DEPENDS=	p5-Date-ICal>=1.54:${PORTSDIR}/devel/p5-Date-ICal \
-		p5-Date-Leapyear>=0:${PORTSDIR}/devel/p5-Date-Leapyear
+BUILD_DEPENDS=	p5-Date-ICal>=1.54:devel/p5-Date-ICal \
+		p5-Date-Leapyear>=0:devel/p5-Date-Leapyear
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

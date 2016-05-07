@@ -15,8 +15,8 @@ COMMENT=	Generic interface for proof assistants
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
 USE_EMACS=	yes
 INSTALLS_ICONS=	yes
@@ -48,7 +48,7 @@ INFO=		PG-adapting ProofGeneral
 
 .if ${PORT_OPTIONS:MDOCS}
 MAKE_ARGS+=	DOCSDIR=${DOCSDIR} INSTALLDOC=install-doc
-BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+BUILD_DEPENDS+=	texi2html:textproc/texi2html
 .endif
 
 PORTDOCS=	AUTHORS BUGS CHANGES COMPATIBILITY COPYING INSTALL \

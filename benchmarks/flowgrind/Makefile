@@ -3,6 +3,7 @@
 
 PORTNAME=	flowgrind
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	benchmarks
 
@@ -12,16 +13,15 @@ COMMENT=	Measure throughput and other metrics for TCP
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pcap-config:${PORTSDIR}/net/libpcap
-LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap \
-		libgsl.so:${PORTSDIR}/math/gsl \
-		libxmlrpc.so:${PORTSDIR}/net/xmlrpc-c
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		libxmlrpc.so:net/xmlrpc-c
 
 USE_GITHUB=	yes
 
 USES=		autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pcap --enable-gsl
+CONFIGURE_ENV=  LIBS="${LIBS} -lpcap"
 
 post-patch:
 	@${RM} -rf ${WRKSRC}/build-aux

@@ -37,7 +37,7 @@ do-install:
 WXPORT=		gtk2
 WX_PYTHON_DIR=	wx-${WX_VERSION}-${WXPORT}
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wxPython-common>0:${PORTSDIR}/x11-toolkits/py-wxPython-common
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wxPython-common>0:x11-toolkits/py-wxPython-common
 
 USES+=		gettext pkgconfig
 USE_WX=		3.0

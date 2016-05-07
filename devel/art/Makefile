@@ -12,7 +12,7 @@ COMMENT=	Resource tracing, debugging, and profiling tool
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26
+LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26
 
 USES=	gmake pkgconfig
 

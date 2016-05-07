@@ -13,23 +13,20 @@ COMMENT=	Zlib extension library for the Tcl
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libtclmore0.so:${PORTSDIR}/devel/tclmore
+LIB_DEPENDS=	libtclmore0.so:devel/tclmore
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake tcl
-GNU_CONFIGURE=	yes
+USES=		gmake tcl:tea
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_src$//}
 
 INFO=		${PORTNAME} ${PORTNAME}-zlib
 
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR} \
-		--with-tclmorescripts=${LOCALBASE}/libexec/tclmore \
+CONFIGURE_ARGS=	--with-tclmorescripts=${LOCALBASE}/libexec/tclmore \
 		--enable-threads
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}
-CPPFLAGS+=	-I ${LOCALBASE}/include -I ${TCL_INCLUDEDIR}
+CPPFLAGS+=	-I ${LOCALBASE}/include
 LDFLAGS+=	-L ${LOCALBASE}/lib
 
 PORTDOCS=	*

@@ -13,7 +13,7 @@ COMMENT=	Free Hebrew Type1 fonts
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=	fonts
 NO_BUILD=	yes

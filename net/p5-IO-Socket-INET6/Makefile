@@ -15,7 +15,7 @@ COMMENT=	Perl module with object interface to AF_INET6 domain sockets
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Socket6>=0.12:${PORTSDIR}/net/p5-Socket6
+BUILD_DEPENDS=	p5-Socket6>=0.12:net/p5-Socket6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

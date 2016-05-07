@@ -10,10 +10,10 @@ DISTFILES=	# empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese Standard Fonts
 
-RUN_DEPENDS=	${LOCALBASE}/share/font-ipa/ipam.otf:${PORTSDIR}/japanese/font-ipa \
-		${LOCALBASE}/share/font-ipa/ipag.otf:${PORTSDIR}/japanese/font-ipa \
-		${LOCALBASE}/share/font-mplus-ipa/fonts/ipam.ttf:${PORTSDIR}/japanese/font-mplus-ipa \
-		${LOCALBASE}/share/font-mplus-ipa/fonts/ipag.ttf:${PORTSDIR}/japanese/font-mplus-ipa
+RUN_DEPENDS=	${LOCALBASE}/share/font-ipa/ipam.otf:japanese/font-ipa \
+		${LOCALBASE}/share/font-ipa/ipag.otf:japanese/font-ipa \
+		${LOCALBASE}/share/font-mplus-ipa/fonts/ipam.ttf:japanese/font-mplus-ipa \
+		${LOCALBASE}/share/font-mplus-ipa/fonts/ipag.ttf:japanese/font-mplus-ipa
 
 NO_BUILD=	yes
 PLIST_FILES=	${STD:S,^,${FONTSDIR}/std.ja_JP/,}

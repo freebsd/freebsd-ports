@@ -107,7 +107,7 @@ PLIST_SUB+=	SDLCLIENT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSVGA}
-LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:graphics/svgalib
 MAKE_ARGS+=	BUILD_SVGA=YES
 REF_TARGETS+=	soft
 PLIST_SUB+=	SVGA=""
@@ -116,7 +116,7 @@ PLIST_SUB+=	SVGA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAA}
-LIB_DEPENDS+=	libaa.so:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS+=	libaa.so:graphics/aalib
 MAKE_ARGS+=	BUILD_AA=YES
 REF_TARGETS+=	softaa
 PLIST_SUB+=	AA=""
@@ -164,7 +164,7 @@ PLIST_SUB+=	CTF="@comment "
 
 .if ${PORT_OPTIONS:MRETEXTURE}
 MAKE_ARGS+=	BUILD_RETEXTURE=YES
-RUN_DEPENDS+=	${Q2DIR}/baseq2/pak10.pak:${PORTSDIR}/games/quake2-extras
+RUN_DEPENDS+=	${Q2DIR}/baseq2/pak10.pak:games/quake2-extras
 .endif
 
 .if ${PORT_OPTIONS:MJOYSTICK}

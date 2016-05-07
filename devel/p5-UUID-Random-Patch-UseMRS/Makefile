@@ -14,8 +14,8 @@ COMMENT=	Make UUID::Random use Math::Random::Secure::rand()
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-Random-Secure>=0:${PORTSDIR}/math/p5-Math-Random-Secure \
-		p5-UUID-Random>=0:${PORTSDIR}/devel/p5-UUID-Random
+BUILD_DEPENDS=	p5-Math-Random-Secure>=0:math/p5-Math-Random-Secure \
+		p5-UUID-Random>=0:devel/p5-UUID-Random
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	modbuild

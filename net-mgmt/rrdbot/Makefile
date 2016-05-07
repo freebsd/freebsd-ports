@@ -3,14 +3,14 @@
 
 PORTNAME=	rrdbot
 PORTVERSION=	0.9.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://thewalter.net/stef/software/rrdbot/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Threaded SNMP polling daemon which stores data in RRDs
 
-LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS=	librrd.so:databases/rrdtool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include \

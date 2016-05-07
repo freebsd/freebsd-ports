@@ -13,7 +13,7 @@ COMMENT=	Additional loader for Evas (svg)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl
+LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

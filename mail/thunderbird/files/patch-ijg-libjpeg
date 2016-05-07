@@ -69,7 +69,7 @@ index 8fa8200..1d2a259 100644
            break;
          case JCS_CMYK:
          case JCS_YCCK:
-@@ -433,6 +452,15 @@ nsJPEGDecoder::WriteInternal(const char*
+@@ -448,6 +467,16 @@ nsJPEGDecoder::WriteInternal(const char*
        return; // I/O suspension
      }
  
@@ -82,9 +82,10 @@ index 8fa8200..1d2a259 100644
 +      mInfo.cconvert->color_convert = ycc_rgb_convert_argb;
 +    }
 +#endif
- 
++
      // If this is a progressive JPEG ...
      mState = mInfo.buffered_image ?
+              JPEG_DECOMPRESS_PROGRESSIVE : JPEG_DECOMPRESS_SEQUENTIAL;
 @@ -605,7 +633,11 @@ nsJPEGDecoder::OutputScanlines(bool* sus
        uint32_t* imageRow = ((uint32_t*)mImageData) +
                             (mInfo.output_scanline * mInfo.output_width);

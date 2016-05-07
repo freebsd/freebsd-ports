@@ -13,9 +13,9 @@ COMMENT=	Editor for yara rules
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}yara>=0:${PORTSDIR}/security/py-yara
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4-core \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

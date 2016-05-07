@@ -45,7 +45,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	These are the tablebases for crafty, minus the pawn tbs
 
-RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+BROKEN_powerpc64=	Does not build
+
+RUN_DEPENDS=	crafty:games/crafty
 
 NO_BUILD=	yes
 NO_PACKAGE=	Way too big

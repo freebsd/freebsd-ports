@@ -18,14 +18,11 @@ PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
 		GCC_TARGET=${GCC_TARGET} \
 		GCC_VERSION=${PORTVERSION}
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr \
-		libmpc.so:${PORTSDIR}/math/mpc
-BUILD_DEPENDS=	${BU_PREFIX}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
-RUN_DEPENDS=	${BU_PREFIX}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
-
-PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKSRC=	${WRKDIR}/build-gcc
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libmpc.so:math/mpc
+BUILD_DEPENDS=	${BU_PREFIX}-as:devel/${PKGNAMEPREFIX}binutils
+RUN_DEPENDS=	${BU_PREFIX}-as:devel/${PKGNAMEPREFIX}binutils
 
 .if empty(GCC_TARGET)
 # We are building for a FreeBSD target
@@ -42,6 +39,7 @@ EXTRA_PATCHES+= ${FILESDIR}/freebsd-format-extensions
 CONFIGURE_ENV=	LC_ALL=C
 MAKE_ENV=	LC_ALL=C
 GNU_CONFIGURE=	yes
+CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--without-headers \
 		--with-gmp=${LOCALBASE} \
@@ -49,8 +47,6 @@ CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--with-system-zlib \
 		--with-as=${LOCALBASE}/bin/${BU_PREFIX}-as \
 		--with-ld=${LOCALBASE}/bin/${BU_PREFIX}-ld
-
-CONFIGURE_SCRIPT=	../${PORTNAME}-${PORTVERSION}/configure
 
 ALL_TARGET?=	all-gcc
 INSTALL_TARGET?=	install-gcc
@@ -63,9 +59,6 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 .endif
-
-post-extract:
-	@${MKDIR} ${WRKSRC}
 
 post-install:
 	@if [ -f ${STAGEDIR}${PREFIX}/bin/cpp ] ; then \

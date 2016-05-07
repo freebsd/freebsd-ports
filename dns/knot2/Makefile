@@ -3,6 +3,7 @@
 
 PORTNAME=	knot
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -13,12 +14,12 @@ COMMENT=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfstrm.so:${PORTSDIR}/devel/fstrm \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libjansson.so:${PORTSDIR}/devel/jansson \
-		liblmdb.so:${PORTSDIR}/databases/lmdb \
-		libnettle.so:${PORTSDIR}/security/nettle \
-		liburcu.so:${PORTSDIR}/sysutils/liburcu
+LIB_DEPENDS=	libfstrm.so:devel/fstrm \
+		libgnutls.so:security/gnutls \
+		libjansson.so:devel/jansson \
+		liblmdb.so:databases/lmdb \
+		libnettle.so:security/nettle \
+		liburcu.so:sysutils/liburcu
 
 CONFLICTS=	knot-1.* knot1-[0-6].*
 
@@ -49,7 +50,7 @@ OPTIONS_DEFINE=			DNSTAP FASTPARSER IDN
 
 DNSTAP_DESC=			dnstap support (see dnstap.info)
 DNSTAP_CONFIGURE_ENABLE=	dnstap
-DNSTAP_LIB_DEPENDS=		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+DNSTAP_LIB_DEPENDS=		libprotobuf-c.so:devel/protobuf-c
 # XXX: because `kdig_CPPFLAGS += $(DNSTAP_CFLAGS)' line is missing from
 # `src/Makefile.am' file (and thus pre-generated `src/Makefile.in') which
 # should contain "$libfstrm_CFLAGS $libprotobuf_c_CFLAGS" set by configure
@@ -61,7 +62,7 @@ FASTPARSER_DESC=		Fast zone parser (demanding compilation)
 FASTPARSER_CONFIGURE_ENABLE=	fastparser
 
 IDN_CONFIGURE_WITH=		libidn
-IDN_LIB_DEPENDS=		libidn.so:${PORTSDIR}/dns/libidn
+IDN_LIB_DEPENDS=		libidn.so:dns/libidn
 
 post-patch:
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \

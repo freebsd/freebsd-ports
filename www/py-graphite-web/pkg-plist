@@ -1,16 +1,8 @@
 bin/build-index.sh
-@unexec if cmp -s %D/etc/graphite/dashboard.conf.example %D/etc/graphite/dashboard.conf; then rm -f %D/etc/graphite/dashboard.conf; fi
-etc/graphite/dashboard.conf.example
-@exec if [ ! -f %D/etc/graphite/dashboard.conf ] ; then cp -p %D/%F %B/dashboard.conf; fi
-@unexec if cmp -s %D/etc/graphite/graphTemplates.conf.example %D/etc/graphite/graphTemplates.conf; then rm -f %D/etc/graphite/graphTemplates.conf; fi
-etc/graphite/graphTemplates.conf.example
-@exec if [ ! -f %D/etc/graphite/graphTemplates.conf ] ; then cp -p %D/%F %B/graphTemplates.conf; fi
-@unexec if cmp -s %D/etc/graphite/graphite.wsgi.example %D/etc/graphite/graphite.wsgi; then rm -f %D/etc/graphite/graphite.wsgi; fi
-etc/graphite/graphite.wsgi.example
-@exec if [ ! -f %D/etc/graphite/graphite.wsgi ] ; then cp -p %D/%F %B/graphite.wsgi; fi
-@unexec if cmp -s %D/etc/graphite/local_settings.py.example %D/etc/graphite/local_settings.py; then rm -f %D/etc/graphite/local_settings.py; fi
-etc/graphite/local_settings.py.example
-@exec if [ ! -f %D/etc/graphite/local_settings.py ] ; then cp -p %D/%F %B/local_settings.py; fi
+@sample etc/graphite/dashboard.conf.example etc/graphite/dashboard.conf
+@sample etc/graphite/graphTemplates.conf.example etc/graphite/graphTemplates.conf
+@sample etc/graphite/graphite.wsgi.example etc/graphite/graphite.wsgi
+@sample etc/graphite/local_settings.py.example etc/graphite/local_settings.py
 %%DATADIR%%/examples/example-client.py
 %%DATADIR%%/examples/example-graphite-vhost.conf
 %%DATADIR%%/content/css/cli.css

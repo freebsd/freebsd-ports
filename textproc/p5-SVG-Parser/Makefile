@@ -14,9 +14,9 @@ COMMENT=	XML Parser for SVG documents
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-SVG>=2:${PORTSDIR}/textproc/p5-SVG \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX
+BUILD_DEPENDS=	p5-SVG>=2:textproc/p5-SVG \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	modbuild

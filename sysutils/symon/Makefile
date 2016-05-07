@@ -3,7 +3,7 @@
 
 PORTNAME=	symon
 PORTVERSION=	2.86
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wpd.home.xs4all.nl/symon/philes/ \
 		LOCAL/uqs
@@ -27,7 +27,7 @@ WITHOUT_SYMUX=	yes
 .endif
 
 .if !defined(WITHOUT_SYMUX)
-LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	librrd.so:databases/rrdtool
 .endif
 
 .if defined(WITHOUT_SYMUX) && defined(WITHOUT_SYMON)

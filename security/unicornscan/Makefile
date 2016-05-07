@@ -12,18 +12,14 @@ COMMENT=	Asynchronous TCP and UDP port scanner
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		gmake
-MAKE_ENV=	LIBNET_CONFIG="${LIBNET_CONFIG}"
 CFLAGS+=	-DWITH_LONGOPTS
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 SUB_FILES=	pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
-		${WRKSRC}/src/scan_progs/Makefile ${WRKSRC}/src/tools/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/etc|' \
 		${WRKSRC}/fconf/unicorn.conf
 # Unbreak the build against Clang (it does not like one function being inline)

@@ -15,9 +15,9 @@ COMMENT=	Python karaoke application (Plays CD+G, MP3+G, OGG+G files)
 LICENSE=	LGPL21+
 
 BUILD_DEPENDS=	${PYGAME}
-LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libaa.so:${PORTSDIR}/graphics/aalib
-RUN_DEPENDS=	dejavu>0:${PORTSDIR}/x11-fonts/dejavu \
+LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
+		libaa.so:graphics/aalib
+RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu \
 		${PYGAME} \
 		${PYNUMPY}
 
@@ -37,7 +37,7 @@ PLIST_FILES=	${BIN_SCRIPTS:S,^,bin/,} \
 OPTIONS_DEFINE=		MUTAGEN
 
 MUTAGEN_DESC=		Mutagen support
-MUTAGEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
+MUTAGEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen
 
 BIN_SCRIPTS=	cdg2mpg pycdg pykar pykaraoke pykaraoke_mini pympg
 DATA_FONTS=	DejaVuSans.ttf DejaVuSansCondensed.ttf \

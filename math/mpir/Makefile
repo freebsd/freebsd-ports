@@ -12,7 +12,7 @@ COMMENT=	Multiprecision integer library
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS=	yasm:devel/yasm
 
 USES=		libtool tar:bzip2
 GNU_CONFIGURE=	yes

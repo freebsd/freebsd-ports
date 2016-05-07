@@ -1,0 +1,20 @@
+--- lib/support/nginx/gitlab-ssl.orig	2016-04-22 10:01:37 UTC
++++ lib/support/nginx/gitlab-ssl
+@@ -21,7 +21,7 @@
+ ## See installation.md#using-https for additional HTTPS configuration details.
+ 
+ upstream gitlab-workhorse {
+-  server unix:/home/git/gitlab/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
++  server unix:/usr/local/www/gitlab/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
+ }
+ 
+ ## Redirects all HTTP traffic to the HTTPS host
+@@ -106,7 +106,7 @@ server {
+   error_page 500 /500.html;
+   error_page 502 /502.html;
+   location ~ ^/(404|422|500|502)\.html$ {
+-    root /home/git/gitlab/public;
++    root /usr/local/www/gitlab/public;
+     internal;
+   }
+ }

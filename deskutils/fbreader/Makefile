@@ -12,10 +12,10 @@ COMMENT=	Powerful e-book reader
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libunibreak.so:${PORTSDIR}/textproc/libunibreak
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2 \
+		libfribidi.so:converters/fribidi \
+		libunibreak.so:textproc/libunibreak
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	geometer
@@ -27,9 +27,8 @@ STATUS=		debug
 STATUS=		release
 .endif
 
-USES=		compiler gmake iconv pkgconfig tar:tgz
+USES=		compiler gmake iconv pkgconfig sqlite tar:tgz
 USE_LDCONFIG=	yes
-USE_SQLITE=	yes
 
 INSTALL_TARGET=	do_install
 

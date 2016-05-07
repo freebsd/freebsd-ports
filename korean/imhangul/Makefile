@@ -12,7 +12,7 @@ COMMENT=	GTK+ Hangul input module
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libhangul.so:${PORTSDIR}/korean/libhangul
+LIB_DEPENDS=	libhangul.so:korean/libhangul
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

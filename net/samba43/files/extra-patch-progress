@@ -1,0 +1,31 @@
+diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
+index c65fb08..13713fc 100644
+--- a/source3/passdb/pdb_ldap.c
++++ b/source3/passdb/pdb_ldap.c
+@@ -1005,7 +1005,7 @@ static bool init_sam_from_ldap(struct ldapsam_privates *ldap_state,
+ 				entry,
+ 				"gecos",
+ 				ctx);
+-		if (unix_pw.pw_gecos) {
++		if (unix_pw.pw_gecos==NULL) {
+ 			unix_pw.pw_gecos = fullname;
+ 		}
+ 		unix_pw.pw_dir = smbldap_talloc_single_attribute(
+@@ -1013,7 +1013,7 @@ static bool init_sam_from_ldap(struct ldapsam_privates *ldap_state,
+ 				entry,
+ 				"homeDirectory",
+ 				ctx);
+-		if (unix_pw.pw_dir) {
++		if (unix_pw.pw_dir==NULL) {
+ 			unix_pw.pw_dir = discard_const_p(char, "");
+ 		}
+ 		unix_pw.pw_shell = smbldap_talloc_single_attribute(
+@@ -1021,7 +1021,7 @@ static bool init_sam_from_ldap(struct ldapsam_privates *ldap_state,
+ 				entry,
+ 				"loginShell",
+ 				ctx);
+-		if (unix_pw.pw_shell) {
++		if (unix_pw.pw_shell==NULL) {
+ 			unix_pw.pw_shell = discard_const_p(char, "");
+ 		}
+ 

@@ -10,9 +10,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Client stacker popup widget for GTK+ toolkit
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
-LIB_DEPENDS=	libcroco-0.6.so:${PORTSDIR}/textproc/libcroco
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo
+LIB_DEPENDS=	libcroco-0.6.so:textproc/libcroco
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo
 
 USES=		gmake libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	cairo gtk20 glib20 librsvg2 pygtk2 pango

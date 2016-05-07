@@ -13,7 +13,7 @@ COMMENT=	Simple English/German dictionary
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	agrep:${PORTSDIR}/textproc/agrep
+RUN_DEPENDS=	agrep:textproc/agrep
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/de-dict share/ger-eng.txt

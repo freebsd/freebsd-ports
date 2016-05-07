@@ -10,8 +10,8 @@ MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical configuration utility for the newsreader slrn
 
-BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
+BUILD_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent
 
 USES=		perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	slrnconf.in

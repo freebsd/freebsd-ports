@@ -12,13 +12,12 @@ COMMENT=	Ruby Library that Makes HTTP Fun Again
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-json>=1.8:${PORTSDIR}/devel/rubygem-json \
-		rubygem-multi_xml>=0.5.2:${PORTSDIR}/textproc/rubygem-multi_xml
+RUN_DEPENDS=	rubygem-json>=1.8:devel/rubygem-json \
+		rubygem-multi_xml>=0.5.2:textproc/rubygem-multi_xml
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/httparty
 

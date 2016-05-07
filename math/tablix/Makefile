@@ -11,8 +11,8 @@ MASTER_SITES=	http://www.tablix.org/releases/stable/ \
 MAINTAINER=	amir.husaini@gmail.com
 COMMENT=	Free software for solving timetabling problems
 
-BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm
-RUN_DEPENDS=	pvm:${PORTSDIR}/net/pvm
+BUILD_DEPENDS=	pvm:net/pvm
+RUN_DEPENDS=	pvm:net/pvm
 
 PVM_ROOT=	${LOCALBASE}/lib/pvm
 

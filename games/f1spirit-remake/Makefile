@@ -13,7 +13,7 @@ DISTNAME=	f1spirit-linux
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Remake of classic F1 Spirit racing game
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		dos2unix gmake zip
 USE_SDL=	sdl net image mixer sound

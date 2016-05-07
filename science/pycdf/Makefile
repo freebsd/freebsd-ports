@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-0.6-3b
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to the Unidata NetCDF Library
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libnetcdf.so:science/netcdf
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

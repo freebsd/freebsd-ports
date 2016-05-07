@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide Perl 5 versions of the new Perl 6 builtins
 
-BUILD_DEPENDS=	p5-Contextual-Return>=0:${PORTSDIR}/devel/p5-Contextual-Return
+BUILD_DEPENDS=	p5-Contextual-Return>=0:devel/p5-Contextual-Return
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

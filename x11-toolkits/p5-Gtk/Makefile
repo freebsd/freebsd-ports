@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The base module of Gtk-Perl
 
-BUILD_DEPENDS=	p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Writer>=0:textproc/p5-XML-Writer \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USE_GNOME=	gtk12
 USES=		perl5 shebangfix

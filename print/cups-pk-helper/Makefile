@@ -11,8 +11,8 @@ MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Helper that makes system-config-printer use PolicyKit
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
+LIB_DEPENDS=	libcups.so:print/cups \
+		libpolkit-gobject-1.so:sysutils/polkit
 
 USE_GNOME=	glib20 intltool
 USES=		cpe gettext gmake pkgconfig tar:xz

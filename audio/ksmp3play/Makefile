@@ -13,7 +13,7 @@ COMMENT=	Curses-based MP3 player
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
 GNU_CONFIGURE=	yes
 USES=		ncurses pathfix

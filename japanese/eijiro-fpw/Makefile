@@ -12,10 +12,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EIJIRO English - Japanese Dictionary (EPWING V1 format)
 
-EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
-		lha:${PORTSDIR}/archivers/lha
-BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
-		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
+EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:japanese/freepwing \
+		lha:archivers/lha
+BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:japanese/freepwing \
+		ja-p5-Jcode>=0:japanese/p5-Jcode
 
 MANUAL_PACKAGE_BUILD=	Needs data from CDROM
 MAKE_JOBS_UNSAFE=	yes

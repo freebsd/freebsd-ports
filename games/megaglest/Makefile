@@ -2,43 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	megaglest
-PORTVERSION=	3.9.0.4
-PORTREVISION=	8
+PORTVERSION=	3.12.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/archived/${PORTNAME}_3.9.0/
-DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Open source 3D real-time strategy game
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
-		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient \
-		${LOCALBASE}/include/miniupnpc/miniupnpc.h:${PORTSDIR}/net/miniupnpc
-RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:${PORTSDIR}/games/megaglest-data
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/docs/gnu_gpl_3.0.txt
+
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpng.so:graphics/png \
+		libxerces-c.so:textproc/xerces-c3 \
+		libftgl.so:graphics/ftgl \
+		libvorbis.so:audio/libvorbis
+BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:irc/libircclient \
+		${LOCALBASE}/include/miniupnpc/miniupnpc.h:net/miniupnpc
+RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:games/megaglest-data
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	MegaGlest
+GH_PROJECT=	megaglest-source
 
 SUB_FILES=	pkg-message
 
 USES=		cmake compiler:c++11-lib display:build dos2unix jpeg lua \
-		openal:al,alut pkgconfig tar:xz
+		openal:al,alut pkgconfig
 USE_GL=		glew gl glu
-USE_SDL=	yes
+USE_SDL=	sdl2
 USE_WX=		3.0
 USE_CXXSTD=	c++11
-WX_UNICODE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lssl -lcrypto
-WRKSRC=		${WRKDIR}/${PORTNAME}-3.9.0
 
-OPTIONS_DEFINE=	EDITOR DOCS
+OPTIONS_DEFINE=	EDITOR DOCS VIEWER
 OPTIONS_SUB=	yes
 EDITOR_DESC=	Install MegaGlest Editor
-
-.include <bsd.port.options.mk>
+VIEWER_DESC=	Install Megaglest G3D viewer
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/include/lua51,${LUA_INCDIR},g ; \
@@ -47,20 +48,26 @@ post-patch:
 		${WRKSRC}/mk/cmake/Modules/FindLUA.cmake
 
 do-install:
-	${STRIP_CMD} ${WRKSRC}/source/glest_game/megaglest
 	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/mk/shared/megaglest.ico ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_PROGRAM} ${WRKSRC}/source/glest_game/megaglest ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.for f in glest.ini glestkeys.ini servers.ini
+.for f in mk/linux/glest.ini mk/shared/glestkeys.ini mk/shared/servers.ini
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for f in AUTHORS.source_code.txt CHANGELOG.txt README.txt COPYRIGHT.source_code.txt
+.for f in docs/AUTHORS.source_code.txt docs/CHANGELOG.txt docs/README.txt docs/COPYRIGHT.source_code.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-. endfor
-.endif
-.if ${PORT_OPTIONS:MEDITOR}
+.endfor
+
+do-install-EDITOR-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/source/glest_map_editor/megaglest_editor ${STAGEDIR}${PREFIX}/bin/megaglest_editor
-.endif
+	${INSTALL_DATA} ${WRKSRC}/mk/shared/editor.ico ${STAGEDIR}${PREFIX}/share/pixmaps/
+
+do-install-VIEWER-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/source/g3d_viewer/megaglest_g3dviewer ${STAGEDIR}${PREFIX}/bin/megaglest_g3dviewer
+	${INSTALL_DATA} ${WRKSRC}/mk/shared/g3dviewer.ico ${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>

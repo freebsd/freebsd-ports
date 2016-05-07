@@ -2,7 +2,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		LOCAL/ume
@@ -17,9 +17,7 @@ USES=		gmake pkgconfig tar:bzip2
 USE_RC_SUBR=	gkrellmd
 WANT_GNOME=	yes
 
-OPTIONS_DEFINE=		DOCS CLIENT NLS NTLM
-OPTIONS_RADIO=		SSL
-OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
+OPTIONS_DEFINE=		DOCS CLIENT NLS NTLM OPENSSL
 OPTIONS_DEFAULT=	CLIENT NTLM OPENSSL
 OPTIONS_SUB=		yes
 
@@ -29,7 +27,7 @@ CLIENT_USE=		GNOME=gtk20 XORG=sm,x11
 CLIENT_USE_OFF=		GNOME=glib20
 CLIENT_VARS_OFF=	BUILD_WRKSRC=${WRKSRC}/server \
 			INSTALL_WRKSRC=${WRKSRC}/server
-NTLM_LIB_DEPENDS=	libntlm.so:${PORTSDIR}/security/libntlm
+NTLM_LIB_DEPENDS=	libntlm.so:security/libntlm
 NTLM_VARS_OFF=		MAKE_ENV+=without-ntlm=1
 
 .include <bsd.port.options.mk>
@@ -40,11 +38,7 @@ USES+=		gettext
 .else
 MAKE_ENV+=	enable_nls=0
 .endif
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls-openssl.so:${PORTSDIR}/security/gnutls
-MAKE_ENV+=	GNUTLSINC=${LOCALBASE}/include GNUTLSLIB=${LOCALBASE}/lib \
-		without-ssl=1
-.elif ${PORT_OPTIONS:MOPENSSL}
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 MAKE_ENV+=	without-gnutls=1
 .else

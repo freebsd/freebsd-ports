@@ -12,15 +12,14 @@ COMMENT=	Organize and store ruby objects in Redis
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-gibbler>=0.8.6:${PORTSDIR}/devel/rubygem-gibbler \
-		rubygem-multi_json>=0.0.5:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-redis>=2.1.0:${PORTSDIR}/databases/rubygem-redis \
-		rubygem-storable>=0.8.6:${PORTSDIR}/devel/rubygem-storable \
-		rubygem-uri-redis>=0.4.2:${PORTSDIR}/net/rubygem-uri-redis
+RUN_DEPENDS=	rubygem-gibbler>=0.8.6:devel/rubygem-gibbler \
+		rubygem-multi_json>=0.0.5:devel/rubygem-multi_json \
+		rubygem-redis>=2.1.0:databases/rubygem-redis \
+		rubygem-storable>=0.8.6:devel/rubygem-storable \
+		rubygem-uri-redis>=0.4.2:net/rubygem-uri-redis
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

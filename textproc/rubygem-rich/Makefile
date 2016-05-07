@@ -12,17 +12,16 @@ COMMENT=	Opinionated WYSIWYG editor for Rails based on CKEditor
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-jquery-rails>=0:${PORTSDIR}/www/rubygem-jquery-rails \
-		rubygem-kaminari>=0:${PORTSDIR}/www/rubygem-kaminari \
-		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types \
-		rubygem-paperclip>=0:${PORTSDIR}/devel/rubygem-paperclip \
-		rubygem-rack-raw-upload>=0:${PORTSDIR}/devel/rubygem-rack-raw-upload \
-		rubygem-rails>=3.2.0:${PORTSDIR}/www/rubygem-rails \
-		rubygem-sass-rails>=0:${PORTSDIR}/textproc/rubygem-sass-rails
+RUN_DEPENDS=	rubygem-jquery-rails>=0:www/rubygem-jquery-rails \
+		rubygem-kaminari>=0:www/rubygem-kaminari \
+		rubygem-mime-types>=0:misc/rubygem-mime-types \
+		rubygem-paperclip>=0:devel/rubygem-paperclip \
+		rubygem-rack-raw-upload>=0:devel/rubygem-rack-raw-upload \
+		rubygem-rails>=3.2.0:www/rubygem-rails \
+		rubygem-sass-rails>=0:textproc/rubygem-sass-rails
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

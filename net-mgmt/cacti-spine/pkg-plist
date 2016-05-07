@@ -1,2 +1,3 @@
 bin/spine
+man/man1/spine.1.gz
 @sample etc/spine.conf.sample

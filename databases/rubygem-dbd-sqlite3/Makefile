@@ -11,13 +11,12 @@ COMMENT=	SQLite3 driver for DBI-for-Ruby
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-dbi>=0.4.0:${PORTSDIR}/databases/rubygem-dbi \
-		rubygem-sqlite3-ruby>=0:${PORTSDIR}/databases/rubygem-sqlite3-ruby
+RUN_DEPENDS=	rubygem-dbi>=0.4.0:databases/rubygem-dbi \
+		rubygem-sqlite3-ruby>=0:databases/rubygem-sqlite3-ruby
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

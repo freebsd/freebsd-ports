@@ -13,10 +13,10 @@ COMMENT=	Official continuation of the famous Blobby Volley 1.x game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
-		libdrm.so:${PORTSDIR}/graphics/libdrm
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/include/boost/crc.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libphysfs.so:devel/physfs \
+		libdrm.so:graphics/libdrm
+BUILD_DEPENDS=	zip:archivers/zip \
+		${LOCALBASE}/include/boost/crc.hpp:devel/boost-libs
 
 USE_XORG=	ice x11 xext xxf86vm xdamage xfixes xau xdmcp xrandr xrender
 USE_SDL=	sdl

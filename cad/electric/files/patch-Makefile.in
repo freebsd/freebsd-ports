@@ -1,5 +1,5 @@
---- Makefile.in.orig	2004-07-16 03:59:50.000000000 +0200
-+++ Makefile.in	2013-02-07 14:08:44.000000000 +0100
+--- Makefile.in.orig	2004-07-16 01:59:50 UTC
++++ Makefile.in
 @@ -1,14 +1,14 @@
  ########################################################## USING QT
  ##### If using Qt, uncomment these five lines
@@ -21,7 +21,7 @@
  
  ##### Qt on Macintosh: uncomment the next two lines (for Qt Evaluation, change "-lqt" to "-lqt-mt"):
  # ELECTRIC_TARGET = electric-target-mac
-@@ -20,11 +20,11 @@
+@@ -20,11 +20,11 @@ QUI_CFLAGS = -DUSEQUI
  
  ########################################################### USING MOTIF
  ##### If using Motif (or OpenMotif/Lesstif), uncomment these five lines
@@ -38,7 +38,7 @@
  
  ##### For the general-purpose X facility, uncomment this line
  XPOWER = -DANYDEPTH
-@@ -32,8 +32,8 @@
+@@ -32,8 +32,8 @@ XPOWER = -DANYDEPTH
  # XPOWER =
  
  ##### For the T1lib TrueType, uncomment these two lines and set them to the proper location
@@ -49,7 +49,7 @@
  ###########################################################
  
  
-@@ -61,8 +61,8 @@
+@@ -61,8 +61,8 @@ XPOWER = -DANYDEPTH
  
  ########################################################### TCL INTERPRETER
  ##### If building with a TCL interpreter, uncomment these two lines
@@ -60,7 +60,7 @@
  ###########################################################
  
  
-@@ -164,7 +164,8 @@
+@@ -164,7 +164,8 @@ JAVA_OBJS = $(JAVA_SRCS:%.java=%.class)
  
  ########################################################### MISCELLANEOUS EXTRAS
  ##### If building with Internationalization, uncomment this line
@@ -70,7 +70,7 @@
  
  ##### If building with Unicode text, uncomment this line
  # UNICODECFLAGS = -D_UNICODE
-@@ -179,7 +180,7 @@
+@@ -179,7 +180,7 @@ JAVA_OBJS = $(JAVA_SRCS:%.java=%.class)
  # FORTECFLAGS = -compat
  
  ##### If optimizing, uncomment this line (modify optimizations to taste)
@@ -79,7 +79,7 @@
  
  ##### If debugging, uncomment this line (modify debug options to taste)
  # DEBUG = -g3
-@@ -796,12 +797,12 @@
+@@ -796,12 +797,12 @@ CORE_SRC = \
  BUILDOPTS = $(DEBUG) $(ARCHFLAGS) 
  BUILDDIR = obj
  HDS = src/include

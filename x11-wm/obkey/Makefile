@@ -11,7 +11,7 @@ COMMENT=	Openbox hotkey editor, written in Python and PyGTK
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	py27-gtk2>=2.14:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	py27-gtk2>=2.14:x11-toolkits/py-gtk2
 
 USES=		gettext python
 USE_PYTHON=	distutils
@@ -27,8 +27,9 @@ post-patch:
 		${WRKSRC}/obkey_classes.py
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/misc/obkey.desktop ${STAGEDIR}${DESKTOPDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 

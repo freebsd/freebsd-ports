@@ -7,9 +7,9 @@ COMMENT=	XMMS plugin for playing Nintendo Game Boy(TM) audio
 
 MASTERDIR=	${.CURDIR}/../gbsplay
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
-		gbsplay:${PORTSDIR}/audio/gbsplay
+BUILD_DEPENDS=	xmms:multimedia/xmms
+RUN_DEPENDS=	xmms:multimedia/xmms \
+		gbsplay:audio/gbsplay
 
 USE_GNOME=	glib12
 USE_GCC=	any

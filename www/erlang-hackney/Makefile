@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hackney
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	erlang-
 
@@ -16,14 +16,14 @@ GH_ACCOUNT=	benoitc
 
 ERL_BUILD_DEPS=	dns/erlang-idna \
 		devel/erlang-certifi \
-		devel/erlang-ssl_verify_hostname \
+		devel/erlang-ssl_verify_fun \
 		devel/erlang-metrics \
 		misc/erlang-mimerl
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
 pre-build:
 	@${MKDIR} ${WRKSRC}/_build/default/lib
-.for lib in idna certifi mimerl ssl_verify_hostname
+.for lib in idna certifi ssl_verify_fun metrics mimerl
 	@${LN} -s ${PREFIX}/lib/erlang/lib/${lib}-* ${WRKSRC}/_build/default/lib/${lib}
 .endfor
 

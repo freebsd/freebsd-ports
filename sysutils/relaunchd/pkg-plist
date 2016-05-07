@@ -1,12 +1,12 @@
 bin/launchctl
 etc/rc.d/launchd
+sbin/launchd
 man/man1/launchctl.1.gz
 man/man5/launchd.plist.5.gz
 man/man8/launchd.8.gz
-sbin/launchd
 @dir etc/launchd/agents
 @dir etc/launchd/daemons
 @dir share/launchd/agents
 @dir share/launchd/daemons
-@dir /var/db/launchd
 @dir /var/cache/launchd
+@dir /var/db/launchd

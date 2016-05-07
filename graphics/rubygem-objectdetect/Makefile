@@ -12,12 +12,10 @@ COMMENT=	Simple library for detecting objects in pictures
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
 
-USES=		pkgconfig
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem pkgconfig
 
 post-patch:
 	${REINPLACE_CMD} -E 's|(objectdetect)|\1/version|' ${WRKSRC}/test/test_helper.rb

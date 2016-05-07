@@ -30,14 +30,14 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	libblas.so:math/blas
 BLAS=	-lblas
 .elif ${WITH_BLAS} == gotoblas
-LIB_DEPENDS+=	libgoto2.so:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2.so:math/gotoblas
 BLAS=	-lgoto2p
 BROKEN=	Build stops while testing
 .elif ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=	-lptf77blas
 .endif
 
@@ -97,7 +97,7 @@ do-build:
 	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${CP} {} ${WRKDIR}/tmp_shared \;
 	@cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
 	${RM} -f $${i}.so.* $${i}.so ; \
-       	${FC} ${CFLAGS} ${FPIC} ${LDFLAGS} -shared -o $${i}.so.${SVERSION} \
+	${FC} ${CFLAGS} ${FPIC} ${LDFLAGS} -shared -o $${i}.so.${SVERSION} \
 	-Wl,-soname,$${i}.so.${SVERSION} -Wl,--allow-multiple-definition \
 	-Wl,--whole-archive $${i}.a -Wl,--no-whole-archive -Wl,--as-needed; \
 		${LN} -s $${i}.so.${SVERSION} $${i}.so ;\

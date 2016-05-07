@@ -12,7 +12,7 @@ COMMENT=	Zint Barcode Generator
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake
 USE_LDCONFIG=	yes

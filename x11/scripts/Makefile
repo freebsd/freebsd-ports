@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Various X related scripts
 
-RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
+RUN_DEPENDS=	ksh:shells/pdksh
 
 XORG_CAT=	app
 USE_XORG=	x11

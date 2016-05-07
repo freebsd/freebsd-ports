@@ -10,7 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Chemistry file translation program
 
-BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
 
 CONFLICTS_INSTALL=	babel-*
 
@@ -26,7 +28,7 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=	yes
 
 CAIRO_DESC=	PNG support via cairo library
-CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_USES=	pkgconfig
 
 PYTHON_USES=	python

@@ -14,9 +14,9 @@ COMMENT=	Time the different stages of an HTTP request
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Daemon>=0:${PORTSDIR}/www/p5-HTTP-Daemon \
-		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-libwww>=6:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-HTTP-Daemon>=0:www/p5-HTTP-Daemon \
+		p5-libwww>=6:www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=6:www/p5-libwww
 
 NO_ARCH=	yes
 USE_PERL5=	modbuild

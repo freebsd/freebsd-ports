@@ -8,10 +8,10 @@ CATEGORIES=	devel www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Swiss-army knive for reading and writing XML files
 
-BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
-		${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
-RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
-		${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
+BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser \
+		${PEARDIR}/XML/Util.php:devel/pear-XML_Util
+RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser \
+		${PEARDIR}/XML/Util.php:devel/pear-XML_Util
 
 USES=		pear
 

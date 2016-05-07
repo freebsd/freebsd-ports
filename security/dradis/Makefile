@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dradis
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1
 CATEGORIES=	security
@@ -13,14 +14,14 @@ COMMENT=	Opensource framework to enable effective information gathering
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems \
-		${RUBY_SITELIBDIR}/wirble.rb:${PORTSDIR}/devel/ruby-wirble \
-		rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-rails>=3.0.5:${PORTSDIR}/www/rubygem-rails \
-		rubygem-activesupport>=3.0.2:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-bundler>=1.0.7:${PORTSDIR}/sysutils/rubygem-bundler \
-		rubygem-redcloth>=4.2.7:${PORTSDIR}/www/rubygem-redcloth \
-		rubygem-sqlite3>=1.3.2:${PORTSDIR}/databases/rubygem-sqlite3
+RUN_DEPENDS=	${LOCALBASE}/bin/gem:devel/ruby-gems \
+		${RUBY_SITELIBDIR}/wirble.rb:devel/ruby-wirble \
+		rubygem-rake>=0.8.7:devel/rubygem-rake \
+		rubygem-rails>=3.0.5:www/rubygem-rails \
+		rubygem-activesupport>=3.0.2:devel/rubygem-activesupport \
+		rubygem-bundler>=1.0.7:sysutils/rubygem-bundler \
+		rubygem-redcloth>=4.2.7:www/rubygem-redcloth \
+		rubygem-sqlite3>=1.3.2:databases/rubygem-sqlite3
 
 USE_RC_SUBR=	dradis
 SUB_FILES=	pkg-message
@@ -33,7 +34,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
-RUBY_SHEBANG_FILES=	server/script/rails server/script/delayed_job
+USES=		shebangfix
+SHEBANG_FILES=	server/script/rails server/script/delayed_job
 RUBY_NO_BUILD_DEPENDS=	yes
 
 USES=		dos2unix

@@ -10,6 +10,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/APP12.pm
 %%SITE_PERL%%/Image/ExifTool/ASF.pm
 %%SITE_PERL%%/Image/ExifTool/Apple.pm
+%%SITE_PERL%%/Image/ExifTool/Audible.pm
 %%SITE_PERL%%/Image/ExifTool/BMP.pm
 %%SITE_PERL%%/Image/ExifTool/BZZ.pm
 %%SITE_PERL%%/Image/ExifTool/BigTIFF.pm
@@ -80,6 +81,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/ICC_Profile.pm
 %%SITE_PERL%%/Image/ExifTool/ID3.pm
 %%SITE_PERL%%/Image/ExifTool/IPTC.pm
+%%SITE_PERL%%/Image/ExifTool/ISO.pm
 %%SITE_PERL%%/Image/ExifTool/ITC.pm
 %%SITE_PERL%%/Image/ExifTool/Import.pm
 %%SITE_PERL%%/Image/ExifTool/InDesign.pm
@@ -125,6 +127,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Microsoft.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
 %%SITE_PERL%%/Image/ExifTool/MinoltaRaw.pm
+%%SITE_PERL%%/Image/ExifTool/Motorola.pm
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
 %%SITE_PERL%%/Image/ExifTool/NikonCapture.pm
 %%SITE_PERL%%/Image/ExifTool/NikonCustom.pm
@@ -177,6 +180,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Theora.pm
 %%SITE_PERL%%/Image/ExifTool/Torrent.pm
 %%SITE_PERL%%/Image/ExifTool/Unknown.pm
+%%SITE_PERL%%/Image/ExifTool/VCard.pm
 %%SITE_PERL%%/Image/ExifTool/Vorbis.pm
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
 %%SITE_PERL%%/Image/ExifTool/WriteExif.pl
@@ -202,6 +206,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::APP12.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ASF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Apple.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Audible.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BMP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BZZ.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BigTIFF.3.gz
@@ -242,6 +247,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::ICC_Profile.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ID3.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::IPTC.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::ISO.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ITC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Import.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::InDesign.3.gz
@@ -287,6 +293,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Microsoft.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Minolta.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MinoltaRaw.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Motorola.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Nikon.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::NikonCapture.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::NikonCustom.3.gz
@@ -338,6 +345,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Theora.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Torrent.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Unknown.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::VCard.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Vorbis.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteCanonRaw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteExif.3.gz

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cancel (i.e., kill) threads
 
-RUN_DEPENDS=	p5-threads>=1.34:${PORTSDIR}/devel/p5-threads
+RUN_DEPENDS=	p5-threads>=1.34:devel/p5-threads
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

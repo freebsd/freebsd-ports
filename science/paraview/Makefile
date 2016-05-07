@@ -3,7 +3,7 @@
 
 PORTNAME=	paraview
 PORTVERSION=	4.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}-source
@@ -16,20 +16,20 @@ LICENSE_NAME=	ParaView_License
 LICENSE_FILE=	${PATCH_WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:${PORTSDIR}/math/py-matplotlib
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		liborc-0.4.so:${PORTSDIR}/devel/orc \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libffi.so:${PORTSDIR}/devel/libffi \
-		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
-		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:${PORTSDIR}/math/py-matplotlib
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib
+LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libfreetype.so:print/freetype2 \
+		libexpat.so:textproc/expat2 \
+		libjbig.so:graphics/jbigkit \
+		liborc-0.4.so:devel/orc \
+		libpcre.so:devel/pcre \
+		libffi.so:devel/libffi \
+		libdrm.so:graphics/libdrm \
+		libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	bash:shells/bash	\
+		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib
 
 CONFLICTS_BUILD=	protobuf*
 
@@ -86,14 +86,14 @@ WRKSRC=		${WRKDIR}/ParaView-v${PORTVERSION}-source
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOSMESA}
-LIB_DEPENDS+=	libOSMesa32.so:${PORTSDIR}/graphics/libosmesa
+LIB_DEPENDS+=	libOSMesa32.so:graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
 		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa32.so
 .endif
 
 .if ${PORT_OPTIONS:MGL2PS}
-LIB_DEPENDS+=	libgl2ps.so:${PORTSDIR}/print/gl2ps
+LIB_DEPENDS+=	libgl2ps.so:print/gl2ps
 CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
 PLIST_SUB+=	GL2PS=""
 .else

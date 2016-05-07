@@ -13,15 +13,15 @@ COMMENT=	Library that stores and retrieves raster coverages using a SpatiaLite
 LICENSE=	MPL GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
-		libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libgeos.so:${PORTSDIR}/graphics/geos \
-		libproj.so:${PORTSDIR}/graphics/proj \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libfreexl.so:${PORTSDIR}/textproc/freexl
+LIB_DEPENDS=	libspatialite.so:databases/spatialite \
+		libsqlite3.so:databases/sqlite3 \
+		libgeotiff.so:graphics/libgeotiff \
+		libjbig.so:graphics/jbigkit \
+		libpng.so:graphics/png \
+		libgeos.so:graphics/geos \
+		libproj.so:graphics/proj \
+		libtiff.so:graphics/tiff \
+		libfreexl.so:textproc/freexl
 
 GNU_CONFIGURE=	yes
 USES=		gmake iconv jpeg libtool pathfix pkgconfig

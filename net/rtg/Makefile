@@ -13,9 +13,11 @@ COMMENT=	Flexible, high-performance SNMP statistics monitoring system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
 USE_RC_SUBR=	rtgpoll
 USE_MYSQL=	client

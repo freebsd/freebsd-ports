@@ -11,14 +11,13 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
 
-BUILD_DEPENDS=	racc:${PORTSDIR}/devel/rubygem-racc
+BUILD_DEPENDS=	racc:devel/rubygem-racc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uwabami
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-USE_RAKE=	yes
 
 RUBY_MODNAME=	rd
 

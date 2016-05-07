@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	HERMES
 HERMES_DESC=	Install hermes graphics library
 OPTIONS_DEFAULT=	HERMES
 
-HERMES_LIB_DEPENDS=	libHermes.so:${PORTSDIR}/graphics/Hermes
+HERMES_LIB_DEPENDS=	libHermes.so:graphics/Hermes
 
 .include "${MASTERDIR}/Makefile"

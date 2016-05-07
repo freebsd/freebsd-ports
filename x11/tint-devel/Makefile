@@ -14,12 +14,14 @@ COMMENT=	Lightweight freedesktop-compliant panel (development version)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libImlib2.so:${PORTSDIR}/graphics/imlib2 \
-		librsvg-2.so:${PORTSDIR}/graphics/librsvg2 \
-		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libImlib2.so:graphics/imlib2 \
+		librsvg-2.so:graphics/librsvg2 \
+		libstartup-notification-1.so:x11/startup-notification
 
 CONFLICTS=	tint2-[0-9]*
+
+IGNORE=		-devel version is older than x11/tint
 
 USES=		alias cmake pkgconfig tar:xz
 USE_GNOME=	glib20 gtk20 pango

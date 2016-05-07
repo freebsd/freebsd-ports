@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE::Component::IRC plugin that runs Acme::POE::Knee races
 
-BUILD_DEPENDS=	p5-Math-Random>=0.69:${PORTSDIR}/math/p5-Math-Random \
-		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
-		p5-POE>=0:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-Math-Random>=0.69:math/p5-Math-Random \
+		p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC \
+		p5-POE>=0:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"

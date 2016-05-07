@@ -10,7 +10,7 @@ COMMENT=	PBI management utilities
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh
+RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh
 
 WRKSRC_SUBDIR=	src-sh/pbi-manager
 USES=		pkgconfig tar:xz

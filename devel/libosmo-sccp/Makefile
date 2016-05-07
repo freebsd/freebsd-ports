@@ -12,7 +12,7 @@ COMMENT=	SCCP network layer protocol implementation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libosmocore.so:${PORTSDIR}/devel/libosmocore
+LIB_DEPENDS=	libosmocore.so:devel/libosmocore
 
 CONFLICTS_INSTALL=libmtp-[0-9]* # lib/libmtp.a
 

@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for gnomevfs2 library
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:devel/m4
 
 USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	glibmm gnomevfs2
@@ -24,7 +24,7 @@ PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples// ; \
-	    	/^SUBDIRS =/s/docs//' \
+		/^SUBDIRS =/s/docs//' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
 		${WRKSRC}/tools/extra_defs_gen/Makefile.in

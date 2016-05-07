@@ -157,3 +157,71 @@
  #include <sstream>
  #include <math.h>
  #include <stdlib.h>
+--- ui/gfx/color_utils.cc.orig	2016-04-06 20:35:19.306577518 +0200
++++ ui/gfx/color_utils.cc	2016-04-06 20:35:49.282575724 +0200
+@@ -235,9 +235,9 @@
+     b += (255.0 - b) * ((shift.l - 0.5) * 2.0);
+   }
+   return SkColorSetARGB(alpha,
+-                        static_cast<int>(std::round(r)),
+-                        static_cast<int>(std::round(g)),
+-                        static_cast<int>(std::round(b)));
++                        static_cast<int>(round(r)),
++                        static_cast<int>(round(g)),
++                        static_cast<int>(round(b)));
+ }
+ 
+ void BuildLumaHistogram(const SkBitmap& bitmap, int histogram[256]) {
+--- media/filters/audio_clock.cc.orig	2016-04-07 11:55:00.678817033 +0200
++++ media/filters/audio_clock.cc	2016-04-07 11:55:28.152814716 +0200
+@@ -121,7 +121,7 @@
+   }
+ 
+   return base::TimeDelta::FromMicroseconds(
+-      std::round(frames_until_timestamp * microseconds_per_frame_));
++      round(frames_until_timestamp * microseconds_per_frame_));
+ }
+ 
+ void AudioClock::ContiguousAudioDataBufferedForTesting(
+--- media/filters/audio_clock.h.orig	2016-04-08 14:22:02.833940146 +0200
++++ media/filters/audio_clock.h	2016-04-08 14:22:14.433876920 +0200
+@@ -92,11 +92,11 @@
+   //                                             1000 + 500 + 250 = 1750 ms.
+   base::TimeDelta front_timestamp() const {
+     return base::TimeDelta::FromMicroseconds(
+-        std::round(front_timestamp_micros_));
++        round(front_timestamp_micros_));
+   }
+   base::TimeDelta back_timestamp() const {
+     return base::TimeDelta::FromMicroseconds(
+-        std::round(back_timestamp_micros_));
++        round(back_timestamp_micros_));
+   }
+ 
+   // Returns the amount of wall time until |timestamp| will be played by the
+--- content/browser/web_contents/web_contents_impl.cc.orig	2016-04-08 15:44:21.989537858 +0200
++++ content/browser/web_contents/web_contents_impl.cc	2016-04-08 15:44:44.574535099 +0200
+@@ -1597,7 +1597,7 @@
+     // Count only integer cumulative scrolls as zoom events; this handles
+     // smooth scroll and regular scroll device behavior.
+     zoom_scroll_remainder_ += event.wheelTicksY;
+-    int whole_zoom_scroll_remainder_ = std::lround(zoom_scroll_remainder_);
++    int whole_zoom_scroll_remainder_ = lround(zoom_scroll_remainder_);
+     zoom_scroll_remainder_ -= whole_zoom_scroll_remainder_;
+     if (whole_zoom_scroll_remainder_ != 0) {
+       delegate_->ContentsZoomChange(whole_zoom_scroll_remainder_ > 0);
+--- chrome/browser/ui/views/frame/browser_root_view.cc.orig	2016-04-08 17:23:19.749128496 +0200
++++ chrome/browser/ui/views/frame/browser_root_view.cc	2016-04-08 17:23:30.609126494 +0200
+@@ -139,10 +139,10 @@
+ 
+       // Number of integer scroll events that have passed in each direction.
+       int whole_scroll_amount_x =
+-          std::lround(static_cast<double>(scroll_remainder_x_) /
++          lround(static_cast<double>(scroll_remainder_x_) /
+                       ui::MouseWheelEvent::kWheelDelta);
+       int whole_scroll_amount_y =
+-          std::lround(static_cast<double>(scroll_remainder_y_) /
++          lround(static_cast<double>(scroll_remainder_y_) /
+                       ui::MouseWheelEvent::kWheelDelta);
+ 
+       // Adjust the remainder such that any whole scrolls we have taken action

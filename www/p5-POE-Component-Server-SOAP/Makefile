@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Publish POE event handlers via SOAP over HTTP
 
-BUILD_DEPENDS=	p5-SOAP-Lite>=0.55:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-POE-Component-Server-SimpleHTTP>=1.54:${PORTSDIR}/www/p5-POE-Component-Server-SimpleHTTP \
-		p5-POE>=0:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-SOAP-Lite>=0.55:net/p5-SOAP-Lite \
+		p5-POE-Component-Server-SimpleHTTP>=1.54:www/p5-POE-Component-Server-SimpleHTTP \
+		p5-POE>=0:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

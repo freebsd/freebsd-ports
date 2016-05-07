@@ -1,6 +1,4 @@
 man/man5/tayga.conf.5.gz
 man/man8/tayga.8.gz
-@unexec if cmp -s %D/etc/tayga.conf.example %D/etc/tayga.conf; then rm -f %D/etc/tayga.conf; fi
-etc/tayga.conf.example
-@exec if [ ! -f %D/etc/tayga.conf ] ; then cp -p %B/tayga.conf.example %D/etc/tayga.conf; fi
+@sample etc/tayga.conf.example etc/tayga.conf
 sbin/tayga

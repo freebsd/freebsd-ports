@@ -3,6 +3,7 @@
 
 PORTNAME=	freedoko
 PORTVERSION=	0.7.14
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/FreeDoko%20source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
@@ -13,7 +14,7 @@ COMMENT=	Play the card game Doppelkopf
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../doc/GPL
 
-LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
+LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 

@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=		fastd
-PORTVERSION=		17
+PORTVERSION=		18
 CATEGORIES=		security net
-MASTER_SITES=		http://git.universe-factory.net/fastd/snapshot/
+MASTER_SITES=		https://git.universe-factory.net/fastd/snapshot/
 
 MAINTAINER=		crest_maintainer@rlwinm.de
 COMMENT=		Fast and Secure Tunnelling Daemon
@@ -11,9 +11,9 @@ COMMENT=		Fast and Secure Tunnelling Daemon
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=		libjson-c.so:${PORTSDIR}/devel/json-c       \
-			libsodium.so:${PORTSDIR}/security/libsodium \
-			libuecc.so:${PORTSDIR}/security/libuecc
+LIB_DEPENDS=		libjson-c.so:devel/json-c       \
+			libsodium.so:security/libsodium \
+			libuecc.so:security/libuecc
 
 USES=			bison cmake:outsource pkgconfig tar
 

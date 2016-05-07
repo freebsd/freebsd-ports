@@ -14,9 +14,9 @@ COMMENT=	Data::Report - Framework for flexible reporting
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-COMMON_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Text-CSV_XS>0:${PORTSDIR}/textproc/p5-Text-CSV_XS
-BUILD_DEPENDS=	p5-Module-Build>=0.28:${PORTSDIR}/devel/p5-Module-Build \
+COMMON_DEPENDS=	p5-HTML-Parser>0:www/p5-HTML-Parser \
+		p5-Text-CSV_XS>0:textproc/p5-Text-CSV_XS
+BUILD_DEPENDS=	p5-Module-Build>=0.28:devel/p5-Module-Build \
 		${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 

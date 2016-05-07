@@ -31,11 +31,11 @@ CURL_DESC=	curl support
 P0F_DESC=	P0F support
 POSTFIX_DESC=	Use Postfix instead of Sendmail
 
-DKIM_BUILD_DEPENDS+=	opendkim>=0:${PORTSDIR}/mail/opendkim
-P0F_RUN_DEPENDS+=	p0f:${PORTSDIR}/net-mgmt/p0f
-SPF_BUILD_DEPENDS=	libspf2>=1.2.5:${PORTSDIR}/mail/libspf2
-CURL_BUILD_DEPENDS+=	curl>=7.18:${PORTSDIR}/ftp/curl
-GEOIP_BUILD_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
+DKIM_BUILD_DEPENDS+=	opendkim>=0:mail/opendkim
+P0F_RUN_DEPENDS+=	p0f:net-mgmt/p0f
+SPF_BUILD_DEPENDS=	libspf2>=1.2.5:mail/libspf2
+CURL_BUILD_DEPENDS+=	curl>=7.18:ftp/curl
+GEOIP_BUILD_DEPENDS=	GeoIP>=1.4.4:net/GeoIP
 
 POSTFIX_CONFIGURE_ENABLE=	postfix
 P0F_CONFIGURE_ENABLE=		p0f306

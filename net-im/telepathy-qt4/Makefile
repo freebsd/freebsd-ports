@@ -4,7 +4,7 @@
 PORTNAME=	telepathy-qt4
 PORTVERSION=	0.9.6.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
+MASTER_SITES=	https://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
 DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,10 +12,10 @@ COMMENT=	High-level Qt binding for Telepathy
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus
-LIB_DEPENDS=	libtelepathy-farstream.so:${PORTSDIR}/net-im/telepathy-farstream \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:devel/py-dbus
+LIB_DEPENDS=	libtelepathy-farstream.so:net-im/telepathy-farstream \
+		libtelepathy-glib.so:net-im/telepathy-glib
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:devel/py-dbus
 
 OPTIONS_DEFINE=	DOCS
 

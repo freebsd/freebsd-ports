@@ -18,6 +18,6 @@ OPTIONS_DEFINE=	GMP
 GMP_DESC=	Install gmp library
 OPTIONS_DEFAULT=	GMP
 
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
 .include "${MASTERDIR}/Makefile"

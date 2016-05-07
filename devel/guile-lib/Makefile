@@ -9,8 +9,10 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Repository of useful code written in Guile Scheme
 
-BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	guile:lang/guile
+RUN_DEPENDS=	guile:lang/guile
 
 USES=		gmake
 GNU_CONFIGURE=	yes

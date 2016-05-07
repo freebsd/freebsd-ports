@@ -10,16 +10,16 @@ COMMENT=	Customized exception class
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}total-ordering>0:${PORTSDIR}/devel/py-total-ordering
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}noseofyeti>=1.4.9:${PORTSDIR}/devel/py-noseofyeti	\
-		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}total-ordering>0:devel/py-total-ordering
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}noseofyeti>=1.4.9:devel/py-noseofyeti	\
+		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
 
 OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx \
-		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>0:${PORTSDIR}/textproc/py-cloud_sptheme
+		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx \
+		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>0:textproc/py-cloud_sptheme
 
 NO_ARCH=	yes
 USES=		python

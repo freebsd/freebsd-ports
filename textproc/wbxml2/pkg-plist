@@ -7,13 +7,11 @@ include/libwbxml-1.0/wbxml/wbxml_defines.h
 include/libwbxml-1.0/wbxml/wbxml_errors.h
 lib/libwbxml2.so
 lib/libwbxml2.so.1
-lib/libwbxml2.so.1.0.4
+lib/libwbxml2.so.1.0.5
 libdata/pkgconfig/libwbxml2.pc
 share/cmake/Modules/FindLibWbxml2.cmake
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/References
 %%PORTDOCS%%%%DOCSDIR%%/THANKS

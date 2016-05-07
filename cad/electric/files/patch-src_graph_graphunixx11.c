@@ -1,5 +1,5 @@
---- src/graph/graphunixx11.c.orig	Fri Jul 16 05:59:53 2004
-+++ src/graph/graphunixx11.c	Fri Jul 14 01:11:20 2006
+--- src/graph/graphunixx11.c.orig	2004-07-16 01:59:53 UTC
++++ src/graph/graphunixx11.c
 @@ -167,6 +167,8 @@
  #define TRUESTRLEN strlen
  
@@ -9,7 +9,7 @@
  /****** windows ******/
  
  #define WMLEFTBORDER         8					/* size of left border for windows */
-@@ -1518,13 +1520,13 @@
+@@ -1518,13 +1520,13 @@ BOOLEAN initgraphics(BOOLEAN messages)
  		gra_truetypeon = 1;
  
  		/* Preload T1 fonts here, because T1_LoadFont spoils memory */
@@ -25,7 +25,7 @@
  			for(gra_truetypedeffont=0; gra_truetypedeffont<j; gra_truetypedeffont++)
  			{
  				T1_LoadFont(gra_truetypedeffont);
-@@ -3088,8 +3090,13 @@
+@@ -3088,8 +3090,13 @@ void ewait(INTBIG process)
  INTBIG enumprocessors(void)
  {
  	INTBIG numproc;
@@ -40,7 +40,7 @@
  	return(numproc);
  }
  
-@@ -4758,7 +4765,7 @@
+@@ -4758,7 +4765,7 @@ INTBIG screengetfacelist(CHAR ***list, B
  
  	if (gra_numfaces == 0)
  	{

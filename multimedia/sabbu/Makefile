@@ -11,8 +11,8 @@ COMMENT=	Program used to time subtitles
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0 \
+		libsndfile.so:audio/libsndfile
 
 USES=		tar:bzip2 gmake pkgconfig iconv
 GNU_CONFIGURE=	yes
@@ -25,7 +25,7 @@ LDFLAGS+=	-lswscale0 -lgmodule-2.0
 OPTIONS_DEFINE=	GTKSPELL
 OPTIONS_DEFAULT=GTKSPELL
 
-GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
 
 .include <bsd.port.options.mk>
 

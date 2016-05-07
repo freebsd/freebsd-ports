@@ -12,13 +12,14 @@ COMMENT=	Moose role for enhanced Tk dialogs
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Moose>=0.92:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Has-Sugar>=0:${PORTSDIR}/devel/p5-MooseX-Has-Sugar \
-		p5-MooseX-Types-Path-Class>=0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
-		p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
-		p5-Tk-Role-HasWidgets>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/p5-Tk-Role-HasWidgets \
-		p5-Tk-Sugar>=0:${PORTSDIR}/x11-toolkits/p5-Tk-Sugar
+BUILD_DEPENDS=	p5-Moose>=0.92:devel/p5-Moose \
+		p5-MooseX-Has-Sugar>=0:devel/p5-MooseX-Has-Sugar \
+		p5-MooseX-Types-Path-Class>=0:devel/p5-MooseX-Types-Path-Class \
+		p5-Tk>=0:x11-toolkits/p5-Tk \
+		p5-Tk-Role-HasWidgets>=${PORTVERSION}:x11-toolkits/p5-Tk-Role-HasWidgets \
+		p5-Tk-Sugar>=0:x11-toolkits/p5-Tk-Sugar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

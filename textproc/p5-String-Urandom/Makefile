@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate
+	p5-Params-Validate>0:devel/p5-Params-Validate
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

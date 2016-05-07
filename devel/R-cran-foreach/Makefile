@@ -11,7 +11,7 @@ COMMENT=	Foreach looping construct for R
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	R-cran-iterators>=1.0.0:${PORTSDIR}/devel/R-cran-iterators
+RUN_DEPENDS=	R-cran-iterators>=1.0.0:devel/R-cran-iterators
 
 USES=	cran:auto-plist
 

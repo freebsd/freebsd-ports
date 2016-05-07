@@ -17,10 +17,10 @@ COMMENT=	Sound synthesizer
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig13>0:${PORTSDIR}/devel/swig13 \
-		eigen>0:${PORTSDIR}/math/eigen3 \
-		gmm++>0:${PORTSDIR}/math/gmm++
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+BUILD_DEPENDS=	swig13>0:devel/swig13 \
+		eigen>0:math/eigen3 \
+		gmm++>0:math/gmm++
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 PORTSCOUT=	limit:^5\.
 
@@ -61,7 +61,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:audio/alsa-lib
 MAKE_ARGS+=	useALSA=1
 ALSA_H=		alsa/asoundlib.h
 .else
@@ -70,58 +70,58 @@ ALSA_H=		##alsa/asoundlib.h##
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 MAKE_ARGS+=	buildImageOpcodes=1
 .else
 MAKE_ARGS+=	buildImageOpcodes=0
 .endif
 
 .if ${PORT_OPTIONS:MDSSI}
-BUILD_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-RUN_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
+BUILD_DEPENDS+=	dssi>=0:audio/dssi
+LIB_DEPENDS+=	libasound.so:audio/alsa-lib
+RUN_DEPENDS+=	dssi>=0:audio/dssi
 MAKE_ARGS+=	buildDSSI=1
 .else
 MAKE_ARGS+=	buildDSSI=0
 .endif
 
 .if ${PORT_OPTIONS:MFLUIDSYNTH}
-LIB_DEPENDS+=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS+=	libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_H=	fluidsynth.h
 .else
 FLUIDSYNTH_H=	##fluidsynth.h##
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:audio/jack
 MAKE_ARGS+=	useJack=1
 .else
 MAKE_ARGS+=	useJack=0
 .endif
 
 .if ${PORT_OPTIONS:MOSC}
-LIB_DEPENDS+=	liblo.so:${PORTSDIR}/audio/liblo
+LIB_DEPENDS+=	liblo.so:audio/liblo
 MAKE_ARGS+=	useOSC=1
 .else
 MAKE_ARGS+=	useOSC=0
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS+=	libportaudio.so:audio/portaudio
 MAKE_ARGS+=	usePortAudio=1
 .else
 MAKE_ARGS+=	usePortAudio=0
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_H=	pulse/simple.h
 .else
 PULSEAUDIO_H=	##pulse/simple.h##
 .endif
 
 .if ${PORT_OPTIONS:MFLTK}
-LIB_DEPENDS+=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS+=	libfltk.so:x11-toolkits/fltk
 MAKE_ARGS+=	buildCsound5GUI=1 buildCSEditor=1 buildWinsound=1 useFLTK=1
 .else
 MAKE_ARGS+=	buildCsound5GUI=0 buildCSEditor=0 buildWinsound=0 useFLTK=0
@@ -135,12 +135,12 @@ CSOUND_DOCS=	Csound${PORTVERSION:R}_manual_html.zip
 MAKE_ARGS+=	Word64=1
 .endif
 
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
+BUILD_DEPENDS+=	flex>0:textproc/flex
 MAKE_ENV+=	PATH=${LOCALBASE}/bin:$$PATH
 .endif
 
-.if ${OSVERSION} >= 1000054
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054
 CXXLIB=		c++
 .else
 CXXLIB=		# empty

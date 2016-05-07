@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-i18n
-PORTVERSION=	0.8.8
+PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-Release
 CATEGORIES=	x11
@@ -12,7 +12,7 @@ COMMENT=	Lumina desktop environment localization files
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	lumina>=0:${PORTSDIR}/x11/lumina
+RUN_DEPENDS=	lumina>=0:x11/lumina
 
 USES=		tar:xz
 NO_BUILD=	yes

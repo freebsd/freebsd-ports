@@ -11,8 +11,8 @@ COMMENT=	Mail searching frontend for Xapian
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core \
-		libgmime-2.6.so:${PORTSDIR}/mail/gmime26
+LIB_DEPENDS=	libxapian.so:databases/xapian-core \
+		libgmime-2.6.so:mail/gmime26
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	djcb
@@ -29,7 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=		DOCS GUILE MU4E
 OPTIONS_SUB=		yes
 
-GUILE_LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2
+GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
 GUILE_USE=		ldconfig=yes
 GUILE_CONFIGURE_ENABLE=	guile
 GUILE_INFO=		mu-guile

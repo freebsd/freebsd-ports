@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server browser for many popular 3D action games
 
-RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
+RUN_DEPENDS=	qstat:games/qstat
 
 USE_GNOME=	intlhack
 USES=		gettext gmake pkgconfig
@@ -31,7 +31,7 @@ GTK2_USE_OFF=		GNOME=gdkpixbuf
 GTK2_CONFIGURE_ENABLE=	gtk2
 
 GEOIP_CONFIGURE_ENABLE=	geoip
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 BZIP2_CONFIGURE_ENABLE=	bzip2
 

@@ -12,8 +12,8 @@ COMMENT=	Text-based front end for Dynamips development version
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.4.0:${PORTSDIR}/devel/py-configobj \
-		dynamips:${PORTSDIR}/emulators/dynamips-community
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.4.0:devel/py-configobj \
+		dynamips:emulators/dynamips-community
 
 PLIST_FILES=	bin/dynagen "@sample etc/dynagen.ini.sample"
 

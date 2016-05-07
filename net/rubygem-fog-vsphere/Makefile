@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-vsphere
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,12 +12,11 @@ COMMENT=	Module for the 'fog' gem to support vSphere
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-fog-core>=0:${PORTSDIR}/devel/rubygem-fog-core \
-		rubygem-rbvmomi>=1.8:${PORTSDIR}/net/rubygem-rbvmomi
+RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
+		rubygem-rbvmomi>=1.8:net/rubygem-rbvmomi
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

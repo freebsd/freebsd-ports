@@ -14,7 +14,7 @@ COMMENT=	Lightweight Midnight Commander clone
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS=	gawk:lang/gawk
 
 CONFLICTS=	mc-4.7*
 

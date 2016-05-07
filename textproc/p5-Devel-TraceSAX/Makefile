@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Trace SAX events
 
-BUILD_DEPENDS=	p5-Devel-TraceCalls>=0.03:${PORTSDIR}/devel/p5-Devel-TraceCalls \
-		p5-XML-SAX-Machines>=0:${PORTSDIR}/textproc/p5-XML-SAX-Machines
+BUILD_DEPENDS=	p5-Devel-TraceCalls>=0.03:devel/p5-Devel-TraceCalls \
+		p5-XML-SAX-Machines>=0:textproc/p5-XML-SAX-Machines
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -14,9 +14,9 @@ COMMENT=	LDAP authentication plugin for OpenVPN
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c \
-		${NONEXISTENT}:${PORTSDIR}/security/openvpn:extract \
-		libcheck>=0:${PORTSDIR}/devel/libcheck
+BUILD_DEPENDS=	re2c:devel/re2c \
+		${NONEXISTENT}:security/openvpn:extract \
+		libcheck>=0:devel/libcheck
 
 USES=		objc tar:xz
 

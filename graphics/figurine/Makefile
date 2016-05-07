@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
-RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
+RUN_DEPENDS=	fig2dev:print/transfig
 
 GNU_CONFIGURE=	yes
 USE_XORG=	xpm

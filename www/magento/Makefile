@@ -26,14 +26,14 @@ MAGENTODIR?=	www/magento
 
 .include <bsd.port.options.mk>
 .if !empty(${PORT_OPTIONS:MOAUTH})
-RUN_DEPENDS+=	pecl-oauth>=1.2.3:${PORTSDIR}/net/pecl-oauth
+RUN_DEPENDS+=	pecl-oauth>=1.2.3:net/pecl-oauth
 .endif
 .if !empty(${PORT_OPTIONS:MREDIS})
-RUN_DEPENDS+=	php56-redis>=2.2.0:${PORTSDIR}/databases/php56-redis
+RUN_DEPENDS+=	php56-redis>=2.2.0:databases/php56-redis
 .endif
 # First need to submit the port
 #.if ${PORT_OPTIONS:MSNAPPY}
-#RUN_DEPENDS+=	php5-snappy>=0.0.2:${PORTSDIR}/archivers/php5-snappy
+#RUN_DEPENDS+=	php5-snappy>=0.0.2:archivers/php5-snappy
 #.endif
 
 .include <bsd.port.pre.mk>

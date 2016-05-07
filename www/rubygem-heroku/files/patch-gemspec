@@ -1,0 +1,11 @@
+--- heroku.gemspec.orig	2016-03-31 18:13:33 UTC
++++ heroku.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<heroku-api>.freeze, ["~> 0.3.17"])
+       s.add_runtime_dependency(%q<launchy>.freeze, [">= 0.3.2"])
+       s.add_runtime_dependency(%q<netrc>.freeze, ["~> 0.7.7"])
+-      s.add_runtime_dependency(%q<rest-client>.freeze, ["~> 1.6.1"])
++      s.add_runtime_dependency(%q<rest-client>.freeze, [">= 1.6.1"])
+       s.add_runtime_dependency(%q<rubyzip>.freeze, [">= 0"])
+     else
+       s.add_dependency(%q<heroku-api>.freeze, ["~> 0.3.17"])

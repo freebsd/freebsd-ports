@@ -1,4 +1,4 @@
---- share/logcfg.dat.orig	2013-11-20 07:45:58 UTC
+--- share/logcfg.dat.orig	2016-01-16 17:45:20 UTC
 +++ share/logcfg.dat
 @@ -27,8 +27,8 @@ RULES=cqww
  #                               #
@@ -9,5 +9,5 @@
 +#EDITOR=joe
 +EDITOR=vi
  #EDITOR=e3
- #EDITOR=MC
+ #EDITOR=mcedit
  #

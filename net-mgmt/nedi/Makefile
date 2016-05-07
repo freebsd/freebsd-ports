@@ -12,10 +12,12 @@ COMMENT=	Network discovery and monitoring tool
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		p5-Net-Telnet-Cisco>=0:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco \
-		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BROKEN_powerpc64=	Does not build
+
+RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
+		p5-Net-Telnet-Cisco>=0:net-mgmt/p5-Telnet-Cisco \
+		p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
+		p5-DBI>=0:databases/p5-DBI
 
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	*.pl html/inc/Devsend.pl

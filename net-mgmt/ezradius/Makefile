@@ -13,7 +13,9 @@ COMMENT=	EzRADIUS is FreeRADIUS and Chillispot web-based management software
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius2
+BROKEN_powerpc64=	Does not build
+
+RUN_DEPENDS=	radiusd:net/freeradius2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-intl
 NO_BUILD=	yes

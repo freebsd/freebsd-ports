@@ -10,7 +10,7 @@ COMMENT=	Driver for Sixaxis gamepad connected over Bluetooth
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libcuse4bsd.so:${PORTSDIR}/multimedia/cuse4bsd-kmod
+LIB_DEPENDS=	libcuse4bsd.so:multimedia/cuse4bsd-kmod
 
 USES=		uidfix
 

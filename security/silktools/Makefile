@@ -18,10 +18,10 @@ LICENSE_FILE_GPLR=	${WRKSRC}/doc/LICENSE.txt
 LICENSE_FILE_GPLv2=	${WRKSRC}/doc/GPL.txt
 LICENSE_PERMS_GPLR=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2 \
-		libfixbuf.so:${PORTSDIR}/net/libfixbuf
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
+		libfixbuf.so:net/libfixbuf
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools

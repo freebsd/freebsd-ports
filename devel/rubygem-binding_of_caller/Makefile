@@ -10,10 +10,9 @@ COMMENT=	Retrieve the binding of a methods caller
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-debug_inspector>=0.0.1:${PORTSDIR}/devel/rubygem-debug_inspector
+RUN_DEPENDS=	rubygem-debug_inspector>=0.0.1:devel/rubygem-debug_inspector
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

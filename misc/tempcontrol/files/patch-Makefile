@@ -1,6 +1,6 @@
---- Makefile.orig	2006-01-25 18:03:13.000000000 -0500
-+++ Makefile	2014-08-15 12:53:03.000000000 -0400
-@@ -39,7 +39,7 @@
+--- Makefile.orig	2006-01-25 23:03:13 UTC
++++ Makefile
+@@ -39,7 +39,7 @@ PRIVDIR	=	/usr/local/etc/tempcontrol
  
  # Where to install the startup script
  RCDIR	=	/usr/local/etc/rc.d
@@ -9,7 +9,7 @@
  
  LINK=gcc
  LFLAGS= -g
-@@ -88,7 +88,7 @@
+@@ -88,7 +88,7 @@ depend: parser.h .FORCE
  .FORCE:
  
  tempcontrol:	${OBJS}

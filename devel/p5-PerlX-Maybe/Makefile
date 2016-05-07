@@ -21,7 +21,7 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-XS_BUILD_DEPENDS=	p5-PerlX-Maybe-XS>=0:${PORTSDIR}/devel/p5-PerlX-Maybe-XS
-XS_RUN_DEPENDS=		p5-PerlX-Maybe-XS>=0:${PORTSDIR}/devel/p5-PerlX-Maybe-XS
+XS_BUILD_DEPENDS=	p5-PerlX-Maybe-XS>=0:devel/p5-PerlX-Maybe-XS
+XS_RUN_DEPENDS=		p5-PerlX-Maybe-XS>=0:devel/p5-PerlX-Maybe-XS
 
 .include <bsd.port.mk>

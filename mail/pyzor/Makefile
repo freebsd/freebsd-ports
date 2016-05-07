@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Collaborative, networked system to detect and block spam
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>=0:${PORTSDIR}/databases/py-gdbm
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>=0:databases/py-gdbm
 
 USES=		python tar:bzip2
 USE_PYTHON=	distutils autoplist

@@ -11,11 +11,10 @@ COMMENT=	Eases deployment of Jekyll or Octopress sites
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-colorator>=0:${PORTSDIR}/textproc/rubygem-colorator
+RUN_DEPENDS=	rubygem-colorator>=0:textproc/rubygem-colorator
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

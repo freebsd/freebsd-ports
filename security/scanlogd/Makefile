@@ -32,10 +32,8 @@ NIDS_DESC=	Use net/libnet for packet capture
 PCAP_BASE_ALL_TARGET=	libpcap
 
 NIDS_ALL_TARGET=	libnids
-NIDS_BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
-NIDS_LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
-NIDS_CFLAGS=		-I${LOCALBASE}/include/libnet11
-NIDS_LDFLAGS=		-L${LOCALBASE}/lib/libnet11
+NIDS_BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:net/libnids
+NIDS_LIB_DEPENDS=	libnet.so:net/libnet
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanlogd ${STAGEDIR}${PREFIX}/bin

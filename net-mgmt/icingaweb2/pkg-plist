@@ -146,7 +146,14 @@
 %%WWWDIR%%/application/views/scripts/user/list.phtml
 %%WWWDIR%%/application/views/scripts/user/show.phtml
 %%WWWDIR%%/bin/icingacli
-%%WWWDIR%%/doc/about.md
+%%WWWDIR%%/doc/01-About.md
+%%WWWDIR%%/doc/02-Installation.md
+%%WWWDIR%%/doc/03-Configuration.md
+%%WWWDIR%%/doc/04-Resources.md
+%%WWWDIR%%/doc/05-Authentication.md
+%%WWWDIR%%/doc/06-Security.md
+%%WWWDIR%%/doc/07-Preferences.md
+%%WWWDIR%%/doc/99-Vagrant.md
 %%WWWDIR%%/doc/accessibility/ifont-mute.html
 %%WWWDIR%%/doc/accessibility/ifont.html
 %%WWWDIR%%/doc/accessibility/link-labels.html
@@ -154,12 +161,7 @@
 %%WWWDIR%%/doc/accessibility/skip-content.html
 %%WWWDIR%%/doc/accessibility/svg.html
 %%WWWDIR%%/doc/accessibility/text-cue-for-required-form-control-labels.html
-%%WWWDIR%%/doc/authentication.md
-%%WWWDIR%%/doc/configuration.md
-%%WWWDIR%%/doc/external_authentication.md
-%%WWWDIR%%/doc/installation.md
 %%WWWDIR%%/doc/phpdoc.xml
-%%WWWDIR%%/doc/preferences.md
 %%WWWDIR%%/doc/res/GraphExample#1.png
 %%WWWDIR%%/doc/res/GraphExample#2.png
 %%WWWDIR%%/doc/res/GraphExample#3.png
@@ -170,9 +172,6 @@
 %%WWWDIR%%/doc/res/GraphExample#7.png
 %%WWWDIR%%/doc/res/GraphExample#8.png
 %%WWWDIR%%/doc/res/GraphExample#9.png
-%%WWWDIR%%/doc/resources.md
-%%WWWDIR%%/doc/security.md
-%%WWWDIR%%/doc/vagrant.md
 %%WWWDIR%%/etc/bash_completion.d/icingacli
 %%WWWDIR%%/etc/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
 %%WWWDIR%%/etc/schema/mysql.schema.sql
@@ -186,6 +185,7 @@
 %%WWWDIR%%/library/Icinga/Application/EmbeddedWeb.php
 %%WWWDIR%%/library/Icinga/Application/Hook.php
 %%WWWDIR%%/library/Icinga/Application/Hook/GrapherHook.php
+%%WWWDIR%%/library/Icinga/Application/Hook/Ticket/TicketPattern.php
 %%WWWDIR%%/library/Icinga/Application/Hook/TicketHook.php
 %%WWWDIR%%/library/Icinga/Application/Hook/WebBaseHook.php
 %%WWWDIR%%/library/Icinga/Application/Icinga.php
@@ -210,6 +210,7 @@
 %%WWWDIR%%/library/Icinga/Authentication/Auth.php
 %%WWWDIR%%/library/Icinga/Authentication/AuthChain.php
 %%WWWDIR%%/library/Icinga/Authentication/Authenticatable.php
+%%WWWDIR%%/library/Icinga/Authentication/Role.php
 %%WWWDIR%%/library/Icinga/Authentication/User/DbUserBackend.php
 %%WWWDIR%%/library/Icinga/Authentication/User/ExternalBackend.php
 %%WWWDIR%%/library/Icinga/Authentication/User/LdapUserBackend.php
@@ -374,6 +375,7 @@
 %%WWWDIR%%/library/Icinga/Util/EnumeratingFilterIterator.php
 %%WWWDIR%%/library/Icinga/Util/File.php
 %%WWWDIR%%/library/Icinga/Util/Format.php
+%%WWWDIR%%/library/Icinga/Util/GlobFilter.php
 %%WWWDIR%%/library/Icinga/Util/String.php
 %%WWWDIR%%/library/Icinga/Util/StringHelper.php
 %%WWWDIR%%/library/Icinga/Util/TimezoneDetect.php
@@ -2675,6 +2677,7 @@
 %%WWWDIR%%/modules/monitoring/configuration.php
 %%WWWDIR%%/modules/monitoring/doc/commandtransports.md
 %%WWWDIR%%/modules/monitoring/doc/configuration.md
+%%WWWDIR%%/modules/monitoring/doc/restrict-custom-variables.md
 %%WWWDIR%%/modules/monitoring/doc/security.md
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/IdoBackend.php

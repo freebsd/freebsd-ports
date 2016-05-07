@@ -13,10 +13,10 @@ COMMENT=	Optimized type checks for Moo + Type::Tiny
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moo>=1.004003:${PORTSDIR}/devel/p5-Moo \
-		p5-Type-Tiny>=1.000002:${PORTSDIR}/devel/p5-Type-Tiny
+BUILD_DEPENDS=	p5-Moo>=1.004003:devel/p5-Moo \
+		p5-Type-Tiny>=1.000002:devel/p5-Type-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
 USE_PERL5=	configure

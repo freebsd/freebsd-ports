@@ -14,7 +14,7 @@ COMMENT=	One-Time Password System (OTP) alternative to OPIE or S/Key
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	libapr-1.so:devel/apr1
 
 USES=		iconv scons tar:bzip2
 MAKE_ARGS=	DEBUG=False --install-sandbox=${STAGEDIR}

@@ -13,7 +13,7 @@ COMMENT=	RPC protocol for Twisted Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0.13:${PORTSDIR}/security/py-openssl
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0.13:security/py-openssl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python twisted

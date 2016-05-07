@@ -1,0 +1,11 @@
+--- github-linguist.gemspec.orig	2016-03-28 14:07:51.510285000 +0000
++++ github-linguist.gemspec	2016-03-28 14:19:53.732645000 +0000
+@@ -22,7 +22,7 @@
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<charlock_holmes>.freeze, ["~> 0.7.3"])
+-      s.add_runtime_dependency(%q<escape_utils>.freeze, ["~> 1.1.0"])
++      s.add_runtime_dependency(%q<escape_utils>.freeze, [">= 1.1.0"])
+       s.add_runtime_dependency(%q<mime-types>.freeze, [">= 1.19"])
+       s.add_runtime_dependency(%q<rugged>.freeze, [">= 0.23.0b"])
+       s.add_development_dependency(%q<minitest>.freeze, [">= 5.0"])

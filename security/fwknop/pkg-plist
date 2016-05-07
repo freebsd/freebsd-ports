@@ -1,11 +1,11 @@
 bin/fwknop
-%%ETCDIR%%/access.conf
-%%ETCDIR%%/fwknopd.conf
+@sample %%ETCDIR%%/access.conf.sample
+@sample %%ETCDIR%%/fwknopd.conf.sample
 include/fko.h
 lib/libfko.a
 lib/libfko.so
 lib/libfko.so.2
-lib/libfko.so.2.0.3
+lib/libfko.so.2.0.4
 man/man8/fwknop.8.gz
 man/man8/fwknopd.8.gz
 sbin/fwknopd

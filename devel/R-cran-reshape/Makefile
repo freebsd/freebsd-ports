@@ -12,7 +12,7 @@ COMMENT=	R package for flexibly restructuring and aggregating data
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-plyr>0:${PORTSDIR}/devel/R-cran-plyr
+RUN_DEPENDS=	R-cran-plyr>0:devel/R-cran-plyr
 
 USES=	cran:auto-plist
 

@@ -12,9 +12,9 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpaper.so:${PORTSDIR}/print/libpaper
-RUN_DEPENDS=	tex-dvipsk>=5.995:${PORTSDIR}/print/tex-dvipsk
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpaper.so:print/libpaper
+RUN_DEPENDS=	tex-dvipsk>=5.995:print/tex-dvipsk
 
 USES=		iconv motif
 USE_TEX=	web2c kpathsea texmf texhash

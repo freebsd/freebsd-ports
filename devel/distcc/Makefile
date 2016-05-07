@@ -14,7 +14,7 @@ COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 GNU_CONFIGURE=	yes
 USES=		alias gmake tar:bzip2
@@ -56,7 +56,7 @@ GTK_DESC=	Monitor based on GTK
 LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
 
 AVAHI_CONFIGURE_WITH=	avahi
-AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 DOCS_PLIST_FILES=	${README_FILES:S|^|${DOCSDIR_REL}/|}
 DOCS_PLIST_FILES+=	${DOC_FILES:S|^|${DOCSDIR_REL}/|}
 GNOME_CONFIGURE_WITH=	gnome

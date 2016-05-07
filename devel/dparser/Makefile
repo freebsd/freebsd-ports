@@ -29,7 +29,7 @@ PLIST_FILES=	bin/make_dparser include/dparse.h include/dparse_tables.h \
 OPTIONS_DEFINE=	BOEHM DOCS
 BOEHM_DESC=	Boehm garbage collector support
 
-BOEHM_LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
+BOEHM_LIB_DEPENDS=	libgc.so:devel/boehm-gc
 BOEHM_MAKE_ARGS=	D_USE_GC=1 \
 			GC_CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 BOEHM_VARS=		LIBDPARSE=libdparse_gc.a

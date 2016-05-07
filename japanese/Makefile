@@ -161,6 +161,9 @@
     SUBDIR += man-doc
     SUBDIR += mecab
     SUBDIR += mecab-ipadic
+    SUBDIR += mecab-ipadic-eucjp
+    SUBDIR += mecab-ipadic-sjis
+    SUBDIR += mecab-ipadic-utf8
     SUBDIR += mg
     SUBDIR += mh
     SUBDIR += migemo

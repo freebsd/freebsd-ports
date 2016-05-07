@@ -12,11 +12,10 @@ COMMENT=	Liquid tag for displaying GitHub Gists in Jekyll sites
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-octokit>=4.2:${PORTSDIR}/net/rubygem-octokit
+RUN_DEPENDS=	rubygem-octokit>=4.2:net/rubygem-octokit
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

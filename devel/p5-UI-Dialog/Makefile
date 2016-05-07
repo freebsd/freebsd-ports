@@ -16,7 +16,7 @@ COMMENT=	Perl wrapper for the various dialog applications
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
+RUN_DEPENDS=	cdialog:devel/cdialog
 
 OPTIONS_DEFINE=	KDE NEWT X11 ZENITY
 
@@ -24,10 +24,10 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-KDE_RUN_DEPENDS=	kdialog:${PORTSDIR}/x11/kde4-baseapps
-NEWT_RUN_DEPENDS=	whiptail:${PORTSDIR}/devel/newt
-X11_RUN_DEPENDS=	Xdialog:${PORTSDIR}/x11/xdialog
-ZENITY_RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
+KDE_RUN_DEPENDS=	kdialog:x11/kde4-baseapps
+NEWT_RUN_DEPENDS=	whiptail:devel/newt
+X11_RUN_DEPENDS=	Xdialog:x11/xdialog
+ZENITY_RUN_DEPENDS=	zenity:x11/zenity
 
 post-patch:
 	@${REINPLACE_CMD} -e "/self->{'_opts'}->{'bin'}/ s|dialog|c&|" ${WRKSRC}/lib/UI/Dialog/Backend/CDialog.pm

@@ -9,8 +9,8 @@ COMMENT=	Searching BGP update files
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libbgpdump.so:${PORTSDIR}/net/libbgpdump \
-		libsilk.so:${PORTSDIR}/security/silktools
+LIB_DEPENDS=	libbgpdump.so:net/libbgpdump \
+		libsilk.so:security/silktools
 
 USES=		autoreconf libtool
 USE_GITHUB=	yes

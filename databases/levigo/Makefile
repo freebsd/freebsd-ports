@@ -9,12 +9,12 @@ COMMENT=	Levigo is a Go wrapper for LevelDB
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
-LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
+BUILD_DEPENDS=	go:lang/go
+LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		compiler
+USES=		compiler go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jmhodges
@@ -35,5 +35,4 @@ CONFIGURE_ENV+=	CC=${CC} \
 		CXX=${CXX}
 GO_ENV+=	${CONFIGURE_ENV}
 
-.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
 .include <bsd.port.post.mk>

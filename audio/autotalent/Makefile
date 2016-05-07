@@ -13,7 +13,7 @@ COMMENT=	Real-time pitch correction plugin for LADSPA
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake

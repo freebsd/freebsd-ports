@@ -2,26 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	bspwm
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.9.1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiling window manager based on binary space partitioning
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm
-RUN_DEPENDS=	sxhkd:${PORTSDIR}/x11/sxhkd
+LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
+RUN_DEPENDS=	sxhkd:x11/sxhkd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville
 
-USES=		gmake shebangfix
-SHEBANG_FILES=	contrib/freedesktop/bspwm-session
+USES=		gmake pkgconfig
 
-MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
+SUB_FILES=	pkg-message
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

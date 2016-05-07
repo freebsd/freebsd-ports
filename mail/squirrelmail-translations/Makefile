@@ -13,7 +13,7 @@ COMMENT=	NLS translations for Squirrelmail (mail/squirrelmail)
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	squirrelmail>=${PORTVERSION}:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=	squirrelmail>=${PORTVERSION}:mail/squirrelmail
 
 USES=		tar:bzip2 gettext
 WRKSRC=		${WRKDIR}/squirrelmail.locales

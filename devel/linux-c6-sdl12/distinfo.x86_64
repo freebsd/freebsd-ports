@@ -1,4 +1,6 @@
 SHA256 (rpm/x86_64/centos/6.7/SDL-1.2.14-7.el6_7.1.x86_64.rpm) = e301e7796fcaedb645c05f9b0001604ad6c86e7f7f0214b5d21532600b993903
 SIZE (rpm/x86_64/centos/6.7/SDL-1.2.14-7.el6_7.1.x86_64.rpm) = 197912
+SHA256 (rpm/x86_64/centos/6.7/SDL-1.2.14-7.el6_7.1.i686.rpm) = 67514b67fd85c7c4deb3057ff008ec27030423dde646d5637eec05665eb43020
+SIZE (rpm/x86_64/centos/6.7/SDL-1.2.14-7.el6_7.1.i686.rpm) = 204896
 SHA256 (rpm/x86_64/centos/6.7/SDL-1.2.14-7.el6_7.1.src.rpm) = 05657c78fce9583a1fd5f43389094e3ef6263627df9a6930d8333978cb6ae775
 SIZE (rpm/x86_64/centos/6.7/SDL-1.2.14-7.el6_7.1.src.rpm) = 3661408

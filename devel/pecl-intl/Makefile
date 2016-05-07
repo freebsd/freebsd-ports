@@ -14,7 +14,7 @@ COMMENT=	PECL extension to support Internationalization(ICU)
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

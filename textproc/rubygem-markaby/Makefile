@@ -12,11 +12,10 @@ COMMENT=	HTML Markup as Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32
+RUN_DEPENDS=	rubygem-builder32>=0:devel/rubygem-builder32
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

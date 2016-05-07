@@ -12,11 +12,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	nistor@snickers.org
 COMMENT=	DBIx::Abstract - DBI SQL abstraction
 
-BUILD_DEPENDS=	p5-Check-ISA>=0:${PORTSDIR}/devel/p5-Check-ISA \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	p5-Check-ISA>=0:${PORTSDIR}/devel/p5-Check-ISA \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
-TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+BUILD_DEPENDS=	p5-Check-ISA>=0:devel/p5-Check-ISA \
+		p5-DBI>=0:databases/p5-DBI
+RUN_DEPENDS=	p5-Check-ISA>=0:devel/p5-Check-ISA \
+		p5-DBI>=0:databases/p5-DBI
+TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
 USES=		perl5
 USE_PERL5=	configure

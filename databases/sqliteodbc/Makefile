@@ -13,7 +13,7 @@ LICENSE_NAME=	sqliteodbc own licensing terms (BSD style)
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-sqlite4
@@ -27,11 +27,11 @@ OPTIONS_MULTI_SQLITEVER=	SQLITE SQLITE3
 OPTIONS_DEFAULT=	SQLITE3
 
 OPTIONS_SUB=	yes
-SQLITE_LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
+SQLITE_LIB_DEPENDS=	libsqlite.so:databases/sqlite2
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 SQLITE_CONFIGURE_OFF=	--with-sqlite=/tmp
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-			libxml2.so:${PORTSDIR}/textproc/libxml2
+SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
+			libxml2.so:textproc/libxml2
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
 SQLITE3_CONFIGURE_OFF=	--with-sqlite3=/tmp
 

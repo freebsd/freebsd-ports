@@ -3,6 +3,7 @@
 
 PORTNAME=	graphite-web
 PORTVERSION=	0.9.15
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,17 +12,19 @@ COMMENT=	Enterprise scalable realtime graphing platform
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:${PORTSDIR}/graphics/py-cairo \
-		${PYTHON_PKGNAMEPREFIX}carbon>=${PORTVERSION}:${PORTSDIR}/databases/py-carbon \
-		${PYTHON_PKGNAMEPREFIX}django18>=1.4:${PORTSDIR}/www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}django-tagging>=0.3.1:${PORTSDIR}/www/py-django-tagging \
-		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
-		xorg-fonts-truetype>=0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:graphics/py-cairo \
+		${PYTHON_PKGNAMEPREFIX}carbon>=${PORTVERSION}:databases/py-carbon \
+		${PYTHON_PKGNAMEPREFIX}django18>=1.4:www/py-django18 \
+		${PYTHON_PKGNAMEPREFIX}django-tagging>=0.3.1:www/py-django-tagging \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
+		xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype
 
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
-USES=		python:2
+USES=		cpe python:2
 USE_GITHUB=	yes
 GH_ACCOUNT=	graphite-project
+CPE_VENDOR=	graphite_project
+CPE_PRODUCT=	graphite
 USE_PYTHON=	distutils
 SUB_FILES=	pkg-message
 SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} WWWOWN=${WWWOWN} \
@@ -33,6 +36,7 @@ post-patch:
 	@${RM} ${WRKSRC}/bin/run-graphite-devel-server.py
 	@${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' \
 		-e 's|%%DATADIR%%|${DATADIR}|' \
+		-e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|' \
 		${WRKSRC}/bin/build-index.sh \
 		${WRKSRC}/conf/graphite.wsgi.example \
 		${WRKSRC}/setup.cfg \

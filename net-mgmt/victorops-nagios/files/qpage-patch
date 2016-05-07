@@ -1,38 +1,27 @@
---- opt/victorops/nagios_plugin/bin/send_email_alert.orig	2014-06-11 10:39:13.918151547 -0500
-+++ opt/victorops/nagios_plugin/bin/send_email_alert	2014-06-11 11:20:43.930977406 -0500
-@@ -31,6 +31,7 @@
+--- opt/victorops/nagios_plugin/bin/send_email_alert.orig	2016-01-16 21:20:46 UTC
++++ opt/victorops/nagios_plugin/bin/send_email_alert
+@@ -34,6 +34,7 @@ fi
  # Build the contact email list
  ORG_SLUG="$(getVal _CONTACTVO_ORGANIZATION_ID unkonwn_org)"
  CONTACTEMAIL="$(getVal _CONTACTVO_CONTACTEMAIL)"
 +CONTACTPAGER="$(getVal CONTACTPAGER)"
  VO_CONTACT="failsafe+$ORG_SLUG@victorops.net"
- WGET_LOG=/tmp/victorops_forward_wget.out
- STDERR_LOG=/tmp/victorops_forward_wget.err
-@@ -42,10 +43,16 @@
+ WGET_LOG=$LOG_DIR/victorops_forward_wget.out
+ STDERR_LOG=$LOG_DIR/victorops_forward_wget.err
+@@ -45,10 +46,16 @@ if (( $IS_SERVICE )); then
      if [ "$CONTACTEMAIL" != "" ]; then
-         $PRINTF "%b" "***** Alert *****\n\nNotification Type: $(getVal NOTIFICATIONTYPE)\n\nService: $(getVal SERVICEDESC)\nHost: $(getVal HOSTALIAS)\nAddress: $(getVal HOSTADDRESS)\nState: $(getVal SERVICESTATE)\n\nDate/Time: $(getVal LONGDATETIME)\n\nAdditional Info:\n\n$(getVal SERVICEOUTPUT)\n\n" | $MAIL -s "** $(getVal NOTIFICATIONTYPE) Service Alert: $(getVal HOSTALIAS)/$(getVal SERVICEDESC) is $(getVal SERVICESTATE) **" $CONTACTEMAIL
+         printf "%b" "***** Alert *****\n\nNotification Type: $(getVal NOTIFICATIONTYPE)\n\nService: $(getVal SERVICEDESC)\nHost: $(getVal HOSTALIAS)\nAddress: $(getVal HOSTADDRESS)\nState: $(getVal SERVICESTATE)\n\nDate/Time: $(getVal LONGDATETIME)\n\nAdditional Info:\n\n$(getVal SERVICEOUTPUT)\n\n" | mail -s "** $(getVal NOTIFICATIONTYPE) Service Alert: $(getVal HOSTALIAS)/$(getVal SERVICEDESC) is $(getVal SERVICESTATE) **" $CONTACTEMAIL
      fi
 +    if [ "$CONTACTPAGER" != "" ]; then
-+        $PRINTF "%b" "$(getVal SERVICEDESC) $(getVal NOTIFICATIONTYPE) for $(getVal HOSTNAME) is $(getVal SERVICESTATE) at $(getVal TIME) $(getVal SERVICEOUTPUT)" | $QPAGE -f icinga $CONTACTPAGER
++        printf "%b" "$(getVal SERVICEDESC) $(getVal NOTIFICATIONTYPE) for $(getVal HOSTNAME) is $(getVal SERVICESTATE) at $(getVal TIME) $(getVal SERVICEOUTPUT)" | qpage -f icinga $CONTACTPAGER
 +    fi
  else
      if [ "$CONTACTEMAIL" != "" ]; then
-         $PRINTF "%b" "***** Alert *****\n\nNotification Type: $(getVal NOTIFICATIONTYPE)\nHost: $(getVal HOSTNAME)\nState: $(getVal HOSTSTATE)\nAddress: $(getVal HOSTADDRESS)\nInfo: $(getVal HOSTOUTPUT)\n\nDate/Time: $(getVal LONGDATETIME)\n" | $MAIL -s "** $(getVal NOTIFICATIONTYPE) Host Alert: $(getVal HOSTNAME) is $(getVal HOSTSTATE) **" $CONTACTEMAIL
+         printf "%b" "***** Alert *****\n\nNotification Type: $(getVal NOTIFICATIONTYPE)\nHost: $(getVal HOSTNAME)\nState: $(getVal HOSTSTATE)\nAddress: $(getVal HOSTADDRESS)\nInfo: $(getVal HOSTOUTPUT)\n\nDate/Time: $(getVal LONGDATETIME)\n" | mail -s "** $(getVal NOTIFICATIONTYPE) Host Alert: $(getVal HOSTNAME) is $(getVal HOSTSTATE) **" $CONTACTEMAIL
      fi
 +    if [ "$CONTACTPAGER" != "" ]; then
-+        $PRINTF "%b" "$(getVal HOSTNAME) is $(getVal HOSTSTATE) at $(getVal TIME) -- $(getVal HOSTOUTPUT)" | $QPAGE -f icinga $CONTACTPAGER
++        printf "%b" "$(getVal HOSTNAME) is $(getVal HOSTSTATE) at $(getVal TIME) -- $(getVal HOSTOUTPUT)" | qpage -f icinga $CONTACTPAGER
 +    fi
  fi
  # ***
  # *** Make sure the mail command is the last thing in this file so the including file can check the exit code
---- opt/victorops/nagios_plugin/bin/utils.orig   2014-06-16 20:12:16.713013963 -0500
-+++ opt/victorops/nagios_plugin/bin/utils        2014-06-16 20:12:58.533005832 -0500
-@@ -110,6 +110,7 @@
- MV=$(findApp mv)
- PRINTF=$(findApp printf)
- PS=$(findApp ps)
-+QPAGE=$(findApp qpage)
- SED=$(findApp sed)
- SLEEP=$(findApp sleep)
- TAR=$(findApp tar)
-

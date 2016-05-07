@@ -28,7 +28,7 @@ LICENSE=	GPLv2
 # There exists a "logical" RUN_DEPENDS towards french/aster and french/eficas
 # for the server part, but it is not set to avoid circular dependences.
 
-RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
+RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}
 
 .if !defined(CLIENT_SEUL)
 USES+=		gettext python tk:build
@@ -73,18 +73,18 @@ WITH_PBS=	yes
 WITH_MPI=	yes
 . endif
 . if defined(WITH_MPI)
-RUN_DEPENDS+=	${HOME_MPI}/bin/mpirun:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${HOME_MPI}/bin/mpirun:net/mpich2
 HOME_MPI=	${LOCALBASE}
 PLIST_SUB+=	MPI=""
 . else
 PLIST_SUB+=	MPI="@comment "
 . endif
 . if defined(WITH_PBS)
-RUN_DEPENDS+=	qsub:${PORTSDIR}/sysutils/torque
+RUN_DEPENDS+=	qsub:sysutils/torque
 . endif
 .else
-RUN_DEPENDS+=	xterm:${PORTSDIR}/x11/xterm						\
-		${LOCALBASE}/lib/${TKPNG}/pkgIndex.tcl:${PORTSDIR}/graphics/tkpng
+RUN_DEPENDS+=	xterm:x11/xterm						\
+		${LOCALBASE}/lib/${TKPNG}/pkgIndex.tcl:graphics/tkpng
 TKPNG_VER=	0.9
 TKPNG=		tkpng${TKPNG_VER}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_CLIENT
@@ -125,25 +125,25 @@ BASH2RC=	asrun/calcul.py share/codeaster/asrun/data/mpirun_template
 .if !defined(WITH_ED)
 . if exists(${LOCALBASE}/bin/nedit)
 WITH_ED=	nedit
-RUN_DEPENDS+=	${LOCALBASE}/bin/nedit:${PORTSDIR}/editors/nedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/nedit:editors/nedit
 . elif exists(${LOCALBASE}/bin/gvim)
 WITH_ED=	gvim
-RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
+RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:editors/vim
 . elif exists(${LOCALBASE}/bin/emacs)
 WITH_ED=	emacs
-RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:${PORTSDIR}/editors/emacs
+RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:editors/emacs
 . elif exists(${LOCALBASE}/bin/xemacs)
 WITH_ED=	xemacs
-RUN_DEPENDS+=	${LOCALBASE}/bin/xemacs:${PORTSDIR}/editors/xemacs
+RUN_DEPENDS+=	${LOCALBASE}/bin/xemacs:editors/xemacs
 . elif exists(${LOCALBASE}/bin/gedit)
 WITH_ED=	gedit
-RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:${PORTSDIR}/editors/gedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:editors/gedit
 . elif exists(${LOCALBASE}/bin/kwrite)
 WITH_ED=	kwrite
-RUN_DEPENDS+=	${LOCALBASE}/bin/kwrite:${PORTSDIR}/editors/kate
+RUN_DEPENDS+=	${LOCALBASE}/bin/kwrite:editors/kate
 . elif exists(${LOCALBASE}/bin/xedit)
 WITH_ED=	xedit
-RUN_DEPENDS+=	${LOCALBASE}/bin/xedit:${PORTSDIR}/x11/xedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/xedit:x11/xedit
 . else
 WITH_ED=	vi
 . endif

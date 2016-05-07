@@ -12,7 +12,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	SGML DTDs from the The Electronic Publishing Special Interest Group
 
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
 
 DIST_SUBDIR=	iso12083
 

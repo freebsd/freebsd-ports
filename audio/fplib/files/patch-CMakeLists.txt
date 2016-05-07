@@ -1,0 +1,15 @@
+Link against an actual target name, not the generated library name.
+
+If we link against the latter, there is no dependency between lastfm-fpclient
+and fplib, which can break parallel builds starting with CMake 3.5.0.
+--- CMakeLists.txt.orig	2016-03-16 09:53:03 UTC
++++ CMakeLists.txt
+@@ -139,7 +139,7 @@ ADD_EXECUTABLE(lastfm-fpclient
+ 
+ # Link the executable
+ TARGET_LINK_LIBRARIES(lastfm-fpclient
+-   fplib
++   fplib_shared
+    fftw3f
+    mad
+    tag

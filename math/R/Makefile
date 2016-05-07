@@ -3,6 +3,7 @@
 
 PORTNAME?=	R
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		ftp://cran.r-project.org/pub/R/%SUBDIR%/ \
@@ -26,8 +27,8 @@ COMMENT?=	Language for statistical computing and graphics
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed \
-			texi2dvi:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS=		${LOCALBASE}/bin/gsed:textproc/gsed \
+			texi2dvi:print/texinfo
 
 CONFIGURE_ENV=		LIBR_LDFLAGS="${LDFLAGS}" OBJC="${CC}" \
 			SED="${LOCALBASE}/bin/gsed" \
@@ -64,7 +65,7 @@ PCRE_PORT_DESC=		Use devel/pcre instead of the bundled PCRE
 
 OPTIONS_DEFAULT+=	ICU PCRE_PORT THREADS
 .if !defined(LIBR_SLAVEPORT)
-RUN_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
+RUN_DEPENDS+=		${LOCALBASE}/bin/gsed:textproc/gsed
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
 #now only used to build the R.1 manpage:
 USES+=			perl5
@@ -131,7 +132,7 @@ LDFLAGS+=	-fno-builtin-${_f}
 .for _f in acos asin atan cos cosh exp log pow sin sinh tan tanh
 CONFIGURE_ENV+=		ac_cv_have_decl_c${_f}=yes
 .endfor
-LIB_DEPENDS+=		libmissing.so:${PORTSDIR}/math/libmissing
+LIB_DEPENDS+=		libmissing.so:math/libmissing
 LIBM=			-L${LOCALBASE}/lib -lmissing -lm
 LIBMH=			"missing_math.h"
 .if defined(LIBRMATH_SLAVEPORT)
@@ -144,7 +145,7 @@ LIBMH=			<quadmath.h>
 
 .if !defined(LIBRMATH_SLAVEPORT)
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=		libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=		libatlas.so:math/atlas
 BLAS?=			${LIBM} -lf77blas
 LAPACK?=		${LIBM} -lalapack -lcblas
 .else
@@ -159,7 +160,7 @@ PLIST_SUB+=		LAPACK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MICU}
-LIB_DEPENDS+=		libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		libicui18n.so:devel/icu
 CONFIGURE_ARGS+=	--with-ICU
 .else
 CONFIGURE_ARGS+=	--without-ICU
@@ -174,7 +175,7 @@ PLIST_SUB+=		NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE_PORT}
-LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:devel/pcre
 CONFIGURE_ARGS+=	--with-system-pcre
 .else
 CONFIGURE_ARGS+=	--without-system-pcre
@@ -225,7 +226,7 @@ PLIST_SUB+=		PANGOCAIRO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		libpng.so:graphics/png
 CONFIGURE_ARGS+=	--with-libpng
 .else
 CONFIGURE_ARGS+=	--without-libpng
@@ -243,7 +244,7 @@ PLIST_SUB+=		TCLTK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=		libtiff.so:graphics/tiff
 CONFIGURE_ARGS+=	--with-libtiff
 .else
 CONFIGURE_ARGS+=	--without-libtiff
@@ -267,7 +268,7 @@ INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 
 .if ${PORT_OPTIONS:MPDF_MANUALS} && ${PORT_OPTIONS:MDOCS}
 USE_TEX=		texlive dvipsk kpathsea pdftex
-#BUILD_DEPENDS +=	texi2dvi:${PORTSDIR}/print/texinfo
+#BUILD_DEPENDS +=	texi2dvi:print/texinfo
 ALL_TARGET+=		pdf
 CONFIGURE_ENV +=	INSTALL_INFO="${LOCALBASE}/bin/install-info" \
 			MAKEINFO="${LOCALBASE}/bin/makeinfo"

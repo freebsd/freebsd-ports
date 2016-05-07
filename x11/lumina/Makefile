@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	0.8.8
+PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-Release-p2
-PORTREVISION=	2
+DISTVERSIONSUFFIX=	-Release-p1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -14,14 +14,15 @@ COMMENT=	Lumina Desktop Environment
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
-		fluxbox>=0:${PORTSDIR}/x11-wm/fluxbox \
-		fluxbox-tenr-styles-pack>=0:${PORTSDIR}/x11-themes/fluxbox-tenr-styles-pack \
-		kde4-icons-oxygen>=0:${PORTSDIR}/x11-themes/kde4-icons-oxygen \
-		xscreensaver:${PORTSDIR}/x11/xscreensaver \
-		xscreensaver-demo:${PORTSDIR}/x11/xscreensaver \
-		xbrightness:${PORTSDIR}/x11/xbrightness \
-		numlockx:${PORTSDIR}/x11/numlockx
+RUN_DEPENDS=	xorg>=0:x11/xorg \
+		fluxbox>=0:x11-wm/fluxbox \
+		fluxbox-tenr-styles-pack>=0:x11-themes/fluxbox-tenr-styles-pack \
+		kde4-icons-oxygen>=0:x11-themes/kde4-icons-oxygen \
+		xscreensaver:x11/xscreensaver \
+		xscreensaver-demo:x11/xscreensaver \
+		xbrightness:x11/xbrightness \
+		xcompmgr:x11-wm/xcompmgr \
+		numlockx:x11/numlockx
 
 CONFLICTS=      lumina-devel-0*
 
@@ -33,7 +34,7 @@ PCBSD_DESC=	Use the PC-BSD system interface settings.
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMULTIMEDIA}
-RUN_DEPENDS+=	gstreamer1-plugins-core>=0:${PORTSDIR}/multimedia/gstreamer1-plugins-core
+RUN_DEPENDS+=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
 .endif
 
 MAKE_JOBS_UNSAFE=yes

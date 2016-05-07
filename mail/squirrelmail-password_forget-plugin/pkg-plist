@@ -1,6 +1,9 @@
 @unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
-%%SQUIRRELDIR%%/plugins/password_forget/COPYING
-%%SQUIRRELDIR%%/plugins/password_forget/INSTALL
+%%SQUIRRELDIR%%/plugins/password_forget/docs/COPYING
+%%SQUIRRELDIR%%/plugins/password_forget/docs/README
+%%SQUIRRELDIR%%/plugins/password_forget/docs/INSTALL
+%%SQUIRRELDIR%%/plugins/password_forget/docs/.htaccess
+%%SQUIRRELDIR%%/plugins/password_forget/docs/index.php
 %%SQUIRRELDIR%%/plugins/password_forget/README
 %%SQUIRRELDIR%%/plugins/password_forget/config_default.php
 %%SQUIRRELDIR%%/plugins/password_forget/config_example.php

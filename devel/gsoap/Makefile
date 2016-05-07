@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsoap
-PORTVERSION=	2.8.27
+PORTVERSION=	2.8.30
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2/gSOAP
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,24 +15,26 @@ LICENSE=	GPLv2
 CONFIGURE_ENV=	LEX=flex YACC=yacc
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-USES=		pathfix zip
+USES=		autoreconf pathfix zip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-	   		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-			libgpg-error.so:${PORTSDIR}/security/libgpg-error
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+			libgcrypt.so:security/libgcrypt \
+			libgpg-error.so:security/libgpg-error
 GNUTLS_CONFIGURE_ON=	--enable-gnutls
 GNUTLS_LDFLAGS=		-L${LOCALBASE}/lib
 OPENSSL_CONFIGURE_ENABLE=	ssl
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| sys/timeb.h | |' \
+	@${REINPLACE_CMD} -e 's|sys/timeb.h | |' \
 	    -e 's|-DSOAPCPP_IMPORT_PATH=|-DSOAPCPP2_IMPORT_PATH=|' \
 	    -e 's|-DWSDL_IMPORT_PATH=|-DWSDL2H_IMPORT_PATH=|' \
-	    ${WRKSRC}/${CONFIGURE_SCRIPT}
+	    ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e 's|$$(libdir)|$$(libdir)data|' \
+	    ${WRKSRC}/Makefile.am
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gsoap

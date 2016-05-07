@@ -14,7 +14,7 @@ COMMENT=	Session and Caching library with WSGI Middleware
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}funcsigs>0:${PORTSDIR}/devel/py-funcsigs
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}funcsigs>0:devel/py-funcsigs
 
 USES=		python
 USE_PYTHON=	distutils autoplist

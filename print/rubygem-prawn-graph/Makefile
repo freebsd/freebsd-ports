@@ -12,12 +12,11 @@ COMMENT=	Draw basic graphs and charts natively in your PDFs
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	rubygem-prawn>=0:${PORTSDIR}/print/rubygem-prawn
+RUN_DEPENDS=	rubygem-prawn>=0:print/rubygem-prawn
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

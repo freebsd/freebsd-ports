@@ -1,6 +1,9 @@
 man/man3/RT::Extension::MandatoryOnTransition.3.gz
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Elements/EditCustomFields/BeforeCustomFields
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Create.html/BeforeCreate
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Elements/EditCustomFields/MassageCustomFields
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Modify.html/Default
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/ModifyAll.html/Default
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Update.html/AfterWorked
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Update.html/BeforeUpdate
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket/create/BeforeCreate
@@ -9,3 +12,5 @@ share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition.pm
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition/Test.pm
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition/Test.pm.in
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/po/fr.po
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/po/mandatoryontransition.pot

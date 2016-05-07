@@ -13,7 +13,9 @@ COMMENT=	Python module for the libnet packet construction library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		python
 USE_PYTHON=	distutils pythonprefix
@@ -27,6 +29,9 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
 OSVER=		uname -r
+
+post-patch:
+	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.py
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

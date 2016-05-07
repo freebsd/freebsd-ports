@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	IP Subnet Calculator
 
-BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${PORTSDIR}/sysutils/prips:build
+BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:sysutils/prips:build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

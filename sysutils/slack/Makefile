@@ -11,7 +11,7 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	satwell@disjoint.net
 COMMENT=	Configuration management system designed to appeal to lazy admins
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	rsync:net/rsync
 
 USES=		perl5 gmake
 NO_ARCH=	yes

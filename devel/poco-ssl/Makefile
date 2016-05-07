@@ -31,13 +31,13 @@ SAMPLES_DESC=	Build sample programs
 TEST_CONFIGURE_OFF=	--no-tests
 SAMPLES_CONFIGURE_OFF=	--no-samples
 
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/libiodbc
+ODBC_LIB_DEPENDS=	libodbc.so:databases/libiodbc
 ODBC_CONFIGURE_OFF=	--omit=Data/ODBC
 
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_OFF=	--omit=Data/MySQL
 
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_OFF=	--omit=Data/SQLite
 
 .include <bsd.port.options.mk>

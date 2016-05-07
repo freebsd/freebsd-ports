@@ -12,7 +12,7 @@ COMMENT=	Tool for hinting and manipulating the metadata of FLV files
 
 BROKEN=		unfetchable
 
-LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 CFLAGS+=	-I${LOCALBASE}/include/boost
 NO_WRKSUBDIR=	yes

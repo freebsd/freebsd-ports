@@ -12,7 +12,7 @@ DISTNAME=	tokyocabinet-perl-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for TokyoCabinet
 
-LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 USES=		perl5
 USE_PERL5=	configure

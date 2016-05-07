@@ -12,12 +12,12 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to run Squatting app on PSGI
 
 RUN_DEPENDS=	\
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
-	p5-Squatting>=0.81:${PORTSDIR}/www/p5-Squatting
+	p5-Plack>0:www/p5-Plack \
+	p5-Squatting>=0.81:www/p5-Squatting
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
-	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
-	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
+	p5-Test-Requires>0:devel/p5-Test-Requires \
+	p5-Test-TCP>0:devel/p5-Test-TCP
 
 USES=		perl5
 USE_PERL5=	configure

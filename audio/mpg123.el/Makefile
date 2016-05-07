@@ -13,7 +13,7 @@ DISTFILES=	mpg123el.cgi?${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end to mpg123/ogg123 audio player for Emacsen
 
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+RUN_DEPENDS=	mpg123:audio/mpg123
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${PORTNAME}-${PORTVERSION}
 NO_WRKSUBDIR=	yes

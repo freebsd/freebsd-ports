@@ -22,10 +22,12 @@ load_rc_config "${name}"
 : ${nodemanager_user:=%%MAPRED_USER%%}
 
 command="%%PREFIX%%/sbin/yarn-daemon.sh"
+command_interpreter_execution="%%JAVA_HOME%%/bin/java"
 command_args='--config %%ETCDIR%% start nodemanager'
 
 start_postcmd="start_postcmd"
 stop_cmd=nodemanager_stop
+status_precmd=find_pid
 
 start_postcmd () {
   rc_pid=$(check_pidfile ${pidfile} %%JAVA_HOME%%/bin/java)
@@ -36,6 +38,10 @@ start_postcmd () {
 
 nodemanager_stop () {
   su -m ${nodemanager_user} -c "${command} --config %%ETCDIR%% stop nodemanager"
+}
+
+find_pid () {
+  rc_pid=$(check_pidfile $pidfile $command_interpreter_execution)
 }
 
 run_rc_command "$1"

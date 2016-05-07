@@ -11,8 +11,10 @@ COMMENT=	Sixel image dumper
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libsixel.so:${PORTSDIR}/graphics/libsixel
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libsixel.so:graphics/libsixel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uobikiemukot

@@ -31,18 +31,18 @@ GECKO_CONFING?=	${LOCALBASE}/bin/${GECKO}-config
 XPIDL?=		${LOCALBASE}/lib/${GECKO}/xpidl
 XPIDL_INCL?=	`${GECKO_CONFIG} --idlflags`
 
-BUILD_DEPENDS+=	libxul>=38:${PORTSDIR}/www/libxul
-RUN_DEPENDS+=	libxul>=38:${PORTSDIR}/www/libxul
+BUILD_DEPENDS+=	libxul>=45:www/libxul
+RUN_DEPENDS+=	libxul>=45:www/libxul
 
 .elif ${gecko_ARGS:Mfirefox}
 
-_GECKO_DEFAULT_VERSION=	38
-_GECKO_VERSIONS=		38 45
+_GECKO_DEFAULT_VERSION=	45
+_GECKO_VERSIONS=		45 46
 _GECKO_TYPE=	firefox
 
 # Dependence lines for different Firefox versions
-38_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-45_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+45_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:www/firefox-esr
+46_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:www/firefox
 
 .if exists(${LOCALBASE}/bin/firefox)
 _GECKO_INSTALLED_VER!=	${LOCALBASE}/bin/firefox --version 2>/dev/null
@@ -61,12 +61,12 @@ _GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9]*:C/[0-9].([0-9][0-9]).*/\1/
 .endif
 
 # Dependence lines for different Seamonkey versions
-39_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+39_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:www/seamonkey
 
 .elif ${gecko_ARGS:Mthunderbird}
 
-_GECKO_DEFAULT_VERSION=	38
-_GECKO_VERSIONS=	38
+_GECKO_DEFAULT_VERSION=	45
+_GECKO_VERSIONS=	45
 _GECKO_TYPE=	thunderbird
 
 .if exists(${LOCALBASE}/bin/thunderbird)
@@ -75,7 +75,7 @@ _GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:M[0-9][0-9]*:C/([0-9][0-9]).*/\1/g
 .endif
 
 # Dependence lines for different Thunderbird versions
-38_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+45_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:mail/thunderbird
 
 .else
 IGNORE=	Unknown type of gecko dependency you may specify either libxul, firefox, seamonkey or thunderbird

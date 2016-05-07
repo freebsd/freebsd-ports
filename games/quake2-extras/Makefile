@@ -34,7 +34,7 @@ SKINS_DESC=		Install high quality skins
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRETEXTURE_FULL} || ${PORT_OPTIONS:MSKINS}
-BUILD_DEPENDS+=	nwreckdum:${PORTSDIR}/archivers/nwreckdum
+BUILD_DEPENDS+=	nwreckdum:archivers/nwreckdum
 PLIST_FILES+=	%%Q2DIR%%/baseq2/pak20.pak
 .endif
 

@@ -13,8 +13,8 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for passing mail across serial links
 
-RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
-UCSPI_SSL_RUN_DEPENDS=	sslclient:${PORTSDIR}/sysutils/ucspi-ssl
+RUN_DEPENDS=	tcpserver:sysutils/ucspi-tcp
+UCSPI_SSL_RUN_DEPENDS=	sslclient:sysutils/ucspi-ssl
 
 USES=		qmail:run
 OPTIONS_SUB=	yes

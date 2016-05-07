@@ -14,7 +14,7 @@ COMMENT=	Decentralized, open DNS system and general purpose key/value store
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 OPTIONS_DEFINE=	X11 UPNP QRCODES DBUS
 OPTIONS_DEFAULT=	X11 QRCODES
@@ -27,8 +27,7 @@ USE_GITHUB=	yes
 USES=		gmake compiler:c++11-lib
 MAKE_JOBS_UNSAFE=yes
 USE_OPENSSL=	yes
-USE_BDB=	yes
-WANT_BDB_VER=	48
+USE_BDB=	48
 
 CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 CXXFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
@@ -40,7 +39,7 @@ CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM
 USE_QT4=	corelib network gui qmake_build linguist_build uic_build moc_build rcc_build
 
 BINARY=		namecoin-qt
-LIB_DEPENDS+=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
 .else
 BINARY=		namecoind
 MAKE_ARGS+=	-C ${WRKSRC}/src
@@ -48,7 +47,7 @@ USE_GNOME=	glib20
 .endif
 
 .if ${PORT_OPTIONS:MQRCODES}
-LIB_DEPENDS+=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS+=	libqrencode.so:graphics/libqrencode
 QMAKE_USE_QRCODE=1
 .else
 QMAKE_USE_QRCODE=0
@@ -64,7 +63,7 @@ QMAKE_USE_DBUS=	0
 PLIST_FILES+=	bin/${BINARY}
 
 .if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	libminiupnpc.so:net/miniupnpc
 CXXFLAGS+=	-I${LOCALBASE}/include/miniupnpc
 QMAKE_USE_UPNP=	1
 .else

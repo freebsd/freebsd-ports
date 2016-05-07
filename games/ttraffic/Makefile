@@ -11,8 +11,8 @@ MASTER_SITES=	http://alpha.luc.ac.be/Research/Algebra/Members/Ttraffic/ \
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	TTraffic - A Tcl/Tk version of Rush Hour
 
-BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+BUILD_DEPENDS=	wish8.4:x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
 
 NO_BUILD=	yes
 USES=		shebangfix perl5

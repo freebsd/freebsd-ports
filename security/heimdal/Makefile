@@ -61,7 +61,7 @@ BDB_CONFIGURE_ON=	--with-berkeley-db \
 BDB_CONFIGURE_OFF=	--without-berkeley-db
 
 SQLITE_DESC=		Enable SQLite KDC backend support
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite3 \
 			--with-sqlite3-include="${LOCALBASE}/include" \
 			--with-sqlite3-lib="${LOCALBASE}/lib"
@@ -84,7 +84,7 @@ KX509_DESC=		Enable kx509 support
 KX509_CONFIGURE_ENABLE=	kx509
 
 CRACKLIB_DESC=		Use CrackLib for password quality checking
-CRACKLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
+CRACKLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:security/cracklib
 
 X11_DESC=		Build X11 utilies
 X11_USE=		XORG=x11,xt

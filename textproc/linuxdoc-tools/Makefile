@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linuxdoc-tools
-PORTVERSION=	0.9.69
+PORTVERSION=	0.9.71
 CATEGORIES=	textproc
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
@@ -16,12 +16,12 @@ LICENSE_NAME_LinuxdocTools=	The linuxdoc-tools license
 LICENSE_FILE_LinuxdocTools=	${WRKSRC}/COPYING
 LICENSE_PERMS_LinuxdocTools=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
-		nsgmls:${PORTSDIR}/textproc/jade \
-    		sgmlsasp:${PORTSDIR}/textproc/sgmls
-RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
-		nsgmls:${PORTSDIR}/textproc/jade \
-    		sgmlsasp:${PORTSDIR}/textproc/sgmls
+BUILD_DEPENDS=	gawk:lang/gawk \
+		nsgmls:textproc/jade \
+		sgmlsasp:textproc/sgmls
+RUN_DEPENDS=	gawk:lang/gawk \
+		nsgmls:textproc/jade \
+		sgmlsasp:textproc/sgmls
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5
@@ -32,11 +32,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-DOCS_MAKE_ENV=		LANG=C BUILD_DOCS=true
-
-post-patch:
-	@${REINPLACE_CMD} -E '/^(CC|CFLAGS)/ s|=|?=|' \
-		${WRKSRC}/rtf-fix/Makefile
+DOCS_BUILD_DEPENDS=	bash:shells/bash
+DOCS_USE=		tex=latex:build tex=pdftex:build tex=dvipsk:build
+DOCS_USES=		makeinfo
+DOCS_CONFIGURE_ENABLE=	docs
+DOCS_MAKE_ENV=		LANG=C
 
 .include <bsd.port.mk>

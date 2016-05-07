@@ -3,7 +3,7 @@
 
 PORTNAME=	nfdump
 PORTVERSION=	1.6.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -80,13 +80,13 @@ CONFIGURE_ARGS+=	--disable-nftrack
 
 .if ${PORT_OPTIONS:MNFPROFILE} || ${PORT_OPTIONS:MNFTRACK}
 CONFIGURE_ARGS+=	--with-rrdpath=${LOCALBASE}
-BUILD_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
-RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
+BUILD_DEPENDS+=	rrdtool:databases/rrdtool
+RUN_DEPENDS+=	rrdtool:databases/rrdtool
 .endif
 
 #flow-tools support
 .if ${PORT_OPTIONS:MFT2NFDUMP}
-BUILD_DEPENDS+=		flow-cat:${PORTSDIR}/net-mgmt/flow-tools
+BUILD_DEPENDS+=		flow-cat:net-mgmt/flow-tools
 CONFIGURE_ARGS+=	--enable-ftconv --with-ftpath=${LOCALBASE}
 PLIST_FILES+=	bin/ft2nfdump man/man1/ft2nfdump.1.gz
 .endif

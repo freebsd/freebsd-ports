@@ -12,7 +12,7 @@ COMMENT=	Portable general-purpose computer algebra system
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		autoreconf:build gmake ncurses tar:bzip2
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
@@ -39,8 +39,8 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCSL}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 USES+=		jpeg
 CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`

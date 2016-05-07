@@ -14,11 +14,11 @@ COMMENT=	Perl binding for the C library libunique
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
-LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
-RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig \
+		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
+LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique
+RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
 MAKE_JOBS_UNSAFE=	yes
 

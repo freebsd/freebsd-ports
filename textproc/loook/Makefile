@@ -14,7 +14,7 @@ COMMENT=	Simple Python tool that search in LibreOffice/OpenOffice files
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter
 
 WRKSRC=		${WRKDIR}
 

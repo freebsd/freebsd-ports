@@ -11,12 +11,11 @@ COMMENT=	Library for building web service security
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-gyoku>=0.4.6:${PORTSDIR}/devel/rubygem-gyoku
+RUN_DEPENDS=	rubygem-gyoku>=0.4.6:devel/rubygem-gyoku
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -1,4 +1,2 @@
 bin/wemux
-@unexec if cmp -s %D/etc/wemux.conf %D/etc/wemux.conf.example ; then rm -f %D/etc/wemux.conf ; fi
-etc/wemux.conf.example
-@exec if [ ! -f %D/etc/wemux.conf ]; then cp -p %D/%F %B/wemux.conf; fi
+@sample etc/wemux.conf.example etc/wemux.conf

@@ -28,9 +28,9 @@ OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_RADIO=		MPI
 OPTIONS_RADIO_MPI=	MPICH2 OPENMPI
 
-MPICH2_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
+MPICH2_LIB_DEPENDS=	libmpich.so:net/mpich2
 MPICH2_MAKE_ARGS=	CC="${LOCALBASE}/bin/mpicc"
-OPENMPI_LIB_DEPENDS=	libmpi.so:${PORTSDIR}/net/openmpi
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 OPENMPI_MAKE_ARGS=	CC="${LOCALBASE}/mpi/openmpi/bin/mpicc"
 
 .include <bsd.port.options.mk>

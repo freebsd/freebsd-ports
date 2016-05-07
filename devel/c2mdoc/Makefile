@@ -11,7 +11,7 @@ DISTFILES=
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Script to generate mdoc(7) markup from C functions
 
-RUN_DEPENDS=	cproto:${PORTSDIR}/devel/cproto
+RUN_DEPENDS=	cproto:devel/cproto
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

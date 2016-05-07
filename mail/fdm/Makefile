@@ -11,8 +11,8 @@ COMMENT=	Fetches and delivers mail
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libtdb.so:${PORTSDIR}/databases/tdb
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libtdb.so:databases/tdb
 
 PLIST_FILES=	bin/fdm man/man1/fdm.1.gz man/man5/fdm.conf.5.gz
 PORTDOCS=	CHANGES README MANUAL

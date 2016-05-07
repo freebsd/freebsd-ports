@@ -11,7 +11,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 MAINTAINER=	uffe@uffe.org
 COMMENT=	Mail server network protocol front-ends
 
-LIB_DEPENDS=	libcvm-v2client.so:${PORTSDIR}/security/cvm
+LIB_DEPENDS=	libcvm-v2client.so:security/cvm
 
 OPTIONS_DEFINE=	LUA DOCS
 

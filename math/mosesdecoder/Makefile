@@ -10,12 +10,12 @@ CATEGORIES=	math
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A statistical machine translation system
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		bjam:${PORTSDIR}/devel/boost-jam
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libRandLM.so:${PORTSDIR}/textproc/randlm \
-		libirstlm.so:${PORTSDIR}/textproc/irstlm
-RUN_DEPENDS=	lmplz:${PORTSDIR}/textproc/kenlm
+BUILD_DEPENDS=	bash:shells/bash \
+		bjam:devel/boost-jam
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libRandLM.so:textproc/randlm \
+		libirstlm.so:textproc/irstlm
+RUN_DEPENDS=	lmplz:textproc/kenlm
 
 BROKEN_FreeBSD_9=	does not link
 

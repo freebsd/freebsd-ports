@@ -8,8 +8,8 @@ CATEGORIES=	textproc devel pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Parsing of DTD files and DTD validation of XML files
 
-BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
-RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
+BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
+RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
 
 USES=		dos2unix pear
 

@@ -13,8 +13,8 @@ COMMENT=	GUI Viewer for Python profiling runs
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SquareMap>0:${PORTSDIR}/x11-toolkits/py-SquareMap \
-		${PYTHON_PKGNAMEPREFIX}meliae>0:${PORTSDIR}/devel/py-meliae
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SquareMap>0:x11-toolkits/py-SquareMap \
+		${PYTHON_PKGNAMEPREFIX}meliae>0:devel/py-meliae
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

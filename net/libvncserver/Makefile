@@ -3,7 +3,7 @@
 
 PORTNAME=	libvncserver
 PORTVERSION=	0.9.9
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net devel
 MASTER_SITES=	SF
 DISTNAME=	LibVNCServer-${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Provide an easy API to a custom vnc server
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		jpeg libtool pathfix
 USE_LDCONFIG=	yes
@@ -27,13 +27,13 @@ OPTIONS_DEFINE=	GNUTLS OPENSSL GCRYPT IPV6
 OPTIONS_DEFAULT=OPENSSL
 GCRYPT_DESC=	libgcrypt support
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 
 OPENSSL_CONFIGURE_WITH=	crypto ssl
 OPENSSL_USE=		OPENSSL=yes
 
-GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 GCRYPT_CONFIGURE_WITH=	gcrypt
 
 IPV6_CONFIGURE_WITH=	ipv6

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.9
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:S/./_/g}/
 
@@ -11,8 +11,8 @@ COMMENT?=	C++ library implementing a BitTorrent client
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS?=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
-		libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS?=	libboost_date_time.so:devel/boost-libs \
+		libGeoIP.so:net/GeoIP
 
 USES+=		compiler:c++11-lang iconv:wchar_t libtool pathfix pkgconfig
 USE_OPENSSL=	yes
@@ -35,7 +35,7 @@ SHLIB_VER=	8
 PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"
 
 DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS ChangeLog README
+DOC_FILES1=	AUTHORS ChangeLog
 
 DOCSRCDIR2=	${WRKSRC}/docs
 DOCSDIR2=	${DOCSDIR}/docs

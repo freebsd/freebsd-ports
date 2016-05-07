@@ -12,12 +12,12 @@ COMMENT=	Collection of useful classes and functions for Django
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	uglifyjs:${PORTSDIR}/www/uglifyjs
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:${PORTSDIR}/www/py-django16 \
-		${PYTHON_PKGNAMEPREFIX}django-pipeline13>=1.3.27:${PORTSDIR}/www/py-django-pipeline13 \
-		${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.2:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
+BUILD_DEPENDS=	uglifyjs:www/uglifyjs
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:www/py-django16 \
+		${PYTHON_PKGNAMEPREFIX}django-pipeline13>=1.3.27:www/py-django-pipeline13 \
+		${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.2:textproc/py-feedparser \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
 
 NO_ARCH=	yes
 USES=		gettext-tools python:-2.7 shebangfix

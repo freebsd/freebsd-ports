@@ -21,7 +21,11 @@ share/elmersolver/include/bandwidthoptimize.mod
 share/elmersolver/include/binio.mod
 share/elmersolver/include/blocksolve.mod
 share/elmersolver/include/blowers.mod
+share/elmersolver/include/circmatinitmod.mod
+share/elmersolver/include/circuitsmod.mod
+share/elmersolver/include/circuitutils.mod
 share/elmersolver/include/clusteringmethods.mod
+share/elmersolver/include/componentutils.mod
 share/elmersolver/include/coordinatesystems.mod
 share/elmersolver/include/crsmatrix.mod
 share/elmersolver/include/defutils.mod
@@ -96,6 +100,7 @@ share/elmersolver/include/stresslocal.mod
 share/elmersolver/include/timeintegrate.mod
 share/elmersolver/include/toroidcurrents.mod
 share/elmersolver/include/types.mod
+share/elmersolver/include/vectorhelmholtzutils.mod
 share/elmersolver/include/viewfactorglobals.mod
 share/elmersolver/include/vtklegacyfile.mod
 share/elmersolver/lib/Acoustics.so
@@ -103,6 +108,7 @@ share/elmersolver/lib/AdvectionDiffusion.so
 share/elmersolver/lib/AdvectionReaction.so
 share/elmersolver/lib/ArteryOutlet.so
 share/elmersolver/lib/ArtificialCompressibility.so
+share/elmersolver/lib/CircuitsAndDynamics.so
 share/elmersolver/lib/CoilSolver.so
 share/elmersolver/lib/CompressibleNS.so
 share/elmersolver/lib/CoupledNSUpdate.so
@@ -126,6 +132,7 @@ share/elmersolver/lib/FindOptimum.so
 share/elmersolver/lib/FlowSolve.so
 share/elmersolver/lib/FluidicForce.so
 share/elmersolver/lib/FluxSolver.so
+share/elmersolver/lib/FourierLoss.so
 share/elmersolver/lib/FreeSurfaceReduced.so
 share/elmersolver/lib/FreeSurfaceSolver.so
 share/elmersolver/lib/HeatSolve.so
@@ -143,6 +150,7 @@ share/elmersolver/lib/ModelPDE.so
 share/elmersolver/lib/MovingElstatSolver.so
 share/elmersolver/lib/NonphysicalMeshSolve.so
 share/elmersolver/lib/NormalSolver.so
+share/elmersolver/lib/OdeSolver.so
 share/elmersolver/lib/ParStokes.so
 share/elmersolver/lib/ParticleAdvector.so
 share/elmersolver/lib/ParticleDynamics.so
@@ -164,6 +172,7 @@ share/elmersolver/lib/SOLVER.KEYWORDS
 share/elmersolver/lib/SSTKomega.so
 share/elmersolver/lib/SaveData.so
 share/elmersolver/lib/SaveGridData.so
+share/elmersolver/lib/SaveMesh.so
 share/elmersolver/lib/ScalarPotentialSolver.so
 share/elmersolver/lib/ShallowWaterNS.so
 share/elmersolver/lib/ShearrateSolver.so
@@ -187,7 +196,9 @@ share/elmersolver/lib/TransportEquation.so
 share/elmersolver/lib/V2FSolver.so
 share/elmersolver/lib/VelocityPrecond.so
 share/elmersolver/lib/ViscousCompressibility.so
+share/elmersolver/lib/VectorHelmholtz.so
 share/elmersolver/lib/VorticitySolver.so
+share/elmersolver/lib/WaveSolver.so
 share/elmersolver/lib/elements.def
 share/elmersolver/license_texts/GPL-2.txt
 share/elmersolver/license_texts/LGPL-2.1.txt

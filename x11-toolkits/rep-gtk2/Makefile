@@ -15,7 +15,7 @@ COMMENT=	GTK+-2 bindings for rep Lisp interpreter
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	librep.so:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	librep.so:lang/librep
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes

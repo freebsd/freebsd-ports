@@ -1,0 +1,15 @@
+dcadec is a free DTS Coherent Acoustics decoder with support for HD extensions.
+
+Supported features:
+Decoding of standard DTS core streams with up to 5.1 channels
+Decoding of DTS-ES streams with discrete back channel
+Decoding of High Resolution streams with up to 7.1 channels and extended bitrate
+Decoding of 96/24 core streams
+Lossless decoding of Master Audio streams with up to 7.1 channels, 192 kHz
+Downmixing to stereo and 5.1 using embedded coefficients
+
+Features not implemented:
+Decoding of DTS Express streams
+Applying dynamic range compression and dialog normalization
+
+WWW: https://github.com/foo86/dcadec

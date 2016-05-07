@@ -14,7 +14,7 @@ COMMENT=	Python bindings for the Capstone Disassembly Engine
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-LIB_DEPENDS=	libcapstone.so:${PORTSDIR}/devel/capstone
+LIB_DEPENDS=	libcapstone.so:devel/capstone
 
 USES=		python
 USE_PYTHON=	autoplist distutils

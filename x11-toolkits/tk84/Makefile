@@ -25,14 +25,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 
-USES+=		tcl:${SHORT_TK_VER}
+USES+=		tcl:${SHORT_TK_VER},tea
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 CFLAGS+=	-I${TCL_INCLUDEDIR}/generic
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared \
-		--enable-man-suffix=.${MAN_SUFFIX} \
-		--with-tcl=${TCL_LIBDIR} \
+CONFIGURE_ARGS=	--enable-man-suffix=.${MAN_SUFFIX} \
 		--includedir=${PREFIX}/include/tk${TK_VER}
 
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1

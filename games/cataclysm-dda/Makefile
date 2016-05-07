@@ -42,7 +42,7 @@ NCURSES_USES=	ncurses
 SDL_USE=	SDL=image2,ttf2
 SDL_USES=	pkgconfig
 SDL_MAKE_ARGS=	TILES=1 TILESTARGET=cataclysm
-SDL_RUN_DEPENDS=terminus-font>0:${PORTSDIR}/x11-fonts/terminus-font
+SDL_RUN_DEPENDS=terminus-font>0:x11-fonts/terminus-font
 SDL_CPPFLAGS=	$$(sdl2-config --cflags)
 SDL_LDFLAGS=	$$(sdl2-config --libs)
 SDL_DESKTOP_ENTRIES="Cataclysm-DDA" "" "" "cataclysm" "" ""

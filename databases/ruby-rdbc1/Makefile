@@ -14,7 +14,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Database Connectivity
 
-RUN_DEPENDS=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
+RUN_DEPENDS=	rubygem-pg>=0:databases/rubygem-pg
 
 NO_ARCH=	yes
 NO_BUILD=	yes

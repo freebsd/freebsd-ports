@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for simulating simple Nameservers
 
-BUILD_DEPENDS=	p5-Net-DNS>=0.64:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-XML-LibXML>=1.53:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	p5-Net-DNS>=0.64:dns/p5-Net-DNS \
+		p5-XML-LibXML>=1.53:textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

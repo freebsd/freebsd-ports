@@ -13,6 +13,8 @@ COMMENT=	Toolset for working with human genetic variation data
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	Does not build
+
 USES=		libtool gmake
 
 post-patch:

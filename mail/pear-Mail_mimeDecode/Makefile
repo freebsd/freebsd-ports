@@ -10,8 +10,8 @@ COMMENT=	Provides a class to decode mime messages
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
-RUN_DEPENDS=	${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
+BUILD_DEPENDS=	${PEARDIR}/Mail/mime.php:mail/pear-Mail_Mime
+RUN_DEPENDS=	${PEARDIR}/Mail/mime.php:mail/pear-Mail_Mime
 
 USES=		pear
 NO_ARCH=	yes

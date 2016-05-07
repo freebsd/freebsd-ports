@@ -12,9 +12,9 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Display LaTeX output in your IMs
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
-		convert:${PORTSDIR}/graphics/ImageMagick
+BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin \
+		convert:graphics/ImageMagick
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 

@@ -11,7 +11,7 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Loading a M3U file into musicpd
 
-RUN_DEPENDS=	${LOCALBASE}/bin/mpc:${PORTSDIR}/audio/musicpc
+RUN_DEPENDS=	${LOCALBASE}/bin/mpc:audio/musicpc
 
 USES=		perl5
 

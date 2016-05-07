@@ -12,7 +12,7 @@ COMMENT=	PHP-based bulletin board / discussion forum system
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
+RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear
 
 CONFLICTS=	phpbb-tw-[0-9]*
 

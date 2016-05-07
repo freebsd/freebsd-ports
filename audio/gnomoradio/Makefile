@@ -10,8 +10,8 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for finding and playing free music from the Internet
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libao.so:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libao.so:audio/libao
 
 USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes

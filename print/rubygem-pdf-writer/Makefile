@@ -10,14 +10,13 @@ COMMENT=	Pure Ruby PDF document creation library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-color>=1.4.0:${PORTSDIR}/print/rubygem-color \
-		rubygem-transaction-simple>=1.3:${PORTSDIR}/devel/rubygem-transaction-simple
+RUN_DEPENDS=	rubygem-color>=1.4.0:print/rubygem-color \
+		rubygem-transaction-simple>=1.3:devel/rubygem-transaction-simple
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/techbook
 

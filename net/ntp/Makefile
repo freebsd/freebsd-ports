@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.8p6
+PORTVERSION=	4.2.8p7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
 		http://archive.ntp.org/ntp4/ntp-4.2/ \
@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 CONFLICTS=	ntp-rc-* ntp-devel-*
 
@@ -44,7 +44,7 @@ NLS_USES=	gettext-runtime
 
 NTP_SIGND_CONFIGURE_ENABLE=	ntp-signd
 
-NTPSNMPD_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+NTPSNMPD_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 NTPSNMPD_CONFIGURE_OFF=	--without-ntpsnmpd
 
 PERL_UTILS_USES=	perl5

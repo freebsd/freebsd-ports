@@ -18,8 +18,8 @@ COMMENT=	TI MSP430 debugging interface library
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libhidapi.so:${PORTSDIR}/comms/hidapi
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libhidapi.so:comms/hidapi
 
 BROKEN_FreeBSD_9=	does not build (internal compiler error)
 

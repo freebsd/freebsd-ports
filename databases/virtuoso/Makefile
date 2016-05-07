@@ -14,12 +14,14 @@ COMMENT=	Universal SQL/Application Server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
-		htmldoc:${PORTSDIR}/textproc/htmldoc\
-		flex>2.5.4:${PORTSDIR}/textproc/flex\
-		gperf>=3.0.3:${PORTSDIR}/devel/gperf\
-		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	gawk:lang/gawk\
+		htmldoc:textproc/htmldoc\
+		flex>2.5.4:textproc/flex\
+		gperf>=3.0.3:devel/gperf\
+		unzip:archivers/unzip
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=		gmake libtool readline uidfix
 USE_AUTOTOOLS=	autoheader aclocal
@@ -67,7 +69,7 @@ check:
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}
-LIB_DEPENDS+=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickWand-6.so:graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 CONFIGURE_ARGS+=--disable-imagemagick
@@ -76,7 +78,7 @@ PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 
 .if ${PORT_OPTIONS:MIODBC}
 CONFIGURE_ARGS+=--with-iodbc=${LOCALBASE}
-LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so:databases/libiodbc
 IODBC_CPPFLAGS=	-I${LOCALBASE}/include/libiodbc
 PLIST_SUB+=	WITH_IODBC=""
 .else
@@ -86,7 +88,7 @@ PLIST_SUB+=	WITH_IODBC="@comment "
 
 .if ${PORT_OPTIONS:MKERBEROS}
 CONFIGURE_ARGS+=--enable-krb=${LOCALBASE}
-LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5.so:security/krb5
 .else
 CONFIGURE_ARGS+=--disable-krb
 .endif

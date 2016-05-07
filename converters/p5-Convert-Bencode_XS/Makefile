@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster conversions to/from Bencode format
 
-RUN_DEPENDS=	p5-Convert-Bencode>=0:${PORTSDIR}/converters/p5-Convert-Bencode
+RUN_DEPENDS=	p5-Convert-Bencode>=0:converters/p5-Convert-Bencode
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	extras/*.pl

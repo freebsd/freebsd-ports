@@ -13,8 +13,8 @@ COMMENT=	APQ Ada95 database base library
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		gprbuild:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	bash:shells/bash \
+		gprbuild:devel/gprbuild
 
 USES=		ada tar:bzip2
 PORTDOCS=	README HISTORY

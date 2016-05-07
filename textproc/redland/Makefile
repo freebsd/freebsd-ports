@@ -15,9 +15,9 @@ COMMENT=	High-level interface for RDF
 LICENSE=	APACHE20 GPLv2 GPLv3 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libraptor2.so:${PORTSDIR}/textproc/raptor2 \
-		librasqal.so:${PORTSDIR}/textproc/rasqal
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libraptor2.so:textproc/raptor2 \
+		librasqal.so:textproc/rasqal
 
 USE_PERL5=	build
 USES=		gmake libtool pathfix perl5 pkgconfig shebangfix
@@ -60,7 +60,7 @@ PLIST_SUB+=	PGSQL="@comment "
 #.endif
 
 #.if defined(WITH_SQLITE)
-#USE_SQLITE=	3
+#USES+=		sqlite:3
 #CONFIGURE_ARGS+=--with-sqlite=3
 #PLIST_SUB+=	SQLITE=""
 #.else
@@ -70,7 +70,7 @@ PLIST_SUB+=	SQLITE="@comment "
 
 #.if defined(WITH_VIRTUOSO)
 #CONFIGURE_ARGS+=--with-virtuoso=yes
-#LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+#LIB_DEPENDS+=	iodbc.3:databases/libiodbc
 #PLIST_SUB+=	VIRTUOSO=""
 #.else
 CONFIGURE_ARGS+=--with-virtuoso=no

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/local/${PORTNAME}/ \
 MAINTAINER=	matt@peterson.org
 COMMENT=	SNMP library written on top of glib and gnet2
 
-LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
+LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 
 USES=		libtool pathfix pkgconfig
 USE_GNOME=	glib20

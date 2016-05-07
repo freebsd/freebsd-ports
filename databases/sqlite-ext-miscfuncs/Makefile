@@ -13,7 +13,7 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Math, string, and aggregate function library for SQLite
 
-USE_SQLITE=	yes
+USES=		sqlite
 DIST_SUBDIR=	sqlite-ext
 NO_WRKSUBDIR=	yes
 

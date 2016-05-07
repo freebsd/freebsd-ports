@@ -10,7 +10,7 @@ DISTNAME=	flowgrep-${PORTVERSION}
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	TCP stream/UDP/IP payload 'grep' utility
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nidsmodule.so:${PORTSDIR}/net/pynids
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nidsmodule.so:net/pynids
 
 USES=		python
 NO_BUILD=	yes

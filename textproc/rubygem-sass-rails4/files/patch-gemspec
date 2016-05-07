@@ -1,13 +1,13 @@
---- sass-rails.gemspec.orig	2016-03-03 18:59:25 UTC
+--- sass-rails.gemspec.orig	2016-03-31 18:12:02 UTC
 +++ sass-rails.gemspec
 @@ -23,8 +23,8 @@ Gem::Specification.new do |s|
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<railties>, ["< 5.0", ">= 4.0.0"])
--      s.add_runtime_dependency(%q<sass>, ["~> 3.2.2"])
--      s.add_runtime_dependency(%q<sprockets-rails>, ["~> 2.0"])
-+      s.add_runtime_dependency(%q<sass>, [">= 3.2.2"])
-+      s.add_runtime_dependency(%q<sprockets-rails>, [">= 2.0"])
-       s.add_runtime_dependency(%q<sprockets>, ["< 3.0", "~> 2.8"])
-       s.add_development_dependency(%q<rails>, [">= 0"])
-       s.add_development_dependency(%q<sqlite3>, [">= 0"])
+       s.add_runtime_dependency(%q<railties>.freeze, ["< 5.0", ">= 4.0.0"])
+-      s.add_runtime_dependency(%q<sass>.freeze, ["~> 3.2.2"])
+-      s.add_runtime_dependency(%q<sprockets-rails>.freeze, ["~> 2.0"])
++      s.add_runtime_dependency(%q<sass>.freeze, [">= 3.2.2"])
++      s.add_runtime_dependency(%q<sprockets-rails>.freeze, [">= 2.0"])
+       s.add_runtime_dependency(%q<sprockets>.freeze, ["< 3.0", "~> 2.8"])
+       s.add_development_dependency(%q<rails>.freeze, [">= 0"])
+       s.add_development_dependency(%q<sqlite3>.freeze, [">= 0"])

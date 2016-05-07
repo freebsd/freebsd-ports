@@ -9,14 +9,14 @@ CATEGORIES=	devel
 MAINTAINER=	raven428@gmail.com
 COMMENT=	Mysql-engine part of statistics server for PHP
 
-BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:${PORTSDIR}/devel/protobuf \
- 		${LOCALBASE}/include/event.h:${PORTSDIR}/devel/libevent2 \
-		${LOCALBASE}/include/Judy.h:${PORTSDIR}/devel/judy \
-		${LOCALBASE}/lib/mysql/plugin:${PORTSDIR}/${_MYSQL_SERVER} \
- 		${NONEXISTENT}:${PORTSDIR}/${_MYSQL_SERVER}:configure \
-		bison:${PORTSDIR}/devel/bison \
-		cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:devel/protobuf \
+		${LOCALBASE}/include/event.h:devel/libevent2 \
+		${LOCALBASE}/include/Judy.h:devel/judy \
+		${LOCALBASE}/lib/mysql/plugin:${_MYSQL_SERVER} \
+		${NONEXISTENT}:${_MYSQL_SERVER}:configure \
+		bison:devel/bison \
+		cmake:devel/cmake
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tony2001

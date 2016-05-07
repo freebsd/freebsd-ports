@@ -14,7 +14,7 @@ COMMENT=	PC Engine (TurboGrafx 16) emulator
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS=	libargp.so:devel/argp-standalone
 
 OPTIONS_DEFINE=	GTK2 DOCS NETPLAY SDL_MIXER
 OPTIONS_DEFAULT=GTK2
@@ -50,7 +50,7 @@ CONFIGURE_ENV+=	ac_cv_lib_SDL_net_main=no
 .endif
 
 .if ${PORT_OPTIONS:MSDL_MIXER}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 USE_SDL+=	mixer
 CFLAGS+=	-DOGG_SUPPORT
 .else

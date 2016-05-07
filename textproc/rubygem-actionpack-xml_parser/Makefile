@@ -12,11 +12,10 @@ COMMENT=	XML parameters parser for Action Pack
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack4>=4.0.0:${PORTSDIR}/www/rubygem-actionpack4
+RUN_DEPENDS=	rubygem-actionpack4>=4.0.0:www/rubygem-actionpack4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	idjc
-PORTVERSION=	0.8.15
+PORTVERSION=	0.8.16
 CATEGORIES=	audio python
 MASTER_SITES=	SF/idjc/idjc/0.8
 
@@ -11,20 +11,20 @@ COMMENT=	Shoutcast/Icecast DJ Console
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
-		libjack.so:${PORTSDIR}/audio/jack \
-		libtwolame.so:${PORTSDIR}/audio/twolame \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libmpg123.so:${PORTSDIR}/audio/mpg123 \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libmp3lame.so:${PORTSDIR}/audio/lame \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libshout-idjc.so:${PORTSDIR}/audio/shout-idjc
-RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
-		${PYTHON_PKGNAMEPREFIX}mutagen>=0:${PORTSDIR}/audio/py-mutagen \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libavutil.so:multimedia/ffmpeg \
+		libjack.so:audio/jack \
+		libtwolame.so:audio/twolame \
+		libspeex.so:audio/speex \
+		libsndfile.so:audio/libsndfile \
+		libmpg123.so:audio/mpg123 \
+		libFLAC.so:audio/flac \
+		libmp3lame.so:audio/lame \
+		libvorbis.so:audio/libvorbis \
+		libshout-idjc.so:audio/shout-idjc
+RUN_DEPENDS=	oggenc:audio/vorbis-tools \
+		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus
 
 OPTIONS_SUB=	YES
 OPTIONS_DEFINE=	DOCS NLS

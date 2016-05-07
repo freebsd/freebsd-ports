@@ -13,13 +13,13 @@ COMMENT=	Open-source media server for the Roku SoundBridge and iTunes
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vorbis/codec.h:${PORTSDIR}/audio/libvorbis \
-		${LOCALBASE}/include/FLAC/metadata.h:${PORTSDIR}/audio/flac
-RUN_DEPENDS=	oggdec:${PORTSDIR}/audio/vorbis-tools \
-		flac:${PORTSDIR}/audio/flac
-LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag
+BUILD_DEPENDS=	${LOCALBASE}/include/vorbis/codec.h:audio/libvorbis \
+		${LOCALBASE}/include/FLAC/metadata.h:audio/flac
+RUN_DEPENDS=	oggdec:audio/vorbis-tools \
+		flac:audio/flac
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libsqlite3.so:databases/sqlite3 \
+		libid3tag.so:audio/libid3tag
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

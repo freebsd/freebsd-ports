@@ -11,8 +11,8 @@ COMMENT=	JIT compiler for JAVA
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
-RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
+BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:java/classpath
+RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:java/classpath
 
 USES=		gmake tar:xz
 GNU_CONFIGURE=	yes
@@ -32,7 +32,7 @@ JDK_DESC=	Build with native JDK
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJDK}
-BUILD_DEPENDS+=	${LOCALBASE}/bootstrap-openjdk/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
+BUILD_DEPENDS+=	${LOCALBASE}/bootstrap-openjdk/bin/javac:java/bootstrap-openjdk
 JAR=		${LOCALBASE}/bootstrap-openjdk/bin/jar
 JAVAC=		${LOCALBASE}/bootstrap-openjdk/bin/javac
 .else
@@ -40,7 +40,7 @@ JAVAC=		${LOCALBASE}/bootstrap-openjdk/bin/javac
 GCC_SUFX=	${WITH_GCC:S/.//}
 .endif
 GCC_SUFX?=	46
-BUILD_DEPENDS+=	gcj${GCC_SUFX}:${PORTSDIR}/lang/gcc${GCC_SUFX}
+BUILD_DEPENDS+=	gcj${GCC_SUFX}:lang/gcc${GCC_SUFX}
 EXTRA_PATCHES=	${FILESDIR}/gcj.patch
 JAR=		${LOCALBASE}/bin/gjar${GCC_SUFX}
 JAVAC=		${LOCALBASE}/bin/gcj${GCC_SUFX}

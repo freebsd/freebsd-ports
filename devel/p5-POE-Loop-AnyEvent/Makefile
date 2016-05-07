@@ -13,10 +13,10 @@ COMMENT=	AnyEvent event loop support for POE
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-POE>=1.289:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+		p5-POE>=1.289:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-POE-Test-Loops>=1.035:${PORTSDIR}/devel/p5-POE-Test-Loops
+BUILD_DEPENDS+=	p5-POE-Test-Loops>=1.035:devel/p5-POE-Test-Loops
 
 USE_PERL5=	configure
 USES=		perl5

@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.4.11
+PORTVERSION=	1.4.12
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simpler web photo gallery
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+
+BROKEN_powerpc64=	does not build
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	gd gettext json mbstring mysql pcre session
+USE_PHP=	gd gettext json mbstring mysqli pcre session
 USES=		cpe
 WANT_PHP_WEB=	yes
 

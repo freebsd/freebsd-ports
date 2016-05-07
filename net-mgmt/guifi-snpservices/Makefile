@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		snpservices
-DISTVERSION=		0.2.2-5
+DISTVERSION=		0.2.2-8
+PORTREVISION=		1
 CATEGORIES=		net-mgmt www
 MASTER_SITES=		http://serveis.guifi.net/debian/guifi/ \
 			http://www.potion-studios.com/
@@ -12,8 +13,8 @@ DISTNAME=		${PORTNAME}_${DISTVERSION}
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		Graphics server for the guifi.net meshnet
 
-RUN_DEPENDS=		mrtg:${PORTSDIR}/net-mgmt/mrtg \
-			rrdtool:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=		mrtg:net-mgmt/mrtg \
+			rrdtool:databases/rrdtool
 
 USE_PHP=		gd simplexml dom
 
@@ -23,6 +24,9 @@ SUB_LIST=		SNPSERVICES_TMPDIR=${SNPSERVICES_TMPDIR}
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-0.2.2
 NO_BUILD=		yes
+
+post-patch:
+	@${FIND} ${WRKSRC} -name \*.orig -delete;
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.6.27-75.0
+DISTVERSION=	5.6.29-76.2
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.6/Percona-Server-${DISTVERSION}/source/tarball/
@@ -12,15 +12,25 @@ DISTNAME=	percona-server-${DISTVERSION}
 MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+BROKEN_powerpc64=	Does not build
+
 SLAVEDIRS=	databases/percona56-client
 USES=		bison cmake perl5 shebangfix
 
-OPTIONS_DEFINE=	OPENSSL FASTMTX INNODBMEMCACHED
+OPTIONS_DEFINE=	OPENSSL FASTMTX INNODBMEMCACHED TOKUDB
 OPTIONS_DEFAULT=	OPENSSL INNODBMEMCACHED
 OPTIONS_SUB=    yes
+
 FASTMTX_DESC=	Replace mutexes with spinlocks
+FASTMTX_CMAKE_ON= -DWITH_FAST_MUTEXES=1
 INNODBMEMCACHED_DESC= InnoDB Memcached plugin
 INNODBMEMCACHED_CMAKE_ON=-DWITH_INNODB_MEMCACHED=1
+OPENSSL_CMAKE_ON= -DWITH_SSL=bundled
+TOKUDB_DESC=	TokuDB Engine (experimental)
+TOKUDB_CMAKE_ON=-DUSE_CTAGS=0
+TOKUDB_VARS=	ONLY_FOR_ARCHS="amd64" \
+		ONLY_FOR_ARCHS_REASON="TokuDB engine does not compile on ${ARCH}"
+TOKUDB_EXTRA_PATCHES=${PATCHDIR}/extrapatch-tokudb
 
 DATADIR=	${PREFIX}/share/mysql
 
@@ -49,14 +59,6 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL}
-CMAKE_ARGS+=	-DWITH_SSL=bundled
-.endif
-.if ${PORT_OPTIONS:MFASTMTX}
-CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
-.endif
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)

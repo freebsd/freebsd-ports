@@ -12,9 +12,9 @@ COMMENT=	Quick and small memcached client for Python
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
-TEST_DEPENDS=	memcached:${PORTSDIR}/databases/memcached \
-		nosetests:${PORTSDIR}/devel/py-nose
+LIB_DEPENDS=	libmemcached.so:databases/libmemcached
+TEST_DEPENDS=	memcached:databases/memcached \
+		nosetests:devel/py-nose
 
 USES=		python
 USE_PYTHON=	autoplist distutils

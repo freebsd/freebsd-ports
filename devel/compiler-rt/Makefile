@@ -9,7 +9,9 @@ MASTER_SITES=	LOCAL/brooks
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Compiler runtime library with Blocks support
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	cmake:devel/cmake
 
 CONFIGURE_WRKSRC=	${WRKDIR}/build
 BUILD_WRKSRC=		${WRKDIR}/build
@@ -50,7 +52,7 @@ SVN_REV!=	svn info ${LLVM_SVN}/ | ${GREP} Revision | cut -d' ' -f2
 .endif
 
 .if defined(BOOTSTRAP)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 
 do-fetch:
 	${MKDIR} ${WRKDIR}

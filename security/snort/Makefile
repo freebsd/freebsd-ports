@@ -3,6 +3,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.9.8.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
 		http://www.talosintel.com/downloads/ \
@@ -16,10 +17,10 @@ COMMENT=	Lightweight network intrusion detection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libnet.so:${PORTSDIR}/net/libnet
-BUILD_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq
-RUN_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libdnet.so:net/libdnet
+BUILD_DEPENDS=	daq>=2.0.0:net/daq
+RUN_DEPENDS=	daq>=2.0.0:net/daq
 
 OPTIONS_DEFINE=		IPV6 GRE HA NORMALIZER DOCS APPID \
 			PERFPROFILE LRGPCAP SOURCEFIRE NONETHER \
@@ -61,9 +62,9 @@ APPID_CONFIGURE_ENABLE=		open-appid
 HA_CONFIGURE_ENABLE=		ha
 FILEINSPECT_CONFIGURE_ENABLE=	file-inspect
 
-BARNYARD_RUN_DEPENDS=	barnyard2:${PORTSDIR}/security/barnyard2
-PULLEDPORK_RUN_DEPENDS=	pulledpork.pl:${PORTSDIR}/security/pulledpork
-APPID_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+BARNYARD_RUN_DEPENDS=	barnyard2:security/barnyard2
+PULLEDPORK_RUN_DEPENDS=	pulledpork.pl:security/pulledpork
+APPID_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LOCALBASE}/include/luajit-2.0" \
 			luajit_LIBS="-L${LOCALBASE}/lib -lluajit-5.1"
 
@@ -88,24 +89,10 @@ DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
 		doc/README* doc/USAGE doc/*.pdf
 PREPROC_RULES=	decoder.rules preprocessor.rules sensitive-data.rules
 
-LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
-.if exists(${LIBNET_CONFIG})
-LIBNET_CFLAGS!=	${LIBNET_CONFIG} --cflags
-LIBNET_LIBS!=	${LIBNET_CONFIG} --libs
-.else
-LIBNET_CFLAGS=	-I${LOCALBASE}/include/libnet11
-LIBNET_LIBS=	-L${LOCALBASE}/lib/libnet11 -lnet
-.endif
-
-LIBNET_INCDIR=	${LIBNET_CFLAGS:M-I*:S/-I//}
-LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
-
 CFLAGS+=	-fstack-protector
 CONFIGURE_ARGS+=--enable-reload \
 		--enable-mpls --enable-targetbased \
-		--enable-reload-error-restart \
-		--with-dnet-includes=${LIBNET_INCDIR} \
-		--with-dnet-libraries=${LIBNET_LIBDIR}
+		--enable-reload-error-restart
 
 post-patch:
 	@${REINPLACE_CMD} "s,/etc/snort.conf,${ETCDIR}/snort.conf," \
@@ -115,8 +102,6 @@ post-patch:
 		-e '/ipvar HOME_NET/s/any/[YOU_NEED_TO_SET_HOME_NET_IN_snort.conf]/' \
 		-e '/^# include .PREPROC_RULE/s/# include/include/' \
 		${WRKSRC}/etc/snort.conf
-
-	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
 
 # IPv6 is no longer a ./configure option!
 .if ! ${PORT_OPTIONS:MIPV6}

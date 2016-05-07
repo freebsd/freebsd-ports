@@ -11,15 +11,15 @@ COMMENT=	Download & Install additional definition files for Clamav
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	bash>=4.2.42:${PORTSDIR}/shells/bash \
-		clamav>=0.97.8:${PORTSDIR}/security/clamav \
-		gnupg>=2.0.19:${PORTSDIR}/security/gnupg \
-		rsync>=3.0.9:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	bash>=4.2.42:shells/bash \
+		clamav>=0.97.8:security/clamav \
+		gnupg>=2.0.19:security/gnupg \
+		rsync>=3.0.9:net/rsync
 
 .if exists (${LOCALBASE}/bin/wget) && ! exists (${LOCALBASE}/bin/curl)
-RUN_DEPENDS+=	wget>=1.14:${PORTSDIR}/ftp/wget
+RUN_DEPENDS+=	wget>=1.14:ftp/wget
 .else
-RUN_DEPENDS+=	curl>=7.24.0_2:${PORTSDIR}/ftp/curl
+RUN_DEPENDS+=	curl>=7.24.0_2:ftp/curl
 .endif
 
 NO_BUILD=	yes

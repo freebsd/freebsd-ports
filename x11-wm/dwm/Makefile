@@ -15,7 +15,7 @@ COMMENT=	Dynamic, small, fast and simple window manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 OPTIONS_DEFINE=	XINERAMA DOCS
 OPTIONS_DEFAULT=XINERAMA

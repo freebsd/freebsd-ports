@@ -11,8 +11,10 @@ COMMENT=	Fast, multithreaded XML+XSLT transformation library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libck.so:${PORTSDIR}/devel/concurrencykit \
-		libmemcached.so:${PORTSDIR}/databases/libmemcached
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libck.so:devel/concurrencykit \
+		libmemcached.so:databases/libmemcached
 
 ONLY_FOR_ARCHS=	amd64 ia64 powerpc64 sparc64
 USES=		autoreconf libtool pkgconfig

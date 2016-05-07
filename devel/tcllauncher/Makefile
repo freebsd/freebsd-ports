@@ -11,23 +11,18 @@ COMMENT=	Launcher program for Tcl applications
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libtclx8.4.so:${PORTSDIR}/lang/tclX
+LIB_DEPENDS=	libtclx8.4.so:lang/tclX
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 
-USES+=		tcl autoreconf
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
-		--prefix=${PREFIX} \
-		--exec-prefix=${PREFIX}
-
-LIBDIR=		lib/Tcllauncher${PORTVERSION}
+USES+=		tcl:tea autoreconf
+TCL_PKG=	Tcllauncher${PORTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME} \
-		${LIBDIR}/tcllauncher.tcl \
-		${LIBDIR}/tcllauncher-support.tcl \
-		${LIBDIR}/pkgIndex.tcl \
+		lib/${TCL_PKG}/tcllauncher.tcl \
+		lib/${TCL_PKG}/tcllauncher-support.tcl \
+		lib/${TCL_PKG}/pkgIndex.tcl \
 		man/mann/${PORTNAME}.n.gz
 
 .include <bsd.port.mk>

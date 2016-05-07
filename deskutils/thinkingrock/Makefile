@@ -11,8 +11,8 @@ DISTNAME=	tr-${PORTVERSION}
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Application for collecting and processing your thoughts
 
-RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:${PORTSDIR}/devel/xdg-utils \
-		${LOCALBASE}/bin/xdg-email:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
+		${LOCALBASE}/bin/xdg-email:devel/xdg-utils
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

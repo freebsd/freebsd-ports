@@ -12,8 +12,8 @@ COMMENT=	Powerful interactive packet manipulation program in python
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dnet.so:${PORTSDIR}/net/py-libdnet \
-		${PYTHON_SITELIBDIR}/pcap.py:${PORTSDIR}/net/py-pcap
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dnet.so:net/py-libdnet \
+		${PYTHON_SITELIBDIR}/pcap.py:net/py-pcap
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -30,16 +30,16 @@ NMAP_DESC=	nmap OS signatures database
 MANUF_DESC=	wireshark's MANUF MAC database
 SOX_DESC=	Support for VoIP
 
-PYX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyx/__init__.py:${PORTSDIR}/graphics/py-PyX12
-PYCRYPTO_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
-PYGNUPLOT_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:${PORTSDIR}/math/py-gnuplot
-GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:${PORTSDIR}/graphics/ImageMagick \
-			${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
-P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f.fp:${PORTSDIR}/net-mgmt/p0f
-QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:${PORTSDIR}/net/queso
-NMAP_RUN_DEPENDS=	${LOCALBASE}/share/nmap/nmap-os-db:${PORTSDIR}/security/nmap
-MANUF_RUN_DEPENDS=	${LOCALBASE}/share/wireshark/manuf:${PORTSDIR}/net/wireshark
-SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:${PORTSDIR}/audio/sox
+PYX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyx/__init__.py:graphics/py-PyX12
+PYCRYPTO_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:security/py-pycrypto
+PYGNUPLOT_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:math/py-gnuplot
+GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:graphics/ImageMagick \
+			${LOCALBASE}/bin/dot:graphics/graphviz
+P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f.fp:net-mgmt/p0f
+QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:net/queso
+NMAP_RUN_DEPENDS=	${LOCALBASE}/share/nmap/nmap-os-db:security/nmap
+MANUF_RUN_DEPENDS=	${LOCALBASE}/share/wireshark/manuf:net/wireshark
+SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:audio/sox
 
 post-patch:
 	@${REINPLACE_CMD} "s,share/man/man1,man/man1," ${WRKSRC}/setup.py

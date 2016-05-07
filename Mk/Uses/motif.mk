@@ -18,10 +18,10 @@ IGNORE=	USES=motif takes no arguments
 .endif
 
 .if defined(WANT_LESSTIF)
-LIB_DEPENDS+=		libXm.so:${PORTSDIR}/x11-toolkits/lesstif
+LIB_DEPENDS+=		libXm.so:x11-toolkits/lesstif
 .else
 USE_XORG+=	xpm
-LIB_DEPENDS+=		libXm.so.4:${PORTSDIR}/x11-toolkits/open-motif
+LIB_DEPENDS+=		libXm.so.4:x11-toolkits/open-motif
 .endif
 
 MOTIFLIB?=	-L${LOCALBASE}/lib -lXm -lXp

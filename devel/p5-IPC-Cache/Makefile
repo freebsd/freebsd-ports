@@ -13,7 +13,7 @@ COMMENT=	Persist data across processes via shared memory
 
 LICENSE=	GPLv1
 
-BUILD_DEPENDS=	p5-IPC-ShareLite>=0:${PORTSDIR}/devel/p5-IPC-ShareLite
+BUILD_DEPENDS=	p5-IPC-ShareLite>=0:devel/p5-IPC-ShareLite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

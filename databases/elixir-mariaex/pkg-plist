@@ -2,6 +2,7 @@ lib/elixir/lib/mariaex/ebin/Elixir.DBConnection.Query.Mariaex.Query.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Cache.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Coder.Utils.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Coder.beam
+lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Column.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Connection.Tcp.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Connection.beam
 lib/elixir/lib/mariaex/ebin/Elixir.Mariaex.Error.beam
@@ -17,6 +18,7 @@ lib/elixir/lib/mariaex/ebin/mariaex.app
 lib/elixir/lib/mariaex/lib/mariaex.ex
 lib/elixir/lib/mariaex/lib/mariaex/cache.ex
 lib/elixir/lib/mariaex/lib/mariaex/coder.ex
+lib/elixir/lib/mariaex/lib/mariaex/column.ex
 lib/elixir/lib/mariaex/lib/mariaex/connection.ex
 lib/elixir/lib/mariaex/lib/mariaex/connection/tcp.ex
 lib/elixir/lib/mariaex/lib/mariaex/lru_cache.ex

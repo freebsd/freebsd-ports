@@ -3,6 +3,7 @@
 
 PORTNAME=	vte
 PORTVERSION=	0.42.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -11,9 +12,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal widget with improved accessibility and I18N support
 
-BUILD_DEPENDS+= vapigen:${PORTSDIR}/lang/vala \
-		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+BUILD_DEPENDS+= vapigen:lang/vala \
+		bash:shells/bash
+LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 PORTSCOUT=	limitw:1,even
 

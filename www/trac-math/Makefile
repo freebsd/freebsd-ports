@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support for LaTeX math formulas in wiki pages
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	tracd:www/trac
 
 USE_TEX=	latex
 SUB_FILES=	pkg-message
@@ -23,7 +23,7 @@ USE_PYTHON=	distutils autoplist
 
 # Retrieve the latest version from SVN and package in a tarball.
 .if defined(BOOTSTRAP)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && \

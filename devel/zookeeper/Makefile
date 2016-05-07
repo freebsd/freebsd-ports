@@ -10,11 +10,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/current
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Coordination Service for Distributed Applications
 
-RUN_DEPENDS=	slf4j>=1.7.5:${PORTSDIR}/devel/slf4j \
-		netty>=3.5.5:${PORTSDIR}/java/netty \
-		jline>=0.9.94:${PORTSDIR}/devel/jline \
-		log4j>=1.2.16:${PORTSDIR}/devel/log4j \
-		libzookeeper>=3.4.7:${PORTSDIR}/devel/libzookeeper
+RUN_DEPENDS=	slf4j>=1.7.5:devel/slf4j \
+		netty>=3.5.5:java/netty \
+		jline>=0.9.94:devel/jline \
+		log4j>=1.2.16:devel/log4j \
+		libzookeeper>=3.4.7:devel/libzookeeper
 
 USERS=	zookeeper
 GROUPS=	zookeeper

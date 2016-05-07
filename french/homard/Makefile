@@ -8,8 +8,8 @@ CATEGORIES=	french cad linux
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Refinement and de-refinement mesh tool
 
-BUILD_DEPENDS=	${LOCALBASE}/aster/${VER}/bin/aster:${PORTSDIR}/french/aster
-RUN_DEPENDS=	${LOCALBASE}/aster/${VER}/bin/aster:${PORTSDIR}/french/aster
+BUILD_DEPENDS=	${LOCALBASE}/aster/${VER}/bin/aster:french/aster
+RUN_DEPENDS=	${LOCALBASE}/aster/${VER}/bin/aster:french/aster
 
 RESTRICTED=	The free downloading of HOMARD software is only allowed for coupling\
 		with Code_Aster. For any other use, a license agreement is requested.\

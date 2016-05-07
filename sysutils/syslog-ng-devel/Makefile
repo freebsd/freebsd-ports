@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.7.2
+PORTVERSION=	3.7.3
+PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -12,8 +13,10 @@ MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
-		libpcre.so:${PORTSDIR}/devel/pcre
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
+		libpcre.so:devel/pcre
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -41,17 +44,20 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
 USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--disable-linux-caps \
-		--datadir=${PREFIX}/share/syslog-ng/
+		--datadir=${PREFIX}/share/syslog-ng/ \
+		--with-docbook-dir=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
+
+BUILD_DEPENDS+=		xsltproc:textproc/libxslt \
+			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
@@ -63,11 +69,8 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if ${PORT_OPTIONS:MSPOOF}
-LIB_DEPENDS+=		libnet.so:${PORTSDIR}/net/libnet
-LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
-CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin
-CFLAGS+=		`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
-LDFLAGS+=		`${LIBNET_CONFIG} --libs`
+LIB_DEPENDS+=		libnet.so:net/libnet
+CONFIGURE_ARGS+=	--enable-spoof-source
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
 .endif
@@ -80,7 +83,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if ${PORT_OPTIONS:MGEOIP}
 CONFIGURE_ARGS+=	--enable-geoip
-LIB_DEPENDS+=		libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=		libGeoIP.so:net/GeoIP
 CONFIGURE_ENV+=		GEOIP_LIBS="-L${LOCALBASE}/lib -lGeoIP"
 PLIST_FILES+=		lib/syslog-ng/libgeoip-plugin.so
 .else
@@ -89,7 +92,7 @@ CONFIGURE_ARGS+=	--disable-geoip
 
 .if ${PORT_OPTIONS:MREDIS}
 CONFIGURE_ARGS+=        --enable-redis
-LIB_DEPENDS+=           libhiredis.so:${PORTSDIR}/databases/hiredis
+LIB_DEPENDS+=           libhiredis.so:databases/hiredis
 PLIST_FILES+=           lib/syslog-ng/libredis.so
 .else
 CONFIGURE_ARGS+=        --disable-redis
@@ -97,14 +100,14 @@ CONFIGURE_ARGS+=        --disable-redis
 
 .if ${PORT_OPTIONS:MSMTP}
 CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
-LIB_DEPENDS+=		libesmtp.so:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS+=		libesmtp.so:mail/libesmtp
 PLIST_FILES+=		lib/syslog-ng/libafsmtp.so
 .else
 CONFIGURE_ARGS+=	--disable-smtp
 .endif
 
 .if ${PORT_OPTIONS:MSQL}
-LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=		libdbi.so:databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -114,7 +117,7 @@ CONFIGURE_ARGS+=	--disable-sql
 .endif
 
 .if ${PORT_OPTIONS:MJSON}
-LIB_DEPENDS+=		libjson-c.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS+=		libjson-c.so:devel/json-c
 CONFIGURE_ARGS+=	--enable-json
 PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 .else
@@ -124,7 +127,8 @@ CONFIGURE_ARGS+=        --disable-json
 .if ${PORT_OPTIONS:MJAVA}
 CONFIGURE_ARGS+=	--enable-java
 USE_JAVA=	yes
-BUILD_DEPENDS=		gradle:${PORTSDIR}/devel/gradle
+BUILD_DEPENDS+=		gradle:devel/gradle
+BUILD_DEPENDS+=		bash:shells/bash
 PLIST_FILES+= 		lib/syslog-ng/libmod-java.so \
 			lib/syslog-ng/java-modules/syslog-ng-core.jar \
 			lib/syslog-ng/java-modules/log4j-1.2.16.jar \
@@ -148,8 +152,6 @@ CONFIGURE_ARGS+=        --disable-python
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' \
-		${WRKSRC}/configure
 	@${CP} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 	@${CP} ${WRKSRC}/scl/scl.conf ${WRKSRC}/scl/scl.conf.sample
 

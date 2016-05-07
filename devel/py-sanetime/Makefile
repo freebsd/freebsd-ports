@@ -13,9 +13,9 @@ COMMENT=	Sane date/time Python interface, with Django support
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>=2010:${PORTSDIR}/devel/py-pytz
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2:${PORTSDIR}/devel/py-unittest2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}pytz>=2010:devel/py-pytz
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2:devel/py-unittest2
 
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Include tools for unit tests

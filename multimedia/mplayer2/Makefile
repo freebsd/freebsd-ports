@@ -2,22 +2,21 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	17
+PORTREVISION=	19
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Advanced general-purpose video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-BUILD_DEPENDS=	python3:${PORTSDIR}/lang/python3 \
-		rst2man:${PORTSDIR}/textproc/py-docutils
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2 \
+		libavcodec.so:multimedia/ffmpeg
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
-USES=		cpe gmake iconv ncurses pkgconfig tar:xz
+USES=		cpe gmake iconv ncurses pkgconfig python:3,build tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
@@ -40,7 +39,7 @@ MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 OPTIONS_DEFINE=	A52 ASS CACA CDIO DEBUG DV DVDREAD DVDNAV GIF IPV6 JACK LADSPA \
 		LIBBLURAY LIRC MAD OPENGL PORTAUDIO PULSEAUDIO REALPLAYER \
 		RTC SDL SMB SPEEX THEORA V4L VDPAU X11 XINERAMA
-OPTIONS_DEFAULT=A52 ASS ENCA DVDREAD DVDNAV X11
+OPTIONS_DEFAULT=A52 ASS ENCA DVDREAD DVDNAV VDPAU X11
 OPTIONS_SUB=	yes
 
 OPTIONS_DEFINE_i386+=		WIN32
@@ -68,71 +67,71 @@ CONFLICTS=	mplayer-1.*
 
 BROKEN_sparc64=	Does not compile on sparc64
 
-A52_LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52
+A52_LIB_DEPENDS=	liba52.so:audio/liba52
 A52_CONFIGURE_OFF=	--disable-liba52
 
-ASS_LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass
+ASS_LIB_DEPENDS=	libass.so:multimedia/libass
 ASS_CONFIGURE_OFF=	--disable-libass
 
-CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_LIB_DEPENDS=	libcaca.so:graphics/libcaca
 CACA_CONFIGURE_OFF=	--disable-caca
 
-CDIO_LIB_DEPENDS=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
+CDIO_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
 CDIO_CONFIGURE_OFF=	--disable-libcdio
 
 DEBUG_CONFIGURE_ON=	--enable-debug=3
 DEBUG_CONFIGURE_OFF=	--disable-debug
 
-DV_LIB_DEPENDS=		libdv.so:${PORTSDIR}/multimedia/libdv
+DV_LIB_DEPENDS=		libdv.so:multimedia/libdv
 DV_CONFIGURE_OFF=	--disable-libdv
 
-DVDREAD_LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 DVDREAD_CONFIGURE_OFF=	--disable-dvdread
 
-DVDNAV_LIB_DEPENDS=	libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
+DVDNAV_LIB_DEPENDS=	libdvdnav.so:multimedia/libdvdnav
 DVDNAV_CONFIGURE_OFF=	--disable-dvdnav
 
-ENCA_LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca
+ENCA_LIB_DEPENDS=	libenca.so:converters/enca
 ENCA_CONFIGURE_OFF=	--disable-enca
 
-GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CONFIGURE_ON=	--enable-gif
 GIF_CONFIGURE_OFF=	--disable-gif
 
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_OFF=	--disable-inet6
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	--disable-jack
 
-LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
+LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/amp.so:audio/ladspa
 LADSPA_CONFIGURE_OFF=	--disable-ladspa
 
-LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_OFF=--disable-bluray
 
-LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CONFIGURE_OFF=	--disable-lirc
 
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CONFIGURE_OFF=	--disable-mad
 
 OPENGL_USE=		GL=gl XORG=glproto
 OPENGL_CONFIGURE_OFF=	--disable-gl
 OPENGL_IMPLIES=		X11
 
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_CONFIGURE_OFF=--disable-portaudio
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=--disable-pulse
 
-REALPLAYER_BUILD_DEPENDS=realplay:${PORTSDIR}/multimedia/linux-realplayer
-REALPLAYER_RUN_DEPENDS=	realplay:${PORTSDIR}/multimedia/linux-realplayer
+REALPLAYER_BUILD_DEPENDS=realplay:multimedia/linux-realplayer
+REALPLAYER_RUN_DEPENDS=	realplay:multimedia/linux-realplayer
 REALPLAYER_CONFIGURE_OFF=--disable-real
 
-RTC_BUILD_DEPENDS=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
-RTC_RUN_DEPENDS=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
+RTC_BUILD_DEPENDS=	${LOCALBASE}/modules/rtc.ko:emulators/rtc
+RTC_RUN_DEPENDS=	${LOCALBASE}/modules/rtc.ko:emulators/rtc
 RTC_CONFIGURE_OFF=	--disable-rtc
 
 RTCPU_CONFIGURE_ON=	--enable-runtime-cpudetection
@@ -141,24 +140,24 @@ RTCPU_CONFIGURE_OFF=	--disable-runtime-cpudetection
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_OFF=	--disable-sdl
 
-SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 SMB_CONFIGURE_OFF=	--disable-smb
 
-SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_CONFIGURE_OFF=	--disable-speex
 
-THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 THEORA_CONFIGURE_OFF=	--disable-theora
 
-V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 V4L_CONFIGURE_OFF=	--disable-tv-v4l2
 V4L_LIBS=		-lv4l2
 
-VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=	--disable-vdpau
 
-WIN32_RUN_DEPENDS=	win32-codecs>0:${PORTSDIR}/multimedia/win32-codecs
+WIN32_RUN_DEPENDS=	win32-codecs>0:multimedia/win32-codecs
 WIN32_CONFIGURE_ON=	--codecsdir=${LOCALBASE}/lib/win32
 WIN32_CONFIGURE_OFF=	--disable-win32dll --disable-qtx
 

@@ -1,5 +1,5 @@
---- src/driver_oss.c.orig	Sun Aug 31 15:32:02 2003
-+++ src/driver_oss.c	Tue Feb 20 22:44:43 2007
+--- src/driver_oss.c.orig	2003-08-31 13:32:02 UTC
++++ src/driver_oss.c
 @@ -27,7 +27,7 @@
  #if defined(__linux__)
    #include <sys/soundcard.h>
@@ -9,7 +9,7 @@
  #elif defined(__NetBSD__)
    #include <soundcard.h>
  #endif
-@@ -253,8 +253,10 @@
+@@ -253,8 +253,10 @@ int oss_open(const char *path)
   * oss_open() before initializing. */
  int oss_init(void)
  {
@@ -20,7 +20,7 @@
  	int old_mixer;
  	int ch;
  	int i;
-@@ -288,9 +290,13 @@
+@@ -288,9 +290,13 @@ int oss_init(void)
  	mixer_ptr->numchan = SOUND_MIXER_NRDEVICES;
  	mixer_ptr->numchan = CLAMP(mixer_ptr->numchan,0,SOUND_MIXER_NRDEVICES);
  
@@ -34,7 +34,7 @@
  	
  	mixer_ptr->curr_chan = 0;
  #ifdef UMIX_DEBUG
-@@ -329,9 +335,11 @@
+@@ -329,9 +335,11 @@ int oss_init(void)
  		oss_set_curr_chan(i);
  		oss_update(OSS_UPD_READ);
  	}
@@ -46,7 +46,7 @@
  
  #ifdef UMIX_DEBUG
  	err_msg("oss_init: initialized #%d with %d channels",
-@@ -388,6 +396,7 @@
+@@ -388,6 +396,7 @@ int oss_opt_to_chan_num(const char *str)
   * the device and compares it to the old */
  static int oss_check_update(void)
  {
@@ -54,7 +54,7 @@
  	struct mixer_info oss_info;
  
  	eioctl(mixer_ptr->fd, SOUND_MIXER_INFO, &oss_info);
-@@ -396,6 +405,7 @@
+@@ -396,6 +405,7 @@ static int oss_check_update(void)
  		mixer_ptr->modifycount = oss_info.modify_counter;
  		return 1;
  	}

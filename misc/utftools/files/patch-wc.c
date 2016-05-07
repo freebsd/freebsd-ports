@@ -1,5 +1,5 @@
---- wc.c.orig	Sat May 10 13:51:37 2003
-+++ wc.c	Sat May 10 13:52:00 2003
+--- wc.c.orig	1997-02-25 18:47:26 UTC
++++ wc.c
 @@ -4,6 +4,7 @@
  
  #include <stdio.h>

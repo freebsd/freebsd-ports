@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	BDB
-PORTVERSION=	1.90
-PORTREVISION=	3
+PORTVERSION=	1.91
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MLEHMANN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Asynchronous Berkeley DB access
@@ -16,7 +14,7 @@ COMMENT=	Asynchronous Berkeley DB access
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-common-sense>=0:devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.801
@@ -28,7 +26,7 @@ USE_PERL5=	configure
 USES=		perl5
 
 post-patch:
-	@${REINPLACE_CMD} -e '18 s|-ldb|-l${BDB_LIB_NAME}|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|' ${WRKSRC}/Makefile.PL
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/BDB/BDB.so

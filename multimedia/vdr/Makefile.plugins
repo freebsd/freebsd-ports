@@ -2,10 +2,10 @@
 #
 # $FreeBSD$
 
-BUILD_DEPENDS+=  ${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS+=  ${LOCALBASE}/include/linux/dvb/frontend.h:multimedia/v4l_compat
 
-BUILD_DEPENDS+=	vdr:${PORTSDIR}/multimedia/vdr
-RUN_DEPENDS+=	vdr:${PORTSDIR}/multimedia/vdr
+BUILD_DEPENDS+=	vdr:multimedia/vdr
+RUN_DEPENDS+=	vdr:multimedia/vdr
 
 APIVERSION=	1.7.29
 DIST_SUBDIR=	vdr

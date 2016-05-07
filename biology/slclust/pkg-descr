@@ -1,0 +1,5 @@
+Slclust is a utility that performs single-linkage clustering with the option of
+applying a Jaccard similarity coefficient to break weakly bound clusters into
+distinct clusters.
+
+WWW: http://sourceforge.net/projects/slclust/

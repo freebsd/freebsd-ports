@@ -8,7 +8,7 @@ PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX} \
-	   	wastesedge-src-${WEDGE_VERSION}${EXTRACT_SUFX}
+		wastesedge-src-${WEDGE_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free role playing game
@@ -16,8 +16,8 @@ COMMENT=	Free role playing game
 LICENSE=	GPLv2
 LICENSE_DISTFILES=	${DISTFILES}
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libfreetype.so:print/freetype2
 
 USES=		gettext gmake python
 USE_SDL=	mixer ttf sdl

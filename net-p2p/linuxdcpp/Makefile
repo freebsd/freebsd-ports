@@ -12,7 +12,7 @@ COMMENT=	Port of the DC++ Direct Connect client to Unix-like systems
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
 
 USES=		gettext iconv pkgconfig scons tar:bzip2
 USE_GNOME=	libglade2
@@ -30,7 +30,7 @@ MAKE_ARGS+=	debug=1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_MAKE_ARGS_OFF=	libnotify=0
 
 post-patch:

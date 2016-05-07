@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nelly's Rooftop Garden, physics-based puzzle game
 
 RUN_DEPENDS=	${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
+		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-opengl
 
 USES=		python:2
 

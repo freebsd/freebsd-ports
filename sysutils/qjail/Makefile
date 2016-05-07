@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjail
-PORTVERSION=	4.3
+PORTVERSION=	4.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -17,7 +17,7 @@ LICENSE_TEXT=	As per the international "Berne Convention" this work is \
 		obtained from the author <qjail1@a1poweruser.com>. \
 		This work is provided 'AS IS' and you use it at your own risk. \
 		Redistribution and use is permitted providing this license \
-	       	notice is retained.
+		notice is retained.
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		tar:bzip2

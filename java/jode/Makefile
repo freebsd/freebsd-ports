@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${VENDOR_VERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Java package containing a decompiler and an optimizer for Java
 
-BUILD_DEPENDS=	${GETOPT_JAR}:${PORTSDIR}/java/java-getopt
+BUILD_DEPENDS=	${GETOPT_JAR}:java/java-getopt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 VENDOR_VERSION=	1.1.2-pre1

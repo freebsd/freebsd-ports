@@ -14,7 +14,7 @@ COMMENT=	Detects objects from picture using opencv
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/opencv.pc:${PORTSDIR}/graphics/opencv
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/opencv.pc:graphics/opencv
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

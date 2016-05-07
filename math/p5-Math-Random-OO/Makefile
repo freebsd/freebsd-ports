@@ -13,11 +13,11 @@ COMMENT=	Consistent object-oriented interface for generating random numbers
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-Params-Validate>=0.76:devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-MockRandom>=0.95:${PORTSDIR}/devel/p5-Test-MockRandom \
-		p5-Test-Number-Delta>=0.14:${PORTSDIR}/devel/p5-Test-Number-Delta
+TEST_DEPENDS=	p5-Test-MockRandom>=0.95:devel/p5-Test-MockRandom \
+		p5-Test-Number-Delta>=0.14:devel/p5-Test-Number-Delta
 
 USES=		perl5
 USE_PERL5=	configure

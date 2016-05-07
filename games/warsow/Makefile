@@ -14,8 +14,8 @@ COMMENT=	Futuristic, fast-paced first person shooter
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	${DATADIR}/basewsw/data1_15.pk3:${PORTSDIR}/games/warsow-data
+LIB_DEPENDS=	libcurl.so:ftp/curl
+RUN_DEPENDS=	${DATADIR}/basewsw/data1_15.pk3:games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -58,11 +58,11 @@ DESKTOP_ENTRIES="Warsow" "${COMMENT}" \
 	"Game;Shooter;" false
 
 . if ${PORT_OPTIONS:MFTLIB} || ${PORT_OPTIONS:MREF_GL}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 . endif
 
 . if ${PORT_OPTIONS:MFTLIB}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:print/freetype2
 ALL_TARGET+=	ftlib
 . endif
 
@@ -74,7 +74,7 @@ ALL_TARGET+=	ref_gl
 . endif
 
 . if ${PORT_OPTIONS:MQF} || ${PORT_OPTIONS:MOPENAL}
-LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbisfile.so:audio/libvorbis
 . endif
 
 . if ${PORT_OPTIONS:MQF}
@@ -93,7 +93,7 @@ ALL_TARGET+=	irc
 
 . if ${PORT_OPTIONS:MCIN}
 ALL_TARGET+=	cin
-BUILD_DEPENDS+=	${LOCALBASE}/include/theora/theoradec.h:${PORTSDIR}/multimedia/libtheora
+BUILD_DEPENDS+=	${LOCALBASE}/include/theora/theoradec.h:multimedia/libtheora
 . endif
 
 . if ${PORT_OPTIONS:MXRANDR}

@@ -12,7 +12,7 @@ COMMENT=	Space exploration and combat game similar to Escape Velocity
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 BROKEN_FreeBSD_9=	does not build # revisit when ports gcc is switched to 4.9
 

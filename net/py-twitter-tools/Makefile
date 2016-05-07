@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-tools
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python API and command-line toolset for Twitter
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

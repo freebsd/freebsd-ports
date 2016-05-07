@@ -11,11 +11,10 @@ COMMENT=	Parser construction library with great error reporting in Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-blankslate>=2:${PORTSDIR}/devel/rubygem-blankslate
+RUN_DEPENDS=	rubygem-blankslate>=2:devel/rubygem-blankslate
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

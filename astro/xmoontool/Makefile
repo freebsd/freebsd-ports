@@ -21,7 +21,7 @@ PORTDOCS=	NOTES
 PLIST_FILES=	bin/xmoontool man/man1/xmoontool.1.gz
 
 LIBNOVA_MAKE_ENV_OFF=	WITHOUT_LIBNOVA=yes
-LIBNOVA_LIB_DEPENDS=	libnova.so:${PORTSDIR}/astro/libnova
+LIBNOVA_LIB_DEPENDS=	libnova.so:astro/libnova
 MONOCHROME_MAKE_ENV=	DEFINES=""
 
 do-install:

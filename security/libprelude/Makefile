@@ -2,75 +2,47 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	1.0.1
-PORTREVISION=	9
+PORTVERSION=	1.2.6
 CATEGORIES=	security
-MASTER_SITES=	http://www.prelude-ids.org/attachments/download/241/
+MASTER_SITES=	http://www.prelude-siem.org/attachments/download/410/
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Framework library for Prelude NIDS
+COMMENT=	Sensor support library from Prelude SIEM
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.README
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
-		libnettle.so:${PORTSDIR}/security/nettle \
-		libp11-kit.so:${PORTSDIR}/security/p11-kit
-
-BROKEN_sparc64=	does not compile
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libgnutls.so:security/gnutls \
+		libgcrypt.so:security/libgcrypt
 
 OPTIONS_DEFINE=	DOCS PERL PYTHON
 OPTIONS_SUB=	yes
 
-USES=		charsetfix gettext gmake iconv libtool pathfix pkgconfig
+USES=		charsetfix gettext-runtime gmake iconv libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-static \
-		--localstatedir=/var \
-		--enable-gtk-doc=no \
-		--with-html-dir=${PREFIX}/share/doc
-
+CONFIGURE_ARGS=	--without-lua \
+		--without-python3 \
+		--without-swig \
+		--without-valgrind \
+		ac_cv_path_RUBY=
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 ETCDIR=		${PREFIX}/etc/prelude
-PORTDOCS=	*
 
-PERL_CONFIGURE_WITH=	perl
+PERL_CONFIGURE_WITH=	perl=${PERL}
 PERL_USES=		perl5
-PYTHON_CONFIGURE_WITH=	python
-PYTHON_USES=		python
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-PLIST_SUB+=	PYTHON_VER="${PYTHON_VER}" VERSION="${PORTVERSION}"
-.endif
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} '\,gnutls/extra\.h,d' \
-		${WRKSRC}/prelude-admin/prelude-admin.c \
-		${WRKSRC}/prelude-admin/server.c
+PYTHON_CONFIGURE_WITH=	python2=${PYTHON_CMD}
+PYTHON_USES=		python:2.7
+PYTHON_PLIST_SUB=	VERSION="${PORTVERSION}"
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-
 .for f in client.conf global.conf idmef-client.conf tls.conf
-	${INSTALL_DATA} ${WRKSRC}/${f} \
+	${MV} ${STAGEDIR}${ETCDIR}/default/${f} \
 		${STAGEDIR}${ETCDIR}/default/${f}.sample
-	${RM} ${STAGEDIR}${ETCDIR}/default/${f}	# Remove files install-data-local installs
 .endfor
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${STAGEDIR}${DOCSDIR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -12,7 +12,7 @@ COMMENT=	API to manage digitalocean.com droplets
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests
 
 USES=	python
 USE_PYTHON=	distutils autoplist

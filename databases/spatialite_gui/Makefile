@@ -13,9 +13,9 @@ COMMENT=	Graphical User Interface (GUI) tool supporting SpatiaLite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgaiagraphics.so:${PORTSDIR}/graphics/libgaiagraphics \
-		libfreexl.so:${PORTSDIR}/textproc/freexl \
-		libspatialite.so:${PORTSDIR}/databases/spatialite
+LIB_DEPENDS=	libgaiagraphics.so:graphics/libgaiagraphics \
+		libfreexl.so:textproc/freexl \
+		libspatialite.so:databases/spatialite
 
 USE_WX=		2.8
 WX_UNICODE=	yes

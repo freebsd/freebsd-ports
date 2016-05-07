@@ -11,14 +11,13 @@ COMMENT=	Library to prompt for infrastructure and login credentials
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-fog>=0:${PORTSDIR}/devel/rubygem-fog \
-		rubygem-highline>=1.6:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-readwritesettings>=3.0:${PORTSDIR}/devel/rubygem-readwritesettings
+RUN_DEPENDS=	rubygem-fog>=0:devel/rubygem-fog \
+		rubygem-highline>=1.6:devel/rubygem-highline \
+		rubygem-readwritesettings>=3.0:devel/rubygem-readwritesettings
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/cyoi
 

@@ -12,10 +12,12 @@ COMMENT=	Lightweight command line video extraction tool
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libquvi.so:${PORTSDIR}/multimedia/libquvi
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libcurl.so:ftp/curl \
+		libpcre.so:devel/pcre \
+		libquvi.so:multimedia/libquvi
 
 USES=		pkgconfig tar:xz
 GNU_CONFIGURE=	yes

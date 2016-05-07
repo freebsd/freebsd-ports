@@ -13,8 +13,8 @@ COMMENT=	Convert DateTimes to/from epoch seconds
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DateTime>=0.31:${PORTSDIR}/devel/p5-DateTime \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS=	p5-DateTime>=0.31:devel/p5-DateTime \
+		p5-Params-Validate>=0:devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:0.801

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to pass a file descriptor over a socket
 
-BUILD_DEPENDS=	p5-Canary-Stability>0:${PORTSDIR}/devel/p5-Canary-Stability
+BUILD_DEPENDS=	p5-Canary-Stability>0:devel/p5-Canary-Stability
 
 USES=		perl5
 USE_PERL5=	configure

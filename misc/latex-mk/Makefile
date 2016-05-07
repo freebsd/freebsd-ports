@@ -13,7 +13,7 @@ COMMENT=	Collection of makefile and scripts for LaTeX documents
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS=	texi2dvi:print/texinfo
 
 USE_TEX=	latex
 USES=		gmake

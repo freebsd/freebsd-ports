@@ -11,8 +11,8 @@ COMMENT=	Translate CSS Selectors to XPath Expressions
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	R-cran-XML>0:${PORTSDIR}/textproc/R-cran-XML \
-		R-cran-stringr>0:${PORTSDIR}/textproc/R-cran-stringr
+RUN_DEPENDS=	R-cran-XML>0:textproc/R-cran-XML \
+		R-cran-stringr>0:textproc/R-cran-stringr
 
 USES=	cran:auto-plist
 

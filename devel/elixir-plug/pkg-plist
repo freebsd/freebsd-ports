@@ -14,6 +14,7 @@ lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.AlreadySentError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.CookieOverflowError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.Cookies.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.InvalidHeaderError.beam
+lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.InvalidQueryError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.NotSentError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.Query.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.Status.beam
@@ -56,6 +57,7 @@ lib/elixir/lib/plug/ebin/Elixir.Plug.Static.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Supervisor.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Test.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Upload.beam
+lib/elixir/lib/plug/ebin/Elixir.Plug.UploadError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.beam
 lib/elixir/lib/plug/ebin/plug.app
 lib/elixir/lib/plug/lib/plug.ex

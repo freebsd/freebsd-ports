@@ -33,12 +33,12 @@ OPTIONS_SINGLE_TOOLKIT=	FOX16 FOX17
 OPTIONS_DEFAULT=	FOX16
 
 FOX16_DESC=		Fox 1.6 GUI toolkit support
-FOX16_LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
+FOX16_LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 FOX16_CONFIGURE_ENV=	FOX_CFLAGS="$$(fox-config --cflags)" \
 			FOX_LIBS="$$(fox-config --libs)" \
 			RESWRAP="${LOCALBASE}/bin/reswrap"
 FOX17_DESC=		Fox 1.7 GUI toolkit support
-FOX17_LIB_DEPENDS=	libFOX-1.7.so:${PORTSDIR}/x11-toolkits/fox17
+FOX17_LIB_DEPENDS=	libFOX-1.7.so:x11-toolkits/fox17
 FOX17_CONFIGURE_ENV=	FOX_CFLAGS="$$(pkgconf fox17 --cflags)" \
 			FOX_LIBS="$$(pkgconf fox17 --libs) -lX11" \
 			RESWRAP="${LOCALBASE}/bin/fox-1.7/reswrap"

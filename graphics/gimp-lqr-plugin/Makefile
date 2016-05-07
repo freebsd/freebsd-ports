@@ -11,8 +11,8 @@ MASTER_SITES=	http://liquidrescale.wdfiles.com/local--files/en:download-page-sou
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Liquid rescale GIMP plug-in
 
-LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app \
-		liblqr-1.so:${PORTSDIR}/graphics/liblqr-1
+LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app \
+		liblqr-1.so:graphics/liblqr-1
 
 USES=		tar:bzip2 gettext gmake pkgconfig
 GNU_CONFIGURE=	yes

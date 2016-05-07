@@ -13,8 +13,8 @@ COMMENT?=	Husky full featured highly portable FTN Tosser
 DISTNAME=	husky-all-1.9-source-20140519
 
 .if ${PORTNAME} == "husky"
-RUN_DEPENDS=	hpt:${PORTSDIR}/news/husky-hpt \
-		htick:${PORTSDIR}/news/husky-htick
+RUN_DEPENDS=	hpt:news/husky-hpt \
+		htick:news/husky-htick
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

@@ -1,4 +1,4 @@
 bin/spamalyze
 %%SITE_PERL%%/Net/RBLClient.pm
-%%PERL5_MAN3%%/Net::RBLClient.3.gz
 %%PERL5_MAN1%%/spamalyze.1.gz
+%%PERL5_MAN3%%/Net::RBLClient.3.gz

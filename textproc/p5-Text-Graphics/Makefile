@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Text graphics rendering toolkit
 
-BUILD_DEPENDS=	p5-Text-Wrapper>=0:${PORTSDIR}/textproc/p5-Text-Wrapper
+BUILD_DEPENDS=	p5-Text-Wrapper>=0:textproc/p5-Text-Wrapper
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

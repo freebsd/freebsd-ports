@@ -1,0 +1,3 @@
+A library to make writing templatetags in Django sweet.
+
+WWW: https://github.com/alex/django-templatetag-sugar

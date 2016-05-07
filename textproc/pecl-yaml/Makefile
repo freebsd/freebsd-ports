@@ -14,7 +14,7 @@ COMMENT=	YAML-1.1 parser and emitter
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
+LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 USES=		tar:tgz
 USE_PHP=	yes

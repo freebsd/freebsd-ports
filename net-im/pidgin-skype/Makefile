@@ -13,10 +13,10 @@ COMMENT=	Plugin to use Skype chat from Pidgin (with Skype running)
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin \
-    ${LOCALBASE}/bin/skype:${PORTSDIR}/net-im/skype
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
-    ${LOCALBASE}/bin/skype:${PORTSDIR}/net-im/skype
+BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin \
+    ${LOCALBASE}/bin/skype:net-im/skype
+RUN_DEPENDS=	pidgin:net-im/pidgin \
+    ${LOCALBASE}/bin/skype:net-im/skype
 
 USES=		gmake pkgconfig tar:xz
 USE_GNOME=	glib20

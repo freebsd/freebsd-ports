@@ -11,9 +11,9 @@ DISTNAME=	squidstats-r${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of simple statistical analysis bits for Squid
 
-RUN_DEPENDS=	p5-Config-IniFiles>=2.39:${PORTSDIR}/devel/p5-Config-IniFiles \
-		p5-RRD-Simple>=1.44:${PORTSDIR}/databases/p5-RRD-Simple \
-		p5-SNMP_Session>=1.11:${PORTSDIR}/net-mgmt/p5-SNMP_Session
+RUN_DEPENDS=	p5-Config-IniFiles>=2.39:devel/p5-Config-IniFiles \
+		p5-RRD-Simple>=1.44:databases/p5-RRD-Simple \
+		p5-SNMP_Session>=1.11:net-mgmt/p5-SNMP_Session
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	graph/src/stats.pl.in \

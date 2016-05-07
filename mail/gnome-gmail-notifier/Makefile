@@ -9,9 +9,9 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gmail Inbox Monitor for the GNOME2 desktop
 
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libsoup-2.4.so:devel/libsoup \
+		libgnome-keyring.so:security/libgnome-keyring
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig tar:bzip2

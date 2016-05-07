@@ -10,6 +10,8 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for collecting and analyzing calls from different PBX models
 
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	EXAMPLES LIBWRAP WWW WWWGD DOCS
 OPTIONS_DEFAULT=	LIBWRAP MYSQL WWW WWWGD
 OPTIONS_MULTI=	DB
@@ -48,14 +50,14 @@ USE_PHP+=	pgsql
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-BUILD_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
-BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 .endif
 
 .if ! ${PORT_OPTIONS:MLIBWRAP}

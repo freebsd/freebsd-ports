@@ -11,7 +11,7 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy wrapper for git
 
-RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+RUN_DEPENDS=	git:devel/git
 
 DISTREVISION=	0 # bump this if distfile is changed inplace
 

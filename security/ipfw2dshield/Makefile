@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.dynamical-systems.org/ipfw/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DShield client for ipfw logs
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PORTDOCS=	CHANGES README.html README.txt
 
 OPTIONS_DEFINE=	DOCS
@@ -20,7 +23,7 @@ post-patch:
 		${WRKSRC}/ipaddr/Makefile \
 		${WRKSRC}/strpdate/Makefile
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

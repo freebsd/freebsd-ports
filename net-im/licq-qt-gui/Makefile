@@ -12,8 +12,8 @@ COMMENT=	Qt plugin for licq
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${PORTSDIR}/${LICQ_PORT}-icq
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${LICQ_PORT}-icq
 
 USE_XORG=	x11 xext ice xscrnsaver
 USES=		cmake
@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=HUNSPELL
 
 LICQ_PORT?=	net-im/licq
 
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 HUNSPELL_CMAKE_ON=	-DHUNSPELL_INCLUDE_DIRS=${LOCALBASE}/include/hunspell \
 			-DHUNSPELL_LIBRARIES=${LOCALBASE}/lib/libhunspell-1.3.so \
 			-DHUNSPELL_FOUND:BOOL=ON
@@ -44,12 +44,6 @@ KDE4_PLIST_SUB_OFF=	GUI_NAME=qt4  WITH_KDE="@comment " WITH_QT=""
 
 .if ${PORT_OPTIONS:MKDE4}
 KDE_SUFFIX=	-kde
-.endif
-
-.if ${PORT_OPTIONS:MHUNSPELL}
-.if ${PORT_OPTIONS:MKDE4}
-IGNORE= option HUNSPELL can not be used with KDE4
-.endif
 .endif
 
 .include <bsd.port.mk>

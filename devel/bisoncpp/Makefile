@@ -11,9 +11,9 @@ COMMENT=	LALR(1) parser generator that generates C++ classes
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
-		yodl>=3.0:${PORTSDIR}/textproc/yodl \
-		libbobcat>=3.18:${PORTSDIR}/devel/libbobcat
+BUILD_DEPENDS=	icmake:devel/icmake \
+		yodl>=3.0:textproc/yodl \
+		libbobcat>=3.18:devel/libbobcat
 
 DOCSDIR=	${PREFIX}/share/doc/bisonc++
 PORTDOCS=	*

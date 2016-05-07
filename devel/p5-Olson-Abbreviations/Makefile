@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Globally unique timezones abbreviation handling
 
-RUN_DEPENDS=	p5-Moose>=0.41:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
-		p5-MooseX-ClassAttribute>=0:${PORTSDIR}/devel/p5-MooseX-ClassAttribute
+RUN_DEPENDS=	p5-Moose>=0.41:devel/p5-Moose \
+		p5-MooseX-AttributeHelpers>=0:devel/p5-MooseX-AttributeHelpers \
+		p5-MooseX-ClassAttribute>=0:devel/p5-MooseX-ClassAttribute
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -30,9 +30,9 @@ MAKE_ENV+=	INSTALL_SHLIB="${INSTALL_LIB}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 USE_LDCONFIG=	yes
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ENABLE=	curl-client
-LIBWWW_LIB_DEPENDS=	libwwwcore.so:${PORTSDIR}/www/libwww
+LIBWWW_LIB_DEPENDS=	libwwwcore.so:www/libwww
 LIBWWW_CONFIGURE_ENABLE=libwww-client
 LIBWWW_CONFIGURE_WITH=	libwww-ssl
 CPLUSPLUS_CONFIGURE_ENABLE=	cplusplus

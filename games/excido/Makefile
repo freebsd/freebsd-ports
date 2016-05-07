@@ -14,7 +14,7 @@ COMMENT=	Portable fast-paced 3D shooter
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
+LIB_DEPENDS=	libphysfs.so:devel/physfs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsixel
-PORTVERSION=	1.4.13
+PORTVERSION=	1.6.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -25,13 +25,14 @@ INSTALL_TARGET=	install-strip
 
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	CURL GD JPEG PIXBUF PNG
+OPTIONS_DEFINE=	CURL GD JPEG PIXBUF PNG PYTHON
 OPTIONS_DEFAULT=
+OPTIONS_SUB=	yes
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	libcurl
 
-GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
+GD_LIB_DEPENDS=		libgd.so:graphics/gd
 GD_CONFIGURE_WITH=	gd
 
 JPEG_USES=		jpeg
@@ -39,11 +40,16 @@ JPEG_CONFIGURE_WITH=	jpeg
 JPEG_CPPFLAGS=		-I${LOCALBASE}/include
 JPEG_LDFLAGS=		-L${LOCALBASE}/lib
 
-PIXBUF_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:${PORTSDIR}/graphics/gdk-pixbuf2
+PIXBUF_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 PIXBUF_CONFIGURE_WITH=	gdk-pixbuf2
 
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
+
+PYTHON_DESC=		Python interface
+PYTHON_USES=		python
+PYTHON_USE=		python=py3kplist
+PYTHON_CONFIGURE_ENABLE=	python
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

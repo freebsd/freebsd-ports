@@ -1,3 +1,6 @@
+lib/.libgcrypt.so.11.hmac
+lib/libgcrypt.so.11
+lib/libgcrypt.so.11.5.3
 lib64/.libgcrypt.so.11.hmac
 lib64/libgcrypt.so.11
 lib64/libgcrypt.so.11.5.3

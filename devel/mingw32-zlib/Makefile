@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	mingw32-
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The zlib library cross-compiled for MinGW32
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
-		${LOCALBASE}/mingw32/include/sys/types.h:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt
+BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
+		${LOCALBASE}/mingw32/include/sys/types.h:devel/${PKGNAMEPREFIX}bin-msvcrt
 
 USES=		tar:xz gmake
 MAKEFILE=	win32/Makefile.gcc

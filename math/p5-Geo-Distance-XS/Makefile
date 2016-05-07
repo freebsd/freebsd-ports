@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Calculate Distances and Closest Locations faster
 
-BUILD_DEPENDS=	p5-Geo-Distance>=0.16:${PORTSDIR}/math/p5-Geo-Distance
+BUILD_DEPENDS=	p5-Geo-Distance>=0.16:math/p5-Geo-Distance
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS=	p5-Test-Simple>=0.94:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

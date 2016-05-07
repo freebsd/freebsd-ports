@@ -12,14 +12,13 @@ COMMENT=	Vendor independent interface for accessing databases
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-deprecated2>=2.0.1:${PORTSDIR}/devel/rubygem-deprecated2 \
-		rubygem-aspectr>=0:${PORTSDIR}/devel/rubygem-aspectr
+RUN_DEPENDS=	rubygem-deprecated2>=2.0.1:devel/rubygem-deprecated2 \
+		rubygem-aspectr>=0:devel/rubygem-aspectr
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/dbi bin/test_broken_dbi
 

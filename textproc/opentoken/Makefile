@@ -3,6 +3,7 @@
 
 PORTNAME=	opentoken
 PORTVERSION=	6.0b
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://stephe-leake.org/ada/
 
@@ -12,7 +13,7 @@ COMMENT=	Lexical analyser and parser for the Ada language
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gprbuild>=20130416:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	gprbuild>=20130416:devel/gprbuild
 
 USES=		ada tar:bzip2
 

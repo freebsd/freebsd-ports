@@ -16,7 +16,12 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmable troff translator with backend for HTML
 
-LIB_DEPENDS=	libelk.so:${PORTSDIR}/lang/elk
+LICENSE=	UNROFF
+LICENSE_NAME=	unroff license
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+LIB_DEPENDS=	libelk.so:lang/elk
 
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DBSD"	\
@@ -36,6 +41,8 @@ do-install:
 .endfor
 	${TAR} -C ${WRKSRC} -cf - scm | \
 		${TAR} -C ${STAGEDIR}${DATADIR} --unlink -xf -
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.ms ${STAGEDIR}${DOCSDIR}
 

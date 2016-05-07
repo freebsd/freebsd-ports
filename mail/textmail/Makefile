@@ -10,11 +10,11 @@ MASTER_SITES=	http://raf.org/textmail/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts e-mail attachments to plain-text
 
-RUN_DEPENDS=	antiword:${PORTSDIR}/textproc/antiword \
-		catdoc:${PORTSDIR}/textproc/catdoc \
-		xls2csv:${PORTSDIR}/textproc/catdoc \
-		lynx:${PORTSDIR}/www/lynx \
-		pdftotext:${PORTSDIR}/graphics/poppler-utils
+RUN_DEPENDS=	antiword:textproc/antiword \
+		catdoc:textproc/catdoc \
+		xls2csv:textproc/catdoc \
+		lynx:www/lynx \
+		pdftotext:graphics/poppler-utils
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${PORTNAME}

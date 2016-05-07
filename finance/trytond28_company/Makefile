@@ -14,8 +14,8 @@ COMMENT=	Tryton Application Platform (Company Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_party>=2.8.0:${PORTSDIR}/finance/trytond28_party \
-		trytond28_currency>=2.8.0:${PORTSDIR}/finance/trytond28_currency
+RUN_DEPENDS=	trytond28_party>=2.8.0:finance/trytond28_party \
+		trytond28_currency>=2.8.0:finance/trytond28_currency
 
 CONFLICTS=	trytond_company-2.[46].*
 

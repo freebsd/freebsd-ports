@@ -32,8 +32,8 @@ TOR_DESC=	Enable local tor support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOR}
-RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof \
-		tor:${PORTSDIR}/security/tor
+RUN_DEPENDS+=	lsof:sysutils/lsof \
+		tor:security/tor
 .endif
 
 .include <bsd.port.pre.mk>
@@ -48,11 +48,11 @@ post-patch:
 .endif
 
 	@${REINPLACE_CMD} -e 's,/usr/bin,${PREFIX}/bin,g' \
- 		${WRKSRC}/arm ${WRKSRC}/setup.py ${WRKSRC}/src/uninstall
+		${WRKSRC}/arm ${WRKSRC}/setup.py ${WRKSRC}/src/uninstall
 	@${REINPLACE_CMD} -e 's,/usr/share/man/man1,${PREFIX}/man/man1,g' \
 		${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's,/usr/share,${PYTHON_SITELIBDIR},g' \
- 		${WRKSRC}/arm ${WRKSRC}/setup.py ${WRKSRC}/src/uninstall \
+		${WRKSRC}/arm ${WRKSRC}/setup.py ${WRKSRC}/src/uninstall \
 		${WRKSRC}/src/gui/controller.py
 
 .include <bsd.port.post.mk>

@@ -12,14 +12,14 @@ DIST_SUBDIR=	kmfl
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	SCIM KMFL IMEngine platform for Keyman (KMN) language keyboards
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libkmfl.so:${PORTSDIR}/textproc/libkmfl \
-		libkmflcomp.so:${PORTSDIR}/textproc/kmflcomp \
-		libpng.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp \
-		scim:${PORTSDIR}/textproc/scim
+BUILD_DEPENDS=	scim:textproc/scim
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libkmfl.so:textproc/libkmfl \
+		libkmflcomp.so:textproc/kmflcomp \
+		libpng.so:graphics/png
+RUN_DEPENDS=	kmflcomp:textproc/kmflcomp \
+		scim:textproc/scim
 
 USE_XORG=	x11 xkbfile xproto
 USE_GNOME=	glib20 gtk20 intlhack
@@ -49,7 +49,7 @@ pre-patch:
 post-patch:
 	@${REINPLACE_CMD} \
 		's|/usr/X11R6/lib|${LOCALBASE}/lib|' \
-	   	${WRKSRC}/src/Makefile.* ${WRKSRC}/src/xkbmap.cpp
+		${WRKSRC}/src/Makefile.* ${WRKSRC}/src/xkbmap.cpp
 	@${REINPLACE_CMD} \
 		's|/usr/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/scim_kmfl_imengine_setup/scim_kmfl_imengine_setup.cpp

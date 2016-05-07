@@ -13,7 +13,7 @@ COMMENT=	C-like scripting language with automatic memory management
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 CONFIGURE_ARGS+=	--enable-pcre
 .endif
 

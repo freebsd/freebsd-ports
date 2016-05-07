@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Utility to detect an e-mail is mobile one or not
 
-BUILD_DEPENDS=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
+BUILD_DEPENDS=	p5-Mail-Tools>=0:mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

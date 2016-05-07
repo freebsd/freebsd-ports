@@ -30,13 +30,13 @@ IGNORE=		cannot build OpenCV and gavl plugins simultaneously
 PORTREVISION=	3
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=	-plugins-opencv
-LIB_DEPENDS+=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv
 FREI0R_PLUGINS=	facebl0r facedetect
 .elif defined(BUILDING_FREI0R_GAVL)
 PORTREVISION=	2
 COMMENT=	Frei0r gavl plugins
 PKGNAMESUFFIX=	-plugins-gavl
-LIB_DEPENDS+=	libgavl.so:${PORTSDIR}/multimedia/gavl
+LIB_DEPENDS+=	libgavl.so:multimedia/gavl
 FREI0R_PLUGINS=	rgbparade scale0tilt vectorscope
 .else
 
@@ -50,7 +50,7 @@ MMX_DESC=	MMX CPU instructions
 .include <bsd.port.options.mk>
 
 . if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MAPIDOC}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:devel/doxygen
 . endif
 
 .endif # !defined(BUILDING_FREI0R_OPENCV) && !defined(BUILDING_FREI0R_GAVL)

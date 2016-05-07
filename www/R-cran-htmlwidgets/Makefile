@@ -11,9 +11,9 @@ COMMENT=	HTML Widgets for R
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-htmltools>=0.3:${PORTSDIR}/textproc/R-cran-htmltools \
-		R-cran-jsonlite>=0.9.16:${PORTSDIR}/converters/R-cran-jsonlite \
-		R-cran-yaml>0:${PORTSDIR}/textproc/R-cran-yaml
+RUN_DEPENDS=	R-cran-htmltools>=0.3:textproc/R-cran-htmltools \
+		R-cran-jsonlite>=0.9.16:converters/R-cran-jsonlite \
+		R-cran-yaml>0:textproc/R-cran-yaml
 
 USES=	cran:auto-plist
 

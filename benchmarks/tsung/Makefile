@@ -11,8 +11,8 @@ COMMENT=	Multi-protocol distributed load testing tool
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erlc:lang/erlang
+RUN_DEPENDS=	erl:lang/erlang
 
 USE_PERL5=	run
 

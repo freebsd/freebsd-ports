@@ -13,17 +13,7 @@ COMMENT=	Extension to the Tk toolkit
 
 WRKSRC=		${WRKDIR}/Tix${DISTVERSION}
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USES=		tk
-CONFIGURE_ARGS=	--enable-shared --enable-sam \
-		--with-tclconfig="${TCL_LIBDIR}" \
-		--with-tkconfig="${TK_LIBDIR}" \
-		--with-tclinclude="${TCL_INCLUDEDIR}" \
-		--with-tkinclude="${TK_INCLUDEDIR}" \
-		--prefix=${PREFIX} \
-		--exec-prefix=${PREFIX}
-# this should probably be added to bsd.port.mk
-CONFIGURE_ENV=	PREFIX=${PREFIX}
+USES=		tk:tea
 
 TIX_LIB=	libTix${PORTVERSION}.so
 TIX_LIB_FILE=	${TIX_LIB}.0
@@ -34,7 +24,7 @@ pre-configure:
 	    INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+	    ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS})
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|package require Tcl 8\.4|package require Tcl ${TCL_VER}|g" ${WRKSRC}/Makefile

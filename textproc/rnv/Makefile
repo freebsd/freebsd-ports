@@ -11,7 +11,7 @@ COMMENT=	Relax NG Compact Syntax validator
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		tar:xz
 GNU_CONFIGURE=	yes

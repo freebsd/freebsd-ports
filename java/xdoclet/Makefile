@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}.zip xjavadoc-${XJAVADOC_VER}.zip
 MAINTAINER=	lxv@omut.org
 COMMENT=	Java attribute-oriented code generation engine
 
-RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
+RUN_DEPENDS=	${LOCALBASE}/bin/ant:devel/apache-ant
 
 USES=		zip
 USE_JAVA=	yes

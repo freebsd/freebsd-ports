@@ -11,9 +11,9 @@ COMMENT=	Virtual Peer-to-Peer Currency Client
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
+BUILD_DEPENDS=	protoc:devel/protobuf
 
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 OPTIONS_DEFINE=	GUI UPNP QRCODES
 OPTIONS_DEFAULT=	GUI QRCODES
@@ -31,8 +31,7 @@ CONFIGURE_ARGS+=	--with-incompatible-bdb \
 		CRYPTO_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" CRYPTO_LIBS="-lcrypto"
 CONFIGURE_ENV+=	OBJC="${CC}" OBJCFLAGS="${CFLAGS}" OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
 USE_OPENSSL=	yes
-USE_BDB=	yes
-WANT_BDB_VER=	5
+USE_BDB=	5
 
 CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} \
 		-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
@@ -55,12 +54,12 @@ PLIST_FILES+=	share/applications/dogecoin-qt.desktop \
 
 QRCODES_CONFIGURE_ENABLE=	qrencode
 .if ${PORT_OPTIONS:MQRCODES}
-LIB_DEPENDS+=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS+=	libqrencode.so:graphics/libqrencode
 .endif
 
 UPNP_CONFIGURE_ENABLE=		miniupnpc
 .if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	libminiupnpc.so:net/miniupnpc
 .endif
 
 SUB_FILES+=	dogecoin-qt.desktop

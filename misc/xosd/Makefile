@@ -10,7 +10,8 @@ MASTER_SITES=	SF/libxosd/libxosd/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 on-screen-display program and library
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pkgconfig libtool
 USE_CSTD=	gnu89
@@ -31,17 +32,11 @@ XFT_DESC=	Unofficial Xft support
 OPTIONS_SUB=	yes
 
 MSEC_EXTRA_PATCHES=	${FILESDIR}/extra-patch-msec-timeout
+MSEC_VARS=	DELAY_UNITS=milliseconds
+MSEC_VARS_OFF=	DELAY_UNITS=seconds
 
 XFT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xft
 XFT_USE=		GNOME=pango XORG=xft
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMSEC}
-DELAY_UNITS=	milliseconds
-.else
-DELAY_UNITS=	seconds
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I..\2,' \
@@ -49,12 +44,13 @@ post-patch:
 		${WRKSRC}/src/xmms_plugin/Makefile.in
 	@${REINPLACE_CMD} -e 's,specified time,& (${DELAY_UNITS}),' \
 		${WRKSRC}/src/osd_cat.c
-.if ${PORT_OPTIONS:MXFT}	# unbreak against Clang
+
+post-patch-XFT-on:
+# unbreak against Clang
 	@${REINPLACE_CMD} -e '52s,^,void xosd_xypos(xosd *osd);,' \
 		${WRKSRC}/src/libxosd/xosd.c
-.endif
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

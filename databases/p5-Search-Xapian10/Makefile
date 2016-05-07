@@ -15,7 +15,7 @@ COMMENT=	Perl XS frontend to the Xapian C++ search library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	xapian-core10>=1.0.22:${PORTSDIR}/databases/xapian-core10
+BUILD_DEPENDS=	xapian-core10>=1.0.22:databases/xapian-core10
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-Search-Xapian-1.[^0]*

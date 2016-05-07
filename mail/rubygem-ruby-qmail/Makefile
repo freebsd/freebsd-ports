@@ -12,11 +12,10 @@ COMMENT=	Ruby qmail library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rspec>=1.2.9:${PORTSDIR}/devel/rubygem-rspec
+RUN_DEPENDS=	rubygem-rspec>=1.2.9:devel/rubygem-rspec
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

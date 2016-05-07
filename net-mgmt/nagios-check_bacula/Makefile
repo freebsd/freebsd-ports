@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	#
 MAINTAINER=	freebsd@troback.com
 COMMENT=	Nagios plugin for Bacula
 
-LIB_DEPENDS+=	libbac.so:${PORTSDIR}/sysutils/bacula-client
+LIB_DEPENDS+=	libbac.so:sysutils/bacula-client
 
 PLIST=		${.CURDIR}/pkg-plist
 PLIST_FILES=	libexec/nagios/check_bacula

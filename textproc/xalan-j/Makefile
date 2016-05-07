@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	xalan-j
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	textproc java
-MASTER_SITES=	APACHE_XML/${PORTNAME}/binaries
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=xalan/xalan-j/binaries
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-bin
 
 MAINTAINER=	ale@FreeBSD.org
@@ -12,11 +13,11 @@ COMMENT=	Apache XSLT processor for transforming XML documents
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
+RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		cpe zip
+USES=		cpe
 CPE_PRODUCT=	xalan-java
 CPE_VENDOR=	apache
 USE_JAVA=	yes

@@ -12,7 +12,9 @@ COMMENT=	ANSI Common Lisp implementation
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+BROKEN_powerpc64=	Does not build
+
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake perl5 tar:tgz
@@ -47,15 +49,15 @@ CLX_CONFIGURE_OFF=	--with-clx=no
 SOCKETS_CONFIGURE_ON=	--with-tcp=yes
 SOCKETS_CONFIGURE_OFF=	--with-tcp=no
 
-DFFI_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+DFFI_LIB_DEPENDS=	libffi.so:devel/libffi
 DFFI_CONFIGURE_ON=	--with-dffi=system
 DFFI_CONFIGURE_OFF=	--with-dffi=no
 
 THREADS_CONFIGURE_ON=	--enable-threads=yes
 THREADS_LDFLAGS=	-lpthread
-THREADS_LIB_DEPENDS=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
+THREADS_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
 THREADS_CONFIGURE_OFF=	--enable-threads=no
-THREADS_LIB_DEPENDS_OFF=	libgc.so:${PORTSDIR}/devel/boehm-gc
+THREADS_LIB_DEPENDS_OFF=	libgc.so:devel/boehm-gc
 
 post-patch-THREADS-on:
 	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' ${WRKSRC}/src/configure

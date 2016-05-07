@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sass
-PORTVERSION=	3.4.21
+PORTVERSION=	3.4.22
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/sass bin/sass-convert bin/scss
 

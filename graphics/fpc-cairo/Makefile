@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	LIBCAIRO
 LIBCAIRO_DESC=	Install cairo vector graphics library
 OPTIONS_DEFAULT=	LIBCAIRO
 
-LIBCAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+LIBCAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 
 .include "${MASTERDIR}/Makefile"

@@ -13,7 +13,7 @@ COMMENT=	Tools for using Parity v2 Archive files (tbb version)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtbb.so:${PORTSDIR}/devel/tbb
+LIB_DEPENDS=	libtbb.so:devel/tbb
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 GNU_CONFIGURE=	yes

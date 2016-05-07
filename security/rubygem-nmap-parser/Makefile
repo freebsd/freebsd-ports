@@ -11,12 +11,11 @@ COMMENT=	Ruby interface to Nmap scan data
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	nmap:security/nmap
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

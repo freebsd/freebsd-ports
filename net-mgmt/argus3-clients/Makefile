@@ -18,10 +18,10 @@ CONFLICTS=	argus-clients-2* argus-clients-sasl-2*
 OPTIONS_DEFINE=	GEOIP MYSQL SASL DOCS
 OPTIONS_DEFAULT=MYSQL SASL
 OPTIONS_SUB=	yes
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
 MYSQL_USE=	MYSQL=yes
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 GEOIP_CONFIGURE_ON=	--with-GeoIP=${LOCALBASE}
 
 USES=		bison ncurses perl5 readline

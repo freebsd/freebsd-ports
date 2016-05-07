@@ -3,14 +3,15 @@
 
 PORTNAME=	sowing
 PORTVERSION=	1.1.18
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/sowing/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processing tools to generate documentation from source files
 
-BUILD_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
-RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS=	ppmtogif:graphics/netpbm
+RUN_DEPENDS=	ppmtogif:graphics/netpbm
 
 USES=		ghostscript gmake perl5
 USE_TEX=	latex dvipsk

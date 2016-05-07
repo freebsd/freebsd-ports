@@ -45,7 +45,7 @@
 
 PKGNAMEPREFIX?=	redmine-
 
-RUN_DEPENDS+=	redmine>=2.0:${PORTSDIR}/www/redmine
+RUN_DEPENDS+=	redmine>=2.0:www/redmine
 
 USE_RUBY=	yes
 .if !defined(PLIST)

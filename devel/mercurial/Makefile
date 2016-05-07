@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	3.7.2
+PORTVERSION=	3.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=DATA
 OPTIONS_SUB=	yes
 
 CA_BUNDLE_DESC=		Install CA Certificates
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 FREEBSD_DESC=		Patches used internally by the FreeBSD Project
 FREEBSD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-authormapsuffix
 NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-setup.py
@@ -33,10 +33,6 @@ CONTRIB_FILES=	bash_completion \
 		debugshell.py \
 		dumprevlog \
 		hg-ssh \
-		hgfixes/__init__.py \
-		hgfixes/fix_bytes.py \
-		hgfixes/fix_bytesmod.py \
-		hgfixes/fix_leftover_imports.py \
 		hgk \
 		hgsh/Makefile \
 		hgsh/hgsh.c \
@@ -68,10 +64,11 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${STAGEDIR}${PREFIX}/man/man5/
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/*.so
+	${STRIP_CMD} \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/hgext/fsmonitor/pywatchman/*.so
 .if ${PORT_OPTIONS:MDATA}
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/contrib
-	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/hgfixes
 	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/hgsh
 	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/vim
 	for f in ${CONTRIB_FILES}; do \

@@ -3,7 +3,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.15.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science parallel
 MASTER_SITES=	http://code-saturne.org/releases/
 
@@ -12,10 +12,10 @@ COMMENT=	Code_Saturne Finite Volume Mesh
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med	\
-		libbft.so:${PORTSDIR}/science/bft	\
-		libhdf5.so:${PORTSDIR}/science/hdf5	\
-		libcgns.so:${PORTSDIR}/science/cgnslib
+LIB_DEPENDS=	libmed.so:french/med	\
+		libbft.so:science/bft	\
+		libhdf5.so:science/hdf5	\
+		libcgns.so:science/cgnslib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -29,16 +29,16 @@ CONFIGURE_ARGS=	--with-bft=${LOCALBASE}	\
 INSTALL_TARGET=	install-strip
 
 .if defined(WITH_LAM)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/liblam.a:${PORTSDIR}/net/lam
-RUN_DEPENDS+=	${LOCALBASE}/bin/lamboot:${PORTSDIR}/net/lam
+BUILD_DEPENDS+=	${LOCALBASE}/lib/liblam.a:net/lam
+RUN_DEPENDS+=	${LOCALBASE}/bin/lamboot:net/lam
 CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}
 .elif defined(WITH_OPENMPI)
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}/mpi/openmpi
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich2
 CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}
 # Do not directly depend on Fortran, but FFLAGS needed to link with mpich2
 USES+=		fortran

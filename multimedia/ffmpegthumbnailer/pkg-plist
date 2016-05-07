@@ -1,14 +1,14 @@
 bin/ffmpegthumbnailer
+include/libffmpegthumbnailer/ffmpegthumbnailertypes.h
 include/libffmpegthumbnailer/filmstripfilter.h
 include/libffmpegthumbnailer/ifilter.h
 include/libffmpegthumbnailer/imagetypes.h
 include/libffmpegthumbnailer/videoframe.h
 include/libffmpegthumbnailer/videothumbnailer.h
 include/libffmpegthumbnailer/videothumbnailerc.h
-lib/libffmpegthumbnailer.a
 lib/libffmpegthumbnailer.so
 lib/libffmpegthumbnailer.so.4
-lib/libffmpegthumbnailer.so.4.0.9
+lib/libffmpegthumbnailer.so.4.11.0
 libdata/pkgconfig/libffmpegthumbnailer.pc
 man/man1/ffmpegthumbnailer.1.gz
 %%THUMBNAILER%%share/thumbnailers/ffmpegthumbnailer.thumbnailer

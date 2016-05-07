@@ -9,10 +9,10 @@ MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Content management system
 
-BUILD_DEPENDS=	tokyocabinet>=1.4.31:${PORTSDIR}/databases/tokyocabinet \
-		fcgi-devkit>=0:${PORTSDIR}/www/fcgi
-LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
-RUN_DEPENDS=	spawn-fcgi>=0:${PORTSDIR}/www/spawn-fcgi
+BUILD_DEPENDS=	tokyocabinet>=1.4.31:databases/tokyocabinet \
+		fcgi-devkit>=0:www/fcgi
+LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
+RUN_DEPENDS=	spawn-fcgi>=0:www/spawn-fcgi
 
 OPTIONS_DEFINE=	LUA
 

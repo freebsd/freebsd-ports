@@ -10,7 +10,7 @@ COMMENT=	Library for gnome-mplayer and gecko-mediaplayer
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-XML-Parser>0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>0:textproc/p5-XML-Parser
 
 USES=		gettext gmake libtool pathfix perl5 pkgconfig
 USE_XORG=	x11
@@ -27,13 +27,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		ALSA DOCS GIO GTK3 PULSEAUDIO
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_WITH=	alsa
 GIO_DESC=		Use GIO for file I/O
 GIO_CONFIGURE_WITH=	gio
 GTK3_USE=		gnome=gtk30
 GTK3_CONFIGURE_ENABLE=	gtk3
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
 
 .include <bsd.port.options.mk>

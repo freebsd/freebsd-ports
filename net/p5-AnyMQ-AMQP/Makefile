@@ -15,10 +15,10 @@ COMMENT=	AMQP binding for AnyMQ
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-AnyMQ>=0:${PORTSDIR}/devel/p5-AnyMQ \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-AnyEvent-RabbitMQ>=0:${PORTSDIR}/net/p5-AnyEvent-RabbitMQ \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+RUN_DEPENDS=	p5-AnyMQ>=0:devel/p5-AnyMQ \
+		p5-JSON>=0:converters/p5-JSON \
+		p5-AnyEvent-RabbitMQ>=0:net/p5-AnyEvent-RabbitMQ \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,8 +14,8 @@ COMMENT=	Open-source web framework running on Google App Engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	google-appengine>=1.1.0:${PORTSDIR}/www/google-appengine \
-		${PYTHON_PKGNAMEPREFIX}simplejson>1.9:${PORTSDIR}/devel/py-simplejson
+RUN_DEPENDS=	google-appengine>=1.1.0:www/google-appengine \
+		${PYTHON_PKGNAMEPREFIX}simplejson>1.9:devel/py-simplejson
 
 PROJECTHOST=	google-app-engine-oil
 

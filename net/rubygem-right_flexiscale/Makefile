@@ -12,12 +12,11 @@ COMMENT=	Provides Ruby access to the Flexiscale API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-soap4r>=1.5.8:${PORTSDIR}/devel/rubygem-soap4r
+RUN_DEPENDS=	rubygem-soap4r>=1.5.8:devel/rubygem-soap4r
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

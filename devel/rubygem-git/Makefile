@@ -11,12 +11,11 @@ COMMENT=	Ruby wrapper library around git(1)
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	git>=1.6:${PORTSDIR}/devel/git
+RUN_DEPENDS=	git>=1.6:devel/git
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

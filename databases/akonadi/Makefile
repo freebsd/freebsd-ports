@@ -13,9 +13,9 @@ COMMENT=	Storage server for KDE-Pim
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
 USE_KDE4=	kdeprefix automoc4 soprano
 USES=		cmake:outsource execinfo shared-mime-info compiler:c++11-lang tar:bzip2
@@ -41,7 +41,7 @@ PGSQL_DESC=	Install PostgreSQL Qt plugin
 PGSQL_USE=	QT4=sql-pgsql_run
 
 SQLITE_DESC=	Enable SQLite backend
-SQLITE_USE=	SQLITE=3
+SQLITE_USES=	sqlite:3
 SQLITE_CMAKE_OFF=	-DAKONADI_BUILD_QSQLITE=off
 
 OPTIONS_DEFAULT=	MYSQL

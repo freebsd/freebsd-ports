@@ -13,7 +13,7 @@ COMMENT=	Todo.txt Manager
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS_INSTALL=	devtodo-[0-9]*
 

@@ -11,6 +11,10 @@
 #
 # zabbix_server_enable (bool): Set to NO by default.  Set it to YES to
 #         enable zabbix_server.
+# zabbix_server_paths (string): Set to standard path by default.  Set a search
+#         if you have custom externals that need binaries elsewhere.
+# zabbix_server_config (string): Set to the standard config file path by
+#         default.
 #
 
 . /etc/rc.subr
@@ -18,11 +22,33 @@
 name="zabbix_server"
 rcvar=zabbix_server_enable
 
-command="%%PREFIX%%/sbin/${name}"
-required_files="%%ETCDIR%%/${name}.conf"
-
 load_rc_config $name
 
 : ${zabbix_server_enable="NO"}
+: ${zabbix_server_paths=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin}
+: ${zabbix_server_config="%%ETCDIR%%/${name}.conf"}
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="${zabbix_server_config}"
+start_precmd="find_pidfile"
+status_precmd="find_pidfile"
+stop_precmd="find_pidfile"
+
+find_pidfile()
+{
+	if get_pidfile_from_conf PidFile ${zabbix_server_config}; then
+		pidfile="$_pidfile_from_conf"
+	else
+		pidfile="/tmp/${name}.pid"
+	fi
+
+	# This shouldn't be necessary with pidfile, but empirically it was the
+	# only way to reap the parent PID instead of all PIDs from
+	# check_process, which may leak SysV IPC objects and prevent restart
+	# and/or race condition on restart.
+	rc_pid=$(check_pidfile ${pidfile} ${command})
+}
+
+export PATH="${zabbix_server_paths}"
 
 run_rc_command "$1"

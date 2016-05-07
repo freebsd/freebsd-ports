@@ -12,8 +12,8 @@ COMMENT=	Watch and restart daemons
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-libwww>=6.04:${PORTSDIR}/www/p5-libwww \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	p5-libwww>=6.04:www/p5-libwww \
+		p5-URI>=0:net/p5-URI
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure
@@ -34,16 +34,16 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
-RUN_DEPENDS+=	p5-DBD-Pg>=2.19.2:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=2.19.2:databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MEMAIL}
-RUN_DEPENDS+=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite
+RUN_DEPENDS+=	p5-MIME-Lite>=0:mail/p5-MIME-Lite
 .endif
 
 post-install:

@@ -3,13 +3,14 @@
 
 PORTNAME=	jrrd
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/opennms/JRRD/stable-1.0
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Java native interface (JNI) to RRDtool
 
-LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS=	librrd.so:databases/rrdtool
 
 USES=		libtool
 USE_JAVA=	yes

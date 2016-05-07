@@ -12,14 +12,13 @@ COMMENT=	Tool for management and bundling Puppet modules
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}librarianp>=0.6.3:${PORTSDIR}/devel/rubygem-librarianp \
-		${PKGNAMEPREFIX}puppet_forge1>=1.0:${PORTSDIR}/sysutils/rubygem-puppet_forge1 \
-		${PKGNAMEPREFIX}rsync>0:${PORTSDIR}/net/rubygem-rsync
+RUN_DEPENDS=	${PKGNAMEPREFIX}librarianp>=0.6.3:devel/rubygem-librarianp \
+		${PKGNAMEPREFIX}puppet_forge1>=1.0:sysutils/rubygem-puppet_forge1 \
+		${PKGNAMEPREFIX}rsync>0:net/rubygem-rsync
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 PLIST_FILES=	bin/librarian-puppet
 
 .include <bsd.port.mk>

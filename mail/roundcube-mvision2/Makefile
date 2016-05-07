@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	roundcube-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme for RoundCube Web Mail
 
-RUN_DEPENDS=	roundcube>=0.2:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.2:mail/roundcube
 
 NO_BUILD=	yes
 NO_ARCH=	yes

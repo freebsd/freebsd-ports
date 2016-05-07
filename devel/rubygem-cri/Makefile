@@ -11,12 +11,11 @@ COMMENT=	Allows building easy-to-use commandline interfaces
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-colored>=1.2:${PORTSDIR}/textproc/rubygem-colored
+RUN_DEPENDS=	rubygem-colored>=1.2:textproc/rubygem-colored
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>

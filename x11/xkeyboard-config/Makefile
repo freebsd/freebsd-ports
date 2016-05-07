@@ -10,7 +10,7 @@ COMMENT=	X Keyboard Configuration Database
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp
+BUILD_DEPENDS=	xkbcomp:x11/xkbcomp
 
 XORG_CAT=	data
 

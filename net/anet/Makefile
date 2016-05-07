@@ -3,6 +3,7 @@
 
 PORTNAME=	anet
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libanet-${PORTVERSION}
@@ -29,13 +30,13 @@ IGNORE=		will not build; atomics are not supported on DF i386
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/gnat/ahven.gpr:${PORTSDIR}/devel/ahven
+BUILD_DEPENDS+=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
 ALL_TARGET+=	tests
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+= asciidoc:${PORTSDIR}/textproc/asciidoc \
-		source-highlight:${PORTSDIR}/textproc/source-highlight
+BUILD_DEPENDS+= asciidoc:textproc/asciidoc \
+		source-highlight:textproc/source-highlight
 ALL_TARGET+=	doc
 USES+=		gmake
 .endif

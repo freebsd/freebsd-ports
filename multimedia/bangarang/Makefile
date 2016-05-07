@@ -12,7 +12,7 @@ COMMENT=	Media player for KDE 4
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:audio/taglib
 
 PROJECTHOST=	bangarangissuetracking
 USES=		cmake:outsource gettext

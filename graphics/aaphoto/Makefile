@@ -12,8 +12,8 @@ COMMENT=	Auto Adjust Photo, automatic color correction of photos
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libjasper.so:graphics/jasper \
+		libpng.so:graphics/png
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	log69

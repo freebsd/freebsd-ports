@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SMTP client POE component
 
-BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
-		p5-POE-Filter-Transparent-SMTP>=0:${PORTSDIR}/mail/p5-POE-Filter-Transparent-SMTP
+BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
+		p5-POE-Filter-Transparent-SMTP>=0:mail/p5-POE-Filter-Transparent-SMTP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgit2-glib
-PORTVERSION=	0.23.10
+PORTVERSION=	0.24.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,9 +13,9 @@ COMMENT=	Glib wrapper library around the libgit2 git access library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala \
-		gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
-LIB_DEPENDS=	libgit2.so:${PORTSDIR}/devel/libgit2
+BUILD_DEPENDS=	vapigen:lang/vala \
+		gtkdoc-check:textproc/gtk-doc
+LIB_DEPENDS=	libgit2.so:devel/libgit2
 
 USES=		compiler:c11 gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix gtk30 intlhack introspection

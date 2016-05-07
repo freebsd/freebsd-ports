@@ -14,7 +14,7 @@ COMMENT=	Pure Python Implementation of a Finite State Machine
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.0:${PORTSDIR}/graphics/py-pygraphviz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.0:graphics/py-pygraphviz
 
 USES=		python
 USE_PYTHON=	distutils

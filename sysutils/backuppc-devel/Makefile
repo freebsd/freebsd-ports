@@ -3,7 +3,7 @@
 
 PORTNAME=	backuppc
 DISTVERSION=	4.0.0alpha3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-beta/${DISTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -15,8 +15,8 @@ COMMENT=	Multi-platform backup to disk-based storage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-File-Listing>=0:${PORTSDIR}/sysutils/p5-File-Listing \
-		p5-BackupPC-XS>=0.30:${PORTSDIR}/sysutils/p5-BackupPC-XS
+RUN_DEPENDS=	p5-File-Listing>=0:sysutils/p5-File-Listing \
+		p5-BackupPC-XS>=0.30:sysutils/p5-BackupPC-XS
 
 CONFLICTS=	backuppc-[0-9]*
 
@@ -53,22 +53,22 @@ XML_RSS_DESC=		Perl extension to manage RSS files
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MARCHIVE_ZIP}
-RUN_DEPENDS+=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip
+RUN_DEPENDS+=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip
 .endif
 .if ${PORT_OPTIONS:MRSYNC_BPC}
-RUN_DEPENDS+=	rsync-bpc>=3.0.9.3:${PORTSDIR}/net/rsync-bpc
+RUN_DEPENDS+=	rsync-bpc>=3.0.9.3:net/rsync-bpc
 .endif
 .if ${PORT_OPTIONS:MNMBLOOKUP}
-RUN_DEPENDS+=	nmblookup:${PORTSDIR}/net/samba-nmblookup
+RUN_DEPENDS+=	nmblookup:net/samba-nmblookup
 .endif
 .if ${PORT_OPTIONS:MRRDTOOL}
-RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS+=	rrdtool:databases/rrdtool
 .endif
 .if ${PORT_OPTIONS:MSMBCLIENT}
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
+RUN_DEPENDS+=	smbclient:net/samba-smbclient
 .endif
 .if ${PORT_OPTIONS:MXML_RSS}
-RUN_DEPENDS+=	p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS
+RUN_DEPENDS+=	p5-XML-RSS>=0:textproc/p5-XML-RSS
 .endif
 
 pre-patch:

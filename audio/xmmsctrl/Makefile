@@ -14,8 +14,8 @@ COMMENT=	Small utility to control XMMS from the command line
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	xmms:multimedia/xmms
+RUN_DEPENDS=	xmms:multimedia/xmms
 
 USES=		gmake
 USE_CSTD=	gnu89

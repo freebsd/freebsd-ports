@@ -9,8 +9,8 @@ MASTER_SITES=	ISC/${PORTNAME}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
-BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
+BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD \
+		p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE} \
 
 .if ${PORT_OPTIONS:MKERBEROS}
 .    if exists(${LOCALBASE}/bin/krb5-config)
-LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		libgssapi_krb5.so:security/krb5
 CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 .    else
 CONFIGURE_ARGS+=	--with-krb5=/usr
@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=	--enable-keywords
 
 .if ${PORT_OPTIONS:MSASL}
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
-LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 .endif
 
 .if ${PORT_OPTIONS:MTAGGED_HASH}
@@ -115,8 +115,8 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .if ${PORT_OPTIONS:MGNUPG}
 # Although pgpverify needs gpgv/gpgv2,
 # checking 'gpg' is the shortest way to check any version of GnuPG installed.
-BUILD_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
-RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS+=		gpg:security/gnupg
+RUN_DEPENDS+=		gpg:security/gnupg
 .endif
 
 PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO

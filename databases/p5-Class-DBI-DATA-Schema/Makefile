@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Execute Class::DBI SQL from DATA sections
 
-RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
+RUN_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS+=	p5-Test-Simple>=0:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

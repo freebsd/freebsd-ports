@@ -2,24 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	event
-PORTVERSION=	0.3
+DISTVERSIONPREFIX=	PYEVENT_
+DISTVERSION=	0_3
 PORTREVISION=	9
 CATEGORIES=	devel net python
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for libevent
 
-BROKEN=		unfetchable
-
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
-PROJECTHOST=	pyevent
+USE_GITHUB=	yes
+GH_ACCOUNT=	jaraco
+GH_PROJECT=	pyevent
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 

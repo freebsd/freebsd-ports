@@ -3,7 +3,7 @@
 
 PORTNAME=	images
 PORTVERSION=	4.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/camlspotter/camlimages/get/
@@ -14,8 +14,8 @@ DIST_SUBDIR=	ocaml-images
 MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	Objective Caml image processing library
 
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ocaml.m4:${PORTSDIR}/lang/ocaml-autoconf
-BUILD_DEPENDS+=	omake:${PORTSDIR}/devel/omake
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ocaml.m4:lang/ocaml-autoconf
+BUILD_DEPENDS+=	omake:devel/omake
 
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
@@ -40,28 +40,28 @@ OPTIONS_DEFAULT=PNG JPEG TIFF XPM GIF FREETYPE GHOSTSCRIPT
 OPTIONS_SUB=	yes
 
 PNG_CONFIGURE_WITH=	png
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_USES=		jpeg
 
 TIFF_CONFIGURE_WITH=	tiff
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 XPM_CONFIGURE_WITH=	xpm
 
 GIF_CONFIGURE_WITH=	gif
-GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
 FREETYPE_CONFIGURE_WITH=freetype
-FREETYPE_LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
+FREETYPE_LIB_DEPENDS=	libttf.so:print/freetype
 
 GHOSTSCRIPT_CONFIGURE_WITH= gs
 GHOSTSCRIPT_USES=	ghostscript
 
 GTK2_CONFIGURE_WITH=	liblgtk2
-GTK2_BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-GTK2_RUN_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+GTK2_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+GTK2_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 
 .include <bsd.port.options.mk>
 

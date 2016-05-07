@@ -10,11 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Logging role for Moose based on Log::Log4perl
 
-BUILD_DEPENDS=	p5-Any-Moose>=0.12:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-Log-Log4perl>=1.13:${PORTSDIR}/devel/p5-Log-Log4perl
+BUILD_DEPENDS=	p5-Any-Moose>=0.12:devel/p5-Any-Moose \
+		p5-Log-Log4perl>=1.13:devel/p5-Log-Log4perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-Moose>=0.65:${PORTSDIR}/devel/p5-Moose
+TEST_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-Moose>=0.65:devel/p5-Moose
 
 NO_ARCH=	yes
 USES=		perl5

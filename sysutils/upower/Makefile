@@ -12,8 +12,8 @@ COMMENT=	D-Bus daemon for simplifying power management tasks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
+		libdbus-glib-1.so:devel/dbus-glib
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack glib20 introspection:build
@@ -32,9 +32,9 @@ OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 MANPAGES_CONFIGURE_ENABLE=	man-pages
 MANPAGES_BUILD_DEPENDS= \
-	docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml \
-	docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
-	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+	docbook-sgml>0:textproc/docbook-sgml \
+	docbook-xml>0:textproc/docbook-xml \
+	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 MANPAGES_USE=	GNOME=libxslt:build
 
 .include <bsd.port.mk>

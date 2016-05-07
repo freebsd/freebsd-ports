@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sympy
-PORTVERSION=	0.7.6.1
+PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,17 +13,15 @@ COMMENT=	Python Library For Symbolic Mathematics
 
 LICENSE=	BSD3CLAUSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpmath>=0.19:math/py-mpmath
+
 USES=		python
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	PYGLET
 PYGLET_DESC=	Enable plotting support
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYGLET}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyglet>=1.1.2:${PORTSDIR}/graphics/py-pyglet
-.endif
+PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=1.1.2:graphics/py-pyglet
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#share/man/man1#man/man1#" ${WRKSRC}/setup.py

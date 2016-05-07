@@ -9,15 +9,14 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby port of the statsd python and node.js tools
 
-RUN_DEPENDS=	rubygem-erubis>=2.6.6:${PORTSDIR}/www/rubygem-erubis \
-		rubygem-eventmachine>=0.12.10:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-mongo>=1.2.4:${PORTSDIR}/devel/rubygem-mongo
+RUN_DEPENDS=	rubygem-erubis>=2.6.6:www/rubygem-erubis \
+		rubygem-eventmachine>=0.12.10:devel/rubygem-eventmachine \
+		rubygem-mongo>=1.2.4:devel/rubygem-mongo
 
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PLIST_FILES=	bin/statsd
 

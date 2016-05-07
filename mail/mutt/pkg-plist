@@ -13,6 +13,7 @@ man/man1/muttbug.1.gz
 man/man1/pgpewrap.1.gz
 man/man1/pgpring.1.gz
 man/man1/smime_keys.1.gz
+man/man5/mailcap.5.gz
 %%MAILBOX_MANPAGES%%man/man5/mbox.5.gz
 %%MAILBOX_MANPAGES%%man/man5/mmdf.5.gz
 man/man5/muttrc.5.gz

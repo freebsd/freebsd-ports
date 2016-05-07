@@ -13,12 +13,12 @@ COMMENT=	Tools for stress testing an OpenStack deployment
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-App-Rad>=0:${PORTSDIR}/devel/p5-App-Rad \
-		p5-HTTP-Async>=0:${PORTSDIR}/www/p5-HTTP-Async \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-Net-HTTPS-NB>=0:${PORTSDIR}/net/p5-Net-HTTPS-NB \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
+		p5-App-Rad>=0:devel/p5-App-Rad \
+		p5-HTTP-Async>=0:www/p5-HTTP-Async \
+		p5-JSON>=0:converters/p5-JSON \
+		p5-Net-HTTPS-NB>=0:net/p5-Net-HTTPS-NB \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

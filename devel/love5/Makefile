@@ -11,10 +11,10 @@ PKGNAMESUFFIX=	5
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
 
-LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
-		libphysfs.so:${PORTSDIR}/devel/physfs \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libIL.so:graphics/devil \
+		libphysfs.so:devel/physfs \
+		libfreetype.so:print/freetype2
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 USES=		tar:bzip2 gmake dos2unix lua:51
 USE_SDL=	sdl mixer

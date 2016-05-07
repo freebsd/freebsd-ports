@@ -1,19 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-inotify
-PORTVERSION=	0.6.7
+PORTVERSION=	0.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Syncthing inotify monitor
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	syncthing cenkalti:backoff zillode:notify
 GH_PROJECT=	backoff:backoff notify:notify
-GH_TAGNAME=	6c45d6b:backoff f06b1e3:notify
+GH_TAGNAME=	32cd0c5:backoff bef4d0b:notify
 
 STRIP=		# stripping can break go binaries
 

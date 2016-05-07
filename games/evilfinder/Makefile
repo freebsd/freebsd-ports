@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	WRAPPER
 WRAPPER_DESC=	Evilfinder local wrapper
 OPTIONS_DEFAULT=	WRAPPER
 
-WRAPPER_RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
+WRAPPER_RUN_DEPENDS=	lynx:www/lynx
 
 post-extract:
 	@${CP} ${DISTDIR}/evilnumbers.dat ${WRKSRC}

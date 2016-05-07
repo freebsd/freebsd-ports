@@ -10,7 +10,9 @@ COMMENT=	Apache Kafka C/C++ library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	edenhill

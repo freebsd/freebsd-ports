@@ -11,7 +11,9 @@ COMMENT=	Apply rejected patches and perform word-wise diffs
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BROKEN_powerpc64=	Does not build
+
+BUILD_DEPENDS=	bash:shells/bash
 
 USES=		compiler:nestedfct gmake ncurses
 

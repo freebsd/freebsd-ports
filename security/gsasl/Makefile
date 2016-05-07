@@ -3,17 +3,17 @@
 
 PORTNAME=	gsasl
 PORTVERSION=	1.8.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU SASL Library
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libntlm.so:${PORTSDIR}/security/libntlm
+LIB_DEPENDS=	libidn.so:dns/libidn \
+		libgcrypt.so:security/libgcrypt \
+		libgnutls.so:security/gnutls \
+		libntlm.so:security/libntlm
 
 USES=		charsetfix pathfix perl5 pkgconfig libtool
 USE_PERL5=	build

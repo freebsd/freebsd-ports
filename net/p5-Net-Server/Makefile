@@ -14,7 +14,7 @@ COMMENT=	Configurable base class for writing internet servers in Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-Multiplex>=1.01:${PORTSDIR}/devel/p5-IO-Multiplex
+BUILD_DEPENDS=	p5-IO-Multiplex>=1.01:devel/p5-IO-Multiplex
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	IPV6
@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	IPV6
 USES=		perl5
 USE_PERL5=	configure
 
-IPV6_BUILD_DEPENDS=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
-IPV6_RUN_DEPENDS=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
+IPV6_BUILD_DEPENDS=	p5-Socket6>=0.23:net/p5-Socket6
+IPV6_RUN_DEPENDS=	p5-Socket6>=0.23:net/p5-Socket6
 
 .include <bsd.port.mk>

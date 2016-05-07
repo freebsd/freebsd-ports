@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Parse and format W3CDTF datetime strings
 
-RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
+RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

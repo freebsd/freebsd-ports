@@ -1,10 +1,11 @@
 --- net/proxy/proxy_config_service_linux.cc.orig	2015-05-13 18:23:09.000000000 -0400
 +++ net/proxy/proxy_config_service_linux.cc         2015-05-20 16:54:28.541791000 -0400
-@@ -12,7 +12,13 @@
+@@ -12,7 +12,14 @@
  #include <limits.h>
  #include <stdio.h>
  #include <stdlib.h>
 +#if defined(OS_FREEBSD)
++#include <fcntl.h>
 +#include <sys/types.h>
 +#include <sys/event.h>
 +#include <sys/time.h>
@@ -34,7 +35,7 @@
    }
  
    bool Init(const scoped_refptr<base::SingleThreadTaskRunner>& glib_task_runner,
-@@ -940,11 +948,20 @@
+@@ -944,9 +944,17 @@
      // This has to be called on the UI thread (http://crbug.com/69057).
      base::ThreadRestrictions::ScopedAllowIO allow_io;
      DCHECK(inotify_fd_ < 0);
@@ -51,18 +52,7 @@
 +#endif
        return false;
      }
-+#if !defined(OS_FREEBSD)
-     int flags = fcntl(inotify_fd_, F_GETFL);
-     if (fcntl(inotify_fd_, F_SETFL, flags | O_NONBLOCK) < 0) {
-       PLOG(ERROR) << "fcntl failed";
-@@ -952,6 +969,7 @@
-       inotify_fd_ = -1;
-       return false;
-     }
-+#endif
-     file_task_runner_ = file_task_runner;
-     // The initial read is done on the current thread, not
-     // |file_task_runner_|, since we will need to have it for
+     if (!base::SetNonBlocking(inotify_fd_)) {
 @@ -967,22 +985,40 @@
        close(inotify_fd_);
        inotify_fd_ = -1;

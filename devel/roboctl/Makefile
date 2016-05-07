@@ -11,7 +11,7 @@ COMMENT=	API and tools for communicating with Lego and Vex robots
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:devel/libgamepad
 
 MAKE_ENV=	EXTRALIBS=-lbluetooth
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
@@ -23,7 +23,7 @@ USES=		tar:xz
 OPTIONS_DEFINE=	CUTECOM
 CUTECOM_DESC=	Install cutecom for Vex debugging
 
-CUTECOM_RUN_DEPENDS=	cutecom:${PORTSDIR}/comms/cutecom
+CUTECOM_RUN_DEPENDS=	cutecom:comms/cutecom
 
 pre-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} depend)

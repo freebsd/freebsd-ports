@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	1
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Library for delta compression of streams
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 CONFLICTS=	librsync-*
 

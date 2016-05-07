@@ -13,10 +13,10 @@ COMMENT=	Splat is the Scalable Periodic LDAP Attribute Transmogrifier
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig \
-		${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:${PORTSDIR}/net/py-ldap
-RUN_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig \
-		${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:${PORTSDIR}/net/py-ldap
+BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:devel/py-zconfig \
+		${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:net/py-ldap
+RUN_DEPENDS=	${LOCALBASE}/bin/zconfig:devel/py-zconfig \
+		${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:net/py-ldap
 
 USES=		python twisted
 USE_PYTHON=	distutils

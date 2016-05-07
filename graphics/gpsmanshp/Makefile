@@ -11,9 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shapelib support for gpsman
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/doc/gpl-3_0.txt
 
-LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib
-RUN_DEPENDS=	gpsman:${PORTSDIR}/astro/gpsman
+LIB_DEPENDS=	libshp.so:devel/shapelib
+RUN_DEPENDS=	gpsman:astro/gpsman
 
 USES=		tar:tgz tcl
 MAKE_ENV=	TCLVERSION="${TCL_VER}"
@@ -21,7 +22,7 @@ PLIST_SUB=	TCLVERSION="${TCL_VER}" PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
 		. ${STAGEDIR}${DOCSDIR} \
 		"! -name gpl-3_0.txt")

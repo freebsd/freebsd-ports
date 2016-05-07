@@ -27,9 +27,9 @@ PORTDOCS=	FAQ NEWS README
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 1000000
-BUILD_DEPENDS+=	cvs:${PORTSDIR}/devel/cvs
-RUN_DEPENDS+=	cvs:${PORTSDIR}/devel/cvs
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+BUILD_DEPENDS+=	cvs:devel/cvs
+RUN_DEPENDS+=	cvs:devel/cvs
 .endif
 
 do-install:

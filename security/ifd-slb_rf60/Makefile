@@ -13,7 +13,7 @@ COMMENT=	PC/SC Lite driver for the Reflex 62 serial smart card reader
 
 BROKEN=		unfetchable
 
-LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		gmake
 CFLAGS+=	-fPIC

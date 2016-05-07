@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	Pure Perl PayflowPro payment gateway interface
 
-RUN_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS+=	p5-libwww>0.0:www/p5-libwww
+BUILD_DEPENDS+=	p5-libwww>0.0:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure

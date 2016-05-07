@@ -8,6 +8,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt support for XPath, XQuery, XSLT and XML Schema
 
+BROKEN_powerpc64=	Does not build
+
 USE_QT5=	core network buildtools_build
 QT_DIST=	${PORTNAME}
 USES=		qmake

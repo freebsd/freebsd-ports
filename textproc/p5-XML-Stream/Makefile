@@ -13,7 +13,7 @@ COMMENT=	XML::Stream provides you with access to XML Stream
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
+BUILD_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

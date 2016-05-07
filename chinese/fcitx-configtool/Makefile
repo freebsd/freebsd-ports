@@ -12,9 +12,9 @@ COMMENT=	Fcitx IM framework configuration tool
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:devel/dbus-glib
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx
 
 USE_GNOME=	intltool
 USES=		cmake gettext pkgconfig tar:xz

@@ -1,4 +1,5 @@
 pickleDB is a lightweight, fast, and simple database based on Python's own
 json module.
 
-WWW: https://bitbucket.org/patx/pickledb/overview
+WWW: https://pypi.python.org/pypi/pickleDB
+WWW: https://github.com/patx/pickledb

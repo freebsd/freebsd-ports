@@ -14,8 +14,10 @@ COMMENT=	Provides technical and tag information for video and audio files
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../License.html
 
-LIB_DEPENDS=	libmediainfo.so:${PORTSDIR}/multimedia/libmediainfo \
-		libzen.so:${PORTSDIR}/multimedia/libzen
+LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
+		libzen.so:multimedia/libzen
+
+BROKEN_powerpc64=	does not build
 
 CONFIGURE_ARGS=	--enable-shared
 GNU_CONFIGURE=	yes

@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tar.z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 dropping jewels game
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+		mkfontdir:x11-fonts/mkfontdir
 
 USES=		fonts imake
 USE_XORG=	x11 xext

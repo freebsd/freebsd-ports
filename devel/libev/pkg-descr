@@ -3,4 +3,4 @@ It is modelled (very loosely) after libevent and the Event perl module,
 but aims to be faster and more correct, and also more featureful. And
 also smaller.
 
-WWW: http://software.schmorp.de/pkg/libev
+WWW: http://software.schmorp.de/pkg/libev.html

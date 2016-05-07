@@ -13,7 +13,7 @@ COMMENT=	IPA simple database module
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
+BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:sysutils/ipa
 
 USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes

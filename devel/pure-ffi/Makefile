@@ -13,7 +13,7 @@ COMMENT=	Pure language interface to libffi
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libffi.so:devel/libffi
 
 USES=		pkgconfig pure
 

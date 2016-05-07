@@ -13,8 +13,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Git "merge" driver for GNU style ChangeLog files
 
 EXTRACT_DEPENDS=	${GNULIB_DIR}/lib/${PORTNAME}.c:${GNULIB_PORTDIR}	\
-			automake-1.15:${PORTSDIR}/devel/automake		\
-			autoconf-2.69:${PORTSDIR}/devel/autoconf
+			automake-1.15:devel/automake		\
+			autoconf-2.69:devel/autoconf
 
 GNU_CONFIGURE=	yes
 

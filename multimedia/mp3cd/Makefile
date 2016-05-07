@@ -13,7 +13,7 @@ COMMENT=	Perl script that burns MP3 to audio CDs
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	p5-Config-Simple>=0:${PORTSDIR}/devel/p5-Config-Simple
+BUILD_DEPENDS=	p5-Config-Simple>=0:devel/p5-Config-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

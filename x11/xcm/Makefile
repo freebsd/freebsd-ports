@@ -8,7 +8,7 @@ MASTER_SITES=	SF/oyranos/Xcm
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	X Color Management tools
 
-LIB_DEPENDS=	libXcm.so:${PORTSDIR}/x11/libXcm
+LIB_DEPENDS=	libXcm.so:x11/libXcm
 
 XORG_CAT=	app
 # xcm should be added to XORG_MODULES at /usr/ports/Mk/bsd.xorg.mk

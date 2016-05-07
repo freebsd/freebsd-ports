@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -45,16 +45,16 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
-    			${x:tu}_MAN="@comment $x not installed "
+			${x:tu}_MAN="@comment $x not installed "
 CONFIGURE_ARGS+=	--enable-$x=no
 OPTIONS_EXCLUDE+=	RTP SNMP GEOIP LUA ADNS CARES
 .else
 PLIST_SUB+=		${x:tu}=bin/$x \
-    			${x:tu}_MAN=""
+			${x:tu}_MAN=""
 .endif
 .endfor
 
-OPTIONS_DEFINE=		RTP SNMP IPV6 GEOIP LUA GCRYPT GNUTLS
+OPTIONS_DEFINE=		RTP SNMP IPV6 GEOIP LUA DECRYPT
 
 OPTIONS_RADIO=		ASYNCDNS GUI
 OPTIONS_SINGLE=		KERBEROS
@@ -66,8 +66,7 @@ OPTIONS_SINGLE_KERBEROS=KRB_BASE KRB_HEIMDAL KRB_MIT KRB_NONE
 OPTIONS_DEFAULT?=	SNMP ADNS IPV6 GEOIP KRB_BASE GTK3
 
 RTP_DESC=		Enable support for playing back RTP streams
-GCRYPT_DESC=		IPsec decryption support
-GNUTLS_DESC=		SSL decryption support
+DECRYPT_DESC=		Decryption support for SSL and IPSec
 ASYNCDNS_DESC=		Asynchronous DNS lookup support
 ADNS_DESC=		Asynchronous DNS resolution via GNU adns
 KERBEROS_DESC=		Kerberos dissection support
@@ -85,13 +84,13 @@ KRB_BASE_USES=		gssapi
 KRB_HEIMDAL_USES=	gssapi:heimdal
 KRB_MIT_USES=		gssapi:mit
 
-RTP_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
-SNMP_LIB_DEPENDS=	libsmi.so:${PORTSDIR}/net-mgmt/libsmi
-ADNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
-CARES_LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
-GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+RTP_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
+ADNS_LIB_DEPENDS=	libadns.so:dns/adns
+CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+    			libgcrypt.so:security/libgcrypt
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
@@ -108,8 +107,7 @@ SNMP_CONFIGURE_WITH=	libsmi
 ADNS_CONFIGURE_WITH=	adns
 CARES_CONFIGURE_WITH=	c-ares
 GEOIP_CONFIGURE_WITH=	geoip
-GCRYPT_CONFIGURE_WITH=	gcrypt
-GNUTLS_CONFIGURE_WITH=	gnutls
+DECRYPT_CONFIGURE_WITH=	gnutls gcrypt
 
 LUA_CPPFLAGS=		-I${LUA_INCDIR}
 

@@ -12,8 +12,8 @@ COMMENT=	Manipulate 128 bits integers in Perl
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Math-Int64>=0.51:${PORTSDIR}/math/p5-Math-Int64
-RUN_DEPENDS=	p5-Math-Int64>=0.51:${PORTSDIR}/math/p5-Math-Int64
+BUILD_DEPENDS=	p5-Math-Int64>=0.51:math/p5-Math-Int64
+RUN_DEPENDS=	p5-Math-Int64>=0.51:math/p5-Math-Int64
 
 USES=		perl5
 USE_PERL5=	configure

@@ -23,7 +23,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	ChangeLog README.md
 
 .if !exists(${LOCALBASE}/bin/ssh-agent) && !exists(/usr/bin/ssh-agent)
-RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh-portable
+RUN_DEPENDS+=	ssh-agent:security/openssh-portable
 .endif
 
 post-patch:

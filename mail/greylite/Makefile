@@ -12,7 +12,7 @@ COMMENT=	Modified greylisting for qmail and for any other MDA
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+RUN_DEPENDS=	tcpserver:sysutils/ucspi-tcp
 
 USES=		sqlite tar:bzip2
 PLIST_FILES=	bin/greylite \
@@ -31,12 +31,12 @@ UCSPI2SOCKET_DESC=	Module for using greylite as SMTP proxy
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 MAKE_ARGS+=	WITH_GEOIP=yep
 .endif
 
 .if ${PORT_OPTIONS:MDNSBLENV}
-LIB_DEPENDS+=	libcares.so:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS+=	libcares.so:dns/c-ares
 MAKE_ARGS+=	WITH_DNSBLENV=yep
 PLIST_SUB+=	DNSBLENV=""
 .else

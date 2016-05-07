@@ -13,14 +13,13 @@ COMMENT=	Sass adapter for the Rails asset pipeline
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-railties>=3.2.0:${PORTSDIR}/www/rubygem-railties \
-		rubygem-sass>=3.3.4:${PORTSDIR}/textproc/rubygem-sass \
-		rubygem-tilt>=2.0.1:${PORTSDIR}/devel/rubygem-tilt
+RUN_DEPENDS=	rubygem-railties>=3.2.0:www/rubygem-railties \
+		rubygem-sass>=3.3.4:textproc/rubygem-sass \
+		rubygem-tilt>=2.0.1:devel/rubygem-tilt
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 PORTSCOUT=	limit:^3\.
 

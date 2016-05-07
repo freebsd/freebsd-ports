@@ -12,12 +12,11 @@ COMMENT=	Support for creating state machines for attributes on ActiveModel
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activemodel4>=4.1:${PORTSDIR}/databases/rubygem-activemodel4 \
-		rubygem-state_machines>=0.4.0:${PORTSDIR}/devel/rubygem-state_machines
+RUN_DEPENDS=	rubygem-activemodel4>=4.1:databases/rubygem-activemodel4 \
+		rubygem-state_machines>=0.4.0:devel/rubygem-state_machines
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+USES=		gem
 
 .include <bsd.port.mk>
