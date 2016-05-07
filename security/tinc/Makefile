@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tinc
-PORTVERSION=	1.0.26
-PORTREVISION=	2
+PORTVERSION=	1.0.28
 CATEGORIES=	security
-MASTER_SITES=	http://www.tinc-vpn.org/packages/
+MASTER_SITES=	https://www.tinc-vpn.org/packages/ \
+		http://www.tinc-vpn.org/packages/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Virtual Private Network (VPN) daemon
