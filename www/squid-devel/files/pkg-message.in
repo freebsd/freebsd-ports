@@ -1,0 +1,48 @@
+     o You can find the configuration files for this package in the
+       directory %%PREFIX%%/etc/squid.
+
+     o The default cache directory is /var/squid/cache/.
+       The default log directory is /var/log/squid/.
+
+       Note:
+       You must initialize new cache directories before you can start
+       squid.  Do this by running "squid -z" as 'root' or 'squid'.
+       If your cache directories are already initialized (e.g. after an
+       upgrade of squid) you do not need to initialize them again.
+
+     o When using DiskD storage scheme remember to read documentation:
+         http://wiki.squid-cache.org/Features/DiskDaemon
+       and alter your kern.ipc defaults in /boot/loader.conf. DiskD will not
+       work reliably without this. Last recomendations were:
+
+         kern.ipc.msgmnb=8192
+         kern.ipc.msgssz=64
+         kern.ipc.msgtql=2048
+
+     o The default configuration will deny everyone but the local host and
+       local networks as defined in RFC 1918 for IPv4 and RFCs 4193 and
+       4291 for IPv6 access to the proxy service.  Edit the "http_access
+       allow/deny" directives in %%PREFIX%%/etc/squid/squid.conf
+       to suit your needs.
+
+     o If AUTH_SQL option is set, please, don't forget to install one of
+       following perl modules depending on database you like:
+         databases/p5-DBD-mysql
+         databases/p5-DBD-Pg
+         databases/p5-DBD-SQLite
+
+     To enable Squid, set squid_enable=yes in either
+     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid
+     Please see %%PREFIX%%/etc/rc.d/squid for further details.
+
+     Note:
+     If you just updated your Squid installation from an earlier version,
+     make sure to check your Squid configuration against the 3.4 default
+     configuration file %%PREFIX%%/etc/squid/squid.conf.sample.
+     
+     %%PREFIX%%/etc/squid/squid.conf.documented is a fully annotated
+     configuration file you can consult for further reference.
+
+     Additionally, you should check your configuration by calling
+     'squid -f /path/to/squid.conf -k parse' before starting Squid.
+
