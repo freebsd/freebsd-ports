@@ -1,12 +1,12 @@
-# Created by: Stefan Esser <se@freebsd.org>
+# Created by: Stefan Esser <se@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gen6dns
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.hznet.de/tools/
 
-MAINTAINER=	se@freebsd.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Tool to generate static DNS records for IPv6 hosts using SLAAC
 
 LICENSE=	BSD3CLAUSE
