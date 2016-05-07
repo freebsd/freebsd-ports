@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-saml
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ COMMENT=	SAML toolkit for Ruby on Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-nokogiri>=1.5.10:textproc/rubygem-nokogiri \
-		rubygem-uuid>=2.3:devel/rubygem-uuid
+RUN_DEPENDS=	rubygem-nokogiri>=1.5.10:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes
