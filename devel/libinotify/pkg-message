@@ -30,7 +30,7 @@ Symbolic Link notifications:
 Kernel patches to address the missing directory and symbolic link
 notifications are available from:
 
-https://github.com/dmatveev/libinotify-kqueue/tree/master/patches
+https://github.com/libinotify-kqueue/libinotify-kqueue/tree/master/patches
 
 =============================================================================
 You might want to consider increasing the kern.maxfiles tunable if you plan
