@@ -1,0 +1,9 @@
+--- plugins/MidiImport/CMakeLists.txt.orig	2015-03-08 02:47:14 UTC
++++ plugins/MidiImport/CMakeLists.txt
+@@ -6,3 +6,6 @@ BUILD_PLUGIN(midiimport MidiImport.cpp M
+ 	portsmf/mfmidi.cpp portsmf/mfmidi.h portsmf/strparse.cpp
+ 	portsmf/strparse.h portsmf/algrd_internal.h portsmf/algsmfrd_internal.h
+ 	portsmf/trace.h MOCFILES MidiImport.h)
++
++include_directories(${SAMPLERATE_INCLUDE_DIRS})
++link_directories(${SAMPLERATE_LIBRARY_DIRS})
