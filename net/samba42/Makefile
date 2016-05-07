@@ -13,13 +13,13 @@ COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba43-4.3.*
+CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba43-4.3.* samba44-4.4.*
 
-#EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-progress:-p1
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.2.11
+SAMBA4_VERSION=		4.2.12
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -75,10 +75,7 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 LIB_DEPENDS+=		libpopt.so:devel/popt
 # inotify
 LIB_DEPENDS+=		libinotify.so:devel/libinotify
-# SASL
-LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 # GNUTLS
-LIB_DEPENDS+=		libgcrypt.so:security/libgcrypt
 LIB_DEPENDS+=		libgnutls.so:security/gnutls
 # NFS4 ACL glue
 LIB_DEPENDS+=		libsunacl.so:sysutils/libsunacl
@@ -97,8 +94,8 @@ BUILD_DEPENDS+=		talloc>=2.1.5:devel/talloc
 RUN_DEPENDS+=		talloc>=2.1.5:devel/talloc
 SAMBA4_BUNDLED_LIBS+=	!talloc
 # tevent
-BUILD_DEPENDS+=		tevent>=0.9.25:devel/tevent
-RUN_DEPENDS+=		tevent>=0.9.25:devel/tevent
+BUILD_DEPENDS+=		tevent>=0.9.28:devel/tevent
+RUN_DEPENDS+=		tevent>=0.9.28:devel/tevent
 SAMBA4_BUNDLED_LIBS+=	!tevent
 # tdb
 BUILD_DEPENDS+=		tdb>=1.3.8:databases/tdb
@@ -281,8 +278,10 @@ CONFIGURE_ARGS+=	--disable-dnssd
 .if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=		libcups.so:print/cups
 CONFIGURE_ARGS+=	--enable-cups --enable-iprint
+PLIST_SUB+=		CUPS=""
 .else
 CONFIGURE_ARGS+=	--disable-cups --disable-iprint
+PLIST_SUB+=		CUPS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDNSUPDATE}
@@ -433,7 +432,7 @@ SAMBA_MAN7+=		samba.7 winbind_krb5_locator.7
 
 SAMBA_MAN8+=		eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 			idmap_ldap.8 idmap_nss.8 idmap_rfc2307.8 idmap_rid.8 \
-			idmap_tdb.8 idmap_tdb2.8 net.8 nmbd.8 pam_winbind.8 pdbedit.8 \
+			idmap_tdb.8 idmap_tdb2.8 net.8 nmbd.8 pam_winbind.8 pdbedit.8 smbspool_krb5_wrapper.8 \
 			samba-regedit.8 samba-tool.8 samba.8 smbd.8 smbpasswd.8 \
 			smbspool.8 smbta-util.8 vfs_acl_tdb.8 vfs_acl_xattr.8 \
 			vfs_aio_fork.8 vfs_aio_linux.8 vfs_aio_pthread.8 \
