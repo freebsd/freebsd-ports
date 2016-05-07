@@ -1186,6 +1186,7 @@
     SUBDIR += samba41
     SUBDIR += samba42
     SUBDIR += samba43
+    SUBDIR += samba44
     SUBDIR += samplicator
     SUBDIR += sbd
     SUBDIR += scamper
