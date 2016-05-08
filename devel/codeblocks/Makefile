@@ -1,4 +1,4 @@
-# Created by: Loïc BARTOLETTI <lbartoletti@tuxfamily.org>
+# Created by: Matthias Sund <m.sund@arcor.de>
 # $FreeBSD$
 
 PORTNAME=	codeblocks
