@@ -6,7 +6,6 @@ PORTVERSION=	1.7.1
 CATEGORIES=	devel java
 MASTER_SITES=	http://dl.bintray.com/${PORTNAME}/releases/
 EXTRACT_SUFX=	.war
-#DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	freebsd@dussan.org
 COMMENT=	Open-source servlet for Git repositories
