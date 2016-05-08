@@ -1,0 +1,10 @@
+This module reads e-mail messages stored as .msg files (such as generated
+by Outlook), and converts them to Email::MIME objects. It also includes a
+command-line interface in the form of the msgconvert script.
+
+Such files may be identified by file(1) as follows:
+Composite Document File V2 Document
+
+You do not need Outlook installed to use this module.
+
+WWW: http://search.cpan.org/dist/Email-Outlook-Message/
