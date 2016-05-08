@@ -1,0 +1,20 @@
+--- scripts/CrashPlanDesktop.orig	2016-04-24 10:38:26 UTC
++++ scripts/CrashPlanDesktop
+@@ -5,12 +5,14 @@ SCRIPTDIR=$(dirname $SCRIPT)
+ TARGETDIR="$SCRIPTDIR/.."
+ export SWT_GTK3=0
+ 
+-. ${TARGETDIR}/install.vars
+-. ${TARGETDIR}/bin/run.conf
++. /usr/local/share/crashplan/install.vars
+ 
+ cd ${TARGETDIR}
+ 
+-if [ "_${VERSION_5_UI}" == "_true" ]; then
++. bin/run.conf
++${LOGDIR=/var/log/crashplan}
++
++${JAVACOMMON} ${GUI_JAVA_OPTS} -classpath "./lib/com.backup42.desktop.jar:./lang:./skin" com.backup42.desktop.CPDesktop > ${LOGDIR}/ui_output.log 2> ${LOGDIR}/ui_error.log &
+ 	${TARGETDIR}/electron/crashplan > ${TARGETDIR}/log/ui_output.log 2> ${TARGETDIR}/log/ui_error.log &
+ else
+ 	${JAVACOMMON} ${GUI_JAVA_OPTS} -classpath "./lib/com.backup42.desktop.jar:./lang:./skin" com.backup42.desktop.CPDesktop > ${TARGETDIR}/log/ui_output.log 2> ${TARGETDIR}/log/ui_error.log &
