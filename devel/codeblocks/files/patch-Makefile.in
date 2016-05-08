@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2016-05-06 22:17:30 UTC
++++ Makefile.in
+@@ -455,7 +455,7 @@ SUBDIRS = src
+ ACLOCAL_AMFLAGS = -I m4
+ @KEEP_DLLS_FALSE@ADDITIONAL_MAKE_DIST_OPTIONS = --exclude=".svn" --exclude="*.dll"
+ @KEEP_DLLS_TRUE@ADDITIONAL_MAKE_DIST_OPTIONS = --exclude=".svn"
+-pkgconfigdir = $(prefix)/libdata/pkgconfig
++pkgconfigdir = ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+ pkgconfig_DATA = codeblocks.pc
+ EXTRA_DIST = bootstrap \
+ 		codeblocks.spec \
