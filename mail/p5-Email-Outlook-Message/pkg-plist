@@ -1,0 +1,10 @@
+bin/msgconvert
+%%SITE_PERL%%/Email/Outlook/Message/Attachment.pm
+%%SITE_PERL%%/Email/Outlook/Message/Base.pm
+%%SITE_PERL%%/Email/Outlook/Message/AddressInfo.pm
+%%SITE_PERL%%/Email/Outlook/Message.pm
+%%PERL5_MAN1%%/msgconvert.1.gz
+%%PERL5_MAN3%%/Email::Outlook::Message::Attachment.3.gz
+%%PERL5_MAN3%%/Email::Outlook::Message::Base.3.gz
+%%PERL5_MAN3%%/Email::Outlook::Message.3.gz
+%%PERL5_MAN3%%/Email::Outlook::Message::AddressInfo.3.gz
