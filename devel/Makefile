@@ -673,6 +673,7 @@
     SUBDIR += git-modes
     SUBDIR += git-review
     SUBDIR += git-subversion
+    SUBDIR += gitblit
     SUBDIR += gitflow
     SUBDIR += gitg
     SUBDIR += gitg0
