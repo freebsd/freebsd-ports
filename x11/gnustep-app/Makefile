@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 gnustep
 
 MAINTAINER=	theraven@FreeBSD.org
@@ -66,7 +66,6 @@ RUN_DEPENDS=	aclock>0:x11-clocks/aclock \
 		lusernet>0:news/lusernet \
 		mpdcon>0:audio/mpdcon \
 		nextgo>0:games/nextgo \
-		gnustep-notebook>0:deskutils/gnustep-notebook \
 		paje>0:science/paje \
 		pantomime>0:mail/pantomime \
 		pixen>0:graphics/pixen \
