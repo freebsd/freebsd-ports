@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-video
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	HOME=${WRKSRC}
+CPPFLAGS+=      -I${LOCALBASE}/include
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
