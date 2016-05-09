@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2016-04-08 02:04:21 UTC
+--- CMakeLists.txt.orig	2016-05-09 13:04:04 UTC
 +++ CMakeLists.txt
 @@ -213,7 +213,7 @@ else()
  
@@ -9,3 +9,12 @@
      add_definitions(-Wno-c11-extensions)
    endif()
  endif()
+@@ -367,7 +367,7 @@ endforeach()
+ 
+ # Find Lua interpreter
+ include(LuaHelpers)
+-set(LUA_DEPENDENCIES lpeg mpack bit)
++set(LUA_DEPENDENCIES lpeg bit)
+ if(NOT LUA_PRG)
+   foreach(CURRENT_LUA_PRG luajit lua)
+     # If LUA_PRG is set find_program() will not search
