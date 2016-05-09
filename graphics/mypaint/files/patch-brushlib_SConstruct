@@ -1,14 +1,14 @@
---- SConstruct.orig	2016-01-15 19:42:54 UTC
-+++ SConstruct
-@@ -95,14 +95,14 @@ if "$CCFLAGS" in env['CXXCOM']:
+--- brushlib/SConstruct.orig	2016-01-15 19:42:55 UTC
++++ brushlib/SConstruct
+@@ -57,14 +57,14 @@ if os.environ.has_key('LDFLAGS'):
  
  opts.Update(env)
  
 -env.Append(CXXFLAGS=' -Wall -Wno-sign-compare -Wno-write-strings')
--env.Append(CCFLAGS='-Wall')
+-env.Append(CCFLAGS='-Wall -Wstrict-prototypes -Werror')
 -env.Append(CFLAGS='-std=c99')
 +#env.Append(CXXFLAGS=' -Wall -Wno-sign-compare -Wno-write-strings')
-+#env.Append(CCFLAGS='-Wall')
++#env.Append(CCFLAGS='-Wall -Wstrict-prototypes -Werror')
 +#env.Append(CFLAGS='-std=c99')
  
  env['GEGL_VERSION'] = 0.3
@@ -19,7 +19,7 @@
  
  if env.get('CPPDEFINES'):
      # make sure assertions are enabled
-@@ -113,7 +113,7 @@ if env['debug']:
+@@ -75,7 +75,7 @@ if env['debug']:
      env.Append(CCFLAGS='-O0', LINKFLAGS='-O0')
  else:
      # Overridable defaults
