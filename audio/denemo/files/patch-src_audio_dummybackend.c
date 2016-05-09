@@ -1,4 +1,4 @@
---- src/audio/dummybackend.c.orig	2015-02-09 02:55:09 UTC
+--- src/audio/dummybackend.c.orig	2016-04-10 12:10:21 UTC
 +++ src/audio/dummybackend.c
 @@ -21,9 +21,11 @@
  static int const PLAYBACK_INTERVAL = 100000;
@@ -20,7 +20,7 @@
  static gpointer
  process_thread_func (gpointer data)
  {
-@@ -117,6 +120,7 @@ stop_process_thread ()
+@@ -114,6 +117,7 @@ stop_process_thread ()
        process_thread = NULL;
      }
  }
@@ -28,7 +28,7 @@
  
  
  static int
-@@ -124,7 +128,9 @@ dummy_audio_initialize (DenemoPrefs * co
+@@ -121,7 +125,9 @@ dummy_audio_initialize (DenemoPrefs * co
  {
    g_message ("Initializing dummy audio backend");
  
@@ -38,7 +38,7 @@
  
    g_atomic_int_set (&dummy_audio, TRUE);
  
-@@ -136,7 +142,9 @@ dummy_midi_initialize (DenemoPrefs * con
+@@ -133,7 +139,9 @@ dummy_midi_initialize (DenemoPrefs * con
  {
    g_message ("Initializing dummy MIDI backend");
  
@@ -48,7 +48,7 @@
  
    g_atomic_int_set (&dummy_midi, TRUE);
  
-@@ -151,7 +159,9 @@ dummy_audio_destroy ()
+@@ -148,7 +156,9 @@ dummy_audio_destroy ()
  
    g_atomic_int_set (&dummy_audio, FALSE);
  
@@ -58,7 +58,7 @@
  
    return 0;
  }
-@@ -163,7 +173,9 @@ dummy_midi_destroy ()
+@@ -160,7 +170,9 @@ dummy_midi_destroy ()
  
    g_atomic_int_set (&dummy_midi, FALSE);
  
