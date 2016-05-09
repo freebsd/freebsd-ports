@@ -8312,3 +8312,5 @@ dns/odsclient||2016-05-03|Has expired: ODS shuts service down, so client is prob
 games/Cockatrice|games/cockatrice|2016-05-05|Renamed to games/cockatrice
 graphics/py-opengl|graphics/py-PyOpenGL|2016-05-09|Use correct upstream PyPI name
 graphics/py-opengl-accelerate|graphics/py-PyOpenGL-accelerate|2016-05-09|Use correct upstream PyPI name
+java/linux-sun-jre17||2016-05-09|Has expired: Unsupported and known for multiple security vulnerabilities
+deskutils/gnustep-notebook||2016-05-09|Has expired: Does not fetch
