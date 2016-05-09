@@ -1,6 +1,6 @@
---- libs/audio/targets/snd_oss.c.orig	2004-01-16 02:50:26 UTC
+--- libs/audio/targets/snd_oss.c.orig	2013-01-23 03:10:55 UTC
 +++ libs/audio/targets/snd_oss.c
-@@ -132,12 +132,11 @@ try_open (int rw)
+@@ -129,12 +129,11 @@ try_open (int rw)
  	if (snd_device->string[0])
  		snd_dev = snd_device->string;
  
