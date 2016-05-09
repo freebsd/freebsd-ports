@@ -9,6 +9,7 @@
     SUBDIR += R-cran-RSQLite.extfuns
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
+    SUBDIR += adabase
     SUBDIR += adminer
     SUBDIR += adodb
     SUBDIR += adodb5
