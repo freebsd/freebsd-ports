@@ -398,6 +398,7 @@
     SUBDIR += miniupnpd
     SUBDIR += miredo
     SUBDIR += miruo
+    SUBDIR += mlvpn
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
