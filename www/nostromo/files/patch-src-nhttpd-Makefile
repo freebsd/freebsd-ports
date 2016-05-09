@@ -10,7 +10,7 @@
  OS!= uname -s
  
 +.if defined(OPENSSLLIB) && "${OPENSSLLIB}" != "/usr/lib"
-+LDADD+=	-L${OPENSSLIB}
++LDADD+=	-L${OPENSSLLIB}
 +.endif
 +.if defined(OPENSSLINC) && "${OPENSSLINC}" != "/usr/include"
 +CFLAGS+=-I${OPENSSLINC}
