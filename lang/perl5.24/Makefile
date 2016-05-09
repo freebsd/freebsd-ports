@@ -3,18 +3,12 @@
 
 PORTNAME=	perl
 PORTREVISION=	0
-# XXX Remove second line, uncomment first
-#DISTVERSION=	${PERL_VERSION}
-DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
+DISTVERSION=	${PERL_VERSION}
 CATEGORIES=	lang devel perl5
-# XXX Leave only CPAN.
-MASTER_SITES=	LOCAL/mat/perl GH CPAN/../../src/5.0
-# XXX Remove DISTNAME
-DISTNAME=	${PORTNAME}-${DISTVERSION}
+MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
 
-# XXX -> perl@
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
 LICENSE=	ART10 GPLv1
@@ -25,12 +19,6 @@ LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 TEST_TARGET=	test_harness
 TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
 		LD_LIBRARY_PATH=${WRKSRC}
-
-# XXX Remove github things.
-USE_GITHUB=	yes
-GH_ACCOUNT=	Perl
-GH_PROJECT=	perl5
-GH_TAGNAME=	v5.25.0-8-g51f69a2
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE
@@ -63,9 +51,8 @@ THREADS_CONFIGURE_OFF=	-Dusethreads=n
 PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 
-# XXX uncomment PORTSCOUT line
 # For the "release" Perl ports, this should be:
-#PORTSCOUT=	limit:^${PERL_VER}.
+PORTSCOUT=	limit:^${PERL_VER}.
 
 .include "version.mk"
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
@@ -83,8 +70,7 @@ SITE_MAN1?=	${PREFIX}/${SITE_MAN1_REL}
 _PRIV_LIB=	lib/perl5/${PERL_VER}
 _ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
 
-# XXX releases are .tar.xz, add: tar:xz
-USES=	cpe
+USES=	cpe tar:xz
 
 LIBPERL_VER=	${PORTVERSION:C/[^0-9.]//}
 
@@ -107,16 +93,12 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 # Keep the following two in sync.
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
-# XXX change the soname to $$(LIBPERL:R)
 CONFIGURE_ARGS+= \
 	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
-	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL)'
+	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL:R)'
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
-
-# XXX Remove
-CONFIGURE_ARGS+=	-Dusedevel -Uversiononly
 
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
@@ -169,7 +151,6 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PRIV_LIB=${_PRIV_LIB} \
 		PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 		ARCH_LIB=${_ARCH_LIB}
-PLIST_SUB+=	LIBPERL_VER=${LIBPERL_VER} # XXX Remove
 
 _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 
@@ -181,16 +162,12 @@ _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this
-.if ${PERL_VER} == ${PERL5_DEFAULT} || ${PERL5_DEFAULT} == devel # XXX Remove devel case
+.if ${PERL_VER} == ${PERL5_DEFAULT}
 PKGNAMESUFFIX=	5
 IAMDEFAULTPERL=	yes
 .else
 # make PKGNAME unique among other lang/perl5.x
-.if defined(GH_TAGNAME) # XXX remove if, leave only the else.
-PKGNAMESUFFIX=	5-devel
-.else
 PKGNAMESUFFIX=	${PERL_VER}
-.endif
 .endif
 
 # Am I building the default Perl ?
@@ -224,26 +201,6 @@ pre-everything::
 .if !(defined(PACKAGE_BUILDING) || defined(BATCH))
 	@sleep 30
 .  endif
-.endif
-
-# XXX Remove this
-pre-everything::
-	@${ECHO_MSG} "########################################"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "This is a DEVELOPER only version of Perl"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "             DO NOT USE IT"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " Things ARE going to be broken with it"
-	@${ECHO_MSG} "       and it WILL eat your data"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "         You have been warned !"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "########################################"
-# No need to make me, or the package builders, wait
-.if !(defined(PACKAGE_BUILDING) || defined(PERL_DEV_SHUT_UP) || defined(BATCH))
-	@sleep 30
 .endif
 
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.
@@ -297,8 +254,6 @@ post-install:
 	${LN} -sf libperl.so.${LIBPERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so
 	${LN} -sf libperl.so.${LIBPERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so.${PERL_VER}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
-	# XXX Remove the ECHO_CMD
-	# Force PERL_PORT in case the devel has the same version as the latest release
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/machine
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/sys
 	# h2ph needs perl, but perl is not installed, it's only
