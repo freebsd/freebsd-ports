@@ -255,16 +255,19 @@ libperl() {
 					;;
 				*0)
 					has_some_libperl_so=1
-					case "${found}" in
-						*1?)
-							warn "${f} does not have a rpath to ${LIBPERL}, not respecting lddlflags?"
-							;;
-					esac
-					case "${found}" in
-						1??)
-							warn "${f} does not have a runpath to ${LIBPERL}, not respecting lddlflags?"
-							;;
-					esac
+					# Older Perl did not USE_LDCONFIG.
+					if [ ! -f ${LOCALBASE}/${LDCONFIG_DIR}/perl5 ]; then
+						case "${found}" in
+							*1?)
+								warn "${f} does not have a rpath to ${LIBPERL}, not respecting lddlflags?"
+								;;
+						esac
+						case "${found}" in
+							1??)
+								warn "${f} does not have a runpath to ${LIBPERL}, not respecting lddlflags?"
+								;;
+						esac
+					fi
 					;;
 			esac
 		# Use heredoc to avoid losing rc from find|while subshell

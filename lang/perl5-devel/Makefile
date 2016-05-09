@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-PORTREVISION=	0
+PORTREVISION=	1
 # XXX Remove second line, uncomment first
 #DISTVERSION=	${PERL_VERSION}
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
@@ -109,8 +109,11 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
 # XXX change the soname to $$(LIBPERL:R)
 CONFIGURE_ARGS+= \
-	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -Wl,-rpath=${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
-	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-Wl,-rpath=${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL)'
+	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
+	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL)'
+
+# Give a hint of where libperl.so can be found.
+USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
 
 # XXX Remove
 CONFIGURE_ARGS+=	-Dusedevel -Uversiononly
