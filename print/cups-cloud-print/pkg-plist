@@ -9,12 +9,17 @@ libexec/cups/driver/cupscloudprint
 %%DATADIR%%/dynamicppd.py
 %%DATADIR%%/listcloudprinters.py
 %%DATADIR%%/oauth2client/__init__.py
+%%DATADIR%%/oauth2client/_helpers.py
+%%DATADIR%%/oauth2client/_openssl_crypt.py
+%%DATADIR%%/oauth2client/_pycrypto_crypt.py
 %%DATADIR%%/oauth2client/appengine.py
 %%DATADIR%%/oauth2client/client.py
 %%DATADIR%%/oauth2client/clientsecrets.py
 %%DATADIR%%/oauth2client/crypt.py
+%%DATADIR%%/oauth2client/devshell.py
 %%DATADIR%%/oauth2client/django_orm.py
 %%DATADIR%%/oauth2client/file.py
+%%DATADIR%%/oauth2client/flask_util.py
 %%DATADIR%%/oauth2client/gce.py
 %%DATADIR%%/oauth2client/keyring_storage.py
 %%DATADIR%%/oauth2client/locked_file.py
