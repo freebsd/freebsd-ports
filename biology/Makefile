@@ -80,6 +80,7 @@
     SUBDIR += primer3
     SUBDIR += protomol
     SUBDIR += psi88
+    SUBDIR += py-biom-format
     SUBDIR += py-biopython
     SUBDIR += pycogent
     SUBDIR += pyfasta
