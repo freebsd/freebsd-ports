@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
@@ -92,8 +92,11 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
 CONFIGURE_ARGS+= \
-	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -Wl,-rpath=${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
-	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-Wl,-rpath=${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL:R)'
+	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
+	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL:R)'
+
+# Give a hint of where libperl.so can be found.
+USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
 
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
