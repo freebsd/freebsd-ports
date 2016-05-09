@@ -1,13 +1,12 @@
 # Created by: Randall Hopper <aa8vb@ipass.net>
 # $FreeBSD$
 
-PORTNAME=	opengl
-PORTVERSION=	3.0.1
-PORTREVISION=	7
+PORTNAME=	PyOpenGL
+PORTVERSION=	3.1.0
 CATEGORIES=	graphics python
-MASTER_SITES=	SF/py${PORTNAME}/PyOpenGL/${PORTVERSION}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyOpenGL-${PORTVERSION}
+#DISTNAME=	PyOpenGL-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	OpenGL (and related library) interface for Python
