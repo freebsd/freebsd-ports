@@ -10,4 +10,4 @@ include/superlu/superlu_enum_consts.h
 include/superlu/supermatrix.h
 lib/libsuperlu.so
 lib/libsuperlu.so.%%P_VER%%
-lib/libsuperlu_%%P_VERSION%%.so
+lib/libsuperlu.so.%%P_VERSION%%
