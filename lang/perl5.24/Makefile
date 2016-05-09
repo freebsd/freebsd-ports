@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-PORTREVISION=	0
 DISTVERSION=	${PERL_VERSION}
+PORTREVISION=	0
 CATEGORIES=	lang devel perl5
-MASTER_SITES=	CPAN/../../src/5.0
+MASTER_SITES=	CPAN/../../src/5.0 CPAN/../by-authors/id/R/RJ/RJBS
 DIST_SUBDIR=	perl
 
 MAINTAINER=	perl@FreeBSD.org
@@ -51,7 +51,6 @@ THREADS_CONFIGURE_OFF=	-Dusethreads=n
 PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 
-# For the "release" Perl ports, this should be:
 PORTSCOUT=	limit:^${PERL_VER}.
 
 .include "version.mk"
@@ -72,12 +71,10 @@ _ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
 
 USES=	cpe tar:xz
 
-LIBPERL_VER=	${PORTVERSION:C/[^0-9.]//}
-
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
-	-Dlibperl=libperl.so.${LIBPERL_VER} \
+	-Dlibperl=libperl.so.${PERL_VERSION} \
 	-Darchlib=${PREFIX}/${_ARCH_LIB} \
 	-Dprivlib=${PREFIX}/${_PRIV_LIB} \
 	-Dman3dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man3 \
@@ -198,7 +195,7 @@ pre-everything::
 	@${ECHO_MSG} "DEFAULT_VERSIONS+=perl5=${PERL_VER}"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "##################################################"
-.if !(defined(PACKAGE_BUILDING) || defined(BATCH))
+.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
 	@sleep 30
 .  endif
 .endif
@@ -209,8 +206,8 @@ pre-everything::
 # portmaster/portupgrade will remove the installed Perl version, and it will
 # remove any way to guess what the default Perl version is needed.
 post-extract:
-	${LN} -s libperl.so.${LIBPERL_VER} ${WRKSRC}/libperl.so
-	${LN} -s libperl.so.${LIBPERL_VER} ${WRKSRC}/libperl.so.${PERL_VER}
+	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so
+	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so.${PERL_VER}
 .if !defined(PACKAGE_BUILDING)
 	@${ECHO_CMD} "PERL5_DEFAULT=${PERL5_DEFAULT}" > ${_PERL5_DEFAULT_FILE}
 .endif
@@ -251,8 +248,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/auto
 	${MKDIR} ${STAGEDIR}${SITE_PERL}/auto
 	${LN} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION} ${STAGEDIR}${PREFIX}/bin/perl5
-	${LN} -sf libperl.so.${LIBPERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so
-	${LN} -sf libperl.so.${LIBPERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so.${PERL_VER}
+	${LN} -sf libperl.so.${PERL_VERSION} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so
+	${LN} -sf libperl.so.${PERL_VERSION} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so.${PERL_VER}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/machine
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/sys
