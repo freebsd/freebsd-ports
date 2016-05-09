@@ -4,6 +4,7 @@
 PORTNAME=	libchewing
 PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	ports@FreeBSD.org
