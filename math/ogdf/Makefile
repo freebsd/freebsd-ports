@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.ogdf.net/lib/exe/fetch.php/tech:
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	C++ class library for the automatic layout of diagrams
 
 LICENSE=		GPLv2 GPLv3
