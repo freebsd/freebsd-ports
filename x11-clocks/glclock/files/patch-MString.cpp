@@ -1,4 +1,4 @@
---- MString.cpp.orig
+--- MString.cpp.orig	2000-06-22 14:58:41 UTC
 +++ MString.cpp
 @@ -1,6 +1,9 @@
  
