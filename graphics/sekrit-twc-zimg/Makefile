@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zimg
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${GH_ACCOUNT}-
@@ -46,10 +46,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-O2 //' \
 		-e '/zimg-test/ { s/+=/=/; s/^noinst_/bin_/; } ' \
 		${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's/nullptr_t/std::&/' \
-		-e 's/off64_t/off_t/' \
-		${WRKSRC}/src/testcommon/json.* \
-		${WRKSRC}/src/testcommon/mmap.cpp
 
 pre-install-TEST-on: do-test
 
