@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2016-05-09 02:23:35 UTC
+--- CMakeLists.txt.orig	2016-05-09 16:30:03 UTC
 +++ CMakeLists.txt
 @@ -140,6 +140,7 @@ set(libdir "\${exec_prefix}/lib")
  set(includedir "\${prefix}/include")
@@ -21,3 +21,12 @@
  endif()
  
  
+@@ -362,7 +359,7 @@ add_library(chewing OBJECT
+     ${SRC_DIR}/bopomofo.c
+ )
+ set_target_properties(chewing PROPERTIES
+-    COMPILE_DEFINITIONS "CHEWING_DATADIR=\"${CMAKE_INSTALL_DATADIR}/libchewing\""
++    COMPILE_DEFINITIONS "CHEWING_DATADIR=\"${CMAKE_INSTALL_FULL_DATADIR}/libchewing\""
+ )
+ 
+ if (WITH_SQLITE3)
