@@ -1,10 +1,10 @@
---- test/resize/resize_impl_sse2_test.cpp.orig	2016-05-08 20:08:38 UTC
-+++ test/resize/resize_impl_sse2_test.cpp
-@@ -7,6 +7,8 @@
+--- test/resize/resize_impl_avx2_test.cpp.orig	2016-05-08 20:08:38 UTC
++++ test/resize/resize_impl_avx2_test.cpp
+@@ -9,6 +9,8 @@
  #include "gtest/gtest.h"
  #include "graph/filter_validator.h"
  
-+#include <cmath> // INFINITY
++#include <cmath> // NAN
 +
  namespace {
  
