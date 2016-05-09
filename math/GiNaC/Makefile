@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcln.so:math/cln
 
 USES=		gmake libtool makeinfo pathfix pkgconfig python:build \
-		tar:bzip2 compiler:c++11-lang compiler:c++11-lib
+		tar:bzip2 compiler:c++11-lib
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -28,11 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=		ginac ginac-examples
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-USE_GCC=	4.8+
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
