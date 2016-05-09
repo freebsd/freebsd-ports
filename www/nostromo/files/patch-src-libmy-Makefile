@@ -1,7 +1,6 @@
---- src/libmy/Makefile.orig	2011-03-20 11:23:57.000000000 +0100
-+++ src/libmy/Makefile	2011-03-20 11:24:15.000000000 +0100
-@@ -2,9 +2,9 @@
- SRCS= strcutl.c strcutw.c strcuts.c strcuti.c strcutf.c flog.c flogd.c fparse.c strlower.c strb64d.c
+--- src/libmy/Makefile.orig	2016-04-07 19:58:48 UTC
++++ src/libmy/Makefile
+@@ -3,8 +3,8 @@ SRCS= strcutl.c strcutw.c strcuts.c strc
  
  CFLAGS+= -Wall -Werror -Wstrict-prototypes
  MAN=
