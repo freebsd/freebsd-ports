@@ -1,6 +1,6 @@
---- src/export/file.c.orig	2015-02-09 02:55:09 UTC
+--- src/export/file.c.orig	2016-04-10 12:10:21 UTC
 +++ src/export/file.c
-@@ -615,7 +615,7 @@ template_open (DenemoProject * gui, Temp
+@@ -644,7 +644,7 @@ template_open (DenemoProject * gui, Temp
      {
        if (system_example_path == NULL)
          {
