@@ -51,7 +51,6 @@ THREADS_CONFIGURE_OFF=	-Dusethreads=n
 PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 
-# For the older Perl ports, this should be:
 PORTSCOUT=	limit:^${PERL_VER}.
 
 .include "version.mk"
@@ -70,7 +69,8 @@ SITE_MAN1?=	${PREFIX}/${SITE_MAN1_REL}
 _PRIV_LIB=	lib/perl5/${PERL_VER}
 _ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
 
-USES=	tar:bzip2 cpe
+USES=	cpe tar:bzip2
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
@@ -161,7 +161,7 @@ _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this
 .if ${PERL_VER} == ${PERL5_DEFAULT}
-PKGNAMESUFFIX=	${PERL_VERSION:C/\.[0-9]+\.[0-9]+$//}
+PKGNAMESUFFIX=	5
 IAMDEFAULTPERL=	yes
 .else
 # make PKGNAME unique among other lang/perl5.x
@@ -218,8 +218,6 @@ post-clean:
 	@${RM} ${_PERL5_DEFAULT_FILE}
 .endif
 
-.if !defined(MAKING_PATCHES)
-# make clean patch makepatch MAKING_PATCHES=
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
@@ -234,7 +232,6 @@ post-patch-PTHREAD-on:
 post-patch-PTHREAD-off:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
-.endif
 
 post-build:
 	@${REINPLACE_CMD} -e '/^lddlflags/s|-L${WRKSRC} ||' \

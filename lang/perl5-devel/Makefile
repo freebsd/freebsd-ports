@@ -64,7 +64,6 @@ PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 
 # XXX uncomment PORTSCOUT line
-# For the "release" Perl ports, this should be:
 #PORTSCOUT=	limit:^${PERL_VER}.
 
 .include "version.mk"
@@ -86,6 +85,7 @@ _ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
 # XXX releases are .tar.xz, add: tar:xz
 USES=	cpe
 
+# XXX replace all LIBPERL_VER occurences with PERL_VERSION
 LIBPERL_VER=	${PORTVERSION:C/[^0-9.]//}
 
 HAS_CONFIGURE=	yes
@@ -169,7 +169,8 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PRIV_LIB=${_PRIV_LIB} \
 		PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 		ARCH_LIB=${_ARCH_LIB}
-PLIST_SUB+=	LIBPERL_VER=${LIBPERL_VER} # XXX Remove
+# XXX Remove and change to PERL_VERSION in the plist.
+PLIST_SUB+=	LIBPERL_VER=${LIBPERL_VER}
 
 _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 
@@ -221,7 +222,7 @@ pre-everything::
 	@${ECHO_MSG} "DEFAULT_VERSIONS+=perl5=${PERL_VER}"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "##################################################"
-.if !(defined(PACKAGE_BUILDING) || defined(BATCH))
+.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
 	@sleep 30
 .  endif
 .endif
@@ -297,8 +298,6 @@ post-install:
 	${LN} -sf libperl.so.${LIBPERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so
 	${LN} -sf libperl.so.${LIBPERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so.${PERL_VER}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
-	# XXX Remove the ECHO_CMD
-	# Force PERL_PORT in case the devel has the same version as the latest release
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/machine
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/sys
 	# h2ph needs perl, but perl is not installed, it's only

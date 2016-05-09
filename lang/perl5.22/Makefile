@@ -113,7 +113,6 @@ SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
 
 SUB_FILES=	perl-man.conf
 
-
 INSTALL_TARGET=	install-strip
 
 .if defined(PERL_VENDOR_PREFIX)
@@ -218,8 +217,6 @@ post-clean:
 	@${RM} ${_PERL5_DEFAULT_FILE}
 .endif
 
-.if !defined(MAKING_PATCHES)
-# make clean patch makepatch MAKING_PATCHES=
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
@@ -234,7 +231,6 @@ post-patch-PTHREAD-on:
 post-patch-PTHREAD-off:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
-.endif
 
 post-build:
 	@${REINPLACE_CMD} -e '/^lddlflags/s|-L${WRKSRC} ||' \
