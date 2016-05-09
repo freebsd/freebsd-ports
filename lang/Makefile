@@ -240,6 +240,7 @@
     SUBDIR += perl5.18
     SUBDIR += perl5.20
     SUBDIR += perl5.22
+    SUBDIR += perl5.24
     SUBDIR += petite-chez
     SUBDIR += pfe
     SUBDIR += phantomjs
