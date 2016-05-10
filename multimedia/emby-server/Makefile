@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	3.0.5931
+PORTVERSION=	3.0.5934
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -21,6 +21,7 @@ GH_ACCOUNT=	MediaBrowser
 GH_PROJECT=	Emby
 
 USES=		mono pkgconfig
+NO_ARCH=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 RC_NAME=	emby_server
