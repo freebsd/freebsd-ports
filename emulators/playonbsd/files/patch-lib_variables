@@ -1,6 +1,6 @@
---- lib/variables.orig	2015-05-12 22:33:57 UTC
+--- lib/variables.orig	2016-01-03 22:16:17 UTC
 +++ lib/variables
-@@ -65,8 +65,11 @@ else
+@@ -69,8 +69,11 @@ else
  	eval_gettext() { printf "$@"; }
  fi
  
