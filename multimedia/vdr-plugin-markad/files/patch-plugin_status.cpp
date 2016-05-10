@@ -1,5 +1,5 @@
---- a/plugin/status.cpp
-+++ b/plugin/status.cpp
+--- plugin/status.cpp.orig	2012-09-09 23:00:32 UTC
++++ plugin/status.cpp
 @@ -6,6 +6,12 @@
   */
  
