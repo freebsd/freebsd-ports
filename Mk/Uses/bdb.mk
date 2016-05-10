@@ -15,6 +15,7 @@
 #			  support one or more versions of Berkeley DB.
 # WITH_BDB_VER
 #			- User defined global variable to set Berkeley DB version.
+#			  Deprecated, use DEFAULT_VERSIONS+=bdb=xx
 # <BDB_UNIQUENAME>_WITH_BDB_VER
 #			- User defined port specific variable to set Berkeley DB
 #			  version.
@@ -54,12 +55,17 @@ _bdb_ARGS:=	${bdb_ARGS}
 .endif
 _bdb_ARGS?=	yes
 
-# TODO: avoid malformed conditional with invalid _bdb_ARGS/WITH_BDB_VER
+# TODO: avoid malformed conditional with invalid _bdb_ARGS/BDB_DEFAULT
 # check if + works properly from test builds 01h12m23s
 
 BDB_UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
 
-_WITH_BDB_VER_save:=${WITH_BDB_VER}
+.if defined(WITH_BDB_VER)
+WARNING+=	"WITH_BDB_VER is deprecated and will be removed on 2016-08-01. Use DEFAULT_VERSIONS+=bdb=${WITH_BDB_VER}"
+BDB_DEFAULT:=${WITH_BDB_VER}
+.endif
+
+_BDB_DEFAULT_save:=${BDB_DEFAULT}
 
 _DB_PORTS=		48 5 6
 _DB_DEFAULTS=	48 5	# does not include 6 due to different licensing
@@ -77,17 +83,17 @@ db48_FIND=	${LOCALBASE}/include/db48/db.h
 db5_FIND=	${LOCALBASE}/include/db5/db.h
 db6_FIND=	${LOCALBASE}/include/db6/db.h
 
-# Override the global WITH_BDB_VER with the
+# Override the global BDB_DEFAULT with the
 # port specific <BDB_UNIQUENAME>_WITH_BDB_VER
 .if defined(${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER)
-WITH_BDB_VER=	${${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER}
+BDB_DEFAULT=	${${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER}
 .endif
 
-# Override _bdb_ARGS with global WITH_BDB_VER if the maintainer did not
+# Override _bdb_ARGS with global BDB_DEFAULT if the maintainer did not
 # ask for a more specific version.
-.if defined(WITH_BDB_VER)
-. if ${WITH_BDB_VER} != 1 && ${_bdb_ARGS} == yes
-_bdb_ARGS=	${WITH_BDB_VER}
+.if defined(BDB_DEFAULT)
+. if ${BDB_DEFAULT} != 1
+_bdb_ARGS=	${BDB_DEFAULT}
 . endif
 .endif
 
@@ -204,7 +210,7 @@ BDB_VER=	${_BDB_VER}
 debug-bdb:
 	@${ECHO_CMD} "--INPUTS----------------------------------------------------"
 	@${ECHO_CMD} "${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER: ${${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER}"
-	@${ECHO_CMD} "WITH_BDB_VER: ${_WITH_BDB_VER_save}"
+	@${ECHO_CMD} "BDB_DEFAULT: ${_BDB_DEFAULT_save}"
 	@${ECHO_CMD} "BDB_BUILD_DEPENDS: ${BDB_BUILD_DEPENDS}"
 	@${ECHO_CMD} "bdb_ARGS (original): ${bdb_ARGS}"
 	@${ECHO_CMD} "WITH_BDB_HIGHEST (original): ${WITH_BDB_HIGHEST}"
@@ -236,7 +242,7 @@ BAD_VAR+=	${var},
 .  endif
 . endfor
 . if defined(BAD_VAR)
-_IGNORE_MSG=	Obsolete variable(s) ${BAD_VAR} use WITH_BDB_VER or ${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER to select Berkeley DB version
+_IGNORE_MSG=	Obsolete variable(s) ${BAD_VAR} use DEFAULT_VERSIONS or ${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER to select Berkeley DB version
 .  if defined(IGNORE)
 IGNORE+= ${_IGNORE_MSG}
 .  else

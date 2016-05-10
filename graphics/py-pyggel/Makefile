@@ -4,7 +4,7 @@
 PORTNAME=	pyggel
 PORTVERSION=	0.08
 DISTVERSIONSUFFIX=	-alpha4c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME:tu}-V${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -19,7 +19,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-opengl \
+		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-PyOpenGL \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow
 
 USES=		dos2unix python:2 zip

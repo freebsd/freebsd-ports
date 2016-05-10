@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1605
+PORTVERSION=	2.1801
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Devel-OverloadInfo>=0.004:devel/p5-Devel-OverloadInfo \
 		p5-Devel-StackTrace>=1.33:devel/p5-Devel-StackTrace \
 		p5-Eval-Closure>=0.04:devel/p5-Eval-Closure \
-		p5-List-MoreUtils>=0.28:lang/p5-List-MoreUtils \
 		p5-MRO-Compat>=0.05:devel/p5-MRO-Compat \
 		p5-Module-Runtime>=0.012:devel/p5-Module-Runtime \
 		p5-Module-Runtime-Conflicts>=0.002:devel/p5-Module-Runtime-Conflicts \
@@ -31,10 +31,10 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Package-Stash>=0.32:devel/p5-Package-Stash \
 		p5-Package-Stash-XS>=0.24:devel/p5-Package-Stash-XS \
 		p5-Params-Util>=1.00:devel/p5-Params-Util \
+		p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils \
 		p5-Sub-Exporter>=0.980:devel/p5-Sub-Exporter \
 		p5-Sub-Identify>=0:devel/p5-Sub-Identify \
 		p5-Sub-Name>=0.05:devel/p5-Sub-Name \
-		p5-Task-Weaken>=0:devel/p5-Task-Weaken \
 		p5-Try-Tiny>=0.17:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
@@ -70,14 +70,7 @@ USE_PERL5=	configure extract
 post-patch:
 	@${REINPLACE_CMD} -e '/^check_conflicts()/d' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.35:lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.35:lang/p5-Scalar-List-Utils
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Moose/Moose.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

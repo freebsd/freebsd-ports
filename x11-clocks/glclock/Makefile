@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 OPTIMIZED_CFLAGS_CFLAGS=\
 		-O3 -fexpensive-optimizations -ffast-math \
-		-fomit-frame-pointer -fforce-mem -fforce-addr
+		-fomit-frame-pointer
 
 PROGRAMS=	glclock glclockmark
 SCRIPTS=	chromeclock chromeclock_L crystalclock crystalclock_L \

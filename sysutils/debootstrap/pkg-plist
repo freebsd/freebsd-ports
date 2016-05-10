@@ -50,3 +50,4 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/woody
 %%DATADIR%%/scripts/woody.buildd
 %%DATADIR%%/scripts/xenial
+%%DATADIR%%/scripts/yakkety

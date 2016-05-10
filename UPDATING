@@ -5,6 +5,60 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160510:
+  AFFECTS: Users of biology/seqan
+  AUTHOR: junovitch@FreeBSD.org
+
+  The biology/seqan port has been split into biology/seqan (only the
+  library) and biology/seqan-apps for the programs based on SeqAn. Both
+  ports are based on version 2.1.1 of the SeqAn repository. There is a new
+  biology/seqan1 port with version 1.3 of SeqAn for backwards compatibility,
+  but this port will likely be deprecated in the next year so please update
+  your software to SeqAn2.
+
+20160505:
+  AFFECTS: Users of www/node
+  AUTHOR: bradleythughes@fastmail.fm
+
+  The www/node port has been updated to node.js v6.0.0, the latest
+  upstream release. Users of node.js v5.x are encouraged to upgrade as
+  soon as possible, as upstream support will end two months from now.
+
+  The www/node5 port has been created to aid users transition. Use one of
+  the following commands to continue using node.js v5.x:
+
+  # pkg install node5
+    or
+  # portmaster -o www/node5 www/node
+    or
+  # portupgrade -o www/node5 www/node
+
+20160503:
+  AFFECTS: users of security/libressl
+  AUTHOR: brnrd@FreeBSD.org
+
+  LibreSSL 2.3 has removed SSLv3 support completely which leads to issues
+  with a number of ports. Patches for many of these issues can be found
+  on https://wiki.freebsd.org/OpenSSL/No-SSLv3
+
+  After upgrading to 2.3.4, manually update all packages that depend on
+  any of the libraries provided by LibreSSL (libssl, libcrypto and
+  libtls) since the versions of these libraries have changed. Normally,
+  you can obtain the list of dependent software by running the following
+  command:
+
+  # pkg info -r libressl
+
+  Then you should rebuild all ports depending on libressl to avoid dangling
+  shared library dependencies. Poudriere and pkg handle this correctly,
+  portmaster and portupgrade users can use the following to rebuild all
+  dependent ports.
+
+  Portmaster users:
+      portmaster -r libressl
+  Portupgrade users:
+      portupgrade -fr security/libressl
+
 20160501:
   AFFECTS: Users of mail/dspam
   AUTHOR: junovitch@FreeBSD.org
@@ -14,7 +68,16 @@ you update your ports collection, before attempting any port upgrades.
   port and the /var/run/dspam directory for PID and socket files.  If you
   need dspam to run as root for your mail setup, you can use the SETUID
   config option to enable the old insecure behavior.
-  
+
+20160229:
+  AFFECTS: users of www/nginx and www/nginx-devel
+  AUTHOR: osa@FreeBSD.org
+
+  The ${MODULESDIR}, default directory for dynamic modules, has been
+  changed from ${ETCDIR}/modules to ${PREFIX}/libexec/${PORTNAME}.
+  It's highly recommended to review existing configuration files of
+  nginx, i.e. ${PREFIX}/etc/nginx/nginx.conf.
+
 20160424:
   AFFECTS: Users of net-mgmt/icinga2
   AUTHOR: lme@FreeBSD.org

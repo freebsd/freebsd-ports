@@ -1,24 +1,32 @@
---- CMakeLists.txt.orig	2014-04-11 01:25:28 UTC
+--- CMakeLists.txt.orig	2016-05-09 16:30:03 UTC
 +++ CMakeLists.txt
-@@ -104,7 +104,7 @@ set(TEST_BIN_DIR ${PROJECT_BINARY_DIR}/t
- set(INSTALL_INC_DIR ${CMAKE_INSTALL_PREFIX}/include/chewing)
- set(INSTALL_LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib)
- set(INSTALL_DATA_DIR ${CMAKE_INSTALL_PREFIX}/share/libchewing)
--set(INSTALL_INFO_DIR ${CMAKE_INSTALL_PREFIX}/share/info)
-+set(INSTALL_INFO_DIR ${CMAKE_INSTALL_PREFIX}/info)
- 
- set(INFO_SRC ${PROJECT_SOURCE_DIR}/doc/libchewing.texi)
- set(INFO_BIN ${PROJECT_BINARY_DIR}/doc/libchewing.info)
-@@ -166,11 +166,7 @@ if (MAKEINFO)
+@@ -140,6 +140,7 @@ set(libdir "\${exec_prefix}/lib")
+ set(includedir "\${prefix}/include")
+ set(datarootdir "\${prefix}/share")
+ set(datadir "\${datarootdir}")
++set(infodir "\${prefix}/info")
+ set(sysconfdir "\${prefix}/etc")
+ configure_file(
+     ${PROJECT_SOURCE_DIR}/chewing.pc.in
+@@ -181,11 +182,7 @@ if (MAKEINFO)
      add_custom_target(INFO ALL DEPENDS ${INFO_BIN})
      add_dependencies(check INFO)
  
 -    find_program(INSTALL_INFO NAMES ginstall-info install-info)
 -    if (INSTALL_INFO)
--        install(FILES ${INFO_BIN} DESTINATION ${INSTALL_INFO_DIR})
--        install(CODE "execute_process(COMMAND ${INSTALL_INFO} --info-dir=${INSTALL_INFO_DIR} ${INFO_BIN})")
+-        install(FILES ${INFO_BIN} DESTINATION ${CMAKE_INSTALL_INFODIR})
+-        install(CODE "execute_process(COMMAND ${INSTALL_INFO} --info-dir=${CMAKE_INSTALL_INFODIR} ${INFO_BIN})")
 -    endif()
-+    install(FILES ${INFO_BIN} DESTINATION ${INSTALL_INFO_DIR})
++    install(FILES ${INFO_BIN} DESTINATION ${infodir})
  endif()
  
  
+@@ -362,7 +359,7 @@ add_library(chewing OBJECT
+     ${SRC_DIR}/bopomofo.c
+ )
+ set_target_properties(chewing PROPERTIES
+-    COMPILE_DEFINITIONS "CHEWING_DATADIR=\"${CMAKE_INSTALL_DATADIR}/libchewing\""
++    COMPILE_DEFINITIONS "CHEWING_DATADIR=\"${CMAKE_INSTALL_FULL_DATADIR}/libchewing\""
+ )
+ 
+ if (WITH_SQLITE3)

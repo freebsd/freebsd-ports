@@ -1,0 +1,20 @@
+--- doc/en/man/fcron.conf.5.orig	2014-07-06 10:10:37 UTC
++++ doc/en/man/fcron.conf.5
+@@ -27,14 +27,14 @@ optional. Trailing blanks are also ignor
+ The following names are recognized (default value in parentheses):
+ "VALID VARIABLES IN A FCRON.CONF FILE"
+ .TP
+-\fBfcrontabs=\fIdirectory\fB  (\fI/usr/local/var/spool/fcron\fB)\fR
++\fBfcrontabs=\fIdirectory\fB  (\fI/var/spool/fcron\fB)\fR
+ \fBFcron\fR spool directory.
+ .TP
+-\fBpidfile=\fIfile-path\fB  (\fI/usr/local/var/run/fcron.pid\fB)\fR
++\fBpidfile=\fIfile-path\fB  (\fI/var/run/fcron.pid\fB)\fR
+ Location of \fBfcron\fR pid file (needed by \fBfcrontab\fR
+ to work properly).
+ .TP
+-\fBfifofile=\fIfile-path\fB  (\fI/usr/local/var/run/fcron.fifo\fB)\fR
++\fBfifofile=\fIfile-path\fB  (\fI/var/run/fcron.fifo\fB)\fR
+ Location of \fBfcron\fR fifo file (needed by
+ \fBfcrondyn\fR to communicate with \fBfcron\fR).
+ .TP

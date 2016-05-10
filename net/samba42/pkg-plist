@@ -25,6 +25,7 @@ bin/smbcontrol
 bin/smbcquotas
 bin/smbget
 bin/smbpasswd
+%%CUPS%%bin/smbspool_krb5_wrapper
 bin/smbspool
 bin/smbstatus
 bin/smbta-util
@@ -868,6 +869,7 @@ man/man8/samba-tool.8.gz
 man/man8/samba.8.gz
 man/man8/smbd.8.gz
 man/man8/smbpasswd.8.gz
+man/man8/smbspool_krb5_wrapper.8.gz
 man/man8/smbspool.8.gz
 man/man8/smbta-util.8.gz
 man/man8/vfs_acl_tdb.8.gz

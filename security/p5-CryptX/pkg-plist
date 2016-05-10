@@ -3,6 +3,9 @@
 %%PERL5_MAN3%%/Crypt::AuthEnc::EAX.3.gz
 %%PERL5_MAN3%%/Crypt::AuthEnc::GCM.3.gz
 %%PERL5_MAN3%%/Crypt::AuthEnc::OCB.3.gz
+%%PERL5_MAN3%%/Crypt::Checksum.3.gz
+%%PERL5_MAN3%%/Crypt::Checksum::Adler32.3.gz
+%%PERL5_MAN3%%/Crypt::Checksum::CRC32.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::AES.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::Anubis.3.gz
@@ -77,6 +80,9 @@
 %%SITE_ARCH%%/Crypt/AuthEnc/EAX.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/GCM.pm
 %%SITE_ARCH%%/Crypt/AuthEnc/OCB.pm
+%%SITE_ARCH%%/Crypt/Checksum.pm
+%%SITE_ARCH%%/Crypt/Checksum/Adler32.pm
+%%SITE_ARCH%%/Crypt/Checksum/CRC32.pm
 %%SITE_ARCH%%/Crypt/Cipher.pm
 %%SITE_ARCH%%/Crypt/Cipher/AES.pm
 %%SITE_ARCH%%/Crypt/Cipher/Anubis.pm

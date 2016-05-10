@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
@@ -76,7 +76,8 @@ SITE_MAN1?=	${PREFIX}/${SITE_MAN1_REL}
 _PRIV_LIB=	lib/perl5/${PERL_VER}
 _ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
 
-USES=	tar:bzip2 cpe
+USES=	cpe tar:bzip2
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
@@ -98,8 +99,12 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
 CONFIGURE_ARGS+= \
-	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -Wl,-rpath=${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
-	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-Wl,-rpath=${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL:R)'
+	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
+	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL:R)'
+
+# Give a hint of where libperl.so can be found.
+USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
+
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
 		LC_TIME=""
@@ -131,7 +136,7 @@ _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this
 .if ${PERL_VER} == ${PERL5_DEFAULT}
-PKGNAMESUFFIX=	${PERL_VERSION:C/\.[0-9]+\.[0-9]+$//}
+PKGNAMESUFFIX=	5
 IAMDEFAULTPERL=	yes
 .else
 # make PKGNAME unique among other lang/perl5.x
@@ -222,8 +227,6 @@ post-clean:
 	@${RM} ${_PERL5_DEFAULT_FILE}
 .endif
 
-.if !defined(MAKING_PATCHES)
-# make clean patch makepatch MAKING_PATCHES=
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
@@ -238,7 +241,6 @@ post-patch-PTHREAD-on:
 post-patch-PTHREAD-off:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
-.endif
 
 post-build:
 	@${REINPLACE_CMD} -e '/^lddlflags/s|-L${WRKSRC} ||' \

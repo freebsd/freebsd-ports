@@ -398,6 +398,7 @@
     SUBDIR += miniupnpd
     SUBDIR += miredo
     SUBDIR += miruo
+    SUBDIR += mlvpn
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
@@ -785,6 +786,7 @@
     SUBDIR += p5-Socks
     SUBDIR += p5-Sort-Key-IPv4
     SUBDIR += p5-Test-URI
+    SUBDIR += p5-TFTP
     SUBDIR += p5-URI
     SUBDIR += p5-URI-FromHash
     SUBDIR += p5-URI-Match
@@ -1185,6 +1187,7 @@
     SUBDIR += samba41
     SUBDIR += samba42
     SUBDIR += samba43
+    SUBDIR += samba44
     SUBDIR += samplicator
     SUBDIR += sbd
     SUBDIR += scamper
@@ -1400,6 +1403,7 @@
     SUBDIR += zeroconf-ioslave
     SUBDIR += zerotier
     SUBDIR += zillion
+    SUBDIR += zmap
     SUBDIR += zsync
 
 .include <bsd.port.subdir.mk>

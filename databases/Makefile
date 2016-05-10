@@ -9,6 +9,7 @@
     SUBDIR += R-cran-RSQLite.extfuns
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
+    SUBDIR += adabase
     SUBDIR += adminer
     SUBDIR += adodb
     SUBDIR += adodb5
@@ -836,7 +837,6 @@
     SUBDIR += rrdman
     SUBDIR += rrdmerge
     SUBDIR += rrdtool
-    SUBDIR += rrdtool10
     SUBDIR += rrdtool12
     SUBDIR += ruby-bdb
     SUBDIR += ruby-cdb
@@ -938,6 +938,8 @@
     SUBDIR += sqldeveloper
     SUBDIR += sqlite-ext-miscfuncs
     SUBDIR += sqlite-ext-pcre
+    SUBDIR += sqlite-ext-regexp
+    SUBDIR += sqlite-ext-spellfix
     SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqlitebrowser

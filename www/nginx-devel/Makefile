@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -255,10 +255,12 @@ NGINX_ERRORLOG?=	${NGINX_LOGDIR}/nginx-error.log
 
 CONFLICTS?=	nginx-1.*
 USE_RC_SUBR=	nginx
+SUB_FILES=	pkg-message
 SUB_LIST+=	WWWOWN=${WWWOWN} \
 		WWWGRP=${WWWGRP} \
 		NGINX_RUNDIR=${NGINX_RUNDIR} \
-		NGINX_TMPDIR=${NGINX_TMPDIR}
+		NGINX_TMPDIR=${NGINX_TMPDIR} \
+		PREFIX=${PREFIX}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${ETCDIR} \
@@ -570,7 +572,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.99.12
+GIT_PUSH_VERSION=	0.99.14
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
@@ -836,16 +838,16 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.0.27
+PASSENGER_VERSION=	5.0.28
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 .if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-src-nginx_module-config
 .else
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
 .endif
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
+		${PATCHDIR}/extra-patch-passenger-cxx_portality.rb
 .if empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG

@@ -62,6 +62,7 @@
     SUBDIR += fpdns
     SUBDIR += gdnsd
     SUBDIR += gdnsd2
+    SUBDIR += gen6dns
     SUBDIR += getdns
     SUBDIR += ghtool
     SUBDIR += hesiod
@@ -100,7 +101,6 @@
     SUBDIR += nsping
     SUBDIR += nss_mdns
     SUBDIR += nss_resinit
-    SUBDIR += odsclient
     SUBDIR += opendd
     SUBDIR += opendnssec
     SUBDIR += opendnssec13

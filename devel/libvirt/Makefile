@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -120,7 +120,7 @@ post-extract:
 	@${CP} ${FILESDIR}/libvirt_nss_bsd.syms ${WRKSRC}/tools/nss
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ln -s ../default.xml|true|' \
+	@${REINPLACE_CMD} -e 's|$$(LN_S) ../default.xml default.xml|true|' \
 			  -e 's|$$(DESTDIR)$$(confdir)/qemu/networks|${STAGEDIR}${EXAMPLESDIR}/networks|' \
 			  ${WRKSRC}/src/Makefile.in
 

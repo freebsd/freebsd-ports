@@ -1,3 +1,8 @@
-FiSH/Mircryption clone for XChat and clones in 100% Python.
+FiSH/Mircryption-compatible encryption for XChat/HexChat.
 
-WWW: https://github.com/kwaaak/py-fishcrypt
+    Encrypt/decrypt private conversations
+    Encrypt/decrypt channel conversations
+    Choose between ECB and CBC
+    Automatic DH key exchange (private conversations only)
+
+WWW: https://github.com/fladd/py-fishcrypt

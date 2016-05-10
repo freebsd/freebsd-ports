@@ -1,20 +1,30 @@
---- CMakeLists.txt.orig	2011-07-02 13:14:01.000000000 +0000
-+++ CMakeLists.txt	2011-10-23 07:48:40.000000000 +0000
-@@ -356,7 +356,7 @@
+--- CMakeLists.txt.orig	2016-04-24 11:28:57 UTC
++++ CMakeLists.txt
+@@ -325,6 +325,7 @@ ENDIF(LMMS_BUILD_WIN32)
+ 
+ # check for libsamplerate
+ PKG_CHECK_MODULES(SAMPLERATE REQUIRED samplerate>=0.1.8)
++link_directories(${SAMPLERATE_LIBRARY_DIRS})
+ 
+ 
+ CONFIGURE_FILE("${CMAKE_SOURCE_DIR}/lmmsconfig.h.in" "${CMAKE_BINARY_DIR}/lmmsconfig.h")
+@@ -333,10 +334,7 @@ CONFIGURE_FILE("${CMAKE_SOURCE_DIR}/lmms
+ CONFIGURE_FILE("${CMAKE_SOURCE_DIR}/plugins/zynaddsubfx/zynaddsubfx.rc.in" "${CMAKE_BINARY_DIR}/plugins/zynaddsubfx/zynaddsubfx.rc")
+ 
  # set compiler flags
- #SET(CMAKE_BUILD_TYPE relwithdebug)
- SET(CMAKE_C_FLAGS "-O2 -g -Wall ${CMAKE_C_FLAGS}")
--SET(CMAKE_CXX_FLAGS "-O2 -g -fno-exceptions -Wall ${CMAKE_CXX_FLAGS}")
-+SET(CMAKE_CXX_FLAGS "-O2 -g -fno-exceptions -Wall -Wno-unused ${CMAKE_CXX_FLAGS}")
- #SET(CMAKE_C_FLAGS_${CMAKE_BUILD_TYPE} "${CMAKE_C_FLAGS}")
- #SET(CMAKE_CXX_FLAGS_${CMAKE_BUILD_TYPE} "${CMAKE_CXX_FLAGS}")
+-SET(WERROR_FLAGS "-Wall -Werror=unused-function -Wno-sign-compare -Wno-strict-overflow")
+-IF(NOT LMMS_BUILD_APPLE)
+-   SET(WERROR_FLAGS "${WERROR_FLAGS} -Werror")
+-ENDIF()
++SET(WERROR_FLAGS "-Wall -Wno-sign-compare -Wno-strict-overflow")
  
-@@ -462,7 +462,7 @@
- 	ENDIF(NOT LMMS_BUILD_APPLE)
+ # Due to a regression in gcc-4.8.X, we need to disable array-bounds check
+ IF (CMAKE_COMPILER_IS_GNUCXX AND ((CMAKE_CXX_COMPILER_VERSION VERSION_EQUAL "4.8.0") OR (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER "4.8.0")))
+@@ -639,6 +637,7 @@ MESSAGE(
+ "running cmake again!\n"
+ "-----------------------------------------------------------------\n"
+ "\n\n")
++message(STATUS "using link directories: ${FFTW3F_LIBRARY_DIRS} ${AUDIO_LIBRARY_DIRS} ${ZLIB_LIBRARY_DIRS} ${FFTW_LIBRARY_DIRS} ${MXML_LIBRARY_DIRS} ${FLTK_LIBRARY_DIRS}")
  
- 	INSTALL(TARGETS lmms RUNTIME DESTINATION bin)
--	INSTALL(FILES ${CMAKE_BINARY_DIR}/lmms.1.gz DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1/ PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
-+	INSTALL(FILES ${CMAKE_BINARY_DIR}/lmms.1.gz DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1/ PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
- 
- ENDIF(LMMS_BUILD_WIN32)
- 
+ INCLUDE(InstallRequiredSystemLibraries)
+ SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "LMMS - easy music production for everyone!")

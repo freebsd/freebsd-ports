@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zimg
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${GH_ACCOUNT}-
@@ -13,8 +13,6 @@ LICENSE=	WTFPL2
 LICENSE_NAME=	Do What The Fuck You Want To Public License version 2
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
-
-BROKEN_powerpc64=	Does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sekrit-twc
@@ -31,12 +29,9 @@ CPPFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	TEST
-
-OPTIONS_DEFINE_amd64=	SIMD
-OPTIONS_DEFINE_i386=	SIMD
-OPTIONS_DEFAULT_amd64=	SIMD
-OPTIONS_DEFAULT_i386=	SIMD # runtime detection
+OPTIONS_DEFINE=	SIMD TEST
+OPTIONS_DEFAULT=SIMD
+OPTIONS_EXCLUDE=${ARCH:Namd64:Ni386:C/.+/SIMD/}
 
 SIMD_CONFIGURE_ENABLE=	x86simd
 
@@ -51,10 +46,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-O2 //' \
 		-e '/zimg-test/ { s/+=/=/; s/^noinst_/bin_/; } ' \
 		${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's/nullptr_t/std::&/' \
-		-e 's/off64_t/off_t/' \
-		${WRKSRC}/src/testcommon/json.* \
-		${WRKSRC}/src/testcommon/mmap.cpp
 
 pre-install-TEST-on: do-test
 

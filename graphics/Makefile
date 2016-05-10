@@ -815,6 +815,8 @@
     SUBDIR += projectm-libvisual
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
+    SUBDIR += py-PyOpenGL
+    SUBDIR += py-PyOpenGL-accelerate
     SUBDIR += py-PyX
     SUBDIR += py-PyX12
     SUBDIR += py-aafigure
@@ -848,8 +850,6 @@
     SUBDIR += py-opencolorio
     SUBDIR += py-opencv
     SUBDIR += py-openexr
-    SUBDIR += py-opengl
-    SUBDIR += py-opengl-accelerate
     SUBDIR += py-openimageio
     SUBDIR += py-paint
     SUBDIR += py-pillow

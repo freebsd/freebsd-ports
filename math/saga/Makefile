@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.7
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -78,7 +78,7 @@ post-extract:
 		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile.am
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2877)" + "\\n"|' \
+	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2893)" + "\\n"|' \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 .if ${ARCH} == "powerpc"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \

@@ -255,10 +255,10 @@ lib/girepository-1.0/JavaScriptCore-1.0.typelib
 lib/girepository-1.0/WebKit-1.0.typelib
 lib/libjavascriptcoregtk-1.0.so
 lib/libjavascriptcoregtk-1.0.so.0
-lib/libjavascriptcoregtk-1.0.so.0.16.17
+lib/libjavascriptcoregtk-1.0.so.0.16.19
 lib/libwebkitgtk-1.0.so
 lib/libwebkitgtk-1.0.so.0
-lib/libwebkitgtk-1.0.so.0.22.15
+lib/libwebkitgtk-1.0.so.0.22.17
 libdata/pkgconfig/javascriptcoregtk-1.0.pc
 libdata/pkgconfig/webkit-1.0.pc
 share/gir-1.0/JavaScriptCore-1.0.gir
@@ -426,7 +426,6 @@ share/gtk-doc/html/webkit1/webkitdomgtk/ch01.html
 share/gtk-doc/html/webkit1/webkitdomgtk/home.png
 share/gtk-doc/html/webkit1/webkitdomgtk/index-all.html
 share/gtk-doc/html/webkit1/webkitdomgtk/index.html
-share/gtk-doc/html/webkit1/webkitdomgtk/index.sgml
 share/gtk-doc/html/webkit1/webkitdomgtk/left-insensitive.png
 share/gtk-doc/html/webkit1/webkitdomgtk/left.png
 share/gtk-doc/html/webkit1/webkitdomgtk/right-insensitive.png
@@ -499,7 +498,6 @@ share/gtk-doc/html/webkit1/webkitgtk/index-1.3.8.html
 share/gtk-doc/html/webkit1/webkitgtk/index-all.html
 share/gtk-doc/html/webkit1/webkitgtk/index-deprecated.html
 share/gtk-doc/html/webkit1/webkitgtk/index.html
-share/gtk-doc/html/webkit1/webkitgtk/index.sgml
 share/gtk-doc/html/webkit1/webkitgtk/left-insensitive.png
 share/gtk-doc/html/webkit1/webkitgtk/left.png
 share/gtk-doc/html/webkit1/webkitgtk/right-insensitive.png
@@ -532,6 +530,7 @@ share/locale/hi/LC_MESSAGES/WebKitGTK-2.0.mo
 share/locale/hu/LC_MESSAGES/WebKitGTK-2.0.mo
 share/locale/id/LC_MESSAGES/WebKitGTK-2.0.mo
 share/locale/it/LC_MESSAGES/WebKitGTK-2.0.mo
+share/locale/ja/LC_MESSAGES/WebKitGTK-2.0.mo
 share/locale/kn/LC_MESSAGES/WebKitGTK-2.0.mo
 share/locale/ko/LC_MESSAGES/WebKitGTK-2.0.mo
 share/locale/lt/LC_MESSAGES/WebKitGTK-2.0.mo
@@ -556,6 +555,7 @@ share/locale/te/LC_MESSAGES/WebKitGTK-2.0.mo
 share/locale/uk/LC_MESSAGES/WebKitGTK-2.0.mo
 share/locale/vi/LC_MESSAGES/WebKitGTK-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/WebKitGTK-2.0.mo
+share/locale/zh_TW/LC_MESSAGES/WebKitGTK-2.0.mo
 share/webkitgtk-1.0/images/deleteButton.png
 share/webkitgtk-1.0/images/inputSpeech.png
 share/webkitgtk-1.0/images/missingImage.png

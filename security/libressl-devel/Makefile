@@ -2,7 +2,7 @@
 # $FreeBSD: head/security/libressl-devel/Makefile 410481 2016-03-06 20:06:41Z brnrd $
 
 PORTNAME=	libressl
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel

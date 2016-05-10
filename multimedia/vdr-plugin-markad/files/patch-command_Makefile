@@ -1,0 +1,48 @@
+--- command/Makefile.orig	2012-09-11 07:54:03 UTC
++++ command/Makefile
+@@ -16,6 +16,10 @@ CXXFLAGS ?= -g -rdynamic -O3 -funroll-lo
+ PKG-CONFIG ?= pkg-config
+ STRIP ?= strip
+ 
++ifdef FREEBSD
++LIBS+=-lintl -lexecinfo
++endif
++
+ ### Includes and Defines (add further entries here):
+ 
+ PKG-LIBS += libavcodec libavutil
+@@ -86,17 +90,34 @@ markad: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(OBJS) $(LIBS) -o $@
+ 
+ 
++ifdef FREEBSD
++MANDIR	= $(PREFIX)/man
++else
+ MANDIR	= $(DESTDIR)/usr/share/man
++endif
+ install-doc:
++ifdef FREEBSD
++	@mkdir -p ${DESTDIR}$(MANDIR)/man1
++	@gzip -c markad.1 > ${DESTDIR}$(MANDIR)/man1/markad.1.gz
++else
+ 	@mkdir -p $(MANDIR)/man1
+ 	@gzip -c markad.1 > $(MANDIR)/man1/markad.1.gz
++endif
+ 
+ install: install-doc markad $(I18Nmsgs)
++ifdef FREEBSD
++	@mkdir -p ${DESTDIR}$(PREFIX)/bin
++	@cp -f markad ${DESTDIR}$(PREFIX)/bin/markad
++	@$(STRIP) ${DESTDIR}$(PREFIX)/bin/markad
++	@mkdir -p ${DESTDIR}$(DATADIR)/logos
++	@cp logos/* ${DESTDIR}$(DATADIR)/logos
++else
+ 	@mkdir -p $(DESTDIR)/usr/bin
+ 	@cp --remove-destination markad $(DESTDIR)/usr/bin/markad
+ 	@$(STRIP) $(DESTDIR)/usr/bin/markad
+ 	@mkdir -p $(DESTDIR)/var/lib/markad
+ 	@cp -a logos/* $(DESTDIR)/var/lib/markad
++endif
+ 	@echo markad installed
+ 
+ clean:

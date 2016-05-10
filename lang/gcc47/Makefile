@@ -25,7 +25,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
-CONFLICTS=	gcc-4.7.*
 CPE_VENDOR=	gnu
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
@@ -51,8 +50,6 @@ BOOTSTRAP_DESC=		Build using a full bootstrap
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == powerpc64

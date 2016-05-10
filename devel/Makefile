@@ -673,6 +673,7 @@
     SUBDIR += git-modes
     SUBDIR += git-review
     SUBDIR += git-subversion
+    SUBDIR += gitblit
     SUBDIR += gitflow
     SUBDIR += gitg
     SUBDIR += gitg0
@@ -4607,6 +4608,7 @@
     SUBDIR += py3-gobject3
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
+    SUBDIR += py3-pyicu
     SUBDIR += py3-python-magic
     SUBDIR += py3-pytz
     SUBDIR += py3-vcversioner
@@ -5269,7 +5271,7 @@
     SUBDIR += smokeqt
     SUBDIR += smv
     SUBDIR += soapui
-    SUBDIR += sope
+    SUBDIR += sope2
     SUBDIR += sope3
     SUBDIR += sourcenav
     SUBDIR += sparc64-binutils

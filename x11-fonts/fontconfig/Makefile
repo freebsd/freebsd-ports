@@ -3,7 +3,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.11.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
@@ -31,6 +31,11 @@ CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
 		--with-cache-dir=/var/db/fontconfig \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--disable-docs
+
+# D6155: static linked library linking added to support statically linked
+# 	 applications, e.g. x11/xforward static option
+CONFIGURE_ARGS+= --enable-static
+
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 INSTALL_TARGET=install-strip

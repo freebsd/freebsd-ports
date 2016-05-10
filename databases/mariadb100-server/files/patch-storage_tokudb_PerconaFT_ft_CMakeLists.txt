@@ -1,0 +1,13 @@
+--- storage/tokudb/PerconaFT/ft/CMakeLists.txt.orig	2016-02-17 21:59:56.000000000 +0100
++++ storage/tokudb/PerconaFT/ft/CMakeLists.txt	2016-02-21 20:51:12.317052693 +0100
+@@ -84,8 +84,8 @@ set_target_properties(ft_static PROPERTI
+ maybe_add_gcov_to_libraries(ft ft_static)
+ 
+ ## depend on other generated targets
+-add_dependencies(ft install_tdb_h generate_log_code build_lzma build_snappy)
+-add_dependencies(ft_static install_tdb_h generate_log_code build_lzma build_snappy)
++add_dependencies(ft install_tdb_h generate_log_code)
++add_dependencies(ft_static install_tdb_h generate_log_code)
+ 
+ ## link with lzma (which should be static) and link dependers with zlib
+ target_link_libraries(ft LINK_PRIVATE util_static lzma snappy ${LIBTOKUPORTABILITY})

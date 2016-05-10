@@ -7,7 +7,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 
 LICENSE=	GPLv3

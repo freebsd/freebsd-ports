@@ -1,14 +1,13 @@
-# Created by: Jin-Sih Lin <linpct@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	5.11.0
+PORTVERSION=	6.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
 MAINTAINER=	bradleythughes@fastmail.fm
-COMMENT=	V8 JavaScript for client and server (5.x)
+COMMENT=	V8 JavaScript for client and server (6.x)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

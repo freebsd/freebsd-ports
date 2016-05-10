@@ -33,6 +33,10 @@ ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 only.
 IGNORE=		is not supported on FreeBSD 10.1 and older
 .endif
 
+.if ${OSVERSION} >= 1100000
+BROKEN=		does not build
+.endif
+
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/if_${PORTNAME}.ko ${STAGEDIR}${KMODDIR}/if_${PORTNAME}_updated.ko
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/

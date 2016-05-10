@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -13,7 +12,7 @@ COMMENT=	Round Robin Database Tools
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	rrdtool10-* rrdtool12-*
+CONFLICTS=	rrdtool12-*
 
 CONFIGURE_ARGS=	--disable-tcl --disable-silent-rules
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2

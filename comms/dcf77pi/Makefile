@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcf77pi
-PORTVERSION=	3.4.2
+PORTVERSION=	3.5.0
 CATEGORIES=	comms
 
 MAINTAINER=	rene@FreeBSD.org

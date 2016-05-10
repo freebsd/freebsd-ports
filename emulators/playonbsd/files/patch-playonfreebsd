@@ -1,0 +1,11 @@
+--- playonfreebsd.orig	2016-01-03 22:16:17 UTC
++++ playonfreebsd
+@@ -111,7 +111,7 @@ if [ "$1" = "--run" ]; then
+ 		#	cp "$HOME/.PlayOnLinux/shortcuts/$NAME" "$POL_USER_ROOT/tmp/debug_$NAME" && \
+ 		#	sed -e 's/^export WINEDEBUG="\(.*\)"/export WINEDEBUG="-all"/' "$POL_USER_ROOT/tmp/debug_$NAME" > "$HOME/.PlayOnLinux/shortcuts/$NAME"
+ 		#fi
+-		exec bash playonlinux-bash "$HOME/.PlayOnLinux/shortcuts/$NAME" "$@"
++		exec bash playonlinux-bash "$HOME/.PlayOnBSD/shortcuts/$NAME" "$@"
+ 	fi
+ else
+ 	cd "$POLDIR/python"

@@ -2,47 +2,64 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
-PORTVERSION=	5.7.10
-PORTREVISION?=	4
+PORTVERSION=	5.7.12
 CATEGORIES=	databases ipv6
-MASTER_SITES=	MYSQL/MySQL-5.7:MySQL SF/boost/boost/1.59.0:boost
+MASTER_SITES=	MYSQL/MySQL-5.7
 PKGNAMESUFFIX?=	57-server
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:MySQL boost_1_59_0.tar.gz:boost
+DISTNAME=	${PORTNAME}-boost-${PORTVERSION}
 
 MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 SLAVEDIRS=	databases/mysql57-client
-USES=		cmake:outsource shebangfix
+USES=		bison:build cmake:outsource compiler:c11 compiler:c++11-lib cpe libedit localbase perl5 shebangfix
 
-OPTIONS_RADIO=		SSL
-OPTIONS_RADIO_SSL=	BUNDLED_SSL OPENSSL WITHOUT_SSL
-OPTIONS_DEFAULT+=	OPENSSL
-NO_OPTIONS_SORT=	yes
+USE_OPENSSL=	yes
+USE_PERL5=	run
 
-BUNDLED_SSL_DESC=	SSL/TLS support via (bundled) CyaSSL
-WITHOUT_SSL_DESC=	No SSL/TLS support
+WITH_OPENSSL_PORT=	yes
 
-CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
+MY_DBDIR=	/var/db/mysql
+MY_SECDIR=	/var/db/mysql_secure
+MY_TMPDIR=	/var/db/mysql_tmpdir
+
+LIB_DEPENDS+=	libevent.so:devel/libevent2 \
+		liblz4.so:archivers/liblz4
+
+CMAKE_BUILD_TYPE=	Release
+
+CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
+		-DINSTALL_LDCONFIGDIR="${LOCALBASE}/libdata/ldconfig" \
+		-DINSTALL_PKGCONFIGDIR="${LOCALBASE}/libdata/pkgconfig" \
+		-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
 		-DINSTALL_INCLUDEDIR="include/mysql" \
 		-DINSTALL_INFODIR="info" \
 		-DINSTALL_LIBDIR="lib/mysql" \
-		-DINSTALL_PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig \
 		-DINSTALL_MANDIR="man" \
-		-DINSTALL_MYSQLDATADIR="/var/db/mysql" \
+		-DINSTALL_MYSQLDATADIR="${MY_DBDIR}" \
+		-DINSTALL_MYSQLKEYRINGDIR="etc/mysql/keyring" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
 		-DINSTALL_MYSQLTESTDIR="share/mysql/tests" \
 		-DINSTALL_PLUGINDIR="lib/mysql/plugin" \
 		-DINSTALL_SBINDIR="libexec" \
 		-DINSTALL_SCRIPTDIR="bin" \
+		-DINSTALL_SECURE_FILE_PRIVDIR="${MY_SECDIR}" \
 		-DINSTALL_SHAREDIR="share" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
-		-DLOCAL_BOOST_DIR=${WRKDIR}/boost_1_59_0 \
-		-DBOOST_INCLUDE_DIR=${WRKDIR}/boost_1_59_0 \
-		-DWITH_INNODB_EXTRA_DEBUG=0
+		-DMYSQL_KEYRINGDIR="${ETCDIR}/keyring" \
+		-DSYSCONFDIR="${ETCDIR}" \
+		-DWITH_BOOST="${WRKSRC}/boost" \
+		-DWITH_EDITLINE=system \
+		-DWITH_LIBEVENT=system \
+		-DWITH_LZ4=system \
+		-DWITH_ZLIB=system \
+		-DWITH_SSL=${OPENSSLBASE} \
+		-DWITH_PIC=1
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
@@ -50,23 +67,26 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-BUNDLED_SSL_CMAKE_ON=	-DWITH_SSL=bundled
-OPENSSL_USE=		OPENSSL=yes
-WITHOUT_SSL_CMAKE_ON=	-DWITH_SSL=no
+SUB_LIST=	MY_DBDIR=${MY_DBDIR} \
+		MY_SECDIR=${MY_SECDIR} \
+		MY_TMPDIR=${MY_TMPDIR}
+
+PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
+		MY_SECDIR=${MY_SECDIR} \
+		MY_TMPDIR=${MY_TMPDIR}
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
-USE_MYSQL=	yes
-WANT_MYSQL_VER=	57
+USES+=		mysql:57
 
-USES+=		bison:build cpe perl5
-USE_PERL5=	run
-
-CONFLICTS_INSTALL=	mariadb[0-9]*-server-* \
-			mysql[0-46-9][0-689]-server-* \
-			percona[0-9]*-server-*
+CONFLICTS_INSTALL=	mysql5[0-68-9]-server-* \
+			mysql[0-46-9][0-9]-server-* \
+			mariadb[0-9][0-9]-server-* \
+			percona[0-9][0-9]-server-*
 
 USE_RC_SUBR=	mysql-server
+
+SUB_FILES=	my.cnf.sample
 
 USERS=		mysql
 GROUPS=		mysql
@@ -110,20 +130,15 @@ OPTIONS_DEFAULT+=	PERFSCHM
 
 PERFSCHM_SUB_LIST+=	PERFSCHEMRC=""
 PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
-
-.else
-USES+=		readline
 .endif
 
 .include <bsd.port.pre.mk>
 
+### Just for the sake of FreeBSD 9.X ###
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-CC=	clang
-CXX=	clang++
-CPP=	clang-cpp
-OPENSSL_CMAKE_ON=	-DWITH_SSL=system
-.elif ${OSVERSION} >= 1000000
-OPENSSL_CMAKE_ON=	-DWITH_SSL=yes
+.if !defined(CLIENT_ONLY)
+EXTRA_PATCHES+=		${PATCHDIR}/rapid_plugin-patch-_x_mysqlxtest__src_mysqlxtest.cc
+.endif
 .endif
 
 post-extract:
@@ -131,5 +146,16 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
+
+.if !defined(CLIENT_ONLY)
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKDIR}/my.cnf.sample ${STAGEDIR}${ETCDIR}/my.cnf.sample
+
+post-stage:
+	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
+	${MKDIR} ${STAGEDIR}${MY_SECDIR}
+	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
+.endif
 
 .include <bsd.port.post.mk>

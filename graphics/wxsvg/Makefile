@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxsvg
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 
 USES=		compiler:c++11-lib gmake libtool pathfix pkgconfig tar:bzip2
 USE_WX=		3.0
-WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 USE_GNOME=	cairo
 GNU_CONFIGURE=	yes

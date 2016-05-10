@@ -3,6 +3,7 @@
 
 PORTNAME=	librenms
 PORTVERSION=	201604
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.librenms.org/
 

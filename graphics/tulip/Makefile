@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	_src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	System dedicated to the visualization of huge graphs
 
 LICENSE=	LGPL3

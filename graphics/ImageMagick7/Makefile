@@ -1,12 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	7.0.0-0~beta${DATE}
-PORTREVISION=	2
+DISTVERSION=	7.0.1-0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
-		http://www.imagemagick.org/download/beta/ \
-		LOCAL/kwm \
 		http://www.imagemagick.org/download/legacy/ \
 		http://servingzone.com/mirrors/ImageMagick/ \
 		http://mirror.checkdomain.de/imagemagick/ \
@@ -32,20 +30,18 @@ MASTER_SITES=	http://www.imagemagick.org/download/ \
 PKGNAMESUFFIX=	7
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	Image processing tools (unstable version)
+COMMENT=	Image processing tools
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DATE=		20160225
-WRKSRC=		${WRKDIR}/${PORTNAME}-7.0.0-0
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
-USES=		cpe gmake libtool:keepla pathfix perl5 pkgconfig:both shebangfix tar:xz
+USES=		cpe gmake libtool:keepla localbase pathfix perl5 \
+		pkgconfig:both shebangfix tar:xz
 CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
@@ -55,17 +51,12 @@ CONFIGURE_ARGS=	--without-dps
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
-# make sure LOCALBASE is placed at the end of the compiler lookup so the configure
-# script can find openjpeg2 headers before the openjpeg15 headers
-CPPFLAGS+=	-isystem${LOCALBASE}/include
-LDFLAGS+=	-Wl,-Y${LOCALBASE}/lib
-
 SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
-		policy.xml quantization-table.xml thresholds.xml type-dejavu.xml \
-		type-ghostscript.xml type-windows.xml type.xml
+		policy.xml quantization-table.xml thresholds.xml \
+		type-apple.xml type-dejavu.xml type-ghostscript.xml \
+		type-windows.xml type.xml
 
-#PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
-PLIST_SUB=	PORTVERSION=${PORTVERSION:R:R}
+PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
@@ -395,12 +386,6 @@ USES+=		ghostscript:x11,build
 . else
 USES+=		ghostscript:build
 . endif
-.endif
-
-.if defined(USER) && ${USER} == kwm
-upload:
-	scp ${DISTDIR}/${DISTNAME}.tar.xz \
-		kwm@freefall.freebsd.org:public_distfiles/
 .endif
 
 post-patch:

@@ -8,7 +8,7 @@
 -         WELS_CPU_VFPv3 |
 -         WELS_CPU_NEON;
 +  int flags = 0;
-+# if __ARM_ARCH == 7
++# if __ARM_ARCH >= 7
 +  flags |= WELS_CPU_ARMv7;
 +# endif
 +# ifdef __ARM_VFPV3__

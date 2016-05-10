@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	homebank
-PORTVERSION=	5.0.6
+PORTVERSION=	5.0.7
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -13,12 +13,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libosp.so:textproc/opensp
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pkgconfig shared-mime-info
+USES=		desktop-file-utils gettext gmake localbase pkgconfig \
+		shared-mime-info
 USE_GNOME=	gtk30 intltool
 INSTALLS_ICONS=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 

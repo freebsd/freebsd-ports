@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Test2.pm
 %%SITE_PERL%%/Test2/API.pm
+%%SITE_PERL%%/Test2/API/Breakage.pm
 %%SITE_PERL%%/Test2/API/Context.pm
 %%SITE_PERL%%/Test2/API/Instance.pm
 %%SITE_PERL%%/Test2/API/Stack.pm
@@ -29,6 +30,7 @@
 %%SITE_PERL%%/Test2/Util/Trace.pm
 %%PERL5_MAN3%%/Test2.3.gz
 %%PERL5_MAN3%%/Test2::API.3.gz
+%%PERL5_MAN3%%/Test2::API::Breakage.3.gz
 %%PERL5_MAN3%%/Test2::API::Context.3.gz
 %%PERL5_MAN3%%/Test2::API::Instance.3.gz
 %%PERL5_MAN3%%/Test2::API::Stack.3.gz

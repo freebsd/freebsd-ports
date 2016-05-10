@@ -23,15 +23,17 @@ DISTFILES=	BD2K3-1.0.0.zip:levels \
 		Veysi_Orak_2006.zip
 DIST_SUBDIR=	rocksndiamonds
 EXTRACT_ONLY=	#empty
+EXTRACT_ONLY_7z=Emerald_Mine_Club-2.1.1.7z
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Additional Player Levels for Rocks'n'Diamonds and R'n'D jue
 
-EXTRACT_DEPENDS+=${UNZIP_CMD}:archivers/unzip \
-		7z:archivers/p7zip
+EXTRACT_DEPENDS+=${UNZIP_CMD}:archivers/unzip
 
+USES=		7z:partial
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME} # for EXTRACT_WRKDIR
 
 SUB_FILES=	pkg-message pkg-deinstall
 
@@ -76,9 +78,6 @@ DATADIR1=	${PREFIX}/share/rocksndiamonds
 .endif
 
 post-extract-script:
-	${MKDIR} ${WRKDIR}/${PORTNAME}
-	7z x ${_DISTDIR}/Emerald_Mine_Club-2.1.1.7z -o${WRKDIR}/${PORTNAME}/levels
-
 .for l in BD2K3-1.0.0.zip Snake_Bite-1.0.0.zip Zelda-1.0.0.zip \
 		ZeldaII-1.0.0.zip Boulder_Dash_Dream-1.0.0.zip
 	@${UNZIP_CMD} -qo -d ${WRKDIR}/${PORTNAME} ${_DISTDIR}/${l}

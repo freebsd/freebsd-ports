@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION} \
 		LOCAL/dinoex/:man
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \

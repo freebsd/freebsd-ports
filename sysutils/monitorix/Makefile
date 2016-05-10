@@ -2,7 +2,7 @@
 
 PORTNAME=	monitorix
 PORTVERSION=	3.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.monitorix.org/old_versions/ \

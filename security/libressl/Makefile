@@ -2,7 +2,7 @@
 # $FreeBSD: head/security/libressl/Makefile 410481 2016-03-06 20:06:41Z brnrd $
 
 PORTNAME=	libressl
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -17,21 +17,23 @@ CPE_VENDOR=	openbsd
 OPTIONS_DEFINE=	MAN3 NC
 OPTIONS_DEFAULT=	MAN3 NC
 MAN3_DESC=	Install API manpages (section 3)
-NC_DESC=	Build nc libtls demo application
+NC_DESC=	Install TLS-enabled netcat
 
 CONFLICTS?=	libressl-devel-[0-9]* \
 		openssl-[0-9]* \
 		openssl-devel-[0-9]*
+MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
+CFLAGS+=	-fpic -DPIC
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-post-stage-NC-on:
+post-install-NC-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/apps/nc/.libs/nc ${STAGEDIR}/${PREFIX}/bin/nc
 	${INSTALL_MAN} ${WRKSRC}/apps/nc/nc.1 ${STAGEDIR}/${PREFIX}/man/man1/nc.1
 

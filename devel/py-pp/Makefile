@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pp
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.6.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.parallelpython.com/downloads/pp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

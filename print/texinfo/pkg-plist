@@ -72,6 +72,7 @@ man/man5/texinfo.5.gz
 %%DATADIR%%/Texinfo/Convert/Line.pm
 %%DATADIR%%/Texinfo/Convert/NodeNameNormalization.pm
 %%DATADIR%%/Texinfo/Convert/Paragraph.pm
+%%DATADIR%%/Texinfo/Convert/ParagraphNonXS.pm
 %%DATADIR%%/Texinfo/Convert/PlainTexinfo.pm
 %%DATADIR%%/Texinfo/Convert/Plaintext.pm
 %%DATADIR%%/Texinfo/Convert/Texinfo.pm
@@ -81,8 +82,10 @@ man/man5/texinfo.5.gz
 %%DATADIR%%/Texinfo/Convert/TextContent.pm
 %%DATADIR%%/Texinfo/Convert/UnFilled.pm
 %%DATADIR%%/Texinfo/Convert/Unicode.pm
+%%DATADIR%%/Texinfo/Convert/XSParagraph/TestXS.pm
 %%DATADIR%%/Texinfo/Documentlanguages.pm
 %%DATADIR%%/Texinfo/Encoding.pm
+%%DATADIR%%/Texinfo/ModulePath.pm
 %%DATADIR%%/Texinfo/Parser.pm
 %%DATADIR%%/Texinfo/Report.pm
 %%DATADIR%%/Texinfo/Structuring.pm

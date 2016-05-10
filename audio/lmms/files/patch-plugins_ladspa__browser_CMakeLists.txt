@@ -1,0 +1,9 @@
+--- plugins/ladspa_browser/CMakeLists.txt.orig	2015-03-08 02:47:14 UTC
++++ plugins/ladspa_browser/CMakeLists.txt
+@@ -1,3 +1,6 @@
+ INCLUDE(BuildPlugin)
+ 
+ BUILD_PLUGIN(ladspabrowser ladspa_browser.cpp ladspa_browser.h ladspa_description.cpp ladspa_description.h ladspa_port_dialog.cpp ladspa_port_dialog.h MOCFILES ladspa_browser.h ladspa_description.h ladspa_port_dialog.h EMBEDDED_RESOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.png")
++
++include_directories(${SAMPLERATE_INCLUDE_DIRS})
++link_directories(${SAMPLERATE_LIBRARY_DIRS})

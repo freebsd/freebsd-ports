@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.4.9
-PORTREVISION=	2
+PORTVERSION=	2.4.11
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk2
@@ -28,7 +27,7 @@ PORTSCOUT=	limit:1.4.*$$
 
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
-USES=		bison compiler:c++11-lib gettext gmake gperf libtool \
+USES=		bison compiler:c++11-lib gettext gmake gperf libtool localbase \
 		perl5 pkgconfig shebangfix sqlite tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
@@ -37,9 +36,8 @@ USE_GL=		gl
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_DOLT_BASH=""
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	AR=/usr/bin/ar \
+		ac_cv_path_DOLT_BASH=""
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-gtk=2.0 \
 		--enable-svg-fonts \
@@ -52,7 +50,7 @@ MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 
 CONFIGURE_ARGS+=--disable-egl \
 		--disable-gles2
-SHEBANG_FILES= \
+SHEBANG_FILES=	\
 	Source/JavaScriptCore/create_hash_table \
 	Source/JavaScriptCore/inspector/scripts/xxd.pl \
 	Source/WebCore/css/*.pl \
@@ -64,7 +62,7 @@ SHEBANG_FILES= \
 	Source/WebCore/bindings/scripts/*.p[lm] \
 	Source/JavaScriptCore/create_hash_table
 
-BROWSER_PLUGINS_DIR?=  ${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk2
+BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk2
 #_BROWSER_PLUGINS_DIR=	${BROWSER_PLUGINS_DIR:S|^/|"|:S|/|", "|g}",
 
 OPTIONS_DEFINE=	DEBUG FULLDEBUG
@@ -93,10 +91,12 @@ CXXFLAGS+=	-Wno-c++11-extensions # Shutup warning spam
 CXXFLAGS+=	-Qunused-arguments
 .endif
 
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%BROWSER_PLUGINS_DIR%%|${BROWSER_PLUGINS_DIR}|' \
 		${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp
+# Since ruby 2.2 there is no ruby symlink
+	@${REINPLACE_CMD} -e 's|ruby|${RUBY_NAME}|g' \
+		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name GNUmakefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
