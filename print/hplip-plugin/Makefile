@@ -3,7 +3,7 @@
 
 PORTNAME=	hplip-plugin
 PORTVERSION=	3.16.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://hplipopensource.com/hplip-web/plugin/
 DISTNAME=	hplip-${DISTVERSION}-plugin
@@ -46,10 +46,14 @@ do-extract:
 		--keep --noexec --nox11 --target ${WRKSRC}
 
 do-build:
-	${CC} ${CFLAGS} -Wall -fPIC -c ${FILESDIR}/wrap.c -o ${WRKSRC}/wrap.o
+	${MKDIR} ${WRKSRC}/build
+	${CC} ${CFLAGS} -Wall -fPIC -c ${FILESDIR}/wrap.c \
+		-o ${WRKSRC}/build/wrap.o
 .for p in ${PLUGINS}
-	(cd ${WRKSRC} && ${BRANDELF} -t FreeBSD ${p:T}-${LINARCH}.so && \
-		${CC} ${CFLAGS} ${LDFLAGS} -shared -fPIC -o ${p:T}.so wrap.o \
+	${BRANDELF} -t FreeBSD ${WRKSRC}/${p:T}-${LINARCH}.so
+	(cd ${WRKSRC}/build \
+	&& ${CC} -shared -fPIC -o ${p:T}-${LINARCH}.so wrap.o \
+	&& ${CC} ${CFLAGS} ${LDFLAGS} -shared -fPIC -o ${p:T}.so wrap.o \
 		${p:T}-${LINARCH}.so -Wl,-rpath,${PREFIX}/share/hplip/${p:H})
 .endfor
 
@@ -62,7 +66,7 @@ do-install:
 # -m 555 because HPLIP checks that the plugins are +x.
 	${INSTALL_LIB} -m 555 ${WRKSRC}/${p:T}-${LINARCH}.so \
 		${STAGEDIR}${PREFIX}/share/hplip/${p}-${LINARCH}.so
-	${INSTALL_LIB} -m 555 ${WRKSRC}/${p:T}.so \
+	${INSTALL_LIB} -m 555 ${WRKSRC}/build/${p:T}.so \
 		${STAGEDIR}${PREFIX}/share/hplip/${p}.so
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/plugin.spec ${STAGEDIR}${PREFIX}/share/hplip
