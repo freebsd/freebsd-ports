@@ -1,5 +1,5 @@
---- a/plugin/markad.cpp
-+++ b/plugin/markad.cpp
+--- plugin/markad.cpp.orig	2012-09-10 12:45:12 UTC
++++ plugin/markad.cpp
 @@ -15,8 +15,16 @@
  
  #include "markad.h"

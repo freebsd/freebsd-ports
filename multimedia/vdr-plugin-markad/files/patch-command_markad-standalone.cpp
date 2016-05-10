@@ -1,5 +1,5 @@
---- a/command/markad-standalone.cpp
-+++ b/command/markad-standalone.cpp
+--- command/markad-standalone.cpp.orig	2012-09-11 11:06:28 UTC
++++ command/markad-standalone.cpp
 @@ -24,7 +24,13 @@
  #include <locale.h>
  #include <libintl.h>

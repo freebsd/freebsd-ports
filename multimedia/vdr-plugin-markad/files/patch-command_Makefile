@@ -1,5 +1,5 @@
---- a/command/Makefile
-+++ b/command/Makefile
+--- command/Makefile.orig	2012-09-11 07:54:03 UTC
++++ command/Makefile
 @@ -16,6 +16,10 @@ CXXFLAGS ?= -g -rdynamic -O3 -funroll-lo
  PKG-CONFIG ?= pkg-config
  STRIP ?= strip
