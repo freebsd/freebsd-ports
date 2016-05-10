@@ -1,6 +1,0 @@
-gapped_params for Razers2 have been installed to 
-      %%PREFIX%%/share/seqan/gapped_params
-      
-If you require these, make sure to set the correct 
-path with --param-dir as Razers2 will not pick them 
-up automatically.
