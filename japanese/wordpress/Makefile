@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.4.2
-PORTREVISION=	1
+PORTVERSION=	4.5.2
 DISTVERSIONSUFFIX=	-ja
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
