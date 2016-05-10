@@ -3,7 +3,7 @@
 
 PORTNAME=	bouncy
 PORTVERSION=	r6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games python
 MASTER_SITES=	http://media.pyweek.org/dl/3/bouncy/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:icons
@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 RUN_DEPENDS=	${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-PyOpenGL
+		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-post-${DISTVERSION}
 
