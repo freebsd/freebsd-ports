@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	playonbsd
-PORTVERSION=	4.2.8
+PORTVERSION=	4.2.10
 CATEGORIES=	emulators games
 
 MAINTAINER=	se@FreeBSD.org
