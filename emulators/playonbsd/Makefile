@@ -53,6 +53,7 @@ post-patch:
 do-install:
 		cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/lib/playonbsd/ "-perm -0100 ! -name *.orig"
 		cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/playonbsd/ "! -perm 0100 ! -name *.orig"
+		${CHMOD} a+x ${STAGEDIR}${PREFIX}/lib/playonbsd/playonfreebsd
 		${INSTALL_SCRIPT} ${WRKDIR}/playonbsd.sh ${STAGEDIR}${PREFIX}/bin/playonbsd
 
 .include <bsd.port.post.mk>
