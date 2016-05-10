@@ -35,15 +35,13 @@ USE_APACHE_RUN=	22+
 SUB_FILES+=	pandora_console.conf pkg-message newsyslog.conf
 SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
+PGSQL_USE=	PHP=pgsql
+
 .include "${.CURDIR}/../pandorafms_server/bsd.pandora.mk"
 
+PORTREVISION=	2
+
 PANDORA_INSTALLER_ARGS+=	--destdir ${STAGEDIR}
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -62,12 +60,6 @@ post-install:
 			attachment/downloads/.gitignore ${PORTDOCS} \
 			*.sql.bak extras/check_other_languages.sh.bak
 	@cd ${STAGEDIR}${WWWDIR} && ${MV} install.php install_old.php
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for x in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
 	@(d=${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes; ${MKDIR} $$d; \
 		${INSTALL_DATA} ${WRKDIR}/pandora_console.conf \
 			$$d/pandora_console.conf.sample)
@@ -75,4 +67,10 @@ post-install:
 		${INSTALL_DATA} ${WRKDIR}/newsyslog.conf \
 			$$d/pandora_console.conf)
 
-.include <bsd.port.post.mk>
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for x in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
+.endfor
+
+.include <bsd.port.mk>
