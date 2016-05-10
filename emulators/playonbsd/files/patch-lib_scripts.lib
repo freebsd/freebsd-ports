@@ -1,15 +1,22 @@
---- lib/scripts.lib.orig	2015-05-12 22:33:57 UTC
+--- lib/scripts.lib.orig	2016-01-03 22:16:17 UTC
 +++ lib/scripts.lib
-@@ -382,7 +382,7 @@ POL_Shortcut()
+@@ -382,10 +382,14 @@ POL_Shortcut()
  		# Menus
  		if [ ! "$(POL_Config_Read NO_MENU_ICON)" = "TRUE" ]; then
  			# Do nothing on Mac OS
 -			if [ -n "$Categories" -a "$POL_OS" = "Linux" ] || [ -n "$Categories" -a "$POL_OS" = "BSD" ]; then
-+			if [ -n "$Categories" -a "$POL_OS" = "Linux" ] || [ -n "$Categories" -a "$POL_OS" = "FreeBSD" ]; then
++			if [ -n "$Categories" -a "$POL_OS" = "Linux" ]
  				LOCALAPPS="$HOME/.local/share/applications"
  				make_desktop_shortcut "$iconPath" "$ICON_FILENAME" "$LOCALAPPS" "$PLAYONLINUX/playonlinux --run \"$ICON_FILENAME\"" "$binary_name" "$Categories" "playonlinux-"
  			fi
-@@ -992,9 +992,8 @@ POL_Shortcut_AddProfileLink()
++			if [ -n "$Categories" -a "$POL_OS" = "FreeBSD" ]; then
++				LOCALAPPS="$HOME/.local/share/applications"
++				make_desktop_shortcut "$iconPath" "$ICON_FILENAME" "$LOCALAPPS" "$PLAYONLINUX/playonbsd --run \"$ICON_FILENAME\"" "$binary_name" "$Categories" "playonlinux-"
++			fi
+ 		fi
+ 
+ 		# Desktop
+@@ -1002,9 +1006,8 @@ POL_Shortcut_AddProfileLink()
  }
  POL_LoadVar_Distro ()
  {
@@ -21,7 +28,7 @@
  		main_kernel="$(uname -r | cut -d '.' -f 1)"
  		second_kernel="$(uname -r | cut -d '.' -f 2)"
  
-@@ -1005,7 +1004,14 @@ POL_LoadVar_Distro ()
+@@ -1015,7 +1018,14 @@ POL_LoadVar_Distro ()
  		[ "$main_kernel" = "12" ] && MacOS="Mountain Lion"
  		
  		export DISTRO="$MacOS 10.$(( main_kernel - 4)).$second_kernel ($(uname -r))"
