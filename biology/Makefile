@@ -90,6 +90,7 @@
     SUBDIR += samtools
     SUBDIR += seaview
     SUBDIR += seqan
+    SUBDIR += seqan-apps
     SUBDIR += seqio
     SUBDIR += seqtools
     SUBDIR += sim4
