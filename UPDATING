@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160510:
+  AFFECTS: Users of biology/seqan
+  AUTHOR: junovitch@FreeBSD.org
+
+  The biology/seqan port has been split into biology/seqan (only the
+  library) and biology/seqan-apps for the programs based on SeqAn. Both
+  ports are based on version 2.1.1 of the SeqAn repository. There is a new
+  biology/seqan1 port with version 1.3 of SeqAn for backwards compatibility,
+  but this port will likely be deprecated in the next year so please update
+  your software to SeqAn2.
+
 20160505:
   AFFECTS: Users of www/node
   AUTHOR: bradleythughes@fastmail.fm
