@@ -17,7 +17,6 @@ LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libgmp.so:math/gmp
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	zmap
 
 USES=		cmake pkgconfig
 
