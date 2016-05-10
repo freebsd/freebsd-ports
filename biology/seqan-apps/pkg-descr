@@ -1,0 +1,11 @@
+SeqAn is an open source C++ library of efficient algorithms
+and data structures for the analysis of sequences with the
+focus on biological data. 
+
+This port contains applications built on SeqAn and developed
+within the SeqAn project. Among them are famous read mappers
+like RazerS and Yara, as well as many other tools. Some
+applications are packaged seperately and the library
+can be found at biology/seqan.
+
+WWW: http://www.seqan.de/
