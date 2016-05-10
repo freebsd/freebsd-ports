@@ -1,3 +1,4 @@
+
 Python bindings for Shapelib
 ============================
 
@@ -10,14 +11,6 @@ These are three python modules for shapelib:
    shptree      quadtree for shapes
 
 Shapelib is a free software library for reading and writing ESRI shape
-files and can be found at http://gdal.velocet.ca/projects/shapelib. 
+files and can be found at http://shapelib.maptools.org/.
 
-The bindings were partly created with SWIG, a tool that can generate
-wrappers of C and C++ libraries for a variety of scripting languages.
-It's homepage is http://www.swig.org.
-
-The bindings themselves don't have a homepage at the moment, but the
-source tarballs/zip files can be downloaded from
-http://ftp.intevation.de/users/bh/pyshapelib/
-
-WWW: http://ftp.intevation.de/users/bh/pyshapelib/
+WWW: http://wald.intevation.org/projects/pyshapelib/
