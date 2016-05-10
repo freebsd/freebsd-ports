@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tikiwiki
-PORTVERSION=	14.2
+PORTVERSION=	15.0
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Tiki_14.x_Peony/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/Tiki_15.x_Situla/${PORTVERSION}/
 DISTNAME=	tiki-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 BROKEN_powerpc64=	Does not build
 
-USE_PHP=	gettext pcre posix session xml zlib
+USE_PHP=	dom gettext pcre posix session xml zlib
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
@@ -23,6 +23,9 @@ NO_MTREE=	yes
 TIKIWIKI_DIR?=	www/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	pkg-message
 SUB_LIST+=	TIKIWIKI_DIR=${TIKIWIKI_DIR}
+
+WRI_DIR=	db dump img/trackers img/wiki img/wiki_up modules/cache \
+		temp temp/cache templates_c templates whelp
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TIKIWIKI_DIR}
@@ -37,5 +40,12 @@ post-install:
 		${SORT} | ${SED} -e 's/^/@(${WWWOWN},${WWWGRP},) /' >> ${TMPPLIST})
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d -empty | \
 		${SORT} -r | ${SED} -e 's/^/@dir /' >> ${TMPPLIST})
+
+	@${ECHO_CMD} "@mode 777" >> ${TMPPLIST}
+.for i in ${WRI_DIR} do
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${TIKIWIKI_DIR}/${i}
+	@${ECHO_CMD} "@dir ${TIKIWIKI_DIR}/${i}" >> ${TMPPLIST}
+.endfor
+	@${ECHO_CMD} "@mode" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
