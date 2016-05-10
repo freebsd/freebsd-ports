@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yacas
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -18,6 +18,7 @@ DOCS_BUILD_DEPENDS=	sphinx-autogen:textproc/py-sphinx
 
 PORTDOCS=	*
 
+TEST_TARGET=	test
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake:outsource compiler:c++11-lib
@@ -36,11 +37,8 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 post-patch:
 #	Can't use USES=shebangfix here, cause the path appears several
 #	times in the file.
-	@${REINPLACE_CMD} -e \
-		's| /bin/bash| ${LOCALBASE}/bin/bash|g' \
+	@${REINPLACE_CMD} -e 's| /bin/bash| ${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/tests/test-yacas
-
-do-test:
-	cd ${BUILD_WRKSRC} && ${MAKE} test
-
+	@${REINPLACE_CMD} -e '/^install/s|^|#|' \
+		${WRKSRC}/tests/CMakeLists.txt
 .include <bsd.port.post.mk>
