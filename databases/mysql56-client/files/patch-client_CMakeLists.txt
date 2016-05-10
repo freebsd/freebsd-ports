@@ -1,7 +1,7 @@
---- client/CMakeLists.txt.orig	2013-01-22 17:54:50.000000000 +0100
-+++ client/CMakeLists.txt	2013-02-13 10:36:50.000000000 +0100
-@@ -39,9 +39,11 @@
-   TARGET_LINK_LIBRARIES(mysql ${READLINE_LIBRARY})
+--- client/CMakeLists.txt.orig	2016-03-03 16:35:33.000000000 +0100
++++ client/CMakeLists.txt	2016-04-19 17:30:13.344558659 +0200
+@@ -37,9 +37,11 @@ IF(UNIX)
+   TARGET_LINK_LIBRARIES(mysql ${EDITLINE_LIBRARY})
  ENDIF(UNIX)
  
 +IF(FALSE)
@@ -12,8 +12,8 @@
  
  
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
-@@ -53,15 +55,19 @@
- MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
+@@ -52,15 +54,19 @@ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlim
+ SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
  
 +IF(FALSE)
@@ -32,7 +32,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  TARGET_LINK_LIBRARIES(mysqlbinlog mysqlclient)
-@@ -82,8 +88,6 @@
+@@ -81,8 +87,6 @@ IF(WIN32)
  ENDIF(WIN32)
  
  SET_TARGET_PROPERTIES (
