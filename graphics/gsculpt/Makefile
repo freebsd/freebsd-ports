@@ -3,7 +3,7 @@
 
 PORTNAME=	gsculpt
 PORTVERSION=	0.99.47
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME:S,-src,,}
 DISTNAME=	gSculpt-${PORTVERSION}-alpha-src
@@ -14,7 +14,7 @@ COMMENT=	Opensource 3D modelling application
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>0:graphics/py-PyOpenGL \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>0:graphics/py-PyOpenGL \
 		${PYTHON_PKGNAMEPREFIX}gtkglext>0:x11-toolkits/py-gtkglext
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,-src,,}
