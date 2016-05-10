@@ -1,6 +1,6 @@
---- src/VBox/Installer/freebsd/VBox.sh.orig	2015-02-16 12:58:52.951032000 -0500
-+++ src/VBox/Installer/freebsd/VBox.sh	2015-02-16 13:00:48.096063000 -0500
-@@ -0,0 +1,58 @@
+--- src/VBox/Installer/freebsd/VBox.sh.orig	2015-04-10 22:01:18.704382000 -0700
++++ src/VBox/Installer/freebsd/VBox.sh	2015-04-10 22:13:19.896371000 -0700
+@@ -0,0 +1,61 @@
 +#!/bin/sh
 +#
 +# Oracle VM VirtualBox startup script, FreeBSD hosts.
@@ -29,6 +29,9 @@
 +        echo "Could not find VirtualBox installation. Please reinstall."
 +        exit 1
 +    fi
++
++# workaround for the KDE dialog problem
++KDE_FORK_SLAVES=1; export KDE_FORK_SLAVES
 +
 +APP=`basename $0`
 +case "$APP" in
