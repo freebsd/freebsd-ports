@@ -1403,6 +1403,7 @@
     SUBDIR += zeroconf-ioslave
     SUBDIR += zerotier
     SUBDIR += zillion
+    SUBDIR += zmap
     SUBDIR += zsync
 
 .include <bsd.port.subdir.mk>
