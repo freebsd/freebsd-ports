@@ -14,7 +14,7 @@ COMMENT=	Game of musical skill and fast fingers
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}game>=0:devel/py-game \
-		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-PyOpenGL \
+		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
 		${LOCALBASE}/share/${PORTNAME}/default.ttf:games/fretsonfire-data
 
