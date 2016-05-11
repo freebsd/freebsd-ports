@@ -1,5 +1,5 @@
---- Makefile.in.orig	1996-06-04 13:54:32.000000000 +0200
-+++ Makefile.in	2013-12-29 21:24:36.000000000 +0100
+--- Makefile.in.orig	1996-06-04 11:54:32 UTC
++++ Makefile.in
 @@ -41,9 +41,10 @@ exec_prefix = @exec_prefix@
  #manprefix =
  
