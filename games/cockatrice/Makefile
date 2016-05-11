@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Cockatrice
-PORTVERSION=	0.0.g2016.04.27
-PORTREVISION=	1
+PORTVERSION=	0.0.g2016.05.06
 CATEGORIES=	games
 
 MAINTAINER=	sbruno@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USE_GITHUB=	yes
-GH_TAGNAME=	ff1091a
+GH_TAGNAME=	2016-05-06-Release
 
 USES=		cmake compiler:c++11-lib
 USE_QT5=	buildtools concurrent core multimedia network printsupport \
