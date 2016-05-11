@@ -4,8 +4,8 @@
 PORTNAME=	instead
 PORTVERSION=	2.4.1
 CATEGORIES=	games
-MASTER_SITES=	SF/instead/instead/${PORTVERSION}/
-DISTNAME=	instead_${PORTVERSION}
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple Text Adventure, The Interpreter
