@@ -176,8 +176,8 @@
     SUBDIR += modula3
     SUBDIR += mono
     SUBDIR += mono-basic
-    SUBDIR += moscow_ml
     SUBDIR += mosh
+    SUBDIR += mosml
     SUBDIR += mtasc
     SUBDIR += munger
     SUBDIR += nawk
