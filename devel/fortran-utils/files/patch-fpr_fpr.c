@@ -1,6 +1,6 @@
---- fpr/fpr.c.orig	1994-05-27 14:31:21.000000000 +0200
-+++ fpr/fpr.c	2012-12-03 10:50:48.000000000 +0100
-@@ -45,6 +45,7 @@
+--- fpr/fpr.c.orig	1994-05-27 12:31:21 UTC
++++ fpr/fpr.c
+@@ -45,6 +45,7 @@ static char sccsid[] = "@(#)fpr.c	8.1 (B
  #endif /* not lint */
  
  #include <stdio.h>
@@ -8,7 +8,7 @@
  
  #define BLANK ' '
  #define TAB '\t'
-@@ -80,12 +81,13 @@
+@@ -80,12 +81,13 @@ COLUMN *line;
  int maxpos;
  int maxcol;
  
@@ -27,7 +27,7 @@
  main()
  {
    register int ch;
-@@ -124,7 +126,7 @@
+@@ -124,7 +126,7 @@ main()
  
    while ( ! ateof)
      {
@@ -36,7 +36,7 @@
        ch = getchar();
        if (ch == EOF)
  	{
-@@ -176,6 +178,7 @@
+@@ -176,6 +178,7 @@ main()
  
  
  
@@ -44,7 +44,7 @@
  init()
  {
    register COLUMN *cp;
-@@ -210,7 +213,8 @@
+@@ -210,7 +213,8 @@ init()
  
  
  
@@ -54,7 +54,7 @@
  {
    register int i;
    register char ateol;
-@@ -283,8 +287,8 @@
+@@ -283,8 +287,8 @@ gettext()
  
  
  
@@ -65,7 +65,7 @@
  {
    register char ch;
    register int oldmax;
-@@ -340,6 +344,7 @@
+@@ -340,6 +344,7 @@ int col;
  
  
  
@@ -73,7 +73,7 @@
  flush()
  {
    register int i;
-@@ -403,6 +408,7 @@
+@@ -403,6 +408,7 @@ flush()
  
  
  
