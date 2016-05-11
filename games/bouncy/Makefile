@@ -27,10 +27,6 @@ USES=		python:2
 
 PORTDOCS=	README.txt
 
-OPTIONS_DEFINE=	DOCS SHADER
-SHADER_DESC=	Hardware shader support
-OPTIONS_DEFAULT=	SHADER
-
 INSTALLS_ICONS=	yes
 
 SUB_FILES=	${PORTNAME}
@@ -38,16 +34,18 @@ SUB_FILES=	${PORTNAME}
 DESKTOP_ENTRIES="Bouncy the Hungry Rabbit" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS SHADER
+OPTIONS_DEFAULT=SHADER
+
+SHADER_DESC=	Hardware shader support
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.py' | ${XARGS} \
 		${REINPLACE_CMD} -e 's|^.*#!.*python.*$$|#!${PYTHON_CMD}|'
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
-.if ${PORT_OPTIONS:MSHADER}
+post-patch-SHADER-on:
 	@${REINPLACE_CMD} -i '' '/#try/,/#    print/s/#//' ${WRKSRC}/objects.py
-.endif
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -68,6 +66,7 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
