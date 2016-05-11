@@ -1,6 +1,6 @@
 --- Makefile.orig	2014-10-19 06:33:43 UTC
 +++ Makefile
-@@ -15,17 +15,17 @@ CRYPT_LIB =    -lcrypt
+@@ -15,17 +15,21 @@ CRYPT_LIB =    -lcrypt
  # tree with your OpenSSL installation - depending on how you installed it,
  # it may be in /usr/local instead of /usr/local/ssl.
  #SSL_TREE =	/usr/local/ssl
@@ -8,18 +8,25 @@
 -#SSL_INC =	-I$(SSL_TREE)/include
 -#SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
 +SSL_DEFS =	-DUSE_SSL
-+SSL_INC =	-I$(SSL_TREE)/include
-+SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
++.if "$(OPENSSLINC)" != "/usr/include"
++SSL_INC =	-I$(OPENSSLINC)
++.endif
++.if "$(OPENSSLLIB)" != "/usr/lib"
++SSL_LIBS =	-L$(OPENSSLLIB)
++.endif
++SSL_LIBS+=	-lssl -lcrypto
  
  
- BINDIR =	/usr/local/sbin
- MANDIR =	/usr/local/man
- CC =		cc
+-BINDIR =	/usr/local/sbin
++BINDIR =	${PREFIX}/sbin
+-MANDIR =	/usr/local/man
++MANDIR =	${MANPREFIX}/man
+-CC =		cc
++CC ?=		cc
  CDEFS =		$(SSL_DEFS) $(SSL_INC)
 -CFLAGS =	-O $(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
 -LDFLAGS =	-s
-+CFLAGS = -O2 -pipe  -fstack-protector -fno-strict-aliasing	$(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
-+LDFLAGS =  -Wl,-rpath,/usr/local/lib -fstack-protector	-s
++CFLAGS +=	$(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
  LDLIBS =	$(CRYPT_LIB) $(SSL_LIBS) $(SYSV_LIBS)
  
  all:		mini_httpd htpasswd
