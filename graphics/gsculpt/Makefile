@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opensource 3D modelling application
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>0:graphics/py-PyOpenGL \
@@ -34,7 +35,7 @@ DESKTOP_ENTRIES="gSculpt" "" \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
+BROKEN=		does not compile on ia64, powerpc, or sparc64
 .endif
 
 .if ${ARCH} == "i386"
