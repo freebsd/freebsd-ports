@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160511:
+  AFFECTS: Users of audio/clementine-player
+  AUTHOR: sbruno@FreeBSD.org
+
+  The audio/clementine-player port has been updated to v1.3.1, the latest
+  upstream release.  The music database code now has a hard dependency on
+  databases/sqlite having the FTS3_TOKENIZER option enabled.  This has 
+  been made the default option in databases/sqlite.
+
+  Without this option, clementine-player will crash on startup.
+
 20160510:
   AFFECTS: Users of biology/seqan
   AUTHOR: junovitch@FreeBSD.org
