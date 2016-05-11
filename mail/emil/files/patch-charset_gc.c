@@ -1,5 +1,5 @@
---- charset/gc.c.orig	2011-07-25 20:24:02.000000000 +0200
-+++ charset/gc.c	2011-07-25 20:24:04.000000000 +0200
+--- charset/gc.c.orig	1994-11-29 16:01:57 UTC
++++ charset/gc.c
 @@ -256,7 +256,7 @@ char *file, *mode;
  }
  

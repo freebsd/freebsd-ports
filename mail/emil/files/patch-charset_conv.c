@@ -1,5 +1,5 @@
---- charset/conv.c.orig	2011-07-25 20:26:26.000000000 +0200
-+++ charset/conv.c	2011-07-25 20:25:30.000000000 +0200
+--- charset/conv.c.orig	1994-12-16 12:47:50 UTC
++++ charset/conv.c
 @@ -65,10 +65,10 @@ Char *b, *bm;
  }
  

@@ -1,5 +1,5 @@
---- getoption.y.orig	2014-07-06 11:40:52.000000000 +0200
-+++ getoption.y	2014-07-06 11:40:40.000000000 +0200
+--- getoption.y.orig	1996-06-04 13:17:35 UTC
++++ getoption.y
 @@ -163,13 +163,10 @@ static	int	Ycmp(char * pattern, char * s
  
  extern 	char	* yytext;	/* defined by flex */
