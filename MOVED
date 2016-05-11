@@ -8314,3 +8314,4 @@ graphics/py-opengl|graphics/py-PyOpenGL|2016-05-09|Use correct upstream PyPI nam
 graphics/py-opengl-accelerate|graphics/py-PyOpenGL-accelerate|2016-05-09|Use correct upstream PyPI name
 java/linux-sun-jre17||2016-05-09|Has expired: Unsupported and known for multiple security vulnerabilities
 deskutils/gnustep-notebook||2016-05-09|Has expired: Does not fetch
+lang/moscow_ml|lang/mosml|2016-05-11|Project renamed
