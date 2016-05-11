@@ -309,6 +309,7 @@
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += cpuflags
+    SUBDIR += cram
     SUBDIR += creduce
     SUBDIR += critcl
     SUBDIR += cs-eric6
