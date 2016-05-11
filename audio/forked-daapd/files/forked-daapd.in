@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: avahi_daemon dbus
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# %%RC_NAME%%_enable (bool):	Set to NO by default.
+#				Set it to YES to enable %%PORTNAME%%.
+# %%RC_NAME%%_config (path):	Set to %%PREFIX%%/etc/forked-daapd.conf
+#				by default.
+# %%RC_NAME%%_flags (str):	Set to "" by default
+
+. /etc/rc.subr
+
+name=%%RC_NAME%%
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${%%RC_NAME%%_enable:="NO"}
+: ${%%RC_NAME%%_config:="%%PREFIX%%/etc/forked-daapd.conf"}
+: ${%%RC_NAME%%_flags:=""}
+
+pidfile="/var/run/%%PORTNAME%%.pid"
+required_files="$%%RC_NAME%%_config"
+
+command="%%PREFIX%%/sbin/%%PORTNAME%%"
+command_args="-P $pidfile -c $%%RC_NAME%%_config $%%RC_NAME%%_flags"
+
+run_rc_command "$1"
