@@ -1,5 +1,5 @@
---- src/utils/Glue.cpp.orig	2006-09-15 05:40:18.000000000 +0900
-+++ src/utils/Glue.cpp	2012-10-03 00:23:38.000000000 +0900
+--- src/utils/Glue.cpp.orig	2006-09-14 20:40:18 UTC
++++ src/utils/Glue.cpp
 @@ -6,6 +6,7 @@
  #include <fstream>
  #include <iostream>
