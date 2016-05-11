@@ -1,0 +1,21 @@
+%%PORTNAME%% uses FFmpeg for transcoding audio playback.
+The default ports/pkg build of FFmpeg on FreeBSD has a number
+of options which could be SET/UNSET to provide support for
+additional audio codecs.
+
+If you find %%PORTNAME%% does not support the audio codecs you
+require, it is recommended to recompile the multimedia/ffmpeg
+package from ports with the necessary options ENABLED (SET).
+
+You should review and edit the %%PORTNAME%% configuration
+file %%PREFIX%%/etc/%%PORTNAME%%.conf before first use.
+
+To automatically start %%PORTNAME%% at boot time:
+# sysrc 'dbus_enable=YES'
+# sysrc 'avahi_daemon_enable=YES'
+# sysrc '%%RC_NAME%%_enable=YES'
+
+To then manually start %%PORTNAME%% without rebooting:
+# service dbus start
+# service avahi-daemon start
+# service %%PORTNAME%% start
