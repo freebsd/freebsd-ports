@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ess
-DISTVERSION=	15.09-2
+DISTVERSION=	16.04
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
 		http://stat.ethz.ch/ESS/downloads/ess/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	R support for Emacsen
 
 LICENSE=	GPLv2+
