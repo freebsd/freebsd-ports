@@ -16,13 +16,12 @@ BROKEN_powerpc64=	Does not build
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfcgi.so:www/fcgi \
 		libyajl.so:devel/yajl \
-		libltdl.so:devel/libltdl \
-		libsqlite3.so:databases/sqlite3
+		libltdl.so:devel/libltdl
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-USES=		fuse gmake libtool pkgconfig
+USES=		fuse gmake libtool pkgconfig sqlite
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" --prefix="${STAGE}${PREFIX}" \
 		--sysconfdir="${ETCDIR}" --mandir="${MANPREFIX}/man" \
