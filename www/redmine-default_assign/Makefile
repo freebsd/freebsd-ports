@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	redmine-
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Assign Redmine tickets by default
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 NO_ARCH=	yes
 
