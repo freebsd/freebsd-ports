@@ -12,7 +12,8 @@ MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Base system packages
 
 RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
-		${LOCALBASE}/bin/pc-updatemanager:sysutils/pcbsd-utils \
+		${LOCALBASE}/bin/pc-updatemanager:sysutils/pc-updatemanager \
+		${LOCALBASE}/bin/pc-su:sysutils/pcbsd-utils \
                 ${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh \
 		${LOCALBASE}/bin/sysadm-binary:sysutils/sysadm \
 		${LOCALBASE}/bin/sysadm-client:sysutils/sysadm-client \

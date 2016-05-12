@@ -14,7 +14,8 @@ DISTFILES=	# Empty
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD / TrueOS Command-Line Utilities
 
-RUN_DEPENDS=	${LOCALBASE}/bin/pc-updatemanager:sysutils/pcbsd-utils \
+RUN_DEPENDS=	${LOCALBASE}/bin/pc-updatemanager:sysutils/pc-updatemanager \
+		${LOCALBASE}/bin/pc-su:sysutils/pcbsd-utils \
 		${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh \
 		${LOCALBASE}/bin/lpreserver:sysutils/life-preserver \
 		${LOCALBASE}/sbin/beadm:sysutils/beadm \
