@@ -3,6 +3,7 @@
 
 PORTNAME=	burp
 PORTVERSION=	1.4.40
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	loic-freebsd@loicp.eu
@@ -13,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 LIB_DEPENDS=	librsync.so:net/librsync1
+
+OPTIONS_DEFINE=		IPV6
+OPTIONS_DEFAULT=	IPV6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grke
@@ -25,6 +29,8 @@ PORTSCOUT=	limit:^1\.4\.
 
 CONFIGURE_ARGS=	--sbindir="${PREFIX}/sbin" \
 		--sysconfdir=${ETCDIR} \
+
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 CONFIG_FILES=	configs/server/burp.conf \
 		configs/client/burp.conf \
