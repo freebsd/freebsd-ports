@@ -377,7 +377,7 @@ AUTHOR: bapt@FreeBSD.org
 20150326:
 AUTHOR: bdrewery@FreeBSD.org
 
-  PTHREAD_CLFAGS and PTHREAD_LIBS have been removed.  Please see entry
+  PTHREAD_CFLAGS and PTHREAD_LIBS have been removed.  Please see entry
   20130207 for more information.
 
 20150319:
