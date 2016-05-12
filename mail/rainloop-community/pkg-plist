@@ -703,13 +703,17 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/_source.en.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/de_DE.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/en_US.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/es_ES.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/fr_FR.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/hu_HU.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/it_IT.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/nb_NO.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/nl_NL.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/pl_PL.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/pt_BR.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/ru_RU.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/sl_SI.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/zh_CN.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/langs.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ar-ma.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ar.js
@@ -788,6 +792,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/bg_BG.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/cs_CZ.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/de_DE.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/el_GR.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/en_GB.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/en_US.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/es_ES.yml
@@ -798,6 +803,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/ja_JP.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/ko_KR.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/lt_LT.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/sl_SI.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/lv_LV.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/nb_NO.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/nl_NL.yml

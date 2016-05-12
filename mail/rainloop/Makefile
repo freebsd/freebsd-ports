@@ -2,6 +2,7 @@
 
 PORTNAME=	rainloop
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	http://repository.rainloop.net/v2/webmail/${PORTVERSION}/
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.${RBUILD}-${RHASH}
@@ -18,16 +19,16 @@ LICENSE_PERMS=	auto-accept
 
 .if !defined(PKGNAMESUFFIX)
 # Refresh using info from http://repository.rainloop.net/v2/core.stable.json
-RHASH=		5549831c2d752bcb4e8daff5435c081b
+RHASH=		e92836d3d764e6c6286a9374360b1474
 .endif
 
 .if defined(PKGNAMESUFFIX)
 # Refresh using info from http://repository.rainloop.net/v2/core.open.json
-RHASH=		fa88eab9037241e8a1d24ed40a4b7bb1
+RHASH=		36cc7daed043fcd4f32077bd5585349c
 .endif
 
 # Refresh using info from http://repository.rainloop.net/v2/core.(stable|open).json
-RBUILD=		398
+RBUILD=		415
 
 .if !defined(PKGNAMESUFFIX)
 RESTRICTED=	Redistribution in any form is prohibited
