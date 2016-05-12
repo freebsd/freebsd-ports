@@ -33,8 +33,6 @@ USE_LDCONFIG=	${LOCALBASE}/lib/forked-daapd
 CONFIGURE_ARGS+=--localstatedir=/var
 
 USE_RC_SUBR=	${PORTNAME}
-RC_NAME=	forked_daapd
-SUB_LIST=	PORTNAME=${PORTNAME} RC_NAME=${RC_NAME}
 SUB_FILES=	pkg-message
 
 USERS=		daapd
