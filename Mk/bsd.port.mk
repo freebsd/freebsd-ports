@@ -4161,7 +4161,11 @@ checksum_init=\
 makesum: check-checksum-algorithms
 	@cd ${.CURDIR} && ${MAKE} fetch NO_CHECKSUM=yes \
 		DISABLE_SIZE=yes
-	@if [ -f ${DISTINFO_FILE} ]; then ${CAT} /dev/null > ${DISTINFO_FILE}; fi
+	@if [ -f ${DISTINFO_FILE} ]; then \
+		if ${GREP} -q "^TIMESTAMP " ${DISTINFO_FILE}; then \
+			${GREP} -v "^TIMESTAMP " ${DISTINFO_FILE} > ${DISTINFO_FILE}.sav; \
+		fi; \
+	fi
 	@( \
 		cd ${DISTDIR}; \
 		\
@@ -4172,11 +4176,16 @@ makesum: check-checksum-algorithms
 				eval alg_executable=\$$$$alg; \
 				\
 				if [ $$alg_executable != "NO" ]; then \
-					$$alg_executable $$file >> ${DISTINFO_FILE}; \
+					$$alg_executable $$file >> ${DISTINFO_FILE}.new; \
 				fi; \
 			done; \
-			${ECHO_CMD} "SIZE ($$file) = `${STAT} -f \"%z\" $$file`" >> ${DISTINFO_FILE}; \
-		done \
+			${ECHO_CMD} "SIZE ($$file) = `${STAT} -f \"%z\" $$file`" >> ${DISTINFO_FILE}.new; \
+		done; \
+		if [ ! -f ${DISTINFO_FILE}.sav ] || ! cmp -s ${DISTINFO_FILE}.sav ${DISTINFO_FILE}.new; then \
+			${ECHO_CMD} "TIMESTAMP = `date '+%s'`" > ${DISTINFO_FILE} ; \
+				${CAT} ${DISTINFO_FILE}.new >> ${DISTINFO_FILE} ; \
+		fi ; \
+		rm -f ${DISTINFO_FILE}.new ${DISTINFO_FILE}.sav ; \
 	)
 .endif
 
