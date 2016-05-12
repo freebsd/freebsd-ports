@@ -2,6 +2,7 @@
 
 PORTNAME=	mosml
 PORTVERSION=	2.10.1
+DISTVERSIONPREFIX=	ver-
 CATEGORIES=	lang
 
 MAINTAINER=	johans@FreeBSD.org
@@ -11,7 +12,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libgdbm.so:databases/gdbm
 
 GH_ACCOUNT=	kfl
-GH_TAGNAME=	ver-${PORTVERSION}
 USE_GITHUB=	yes
 
 BROKEN_powerpc64=	Does not build
