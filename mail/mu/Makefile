@@ -6,10 +6,11 @@ PORTVERSION=	0.9.16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wwaites@tardis.ed.ac.uk
 COMMENT=	Mail searching frontend for Xapian
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 		libgmime-2.6.so:mail/gmime26
@@ -22,9 +23,6 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk
 INSTALL_TARGET=	install-strip
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		DOCS GUILE MU4E
 OPTIONS_SUB=		yes
@@ -39,8 +37,7 @@ MU4E_CONFIGURE_ENABLE=	mu4e
 MU4E_INFO=		mu4e
 
 post-install:
-	(cd ${FILESDIR} && ${INSTALL_SCRIPT} mu-ask \
-		${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_SCRIPT} ${FILESDIR}/mu-ask ${STAGEDIR}${PREFIX}/bin
 
 post-install-GUILE-on:
 	(${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.so.*" -type f | \
