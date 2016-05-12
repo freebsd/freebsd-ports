@@ -1,8 +1,0 @@
---- src/external/sixseries/CMakeLists.txt.orig	2016-02-14 00:01:30 UTC
-+++ src/external/sixseries/CMakeLists.txt
-@@ -10,3 +10,5 @@ s_copy.c
- s_stop.c
- f2c.h
- )
-+
-+set_target_properties( sixseries PROPERTIES COMPILE_FLAGS "-fPIC")
