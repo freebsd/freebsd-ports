@@ -1832,6 +1832,7 @@
     SUBDIR += redmine-backlogs
     SUBDIR += redmine-basecamp
     SUBDIR += redmine-default_assign
+    SUBDIR += redmine-graphs
     SUBDIR += redmine-http-auth
     SUBDIR += redmine-sidebar_hide
     SUBDIR += rejik
