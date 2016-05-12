@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		2.3.10
-PORTREVISION=		2
+DISTVERSION=		2.3.11
 CATEGORIES=		security net
 MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
 			http://build.openvpn.net/downloads/releases/
@@ -120,4 +119,10 @@ post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
 	${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MPOLARSSL}
+BROKEN=OpenVPN 2.3.11 with PolarSSL crashes on start unless TLS ciphers specified explicitly
+.endif
+
+.include <bsd.port.post.mk>
