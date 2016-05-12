@@ -14,6 +14,9 @@ COMMENT=	Open-source continuous integration server
 
 LICENSE=	MIT
 
+DEPRECATED=		Use devel/jenkins
+EXPIRATION_DATE=	2016-06-30
+
 CONFLICTS=	jenkins-[0-9]* jenkins-lts-[0-9]*
 
 USE_JAVA=	yes
