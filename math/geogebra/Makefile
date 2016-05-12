@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.231.0
+PORTVERSION=	5.0.236.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		http://freebsd.uzsolt.hu/src/
 DISTNAME=	GeoGebra-Linux-Portable-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} geogebra.png
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Dynamic software that joins geometry, algebra, and calculus
@@ -28,13 +30,11 @@ NO_BUILD=	yes
 USES=		tar:bzip2 desktop-file-utils shared-mime-info shebangfix
 WRKSRC=		${WRKDIR}/${DISTNAME}
 JAVADIR=	jre1.7.0_45-i686
-SHEBANG_FILES=	geogebra-portable geogebra/geogebra
 
 SUB_FILES=	geogebra.desktop geogebra.sh
 SUB_LIST=	JAVADIR=${DATADIR}/${JAVADIR}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,arch,/compat/linux/bin/arch,' ${WRKSRC}/geogebra-portable
+INSTALLS_ICONS=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${PORTNAME}
@@ -44,5 +44,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${JAVADIR}/bin/java ${STAGEDIR}${DATADIR}/${JAVADIR}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKDIR}/geogebra.desktop ${STAGEDIR}${DESKTOPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps
+	${INSTALL_DATA} ${DISTDIR}/geogebra.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps/geogebra.png
 
 .include <bsd.port.mk>
