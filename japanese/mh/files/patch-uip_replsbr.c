@@ -1,6 +1,6 @@
---- uip/replsbr.c.orig	Thu Apr  5 01:05:17 2001
-+++ uip/replsbr.c	Tue Jan 14 18:05:42 2003
-@@ -195,11 +195,12 @@
+--- uip/replsbr.c.orig	2001-04-04 16:05:17 UTC
++++ uip/replsbr.c
+@@ -195,11 +195,12 @@ replout (inb, msg, drft, mp)
  			}
  		    } while (cptr = cptr->c_next);
  
