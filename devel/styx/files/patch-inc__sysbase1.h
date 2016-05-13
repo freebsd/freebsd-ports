@@ -1,6 +1,6 @@
---- inc/sysbase1.h.orig	Tue Apr 17 00:55:58 2001
-+++ inc/sysbase1.h	Tue Apr 17 00:57:17 2001
-@@ -178,7 +178,7 @@
+--- inc/sysbase1.h.orig	2003-12-09 15:36:56 UTC
++++ inc/sysbase1.h
+@@ -193,7 +193,7 @@ AbstractType( DL_Hdl ); /* Abstract hand
  
  #define DL_LOAD_LAZY    0
  
