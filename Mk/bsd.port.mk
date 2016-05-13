@@ -5246,7 +5246,8 @@ do-config:
 	@${ECHO_MSG} "===> No options to configure"
 .else
 	@optionsdir=${OPTIONS_FILE:H}; \
-	if [ ${UID} != 0 -a -z "${INSTALL_AS_USER}" -a ! -w "${PORT_DBDIR}" ] ; then \
+	if [ ! -w "${PORT_DBDIR}" -a "`stat -f %u ${PORT_DBDIR:H}`" = 0 ]; \
+	then \
 		${ECHO_MSG} "===>  Switching to root credentials to create $${optionsdir}"; \
 		(${SU_CMD} "${SH} -c \"${MKDIR} $${optionsdir} 2> /dev/null\"") || \
 			(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1); \
@@ -5282,7 +5283,8 @@ do-config:
 			${ECHO_CMD} "OPTIONS_FILE_UNSET+=$${i}" >> $${TMPOPTIONSFILE}; \
 		fi; \
 	done; \
-	if [ ${UID} != 0 -a -z "${INSTALL_AS_USER}" -a ! -w "${OPTIONS_FILE:H}" ]; then \
+	if [ ! -w "${OPTIONS_FILE:H}" -a "`stat -f %u ${OPTIONS_FILE:H}`" != ${UID} ]; \
+	then \
 		${ECHO_MSG} "===>  Switching to root credentials to write ${OPTIONS_FILE}"; \
 		${SU_CMD} "${CAT} $${TMPOPTIONSFILE} > ${OPTIONS_FILE}"; \
 		${ECHO_MSG} "===>  Returning to user credentials"; \
