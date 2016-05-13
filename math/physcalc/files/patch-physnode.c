@@ -1,6 +1,6 @@
---- physnode.c.orig	Sat Oct  7 21:33:27 2006
-+++ physnode.c	Sat Oct  7 21:33:30 2006
-@@ -305,12 +305,12 @@
+--- physnode.c.orig	1998-08-29 14:17:12 UTC
++++ physnode.c
+@@ -305,12 +305,12 @@ NODEP n;
  }
  
  EXPORT void bytecopy(dst, src, bytes)
