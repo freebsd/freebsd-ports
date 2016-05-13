@@ -3,9 +3,8 @@ Index: lib/cconv.c
 RCS file: /home/cvs/private/hrs/kinput2/lib/cconv.c,v
 retrieving revision 1.1.1.1
 retrieving revision 1.3
-diff -u -p -r1.1.1.1 -r1.3
---- lib/cconv.c	7 Dec 2009 06:36:04 -0000	1.1.1.1
-+++ lib/cconv.c	7 Dec 2009 06:50:44 -0000	1.3
+--- lib/cconv.c.orig	2002-10-03 09:35:28 UTC
++++ lib/cconv.c
 @@ -604,6 +604,7 @@ static char	*rcsid = "$Id: cconv.c,v 10.
  #endif
  
@@ -85,7 +84,15 @@ diff -u -p -r1.1.1.1 -r1.3
  #define FUNCSIZE	20
  #define MOREFUNCSIZE	20
  typedef struct {
-@@ -797,7 +793,7 @@ static int newMode(ccRule, Files *, _str
+@@ -790,14 +786,14 @@ static wchar *promptsave(wchar *);
+ static int parseLine(uchar *, uchar **, int);
+ static FILE *openfile(char *);
+ static int doinclude(uchar *, Files *, void (*)());
+-static uchar *getline(uchar *, int, Files *, void (*)());
++static uchar *get_line(uchar *, int, Files *, void (*)());
+ static int readRuleFile(ccRule, char *);
+ static int registMode(ccRule, int, uchar **);
+ static int newMode(ccRule, Files *, _strbufRec *, _funcbufRec *,
  		   _funcnameRec *, int, uchar **);
  static int getDesc(ccRule, uchar *, _funcbufRec *, _funcnameRec *,
  		   ulong *, int *, wchar *, wchar *, int *);
@@ -119,15 +126,29 @@ diff -u -p -r1.1.1.1 -r1.3
  static int funcalloc();
  static void funcadjust();
  static int funcsearch();
-@@ -1098,7 +1090,7 @@ char *file;
+@@ -1035,8 +1027,8 @@ void (*efunc)();
+ 	return 0;
+ }
+ 
+-/* getline -- 1行読み込む (その際 include の処理を行なう) */
+-static uchar *getline(line, linesize, files, efunc)
++/* get_line -- 1行読み込む (その際 include の処理を行なう) */
++static uchar *get_line(line, linesize, files, efunc)
+ uchar *line;
+ int linesize;
+ Files *files;
+@@ -1098,9 +1090,9 @@ char *file;
  	fnrec.funcnamebuf = NULL;
  
  	rule->nmode = 0;
 -	rule->initialmode = -1;
 +	rule->initialmode = NULL;
  
- 	while (getline(line, sizeof(line), &files, efunc)) {
+-	while (getline(line, sizeof(line), &files, efunc)) {
++	while (get_line(line, sizeof(line), &files, efunc)) {
  		(void)Strcpy(tmp, line);
+ 		if ((argc = parseLine(tmp, argv, 20)) == 0)
+ 			continue;
 @@ -1191,33 +1183,42 @@ int ac;
  uchar **av;
  {
@@ -182,7 +203,7 @@ diff -u -p -r1.1.1.1 -r1.3
  	return 0;
  }
  
-@@ -1238,35 +1239,39 @@ uchar **av;
+@@ -1238,38 +1239,42 @@ uchar **av;
  	wchar		prompt[30], context[100], result[100];
  	int		func;
  	int		ndesc = 0;
@@ -231,7 +252,11 @@ diff -u -p -r1.1.1.1 -r1.3
 +	cdp = cd_head;
  
  	/* ルールを読んでストアする */
- 	while (getline(line, sizeof(line), files, efunc)) {
+-	while (getline(line, sizeof(line), files, efunc)) {
++	while (get_line(line, sizeof(line), files, efunc)) {
+ 		/* '#' で始まる行はコメント */
+ 		if (*line == '\0' || *line == '\n' || *line == '#')
+ 			continue;
 @@ -1277,9 +1282,11 @@ uchar **av;
  			break;
  		if (getDesc(rule, line, frec, fnrec, &inkey, &modmask,

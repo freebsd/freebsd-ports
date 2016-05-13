@@ -1,5 +1,5 @@
---- makefile.unx.orig	Wed Oct 22 16:55:42 2003
-+++ makefile.unx	Wed Oct 22 16:55:57 2003
+--- makefile.unx.orig	1999-01-12 20:22:02 UTC
++++ makefile.unx
 @@ -1,7 +1,8 @@
  # EPWUTIL Makefile for UNIX/gcc
  

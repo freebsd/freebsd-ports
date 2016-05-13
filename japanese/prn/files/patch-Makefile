@@ -1,82 +1,51 @@
-*** Makefile.orig	Wed May 11 17:00:58 1994
---- Makefile	Tue Jul  1 17:44:49 1997
-***************
-*** 25,35 ****
-  #	@(#)Makefile 2.3 (Y.Tonooka) 5/11/94
-  #-
-  
-!           BINPATH = /usr/local/bin
-!           LIBPATH = /usr/local/lib
-!           MANPATH = /usr/local/man
-!           JMANDIR = japanese
-!            CFLAGS = -O
-  #           CFLAGS = -g -DDEBUG
-            ARFLAGS = rcv
-  
---- 25,39 ----
-  #	@(#)Makefile 2.3 (Y.Tonooka) 5/11/94
-  #-
-  
-!           PREFIX?=/usr/local
-!           BINPATH = ${PREFIX}/bin
-!           LIBPATH = ${PREFIX}/share/prn
-!           MANPATH = ${PREFIX}/man
-!           JMANDIR = ja
-!            CFLAGS += \
-! 		-DKCCPATH=\"${PREFIX}/bin/kcc\" \
-! 		-DCMTPATH=\"${PREFIX}/bin/cmt\" \
-! 		-DPSPATH=\"${PREFIX}/bin/psconv\"
-  #           CFLAGS = -g -DDEBUG
-            ARFLAGS = rcv
-  
-***************
-*** 39,47 ****
-                 AR = ar
-             RANLIB = ranlib
-               LINT = lint
-!           INSTALL = install
-                 CP = cp
-!                LN = ln
-                 RM = rm -f
-               TAGS = ctags
-              ETAGS = etags
---- 43,51 ----
-                 AR = ar
-             RANLIB = ranlib
-               LINT = lint
-!           INSTALL = install -c
-                 CP = cp
-!                LN = ln -fs
-                 RM = rm -f
-               TAGS = ctags
-              ETAGS = etags
-***************
-*** 91,103 ****
-  
-  $(BINPATH)/cprn: $(BINPATH)/prn
-  	if [ $@ ]; then $(RM) $@; fi
-! 	$(LN) $(BINPATH)/prn $@
-  
-  $(BINPATH)/cmt: cmt.c defs.c euc.c reg.y
-  	$(MAKE) cmt
-  	$(INSTALL) -s cmt $(BINPATH)
-  
-  $(LIBPATH)/cmtdefs: cmtdefs
-  	$(CP) cmtdefs $@; chmod 644 $@
-  
-  $(BINPATH)/psconv: psconv.c
---- 95,108 ----
-  
-  $(BINPATH)/cprn: $(BINPATH)/prn
-  	if [ $@ ]; then $(RM) $@; fi
-! 	$(LN) prn $@
-  
-  $(BINPATH)/cmt: cmt.c defs.c euc.c reg.y
-  	$(MAKE) cmt
-  	$(INSTALL) -s cmt $(BINPATH)
-  
-  $(LIBPATH)/cmtdefs: cmtdefs
-+ 	mkdir -p $(LIBPATH)
-  	$(CP) cmtdefs $@; chmod 644 $@
-  
-  $(BINPATH)/psconv: psconv.c
+--- Makefile.orig	1994-05-11 08:00:58 UTC
++++ Makefile
+@@ -25,11 +25,15 @@
+ #	@(#)Makefile 2.3 (Y.Tonooka) 5/11/94
+ #-
+ 
+-          BINPATH = /usr/local/bin
+-          LIBPATH = /usr/local/lib
+-          MANPATH = /usr/local/man
+-          JMANDIR = japanese
+-           CFLAGS = -O
++          PREFIX?=/usr/local
++          BINPATH = ${PREFIX}/bin
++          LIBPATH = ${PREFIX}/share/prn
++          MANPATH = ${PREFIX}/man
++          JMANDIR = ja
++           CFLAGS += \
++		-DKCCPATH=\"${PREFIX}/bin/kcc\" \
++		-DCMTPATH=\"${PREFIX}/bin/cmt\" \
++		-DPSPATH=\"${PREFIX}/bin/psconv\"
+ #           CFLAGS = -g -DDEBUG
+           ARFLAGS = rcv
+ 
+@@ -39,9 +43,9 @@
+                AR = ar
+            RANLIB = ranlib
+              LINT = lint
+-          INSTALL = install
++          INSTALL = install -c
+                CP = cp
+-               LN = ln
++               LN = ln -fs
+                RM = rm -f
+              TAGS = ctags
+             ETAGS = etags
+@@ -91,13 +95,14 @@ $(BINPATH)/prn: prn.c euc.c
+ 
+ $(BINPATH)/cprn: $(BINPATH)/prn
+ 	if [ $@ ]; then $(RM) $@; fi
+-	$(LN) $(BINPATH)/prn $@
++	$(LN) prn $@
+ 
+ $(BINPATH)/cmt: cmt.c defs.c euc.c reg.y
+ 	$(MAKE) cmt
+ 	$(INSTALL) -s cmt $(BINPATH)
+ 
+ $(LIBPATH)/cmtdefs: cmtdefs
++	mkdir -p $(LIBPATH)
+ 	$(CP) cmtdefs $@; chmod 644 $@
+ 
+ $(BINPATH)/psconv: psconv.c
