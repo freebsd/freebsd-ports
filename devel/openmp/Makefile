@@ -12,7 +12,7 @@ COMMENT=	Support for the OpenMP language
 
 LICENSE=	MIT
 
-USES=	tar:xz cmake perl5
+USES=	tar:xz cmake perl5 compiler:c11
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DLIBOMP_LIBFLAGS:STRING="-Wl,-soname,libomp.so.0"
