@@ -1834,6 +1834,7 @@
     SUBDIR += redmine-default_assign
     SUBDIR += redmine-graphs
     SUBDIR += redmine-http-auth
+    SUBDIR += redmine-issue_templates
     SUBDIR += redmine-knowledgebase
     SUBDIR += redmine-qa_contact
     SUBDIR += redmine-redcarpet_formatter
