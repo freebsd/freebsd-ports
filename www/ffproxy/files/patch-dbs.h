@@ -1,5 +1,5 @@
---- dbs.h.orig	Sun Jul 20 19:16:32 2003
-+++ dbs.h	Sun Jul 20 19:16:48 2003
+--- dbs.h.orig	2002-07-25 12:24:10 UTC
++++ dbs.h
 @@ -1,3 +1,4 @@
 +#include <unistd.h>
  #include <regex.h>
