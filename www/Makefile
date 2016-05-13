@@ -1836,6 +1836,7 @@
     SUBDIR += redmine-http-auth
     SUBDIR += redmine-qa_contact
     SUBDIR += redmine-sidebar_hide
+    SUBDIR += redmine-stuff_to_do
     SUBDIR += rejik
     SUBDIR += rekonq
     SUBDIR += reportmagic
