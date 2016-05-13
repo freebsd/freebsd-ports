@@ -2,6 +2,7 @@
 
 PORTNAME=	libarchive
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
@@ -11,9 +12,10 @@ COMMENT=	Library to create and read several streaming archive formats
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-OPTIONS_DEFINE=	LZO NETTLE
-OPTIONS_DEFAULT=LZO
+OPTIONS_DEFINE=	LZ4 LZO NETTLE
+OPTIONS_DEFAULT=LZ4 LZO
 
+LZ4_DESC=	Support lz4 compression via liblz4
 LZO_DESC=	Support lzo compression via liblzo2
 NETTLE_DESC=	Use Nettle instead of OpenSSL
 
@@ -84,6 +86,8 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LZO_CONFIGURE_WITH=	lzo2
+LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+LZ4_CONFIGURE_WITH=	lz4
 
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NETTLE_CONFIGURE_WITH=	nettle
