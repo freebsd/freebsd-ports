@@ -9,3 +9,12 @@
  LIBS="-l$i  $ac_func_search_save_LIBS"
  cat > conftest.$ac_ext <<EOF
  #line 1773 "configure"
+@@ -2123,7 +2123,7 @@ res_datadir=`eval "echo $datadir"`
+ prefix=$gate_prefix
+ 
+ cat >> confdefs.h <<EOF
+-#define HELP_FILE "${res_datadir}/gate.help"
++#define HELP_FILE "/usr/local/share/gate/gate.help"
+ EOF
+ 
+ 
