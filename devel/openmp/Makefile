@@ -11,9 +11,10 @@ COMMENT=	Support for the OpenMP language
 
 LICENSE=	MIT
 
-USES=	tar:xz cmake
+USES=	tar:xz cmake perl5
+USE_PERL5=	build
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 # i386
 PLIST_FILES=	include/omp.h \
 		lib/libgomp.so \
 		lib/libiomp5.so \
