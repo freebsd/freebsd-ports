@@ -2,6 +2,7 @@
 
 PORTNAME=	openmp
 PORTVERSION=	3.8.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
@@ -14,10 +15,15 @@ LICENSE=	MIT
 USES=	tar:xz cmake perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
+CMAKE_ARGS=	-DLIBOMP_LIBFLAGS:STRING="-Wl,-soname,libomp.so.0"
 ONLY_FOR_ARCHS=	amd64 # i386
 PLIST_FILES=	include/omp.h \
 		lib/libgomp.so \
 		lib/libiomp5.so \
+		lib/libomp.so.0 \
 		lib/libomp.so
+
+post-install:
+	${LN} -sf libomp.so ${STAGEDIR}${PREFIX}/lib/libomp.so.0
 
 .include <bsd.port.mk>
