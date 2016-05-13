@@ -1,6 +1,6 @@
---- socket.c.orig	Fri Dec 31 10:59:54 2004
-+++ socket.c	Thu Nov  9 20:19:53 2006
-@@ -58,7 +58,7 @@
+--- socket.c.orig	2004-12-31 08:59:54 UTC
++++ socket.c
+@@ -58,7 +58,7 @@ void
  open_socket(void)
  {
  	extern struct cfg config;
@@ -9,7 +9,7 @@
  	struct addrinfo hints[2], *res;
  	struct clinfo  *clinfo;
  	struct pollfd	s[2];
-@@ -135,7 +135,6 @@
+@@ -135,7 +135,6 @@ open_socket(void)
  	if (config.bind_ipv6)
  		info("waiting for requests on %s port %d (IPv6)", *config.ipv6 ? config.ipv6 : "(any)", config.port);
  
@@ -17,7 +17,7 @@
  	config.ccount = 0;
  	cl = 0;
  	isipv4 = config.bind_ipv4;
-@@ -160,13 +159,14 @@
+@@ -160,13 +159,14 @@ open_socket(void)
  			}
  		} else
  			st = s[0].fd;

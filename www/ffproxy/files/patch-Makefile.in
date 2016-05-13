@@ -1,6 +1,6 @@
---- Makefile.in.orig
+--- Makefile.in.orig	2005-01-05 15:50:10 UTC
 +++ Makefile.in
-@@ -48,7 +48,7 @@
+@@ -48,7 +48,7 @@ man:
  conf:
  	sed -e 's|_BASE_|$(pkgdatadir)|g' sample.config.s \
  		> sample.config || cp sample.config.s sample.config
@@ -9,7 +9,7 @@
  
  installdirs: mkinstalldirs
  	$(SHELL) $(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) \
-@@ -73,7 +73,7 @@
+@@ -73,7 +73,7 @@ install_man: man
  	$(INSTALL_DATA) ffproxy.8 $(DESTDIR)$(mandir)/man8
  
  install_config: conf
