@@ -1,6 +1,15 @@
---- configure.ac.orig	Thu May 24 21:42:48 2007
-+++ configure.ac	Mon Oct 15 03:04:55 2007
-@@ -324,6 +324,10 @@
+--- configure.ac.orig	2014-12-10 14:22:52 UTC
++++ configure.ac
+@@ -106,7 +106,7 @@ if test x$with_gui != xno; then
+ 
+ dnl Checks if dlopen exists, and if it's in libc or libdl.
+ 
+-AC_SEARCH_LIBS(dlopen, dl,
++AC_SEARCH_LIBS(dlopen, ,
+ 	       AC_DEFINE(HAVE_DLOPEN, 1,
+ 	       [Define to 1 if you have the function dlopen.]))
+ 
+@@ -342,6 +342,10 @@ LIBS="$save_LIBS"
  AC_SUBST(XML2_LD_FLAGS)
  
  dnl Check for Anthy usability.
@@ -11,7 +20,7 @@
  
  PKG_CHECK_MODULES(ANTHY, anthy, HAVE_ANTHY=yes, HAVE_ANTHY=no)
  if test "x$HAVE_ANTHY" = "xyes"; then
-@@ -333,6 +337,8 @@
+@@ -351,6 +355,8 @@ if test "x$HAVE_ANTHY" = "xyes"; then
    ANTHY_LD_FLAGS="$ANTHY_LIBS"
    CONFIG_FLAGS="$CONFIG_FLAGS -DHAVE_ANTHY"
  fi
@@ -20,7 +29,7 @@
  AC_SUBST(ANTHY_LD_FLAGS)
  
  dnl Check for Ispell usability.
-@@ -347,11 +353,15 @@
+@@ -365,11 +371,15 @@ dnl Check for Thai word-segmentation lib
  dnl If we have one, define HAVE_THAI_WORDSEG and one of these:
  dnl   HAVE_LIBTHAI, HAVE_WORDCUT, or HAVE_WORDCUT_OLD
  dnl In addition, set THAI_WORDSEG_LD_FLAGS to a proper value.
@@ -37,12 +46,12 @@
  
    AC_DEFINE(HAVE_LIBTHAI, 1, [Define if you have libthai])
    THAI_WORDSEG_LD_FLAGS="$LIBTHAI_LIBS"
-@@ -406,6 +416,8 @@
- if test "x$HAVE_THAI_WORDSEG" = "xyes"; then
+@@ -425,6 +435,8 @@ if test "x$HAVE_THAI_WORDSEG" = "xyes"; 
    AC_DEFINE(HAVE_THAI_WORDSEG, 1,
              [Define if you have some Thai word-segmentation library])
-+fi
-+
  fi
++
++fi
  AC_SUBST(THAI_WORDSEG_LD_FLAGS)
  
+ AC_SUBST(CONFIG_FLAGS)
