@@ -1,5 +1,5 @@
---- bin/showaudio.orig	Thu Feb  3 00:21:26 1994
-+++ bin/showaudio	Mon Dec 18 11:50:24 2006
+--- bin/showaudio.orig	1994-02-02 23:21:26 UTC
++++ bin/showaudio
 @@ -15,9 +15,35 @@
  # WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  #
@@ -38,7 +38,7 @@
  endif
  
  # First, figure out which machine to play it on!
-@@ -33,7 +59,7 @@
+@@ -33,7 +59,7 @@ set AUDIOLOGMAIL=andrew@thumper.bellcore
  set ORG="Bellcore"
  set STDINPUT=0
  if ("$1" == "-p") then
@@ -47,7 +47,7 @@
      shift
      shift
  endif
-@@ -173,7 +199,7 @@
+@@ -173,7 +199,7 @@ if (-d $AUDIOBINDIR) then
  	    set AUDIOPHONE=$<
  	endif
  	if ($thishost == $AUDIOPHONEHOST || $thishost == $AUDIOPHONEHOSTLONG) then
@@ -56,7 +56,7 @@
  	    echo "You MUST SAY HELLO when you answer the phone, or you will not hear the message."
  	    mail -s "showaudio: `whoami` called $AUDIOPHONE" $AUDIOLOGMAIL < /dev/null
  	    if ($STDINPUT) then
-@@ -206,7 +232,7 @@
+@@ -206,7 +232,7 @@ else
      echo -n "File name:"
      set fname=$<
  endif
