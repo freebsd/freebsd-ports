@@ -1,6 +1,6 @@
---- libbase/sysbase1.c.orig	2003-12-09 16:37:07.000000000 +0100
-+++ libbase/sysbase1.c	2013-02-08 15:35:31.000000000 +0100
-@@ -521,7 +521,7 @@
+--- libbase/sysbase1.c.orig	2003-12-09 15:37:07 UTC
++++ libbase/sysbase1.c
+@@ -521,7 +521,7 @@ StdCPtr apply_fun(PCFUN f, int cnt, StdC
  }
  
  #else
@@ -9,7 +9,7 @@
  #define PUSH_FUN_ARG(arg) __asm__ volatile ( "pushl %0" : : "r" (arg) )
  #define CALL_FUN(f)       __asm__ volatile ( "call *%0" : : "r" (f) )
  
-@@ -550,7 +550,7 @@
+@@ -550,7 +550,7 @@ AbstractType( DL_Hdl ); /* Abstract hand
  #define DL_LOAD_LAZY    0
  
  /*DOC_INTERFACE*/
@@ -18,7 +18,7 @@
  #define DL_LAZY         RTLD_LAZY
  #define DL_NOW          RTLD_NOW
  #define DL_BINDING_MASK RTLD_BINDING_MASK
-@@ -594,7 +594,7 @@
+@@ -594,7 +594,7 @@ AbstractType( DL_Hdl ); /* Abstract hand
    }
  
  #else
