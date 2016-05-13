@@ -1,6 +1,6 @@
---- cmt.h.orig	Fri Feb  6 00:13:05 2004
-+++ cmt.h	Fri Feb  6 00:13:18 2004
-@@ -32,4 +32,4 @@
+--- cmt.h.orig	1993-11-29 10:00:33 UTC
++++ cmt.h
+@@ -32,4 +32,4 @@ typedef int bool;
  /*
   * Error handling function.
   */

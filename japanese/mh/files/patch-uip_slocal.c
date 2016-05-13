@@ -1,6 +1,6 @@
---- uip/slocal.c.orig	2000-12-04 21:09:38.000000000 +0900
-+++ uip/slocal.c	2010-04-12 17:10:12.000000000 +0900
-@@ -36,6 +36,10 @@
+--- uip/slocal.c.orig	2000-12-04 12:09:38 UTC
++++ uip/slocal.c
+@@ -36,6 +36,10 @@ static char ident[] = "@(#)$Id: slocal.c
  #endif	/* NOIOCTLH */
  #endif	/* not V7 */
  #include <sys/stat.h>
@@ -11,7 +11,7 @@
  #include <utmp.h>
  #ifndef UTMP_FILENAME
  #ifdef UTMP_FILE
-@@ -48,6 +52,7 @@
+@@ -48,6 +52,7 @@ static char ident[] = "@(#)$Id: slocal.c
  #endif
  #endif
  #endif	/* UTMP_FILENAME */
@@ -19,7 +19,7 @@
  #ifdef LOCALE
  #include	<locale.h>
  #endif
-@@ -938,6 +943,24 @@
+@@ -938,6 +943,24 @@ register char  *key;
  
  /*  */
  
@@ -44,7 +44,7 @@
  static int  logged_in () {
      struct utmp ut;
      register FILE  *uf;
-@@ -963,6 +986,7 @@
+@@ -963,6 +986,7 @@ static int  logged_in () {
      (void) fclose (uf);
      return (utmped = NOTOK);
  }
