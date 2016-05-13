@@ -1,5 +1,5 @@
---- bin/showpartial.orig	Thu Feb  3 00:21:29 1994
-+++ bin/showpartial	Mon Dec 18 11:50:24 2006
+--- bin/showpartial.orig	1994-02-02 23:21:29 UTC
++++ bin/showpartial
 @@ -2,8 +2,44 @@
  # (The "-fb" might need to be changed to "-f" on some systems)
  #
@@ -46,7 +46,7 @@
  endif
  
  set TREEROOT=${METAMAIL_TMPDIR}/m-prts-`whoami`
-@@ -11,14 +47,14 @@
+@@ -11,14 +47,14 @@ if ($#argv < 3 || $#argv > 4) then
      echo "Usage:  showpartial file id partnum totalnum"
      exit -1
  endif
@@ -66,7 +66,7 @@
  endif
  
  if (! -d  $TREEROOT)  then
-@@ -35,9 +71,9 @@
+@@ -35,9 +71,9 @@ if (! -d ${TREEROOT}/$id) then 
          exit -1
      endif
  endif

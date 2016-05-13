@@ -1,5 +1,5 @@
---- metamail/shared.c.orig	Sun May 16 20:19:32 1993
-+++ metamail/shared.c	Mon Dec 18 11:46:22 2006
+--- metamail/shared.c.orig	1993-05-16 18:19:32 UTC
++++ metamail/shared.c
 @@ -1,4 +1,6 @@
  #include <stdio.h>
 +#include <stdlib.h>

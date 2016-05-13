@@ -1,5 +1,5 @@
---- bin/showexternal.orig	Tue Feb  8 17:39:05 1994
-+++ bin/showexternal	Mon Dec 18 11:50:24 2006
+--- bin/showexternal.orig	1994-02-08 16:39:05 UTC
++++ bin/showexternal
 @@ -15,9 +15,45 @@
  # WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  # 
