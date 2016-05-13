@@ -143,6 +143,7 @@ include/pjmedia-codec/ipp_codecs.h
 include/pjmedia-codec/l16.h
 include/pjmedia-codec/opencore_amr.h
 include/pjmedia-codec/openh264.h
+include/pjmedia-codec/opus.h
 include/pjmedia-codec/passthrough.h
 include/pjmedia-codec/silk.h
 include/pjmedia-codec/speex.h
@@ -155,6 +156,7 @@ include/pjmedia-videodev/videodev.h
 include/pjmedia-videodev/videodev_imp.h
 include/pjmedia.h
 include/pjmedia/alaw_ulaw.h
+include/pjmedia/audiodev.h
 include/pjmedia/avi.h
 include/pjmedia/avi_stream.h
 include/pjmedia/bidirectional.h
@@ -211,6 +213,7 @@ include/pjmedia/vid_codec_util.h
 include/pjmedia/vid_port.h
 include/pjmedia/vid_stream.h
 include/pjmedia/vid_tee.h
+include/pjmedia/videodev.h
 include/pjmedia/wav_playlist.h
 include/pjmedia/wav_port.h
 include/pjmedia/wave.h
