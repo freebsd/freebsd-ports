@@ -5090,6 +5090,7 @@
     SUBDIR += rubygem-recaptcha
     SUBDIR += rubygem-redis-activesupport
     SUBDIR += rubygem-redis-store
+    SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-redmine_plugin_support
     SUBDIR += rubygem-ref
     SUBDIR += rubygem-request_store
