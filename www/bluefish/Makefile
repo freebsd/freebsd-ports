@@ -3,6 +3,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 		http://bluefish.mrball.net/stable/source/
@@ -16,12 +17,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libenchant.so:textproc/enchant
 
-USES=		desktop-file-utils gettext gmake libtool pkgconfig python \
-		shared-mime-info tar:bzip2
+USES=		desktop-file-utils gettext gmake libtool localbase pkgconfig python \
+		shared-mime-info shebangfix tar:bzip2
+SHEBANG_FILES=	data/css_decompressor
+python_OLD_CMD=	/usr/bin/python2.7
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
 		--with-icon-path=${PREFIX}/share/pixmaps
