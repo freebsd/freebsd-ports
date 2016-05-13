@@ -1834,6 +1834,7 @@
     SUBDIR += redmine-default_assign
     SUBDIR += redmine-graphs
     SUBDIR += redmine-http-auth
+    SUBDIR += redmine-qa_contact
     SUBDIR += redmine-sidebar_hide
     SUBDIR += rejik
     SUBDIR += rekonq
