@@ -119,10 +119,4 @@ post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
 	${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MPOLARSSL}
-BROKEN=OpenVPN 2.3.11 with PolarSSL crashes on start unless TLS ciphers specified explicitly
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
