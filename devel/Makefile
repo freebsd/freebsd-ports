@@ -1618,6 +1618,7 @@
     SUBDIR += opencl
     SUBDIR += opencvs
     SUBDIR += opengrok
+    SUBDIR += openmp
     SUBDIR += openocd
     SUBDIR += openvex
     SUBDIR += openwince-include
