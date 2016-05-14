@@ -2,7 +2,7 @@
 
 PORTNAME=	openmp
 PORTVERSION=	3.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
@@ -24,6 +24,7 @@ PLIST_FILES=	include/omp.h \
 		lib/libomp.so
 
 post-install:
-	${LN} -sf libomp.so ${STAGEDIR}${PREFIX}/lib/libomp.so.0
+	${MV} ${STAGEDIR}${PREFIX}/lib/libomp.so ${STAGEDIR}${PREFIX}/lib/libomp.so.0
+	${LN} -sf libomp.so.0 ${STAGEDIR}${PREFIX}/lib/libomp.so
 
 .include <bsd.port.mk>
