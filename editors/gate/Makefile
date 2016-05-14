@@ -15,7 +15,6 @@ RUN_DEPENDS=	aspell:textproc/aspell
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
-USE_CSTD=	gnu89
 
 CONFIGURE_ARGS=	--with-aspell=${LOCALBASE}/bin/aspell
 ALL_TARGET=	gate gate.1
