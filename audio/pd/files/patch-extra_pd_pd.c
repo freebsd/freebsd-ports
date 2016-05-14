@@ -1,6 +1,6 @@
---- extra/pd~/pd~.c.orig	2010-07-29 05:55:17.000000000 +0900
-+++ extra/pd~/pd~.c	2011-04-06 19:18:20.000000000 +0900
-@@ -19,6 +19,7 @@
+--- extra/pd~/pd~.c.orig	2016-05-13 08:31:10 UTC
++++ extra/pd~/pd~.c
+@@ -19,6 +19,7 @@ typedef int socklen_t;
  #include <stdlib.h>
  #include <errno.h>
  #include <ctype.h>
