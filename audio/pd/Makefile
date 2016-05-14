@@ -4,6 +4,7 @@
 PORTNAME=	pd
 DISTVERSION=	0.47-0
 DISTVERSIONSUFFIX=	.src
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://msp.ucsd.edu/Software/
 
@@ -23,7 +24,6 @@ USES=		autoreconf gettext gmake libtool pkgconfig shebangfix \
 		tcl:wrapper tk:wrapper
 SHEBANG_FILES=	tcl/pkg_mkIndex.tcl
 SHEBANG_LANG=	tclsh
-tclsh_OLD_CMD=	/usr/bin/tclsh
 tclsh_CMD=	${LOCALBASE}/bin/tclsh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_pthread_pthread_create=no
@@ -43,8 +43,9 @@ JACK_LIB_DEPENDS=	libjack.so:audio/jack
 post-patch:
 	${FIND} ${PATCH_WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|__FreeBSD_kernel__|__FreeBSD__|g ; \
-		 s|__x86_64__|__amd64__|g ; \
-		 s|<alloca\.h>|<stdlib.h>|g'
+		 s|__x86_64__|__amd64__|g'
+	${FIND} ${WRKSRC}/extra -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		 's|<alloca\.h>|<stdlib.h>|g'
 	${REINPLACE_CMD} -e \
 		's|\*kfreebsd\*gnu\*)|*freebsd*)| ; \
 		 s|portaudio=yes|portaudio=no| ; \
