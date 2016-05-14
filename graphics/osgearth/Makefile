@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	osgearth
-PORTVERSION=	2.5
+PORTVERSION=	2.7
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	6
 CATEGORIES=	graphics geography
 
 MAINTAINER=	coder@tuxfamily.org
-COMMENT=	osgEarth is a C++ terrain rendering toolkit for OpenSceneGraph
+COMMENT=	C++ terrain rendering toolkit for OpenSceneGraph
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/minizip:archivers/minizip
+BUILD_DEPENDS=	minizip:archivers/minizip
 LIB_DEPENDS=	libosg.so:graphics/osg \
 		libgdal.so:graphics/gdal \
 		libcurl.so:ftp/curl
