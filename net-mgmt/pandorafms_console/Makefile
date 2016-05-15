@@ -58,6 +58,7 @@ post-install:
 	@cd ${STAGEDIR}${WWWDIR} \
 		&& ${RM} -rf pandora_console_[il]* DEBIAN/ *.spec \
 			attachment/downloads/.gitignore ${PORTDOCS} \
+			Dockerfile docker_entrypoint.sh \
 			*.sql.bak extras/check_other_languages.sh.bak
 	@cd ${STAGEDIR}${WWWDIR} && ${MV} install.php install_old.php
 	@(d=${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes; ${MKDIR} $$d; \
