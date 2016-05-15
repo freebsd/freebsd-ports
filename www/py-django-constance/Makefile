@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-constance
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2
 CATEGORIES=	www python
 MASTER_SITES=	GH
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	jezdez
+GH_ACCOUNT=	jazzband
 
 .include <bsd.port.mk>
