@@ -4909,6 +4909,7 @@
     SUBDIR += rubygem-ffi-compiler
     SUBDIR += rubygem-ffi-yajl
     SUBDIR += rubygem-file-tail
+    SUBDIR += rubygem-filesize
     SUBDIR += rubygem-flexmock
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
