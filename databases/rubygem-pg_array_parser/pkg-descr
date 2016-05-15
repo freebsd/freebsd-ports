@@ -1,0 +1,4 @@
+rubygem-pg_array_parser is a simple library to parse PostgreSQL arrays into an
+array of strings.
+
+WWW: https://github.com/dockyard/pg_array_parser
