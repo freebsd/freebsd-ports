@@ -9,7 +9,7 @@ MASTER_SITES=	http://invisible-mirror.net/archives/${PORTNAME}/ \
 		ftp://invisible-island.net/${PORTNAME}/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for terminal-independent, full-screen output
 
 CONFLICTS=	ncurses-devel-*
