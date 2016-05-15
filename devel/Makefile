@@ -5099,6 +5099,7 @@
     SUBDIR += rubygem-require_all
     SUBDIR += rubygem-retryable
     SUBDIR += rubygem-rgl
+    SUBDIR += rubygem-rice
     SUBDIR += rubygem-rodzilla
     SUBDIR += rubygem-rotp
     SUBDIR += rubygem-rr
