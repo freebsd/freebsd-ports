@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RPC-XML
-PORTVERSION=	0.79
+PORTVERSION=	0.80
 CATEGORIES=	net www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=2.31:textproc/p5-XML-Parser \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DateTime-Format-ISO8601>=0.07:devel/p5-DateTime-Format-ISO8601
 
+NO_ARCH=	yes
 USES=		gmake perl5
 USE_PERL5=	configure
 
