@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandas
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.1
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,11 +27,13 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}numexpr>=2.1.0:math/py-numexpr \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
-		${PYTHON_PKGNAMEPREFIX}openpyxl>=2.0.0:textproc/py-openpyxl \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>=2.2.0:textproc/py-openpyxl \
 		${PYTHON_PKGNAMEPREFIX}xlrd>0:textproc/py-xlrd \
 		${PYTHON_PKGNAMEPREFIX}xlwt>0:textproc/py-xlwt \
+		${PYTHON_PKGNAMEPREFIX}XlsxWriter>0:textproc/py-xlsxwriter \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup \
-		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
 # Note: we cannot include math/py-statsmodels in TEST_DEPENDS because it
 # depends upon us for BUILD and RUN.
 
@@ -39,8 +41,8 @@ OPTIONS_DEFINE=		MPL OPENPYXL SCIPY
 OPTIONS_GROUP=		ACCEL STORAGE HTML EXCEL
 OPTIONS_GROUP_ACCEL=	BTLNCK NUMEXPR
 OPTIONS_GROUP_STORAGE=	BOTO TABLES SQL
-OPTIONS_GROUP_HTML=	LXML HTML5LIB
-OPTIONS_GROUP_EXCEL=	XLRD XLWT
+OPTIONS_GROUP_HTML=	LXML HTML5LIB JINJA2
+OPTIONS_GROUP_EXCEL=	XLRD XLWT OPENPYXL XLSX
 OPTIONS_DEFAULT=	BTLNCK NUMEXPR
 
 MPL_DESC=	Support graphical plotting output via math/py-matplotlib
@@ -51,13 +53,15 @@ BOTO_DESC=	Support Amazon S3 storage via devel/py-boto
 TABLES_DESC=	Support HDF5-based storage via devel/py-tables
 SQL_DESC=	Support SQL databases via databases/py-sqlalchemy
 LXML_DESC=	Parse HTML with devel/py-lxml and www/py-beautifulsoup
+JINJA2_DESC=	Support conditional HTML formatting with devel/py-Jinja2
 HTML5LIB_DESC=	Parse HTML with www/py-html5lib and www/py-beautifulsoup
 OPENPYXL_DESC=	Read/write MS Excel 2007+ with textproc/py-openpyxl
 XLRD_DESC=	Read MS Excel with textproc/py-xlrd
 XLWT_DESC=	Write MS Excel with textproc/py-xlwt
+XLSX_DESC=	Write MS Excel with textproc/py-xlsxwriter
 ACCEL_DESC=	Computation Acceleration Add-ons
 STORAGE_DESC=	Data Storage Add-ons
-HTML_DESC=	HTML Parsing Add-ons
+HTML_DESC=	HTML Parsing/Generation Add-ons
 EXCEL_DESC=	MS Excel I/O Add-ons
 
 MPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib
@@ -66,13 +70,20 @@ BTLNCK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottleneck>0:math/py-bottleneck
 NUMEXPR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numexpr>=2.1.0:math/py-numexpr
 BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto
 TABLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tables>=3.0.0:devel/py-tables
+# Note: upstream recommends SQLAlchemy 0.8.1 or higher, which is not
+# available in the ports tree as of this writing
+# See: https://reviews.freebsd.org/D908
+# See: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=191442
+# See: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205852
 SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:databases/py-sqlalchemy
 
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml
 HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib
-OPENPYXL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=2.0.0:textproc/py-openpyxl
+JINJA2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
+OPENPYXL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=2.2.0:textproc/py-openpyxl
 XLRD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlrd>0:textproc/py-xlrd
 XLWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlwt>0:textproc/py-xlwt
+XLSX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XlsxWriter>0:textproc/py-xlsxwriter
 
 .include <bsd.port.options.mk>
 
