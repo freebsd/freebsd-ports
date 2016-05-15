@@ -4433,6 +4433,7 @@
     SUBDIR += py-statsd
     SUBDIR += py-stdnum
     SUBDIR += py-stevedore
+    SUBDIR += py-structlog
     SUBDIR += py-stsci.distutils
     SUBDIR += py-subversion
     SUBDIR += py-subvertpy
