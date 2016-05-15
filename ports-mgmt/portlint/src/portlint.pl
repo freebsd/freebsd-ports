@@ -398,7 +398,7 @@ sub checkdistinfo {
 			my ($tag, $path, $value) = ($1, $2, $3);
 			$records{$path}{$tag} = $value;
 
-			if (!$algorithms{$tag} && $tag ne "SIZE") {
+			if (!$algorithms{$tag} && $tag ne "SIZE" && $tag ne "TIMESTAMP") {
 				&perror("FATAL", $file, $., "unsupported checksum algorithm ".
 					"found: $tag.");
 			}
