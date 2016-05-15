@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.386 2016/05/15 18:21:04 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.388 2016/05/15 18:42:34 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 1;
+my $micro = 2;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -391,14 +391,17 @@ sub checkdistinfo {
 	while (<IN>) {
 		if (/^\s*$/) {
 			&perror("FATAL", $file, $., "found blank line.");
+			next;
 		}
-		m/(\S+)\s+\((\S+)\)\s+=\s+(\S+)/;
-
-		if ($1 ne "" && $2 ne "" && $3 ne "") {
+		if (/^TIMESTAMP\s+=\s+\d+$/) {
+			# TIMESTAMP is a valid distinfo option
+			next;
+		}
+		if (/(\S+)\s+\((\S+)\)\s+=\s+(\S+)/) {
 			my ($tag, $path, $value) = ($1, $2, $3);
 			$records{$path}{$tag} = $value;
 
-			if (!$algorithms{$tag} && $tag ne "SIZE" && $tag ne "TIMESTAMP") {
+			if (!$algorithms{$tag} && $tag ne "SIZE") {
 				&perror("FATAL", $file, $., "unsupported checksum algorithm ".
 					"found: $tag.");
 			}
