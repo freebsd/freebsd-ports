@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.385 2016/04/15 18:20:46 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.386 2016/05/15 18:21:04 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 0;
+my $micro = 1;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
