@@ -5004,6 +5004,7 @@
     SUBDIR += rubygem-message_bus
     SUBDIR += rubygem-metaclass
     SUBDIR += rubygem-metaid
+    SUBDIR += rubygem-metasm
     SUBDIR += rubygem-method_source
     SUBDIR += rubygem-minitest
     SUBDIR += rubygem-minitest4
