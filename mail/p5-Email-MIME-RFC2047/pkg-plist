@@ -1,4 +1,4 @@
-%%SITE_PERL%%/Email/MIME/RFC2047.pm
+%%SITE_PERL%%/Email/MIME/RFC2047.pod
 %%SITE_PERL%%/Email/MIME/RFC2047/Address.pm
 %%SITE_PERL%%/Email/MIME/RFC2047/AddressList.pm
 %%SITE_PERL%%/Email/MIME/RFC2047/Decoder.pm
