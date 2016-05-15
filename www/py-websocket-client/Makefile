@@ -6,6 +6,9 @@ PORTVERSION=	0.37.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+# Newer version is called "websocket_client"
+# but to keep compat with old portname we fixup
+# "-" to "_" here.
 DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	alfred@FreeBSD.org
