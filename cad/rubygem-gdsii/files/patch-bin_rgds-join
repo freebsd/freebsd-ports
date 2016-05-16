@@ -1,0 +1,15 @@
+--- bin/rgds-join.orig	2016-05-16 07:41:38 UTC
++++ bin/rgds-join
+@@ -45,9 +45,9 @@ opts = GetoptLong.new(
+ 
+ opts.each do |option, argument|
+   case option
+-  when '--help'      : abort usage
+-  when '--structs'   : structs = argument.split(/\s+/)
+-  when '--force'     : force = true
++  when '--help'       then abort usage
++  when '--structs'    then structs = argument.split(/\s+/)
++  when '--force'      then force = true
+   end
+ end
+ 
