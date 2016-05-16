@@ -1180,11 +1180,6 @@
     SUBDIR += rubygem-whois
     SUBDIR += rude
     SUBDIR += rwhoisd
-    SUBDIR += samba-libsmbclient
-    SUBDIR += samba-nmblookup
-    SUBDIR += samba-smbclient
-    SUBDIR += samba36
-    SUBDIR += samba41
     SUBDIR += samba42
     SUBDIR += samba43
     SUBDIR += samba44
