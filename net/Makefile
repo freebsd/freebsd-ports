@@ -1181,6 +1181,7 @@
     SUBDIR += rude
     SUBDIR += rwhoisd
     SUBDIR += samba-libsmbclient
+    SUBDIR += samba-nmblookup
     SUBDIR += samba36
     SUBDIR += samba42
     SUBDIR += samba43
