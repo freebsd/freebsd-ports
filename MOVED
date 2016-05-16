@@ -8325,3 +8325,4 @@ databases/postgresql90-pltcl||2016-05-16|Has expired: "EOL was reached in Septem
 databases/postgresql90-client||2016-05-16|Has expired: "EOL was reached in September 2015"
 databases/postgresql90-docs||2016-05-16|Has expired: "EOL was reached in September 2015"
 databases/postgresql90-server||2016-05-16|Has expired: "EOL was reached in September 2015"
+devel/py-gyp-devel|devel/py-gyp|2016-05-16|Renamed to devel/py-gyp

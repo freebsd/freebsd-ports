@@ -1,6 +1,6 @@
---- pylib/gyp/generator/make.py.orig	2015-04-16 13:28:24.117918307 +0900
-+++ pylib/gyp/generator/make.py	2015-04-16 13:28:50.421923951 +0900
-@@ -342,7 +342,7 @@
+--- pylib/gyp/generator/make.py.orig	2016-05-10 14:06:56 UTC
++++ pylib/gyp/generator/make.py
+@@ -342,7 +342,7 @@ sed -e "s|^$(notdir $@)|$@|" $(depfile).
  # We remove slashes and replace spaces with new lines;
  # remove blank lines;
  # delete the first line and append a colon to the remaining lines.

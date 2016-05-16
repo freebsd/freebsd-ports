@@ -4130,7 +4130,7 @@
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
-    SUBDIR += py-gyp-devel
+    SUBDIR += py-gyp
     SUBDIR += py-hash_ring
     SUBDIR += py-hghooks
     SUBDIR += py-hgsubversion
