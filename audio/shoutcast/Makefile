@@ -14,6 +14,8 @@ COMMENT=	SHOUTcast Distributed Network Audio Server
 RESTRICTED=	redistribution of software is not permitted
 IA32_BINARY_PORT=	yes
 
+BROKEN=		does not fetch (404)
+
 USES=		dos2unix shebangfix
 DOS2UNIX_REGEX=	.*\.(conf|css|html|js|txt|xml)
 bash_CMD=	${SH}
