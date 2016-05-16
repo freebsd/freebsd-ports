@@ -6,7 +6,7 @@ PORTVERSION=	0.9.16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
-MAINTAINER=	wwaites@tardis.ed.ac.uk
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Mail searching frontend for Xapian
 
 LICENSE=	GPLv3+
@@ -21,26 +21,23 @@ GH_ACCOUNT=	djcb
 USES=		autoreconf gmake libtool makeinfo pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk
+CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk --disable-mu4e
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		DOCS GUILE MU4E
+OPTIONS_DEFINE=		DOCS GUILE
 OPTIONS_SUB=		yes
 
 GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
 GUILE_USE=		ldconfig=yes
 GUILE_CONFIGURE_ENABLE=	guile
 GUILE_INFO=		mu-guile
-MU4E_DESC=		Email client for Emacs
-MU4E_USE=		emacs=yes
-MU4E_CONFIGURE_ENABLE=	mu4e
-MU4E_INFO=		mu4e
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/mu-ask ${STAGEDIR}${PREFIX}/bin
+	cd ${FILESDIR} && ${INSTALL_SCRIPT} mu-ask \
+	    ${STAGEDIR}${PREFIX}/bin
 
 post-install-GUILE-on:
-	(${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.so.*" -type f | \
-		${XARGS} ${STRIP_CMD})
+	${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.so.*" -type f | \
+	    ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>
