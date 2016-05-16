@@ -31,6 +31,9 @@ post-patch:
 pre-install:
 	${MKDIR} ${STAGEDIR}${NEWSBIN}
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/libexec/cnews/fastcancel
+
 .include <bsd.port.pre.mk>
 
 # CNEWS_PORT can be set in Makefile.local
