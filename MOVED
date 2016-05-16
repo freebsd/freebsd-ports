@@ -8316,3 +8316,5 @@ java/linux-sun-jre17||2016-05-09|Has expired: Unsupported and known for multiple
 deskutils/gnustep-notebook||2016-05-09|Has expired: Does not fetch
 lang/moscow_ml|lang/mosml|2016-05-11|Project renamed
 devel/rubygem-redmine_acts_as_taggable_on|www/rubygem-redmine_acts_as_taggable_on|2016-05-14|Duplicate port
+lang/gcc-aux||2016-05-16|Has expired: Use newer lang/gcc5-aux or lang/gcc6-aux compilers instead
+audio/deadbeef-mpris-plugin|audio/deadbeef-mpris2-plugin|2016-05-16|Has expired: Abandonware; use `audio/deadbeef-mpris2-plugin' instead
