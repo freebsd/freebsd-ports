@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-PORTVERSION=	0.7.0.20160321
+PORTVERSION=	0.8.2.20160511
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GrayHatter
-GH_TAGNAME=	9524f98
+GH_TAGNAME=	cc4388c
 
 USES=		compiler:c11 desktop-file-utils gmake openal:al pkgconfig
 USE_XORG=	x11 xext xrender
