@@ -72,6 +72,7 @@
     SUBDIR += qmls
     SUBDIR += qucs
     SUBDIR += repsnapper
+    SUBDIR += rubygem-gdsii
     SUBDIR += sceptre
     SUBDIR += scotch
     SUBDIR += spice
