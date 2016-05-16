@@ -11,6 +11,8 @@ COMMENT=	Lightweight implementation of Standard ML
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libgdbm.so:databases/gdbm
 
+BROKEN=		does not build
+
 GH_ACCOUNT=	kfl
 USE_GITHUB=	yes
 
