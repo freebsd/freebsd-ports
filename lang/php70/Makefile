@@ -3,7 +3,7 @@
 
 PORTNAME=	php70
 PORTVERSION=	7.0.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
 DISTNAME=	php-${PORTVERSION}
@@ -146,6 +146,7 @@ CONFIGURE_ARGS+=--enable-debug
 
 .if ${PORT_OPTIONS:MZTS}
 CONFIGURE_ARGS+=--enable-maintainer-zts
+CONFIGURE_ENV+=	pthreads_working="yes"
 USES=	localhost
 .endif
 
