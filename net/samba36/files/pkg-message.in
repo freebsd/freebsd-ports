@@ -1,0 +1,7 @@
+===============================================================================
+Samba3 *package* now doesn't include ADS support due the portability problems
+with Kerberos5 libraries on different installations. You need to compile the
+port yourself to get this functionality.
+
+For additional hints and directions, please, look into the README.FreeBSD file.
+===============================================================================

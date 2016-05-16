@@ -1,0 +1,4 @@
+SHA256 (samba-3.6.25.tar.gz) = 8f2c8a7f2bd89b0dfd228ed917815852f7c625b2bc0936304ac3ed63aaf83751
+SIZE (samba-3.6.25.tar.gz) = 34121828
+SHA256 (samba-3.6.25-security-2015-12-16.patch) = abe1ba1a73afe0865f20ac34a207c799cde29d34e736de5c2d029d532c93ac01
+SIZE (samba-3.6.25-security-2015-12-16.patch) = 8023
