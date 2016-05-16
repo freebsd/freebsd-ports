@@ -8322,6 +8322,5 @@ net/samba41||2016-05-16|Has expired: not supported by the upstream
 net/samba-smbclient||2016-05-16|Has expired: not supported by the upstream
 databases/postgresql90-contrib||2016-05-16|Has expired: "EOL was reached in September 2015"
 databases/postgresql90-pltcl||2016-05-16|Has expired: "EOL was reached in September 2015"
-databases/postgresql90-client||2016-05-16|Has expired: "EOL was reached in September 2015"
 databases/postgresql90-docs||2016-05-16|Has expired: "EOL was reached in September 2015"
 devel/py-gyp-devel|devel/py-gyp|2016-05-16|Renamed to devel/py-gyp
