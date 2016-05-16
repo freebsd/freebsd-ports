@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/matplotlib
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib
 
 USES=		python
 USE_PYTHON=	distutils autoplist
