@@ -1,13 +1,19 @@
---- src/unix/uim/mozc.cc.orig	2015-07-13 05:03:12.431514000 +0900
-+++ src/unix/uim/mozc.cc	2015-07-13 05:03:30.340372000 +0900
-@@ -50,8 +50,8 @@
+--- src/unix/uim/mozc.cc.orig	2016-05-11 00:39:29.009401000 +0900
++++ src/unix/uim/mozc.cc	2016-05-11 00:40:58.320083000 +0900
+@@ -48,6 +48,7 @@
+ # include "plugin.h"
+ #endif
  
++#include "base/init_mozc.h"
  #include "base/port.h"
  #include "base/util.h"
--#include "config/config.pb.h"
--#include "session/commands.pb.h"
-+#include "protocol/config.pb.h"
-+#include "protocol/commands.pb.h"
- #include "client/client.h"
- #include "unix/uim/key_translator.h"
+ #include "protocol/config.pb.h"
+@@ -1196,7 +1197,7 @@
+   argv[0] = (char *)name;
+   argv[1] =  NULL;
+ 
+-  InitGoogle((const char *)argv[0], &argc, (char ***)&argv, true);
++  mozc::InitMozc((const char *)argv[0], &argc, (char ***)&argv, true);
+   mozc::uim::install_keymap();
+ }
  
