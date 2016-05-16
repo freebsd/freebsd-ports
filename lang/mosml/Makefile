@@ -12,8 +12,6 @@ COMMENT=	Lightweight implementation of Standard ML
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libgdbm.so:databases/gdbm
 
-BROKEN=		does not build
-
 GH_ACCOUNT=	kfl
 USE_GITHUB=	yes
 
@@ -38,6 +36,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.pre.mk>
 
 post-patch:
+	${REINPLACE_CMD} -e '/^CC=/s/^/#/' ${WRKSRC}/Makefile.inc
 	${REINPLACE_CMD} 's/make /$$(MAKE) /' ${WRKSRC}/doc/Makefile \
 		${WRKSRC}/doc/helpsigs/Makefile
 
