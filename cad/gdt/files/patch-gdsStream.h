@@ -1,6 +1,6 @@
---- gdsStream.h.orig	Sun Apr 29 15:45:42 2007
-+++ gdsStream.h	Sun Apr 29 15:45:54 2007
-@@ -3,8 +3,7 @@
+--- gdsStream.h.orig	2014-12-08 17:16:44 UTC
++++ gdsStream.h
+@@ -4,8 +4,7 @@
  #define _gdsStream__
  
  #include <stdio.h>
