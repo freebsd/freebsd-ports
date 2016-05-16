@@ -8319,7 +8319,6 @@ devel/rubygem-redmine_acts_as_taggable_on|www/rubygem-redmine_acts_as_taggable_o
 lang/gcc-aux||2016-05-16|Has expired: Use newer lang/gcc5-aux or lang/gcc6-aux compilers instead
 audio/deadbeef-mpris-plugin|audio/deadbeef-mpris2-plugin|2016-05-16|Has expired: Abandonware; use `audio/deadbeef-mpris2-plugin' instead
 net/samba41||2016-05-16|Has expired: not supported by the upstream
-net/samba-smbclient||2016-05-16|Has expired: not supported by the upstream
 databases/postgresql90-contrib||2016-05-16|Has expired: "EOL was reached in September 2015"
 databases/postgresql90-pltcl||2016-05-16|Has expired: "EOL was reached in September 2015"
 databases/postgresql90-docs||2016-05-16|Has expired: "EOL was reached in September 2015"

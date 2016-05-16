@@ -1,0 +1,6 @@
+smbclient is samba client with an "ftp like" interface. It is a useful tool to
+test connectivity to a Windows share. It can be used to transfer files, or to
+look at share names. In addition, it has a nifty ability to 'tar' (backup) and
+restore files from a server to a client and visa versa.
+
+WWW: http://www.samba.org/
