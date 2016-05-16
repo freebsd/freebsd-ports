@@ -1,0 +1,67 @@
+samba3-3.4-honor-all-loopback-ips.patch
+samba3.6-veto-speedup.patch
+
+commit b6afe7ef236a454d8a6abf104b8846f817378f73
+Author: Björn Jacke <bj@sernet.de>
+Date:   Thu Oct 15 02:02:30 2009 +0200
+
+    util: cope the all loopback addresses IPv4 knows
+    
+    The fact that we just recogniced 127.0.0.1 as loopback IP address and not the
+    rest of the 127.0.0.0/8 IP address range we used the lo interface for sending
+    packages even though we should send them to some more physical interface. This
+    way we ended up with failing WINS registration and so on like in #6348.
+    On the lo interface sendto() returned "Invalid Argument" (EINVAL).
+
+diff --git a/lib/util/util_net.c b/lib/util/util_net.c
+index 0ce495e..0511a28 100644
+--- a/lib/util/util_net.c
++++ b/lib/util/util_net.c
+@@ -353,13 +353,11 @@
+ }
+ 
+ /**
+- * Check if an IPv7 is 127.0.0.1
++ * Check if an IPv4 is in IN_LOOPBACKNET (127.0.0.0/8)
+  */
+ bool is_loopback_ip_v4(struct in_addr ip)
+ {
+-	struct in_addr a;
+-	a.s_addr = htonl(INADDR_LOOPBACK);
+-	return(ip.s_addr == a.s_addr);
++	return ((ntohl(ip.s_addr) & IN_CLASSA_NET) == (IN_LOOPBACKNET << IN_CLASSA_NSHIFT));
+ }
+ 
+ /**
+From 944f10760f1bd0e839e08f1204b68e9c06617cf1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Bj=C3=B6rn=20Jacke?= <bj@sernet.de>
+Date: Thu, 19 Apr 2012 13:33:50 +0200
+Subject: [PATCH] s3: speed up reply when vetoed files are being accessed
+
+one usecase of this fast-path is when non-existing files are being tried to be
+opened that are vetoed anyway. With this modification we look if the pattern is
+vetoed first and immediately tell the client that the file doesn't exist
+instead of searching for it in the first place and later on say we don't have
+it regardless.
+---
+ source3/smbd/filename.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/source3/smbd/filename.c b/source3/smbd/filename.c
+index b2ed239..67138e7 100644
+--- a/source3/smbd/filename.c
++++ b/source3/smbd/filename.c
+@@ -1284,6 +1284,13 @@ NTSTATUS filename_convert(TALLOC_CTX *ctx,
+ 
+ 	*pp_smb_fname = NULL;
+ 
++	status = check_veto_path(conn, name_in);
++	if (!NT_STATUS_IS_OK(status)) {
++		DEBUG(10,("file %s matches veto path - fast path returning %s\n",
++			name_in, nt_errstr(status)));
++		return status;
++	}
++
+ 	status = resolve_dfspath_wcard(ctx, conn,
+ 				dfs_path,
+ 				name_in,
