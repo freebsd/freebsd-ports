@@ -27,28 +27,22 @@ PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 SUB_LIST=	DB_TYPE=${DB_TYPE}
 
-OPTIONS_MULTI=	DB
-OPTIONS_MULTI_DB=	MYSQL PGSQL
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL
 OPTIONS_DEFAULT=MYSQL
 
-.include <bsd.port.options.mk>
+MYSQL_USES=	mysql
+MYSQL_USE=	PHP=pdo_mysql
+MYSQL_VARS=	DB_TYPE=mysql
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-USE_PHP+=	pdo_mysql
-DB_TYPE=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-USE_PHP+=	pgsql pdo_pgsql
-DB_TYPE=	pgsql
-.endif
+PGSQL_USES=	pgsql
+PGSQL_USE=	PHP=pgsql,pdo_pgsql
+PGSQL_VARS=	DB_TYPE=pgsql
 
 do-install:
-	${MKDIR} ${WRKSRC}/rss
+	@${MKDIR} ${WRKSRC}/rss
 	${CP} ${WRKSRC}/backup/.htaccess ${WRKSRC}/rss/.htaccess
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/CDash
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/CDash
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 	${MV} ${WRKSRC}/cdash/config.local.php ${WRKSRC}/cdash/config.local.sample.php
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/www/CDash
