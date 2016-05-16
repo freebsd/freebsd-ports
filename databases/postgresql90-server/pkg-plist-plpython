@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README-plpython
+lib/postgresql/plpython.so
+lib/postgresql/plpython2.so
