@@ -8320,4 +8320,3 @@ lang/gcc-aux||2016-05-16|Has expired: Use newer lang/gcc5-aux or lang/gcc6-aux c
 audio/deadbeef-mpris-plugin|audio/deadbeef-mpris2-plugin|2016-05-16|Has expired: Abandonware; use `audio/deadbeef-mpris2-plugin' instead
 net/samba41||2016-05-16|Has expired: not supported by the upstream
 net/samba-smbclient||2016-05-16|Has expired: not supported by the upstream
-net/samba-nmblookup||2016-05-16|Has expired: not supported by the upstream
