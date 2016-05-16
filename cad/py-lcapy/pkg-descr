@@ -1,0 +1,10 @@
+Lcapy is an experimental Python package for teaching linear circuit
+analysis.  It uses SymPy for symbolic mathematics.
+
+Lcapy can analyse circuits described with netlists using modified
+nodal analysis.
+
+Alternatively, Lcapy can analyse networks and circuits formed by
+combining one, two, and (some) three port networks.
+ 
+WWW: https://github.com/mph-/lcapy
