@@ -5,13 +5,13 @@
  		if [ ! "$(POL_Config_Read NO_MENU_ICON)" = "TRUE" ]; then
  			# Do nothing on Mac OS
 -			if [ -n "$Categories" -a "$POL_OS" = "Linux" ] || [ -n "$Categories" -a "$POL_OS" = "BSD" ]; then
-+			if [ -n "$Categories" -a "$POL_OS" = "Linux" ]
++			if [ -n "$Categories" -a "$POL_OS" = "Linux" ]; then
  				LOCALAPPS="$HOME/.local/share/applications"
  				make_desktop_shortcut "$iconPath" "$ICON_FILENAME" "$LOCALAPPS" "$PLAYONLINUX/playonlinux --run \"$ICON_FILENAME\"" "$binary_name" "$Categories" "playonlinux-"
  			fi
 +			if [ -n "$Categories" -a "$POL_OS" = "FreeBSD" ]; then
 +				LOCALAPPS="$HOME/.local/share/applications"
-+				make_desktop_shortcut "$iconPath" "$ICON_FILENAME" "$LOCALAPPS" "$PLAYONLINUX/playonbsd --run \"$ICON_FILENAME\"" "$binary_name" "$Categories" "playonlinux-"
++				make_desktop_shortcut "$iconPath" "$ICON_FILENAME" "$LOCALAPPS" "$PLAYONLINUX/playonfreebsd --run \"$ICON_FILENAME\"" "$binary_name" "$Categories" "playonlinux-"
 +			fi
  		fi
  
@@ -44,3 +44,12 @@
  }
  POL_Shortcut_MakeDesktopShortcut()
  {
+@@ -1039,7 +1049,7 @@ POL_Shortcut_MakeDesktopShortcut()
+ 		# http://stackoverflow.com/questions/8939580/bash-split-a-string-exactly-like-readline-would-split-it
+ 		eval set -- $(grep '^POL_Wine ' "$POL_USER_ROOT/shortcuts/$PACKAGE"|tail -n 1)
+ 		local binary="$2"
+-		make_desktop_shortcut "$iconPath" "$PACKAGE" "$DESKTOP" "$PLAYONLINUX/playonlinux --run \"$PACKAGE\"" "$binary" ""
++		make_desktop_shortcut "$iconPath" "$PACKAGE" "$DESKTOP" "$PLAYONLINUX/playonfreebsd --run \"$PACKAGE\"" "$binary" ""
+ 		;;
+ 
+ 	    *)
