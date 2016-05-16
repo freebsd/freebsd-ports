@@ -1,0 +1,11 @@
+--- llbuild/CMakeLists.txt.orig	2016-03-15 20:15:59 UTC
++++ llbuild/CMakeLists.txt
+@@ -128,7 +128,7 @@ else ()
+ endif ()
+ 
+ # On Linux, always build with PIC.
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+ endif ()
