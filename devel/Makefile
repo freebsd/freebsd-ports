@@ -4335,6 +4335,7 @@
     SUBDIR += py-pytimeparse
     SUBDIR += py-pytools
     SUBDIR += py-pytrie
+    SUBDIR += py-pytvmaze
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
     SUBDIR += py-pyvisa
