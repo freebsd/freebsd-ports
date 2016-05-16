@@ -8318,3 +8318,8 @@ lang/moscow_ml|lang/mosml|2016-05-11|Project renamed
 devel/rubygem-redmine_acts_as_taggable_on|www/rubygem-redmine_acts_as_taggable_on|2016-05-14|Duplicate port
 lang/gcc-aux||2016-05-16|Has expired: Use newer lang/gcc5-aux or lang/gcc6-aux compilers instead
 audio/deadbeef-mpris-plugin|audio/deadbeef-mpris2-plugin|2016-05-16|Has expired: Abandonware; use `audio/deadbeef-mpris2-plugin' instead
+net/samba41||2016-05-16|Has expired: not supported by the upstream
+net/samba-smbclient||2016-05-16|Has expired: not supported by the upstream
+net/samba-libsmbclient||2016-05-16|Has expired: not supported by the upstream
+net/samba-nmblookup||2016-05-16|Has expired: not supported by the upstream
+net/samba36||2016-05-16|Has expired: not supported by the upstream
