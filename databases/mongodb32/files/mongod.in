@@ -16,6 +16,8 @@
 #                        Base database directory.
 # mongod_flags (str):    Custom additional arguments to be passed to mongod.
 #                        Default to "--logpath ${mongod_dbpath}/mongod.log --logappend".
+# mongod_config (str):	 Default to "%%PREFIX%%/etc/mongodb.conf"
+#                        Path to config file
 #
 
 . /etc/rc.subr
@@ -31,10 +33,11 @@ load_rc_config $name
 : ${mongod_flags="--logpath ${mongod_dbpath}/mongod.log --logappend"}
 : ${mongod_user="mongodb"}
 : ${mongod_group="mongodb"}
+: ${mongod_config="%%PREFIX%%/etc/mongodb.conf"}
 
 pidfile="${mongod_dbpath}/mongod.lock"
 command=%%PREFIX%%/bin/${name}
-command_args="--config %%PREFIX%%/etc/mongodb.conf --dbpath $mongod_dbpath --fork >/dev/null 2>/dev/null"
+command_args="--config $mongod_config --dbpath $mongod_dbpath --fork >/dev/null 2>/dev/null"
 start_precmd="${name}_prestart"
 
 mongod_create_dbpath()
