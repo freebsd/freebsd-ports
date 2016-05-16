@@ -31,6 +31,7 @@
     SUBDIR += intellij
     SUBDIR += intellij-fsnotifier
     SUBDIR += intellij-pty4j
+    SUBDIR += intellij-pycharm
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jai
