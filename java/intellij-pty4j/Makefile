@@ -3,6 +3,7 @@
 
 PORTNAME=	intellij-pty4j
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	java devel
 
 MAINTAINER=	t@tobik.me
@@ -21,8 +22,6 @@ GH_TAGNAME=	5d29b891bca0ddf122fc51e3ce066fe421b47b54
 USES=	gmake
 
 .include "${.CURDIR}/../intellij/common.mk"
-
-PLIST_FILES=	${IDEA_HOME}/lib/pty4j-0.5.jar
 
 .include <bsd.port.options.mk>
 
@@ -56,6 +55,5 @@ do-install:
 # See above why we always use freebsd/x86_64/ here
 	${INSTALL_LIB} ${WRKSRC}/os/freebsd/x86_64/libpty.so ${STAGEDIR}${IDEA_HOME}/lib/libpty/freebsd/${PTY4J_ARCH}/
 .endif
-	${INSTALL_DATA} ${WRKSRC}/build/pty4j-0.5.jar ${STAGEDIR}${IDEA_HOME}/lib/pty4j-0.5.jar
 
 .include <bsd.port.mk>
