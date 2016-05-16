@@ -650,6 +650,7 @@
     SUBDIR += postgresql90-pgtcl
     SUBDIR += postgresql90-plperl
     SUBDIR += postgresql90-plpython
+    SUBDIR += postgresql90-server
     SUBDIR += postgresql91-client
     SUBDIR += postgresql91-contrib
     SUBDIR += postgresql91-docs
