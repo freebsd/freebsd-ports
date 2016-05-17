@@ -1,6 +1,6 @@
---- SConstruct
+--- SConstruct.orig	2016-05-09 23:15:49 UTC
 +++ SConstruct
-@@ -26,7 +26,7 @@
+@@ -26,7 +26,7 @@ try:
      if platform == 'linux-gcc':
          CXX = 'g++' # not quite right, but env is not yet available.
          import commands
@@ -9,7 +9,7 @@
          platform = 'linux-gcc-%s' %version
          print "Using platform '%s'" %platform
          LD_LIBRARY_PATH = os.environ.get('LD_LIBRARY_PATH', '')
-@@ -65,7 +65,7 @@
+@@ -65,7 +65,7 @@ def make_environ_vars():
  	return vars
  	
  
@@ -18,15 +18,15 @@
                     toolpath = ['scons-tools'],
                     tools=[] ) #, tools=['default'] )
  
-@@ -121,6 +121,7 @@
+@@ -121,6 +121,7 @@ elif platform.startswith('linux-gcc'):
      env.Tool( 'default' )
-     env.Append( LIBS = ['pthread'], CCFLAGS = "-Wall" )
+     env.Append( LIBS = ['pthread'], CCFLAGS = os.environ.get("CXXFLAGS", "-Wall"), LINKFLAGS=os.environ.get("LDFLAGS", "") )
      env['SHARED_LIB_ENABLED'] = True
 +    env['CXX'] = os.environ['CXX']
  else:
      print "UNSUPPORTED PLATFORM."
      env.Exit(1)
-@@ -147,6 +148,11 @@
+@@ -147,6 +148,11 @@ env['JSONCPP_VERSION'] = JSONCPP_VERSION
  env['BUILD_DIR'] = env.Dir(build_dir)
  env['ROOTBUILD_DIR'] = env.Dir(rootbuild_dir)
  env['DIST_DIR'] = DIST_DIR
@@ -38,7 +38,7 @@
  if 'TarGz' in env['BUILDERS']:
  	class SrcDistAdder:
  		def __init__( self, env ):
-@@ -164,7 +170,7 @@
+@@ -164,7 +170,7 @@ env['SRCDIST_ADD'] = SrcDistAdder( env )
  env['SRCDIST_TARGET'] = os.path.join( DIST_DIR, 'jsoncpp-src-%s.tar.gz' % env['JSONCPP_VERSION'] )
                        
  env_testing = env.Clone( )
@@ -47,7 +47,7 @@
  
  def buildJSONExample( env, target_sources, target_name ):
      env = env.Clone()
-@@ -187,14 +193,14 @@
+@@ -187,14 +193,14 @@ def buildUnitTests( env, target_sources,
      env.AlwaysBuild( check_alias_target )
  
  def buildLibrary( env, target_sources, target_name ):
