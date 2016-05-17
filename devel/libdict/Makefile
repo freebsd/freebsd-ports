@@ -13,6 +13,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library providing access to ``dictionary'' data structures
 
+BROKEN=		Unfetchable
+
 USES=		gmake
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
