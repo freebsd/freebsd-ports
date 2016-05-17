@@ -1,7 +1,7 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	mysql
+PORTNAME?=	mysql
 PORTVERSION=	5.7.12
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.7
@@ -9,7 +9,7 @@ PKGNAMESUFFIX?=	57-server
 DISTNAME=	${PORTNAME}-boost-${PORTVERSION}
 
 MAINTAINER=	mokhi64@gmail.com
-COMMENT=	Multithreaded SQL database (server)
+COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 
