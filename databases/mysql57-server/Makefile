@@ -1,4 +1,4 @@
-# Created by: "Mahdi Mokhtari <mokhi64@gmail.com>"
+# Created by: Mahdi Mokhtari <mokhi64@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	mysql
@@ -20,8 +20,6 @@ USES=		bison:build cmake:outsource compiler:c11 compiler:c++11-lib cpe libedit l
 
 USE_OPENSSL=	yes
 USE_PERL5=	run
-
-WITH_OPENSSL_PORT=	yes
 
 MY_DBDIR=	/var/db/mysql
 MY_SECDIR=	/var/db/mysql_secure
@@ -57,9 +55,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_EDITLINE=system \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
-		-DWITH_ZLIB=system \
-		-DWITH_SSL=${OPENSSLBASE} \
-		-DWITH_PIC=1
+		-DWITH_ZLIB=system
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
@@ -138,6 +134,15 @@ PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 .if !defined(CLIENT_ONLY)
 EXTRA_PATCHES+=		${PATCHDIR}/rapid_plugin-patch-_x_mysqlxtest__src_mysqlxtest.cc
+.endif
+WITH_OPENSSL_PORT=	yes
+
+### FreeBSD Version > 9.X ###
+.else
+.if defined(WITH_OPENSSL_BASE)
+CMAKE_ARGS+=		-DWITH_SSL=system
+.else
+CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
 .endif
 .endif
 
