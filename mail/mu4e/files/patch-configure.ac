@@ -34,7 +34,7 @@
  
  # check for makeinfo
  AC_CHECK_PROG(have_makeinfo,makeinfo,yes,no)
-@@ -110,16 +110,16 @@ AS_IF([test "x$PKG_CONFIG" = "xno"],[
+@@ -110,36 +110,36 @@ AS_IF([test "x$PKG_CONFIG" = "xno"],[
  
  # glib2?
  # we need 2.14 at least, because we use GRegex
@@ -55,7 +55,62 @@
  
  
  # xapian checking - we need 1.2.x at least
-@@ -246,26 +246,9 @@ AS_IF([test "x$PMCCABE" = "xno"],[
+-AC_CHECK_PROG(XAPIAN_CONFIG,xapian-config,xapian-config,no)
+-AM_CONDITIONAL(HAVE_XAPIAN,test "x$XAPIAN_CONFIG" != "xno")
+-AS_IF([test "x$XAPIAN_CONFIG" = "xno"],[
+-   AC_MSG_ERROR([
+-   *** xapian could not be found; please install it
+-   *** e.g., in debian/ubuntu the package would be 'libxapian-dev'
+-   *** If you compiled it yourself, you should ensure that xapian-config
+-   *** is in your PATH.])],
+-   [xapian_version=$($XAPIAN_CONFIG --version | sed -e 's/.* //')])
+-AS_CASE([$xapian_version],
+-	[1.[[2-9]].[[0-9]]*], [],
+-	[AC_MSG_ERROR([*** xapian version >= 1.2 needed,
+-	but version $xapian_version found.])])
+-
+-XAPIAN_CXXFLAGS="`$XAPIAN_CONFIG --cxxflags`"
+-XAPIAN_LIBS="`$XAPIAN_CONFIG --libs`"
+-have_xapian="yes"
++#AC_CHECK_PROG(XAPIAN_CONFIG,xapian-config,xapian-config,no)
++#AM_CONDITIONAL(HAVE_XAPIAN,test "x$XAPIAN_CONFIG" != "xno")
++#AS_IF([test "x$XAPIAN_CONFIG" = "xno"],[
++#   AC_MSG_ERROR([
++#   *** xapian could not be found; please install it
++#   *** e.g., in debian/ubuntu the package would be 'libxapian-dev'
++#   *** If you compiled it yourself, you should ensure that xapian-config
++#   *** is in your PATH.])],
++#   [xapian_version=$($XAPIAN_CONFIG --version | sed -e 's/.* //')])
++#AS_CASE([$xapian_version],
++#	[1.[[2-9]].[[0-9]]*], [],
++#	[AC_MSG_ERROR([*** xapian version >= 1.2 needed,
++#	but version $xapian_version found.])])
++#
++#XAPIAN_CXXFLAGS="`$XAPIAN_CONFIG --cxxflags`"
++#XAPIAN_LIBS="`$XAPIAN_CONFIG --libs`"
++#have_xapian="yes"
+ 
+ AC_SUBST(XAPIAN_CXXFLAGS)
+ AC_SUBST(XAPIAN_LIBS)
+@@ -235,37 +235,20 @@ AC_SUBST(MU_DOC_DIR, "${prefix}/share/do
+ 
+ ###############################################################################
+ # check for pmccabe
+-AC_PATH_PROG([PMCCABE],[pmccabe],[no])
+-AS_IF([test "x$PMCCABE" = "xno"],[
+-   have_pmccabe="no"
+-   AC_MSG_WARN([
+-   *** Developers: you do not seem to have the pmccabe tool installed.
+-   *** Please install it if you want to run the automated code checks])
+-],[have_pmccabe="yes"])
++#AC_PATH_PROG([PMCCABE],[pmccabe],[no])
++#AS_IF([test "x$PMCCABE" = "xno"],[
++#   have_pmccabe="no"
++#   AC_MSG_WARN([
++#   *** Developers: you do not seem to have the pmccabe tool installed.
++#   *** Please install it if you want to run the automated code checks])
++#],[have_pmccabe="yes"])
+ ###############################################################################
  
  AC_CONFIG_FILES([
  Makefile
