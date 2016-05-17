@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	influxdb
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.13.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases net-mgmt
 
@@ -19,25 +18,25 @@ USE_RC_SUBR=	influxd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	influxdata:DEFAULT
-GH_TUPLE=	BurntSushi:toml:bbd5bb6:toml \
+GH_TUPLE=	BurntSushi:toml:f0aeabc:toml \
 		armon:go-metrics:f303b03:go_metrics \
 		bmizerany:pat:c068ca2:pat \
-		boltdb:bolt:144418e:bolt \
+		boltdb:bolt:c1c3bd7:bolt \
 		dgryski:go-bits:86c69b3:go_bits \
 		dgryski:go-bitstream:27cd597:go_bitstream \
-		gogo:protobuf:74b6e9d:protobuf \
-		golang:snappy:ef80b33:snappy \
+		gogo:protobuf:c18eea6:protobuf \
+		golang:snappy:d7b1e15:snappy \
 		hashicorp:go-msgpack:fa3f638:go_msgpack \
-		hashicorp:raft:1c84b7c:raft \
+		hashicorp:raft:5fdd8ee:raft \
 		hashicorp:raft-boltdb:d1e82c1:raft_boltdb \
 		influxdata:usage-client:475977e:usage_client \
-		jwilder:encoding:07d88d4:encoding \
+		jwilder:encoding:ac74639:encoding \
 		kimor79:gollectd:b5dddb1:gollectd \
 		paulbellamy:ratecounter:5a11f58:ratecounter \
-		peterh:liner:49ca659:liner \
+		peterh:liner:0e4af13:liner \
 		rakyll:statik:2940084:statik \
 		collectd:go-collectd:9fc824c:go_collectd \
- 		golang:crypto:3fbbcd2:crypto \
+ 		golang:crypto:b6789ab:crypto \
 		fatih:pool:cba550e:pool
 
 SUB_FILES=	influxd
