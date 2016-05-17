@@ -349,6 +349,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help/extensions.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/filesets.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/glossary.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/hg-ssh.8.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/hg.1.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/hgignore.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/hgignore.5.txt
