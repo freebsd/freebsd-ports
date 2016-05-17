@@ -1,6 +1,5 @@
-SHA256 (postfix/postfix-2.11.7.tar.gz) = 05828b5b846e48fdc80db67d85409066010614af521070df4733459fbf447e20
-SIZE (postfix/postfix-2.11.7.tar.gz) = 4031689
-SHA256 (postfix/postfix-2.8.0-libspf2-1.2.x-0.patch.gz) = e5c38e5bc226cab109c02a4e530ab1aefd3bb06f2169f3e052bdf83d2727aacc
-SIZE (postfix/postfix-2.8.0-libspf2-1.2.x-0.patch.gz) = 8191
+TIMESTAMP = 1463402666
+SHA256 (postfix/postfix-2.11.8.tar.gz) = 3c4ece0846b519e2e800608f3009e929a3c2a1c7841bf07397ec9edc7463c923
+SIZE (postfix/postfix-2.11.8.tar.gz) = 4032263
 SHA256 (postfix/postfix-vda-v13-2.10.0.patch) = 6208021eb0b37ac6482e334e538ed5700cc22c4d4dd66ed9e975ae5f20bf935f
 SIZE (postfix/postfix-vda-v13-2.10.0.patch) = 55701
