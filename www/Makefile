@@ -1561,6 +1561,7 @@
     SUBDIR += py-django-mezzanine-grappelli
     SUBDIR += py-django-mptt
     SUBDIR += py-django-openid-auth
+    SUBDIR += py-django-otp
     SUBDIR += py-django-overextends
     SUBDIR += py-django-paging
     SUBDIR += py-django-photologue
