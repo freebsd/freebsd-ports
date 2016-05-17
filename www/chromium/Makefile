@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	49.0.2623.112
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
