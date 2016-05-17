@@ -213,7 +213,6 @@ check_dep()
 }
 
 # query GNATS via Bugzilla, format and return the result
-# XXX rene: PRs are listed twice for now due to the HTML code of Bugzilla
 get_PRs_www()
 {
 	catport=${1}
