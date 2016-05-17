@@ -14,7 +14,7 @@ COMMENT=	Let's Encrypt client
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme==${PKGNAME}:security/py-acme \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme==${PKGVERSION}:security/py-acme \
 		${PYTHON_PKGNAMEPREFIX}configargparse>=0.9.3:devel/py-configargparse \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=0.7:security/py-cryptography \
