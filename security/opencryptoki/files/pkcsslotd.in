@@ -16,18 +16,19 @@
 . /etc/rc.subr
 
 name=pkcsslotd
-rcvar=pkcsslotd_enable
-command=%%PREFIX%%/sbin/${name}
+rcvar=${name}_enable
+command="%%PREFIX%%/sbin/$name"
 start_precmd=${name}_prestart
 
 pkcsslotd_prestart () {
-	[ -f /var/lib/opencryptoki/pk_config_data ] || \
-		%%PREFIX%%/sbin/pkcs11_startup
+	install -d -o %%USERS%% -g %%GROUPS%% -m 0755 \
+	    /var/run/opencryptoki/swtok \
+	    /var/run/opencryptoki/tpm
 }
 
-load_rc_config ${name}
+load_rc_config $name
 
-: pkcsslotd_enable=${pkcsslotd_enable-"NO"}
+: ${pkcsslotd_enable="NO"}
 
 run_rc_command "$1"
 

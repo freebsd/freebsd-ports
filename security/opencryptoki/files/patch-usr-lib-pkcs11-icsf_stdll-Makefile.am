@@ -1,0 +1,15 @@
+--- usr/lib/pkcs11/icsf_stdll/Makefile.am.orig	2016-04-29 17:26:46 UTC
++++ usr/lib/pkcs11/icsf_stdll/Makefile.am
+@@ -79,10 +79,10 @@ install-data-hook:
+ 	cd $(DESTDIR)$(libdir)/opencryptoki/stdll && \
+ 		ln -sf libpkcs11_icsf.so PKCS11_ICSF.so
+ 	$(MKDIR_P) $(DESTDIR)$(localstatedir)/lib/opencryptoki/icsf
+-	$(CHGRP) pkcs11 $(DESTDIR)$(localstatedir)/lib/opencryptoki/icsf
++	$(CHGRP) @PKCS11GROUP@ $(DESTDIR)$(localstatedir)/lib/opencryptoki/icsf
+ 	$(CHMOD) 0770 $(DESTDIR)$(localstatedir)/lib/opencryptoki/icsf
+ 	$(MKDIR_P) $(DESTDIR)$(lockdir)/icsf
+-	$(CHGRP) pkcs11 $(DESTDIR)$(lockdir)/icsf 
++	$(CHGRP) @PKCS11GROUP@ $(DESTDIR)$(lockdir)/icsf 
+ 	$(CHMOD) 0770 $(DESTDIR)$(lockdir)/icsf
+ 
+ uninstall-hook:
