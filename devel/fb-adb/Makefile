@@ -54,7 +54,7 @@ NDK_MASTER_SITES=	https://dl.google.com/android/ndk/:ndk
 # Prefer NDK from environment
 WRKSRC_ndk=		${ANDROID_NDK}
 .else
-NDK_DISTFILES=		${DISTNAME_ndk}.bin:ndk,p7zip
+NDK_DISTFILES=		${DISTNAME_ndk}.bin:ndk
 DISTNAME_ndk=		android-ndk-r10e-linux-${LINUX_RPM_ARCH:C/i.86/x86/}
 WRKSRC_ndk=		${WRKDIR}/${DISTNAME_ndk:C/(-[^-]+){2}$//}
 .endif
