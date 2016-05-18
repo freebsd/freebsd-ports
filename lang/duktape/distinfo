@@ -1,2 +1,3 @@
-SHA256 (duktape-1.4.1.tar.xz) = a4f25f83fdfa9778847abe0628ffed1dc88d2cd2dfcfe0a425048b36449c5089
-SIZE (duktape-1.4.1.tar.xz) = 698848
+TIMESTAMP = 1463550145
+SHA256 (duktape-1.5.0.tar.xz) = 7ed8838eb33b8a11433241c990bf9aa9803b7f4a1618eaf8fdb4c3a884e93ec0
+SIZE (duktape-1.5.0.tar.xz) = 708528
