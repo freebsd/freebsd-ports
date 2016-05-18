@@ -1,5 +1,5 @@
---- dist/tcsd.conf.in.orig	2010-01-29 01:27:50.000000000 +0900
-+++ dist/tcsd.conf.in	2010-10-25 00:06:25.565556476 +0900
+--- dist/tcsd.conf.in.orig	2014-04-24 18:05:43 UTC
++++ dist/tcsd.conf.in
 @@ -35,7 +35,7 @@
  #  log data. The interface to this log is usually provided by the TPM
  #  device driver.

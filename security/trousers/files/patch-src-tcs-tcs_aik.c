@@ -1,6 +1,6 @@
---- src/tcs/tcs_aik.c.orig	2010-06-10 05:20:44.000000000 +0900
-+++ src/tcs/tcs_aik.c	2010-10-24 21:04:04.834556754 +0900
-@@ -66,7 +66,7 @@
+--- src/tcs/tcs_aik.c.orig	2014-04-24 18:05:44 UTC
++++ src/tcs/tcs_aik.c
+@@ -66,7 +66,7 @@ UnloadBlob_SYMMETRIC_KEY(UINT64 *offset,
  	UnloadBlob_UINT16(offset, &key->size, blob);
  
  	if (key->size > 0) {
