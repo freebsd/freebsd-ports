@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.12.1
+PORTVERSION=	4.12.2
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -51,18 +51,19 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
 
+NO_ARCH=	yes
+
 USES=		ncurses:port
 USE_RUBY=	yes
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
-		/rb-readline-r7/d' ${WRKSRC}/metasploit-framework.gemspec
+		/rb-readline-r7/d ; /tzinfo-data/d' \
+		${WRKSRC}/metasploit-framework.gemspec
 
 do-build:
 	${RM} ${WRKSRC}/Gemfile.lock
-	${MKDIR} ${WRKSRC}/log
-	${TOUCH} ${WRKSRC}/Gemfile.lock ${WRKSRC}/log/production.log
-	${CHMOD} 666 ${WRKSRC}/Gemfile.lock ${WRKSRC}/log/production.log
+	${TOUCH} ${WRKSRC}/Gemfile.lock
 	${REINPLACE_CMD} '/^group :coverage/,/^end/d ; /^group :development/,/^end/d ; /^group :test/,/^end/d' \
 		${WRKSRC}/Gemfile
 
@@ -79,7 +80,7 @@ post-install:
 	@${ECHO} "bin/${f}" >> ${TMPPLIST}
 .endfor
 	@${FIND} ${STAGEDIR}${DATADIR} ! -type d | \
-		${SED} 's,${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+		${SED} 's,${STAGEDIR}${PREFIX}/,, ; /Gemfile.lock/s|^|@(,,0666) |' >> ${TMPPLIST}
 	@${FIND} -ds ${STAGEDIR}${DATADIR} -type d -empty | \
 		${SED} 's,${STAGEDIR}${PREFIX}/,, ; s,^,@dir ,' >> ${TMPPLIST}
 
