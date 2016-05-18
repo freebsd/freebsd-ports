@@ -1,12 +1,21 @@
---- src/tcs/Makefile.am.orig	2014-04-24 18:05:44 UTC
-+++ src/tcs/Makefile.am
+--- src/tcs/Makefile.am.orig	2014-04-25 03:05:44.000000000 +0900
++++ src/tcs/Makefile.am	2016-05-19 03:02:33.269090000 +0900
 @@ -1,4 +1,4 @@
 -noinst_LIBRARIES=libtcs.a
 +noinst_LIBRARIES=libtcs.a libtcs_emu.a
  
  CFLAGS+=-I${top_srcdir}/src/include
  libtcs_a_LIBADD=${top_builddir}/src/tddl/libtddl.a
-@@ -140,3 +140,143 @@ if TSS_BUILD_CMK
+@@ -91,7 +91,7 @@
+ if TSS_BUILD_KEY
+ libtcs_a_SOURCES+=tcsi_key.c tcs_key.c tcs_key_mem_cache.c tcs_context_key.c rpc/@RPC@/rpc_key.c \
+ 		  crypto/@CRYPTO_PACKAGE@/crypto.c
+-libtcs_a_CFLAGS+=-DTSS_BUILD_KEY
++libtcs_a_CFLAGS+=-DTSS_BUILD_KEY -I@OPENSSL_INCLUDE_DIR@
+ endif
+ if TSS_BUILD_MAINT
+ libtcs_a_SOURCES+=tcsi_maint.c rpc/@RPC@/rpc_maint.c
+@@ -140,3 +140,143 @@
  libtcs_a_SOURCES+=tcsi_cmk.c rpc/@RPC@/rpc_cmk.c
  libtcs_a_CFLAGS+=-DTSS_BUILD_CMK
  endif
@@ -101,7 +110,7 @@
 +if TSS_BUILD_KEY
 +libtcs_emu_a_SOURCES+=tcsi_key.c tcs_key.c tcs_key_mem_cache.c tcs_context_key.c rpc/@RPC@/rpc_key.c \
 +		  crypto/@CRYPTO_PACKAGE@/crypto.c
-+libtcs_emu_a_CFLAGS+=-DTSS_BUILD_KEY
++libtcs_emu_a_CFLAGS+=-DTSS_BUILD_KEY -I@OPENSSL_INCLUDE_DIR@
 +endif
 +if TSS_BUILD_MAINT
 +libtcs_emu_a_SOURCES+=tcsi_maint.c rpc/@RPC@/rpc_maint.c
