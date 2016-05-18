@@ -1,4 +1,4 @@
---- Makefile.orig	2015-01-11 16:17:07 UTC
+--- Makefile.orig	2016-05-15 09:06:19 UTC
 +++ Makefile
 @@ -17,7 +17,7 @@ USE_BPGVIEW=y
  # Enable for compilation on MacOS X
@@ -38,8 +38,8 @@
  endif
  
  # Emscriptem config
-@@ -53,14 +54,17 @@ EMLDFLAGS+=-s NO_FILESYSTEM=1 -s NO_BROW
- EMLDFLAGS+=-O3 --memory-init-file 0 --closure 1 --post-js post.js
+@@ -54,14 +55,17 @@ EMLDFLAGS+=-s NO_FILESYSTEM=1 -s NO_BROW
+ EMLDFLAGS+=-O3 --memory-init-file 0 --closure 0 --pre-js pre.js --post-js post.js
  EMCFLAGS:=$(CFLAGS)
  
 -LDFLAGS=-g
@@ -61,7 +61,7 @@
  
  PROGS=bpgdec$(EXE) bpgenc$(EXE)
  ifdef USE_BPGVIEW
-@@ -70,7 +74,7 @@ ifdef USE_EMCC
+@@ -71,7 +75,7 @@ ifdef USE_EMCC
  PROGS+=bpgdec.js bpgdec8.js bpgdec8a.js
  endif
  
@@ -70,7 +70,44 @@
  
  LIBBPG_OBJS:=$(addprefix libavcodec/, \
  hevc_cabac.o  hevc_filter.o  hevc.o         hevcpred.o  hevc_refs.o\
-@@ -158,6 +162,9 @@ bpgenc.o: CFLAGS+=-Wno-unused-but-set-va
+@@ -99,35 +103,12 @@ BPGENC_LIBS:=
+ 
+ ifdef USE_X265
+ 
+-X265_LIBS:=./x265.out/8bit/libx265.a ./x265.out/10bit/libx265.a ./x265.out/12bit/libx265.a
+ BPGENC_OBJS+=x265_glue.o $(X265_LIBS)
++BPGENC_LIBS+=$(X265_LIBS)
+ 
+ bpgenc.o: CFLAGS+=-DUSE_X265
+-x265_glue.o: CFLAGS+=-I./x265/source -I./x265.out/8bit
+-x265_glue.o: $(X265_LIBS)
+-
+-ifdef CONFIG_WIN32
+-CMAKE_OPTS:=-DCMAKE_TOOLCHAIN_FILE=../../x265/build/msys/toolchain-x86_64-w64-mingw32.cmake
+-else
+-CMAKE_OPTS:=
+-endif
+-
+-x265.out:
+-	mkdir -p x265.out/8bit x265.out/10bit x265.out/12bit
+-	cd x265.out/12bit && cmake ../../x265/source $(CMAKE_OPTS) -DHIGH_BIT_DEPTH=ON -DEXPORT_C_API=OFF -DENABLE_SHARED=OFF -DENABLE_CLI=OFF -DMAIN12=ON
+-	cd x265.out/10bit && cmake ../../x265/source $(CMAKE_OPTS) -DHIGH_BIT_DEPTH=ON -DEXPORT_C_API=OFF -DENABLE_SHARED=OFF -DENABLE_CLI=OFF -DMAIN10=ON
+-	cd x265.out/8bit && cmake ../../x265/source $(CMAKE_OPTS) -DLINKED_10BIT=ON -DLINKED_12BIT=ON -DENABLE_SHARED=OFF -DENABLE_CLI=OFF
+-
+-# use this target to manually rebuild x265
+-x265_make: | x265.out
+-	$(MAKE) -C x265.out/12bit
+-	$(MAKE) -C x265.out/10bit
+-	$(MAKE) -C x265.out/8bit
+ 
+ x265_clean:
+-	rm -rf x265.out
+-
+-$(X265_LIBS): x265_make
+ 
+ else
+ 
+@@ -190,6 +171,9 @@ bpgenc.o: CFLAGS+=-Wno-unused-but-set-va
  libbpg.a: $(LIBBPG_OBJS) 
  	$(AR) rcs $@ $^
  
