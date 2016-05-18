@@ -1,0 +1,11 @@
+--- src/data_mgmt/Makefile.in.orig	2012-05-17 19:09:27 UTC
++++ src/data_mgmt/Makefile.in
+@@ -274,7 +274,7 @@ noinst_HEADERS = data_common.h \
+ #
+ # Common build flags
+ AM_CPPFLAGS = -I$(top_srcdir)/include -D_LINUX
+-LDADD = $(top_builddir)/lib/libtpm_pkcs11.la -ltspi -ldl
++LDADD = $(top_builddir)/lib/libtpm_pkcs11.la -ltspi
+ 
+ #
+ # TPM Token initialization command

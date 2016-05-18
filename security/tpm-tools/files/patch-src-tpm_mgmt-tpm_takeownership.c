@@ -1,6 +1,6 @@
---- src/tpm_mgmt/tpm_takeownership.c.orig	2013-07-24 22:02:59.000000000 +0900
-+++ src/tpm_mgmt/tpm_takeownership.c	2013-07-24 22:03:53.000000000 +0900
-@@ -77,6 +77,7 @@
+--- src/tpm_mgmt/tpm_takeownership.c.orig	2010-09-30 17:28:09 UTC
++++ src/tpm_mgmt/tpm_takeownership.c
+@@ -77,6 +77,7 @@ int main(int argc, char **argv)
  	{"srk-well-known", no_argument, NULL, 'z'},
  	};
  
