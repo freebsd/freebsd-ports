@@ -10,11 +10,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to GraphViz agraph
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcgraph.so:graphics/graphviz
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.1:devel/py-nose
+TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.1:devel/py-nose
 
-USES=		pkgconfig python
+USES?=		pkgconfig python
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_BUILD_TARGET=	build build_ext
