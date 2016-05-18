@@ -107,6 +107,7 @@ include/node/openssl/whrlpool.h
 include/node/openssl/x509.h
 include/node/openssl/x509_vfy.h
 include/node/openssl/x509v3.h
+include/node/pthread-barrier.h
 include/node/pthread-fixes.h
 include/node/stdint-msvc2008.h
 include/node/tree.h
