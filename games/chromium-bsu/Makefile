@@ -15,10 +15,8 @@ LIB_DEPENDS=	libglpng.so:graphics/glpng \
 		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		localbase pkgconfig
 USE_GL=		gl glu
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-glc
 INSTALLS_ICONS=	yes
 
