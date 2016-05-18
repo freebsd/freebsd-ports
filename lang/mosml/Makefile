@@ -22,6 +22,7 @@ RESTRICTED=	Restrictions on for-profit distribution
 USES=		compiler:features gmake perl5
 ALL_TARGET=	world
 MAKE_ARGS=	ADDRUNLIBS= \
+		CC="${CC}" \
 		CPP="${CPP} -P -traditional -Dunix -Umsdos" \
 		DOCSDIR="${DOCSDIR}" \
 		DYNLD="${CC} -shared" \
@@ -36,7 +37,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e '/^CC=/s/^/#/' ${WRKSRC}/Makefile.inc
 	${REINPLACE_CMD} 's/make /$$(MAKE) /' ${WRKSRC}/doc/Makefile \
 		${WRKSRC}/doc/helpsigs/Makefile
 
