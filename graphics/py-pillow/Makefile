@@ -41,8 +41,8 @@ TIFF_VARS=		PYDISTUTILS_BUILDARGS+=--enable-tiff
 TIFF_VARS_OFF=		PYDISTUTILS_BUILDARGS+=--disable-tiff
 
 TKINTER_USES=		tk
-TKINTER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
-TKINTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+TKINTER_BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+TKINTER_RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 TKINTER_VARS=		PYDISTUTILS_BUILDARGS+="--enable-tcl --enable-tk --include-dirs=${TCL_INCLUDEDIR}:${TK_INCLUDEDIR}"
 TKINTER_VARS_OFF=	PYDISTUTILS_BUILDARGS+="--disable-tcl --disable-tk"
 
@@ -50,9 +50,8 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_VARS=		PYDISTUTILS_BUILDARGS+=--enable-webp
 WEBP_VARS_OFF=		PYDISTUTILS_BUILDARGS+=--disable-webp
 
-USES=		cpe python
+USES?=		cpe python
 USE_GITHUB=	yes
-USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	python-${PORTNAME}
