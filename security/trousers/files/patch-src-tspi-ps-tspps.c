@@ -1,5 +1,5 @@
---- src/tspi/ps/tspps.c.orig	2012-09-20 02:24:48.000000000 +0900
-+++ src/tspi/ps/tspps.c	2013-07-27 04:03:25.000000000 +0900
+--- src/tspi/ps/tspps.c.orig	2014-04-24 18:05:44 UTC
++++ src/tspi/ps/tspps.c
 @@ -29,6 +29,11 @@
  #define LE_16 htole16
  #define LE_32 htole32
@@ -26,7 +26,7 @@
  static MUTEX_DECLARE_INIT(user_ps_path);
  #endif
  static struct flock fl;
-@@ -60,9 +69,7 @@
+@@ -60,9 +69,7 @@ get_user_ps_path(char **file)
  	TSS_RESULT result;
  	char *file_name = NULL, *home_dir = NULL;
  	struct passwd *pwp;
@@ -36,7 +36,7 @@
  	struct stat stat_buf;
  	char buf[PASSWD_BUFSIZE];
  	uid_t euid;
-@@ -72,10 +79,6 @@
+@@ -72,10 +79,6 @@ get_user_ps_path(char **file)
  		*file = strdup(file_name);
  		return (*file) ? TSS_SUCCESS : TSPERR(TSS_E_OUTOFMEMORY);
  	}
@@ -47,7 +47,7 @@
  	euid = geteuid();
  
  #if defined (SOLARIS)
-@@ -88,32 +91,14 @@
+@@ -88,32 +91,14 @@ get_user_ps_path(char **file)
           */
          rc = snprintf(buf, sizeof (buf), "%s/%d", TSS_USER_PS_DIR, euid);
  #else

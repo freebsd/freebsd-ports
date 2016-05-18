@@ -1,6 +1,6 @@
---- tddl/CMakeLists.txt.orig	2011-12-21 03:30:06.000000000 +0900
-+++ tddl/CMakeLists.txt	2012-10-10 01:01:00.000000000 +0900
-@@ -7,13 +7,13 @@
+--- tddl/CMakeLists.txt.orig	2011-12-20 18:30:06 UTC
++++ tddl/CMakeLists.txt
+@@ -7,16 +7,16 @@ set(tddl_SRCS "tddl.c" "tddl.h")
  add_library(tddl SHARED ${tddl_SRCS})
  add_library(tddl_static STATIC ${tddl_SRCS})
  if(UNIX)
@@ -14,5 +14,10 @@
 -endif()
 +endif(UNIX)
  
- install(TARGETS tddl DESTINATION lib)
- install(TARGETS tddl_static DESTINATION lib)
+-install(TARGETS tddl DESTINATION lib)
+-install(TARGETS tddl_static DESTINATION lib)
++install(TARGETS tddl DESTINATION lib/tddl_emu)
++install(TARGETS tddl_static DESTINATION lib/tddl_emu)
+ install(FILES "tddl.h" DESTINATION include)
+ 
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
