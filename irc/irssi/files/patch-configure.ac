@@ -1,23 +1,6 @@
---- configure.orig	2016-03-23 07:25:26.000000000 +0800
-+++ configure	2016-05-18 14:02:01.998133000 +0800
-@@ -652,6 +652,7 @@ BUILD_TEXTUI_FALSE
- BUILD_TEXTUI_TRUE
- PERL_STATIC_LIBS
- PERL_MM_PARAMS
-+PERL_MM_OPT
- PERL_USE_LIB
- PERL_CFLAGS
- PERL_LDFLAGS
-@@ -1502,7 +1503,7 @@ Optional Packages:
-   --with-modules          Specify what modules to build in binary
-   --with-perl-staticlib   Specify that we want to link perl libraries
-                           statically in irssi, default is no
--  --with-perl-lib=site|vendor|DIR  Specify where to install the
-+  --with-perl-lib=perl|site|vendor|DIR  Specify where to install the
-                           Perl libraries for irssi, default is site
-   --with-perl=yes|no|module  Build with Perl support - also specifies
-                           if it should be built into main irssi binary
-@@ -12715,7 +12716,6 @@ fi
+--- configure.ac.orig	2016-05-18 13:02:28.110076000 +0800
++++ configure.ac	2016-05-18 13:58:07.680765000 +0800
+@@ -79,7 +79,6 @@ AC_ARG_WITH(modules,
  if test "x$prefix" != "xNONE"; then
  	prefix=`eval echo $prefix`
  	PERL_MM_PARAMS="INSTALLDIRS=perl INSTALL_BASE=$prefix"
@@ -25,7 +8,14 @@
  	perl_set_use_lib=yes
  
  	perl_prefix_note=yes
-@@ -12742,24 +12742,29 @@ if test "${with_perl_lib+set}" = set; th
+@@ -97,30 +96,35 @@ AC_ARG_WITH(perl-staticlib,
+ 
+ 
+ AC_ARG_WITH(perl-lib,
+-[  --with-perl-lib=[site|vendor|DIR]  Specify where to install the
++[  --with-perl-lib=[perl|site|vendor|DIR]  Specify where to install the
+                           Perl libraries for irssi, default is site],
+ 	if test "x$withval" = xyes; then
  		want_perl=yes
  	elif test "x$withval" = xno; then
  		want_perl=no
@@ -56,40 +46,23 @@
  		PERL_MM_PARAMS="INSTALLDIRS=perl LIB=$withval"
 -		perl_library_dir="PERL_USE_LIB"
  		perl_set_use_lib=yes
- 	fi
- else
-@@ -13849,12 +13854,12 @@ if test "${with_ncurses+set}" = set; the
- 
-     if $search_ncurses
-     then
--        if test -f $withval/include/ncurses.h
-+        if test -f $withval/include/ncurses/ncurses.h
- 	then
--	    { $as_echo "$as_me:${as_lineno-$LINENO}: result: Found ncurses on $withval/include/ncurses.h" >&5
--$as_echo "Found ncurses on $withval/include/ncurses.h" >&6; }
-+	    { $as_echo "$as_me:${as_lineno-$LINENO}: result: Found ncurses on $withval/include/ncurses/ncurses.h" >&5
-+$as_echo "Found ncurses on $withval/include/ncurses/ncurses.h" >&6; }
- 
--	    CURSES_LIBS="-L$withval/lib -lncurses"
-+	    CURSES_LIBS="-L$withval/lib -lncurses -ltinfo"
- 	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for initscr in -lncurses" >&5
- $as_echo_n "checking for initscr in -lncurses... " >&6; }
- if ${ac_cv_lib_ncurses_initscr+:} false; then :
-@@ -14921,7 +14926,7 @@ $as_echo_n "checking for working Perl su
- 	fi
- 
- 	if test "x$ac_cv_c_compiler_gnu" = "xyes" -a -z "`echo $host_os|grep 'bsd\|linux'`"; then
--														PERL_CFLAGS=`echo $PERL_CFLAGS | $perlpath -pe 's/^(.* )?-^DUIfm^ +/\1/g; s/^(.* )?\+^ +/\1/g'`
-+														PERL_CFLAGS=`echo $PERL_CFLAGS | $perlpath -pe 's/^(.* )?-[^DUIfm][^ ]+/\1/g; s/^(.* )?\+[^ ]+/\1/g'`
+ 	fi,
+ 	want_perl=yes)
+@@ -380,7 +384,7 @@ if test "$want_perl" != "no"; then
+ 		dnl * complain about them. Normally there's only few options
+ 		dnl * that we want to keep:
+ 		dnl * -Ddefine -Uundef -I/path -fopt -mopt
+-		PERL_CFLAGS=`echo $PERL_CFLAGS | $perlpath -pe 's/^(.* )?-[^DUIfm][^ ]+/\1/g; s/^(.* )?\+[^ ]+/\1/g'`
++		PERL_CFLAGS=`echo $PERL_CFLAGS | $perlpath -pe 's/^(.* )?-@<:@^DUIfm@:>@@<:@^ @:>@+/\1/g; s/^(.* )?\+@<:@^ @:>@+/\1/g'`
  
  		PERL_EXTRA_OPTS="CCCDLFLAGS=\"-fPIC\""
- 
-@@ -15000,13 +15005,37 @@ $as_echo "ok" >&6; }
+ 		AC_SUBST(PERL_EXTRA_OPTS)
+@@ -464,13 +468,37 @@ if test "$want_perl" != "no"; then
  			PERL_STATIC_LIBS=0
  		fi
  
 +		# remove any prefix from PERL_MM_OPT
-+		PERL_MM_OPT=`perl -MText::ParseWords -e 'sub qu{$_=shift;s{^(.*?)=(.*)$}{($a,$b)=($1,$2);$b=~s/"/\\\\"/g;qq{$a="$b"}}ge if /[\s"]/;$_} local $,=" "; print map qu($_), grep !/^(INSTALL_BASE|PREFIX)=/, shellwords(@ARGV)' "$PERL_MM_OPT"`
++		PERL_MM_OPT=`perl -MText::ParseWords -e 'sub qu{$_=shift;s{^(.*?)=(.*)$}{($a,$b)=($1,$2);$b=~s/"/\\\\"/g;qq{$a="$b"}}ge if /@<:@\s"@:>@/;$_} local $,=" "; print map qu($_), grep !/^(INSTALL_BASE|PREFIX)=/, shellwords(@ARGV)' "$PERL_MM_OPT"`
 +		$perlpath -MExtUtils::MakeMaker -e 'WriteMakefile(NAME => "test", MAKEFILE => "Makefile.test", FIRST_MAKEFILE => "/dev/null", NO_META => 1, NO_MYMETA => 1);' $PERL_MM_PARAMS >/dev/null
 +		echo 'show-INSTALLDIRS:' >> Makefile.test
 +		echo '	@echo $(INSTALLDIRS)' >> Makefile.test
@@ -115,7 +88,7 @@
 -			perl -e 'use ExtUtils::MakeMaker; WriteMakefile("NAME" => "test", "MAKEFILE" => "Makefile.test");' $PERL_MM_PARAMS >/dev/null
 -			PERL_USE_LIB=`perl -e 'open(F, "Makefile.test"); while (<F>) { chomp; if (/^(\w+) = (.*$)/) { $keys{$1} = $2; } }; $key = $keys{INSTALLARCHLIB}; while ($key =~ /\\$\((\w+)\)/) { $value = $keys{$1}; $key =~ s/\\$\($1\)/$value/; }; print $key;'`
 -			rm -f Makefile.test
-+			if $perlpath -e 'exit ! grep $_ eq $ARGV[0], grep /^\//, @INC' "$perl_use_lib"; then
++			if $perlpath -e 'exit ! grep $_ eq $ARGV@<:@0@:>@, grep /^\//, @INC' "$perl_use_lib"; then
 +				perl_library_dir="other path in @INC"
 +				perl_set_use_lib=no
 +			else
@@ -124,24 +97,16 @@
 +			fi
  		fi
  
+ 		AC_SUBST(perl_module_lib)
+@@ -486,6 +514,7 @@ if test "$want_perl" != "no"; then
+ 		AC_SUBST(PERL_CFLAGS)
  
-@@ -15024,6 +15053,7 @@ $as_echo "ok" >&6; }
- 
- 
- 
-+
+ 		AC_SUBST(PERL_USE_LIB)
++		AC_SUBST(PERL_MM_OPT)
+ 		AC_SUBST(PERL_MM_PARAMS)
+ 		AC_SUBST(PERL_STATIC_LIBS)
  	fi
- fi
- 
-@@ -17024,6 +17054,7 @@ $as_echo X"$file" |
-     cat <<_LT_EOF >> "$cfgfile"
- #! $SHELL
- # Generated automatically by $as_me ($PACKAGE) $VERSION
-+# Libtool was configured on host `(hostname || uname -n) 2>/dev/null | sed 1q`:
- # NOTE: Changes made to this file will be lost: look at ltmain.sh.
- 
- # Provide generalized library-building support services.
-@@ -17657,13 +17688,7 @@ if test "x$want_perl" != "xno" -a "x$per
+@@ -724,13 +753,7 @@ if test "x$want_perl" != "xno" -a "x$per
  fi
  
  if test "x$want_perl" != "xno"; then
