@@ -1,3 +1,4 @@
+@sample etc/opencryptoki/opencryptoki.conf.sample
 include/opencryptoki/apiclient.h
 include/opencryptoki/pkcs11.h
 include/opencryptoki/pkcs11types.h
@@ -7,10 +8,10 @@ lib/opencryptoki/libopencryptoki.so.0
 lib/opencryptoki/libopencryptoki.so.0.0.0
 lib/opencryptoki/methods
 lib/opencryptoki/stdll/PKCS11_SW.so
+lib/opencryptoki/stdll/PKCS11_TPM.so
 lib/opencryptoki/stdll/libpkcs11_sw.so
 lib/opencryptoki/stdll/libpkcs11_sw.so.0
 lib/opencryptoki/stdll/libpkcs11_sw.so.0.0.0
-lib/opencryptoki/stdll/PKCS11_TPM.so
 lib/opencryptoki/stdll/libpkcs11_tpm.so
 lib/opencryptoki/stdll/libpkcs11_tpm.so.0
 lib/opencryptoki/stdll/libpkcs11_tpm.so.0.0.0
@@ -18,16 +19,18 @@ lib/pkcs11/PKCS11_API.so
 lib/pkcs11/libopencryptoki.so
 lib/pkcs11/methods
 lib/pkcs11/stdll
-sbin/pkcs11_startup
-sbin/pkcs_slot
-sbin/pkcsconf
-sbin/pkcsslotd
-man/man1/pkcs11_startup.1.gz
+man/man1/pkcscca.1.gz
 man/man1/pkcsconf.1.gz
-man/man5/pk_config_data.5.gz
+man/man1/pkcsep11_migrate.1.gz
+man/man1/pkcsicsf.1.gz
+man/man5/opencryptoki.conf.5.gz
 man/man7/opencryptoki.7.gz
 man/man8/pkcsslotd.8.gz
-@dir(_pkcs11,_pkcs11,700) /var/lib/opencryptoki/swtok
-@dir(_pkcs11,_pkcs11,700) /var/lib/opencryptoki/tpm
-@dir(_pkcs11,_pkcs11,700) /var/lib/opencryptoki
+sbin/pkcsconf
+sbin/pkcsslotd
+@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/swtok/TOK_OBJ
+@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/swtok
+@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/tpm
+@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki
 @dir /var/lib
+@dir /var/log/opencryptoki

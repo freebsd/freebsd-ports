@@ -1,17 +1,20 @@
---- usr/sbin/pkcsslotd/mutex.c.orig	2010-07-29 21:28:41.000000000 +0900
-+++ usr/sbin/pkcsslotd/mutex.c	2010-12-19 12:13:34.837579374 +0900
-@@ -293,6 +293,26 @@
- 
- #include "pkcsslotd.h"
+--- usr/sbin/pkcsslotd/mutex.c.orig	2016-04-29 17:26:46 UTC
++++ usr/sbin/pkcsslotd/mutex.c
+@@ -281,10 +281,28 @@
+              legal action under this Agreement more than one year after
+              the cause of action arose. Each party waives its rights to
+              a jury trial in any resulting litigation. 
++*/
  
 +#include <fcntl.h>
-+
+ 
 +#ifdef __sun
 +#define	LOCK_EX	F_LOCK
 +#define	LOCK_UN	F_ULOCK
 +#define	flock(fd, func)	lockf(fd, func, 0)
 +#endif
-+
+ 
+-*/
 +#ifndef	LOCK_SH
 +#define	LOCK_SH	1	/* shared lock */
 +#endif
@@ -25,28 +28,14 @@
 +#define	LOCK_UN	8	/* unlock */
 +#endif
  
- #if SYSVSEM
- #error "Caveat Emptor... this does not work"
-@@ -315,7 +335,7 @@
- #include <sys/types.h>
- #include <sys/stat.h>
- #include <fcntl.h>
--#include <sys/file.h>
-+#include <grp.h>
- static int xplfd=-1;
- #endif
+ /* (C) COPYRIGHT International Business Machines Corp. 2001          */
  
-@@ -349,6 +369,13 @@
- #elif (SPINXPL)
-   
-  xplfd = open (XPL_FILE,O_CREAT|O_RDWR,S_IRWXU|S_IRWXG|S_IRWXO);
-+ {
-+	struct group *grp;
-+	fchmod(xplfd,S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH);
-+	grp = getgrnam(PKCS11GROUP);
-+	if (grp)
-+		fchown(xplfd,getuid(),grp->gr_gid);
-+ }
+@@ -323,7 +341,7 @@ CreateXProcLock(void)
+ 					goto error;
+ 				}
  
- #elif (SYSVSEM)
- #error "Caveat Emptor... this does not work"
+-				grp = getgrnam("pkcs11");
++				grp = getgrnam(PKCS11GROUP);
+ 				if (grp != NULL) {
+ 					if (fchown(xplfd,-1,grp->gr_gid) == -1) {
+ 						DbgLog(DL0,"%s:fchown(%s):%s\n",
