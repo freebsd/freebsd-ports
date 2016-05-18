@@ -1,11 +1,11 @@
---- src/cmds/Makefile.in.orig	2010-02-02 05:59:31.000000000 +0900
-+++ src/cmds/Makefile.in	2010-10-25 01:55:31.069555531 +0900
-@@ -242,7 +242,7 @@
+--- src/cmds/Makefile.in.orig	2012-05-17 19:09:27 UTC
++++ src/cmds/Makefile.in
+@@ -245,7 +245,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  @TSS_LIB_IS_12_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/include -D_LINUX
  @TSS_LIB_IS_12_TRUE@AM_CPPFLAGS = -I$(top_srcdir)/include -D_LINUX -DTSS_LIB_IS_12
--LDADD = $(top_builddir)/lib/libtpm_tspi.la -ltspi $(top_builddir)/lib/libtpm_unseal.la -ltpm_unseal
-+LDADD = $(top_builddir)/lib/libtpm_tspi.la -ltspi $(top_builddir)/lib/libtpm_unseal.la
+-LDADD = $(top_builddir)/lib/libtpm_tspi.la -ltspi $(top_builddir)/lib/libtpm_unseal.la -ltpm_unseal -lcrypto
++LDADD = $(top_builddir)/lib/libtpm_tspi.la -ltspi $(top_builddir)/lib/libtpm_unseal.la -lcrypto
  tpm_sealdata_SOURCES = tpm_sealdata.c
  tpm_unsealdata_SOURCES = tpm_unsealdata.c
  all: all-am
