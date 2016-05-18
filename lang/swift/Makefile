@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	swift
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	lang
 
 MAINTAINER=	swills@FreeBSD.org
@@ -24,8 +24,8 @@ GH_ACCOUNT=	apple:DEFAULT,llvm,clang,lldb,cmark,llbuild,swiftpm,xctest,xcfound
 GH_PROJECT=	swift:DEFAULT swift-llvm:llvm swift-clang:clang swift-lldb:lldb \
 		swift-cmark:cmark swift-llbuild:llbuild swift-package-manager:swiftpm \
 		swift-corelibs-xctest:xctest swift-corelibs-foundation:xcfound
-GH_TAGNAME=	swift-2.2-RELEASE:DEFAULT,llvm,clang,lldb,cmark \
-		swift-DEVELOPMENT-SNAPSHOT-2016-03-16-a:llbuild,swiftpm,xctest,xcfound
+GH_TAGNAME=	swift-${PORTVERSION}-RELEASE:DEFAULT,llvm,clang,lldb,cmark \
+		swift-DEVELOPMENT-SNAPSHOT-2016-05-03-a:llbuild,swiftpm,xctest,xcfound
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		iconv libedit ninja perl5 pkgconfig python:3,build sqlite
