@@ -1,5 +1,5 @@
---- src/include/trousers_types.h.orig	2010-05-20 02:45:55.000000000 +0900
-+++ src/include/trousers_types.h	2010-10-24 21:04:04.829561420 +0900
+--- src/include/trousers_types.h.orig	2014-04-24 18:05:44 UTC
++++ src/include/trousers_types.h
 @@ -11,6 +11,14 @@
  #ifndef _TROUSERS_TYPES_H_
  #define _TROUSERS_TYPES_H_
@@ -15,7 +15,7 @@
  #define TCPA_NONCE_SIZE		sizeof(TCPA_NONCE)
  #define TCPA_DIGEST_SIZE	sizeof(TCPA_DIGEST)
  #define TCPA_ENCAUTH_SIZE	sizeof(TCPA_ENCAUTH)
-@@ -100,7 +108,7 @@
+@@ -100,7 +108,7 @@ typedef struct tdTSS_KEY11_HDR {
  typedef struct tdTSS_KEY12_HDR {
  	TPM_STRUCTURE_TAG tag;
  	UINT16 fill;
@@ -24,7 +24,7 @@
  
  typedef struct tdTSS_KEY {
  	union {
-@@ -118,11 +126,10 @@
+@@ -118,11 +126,10 @@ typedef struct tdTSS_KEY {
  	BYTE *encData;
  } TSS_KEY;
  

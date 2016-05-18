@@ -1,6 +1,6 @@
---- src/include/biosem.h.orig	2010-03-12 05:22:36.000000000 +0900
-+++ src/include/biosem.h	2010-10-24 21:04:04.820558727 +0900
-@@ -26,7 +26,7 @@
+--- src/include/biosem.h.orig	2014-04-24 18:05:44 UTC
++++ src/include/biosem.h
+@@ -26,7 +26,7 @@ typedef struct {
  	UINT32 eventType;
  	BYTE   digest[20];
  	UINT32 eventDataSize;
