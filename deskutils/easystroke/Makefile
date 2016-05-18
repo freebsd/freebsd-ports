@@ -5,12 +5,13 @@ PORTNAME=	easystroke
 PORTVERSION=	0.6.0
 PORTREVISION=	3
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	t@tobik.me
 COMMENT=	Easystroke is a gesture-recognition application for X11
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${LOCALBASE}/include/xorg/xserver-properties.h:x11-servers/xorg-server
@@ -23,22 +24,17 @@ USES=		gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-BUILD_DEPENDS+=	intltool-merge:textproc/intltool
-PLIST_SUB+=		NLS=""
-ALL_TARGET=		easystroke.desktop all man
-.else
+NLS_BUILD_DEPENDS=	intltool-merge:textproc/intltool
+NLS_ALL_TARGET=		easystroke.desktop all man
 # This builds easystroke without translations
-ALL_TARGET=		man
-PLIST_SUB+=		NLS="@comment "
+NLS_ALL_TARGET_OFF=	man
+
 # Create a .desktop file without translations.
 # It's usually created by intltool-merge during the build.
-pre-build:
+pre-build-NLS-off:
 	@${CP} ${WRKSRC}/${PORTNAME}.desktop.in ${WRKSRC}/${PORTNAME}.desktop
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -46,9 +42,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.svg ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.if ${PORT_OPTIONS:MNLS}
+do-install-NLS-on:
 	(cd ${WRKSRC}/po/ && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/locale/ "-name *.mo")
-.endif
 
 .include <bsd.port.mk>
