@@ -78,7 +78,6 @@
     SUBDIR += chpasswd
     SUBDIR += chromium
     SUBDIR += chromium-npapi
-    SUBDIR += chromium-pulse
     SUBDIR += chtml
     SUBDIR += ckeditor
     SUBDIR += cl-lml
@@ -194,7 +193,6 @@
     SUBDIR += firefox-esr
     SUBDIR += firefox-esr-i18n
     SUBDIR += firefox-i18n
-    SUBDIR += firefox-pulse
     SUBDIR += flat-frog
     SUBDIR += flickcurl
     SUBDIR += flood
