@@ -9,12 +9,16 @@ include/faup/handler.h
 include/faup/modules.h
 include/faup/options.h
 include/faup/output.h
+include/faup/parson.h
 include/faup/portable.h
 include/faup/return-codes.h
 include/faup/scheme-codes.h
+include/faup/snapshot-file.h
+include/faup/snapshot.h
 include/faup/tld-tree.h
 include/faup/tld.h
 include/faup/urllengths.h
+include/faup/utils.h
 include/faup/version.h
 include/faup/webserver.h
 lib/libfaupl.so
