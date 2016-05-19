@@ -1,6 +1,6 @@
 This project is a deamon that emulates Microsoft's Internet Connection
 Service (ICS). It implements the UPnP Internet Gateway Device specification
 (IGD) and allows UPnP aware clients, such as MSN Messenger to work properly
-from behind a NAT firewall. 
+from behind a NAT firewall.
 
 WWW: http://linux-igd.sourceforge.net/

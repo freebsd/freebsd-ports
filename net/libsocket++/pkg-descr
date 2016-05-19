@@ -1,10 +1,10 @@
 Socket++ is a iostream like C++ class library for the UNIX and INET
 domains of sockets and protocols.
 
-Wrappers are also provided for pipe(), socketpair(), popen() and 
+Wrappers are also provided for pipe(), socketpair(), popen() and
 fork().
 
-Included are also "protocol" classes with two examples - echo and 
+Included are also "protocol" classes with two examples - echo and
 smtp (client only).
 
 Socket++ is covered by the GPL.

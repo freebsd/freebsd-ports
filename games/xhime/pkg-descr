@@ -1,6 +1,6 @@
 Xhime displays animation in X window system.
 Xhime changes its animation when the user-defined special key is pressed.
-Special key is pressed. The default special key is Return. 
+Special key is pressed. The default special key is Return.
 See also /usr/X11R6/share/doc/xhime.
 
 WWW: http://www.tcp-ip.or.jp/~shochan/linux/xhime.html

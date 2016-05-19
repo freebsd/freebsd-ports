@@ -1,5 +1,5 @@
 A graph library for dynamic scientific, business, and stock-market charts.
-Written in PHP and supports, PHP3, PHP4, TTF (or no ttf), and GD versions 1.2 - 
+Written in PHP and supports, PHP3, PHP4, TTF (or no ttf), and GD versions 1.2 -
 latest version. Includes Pie, Bar, Line, Area, Point and combination plots.
 
 WWW: http://www.phplot.com

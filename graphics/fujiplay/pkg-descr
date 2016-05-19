@@ -3,8 +3,8 @@ Fujifilm digital cameras, like the DS-7 and MX-700, using the serial link.
 
 * Tries to determine the maximum speed supported by the camera.
 * Detect all parity errors (not tested), improving the robustness of the
-  one-byte xor checksum. 
-* It will not overwrite picture files without your consent. 
+  one-byte xor checksum.
+* It will not overwrite picture files without your consent.
 * Detect disk full errors (not tested).
 * You cannot have a truncated image file.
 * The program can be gracefully interrupted with ^C (or whatever your

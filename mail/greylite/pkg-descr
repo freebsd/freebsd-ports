@@ -1,7 +1,7 @@
 Greylite is a SPAM filter with exceptional effectiveness and without false
 positives. It combines natively with qmail and works as a proxy for any SMTP
 server.
- 
+
 It implements a modified greylisting algorithm that improves the filtering
 effectiveness and minimizes the delay drawbacks associated with the standard
 greylisting algorithm.
@@ -9,6 +9,6 @@ greylisting algorithm.
 It can be tuned to recognize suspicious clients and reject their attempts
 multiple times, reaching filtering rates of over 99% without false positives.
 
-Greylite is easy to setup and maintain, and it is small and fast. 
+Greylite is easy to setup and maintain, and it is small and fast.
 
 WWW: http://mij.oltrelinux.com/net/greylite/

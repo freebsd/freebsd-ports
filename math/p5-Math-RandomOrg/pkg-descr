@@ -1,5 +1,5 @@
-Math::RandomOrg provides functions for retrieving random data from the 
-random.org server. Data may be retrieved in an integer or byte-stream 
+Math::RandomOrg provides functions for retrieving random data from the
+random.org server. Data may be retrieved in an integer or byte-stream
 format using the randnum and randbyte functions respectively.
 
 WWW: http://search.cpan.org/dist/Math-RandomOrg/

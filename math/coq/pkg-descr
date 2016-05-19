@@ -13,7 +13,7 @@ In particular, Coq allows:
 Coq is based on a logical framework called "Calculus of Inductive
 Constructions" extended by a modular development system for
 theories.
-    
+
 Coq is distributed under the GNU Lesser General Public Licence
 Version 2.1 (LGPL).
 

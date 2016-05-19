@@ -10,7 +10,7 @@ Tools for IPv6 multicast routing including:
   - pmsft
          a test program for Multicast Source Filter (MSF) using APIs
 	 specified in Socket Interface Extention for MSF (RFC3678).
-	 (on a non-IGMPv3/MLDv2-aware kernel, only join/leave 
+	 (on a non-IGMPv3/MLDv2-aware kernel, only join/leave
 	 operation is supported)
 
 WWW: http://mcast-tools.sourceforge.net/

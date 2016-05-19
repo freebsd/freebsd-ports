@@ -7,6 +7,6 @@ and supports wildcards in search-requests.
 
 The advantage of gseen in contrast to most other seen scripts is it's speed.
 gseen can handle databases of several thousand nicks without a lag in seen
-requests. It also supports several languages. 
+requests. It also supports several languages.
 
 WWW: http://www.kreativrauschen.de/gseen.mod/

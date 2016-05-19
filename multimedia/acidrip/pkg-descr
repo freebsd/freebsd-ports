@@ -1,8 +1,8 @@
-AcidRip is a Gtk2::Perl  application for ripping and encoding DVD's. 
-It neatly wraps MPlayer and MEncoder, seeing as MPlayer is by far the best 
-bit of video playing kit around for Linux (and FreeBSD). As well as creating 
-a simple Graphical Interface for those scared of getting down and dirty with 
-MEncoders command line interface, It also automates the process in a number of 
+AcidRip is a Gtk2::Perl  application for ripping and encoding DVD's.
+It neatly wraps MPlayer and MEncoder, seeing as MPlayer is by far the best
+bit of video playing kit around for Linux (and FreeBSD). As well as creating
+a simple Graphical Interface for those scared of getting down and dirty with
+MEncoders command line interface, It also automates the process in a number of
 ways:
 
  o Parses DVD into contents tree

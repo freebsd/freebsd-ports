@@ -1,19 +1,19 @@
-Math::Symbolic::Custom::Transformation is an extension to the 
-Math::Symbolic module. You're assumed to be remotely familiar with that 
+Math::Symbolic::Custom::Transformation is an extension to the
+Math::Symbolic module. You're assumed to be remotely familiar with that
 module throughout the documentation.
 
-This package implements transformations of Math::Symbolic trees using 
-Math::Symbolic trees. I'll try to explain what this means in the following 
+This package implements transformations of Math::Symbolic trees using
+Math::Symbolic trees. I'll try to explain what this means in the following
 paragraphs.
 
-Until now, in order to be able to inspect a Math::Symbolic tree, one had 
-to use the low-level Math::Symbolic interface like comparing the top 
-node's term type with a constant (such as T_OPERATOR) and then its 
-operator type with more constants. This has changed with the release of 
+Until now, in order to be able to inspect a Math::Symbolic tree, one had
+to use the low-level Math::Symbolic interface like comparing the top
+node's term type with a constant (such as T_OPERATOR) and then its
+operator type with more constants. This has changed with the release of
 Math::Symbolic::Custom::Pattern.
 
-To modify the tree, you had to use equally low-level or even 
-encapsulation-breaking methods. This is meant to be changed by this 
+To modify the tree, you had to use equally low-level or even
+encapsulation-breaking methods. This is meant to be changed by this
 distribution.
 
 WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-Transformation/

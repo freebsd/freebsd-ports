@@ -1,11 +1,11 @@
 # The Color Transformation Language #
- 
+
 The Color Transformation Language, or CTL, is a programming language for digital
 color management.
- 
+
 Digital color management requires translating digital images between different
 representations or color spaces.  For example, the pixels in an image may encode
-the colors that should be seen when the image is displayed on a video monitor. 
+the colors that should be seen when the image is displayed on a video monitor.
 Printing this image on paper, or recording it on motion picture film requires
 transforming the pixels to an appropriate representation: Video, inks on paper
 and film all have different color gamuts and dynamic ranges.  Color mixing is

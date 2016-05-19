@@ -1,4 +1,4 @@
-This Horde package provides an abstracted API interface to various 
+This Horde package provides an abstracted API interface to various
 IMAP4rev1 (RFC 3501) backend drivers.
 
 WWW: http://pear.horde.org

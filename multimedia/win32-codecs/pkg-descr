@@ -12,7 +12,7 @@ Video:
     Realplayer 9 (includes RV40)
     xanim (includes 3ivX, Indeo3/4/5)
 - Win32 DirectShow filters, decompression-only support:
-    Microsoft MPEG-4 v3 ( this decoder is slower than VfW one, 
+    Microsoft MPEG-4 v3 ( this decoder is slower than VfW one,
       but offers wider range of picture control features )
     Windows Media Video 7
     Indeo Video 5.0

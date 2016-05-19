@@ -1,3 +1,3 @@
-Provide reliable messaging using the stomp protocol. A more powerful free 
-alternative is ActiveMQ; however, that requires deploying a JVM, which may 
+Provide reliable messaging using the stomp protocol. A more powerful free
+alternative is ActiveMQ; however, that requires deploying a JVM, which may
 not always be ideal.

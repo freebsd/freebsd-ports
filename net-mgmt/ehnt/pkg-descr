@@ -1,5 +1,5 @@
 This is a lightweight but well-featured tool for collecting
-NetFlow version 5 packets from Cisco routers. 
+NetFlow version 5 packets from Cisco routers.
 
 The implementation includes a simple UDP-to-TCP converting server,
 which may be used to replicate NetFlow data to multiple clients.
