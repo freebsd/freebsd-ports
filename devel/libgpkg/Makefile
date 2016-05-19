@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SQLite 3 extension of minimal OGC GeoPackage implementation
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	does not build
 
