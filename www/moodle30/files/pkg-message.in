@@ -18,7 +18,7 @@ POST-INSTALL CONFIGURATION FOR MOODLE
    <Directory %%PREFIX%%/%%MOODLEDIR%%>
       AllowOverride None
       Order Allow,Deny
-      Allow from all 
+      Allow from all
    </Directory>
 
    For Apache version 2.4.x or above:

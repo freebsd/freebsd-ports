@@ -16,9 +16,9 @@ auth.info;authpriv.info                         |exec %%PREFIX%%/sbin/sshit
 table <badhosts> persist
 block on $extdev from <badhosts> to any
 
-  and reload the pf rules. 
+  and reload the pf rules.
 
-  If you want to use ipfw2 (with table) as the firewall, you should add a 
+  If you want to use ipfw2 (with table) as the firewall, you should add a
   table and the corresponding deny rule. For example,
 
-# ipfw add deny ip from table(0) to any  
+# ipfw add deny ip from table(0) to any

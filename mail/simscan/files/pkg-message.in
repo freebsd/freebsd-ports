@@ -15,9 +15,9 @@ QMAILQUEUE variable. For example:
 
 * Don't forget to rebuild tcp.smtp.cdb from new tcp.smtp using tcprules!
 
-* Also, read documentation about how to configure 
-attachment blocking and per domain processing. 
-Additional documentation can be found here: 
+* Also, read documentation about how to configure
+attachment blocking and per domain processing.
+Additional documentation can be found here:
 http://qmailwiki.inter7.com/index.php?title=Simscan
 
 =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=

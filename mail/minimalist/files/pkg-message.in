@@ -3,9 +3,9 @@ Minimalist files are in: %%PREFIX%%/share/minimalist
 Minimalist binary is: %%PREFIX%%/bin/minimalist.pl
 Minimalist main config is: %%PREFIX%%/etc/minimalist.conf-sample
 
-To finish the installation: 
+To finish the installation:
 
-Edit the %%PREFIX%%/etc/minimalist.conf-sample and then copy 
+Edit the %%PREFIX%%/etc/minimalist.conf-sample and then copy
 or rename it to %%PREFIX%%/etc/minimalist.conf
 
 Check the %%PREFIX%%/share/minimalist/README file to know how to modify

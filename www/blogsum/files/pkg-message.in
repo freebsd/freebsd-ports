@@ -12,7 +12,7 @@
 
 ################################################################
 NOTE: If you are updating from blogsum 0.9 you should merge the
-relevant changes from %%WWWDIR%%/Blogsum/Config.pm.dist 
+relevant changes from %%WWWDIR%%/Blogsum/Config.pm.dist
 into your current %%WWWDIR%%/Blogsum/Config.pm
 ###############################################################
 

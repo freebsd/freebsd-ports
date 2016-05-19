@@ -1,8 +1,8 @@
 #############################################################################
 To enable hv_kvp, you should do the steps following:
    # Deleting kvp label
-   sed -i "" '/Loader labels for Hyper-V KVP drivers/d' /etc/rc.conf 
-   sed -i "" '/hv_kvp_load/d' /etc/rc.conf 
+   sed -i "" '/Loader labels for Hyper-V KVP drivers/d' /etc/rc.conf
+   sed -i "" '/hv_kvp_load/d' /etc/rc.conf
 
    #hyperv driver names
    echo  '# Loader labels for Hyper-V KVP drivers -do not modify' >> /boot/loader.conf

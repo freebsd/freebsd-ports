@@ -1,10 +1,10 @@
 ===============================================================================
  * The Odyessey2 ROM is included in the source, although the documentation says
    it isn't.
- * The main voice samples are included with this port, but not the sidsamp 
+ * The main voice samples are included with this port, but not the sidsamp
    which are only used by Sid the Spellbinder.  If you need these, put them in
    PREFIX/o2em/voice/.
- * No cartridge ROMS are included.  
+ * No cartridge ROMS are included.
  * o2em has been patched to better fit with FreeBSD:
    - don't assume the CWD contains roms/ bios/ voice/
    - don't restrict the location of ROMS to roms/

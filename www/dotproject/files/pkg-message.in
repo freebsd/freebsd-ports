@@ -8,12 +8,12 @@ It is suggested that you add the following to httpd.conf:
 Then access http://<host>/dotproject and follow the instructions to
 complete the installation.
 
-You may also want to add the following settings to 
+You may also want to add the following settings to
 %%LOCALBASE%%/etc/php.ini as recommended by dotProject:
  session.save_path = "/tmp";  # or wherever you like
  session.use_only_cookies = "0";
  session.auto_start = "1";
 
-Remember to remove %%WWWDIR%%/install after completing the 
+Remember to remove %%WWWDIR%%/install after completing the
 installation.
 

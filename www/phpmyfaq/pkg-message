@@ -2,7 +2,7 @@
   phpMyFAQ has been installed, but is not quite ready to be used yet!
 
   You have to ensure that you have a database server (or ODBC access to a
-  remote database) installed and configured, and you have to ensure that 
+  remote database) installed and configured, and you have to ensure that
   your PHP installation has been compiled with support for your database or
   database access method.
 
@@ -10,7 +10,7 @@
 	http://YOUR_SERVER/phpmyfaq/install/installer.php
 	http://YOUR_SERVER/phpmyfaq/admin/index.php
 
-  Use the username admin and your selected password 
+  Use the username admin and your selected password
   for your first login into the admin section.
 
 ----------------------------------------------------------------------------

@@ -5,5 +5,5 @@ Your sample configuration files have been installed in:
 You must create a directory named .bip in your home directory,
 copy bip.conf there and edit it for your settings.
 
-bip will not start if you don't do this. 
+bip will not start if you don't do this.
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
