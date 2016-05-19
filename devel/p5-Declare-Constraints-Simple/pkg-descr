@@ -1,5 +1,5 @@
-The main purpose of this module is to provide an easy way to build a profile 
-to validate a data structure. It does this by giving you a set of declarative 
+The main purpose of this module is to provide an easy way to build a profile
+to validate a data structure. It does this by giving you a set of declarative
 keywords in the importing namespace.
 
 WWW: http://search.cpan.org/dist/Declare-Constraints-Simple/

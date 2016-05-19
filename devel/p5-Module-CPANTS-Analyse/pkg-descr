@@ -7,6 +7,6 @@ Kwalitee is inexact quality:
 * Documents match code match tests
 * Covered well
 * Pod passes Test::Pod
-* All hyperlinks work 
+* All hyperlinks work
 
 WWW: http://search.cpan.org/dist/Module-CPANTS-Analyse/

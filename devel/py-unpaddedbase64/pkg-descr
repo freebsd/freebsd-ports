@@ -1,6 +1,6 @@
 Encode and decode Base64 without "=" padding.
 
-RFC 4648 specifies that Base64 should be padded to a multiple of 4 bytes using 
+RFC 4648 specifies that Base64 should be padded to a multiple of 4 bytes using
 "=" characters. However this conveys no benefit so many protocols choose to use
 Base64 without the "=" padding.
 

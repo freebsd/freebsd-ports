@@ -2,6 +2,6 @@ xmmsctrl is a small utility to control XMMS from the command line. Its
 goal is to be used coupled with sh to test XMMS state and perform an
 appropriate action, e.g. if playing then pause else play. The interest
 of this is to bind keys in a window manager to have control over XMMS
-with keys that do play/next/pause, prev, control sound... 
+with keys that do play/next/pause, prev, control sound...
 
 WWW: http://user.it.uu.se/~adavid/utils/

@@ -1,10 +1,10 @@
 This is a standalone converter for the OpenOffice.org swriter (*.sxw,*.odt)
-and  scalc (*.sxc) formats. 
+and  scalc (*.sxc) formats.
 It doesn't depend on Open Office or any other external tools or libraries.
 There are three output modules:
     * o3read displays a dump of the parse tree
     * o3totxt creates plain text
-    * o3tohtml creates html code 
+    * o3tohtml creates html code
 Example: unzip -p document.odt content.xml | o3totxt
 
 WWW: http://siag.nu/o3read/

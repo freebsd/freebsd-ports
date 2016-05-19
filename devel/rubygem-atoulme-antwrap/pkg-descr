@@ -1,4 +1,4 @@
-A Ruby module that wraps the Apache Ant build tool. Antwrap can be used to 
+A Ruby module that wraps the Apache Ant build tool. Antwrap can be used to
 invoke Ant Tasks from a Ruby or a JRuby script.
 
 WWW: http://rubygems.org/gems/atoulme-Antwrap

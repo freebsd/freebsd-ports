@@ -1,7 +1,7 @@
 The BioJava Project is an open-source project dedicated to providing Java
 tools for processing biological data. This will include objects for
 manipulating sequences, file parsers, CORBA interoperability, access to
-ACeDB, dynamic programming, and simple statistical routines. 
+ACeDB, dynamic programming, and simple statistical routines.
 
 The BioJava library is useful for automating those daily and mundane
 bioinformatics tasks. As the library matures, the BioJava libraries will

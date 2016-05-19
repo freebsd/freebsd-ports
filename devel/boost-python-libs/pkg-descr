@@ -3,6 +3,6 @@ C++. It allows you to quickly and seamlessly expose C++ classes
 functions and objects to Python, and vice-versa, using no special
 tools -- just your C++ compiler.
 
-The Boost.Pyste code generator resides in a separate port: devel/boost-pyste 
+The Boost.Pyste code generator resides in a separate port: devel/boost-pyste
 
 WWW:  http://www.boost.org/

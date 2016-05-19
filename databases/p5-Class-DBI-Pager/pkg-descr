@@ -1,6 +1,6 @@
 Class::DBI::Pager is a plugin for Class::DBI, which glues Data::Page with
 Class::DBI. This module reduces your work a lot, for example when you have to
-do something like: 
+do something like:
 
 * retrieve objects from a database
 * display objects with 20 items per page

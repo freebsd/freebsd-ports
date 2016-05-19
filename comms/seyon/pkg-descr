@@ -8,7 +8,7 @@ the X Window System. Its features include:
 	  remote hosts.
 	- Unlimited number of slots for external file transfer protocols.
 	- Support for zmodem auto-download.
-	- Translation modes. Seyon can perform useful translations on the 
+	- Translation modes. Seyon can perform useful translations on the
 	  user's input.
 	- Interactive setting of program parameters.
 	- On-line help.

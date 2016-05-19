@@ -1,7 +1,7 @@
-libosmocore is a library with various utility functions that were 
-originally developed as part of the OpenBSC project, but which are 
-of a more generic nature and thus useful to (at least) other programs 
+libosmocore is a library with various utility functions that were
+originally developed as part of the OpenBSC project, but which are
+of a more generic nature and thus useful to (at least) other programs
 that we develop in the sphere of Free Software / Open Source mobile
-communications. 
+communications.
 
 WWW: http://bb.osmocom.org/trac/wiki/libosmocore

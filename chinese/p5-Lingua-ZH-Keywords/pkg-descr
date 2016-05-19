@@ -1,4 +1,4 @@
-This module extracts keywords from Chinese text, 
-which requires Lingua::ZH::TaBE. 
+This module extracts keywords from Chinese text,
+which requires Lingua::ZH::TaBE.
 
 WWW: http://search.cpan.org/dist/Lingua-ZH-Keywords/

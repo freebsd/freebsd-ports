@@ -7,6 +7,6 @@ transformation of C programs.
 CIL is both lower-level than abstract-syntax trees, by clarifying
 ambiguous constructs and removing redundant ones, and also higher-level
 than typical intermediate languages designed for compilation, by
-maintaining types and a close relationship with the source program. 
+maintaining types and a close relationship with the source program.
 
 WWW: http://kerneis.github.com/cil/

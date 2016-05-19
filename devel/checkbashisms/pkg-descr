@@ -1,4 +1,4 @@
 This script performs basic checks for the presence of bashisms in
-/bin/sh scripts and the lack of bashisms in /bin/bash ones. 
+/bin/sh scripts and the lack of bashisms in /bin/bash ones.
 
 WWW: http://packages.qa.debian.org/d/devscripts.html

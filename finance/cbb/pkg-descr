@@ -1,4 +1,4 @@
-CBB is a personal check book balancing utility for Unix/X.  
+CBB is a personal check book balancing utility for Unix/X.
 
 CBB is intended to be an open, extensible program.  It utilizes a
 simple (tab delimited) data file format and is written entirely in

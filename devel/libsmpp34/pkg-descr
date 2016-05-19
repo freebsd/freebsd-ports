@@ -1,5 +1,5 @@
 The main focus of the library is to work in packaging and unpackaging
 of data structures.  While this implementation uses SMPP-3.4, the aim is
-to generate a simple way to implement any proprietary protocol on TCP. 
+to generate a simple way to implement any proprietary protocol on TCP.
 
 WWW: http://c-open-smpp-34.sourceforge.net/

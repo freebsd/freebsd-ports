@@ -1,20 +1,20 @@
 Electric is a sophisticated electrical CAD system that can handle
 many forms of circuit design, including:
 
-   Custom IC layout (ASICs) 
-   Schematic drawing 
-   Hardware description language specifications 
-   Electro-mechanical hybrid layout 
+   Custom IC layout (ASICs)
+   Schematic drawing
+   Hardware description language specifications
+   Electro-mechanical hybrid layout
 
 (snip, this is an edited version of Electric's homepage)
 
-Electric handles these file formats: 
+Electric handles these file formats:
 
-   CIF I/O 
-   GDS I/O 
-   VHDL I/O 
-   DXF I/O 
-   PostScript, HPGL, and QuickDraw output 
+   CIF I/O
+   GDS I/O
+   VHDL I/O
+   DXF I/O
+   PostScript, HPGL, and QuickDraw output
 
 For real functionality, one should consider installing
 support simulation software such as cad/spice.

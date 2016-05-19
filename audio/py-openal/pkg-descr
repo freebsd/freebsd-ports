@@ -1,6 +1,6 @@
 PyOpenAL is a binding of OpenAL for Python. This binding is at possible
 OO (Listener, Source and Buffer are objects). Extensions are not supported
-yet. 
+yet.
 
 Supported file formats are Wave and Ogg Vorbis (with the PyOgg and PyVorbis
 modules). PyOpenAL can be used independently or along with Soya, our 3D

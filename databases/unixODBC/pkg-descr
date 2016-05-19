@@ -1,14 +1,14 @@
 From the web site:
 
-What is the unixODBC Project? 
+What is the unixODBC Project?
 
 The unixODBC Project goals are to develop and promote unixODBC to be the
 definitive standard for ODBC on the Linux platform.
 
-What is ODBC? 
+What is ODBC?
 
 ODBC is an open specification for providing application developers with
 a predictable API with which to access Data Sources. Data Sources include
-SQL Servers and any Data Source with an ODBC Driver.  
+SQL Servers and any Data Source with an ODBC Driver.
 
 WWW: http://www.unixodbc.org/

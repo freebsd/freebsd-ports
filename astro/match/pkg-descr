@@ -13,6 +13,6 @@ astronomical objects, but it might be applied to other types of data. In order
 to match two lists of N points, the main algorithm calls for O(N^6) operations
 (yes, that's N-to-the-sixth), so it's not the most efficient choice. I find
 myself becoming impatient for N >= 100, but your mileage may vary. On the other
-hand, it does allow for arbitrary translation, rotation, and scaling... 
+hand, it does allow for arbitrary translation, rotation, and scaling...
 
 WWW: http://spiff.rit.edu/match/

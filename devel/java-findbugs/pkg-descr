@@ -5,7 +5,7 @@ arise for a variety of reasons:
 * Difficult language features
 * Misunderstood API methods
 * Misunderstood invariants when code is modified during maintenance
-* Garden variety mistakes: typos, use of the wrong boolean operator 
+* Garden variety mistakes: typos, use of the wrong boolean operator
 
 FindBugs uses static analysis to inspect Java bytecode for occurrences of
 bug patterns.

@@ -1,6 +1,6 @@
 CommitBit is a tool for managing commit access to software
-projects. It also provides for a "code.yourorganization.org" 
-site with links to your wiki, mailing lists, bug tracking 
+projects. It also provides for a "code.yourorganization.org"
+site with links to your wiki, mailing lists, bug tracking
 and so on.
 
 WWW: http://search.cpan.org/dist/CommitBit/

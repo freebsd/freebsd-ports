@@ -1,8 +1,8 @@
-UHD is the "Universal Software Radio Peripheral" (USRP) Hardware Driver. It 
+UHD is the "Universal Software Radio Peripheral" (USRP) Hardware Driver. It
 works on all major platforms (Linux, Windows, and Mac); and can be built with
 GCC, Clang, and MSVC compilers.
 
-The goal of UHD is to provide a host driver and API for current and 
+The goal of UHD is to provide a host driver and API for current and
 future Ettus Research products. Users will be able to use the UHD driver
 standalone or with third-party applications such as:
 

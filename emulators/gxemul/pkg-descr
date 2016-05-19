@@ -6,14 +6,14 @@ A few different machine types are emulated. The following machine types are
 emulated well enough to run at least one "guest OS":
 
  * ARM: CATS (NetBSD/cats, OpenBSD/cats), IQ80321 (NetBSD/evbarm), NetWinder
-   (NetBSD/netwinder) 
+   (NetBSD/netwinder)
  * MIPS: DECstation 5000/200 (NetBSD/pmax, OpenBSD/pmax, Ultrix,
    Linux/DECstation, Sprite), Acer Pica-61 (NetBSD/arc), NEC MobilePro 770,
    780, 800, 880 (NetBSD/hpcmips), Cobalt (NetBSD/cobalt), Malta
    (NetBSD/evbmips, Linux/Malta) Algorithmics P5064 (NetBSD/algor), SGI
-   O2 (aka IP32) (NetBSD/sgi) 
+   O2 (aka IP32) (NetBSD/sgi)
  * PowerPC: IBM 6050/6070 (PReP, PowerPC Reference Platform) (NetBSD/prep),
-   MacPPC (generic "G4" Macintosh) (NetBSD/macppc) 
+   MacPPC (generic "G4" Macintosh) (NetBSD/macppc)
  * SuperH: Sega Dreamcast (NetBSD/dreamcast, Linux/dreamcast),
    Landisk (OpenBSD/landisk)
 

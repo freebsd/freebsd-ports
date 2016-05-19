@@ -1,10 +1,10 @@
 py-kqueue (aka PyKQueue) is a Python module that interfaces to the kqueue(2)
-and kevent(2) system calls.  kqueue(2) and kevent(2) implements an 
+and kevent(2) system calls.  kqueue(2) and kevent(2) implements an
 event-driven notification system, intended as a replacement for select(2) and
 poll(2), which require lengthy preparation and bookkeeping to use.  With
 kevent(2), a list of file descriptors or other object to monitor is passed
-in once, and the system returns a notification when the object triggers a 
-filter, such as 'ready to read data' for file descriptors.  See the 
+in once, and the system returns a notification when the object triggers a
+filter, such as 'ready to read data' for file descriptors.  See the
 man pages for details.
 
 This Python module provides a C module and supporting Python script to

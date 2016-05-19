@@ -1,7 +1,7 @@
-mkZiplib is a wrapper for Zlib 1.1.3 and Minizip 0.15. 
+mkZiplib is a wrapper for Zlib 1.1.3 and Minizip 0.15.
 
-It is free, very portable and works for virtually any computer hardware 
-and operating system. With mkZiplib you can compress/decompress data and 
-work with .gz and .zip files from within Tcl. 
+It is free, very portable and works for virtually any computer hardware
+and operating system. With mkZiplib you can compress/decompress data and
+work with .gz and .zip files from within Tcl.
 
 WWW: http://mkextensions.sourceforge.net
