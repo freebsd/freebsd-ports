@@ -5,11 +5,11 @@ simple configuration file based on the concept of "Installations",
 Farbot currently handles the following:
 
 * Building FreeBSD releases, including grabbing any source needed.
-* Building packages for each release, derived from per installation package 
+* Building packages for each release, derived from per installation package
   sets.
 * Laying out an NFS/TFTP exportable file system structure for all built
-  releases, customized for each installation type. 
-* Generation of a customized bootloader with options to install each 
+  releases, customized for each installation type.
+* Generation of a customized bootloader with options to install each
   installation type
 
 WWW: http://code.google.com/p/farbot/

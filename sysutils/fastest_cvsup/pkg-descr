@@ -2,8 +2,8 @@ Perl script to find fastest CVSup server:
 
 * uses socket connections not just 'pings'
 * takes notice of server responses
-* connects to servers in countries specified on the command line 
-   - or - 
+* connects to servers in countries specified on the command line
+   - or -
   connects to the 'local' servers defined in the script
    - or -
   connects to ALL the servers in ALL the countries

@@ -11,6 +11,6 @@ familiarize yourself with the Apache::Session documentation before
 attempting to configure this module.
 
 Use 'perldoc MasonX::Request::WithApacheSession' for information on how to
-use the module. 
+use the module.
 
 MasonX::Request::WithApacheSession was written by Dave Rolsky.

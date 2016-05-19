@@ -1,9 +1,9 @@
 This package helps to retrieve SourceForge site information in a perl script.
 
-So far, can only get very basic information. The goal is to be able to fetch 
+So far, can only get very basic information. The goal is to be able to fetch
 Tracker and Mailing list data. Please send any suggestions directly to me.
 
-Use at your own risk, the author is not responsible to any damage caused by 
+Use at your own risk, the author is not responsible to any damage caused by
 using this package.
 
 WWW: http://search.cpan.org/dist/WWW-SourceForge/

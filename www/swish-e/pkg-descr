@@ -1,9 +1,9 @@
-SWISH-Enhanced is a fast, powerful, flexible, and easy to use system for 
-indexing collections of Web pages or other text files. Key features include 
-the ability to limit searches to certain HTML tags (META, TITLE, comments, 
-etc.). The SWISH-E software is free, and includes a package of Perl programs 
+SWISH-Enhanced is a fast, powerful, flexible, and easy to use system for
+indexing collections of Web pages or other text files. Key features include
+the ability to limit searches to certain HTML tags (META, TITLE, comments,
+etc.). The SWISH-E software is free, and includes a package of Perl programs
 that enable anyone who is authorized to create and maintain their own indexes
-(AutoSwish). SWISH-E is an enhanced version of SWISH, which was originally 
+(AutoSwish). SWISH-E is an enhanced version of SWISH, which was originally
 written by Kevin Hughes and modified and released with his permission.
 
 WWW: http://swish-e.org/

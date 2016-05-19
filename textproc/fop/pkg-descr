@@ -1,9 +1,9 @@
 FOP is the world's first print formatter driven by XSL formatting
 objects. It is a Java application that reads a formatting object
-tree conforming to the XSL candidate release (21. November 2000) and 
-then turns it into a PDF document or allows you to preview it 
-directly on screen. 
-    
-FOP is part of Apache's XML project. The homepage of FOP is 
+tree conforming to the XSL candidate release (21. November 2000) and
+then turns it into a PDF document or allows you to preview it
+directly on screen.
+
+FOP is part of Apache's XML project. The homepage of FOP is
 
 WWW: http://xmlgraphics.apache.org/fop/

@@ -12,6 +12,6 @@ Event: A subscribe/fire event system that gives developers the ability to set
        callback functions.
 Flash: A cookie based messaging library. Using json, data structures can be
        stored as a cookie in the browser and retrieved on the next request.
-       Useful for messages such as "Thank you for logging in." 
+       Useful for messages such as "Thank you for logging in."
 
 WWW:	http://gaeutilities.appspot.com/

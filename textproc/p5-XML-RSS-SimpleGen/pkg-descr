@@ -3,7 +3,7 @@ the unpleasant details of RSS, like proper XML escaping, and also has a good
 number of Do-What-I-Mean features, like not changing the modtime on a
 written-out RSS file if the file content hasn't changed, and like
 automatically removing any HTML tags from content you might pass in.
-  
+
 This module isn't meant to have the full expressive power of RSS; instead, it
 provides functions that are most commonly needed by RSS-writing programs.
 

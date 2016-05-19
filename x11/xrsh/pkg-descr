@@ -1,4 +1,4 @@
-This distribution contains two programs, xrsh and xrlogin. 
+This distribution contains two programs, xrsh and xrlogin.
 
 Xrsh is designed to allow you to start an X client on a remote machine
 with the window displayed on the current server's $DISPLAY.  It has

@@ -1,10 +1,10 @@
-fsbackup.pl is a incremental backup creation utility. fsbackup.pl support 
+fsbackup.pl is a incremental backup creation utility. fsbackup.pl support
 backup compression and encryption. Backup can be stored on local file system
 and on remote host stored over SSH or FTP. Some addition scripts allow backups
 SQL tables from PostgreSQL and MySQL (pgsql_backup.sh and mysql_backup.sh)),
 save system configuration files and list of installed packages (sysbackup.sh).
 
-Backuped with fsbackup.pl files can be recovered by script fsrestore.sh, 
+Backuped with fsbackup.pl files can be recovered by script fsrestore.sh,
 backuped with sysbackup.sh system packeges can be reinstalled by sysrestore.sh.
 
 WWW: http://www.opennet.ru/dev/fsbackup/index_eng.shtml

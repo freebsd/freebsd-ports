@@ -1,6 +1,6 @@
 KRIPP is a very simple and extremely lightweight network passwords
 sniffer written in Perl, which uses only the tcpdump utility as an
-underlying traffic interceptor. Supported  protocols are ICQ, POP3, 
+underlying traffic interceptor. Supported  protocols are ICQ, POP3,
 FTP and HTTP.
 
 WWW: http://konst.org.ua/kripp

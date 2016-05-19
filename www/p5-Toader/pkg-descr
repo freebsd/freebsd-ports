@@ -1,7 +1,7 @@
 Toader is a CMS that renders to static pages. It is control from
 command line.
 
-It is meant to be integrated with a VCS, allowing a source/control of 
+It is meant to be integrated with a VCS, allowing a source/control of
 a website to be stored in the same location as the project or
 projects a site is for.
 

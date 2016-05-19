@@ -1,7 +1,7 @@
 This package consists of Perl modules along with supporting Perl programs
 that implement the semantic relatedness measures described by Leacock
 Chodorow (1998), Jiang Conrath (1997), Resnik (1995), Lin (1998), Hirst St
-Onge (1998), Wu Palmer (1994), the adapted gloss overlap measure by 
+Onge (1998), Wu Palmer (1994), the adapted gloss overlap measure by
 Banerjee and Pedersen (2002), and a measure based on context vectors
 by Patwardhan (2003). The details of the Vector measure are described in the
 Master's thesis work done by Patwardhan (2003) at the University of Minnesota
@@ -18,6 +18,6 @@ likely to have higher precision and recall values.
 
 A command line interface to these modules is also present in the package. The
 simple, user-friendly interface returns the relatedness measure of two given
-words. 
+words.
 
 WWW: http://search.cpan.org/dist/WordNet-Similarity/

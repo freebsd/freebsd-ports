@@ -1,7 +1,7 @@
 Apache XML Security for C++
 
-The Apache XML Security for C++ library is an implementation of the XML 
-Digital Signature and Encryption specifications, along with some 
+The Apache XML Security for C++ library is an implementation of the XML
+Digital Signature and Encryption specifications, along with some
 additional XKMS code.
 
 WWW:	http://santuario.apache.org/cindex.html

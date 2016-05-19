@@ -4,6 +4,6 @@ goal of this project is to support multi-byte character encodings and large
 character sets for East Asian languages by CID-keyed font technology. The
 secondary goal is to support as many features as pdfTeX developed by Han The
 Thanh. This project is a combined work of the dvipdfm-jpn project by
-Shunsaku Hirata and its modified one, dvipdfm-kor, by Jin-Hwan Cho. 
+Shunsaku Hirata and its modified one, dvipdfm-kor, by Jin-Hwan Cho.
 
 WWW: http://project.ktug.or.kr/dvipdfmx/

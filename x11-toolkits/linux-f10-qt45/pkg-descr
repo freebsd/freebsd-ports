@@ -7,4 +7,4 @@ GUI, database access, networking, file handling, etc.  The Qt library
 encapsulates the different APIs of different operating systems, providing
 the application programmer with a single, common API for all operating systems.
 The native C APIs are encapsulated in a set of well-designed, fully
-object-oriented C++ classes. 
+object-oriented C++ classes.

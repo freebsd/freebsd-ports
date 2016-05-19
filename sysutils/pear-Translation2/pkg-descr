@@ -7,7 +7,7 @@ The following containers are provided, more will follow:
 - gettext
 - XML
 - PEAR::DB_DataObject (experimental)
-It is designed to reduce the number of queries to the db, caching the results 
+It is designed to reduce the number of queries to the db, caching the results
 when possible. An Admin class is provided to easily manage translations
 (add/remove a language, add/remove a string).
 

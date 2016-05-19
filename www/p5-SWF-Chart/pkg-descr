@@ -1,14 +1,14 @@
-This module is the Perl interface to the SWF Charts flash graphing tool. 
-It constructs the XML file this flash movie requires via an OO interface. 
-Each configurable option that is listed on the SWF Charts reference page 
+This module is the Perl interface to the SWF Charts flash graphing tool.
+It constructs the XML file this flash movie requires via an OO interface.
+Each configurable option that is listed on the SWF Charts reference page
 has a companion method in this module.
 
-When using this module, please be sure to use the latest version of the 
-XML/SWF Charts flash movie. Earlier versions of that flash movie supported 
-a different XML structure for which this module is not backward 
+When using this module, please be sure to use the latest version of the
+XML/SWF Charts flash movie. Earlier versions of that flash movie supported
+a different XML structure for which this module is not backward
 compatible.
 
-Note that there are a few extra helper functions that this module 
+Note that there are a few extra helper functions that this module
 provides.
 
 WWW: http://search.cpan.org/dist/SWF-Chart/

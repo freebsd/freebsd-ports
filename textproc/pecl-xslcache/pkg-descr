@@ -1,7 +1,7 @@
 The XSL Cache extension is a modification of PHP's standard XSL extension
 that caches the parsed XSL stylesheet representation between sessions for
 2.5x boost in performance for sites that repeatedly apply the same
-transform. 
+transform.
 
 Although there is still some further work that could be done on
 the extension, this code is already proving beneficial in production use for

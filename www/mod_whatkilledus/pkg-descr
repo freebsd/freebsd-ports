@@ -2,7 +2,7 @@ mod_whatkilledus is an experimental module for Apache httpd 2.x which
 tracks the current request and logs a report of the active request
 when a child process crashes.
 
-Requirements: Apache httpd >= 2.0.49 must be built with the 
+Requirements: Apache httpd >= 2.0.49 must be built with the
 --enable-exception-hook configure option and mod_so enabled.
 
 Activating mod_whatkilledus:

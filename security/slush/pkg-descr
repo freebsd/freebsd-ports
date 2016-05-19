@@ -1,6 +1,6 @@
 slush - SSL remote shell
 
-slush is a simple telnet-like application which communicates over a 
+slush is a simple telnet-like application which communicates over a
 secure SSL channel. It uses X509 certificates for authentication and
 can be compiled with TCP wrappers support (service name "slushd").
 

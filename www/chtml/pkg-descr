@@ -1,14 +1,14 @@
-CHTML works by transforming static HTML documents residing on the server into 
-dynamic HTML documents that are actually seen by the user.  This is similar to 
-but different from server-side-include (e.g. shtml) or web-sql/gsql mechanisms 
-in that it: 
+CHTML works by transforming static HTML documents residing on the server into
+dynamic HTML documents that are actually seen by the user.  This is similar to
+but different from server-side-include (e.g. shtml) or web-sql/gsql mechanisms
+in that it:
 
-      * avoids embedding into HTML the kinds of directives which only 
-        programmers would be comfortable with. 
-      * avoids overly extending HTML semantics in a way that prevents the 
-        documents from being edited by wysiwyg tools. 
-      * only uses templates that are complete and valid stand-alone HTML 
+      * avoids embedding into HTML the kinds of directives which only
+        programmers would be comfortable with.
+      * avoids overly extending HTML semantics in a way that prevents the
+        documents from being edited by wysiwyg tools.
+      * only uses templates that are complete and valid stand-alone HTML
         documents. Therefore the documents can be verified as to HTML
-        level conformance independently from running the scripts that use them. 
+        level conformance independently from running the scripts that use them.
 
 WWW: http://people.delphiforums.com/gjc/chtml.html

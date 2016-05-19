@@ -1,5 +1,5 @@
 Sshpass is a tool for non-interactively performing password authentication
-with SSH's so called "interactive keyboard password authentication". 
+with SSH's so called "interactive keyboard password authentication".
 Most user should use SSH's more secure public key authentication instead.
 
 WWW: http://sourceforge.net/projects/sshpass/

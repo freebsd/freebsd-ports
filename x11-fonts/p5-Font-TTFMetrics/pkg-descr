@@ -1,12 +1,12 @@
-Font::TTFMetrics encapsulates the font metrics of a true type font file. A 
-true type font file contains several tables which need to be parsed before 
-any useful information could be gathered about the font. There is the 
-excellent module for parsing TTF font in CPAN by Martin Hosken, Font::TTF. 
-But in my opinion the use of Font::TTF requires intimate knowledge of TTF 
-font format. This module was written to support the use of TTF in Pastel 
-2D graphics library in Perl. Three factors prompted me to write this 
-module: first, I required a fast module to access TTF file. Second, all 
-the access required was read-only. Last, I wanted a user friendly, higher 
+Font::TTFMetrics encapsulates the font metrics of a true type font file. A
+true type font file contains several tables which need to be parsed before
+any useful information could be gathered about the font. There is the
+excellent module for parsing TTF font in CPAN by Martin Hosken, Font::TTF.
+But in my opinion the use of Font::TTF requires intimate knowledge of TTF
+font format. This module was written to support the use of TTF in Pastel
+2D graphics library in Perl. Three factors prompted me to write this
+module: first, I required a fast module to access TTF file. Second, all
+the access required was read-only. Last, I wanted a user friendly, higher
 level API to access TTF file.
 
 WWW: http://search.cpan.org/dist/Font-TTFMetrics/

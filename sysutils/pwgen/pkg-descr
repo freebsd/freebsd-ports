@@ -4,7 +4,7 @@ This   version   of   pwgen    was    written    by    Theodore    Ts'o
 <tytso@alum.mit.edu>. It is modelled after a program originally written
 by Brandon S. Allbery, and then later extensively modified by Olaf Titz,
 Jim Lynch, and others. It was  rewritten  from scratch by Theodore Ts'o
-because  the original program  was somewhat of a hack, and thus hard to 
+because  the original program  was somewhat of a hack, and thus hard to
 maintain, and because the licensing status of the program was unclear.
 
 WWW: http://sourceforge.net/projects/pwgen/
