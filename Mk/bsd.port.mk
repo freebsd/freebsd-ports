@@ -1641,13 +1641,13 @@ MAKE_ENV+=	NO_PIE=yes
 # We prefer to pass MK_*=no but it was only supported after a certain
 # revision.  Passing WITHOUT_* may conflict with a make.conf or src.conf's
 # WITH_* value.  Note that ports *do* pull in src.conf.
-.if 0 && ((${OSVERSION} >= 903510 && ${OSVERSION} < 1000000) || \
+.if (${OSVERSION} >= 903510 && ${OSVERSION} < 1000000) || \
     (${OSVERSION} >= 1003503 && ${OSVERSION} < 1100000) || \
-    ${OSVERSION} >= 1100000)
+    ${OSVERSION} >= 1100000
 # We will control debug files.  Don't let builds that use /usr/share/mk
 # split out debug symbols since the plist won't know to expect it.
-MAKE_ARGS+=	MK_DEBUG_FILES=no
-MAKE_ARGS+=	MK_KERNEL_SYMBOLS=no
+MAKE_ENV+=	MK_DEBUG_FILES=no
+MAKE_ENV+=	MK_KERNEL_SYMBOLS=no
 .else
 MAKE_ENV+=	WITHOUT_DEBUG_FILES=yes
 MAKE_ENV+=	WITHOUT_KERNEL_SYMBOLS=yes
