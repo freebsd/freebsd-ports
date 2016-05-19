@@ -1,4 +1,4 @@
 The DTraceToolkit is a collection of useful documented scripts developed
-by the OpenSolaris DTrace community.
+by the DTrace community and maintained as part of Open DTrace.
 
-WWW: http://www.brendangregg.com/dtracetoolkit.html
+WWW: https://github.com/opendtrace/toolkit
