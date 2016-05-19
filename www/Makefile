@@ -2056,6 +2056,7 @@
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
+    SUBDIR += rubygem-websocket-driver
     SUBDIR += rubygem-websocket-extensions
     SUBDIR += rubygem-yapra
     SUBDIR += sabredav
