@@ -1,0 +1,3 @@
+A rubygem that provides a WebSocket protocol handler with pluggable I/O.
+
+WWW: http://github.com/faye/websocket-driver-ruby
