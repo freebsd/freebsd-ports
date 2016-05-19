@@ -20,13 +20,17 @@ USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	node4-* node-0.[02-9][0-9]* node-devel-0.[0-9]* node010-[0-9]* node012-[0-9]* iojs-[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 armv6
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
 MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "armv6"
+CONFIGURE_ARGS=	--openssl-no-asm
+.endif
 
 .if ${COMPILER_TYPE} == clang
 MAKE_ENV+=	LINK=clang++
