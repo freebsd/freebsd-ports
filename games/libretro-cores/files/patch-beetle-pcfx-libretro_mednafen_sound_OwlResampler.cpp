@@ -1,5 +1,5 @@
---- beetle-pcfx-libretro/mednafen/sound/OwlResampler.cpp.orig	2015-10-16 02:50:34.000000000 +0200
-+++ beetle-pcfx-libretro/mednafen/sound/OwlResampler.cpp	2016-01-23 21:47:18.614641000 +0100
+--- beetle-pcfx-libretro/mednafen/sound/OwlResampler.cpp.orig	2015-10-16 00:50:34 UTC
++++ beetle-pcfx-libretro/mednafen/sound/OwlResampler.cpp
 @@ -346,7 +346,7 @@ static INLINE void DoMAC_SSE(float *wave
  "movups  0(%%" X86_REGC "di), %%xmm0\n\t"
  "movups 16(%%" X86_REGC "di), %%xmm1\n\t"
