@@ -28,5 +28,5 @@ post-patch:
 		-e 's/127.0.0.1/${FILTER_SPAMASSASSIN_HOST}/' \
 		-e 's/783/${FILTER_SPAMASSASSIN_PORT}/' \
 		${WRKSRC}/extras/wip/filters/filter-spamassassin/filter-spamassassin.8
-		
+
 .include "${MASTERDIR}/Makefile"
