@@ -2,6 +2,6 @@ CQRLOG is an advanced ham radio logger based on MySQL database. It provides
 radio control based on hamlib libraries, DX cluster connection, band map,
 QRZ.com/HamQTH.com callbook (XML access), IOTA support, a grayliner,
 propagation indicator, xplanet support (maps in azimuthal projection centered
-in your QTH), OK1RR free QSL manager database etc. 
+in your QTH), OK1RR free QSL manager database etc.
 
 WWW: http://www.cqrlog.com/

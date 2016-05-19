@@ -1,15 +1,15 @@
-The object produced by Data::Pageset can be used to create page 
-navigation, it inherits from Data::Page and has access to all methods from 
+The object produced by Data::Pageset can be used to create page
+navigation, it inherits from Data::Page and has access to all methods from
 this object.
 
-In addition it also provides methods for dealing with set of pages, so 
-that if there are too many pages you can easily break them into chunks for 
+In addition it also provides methods for dealing with set of pages, so
+that if there are too many pages you can easily break them into chunks for
 the user to browse through.
 
-You can even choose to view page numbers in your set in a 'sliding' 
+You can even choose to view page numbers in your set in a 'sliding'
 fassion.
 
-The object can easily be passed to a templating system such as Template 
+The object can easily be passed to a templating system such as Template
 Toolkit or be used within a script.
 
 WWW: http://search.cpan.org/dist/Data-Pageset/

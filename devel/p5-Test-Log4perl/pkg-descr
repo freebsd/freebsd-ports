@@ -1,5 +1,5 @@
-This module can be used to test that you're logging the right 
-thing with Log::Log4perl. It checks that we get what, and only 
+This module can be used to test that you're logging the right
+thing with Log::Log4perl. It checks that we get what, and only
 what, we expect logged by your code.
 
 WWW: http://search.cpan.org/dist/Test-Log4perl/

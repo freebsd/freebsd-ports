@@ -1,6 +1,6 @@
 GRAPPA: Genome Rearrangements Analysis under Parsimony and other
 Phylogenetic Algorithms
-				     
+
 This suite of programs implements the approach to phylogeny
 reconstruction from gene orders described in the paper
    Moret, B.M.E., Wyman, S., Bader, D.A., Warnow, T., and Yan, M.,
@@ -12,6 +12,6 @@ such trees that obey (are refinements of) a particular constraint tree.
 
 "invdist" takes the first two genomes in the input file and returns
 their inversion distance.
-"distmat" prints the inversion and breakpoint distance matrices. 
+"distmat" prints the inversion and breakpoint distance matrices.
 
 WWW: http://www.cs.unm.edu/~moret/GRAPPA/

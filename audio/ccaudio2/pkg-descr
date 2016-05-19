@@ -10,6 +10,6 @@ can provide audio processing of sample sets in memory. This includes generation
 of pure tones, energy measurement of audio poackets, and software codec
 conversions.  GNU ccAudio2 includes a framework for developing plugin audio
 codecs and is intended to be a carrier for freely licensed audio codecs as well
-as to expand into a general purpose audio/signal processing C++ library. 
+as to expand into a general purpose audio/signal processing C++ library.
 
 WWW: http://www.gnu.org/software/ccaudio/

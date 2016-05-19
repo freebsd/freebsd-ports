@@ -3,4 +3,4 @@ Python.The aspects.py library provides means to intercept function calls.
 Functions and methods (also in Python standard library and third party code)
 can be wrapped so that when they are called, the wrap is invoked first.
 
-WWW: http://www.cs.tut.fi/~ask/aspects/index.shtml	
+WWW: http://www.cs.tut.fi/~ask/aspects/index.shtml

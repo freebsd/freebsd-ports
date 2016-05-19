@@ -3,7 +3,7 @@ Current Features
     * View names on any bus
     * View exported objects, interfaces, methods and signals
     * View the full command line of services on the bus
-    * Execute methods with parameters on the bus and see their return values 
+    * Execute methods with parameters on the bus and see their return values
 
 
 WWW:	http://live.gnome.org/DFeet/

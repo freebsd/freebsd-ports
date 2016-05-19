@@ -1,6 +1,6 @@
 With Relations::Query you can create a 'select' query by creating a new
-query object, and passing hashes, arrays, or strings of info to the 
-constructor, such as what's within the variables clause, what to order 
+query object, and passing hashes, arrays, or strings of info to the
+constructor, such as what's within the variables clause, what to order
 by, etc.  You can also add and override clause info in the query as
 well,  on both a permanent and temporary basis. With the to_string()
 function, you can create a query string from a hash, query object or

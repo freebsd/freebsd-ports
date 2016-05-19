@@ -4,6 +4,6 @@ larger operation.  For example, it has components for reading from database and
 from file, components for writing to database and to file, components for
 deriving and applying change sets to data sources, components for sorting data,
 etc. It has been written so that it is easy to add new features without
-re-writing common tasks such as file or database handling. 
+re-writing common tasks such as file or database handling.
 
 WWW: http://wiki.openstreetmap.org/wiki/Osmosis

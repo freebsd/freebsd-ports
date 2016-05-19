@@ -1,6 +1,6 @@
-This module exports a number of functions that are useful for 
+This module exports a number of functions that are useful for
 validating and converting data types. It is intended for use in
-applications where data types are more important than they 
+applications where data types are more important than they
 typically are in Perl -- e.g., database applications.
 
 WWW: http://search.cpan.org/dist/Data-Types/

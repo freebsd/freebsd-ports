@@ -16,9 +16,9 @@ Here is some of MICO features:
     * Support for nested method invocations
     * Any offers an interface for inserting and extracting constructed
        types that were not known at compile time
-    * CORBA Services: 
-       o Interoperable Naming service, o Trading service, o Event service, 
-       o Relationship service, o Property service, o Time service, 
+    * CORBA Services:
+       o Interoperable Naming service, o Trading service, o Event service,
+       o Relationship service, o Property service, o Time service,
        o Security service
 
 WWW: http://www.mico.org

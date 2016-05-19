@@ -2,6 +2,6 @@ puf is a download tool for UNIX-like systems. You may use it to
 download single files or to mirror entire servers. It is similar to
 GNU wget (and has a partly compatible command line), but has the
 ability to do many downloads in parallel. This is very interesting,
-if you have a high-bandwidth internet connection. 
+if you have a high-bandwidth internet connection.
 
 WWW: http://puf.sourceforge.net/

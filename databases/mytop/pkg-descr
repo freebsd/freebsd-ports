@@ -1,6 +1,6 @@
-mytop is a non-gui tool for monitoring the threads and overall performance 
-of MySQL 3.22.x and 3.23.x servers. It runs on most Unix systems which have 
-Perl, DBI, and Term::ReadKey installed. And with Term::ANSIColor installed 
+mytop is a non-gui tool for monitoring the threads and overall performance
+of MySQL 3.22.x and 3.23.x servers. It runs on most Unix systems which have
+Perl, DBI, and Term::ReadKey installed. And with Term::ANSIColor installed
 you even get color.
 
 WWW: http://jeremy.zawodny.com/mysql/mytop/

@@ -1,7 +1,7 @@
-cvsdelta summarizes the difference between a CVS project and its local 
-version. It detects files that have been added and removed, and of 
-existing files it counts the number of lines that have been added, 
-deleted, and changed. It filters project changes by using .cvsignore 
+cvsdelta summarizes the difference between a CVS project and its local
+version. It detects files that have been added and removed, and of
+existing files it counts the number of lines that have been added,
+deleted, and changed. It filters project changes by using .cvsignore
 files, both system-wide and locally.
 
 Requires ruby.

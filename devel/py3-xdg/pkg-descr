@@ -1,4 +1,4 @@
-A python library to access freedesktop.org standards. 
+A python library to access freedesktop.org standards.
 
 Currently supported are:
  o Base Directory Specification

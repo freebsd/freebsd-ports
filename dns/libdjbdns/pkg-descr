@@ -1,7 +1,7 @@
-This port contains a subset of djbdns (net/djbdns) - 
+This port contains a subset of djbdns (net/djbdns) -
 a DNS client library released to the public domain by its author.
 
-The library was packaged by Gerrit Pape. The port contains both static 
+The library was packaged by Gerrit Pape. The port contains both static
 and shared versions of the DNS client library.
 
 WWW: http://cr.yp.to/djbdns/dns.html

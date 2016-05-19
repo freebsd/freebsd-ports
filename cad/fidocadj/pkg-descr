@@ -1,6 +1,6 @@
 FidoCadJ is an easy to use graphical editor, with a library of electrical
 symbols and footprints (traditional and SMD). It aims to be an agile and
-effective small EDA tool for hobbyists. 
+effective small EDA tool for hobbyists.
 
 FidoCadJ stores its drawings in a compact text format, practical for the
 copy and paste in newsgroups and forums: this has determined its success

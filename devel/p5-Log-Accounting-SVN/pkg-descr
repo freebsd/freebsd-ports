@@ -1,6 +1,6 @@
-This module make use of Algorithm::Accounting and SVN::Log to do 
-simple accounting of any subversion repository (not necessarily 
-local, as long as you can do "svn log" to). The installed 
+This module make use of Algorithm::Accounting and SVN::Log to do
+simple accounting of any subversion repository (not necessarily
+local, as long as you can do "svn log" to). The installed
 svn-accounting.pl script demonstrate a simple use to this module,
 you may try:
 

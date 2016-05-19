@@ -8,7 +8,7 @@ add configuration file capability to a program using a simple API.
 The goal of libConfuse is not to be the configuration file parser library with
 a gazillion of features. Instead, it aims to be easy to use and quick to
 integrate with your code. libConfuse was called libcfg before, but was changed
-to not confuse with other similar libraries. 
+to not confuse with other similar libraries.
 
 Project homepage:
 WWW: http://savannah.nongnu.org/projects/confuse/

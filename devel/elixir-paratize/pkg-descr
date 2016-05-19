@@ -1,4 +1,4 @@
 Elixir library providing some handy parallel processing facilities
 that supports configuring number of workers and timeout.
- 
+
 WWW: https://github.com/seantanly/elixir-paratize

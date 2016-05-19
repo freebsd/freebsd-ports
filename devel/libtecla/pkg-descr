@@ -6,11 +6,11 @@ other tokens, and in-line wild-card expansion of file names. The
 internal functions which perform file-name completion and wild-card
 expansion are also available externally for optional use by programs,
 along with a module for tab-completion and lookup of file names in a
-list of directories. 
+list of directories.
 
 Note that special care has been taken to allow the use of this library
 in threaded programs. The option to enable this is discussed in the
 Makefile, and specific discussions of thread safety are presented in
-the included man pages. 
+the included man pages.
 
 WWW: http://www.astro.caltech.edu/~mcs/tecla/

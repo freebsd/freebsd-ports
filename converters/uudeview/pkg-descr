@@ -1,4 +1,4 @@
-This is a powerful program at which you can throw a mess of 
+This is a powerful program at which you can throw a mess of
 unordered files in any of BinHex, uuencoded, xxencoded,
 Base64, or yEnc formats and expect them all to be properly
 decoded.  These formats are frequently encountered when sending

@@ -18,6 +18,6 @@ much like you have a machine inside of a machine. For instance, let's say
 your workstation is a Unix/X11 workstation, but you want to run Win'95
 applications. Bochs will allow you to run Win 95 and associated software
 on your Unix/X11 workstation, displaying a window on your workstation,
-simulating a monitor on a PC. 
+simulating a monitor on a PC.
 
 WWW: http://bochs.sourceforge.net/

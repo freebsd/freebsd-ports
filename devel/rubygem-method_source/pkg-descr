@@ -1,4 +1,4 @@
-method_source is a utility to return a method's sourcecode as a Ruby string. 
+method_source is a utility to return a method's sourcecode as a Ruby string.
 Also returns Proc and Lambda sourcecode.
 
 WWW: https://github.com/banister/method_source

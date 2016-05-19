@@ -1,4 +1,4 @@
-Atftp is a client/server implementation of the TFTP protocol that 
-implements RFCs 1350, 2090, 2347, 2348, and 2349. The server is 
-multi-threaded and the client presents a friendly interface using 
+Atftp is a client/server implementation of the TFTP protocol that
+implements RFCs 1350, 2090, 2347, 2348, and 2349. The server is
+multi-threaded and the client presents a friendly interface using
 libreadline. The current server implementation lacks IPv6 support.

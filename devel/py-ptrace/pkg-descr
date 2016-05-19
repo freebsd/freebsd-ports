@@ -9,6 +9,6 @@ Features:
 * Execution step by step using ptrace_singlestep() or hardware interruption 3
 * Can use distorm disassembler
 * Dump registers, memory mappings, stack, etc.
-* Syscall tracer and parser (strace command) 
+* Syscall tracer and parser (strace command)
 
 WWW: http://bitbucket.org/haypo/python-ptrace/wiki/Home

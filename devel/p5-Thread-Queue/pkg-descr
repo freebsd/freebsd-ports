@@ -2,10 +2,10 @@ This module provides thread-safe FIFO queues that can be accessed safely
 by any number of threads.
 
 Any data types supported by threads::shared can be passed via queues:
-- Ordinary scalars 
-- Array refs 
-- Hash refs 
-- Scalar refs 
+- Ordinary scalars
+- Array refs
+- Hash refs
+- Scalar refs
 - Objects based on the above
 
 Ordinary scalars are added to queues as they are.

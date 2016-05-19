@@ -1,4 +1,4 @@
-cvs2svn is a Python script can be used to migrate a CVS 
+cvs2svn is a Python script can be used to migrate a CVS
 repository to a Subversion, Git or Bazaar repository.
 
 It is designed for one-time conversions, not for repeated

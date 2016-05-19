@@ -2,10 +2,10 @@ This package provides an abstracted interface to the Cisco UCS Manager XML API
 and Cisco UCS Management Information Model.
 
 The Cisco UCS Manager (UCSM) is an embedded software agent providing access to
-the hardware and configuration management features of attached Cisco UCS 
-hardware. The Management Information Model for the UCSM is organised into a 
-structured heirachy of both physical and virtual objects. Accessing objects 
-within the heirachy is done through a number of high level calls to heirachy 
+the hardware and configuration management features of attached Cisco UCS
+hardware. The Management Information Model for the UCSM is organised into a
+structured heirachy of both physical and virtual objects. Accessing objects
+within the heirachy is done through a number of high level calls to heirachy
 search and traversal methods
 
 WWW: http://search.cpan.org/dist/Cisco-UCS/

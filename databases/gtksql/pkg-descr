@@ -7,7 +7,7 @@ work on multiple queries simultaneously:
  * rename current query
  * export current query
  * display the table information
- * move to the next or previous query 
+ * move to the next or previous query
  * SQL keyword, table name and field name autocompletion
  * rescan the table database.
 

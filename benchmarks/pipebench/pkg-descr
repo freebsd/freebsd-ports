@@ -1,6 +1,6 @@
-Pipebench shows the current throughput and amount of data going through a 
-pipe. It can be used to show the progress of a large md5sum process: 
-cat bigfile | pipebench | md5sum.  
+Pipebench shows the current throughput and amount of data going through a
+pipe. It can be used to show the progress of a large md5sum process:
+cat bigfile | pipebench | md5sum.
 
 WWW: http://www.habets.pp.se/synscan/programs.php?prog=pipebench
 

@@ -1,5 +1,5 @@
 libpqtypes is a libpq extension that offers a new way of handling parameterized
 queries and getting result field values. Both putting parameters and getting
-values use a printf/scanf style interface, with consistent specifiers for both. 
+values use a printf/scanf style interface, with consistent specifiers for both.
 
 WWW: http://libpqtypes.esilo.com/
