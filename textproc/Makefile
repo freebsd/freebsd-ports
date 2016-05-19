@@ -1459,6 +1459,7 @@
     SUBDIR += rubygem-org-ruby
     SUBDIR += rubygem-parslet
     SUBDIR += rubygem-phone
+    SUBDIR += rubygem-pretty-xml
     SUBDIR += rubygem-rails-dom-testing
     SUBDIR += rubygem-rails-html-sanitizer
     SUBDIR += rubygem-rak
