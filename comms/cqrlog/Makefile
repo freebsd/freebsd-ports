@@ -12,6 +12,7 @@ COMMENT=	Amateur Radio logging application
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	lazbuild:editors/lazarus
+PATCH_DEPENDS=	${LAZARUS_DIR}/tools/lazres:editors/lazarus
 LIB_DEPENDS=	libhamlib.so:comms/hamlib
 
 USE_GITHUB=	yes
