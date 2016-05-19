@@ -13,7 +13,7 @@
             socket_options = [{recbuf, 262144}, {sndbuf, 262144}, {nodelay, true}]
 
          Otherwise you'll see a large delay when establishing connections to the DB.
-      
+
       ADMIN ACCOUNT
          By default no admin password or account is configured which leaves the DB
          server open.  Add accounts to the bottom of %%PREFIX%%/etc/couchdb/local.ini

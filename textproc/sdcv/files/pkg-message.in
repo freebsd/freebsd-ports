@@ -1,5 +1,5 @@
 **************************************************************************
-sdcv is now installed. 
+sdcv is now installed.
 you have to fetch the dictionaries to make it work correctly.
 
 1. Make directory for dictionaries files :
@@ -11,4 +11,4 @@ you have to fetch the dictionaries to make it work correctly.
 
  	%%PREFIX%%/share/stardict/dict/
 
-************************************************************************** 
+**************************************************************************

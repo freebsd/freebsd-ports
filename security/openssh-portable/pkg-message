@@ -11,6 +11,6 @@ OpenSSH port, and if truly necessary, re-enable remote root login
 by readjusting this option in your sshd_config.
 
 Users are encouraged to create single-purpose users with ssh keys, disable
-Password authentication by setting 'PasswordAuthentication no' and 
+Password authentication by setting 'PasswordAuthentication no' and
 'ChallengeResponseAuthentication no', and to define very narrow sudo
 privileges instead of using root for automated tasks.

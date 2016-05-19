@@ -8,7 +8,7 @@ NOTE:
 
     interfaces = { 'x.x.x.x' }
 
-    where 'x.x.x.x' is the public IP you wish Prosody to bind to. 
+    where 'x.x.x.x' is the public IP you wish Prosody to bind to.
 
 ---
 

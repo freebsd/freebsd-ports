@@ -19,7 +19,7 @@ and follow the instructions given.
 
 UPGRADE
 
-If you upgrade from version prior to 0.9.8e please note the 
+If you upgrade from version prior to 0.9.8e please note the
 following:
 
     - Database charset is now set explicitly to UTF8 - verlihub

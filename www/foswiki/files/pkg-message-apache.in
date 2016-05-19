@@ -5,7 +5,7 @@ file.
 To complete the installation, please:
 
 - Copy %%FOSCONFDIR%%/foswiki.conf.sample to
-  %%FOSCONFDIR%%/foswiki.conf 
+  %%FOSCONFDIR%%/foswiki.conf
 
 - Review the contents of %%FOSCONFDIR%%/foswiki.conf
   to ensure they match your local security policies, and modify the

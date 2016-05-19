@@ -4,7 +4,7 @@
 TrueCrypt is not offically supported under FreeBSD, however
 it does seem to function fine under certain conditions.
 
-Until TrueCrypt is officially supported under FreeBSD, this 
+Until TrueCrypt is officially supported under FreeBSD, this
 port should be considered experimental.  TrueCrypt's website
 cites that system instability is possible.
 

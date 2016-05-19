@@ -14,19 +14,19 @@ gds_db	stream	tcp	nowait	firebird	%%PREFIX%%/sbin/fb_inet_server  fb_inet_server
 
 And finally restart inetd.
 
-4) If you want to use SuperClassic Server then you must add the following lines 
+4) If you want to use SuperClassic Server then you must add the following lines
    to /etc/rc.conf file.
 
  firebird_enable="YES"
  firebird_mode="superclassic"
 
-5) If you want to use Super Server then you must add the following lines to 
+5) If you want to use Super Server then you must add the following lines to
    /etc/rc.conf file.
 
  firebird_enable="YES"
  firebird_mode="superserver"
 
- Note: Keep in mind that you only can add one of them but never both modes on 
+ Note: Keep in mind that you only can add one of them but never both modes on
        the same time
 
 6) It is STRONGLY recommended that you change the SYSDBA

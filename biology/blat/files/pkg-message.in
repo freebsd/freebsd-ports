@@ -1,8 +1,8 @@
 ===============================================================================
 
  A CGI script (webBlat) and instructions on how to set up a BLAT web server
- have been installed in 
- 
+ have been installed in
+
  %%PREFIX%%/lib/blat
 
 ===============================================================================

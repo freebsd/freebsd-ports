@@ -10,7 +10,7 @@ with:
 
 htpasswd %%WWWDIR%%/.htpasswd admin
 
-Also make sure that the location of the .htpasswd file specified 
+Also make sure that the location of the .htpasswd file specified
 in .htaccess file matches your path.
 
 2. Configure Apache

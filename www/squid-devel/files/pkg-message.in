@@ -39,7 +39,7 @@
      If you just updated your Squid installation from an earlier version,
      make sure to check your Squid configuration against the 3.4 default
      configuration file %%PREFIX%%/etc/squid/squid.conf.sample.
-     
+
      %%PREFIX%%/etc/squid/squid.conf.documented is a fully annotated
      configuration file you can consult for further reference.
 

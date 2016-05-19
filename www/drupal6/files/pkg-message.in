@@ -34,5 +34,5 @@ A typical configuration might read:
 Please see http://drupal.org/cron for important information on setting up
 periodic maintenance tasks in Drupal.
 
-For important information about upgrading from previous versions of Drupal, please 
+For important information about upgrading from previous versions of Drupal, please
 please see: %%DRUPAL_DIR%%/doc/UPGRADE.txt

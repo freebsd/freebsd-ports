@@ -7,24 +7,24 @@
 *                                                                       *
 *************************************************************************
 
-The DNSCheck software included in the port is the PERL-based engine and 
+The DNSCheck software included in the port is the PERL-based engine and
 includes a command line utility that uses that engine in %%PREFIX%%/bin
-called dnscheckengine. There is some other software that is included 
+called dnscheckengine. There is some other software that is included
 that the developers at the .SE registry use to manage the process by
-which they do domain delegation. These generally require MYSQL support 
-to work and are disabled by default. If you want to learn more about them, 
-they are all PERL-based and have integrated perldoc information. However, 
+which they do domain delegation. These generally require MYSQL support
+to work and are disabled by default. If you want to learn more about them,
+they are all PERL-based and have integrated perldoc information. However,
 I have not tested them extensively and can't advise on their suitability as of
-this writing. All the scripts install into %%PREFIX%%/libexec/dnscheck. 
+this writing. All the scripts install into %%PREFIX%%/libexec/dnscheck.
 
 This port also installs some documentation in %%DOCSDIR%%
-that may prove useful. 
+that may prove useful.
 
 There is also a webui that is available as an alternative frontend. I hope
-to include it in a future port. 
+to include it in a future port.
 
 If you have questions about the basic software, please see the developer's
-web site at http://opensource.iis.se/dnscheck. If there is a problem with 
+web site at http://opensource.iis.se/dnscheck. If there is a problem with
 the port, please let me know at dnscheckengine-port@academ.com.
 
 Stan Barber
