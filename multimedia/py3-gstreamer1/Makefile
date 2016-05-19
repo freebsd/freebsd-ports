@@ -27,7 +27,7 @@ LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
- 
+
 .if ${PYTHON_REL} < 3500
 PYOEXTENSION=	pyo
 .else

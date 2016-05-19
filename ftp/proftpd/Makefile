@@ -152,7 +152,7 @@ PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 MEMCACHE_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 MEMCACHE_CONFIGURE_ENABLE=	memcache
 MEMCACHE_VARS=		MODULES+="mod_memcache mod_tls_memcache" \
-			LIBS+="-L${LOCALBASE}/lib -lmemcached -lmemcachedutil"	
+			LIBS+="-L${LOCALBASE}/lib -lmemcached -lmemcachedutil"
 
 .include <bsd.port.options.mk>
 

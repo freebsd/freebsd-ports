@@ -43,10 +43,10 @@ post-install:
 .	if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64"
 	${LN} -sf ${LINUXBASE}/lib64/libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.4.4/libgcc_s.so
-	
+
 	${LN} -sf ${LINUXBASE}/lib/libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.4.4/32/libgcc_s.so
-	
+
 .	else
 	${LN} -sf ${LINUXBASE}/lib/libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/i686-redhat-linux/4.4.4/libgcc_s.so
