@@ -25,5 +25,15 @@ pidfile=%%PREFIX%%/plexpy/plexpy.pid
 command_interpreter=%%PYTHON_CMD%%
 command=%%PREFIX%%/plexpy/PlexPy.py
 command_args="-d --nolaunch --pid ${pidfile}"
+start_precmd=plexpy_prestart
+
+plexpy_prestart()
+{
+	if ! [ -e /etc/localtime ] ; then
+		echo "Plexpy needs the system timezone to be set."
+		echo "Please run /usr/sbin/tzsetup"
+		exit 1
+	fi
+}
 
 run_rc_command "$1"
