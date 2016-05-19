@@ -1,8 +1,8 @@
 Provide a Qt4 binding for FreePascal that may be of use to provide the Lazarus
 LCL library with a Qt interface
 
-This binding does not aim to cover the whole Qt4 framework, but only just 
-enough to satisfy the LCL needs. If any LCL/Qt developer needs an extra class, 
+This binding does not aim to cover the whole Qt4 framework, but only just
+enough to satisfy the LCL needs. If any LCL/Qt developer needs an extra class,
 just ask and it will be added promptly. Some of the methods that have parameters
 based upon templates have been omitted.
 

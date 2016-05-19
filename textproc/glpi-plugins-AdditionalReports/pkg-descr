@@ -1,9 +1,9 @@
-glpi-plugins-AdditionalReports is a glpi plugin. 
+glpi-plugins-AdditionalReports is a glpi plugin.
 It enables additional reports.
 
 Main features :
 
-	* It also plugin allow you to add new reports in a simply way 
+	* It also plugin allow you to add new reports in a simply way
 	  (one PHP script for the report and one for the translation).
 	* It handle the right for each new report
 	* It provides some new reports (as sample)

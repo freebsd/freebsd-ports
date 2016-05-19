@@ -1,9 +1,9 @@
 Text-Ngram
 
-n-Gram analysis is a field in textual analysis which uses sliding 
-window character sequences in order to aid topic analysis, language 
-determination and so on. The n-gram spectrum of a document can be 
-used to compare and filter documents in multiple languages, prepare 
+n-Gram analysis is a field in textual analysis which uses sliding
+window character sequences in order to aid topic analysis, language
+determination and so on. The n-gram spectrum of a document can be
+used to compare and filter documents in multiple languages, prepare
 word prediction networks, and perform spelling correction.
 
 This module provides an efficient XS-based implementation of n-gram

@@ -1,5 +1,5 @@
 Sass is an extension of CSS3, adding nested rules, variables, mixins, selector
 inheritance, and more. It's translated to well-formatted, standard CSS using
-the command line tool or a web-framework plugin. 
+the command line tool or a web-framework plugin.
 
 WWW: http://sass-lang.com/

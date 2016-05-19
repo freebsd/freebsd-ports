@@ -5,7 +5,7 @@ objects and services (hosts, routers, firewalls, networks, protocols).
 Firewall Builder helps user maintain database of objects and allows policy
 editing using simple drag-and-drop operations.
 
-Preferences and objects databases are stored in XML format. 
+Preferences and objects databases are stored in XML format.
 GUI and policy compilers are completely independent. Support for a new firewall
 platform can be added to GUI without any changes done to the program, although
 new policy compiler must be written. This provides for consistent abstract
@@ -13,6 +13,6 @@ model and the same GUI for different firewall platforms. Currently three most
 popular free firewalls are supported: ipchains, iptables and ipfilter.
 Because of this, Firewall Builder can be used to manage firewalls built on
 variety of platforms including, but not limited to, Linux running ipchains or
-iptables and FreeBSD or Solaris running ipfilter. 
+iptables and FreeBSD or Solaris running ipfilter.
 
 WWW: http://www.fwbuilder.org/

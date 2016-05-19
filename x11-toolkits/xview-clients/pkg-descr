@@ -5,11 +5,11 @@ appearance and functionality of XView applications follow the OPEN
 LOOK Graphical User Interface (GUI) specification.
 
 This package contains the olwm window manager, which is a ICCCM-compliant
-window that adheres to the OPEN LOOK (TM) user interface.  
+window that adheres to the OPEN LOOK (TM) user interface.
 
 The complete list of XView clients contained in this package are:
 
-	clock		An XView clock application.  
+	clock		An XView clock application.
 	cmdtool		An XView terminal emulator.
 	olwm		The OPENLOOK window manager.
 	olwmslave	'helper' program for olwm.

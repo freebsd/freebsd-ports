@@ -2,6 +2,6 @@ Crashme is a very simple program that tests the operating
 environment's robustness by invoking random data as if it were a
 procedure. The standard signals are caught and handled with a setjmp
 back to a loop which will try again to produce a fault by executing
-random data. Some people call this stress testing.  
+random data. Some people call this stress testing.
 
 WWW: http://crashme.codeplex.com/

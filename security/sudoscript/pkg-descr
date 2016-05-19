@@ -4,8 +4,8 @@ They agree on the location of a FIFO, which the daemon opens for read.
 Sudoshell then runs script(1) with the FIFO as a typescript. The daemon
 stamps each line of the script(1) output with a session id, then passes
 the data over to another daemon. This daemon timestamps the data and stores
-it in a log file which is /var/log/sudoscript. This daemon also keeps an eye 
-on the size of log files, and forks a rotator/compressor when it exceeds 2 
+it in a log file which is /var/log/sudoscript. This daemon also keeps an eye
+on the size of log files, and forks a rotator/compressor when it exceeds 2
 MBytes.
 
 WWW: http://www.egbok.com/sudoscript

@@ -13,6 +13,6 @@ and much more.  Supports standard CLF and combined logs, as well
 as wu-ftpd xferlog and squid proxy logs, which can be either in
 standard text format or gzip compressed.
 
-Keywords:      Web Analysis, Log Analysis, Usage Statistics, Linux, Unix 
+Keywords:      Web Analysis, Log Analysis, Usage Statistics, Linux, Unix
 
 WWW: http://www.mrunix.net/webalizer/

@@ -1,16 +1,16 @@
-GNU mifluz has two main characteristics : it is very 
-simple (one might say stupid :-) and uses 50% of the size of the 
-indexed text for the index. It is simple because it provides only 
-a few basic functionalities. It does not contain document parsers 
-(HTML, PDF etc...). It does not contain a full text query parser. 
-It does not provide result display functions or other user friendly 
+GNU mifluz has two main characteristics : it is very
+simple (one might say stupid :-) and uses 50% of the size of the
+indexed text for the index. It is simple because it provides only
+a few basic functionalities. It does not contain document parsers
+(HTML, PDF etc...). It does not contain a full text query parser.
+It does not provide result display functions or other user friendly
 stuff. It only provides functions to store word occurrences and retrieve
-them. The fact that it uses 50% of the size of the indexed text is 
-rather atypical. Most well known full text indexing systems only use 
-30%. The advantage GNU mifluz has over most full text indexing systems 
-is that it is fully dynamic (update, delete, insert), uses only a 
+them. The fact that it uses 50% of the size of the indexed text is
+rather atypical. Most well known full text indexing systems only use
+30%. The advantage GNU mifluz has over most full text indexing systems
+is that it is fully dynamic (update, delete, insert), uses only a
 controlled amount of memory while resolving a query, has higher upper
-limits and has a simple storage scheme. Consuming more disk space 
-allows all this. 
+limits and has a simple storage scheme. Consuming more disk space
+allows all this.
 
 WWW: http://www.gnu.org/software/mifluz/

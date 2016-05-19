@@ -1,7 +1,7 @@
-This is a small and simple package that takes the output of XML::Parser as 
-a tree, and gives simple methods for accessing the structure of an XML 
-document. It is very lightweight, but provides the simplest access to an XML 
-document possible. It does not subclass XML::Parser; rather, it is meant to 
+This is a small and simple package that takes the output of XML::Parser as
+a tree, and gives simple methods for accessing the structure of an XML
+document. It is very lightweight, but provides the simplest access to an XML
+document possible. It does not subclass XML::Parser; rather, it is meant to
 serve purely as an object struct for an outgoing tree.
 
 WWW: http://search.cpan.org/dist/XML-SimpleObject/

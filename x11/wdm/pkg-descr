@@ -1,6 +1,6 @@
 wdm -- WINGs Display Manager
 
-wdm was initially called DisplayMaker.   
+wdm was initially called DisplayMaker.
 
 This is a modification of XFree86's xdm package for graphically
 handling authentication and system login.  Most of xdm has been

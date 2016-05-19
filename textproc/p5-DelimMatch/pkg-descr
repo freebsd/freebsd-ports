@@ -1,10 +1,10 @@
 DelimMatch allows you to match delimited substrings in a buffer.  The
 delimiters can be specified with any regular expression and the start
 and end delimiters need not be the same.  If the delimited text is
-properly nested, entire nested groups are returned. 
+properly nested, entire nested groups are returned.
 
 In addition, you may specify quoting and escaping characters that
-contribute to the recognition of start and end delimiters. 
+contribute to the recognition of start and end delimiters.
 
 WWW: http://nwalsh.com/perl/delimmatch/
 

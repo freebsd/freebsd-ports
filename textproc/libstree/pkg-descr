@@ -1,10 +1,10 @@
-libstree is a generic suffix tree implementation, written in C. 
-It can handle arbitrary data structures as elements of a string. 
-Unlike most demo implementations, it is not limited to simple ASCII 
-character strings. Suffix tree generation in libstree is highly 
-efficient and implemented using the algorithm by Ukkonen, which 
-means that libstree builds suffix trees in time linear to the length 
-of the strings (assuming that string element comparisons can be done 
+libstree is a generic suffix tree implementation, written in C.
+It can handle arbitrary data structures as elements of a string.
+Unlike most demo implementations, it is not limited to simple ASCII
+character strings. Suffix tree generation in libstree is highly
+efficient and implemented using the algorithm by Ukkonen, which
+means that libstree builds suffix trees in time linear to the length
+of the strings (assuming that string element comparisons can be done
 in O(1)).
 
 WWW:	http://www.icir.org/christian/libstree/

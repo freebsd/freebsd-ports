@@ -1,5 +1,5 @@
 mod_auth_mysql provides an MySQL-based authentication for apache2.
-It's also designed to support multiple virtualhosts using only one 
+It's also designed to support multiple virtualhosts using only one
 database.
 
 WWW: http://www.heuer.org/mod_auth_mysql/

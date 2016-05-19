@@ -6,7 +6,7 @@ all the time nor regularly (contrary to anacrontab). To do so, fcron
 allows you to use the standard mode in which you tell it to execute
 one command at a given date and hour and to make it run a command
 according to its time of execution, which is normally the same as
-system up time. 
+system up time.
 
 This is the stable release.
 

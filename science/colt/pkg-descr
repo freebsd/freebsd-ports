@@ -6,6 +6,6 @@ library, and the Concurrent library.
 The Colt library provides fundamental general-purpose data structures optimized
 for numerical data, such as resizable arrays, dense and sparse matrices
 (multi-dimensional arrays), linear algebra, associative containers and buffer
-management. 
+management.
 
 WWW: http://acs.lbl.gov/~hoschek/colt/

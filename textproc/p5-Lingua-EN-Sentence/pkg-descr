@@ -1,6 +1,6 @@
 The Lingua::EN::Sentence module contains the function get_sentences,
 which splits text into its constituent sentences, based on a regular
-expression and a list of abbreviations (built in and given). 
+expression and a list of abbreviations (built in and given).
 
 WWW: http://search.cpan.org/dist/Lingua-EN-Sentence/
 

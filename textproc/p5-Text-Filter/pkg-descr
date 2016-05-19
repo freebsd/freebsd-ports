@@ -3,19 +3,19 @@ source, operate on this data, and write possibly modified data to a
 destination. In the Unix world, these tools can be chained using a
 technique called pipelining, where the output of one filter is connected
 to the input of another filter. Some non-Unix worlds are reported to
-have similar provisions. 
+have similar provisions.
 
 To create Perl modules for filter functionality seems trivial at first.
 Just open the input file, read and process it, and write output to a
 destination file. But for really reusable modules this approach is too
 simple. A reusable module should not read and write files itself, but
 rely on the calling program to provide input as well as to handle the
-output. 
+output.
 
 Text::Filter is a base class for modules that have in common that they
 process text lines by reading from some source (usually a file),
 manipulating the contents and writing something back to some destination
-(usually some other file). 
+(usually some other file).
 
 This module can be used 'as is', but its real power shows when used to
 derive modules from it.

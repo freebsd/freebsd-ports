@@ -6,10 +6,10 @@ existing terminal window.
    * Also display and search of local (Avahi) SSH servers
    * Tabbed display with automatic session saving (Firefox style)
    * Status bar with information like latency to server and output of
-     remote uptime 
+     remote uptime
    * Close integration with OpenSSH features like connection sharing
      (near-instant new tabs)
    * NetworkManager integration to easily reconnect after a network
-     change, great for laptops 
+     change, great for laptops
 
 WWW:	http://projects.gnome.org/hotssh/

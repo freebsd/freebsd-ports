@@ -1,19 +1,19 @@
-This module provides a CodeGenerator for Petal that inherits almost 
-everything from Petal::CodeGenerator but modifies how expressions are 
+This module provides a CodeGenerator for Petal that inherits almost
+everything from Petal::CodeGenerator but modifies how expressions are
 dealt with. Petal normally includes code like this
 
   $hash->get( "not:user" )
 
-in the compiled template. This means the path has to be parsed and 
+in the compiled template. This means the path has to be parsed and
 interpreted at runtime. Using Petal::CodePerl, Petal will now produce this
 
   ! ($hash->{"user"})
 
 which will be much faster.
 
-It uses Parse::RecDescent to parse the PETALES expressions which makes it 
-a bit slow to load the module but this won't matter much unless you have 
-turned off caching. It won't matter at all for something like Apache's 
+It uses Parse::RecDescent to parse the PETALES expressions which makes it
+a bit slow to load the module but this won't matter much unless you have
+turned off caching. It won't matter at all for something like Apache's
 mod_perl.
 
 WWW: http://search.cpan.org/dist/Petal-CodePerl/

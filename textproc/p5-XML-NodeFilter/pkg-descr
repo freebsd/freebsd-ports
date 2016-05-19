@@ -1,6 +1,6 @@
 XML::NodeFilter is a generic node-filter class for DOM traversal as
 specified in the DOM Level 2 Traversal and Range specification. It
 extends that specification so this class is more easy to use for perl
-programmers. 
+programmers.
 
 WWW: http://search.cpan.org/dist/XML-NodeFilter/

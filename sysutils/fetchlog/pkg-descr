@@ -1,8 +1,8 @@
-The fetchlog utility displays the last new messages of a logfile. 
+The fetchlog utility displays the last new messages of a logfile.
 It is similar like tail (1) but offers some extra functionality like
-pattern matching with regular expressions or output formatting. To show 
-only the new messages appeared since the last call fetchlog uses a 
-bookmark to remember which messages have been fetched. 
+pattern matching with regular expressions or output formatting. To show
+only the new messages appeared since the last call fetchlog uses a
+bookmark to remember which messages have been fetched.
 
 fetchlog works on syslog generated logfiles as well as other logfiles.
 

@@ -1,6 +1,6 @@
 saslauthd is a daemon process that handles plaintext authentication
 requests on behalf of the SASL library.
- 
+
 The server fulfills two roles: it isolates all code requiring
 superuser privileges into a single process, and it can be used to
 provide proxy authentication services to clients that do not

@@ -1,8 +1,8 @@
-The bareos-webui is a free software tool written in PHP, intended to monitor 
+The bareos-webui is a free software tool written in PHP, intended to monitor
 and manage Bareos over the web.
 
 The webui is based on Zend Framework 2, an open source framework for developing
-web applications and services using PHP 5.3+ and makes extensive use of the 
+web applications and services using PHP 5.3+ and makes extensive use of the
 Twitter Bootstrap front-end framework.
 
 The bareos-webui is licensed under AGPL Version 3.

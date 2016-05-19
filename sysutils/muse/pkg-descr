@@ -2,7 +2,7 @@ This is muse, which lists out memory usage categorized by Active, Inactive,
 Wired, Reserved, Cache, Buffer, Total, and Free in a manner more friendly
 and verbose than vmstat and without as much clutter as top(1).
 
-It is inspired in part by top(1), OS9's mfree, Linux's free, and DOS's 
+It is inspired in part by top(1), OS9's mfree, Linux's free, and DOS's
 mem /c.
 
 WWW: http://www.spatula.net/proc/muse/index.src

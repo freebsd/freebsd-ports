@@ -7,6 +7,6 @@ for all three of these.
 With each permission, users will only be able to see tickets where they are
 the person mentioned in the permission. So if a user has TICKET_VIEW_REPORTER,
 they can only see tickets they reported. For TICKET_VIEW_CC, they just have to
-be included in the CC list. 
+be included in the CC list.
 
 WWW:	http://trac-hacks.org/wiki/PrivateTicketsPlugin

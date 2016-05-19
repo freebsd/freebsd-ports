@@ -1,6 +1,6 @@
-Ferret is a high-performance, full-featured text search engine 
-library written for Ruby. It is a full port of the 
-Apache Lucene Java project. 
+Ferret is a high-performance, full-featured text search engine
+library written for Ruby. It is a full port of the
+Apache Lucene Java project.
 
 There is a pure Ruby version included.
 
