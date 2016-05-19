@@ -43,6 +43,8 @@ RRD_DESC=	RRD external sensor data collection
 
 GTK2_USE=		GNOME=glib20,gtk20
 
+DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
+
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_with=	libcurl
 
@@ -74,6 +76,6 @@ post-patch:
 		${WRKSRC}/doc/man/man2html.py
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/slurm.conf.example ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_DATA} ${FILESDIR}/slurm.conf.sample ${STAGEDIR}${PREFIX}/etc/
 
 .include <bsd.port.mk>
