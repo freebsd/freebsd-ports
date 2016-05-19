@@ -2,7 +2,7 @@
 
 WARNING  WARNING  WARNING  WARNING  WARNING  WARNING  WARNING  WARNING
 
-The previous version of liblognorm (0.3.7) used the libee CEE support 
+The previous version of liblognorm (0.3.7) used the libee CEE support
 library in its API.
 
 In 2013, Pavel Levshin converted liblognorm to native JSON, which helped

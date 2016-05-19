@@ -8,12 +8,12 @@
  as pdns.conf-dist.
 
  A pdns.conf with all possible options is available in
- %%EXAMPLESDIR%% 
+ %%EXAMPLESDIR%%
 
  ---------------------------------------------
  IMPORTANT: PowerDNS Authoritive Server 3.4.0+:
  ---------------------------------------------
- This version needs a mandatory schema change for the gmsyql, 
+ This version needs a mandatory schema change for the gmsyql,
  gpgsql and gsqlite3 backends. SQL statements are available in
  %%DOCSDIR%% or http://doc.powerdns.com
 *******************************************************************

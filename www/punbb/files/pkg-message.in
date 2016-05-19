@@ -3,7 +3,7 @@
 Congratulations, PunBB is now installed!
 
 
-Please, make sure that you have installed a database: 
+Please, make sure that you have installed a database:
 (MySQL =>4.1.2, PostgreSQL =>7.0 or SQLite 2 or later).
 
 If you want to optimize PunBB, read the following website:

@@ -27,7 +27,7 @@ If the above step works you can load the kernel module at boot time by adding
 
 atapicam_load="YES"
 
-at the end of /boot/loader.conf      
+at the end of /boot/loader.conf
 
 * (Optionally) recompiling the kernel
 

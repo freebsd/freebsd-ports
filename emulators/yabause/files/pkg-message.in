@@ -9,7 +9,7 @@ Yabause sega saturn system emulator was installed
     Please keep in mind that the SEGA SATURN BIOS is copyrighted software.
 
 2) Run yabause
-   
+
    # yabause
 
 3) Go to Yabause/Preferences and configure it.(bios/cdrom/iso, video/audio,

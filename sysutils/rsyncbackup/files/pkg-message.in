@@ -3,7 +3,7 @@
 NOTE:
 ==========
 
-rsyncbackup is now installed on your system. 
+rsyncbackup is now installed on your system.
 
 - rsyncbackup installed into %%PREFIX%%/bin/rsyncbackup
 
@@ -14,7 +14,7 @@ rsyncbackup is now installed on your system.
   NOTE: %%PREFIX%%/etc/rsyncbackup is deleted upon deletion
 
 - HTML documentation:
-  The HTML documentation has been installed into 
+  The HTML documentation has been installed into
   %%DOCSDIR%%
 
 

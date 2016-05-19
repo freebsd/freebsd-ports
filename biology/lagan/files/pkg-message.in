@@ -2,8 +2,8 @@
 
  All the executables, scripts, Readmes and utilities were installed
  under %%LAGAN_DIR%%
- 
+
  Add this to your PATH and set the environment variable
  LAGAN_DIR to point to this directory.
- 
+
 ===============================================================================

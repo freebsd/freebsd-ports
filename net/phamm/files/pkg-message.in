@@ -6,11 +6,11 @@
 
 Please edit config.php to suit your needs.
 
-To make phamm available through your web site, 
+To make phamm available through your web site,
 I suggest that you add the following to httpd.conf:
 
     Alias /phamm/ "%%PREFIX%%/%%PHAMMDIR%%"
- 
+
     <Directory "%%PREFIX%%/%%PHAMMDIR%%">
          AllowOverride None
          Options None

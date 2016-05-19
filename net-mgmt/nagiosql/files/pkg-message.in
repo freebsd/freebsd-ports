@@ -4,7 +4,7 @@ you may have to add an alias in apache config for it.
 
 Alias /nagiosql/ "%%WWWDIR%%/"
 
-You will also need to enable the installer by creating a file  
+You will also need to enable the installer by creating a file
 ENABLE_INSTALLER in the install dir
 
 # touch %%WWWDIR%%/install/ENABLE_INSTALLER

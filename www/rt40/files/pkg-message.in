@@ -27,7 +27,7 @@ To upgrade your database schema, preserving ticket history:
 
 # /usr/local/sbin/rt-setup-database \
      --datadir %%DOCSDIR%%/upgrade \
-     --action upgrade --prompt-for-dba-password 
+     --action upgrade --prompt-for-dba-password
 
 and answer the prompts.
 

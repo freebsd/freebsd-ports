@@ -3,5 +3,5 @@ Planet has been installed into %%DATADIR%%
 
 To get started, make a copy of the examples directory and configure to taste.
 
-*** Try to keep your configuration and output files away from the installation folder %%DATADIR%%, the INSTALL doc recommends ~/planet, but %%PREFIX%%/etc/planet is a good choice.*** 
+*** Try to keep your configuration and output files away from the installation folder %%DATADIR%%, the INSTALL doc recommends ~/planet, but %%PREFIX%%/etc/planet is a good choice.***
 

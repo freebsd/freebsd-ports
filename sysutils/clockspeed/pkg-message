@@ -32,7 +32,7 @@ if you remove this port. To disable it, simply re-do step 6 without
 Step 6 should not break anything but you can disable it anytime
 as per last paragraph if you think something unusual has happened
 to your system.
- 
+
 7) /stand/sysinstall -> configure -> time zone (choose the correct
    time zone for your system)
 8) sntpclock IP.OF.NTP.SERVER | clockview

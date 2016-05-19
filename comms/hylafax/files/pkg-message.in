@@ -16,7 +16,7 @@ Setting up: (for impatients)
 >cuad1	"%%PREFIX%%/sbin/faxgetty"	dialup	on secure
 
 Be sure to rerun %%PREFIX%%/sbin/faxsetup after updating your hylafax version
- 
+
 Documentation:
 	On Line Manuals: 	man hylafax-client
 				man hylafax-server

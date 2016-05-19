@@ -33,7 +33,7 @@ Nginx configuration:
     If you are using a different document root, then you will need to create
     the appropriate location directive.
 
-The default configuration is stored in 
+The default configuration is stored in
 %%WWWDIR%%/conf_default.php.
 If you want to customize the configuration make customizations to
 %%WWWDIR%%/conf.php .

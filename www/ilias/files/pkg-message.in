@@ -37,7 +37,7 @@ some virus scanner by yourself.
   When input Ilias data directory, please use
   %%PREFIX%%/%%ILIASDATADIR%% and uncheck the create option.
 
-5 After the installation, you can login into the system 
+5 After the installation, you can login into the system
 with username/root and password/homer as the administrator.
 
 For more information, see the INSTALL DOCUMENTATION:

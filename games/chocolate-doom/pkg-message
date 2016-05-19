@@ -1,10 +1,10 @@
 ******************************************************
 
-To switch on OPL (Adlib/SB) or GUS emulation you need 
-to run chocolate-doom-setup, default Native MIDI is 
-very similar to Roland SC-55. 
+To switch on OPL (Adlib/SB) or GUS emulation you need
+to run chocolate-doom-setup, default Native MIDI is
+very similar to Roland SC-55.
 
-GUS emulation needs setting "gus_patch_path" in *.cfg 
+GUS emulation needs setting "gus_patch_path" in *.cfg
 to GUS patch set (dgguspat.zip).
 
 ******************************************************

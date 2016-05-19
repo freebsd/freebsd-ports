@@ -1,5 +1,5 @@
 ***********************************************************
- 
+
 Please copy %%PREFIX%%/etc/ipaudit.conf.sample to
 %%PREFIX%%/etc/ipaudit.conf by yourself and modify it,
 then start ipaudit with

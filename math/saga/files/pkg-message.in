@@ -2,7 +2,7 @@
 ######################################################################
 
 Unlike to windows systems, saga_cmd should be instantly available in
-the shell as it is usually installed in %%PREFIX%%/bin.  
+the shell as it is usually installed in %%PREFIX%%/bin.
 
 Next you have to set the environmental variable SAGA_MLB to make SAGA
 know where the SAGA module libraries exist on your system. You can do
@@ -16,7 +16,7 @@ e.g.:
   export SAGA_MLB=%%PREFIX%%/lib/saga
 
 Now your system is prepared for using SAGA CMD to execute SAGA
-modules. 
+modules.
 
 ######################################################################
 

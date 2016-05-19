@@ -1,4 +1,4 @@
 ======================================================================
-Huc is now installed! 
+Huc is now installed!
 Set the $PCE_INCLUDE environment variable to ${PREFIX}/include/huc/pce
 ======================================================================

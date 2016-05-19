@@ -11,7 +11,7 @@ You should add the following to your Apache configuration file:
   </Directory>
 
 Try to change the template for a better appearance.
-The templates are in: 
+The templates are in:
 
 	"%%WWWDIR%%/templates"
 
