@@ -1,5 +1,5 @@
 --- src/tcs/Makefile.am.orig	2014-04-25 03:05:44.000000000 +0900
-+++ src/tcs/Makefile.am	2016-05-19 11:05:16.773730000 +0900
++++ src/tcs/Makefile.am	2016-05-19 15:26:50.732611000 +0900
 @@ -1,8 +1,7 @@
 -noinst_LIBRARIES=libtcs.a
 +noinst_LIBRARIES=libtcs.a libtcs_emu.a
@@ -26,7 +26,7 @@
  endif
 +
 +libtcs_emu_a_LIBADD=${LOCALBASE}/lib/tddl_emu/libtddl.a
-+libtcs_emu_a_CFLAGS=-DAPPID=\"TCSD\ TCS\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -fPIE -DPIE
++libtcs_emu_a_CFLAGS=-I${top_srcdir}/src/include -DAPPID=\"TCSD\ TCS\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -fPIE -DPIE
 +
 +libtcs_emu_a_SOURCES=log.c \
 +		 tcs_caps.c \
