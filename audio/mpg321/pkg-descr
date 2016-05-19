@@ -1,14 +1,14 @@
 mpg321 is a clone of the popular mpg123 command-line mp3 player. It should
 function as a drop-in replacement for mpg123 in many cases. While some of
-the functionality of mpg123 is not yet implemented, mpg321 should function 
+the functionality of mpg123 is not yet implemented, mpg321 should function
 properly in most cases for most people, such as for frontends such as
-gqmpeg. 
+gqmpeg.
 
 mpg321 is based on the mad MPEG audio decoding library. It therefore is
 highly accurate, and also uses only fixed-point calculation, making it
 more efficient on machines without a floating-point unit.
 
-While mpg321 is not as fast as the non-free mpg123 on systems which have a 
+While mpg321 is not as fast as the non-free mpg123 on systems which have a
 floating point unit, it comes under the GNU General Public License, which
 allows greater freedom to its users. For most people who want mpg123,
 mpg321 is a better alternative.

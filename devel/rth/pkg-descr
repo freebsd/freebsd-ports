@@ -1,12 +1,12 @@
-rth is a web-based tool designed to manage requirements, tests, 
-test results, and defects throughout the application life cycle. 
-The tool provides a structured approach to software testing and 
-increases the visibility of the testing process by creating a 
-common repository for all test assets including requirements, 
-test cases, test plans, and test results. Regardless of their 
-geographic location, rth allows testers, developers, business 
-analysts, and managers to monitor and gauge application 
-readiness. The tool includes modules for requirements management, 
+rth is a web-based tool designed to manage requirements, tests,
+test results, and defects throughout the application life cycle.
+The tool provides a structured approach to software testing and
+increases the visibility of the testing process by creating a
+common repository for all test assets including requirements,
+test cases, test plans, and test results. Regardless of their
+geographic location, rth allows testers, developers, business
+analysts, and managers to monitor and gauge application
+readiness. The tool includes modules for requirements management,
 test planning, test execution, defect tracking, and reporting.
 
 WWW: http://sourceforge.net/projects/rth/

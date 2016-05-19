@@ -3,12 +3,12 @@ ADOdb stands for Active Data Objects Data Base.
 ADOdb is a database abstraction library for PHP.
 
 The PHP version currently supports an amazing number of databases,
-thanks to the wonderful ADOdb community: 
-MySQL, PostgreSQL, Interbase, Firebird, Informix, Oracle, MS SQL, Foxpro, 
-Access, ADO, Sybase, FrontBase, DB2, SAP DB, SQLite, Netezza, LDAP, and generic 
-ODBC, ODBTP. 
+thanks to the wonderful ADOdb community:
+MySQL, PostgreSQL, Interbase, Firebird, Informix, Oracle, MS SQL, Foxpro,
+Access, ADO, Sybase, FrontBase, DB2, SAP DB, SQLite, Netezza, LDAP, and generic
+ODBC, ODBTP.
 
-The Sybase, Informix, FrontBase and PostgreSQL, Netezza, LDAP, ODBTP drivers 
+The Sybase, Informix, FrontBase and PostgreSQL, Netezza, LDAP, ODBTP drivers
 are community contributions.
 
 WWW: http://adodb.sourceforge.net/

@@ -1,7 +1,7 @@
 rplay is a flexible network audio system that allows sounds to be played to
 and from local and remote systems.  The rplay audio server currently
 supports SunOS 4.1.X, Solaris 2.X, Linux, SGI IRIX 4 & 5, HP9000/705,
-HP9000/710 and now FreeBSD.  The rplay clients and client library should 
+HP9000/710 and now FreeBSD.  The rplay clients and client library should
 work on any system that supports Berkeley sockets.  The X Window
 System is not required.
 

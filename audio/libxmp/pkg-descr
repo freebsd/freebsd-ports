@@ -1,5 +1,5 @@
 Libxmp loads the module and renders the sound as linear PCM samples in a buffer
 at rate and format specified by the user. Applications for libxmp include
-players, module information extractors, module-to-mp3 renderers, etc. 
+players, module information extractors, module-to-mp3 renderers, etc.
 
 WWW: http://xmp.sourceforge.net/

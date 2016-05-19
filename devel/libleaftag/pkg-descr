@@ -1,7 +1,7 @@
 Leaftag is a library and set of utilities for tagging files on the desktop.
 
-libleaftag is the core tagging library. It's GObject-based and provides a 
-simple means for tagging and untagging files, retrieving lists of tags, and 
+libleaftag is the core tagging library. It's GObject-based and provides a
+simple means for tagging and untagging files, retrieving lists of tags, and
 generally manipulating the database.
 
 Project homepage:

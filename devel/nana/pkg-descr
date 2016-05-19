@@ -1,17 +1,17 @@
-Nana provides improved support for assertion checking and logging in C, C++ 
+Nana provides improved support for assertion checking and logging in C, C++
 using GDB. In particular it provides:
 
-	o Operations can be implemented directly in C or by generating 
-	  debugger commands which do the checking and logging only if the 
+	o Operations can be implemented directly in C or by generating
+	  debugger commands which do the checking and logging only if the
 	  application is run under the debugger. The debugger based calls
-	  require are very space efficient (0 or 1 bytes per call). 
+	  require are very space efficient (0 or 1 bytes per call).
 	o Support for checking real time constraints.
 	o Support for assertion (invariant checking) including:
 		+ Space and time efficient (at least versus <assert.h>)
-		  For example: assert(i>=0) uses 53 bytes on a i386 vs 
+		  For example: assert(i>=0) uses 53 bytes on a i386 vs
 		  an optimised nana call which uses 10 bytes per call.
 		+ Checking can be turned on or off at compile or run time.
-		+ The action taken when an error is detected can be modified 
+		+ The action taken when an error is detected can be modified
 		  on a global and per/call basis.
 	o Support for logging (printf style debugging) including:
 		+ Logging can be turned on and off at compile or run time.

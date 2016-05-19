@@ -10,6 +10,6 @@ while otherwise retaining compatibility with sqlplus. Thus, no user training
 is needed - simply use gqlplus instead of sqlplus. In addition,
 configuration/installation is trivial: gqlplus is a single binary compiled
 executable (written in C), so all you need is download it and put it anywhere
-in your PATH. After that, you'll be ready to use it. 
+in your PATH. After that, you'll be ready to use it.
 
 WWW: http://gqlplus.sourceforge.net/

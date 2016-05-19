@@ -1,4 +1,4 @@
-This library is a thin wrapper around the PuppetDB REST API providing some 
+This library is a thin wrapper around the PuppetDB REST API providing some
 convinience functions and objects to request and hold data from PuppetDB.
 
 WWW: https://github.com/puppet-community/pypuppetdb

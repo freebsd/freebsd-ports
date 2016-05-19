@@ -1,5 +1,5 @@
-CUnit is a system for writing, administering, and running 
-unit tests in C. It is built as a static library which is 
+CUnit is a system for writing, administering, and running
+unit tests in C. It is built as a static library which is
 linked with the user's testing code.
 
 WWW: http://code.google.com/p/c-unit/

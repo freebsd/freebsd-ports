@@ -9,7 +9,7 @@ Features:
    older than the current day.  Next month's appointments are shown if
    there is room to do so.  Multiple appointment data files may also
    be specified on the commandline.
-   
+
  * You can specify your own appointment and color definition files on the
    commandline, or use the defaults.
 

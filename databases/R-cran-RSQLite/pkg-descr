@@ -1,4 +1,4 @@
-Database Interface R driver for SQLite. This package embeds the SQLite database 
+Database Interface R driver for SQLite. This package embeds the SQLite database
 engine in R and provides an interface compliant with the DBI package.
 
 WWW: http://cran.r-project.org/web/packages/RSQLite/

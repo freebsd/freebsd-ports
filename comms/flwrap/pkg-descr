@@ -1,6 +1,6 @@
 The flwrap executable is a small desktop application that encapsulates
 a text file, an image file, or a binary file within a set of identifier
 blocks.  These blocks include a 16 bit checksum that is used to test
-the encapsulated file for integrity. 
+the encapsulated file for integrity.
 
 WWW: http://www.w1hkj.com/Flwrap/

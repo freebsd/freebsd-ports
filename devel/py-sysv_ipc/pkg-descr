@@ -1,4 +1,4 @@
 Sysv_ipc gives Python programs access to System V semaphores,
-shared memory and message queues. 
+shared memory and message queues.
 
 WWW: http://semanchuk.com/philip/sysv_ipc/

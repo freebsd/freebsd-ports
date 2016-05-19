@@ -1,4 +1,4 @@
-SMS::Send::TW::Qma is a SMS::Send driver 
+SMS::Send::TW::Qma is a SMS::Send driver
 which allows you to send messages through http://www.qma.com/.
 
 WWW: http://search.cpan.org/dist/SMS-Send-TW-Qma/

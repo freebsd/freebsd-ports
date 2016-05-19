@@ -7,4 +7,4 @@ Put the expression below into your ~/.emacs
 (require 'bbdb)
 (bbdb-initialize)
 
-WWW: http://bbdb.sourceforge.net/ 
+WWW: http://bbdb.sourceforge.net/

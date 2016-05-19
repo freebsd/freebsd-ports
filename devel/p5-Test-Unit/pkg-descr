@@ -1,6 +1,6 @@
 This framework is intended to support unit testing in an object-oriented
 development paradigm (with support for inheritance of tests etc.) and is
 derived from the JUnit testing framework for Java by Kent Beck and Erich
-Gamma. 
+Gamma.
 
 WWW: http://search.cpan.org/dist/Test-Unit/

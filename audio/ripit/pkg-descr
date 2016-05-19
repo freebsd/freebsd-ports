@@ -4,15 +4,15 @@ audio CD. It is a console based front-end (no GUI here), written in Perl, for
 various programs.
 
 The program will do the following without user intervention:
- * getting the audio CD Album/Artist/Tracks information from CDDB 
- * ripping the audio CD Tracks 
- * encoding to Flac, mp3 or Ogg 
- * id3 tags encoded songs 
- * creating an playlist (m3u) file 
- * optionally generating a toc (cue) sheet for nice DAO burning 
- * optionally preparing and send a CDDB submission and save it locally 
- * optionally extracting hidden songs and split ghost songs 
- * optionally creating md5sum files for all tracks 
- * running several encoder processes at the same time and same run 
+ * getting the audio CD Album/Artist/Tracks information from CDDB
+ * ripping the audio CD Tracks
+ * encoding to Flac, mp3 or Ogg
+ * id3 tags encoded songs
+ * creating an playlist (m3u) file
+ * optionally generating a toc (cue) sheet for nice DAO burning
+ * optionally preparing and send a CDDB submission and save it locally
+ * optionally extracting hidden songs and split ghost songs
+ * optionally creating md5sum files for all tracks
+ * running several encoder processes at the same time and same run
 
 WWW: http://www.suwald.com/ripit/news.php

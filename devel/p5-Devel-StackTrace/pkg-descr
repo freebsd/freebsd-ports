@@ -1,11 +1,11 @@
 The Devel::StackTrace module contains two classes, Devel::StackTrace and
 Devel::StackTraceFrame. The goal of this object is to encapsulate the
 information that can found through using the caller() function, as well as
-providing a simple interface to this data. 
+providing a simple interface to this data.
 
 The Devel::StackTrace object contains a set of Devel::StackTraceFrame
 objects, one for each level of the stack. The frames contain all the data
 available from caller() as of Perl 5.6.0 though this module still works
-with 5.00503. 
+with 5.00503.
 
 WWW: http://search.cpan.org/dist/Devel-StackTrace/

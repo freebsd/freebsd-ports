@@ -1,4 +1,4 @@
 The VCS::CVS module provides a simple  interface to CVS.
 
-VCS - Version Control System - is the prefix given to each  
+VCS - Version Control System - is the prefix given to each
 Perl module which deals with some sort of source code control system.

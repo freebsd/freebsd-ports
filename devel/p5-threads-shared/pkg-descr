@@ -1,5 +1,5 @@
 By default, variables are private to each thread, and each newly created thread
-gets a private copy of each existing variable. 
+gets a private copy of each existing variable.
 
 This module allows you to share variables across different threads (and
 pseudoforks on Win32). It is used together with the threads module.
