@@ -13,6 +13,7 @@ COMMENT=	PC-BSD Base system packages
 
 RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
 		${LOCALBASE}/bin/pc-updatemanager:sysutils/pc-updatemanager \
+		${LOCALBASE}/sbin/pc-sysinstall:sysutils/pc-sysinstall \
 		${LOCALBASE}/bin/pc-su:sysutils/pcbsd-utils \
                 ${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh \
 		${LOCALBASE}/bin/sysadm-binary:sysutils/sysadm \
