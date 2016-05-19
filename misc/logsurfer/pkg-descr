@@ -1,13 +1,13 @@
-Logsurfer is a program for monitoring system logs in real-time, 
-and reporting on the occurrence of events. It is similar to the 
-well-known swatch program on which it is based, but offers a 
+Logsurfer is a program for monitoring system logs in real-time,
+and reporting on the occurrence of events. It is similar to the
+well-known swatch program on which it is based, but offers a
 number of advanced features which swatch does not support.
 
-Logsurfer is capable of grouping related log entries 
-together - for instance, when a system boots it usually creates 
-a high number of log messages. In this case, logsurfer can be 
-setup to group boot-time messages together and forward them in 
-a single Email message to the system administrator under the 
+Logsurfer is capable of grouping related log entries
+together - for instance, when a system boots it usually creates
+a high number of log messages. In this case, logsurfer can be
+setup to group boot-time messages together and forward them in
+a single Email message to the system administrator under the
 subject line "Host xxx has just booted".
 Swatch just couldn't do this properly.
 

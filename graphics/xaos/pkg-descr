@@ -1,10 +1,10 @@
-This is a port of "XaoS", a real time fractal browser for X11 and 
+This is a port of "XaoS", a real time fractal browser for X11 and
 ASCII terminals.
 
 Features:
 	- Very fast algorithms allow interactive zooming.
-	- Various coloring modes are provided for points inside and 
-	  outside the selected fractal.  
+	- Various coloring modes are provided for points inside and
+	  outside the selected fractal.
 	- Autopilot mode
 	- 11 fractal formulas
 	- saving to GIF files

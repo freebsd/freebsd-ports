@@ -1,11 +1,11 @@
-Kamailio is an open source SIP proxy server that is capable of 
-handling thousands of up calls in a second. Among the features 
-it provides, are support for TCP, UDP and SCTP, secure communication 
-via TLS for VoIP (voice, video), accounting, the most popular open 
+Kamailio is an open source SIP proxy server that is capable of
+handling thousands of up calls in a second. Among the features
+it provides, are support for TCP, UDP and SCTP, secure communication
+via TLS for VoIP (voice, video), accounting, the most popular open
 source databases and much more.
 
-Originally starting out as the SIP Express Router (SER) project by 
-the Fraunhofer Society in 2001, the design team got together in 
+Originally starting out as the SIP Express Router (SER) project by
+the Fraunhofer Society in 2001, the design team got together in
 2008, merged old and new source code and rebranded SER to Kamailio.
 
 WWW: http://www.kamailio.org/

@@ -3,7 +3,7 @@ receiving, filtering, reading, composing, and sending mail from a
 character terminal.  It speaks POP3 and SMTP and can work with
 maildir or Berkeley-formatted mailboxes.
 
-Before running elmo, users should run elmoconf.pl to generate an 
+Before running elmo, users should run elmoconf.pl to generate an
 ~/.elmorc file.
 
 WWW: http://elmo.sourceforge.net/

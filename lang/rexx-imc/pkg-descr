@@ -1,7 +1,7 @@
-REXX/imc is a Rexx interpreter for Unix. It supports all the standard 
-instructions and built-in functions, plus a small number of extensions, 
-and has a partial implementation of the SAA API allowing applications 
-to call Rexx programs and to register addressing environments, Rexx 
-functions, and exit handlers. 
+REXX/imc is a Rexx interpreter for Unix. It supports all the standard
+instructions and built-in functions, plus a small number of extensions,
+and has a partial implementation of the SAA API allowing applications
+to call Rexx programs and to register addressing environments, Rexx
+functions, and exit handlers.
 
 WWW: http://www.cs.ox.ac.uk/people/ian.collier/Rexx/rexximc.html

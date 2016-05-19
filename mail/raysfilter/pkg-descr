@@ -9,7 +9,7 @@ the Free Software Foundation; either version 2 of the License, or
    which message headers the filter examines and what strings it looks
    for in those headers. The filter will look for all of the specified
    strings in all of the specified headers.
-   
+
    The configuration files can be changed while the filter is running.
    The mail-filter reset command is then used to signal the program to
    re-read the files.

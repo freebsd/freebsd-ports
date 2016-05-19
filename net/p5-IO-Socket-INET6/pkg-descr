@@ -1,7 +1,7 @@
 IO::Socket::INET6 provides an object interface to creating and using sockets
 in the AF_INET6 domain. It is built upon the IO::Socket interface and
-inherits all the methods defined by IO::Socket. As a consequence, this module 
-is protocol independent, it can run both IPv6 & IPv4, when DNS names are 
+inherits all the methods defined by IO::Socket. As a consequence, this module
+is protocol independent, it can run both IPv6 & IPv4, when DNS names are
 passed.
 
 WWW: http://search.cpan.org/dist/IO-Socket-INET6/

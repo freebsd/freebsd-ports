@@ -5,7 +5,7 @@ style might be used to show externally included text or example code.
 ,----
 | The default style looks like this.
 `----
-                                                                              
+
 A number of functions are provided for quoting a region, a buffer, a
 paragraph and a defun. There are also functions for quoting text while
 pulling it in, either by inserting the contents of another file or by

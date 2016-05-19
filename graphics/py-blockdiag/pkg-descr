@@ -1,5 +1,5 @@
 `blockdiag` generate block-diagram image file from spec-text file.
-        
+
  Features
   * Generate block-diagram from dot like text (basic feature).
   * Multilingualization for node-label (utf-8 only).

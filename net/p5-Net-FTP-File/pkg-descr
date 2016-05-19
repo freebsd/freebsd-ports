@@ -1,18 +1,18 @@
 Is this module just like Net::FTP?  No it is not!
 
-   1. It is a subclass and not a new class that uses Net::FTP underneath. 
-That means the object is a normal Net::FTP object and has all the methods 
+   1. It is a subclass and not a new class that uses Net::FTP underneath.
+That means the object is a normal Net::FTP object and has all the methods
 Net::FTP has.
-   2. It does not override Net::FTP methods (IE does not have methods the 
-same name as Net::FTP) which means you don't have to sort through how the 
+   2. It does not override Net::FTP methods (IE does not have methods the
+same name as Net::FTP) which means you don't have to sort through how the
 function differs from the standard version in the Net::FTP module.
-   3. Its waaaay simpler to use without a bunch of weird config stuff to 
-cloud the issue, odd hard to remember arguments, obscure methods to 
-replace valid existing ones that are part of Net::FTP, or new methods that 
-are badly named (IE think "grep" on this one). There are other things as 
+   3. Its waaaay simpler to use without a bunch of weird config stuff to
+cloud the issue, odd hard to remember arguments, obscure methods to
+replace valid existing ones that are part of Net::FTP, or new methods that
+are badly named (IE think "grep" on this one). There are other things as
 well.
-   4. It follows the paradigm of Perl name spaces, objects, and general 
-good practice much better and in a way that is more intuitive and 
+   4. It follows the paradigm of Perl name spaces, objects, and general
+good practice much better and in a way that is more intuitive and
 expandable.
 
 WWW: http://search.cpan.org/dist/Net-FTP-File/

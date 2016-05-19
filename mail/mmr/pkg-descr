@@ -13,7 +13,7 @@ sometimes spanning weeks, with very little effort.
 
    Automatic detection of a modified mail file, and the changes will
 then be merged with the current message listing.
-	    
+
    Automatically uncompresses and recompresses gzipped mailfiles
 
    Searchable message listings, including search through message text

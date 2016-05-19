@@ -1,12 +1,12 @@
 Mixal is a version the assembler and interpreter for Donald Knuth's
 mythical MIX computer, defined in:
 
-   Donald E. Knuth, _The Art of Computer Programming, Vol. 1: Fundamental 
+   Donald E. Knuth, _The Art of Computer Programming, Vol. 1: Fundamental
    Algorithms_.  Addison-Wesley, 1973 (2nd ed.)
 
 
 This preliminary release doesn't do floating point and has little
 documentation as yet, but it works well enough to be used in conjunction
-with the book. 
+with the book.
 
 WWW: http://www.catb.org/~esr/mixal/

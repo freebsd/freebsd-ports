@@ -10,6 +10,6 @@ ad-hoc scripting:
     * support for anonymous functions
 
 Additionally, an interpreter for the Arena language can be implemented
-to be very compact in terms of both source code size and memory consumption. 
+to be very compact in terms of both source code size and memory consumption.
 
 WWW:	http://www.minimalinux.org/arena/

@@ -16,5 +16,5 @@ NOTES:
    normal BSD `ls' program or the BSD `colorls' program (the latter
    available from the ports collection).
 
-3. This colorized `ls' program is not the same as the `colorls' program 
+3. This colorized `ls' program is not the same as the `colorls' program
    available from the ports collection.

@@ -1,5 +1,5 @@
 TetriNET is an addictive 6 player tetr*s game
-   
+
 What this program does is set up a TetriNET server that ordinary
 TetriNET clients can connect to. It attempts to fix some of the
 "glaring" holes in the TetriNET protocol that I discovered, and which

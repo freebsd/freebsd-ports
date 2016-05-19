@@ -1,22 +1,22 @@
-Math::Sequence defines a class for simple mathematic sequences with a 
-recursive definition such as x_(n+1) = 1 / (x_n + 1). Creation of a 
-Math::Sequence object is described below in the paragraph about the 
+Math::Sequence defines a class for simple mathematic sequences with a
+recursive definition such as x_(n+1) = 1 / (x_n + 1). Creation of a
+Math::Sequence object is described below in the paragraph about the
 constructor.
 
-Math::Sequence uses Math::Symbolic to parse and modify the recursive 
-sequence definitions. That means you specify the sequence as a string 
-which is parsed by Math::Symbolic. Alternatively, you can pass the 
+Math::Sequence uses Math::Symbolic to parse and modify the recursive
+sequence definitions. That means you specify the sequence as a string
+which is parsed by Math::Symbolic. Alternatively, you can pass the
 constructor a Math::Symbolic tree directly.
 
-Because Math::Sequence uses Math::Symbolic for its implementation, all 
-results will be Math::Symbolic objects which may contain other variables 
+Because Math::Sequence uses Math::Symbolic for its implementation, all
+results will be Math::Symbolic objects which may contain other variables
 than the sequence variable itself.
 
-Each Math::Sequence object is an iterator to iterate over the elements of 
-the sequence starting at the first element (which was specified by the 
-starting element, the second argument to the new() constructor). It offers 
-facilities to cache all calculated elements and access any element 
-directly, though unless the element has been cached in a previous 
+Each Math::Sequence object is an iterator to iterate over the elements of
+the sequence starting at the first element (which was specified by the
+starting element, the second argument to the new() constructor). It offers
+facilities to cache all calculated elements and access any element
+directly, though unless the element has been cached in a previous
 calculation, this is just a shortcut for repeated use of the iterator.
 
 WWW: http://search.cpan.org/dist/Math-Sequence/

@@ -1,6 +1,6 @@
 OpenVISP Stats is a very simple mail statistics RRDtool frontend for mail
 statistics that produces daily, weekly, monthly and yearly graphs of
-received/sent, bounces/rejected, spam mails, viruses, ... and pop/imap 
+received/sent, bounces/rejected, spam mails, viruses, ... and pop/imap
 statistics.
 
 WWW: http://openvisp.fr/

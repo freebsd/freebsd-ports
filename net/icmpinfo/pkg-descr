@@ -4,7 +4,7 @@ ICMPINFO:
    the running host.
 
    The source code comes from an heavily modified BSD ping source.
-   
+
 USAGE:
 
 icmpinfo       o Gives info about weird packets only [mainly icmp_unreachable].
@@ -16,6 +16,6 @@ icmpinfo -n    o Avoids name queries (faster, lighter).
 icmpinfo -p    o Avoids port number to service name queries (faster, lighter).
 icmpinfo -s    o Also decode the ip_src field which is the address of the
                  interface receiving the packet. This option is not usefull
-                 for hosts with a single network interface. 
+                 for hosts with a single network interface.
 icmpinfo -l    o Run like a daemon (forks) and output to SYSLOG.
                  (It now checks that you are root for that)

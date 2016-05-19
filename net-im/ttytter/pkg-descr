@@ -12,6 +12,6 @@ Twitter client. It has the following features:
   from cron, and so on.
 * Supports standard timelines and automatically fetches direct messages.
 * Extensible using the -lib option.
-* Run detached in -daemon mode, and make your own Twitter bot! 
+* Run detached in -daemon mode, and make your own Twitter bot!
 
 WWW: http://www.floodgap.com/software/ttytter/

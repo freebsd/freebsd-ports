@@ -1,7 +1,7 @@
-LFT, short for Layer Four Traceroute, is a sort of 'traceroute' that often 
+LFT, short for Layer Four Traceroute, is a sort of 'traceroute' that often
 works much faster (than the commonly-used Van Jacobson method) and goes through
-many configurations of packet-filter based firewalls. More importantly, LFT 
-implements numerous other features including AS number lookups, loose source 
+many configurations of packet-filter based firewalls. More importantly, LFT
+implements numerous other features including AS number lookups, loose source
 routing, netblock name lookups, et al. Though LFT has been around since 1998,
 its development effort has just recently resumed.
 

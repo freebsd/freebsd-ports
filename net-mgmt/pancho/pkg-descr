@@ -1,6 +1,6 @@
 Pancho was written with the goal of allowing network
 administrators make a change to a group of Cisco routers
-without being required to log into each host. 
+without being required to log into each host.
 
 Pancho also provides the flexibility to allow admins to
 use its function against a single host, a select group

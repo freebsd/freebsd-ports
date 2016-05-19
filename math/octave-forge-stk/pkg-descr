@@ -14,6 +14,6 @@ This is stk.
  non-sequential design of experiments. Even though it is, currently, mostly
  geared towards the Design and Analysis of Computer Experiments (DACE), the
  STK can be useful for other applications areas (such as Geostatistics,
- Machine Learning, Non-parametric Regression, etc.). 
+ Machine Learning, Non-parametric Regression, etc.).
 
 WWW: http://octave.sourceforge.net/

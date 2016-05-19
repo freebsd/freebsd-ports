@@ -2,6 +2,6 @@ This utility rips Music and Sound class objects from .umx and .uax
 files in Unreal or Unreal Tournament. It rips all the exports in the
 file that it understands (currently 'xm', 'it', 's3m', and 'WAV').
 Adding support for an export is fairly trivial, so you can add them
-in a minute or two. 
+in a minute or two.
 
 WWW: http://www.oldunreal.com/othermods.html

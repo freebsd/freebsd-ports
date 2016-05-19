@@ -1,8 +1,8 @@
-The program forwards all IMAP traffic between the client and the server, but 
-keeps the connection to the server alive after the client logs out. When the 
-same user attempts to log in again, the proxy will use the cached 
-username/password pair to authenticate the client, and tie the new client to 
-the old server connection (which was kept alive). 
+The program forwards all IMAP traffic between the client and the server, but
+keeps the connection to the server alive after the client logs out. When the
+same user attempts to log in again, the proxy will use the cached
+username/password pair to authenticate the client, and tie the new client to
+the old server connection (which was kept alive).
 
 WWW: http://www.kuleuven.net/projects/imapproxy/
 

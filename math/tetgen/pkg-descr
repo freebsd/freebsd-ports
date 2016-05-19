@@ -1,12 +1,12 @@
-TetGen is a program for generating tetrahedral meshes for arbitrary 3D 
-domains. The main purpose of TetGen is to create high-quality tetrahedral 
-meshes for solving partial differential equations using finite element 
-and finite volume methods. This program, based on Delaunay methods,  
-currently generates meshes including exact constrained Delaunay 
-tetrahedralizations and quality (conforming Delaunay) meshes. For a 3D 
-point set, it generates its exact Delaunay tetrahedralization and convex 
-hull as well. The program is written in ANSI C++. It is highly portable, 
-it should be very easy to compile and run on all major computer systems. 
+TetGen is a program for generating tetrahedral meshes for arbitrary 3D
+domains. The main purpose of TetGen is to create high-quality tetrahedral
+meshes for solving partial differential equations using finite element
+and finite volume methods. This program, based on Delaunay methods,
+currently generates meshes including exact constrained Delaunay
+tetrahedralizations and quality (conforming Delaunay) meshes. For a 3D
+point set, it generates its exact Delaunay tetrahedralization and convex
+hull as well. The program is written in ANSI C++. It is highly portable,
+it should be very easy to compile and run on all major computer systems.
 It can be also used as a library embedded into other applications.
 
 WWW: http://tetgen.org/

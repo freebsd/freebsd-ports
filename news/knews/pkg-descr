@@ -8,7 +8,7 @@ reading MIME articles, except message/partial.
   o Regular expression searching in articles and the newsgroup list
   o XPAT searching
   o Can use different fonts and colors for quoted text and headers in articles
-  o Lots of action procedures that can be tied to keys. 
+  o Lots of action procedures that can be tied to keys.
   o Supports multiple nntp servers
   o Tagging of articles and saving or piping them in order
   o Uudecode function. Not perfect, but handles most cases

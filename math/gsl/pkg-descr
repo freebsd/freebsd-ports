@@ -2,6 +2,6 @@ The GNU Scientific Library (GSL) is a collection of routines for numerical
 computing. The routines are written from scratch by the GSL team in ANSI C,
 and are meant to present a modern Applications Programming Interface (API)
 for C programmers, while allowing wrappers to be written for very high level
-languages. 
+languages.
 
 WWW: http://www.gnu.org/software/gsl

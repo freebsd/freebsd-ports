@@ -2,11 +2,11 @@ K9Copy is a small utility which allows copying DVDs.
 The DVD video stream is compressed by the program Vamps.
 
 1. Copy without menus:
-Here, dvdauthor creates a new structure for the DVD. It is possible to 
+Here, dvdauthor creates a new structure for the DVD. It is possible to
 arbitrarily set the order of the videos.
 2. Copy with menus:
 Because dvdauthor can't copy the original menus, K9Copy recreates the original
-DVD structure. The menus as well as IFO files are modified to point to the 
+DVD structure. The menus as well as IFO files are modified to point to the
 compressed MPEG2 stream.
 
 Creating personalized menus was not brought back with version 1.0.0
