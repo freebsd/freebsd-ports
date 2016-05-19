@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		http://invisible-mirror.net/archives/vile/current/
 
 PATCH_SITES=	${MASTER_SITES:S,vile/current/,vile/patches/,g}
-#PATCHFILES=	
+#PATCHFILES=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VI Like Emacs -- console version
