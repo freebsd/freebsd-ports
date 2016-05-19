@@ -1,12 +1,17 @@
 --- src/tcs/Makefile.am.orig	2014-04-25 03:05:44.000000000 +0900
-+++ src/tcs/Makefile.am	2016-05-19 03:02:33.269090000 +0900
-@@ -1,4 +1,4 @@
++++ src/tcs/Makefile.am	2016-05-19 15:26:50.732611000 +0900
+@@ -1,8 +1,7 @@
 -noinst_LIBRARIES=libtcs.a
 +noinst_LIBRARIES=libtcs.a libtcs_emu.a
  
- CFLAGS+=-I${top_srcdir}/src/include
+-CFLAGS+=-I${top_srcdir}/src/include
  libtcs_a_LIBADD=${top_builddir}/src/tddl/libtddl.a
-@@ -91,7 +91,7 @@
+-libtcs_a_CFLAGS=-DAPPID=\"TCSD\ TCS\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -fPIE -DPIE
++libtcs_a_CFLAGS=-I${top_srcdir}/src/include -DAPPID=\"TCSD\ TCS\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -fPIE -DPIE
+ 
+ libtcs_a_SOURCES=log.c \
+ 		 tcs_caps.c \
+@@ -91,7 +90,7 @@
  if TSS_BUILD_KEY
  libtcs_a_SOURCES+=tcsi_key.c tcs_key.c tcs_key_mem_cache.c tcs_context_key.c rpc/@RPC@/rpc_key.c \
  		  crypto/@CRYPTO_PACKAGE@/crypto.c
@@ -15,13 +20,13 @@
  endif
  if TSS_BUILD_MAINT
  libtcs_a_SOURCES+=tcsi_maint.c rpc/@RPC@/rpc_maint.c
-@@ -140,3 +140,143 @@
+@@ -140,3 +139,143 @@
  libtcs_a_SOURCES+=tcsi_cmk.c rpc/@RPC@/rpc_cmk.c
  libtcs_a_CFLAGS+=-DTSS_BUILD_CMK
  endif
 +
 +libtcs_emu_a_LIBADD=${LOCALBASE}/lib/tddl_emu/libtddl.a
-+libtcs_emu_a_CFLAGS=-DAPPID=\"TCSD\ TCS\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -fPIE -DPIE
++libtcs_emu_a_CFLAGS=-I${top_srcdir}/src/include -DAPPID=\"TCSD\ TCS\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -fPIE -DPIE
 +
 +libtcs_emu_a_SOURCES=log.c \
 +		 tcs_caps.c \
