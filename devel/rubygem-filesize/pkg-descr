@@ -1,0 +1,4 @@
+rubygem-filesize is a small class for handling filesizes with both the SI and
+binary prefixes, allowing conversion from any size to any other size.
+
+WWW: https://github.com/dominikh/filesize

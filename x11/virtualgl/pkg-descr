@@ -1,6 +1,6 @@
 VirtualGL is an open source program that redirects the 3D rendering commands
-from Unix and Linux OpenGL applications to 3D accelerator hardware in a 
-dedicated server and displays the rendered output interactively to a thin 
+from Unix and Linux OpenGL applications to 3D accelerator hardware in a
+dedicated server and displays the rendered output interactively to a thin
 client located elsewhere on the network, or locally.
 
 WWW: http://www.virtualgl.org

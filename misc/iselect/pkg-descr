@@ -2,6 +2,6 @@ iSelect is an interactive line selection tool for ASCII files, operating
 via a full-screen Curses-based terminal session. It can be used either as
 an user interface frontend controlled by a Bourne-Shell/Perl/Tcl backend
 as its control script or in batch mode as a pipeline filter (usually
-between grep and the final executing command).   
+between grep and the final executing command).
 
 WWW: http://www.ossp.org/pkg/tool/iselect/

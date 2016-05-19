@@ -10,6 +10,6 @@ They have been coded with special instructions to minimise cache pollution on
 memory reads and to eliminate it completely on memory writes. In addition, they
 operate with a built in aggressive data prefetching algorithm. In some cases,
 non-temporal MMXmark and SSEmark can deliver almost 100% of theoretical
-bandwidth while reading. 
+bandwidth while reading.
 
 WWW: http://alasir.com/software/ramspeed/

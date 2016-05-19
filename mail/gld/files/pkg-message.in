@@ -1,7 +1,7 @@
 
 *******************************************************************
   Enable gld in /etc/rc.conf[.local] with the following line:
-  
+
   gld_enable="YES"
 
  To complete the installation, you need to create the necessary

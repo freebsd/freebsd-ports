@@ -12,7 +12,7 @@ are:
  - KnightCap does not have an opening book---instead it keeps a file
    (brain.dat) of losing moves and inserts them in the hash table at the
    start of each search. At present it has about 1500 entries, and
-   this makes it a pretty competitive opening player. 
+   this makes it a pretty competitive opening player.
 
  - KnightCap learns the parameters of its evaluation function as it
    plays. The most dramatic example of how this helps is an experiment

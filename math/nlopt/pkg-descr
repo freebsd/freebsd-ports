@@ -4,7 +4,7 @@ outines available online as well as original implementations of various
 other algorithms. Its features include:
 
   - Callable from C, C++, Fortran, Matlab or GNU Octave, Python,
-    GNU Guile, Julia, GNU R, Lua, and OCaml. 
+    GNU Guile, Julia, GNU R, Lua, and OCaml.
   - A common interface for many different algorithms -- try a different
     algorithm just by changing one parameter.
   - Support for large-scale optimization (some algorithms scalable to
@@ -14,5 +14,5 @@ other algorithms. Its features include:
     algorithms exploiting user-supplied gradients.
   - Algorithms for unconstrained optimization, bound-constrained
     optimization, and general nonlinear inequality/equality constraints.
-                                             
+
 WWW: http://ab-initio.mit.edu/wiki/index.php/NLopt

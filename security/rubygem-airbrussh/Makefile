@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	airbrussh
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-sshkit>=1.7.1:security/rubygem-sshkit
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

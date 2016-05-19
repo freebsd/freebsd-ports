@@ -1,7 +1,7 @@
 The skem utility is a sendmail milter, that checks and maintains a list
 of whitelisted, temporary banned, and permanently blacklisted
 IP-addresses. How you obtain the entries is up to you, but the included
-logwatcher module provides one possibility. 
+logwatcher module provides one possibility.
 
 The list is stored in a directory, each entry being a file (usually --
 zero sized) or a symlink (usually -- a "broken" one). Such entries are

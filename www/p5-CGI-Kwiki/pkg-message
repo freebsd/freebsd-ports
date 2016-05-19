@@ -1,6 +1,6 @@
 /* ================================================================= */
-Note: 
-	Kwiki software installed! Now you should create 
+Note:
+	Kwiki software installed! Now you should create
 	your kwiki web directory by yourself:
 
 $ mkdir cgi-bin/my-kwiki

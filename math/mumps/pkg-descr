@@ -1,5 +1,5 @@
 MUMPS is a Distributed Multifrontal Solver (F90, MPI based) with Dynamic
-Distributed Scheduling to accomodate both numerical fill-in and multi-user 
+Distributed Scheduling to accomodate both numerical fill-in and multi-user
 environment.
 
 - Solution of large linear systems with symmetric positive definite

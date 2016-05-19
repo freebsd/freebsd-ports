@@ -1,4 +1,4 @@
-DAViCal is a PHP based CalDAV server which uses a Postgres backend. 
+DAViCal is a PHP based CalDAV server which uses a Postgres backend.
 It is administered using a Web interface.
 
 WWW: http://www.davical.org/

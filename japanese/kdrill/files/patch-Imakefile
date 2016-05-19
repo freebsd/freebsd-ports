@@ -1,6 +1,6 @@
---- Imakefile.orig	Sat Jan  8 06:59:13 2005
-+++ Imakefile	Fri Aug  5 16:16:00 2005
-@@ -32,9 +32,9 @@
+--- Imakefile.orig	2006-03-05 22:05:00 UTC
++++ Imakefile
+@@ -32,9 +32,9 @@ UNCOMPRESSEXT = .gz
  /* You can change these here, and KDrill.ad will 
   * get created with the matching values. Yaaay!
   */
@@ -13,7 +13,7 @@
  
  # If for some reason, the user prefs stuff isn't working for you, 
  # and you can't compile, uncomment this
-@@ -46,7 +46,10 @@
+@@ -46,7 +46,10 @@ RADLOCATION= /usr/local/lib/radkfile
  # The system should pick some default for you.
  # If you dont like it, uncomment this and use it as you like.
  # This isn't compiled in anywhere, it's just a convenience thing.

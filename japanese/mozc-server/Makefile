@@ -2,11 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mozc
-PORTVERSION=	2.17.2106.102
+PORTVERSION=	2.17.2322.102
 CATEGORIES=	japanese
-MASTER_SITES=	LOCAL/hrs
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://codeload.github.com/google/${PORTNAME}/tar.gz/9b4c9e0?dummy=/:main \
+		https://codeload.github.com/hiroyuki-komatsu/japanese-usage-dictionary/tar.gz/e5b3425?dummy=/:udic
+DISTFILES=	google-${PORTNAME}-9b4c9e0_GH0.tar.gz:main \
+		hiroyuki-komatsu-japanese-usage-dictionary-e5b3425.tar.gz:udic
+EXTRACT_ONLY=	google-${PORTNAME}-9b4c9e0_GH0.tar.gz \
+		hiroyuki-komatsu-japanese-usage-dictionary-e5b3425.tar.gz
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Mozc Japanese Input Method, Server
@@ -15,7 +18,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	ninja:devel/ninja \
-		python:lang/python
+		python:lang/python \
+		gyp:devel/py-gyp
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libzinnia.so:japanese/zinnia
@@ -23,6 +27,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		compiler:c++11-lang pkgconfig iconv:wchar_t gmake \
 		tar:bzip2 python:build
+WRKSRC=		${WRKDIR}/${PORTNAME}-9b4c9e0
 BUILD_WRKSRC=	${WRKSRC}/src
 
 BUILD_MOZC_LIST?=	mozc_server
@@ -70,6 +75,7 @@ GYP_DEFINES=	use_libprotobuf=1 \
 		enable_unittest=0 \
 		compiler_host="${_CCTYPE}" \
 		compiler_target="${_CCTYPE}" \
+		use_libzinnia=1 \
 		zinnia_model_file="${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model" \
 		ibus_mozc_icon_path="${LOCALBASE}/share/ibus-mozc/icons/product_icon.png" \
 		ibus_mozc_path="${PREFIX}/libexec/ibus-engine-mozc"
@@ -77,8 +83,8 @@ BUILD_MODE=	Release
 BUILD_CMD=	${SETENV} ${MAKE_ENV} PATH=/bin:/usr/bin:${PATH} ${MAKE_CMD}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		${SETENV} BUILD_COMMAND="${BUILD_WRKSRC}/mozcmake" \
-		    PYTHONPATH=${BUILD_WRKSRC}/third_party/gyp/pylib/gyp \
 		    GYP_DEFINES="${GYP_DEFINES}" \
+		    PYTHONPATH=${PYTHON_SITELIBDIR}/gyp \
 		    CC_host="${CC}" \
 		    CC_target="${CC}" \
 		    CXX_host="${CXX}" \
@@ -87,8 +93,7 @@ BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		    AR_host="${AR}" \
 		    ${PYTHON_CMD} build_mozc.py
 BUILD_MOZC_CMD_BUILD=	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} ${_MAKE_JOBS}
-BUILD_GYP_CMD=	cd ${BUILD_WRKSRC}/third_party/gyp && \
-		    ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP}
+BUILD_GYP_CMD=	${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/gyp
 
 post-patch:
 	${REINPLACE_CMD} 's,-liconv,${ICONV_LIB},g' \
@@ -108,7 +113,7 @@ ${BUILD_WRKSRC}/mozcmake:
 
 post-configure: ${BUILD_WRKSRC}/mozcmake
 	${BUILD_MOZC_CMD} gyp \
-	    --gypdir=${BUILD_WRKSRC}/third_party/gyp \
+	    --gypdir=${LOCALBASE}/bin \
 	    --server_dir="${PREFIX}/bin" \
 	    --tool_dir="${PREFIX}/libexec" \
 	    --renderer_dir="${PREFIX}/libexec" \
@@ -128,10 +133,8 @@ GYP_DEFINES+=	use_libibus=0 \
 
 MASTER_SITES+=	LOCAL/kuriyama:zipcode
 DISTFILES+= \
-	ken_all-20130628.lzh:zipcode \
-	jigyosyo-20130628.lzh:zipcode
-
-EXTRACT_DEPENDS+=	lha:archivers/lha
+	ken_all-20160428.zip:zipcode \
+	jigyosyo-20160428.zip:zipcode
 
 PLIST_FILES+=	bin/mozc \
 		bin/mozc_server \
@@ -139,14 +142,16 @@ PLIST_FILES+=	bin/mozc \
 SUB_FILES+=	mozc
 
 post-extract-mozc_server:
-	@for F in jigyosyo-20130628.lzh ken_all-20130628.lzh; do \
-		${LHA_CMD} xfq2w=${BUILD_WRKSRC}/data/dictionary_oss \
+	@for F in ${DISTFILES:M*\:zipcode:C/\:zipcode//}; do \
+		${UNZIP_NATIVE_CMD} -L -d ${BUILD_WRKSRC}/data/dictionary_oss \
 		    ${DISTDIR}/$$F; \
 	done
 	@cd ${BUILD_WRKSRC}/data/dictionary_oss && \
 	    ${PYTHON_CMD} ${BUILD_WRKSRC}/dictionary/gen_zip_code_seed.py \
 	    --zip_code=ken_all.csv --jigyosyo=jigyosyo.csv \
 	    >> dictionary09.txt
+	${MV} ${WRKDIR}/japanese-usage-dictionary-e5b3425/usage_dict.txt \
+	    ${BUILD_WRKSRC}/third_party/japanese_usage_dictionary
 
 post-extract: post-extract-mozc_server
 
@@ -251,18 +256,20 @@ do-install-ibus_mozc:
 
 # uim_mozc
 .if ${BUILD_MOZC_LIST:Muim_mozc} == "uim_mozc" || make(makesum)
-USE_GITHUB=	nodefault	# XXX
-GH_ACCOUNT=	e-kato:MU
-GH_PROJECT=	macuim:MU
-GH_TAGNAME=	v0.6.16.2:MU
-EXTRACT_ONLY+=	${DISTFILE_MU}
+#USE_GITHUB=	yes	# XXX
+GH_ACCOUNT=	e-kato
+GH_PROJECT=	macuim
+GH_TAGNAME=	v0.6.16.2.1
+DISTFILES+=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}:gh_uim
+EXTRACT_ONLY+=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
+MASTER_SITES+=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/:gh_uim
+WRKSRC_MU=	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 
 LIB_DEPENDS+=	libuim.so:textproc/uim
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
 		mozc_tool:japanese/mozc-tool
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-unix-uim-key_translator.h \
-		${PATCHDIR}/extra-patch-src-unix-uim-mozc.cc \
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-unix-uim-mozc.cc \
 		${PATCHDIR}/extra-patch-src-unix-uim-uim.gyp
 PLIST_FILES+=	lib/uim/plugin/libuim-mozc.so \
 		%%DATADIR%%/mozc.scm \
@@ -305,21 +312,12 @@ do-install-uim_mozc:
 # fcitx_mozc
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc" || make(makesum)
 PATCH_SITES=	http://download.fcitx-im.org/fcitx-mozc/
-PATCHFILES=	fcitx-mozc-2.16.2037.102.2.patch
+PATCHFILES=	fcitx-mozc-2.17.2313.102.1.patch
 .endif
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 PATCH_DIST_STRIP=-p1
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-unix-fcitx-eim.cc \
-	${PATCHDIR}/extra-patch-src-unix-fcitx-mozc_response_parser.cc \
 	${PATCHDIR}/extra-patch-src-unix-fcitx-surrounding_text_util.cc
-
-POST_PATCHES=	${PATCHDIR}/extra-patch-src-unix_fcitx_fcitx_mozc.cc \
-	${PATCHDIR}/extra-patch-src-unix-fcitx-fcitx.gyp \
-	${PATCHDIR}/extra-patch-src-unix-fcitx-fcitx_key_event_handler.h \
-	${PATCHDIR}/extra-patch-src-unix-fcitx-fcitx_key_translator.h \
-	${PATCHDIR}/extra-patch-src-unix-fcitx-fcitx_mozc.h \
-	${PATCHDIR}/extra-patch-src-unix-fcitx-mozc_connection.cc \
-	${PATCHDIR}/extra-patch-src-unix-fcitx-mozc_connection.h
 
 GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=0 \
@@ -351,11 +349,6 @@ post-extract-fcitx_mozc:
 	${RM} ${BUILD_WRKSRC}/unix/fcitx/fcitx.gyp
 
 post-extract: post-extract-fcitx_mozc
-
-post-patch-fcitx_mozc:
-	cd ${PATCH_WRKSRC} && ${CAT} ${POST_PATCHES} | ${PATCH}
-
-post-patch: post-patch-fcitx_mozc
 
 do-build-fcitx_mozc:
 	${BUILD_MOZC_CMD_BUILD} unix/fcitx/fcitx.gyp:fcitx-mozc
@@ -397,6 +390,7 @@ CATEGORIES+=	elisp
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server
 
 PLIST_FILES+=	${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.elc \
+		${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.el.gz \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc/leim-list.el
 PLIST_DIRS+=	${EMACS_VERSION_SITE_LISPDIR}/mozc
 
@@ -409,11 +403,13 @@ post-patch: post-patch-mozc_el
 do-build-mozc_el:
 	cd ${BUILD_WRKSRC}/unix/emacs && \
 	    ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
-	    -f batch-byte-compile mozc.el
+	    -f batch-byte-compile mozc.el && \
+	    ${GZIP_CMD} -9 mozc.el
 
 do-install-mozc_el:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc
 	${INSTALL_DATA} \
+	    ${BUILD_WRKSRC}/unix/emacs/mozc.el.gz \
 	    ${BUILD_WRKSRC}/unix/emacs/mozc.elc \
 	    ${FILESDIR}/leim-list.el \
 	    ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc/

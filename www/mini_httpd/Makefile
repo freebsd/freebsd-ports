@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mini_httpd
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/mini_httpd/
 
@@ -13,15 +13,11 @@ LICENSE=	BSD2CLAUSE
 
 USES=		cpe
 CPE_VENDOR=	acme
-MAKE_ARGS=	SSL_TREE="${OPENSSLBASE}"
 USE_OPENSSL=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/htpasswd/${PORTNAME}-htpasswd/g' ${WRKSRC}/htpasswd.1
 	@${REINPLACE_CMD} -e 's/\(htpasswd(1)\)/${PORTNAME}-\1/g' ${WRKSRC}/${PORTNAME}.8
-	@${REINPLACE_CMD} \
-		-e '/^CFLAGS =/s|=|= ${CFLAGS}|' \
-		-e '/^LDFLAGS =/s|=|= ${LDFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily

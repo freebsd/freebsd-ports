@@ -1,5 +1,5 @@
-The automatic addressbook plugin for Roundcube collects each address you 
-send an email to and records it in an address book, making it available 
+The automatic addressbook plugin for Roundcube collects each address you
+send an email to and records it in an address book, making it available
 for later use or auto-completion.
 
 WWW: https://github.com/sblaisot/automatic_addressbook

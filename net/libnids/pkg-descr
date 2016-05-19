@@ -6,6 +6,6 @@ modules. Libnids performs:
 
 a) assembly of TCP segments into TCP streams
 b) IP defragmentation
-c) TCP port scan detection 
+c) TCP port scan detection
 
 WWW: http://libnids.sf.net

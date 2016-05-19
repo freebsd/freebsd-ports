@@ -967,6 +967,7 @@
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-devise-two-factor
+    SUBDIR += rubygem-digest-crc
     SUBDIR += rubygem-doorkeeper
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
@@ -991,6 +992,7 @@
     SUBDIR += rubygem-omniauth-multipassword
     SUBDIR += rubygem-omniauth-saml
     SUBDIR += rubygem-omniauth-shibboleth
+    SUBDIR += rubygem-openssl-ccm
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-rack-oauth2

@@ -3,6 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	2.8.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -312,7 +313,7 @@ VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VAAPI_CONFIGURE_ENABLE=	vaapi
 
 # vdpau
-VDPAU_BUILD_DEPENDS=	${LOCALBASE}/include/vdpau/vdpau.h:multimedia/libvdpau
+VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
 # armv6

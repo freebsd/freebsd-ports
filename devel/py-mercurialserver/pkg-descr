@@ -15,7 +15,7 @@ supported.
 To give a user access to the repository, place their key in an
 appropriately-named subdirectory of "/usr/lcoal/etc/mercurialserver/keys"
 and run "refresh-auth". You can then control what access they have to what
-repositories by editing the control file 
+repositories by editing the control file
 "/usr/local/etc/mercurialserver/access.conf", which can match the names of
 these keys against a glob pattern.
 

@@ -1,10 +1,10 @@
 Thick database bindings for MySQL, PostgreSQL and SQLite written in Ada.
 
-This is the first release of AdaBase, an abstraction library that provides
-a consistent interface to multiple database servers.  Currently only one
-driver for MySQL is provided, but additional ones for SQLite and
-PostgreSQL are planned for the near term.  It's extensible, so support
-for others such as Firebird, Oracle and MSSQL would be easily possible.
+This is the second release of AdaBase, an abstraction library that provides
+a consistent interface to multiple database servers.  Currently only two
+drivers are provided, MySQL and SQLite, but the PostgreSQL driver is
+planned for the near term.  It's extensible, so support for other
+databases such as Firebird, Oracle and MSSQL would be easily possible.
 
 AdaBase offers unique features over similar frameworks.  For starters,
 it's limited to database support rather than including many other unwanted

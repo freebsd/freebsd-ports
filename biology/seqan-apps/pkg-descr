@@ -1,6 +1,6 @@
 SeqAn is an open source C++ library of efficient algorithms
 and data structures for the analysis of sequences with the
-focus on biological data. 
+focus on biological data.
 
 This port contains applications built on SeqAn and developed
 within the SeqAn project. Among them are famous read mappers

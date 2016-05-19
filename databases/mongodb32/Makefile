@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb32
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.6
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
@@ -17,18 +17,11 @@ COMMENT=	Distributed document-oriented "NoSQL" database
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
-# Bugs when compiled with < Clang 3.7
-#  - https://jira.mongodb.org/browse/SERVER-21217
-#  - https://jira.mongodb.org/browse/SERVER-22740
-BUILD_DEPENDS=	${LOCALBASE}/bin/clang37:lang/clang37
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libsnappy.so:archivers/snappy
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pymongo>=3.0:databases/pymongo
 
-CPP=	${LOCALBASE}/bin/clang-cpp37
-CC=	${LOCALBASE}/bin/clang37
-CXX=	${LOCALBASE}/bin/clang++37
 CHOSEN_COMPILER_TYPE=	clang
 
 ONLY_FOR_ARCHS=	amd64
@@ -41,10 +34,10 @@ OPTIONS_DEFAULT=	SASL SSL
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
 
-SSL_USE=	openssl=yes
+SSL_USE=	yes
 SSL_MAKE_ARGS=	--ssl
 
-USES=		cpe execinfo python:build scons
+USES=		compiler cpe execinfo python:build scons
 
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--use-system-pcre --use-system-snappy \
@@ -63,6 +56,15 @@ TEST_TARGET=	unittests
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
 # Cannot be built
 IGNORE=	unsupported on FreeBSD 10.1 or older
+.endif
+# Bugs when compiled with < Clang 3.7
+#  - https://jira.mongodb.org/browse/SERVER-21217
+#  - https://jira.mongodb.org/browse/SERVER-22740
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 37
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang37:${PORTSDIR}/lang/clang37
+CPP=	${LOCALBASE}/bin/clang-cpp37
+CC=	${LOCALBASE}/bin/clang37
+CXX=	${LOCALBASE}/bin/clang++37
 .endif
 
 post-install:

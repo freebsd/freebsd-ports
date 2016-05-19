@@ -1,4 +1,4 @@
-This module provides a pure perl implementation of the interface described 
+This module provides a pure perl implementation of the interface described
 in Heap::Simple. Look there for a description.
 
 WWW: http://search.cpan.org/dist/Heap-Simple-Perl/

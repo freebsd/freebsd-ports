@@ -62,6 +62,8 @@
     SUBDIR += p5-Verilog-Perl
     SUBDIR += pcb
     SUBDIR += pdnmesh
+    SUBDIR += py-gdspy
+    SUBDIR += py-lcapy
     SUBDIR += py-pycam
     SUBDIR += pythoncad
     SUBDIR += qcad
@@ -71,6 +73,7 @@
     SUBDIR += qmls
     SUBDIR += qucs
     SUBDIR += repsnapper
+    SUBDIR += rubygem-gdsii
     SUBDIR += sceptre
     SUBDIR += scotch
     SUBDIR += spice

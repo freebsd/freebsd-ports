@@ -1,7 +1,7 @@
 SDLmm is a C++ glue for SDL, or the Simple DirectMedia Layer, which is a
 generic API that provides low level access to audio, keyboard, mouse,
 joystick, 3D hardware via OpenGL, and 2D framebuffer across multiple
-platforms. 
+platforms.
 
 SDLmm aims to stay as close as possible to the C API while taking advantage
 of native C++ features like object orientation. We will also aim at being

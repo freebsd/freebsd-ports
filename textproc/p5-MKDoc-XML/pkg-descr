@@ -1,22 +1,22 @@
-MKDoc is a web content management system written in Perl which focuses on 
-standards compliance, accessiblity and usability issues, and multi-lingual 
+MKDoc is a web content management system written in Perl which focuses on
+standards compliance, accessiblity and usability issues, and multi-lingual
 websites.
 
-At MKDoc Ltd we have decided to gradually break up our existing commercial 
-software into a collection of completely independent, well-documented, 
+At MKDoc Ltd we have decided to gradually break up our existing commercial
+software into a collection of completely independent, well-documented,
 well-tested open-source CPAN modules.
 
-Ultimately we want MKDoc code to be a coherent collection of module 
-distributions, yet each distribution should be usable and useful in 
+Ultimately we want MKDoc code to be a coherent collection of module
+distributions, yet each distribution should be usable and useful in
 itself.
 
 MKDoc::XML is part of this effort.
 
-You could help us and turn some of MKDoc's code into a CPAN module. You 
+You could help us and turn some of MKDoc's code into a CPAN module. You
 can take a look at the existing code at http://download.mkdoc.org/.
 
-If you are interested in some functionality which you would like to see as 
-a standalone CPAN module, send an email to 
+If you are interested in some functionality which you would like to see as
+a standalone CPAN module, send an email to
 <mkdoc-modules@lists.webarch.co.uk>
 
 WWW: http://search.cpan.org/dist/MKDoc-XML/

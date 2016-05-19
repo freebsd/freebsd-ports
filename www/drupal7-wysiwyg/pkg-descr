@@ -1,6 +1,6 @@
 Wysiwyg API allows to use client-side editors (a.k.a.  WYSIWYG editors) for
 editing content in the Drupal CMS.  It simplifies installation of editors
-and allows you to define which editor to use depending on the input format. 
+and allows you to define which editor to use depending on the input format.
 This module replaces all existing editor integration modules and no other
 Drupal module is required.
 

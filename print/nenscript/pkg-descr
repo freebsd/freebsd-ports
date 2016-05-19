@@ -12,7 +12,7 @@ The main features of nenscript are:
 
 Features additional to nenscript are:
         . automatic wrapping of long lines
-        . availability under MSDOS 
+        . availability under MSDOS
         . executable is self contained - no additional files required
 
 WWW: http://www.ai.mit.edu/projects/im/magnus/nenscript/

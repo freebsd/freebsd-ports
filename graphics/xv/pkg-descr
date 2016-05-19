@@ -1,12 +1,12 @@
 Xv  is  an  X11  program  that displays images in the GIF,
 JPEG, TIFF, PBM, PGM, PPM, X11 bitmap, Utah Raster Toolkit
 RLE,  PDS/VICAR,  Sun Rasterfile, BMP, XPM, PCX, IRIS RGB,
-possibly PostScript, Portable Networking Format(PNG)  and 
+possibly PostScript, Portable Networking Format(PNG)  and
 PM formats  on  workstations  and  terminals  running the
 X Window System, Version 11.
 And more xv japanese extensions patch supports images in
 the MAKI, MAG, PIC, Pi PIC2, PhotoCD. And this patch also
-supports archived image files.   Supported archivers  are 
+supports archived image files.   Supported archivers  are
 arc, arj, lzh, tar, tar+compress, tar+gzip, tar+bzip2, zip,
 and zoo.
 

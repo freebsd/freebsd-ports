@@ -91,7 +91,6 @@
     SUBDIR += dcd
     SUBDIR += deadbeef
     SUBDIR += deadbeef-jack-plugin
-    SUBDIR += deadbeef-mpris-plugin
     SUBDIR += deadbeef-mpris2-plugin
     SUBDIR += deadbeef-musical-spectrum-plugin
     SUBDIR += deadbeef-playback-status-plugin
@@ -167,6 +166,7 @@
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmit
+    SUBDIR += forked-daapd
     SUBDIR += fpc-a52
     SUBDIR += fpc-mad
     SUBDIR += fpc-modplug

@@ -3,12 +3,12 @@ multiple database management systems in an application with negligeable
 overhead, in terms of code as well as system resources.
 
 Supported databases:
-   - Lago 
-   - Mysql 
-   - Sqlite 
-   - Mimer 
-   - Postgresql 
-   - Oracle 
-   - Gdbm 
+   - Lago
+   - Mysql
+   - Sqlite
+   - Mimer
+   - Postgresql
+   - Oracle
+   - Gdbm
 
 WWW: http://siag.nu/libsdb/

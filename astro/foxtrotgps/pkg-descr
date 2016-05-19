@@ -1,7 +1,7 @@
-FoxtrotGPS is a fork of Marcus Bauer's TangoGPS project, with a focus on 
+FoxtrotGPS is a fork of Marcus Bauer's TangoGPS project, with a focus on
 cooperation and fostering community innovation.  It is a lightweight moving
 map application that can be used with or without a gps unit.  By default,
-maps tiles are downloaded from the OpenStreetMap project, but other sources 
+maps tiles are downloaded from the OpenStreetMap project, but other sources
 are available, and new ones may be added.
 
 Map areas may be downloaded and cached for use while offline.

@@ -1,6 +1,6 @@
---- config.h.orig	Wed Nov 24 16:36:07 1993
-+++ config.h	Mon Dec 18 11:46:21 2006
-@@ -73,7 +73,7 @@
+--- config.h.orig	1993-11-24 15:36:07 UTC
++++ config.h
+@@ -73,7 +73,7 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
  #ifdef SYSV
  #define RESET_PROGRAM "tput clear"
  #else
@@ -9,7 +9,7 @@
  #define RESET_PROGRAM "/usr/bin/reset"
  #else
  #define RESET_PROGRAM "/usr/ucb/reset"
-@@ -155,7 +155,11 @@
+@@ -155,9 +155,13 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
  #ifdef NeXT
  #define sigtype void
  #else
@@ -17,7 +17,9 @@
 +#define sigtype void
 +#else
  #define sigtype int
+ #endif
+ #endif
 +#endif
- #endif
- #endif
  
+ #ifdef MSDOS
+ #define PATH_SEPARATOR ';'

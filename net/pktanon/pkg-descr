@@ -3,6 +3,6 @@ and uses anonymization profiles. Anonymization profiles allow for
 mapping of arbitrary anonymization primitives to protocol attributes,
 thus providing high flexibility and easy usability. A huge number of
 anonymization primitives and network protocols are supported and ready
-to use for online and offline anonymization. 
+to use for online and offline anonymization.
 
 WWW:	http://www.tm.uka.de/software/pktanon/

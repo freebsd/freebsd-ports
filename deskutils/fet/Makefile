@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fet
-PORTVERSION=	5.29.2
+PORTVERSION=	5.29.3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
@@ -16,7 +16,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake tar:bzip2
-USE_QT4=	gui network xml \
+USE_QT4=	xml \
 		moc_build rcc_build uic_build
 
 PORTEXAMPLES=	*
@@ -37,9 +37,10 @@ OPTIONS_SUB=	yes
 
 .if ${PORT_OPTIONS:MONLYCL}
 INSTALL_TARGET=	${WRKSRC}/fet-cl
+QMAKE_SOURCE_PATH=	${WRKSRC}/src/src-cl.pro
 .else
+USE_QT4+=	gui network
 INSTALL_TARGET=	${WRKSRC}/fet
-QMAKE_PRO=	src/src-cl.pro
 .endif
 
 post-patch:

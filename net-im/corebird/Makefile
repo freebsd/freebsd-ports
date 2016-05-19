@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	corebird
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	GTK3 Twitter client written in Vala
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \

@@ -1,12 +1,12 @@
 [simple | small | shell] web server
 
-sws was born out of a project requirement for a small universal Web server 
-that could run on any POSIX platform to serve static content. Since it is 
-written in /bin/sh it should run on any BSD/GNU-Linux/Unix system. It has 
-been tested on FreeBSD, Solaris, and Debian GNU/Linux. Installation consists 
-of putting the program somewhere, making it executable, creating the 
-document directory, and creating an entry in inetd.conf. sws requires 
-/bin/sh, dirname, cat, and date to function. These should be found on any 
+sws was born out of a project requirement for a small universal Web server
+that could run on any POSIX platform to serve static content. Since it is
+written in /bin/sh it should run on any BSD/GNU-Linux/Unix system. It has
+been tested on FreeBSD, Solaris, and Debian GNU/Linux. Installation consists
+of putting the program somewhere, making it executable, creating the
+document directory, and creating an entry in inetd.conf. sws requires
+/bin/sh, dirname, cat, and date to function. These should be found on any
 modern POSIX system.
 
 WWW: http://prd4.wynn.com:8080/

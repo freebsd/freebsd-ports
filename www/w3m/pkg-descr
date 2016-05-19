@@ -1,7 +1,7 @@
 w3m is a pager/text-based WWW browser.
 
 It is a similar application to Lynx, but it has several features Lynx
-doesn't have. 
+doesn't have.
 
 * Rendering tables.
 * Rendering frames. (It converts frames into a table).

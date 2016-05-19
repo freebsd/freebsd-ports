@@ -5,7 +5,7 @@ PORTNAME=	netdude
 PORTVERSION=	0.5.1
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles

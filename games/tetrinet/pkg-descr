@@ -1,8 +1,8 @@
 Tetrinet is a multiplayer, networked tetris game for up to 6 players.
 This is a Tetrinet client for the console.
 
-You must be using at least a 50-line text display to run this version of 
+You must be using at least a 50-line text display to run this version of
 Tetrinet. This is made by either typing 'vidcontrol 80x50' before
 you start tetrinet, or by adding 'allscreens_flags="80x50"' to /etc/rc.conf.
- 
+
 WWW: http://tetrinet.or.cz/

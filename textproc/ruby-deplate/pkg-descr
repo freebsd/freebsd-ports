@@ -1,5 +1,5 @@
-deplate is a ruby based tool for converting documents written in wiki-like 
-markup to LaTeX, HTML, "HTML slides", or docbook. It supports page templates, 
+deplate is a ruby based tool for converting documents written in wiki-like
+markup to LaTeX, HTML, "HTML slides", or docbook. It supports page templates,
 embedded LaTeX code, footnotes, citations, bibliographies, automatic generation
 of an index, table of contents etc. It can be used to create web pages and (via
 LaTeX or Docbook) high-quality printouts from the same source. In this respect

@@ -1,7 +1,7 @@
 CTorrent Control Server (CTCS) is an interface for monitoring and managing
 Enhanced CTorrent clients. It can manage allocation of bandwidth, provide
 status information, and allow changes to the running configuration of each
-client. Communication with CTorrent is via a TCP connection, and the user 
+client. Communication with CTorrent is via a TCP connection, and the user
 interface is a web browser.
 
 WWW: http://www.rahul.net/dholmes/ctorrent/ctcs.html

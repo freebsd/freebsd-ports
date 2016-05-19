@@ -1,11 +1,11 @@
-Log::Message is a generic message storage mechanism. It allows you to 
-store messages on a stack -- either shared or private -- and assign 
-meta-data to it. Some meta-data will automatically be added for you, like 
-a timestamp and a stack trace, but some can be filled in by the user, like 
-a tag by which to identify it or group it, and a level at which to handle 
+Log::Message is a generic message storage mechanism. It allows you to
+store messages on a stack -- either shared or private -- and assign
+meta-data to it. Some meta-data will automatically be added for you, like
+a timestamp and a stack trace, but some can be filled in by the user, like
+a tag by which to identify it or group it, and a level at which to handle
 the message (for example, log it, or die with it)
 
-Log::Message also provides a powerful way of searching through items by 
+Log::Message also provides a powerful way of searching through items by
 regexes on messages, tags and level.
 
 WWW: http://search.cpan.org/dist/Log-Message/

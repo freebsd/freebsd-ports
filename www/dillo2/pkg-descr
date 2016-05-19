@@ -1,6 +1,6 @@
 Dillo aims to be a multiplatform alternative browser that's small,
-stable, developer-friendly, usable, fast, and extensible. This 
-new, experimental version of Dillo is based upon FLTK toolkit, 
+stable, developer-friendly, usable, fast, and extensible. This
+new, experimental version of Dillo is based upon FLTK toolkit,
 rather than GTK1, and has been substantially rewritten.
 
 WWW: http://www.dillo.org/

@@ -1,4 +1,4 @@
 Modern concurrency tools for Ruby. Inspired by Erlang, Clojure, Scala,
-Haskell, F#, C#, Java and classic concurrency patterns. 
+Haskell, F#, C#, Java and classic concurrency patterns.
 
 WWW: https://github.com/ruby-concurrency/concurrent-ruby

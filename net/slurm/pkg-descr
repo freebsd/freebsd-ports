@@ -1,4 +1,4 @@
-slurm started as a port of pppstatus to FreeBSD and now is a generic 
+slurm started as a port of pppstatus to FreeBSD and now is a generic
 curses based network load monitor.
 It features three different modes with real-time ASCII graphs and
 interface statistics for all kinds of network interfaces on most Unix systems.

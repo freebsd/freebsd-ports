@@ -6,12 +6,12 @@ The GNU Trove library has two objectives:
    lightweight implementations of the java.util Collections API.
    These implementations are designed to be pluggable replacements
    for their JDK equivalents.
-   
+
    2. Whenever possible, provide the same collections support for
    primitive types. This gap in the JDK is often addressed by using
    the "wrapper" classes (java.lang.Integer, java.lang.Float, etc.)
    with Object-based collections. For most applications, however,
    collections which store primitives directly will require less
-   space and yield significant performance gains. 
+   space and yield significant performance gains.
 
 WWW: https://bitbucket.org/robeden/trove/

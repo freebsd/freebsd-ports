@@ -1,7 +1,7 @@
 
 =============================================================
 Everything has been installed to:
-	 
+
 	%%WWWDIR%%
 
 To make Mantis available through your web site, I suggest
@@ -12,7 +12,7 @@ that you add something like the following to httpd.conf:
     <Directory "%%WWWDIR%%/">
         Options None
   	AllowOverride None
- 
+
         Order Allow,Deny
         Allow from all
     </Directory>

@@ -1,14 +1,14 @@
 Webby is a fantastic little website management system.
-It would be called a content management system if it 
-were a bigger kid. But, it's just a runt with a 
+It would be called a content management system if it
+were a bigger kid. But, it's just a runt with a
 special knack for transforming text.
 
-Webby works by combining the contents of a page with 
-a layout to produce HTML. The layout contains 
+Webby works by combining the contents of a page with
+a layout to produce HTML. The layout contains
 everything common to all the pages HTML headers,
-navigation menu, footer, etc. and the page 
-contains just the information for that page. You 
-can use your favorite markup language to write 
+navigation menu, footer, etc. and the page
+contains just the information for that page. You
+can use your favorite markup language to write
 your pages; Webby supports quite a few.
 
 WWW: http://rubygems.org/gems/webby/

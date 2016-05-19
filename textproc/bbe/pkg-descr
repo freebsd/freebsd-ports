@@ -7,7 +7,7 @@ include delete, replace, search/replace, binary operations
 (and, or, etc.), append, and bcd/ASCII conversion. For
 examining the input stream, it contains some grep-like
 features like printing the input file name, stream offset,
-and block number of found blocks. Block contents can also 
+and block number of found blocks. Block contents can also
 be printed in different formats like hex, octal, ASCII, and
 binary.
 

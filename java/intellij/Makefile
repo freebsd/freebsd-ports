@@ -5,13 +5,13 @@
 # Vadim Zhukov <zhuk@openbsd.org>
 
 PORTNAME=	intellij
-PORTVERSION=	15.0.4
+PORTVERSION=	2016.1.2b
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
 DISTNAME=	ideaIC-${PORTVERSION}
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	IntelliJ IDEA Community Edition
 
 LICENSE=	APACHE20
@@ -25,7 +25,7 @@ JAVA_VERSION=	1.7+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKDIST=	${WRKDIR}/idea-IC-143.2287.1
+WRKDIST=	${WRKDIR}/idea-IC-145.972.3
 
 .include "common.mk"
 
@@ -51,7 +51,7 @@ do-install:
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
 	@${RM} -r ${STAGEDIR}${IDEA_HOME}/lib/libpty
-	@${RM} ${STAGEDIR}${IDEA_HOME}/lib/pty4j-0.5.jar
+	@${RM} -r ${STAGEDIR}${IDEA_HOME}/jre/jre
 	${INSTALL_SCRIPT} ${WRKDIR}/idea ${STAGEDIR}${PREFIX}/bin/idea
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/idea.desktop ${STAGEDIR}${PREFIX}/share/applications/

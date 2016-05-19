@@ -1,6 +1,6 @@
 Net::vCard - Read and write vCard files (RFC 2426). vCard files hold
 personal information that you would typically find on a business card.
 Name, numbers, addresses, and even logos. This module can also serve as a
-base class for other vFile readers. 
+base class for other vFile readers.
 
 WWW: http://search.cpan.org/dist/Net-vCard/

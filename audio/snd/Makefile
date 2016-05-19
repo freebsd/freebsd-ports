@@ -5,7 +5,7 @@ PORTNAME=	snd
 PORTVERSION=	15.7
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
-		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+		SF
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Multitracking sound editor and utilities

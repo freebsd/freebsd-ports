@@ -1,6 +1,6 @@
-State machines make it simple to manage the behavior of a class. 
-Too often, the state of an object is kept by creating multiple 
-boolean attributes and deciding how to behave based on the values. 
+State machines make it simple to manage the behavior of a class.
+Too often, the state of an object is kept by creating multiple
+boolean attributes and deciding how to behave based on the values.
 
 state_machine simplifies this design by introducing the various
 parts of a real state machine, including states, events,

@@ -2,7 +2,7 @@ TECkit (Text Encoding Conversion toolkit) is a toolkit for converting data
 between 8-bit legacy encodings and Unicode. It can also be used for
 transliteration of Unicode between different scripts.
 
-TECkit uses a mapping description language (mapping byte encodings to Unicode). 
+TECkit uses a mapping description language (mapping byte encodings to Unicode).
 Mapping rules can be extended by (1) the use of character sequences rather than
 single characters on either side; (2) by the addition of contextual constraints
 (environments) determining when a rule should apply; (3) and by the use of

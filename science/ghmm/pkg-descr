@@ -1,7 +1,7 @@
-The General Hidden Markov Model Library (GHMM) is a C library 
-with additional Python bindings implementing a wide range of 
-types of Hidden Markov Models and algorithms: 
-discrete, continous emissions, basic training, 
+The General Hidden Markov Model Library (GHMM) is a C library
+with additional Python bindings implementing a wide range of
+types of Hidden Markov Models and algorithms:
+discrete, continous emissions, basic training,
 HMM clustering, HMM mixtures.
 
 WWW: http://ghmm.sourceforge.net/

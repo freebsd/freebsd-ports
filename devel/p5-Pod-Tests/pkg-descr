@@ -1,14 +1,14 @@
-This is a specialized POD viewer to extract embedded tests and code 
-examples from POD. It doesn't do much more than that. pod2test does the 
+This is a specialized POD viewer to extract embedded tests and code
+examples from POD. It doesn't do much more than that. pod2test does the
 useful work.
 
-After creating a Pod::Tests object, you parse the POD by calling one of 
-the available parsing methods documented below. You can call parse as many 
-times as you'd like, all examples and tests found will stack up inside the 
+After creating a Pod::Tests object, you parse the POD by calling one of
+the available parsing methods documented below. You can call parse as many
+times as you'd like, all examples and tests found will stack up inside the
 object.
 
-Once extracted, the tests can be built into stand-alone testing code using 
-the build_tests() and build_examples() methods. However, it is recommended 
+Once extracted, the tests can be built into stand-alone testing code using
+the build_tests() and build_examples() methods. However, it is recommended
 that you first look at the pod2test program before embarking on this.
 
 WWW: http://search.cpan.org/dist/Pod-Tests/

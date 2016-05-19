@@ -1,9 +1,9 @@
 e2guardian is a content filtering proxy that works in conjunction with another
-caching proxy such as Squid or Oops. More information can be found in the 
+caching proxy such as Squid or Oops. More information can be found in the
 e2guardian man page, the "doc" subdirectory and the in the configuration files.
- 
-e2guardian is a fork of DansGuardian and the maintainers fully acknowledge the 
-work carried out by and the copyright of Daniel Baron and other contributors to 
+
+e2guardian is a fork of DansGuardian and the maintainers fully acknowledge the
+work carried out by and the copyright of Daniel Baron and other contributors to
 the Dansguardian project.
 
 E2Guardian Main features:

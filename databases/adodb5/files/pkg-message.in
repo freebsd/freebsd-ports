@@ -1,6 +1,6 @@
 
 This version supports only PHP version 5 and higher.
 
-You can add the ADOdb path (%%DATADIR%%) 
+You can add the ADOdb path (%%DATADIR%%)
 into the "include_path=" directive in your php.ini
 

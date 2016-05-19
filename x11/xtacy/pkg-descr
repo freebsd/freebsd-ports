@@ -4,12 +4,12 @@ Xtacy, a Graphics Hack for X11 windows
 "Wow! This is better than snorting caffeine!"  --Neil Braun
 
 Xtacy is a graphics hack which I've been, well, hacking on, for 2 or 3
-years now. It's been compiled on DECstations 3100, SGI running IRIX 5.3, 
-and Linux boxen. I think someone got it running on a Sun once, but it 
-had problems with the circle draw function, so a couple of the modes 
+years now. It's been compiled on DECstations 3100, SGI running IRIX 5.3,
+and Linux boxen. I think someone got it running on a Sun once, but it
+had problems with the circle draw function, so a couple of the modes
 looked quite odd. Not that odd is bad. Just odd.
 
-So what does it do? Xtacy displays bouncing shapes, rotating palettes, 
+So what does it do? Xtacy displays bouncing shapes, rotating palettes,
 a couple fractals, a kaleidascope, and lots of more stuff.
 
 WWW: http://www.gweep.net/~jer/xtacy.html

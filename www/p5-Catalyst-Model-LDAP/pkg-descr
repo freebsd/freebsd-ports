@@ -1,6 +1,6 @@
-This is the Net::LDAP model class for Catalyst. It is nothing more than a 
-simple wrapper for Net::LDAP. This class simplifies LDAP access by letting 
-you configure a common set of bind arguments. It also lets you configure a 
+This is the Net::LDAP model class for Catalyst. It is nothing more than a
+simple wrapper for Net::LDAP. This class simplifies LDAP access by letting
+you configure a common set of bind arguments. It also lets you configure a
 base DN for searching.
 
 WWW: http://search.cpan.org/dist/Catalyst-Model-LDAP/

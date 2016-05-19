@@ -13,6 +13,6 @@ fswatch:
 
 - is one of many similar utilities. the main difference is the configuration.
   you can define different settings for every directory in a directory tree.
-  moreover, it is very small and fast.            
+  moreover, it is very small and fast.
 
 WWW: http://fswatch.sourceforge.net

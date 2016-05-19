@@ -7,12 +7,12 @@ Urls include Message-IDs.
 
 urlbatcher[*]: Retrieve urls contained in input.
 
-pybrowser: Can be used as general browser call.  Application to 
+pybrowser: Can be used as general browser call.  Application to
 override platform default can be specified via -b option.
 
 viewhtmlmsg[*]: Display html message in browser.
 
-wrap: Word wrap text input.  With support for messages 
+wrap: Word wrap text input.  With support for messages
 (recognition of quote chars etc.).
 
 [*]needs raw message as input to work correctly.

@@ -74,16 +74,23 @@ ALL_CORES+=	libretro:libretro-vecx:vecx:be67ef1:x
 ALL_CORES+=	libretro:virtualjaguar-libretro:virtualjaguar:ffec5c7:x
 ALL_CORES+=	libretro:yabause:yabause:b121882:x
 
+USE_GITHUB=	nodefault
+
 # variables that depend on ALL_CORES
-MASTER_SITES=	${ALL_CORES:@CORE@https://codeload.github.com/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\1,}/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2,}/tar.gz/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\4,}?dummy=/:${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}@}
-DISTFILES=	${ALL_CORES:@CORE@${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\1,}-${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2,}-v${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\4,}_GH0.tar.gz:${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}@}
-CORE_DIRS_HASH=	${ALL_CORES:@CORE@${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2,}-${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\4,}@}
-CORE_DIRS=	${ALL_CORES:@CORE@${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2,}@}
-#PLIST_FILES=	${ALL_CORES:@CORE@libexec/libretro/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}_libretro.so@}
-PLIST_FILES=	${ALL_CORES:@CORE@${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\5,:S/,/ /g:@A@libexec/libretro/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}_${A}_libretro.so@}@:S/_x_libretro/_libretro/g}
-GIT_REV=	${ALL_CORES:@CORE@GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}=`git ls-remote https://github.com/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\1,}/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2,}.git | ${GREP} HEAD | ${SED} -E "s/^(.......).*/\\1/g"` && @}
-GIT_REV_ECHO=	${ALL_CORES:@CORE@echo "GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}=\$${GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}}" && @}
-GIT_REV_CHANGE=	${ALL_CORES:@CORE@if [ "${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\4,}" != "\$${GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}}" ]; then echo "upstream revision changed: core=${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,} old=${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\4,}  new=\$${GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}}"; fi && @}
+GH_TUPLE=	${ALL_CORES:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\1:\2:\4:\3,}
+CORE_DIRS=	${ALL_CORES:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2,}
+
+#PLIST_FILES+=	${ALL_CORES:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),libexec/libretro/\3_libretro.so,}
+.for CORE in ${ALL_CORES}
+.for A in ${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\5,:S/,/ /g}
+PLIST_FILES+=	libexec/libretro/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}_${A}_libretro.so
+.endfor
+GIT_REV+=	GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}=$$(git ls-remote https://github.com/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\1,}/${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2,}.git | ${GREP} HEAD | ${SED} -E "s/^(.......).*/\\1/g") &&
+GIT_REV_ECHO+=	echo "GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}=$${GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}}" &&
+GIT_REV_CHANGE+=	if [ "${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\4,}" != "$${GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}}" ]; then echo "upstream revision changed: core=${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,} old=${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\4,}  new=$${GIT_REV_${CORE:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\3,}}"; fi &&
+.endfor
+
+PLIST_FILES:=	${PLIST_FILES:S/_x_libretro/_libretro/}
 
 WRKSRC=		${WRKDIR}/all-cores
 
@@ -94,36 +101,39 @@ DOS2UNIX_FILES=	hatari/Makefile.libretro
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		does not build for 9.X and earlier (various reasons)
+# Avoid a lot of patching for 9.
+.if ${COMPILER_TYPE} == gcc
+USE_CXXSTD=	gnu++11
 .endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
-	@for dir in ${CORE_DIRS_HASH}; do \
-	  ${MV} ${WRKDIR}/$${dir} ${WRKSRC}/`echo $${dir} | ${SED} -E 's/^(.*)\-.......$//\\1/g'`; \
-	done;
+.for dir in ${ALL_CORES:C,^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*),\2:\3,}
+	@${MV} ${WRKSRC_${dir:C/^([^:]*):([^:]*)/\2/}} ${WRKSRC}/${dir:C/^([^:]*):([^:]*)/\1/}
+.endfor
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/"__VA_ARGS__/" __VA_ARGS__/' \
+		${WRKSRC}/desmume/desmume/src/wifi.cpp
 
 do-build:
 	@for dir in ${CORE_DIRS}; do \
-	  ${ECHO_MSG} "===>  Building for ${PKGNAME}: core $${dir} (`date`)"; \
-	  if [ -f ${WRKSRC}/$${dir}/Makefile.freebsd ]; then \
-	    (cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.freebsd ${_MAKE_JOBS} ${MAKE_ARGS}); \
-	  elif [ -f ${WRKSRC}/$${dir}/Makefile.libretro ]; then \
-	    (cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.libretro ${_MAKE_JOBS} ${MAKE_ARGS}); \
+	  ${ECHO_MSG} "===>  Building for ${PKGNAME}: core ${dir} ($$(date))"; \
+	  cd ${WRKSRC}/${dir}; \
+	  if [ -f Makefile.freebsd ]; then \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.freebsd ${_MAKE_JOBS} ${MAKE_ARGS}; \
+	  elif [ -f Makefile.libretro ]; then \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.libretro ${_MAKE_JOBS} ${MAKE_ARGS}; \
 	  else \
-	    (cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile ${_MAKE_JOBS} ${MAKE_ARGS}); \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile ${_MAKE_JOBS} ${MAKE_ARGS}; \
 	  fi; \
 	done;
 
 do-install:
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/libretro;
 	@for dir in ${CORE_DIRS}; do \
-	  ${CP} $$(find ${WRKSRC}/$${dir} -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro/; \
+	  ${INSTALL_LIB} $$(find ${WRKSRC}/${dir}/ -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro); \
 	done;
-	@if [ -n "${STRIP}" ]; then \
-	  ${STRIP_CMD} ${STAGEDIR}/${PREFIX}/libexec/libretro/*.so; \
-	fi
 
 print-upstream-revisions:
 	@${ECHO} "--begin print upstream revisions--" && \

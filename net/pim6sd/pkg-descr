@@ -1,5 +1,5 @@
 An IPv6 multicast routing daemon, which supports PIM-SM
-(Protocol Independent Multicast Sparse-Mode Version 2), and 
+(Protocol Independent Multicast Sparse-Mode Version 2), and
 PIM-SSM (Source-Specific Multicast using PIM-SM).
 
 WWW: http://mcast-tools.sourceforge.net/

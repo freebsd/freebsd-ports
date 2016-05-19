@@ -1,4 +1,4 @@
-This program remotely kills trino nodes on version 1.07b2+f3 and below. 
+This program remotely kills trino nodes on version 1.07b2+f3 and below.
 It abuses the careless coding in trinoo nodes and causes them to exit. It
 requires that you either know the node password or think it's the default
 password.

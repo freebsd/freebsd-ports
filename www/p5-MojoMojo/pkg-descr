@@ -6,8 +6,8 @@ changed with an easy AJAX- based diff system. There are also a bunch of
 other features like bult-in fulltext search, live AJAX preview of editing,
 and RSS feeds for every wiki page.
 
-To find out more about how you can use MojoMojo, please visit 
-http://mojomojo.org or read the installation instructions in 
+To find out more about how you can use MojoMojo, please visit
+http://mojomojo.org or read the installation instructions in
 MojoMojo::Installation to try it out yourself.
 
 WWW: http://search.cpan.org/dist/MojoMojo/

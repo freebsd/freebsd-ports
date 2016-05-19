@@ -54,18 +54,19 @@ NDK_MASTER_SITES=	https://dl.google.com/android/ndk/:ndk
 # Prefer NDK from environment
 WRKSRC_ndk=		${ANDROID_NDK}
 .else
-NDK_DISTFILES=		${DISTNAME_ndk}.bin:ndk,p7zip
+NDK_DISTFILES=		${DISTNAME_ndk}.bin:ndk
 DISTNAME_ndk=		android-ndk-r10e-linux-${LINUX_RPM_ARCH:C/i.86/x86/}
+EXTRACT_ONLY=		${DISTFILES:N${EXTRACT_ONLY_7z}*}
+EXTRACT_ONLY_7z=	${DISTNAME_ndk}.bin
 WRKSRC_ndk=		${WRKDIR}/${DISTNAME_ndk:C/(-[^-]+){2}$//}
 .endif
 NDK_BUILD_DEPENDS=	${LINUX_BASE_PORT}
-NDK_USES=		7z:partial${NDK_7z_ARGS_${LINUX_RPM_ARCH}}
+NDK_USES=		7z:partial,p7zip
 NDK_USE=		LINUX=yes # build
 NDK_SHELL=		${SETENV} UNAME_s=Linux UNAME_m=${LINUX_RPM_ARCH} ${SH}
 NDK_CONFIGURE_ENV=	ANDROID_NDK="${WRKSRC_ndk}" \
 			ANDROID_NDK_SHELL="${NDK_SHELL}" \
 			NDK_TMPDIR="${WRKDIR}"
-NDK_7z_ARGS_x86_64=	,p7zip # libarchive fails to read
 NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:lang/gnatdroid-armv7 \
 			${LOCALBASE}/android-x86/x86_32/bin/i686-aux-linux-android-gcc:lang/gnatdroid-x86
 .if defined(.PARSEDIR)

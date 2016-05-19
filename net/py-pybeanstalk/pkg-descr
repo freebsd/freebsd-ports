@@ -1,4 +1,4 @@
-A pure python client library for putting and getting jobs from 
+A pure python client library for putting and getting jobs from
 the beanstalkd queue.
 
 WWW:	http://code.google.com/p/pybeanstalk/

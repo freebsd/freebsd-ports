@@ -5,6 +5,6 @@ Street Map input file. Such OSM files come in two different formats:
 * files identified by the .osm.pbf suffix does containt the same identical
 data, but adopting the Google's Protocol Buffer serialization format and thus
 requiring much less storage space.
- 
+
 
 WWW: https://www.gaia-gis.it/fossil/readosm/index

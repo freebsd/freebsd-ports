@@ -1,5 +1,5 @@
---- richmail/richset.c.orig	Wed Oct 21 19:04:19 1992
-+++ richmail/richset.c	Mon Dec 18 11:46:22 2006
+--- richmail/richset.c.orig	1992-10-21 18:04:19 UTC
++++ richmail/richset.c
 @@ -34,6 +34,7 @@
  -------------------------------------------------------------------------*/
  

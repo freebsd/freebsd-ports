@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160512:
+AUTHOR: emaste@FreeBSD.org
+
+  "make makesum" now writes the current timestamp to distinfo when it is run.
+  This is done to support development and prototyping efforts for reproducible
+  package builds, which require some concept of a "last updated" time.
+
+  The TIMESTAMP can currently be ignored for ports that have no distinfo, and
+  for updates done without using "make makesum."
+
 20160428
 AUTHOR: mat@FreeBSD.org
 
@@ -367,7 +377,7 @@ AUTHOR: bapt@FreeBSD.org
 20150326:
 AUTHOR: bdrewery@FreeBSD.org
 
-  PTHREAD_CLFAGS and PTHREAD_LIBS have been removed.  Please see entry
+  PTHREAD_CFLAGS and PTHREAD_LIBS have been removed.  Please see entry
   20130207 for more information.
 
 20150319:

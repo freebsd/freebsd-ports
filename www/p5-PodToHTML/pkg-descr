@@ -1,5 +1,5 @@
 PodToHTML generates HTML from one or (more typically) several files
 containg POD documentation.
 
-It uses Pod::Parser to parse the PODs and HTML::Element to represent the 
-HTML as it is generated. 
+It uses Pod::Parser to parse the PODs and HTML::Element to represent the
+HTML as it is generated.

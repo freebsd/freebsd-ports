@@ -1,4 +1,4 @@
-CLI utilities and wrappers for FreeBSD's bugzilla instance with emphasis on 
+CLI utilities and wrappers for FreeBSD's bugzilla instance with emphasis on
 ports.  Provides a consistent API which can have pluggable backends.
 
 # Supported Commands

@@ -13,7 +13,7 @@ delay until midnight 4 october 2003
 delay until now +5 minutes
 delay 15s -- top
 
-It allows for short, long, and customized messages for the display of 
-the time remaining. 
+It allows for short, long, and customized messages for the display of
+the time remaining.
 - example of output : delay -v until 4 pm tomorrow
 		      Time Remaining: 1 days, 07:51:39.

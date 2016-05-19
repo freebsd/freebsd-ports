@@ -1,6 +1,6 @@
 Yconalyzer is a low-overhead pcap utility that provides a bird's eye
 view of traffic on a particular TCP port, displaying a distribution of
 duration, volume and throughput over all connections while being able
-to narrow down to a connection as well. 
+to narrow down to a connection as well.
 
 WWW:	http://yconalyzer.sourceforge.net/

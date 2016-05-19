@@ -1,9 +1,9 @@
-Hashie is available as a RubyGem which extend Hashes and make them more useful. 
+Hashie is available as a RubyGem which extend Hashes and make them more useful.
 
     * Hashie::Mash: gives simple pseudo-object functionality that can be
       built from hashes and easily extended
     * Hashie::Dash: has a discrete set of defined properties and only those
-      properties may be set on the hash. 
+      properties may be set on the hash.
     * Hashie::Trash: a Dash that allows you to translate keys on
       initialization.
     * Hashie::Clash: allows you to easily construct complex hashes using

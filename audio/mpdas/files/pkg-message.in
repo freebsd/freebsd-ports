@@ -2,8 +2,8 @@
 
 mpdas has been successfully installed.
 
-To configure mpdas, simply create a file called .mpdasrc in 
-your home directory or in %%PREFIX%%/etc/mpdasrc. 
+To configure mpdas, simply create a file called .mpdasrc in
+your home directory or in %%PREFIX%%/etc/mpdasrc.
 
 Syntax is easy. Example:
 

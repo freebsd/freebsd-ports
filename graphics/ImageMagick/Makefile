@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.3-9
-PORTREVISION=	1
+DISTVERSION=	6.9.4-3
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -36,6 +35,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
+
+PORTSCOUT=      limit:6.*$$
 
 CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
 

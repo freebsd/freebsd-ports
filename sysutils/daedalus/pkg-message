@@ -2,7 +2,7 @@
 IMPORTANT NOTE:
 ===============
 
-If you are upgrading from a version previous to 2.0, the 
+If you are upgrading from a version previous to 2.0, the
 location and layout of the configuration files has changed.
 They are now in XML and a templates.xml file can be referenced
 that allows updating of templates from machine to

@@ -4,6 +4,6 @@ the contents of each of @Scalars, @Arrays, @Hashes and @Filehandles. Similarly,
 @Barewords adds a few non-function keywords (like __DATA__, NULL) to the
 @Functions array.
 
-All additions and modifications are welcome. 
+All additions and modifications are welcome.
 
 WWW: http://search.cpan.org/dist/B-Keywords/

@@ -39,7 +39,7 @@
 	Deleting zfs snapshots takes more time than creating them.
 	There for it's better to delete snapshots once per day...
 
-	
+
 	Periodic scripts provide very limited feature set. If you want to use
 	more advanced setup, you need to call zfSnap from crontab directly.
 	This way you can combine all sort of parameter combinations.

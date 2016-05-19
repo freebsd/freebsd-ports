@@ -1,8 +1,8 @@
 ----------------------------------------------------------------------------
 limesurvey has been installed, but is not quite ready to be used yet!
 
-You have to ensure that you have a mysql server installed and configured. 
-Further information on these installation procedures may 
+You have to ensure that you have a mysql server installed and configured.
+Further information on these installation procedures may
 be found in:
 
   %%PREFIX%%/%%PHPSURVEYORDIR%%/docs/manual.html

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	plexpy
-PORTVERSION=	1.3.16
+PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 DISTVERSIONPREFIX=v
 
@@ -21,6 +22,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	PlexPy.py
+python_OLD_CMD=	/bin/sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	drzoidberg33

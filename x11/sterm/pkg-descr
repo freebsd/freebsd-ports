@@ -1,4 +1,4 @@
-st is a minimalistic X terminal. 
+st is a minimalistic X terminal.
 
 It consists of a single binary, configuration is done at compile-time by a
 config.h file.

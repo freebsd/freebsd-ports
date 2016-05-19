@@ -1,7 +1,7 @@
 Twisted Words is the Chat and Instant Messaging portion of the Twisted
 system. It is both a multiprotocol instant messaging client and server
-and provides low-level protocol implementations of OSCAR (AIM and ICQ), 
-IRC, MSN, TOC (AIM) as well as Jabber libraries. 
+and provides low-level protocol implementations of OSCAR (AIM and ICQ),
+IRC, MSN, TOC (AIM) as well as Jabber libraries.
 
 Twisted Words is available under the MIT Free Software licence.
 

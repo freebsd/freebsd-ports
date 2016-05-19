@@ -16,14 +16,14 @@
 . /etc/rc.subr
 
 name=tpmd
-rcvar=tpmd_enable
+rcvar="${name}_enable"
 command="%%PREFIX%%/bin/${name}"
 
 load_rc_config $name
 
-tpmd_enable=${tpmd_enable-"NO"}
-tpmd_user=${tpmd_user-"%%USERS%%"}
-tpmd_group=${tpmd_group-"%%GROUPS%%"}
+: ${tpmd_enable:="NO"}
+: ${tpmd_user:="%%USERS%%"}
+: ${tpmd_group:="%%GROUPS%%"}
 
 command_args="-o ${tpmd_user} -g ${tpmd_group}"
 unset tpmd_user tpmd_group

@@ -19,6 +19,6 @@ implementation of such algorithms. It is designed both for general mixed
 integer optimization problems and for combinatorial optimization problems. It
 unifies cutting plane and column generation within one algorithm framework.
 Simple reuse of code and the design of abstract data structures and algorithms
-are met by object oriented programming modules. 
+are met by object oriented programming modules.
 
 WWW: http://www.informatik.uni-koeln.de/abacus/

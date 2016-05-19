@@ -8,7 +8,7 @@ to your classpath:
                          server you will need this. Otherwise other
                          jms provider will most likely to ship this.
 %%JAVAJARDIR%%/fscontext.jar - JDNI file based lookups. OPTIONAL
-%%JAVAJARDIR%%/jaxm-api.jar - Java API for XML Messaging 
+%%JAVAJARDIR%%/jaxm-api.jar - Java API for XML Messaging
                              MOST LIKELY NEEDED for JAXM applications unless
                          this api is provided by application server or OSGi
                          container already.

@@ -824,6 +824,7 @@
     SUBDIR += py-blockdiag
     SUBDIR += py-blockdiagcontrib-cisco
     SUBDIR += py-cairo
+    SUBDIR += py-cairocffi
     SUBDIR += py-chart
     SUBDIR += py-django-easy-thumbnails
     SUBDIR += py-editobj
@@ -880,6 +881,8 @@
     SUBDIR += py-wand
     SUBDIR += py-webcolors
     SUBDIR += py3-cairo
+    SUBDIR += py3-pillow
+    SUBDIR += py3-pygraphviz
     SUBDIR += pygts
     SUBDIR += pymorph
     SUBDIR += pysvg

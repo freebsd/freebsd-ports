@@ -1,4 +1,4 @@
-POW::Component::RSSAggregator is a non-blocking way to watch 
+POW::Component::RSSAggregator is a non-blocking way to watch
 multiple RSS sources with one process.
 
 See also p5-XML-RSS-Feed.

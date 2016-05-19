@@ -1,10 +1,10 @@
 The official Python client for Riak.
- 
-Riak is a Dynamo-inspired key/value store that scales predictably and easily. 
-Riak also simplifies development by giving developers the ability to quickly 
-prototype, test, and deploy their applications. A truly fault-tolerant system, 
-Riak has no single point of failure. No machines are special or central in 
-Riak, so developers and operations professionals can decide exactly how 
+
+Riak is a Dynamo-inspired key/value store that scales predictably and easily.
+Riak also simplifies development by giving developers the ability to quickly
+prototype, test, and deploy their applications. A truly fault-tolerant system,
+Riak has no single point of failure. No machines are special or central in
+Riak, so developers and operations professionals can decide exactly how
 fault-tolerant they want and need their applications to be.
 
 WWW: https://github.com/basho/riak-python-client

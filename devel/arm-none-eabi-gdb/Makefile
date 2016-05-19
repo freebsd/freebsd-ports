@@ -13,7 +13,7 @@ MAINTAINER=	imp@FreeBSD.org
 COMMENT=	GNU GDB for the arm bare metal target
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake tar:xz iconv gmake libtool 
+USES=		gmake tar:xz iconv gmake libtool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=arm-none-eabi --program-prefix=arm-none-eabi- --disable-nls \

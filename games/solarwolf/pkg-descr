@@ -5,8 +5,8 @@ It features quick and smooth fullscreen 800x600 graphics. There is alpha
 transparent blitting, colorkeying, animated sprites, scrolling starfield
 background, antialiased font rendering, and more. The sound system supports
 multiple sound channel playback, along with streaming music support. It also
-supports input from keyboard or joystick. 
+supports input from keyboard or joystick.
 
-The game is originally based of SolarFox on the Atari 2600. 
+The game is originally based of SolarFox on the Atari 2600.
 
 WWW: http://www.pygame.org/shredwheat/solarwolf/

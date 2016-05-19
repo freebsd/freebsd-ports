@@ -1,7 +1,7 @@
 A GObject library for Facebook Graph API
 
-This library is in a very early stage of development, 
-don't use in a final application right now. Use it just 
+This library is in a very early stage of development,
+don't use in a final application right now. Use it just
 for test purposes at your own risk.
 
 WWW: https://git.gnome.org/browse/libgfbgraph

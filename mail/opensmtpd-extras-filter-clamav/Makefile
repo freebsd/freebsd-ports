@@ -30,5 +30,5 @@ post-patch:
 		-e 's/127.0.0.1/${FILTER_CLAMAV_HOST}/' \
 		-e 's/783/${FILTER_CLAMAV_PORT}/' \
 		${WRKSRC}/extras/wip/filters/filter-clamav/filter-clamav.8
-		
+
 .include "${MASTERDIR}/Makefile"

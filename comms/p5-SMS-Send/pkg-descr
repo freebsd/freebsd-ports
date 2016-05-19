@@ -1,14 +1,14 @@
-SMS::Send is intended to provide a driver-based single API for sending SMS and 
+SMS::Send is intended to provide a driver-based single API for sending SMS and
 MMS messages. The intent is to provide a single API against which to write the
 code to send an SMS message.
 
-At the same time, the intent is to remove the limits of some of the previous 
+At the same time, the intent is to remove the limits of some of the previous
 attempts at this sort of API, like "must be free internet-based SMS services".
 
-SMS::Send drivers are installed separately, and might use the web, email or 
+SMS::Send drivers are installed separately, and might use the web, email or
 physical SMS hardware. It could be a free or paid. The details shouldn't matter.
 
-You should not have to care how it is actually sent, only that it has been sent 
+You should not have to care how it is actually sent, only that it has been sent
 (although some drivers may not be able to provide certainty).
 
 

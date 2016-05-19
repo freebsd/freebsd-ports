@@ -1,4 +1,4 @@
-remake is a patched version of GNU Make that adds improved error reporting, 
-the ability to trace execution in a comprehensible way, and a debugger. 
+remake is a patched version of GNU Make that adds improved error reporting,
+the ability to trace execution in a comprehensible way, and a debugger.
 
 WWW:	http://bashdb.sourceforge.net/remake/

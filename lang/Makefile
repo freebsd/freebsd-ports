@@ -91,7 +91,6 @@
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc
-    SUBDIR += gcc-aux
     SUBDIR += gcc-ecj45
     SUBDIR += gcc46
     SUBDIR += gcc47
@@ -176,8 +175,8 @@
     SUBDIR += modula3
     SUBDIR += mono
     SUBDIR += mono-basic
-    SUBDIR += moscow_ml
     SUBDIR += mosh
+    SUBDIR += mosml
     SUBDIR += mtasc
     SUBDIR += munger
     SUBDIR += nawk
@@ -333,6 +332,7 @@
     SUBDIR += starlogo
     SUBDIR += stldoc
     SUBDIR += swi-pl
+    SUBDIR += swift
     SUBDIR += tcbasic
     SUBDIR += tcc
     SUBDIR += tcl-manual

@@ -9,7 +9,7 @@ The most important features are:
 - supports reading/writing tags in MP3 ID3v1 and ID3v2, Ogg Vorbis
 - supports reading WMA tags
 - supports FreeDB, treats encoded files as if it was CD, so you can simply
-  select your files and - if found in database - write tags to them.  
+  select your files and - if found in database - write tags to them.
 - supports auto tagging - reads tag information from filename
 - supports batch tags editing
 - supports batch files renaming (can use tags)

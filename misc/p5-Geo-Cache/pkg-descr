@@ -1,7 +1,7 @@
-Provide an object interface to Geocaching.com waypoints and/or geocaches, 
+Provide an object interface to Geocaching.com waypoints and/or geocaches,
 using the Groundspeak GPX file as the reference for what fields are valid.
 
-Methods are provide for various of the fields that require special 
+Methods are provide for various of the fields that require special
 treatment.
 
 WWW: http://search.cpan.org/dist/Geo-Cache/

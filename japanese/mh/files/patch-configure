@@ -1,6 +1,6 @@
---- configure.orig	2001-06-15 01:41:51.000000000 +0900
-+++ configure	2014-10-08 22:52:42.000000000 +0900
-@@ -1397,14 +1397,8 @@
+--- configure.orig	2001-06-14 16:41:51 UTC
++++ configure
+@@ -1397,14 +1397,8 @@ case "$host_os" in
      if test "$use_sharedlib" != no
      then
        sharedlib=fbsd
@@ -9,13 +9,14 @@
 -	if test x`/usr/bin/objformat` = xelf
 -	then
  	  sharedlib=gnuelf
- 	  make_mhconfig='CFLAGS="-O -DMHSLIB_NOMINVER"'
+-	  make_mhconfig='CFLAGS="-O -DMHSLIB_NOMINVER"'
 -	fi
 -      fi
++	  make_mhconfig='CFLAGS="-O2 -pipe  -Wno-return-type -fstack-protector -fno-strict-aliasing -DMHSLIB_NOMINVER"'
        echo __ELF__ | $CC -E - | grep -q __ELF__ || sharedlib=gnuelf
        slflags="-fpic"
        slibdir=$libdir
-@@ -1748,34 +1742,6 @@
+@@ -1748,34 +1742,6 @@ test -n "$pager" || pager="/usr/ucb/more
    pagerpath="$ac_cv_path_pager"
  fi
  

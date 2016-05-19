@@ -8315,3 +8315,12 @@ graphics/py-opengl|graphics/py-PyOpenGL|2016-05-09|Use correct upstream PyPI nam
 graphics/py-opengl-accelerate|graphics/py-PyOpenGL-accelerate|2016-05-09|Use correct upstream PyPI name
 java/linux-sun-jre17||2016-05-09|Has expired: Unsupported and known for multiple security vulnerabilities
 deskutils/gnustep-notebook||2016-05-09|Has expired: Does not fetch
+lang/moscow_ml|lang/mosml|2016-05-11|Project renamed
+devel/rubygem-redmine_acts_as_taggable_on|www/rubygem-redmine_acts_as_taggable_on|2016-05-14|Duplicate port
+lang/gcc-aux||2016-05-16|Has expired: Use newer lang/gcc5-aux or lang/gcc6-aux compilers instead
+audio/deadbeef-mpris-plugin|audio/deadbeef-mpris2-plugin|2016-05-16|Has expired: Abandonware; use `audio/deadbeef-mpris2-plugin' instead
+net/samba41||2016-05-16|Has expired: not supported by the upstream
+databases/postgresql90-contrib||2016-05-16|Has expired: "EOL was reached in September 2015"
+databases/postgresql90-pltcl||2016-05-16|Has expired: "EOL was reached in September 2015"
+databases/postgresql90-docs||2016-05-16|Has expired: "EOL was reached in September 2015"
+devel/py-gyp-devel|devel/py-gyp|2016-05-16|Renamed to devel/py-gyp

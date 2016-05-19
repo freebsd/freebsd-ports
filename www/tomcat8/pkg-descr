@@ -2,8 +2,8 @@ Apache Tomcat is a web server written in 100% Pure Java.
 
 Apache Tomcat version 8.0 implements the Servlet 3.1, JavaServer Pages 2.3,
 Java Unified Expression Language 3.0 and Java WebSocket 1.0 specifications
-from the Java Community Process, and includes many additional features that 
-make it a useful platform for developing and deploying web applications and 
+from the Java Community Process, and includes many additional features that
+make it a useful platform for developing and deploying web applications and
 web services. Tomcat 8 is aligned with Java EE 7.
 
 WWW: http://tomcat.apache.org/

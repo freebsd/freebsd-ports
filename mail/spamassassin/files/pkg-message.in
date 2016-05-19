@@ -5,12 +5,12 @@ You should complete the following post-installation tasks:
 	1) Read %%DOCSDIR%%/INSTALL
 	   and %%DOCSDIR%%/UPGRADE
 	   BEFORE enabling SpamAssassin for important changes
-	
+
 	2) Edit the configuration in %%ETCDIR%%,
 	   in particular %%ETCDIR%%/init.pre
 	   You may get lots of annoying (but harmless) error messages
 	   if you skip this step.
-	
+
 	3) To run spamd, add the following to /etc/rc.conf:
 	   spamd_enable="YES"
 

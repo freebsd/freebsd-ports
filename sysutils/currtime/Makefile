@@ -1,15 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	currtime
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.neelc.org/files/currtime/${PORTVERSION}/
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Enhanced command-line operated real time clock
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	neelchauhan
 
 ALL_TARGET=	${PORTNAME}
 

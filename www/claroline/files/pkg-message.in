@@ -25,8 +25,8 @@ POST-INSTALL CONFIGURATION FOR Claroline
 
 2) Visit your Claroline site with a browser (i.e.,
    http://your.server.com/claroline/claroline/install/)
-   and you should be taken to the install script, 
-   which will lead you through setting up Claroline, 
+   and you should be taken to the install script,
+   which will lead you through setting up Claroline,
    creating an admin account, etc.
 
 For more information, see the INSTALL DOCUMENTATION:

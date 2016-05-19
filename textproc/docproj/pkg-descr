@@ -1,7 +1,7 @@
 The FreeBSD Documentation Project maintains the FAQ, Handbook and tutorials.
 
 This package does not contain anything by itself -- it is a
-"meta-port" that depends on other text processing packages.  Its sole 
-purpose is to require dependencies so users can install this package only 
-and have all the Documentation Project stuff pulled in by the port/package 
+"meta-port" that depends on other text processing packages.  Its sole
+purpose is to require dependencies so users can install this package only
+and have all the Documentation Project stuff pulled in by the port/package
 dependency mechanism.

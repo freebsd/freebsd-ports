@@ -1,7 +1,7 @@
-Ori is a distributed file system built for offline operation and empowers the 
-user with control over synchronization operations and conflict resolution. We 
-provide history through light weight snapshots and allow users to verify the 
-history has not been tampered with. Through the use of replication instances 
+Ori is a distributed file system built for offline operation and empowers the
+user with control over synchronization operations and conflict resolution. We
+provide history through light weight snapshots and allow users to verify the
+history has not been tampered with. Through the use of replication instances
 can be resilient and recover damaged data from other nodes.
 
 WWW: http://ori.scs.stanford.edu/

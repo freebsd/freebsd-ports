@@ -1,7 +1,7 @@
-This package provides an object oriented interface to the API of the 
-W3 HTML Validator application (http://validator.w3.org/). With this 
-package you can connect to a running instance of the validator and 
-retrieve the validation results (true|false) as well as the errors 
+This package provides an object oriented interface to the API of the
+W3 HTML Validator application (http://validator.w3.org/). With this
+package you can connect to a running instance of the validator and
+retrieve the validation results (true|false) as well as the errors
 and warnings for a web page.
 
 WWW: http://pear.php.net/package/Services_W3C_HTMLValidator

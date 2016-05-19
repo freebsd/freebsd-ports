@@ -4,7 +4,7 @@
 PORTNAME=	gentoo
 PORTVERSION=	0.20.6
 CATEGORIES=	x11-fm
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus

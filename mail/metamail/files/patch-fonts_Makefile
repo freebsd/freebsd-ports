@@ -1,6 +1,6 @@
---- fonts/Makefile.orig	Mon May 31 22:49:27 1993
-+++ fonts/Makefile	Mon Dec 18 11:46:21 2006
-@@ -28,12 +28,18 @@
+--- fonts/Makefile.orig	1993-05-31 20:49:27 UTC
++++ fonts/Makefile
+@@ -28,12 +28,18 @@ heb8x13B.${FONTSUFFIX}: heb8x13B.bdf
  	-${DIRBUILDER}
  
  shownonascii: Xshownonascii
@@ -12,12 +12,12 @@
 -	sed -e s@/u/nsb/lib/fonts@`pwd`@ < Xmailto-hebrew > mailto-hebrew
 +	sed -e s@/u/nsb/lib/fonts@${PREFIX}/lib/metamail/fonts@ < Xmailto-hebrew > mailto-hebrew
  	chmod +x mailto-hebrew
-+
+ 
 +install:
 +	mkdir -p ${PREFIX}/lib/metamail/fonts
 +	install -c heb6x13.${FONTSUFFIX} heb8x13.${FONTSUFFIX} \
 +		heb8x13B.${FONTSUFFIX} fonts.alias ${PREFIX}/lib/metamail/fonts
 +	mkfontdir ${PREFIX}/lib/metamail/fonts
- 
++
  clean:
  	rm -f heb6x13.${FONTSUFFIX} heb8x13.${FONTSUFFIX} heb8x13B.${FONTSUFFIX}  shownonascii mailto-hebrew fonts.dir

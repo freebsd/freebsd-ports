@@ -1,7 +1,0 @@
-library project AdaBase is
-   for Library_Name     use "adabase";
-   for Library_Kind     use "static";
-   for Source_Dirs      use ("../../include/adabase");
-   for Library_Dir      use "../../lib/adabase";
-   for Externally_Built use "true";
-end AdaBase;
