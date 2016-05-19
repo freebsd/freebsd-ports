@@ -1,5 +1,5 @@
 Net::Frame::Dump is the base class for all dump modules. With them,
-you can open a device for live capture, for offline analysis, or 
+you can open a device for live capture, for offline analysis, or
 for creating a pcap file.
 
 WWW: http://search.cpan.org/dist/Net-Frame-Dump/

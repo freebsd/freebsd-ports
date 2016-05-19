@@ -2,6 +2,6 @@ This is pTeX, TeX system with Japanese support.  This package installs
 Japanese specific executables and other files.
 
 This system depends on teTeX 3.0, which contains TeX, LaTeX2e, and
-various other TeX related programs.  
+various other TeX related programs.
 
 WWW: http://www.ascii.co.jp/pb/ptex/

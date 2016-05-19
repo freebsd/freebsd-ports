@@ -1,4 +1,4 @@
-Algorithm::Combinatorics is an efficient generator of combinatorial 
+Algorithm::Combinatorics is an efficient generator of combinatorial
 sequences, where efficient means:
 
     * Speed: The core loops are written in C.

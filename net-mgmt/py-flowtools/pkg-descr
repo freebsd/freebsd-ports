@@ -1,4 +1,4 @@
-py-flowtools extension module gives you a simple python interface 
+py-flowtools extension module gives you a simple python interface
 to NetFlow data as stored by Mark Fullmer's flow-tools package.
 
 It contains a class FlowSet which reads the data from a given file

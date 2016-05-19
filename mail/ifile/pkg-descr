@@ -3,12 +3,12 @@ intelligently filter mail according to the way the user tends to organize
 mail.  ifile uses the machine learning algorithm Naive Bayes to classify
 e-mail documents.
 
-ifile is different from other mail filtering programs in three major ways: 
+ifile is different from other mail filtering programs in three major ways:
 
-   1.ifile does not require you to generate a set of rules in order to 
-     successfully filter mail 
-   2.ifile uses the entire content of messages for filtering purposes 
-   3.ifile learns as you move incorrectly filtered messages to new mailboxes 
+   1.ifile does not require you to generate a set of rules in order to
+     successfully filter mail
+   2.ifile uses the entire content of messages for filtering purposes
+   3.ifile learns as you move incorrectly filtered messages to new mailboxes
 
 ifile is not dependent upon any specific mail system and should be adaptable
 to any mail system which allows an outside program to perform mail

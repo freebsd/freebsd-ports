@@ -4,7 +4,7 @@ the information a "show cdp neighbors detail" command
 would return on a Cisco router and even more.
 
 A feature list follows:
-  Time intervals between CDP advertisements 
+  Time intervals between CDP advertisements
   Source MAC address
   CDP Version
   TTL

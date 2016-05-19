@@ -2,6 +2,6 @@ Crypt::DH::GMP is a (somewhat) portable replacement to Crypt::DH,
 implemented mostly in C.
 
 Crypt::DH uses Math::BigInt, which is a very feature-full and fast
-interface to perform high-precision math. 
+interface to perform high-precision math.
 
 WWW: http://search.cpan.org/dist/Crypt-DH-GMP/

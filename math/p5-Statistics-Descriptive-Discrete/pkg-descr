@@ -1,20 +1,20 @@
-This module provides basic functions used in descriptive statistics. It 
-borrows very heavily from Statistics::Descriptive::Full (which is included 
-with Statistics::Descriptive) with one major difference. This module is 
-optimized for discretized data e.g. data from an A/D conversion that has a 
-discrete set of possible values. E.g. if your data is produced by an 8 bit 
-A/D then you'd have only 256 possible values in your data set. Even though 
-you might have a million data points, you'd only have 256 different values 
-in those million points. Instead of storing the entire data set as 
-Statistics::Descriptive does, this module only stores the values it's seen 
+This module provides basic functions used in descriptive statistics. It
+borrows very heavily from Statistics::Descriptive::Full (which is included
+with Statistics::Descriptive) with one major difference. This module is
+optimized for discretized data e.g. data from an A/D conversion that has a
+discrete set of possible values. E.g. if your data is produced by an 8 bit
+A/D then you'd have only 256 possible values in your data set. Even though
+you might have a million data points, you'd only have 256 different values
+in those million points. Instead of storing the entire data set as
+Statistics::Descriptive does, this module only stores the values it's seen
 and the number of times it's seen each value.
 
-For very large data sets, this storage method results in significant speed 
-and memory improvements. In a test case with 2.6 million data points from 
-a real world application, Statistics::Descriptive::Discrete took 40 
-seconds to calculate a set of statistics instead of the 561 seconds 
-required by Statistics::Descriptive::Full. It also required only 4MB of 
-RAM instead of the 400MB used by Statistics::Descriptive::Full for the 
+For very large data sets, this storage method results in significant speed
+and memory improvements. In a test case with 2.6 million data points from
+a real world application, Statistics::Descriptive::Discrete took 40
+seconds to calculate a set of statistics instead of the 561 seconds
+required by Statistics::Descriptive::Full. It also required only 4MB of
+RAM instead of the 400MB used by Statistics::Descriptive::Full for the
 same data set.
 
 WWW: http://search.cpan.org/dist/Statistics-Descriptive-Discrete/

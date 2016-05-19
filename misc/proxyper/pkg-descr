@@ -1,10 +1,10 @@
-With this proxy, you can serve distributed.net clients. 
+With this proxy, you can serve distributed.net clients.
 
-It allows you to establish one of your own machines as a buffer between 
-your clients and one of the keyservers that are officially run by the 
-distributed.net organizers. This will allow your clients to waste less 
-time trying to connect to one of the main proxies, since the personal 
-proxy will already have more key blocks waiting for your clients when 
+It allows you to establish one of your own machines as a buffer between
+your clients and one of the keyservers that are officially run by the
+distributed.net organizers. This will allow your clients to waste less
+time trying to connect to one of the main proxies, since the personal
+proxy will already have more key blocks waiting for your clients when
 they're ready.
 
 WWW: http://www.distributed.net/download/proxies.php

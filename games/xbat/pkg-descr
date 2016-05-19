@@ -1,7 +1,7 @@
 This is the XEVIOUS (NAMCO(C)) like game.
 
 TYPE:
-	xbat 
+	xbat
 OPTION:
         -hs : high speed mode
         -dc : use default colormap

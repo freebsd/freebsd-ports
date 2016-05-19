@@ -9,7 +9,7 @@ portability of software engineering tools while relieving tool developers
 from having to understand the complexities of an Ada environment's
 proprietary internal representation.
 
-ASIS 95 is the ASIS interface to Ada 95 (ISO/IEC 8652:1995). 
+ASIS 95 is the ASIS interface to Ada 95 (ISO/IEC 8652:1995).
 ASIS 95 is now available as ISO/IEC 15291:1999.
 
 WWW: http://www.sigada.org/wg/asiswg/

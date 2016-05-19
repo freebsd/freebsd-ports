@@ -6,7 +6,7 @@ maildir or Berkeley-formatted mailboxes.
 This version is a development version, but is rather stable, and
 is known to work better than the stable version on FreeBSD 4.x.
 
-Before running elmo, users should run elmoconf.pl to generate an 
+Before running elmo, users should run elmoconf.pl to generate an
 ~/.elmorc file.
 
 WWW:  http://elmo.sourceforge.net/

@@ -20,4 +20,4 @@ number of extensions that take advantage of these two new objects.
 WWW: http://numeric.scipy.org/
 _____________
 Note: 	Development for Numeric has ceased, and users should transisition to
-	NumPy as quickly as possible. 
+	NumPy as quickly as possible.

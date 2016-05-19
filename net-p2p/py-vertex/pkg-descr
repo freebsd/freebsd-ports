@@ -1,18 +1,18 @@
-Vertex is an implementation of the Q2Q protocol (sort of like P2P, but one 
+Vertex is an implementation of the Q2Q protocol (sort of like P2P, but one
 better). There are a few moving parts in Vertex:
 
-    * PTCP: a protocol which is nearly identical to TCP, but which runs over 
+    * PTCP: a protocol which is nearly identical to TCP, but which runs over
       UDP. This lets Q2Q penetrate most NAT configurations.
-    * JUICE ([JU]ice [I]s [C]oncurrent [E]vents): a very simple but immensely 
+    * JUICE ([JU]ice [I]s [C]oncurrent [E]vents): a very simple but immensely
       flexible protocol which forms the basis of the high-level aspects of Q2Q
-    * vertex: a command line tool which exposes a few features useful in many 
-      situations (such as registration and authentication) 
+    * vertex: a command line tool which exposes a few features useful in many
+      situations (such as registration and authentication)
 
-The Q2Q network has some decentralized features (there is no one server or 
-company which can control all Q2Q addresses) and features of centralization 
-(addresses beneath a particular domain are issued by a server for that domain; 
-once issued, some activities require the server to be contacted again, while 
-others do not). Vertex includes an identity server capable of hosting Q2Q 
-addresses. 
+The Q2Q network has some decentralized features (there is no one server or
+company which can control all Q2Q addresses) and features of centralization
+(addresses beneath a particular domain are issued by a server for that domain;
+once issued, some activities require the server to be contacted again, while
+others do not). Vertex includes an identity server capable of hosting Q2Q
+addresses.
 
 WWW: https://launchpad.net/divmod

@@ -1,8 +1,8 @@
-cdpr (Cisco Discovery Protocol Reporter) shows the switch and port that 
-a machine is connected to, provided that the device supports CDP. It 
-can also optionally decode the full CDP packet. cdpr was written to 
+cdpr (Cisco Discovery Protocol Reporter) shows the switch and port that
+a machine is connected to, provided that the device supports CDP. It
+can also optionally decode the full CDP packet. cdpr was written to
 help network/system administrators find out about the equipment that i
-a machine is connected to. This is done by capturing and decoding a 
+a machine is connected to. This is done by capturing and decoding a
 Cisco Discovery Protocol (CDP) packet.
 
 WWW: http://www.monkeymental.com/nuke/

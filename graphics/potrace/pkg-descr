@@ -1,14 +1,14 @@
-potrace is a Peter Selinger's GPLed utility for tracing 
-bitmaps - converting them into smooth, scalable images. 
+potrace is a Peter Selinger's GPLed utility for tracing
+bitmaps - converting them into smooth, scalable images.
 
-It accepts as input a bitmap B/W images (PBM, PGM, PPM 
-and BMP formats), and returns encapsulated PostScript 
-(EPS) as the default output. Other output format are 
-available: PS, SVG, Xfig, PGM, PDF and experimental 
+It accepts as input a bitmap B/W images (PBM, PGM, PPM
+and BMP formats), and returns encapsulated PostScript
+(EPS) as the default output. Other output format are
+available: PS, SVG, Xfig, PGM, PDF and experimental
 GimpPath.
 
-You can create scalable images from scans, such as 
-logos, hand taken notes, etc. The resulting smooth 
-images can then be rendered at any resolution. 
+You can create scalable images from scans, such as
+logos, hand taken notes, etc. The resulting smooth
+images can then be rendered at any resolution.
 
 WWW: http://potrace.sourceforge.net

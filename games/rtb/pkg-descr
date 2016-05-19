@@ -1,6 +1,6 @@
-RealTimeBattle is a programming game for Unix-like systems, in which robots 
-controlled by programs coded in any language are fighting with each other. 
-The general intend is to destroy the enemies, by using the radar to locate 
+RealTimeBattle is a programming game for Unix-like systems, in which robots
+controlled by programs coded in any language are fighting with each other.
+The general intend is to destroy the enemies, by using the radar to locate
 them and firing them to oblivion with the cannon. Great tool for learning
 how to code in C/C++ or other languages.
 

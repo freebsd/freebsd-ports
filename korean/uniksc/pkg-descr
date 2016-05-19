@@ -1,4 +1,4 @@
-uniksc converts data between Korean KSC-5601 and Unicode 3.0 UTF-16 
+uniksc converts data between Korean KSC-5601 and Unicode 3.0 UTF-16
 character sets.  Currently, it can convert all characters including
 Hanja in KSC-5601 to UTF-16 characters.  Converting UTF-16 to KSC-5601
 should work but is incomplete yet.

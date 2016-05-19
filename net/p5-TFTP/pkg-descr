@@ -1,4 +1,4 @@
-TFTP is a class implementing a simple 
+TFTP is a class implementing a simple
 TFTP client in Perl as described in RFC783.
 
 WWW: http://search.cpan.org/dist/TFTP/

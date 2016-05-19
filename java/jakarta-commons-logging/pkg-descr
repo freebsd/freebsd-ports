@@ -7,6 +7,6 @@ out there and it is difficult to choose among them.
 The Logging package is an ultra-thin bridge between different logging
 libraries. Commons components may use the Logging API to remove compile-time
 and run-time dependencies on any particular logging package, and contributors
-may write Log implementations for the library of their choice. 
+may write Log implementations for the library of their choice.
 
 WWW: http://jakarta.apache.org/commons/logging/

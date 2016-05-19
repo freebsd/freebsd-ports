@@ -11,7 +11,7 @@ sbd can be used for any number of network-related things, e.g.:
     * Secure file transfer
     * Remote administration
     * Simple (but secure) peer-to-peer chat
-    * Pen-test tool (crypto avoids NIDS detection and telnet-style 
-      traffic recording) 
+    * Pen-test tool (crypto avoids NIDS detection and telnet-style
+      traffic recording)
 
 WWW: http://tigerteam.se/dl/sbd/

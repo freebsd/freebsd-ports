@@ -6,7 +6,7 @@ NetServer::Generic. It includes with it the ability to run as an inetd process
 (Net::Server::INET), a single connection server (Net::Server or
 Net::Server::Single), a forking server (Net::Server::Fork), or as a preforking
 server (Net::Server::PreFork). In all but the inetd type, the server provides
-the ability to connect to one or to multiple server ports.  
+the ability to connect to one or to multiple server ports.
 
 WWW: http://search.cpan.org/dist/Net-Server/
 WWW: http://seamons.com/projects/

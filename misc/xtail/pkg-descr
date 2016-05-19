@@ -1,5 +1,5 @@
 "xtail" watches the growth of files.  It's like running a "tail -f"
-on a bunch of files at once.  
+on a bunch of files at once.
 
 You can specify both filenames and directories on the command line.
 If you specify a directory, it watches all the files in that
