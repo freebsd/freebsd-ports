@@ -579,7 +579,6 @@ bin/shellsnoop
 %%DATADIR%%/Kernel/pridist.d
 %%DATADIR%%/Kernel/putnexts.d
 %%DATADIR%%/Kernel/whatexec.d
-%%DATADIR%%/License
 %%DATADIR%%/Locks/lockbydist.d
 %%DATADIR%%/Locks/lockbyproc.d
 %%DATADIR%%/Man/Readme
@@ -930,7 +929,6 @@ bin/shellsnoop
 %%DATADIR%%/Python/py_syscalls.d
 %%DATADIR%%/Python/py_syscolors.d
 %%DATADIR%%/Python/py_who.d
-%%DATADIR%%/README
 %%DATADIR%%/Ruby/Readme
 %%DATADIR%%/Ruby/rb_calldist.d
 %%DATADIR%%/Ruby/rb_calls.d
@@ -1009,4 +1007,5 @@ bin/shellsnoop
 %%DATADIR%%/rwsnoop
 %%DATADIR%%/rwtop
 %%DATADIR%%/statsnoop
-@dir %%DATADIR%%/Code/C
+%%DATADIR%%/CDDL
+%%DATADIR%%/README.md
