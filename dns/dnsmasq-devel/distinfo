@@ -1,2 +1,3 @@
-SHA256 (dnsmasq-2.76test12.tar.xz) = e4f31667d72e2cbc948a3b1776dbe2822d7340e904b7329c4dc96bff8a8ed5e2
-SIZE (dnsmasq-2.76test12.tar.xz) = 490920
+TIMESTAMP = 1463439275
+SHA256 (dnsmasq-2.76rc2.tar.xz) = 12c5a263791e6c8717a3dffd4eaae655de5dfc4875caab6cdce636beb879d46e
+SIZE (dnsmasq-2.76rc2.tar.xz) = 495296

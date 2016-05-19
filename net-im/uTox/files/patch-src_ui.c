@@ -1,6 +1,6 @@
---- src/ui.c.orig	2016-03-21 02:14:57 UTC
+--- src/ui.c.orig	2016-05-10 07:09:15 UTC
 +++ src/ui.c
-@@ -275,16 +275,9 @@ static void draw_settings_header(int UNU
+@@ -271,16 +271,9 @@ static void draw_settings_header(int UNU
      setfont(FONT_SELF_NAME);
      drawstr(MAIN_LEFT + SCALE(10), SCALE(10), UTOX_SETTINGS);
      #ifdef GIT_VERSION

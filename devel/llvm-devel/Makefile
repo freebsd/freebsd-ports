@@ -218,7 +218,7 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.ubsan_standalone_cxx-x86_64.a \
 	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms
 .endif
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == "i386"
 _COMPILER_RT_LIBS+= \
 	libclang_rt.asan-i386.a \
 	libclang_rt.asan-i386.so \
@@ -275,8 +275,8 @@ post-patch:
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
 post-build-COMPILER_RT-on:
-	${MKDIR} ${WRKSRC}/compiler-rt-build
-	cd ${WRKSRC}/compiler-rt-build && \
+	${MKDIR} ${WRKDIR}/compiler-rt-build
+	cd ${WRKDIR}/compiler-rt-build && \
 	${CMAKE_BIN} ${CMAKE_ARGS} \
 	    -DLLVM_CONFIG_PATH=${CONFIGURE_WRKSRC}/bin/llvm-config \
 	    ${WRKSRC_compiler_rt} && \
@@ -303,13 +303,23 @@ post-install-DOCS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 
+.if ${PORT_OPTIONS:MCLANG}
+post-install-DOCS-off:
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/scan-build.1
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
+.endif
+
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
 
 post-install-COMPILER_RT-on:
-	cd ${WRKSRC}/compiler-rt-build && \
+	cd ${WRKDIR}/compiler-rt-build && \
 	${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET}
+.if ${ARCH} == "amd64"
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/libclang_rt*i386*
+.endif
 
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/utils/lit/lit.py \
@@ -366,8 +376,7 @@ build-plist:
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print} \
 	}' ${PLIST}.tmp >> ${PLIST}
-	${RM} -f ${PLIST}.tmp
-
+	${RM} ${PLIST}.tmp
 
 check-commands:
 .for command in ${COMMANDS}

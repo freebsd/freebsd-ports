@@ -1,0 +1,8 @@
+--- files/fcron.pam.orig	2012-12-05 18:17:00 UTC
++++ files/fcron.pam
+@@ -9,4 +9,4 @@ auth		required	pam_permit.so
+ #auth		required	pam_env.so
+ session		required	pam_permit.so
+ #session		required	pam_unix.so
+-session         required        pam_loginuid.so
++#session         required        pam_loginuid.so

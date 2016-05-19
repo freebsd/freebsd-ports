@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rainloop
-PORTVERSION=	1.9.4
+PORTVERSION=	1.10.0
 CATEGORIES?=	mail www
 MASTER_SITES=	http://repository.rainloop.net/v2/webmail/${PORTVERSION}/
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.${RBUILD}-${RHASH}
@@ -18,16 +18,16 @@ LICENSE_PERMS=	auto-accept
 
 .if !defined(PKGNAMESUFFIX)
 # Refresh using info from http://repository.rainloop.net/v2/core.stable.json
-RHASH=		5549831c2d752bcb4e8daff5435c081b
+RHASH=		612fd7ad99051ba0b8bf465f21998678
 .endif
 
 .if defined(PKGNAMESUFFIX)
 # Refresh using info from http://repository.rainloop.net/v2/core.open.json
-RHASH=		fa88eab9037241e8a1d24ed40a4b7bb1
+RHASH=		40d27141a175903a3853fe6ccf4ec753
 .endif
 
 # Refresh using info from http://repository.rainloop.net/v2/core.(stable|open).json
-RBUILD=		398
+RBUILD=		107
 
 .if !defined(PKGNAMESUFFIX)
 RESTRICTED=	Redistribution in any form is prohibited
@@ -54,5 +54,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/data/* ${STAGEDIR}${WWWDIR}/data
 	${INSTALL_DATA} ${WRKSRC}/index.php ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} rainloop ${STAGEDIR}${WWWDIR})
+# Prune empty dirs
+	@${FIND} ${STAGEDIR}${WWWDIR}/${PORTNAME}/v/${RVER} -type d -empty -delete
 
 .include <bsd.port.mk>

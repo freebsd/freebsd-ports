@@ -1,8 +1,4 @@
 bin/playonbsd
-lib/playonbsd/CHANGELOG.md
-lib/playonbsd/LICENCE
-lib/playonbsd/README.md
-lib/playonbsd/TRANSLATORS
 lib/playonbsd/bash/POL_Command
 lib/playonbsd/bash/bash_wrapper
 lib/playonbsd/bash/bug_report
@@ -33,8 +29,6 @@ lib/playonbsd/bash/startup_after_server
 lib/playonbsd/bash/uninstall
 lib/playonbsd/bash/update_git
 lib/playonbsd/bash/winebash
-lib/playonbsd/bin/check_dd_amd64.bz2
-lib/playonbsd/bin/check_dd_x86.bz2
 lib/playonbsd/etc/24-0.gif
 lib/playonbsd/etc/PlayOnLinux.desktop
 lib/playonbsd/etc/PlayOnLinux.directory
@@ -209,12 +203,6 @@ lib/playonbsd/lib/variables
 lib/playonbsd/lib/website.lib
 lib/playonbsd/lib/wine.lib
 lib/playonbsd/playonfreebsd
-lib/playonbsd/playonlinux
-lib/playonbsd/playonlinux-bash
-lib/playonbsd/playonlinux-pkg
-lib/playonbsd/playonlinux-shell
-lib/playonbsd/playonlinux-url_handler
-lib/playonbsd/playonmac
 lib/playonbsd/plugins/Capture_2.4.3.pol
 lib/playonbsd/plugins/ScreenCap_0.0.4.pol
 lib/playonbsd/plugins/plugins.lst
@@ -238,6 +226,7 @@ lib/playonbsd/python/wine_versions.py
 lib/playonbsd/python/wrapper.py
 lib/playonbsd/resources/images/configure/cmd.png
 lib/playonbsd/resources/images/configure/console.png
+lib/playonbsd/resources/images/configure/control.png
 lib/playonbsd/resources/images/configure/emblem-system.png
 lib/playonbsd/resources/images/configure/killall.png
 lib/playonbsd/resources/images/configure/monitor.png
@@ -403,6 +392,4 @@ lib/playonbsd/resources/images/toolbar/play.png
 lib/playonbsd/resources/images/toolbar/run.png
 lib/playonbsd/resources/images/toolbar/stop.png
 lib/playonbsd/resources/sounds/irc.wav
-lib/playonbsd/src/check_direct_rendering.c
-lib/playonbsd/tests/bash/test-versionlower
-lib/playonbsd/tests/python/test_versionlower.py
+man/man1/playonbsd.1.gz

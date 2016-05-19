@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2012-03-02 11:38:07.000000000 +0100
-+++ CMakeLists.txt	2012-03-02 11:38:47.000000000 +0100
-@@ -11,6 +11,7 @@
+--- CMakeLists.txt.orig	2016-05-16 19:20:14 UTC
++++ CMakeLists.txt
+@@ -11,6 +11,7 @@ set(CDASH_DB_PASS "" CACHE STRING "Passw
  set(CDASH_DB_PORT "" CACHE STRING "Port to connect to the database")
  set(CDASH_DB_HOST "localhost" CACHE STRING "Hostname of the database server")
  set(CDASH_DB_TYPE "mysql" CACHE STRING "Database type")
@@ -8,7 +8,7 @@
  option(CDASH_USE_SELENIUM "Should CDash use Selenium to test ajax functionality?" OFF)
  option(CDASH_PRO "Are we testing CDashPro?" OFF)
  set(CMake_SOURCE_DIR CACHE FILEPATH "Path to CMake source dir.  Set this to import tests from CMake")
-@@ -87,7 +88,7 @@
+@@ -97,7 +98,7 @@ file(WRITE "${CDash_SOURCE_DIR}/cdash/co
  //
  // Some of the CDash tests also inject config settings below as tests run...
  //

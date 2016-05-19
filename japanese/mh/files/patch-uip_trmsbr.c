@@ -1,6 +1,6 @@
---- uip/trmsbr.c
+--- uip/trmsbr.c.orig	1993-12-01 04:01:39 UTC
 +++ uip/trmsbr.c
-@@ -5,19 +5,8 @@
+@@ -5,19 +5,8 @@ static char ident[] = "@(#)$Id: trmsbr.c
  
  #include "../h/mh.h"
  #include <stdio.h>
@@ -21,7 +21,7 @@
  
  
  #if	BUFSIZ<2048
-@@ -58,11 +47,7 @@
+@@ -58,11 +47,7 @@ static  read_termcap () {
                     *term;
      char   *cp,
  	    myterm[TXTSIZ];
@@ -34,7 +34,7 @@
      static int  inited = 0;
  
      if (inited++)
-@@ -71,13 +56,7 @@
+@@ -71,13 +56,7 @@ static  read_termcap () {
      if ((term = getenv ("TERM")) == NULL || tgetent (myterm, term) <= OK)
  	return;
  

@@ -1,0 +1,5 @@
+sbin/mlvpn
+man/man1/mlvpn.1.gz
+man/man5/mlvpn.conf.5.gz
+@sample(,,600)  %%ETCDIR%%/mlvpn.conf.sample
+@(,,700) %%ETCDIR%%/mlvpn_updown.sh

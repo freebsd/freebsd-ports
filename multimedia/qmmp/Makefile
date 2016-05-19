@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 	SF/qmmp-dev/${PORTNAME}/
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	${PORTNAME}-qt5-1.*
 
-USES=		cmake:outsource desktop-file-utils pathfix pkgconfig tar:bzip2
+USES=		cmake:outsource localbase pathfix pkgconfig tar:bzip2
 USE_QT4=	corelib gui network xml \
 		linguisttools_build moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
@@ -76,6 +75,7 @@ SKINNEDUI_CMAKE_OFF=	-DUSE_SKINNED:BOOL=FALSE
 DIR_ASSOC_DESC=	inode/directory mime type association
 DIR_ASSOC_CMAKE_ON=	-DUSE_DIR_ASSOC:BOOL=TRUE
 DIR_ASSOC_CMAKE_OFF=	-DUSE_DIR_ASSOC:BOOL=FALSE
+DIR_ASSOC_USES=	desktop-file-utils
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_BUILD_DEPENDS=	jackit>=0.121.2:audio/jack
@@ -324,8 +324,6 @@ INSTALLS_ICONS=	yes
 
 CMAKE_ARGS+=	-DUSE_FFMPEG_LEGACY:BOOL=FALSE \
 	-DCMAKE_REQUIRED_INCLUDES:PATH=${LOCALBASE}/include
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${GREP} -L '${LOCALBASE}/lib/oss' \

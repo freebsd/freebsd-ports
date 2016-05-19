@@ -1,5 +1,5 @@
---- emil.cf.man.orig	1996-02-10 14:16:17.000000000 +0100
-+++ emil.cf.man	2011-07-25 20:21:13.000000000 +0200
+--- emil.cf.man.orig	1996-02-10 13:16:17 UTC
++++ emil.cf.man
 @@ -1,6 +1,6 @@
 -.TH EMIL.CF 8 "19 December 1994"
 +.TH EMIL.CF 1 "19 December 1994"

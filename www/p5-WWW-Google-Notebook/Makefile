@@ -19,4 +19,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
+DEPRECATED=		Google Notebook has shut down
+EXPIRATION_DATE=	2016-06-30
+
 .include <bsd.port.mk>

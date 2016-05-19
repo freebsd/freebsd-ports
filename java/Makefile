@@ -31,6 +31,7 @@
     SUBDIR += intellij
     SUBDIR += intellij-fsnotifier
     SUBDIR += intellij-pty4j
+    SUBDIR += intellij-pycharm
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jai
@@ -92,7 +93,6 @@
     SUBDIR += langspec
     SUBDIR += linux-oracle-jdk18
     SUBDIR += linux-oracle-jre18
-    SUBDIR += linux-sun-jre17
     SUBDIR += mmake
     SUBDIR += mx4j
     SUBDIR += netbeans

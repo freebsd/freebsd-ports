@@ -10,8 +10,9 @@
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/.load.R
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/completion.R
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/debug.R
-%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/developer.R
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/misc.R
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/mpi.R
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/ns-eval.R
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/VERSION
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ess-julia.jl
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ess-s4.S
@@ -48,12 +49,12 @@
 %%EMACS_SITE_LISPDIR%%/ess/ess-custom.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-dde.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-dde.elc
-%%EMACS_SITE_LISPDIR%%/ess/ess-developer.el
-%%EMACS_SITE_LISPDIR%%/ess/ess-developer.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-eldoc.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-eldoc.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-font-lock.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-font-lock.elc
+%%EMACS_SITE_LISPDIR%%/ess/ess-generics.el
+%%EMACS_SITE_LISPDIR%%/ess/ess-generics.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-gretl.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-gretl.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-help.el
@@ -88,6 +89,10 @@
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-completion.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-d.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-d.elc
+%%EMACS_SITE_LISPDIR%%/ess/ess-r-gui.el
+%%EMACS_SITE_LISPDIR%%/ess/ess-r-gui.elc
+%%EMACS_SITE_LISPDIR%%/ess/ess-r-package.el
+%%EMACS_SITE_LISPDIR%%/ess/ess-r-package.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-syntax.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-syntax.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-rd.el

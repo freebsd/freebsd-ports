@@ -6,8 +6,9 @@
 @(,,6111) bin/fcrontab
 @(,,4110) bin/fcronsighup
 @sample etc/fcron.allow.sample
-@sample etc/fcron.conf.sample
 @sample etc/fcron.deny.sample
+@owner root
+@sample etc/fcron.conf.sample
 @owner
 @group
 man/man1/fcrondyn.1.gz

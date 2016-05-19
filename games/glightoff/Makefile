@@ -5,23 +5,20 @@ PORTNAME=	glightoff
 PORTVERSION=	1.0.0
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple (but not so easy to solve!) puzzle game
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv pkgconfig
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
+
+USES=		gmake iconv localbase pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20
 USE_XORG=	x11
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
@@ -30,14 +27,10 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
-.include <bsd.port.options.mk>
-
-post-configure:
-.if ! ${PORT_OPTIONS:MNLS}
+post-configure-NLS-off:
 	@${REINPLACE_CMD} 's|src po|src|' ${WRKSRC}/Makefile
-.endif
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

@@ -1,13 +1,13 @@
-# Created by: Ben Woods <woodsb02@gmail.com>
+# Created by: Ben Woods <woodsb02@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	keepass
-PORTVERSION=	2.32
+PORTVERSION=	2.33
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/KeePass%202.x/${PORTVERSION}
 DISTNAME=	KeePass-${PORTVERSION}-Source
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Light-weight and easy-to-use password manager
 
 LICENSE=	GPLv2+

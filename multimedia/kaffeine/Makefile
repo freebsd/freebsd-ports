@@ -3,11 +3,11 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF/kaffeine/current
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Multimedia player based on KDE and VLC
 
 LICENSE=	GPLv2+

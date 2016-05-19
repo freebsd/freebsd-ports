@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	3.1.2
-PORTREVISION=	6
+PORTVERSION=	3.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
@@ -12,9 +12,10 @@ COMMENT=	Library to create and read several streaming archive formats
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-OPTIONS_DEFINE=	LZO NETTLE
-OPTIONS_DEFAULT=LZO
+OPTIONS_DEFINE=	LZ4 LZO NETTLE
+OPTIONS_DEFAULT=LZ4 LZO
 
+LZ4_DESC=	Support lz4 compression via liblz4
 LZO_DESC=	Support lzo compression via liblzo2
 NETTLE_DESC=	Use Nettle instead of OpenSSL
 
@@ -25,15 +26,17 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--without-xml2
 
-PLIST_FILES=	bin/bsdcpio \
+PLIST_FILES=	bin/bsdcat \
+		bin/bsdcpio \
 		bin/bsdtar \
 		include/archive.h \
 		include/archive_entry.h \
 		lib/libarchive.a \
 		lib/libarchive.so \
 		lib/libarchive.so.13 \
-		lib/libarchive.so.13.1.2 \
+		lib/libarchive.so.13.2.0 \
 		libdata/pkgconfig/libarchive.pc \
+		man/man1/bsdcat.1.gz \
 		man/man1/bsdcpio.1.gz \
 		man/man1/bsdtar.1.gz \
 		man/man3/archive_entry.3.gz \
@@ -44,6 +47,7 @@ PLIST_FILES=	bin/bsdcpio \
 		man/man3/archive_entry_stat.3.gz \
 		man/man3/archive_entry_time.3.gz \
 		man/man3/archive_read.3.gz \
+		man/man3/archive_read_add_passphrase.3.gz \
 		man/man3/archive_read_data.3.gz \
 		man/man3/archive_read_disk.3.gz \
 		man/man3/archive_read_extract.3.gz \
@@ -67,6 +71,7 @@ PLIST_FILES=	bin/bsdcpio \
 		man/man3/archive_write_new.3.gz \
 		man/man3/archive_write_open.3.gz \
 		man/man3/archive_write_set_options.3.gz \
+		man/man3/archive_write_set_passphrase.3.gz \
 		man/man3/libarchive.3.gz \
 		man/man3/libarchive_changes.3.gz \
 		man/man3/libarchive_internals.3.gz \
@@ -81,6 +86,8 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LZO_CONFIGURE_WITH=	lzo2
+LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+LZ4_CONFIGURE_WITH=	lz4
 
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NETTLE_CONFIGURE_WITH=	nettle

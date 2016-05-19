@@ -5,7 +5,7 @@ PORTNAME=	xdg-menu
 PORTVERSION=	1.5
 PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	XDG-Menu-${DISTVERSION}.tgz \
 		${PORTNAME}.png:icons
@@ -15,7 +15,8 @@ EXTRACT_ONLY=	XDG-Menu-${DISTVERSION}.tgz
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	ROX panel applet that displays an applications menu button
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/Help/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg \
@@ -26,6 +27,7 @@ DATADIR=	${PREFIX}/apps/XDG-Menu
 
 USES=		python
 INSTALLS_ICONS=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	*
 
@@ -37,19 +39,16 @@ ROX_DESC=	Enable ROX panel applet support
 
 SUB_FILES=	${PORTNAME}
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -i '' 's|/usr/lib|../../lib|' ${WRKSRC}/findrox.py
 
-.if ! ${PORT_OPTIONS:MROX}
+post-patch-ROX-off:
 	@${REINPLACE_CMD} -i '' '/if not rox.confirm/,/sys.exit/s/^/#/' \
 		${WRKSRC}/AppRun
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You have not enabled ROX panel applet support"
 	@${ECHO_MSG}
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
-.endif
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -64,6 +63,7 @@ do-install:
 
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/Help/|} ${STAGEDIR}${DOCSDIR}
 

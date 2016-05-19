@@ -1,6 +1,6 @@
---- metamail/splitmail.c.orig	Mon Jan 31 23:23:14 1994
-+++ metamail/splitmail.c	Mon Dec 18 11:46:22 2006
-@@ -21,6 +21,8 @@
+--- metamail/splitmail.c.orig	1994-01-31 22:23:14 UTC
++++ metamail/splitmail.c
+@@ -21,6 +21,8 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
   ******************************************************* */
  
  #include <stdio.h>
@@ -9,7 +9,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <config.h>
-@@ -28,7 +30,7 @@
+@@ -28,7 +30,7 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
  #include <time.h>
  
  #define MINCHUNKSIZE 20000 /* Better be enough to hold the headers, or we die! */
@@ -18,7 +18,7 @@
  
  #ifdef AMIGA
  #define Prototype   extern
-@@ -41,8 +43,8 @@
+@@ -41,8 +43,8 @@ extern char *malloc(), *index(), *getmyn
  #define VERBOSEDELIVERYCMD VerboseDeliveryCmd
  #else
  extern char *getenv();
@@ -29,7 +29,7 @@
  #endif
  
  usageexit() {
-@@ -194,7 +196,7 @@
+@@ -194,7 +196,7 @@ char **argv;
  	s = endofheader(from);  /* would be index(from, '\n'),
  				 but need to check for continuation lines */
          *s = '\0';
@@ -38,7 +38,7 @@
  	    strcat(SharedHeaders, from);
  	    strcat(SharedHeaders, "\n");
  	}
-@@ -339,9 +341,10 @@
+@@ -339,9 +341,10 @@ static char *SharedHeads[] = {
      NULL
  };
  
@@ -50,7 +50,7 @@
  char **OrigID;
  {
      int i;
-@@ -361,7 +364,8 @@
+@@ -361,7 +364,8 @@ char **OrigID;
      }
      if (!ULstrcmp(s, "subject")) {
          *colon = ':';

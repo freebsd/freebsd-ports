@@ -3,7 +3,7 @@
 
 PORTNAME=	fretsonfire
 PORTVERSION=	1.3.110
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games python
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:S/f/F/g:S/o/O/}-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Game of musical skill and fast fingers
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}game>=0:devel/py-game \
-		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-opengl \
+		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
 		${LOCALBASE}/share/${PORTNAME}/default.ttf:games/fretsonfire-data
 

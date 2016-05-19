@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jenkins2
-DISTVERSION=	2.2
+DISTVERSION=	2.3
 CATEGORIES=	devel java
 MASTER_SITES=	http://mirrors.jenkins-ci.org/war/${PORTVERSION}/
 DISTNAME=	jenkins
@@ -13,6 +13,9 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Open-source continuous integration server
 
 LICENSE=	MIT
+
+DEPRECATED=		Use devel/jenkins
+EXPIRATION_DATE=	2016-06-30
 
 CONFLICTS=	jenkins-[0-9]* jenkins-lts-[0-9]*
 

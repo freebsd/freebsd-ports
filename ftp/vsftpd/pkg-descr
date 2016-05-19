@@ -10,6 +10,6 @@ From the README file:
 	that I have written the entire codebase with security in mind,
 	and carefully designed the program to be resilient to attack.
 
-LICENSE: GPL2 or later with execption to link with OpenSSL
+LICENSE: GPL2 or later with exception to link with OpenSSL
 
 WWW: https://security.appspot.com/vsftpd.html

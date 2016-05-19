@@ -46,7 +46,6 @@ lib/emby-server/UniversalDetector.dll
 lib/emby-server/WebMarkupMin.Core.dll
 lib/emby-server/dashboard-ui/about.html
 lib/emby-server/dashboard-ui/addplugin.html
-lib/emby-server/dashboard-ui/advanced.html
 lib/emby-server/dashboard-ui/appservices.html
 lib/emby-server/dashboard-ui/autoorganizelog.html
 lib/emby-server/dashboard-ui/autoorganizesmart.html
@@ -165,6 +164,11 @@ lib/emby-server/dashboard-ui/bower_components/Swiper/src/less/preloader-f7.less
 lib/emby-server/dashboard-ui/bower_components/Swiper/src/less/preloader.less
 lib/emby-server/dashboard-ui/bower_components/Swiper/src/less/scrollbar.less
 lib/emby-server/dashboard-ui/bower_components/Swiper/src/less/swiper.less
+lib/emby-server/dashboard-ui/bower_components/alameda/.bower.json
+lib/emby-server/dashboard-ui/bower_components/alameda/LICENSE
+lib/emby-server/dashboard-ui/bower_components/alameda/alameda.js
+lib/emby-server/dashboard-ui/bower_components/alameda/bower.json
+lib/emby-server/dashboard-ui/bower_components/alameda/shrinktest.sh
 lib/emby-server/dashboard-ui/bower_components/cryptojslib/.bower.json
 lib/emby-server/dashboard-ui/bower_components/cryptojslib/.gitattributes
 lib/emby-server/dashboard-ui/bower_components/cryptojslib/.gitignore
@@ -369,6 +373,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/globalize.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/images/basicimagefetcher.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/images/imagehelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/images/persistentimagefetcher.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/input/api.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/layoutmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading-lite.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/loading/loading-smarttv.js
@@ -385,6 +390,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/requirecss.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/requirehtml.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/router.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/scrollhelper.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/scrollstyles.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/servernotifications.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/slideshow/icons.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/slideshow/slideshow.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/slideshow/style.css
@@ -505,6 +512,7 @@ lib/emby-server/dashboard-ui/bower_components/iron-a11y-announcer/iron-a11y-anno
 lib/emby-server/dashboard-ui/bower_components/iron-a11y-announcer/test/index.html
 lib/emby-server/dashboard-ui/bower_components/iron-a11y-announcer/test/iron-a11y-announcer.html
 lib/emby-server/dashboard-ui/bower_components/iron-a11y-keys-behavior/.bower.json
+lib/emby-server/dashboard-ui/bower_components/iron-a11y-keys-behavior/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/iron-a11y-keys-behavior/.gitignore
 lib/emby-server/dashboard-ui/bower_components/iron-a11y-keys-behavior/.travis.yml
 lib/emby-server/dashboard-ui/bower_components/iron-a11y-keys-behavior/CONTRIBUTING.md
@@ -568,6 +576,7 @@ lib/emby-server/dashboard-ui/bower_components/iron-collapse/test/basic.html
 lib/emby-server/dashboard-ui/bower_components/iron-collapse/test/horizontal.html
 lib/emby-server/dashboard-ui/bower_components/iron-collapse/test/index.html
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/.bower.json
+lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/.gitignore
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/.travis.yml
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/CONTRIBUTING.md
@@ -576,9 +585,11 @@ lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/bower.json
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/demo-pages-shared-styles.html
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/demo-snippet.html
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/demo/index.html
+lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/demo/url-bar.html
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/index.html
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/test/basic.html
 lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/test/index.html
+lib/emby-server/dashboard-ui/bower_components/iron-demo-helpers/url-bar.html
 lib/emby-server/dashboard-ui/bower_components/iron-dropdown/.bower.json
 lib/emby-server/dashboard-ui/bower_components/iron-dropdown/.gitignore
 lib/emby-server/dashboard-ui/bower_components/iron-dropdown/.travis.yml
@@ -685,6 +696,7 @@ lib/emby-server/dashboard-ui/bower_components/iron-iconset-svg/iron-iconset-svg.
 lib/emby-server/dashboard-ui/bower_components/iron-iconset-svg/test/index.html
 lib/emby-server/dashboard-ui/bower_components/iron-iconset-svg/test/iron-iconset-svg.html
 lib/emby-server/dashboard-ui/bower_components/iron-input/.bower.json
+lib/emby-server/dashboard-ui/bower_components/iron-input/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/iron-input/.gitignore
 lib/emby-server/dashboard-ui/bower_components/iron-input/.travis.yml
 lib/emby-server/dashboard-ui/bower_components/iron-input/CONTRIBUTING.md
@@ -698,7 +710,24 @@ lib/emby-server/dashboard-ui/bower_components/iron-input/test/disabled-input.htm
 lib/emby-server/dashboard-ui/bower_components/iron-input/test/index.html
 lib/emby-server/dashboard-ui/bower_components/iron-input/test/iron-input.html
 lib/emby-server/dashboard-ui/bower_components/iron-input/test/letters-only.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/.bower.json
 lib/emby-server/dashboard-ui/bower_components/iron-location/.github/ISSUE_TEMPLATE.md
+lib/emby-server/dashboard-ui/bower_components/iron-location/.gitignore
+lib/emby-server/dashboard-ui/bower_components/iron-location/.travis.yml
+lib/emby-server/dashboard-ui/bower_components/iron-location/CONTRIBUTING.md
+lib/emby-server/dashboard-ui/bower_components/iron-location/README.md
+lib/emby-server/dashboard-ui/bower_components/iron-location/bower.json
+lib/emby-server/dashboard-ui/bower_components/iron-location/demo/index.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/demo/iron-query-params.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/index.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/iron-location.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/iron-query-params.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/test/index.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/test/initialization-cases.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/test/initialization-iframe.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/test/initialization-tests.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/test/iron-location.html
+lib/emby-server/dashboard-ui/bower_components/iron-location/test/iron-query-params.html
 lib/emby-server/dashboard-ui/bower_components/iron-media-query/.bower.json
 lib/emby-server/dashboard-ui/bower_components/iron-media-query/.gitignore
 lib/emby-server/dashboard-ui/bower_components/iron-media-query/.travis.yml
@@ -756,8 +785,10 @@ lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/iron-overlay
 lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/iron-overlay-behavior.html
 lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/iron-overlay-manager.html
 lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/test/index.html
+lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/test/iron-overlay-backdrop.html
 lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/test/iron-overlay-behavior.html
 lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/test/test-buttons.html
+lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/test/test-menu-button.html
 lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/test/test-overlay.html
 lib/emby-server/dashboard-ui/bower_components/iron-overlay-behavior/test/test-overlay2.html
 lib/emby-server/dashboard-ui/bower_components/iron-pages/.bower.json
@@ -798,6 +829,7 @@ lib/emby-server/dashboard-ui/bower_components/iron-resizable-behavior/test/index
 lib/emby-server/dashboard-ui/bower_components/iron-resizable-behavior/test/iron-resizable-behavior.html
 lib/emby-server/dashboard-ui/bower_components/iron-resizable-behavior/test/test-elements.html
 lib/emby-server/dashboard-ui/bower_components/iron-selector/.bower.json
+lib/emby-server/dashboard-ui/bower_components/iron-selector/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/iron-selector/.gitignore
 lib/emby-server/dashboard-ui/bower_components/iron-selector/.travis.yml
 lib/emby-server/dashboard-ui/bower_components/iron-selector/CONTRIBUTING.md
@@ -973,6 +1005,16 @@ lib/emby-server/dashboard-ui/bower_components/jstree/src/themes/main.less
 lib/emby-server/dashboard-ui/bower_components/jstree/src/themes/mixins.less
 lib/emby-server/dashboard-ui/bower_components/jstree/src/themes/responsive.less
 lib/emby-server/dashboard-ui/bower_components/jstree/src/vakata-jstree.js
+lib/emby-server/dashboard-ui/bower_components/libjass/.bower.json
+lib/emby-server/dashboard-ui/bower_components/libjass/CHANGELOG.md
+lib/emby-server/dashboard-ui/bower_components/libjass/LICENSE
+lib/emby-server/dashboard-ui/bower_components/libjass/README.md
+lib/emby-server/dashboard-ui/bower_components/libjass/libjass.css
+lib/emby-server/dashboard-ui/bower_components/libjass/libjass.js
+lib/emby-server/dashboard-ui/bower_components/libjass/libjass.js.map
+lib/emby-server/dashboard-ui/bower_components/libjass/libjass.min.js
+lib/emby-server/dashboard-ui/bower_components/libjass/libjass.min.js.map
+lib/emby-server/dashboard-ui/bower_components/libjass/package.json
 lib/emby-server/dashboard-ui/bower_components/marked-element/.bower.json
 lib/emby-server/dashboard-ui/bower_components/marked-element/.gitignore
 lib/emby-server/dashboard-ui/bower_components/marked-element/.travis.yml
@@ -1227,6 +1269,7 @@ lib/emby-server/dashboard-ui/bower_components/native-promise-only/lib/npo.src.js
 lib/emby-server/dashboard-ui/bower_components/native-promise-only/package.json
 lib/emby-server/dashboard-ui/bower_components/native-promise-only/test_adapter.js
 lib/emby-server/dashboard-ui/bower_components/neon-animation/.bower.json
+lib/emby-server/dashboard-ui/bower_components/neon-animation/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/neon-animation/.gitignore
 lib/emby-server/dashboard-ui/bower_components/neon-animation/.travis.yml
 lib/emby-server/dashboard-ui/bower_components/neon-animation/CONTRIBUTING.md
@@ -1290,6 +1333,7 @@ lib/emby-server/dashboard-ui/bower_components/neon-animation/neon-animations.htm
 lib/emby-server/dashboard-ui/bower_components/neon-animation/neon-shared-element-animatable-behavior.html
 lib/emby-server/dashboard-ui/bower_components/neon-animation/neon-shared-element-animation-behavior.html
 lib/emby-server/dashboard-ui/bower_components/neon-animation/test/index.html
+lib/emby-server/dashboard-ui/bower_components/neon-animation/test/neon-animated-pages-lazy.html
 lib/emby-server/dashboard-ui/bower_components/neon-animation/test/neon-animated-pages.html
 lib/emby-server/dashboard-ui/bower_components/neon-animation/test/test-resizable-pages.html
 lib/emby-server/dashboard-ui/bower_components/neon-animation/web-animations.html
@@ -1424,6 +1468,7 @@ lib/emby-server/dashboard-ui/bower_components/paper-icon-button/test/a11y.html
 lib/emby-server/dashboard-ui/bower_components/paper-icon-button/test/basic.html
 lib/emby-server/dashboard-ui/bower_components/paper-icon-button/test/index.html
 lib/emby-server/dashboard-ui/bower_components/paper-input/.bower.json
+lib/emby-server/dashboard-ui/bower_components/paper-input/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/paper-input/.gitignore
 lib/emby-server/dashboard-ui/bower_components/paper-input/.travis.yml
 lib/emby-server/dashboard-ui/bower_components/paper-input/CONTRIBUTING.md
@@ -1450,6 +1495,7 @@ lib/emby-server/dashboard-ui/bower_components/paper-input/test/paper-input-error
 lib/emby-server/dashboard-ui/bower_components/paper-input/test/paper-input.html
 lib/emby-server/dashboard-ui/bower_components/paper-input/test/paper-textarea.html
 lib/emby-server/dashboard-ui/bower_components/paper-item/.bower.json
+lib/emby-server/dashboard-ui/bower_components/paper-item/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/paper-item/.gitignore
 lib/emby-server/dashboard-ui/bower_components/paper-item/.travis.yml
 lib/emby-server/dashboard-ui/bower_components/paper-item/CONTRIBUTING.md
@@ -1478,6 +1524,7 @@ lib/emby-server/dashboard-ui/bower_components/paper-material/paper-material.html
 lib/emby-server/dashboard-ui/bower_components/paper-material/test/index.html
 lib/emby-server/dashboard-ui/bower_components/paper-material/test/paper-material.html
 lib/emby-server/dashboard-ui/bower_components/paper-menu-button/.bower.json
+lib/emby-server/dashboard-ui/bower_components/paper-menu-button/.github/ISSUE_TEMPLATE.md
 lib/emby-server/dashboard-ui/bower_components/paper-menu-button/.gitignore
 lib/emby-server/dashboard-ui/bower_components/paper-menu-button/.travis.yml
 lib/emby-server/dashboard-ui/bower_components/paper-menu-button/CONTRIBUTING.md
@@ -2816,12 +2863,13 @@ lib/emby-server/dashboard-ui/bower_components/webcomponentsjs/webcomponents.js
 lib/emby-server/dashboard-ui/bower_components/webcomponentsjs/webcomponents.min.js
 lib/emby-server/dashboard-ui/channelitems.html
 lib/emby-server/dashboard-ui/channels.html
-lib/emby-server/dashboard-ui/channelsettings.html
 lib/emby-server/dashboard-ui/cinemamodeconfiguration.html
 lib/emby-server/dashboard-ui/collections.html
 lib/emby-server/dashboard-ui/components/chromecasthelpers.js
 lib/emby-server/dashboard-ui/components/collectioneditor/collectioneditor.js
 lib/emby-server/dashboard-ui/components/directorybrowser/directorybrowser.js
+lib/emby-server/dashboard-ui/components/favoriteitems.js
+lib/emby-server/dashboard-ui/components/filedownloader.js
 lib/emby-server/dashboard-ui/components/fileorganizer/fileorganizer.js
 lib/emby-server/dashboard-ui/components/fileorganizer/fileorganizer.template.html
 lib/emby-server/dashboard-ui/components/filterdialog/filterdialog.js
@@ -2851,6 +2899,7 @@ lib/emby-server/dashboard-ui/components/recordingcreator/recordingcreator.js
 lib/emby-server/dashboard-ui/components/recordingcreator/recordingcreator.template.html
 lib/emby-server/dashboard-ui/components/remotecontrol.js
 lib/emby-server/dashboard-ui/components/remotecontrolautoplay.js
+lib/emby-server/dashboard-ui/components/servertestermessage.js
 lib/emby-server/dashboard-ui/components/sharingwidget.js
 lib/emby-server/dashboard-ui/components/subtitleeditor/subtitleeditor.js
 lib/emby-server/dashboard-ui/components/subtitleeditor/subtitleeditor.template.html
@@ -2887,7 +2936,6 @@ lib/emby-server/dashboard-ui/css/images/editor/missing.png
 lib/emby-server/dashboard-ui/css/images/editor/missingbackdrop.png
 lib/emby-server/dashboard-ui/css/images/editor/missinglogo.png
 lib/emby-server/dashboard-ui/css/images/editor/missingprimaryimage.png
-lib/emby-server/dashboard-ui/css/images/editor/missingtrailer.png
 lib/emby-server/dashboard-ui/css/images/empty.png
 lib/emby-server/dashboard-ui/css/images/favicon.ico
 lib/emby-server/dashboard-ui/css/images/fresh.png
@@ -2902,6 +2950,7 @@ lib/emby-server/dashboard-ui/css/images/items/list/collection.png
 lib/emby-server/dashboard-ui/css/images/items/list/person.png
 lib/emby-server/dashboard-ui/css/images/items/searchhintsv2/tv.png
 lib/emby-server/dashboard-ui/css/images/logindefault.png
+lib/emby-server/dashboard-ui/css/images/logo.png
 lib/emby-server/dashboard-ui/css/images/logo536.png
 lib/emby-server/dashboard-ui/css/images/mblogoicon.png
 lib/emby-server/dashboard-ui/css/images/media/chapterflyout.png
@@ -2978,7 +3027,6 @@ lib/emby-server/dashboard-ui/devices/windowsphone/wp.css
 lib/emby-server/dashboard-ui/devicesupload.html
 lib/emby-server/dashboard-ui/dlnaprofile.html
 lib/emby-server/dashboard-ui/dlnaprofiles.html
-lib/emby-server/dashboard-ui/dlnaserversettings.html
 lib/emby-server/dashboard-ui/dlnasettings.html
 lib/emby-server/dashboard-ui/edititemmetadata.html
 lib/emby-server/dashboard-ui/encodingsettings.html
@@ -3000,7 +3048,6 @@ lib/emby-server/dashboard-ui/kids.html
 lib/emby-server/dashboard-ui/legacy/buttonenabled.js
 lib/emby-server/dashboard-ui/legacy/dashboard.js
 lib/emby-server/dashboard-ui/legacy/fnchecked.js
-lib/emby-server/dashboard-ui/legacy/objectassign.js
 lib/emby-server/dashboard-ui/legacy/selectmenu.js
 lib/emby-server/dashboard-ui/library.html
 lib/emby-server/dashboard-ui/librarypathmapping.html
@@ -3020,7 +3067,6 @@ lib/emby-server/dashboard-ui/log.html
 lib/emby-server/dashboard-ui/login.html
 lib/emby-server/dashboard-ui/manifest.json
 lib/emby-server/dashboard-ui/metadata.html
-lib/emby-server/dashboard-ui/metadataadvanced.html
 lib/emby-server/dashboard-ui/metadataimages.html
 lib/emby-server/dashboard-ui/metadatanfo.html
 lib/emby-server/dashboard-ui/metadatasubtitles.html
@@ -3049,7 +3095,6 @@ lib/emby-server/dashboard-ui/scheduledtask.html
 lib/emby-server/dashboard-ui/scheduledtasks.html
 lib/emby-server/dashboard-ui/scripts/aboutpage.js
 lib/emby-server/dashboard-ui/scripts/addpluginpage.js
-lib/emby-server/dashboard-ui/scripts/advancedconfigurationpage.js
 lib/emby-server/dashboard-ui/scripts/alphapicker.js
 lib/emby-server/dashboard-ui/scripts/appservices.js
 lib/emby-server/dashboard-ui/scripts/autobackdrops.js
@@ -3058,7 +3103,6 @@ lib/emby-server/dashboard-ui/scripts/autoorganizesmart.js
 lib/emby-server/dashboard-ui/scripts/autoorganizetv.js
 lib/emby-server/dashboard-ui/scripts/channelitems.js
 lib/emby-server/dashboard-ui/scripts/channels.js
-lib/emby-server/dashboard-ui/scripts/channelsettings.js
 lib/emby-server/dashboard-ui/scripts/channelslatest.js
 lib/emby-server/dashboard-ui/scripts/chromecast.js
 lib/emby-server/dashboard-ui/scripts/cinemamodeconfiguration.js
@@ -3071,7 +3115,6 @@ lib/emby-server/dashboard-ui/scripts/devices.js
 lib/emby-server/dashboard-ui/scripts/devicesupload.js
 lib/emby-server/dashboard-ui/scripts/dlnaprofile.js
 lib/emby-server/dashboard-ui/scripts/dlnaprofiles.js
-lib/emby-server/dashboard-ui/scripts/dlnaserversettings.js
 lib/emby-server/dashboard-ui/scripts/dlnasettings.js
 lib/emby-server/dashboard-ui/scripts/edititemmetadata.js
 lib/emby-server/dashboard-ui/scripts/editorsidebar.js
@@ -3087,6 +3130,7 @@ lib/emby-server/dashboard-ui/scripts/gamespage.js
 lib/emby-server/dashboard-ui/scripts/gamesrecommendedpage.js
 lib/emby-server/dashboard-ui/scripts/gamestudiospage.js
 lib/emby-server/dashboard-ui/scripts/gamesystemspage.js
+lib/emby-server/dashboard-ui/scripts/homefavorites.js
 lib/emby-server/dashboard-ui/scripts/homenextup.js
 lib/emby-server/dashboard-ui/scripts/homeupcoming.js
 lib/emby-server/dashboard-ui/scripts/htmlmediarenderer.js
@@ -3125,7 +3169,6 @@ lib/emby-server/dashboard-ui/scripts/mediacontroller.js
 lib/emby-server/dashboard-ui/scripts/medialibrarypage.js
 lib/emby-server/dashboard-ui/scripts/mediaplayer-video.js
 lib/emby-server/dashboard-ui/scripts/mediaplayer.js
-lib/emby-server/dashboard-ui/scripts/metadataadvanced.js
 lib/emby-server/dashboard-ui/scripts/metadataconfigurationpage.js
 lib/emby-server/dashboard-ui/scripts/metadataimagespage.js
 lib/emby-server/dashboard-ui/scripts/metadatanfo.js
@@ -3244,7 +3287,6 @@ lib/emby-server/dashboard-ui/strings/pt-BR.json
 lib/emby-server/dashboard-ui/strings/pt-PT.json
 lib/emby-server/dashboard-ui/strings/ro.json
 lib/emby-server/dashboard-ui/strings/ru.json
-lib/emby-server/dashboard-ui/strings/server.json
 lib/emby-server/dashboard-ui/strings/sl-SI.json
 lib/emby-server/dashboard-ui/strings/sv.json
 lib/emby-server/dashboard-ui/strings/tr.json
@@ -3253,7 +3295,6 @@ lib/emby-server/dashboard-ui/strings/vi.json
 lib/emby-server/dashboard-ui/strings/zh-CN.json
 lib/emby-server/dashboard-ui/strings/zh-HK.json
 lib/emby-server/dashboard-ui/strings/zh-TW.json
-lib/emby-server/dashboard-ui/support.html
 lib/emby-server/dashboard-ui/supporterkey.html
 lib/emby-server/dashboard-ui/syncactivity.html
 lib/emby-server/dashboard-ui/syncjob.html

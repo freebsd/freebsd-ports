@@ -1,0 +1,33 @@
+--- CMakeLists.txt.orig	2016-03-29 09:23:52 UTC
++++ CMakeLists.txt
+@@ -9,6 +9,7 @@ if(BUILD_STATIC)
+     set(CMAKE_EXE_LINKER_FLAGS "-static")
+ endif()
+ 
++FIND_PACKAGE(Threads REQUIRED)
+ find_package(Boost
+   1.53.0 REQUIRED
+   COMPONENTS program_options timer iostreams thread
+@@ -16,9 +17,6 @@ find_package(Boost
+ 
+ find_package(ZLIB REQUIRED)
+ 
+-set(CMAKE_BUILD_TYPE Release)
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-uninitialized")
+-
+ add_subdirectory("src/algo/blast/core")
+ include_directories(
+   "${CMAKE_SOURCE_DIR}/src"
+@@ -29,6 +27,11 @@ add_executable(diamond src/main.cpp
+   src/basic/options.cpp
+   src/util/tinythread.cpp)
+ 
+-target_link_libraries(diamond blast_core ${Boost_LIBRARIES} ${ZLIB_LIBRARY})
++target_link_libraries(diamond blast_core ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARY})
+ 
+ install(TARGETS diamond DESTINATION bin)
++
++get_cmake_property(_variableNames VARIABLES)
++foreach (_variableName ${_variableNames})
++    message(STATUS "${_variableName}=${${_variableName}}")
++endforeach()

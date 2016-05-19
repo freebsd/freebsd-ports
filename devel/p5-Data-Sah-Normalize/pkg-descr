@@ -1,0 +1,4 @@
+This often-needed functionality is split from the main Data::Sah to keep it in a
+small and minimal-dependencies package.
+
+WWW: http://search.cpan.org/dist/Data-Sah-Normalize/

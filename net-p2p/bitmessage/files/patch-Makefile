@@ -1,20 +1,36 @@
---- ./Makefile.orig	2014-01-21 08:17:36.000000000 +0200
-+++ ./Makefile	2014-03-12 18:18:00.000000000 +0200
-@@ -31,12 +31,13 @@
- 	install -m 644 desktop/can-icon.svg ${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${APP}.svg
- 	cp -rf src/* ${DESTDIR}${PREFIX}/share/${APP}
- 	echo '#!/bin/sh' > ${DESTDIR}${PREFIX}/bin/${APP}
--	echo 'if [ -d ${DESTDIR}/usr/local/share/${APP} ]; then' >> ${DESTDIR}${PREFIX}/bin/${APP}
--	echo '  cd ${DESTDIR}/usr/local/share/${APP}' >> ${DESTDIR}${PREFIX}/bin/${APP}
-+	echo 'if [ -d ${PREFIX}/share/${APP} ]; then' >> ${DESTDIR}${PREFIX}/bin/${APP}
-+	echo '  cd ${PREFIX}/share/${APP}' >> ${DESTDIR}${PREFIX}/bin/${APP}
+--- Makefile.orig	2016-05-02 19:51:46 UTC
++++ Makefile
+@@ -16,9 +16,9 @@ install:
+ 	mkdir -p ${DESTDIR}${PREFIX}
+ 	mkdir -p ${DESTDIR}${PREFIX}/bin
+ 	mkdir -m 755 -p ${DESTDIR}${PREFIX}/share
+-	mkdir -m 755 -p ${DESTDIR}${PREFIX}/share/man
+-	mkdir -m 755 -p ${DESTDIR}${PREFIX}/share/man/man1
+-	install -m 644 man/${APP}.1.gz ${DESTDIR}${PREFIX}/share/man/man1
++	mkdir -m 755 -p ${DESTDIR}${PREFIX}/man
++	mkdir -m 755 -p ${DESTDIR}${PREFIX}/man/man1
++	install -m 644 man/${APP}.1.gz ${DESTDIR}${PREFIX}/man/man1
+ 	mkdir -m 755 -p ${DESTDIR}${PREFIX}/share/${APP}
+ 	mkdir -m 755 -p ${DESTDIR}${PREFIX}/share/applications
+ 	mkdir -m 755 -p ${DESTDIR}${PREFIX}/share/pixmaps
+@@ -35,16 +35,13 @@ install:
+ 	echo "if [ -d ${PREFIX}/share/${APP} ]; then" >> ${DESTDIR}${PREFIX}/bin/${APP}
+ 	echo "  cd ${PREFIX}/share/${APP}" >> ${DESTDIR}${PREFIX}/bin/${APP}
  	echo 'else' >> ${DESTDIR}${PREFIX}/bin/${APP}
--	echo '  cd ${DESTDIR}/usr/share/pybitmessage' >> ${DESTDIR}${PREFIX}/bin/${APP}
-+	echo '  echo "BitMessage directory not found"' >> ${DESTDIR}${PREFIX}/bin/${APP}
+-	echo "  cd /usr/share/pybitmessage" >> ${DESTDIR}${PREFIX}/bin/${APP}
+-	echo 'fi' >> ${DESTDIR}${PREFIX}/bin/${APP}
+-	echo 'if [ -d /opt/openssl-compat-bitcoin/lib ]; then' >> ${DESTDIR}${PREFIX}/bin/${APP}
+-	echo '  LD_LIBRARY_PATH="/opt/openssl-compat-bitcoin/lib/" exec python2 bitmessagemain.py' >> ${DESTDIR}${PREFIX}/bin/${APP}
+-	echo 'else' >> ${DESTDIR}${PREFIX}/bin/${APP}
+-	echo '  exec python2 bitmessagemain.py' >> ${DESTDIR}${PREFIX}/bin/${APP}
++	echo ' echo "BitMessage directory not found"' >> ${DESTDIR}${PREFIX}/bin/${APP}
 +	echo '  exit 1' >> ${DESTDIR}${PREFIX}/bin/${APP}
  	echo 'fi' >> ${DESTDIR}${PREFIX}/bin/${APP}
--	echo 'LD_LIBRARY_PATH="/opt/openssl-compat-bitcoin/lib/" exec python2 bitmessagemain.py' >> ${DESTDIR}${PREFIX}/bin/${APP}
-+	echo 'python2 bitmessagemain.py' >> ${DESTDIR}${PREFIX}/bin/${APP}
++	echo 'exec python2 bitmessagemain.py' >> ${DESTDIR}${PREFIX}/bin/${APP}
  	chmod +x ${DESTDIR}${PREFIX}/bin/${APP}
  uninstall:
- 	rm -f ${PREFIX}/share/man/man1/${APP}.1.gz
+-	rm -f ${PREFIX}/share/man/man1/${APP}.1.gz
++	rm -f ${PREFIX}/man/man1/${APP}.1.gz
+ 	rm -rf ${PREFIX}/share/${APP}
+ 	rm -f ${PREFIX}/bin/${APP}
+ 	rm -f ${PREFIX}/share/applications/${APP}.desktop

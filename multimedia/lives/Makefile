@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Video editing system
@@ -39,13 +39,12 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:audio/ladspa \
 		x264:multimedia/x264 \
 		cdrecord:sysutils/cdrtools
 
-USES=		ghostscript:run libtool localbase pathfix perl5 pkgconfig \
-		python shebangfix tar:bzip2
+USES=		compiler:c++11-lib ghostscript:run libtool localbase pathfix perl5 \
+		pkgconfig python shebangfix tar:bzip2
 SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
 		smogrify tools/autolives.pl lives-plugins/plugins/encoders/*_encoder \
 		lives-plugins/plugins/playback/audiostream/audiostreamer.pl
 GNU_CONFIGURE=	yes
-USE_CSTD=	gnu89
 USE_GNOME=	gtk30 intltool
 USE_LDCONFIG=	yes
 
@@ -87,9 +86,6 @@ post-patch:
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
 	@${REINPLACE_CMD} '/selectRandom/d' \
 		${WRKSRC}/lives-plugins/weed-plugins/projectM.cpp
-
-pre-build-NLS-on:
-	@(cd ${WRKSRC}/po && ${DO_MAKE_BUILD} update-po)
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

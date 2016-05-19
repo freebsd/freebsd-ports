@@ -1,11 +1,11 @@
---- src/cmds/Makefile.am.orig	2010-02-02 02:17:23.000000000 +0900
-+++ src/cmds/Makefile.am	2010-10-25 01:55:31.067559744 +0900
-@@ -30,7 +30,7 @@
+--- src/cmds/Makefile.am.orig	2011-08-15 17:52:08 UTC
++++ src/cmds/Makefile.am
+@@ -30,7 +30,7 @@ else
  AM_CPPFLAGS	=	-I$(top_srcdir)/include -D_LINUX
  endif
  
--LDADD		=	$(top_builddir)/lib/libtpm_tspi.la -ltspi $(top_builddir)/lib/libtpm_unseal.la -ltpm_unseal
-+LDADD		=	$(top_builddir)/lib/libtpm_tspi.la -ltspi $(top_builddir)/lib/libtpm_unseal.la
+-LDADD		=	$(top_builddir)/lib/libtpm_tspi.la -ltspi $(top_builddir)/lib/libtpm_unseal.la -ltpm_unseal -lcrypto
++LDADD		=	$(top_builddir)/lib/libtpm_tspi.la -ltspi $(top_builddir)/lib/libtpm_unseal.la -lcrypto
  
  tpm_sealdata_SOURCES = tpm_sealdata.c
  tpm_unsealdata_SOURCES = tpm_unsealdata.c

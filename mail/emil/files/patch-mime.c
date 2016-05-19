@@ -1,5 +1,5 @@
---- mime.c.orig	1996-06-04 15:36:59.000000000 +0200
-+++ mime.c	2011-07-25 20:21:13.000000000 +0200
+--- mime.c.orig	1996-06-04 13:36:59 UTC
++++ mime.c
 @@ -56,18 +56,18 @@ encode_mime(struct message *m)
        if (match(m->sd->type, "TEXT"))
  	{

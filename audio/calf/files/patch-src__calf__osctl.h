@@ -1,4 +1,4 @@
---- src/calf/osctl.h.orig
+--- src/calf/osctl.h.orig	2014-01-26 21:24:40 UTC
 +++ src/calf/osctl.h
 @@ -26,7 +26,10 @@
  #include <vector>

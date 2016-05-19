@@ -16,7 +16,7 @@
 %%T%%/bin/tomcat-native.tar.gz
 %%T%%/bin/tool-wrapper.sh
 %%T%%/bin/version.sh
-@sample %%T%%/conf/catalina.policy.%%CONF_EXT%%%%T %%/conf/catalina.policy
+@sample %%T%%/conf/catalina.policy.%%CONF_EXT%% %%T%%/conf/catalina.policy
 @sample %%T%%/conf/catalina.properties.%%CONF_EXT%% %%T%%/conf/catalina.properties
 @sample %%T%%/conf/context.xml.%%CONF_EXT%% %%T%%/conf/context.xml
 @sample %%T%%/conf/logging.properties.%%CONF_EXT%% %%T%%/conf/logging.properties

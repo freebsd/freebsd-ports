@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-PORTVERSION=	1.6.0
-PORTREVISION?=	2
+PORTVERSION=	1.6.1
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -211,6 +211,8 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 DW_PATCH_VERSION=	1.5.6
+VVV_PATCH_VERSION:=	1.6.0
+RR_PATCH_VERSION:=	1.6.0
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -236,13 +238,6 @@ CFLAGS+=		${CFLAGS_ADD}
 LDFLAGS+=		${LDFLAGS_ADD}
 
 PATCH_DIST_STRIP=	-p1
-
-.if defined (LITE)
-pre-patch:
-.else
-pre-patch-ICONV-off:
-.endif
-	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-idna_no_iconv
 
 pre-patch-PARENT_CHILD_MATCH_PATCH-on:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-parent-child-match
@@ -321,7 +316,7 @@ pre-configure::
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --without-bdb --with-tokyocabinet
 LIB_DEPENDS+=		libtokyocabinet.so:databases/tokyocabinet
 .else
-USE_BDB=		42+
+USES+=			bdb:42+
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
 CONFIGURE_SED=	-e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /'
 pre-configure::

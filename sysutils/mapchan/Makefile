@@ -4,7 +4,7 @@
 PORTNAME=	mapchan
 PORTVERSION=	3.2
 CATEGORIES=	sysutils converters
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Transform the input and output of a terminal (SCO Unix alike)

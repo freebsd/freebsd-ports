@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6.0
+DISTVERSIONPREFIX=	${GH_PROJECT}_
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	GH
@@ -35,7 +36,6 @@ BROKEN_FreeBSD_9=	dependency graphics/code-eli needs additional math functions
 USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP
 GH_ACCOUNT=	${GH_PROJECT}
-GH_TAGNAME=	${GH_PROJECT}_${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_PROJECT}_${PORTVERSION}
 
@@ -55,7 +55,7 @@ USE_GL=		glu
 USE_GNOME=	libxml2
 CFLAGS+=	-I${LOCALBASE}/include/openNURBS
 
-BUILD_PREFIX=	OpenVSP-prefix/src/OpenVSP-build/_CPack_Packages/FreeBSD/ZIP/OpenVSP-3.5.2-FreeBSD
+BUILD_PREFIX=	OpenVSP-prefix/src/OpenVSP-build/_CPack_Packages/FreeBSD/ZIP/OpenVSP-${PORTVERSION}-FreeBSD
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${BUILD_PREFIX}/vsp* ${STAGEDIR}${PREFIX}/bin

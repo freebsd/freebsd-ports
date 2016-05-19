@@ -3,7 +3,7 @@
 
 PORTNAME=	palomino
 PORTVERSION=	20131231
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/palomino-sim
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
@@ -82,6 +82,15 @@ post-patch:
 	@${REINPLACE_CMD} -e '/LUABIND_SCRIPTS_DIR/ s|"scripts"|"${DATADIR}/scripts"|' \
 		${WRKSRC}/src/lua_bind/defs.hh
 	@${REINPLACE_CMD} -e 's|doc/html/|${DOCSDIR}/|' ${WRKSRC}/src/gui/gui.cc
+
+	@${REINPLACE_CMD} -e 's/computeBound/computeBoundingBox/g' \
+		${WRKSRC}/src/object/object.cc \
+		${WRKSRC}/src/fx/partsys_medium.cc
+
+	@${REINPLACE_CMD} -e 's/CameraNode/Camera/g' \
+		${WRKSRC}/src/hud/hud.cc \
+		${WRKSRC}/src/hud/hud.hh \
+		${WRKSRC}/src/hud/hud_text.cc
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	libxc
-PORTVERSION=	2.1.2
+PORTVERSION=	3.0.0
 CATEGORIES=	science
 MASTER_SITES=	http://www.tddft.org/programs/octopus/download/libxc/
 
 MAINTAINER=	dieterich@ogolem.org
 COMMENT=	Library of exchange-correlation functionals for DFT
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fortran gmake libtool perl5

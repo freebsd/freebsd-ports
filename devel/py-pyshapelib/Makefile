@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pyshapelib
-PORTVERSION=	0.3
+PORTVERSION=	1.0
 CATEGORIES=	devel python geography
-MASTER_SITES=	http://ftp.intevation.de/users/bh/pyshapelib/:py \
-		http://dl.maptools.org/dl/shapelib/:c
+MASTER_SITES=	http://wald.intevation.org/frs/download.php/899/:py \
+		http://download.osgeo.org/shapelib/:c
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:py ${SHAPELIB}${EXTRACT_SUFX}:c
 
@@ -15,27 +15,42 @@ COMMENT=	Python bindings for Shapelib
 LICENSE=	LGPL20
 
 USES=		python
-USE_PYTHON=	distutils
-SHAPELIB=	shapelib-1.2.10
 USE_LDCONFIG=	yes
+USE_PYTHON=	distutils
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_SUB=	yes
 
 PORTDOCS=	NEWS README
 PORTEXAMPLES=	pytest.py
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+# pyshapelib requires shapelib source to build
+SHAPELIB=	shapelib-1.3.0
 
 post-extract:
 	${LN} -s ${WRKDIR}/${SHAPELIB} ${WRKDIR}/shapelib
 
+.include <bsd.port.options.mk>
+
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
+.endif
 
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${EXAMPLESDIR}
 .endfor
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_MAJOR_VER} != 2
+IGNORE=	does not work with ${PYTHON_VERSION}
+.endif
+
+.include <bsd.port.post.mk>

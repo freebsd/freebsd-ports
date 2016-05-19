@@ -1,11 +1,11 @@
-# Created by: Ben Woods <woodsb02@gmail.com>
+# Created by: Ben Woods <woodsb02@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	3.0.5913
+PORTVERSION=	3.0.5934
 CATEGORIES=	multimedia
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Home media server built using mono and other open source technologies
 
 LICENSE=	GPLv2
@@ -21,6 +21,7 @@ GH_ACCOUNT=	MediaBrowser
 GH_PROJECT=	Emby
 
 USES=		mono pkgconfig
+NO_ARCH=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 RC_NAME=	emby_server

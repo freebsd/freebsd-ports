@@ -1,0 +1,23 @@
+--- src/tcsd/Makefile.am.orig	2014-04-25 03:05:44.000000000 +0900
++++ src/tcsd/Makefile.am	2016-05-19 03:00:08.951991000 +0900
+@@ -1,11 +1,17 @@
+-sbin_PROGRAMS=tcsd
++sbin_PROGRAMS=tcsd tcsd_emu
+ 
+-tcsd_CFLAGS=-DAPPID=\"TCSD\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -I${top_srcdir}/src/include -fPIE -DPIE
+-tcsd_LDADD=${top_builddir}/src/tcs/libtcs.a ${top_builddir}/src/tddl/libtddl.a -lpthread @CRYPTOLIB@
++tcsd_CFLAGS=-DAPPID=\"TCSD\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -I${top_srcdir}/src/include -fPIE -DPIE -I@OPENSSL_INCLUDE_DIR@
++tcsd_LDADD=${top_builddir}/src/tcs/libtcs.a ${top_builddir}/src/tddl/libtddl.a -lpthread -L@OPENSSL_LIB_DIR@ @CRYPTOLIB@
+ tcsd_LDFLAGS=-pie -Wl,-z,relro -Wl,-z,now
+ 
+ tcsd_SOURCES=svrside.c tcsd_conf.c tcsd_threads.c platform.c
+ 
++tcsd_emu_CFLAGS=-DAPPID=\"TCSD\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -I${top_srcdir}/src/include -fPIE -DPIE -I@OPENSSL_INCLUDE_DIR@
++tcsd_emu_LDADD=${top_builddir}/src/tcs/libtcs_emu.a -ltddl -L${LOCALBASE}/lib/tddl_emu -lpthread -L@OPENSSL_LIB_DIR@ @CRYPTOLIB@
++tcsd_emu_LDFLAGS=-pie -Wl,-z,relro -Wl,-z,now -Wl,-rpath=${LOCALBASE}/lib/tddl_emu:${LOCALBASE}/lib
++
++tcsd_emu_SOURCES=svrside.c tcsd_conf.c tcsd_threads.c platform.c
++
+ if TSS_BUILD_PS
+ tcsd_CFLAGS+=-DTSS_BUILD_PS
+ endif

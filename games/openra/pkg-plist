@@ -1,4 +1,5 @@
 bin/openra
+bin/openra-server
 share/applications/openra-join-servers.desktop
 share/applications/openra-replays.desktop
 share/applications/openra.desktop

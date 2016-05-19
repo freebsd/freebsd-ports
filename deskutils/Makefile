@@ -93,7 +93,6 @@
     SUBDIR += gnome-weather
     SUBDIR += gnote
     SUBDIR += gnotime
-    SUBDIR += gnustep-notebook
     SUBDIR += gnustep-wrapper
     SUBDIR += gourmet
     SUBDIR += griffith

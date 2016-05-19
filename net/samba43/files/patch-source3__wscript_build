@@ -1,6 +1,6 @@
---- source3/wscript_build.orig	2015-02-24 18:59:51.000000000 +0000
-+++ source3/wscript_build	2015-03-25 01:00:04.143487619 +0000
-@@ -601,6 +601,7 @@
+--- source3/wscript_build.orig	2016-05-02 07:48:32.000000000 +0000
++++ source3/wscript_build	2016-05-05 08:40:07.413511000 +0000
+@@ -619,6 +619,7 @@
                     smbd_conn
                     param_service
                     AVAHI
@@ -8,7 +8,7 @@
                     PRINTBASE
                     PROFILE
                     LOCKING
-@@ -1043,6 +1044,7 @@
+@@ -1072,6 +1073,7 @@
                   msrpc3
                   RPC_NDR_SRVSVC
                   cli_smb_common
@@ -16,12 +16,3 @@
                   ''' + bld.env['archive_lib'])
  
  bld.SAMBA3_BINARY('net',
-@@ -1457,7 +1459,7 @@
- 
- bld.SAMBA3_PYTHON('pylibsmb',
-                   source='libsmb/pylibsmb.c',
--                  deps='smbclient samba-credentials',
-+                  deps='smbclient samba-credentials libsmb errors',
-                   realname='samba/samba3/libsmb_samba_internal.so'
-                   )
- 

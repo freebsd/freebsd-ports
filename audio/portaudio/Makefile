@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		dos2unix gmake libtool pathfix pkgconfig tar:tgz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=PKG_CONFIG_LIBDIR=${PREFIX}/libdata/pkgconfig \
-			--without-alsa
+CONFIGURE_ARGS=	PKG_CONFIG_LIBDIR=${PREFIX}/libdata/pkgconfig \
+		--without-alsa
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -43,7 +43,6 @@ JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ON=	--with-jack
 JACK_CONFIGURE_OFF=	--without-jack
 
-EXAMPLES_BIN=	pa_d* pa_f* paex_*
 PATEST_BIN=	pa_m* paqa_* patest*
 
 DOXYGEN_IMPLIES=	DOCS
@@ -53,13 +52,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/configure.in \
 		${WRKSRC}/src/hostapi/oss/pa_unix_oss.c ${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -e 's|PACKAGE_NAME=|PACKAGE_NAME=portaudio2|' ${WRKSRC}/configure
-
-post-patch-EXAMPLES-off:
 	@${REINPLACE_CMD} -i '' '/EXAMPLES =/,/bin\/paex_write_sine_nonint/s/^/#/' \
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libportaudio.so.2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libportaudio.so
 
 post-install-PATEST-on:
 .for f in ${PATEST_BIN}
@@ -75,9 +72,6 @@ post-install-DOXYGEN-on:
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 post-install-EXAMPLES-on:
-.for f in ${EXAMPLES_BIN}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin/
-.endfor
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

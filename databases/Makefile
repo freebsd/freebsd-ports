@@ -9,6 +9,7 @@
     SUBDIR += R-cran-RSQLite.extfuns
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
+    SUBDIR += adabase
     SUBDIR += adminer
     SUBDIR += adodb
     SUBDIR += adodb5
@@ -647,12 +648,9 @@
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql90-client
-    SUBDIR += postgresql90-contrib
-    SUBDIR += postgresql90-docs
     SUBDIR += postgresql90-pgtcl
     SUBDIR += postgresql90-plperl
     SUBDIR += postgresql90-plpython
-    SUBDIR += postgresql90-pltcl
     SUBDIR += postgresql90-server
     SUBDIR += postgresql91-client
     SUBDIR += postgresql91-contrib
@@ -850,6 +848,7 @@
     SUBDIR += rubygem-activemodel
     SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activerecord
+    SUBDIR += rubygem-activerecord-import
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-activerecord-mysql-adapter
@@ -909,6 +908,8 @@
     SUBDIR += rubygem-openid-redis-store
     SUBDIR += rubygem-paranoia
     SUBDIR += rubygem-pg
+    SUBDIR += rubygem-pg_array_parser
+    SUBDIR += rubygem-postgres_ext
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis
     SUBDIR += rubygem-redis-actionpack
@@ -937,6 +938,8 @@
     SUBDIR += sqldeveloper
     SUBDIR += sqlite-ext-miscfuncs
     SUBDIR += sqlite-ext-pcre
+    SUBDIR += sqlite-ext-regexp
+    SUBDIR += sqlite-ext-spellfix
     SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqlitebrowser

@@ -1,0 +1,10 @@
+bin/rgds-debug
+bin/rgds-dump
+bin/rgds-join
+bin/rgds-layers
+bin/rgds-sremove
+bin/rgds-ssplit
+bin/rgds-stats
+bin/rgds-structs
+bin/rgds-tree
+bin/rgds2rb

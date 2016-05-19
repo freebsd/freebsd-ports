@@ -415,6 +415,7 @@
     SUBDIR += rubygem-vpim
     SUBDIR += rump
     SUBDIR += saaghar
+    SUBDIR += sent
     SUBDIR += seq2
     SUBDIR += shared-mime-info
     SUBDIR += shc

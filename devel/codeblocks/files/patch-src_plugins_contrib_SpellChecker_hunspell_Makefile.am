@@ -1,0 +1,11 @@
+--- src/plugins/contrib/SpellChecker/hunspell/Makefile.am.orig	2016-05-06 22:18:30 UTC
++++ src/plugins/contrib/SpellChecker/hunspell/Makefile.am
+@@ -2,7 +2,7 @@ ACLOCAL_AMFLAGS = -I m4
+ 
+ SUBDIRS= intl po src man m4 tests
+ 
+-pkgconfdir = $(libdir)/pkgconfig
++pkgconfdir = ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+ pkgconf_DATA = hunspell.pc
+ 
+ EXTRA_DIST = BUGS README.myspell AUTHORS.myspell license.myspell license.hunspell \

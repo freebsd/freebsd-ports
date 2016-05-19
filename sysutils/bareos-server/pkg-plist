@@ -33,9 +33,12 @@ lib/bareos/scripts/btraceback.gdb
 lib/bareos/scripts/btraceback.mdb
 lib/bareos/scripts/create_bareos_database
 lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
-lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
-lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
-lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
+%%MYSQL%%lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
+%%PGSQL%%lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
+%%MYSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
+%%MYSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.10_11.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.11_12.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.12_14.sql

@@ -1,0 +1,9 @@
+--- plugins/watsyn/CMakeLists.txt.orig	2015-03-08 02:47:14 UTC
++++ plugins/watsyn/CMakeLists.txt
+@@ -3,3 +3,6 @@ INCLUDE(BuildPlugin)
+ LINK_DIRECTORIES(${SAMPLERATE_LIBRARY_DIRS})
+ LINK_LIBRARIES(${SAMPLERATE_LIBRARIES})
+ BUILD_PLUGIN(watsyn Watsyn.cpp Watsyn.h MOCFILES Watsyn.h EMBEDDED_RESOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.png)
++
++include_directories(${SAMPLERATE_INCLUDE_DIRS})
++link_directories(${SAMPLERATE_LIBRARY_DIRS})

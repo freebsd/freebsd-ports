@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	zoo
-DISTVERSION=	1.7-12
+DISTVERSION=	1.7-13
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	S3 Infrastructure for Regular and Irregular Time Series
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 USES=	cran:auto-plist
 
