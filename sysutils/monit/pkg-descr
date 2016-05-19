@@ -3,7 +3,7 @@ files, directories, devices and network services on a Unix system.
 Monit conducts automatic maintenance and repair and can execute
 meaningful causal actions in error situations.
 
-monit supports:                                        
+monit supports:
  * Daemon mode - poll services at a specified interval
  * Group and manage groups of services, service dependencies
  * Logging - syslog or own logfile

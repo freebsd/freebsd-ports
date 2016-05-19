@@ -1,9 +1,9 @@
 csvdiff is a Perl script to diff/compare two csv files with the possibility
-to select the separator. 
+to select the separator.
 
-Differences will be shown like: 
-"Column XYZ in record 999" is different. 
-After this, the actual and the expected result for this 
+Differences will be shown like:
+"Column XYZ in record 999" is different.
+After this, the actual and the expected result for this
 column will be shown.
 
 WWW: http://csvdiff.sourceforge.net/

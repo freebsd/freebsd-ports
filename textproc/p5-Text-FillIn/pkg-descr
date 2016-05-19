@@ -1,6 +1,6 @@
 This is the Text::FillIn.pm module.  It is a class for implementing
 fill-in text templates.  It is designed to be flexible and
-sub-classible. 
+sub-classible.
 
 You can specify the delimiters that mark sections of text to be filled
 in (for example [[ and ]], or <!-- and -->, or { and } ... you get the

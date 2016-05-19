@@ -1,6 +1,6 @@
 This action implements a sensible default end action, which will forward
-to the first available view, unless status is set to 3xx, or there is a 
-response body. It also allows you to pass "dump_info=1" to the url in 
+to the first available view, unless status is set to 3xx, or there is a
+response body. It also allows you to pass "dump_info=1" to the url in
 order to force a debug screen, while in debug mode.
 
 If you have more than one view, you can specify which one to use with

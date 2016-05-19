@@ -1,19 +1,19 @@
-The Heartbeat program is one of the core components of the Linux-HA 
-(High-Availability Linux) project. Heartbeat is highly portable, 
-and runs on every known Linux platform, and also on FreeBSD and 
+The Heartbeat program is one of the core components of the Linux-HA
+(High-Availability Linux) project. Heartbeat is highly portable,
+and runs on every known Linux platform, and also on FreeBSD and
 Solaris. Ports to other OSes are also in progress.
 
-Heartbeat is the first piece of software which was written for the 
-Linux-HA project. It performs death-of-node detection, 
+Heartbeat is the first piece of software which was written for the
+Linux-HA project. It performs death-of-node detection,
 communications and cluster management in one process.
 
-The Heartbeat program has been around for a while. It has a great 
-many strengths, and yet there were a few weaknesses in version 1 
+The Heartbeat program has been around for a while. It has a great
+many strengths, and yet there were a few weaknesses in version 1
 that needed to be addressed:
 
 - limitation on two nodes for cluster size
 - inability to monitor resources for their correct operation
-- minimal ability to express dependency information 
+- minimal ability to express dependency information
 
 This release removes these limitations.
 

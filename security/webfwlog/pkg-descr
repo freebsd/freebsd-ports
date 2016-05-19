@@ -1,7 +1,7 @@
-Webfwlog is a flexible web-based analysis and reporting tool for firewall 
+Webfwlog is a flexible web-based analysis and reporting tool for firewall
 logs.  It supports log files in standard ipfilter or ipfw format.
 
-With Webfwlog you can design reports to use on your firewall logs in whatever 
+With Webfwlog you can design reports to use on your firewall logs in whatever
 configuration you desire.  Included are example reports as a starting
 point.  You can sort a report with a single click, "drill-down" on the reports
 all the way to the packet level, and save your reports for later use.  You can

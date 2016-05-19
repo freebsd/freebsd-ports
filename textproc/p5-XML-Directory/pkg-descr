@@ -2,7 +2,7 @@ This extension provides two classes: XML::Directory::String and
 XML::Directory::SAX. Their methods make it possible to set parameters
 such as level of details or maximal number of nested sub-directories
 and generate either string containing the resulting XML or SAX events.
-                                                                         
+
 The SAX generator supports both SAX1 and SAX2 handlers. There are two
 SAX interfaces available: basic ContentHandler and optional ErrorHandler.
 

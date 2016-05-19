@@ -1,4 +1,4 @@
-Parse phone numbers. Phone number have a defined syntax (to a point), so 
+Parse phone numbers. Phone number have a defined syntax (to a point), so
 they can be parsed (to a point).
 
 WWW: http://search.cpan.org/dist/Parse-PhoneNumber/

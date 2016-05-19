@@ -1,6 +1,6 @@
-tinyproxy is a GPLed, lightweight HTTP proxy. Designed from the ground up to be 
-fast and yet small, it is an ideal solution for sites where a full-featured 
-HTTP proxy is required, but the system resources required to run a more 
+tinyproxy is a GPLed, lightweight HTTP proxy. Designed from the ground up to be
+fast and yet small, it is an ideal solution for sites where a full-featured
+HTTP proxy is required, but the system resources required to run a more
 demanding HTTP proxy are unavailable. tinyproxy is fully compatible with all
 existing web browsers, and has a number of useful features including
 anonymous mode.

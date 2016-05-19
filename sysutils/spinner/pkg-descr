@@ -1,15 +1,15 @@
-Spinner is a small program that displays a little "spinning" ASCII 
-character in the top left corner of your terminal. To make this effect 
-it cycles through punctuation marks like this " - \ | / - \ | / ... " 
-(try it to see). By default the character is drawn in inverse video 
-(or your terminal's equivalent). But you can turn this off with the -i 
+Spinner is a small program that displays a little "spinning" ASCII
+character in the top left corner of your terminal. To make this effect
+it cycles through punctuation marks like this " - \ | / - \ | / ... "
+(try it to see). By default the character is drawn in inverse video
+(or your terminal's equivalent). But you can turn this off with the -i
 switch. It supports any terminal capable of handling VT100 style escape codes.
 
-Spinner is useful for keeping telnet and ssh links from dropping due to 
-inactivity. Many firewalls, and some ISPs drop connections when they are 
-perceived as idle. By having spinner running the server is constantly 
-sending a tiny amount of data over the link, preserving the connection. 
-Thus (for search engines) Spinner is an anti-dle, timeout preventing, 
+Spinner is useful for keeping telnet and ssh links from dropping due to
+inactivity. Many firewalls, and some ISPs drop connections when they are
+perceived as idle. By having spinner running the server is constantly
+sending a tiny amount of data over the link, preserving the connection.
+Thus (for search engines) Spinner is an anti-dle, timeout preventing,
 background daemon process for Unix variants including Linux.
 
 WWW: http://www.laffeycomputer.com/spinner.html

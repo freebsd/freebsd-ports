@@ -3,7 +3,7 @@ for syslogd. There are three main features, syslogd provides:
 
 - receiving syslog messages from an Unix domain socket (/dev/log) or UDP socket
   (0.0.0.0:514) and writing them to various files on disk depending on facility
-  and priority.  
+  and priority.
 - writing received syslog messages to an UDP socket (a.b.c.d:514)
 
 socklog provides these features with the help of runit's runsvdir,
@@ -13,5 +13,5 @@ additionally does log event notification.
 svlogd has a built in log file rotation based on file size, so there is no
 need for any cron jobs or similar to rotate the logs. Log partitions can be
 calculated properly.
-	
+
 WWW: http://smarden.org/socklog/

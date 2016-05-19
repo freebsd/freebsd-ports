@@ -1,6 +1,6 @@
-Text::Decorator is a framework for marking up plain text into various 
-formats by applying a chain of filters. For instance, you might apply a 
-filter which will cause URIs in text to be presented as links if the text 
+Text::Decorator is a framework for marking up plain text into various
+formats by applying a chain of filters. For instance, you might apply a
+filter which will cause URIs in text to be presented as links if the text
 is exported as HTML.
 
 WWW: http://search.cpan.org/dist/Text-Decorator/

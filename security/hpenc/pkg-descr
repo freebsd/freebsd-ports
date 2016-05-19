@@ -4,8 +4,8 @@ Hpenc is a fast encryption command line tool with the following features:
 detection.
 * Parallel processing - hpenc uses block IO and you can process multiple blocks
 simultaneously, which is extremely useful if you have multi-core environment.
-* Strong ciphers - hpenc uses the state-of-art aes-gcm and chacha20 ciphers 
-* Easy interface 
+* Strong ciphers - hpenc uses the state-of-art aes-gcm and chacha20 ciphers
+* Easy interface
 * Hardware acceleration - hpenc can utilize all its
 advanced cryptography functions defined for AES-NI and PCLMULQDQ instructions
 (that must be supported by openssl). For those with old or embedded CPU (such
@@ -14,6 +14,6 @@ as ARM), hpenc provides portable and fast chacha20 cipher.
 * Secure random numbers generator - hpenc can work as pseudo-random numbers
 generator. In a set of standard tests (diehard) on the generated sequences
 hpenc generates secure sequences of pseudo-random numbers on a very high
-speed (gigabytes per second). 
+speed (gigabytes per second).
 
 WWW: https://github.com/vstakhov/hpenc/

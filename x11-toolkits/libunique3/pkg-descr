@@ -1,12 +1,12 @@
-Unique is a library for writing single instance application. If you launch a 
-single instance application twice, the second instance will either just quit 
+Unique is a library for writing single instance application. If you launch a
+single instance application twice, the second instance will either just quit
 or will send a message to the running instance.
 
-Unique makes it easy to write this kind of applications, by providing a base 
-class, taking care of all the IPC machinery needed to send messages to a 
+Unique makes it easy to write this kind of applications, by providing a base
+class, taking care of all the IPC machinery needed to send messages to a
 running instance, and also handling the startup notification side.
 
-Unique aims to replace the BaconMessageConnection code that has been copied 
+Unique aims to replace the BaconMessageConnection code that has been copied
 by many projects and the code using Bonobo and D-Bus.
 
 WWW: http://live.gnome.org/LibUnique

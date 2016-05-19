@@ -1,5 +1,5 @@
-Python WebDAV implementation (level 1 and 2) that features 
-a library that enables you to integrate WebDAV server 
+Python WebDAV implementation (level 1 and 2) that features
+a library that enables you to integrate WebDAV server
 capabilities to your application.
 
 WebDAV is an extension to the normal HTTP/1.1 protocol

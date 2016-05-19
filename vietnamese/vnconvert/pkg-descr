@@ -4,7 +4,7 @@ on the coding table provided by Vietnamese Professional Society (VPS).
 VNconvert converts Vietnamese text files between the following formats:
 
 	VISCII (RFC 1456), VNCII (VPSWin), VPSedit (DOS), VNI, VNLab/VNU,
-	VNU (Windows), VN Thin-Art (Mac), VN Thin-Art (PC), Viet-Toan, 
+	VNU (Windows), VN Thin-Art (Mac), VN Thin-Art (PC), Viet-Toan,
 	Plain Vietnamese, and Standard VIQR (RFC 1456)
 
 David O'Brien

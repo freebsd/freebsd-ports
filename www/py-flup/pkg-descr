@@ -5,6 +5,6 @@ flup is functionally divided into three components:
 
 	* FlupServers
 	* FlupMiddleware
-	* FlupPublisher 
+	* FlupPublisher
 
 WWW:	http://www.saddi.com/software/flup/

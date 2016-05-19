@@ -1,5 +1,5 @@
 Ssync is a minimalistic tool for keeping filesystems in synchronization.
-The main goals in writing ssync are correctness, simplicity, speed, 
+The main goals in writing ssync are correctness, simplicity, speed,
 low-resource comsumption and portability. It features a number of options
 to control how things are synchronized and under what conditions, as well
 as useful dry-run and verbose modes.

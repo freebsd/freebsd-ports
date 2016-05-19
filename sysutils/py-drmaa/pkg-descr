@@ -1,5 +1,5 @@
 drmaa-python is a python package to interact with DRMAA-compliant distributed
 resource management systems.
-The library tries to be compliant with the DRMAA 1.0 Python language binding. 
+The library tries to be compliant with the DRMAA 1.0 Python language binding.
 
 WWW:	http://code.google.com/p/drmaa-python/

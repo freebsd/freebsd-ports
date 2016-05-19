@@ -1,6 +1,6 @@
 The TAI64N format is a format for time stamps in log files, invented by Dan
 Bernstein and used by some of his software, most notably the multilog component
 of daemontools. That package comes with a program (tai64nlocal) to convert those
-time stamps to a human-readable date. 
+time stamps to a human-readable date.
 
 WWW: http://www.eyrie.org/~eagle/software/tai64nfrac/
