@@ -34,6 +34,8 @@ if [ ${recursive} -eq 1 -o ${requires_wrkdir} -eq 1 ]; then
 	MAKE="${dp_MAKE}" export_ports_env >/dev/null
 fi
 
+[ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DEPENDS_LIST}" ] && set -x
+
 set -u
 
 check_dep() {
