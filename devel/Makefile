@@ -5069,6 +5069,7 @@
     SUBDIR += rubygem-power_assert
     SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-powerpack
+    SUBDIR += rubygem-pqueue
     SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-protected_attributes
     SUBDIR += rubygem-prototype-rails
