@@ -7,6 +7,8 @@ if [ -z "${STAGEDIR}" -o -z "${PREFIX}" -o -z "${LOCALBASE}" ]; then
 	exit 1
 fi
 
+[ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_QA}" ] && set -x
+
 LF=$(printf '\nX')
 LF=${LF%X}
 
