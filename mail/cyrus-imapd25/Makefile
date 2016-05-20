@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.7
-PORTREVISION=	2
+PORTVERSION=	2.5.8
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -228,6 +228,7 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 		"! ( -name Makefile.dist -o -name Makefile \
+		-o -name .deps -o -name .dirstamp -o -name .libs \
 		-o -name .gitignore -o -name htmlstrip.Po \
 		-o -name htmlstrip.c )"
 
