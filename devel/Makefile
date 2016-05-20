@@ -4975,6 +4975,7 @@
     SUBDIR += rubygem-io-like
     SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-jammit
+    SUBDIR += rubygem-jasmine-core
     SUBDIR += rubygem-jbuilder
     SUBDIR += rubygem-jekyll-coffeescript
     SUBDIR += rubygem-jeweler
