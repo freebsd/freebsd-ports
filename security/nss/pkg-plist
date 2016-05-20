@@ -47,6 +47,8 @@ include/nss/nss/key.h
 include/nss/nss/keyhi.h
 include/nss/nss/keyt.h
 include/nss/nss/keythi.h
+include/nss/nss/lowkeyi.h
+include/nss/nss/lowkeyti.h
 include/nss/nss/nss.h
 include/nss/nss/nssb64.h
 include/nss/nss/nssb64t.h
@@ -122,6 +124,8 @@ include/nss/nss/utilrename.h
 lib/nss/libcrmf.a
 lib/nss/libfreebl3.so
 lib/nss/libfreebl3.so.1
+lib/nss/libfreeblpriv3.so
+lib/nss/libfreeblpriv3.so.1
 lib/nss/libnss3.so
 lib/nss/libnss3.so.1
 lib/nss/libnssckbi.so
