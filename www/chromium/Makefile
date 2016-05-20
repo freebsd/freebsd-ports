@@ -53,6 +53,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libwebp.so:graphics/webp
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
+		alsa-lib>=1.1.1_1:audio/alsa-lib \
 		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf \
 		xdg-open:devel/xdg-utils
 
