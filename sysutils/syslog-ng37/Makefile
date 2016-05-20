@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	37
 .endif
@@ -19,6 +19,7 @@ BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre
+BUILD_DEPENDS=		xsltproc:textproc/libxslt \
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -59,8 +60,7 @@ BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=		xsltproc:textproc/libxslt \
-			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 .endif
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
