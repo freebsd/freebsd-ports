@@ -32,7 +32,7 @@ PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_VER} == 5.22
+.if ${PERL_VER} >= 5.22
 BROKEN=		PERL ${PERL_VER} is not supported by upstream,\
 		see http://svn.apache.org/viewvc/perl/modperl/trunk/README?view=markup
 .endif
