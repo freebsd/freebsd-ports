@@ -4015,6 +4015,7 @@
     SUBDIR += py-clonedigger
     SUBDIR += py-cloudpickle
     SUBDIR += py-cmdln
+    SUBDIR += py-codecov
     SUBDIR += py-codegen
     SUBDIR += py-cog
     SUBDIR += py-coil
