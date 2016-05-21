@@ -37,17 +37,13 @@ GH_TUPLE+=		aseprite:duktape:90090c7:duk
 USES=			cmake:outsource compiler:c++11-lib jpeg pkgconfig
 USE_XORG=		x11 xcursor xext xpm ice pixman sm xxf86dga xxf86vm
 
-.include <bsd.port.options.mk>
-
 CMAKE_ARGS+=		-DUSE_SHARED_ALLEGRO4=1
 CMAKE_ARGS+=		-DUSE_SHARED_GIFLIB=1
 CMAKE_ARGS+=		-DUSE_SHARED_ZLIB=1
 CMAKE_ARGS+=		-DUSE_SHARED_JPEGLIB=1
 CMAKE_ARGS+=		-DUSE_SHARED_LIBPNG=1
-.if ${PORT_OPTIONS:MWEBP}
-CMAKE_ARGS+=		-DWITH_WEBP_SUPPORT=1
-CMAKE_ARGS+=		-DUSE_SHARED_LIBWEBP=1
-.endif
+WEBP_CMAKE_ON+=		-DWITH_WEBP_SUPPORT=1
+WEBP_CMAKE_ON+=		-DUSE_SHARED_LIBWEBP=1
 CMAKE_ARGS+=		-DUSE_SHARED_FREETYPE=1
 CMAKE_ARGS+=		-DUSE_SHARED_PIXMAN=1
 CMAKE_ARGS+=		-DUSE_SHARED_CURL=1
@@ -56,8 +52,6 @@ CMAKE_ARGS+=		-DFREETYPE_INCLUDE_DIR=${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2/freetype
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	@${RMDIR} ${WRKSRC}/src/flic ${WRKSRC}/third_party/gtest ${WRKSRC}/third_party/simpleini ${WRKSRC}/third_party/duktape
@@ -75,4 +69,4 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/app/resource_finder.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
