@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1002506
-BROKEN=	does not build on FreeBSD 9.x, requires futimens system call
+BROKEN=	does not build, requires futimens system call
 .endif
 
 pre-configure:
