@@ -1253,6 +1253,7 @@
     SUBDIR += py-mistune
     SUBDIR += py-mwparserfromhell
     SUBDIR += py-nltk
+    SUBDIR += py-numpydoc
     SUBDIR += py-openpyxl
     SUBDIR += py-paragrep
     SUBDIR += py-pdfminer
