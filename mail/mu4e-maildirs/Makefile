@@ -2,6 +2,7 @@
 
 PORTNAME=	mu4e-maildirs
 PORTVERSION=	0.8.20160126
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -9,9 +10,9 @@ COMMENT=	Maildirs extension for Mu4e
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS:=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/mu4e/mu4e.elc:mail/mu4e \
-		${BUILD_DEPENDS}
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/dash.el:devel/dash.el
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/dash.el:devel/dash.el \
+		${LOCALBASE}/${EMACS_SITE_LISPDIR}/mu4e/mu4e.elc:mail/mu4e
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-extension
