@@ -770,7 +770,6 @@ lib/calibre/calibre/gui2/device_drivers/mtp_folder_browser.py
 lib/calibre/calibre/gui2/dialogs/__init__.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
-lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.py
 lib/calibre/calibre/gui2/dialogs/authors_edit.py
 lib/calibre/calibre/gui2/dialogs/book_info.py
 lib/calibre/calibre/gui2/dialogs/catalog.py
@@ -1118,6 +1117,7 @@ lib/calibre/calibre/gui2/viewer/toc.py
 lib/calibre/calibre/gui2/viewer/ui.py
 lib/calibre/calibre/gui2/widgets.py
 lib/calibre/calibre/gui2/widgets2.py
+lib/calibre/calibre/gui2/win_file_dialogs.py
 lib/calibre/calibre/gui2/wizard/__init__.py
 lib/calibre/calibre/gui2/wizard/device_ui.py
 lib/calibre/calibre/gui2/wizard/finish_ui.py
@@ -1175,10 +1175,10 @@ lib/calibre/calibre/plugins/freetype.so
 lib/calibre/calibre/plugins/html.so
 lib/calibre/calibre/plugins/hunspell.so
 lib/calibre/calibre/plugins/icu.so
+lib/calibre/calibre/plugins/imageops.so
 lib/calibre/calibre/plugins/libheadless.so
 lib/calibre/calibre/plugins/lzma_binding.so
 lib/calibre/calibre/plugins/lzx.so
-lib/calibre/calibre/plugins/magick.so
 lib/calibre/calibre/plugins/matcher.so
 lib/calibre/calibre/plugins/monotonic.so
 lib/calibre/calibre/plugins/msdes.so
@@ -1310,7 +1310,7 @@ lib/calibre/calibre/utils/logging.py
 lib/calibre/calibre/utils/lru_cache.py
 lib/calibre/calibre/utils/magick/__init__.py
 lib/calibre/calibre/utils/magick/draw.py
-lib/calibre/calibre/utils/magick/generate.py
+lib/calibre/calibre/utils/magick/legacy.py
 lib/calibre/calibre/utils/matcher.py
 lib/calibre/calibre/utils/mdns.py
 lib/calibre/calibre/utils/mem.py
@@ -1349,6 +1349,7 @@ lib/calibre/calibre/utils/smtp.py
 lib/calibre/calibre/utils/smtplib.py
 lib/calibre/calibre/utils/socket_inheritance.py
 lib/calibre/calibre/utils/soupparser.py
+lib/calibre/calibre/utils/speedups.py
 lib/calibre/calibre/utils/spell/__init__.py
 lib/calibre/calibre/utils/terminal.py
 lib/calibre/calibre/utils/text2int.py
@@ -1375,6 +1376,7 @@ lib/calibre/calibre/web/feeds/recipes/model.py
 lib/calibre/calibre/web/feeds/templates.py
 lib/calibre/calibre/web/fetch/__init__.py
 lib/calibre/calibre/web/fetch/simple.py
+lib/calibre/calibre/web/fetch/utils.py
 lib/calibre/chardet/__init__.py
 lib/calibre/chardet/big5freq.py
 lib/calibre/chardet/big5prober.py
@@ -1589,6 +1591,8 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/content-server/index-generated.html
 %%DATADIR%%/content-server/index.html
 %%DATADIR%%/content-server/locales.zip
+%%DATADIR%%/content-server/mathjax.version
+%%DATADIR%%/content-server/mathjax.zip.xz
 %%DATADIR%%/content-server/mobile.css
 %%DATADIR%%/content-server/reset.css
 %%DATADIR%%/content_server/av.jpg
