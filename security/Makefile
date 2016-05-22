@@ -115,7 +115,6 @@
     SUBDIR += duo
     SUBDIR += easy-rsa
     SUBDIR += easy-rsa2
-    SUBDIR += easypg
     SUBDIR += elixir-comeonin
     SUBDIR += elixir-comeonin_i18n
     SUBDIR += elixir-jose
