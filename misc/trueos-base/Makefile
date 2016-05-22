@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pc-updatemanager:sysutils/pc-updatemanager \
 		${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh \
 		${LOCALBASE}/bin/lpreserver:sysutils/life-preserver \
 		${LOCALBASE}/sbin/beadm:sysutils/beadm \
-		${LOCALBASE}/bin/launchctl:sysutils/relaunchd \
+		${LOCALBASE}/bin/jobctl:sysutils/jobd \
 		${LOCALBASE}/bin/sudo:security/sudo \
 		${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/bin/zsh:shells/zsh \

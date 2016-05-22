@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
 		${LOCALBASE}/bin/sysadm-binary:sysutils/sysadm \
 		${LOCALBASE}/bin/sysadm-client:sysutils/sysadm-client \
 		${LOCALBASE}/bin/lpreserver:sysutils/life-preserver \
-		${LOCALBASE}/bin/launchctl:sysutils/relaunchd \
+		${LOCALBASE}/bin/jobctl:sysutils/jobd \
 		${LOCALBASE}/bin/git:devel/git \
 		${LOCALBASE}/sbin/beadm:sysutils/beadm \
 		${LOCALBASE}/sbin/anacron:sysutils/anacron \
