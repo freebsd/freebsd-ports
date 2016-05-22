@@ -24,6 +24,7 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_multicast.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/null.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/numa.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pmemblk.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poisson-rate-submission.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rand-zones.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rbd.fio
