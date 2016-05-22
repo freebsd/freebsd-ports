@@ -21,6 +21,8 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 
+EXTRA_PATCHES=	${FILESDIR}/0010-renamed-getline.patch:-p2
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
