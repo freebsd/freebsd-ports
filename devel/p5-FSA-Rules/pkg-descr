@@ -1,13 +1,13 @@
-This class implements a simple state machine pattern, allowing you to 
-quickly build rules-based state machines in Perl. As a simple 
-implementation of a powerful concept, it differs slightly from an ideal 
-DFA model in that it does not enforce a single possible switch from one 
-state to another. Rather, it short circuits the evaluation of the rules 
-for such switches, so that the first rule to return a true value will 
-trigger its switch and no other switch rules will be checked. (But see the 
-strict attribute and parameter to new().) It differs from an NFA model in 
-that it offers no back-tracking. But in truth, you can use it to build a 
-state machine that adheres to either model--hence the more generic FSA 
+This class implements a simple state machine pattern, allowing you to
+quickly build rules-based state machines in Perl. As a simple
+implementation of a powerful concept, it differs slightly from an ideal
+DFA model in that it does not enforce a single possible switch from one
+state to another. Rather, it short circuits the evaluation of the rules
+for such switches, so that the first rule to return a true value will
+trigger its switch and no other switch rules will be checked. (But see the
+strict attribute and parameter to new().) It differs from an NFA model in
+that it offers no back-tracking. But in truth, you can use it to build a
+state machine that adheres to either model--hence the more generic FSA
 moniker.
 
 WWW: http://search.cpan.org/dist/FSA-Rules/

@@ -3,8 +3,8 @@ HTML table from a bidimensional array of data. It can easily produce simple or
 complex graphic styled tables with minimum effort and maximum speed.
 
 Think about the table tile as a sort of tile that automatically expands itself
-to contain the whole data. You can control the final look of a table by 
-choosing either the HORIZONTAL and the VERTICAL tiling mode among: 
+to contain the whole data. You can control the final look of a table by
+choosing either the HORIZONTAL and the VERTICAL tiling mode among:
 PULL, TILE and TRIM.
 
 The main advantages to use it are:

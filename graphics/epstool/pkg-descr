@@ -5,7 +5,7 @@ Features:
 - Extract postscript from DOS EPS files.
 - Uses Ghostscript to create preview bitmaps.
 - Scan a bitmap created by Ghostscript to find bounding box.
-- Create TIFF or Interchange from part of a bitmap created 
+- Create TIFF or Interchange from part of a bitmap created
   by Ghostscript.
 
 - Yuzo FURUKAWA

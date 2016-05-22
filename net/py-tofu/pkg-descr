@@ -1,11 +1,11 @@
 Tofu is a practical high-level network game engine, written
-in Python and based on Twisted. Tofu is designed for games 
-where players play one or several characters accross several 
-levels. 
-This includes jump'n run games, RPG or RTS, but not Tetris-like 
+in Python and based on Twisted. Tofu is designed for games
+where players play one or several characters accross several
+levels.
+This includes jump'n run games, RPG or RTS, but not Tetris-like
 games or board game.
 
-It currently support client-server and single player mode; 
+It currently support client-server and single player mode;
 peer-to-peer mode may be added later.
 
 Tofu is Free Software, under the GNU LGPL license.

@@ -1,5 +1,5 @@
-Converts back and forth between a nested hash structure and a flat hash of 
-delimited key-value pairs. Useful for protocols that only support 
+Converts back and forth between a nested hash structure and a flat hash of
+delimited key-value pairs. Useful for protocols that only support
 key-value pairs (such as CGI and DBMs).
 
 WWW: https://metacpan.org/pod/Hash::Flatten

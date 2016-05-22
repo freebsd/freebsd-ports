@@ -5,7 +5,7 @@ plugin. CWirc tries to emulate a standard amateur radio rig : it sends and
 receives morse over virtual channels, and it can listen to multiple senders
 transmitting on the same channel. Morse code is keyed locally using a
 straight or iambic key connected to a serial port, or using the mouse buttons,
-and the sound is played through the soundcard, or through an external sounder. 
+and the sound is played through the soundcard, or through an external sounder.
 
 
 WWW: http://myspace.voo.be/pcoupard/cwirc

@@ -1,12 +1,12 @@
 A simplified prospective on jail configuration and usage. Complete easy to
-understand detailed documentation on creating a Third Generation Jail System 
-Solutiom which is based on a single filesystem that contains all of the 
-required operating system executable libraries which is shared with each 
+understand detailed documentation on creating a Third Generation Jail System
+Solutiom which is based on a single filesystem that contains all of the
+required operating system executable libraries which is shared with each
 of the individual jails.
 
-The legacy rc.conf method, Modern rc.conf method, and the jail(8) jail.conf 
-methods are documented. Script are included that perform the tasks explained 
-in the documentation. 
+The legacy rc.conf method, Modern rc.conf method, and the jail(8) jail.conf
+methods are documented. Script are included that perform the tasks explained
+in the documentation.
 
 WWW: http://jail-primer.sourceforge.net/
 

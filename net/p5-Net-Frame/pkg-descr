@@ -1,14 +1,14 @@
-Net::Frame is a fork of Net::Packet. The goal here was to greatly 
-simplify the use of the frame crafting framework. Net::Packet does 
+Net::Frame is a fork of Net::Packet. The goal here was to greatly
+simplify the use of the frame crafting framework. Net::Packet does
 many things undercover, and it was difficult to document all the thingies.
 
-Also, Net::Packet may suffer from unease of use, because frames were 
+Also, Net::Packet may suffer from unease of use, because frames were
 assembled using layers stored in L2, L3, L4 and L7 attributes. Net::Frame
 removes all this, and is splitted in different modules, for those who only
 want to use part of the framework, and not whole framework.
 
 Finally, anyone can create a layer, and put it on his CPAN space, because
-of the modularity Net::Frame offers. For an example, 
+of the modularity Net::Frame offers. For an example,
 see Net::Frame::Layer::ICMPv4 on my CPAN space.
 
 WWW: http://search.cpan.org/dist/Net-Frame/

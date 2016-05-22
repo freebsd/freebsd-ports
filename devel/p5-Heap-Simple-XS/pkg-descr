@@ -1,4 +1,4 @@
-This module provides an XS implementation of the interface described in 
+This module provides an XS implementation of the interface described in
 Heap::Simple. Look there for a description.
 
 WWW: http://search.cpan.org/dist/Heap-Simple-XS/

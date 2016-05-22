@@ -1,7 +1,7 @@
-PACKTER is a free and opensource software for visualization of Internet 
+PACKTER is a free and opensource software for visualization of Internet
 traffic.
-PACKTER systems are composed of Packter Viewer and Packter Agent. 
-Packter Viewer draws a flying object by receiving Packter Protocol from 
+PACKTER systems are composed of Packter Viewer and Packter Agent.
+Packter Viewer draws a flying object by receiving Packter Protocol from
 Packter Agent.
 
 WWW: http://www.packter.jp

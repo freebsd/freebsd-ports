@@ -1,8 +1,8 @@
-Enchant is a binder for libenchant. Libenchant 
+Enchant is a binder for libenchant. Libenchant
 provides a common API for many spell libraries,
 such as aspell/pspell(intended to replace
 ispell),hspell(hebrew),ispell,myspell/hunspell
-(OpenOffice project, mozilla),uspell (primarily 
+(OpenOffice project, mozilla),uspell (primarily
 Yiddish, Hebrew, and Eastern European languages)
 
 WWW: http://pecl.php.net/package/enchant/

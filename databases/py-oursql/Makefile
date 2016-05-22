@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oursql
-PORTVERSION=	0.9.3.1
+PORTVERSION=	0.9.3.2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,10 @@ COMMENT=	MySQL bindings for python
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python
-USE_MYSQL=	client
+USES=		mysql python
 USE_PYTHON=	autoplist distutils
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/oursql.so
 
 .include <bsd.port.mk>

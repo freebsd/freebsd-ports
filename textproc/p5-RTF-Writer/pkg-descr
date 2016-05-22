@@ -4,7 +4,7 @@ This module is a class; an object belonging to this class
 acts like an output filehandle, and calling methods on it
 causes RTF text to be written.
 
-Incidentally, this module also exports a few useful functions, 
+Incidentally, this module also exports a few useful functions,
 upon request.
 
 The following documentation assumes some familiarity with

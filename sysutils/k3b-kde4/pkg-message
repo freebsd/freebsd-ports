@@ -18,10 +18,10 @@ Notes for FreeBSD 7.x and onwards users:
       - to enable it, add to your /etc/rc.conf a
           devfs_system_ruleset="system"
    d. Every user who should be able to use k3b must have read and write access
-      to all pass through devices connected with CD and DVD drives and to the 
-      /dev/xpt0 device. Run 'camcontrol devlist' to identify those devices (seek 
-      string 'passX' at the end of each line). Note, that this is a security 
-      leak as well but that there is no alternative! 
+      to all pass through devices connected with CD and DVD drives and to the
+      /dev/xpt0 device. Run 'camcontrol devlist' to identify those devices (seek
+      string 'passX' at the end of each line). Note, that this is a security
+      leak as well but that there is no alternative!
       - add to your /etc/devfs.rules under '[system=10]':
           add path 'pass*' mode 666
           add path 'xpt0' mode 666

@@ -54,6 +54,7 @@
     SUBDIR += aqsis
     SUBDIR += argyllcms
     SUBDIR += asciio
+    SUBDIR += aseprite
     SUBDIR += atril
     SUBDIR += atril-lite
     SUBDIR += autopano-sift-c

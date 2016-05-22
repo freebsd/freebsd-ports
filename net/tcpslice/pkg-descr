@@ -1,6 +1,6 @@
-tcpslice is a tool for extracting portions of packet trace 
-files generated using tcpdump's -w flag. 
-The basic operation of tcpslice is to copy to stdout all packets 
+tcpslice is a tool for extracting portions of packet trace
+files generated using tcpdump's -w flag.
+The basic operation of tcpslice is to copy to stdout all packets
 from its input file(s) whose timestamps fall within a given range.
 
 WWW: http://www.tcpdump.org/related.html

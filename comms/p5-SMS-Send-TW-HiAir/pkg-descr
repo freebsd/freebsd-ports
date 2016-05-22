@@ -1,4 +1,4 @@
-SMS::Send::TW::HiAir is a SMS::Send driver 
+SMS::Send::TW::HiAir is a SMS::Send driver
 which allows you to send messages through http://hiair.hinet.net/
 
 WWW: http://search.cpan.org/dist/SMS-Send-TW-HiAir/

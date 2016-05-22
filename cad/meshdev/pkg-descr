@@ -1,5 +1,5 @@
 MeshDev is a mesh comparison software. It accepts two meshes as input and
-computes the geometrical deviation between the two meshes. 
+computes the geometrical deviation between the two meshes.
 It return numerical values and can optionaly generate visual results (with a
 pseudo-colored mesh corresponding to the measured deviation) in OpenInventor
 format.

@@ -1,7 +1,7 @@
 sshit is a perl script, which works along with ipfw, ipfw2, and pf.
 It parses the output of syslogd, find out SSH/FTP bruteforce attacks.
 If the number of failed login is more than a threshold that administarator
-set, sshit will block the source IP via firewall for a while 
-(administrators can set the period of blocking). 
+set, sshit will block the source IP via firewall for a while
+(administrators can set the period of blocking).
 
 WWW: http://anp.ath.cx/sshit/

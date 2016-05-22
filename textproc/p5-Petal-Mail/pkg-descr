@@ -1,8 +1,8 @@
-Petal::Mail processes a Petal XML template, and then turns the resulting 
-XML into a text email which can be sent through sendmail or other. The XML 
+Petal::Mail processes a Petal XML template, and then turns the resulting
+XML into a text email which can be sent through sendmail or other. The XML
 has to follow a certain syntax which is defined in this documentation.
 
-Since Petal::Mail's is a subclass of Petal, its API is the same. Which 
+Since Petal::Mail's is a subclass of Petal, its API is the same. Which
 means you need to read about Petal before you can use Petal::Mail.
 
 WWW: http://search.cpan.org/dist/Petal-Mail/

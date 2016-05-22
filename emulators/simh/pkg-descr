@@ -1,16 +1,16 @@
 SIMH is a highly portable, multi-system simulator.
 
-SIMH implements simulators for: 
- - Data General Nova, Eclipse 
- - Digital Equipment Corporation PDP-1, PDP-4, PDP-7, PDP-8, PDP-9, 
-      PDP-10, PDP-11, PDP-15, VAX 
- - GRI Corporation GRI-909 
- - IBM 1401, 1620, 1130, System 3 
- - Interdata (Perkin-Elmer) 16b and 32b systems 
- - Hewlett-Packard 2116, 2100, 21MX 
- - Honeywell H316/H516 
- - MITS Altair 8800, with both 8080 and Z80 
- - Royal-Mcbee LGP-30, LGP-21 
+SIMH implements simulators for:
+ - Data General Nova, Eclipse
+ - Digital Equipment Corporation PDP-1, PDP-4, PDP-7, PDP-8, PDP-9,
+      PDP-10, PDP-11, PDP-15, VAX
+ - GRI Corporation GRI-909
+ - IBM 1401, 1620, 1130, System 3
+ - Interdata (Perkin-Elmer) 16b and 32b systems
+ - Hewlett-Packard 2116, 2100, 21MX
+ - Honeywell H316/H516
+ - MITS Altair 8800, with both 8080 and Z80
+ - Royal-Mcbee LGP-30, LGP-21
  - Scientific Data Systems SDS 940
 
 These simulators are capable of running the Unix V5, V6 and V7 binaries

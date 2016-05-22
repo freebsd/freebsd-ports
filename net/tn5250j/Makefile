@@ -44,7 +44,7 @@ SUB_LIST=	JYTHON_JAR=${JYTHON_JAR}
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
- 
+
 .if ${JAVA_PORT_VERSION:M1.8.*}
 BROKEN=		Does not build with JDK 1.8
 .endif

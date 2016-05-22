@@ -1,14 +1,14 @@
 SandUhr is an alarm clock, which is designed as a sand-glass. The program uses
 the X Window System and the GNOME desktop environment. The alarm is delivered
 to you by either ringing the console bell, by playing a sound file, or by
-starting an external program of your choice. 
+starting an external program of your choice.
 
-The program is fully integrated into the GNOME application framework. 
+The program is fully integrated into the GNOME application framework.
 
 o Drag and drop: you may drop a color onto the timer to change the sand's visual
-  appearance. 
-o It uses the GNOME help system to provide a manual. 
+  appearance.
+o It uses the GNOME help system to provide a manual.
 o Use of CORBA: The program provides a CORBA interface. So you may control the
-  SandUhr from within your own programs. 
+  SandUhr from within your own programs.
 
 WWW: http://seehuhn.de/comp/sanduhr.html

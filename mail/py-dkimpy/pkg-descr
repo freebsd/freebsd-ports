@@ -1,5 +1,5 @@
-Python module that implements DKIM (DomainKeys Identified Mail) email 
-signing and verification. It also provides helper scripts for command 
+Python module that implements DKIM (DomainKeys Identified Mail) email
+signing and verification. It also provides helper scripts for command
 line signing and verification.
 
 WWW: https://launchpad.net/dkimpy

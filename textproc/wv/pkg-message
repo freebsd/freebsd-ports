@@ -1,6 +1,6 @@
 *******************************************************************
 
-Some output formats (for example: DVI, PDF, and PS) require a LaTeX 
+Some output formats (for example: DVI, PDF, and PS) require a LaTeX
 implementation, such as print/teTeX, to be installed. Text output
 will be of better quality if www/elinks, www/links, or www/lynx is
 installed.

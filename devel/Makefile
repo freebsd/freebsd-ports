@@ -2050,6 +2050,7 @@
     SUBDIR += p5-Data-TreeDumper
     SUBDIR += p5-Data-TreeDumper-Renderer-GTK
     SUBDIR += p5-Data-Types
+    SUBDIR += p5-Data-URIEncode
     SUBDIR += p5-Data-UUID
     SUBDIR += p5-Data-Uniqid
     SUBDIR += p5-Data-Util
@@ -4014,6 +4015,7 @@
     SUBDIR += py-clonedigger
     SUBDIR += py-cloudpickle
     SUBDIR += py-cmdln
+    SUBDIR += py-codecov
     SUBDIR += py-codegen
     SUBDIR += py-cog
     SUBDIR += py-coil
@@ -4975,6 +4977,7 @@
     SUBDIR += rubygem-io-like
     SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-jammit
+    SUBDIR += rubygem-jasmine-core
     SUBDIR += rubygem-jbuilder
     SUBDIR += rubygem-jekyll-coffeescript
     SUBDIR += rubygem-jeweler
@@ -5069,6 +5072,7 @@
     SUBDIR += rubygem-power_assert
     SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-powerpack
+    SUBDIR += rubygem-pqueue
     SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-protected_attributes
     SUBDIR += rubygem-prototype-rails

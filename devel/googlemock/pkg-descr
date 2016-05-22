@@ -6,6 +6,6 @@ for writing and using C++ mock classes. Google Mock:
     * supports a rich set of matchers and actions,
     * handles unordered, partially ordered, or completely ordered expectations,
     * is extensible by users, and
-    * works on Linux, Windows, and Mac OS X. 
+    * works on Linux, Windows, and Mac OS X.
 
 WWW: https://github.com/google/googlemock

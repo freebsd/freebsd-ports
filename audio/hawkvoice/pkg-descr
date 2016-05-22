@@ -1,10 +1,10 @@
 HawkVoice is a game oriented, multiplayer voice over network API released under
-the GNU Library General Public License (LGPL) , with support for Linux/UNIX 
-systems and Windows 9x/ME/NT/2000/XP/CE. 
+the GNU Library General Public License (LGPL) , with support for Linux/UNIX
+systems and Windows 9x/ME/NT/2000/XP/CE.
 
-It is designed to be a portable, free, open source code alternative to the 
+It is designed to be a portable, free, open source code alternative to the
 Microsoft DirectPlay Voice in DX8-9. It provides voice compression using several
-free voice codecs. The very low bitrate (VLB) codecs, those less than 6 Kbps, 
+free voice codecs. The very low bitrate (VLB) codecs, those less than 6 Kbps,
 are optimized for the compression of human speech.
 
 WWW:	http://www.hawksoft.com/hawkvoice/

@@ -1,7 +1,7 @@
 *****************************************************************
 
  Please consider adding the lines to your httpd.conf:
-	
+
 	Alias /photo %%PREFIX%%/%%DALBUM_DIR%%
 	<Directory %%PREFIX%%/%%DALBUM_DIR%%>
 		AllowOverride Indexes FileInfo Limit

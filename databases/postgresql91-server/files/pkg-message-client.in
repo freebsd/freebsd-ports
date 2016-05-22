@@ -6,7 +6,7 @@ postgresql-docs
 p5-Pg
   A perl5 API for client access to PostgreSQL databases.
 
-postgresql-tcltk 
+postgresql-tcltk
   If you want tcl/tk client support.
 
 postgresql-jdbc

@@ -1,6 +1,6 @@
-This library is a C port of the implementation of Limited-memory 
+This library is a C port of the implementation of Limited-memory
 Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) method written by Jorge Nocedal.
-The original FORTRAN source code is available at: 
+The original FORTRAN source code is available at:
 http://www.ece.northwestern.edu/~nocedal/lbfgs.html
 
 WWW:	http://www.chokkan.org/software/liblbfgs/

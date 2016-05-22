@@ -5,8 +5,8 @@ build and install scripts.
 
 This is octgpr.
 
- The package allows interpolating and smoothing scattered 
+ The package allows interpolating and smoothing scattered
   multidimensional data using Gaussian Process Regression (also known
-  as Kriging). 
+  as Kriging).
 
 WWW: http://octave.sourceforge.net/

@@ -8,6 +8,6 @@ caching mechanisms in
 
 http-analyze recognizes logfiles in Common Logfile Format and has
 been highly optimized for processing huge logfiles in short
-update-intervals. 
+update-intervals.
 
 WWW: http://www.http-analyze.org

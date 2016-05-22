@@ -1,7 +1,7 @@
 Jericho HTML Parser is a simple but powerful java library allowing
 analysis and manipulation of parts of an HTML document, including
 some common server-side tags, while reproducing verbatim any
-unrecognised or invalid HTML. 
+unrecognised or invalid HTML.
 
 It also provides high-level HTML form manipulation functions.
 

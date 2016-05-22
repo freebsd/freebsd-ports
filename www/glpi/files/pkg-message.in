@@ -9,7 +9,7 @@ Full installation instructions are available here:
 If you are using MySQL, here's the short version of the instructions:
 
   1. Create a new database:
-  $ mysqladmin -uroot create glpi 
+  $ mysqladmin -uroot create glpi
 
   2. Grant access to the database:
   $ mysql -uroot -e"GRANT ALL ON glpi.* TO USERNAME@localhost IDENTIFIED BY 'PASSWORD'" glpi

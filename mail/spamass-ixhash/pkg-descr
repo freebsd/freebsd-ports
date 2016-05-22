@@ -3,6 +3,6 @@ iXhash is a plugin for the popular spam filter SpamAssassin.
 It computes MD5 checksums of fragments of the body of an e-mail and compares
 them to those of know spam. As such it works similar to the now standard
 plugins that use the Pyzor, Razor and DCC software packages from within
-SpamAssassin. 
+SpamAssassin.
 
 WWW: http://ixhash.sourceforge.net/

@@ -1,5 +1,5 @@
-amp (Audio Mpeg Player) is an MPEG audio decoder which was originally started 
-putting together as a side project of the MPEG hardware design project at 
+amp (Audio Mpeg Player) is an MPEG audio decoder which was originally started
+putting together as a side project of the MPEG hardware design project at
 FER/Zagreb - just to confirm my knowledge of the standard. It works with
-both MPEG1 and MPEG2 audio streams, layer3 and for now the multichannel 
+both MPEG1 and MPEG2 audio streams, layer3 and for now the multichannel
 extensions defined in MPEG2 too.

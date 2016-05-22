@@ -1,6 +1,6 @@
 dbtool can be used to store and retrieve data in a key/value format in a
 hash database. Perl compatible regular expressions are supported both for
 storing and retrieving of data. It's main advantages are the ability to
-maintain huge amounts of data and speed. 
+maintain huge amounts of data and speed.
 
 WWW: http://www.daemon.de/DBTOOL

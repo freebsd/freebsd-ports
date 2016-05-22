@@ -1,7 +1,7 @@
-The Petal::Utils package contains commonly used Petal modifiers (or 
-plugins), and bundles them with an easy-to-use installation interface. By 
-default, a set of modifiers are installed into Petal when you use this 
-module. You can change which modifiers are installed by naming them after 
+The Petal::Utils package contains commonly used Petal modifiers (or
+plugins), and bundles them with an easy-to-use installation interface. By
+default, a set of modifiers are installed into Petal when you use this
+module. You can change which modifiers are installed by naming them after
 the use statement:
 
   # use the default set:
@@ -16,12 +16,12 @@ the use statement:
   # don't install any modifiers
   use Petal::Utils qw();
 
-You'll find a list of plugin sets throughout this document. You can also 
+You'll find a list of plugin sets throughout this document. You can also
 get a complete list by looking at the variable:
 
   %Petal::Utils::PLUGIN_SET;
 
-For details on how the plugins are installed, see the "Advanced Petal" 
+For details on how the plugins are installed, see the "Advanced Petal"
 section of the Petal documentation.
 
 WWW: http://search.cpan.org/dist/Petal-Utils/

@@ -7,7 +7,7 @@ Notes:
     file and ensure that the memory_limit parameter should be set to 64Mb or
     greater:
 
-memory_limit = 64M	; Maximum amount of memory a script may consume 
+memory_limit = 64M	; Maximum amount of memory a script may consume
 
 2.  Sugar Community Edition requires the following three parameters to be set
     in your php.ini.

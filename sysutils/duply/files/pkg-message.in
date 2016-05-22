@@ -3,23 +3,23 @@
 	/etc/periodic.conf or /etc/periodic.conf.local
 
          Configuration Settings (with default values):
-        
+
          backup_duply_enable="NO"
         	enable duply backup
-        
+
          backup_duply_profile=""
         	default duply profile to use
         	see duply usage
-        
+
          backup_duply_command="bkp_status"
         	default duply commands
-        
+
          backup_duply_opt=""
         	options passed to duply
-        
+
          backup_duply_random="0"
         	randomize backup time
-        
+
 
 	Add these lines to your /etc/crontab
 	10	3	*	*	*	root	periodic backup

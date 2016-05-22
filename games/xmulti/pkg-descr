@@ -3,7 +3,7 @@ xmulti/xmaid - mascot girl for X11
 % xmaid [toolkit options] [-module modulename] [module options]
 
 % xmaid [toolkit options] -mod mod_default [-alwaystop]
-% xmulti [toolkit options] -mod nadenade 
+% xmulti [toolkit options] -mod nadenade
 % xmulti [toolkit options] -mod focuswin [-justify (center|right|left)]
 % xmulti [toolkit options] -mod osouji \
 		[-root [-drawroot] [-rootimage img] [-num n] [-incinf]]

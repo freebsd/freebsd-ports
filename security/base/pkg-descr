@@ -1,11 +1,11 @@
 BASE is the Basic Analysis and Security Engine. It is based on the code
-from the ACID project. This application provides a PHP-based web front-end 
-to query and analyze the alerts coming from a Snort IDS system.  
+from the ACID project. This application provides a PHP-based web front-end
+to query and analyze the alerts coming from a Snort IDS system.
 
 BASE is a web interface to perform analysis of intrusions that Snort has
 detected on your network. It uses a user authentication and role-base
 system, so that you as the security admin can decide what and how much
 information each user can see. It also has a simple to use, web-based
-setup program for people not comfortable with editing files directly. 
+setup program for people not comfortable with editing files directly.
 
 WWW: http://secureideas.sourceforge.net/

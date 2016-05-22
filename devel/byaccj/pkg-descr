@@ -1,4 +1,4 @@
-BYACC/Java is an extension of the Berkeley v 1.8 YACC-compatible parser 
+BYACC/Java is an extension of the Berkeley v 1.8 YACC-compatible parser
 generator. Standard YACC takes a YACC source file, and generates one or
 more C files from it, which if compiled properly, will produce a LALR-
 grammar parser. this extension support a -J option to generate Java source

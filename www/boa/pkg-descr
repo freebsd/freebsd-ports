@@ -5,7 +5,7 @@ connections. It internally multiplexes all of the ongoing HTTP
 connections, and forks only for CGI programs (which must be separate
 processes.) Preliminary tests show boa is about twice as fast as
 Apache, and is capable of handling 50 hits per second on a 66 MHz '486.
-   
+
 The primary design goals of Boa are speed and security. Security,
 in the sense of "can't be subverted by a malicious user", not "fine
 grained access control and encrypted communications".

@@ -6,7 +6,7 @@ Main Features:
 * linear regression models: GLS (including WLS and LS aith AR errors) and OLS.
 * glm: Generalized linear models with support for all of the one-parameter
   exponential family distributions.
-* discrete: regression with discrete dependent variables, including Logit, 
+* discrete: regression with discrete dependent variables, including Logit,
   Probit, MNLogit, Poisson, based on maximum likelihood estimators
 * rlm: Robust linear models with support for several M-estimators.
 * tsa: models for time series analysis - univariate: AR, ARIMA; multivariate:
@@ -19,6 +19,6 @@ Main Features:
 * miscellaneous models
 * sandbox: statsmodels contains a sandbox folder with code in various stages of
 * developement and testing which is not considered "production ready", including
-  Mixed models, GARCH and GMM estimators, kernel regression, panel data models. 
+  Mixed models, GARCH and GMM estimators, kernel regression, panel data models.
 
 WWW: https://www.github.com/statsmodels/statsmodels

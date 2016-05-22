@@ -10,7 +10,7 @@ POST-INSTALL CONFIGURATION FOR OrangeHRM
    <Directory %%PREFIX%%/www/orangehrm>
       AllowOverride None
       Order Allow,Deny
-      Allow from all 
+      Allow from all
    </Directory>
 
 2) Visit your OrangeHRM site with a browser (i.e.,

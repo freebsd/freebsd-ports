@@ -2,14 +2,14 @@ AnyEvent::DNS::EtcHosts AnyEvent::DNS behavior to use /etc/hosts
 
 The DNS lookups are emulated. This resolver returns the standard DNS reply based
  on /etc/hosts file rather than real DNS.
-You can choose different file by changing PERL_ANYEVENT_HOSTS 
+You can choose different file by changing PERL_ANYEVENT_HOSTS
 environment variable.
-This module also disables original AnyEvent::Socket's helper function 
-which reads /etc/hosts file after DNS entry was not found. 
+This module also disables original AnyEvent::Socket's helper function
+which reads /etc/hosts file after DNS entry was not found.
 It prevents to read this file twice.
-The AnyEvent::Socket resolver searches IPv4 and IPv6 addresses separately. 
-If you don't want to check the addresses in DNS, both IPv4 and IPv6 addresses 
-should be placed in /etc/hosts or the protocol family should be set explicitly 
+The AnyEvent::Socket resolver searches IPv4 and IPv6 addresses separately.
+If you don't want to check the addresses in DNS, both IPv4 and IPv6 addresses
+should be placed in /etc/hosts or the protocol family should be set explicitly
 for resolve_sockaddr function.
 
 WWW: https://metacpan.org/pod/URL::Encode

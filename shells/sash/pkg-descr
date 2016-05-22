@@ -1,13 +1,13 @@
 SASH (Stand-Alone SHell)
 
-It is a nice combination of bare-bones shell and a dozen 
+It is a nice combination of bare-bones shell and a dozen
 or so most useful Unix commands.
 
 Shell includes: echo pwd cd mkdir mknod rmdir sync rm chmod
                 chown chgrp touch mv ln cp cmp more exit
                 setenv printenv umask kill where
 
-Commands include: dd ed grep gzip ls tar file find mount chattr 
+Commands include: dd ed grep gzip ls tar file find mount chattr
 
 SASH is a port from Linux version (David Bell) by Andrzej Bialecki
 

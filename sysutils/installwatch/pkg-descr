@@ -1,8 +1,8 @@
-Installwatch is a simple utility which keeps track of which files 
-are created and modified during the installation of a new program. 
-It's fast and easy to use. It doesn't require a "pre-install" phase 
-because it monitors processes while they run. 
-Installwatch works with every dynamically linked ELF program, 
+Installwatch is a simple utility which keeps track of which files
+are created and modified during the installation of a new program.
+It's fast and easy to use. It doesn't require a "pre-install" phase
+because it monitors processes while they run.
+Installwatch works with every dynamically linked ELF program,
 by intercepting system calls that cause file system alterations.
 
 WWW: http://asic-linux.com.mx/~izto/checkinstall/installwatch.html

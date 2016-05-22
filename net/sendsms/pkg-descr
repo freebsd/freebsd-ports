@@ -6,10 +6,10 @@ installation and web access. NO EXTRA PERL MODULES REQUIRED!
 
 How does it work?
 SendSMS connects to your service provider's web page and pretends to submit a
-form to their 'Instant Messaging' web page. Currently, AT&T Wireless, Bell 
-Canada/Bell Mobility, Cellular One, Cingular, Cricket, SkyTel, Sprint PCS, and 
+form to their 'Instant Messaging' web page. Currently, AT&T Wireless, Bell
+Canada/Bell Mobility, Cellular One, Cingular, Cricket, SkyTel, Sprint PCS, and
 T-Mobile are supported. Users are encouraged to modify the provided templates to
-add support for any providers who are currently unsupported. 
+add support for any providers who are currently unsupported.
 
 Other Service Providers
 If you are interested in supporting another service provider please try to

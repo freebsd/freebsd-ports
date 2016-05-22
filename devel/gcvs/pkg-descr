@@ -1,13 +1,13 @@
 A set of C++ front-end for cvs distributed under GPL.
-CvsGui features 
+CvsGui features
 
-  WinCvs is written in C++ using the Microsoft MFC. 
-  MacCvs is written in C++ using Metrowerks PowerPlant. 
-  gCvs is written in C++ using GNU gtk+. 
-  They are using the latest cvs source code. 
-  They are making cvs easier for the novice. 
-  They are increasing the power of cvs by providing an high-end interface. 
+  WinCvs is written in C++ using the Microsoft MFC.
+  MacCvs is written in C++ using Metrowerks PowerPlant.
+  gCvs is written in C++ using GNU gtk+.
+  They are using the latest cvs source code.
+  They are making cvs easier for the novice.
+  They are increasing the power of cvs by providing an high-end interface.
   The project is growing because it is supported and developed
-    by several cvs users. 
+    by several cvs users.
 
 WWW: http://cvsgui.sourceforge.net/

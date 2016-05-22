@@ -2,7 +2,7 @@ The Advanced Forensic Format (AFF) is an emerging standard for storing computer
 forensic information. Critical features of AFF include:
 
   - AFF allows you to store both computer forensic data and associated metadata
-    in one or more files. 
+    in one or more files.
 
   - AFF allows files to be digital singed, to provide for chain-of-custody and
     long-term file integrity.

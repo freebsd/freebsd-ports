@@ -1,10 +1,10 @@
 Helper for 'local' libs versions
 
-This is an object which provide the functionality to create a 
-local::lib 'helper' script in either the currently loaded local::lib 
+This is an object which provide the functionality to create a
+local::lib 'helper' script in either the currently loaded local::lib
 environment or in a target directory of choice. i
-By default the script is called localenv and can be used to invoke 
-a command under the local::lib which it was built against. 
+By default the script is called localenv and can be used to invoke
+a command under the local::lib which it was built against.
 For example, assume you build a local::lib like so:
 
   cpanm --local-lib ~/mylib App::local::lib::helper

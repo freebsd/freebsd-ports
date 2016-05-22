@@ -1,7 +1,7 @@
 Gnulib, the GNU portability library, offers a macro system and C
 declarations and definitions for commonly-used API elements and
 abstracted system behaviors. It can be used to improve portability and
-other functionality in your programs. 
+other functionality in your programs.
 
 Gnulib takes a different approach than libiberty. Gnulib components are
 intended to be shared at the source level, rather than being a library that

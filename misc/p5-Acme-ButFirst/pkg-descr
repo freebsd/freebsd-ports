@@ -1,10 +1,10 @@
-Acme::ButFirst allows you to execute a block of code, but first do 
-something else. Perfect for when you wish to add to the start of a long 
+Acme::ButFirst allows you to execute a block of code, but first do
+something else. Perfect for when you wish to add to the start of a long
 block of code, but don't have the energy to scroll upwards in your editor.
 
 Acme::ButFirst recognises both butfirst and but first as keywords.
 
-Usage of Acme::ButFirst is lexically scoped. ButFirstification can be 
+Usage of Acme::ButFirst is lexically scoped. ButFirstification can be
 explicitly disabled by using no Acme::ButFirst.
 
 WWW: http://search.cpan.org/dist/Acme-ButFirst/

@@ -1,5 +1,5 @@
-URI::Escape is great, but URI::Escape::XS is faster. 
-This module loads URI::Escape::XS and imports the two 
+URI::Escape is great, but URI::Escape::XS is faster.
+This module loads URI::Escape::XS and imports the two
 most common methods if XS is installed.
 
 WWW: http://search.cpan.org/dist/Any-URI-Escape/

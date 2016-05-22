@@ -2,5 +2,5 @@ najitool generates and/or makes altered copies of files in the patterns
 you specify or shows to the screen. najitool is being developed in the
 ANSI C standard so it should work and compile on any system that supports
 ANSI C, which should be every system.
- 
+
 WWW: http://najitool.sourceforge.net/

@@ -1,4 +1,4 @@
-This program implements a standard PGP Key Server, which can be assumed 
+This program implements a standard PGP Key Server, which can be assumed
 to be in addition to the public key server at MIT.
 
 WWW: http://www.mit.edu/people/marc/pks/

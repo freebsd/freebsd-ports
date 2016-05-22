@@ -1,5 +1,5 @@
-The bogom plugin can be used with the milter API of sendmail to filter          
-mails using bogofilter bayesian filter. It is intended to be used with          
-only one words database for the whole system. 
+The bogom plugin can be used with the milter API of sendmail to filter
+mails using bogofilter bayesian filter. It is intended to be used with
+only one words database for the whole system.
 
 WWW: http://www.usebox.net/jjm/bogom/

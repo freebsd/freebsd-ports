@@ -1,10 +1,10 @@
 Totd is a small DNS proxy nameserver that supports IPv6 only hosts/networks
-that communicate with the IPv4 world using some translation mechanism. 
-Examples of such translation mechanisms currently in use are: 
+that communicate with the IPv4 world using some translation mechanism.
+Examples of such translation mechanisms currently in use are:
 
    * IPv6/IPv4 Network Address and Packet Translation (NAT-PT)
      implemented e.g. by Cisco.
-   * Application level translators as the faithd implemented by 
+   * Application level translators as the faithd implemented by
      the KAME project (http://www.kame.net). See faithd(8) on
      *BSD/Kame.
 

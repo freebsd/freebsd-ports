@@ -1,6 +1,6 @@
-This is a port of Clp (Coin-or linear programming), which is an open-source 
-linear programming solver written in C++. It is primarily meant to be used as 
-a callable library, but a basic, stand-alone executable version is also 
+This is a port of Clp (Coin-or linear programming), which is an open-source
+linear programming solver written in C++. It is primarily meant to be used as
+a callable library, but a basic, stand-alone executable version is also
 included.
 
 WWW: http://www.coin-or.org/Clp/index.html

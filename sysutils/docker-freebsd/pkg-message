@@ -1,9 +1,9 @@
 
-Docker requires a bit of setup before usage. 
+Docker requires a bit of setup before usage.
 
 You will need to create a ZFS dataset on /usr/docker
 
-# zfs create -o mountpoint=/usr/docker <zroot>/docker 
+# zfs create -o mountpoint=/usr/docker <zroot>/docker
 
 And lastly enable the docker daemon
 # sysrc -f /etc/rc.conf docker_enable="YES"
@@ -18,4 +18,4 @@ nat on ${iface} from 172.17.0.0/16 to any -> (${iface})
 Where $iface is the default NIC on the system, or the value
 of $docker_nat_iface. This is for network connectivity to docker
 containers in this early port. This should not be needed in future
-versions of docker. 
+versions of docker.

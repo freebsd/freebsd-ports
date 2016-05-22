@@ -2,8 +2,8 @@ NETwork MONitoring Dealer  - IP network monitoring daemon.
 Can check hosts availability (via ICMP ping), collect SNMP counters,
 check simple TCP/UDP services (with internal chat), handle SNMP traps.
 
-GUI frontends exist for netmond: 
+GUI frontends exist for netmond:
   - net-mgmt/tknetmon ( tcl/tk )
   - ftp://ftp.risp.ru/RinetSoft/netmond-spyboat-0.5.tgz ( with QT )
 
-WWW: http://soft.risp.ru/netmond/ 
+WWW: http://soft.risp.ru/netmond/

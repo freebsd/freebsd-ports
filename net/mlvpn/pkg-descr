@@ -1,6 +1,6 @@
-MLVPN allow to bond your internet links to increase bandwidth, secure your 
-internet connection by actively monitoring your links and removing the faulty 
-ones, without loosing your TCP connections and secure your internet connection 
+MLVPN allow to bond your internet links to increase bandwidth, secure your
+internet connection by actively monitoring your links and removing the faulty
+ones, without loosing your TCP connections and secure your internet connection
 to the aggregation server using cryptography.
 
 WWW: https://zehome.github.io/MLVPN/

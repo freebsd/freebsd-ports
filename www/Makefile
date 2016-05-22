@@ -1908,6 +1908,8 @@
     SUBDIR += rubygem-eventmachine_httpserver
     SUBDIR += rubygem-faraday
     SUBDIR += rubygem-faraday_middleware
+    SUBDIR += rubygem-faye
+    SUBDIR += rubygem-faye-websocket
     SUBDIR += rubygem-fcgi
     SUBDIR += rubygem-feed-normalizer
     SUBDIR += rubygem-feedjira
@@ -2056,6 +2058,8 @@
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
+    SUBDIR += rubygem-websocket-driver
+    SUBDIR += rubygem-websocket-extensions
     SUBDIR += rubygem-yapra
     SUBDIR += sabredav
     SUBDIR += sahi

@@ -3,7 +3,7 @@ collects backtraces when a child process crashes.  Currently it is
 implemented only on Linux and FreeBSD, but other platforms could be
 supported in the future.
 
-Requirements: Apache httpd >= 2.0.49 must be built with the 
+Requirements: Apache httpd >= 2.0.49 must be built with the
 --enable-exception-hook configure option and mod_so enabled.
 
 Activating mod_backtrace:

@@ -1,12 +1,12 @@
-LostIRC is an IRC client for X, written in C++ using gtkmm as a widget set. 
-The goal of the first stable version, is to make a simple, keyboard 
+LostIRC is an IRC client for X, written in C++ using gtkmm as a widget set.
+The goal of the first stable version, is to make a simple, keyboard
 controlled IRC application with basic features implemented.
 
 Key features:
 
    * Simple and minimal client, where the keyboard can be used almost
      exclusively
-   * Tab-completion for both nicks and commands 
+   * Tab-completion for both nicks and commands
    * Autojoin servers and set which IRC commands to execute on connect
    * Multi-server support
    * DCC SEND support

@@ -1,4 +1,0 @@
-relaunchd is a service management daemon that is similar to 
-the launchd(8) facility found in the Darwin operating environment.
-
-WWW: https://github.com/mheily/relaunchd

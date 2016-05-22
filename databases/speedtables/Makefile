@@ -33,7 +33,7 @@ CASSANDRA_CONFIGURE_ON=	--with-casstcl=${LOCALBASE}
 CASSANDRA_LIB_DEPENDS=	libcasstcl.so:databases/casstcl
 
 post-configure:
-	${CHMOD} a+x ${WRKSRC}/ctable_server/sttp 
+	${CHMOD} a+x ${WRKSRC}/ctable_server/sttp
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/ctables/docs/manual && \

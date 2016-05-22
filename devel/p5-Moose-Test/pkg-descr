@@ -1,5 +1,5 @@
 This module provides an abstraction over the Moose test
 cases such that it makes it easier for them to be re-used
-in different contexts. 
+in different contexts.
 
 WWW: http://search.cpan.org/dist/Moose-Test/

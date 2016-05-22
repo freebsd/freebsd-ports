@@ -1,21 +1,21 @@
-Doscan is a tool to quickly scan your network for machines listening on a 
+Doscan is a tool to quickly scan your network for machines listening on a
 TCP port, opening thousands of TCP connections in parallel.
 Features
-      High scanning rate: five to ten minutes per 100,000 addresses (which 
+      High scanning rate: five to ten minutes per 100,000 addresses (which
 are sparsely populated with hosts), with rather conservative timeouts.
-      Load distribution: doscan scans the addresses in a seemingly random 
-order. If your scan host is connected to a central router, this ensures 
-that the load is distributed across your network, and you are 
+      Load distribution: doscan scans the addresses in a seemingly random
+order. If your scan host is connected to a central router, this ensures
+that the load is distributed across your network, and you are
 stress-testing just a single router, and not your edge devices.
-      Low memory consumption: memory usage is proportional to the number 
-of hosts which have responded so far, and to the number of parallel 
-connections. The total number of addresses does not influence memory usage 
+      Low memory consumption: memory usage is proportional to the number
+of hosts which have responded so far, and to the number of parallel
+connections. The total number of addresses does not influence memory usage
 in any way.
-      Can collect responses: doscan optionally records data which is sent 
-by the hosts which are being scanned. You can even specify a regular 
-expression to extract part of a server banner, and a message to send to 
+      Can collect responses: doscan optionally records data which is sent
+by the hosts which are being scanned. You can even specify a regular
+expression to extract part of a server banner, and a message to send to
 trigger a response (great for determining HTTP server versions).
-      Extensibility: It is possible to add special handlers for TCP-based 
+      Extensibility: It is possible to add special handlers for TCP-based
 protocols, using a straightforward interface.
       It supports scanning the vulnerable Microsoft DCOM implementation.
 

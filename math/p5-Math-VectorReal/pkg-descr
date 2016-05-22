@@ -1,5 +1,5 @@
 The Math::VectorReal package defines a 3D mathematical "vector",
-in a way that is compatible with the previous CPAN module 
+in a way that is compatible with the previous CPAN module
 Math::MatrixReal. However it provides a more vector oriented set
 of mathematical functions and overload operators, to the MatrixReal
 package. For example the normal perl string functions "x" and "."

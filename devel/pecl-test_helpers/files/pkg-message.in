@@ -9,14 +9,14 @@ or
 	zend_extension=%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/test_helpers.so
 
 If this extension is used in combination with other extensions, such as Xdebug,
-which are also overloading the `ZEND_NEW` opcode you have to load it as 
-`zend_extension` after loading the conflicting extension. This can be done in 
+which are also overloading the `ZEND_NEW` opcode you have to load it as
+`zend_extension` after loading the conflicting extension. This can be done in
 your `php.ini` like this:
 
     zend_extension=xdebug.so
     zend_extension=test-helpers.so
 
-Please refer to `phpinfo()` to verify whether a conflict was detected and 
+Please refer to `phpinfo()` to verify whether a conflict was detected and
 whether the work-around was enabled.
 
 *****************************************************************************

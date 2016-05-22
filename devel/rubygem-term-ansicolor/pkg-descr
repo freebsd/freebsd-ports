@@ -1,4 +1,4 @@
-Small Ruby library that colors strings using ANSI escape sequences. 
+Small Ruby library that colors strings using ANSI escape sequences.
 It's possible to use constants:
 
     print red, bold, "red bold", reset, "\n"

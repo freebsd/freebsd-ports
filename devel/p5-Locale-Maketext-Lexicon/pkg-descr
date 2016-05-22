@@ -1,4 +1,4 @@
 This module provides lexicon-handling modules to read from other localization
-formats, such as Gettext, Msgcat, and so on. 
+formats, such as Gettext, Msgcat, and so on.
 
 WWW: http://search.cpan.org/dist/Locale-Maketext-Lexicon/

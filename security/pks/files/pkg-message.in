@@ -12,7 +12,7 @@ Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable this ser
                                infrastructure to enable this. See:
                                %%PREFIX%%/share/doc/pks/README and
                                %%PREFIX%%/share/doc/pks/EMAIL for details.
- 
+
  pksd_queue_delay (int):       Periodically process incoming mail.
                                Set to 60 seconds by default.
 

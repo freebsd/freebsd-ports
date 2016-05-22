@@ -1,4 +1,4 @@
-Pydenticon is a small utility library that can be used for deterministically 
+Pydenticon is a small utility library that can be used for deterministically
 generating identicons based on the hash of provided data.
 
 WWW: https://github.com/azaghal/pydenticon

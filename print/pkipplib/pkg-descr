@@ -1,6 +1,6 @@
 pkipplib is a Python library which can prepare IPP requests with the
 help of a somewhat high level API. These requests can then be sent to
 an IPP printer or print server (e.g. CUPS).  This library can also parse
-IPP answers received, and create high level Python objects from them. 
+IPP answers received, and create high level Python objects from them.
 
 WWW: http://www.pykota.com/software/pkipplib/

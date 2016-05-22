@@ -1,4 +1,4 @@
-This is a port of PlayOnLinux to FreeBSD. It allows you to easily install 
+This is a port of PlayOnLinux to FreeBSD. It allows you to easily install
 and use numerous games and apps designed to run with Microsoft Windows.
 The Windows emulation is provided by Wine.
 

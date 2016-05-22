@@ -5,15 +5,13 @@ PORTNAME=	libdict
 PORTVERSION=	0.2.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL
+MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source treap_insert.pdf:doc \
 		avl_insert.pdf:doc empty.pdf:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library providing access to ``dictionary'' data structures
-
-BROKEN=		Unfetchable
 
 USES=		gmake
 MAKEFILE=	GNUmakefile

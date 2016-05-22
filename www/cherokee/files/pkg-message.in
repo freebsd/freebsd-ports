@@ -1,15 +1,15 @@
 
                  **** PLEASE READ THIS ****
 
-   o  To run Cherokee at startup or using the rc script, you need 
-      to add 
+   o  To run Cherokee at startup or using the rc script, you need
+      to add
 
-      cherokee_enable="YES" 
+      cherokee_enable="YES"
 
-      in either /etc/rc.conf, /etc/rc.conf.local or 
+      in either /etc/rc.conf, /etc/rc.conf.local or
       /etc/rc.conf.d/cherokee.
 
-   o  To start the Cherokee administrative interface, run (as root) 
+   o  To start the Cherokee administrative interface, run (as root)
 
       cherokee-admin
 

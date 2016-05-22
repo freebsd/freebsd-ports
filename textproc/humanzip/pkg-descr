@@ -1,12 +1,12 @@
-humanzip is a compression program that operates on text files.  Unlike 
-most compression algorithms, its output is human readable.  Indeed, it 
-is explictly meant to be read by humans and might even be easier to read 
+humanzip is a compression program that operates on text files.  Unlike
+most compression algorithms, its output is human readable.  Indeed, it
+is explictly meant to be read by humans and might even be easier to read
 than the original.
 
-humanzip compresses files by looking for common strings of words and 
-replacing them with single symbols. The idea is to reduce the screen and 
-print size of documents.  Humanzip does not explictly try to reduce the 
-size of the file as measured in bytes, although this usually happens 
+humanzip compresses files by looking for common strings of words and
+replacing them with single symbols. The idea is to reduce the screen and
+print size of documents.  Humanzip does not explictly try to reduce the
+size of the file as measured in bytes, although this usually happens
 incidentally.
 
 WWW: http://savannah.nongnu.org/projects/humanzip/

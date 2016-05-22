@@ -9,7 +9,7 @@ players and it was real fun :) ZNibbles is written for Unix. It has been
 tested under Linux, SunOS, Solaris and Irix. The game can run either
 directly on top of X11, use the GTK+ toolkit (get it on the GTK+ site)
 or use the Motif toolkit (get a good Motif free implementation called
-LessTif) 
+LessTif)
 
 Once compiled, you get the files:
 

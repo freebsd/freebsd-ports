@@ -1,5 +1,5 @@
 MOC (music on console) is a console audio player designed to be powerful and
-easy to use. 
+easy to use.
 
 MOC plays smoothly, regardless of system or I/O load, because it handles the
 output buffer in a separate thread. It does not cause gaps between files,

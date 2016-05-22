@@ -1,8 +1,8 @@
-The xcalendar is a simple interactive calendar program with a notebook 
+The xcalendar is a simple interactive calendar program with a notebook
 capability. It is built on the X Toolkit and the Athena Widgets.
 
 Just type `xcalendar [month [year]]' on command line.
-If month and year are not provided on the command line they are 
+If month and year are not provided on the command line they are
 assumed to be current.
 
 Note: This program is internationalized but only

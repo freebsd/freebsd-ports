@@ -9,6 +9,6 @@ hides all platform dependent implementation details (allocation
 and locking) when dealing with shared memory segments and on the
 second layer it provides a high-level malloc(3)-style API for a
 convenient and well known way to work with data-structures inside
-those shared memory segments. 
+those shared memory segments.
 
 WWW: http://www.ossp.org/pkg/lib/mm/

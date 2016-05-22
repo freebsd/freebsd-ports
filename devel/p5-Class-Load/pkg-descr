@@ -1,11 +1,11 @@
-require EXPR only accepts Class/Name.pm style module names, not Class::Name. 
+require EXPR only accepts Class/Name.pm style module names, not Class::Name.
 How frustrating! For that, we provide load_class 'Class::Name'.
-It's often useful to test whether a module can be loaded, instead of throwing 
-an error when it's not available. For that, we provide try_load_class 
+It's often useful to test whether a module can be loaded, instead of throwing
+an error when it's not available. For that, we provide try_load_class
 'Class::Name'.
-Finally, sometimes we need to know whether a particular class has been loaded. 
-Asking %INC is an option, but that will miss inner packages and any class for 
-which the filename does not correspond to the package name. For that, 
+Finally, sometimes we need to know whether a particular class has been loaded.
+Asking %INC is an option, but that will miss inner packages and any class for
+which the filename does not correspond to the package name. For that,
 we provide is_class_loaded 'Class::Name'.
 
 WWW: https://metacpan.org/pod/Class::Load

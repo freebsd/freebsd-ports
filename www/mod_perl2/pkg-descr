@@ -10,6 +10,6 @@ dynamic content.
 As you'd expect from the Perl community, there are hundreds of modules
 written for mod_perl, everything from persistent database connections, to
 templating sytems, to complete XML content delivery systems. Web sites like
-Slashdot and Wired Magazine use mod_perl. 
+Slashdot and Wired Magazine use mod_perl.
 
 WWW: http://perl.apache.org/

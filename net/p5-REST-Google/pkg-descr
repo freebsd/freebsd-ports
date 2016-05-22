@@ -1,4 +1,4 @@
-REST::Google - 
+REST::Google -
 This module provides OO interface to Google REST (aka AJAX) API.
 Currently support for Search, Feeds and Translate services.
 

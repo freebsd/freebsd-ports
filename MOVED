@@ -8323,3 +8323,5 @@ databases/postgresql90-contrib||2016-05-16|Has expired: "EOL was reached in Sept
 databases/postgresql90-pltcl||2016-05-16|Has expired: "EOL was reached in September 2015"
 databases/postgresql90-docs||2016-05-16|Has expired: "EOL was reached in September 2015"
 devel/py-gyp-devel|devel/py-gyp|2016-05-16|Renamed to devel/py-gyp
+sysutils/relaunchd|sysutils/jobd|2016-05-20|Renamed to sysutils/jobd
+dns/nsd3|dns/nsd|2016-05-20|Has expired: NSD 3 is EOL, please upgrade to NSD 4 in dns/nsd

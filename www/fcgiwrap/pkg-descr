@@ -1,5 +1,5 @@
 fcgiwrap is a simple server for running CGI applications over FastCGI. It hopes
-to provide clean CGI support to Nginx (and other web servers that may need it). 
+to provide clean CGI support to Nginx (and other web servers that may need it).
 
 Features:
     * very lightweight (84KB of private memory per instance)
@@ -9,6 +9,6 @@ Features:
     * environment)
     * no configuration, so you can run several sites off the same fcgiwrap pool
     * passes CGI stderr output to fcgiwrap's stderr (this is by design but
-    * stderr could be also passed to FastCGI stderr stream) 
+    * stderr could be also passed to FastCGI stderr stream)
 
 WWW: http://nginx.localdomain.pl/wiki/FcgiWrap

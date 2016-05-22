@@ -1,6 +1,6 @@
 IBM Research is developing the open-source X10 programming language to
 provide a programming model that can address the architectural challenge
-of multiples cores, hardware accelerators, clusters, and supercomputers 
+of multiples cores, hardware accelerators, clusters, and supercomputers
 in a manner that provides scalable performance in a productive manner.
 
 WWW: http://x10-lang.org/

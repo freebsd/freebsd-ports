@@ -4,9 +4,9 @@ machine bytecode format or language. The hope is that Free Software projects
 can get a leg-up on proprietry VM vendors by using this library rather than
 spending large amounts of time writing their own JIT from scratch.
 
-This JIT is also designed to be portable to multiple archictures. If you run 
-libjit on a machine for which a native code generator is not yet available, 
-then libjit will fall back to interpreting the code. This way, you don't need 
+This JIT is also designed to be portable to multiple archictures. If you run
+libjit on a machine for which a native code generator is not yet available,
+then libjit will fall back to interpreting the code. This way, you don't need
 to write your own interpreter for your bytecode format if you don't want to.
 
 WWW: http://www.gnu.org/software/dotgnu/
