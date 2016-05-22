@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	xboard
-PORTVERSION?=	4.8.0
+PORTVERSION?=	4.9.0
 PORTREVISION?=	0
 PORTEPOCH?=
 CATEGORIES?=	games
@@ -134,6 +134,8 @@ post-patch:
 .else
 	@${REINPLACE_CMD} -e "s|\(soundProgram\) .*|\1 \"\"|" ${XBOARDCONF}
 .endif
+	@${REINPLACE_CMD} -e "1s|^|int initialSquareSize;|" \
+		${WRKSRC}/xaw/xboard.c
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cmail ${STAGEDIR}${PREFIX}/bin/
