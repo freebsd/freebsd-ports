@@ -54,12 +54,13 @@ NDK_MASTER_SITES=	https://dl.google.com/android/ndk/:ndk,p7zip
 # Prefer NDK from environment
 WRKSRC_ndk=		${ANDROID_NDK}
 .else
-NDK_DISTFILES=		${DISTNAME_ndk}.bin:ndk,p7zip
-DISTNAME_ndk=		android-ndk-r10e-linux-${LINUX_RPM_ARCH:C/i.86/x86/}
-WRKSRC_ndk=		${WRKDIR}/${DISTNAME_ndk:C/(-[^-]+){2}$//}
+NDK_DISTFILES=		${NDK_DISTFILES_${LINUX_RPM_ARCH}}
+NDK_DISTFILES_i686=	android-ndk-r10e-linux-x86.bin:ndk,p7zip
+NDK_DISTFILES_x86_64=	android-ndk-r11c-linux-x86_64.zip:ndk
+WRKSRC_ndk=		${WRKDIR}/${NDK_DISTFILES:R:C/(-[^-]+){2}$//}
 .endif
 NDK_BUILD_DEPENDS=	${LINUX_BASE_PORT}
-NDK_USES=		7z:partial${OVERRIDE_LINUX_BASE_PORT:M*64:C/.+/,p7zip/}
+NDK_USES=		7z:partial
 NDK_USE=		LINUX=yes # build
 NDK_SHELL=		${SETENV} UNAME_s=Linux UNAME_m=${LINUX_RPM_ARCH} ${SH}
 NDK_CONFIGURE_ENV=	ANDROID_NDK="${WRKSRC_ndk}" \
