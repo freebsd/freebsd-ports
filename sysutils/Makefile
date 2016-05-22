@@ -467,6 +467,7 @@
     SUBDIR += jdiskreport
     SUBDIR += jfbterm
     SUBDIR += jkill
+    SUBDIR += jobd
     SUBDIR += jps
     SUBDIR += jtop
     SUBDIR += jtopen
@@ -872,7 +873,6 @@
     SUBDIR += recoverdm
     SUBDIR += reed
     SUBDIR += rej
-    SUBDIR += relaunchd
     SUBDIR += relaxconf
     SUBDIR += relaunchd
     SUBDIR += rename

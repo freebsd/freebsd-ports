@@ -1,0 +1,5 @@
+Numpy's documentation uses several custom extensions to Sphinx. These
+are shipped in this numpydoc package, in case you want to make use of
+them in third-party projects.
+
+WWW: https://github.com/numpy/numpydoc

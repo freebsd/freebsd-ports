@@ -2,6 +2,8 @@
 # MAINTAINER: portmgr@FreeBSD.org
 # $FreeBSD$
 
+[ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_FIND_LIB}" ] && set -x
+
 if [ -z "${LIB_DIRS}" -o -z "${LOCALBASE}" ]; then
 	echo "LIB_DIRS, LOCALBASE required in environment." >&2
 	exit 1

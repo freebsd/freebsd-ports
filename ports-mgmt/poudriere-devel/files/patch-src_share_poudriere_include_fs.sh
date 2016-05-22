@@ -4,8 +4,8 @@
  		zfs destroy -rf ${fs}
  		rmdir ${mnt}
  	else
--		rm -rfx ${mnt} || :
-+		rm -rf ${mnt} || :
+-		rm -rfx ${mnt} 2>/dev/null || :
++		rm -rf ${mnt} 2>/dev/null || :
  		if [ -d "${mnt}" ]; then
  			chflags -R 0 ${mnt}
 -			rm -rfx ${mnt}

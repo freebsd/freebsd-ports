@@ -1,0 +1,7 @@
+Data::URIEncode allows for encoding and decoding complex (multi level
+datastructures) using native Query String manipulators (such as CGI.pm).
+It takes complex data and turns it into a flat hashref which can then be turned
+into a URI query string using URL encoding. It also takes a flat hashref of
+data passed in and translates it back to a complex structure.
+
+WWW: https://metacpan.org/pod/Data::URIEncode

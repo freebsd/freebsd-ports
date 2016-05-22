@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd-extras
-PORTVERSION=	201602042118
-PORTREVISION?=	4
+PORTVERSION=	201605182041
+PORTREVISION?=	0
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
 
@@ -40,8 +40,6 @@ SPAMASSASSIN_DESC=	Check messages with SpamAssassin
 # Tables
 PASSWD_DESC=		passwd(5) table support
 SMAP_DESC=		Socketmap protocol support
-
-OPTIONS_SUB=	yes
 
 PLIST_FILES=	man/man3/filter_api.3.gz
 INSTALL_DIR=	${LOCALBASE}/libexec/opensmtpd
