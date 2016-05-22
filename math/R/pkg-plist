@@ -17,7 +17,6 @@
 %%DOCSDIR%%/html/index.html
 %%DOCSDIR%%/html/left.jpg
 %%DOCSDIR%%/html/logo.jpg
-%%DOCSDIR%%/html/logosm.jpg
 %%DOCSDIR%%/html/packages-head-utf8.html
 %%DOCSDIR%%/html/packages.html
 %%DOCSDIR%%/html/resources.html
@@ -180,6 +179,7 @@ lib/R/library/Matrix/Copyrights
 lib/R/library/Matrix/DESCRIPTION
 lib/R/library/Matrix/Doxyfile
 lib/R/library/Matrix/INDEX
+lib/R/library/Matrix/LICENCE
 lib/R/library/Matrix/NEWS.Rd
 lib/R/library/Matrix/Meta/Rd.rds
 lib/R/library/Matrix/Meta/data.rds
@@ -1059,6 +1059,8 @@ lib/R/library/survival/doc/timedep.R
 lib/R/library/survival/doc/timedep.Rnw
 lib/R/library/survival/doc/timedep.pdf
 lib/R/library/survival/doc/validate.pdf
+lib/R/library/survival/doc/validate.R
+lib/R/library/survival/doc/validate.Rnw
 lib/R/library/survival/help/AnIndex
 lib/R/library/survival/help/aliases.rds
 lib/R/library/survival/help/paths.rds
@@ -1413,6 +1415,8 @@ lib/R/library/utils/Meta/nsInfo.rds
 lib/R/library/utils/Meta/package.rds
 %%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/utils/Meta/vignette.rds
 lib/R/library/utils/NAMESPACE
+lib/R/library/utils/R/sysdata.rdb
+lib/R/library/utils/R/sysdata.rdx
 lib/R/library/utils/R/utils
 lib/R/library/utils/R/utils.rdb
 lib/R/library/utils/R/utils.rdx
@@ -1484,6 +1488,8 @@ lib/R/share/texmf/tex/latex/ts1aett.fd
 man/man1/R.1.gz
 man/man1/Rscript.1.gz
 %%DOCSDIR%%/html/NEWS.2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Rlogo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/html/Rlogo.svg
 %%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-FAQ.pdf
 %%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-admin.pdf
 %%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-data.pdf
