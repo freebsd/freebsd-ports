@@ -2,12 +2,12 @@ clRNG
 
 a library for uniform random number generation in OpenCL.
 
-Streams of random numbers act as virtual random number generators. 
-They can be created on the host computer in unlimited numbers, and 
-then used either on the host or on computing devices by work items 
-to generate random numbers. Each stream also has equally-spaced 
-substreams, which are occasionally useful. The API is currently 
-implemented for four different RNGs, namely the MRG31k3p, MRG32k3a, 
+Streams of random numbers act as virtual random number generators.
+They can be created on the host computer in unlimited numbers, and
+then used either on the host or on computing devices by work items
+to generate random numbers. Each stream also has equally-spaced
+substreams, which are occasionally useful. The API is currently
+implemented for four different RNGs, namely the MRG31k3p, MRG32k3a,
 LFSR113 and Philox-4x32-10 generators.
 
 WWW: https://github.com/clMathLibraries/clRNG

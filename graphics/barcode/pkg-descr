@@ -1,4 +1,4 @@
-GNU barcode is a tool to convert text strings to printed bars. It 
+GNU barcode is a tool to convert text strings to printed bars. It
 supports a variety of standard codes to represent the textual strings
 and creates postscript output.
 

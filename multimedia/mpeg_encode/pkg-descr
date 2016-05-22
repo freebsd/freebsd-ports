@@ -7,9 +7,9 @@ From the README:
         and Dan Wallach
      Computer Science Division-EECS, Univ. of Calif. at Berkeley
 
- This directory contains the freely distributed Berkeley MPEG-1 Video 
+ This directory contains the freely distributed Berkeley MPEG-1 Video
  Encoder.  The encoder implements the standard described in the ISO/IEC
- International Standard 11172-2.  The code has been compiled and tested 
+ International Standard 11172-2.  The code has been compiled and tested
  on the following platforms:
 
   DECstation 5000 and Alpha

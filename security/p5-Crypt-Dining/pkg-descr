@@ -1,19 +1,19 @@
-The dining cryptographers' protocol is documented in Bruce Schneier's book 
+The dining cryptographers' protocol is documented in Bruce Schneier's book
 as a kind of "cryptographic ouija board". It works as follows:
 
-A number of cryptographers are dining at a circular table. At the end of 
-the meal, the waiter is summoned and asked for the bill. He replies, 
-"Thank you, sir. The bill has been paid." The cryptographers now have the 
-problem of working out whether someone at the table paid the bill, or 
-whether the NSA has paid it as some sort of veiled threat. The protocol 
+A number of cryptographers are dining at a circular table. At the end of
+the meal, the waiter is summoned and asked for the bill. He replies,
+"Thank you, sir. The bill has been paid." The cryptographers now have the
+problem of working out whether someone at the table paid the bill, or
+whether the NSA has paid it as some sort of veiled threat. The protocol
 proceeds.
 
-Each cryptographer flips a coin, and shows the result ONLY to the 
-participant on his RIGHT. Each cryptographer then compares his coin with 
-that on his LEFT, and raises his hand if they show different faces. If any 
-participant paid the bill, he "cheats" and does the opposite, that is, he 
-raises his hand if the coins show the same face. Now, the hands are 
-counted. An odd number means that someone at the table paid the bill. An 
+Each cryptographer flips a coin, and shows the result ONLY to the
+participant on his RIGHT. Each cryptographer then compares his coin with
+that on his LEFT, and raises his hand if they show different faces. If any
+participant paid the bill, he "cheats" and does the opposite, that is, he
+raises his hand if the coins show the same face. Now, the hands are
+counted. An odd number means that someone at the table paid the bill. An
 even number means that the NSA paid.
 
 WWW: http://search.cpan.org/dist/Crypt-Dining/

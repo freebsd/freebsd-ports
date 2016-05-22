@@ -6,18 +6,18 @@ Add to your postfix master.cf:
 
 tumgreyspf  unix  -       n       n       -       -       spawn
   user=%%TUMGREYSPF_USER%% argv=%%PYTHON_CMD%% %%PREFIX%%/bin/tumgreyspf
-      
+
 Next, main.cf must be configured so that "smtpd_sender_restrictions"
 includes a call to the tumgreyspf policy filter.  If you already have
 a "smtpd_sender_restrictions" line(s), you can add the following line
 anywhere after the line which reads "reject_unauth_destination".
-         
+
 check_policy_service unix:private/tumgreyspf
-         
+
 WARNING: It's very important that you have
 "reject_unauth_destination" before the "check_policy_service".  If
 you do not, your system may be an open relay.
-         
+
 So, for example, a minimal "smtpd_sender_restrictions" may look like:
 
 smtpd_sender_restrictions = reject_unauth_destination,

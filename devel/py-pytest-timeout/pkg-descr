@@ -1,4 +1,4 @@
-This is a plugin which will terminate tests after a certain timeout. 
+This is a plugin which will terminate tests after a certain timeout.
 When doing so it will show a stack dump of all threads running at the
 time. This is useful when running tests under a continuous integration
 server or simply if you don't know why the test suite hangs.

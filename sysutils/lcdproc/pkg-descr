@@ -1,6 +1,6 @@
 LCDproc controls various LCD and VFD devices in a standardized way, and
 ships with a client to display various system statistics like CPU load,
 system load, memory usage, uptime, and a lot more. Client/server model
-allows multiple clients to use one display. 
+allows multiple clients to use one display.
 
 WWW: http://www.lcdproc.org/

@@ -1,5 +1,5 @@
 Honggfuzz is a general-purpose fuzzing tool. Given a starting corpus of test
 files, Hongfuzz supplies and modifies input to a test program and utilize the
-ptrace() API/POSIX signal interface to detect and log crashes. 
+ptrace() API/POSIX signal interface to detect and log crashes.
 
 WWW: http://code.google.com/p/honggfuzz/

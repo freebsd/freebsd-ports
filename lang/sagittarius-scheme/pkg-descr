@@ -10,7 +10,7 @@ Features:
  -  CL like keyword lambda syntax (taken from Gauche).
  -  Constant definition form. (define-constant form).
  -  Builtin regular expression
-      -  mostly works O(n) 
- -   Replaceable reader 
+      -  mostly works O(n)
+ -   Replaceable reader
 
 WWW: https://code.google.com/p/sagittarius-scheme/

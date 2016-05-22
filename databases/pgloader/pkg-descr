@@ -14,9 +14,9 @@ gives large objects data location information into the main data file.
 pgloader parse it add the text or bytea content properly escaped to the
 COPY data.
 
-pgloader issues some timing statistics every "commit_every" commits. At 
-the end of processing each section, a summary of overall operations, 
-numbers of rows copied and commits, time it took in seconds, errors 
+pgloader issues some timing statistics every "commit_every" commits. At
+the end of processing each section, a summary of overall operations,
+numbers of rows copied and commits, time it took in seconds, errors
 logged and database errors is issued.
 
 WWW:	http://pgfoundry.org/projects/pgloader/

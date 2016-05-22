@@ -2,9 +2,9 @@ Edit /etc/rc.conf and set
 
   ovs_enable="YES"
 
-to enable OpenVISP Stats. 
+to enable OpenVISP Stats.
 
 Make sure this script should be invoked with privilege to read
 /var/log/maillog. For example, you may change the permission of
 maillog to be 644. Another way is to make maillog owned by
-the mail group, and put ovs_user in that group. 
+the mail group, and put ovs_user in that group.

@@ -1,8 +1,8 @@
-AntiMicro is a graphical program used to map keyboard keys and mouse controls 
-to a gamepad. This program is useful for playing PC games using a gamepad 
+AntiMicro is a graphical program used to map keyboard keys and mouse controls
+to a gamepad. This program is useful for playing PC games using a gamepad
 that do not have any form of built-in gamepad support. However,
 you can use this program to control any desktop application with a gamepad;
-this means that your system has to be running an X environment in order to 
+this means that your system has to be running an X environment in order to
 run this program.
 
 WWW: https://github.com/Ryochan7/antimicro

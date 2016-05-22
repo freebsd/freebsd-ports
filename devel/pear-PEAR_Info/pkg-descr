@@ -1,7 +1,7 @@
 This package generates a comprehensive information page for your current
 PEAR install.
 
-  * The format for the page is similar to that for phpinfo() except using PEAR 
+  * The format for the page is similar to that for phpinfo() except using PEAR
     colors.
   * Has complete PEAR Credits (based on the packages you have installed).
   * Will show if there is a newer version than the one presently installed

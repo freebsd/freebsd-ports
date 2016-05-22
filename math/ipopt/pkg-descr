@@ -1,22 +1,22 @@
-Ipopt (Interior Point OPTimizer, pronounced eye-pea-Opt) is a software 
+Ipopt (Interior Point OPTimizer, pronounced eye-pea-Opt) is a software
 package for large-scale nonlinear optimization.
 
-Ipopt is written in C++ and is released as open source code under the 
-Eclipse Public License (EPL). It is available from the COIN-OR 
-initiative. The code has been written by Carl Laird and Andreas Wchter, 
+Ipopt is written in C++ and is released as open source code under the
+Eclipse Public License (EPL). It is available from the COIN-OR
+initiative. The code has been written by Carl Laird and Andreas Wchter,
 who is the COIN project leader for Ipopt.
 
-The Ipopt distribution can be used to generate a library that can be 
-linked to one's own C++, C, or Fortran code, as well as a solver 
-executable for the AMPL modeling environment. The package includes 
-interfaces to CUTEr optimization testing environment, as well as the 
-MATLAB and R programming environments. IPOPT can be used on Linux/UNIX, 
+The Ipopt distribution can be used to generate a library that can be
+linked to one's own C++, C, or Fortran code, as well as a solver
+executable for the AMPL modeling environment. The package includes
+interfaces to CUTEr optimization testing environment, as well as the
+MATLAB and R programming environments. IPOPT can be used on Linux/UNIX,
 Mac OS X and Windows platforms.
 
 An excellent reference for this library can be found in:
 
-Wachter and L. T. Biegler, On the Implementation of a Primal-Dual Interior 
-Point Filter Line Search Algorithm for Large-Scale Nonlinear Programming, 
+Wachter and L. T. Biegler, On the Implementation of a Primal-Dual Interior
+Point Filter Line Search Algorithm for Large-Scale Nonlinear Programming,
 Mathematical Programming 106(1), pp. 25-57, 2006
 
 WWW: https://projects.coin-or.org/Ipopt

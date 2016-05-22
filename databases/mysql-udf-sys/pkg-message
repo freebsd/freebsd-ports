@@ -5,7 +5,7 @@ you need):
 
 USE mysql;
 
-CREATE FUNCTION 
+CREATE FUNCTION
     lib_mysqludf_sys_info RETURNS string SONAME 'lib_mysqludf_sys.so';
 CREATE FUNCTION sys_get RETURNS string SONAME 'lib_mysqludf_sys.so';
 CREATE FUNCTION sys_set RETURNS int SONAME 'lib_mysqludf_sys.so';

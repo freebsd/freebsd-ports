@@ -15,7 +15,7 @@ For Apache versions earlier than 2.4:
     <Directory "%%WWWDIR%%/">
 	Options none
 	AllowOverride Limit
-	
+
 	Order Deny,Allow
 	Deny from all
 	Allow from 127.0.0.1 .example.com

@@ -2,7 +2,7 @@ Java2html is  a syntax highlighter for  Java and C++  source code that
 produces a highlighted html file as output.
 
 Java2html offers the following features:
-   
+
     - support for Java and C++
     - fast (single pass conversion using flex)
     - doesn't change formatting - only adds <FONT COLOR=#XXXX> tags

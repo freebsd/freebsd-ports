@@ -1,6 +1,6 @@
-LuaJava allows Java components to be accessed from Lua using the same syntax 
-that is used for accessing Lua`s native objects, without any need for 
-declarations or any kind of preprocessing, and also allows Java to implement 
+LuaJava allows Java components to be accessed from Lua using the same syntax
+that is used for accessing Lua`s native objects, without any need for
+declarations or any kind of preprocessing, and also allows Java to implement
 an interface using Lua.
 
 WWW: http://www.keplerproject.org/luajava/

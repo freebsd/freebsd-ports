@@ -2,5 +2,5 @@ Herrie is a small command line music player. It has vim-like controls
 and has some unique features, like chroot()'ing and dropping privileges.
 It also supports submission of songs to AudioScrobbler. This makes it an
 ideal application for low-end jukeboxes.
- 
+
 WWW: http://herrie.info/

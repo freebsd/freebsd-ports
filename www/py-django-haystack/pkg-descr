@@ -2,9 +2,9 @@ Haystack is modular search for Django
 
 Search doesn't have to be hard. Haystack lets you write your search code once
 and choose the search engine you want it to run on.
-With a familiar API that should make any Djangonaut feel right at home and an 
+With a familiar API that should make any Djangonaut feel right at home and an
 architecture that allows you to swap things in and out as you need to, it's how
-search ought to be. Haystack is BSD licensed, plays nicely with third-party app 
-without needing to modify the source and supports Solr, Whoosh and Xapian. 
+search ought to be. Haystack is BSD licensed, plays nicely with third-party app
+without needing to modify the source and supports Solr, Whoosh and Xapian.
 
 WWW:	http://haystacksearch.org/

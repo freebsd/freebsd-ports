@@ -1,7 +1,7 @@
-This module implements a minimal lightweight exception object. It is meant 
-to be a compromise between more basic solutions like Carp which can only 
-print information and cannot handle exception objects, and more complex 
-solutions like Exception::Class which can be used to define complex inline 
+This module implements a minimal lightweight exception object. It is meant
+to be a compromise between more basic solutions like Carp which can only
+print information and cannot handle exception objects, and more complex
+solutions like Exception::Class which can be used to define complex inline
 exceptions and has a number of module dependencies.
 
 WWW: http://search.cpan.org/dist/Class-Throwable/

@@ -1,4 +1,4 @@
-Fast Expat based Erlang XML parsing library, with a strong focus 
+Fast Expat based Erlang XML parsing library, with a strong focus
 on XML stream parsing from network.
 
 WWW: https://github.com/processone/xml

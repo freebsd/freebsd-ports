@@ -4,7 +4,7 @@ focus on biological data.
 
 This port includes only the library, the apps have been
 moved to biology/seqan-apps. This is the last release of
-the version 1 API, it is highly recommended to upgrade to 
+the version 1 API, it is highly recommended to upgrade to
 biology/seqan (version 2).
 
 WWW: http://www.seqan.de/

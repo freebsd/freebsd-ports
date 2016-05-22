@@ -12,6 +12,6 @@ and crunch it into one of the following formats for your viewing pleasure:
 It can be configured to parse the data any one of several ways, including
 suppressing duplicate messages, stripping the host, and/or program fields,
 and modifying the time display format (supports TAI64 timestamps produced
-by DJB's multilog) of the log entries. 
+by DJB's multilog) of the log entries.
 
 WWW: http://xjack.org/logtool/

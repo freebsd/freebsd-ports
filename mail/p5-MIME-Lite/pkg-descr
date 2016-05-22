@@ -5,10 +5,10 @@ attachments. It does not require that you have the Mail:: or MIME::
 modules installed.
 
 To use the built-in SMTP interface (and thereby avoid calling sendmail) please
-install the Net module through ports/net/p5-Net, or stand alone. This package 
+install the Net module through ports/net/p5-Net, or stand alone. This package
 will contain the Net::SMTP code required.
 
-If you need more sophisticated behaviour from MIME, please install the 
+If you need more sophisticated behaviour from MIME, please install the
 MIME::tools package instead.
 
 WWW: http://search.cpan.org/dist/MIME-Lite/

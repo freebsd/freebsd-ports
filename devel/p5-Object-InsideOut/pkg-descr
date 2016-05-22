@@ -6,6 +6,6 @@ are blessed into a class with the scalar containing the ID for the object
 (usually a sequence number). For Perl 5.8.3 and later, the scalar reference is
 set as read-only to prevent accidental modifications to the ID. Object data
 (i.e., fields) are stored within the class's package in either arrays indexed
-by the object's ID, or hashes keyed to the object's ID. 
+by the object's ID, or hashes keyed to the object's ID.
 
 WWW: http://search.cpan.org/dist/Object-InsideOut/

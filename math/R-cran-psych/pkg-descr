@@ -6,6 +6,6 @@ and test structures are included. Several functions serve as a useful front end
 for structural equation modeling. Graphical displays of path diagrams, factor
 analysis and structural equation models are created using basic graphics. Some
 of the functions are written to support a book on psychometrics as well as
-publications in personality research. 
+publications in personality research.
 
 WWW:	http://cran.r-project.org/web/packages/psych/index.html

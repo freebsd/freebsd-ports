@@ -1,4 +1,4 @@
-File attachments as attributes for DataMapper, 
+File attachments as attributes for DataMapper,
 based on the original Paperclip by Jon Yurek at Thoughtbot
 
 WWW: https://github.com/krobertson/dm-paperclip

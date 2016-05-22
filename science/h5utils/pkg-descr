@@ -1,9 +1,9 @@
-h5utils is a set of utilities for visualization and conversion of 
+h5utils is a set of utilities for visualization and conversion of
 scientific data in the free, portable HDF5 format.
 
-Besides providing a simple tool for batch visualization as PNG images, 
-h5utils also includes programs to convert HDF5 datasets into the formats 
-required by other free visualization software (e.g. plain text, Vis5d, 
+Besides providing a simple tool for batch visualization as PNG images,
+h5utils also includes programs to convert HDF5 datasets into the formats
+required by other free visualization software (e.g. plain text, Vis5d,
 and VTK).
 
 WWW: http://ab-initio.mit.edu/wiki/index.php/H5utils

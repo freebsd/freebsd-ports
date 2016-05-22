@@ -1,8 +1,8 @@
 -------------------------------------------------------------
-Supybot is installed. 
+Supybot is installed.
 
 For a quick start:
-    - create a new directory from which to run your bot 
+    - create a new directory from which to run your bot
     - enter that directory
     - run supybot-wizard
 

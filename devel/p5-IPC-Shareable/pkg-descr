@@ -4,6 +4,6 @@ Currently either scalars or hashes can be tied; tying of arrays remains
 a work in progress. However, the variable being tied may contain
 arbitrarily complex data structures - including references to arrays,
 hashes of hashes, etc. See the "REFERENCES" entry in this man page below
-for more information. 
+for more information.
 
 WWW: http://search.cpan.org/dist/IPC-Shareable/

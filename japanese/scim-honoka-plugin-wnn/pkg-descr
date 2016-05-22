@@ -1,7 +1,7 @@
 Honoka is the SCIM IMEngine module using various input method engines: Wnn,
-anthy,prime,skk and canna. Honoka can also use them simultaneously. 
+anthy,prime,skk and canna. Honoka can also use them simultaneously.
 
-WWW: http://nop.net-p.org/modules/pukiwiki/index.php?%5B%5Bhonoka%5D%5D 
+WWW: http://nop.net-p.org/modules/pukiwiki/index.php?%5B%5Bhonoka%5D%5D
 (in Japanese)
 
 This port is honoka Wnn Input Method plugin.

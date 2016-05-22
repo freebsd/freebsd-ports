@@ -4,13 +4,13 @@ The Longitudinal Redundancy Check (LRC) is a one byte character,
 commonly used as a byte-field in data transmission over analog systems.
 
 Most commonly, in STX-ETX bounded strings sent in financial protocols.
-Following some previous experience with such protocols, I wrote 
+Following some previous experience with such protocols, I wrote
 an LRC function in perl and later decided to re-write in C
 for efficiency.  The result is this module String::LRC,
 which generates this aforementioned byte.
 
 Commonly used in financial protocols as follows with ETX (ASCII 03)
-appended to LRC sum and packets after the STX (ASCII 02), payload, 
-and ETX chars. 
+appended to LRC sum and packets after the STX (ASCII 02), payload,
+and ETX chars.
 
 WWW: http://search.cpan.org/dist/String-LRC/

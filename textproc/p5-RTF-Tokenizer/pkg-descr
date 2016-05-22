@@ -2,10 +2,10 @@
 you're looking to render RTF, or want a higher-level RTF processor,
 this is not the module for you - you want RTF::Reader.  This is the
 sixth release of  RTF::Tokenizer - it's faster, higher quality, and
-implements the RTF standard better than any previous release.      
-                                                                   
+implements the RTF standard better than any previous release.
+
     It's also philosophically  a better  module,  and conforms more
 strictly to Object Orientated  guidelines  - it can  be sub-classed
-and the interface is cleaner.                                      
+and the interface is cleaner.
 
 WWW: http://search.cpan.org/dist/RTF-Tokenizer/

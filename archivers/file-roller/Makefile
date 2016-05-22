@@ -17,7 +17,7 @@ RUN_DEPENDS=	gtar:archivers/gtar \
 		zipinfo:archivers/unzip
 
 # Port unzip is desired, but specify the uniquely named zipinfo to ensure
-# archivers/unzip is pulled in.  Using "unzip" is satisfied by base unzip  
+# archivers/unzip is pulled in.  Using "unzip" is satisfied by base unzip
 
 PORTSCOUT=	limitw:1,even
 

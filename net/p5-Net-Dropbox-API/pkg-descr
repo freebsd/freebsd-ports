@@ -1,4 +1,4 @@
 The Dropbox API is a OAuth based API. I try to abstract as much away
-as possible so you should not need to know too much about it. 
+as possible so you should not need to know too much about it.
 
 WWW: http://search.cpan.org/dist/Net-Dropbox-API/

@@ -1,6 +1,6 @@
 The standard Java libraries fail to provide enough methods for
 manipulation of its core classes. The Lang Component provides
-these extra methods. 
+these extra methods.
 
 The Lang Component provides a host of helper utilities for the
 java.lang API, notably String manipulation methods, basic

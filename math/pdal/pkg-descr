@@ -1,10 +1,10 @@
 PDAL is a BSD licensed library for translating and manipulating
-point cloud data of various formats. It is a library that is 
-analogous to the GDAL raster library. PDAL is focussed on reading, 
-writing, and translating point cloud data from the ever-growing 
-constellation of data formats that are being developed for working 
+point cloud data of various formats. It is a library that is
+analogous to the GDAL raster library. PDAL is focussed on reading,
+writing, and translating point cloud data from the ever-growing
+constellation of data formats that are being developed for working
 with multi-dimensional emitted-pulse scanning systems. While PDAL is
- not explicitly limited to working with LiDAR data formats, its 
+ not explicitly limited to working with LiDAR data formats, its
 initial rollout is focused in that area.
 
 WWW: http://www.pdal.io/

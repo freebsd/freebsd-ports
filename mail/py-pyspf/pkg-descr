@@ -1,6 +1,6 @@
-The pyspf Python module has been released as version 2.0. pyspf 2.0 
-was the first SPF implementation to fully conform to RFC 4408. This 
-release has also added IPv6 support. pyspf is the library behind 
+The pyspf Python module has been released as version 2.0. pyspf 2.0
+was the first SPF implementation to fully conform to RFC 4408. This
+release has also added IPv6 support. pyspf is the library behind
 several of the open SPF project's SPF record testing tools.
 
 WWW: https://pypi.python.org/pypi/pyspf

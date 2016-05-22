@@ -9,5 +9,5 @@ extend UML and Java development platform with the ability to add plug-ins.
   out of the whole design which results in an executable prototype, ideally.
 * Moreover the way back is provided, too (to some extend so far), so that Java
   sourcecode can be parsed and represented within UML.
-    
+
 WWW: http://wwwcs.uni-paderborn.de/cs/fujaba/index.html

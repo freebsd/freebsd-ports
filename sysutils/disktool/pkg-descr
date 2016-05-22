@@ -6,7 +6,7 @@ Unix command can also be initiated when this threshold is reached.
 The command and un-iconifying can be repeated every so many polls,
 configurable from the cmdline or from the Properties pop-up.
 The properties pop-up is obtained by selecting any gauge with the
-right mouse button. The middle mouse button has also been mapped to 
+right mouse button. The middle mouse button has also been mapped to
 force a filesystem poll to update the displayed data.
 
 `disktool' is a good sysadmin tool for monitoring diskfull situations

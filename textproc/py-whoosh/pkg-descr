@@ -6,12 +6,12 @@ works can be extended or replaced to meet your needs exactly.
 Some of Whoosh's features include:
 
 - Pythonic API.
-- Pure-Python. No compilation or binary packages needed, no mysterious 
+- Pure-Python. No compilation or binary packages needed, no mysterious
   crashes.
 - Fielded indexing and search.
-- Fast indexing and retrieval -- faster than any other pure-Python, scoring, 
+- Fast indexing and retrieval -- faster than any other pure-Python, scoring,
   full-text search solution I know of.
-- Pluggable scoring algorithm (including BM25F), text analysis, storage, 
+- Pluggable scoring algorithm (including BM25F), text analysis, storage,
   posting format, etc.
 - Powerful query language.
 - Pure Python spell-checker (as far as I know, the only one).

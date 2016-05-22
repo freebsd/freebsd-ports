@@ -2,6 +2,6 @@ libvanessa_logger provides a generic logging layer that may be used to log
 to one or more of syslog, an open file handle or a file name. Though due to
 limitations in the implementation of syslog opening multiple syslog loggers
 doesn't makes sense. Includes the ability to limit which messages will be
-logged based on priorities. 
+logged based on priorities.
 
 WWW: http://horms.net/projects/vanessa/

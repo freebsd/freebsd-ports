@@ -1,8 +1,8 @@
 libspectrum is a fairly simple library designed to make the handling
-of various ZX Spectrum emulator-related file formats easy.  
+of various ZX Spectrum emulator-related file formats easy.
 So far it handles:
 
-* Snapshots: .z80, .szx, .sna (all read/write), .zxs, .sp., 
+* Snapshots: .z80, .szx, .sna (all read/write), .zxs, .sp.,
   .snp and +D snapshots (read only)
 * Tape images: .tzx, .tap (read/write) and Warajevo .tap (read only)
 * Input recordings: .rzx (read/write)

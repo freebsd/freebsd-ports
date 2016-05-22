@@ -1,10 +1,10 @@
 The express way to send mail from Ruby.
 
-Send email in one command: 
+Send email in one command:
 Pony.mail(:to => 'someone@example.com', :body => 'hello')
 
-Pony uses /usr/sbin/sendmail to send mail if it 
-is available, otherwise it uses SMTP to localhost. 
+Pony uses /usr/sbin/sendmail to send mail if it
+is available, otherwise it uses SMTP to localhost.
 
 Also, you may need rubygem-smtp_tls if you want to
 send via tls/ssl and are using ruby < 1.8.7

@@ -8,7 +8,7 @@ In order to proper working of denyhosts
 sshd : /etc/hosts.deniedssh : deny
 sshd : ALL : allow
 2. issue the following command if /etc/hosts.deniedssh does not exist yet
-touch /etc/hosts.deniedssh 
+touch /etc/hosts.deniedssh
 -------------------------------------------------------------------------------
 Warning:
 

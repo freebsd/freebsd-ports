@@ -1,13 +1,13 @@
 Nessus is a security scanner. That is, it's a program which will scan a
 given network and will seek for vulnerabilities which could be exploited
-by some remote intruder. 
+by some remote intruder.
 
-The Nessus Project was originally started by Renaud Deraison 
-(deraison@worldnet.fr). Many people contributed in many ways to the 
+The Nessus Project was originally started by Renaud Deraison
+(deraison@worldnet.fr). Many people contributed in many ways to the
 project, and the Nessus core team is now made up of Alexis de Bernis
-(alexisb@mygale.org), who is the Java specialist, Noam Rathaus 
+(alexisb@mygale.org), who is the Java specialist, Noam Rathaus
 (dolittle@isrealmail.com) who is in charge of the Nessus client for
-Windows, and Renaud Deraison who is still here and who is the project 
-leader. 
+Windows, and Renaud Deraison who is still here and who is the project
+leader.
 
 WWW: http://www.nessus.org/

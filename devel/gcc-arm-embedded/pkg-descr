@@ -12,7 +12,7 @@ It includes:
  newlib-nano optimized for
  two versions of libstdc++, optimized for speed and size.
  gdb without sim.
- 
+
  All this is built with support for armv6-m, armv7-ar,
 armv7-m and armv7e-m targets, armv7e-m with and without
 FPU support and armv8-m too.

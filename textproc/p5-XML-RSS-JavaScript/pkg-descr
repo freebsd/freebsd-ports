@@ -1,17 +1,17 @@
 Serialize your RSS as JavaScript.
 
-Perhaps you use XML::RSS to generate RSS for consumption by RSS parsers. 
-Perhaps you also get requests for how to use the RSS feed by people who 
+Perhaps you use XML::RSS to generate RSS for consumption by RSS parsers.
+Perhaps you also get requests for how to use the RSS feed by people who
 have no idea how to parse XML, or write Perl programs for that matter.
 
 Enter XML::RSS::JavaScript, a simle subclass of XML::RSS which writes your
-RSS feed as a sequence of JavaScript print statements. This means you 
+RSS feed as a sequence of JavaScript print statements. This means you
 can then write the JavaScript to disk, and a users HTML can simple
 include it like so:
 
     <script language="JavaScript" src="/myfeed.js"></script>
 
-What's more the javascript emits HTML that can be fully styled with 
+What's more the javascript emits HTML that can be fully styled with
 CSS. See the CSS examples included with the distribution in the css directory.
 
 WWW: http://search.cpan.org/dist/XML-RSS-JavaScript/

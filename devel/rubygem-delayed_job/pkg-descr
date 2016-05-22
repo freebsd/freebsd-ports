@@ -1,7 +1,7 @@
-Delayed_job (or DJ) encapsulates the common pattern of 
-asynchronously executing longer tasks in the background. 
-It is a direct extraction from Shopify where the job table 
-is responsible for a multitude of core tasks. This gem is 
+Delayed_job (or DJ) encapsulates the common pattern of
+asynchronously executing longer tasks in the background.
+It is a direct extraction from Shopify where the job table
+is responsible for a multitude of core tasks. This gem is
 collectiveidea's fork (http://github.com/collectiveidea/delayed_job).
 
 WWW: https://github.com/collectiveidea/delayed_job

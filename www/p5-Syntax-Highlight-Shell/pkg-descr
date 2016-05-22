@@ -1,6 +1,6 @@
 This module is designed to take shell scripts and highlight them in HTML
 with meaningful colours using CSS. The resulting HTML output is ready
 for inclusion in a web page. Note that no reformating is done, all
-spaces are preserved. 
+spaces are preserved.
 
 WWW: http://search.cpan.org/dist/Syntax-Highlight-Shell/

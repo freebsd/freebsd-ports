@@ -1,29 +1,29 @@
-This module is designed to provide an extremely lightweight way to parse 
-moderately complex configuration files. As such, it exports a single 
-function - fastconfig() - and does not provide any OO access methods. 
+This module is designed to provide an extremely lightweight way to parse
+moderately complex configuration files. As such, it exports a single
+function - fastconfig() - and does not provide any OO access methods.
 Still, it is fairly full-featured.
 
 Here's how it works:
 
     %cf = fastconfig($file, $delim);
 
-Basically, the fastconfig() function returns a hash of keys and values 
-based on the directives in your configuration file. By default, directives 
-and values are separated by whitespace in the config file, but this can be 
+Basically, the fastconfig() function returns a hash of keys and values
+based on the directives in your configuration file. By default, directives
+and values are separated by whitespace in the config file, but this can be
 easily changed with the delimiter argument (see below).
 
-When the configuration file is read, its modification time is first 
-checked and the results cached. On each call to fastconfig(), if the 
-config file has been changed, then the file is reread. Otherwise, the 
-cached results are returned automatically. This makes this module great 
-for mod_perl modules and scripts, one of the primary reasons I wrote it. 
-Simply include this at the top of your script or inside of your 
+When the configuration file is read, its modification time is first
+checked and the results cached. On each call to fastconfig(), if the
+config file has been changed, then the file is reread. Otherwise, the
+cached results are returned automatically. This makes this module great
+for mod_perl modules and scripts, one of the primary reasons I wrote it.
+Simply include this at the top of your script or inside of your
 constructor function:
 
     my %cf = fastconfig('/path/to/config/file.conf');
 
-If the file argument is omitted, then fastconfig() looks for a file named 
-$0.conf in the ../etc directory relative to the executable. For example, 
+If the file argument is omitted, then fastconfig() looks for a file named
+$0.conf in the ../etc directory relative to the executable. For example,
 if you ran:
 
     /usr/local/bin/myapp
@@ -34,8 +34,8 @@ Then fastconfig() will automatically look for:
 
 This is great if you're really lazy and always in a hurry, like I am.
 
-If this doesn't work for you, simply supply a filename manually. Note that 
-filename generation does not work in mod_perl, so you'll need to supply a 
+If this doesn't work for you, simply supply a filename manually. Note that
+filename generation does not work in mod_perl, so you'll need to supply a
 filename manually.
 
 WWW: http://search.cpan.org/dist/Config-Fast/

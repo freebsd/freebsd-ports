@@ -3,6 +3,6 @@ netflow tools developed by the CERT/NetSA (Network Situational
 Awareness) Team to facilitate security analysis in large networks.
 
 SiLK consists of a suite of tools which collect and examine netflow
-data, allowing analysts to rapidly query large sets of data. 
+data, allowing analysts to rapidly query large sets of data.
 
 WWW: http://tools.netsa.cert.org/silk/

@@ -7,6 +7,6 @@ Gwget is a download manager for the Gnome Desktop. The main features are:
   the url to download, and ask you to only download certain files (multimedia,
   only the index, and so on).
 * Drag & Drop: You can d&d a url to the main gwget window or the notification
-  area icon to add a new download. 
+  area icon to add a new download.
 
 WWW: http://projects.gnome.org/gwget/

@@ -27,5 +27,5 @@ pre-patch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ltermcap|-lncurses|g' ${WRKSRC}/Makefile
-	
+
 .include <bsd.port.mk>

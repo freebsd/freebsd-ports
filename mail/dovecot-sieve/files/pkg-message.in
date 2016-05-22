@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------
- 
+
  This port assumes you are familiar with Dovecot and have it installed
  and running on the system you have installed this plugin on.
 
@@ -12,7 +12,7 @@
      }
 
  Further information on configuration can be found at:
- 
+
   http://Wiki.Dovecot.org/LDA/Sieve
 
 ---------------------------------------------------------------------

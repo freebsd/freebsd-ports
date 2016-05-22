@@ -1,8 +1,8 @@
-mkhexgrid is a small command-line program which generates hexagonal grids 
-of the sort used for strategy games. Hex grids can be created as PNG or 
-SVG images, and as PostScript. Virtually every aspect of the output can be 
-be adjusted.from grid line thickness and color, to style and size of hex 
-centers, to the style and position of hex coordinates. mkhexgrid makes it 
+mkhexgrid is a small command-line program which generates hexagonal grids
+of the sort used for strategy games. Hex grids can be created as PNG or
+SVG images, and as PostScript. Virtually every aspect of the output can be
+be adjusted.from grid line thickness and color, to style and size of hex
+centers, to the style and position of hex coordinates. mkhexgrid makes it
 simple to create whatever hex grid you need.
 
 WWW: http://www.nomic.net/~uckelman/mkhexgrid/

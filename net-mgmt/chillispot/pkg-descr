@@ -1,4 +1,4 @@
-Chillispot is used for authenticating users of a wireless LAN. It support WPA 
+Chillispot is used for authenticating users of a wireless LAN. It support WPA
 (Wireless Protected Access) encryption. Authentication, authorization and
 accounting (AAA) is handled by your favorite radius server.
 

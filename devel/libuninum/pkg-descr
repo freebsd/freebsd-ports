@@ -1,8 +1,8 @@
-This is a library for converting Unicode strings to numbers. 
-Standard functions like strtoul and strtod do this for numbers 
-written in the usual Western number system using the Indo-Arabic 
-numerals, but they do not handle other number systems. 
-The main functions take as input a UTF-32 Unicode string and 
+This is a library for converting Unicode strings to numbers.
+Standard functions like strtoul and strtod do this for numbers
+written in the usual Western number system using the Indo-Arabic
+numerals, but they do not handle other number systems.
+The main functions take as input a UTF-32 Unicode string and
 compute the corresponding unsigned integer.
 
 WWW:	http://billposer.org/Software/libuninum.html

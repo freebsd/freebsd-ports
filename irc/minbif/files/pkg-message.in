@@ -2,7 +2,7 @@
 To configure minbif, do the following:
 
 Copy %%PREFIX%%/etc/minbif/minbif.conf-dist
-  to %%PREFIX%%/etc/minbif/minbif.conf, 
+  to %%PREFIX%%/etc/minbif/minbif.conf,
 Copy %%PREFIX%%/etc/minbif/minbif.motd-dist
   to %%PREFIX%%/etc/minbif/minbif.motd
 and modify them to suit your needs.

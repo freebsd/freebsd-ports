@@ -1,6 +1,6 @@
 Jakarta Commons Net implements the client side of many basic Internet
 protocols. The purpose of the library is to provide fundamental protocol
-access. 
+access.
 
 Supported protocols are:
 

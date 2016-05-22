@@ -1,6 +1,6 @@
 This module implements efficient priority-queues using Fibonacci heaps.
 While for many purpose this is not as efficient as the more-common
 binomial heaps, it is very efficient in some aspects that make it very
-useful for traversal of very large graph structures. 
+useful for traversal of very large graph structures.
 
 WWW: http://www.csse.monash.edu.au/hons/projects/1999/Andrew.Snare/

@@ -5,10 +5,10 @@ It has a much expanded feature-set, including window grouping (similar
 to ion, pwm, or fluxbox), autoproperties, xinerama, keygrabber that
 supports keychains, and much more.
 
-o Lightweight and Unobtrusive, a window manager shouldn't be noticed. 
-o Very configurable, we all work and think in different ways. 
+o Lightweight and Unobtrusive, a window manager shouldn't be noticed.
+o Very configurable, we all work and think in different ways.
 o Automatic properties, for all the lazy people, make things appear as
-  they should when starting applications. 
+  they should when starting applications.
 o Chainable Keygrabber, usability for everyone.
 
 WWW: http://pekwm.org/

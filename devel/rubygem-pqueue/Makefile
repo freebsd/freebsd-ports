@@ -1,0 +1,15 @@
+# $FreeBSD$
+
+PORTNAME=	pqueue
+PORTVERSION=	2.1.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Priority queue class for Ruby
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+.include <bsd.port.mk>

@@ -1,4 +1,4 @@
-This module allows you to read configuration data written in a 
+This module allows you to read configuration data written in a
 human-readable and easily-editable text format and access it as
 a perl data structure. It also allows you to write configuration
 data from perl back to this format.

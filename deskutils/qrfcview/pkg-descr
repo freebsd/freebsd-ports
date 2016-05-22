@@ -5,6 +5,6 @@ qRFCView is a viewer for IETF RFCs. Advantages are:
   a simple click;
 * caching of RFC in a local directory;
 * tab-browsing of RFC;
-* searching. 
+* searching.
 
 WWW: http://qrfcview.berlios.de/

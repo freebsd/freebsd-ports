@@ -1,12 +1,12 @@
-This manual page documents briefly the checklink command, a.k.a. the W3C 
+This manual page documents briefly the checklink command, a.k.a. the W3C
 Link Checker.
 
-checklink is a program that reads an HTML or XHTML document, extracts a 
-list of anchors and lists and checks that no anchor is defined twice and 
-that all the links are dereferenceable, including the fragments. It warns 
-about HTTP redirects, including directory redirects, and can check 
+checklink is a program that reads an HTML or XHTML document, extracts a
+list of anchors and lists and checks that no anchor is defined twice and
+that all the links are dereferenceable, including the fragments. It warns
+about HTTP redirects, including directory redirects, and can check
 recursively a part of a web site.
 
 The program can be used either as a command line tool or as a CGI script.
- 
+
 WWW: http://search.cpan.org/dist/W3C-LinkChecker/

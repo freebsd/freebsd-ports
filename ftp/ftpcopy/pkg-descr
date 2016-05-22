@@ -3,10 +3,10 @@ Two command line ftp tools.
 ftpcopy is a simple FTP client written to copy files or directories
 (recursively) from a FTP server. It's main purpose is to mirror FTP sites which
 support the MLSD/MLST commands or which employ the EPLF directory listing
-format, although it also supports the traditional listing format (/bin/ls). 
+format, although it also supports the traditional listing format (/bin/ls).
 
 ftpls is a FTP client which generates directory listings, either in plain text
-or HTML format. 
+or HTML format.
 
 The tools only support passive mode FTP, intentionally.
 

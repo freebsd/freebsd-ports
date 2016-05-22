@@ -2,10 +2,10 @@ Archive::Tar provides an object oriented mechanism for handling tar files. It
 provides class methods for quick and easy files handling while also allowing
 for the creation of tar file objects for custom manipulation. If you have the
 IO::Zlib module installed, Archive::Tar will also support compressed or gzipped
-tar files. 
+tar files.
 
 An object of class Archive::Tar represents a .tar(.gz) archive full of files
-and things. 
+and things.
 
 Roman Shterenzon <roman@xpert.com>
 WWW: http://search.cpan.org/dist/Archive-Tar/

@@ -1,19 +1,19 @@
-Fudge is a Python module for using fake objects (mocks, stubs, etc) to test 
+Fudge is a Python module for using fake objects (mocks, stubs, etc) to test
 real ones.
 
 This module is designed for two specific situations:
     * Replace an object
-          o Temporarily return a canned value for a method or allow a method 
+          o Temporarily return a canned value for a method or allow a method
             to be called without affect.
     * Ensure an object is used correctly
-          o Declare expectations about what methods should be called and what 
+          o Declare expectations about what methods should be called and what
             arguments should be sent.
 
-Fudge was inspired by Mocha which is a simpler version of jMock. But unlike 
-Mocha, Fudge does not automatically hijack real objects; you explicitly patch 
-them in your test setup. And unlike jMock, Fudge is only as strict about 
-expectations as you want it to be. If you just want to expect a method call 
-without worrying about its arguments or the type of the arguments then you 
+Fudge was inspired by Mocha which is a simpler version of jMock. But unlike
+Mocha, Fudge does not automatically hijack real objects; you explicitly patch
+them in your test setup. And unlike jMock, Fudge is only as strict about
+expectations as you want it to be. If you just want to expect a method call
+without worrying about its arguments or the type of the arguments then you
 can.
 
 WWW:	http://farmdev.com/projects/fudge/

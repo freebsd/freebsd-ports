@@ -1,7 +1,7 @@
 POE::Component::IRC::Plugin::QueryDNS is a POE::Component::IRC plugin
 that provides DNSBL query facilities to the channels it occupies and via
 private messaging.
- 
+
 It uses POE::Component::Client::DNSBL to do non-blocking DNSBL queries.
 By default the plugin attempts to use POE::Component::IRC's internal
 PoCo-Client-DNS resolver object, but will spawn its own copy. You can

@@ -8,4 +8,4 @@ you might get the following error messages:
  | 65738:error:80066070:tpm engine:TPM_ENGINE_INIT:unit failure:e_tpm.c:484:
  | 65738:error:260B806D:engine routines:ENGINE_TABLE_REGISTER:init failed:/usr/src/secure/lib/libcrypto/../../../crypto/openssl/crypto/engine/eng_table.c:161:
  | 65738:error:260BC065:engine routines:INT_ENGINE_CONFIGURE:engine configuration error:/usr/src/secure/lib/libcrypto/../../../crypto/openssl/crypto/engine/eng_cnf.c:204:section=tpm_section, name=default_algorithms, value=ALL
- | 65738:error:0E07606D:configuration file routines:MODULE_RUN:module initialization error:/usr/src/secure/lib/libcrypto/../../../crypto/openssl/crypto/conf/conf_mod.c:235:module=engines, value=engine_section, retcode=-1      
+ | 65738:error:0E07606D:configuration file routines:MODULE_RUN:module initialization error:/usr/src/secure/lib/libcrypto/../../../crypto/openssl/crypto/conf/conf_mod.c:235:module=engines, value=engine_section, retcode=-1

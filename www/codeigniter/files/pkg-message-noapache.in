@@ -13,7 +13,7 @@ Optional post-installation instructions include:
 
 - Other user-configurable files include:
     %%WWWDIR%%/index.php
-    Any file located in %%WWWDIR%%/application/config 
+    Any file located in %%WWWDIR%%/application/config
 
 - If you are upgrading from a prior release, please visit:
   http://codeigniter.com/user_guide/installation/upgrading.html

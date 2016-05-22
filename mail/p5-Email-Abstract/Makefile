@@ -26,5 +26,5 @@ USE_PERL5=	configure
 BUILD_DEPENDS+=	p5-Module-Pluggable>1.5:devel/p5-Module-Pluggable
 RUN_DEPENDS+=	p5-Module-Pluggable>1.5:devel/p5-Module-Pluggable
 .endif
-	
+
 .include <bsd.port.post.mk>

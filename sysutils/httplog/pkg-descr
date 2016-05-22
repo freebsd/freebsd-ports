@@ -4,4 +4,4 @@ the filename to act as a template. This means that the logs in your logfiles
 will also be sorted according to the filename. For example, if you specify a
 logfile of /var/log/http%Y%m%d.log, a new log file would be generated each day,
 with content for only that one day. It also supports compression of logfiles
-using gzip, and many other useful functions.	
+using gzip, and many other useful functions.

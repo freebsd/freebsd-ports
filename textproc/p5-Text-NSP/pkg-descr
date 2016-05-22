@@ -1,12 +1,12 @@
-Text::NSP - The Ngram Statistic Package allows a user to count 
-sequences of Ngrams in large corpora of text, and measure their 
+Text::NSP - The Ngram Statistic Package allows a user to count
+sequences of Ngrams in large corpora of text, and measure their
 association.
 
-The module NSP.pm is a stub that doesn't have any real functionality. 
+The module NSP.pm is a stub that doesn't have any real functionality.
 The real work is done by five programs:
 
 count.pl statistic.pl rank.pl combig.pl kocos.pl
 
-These are not modules, and are run from the command line. 
+These are not modules, and are run from the command line.
 
 WWW: http://search.cpan.org/dist/Text-NSP/

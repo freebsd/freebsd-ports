@@ -1,7 +1,7 @@
 hpscat-1.3jshin
 -------------------
 
-hpscat is a small printing utility that print Hangul characters in 
+hpscat is a small printing utility that print Hangul characters in
 any PostScript printer(including ghostscript). It use the hangul PS
 font in ked, so you must load the font before printing the document
 processed by hpscat.

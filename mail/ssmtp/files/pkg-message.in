@@ -1,6 +1,6 @@
 sSMTP has been installed successfully.
 
-To replace sendmail with ssmtp type "make replace" or change 
+To replace sendmail with ssmtp type "make replace" or change
 your /etc/mail/mailer.conf to:
 
 sendmail	%%PREFIX%%/sbin/ssmtp

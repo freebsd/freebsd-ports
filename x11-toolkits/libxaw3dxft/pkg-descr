@@ -2,9 +2,9 @@ Xaw3dxft is a Xaw (Athena Widget Set) replacement that looks
 three-dimensional.
 
 Xaw3dxft is an extended version of xaw3d with support for UTF8 input
-and UTF8 encoding of text, and rendering text with the Freetype 
+and UTF8 encoding of text, and rendering text with the Freetype
 library and Truetype fonts. It should be mostly compatible with the
-original xaw3d library, except for font management : everything 
+original xaw3d library, except for font management : everything
 using the old X11 core font routines should be replaced by their
 freetype equivalents.
 

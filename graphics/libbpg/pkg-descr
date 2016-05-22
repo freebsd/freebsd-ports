@@ -1,17 +1,17 @@
-BPG (Better Portable Graphics) is a new image format. Its purpose is to 
+BPG (Better Portable Graphics) is a new image format. Its purpose is to
 replace the JPEG image format when quality or file size is an issue. Its
 main advantages are:
- - High compression ratio. Files are much smaller than JPEG for similar 
+ - High compression ratio. Files are much smaller than JPEG for similar
    quality.
  - Supported by most Web browsers with a small Javascript decoder (gzipped
    size: 56 KB).
  - Based on a subset of the HEVC open video compression standard.
- - Supports the same chroma formats as JPEG (grayscale, YCbCr 4:2:0, 4:2:2, 
-   4:4:4) to reduce the losses during the conversion. An alpha channel is 
+ - Supports the same chroma formats as JPEG (grayscale, YCbCr 4:2:0, 4:2:2,
+   4:4:4) to reduce the losses during the conversion. An alpha channel is
    supported. The RGB, YCgCo and CMYK color spaces are also supported.
  - Native support of 8 to 14 bits per channel for a higher dynamic range.
  - Lossless compression is supported.
  - Various metadata (such as EXIF, ICC profile, XMP) can be included.
- - Animation support. 
+ - Animation support.
 
 WWW: http://bellard.org/bpg/

@@ -38,8 +38,6 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_alarm.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_amqqueue_process.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_amqqueue_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_amqqueue_sup_sup.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_backend_dummy.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_backend_internal.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_amqplain.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_cr_demo.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_plain.beam
@@ -122,7 +120,6 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ssl.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_table.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_trace.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_types.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_upgrade.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_upgrade_functions.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_variable_queue.beam
@@ -141,12 +138,13 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/gm_specs.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit_cli.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit_framing.hrl
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit_misc.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit_msg_store.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/README
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/amqp_client-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/cowboy-1.0.3.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/cowlib-1.0.1.ez
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/mochiweb-2.13.0.ez
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/mochiweb-2.13.1.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_amqp1_0-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_ldap-%%VERSION%%.ez

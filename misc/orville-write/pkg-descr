@@ -4,13 +4,13 @@ heavily used on M-Net since 1985 and on Grex since 1991, as well as a few
 other systems. It is a ground-up reimplementation using no proprietary
 code. It's available under a Berkeley-style license (no charge, no
 restriction on commercial use, just don't take my name off of it). The
-current version is fairly portable. 
+current version is fairly portable.
 
 Orville write was written for use on M-Net and Grex, both public access
 Unix systems in Ann Arbor. As such, many of the features are designed to
 support a system featuring a delicate mix of novice users and hostile
 pranksters, plus a lot of people who just want to talk. It's user
 interface is pretty much identical to the normal write program, but it
-offers many extensions and improvements. 
+offers many extensions and improvements.
 
 WWW: http://unixpapa.com/write.html

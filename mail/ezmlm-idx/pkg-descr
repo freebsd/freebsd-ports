@@ -10,7 +10,7 @@ ezmlm-idx adds the following features:
 - subject prefix
 - subscriber name storage
 - customizable setup
-- multi-language and MIME support 
+- multi-language and MIME support
 - improved bounce handling
 - case-insensitive subscriber address storage
 - distributed lists (main + sublist transparent to the subscriber)

@@ -3,6 +3,6 @@ bytecode for dynamic languages.
 
 Parrot currently hosts a variety of language implementations in various
 stages of completion, including Tcl, Javascript, Ruby, Lua, Scheme, PHP,
-Python, Perl 6, APL, and a .NET bytecode translator. 
+Python, Perl 6, APL, and a .NET bytecode translator.
 
 WWW: http://www.parrotcode.org/
