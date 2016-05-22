@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}suds>=0.4.0:net/py-suds \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:databases/py-sqlalchemy
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0:databases/py-sqlalchemy07
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		fortran python shebangfix zip

@@ -19,7 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		nosetests-${PYTHON_VER}:devel/py-nose \
 		cython:lang/cython \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:databases/py-sqlalchemy08 \
 		${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}tables>=3.0.0:devel/py-tables \
@@ -51,7 +51,7 @@ BTLNCK_DESC=	Accelerate certain NaN evals via math/py-bottleneck
 NUMEXPR_DESC=	Accelerate certain numerical ops via math/py-numexpr
 BOTO_DESC=	Support Amazon S3 storage via devel/py-boto
 TABLES_DESC=	Support HDF5-based storage via devel/py-tables
-SQL_DESC=	Support SQL databases via databases/py-sqlalchemy
+SQL_DESC=	Support SQL databases via databases/py-sqlalchemy08
 LXML_DESC=	Parse HTML with devel/py-lxml and www/py-beautifulsoup
 JINJA2_DESC=	Support conditional HTML formatting with devel/py-Jinja2
 HTML5LIB_DESC=	Parse HTML with www/py-html5lib and www/py-beautifulsoup
@@ -70,12 +70,7 @@ BTLNCK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottleneck>0:math/py-bottleneck
 NUMEXPR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numexpr>=2.1.0:math/py-numexpr
 BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto
 TABLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tables>=3.0.0:devel/py-tables
-# Note: upstream recommends SQLAlchemy 0.8.1 or higher, which is not
-# available in the ports tree as of this writing
-# See: https://reviews.freebsd.org/D908
-# See: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=191442
-# See: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205852
-SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:databases/py-sqlalchemy
+SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:databases/py-sqlalchemy08
 
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml
 HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib

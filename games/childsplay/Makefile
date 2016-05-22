@@ -13,7 +13,7 @@ LICENSE=	GPLv3 # only
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:databases/py-sqlalchemy \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy07>0:databases/py-sqlalchemy07 \
 		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
 
 NO_BUILD=	yes

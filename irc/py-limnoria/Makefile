@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}python-gnupg>=0:security/py-python-gnupg \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0:databases/py-sqlalchemy07 \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa
 

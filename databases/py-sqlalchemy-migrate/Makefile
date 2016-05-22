@@ -13,7 +13,7 @@ COMMENT=	Database schema migrations for SQLAlchemy
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7:databases/py-sqlalchemy \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.7:databases/py-sqlalchemy07 \
 		${PYTHON_PKGNAMEPREFIX}Tempita>0:textproc/py-Tempita \
 		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator
 

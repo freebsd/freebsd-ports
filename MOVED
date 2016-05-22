@@ -8326,3 +8326,5 @@ devel/py-gyp-devel|devel/py-gyp|2016-05-16|Renamed to devel/py-gyp
 sysutils/relaunchd|sysutils/jobd|2016-05-20|Renamed to sysutils/jobd
 dns/nsd3|dns/nsd|2016-05-20|Has expired: NSD 3 is EOL, please upgrade to NSD 4 in dns/nsd
 security/easypg||2016-05-22|Has expired: Included into emacs since 2.3
+databases/py-sqlalchemy|databases/py-sqlalchemy07|2016-05-18|Renamed to databases/py-sqlalchemy07
+databases/py-sqlalchemy-devel|databases/py-sqlalchemy08|2016-05-18|Renamed to databases/py-sqlalchemy08
