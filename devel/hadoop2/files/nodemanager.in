@@ -20,6 +20,7 @@ load_rc_config "${name}"
 
 : ${nodemanager_enable:=NO}
 : ${nodemanager_user:=%%MAPRED_USER%%}
+: ${pidfile:=/var/run/hadoop/yarn-yarn-nodemanager.pid}
 
 command="%%PREFIX%%/sbin/yarn-daemon.sh"
 command_interpreter_execution="%%JAVA_HOME%%/bin/java"
