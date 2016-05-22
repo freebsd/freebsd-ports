@@ -1,0 +1,11 @@
+--- libdbusmenu-glib/Makefile.in.orig	2016-02-27 19:00:13 UTC
++++ libdbusmenu-glib/Makefile.in
+@@ -555,7 +555,7 @@ INTROSPECTION_COMPILER_ARGS = --included
+ @HAVE_INTROSPECTION_TRUE@Dbusmenu_0_4_gir_SCANNER_FLAGS = $(INTROSPECTION_SCANNER_ARGS)
+ @HAVE_INTROSPECTION_TRUE@girdir = $(datadir)/gir-1.0
+ @HAVE_INTROSPECTION_TRUE@gir_DATA = $(INTROSPECTION_GIRS)
+-@HAVE_INTROSPECTION_TRUE@typelibdir = $(INTROSPECTION_TYPELIBDIR)
++@HAVE_INTROSPECTION_TRUE@typelibdir = $(libdir)/girepository-1.0
+ @HAVE_INTROSPECTION_TRUE@typelib_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
+ 
+ #########################
