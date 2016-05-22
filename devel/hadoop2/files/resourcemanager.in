@@ -19,6 +19,7 @@ load_rc_config "${name}"
 
 : ${resourcemanager_enable:=NO}
 : ${resourcemanager_user:=%%MAPRED_USER%%}
+: ${pidfile:=/var/run/hadoop/yarn-yarn-resourcemanager.pid}
 
 command="%%PREFIX%%/sbin/yarn-daemon.sh"
 command_interpreter_execution="%%JAVA_HOME%%/bin/java"

@@ -20,6 +20,7 @@ load_rc_config "${name}"
 
 : ${datanode_enable:=NO}
 : ${datanode_user:=%%HDFS_USER%%}
+: ${pidfile:=/var/run/hadoop/hadoop-hdfs-namenode.pid}
 
 command="%%PREFIX%%/sbin/hadoop-daemon.sh"
 command_interpreter_execution="%%JAVA_HOME%%/bin/java"
