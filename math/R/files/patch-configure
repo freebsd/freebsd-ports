@@ -1,81 +1,81 @@
---- configure.orig	2015-08-13 09:21:16 UTC
+--- configure.orig	2016-04-25 22:17:08 UTC
 +++ configure
-@@ -20589,13 +20589,13 @@ if test "x$ac_cv_lib_mw__mwvalidcheckl" 
-   LIBM="-lmw"
+@@ -22470,13 +22470,13 @@ if test "x$ac_cv_lib_mw__mwvalidcheckl" 
+   LIBM=-lmw
  fi
  
 -  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for cos in -lm" >&5
 -$as_echo_n "checking for cos in -lm... " >&6; }
-+  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for cos in -lquadmath -lm" >&5
-+$as_echo_n "checking for cos in -lquadmath -lm... " >&6; }
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for cos in -lquadmath -lquadmath -lm" >&5
++$as_echo_n "checking for cos in -lquadmath -lquadmath -lm... " >&6; }
  if ${ac_cv_lib_m_cos+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lm  $LIBS"
-+LIBS="-lquadmath -lm  $LIBS"
++LIBS="-lquadmath -lquadmath -lm  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -20626,18 +20626,18 @@ fi
+@@ -22507,18 +22507,18 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_m_cos" >&5
  $as_echo "$ac_cv_lib_m_cos" >&6; }
  if test "x$ac_cv_lib_m_cos" = xyes; then :
 -  LIBM="$LIBM -lm"
-+  LIBM="$LIBM -lquadmath -lm"
++  LIBM="$LIBM -lquadmath -lquadmath -lm"
  fi
  
    ;;
  *)
 -  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for cos in -lm" >&5
 -$as_echo_n "checking for cos in -lm... " >&6; }
-+  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for cos in -lquadmath -lm" >&5
-+$as_echo_n "checking for cos in -lquadmath -lm... " >&6; }
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for cos in -lquadmath -lquadmath -lm" >&5
++$as_echo_n "checking for cos in -lquadmath  -lquadmath -lm... " >&6; }
  if ${ac_cv_lib_m_cos+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lm  $LIBS"
-+LIBS="-lquadmath -lm  $LIBS"
++LIBS="-lquadmath -lquadmath -lm  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -20668,7 +20668,7 @@ fi
+@@ -22549,7 +22549,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_m_cos" >&5
  $as_echo "$ac_cv_lib_m_cos" >&6; }
  if test "x$ac_cv_lib_m_cos" = xyes; then :
--  LIBM="-lm"
-+  LIBM="-lquadmath -lm"
+-  LIBM=-lm
++  LIBM="-lquadmath -lquadmath -lm"
  fi
  
    ;;
-@@ -20679,13 +20679,13 @@ esac
+@@ -22560,13 +22560,13 @@ esac
  ## </NOTE>
  ## AC_CHECK_LIBM computes LIBM but does not add to LIBS, hence we do
  ## the following as well.
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for sin in -lm" >&5
 -$as_echo_n "checking for sin in -lm... " >&6; }
-+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for sin in -lquadmath -lm" >&5
-+$as_echo_n "checking for sin in -lquadmath -lm... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for sin in -lquadmath -lquadmath -lm" >&5
++$as_echo_n "checking for sin in -lquadmath -lquadmath -lm... " >&6; }
  if ${ac_cv_lib_m_sin+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lm  $LIBS"
-+LIBS="-lquadmath -lm  $LIBS"
++LIBS="-lquadmath -lquadmath -lm  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -20720,7 +20720,7 @@ if test "x$ac_cv_lib_m_sin" = xyes; then
+@@ -22601,7 +22601,7 @@ if test "x$ac_cv_lib_m_sin" = xyes; then
  #define HAVE_LIBM 1
  _ACEOF
  
 -  LIBS="-lm $LIBS"
-+  LIBS="-lquadmath -lm $LIBS"
++  LIBS="-lquadmath -lquadmath -lm $LIBS"
  
  fi
  
-@@ -26166,7 +26166,7 @@ fi
+@@ -27958,7 +27958,7 @@ fi
  ## if nothing was obtained for SHLIB_CXXLDFLAGS.
  ##
  ## Note also that some systems (formerly AIX) do not allow for unresolved
@@ -84,16 +84,16 @@
  ## it exists) when building a shlib module via SHLIB_LIBADD.
  
  main_ld="${CC}"
-@@ -28310,7 +28310,7 @@ if ${ac_cv_lib_rt_clock_gettime+:} false
+@@ -30147,7 +30147,7 @@ if ${ac_cv_lib_rt_clock_gettime+:} false
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lrt  $LIBS"
-+LIBS=" $LIBS"
++LIBS="$LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -28353,7 +28353,7 @@ if test "x$ac_cv_lib_rt_clock_gettime" =
+@@ -30190,7 +30190,7 @@ if test "x$ac_cv_lib_rt_clock_gettime" =
  #define HAVE_LIBRT 1
  _ACEOF
  
@@ -102,7 +102,7 @@
  
  fi
  
-@@ -33267,7 +33267,7 @@ fi
+@@ -35109,7 +35109,7 @@ fi
      ## Part 2.  Try finding the tk library.
      if test -n "${TK_CONFIG}"; then
        . ${TK_CONFIG}
