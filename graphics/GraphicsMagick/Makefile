@@ -12,15 +12,8 @@ MASTER_SITES=	SF \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libjbig.so:graphics/jbigkit \
-		libjasper.so:graphics/jasper \
-		liblcms2.so:graphics/lcms2 \
-		libpng.so:graphics/png \
-		libtiff.so:graphics/tiff
-
-OPTIONS_DEFINE=	DOCS DPS FPX OPENMP Q8BIT SSE TEST WEBP WMF X11 XML
-OPTIONS_DEFAULT=OPENMP WEBP WMF X11 XML
+OPTIONS_DEFINE=	DOCS DPS FPX FREETYPE JASPER JBIG JPEG LCMS2 OPENMP Q8BIT PNG SSE TEST TIFF WEBP WMF X11 XML
+OPTIONS_DEFAULT=FREETYPE JASPER JBIG JPEG LCMS2 OPENMP PNG TIFF WEBP WMF X11 XML
 DPS_DESC=	Display Ghostscript support
 Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16-bit (quality)
 TEST_DESC=	Run bundled self-tests after build
@@ -32,7 +25,7 @@ CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		jpeg libtool localbase tar:bzip2
+USES=		libtool localbase tar:bzip2
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -46,15 +39,29 @@ DPS_LIB_DEPENDS=	libdps.so:x11/dgs
 DPS_USE=		XORG=xt
 FPX_CONFIGURE_WITH=	fpx
 FPX_LIB_DEPENDS=	libfpx.so:graphics/libfpx
+FREETYPE_CONFIGURE_WITH=	ttf
+FREETYPE_LIB_DEPENDS=		libfreetype.so:print/freetype2
+JASPER_CONFIGURE_WITH=	jp2
+JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
+JBIG_CONFIGURE_WITH=	jbig
+JBIG_LIB_DEPENDS=	libjbig.so:graphics/jbigkit
+JPEG_CONFIGURE_WITH=	jpeg
+JPEG_USES=		jpeg
+LCMS2_CONFIGURE=	lcms2
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 OPENMP_CONFIGURE_OFF=	--without-threads --disable-openmp
 OPENMP_CONFIGURE_ON=	--with-threads --enable-openmp --disable-openmp-slow
 OPENMP_USES=		compiler:openmp
+PNG_CONFIGURE_WITH=	png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 Q8BIT_CONFIGURE_OFF=	--with-quantum-depth=16
 Q8BIT_CONFIGURE_ON=	--with-quantum-depth=8
 Q8BIT_PLIST_SUB=	Q=8
 Q8BIT_PLIST_SUB_OFF=	Q=16
 TEST_BUILD_DEPENDS=	webfonts>=0:x11-fonts/webfonts
 TEST_RUN_DEPENDS=	webfonts>=0:x11-fonts/webfonts
+TIFF_CONFIGURE_WITH=	tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WMF_CONFIGURE_WITH=	wmf
