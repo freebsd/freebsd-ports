@@ -50,7 +50,7 @@ XS_RUN_DEPENDS=		p5-Type-Tiny-XS>=0.010:devel/p5-Type-Tiny-XS
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=1.001014:devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
