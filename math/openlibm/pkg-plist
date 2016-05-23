@@ -22,5 +22,5 @@ include/openlibm/types-compat.h
 lib/libopenlibm.a
 lib/libopenlibm.so
 lib/libopenlibm.so.2
-lib/libopenlibm.so.2.1
+lib/libopenlibm.so.2.2
 libdata/pkgconfig/openlibm.pc
