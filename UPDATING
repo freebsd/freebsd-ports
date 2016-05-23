@@ -5,6 +5,36 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160523:
+  AFFECTS: Users of databases/db6
+  AUTHOR: mandree@FreeBSD.org
+
+  The databases/db6 port has been updated to release 6.2.23.
+
+  This requires manual action in two places:
+    1. dependent applications need to be recompiled,
+    2. SQL databases, if any, need to be reindexed.
+
+  To obtain a list of ports needing a recompilation,
+  the following command should provide it:
+
+  # pkg info -r db6
+
+  Then rebuild db6 and the dependent ports.  For pkg users, this should
+  be transparent.
+
+  Portmaster users:
+  #  portmaster -r databases/db6
+  Portupgrade users:
+  #  portupgrade -fr databases/db6
+
+  In order to reindex SQL databases, a db6-upgrade61.sh script is
+  provided in ${PREFIX}/bin, if and only if the port's SQL option is
+  enabled.  For detailed reindexing instructions, see
+  http://docs.oracle.com/cd/E17076_05/html/installation/sqlite_ver61.html
+  and note that the FreeBSD port installs the upgrade61.sh script with a
+  db6- prefix that you need to add.
+
 20160511:
   AFFECTS: Users of audio/clementine-player
   AUTHOR: sbruno@FreeBSD.org

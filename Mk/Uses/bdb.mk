@@ -77,7 +77,7 @@ _DB_DEFAULTS+=	6
 # Dependency lines for different db versions
 db48_DEPENDS=	libdb-4.8.so:databases/db48
 db5_DEPENDS=	libdb-5.3.so:databases/db5
-db6_DEPENDS=	libdb-6.1.so:databases/db6
+db6_DEPENDS=	libdb-6.2.so:databases/db6
 # Detect db versions by finding some files
 db48_FIND=	${LOCALBASE}/include/db48/db.h
 db5_FIND=	${LOCALBASE}/include/db5/db.h
@@ -196,8 +196,8 @@ BDB_LIB_NAME=		db-5.3
 BDB_LIB_CXX_NAME=	db_cxx-5.3
 BDB_LIB_DIR=		${LOCALBASE}/lib/db5
 . elif ${_BDB_VER} == 6
-BDB_LIB_NAME=		db-6.1
-BDB_LIB_CXX_NAME=	db_cxx-6.1
+BDB_LIB_NAME=		db-6.2
+BDB_LIB_CXX_NAME=	db_cxx-6.2
 BDB_LIB_DIR=		${LOCALBASE}/lib/db6
 . endif
 BDB_LIB_NAME?=		db${_BDB_VER}
