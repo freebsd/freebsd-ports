@@ -38,8 +38,6 @@ USE_WX=		2.8+
 WX_COMPS=	wx:lib
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 
-MANUAL_PACKAGE_BUILD=	huge
-
 PORTDATA=	*
 
 .include <bsd.port.pre.mk>
