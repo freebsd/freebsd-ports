@@ -2,7 +2,7 @@ Nibbles is a simple ncurses-based console game in which you control a snake.
 Your objective is to eat as many dots as possible before you crash into
 yourself or the wall.
 
-WWW:	http://www.nmee.net/projects/nibbles/
+WWW: http://www.nmee.net/projects/nibbles/
 
 	- Michael L. Hostbaek
 	mich@FreeBSD.org

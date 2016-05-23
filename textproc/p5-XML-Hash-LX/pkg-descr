@@ -7,4 +7,4 @@ of course much slower than XML::Bare.
 
 It is faster in composing than XML::Hash, but slower than XML::Simple.
 
-WWW:	http://http://search.cpan.org/dist/XML-Hash-LX/
+WWW: http://http://search.cpan.org/dist/XML-Hash-LX/

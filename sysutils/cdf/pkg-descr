@@ -5,4 +5,4 @@ cdf means "colorized df". The main features of cdf are:
     * most of such utils needs some 3rd party libraries, python interpreter
       and so on, while cdf written in pure C
 
-WWW:	http://bmp-plugins.berlios.de/misc/cdf/cdf.html
+WWW: http://bmp-plugins.berlios.de/misc/cdf/cdf.html

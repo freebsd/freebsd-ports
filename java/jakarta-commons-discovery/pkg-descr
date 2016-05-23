@@ -13,4 +13,4 @@ working within managed environments. These allow configuration and property
 overrides without appealing to the global System properties (which are scoped
 across an entire JVM).
 
-WWW:	http://commons.apache.org/discovery/
+WWW: http://commons.apache.org/discovery/

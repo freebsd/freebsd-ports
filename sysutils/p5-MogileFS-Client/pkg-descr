@@ -3,4 +3,4 @@ system. The class method 'new' creates a client object against a
 particular mogilefs tracker and domain. This object may then be used
 to store and retrieve content easily from MogileFS.
 
-WWW:	http://search.cpan.org/dist/MogileFS-Client/
+WWW: http://search.cpan.org/dist/MogileFS-Client/

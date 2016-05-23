@@ -2,4 +2,4 @@ An R interface to the Lawson-Hanson implementation of an algorithm for
 non-negative least squares (NNLS). Also allows the combination of non-negative
 and non-positive constraints.
 
-WWW:	http://cran.r-project.org/web/packages/nnls/
+WWW: http://cran.r-project.org/web/packages/nnls/

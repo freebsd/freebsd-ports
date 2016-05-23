@@ -2,4 +2,4 @@ POE::Component::IRC::Plugin::RSS::Headlines, is a POE::Component::IRC
 plugin that provides a mechanism for retrieving RSS headlines from given
 URLs.
 
-WWW:	http://search.cpan.org/dist/POE-Component-IRC-Plugin-RSS-Headlines/
+WWW: http://search.cpan.org/dist/POE-Component-IRC-Plugin-RSS-Headlines/

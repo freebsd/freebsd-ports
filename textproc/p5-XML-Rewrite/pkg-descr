@@ -12,4 +12,4 @@ Beautifiers which do not look into the schema have only limited
 possibilities for cleanup, or may accidentally change the message
 content.
 
-WWW:	http://search.cpan.org/dist/XML-Rewrite/
+WWW: http://search.cpan.org/dist/XML-Rewrite/

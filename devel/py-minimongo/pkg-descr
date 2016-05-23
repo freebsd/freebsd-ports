@@ -3,4 +3,4 @@ to MongoDB. It provides a very thin, dynamicly typed (schema-less) object
 management layer for any data stored in any MongoDB collection. Minimongo
 directly calls the existing pymongo query syntax.
 
-WWW:	https://github.com/slacy/minimongo
+WWW: https://github.com/slacy/minimongo
