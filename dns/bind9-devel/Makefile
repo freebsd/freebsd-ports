@@ -6,12 +6,9 @@ PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/}
 PORTREVISION=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
-#MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;f=
+#MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;/
 PKGNAMESUFFIX=	9-devel
 DISTNAME=	${PORTNAME}9-${HASH}
-
-# Force the filename when fetched from the ISC gitweb.
-FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
@@ -19,8 +16,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0.a20160517
-HASH=		75167fb
+ISCVERSION=	9.11.0.a20160522
+HASH=		da06956
 
 MAKE_JOBS_UNSAFE=	yes
 
