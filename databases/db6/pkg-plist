@@ -14,6 +14,7 @@ bin/db%%BDBMAJ%%/db_stat
 bin/db%%BDBMAJ%%/db_tuner
 bin/db%%BDBMAJ%%/db_upgrade
 bin/db%%BDBMAJ%%/db_verify
+%%SQL%%bin/db%%BDBMAJ%%-upgrade61.sh
 %%SQL%%bin/db%%BDBMAJ%%/dbsql
 bin/db_archive-%%BDBVER%%
 bin/db_checkpoint-%%BDBVER%%
@@ -81,3 +82,10 @@ lib/libdb_cxx-%%BDBVER%%.so
 %%JAVA%%lib/libdb_java-%%BDBVER%%.so
 %%SQL%%lib/libdb_sql-%%BDBVER%%.so
 lib/libdb_stl-%%BDBVER%%.so
+%%TCL%%lib/db6/libdb_tcl-%%BDBVER%%.a
+%%TCL%%lib/db6/libdb_tcl-%%BDBVER%%.so
+%%TCL%%lib/db6/libdb_tcl-6.so
+%%TCL%%lib/db6/libdb_tcl.a
+%%TCL%%lib/db6/libdb_tcl.so
+%%TCL%%lib/db6/pkgIndex.tcl
+%%TCL%%lib/libdb_tcl-%%BDBVER%%.so
