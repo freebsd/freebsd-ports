@@ -4,7 +4,7 @@
  #include <sys/ioctl.h>
  #include <sys/stat.h>
  #include <dirent.h>
-+#ifndef __FreeBSD__
++#if ! (defined  __FreeBSD__ || defined __DragonFly__)
  #include <sys/inotify.h>
 +#endif
  #include <vector>
@@ -14,7 +14,7 @@
  
                  runstate = 1;
  
-+#ifndef __FreeBSD__
++#if ! (defined  __FreeBSD__ || defined __DragonFly__)
                  ifd = inotify_init();
                  inotify_add_watch(ifd, "/dev/dvb", IN_CREATE|IN_DELETE);
 +#endif
