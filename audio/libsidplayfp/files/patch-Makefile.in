@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-01-25 00:59:52.000000000 +0900
-+++ Makefile.in	2015-01-26 21:02:06.000000000 +0900
-@@ -2000,8 +2000,8 @@
+--- Makefile.in.orig	2015-01-24 15:59:52 UTC
++++ Makefile.in
+@@ -2000,8 +2000,8 @@ uninstall-am: uninstall-builders_hardsid
  
  .a65.bin:
  	o65file=`echo $@ | sed 's/bin/o65/'`;\
