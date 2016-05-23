@@ -8,9 +8,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Print well formatted XML
 
-LICENSE=	RUBY
+LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-nokogiri>=1.6.7.2:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes
