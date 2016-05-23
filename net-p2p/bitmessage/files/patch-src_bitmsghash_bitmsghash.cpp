@@ -5,7 +5,7 @@
  #include <stdio.h>
  #include <stdlib.h>
 -#ifdef __APPLE__
-+#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined (__DragonFly__)
  #include <sys/types.h>
  #include <sys/sysctl.h>
  #endif
