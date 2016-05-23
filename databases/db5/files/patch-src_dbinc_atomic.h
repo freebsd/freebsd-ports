@@ -1,5 +1,5 @@
---- ../src/dbinc/atomic.h.orig	2012-02-29 19:48:38.000000000 +0100
-+++ ../src/dbinc/atomic.h	2012-05-04 22:39:32.000000000 +0200
+--- src/dbinc/atomic.h.orig	2013-09-09 15:35:08 UTC
++++ src/dbinc/atomic.h
 @@ -70,7 +70,7 @@ typedef struct {
   * These have no memory barriers; the caller must include them when necessary.
   */
