@@ -40,7 +40,6 @@ RUN_DEPENDS=	crafty:games/crafty
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-MANUAL_PACKAGE_BUILD=	too big
 
 .if !defined(WITH_TBDIR)
 WITH_TBDIR=	${PREFIX}/lib/crafty/TB

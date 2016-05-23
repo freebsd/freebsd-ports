@@ -22,8 +22,6 @@ LICENSE_PERMS_CCbySA3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
-MANUAL_PACKAGE_BUILD=	huge (1GiB)
-
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes

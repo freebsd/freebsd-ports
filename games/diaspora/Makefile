@@ -49,8 +49,6 @@ DESKTOP_ENTRIES=	"Diaspora" "${COMMENT}" \
 	"${PORTNAME}" "fs2_open_${PORTNAME}" \
 	"Game;Simulation;" false
 
-MANUAL_PACKAGE_BUILD=	very large distfile set (~1.8 GB)
-
 OPTIONS_DEFINE=	DOCS INCJOYBTNS SPEECH WXLAUNCHER
 OPTIONS_DEFAULT=	SPEECH WXLAUNCHER
 INCJOYBTNS_DESC=	Increase a number of joystick buttons from 32 to 98
