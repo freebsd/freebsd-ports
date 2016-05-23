@@ -1,15 +1,15 @@
---- Makefile.orig	2016-03-08 10:28:02 UTC
+--- Makefile.orig	2016-05-23 11:53:14 UTC
 +++ Makefile
-@@ -66,8 +66,8 @@ install: all openlibm.pc
+@@ -78,8 +78,8 @@ install: all openlibm.pc
  	mkdir -p $(DESTDIR)$(shlibdir)
  	mkdir -p $(DESTDIR)$(pkgconfigdir)
  	mkdir -p $(DESTDIR)$(includedir)/openlibm
--	cp -f -a libopenlibm.$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
+-	cp -f -a libopenlibm.*$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
 -	cp -f -a libopenlibm.a $(DESTDIR)$(libdir)/
 -	cp -f -a include/*.h $(DESTDIR)$(includedir)/openlibm
 -	cp -f -a src/*.h $(DESTDIR)$(includedir)/openlibm
 -	cp -f -a openlibm.pc $(DESTDIR)$(pkgconfigdir)/
-+	${BSD_INSTALL_LIB} libopenlibm.$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
++	${BSD_INSTALL_LIB} libopenlibm.*$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
 +	${BSD_INSTALL_DATA} libopenlibm.a $(DESTDIR)$(libdir)/
 +	${BSD_INSTALL_DATA} include/*.h $(DESTDIR)$(includedir)/openlibm
 +	${BSD_INSTALL_DATA} src/*.h $(DESTDIR)$(includedir)/openlibm
