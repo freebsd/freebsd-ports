@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	letsencrypt.sh
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -43,25 +43,30 @@ PORTDOCS_PLIST_FILES=	%%PORTDOCS%%%%DOCSDIR%%/README.md
 
 SUB_FILES=	000.letsencrypt.sh pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
-PORTDOCS=	README.md
+PORTDOCS=	README.md dns-verification.md domains_txt.md ecc.md hook_chain.md \
+		import-from-official-client.md staging.md troubleshooting.md wellknown.md
 
-SHEBANG_FILES=	config.sh.example hook.sh.example letsencrypt.sh
+SHEBANG_FILES=	docs/examples/config.sh.example docs/examples/hook.sh.example letsencrypt.sh
 
 post-patch-ZSH-on:
-.	for p in config.sh.example hook.sh.example letsencrypt.sh
-	${REINPLACE_CMD} '1 s/bash/zsh/' ${WRKSRC}/${p}
+.	for p in docs/examples/config.sh.example docs/examples/hook.sh.example letsencrypt.sh
+		${REINPLACE_CMD} '1 s/bash/zsh/' ${WRKSRC}/${p}
 .	endfor
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/.acme-challenges ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}
-	${INSTALL_DATA} ${WRKSRC}/config.sh.example ${STAGEDIR}${ETCDIR}/config.sh.example
-	${INSTALL_DATA} ${WRKSRC}/hook.sh.example ${STAGEDIR}${ETCDIR}/hook.sh.example
-	${INSTALL_DATA} ${WRKSRC}/domains.txt.example ${STAGEDIR}${ETCDIR}/domains.txt.example
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/config.sh.example ${STAGEDIR}${ETCDIR}/config.sh.example
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/hook.sh.example ${STAGEDIR}${ETCDIR}/hook.sh.example
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/domains.txt.example ${STAGEDIR}${ETCDIR}/domains.txt.example
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODIC_FILES} ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}/${PERIODIC_FILES}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+.	for d in dns-verification domains_txt ecc hook_chain import-from-official-client \
+		staging troubleshooting wellknown
+		${INSTALL_MAN} ${WRKSRC}/docs/${d}.md ${STAGEDIR}${DOCSDIR}
+.	endfor
 
 .include <bsd.port.mk>
