@@ -9,8 +9,6 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Data files for Red Eclipse first-person shooter
 
-MANUAL_PACKAGE_BUILD=	huge (742MiB)
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	red-eclipse
 # acerpyro is duplicated as there's no way to not use default GH group
