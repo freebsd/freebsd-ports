@@ -12,7 +12,7 @@ DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	The Oracle Berkeley DB, revision ${BDBVER}
+COMMENT=	Oracle Berkeley DB, revision ${BDBVER}
 
 LICENSE=	AGPLv3
 
@@ -28,6 +28,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool
 INSTALL_TARGET=	install_include install_lib install_utilities
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 PLIST_SUB=	BDBMAJ=${BDBMAJ} BDBVER=${BDBVER}
 MAKE_ARGS+=	docdir=${DOCSDIR}
