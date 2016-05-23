@@ -404,7 +404,7 @@ do-build-mozc_el:
 	cd ${BUILD_WRKSRC}/unix/emacs && \
 	    ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
 	    -f batch-byte-compile mozc.el && \
-	    ${GZIP_CMD} -9 mozc.el
+	    ${GZIP_CMD} mozc.el
 
 do-install-mozc_el:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc
