@@ -15,7 +15,6 @@ USES=		pkgconfig tar:tgz
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext

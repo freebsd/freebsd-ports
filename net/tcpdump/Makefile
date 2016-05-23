@@ -20,7 +20,7 @@ UNPRIV_USER?=	nobody
 CHROOTDIR?=	/var/run/tcpdump
 
 OPTIONS_DEFINE=	CRYPTO IPV6 SMB SMI USER CHROOT
-OPTIONS_DEFAULT=	CRYPTO IPV6 SMB SMI
+OPTIONS_DEFAULT=	CRYPTO SMB SMI
 
 CRYPTO_DESC=	Support IPSEC and TCPMD5
 # This one is intentionally worded this way because the default

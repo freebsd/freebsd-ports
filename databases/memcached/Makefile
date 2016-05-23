@@ -20,7 +20,7 @@ CONFLICTS=	memcached-1.2*
 
 # Dtrace option disabled until it is fixed upstream
 OPTIONS_DEFINE=		SASL DOCS DTRACE
-OPTIONS_DEFAULT=	SASL DOCS
+OPTIONS_DEFAULT=	SASL
 
 DTRACE_DESC=	Enable dtrace probes
 SASL_DESC=	Enable SASL Authentication

@@ -29,7 +29,7 @@ STDERR_DESC=		Print logs to stderr instead of stdout
 EXPERIMENTAL_DESC=	Build experimental code
 DMG_XAR_DESC=		Enable DMG and XAR archives support
 
-OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS IPV6 DMG_XAR \
+OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DMG_XAR \
 			JSON PCRE
 
 ARC_RUN_DEPENDS=	arc:archivers/arc

@@ -30,7 +30,6 @@ USES=		gmake libtool pathfix shebangfix python pkgconfig compiler:c++11-lang
 USE_GNOME=	glib20
 
 OPTIONS_DEFINE=	NLS DOCS
-OPTIONS_DEFAULT=NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext

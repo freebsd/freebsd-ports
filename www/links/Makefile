@@ -34,7 +34,7 @@ TRANS_DESC=	Hack for background transparency
 UTF8_DESC=	UTF-8 support
 X11_DESC=	X11 graphics support
 
-OPTIONS_DEFAULT=	IPV6 UTF8 X11
+OPTIONS_DEFAULT=	UTF8 X11
 
 PLIST_FILES=	bin/links man/man1/links.1.gz
 

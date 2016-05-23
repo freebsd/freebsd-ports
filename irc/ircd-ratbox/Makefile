@@ -58,7 +58,7 @@ SMALL_NET_DESC=		Tune server internals for small networks
 SERVICES_DESC=		Enable ratbox-services compatibility code
 SHORTCUTS_DESC=		Build with ircd-shortcut commands
 
-OPTIONS_DEFAULT=	OPENSSL IPV6 ZIPLINKS SHARED_MODS
+OPTIONS_DEFAULT=	OPENSSL ZIPLINKS SHARED_MODS
 OPTIONS_EXCLUDE=	NLS EXAMPLES
 
 OPTIONS_SUB=		yes

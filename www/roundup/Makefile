@@ -16,7 +16,7 @@ CPE_VENDOR=	roundup-tracker
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	SQLITE PGSQL MYSQL NLS
-OPTIONS_DEFAULT=SQLITE NLS
+OPTIONS_DEFAULT=SQLITE
 
 .include <bsd.port.options.mk>
 
