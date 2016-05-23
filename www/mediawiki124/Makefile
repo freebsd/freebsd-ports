@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki12[356]-[0-9]*
 
+DEPRECATED=	EOL upstream
+EXPIRATION_DATE=	2016-08-23
+
 USES=		shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/hiphop/run-server
