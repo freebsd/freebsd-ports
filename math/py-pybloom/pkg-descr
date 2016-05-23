@@ -2,4 +2,4 @@ pybloom is a Python implementation of the bloom filter probabilistic data
 structure. The module also provides a Scalable Bloom Filter that allows a
 bloom filter to grow without knowing the original set size.
 
-WWW:	https://github.com/jaybaird/python-bloomfilter/
+WWW: https://github.com/jaybaird/python-bloomfilter/

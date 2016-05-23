@@ -3,4 +3,4 @@ a draft proposal for detecting and messages making fraudulent use of a sender
 address. The filter is written as a plugin to Sendmail or other filters using
 the milter API.
 
-WWW:	https://sourceforge.net/projects/batv-milter/
+WWW: https://sourceforge.net/projects/batv-milter/

@@ -10,4 +10,4 @@ pervasive approach such as GCD, even the best-written application cannot
 deliver the best possible performance, because it doesn'tt have full insight
 into everything else happening in the system.
 
-WWW:	http://libdispatch.macosforge.org/
+WWW: http://libdispatch.macosforge.org/

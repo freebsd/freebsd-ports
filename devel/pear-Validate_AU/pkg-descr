@@ -2,4 +2,4 @@ A PEAR data validation class for Australia. The package includes phone number,
 postal code, tax file number, Australian business number, Australian company
 number and Australian regional codes validation.
 
-WWW:	http://pear.php.net/package/Validate_AU/
+WWW: http://pear.php.net/package/Validate_AU/

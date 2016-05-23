@@ -5,4 +5,4 @@ such a status line every second. This ensures that even under high load, your
 status bar is updated correctly. Also, it saves a bit of energy by not hogging
 your CPU as much as spawning the corresponding amount of shell commands would.
 
-WWW:	http://i3wm.org/i3status/
+WWW: http://i3wm.org/i3status/

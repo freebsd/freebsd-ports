@@ -2,4 +2,4 @@ This extension allows changing the current process' name on Linux and *BSD
 systems. This is useful when using pcntl_fork() to identify running
 processes in process list
 
-WWW:	http://www.pecl.php.net/package/proctitle/
+WWW: http://www.pecl.php.net/package/proctitle/

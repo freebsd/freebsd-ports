@@ -11,4 +11,4 @@ especially prone to errors such as race conditions and deadlock. The
 motivation behind ZooKeeper is to relieve distributed applications the
 responsibility of implementing coordination services from scratch.
 
-WWW:	http://zookeeper.apache.org/
+WWW: http://zookeeper.apache.org/

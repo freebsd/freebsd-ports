@@ -5,4 +5,4 @@ objects that provide a rich file-like interface, including reading,
 writing, seeking and iteration. It also provides a number of useful
 classes built on top of this functionality.
 
-WWW:	http://www.rfk.id.au/software/filelike/
+WWW: http://www.rfk.id.au/software/filelike/

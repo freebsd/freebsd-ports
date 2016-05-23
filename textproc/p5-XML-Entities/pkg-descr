@@ -2,4 +2,4 @@ XML::Entities provides a mapping from the standard XML entities
 to their Unicode characters. A function for decoding is provided.
 The mapping can be generated from a DTD file with entity definitions.
 
-WWW:	http://search.cpan.org/dist/XML-Entities/
+WWW: http://search.cpan.org/dist/XML-Entities/

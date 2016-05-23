@@ -4,4 +4,4 @@ URI::Escape doesn't work for escaping and
 unescaping JavaScript like Unicode URI-escape ("%uXXXX").
 But you can use this module to do those.
 
-WWW:	http://search.cpan.org/dist/URI-Escape-JavaScript/
+WWW: http://search.cpan.org/dist/URI-Escape-JavaScript/

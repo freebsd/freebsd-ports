@@ -5,4 +5,4 @@ The module MooseX::HasDefaults::RW defaults is to rw.
 If you pass a specific value to any has's is, that overrides the default. If
 you do not want an accessor, pass is => undef.
 
-WWW:	http://search.cpan.org/dist/MooseX-HasDefaults/
+WWW: http://search.cpan.org/dist/MooseX-HasDefaults/

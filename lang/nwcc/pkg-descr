@@ -9,4 +9,4 @@ Cross-compilation is also supported.
 The x86 and AMD64 backends support two assemblers; nasm/yasm and gas.
 This can be useful for side-by-side assembler syntax comparison
 
-WWW:	http://nwcc.sourceforge.net/
+WWW: http://nwcc.sourceforge.net/

@@ -5,4 +5,4 @@ This hook is based on python-oauth2 and uses portions of its code
 at the moment, kudos to the authors and contributors for doing a
 huge effort in providing OAuth to python httplib2.
 
-WWW:	https://github.com/maraujop/requests-oauth-hook
+WWW: https://github.com/maraujop/requests-oauth-hook

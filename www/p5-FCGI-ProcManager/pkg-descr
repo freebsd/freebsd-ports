@@ -4,4 +4,4 @@ their web applications, and can take advantage of copy-on-write semantics
 prevalent in UNIX kernel process management.  The process manager should
 be invoked before the caller''s request loop
 
-WWW:	http://search.cpan.org/dist/FCGI-ProcManager/
+WWW: http://search.cpan.org/dist/FCGI-ProcManager/

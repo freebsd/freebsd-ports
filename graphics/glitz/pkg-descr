@@ -2,4 +2,4 @@ Glitz is an OpenGL image compositing library. Glitz provides
 Porter/Duff compositing of images and implicit mask generation for
 geometric primitives including trapezoids, triangles, and rectangles.
 
-WWW:	http://freedesktop.org/Software/glitz
+WWW: http://freedesktop.org/Software/glitz
