@@ -25,7 +25,7 @@ PORTDOCS=	armrc.sample
 OPTIONS_DEFINE=	TOR \
 		DOCS
 
-OPTIONS_DEFAULT=TOR DOCS
+OPTIONS_DEFAULT=TOR
 
 TOR_DESC=	Enable local tor support
 

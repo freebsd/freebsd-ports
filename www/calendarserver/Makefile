@@ -31,7 +31,7 @@ RUN_DEPENDS=	bash:shells/bash \
 OPTIONS_DEFINE=	EXAMPLES DOCS
 EXAMPLES_DESC=	Install configuration examples
 DOCS_DESC=	Install additional documentation
-OPTIONS_DEFAULT=	EXAMPLES DOCS
+
 .include <bsd.port.options.mk>
 
 USES=		shebangfix pgsql python \

@@ -26,7 +26,6 @@ CMAKE_ARGS+=	-DVMCS_INSTALL_PREFIX=${PREFIX} \
 		-DCMAKE_TOOLCHAIN_FILE=${WRKSRC}/makefiles/cmake/toolchains/arm-freebsd.cmake
 
 OPTIONS_DEFINE=	EXAMPLES DEBUG
-OPTIONS_DEFAULT=	EXAMPLES
 EXAMPLES_DESC=	Install test applications source code (hello_pi)
 EXAMPLES_LIB_DEPENDS=	libfreetype.so:print/freetype2
 

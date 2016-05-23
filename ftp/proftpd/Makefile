@@ -87,7 +87,7 @@ PLIST_FILES+=	libexec/proftpd/${m}.a \
 .endfor
 .else
 OPTIONS_DEFINE=	DOCS HTMLDOCS IPV6 NLS MEMCACHE PCRE
-OPTIONS_DEFAULT=	IPV6 NLS PCRE
+OPTIONS_DEFAULT=	PCRE
 
 HTMLDOCS_DESC=		Include HTML documentation
 MEMCACHE_DESC=		Memcache support using libmemcached
