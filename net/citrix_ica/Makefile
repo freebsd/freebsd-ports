@@ -8,7 +8,7 @@ CATEGORIES=	net comms linux
 MASTER_SITES=	#
 DISTNAME=	linuxx86-${PORTVERSION}.344519
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
