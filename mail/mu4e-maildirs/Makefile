@@ -25,7 +25,6 @@ PLIST_FILES=	${EMACS_SITE_LISPDIR}/mu4e/mu4e-maildirs-extension.elc \
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 do-build:
 	cd ${WRKSRC} && ${EMACS_CMD} --batch \

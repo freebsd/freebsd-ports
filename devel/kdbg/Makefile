@@ -17,7 +17,6 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=NLS
 
 .include <bsd.port.options.mk>
 

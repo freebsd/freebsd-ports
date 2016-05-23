@@ -40,7 +40,7 @@ USE_XORG+=	bigreqsproto compositeproto damageproto fixesproto fontsproto glproto
 CFLAGS+=	-fPIC
 
 OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER DOCS
-OPTIONS_DEFAULT=	GNUTLS NLS PAM VIEWER
+OPTIONS_DEFAULT=	GNUTLS PAM VIEWER
 VIEWER_DESC=		Build vncviewer
 
 .include <bsd.port.options.mk>

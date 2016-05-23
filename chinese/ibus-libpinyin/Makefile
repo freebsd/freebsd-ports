@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking --disable-boost \
 				--disable-lua-extension
 
 OPTIONS_DEFINE=		ENGLISH STROKE OPENCC NLS
-OPTIONS_DEFAULT=	ENGLISH STROKE NLS
+OPTIONS_DEFAULT=	ENGLISH STROKE
 OPTIONS_SUB=		yes
 ENGLISH_DESC=		Enable English input mode
 STROKE_DESC=		Enable stroke input mode

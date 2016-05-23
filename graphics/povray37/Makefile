@@ -16,7 +16,7 @@ BROKEN_powerpc64=	Does not build
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 OPTIONS_DEFINE=	X11 PNG JPEG TIFF OPENEXR STATIC IO EXAMPLES DOCS
-OPTIONS_DEFAULT=PNG JPEG EXAMPLES DOCS
+OPTIONS_DEFAULT=PNG JPEG
 OPTIONS_SUB=	yes
 IO_DESC=	Without I/O restrictions (security risk)
 EXAMPLES_DESC=	Install example scenes

@@ -14,6 +14,6 @@ PLIST=		${PKGDIR}/pkg-plist.client
 MASTERDIR=	${.CURDIR}/../../sysutils/bacula5-server
 
 OPTIONS_DEFINE=	NLS OPENSSL PYTHON
-OPTIONS_DEFAULT=NLS OPENSSL
+OPTIONS_DEFAULT=OPENSSL
 
 .include "${MASTERDIR}/Makefile"

@@ -32,7 +32,7 @@ EXTRA_DOCS=	${DISTNAME}-manual.html \
 		${DISTNAME}-manual.pdf ${DISTNAME}-manual.ps
 
 OPTIONS_DEFINE=		DOCS X11
-OPTIONS_DEFAULT=	DOCS X11
+OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>
 

@@ -17,7 +17,6 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 USES=		cmake:outsource
 
 OPTIONS_DEFINE=	NLS DOCS
-OPTIONS_DEFAULT=	NLS
 
 OPTIONS_SUB=	yes
 

@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 LIB_DEPENDS=	librsync.so:net/librsync1
 
 OPTIONS_DEFINE=		IPV6
-OPTIONS_DEFAULT=	IPV6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grke

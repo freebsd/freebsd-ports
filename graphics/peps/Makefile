@@ -24,9 +24,6 @@ PLIST_FILES=	bin/peps \
 PORTDOCS=	peps.pdf
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/peps ${STAGEDIR}${PREFIX}/bin

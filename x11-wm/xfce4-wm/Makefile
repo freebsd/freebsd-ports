@@ -30,7 +30,7 @@ USE_XORG=	x11 sm xcomposite xdamage xext xfixes xrandr xrender
 DATADIR=	${PREFIX}/share/xfwm4
 
 OPTIONS_DEFINE=		DRM NLS STARTUP
-OPTIONS_DEFAULT=	NLS STARTUP
+OPTIONS_DEFAULT=	STARTUP
 DRM_DESC=	Direct Rendering Module service
 STARTUP_DESC=	Startup notification
 DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm

@@ -12,7 +12,6 @@ USE_TEX=	full texhash
 USES=		metaport
 
 OPTIONS_DEFINE=	DOCS SOURCE
-OPTIONS_DEFAULT=DOCS
 
 DOCS_USE=	TEX=docs
 SOURCE_DESC=	Install source files

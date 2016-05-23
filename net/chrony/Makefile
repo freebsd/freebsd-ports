@@ -38,7 +38,6 @@ PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 \
 #  --without-tomcrypt   Don't use libtomcrypt even if it is available
 #  --disable-pps        Disable PPS API support
 OPTIONS_DEFINE=		IPV6
-OPTIONS_DEFAULT=	IPV6
 
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_OFF=	--disable-ipv6

@@ -19,7 +19,6 @@ USES=		tar:bzip2
 USE_GCC=	yes
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 DOCS_DESC=	Install README
 
 PLIST_FILES=	lib/liblite-malloc-shared.so \

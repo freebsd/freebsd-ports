@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 BROKEN_powerpc64=	Does not build
 
 OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS
-OPTIONS_DEFAULT=EXAMPLES PYGDB
+OPTIONS_DEFAULT=PYGDB
 PURE_DESC=	Use all libraries from bundle, do not depend on anything
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
