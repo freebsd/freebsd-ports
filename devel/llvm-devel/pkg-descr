@@ -5,4 +5,4 @@ This port includes Clang (a C/C++/Objective-C compiler), LLD (a linker),
 LLDB (a debugger), an OpenMP runtime library, and the LLVM infrastructure
 these are built on.
 
-WWW:	http://llvm.org/
+WWW: http://llvm.org/

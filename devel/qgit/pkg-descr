@@ -14,4 +14,4 @@ like push/pop and apply/format patches. You can also create new patches or
 refresh current top one using the same semantics of git commit,
 i.e. cherry picking single modified files.
 
-WWW:	https://sourceforge.net/projects/qgit
+WWW: https://sourceforge.net/projects/qgit

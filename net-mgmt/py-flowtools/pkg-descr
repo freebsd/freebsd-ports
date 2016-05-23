@@ -7,4 +7,4 @@ to access the individual flow records as instances of a second
 class called Flow. A Flow provides access to its data through
 attribute references.
 
-WWW:	http://code.google.com/p/pyflowtools/
+WWW: http://code.google.com/p/pyflowtools/

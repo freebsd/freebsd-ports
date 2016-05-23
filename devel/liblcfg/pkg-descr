@@ -2,4 +2,4 @@ liblcfg is a lightweight configuration file library written in C99.
 The file format supports arbitrarily nested simple assignments, lists
 and maps (aka dictionaries).
 
-WWW:	http://liblcfg.carnivore.it/
+WWW: http://liblcfg.carnivore.it/

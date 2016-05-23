@@ -2,4 +2,4 @@ hexcompare is a curses-based utility to compare and identify differences between
 two binary files. These differences are then represented visually with an
 interactive block diagram.
 
-WWW:	https://sourceforge.net/projects/hexcompare/
+WWW: https://sourceforge.net/projects/hexcompare/

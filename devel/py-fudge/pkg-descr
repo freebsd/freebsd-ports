@@ -16,4 +16,4 @@ expectations as you want it to be. If you just want to expect a method call
 without worrying about its arguments or the type of the arguments then you
 can.
 
-WWW:	http://farmdev.com/projects/fudge/
+WWW: http://farmdev.com/projects/fudge/

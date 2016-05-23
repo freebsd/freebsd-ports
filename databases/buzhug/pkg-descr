@@ -10,4 +10,4 @@ attributes are the fields defined when the base is created ; therefore,
 requests can be expressed as list comprehensions or generator expressions,
 instead of SQL queries.
 
-WWW:	http://buzhug.sourceforge.net/
+WWW: http://buzhug.sourceforge.net/

@@ -4,4 +4,4 @@ of edges. Since the module makes use of the open source igraph library
 written in almost 100% pure C, it is blazing fast and outperforms most other
 pure Python-based packages around.
 
-WWW:	http://cneurocvs.rmki.kfki.hu/igraph
+WWW: http://cneurocvs.rmki.kfki.hu/igraph

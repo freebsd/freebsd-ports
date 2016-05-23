@@ -14,4 +14,4 @@ Flash: A cookie based messaging library. Using json, data structures can be
        stored as a cookie in the browser and retrieved on the next request.
        Useful for messages such as "Thank you for logging in."
 
-WWW:	http://gaeutilities.appspot.com/
+WWW: http://gaeutilities.appspot.com/

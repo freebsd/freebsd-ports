@@ -6,4 +6,4 @@ devices in R which either rely on X11 or use GhostScript are thus are very slow
 and not suitable in server applications. GDD also supports advanced features
 such as anti-aliasing of both lines and text.
 
-WWW:	http://www.rosuda.org/R/GDD/
+WWW: http://www.rosuda.org/R/GDD/
