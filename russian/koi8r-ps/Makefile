@@ -22,7 +22,6 @@ DIST_SUBDIR=	koi8r-ps
 FONTMAP!=	${SH} ${FILESDIR}/find-fontmap.sh 2>/dev/null || ${ECHO_CMD}
 .endif
 
-NO_PACKAGE=	Nothing to build, configurations only
 NO_WRKSUBDIR=	Yes
 
 CPS_DIR=	${PREFIX}/share/koi8r-ps

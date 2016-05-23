@@ -50,7 +50,6 @@ BROKEN_powerpc64=	Does not build
 RUN_DEPENDS=	crafty:games/crafty
 
 NO_BUILD=	yes
-NO_PACKAGE=	Way too big
 
 .if !defined(WITH_TBDIR)
 WITH_TBDIR=	${PREFIX}/lib/crafty/TB
