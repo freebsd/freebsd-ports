@@ -6,6 +6,8 @@ include/mdds-%%API_VERSION%%/mdds/global.hpp
 include/mdds-%%API_VERSION%%/mdds/multi_type_matrix.hpp
 include/mdds-%%API_VERSION%%/mdds/multi_type_matrix_def.inl
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector.hpp
+include/mdds-%%API_VERSION%%/mdds/multi_type_vector/collection.hpp
+include/mdds-%%API_VERSION%%/mdds/multi_type_vector/collection_def.inl
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector_custom_func1.hpp
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector_custom_func2.hpp
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector_custom_func3.hpp
@@ -25,4 +27,5 @@ include/mdds-%%API_VERSION%%/mdds/sorted_string_map.hpp
 include/mdds-%%API_VERSION%%/mdds/sorted_string_map_def.inl
 include/mdds-%%API_VERSION%%/mdds/trie_map.hpp
 include/mdds-%%API_VERSION%%/mdds/trie_map_def.inl
+include/mdds-%%API_VERSION%%/mdds/trie_map_itr.hpp
 libdata/pkgconfig/mdds-%%API_VERSION%%.pc
