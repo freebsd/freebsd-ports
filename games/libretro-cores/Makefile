@@ -118,8 +118,8 @@ post-patch:
 
 do-build:
 	@for dir in ${CORE_DIRS}; do \
-	  ${ECHO_MSG} "===>  Building for ${PKGNAME}: core ${dir} ($$(date))"; \
-	  cd ${WRKSRC}/${dir}; \
+	  ${ECHO_MSG} "===>  Building for ${PKGNAME}: core $${dir} ($$(date))"; \
+	  cd ${WRKSRC}/$${dir}; \
 	  if [ -f Makefile.freebsd ]; then \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.freebsd ${_MAKE_JOBS} ${MAKE_ARGS}; \
 	  elif [ -f Makefile.libretro ]; then \
@@ -132,7 +132,7 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/libretro;
 	@for dir in ${CORE_DIRS}; do \
-	  ${INSTALL_LIB} $$(find ${WRKSRC}/${dir}/ -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro); \
+	  ${INSTALL_LIB} $$(find ${WRKSRC}/$${dir}/ -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro; \
 	done;
 
 print-upstream-revisions:
