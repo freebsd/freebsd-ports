@@ -79,7 +79,22 @@ do-configure:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
 post-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/server/etc
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/acks
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/data
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/disabled
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/hist
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/histlogs
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/hostdata
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/logs
+	${MKDIR} ${STAGEDIR}${WWWDIR}/data/rrd
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/download
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/tmp
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/html
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/notes
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/rep
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/snap
+	${MKDIR} ${STAGEDIR}${WWWDIR}/server/www/wml
 	${LN} -s ${LOCALBASE}/sbin/fping ${STAGEDIR}${WWWDIR}/server/bin/xymonping
 	${INSTALL_SCRIPT} ${WRKSRC}/build/upgrade430.sh ${STAGEDIR}${WWWDIR}/server/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/build/renamevars ${STAGEDIR}${WWWDIR}/server/bin/
