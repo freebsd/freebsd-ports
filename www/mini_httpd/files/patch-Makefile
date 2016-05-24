@@ -8,11 +8,11 @@
 -#SSL_INC =	-I$(SSL_TREE)/include
 -#SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
 +SSL_DEFS =	-DUSE_SSL
-+.if "$(OPENSSLINC)" != "/usr/include"
-+SSL_INC =	-I$(OPENSSLINC)
++.if ${OPENSSLINC} != "/usr/include"
++SSL_INC =	-I${OPENSSLINC}
 +.endif
-+.if "$(OPENSSLLIB)" != "/usr/lib"
-+SSL_LIBS =	-L$(OPENSSLLIB)
++.if ${OPENSSLLIB} != "/usr/lib"
++SSL_LIBS =	-L${OPENSSLLIB}
 +.endif
 +SSL_LIBS+=	-lssl -lcrypto
  
