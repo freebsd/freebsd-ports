@@ -134,6 +134,4 @@
 %%DBKDIR%%/4.5/docbookx.dtd
 %%DBKDIR%%/4.5/htmltblx.mod
 %%DBKDIR%%/4.5/soextblx.dtd
-%%DBKDIR%%/catalog
-@unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove CATALOG %D/%F
-@exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
+@xmlcatmgr %%DBKDIR%%/catalog

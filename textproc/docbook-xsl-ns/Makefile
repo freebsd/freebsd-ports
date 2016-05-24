@@ -23,32 +23,21 @@ NO_BUILD=	yes
 EXTRACT_AFTER_ARGS= --exclude=".*" --exclude="*.sh" --exclude "*.LOG"
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
-SUB_FILES=	pkg-install
-SUB_LIST+=	INSTDIR="${INSTDIR}" \
-		XMLCATMGR="${XMLCATMGR}" \
-		CATALOG_PORTS="${LOCALBASE}/share/xml/catalog.ports"
 PORTDOCS=	*
 
 INSTDIR=	share/xsl/docbook-ns
 DOCSRC=		${WRKDIR}/docbook-xsl-${PORTVERSION}
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	docbook-xsl-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
-.endif
+DOCS_DISTFILES=	docbook-xsl-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${INSTDIR}
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${DOCSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

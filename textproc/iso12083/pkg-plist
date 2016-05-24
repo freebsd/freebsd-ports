@@ -2,6 +2,4 @@ share/sgml/iso12083/article.dtd
 share/sgml/iso12083/book.dtd
 share/sgml/iso12083/maths.dtd
 share/sgml/iso12083/serial.dtd
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/catalog
-share/sgml/iso12083/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/catalog
+@xmlcatmgr share/sgml/iso12083/catalog

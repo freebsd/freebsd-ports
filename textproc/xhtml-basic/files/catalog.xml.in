@@ -4,7 +4,7 @@
 
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
   prefer="public"
-  xml:base="file://@@PREFIX@@/share/xml/dtd/xhtml-basic/">
+  xml:base="file://%%PREFIX%%/share/xml/dtd/xhtml-basic/">
 
   <rewriteSystem
     systemIdStartString="http://www.w3.org/TR/xhtml-basic/"
