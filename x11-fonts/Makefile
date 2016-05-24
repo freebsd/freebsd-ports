@@ -42,6 +42,7 @@
     SUBDIR += farsifonts
     SUBDIR += fifteen
     SUBDIR += fira
+    SUBDIR += firacode
     SUBDIR += fntsample
     SUBDIR += font-adobe-100dpi
     SUBDIR += font-adobe-75dpi
