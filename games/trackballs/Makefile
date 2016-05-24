@@ -13,7 +13,8 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	SDL-based Marble Madness clone
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libguile.so:lang/guile
 RUN_DEPENDS=	bash:shells/bash
