@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	unison
-PORTVERSION=	2.48.3
-PORTREVISION?=	2
+PORTVERSION=	2.48.4
+PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
@@ -18,6 +18,7 @@ LICENSE=	GPLv3
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake
 USE_OCAML=	yes
+WRKSRC=		${WRKDIR}/src
 NO_OCAML_RUNDEPENDS=yes
 WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
@@ -31,7 +32,7 @@ EXTRA_DOCS=	${DISTNAME}-manual.html \
 		${DISTNAME}-manual.pdf ${DISTNAME}-manual.ps
 
 OPTIONS_DEFINE= DOCS X11
-OPTIONS_DEFAULT?=        DOCS X11
+OPTIONS_DEFAULT?=	X11
 
 .include <bsd.port.options.mk>
 
