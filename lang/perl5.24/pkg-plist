@@ -2295,7 +2295,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 @dir %%SITE_ARCH%%/auto
 @dir %%SITE_PERL%%/man/man1
 @dir %%SITE_PERL%%/man/man3
-@exec makewhatis %D/%%SITEMANPREFIX%%/man
-@exec makewhatis %D/%%PERLMANPREFIX%%/man
+@postexec makewhatis %D/%%SITEMANPREFIX%%/man
+@postexec makewhatis %D/%%PERLMANPREFIX%%/man
 @rmtry %%PERLMANPREFIX%%/man/whatis
+@rmtry %%PERLMANPREFIX%%/man/mandoc.db
 @rmtry %%SITEMANPREFIX%%/man/whatis
+@rmtry %%SITEMANPREFIX%%/man/mandoc.db
