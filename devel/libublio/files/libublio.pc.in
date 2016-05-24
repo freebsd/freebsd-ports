@@ -1,0 +1,11 @@
+prefix=%%PREFIX%%
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libublio
+Description: User space caching library
+Version: %%PORTVERSION%%
+Libs: -L${libdir} -lublio
+Libs.private:
+Cflags: -I${includedir}
