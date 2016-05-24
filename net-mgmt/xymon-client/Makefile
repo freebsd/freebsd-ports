@@ -38,4 +38,9 @@ CONFIG_FILES=	clientlaunch.cfg xymonclient.cfg localclient.cfg
 do-configure:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
+post-install:
+	${MKDIR} ${STAGEDIR}${WWWDIR}/client/ext
+	${MKDIR} ${STAGEDIR}${WWWDIR}/client/logs
+	${MKDIR} ${STAGEDIR}${WWWDIR}/client/tmp
+
 .include <bsd.port.mk>
