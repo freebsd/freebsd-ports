@@ -4641,6 +4641,7 @@
     SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
+    SUBDIR += qbs
     SUBDIR += qbzr
     SUBDIR += qca
     SUBDIR += qca-qt5
