@@ -143,7 +143,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/website.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wslayout.xml
 share/xsl/website/VERSION
-share/xsl/website/catalog
+@xmlcatmgr share/xsl/website/catalog.xml
 share/xsl/website/extensions/ChangeLog
 share/xsl/website/extensions/saxon64.jar
 share/xsl/website/extensions/saxon64/ChangeLog

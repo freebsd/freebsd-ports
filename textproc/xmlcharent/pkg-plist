@@ -1,9 +1,5 @@
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%XMLDIR%%/catalog
-share/xml/xmlcharent/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%XMLDIR%%/catalog
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove nextCatalog %%XMLDIR%%/catalog.xml
-share/xml/xmlcharent/catalog.xml
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add nextCatalog %%XMLDIR%%/catalog.xml
+@xmlcatmgr share/xml/xmlcharent/catalog
+@xmlcatmgr share/xml/xmlcharent/catalog.xml
 share/xml/xmlcharent/iso-amsa.ent
 share/xml/xmlcharent/iso-amsb.ent
 share/xml/xmlcharent/iso-amsc.ent

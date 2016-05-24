@@ -11,17 +11,13 @@ DISTNAME=	isoENTS
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Character entity sets from ISO 8879:1986 (SGML)
 
-RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
+RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-PLIST_SUB=	DTD_NAME=${PORTNAME} XMLCATMGR=${XMLCATMGR}
-PLIST_SUB+=	CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
 INSTDIR=	${PREFIX}/share/sgml/iso8879
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${INSTDIR}
