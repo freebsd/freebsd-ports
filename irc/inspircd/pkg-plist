@@ -1,20 +1,20 @@
 bin/inspircd
 %%ETCDIR%%/examples/aliases/anope.conf.example
 %%ETCDIR%%/examples/aliases/atheme.conf.example
-%%ETCDIR%%/examples/censor.conf.example
-%%ETCDIR%%/examples/filter.conf.example
-%%ETCDIR%%/examples/helpop-full.conf.example
-%%ETCDIR%%/examples/helpop.conf.example
-%%ETCDIR%%/examples/inspircd.conf.example
-%%ETCDIR%%/examples/links.conf.example
-%%ETCDIR%%/examples/modules.conf.example
+@sample %%ETCDIR%%/examples/censor.conf.example %%ETCDIR%%/censor.conf
+@sample %%ETCDIR%%/examples/filter.conf.example %%ETCDIR%%/filter.conf
+@sample %%ETCDIR%%/examples/helpop-full.conf.example %%ETCDIR%%/helpop-full.conf
+@sample %%ETCDIR%%/examples/helpop.conf.example %%ETCDIR%%/helpop.conf
+@sample %%ETCDIR%%/examples/inspircd.conf.example %%ETCDIR%%/inspircd.conf
+@sample %%ETCDIR%%/examples/links.conf.example %%ETCDIR%%/links.conf
+@sample %%ETCDIR%%/examples/modules.conf.example %%ETCDIR%%/modules.conf
 %%ETCDIR%%/examples/modules/charybdis.conf.example
 %%ETCDIR%%/examples/modules/unrealircd.conf.example
-%%ETCDIR%%/examples/motd.txt.example
-%%ETCDIR%%/examples/opermotd.txt.example
-%%ETCDIR%%/examples/opers.conf.example
-%%ETCDIR%%/examples/quotes.txt.example
-%%ETCDIR%%/examples/rules.txt.example
+@sample %%ETCDIR%%/examples/motd.txt.example %%ETCDIR%%/motd.txt
+@sample %%ETCDIR%%/examples/opermotd.txt.example %%ETCDIR%%/opermotd.txt
+@sample %%ETCDIR%%/examples/opers.conf.example %%ETCDIR%%/opers.conf
+@sample %%ETCDIR%%/examples/quotes.txt.example %%ETCDIR%%/quotes.txt
+@sample %%ETCDIR%%/examples/rules.txt.example %%ETCDIR%%/rules.txt
 lib/inspircd/.gdbargs
 lib/inspircd/inspircd
 lib/inspircd/modules/cmd_admin.so
@@ -225,17 +225,4 @@ lib/inspircd/modules/m_watch.so
 lib/inspircd/modules/m_xline_db.so
 @dir lib/inspircd/data
 @dir lib/inspircd/logs
-@unexec if cmp -s %D/%%ETCDIR%%/examples/censor.conf.example %D/%%ETCDIR%%/censor.conf; then rm -f %D/%%ETCDIR%%/censor.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/filter.conf.example %D/%%ETCDIR%%/filter.conf; then rm -f %D/%%ETCDIR%%/filter.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/helpop-full.conf.example %D/%%ETCDIR%%/helpop-full.conf; then rm -f %D/%%ETCDIR%%/helpop-full.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/helpop.conf.example %D/%%ETCDIR%%/helpop.conf; then rm -f %D/%%ETCDIR%%/helpop.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/inspircd.conf.example %D/%%ETCDIR%%/inspircd.conf; then rm -f %D/%%ETCDIR%%/inspircd.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/links.conf.example %D/%%ETCDIR%%/links.conf; then rm -f %D/%%ETCDIR%%/links.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/modules.conf.example %D/%%ETCDIR%%/modules.conf; then rm -f %D/%%ETCDIR%%/modules.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/motd.txt.example %D/%%ETCDIR%%/motd.txt; then rm -f %D/%%ETCDIR%%/motd.txt; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/opermotd.txt.example %D/%%ETCDIR%%/opermotd.txt; then rm -f %D/%%ETCDIR%%/opermotd.txt; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/opers.conf.example %D/%%ETCDIR%%/opers.conf; then rm -f %D/%%ETCDIR%%/opers.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/quotes.txt.example %D/%%ETCDIR%%/quotes.txt; then rm -f %D/%%ETCDIR%%/quotes.txt; fi
-@unexec if cmp -s %D/%%ETCDIR%%/examples/rules.txt.example %D/%%ETCDIR%%/rules.txt; then rm -f %D/%%ETCDIR%%/rules.txt; fi
-@unexec echo "If permanently removing software, you may wish to remove the configuration directory by running \"rm -rf %%LOCALBASE%%/%%ETCDIR%%\""
-@exec for FILE in censor.conf filter.conf helpop-full.conf helpop.conf inspircd.conf links.conf modules.conf motd.txt opermotd.txt opers.conf quotes.txt rules.txt; do if [ ! -f %D/%%ETCDIR%%/${FILE} ]; then install %D/%%ETCDIR%%/examples/${FILE}.example %D/%%ETCDIR%%/${FILE}; fi; done
+@postunexec echo "If permanently removing software, you may wish to remove the configuration directory by running \"rm -rf %%PREFIX%%/%%ETCDIR%%\""
