@@ -1,0 +1,34 @@
+# $FreeBSD$
+
+actions: [file]
+arguments: true
+post-install: <<EOD
+  case "%@" in
+  /*) cat="%@" ;;
+  *) cat="%D/%@" ;;
+  esac
+  case "%@" in
+  *.xml)
+    xmlcatmgr_cmd="xmlcatmgr -c ${PKG_ROOTDIR}%D/share/xml/catalog.ports add nextCatalog"
+  ;;
+  *)
+    xmlcatmgr_cmd="xmlcatmgr -sc ${PKG_ROOTDIR}%D/share/sgml/catalog.ports add CATALOG"
+  ;;
+  esac
+  ${xmlcatmgr_cmd} ${cat}
+EOD
+post-deinstall: <<EOD
+  case "%@" in
+  /*) cat="%@" ;;
+  *) cat="%D/%@" ;;
+  esac
+  case "%@" in
+  *.xml)
+    xmlcatmgr_cmd="xmlcatmgr -c ${PKG_ROOTDIR}%D/share/xml/catalog.ports remove nextCatalog"
+  ;;
+  *)
+    xmlcatmgr_cmd="xmlcatmgr -sc ${PKG_ROOTDIR}%D/share/sgml/catalog.ports remove CATALOG"
+  ;;
+  esac
+  ${xmlcatmgr_cmd} ${cat}
+EOD

@@ -20,26 +20,16 @@ NO_BUILD=	yes
 
 USES=		tar:bzip2
 
-SUB_FILES=	pkg-deinstall pkg-install
-SUB_LIST=	XMLCATMGR="${XMLCATMGR}" \
-		CATALOG_PORTS_XML="${CATALOG_PORTS}" \
-		INSTDIR="${INSTDIR}"
-
 OPTIONS_DEFINE=	EXAMPLES
 
-XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	share/xsl/website
 PINSTDIR=	${PREFIX}/${INSTDIR}
 COPYDIRS=	extensions schema xsl
 
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS=	${XMLDIR}/catalog.ports
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PINSTDIR}
-.for i in VERSION catalog
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${PINSTDIR})
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/VERSION ${STAGEDIR}/${PINSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/catalog ${STAGEDIR}/${PINSTDIR}/catalog.xml
 .for i in ${COPYDIRS}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${PINSTDIR})
 .endfor
