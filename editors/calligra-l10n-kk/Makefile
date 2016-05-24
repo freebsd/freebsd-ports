@@ -10,5 +10,5 @@ COMMENT=	Kazakh messages and documentation for Calligra
 
 CALLIGRA_L10N=	kk
 
-.include "${.CURDIR}/../../editors/calligra-l10n/files/bsd.l10n.mk"
+.include "${.CURDIR:H:H}/editors/calligra-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>
