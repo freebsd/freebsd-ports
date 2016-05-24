@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-PORTVERSION=	6.2.14
+PORTVERSION=	6.2.15
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/bin \
 		--with-docdir=${EXAMPLESDIR}		\
 		--with-expldir=${DATADIR}/list_data	\
 		--with-defaultdir=${DATADIR}/defaults	\
-		--with-initdir=${PREFIX}/etc/rc.d	\
+		--without-initdir	\
 		--with-lockdir=/var/spool/lock		\
 		--with-modulesdir=${PREFIX}/libexec/${PORTNAME} \
 		--with-piddir=/var/run/${PORTNAME} \
