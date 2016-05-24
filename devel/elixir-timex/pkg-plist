@@ -117,6 +117,13 @@ lib/elixir/lib/timex/lib/timezone/timezone_local.ex
 lib/elixir/lib/timex/priv/olson_to_win.exs
 lib/elixir/lib/timex/priv/standard_to_olson.exs
 lib/elixir/lib/timex/priv/translations/day_periods.pot
+lib/elixir/lib/timex/priv/translations/de/LC_MESSAGES/day_periods.po
+lib/elixir/lib/timex/priv/translations/de/LC_MESSAGES/months.po
+lib/elixir/lib/timex/priv/translations/de/LC_MESSAGES/numbers.po
+lib/elixir/lib/timex/priv/translations/de/LC_MESSAGES/relative_time.po
+lib/elixir/lib/timex/priv/translations/de/LC_MESSAGES/symbols.po
+lib/elixir/lib/timex/priv/translations/de/LC_MESSAGES/units.po
+lib/elixir/lib/timex/priv/translations/de/LC_MESSAGES/weekdays.po
 lib/elixir/lib/timex/priv/translations/en/LC_MESSAGES/day_periods.po
 lib/elixir/lib/timex/priv/translations/en/LC_MESSAGES/months.po
 lib/elixir/lib/timex/priv/translations/en/LC_MESSAGES/numbers.po
