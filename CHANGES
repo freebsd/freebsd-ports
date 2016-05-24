@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160525:
+AUTHOR: bapt@FreeBSD.org
+
+  New keyword @xmlcatmgr has been added, to handle the XML and SGML catalog
+  maintainance, in order to improve consistency and correctness of the
+  generation of the catalog.
+  If the catalog file has an extension being '.xml' it will be automatically
+  added to the XML catalog, otherwise it will be added to the SGML catalog
+
 20160512:
 AUTHOR: emaste@FreeBSD.org
 
