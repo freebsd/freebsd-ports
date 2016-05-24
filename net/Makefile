@@ -1226,6 +1226,7 @@
     SUBDIR += sntop
     SUBDIR += sobby
     SUBDIR += socat
+    SUBDIR += sock
     SUBDIR += socketbind
     SUBDIR += socketpipe
     SUBDIR += socketw
