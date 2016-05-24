@@ -3,7 +3,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
 		http://mandree.home.pages.de/${PORTNAME}/
@@ -32,6 +32,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 		--without-hesiod --enable-fallback=no \
 		--with-ssl=${OPENSSLBASE}
+CONFIGURE_ENV=	ac_cv_have_decl_SSLv2_client_method=no
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
