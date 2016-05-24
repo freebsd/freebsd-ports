@@ -266,6 +266,7 @@
     SUBDIR += mpop
     SUBDIR += mreport
     SUBDIR += msgconvert
+    SUBDIR += msglint
     SUBDIR += msmtp
     SUBDIR += mu
     SUBDIR += mu4e
