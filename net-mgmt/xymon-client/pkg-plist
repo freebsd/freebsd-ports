@@ -27,15 +27,8 @@
 @sample %%WWWDIR%%/client/etc/localclient.cfg.sample
 %%WWWDIR%%/client/local/README
 %%WWWDIR%%/client/runclient.sh
-@exec chown -R %%XYMONUSER%% %D/%%WWWDIR%%/client
-@exec mkdir -p %D/%%WWWDIR%%/client/ext
-@exec mkdir -p %D/%%WWWDIR%%/client/logs
-@exec mkdir -p %D/%%WWWDIR%%/client/tmp
+@owner %%XYMONUSER%%
 @dir %%WWWDIR%%/client/tmp
 @dir %%WWWDIR%%/client/logs
-@dir %%WWWDIR%%/client/local
 @dir %%WWWDIR%%/client/ext
-@dir %%WWWDIR%%/client/etc
-@dir %%WWWDIR%%/client/bin
-@dir %%WWWDIR%%/client
-@dir %%WWWDIR%%
+@owner
