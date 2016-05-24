@@ -14,7 +14,6 @@ LICENSE_FILE=	LICENSE
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	msglint
-NO_INSTALL=	yes
 PLIST_FILES=	bin/msglint
 
 do-install:
