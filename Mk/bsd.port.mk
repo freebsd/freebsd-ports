@@ -1521,6 +1521,8 @@ QA_ENV+=		STAGEDIR=${STAGEDIR} \
 				"STRIP=${STRIP}" \
 				TMPPLIST=${TMPPLIST} \
 				LDCONFIG_DIR="${LDCONFIG_DIR}" \
+				PKGORIGIN=${PKGORIGIN} \
+				LIB_RUN_DEPENDS='${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,}' \
 				PKGBASE=${PKGBASE}
 .if !empty(USES:Mdesktop-file-utils)
 QA_ENV+=		USESDESKTOPFILEUTILS=yes

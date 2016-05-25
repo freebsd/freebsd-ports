@@ -11,6 +11,20 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20160525:
+AUTHOR: mat@FreeBSD.org
+
+  A new stage-qa test has been added, it reports all shared libraries
+  dependencies that are not part of the port list of dependencies.  It help
+  finds what is called proxy dependencies.
+
+  A is needed by B, and B is needed by C.  If C also needs A, then it needs to
+  be registered, and this check will tell you to do so.
+
+  Right now, it is only reporting the problems, but if you add
+  PROXYDEPS_FATAL=yes to your environment, it will give an error and will force
+  you to fix the dependencies.
+
+20160525:
 AUTHOR: bapt@FreeBSD.org
 
   New keyword @xmlcatmgr has been added, to handle the XML and SGML catalog
