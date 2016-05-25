@@ -9,7 +9,7 @@ MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 DISTNAME=	Sublime%20Text%202.0.2
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	xmj@FreeBSD.org
 COMMENT=	Sublime Text is a sophisticated text editor for code, markup and prose
 
 USES=		tar:bzip2
