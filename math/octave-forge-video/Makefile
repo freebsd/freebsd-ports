@@ -15,6 +15,7 @@ USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	HOME=${WRKSRC}
 CPPFLAGS+=      -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
