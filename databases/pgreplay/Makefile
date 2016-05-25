@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pgreplay
-PORTVERSION=	1.2.0
+DISTVERSIONPREFIX=	${PORTNAME:tu}_
+DISTVERSION=	1_2_0
 CATEGORIES=	databases
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -12,7 +13,6 @@ LICENSE=	PostgreSQL
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	laurenz
-GH_TAGNAME=	PGREPLAY_1_2_0
 
 USES=		pgsql autoreconf
 GNU_CONFIGURE=	yes
