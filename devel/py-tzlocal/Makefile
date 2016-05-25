@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	melvyn@magemana.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Returns the tzinfo object for the local timezone
 
 LICENSE=	CC0-1.0
