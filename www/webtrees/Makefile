@@ -10,7 +10,6 @@ MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/${PO
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Online genealogy viewer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 USES=		cpe shebangfix zip:infozip

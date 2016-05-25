@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	svn:devel/subversion
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		python
 USE_PYTHON=	distutils autoplist
 MAKE_ENV=	HOME=/dev/null

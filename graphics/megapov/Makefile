@@ -16,7 +16,6 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 #RUN_DEPENDS=	povray:graphics/povray-meta
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_WRKSRC=	${WRKSRC}/unix
 
 USES=		gmake jpeg localbase tar:bzip2

@@ -13,8 +13,6 @@ COMMENT=	C++ wrapper for libevent
 
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	EXAMPLES

@@ -22,7 +22,6 @@ POSTFIX_DESC=	Configure suid script for postfix
 
 TRACUSER?=	${WWWOWN}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-trac-user=${TRACUSER} --with-mta-user=${MTAUSER}
 USES=		python:2

@@ -17,8 +17,6 @@ LIB_DEPENDS=	libmed.so:french/med	\
 		libhdf5.so:science/hdf5	\
 		libcgns.so:science/cgnslib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

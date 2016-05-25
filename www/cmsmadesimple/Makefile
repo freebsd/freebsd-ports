@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 BROKEN_powerpc64=	Does not build
 
 USE_PHP=	mysql tokenizer gd
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

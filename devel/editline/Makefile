@@ -12,7 +12,6 @@ LICENSE=	BSD4CLAUSE
 USES=		autoreconf libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	troglobit
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LDCONFIG=	yes
 

@@ -22,8 +22,6 @@ DEBUG_DESC=	Internal SEE library debugging
 
 CONFLICTS=	see-devel-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USE_LDCONFIG=	yes
 USES=		libtool pathfix perl5
 USE_PERL5=	build

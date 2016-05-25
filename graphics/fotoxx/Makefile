@@ -18,8 +18,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		exiftool:graphics/p5-Image-ExifTool \
 		ufraw-batch:graphics/ufraw
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		desktop-file-utils execinfo gmake pkgconfig
 USE_GNOME=	gtk30
 ALL_TARGET=	fotoxx

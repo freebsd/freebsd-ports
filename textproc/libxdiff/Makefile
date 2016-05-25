@@ -12,8 +12,6 @@ COMMENT=	Create file differences/patches to both binary and text files
 
 LICENSE=	LGPL3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool

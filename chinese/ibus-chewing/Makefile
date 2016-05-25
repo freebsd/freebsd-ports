@@ -23,7 +23,6 @@ GLIB_SCHEMAS=	org.freedesktop.IBus.Chewing.gschema.xml
 USES=		cmake gettext pkgconfig
 USE_GNOME=	gtk20
 USE_XORG=	xtst
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
