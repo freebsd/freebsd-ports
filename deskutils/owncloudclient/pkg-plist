@@ -28,6 +28,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-7.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-8.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-9.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client12.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client6.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/folderwizard_local.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/folderwizard_remote.png
@@ -58,6 +59,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/installing.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/introduction.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/lowdiskspace.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/navigating.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/options.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/owncloud.1.txt
@@ -71,6 +73,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/comment-bright.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/comment-close.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/default.css
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/down-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/down.png
@@ -98,6 +101,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/installing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/lowdiskspace.html
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/navigating.html
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/options.html
@@ -116,6 +120,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/latex/client-7.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/client-8.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/client-9.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/client12.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/client6.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/fncychap.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/icon-error.png
@@ -129,6 +134,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/latex/logo-blue.pdf
 %%PORTDOCS%%%%DOCSDIR%%/latex/mac-share.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/menu.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/newfloat.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.aux
 %%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.idx
 %%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.ilg

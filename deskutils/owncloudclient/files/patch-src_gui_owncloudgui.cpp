@@ -1,11 +1,11 @@
---- src/gui/owncloudgui.cpp.orig	2015-03-16 14:28:58 UTC
+--- src/gui/owncloudgui.cpp.orig	2016-05-12 07:59:12 UTC
 +++ src/gui/owncloudgui.cpp
-@@ -33,6 +33,8 @@
- #include "openfilemanager.h"
+@@ -34,6 +34,8 @@
+ #include "accountmanager.h"
  #include "creds/abstractcredentials.h"
  
 +#include <climits>
 +
  #include <QDesktopServices>
+ #include <QDir>
  #include <QMessageBox>
- #include <QSignalMapper>
