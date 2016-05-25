@@ -1,5 +1,5 @@
 SilverCity is a lexing package, based on Scintilla, that can provide lexical
-analysis for over 20 programming and markup langauges.
+analysis for over 20 programming and markup languages.
 
 Scripting language bindings currently exist for Python.
 
