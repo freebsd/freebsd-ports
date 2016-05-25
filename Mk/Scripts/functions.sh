@@ -71,7 +71,7 @@ parse_plist() {
 			esac
 		;;
 		# Handle [file] Keywords
-		@info\ *|@shell\ *)
+		@info\ *|@shell\ *|@xmlcatmgr\ *)
 			set -- $line
 			shift
 			case "$@" in
