@@ -2,7 +2,7 @@ TransFig is a set of tools for creating TeX documents with graphics
 which are portable, in the sense that they can be printed in a wide
 variety of environments.
 
-Drivers currently exist for the following graphics langauges:
+Drivers currently exist for the following graphics languages:
 AutoCad slide, BOX, (E)EPIC macros, LaTeX picture environment,
 PIC, PiCTeX, PNG, PostScript, Encapsulated Postscript, GIF,
 IBM-GL, JPEG, PCX, MF (METAFONT), TeXtyl, TIFF, TPIC, XBM (X11
