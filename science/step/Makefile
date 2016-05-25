@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:math/eigen2
 LIB_DEPENDS=	libqalculate.so:math/libqalculate \
 		libgsl.so:math/gsl
 
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USES=		cmake:outsource pkgconfig tar:xz
 USE_QT4=	opengl moc_build qmake_build rcc_build uic_build
 

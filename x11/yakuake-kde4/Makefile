@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake gettext shebangfix tar:xz
 SHEBANG_FILES=	data/updaters/yakuake-${PORTVERSION}-startupnotification.pl
-USE_KDE4=	automoc4 kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 
 PLIST_SUB=	VERSION="${PORTVERSION}"

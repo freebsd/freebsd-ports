@@ -14,7 +14,7 @@ COMMENT=	Panel spacer plasma applet for KDE4
 LICENSE=	GPLv2
 
 USES=		cmake
-USE_KDE4=	automoc4 kdeprefix workspace
+USE_KDE4=	automoc4 workspace
 USE_QT4=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 

@@ -23,7 +23,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:deskutils/kdepim4-runtime \
 CONFLICTS_INSTALL=	kdepim44-4.*
 
 USE_GNOME=	libxml2 libxslt:build
-USE_KDE4=	kdelibs kdeprefix pimlibs kactivities \
+USE_KDE4=	kdelibs pimlibs kactivities \
 		akonadi automoc4 soprano nepomuk-widgets baloo
 USES=		cmake:outsource gmake shebangfix tar:xz
 SHEBANG_FILES=	agents/mailfilteragent/kconf_update/migrate-kmail-filters.pl \

@@ -61,7 +61,7 @@ PLIST_SUB+=	QT="" KDE="@comment "
 .else
 CONFLICTS_INSTALL+=	kid3-qt4-3.* kid3-qt5-3.*
 
-USE_KDE4=	kdelibs automoc4 kdeprefix
+USE_KDE4=	kdelibs automoc4
 CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}KDE"
 PLIST_SUB+=	QT="@comment " KDE=""
 .endif

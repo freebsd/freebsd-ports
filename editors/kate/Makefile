@@ -13,7 +13,7 @@ COMMENT=	Basic editor framework for the KDE system
 
 LIB_DEPENDS=	libqjson.so:devel/qjson
 
-USE_KDE4=	kdelibs kdeprefix automoc4 kactivities
+USE_KDE4=	kdelibs automoc4 kactivities
 USES=		cmake:outsource gettext perl5 tar:xz
 USE_PERL5=	build
 USE_QT4=	dbus gui script sql webkit xml \

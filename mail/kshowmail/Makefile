@@ -12,7 +12,7 @@ COMMENT=	POP3 mail checker for KDE
 
 LICENSE=	GPLv2
 
-USE_KDE4=	automoc4 kdeprefix kdelibs pimlibs
+USE_KDE4=	automoc4 kdelibs pimlibs
 USE_QT4=	corelib dbus gui network svg xml \
 		qmake_build uic_build rcc_build
 USE_PERL5=	build

@@ -8328,3 +8328,4 @@ dns/nsd3|dns/nsd|2016-05-20|Has expired: NSD 3 is EOL, please upgrade to NSD 4 i
 security/easypg||2016-05-22|Has expired: Included into emacs since 2.3
 databases/py-sqlalchemy|databases/py-sqlalchemy07|2016-05-18|Renamed to databases/py-sqlalchemy07
 databases/py-sqlalchemy-devel|databases/py-sqlalchemy08|2016-05-18|Renamed to databases/py-sqlalchemy08
+misc/kdehier4||2016-05-25|Not used since 2014

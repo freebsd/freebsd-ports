@@ -14,7 +14,7 @@ COMMENT=	Board game for KDE, also known as Mancala or Kalah
 BROKEN=		unfetchable
 
 USES=		cmake:outsource tar:bzip2
-USE_KDE4=	kdelibs kdeprefix automoc4 libkdegames
+USE_KDE4=	kdelibs automoc4 libkdegames
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

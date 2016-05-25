@@ -7,7 +7,6 @@ CATEGORIES=	x11-clocks kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE miscellaneous applications (meta port)
 
-USE_KDE4=	kdeprefix
 USES=		metaport
 
 OPTIONS_DEFINE=	AMOR KTEATIME KTUX

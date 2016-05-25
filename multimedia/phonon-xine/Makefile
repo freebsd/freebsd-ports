@@ -16,7 +16,7 @@ COMMENT=	The xine backend for Phonon
 LIB_DEPENDS=	libxine.so:multimedia/libxine
 
 USES=		cmake pkgconfig tar:bzip2
-USE_KDE4=	automoc4 kdeprefix
+USE_KDE4=	automoc4
 USE_QT4=	corelib dbus gui phonon \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	xcb

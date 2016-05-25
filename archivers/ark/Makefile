@@ -13,7 +13,7 @@ COMMENT=	Archiving tool for KDE
 
 LIB_DEPENDS=	libqjson.so:devel/qjson
 
-USE_KDE4=	kdeprefix automoc4 kdelibs libkonq
+USE_KDE4=	automoc4 kdelibs libkonq
 USES=		cmake:outsource libarchive cpe tar:xz
 CPE_VENDOR=	kde
 USE_QT4=	qtestlib qmake_build moc_build rcc_build uic_build

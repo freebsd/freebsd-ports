@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libqca.so:devel/qca \
 		libboost_thread.so:devel/boost-libs
 
-USE_KDE4=	kdelibs kdeprefix workspace libkonq \
+USE_KDE4=	kdelibs workspace libkonq \
 		nepomuk-core nepomuk-widgets automoc4 ontologies \
 		soprano
 USES=		cmake:outsource shebangfix sqlite tar:xz
