@@ -7,7 +7,7 @@ set -e
 
 . "${dp_SCRIPTSDIR}/functions.sh"
 
-validate_env dp_ECHO_MSG dp_PKG_BIN dp_PORTNAME
+validate_env dp_ECHO_MSG dp_PKG_BIN dp_PORTNAME dp_PKGNAME
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_CHECK_VULNERABLE}" ] && set -x
 
