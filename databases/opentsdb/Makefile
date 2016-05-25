@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	databases java
 MASTER_SITES=	https://github.com/OpenTSDB/opentsdb/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	xmj@FreeBSD.org
 COMMENT=	OpenTSDB is the Scalable Timeseries Database
 
 LICENSE=	LGPL3
