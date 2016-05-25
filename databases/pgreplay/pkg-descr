@@ -1,0 +1,5 @@
+pgreplay reads a PostgreSQL log file (*not* a WAL file), extracts the
+SQL statements and executes them in the same order and with the original
+timing against a PostgreSQL database.
+
+WWW: https://github.com/laurenz/pgreplay
