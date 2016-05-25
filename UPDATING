@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160525:
+  AFFECTS: Users of devel/qtcreator
+  AUTHOR: nolden@kde.org
+
+  QBS (Qt Build System) was previously shipped as part of qtcreator, now
+  it is independently available as devel/qbs. However, on upgrading
+  qtcreator to 3.6.1, the depends will detect qbs through a previously
+  installed qtcreator port and will not build/install correctly
+  (devel/qbs won't be installed automatically as depends)
+
+  The solution is to pkg remove qtcreator, then building works correctly.
+
 20160523:
   AFFECTS: Users of databases/db6
   AUTHOR: mandree@FreeBSD.org
