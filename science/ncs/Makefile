@@ -23,7 +23,6 @@ RUN_DEPENDS=	xmgrace:math/grace	\
 
 USES=		fortran gettext gmake iconv libtool python shebangfix
 USE_GNOME=	libxml2
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SHEBANG_FILES=	bin/runcase.in
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 GNU_CONFIGURE=	yes

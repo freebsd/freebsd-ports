@@ -16,8 +16,6 @@ RUN_DEPENDS=	bzr:devel/bzr
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		python
 USE_PYTHON=	distutils autoplist
 

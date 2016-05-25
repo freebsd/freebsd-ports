@@ -17,7 +17,6 @@ LIB_DEPENDS=	libgeos_c.so:graphics/geos \
 		libproj.so:graphics/proj \
 		libfreexl.so:textproc/freexl
 
-WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USES=		gmake iconv pathfix pkgconfig libtool sqlite
 USE_GNOME=	libxml2

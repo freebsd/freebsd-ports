@@ -11,14 +11,12 @@ COMMENT=	PC/SC driver for CS CCID smart card readers
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=	perl5 pkgconfig tar:bz2
 
 PLIST_FILES=	lib/pcsc/drivers/ifd-acsccid.bundle/Contents/FreeBSD/libacsccid.so \
 		lib/pcsc/drivers/ifd-acsccid.bundle/Contents/Info.plist
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 

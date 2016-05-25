@@ -12,7 +12,6 @@ COMMENT=	CVS-like Frontend to Perforce
 
 BROKEN=		unfetchable
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	c4
 
 OPTIONS_DEFINE=	DOCS
