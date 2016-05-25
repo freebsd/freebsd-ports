@@ -3,7 +3,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	99
@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE} \
 		--with-readline=-ledit \
+		--with-dlopen=yes \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
@@ -42,7 +43,7 @@ CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE RRL
+OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE RRL DLZ_FILESYSTEM
 OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE FIXED_RRSET SIGCHASE \
 			IPV6 THREADS FILTER_AAAA GOST PYTHON START_LATE MINCACHE \
 			LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS \
@@ -129,10 +130,10 @@ RPZ_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix LOCAL/mat/bind:vix
 RRL_CONFIGURE_ENABLE=	rrl
 
 DLZ_MYSQL_CONFIGURE_ON=	--with-dlz-mysql=yes
-DLZ_MYSQL_USE=		mysql=yes
+DLZ_MYSQL_USES=		mysql
 
 DLZ_BDB_CONFIGURE_ON=	--with-dlz-bdb=yes
-DLZ_BDB_USE=		bdb=yes
+DLZ_BDB_USES=		bdb
 
 DLZ_LDAP_CONFIGURE_ON=	--with-dlz-ldap=yes
 DLZ_LDAP_USE=		openldap=yes
