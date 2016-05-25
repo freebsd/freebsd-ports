@@ -3068,6 +3068,7 @@ check-vulnerable:
 			dp_ECHO_MSG="${ECHO_MSG}" \
 			dp_PKG_BIN="${PKG_BIN}" \
 			dp_PORTNAME="${PORTNAME}" \
+			dp_PKGNAME="${PKGNAME}" \
 			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
 			${SH} ${SCRIPTSDIR}/check-vulnerable.sh
 .endif
