@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	xmj@FreeBSD.org
 COMMENT=	Complement to SciPy for statistical computations
 
 LICENSE=	BSD3CLAUSE
