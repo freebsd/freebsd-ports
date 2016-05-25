@@ -7,7 +7,6 @@ CATEGORIES=	sysutils kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Administration applications (meta port)
 
-USE_KDE4=	kdeprefix
 USES=		metaport
 
 OPTIONS_DEFINE=	KCRON KSYSTEMLOG KUSER

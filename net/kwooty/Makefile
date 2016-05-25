@@ -14,7 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/unrar:archivers/unrar \
 		${LOCALBASE}/bin/par2:archivers/par2cmdline \
 		${LOCALBASE}/bin/7z:archivers/p7zip
 
-USE_KDE4=	kdelibs kdeprefix automoc4 workspace
+USE_KDE4=	kdelibs automoc4 workspace
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USES=		cmake gettext
 USE_LDCONFIG=	yes

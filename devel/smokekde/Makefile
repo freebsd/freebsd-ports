@@ -9,7 +9,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SMOKE bindings for KDE
 
-USE_KDE4=	kate kdelibs kdeprefix okular pimlibs \
+USE_KDE4=	kate kdelibs okular pimlibs \
 		smokegen smokeqt akonadi automoc4 soprano
 USE_QT4=	corelib dbus designer_build gui network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build

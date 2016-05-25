@@ -14,6 +14,6 @@ LIB_DEPENDS=	libgcal.so:deskutils/libgcal
 
 USES=		cmake gettext tar:bzip2
 USE_QT4=	qmake_build rcc_build moc_build uic_build dbus
-USE_KDE4=	kdelibs kdeprefix pimlibs automoc4 akonadi
+USE_KDE4=	kdelibs pimlibs automoc4 akonadi
 
 .include <bsd.port.mk>

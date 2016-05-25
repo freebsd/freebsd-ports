@@ -16,7 +16,6 @@ RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kcm_ktp_accounts.so:net-im/ktp-accounts-kcm
 		${KDE4_PREFIX}/lib/kde4/kded_ktp_integration_module.so:net-im/ktp-kded-integration-module \
 		${KDE4_PREFIX}/lib/kde4/libexec/ktp-text-ui:net-im/ktp-text-ui
 
-USE_KDE4=	kdeprefix
 USES=		metaport
 
 OPTIONS_DEFINE=	PLASMA SEND_FILE

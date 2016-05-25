@@ -8,7 +8,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for Calligra
 
 USES=		metaport
-USE_KDE4=	kdeprefix
 
 CALLIGRA_LANG_ALL=	bs ca ca@valencia cs da de el en_GB es et fi fr \
 			gl hu it ja kk nb nl pl pt pt_BR ru sk \

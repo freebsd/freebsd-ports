@@ -19,7 +19,7 @@ RUN_DEPENDS=	mplayer:multimedia/mplayer
 USES=		cmake:outsource pkgconfig
 USE_GNOME=	cairo gtk20
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
