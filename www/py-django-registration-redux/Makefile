@@ -19,6 +19,6 @@ NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-CONFLICTS_INSTALL=	pootle-* py-django-registration
+CONFLICTS_INSTALL=	pootle-[0-9]* py??-django-registration-[0-9]*
 
 .include <bsd.port.mk>
