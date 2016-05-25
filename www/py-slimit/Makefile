@@ -6,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	melvyn@magemana.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript minifier written in Python
 
 LICENSE=	BSD3CLAUSE

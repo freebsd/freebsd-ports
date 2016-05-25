@@ -5,7 +5,7 @@ PORTNAME=	n98-magerun
 PORTVERSION=	1.97.12
 CATEGORIES=	sysutils www
 
-MAINTAINER=	melvyn@magemana.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI tool for inspection and control of Magento installations
 
 LICENSE=	MIT

@@ -6,7 +6,7 @@ PORTVERSION=	1.8.1.0
 CATEGORIES=	www finance
 MASTER_SITES=	http://www.magentocommerce.com/downloads/assets/${PORTVERSION}/
 
-MAINTAINER=	melvyn@magemana.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Feature-rich eCommerce platform
 
 USES=		cpe
