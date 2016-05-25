@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4 \
 		libepub.so:textproc/ebook-tools \
 		libqmobipocket.so:graphics/kdegraphics4-mobipocket
 
-USE_KDE4=	kdeprefix automoc4 baloo kdelibs kfilemetadata \
+USE_KDE4=	automoc4 baloo kdelibs kfilemetadata \
 		ontologies soprano
 USES=		cmake:outsource tar:xz
 USE_QT4=	corelib dbus gui qmake_build moc_build rcc_build uic_build

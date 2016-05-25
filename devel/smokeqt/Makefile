@@ -13,7 +13,7 @@ COMMENT=	SMOKE bindings for Qt
 LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2 \
 		libqwt.so:x11-toolkits/qwt5
 
-USE_KDE4=	kdeprefix smokegen qimageblitz
+USE_KDE4=	smokegen qimageblitz
 USE_QT4=	corelib dbus declarative designer_build gui help \
 		multimedia network opengl phonon qtestlib script \
 		sql svg webkit xml xmlpatterns \

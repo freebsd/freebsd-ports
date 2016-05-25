@@ -13,7 +13,7 @@ COMMENT=	Basic applications for KDE
 LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
 USE_GNOME=	glib20
-USE_KDE4=	kdelibs kdeprefix baloo baloo-widgets libkonq \
+USE_KDE4=	kdelibs baloo baloo-widgets libkonq \
 		automoc4 kactivities
 USES=		cmake:outsource gettext tar:xz
 USE_QT4=	corelib dbus gui script xml \

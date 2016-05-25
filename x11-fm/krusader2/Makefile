@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake:outsource gettext tar:bzip2
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

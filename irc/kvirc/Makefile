@@ -67,7 +67,7 @@ WEBKIT_CMAKE_OFF=	-DWITHOUT_QTWEBKIT=yes
 CONFLICTS_INSTALL=	kvirc-qt4-4.*
 
 USES+=		shared-mime-info
-USE_KDE4=	kdelibs automoc4 kdeprefix
+USE_KDE4=	kdelibs automoc4
 PLIST_SUB+=	QT="@comment " KDE=""
 .endif #defined(PKGNAMESUFFIX)
 

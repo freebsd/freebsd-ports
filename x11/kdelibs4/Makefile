@@ -34,7 +34,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
 USE_GNOME=	libxml2 libxslt
-USE_KDE4=	kdeprefix oxygen \
+USE_KDE4=	oxygen \
 		attica automoc4 ontologies soprano strigi
 USES=		cmake:outsource fam gettext jpeg perl5 shared-mime-info shebangfix tar:xz
 USE_OPENSSL=	yes

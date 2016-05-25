@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=		cmake gettext shared-mime-info
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdeprefix kdelibs qimageblitz
+USE_KDE4=	automoc4 kdelibs qimageblitz
 
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	SQLITE MYSQL PGSQL

@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/katepart.so:editors/kate
 
 USES=		cmake
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build linguisttools_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

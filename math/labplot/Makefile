@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgsl.so:math/gsl
 USES=		cmake shared-mime-info tar:bzip2
 USE_XORG=	xft xpm
 USE_GCC=	yes
-USE_KDE4=	automoc4 kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 post-patch:

@@ -7,7 +7,6 @@ CATEGORIES=	devel kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
-USE_KDE4=	kdeprefix
 USES=		metaport
 
 OPTIONS_DEFINE=	CERVISIA \

@@ -231,7 +231,6 @@
     SUBDIR += kde4-l10n-wa
     SUBDIR += kde4-xdg-env
     SUBDIR += kdeedu4
-    SUBDIR += kdehier4
     SUBDIR += kdeutils4
     SUBDIR += kenny
     SUBDIR += kgeography

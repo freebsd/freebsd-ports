@@ -13,7 +13,7 @@ COMMENT=	Plugin extensible IDE for KDE
 LIB_DEPENDS=	libkdevplatforminterfaces.so:devel/kdevplatform
 RUN_DEPENDS=	gmake:devel/gmake
 
-USE_KDE4=	kdelibs kdeprefix workspace automoc4
+USE_KDE4=	kdelibs workspace automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		corelib declarative gui help script webkit xml
 USES=		cmake:outsource compiler:c++11-lib gmake shared-mime-info tar:bz2

@@ -7,7 +7,6 @@ CATEGORIES=	net kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Network applications (meta port)
 
-USE_KDE4=	kdeprefix
 USES=		metaport
 
 OPTIONS_DEFINE=	FILESHARING KDNSSD KGET KOPETE KRDC KRFB STRIGI

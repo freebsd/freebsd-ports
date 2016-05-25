@@ -9,7 +9,6 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SMOKE bindings for KDE
 
-USE_KDE4=	kdeprefix
 USE_QT4=	corelib xml qmake_build moc_build uic_build rcc_build
 USES=		cmake:outsource tar:xz
 CMAKE_ARGS+=	-DSMOKE_CMAKE_MODULE_DIR:PATH=${PREFIX}/lib/cmake/smoke

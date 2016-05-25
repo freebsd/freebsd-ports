@@ -15,7 +15,7 @@ LIB_DEPENDS=	libtidy.so:www/tidy-lib \
 		libboost_thread.so:devel/boost-libs
 
 USE_GNOME=	libxml2 libxslt
-USE_KDE4=	kdelibs pimlibs kdeprefix automoc4
+USE_KDE4=	kdelibs pimlibs automoc4
 USES=		cmake:outsource tar:xz
 USE_QT4=	dbus porting_build \
 		qmake_build moc_build rcc_build uic_build uic3_build

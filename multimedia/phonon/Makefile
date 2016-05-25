@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libqzeitgeist.so:sysutils/qzeitgeist
 
-USE_KDE4=	kdeprefix automoc4
+USE_KDE4=	automoc4
 USE_QT4=	corelib dbus gui \
 		qmake_build moc_build rcc_build uic_build
 USES=		cmake tar:xz

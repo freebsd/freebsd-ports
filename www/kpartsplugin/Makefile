@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTDATE}
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Browser file viewer using KDE technology
 
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USES=		cmake webplugin:native tar:bzip2
 CMAKE_ARGS=	-DNSPLUGIN_INSTALL_DIR:PATH="${WEBPLUGIN_DIR}"

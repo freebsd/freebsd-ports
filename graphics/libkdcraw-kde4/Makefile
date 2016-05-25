@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjasper.so:graphics/jasper \
 CMAKE_ARGS+=	-DWITH_OpenMP:BOOL=False \
 		-DENABLE_RAWSPEED=True
 
-USE_KDE4=	automoc4 kdeprefix kdelibs
+USE_KDE4=	automoc4 kdelibs
 USES=		cmake:outsource jpeg pkgconfig tar:xz
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

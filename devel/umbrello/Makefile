@@ -11,7 +11,7 @@ COMMENT=	UML modeller for KDE
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USE_GNOME=	libxml2 libxslt
 USES=		cmake:outsource tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
