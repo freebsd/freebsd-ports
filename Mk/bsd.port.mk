@@ -2065,8 +2065,8 @@ FETCH_CMD?=		${FETCH_BINARY} ${FETCH_ARGS}
 .if defined(RANDOMIZE_MASTER_SITES)
 .if exists(/usr/games/random)
 RANDOM_CMD?=	/usr/games/random
-RANDOM_ARGS?=	"-w -f -"
-_RANDOMIZE_SITES=	" |${RANDOM_CMD} ${RANDOM_ARGS}"
+RANDOM_ARGS?=	-w -f -
+_RANDOMIZE_SITES=	 |${RANDOM_CMD} ${RANDOM_ARGS}
 .endif
 .endif
 
@@ -3062,194 +3062,113 @@ check-deprecated:
 AUDITFILE?=		${PKG_DBDIR}/vuln.xml
 
 check-vulnerable:
-.if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING)
-	@if [ -f "${AUDITFILE}" ]; then \
-		if [ -x "${PKG_BIN}" ]; then \
-			vlist=`${PKG_BIN} audit "${PKGNAME}" || :`; \
-			if [ "$${vlist}" = "0 problem(s) in the installed packages found." ]; then \
-				vlist=""; \
-			fi; \
-		elif [ "${PORTNAME}" = "pkg" ]; then \
-			vlist=""; \
-		fi; \
-		if [ -n "$$vlist" ]; then \
-			${ECHO_MSG} "===>  ${PKGNAME} has known vulnerabilities:"; \
-			${ECHO_MSG} "$$vlist"; \
-			${ECHO_MSG} "=> Please update your ports tree and try again."; \
-			${ECHO_MSG} "=> Note: Vulnerable ports are marked as such even if there is no update available."; \
-			${ECHO_MSG} "=> If you wish to ignore this vulnerability rebuild with 'make DISABLE_VULNERABILITIES=yes'"; \
-			exit 1; \
-		fi; \
-	fi
+.if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING) \
+		&& exists(${AUDITFILE})
+	@${SETENV} \
+			dp_ECHO_MSG="${ECHO_MSG}" \
+			dp_PKG_BIN="${PKG_BIN}" \
+			dp_PORTNAME="${PORTNAME}" \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			${SH} ${SCRIPTSDIR}/check-vulnerable.sh
 .endif
 
-# set alg to any of SIZE, SHA256 (or any other checksum algorithm):
-DISTINFO_DATA?=	if [ \( -n "${DISABLE_SIZE}" -a -n "${NO_CHECKSUM}" \) -o ! -f "${DISTINFO_FILE}" ]; then exit; fi; \
-	DIR=${DIST_SUBDIR}; ${AWK} -v alg=$$alg -v file=$${DIR:+$$DIR/}$${file}	\
-		'$$1 == alg && $$2 == "(" file ")" {print $$4}' ${DISTINFO_FILE}
+# Quote simply quote all variables, except FETCH_ENV, some ports are creative
+# with it, and it needs to be quoted twice to pass through the echo/eval in
+# do-fetch.
+_DO_FETCH_ENV= \
+			dp_DISABLE_SIZE='${DISABLE_SIZE}' \
+			dp_DISTDIR='${_DISTDIR}' \
+			dp_DISTINFO_FILE='${DISTINFO_FILE}' \
+			dp_DIST_SUBDIR='${DIST_SUBDIR}' \
+			dp_ECHO_MSG='${ECHO_MSG}' \
+			dp_FETCH_AFTER_ARGS='${FETCH_AFTER_ARGS}' \
+			dp_FETCH_BEFORE_ARGS='${FETCH_BEFORE_ARGS}' \
+			dp_FETCH_CMD='${FETCH_CMD}' \
+			dp_FETCH_ENV=${FETCH_ENV:Q:Q} \
+			dp_FORCE_FETCH_ALL='${FORCE_FETCH_ALL}' \
+			dp_FORCE_FETCH_LIST='${FORCE_FETCH_LIST}' \
+			dp_MASTER_SITE_BACKUP='${_MASTER_SITE_BACKUP}' \
+			dp_MASTER_SITE_OVERRIDE='${_MASTER_SITE_OVERRIDE}' \
+			dp_MASTER_SORT_AWK='${MASTER_SORT_AWK}' \
+			dp_NO_CHECKSUM='${NO_CHECKSUM}' \
+			dp_RANDOMIZE_SITES='${_RANDOMIZE_SITES}' \
+			dp_SCRIPTSDIR='${SCRIPTSDIR}' \
+			dp_SORTED_MASTER_SITES_DEFAULT_CMD='${SORTED_MASTER_SITES_DEFAULT_CMD}' \
+			dp_SORTED_PATCH_SITES_DEFAULT_CMD='${SORTED_PATCH_SITES_DEFAULT_CMD}' \
+			dp_TARGET='${.TARGET}'
+.if defined(DEVELOPER)
+_DO_FETCH_ENV+= dp_DEVELOPER=yes
+.else
+_DO_FETCH_ENV+= dp_DEVELOPER=
+.endif
 
 # Fetch
 
 .if !target(do-fetch)
 do-fetch:
-	@${MKDIR} ${_DISTDIR}
-	@cd ${_DISTDIR};\
-	${_MASTER_SITES_ENV} ; \
-	for _file in ${DISTFILES}; do \
-		file=$${_file%%:*}; \
-		if [ $$_file = $$file ]; then	\
-			select='';	\
-		else	\
-			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
-		fi;	\
-		force_fetch=false; \
-		filebasename=$${file##*/}; \
-		for afile in ${FORCE_FETCH}; do \
-			afile=$${afile##*/}; \
-			if [ "x$$afile" = "x$$filebasename" ]; then \
-				force_fetch=true; \
-			fi; \
-		done; \
-		if [ ! -f $$file -a ! -f $$filebasename -o "$$force_fetch" = "true" ]; then \
-			if [ -L $$file -o -L $$filebasename ]; then \
-				${ECHO_MSG} "=> ${_DISTDIR}/$$file is a broken symlink."; \
-				${ECHO_MSG} "=> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
-				${ECHO_MSG} "=> Please correct this problem and try again."; \
-				exit 1; \
-			fi; \
-			if [ -f ${DISTINFO_FILE} -a "x${NO_CHECKSUM}" = "x" ]; then \
-				_sha256sum=`alg=SHA256; ${DISTINFO_DATA}`; \
-				if [ -z "$$_sha256sum" ]; then \
-					${ECHO_MSG} "=> $${DIR:+$$DIR/}$$file is not in ${DISTINFO_FILE}."; \
-					${ECHO_MSG} "=> Either ${DISTINFO_FILE} is out of date, or"; \
-					${ECHO_MSG} "=> $${DIR:+$$DIR/}$$file is spelled incorrectly."; \
-					exit 1; \
-				fi; \
-			fi; \
-			${ECHO_MSG} "=> $$file doesn't seem to exist in ${_DISTDIR}."; \
-			if [ ! -w ${_DISTDIR} ]; then \
-			   ${ECHO_MSG} "=> ${_DISTDIR} is not writable by you; cannot fetch."; \
-			   exit 1; \
-			fi; \
-			if [ ! -z "$$select" ] ; then \
-				__MASTER_SITES_TMP= ; \
-				for group in $$select; do \
-					if [ ! -z \$${_MASTER_SITES_$${group}} ] ; then \
-						eval ___MASTER_SITES_TMP="\$${_MASTER_SITES_$${group}}" ; \
-						__MASTER_SITES_TMP="$${__MASTER_SITES_TMP} $${___MASTER_SITES_TMP}" ; \
-					fi; \
-				done; \
-				___MASTER_SITES_TMP= ; \
-				SORTED_MASTER_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
-			else \
-				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
-			fi; \
-			sites_remaining=0; \
-			sites="`eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`"; \
-			for site in $${sites}; do \
-				sites_remaining=$$(($${sites_remaining} + 1)); \
-			done; \
-			for site in $${sites}; do \
-				sites_remaining=$$(($${sites_remaining} - 1)); \
-			    ${ECHO_MSG} "=> Attempting to fetch $${site}$${file}"; \
-				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
-				case $${file} in \
-				*/*)	${MKDIR} $${file%/*}; \
-						args="-o $${file} $${site}$${file}";; \
-				*)		args=$${site}$${file};; \
-				esac; \
-				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} ${FETCH_AFTER_ARGS}; then \
-					actual_size=`stat -f %z "$${file}"`; \
-					if [ -n "${DISABLE_SIZE}" ] || [ -z "$${CKSIZE}" ] || [ $${actual_size} -eq $${CKSIZE} ]; then \
-						continue 2; \
-					else \
-						${ECHO_MSG} "=> Fetched file size mismatch (expected $${CKSIZE}, actual $${actual_size})"; \
-						if [ $${sites_remaining} -gt 0 ]; then \
-							${ECHO_MSG} "=> Trying next site"; \
-							${RM} -f $${file}; \
-						fi; \
-					fi; \
-				fi; \
-			done; \
-			${ECHO_MSG} "=> Couldn't fetch it - please try to retrieve this";\
-			${ECHO_MSG} "=> port manually into ${_DISTDIR} and try again."; \
-			exit 1; \
-	    fi; \
-	 done
-.if defined(PATCHFILES)
-	@cd ${_DISTDIR};\
-	${_PATCH_SITES_ENV} ; \
-	for _file in ${PATCHFILES}; do \
-		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
-		if [ $$_file = $$file ]; then	\
-			select='';	\
-		else	\
-			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
-		fi;	\
-		file=`${ECHO_CMD} $$file | ${SED} -E -e 's/:-[^:]+$$//'` ; \
-		force_fetch=false; \
-		filebasename=$${file##*/}; \
-		for afile in ${FORCE_FETCH}; do \
-			afile=$${afile##*/}; \
-			if [ "x$$afile" = "x$$filebasename" ]; then \
-				force_fetch=true; \
-			fi; \
-		done; \
-		if [ ! -f $$file -a ! -f $$filebasename -o "$$force_fetch" = "true" ]; then \
-			if [ -L $$file -o -L $${file##*/} ]; then \
-				${ECHO_MSG} "=> ${_DISTDIR}/$$file is a broken symlink."; \
-				${ECHO_MSG} "=> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
-				${ECHO_MSG} "=> Please correct this problem and try again."; \
-				exit 1; \
-			fi; \
-			${ECHO_MSG} "=> $$file doesn't seem to exist in ${_DISTDIR}."; \
-			if [ ! -z "$$select" ] ; then \
-				__PATCH_SITES_TMP= ; \
-				for group in $$select; do \
-					if [ ! -z \$${_PATCH_SITES_$${group}} ] ; then \
-						eval ___PATCH_SITES_TMP="\$${_PATCH_SITES_$${group}}" ; \
-						__PATCH_SITES_TMP="$${__PATCH_SITES_TMP} $${___PATCH_SITES_TMP}" ; \
-					fi; \
-				done; \
-				___PATCH_SITES_TMP= ; \
-				SORTED_PATCH_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
-			else \
-				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
-			fi; \
-			sites_remaining=0; \
-			sites="`eval $$SORTED_PATCH_SITES_CMD_TMP`"; \
-			for site in $${sites}; do \
-				sites_remaining=$$(($${sites_remaining} + 1)); \
-			done; \
-			for site in $${sites}; do \
-				sites_remaining=$$(($${sites_remaining} - 1)); \
-			    ${ECHO_MSG} "=> Attempting to fetch $${site}$${file}"; \
-				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
-				case $${file} in \
-				*/*)	${MKDIR} $${file%/*}; \
-						args="-o $${file} $${site}$${file}";; \
-				*)		args=$${site}$${file};; \
-				esac; \
-				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} ${FETCH_AFTER_ARGS}; then \
-					actual_size=`stat -f %z "$${file}"`; \
-					if [ -n "${DISABLE_SIZE}" ] || [ -z "$${CKSIZE}" ] || [ $${actual_size} -eq $${CKSIZE} ]; then \
-						continue 2; \
-					else \
-						${ECHO_MSG} "=> Fetched file size mismatch (expected $${CKSIZE}, actual $${actual_size})"; \
-						if [ $${sites_remaining} -gt 1 ]; then \
-							${ECHO_MSG} "=> Trying next site"; \
-							${RM} -f $${file}; \
-						fi; \
-					fi; \
-				fi; \
-			done; \
-			${ECHO_MSG} "=> Couldn't fetch it - please try to retrieve this";\
-			${ECHO_MSG} "=> port manually into ${_DISTDIR} and try again."; \
-			exit 1; \
-		fi; \
-	 done
+.if !empty(DISTFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
+			dp_SITE_FLAVOR=MASTER \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
+.endif
+.if defined(PATCHFILES) && !empty(PATCHFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
+			dp_SITE_FLAVOR=PATCH \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
 .endif
 .endif
+#
+# Prints out a list of files to fetch (useful to do a batch fetch)
+
+.if !target(fetch-list)
+fetch-list:
+.if !empty(DISTFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
+			dp_SITE_FLAVOR=MASTER \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
+.endif
+.if defined(PATCHFILES) && !empty(PATCHFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
+			dp_SITE_FLAVOR=PATCH \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
+.endif
+.endif
+
+# Used by fetch-urlall-list and fetch-url-list
+
+.if !target(fetch-url-list-int)
+fetch-url-list-int:
+.if !empty(DISTFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
+			dp_SITE_FLAVOR=MASTER \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
+.endif
+.if defined(PATCHFILES) && !empty(PATCHFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
+			dp_SITE_FLAVOR=PATCH \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
+.endif
+.endif
+
+# Prints out all the URL for all the DISTFILES and PATCHFILES.
+
+.if !target(fetch-urlall-list)
+fetch-urlall-list:
+	@cd ${.CURDIR} && ${SETENV} FORCE_FETCH_ALL=yes ${MAKE} fetch-url-list-int
+.endif
+
+# Prints the URL for all the DISTFILES and PATCHFILES that are not here
+
+.if !target(fetch-url-list)
+fetch-url-list: fetch-url-list-int
+.endif
+
 
 # Extract
 
@@ -3968,176 +3887,6 @@ delete-distfiles-list:
 .endif
 .endif
 
-# Prints out a list of files to fetch (useful to do a batch fetch)
-
-.if !target(fetch-list)
-fetch-list:
-	@${MKDIR} ${_DISTDIR}
-	@(cd ${_DISTDIR}; \
-	 ${_MASTER_SITES_ENV} ; \
-	 for _file in ${DISTFILES}; do \
-		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
-		if [ $$_file = $$file ]; then	\
-			select='';	\
-		else	\
-			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
-		fi;	\
-		if [ ! -f $$file -a ! -f $${file##*/} ]; then \
-			if [ ! -z "$$select" ] ; then \
-				__MASTER_SITES_TMP= ; \
-				for group in $$select; do \
-					if [ ! -z \$${_MASTER_SITES_$${group}} ] ; then \
-						eval ___MASTER_SITES_TMP=\$${_MASTER_SITES_$${group}} ; \
-						__MASTER_SITES_TMP="$${__MASTER_SITES_TMP} $${___MASTER_SITES_TMP}" ; \
-					fi; \
-				done; \
-				___MASTER_SITES_TMP= ; \
-				SORTED_MASTER_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
-			else \
-				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
-			fi; \
-			${ECHO_CMD} -n ${MKDIR} ${_DISTDIR} '&& ' ; \
-			${ECHO_CMD} -n cd ${_DISTDIR} '&& { ' ; \
-			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
-				if [ ! -z "`${ECHO_CMD} ${NOFETCHFILES} | ${GREP} -w $${file}`" ]; then \
-					if [ -z "`${ECHO_CMD} ${MASTER_SITE_OVERRIDE} | ${GREP} -w $${site}`" ]; then \
-						continue; \
-					fi; \
-				fi; \
-				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
-				case $${file} in \
-				*/*)	args="-o $${file} $${site}$${file}";; \
-				*)		args=$${site}$${file};; \
-				esac; \
-				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
-			done; \
-			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched; }" ; \
-		fi; \
-	done)
-.if defined(PATCHFILES)
-	@(cd ${_DISTDIR}; \
-	 ${_PATCH_SITES_ENV} ; \
-	 for _file in ${PATCHFILES}; do \
-		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
-		if [ $$_file = $$file ]; then	\
-			select='';	\
-		else	\
-			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
-		fi;	\
-		file=`${ECHO_CMD} $$file | ${SED} -E -e 's/:-[^:]+$$//'` ; \
-		if [ ! -f $$file -a ! -f $${file##*/} ]; then \
-			if [ ! -z "$$select" ] ; then \
-				__PATCH_SITES_TMP= ; \
-				for group in $$select; do \
-					if [ ! -z \$${_PATCH_SITES_$${group}} ] ; then \
-						eval ___PATCH_SITES_TMP=\$${_PATCH_SITES_$${group}} ; \
-						__PATCH_SITES_TMP="$${__PATCH_SITES_TMP} $${___PATCH_SITES_TMP}" ; \
-				fi; \
-				done; \
-				___PATCH_SITES_TMP= ; \
-				SORTED_PATCH_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
-			else \
-				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
-			fi; \
-			${ECHO_CMD} -n ${MKDIR} ${_DISTDIR} '&& ' ; \
-			${ECHO_CMD} -n cd ${_DISTDIR} '&& { ' ; \
-			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
-				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
-				case $${file} in \
-				*/*)	args="-o $${file} $${site}$${file}";; \
-				*)		args=$${site}$${file};; \
-				esac; \
-				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
-			done; \
-			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched; }" ; \
-		fi; \
-	 done)
-.endif
-.endif
-
-.if !target(fetch-url-list-int)
-fetch-url-list-int:
-	@${MKDIR} ${_DISTDIR}
-	@(cd ${_DISTDIR}; \
-	${_MASTER_SITES_ENV}; \
-	for _file in ${DISTFILES}; do \
-		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
-			fileptn=`${ECHO_CMD} $$file | ${SED} 's|/|\\\\/|g;s/\./\\\\./g;s/\+/\\\\+/g;s/\?/\\\\?/g'` ; \
-		if [ $$_file = $$file ]; then	\
-			select='';	\
-		else	\
-			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
-		fi;	\
-		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f $${file##*/} ]; then \
-			if [ ! -z "$$select" ] ; then \
-				__MASTER_SITES_TMP= ; \
-				for group in $$select; do \
-					if [ ! -z \$${_MASTER_SITES_$${group}} ] ; then \
-						eval ___MASTER_SITES_TMP=\$${_MASTER_SITES_$${group}} ; \
-						__MASTER_SITES_TMP="$${__MASTER_SITES_TMP} $${___MASTER_SITES_TMP}" ; \
-					fi \
-				done; \
-				___MASTER_SITES_TMP= ; \
-				SORTED_MASTER_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
-			else \
-				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
-			fi ; \
-			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
-				case $${file} in \
-				*/*)	args="-o $${file} $${site}$${file}";; \
-				*)		args=$${site}$${file};; \
-				esac; \
-				${ECHO_CMD} $${args} ; \
-			done; \
-		fi \
-	done)
-.if defined(PATCHFILES)
-	@(cd ${_DISTDIR}; \
-	${_PATCH_SITES_ENV} ; \
-	for _file in ${PATCHFILES}; do \
-		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
-		if [ $$_file = $$file ]; then	\
-			select='';	\
-		else	\
-			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
-		fi;	\
-		file=`${ECHO_CMD} $$file | ${SED} -E -e 's/:-[^:]+$$//'` ; \
-		fileptn=`${ECHO_CMD} $$file | ${SED} 's|/|\\\\/|g;s/\./\\\\./g;s/\+/\\\\+/g;s/\?/\\\\?/g'` ; \
-		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f $${file##*/} ]; then \
-			if [ ! -z "$$select" ] ; then \
-				__PATCH_SITES_TMP= ; \
-				for group in $$select; do \
-					if [ ! -z \$${_PATCH_SITES_$${group}} ] ; then \
-						eval ___PATCH_SITES_TMP=\$${_PATCH_SITES_$${group}} ; \
-						__PATCH_SITES_TMP="$${__PATCH_SITES_TMP} $${___PATCH_SITES_TMP}" ; \
-					fi \
-				done; \
-				___PATCH_SITES_TMP= ; \
-				SORTED_PATCH_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
-			else \
-				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
-			fi ; \
-			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
-				case $${file} in \
-				*/*)	args="-o $${file} $${site}$${file}";; \
-				*)		args=$${site}$${file};; \
-				esac; \
-				${ECHO_CMD} $${args} ; \
-			done; \
-		fi \
-	 done)
-.endif
-.endif
-
-.if !target(fetch-urlall-list)
-fetch-urlall-list:
-	@cd ${.CURDIR} && LISTALL=yes ${MAKE} fetch-url-list-int
-.endif
-
-.if !target(fetch-url-list)
-fetch-url-list: fetch-url-list-int
-.endif
-
 # Generates patches.
 
 update-patches:
@@ -4153,132 +3902,62 @@ update-patches:
 
 # Checksumming utilities
 
-check-checksum-algorithms:
-	@ \
-	${checksum_init} \
-	\
-	for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
-		eval alg_executable=\$$$$alg; \
-		if [ -z "$$alg_executable" ]; then \
-			${ECHO_MSG} "Checksum algorithm $$alg: Couldn't find the executable."; \
-			${ECHO_MSG} "Set $$alg=/path/to/$$alg in /etc/make.conf and try again."; \
-			exit 1; \
-		fi; \
-	done; \
-
-checksum_init=\
-	SHA256=${SHA256};
+# List all algorithms here, all the variables name must begin with dp_
+_CHECKSUM_INIT_ENV= \
+	dp_SHA256=${SHA256}
 
 .if !target(makesum)
-makesum: check-checksum-algorithms
-	@cd ${.CURDIR} && ${MAKE} fetch NO_CHECKSUM=yes \
-		DISABLE_SIZE=yes
-	@if [ -f ${DISTINFO_FILE} ]; then \
-		if ${GREP} -q "^TIMESTAMP " ${DISTINFO_FILE}; then \
-			${GREP} -v "^TIMESTAMP " ${DISTINFO_FILE} > ${DISTINFO_FILE}.sav; \
-		fi; \
-	fi
-	@( \
-		cd ${DISTDIR}; \
-		\
-		${checksum_init} \
-		\
-		for file in ${_CKSUMFILES}; do \
-			for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
-				eval alg_executable=\$$$$alg; \
-				\
-				if [ $$alg_executable != "NO" ]; then \
-					$$alg_executable $$file >> ${DISTINFO_FILE}.new; \
-				fi; \
-			done; \
-			${ECHO_CMD} "SIZE ($$file) = `${STAT} -f \"%z\" $$file`" >> ${DISTINFO_FILE}.new; \
-		done; \
-		if [ ! -f ${DISTINFO_FILE}.sav ] || ! cmp -s ${DISTINFO_FILE}.sav ${DISTINFO_FILE}.new; then \
-			${ECHO_CMD} "TIMESTAMP = `date '+%s'`" > ${DISTINFO_FILE} ; \
-				${CAT} ${DISTINFO_FILE}.new >> ${DISTINFO_FILE} ; \
-		fi ; \
-		rm -f ${DISTINFO_FILE}.new ${DISTINFO_FILE}.sav ; \
-	)
+# Some port change the options with OPTIONS_*_FORCE when make(makesum) to be
+# able to add all distfiles in one go.
+# For this to work, we need to call the do-fetch script directly here so that
+# the options consistent when fetching and when makesum'ing.
+# As we're fetching new distfiles, that are not in the distinfo file, disable
+# checksum and sizes checks.
+makesum:
+.if !empty(DISTFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
+			dp_NO_CHECKSUM=yes dp_DISABLE_SIZE=yes \
+			dp_SITE_FLAVOR=MASTER \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
+.endif
+.if defined(PATCHFILES) && !empty(PATCHFILES)
+	@${SETENV} \
+			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
+			dp_NO_CHECKSUM=yes dp_DISABLE_SIZE=yes \
+			dp_SITE_FLAVOR=PATCH \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
+.endif
+	@${SETENV} \
+			${_CHECKSUM_INIT_ENV} \
+			dp_CHECKSUM_ALGORITHMS='${CHECKSUM_ALGORITHMS:tu}' \
+			dp_CKSUMFILES='${_CKSUMFILES}' \
+			dp_DISTDIR='${DISTDIR}' \
+			dp_DISTINFO_FILE='${DISTINFO_FILE}' \
+			dp_ECHO_MSG='${ECHO_MSG}' \
+			dp_SCRIPTSDIR='${SCRIPTSDIR}' \
+			${SH} ${SCRIPTSDIR}/makesum.sh ${DISTFILES:C/.*/'&'/}
 .endif
 
 .if !target(checksum)
-checksum: fetch check-checksum-algorithms
-	@set -e ; \
-	${checksum_init} \
-	if [ -f ${DISTINFO_FILE} ]; then \
-		cd ${DISTDIR}; OK="";\
-		for file in ${_CKSUMFILES}; do \
-			ignored="true"; \
-			_file=$${file#${DIST_SUBDIR}/*};	\
-			for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
-				ignore="false"; \
-				eval alg_executable=\$$$$alg; \
-				\
-				if [ $$alg_executable != "NO" ]; then \
-					MKSUM=`$$alg_executable < $$file`; \
-					CKSUM=`file=$$_file; ${DISTINFO_DATA}`; \
-				else \
-					ignore="true"; \
-				fi; \
-				\
-				if [ $$ignore = "false" -a -z "$$CKSUM" ]; then \
-					${ECHO_MSG} "=> No $$alg checksum recorded for $$file."; \
-					ignore="true"; \
-				fi; \
-				\
-				if [ $$ignore = "false" ]; then \
-					match="false"; \
-					for chksum in $$CKSUM; do \
-						if [ "$$chksum" = "$$MKSUM" ]; then \
-							match="true"; \
-							break; \
-						fi; \
-					done; \
-					if [ $$match = "true" ]; then \
-						${ECHO_MSG} "=> $$alg Checksum OK for $$file."; \
-						ignored="false"; \
-					else \
-						${ECHO_MSG} "=> $$alg Checksum mismatch for $$file."; \
-						refetchlist="$$refetchlist$$file "; \
-						OK="$${OK:-retry}"; \
-						[ "$${OK}" = "retry" -a ${FETCH_REGET} -gt 0 ] && ${RM} -f $${file}; \
-						ignored="false"; \
-					fi; \
-				fi; \
-			done; \
-			\
-			if [ $$ignored = "true" ]; then \
-				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
-				OK="${FALSE}"; \
-			fi; \
-			\
-		done; \
-		\
-		if [ "$${OK:=true}" = "retry" ] && [ ${FETCH_REGET} -gt 0 ]; then \
-			${ECHO_MSG} "===>  Refetch for ${FETCH_REGET} more times files: $$refetchlist"; \
-			if ( cd ${.CURDIR} && \
-			    ${MAKE} ${.MAKEFLAGS} FORCE_FETCH="$$refetchlist" FETCH_REGET="`${EXPR} ${FETCH_REGET} - 1`" fetch); then \
-				  if ( cd ${.CURDIR} && \
-			        ${MAKE} ${.MAKEFLAGS} FETCH_REGET="`${EXPR} ${FETCH_REGET} - 1`" checksum ); then \
-				      OK="true"; \
-				  fi; \
-			fi; \
-		fi; \
-		\
-		if [ "$$OK" != "true" -a ${FETCH_REGET} -eq 0 ]; then \
-			${ECHO_MSG} "===>  Giving up on fetching files: $$refetchlist"; \
-			${ECHO_MSG} "Make sure the Makefile and distinfo file (${DISTINFO_FILE})"; \
-			${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
-			${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
-			exit 1; \
-		fi; \
-		if [ "$$OK" != "true" ]; then \
-			exit 1; \
-		fi; \
-	elif [ -n "${_CKSUMFILES:M*}" ]; then \
-		${ECHO_MSG} "=> No checksum file (${DISTINFO_FILE})."; \
-		exit 1; \
-	fi
+checksum: fetch
+.if !empty(_CKSUMFILES)
+	@${SETENV} \
+			${_CHECKSUM_INIT_ENV} \
+			dp_CHECKSUM_ALGORITHMS='${CHECKSUM_ALGORITHMS:tu}' \
+			dp_CURDIR='${.CURDIR}' \
+			dp_DISTDIR='${DISTDIR}' \
+			dp_DISTINFO_FILE='${DISTINFO_FILE}' \
+			dp_DIST_SUBDIR='${DIST_SUBDIR}' \
+			dp_ECHO_MSG='${ECHO_MSG}' \
+			dp_FETCH_REGET='${FETCH_REGET}' \
+			dp_MAKE='${MAKE}' \
+			dp_MAKEFLAGS='${.MAKEFLAGS}' \
+			dp_SCRIPTSDIR='${SCRIPTSDIR}' \
+			dp_DISABLE_SIZE='${DISABLE_SIZE}' \
+			dp_NO_CHECKSUM='${NO_CHECKSUM}' \
+			${SH} ${SCRIPTSDIR}/checksum.sh ${_CKSUMFILES:C/.*/'&'/}
+.endif
 .endif
 
 ################################################################
