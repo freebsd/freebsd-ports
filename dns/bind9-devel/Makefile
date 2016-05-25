@@ -3,7 +3,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
 #MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;/
@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE} \
 		--with-readline=-ledit \
+		--with-dlopen=yes \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
@@ -44,7 +45,7 @@ CONFLICTS+=	bind9*-9.[456789].* bind9*-sdb-9.[456789].*
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE
+OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE DLZ_FILESYSTEM
 OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON START_LATE \
 			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA
 OPTIONS_RADIO=	CRYPTO GOSTDEF
@@ -144,10 +145,10 @@ RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 RRL_CONFIGURE_ENABLE=	rrl
 
 DLZ_MYSQL_CONFIGURE_ON=	--with-dlz-mysql=yes
-DLZ_MYSQL_USE=		mysql=yes
+DLZ_MYSQL_USES=		mysql
 
 DLZ_BDB_CONFIGURE_ON=	--with-dlz-bdb=yes
-DLZ_BDB_USE=		bdb=yes
+DLZ_BDB_USES=		bdb
 
 DLZ_LDAP_CONFIGURE_ON=	--with-dlz-ldap=yes
 DLZ_LDAP_USE=		openldap=yes

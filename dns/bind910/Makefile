@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/}
 PORTREVISION=	0
 .else
 # dns/bind910 here
-PORTREVISION=	0
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE} \
 		--with-readline=-ledit \
+		--with-dlopen=yes \
 		--sysconfdir=${ETCDIR}
 .if defined(BIND_TOOLS_SLAVE)
 CONFIGURE_ARGS+=	--disable-shared
@@ -69,7 +70,7 @@ OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
 OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 
 .if !defined(BIND_TOOLS_SLAVE)
-OPTIONS_DEFAULT+=	RRL
+OPTIONS_DEFAULT+=	RRL DLZ_FILESYSTEM
 OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP \
 			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE
 OPTIONS_GROUP=		DLZ
@@ -167,10 +168,10 @@ RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 RRL_CONFIGURE_ENABLE=	rrl
 
 DLZ_MYSQL_CONFIGURE_ON=	--with-dlz-mysql=yes
-DLZ_MYSQL_USE=		mysql=yes
+DLZ_MYSQL_USES=		mysql
 
 DLZ_BDB_CONFIGURE_ON=	--with-dlz-bdb=yes
-DLZ_BDB_USE=		bdb=yes
+DLZ_BDB_USES=		bdb
 
 DLZ_LDAP_CONFIGURE_ON=	--with-dlz-ldap=yes
 DLZ_LDAP_USE=		openldap=yes
