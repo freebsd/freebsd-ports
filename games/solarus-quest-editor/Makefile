@@ -26,7 +26,6 @@ CMAKE_ARGS+=	-DSOLARUS_USE_LUAJIT=OFF
 USE_SDL=	sdl2 ttf2 image2
 USE_QT5=	buildtools core gui linguist qmake widgets
 USES=		cmake compiler:c++11-lib openal
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 DESKTOP_ENTRIES=	"Solarus Quest Editor" "${COMMENT}" "${PORTNAME}" "${PORTNAME}"  \
 			"Game;" false

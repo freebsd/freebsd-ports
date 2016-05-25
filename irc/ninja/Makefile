@@ -11,7 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another ircII based irc client
 
 USES=		ncurses
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB="${DATADIR}"

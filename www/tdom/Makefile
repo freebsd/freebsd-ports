@@ -9,14 +9,12 @@ MASTER_SITES=	GHC http://mirrors.rit.edu/zi/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
 USES=		gmake tar:tgz tcl:tea
 USE_GITHUB=	yes
-GH_PROJECT=	tdom
 
 pre-configure:
 	${RM} -f ${WRKSRC}/generic/domalloc.?

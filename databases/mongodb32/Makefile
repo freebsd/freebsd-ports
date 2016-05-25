@@ -61,7 +61,7 @@ IGNORE=	unsupported on FreeBSD 10.1 or older
 #  - https://jira.mongodb.org/browse/SERVER-21217
 #  - https://jira.mongodb.org/browse/SERVER-22740
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 37
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang37:${PORTSDIR}/lang/clang37
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang37:lang/clang37
 CPP=	${LOCALBASE}/bin/clang-cpp37
 CC=	${LOCALBASE}/bin/clang37
 CXX=	${LOCALBASE}/bin/clang++37

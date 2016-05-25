@@ -18,7 +18,6 @@ RUN_DEPENDS=	tkabber:net-im/tkabber
 USES=		tar:xz
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SUBDIRS=	aniemoticons attline battleship bc browser checkers chess \
 		ctcomp custom-urls cyrillize debug ejabberd floatingcontact \

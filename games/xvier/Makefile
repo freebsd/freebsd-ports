@@ -14,7 +14,6 @@ EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Throw stones into free columns
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		imake tar:Z
 USE_XORG=	x11 xext
 USE_CSTD=	gnu89

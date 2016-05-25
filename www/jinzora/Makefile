@@ -12,7 +12,6 @@ COMMENT=	Web based media streaming and management system
 
 USE_PHP=	mysql session iconv gd pdf
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 SUB_FILES=      pkg-message
 

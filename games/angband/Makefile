@@ -34,8 +34,6 @@ X11_USE=		XORG=sm,x11
 X11_RUN_DEPENDS=	xorg-fonts-miscbitmaps>=0:x11-fonts/xorg-fonts-miscbitmaps
 X11_CONFIGURE_ENABLE=	x11
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-Wno-missing-field-initializers || ; \

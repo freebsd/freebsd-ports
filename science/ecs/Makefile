@@ -18,8 +18,6 @@ LIB_DEPENDS=	libmed.so:french/med	\
 		libhdf5.so:science/hdf5	\
 		libcgns.so:science/cgnslib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		gmake
 USE_TEX=	dvipsk
 GNU_CONFIGURE=	yes
