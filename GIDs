@@ -148,6 +148,7 @@ fcron:*:247:
 _adsuck:*:253:
 _tor:*:256:
 _smtpd:*:257:
+_smtpq:*:258:
 meta1s:*:260:
 meta1q:*:261:
 meta1c:*:262:meta1s
