@@ -26,7 +26,8 @@ LIB_DEPENDS=	libuninameslist.so:textproc/libuninameslist \
 USE_GITHUB=	yes
 
 USES=		autoreconf:build desktop-file-utils execinfo gettext gmake iconv \
-		jpeg libtool pkgconfig python shared-mime-info shebangfix
+		jpeg libtool pkgconfig python shared-mime-info shebangfix \
+		compiler
 SHEBANG_FILES=	pycontrib/gdraw/__init__.py \
 		pycontrib/gdraw/gdraw.py
 USE_XORG=	ice x11 xi xkbui
@@ -80,4 +81,14 @@ pre-configure:
 		${LOCALBASE}/bin/gnulib-tool --aux-dir=config --m4-base=m4 --libtool --symlink --import $${gnulib_modules}' ; \
 		export LIBTOOLIZE=true ; ${AUTORECONF} -f -i)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# waiting for the llvm bug to fix. http://llvm.org/bugs/show_bug.cgi?id=21903
+.if ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} > 36
+BUILD_DEPENDS+=	clang36:lang/clang36
+CPP=		clang-cpp36
+CC=		clang36
+CXX=		clang++36
+.endif
+
+.include <bsd.port.post.mk>
