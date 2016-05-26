@@ -9,7 +9,7 @@ lib/lxpanel/plugins/kbled.so
 lib/lxpanel/plugins/monitors.so
 lib/lxpanel/plugins/netstatus.so
 lib/lxpanel/plugins/thermal.so
-%%VOLUME%%lib/lxpanel/plugins/volume.so
+%%NO_ALSA%%lib/lxpanel/plugins/volume.so
 %%ALSA%%lib/lxpanel/plugins/volumealsa.so
 lib/lxpanel/plugins/xkb.so
 lib/lxpanel/plugins/wnckpager.so
