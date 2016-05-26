@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.13.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -20,61 +19,64 @@ USE_RC_SUBR=	telegraf
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	influxdata:DEFAULT
-GH_TUPLE=	Shopify:sarama:8aadb47:sarama \
-		Sirupsen:logrus:219c8cb:logrus \
-		amir:raidman:53c1b96:raidman \
-		aws:aws-sdk-go:13a1206:aws_sdk_go \
+GH_TUPLE=	Shopify:sarama:97511b2:sarama \
+		Sirupsen:logrus:cd7d1bb:logrus \
+		amir:raidman:91c20f3:raidman \
+		aws:aws-sdk-go:8fd3586:aws_sdk_go \
 		beorn7:perks:3ac7bf7:perks \
-		cenkalti:backoff:4dc7767:backoff \
-		couchbase:go-couchbase:cb66431:go_couchbase \
-		couchbase:gomemcached:a5ea635:gomemcached \
+		cenkalti:backoff:c29158a:backoff \
+		couchbase:go-couchbase:4ec8442:go_couchbase \
+		couchbase:gomemcached:3ff4bc0:gomemcached \
 		couchbase:goutils:5823a0c:goutils \
-		dancannon:gorethink:e7cac92:gorethink \
+		dancannon:gorethink:3ba11fc:gorethink \
 		davecgh:go-spew:5215b55:go_spew \
-		docker:engine-api:8924d69:engine_api \
-		docker:go-connections:f549a93:go_connections \
+		docker:engine-api:1f09e8f:engine_api \
+		docker:go-connections:5b7154b:go_connections \
+		docker:distribution:4a915d6:distribution \
 		docker:go-units:5d2041e:go_units \
 		eapache:go-resiliency:b86b1ec:go_resiliency \
 		eapache:queue:ded5959:queue \
-		eclipse:paho.mqtt.golang:0f7a459:paho_mqtt_golang \
-		go-sql-driver:mysql:1fca743:mysql \
-		golang:protobuf:552c7b9:protobuf \
-		golang:snappy:427fb6f:snappy \
+		eclipse:paho.mqtt.golang:2dac3f5:paho_mqtt_golang \
+		go-sql-driver:mysql:7ebe0a5:mysql \
+		gobwas:glob:49571a1:glob \
+		golang:protobuf:7cc19b7:protobuf \
+		golang:snappy:d7b1e15:snappy \
 		gonuts:go-shellquote:e842a11:go_shellquote \
-		gorilla:context:1ea2538:context \
-		gorilla:mux:c9e326e:mux \
+		gorilla:context:a8d44e7:context \
+		gorilla:mux:9c19ed5:mux \
 		hailocab:go-hostpool:e80d13c:go_hostpool \
-		influxdata:config:b79f682:config \
-		influxdata:influxdb:e3fef55:influxdb \
-		influxdata:toml:af4df43:toml \
+		hpcloud:tail:a30252c:tail \
+		influxdata:config:8ec4638:config \
+		influxdata:influxdb:e57fb88:influxdb \
+		influxdata:toml:ff2a260:toml \
 		klauspost:crc32:19b0b33:crc32 \
-		lib:pq:e182dc4:pq \
-		matttproud:golang_protobuf_extensions:d0c3fe8:golang_protobuf_extensions \
-		miekg:dns:cce6c13:dns \
+		lib:pq:ee1442b:pq \
+		matttproud:golang_protobuf_extensions:c12348c:golang_protobuf_extensions \
+		miekg:dns:48ab660:dns \
 		mreiferson:go-snappystream:028eae7:go_snappystream \
 		naoina:go-stringutil:6b638e9:go_stringutil \
-		nats-io:nats:b13fc9d:nats \
-		nats-io:nuid:4f84f5f:nuid \
-		nsqio:go-nsq:0b80d6f:go_nsq \
-		opencontainers:runc:89ab7f2:runc \
-		prometheus:client_golang:18acf99:client_golang \
+		nats-io:nats:fc85f44:nats \
+		nats-io:nuid:a5152d6:nuid \
+		nsqio:go-nsq:642a3f9:go_nsq \
+		opencontainers:runc:fdc9fb8:runc \
+		prometheus:client_golang:d38f1ef:client_golang \
 		prometheus:client_model:fa8ad6f:client_model \
-		prometheus:common:e8eabff:common \
-		prometheus:procfs:406e5b7:procfs \
-		samuel:go-zookeeper:218e9c8:go_zookeeper \
-		shirou:gopsutil:1f32ce1:gopsutil \
-		soniah:gosnmp:b1b4f88:gosnmp \
-		sparrc:gdm:2b0dfaa:gdm \
-		streadway:amqp:b4f3cea:amqp \
-		stretchr:testify:1f4a164:testify \
-		wvanbergen:kafka:46f9a1c:kafka \
+		prometheus:common:ba1c918:common \
+		prometheus:procfs:abf152e:procfs \
+		samuel:go-zookeeper:5250732:go_zookeeper \
+		shirou:gopsutil:bae75fa:gopsutil \
+		soniah:gosnmp:169fb6c:gosnmp \
+		sparrc:gdm:2b7833e:gdm \
+		streadway:amqp:2e25825:amqp \
+		stretchr:testify:6cb3b85:testify \
+		wvanbergen:kafka:1ff806b:kafka \
 		wvanbergen:kazoo-go:0f76871:kazoo_go \
 		zensqlmonitor:go-mssqldb:ffe5510:go_mssqldb \
-		golang:crypto:5dc8cb4:crypto \
-		golang:net:6acef71:net \
-		golang:text:a71fd10:text \
-		golang:tools:764c4cc:tools \
-		dancannon:gorethink:7d1af5b:gorethink_v1 \
+		golang:crypto:b6789ab:crypto \
+		golang:net:76e74a3:net \
+		golang:text:f773ec0:text \
+		golang:tools:c86fe59:tools \
+		dancannon:gorethink:edc7a6a:gorethink_v1 \
 		fatih:pool:cba550e:pool_v2 \
 		go-mgo:mgo:d90005c:mgo \
 		go-yaml:yaml:a83829b:yaml
@@ -100,10 +102,12 @@ post-patch:
 	${WRKSRC}/src/github.com/eapache \
 	${WRKSRC}/src/github.com/eclipse \
 	${WRKSRC}/src/github.com/go-sql-driver \
+	${WRKSRC}/src/github.com/gobwas \
 	${WRKSRC}/src/github.com/golang \
 	${WRKSRC}/src/github.com/gonuts \
 	${WRKSRC}/src/github.com/gorilla \
 	${WRKSRC}/src/github.com/hailocab \
+	${WRKSRC}/src/github.com/hpcloud \
 	${WRKSRC}/src/github.com/influxdata \
 	${WRKSRC}/src/github.com/klauspost \
 	${WRKSRC}/src/github.com/lib \
@@ -143,17 +147,20 @@ post-patch:
 	${MV} ${WRKSRC_go_spew} ${WRKSRC}/src/github.com/davecgh/go-spew ;\
 	${MV} ${WRKSRC_engine_api} ${WRKSRC}/src/github.com/docker/engine-api ;\
 	${MV} ${WRKSRC_go_connections} ${WRKSRC}/src/github.com/docker/go-connections ;\
+	${MV} ${WRKSRC_distribution} ${WRKSRC}/src/github.com/docker/distribution ;\
 	${MV} ${WRKSRC_go_units} ${WRKSRC}/src/github.com/docker/go-units ;\
 	${MV} ${WRKSRC_go_resiliency} ${WRKSRC}/src/github.com/eapache/go-resiliency ;\
 	${MV} ${WRKSRC_queue} ${WRKSRC}/src/github.com/eapache/queue ;\
 	${MV} ${WRKSRC_paho_mqtt_golang} ${WRKSRC}/src/github.com/eclipse/paho.mqtt.golang ;\
 	${MV} ${WRKSRC_mysql} ${WRKSRC}/src/github.com/go-sql-driver/mysql ;\
+	${MV} ${WRKSRC_glob} ${WRKSRC}/src/github.com/gobwas/glob ;\
 	${MV} ${WRKSRC_protobuf} ${WRKSRC}/src/github.com/golang/protobuf ;\
 	${MV} ${WRKSRC_snappy} ${WRKSRC}/src/github.com/golang/snappy ;\
 	${MV} ${WRKSRC_go_shellquote} ${WRKSRC}/src/github.com/gonuts/go-shellquote ;\
 	${MV} ${WRKSRC_context} ${WRKSRC}/src/github.com/gorilla/context ;\
 	${MV} ${WRKSRC_mux} ${WRKSRC}/src/github.com/gorilla/mux ;\
 	${MV} ${WRKSRC_go_hostpool} ${WRKSRC}/src/github.com/hailocab/go-hostpool ;\
+	${MV} ${WRKSRC_tail} ${WRKSRC}/src/github.com/hpcloud/tail ;\
 	${MV} ${WRKSRC_config} ${WRKSRC}/src/github.com/influxdata/config ;\
 	${MV} ${WRKSRC_influxdb} ${WRKSRC}/src/github.com/influxdata/influxdb ;\
 	${MV} ${WRKSRC_toml} ${WRKSRC}/src/github.com/influxdata/toml ;\
