@@ -16,7 +16,7 @@ USE_KDE4=	kdelibs automoc4 kate \
 USE_QT4=	gui webkit \
 		moc_build qmake_build rcc_build uic_build
 
-DISTINFO_FILE=	${PORTSDIR}/editors/kate/distinfo
+DISTINFO_FILE=	${.CURDIR:H:H}/editors/kate/distinfo
 
 # cmake.mk doesn't allow to overwrite BUILD_WRKSRC for out-of-source builds
 _pate_WRKSRC=	${BUILD_WRKSRC}/addons/kate/pate

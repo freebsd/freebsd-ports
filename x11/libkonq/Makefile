@@ -17,7 +17,7 @@ USE_QT4=	corelib dbus gui \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
-DISTINFO_FILE=	${PORTSDIR}/x11/kde4-baseapps/distinfo
+DISTINFO_FILE=	${.CURDIR:H:H}/x11/kde4-baseapps/distinfo
 
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}/lib/konq
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
