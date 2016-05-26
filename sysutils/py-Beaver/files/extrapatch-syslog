@@ -1,0 +1,144 @@
+--- ./beaver/utils.py.orig	2014-01-25 16:49:09.000000000 +0900
++++ ./beaver/utils.py	2014-05-02 10:12:43.000000000 +0900
+@@ -6,11 +6,12 @@
+ import platform
+ import re
+ import os
++import stat
+ import sys
++from syslog import LOG_DAEMON
+ 
+ import beaver
+ 
+-logging.basicConfig()
+ 
+ MAGIC_BRACKETS = re.compile('({([^}]+)})')
+ IS_GZIPPED_FILE = re.compile('.gz$')
+@@ -41,7 +42,7 @@
+     parser.add_argument('-F', '--format', help='format to use when sending to transport', default=None, dest='format', choices=['json', 'msgpack', 'raw', 'rawjson', 'string'])
+     parser.add_argument('-H', '--hostname', help='manual hostname override for source_host', default=None, dest='hostname')
+     parser.add_argument('-m', '--mode', help='bind or connect mode', dest='mode', default=None, choices=['bind', 'connect'])
+-    parser.add_argument('-l', '--logfile', '-o', '--output', help='file to pipe output to (in addition to stdout)', default=None, dest='output')
++    parser.add_argument('-l', '--logconf', help='path to logging.ini configuraion file', default='/etc/beaver/logging.ini', dest='logconf')
+     parser.add_argument('-p', '--path', help='path to log files', default=None, dest='path')
+     parser.add_argument('-P', '--pid', help='path to pid file', default=None, dest='pid')
+     parser.add_argument('-t', '--transport', help='log transport method', dest='transport', default=None, choices=['mqtt', 'rabbitmq', 'redis', 'sqs', 'stdout', 'tcp', 'udp', 'zmq', 'http'])
+@@ -54,47 +55,7 @@
+ 
+ def setup_custom_logger(name, args=None, output=None, formatter=None, debug=None):
+     logger = logging.getLogger(name)
+-    logger.propagate = False
+-    if logger.handlers:
+-        logger.handlers = []
+-
+-    has_args = args is not None and type(args) == argparse.Namespace
+-    if debug is None:
+-        debug = has_args and args.debug is True
+-
+-    if not logger.handlers:
+-        if formatter is None:
+-            formatter = logging.Formatter('[%(asctime)s] %(levelname)-7s %(message)s')
+-
+-        handler = logging.StreamHandler()
+-        if output is None and has_args:
+-            output = args.output
+-
+-        if output:
+-            output = os.path.realpath(output)
+-
+-        if output is not None:
+-            file_handler = logging.FileHandler(output)
+-            if formatter is not False:
+-                file_handler.setFormatter(formatter)
+-            logger.addHandler(file_handler)
+-
+-        if formatter is not False:
+-            handler.setFormatter(formatter)
+-
+-        logger.addHandler(handler)
+-
+-    if debug:
+-        logger.setLevel(logging.DEBUG)
+-        if hasattr(logging, 'captureWarnings'):
+-            logging.captureWarnings(True)
+-    else:
+-        logger.setLevel(logging.INFO)
+-        if hasattr(logging, 'captureWarnings'):
+-            logging.captureWarnings(False)
+-
+     logger.debug('Logger level is {0}'.format(logging.getLevelName(logger.level)))
+-
+     return logger
+ 
+ 
+--- ./bin/beaver.orig	2014-01-25 16:49:09.000000000 +0900
++++ ./bin/beaver	2014-05-02 10:13:51.000000000 +0900
+@@ -1,23 +1,23 @@
+ #!/usr/bin/env python
+ # -*- coding: utf-8 -*-
++import logging.config
+ from beaver.dispatcher.tail import run as tail_run
+ from beaver.dispatcher.worker import run as worker_run
+ from beaver.pidfile import PidFile
+ from beaver.utils import CAN_DAEMONIZE, parse_args, version
+ 
+ args = parse_args()
++logging.config.fileConfig(args.logconf)
+ version(args)
+ 
++
+ if args.daemonize:
+     assert CAN_DAEMONIZE, "Daemonization is unimplemented on the Windows Platform"
+     assert args.pid, "A pid path must be specified in the beaver config or via the -P flag"
+ 
+     import daemon
+ 
+-    if args.output:
+-        context = daemon.DaemonContext(pidfile=PidFile(args.pid), stdout=open(args.output, "wb"), stderr=open(args.output, "wb"))
+-    else:
+-        context = daemon.DaemonContext(pidfile=PidFile(args.pid))
++    context = daemon.DaemonContext(pidfile=PidFile(args.pid))
+ 
+     with context:
+         if args.experimental:
+--- ./contrib/logging.ini.orig	2014-05-02 10:12:43.000000000 +0900
++++ ./contrib/logging.ini	2014-05-02 10:12:43.000000000 +0900
+@@ -0,0 +1,38 @@
++[formatters]
++keys = default, syslog
++
++[formatter_default]
++format = [%(asctime)s] %(levelname)-7s %(message)s
++
++[formatter_syslog]
++format = %(name).24s[%(process)d]: %(message)s
++
++
++[handlers]
++keys = console, file, syslog
++
++[handler_console]
++class = StreamHandler
++level = DEBUG
++formatter = default
++args = (sys.stdout,)
++
++[handler_file]
++class = FileHandler
++level = INFO
++formatter = default
++args = ('/tmp/beaver.log', 'a', None, True)
++
++[handler_syslog]
++class = logging.handlers.SysLogHandler
++level = INFO
++formatter = syslog
++args = ('/dev/log', 'daemon',)
++
++
++[loggers]
++keys = root
++
++[logger_root]
++level = DEBUG
++handlers = console
