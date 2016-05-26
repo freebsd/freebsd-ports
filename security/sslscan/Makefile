@@ -8,7 +8,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rbsec
 GH_TAGNAME=	${PORTVERSION}-${GH_ACCOUNT}
 
-MAINTAINER=	matthieu@labs.fr
+MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	SSLScan is a fast SSL port scanner
 
 LICENSE=	GPLv3
