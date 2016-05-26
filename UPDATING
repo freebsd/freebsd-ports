@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160526:
+  AFFECTS: Users of mail/opensmtpd
+  AUTHOR: brnrd@FreeBSD.org
+
+  Due to changes to the rc-script you must stop smtpd prior to upgrading
+  mail/opensmtpd to version 5.9.2
+
+  # service smtpd stop
+
+  Then upgrade OpenSMTPD to version 5.9.2.
+  Additionally version 5.9.2 changes the file mode bits for two directories.
+  To allow existing installations to start succesfully you must apply the
+  following changes
+ 
+  # chown -R root:_smtpq /var/spool/smtpd/offline
+  # chmod -R 770 /var/spool/smtpd/offline
+  # chmod -R 700 /var/spool/smtpd/purge
+
+  After applying the changes, the smtpd daemon can succesfully be started.
+
 20160525:
   AFFECTS: Users of devel/qtcreator
   AUTHOR: nolden@kde.org
