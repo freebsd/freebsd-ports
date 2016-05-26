@@ -304,6 +304,7 @@
     SUBDIR += seafile-gui
     SUBDIR += send
     SUBDIR += sendip
+    SUBDIR += sensu
     SUBDIR += sipcalc
     SUBDIR += sjitter
     SUBDIR += slate
