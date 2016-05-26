@@ -865,6 +865,8 @@
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
     SUBDIR += rdup
+    SUBDIR += reallyenglish-munin-plugins
+    SUBDIR += reallyenglish-rems-tools
     SUBDIR += realsync
     SUBDIR += recoverdm
     SUBDIR += reed
