@@ -285,6 +285,7 @@
     SUBDIR += rancid3
     SUBDIR += rate
     SUBDIR += rcpd
+    SUBDIR += reallyenglish-nagios-plugins
     SUBDIR += remarp
     SUBDIR += resource-agents
     SUBDIR += riemann
