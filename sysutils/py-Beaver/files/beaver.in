@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# $FreeBSD:$
+#
+
+# PROVIDE: beaver
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable beaver:
+#
+# beaver_enable="YES"
+#
+# Configuration variables and their default values:
+#
+# beaver_pidfile - full path to the PID file.
+#   default: "/var/run/beaver/beaver.pid"
+#
+# beaver_config - name of the beaver config file.
+#   default: unset.
+#
+# beaver_user - unprivileged user for beaver
+#   default: "beaver"
+#
+# beaver_group - unprivileged group for beaver
+#   default: "beaver"
+#
+# beaver_flags - complete command line arguments.
+#
+# See beaver(1) for a detailed overview of command-line options.
+#
+
+. /etc/rc.subr
+
+name="beaver"
+rcvar=beaver_enable
+
+command="%%PREFIX%%/bin/${name}"
+command_interpreter="%%PYTHON_CMD%%"
+
+# read configuration and set defaults
+load_rc_config ${name}
+: ${beaver_enable:="NO"}
+: ${beaver_pidfile:="/var/run/${name}/${name}.pid"}
+: ${beaver_user:="beaver"}
+: ${beaver_group:="beaver"}
+: ${beaver_flags:="-c %%PREFIX%%/etc/beaver/beaver.conf -C %%PREFIX%%/etc/beaver/conf.d --daemonize --pid ${beaver_pidfile} --fqdn"}
+
+beaver_prestart()
+{
+    _my_pid_dir=`dirname ${beaver_pidfile}`
+    install -d -o ${beaver_user} ${_my_pid_dir}
+    export PYTHON_EGG_CACHE=${_my_pid_dir}
+}
+start_precmd=beaver_prestart
+
+pidfile="${beaver_pidfile}"
+run_rc_command "$1"
