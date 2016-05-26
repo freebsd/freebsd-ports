@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	oysttyer
-PORTVERSION=	2.6.3
+PORTVERSION=	2.7.0
 CATEGORIES=	net-im
 
 MAINTAINER=	pi@FreeBSD.org
