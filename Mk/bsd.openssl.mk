@@ -44,7 +44,7 @@ WITH_OPENSSL_BASE=yes
 OPENSSLBASE=		/usr
 OPENSSLDIR?=		/etc/ssl
 
-.if !exists(${DESTDIR}/usr/lib/libcrypto.so)
+.  if !exists(${DESTDIR}/usr/lib/libcrypto.so)
 check-depends::
 	@${ECHO_CMD} "Dependency error: This port requires the OpenSSL library, which is part of"
 	@${ECHO_CMD} "the FreeBSD crypto distribution, but not installed on your"
@@ -53,63 +53,63 @@ check-depends::
 	@${ECHO_CMD} "for instructions on how to obtain and install the FreeBSD"
 	@${ECHO_CMD} "OpenSSL distribution."
 	@${FALSE}
-.endif
-.if exists(${LOCALBASE}/lib/libcrypto.so)
+.  endif
+.  if exists(${LOCALBASE}/lib/libcrypto.so)
 check-depends::
 	@${ECHO_CMD} "Dependency error: This port wants the OpenSSL library from the FreeBSD"
 	@${ECHO_CMD} "base system. You can't build against it, while a newer"
 	@${ECHO_CMD} "version is installed by a port."
 	@${ECHO_CMD} "Please deinstall the port or undefine WITH_OPENSSL_BASE."
 	@${FALSE}
-.endif
+.  endif
 
 # OpenSSL in the base system may not include IDEA for patent licensing reasons.
-.if defined(MAKE_IDEA) && !defined(OPENSSL_IDEA)
+.  if defined(MAKE_IDEA) && !defined(OPENSSL_IDEA)
 OPENSSL_IDEA=		${MAKE_IDEA}
-.else
+.  else
 OPENSSL_IDEA?=		NO
-.endif
+.  endif
 
-.if ${OPENSSL_IDEA} == "NO"
+.  if ${OPENSSL_IDEA} == "NO"
 # XXX This is a hack to work around the fact that /etc/make.conf clobbers
 #     our CFLAGS. It might not be enough for all future ports.
-.if defined(HAS_CONFIGURE)
+.    if defined(HAS_CONFIGURE)
 CFLAGS+=		-DNO_IDEA
-.else
+.    else
 OPENSSL_CFLAGS+=	-DNO_IDEA
-.endif
+.    endif
 MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
-.endif
+.  endif
 
-.else
+.else # !defined(WITH_OPENSSL_BASE)
 
 OPENSSLBASE=		${LOCALBASE}
-.if	!defined(OPENSSL_PORT) && \
+.  if	!defined(OPENSSL_PORT) && \
 	exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so)
 # find installed port and use it for dependency
-.if !defined(OPENSSL_INSTALLED)
-.if defined(DESTDIR)
+.    if !defined(OPENSSL_INSTALLED)
+.      if defined(DESTDIR)
 PKGARGS=	-c ${DESTDIR}
-.else
+.      else
 PKGARGS=
-.endif
+.      endif
 OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so || :
-.endif
-.if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
+.    endif
+.    if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
 OPENSSL_PORT=		${OPENSSL_INSTALLED}
 OPENSSL_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | ${GREP} "^`${PKG_QUERY} "%p" ${OPENSSL_INSTALLED}`/lib/libcrypto.so.[0-9]*$$"
 OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
-.endif
-.endif
+.    endif
+.  endif
 
 # LibreSSL and OpenSSL-BETA specific SHLIBVER
-.if   defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
+.  if   defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
 OPENSSL_SHLIBVER?=	37
-.elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl-devel
+.  elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl-devel
 OPENSSL_SHLIBVER?=	37
-.elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/openssl-devel
+.  elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/openssl-devel
 OPENSSL_SHLIBVER?=	9
-.endif
+.  endif
 
 # default
 OPENSSL_PORT?=		security/openssl
@@ -131,9 +131,9 @@ MAKE_ENV+=		OPENSSLINC=${OPENSSLINC}
 MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB}
 
 .if defined(OPENSSLRPATH)
-.if defined(USE_OPENSSL_RPATH)
+.  if defined(USE_OPENSSL_RPATH)
 CFLAGS+=		-Wl,-rpath,${OPENSSLRPATH}
-.endif
+.  endif
 MAKE_ENV+=		OPENSSLRPATH=${OPENSSLRPATH}
 OPENSSL_LDFLAGS+=	-Wl,-rpath,${OPENSSLRPATH}
 .endif
