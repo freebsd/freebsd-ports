@@ -1,2 +1,3 @@
-SHA256 (samtools-samtools-1.3_GH0.tar.gz) = f1eee9a217d547d9b483098519738ef351ec454f4a85cdb1e77ae8892fe858b5
-SIZE (samtools-samtools-1.3_GH0.tar.gz) = 3742904
+TIMESTAMP = 1463691050
+SHA256 (samtools-samtools-1.3.1_GH0.tar.gz) = 30752c7b92cd9e146f4017983b2a41beb58c8966e93572cea76a14719f95a768
+SIZE (samtools-samtools-1.3.1_GH0.tar.gz) = 3757176

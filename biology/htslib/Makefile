@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htslib
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	biology devel
 
 MAINTAINER=	cartwright@asu.edu
@@ -21,7 +21,7 @@ USES=		autoreconf gmake perl5 shebangfix
 USE_PERL5=	test
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-SHEBANG_FILES=	test/compare_sam.pl test/test.pl test/test_view.pl
+SHEBANG_FILES=	test/compare_sam.pl test/test.pl
 
 OPTIONS_DEFINE=		CURL
 OPTIONS_DEFAULT=	CURL
