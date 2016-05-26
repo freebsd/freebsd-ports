@@ -1,0 +1,5 @@
+conf_d
+
+read configuration files, conf.d style
+
+WWW: https://github.com/josegonzalez/conf_d
