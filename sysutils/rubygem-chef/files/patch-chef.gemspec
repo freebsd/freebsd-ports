@@ -1,4 +1,4 @@
---- chef.gemspec.orig	2016-03-31 19:04:14 UTC
+--- chef.gemspec.orig	2016-05-26 09:24:12 UTC
 +++ chef.gemspec
 @@ -28,12 +28,12 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<mixlib-authentication>.freeze, ["~> 1.3"])
@@ -8,7 +8,8 @@
 +      s.add_runtime_dependency(%q<rest-client>.freeze, [">= 1.0.4"])
        s.add_runtime_dependency(%q<mime-types>.freeze, ["~> 1.16"])
        s.add_runtime_dependency(%q<ffi-yajl>.freeze, ["~> 1.0"])
-       s.add_runtime_dependency(%q<net-ssh>.freeze, ["~> 2.6"])
+-      s.add_runtime_dependency(%q<net-ssh>.freeze, ["~> 2.6"])
++      s.add_runtime_dependency(%q<net-ssh>.freeze, ["~> 3.1"])
        s.add_runtime_dependency(%q<net-ssh-multi>.freeze, ["~> 1.1"])
 -      s.add_runtime_dependency(%q<highline>.freeze, [">= 1.6.9", "~> 1.6"])
 +      s.add_runtime_dependency(%q<highline>.freeze, [">= 1.6.9"])
