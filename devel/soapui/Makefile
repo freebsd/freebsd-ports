@@ -10,7 +10,11 @@ DISTNAME=	SoapUI-${PORTVERSION}-linux-bin
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Web service, SOA, and SOAP testing tool
 
-LICENSE=	GPLv2
+LICENSE=	EUPL LGPL21 LGPL3 APACHE11 APACHE20 BSD3CLAUSE MPL MIT CPL
+LICENSE_COMB=	multi
+LICENSE_NAME_EUPL=European Union Public Licence V. 1.1
+LICENSE_FILE_EUPL=${WRKSRC}/LICENSE.txt
+LICENSE_PERMS_EUPL=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cpe
 CPE_VENDOR=	smartbear
