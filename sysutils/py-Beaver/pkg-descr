@@ -1,0 +1,7 @@
+Beaver
+
+python daemon that munches on logs and sends their contents to logstash.
+
+Note: the development has not shown much fow a while. I am planning to switch.
+
+WWW: https://github.com/josegonzalez/beaver
