@@ -37,15 +37,15 @@ SYSLOG_PATCH_DESC=	apply extra patch to support syslog logging
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPIKA}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pika>=0:${PORTSDIR}/devel/py-pika
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pika>=0:devel/py-pika
 .endif
 
 .if ${PORT_OPTIONS:MZEROMQ}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq>=0:${PORTSDIR}/net/py-pyzmq
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq
 .endif
 
 .if ${PORT_OPTIONS:MREDIS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}redis>=0:${PORTSDIR}/databases/py-redis
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}redis>=0:databases/py-redis
 .endif
 
 .if ${PORT_OPTIONS:MSYSLOG_PATCH}
