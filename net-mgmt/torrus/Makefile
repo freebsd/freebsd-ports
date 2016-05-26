@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	torrus
-PORTVERSION=	2.07
-PORTREVISION=	2
+PORTVERSION=	2.09
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/torrus/torrus/
 
