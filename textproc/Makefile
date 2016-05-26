@@ -1256,6 +1256,7 @@
     SUBDIR += py-numpydoc
     SUBDIR += py-openpyxl
     SUBDIR += py-paragrep
+    SUBDIR += py-parsimonious
     SUBDIR += py-pdfminer
     SUBDIR += py-pss
     SUBDIR += py-pyctpp2
