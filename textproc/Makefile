@@ -1238,6 +1238,7 @@
     SUBDIR += py-excelerator
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
+    SUBDIR += py-glob2
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
     SUBDIR += py-hyperestraier-python

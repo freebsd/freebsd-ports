@@ -13,11 +13,11 @@ COMMENT=	Logshipper written in Python for logstash
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}conf_d>=0.0.4:${PORTSDIR}/textproc/py-conf_d \
-	${PYTHON_PKGNAMEPREFIX}glob2>=0:${PORTSDIR}/textproc/py-glob2 \
-	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0:${PORTSDIR}/devel/py-msgpack-python \
-	${PYTHON_PKGNAMEPREFIX}daemon>=0:${PORTSDIR}/devel/py-daemon \
-	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}conf_d>=0.0.4:textproc/py-conf_d \
+	${PYTHON_PKGNAMEPREFIX}glob2>=0:textproc/py-glob2 \
+	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0:devel/py-msgpack-python \
+	${PYTHON_PKGNAMEPREFIX}daemon>=0:devel/py-daemon \
+	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
 
 USES=	python:2.6+
 USE_PYTHON=	distutils autoplist
