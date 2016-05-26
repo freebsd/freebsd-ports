@@ -10,6 +10,7 @@ MASTER_SITES=	RG
 MAINTAINER=	tomoyukis@reallyenglish.com
 COMMENT=	Improved Logger replacement that logs to syslog
 
+USE_RUBY=	yes
 LICENSE=	MIT
 
 USES=	gem
