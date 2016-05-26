@@ -3,7 +3,7 @@
 
 PORTNAME=	chef
 PORTVERSION=	11.14.6
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -33,10 +33,20 @@ RUN_DEPENDS=	rubygem-chef-zero>=2.1.0:sysutils/rubygem-chef-zero \
 
 NO_ARCH=		yes
 USE_RUBY=		yes
-USES=		gem
+USES=	gem
 
 SUB_LIST=	RUBY=${RUBY}
 USE_RC_SUBR=	chef_client
+
+post-patch:
+	( cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		lib/chef/application/client.rb \
+		lib/chef/application/solo.rb \
+		lib/chef/config.rb \
+		lib/chef/encrypted_data_bag_item.rb \
+		lib/chef/knife/configure.rb \
+		lib/chef/knife/core/bootstrap_context.rb \
+		lib/chef/shell.rb )
 
 post-install:
 .for M1 in chef-shell.1 knife-bootstrap.1 knife-client.1 knife-configure.1 knife-cookbook-site.1 \
