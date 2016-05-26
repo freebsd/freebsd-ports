@@ -21,7 +21,7 @@ LIB_DEPENDS+=	libconfuse.so:devel/libconfuse
 CONFLICTS?=	nsca-2.* nsca27-2.*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/spool/nagios
+CONFIGURE_ARGS=	--localstatedir=/var/spool/nagios --with-openssl=/usr/local
 USE_OPENSSL=	yes
 
 .if !defined(PKGNAMESUFFIX)
@@ -32,6 +32,15 @@ CONFIGURE_ARGS+=	--enable-server
 PORTDOCS=		NEWS COPYING README PROTOCOL TODO
 
 .include <bsd.port.options.mk>
+
+.if defined(OPENSSL_PORT) && \
+	( ${OPENSSL_PORT} == security/libressl || ${OPENSSL_PORT} == security/libressl-devel )
+CONFIGURE_ARGS+=	--with-openssl=/usr
+CONFIGURE_ENV+=		SSLCPPARGS=-I/usr/include SSLLDFLAGS=-L/usr/lib
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-LibreSSL
+.else
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.endif
 
 .if ${OSVERSION} < 1000000
 WITH_OPENSSL_PORT=	yes
