@@ -10,7 +10,7 @@ lib/kde4/ktpaccountskcm_plugin_sipe.so
 lib/kde4/ktpaccountskcm_plugin_sunshine.so
 lib/libktpaccountskcminternal.so
 lib/libktpaccountskcminternal.so.4
-lib/libktpaccountskcminternal.so.%%KDE4_VERSION%%
+lib/libktpaccountskcminternal.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/kde4/services/kcm_ktp_accounts.desktop
 share/kde4/services/ktpaccountskcm_plugin_butterfly.desktop
 share/kde4/services/ktpaccountskcm_plugin_gabble.desktop
