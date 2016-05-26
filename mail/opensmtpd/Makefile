@@ -42,12 +42,11 @@ GROUPS=		_smtpd _smtpq
 
 OPTIONS_SUB=	yes
 
-CA_BUNDLE_CONFIGURE_WITH=	ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
+CA_BUNDLE_CONFIGURE_WITH=	path-CAfile=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 LIBASRDEVEL_LIB_DEPENDS_OFF=	libasr.so:dns/libasr
 LIBASRDEVEL_LIB_DEPENDS=	libasr.so:dns/libasr-devel
-LIBASRDEVEL_BROKEN=		incompatible with libasr-devel
 
 PAM_CONFIGURE_WITH=	auth-pam=smtpd
 SSL_PORT_VARS=		with_openssl_port=yes
@@ -63,7 +62,7 @@ WITH_OPENSSL_PORT=	yes
 
 CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 			--with-libevent=${LOCALBASE} \
-			--with-ssl=${OPENSSLBASE} \
+			--with-libssl=${OPENSSLBASE} \
 			--sysconfdir=${PREFIX}/etc/mail/
 
 post-patch:
