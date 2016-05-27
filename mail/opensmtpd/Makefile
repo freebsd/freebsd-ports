@@ -4,6 +4,7 @@
 PORTNAME=	opensmtpd
 PORTVERSION=	5.9.2p1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
@@ -68,7 +69,9 @@ CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 post-patch:
 	${REINPLACE_CMD} -e '/chmod 2555/d' ${WRKSRC}/mk/smtpctl/Makefile.in
 
+.if ${PORT_OPTIONS:MTABLE_DB}
 post-install:
 	@${LN} -sf ${PREFIX}/sbin/smtpctl ${STAGEDIR}${PREFIX}/libexec/opensmtpd/makemap
+.endif
 
 .include <bsd.port.post.mk>

@@ -18,11 +18,6 @@
 
 . /etc/rc.subr
 
-check_process()
-{
-	/bin/pgrep -j none -f "^$smtpd_procname\$"
-}
-
 name="smtpd"
 rcvar=smtpd_enable
 
@@ -34,18 +29,21 @@ extra_commands="configtest"
 load_rc_config $name
 
 : ${smtpd_enable:="NO"}
-: ${smtpd_config:="%%PREFIX%%/etc/mail/smtpd.conf"}
-: ${smtpd_procname:="%%PREFIX%%/sbin/smtpd"}
+: ${smtpd_config:="%%PREFIX%%/etc/mail/${name}.conf"}
+: ${smtpd_procname:="%%PREFIX%%/sbin/${name}"}
 : ${smtpd_flags:=""}
 
 command=${smtpd_procname}
+command_args="-f ${smtpd_config} ${command_args}"
+required_files="${smtpd_config}"
 
 procname=${smtpd_procname}
+pidfile="/var/run/${name}.pid"
 
 smtpd_checkconfig()
 {
     echo "Performing sanity check on smtpd configuration:"
-    eval ${command} ${smtpd_flags} -n
+    eval ${command} ${command_args} ${smtpd_flags} -n
 }
 
 smtpd_precmd()
