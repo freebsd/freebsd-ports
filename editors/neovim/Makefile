@@ -3,6 +3,7 @@
 
 PORTNAME=	neovim
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libunibilium.so:devel/unibilium \
 		libtermkey.so:devel/libtermkey \
 		libluajit-5.1.so:lang/luajit \
 		libuv.so:devel/libuv \
-		libmsgpack.so:devel/msgpack
+		libmsgpackc.so:devel/msgpack
 
 USES=		cmake:outsource gettext iconv ninja lua:build pathfix pkgconfig
 USE_GITHUB=	yes
