@@ -1,11 +1,12 @@
-# Created by: Johan Str??m <johna@stromnet.se>
+# Created by: Johan Str??m <johan@stromnet.se>
 # $FreeBSD$
 
 PORTNAME=	jsoncpp
 DISTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	johan@stromnet.se
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	JSON reader and writer library for C++
 
 LICENSE=	MIT
@@ -41,7 +42,7 @@ do-install:
 	@${REINPLACE_CMD} -i '' \
 		-e 's|@CMAKE_INSTALL_PREFIX@|${PREFIX}|g' \
 		-e 's|@LIBRARY_INSTALL_DIR@|${PREFIX}/lib|g' \
-		-e 's|@INCLUDE_INSTALL_DIR@|${PREFIX}/jsoncpp|g' \
+		-e 's|@INCLUDE_INSTALL_DIR@|${PREFIX}/include/jsoncpp|g' \
 		-e 's|@JSONCPP_VERSION@|${DISTVERSION}|g' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/jsoncpp.pc
 
