@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elastic
 GH_PROJECT=	beats
 
-USES=		gmake
+USES=		go
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGETS=	${PORTNAME}
 
@@ -33,5 +33,5 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/${GO_TARGETS}.yml.sample
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/go/files/bsd.go.mk"
+.include "${.CURDIR}/../../Mk/Uses/go.mk"
 .include <bsd.port.post.mk>
