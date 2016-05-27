@@ -4316,6 +4316,7 @@
     SUBDIR += py-pymtbl
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
+    SUBDIR += py-pyqi
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
