@@ -1,0 +1,37 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: packetbeat
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable packetbeat
+#
+# packetbeat_enable (bool):	Set to YES to enable packetbeat
+# 				Default: NO
+# packetbeat_flags (str):	Extra flags passed to packetbeat
+# packetbeat_conf (str):	packetbeat configuration file
+#				Default: ${PREFIX}/etc/packetbeat.yml
+
+. /etc/rc.subr
+
+name="packetbeat"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${packetbeat_enable:="NO"}
+: ${packetbeat_config:="%%PREFIX%%/etc/${name}.yml"}
+
+# daemon
+start_precmd=packetbeat_prestart
+command=/usr/sbin/daemon
+pidfile="/var/run/${name}"
+command_args="-rP ${pidfile} %%PREFIX%%/sbin/${name} -c ${packetbeat_config}"
+
+packetbeat_prestart() {
+# Have to empty rc_flags so they don't get passed to daemon(8)
+	rc_flags=""
+}
+
+run_rc_command "$1"
