@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	html-xml-utils
-PORTVERSION=	6.9
+PORTVERSION=	7.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/Tools/HTML-XML-utils/
 
@@ -17,7 +17,7 @@ LICENSE_PERMS=	auto-accept
 USES=		gmake iconv shebangfix
 GNU_CONFIGURE=	yes
 
-SHEBANG_FILES=	${WRKSRC}/hxcite-mkbib ${WRKSRC}/hxprintlinks
+SHEBANG_FILES=	${WRKSRC}/hxcite-mkbib
 
 CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include\
 		LDFLAGS="-L${LOCALBASE}/lib ${ICONV_LIB}"
