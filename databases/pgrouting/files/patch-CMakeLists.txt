@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2016-04-19 16:40:04 UTC
+--- CMakeLists.txt.orig	2016-05-15 23:38:54 UTC
 +++ CMakeLists.txt
 @@ -224,20 +224,20 @@ if(APPLE)
    if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
