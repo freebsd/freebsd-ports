@@ -308,6 +308,7 @@
     SUBDIR += cppi
     SUBDIR += cpptest
     SUBDIR += cppunit
+    SUBDIR += cpputest
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += cram
