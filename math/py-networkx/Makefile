@@ -49,8 +49,10 @@ YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 3000 && (${PORT_OPTIONS:MMPL} || ${PORT_OPTIONS:MGRAPHVIZ})
+.if ${PYTHON_REL} >= 3000
+. if ${PORT_OPTIONS:MMPL} || ${PORT_OPTIONS:MGRAPHVIZ}
 BROKEN=		Neither math/py-matplotlib nor graphics/py-graphviz support Python 3.x yet. Please disable both the MPL and GRAPHVIZ options
+. endif
 .endif
 
 PORTEXAMPLES=	*
