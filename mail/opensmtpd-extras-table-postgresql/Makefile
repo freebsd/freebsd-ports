@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-table-postgresql
+PORTREVISION=	1
 
-COMMENT=	PostgreSQL table support for opensmtpd
+COMMENT=	PostgreSQL table support for OpenSMTPD
 
 PLIST_FILES=	libexec/opensmtpd/table-postgres
 
-CONFIGURE_ARGS=	--with-table-postgres
+CONFIGURE_ARGS+=	--with-table-postgres
 
 USES=		pgsql
 
