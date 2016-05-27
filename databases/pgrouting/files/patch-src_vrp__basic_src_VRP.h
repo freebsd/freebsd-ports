@@ -1,4 +1,4 @@
---- src/vrp_basic/src/VRP.h.orig	2016-04-19 16:40:04 UTC
+--- src/vrp_basic/src/VRP.h.orig	2016-05-15 23:38:54 UTC
 +++ src/vrp_basic/src/VRP.h
 @@ -70,7 +70,7 @@ typedef struct vrp_result_element
  

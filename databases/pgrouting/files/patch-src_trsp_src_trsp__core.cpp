@@ -1,4 +1,4 @@
---- src/trsp/src/trsp_core.cpp.orig	2016-04-28 19:43:44 UTC
+--- src/trsp/src/trsp_core.cpp.orig	2016-05-15 23:38:54 UTC
 +++ src/trsp/src/trsp_core.cpp
 @@ -25,6 +25,7 @@ Foundation, Inc., 51 Franklin Street, Fi
  #include <windows.h>
