@@ -57,6 +57,9 @@ share/apps/rkward/00saveload/import/import_stata.xml
 share/apps/rkward/00saveload/import/import_xls.js
 share/apps/rkward/00saveload/import/import_xls.rkh
 share/apps/rkward/00saveload/import/import_xls.xml
+share/apps/rkward/00saveload/import/import_xls_xlconnect.js
+share/apps/rkward/00saveload/import/import_xls_xlconnect.rkh
+share/apps/rkward/00saveload/import/import_xls_xlconnect.xml
 share/apps/rkward/00saveload/import/load_data.js
 share/apps/rkward/00saveload/import/load_data.rkh
 share/apps/rkward/00saveload/import/load_data.xml
@@ -429,6 +432,7 @@ share/apps/rkward/icons/data-numeric.png
 share/apps/rkward/icons/function.png
 share/apps/rkward/icons/list.png
 share/apps/rkward/icons/matrix.png
+share/apps/rkward/icons/menu.svg
 share/apps/rkward/icons/paste_inside_selection.png
 share/apps/rkward/icons/paste_inside_table.png
 share/apps/rkward/icons/rkward_logo.png
@@ -654,6 +658,8 @@ share/apps/rkward/pluginmap_meta.inc
 %%NLS%%share/apps/rkward/po/pt_BR/LC_MESSAGES/rkward__item_response_theory.mo
 %%NLS%%share/apps/rkward/po/pt_BR/LC_MESSAGES/rkward__pages.mo
 %%NLS%%share/apps/rkward/po/pt_BR/LC_MESSAGES/rkward__plots.mo
+%%NLS%%share/apps/rkward/po/rkward__embedded.pot
+%%NLS%%share/apps/rkward/po/rkward__import_export.pot
 %%NLS%%share/apps/rkward/po/sk/LC_MESSAGES/rkward__analysis.mo
 %%NLS%%share/apps/rkward/po/sk/LC_MESSAGES/rkward__data.mo
 %%NLS%%share/apps/rkward/po/sk/LC_MESSAGES/rkward__distributions.mo
@@ -711,6 +717,8 @@ share/apps/rkward/testing/matrix1.js
 share/apps/rkward/testing/matrix1.xml
 share/apps/rkward/testing/optionset.js
 share/apps/rkward/testing/optionset.xml
+share/apps/rkward/testing/preview.js
+share/apps/rkward/testing/preview.xml
 share/apps/rkward/testing/run_code.js
 share/apps/rkward/testing/run_code.xml
 share/apps/rkward/testing/scatterplot2.xml
@@ -747,10 +755,13 @@ share/icons/hicolor/48x48/apps/rkward.png
 share/icons/hicolor/64x64/apps/rkward.png
 share/icons/hicolor/scalable/apps/rkward.svgz
 share/kde4/services/rkward.protocol
+%%NLS%%share/locale/ca/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/de/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/es/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/rkward.mo
@@ -759,3 +770,4 @@ share/kde4/services/rkward.protocol
 %%NLS%%share/locale/uk/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/x-test/LC_MESSAGES/rkward.mo
 share/mime/packages/vnd.rkward.r.xml
+%%NLS%%@dir share/locale/ast/LC_MESSAGES
