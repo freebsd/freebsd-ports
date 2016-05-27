@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	kanboard
-PORTVERSION=	1.0.27
+PORTVERSION=	1.0.28
 CATEGORIES=	www
 MASTER_SITES=	http://kanboard.net/ \
 		https://bitbucket.org/if0/kanboard-archives/downloads/ \
 		https://github.com/freebsd-kanboard/archives/blob/master/
 
 MAINTAINER=	bsd@if0.eu
-COMMENT=	Kanboard is a simple visual task board software
+COMMENT=	Simple visual task board software
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
