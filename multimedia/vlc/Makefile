@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.2.1
-PORTREVISION=	9
+DISTVERSION=	2.2.3
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -53,6 +52,7 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS_i386=	-fomit-frame-pointer
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DCA DIRAC DOCS DVDREAD \
 		DVDNAV FAAD FLAC FLUID FRIBIDI GME GNOMEVFS2 GNUTLS \
