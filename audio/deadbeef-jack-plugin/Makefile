@@ -17,6 +17,8 @@ GH_ACCOUNT=	Alexey-Yakovenko
 GH_PROJECT=	jack
 GH_TAGNAME=	62d1e6a
 
+MAKE_JOBS_UNSAFE=	yes
+
 PLIST_FILES=	lib/deadbeef/jack.so
 
 do-build:
