@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160527
+  AFFECTS: Users of mail/opensmtpd-extras (any of them)
+  AUTHOR: adamw@FreeBSD.org
+
+  The invocation for extras has changed. Some extras might fail unless
+  you pass all options/arguments separated by quotes:
+
+      filter myfilter dnsbl "-c /var/chroot/dnsbl" "-h my.dnsbl.com"
+  
+  Additionally, extras now run in a chroot. Either pass "-C" to skip the
+  chroot entirely (not recommended), or put all required config files,
+  resolv.conf, and external binaries into the chroot. For example:
+
+      # mkdir -p /var/chroot/dnsbl/etc
+      # cp /etc/resolv.conf /var/chroot/dnsbl/etc
+
+      And pass "-c /var/chroot/dnsbl" to the filter.
+
 20160526:
   AFFECTS: Users of mail/opensmtpd
   AUTHOR: brnrd@FreeBSD.org
