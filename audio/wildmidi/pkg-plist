@@ -18,4 +18,4 @@ man/man3/WildMidi_OpenBuffer.3.gz
 man/man3/WildMidi_SetOption.3.gz
 man/man3/WildMidi_Shutdown.3.gz
 man/man5/wildmidi.cfg.5.gz
-%%DATADIR%%/wildmidi.cfg.sample
+@sample %%DATADIR%%/wildmidi.cfg.sample
