@@ -3,6 +3,7 @@
 
 PORTNAME=	ghdl
 PORTVERSION=	0.33
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
 
-USES=		ada:5 gmake
+USES=		ada gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	tgingold
 
