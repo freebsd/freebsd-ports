@@ -153,6 +153,7 @@
     SUBDIR += qt4-style-float
     SUBDIR += qt4-style-phase
     SUBDIR += qt4-style-quantumstyle
+    SUBDIR += qt5-style-Kvantum
     SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
     SUBDIR += qtcurve-kde4
