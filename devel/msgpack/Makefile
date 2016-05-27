@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	msgpack
-PORTVERSION=	1.1.0
+PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	cpp-
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ COMMENT=	MessagePack implementation for C and C++
 LICENSE=	APACHE20
 
 USE_GITHUB=	yes
-GH_PROJECT= msgpack-c
+GH_PROJECT=	msgpack-c
 
 USES=		libtool:build autoreconf:build
 
@@ -32,5 +32,7 @@ CONFIGURE_ARGS=	CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686
 
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
+post-stage:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmsgpackc.so.2.0.0
 
 .include <bsd.port.post.mk>

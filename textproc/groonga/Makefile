@@ -2,6 +2,7 @@
 
 PORTNAME=	groonga
 PORTVERSION=	6.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -39,7 +40,7 @@ MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
 MECAB_CONFIGURE_OFF=	--without-mecab
 SUGGEST_DESC=		Suggestions support
 SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent2 \
-			libmsgpack.so:devel/msgpack \
+			libmsgpackc.so:devel/msgpack \
 			libzmq.so:net/libzmq2
 SUGGEST_CONFIGURE_ON=	--with-libevent=${LOCALBASE} \
 			--with-message-pack=${LOCALBASE} \
