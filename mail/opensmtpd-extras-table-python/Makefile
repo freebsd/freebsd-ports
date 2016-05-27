@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-table-python
+PORTREVISION=	1
 
-COMMENT=	Python table support for opensmtpd
+COMMENT=	Python table support for OpenSMTPD
 
 PLIST_FILES=	libexec/opensmtpd/table-python
 
-CONFIGURE_ARGS=	--with-table-python --with-python-type=${PYTHON_VERSION}
+CONFIGURE_ARGS+=	--with-table-python --with-python-type=${PYTHON_VERSION}
 
-USES=		python
+USES=		python pkgconfig
 
 MASTERDIR=	${.CURDIR}/../opensmtpd-extras
 SLAVE_PORT=	yes

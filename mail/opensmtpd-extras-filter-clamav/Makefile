@@ -2,9 +2,12 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-clamav
+PORTREVISION=		1
 
 COMMENT=		Check messages with ClamAV in OpenSMTPD
 MAINTAINER=		adamw@FreeBSD.org
+
+RUN_DEPENDS=		clamscan:security/clamav
 
 PLIST_FILES=		libexec/opensmtpd/filter-clamav \
 			man/man8/filter-clamav.8.gz
