@@ -9,7 +9,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Flash card trainer for KDE 4
 
-USE_KDE4=	kdelibs kdeprefix libkdeedu automoc4
+USE_KDE4=	kdelibs libkdeedu automoc4
 USES=		cmake:outsource tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 

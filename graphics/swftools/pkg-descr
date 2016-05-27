@@ -16,6 +16,6 @@ At the moment, this includes:
    - SWFExtract : Allows to extract Movieclips, Sounds, Images etc. from SWF
      files.
    - AS3Compile : A standalone ActionScript 3.0 compiler. Mostly compatible
-     with Flex. 
+     with Flex.
 
 WWW: http://www.swftools.org/

@@ -1,2 +1,3 @@
-SHA256 (notmuch-0.21.tar.gz) = d06f8ffed168c7d53ffc449dd611038b5fa90f7ee22d58f3bec3b379571e25b3
-SIZE (notmuch-0.21.tar.gz) = 663600
+TIMESTAMP = 1463745210
+SHA256 (notmuch-0.22.tar.gz) = d64118ef926ba06fba814a89a75d20b0c8c8ec07dd65e41bb9f1e9db0dcfb99a
+SIZE (notmuch-0.22.tar.gz) = 682458

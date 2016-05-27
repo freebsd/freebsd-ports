@@ -1,14 +1,14 @@
-MathML::Entities a content conversion filter for named XHTML+MathML 
-entities. There are over two thousand named entities in the XHTML+MathML 
-DTD. All the Entities defined in the XHTML+MathML DTD except the five 
-"safe" ones (&lt;, &gt;, &amp;, &quot;, &apos;), will be converted to the 
-equivalent numeric character references or to utf-8 characters. Named 
-entities which are not in the XHTML+MathML DTD are escaped. This makes the 
-resulting XHTML (or XHTML+MathML) safe for consumption by non-validating 
+MathML::Entities a content conversion filter for named XHTML+MathML
+entities. There are over two thousand named entities in the XHTML+MathML
+DTD. All the Entities defined in the XHTML+MathML DTD except the five
+"safe" ones (&lt;, &gt;, &amp;, &quot;, &apos;), will be converted to the
+equivalent numeric character references or to utf-8 characters. Named
+entities which are not in the XHTML+MathML DTD are escaped. This makes the
+resulting XHTML (or XHTML+MathML) safe for consumption by non-validating
 XML parsers.
 
-Unlike, HTML::Entities, the mapping between MathML named entities and 
-codepoints is many-to-one. Therefore, there's no particular sense in 
+Unlike, HTML::Entities, the mapping between MathML named entities and
+codepoints is many-to-one. Therefore, there's no particular sense in
 having an inverse function, which takes codepoints to named entities.
 
 Based on: HTML::Entities by Koichi Taniguchi <taniguchi@livedoor.jp>

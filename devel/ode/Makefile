@@ -29,8 +29,6 @@ GIMPACT_CONFIGURE_OFF=	--with-trimesh=opcode
 DOUBLE_CONFIGURE_ENABLE=	double-precision
 OU_CONFIGURE_ENABLE=		ou
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

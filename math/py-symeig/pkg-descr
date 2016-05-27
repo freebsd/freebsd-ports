@@ -2,6 +2,6 @@ The symeig module contains a Python wrapper for the LAPACK functions to
 solve the standard and generalized eigenvalue problems for symmetric
 (hermitian) positive definite matrices. Those specialized algorithms give
 an important speed-up with respect to the generic LAPACK eigenvalue
-problem solver used by NumPy (linalg.eig and linalg.eigh). 
+problem solver used by NumPy (linalg.eig and linalg.eigh).
 
 WWW: http://mdp-toolkit.sourceforge.net/symeig.html

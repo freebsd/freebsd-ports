@@ -1,9 +1,9 @@
 
 *************************************************************
-A sample configuration file has been written in 
+A sample configuration file has been written in
 %%PREFIX%%/etc/mifluz.conf.sample
 
-You will have to copy this file to %%PREFIX%%/etc/mifluz.conf 
+You will have to copy this file to %%PREFIX%%/etc/mifluz.conf
 and edit it before using mifluz.
 *************************************************************
 

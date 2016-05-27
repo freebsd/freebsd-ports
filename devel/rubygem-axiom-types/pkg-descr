@@ -1,4 +1,4 @@
 Axiom-types provides a Ruby library that allows one to define types with
-optional constraints. It can be used for logic programming. 
+optional constraints. It can be used for logic programming.
 
 WWW: https://github.com/dkubb/axiom-types

@@ -1,8 +1,8 @@
-euclid-wm is a minimalist, tiling window manager for X11 that seeks to allow 
+euclid-wm is a minimalist, tiling window manager for X11 that seeks to allow
 easy management of numerous windows entirely from the keyboard.
 
 euclid seeks to do two things in particular:
-	- balance the ease of use common among window managers with automatic 
+	- balance the ease of use common among window managers with automatic
 	  or fixed layouts with the flexibility of those dynamic layouts,
 	- create an easy way to manage minimized windows
 

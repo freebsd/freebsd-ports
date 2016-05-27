@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	recog
-PORTVERSION=	1.0.29
+PORTVERSION=	2.0.21
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Framework for fingerprinting products
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 

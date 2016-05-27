@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit-model
-PORTVERSION=	0.29.2
+PORTVERSION=	2.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ COMMENT=	Metasploit Model Mixins and Validators
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport>=0:devel/rubygem-activesupport \
-		rubygem-railties>=3.0.0:www/rubygem-railties
+RUN_DEPENDS=	rubygem-activemodel4>=4.2.6:databases/rubygem-activemodel4 \
+		rubygem-activesupport4>=4.2.6:devel/rubygem-activesupport4 \
+		rubygem-railties4>=4.2.6:www/rubygem-railties4
 
 NO_ARCH=	yes
 

@@ -1,0 +1,11 @@
+--- configure.orig	2014-07-06 10:05:56 UTC
++++ configure
+@@ -5153,7 +5153,7 @@ if ${ax_cv_lib_readline+:} false; then :
+ else
+ 
+     ORIG_LIBS="$LIBS"
+-    for readline_lib in readline edit editline; do
++    for readline_lib in readline editline; do
+       for termcap_lib in "" termcap curses ncurses; do
+         if test -z "$termcap_lib"; then
+           TRY_LIB="-l$readline_lib"

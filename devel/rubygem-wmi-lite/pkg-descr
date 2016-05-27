@@ -3,4 +3,4 @@ Instrumentation) functionality in the Microsoft Windows operating system. It has
 no runtime dependencies other than Ruby, so it can be used without concerns
 around dependency issues.
 
-WWW: https://github.com/opscode/wmi-lite 
+WWW: https://github.com/opscode/wmi-lite

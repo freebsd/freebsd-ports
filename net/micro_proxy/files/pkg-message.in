@@ -5,7 +5,7 @@ with inetd add
 
   webproxy        8080/tcp
 
-to services(5), 
+to services(5),
 
   webproxy  stream  tcp  nowait  nobody  %%PREFIX%%/libexec/micro_proxy -R 10000  micro_proxy
 
@@ -13,6 +13,6 @@ to inetd.conf(5),
 
   inetd_enable="YES"
 
-to rc.conf(5) and restart inetd(8). See micro_proxy(8) for more information. 
+to rc.conf(5) and restart inetd(8). See micro_proxy(8) for more information.
 
 ===============================================================================

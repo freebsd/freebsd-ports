@@ -13,7 +13,7 @@ it includes a whole heap of features:
     o strings, lists, dicts, numbers
     o modules, list comprehensions
     o exceptions with full traceback
-    o some builtins 
- * batteries not included -- yet 
+    o some builtins
+ * batteries not included -- yet
 
 WWW: http://www.tinypy.org/

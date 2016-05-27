@@ -1,7 +1,7 @@
-Tk::Cloth       - An OO interface to Tk::Canvas                         
-Tk::TFrame      - A frame with a title                                  
-Tk::NumEntry    - An entry widget that accepts numbers and has up/down  
- 	         buttons for in/decrement.                             
-Tk::FireButton  - Button that keeps invoking command when pressed    
+Tk::Cloth       - An OO interface to Tk::Canvas
+Tk::TFrame      - A frame with a title
+Tk::NumEntry    - An entry widget that accepts numbers and has up/down
+ 	         buttons for in/decrement.
+Tk::FireButton  - Button that keeps invoking command when pressed
 
 WWW: http://search.cpan.org/dist/Tk-GBARR/

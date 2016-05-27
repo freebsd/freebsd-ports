@@ -4,6 +4,6 @@ have a decent terminal emulator. Current terminal emulators based on VTE are
 gnome-terminal, XFCE Terminal, TermIt and a small sample program included in
 the vte sources. Sakura differences from the last one is that it uses a
 notebook to provide several terminals in one window and adds a contextual
-menu with some basic options. No more no less. 
+menu with some basic options. No more no less.
 
 WWW: https://launchpad.net/sakura

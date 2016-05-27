@@ -1,31 +1,31 @@
 =================================================================
-- Universal server building block (OpenXPKI) for arbitrary PKI: installed. 
+- Universal server building block (OpenXPKI) for arbitrary PKI: installed.
 - SCEP prerequisite binary and i18n tools for UI: installed.
 - Enable utf8 locale (e.g. en_US.utf8) for the translation staff to operate
   (translation is needed even for English language).
-- Install your favorite database (enable utf8 support), 
+- Install your favorite database (enable utf8 support),
   e.g. databases/mysql56-server
-- Install perl interface for your favorite database, 
+- Install perl interface for your favorite database,
   e.g. databases/p5-DBD-mysql
 - Install your favorite web server.
   Choose from two versions of the handler: based on CGI or FastCGI
   perl core modules.
   Copy CGI or FastCGI scripts from %%EXAMPLESDIR%%/cgi-bin to the location
-  where your web server can use them. Set executable permissions for them. 
-  Copy htdocs files from %%EXAMPLESDIR%%/htdocs to the location 
+  where your web server can use them. Set executable permissions for them.
+  Copy htdocs files from %%EXAMPLESDIR%%/htdocs to the location
   where your web server can use them.
   You can see some samples in %%EXAMPLESDIR%%/config/apache.
-- If you want your server to act just as the simplest CA, 
+- If you want your server to act just as the simplest CA,
   then the basic deployment procedure is all you need:
-  copy sample configuration for this case with 
+  copy sample configuration for this case with
     cp -R %%EXAMPLESDIR%%/config/openxpki/* %%PREFIX%%/etc/openxpki/
   and follow advice at:
   https://openxpki.readthedocs.org/en/latest/quickstart.html
   Without this deployment procedure OpenXPKI server would not start.
 - If you want more complex role for your server inside the PKI infrastructure,
-  then you need to perform further deployment procedure for your server atop 
-  the basic deployment. 
-- This port has created user:group as openxpki:openxpki, which owns 
+  then you need to perform further deployment procedure for your server atop
+  the basic deployment.
+- This port has created user:group as openxpki:openxpki, which owns
   the OpenXPKI server.
 - After first fresh installation, create empty log files as follows
   (assuming your web server is owned by user www):

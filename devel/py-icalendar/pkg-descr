@@ -1,4 +1,4 @@
-The iCalender package is a parser/generator of iCalender files for use 
+The iCalender package is a parser/generator of iCalender files for use
 with Python. It follows the RFC 2445 spec.
 
 WWW: https://github.com/collective/icalendar

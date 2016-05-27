@@ -2,23 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	mongo-cxx-driver
-PORTVERSION=	1.1.0
-DISTVERSIONPREFIX=v
+PORTVERSION=	1.1.1
+DISTVERSIONPREFIX=legacy-
 CATEGORIES=	devel
 
 MAINTAINER=	numisemis@yahoo.com
-COMMENT=	C++ Driver for MongoDB
+COMMENT=	MongoDB Legacy C++ Driver
 
 LICENSE=	APACHE20
-
-BROKEN_powerpc64=	Does not build
+LICENSE_FILE=	${WRKSRC}/APACHE-2.0.txt
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
+BROKEN_powerpc64=	Does not build
+
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=         SCRAM-SHA-1
-OPTIONS_DEFAULT=        SCRAM-SHA-1
+OPTIONS_DEFINE=		SCRAM-SHA-1
+OPTIONS_DEFAULT=	SCRAM-SHA-1
 
 SCRAM-SHA-1_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SCRAM-SHA-1_MAKE_ARGS=		--use-sasl-client --ssl
@@ -27,9 +28,7 @@ SCRAM-SHA-1_DESC=	SCRAM-SHA-1 authentication mechanism support.
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-cxx-driver
-GH_TAGNAME=	4890f82
 
-WRKSRC=		${WRKDIR}/mongo-cxx-driver-4890f82
 USES=		execinfo scons
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--cc=${CC} \

@@ -1,5 +1,5 @@
-ADMesh is a program for processing triangulated solid meshes. Currently, 
-ADMesh only reads the STL file format that is used for rapid prototyping 
+ADMesh is a program for processing triangulated solid meshes. Currently,
+ADMesh only reads the STL file format that is used for rapid prototyping
 applications, although it can write STL, VRML, OFF, and DXF files.
 
 Features

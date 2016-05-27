@@ -1,5 +1,5 @@
 RepSnapper is a host software for controlling a RepRap 3D printer.  It has a
-3D OpenGL interface, slices objects and calculates the extrusion toolpath. 
+3D OpenGL interface, slices objects and calculates the extrusion toolpath.
 It can manipulate 3D objects and save constellations in STL and AMF format.
 
 WWW: http://reprap.org/wiki/RepSnapper_Manual:Introduction

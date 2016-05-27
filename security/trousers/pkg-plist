@@ -23,12 +23,16 @@ include/tss/tss_error.h
 include/tss/tss_error_basics.h
 include/tss/tss_structs.h
 include/tss/tss_typedef.h
-%%TDDL%%lib/libtddl.a
+lib/tddl/libtddl.a
+lib/tddl/libtddl.so
+lib/tddl/libtddl.so.0
+lib/tddl/libtddl.so.0.0.0
 lib/libtspi.a
 lib/libtspi.so
 lib/libtspi.so.1
 lib/libtspi.so.1.2.0
 sbin/tcsd
+sbin/tcsd_emu
 man/man3/Tspi_ChangeAuth.3.gz
 man/man3/Tspi_ChangeAuthAsym.3.gz
 man/man3/Tspi_Context_Close.3.gz
@@ -48,12 +52,6 @@ man/man3/Tspi_Context_LoadKeyByBlob.3.gz
 man/man3/Tspi_Context_LoadKeyByUUID.3.gz
 man/man3/Tspi_Context_RegisterKey.3.gz
 man/man3/Tspi_Context_UnregisterKey.3.gz
-man/man3/Tspi_DAA_IssueCredential.3.gz
-man/man3/Tspi_DAA_IssueInit.3.gz
-man/man3/Tspi_DAA_IssueSetup.3.gz
-man/man3/Tspi_DAA_IssuerKeyVerification.3.gz
-man/man3/Tspi_DAA_VerifyInit.3.gz
-man/man3/Tspi_DAA_VerifySignature.3.gz
 man/man3/Tspi_Data_Bind.3.gz
 man/man3/Tspi_Data_Seal.3.gz
 man/man3/Tspi_Data_Unbind.3.gz
@@ -92,10 +90,6 @@ man/man3/Tspi_TPM_ClearOwner.3.gz
 man/man3/Tspi_TPM_CollateIdentityRequest.3.gz
 man/man3/Tspi_TPM_CreateEndorsementKey.3.gz
 man/man3/Tspi_TPM_CreateMaintenanceArchive.3.gz
-man/man3/Tspi_TPM_DAA_JoinCreateDaaPubKey.3.gz
-man/man3/Tspi_TPM_DAA_JoinInit.3.gz
-man/man3/Tspi_TPM_DAA_JoinStoreCredential.3.gz
-man/man3/Tspi_TPM_DAA_Sign.3.gz
 man/man3/Tspi_TPM_DirRead.3.gz
 man/man3/Tspi_TPM_DirWrite.3.gz
 man/man3/Tspi_TPM_GetAuditDigest.3.gz
@@ -113,11 +107,12 @@ man/man3/Tspi_TPM_OwnerGetSRKPubKey.3.gz
 man/man3/Tspi_TPM_PcrExtend.3.gz
 man/man3/Tspi_TPM_PcrRead.3.gz
 man/man3/Tspi_TPM_Quote.3.gz
+man/man3/Tspi_TPM_Quote2.3.gz
 man/man3/Tspi_TPM_SelfTestFull.3.gz
 man/man3/Tspi_TPM_SetStatus.3.gz
 man/man3/Tspi_TPM_StirRandom.3.gz
 man/man3/Tspi_TPM_TakeOwnership.3.gz
 man/man5/tcsd.conf.5.gz
 man/man8/tcsd.8.gz
-@sample(_tss,_tss,0600) etc/tcsd.conf.dist etc/tcsd.conf
-@dir(_tss,_tss,0700) var/lib/tpm
+@sample(%%USERS%%,%%GROUPS%%,0600) etc/tcsd.conf.sample
+@dir(%%USERS%%,%%GROUPS%%,0700) var/lib/tpm

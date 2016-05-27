@@ -18,6 +18,7 @@ include/embb/algorithms/scan.h
 include/embb/algorithms/zip_iterator.h
 include/embb/base/atomic.h
 include/embb/base/base.h
+include/embb/base/log.h
 include/embb/base/c/atomic.h
 include/embb/base/c/base.h
 include/embb/base/c/condition_variable.h
@@ -224,7 +225,7 @@ lib/libembb_tasks_cpp.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/containers/queues-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/containers/stack-fragmented.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/containers/stack-snippet.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_add-snippet.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_make-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_comparator-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_connect-snippet.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dataflow/dataflow_consumer-snippet.h

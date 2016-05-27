@@ -1,17 +1,17 @@
 Netdisco is a web-based network management tool
-designed for network administrators. 
+designed for network administrators.
 Data is collected into a PostgreSQL database using SNMP.
 
 Some of the things you can do with Netdisco:
-  Locate a machine on the network by MAC or IP 
+  Locate a machine on the network by MAC or IP
       and show the switch port it lives at
   Turn off a switch port, or change the VLAN or PoE status of a port
-  Inventory your network hardware by model, vendor, software 
+  Inventory your network hardware by model, vendor, software
       and operating system
   Pretty pictures of your network
 
-App::Netdisco provides a web frontend with built-in web server, 
-and a backend daemon to handle interactive requests 
+App::Netdisco provides a web frontend with built-in web server,
+and a backend daemon to handle interactive requests
 such as changing port or device properties.
 
 WWW: http://netdisco.org/

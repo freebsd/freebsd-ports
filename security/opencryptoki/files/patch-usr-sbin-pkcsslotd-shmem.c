@@ -1,6 +1,6 @@
---- usr/sbin/pkcsslotd/shmem.c.orig	2010-07-29 21:28:41.000000000 +0900
-+++ usr/sbin/pkcsslotd/shmem.c	2010-10-20 01:23:03.203984101 +0900
-@@ -338,9 +338,9 @@
+--- usr/sbin/pkcsslotd/shmem.c.orig	2016-04-29 17:26:46 UTC
++++ usr/sbin/pkcsslotd/shmem.c
+@@ -336,9 +336,9 @@ int CreateSharedMemory ( void ) {
     }
     // SAB  Get the group information for the PKCS#11 group... fail if
     // it does not exist
@@ -12,7 +12,7 @@
       return FALSE;  // Group does not exist... setup is wrong..
     }
  
-@@ -409,9 +409,9 @@
+@@ -415,9 +415,9 @@ int CreateSharedMemory ( void ) {
     int i;
     char *buffer;
     
@@ -24,7 +24,7 @@
  		     SBIN_PATH);
       return FALSE;  // Group does not exist... setup is wrong..
     }
-@@ -431,7 +431,7 @@
+@@ -437,7 +437,7 @@ int CreateSharedMemory ( void ) {
  	 return FALSE;
         }
         if (fchown(fd, 0, grp->gr_gid) == -1) {

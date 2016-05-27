@@ -1,6 +1,6 @@
-RabbitMQ is a complete and highly reliable Enterprise Messaging 
-system. The RabbitMQ client libraries and broker daemon can be used 
-together to create an AMQP network, or used individually to bring 
-the benefits of RabbitMQ to established networks. 
+RabbitMQ is a complete and highly reliable Enterprise Messaging
+system. The RabbitMQ client libraries and broker daemon can be used
+together to create an AMQP network, or used individually to bring
+the benefits of RabbitMQ to established networks.
 
 WWW: http://www.rabbitmq.com/

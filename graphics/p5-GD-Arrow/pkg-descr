@@ -1,7 +1,7 @@
 This is a subclass of GD::Polygon used to draw an arrow between two vertices.
 
 GD::Arrow::Full draws a full arrow between two verticies.
-  
+
                                   |\
            +----------------------+ \
   (X2, Y2) *                         * (X1, Y1)
@@ -9,14 +9,14 @@ GD::Arrow::Full draws a full arrow between two verticies.
                                   |/
 
 GD::Arrow::RightHalf draws a half arrow between two verticies.
-  
+
   (X2, Y2) *-------------------------* (X1, Y1)
            +----------------------+ /
                                   |/
 
 GD::Arrow::LeftHalf draws a half arrow between two verticies.
-                                    
-                                  |\ 
+
+                                  |\
            +----------------------+ \
   (X2, Y2) *-------------------------* (X1, Y1)
 

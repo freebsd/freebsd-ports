@@ -15,6 +15,11 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+CONFLICTS_INSTALL=	p5-Test-Simple-1.[3-9]*
+
+DEPRECATED=	Test2 has been merged into Test-Simple distribution
+EXPIRATION_DATE=2016-06-30
+
 NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5

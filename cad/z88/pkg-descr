@@ -1,21 +1,21 @@
 What is Z88?
 
 Z88 is a fast, powerful and compact Finite Elements Analysis Program
-especially designed for PCs, workstations and large computers with UNIX 
+especially designed for PCs, workstations and large computers with UNIX
 and PCs with Windows XP/95.
 
 FEATURES
 
 	# Z88 features 20 finite element types.
-	# It covers plane stress, plate bending, axial symmetric 
+	# It covers plane stress, plate bending, axial symmetric
 	structures and spacial structures up to 20-node Serendipity hexahedrons.
 	# Comes with a user-friendly interface (the Z88 Commander).
 	# Has a powerful mesh generator.
 	# Features a DXF converter and two plot programs.
-	# Contains the FEA solver featuring an in-situ Cholesky solver along 
+	# Contains the FEA solver featuring an in-situ Cholesky solver along
 	with the Jennings storage method.
 	# For large structures the new iteration solver is recommended.
-	# The import of COSMOS and NASTRAN files from Pro/ENGINEER (with 
+	# The import of COSMOS and NASTRAN files from Pro/ENGINEER (with
 	option Pro/MECHANICA) is possible.
 
 WWW: http://www.z88.org/

@@ -1,10 +1,10 @@
 *************************************************************************
-	    _  _____ _____ _____ _   _ _____ ___ ___  _   _ 	
+	    _  _____ _____ _____ _   _ _____ ___ ___  _   _
 	   / \|_   _|_   _| ____| \ | |_   _|_ _/ _ \| \ | |
 	  / _ \ | |   | | |  _| |  \| | | |  | | | | |  \| |
 	 / ___ \| |   | | | |___| |\  | | |  | | |_| | |\  |
 	/_/   \_\_|   |_| |_____|_| \_| |_| |___\___/|_| \_|
-							
+
 	See %%PREFIX%%/share/doc/MailScanner/README.FreeBSD.port,
 	http://www.mailscanner.info, the man pages MailScanner and
 	MailScanner.conf for further instructions.
@@ -22,7 +22,7 @@
 		/var/spool/mqueue.in
 
 	Either create those directories or change the configuration.
-                                              
+
 	Sophos users: Please take a look at the Sophos install
 	script %%PREFIX%%/share/doc/MailScanner/Sophos.install.freebsd
 
@@ -31,10 +31,10 @@
 	to the startup script. This is a temporary workaround to address
 	any possible taint mode problems that may still be present in the
 	code.
-	
+
 	Taint mode related problems can usually be identified from
 	undeliverable reports containing the following error:
-	
+
 	"MailScanner: Message attempted to kill MailScanner"
 
 	If you changed the "Run As User" variable in MailScanner.conf
@@ -44,7 +44,7 @@
 	i.e. mailscanner_user="postfix"
 
 	To re-enable taint mode, simply remove the variable from rc.conf.
-	
+
 	The new variable uses su to start the master perl script as the
 	specified user, this effectively disables perl's taint mode.
 	*****************************************************************

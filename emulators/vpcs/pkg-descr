@@ -7,6 +7,6 @@ the Dynamips. VPCS can replace the routers or VMware boxes which are used as PCs
 in the Dynamips network.  It can save your CPU/Memory. It is very small.
 
 VPCS can be run in udp or ether mode. In the udp mode, VPCS sends or receives
-the packets via udp. In the ether mode, via /dev/tap. 
+the packets via udp. In the ether mode, via /dev/tap.
 
 WWW: https://wiki.freecode.com.cn/doku.php?id=wiki:vpcs

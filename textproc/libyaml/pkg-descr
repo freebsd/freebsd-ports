@@ -5,7 +5,7 @@ following two processors:
    * Parser, which takes an input stream of bytes and produces a sequence
      of parsing events.
    * Emitter, which takes a sequence of events and produces a stream of
-     bytes. 
+     bytes.
 
 The processes of parsing and presenting are inverse to each other. Any
 sequence of events produced by parsing a well-formed YAML document should

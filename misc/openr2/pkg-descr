@@ -7,4 +7,4 @@ them when needed, that's why this library does not depend directly on spandsp,
 libteletone or zaptel for tone generation and detection (depends on zaptel
 for CAS bits and general media transmission though)
 
-WWW:	http://libopenr2.org/
+WWW: http://libopenr2.org/

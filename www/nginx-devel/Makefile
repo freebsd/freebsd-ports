@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.10.0
-PORTREVISION=	3
+PORTVERSION=	1.11.0
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -125,7 +124,7 @@ OPTIONS_DEFINE=	\
 	XRID_HEADER \
 	XSS
 
-OPTIONS_DEFAULT=DSO IPV6 FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
+OPTIONS_DEFAULT=DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
 		HTTP_DAV HTTP_FLV HTTP_GZIP_STATIC HTTP_GUNZIP_FILTER \
 		HTTP_MP4 HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK \
 		HTTP_SLICE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTP_SUB \
@@ -163,7 +162,7 @@ MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
 HTTPV2_DESC=			Enable HTTP/2 protocol support (SSL req.)
-NJS_DESC=			Enable http_javascript module 
+NJS_DESC=			Enable http_javascript module
 STREAM_DESC=			Enable stream module
 STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
 THREADS_DESC=			Enable threads support
@@ -412,6 +411,7 @@ GH_PROJECT+=	nginx-clojure:clojure
 GH_TAGNAME+=	v${NGINX_CLOJURE_VERSION}:clojure
 CONFIGURE_ENV+=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk8/include/freebsd"
 CONFIGURE_ARGS+=--add-module=${WRKSRC_clojure}/src/c
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-c-ngx_http_clojure_socket.c
 .endif
 
 .if ${PORT_OPTIONS:MCT}
@@ -499,7 +499,7 @@ CONFIGURE_ARGS+=--with-http_flv_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_JSON_STATUS}
-NGINX_JSON_STATUS_VERSION= 1d2f303 
+NGINX_JSON_STATUS_VERSION= 1d2f303
 GH_ACCOUNT+=	nginx-modules:json_status
 GH_PROJECT+=	ngx_http_json_status_module:json_status
 GH_TAGNAME+=	${NGINX_JSON_STATUS_VERSION}:json_status
@@ -572,7 +572,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.99.12
+GIT_PUSH_VERSION=	0.99.14
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
@@ -747,6 +747,7 @@ CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_dyn_upstream}
 .else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_dyn_upstream}
 .endif
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_inet_slab.c
 .endif
 
 .if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
@@ -838,16 +839,16 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.0.27
+PASSENGER_VERSION=	5.0.28
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 .if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-src-nginx_module-config
 .else
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
 .endif
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
+		${PATCHDIR}/extra-patch-passenger-cxx_portality.rb
 .if empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
@@ -894,6 +895,7 @@ GH_ACCOUNT+=	arut:rtmp
 GH_PROJECT+=	nginx-rtmp-module:rtmp
 GH_TAGNAME+=	v${NGINX_RTMP_VERSION}:rtmp
 CONFIGURE_ARGS+=--add-module=${WRKSRC_rtmp}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_rtmp_core_module.c
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}

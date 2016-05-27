@@ -9,4 +9,4 @@ Usage:
     obfuscatejs WeightWatch {src}
     obfuscatejs BuildUtils {srcRootDir} {destDir} {docDir} {headerFile}
 
-WWW:	http://tools.2vi.nl/
+WWW: http://tools.2vi.nl/

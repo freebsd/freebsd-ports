@@ -92,6 +92,8 @@ TOKUDB_PORTDOCS=	PATENTS README.md
 
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
 USE_OPENSSL=		yes
+# See PR209419, MariaDB 10.0 fails to build with base SSL libs
+WITH_OPENSSL_PORT=	yes
 
 .if defined(CLIENT_ONLY)
 # MySQL-Client part

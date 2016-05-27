@@ -1,14 +1,14 @@
 This is yet another  ANSI/Turbo Pascal to C/C++ converter together
 with BGI graphics library emulation for X Window System.
 
-Converter  recognizes  Pascal  dialects  which are compatible with 
-Turbo Pascal 4.0/5.0  and  ISO Pascal  standard - IEC 7185:1990(E) 
+Converter  recognizes  Pascal  dialects  which are compatible with
+Turbo Pascal 4.0/5.0  and  ISO Pascal  standard - IEC 7185:1990(E)
 (including conformant arrays). Now it is tuned for Oregon Pascal-2
 V2.1 which has few extensions to standard Pascal.
 
 Converter can produce both C++ and C output.
 
-Now  PTOC  recognizes  Turbo  Pascal's  extensions, such as units, 
+Now  PTOC  recognizes  Turbo  Pascal's  extensions, such as units,
 strings,   some  special   types   and   operations. Turbo  Pascal
 extensions are supported only for C++ language.
 

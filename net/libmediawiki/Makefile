@@ -10,7 +10,7 @@ COMMENT=	KDE4 library for accessing MediaWiki sites
 USES=		pathfix
 USE_LDCONFIG=	yes
 
-.include "${.CURDIR}/../../graphics/digikam-kde4/Makefile.common"
+.include "${.CURDIR:H:H}/graphics/digikam-kde4/Makefile.common"
 
 # Replace some values set up by Makefile.common
 DIGIKAM_VER=	${PORTVERSION}

@@ -30,7 +30,7 @@ KEEP_DB_OPEN_CONFIGURE_ENABLE=keep-db-open
 OBSOLETE_CRAM_ATTR_DESC=cmusaslsecretCRAM-MD5 auxprop property
 OBSOLETE_CRAM_ATTR_CONFIGURE_OFF=--enable-obsolete_cram_attr=no
 SASLDB_DESC=		SASLdb auxprop plugin
-BDB_USE=		BDB=yes
+BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--with-dblib=berkeley \
 			--with-bdb-libdir=${BDB_LIB_DIR} \
 			--with-bdb-incdir=${BDB_INCLUDE_DIR} \
@@ -39,7 +39,7 @@ BDB1_CONFIGURE_ON=	--with-dblib=ndbm
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--with-dblib=gdbm \
 			--with-gdbm=${LOCALBASE}
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
 MYSQL_CONFIGURE_OFF=	--without-mysql
 PGSQL_USES=		pgsql

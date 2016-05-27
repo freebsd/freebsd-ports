@@ -3,10 +3,10 @@ manner by which to handle files uploaded in multipart/form-data
 requests through a web browser. The primary advantage which this
 module offers over existing modules is the single interface
 which it provides for the most often required information
-regarding files uploaded in this manner. 
+regarding files uploaded in this manner.
 
 This module builds upon primarily the CGI and File::MMagic
 modules and offers some tidy and succinct methods for the
-handling of files uploaded via multipart/form-data requests. 
+handling of files uploaded via multipart/form-data requests.
 
 WWW: http://search.cpan.org/dist/CGI-Upload/

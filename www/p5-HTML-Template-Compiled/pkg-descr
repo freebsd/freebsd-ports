@@ -1,5 +1,5 @@
 Fast templating system using the same syntax as HTML::Template but
-which compiles templates to perl code. 
+which compiles templates to perl code.
 
 WWW: http://search.cpan.org/dist/HTML-Template-Compiled/
 WWW: http://www.tinita.de/projects/perl/en

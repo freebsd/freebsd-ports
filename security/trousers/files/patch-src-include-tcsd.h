@@ -1,8 +1,8 @@
---- src/include/tcsd.h.orig	2010-05-03 11:54:15.000000000 +0900
-+++ src/include/tcsd.h	2010-10-24 22:28:52.708555289 +0900
-@@ -50,14 +50,22 @@
- 
- #define TCSD_CONFIG_FILE	ETC_PREFIX "/tcsd.conf"
+--- src/include/tcsd.h.orig	2014-04-24 18:05:44 UTC
++++ src/include/tcsd.h
+@@ -53,14 +53,22 @@ struct tcsd_config
+ #define TCSD_DEFAULT_CONFIG_FILE	ETC_PREFIX "/tcsd.conf"
+ extern char *tcsd_config_file;
  
 +#ifndef TSS_USER_NAME
  #define TSS_USER_NAME		"tss"
@@ -26,4 +26,4 @@
 +#define TCSD_DEFAULT_KERNEL_LOG_FILE	"/var/run/ima/binary_runtime_measurements"
  #define TCSD_DEFAULT_FIRMWARE_PCRS	0x00000000
  #define TCSD_DEFAULT_KERNEL_PCRS	0x00000000
- 
+ #define TCSD_DEFAULT_DISABLE_IPV4 0

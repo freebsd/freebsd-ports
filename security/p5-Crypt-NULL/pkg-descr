@@ -1,7 +1,7 @@
 This is Crypt::NULL. Perl module for NULL Encryption Algorithm.
 
 The NULL Encryption Algorithm is a symmetric block cipher described in
-RFC 2410 by Rob Glenn and Stephen Kent. 
+RFC 2410 by Rob Glenn and Stephen Kent.
 
 This module implements NULL encryption. It supports the Crypt::CBC.
 

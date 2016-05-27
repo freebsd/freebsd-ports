@@ -1,10 +1,10 @@
 Libdnsres provides a non-blocking thread-safe API for resolving DNS names.  It
 requires that your main application is built on top of libevent. Libdnsres' API
-essentially mirrors the traditional gethostbyname and getaddrinfo interfaces. 
+essentially mirrors the traditional gethostbyname and getaddrinfo interfaces.
 All return values have been replaced by callbacks instead.
 
-The code borrows heavily from the BSD resolver library. In fact, it is an 
-extremely ugly hack to make the BSD resolver library non-blocking and 
-thread-safe without changing the API too much. 
+The code borrows heavily from the BSD resolver library. In fact, it is an
+extremely ugly hack to make the BSD resolver library non-blocking and
+thread-safe without changing the API too much.
 
 WWW: http://www.monkey.org/~provos/libdnsres/

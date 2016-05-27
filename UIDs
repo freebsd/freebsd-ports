@@ -109,6 +109,7 @@ agk:*:172:172::0:0:AquaGateKeeper:/nonexistent:/nonexistent
 polipo:*:173:173::0:0:polipo web cache:/nonexistent:/usr/sbin/nologin
 flowtools:*:174:174::0:0:Flow-tools collector pseudo-user:/nonexistent:/usr/sbin/nologin
 twms:*:175:175::0:0:tWMS pseudo-user:/nonexistent:/usr/sbin/nologin
+mlvpn:*:176:176::0:0:mlVPN pseudo-user:/var/run/mlvpn:/usr/sbin/nologin
 gdnsd:*:179:179::0:0:gDNSd pseudo-user:/nonexistent:/usr/sbin/nologin
 nagios:*:181:181::0:0:Nagios pseudo-user:/var/spool/nagios:/usr/sbin/nologin
 noc:*:182:182::0:0:NOC pseudo-user:/usr/local/noc:/bin/sh
@@ -258,6 +259,7 @@ sogod:*:846:846::0:0:SOGo groupware:/nonexistent:/usr/sbin/nologin
 domoticz:*:847:847::0:0:domoticz user:/nonexistent:/usr/sbin/nologin
 graylog:*:848:848::0:0:Graylog user:/nonexistent:/usr/sbin/nologin
 guacamole:*:899:899::0:0:Guacamole user:/nonexistent:/usr/sbin/nologin
+seafile:*:900:900::0:0:Seafile user:/nonexistent:/usr/bin/nologin
 fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash
 scanlogd:*:902:902::0:0:scanlogd user:/nonexistent:/usr/sbin/nologin
 _ocserv:*:903:903::0:0:ocserv user:/nonexistent:/usr/sbin/nologin

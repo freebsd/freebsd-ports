@@ -7,4 +7,4 @@ as pgpool-I by changing configuration parameters. pgpool-II that is
 executed in pgpool-I mode enables multiple DB nodes to be connected,
 which was not possible in pgpool-I.
 
-WWW:	http://pgpool.projects.postgresql.org/
+WWW: http://pgpool.projects.postgresql.org/

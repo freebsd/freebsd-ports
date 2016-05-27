@@ -1,6 +1,6 @@
-Geoclue is a D-Bus service that provides location information. The primary goal of 
-the Geoclue project is to make creating location-aware applications as simple as 
-possible, while the secondary goal is to ensure that no application can access location 
+Geoclue is a D-Bus service that provides location information. The primary goal of
+the Geoclue project is to make creating location-aware applications as simple as
+possible, while the secondary goal is to ensure that no application can access location
 information without explicit permission from user.
 
 WWW: http://geoclue.freedesktop.org/

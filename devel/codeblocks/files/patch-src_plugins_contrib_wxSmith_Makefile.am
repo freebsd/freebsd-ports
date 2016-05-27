@@ -1,0 +1,11 @@
+--- src/plugins/contrib/wxSmith/Makefile.am.orig	2016-05-06 22:22:03 UTC
++++ src/plugins/contrib/wxSmith/Makefile.am
+@@ -70,7 +70,7 @@ noinst_HEADERS = \
+ ./wxsversionconverter.h \
+ ./wxssettings.h
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+ pkgconfig_DATA = wxsmith.pc
+ 
+ EXTRA_DIST = \

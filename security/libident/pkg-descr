@@ -12,10 +12,10 @@ COMMENTS:
 
 This is the second stab at a small library to interface to the Ident
 protocol server. Maybe this will work correctly on some machines.. :-)
- 
+
 The ident-tester.c file is a small daemon (to be started from Inetd)
 that does an ident lookup on you if you telnet into it. Can be used
 to verify that your Ident server is working correctly.
- 
+
 I'm currently running this "ident-tester" on port 114 at lysator.liu.se
 (130.236.254.1) if you wish to test your server.

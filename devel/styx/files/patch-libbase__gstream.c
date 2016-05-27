@@ -1,6 +1,6 @@
---- libbase/gstream.c.orig	Tue Apr 17 01:04:58 2001
-+++ libbase/gstream.c	Tue Apr 17 01:05:13 2001
-@@ -485,7 +485,7 @@
+--- libbase/gstream.c.orig	2003-12-09 15:37:07 UTC
++++ libbase/gstream.c
+@@ -497,7 +497,7 @@ void GS_fprint_ucs4(FILE* fp, wc_string 
  
  
  #else

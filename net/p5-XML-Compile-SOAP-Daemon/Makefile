@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Compile-SOAP-Daemon
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	p5-Log-Report>=0.90:devel/p5-Log-Report \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-XML-Compile-Tester>=0.90:devel/p5-XML-Compile-Tester
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

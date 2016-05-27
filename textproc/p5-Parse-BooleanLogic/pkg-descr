@@ -3,4 +3,4 @@ written for Request Tracker to parse SQL like expressions, it can be
 used to parse other boolean logic sentences with OPERANDs joined using
 binary OPERATORs and grouped and nested using parentheses.
 
-WWW:	http://search.cpan.org/dist/Parse-BooleanLogic/
+WWW: http://search.cpan.org/dist/Parse-BooleanLogic/

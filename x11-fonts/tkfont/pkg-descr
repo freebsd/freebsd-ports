@@ -1,4 +1,4 @@
 This is a port of tkfont, a Tk based replacement (and much better IMHO)
-for xfontsel.  I find this particularly useful when I'm going to use 
+for xfontsel.  I find this particularly useful when I'm going to use
 The Gimp to design something and want to pick a font without starting
 gimp.  Xfontsel can't scroll far enough down to see all of the fonts.

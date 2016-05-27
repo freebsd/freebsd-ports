@@ -4,6 +4,6 @@ benchmarking, analysis, and system tuning.
 
 Pylot generates concurrent load (HTTP Requests), verifies server responses,
 and produces reports with metrics. Tests suites are executed and monitored
-from a GUI or shell/console. 
+from a GUI or shell/console.
 
 WWW: http://www.pylot.org/

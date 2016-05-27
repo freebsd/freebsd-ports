@@ -7,7 +7,7 @@ general framework that enabled application developers to easily access cool
 audio visualisation plugins. Libvisual wants to change this by providing an
 interface towards plugins and applications; through this easy to use interface
 applications can easily access plugins and, since the drawing is done by the
-application, it also enables the developer to draw the visual anywhere he 
+application, it also enables the developer to draw the visual anywhere he
 wants.
 
 The framework also allows you to morph to different plugins and mix two at

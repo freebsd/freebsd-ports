@@ -1,4 +1,4 @@
 cyruslib is wrapped interface for imaplib.py, it adds support for
 cyrus specific commands. Function naming is the same of cyradm
 
-WWW:	http://oss.netfarm.it/python-cyrus.php
+WWW: http://oss.netfarm.it/python-cyrus.php

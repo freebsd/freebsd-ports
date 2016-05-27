@@ -1,6 +1,6 @@
 These are a collection of contributed programs for qmail.
 
-fastforward allows the use of a new method of storing aliases, in a 
+fastforward allows the use of a new method of storing aliases, in a
 compact database.
 
 dotforward allows old-style ".forward" files to work correctly.

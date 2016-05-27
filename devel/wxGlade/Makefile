@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxglade
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.2
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
@@ -11,7 +11,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWidgets written in Python
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
 USE_WX=		3.0+
@@ -37,7 +37,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/wxglade.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "codegen edit_sizers icons res widgets" \
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "wcodegen codegen edit_sizers icons res widgets" \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME})
 	@(cd ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} && \
 		${PYTHON_CMD} -m compileall .)

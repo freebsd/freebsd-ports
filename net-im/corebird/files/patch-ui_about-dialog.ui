@@ -1,0 +1,11 @@
+--- ui/about-dialog.ui.orig	2016-05-10 17:41:05 UTC
++++ ui/about-dialog.ui
+@@ -6,7 +6,7 @@
+     <property name="title" translatable="yes">About Corebird</property>
+     <property name="type_hint">dialog</property>
+     <property name="program_name">Corebird</property>
+-    <property name="version">1.2.1</property>
++    <property name="version">1.2.2</property>
+     <property name="comments" translatable="yes">Using Font Awesome by Dave Gandy - http://fontawesome.io</property>
+     <property name="website">http://corebird.baedert.org</property>
+     <property name="authors">Timm Bäder&lt;mail@baedert.org&gt; (Bugs go here)

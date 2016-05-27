@@ -16,12 +16,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgmime-2.6.so:mail/gmime26
 
-USES=		gmake iconv pathfix pkgconfig tar:bzip2
+USES=		gmake iconv localbase pathfix pkgconfig tar:bzip2
 USE_GNOME=	intlhack
 USE_GCC=	any
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${ICONV_LIB}
+LDFLAGS+=	-lgnuregex ${ICONV_LIB}
+CONFIGURE_ENV+=	ZLIB_CFLAGS="-I/usr/include" \
+		ZLIB_LIBS="-L/usr/lib -lz"
 
 OPTIONS_DEFINE=	GTKSPELL GNUTLS NLS
 OPTIONS_RADIO=	GTK

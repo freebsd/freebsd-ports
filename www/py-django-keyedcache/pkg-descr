@@ -1,4 +1,4 @@
-Django-keyedcache provides a simplified, speedy way to manage caching in Django 
+Django-keyedcache provides a simplified, speedy way to manage caching in Django
 apps.
 
 WWW: http://bitbucket.org/bkroeze/django-keyedcache/

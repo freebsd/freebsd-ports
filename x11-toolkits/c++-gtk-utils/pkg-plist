@@ -40,5 +40,5 @@ include/c++-gtk-utils-2-2.2/c++-gtk-utils/window.h
 lib/libcxx-gtk-utils-2-2.2.a
 lib/libcxx-gtk-utils-2-2.2.so
 lib/libcxx-gtk-utils-2-2.2.so.0
-lib/libcxx-gtk-utils-2-2.2.so.0.1.8
+lib/libcxx-gtk-utils-2-2.2.so.0.1.9
 libdata/pkgconfig/c++-gtk-utils-2-2.2.pc

@@ -2,6 +2,6 @@ Erubis is a fast, secure, and very extensible implementation of eRuby.
 eRuby means "embedded Ruby" in documents.
 Embedded patterns are '<% statement %>' and '<%= expression %>'.
 The following is an example of eRuby. '<% ... %>' means Ruby statement
-and '<%= ... %>' means Ruby expression. 
+and '<%= ... %>' means Ruby expression.
 
 WWW: http://www.kuwata-lab.com/erubis/

@@ -1,10 +1,10 @@
 Dante is a circuit-level firewall/proxy (socks implemented) that can be
 used to provide convenient and secure network connectivity to a wide range
 of hosts while requiring only the server Dante runs on to have external
-network connectivity. 
+network connectivity.
 
 Once installed, Dante can in most cases be made transparent to the clients
 while offering detailed access control and logging facilities to the
-server administrator. 
+server administrator.
 
 WWW: http://www.inet.no/dante/

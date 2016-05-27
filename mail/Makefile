@@ -266,8 +266,11 @@
     SUBDIR += mpop
     SUBDIR += mreport
     SUBDIR += msgconvert
+    SUBDIR += msglint
     SUBDIR += msmtp
     SUBDIR += mu
+    SUBDIR += mu4e
+    SUBDIR += mu4e-maildirs
     SUBDIR += mulberry
     SUBDIR += mutt
     SUBDIR += mutt-lite
@@ -340,6 +343,7 @@
     SUBDIR += p5-Email-MIME-Encodings
     SUBDIR += p5-Email-MIME-RFC2047
     SUBDIR += p5-Email-MessageID
+    SUBDIR += p5-Email-Outlook-Message
     SUBDIR += p5-Email-Reply
     SUBDIR += p5-Email-Send
     SUBDIR += p5-Email-Sender

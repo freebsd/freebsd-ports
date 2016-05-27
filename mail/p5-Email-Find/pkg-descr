@@ -1,11 +1,11 @@
 This is a module for finding a subset of RFC 822 email addresses in
 arbitrary text. The addresses it finds are not guaranteed to exist or
 even actually be email addresses at all, but they will be valid RFC 822
-syntax. 
+syntax.
 
 Email::Find will perform some heuristics to avoid some of the more
 obvious red herrings and false addresses, but there's only so much which
-can be done without a human. 
+can be done without a human.
 
 -Anton
 <tobez@FreeBSD.org>

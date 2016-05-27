@@ -1,5 +1,5 @@
 GNU GRUB is a multiboot boot loader.  It was derived from GRUB, the GRand
-Unified Bootloader, which was originally designed and implemented by Erich 
+Unified Bootloader, which was originally designed and implemented by Erich
 Stefan Boleyn.
 
 This port does not install GRUB on the master boot record of your hard drive.

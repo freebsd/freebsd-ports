@@ -1,6 +1,6 @@
---- src/tcs/tcs_auth_mgr.c.orig	2010-06-10 05:21:32.000000000 +0900
-+++ src/tcs/tcs_auth_mgr.c	2010-10-24 21:04:04.836560084 +0900
-@@ -108,7 +108,7 @@
+--- src/tcs/tcs_auth_mgr.c.orig	2014-04-24 18:05:44 UTC
++++ src/tcs/tcs_auth_mgr.c
+@@ -108,7 +108,7 @@ void
  auth_mgr_swap_in()
  {
  	if (auth_mgr.overflow[auth_mgr.of_tail] != NULL) {
@@ -9,7 +9,7 @@
  		/* wake up the next sleeping thread in order and increment tail */
  		COND_SIGNAL(auth_mgr.overflow[auth_mgr.of_tail]);
  		auth_mgr.overflow[auth_mgr.of_tail] = NULL;
-@@ -149,7 +149,7 @@
+@@ -149,7 +149,7 @@ auth_mgr_swap_out(TCS_CONTEXT_HANDLE hCo
  		auth_mgr.overflow[auth_mgr.of_head] = cond;
  		auth_mgr.of_head = (auth_mgr.of_head + 1) % auth_mgr.overflow_size;
  		/* go to sleep */
@@ -18,7 +18,7 @@
  		auth_mgr.sleeping_threads++;
  		COND_WAIT(cond, &tcsp_lock);
  		auth_mgr.sleeping_threads--;
-@@ -180,7 +180,7 @@
+@@ -180,7 +180,7 @@ auth_mgr_swap_out(TCS_CONTEXT_HANDLE hCo
  		auth_mgr.of_tail = 0;
  		auth_mgr.overflow[auth_mgr.of_head] = cond;
  		auth_mgr.of_head = (auth_mgr.of_head + 1) % auth_mgr.overflow_size;

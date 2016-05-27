@@ -1,9 +1,9 @@
-EditObj can create and display a Tkinter dialog 
-box for editing any Python object (similarly to 
-what Java call a Bean editor, but for Python object). 
-EditObj is a usefull tool for writing (text or 
-non-text) editors of all kinds, including GUI editor, 
-3D editor,... It also includes a Python console 
+EditObj can create and display a Tkinter dialog
+box for editing any Python object (similarly to
+what Java call a Bean editor, but for Python object).
+EditObj is a usefull tool for writing (text or
+non-text) editors of all kinds, including GUI editor,
+3D editor,... It also includes a Python console
 (thanks to Ka-Ping Yee).
 
 WWW: http://home.gna.org/oomadness/en/editobj/index.html

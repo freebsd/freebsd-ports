@@ -17,7 +17,7 @@ LIB_DEPENDS=	libqjson.so:devel/qjson \
 		libqoauth.so:net/qoauth \
 		libtelepathy-qt4.so:net-im/telepathy-qt4
 
-USE_KDE4=	attica automoc4 kdelibs kdeprefix
+USE_KDE4=	attica automoc4 kdelibs
 USE_QT4=	gui imageformats_run network \
 		moc_build qmake_build rcc_build uic_build
 USES=		cmake gettext tar:xz

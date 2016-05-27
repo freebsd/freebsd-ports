@@ -2,9 +2,9 @@ nhpf
 ----
 
 This program makes you can print hangul homepages with Netscape 2.0 or later,
-in Unix with PostScript printer (or with Ghostscript). 
+in Unix with PostScript printer (or with Ghostscript).
 
-The filtered PS file is self-contained, because this program appends hangul 
-fonts, "n3f-5" (N-byte 3BeolSik hangul Font 5), "n3f-5b" (the bold font), 
+The filtered PS file is self-contained, because this program appends hangul
+fonts, "n3f-5" (N-byte 3BeolSik hangul Font 5), "n3f-5b" (the bold font),
 "n3f-5i" and "n3f-5bi" (the slanted version of them) to the output. This means
-that you can print hangul homepages with every PostScript printer. 
+that you can print hangul homepages with every PostScript printer.

@@ -1,6 +1,6 @@
 SmtpRC is a fully configurable, multithreaded open mail relay scanner.
-It supports scanning of IP blocks, and can print the results to a Web 
-page. It is intended for Systems Administrators to check IP blocks 
+It supports scanning of IP blocks, and can print the results to a Web
+page. It is intended for Systems Administrators to check IP blocks
 under their control
 
 WWW: http://smtprc.sourceforge.net

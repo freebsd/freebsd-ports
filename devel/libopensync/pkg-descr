@@ -1,5 +1,5 @@
-OpenSync is a PIM (Personal Information Management) data synchronization 
-framework that consists of several plug-ins that can be used to 
+OpenSync is a PIM (Personal Information Management) data synchronization
+framework that consists of several plug-ins that can be used to
 connect to different devices and systems. For a list of currently supported
 devices see http://www.opensync.org/wiki/DeviceCompatibilityList.
 

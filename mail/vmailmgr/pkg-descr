@@ -9,7 +9,7 @@ co-operates with qmail for mail delivery and program control. It features:
           o IP-based virtual server access (invisible to the POP3 user)
           o username-based access (username-virtualuser)
           o hostname-based access (virtualuser@virtual.host or
-            virtualuser:virtual.host) 
+            virtualuser:virtual.host)
     * CDB-based password tables to speed up access for domains of any size.
     * Tools to setup a virtual domain, add and delete individual virtual users
       and aliases, and to change passwords.  CGI programs to accomplish the
@@ -18,6 +18,6 @@ co-operates with qmail for mail delivery and program control. It features:
     * A daemon process that securely directs the operation of the CGIs and PHP
       code.
     * A separate delivery agent that automatically deals with any address
-      inside a virtual domain from a single .qmail-default file. 
+      inside a virtual domain from a single .qmail-default file.
 
 WWW: http://www.vmailmgr.org

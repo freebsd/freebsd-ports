@@ -1,9 +1,9 @@
 -------------------------------------------------------------
-Gozerbot is installed. 
+Gozerbot is installed.
 
 Installation directories:
  Executables -> %%PREFIX%%/bin/[gozerbot|gozerinit|gozerupgrade06]
  Documentation -> %%PREFIX%%/share/doc/gozerbot
  Config and stuff -> %%PREFIX%%/share/gozerbot
- 
+
 -------------------------------------------------------------

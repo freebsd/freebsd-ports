@@ -2,10 +2,10 @@
 searching system for a domain or intranet. This system is not meant
 to replace the need for powerful internet-wide search systems like
 Yahoo! or Google. Instead it is meant to cover the needs for a
-single company, campus, or even a sub section of a web site. 
+single company, campus, or even a sub section of a web site.
 
    As opposed to some WAIS-based or web-server based search engines,
 ht://Dig can span many web servers as long as they all understand
-the HTTP 1.0 protocol. 
+the HTTP 1.0 protocol.
 
 WWW: http://www.htdig.org/

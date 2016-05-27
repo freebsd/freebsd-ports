@@ -4,7 +4,7 @@ their arguments and return them as result values. Parser combinators are:
  * First-class values
  * Extremely composable
  * Tend to make the code quite compact
- * Resemble the readable notation of xBNF grammars 
+ * Resemble the readable notation of xBNF grammars
 
 Parsers made with funcparserlib are pure-Python LL(*) parsers. It means that
 it's very easy to write them without thinking about look-aheads and all that

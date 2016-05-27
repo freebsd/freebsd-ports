@@ -1,6 +1,6 @@
 Provides a simple, quick means of serializing perl memory structures
 (including object data!) into a format that PHP can deserialize() and
-access, and vice versa. 
+access, and vice versa.
 
 NOTE: Converts PHP arrays into Perl Arrays when the PHP array used
 exclusively numeric indexes, and into Perl Hashes then the PHP array

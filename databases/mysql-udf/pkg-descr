@@ -6,7 +6,7 @@ to the MySQL server providing the ability to:
     * retrieve the effective length of the longest value in a STRING column,
     * get the longest value from a STRING column,
     * calculate the faculty of a value,
-    * calculate linear regression parameters (intercept, slope, correlation 
+    * calculate linear regression parameters (intercept, slope, correlation
       coefficent) of any values
 
 WWW: http://mysql-udf.sourceforge.net/

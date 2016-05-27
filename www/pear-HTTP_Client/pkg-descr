@@ -5,7 +5,7 @@ Features:
 * Manages cookies and referrers between requests
 * Handles HTTP redirection
 * Has methods to set default headers and request parameters
-* Implements the Subject-Observer design pattern: the base class sends 
+* Implements the Subject-Observer design pattern: the base class sends
   events to listeners that do the response processing.
 
 WWW: http://pear.php.net/package/HTTP_Client/

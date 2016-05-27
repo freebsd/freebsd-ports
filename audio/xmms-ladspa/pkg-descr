@@ -2,7 +2,7 @@ XMMS LADSPA an Effect Plugin for XMMS that provides (some of)
 the power of the Linux Audio Developer's Simple Plugin API (LADSPA) to your
 everyday MP3 and all-around media player.
 
-With XMMS LADSPA you can use any number of audio processing plugins 
-written to the LADSPA specification, 
+With XMMS LADSPA you can use any number of audio processing plugins
+written to the LADSPA specification,
 
 WWW: http://www.ecs.soton.ac.uk/~njl98r/code/audio/

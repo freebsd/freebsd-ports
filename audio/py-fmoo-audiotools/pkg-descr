@@ -5,6 +5,6 @@ identification, CD burning from tracks, and more. Supports internationalized
 track filenames and metadata using Unicode. Works with high-definition,
 multi-channel audio as well as CD-quality. Track conversion uses multiple CPUs
 or CPU cores if available to greatly speed the transcoding process. Track
-metadata can be retrieved from FreeDB, MusicBrainz or compatible servers. 
+metadata can be retrieved from FreeDB, MusicBrainz or compatible servers.
 
 WWW: http://audiotools.sourceforge.net

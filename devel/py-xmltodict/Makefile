@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	xmltodict
-PORTVERSION=	0.9.2
+PORTVERSION=	0.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	xmj@FreeBSD.org
 COMMENT=	XML parser that returns python dictionaries
 
 LICENSE=	MIT

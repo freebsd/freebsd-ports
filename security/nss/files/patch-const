@@ -18,25 +18,27 @@
 +FipsMode(const char *arg)
  {
      char *internal_name;
-@@ -62,14 +62,16 @@
- 		SECMOD_GetInternalModule()->commonName);
- 	    if(SECMOD_DeleteInternalModule(internal_name) != SECSuccess) {
--		PR_fprintf(PR_STDERR, "%s\n", SECU_Strerror(PORT_GetError()));
-+		PR_fprintf(PR_STDERR, "FipsMode(true): %s (%s)\n", SECU_Strerror(PORT_GetError()), internal_name);
- 		PR_smprintf_free(internal_name);
- 		PR_fprintf(PR_STDERR, errStrings[FIPS_SWITCH_FAILED_ERR]);
- 		return FIPS_SWITCH_FAILED_ERR;
- 	    }
--	    PR_smprintf_free(internal_name);
- 	    if (!PK11_IsFIPS()) {
-+		PR_fprintf(PR_STDERR, "FipsMode(true): in module %s", internal_name);
-+	        PR_smprintf_free(internal_name);
- 		PR_fprintf(PR_STDERR, errStrings[FIPS_SWITCH_FAILED_ERR]);
- 		return FIPS_SWITCH_FAILED_ERR;
- 	    }
-+	    PR_smprintf_free(internal_name);
- 	    PR_fprintf(PR_STDOUT, msgStrings[FIPS_ENABLED_MSG]);
- 	} else {
+@@ -25,16 +25,18 @@ FipsMode(char *arg)
+             internal_name = PR_smprintf("%s",
+                                         SECMOD_GetInternalModule()->commonName);
+             if (SECMOD_DeleteInternalModule(internal_name) != SECSuccess) {
+-                PR_fprintf(PR_STDERR, "%s\n", SECU_Strerror(PORT_GetError()));
++                PR_fprintf(PR_STDERR, "FipsMode(true): %s (%s)\n", SECU_Strerror(PORT_GetError()), internal_name);
+                 PR_smprintf_free(internal_name);
+                 PR_fprintf(PR_STDERR, errStrings[FIPS_SWITCH_FAILED_ERR]);
+                 return FIPS_SWITCH_FAILED_ERR;
+             }
+-            PR_smprintf_free(internal_name);
+             if (!PK11_IsFIPS()) {
++                PR_fprintf(PR_STDERR, "FipsMode(true): in module %s", internal_name);
++                PR_smprintf_free(internal_name);
+                 PR_fprintf(PR_STDERR, errStrings[FIPS_SWITCH_FAILED_ERR]);
+                 return FIPS_SWITCH_FAILED_ERR;
+             }
++            PR_smprintf_free(internal_name);
+             PR_fprintf(PR_STDOUT, msgStrings[FIPS_ENABLED_MSG]);
+         } else {
+             PR_fprintf(PR_STDERR, errStrings[FIPS_ALREADY_ON_ERR]);
 @@ -112,5 +114,5 @@
   */
  Error

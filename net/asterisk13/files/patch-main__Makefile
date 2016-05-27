@@ -1,4 +1,4 @@
---- main/Makefile.orig	2016-03-22 18:32:00 UTC
+--- main/Makefile.orig	2016-04-25 21:44:00 UTC
 +++ main/Makefile
 @@ -82,6 +82,7 @@ ifeq ($(OSARCH),FreeBSD)
    BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
@@ -8,48 +8,39 @@
  endif
  
  ifneq ($(findstring $(OSARCH), mingw32 cygwin ),)
-@@ -224,11 +225,11 @@ endif
+@@ -224,11 +225,7 @@ endif
  
  $(ASTSSL_LIB): $(ASTSSL_LIB).$(ASTSSL_SO_VERSION)
  	$(ECHO_PREFIX) echo "   [LN] $< -> $@"
--ifneq ($(LDCONFIG),)
--	$(CMD_PREFIX) $(LDCONFIG) $(LDCONFIG_FLAGS) . 2>/dev/null
--else
-+#ifneq ($(LDCONFIG),)
-+#	$(CMD_PREFIX) $(LDCONFIG) $(LDCONFIG_FLAGS) . 2>/dev/null
-+#else
- 	$(CMD_PREFIX) $(LN) -sf $< $@
--endif
-+#endif
+-	$(CMD_PREFIX) if [ -x "$(LDCONFIG)" ] ; then \
+-		$(LDCONFIG) $(LDCONFIG_FLAGS) . 2>/dev/null ;\
+-	else \
+-		$(LN) -sf $< $@ ;\
+-	fi
++	$(LN) -sf $< $@
  
  else # Darwin
  ASTSSL_LIB:=libasteriskssl.dylib
-@@ -304,11 +305,11 @@ $(ASTPJ_LIB).$(ASTPJ_SO_VERSION): libast
+@@ -304,11 +301,7 @@ $(ASTPJ_LIB).$(ASTPJ_SO_VERSION): libast
  
  $(ASTPJ_LIB): $(ASTPJ_LIB).$(ASTPJ_SO_VERSION)
  	$(ECHO_PREFIX) echo "   [LN] $< -> $@"
--ifneq ($(LDCONFIG),)
--	$(CMD_PREFIX) $(LDCONFIG) $(LDCONFIG_FLAGS) . 2>/dev/null
--else
-+#ifneq ($(LDCONFIG),)
-+#	$(CMD_PREFIX) $(LDCONFIG) $(LDCONFIG_FLAGS) . 2>/dev/null
-+#else
- 	$(CMD_PREFIX) $(LN) -sf $< $@
--endif
-+#endif
+-	$(CMD_PREFIX) if [ -x "$(LDCONFIG)" ] ; then \
+-		$(LDCONFIG) $(LDCONFIG_FLAGS) . 2>/dev/null ;\
+-	else \
+-		$(LN) -sf $< $@ ;\
+-	fi
++	$(LN) -sf $< $@
  
  else # Darwin
  ASTPJ_LIB:=libasteriskpj.dylib
-@@ -359,9 +360,9 @@ else # Darwin
+@@ -359,9 +352,6 @@ else # Darwin
  	$(INSTALL) -m 755 $(ASTPJ_LIB) "$(DESTDIR)$(ASTLIBDIR)/"
  endif
  endif
 -ifneq ($(LDCONFIG),)
 -	$(LDCONFIG) $(LDCONFIG_FLAGS) "$(DESTDIR)$(ASTLIBDIR)/"
 -endif
-+#ifneq ($(LDCONFIG),)
-+#	$(LDCONFIG) $(LDCONFIG_FLAGS) "$(DESTDIR)$(ASTLIBDIR)/"
-+#endif
  	$(LN) -sf asterisk "$(DESTDIR)$(ASTSBINDIR)/rasterisk"
  
  binuninstall:

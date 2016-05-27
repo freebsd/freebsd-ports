@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -79,9 +79,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.fcgi ${STAGEDIR}${DATADIR}/www
 	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.wsgi ${STAGEDIR}${DATADIR}/www
 .endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

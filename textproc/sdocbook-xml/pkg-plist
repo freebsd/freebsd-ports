@@ -1,9 +1,5 @@
-%%DTDDIR%%/catalog
-@unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove %D/%F
-@exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
-%%DTDDIR%%/catalog.xml
-@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove %D/%F
-@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add nextCatalog %D/%F
+@xmlcatmgr %%DTDDIR%%/catalog
+@xmlcatmgr %%DTDDIR%%/catalog.xml
 %%DTDDIR%%/sdbcent.mod
 %%DTDDIR%%/sdbhier.mod
 %%DTDDIR%%/sdbpool.mod

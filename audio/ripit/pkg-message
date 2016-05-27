@@ -5,7 +5,7 @@ installed. If you want ripit to use other helper utils, just install
 them and tell ripit which ones to use.
 
 It is recommended that you set your CD-device, the preferred ripper
-and encoder, any encoding quality preferences etc. on the ripit 
+and encoder, any encoding quality preferences etc. on the ripit
 command line and adding "--save" to get those as the default values.
 This will enable you to later on just type "ripit" and start doing
 your work.

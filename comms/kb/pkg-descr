@@ -6,7 +6,7 @@ super check partial, packet (Telnet and rf nodes), networking, and
 radio control (currently for the FT-1000 only). The program is designed
 to be used by U.S. stations, with some support for Canadian stations.
 New features and contests are being added regularly, and I will consider
-adding support for DX stations if there is sufficient demand. 
+adding support for DX stations if there is sufficient demand.
 
 (The port version has bug fixes and some modifications for Canadian stations.
 - db)

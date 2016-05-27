@@ -96,7 +96,6 @@
     SUBDIR += mydns-ng
     SUBDIR += noip
     SUBDIR += nsd
-    SUBDIR += nsd3
     SUBDIR += nslint
     SUBDIR += nsping
     SUBDIR += nss_mdns

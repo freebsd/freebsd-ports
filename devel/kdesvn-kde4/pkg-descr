@@ -1,6 +1,6 @@
-KDESvn is a frontend to the subversion vcs. In difference to most other 
-tools it uses the subversion C-Api direct via a c++ wrapper made by 
-Rapid SVN and doesn't parse the output of the subversion client. So it is 
+KDESvn is a frontend to the subversion vcs. In difference to most other
+tools it uses the subversion C-Api direct via a c++ wrapper made by
+Rapid SVN and doesn't parse the output of the subversion client. So it is
 a real client itself instead of a frontend to the command line tool.
 
 WWW: https://projects.kde.org/projects/extragear/sdk/kdesvn

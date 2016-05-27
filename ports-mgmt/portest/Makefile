@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	portest
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Patch file automation for FreeBSD-ports
 
 LICENSE=	BSD2CLAUSE
-
-RUN_DEPENDS=	portlint:ports-mgmt/portlint
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ultima1252
@@ -19,11 +17,13 @@ NO_BUILD=	yes
 
 PLIST_FILES=	sbin/portest
 
-OPTIONS_DEFINE=		GIT PORTTOOLS POUDRIERE
-OPTIONS_DEFAULT=	GIT PORTTOOLS POUDRIERE
+OPTIONS_DEFINE=		GIT PORTLINT PORTTOOLS POUDRIERE
 
 GIT_DESC=		Git support
 GIT_RUN_DEPENDS=	git:devel/git
+
+PORTLINT_DESC=		Portlint support
+PORTLINT_RUN_DEPENDS=	portlint:ports-mgmt/portlint
 
 PORTTOOLS_DESC=		Porttools support
 PORTTOOLS_RUN_DEPENDS=	port:ports-mgmt/porttools

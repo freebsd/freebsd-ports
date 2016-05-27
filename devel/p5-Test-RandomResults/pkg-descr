@@ -1,8 +1,8 @@
-This module aims to provide ways of testing functions that are meant to 
+This module aims to provide ways of testing functions that are meant to
 return results that are random; that is, non-deterministic functions.
 
-Some of the tests provided here might be easily achieved with other 
-testing modules. The reason why they're here is that this way users become 
+Some of the tests provided here might be easily achieved with other
+testing modules. The reason why they're here is that this way users become
 aware of how to test their non-deterministic functions.
 
 WWW: http://search.cpan.org/dist/Test-RandomResults/

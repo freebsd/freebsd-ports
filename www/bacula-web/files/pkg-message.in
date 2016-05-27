@@ -5,7 +5,7 @@
 
 Please note that everything has been installed in %%BASE%%.
 
-You need to copy %%BASE%%/application/config/config.php.sample to 
+You need to copy %%BASE%%/application/config/config.php.sample to
 %%BASE%%/application/config/config.php and modify with your preferences.
 
 You will probably want to add an alias to your httpd.conf file, something

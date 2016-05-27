@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.17.0
+PORTVERSION=	3.17.0.1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -9,7 +9,7 @@ DISTNAME=	FileZilla_${PORTVERSION}_src
 MAINTAINER=	matthew@reztek.cz
 COMMENT=	Fast and reliable cross-platform FTP, FTPS, and SFTP client
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
@@ -31,7 +31,7 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DBUS NLS
-OPTIONS_DEFAULT=DBUS NLS
+OPTIONS_DEFAULT=DBUS
 OPTIONS_SUB=	yes
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--disable-manualupdatecheck
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -Ee 's|(dummy) wxrc|\1 ${WXRC_CMD:T}|' \
+	@${REINPLACE_CMD} -Ee 's|(dummy) wxrc|\1 ${WXRC_CMD:T}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-Khal is a calendar program for the terminal for viewing, adding and editing 
-events and calendars. Khal is build on the iCalendar and vdir (allowing the 
+Khal is a calendar program for the terminal for viewing, adding and editing
+events and calendars. Khal is build on the iCalendar and vdir (allowing the
 use of vdirsyncer for CalDAV compatibility) standards.
 
 WWW: http://lostpackets.de/khal/

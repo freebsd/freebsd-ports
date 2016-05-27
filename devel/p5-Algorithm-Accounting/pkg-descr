@@ -1,13 +1,13 @@
-Algorithm::Accounting provide simple aggregation method to make log 
-accounting easier. It accepts data in rows, each rows can have many 
+Algorithm::Accounting provide simple aggregation method to make log
+accounting easier. It accepts data in rows, each rows can have many
 fields, and each field is a scalar or a list(arrayref).
 
-The basic usage is you walk through all your logs, and use append_data() 
-to insert each rows, (you'll have to split the line into fields), and 
-then call result() to retrieve the result, or report() to immediately 
+The basic usage is you walk through all your logs, and use append_data()
+to insert each rows, (you'll have to split the line into fields), and
+then call result() to retrieve the result, or report() to immediately
 see simple result.
 
-You may specify a filed_groups parameter (arrayref of arrayref), and 
+You may specify a filed_groups parameter (arrayref of arrayref), and
 Algorithm::Accounting will account these fields in groups.
 
 WWW: http://search.cpan.org/dist/Algorithm-Accounting/

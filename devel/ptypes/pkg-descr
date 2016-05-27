@@ -1,12 +1,12 @@
 PTypes is a C++ Portable Types Library. It offers the following features:
 
-* Threads and synchronization objects along with message queues solve 
+* Threads and synchronization objects along with message queues solve
    the vital problem of diversity of the threading API's on different
    platforms.
 * IP socket classes and utilities provide complete IP-based framework
    for both client-side and server-side programming. They can be
    combined with PTypes multithreading.
-* Dynamic strings, variants, character sets, date/time type and various 
+* Dynamic strings, variants, character sets, date/time type and various
    kinds of dynamic and associative arrays: Delphi programmers will find
    them very similar to the ones in their favorite language.
 * Streaming interfaces provide buffered I/O with simple and powerful text

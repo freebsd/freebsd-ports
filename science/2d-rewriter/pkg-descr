@@ -1,4 +1,4 @@
-2d-rewriter is a cellular automata simulator. 
+2d-rewriter is a cellular automata simulator.
 
                Key features
 
@@ -8,7 +8,7 @@ Ability to emulate Conway's "Life Game" via proper rules specification.
 
 Ability to demonstrate self replicating loops.
 
-Patterns are tried in 4 orientations. 
+Patterns are tried in 4 orientations.
 
 Cell directions are defined against the pattern orientation.
 

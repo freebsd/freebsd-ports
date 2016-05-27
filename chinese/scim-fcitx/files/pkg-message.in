@@ -11,7 +11,7 @@ and set LANG, LC_CTYPE to one of the following values:
 
   Traditional Chinese:
     zh_TW.UTF-8, zh_TW.Big5
-    zh_HK.UTF-8, zh_HK.Big5-HKSCS 
+    zh_HK.UTF-8, zh_HK.Big5-HKSCS
 
 To start the SCIM input method daemon, use command:
 

@@ -5,7 +5,7 @@ PORTNAME=	krank
 PORTVERSION=	07
 PORTREVISION=	6
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little casual game
@@ -15,18 +15,20 @@ RUN_DEPENDS=	${PYGAME} \
 
 USES=		python:run tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	CHANGELOG.txt README
-OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Krank" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .cvsignore -delete -or -name .DS_Store -delete
 
 post-patch:
-	${REINPLACE_CMD} -e 's|`dirname.*|${DATADIR}|' ${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|`dirname.*|${DATADIR}|' ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
@@ -39,6 +41,7 @@ do-install:
 	${LN} -sf ${DATADIR}/html/gfx/logo.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

@@ -1,4 +1,4 @@
-Metamail is an implementation of MIME, the Multipurpose Internet 
+Metamail is an implementation of MIME, the Multipurpose Internet
 Mail Extensions, a proposed standard for multimedia mail on the Internet.
 Metamail implements MIME, and also implements extensibility and
 configuration via the "mailcap" mechanism described in an informational

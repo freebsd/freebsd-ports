@@ -1,4 +1,4 @@
---- src/glocal/rightinfluence.cpp.orig
+--- src/glocal/rightinfluence.cpp.orig	2006-09-14 20:40:19 UTC
 +++ src/glocal/rightinfluence.cpp
 @@ -1,6 +1,6 @@
  #include <rightinfluence.h>
@@ -8,7 +8,7 @@
  
  // Sets the first default owner of the whole region
  void initRI(RI *RightInfluence, long long int scoreIndex) {
-@@ -18,17 +18,17 @@
+@@ -18,17 +18,17 @@ void initRI(RI *RightInfluence, long lon
  
  	// hack to aid winner selection
  	origin.score = -1;
@@ -29,4 +29,5 @@
 -    RightInfluence->act[+INF] = &end;
 +    RightInfluence->act[+INF] = &my_end;
  }
+ 
  

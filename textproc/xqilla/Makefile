@@ -27,9 +27,9 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DOXYGEN
 
-DOCYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
-DOCYGEN_ALL_TARGET=	all docs
+DOXYGEN_ALL_TARGET=	all docs
 
 post-patch:
 	@${REINPLACE_CMD} -e \

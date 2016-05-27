@@ -4,4 +4,4 @@ files. It was originally created for Facebook's Video project
 based on the Ruby FLVTool2, but is written in C++ for performance
 reasons.
 
-WWW:	http://mirror.facebook.com/facebook/flvtool++/
+WWW: http://mirror.facebook.com/facebook/flvtool++/

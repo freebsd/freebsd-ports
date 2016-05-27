@@ -1,0 +1,9 @@
+--- plugins/flp_import/CMakeLists.txt.orig	2015-03-08 02:47:14 UTC
++++ plugins/flp_import/CMakeLists.txt
+@@ -3,3 +3,6 @@ INCLUDE(BuildPlugin)
+ INCLUDE_DIRECTORIES(unrtf)
+ 
+ BUILD_PLUGIN(flpimport FlpImport.cpp unrtf.cpp FlpImport.h)
++
++include_directories(${SAMPLERATE_INCLUDE_DIRS})
++link_directories(${SAMPLERATE_LIBRARY_DIRS})

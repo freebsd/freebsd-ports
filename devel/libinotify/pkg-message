@@ -15,12 +15,12 @@ This means the following regression tests will fail:
 Directory notifications:
    IN_MOVED_FROM
    IN_MOVED_TO
-   
+
 Open/close notifications:
    IN_OPEN
    IN_CLOSE_NOWRITE
    IN_CLOSE_WRITE
-   
+
 Symbolic Link notifications:
    IN_DONT_FOLLOW
    IN_ATTRIB

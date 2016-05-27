@@ -1,4 +1,4 @@
 An extension to Prawn that provides flexible table support, that means be able
-to create tables with rowspan and colspan attributes for each cell 
+to create tables with rowspan and colspan attributes for each cell
 
 WWW: https://github.com/blaxter/prawn-flexible-table

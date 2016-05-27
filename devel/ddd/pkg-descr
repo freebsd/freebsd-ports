@@ -9,9 +9,8 @@ explored incrementally and interactively, using automatic layout if
 preferred.  Each time the program stops, the data display reflects the
 current variable values.
 
-WWW: http://www.gnu.org/software/ddd/
+Data Display Debugger requires pty(4) functionality to talk to GDB, so
+make sure to either load appropriate kernel module or use custom kernel
+with pty(4) compiled in.
 
-Also daily CVS snapshots are at
-	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/current/
-Binaries for other systems are at:
-	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/bin/
+WWW: http://www.gnu.org/software/ddd/

@@ -64,6 +64,7 @@ lib/lives/plugins/decoders/zzavformat_decoder.so
 lib/lives/plugins/effects/realtime/weed/RGBdelay.so
 lib/lives/plugins/effects/realtime/weed/alien_overlay.so
 lib/lives/plugins/effects/realtime/weed/alpha_means.so
+lib/lives/plugins/effects/realtime/weed/alpha_visualizer.so
 lib/lives/plugins/effects/realtime/weed/audio_fft.so
 lib/lives/plugins/effects/realtime/weed/audio_transition.so
 lib/lives/plugins/effects/realtime/weed/audio_volume.so
@@ -124,6 +125,7 @@ lib/lives/plugins/effects/realtime/weed/softlight.so
 lib/lives/plugins/effects/realtime/weed/targeted_zoom.so
 lib/lives/plugins/effects/realtime/weed/textfun.so
 lib/lives/plugins/effects/realtime/weed/tone_gen.so
+lib/lives/plugins/effects/realtime/weed/toonz.so
 lib/lives/plugins/effects/realtime/weed/tvpic.so
 lib/lives/plugins/effects/realtime/weed/vector_visualiser.so
 lib/lives/plugins/effects/realtime/weed/vertigo.so

@@ -1,9 +1,9 @@
-pgeodns is a simple DNS server that can distribute load for a 
-hostname to the nearest mirrors (as defined by geography; on the 
+pgeodns is a simple DNS server that can distribute load for a
+hostname to the nearest mirrors (as defined by geography; on the
 country / continent level).
 
-It is used for search.cpan.org/cpansearch.perl.org and for 
-ftp.perl.org/ftp.cpan.org; to provide nearby-ish 
+It is used for search.cpan.org/cpansearch.perl.org and for
+ftp.perl.org/ftp.cpan.org; to provide nearby-ish
 servers for the NTP Pool; and to balance svn.apache.org to
 svn.us.apache.org and svn.eu.apache.org.
 

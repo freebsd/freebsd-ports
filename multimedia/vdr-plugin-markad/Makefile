@@ -13,7 +13,6 @@ COMMENT=	Video Disk Recorder - MarkAd plugin
 LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 
 USES=		execinfo pkgconfig tar:tgz
-PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 PORTDATA=	logos

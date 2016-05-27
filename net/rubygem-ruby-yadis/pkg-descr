@@ -1,7 +1,7 @@
-A Yadis Service discovery library written in pure Ruby.  
+A Yadis Service discovery library written in pure Ruby.
 
 ruby-yadis contains full yadis service discovery functionality.
-Point releases will be issued as the Yadis 1.0 specification 
+Point releases will be issued as the Yadis 1.0 specification
 gets rounded out.  Features include:
 
 * Easy to use interface for fetching Yadis service information

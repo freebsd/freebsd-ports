@@ -1,7 +1,7 @@
 A Ruby gem to manage ISO 3166 country names and their
 corresponding alpha-2 and alpha-3 codes. Additional
 support has been added for ISO 4127 currency information
-and standard  conventions for states in the USA 
+and standard  conventions for states in the USA
 (based on the 3166-2:US code).
 
 ISO 3166 country codes reference:

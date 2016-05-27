@@ -1,6 +1,6 @@
 Duply is a shell front end for the duplicity backup tool.
 It greatly simplifies its usage by implementing backup
 job profiles, batch commands and more. Who says secure
-backups on non-trusted spaces are no child's play. 
+backups on non-trusted spaces are no child's play.
 
 WWW: http://duply.net

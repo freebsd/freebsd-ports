@@ -1,0 +1,4 @@
+rubygem-postgres_ext adds missing native PostgreSQL data types to ActiveRecord
+and convenient querying extensions to ActiveRecord and Arel for Rails 4.x
+
+WWW: https://github.com/dockyard/postgres_ext

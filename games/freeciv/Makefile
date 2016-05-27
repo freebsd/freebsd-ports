@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 		http://download.gna.org/freeciv/stable/

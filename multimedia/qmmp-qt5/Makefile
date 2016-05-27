@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 	SF/qmmp-dev/${PORTNAME}/
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	${PORTNAME}-0.*
 
-USES=		cmake:outsource desktop-file-utils pathfix pkgconfig tar:bzip2
+USES=		cmake:outsource pathfix pkgconfig tar:bzip2
 USE_QT5=	core gui network widgets xml \
 		buildtools_build linguisttools_build qmake_build
 USE_LDCONFIG=	yes
@@ -77,6 +76,7 @@ SKINNEDUI_CMAKE_OFF=	-DUSE_SKINNED:BOOL=FALSE
 DIR_ASSOC_DESC=	inode/directory mime type association
 DIR_ASSOC_CMAKE_ON=	-DUSE_DIR_ASSOC:BOOL=TRUE
 DIR_ASSOC_CMAKE_OFF=	-DUSE_DIR_ASSOC:BOOL=FALSE
+DIR_ASSOC_USES=	desktop-file-utils
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_BUILD_DEPENDS=	jackit>=0.121.2:audio/jack

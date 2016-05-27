@@ -8,7 +8,7 @@ Architecture:
 
 Cool features:
 * Includes several default Actions that allow easy building of multipage forms.
-* Includes usage examples for common usage cases (single-page form, wizard, 
+* Includes usage examples for common usage cases (single-page form, wizard,
   tabbed form).
 
 WWW: http://pear.php.net/package/HTML_QuickForm_Controller

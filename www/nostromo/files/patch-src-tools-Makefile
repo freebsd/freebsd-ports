@@ -1,6 +1,9 @@
---- src/tools/Makefile	2016-04-12 15:02:58.000000000 -0400
-+++ src/tools/Makefile	2016-04-13 12:33:40.546452000 -0400
-@@ -12,5 +12,5 @@
+--- src/tools/Makefile.orig	2016-04-12 19:02:58 UTC
++++ src/tools/Makefile
+@@ -9,9 +9,9 @@ PIPE= -pipe
+ 
+ MAN=
+ 
 -BINOWN=	root
 +BINOWN?=	root
  BINMOD=	0555
@@ -8,3 +11,4 @@
 +BINDIR=	${PREFIX}/sbin
  
  OS!= uname -s
+ 

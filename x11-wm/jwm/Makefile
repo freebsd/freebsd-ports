@@ -6,7 +6,7 @@ PORTVERSION=	2.3.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/projects/jwm/releases/
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Joe's Window Manager
 
 LICENSE=	GPLv2

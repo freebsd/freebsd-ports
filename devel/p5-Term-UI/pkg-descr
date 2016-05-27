@@ -1,8 +1,8 @@
-Term::UI is a transparent way of eliminating the overhead of having to 
-format a question and then validate the reply, informing the user if the 
+Term::UI is a transparent way of eliminating the overhead of having to
+format a question and then validate the reply, informing the user if the
 answer was not proper and re-issuing the question.
 
-Simply give it the question you want to ask, optionally with choices the 
+Simply give it the question you want to ask, optionally with choices the
 user can pick from and a default and Term::UI will DWYM.
 
 For asking a yes or no question, there's even a shortcut.

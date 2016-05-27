@@ -1,14 +1,14 @@
-his module contains a function to return an iterator (see the Iterator 
+his module contains a function to return an iterator (see the Iterator
 module) that returns the rows of a database query, one at a time.
 
-This is marginally more useful than simply calling prepare and execute, 
-and then repeatedly calling fetchrow_hashref; since this one function 
+This is marginally more useful than simply calling prepare and execute,
+and then repeatedly calling fetchrow_hashref; since this one function
 bundles up the calls to all three of those DBI methods.
 
-But the real usefulness of this interface is that it can be chained 
-together with other Iterator functions. The "idb_rows" iterator has the 
-same interface as any other interface, making it interchangeable with 
-iterators of any other source (for example, files), and usable with the 
+But the real usefulness of this interface is that it can be chained
+together with other Iterator functions. The "idb_rows" iterator has the
+same interface as any other interface, making it interchangeable with
+iterators of any other source (for example, files), and usable with the
 iterator manipulation functions in the Iterator::Util module.
 
 WWW: http://search.cpan.org/dist/Iterator-DBI/

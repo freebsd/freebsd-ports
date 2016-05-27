@@ -3,15 +3,15 @@ pdnMesh: A finite element program
 
 Copyright (C) 2001-2005 Sarod Yatawatta
 
-pdnMesh is a program that can solve 2D potential problems (Poisson Equation) 
-and eigenvalue problems (Helmholtz Equation) using the Finite Element Method. 
-Common applications occur in electromagnetics, heat flow and fluid dynamics. 
-It can solve problems using both Nodal Based Formulation and Edge Based 
-(Vector) Formulation. 
+pdnMesh is a program that can solve 2D potential problems (Poisson Equation)
+and eigenvalue problems (Helmholtz Equation) using the Finite Element Method.
+Common applications occur in electromagnetics, heat flow and fluid dynamics.
+It can solve problems using both Nodal Based Formulation and Edge Based
+(Vector) Formulation.
 The features of the program are as follows.
     * Automatic mesh generation according to given boundaries.
     * Adaptive and Interactive mesh refinement.
-    * Problem solution using Cholesky Decomposition or Conjugate Gradient 
+    * Problem solution using Cholesky Decomposition or Conjugate Gradient
      Method with sparse storage.
     * Eigenvalue solution using LAPACK.
     * (Optionally) Eigenvalue solution using QR iteration with shifts.

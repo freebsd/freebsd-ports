@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libdbusmenu
-PORTVERSION=	12.10.2
-PORTREVISION=	1
+PORTVERSION=	16.04.0
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/118249592/ \
+MASTER_SITES=	https://launchpadlibrarian.net/243440794/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -21,34 +20,23 @@ BUILD_DEPENDS=	vapigen:lang/vala \
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig pathfix libtool
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomedocutils:build glib20 intltool intlhack libxslt \
-		introspection:build
+		introspection:build gtk30
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="0.4"
-OPTIONS_SUB=	yes
 
-OPTIONS_SINGLE=	GTK
-OPTIONS_SINGLE_GTK=	GTK2 GTK3
-OPTIONS_DEFAULT=	GTK3
-
-CONFIGURE_ARGS=	--disable-scrollkeeper \
+CONFIGURE_ARGS=	--disable-static \
+	--disable-static \
 	--disable-dumper \
 	--disable-tests \
 	--disable-massivedebugging \
 	--enable-introspection=yes \
 	--disable-nls \
 	--enable-vala \
-	--without-omf-dir \
-	--without-help-dir \
-	--enable-gtk
-
-GTK2_USE=		GNOME=gtk20
-GTK2_CONFIGURE_ON=	--with-gtk=2
-
-GTK3_USE=		GNOME=gtk30
-GTK3_CONFIGURE_ON=	--with-gtk=3
+	--with-gtk=3
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-dcraw is an ANSI C program that decodes any raw image from any digital camera 
-on any computer running any operating system. It's become a standard tool 
-within and without the Open Source world. It's small (about 3000 lines), 
-portable (standard C libraries only), free (both "gratis" and "libre"), and 
+dcraw is an ANSI C program that decodes any raw image from any digital camera
+on any computer running any operating system. It's become a standard tool
+within and without the Open Source world. It's small (about 3000 lines),
+portable (standard C libraries only), free (both "gratis" and "libre"), and
 when used skillfully, produces better-quality output than the tools provided by
-the camera vendor. 
+the camera vendor.
 
 WWW: http://www.cybercom.net/~dcoffin/dcraw/

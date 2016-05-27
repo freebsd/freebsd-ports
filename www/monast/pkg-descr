@@ -1,4 +1,4 @@
-Monast is a monitoring interface which acts as an operator panel for AsteriskTM 
+Monast is a monitoring interface which acts as an operator panel for AsteriskTM
 to display extensions status and calls details going through your IP-PBX.
 
 It was develop in Python, PHP and uses prototype.js to handle AJAX calls and YUI

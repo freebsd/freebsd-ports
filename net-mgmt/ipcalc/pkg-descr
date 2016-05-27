@@ -1,9 +1,9 @@
 ipcalc takes an IP address and netmask and calculates the resulting broadcast,
 network, Cisco wildcard mask, and host range. By giving a second netmask, you
 can design sub- and supernetworks. It is also intended to be a teaching tool
-and presents the results as easy-to-understand binary values. 
+and presents the results as easy-to-understand binary values.
 
 Enter your netmask(s) in CIDR notation (/25) or dotted decimals
-(255.255.255.0). Inverse netmasks are recognized. 
+(255.255.255.0). Inverse netmasks are recognized.
 
 WWW: http://jodies.de/ipcalc

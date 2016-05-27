@@ -4,11 +4,11 @@ It handles configuration and negotiation in user land, while routing
 all data packets strictly in the kernel.  It supports several of
 the numerous PPP sub-protocols and extensions, such as:
 
-      Multi-link PPP capability 
-      PAP, CHAP, MS-CHAP and EAP authentication 
+      Multi-link PPP capability
+      PAP, CHAP, MS-CHAP and EAP authentication
       PPP compression and encryption
       IPCP and IPV6CP parameter negotiation
-      
+
 Mpd have support for many link types:
 
       Serial port modem
@@ -19,18 +19,18 @@ Mpd have support for many link types:
       PPP over UDP
       PPP over specified netgraph(4) node
 
-Mpd also includes many additional features: 
+Mpd also includes many additional features:
 
       IPv4 and IPv6 support
       RADIUS authentication and accounting
       NetFlow traffic accounting
       Network address translation (NAT)
-      Dial-on-demand with idle timeout 
-      Multiple active connections running simultaneously 
-      Dynamic demand based link management (also known as ``rubber bandwidth'') 
-      Powerful chat scripting language for asynchronous serial ports 
+      Dial-on-demand with idle timeout
+      Multiple active connections running simultaneously
+      Dynamic demand based link management (also known as ``rubber bandwidth'')
+      Powerful chat scripting language for asynchronous serial ports
       Pre-tested chat scripts for several common modems and ISDN TAs
-      Clean device-type independent design 
+      Clean device-type independent design
       Comprehensive logging
       Telnet and HTTP control interfaces.
 

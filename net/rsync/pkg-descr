@@ -1,5 +1,5 @@
 rsync is a replacement for rcp that has many more features.
- 
+
 rsync uses the "rsync algorithm" which provides a very fast method for
 bringing remote files into sync. It does this by sending just the
 differences in the files across the link, without requiring that both

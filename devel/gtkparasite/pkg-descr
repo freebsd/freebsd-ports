@@ -1,5 +1,5 @@
 Developing and debugging UIs can be a pain. When something
-goes wrong, it's not always obvious why. You can waste hours 
+goes wrong, it's not always obvious why. You can waste hours
 writing logging statements only to find out that a widget is
 in the wrong container, or an attribute wasn't set correctly.
 
@@ -15,6 +15,6 @@ Parasite is a debugging and development tool that runs inside
 your GTK+ application's process. It can inspect your application,
 giving you detailed information on your UI, such as the hierarchy,
 X window IDs, widget properties, and more. You can modify properties
-on the fly in order to experiment with the look of your UI. 
+on the fly in order to experiment with the look of your UI.
 
 WWW: http://chipx86.github.com/gtkparasite/

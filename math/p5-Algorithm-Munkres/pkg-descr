@@ -1,4 +1,4 @@
-Algorithm-Munkres is a perl extension for Munkres' solution to 
+Algorithm-Munkres is a perl extension for Munkres' solution to
 classical Assignment problem for square and rectangular matrices
 This module extends the solution of Assignment problem for square
 matrices to rectangular matrices by padding zeros. Thus a rectangular

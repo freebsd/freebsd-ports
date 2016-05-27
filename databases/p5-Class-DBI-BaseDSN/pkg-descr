@@ -1,5 +1,5 @@
 Class::DBI::BaseDSN acts as a placeholder for a base class which will be
 switched for a specific Class::DBI extension when you specify the dsn of the
-database to connect to. 
+database to connect to.
 
 WWW: http://search.cpan.org/dist/Class-DBI-BaseDSN/

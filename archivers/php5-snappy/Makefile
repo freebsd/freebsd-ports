@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	php-snappy
 DISTNAME=	${PROJECTHOST}-${PORTVERSION}
 
-MAINTAINER=	melvyn@magemana.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP extension for the snappy compression algorithm
 
 LICENSE=	BSD2CLAUSE

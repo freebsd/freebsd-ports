@@ -1,9 +1,9 @@
-ucpp is a C preprocessor and lexer. It has the following goals: 
+ucpp is a C preprocessor and lexer. It has the following goals:
 
    - Strict conformance to the C99 standard (with switches to
-     disable some extensions and mimic C90 behaviour) 
-   - Low memory consumption 
+     disable some extensions and mimic C90 behaviour)
+   - Low memory consumption
    - Possibility to use the code as a lexer (that outputs tokens
-     directly) 
+     directly)
 
 WWW: http://code.google.com/p/ucpp/

@@ -1,6 +1,6 @@
-OpenGGSN is an implementation of the Gateway GPRS Support Node element 
+OpenGGSN is an implementation of the Gateway GPRS Support Node element
 in the GPRS core network.
-OpenGGSN was developed in 2002 to 2004 by Mondru AB and was abandoned 
-for some years before adopted by the Osmocom project. 
+OpenGGSN was developed in 2002 to 2004 by Mondru AB and was abandoned
+for some years before adopted by the Osmocom project.
 
-WWW: http://openbsc.osmocom.org/trac/wiki/OpenGGSN 
+WWW: http://openbsc.osmocom.org/trac/wiki/OpenGGSN

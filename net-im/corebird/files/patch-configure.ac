@@ -1,5 +1,11 @@
---- configure.ac.orig	2016-02-29 16:55:42 UTC
+--- configure.ac.orig	2016-05-10 17:41:05 UTC
 +++ configure.ac
+@@ -1,4 +1,4 @@
+-AC_INIT([corebird],[1.2.1],[mail@baedert.org])
++AC_INIT([corebird],[1.2.2],[mail@baedert.org])
+ 
+ AC_PREREQ([2.65])
+ 
 @@ -113,7 +113,7 @@ Makefile
  src/Makefile
  ui/Makefile

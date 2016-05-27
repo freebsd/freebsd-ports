@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notiffany
-PORTVERSION=	0.0.8
+PORTVERSION=	0.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

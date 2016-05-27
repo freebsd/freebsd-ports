@@ -1,0 +1,3 @@
+A rubygem providing a standards-compliant WebSocket server and client.
+
+WWW: https://github.com/faye/faye-websocket-ruby

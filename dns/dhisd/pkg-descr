@@ -1,22 +1,22 @@
 DHIS Daemon release 5.1
 ==============================
 
-The server is now modular through the introduction of a services 
+The server is now modular through the introduction of a services
 sub-system. DNS updates are no longer part of the main code but
 are now implemented as a module.
 
 The main dhisd process listens to DHIS clients and after authentication
-marks these with their dynamic IP address. The request is passed to a 
+marks these with their dynamic IP address. The request is passed to a
 sub-process through a pipe which implements the services for which the
 client is subscribed to. Clients may be subscribed to one or more
 services individually.
 The sub-engine interface does a basic read from stdin and process.
 
-Examples of things DHIS could update: 
+Examples of things DHIS could update:
     Dns, Firewalls, tunnel servers, relay access lists, etc ...
 
 For more information on the services of DHIS, you should look at the
-official DHIS site: 
+official DHIS site:
 	http://www.dhis.org/dhis/services/
 
 WWW: http://www.dhis.org/r5/

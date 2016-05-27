@@ -1,4 +1,4 @@
-The OpenChange MAPI library aims to provide interoperability with an 
+The OpenChange MAPI library aims to provide interoperability with an
 Open Source implementation of Microsoft Exchange protocols under UNIX/Linux.
 The current implementation offers a client-side library which can be used in
 existing messaging clients and offer native compatibility with Exchange Servers
@@ -6,7 +6,7 @@ up to 2007.
 
 MAPI stands for Messaging Application Programming Interface and is used in the
 Microsoft Exchange Server groupware server. This solution works with Outlook
-and provides collaborative features such as a messaging server, shared 
+and provides collaborative features such as a messaging server, shared
 calendars, contact databases, public folders and tasks.
 
 WWW: http://www.openchange.org

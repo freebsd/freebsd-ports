@@ -12,6 +12,8 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	rime_deployer:chinese/librime
 
+BROKEN_FreeBSD_9=	does not build (segmentation fault)
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime

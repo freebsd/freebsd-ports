@@ -1,11 +1,11 @@
 Cisco-torch is a mass Cisco Vulnerability Scanner.
 
-The main feature that makes Cisco-torch different from similar 
-tools is the extensive use of forking to launch multiple scanning 
-processes on the background for maximum scanning efficiency. Also, 
-it uses several methods of application layer fingerprinting simultaneously, 
-if needed. We wanted something fast to discover remote Cisco hosts running 
-Telnet, SSH, Web, NTP and SNMP services and launch dictionary attacks 
+The main feature that makes Cisco-torch different from similar
+tools is the extensive use of forking to launch multiple scanning
+processes on the background for maximum scanning efficiency. Also,
+it uses several methods of application layer fingerprinting simultaneously,
+if needed. We wanted something fast to discover remote Cisco hosts running
+Telnet, SSH, Web, NTP and SNMP services and launch dictionary attacks
 against the services discovered.
 
 WWW: http://www.hackingciscoexposed.com/?link=tools

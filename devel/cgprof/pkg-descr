@@ -1,6 +1,6 @@
-cgprof generates colored graphs for profiled executables using gcc and gprof.  
+cgprof generates colored graphs for profiled executables using gcc and gprof.
 cgprof helps to have a better understanding of program structure and execution.
-It makes hot spots identification visual and intuitive.	
+It makes hot spots identification visual and intuitive.
 It is a shell script using gnu awk, that should run on any Unix like system.
 
 WWW: http://mvertes.free.fr/

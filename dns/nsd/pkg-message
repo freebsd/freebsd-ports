@@ -4,7 +4,7 @@
 *
 *   Starting with nsd version 4 the old nsdc control program has been
 *   replaced by nsd-control. This requires some manual setup with
-*   nsd-control-setup and editing of the config files. 
+*   nsd-control-setup and editing of the config files.
 *
 *   nsd-control is incompatible with nsdc so when that is used in scripts,
 *   these should be adapted

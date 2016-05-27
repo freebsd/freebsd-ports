@@ -9,7 +9,7 @@ expressions:
 
 - you only have to provide a unique part of the name to select a
   disk/int/process (ex. : "C:" instead of "C:\ Label: Serial Number xxxxxxx"
-  makes it easy to use on multiple Windows hosts). 
+  makes it easy to use on multiple Windows hosts).
 
 Most of these scripts can make performance outputs.
 

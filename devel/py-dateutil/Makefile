@@ -19,7 +19,7 @@ USES=		python dos2unix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
-NO_ARCH=	yes	
+NO_ARCH=	yes
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

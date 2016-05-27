@@ -1,5 +1,5 @@
-The OpenVPN Auth-LDAP Plugin implements username/password authentication via 
-LDAP for OpenVPN 2.x. It also includes some integration with the OpenBSD 
+The OpenVPN Auth-LDAP Plugin implements username/password authentication via
+LDAP for OpenVPN 2.x. It also includes some integration with the OpenBSD
 packet filter, supporting adding and removing VPN clients from PF tables.
 
 WWW: http://code.google.com/p/openvpn-auth-ldap/

@@ -1,4 +1,4 @@
-MagickWand for PHP is a wrapper for the ImageMagick library to read, 
+MagickWand for PHP is a wrapper for the ImageMagick library to read,
 write, and manipulate an image in many image formats.
 
 WWW: http://www.imagemagick.org/script/api.php

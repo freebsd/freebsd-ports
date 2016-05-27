@@ -1,5 +1,5 @@
-The Net::ILO module is an interface to a subset of Hewlett-Packards 
-Integrated Lights-Out out-of-band management system. 
+The Net::ILO module is an interface to a subset of Hewlett-Packards
+Integrated Lights-Out out-of-band management system.
 HP's API is XML-based and cumbersome to use; this module aims to
 simplify accessing the iLO from Perl while retaining as much
 functionality as possible.

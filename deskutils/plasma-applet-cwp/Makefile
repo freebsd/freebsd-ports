@@ -14,7 +14,7 @@ COMMENT=	Weather plasma applet for KDE4
 LICENSE=	GPLv3
 
 USES=		cmake gettext tar:bzip2
-USE_KDE4=	automoc4 kdeprefix kdelibs
+USE_KDE4=	automoc4 kdelibs
 USE_QT4=	gui dbus network opengl svg phonon webkit xml \
 		qmake_build moc_build rcc_build uic_build
 

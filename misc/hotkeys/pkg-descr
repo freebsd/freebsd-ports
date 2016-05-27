@@ -1,6 +1,6 @@
-This program sits at the back and listens for the "special" hotkeys that 
+This program sits at the back and listens for the "special" hotkeys that
 you won't normally use on your internet/Multimedia keyboards.
-The buttons perform their intended behaviors, such as volume up and down, 
+The buttons perform their intended behaviors, such as volume up and down,
 mute the speaker, launch applications, etc.
 
 NOTE: CDROM & APM features have been disabled

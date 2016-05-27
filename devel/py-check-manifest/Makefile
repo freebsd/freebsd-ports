@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	check-manifest
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	xmj@FreeBSD.org
 COMMENT=	Check MANIFEST.in in a Python source package for completeness
 
 LICENSE=	MIT

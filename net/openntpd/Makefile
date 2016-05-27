@@ -2,6 +2,7 @@
 
 PORTNAME=	openntpd
 PORTVERSION=	5.9p1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD/OpenNTPD
@@ -24,10 +25,10 @@ RESSL_DESC=		SSL/TLS support via LibreSSL
 
 OPTIONS_DEFAULT=	RESSL
 
-# Requires libtls from LibreSSL >= 2.3.2
+# Requires libtls from LibreSSL
 RESSL_USE=		openssl=yes
 RESSL_VARS=		with_openssl_port=yes \
-			openssl_port=security/libressl-devel
+			openssl_port=security/libressl
 RESSL_CONFIGURE_WITH=	cacert=${LOCALBASE}/etc/ssl/cert.pem
 RESSL_CPPFLAGS=		-I${LOCALBASE}/include
 RESSL_LDFLAGS=		-L${LOCALBASE}/lib

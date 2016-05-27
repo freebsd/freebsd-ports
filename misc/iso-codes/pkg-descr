@@ -1,8 +1,8 @@
 This package aims to provide a central list of the country, language,
 and currency names and their translations.  The data comes from
-ISO standards 639 (language names), 3166 (country names), 
+ISO standards 639 (language names), 3166 (country names),
 3166-2 (sub-territory) and 4217 (currency).
-The translations are from the Translation Project. The data is provided 
+The translations are from the Translation Project. The data is provided
 in tabular files as well as XML.
 
 WWW: http://pkg-isocodes.alioth.debian.org/

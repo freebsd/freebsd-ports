@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20150614
+PORTVERSION=	3.20160509
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN_POOL \
 		LOCAL/mat/${PORTNAME}
@@ -32,7 +32,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-XML-Feed>=0:textproc/p5-XML-Feed \
 		p5-Authen-Passphrase>=0:security/p5-Authen-Passphrase
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gettext perl5 gmake cpe
 USE_PERL5=	configure

@@ -1,4 +1,4 @@
-A PECL extension to provide read access to MDB data files as used by Microsoft 
+A PECL extension to provide read access to MDB data files as used by Microsoft
 Access and its underlying JetEngine. It is based on libmdb from the mdbtools
 package.
 

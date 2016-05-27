@@ -3,6 +3,7 @@
 
 PORTNAME=	bsdgames
 PORTVERSION=	4.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/adamw
@@ -63,6 +64,8 @@ post-patch:
 		${REINPLACE_CMD} -e 's/HIDEGAME/SGIDGAME/' \
 			${WRKSRC}/$${f}/Makefile; \
 	done
+	@${REINPLACE_CMD} -e "s/getline/get_line/g" ${WRKSRC}/cribbage/io.c \
+		${WRKSRC}/cribbage/crib.c ${WRKSRC}/cribbage/cribbage.h
 
 pre-install:
 .for d in atc larn quiz.db

@@ -1,21 +1,21 @@
 AbiWord is an open-source, cross-platform WYSIWYG word processor.  It works
 on Windows and most Unix Systems.
 
-Features include: 
+Features include:
 
- - Basic character formatting (bold, underline, italics, etc.) 
- - Paragraph alignment 
- - Spell-check 
- - Import of Word97 and RTF documents 
- - Export to RTF, Text, HTML, and LaTeX formats 
- - Interactive rulers and tabs 
- - Styles 
- - Unlimited undo/redo 
- - Multiple column control 
- - Widow/orphan control 
- - Find/Replace 
+ - Basic character formatting (bold, underline, italics, etc.)
+ - Paragraph alignment
+ - Spell-check
+ - Import of Word97 and RTF documents
+ - Export to RTF, Text, HTML, and LaTeX formats
+ - Interactive rulers and tabs
+ - Styles
+ - Unlimited undo/redo
+ - Multiple column control
+ - Widow/orphan control
+ - Find/Replace
  - Anti-aliased fonts
- - Images 
+ - Images
 
 For more information, or to see screenshots, visit the AbiSource home page.
 

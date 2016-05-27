@@ -25,7 +25,7 @@ starting the new version.
 
 Note that the ssl_only_channel compile option has been removed, and
 should be added as a configuration setting (use_sslonly) in the
-ircd.conf file in order to activate the +S channel mode. 
+ircd.conf file in order to activate the +S channel mode.
 
 Be sure to check out 'ratbox-services' if you need a services package.
 ------------------------------------------------------------------------

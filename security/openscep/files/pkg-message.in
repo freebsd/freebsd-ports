@@ -8,7 +8,7 @@ You should also include %%PREFIX%%/etc/openscep/openscep.schema
 into your slapd config (sample of this is at
 %%PREFIX%%/etc/openscep/slapd.conf).
 
-Furthermore, you should add your ldap directory information from 
+Furthermore, you should add your ldap directory information from
 %%PREFIX%%/etc/openscep/openscep.ldif and edit DN specific information
 there before doing ldapadd.
 ======================================================================

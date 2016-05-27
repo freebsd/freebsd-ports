@@ -10,7 +10,7 @@ interactive with searching.
 
 But this is only part of the story. The world of Gopher is more expansive than
 this. There are two major gopher protocols: Gopher0 (also known as RFC1436)
-and Gopher+. PyGopherd supports both. 
+and Gopher+. PyGopherd supports both.
 
 PyGopherd also fully natively supports HTTP, the protocol used on the Internet
 for most Web transactions. So, you can access a PyGopherd server using anything

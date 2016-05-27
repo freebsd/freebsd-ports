@@ -1,15 +1,15 @@
 ---------------------------------------------------------------------
 FIRST INSTALLATION
 
-If this is a first installation of automatic addressbook plugin, you 
-have to execute the relevant initialisation SQL script for your 
-chosen database backend : 
+If this is a first installation of automatic addressbook plugin, you
+have to execute the relevant initialisation SQL script for your
+chosen database backend :
 
 %%PLUGINDIR%%/SQL/<dbtype>.initial.sql
 
 You will also need to copy :
 %%PLUGINDIR%%/config/config.inc.php.dist to
-%%PLUGINDIR%%/config/config.inc.php 
+%%PLUGINDIR%%/config/config.inc.php
 and edit as you need.
 
 Finally, you will need to add the plugin to your list of loadable
@@ -19,7 +19,7 @@ E.g. : $rcmail_config['plugins'] = array('automatic_addressbook');
 
 UPGRADING
 
-If you already had a previous version of automatic addressbook plugin 
+If you already had a previous version of automatic addressbook plugin
 installed, you should update your database schema by executing the
 relevant upgrade SQL script for your chosen database backend :
 

@@ -6,8 +6,8 @@ The Lazarus RAD was installed
 
    # lazarus
 
-2) The first time that lazarus is running, you should set the path to fpc 
-   source directory at lazarus configuration environment. Also it could be 
+2) The first time that lazarus is running, you should set the path to fpc
+   source directory at lazarus configuration environment. Also it could be
    setting later.
 
 3) You can obtain freepascal source code from:
@@ -19,16 +19,16 @@ The Lazarus RAD was installed
 4) You can use %%LOCALBASE%%/bin/gdb debugger instead of gdb installed debugger
    installed from base system. Lazarus works better with this version.
 
-5) The lazbuild.cfg file has been removed, it is not necessary anymore. Now 
-   we can use the following ports for aplications that depend of lazarus 
-   and these can be built with an interface different than lazarus has compiled 
+5) The lazbuild.cfg file has been removed, it is not necessary anymore. Now
+   we can use the following ports for aplications that depend of lazarus
+   and these can be built with an interface different than lazarus has compiled
    by default:
 
    editors/lazarus-lcl-nogui
    editors/lazarus-lcl-gtk2
    editors/lazarus-lcl-qt
 
-   You can added those ports if you want support for nogui, gtk2 or qt 
+   You can added those ports if you want support for nogui, gtk2 or qt
    interfaces. Please look at net-p2p/transmission-remote-gui like a example of
    how use it
 

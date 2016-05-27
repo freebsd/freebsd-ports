@@ -1,6 +1,6 @@
-Ccnet is a framework for writing networked applications in C. It provides 
-the services of peer identification, connection management, service 
-invocation, and message sending. Server has the management of user, group, 
+Ccnet is a framework for writing networked applications in C. It provides
+the services of peer identification, connection management, service
+invocation, and message sending. Server has the management of user, group,
 and cluster.
 
 WWW: https://github.com/haiwen/ccnet

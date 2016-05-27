@@ -39,6 +39,7 @@ share/mime/packages/tiled.xml
 %%DATADIR%%/translations/tiled_it.qm
 %%DATADIR%%/translations/tiled_ja.qm
 %%DATADIR%%/translations/tiled_lv.qm
+%%DATADIR%%/translations/tiled_nb.qm
 %%DATADIR%%/translations/tiled_nl.qm
 %%DATADIR%%/translations/tiled_pl.qm
 %%DATADIR%%/translations/tiled_pt.qm

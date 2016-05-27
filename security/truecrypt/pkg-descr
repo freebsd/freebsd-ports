@@ -1,15 +1,15 @@
 Free open-source disk encryption software
 
 Main Features:
-* Creates a virtual encrypted disk within a file and mounts it as 
+* Creates a virtual encrypted disk within a file and mounts it as
   a real disk.
-* Encrypts an entire partition or storage device such as USB flash 
+* Encrypts an entire partition or storage device such as USB flash
   drive or hard drive.
 * Encryption is automatic, real-time (on-the-fly) and transparent.
 * Parallelization and pipelining allow data to be read and written
   as fast as if the drive was not encrypted.
-* Provides plausible deniability, in case an adversary forces you 
+* Provides plausible deniability, in case an adversary forces you
   to reveal the password:
-  Hidden volume (steganography) and hidden operating system. 
+  Hidden volume (steganography) and hidden operating system.
 
 WWW: http://www.truecrypt.org/

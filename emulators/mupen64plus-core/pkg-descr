@@ -1,8 +1,8 @@
-Mupen64Plus is a plugin-based N64 emulator for Linux, Mac OSX, FreeBSD, and 
-Windows which is capable of accurately playing many games. Included are four 
-MIPS R4300 CPU emulators, with dynamic recompilers for 32-bit x86 and 64-bit 
-amd64 systems, and necessary plugins for audio, graphical rendering (RDP), 
-signal co-processor (RSP), and input. There are 3 OpenGL video plugins 
+Mupen64Plus is a plugin-based N64 emulator for Linux, Mac OSX, FreeBSD, and
+Windows which is capable of accurately playing many games. Included are four
+MIPS R4300 CPU emulators, with dynamic recompilers for 32-bit x86 and 64-bit
+amd64 systems, and necessary plugins for audio, graphical rendering (RDP),
+signal co-processor (RSP), and input. There are 3 OpenGL video plugins
 included: glN64, RiceVideoLinux, and Glide64.
 
 WWW: http://code.google.com/p/mupen64plus/

@@ -1,11 +1,11 @@
-This module takes a list of documents (in English) and 
-builds a simple in-memory search engine using a vector 
-space model. Documents are stored as PDL objects, and 
-after the initial indexing phase, the search should be 
-very fast. This implementation applies a rudimentary 
-stop list to filter out very common words, and uses a 
-cosine measure to calculate document similarity. 
-All documents above a user-configurable similarity 
+This module takes a list of documents (in English) and
+builds a simple in-memory search engine using a vector
+space model. Documents are stored as PDL objects, and
+after the initial indexing phase, the search should be
+very fast. This implementation applies a rudimentary
+stop list to filter out very common words, and uses a
+cosine measure to calculate document similarity.
+All documents above a user-configurable similarity
 threshold are returned.
 
 WWW: http://search.cpan.org/dist/Search-VectorSpace/

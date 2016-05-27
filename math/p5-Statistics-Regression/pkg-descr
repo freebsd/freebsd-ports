@@ -1,4 +1,4 @@
-Regression.pm is a multivariate linear regression package. 
+Regression.pm is a multivariate linear regression package.
 That is, it estimates the c coefficients for a line-fit of the type
 
       y= c(0)*x(0) + c(1)*x1 + c(2)*x2 + ... + c(k)*xk

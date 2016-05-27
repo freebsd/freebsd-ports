@@ -1,8 +1,8 @@
 Bestfit is a small program to determine which files that should be put
 on a CD (or other media), so that as little space as possible is wasted.
-It is very easy to use: you specify files on the command line, and 
-bestfit prints the names of those that were selected. Alternatively, 
-bestfit can execute a command for each selected file (eg. to move them 
+It is very easy to use: you specify files on the command line, and
+bestfit prints the names of those that were selected. Alternatively,
+bestfit can execute a command for each selected file (eg. to move them
 to a different directory).
 
 WWW: http://savannah.nongnu.org/projects/bestfit/

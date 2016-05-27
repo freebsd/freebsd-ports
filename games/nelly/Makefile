@@ -3,7 +3,7 @@
 
 PORTNAME=	nelly
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games python
 MASTER_SITES=	http://www.partiallydisassembled.net/nelly/ \
 		http://media.pyweek.org/dl/2/rushed/ \
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nelly's Rooftop Garden, physics-based puzzle game
 
 RUN_DEPENDS=	${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-opengl
+		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL
 
 USES=		python:2
 

@@ -1,5 +1,5 @@
 The miscellaneous tools included with Samtools have been installed to
-%%PREFIX%%/bin/samtools_misc 
+%%PREFIX%%/bin/samtools_misc
 
 Add that directory to your path if you want to use these tools.
 

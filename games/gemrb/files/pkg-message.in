@@ -1,6 +1,6 @@
 ===============================================================================
-To use GemRB, you must copy the Chitin.key from your respective Infinity Engine 
-game CD to the GemRB directory.  If you do not copy this file, GemRB will not 
+To use GemRB, you must copy the Chitin.key from your respective Infinity Engine
+game CD to the GemRB directory.  If you do not copy this file, GemRB will not
 work. Additionally, %%ETCDIR%%/GemRB.cfg needs to be edited to point to the
 Infinity Engine game installation directory. Games can be installed with
 emulators/wine-devel, archivers/unshield, or the custom GemRB game installer:

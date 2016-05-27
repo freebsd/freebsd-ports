@@ -7,15 +7,15 @@ it and install the barnyard2-sguil port instead.  You will need to
 deinstall the barnyard2 port and install the barnyard2-sguil port yourself
 instead.  This port WILL NOT WORK without the barnyard2-sguil port!!
 
-See the %%DOCSDIR%%/INSTALL doc for details on the 
-configuration and for croning the script.  
+See the %%DOCSDIR%%/INSTALL doc for details on the
+configuration and for croning the script.
 
-WARNING!!!  Sguil et al will fill up your /tmp directory very 
+WARNING!!!  Sguil et al will fill up your /tmp directory very
 quickly.  You should probably configure sguil et al to log to
 another partition/location (e.g. /nsm/tmp/).
 
-You must ALSO edit all of the sensor conf files (located in 
-%%PREFIX%%/%%SENSOR_SGUILDIR%%/etc/) to reflect your configuration before 
+You must ALSO edit all of the sensor conf files (located in
+%%PREFIX%%/%%SENSOR_SGUILDIR%%/etc/) to reflect your configuration before
 starting the sensor_agents.
 
 A number of ancilliary things have been installed in
@@ -27,5 +27,5 @@ The new sancp.conf-sample file contains the settings for squil. NOTE:
 the conf file is for sancp 1.5.3.  It may need additional edits to work
 with the current ports version of sancp. If you still want to maintain
 the customized sancp.conf file, then copy the new sancp.conf-sample
-file to sguild-sancp.conf (for example) and add 
+file to sguild-sancp.conf (for example) and add
 sancp_conf=%%PREFIX%%/etc/sguild-sancp.conf to /etc/rc.conf.

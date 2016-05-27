@@ -360,6 +360,7 @@ include/mythtv/metadata/globals.h
 include/mythtv/metadata/metadatacommon.h
 include/mythtv/metadata/metadatadownload.h
 include/mythtv/metadata/metadatafactory.h
+include/mythtv/metadata/metadatagrabber.h
 include/mythtv/metadata/metadataimagedownload.h
 include/mythtv/metadata/metadataimagehelper.h
 include/mythtv/metadata/metaio.h
@@ -676,8 +677,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/bindings/php/MythBackend.php
 %%DATADIR%%/bindings/php/MythBase.php
 %%DATADIR%%/bindings/php/MythFrontend.php
-%%DATADIR%%/bindings/php/MythTVChannel.php
 %%DATADIR%%/bindings/php/MythTV.php
+%%DATADIR%%/bindings/php/MythTVChannel.php
 %%DATADIR%%/bindings/php/MythTVProgram.php
 %%DATADIR%%/bindings/php/MythTVRecording.php
 %%DATADIR%%/bindings/php/MythTVStorageGroup.php
@@ -711,8 +712,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/fonts/Tiresias Infofont Bold.ttf
 %%DATADIR%%/fonts/Tiresias Infofont Italic.ttf
 %%DATADIR%%/fonts/Tiresias Infofont.ttf
-%%DATADIR%%/fonts/tiresias_gpl3.txt
 %%DATADIR%%/fonts/texgyrechorus-mediumitalic.otf
+%%DATADIR%%/fonts/tiresias_gpl3.txt
 %%DATADIR%%/hardwareprofile/.gitignore
 %%DATADIR%%/hardwareprofile/MultipartPostHandler.py
 %%DATADIR%%/hardwareprofile/__init__.py
@@ -1077,6 +1078,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/internetcontent/vimeo.py
 %%DATADIR%%/internetcontent/youtube.py
 %%DATADIR%%/locales/da_dk.xml
+%%DATADIR%%/locales/de_at.xml
+%%DATADIR%%/locales/de_ch.xml
 %%DATADIR%%/locales/de_de.xml
 %%DATADIR%%/locales/el_gr.xml
 %%DATADIR%%/locales/en_ca.xml
@@ -1741,6 +1744,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default/keyboard/da_ui.xml
 %%DATADIR%%/themes/default/keyboard/de.xml
 %%DATADIR%%/themes/default/keyboard/de_ui.xml
+%%DATADIR%%/themes/default/keyboard/el.xml
+%%DATADIR%%/themes/default/keyboard/el_ui.xml
 %%DATADIR%%/themes/default/keyboard/en_gb.xml
 %%DATADIR%%/themes/default/keyboard/en_gb_ui.xml
 %%DATADIR%%/themes/default/keyboard/en_us.xml

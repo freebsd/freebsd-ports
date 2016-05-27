@@ -1,13 +1,13 @@
-SNMP::Info gives an object oriented interface to information 
-obtained through SNMP. This module is geared towards network devices. 
+SNMP::Info gives an object oriented interface to information
+obtained through SNMP. This module is geared towards network devices.
 Subclasses exist for a number of network devices and common MIBs.
 The information may be coming from any number of MIB files and is very
-vendor specific. SNMP::Info provides you a common method for all 
+vendor specific. SNMP::Info provides you a common method for all
 supported devices.
-Adding support for your own device is easy, and takes little much SNMP 
+Adding support for your own device is easy, and takes little much SNMP
 knowledge.
-The module is not limited to network devices. Any MIB or device can be 
-given an objected oriented front-end by making a module that consists of a 
-couple hashes. See EXTENDING SNMP::INFO. 
+The module is not limited to network devices. Any MIB or device can be
+given an objected oriented front-end by making a module that consists of a
+couple hashes. See EXTENDING SNMP::INFO.
 
 WWW: http://snmp-info.sourceforge.net/

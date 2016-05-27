@@ -1,6 +1,6 @@
-The Domainatrix library is used for parsing domain names, 
-canonicalizing URLs, and a few other things. It uses the 
-list of domain names from the Public Suffix List to know 
+The Domainatrix library is used for parsing domain names,
+canonicalizing URLs, and a few other things. It uses the
+list of domain names from the Public Suffix List to know
 what constitutes a subdomain, domain, and public suffix.
 
 WWW: https://github.com/pauldix/domainatrix

@@ -7,18 +7,18 @@ easy to use, intuitive interface, and enough features and flexibility to please
 even the most hard-core programmer. A very incomplete list of jEdit's features
 follows.
 
-o Syntax highlighting for 200+ file types (including C, C++, Java, Perl, etc) 
-o Semi-intelligent auto indent in C, C++ and Java modes 
-o Bracket highlighting and matching 
-o Powerful macro system 
+o Syntax highlighting for 200+ file types (including C, C++, Java, Perl, etc)
+o Semi-intelligent auto indent in C, C++ and Java modes
+o Bracket highlighting and matching
+o Powerful macro system
 o Auto-expanding abbreviations for the frequiently used strings
 o Powerful search and replace - supports regular expressions and multiple file
-  search/replace; Search and replace operations can be recorded in macros 
+  search/replace; Search and replace operations can be recorded in macros
 o Any number of strings and caret positions can be stored for later use in
-  so-called registers 
+  so-called registers
 o Rectangular selections for working with column-based files
 o Any number of editor windows can be opened, and each view can be split into
-  multiple panes for side-by-side viewing of multiple files 
-o Unlimited undo/redo 
+  multiple panes for side-by-side viewing of multiple files
+o Unlimited undo/redo
 
 WWW: http://jedit.sourceforge.net/

@@ -1,4 +1,4 @@
-A utility for printing text files (or stdin) through a terminal/terminal 
+A utility for printing text files (or stdin) through a terminal/terminal
 emulator using ANSI escape sequences.
 
 WWW: http://ansiprint.sourceforge.net

@@ -1,4 +1,3 @@
-SHA256 (egg_4.0.6+0.20041122cvs.orig.tar.gz) = 722413515f2d60418d98250c8aed2b811e6b5363cdb69899193d454afe425115
-SIZE (egg_4.0.6+0.20041122cvs.orig.tar.gz) = 287308
-SHA256 (egg_4.0.6+0.20041122cvs-19.diff.gz) = bd4252d0536c1eeb526789063b822b9b9e75f2bbec9c3db97792ce0ee3b89fb0
-SIZE (egg_4.0.6+0.20041122cvs-19.diff.gz) = 28417
+TIMESTAMP = 1463347411
+SHA256 (hrs-allbsd-tamago-v4.0.6.0.20041122.19.14_GH0.tar.gz) = c9ffa59b5d56c1dc97c09fb2fc0a7b0abde1b1cb25cb338cc976c6c59689f5cd
+SIZE (hrs-allbsd-tamago-v4.0.6.0.20041122.19.14_GH0.tar.gz) = 365797

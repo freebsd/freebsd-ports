@@ -1,4 +1,4 @@
-Net::OpenSSH is a secure shell client package implemented on top of 
+Net::OpenSSH is a secure shell client package implemented on top of
 OpenSSH binary client (ssh).
 
 WWW: https://metacpan.org/pod/Net::OpenSSH

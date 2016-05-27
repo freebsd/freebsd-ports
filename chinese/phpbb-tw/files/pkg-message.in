@@ -28,7 +28,7 @@ that you add something like the following to httpd.conf:
 
         Order Deny,Allow
         Deny from All
-        Allow from All 
+        Allow from All
     </Directory>
 
 

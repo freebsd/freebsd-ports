@@ -1,7 +1,7 @@
 rej tries to merge simple patch-rejects and then run a merge program so the
 changes can be verified.  It is not meant to resolve complex problems that
 would not be immediately obvious to the programmer, the goal instead is to
-quickly fix the easy problems.  
+quickly fix the easy problems.
 
 rej understands both unified and context diffs.
 

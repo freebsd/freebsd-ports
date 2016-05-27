@@ -1,6 +1,6 @@
---- mimeparse.c.orig	1996-06-04 15:36:59.000000000 +0200
-+++ mimeparse.c	2011-07-25 20:21:13.000000000 +0200
-@@ -219,8 +219,39 @@ parse_mime_siblings(struct message *m)
+--- mimeparse.c.orig	1996-06-04 13:36:59 UTC
++++ mimeparse.c
+@@ -219,9 +219,40 @@ parse_mime_siblings(struct message *m)
  	    inbuf->bodystart,
  	    inbuf->bodyend);
  #endif
@@ -11,10 +11,10 @@
 +      move_past_boundary(m, m->sd->endbound);
 +      for (;;)
 +      {
-+        tttt = getline(m->sd);
++        tttt = get_line(m->sd);
 +#ifdef DEBUG
 +          if (edebug)
-+            fprintf(stderr," getline = %d\n", tttt);
++            fprintf(stderr," get_line = %d\n", tttt);
 +#endif
 +        if (tttt == 1)
 +          {
@@ -30,14 +30,16 @@
 +          }
 +        break;
 +      }
-+
+ 
+-  m->sd->offset = m->sd->bodyend;
+-  if (getline(m->sd) == 0)
 +    }
 +  else
 +  /* END_FIX */
 +    m->sd->offset = m->sd->bodyend;
 +
- 
--  m->sd->offset = m->sd->bodyend;
-   if (getline(m->sd) == 0)
++
++  if (get_line(m->sd) == 0)
      return(OK);
    if (m->sd->offset < m->sd->end)
+     {

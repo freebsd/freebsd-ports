@@ -1,4 +1,4 @@
-YAML::Tiny is a perl class to read and write YAML-style files with as 
+YAML::Tiny is a perl class to read and write YAML-style files with as
 little code as possible, reducing load time and memory overhead.
 
 WWW: http://search.cpan.org/dist/YAML-Tiny/

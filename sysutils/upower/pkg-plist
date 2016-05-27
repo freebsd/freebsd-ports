@@ -1,6 +1,7 @@
 bin/upower
 etc/UPower/UPower.conf
 etc/dbus-1/system.d/org.freedesktop.UPower.conf
+include/libupower-glib/up-autocleanups.h
 include/libupower-glib/up-client.h
 include/libupower-glib/up-device.h
 include/libupower-glib/up-history-item.h

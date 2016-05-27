@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-Utils
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_PERL5=	modbuild
-USES=		perl5
+USES=		dos2unix perl5
 
 .include <bsd.port.mk>

@@ -231,7 +231,6 @@
     SUBDIR += kde4-l10n-wa
     SUBDIR += kde4-xdg-env
     SUBDIR += kdeedu4
-    SUBDIR += kdehier4
     SUBDIR += kdeutils4
     SUBDIR += kenny
     SUBDIR += kgeography
@@ -415,6 +414,7 @@
     SUBDIR += rubygem-vpim
     SUBDIR += rump
     SUBDIR += saaghar
+    SUBDIR += sent
     SUBDIR += seq2
     SUBDIR += shared-mime-info
     SUBDIR += shc

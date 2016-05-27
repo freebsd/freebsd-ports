@@ -1,4 +1,4 @@
-PgWorksheet is a simple GUI frontend to PostgreSQL for executing 
+PgWorksheet is a simple GUI frontend to PostgreSQL for executing
 SQL queries, and psql commands without the need for the psql
 command line tools.
 

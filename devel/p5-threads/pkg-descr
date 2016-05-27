@@ -3,7 +3,7 @@ threads are different from 5005threads (the thread model of Perl 5.005)
 by creating a new Perl interpreter per thread, and not sharing any
 data or state between threads by default.
 
-Prior to Perl 5.8, this has only been available to people embedding 
+Prior to Perl 5.8, this has only been available to people embedding
 Perl, and for emulating fork() on Windows.
 
 The threads API is loosely based on the old Thread.pm API. It is very

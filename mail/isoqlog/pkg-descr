@@ -1,20 +1,20 @@
 Isoqlog is an MTA log analysis program written in C.It designed to scan qmail,
-postfix, sendmail logfile and produce usage statistics in HTML format for 
+postfix, sendmail logfile and produce usage statistics in HTML format for
 viewing through a browser.It produces Top domains output according to Incoming,
-Outgoing, total mails and bytes, it keeps  your main domain mail statistics 
+Outgoing, total mails and bytes, it keeps  your main domain mail statistics
 with Days Top Domain, Top Users values for per day, per month, and years.
 
 Features:
 --------
 * Multi MTA support(qmail (multilog and syslog), postfix, sendmail, exim)
-* Multi-domain support: Shows quite detailed statistics for not only your main 
+* Multi-domain support: Shows quite detailed statistics for not only your main
 domain, but also, any domain you want.
 * Displays statistics for common mail delivery errors.
-* For each domain you specify; displays Top incoming, outgoing, total and byte 
+* For each domain you specify; displays Top incoming, outgoing, total and byte
 based statistics for users.
-* Displays server's activity based on incoming, outgoing, total mails and size 
+* Displays server's activity based on incoming, outgoing, total mails and size
 of incoming mail, for domain  and its users.
-* All days', all months', all years' activities ( above ones ) are stored for 
+* All days', all months', all years' activities ( above ones ) are stored for
 future inspection.
 * Multi-language Support (17 languages supported as of isoqlog 2.1.1!)
 

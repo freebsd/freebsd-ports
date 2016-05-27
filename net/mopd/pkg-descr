@@ -1,5 +1,5 @@
 The MOP Loader Daemon is for use netbooting older DEC machines such as VAXen
-and DECstations.  Some versions of SRM on DEC Alphas might support it too.  
+and DECstations.  Some versions of SRM on DEC Alphas might support it too.
 MOP is functionally comparable to TFTP.
 
 Included in this package are the `mopd' daemon itself, plus the debugging

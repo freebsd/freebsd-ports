@@ -2,4 +2,4 @@ Patsy is a Python library for describing statistical models (especially linear
 models, or models that have a linear component) and building design matrices.
 Patsy brings the convenience of R "formulas" to Python.
 
-WWW: https://www.github.com/pydata/patsy 
+WWW: https://www.github.com/pydata/patsy

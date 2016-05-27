@@ -1,8 +1,8 @@
-Lazyread is a C program that auto-scrolls files on your screen 
-in movie credit fashion. It allows the user to read without having 
-to manually scroll down to see new pages. There are lots of 
-features, such as being able to choose the speed at which it 
-scrolls, pause, dynamic speed up, the ability to highlight lines 
+Lazyread is a C program that auto-scrolls files on your screen
+in movie credit fashion. It allows the user to read without having
+to manually scroll down to see new pages. There are lots of
+features, such as being able to choose the speed at which it
+scrolls, pause, dynamic speed up, the ability to highlight lines
 that contain a specified string, and much more.
 
 WWW: http://lazyread.sourceforge.net

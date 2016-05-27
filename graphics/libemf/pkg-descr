@@ -1,6 +1,6 @@
 libEMF is a C/C++ library which provides a drawing toolkit
 based on  ECMA-234. The general purpose of this library is
 to create vector graphics files on POSIX systems which can
-be imported into StarOffice/OpenOffice. 
+be imported into StarOffice/OpenOffice.
 
 WWW: http://libemf.sourceforge.net/

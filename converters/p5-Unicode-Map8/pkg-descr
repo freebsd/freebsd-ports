@@ -1,22 +1,22 @@
-Unicode::Map8                                                                  
--------------                                                                  
-                                                                               
-The Unicode::Map8 class implement efficient mapping tables between             
-8-bit character sets and 16 bit character sets like Unicode.  About            
-170 different mapping tables between various known character sets and          
-Unicode is distributed with this package.  The source of these tables          
-is the vendor mapping tables provided by Unicode, Inc. and the code            
-tables in RFC 1345.  New maps can easily be installed.                         
-                                                                               
-By coincidence Martin Schwartz created a similar module at the same            
-time I did.  His module is called Unicode::Map and should be available         
-on CPAN too.  Both modules now support a unified interface.  Martin's          
-module will be depreciated in the future.                                      
-                                                                               
+Unicode::Map8
+-------------
+
+The Unicode::Map8 class implement efficient mapping tables between
+8-bit character sets and 16 bit character sets like Unicode.  About
+170 different mapping tables between various known character sets and
+Unicode is distributed with this package.  The source of these tables
+is the vendor mapping tables provided by Unicode, Inc. and the code
+tables in RFC 1345.  New maps can easily be installed.
+
+By coincidence Martin Schwartz created a similar module at the same
+time I did.  His module is called Unicode::Map and should be available
+on CPAN too.  Both modules now support a unified interface.  Martin's
+module will be depreciated in the future.
+
 Since UTF8 support is coming to Perl soon, there might be good reasons
 to move this module in the direction of mapping to/from UTF8.  I will
 probably do so, once the Unicode support in the Perl core settle.
 
-COPYRIGHT   1998-1999 Gisle Aas. All rights reserved.                 
+COPYRIGHT   1998-1999 Gisle Aas. All rights reserved.
 
 WWW: http://search.cpan.org/dist/Unicode-Map8/

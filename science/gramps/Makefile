@@ -2,50 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	gramps
-PORTVERSION=	3.4.9
-PORTREVISION=	3
+PORTVERSION=	4.2.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	science gnome python
-MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK/GNOME-based genealogy program
+MAINTAINER=	woodsb02@FreeBSD.org
+COMMENT=	GTK3-based genealogy program
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb \
-		${PYTHON_PKGNAMEPREFIX}pyicu>=1.8:devel/py-pyicu
+LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py3-bsddb3 \
+		${PYTHON_PKGNAMEPREFIX}pyicu>=1.8:devel/py3-pyicu \
+		${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py3-pygraphviz \
+		xdg-open:devel/xdg-utils
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gramps-project
 
 NO_ARCH=	yes
-USE_BDB=	5+
-USES=		desktop-file-utils gettext shared-mime-info gmake python:2
-USE_GNOME=	pygtk2 intltool
-GNU_CONFIGURE=	yes
+USES=		desktop-file-utils gettext shared-mime-info python:3.2+
+USE_GNOME=	cairo gtk30 intltool librsvg2 pango py3gobject3
+USE_PYTHON=	autoplist distutils
 CONFIGURE_ARGS=	--disable-mime-install
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=	ENCHANT PYWEBKITGTK GNOME GRAPHVIZ EXIV
-OPTIONS_DEFAULT=	PYWEBKITGTK GRAPHVIZ EXIV
-ENCHANT_DESC=		Spellchecking support
-PYWEBKITGTK_DESC=	Use webkit backend for Geographic view
-EXIV_DESC=		Managing exiv metadata support
+OPTIONS_DEFINE=		GEXIV GTKSPELL PIL RCS TTFFREEFONT
+OPTIONS_DEFAULT=	GEXIV GTKSPELL
+GEXIV_DESC=		Manage Exif metadata embedded in media
+GTKSPELL_DESC=		Spell checking support via gtkspell
+PIL_DESC=		Crop/convert images with Python Imaging Library (Pillow)
+RCS_DESC=		Manage revisions of family trees with with GNU RCS
+TTFFREEFONT_DESC=	More font support in reports
 
-ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:textproc/py-enchant
-EXIV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}exiv2>=0.1.3:graphics/py-exiv2
-GNOME_USE=		GNOME=pygnome2,gnomedocutils
-GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py-pygraphviz
-PYWEBKITGTK_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:www/py-webkitgtk
+GEXIV_LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2
+GTKSPELL_LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3
+PIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py3-pillow
+RCS_RUN_DEPENDS=	rcsdiff:devel/rcs
+TTFFREEFONT_RUN_DEPENDS=${LOCALBASE}/share/fonts/freefont-ttf/FreeMono.ttf:x11-fonts/freefont-ttf
 
-pre-extract:
-	@${ECHO_MSG} "=========================================================="
-	@${ECHO_MSG} "*WARNING*: The Berkeley DB has been upgraded to version 5."
-	@${ECHO_MSG} "Cancel this installation now and export your databases if"
-	@${ECHO_MSG} "you are upgrading from a Gramps version older than 3.4.X"
-	@${ECHO_MSG} "=========================================================="
-	@sleep 5
+post-install:
+	${ECHO_CMD} -n ${PREFIX}/share > ${STAGEDIR}${PYTHON_SITELIBDIR}/gramps/gen/utils/resource-path
 
 .include <bsd.port.mk>

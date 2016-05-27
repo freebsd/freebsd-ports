@@ -6,7 +6,7 @@ PORTVERSION=	1.9.6
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.nazgul.ch/dev/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	loox@e-shell.net
 COMMENT=	Fast, secure HTTP/1.1 CGI/1.1 SSL IPv4/IPv6 webserver
 
 LICENSE=	ISCL

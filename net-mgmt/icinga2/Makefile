@@ -2,7 +2,7 @@
 
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.7
+DISTVERSION=	2.4.10
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	lme@FreeBSD.org
@@ -69,7 +69,7 @@ PLIST_SUB=	ICINGA2USER=${ICINGA2USER} \
 # Config files with references to "Linux"
 LINUX_CONFIG=	groups.conf services.conf hosts.conf
 
-MYSQL_USE=	mysql=yes
+MYSQL_USES=	mysql
 PGSQL_USES=	pgsql
 
 OPTIONS_SUB=	yes

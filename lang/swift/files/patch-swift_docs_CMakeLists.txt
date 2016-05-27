@@ -1,0 +1,10 @@
+--- swift/docs/CMakeLists.txt.orig	2016-03-21 17:35:26 UTC
++++ swift/docs/CMakeLists.txt
+@@ -10,7 +10,6 @@ SET(SWIFT_SPHINX_PAPER_SIZE "letter"
+   CACHE STRING "Paper size for generated documentation")
+ 
+ SET(SPHINX_ARGS
+-  -W
+   -D latex_paper_size=${SWIFT_SPHINX_PAPER_SIZE}
+   -d ${CMAKE_BINARY_DIR}/doctrees)
+ 

@@ -1,20 +1,20 @@
-You don't have to know anything about objected-oriented Perl, LWP, or the 
-HTTP module to be able to check your links. This module is designed for 
-the casual user. It has one function, check_link, that returns the HTTP 
-response code that it receives when it tries to fetch the web address 
-passed to it. The undef value is returned for any non-HTTP failure and the 
+You don't have to know anything about objected-oriented Perl, LWP, or the
+HTTP module to be able to check your links. This module is designed for
+the casual user. It has one function, check_link, that returns the HTTP
+response code that it receives when it tries to fetch the web address
+passed to it. The undef value is returned for any non-HTTP failure and the
 $HTTP::SimpleLinkChecker::ERROR variable is set.
 
-The HEAD method is tried first, although if anything other than a good 
-status code (those less than 400) is received, another request is made 
-with the GET method. Note, however, that even with the best code, no 
-module can control how servers decide to respond to a check, or control 
-any of the myriad things that can go wrong with the network between you 
-and the remote server. Some may filter requests based on origin IP 
-address, user-agent type, or any other arbitrary factor. Some servers may 
-not respond correctly at all. Furthermore, some servers might be 
-temporarily down or overloaded. I recommend that you recheck "broken" 
-links a couple times over a long period (like a day or two) before you 
+The HEAD method is tried first, although if anything other than a good
+status code (those less than 400) is received, another request is made
+with the GET method. Note, however, that even with the best code, no
+module can control how servers decide to respond to a check, or control
+any of the myriad things that can go wrong with the network between you
+and the remote server. Some may filter requests based on origin IP
+address, user-agent type, or any other arbitrary factor. Some servers may
+not respond correctly at all. Furthermore, some servers might be
+temporarily down or overloaded. I recommend that you recheck "broken"
+links a couple times over a long period (like a day or two) before you
 decide they are really broken.
 
 WWW: http://search.cpan.org/dist/HTTP-SimpleLinkChecker/

@@ -10,5 +10,5 @@ virus scanning, spam checking, blocking lists (dns and rhs), AUTH and TLS.
 Qpsmtpd can not only be used with qmail but also with e.g. postfix and
 exim. It can also write messages to a Maildir or forward it to a remote
 host without buffering.
- 
+
 WWW: http://smtpd.develooper.com/

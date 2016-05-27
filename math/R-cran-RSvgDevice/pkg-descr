@@ -1,4 +1,4 @@
-A graphics device for R that uses the w3.org xml standard 
+A graphics device for R that uses the w3.org xml standard
 for Scalable Vector Graphics.
 
 WWW: http://cran.r-project.org/web/packages/RSvgDevice/index.html

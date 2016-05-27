@@ -2,6 +2,7 @@
 
 PORTNAME=	fail2ban
 PORTVERSION=	0.9.4
+PORTREVISION=   1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 USES=		python shebangfix
 USE_GITHUB=	yes
+GH_TAGNAME=	d6eae28
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	fail2ban
 

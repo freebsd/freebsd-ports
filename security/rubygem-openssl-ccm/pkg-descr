@@ -1,0 +1,4 @@
+rubygem-openssl-ccm is an implementation of RFC 3610 - Counter with CBC-MAC
+(CCM).
+
+WWW: https://github.com/smalllars/openssl-ccm

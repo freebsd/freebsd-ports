@@ -1,32 +1,57 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
+# Burp rc.d script, placed in the public domain by Jarkko Kniivilä @ 2014-05-14
+
 # PROVIDE: burp
-# REQUIRE: LOGIN
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
-# Add these lines to /etc/rc.conf.local or /etc/rc.conf
-# to enable this service:
+# Add the following lines to /etc/rc.conf to enable Burp:
 #
-# burp_enable (bool):	Set to NO by default.
-#			Set it to YES to enable burp.
-# burp_config (path):	Set to %%PREFIX%%/etc/burp/burp.cf
-#			by default.
+#  burp_enable="YES"
+#  # optional
+#  burp_config="%%PREFIX%%/etc/burp/burp-server.conf"
+#
+#
+
+export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 
 . /etc/rc.subr
 
 name=burp
 rcvar=burp_enable
+monitor_cmd="${name}_monitor"
+summary_cmd="${name}_summary"
 
 load_rc_config $name
 
+# Set some defaults
 : ${burp_enable:="NO"}
-: ${burp_config="%%PREFIX%%/etc/burp/burp-server.conf"}
+: ${burp_config:="%%PREFIX%%/etc/burp/burp-server.conf"}
 
-command=%%PREFIX%%/sbin/${name}
-pidfile=/var/run/${name}.server.pid
+burp_flags="-c ${burp_config}"
 
-command_args="-c $burp_config"
+command="/usr/local/sbin/${name}"
+command_args="> /dev/null 2>&1"
 
-run_rc_command "$1"
+pidfile="/var/run/${name}.server.pid"  # this really depends on the config file so make sure they concur
+required_files="${burp_config}"
+sig_reload="HUP"
+extra_commands="reload monitor summary"
+
+burp_monitor()
+{
+    rc_flags="-a s ${rc_flags}"
+    ${command} ${rc_flags}
+}
+
+burp_summary()
+{
+    # This allows you to get the output of the '-a S' flag thusly:
+    # service burp summary -C $my_client
+
+    rc_flags="-a S ${rc_flags}"
+    ${command} ${rc_flags} "$@"
+}
+
+run_rc_command "$@"

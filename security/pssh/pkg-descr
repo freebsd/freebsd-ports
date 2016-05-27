@@ -1,11 +1,11 @@
 This package provides parallel versions of the openssh tools. Included
-in the distribution: 
+in the distribution:
 
- - Parallel ssh (pssh) 
- - Parallel scp (pscp) 
- - Parallel rsync (prsync) 
- - Parallel nuke (pnuke) 
- - Parallel slurp (pslurp) 
+ - Parallel ssh (pssh)
+ - Parallel scp (pscp)
+ - Parallel rsync (prsync)
+ - Parallel nuke (pnuke)
+ - Parallel slurp (pslurp)
 
 What are these tools good for? Mainly for controlling large collections
 of nodes in the wide-area.

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Requires-Git
-PORTVERSION=	1.005
+PORTVERSION=	1.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Git-Version-Compare>=1.001:devel/p5-Git-Version-Compare
+BUILD_DEPENDS=	p5-Git-Version-Compare>=1.003:devel/p5-Git-Version-Compare
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

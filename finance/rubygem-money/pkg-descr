@@ -1,4 +1,4 @@
-A library assists in handling money and different currencies.  
+A library assists in handling money and different currencies.
 It features a Money class which encapsulates all information
 about an certain amount of money, such as its value and its currency.
 

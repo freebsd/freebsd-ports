@@ -1,4 +1,4 @@
---- Makefile.orig	2016-03-21 02:14:57 UTC
+--- Makefile.orig	2016-05-10 07:09:15 UTC
 +++ Makefile
 @@ -2,9 +2,9 @@
  # set to anything else to disable them
@@ -12,7 +12,7 @@
  
  DEPS = libtoxav libtoxcore openal vpx libsodium
  
-@@ -53,6 +53,37 @@ ifeq ($(UNAME_S), Linux)
+@@ -54,6 +54,37 @@ ifeq ($(UNAME_S), Linux)
  
  	TRAY_OBJ = icons/utox-128x128.o
  	TRAY_GEN = $(LD) -r -b binary icons/utox-128x128.png -o
@@ -49,4 +49,3 @@
 +	TRAY_GEN = $(LD) -r -b binary icons/utox-128x128.png -o
  else ifeq ($(UNAME_O), Cygwin)
  	OUT_FILE = utox.exe
- 

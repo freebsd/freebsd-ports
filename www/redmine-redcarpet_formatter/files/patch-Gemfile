@@ -1,0 +1,6 @@
+--- Gemfile.orig	2016-05-13 13:43:53 UTC
++++ Gemfile
+@@ -1,3 +0,0 @@
+-source :rubygems
+-
+-gem "redcarpet"

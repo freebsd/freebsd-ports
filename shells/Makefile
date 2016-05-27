@@ -45,5 +45,6 @@
     SUBDIR += vshnu
     SUBDIR += wcd
     SUBDIR += zsh
+    SUBDIR += zsh-navigation-tools
 
 .include <bsd.port.subdir.mk>

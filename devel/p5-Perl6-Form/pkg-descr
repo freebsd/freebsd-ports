@@ -1,13 +1,13 @@
 Perl6::Form - Implements the Perl 6 'form' built-in
 
-This module implements virtually all of the functionality of the 
+This module implements virtually all of the functionality of the
 Perl 6 Form.pm module. The only differences are:
 
-    Option pairs must be passed in a hash reference; 
-    Array data sources must be passed as array references; 
-    Options specified on the use Perl6::Form line are not (yet) 
-lexically scoped; 
-    User-defined line-breaking subroutines are passed their data 
-source as a reference to a scalar; 
+    Option pairs must be passed in a hash reference;
+    Array data sources must be passed as array references;
+    Options specified on the use Perl6::Form line are not (yet)
+lexically scoped;
+    User-defined line-breaking subroutines are passed their data
+source as a reference to a scalar;
 
 WWW: http://search.cpan.org/dist/Perl6-Form/

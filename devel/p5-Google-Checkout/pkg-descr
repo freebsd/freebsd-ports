@@ -1,6 +1,6 @@
 his module provides an implementation of Google Checkout. It
 allows you to checkout, send commands, wait and process notifications.
-For more about Google Checkout, please see 
+For more about Google Checkout, please see
 http://code.google.com/apis/checkout/developer/index.html.
 
 WWW: http://search.cpan.org/dist/Google-Checkout/

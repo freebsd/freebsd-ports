@@ -2,6 +2,6 @@ gen6dns is a tool to generate static DNS records (AAAA and PTR) for hosts
 using Stateless Address Autoconfig (SLAAC). If you have a list of hostnames,
 mac addresses and ipv6 subnets gen6dns generates the appropriate AAAA and
 PTR records for you. It supports different scopes and the generation of
-view (split) specific files. 
+view (split) specific files.
 
 WWW: http://www.hznet.de/tools.html

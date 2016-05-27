@@ -58,6 +58,8 @@ THIS_IS_OLD_PERL=	yes
 .include "${PORTSDIR}/lang/perl5.20/version.mk"
 .elif ${PERL5_DEFAULT} == 5.22
 .include "${PORTSDIR}/lang/perl5.22/version.mk"
+.elif ${PERL5_DEFAULT} == 5.24
+.include "${PORTSDIR}/lang/perl5.24/version.mk"
 .elif ${PERL5_DEFAULT} == devel
 .include "${PORTSDIR}/lang/perl5-devel/version.mk"
 # Force PERL_PORT here in case two identical PERL_VERSION.
@@ -92,7 +94,9 @@ PERL_ARCH?=	mach
 # perl5_default file, or up there in the default versions selection.
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.if   ${PERL_LEVEL} >= 502200
+.if   ${PERL_LEVEL} >= 502400
+PERL_PORT?=	perl5.24
+.elif   ${PERL_LEVEL} >= 502200
 PERL_PORT?=	perl5.22
 .elif   ${PERL_LEVEL} >= 502000
 PERL_PORT?=	perl5.20

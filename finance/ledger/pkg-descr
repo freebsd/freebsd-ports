@@ -1,6 +1,6 @@
-'Ledger' is a command-line accounting program, which uses a simple text file 
-as a ledger, yet provides powerful facilities for working with commodities, 
-accounts, transactions, etc. It will read Gnucash data files directly. 
+'Ledger' is a command-line accounting program, which uses a simple text file
+as a ledger, yet provides powerful facilities for working with commodities,
+accounts, transactions, etc. It will read Gnucash data files directly.
 
 WWW: http://ledger-cli.org/
 

@@ -23,7 +23,7 @@ POST-INSTALL CONFIGURATION FOR ImpressCMS
    you through setting up ImpressCMS.
 
 4) When the install script requires Trust Path, please input
-"%%WWWDIR%%/trust_pathxxx". 
+"%%WWWDIR%%/trust_pathxxx".
 
 For more information, see the INSTALL DOCUMENTATION:
 

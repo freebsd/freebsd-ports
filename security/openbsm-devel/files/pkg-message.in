@@ -20,7 +20,7 @@ SHA256=8F:0A:FC:8A:3D:09:80:AF:D9:AA:38:CC:8A:86:53:E6:8F:B6:1C:55:30...
 # dd if=/dev/urandom bs=32 count=1 | openssl base64 | cut -b -32
 YjwbK69H5cEBlhcT+eJpJgJTFn5B2SrG
 
-4. Create /etc/security/auditdistd.conf configuration file: 
+4. Create /etc/security/auditdistd.conf configuration file:
 receiver {
 	host "<enter hostname of sender here> {
 		remote "tls://<enter IP of sender here>"

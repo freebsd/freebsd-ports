@@ -1,4 +1,4 @@
-This module provides two functions, bencode and bdecode, 
+This module provides two functions, bencode and bdecode,
 which encode and decode bencoded strings respectivly.
 
 WWW: http://search.cpan.org/dist/Convert-Bencode/

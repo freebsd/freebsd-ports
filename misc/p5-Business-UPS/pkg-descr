@@ -1,4 +1,4 @@
-This module requires input of the shipping method, origin zip code, 
+This module requires input of the shipping method, origin zip code,
 destination zip code, and weight of the package. It then connects to
 the UPS calculation server and outputs the total shipping charges and
 the UPS zone.

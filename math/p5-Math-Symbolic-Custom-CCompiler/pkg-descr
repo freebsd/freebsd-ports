@@ -1,20 +1,20 @@
-This module extends the functionality of Math::Symbolic by offering 
-facilities to compile symbolic math trees (formulas) to C code. It also 
-uses Inline::C to compile and link the generated C code at run-time, thus 
-allowing the user to do symbolic calculations in Perl with Math::Symbolic 
+This module extends the functionality of Math::Symbolic by offering
+facilities to compile symbolic math trees (formulas) to C code. It also
+uses Inline::C to compile and link the generated C code at run-time, thus
+allowing the user to do symbolic calculations in Perl with Math::Symbolic
 and then use the results in a fast numeric environment.
 
-This software generates code. Code generators are difficult to test, but 
-the first release of the module is now 1.5 years old and I haven't 
+This software generates code. Code generators are difficult to test, but
+the first release of the module is now 1.5 years old and I haven't
 received any bug reports, so I consider it somewhat stable now.
 
-Please read the manpage of Math::Symbolic::Compiler which comes with the 
-Math::Symbolic distribution. Most of the gotchas involved with compiling 
-the functions to Perl subroutines also apply to this module which compiles 
+Please read the manpage of Math::Symbolic::Compiler which comes with the
+Math::Symbolic distribution. Most of the gotchas involved with compiling
+the functions to Perl subroutines also apply to this module which compiles
 to C instead.
 
-Alternatively, you can use the module not for faster calculations from 
-your Perl program, but to generate C code for you. I have used it to 
+Alternatively, you can use the module not for faster calculations from
+your Perl program, but to generate C code for you. I have used it to
 generate an implementation for (many!) Zernike Polynomials for work in C.
 
 WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-CCompiler/

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.11.7
-PORTREVISION=	2
+PORTVERSION=	2.11.8
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -29,7 +28,7 @@ PORTSCOUT=	limit:^2\.11\.
 VDAVERSION=	2.10.0
 CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
 		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* \
-		postfix2?-* postfix-3.* postfix-current-* 
+		postfix2?-* postfix-3.* postfix-current-*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix

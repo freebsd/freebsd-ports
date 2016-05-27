@@ -1,5 +1,5 @@
---- e_tpm.c.orig	2012-09-20 02:57:45.000000000 +0900
-+++ e_tpm.c	2013-07-26 00:25:21.000000000 +0900
+--- e_tpm.c.orig	2012-09-19 17:57:45 UTC
++++ e_tpm.c
 @@ -35,6 +35,7 @@
  #include <tss/tspi.h>
  
@@ -8,7 +8,7 @@
  
  #include "e_tpm.h"
  
-@@ -55,10 +56,10 @@
+@@ -55,10 +56,10 @@ static char *tpm_engine_get_auth(UI_METH
  /* rsa functions */
  static int tpm_rsa_init(RSA *rsa);
  static int tpm_rsa_finish(RSA *rsa);
@@ -23,7 +23,7 @@
  //static int tpm_rsa_sign(int, const unsigned char *, unsigned int, unsigned char *, unsigned int *, const RSA *);
  static int tpm_rsa_keygen(RSA *, int, BIGNUM *, BN_GENCB *);
  #endif
-@@ -72,6 +73,7 @@
+@@ -72,6 +73,7 @@ static void tpm_rand_seed(const void *, 
  #define TPM_CMD_SO_PATH		ENGINE_CMD_BASE
  #define TPM_CMD_PIN		ENGINE_CMD_BASE+1
  #define TPM_CMD_SECRET_MODE	ENGINE_CMD_BASE+2
@@ -31,7 +31,7 @@
  static const ENGINE_CMD_DEFN tpm_cmd_defns[] = {
  	{TPM_CMD_SO_PATH,
  	 "SO_PATH",
-@@ -85,6 +87,10 @@
+@@ -85,6 +87,10 @@ static const ENGINE_CMD_DEFN tpm_cmd_def
  	 "SECRET_MODE",
  	 "The TSS secret mode for all secrets",
  	 ENGINE_CMD_FLAG_NUMERIC},
@@ -42,7 +42,7 @@
  	{0, NULL, NULL, 0}
  };
  
-@@ -167,6 +173,9 @@
+@@ -167,6 +173,9 @@ static unsigned int (*p_tspi_Hash_SetHas
  static unsigned int (*p_tspi_GetPolicyObject)();
  static unsigned int (*p_tspi_Policy_SetSecret)();
  static unsigned int (*p_tspi_Policy_AssignToObject)();
@@ -52,7 +52,7 @@
  
  /* Override the real function calls to use our indirect pointers */
  #define Tspi_Context_Create p_tspi_Context_Create
-@@ -193,6 +202,9 @@
+@@ -193,6 +202,9 @@ static unsigned int (*p_tspi_Policy_Assi
  #define Tspi_Hash_SetHashValue p_tspi_Hash_SetHashValue
  #define Tspi_Policy_SetSecret p_tspi_Policy_SetSecret
  #define Tspi_Policy_AssignToObject p_tspi_Policy_AssignToObject
@@ -62,7 +62,7 @@
  #endif /* DLOPEN_TSPI */
  
  /* This internal function is used by ENGINE_tpm() and possibly by the
-@@ -248,6 +260,7 @@
+@@ -248,6 +260,7 @@ int tpm_load_srk(UI_METHOD *ui, void *cb
  	TSS_RESULT result;
  	UINT32 authusage;
  	BYTE *auth;
@@ -70,7 +70,7 @@
  
  	if (hSRK != NULL_HKEY) {
  		DBGFN("SRK is already loaded.");
-@@ -294,6 +307,7 @@
+@@ -294,6 +307,7 @@ int tpm_load_srk(UI_METHOD *ui, void *cb
  		return 0;
  	}
  
@@ -78,7 +78,7 @@
  	if ((auth = calloc(1, 128)) == NULL) {
  		TSSerr(TPM_F_TPM_LOAD_SRK, ERR_R_MALLOC_FAILURE);
  		return 0;
-@@ -319,6 +333,15 @@
+@@ -319,6 +333,15 @@ int tpm_load_srk(UI_METHOD *ui, void *cb
  
  	free(auth);
  
@@ -94,7 +94,7 @@
  	return 1;
  }
  
-@@ -376,7 +399,10 @@
+@@ -376,7 +399,10 @@ static int tpm_engine_init(ENGINE * e)
  	    !bind_tspi_func(tpm_dso, Context_GetTpmObject) ||
  	    !bind_tspi_func(tpm_dso, GetAttribUint32) ||
  	    !bind_tspi_func(tpm_dso, SetAttribData) ||
@@ -106,7 +106,7 @@
  	    ) {
  		TSSerr(TPM_F_TPM_ENGINE_INIT, TPM_R_DSO_FAILURE);
  		goto err;
-@@ -438,6 +464,9 @@
+@@ -438,6 +464,9 @@ err:
  	p_tspi_Policy_AssignToObject = NULL;
  	p_tspi_TPM_StirRandom = NULL;
  	p_tspi_TPM_GetRandom = NULL;
@@ -116,7 +116,7 @@
  #endif
  	return 0;
  }
-@@ -566,6 +595,55 @@
+@@ -566,6 +595,55 @@ int fill_out_rsa_object(RSA *rsa, TSS_HK
  	return 1;
  }
  
@@ -172,7 +172,7 @@
  static EVP_PKEY *tpm_engine_load_key(ENGINE *e, const char *key_id,
  				     UI_METHOD *ui, void *cb_data)
  {
-@@ -580,7 +658,7 @@
+@@ -580,7 +658,7 @@ static EVP_PKEY *tpm_engine_load_key(ENG
  
  	DBG("%s", __FUNCTION__);
  
@@ -181,7 +181,7 @@
  		TSSerr(TPM_F_TPM_ENGINE_LOAD_KEY, ERR_R_PASSED_NULL_PARAMETER);
  		return NULL;
  	}
-@@ -590,17 +668,27 @@
+@@ -590,17 +668,27 @@ static EVP_PKEY *tpm_engine_load_key(ENG
  		return NULL;
  	}
  
@@ -211,7 +211,7 @@
  		BIO_free(bf);
  		return NULL;
  	}
-@@ -611,7 +699,7 @@
+@@ -611,7 +699,7 @@ static EVP_PKEY *tpm_engine_load_key(ENG
  						   blobstr->length,
  						   blobstr->data, &hKey))) {
  		TSSerr(TPM_F_TPM_ENGINE_LOAD_KEY,
@@ -220,7 +220,7 @@
  		return NULL;
  	}
  	ASN1_OCTET_STRING_free(blobstr);
-@@ -621,7 +709,7 @@
+@@ -621,7 +709,7 @@ static EVP_PKEY *tpm_engine_load_key(ENG
  					     &authusage))) {
  		Tspi_Context_CloseObject(hContext, hKey);
  		TSSerr(TPM_F_TPM_ENGINE_LOAD_KEY,
@@ -229,7 +229,7 @@
  		return NULL;
  	}
  
-@@ -726,7 +814,7 @@
+@@ -726,7 +814,7 @@ static int tpm_create_srk_policy(void *s
  							  TSS_POLICY_USAGE,
  							  &hSRKPolicy))) {
  			TSSerr(TPM_F_TPM_CREATE_SRK_POLICY,
@@ -238,7 +238,7 @@
  			return 0;
  		}
  	}
-@@ -740,6 +828,70 @@
+@@ -740,6 +828,70 @@ static int tpm_create_srk_policy(void *s
  	return 1;
  }
  
@@ -309,7 +309,7 @@
  static int tpm_engine_ctrl(ENGINE * e, int cmd, long i, void *p, void (*f) ())
  {
  	int initialised = !!hContext;
-@@ -778,6 +930,8 @@
+@@ -778,6 +930,8 @@ static int tpm_engine_ctrl(ENGINE * e, i
  			return 1;
  		case TPM_CMD_PIN:
  			return tpm_create_srk_policy(p);
@@ -318,7 +318,7 @@
  		default:
  			break;
  	}
-@@ -832,7 +986,7 @@
+@@ -832,7 +986,7 @@ static int tpm_rsa_finish(RSA *rsa)
  }
  
  static int tpm_rsa_pub_dec(int flen,
@@ -327,7 +327,7 @@
  			   unsigned char *to,
  			   RSA *rsa,
  			   int padding)
-@@ -851,7 +1005,7 @@
+@@ -851,7 +1005,7 @@ static int tpm_rsa_pub_dec(int flen,
  }
  
  static int tpm_rsa_priv_dec(int flen,
@@ -336,7 +336,7 @@
  			    unsigned char *to,
  			    RSA *rsa,
  			    int padding)
-@@ -928,7 +1082,7 @@
+@@ -928,7 +1082,7 @@ static int tpm_rsa_priv_dec(int flen,
  }
  
  static int tpm_rsa_pub_enc(int flen,
@@ -345,7 +345,7 @@
  			   unsigned char *to,
  			   RSA *rsa,
  			   int padding)
-@@ -1035,7 +1189,7 @@
+@@ -1035,7 +1189,7 @@ static int tpm_rsa_pub_enc(int flen,
  }
  
  static int tpm_rsa_priv_enc(int flen,
@@ -354,7 +354,7 @@
  			    unsigned char *to,
  			    RSA *rsa,
  			    int padding)
-@@ -1080,7 +1234,10 @@
+@@ -1080,7 +1234,10 @@ static int tpm_rsa_priv_enc(int flen,
  	}
  
  	if (app_data->sigScheme == TSS_SS_RSASSAPKCS1V15_SHA1) {

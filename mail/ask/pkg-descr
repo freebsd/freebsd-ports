@@ -1,6 +1,6 @@
 Active Spam Killer (ASK) protects your email account against spam by confirming
 the sender's email address before actual delivery takes place. The confirmation
-happens by means of a "confirmation message" that is automatically sent to all 
+happens by means of a "confirmation message" that is automatically sent to all
 "unknown" users.
 
 WWW: http://sourceforge.net/projects/a-s-k/

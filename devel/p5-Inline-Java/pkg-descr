@@ -1,11 +1,11 @@
 The Inline::Java module allows you to put Java source code directly "inline"
 in a Perl script or module. A Java compiler is launched and the Java code is
-compiled. Then Perl asks the Java classes what public methods have been 
+compiled. Then Perl asks the Java classes what public methods have been
 defined. These classes and methods are available to the Perl program as if
 they had been written in Perl.
 
 The process of interrogating the Java classes for public methods occurs the
-first time you run your Java code. The namespace is cached, and subsequent 
+first time you run your Java code. The namespace is cached, and subsequent
 calls use the cached version.
 
 WWW: http://search.cpan.org/dist/Inline-Java/

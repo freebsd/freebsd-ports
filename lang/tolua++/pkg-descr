@@ -1,16 +1,16 @@
-tolua++ is an extended version of tolua, a tool to integrate C/C++ code 
+tolua++ is an extended version of tolua, a tool to integrate C/C++ code
 with Lua. tolua++ includes new features oriented to c++ such as:
 
-* Support for std::string as a basic type (this can be turned off by a 
+* Support for std::string as a basic type (this can be turned off by a
   command line option).
 * Support for class templates
 
 As well as other features and bugfixes.
 
-tolua is a tool that greatly simplifies the integration of C/C++ code with 
-Lua. Based on a cleaned header file (or extracts from real header files), 
-tolua automatically generates the binding code to access C/C++ features 
-from Lua. Using Lua API and tag method facilities, tolua maps C/C++ 
-constants, external variables, functions, classes, and methods to Lua. 
+tolua is a tool that greatly simplifies the integration of C/C++ code with
+Lua. Based on a cleaned header file (or extracts from real header files),
+tolua automatically generates the binding code to access C/C++ features
+from Lua. Using Lua API and tag method facilities, tolua maps C/C++
+constants, external variables, functions, classes, and methods to Lua.
 
 WWW: http://www.codenix.com/~tolua/

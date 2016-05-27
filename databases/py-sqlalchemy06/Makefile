@@ -10,13 +10,17 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Python SQL toolkit and Object Relational Mapper (series 0.6)
+COMMENT=	Python SQL toolkit and Object Relational Mapper 0.6.x
 
 LICENSE=	MIT
 
-# Python3 ready
+DEPRECATED=	Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
+EXPIRATION_DATE=	2016-08-20
+
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlalchemy{0[789],10}*
 
 OPTIONS_DEFINE=	CEXTENSIONS DOCS EXAMPLES NOSE
 

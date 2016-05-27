@@ -1,10 +1,10 @@
-GeoServer is a GIS server. It is open source and 
-it allows users to view and edit geographic data. 
-GeoServer is a fully functional WFS-T and WMS 
+GeoServer is a GIS server. It is open source and
+it allows users to view and edit geographic data.
+GeoServer is a fully functional WFS-T and WMS
 server that follows the OGC specifications.
-GeoServer is a tool you can display maps on web pages, 
-where the user can zoom and pan around. And it is 
-used in conjunction with clients such as OpenLayers, 
+GeoServer is a tool you can display maps on web pages,
+where the user can zoom and pan around. And it is
+used in conjunction with clients such as OpenLayers,
 Google Earth, UDig, GVSig and others.
 
 WWW: http://docs.codehaus.org/display/GEOS/Home

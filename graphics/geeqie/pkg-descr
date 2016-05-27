@@ -1,4 +1,4 @@
-Geeqie is a lightweight Gtk+ based image viewer for Unix operating systems. 
+Geeqie is a lightweight Gtk+ based image viewer for Unix operating systems.
 
 Main features
   o EXIF, IPTC and XMP metadata browsing and editing.
@@ -10,6 +10,6 @@ Main features
 History
   Geeqie has been forked from gqview project, because it was not possible to
   contact gqview author and the only maintainer. Geeqie projects goal is to move
-  the development forward and also integrate the existing patches. 
+  the development forward and also integrate the existing patches.
 
 WWW: http://geeqie.sourceforge.net/

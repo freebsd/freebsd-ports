@@ -1,8 +1,8 @@
-This module acts as a base class for applications which implement a 
-RESTful interface. When an HTTP request is received some dispatching logic 
-in REST::Application is invoked, calling different handlers based on what 
-the kind of HTTP request it was (i.e. GET, PUT, etc) and what resource it 
-was trying to access. This module won't ensure that your API is RESTful 
+This module acts as a base class for applications which implement a
+RESTful interface. When an HTTP request is received some dispatching logic
+in REST::Application is invoked, calling different handlers based on what
+the kind of HTTP request it was (i.e. GET, PUT, etc) and what resource it
+was trying to access. This module won't ensure that your API is RESTful
 but hopefully it will aid in developing a REST API.
 
 WWW: http://search.cpan.org/dist/REST-Application/

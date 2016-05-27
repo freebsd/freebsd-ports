@@ -1,11 +1,7 @@
-share/xml/dtd/vuxml/catalog
-share/xml/dtd/vuxml/catalog.xml
+@xmlcatmgr share/xml/dtd/vuxml/catalog
+@xmlcatmgr share/xml/dtd/vuxml/catalog.xml
 share/xml/dtd/vuxml/vuxml-10.dtd
 share/xml/dtd/vuxml/vuxml-11.dtd
 share/xml/dtd/vuxml/vuxml-model-10.mod
 share/xml/dtd/vuxml/vuxml-model-11.mod
 share/xml/dtd/vuxml/xml1.dcl
-@unexec %%XMLCAT_RM%%
-@exec %%XMLCAT_ADD%%
-@unexec %%SGMLCAT_RM%%
-@exec %%SGMLCAT_ADD%%

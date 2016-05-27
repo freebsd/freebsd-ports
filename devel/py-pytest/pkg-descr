@@ -1,7 +1,7 @@
 The pytest testing tool makes it easy to write small tests, yet scales to
 support complex functional testing.
 
-Features: 
+Features:
 
   * Auto-discovery of test modules and functions
   * Detailed info on failing assert statements

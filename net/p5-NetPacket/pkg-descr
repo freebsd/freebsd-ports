@@ -3,4 +3,4 @@ to decoding and encoding of network protocols. Each NetPacket
 descendent module knows how to encode and decode packets for the
 network protocol it implements.
 
-WWW:	http://search.cpan.org/dist/NetPacket/
+WWW: http://search.cpan.org/dist/NetPacket/

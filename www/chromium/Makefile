@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	49.0.2623.112
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -52,6 +53,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libwebp.so:graphics/webp
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
+		alsa-lib>=1.1.1_1:audio/alsa-lib \
 		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf \
 		xdg-open:devel/xdg-utils
 

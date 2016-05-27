@@ -1,4 +1,4 @@
-OpenDBX is an extremely lightweight but extensible C library for 
+OpenDBX is an extremely lightweight but extensible C library for
 accessing databases with a single API. It provides a clean and simple
 interface across all supported databases that leads to an elegant
 code design automatically. Currently MySQL, PostgreSQL, SQLite

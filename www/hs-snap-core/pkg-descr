@@ -8,7 +8,7 @@ the Snap framework, including:
   2. Type aliases and helper functions for Iteratee I/O.
 
   3. A monad for programming web handlers called "Snap", inspired by happstack's,
-     which allows: 
+     which allows:
 
      - Stateful access to the HTTP request and response objects.
 

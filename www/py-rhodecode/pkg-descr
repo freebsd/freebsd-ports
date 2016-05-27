@@ -1,12 +1,12 @@
-RhodeCode is a fast and powerful management tool for Mercurial and GIT with a 
-built in push/pull server and full text search and code-review. It works on 
+RhodeCode is a fast and powerful management tool for Mercurial and GIT with a
+built in push/pull server and full text search and code-review. It works on
 http/https and has a built in permission/authentication system with the ability
 to authenticate via LDAP or ActiveDirectory. RhodeCode also provides simple API
 so it.s easy integrable with existing external systems.
 
 RhodeCode is similar in some respects to github or bitbucket, however RhodeCode
-can be run as standalone hosted application on your own server. It is open 
-source and donation ware and focuses more on providing a customized, self 
+can be run as standalone hosted application on your own server. It is open
+source and donation ware and focuses more on providing a customized, self
 administered interface for Mercurial and GIT repositories.
 
 WWW: http://www.rhodecode.org/

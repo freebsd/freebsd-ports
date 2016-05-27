@@ -1,6 +1,6 @@
-scanlogd is a TCP port scan detection tool, originally designed to illustrate 
-various attacks an IDS developer has to deal with. Unlike some of the other 
-port scan detection tools out there, scanlogd is designed to be totally safe 
+scanlogd is a TCP port scan detection tool, originally designed to illustrate
+various attacks an IDS developer has to deal with. Unlike some of the other
+port scan detection tools out there, scanlogd is designed to be totally safe
 to use.
 
 WWW: http://openwall.com/scanlogd/

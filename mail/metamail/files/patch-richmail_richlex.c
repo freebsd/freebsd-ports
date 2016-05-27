@@ -1,5 +1,5 @@
---- richmail/richlex.c.orig	Thu Feb  3 03:29:37 1994
-+++ richmail/richlex.c	Mon Dec 18 11:46:22 2006
+--- richmail/richlex.c.orig	1994-02-03 02:29:37 UTC
++++ richmail/richlex.c
 @@ -42,6 +42,7 @@
  -------------------------------------------------------------------------*/
  

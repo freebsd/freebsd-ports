@@ -1,6 +1,6 @@
 Test::Manifest looks in the t/test_manifest file to find out which tests you
-want to run and the order in which you want to run them. It constructs the 
-right value for MakeMaker to do the right thing. 
+want to run and the order in which you want to run them. It constructs the
+right value for MakeMaker to do the right thing.
 
 
 WWW: http://search.cpan.org/dist/Test-Manifest/

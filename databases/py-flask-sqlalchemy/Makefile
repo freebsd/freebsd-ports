@@ -13,7 +13,7 @@ COMMENT=	Adds SQLAlchemy support to Flask
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:www/py-flask \
-	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7:databases/py-sqlalchemy
+	${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.7:databases/py-sqlalchemy07
 
 USES=	python
 USE_PYTHON=	distutils autoplist

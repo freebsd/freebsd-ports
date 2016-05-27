@@ -1,5 +1,5 @@
---- data/gramps.xml.in.orig	2010-11-18 09:58:56.000000000 +0300
-+++ data/gramps.xml.in	2010-12-09 13:24:49.000000000 +0300
+--- data/gramps.xml.in.orig	2016-01-06 16:44:13 UTC
++++ data/gramps.xml.in
 @@ -7,16 +7,6 @@
      <_comment>Gramps database</_comment>
      <glob pattern="*.grdb"/>

@@ -1,5 +1,5 @@
 Concurrency Kit provides a plethora of concurrency primitives, safe memory
 reclamation mechanisms and non-blocking data structures designed to aid in
-the design and implementation of high performance concurrent systems. 
+the design and implementation of high performance concurrent systems.
 
 WWW: http://concurrencykit.org

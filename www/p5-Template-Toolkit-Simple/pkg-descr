@@ -12,4 +12,4 @@ from the command line to render templates with all the power of the Perl
 object. All of the object methods become command line arguments in the
 command line version.
 
-WWW:	http://search.cpan.org/dist/Template-Toolkit-Simple/
+WWW: http://search.cpan.org/dist/Template-Toolkit-Simple/

@@ -5,7 +5,7 @@ works asynchronously and uses DHTML to deal with the payload.
 In order to add your custom meothds, this module should be subclassed.
 
 The most current version (as of the release of this module) of the
-client library as well as a demo application have been included in this 
+client library as well as a demo application have been included in this
 distribution.
 
 WWW: http://search.cpan.org/dist/JavaScript-RPC/

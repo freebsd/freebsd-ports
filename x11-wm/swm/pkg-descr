@@ -1,6 +1,6 @@
-sWM was written for small computer system with very little amount of 
-memory and small screen sizes. It was written to speed up working with 
-laptops or even PDA's. You need a minimum of about 12k of diskspace 
-(minimal mode). It uses even less memory than a rxvt. 
+sWM was written for small computer system with very little amount of
+memory and small screen sizes. It was written to speed up working with
+laptops or even PDA's. You need a minimum of about 12k of diskspace
+(minimal mode). It uses even less memory than a rxvt.
 
 WWW: http://www.small-window-manager.de/

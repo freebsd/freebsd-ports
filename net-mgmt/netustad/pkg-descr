@@ -1,12 +1,12 @@
 To ease the task of network administration,
 decrease the likelihood of erronous command execution and
 to maintain all network services from a central point,
-EnderUNIX SDT anounces the availability of its 9th open-source tool, 
+EnderUNIX SDT anounces the availability of its 9th open-source tool,
 netUstad.
 
 It has been coded in C language and includes its own HTTP server.
 The newly anounced version provides a web interface for
-system administrators to add/delete/update FreeBSD IPFW and Linux IpTables 
+system administrators to add/delete/update FreeBSD IPFW and Linux IpTables
 rulesets, manage routing table and network interfaces.
 
 You can manage your Firewall via a TCP/IP connected remote PC, easily.

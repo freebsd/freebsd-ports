@@ -1,5 +1,5 @@
-POE component to serve HTTP requests with a slightly different 
-approach than POCo::Server::HTTP. Several useful built-in 
+POE component to serve HTTP requests with a slightly different
+approach than POCo::Server::HTTP. Several useful built-in
 handlers for URIs not found, basic authentication, and
 parameter parsing.
 

@@ -1,13 +1,13 @@
   The original Panex puzzle is from the Japanese Magic Company
 from the 1980's. Mathematicians at Bell Laboratories estimated
-the  number  of  moves  to  swap  2  columns of order 10 to be 
+the  number  of  moves  to  swap  2  columns of order 10 to be
 27,564 <= N <= 31,537. It  came  in two  varieties: one with a
 blue and a yellow pyramid of order 10 on  silver tiles; in the
 gold version pieces of each color  look  alike i.e. no pyramid
 is drawn on them), this is a little harder.
   The  original  Tower  of  Hanoi  puzzle is the  invention of
 Edouard  Lucas  and  was sold as a toy in France in  1883. The
-legend  of 64  disks in the great temple of Benares of the god 
+legend  of 64  disks in the great temple of Benares of the god
 Brahma is also his invention.
 
 WWW: http://www.tux.org/~bagleyd/puzzles.html

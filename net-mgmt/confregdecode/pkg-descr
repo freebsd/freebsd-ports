@@ -1,7 +1,7 @@
 This is a Java applet and application that can encode and decode a Cisco
 router's configuration register.
 
-It also shows some valuable notes for each router family that can help 
+It also shows some valuable notes for each router family that can help
 with disaster recovery.
 
 It is being released as part of the Cisco-centric Open Source Initiative.

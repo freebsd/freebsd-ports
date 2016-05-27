@@ -1,0 +1,6 @@
+Rice is a C++ interface to Ruby's C API. It provides a type-safe and
+exception-safe interface in order to make embedding Ruby and writing Ruby
+extensions with C++ easier. It is similar to Boost.Python in many ways, but
+also attempts to provide an object-oriented interface to all of the Ruby C API.
+
+WWW: http://rubygems.org/gems/rice

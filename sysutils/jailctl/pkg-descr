@@ -8,7 +8,7 @@ Supports:
   - backing up and restoring
 of jails.
 
-Aims to be easy to configure, and to leave the system in a manageable state 
+Aims to be easy to configure, and to leave the system in a manageable state
 even without access to the jailctl tool.
 
 WWW: http://anduin.net/jailctl/

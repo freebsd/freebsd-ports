@@ -1,5 +1,5 @@
-Deltup is a source package updater which enables users to apply a delta 
-patch to the previous version of a package, as well as making delta 
+Deltup is a source package updater which enables users to apply a delta
+patch to the previous version of a package, as well as making delta
 patches for others to use. This decreases download times significantly.
 
 WWW: http://www.deltup.org/

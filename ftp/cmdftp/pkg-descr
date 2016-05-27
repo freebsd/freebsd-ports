@@ -7,5 +7,5 @@ resuming of currently executing command, partial download resuming (if
 server accepts REST command), tab completion for both local and remote
 names, autologin using classic ~/.netrc approach, large file support,
 and more.
-    
+
 WWW: http://www.nongnu.org/cmdftp/

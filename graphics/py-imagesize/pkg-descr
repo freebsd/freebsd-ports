@@ -1,0 +1,3 @@
+This module analyzes jpeg/jpeg2000/png/gif image header and return image size.
+
+WWW: https://github.com/shibukawa/imagesize_py

@@ -1,9 +1,9 @@
-Prawn::Graph aims to add this functionality to Prawn by using the 
-native PDF drawing tools Prawn exposes and a friendly single-method 
+Prawn::Graph aims to add this functionality to Prawn by using the
+native PDF drawing tools Prawn exposes and a friendly single-method
 call to draw the graph.
 
 The graphs and the values plotted and drawn are all relatively sized
-within the bounds of the width and height you have set and should 
+within the bounds of the width and height you have set and should
 scale pretty well to any size of value. Of course, if things do end
 up looking too squashed, you can always just make your graph bigger.
 

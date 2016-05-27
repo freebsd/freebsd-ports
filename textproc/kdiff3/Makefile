@@ -12,12 +12,11 @@ COMMENT=	KDE4 graphical frontend for diff
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_KDE4=	kdelibs libkonq kdeprefix automoc4
+USE_KDE4=	kdelibs libkonq automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USES=		cmake:outsource
 
 OPTIONS_DEFINE=	NLS DOCS
-OPTIONS_DEFAULT=	NLS
 
 OPTIONS_SUB=	yes
 

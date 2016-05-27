@@ -1,4 +1,4 @@
-XML::Feed is a syndication feed parser for both RSS and Atom feeds. 
+XML::Feed is a syndication feed parser for both RSS and Atom feeds.
 It also implements feed auto-discovery for finding feeds, given a URI.
 
 XML::Feed supports the following syndication feed formats:
@@ -8,11 +8,11 @@ XML::Feed supports the following syndication feed formats:
     * RSS 2.0
     * Atom
 
-The goal of XML::Feed is to provide a unified API for parsing and using 
-the various syndication formats. The different flavors of RSS and Atom 
-handle data in different ways: date handling; summaries and content; 
-escaping and quoting; etc. This module attempts to remove those differences 
-by providing a wrapper around the formats and the classes implementing 
-those formats (XML::RSS and XML::Atom::Feed). 
+The goal of XML::Feed is to provide a unified API for parsing and using
+the various syndication formats. The different flavors of RSS and Atom
+handle data in different ways: date handling; summaries and content;
+escaping and quoting; etc. This module attempts to remove those differences
+by providing a wrapper around the formats and the classes implementing
+those formats (XML::RSS and XML::Atom::Feed).
 
 WWW: http://search.cpan.org/dist/XML-Feed/

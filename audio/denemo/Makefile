@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	denemo
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.6
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphical score editor
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libaubio.so:audio/aubio \
 		libfluidsynth.so:audio/fluidsynth \
@@ -22,7 +22,11 @@ LIB_DEPENDS=	libaubio.so:audio/aubio \
 		libfftw3.so:math/fftw3
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		bison gettext gmake pkgconfig
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 ${TAR}
+EXTRACT_BEFORE_ARGS=\
+		-s '!\(/Clarinet in B\).*\(\.denemo\)$$!\1b\2!p' -xf
+
+USES=		bison desktop-file-utils gettext gmake pkgconfig
 USE_GNOME=	intltool librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-jack \
@@ -33,6 +37,7 @@ CONFIGURE_ARGS=	--enable-jack \
 		--disable-gtk-doc-pdf \
 		--enable-guile_1_8
 
+CFLAGS+=	-Wno-error=return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -65,8 +70,13 @@ post-patch:
 		 /^CFLAGS=/s|_LIBS|_CFLAGS| ; \
 		 s|evince-view-2.30 >= 2.|atril-view-1.5.|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		'/ docs /d ; \
-		 /) install-data-hook/s|^|#|' ${WRKSRC}/Makefile.in
+		'/) install-data-hook/s|^|#|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		 '/^docdir/s|$$(datadir)/$${PACKAGE}|@docdir@|' \
+		${WRKSRC}/docs/Makefile.in
+	@${REINPLACE_CMD} -e \
+		 '/^imagedir/s|$$(datadir)/$${PACKAGE}|@docdir@|' \
+		${WRKSRC}/docs/images/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|"firefox"|"xdg-open"|' ${WRKSRC}/src/core/prefops.c
 .if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MPDF}
@@ -75,15 +85,8 @@ post-patch:
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for i in actions templates
-	@(cd ${WRKSRC} && ${TAR} --exclude "*Makefile*" -cf - ${i}) | \
-		(cd ${STAGEDIR}${DATADIR} && ${TAR} --unlink -xf -)
-	@${FIND} ${STAGEDIR}${DATADIR}/${i} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} a+rx
-	@${FIND} ${STAGEDIR}${DATADIR}/${i} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-.endfor
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "actions templates" \
+		${STAGEDIR}${DATADIR})
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -93,12 +96,6 @@ post-install-DOCS-on:
 .for i in DESIGN DESIGN.lilypond GOALS TODO
 	(cd ${WRKSRC}/docs && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/manual
-	(cd ${WRKSRC}/docs && ${INSTALL_DATA} *.html \
-		${STAGEDIR}${DOCSDIR}/manual)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/manual/images
-	(cd ${WRKSRC}/docs/images && ${INSTALL_DATA} *.png \
-		${STAGEDIR}${DOCSDIR}/manual/images)
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

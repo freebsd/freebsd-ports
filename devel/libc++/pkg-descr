@@ -1,4 +1,4 @@
-libc++ is a new implementation of the C++ standard library made by the 
+libc++ is a new implementation of the C++ standard library made by the
 llvm project targeting C++11.
 
 WWW: http://libcxx.llvm.org/

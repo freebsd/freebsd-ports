@@ -40,7 +40,7 @@ PORTREVISION=	1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	GTK based Gnutella client
 
 LICENSE=	GPLv2+

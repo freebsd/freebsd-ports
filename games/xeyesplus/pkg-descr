@@ -1,16 +1,16 @@
 Xeyes+, horrible eyes looking at your mouse cursor.
 
-Usage: 
+Usage:
 	xeyes+ [-root] [-wm] [-speed n] [-smooth] [-display <display>]
 
 	-root
 		Draw on the root window directly.
 
-	-wm   
+	-wm
 		Not allow window managers to redirect
 
-	-speed 
-		How fast the eyes move from 1 to 100 in 10 micro seconds. 
+	-speed
+		How fast the eyes move from 1 to 100 in 10 micro seconds.
 
 	-smooth
 		Eyes move more smooth.

@@ -1,5 +1,5 @@
 `nwdiag` generate network-diagram image file from spec-text file.
-        
+
 Features
   * Generate network-diagram from dot like text (basic feature).
   * Multilingualization for node-label (utf-8 only).

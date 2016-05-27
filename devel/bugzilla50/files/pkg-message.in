@@ -5,8 +5,8 @@
      by following mysql commands (for MySQL 4.0 or later):
 
      GRANT SELECT, INSERT, UPDATE, DELETE, INDEX, ALTER, CREATE, LOCK TABLES,
-           CREATE TEMPORARY TABLES, DROP, REFERENCES 
-	   ON <database>.* TO <dbuser>@<host> 
+           CREATE TEMPORARY TABLES, DROP, REFERENCES
+	   ON <database>.* TO <dbuser>@<host>
 	   IDENTIFIED BY '<password>';
      FLUSH PRIVILEGES;
 

@@ -1,5 +1,5 @@
---- usr/sbin/pkcsconf/Makefile.am.orig	2010-07-29 21:28:41.000000000 +0900
-+++ usr/sbin/pkcsconf/Makefile.am	2010-10-20 00:46:34.600985372 +0900
+--- usr/sbin/pkcsconf/Makefile.am.orig	2016-04-29 17:26:46 UTC
++++ usr/sbin/pkcsconf/Makefile.am
 @@ -1,6 +1,6 @@
  sbin_PROGRAMS=pkcsconf
  
@@ -7,4 +7,4 @@
 +pkcsconf_LDFLAGS = -lpthread
  
  # Not all versions of automake observe sbinname_CFLAGS
- pkcsconf_CFLAGS = -DSPINXPL -D_THREAD_SAFE -DDEBUG -DDEV -DAPI
+ pkcsconf_CFLAGS = -D_THREAD_SAFE -DDEBUG -DDEV -DAPI

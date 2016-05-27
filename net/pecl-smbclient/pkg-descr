@@ -1,4 +1,4 @@
-Smbclient is a PHP extension that uses Samba's libsmbclient library to 
+Smbclient is a PHP extension that uses Samba's libsmbclient library to
 provide Samba related functions and 'smb' streams to PHP programs.
 
 WWW: https://pecl.php.net/package/smbclient

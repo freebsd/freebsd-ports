@@ -31,6 +31,7 @@
 # Originally written by Vasil Dimov <vd@FreeBSD.org>
 # Others:
 # Chris Rees <crees@FreeBSD.org>
+# Rene Ladan <rene@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -107,7 +108,7 @@ find_expired()
 {
 	EXPVAR=EXPIRATION_DATE
 
-	find ${PORTSDIR} -mindepth 3 -maxdepth 3 -name "Makefile*" \
+	find -H ${PORTSDIR} -mindepth 3 -maxdepth 3 -name "Makefile*" \
 		|xargs grep -H ${EXPVAR} \
 		|sed -E "s|${PORTSDIR}/?([^/]+/[^/]+)/Makefile:${EXPVAR}=[[:space:]]*([0-9-]{10})$|\2 \1|g" \
 		|perl -ne "if ((substr(\$_, 0, 10) cmp '${TODAY}') <= 0) { print(\$_); }" \
@@ -147,6 +148,7 @@ check_dep_core()
 	rmpkgs=""
 	rmcatports=""
 	for torm in ${alltorm} ; do
+		torm="`echo ${torm} | sed 's/\/$//'`"
 		rmpkgs="${rmpkgs:+${rmpkgs}|}`pkgname ${torm}`"
 		rmcatports="${rmcatports:+${rmcatports}|}${PORTSDIR}/${torm}/"
 	done
@@ -162,7 +164,7 @@ check_dep_core()
 
 	# check if some Makefiles mention the port to be deleted
 	portdir_grep="^[^#].*/`basename ${catport}`([[:space:]]|/|$)"
-	r="`find ${PORTSDIR} -mindepth 2 -maxdepth 3 \
+	r="`find -H ${PORTSDIR} -mindepth 2 -maxdepth 3 \
 		\( -name "Makefile*" -or -path "*Mk/*.mk" \) \
 		|xargs grep -EH "${portdir_grep}" \
 		|grep -vE "^(${rmcatports})" || :`"
@@ -210,18 +212,15 @@ check_dep()
 	fi
 }
 
-# query GNATS via query-pr-summary.cgi, format and return the result
+# query GNATS via Bugzilla, format and return the result
 get_PRs_www()
 {
 	catport=${1}
 	synopsis=${2}
-	date_re='[0-9]{4}/[0-9]{2}/[0-9]{2}'
-	prnum_re='.+/[0-9]{5,6}'
-	synopsis_re='.{10,}'
 
 	log "${catport}: getting PRs having ${synopsis} in the synopsis"
 
-	url="http://www.freebsd.org/cgi/query-pr-summary.cgi?text=${synopsis}"
+	url="https://bugs.freebsd.org/bugzilla/buglist.cgi?quicksearch=${synopsis}"
 
 	raw="`fetch -q -T 20 -o - "${url}"`"
 
@@ -231,19 +230,8 @@ get_PRs_www()
 	fi
 
 	printf "%s" "${raw}" \
-	|sed -nE "s|.*>(${date_re})<.*>(${prnum_re})<.*>(${synopsis_re})</td.*|\1 \2 \3|p" \
+	|sed -ne 's,^[[:space:]]*.a href="show_bug.cgi?id=\([0-9][0-9]*\)".\([^0-9][^<]*\).*,\1: \2,p' \
 	|sort
-}
-
-# query GNATS via query-pr on freefall and return the result
-get_PRs_freefall()
-{
-	catport=${1}
-	synopsis=${2}
-
-	log "${catport}: getting PRs having ${synopsis} in the synopsis"
-
-	ssh freefall.freebsd.org "query-pr -qx -y '${synopsis}' || :"
 }
 
 # query GNATS and return the result
@@ -252,7 +240,7 @@ get_PRs()
 	catport=${1}
 	synopsis=${2}
 
-	get_PRs_freefall ${catport} ${synopsis}
+	get_PRs_www ${catport} ${synopsis}
 }
 
 # check if any PRs exist that are related to the port
@@ -419,7 +407,7 @@ cleanup()
 	rm svnlog
 
 	# release ports directories
-	rm -r ports
+	rm -rf ports
 
 	cd /
 	rmdir ${codir}

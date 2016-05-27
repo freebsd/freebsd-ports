@@ -1,7 +1,7 @@
 BDB is a set of classes implementing an interface to
 Berkeley DB for the GNUstep and Mac OS X environment written in
 Objective-C language. It is based on the C API of
-Berkeley DB and offers an object oriented interface which relies on 
+Berkeley DB and offers an object oriented interface which relies on
 classes and mechanisms offered by the Foundation library.
 
 In its present state BDB just offers a reduced set of functionality of

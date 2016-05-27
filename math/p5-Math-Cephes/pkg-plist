@@ -7,9 +7,9 @@ bin/pmath
 %%SITE_ARCH%%/Math/Cephes/Polynomial.pm
 %%SITE_ARCH%%/auto/Math/Cephes/Cephes.so
 %%SITE_ARCH%%/auto/Math/Cephes/libmd/extralibs.ld
+%%PERL5_MAN1%%/pmath.1.gz
 %%PERL5_MAN3%%/Math::Cephes.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Complex.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Fraction.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Matrix.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Polynomial.3.gz
-%%PERL5_MAN1%%/pmath.1.gz

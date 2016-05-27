@@ -1,9 +1,9 @@
-This module provides an API for loading and saving of simple configuration 
-file records. Entries in the configuration file are essentially key,value 
-pairs, with the key and values separated by a single equals symbol. The 
-key consists only of alphanumeric characters. There are three types of 
-values, scalar values can contain anything except newlines. Trailing 
-whitespace will be trimmed unless the value is surrounded in double 
+This module provides an API for loading and saving of simple configuration
+file records. Entries in the configuration file are essentially key,value
+pairs, with the key and values separated by a single equals symbol. The
+key consists only of alphanumeric characters. There are three types of
+values, scalar values can contain anything except newlines. Trailing
+whitespace will be trimmed unless the value is surrounded in double
 quotes.
 
 WWW: http://search.cpan.org/dist/Config-Record/

@@ -8,6 +8,6 @@ library provides functions to query for all commonly used record types as
 well as a replacement for the blocking gethostbyname() function provided by
 the Python stdlib socket module.
 
-Twisted Names is available under the MIT Free Software licence. 
+Twisted Names is available under the MIT Free Software licence.
 
 WWW: http://twistedmatrix.com/

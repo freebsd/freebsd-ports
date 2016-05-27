@@ -26,7 +26,7 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${b}
 .	endfor
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient.so.18
-.	for b in dialog.so mysql_clear_password.so 
+.	for b in dialog.so mysql_clear_password.so
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/${b}
 .	endfor
 	# Fix https://mariadb.atlassian.net/browse/MDEV-9388

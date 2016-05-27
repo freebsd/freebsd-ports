@@ -1,7 +1,7 @@
-   CFTP is used to transfer files from a remote computer to 
+   CFTP is used to transfer files from a remote computer to
 your local computer via the FTP protocol.
    Its advantages over most standard ftp-clients is its
-fullscreen representation of the remote directory so you 
+fullscreen representation of the remote directory so you
 can easily choose what to get or where to go.
 
 WWW: http://nih.at/cftp/

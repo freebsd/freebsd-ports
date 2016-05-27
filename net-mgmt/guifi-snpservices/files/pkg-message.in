@@ -10,7 +10,7 @@ POST-INSTALL CONFIGURATION FOR GUIFI SNPSERVICES
    $SNPGraphServerId to your service's ID (note, it's the *service*,
    NOT the "server" ID)
 
-3) setup a cronjob to keep your graphs and stats up to date; for 
+3) setup a cronjob to keep your graphs and stats up to date; for
    example:
 
 */30 * * * * root if [ -x %%WWWDIR%%/graphs ]; then cd %%WWWDIR%%/graphs; fi; if [ -x %%PREFIX%%/bin/php ] && [ -r %%WWWDIR%%/graphs/mrtgcsv2mrtgcfg.php ]; then env LANG=C %%PREFIX%%/bin/php mrtgcsv2mrtgcfg.php >> /var/log/snpservices_mrtgcfg.log 2>&1; fi
@@ -19,7 +19,7 @@ POST-INSTALL CONFIGURATION FOR GUIFI SNPSERVICES
 4) consider logrotating /var/log/snpservices_*.log
 
 For more information, see various guifi.net doc pages, and related:
-   
+
    https://guifi.net/en/node/72593
    http://es.wiki.guifi.net/wiki/Servidor_de_gr%C3%A1ficas
    http://es.wiki.guifi.net/wiki/Servidor_de_gr%C3%A1ficas_1

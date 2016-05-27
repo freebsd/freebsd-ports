@@ -7,17 +7,17 @@ Features:
   fields (using masks),
 - Ability to rename files from the tag (using masks) or by loading a text
   file,
-- Process selected files of the selected directory, 
-- Ability to browse subdirectories, 
-- Recursion for tagging, removing, renaming, saving..., 
-- Can set a field (artist, title,...) to all other files, 
-- Read file header informations (bitrate, time, ...) and display them, 
-- Auto completion of the date if a partial is entered, 
-- Undo and redo last changes, 
+- Process selected files of the selected directory,
+- Ability to browse subdirectories,
+- Recursion for tagging, removing, renaming, saving...,
+- Can set a field (artist, title,...) to all other files,
+- Read file header informations (bitrate, time, ...) and display them,
+- Auto completion of the date if a partial is entered,
+- Undo and redo last changes,
 - Ability to process fields of tag and file name (convert letters into
   uppercase, downcase, ...),
-- CDDB support (from http protocol), 
-- A playlist generator window, 
+- CDDB support (from http protocol),
+- A playlist generator window,
 - French, German, Russian, Dutch, Hungarian, Swedish, Italian, Japanese,
   Ukrainian, Czech, Spanish, Polish and Romanian translations
 

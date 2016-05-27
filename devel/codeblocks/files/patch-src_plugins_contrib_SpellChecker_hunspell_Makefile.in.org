@@ -1,0 +1,11 @@
+--- src/plugins/contrib/SpellChecker/hunspell/Makefile.in.org.orig	2016-05-06 22:19:18 UTC
++++ src/plugins/contrib/SpellChecker/hunspell/Makefile.in.org
+@@ -429,7 +429,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+ SUBDIRS = intl po src man m4 tests
+-pkgconfdir = $(libdir)/pkgconfig
++pkgconfdir = ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+ pkgconf_DATA = hunspell.pc
+ EXTRA_DIST = BUGS README.myspell AUTHORS.myspell license.myspell license.hunspell \
+         ChangeLog.O COPYING.MPL COPYING.LGPL hunspell.pc.in

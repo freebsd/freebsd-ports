@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=		--disable-silent-rules
 CONFIGURE_ARGS+=		--datadir=${PREFIX}/libdata
 
 OPTIONS_DEFINE=			DOCS MANPAGES
-OPTIONS_DEFAULT=		DOCS MANPAGES
+OPTIONS_DEFAULT=		MANPAGES
 OPTIONS_SUB=			yes
 
 DOCS_DESC=			Build and/or install HTML documentation

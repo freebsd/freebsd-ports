@@ -1,0 +1,10 @@
+--- docs/CMakeLists.txt.orig	2016-05-10 08:39:04 UTC
++++ docs/CMakeLists.txt
+@@ -38,6 +38,6 @@ add_custom_target(yacas_docs ALL
+     COMMENT "Building HTML documentation with Sphinx")
+ 
+ install (DIRECTORY "${SPHINX_SINGLEHTML_DIR}"
+-         DESTINATION share/yacas/documentation
++         DESTINATION ${DOCSDIR}
+          COMPONENT doc
+          PATTERN ".buildinfo" EXCLUDE)

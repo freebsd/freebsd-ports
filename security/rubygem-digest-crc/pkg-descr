@@ -1,0 +1,4 @@
+Adds support for calculating Cyclic Redundancy Check (CRC) to the Digest module.
+Pure Ruby implementation.  Provides CRC Tables for optimized calculations.
+
+WWW: https://github.com/postmodern/digest-crc

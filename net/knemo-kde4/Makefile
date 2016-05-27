@@ -12,7 +12,7 @@ COMMENT=	KDE network monitor
 USES=		cmake gettext shebangfix tar:xz
 SHEBANG_FILES=	src/kconf_update/*.pl
 USE_QT4=	qmake_build moc_build uic_build rcc_build
-USE_KDE4=	kdeprefix kdelibs workspace automoc4
+USE_KDE4=	kdelibs workspace automoc4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -2,6 +2,6 @@ OSSP cfg is a ISO-C library for parsing arbitrary C/C++-style configuration
 files. A configuration is sequence of directives. Each directive consists of
 zero or more tokens. Each token can be either a string or again a complete
 sequence. This means the configuration syntax has a recursive structure and
-this way allows to create configurations with arbitrarily nested sections. 
+this way allows to create configurations with arbitrarily nested sections.
 
 WWW: http://www.ossp.org/pkg/lib/cfg/

@@ -4,16 +4,16 @@ complete API for C/C++ programmers. This API provide a complete interface to
 a top down parser that supports: variables, constants, functions, modules and
 a libc based math library. This math library overrides standard functions with
 a "custom" version (such as. deg, rad auto conversion, infinite symbol,
-function domain...). 
+function domain...).
 
 Spar, can be easily extended with modules. A module is a "user" extensions,
 written in C/C++, to the basic features of the Simple Parser. Here you can
 find the module definition: is a C structure that contains only few data
-member: 
-    - module name 
-    - module version 
-    - module description 
-    - a pointer to the module main function 
+member:
+    - module name
+    - module version
+    - module description
+    - a pointer to the module main function
 
 The modules are loaded at run-time by the module loader (that is a high level
 layer of the module manager): you can load your modules, simply, coping theirs

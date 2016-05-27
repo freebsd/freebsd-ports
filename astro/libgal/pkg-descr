@@ -1,6 +1,6 @@
 The General Astrodynamics Library (GAL) is a numerical library for C and C++
 programmers. It is free software under the GNU General Public License.
- 
+
 The library provides a wide range of astrodynamical routines such as
 ephemerides, earth orientation, and orbit propagation. There are over 170
 functions in total with an extensive test suit

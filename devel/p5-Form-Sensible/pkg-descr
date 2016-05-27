@@ -10,14 +10,14 @@ prompts, WxPerl or voice prompts. (* currently only an HTML renderer is provided
 with Form::Sensible, but work is already under way to produce others.)
 
 Features:
-- Easy form validation 
-- Ability to easily save created forms for future use 
-- Define form once, render any number of ways 
-- Flexible built-in form validator 
-- Easily extended to produce new renderers, field types and validation 
-- HTML renderer produces sane html that can be easily styled via CSS 
+- Easy form validation
+- Ability to easily save created forms for future use
+- Define form once, render any number of ways
+- Flexible built-in form validator
+- Easily extended to produce new renderers, field types and validation
+- HTML renderer produces sane html that can be easily styled via CSS
 - HTML renderer allows for custom templates to control all aspects of form
-  rendering. 
-- HTML output not tied to any javascript library. 
+  rendering.
+- HTML output not tied to any javascript library.
 
 WWW: http://search.cpan.org/dist/Form-Sensible/

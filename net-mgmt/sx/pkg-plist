@@ -1,6 +1,7 @@
 bin/sxacl
 bin/sxcat
 bin/sxcp
+bin/sxfs
 bin/sxinit
 bin/sxls
 bin/sxmv
@@ -15,15 +16,13 @@ bin/sxvol
 %%SXSERVER%%%%ETCDIR%%/sxserver/sxhttpd.conf.default
 include/sx.h
 lib/libsxclient.so
-lib/libsxclient.so.2
-lib/libsxclient.so.2.0.0
-lib/sxclient/libsxf_aes256-15.so
-lib/sxclient/libsxf_aes256.so
-lib/sxclient/libsxf_attribs-12.so
+lib/libsxclient.so.3
+lib/libsxclient.so.3.0.0
+lib/sxclient/libsxf_attribs-13.so
 lib/sxclient/libsxf_attribs.so
 lib/sxclient/libsxf_undelete-12.so
 lib/sxclient/libsxf_undelete.so
-lib/sxclient/libsxf_zcomp-11.so
+lib/sxclient/libsxf_zcomp-12.so
 lib/sxclient/libsxf_zcomp.so
 %%SXSERVER%%sbin/sx.fcgi
 %%SXSERVER%%sbin/sxadm
@@ -51,6 +50,7 @@ man/man1/sxacl-whoami.1.gz
 man/man1/sxacl.1.gz
 man/man1/sxcat.1.gz
 man/man1/sxcp.1.gz
+man/man1/sxfs.1.gz
 man/man1/sxinit.1.gz
 man/man1/sxls.1.gz
 man/man1/sxmv.1.gz

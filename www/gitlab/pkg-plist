@@ -3050,6 +3050,7 @@
 %%WWWDIR%%/spec/features/merge_requests/edit_mr_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/filter_by_milestone_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/merge_when_build_succeeds_spec.rb
+%%WWWDIR%%/spec/features/merge_requests/user_lists_merge_requests_spec.rb
 %%WWWDIR%%/spec/features/notes_on_merge_requests_spec.rb
 %%WWWDIR%%/spec/features/participants_autocomplete_spec.rb
 %%WWWDIR%%/spec/features/password_reset_spec.rb
@@ -3156,6 +3157,7 @@
 %%WWWDIR%%/spec/helpers/tree_helper_spec.rb
 %%WWWDIR%%/spec/helpers/visibility_level_helper_spec.rb
 %%WWWDIR%%/spec/initializers/settings_spec.rb
+%%WWWDIR%%/spec/initializers/trusted_proxies_spec.rb
 %%WWWDIR%%/spec/javascripts/behaviors/autosize_spec.js.coffee
 %%WWWDIR%%/spec/javascripts/behaviors/quick_submit_spec.js.coffee
 %%WWWDIR%%/spec/javascripts/behaviors/requires_input_spec.js.coffee
@@ -3177,6 +3179,7 @@
 %%WWWDIR%%/spec/javascripts/line_highlighter_spec.js.coffee
 %%WWWDIR%%/spec/javascripts/merge_request_spec.js.coffee
 %%WWWDIR%%/spec/javascripts/merge_request_tabs_spec.js.coffee
+%%WWWDIR%%/spec/javascripts/merge_request_widget_spec.js.coffee
 %%WWWDIR%%/spec/javascripts/new_branch_spec.js.coffee
 %%WWWDIR%%/spec/javascripts/notes_spec.js.coffee
 %%WWWDIR%%/spec/javascripts/project_title_spec.js.coffee
@@ -3211,6 +3214,7 @@
 %%WWWDIR%%/spec/lib/banzai/filter/task_list_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/upload_link_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/user_reference_filter_spec.rb
+%%WWWDIR%%/spec/lib/banzai/filter/wiki_link_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/yaml_front_matter_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter_array_spec.rb
 %%WWWDIR%%/spec/lib/banzai/pipeline/description_pipeline_spec.rb

@@ -4,6 +4,6 @@ key/data pairs of arbitrary sizes. Lookups are very fast (normally only one
 disk access to match a hash value), overhead is low (a database is 1028
 bytes plus only 16 extra bytes per record), multiple concurrent read access
 are supported, and databases can be up to 4 Gb long, and they are portable
-across architectures. 
+across architectures.
 
 WWW: http://pureftpd.sourceforge.net/puredb/

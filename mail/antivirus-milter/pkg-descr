@@ -9,7 +9,7 @@ will run "uvscan" on the diretory to scan all the files in it. If uvscan
 returns an error, then the milter will look for viruses output from
 uvscan, and reject the message reporting which viruses were found. If
 viruses were found then the entire directory is moved to quarantine,
-otherwise it is deleted. 
+otherwise it is deleted.
 
 The milter also does extention checks. Certain extentions are blocked
 completely. In specific, extenions of .scr, .vbs, .pif, and .com are

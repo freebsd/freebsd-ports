@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-data
-PORTVERSION=	2016.1.1
+PORTVERSION=	2016.1.2
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 DISTNAME=	FlightGear-${PORTVERSION}-data
@@ -19,8 +19,6 @@ DATADIR=	${PREFIX}/share/flightgear
 
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	%%DATADIR%%
-
-MANUAL_PACKAGE_BUILD=	very large distfile (>1 GB)
 
 post-patch:
 	@${RM} -f ${WRKSRC}/COPYING

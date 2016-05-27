@@ -3,18 +3,18 @@ and accelerated primitives useful in digital signal processing (DSP).
 Except for the Reed-Solomon codecs, these functions take full advantage of
 the MMX, SSE and SSE2 SIMD instruction sets on Intel/AMD IA-32 processors
 and the Altivec/VMX/Velocity Engine SIMD instruction set on the
-G4 and G5 PowerPC. 
-The library includes Viterbi decoders for the following convolutional codes:  
-rate 1/2 k=7 
-rate 1/2 k=9 
-rate 1/6 k=15 ("Cassini")  
-plus two Reed-Solomon encoder-decoders:  
-one optimized for the (255,223) CCSDS standard code 
-a general purpose encoder/decoder for arbitrary RS codes  
-and three low-level 16-bit DSP support routines:  
-signed dot product 
-peak detection 
-sum-of-squares (energy) computation  
+G4 and G5 PowerPC.
+The library includes Viterbi decoders for the following convolutional codes:
+rate 1/2 k=7
+rate 1/2 k=9
+rate 1/6 k=15 ("Cassini")
+plus two Reed-Solomon encoder-decoders:
+one optimized for the (255,223) CCSDS standard code
+a general purpose encoder/decoder for arbitrary RS codes
+and three low-level 16-bit DSP support routines:
+signed dot product
+peak detection
+sum-of-squares (energy) computation
 This library is licensed under the "lesser" GNU General Public License.
 
 WWW: http://www.ka9q.net/code/fec/

@@ -1,7 +1,7 @@
-This module adds complex number support to Math::Symbolic. It does so by 
-extending the parser of the Math::Symbolic module (that is, the one stored 
-in $Math::Symbolic::Parser) with certain special functions that create 
-complex constants. (Math::Symbolic::Variable objects have been able to 
+This module adds complex number support to Math::Symbolic. It does so by
+extending the parser of the Math::Symbolic module (that is, the one stored
+in $Math::Symbolic::Parser) with certain special functions that create
+complex constants. (Math::Symbolic::Variable objects have been able to
 contain complex number objects since the very beginning.)
 
 WWW: http://search.cpan.org/dist/Math-SymbolicX-Complex/

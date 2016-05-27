@@ -17,6 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.4:www/py-django18
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-CONFLICTS_INSTALL=	pootle-*
+CONFLICTS_INSTALL=	pootle-[0-9]* py??-django-registration-redux-[0-9]*
 
 .include <bsd.port.mk>

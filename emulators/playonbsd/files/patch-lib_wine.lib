@@ -1,11 +1,11 @@
---- lib/wine.lib.orig	2015-05-12 22:33:57 UTC
+--- lib/wine.lib.orig	2016-01-03 22:16:17 UTC
 +++ lib/wine.lib
-@@ -31,7 +31,7 @@ POL_Wine_GetRegValue()
- 
+@@ -32,7 +32,7 @@ POL_Wine_GetRegValue()
  	[ -z "$WINEPREFIX" ] && POL_Debug_Fatal "WINEPREFIX not set"
  	local value
--	[ -e "$WINEPREFIX/user.reg" ] && value="$(grep "$1" "$WINEPREFIX/user.reg" | head -n 1 | tr -d '"' | cut -d= -f2)"
-+	[ -e "$WINEPREFIX/user.reg" ] && value="$(grep "$1" "$WINEPREFIX/user.reg" | head -n 1 | tr -d \" | cut -d= -f2)"
+ 	# tr -d '\0' is a workaround for Wine bug #37575
+-	[ -e "$WINEPREFIX/user.reg" ] && value="$(grep "^\"$1\"=" "$WINEPREFIX/user.reg" | head -n 1 | tr -d '"' | cut -d= -f2- | tr -d '\0')"
++	[ -e "$WINEPREFIX/user.reg" ] && value="$(grep "^\"$1\"=" "$WINEPREFIX/user.reg" | head -n 1 | tr -d \" | cut -d= -f2- | tr -d '\0')"
  	POL_Debug_Message "Getting registry value $1. Return: $value"
  	echo -n "${value:-default}"
  }

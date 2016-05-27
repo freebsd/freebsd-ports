@@ -1,6 +1,6 @@
-Apache 2 introduces filters, which allow to modify content generated  
-by some other module. mod_clamav is an Apache 2 filter which scans the 
-content delivered by the proxy module (mod_proxy) for viruses using the 
+Apache 2 introduces filters, which allow to modify content generated
+by some other module. mod_clamav is an Apache 2 filter which scans the
+content delivered by the proxy module (mod_proxy) for viruses using the
 Clamav virus scanning engine.
 
 WWW: http://software.othello.ch/mod_clamav/

@@ -6,4 +6,4 @@ URL-related utilites from JanRain, Inc.
 This package contains the "fetchers" module, which provides a common
 interface to urllib2 and curl for making HTTP requests.
 
-WWW:	http://www.openidenabled.com/openid/libraries/python/urljr/
+WWW: http://www.openidenabled.com/openid/libraries/python/urljr/

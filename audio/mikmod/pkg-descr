@@ -1,14 +1,14 @@
 MikMod is a portable modules player originally written by
-of Jean-Paul Mikkers (MikMak) for DOS. 
-Current MikMod'Unix maintainer (since version 3.0.4) is 
+of Jean-Paul Mikkers (MikMak) for DOS.
+Current MikMod'Unix maintainer (since version 3.0.4) is
 Miodrag Vallat <miodrag@mygale.org>
-It uses the OSS /dev/dsp driver including in all recent 
-kernels for output, and will also write wav files. 
+It uses the OSS /dev/dsp driver including in all recent
+kernels for output, and will also write wav files.
 Supported file formats include mod, stm, s3m, mtm, xm,
 and it.  The player uses ncurses for console output and
 supports transparent loading from gzip/pkzip/zoo archives
 and the loading/saving of playlists.
-Full source included, use of this library for music/sound 
+Full source included, use of this library for music/sound
 effects in your own programs is encouraged!
 
 WWW: http://mikmod.sourceforge.net/

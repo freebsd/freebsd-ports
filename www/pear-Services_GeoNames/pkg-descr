@@ -1,7 +1,7 @@
-Services_GeoNames is a PHP5 interface to the various webservices 
+Services_GeoNames is a PHP5 interface to the various webservices
 offered by the GeoNames project.
 
-The GeoNames database contains over 8,000,000 geographical names 
+The GeoNames database contains over 8,000,000 geographical names
 corresponding to over 6,500,000 unique features. All features are
 categorized into one out of nine feature classes and further
 subcategorized into one out of 645 feature codes. Beyond names of
@@ -9,7 +9,7 @@ places in various languages, data stored include latitude, longitude,
 elevation, population, administrative subdivision and postal codes.
 All coordinates use the WGS84 system (World Geodetic System 1984).
 
-Those data are accessible free of charge through a number of Web 
+Those data are accessible free of charge through a number of Web
 services and a daily database export. The Web services include
 direct and reverse geocoding,finding places through postal codes,
 finding places next to a given place, and finding Wikipedia articles

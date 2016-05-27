@@ -1,6 +1,6 @@
---- setup/build_environment.py.orig	2015-02-20 03:34:13 UTC
+--- setup/build_environment.py.orig	2016-05-20 11:45:27 UTC
 +++ setup/build_environment.py
-@@ -101,7 +101,7 @@ def get_sip_dir(q):
+@@ -103,7 +103,7 @@ def get_sip_dir(q):
          if os.path.exists(os.path.join(base, 'QtWidgets')):
              return base
      raise EnvironmentError('Failed to find the location of the PyQt5 .sip files')

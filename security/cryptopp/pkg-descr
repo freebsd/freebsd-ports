@@ -1,7 +1,7 @@
 Crypto++ Library is a free C++ class library of cryptographic schemes.
-One purpose of Crypto++ is to act as a repository of public domain (not 
-copyrighted) source code. Although the library is copyrighted as a 
-compilation, the individual files in it (except for a few exceptions listed 
-in the license) are in the public domain. 
+One purpose of Crypto++ is to act as a repository of public domain (not
+copyrighted) source code. Although the library is copyrighted as a
+compilation, the individual files in it (except for a few exceptions listed
+in the license) are in the public domain.
 
 WWW: http://www.cryptopp.com/

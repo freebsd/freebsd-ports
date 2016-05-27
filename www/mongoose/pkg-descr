@@ -1,4 +1,4 @@
-Mongoose is a small, fast and easy to use web server. It supports 
+Mongoose is a small, fast and easy to use web server. It supports
 CGI, SSI, SSL, Digest auth, Websocket, WEbDAV, Resumed download, URL
 rewrite, file blacklist. Having SHTTPD as a predecessor, another
 feature of mongoose is the ability to embed it into existing C/C++

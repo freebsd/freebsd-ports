@@ -2,4 +2,4 @@ This package includes a tool that parses a command table to generate a
 simple command-line interface parser, the include files needed to compile
 and use it, and the libraries needed to run programs that use it.
 
-It was originally inspired by the Multics SubSystem library. 
+It was originally inspired by the Multics SubSystem library.

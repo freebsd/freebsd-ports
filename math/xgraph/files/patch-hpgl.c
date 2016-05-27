@@ -1,5 +1,5 @@
---- hpgl.c.orig	Thu Aug  3 03:31:56 2000
-+++ hpgl.c	Sun Aug  6 23:45:06 2000
+--- hpgl.c.orig	2000-08-02 18:31:56 UTC
++++ hpgl.c
 @@ -13,9 +13,8 @@
  #include "xgout.h"
  #include "plotter.h"

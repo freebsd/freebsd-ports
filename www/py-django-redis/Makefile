@@ -7,7 +7,7 @@ CATEGORIES=	www databases
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	melvyn@magemana.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured Redis cache/session backend for Django
 
 LICENSE=	BSD3CLAUSE

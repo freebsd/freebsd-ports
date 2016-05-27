@@ -21,7 +21,7 @@ ALL_TARGET=	${LUASQL_DRIVER}
 
 LUASQL_DRIVER?=	mysql
 
-MAKE_ARGS+=	LUA_DIR=${LUA_SUBDIR} \
+MAKE_ARGS=	LUA_DIR=${LUA_SUBDIR} \
 		LUA_INC=${LUA_INCDIR} \
 		LUA_LIBDIR=${LUA_LIBDIR} \
 		LUA_VERSION_NUM="${LUA_VER_STR}0" \
@@ -32,11 +32,12 @@ MAKE_ARGS+=	LUA_DIR=${LUA_SUBDIR} \
 USE_CSTD=	gnu89
 CFLAGS+=	-Wno-return-type
 
-PLIST_SUB+=	LUA_MIDLIBDIR=${LUA_MODLIBDIR}
+PLIST_SUB=	LUA_MIDLIBDIR=${LUA_MODLIBDIR} \
+		LUASQL_DRIVER=${LUASQL_DRIVER}
 
 .if ${LUASQL_DRIVER} == "mysql"
 COMMENT=	Lua interface to MySQL
-USE_MYSQL=	yes
+USES+=		mysql
 MAKE_ARGS+=	DRIVER_LIBS_mysql="-L ${LOCALBASE}/lib/mysql -lmysqlclient" \
 		DRIVER_INCS_mysql="-I ${LOCALBASE}/include/mysql"
 .elif ${LUASQL_DRIVER} == "postgres"
@@ -53,10 +54,8 @@ MAKE_ARGS+=	DRIVER_LIBS_sqlite3="-L ${LOCALBASE}/lib -lsqlite3" \
 IGNORE=		unknown or unsupported luasql driver
 .endif
 
-PLIST_SUB+=	LUASQL_DRIVER=${LUASQL_DRIVER}
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}/luasql
-	@${INSTALL_LIB} ${WRKSRC}/src/${LUASQL_DRIVER}.so ${STAGEDIR}${LUA_MODLIBDIR}/luasql
+	${INSTALL_LIB} ${WRKSRC}/src/${LUASQL_DRIVER}.so ${STAGEDIR}${LUA_MODLIBDIR}/luasql
 
 .include <bsd.port.mk>

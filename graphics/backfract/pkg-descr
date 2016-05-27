@@ -1,7 +1,7 @@
-Backfract is an animated wallpaper program for Unix with X windows. 
-It fills your background window with a fractal image, then every 
-15 minutes it will update the image by zooming in or out. As it 
-zooms in, it uses a simple heuristic to try to stay with 
-"interesting" scenes. 
+Backfract is an animated wallpaper program for Unix with X windows.
+It fills your background window with a fractal image, then every
+15 minutes it will update the image by zooming in or out. As it
+zooms in, it uses a simple heuristic to try to stay with
+"interesting" scenes.
 
 WWW: http://www.igoweb.org/~wms/comp/backfract/

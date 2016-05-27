@@ -1,8 +1,8 @@
-This distribution facilitates the run-time generation of classes which 
+This distribution facilitates the run-time generation of classes which
 inherit from a base class and some optional selection of mixin classes.
 
-A factory is provided to generate the mixed classes with multiple 
-inheritance. A NEXT method allows method redispatch up the inheritance 
+A factory is provided to generate the mixed classes with multiple
+inheritance. A NEXT method allows method redispatch up the inheritance
 chain.
 
 WWW: http://search.cpan.org/dist/Class-MixinFactory/

@@ -1,4 +1,4 @@
-p910nd is a small printer daemon intended for diskless workstations that does 
+p910nd is a small printer daemon intended for diskless workstations that does
 not spool to disk but passes the job directly to the printer.
 
 WWW: http://p910nd.sourceforge.net/

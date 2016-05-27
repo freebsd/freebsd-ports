@@ -1,4 +1,4 @@
-Fancy biff program under X11 environment. 
+Fancy biff program under X11 environment.
 
 Hbiff is a replacement for xbiff that flashes when new mail arrives like the
 traditional xbiff.  In addition, if you click on the hbiff icon, a window

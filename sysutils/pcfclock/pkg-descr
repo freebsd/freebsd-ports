@@ -1,5 +1,5 @@
 This port provides the pcfdate utility which reads the time of day from a
-pcfclock device, writes it to stdout or, optionally, sets the system time. 
+pcfclock device, writes it to stdout or, optionally, sets the system time.
 
 You can benefit from pcfdate in case that
 

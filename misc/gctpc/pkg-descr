@@ -2,4 +2,4 @@ The General Cartographic Transformation Package (GCTP) is a system of
 software routines designed to permit the transformation of coordinate
 pairs from one map projection to another.  The GCTP is the standard
 computer software used by the National Mapping Division for map
-projection computations.  
+projection computations.

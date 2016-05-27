@@ -1,0 +1,11 @@
+--- pjmedia/build/os-auto.mak.in.orig	2016-05-13 06:08:17 UTC
++++ pjmedia/build/os-auto.mak.in
+@@ -209,7 +209,7 @@ endif
+ # Unix specific
+ #
+ ifneq ($(findstring alsa,$(AC_PJMEDIA_SND)),)
+-export CFLAGS += -DPJMEDIA_AUDIO_DEV_HAS_ALSA=1 \
++export CFLAGS += -DPJMEDIA_AUDIO_DEV_HAS_ALSA=0 \
+ 		 -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=0 \
+ 		 -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
+ endif

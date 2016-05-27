@@ -59,6 +59,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_tooling
 %%DATADIR%%/include/tests_virtualization
 %%DATADIR%%/include/tests_webservers
+%%DATADIR%%/include/tool_tips
 @mode
 %%DATADIR%%/plugins/README
 %%DATADIR%%/plugins/custom_plugin.template

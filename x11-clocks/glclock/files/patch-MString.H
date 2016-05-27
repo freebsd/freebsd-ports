@@ -1,5 +1,5 @@
---- MString.H.orig	2000-06-22 23:58:26.000000000 +0900
-+++ MString.H	2014-04-01 01:01:42.000000000 +0900
+--- MString.H.orig	2000-06-22 14:58:26 UTC
++++ MString.H
 @@ -66,7 +66,7 @@
  #ifndef ___STRING_H___
  #define ___STRING_H___
@@ -17,7 +17,7 @@
  
  //#define STRING_DEBUG
  
-@@ -307,15 +308,15 @@
+@@ -307,15 +308,15 @@ class String
  
      // m 文字目から n 文字
      String& Mid(int m, int n = 1) ;

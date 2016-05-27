@@ -2,23 +2,23 @@
    and rendering tools in a dynamic, programmable framework that enables
    users to rapidly create visualizations of highly complex data from
    disparate sources.
-     
+
    Data Explorer can be used to add visualization capabilities to
    existing applications. It is used by companies and institutions for
    applications in a large variety of visualization fields including
    computational fluid dynamics, medical imagery, computational
    chemistry, and engineering analysis. For example, it is currently
    being used to:
-     
+
      * Identify and manage portfolio risk worldwide for a large
        multinational banking group.
      * Depict oil-flow simulations to improve drilling success-rates and
        increase reservoir yields.
      * Piece together over 5,000 ceiling fragments from a 1,200-year-old
-       temple in Peru.    
+       temple in Peru.
      * Help insurance agents identify opportunities to cross-sell product
        offerings.
      * Visualize developing weather patterns to improve the accuracy of
-       weather forecasts.                                         
+       weather forecasts.
 
 WWW: http://www.opendx.org/

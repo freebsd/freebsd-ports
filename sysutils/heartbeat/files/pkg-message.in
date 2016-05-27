@@ -15,7 +15,7 @@
 
 
     INFORMATION:
-    - Configuration directory: %%PREFIX%%/etc/ha.d 
+    - Configuration directory: %%PREFIX%%/etc/ha.d
 
 
     CAVEATS:

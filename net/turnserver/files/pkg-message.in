@@ -7,16 +7,16 @@ you have to:
 	a) Create and edit %%PREFIX%%/etc/turnserver.conf file.
 	Use %%PREFIX%%/etc/turnserver.conf.default as an example.
 
-	b) For user accounts settings: set up SQLite or PostgreSQL or 
+	b) For user accounts settings: set up SQLite or PostgreSQL or
 	MySQL or Redis database for user accounts.
 	Use %%DATADIR%%/schema.sql as an SQL database schema,
 	or use %%DATADIR%%/schema*redis as Redis database description.
-	
+
 	If SQLite is used, then %%PREFIX%%/var/db/turndb is the default database
 	location.
 
 	d) add line turnserver_enable="YES" to /etc/rc.conf.
-	 
+
 	e) If you are using a non-default PREFIX (other than /usr/local),
 	then edit /usr/local/etc/rc.d/turnserver file, according to
 	your system settings.
@@ -38,4 +38,4 @@ The TURN Server supports (optionally) SQLite, MySQL, PostgreSQL, Redis.
    $ man turnutils
 
 ==================================================================
- 
+

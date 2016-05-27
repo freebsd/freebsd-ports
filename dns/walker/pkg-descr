@@ -2,6 +2,6 @@ walker - recover zone file information from servers that have disabled zone
 transfers but use DNSSEC.
 
 Fetch NXT record on zone name, walk the NXT chain until all records are
-fetched. Requires Bind version 9.x program `dig' located in path. 
+fetched. Requires Bind version 9.x program `dig' located in path.
 
 WWW: http://josefsson.org/walker/

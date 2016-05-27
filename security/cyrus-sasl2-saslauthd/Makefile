@@ -28,7 +28,7 @@ OPENLDAP_SASL_DESC=	OpenLDAP client with SASL2 support
 OPENLDAP_SASL_VARS=	WANT_OPENLDAP_SASL=yes
 
 SASLDB_DESC=		Experimental SASLdb authentication module
-BDB_USE=		BDB=yes
+BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-dblib=berkeley \
 			--with-bdb-libdir=${BDB_LIB_DIR} \

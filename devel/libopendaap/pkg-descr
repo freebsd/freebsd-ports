@@ -1,7 +1,7 @@
 libopendaap is a library written in C which enables applications to discover,
 and connect to, iTunes(R) music shares.
 
-Unlike all other daap implementations, this library is able to connect to 
+Unlike all other daap implementations, this library is able to connect to
 recent iTunes shares which require a special authentication algorithm.
 
 WWW: http://crazney.net/programs/itunes/libopendaap.html

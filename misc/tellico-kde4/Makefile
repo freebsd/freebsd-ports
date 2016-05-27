@@ -18,7 +18,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libexempi.so:textproc/exempi \
 		libqjson.so:devel/qjson
 
-USE_KDE4=	kdelibs kdeprefix libksane pimlibs \
+USE_KDE4=	kdelibs libksane pimlibs \
 		automoc4 qimageblitz libkcddb libkcompactdisc
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USES=		cmake gettext pkgconfig shared-mime-info tar:bzip2

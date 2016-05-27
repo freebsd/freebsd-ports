@@ -1,10 +1,10 @@
-Knights is a simple chess board for KDE 4. 
+Knights is a simple chess board for KDE 4.
 
-It is a rewrite of the KDE3 Knights, but it 
-net yet feature-complete compared to the old 
-one. Supports playing againts computer engines 
-that support the XBoard protocol or against 
-player at the same computer. It has automatic 
+It is a rewrite of the KDE3 Knights, but it
+net yet feature-complete compared to the old
+one. Supports playing againts computer engines
+that support the XBoard protocol or against
+player at the same computer. It has automatic
 rule checking and some nice animations.
 
 WWW: http://kde-apps.org/content/show.php/Knights?content=122046

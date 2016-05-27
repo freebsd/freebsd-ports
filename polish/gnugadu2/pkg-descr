@@ -2,7 +2,7 @@ Gnugadu2 is a modular instant messenger written with GTK+ targeted
 mainly at Polish users of propietary Gadu-Gadu network.
 
 GnuGadu2 sports a plugin extensible architecture. Beside Gadu-Gadu
-it also supports Jabber, Tlen.pl, sending smses to Polish mobile 
+it also supports Jabber, Tlen.pl, sending smses to Polish mobile
 phones, spell checking, works with several sound servers.
 
 WWW: http://www.gnugadu.org

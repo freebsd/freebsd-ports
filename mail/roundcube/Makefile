@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	roundcube
-DISTVERSION=	1.1.4
-PORTREVISION=	1
+DISTVERSION=	1.1.5
 PORTEPOCH=	1
 CATEGORIES?=	mail www
-MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:tu}
+MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}mail-${DISTVERSION}-complete
 
 MAINTAINER?=	ale@FreeBSD.org
@@ -25,7 +24,7 @@ CPE_VENDOR=	roundcube
 
 WANT_PHP_WEB=	yes
 USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter
-IGNORE_WITH_PHP=52
+IGNORE_WITH_PHP=70
 
 OPTIONS_DEFINE=	SSL LDAP GD PSPELL NSC DOCS
 OPTIONS_SINGLE=	DB

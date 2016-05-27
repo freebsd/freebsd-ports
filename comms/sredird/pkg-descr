@@ -1,8 +1,8 @@
 Sredird is a serial port redirector that is compliant with the RFC 2217
 "Telnet Com Port Control Option" protocol. This protocol lets you share
 a serial port through the network. The only known RFC 2217 aware client
-is DialOut/IP V2, which is a Windows 95/98/NT client. For more 
+is DialOut/IP V2, which is a Windows 95/98/NT client. For more
 information on it look at www.tacticalsoftware.com. Anyone interested in
 writing a client and who may need help with the RFC 2217 protocol could
-contact author of sredird. Information on RFC 2217 and the Telnet Protocol 
+contact author of sredird. Information on RFC 2217 and the Telnet Protocol
 is available at www.ietf.org.

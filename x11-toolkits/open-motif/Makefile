@@ -17,8 +17,6 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif-[0-9]*
-# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKSRC=		${WRKDIR}/motif-${PORTVERSION}
 
 USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig
 USE_XORG=	x11 xaw xbitmaps xext xft xt

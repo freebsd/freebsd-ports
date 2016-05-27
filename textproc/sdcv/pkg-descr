@@ -2,7 +2,7 @@ SDCV(StarDict under Console Version) is simple, cross-platform text-based
 utility for work with dictionaries in StarDict's format.
 
 The word from "list of words" may be string with leading '/' for using Fuzzy
-search algorithm, string may contain '?' and '*' for using regexp search. 
-It work in interactive and not interactive mode. 
+search algorithm, string may contain '?' and '*' for using regexp search.
+It work in interactive and not interactive mode.
 
 WWW: http://sdcv.sourceforge.net/

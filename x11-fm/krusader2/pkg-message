@@ -10,7 +10,7 @@ archivers/unace
 archivers/unarj
 archivers/rpm
 
-To use 'update DB' button in the locate dialog, open Settings->Konfigurator, 
+To use 'update DB' button in the locate dialog, open Settings->Konfigurator,
 Dependencies and write '/usr/libexec/locate.updatedb' into the field 'updatedb'.
 
 Krusader allows to diff file with kdiff3 (textproc/kdiff3) or kompare (devel/kdesdk).

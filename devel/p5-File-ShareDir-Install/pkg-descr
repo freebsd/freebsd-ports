@@ -1,9 +1,9 @@
-File::ShareDir::Install allows you to install read-only data files from a 
-distribution. It is a companion module to File::ShareDir, which allows you to 
+File::ShareDir::Install allows you to install read-only data files from a
+distribution. It is a companion module to File::ShareDir, which allows you to
 locate these files after installation.
 
 It is a port Module::Install::Share to ExtUtils::MakeMaker with the improvement
-of only installing the files you want; .svn and other source-control junk will 
+of only installing the files you want; .svn and other source-control junk will
 be ignored.
 
 WWW: http://search.cpan.org/dist/File-ShareDir-Install/

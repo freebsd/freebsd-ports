@@ -1,5 +1,5 @@
---- src/unix/uim/uim.gyp.orig	2014-10-27 02:24:13.000000000 +0900
-+++ src/unix/uim/uim.gyp	2015-09-26 06:34:58.683557000 +0900
+--- src/unix/uim/uim.gyp.orig	2015-07-15 10:04:31.000000000 +0900
++++ src/unix/uim/uim.gyp	2016-05-11 00:37:33.495056000 +0900
 @@ -31,6 +31,7 @@
  {
    'variables': {
@@ -17,13 +17,3 @@
      ],
    },
    'targets': [
-@@ -49,7 +52,8 @@
-         'key_translator.cc',
-       ],
-       'dependencies': [
--        '../../session/session_base.gyp:session_protocol',
-+      '../../protocol/protocol.gyp:commands_proto',
-+      '../../session/session_base.gyp:ime_switch_util',
-       ],
-       'cflags': [
-         '<!@(pkg-config --cflags <@(pkg_config_libs))',

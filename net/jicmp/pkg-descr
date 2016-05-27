@@ -1,4 +1,4 @@
-A Java native interface (JNI) to ICMP (ping), formerly a part of the base 
+A Java native interface (JNI) to ICMP (ping), formerly a part of the base
 OpenNMS package.
 
 WWW: http://www.opennms.org/index.php/Jicmp

@@ -1,6 +1,6 @@
---- glclock.H.orig	Sun Oct  1 21:29:41 2006
-+++ glclock.H	Sun Oct  1 21:29:57 2006
-@@ -279,7 +279,7 @@
+--- glclock.H.orig	2000-06-23 03:16:20 UTC
++++ glclock.H
+@@ -279,7 +279,7 @@ typedef int (APIENTRY * PFNGLCLOCKARGPRO
  #define DEFAULT_GAME_MODE_STRING	""
  
  // デフォルトイメージパス

@@ -6,7 +6,7 @@ it first. Sample configuration files have been installed to:
 %%ETCDIR%%
 
 All user configuration changes should go in file "user.conf". Modify
-it according to your needs and when you are done set the value of 
+it according to your needs and when you are done set the value of
 "user_configuration_complete" parameter to "yes".
 
 NOTE: Starting with version 5.0.0 configuration has been split into
@@ -19,7 +19,7 @@ obsolete configuration file:
 
 %%PREFIX%%/etc/clamav-unofficial-sigs.conf
 
-To run the script periodically by cron, you also need to add it to 
+To run the script periodically by cron, you also need to add it to
 your crontab. Sample crontab and logrotate files are located in:
 
 %%EXAMPLESDIR%%

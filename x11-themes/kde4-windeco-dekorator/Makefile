@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libqimageblitz.so:x11/qimageblitz
 
-USE_KDE4=	kdelibs kdeprefix automoc4 workspace
+USE_KDE4=	kdelibs automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USES=		cmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

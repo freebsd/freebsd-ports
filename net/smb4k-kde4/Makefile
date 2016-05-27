@@ -18,7 +18,7 @@ SAMBA_PORT?=	net/samba36
 
 USES=		cmake gettext tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4
-USE_KDE4=	kdeprefix kdelibs automoc4 runtime
+USE_KDE4=	kdelibs automoc4 runtime
 USE_QT4=	corelib gui network opengl script svg webkit \
 		qmake_build moc_build rcc_build uic_build phonon
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/smb4k

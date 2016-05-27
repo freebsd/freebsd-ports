@@ -40,7 +40,7 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-.include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
+.include "${.CURDIR:H:H}/devel/qt4/files/Makefile.options"
 
 .if empty(QT4_OPTIONS:MCUPS)
 CONFIGURE_ARGS+=	-no-cups

@@ -2,7 +2,7 @@
 
 Naval Robocode has been installed.
 
-Naval Robocode requires a java compiler. By default Naval Robocode will 
+Naval Robocode requires a java compiler. By default Naval Robocode will
 look for the IBM Jikes compiler.
 
 You can override this in the Naval Robocode compiler preferences menu:

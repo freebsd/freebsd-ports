@@ -2,4 +2,4 @@ Django Evolution is an extension to Django that allows you to track changes
 in your models over time, and to update the database to reflect those
 changes.
 
-WWW:	https://github.com/beanbaginc/django-evolution
+WWW: https://github.com/beanbaginc/django-evolution

@@ -1,7 +1,7 @@
-This module is just a wrapper around the gpc C library written by Alan 
+This module is just a wrapper around the gpc C library written by Alan
 Murta
 
-gpc: General Polygon Clipping library (C) 1997-1999, Advanced Interfaces 
+gpc: General Polygon Clipping library (C) 1997-1999, Advanced Interfaces
 Group, University of Manchester.
 
 Please refer to the gpc manual for more details on gpc.

@@ -1,15 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	libfilezilla
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/filezilla/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	matthew@reztek.cz
 COMMENT=	C++ library for building platform-independent programs
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	Does not build

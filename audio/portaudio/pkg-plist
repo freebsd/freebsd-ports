@@ -1,13 +1,4 @@
-%%PORTEXAMPLES%%bin/pa_devs
-%%PORTEXAMPLES%%bin/pa_fuzz
 %%PATEST%%bin/pa_minlat
-%%PORTEXAMPLES%%bin/paex_pink
-%%PORTEXAMPLES%%bin/paex_read_write_wire
-%%PORTEXAMPLES%%bin/paex_record
-%%PORTEXAMPLES%%bin/paex_saw
-%%PORTEXAMPLES%%bin/paex_sine
-%%PORTEXAMPLES%%bin/paex_write_sine
-%%PORTEXAMPLES%%bin/paex_write_sine_nonint
 %%PATEST%%bin/paqa_devs
 %%PATEST%%bin/paqa_errs
 %%PATEST%%bin/paqa_latency

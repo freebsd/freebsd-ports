@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bwn-firmware
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.openwrt.org/sources/ \
 		http://mirror2.openwrt.org/sources/
@@ -22,7 +22,7 @@ FIRMWARES=								\
 	b0g0bsinitvals5 						\
 	lp0initvals13 lp0initvals14 lp0initvals15 lp0bsinitvals13	\
 	lp0bsinitvals14 lp0bsinitvals15					\
-	n0bsinitvals11
+	n0initvals11 n0bsinitvals11					\
 
 FIRMWARES_LP=								\
 	ucode ucode5 ucode11 ucode13 ucode14 ucode15			\
@@ -31,7 +31,7 @@ FIRMWARES_LP=								\
 	b0g0bsinitvals5 						\
 	lp0initvals13 lp0initvals14 lp0initvals15 lp0bsinitvals13	\
 	lp0bsinitvals14 lp0bsinitvals15					\
-	n0bsinitvals11
+	n0initvals11 n0bsinitvals11
 
 FIRMWARES_N=								\
 	ucode16_mimo							\

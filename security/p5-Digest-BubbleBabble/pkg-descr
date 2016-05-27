@@ -5,7 +5,7 @@ Bubble babble is a method of representing a message digest
 as a string of "real" words, to make the fingerprint easier
 to remember. The "words" are not necessarily real words, but
 they look more like words than a string of hex characters.
- 
+
 Bubble babble fingerprinting is used by the SSH2 suite
 (and, consequently, by Net::SSH::Perl, the Perl SSH
 implementation) to display easy-to-remember key fingerprints.

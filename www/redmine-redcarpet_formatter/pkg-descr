@@ -1,0 +1,8 @@
+This is a redmine plugin for supporting Markdown as a wiki format. This
+plugin use Redcarpet which is GitHub's markdown wiki formatter.
+Redcarpet is extreme fast and compatible GitHub's Wiki. They are
+advantage from Redmine Markdown Formatter and Redmine Markdown Extra
+Formatter. This code is originally Redmine Markdown Formatter and
+Redmine reStructuredtext Formatter. I appreciate these guys.
+
+WWW: https://github.com/alminium/redmine_redcarpet_formatter

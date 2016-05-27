@@ -66,9 +66,8 @@ X509_PATCHFILES=	${PORTNAME}-7.0p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 # See https://bugzilla.mindrot.org/show_bug.cgi?id=2016
 # and https://bugzilla.mindrot.org/show_bug.cgi?id=1604
-SCTP_PATCHFILES=	${PORTNAME}-6.8p1-sctp-2573.patch.gz:-p1
+SCTP_PATCHFILES=	${PORTNAME}-7.2_p1-sctp.patch.gz:-p1
 SCTP_CONFIGURE_WITH=	sctp
-SCTP_BROKEN=		SCTP does not apply with 7.2+
 
 MIT_LIB_DEPENDS=		libkrb5.so.3:security/krb5
 HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:security/heimdal

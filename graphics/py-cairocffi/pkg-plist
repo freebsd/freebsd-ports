@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/cairocffi/_ffi.py
+%%PYTHON_SITELIBDIR%%/cairocffi/_ffi.pyc
+%%PYTHON_SITELIBDIR%%/cairocffi/_ffi.pyo
+%%PYTHON_SITELIBDIR%%/cairocffi/_ffi_pixbuf.py
+%%PYTHON_SITELIBDIR%%/cairocffi/_ffi_pixbuf.pyc
+%%PYTHON_SITELIBDIR%%/cairocffi/_ffi_pixbuf.pyo

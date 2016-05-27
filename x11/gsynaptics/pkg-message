@@ -26,6 +26,6 @@ o To use your setting value at each time of starting of Xserver,
 
   non GNOME users,
     you have to add gsynaptics-init in .xinitrc or
-    .xsession. 
+    .xsession.
 
 ===============================================================================

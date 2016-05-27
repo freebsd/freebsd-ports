@@ -1,8 +1,8 @@
 mod_chroot makes running Apache in a secure chroot environment easy.
-You don't need to create a special directory hierarchy containing 
+You don't need to create a special directory hierarchy containing
 /dev, /lib, /etc...
 mod_chroot allows you to run Apache in a chroot jail with no additional files.
-The chroot() system call is performed at the end of startup procedure - when 
+The chroot() system call is performed at the end of startup procedure - when
 all libraries are loaded and log files open.
 
 WWW: http://core.segfault.pl/~hobbit/mod_chroot/

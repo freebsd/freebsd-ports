@@ -3,9 +3,5 @@ written in only Emacs-Lisp.  It supports the following translating servers:
 jserver, cserver, tserver, Wnn6, SJ3 ver 1 and ver 2, cannaserver, wxgserver,
 and anthy.
 
-This package also includes the following enhancements from Debian:
-
-- Partial support for Wnn7/Wnn8.
-- Support connection to cannaserver using UNIX domain socket.
-
 WWW: http://git.chise.org/gitweb/?p=elisp/tamago.git;a=summary
+WWW: https://github.com/hrs-allbsd/tamago

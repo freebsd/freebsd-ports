@@ -12,6 +12,7 @@ lib/elixir/lib/apex/ebin/Elixir.Apex.Format.List.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Map.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.MapSet.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.PID.beam
+lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Port.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Range.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Reference.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Seq.beam

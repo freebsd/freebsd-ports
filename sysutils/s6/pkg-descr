@@ -1,5 +1,5 @@
-s6 is a small suite of programs for UNIX, designed to allow process 
-supervision (a.k.a service supervision), in the line of daemontools and 
-runit. 
+s6 is a small suite of programs for UNIX, designed to allow process
+supervision (a.k.a service supervision), in the line of daemontools and
+runit.
 
 WWW: http://www.skarnet.org/software/s6/

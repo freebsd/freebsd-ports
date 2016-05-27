@@ -2,7 +2,7 @@ Module XBase provides access to XBase (dBase, Fox*) database files,
 namely dbf, dbt, fpt, ndx, ntx, mdx, idx and cdx. It provides native
 Perl interface ($table->get_record, $table->update_record) to read
 and write the tables. The index support is alpha and read only at the
-moment. 
+moment.
 
 Module DBD::XBase is a DBI driver that uses the XBase module
 to work with the data, providing you with DBI compliant processing

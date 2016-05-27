@@ -24,7 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 INFO=		libcdio
 CPE_VENDOR=	gnu
-INSTALL_TARGET=install-strip 
+INSTALL_TARGET=install-strip
 
 .include <bsd.port.pre.mk>
 

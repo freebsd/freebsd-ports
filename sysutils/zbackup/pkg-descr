@@ -1,6 +1,6 @@
-zbackup is a globally-deduplicating backup tool, based on the ideas found 
+zbackup is a globally-deduplicating backup tool, based on the ideas found
 in rsync. Any of the backup files stored previously can be read back in full
-at any time. The program is format-agnostic, so you can feed virtually any 
+at any time. The program is format-agnostic, so you can feed virtually any
 files to it.
 
 WWW: http://zbackup.org/

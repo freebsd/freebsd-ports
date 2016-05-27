@@ -1,4 +1,4 @@
-xbindkeys is a program that allows you to launch shell commands with your 
+xbindkeys is a program that allows you to launch shell commands with your
 keyboard or your mouse under X Window. It links commands to keys or
 mouse buttons, using a configuration file.
 

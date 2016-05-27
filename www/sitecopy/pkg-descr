@@ -1,5 +1,5 @@
 sitecopy is for copying locally stored websites to remote web servers.
-The program will upload files to the server which have changed locally, 
+The program will upload files to the server which have changed locally,
 and delete files from the server which have been removed locally, to keep
 the remote site synchronized with the local site, with a single command.
 The aim is to remove the hassle of uploading and deleting individual files

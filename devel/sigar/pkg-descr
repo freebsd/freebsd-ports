@@ -2,12 +2,12 @@ The Sigar API provides a portable interface for gathering system information
 such as:
 
 * System memory, swap, cpu, load average, uptime, loginsi
-* Per-process memory, cpu, credential info, state, arguments, environment, 
+* Per-process memory, cpu, credential info, state, arguments, environment,
   open files
 * File system detection and metrics
 * Network interface detection, configuration info and metrics
 * TCP and UDP connection tables
-* Network route table 
+* Network route table
 
 This information is available in most operating systems, but each OS has their
 own way(s) providing it.  SIGAR provides developers with one API to access this

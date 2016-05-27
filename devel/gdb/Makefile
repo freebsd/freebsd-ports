@@ -3,7 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -45,7 +45,7 @@ OPTIONS_SINGLE_READLINE=	BASE_READLINE BUNDLED_READLINE PORT_READLINE
 
 GDB_LINK_DESC=		Create ${PREFIX}/bin/gdb symlink
 KGDB_DESC=		Kernel Debugging Support
-BASE_READLINE_DESC=	from base system (experimental)
+BASE_READLINE_DESC=	from base system
 BUNDLED_READLINE_DESC=	from gdb distfile
 PORT_READLINE_DESC=	from devel/readline port
 TUI_DESC=		Text User Interface enabled
@@ -54,6 +54,7 @@ OPTIONS_SUB=	yes
 
 BASE_READLINE_USES=	readline
 BASE_READLINE_CFLAGS=	-D_rl_echoing_p=readline_echoing_p
+BASE_READLINE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-base-readline
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
 DEBUG_CFLAGS=		-g
 EXPAT_CONFIGURE_WITH=	expat

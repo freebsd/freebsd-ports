@@ -18,7 +18,7 @@ WWW: http://openlab.ring.gr.jp/edict/srd-fpw/
 (setq lookup-package-directory "/usr/local/share/dict/package")
 (lookup-use-package "ndeb+/usr/local/share/dict/srd-fpw" "srd-fpw")
 (setq srd-fpw-image-directory "/usr/local/share/dict/srd-fpw")
-   ;; a directory having img.dat installed by the package ja-srd-fpw 
+   ;; a directory having img.dat installed by the package ja-srd-fpw
 (setq srd-fpw-sound-directory "/cdrom/srd/DATA")
    ;; a directory having srdra.bnd in CD-ROM
 (setq srd-fpw-play-realaudio-process "realplay")

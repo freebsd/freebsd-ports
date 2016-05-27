@@ -39,27 +39,3 @@
  	{
  		close(s);
  		return -1;
-@@ -454,6 +470,8 @@ master_process(int s, char **argv, int w
- 	/* Loop forever. */
- 	while (1)
- 	{
-+		int has_attached_client = 0;
-+
- 		/* Re-initialize the file descriptor set for select. */
- 		FD_ZERO(&readfds);
- 		FD_SET(s, &readfds);
-@@ -480,8 +498,14 @@ master_process(int s, char **argv, int w
- 			FD_SET(p->fd, &readfds);
- 			if (p->fd > highest_fd)
- 				highest_fd = p->fd;
-+
-+			if (p->attached) {
-+				has_attached_client = 1;
-+			}
- 		}
- 
-+		check_socket_mode(has_attached_client);
-+
- 		/* Wait for something to happen. */
- 		if (select(highest_fd + 1, &readfds, NULL, NULL, NULL) < 0)
- 		{

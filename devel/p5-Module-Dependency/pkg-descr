@@ -1,4 +1,4 @@
-Module::Dependency - Collection of modules for examining dependencies 
+Module::Dependency - Collection of modules for examining dependencies
                      between parents and children, like Perl files
 
 A set of pure-perl modules and helper programs that let you build a
@@ -6,9 +6,9 @@ database of the dependency links between a collection of Perl files,
 and then query that database, even producing text, HTML, PostScript
 or graphical reports.
 
-The database in question is actually a simple Storable image of a 
-Perl data structure, and you can create as many of these as you want. 
-You can use the command-line tools, or write your own Perl to query 
+The database in question is actually a simple Storable image of a
+Perl data structure, and you can create as many of these as you want.
+You can use the command-line tools, or write your own Perl to query
 and manipulate the data however you want.
 
 WWW: http://search.cpan.org/dist/Module-Dependency/

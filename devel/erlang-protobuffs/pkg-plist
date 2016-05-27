@@ -1,6 +1,7 @@
 lib/erlang/lib/protobuffs-%%VERSION%%/ebin/pokemon_pb.beam
 lib/erlang/lib/protobuffs-%%VERSION%%/ebin/protobuffs.app
 lib/erlang/lib/protobuffs-%%VERSION%%/ebin/protobuffs.beam
+lib/erlang/lib/protobuffs-%%VERSION%%/ebin/protobuffs_cli.beam
 lib/erlang/lib/protobuffs-%%VERSION%%/ebin/protobuffs_compile.beam
 lib/erlang/lib/protobuffs-%%VERSION%%/ebin/protobuffs_file.beam
 lib/erlang/lib/protobuffs-%%VERSION%%/ebin/protobuffs_parser.beam
@@ -9,10 +10,11 @@ lib/erlang/lib/protobuffs-%%VERSION%%/src/overview.edoc
 lib/erlang/lib/protobuffs-%%VERSION%%/src/pokemon_pb.erl
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs.app.src
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs.erl
+lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_cli.erl
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_compile.erl
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_file.erl
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_parser.erl
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_parser.yrl
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_scanner.erl
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_scanner.xrl
-%%PORTDOCS%%%%DOCSDIR%%/README.markdown
+%%PORTDOCS%%%%DOCSDIR%%/README.md

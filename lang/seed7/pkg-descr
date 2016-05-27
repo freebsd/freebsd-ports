@@ -5,7 +5,7 @@ type results and type parameters are more elegant than a template or generics
 concept. Object orientation is used where it brings advantages and not in
 places where other solutions are more obvious. Although Seed7 contains several
 concepts from other programming languages, it is generally not considered a
-direct descendant of any other programming language. 
+direct descendant of any other programming language.
 
 Major features include:
 

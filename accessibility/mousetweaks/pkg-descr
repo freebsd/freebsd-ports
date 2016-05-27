@@ -1,17 +1,17 @@
-The Mousetweaks package provides mouse accessibility enhancements for the 
-GNOME desktop. 
+The Mousetweaks package provides mouse accessibility enhancements for the
+GNOME desktop.
 
 These enhancements are:
-	
-1. It offers a way to perform the various clicks without using any 
+
+1. It offers a way to perform the various clicks without using any
 hardware button.
 
-2. It allows users to perform a right click by doing a click&hold of the 
-left mouse button. (For a left-handed mouse user, the terms left and right 
-have to be inverted.) 
+2. It allows users to perform a right click by doing a click&hold of the
+left mouse button. (For a left-handed mouse user, the terms left and right
+have to be inverted.)
 
-3. It provides an applet that the user can install on a panel. This applet 
-creates an area on the panel into which the pointer can be captured until 
+3. It provides an applet that the user can install on a panel. This applet
+creates an area on the panel into which the pointer can be captured until
 the user releases it with a predefined button and modifier combination.
 
 WWW: https://launchpad.net/mousetweaks/

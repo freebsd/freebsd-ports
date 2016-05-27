@@ -1,6 +1,6 @@
 NzbPerl is a perl script for downloading nzb files. It supports automated
 parsing and sorting of nzb files, multiple servers, automated downloading,
-assmbling and decoding of message parts, and has user controlled bandwidth 
+assmbling and decoding of message parts, and has user controlled bandwidth
 throttling during runtime.
 
 WWW: http://noisybox.net/computers/nzbperl/

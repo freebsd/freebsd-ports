@@ -1,6 +1,6 @@
 After you've installed the plugin, you need to enable it in MySQL.
 To do this log in to the MySQL console (as root) and execute the
-following: 
+following:
 mysql> INSTALL PLUGIN pinba SONAME 'libpinba_engine.so';
 
 We'd also suggest you to create a separate database, this way:

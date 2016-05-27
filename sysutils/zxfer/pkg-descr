@@ -3,7 +3,7 @@ restore or transfer of ZFS filesystems, either locally or remotely.
 
 Some of the features zxfer has:
   * Written in sh with only one dependency, rsync. Rsync mode is not used
-      in a typical restore, hence in that situation all you need is the 
+      in a typical restore, hence in that situation all you need is the
       zxfer script, your backup and an install CD/DVD.
   * Reliability is first priority - the only methods of transfer allowed
       are those that checksum/hash the transferred data.

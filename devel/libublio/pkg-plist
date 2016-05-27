@@ -3,4 +3,5 @@ lib/libublio.a
 %%PROFLIB%%lib/libublio_p.a
 lib/libublio.so
 lib/libublio.so.1
+libdata/pkgconfig/libublio.pc
 %%PORTDOCS%%%%DOCSDIR%%/README

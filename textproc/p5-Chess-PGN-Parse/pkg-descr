@@ -1,20 +1,20 @@
-Chess::PGN::Parse offers a range of methods to read and manipulate 
-Portable Game Notation files. PGN files contain chess games produced by 
-chess programs following a standard format 
-(http://www.schachprobleme.de/chessml/faq/pgn/). It is among the preferred 
-means of chess games distribution. Being a public, well established 
-standard, PGN is understood by many chess archive programs. Parsing simple 
-PGN files is not difficult. However, dealing with some of the intricacies 
-of the Standard is less than trivial. This module offers a clean handle 
+Chess::PGN::Parse offers a range of methods to read and manipulate
+Portable Game Notation files. PGN files contain chess games produced by
+chess programs following a standard format
+(http://www.schachprobleme.de/chessml/faq/pgn/). It is among the preferred
+means of chess games distribution. Being a public, well established
+standard, PGN is understood by many chess archive programs. Parsing simple
+PGN files is not difficult. However, dealing with some of the intricacies
+of the Standard is less than trivial. This module offers a clean handle
 toward reading and parsing complex PGN files.
 
-A PGN file has several tags, which are key/values pairs at the header of 
+A PGN file has several tags, which are key/values pairs at the header of
 each game, in the format [key "value"]
 
-After the header, the game follows. A string of numbered chess moves, 
-optionally interrupted by braced comments and recursive parenthesized 
-variants and comments. While dealing with simple braced comments is 
-straightforward, parsing nested comments can give you more than a 
+After the header, the game follows. A string of numbered chess moves,
+optionally interrupted by braced comments and recursive parenthesized
+variants and comments. While dealing with simple braced comments is
+straightforward, parsing nested comments can give you more than a
 headache.
 
 WWW: http://search.cpan.org/dist/Chess-PGN-Parse/

@@ -1,11 +1,11 @@
 #############################################################
 
 1) This port does not install any doom .wad ,
-so you have to download it and run prboom -iwad /path/to/doom.wad 
+so you have to download it and run prboom -iwad /path/to/doom.wad
 or put it in /usr/local/share/games/doom/ !
 
-2) Prboom is very out of date (http://prboom.sourceforge.net), so 
-if you like prboom and  want a newer version 
+2) Prboom is very out of date (http://prboom.sourceforge.net), so
+if you like prboom and  want a newer version
 you should look at http://prboom-plus.sourceforge.net!
 
 3)Have fun!

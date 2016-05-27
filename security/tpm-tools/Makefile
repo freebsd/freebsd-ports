@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tpm-tools
-PORTVERSION=	1.3.5
-PORTREVISION=	3
+PORTVERSION=	1.3.8
 CATEGORIES=	security
 MASTER_SITES=	SF/trousers/${PORTNAME}/${PORTVERSION}
 
@@ -24,9 +23,10 @@ USES=		gettext gmake iconv libtool
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 LIBS+=		-L${LOCALBASE}/lib -lintl
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} '/^libtpm_unseal_la_LIBADD =/s/$$/ -lcrypto/' \
-		${WRKSRC}/lib/Makefile.in
+	    ${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.mk>

@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	openra
-PORTVERSION=	20151224
+PORTVERSION=	20160508
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	2
 CATEGORIES=	games
 # XXX Convert to USES=nuget or package dependencies instead
 MASTER_SITES=	https://nuget.org/api/v2/package/StyleCopPlus.MSBuild/4.7.49.5?dummy=/:StyleCopPlus \
@@ -13,31 +12,36 @@ MASTER_SITES=	https://nuget.org/api/v2/package/StyleCopPlus.MSBuild/4.7.49.5?dum
 		https://nuget.org/api/v2/package/Newtonsoft.Json/7.0.1?dummy=/:Newtonsoft_Json \
 		https://nuget.org/api/v2/package/RestSharp/105.2.3?dummy=/:RestSharp \
 		https://nuget.org/api/v2/package/MaxMind.GeoIP2/2.3.1?dummy=/:MaxMind_GeoIP2 \
-		https://nuget.org/api/v2/package/SharpFont/3.0.1?dummy=/:SharpFont \
-		https://nuget.org/api/v2/package/NUnit/2.6.4?dummy=/:NUnit \
-		https://nuget.org/api/v2/package/Mono.Nat/1.2.21?dummy=/:Mono_Nat \
+		https://nuget.org/api/v2/package/SharpFont/3.1.0?dummy=/:SharpFont \
+		https://nuget.org/api/v2/package/NUnit/3.0.1?dummy=/:NUnit \
+		https://nuget.org/api/v2/package/NUnit.Console/3.0.1?dummy=/:NUnit_Console \
+		https://nuget.org/api/v2/package/Mono.Nat/1.2.24?dummy=/:Mono_Nat \
 		https://nuget.org/api/v2/package/FuzzyLogicLibrary/1.2.0?dummy=/:FuzzyLogicLibrary \
 		https://nuget.org/api/v2/package/SmartIrc4net/0.4.5.1?dummy=/:SmartIrc4net \
-		https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20150709/:SDL2_CS \
-		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20140425/:Eluant \
+		https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20151227/:SDL2_CS \
+		https://github.com/${GH_ACCOUNT}/OpenAL-CS/releases/download/20151227/:OpenAL_CS \
+		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20160124/:Eluant \
 		https://geolite.maxmind.com/download/geoip/database/:GeoLite2
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		StyleCopPlus.MSBuild-4.7.49.5.zip:StyleCopPlus \
+DISTFILES=	StyleCopPlus.MSBuild-4.7.49.5.zip:StyleCopPlus \
 		StyleCop.MSBuild-4.7.49.0.zip:StyleCop \
 		SharpZipLib-0.86.0.zip:SharpZipLib \
 		MaxMind.Db-1.1.0.0.zip:MaxMind_Db \
 		Newtonsoft.Json-7.0.1.zip:Newtonsoft_Json \
 		RestSharp-105.2.3.zip:RestSharp \
 		MaxMind.GeoIP2-2.3.1.zip:MaxMind_GeoIP2 \
-		SharpFont-3.0.1.zip:SharpFont \
-		NUnit-2.6.4.zip:NUnit \
-		Mono.Nat-1.2.21.zip:Mono_Nat \
+		SharpFont-3.1.0.zip:SharpFont \
+		NUnit-3.0.1.zip:NUnit \
+		NUnit.Console-3.0.1.zip:NUnit_Console \
+		Mono.Nat-1.2.24.zip:Mono_Nat \
 		FuzzyLogicLibrary-1.2.0.zip:FuzzyLogicLibrary \
 		SmartIrc4net-0.4.5.1.zip:SmartIrc4net \
 		SDL2-CS.dll:SDL2_CS \
+		SDL2-CS.dll.config:SDL2_CS \
+		OpenAL-CS.dll:OpenAL_CS \
+		OpenAL-CS.dll.config:OpenAL_CS \
 		Eluant.dll:Eluant \
 		GeoLite2-Country.mmdb.gz:GeoLite2
-EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.dll:N*.mmdb*}
+EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.dll:N*.config:N*.mmdb*}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios

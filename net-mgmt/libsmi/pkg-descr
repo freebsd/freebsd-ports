@@ -1,8 +1,8 @@
-The purpose of libsmi is to give network management applications 
-a concise programmer-friendly interface to access MIB module information, 
-separate the knowledge on SMI from the main parts of management applications, 
-allow to add new kinds of MIB repositories without the need 
-to adapt applications that make use of libsmi. 
+The purpose of libsmi is to give network management applications
+a concise programmer-friendly interface to access MIB module information,
+separate the knowledge on SMI from the main parts of management applications,
+allow to add new kinds of MIB repositories without the need
+to adapt applications that make use of libsmi.
 
 There are also simple tools to handle MIBs included.
 

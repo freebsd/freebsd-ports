@@ -1,9 +1,9 @@
-The SRU package provides a framework for working with the Search and 
-Retrieval by URL (SRU) protocol developed by the Library of Congress. SRU 
-defines a web service for searching databases containing metadata and 
-objects. SRU often goes under the name SRW which is a SOAP version of the 
-protocol. You can think of SRU as a RESTful version of SRW, since all the 
-requests are simple URLs instead of XML documents being sent via some sort 
+The SRU package provides a framework for working with the Search and
+Retrieval by URL (SRU) protocol developed by the Library of Congress. SRU
+defines a web service for searching databases containing metadata and
+objects. SRU often goes under the name SRW which is a SOAP version of the
+protocol. You can think of SRU as a RESTful version of SRW, since all the
+requests are simple URLs instead of XML documents being sent via some sort
 of transport layer.
 
 WWW: http://search.cpan.org/dist/SRU/

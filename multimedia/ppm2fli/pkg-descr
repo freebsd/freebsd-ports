@@ -3,10 +3,10 @@ performs a quantization. The filters of the NETPBM, PBMPLUS and FBM package
 can be used as read filters. Together with one of this packages
 a large number of image formats can be handled.
 
-UNFLICK writes images in PPM or FBM format. 
+UNFLICK writes images in PPM or FBM format.
 
-In contrast to FBM2FLI no additional package is required to build 
-PPM2FLI and UNFLICK. So it can be used without any of the above mentioned 
+In contrast to FBM2FLI no additional package is required to build
+PPM2FLI and UNFLICK. So it can be used without any of the above mentioned
 packages, if another source of PPM,PGM,PBM or FBM images is available.
 For example, PS images can be animated using ghostscript.
 

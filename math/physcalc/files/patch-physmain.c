@@ -1,6 +1,6 @@
---- physmain.c.orig	1998-08-30 14:48:34.000000000 -0500
-+++ physmain.c	2009-06-25 22:32:46.000000000 -0500
-@@ -227,7 +227,7 @@
+--- physmain.c.orig	1998-08-30 12:48:34 UTC
++++ physmain.c
+@@ -227,7 +227,7 @@ char const *s;
  				printf("Replace %s = ",v->name);
  				printexpr(v->value);
  				printf(" ?");
@@ -9,7 +9,16 @@
  				printf("\n");
  			} else
  				answer[0] = 'Y';
-@@ -711,7 +711,8 @@
+@@ -656,7 +656,7 @@ void LegalCrap()
+ 
+ }
+ 
+-void main(argc, argv)
++int main(argc, argv)
+ int argc;
+ char *argv[];
+ {	/* Main program: Init vars, load unit & help data, enter main loop */
+@@ -711,7 +711,8 @@ char *argv[];
  	} else
  		while (TRUE) {
  			printf(">");

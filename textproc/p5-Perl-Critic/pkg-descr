@@ -2,8 +2,8 @@ Perl::Critic is an extensible framework for creating and applying coding
 standards to Perl source code. Essentially, it is a static source code
 analysis engine. Perl::Critic is distributed with a number of
 Perl::Critic::Policy modules that attempt to enforce various coding
-guidelines. Most Policies are based on Damian Conway's book 
-Perl Best Practices. 
+guidelines. Most Policies are based on Damian Conway's book
+Perl Best Practices.
 You can choose and customize those Polices through the
 Perl::Critic interface. You can also create new Policy modules that
 suit your own tastes.

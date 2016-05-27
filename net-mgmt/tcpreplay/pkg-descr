@@ -9,6 +9,6 @@ the application/protocol inspection that a NIDS performs, and doesn't
 reproduce the real-world anomalies that appear on production networks
 (asymmetric routes, traffic bursts/lulls, fragmentation, retransmissions,
 etc.), tcpreplay allows for exact replication of real traffic seen on real
-networks. 
+networks.
 
 WWW: http://tcpreplay.synfin.net/trac/

@@ -9,7 +9,7 @@ Features :
   * Nested blocks
   * Include external file
   * Custom tags format (default {mytag})
-      
+
 HTML_Template_ITX :
 With this class you get the full power of the phplib template class.
 You may have one file with blocks in it but you have as well one main file

@@ -10,7 +10,7 @@ Now you need follow this steps:
 # %%QMAIL_PREFIX%%/bin/qmail-popup blah %%PREFIX%%/bin/checkadpassword id
 
 Put in a valid username and password and it should give you the results of id.
-Do the same with pwd to make sure that the user, group and directory are 
+Do the same with pwd to make sure that the user, group and directory are
 correct.
 
 Do it again with an invalid username and password to verify that it will

@@ -1,10 +1,10 @@
-Amazon Simple Email Service Scripts 
+Amazon Simple Email Service Scripts
 
-The Amazon SES Scripts zip archive contains the following Perl scripts: 
-- ses-get-stats.pl: retrieves statistics about Amazon SES account usage. 
-- ses-send-email.pl: send email using Amazon SES. 
+The Amazon SES Scripts zip archive contains the following Perl scripts:
+- ses-get-stats.pl: retrieves statistics about Amazon SES account usage.
+- ses-send-email.pl: send email using Amazon SES.
 - ses-verify-email-addresses.pl: verify email addresses to be used with
-                                 Amazon SES. 
-- SES.pm: a module used by all of the above scripts. 
+                                 Amazon SES.
+- SES.pm: a module used by all of the above scripts.
 
 WWW: http://aws.amazon.com/code/Amazon-SES/8945574369528337

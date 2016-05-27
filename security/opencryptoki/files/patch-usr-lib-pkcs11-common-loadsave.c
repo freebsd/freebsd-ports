@@ -1,6 +1,6 @@
---- usr/lib/pkcs11/common/loadsave.c.orig	2010-07-29 21:28:41.000000000 +0900
-+++ usr/lib/pkcs11/common/loadsave.c	2010-10-20 00:11:28.399983780 +0900
-@@ -301,11 +301,9 @@
+--- usr/lib/pkcs11/common/loadsave.c.orig	2016-04-29 17:26:45 UTC
++++ usr/lib/pkcs11/common/loadsave.c
+@@ -293,11 +293,9 @@
  #include <string.h>
  #include <strings.h>
  #include <unistd.h>
@@ -10,14 +10,14 @@
  #include <sys/ipc.h>
 -#include <sys/file.h>
  #include <errno.h>
- 
+ #include <syslog.h>
  #include <pwd.h>
-@@ -328,7 +326,7 @@
-    // Set absolute permissions or rw-rw-r--
-    fchmod(file,S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH);
+@@ -637,7 +635,7 @@ void set_perm(int file)
+ 		// Set absolute permissions or rw-rw----
+ 		fchmod(file, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
  
--   grp = getgrnam("pkcs11"); // Obtain the group id
-+   grp = getgrnam(PKCS11GROUP); // Obtain the group id
-    if (grp){
- 	   fchown(file,getuid(),grp->gr_gid);  // set ownership to root, and pkcs11 group
-    }
+-		grp = getgrnam("pkcs11");	// Obtain the group id
++		grp = getgrnam(PKCS11GROUP);	// Obtain the group id
+ 		if (grp) {
+ 			// set ownership to root, and pkcs11 group
+ 			if (fchown(file, getuid(), grp->gr_gid) != 0) {

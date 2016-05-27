@@ -1,4 +1,4 @@
-py-radix is an implementation of a radix tree data structure 
+py-radix is an implementation of a radix tree data structure
 for the storage and retrieval of IPv4 and IPv6 network prefixes.
 The radix tree is the data structure most commonly used for
 routing table lookups. It efficiently stores network prefixes of

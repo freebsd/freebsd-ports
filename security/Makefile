@@ -115,7 +115,6 @@
     SUBDIR += duo
     SUBDIR += easy-rsa
     SUBDIR += easy-rsa2
-    SUBDIR += easypg
     SUBDIR += elixir-comeonin
     SUBDIR += elixir-comeonin_i18n
     SUBDIR += elixir-jose
@@ -783,6 +782,7 @@
     SUBDIR += pinentry-gnome3
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt4
+    SUBDIR += pinentry-qt5
     SUBDIR += pinentry-tty
     SUBDIR += pixiewps
     SUBDIR += pkcrack
@@ -967,6 +967,7 @@
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-devise-two-factor
+    SUBDIR += rubygem-digest-crc
     SUBDIR += rubygem-doorkeeper
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
@@ -991,6 +992,7 @@
     SUBDIR += rubygem-omniauth-multipassword
     SUBDIR += rubygem-omniauth-saml
     SUBDIR += rubygem-omniauth-shibboleth
+    SUBDIR += rubygem-openssl-ccm
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-rack-oauth2

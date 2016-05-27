@@ -1,4 +1,4 @@
-On request, decodes all params from UTF-8 octets into a sequence of 
+On request, decodes all params from UTF-8 octets into a sequence of
 logical characters. On response, encodes body into UTF-8 octets.
 
 WWW: http://search.cpan.org/dist/Catalyst-Plugin-Unicode/

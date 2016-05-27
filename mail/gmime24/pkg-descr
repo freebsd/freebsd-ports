@@ -1,7 +1,7 @@
 GMime is a set of utilities for parsing and creating messages using
-the Multipurpose Internet Mail Extension (MIME) as defined by the 
+the Multipurpose Internet Mail Extension (MIME) as defined by the
 following RFCs:
- 
+
  * 0822: Standard for the Format of Arpa Internet Text Messages
  * 2045: Multipurpose Internet Mail Extensions (MIME) Part One:
          Format of Internet Message Bodies

@@ -18,7 +18,7 @@ Numerical computation
     * Linear algebra
     * Sparse matrices
     * Polynomials and rational functions
-    * Simulation: explicit and implicit systems of differential 
+    * Simulation: explicit and implicit systems of differential
       equations solvers
     * Classic and robust control
     * Differentiable and non-differentiable optimization

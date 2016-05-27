@@ -1,13 +1,13 @@
-iso2mkv is software for automated DVD to XviD/vorbis MKV video conversion. 
-Gives almost total control on the process of video compression at maximum 
-quality, while being simple and straightforward to use (a kind of 
-'life-hack'). The intended audience is advanced end-users and the script is 
+iso2mkv is software for automated DVD to XviD/vorbis MKV video conversion.
+Gives almost total control on the process of video compression at maximum
+quality, while being simple and straightforward to use (a kind of
+'life-hack'). The intended audience is advanced end-users and the script is
 not user-error-proof.
 
-Based on mplayer, mencoder, oggenc or lame, and mkvmerge (if not properly 
-installed, won't work). This is only a shell script that wraps the other 
-programs. If you can watch the DVD with MPlayer, you can compress it with 
-iso2mkv. Other used programs (hopefully included in most GNU/Linux 
-distributions as well a FreeBSD :) ) are basename, bc, nice, stat. 
+Based on mplayer, mencoder, oggenc or lame, and mkvmerge (if not properly
+installed, won't work). This is only a shell script that wraps the other
+programs. If you can watch the DVD with MPlayer, you can compress it with
+iso2mkv. Other used programs (hopefully included in most GNU/Linux
+distributions as well a FreeBSD :) ) are basename, bc, nice, stat.
 
 WWW: http://5ko.free.fr/en/iso2mkv.html

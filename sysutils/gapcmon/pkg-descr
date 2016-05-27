@@ -1,6 +1,6 @@
 GUI application used to monitor UPS devices controlled by the APCUPSD package.
-The program uses the NIS interface from apcupsd to collect event and status 
-information for display to the end-user.  Because of this great interface, 
+The program uses the NIS interface from apcupsd to collect event and status
+information for display to the end-user.  Because of this great interface,
 this program can be executed on any OS supported machine and use the network
 socket interface to connect back to apcupsd.
 

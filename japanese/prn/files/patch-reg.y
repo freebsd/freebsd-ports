@@ -1,6 +1,6 @@
---- reg.y.org	Mon Nov 29 18:43:56 1993
-+++ reg.y	Thu Jan 20 12:29:44 2005
-@@ -20,6 +20,7 @@
+--- reg.y.orig	1993-11-29 09:43:56 UTC
++++ reg.y
+@@ -20,6 +20,7 @@ static char *sccsid = "@(#)reg.y 2.1 (Y.
  #endif
  
  #include <stdio.h>
@@ -8,7 +8,7 @@
  #include <ctype.h>
  #include "cmt.h"
  #include "euc.h"
-@@ -286,7 +287,7 @@
+@@ -286,7 +287,7 @@ yyerror(s)
   *  Node Creation Functions                                           *
   *                                                                    *
   **********************************************************************/

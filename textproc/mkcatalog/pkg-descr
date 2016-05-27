@@ -23,7 +23,7 @@ usage: mkcatalog [-pq] install|deinstall dtd-subdirectory [catalog-filename]
 
         This commands do the following actions:
             1. Add `CATALOG "html/catalog"' to ${PREFIX}/share/sgml/catalog.
-            2. Add `CATALOG "4.0/catalog"' 
+            2. Add `CATALOG "4.0/catalog"'
                 to ${PREFIX}/share/sgml/html/catalog.
 
 
@@ -31,14 +31,14 @@ usage: mkcatalog [-pq] install|deinstall dtd-subdirectory [catalog-filename]
 
         This commands do the following actions:
             1. Add `CATALOG "docbook/catalog"' to ${PREFIX}/share/sgml/catalog.
-            2. Add `CATALOG "4.1/docbook41.cat"' 
+            2. Add `CATALOG "4.1/docbook41.cat"'
                 to ${PREFIX}/share/sgml/docbook/catalog.
 
 
         # mkcatalog deinstall docbook/4.1 docbook41.cat
 
         This commands do the following actions:
-            1. Delete `CATALOG "4.1/docbook41.cat"' 
+            1. Delete `CATALOG "4.1/docbook41.cat"'
                 from ${PREFIX}/share/sgml/docbook/catalog.
             2. Delete `CATALOG "docbook/catalog"'
                 from ${PREFIX}/share/sgml/catalog.

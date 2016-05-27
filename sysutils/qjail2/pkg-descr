@@ -1,5 +1,5 @@
 This is the last version that handles both the 8.x and 9.x install
-media formats. 
+media formats.
 
 Qjail [ q = quick ] is a 4th generation wrapper for the basic chroot jail
 system that includes security and performance enhancements. Plus a new level

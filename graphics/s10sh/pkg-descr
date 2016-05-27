@@ -2,16 +2,16 @@ S10sh is a USB/serial userspace driver for the Canon PowerShot digital cameras.
 Using S10sh you can download, upload and explore the images captured with your
 PowerShot camera. The interface is quite similar to DOS's command.com.
 
-S10sh supports the following PowerShot models: 
+S10sh supports the following PowerShot models:
 
-      G1 (works with USB, not reported if works with the serial interface) 
+      G1 (works with USB, not reported if works with the serial interface)
       G3 (from local patches, perhaps needs further testing/debug)
-      S10 (serial and USB) 
-      S20 (serial and USB) 
-      S100 aka Digital Ixus (USB only, since it lacks the serial interface) 
+      S10 (serial and USB)
+      S20 (serial and USB)
+      S100 aka Digital Ixus (USB only, since it lacks the serial interface)
       A20 (needs testing)
-      A50 (serial only, supported with problems) 
-      Pro70 (serial only, supported with problems) 
+      A50 (serial only, supported with problems)
+      Pro70 (serial only, supported with problems)
 
 Other models are reported to work as well: Elph S400, Digital Ixus V3, S30,
 A60, EOS-10D.

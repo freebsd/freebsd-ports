@@ -8,13 +8,13 @@ In statistics, the chi-square test calculates "how random" a series of
 numbers is.  But it doesn't simply say "yes" or "no".  Instead, it gives
 you a confidence interval, which sets upper and lower bounds on the
 likelihood that the variation in your data is due to chance.  See the
-examples below. 
+examples below.
 
 There's just one function in this module: chisquare().  Instead of
 returning the bounds on the confidence interval in a tidy little
 two-element array, it returns an English string.  This was a deliberate
 design choice---many people misinterpret chi-square results, and the
-string helps clarify the meaning. 
+string helps clarify the meaning.
 
 WWW: http://search.cpan.org/dist/Statistics-ChiSquare/
 

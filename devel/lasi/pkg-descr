@@ -1,5 +1,5 @@
 libLASi is a library written by Larry Siden  that provides a C++ stream
-output interface ( with operator << ) for creating Postscript documents 
+output interface ( with operator << ) for creating Postscript documents
 that can contain characters from any of the scripts and symbol blocks
 supported in Unicode  and by Owen Taylor's Pango layout engine. The
 library accommodates right-to-left scripts such as Arabic and Hebrew as

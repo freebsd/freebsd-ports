@@ -21,8 +21,8 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-AFS_DISTVERSION=	1.6.15
-DBVERSION=	2015-07-13
+AFS_DISTVERSION=	1.6.18
+DBVERSION=	2016-01-01
 
 USES=		cpe kmod tar:bzip2
 USE_LDCONFIG=	yes
@@ -94,14 +94,6 @@ post-extract:
 	${MKDIR} ${WRKDIR}/conf
 	cd ${KERNCONFDIR} && \
 	    /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF} >/dev/null
-# Unbreak on FreeBSD 10.2 (until official support arrives)
-.for a in i386 amd64
-	@${SED} -e 's,101,102, ; /FBSD102_ENV/ { h; s/102/101/; G; }' \
-		${WRKSRC}/src/config/param.${a}_fbsd_101.h \
-		> ${WRKSRC}/src/config/param.${a}_fbsd_102.h
-.endfor
-	@${REINPLACE_CMD} -e '/fbsd_101/ { h; s/101/102/; s/31/32/; x; G; }' \
-		${WRKSRC}/src/config/afs_sysnames.h
 
 create-sample-files:
 	@${ECHO_CMD} openafs.org > ${WRKDIR}/ThisCell

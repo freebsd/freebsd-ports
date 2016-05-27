@@ -1,5 +1,5 @@
 This module implement RPC::ExtDirect gateway for CGI environment.
-It was successfully tested in Apache CGI and 
-HTTP::Server::Simple::CGI applications. 
+It was successfully tested in Apache CGI and
+HTTP::Server::Simple::CGI applications.
 
 WWW: http://search.cpan.org/dist/CGI-ExtDirect/

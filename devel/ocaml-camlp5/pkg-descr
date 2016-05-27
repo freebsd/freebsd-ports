@@ -2,4 +2,4 @@ Camlp5 is a preprocessor-pretty-printer of ocaml.
 It offers tools for syntax (grammars) and the ability to modify the concrete
 syntax of the language (quotations, syntax extensions).
 
-WWW: http://camlp5.gforge.inria.fr/ 
+WWW: http://camlp5.gforge.inria.fr/

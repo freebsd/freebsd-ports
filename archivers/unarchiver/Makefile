@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unar
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10
 CATEGORIES=	archivers gnustep
 MASTER_SITES=	http://wakaba.c3.cx/releases/TheUnarchiver/
 DISTNAME=	${PORTNAME}${PORTVERSION}_src

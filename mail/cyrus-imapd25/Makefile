@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.7
-PORTREVISION=	2
+PORTVERSION=	2.5.8
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -49,7 +49,7 @@ OPTIONS_DEFAULT=	BDB IDLED
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Enable autocreate support
 AUTOCREATE_CONFIGURE_ENABLE=	autocreate
-BDB_USE=		BDB=yes
+BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${LOCALBASE}/lib
 CLAMAV_DESC=		Use ClamAV
@@ -72,7 +72,7 @@ LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 MURDER_DESC=		Enable IMAP Murder support
 MURDER_CONFIGURE_ENABLE=murder
 MURDER_MAKE_ENV=	PTHREAD_LIBS="-lpthread"
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-mysql=yes \
 			--with-mysql-libdir=${LOCALBASE}/lib/mysql \
 			--with-mysql-incdir=${LOCALBASE}/include/mysql
@@ -228,6 +228,7 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 		"! ( -name Makefile.dist -o -name Makefile \
+		-o -name .deps -o -name .dirstamp -o -name .libs \
 		-o -name .gitignore -o -name htmlstrip.Po \
 		-o -name htmlstrip.c )"
 

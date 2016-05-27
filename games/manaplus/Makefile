@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-sdl2 \
 		--without-internalsdlgfx
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=		OPENGL
 OPTIONS_DEFAULT=	OPENGL

@@ -1,0 +1,9 @@
+--- plugins/LadspaEffect/CMakeLists.txt.orig	2015-03-08 02:47:14 UTC
++++ plugins/LadspaEffect/CMakeLists.txt
+@@ -24,3 +24,6 @@ INCLUDE(BuildPlugin)
+ BUILD_PLUGIN(ladspaeffect LadspaEffect.cpp LadspaControls.cpp LadspaControlDialog.cpp LadspaSubPluginFeatures.cpp LadspaEffect.h LadspaControls.h LadspaControlDialog.h LadspaSubPluginFeatures.h MOCFILES LadspaEffect.h LadspaControls.h LadspaControlDialog.h EMBEDDED_RESOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.png")
+ 
+ 
++
++include_directories(${SAMPLERATE_INCLUDE_DIRS})
++link_directories(${SAMPLERATE_LIBRARY_DIRS})

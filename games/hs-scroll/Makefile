@@ -10,7 +10,7 @@ COMMENT=	A roguelike game
 
 LICENSE=	GPLv2
 
-PKGNAMEPREFIX=	
+PKGNAMEPREFIX=
 
 USE_CABAL=	IfElse case-insensitive data-default monad-loops mtl \
 		optparse-applicative ncurses random text vector

@@ -274,12 +274,6 @@ post-patch:
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
-post-patch-COMPILER_RT-on:
-.if ${ARCH} == "amd64"
-	cd ${WRKSRC_compiler_rt} && \
-	    patch < ${PATCHDIR}/compiler-rt-patch-no-m32
-.endif
-
 post-build-COMPILER_RT-on:
 	${MKDIR} ${WRKDIR}/compiler-rt-build
 	cd ${WRKDIR}/compiler-rt-build && \
@@ -323,6 +317,9 @@ post-install-CLANG-on:
 post-install-COMPILER_RT-on:
 	cd ${WRKDIR}/compiler-rt-build && \
 	${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET}
+.if ${ARCH} == "amd64"
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/libclang_rt*i386*
+.endif
 
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/utils/lit/lit.py \

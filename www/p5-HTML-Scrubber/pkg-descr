@@ -1,10 +1,10 @@
-HTML::Scrubber - Perl extension for scrubbing/sanitizing html. If you wanna 
-"scrub" or "sanitize" html input in a reliable an flexible fashion, then 
+HTML::Scrubber - Perl extension for scrubbing/sanitizing html. If you wanna
+"scrub" or "sanitize" html input in a reliable an flexible fashion, then
 this module is for you.
 
-When a tag is encountered, HTML::Scrubber allows/denies the tag using the 
-explicit rule if one exists. If no explicit rule exists, Scrubber applies 
-the default rule. If an explicit rule exists, but it's a simple rule(1), 
+When a tag is encountered, HTML::Scrubber allows/denies the tag using the
+explicit rule if one exists. If no explicit rule exists, Scrubber applies
+the default rule. If an explicit rule exists, but it's a simple rule(1),
 the default attribute rule is applied.
 
 WWW: http://search.cpan.org/dist/HTML-Scrubber/

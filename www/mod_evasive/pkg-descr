@@ -1,4 +1,4 @@
-mod_dosevasive is an evasive maneuvers module for Apache to provide evasive 
+mod_dosevasive is an evasive maneuvers module for Apache to provide evasive
 action in the event of an HTTP DoS or DDoS attack or brute force attack.
 It is also designed to be a detection and network management tool, and can be
 easily configured to talk to ipchains, firewalls, routers, and etcetera.
@@ -10,7 +10,7 @@ following:
 
     * Requesting the same page more than a few times per second
     * Making more than 50 concurrent requests on the same child per second
-    * Making any requests while temporarily blacklisted (on a blocking list) 
+    * Making any requests while temporarily blacklisted (on a blocking list)
 
 This method has worked well in both single-server script attacks as well as
 distributed attacks, but just like other evasive tools, is only as useful to
@@ -25,6 +25,6 @@ design, legitimate requests are never compromised (even from proxies and NAT
 addresses) but only scripted attacks. Even a user repeatedly clicking on
 'reload' should not be affected unless they do it maliciously. mod_dosevasive
 is fully tweakable through the Apache configuration file, easy to incorporate
-into your web server, and easy to use. 
+into your web server, and easy to use.
 
 WWW: http://www.zdziarski.com/blog/?page_id=442

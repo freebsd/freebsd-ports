@@ -165,6 +165,7 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/de/man1/dpkg-deb.1.gz
 %%NLS%%man/de/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/de/man1/dpkg-divert.1.gz
+%%NLS%%man/de/man1/dpkg-genchanges.1.gz
 %%NLS%%man/de/man1/dpkg-gencontrol.1.gz
 %%NLS%%man/de/man1/dpkg-gensymbols.1.gz
 %%NLS%%man/de/man1/dpkg-maintscript-helper.1.gz

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	camlp5
-PORTVERSION=	6.15
+PORTVERSION=	6.16
 CATEGORIES=	devel
 MASTER_SITES=	http://camlp5.gforge.inria.fr/distrib/src/ \
 		http://cristal.inria.fr/~ddr/camlp5/distrib/src/ \
@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PKGBASE}
 
 PATCH_SITES=	${MASTER_SITES}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Preprocessor-pretty-printer of OCaml
 
 LICENSE=	INRIA

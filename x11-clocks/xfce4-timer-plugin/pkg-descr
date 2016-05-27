@@ -6,6 +6,6 @@ preferences window. Each alarm is either a countdown or is run at a specified
 time. By default a simple dialog pops up at the end of the countdown. The user
 can choose an external command to be run as the alarm and may also choose to
 have this repeated a specified number of times with a given interval between
-repetitions. 
+repetitions.
 
 WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-timer-plugin

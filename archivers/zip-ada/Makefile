@@ -23,6 +23,8 @@ DEMOS=		demo_csv_into_zip demo_unzip demo_zip test_chunk \
 		test_stream_performance test_unz_streams \
 		test_zip_info_timing za_gnat zip_with_many_files ziptest
 
+PORTSCOUT=	ignore:50_f1	# Portscout currently showing false positive
+
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -P zipada.gpr)
 

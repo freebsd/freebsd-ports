@@ -13,8 +13,6 @@ COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png
 
-MANUAL_PACKAGE_BUILD=	huge (930M)
-
 USES=		jpeg shebangfix zip:infozip
 SHEBANG_FILES=	server/rcon.pl server/rcon2irc/rcon2irc.pl
 WRKSRC=		${WRKDIR}/Xonotic

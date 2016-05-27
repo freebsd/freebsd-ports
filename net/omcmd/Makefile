@@ -9,6 +9,9 @@ MASTER_SITES=	http://people.bridgewater.edu/~dparsley/omcmd/
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	CLI utility for performing OMAPI queries and updates on a ISC DHCP
 
+DEPRECATED=	Unfetchable and depends on expired net/isc-dhcp41-server
+EXPIRATION_DATE=2016-06-01
+
 BUILD_DEPENDS=	${LOCALBASE}/sbin/dhcpd:net/isc-dhcp41-server
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz

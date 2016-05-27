@@ -2,7 +2,7 @@ Libchamplain is a C library providing a ClutterActor to display maps. It also
 provides a Gtk+ widget to display maps in Gtk+ applications. Mono, Python and
 Perl bindings are available.
 
-It supports numerous free map sources such as OpenStreetMap [1], 
+It supports numerous free map sources such as OpenStreetMap [1],
 OpenAerialMap [2] and Maps for free [3].
 [1] http://www.openstreetmap.org/ [2] http://www.openaerialmap.org/
 [3] http://www.maps-for-free.com/

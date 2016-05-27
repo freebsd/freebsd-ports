@@ -4,7 +4,7 @@ from memory, data files, or mathematical functions. If you use Python to
 perform computations or as `glue' for numerical programs, you can use this
 package to plot data on the fly as they are computed. And the combination with
 Python makes it is easy to automate things, including to create crude
-`animations' by plotting different datasets one after another. 
+`animations' by plotting different datasets one after another.
 
 Commands are communicated to gnuplot through a pipe and data either through
 the same pipe (as "inline" data) or through temporary files. It has been
@@ -13,8 +13,8 @@ written and tested on a Unix computer.
 This package has an object-oriented design that allows the user flexibility to
 set plot options and to run multiple gnuplot sessions simultaneously. If you
 are more ambitious, it is not difficult to add entirely new types of plottable
-items by deriving from the `PlotItem' class. 
+items by deriving from the `PlotItem' class.
 
-For a demonstration, run the python file by typing `python demo.py'. 
+For a demonstration, run the python file by typing `python demo.py'.
 
 WWW: http://gnuplot-py.sourceforge.net/

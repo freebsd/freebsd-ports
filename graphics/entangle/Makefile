@@ -6,7 +6,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://entangle-photo.org/download/sources/
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Digital camera tethered control and capture program
 
 LICENSE=	GPLv3

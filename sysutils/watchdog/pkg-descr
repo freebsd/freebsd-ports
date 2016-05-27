@@ -7,4 +7,4 @@ is not reset within 32 seconds thereafter the hardware will reboot.
 This software was specifically developed for http://www.soekris.com/ boards
 and for use within the http://www.wirelessleiden.nl/ project.
 
-WWW: http://www.webweaving.org/watchdog/ 
+WWW: http://www.webweaving.org/watchdog/

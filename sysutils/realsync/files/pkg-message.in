@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------------------
 Author: Krasimir Nachev e-mail: krasi@it-sys.org
 Please:
-	1. Edit %%PREFIX%%/etc/realsync.cfg 
+	1. Edit %%PREFIX%%/etc/realsync.cfg
         2. Genenerate a ssh key with the command below:
 		ssh-keygen -b 4048 -t rsa -C "realsync automatic sync"
 	3. Copy the key to some remote nodes:

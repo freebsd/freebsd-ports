@@ -222,6 +222,7 @@ include/asterisk/mod_format.h
 include/asterisk/module.h
 include/asterisk/monitor.h
 include/asterisk/musiconhold.h
+include/asterisk/named_locks.h
 include/asterisk/netsock.h
 include/asterisk/netsock2.h
 include/asterisk/network.h

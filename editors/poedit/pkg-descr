@@ -2,21 +2,21 @@ Poedit is cross-platform gettext catalogs (.po files) editor. It is built
 with wxWidgets toolkit and can run on any platform supported by it (although
 it was tested only on Unix with GTK+ and Windows). It aims to provide more
 convenient approach to editing catalogs than launching vi and editing the
-file by hand. 
+file by hand.
 
-Here is a brief features list: 
+Here is a brief features list:
 
    - User friendly way of editing entries. You can easily navigate in large
      catalogs, easily enter or modify entries (fuzzy flag is automatically
      removed if you change translation, you can copy original string to
-     translation by pressing Alt-I) 
-   - Whitespaces highlighting 
+     translation by pressing Alt-I)
+   - Whitespaces highlighting
    - Fuzzy and untranslated records highlighting. Furthermore, untranslated
-     and fuzzy translations are displayed at the top of the list 
-   - Automatic compilation of .mo files (optional) 
-   - Automatic headers update 
-   - References browser lets you see where in what context the string is used 
-   - You can use Poedit to scan source code for translatable strings 
-   - Integration with KDE and GNOME desktops 
+     and fuzzy translations are displayed at the top of the list
+   - Automatic compilation of .mo files (optional)
+   - Automatic headers update
+   - References browser lets you see where in what context the string is used
+   - You can use Poedit to scan source code for translatable strings
+   - Integration with KDE and GNOME desktops
 
 WWW: http://www.poedit.net/

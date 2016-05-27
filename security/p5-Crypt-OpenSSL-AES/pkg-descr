@@ -1,4 +1,4 @@
-The Crypt::OpenSSL::AES module implements a wrapper around 
+The Crypt::OpenSSL::AES module implements a wrapper around
 OpenSSL's AES (Rijndael) library.
 
 WWW: http://search.cpan.org/dist/Crypt-OpenSSL-AES/

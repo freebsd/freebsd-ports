@@ -4,7 +4,7 @@ NOTE:
 
 - safe_mode must be turned off in php.ini
 - file_uploads turned On for HTTP file uploads.
-- JavaScript turned on for the browser. Setting the flags and 
-  encrypting the supplied URL initially requires the use of 
+- JavaScript turned on for the browser. Setting the flags and
+  encrypting the supplied URL initially requires the use of
   JavaScript.
 ------------------------------------------------------------

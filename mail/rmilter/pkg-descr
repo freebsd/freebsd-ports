@@ -1,4 +1,4 @@
-Rmilter is a milter that makes greylisting, rate limiting, 
+Rmilter is a milter that makes greylisting, rate limiting,
 clamav, spamd, spf, regexp and other checks for incoming e-mail.
 
 WWW: https://github.com/vstakhov/rmilter/

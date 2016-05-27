@@ -3,7 +3,7 @@ mutt's query_command but also works very well solo (and with other MUAs).
 
 pyCardDAV consists of pycardsyncer, a program for syncing your CardDAV
 resource into a local database and of pc_query, a program for querying the
-local database. 
+local database.
 
 Features:
 

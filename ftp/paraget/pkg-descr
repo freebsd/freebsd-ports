@@ -6,7 +6,7 @@ in principle accomplish a much greater bandwidth by downloading from all
 the sites in parallel . This is accomplished by dividing the file being
 fetched into several pieces, and by getting each piece from a different
 server, and then re-assembling them.
-   
+
 If there are enough mirror sites, this partitioning makes it so that the
 bottleneck is now placed at the client end, maxing the client's connection.
 

@@ -4,6 +4,7 @@
 PORTNAME=		diamond
 PORTVERSION=		0.7.12
 DISTVERSIONPREFIX=	v
+PORTREVISION=		1
 CATEGORIES=		biology
 
 MAINTAINER=		jrm@ftfl.ca
@@ -11,8 +12,7 @@ COMMENT=		BLAST-compatible local sequence aligner
 
 LICENSE=		BSD2CLAUSE
 
-BUILD_DEPENDS=		${LOCALBASE}/include/boost:devel/boost-libs
-RUN_DEPENDS=		${LOCALBASE}/include/boost:devel/boost-libs
+LIB_DEPENDS=		libboost_system.so:devel/boost-libs
 
 ONLY_FOR_ARCHS=		amd64
 

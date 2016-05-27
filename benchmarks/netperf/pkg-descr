@@ -1,6 +1,6 @@
 Netperf is a serious networking performance evaluation tool being
 distributed under GPL by HP's Information Networks Division.
-Testing is done using a pair of programs: `netserver' (the server) and 
+Testing is done using a pair of programs: `netserver' (the server) and
 `netperf' (the measurement tool).
 
 Netperf allows control over a large number of test `variables'.

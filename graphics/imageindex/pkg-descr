@@ -11,7 +11,7 @@ A flexible digital photo gallery tool. Features include:
  o Digital photo details extracted from EXIF data
  o Can optionally recurse directory trees and make montage images of
    directory contents
- o Easily configurable, can use an rc file.  
+ o Easily configurable, can use an rc file.
  o CSS is used for fonts/styles.
  o Can handle many image file formats
  o Pages pass W3C specs.

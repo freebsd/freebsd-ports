@@ -28,7 +28,7 @@ start_precmd=${name}_prestart
 stop_postcmd="rm -f ${pidfile}"
 
 sqlgrey_enable=${sqlgrey_enable-"NO"}
-required_files=${sqlgrey_config-"%%PREFIX%%/%%ETCDIR%%/sqlgrey.conf"}
+required_files=${sqlgrey_config-"%%ETCDIR%%/sqlgrey.conf"}
 pidfile=${sqlgrey_pidfile-"/var/run/sqlgrey.pid"}
 
 command_args="--configfile=${required_files} --pidfile=${pidfile} --daemonize"

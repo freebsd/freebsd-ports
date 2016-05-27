@@ -1,8 +1,8 @@
 gtkam is an universal, free GTK+ application that will allow
-downloading, saving, and manipulation of images from several 
+downloading, saving, and manipulation of images from several
 different digital camera models, or from the local harddrive.
 
-gtkam supports a wide array of digital camera models.  
+gtkam supports a wide array of digital camera models.
 Visit http://www.gphoto.org/proj/libgphoto2/support.php for
 an updated list.
 

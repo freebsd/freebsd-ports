@@ -7,7 +7,7 @@ You may find more information at the following URL:
 http://www.vuxml.org/freebsd/36bd352d-299b-11e5-86ff-14dae9d210b8.html
 
 Although this database client is not listed as
-"affected", it is vulnerable and will not be 
+"affected", it is vulnerable and will not be
 receiving a patch. Please take note of this when
 deploying this software.
 

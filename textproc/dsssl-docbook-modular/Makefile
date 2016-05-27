@@ -18,17 +18,13 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	DSSSL stylesheets for the DocBook DTD by Norman Walsh
 
-BUILD_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
+BUILD_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_MTREE=	yes
 
 RELDIR=		docbook/dsssl/modular
 INSTDIR=	${PREFIX}/share/sgml/${RELDIR}
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
-PLIST_SUB=	XMLCATMGR=${XMLCATMGR} DTDDIR=${RELDIR} \
-		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
 do-build:
 	${RM} -Rf ${WRKSRC}/docsrc

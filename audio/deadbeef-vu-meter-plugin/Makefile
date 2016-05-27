@@ -18,6 +18,8 @@ GH_TAGNAME=	940d8d7
 
 USES=		gmake pkgconfig
 
+MAKE_JOBS_UNSAFE=	yes
+
 PLIST_FILES=	share/deadbeef/pixmaps/vumeter.png
 
 OPTIONS_DEFINE=	GTK2 GTK3

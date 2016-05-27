@@ -1,4 +1,4 @@
 This module subclasses Log::Dispatch::File for logging to date/time stamped
-files. 
+files.
 
 WWW: http://search.cpan.org/dist/Log-Dispatch-File-Rolling/

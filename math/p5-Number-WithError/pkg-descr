@@ -1,17 +1,17 @@
-This class is a container class for numbers with a number of associated 
-symmetric and asymmetric errors. It overloads practically all common 
-arithmetic operations and trigonometric functions to propagate the errors. 
-It can do proper scientific rounding (as explained in more detail below in 
+This class is a container class for numbers with a number of associated
+symmetric and asymmetric errors. It overloads practically all common
+arithmetic operations and trigonometric functions to propagate the errors.
+It can do proper scientific rounding (as explained in more detail below in
 the documentation of the significant_digit() method).
 
-You can use Math::BigFloat objects as the internal representation of 
+You can use Math::BigFloat objects as the internal representation of
 numbers in order to support arbitrary precision calculations.
 
 Errors are propagated using Gaussian error propagation.
 
-With a notable exception, the test suite covers way over ninety percent of 
-the code. The remaining holes are mostly difficult-to-test corner cases 
-and sanity tests. The comparison routines are the exception for which 
+With a notable exception, the test suite covers way over ninety percent of
+the code. The remaining holes are mostly difficult-to-test corner cases
+and sanity tests. The comparison routines are the exception for which
 there will be more extensive tests in a future release.
 
 WWW: http://search.cpan.org/dist/Number-WithError/

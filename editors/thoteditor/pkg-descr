@@ -1,7 +1,7 @@
 Thot offers the usual functionality of a word processor, but it also
 processes the document structure. It includes a large set of advanced
 tools, such as a spell checker and an index generator, and it allows to
-export documents to common formats like HTML and LaTeX. 
+export documents to common formats like HTML and LaTeX.
 This release should be considered as a snapshot of a work in progress. A
 large part of the intended features of Thot Editor are implemented, but
 some of them are not complete yet and the software is not supposed to be very

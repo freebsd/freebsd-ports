@@ -1,87 +1,51 @@
-*** Config.orig	Sat Jun 14 19:32:18 1997
---- Config	Tue Aug  8 20:29:41 2000
-***************
-*** 1,9 ****
-  #	-*- sh -*-
-  #	SECTION A.) Global configuration
-  #	Select compiler command
-! CC	= gcc
-  #
-! CFLAGS	= -Wall -Wno-parentheses -Wshadow -Wstrict-prototypes -Wmissing-prototypes
-  LDFLAGS	=
-  EXLIBS	=
-  #
---- 1,9 ----
-  #	-*- sh -*-
-  #	SECTION A.) Global configuration
-  #	Select compiler command
-! #CC	= gcc
-  #
-! #CFLAGS	= -Wall -Wno-parentheses -Wshadow -Wstrict-prototypes -Wmissing-prototypes
-  LDFLAGS	=
-  EXLIBS	=
-  #
-***************
-*** 14,35 ****
-  #LUA	= True
-  #
-  #	Define this to disable debugging
-! #NDEBUG	= True
-  #
-  #
-  #
-  #	SECTION B.) yaps configuration
-  #	Name and location of global configuration file
-! YAPS_CFGFILE	= /etc/yaps.rc
-  #	Name of local configuration file (location is $HOME.)
-  YAPS_LCFGFILE 	= .yapsrc
-  #	Directory for installing the binary
-! YAPS_BINDIR	= /usr/local/bin
-  #	Directory for optional support files
-! YAPS_LIBDIR	= /usr/local/lib/yaps
-  #	User/Group/Mode for yaps
-  YAPS_USER	= bin
-! YAPS_GROUP	= uucp
-  YAPS_MODE	= 2711
-  #	User/Group/Mode for global configuration file
-  YAPS_RCUSER	= bin
---- 14,35 ----
-  #LUA	= True
-  #
-  #	Define this to disable debugging
-! NDEBUG	= True
-  #
-  #
-  #
-  #	SECTION B.) yaps configuration
-  #	Name and location of global configuration file
-! YAPS_CFGFILE	= ${PREFIX}/etc/yaps.rc
-  #	Name of local configuration file (location is $HOME.)
-  YAPS_LCFGFILE 	= .yapsrc
-  #	Directory for installing the binary
-! YAPS_BINDIR	= ${PREFIX}/bin
-  #	Directory for optional support files
-! YAPS_LIBDIR	= ${PREFIX}/share/yaps
-  #	User/Group/Mode for yaps
-  YAPS_USER	= bin
-! YAPS_GROUP	= dialer
-  YAPS_MODE	= 2711
-  #	User/Group/Mode for global configuration file
-  YAPS_RCUSER	= bin
-***************
-*** 56,62 ****
-  #
-  ifdef	NDEBUG
-  DDEFS	= -DNDEBUG
-! G	= -O
-  else
-  G	= -g
-  endif
---- 56,62 ----
-  #
-  ifdef	NDEBUG
-  DDEFS	= -DNDEBUG
-! G	= 
-  else
-  G	= -g
-  endif
+--- Config.orig	1997-06-14 10:32:18 UTC
++++ Config
+@@ -1,9 +1,9 @@
+ #	-*- sh -*-
+ #	SECTION A.) Global configuration
+ #	Select compiler command
+-CC	= gcc
++#CC	= gcc
+ #
+-CFLAGS	= -Wall -Wno-parentheses -Wshadow -Wstrict-prototypes -Wmissing-prototypes
++#CFLAGS	= -Wall -Wno-parentheses -Wshadow -Wstrict-prototypes -Wmissing-prototypes
+ LDFLAGS	=
+ EXLIBS	=
+ #
+@@ -14,22 +14,22 @@ EXLIBS	=
+ #LUA	= True
+ #
+ #	Define this to disable debugging
+-#NDEBUG	= True
++NDEBUG	= True
+ #
+ #
+ #
+ #	SECTION B.) yaps configuration
+ #	Name and location of global configuration file
+-YAPS_CFGFILE	= /etc/yaps.rc
++YAPS_CFGFILE	= ${PREFIX}/etc/yaps.rc
+ #	Name of local configuration file (location is $HOME.)
+ YAPS_LCFGFILE 	= .yapsrc
+ #	Directory for installing the binary
+-YAPS_BINDIR	= /usr/local/bin
++YAPS_BINDIR	= ${PREFIX}/bin
+ #	Directory for optional support files
+-YAPS_LIBDIR	= /usr/local/lib/yaps
++YAPS_LIBDIR	= ${PREFIX}/share/yaps
+ #	User/Group/Mode for yaps
+ YAPS_USER	= bin
+-YAPS_GROUP	= uucp
++YAPS_GROUP	= dialer
+ YAPS_MODE	= 2711
+ #	User/Group/Mode for global configuration file
+ YAPS_RCUSER	= bin
+@@ -56,7 +56,7 @@ endif
+ #
+ ifdef	NDEBUG
+ DDEFS	= -DNDEBUG
+-G	= -O
++G	= 
+ else
+ G	= -g
+ endif

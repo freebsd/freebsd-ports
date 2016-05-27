@@ -398,6 +398,7 @@
     SUBDIR += miniupnpd
     SUBDIR += miredo
     SUBDIR += miruo
+    SUBDIR += mlvpn
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
@@ -1183,7 +1184,6 @@
     SUBDIR += samba-nmblookup
     SUBDIR += samba-smbclient
     SUBDIR += samba36
-    SUBDIR += samba41
     SUBDIR += samba42
     SUBDIR += samba43
     SUBDIR += samba44
@@ -1226,6 +1226,7 @@
     SUBDIR += sntop
     SUBDIR += sobby
     SUBDIR += socat
+    SUBDIR += sock
     SUBDIR += socketbind
     SUBDIR += socketpipe
     SUBDIR += socketw
@@ -1402,6 +1403,7 @@
     SUBDIR += zeroconf-ioslave
     SUBDIR += zerotier
     SUBDIR += zillion
+    SUBDIR += zmap
     SUBDIR += zsync
 
 .include <bsd.port.subdir.mk>

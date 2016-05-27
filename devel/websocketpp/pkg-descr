@@ -1,8 +1,8 @@
-WebSocket++ is an open source (BSD license) header only C++ library that 
-implements RFC6455 The WebSocket Protocol. 
+WebSocket++ is an open source (BSD license) header only C++ library that
+implements RFC6455 The WebSocket Protocol.
 
-It allows integrating WebSocket client and server functionality into 
-C++ programs. It uses interchangable network transport modules including 
+It allows integrating WebSocket client and server functionality into
+C++ programs. It uses interchangable network transport modules including
 one based on C++ iostreams and one based on Boost Asio.
 
 WWW: http://www.zaphoyd.com/websocketpp/

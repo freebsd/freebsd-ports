@@ -2,19 +2,19 @@ Frodo is a freeware C64 emulator for BeOS, Unix, MacOS, AmigaOS, Win32
 and RiscOS systems and the world's first C64 emulator not bearing a
 "64" in its name. :-) (No, it has absolutely nothing to do with
 frodo.hiof.no, that's a pure coincidence.)
-   
+
 Frodo was developed to reproduce the graphics of games and demos
 better than the existing C64 emulators. Therefore Frodo has relatively
 high system requirements: It should only be run on systems with at
 least a PowerPC/Pentium/68060. But on the other hand, Frodo can
 display raster effects correctly that only result in a flickering mess
 with other emulators.
-   
+
 Frodo comes in three flavours: The "normal" Frodo with a line-based
 emulation, the improved line-based emulation "Frodo PC", and the
 single-cycle emulation Frodo SC that is slower but far more
 compatible.
- 
+
 In addition to a precise 6510/VIC emulation, Frodo features a
 processor-level 1541 emulation that is even able to handle about 95%
 of all fast loaders. There is also a faster 1541 emulation for four

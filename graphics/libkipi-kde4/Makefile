@@ -11,7 +11,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Image Plugin Interface
 
-USE_KDE4=	automoc4 kdeprefix kdelibs
+USE_KDE4=	automoc4 kdelibs
 USES=		cmake:outsource tar:xz
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

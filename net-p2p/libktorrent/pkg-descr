@@ -4,4 +4,4 @@ and ktorrent contains all application code and plugins. The goal
 is to make libktorrent an independent library (though still closely
 related to ktorrent), which can be used by other applications.
 
-WWW:	http://ktorrent.org/
+WWW: http://ktorrent.org/

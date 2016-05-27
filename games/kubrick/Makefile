@@ -10,7 +10,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
 USE_GL=		glu
-USE_KDE4=	kdelibs kdeprefix libkdegames automoc4
+USE_KDE4=	kdelibs libkdegames automoc4
 USES=		cmake:outsource tar:xz
 USE_QT4=	corelib gui opengl \
 		moc_build qmake_build rcc_build uic_build

@@ -5,7 +5,7 @@ and integrated circuits can be described by VHDL, and VHDL  can also be
 used as a general purpose parallel programming language.  GHDL compiles
 VHDL files and creates a binary which simulates the design.
 
-GHDL fully supports IEEE 1076-1987, IEEE 1-76-1993, IEEE 1076-2002 
+GHDL fully supports IEEE 1076-1987, IEEE 1-76-1993, IEEE 1076-2002
 versions of VHDL, and partially IEEE 1076-2008.
 
 WWW: https://sourceforge.net/projects/ghdl-updates/

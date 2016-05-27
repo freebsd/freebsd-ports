@@ -16,7 +16,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paver>=0:devel/py-paver
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.3:textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7.5:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.7.5:databases/py-sqlalchemy07 \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32 \
 		${PYTHON_SITELIBDIR}/bs4/__init__.py:www/py-beautifulsoup \

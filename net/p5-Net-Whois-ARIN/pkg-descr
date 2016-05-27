@@ -1,6 +1,6 @@
-This module provides a Perl interface to the ARIN Whois server. The module 
-takes care of connecting to an ARIN whois server, sending your whois 
-requests, and parsing the whois output. The whois records are returned as 
+This module provides a Perl interface to the ARIN Whois server. The module
+takes care of connecting to an ARIN whois server, sending your whois
+requests, and parsing the whois output. The whois records are returned as
 lists of Net::Whois::ARIN::* instances.
 
 WWW: http://search.cpan.org/dist/Net-Whois-ARIN/

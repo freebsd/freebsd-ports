@@ -1,5 +1,5 @@
 mp3burn is a simple command line tool for making audio CDs from encoded audio
-files without filling up your disk with .wav files.  
+files without filling up your disk with .wav files.
 
 It uses Perl(1), ogg123(1), mpg321(1) or mpg123(1), cdrecord(1), flac(1), and
 the MP3::Info Perl module.

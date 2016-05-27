@@ -5,8 +5,8 @@ language. The keyboard is developed by SIL Non-Roman Script Initiative
 
 This port installs the keyboard so that it can be used through SCIM or
 IBus KMFL IMEngine (textproc/scim-kmfl-imengine, textproc/ibus-kmfl).
-                         
+
 This keyboard is provided under SIL International X11-style License
 (http://scripts.sil.org/X11License).
-	                          
+
 WWW: http://scripts.sil.org/UniIPAKeyboard#dee994f5

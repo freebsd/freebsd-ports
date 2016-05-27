@@ -3,7 +3,7 @@ written in industrially standard C++. AGG doesn't depend on any graphic API or
 technology. Basically, you can think of AGG as of a rendering engine that
 produces pixel images in memory from some vectorial data. But of course, AGG can
 do much more than that. The ideas and the philosophy of AGG are:
-  
+
   * Anti-Aliasing.
   * Subpixel Accuracy.
   * The highest possible quality.

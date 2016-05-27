@@ -1,8 +1,8 @@
 Ted is a text editor running under X11 on Unix/Linux systems.
 
-Features 
---------   
-  * Wysiwyg rich text editing. 
+Features
+--------
+  * Wysiwyg rich text editing.
   * Ted uses Microsoft RTF as its native file format.
   * In line bitmap, jpeg, gif, ppm, png and xpm pictures.
   * Postscript printing.
@@ -10,12 +10,12 @@ Features
   * Find/Replace using regular expressions.
   * Ruler: Paragraph indentation, Indentation of first line, Tabs.
   * Footnotes and endnotes.
-  * Tables: Insert Table, Row, Column. Changing the column width of tables 
+  * Tables: Insert Table, Row, Column. Changing the column width of tables
     with their ruler.
   * Symbols and accented characters are fully supported.
-  * Hyperlinks. 
+  * Hyperlinks.
   * Saving a document in HTML format.
   * Save to *.pdf using /usr/local/bin/rtf2pdf.sh
-  * Numbered or bulleted lists 
+  * Numbered or bulleted lists
 
 WWW: http://www.nllgg.nl/Ted/

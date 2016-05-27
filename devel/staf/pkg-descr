@@ -1,12 +1,12 @@
-The Software Testing Automation Framework (STAF) is an open source, 
-multi-platform, multi-language framework designed around the idea of reusable 
-components, called services (such as process invocation, resource management, 
-logging, and monitoring). 
+The Software Testing Automation Framework (STAF) is an open source,
+multi-platform, multi-language framework designed around the idea of reusable
+components, called services (such as process invocation, resource management,
+logging, and monitoring).
 
 STAF removes the tedium of building an automation infrastructure, thus enabling
 you to focus on building your automation solution.
 
-The STAF framework provides the foundation upon which to build higher level 
+The STAF framework provides the foundation upon which to build higher level
 solutions, and provides a pluggable approach supported across a large variety of
 platforms and languages.
 

@@ -1,6 +1,6 @@
---- xtb.c.orig	Thu Jul 17 04:26:41 1997
-+++ xtb.c	Fri Dec 10 03:06:26 1999
-@@ -196,7 +196,7 @@
+--- xtb.c.orig	2000-08-02 18:33:01 UTC
++++ xtb.c
+@@ -198,7 +198,7 @@ Window win;
  {
      xtb_data data;
  

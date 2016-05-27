@@ -1,6 +1,6 @@
 nxt-python is a python driver/interface for the Lego Mindstorms NXT robot. The
 1.x releases aim to improve on NXT_Python's interface and should be compatible
 with scripts which use it while the 2.x releases improve on the API in
-backwards-incompatible ways and will not work with NXT_Python scripts. 
+backwards-incompatible ways and will not work with NXT_Python scripts.
 
 WWW: http://code.google.com/p/nxt-python/

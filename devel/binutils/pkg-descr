@@ -3,8 +3,8 @@ The GNU Binutils are a collection of binary tools. The main ones are:
 * ld - the GNU linker.
 * as - the GNU assembler.
 
-Most of these programs use BFD, the Binary File Descriptor library, to do 
-low-level manipulation. Many of them also use the opcodes library to assemble 
+Most of these programs use BFD, the Binary File Descriptor library, to do
+low-level manipulation. Many of them also use the opcodes library to assemble
 and disassemble machine instructions.
 
 This port may be used as a replacement for the system binutils and support

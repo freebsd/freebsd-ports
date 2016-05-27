@@ -10,7 +10,7 @@ The supported file types are:
 * Lha archives (.lzh)
 * Rar archives (.rar)
 * Single files compressed with gzip, bzip, bzip2, compress, lzop
- 
+
 Engrampa also has a document viewer based on bonobo that lets you view files
 of any type for which you have a viewer.
 

@@ -1,0 +1,5 @@
+Gdspy is a Python module for creating GDSII stream files, usually CAD
+layouts.  It includes a layout viewer for the geometries created, and
+it can also be used to import and merge GDSII files.
+
+WWW: https://github.com/heitzmann/gdspy

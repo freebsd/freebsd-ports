@@ -2,6 +2,6 @@ BasicDSP is an educational tool that makes it easy to experiment with simple
 Digital Signal Processing algorithms for audio signals. The input can either
 be taken from the sound card, or be a locally generated sine wave, white noise
 or impulse signal. The output is fed to the sound card, as well as to a virtual
-oscilloscope and spectrum analyzer. 
+oscilloscope and spectrum analyzer.
 
 WWW: http://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/

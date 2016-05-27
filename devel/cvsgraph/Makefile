@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include \

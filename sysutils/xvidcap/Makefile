@@ -6,7 +6,7 @@ PORTVERSION=		1.1.7
 PORTREVISION=	2
 PORTEPOCH=		1
 CATEGORIES=		sysutils multimedia
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=		SF
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Capture your X display to individual frames or MPEG video

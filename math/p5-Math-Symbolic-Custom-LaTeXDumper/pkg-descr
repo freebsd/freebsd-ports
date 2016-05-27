@@ -1,9 +1,9 @@
-This class provides the to_latex() method for all Math::Symbolic trees. It 
-is a rewrite of the to_latex() method that was supplied by Math::Symbolic 
+This class provides the to_latex() method for all Math::Symbolic trees. It
+is a rewrite of the to_latex() method that was supplied by Math::Symbolic
 prior to version 0.201.
 
-For details on how the custom method delegation model works, please have a 
-look at the Math::Symbolic::Custom and Math::Symbolic::Custom::Base 
+For details on how the custom method delegation model works, please have a
+look at the Math::Symbolic::Custom and Math::Symbolic::Custom::Base
 classes.
 
 WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-LaTeXDumper/

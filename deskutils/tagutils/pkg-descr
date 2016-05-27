@@ -1,6 +1,6 @@
 Leaftag is a library and set of utilities for tagging files on the desktop.
 
-tagutils is the primary way of tagging files from the command line. 
+tagutils is the primary way of tagging files from the command line.
 It can tag, untag, display a list of known tags, manipulate tag properties,
 and show files belonging to a tag.
 

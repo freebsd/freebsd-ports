@@ -13,7 +13,7 @@ to carry out common database tasks. It includes:
     * Batch processing of SQL files
     * Database introspection
     * "Bookmarks" to store SQL commands you commonly use
-    * Import and export to popular file formats such as Microsoft Excel, XML, 
+    * Import and export to popular file formats such as Microsoft Excel, XML,
       HTML and ASCII delimited.
     * Enhanced interface support across platforms
 

@@ -2,6 +2,6 @@ This module exists to generate basic Atom syndication feeds.  While it
 does not provide a full, object-oriented interface into all the nooks
 and crannies of Atom feeds, an Atom parser, or an Atom client API, it
 should be useful for people who want to generate basic, valid Atom feeds
-of their content quickly and easily. 
+of their content quickly and easily.
 
 WWW: http://search.cpan.org/dist/XML-Atom-SimpleFeed/

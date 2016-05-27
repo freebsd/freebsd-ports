@@ -11,7 +11,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
 USES=		cmake:outsource python tar:xz twisted:run sqlite
-USE_KDE4=	kdelibs kdeprefix pykde4 automoc4
+USE_KDE4=	kdelibs pykde4 automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS=	-DINSTALL_KAJONGG:BOOL=TRUE
 

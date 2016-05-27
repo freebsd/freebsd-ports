@@ -1,9 +1,9 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-Before you start using Grails you will need to set the GRAILS_HOME environment 
+Before you start using Grails you will need to set the GRAILS_HOME environment
 variable to %%JAVASHAREDIR%%/grails
 
-Documentation on creating your first Grails application can be found at the 
+Documentation on creating your first Grails application can be found at the
 Grails website http://grails.codehaus.org/
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

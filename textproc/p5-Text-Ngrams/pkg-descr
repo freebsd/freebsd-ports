@@ -1,9 +1,9 @@
 Text::Ngrams - Flexible Ngram analysis (for characters, words, and more)
 
-This module implement text n-gram analysis, supporting several types of 
+This module implement text n-gram analysis, supporting several types of
 analysis, including character and word n-grams.
 
-The module can be used from the command line through the script ngrams.pl 
+The module can be used from the command line through the script ngrams.pl
 provided with the package.
 
 WWW: http://search.cpan.org/dist/Text-Ngrams/

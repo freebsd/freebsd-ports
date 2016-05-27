@@ -2,4 +2,4 @@ This library implements the Atlas protocol, for use in client-server
 game applications.  This library is suitable for linking to either
 clients or servers.
 
-WWW:	http://www.worldforge.org/dev/eng/libraries/atlas_cpp
+WWW: http://www.worldforge.org/dev/eng/libraries/atlas_cpp

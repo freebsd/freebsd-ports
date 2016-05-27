@@ -1,5 +1,5 @@
-This is a mutated version of Oclock, using a bezier curve to 
-draw the hands.  It has a pretty funny appearance and it's 
+This is a mutated version of Oclock, using a bezier curve to
+draw the hands.  It has a pretty funny appearance and it's
 actually fairly tough to use it to tell the time.
 
 The bezier curve is drawn using 4 control points:

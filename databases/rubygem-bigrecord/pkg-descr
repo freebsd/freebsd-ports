@@ -1,4 +1,4 @@
-BigRecord is built from ActiveRecord, and intended to seamlessly integrate 
+BigRecord is built from ActiveRecord, and intended to seamlessly integrate
 into your Ruby on Rails applications.
 
 WWW: http://www.bigrecord.org

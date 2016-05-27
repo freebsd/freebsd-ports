@@ -1,25 +1,25 @@
 [from README.decode]:
 This package contains extra decoding functions.
 
-SquirrelMail decoding functions are used to display and convert messages 
-encoded in different character sets. Extra decoding library provides support 
-of some complex Eastern character sets and some rarely used Apple character 
-sets. Current release supports Big5, Windows-874 (cp874, Thai), Windows-949 
-(UHC, Korean), EUC-CN, EUC-JP, EUC-KR, EUC-TW, GB18030, GB2312, ISO-2022-CN, 
-ISO-2022-JP, ISO-2022-JP-2, ISO-2022-KR, Shift_JIS and various x-mac-* 
+SquirrelMail decoding functions are used to display and convert messages
+encoded in different character sets. Extra decoding library provides support
+of some complex Eastern character sets and some rarely used Apple character
+sets. Current release supports Big5, Windows-874 (cp874, Thai), Windows-949
+(UHC, Korean), EUC-CN, EUC-JP, EUC-KR, EUC-TW, GB18030, GB2312, ISO-2022-CN,
+ISO-2022-JP, ISO-2022-JP-2, ISO-2022-KR, Shift_JIS and various x-mac-*
 character sets.
 
-Extra decoding library can be used in SquirrelMail 1.4.4 or newer. It depends 
-on sq_is8bit() function. In order to optimize decoding of Eastern character 
-sets, PHP installation needs recode (http://www.php.net/recode) or iconv 
-(http://www.php.net/iconv) support. Some decoding functions can use mbstring 
-functions present in php 4.3.0. Mbstring decoding needs sq_mb_list_encodings() 
+Extra decoding library can be used in SquirrelMail 1.4.4 or newer. It depends
+on sq_is8bit() function. In order to optimize decoding of Eastern character
+sets, PHP installation needs recode (http://www.php.net/recode) or iconv
+(http://www.php.net/iconv) support. Some decoding functions can use mbstring
+functions present in php 4.3.0. Mbstring decoding needs sq_mb_list_encodings()
 function from SquirrelMail 1.5.1 or 1.4.6.
 
-Some decoding code that be activated only when $aggressive_decoding variable 
-is set to true. This variable should be enabled only on smaller systems, that 
-don't call aggressive decoding functions very often. Turning on 
-$aggressive_decoding  variable by default in packaged SquirrelMail versions is 
+Some decoding code that be activated only when $aggressive_decoding variable
+is set to true. This variable should be enabled only on smaller systems, that
+don't call aggressive decoding functions very often. Turning on
+$aggressive_decoding  variable by default in packaged SquirrelMail versions is
 not recommended.
 
 WWW: http://www.squirrelmail.org/

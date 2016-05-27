@@ -1,20 +1,20 @@
-AI::Categorizer is a framework for automatic text categorization. It 
-consists of a collection of Perl modules that implement common 
-categorization tasks, and a set of defined relationships among those 
-modules. The various details are flexible - for example, you can choose 
-what categorization algorithm to use, what features (words or otherwise) 
-of the documents should be used (or how to automatically choose these 
+AI::Categorizer is a framework for automatic text categorization. It
+consists of a collection of Perl modules that implement common
+categorization tasks, and a set of defined relationships among those
+modules. The various details are flexible - for example, you can choose
+what categorization algorithm to use, what features (words or otherwise)
+of the documents should be used (or how to automatically choose these
 features), what format the documents are in, and so on.
 
-The basic process of using this module will typically involve obtaining a 
-collection of pre-categorized documents, creating a "knowledge set" 
-representation of those documents, training a categorizer on that 
-knowledge set, and saving the trained categorizer for later use. There are 
-several ways to carry out this process. The top-level AI::Categorizer 
-module provides an umbrella class for high-level operations, or you may 
+The basic process of using this module will typically involve obtaining a
+collection of pre-categorized documents, creating a "knowledge set"
+representation of those documents, training a categorizer on that
+knowledge set, and saving the trained categorizer for later use. There are
+several ways to carry out this process. The top-level AI::Categorizer
+module provides an umbrella class for high-level operations, or you may
 use the interfaces of the individual classes in the framework.
 
-A simple sample script that reads a training corpus, trains a categorizer, 
+A simple sample script that reads a training corpus, trains a categorizer,
 and tests the categorizer on a test corpus, is distributed as eg/demo.pl .
 
 WWW: http://search.cpan.org/dist/AI-Categorizer/

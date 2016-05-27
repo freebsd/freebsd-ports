@@ -21,6 +21,9 @@ PORTDOCS=	testset testset++
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	${REINPLACE_CMD} -e "s/getline/get_line/g" ${WRKSRC}/cdecl.c
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/testset* ${STAGEDIR}${DOCSDIR}

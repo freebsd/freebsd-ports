@@ -5,7 +5,7 @@ The main use cases of the library are:
 printing small tables without hassle: just one function call,
 formatting is guided by the data itself authoring tabular data for
 lightweight plain-text markup: multiple output formats
-suitable for further editing or transformation readable presentation of 
+suitable for further editing or transformation readable presentation of
 mixed textual and numeric data: smart column alignment,
 configurable number formatting, alignment by a decimal point
 

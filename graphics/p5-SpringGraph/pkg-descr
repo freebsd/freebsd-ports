@@ -1,6 +1,6 @@
-SpringGraph.pm is a rewrite of the springgraph.pl script, which provides 
+SpringGraph.pm is a rewrite of the springgraph.pl script, which provides
 similar functionality to Neato and can read some/most dot files.
- 
+
 The goal of this module is to provide a compatible interface to VCG
 and/or GraphViz perl modules on CPAN. This module will also provide some
 extra features to provide more flexibility and power.

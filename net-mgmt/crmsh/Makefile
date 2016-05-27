@@ -3,7 +3,7 @@
 
 PORTNAME=	crmsh
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	dpejesh@yahoo.com
@@ -23,8 +23,12 @@ GH_TAGNAME=	2.2.0
 USES=		autoreconf gmake python:2 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ocf-root=${PREFIX}/etc/ocf
+NO_ARCH=	yes
 
-SHEBANG_FILES=	crm
+SHEBANG_FILES=	crm \
+		test/cib-tests.sh \
+		utils/crm_pkg.py \
+		utils/crm_rpmcheck.py
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES

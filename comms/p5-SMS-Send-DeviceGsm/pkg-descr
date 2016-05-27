@@ -1,8 +1,8 @@
-SMS::Send::DeviceGsm is an SMS::Send driver that uses Device::Gsm 
+SMS::Send::DeviceGsm is an SMS::Send driver that uses Device::Gsm
 to deliver messages via attached hardware.
 
-You provide the hardware port and the baudrate to use. 
-Consult Device::Gsm for further information on what devices 
+You provide the hardware port and the baudrate to use.
+Consult Device::Gsm for further information on what devices
 and baudrates are supported.
 
 WWW: http://search.cpan.org/dist/SMS-Send-DeviceGsm/

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdds
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://kohei.us/files/mdds/src/
 
@@ -14,7 +14,7 @@ USES=		tar:bzip2
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-API_VERSION=	1.0
+API_VERSION=	1.2
 PLIST_SUB=	API_VERSION=${API_VERSION}
 
 do-configure:
@@ -28,8 +28,9 @@ do-configure:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/mdds-${API_VERSION}/mdds
 	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} . \
-	    ${STAGEDIR}${PREFIX}/include/mdds-${API_VERSION} \
-	    "-not -name *.orig")
+	    ${STAGEDIR}${PREFIX}/include/mdds-${API_VERSION})
+	${FIND} ${STAGEDIR}${PREFIX}/include/mdds-${API_VERSION} \
+	    \( -name "*.orig" -or -name "Makefile.*" \) -delete
 	${INSTALL_DATA} ${WRKSRC}/misc/mdds-${API_VERSION}.pc \
 	    ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 

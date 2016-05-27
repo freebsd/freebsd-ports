@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recaptcha
-PORTVERSION=	1.3.0
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

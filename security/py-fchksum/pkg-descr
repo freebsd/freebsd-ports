@@ -1,5 +1,5 @@
 fchksum is a Python module to find the checksum of files. Currently it
-supports crc32 and md5 checksums. 
+supports crc32 and md5 checksums.
 
 The advantage of using fchksum over the python md5 and zlib(.crc32) modules
 is both ease of use and speed. You only need to tell it the filename and the

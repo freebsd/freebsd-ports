@@ -56,7 +56,7 @@ sudo -u www %%WWWDIR%%/poller.php -h all -d
 
 5: Install the above crontabs.
 
-6: log in with a web browser; using the username 'admin' and the 
+6: log in with a web browser; using the username 'admin' and the
    password 'SomeInsecureAdminPassword'.
 
    Hosts can be added from the webinterface or from the commandline.

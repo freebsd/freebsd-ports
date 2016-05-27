@@ -5,6 +5,7 @@ PORTNAME=	opensmtpd
 PORTVERSION=	201602131907
 DISTVERSIONSUFFIX=	p1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/

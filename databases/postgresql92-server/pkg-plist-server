@@ -455,6 +455,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Thimbu
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Thimphu
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Tokyo
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Tomsk
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Ujung_Pandang
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Ulaanbaatar
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Ulan_Bator
@@ -581,6 +582,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Jersey
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kaliningrad
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Kiev
+%%TZDATA%%%%DATADIR%%/timezone/Europe/Kirov
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Lisbon
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Ljubljana
 %%TZDATA%%%%DATADIR%%/timezone/Europe/London

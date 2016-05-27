@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sphinx
-PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTVERSION=	1.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +25,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel\
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0.1:textproc/py-sphinx_rtd_theme \
 		${PYTHON_PKGNAMEPREFIX}alabaster>=0.7:textproc/py-alabaster \
 		${PYTHON_PKGNAMEPREFIX}snowballstemmer>=1.1:textproc/py-snowballstemmer \
-		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six
+		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}imagesize>=0.7.1:graphics/py-imagesize
 
 USES=		python
 USE_PYTHON=	autoplist distutils

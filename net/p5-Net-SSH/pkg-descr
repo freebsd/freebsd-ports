@@ -1,4 +1,4 @@
-This module implements a Perl interface to ssh.  It is a simple wrapper 
+This module implements a Perl interface to ssh.  It is a simple wrapper
 around the system `ssh' command.
 
 WWW: http://search.cpan.org/dist/Net-SSH/

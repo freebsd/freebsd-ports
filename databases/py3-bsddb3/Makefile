@@ -1,4 +1,4 @@
-# Created by: Ben Woods <woodsb02@gmail.com>
+# Created by: Ben Woods <woodsb02@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	bsddb3
@@ -7,7 +7,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	woodsb02@gmail.com
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Python extension module for BerkeleyDB 3 and 4
 
 LICENSE=	BSD3CLAUSE

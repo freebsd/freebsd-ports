@@ -3,7 +3,7 @@ features. It supports L2-regularized classifiers (L2-loss linear SVM,
 L1-loss linear SVM, and logistic regression), L1-regularized classifiers
 (L2-loss linear SVM and logistic regression).
 
-Main features of LIBLINEAR include 
+Main features of LIBLINEAR include
 
 - Same data format as LIBSVM and similar usage
 - One-vs-the rest and Crammer & Singer multi-class classification

@@ -3,7 +3,7 @@ XAnalyser is a program to analyse a stereo audio signal. It has two displays:
 Frequency Spectrum
 Using Fast Fourier Transform, the time domain of the signal is transformed into
 the frequency domain, i.e. the amplitude (in logarithmic scale) of the
-audio signal is plotted versus the frequency. Either the sum of the 
+audio signal is plotted versus the frequency. Either the sum of the
 left and right channel of the audio signal can be shown or both
 channels simultaneously.
 
@@ -15,6 +15,6 @@ a horizontal line, whereas an audio signal only present on the right channel
 produces a vertical line. A mono signal produces a 45 degree line.
 A stereo signal creates a wilde pattern (if the phase is correct,
 predominately in the same direction as a mono signal) or may even fill
-the entire scope. 
+the entire scope.
 
 WWW: http://arvin.schnell-web.net/xanalyser/

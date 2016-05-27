@@ -1,7 +1,7 @@
-Carp::Assert::More is a set of wrappers around the Carp::Assert functions 
+Carp::Assert::More is a set of wrappers around the Carp::Assert functions
 to make the habit of writing assertions even easier.
 
-Everything in here is effectively syntactic sugar. There's no technical 
+Everything in here is effectively syntactic sugar. There's no technical
 reason to use
 
     assert_isa( $foo, 'HTML::Lint' );
@@ -13,7 +13,7 @@ instead of
 
 other than readability and simplicity of the code.
 
-My intent here is to make common assertions easy so that we as programmers 
+My intent here is to make common assertions easy so that we as programmers
 have no excuse to not use them.
 
 WWW: http://search.cpan.org/dist/Carp-Assert-More/

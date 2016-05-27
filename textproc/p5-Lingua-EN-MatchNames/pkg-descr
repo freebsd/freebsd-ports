@@ -3,7 +3,7 @@ or matched up, but they use different keys--maybe one uses SSN and
 the other uses employee id. The only fields you have to match on
 are first and last name.
 
-That's what this module is for. 
+That's what this module is for.
 
 Just feed the first and last names to the name_eq() function, and
 it returns undef for no possible match, and a percentage of certainty

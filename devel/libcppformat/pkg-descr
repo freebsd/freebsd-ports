@@ -1,4 +1,4 @@
-C++ Format is an open-source formatting library for C++. It can be used as a 
+C++ Format is an open-source formatting library for C++. It can be used as a
 safe alternative to printf or as a fast alternative to IOStreams.
 
 WWW: https://github.com/cppformat/cppformat/

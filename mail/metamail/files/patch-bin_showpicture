@@ -1,5 +1,5 @@
---- bin/showpicture.orig	Mon Feb  7 18:59:54 1994
-+++ bin/showpicture	Mon Dec 18 11:50:24 2006
+--- bin/showpicture.orig	1994-02-07 17:59:54 UTC
++++ bin/showpicture
 @@ -15,15 +15,42 @@
  # WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  #
@@ -46,7 +46,7 @@
      set X_VIEWER = "$2"
      shift
      shift
-@@ -57,7 +84,7 @@
+@@ -57,7 +84,7 @@ if (! $?DISPLAY) then
              endif
          end
      endif

@@ -21,6 +21,4 @@ share/sgml/html/4.01/HTMLsymbol.ent
 share/sgml/html/4.01/frameset.dtd
 share/sgml/html/4.01/loose.dtd
 share/sgml/html/4.01/strict.dtd
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/catalog
-share/sgml/html/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/catalog
+@xmlcatmgr share/sgml/html/catalog

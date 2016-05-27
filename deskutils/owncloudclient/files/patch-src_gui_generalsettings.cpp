@@ -1,14 +1,14 @@
---- src/gui/generalsettings.cpp.orig	2015-09-01 13:50:21 UTC
+--- src/gui/generalsettings.cpp.orig	2016-05-12 07:59:12 UTC
 +++ src/gui/generalsettings.cpp
-@@ -105,6 +105,7 @@ void GeneralSettings::loadMiscSettings()
+@@ -109,6 +109,7 @@ void GeneralSettings::loadMiscSettings()
  
  void GeneralSettings::slotUpdateInfo()
  {
 +#if 0
-     if (OCUpdater *updater = dynamic_cast<OCUpdater*>(Updater::instance())) {
-         connect(updater, SIGNAL(downloadStateChanged()), SLOT(slotUpdateInfo()), Qt::UniqueConnection);
-         connect(_ui->restartButton, SIGNAL(clicked()), updater, SLOT(slotStartInstaller()), Qt::UniqueConnection);
-@@ -112,9 +113,12 @@ void GeneralSettings::slotUpdateInfo()
+     OCUpdater *updater = dynamic_cast<OCUpdater*>(Updater::instance());
+     if (ConfigFile().skipUpdateCheck()) {
+         updater = 0; // don't show update info if updates are disabled
+@@ -121,9 +122,12 @@ void GeneralSettings::slotUpdateInfo()
          _ui->updateStateLabel->setText(updater->statusString());
          _ui->restartButton->setVisible(updater->downloadState() == OCUpdater::DownloadComplete);
      } else {

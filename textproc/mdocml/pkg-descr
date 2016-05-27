@@ -2,7 +2,7 @@ mdocml is a suite of tools compiling mdoc, the roff macro package of
 choice for BSD manual pages, and man, the predominant historical
 package for UNIX manuals. The mission of mdocml is to deprecate groff,
 the GNU troff implementation, for displaying mdoc pages whilst
-providing token support for man. 
+providing token support for man.
 
 mdocml consists of the libmandoc validating compiler and mandoc, which
 interfaces with the compiler library to format output for UNIX

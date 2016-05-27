@@ -20,4 +20,8 @@ PLIST_FILES=	bin/seyon lib/X11/app-defaults/Seyon \
 post-extract:
 	${CHMOD} +x ${WRKSRC}/makever.sh
 
+post-patch:
+	${REINPLACE_CMD} -e "s/getline(/seyon_getline(/g" \
+		${WRKSRC}/SeDecl.h ${WRKSRC}/SeScript.c ${WRKSRC}/SeSupp.c
+
 .include <bsd.port.mk>

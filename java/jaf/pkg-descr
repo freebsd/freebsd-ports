@@ -8,4 +8,4 @@ that stream of data as an JPEG image, and from that type, the browser
 could locate and instantiate an object that could manipulate, or view that
 image.
 
-WWW: http://java.sun.com/products/javabeans/jaf/ 
+WWW: http://java.sun.com/products/javabeans/jaf/

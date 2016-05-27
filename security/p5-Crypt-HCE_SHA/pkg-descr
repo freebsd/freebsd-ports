@@ -2,15 +2,15 @@
      way hash.  This method of encryption is the same that is
      used by radius (RFC2138) and is also described in Applied
      Cryptography.
- 
+
      Two interfaces are provided in the module.  The first is
      straight block encryption/decryption the second does base64
      mime encoding/decoding of the encrypted/decrypted blocks.
- 
+
      The idea is that the two sides have a shared secret that
      supplies one of the keys and a randomly generated block of
      bytes provides the second key.  The random key is passed in
      cleartext between the two sides.
- 
+
      An example client and server are packaged as modules with
      this module.  They are used in the tests.

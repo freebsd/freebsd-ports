@@ -1,4 +1,4 @@
-This module provides standardized logging facilities using the 
+This module provides standardized logging facilities using the
 Log::Message module.
 
 WWW: http://search.cpan.org/dist/Log-Message-Simple/

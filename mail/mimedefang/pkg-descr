@@ -1,20 +1,20 @@
 MIMEDefang is a program for inspecting and modifying e-mail messages as
 they pass through your mail relay. MIMEDefang is written in Perl, and its
 filter actions are expressed in Perl, so it's highly flexible. Here are some
-things that you can do very easily with MIMEDefang: 
+things that you can do very easily with MIMEDefang:
 
     Delete or alter attachments based on file name, contents, results of a
-    virus scan, attachment size, etc. 
+    virus scan, attachment size, etc.
 
     Replace large attachments with links to a centrally-stored copy to ease
-    the burden on POP3 users with slow modem links. 
+    the burden on POP3 users with slow modem links.
 
-    Add boilerplate text to e-mail messages. 
+    Add boilerplate text to e-mail messages.
 
-    Customize filter rules based on domain, user-name, relay machine, etc. 
+    Customize filter rules based on domain, user-name, relay machine, etc.
 
-    Reject unacceptable messages, where you define what "unacceptable" means. 
+    Reject unacceptable messages, where you define what "unacceptable" means.
 
-    Add or delete recipients for a message. 
+    Add or delete recipients for a message.
 
 WWW: http://www.mimedefang.org/

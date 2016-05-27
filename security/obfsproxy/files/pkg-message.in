@@ -5,14 +5,14 @@ As a client, add the following to %%PREFIX%%/etc/tor/torrc:
 
 	UseBridges 1
 	Bridge obfs2 x.x.x.x:yyyy FINGERPRINT-OF-BRIDGE
-	ClientTransportPlugin obfs2 exec %%PREFIX%%/bin/obfsproxy managed 
+	ClientTransportPlugin obfs2 exec %%PREFIX%%/bin/obfsproxy managed
 
 or
 
 	UseBridges 1
 	Bridge obfs3 u.u.u.u:wwww FINGERPRINT-OF-BRIDGE
-	ClientTransportPlugin obfs3 exec %%PREFIX%%/bin/obfsproxy managed 
-	
+	ClientTransportPlugin obfs3 exec %%PREFIX%%/bin/obfsproxy managed
+
 As a bridge, add the following to %%PREFIX%%/etc/tor/torrc:
 
 	ServerTransportPlugin obfs2,obfs3 exec %%PREFIX%%/bin/obfsproxy managed

@@ -3,7 +3,7 @@ For help on using this module, please see the suPHP homepage:
 
         http://www.suphp.org/
 
-Using suPHP can break some PHP-scripts, because of Apache's CGI 
+Using suPHP can break some PHP-scripts, because of Apache's CGI
 interface.
 -----------------------------------------------------------------
 

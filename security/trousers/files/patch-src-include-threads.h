@@ -1,5 +1,5 @@
---- src/include/threads.h.orig	2010-05-03 11:54:15.000000000 +0900
-+++ src/include/threads.h	2010-10-24 21:04:04.828558009 +0900
+--- src/include/threads.h.orig	2014-04-24 18:05:44 UTC
++++ src/include/threads.h
 @@ -31,7 +31,7 @@
  #define COND_SIGNAL(c)		pthread_cond_signal(c)
  

@@ -1,10 +1,10 @@
 Agrep is a tool for fast text searching allowing errors.
 
 The three most significant features of agrep that are not supported by
-the grep family are 
+the grep family are
 1) the ability to search for approximate patterns;
-    for example, "agrep -2 homogenos foo" will find homogeneous as well 
-    as any other word that can be obtained from homogenos with at most 
+    for example, "agrep -2 homogenos foo" will find homogeneous as well
+    as any other word that can be obtained from homogenos with at most
     2 substitutions, insertions, or deletions.
     "agrep -B homogenos foo" will generate a message of the form
     best match has 2 errors, there are 5 matches, output them? (y/n)
@@ -14,9 +14,9 @@ the grep family are
     outputs all mail messages that contain the keyword "pizza".
     Another example:  "agrep -d '$$' pattern foo" will output all
     paragraphs (separated by an empty line) that contain pattern.
-3) multiple patterns with AND (or OR) logic queries.   
-    For example, "agrep -d '^From ' 'burger,pizza' mbox" 
-    outputs all mail messages containing at least one of the 
+3) multiple patterns with AND (or OR) logic queries.
+    For example, "agrep -d '^From ' 'burger,pizza' mbox"
+    outputs all mail messages containing at least one of the
     two keywords (, stands for OR).
     "agrep -d '^From ' 'good;pizza' mbox" outputs all mail messages
     containing both keywords.

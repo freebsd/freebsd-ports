@@ -3,7 +3,7 @@
 * XML/HTML builder
 * Drop in replacement for Hpricot (though not bug for bug)
 
-Nokogiri parses and searches XML/HTML very quickly, and also has 
-correctly implemented CSS3 selector support as well as XPath support. 
+Nokogiri parses and searches XML/HTML very quickly, and also has
+correctly implemented CSS3 selector support as well as XPath support.
 
 WWW: http://nokogiri.org

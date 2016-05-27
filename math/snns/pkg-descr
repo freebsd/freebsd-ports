@@ -1,6 +1,6 @@
 SNNS (Stuttgart Neural Network Simulator) is a software simulator for neural
 networks on Unix workstations developed at the Institute for Parallel and
-Distributed High Performance Systems (IPVR) at the University of Stuttgart. 
+Distributed High Performance Systems (IPVR) at the University of Stuttgart.
 The goal of the SNNS project is to create an efficient and flexible
 simulation environment for research on and application of neural nets.
 

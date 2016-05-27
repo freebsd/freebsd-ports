@@ -1,0 +1,15 @@
+--- usr/lib/pkcs11/tpm_stdll/Makefile.am.orig	2016-04-29 17:26:46 UTC
++++ usr/lib/pkcs11/tpm_stdll/Makefile.am
+@@ -71,10 +71,10 @@ install-data-hook:
+ 	cd $(DESTDIR)$(libdir)/opencryptoki/stdll && \
+ 		ln -sf libpkcs11_tpm.so PKCS11_TPM.so
+ 	$(MKDIR_P) $(DESTDIR)$(localstatedir)/lib/opencryptoki/tpm
+-	$(CHGRP) pkcs11 $(DESTDIR)$(localstatedir)/lib/opencryptoki/tpm
++	$(CHGRP) @PKCS11GROUP@ $(DESTDIR)$(localstatedir)/lib/opencryptoki/tpm
+ 	$(CHMOD) 0770 $(DESTDIR)$(localstatedir)/lib/opencryptoki/tpm
+ 	$(MKDIR_P) $(DESTDIR)$(lockdir)/tpm
+-	$(CHGRP) pkcs11 $(DESTDIR)$(lockdir)/tpm 
++	$(CHGRP) @PKCS11GROUP@ $(DESTDIR)$(lockdir)/tpm 
+ 	$(CHMOD) 0770 $(DESTDIR)$(lockdir)/tpm
+ 
+ uninstall-hook:

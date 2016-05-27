@@ -1,7 +1,7 @@
-This little program analyses the structure of FORTRAN source-code. As a 
-result you get a little flow diagram in which you can recognize which 
+This little program analyses the structure of FORTRAN source-code. As a
+result you get a little flow diagram in which you can recognize which
 SUBROUTINE is called by the program. Further all subroutines called from this
-one are displayed. The indciation of the displayed names is a degree for the 
+one are displayed. The indciation of the displayed names is a degree for the
 level.
 
 A new addition is the change of the starting point for an analysis. Instead to
@@ -9,7 +9,7 @@ check the whole source-code you can start with a special SUBROUTINE and see
 the depence of this one.
 
 The number of files which contain the routines are not restricted by the
-program. 
+program.
 
 You can report the CALL- and/or SUBROUTINE-statements together with filenames
 and line numbers to special files.

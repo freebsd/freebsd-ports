@@ -1,2 +1,2 @@
-Nagios plugin to monitor the local FreeBSD ports tree for updates or 
+Nagios plugin to monitor the local FreeBSD ports tree for updates or
 known security vulnerabilities in installed packages.

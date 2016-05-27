@@ -1,5 +1,5 @@
 mod_log_config-st is a patched version of mod_log_config by Sonke
-Tesch. It's fully backward-compatible and it adds logic to give 
+Tesch. It's fully backward-compatible and it adds logic to give
 other log writers a more detailed view of the data to be logged.
 
 WWW: http://bsdforge.com/projects/www/mod_log_mysql/

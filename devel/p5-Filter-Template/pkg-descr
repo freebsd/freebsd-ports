@@ -1,7 +1,7 @@
-Filter::Template is a Perl source filter that provides simple inline 
-source code templates. Inlined source code can be significantly faster 
-than subroutines, especially for small-scale functions like accessors and 
-mutators. On the other hand, they are more difficult to maintain and use. 
+Filter::Template is a Perl source filter that provides simple inline
+source code templates. Inlined source code can be significantly faster
+than subroutines, especially for small-scale functions like accessors and
+mutators. On the other hand, they are more difficult to maintain and use.
 Choose your trade-offs wisely.
 
 WWW: http://search.cpan.org/dist/Filter-Template/

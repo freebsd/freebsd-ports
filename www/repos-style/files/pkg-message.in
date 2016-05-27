@@ -8,10 +8,10 @@ that you add something like the following to httpd.conf:
 Alias /%%PORTNAME%% %%WWWDIR%%
 SVNIndexXSLT "/%%PORTNAME%%/view/repos.xsl"
 
-To set up the Very Simple Logviewer in %%PORTNAME%%/open/log/index.php there is a line: 
-$repo = '@@Repository@@'; // repository root, no trailing slash 
-Replace @@Repository@@ with the subversion url to your repository root. 
-It can be any subversion URL, both http:// and file:///. You can use 
+To set up the Very Simple Logviewer in %%PORTNAME%%/open/log/index.php there is a line:
+$repo = '@@Repository@@'; // repository root, no trailing slash
+Replace @@Repository@@ with the subversion url to your repository root.
+It can be any subversion URL, both http:// and file:///. You can use
 "http:" if you have public read access to the repository.
 
 

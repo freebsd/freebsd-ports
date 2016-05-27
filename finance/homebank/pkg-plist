@@ -22,6 +22,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/dlg-bud1.html
 %%DATADIR%%/help/dlg-cate.html
 %%DATADIR%%/help/dlg-filt.html
+%%DATADIR%%/help/dlg-mult.html
 %%DATADIR%%/help/dlg-paye.html
 %%DATADIR%%/help/dlg-pref.html
 %%DATADIR%%/help/dlg-spli.html
@@ -78,6 +79,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/dlg-split1.png
 %%DATADIR%%/help/images/dlg-template1.png
 %%DATADIR%%/help/images/dlg-transaction1.png
+%%DATADIR%%/help/images/dlg-txnmultiple.png
 %%DATADIR%%/help/images/dlg-xferselection.png
 %%DATADIR%%/help/images/doc_balance.png
 %%DATADIR%%/help/images/doc_title.png
@@ -106,7 +108,6 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/pm-transfer.png
 %%DATADIR%%/help/images/tip-accorder.png
 %%DATADIR%%/help/images/tip-listsearch.png
-%%DATADIR%%/help/images/tip-multiedit.png
 %%DATADIR%%/help/images/use-assignment1.png
 %%DATADIR%%/help/images/use-budget1.png
 %%DATADIR%%/help/images/use-budget2.png
@@ -196,6 +197,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-ope-delete.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-ope-edit.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-ope-herit.png
+%%DATADIR%%/icons/hicolor/24x24/actions/hb-ope-multiedit.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-ope-reconciled.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-ope-show.png
 %%DATADIR%%/icons/hicolor/24x24/actions/hb-payee.png

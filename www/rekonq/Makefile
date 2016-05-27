@@ -10,7 +10,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Lightweight KDE browser based on WebKit
 
 USES=		cmake:outsource gettext tar:xz
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	script webkit \
 		moc_build qmake_build rcc_build uic_build
 

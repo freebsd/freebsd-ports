@@ -10,6 +10,6 @@ learning, continuous computation, distributed RPC, ETL, and
 more. Storm is fast: a benchmark clocked it at over a
 million tuples processed per second per node. It is
 scalable, fault-tolerant, guarantees your data will be
-processed, and is easy to set up and operate. 
+processed, and is easy to set up and operate.
 
 WWW: http://storm.incubator.apache.org/

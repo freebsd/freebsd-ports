@@ -6,9 +6,10 @@ PORTVERSION=	1.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://diaspora.fs2downloads.com/ \
 		http://www.freespacemods.net/e107_files/downloads/:freespacemods \
-		http://copy.com/8wo3AQnYu0bj/:copy
+		http://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/:intfiles \
+		http://ftp.tw.freebsd.org/distfiles/:twfiles
 DISTFILES=	Diaspora_R1_Linux.tar.lzma:freespacemods,DEFAULT \
-		Diaspora_R1_Patch_1.1.tar.lzma:copy \
+		Diaspora_R1_Patch_1.1.tar.lzma:intfiles,twfiles \
 		Diaspora_R1_Patch_1.1.1.tar.lzma
 
 MAINTAINER=	lightside@gmx.com
@@ -48,8 +49,6 @@ PLIST_FILES+=	bin/fs2_open_${PORTNAME} \
 DESKTOP_ENTRIES=	"Diaspora" "${COMMENT}" \
 	"${PORTNAME}" "fs2_open_${PORTNAME}" \
 	"Game;Simulation;" false
-
-MANUAL_PACKAGE_BUILD=	very large distfile set (~1.8 GB)
 
 OPTIONS_DEFINE=	DOCS INCJOYBTNS SPEECH WXLAUNCHER
 OPTIONS_DEFAULT=	SPEECH WXLAUNCHER

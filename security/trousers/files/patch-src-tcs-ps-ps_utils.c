@@ -1,5 +1,5 @@
---- src/tcs/ps/ps_utils.c.orig	2012-09-20 02:24:48.000000000 +0900
-+++ src/tcs/ps/ps_utils.c	2013-07-31 22:18:59.000000000 +0900
+--- src/tcs/ps/ps_utils.c.orig	2014-04-24 18:05:44 UTC
++++ src/tcs/ps/ps_utils.c
 @@ -16,10 +16,18 @@
  #if defined(HAVE_BYTEORDER_H)
  #include <sys/byteorder.h>
@@ -31,7 +31,7 @@
  read_data(int fd, void *data, UINT32 size)
  {
  	int rc;
-@@ -64,11 +68,7 @@
+@@ -64,11 +68,7 @@ read_data(int fd, void *data, UINT32 siz
  }
  
  

@@ -1,11 +1,11 @@
 Policyd is an anti-spam plugin for Postfix (written in C) that does :
 
  o Greylisting,
- o Sender-(envelope, SASL or host / ip)-based throttling 
+ o Sender-(envelope, SASL or host / ip)-based throttling
    (on messages and/or volume per defined time unit),
  o Recipient rate limiting,
  o Spamtrap monitoring / blacklisting,
- o HELO auto blacklisting 
+ o HELO auto blacklisting
  o HELO randomization preventation,
  o Sender mail addresses or domain Sender blacklisting
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	geoalchemy
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	databases geography python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +14,9 @@ COMMENT=	Using SQLAlchemy with Spatial Databases
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6.1:databases/py-sqlalchemy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.6.1:databases/py-sqlalchemy10
 
+NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python:2
 

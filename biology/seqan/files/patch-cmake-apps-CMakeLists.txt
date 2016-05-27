@@ -1,8 +1,0 @@
---- cmake/apps/CMakeLists.txt.orig	2012-05-04 11:12:35.000000000 +0800
-+++ cmake/apps/CMakeLists.txt	2012-05-04 11:23:26.000000000 +0800
-@@ -108,4 +108,4 @@
- 
- # Install RazerS gapped parameters.
- install(DIRECTORY ${SEQAN_LIBRARY}/apps/razers2/gapped_params
--        DESTINATION bin)
-+        DESTINATION share/seqan)

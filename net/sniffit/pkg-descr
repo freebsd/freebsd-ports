@@ -1,4 +1,4 @@
-Sniffit is a network sniffer for TCP/UDP/ICMP packets. 
+Sniffit is a network sniffer for TCP/UDP/ICMP packets.
 
 Sniffit produces very detailed technical details about the packets flowing
 through your network (SEQ, ACK, TTL, Window, ...) and also packet contents

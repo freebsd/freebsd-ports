@@ -1,7 +1,7 @@
 ********************************************************************
 The current version of nhocr supports only "-line" recognition mode.
 You may want to install graphics/ocropus, document layout analyzer,
-and use nhocr as a plugin recognizer for ocropus. 
+and use nhocr as a plugin recognizer for ocropus.
 
 % ocroscript rec-nhocr input.pgm >output.txt
 ********************************************************************

@@ -1,0 +1,27 @@
+--- brushlib/SConscript.orig	2016-01-15 19:42:55 UTC
++++ brushlib/SConscript
+@@ -52,7 +52,7 @@ def create_pkgconfig_files(env, pkgconfi
+     }
+     pc_file = env.Substfile('%s.pc' % pkgconfig_name,
+                             "pkgconfig.pc.in", SUBST_DICT=pkg_info)
+-    install_perms(env, '$prefix/lib/pkgconfig', pc_file)
++    install_perms(env, '$prefix/libdata/pkgconfig', pc_file)
+ 
+     return pc_file
+ 
+@@ -163,7 +163,6 @@ if env['enable_introspection']:
+     install_perms(env, '$prefix/share/gir-1.0', gir)
+     install_perms(env, '$prefix/lib/girepository-1.0', typelib)
+ 
+-install_perms(env, '$prefix/lib/', brushlib)
+ install_perms(env, '$prefix/include/libmypaint', Glob("./mypaint-*.h"))
+ install_perms(env, '$prefix/include/libmypaint/glib', Glob("./glib/mypaint-*.h"))
+ install_perms(env, "$prefix/share/libmypaint", Glob("./*.py"))
+@@ -183,7 +182,6 @@ if env['enable_gegl']:
+     lib_builder = gegl_env.SharedLibrary if env['use_sharedlib'] else gegl_env.StaticPicLibrary
+     brushlib_gegl = lib_builder('./mypaint-gegl', Glob("./gegl/*.c"))
+ 
+-    install_perms(env, '$prefix/lib/', brushlib_gegl)
+     install_perms(env, '$prefix/include/libmypaint-gegl', Glob("./gegl/mypaint-gegl-*.h"))
+ 
+     create_pkgconfig_files(env, 'libmypaint-gegl', brushlib_version, 'MyPaint brush engine library, with GEGL integration',

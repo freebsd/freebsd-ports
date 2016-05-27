@@ -5,4 +5,4 @@ from x11-wm/awesome. Unless you're using Awesome or some other system
 with a client pipe, you probably want the main version of Conky in
 sysutils/conky.
 
-WWW:	http://conky.sourceforge.net/
+WWW: http://conky.sourceforge.net/

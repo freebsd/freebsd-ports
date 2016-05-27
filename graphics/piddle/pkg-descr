@@ -9,6 +9,6 @@ drawing calls of each backend, for maximum efficiency and quality. It
 works by defining a base class (piddle.Canvas) with methods for all
 supported drawing primitives. A particular drawing context is provided
 in the form of a derived class. PIDDLE applications will be able to
-automatically select an appropriate backend for the user's environment. 
+automatically select an appropriate backend for the user's environment.
 
 WWW: http://piddle.sourceforge.net/

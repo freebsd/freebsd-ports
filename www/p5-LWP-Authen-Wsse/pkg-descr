@@ -1,9 +1,9 @@
-LWP::Authen::Wsse allows LWP to authenticate against servers that are using 
+LWP::Authen::Wsse allows LWP to authenticate against servers that are using
 the X-WSSE authentication scheme, as required by the Atom Authentication API.
 
-The module is used indirectly through LWP, rather than including it directly 
-in your code. The LWP system will invoke the WSSE authentication when it 
-encounters the authentication scheme while attempting to retrieve a URL 
+The module is used indirectly through LWP, rather than including it directly
+in your code. The LWP system will invoke the WSSE authentication when it
+encounters the authentication scheme while attempting to retrieve a URL
 from a server.
 
 WWW: http://search.cpan.org/dist/LWP-Authen-Wsse/

@@ -3,7 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	3.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	37
@@ -33,13 +33,6 @@ SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
-
-.include <bsd.port.pre.mk>
-
-# puppet 4.x should support ruby 2.2.x
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not work with Ruby 2.2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppet|${ETCDIR}|" \
@@ -74,4 +67,4 @@ do-install:
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/example-passenger-vhost.conf ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

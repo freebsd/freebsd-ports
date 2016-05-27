@@ -1,19 +1,19 @@
 A graphical front-end to `cscope' and its clone `cs' with a number of
 nice features, including:
 
--  Graphical window interface for general ease of use. 
--  Function call hierarchy and function viewer. 
--  Recall of previous queries and query results for easy browsing. 
--  Ability to switch between databases and query back-ends. 
--  Source code highlighting ala Emacs. 
--  Querying and building may be performed simultaneously. 
--  Build database dialog allows interactively configuring source 
-   and include directories. 
--  Saves queries and/or query results for later sessions. 
--  Query results and file browser separated by adjustable pane. 
--  Full text search in viewer windows. 
--  Convenient key and button bindings. 
--  Ability to invoke any editor directly from browser. 
--  Crude but existing help menu. 
+-  Graphical window interface for general ease of use.
+-  Function call hierarchy and function viewer.
+-  Recall of previous queries and query results for easy browsing.
+-  Ability to switch between databases and query back-ends.
+-  Source code highlighting ala Emacs.
+-  Querying and building may be performed simultaneously.
+-  Build database dialog allows interactively configuring source
+   and include directories.
+-  Saves queries and/or query results for later sessions.
+-  Query results and file browser separated by adjustable pane.
+-  Full text search in viewer windows.
+-  Convenient key and button bindings.
+-  Ability to invoke any editor directly from browser.
+-  Crude but existing help menu.
 
 WWW: http://sourceforge.net/projects/cbrowser/

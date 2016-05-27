@@ -8,7 +8,7 @@ Timezone components in Calendars. This means that RiCal parses VTIMEZONE
 data and instantiates timezone objects which can be used to convert
 times in the calendar to and from UTC time.  In addition, RiCal allows
 created calendars and components to use time zones understood by TZInfo gem
-(from either the TZInfo gem or from Rails ActiveSupport => 2.2). 
+(from either the TZInfo gem or from Rails ActiveSupport => 2.2).
 When a calendar with TZInfo time zones is exported, RFC 2445 conforming
 VTIMEZONE components will be included, allowing other programs to process
 the result.

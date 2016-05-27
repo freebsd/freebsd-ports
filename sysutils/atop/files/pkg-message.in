@@ -2,9 +2,9 @@
 
 atop succesfully installed. To run in interactive mode use "atop" command.
 
-To run the atop in collecting mode from startup, add 
+To run the atop in collecting mode from startup, add
 
-atop_enable="YES" 
+atop_enable="YES"
 
 in your /etc/rc.conf.
 

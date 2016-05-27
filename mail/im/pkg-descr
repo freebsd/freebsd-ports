@@ -14,7 +14,7 @@ and/or modify it under the modified BSD license.
 Although you installed IM successfully, yet you must be initialized on
 your home directory at once. Execute imsetup command with your account
 after im installed.
-        
+
         % imsetup
 
 WWW: http://tats.haun.org/im/

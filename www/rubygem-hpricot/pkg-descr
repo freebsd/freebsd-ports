@@ -1,5 +1,5 @@
-Hpricot is a very flexible HTML parser, based on Tanaka Akira's HTree 
-and John Resig's JQuery, but with the scanner recoded in 
+Hpricot is a very flexible HTML parser, based on Tanaka Akira's HTree
+and John Resig's JQuery, but with the scanner recoded in
 C (using Ragel for scanning.)
 
 WWW: https://github.com/hpricot/hpricot

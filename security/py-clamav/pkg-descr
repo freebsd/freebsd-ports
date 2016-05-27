@@ -1,8 +1,8 @@
-pyClamAV is a python binding to libclamav written 
+pyClamAV is a python binding to libclamav written
 in C.
 
-By using pyClamAV, you can add virus detection 
-capabilities to your python software in an efficient 
+By using pyClamAV, you can add virus detection
+capabilities to your python software in an efficient
 and easy way.
 
 WWW: http://xael.org/norman/python/pyclamav/

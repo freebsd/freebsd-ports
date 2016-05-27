@@ -1,0 +1,30 @@
+--- bin/rgds-tree.orig	2016-05-16 07:41:38 UTC
++++ bin/rgds-tree
+@@ -64,11 +64,11 @@ opts = GetoptLong.new(
+ 
+ opts.each do |option, argument|
+   case option
+-  when '--top-structs' : top_structs = argument.split(/\s+/)
+-  when '--inst-counts' : show_inst_counts = argument
+-  when '--broken-refs' : broken_refs = argument
+-  when '--delimiter'   : delimiter = argument
+-  when '--help'        : abort usage
++  when '--top-structs'  then top_structs = argument.split(/\s+/)
++  when '--inst-counts'  then show_inst_counts = argument
++  when '--broken-refs'  then broken_refs = argument
++  when '--delimiter'    then delimiter = argument
++  when '--help'         then abort usage
+   end
+ end
+ 
+@@ -111,8 +111,8 @@ class HierStruct
+       else
+         # broken reference; deal with appropriately
+         case @broken_refs
+-        when :annotate : $stdout.puts string + '(MISSING)'
+-        when :prune    : nil
++        when :annotate  then $stdout.puts string + '(MISSING)'
++        when :prune     then nil
+         else
+           $stdout.puts string + @delimiter + struct_name + cnt_suffix
+         end

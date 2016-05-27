@@ -1,6 +1,6 @@
---- prn.c.orig	Thu May 26 11:37:45 1994
-+++ prn.c	Fri Feb  6 00:18:11 2004
-@@ -26,16 +26,24 @@
+--- prn.c.orig	1994-05-26 02:37:45 UTC
++++ prn.c
+@@ -26,16 +26,24 @@ static char sccsid[] = "@(#)prn.c 2.3 (Y
  #endif
  
  #include <stdio.h>
@@ -26,7 +26,7 @@
  #define LPRPATH		"/usr/bin/lpr"
  #else
  #define LPRPATH		"/usr/ucb/lpr"
-@@ -48,8 +56,12 @@
+@@ -48,8 +56,12 @@ static char sccsid[] = "@(#)prn.c 2.3 (Y
  
  #else
  
@@ -39,7 +39,7 @@
  
  #endif
  
-@@ -96,7 +108,7 @@
+@@ -96,7 +108,7 @@ static char *rangestr = NULL;
  static char *filename;		/* name of the file being processed */
  static char *modtime;		/* the last modification time */
  
@@ -48,7 +48,7 @@
  static char *basename();
  static bool formatopt();
  static bool rangeopt();
-@@ -498,16 +510,15 @@
+@@ -498,16 +510,15 @@ int main(c, v)
  	error(format, arg1, arg2, ...)
  	    char *format;
   ---------------------------------------------------------------------*/

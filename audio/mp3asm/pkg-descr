@@ -1,7 +1,7 @@
 An mp3 frame level editor. Allows you to work with individual frames of an
 mp3 stream. Supports mpeg audio 1/2/2.5 layer 1,2,3 cbr/vbr.
 
-Feature: 
+Feature:
    - Removing bad frames and blips.
    - Correcting certain errors in the stream.
    - Working with individual frames, like one would with individual samples

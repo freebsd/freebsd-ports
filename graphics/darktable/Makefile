@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -40,7 +40,7 @@ SQUISH_DESC=	Compress thumbnail via libsquish
 RAWSPEED_DESC=	Compile with rawspeed backend
 SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
 
-OPTIONS_DEFAULT=COLORD FLICKR GEO GPHOTO LUA NLS OPENEXR OPENJPEG	\
+OPTIONS_DEFAULT=COLORD FLICKR GEO GPHOTO LUA OPENEXR OPENJPEG	\
 		PRINT RAWSPEED SLIDESHOW SQUISH WEBP
 OPTIONS_SUB=	yes
 

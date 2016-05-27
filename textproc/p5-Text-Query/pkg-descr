@@ -9,6 +9,6 @@ The class provided by this module uses four packages to process the
 query. The query parser parses the question and calls a query expression
 builder (internal form of the question). The optimizer is then called to
 reduce the complexity of the expression. The solver applies the
-expression on a data source. 
+expression on a data source.
 
 WWW: http://search.cpan.org/dist/Text-Query/

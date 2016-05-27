@@ -1,2 +1,2 @@
-Filesys::DiskFree does about what the Unix command df(1) does, listing 
+Filesys::DiskFree does about what the Unix command df(1) does, listing
 the mounted disks, and the amount of free space used & available.

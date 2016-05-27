@@ -1,6 +1,6 @@
 InlineX::C2XS - create an XS file from an Inline C file.
 
-The C file that InlineX::C2XS needs to find would contain 
+The C file that InlineX::C2XS needs to find would contain
 only the C code.
 
 InlineX::C2XS looks for the file in ./src directory - expecting that the

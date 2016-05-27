@@ -2,7 +2,7 @@ GroupOffice has been installed into:
 
     %%WWWDIR%%
 
-You will probably want to add an alias to your httpd.conf file, 
+You will probably want to add an alias to your httpd.conf file,
 somethinglike this:
 
     Alias /groupoffice "%%WWWDIR%%"
@@ -10,7 +10,7 @@ somethinglike this:
 And restart Apache.
 
 open to install
-    http://<hostname>/groupoffice/install/install.php 
+    http://<hostname>/groupoffice/install/install.php
 
 or update
 	http://<hostname>/groupoffice/install/upgrade.php

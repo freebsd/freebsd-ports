@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.11
+PORTVERSION=	4.4.12
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
 

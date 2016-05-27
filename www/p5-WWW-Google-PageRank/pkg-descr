@@ -1,6 +1,6 @@
-The WWW::Google::PageRank is a class implementing a interface 
+The WWW::Google::PageRank is a class implementing a interface
 for querying google pagerank.
-To use it, you should create WWW::Google::PageRank object 
+To use it, you should create WWW::Google::PageRank object
 and use its method get(), to query page rank of URL.
 It uses LWP::UserAgent for making request to Google.
 

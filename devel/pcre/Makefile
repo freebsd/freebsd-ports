@@ -5,7 +5,7 @@ PORTNAME=	pcre
 PORTVERSION=	8.38
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+MASTER_SITES=	SF \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/${PORTNAME}/ \
 		ftp://ftp.fu-berlin.de/unix/misc/${PORTNAME}/ \
 		ftp://ftp.tin.org/pub/libs/${PORTNAME}/

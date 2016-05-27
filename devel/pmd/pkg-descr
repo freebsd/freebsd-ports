@@ -3,7 +3,7 @@ PMD scans Java source code and looks for potential problems like:
     * Possible bugs - empty try/catch/finally/switch statements
     * Dead code - unused local variables, parameters and private methods
     * Suboptimal code - wasteful String/StringBuffer usage
-    * Overcomplicated expressions - unnecessary if statements, for loops 
+    * Overcomplicated expressions - unnecessary if statements, for loops
       that could be while loops
     * Duplicate code - copied/pasted code means copied/pasted bugs
 

@@ -1,6 +1,6 @@
-REDUCE is an interactive system for general algebraic computations of 
-interest to mathematicians, scientists and engineers. It has been 
-produced by a collaborative effort involving many contributors. Its 
+REDUCE is an interactive system for general algebraic computations of
+interest to mathematicians, scientists and engineers. It has been
+produced by a collaborative effort involving many contributors. Its
 capabilities include:
 
 *  expansion and ordering of polynomials and rational functions;
@@ -17,8 +17,8 @@ capabilities include:
 *  calculations with a wide variety of special functions;
 *  Dirac matrix calculations of interest to high energy physicists.
 
-It is often used as an algebraic calculator for problems that are possible 
-to do by hand. However,  REDUCE is designed to support calculations that 
+It is often used as an algebraic calculator for problems that are possible
+to do by hand. However,  REDUCE is designed to support calculations that
 are not feasible by hand.
 
 WWW: http://www.reduce-algebra.com/

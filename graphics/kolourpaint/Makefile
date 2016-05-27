@@ -9,7 +9,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 paint program
 
-USE_KDE4=	kdelibs kdeprefix automoc4 qimageblitz
+USE_KDE4=	kdelibs automoc4 qimageblitz
 USES=		cmake:outsource tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

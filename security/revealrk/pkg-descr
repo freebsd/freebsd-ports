@@ -1,4 +1,3 @@
-
 revealrk searches for hidden processes. If you have a kernel mod
 rootkit loaded into memory without hiding any process, don't expect
 to find anything.

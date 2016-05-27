@@ -1,10 +1,10 @@
-Date::Business provides the functionality to perform simple date manipulations 
+Date::Business provides the functionality to perform simple date manipulations
 quickly. Support for calendar date and business date math is provided.
 
-Business dates are weekdays only. Adding 1 to a weekend returns Monday, 
+Business dates are weekdays only. Adding 1 to a weekend returns Monday,
 subtracting 1 returns Friday.
 
-The difference in business days between Friday and the following 
-Monday (using the diffb function) is one business day. The 
-number of business days between Friday and the following 
+The difference in business days between Friday and the following
+Monday (using the diffb function) is one business day. The
+number of business days between Friday and the following
 Monday (using the betweenb function) is zero.

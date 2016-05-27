@@ -7,16 +7,16 @@ The classes include
   - logging:  A flexible logging mechanism similar to log4j. Supports
     logging levels, logging contexts, different output channels per context,
     configuration per xml, ...
-    
+
   - XML-based reflection: a configuration mechanism which is based on XML and
     uses inversion of control (see tests for an example)
-    
+
   - a simple testing framework
 
   - StringUtils class
 
   - an iterator interface
-  
+
 LICENSE: LGPL2 or later
 
 WWW: http://fortytwo.sourceforge.net/

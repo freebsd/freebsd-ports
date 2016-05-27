@@ -1,5 +1,5 @@
-To build some applications to arbitrate manipulations under concurrent 
-works, it is necessary to compare three texts line by line. This diff3 
+To build some applications to arbitrate manipulations under concurrent
+works, it is necessary to compare three texts line by line. This diff3
 code into Perl language has ported from GNU diff3.c widely used.
 
 WWW: http://search.cpan.org/dist/Text-Diff3/

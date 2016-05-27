@@ -1,10 +1,10 @@
-Snzip is one of command line tools using snappy. This supports five types of 
+Snzip is one of command line tools using snappy. This supports five types of
 file formats:
   framing-format,
   old framing-format,
   SNZ format,
   snappy-java format
-  and snappy-in-java format. 
+  and snappy-in-java format.
 The default format is framing-format.
 
 WWW: https://github.com/kubo/snzip

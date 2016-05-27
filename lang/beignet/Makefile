@@ -38,7 +38,7 @@ BROKEN_FreeBSD_9=	Beignet is only supported on FreeBSD 10.1 and newer
 #TESTS_DESC=	Build and run the test suite
 
 EXTRA_PATCHES=	${PATCHDIR}/llvm37-68b5180:-p1 \
-		${PATCHDIR}/llvm37-27522f9:-p1		
+		${PATCHDIR}/llvm37-27522f9:-p1
 
 .include <bsd.port.options.mk>
 

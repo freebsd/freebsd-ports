@@ -1,4 +1,4 @@
-Sjitter is a command line client/server to measure jitter 
+Sjitter is a command line client/server to measure jitter
 (based on RFC 1889), one way UDP delay and bandwidth.
 
-WWW: http://www.nicolargo.com/dev/sjitter/ 
+WWW: http://www.nicolargo.com/dev/sjitter/

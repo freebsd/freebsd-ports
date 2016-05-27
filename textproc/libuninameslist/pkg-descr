@@ -1,5 +1,5 @@
-A library with a large (sparse) array mapping each unicode 
-code point to the annotation data for it provided in 
+A library with a large (sparse) array mapping each unicode
+code point to the annotation data for it provided in
 http://www.unicode.org/Public/UNIDATA/NamesList.txt.
 
 WWW: http://libuninameslist.sourceforge.net/

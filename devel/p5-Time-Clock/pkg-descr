@@ -1,6 +1,6 @@
-A Time::Clock object is a twenty-four hour clock with nanosecond precision 
+A Time::Clock object is a twenty-four hour clock with nanosecond precision
 and wrap-around.  It is a clock only; it has absolutely no concept of dates.
-Vagaries of date/time such as leap seconds and daylight savings time are 
+Vagaries of date/time such as leap seconds and daylight savings time are
 unsupported.
 
 WWW: http://search.cpan.org/dist/Time-Clock/

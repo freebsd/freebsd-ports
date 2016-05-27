@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GNOME=	pygnome2
 USES=		python
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -51,6 +52,8 @@ do-install:
 		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/plugins)
 	${FIND} ${STAGEDIR}${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
 	${FIND} ${STAGEDIR}${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && \
 		${INSTALL_DATA} CONTRIB README ${STAGEDIR}${DOCSDIR})

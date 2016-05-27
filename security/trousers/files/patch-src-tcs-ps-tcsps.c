@@ -1,5 +1,5 @@
---- src/tcs/ps/tcsps.c.orig	2010-05-02 11:39:11.000000000 +0900
-+++ src/tcs/ps/tcsps.c	2010-10-24 21:04:04.833559489 +0900
+--- src/tcs/ps/tcsps.c.orig	2014-04-24 18:05:44 UTC
++++ src/tcs/ps/tcsps.c
 @@ -24,6 +24,11 @@
  #define LE_16 htole16
  #define LE_32 htole32

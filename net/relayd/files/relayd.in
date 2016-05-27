@@ -22,8 +22,17 @@ load_rc_config $name
 
 command="%%PREFIX%%/sbin/relayd"
 relayctl="%%PREFIX%%/sbin/relayctl"
+start_precmd="relayd_checkconfig"
+reload_precmd="relayd_checkconfig"
+restart_precmd="relayd_checkconfig"
 reload_cmd="relayd_reload_cmd"
 extra_commands="reload"
+
+relayd_checkconfig()
+{
+	echo "Performing sanity check on relayd configuration:"
+	eval ${command} ${relayd_flags} -n
+}
 
 relayd_reload_cmd () {
 	${relayctl} reload

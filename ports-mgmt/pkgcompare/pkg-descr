@@ -1,4 +1,4 @@
-This program provides for an alternate pkg upgrade procedure. 
+This program provides for an alternate pkg upgrade procedure.
 
 Move /usr/local to /usr/old-local and /var/db/pkg to /var/db/old-pkg,
 then use pkg-compare to generate a list of packages to install.

@@ -10,6 +10,6 @@ dynamic content.
 As you'd expect from the Tcl community, there are hundreds of modules
 written for mod_rivet, everything from persistent database connections, to
 templating sytems, to complete XML content delivery systems. Web sites like
-FlightAware use mod_rivet. 
+FlightAware use mod_rivet.
 
 WWW: http://tcl.apache.org/rivet/

@@ -11,7 +11,7 @@ Features:
     * Quick-search facility.
     * Username and password may easily be copied to the clipboard.
     * Encryption is done using the OpenSSL cryptographics library.
-    * The built-in password generator helps you generate secure passwords. 
+    * The built-in password generator helps you generate secure passwords.
     * You can launch a website and the associated username/passwords
       direct from GPass
 

@@ -46,16 +46,16 @@
 +test_unit_test_LDADD = -lgtest -lmd -lpthread \
  						libzimg.la
  endif # UNIT_TEST
---- configure.ac.orig	2016-01-22 18:12:28 UTC
+--- configure.ac.orig	2016-05-08 20:08:38 UTC
 +++ configure.ac
-@@ -29,8 +29,6 @@ AS_IF([test "x$enable_unit_test" = "xyes
-           [x86_64], [],
-           [AC_MSG_WARN([Could not determine how to enable IEEE-754 compliance on host. Tests may fail.])]
-         )
+@@ -30,8 +30,6 @@ AS_IF([test "x$enable_unit_test" = "xyes
+                 [i?86],   [CFLAGS="$CFLAGS -mfpmath=sse -msse2" CXXFLAGS="$CXXFLAGS -mfpmath=sse -msse2"],
+                 [x86_64], [],
+                 [AC_MSG_WARN([Could not determine how to enable IEEE-754 compliance on host. Tests may fail.])])
 -        AC_CONFIG_SUBDIRS(test/extra/googletest/googletest)
 -        AC_SUBST([CONFIG_SUBDIRS], [test/extra/googletest/googletest])
-       ],
- )
+       ])
+ 
  
 --- test/graph/filter_validator.cpp.orig	2016-01-22 18:12:28 UTC
 +++ test/graph/filter_validator.cpp

@@ -1,8 +1,8 @@
 bin/tpmd
 include/tddl.h
-lib/libtddl.a
-lib/libtddl.so
-lib/libtddl.so.1
-lib/libtddl.so.1.2.0.7
+lib/tddl_emu/libtddl.a
+lib/tddl_emu/libtddl.so
+lib/tddl_emu/libtddl.so.1
+lib/tddl_emu/libtddl.so.1.2.0.7
 @dir(%%USERS%%,%%GROUPS%%,0700) var/db/tpm
 @dir(%%USERS%%,%%GROUPS%%,0700) /var/run/tpm

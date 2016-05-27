@@ -5,8 +5,8 @@ pairs consisting of a name and a value, with pairs separated by ampersand or
 semicolon and names and values separated by the equal sign. Space characters
 are replaced with plus sign and any characters not in the unreserved character
 set is encoded using the percent-encoding scheme also used for resource
-identifiers. 
-A percent-encoded octet is encoded as a character triplet, consisting of the 
+identifiers.
+A percent-encoded octet is encoded as a character triplet, consisting of the
 percent character "%" followed by the two hexadecimal digits representing that
 octet's numeric value.
 

@@ -3,6 +3,6 @@ This is a nice supplement to the traditional .t files.
 It's like XUnit, Perl-style.
 
 Test::Tutorial is just documentation. To actually get anything done you
-use pod2test. Read the Test::Inline::Tutorial, really. 
+use pod2test. Read the Test::Inline::Tutorial, really.
 
 WWW: http://search.cpan.org/dist/Test-Inline/

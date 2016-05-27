@@ -3,4 +3,4 @@ purposes (but may also be useful for other things). It allows you to
 detect which Super I/O you have on your mainboard, and it can provide
 detailed information about the register contents of the Super I/O.
 
-WWW:	http://www.coreboot.org/Superiotool
+WWW: http://www.coreboot.org/Superiotool

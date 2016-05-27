@@ -1,0 +1,11 @@
+TIMESTAMP = 1463713231
+SHA256 (aseprite-aseprite-v1.1.5.6-b659747_GH0.tar.gz) = 45b08dcf5fd02a8759c1cfbf5cd7b2c80b988993bd2d7a1f24b8e3601a60245c
+SIZE (aseprite-aseprite-v1.1.5.6-b659747_GH0.tar.gz) = 2979354
+SHA256 (aseprite-flic-da184cb_GH0.tar.gz) = 118f422957ea59121a14f0474471cfb09fcf62fe9834b9b683671e53fb675075
+SIZE (aseprite-flic-da184cb_GH0.tar.gz) = 6552
+SHA256 (aseprite-gtest-d63c625_GH0.tar.gz) = 9f8be975b8672f7e2e14053744bc9433aa8d0f613378ca1a9ab99ac87ba11a39
+SIZE (aseprite-gtest-d63c625_GH0.tar.gz) = 989187
+SHA256 (aseprite-simpleini-d4a436a_GH0.tar.gz) = d78bdc44396b81501c5ad1b59d06db9055b037db53ef2a30dd583194ed3133fa
+SIZE (aseprite-simpleini-d4a436a_GH0.tar.gz) = 54668
+SHA256 (aseprite-duktape-90090c7_GH0.tar.gz) = a188d14e622a10429588376da8d77c3a79dd268a241e15a1bc6f2a3e04d126ce
+SIZE (aseprite-duktape-90090c7_GH0.tar.gz) = 608122

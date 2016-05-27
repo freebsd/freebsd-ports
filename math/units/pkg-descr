@@ -3,10 +3,10 @@ The Free Software Foundation's "units" unit conversion and calculation utility.
 GNU units converts quantities expressed in various scales to their equivalents
 in other scales. Units can only handle multiplicative scale changes. For
 example, it cannot convert Celsius to Fahrenheit but it can convert
-temperature differences between those temperature scales. 
+temperature differences between those temperature scales.
 
 The units are defined externally in an extensive, well annotated data file
-that defines over 2000 units. You can also provide your own data file. 
+that defines over 2000 units. You can also provide your own data file.
 
 WWW: http://www.gnu.org/software/units/
 

@@ -1,17 +1,17 @@
-The ELF shell 0.5 takes advantage of a hash based, lazy typed 
-object oriented architecture, a readline based interactive mode 
-(35+ builtin commands, with history, completion, regular 
-expression powered), a scripting mode (sample scripts and 
-session logs available on this page) and brings more 
-modification API (relocation tables, .interp, .dynamic, 
-.dynsym, PAX bits, and +), atomic operations with get/set and 
-add/sub/mul/div/mod commands, section injection by top (insert 
-unlimited amount of data in the executable PT_LOAD, even in 
-non-executable environments), a quiet output for tiny screens, 
-ELFsh modules support, sophisticated write/printf primitives, 
-SPARC PLT infection, experimental ET_EXEC relocation and 
-remapping features, ET_REL injection into ET_EXEC (with bss and 
-symtab merging support), disassembly (with good resolving) on 
-i386 binaries with libasm, and much more. 
+The ELF shell 0.5 takes advantage of a hash based, lazy typed
+object oriented architecture, a readline based interactive mode
+(35+ builtin commands, with history, completion, regular
+expression powered), a scripting mode (sample scripts and
+session logs available on this page) and brings more
+modification API (relocation tables, .interp, .dynamic,
+.dynsym, PAX bits, and +), atomic operations with get/set and
+add/sub/mul/div/mod commands, section injection by top (insert
+unlimited amount of data in the executable PT_LOAD, even in
+non-executable environments), a quiet output for tiny screens,
+ELFsh modules support, sophisticated write/printf primitives,
+SPARC PLT infection, experimental ET_EXEC relocation and
+remapping features, ET_REL injection into ET_EXEC (with bss and
+symtab merging support), disassembly (with good resolving) on
+i386 binaries with libasm, and much more.
 
 WWW: http://elfsh.asgardlabs.org/

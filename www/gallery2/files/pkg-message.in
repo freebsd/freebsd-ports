@@ -7,7 +7,7 @@ Full instructions are available here:
 If you are using MySQL, here's the short version of the instructions:
 
   1. Create a new database:
-  $ mysqladmin -uroot create gallery2 
+  $ mysqladmin -uroot create gallery2
 
   2. Grant access to the database:
   $ mysql -uroot -e"GRANT ALL ON gallery2.* TO USERNAME@localhost IDENTIFIED BY 'PASSWORD'" gallery2

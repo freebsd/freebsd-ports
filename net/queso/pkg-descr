@@ -11,7 +11,7 @@ detectable.
 QueSO sends:
 
         0 SYN           * THIS IS VALID, used to verify LISTEN
-        1 SYN+ACK       
+        1 SYN+ACK
         2 FIN
         3 FIN+ACK
         4 SYN+FIN

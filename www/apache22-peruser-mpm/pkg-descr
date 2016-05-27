@@ -2,7 +2,7 @@ Peruser is an Apache 2 modules based on metuxmpm. The fundamental
 concept behind them is to run each apache child process as its own
 user and group, each handling its own set of virtual hosts. Peruser
 and recent metuxmpm releases can also chroot() apache processes.
-The result is a sane and secure web server environment for your 
+The result is a sane and secure web server environment for your
 users, without kludges like PHP's safe_mode.
 
 WWW: http://source.kood.ee/

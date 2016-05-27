@@ -3,11 +3,11 @@ Perl compiler's C backend
 This compiler backend takes Perl source and generates C source
 code corresponding to the internal structures that perl uses to
 run your program. When the generated C source is compiled and
-run, it cuts out the time which perl would have taken to load 
-and parse your program into its internal semi-compiled form. 
+run, it cuts out the time which perl would have taken to load
+and parse your program into its internal semi-compiled form.
 That means that compiling with this backend will not help improve
 the runtime execution speed of your program but may improve
-the start-up time. Depending on the environment in which your 
+the start-up time. Depending on the environment in which your
 program runs this may be either a help or a hindrance.
 
 WWW: http://search.cpan.org/dist/B-C/

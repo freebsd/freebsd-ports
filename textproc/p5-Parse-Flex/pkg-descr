@@ -1,17 +1,17 @@
-Parse::Flex works similar to Parse::Lex, but it uses XS for faster 
+Parse::Flex works similar to Parse::Lex, but it uses XS for faster
 performance.
 
-This module allows you to construct a lexer analyzer with your custom 
-rules. Parse::Flex is not intended to be used directly; instead, use the 
-script makelexer.pl to submit your grammar file. The output of the script 
-is a custom shared library and a custom .pm module which, among other 
-things, will transparently load the library and provide interface to your 
-(custom) lexer. In other words, you supply a grammar.l file to 
-makelexer.pl and you receive Flex01.pm and Flex02.so . Then, use only the 
+This module allows you to construct a lexer analyzer with your custom
+rules. Parse::Flex is not intended to be used directly; instead, use the
+script makelexer.pl to submit your grammar file. The output of the script
+is a custom shared library and a custom .pm module which, among other
+things, will transparently load the library and provide interface to your
+(custom) lexer. In other words, you supply a grammar.l file to
+makelexer.pl and you receive Flex01.pm and Flex02.so . Then, use only the
 Flex01.pm - since Flex01.pm will automatically load Flex01.so.
 
-The grammar.l file requires the same syntax as flex(1); that is, the 
-actions are written in C . See the flex(1) documentation to learn the 
+The grammar.l file requires the same syntax as flex(1); that is, the
+actions are written in C . See the flex(1) documentation to learn the
 syntax, or fetch the sample t/grammar.l file inside this package.
 
 WWW: http://search.cpan.org/dist/Parse-Flex/

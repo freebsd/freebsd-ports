@@ -1,5 +1,5 @@
 This is the standalone math library from R -- a language
-and environment for statistical computing and graphics.  
+and environment for statistical computing and graphics.
 See ports/math/R.
 
 To use the routines in your own C or C++ programs, include

@@ -112,7 +112,7 @@ pre-extract:
 post-patch:
 	@${RM} -rf ${WRKSRC}/tcl ${WRKSRC}/tk ${WRKSRC}/itcl \
 		${WRKSRC}/libgui
-	
+
 post-patch-PURE-off:
 	@${RM} -rf ${WRKSRC}/gmp ${WRKSRC}/mpfr ${WRKSRC}/mpc
 

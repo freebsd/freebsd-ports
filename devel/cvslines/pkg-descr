@@ -1,4 +1,4 @@
-cvslines extends the capability of the cvs commit command, to provide 
+cvslines extends the capability of the cvs commit command, to provide
 extra support in managing multiple concurrent lines of development.
 
 cvslines is a "wrapper" facility that helps out with merging changes

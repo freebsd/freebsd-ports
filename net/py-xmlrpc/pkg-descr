@@ -1,7 +1,7 @@
-A very fast implementation of the xmlrpc spec 
-for Python (written in C). It supports both blocking 
-and non-blocking clients and servers on Windows and 
-POSIX platforms. Version 0.8.1 is 100% compliant 
+A very fast implementation of the xmlrpc spec
+for Python (written in C). It supports both blocking
+and non-blocking clients and servers on Windows and
+POSIX platforms. Version 0.8.1 is 100% compliant
 with the www.xmlrpc.com validator.
 
 WWW: http://sourceforge.net/projects/py-xmlrpc/

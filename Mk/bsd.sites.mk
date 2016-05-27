@@ -106,7 +106,7 @@ MASTER_SITE_BERLIOS+= \
 # Reference: https://www.python.org/dev/peps/pep-0449/
 MASTER_SITE_CHEESESHOP+= \
 	https://pypi.python.org/packages/%SUBDIR%/ \
-	https://pypi.io/packages/%SUBDIR%/
+	https://files.pythonhosted.org/packages/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)

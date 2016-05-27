@@ -123,3 +123,15 @@ lib/libdb_stl-%%BDBMAJ%%.so
 lib/libdb_stl-%%BDBMAJ%%.so.0
 lib/libdb_stl-%%BDBVER%%.so
 lib/libdb_stl-%%BDBVER%%.so.0
+@comment %%TCL%%lib/db5/libdb_tcl-%%BDBVER%%.a
+@comment %%TCL%%lib/db5/libdb_tcl-%%BDBVER%%.so
+@comment %%TCL%%lib/db5/libdb_tcl-%%BDBVER%%.so.0
+@comment %%TCL%%lib/db5/libdb_tcl-%%BDBVER%%.so.0.0.0
+@comment %%TCL%%lib/db5/libdb_tcl-5.so
+@comment %%TCL%%lib/db5/libdb_tcl.a
+@comment %%TCL%%lib/db5/libdb_tcl.so
+@comment %%TCL%%lib/db5/pkgIndex.tcl
+@comment %%TCL%%lib/libdb_tcl-%%BDBVER%%.so
+@comment %%TCL%%lib/libdb_tcl-%%BDBVER%%.so.0
+@comment %%TCL%%lib/libdb_tcl-5.so
+@comment %%TCL%%lib/libdb_tcl-5.so.0

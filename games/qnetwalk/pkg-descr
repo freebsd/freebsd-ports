@@ -1,11 +1,11 @@
 QNetWalk, the Qt-version of the popular NetWalk game for system administrators.
 
-Features: 
-* Built-in generator of the levels. 
-* Novice, Amateur, Expert, and Master levels of the skill. 
-* Auto saving of settings. 
-* Turn's animation. 
-* Highscores. 
-* Sound Support. 
+Features:
+* Built-in generator of the levels.
+* Novice, Amateur, Expert, and Master levels of the skill.
+* Auto saving of settings.
+* Turn's animation.
+* Highscores.
+* Sound Support.
 
 WWW: http://qt.osdn.org.ua/qnetwalk.html

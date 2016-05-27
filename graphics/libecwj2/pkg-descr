@@ -1,9 +1,9 @@
-ECW JPEG2000 Codec SDK allows software developers to add support 
-for the JPEG200 and ECW image formats into their own applications 
+ECW JPEG2000 Codec SDK allows software developers to add support
+for the JPEG200 and ECW image formats into their own applications
 (commercial, internal, server based workflow, etc).
 
-JPEG2000 is an International Organization of Standardization (ISO) 
-image format.  ECW is an industry standard for handling large 
-geospatial imagery. 
+JPEG2000 is an International Organization of Standardization (ISO)
+image format.  ECW is an industry standard for handling large
+geospatial imagery.
 
 WWW: http://www.erdas.com/products/ERDASECWJPEG2000SDK/Details.aspx

@@ -2,7 +2,7 @@
 
 The Hiawatha webserver is now installed.
 
-Sample configs were copied to .conf. Edit the configuration files in %%ETCDIR%% 
+Sample configs were copied to .conf. Edit the configuration files in %%ETCDIR%%
 to suit your needs.
 
 Add hiawatha_enable="YES" to rc.conf and start Hiawatha by running:

@@ -1,5 +1,5 @@
-This module, Net::SNMP::Util, gives you functions of SNMP getting 
-operation interfaces using Net::SNMP communicating with multiple 
+This module, Net::SNMP::Util, gives you functions of SNMP getting
+operation interfaces using Net::SNMP communicating with multiple
 hosts and multi-OIDs.
 
 WWW: http://search.cpan.org/dist/Net-SNMP-Util/

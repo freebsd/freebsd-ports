@@ -1,0 +1,9 @@
+--- plugins/kicker/CMakeLists.txt.orig	2015-03-08 02:47:14 UTC
++++ plugins/kicker/CMakeLists.txt
+@@ -1,3 +1,6 @@
+ INCLUDE(BuildPlugin)
+ 
+ BUILD_PLUGIN(kicker kicker.cpp kicker.h MOCFILES kicker.h EMBEDDED_RESOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.png")
++
++include_directories(${SAMPLERATE_INCLUDE_DIRS})
++link_directories(${SAMPLERATE_LIBRARY_DIRS})

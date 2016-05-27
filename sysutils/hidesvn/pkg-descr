@@ -2,5 +2,5 @@ hidesvn uses LD_PRELOAD to change readdir() and readdir_r() to hide .svn
 entries from directories. This is useful when using tools like find(1)
 and grep(1) to search through large source trees, like the FreeBSD SVN
 repository.
- 
+
 WWW: http://80386.nl/projects/hidesvn/

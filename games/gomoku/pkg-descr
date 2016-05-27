@@ -1,12 +1,12 @@
-Gomoku.app is an extended TicTacToe game for GNUstep. 
-You win the game if you are able to put 5 of your pieces 
-in a row, column or diagonal.  You loose if the computer 
-does it before you.  You can play the game on boards of different 
-size; the default size is 8 but 10 is also nice to play.  
+Gomoku.app is an extended TicTacToe game for GNUstep.
+You win the game if you are able to put 5 of your pieces
+in a row, column or diagonal.  You loose if the computer
+does it before you.  You can play the game on boards of different
+size; the default size is 8 but 10 is also nice to play.
 Pass the size of the board as argument of Gomoku.app.  For example, to
 play on a 10x10 board, you can start Gomoku with:
 
-openapp Gomoku.app 10 
+openapp Gomoku.app 10
 
 Warning: board size must be >= 8.
 

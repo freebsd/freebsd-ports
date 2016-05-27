@@ -8,7 +8,7 @@ CATEGORIES=	misc kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection of utilities for KDE 4
 
-USE_KDE4=	kdeprefix
+USE_KDE4=	# blank, needed to get KDE4_VERSION
 USES=		metaport
 
 OPTIONS_DEFINE=	ARK FILELIGHT KCALC KCHARSELECT KDF KFLOPPY KGPG \

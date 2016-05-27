@@ -1,8 +1,8 @@
-RUDE stands for Real-time UDP Data Emitter and CRUDE for Collector for RUDE. 
-RUDE is a small and flexible program that generates traffic to the network, 
-which can be received and logged on the other side of the network with the 
+RUDE stands for Real-time UDP Data Emitter and CRUDE for Collector for RUDE.
+RUDE is a small and flexible program that generates traffic to the network,
+which can be received and logged on the other side of the network with the
 CRUDE. Currently these programs can generate and measure only UDP traffic.
-Actually these tools were designed and coded bacause of the accuracy 
+Actually these tools were designed and coded bacause of the accuracy
 limitations in the MGEN program.
 
 WWW: http://rude.sourceforge.net/

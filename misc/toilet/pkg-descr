@@ -12,6 +12,6 @@ implements or plans to implement the following features:
 * Support for various output formats: HTML, IRC, ANSI...
 
 TOIlet also aims for full FIGlet compatibility. It is currently able to
-load FIGlet fonts and perform horizontal smushing. 
+load FIGlet fonts and perform horizontal smushing.
 
 WWW: http://caca.zoy.org/wiki/toilet

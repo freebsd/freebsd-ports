@@ -1,19 +1,19 @@
-This module implements a Genetic Algorithm (GA) in pure Perl. Other Perl 
-modules that achieve the same thing (perhaps better, perhaps worse) do 
-exist. Please check CPAN. I mainly wrote this module to satisfy my own 
+This module implements a Genetic Algorithm (GA) in pure Perl. Other Perl
+modules that achieve the same thing (perhaps better, perhaps worse) do
+exist. Please check CPAN. I mainly wrote this module to satisfy my own
 needs, and to learn something about GAs along the way.
 
-I will not go into the details of GAs here, but here are the bare basics. 
+I will not go into the details of GAs here, but here are the bare basics.
 Plenty of information can be found on the web.
 
-In a GA, a population of individuals compete for survival. Each individual 
-is designated by a set of genes that define its behaviour. Individuals 
-that perform better (as defined by the fitness function) have a higher 
-chance of mating with other individuals. When two individuals mate, they 
-swap some of their genes, resulting in an individual that has properties 
-from both of its "parents". Every now and then, a mutation occurs where 
-some gene randomly changes value, resulting in a different individual. If 
-all is well defined, after a few generations, the population should 
+In a GA, a population of individuals compete for survival. Each individual
+is designated by a set of genes that define its behaviour. Individuals
+that perform better (as defined by the fitness function) have a higher
+chance of mating with other individuals. When two individuals mate, they
+swap some of their genes, resulting in an individual that has properties
+from both of its "parents". Every now and then, a mutation occurs where
+some gene randomly changes value, resulting in a different individual. If
+all is well defined, after a few generations, the population should
 converge on a "good-enough" solution to the problem being tackled.
 
 WWW: http://search.cpan.org/dist/AI-Genetic/

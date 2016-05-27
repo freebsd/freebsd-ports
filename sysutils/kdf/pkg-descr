@@ -3,7 +3,7 @@ floppy and CD/DVD drives, etc.) along with information on their
 capacity, free space, type and mount point. It also allows you to
 mount and unmount drives and view them in a file manager.
 
-KDiskFree is similar to the Systemsettings Partitions module, but 
+KDiskFree is similar to the Systemsettings Partitions module, but
 takes up less screen space. It is useful if you want to keep a
 KDiskFree window available at all times.
 

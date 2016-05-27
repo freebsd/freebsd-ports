@@ -1,6 +1,6 @@
---- lib/tpm_utils.c.orig	2010-02-02 02:17:23.000000000 +0900
-+++ lib/tpm_utils.c	2013-07-24 22:00:15.000000000 +0900
-@@ -55,6 +55,7 @@
+--- lib/tpm_utils.c.orig	2010-09-30 17:28:09 UTC
++++ lib/tpm_utils.c
+@@ -55,6 +55,7 @@ genericOptHandler( int a_iNumArgs, char 
  	CmdHelpFunction  tCmdHelp = ( a_tCmdHelpFunction ) ? a_tCmdHelpFunction
  							   : logCmdHelp;
  
@@ -8,7 +8,7 @@
  	char  szShortOpts[strlen( pszGenShortOpts )
  			  + ( ( a_pszShortOpts == NULL ) ? 0 : strlen( a_pszShortOpts ) )
  			  + 1];
-@@ -64,12 +65,36 @@
+@@ -64,12 +65,36 @@ genericOptHandler( int a_iNumArgs, char 
  
  	int  iOpt;
  	int  rc;

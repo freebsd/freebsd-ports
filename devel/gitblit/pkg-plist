@@ -1,0 +1,570 @@
+@owner %%GB_USER%%
+@group %%GB_GROUP%%
+@sample(,,644) %%GB_DATAHOME%%/defaults.properties.sample
+@sample(,,644) %%GB_DATAHOME%%/git/project.mkd.sample
+@sample(,,644) %%GB_DATAHOME%%/gitblit.properties.sample
+@(,,644) %%GB_DATAHOME%%/gitignore/Actionscript.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Ada.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Agda.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Android.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/AppceleratorTitanium.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/ArchLinuxPackages.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Autotools.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Bancha.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/C++.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/C.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/CFWheels.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/CMake.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/CakePHP.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/ChefCookbook.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Clojure.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/CodeIgniter.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/CommonLisp.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Composer.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Concrete5.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Coq.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/DM.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Dart.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Delphi.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Drupal.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/EPiServer.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Eagle.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Elisp.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Elixir.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Erlang.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/ExpressionEngine.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Fancy.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Finale.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/ForceDotCom.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/FuelPHP.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/GWT.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Go.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Gradle.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Grails.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Haskell.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Idris.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Java.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Jboss.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Jekyll.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Joomla.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Jython.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Kohana.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Laravel4.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Leiningen.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/LemonStand.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Lilypond.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Lithium.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Magento.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Maven.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Mercury.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Meteor.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Node.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/OCaml.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Objective-C.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Opa.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/OpenCart.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/OracleForms.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Packer.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Perl.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Phalcon.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/PlayFramework.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Plone.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Prestashop.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Processing.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Python.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Qooxdoo.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Qt.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/R.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/ROS.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Rails.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/RhodesRhomobile.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Ruby.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/SCons.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Sass.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Scala.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Scrivener.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Sdcc.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/SeamGen.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/SketchUp.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/SugarCRM.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Symfony.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Symfony2.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/SymphonyCMS.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Target3001.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Tasm.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/TeX.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Textpattern.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/TurboGears2.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Typo3.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Umbraco.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Unity.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/VVVV.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/VisualStudio.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Waf.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/WordPress.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Yeoman.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/Yii.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/ZendFramework.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/gcov.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/nanoc.gitignore
+@(,,644) %%GB_DATAHOME%%/gitignore/stella.gitignore
+@sample(,,644) %%GB_DATAHOME%%/groovy/blockpush.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/fisheye.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/fogbugz.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/jenkins.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/localclone.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/protect-refs.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/redmine-fetch.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/sendmail-html.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/sendmail.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/subgit.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/groovy/thebuggenie.groovy.sample
+@sample(,,644) %%GB_DATAHOME%%/projects.conf.sample
+@sample(,,644) %%GB_DATAHOME%%/users.conf.sample
+@dir(,,755) %%GB_DATAHOME%%
+@dir(,,755) %%GB_DATAHOME%%/git
+@dir(,,755) %%GB_DATAHOME%%/gitignore
+@dir(,,755) %%GB_DATAHOME%%/groovy
+%%GB_HOME%%/WEB-INF/LICENSE
+%%GB_HOME%%/WEB-INF/NOTICE
+%%GB_HOME%%/WEB-INF/data/defaults.properties
+%%GB_HOME%%/WEB-INF/data/git/project.mkd
+%%GB_HOME%%/WEB-INF/data/gitblit.properties
+%%GB_HOME%%/WEB-INF/data/gitignore/Actionscript.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Ada.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Agda.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Android.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/AppceleratorTitanium.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/ArchLinuxPackages.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Autotools.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Bancha.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/C++.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/C.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/CFWheels.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/CMake.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/CakePHP.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/ChefCookbook.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Clojure.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/CodeIgniter.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/CommonLisp.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Composer.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Concrete5.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Coq.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/DM.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Dart.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Delphi.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Drupal.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/EPiServer.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Eagle.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Elisp.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Elixir.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Erlang.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/ExpressionEngine.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Fancy.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Finale.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/ForceDotCom.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/FuelPHP.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/GWT.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Go.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Gradle.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Grails.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Haskell.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Idris.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Java.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Jboss.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Jekyll.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Joomla.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Jython.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Kohana.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Laravel4.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Leiningen.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/LemonStand.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Lilypond.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Lithium.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Magento.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Maven.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Mercury.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Meteor.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Node.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/OCaml.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Objective-C.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Opa.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/OpenCart.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/OracleForms.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Packer.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Perl.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Phalcon.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/PlayFramework.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Plone.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Prestashop.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Processing.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Python.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Qooxdoo.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Qt.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/R.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/ROS.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Rails.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/RhodesRhomobile.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Ruby.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/SCons.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Sass.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Scala.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Scrivener.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Sdcc.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/SeamGen.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/SketchUp.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/SugarCRM.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Symfony.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Symfony2.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/SymphonyCMS.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Target3001.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Tasm.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/TeX.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Textpattern.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/TurboGears2.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Typo3.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Umbraco.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Unity.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/VVVV.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/VisualStudio.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Waf.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/WordPress.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Yeoman.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/Yii.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/ZendFramework.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/gcov.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/nanoc.gitignore
+%%GB_HOME%%/WEB-INF/data/gitignore/stella.gitignore
+%%GB_HOME%%/WEB-INF/data/groovy/blockpush.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/fisheye.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/fogbugz.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/jenkins.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/localclone.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/protect-refs.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/redmine-fetch.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/sendmail-html.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/sendmail.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/subgit.groovy
+%%GB_HOME%%/WEB-INF/data/groovy/thebuggenie.groovy
+%%GB_HOME%%/WEB-INF/data/projects.conf
+%%GB_HOME%%/WEB-INF/data/users.conf
+%%GB_HOME%%/WEB-INF/docs/6x12.dfont
+%%GB_HOME%%/WEB-INF/docs/6x13.dfont
+%%GB_HOME%%/WEB-INF/docs/7x13.dfont
+%%GB_HOME%%/WEB-INF/docs/7x14.dfont
+%%GB_HOME%%/WEB-INF/docs/administration.html
+%%GB_HOME%%/WEB-INF/docs/architecture.png
+%%GB_HOME%%/WEB-INF/docs/arrow_page.png
+%%GB_HOME%%/WEB-INF/docs/blank.png
+%%GB_HOME%%/WEB-INF/docs/book_16x16.png
+%%GB_HOME%%/WEB-INF/docs/bootstrap/css/bootstrap-responsive.min.css
+%%GB_HOME%%/WEB-INF/docs/bootstrap/css/bootstrap.css
+%%GB_HOME%%/WEB-INF/docs/bootstrap/img/glyphicons-halflings-white.png
+%%GB_HOME%%/WEB-INF/docs/bootstrap/img/glyphicons-halflings.png
+%%GB_HOME%%/WEB-INF/docs/bootstrap/js/bootstrap.min.js
+%%GB_HOME%%/WEB-INF/docs/bootstrap/js/jquery.js
+%%GB_HOME%%/WEB-INF/docs/bug_16x16.png
+%%GB_HOME%%/WEB-INF/docs/cold_16x16.png
+%%GB_HOME%%/WEB-INF/docs/d3/d3.js
+%%GB_HOME%%/WEB-INF/docs/d3/rings.css
+%%GB_HOME%%/WEB-INF/docs/d3/rings.js
+%%GB_HOME%%/WEB-INF/docs/design.html
+%%GB_HOME%%/WEB-INF/docs/eclipse_plugin.html
+%%GB_HOME%%/WEB-INF/docs/faq.html
+%%GB_HOME%%/WEB-INF/docs/features.html
+%%GB_HOME%%/WEB-INF/docs/fed_aggregation.png
+%%GB_HOME%%/WEB-INF/docs/fed_mirror.png
+%%GB_HOME%%/WEB-INF/docs/federated_16x16.png
+%%GB_HOME%%/WEB-INF/docs/federation.html
+%%GB_HOME%%/WEB-INF/docs/gitblt-favicon.png
+%%GB_HOME%%/WEB-INF/docs/gitblt_25_white.png
+%%GB_HOME%%/WEB-INF/docs/index.html
+%%GB_HOME%%/WEB-INF/docs/ldapSample.png
+%%GB_HOME%%/WEB-INF/docs/lock_go_16x16.png
+%%GB_HOME%%/WEB-INF/docs/lock_pull_16x16.png
+%%GB_HOME%%/WEB-INF/docs/moxie.less
+%%GB_HOME%%/WEB-INF/docs/permissions_matrix.png
+%%GB_HOME%%/WEB-INF/docs/plugins_extensions.html
+%%GB_HOME%%/WEB-INF/docs/plugins_overview.html
+%%GB_HOME%%/WEB-INF/docs/prettify/bootstrap.css
+%%GB_HOME%%/WEB-INF/docs/prettify/desert.css
+%%GB_HOME%%/WEB-INF/docs/prettify/doxy.css
+%%GB_HOME%%/WEB-INF/docs/prettify/github.css
+%%GB_HOME%%/WEB-INF/docs/prettify/googlecode.css
+%%GB_HOME%%/WEB-INF/docs/prettify/hemisu-dark.css
+%%GB_HOME%%/WEB-INF/docs/prettify/hemisu-light.css
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-apollo.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-clj.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-css.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-go.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-hs.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-lisp.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-lua.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-ml.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-n.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-proto.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-scala.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-sql.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-tex.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-vb.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-vhdl.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-wiki.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-xq.js
+%%GB_HOME%%/WEB-INF/docs/prettify/lang-yaml.js
+%%GB_HOME%%/WEB-INF/docs/prettify/prettify.css
+%%GB_HOME%%/WEB-INF/docs/prettify/prettify.js
+%%GB_HOME%%/WEB-INF/docs/prettify/prettify4bootstrap.css
+%%GB_HOME%%/WEB-INF/docs/prettify/solarized-dark.css
+%%GB_HOME%%/WEB-INF/docs/prettify/solarized-light.css
+%%GB_HOME%%/WEB-INF/docs/prettify/sons-of-obsidian.css
+%%GB_HOME%%/WEB-INF/docs/prettify/sunburst.css
+%%GB_HOME%%/WEB-INF/docs/prettify/tomorrow-night-blue.css
+%%GB_HOME%%/WEB-INF/docs/prettify/tomorrow-night-bright.css
+%%GB_HOME%%/WEB-INF/docs/prettify/tomorrow-night-dark.css
+%%GB_HOME%%/WEB-INF/docs/prettify/tomorrow-night-eighties.css
+%%GB_HOME%%/WEB-INF/docs/prettify/tomorrow-night-light.css
+%%GB_HOME%%/WEB-INF/docs/prettify/tomorrow-night.css
+%%GB_HOME%%/WEB-INF/docs/prettify/vibrant-ink.css
+%%GB_HOME%%/WEB-INF/docs/properties.html
+%%GB_HOME%%/WEB-INF/docs/releasecurrent.html
+%%GB_HOME%%/WEB-INF/docs/releasehistory.html
+%%GB_HOME%%/WEB-INF/docs/rpc.html
+%%GB_HOME%%/WEB-INF/docs/screenshots.js
+%%GB_HOME%%/WEB-INF/docs/setup_authentication.html
+%%GB_HOME%%/WEB-INF/docs/setup_bugtraq.html
+%%GB_HOME%%/WEB-INF/docs/setup_clientmenus.html
+%%GB_HOME%%/WEB-INF/docs/setup_go.html
+%%GB_HOME%%/WEB-INF/docs/setup_hooks.html
+%%GB_HOME%%/WEB-INF/docs/setup_lucene.html
+%%GB_HOME%%/WEB-INF/docs/setup_mirrors.html
+%%GB_HOME%%/WEB-INF/docs/setup_proxy.html
+%%GB_HOME%%/WEB-INF/docs/setup_scaling.html
+%%GB_HOME%%/WEB-INF/docs/setup_transport_http.html
+%%GB_HOME%%/WEB-INF/docs/setup_transport_ssh.html
+%%GB_HOME%%/WEB-INF/docs/setup_viewer.html
+%%GB_HOME%%/WEB-INF/docs/setup_war.html
+%%GB_HOME%%/WEB-INF/docs/shield_16x16.png
+%%GB_HOME%%/WEB-INF/docs/stjude_150x150.gif
+%%GB_HOME%%/WEB-INF/docs/tickets_barnum.html
+%%GB_HOME%%/WEB-INF/docs/tickets_overview.html
+%%GB_HOME%%/WEB-INF/docs/tickets_replication.html
+%%GB_HOME%%/WEB-INF/docs/tickets_setup.html
+%%GB_HOME%%/WEB-INF/docs/tickets_using.html
+%%GB_HOME%%/WEB-INF/docs/upgrade_go.html
+%%GB_HOME%%/WEB-INF/docs/upgrade_war.html
+%%GB_HOME%%/WEB-INF/lib/JavaEWAH-0.7.9.jar
+%%GB_HOME%%/WEB-INF/lib/annotations-12.0.jar
+%%GB_HOME%%/WEB-INF/lib/aopalliance-1.0.jar
+%%GB_HOME%%/WEB-INF/lib/args4j-2.0.29.jar
+%%GB_HOME%%/WEB-INF/lib/asm-5.0.3.jar
+%%GB_HOME%%/WEB-INF/lib/asm-analysis-5.0.3.jar
+%%GB_HOME%%/WEB-INF/lib/asm-tree-5.0.3.jar
+%%GB_HOME%%/WEB-INF/lib/asm-util-5.0.3.jar
+%%GB_HOME%%/WEB-INF/lib/bcmail-jdk15on-1.52.jar
+%%GB_HOME%%/WEB-INF/lib/bcpkix-jdk15on-1.52.jar
+%%GB_HOME%%/WEB-INF/lib/bcprov-jdk15on-1.52.jar
+%%GB_HOME%%/WEB-INF/lib/commons-codec-1.7.jar
+%%GB_HOME%%/WEB-INF/lib/commons-compress-1.4.1.jar
+%%GB_HOME%%/WEB-INF/lib/commons-io-2.2.jar
+%%GB_HOME%%/WEB-INF/lib/commons-logging-1.1.3.jar
+%%GB_HOME%%/WEB-INF/lib/commons-pool2-2.0.jar
+%%GB_HOME%%/WEB-INF/lib/confluence-core-1.4.jar
+%%GB_HOME%%/WEB-INF/lib/force-partner-api-24.0.0.jar
+%%GB_HOME%%/WEB-INF/lib/force-wsc-24.0.0.jar
+%%GB_HOME%%/WEB-INF/lib/freemarker-2.3.22.jar
+%%GB_HOME%%/WEB-INF/lib/gitblit-1.7.1.jar
+%%GB_HOME%%/WEB-INF/lib/groovy-all-2.4.4.jar
+%%GB_HOME%%/WEB-INF/lib/gson-2.3.1.jar
+%%GB_HOME%%/WEB-INF/lib/guava-18.0.jar
+%%GB_HOME%%/WEB-INF/lib/guice-4.0.jar
+%%GB_HOME%%/WEB-INF/lib/guice-servlet-4.0-gb2.jar
+%%GB_HOME%%/WEB-INF/lib/httpclient-4.3.6.jar
+%%GB_HOME%%/WEB-INF/lib/httpcore-4.3.3.jar
+%%GB_HOME%%/WEB-INF/lib/ivy-2.2.0.jar
+%%GB_HOME%%/WEB-INF/lib/jakarta-regexp-1.4.jar
+%%GB_HOME%%/WEB-INF/lib/javax.inject-1.jar
+%%GB_HOME%%/WEB-INF/lib/javax.mail-1.5.1.jar
+%%GB_HOME%%/WEB-INF/lib/jdom-1.0.jar
+%%GB_HOME%%/WEB-INF/lib/jedis-2.6.2.jar
+%%GB_HOME%%/WEB-INF/lib/jna-4.1.0.jar
+%%GB_HOME%%/WEB-INF/lib/jna-platform-4.1.0.jar
+%%GB_HOME%%/WEB-INF/lib/js-1.7R2.jar
+%%GB_HOME%%/WEB-INF/lib/jsch-0.1.53.jar
+%%GB_HOME%%/WEB-INF/lib/jsoup-1.7.3.jar
+%%GB_HOME%%/WEB-INF/lib/libpam4j-1.8.jar
+%%GB_HOME%%/WEB-INF/lib/log4j-1.2.17.jar
+%%GB_HOME%%/WEB-INF/lib/lucene-analyzers-common-4.10.4.jar
+%%GB_HOME%%/WEB-INF/lib/lucene-core-4.10.4.jar
+%%GB_HOME%%/WEB-INF/lib/lucene-highlighter-4.10.4.jar
+%%GB_HOME%%/WEB-INF/lib/lucene-memory-4.10.4.jar
+%%GB_HOME%%/WEB-INF/lib/lucene-queries-4.10.4.jar
+%%GB_HOME%%/WEB-INF/lib/lucene-queryparser-4.10.4.jar
+%%GB_HOME%%/WEB-INF/lib/lucene-sandbox-4.10.4.jar
+%%GB_HOME%%/WEB-INF/lib/mediawiki-core-1.4.jar
+%%GB_HOME%%/WEB-INF/lib/mina-core-2.0.9.jar
+%%GB_HOME%%/WEB-INF/lib/org.eclipse.jdt.annotation-1.1.0.jar
+%%GB_HOME%%/WEB-INF/lib/org.eclipse.jgit-4.1.1.201511131810-r.jar
+%%GB_HOME%%/WEB-INF/lib/org.eclipse.jgit.http.server-4.1.1.201511131810-r.jar
+%%GB_HOME%%/WEB-INF/lib/parboiled-core-1.1.7.jar
+%%GB_HOME%%/WEB-INF/lib/parboiled-java-1.1.7.jar
+%%GB_HOME%%/WEB-INF/lib/pegdown-1.5.0.jar
+%%GB_HOME%%/WEB-INF/lib/pf4j-0.9.0.jar
+%%GB_HOME%%/WEB-INF/lib/rome-0.9.jar
+%%GB_HOME%%/WEB-INF/lib/slf4j-api-1.7.12.jar
+%%GB_HOME%%/WEB-INF/lib/slf4j-log4j12-1.7.12.jar
+%%GB_HOME%%/WEB-INF/lib/sshd-core-1.0.0.jar
+%%GB_HOME%%/WEB-INF/lib/textile-core-1.4.jar
+%%GB_HOME%%/WEB-INF/lib/tika-core-1.5.jar
+%%GB_HOME%%/WEB-INF/lib/tracwiki-core-1.4.jar
+%%GB_HOME%%/WEB-INF/lib/twiki-core-1.4.jar
+%%GB_HOME%%/WEB-INF/lib/unboundid-ldapsdk-2.3.8.jar
+%%GB_HOME%%/WEB-INF/lib/waffle-jna-1.7.3.jar
+%%GB_HOME%%/WEB-INF/lib/wicket-1.4.22.jar
+%%GB_HOME%%/WEB-INF/lib/wicket-auth-roles-1.4.22.jar
+%%GB_HOME%%/WEB-INF/lib/wicket-extensions-1.4.22.jar
+%%GB_HOME%%/WEB-INF/lib/wikitext-core-1.4.jar
+%%GB_HOME%%/WEB-INF/lib/xz-1.0.jar
+%%GB_HOME%%/WEB-INF/web.xml
+%%GB_HOME%%/WEB-INF/weblogic.xml
+%%GB_HOME%%/add_16x16.png
+%%GB_HOME%%/arrow_down.png
+%%GB_HOME%%/arrow_left.png
+%%GB_HOME%%/arrow_line.png
+%%GB_HOME%%/arrow_off.png
+%%GB_HOME%%/arrow_page.png
+%%GB_HOME%%/arrow_project.png
+%%GB_HOME%%/arrow_up.png
+%%GB_HOME%%/background.png
+%%GB_HOME%%/barnum_32x32.png
+%%GB_HOME%%/blank.png
+%%GB_HOME%%/blink32.png
+%%GB_HOME%%/book_16x16.png
+%%GB_HOME%%/bootstrap/css/bootstrap-responsive.css
+%%GB_HOME%%/bootstrap/css/bootstrap.css
+%%GB_HOME%%/bootstrap/css/iconic.css
+%%GB_HOME%%/bootstrap/font/iconic_fill.afm
+%%GB_HOME%%/bootstrap/font/iconic_fill.css
+%%GB_HOME%%/bootstrap/font/iconic_fill.eot
+%%GB_HOME%%/bootstrap/font/iconic_fill.otf
+%%GB_HOME%%/bootstrap/font/iconic_fill.svg
+%%GB_HOME%%/bootstrap/font/iconic_fill.ttf
+%%GB_HOME%%/bootstrap/font/iconic_fill.woff
+%%GB_HOME%%/bootstrap/font/iconic_stroke.afm
+%%GB_HOME%%/bootstrap/font/iconic_stroke.css
+%%GB_HOME%%/bootstrap/font/iconic_stroke.eot
+%%GB_HOME%%/bootstrap/font/iconic_stroke.otf
+%%GB_HOME%%/bootstrap/font/iconic_stroke.svg
+%%GB_HOME%%/bootstrap/font/iconic_stroke.ttf
+%%GB_HOME%%/bootstrap/font/iconic_stroke.woff
+%%GB_HOME%%/bootstrap/img/glyphicons-halflings-white.png
+%%GB_HOME%%/bootstrap/img/glyphicons-halflings.png
+%%GB_HOME%%/bootstrap/js/bootstrap.js
+%%GB_HOME%%/bootstrap/js/jquery.js
+%%GB_HOME%%/bug_16x16.png
+%%GB_HOME%%/bullet_black.png
+%%GB_HOME%%/bullet_blue.png
+%%GB_HOME%%/bullet_delete.png
+%%GB_HOME%%/bullet_error.png
+%%GB_HOME%%/bullet_feed.png
+%%GB_HOME%%/bullet_green.png
+%%GB_HOME%%/bullet_key.png
+%%GB_HOME%%/bullet_orange.png
+%%GB_HOME%%/bullet_red.png
+%%GB_HOME%%/bullet_white.png
+%%GB_HOME%%/bullet_yellow.png
+%%GB_HOME%%/clipboard_13x13.png
+%%GB_HOME%%/clipboard_16x16.png
+%%GB_HOME%%/clippy.png
+%%GB_HOME%%/clippy.swf
+%%GB_HOME%%/cold_16x16.png
+%%GB_HOME%%/commit_branch_16x16.png
+%%GB_HOME%%/commit_changes_16x16.png
+%%GB_HOME%%/commit_divide_16x16.png
+%%GB_HOME%%/commit_join_16x16.png
+%%GB_HOME%%/commit_merge_16x16.png
+%%GB_HOME%%/commit_up_16x16.png
+%%GB_HOME%%/federated_16x16.png
+%%GB_HOME%%/feed_16x16.png
+%%GB_HOME%%/file_16x16.png
+%%GB_HOME%%/file_acrobat_16x16.png
+%%GB_HOME%%/file_c_16x16.png
+%%GB_HOME%%/file_code_16x16.png
+%%GB_HOME%%/file_cpp_16x16.png
+%%GB_HOME%%/file_cs_16x16.png
+%%GB_HOME%%/file_doc_16x16.png
+%%GB_HOME%%/file_excel_16x16.png
+%%GB_HOME%%/file_h_16x16.png
+%%GB_HOME%%/file_java_16x16.png
+%%GB_HOME%%/file_php_16x16.png
+%%GB_HOME%%/file_ppt_16x16.png
+%%GB_HOME%%/file_ruby_16x16.png
+%%GB_HOME%%/file_settings_16x16.png
+%%GB_HOME%%/file_vs_16x16.png
+%%GB_HOME%%/file_world_16x16.png
+%%GB_HOME%%/file_zip_16x16.png
+%%GB_HOME%%/flotr2/flotr2.custom.css
+%%GB_HOME%%/flotr2/flotr2.min.js
+%%GB_HOME%%/folder_16x16.png
+%%GB_HOME%%/folder_star_16x16.png
+%%GB_HOME%%/folder_star_32x32.png
+%%GB_HOME%%/fontawesome/css/font-awesome.min.css
+%%GB_HOME%%/fontawesome/fonts/FontAwesome.otf
+%%GB_HOME%%/fontawesome/fonts/fontawesome-webfont.eot
+%%GB_HOME%%/fontawesome/fonts/fontawesome-webfont.svg
+%%GB_HOME%%/fontawesome/fonts/fontawesome-webfont.ttf
+%%GB_HOME%%/fontawesome/fonts/fontawesome-webfont.woff
+%%GB_HOME%%/fork-black_16x16.png
+%%GB_HOME%%/fork_16x16.png
+%%GB_HOME%%/git-black-16x16.png
+%%GB_HOME%%/git-black.png
+%%GB_HOME%%/git-black_210x210.png
+%%GB_HOME%%/git-black_32x32.png
+%%GB_HOME%%/git-orange-16x16.png
+%%GB_HOME%%/gitblit.css
+%%GB_HOME%%/gitblt-favicon.png
+%%GB_HOME%%/gitblt-logo.png
+%%GB_HOME%%/gitblt2.png
+%%GB_HOME%%/gitblt2_white.png
+%%GB_HOME%%/gitblt_25.png
+%%GB_HOME%%/gitblt_25_white.png
+%%GB_HOME%%/github_32x32.png
+%%GB_HOME%%/gitweb-favicon.png
+%%GB_HOME%%/health_16x16.png
+%%GB_HOME%%/heart_16x16.png
+%%GB_HOME%%/hideheader.css
+%%GB_HOME%%/information_16x16.png
+%%GB_HOME%%/lock_16x16.png
+%%GB_HOME%%/lock_go_16x16.png
+%%GB_HOME%%/lock_pull_16x16.png
+%%GB_HOME%%/mail_16x16.png
+%%GB_HOME%%/mirror_16x16.png
+%%GB_HOME%%/octicons/octicons-local.ttf
+%%GB_HOME%%/octicons/octicons.css
+%%GB_HOME%%/octicons/octicons.eot
+%%GB_HOME%%/octicons/octicons.less
+%%GB_HOME%%/octicons/octicons.svg
+%%GB_HOME%%/octicons/octicons.ttf
+%%GB_HOME%%/octicons/octicons.woff
+%%GB_HOME%%/octicons/sprockets-octicons.scss
+%%GB_HOME%%/pixel.png
+%%GB_HOME%%/rosette_16x16.png
+%%GB_HOME%%/rosette_32x32.png
+%%GB_HOME%%/script_16x16.png
+%%GB_HOME%%/search-icon.png
+%%GB_HOME%%/settings_16x16.png
+%%GB_HOME%%/settings_32x32.png
+%%GB_HOME%%/shield_16x16.png
+%%GB_HOME%%/smartgithg_32x32.png
+%%GB_HOME%%/sourcetree_32x32.png
+%%GB_HOME%%/sparkleshare_32x32.png
+%%GB_HOME%%/star_16x16.png
+%%GB_HOME%%/star_32x32.png
+%%GB_HOME%%/sub32.png
+%%GB_HOME%%/tag_16x16.png
+%%GB_HOME%%/tortoise32.png
+%%GB_HOME%%/tower_32x32.png
+%%GB_HOME%%/user_16x16.png
+%%GB_HOME%%/users_16x16.png
+%%GB_HOME%%/vcard_16x16.png
+@owner
+@group

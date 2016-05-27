@@ -171,5 +171,5 @@
 %%TEXMFLOCALDIR%%/tex/latex/arabtex/xarbskel.sty
 %%TEXMFLOCALDIR%%/tex/latex/arabtex/xarbsymb.sty
 %%TEXMFLOCALDIR%%/tex/latex/arabtex/yiddish.sty
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%
+@postexec %%MKTEXLSR%%
+@postunexec %%MKTEXLSR%%

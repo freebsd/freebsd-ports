@@ -8,6 +8,6 @@ A special language (the Structured Terminal Forms Language) is used to
 describe STFL GUIs. The language is designed to be easy and fast to
 write so an application programmer does not need to spend ages fiddling
 around with the GUI and can concentrate on the more interesting
-programming tasks. 
+programming tasks.
 
 WWW: http://www.clifford.at/stfl/

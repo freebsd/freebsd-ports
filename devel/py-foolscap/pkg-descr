@@ -1,6 +1,6 @@
-Foolscap is an RPC protocol for Python+Twisted, providing a 
-capability-based security model and flexible serialization. 
-It is intended to replace Twisted's native "Perspective Broker" 
+Foolscap is an RPC protocol for Python+Twisted, providing a
+capability-based security model and flexible serialization.
+It is intended to replace Twisted's native "Perspective Broker"
 RPC system.
 
 WWW: http://foolscap.lothar.com/

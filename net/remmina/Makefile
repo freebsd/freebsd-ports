@@ -25,7 +25,7 @@ GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	Remmina
 
 OPTIONS_DEFINE=	SSH GCRYPT TERM AVAHI NLS
-OPTIONS_DEFAULT=	SSH GCRYPT TERM AVAHI NLS
+OPTIONS_DEFAULT=	SSH GCRYPT TERM AVAHI
 SSH_DESC=	Build with SSH tunneling support
 GCRYPT_DESC=	Build with libgcrypt support for password encryption
 TERM_DESC=	Build with terminal support

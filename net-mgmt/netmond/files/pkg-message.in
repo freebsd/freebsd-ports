@@ -2,10 +2,10 @@
 
   Attention!
 
-  You need to create a configuration file netmond.conf 
+  You need to create a configuration file netmond.conf
   in directory %%PREFIX%%/etc prior to launch netmond.
-  
-  Look at %%PREFIX%%/share/doc/netmond/ for the configuration guide 
+
+  Look at %%PREFIX%%/share/doc/netmond/ for the configuration guide
   or try to use net-mgmt/tknetmon to create configuration semiautomatically.
 
 ######################################################################

@@ -1,11 +1,11 @@
 When searching through large amounts of data, it is often the case that a
 result set is returned that is larger than we want to display on one page. This
 results in wanting to page through various pages of data. The maths behind this
-is unfortunately fiddly, hence this module. 
+is unfortunately fiddly, hence this module.
 
 The main concept is that you pass in the number of total entries, the number of
 entries per page, and the current page number. You can then call methods to
 find out how many pages of information there are, and what number the first and
-last entries on the current page really are. 
+last entries on the current page really are.
 
 WWW: http://search.cpan.org/dist/Data-Page/

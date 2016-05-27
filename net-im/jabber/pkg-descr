@@ -1,8 +1,8 @@
-jabberd14 is the original server implementation of the Jabber protocol, 
-now known as XMPP. It is open source, and it is free. This implementation 
+jabberd14 is the original server implementation of the Jabber protocol,
+now known as XMPP. It is open source, and it is free. This implementation
 has been formerly known as just jabberd as well.
 
-Please note: net-im/jabberd (also known as jabberd 2.x) is not a newer 
+Please note: net-im/jabberd (also known as jabberd 2.x) is not a newer
 version of jabberd14 but a completely different project.
 
 WWW: http://jabberd.org/

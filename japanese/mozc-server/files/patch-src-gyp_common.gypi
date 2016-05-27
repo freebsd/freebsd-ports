@@ -1,5 +1,14 @@
---- src/gyp/common.gypi.orig	2015-06-07 16:16:23.000000000 +0900
-+++ src/gyp/common.gypi	2015-07-13 04:02:55.631402000 +0900
+--- src/gyp/common.gypi.orig	2016-03-13 11:22:55.000000000 +0900
++++ src/gyp/common.gypi	2016-05-11 00:09:18.009062000 +0900
+@@ -109,7 +109,7 @@
+     ],
+     # Libraries for GNU/Linux environment.
+     'linux_ldflags': [
+-      '-pthread',
++      '-lpthread',
+     ],
+ 
+     # Extra defines
 @@ -161,9 +161,9 @@
        ['target_platform=="Linux"', {
          # enable_gtk_renderer represents if mozc_renderer is supported on Linux
@@ -27,7 +36,25 @@
      # Represents the directory where the source code of protobuf is
      # extracted. This value is ignored when 'use_libprotobuf' is 1.
      'protobuf_root': '<(third_party_dir)/protobuf',
-@@ -641,17 +649,20 @@
+@@ -415,7 +423,7 @@
+           },
+         },
+         'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="freebsd"', {
+             'cflags': [
+               '<@(debug_extra_cflags)',
+             ],
+@@ -481,7 +489,7 @@
+           },
+         },
+         'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="freebsd"', {
+             'cflags': [
+               '<@(release_extra_cflags)',
+             ],
+@@ -533,17 +541,20 @@
            ['compiler_target=="clang"', {
              'cflags': [
                '-Wtype-limits',
@@ -51,7 +78,7 @@
              ],
            }],
          ],
-@@ -661,17 +672,20 @@
+@@ -553,17 +564,20 @@
            ['compiler_host=="clang"', {
              'cflags': [
                '-Wtype-limits',
@@ -75,31 +102,49 @@
              ],
            }],
          ],
-@@ -764,16 +778,27 @@
-       ['OS=="linux"', {
-         'defines': [
-           'OS_LINUX',
-+          'OS_FREEBSD',
-+          'LOCALBASE="<@(localbase)"',
+@@ -578,7 +592,7 @@
+       ['channel_dev==1', {
+         'defines': ['CHANNEL_DEV'],
+       }],
+-      ['OS=="linux"', {
++      ['OS=="linux" or OS=="freebsd"', {
+         'ldflags': [
+           '<@(linux_ldflags)',
          ],
+@@ -694,21 +708,34 @@
+           },
+         },
+       }],
+-      ['OS=="linux"', {
++      ['OS=="linux" or OS=="freebsd"', {
          'cflags': [
            '<@(warning_cflags)',
            '-fPIC',
            '-fno-exceptions',
-+	  '<@(cflags)',
++          '<@(cflags)',
          ],
          'cflags_cc': [
            # We use deprecated <hash_map> and <hash_set> instead of upcoming
            # <unordered_map> and <unordered_set>.
            '-Wno-deprecated',
-+	  '<@(cflags_cc)',
-+        ],
++          '<@(cflags_cc)',
+         ],
 +        'include_dirs': [
-+          '<@(include_dirs)'
-+        ],
++          '<@(include_dirs)',
++        ], 
 +        'ldflags': [
 +          '<@(ldflags)',
-+	  '-fstack-protector',
-         ],
++          '-fstack-protector',
++        ], 
          'conditions': [
-           ['target_platform!="NaCl"', {
+           ['target_platform=="Linux"', {
+             # OS_LINUX is defined always (target and host).
+-            'defines': ['OS_LINUX',],
++            'defines': [
++		'OS_LINUX',
++		'OS_FREEBSD',
++		'LOCALBASE="<@(localbase)"',
++		],
+           }],
+           ['target_platform=="Android"', {
+             'defines': ['NO_USAGE_REWRITER'],

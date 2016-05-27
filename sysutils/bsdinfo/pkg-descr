@@ -1,7 +1,7 @@
 This is a FreeBSD attempt to implement archey-like terminal system information
-display utility. It is just an esthetic way to display system information. 
+display utility. It is just an esthetic way to display system information.
 Right now it doesn't have any configurable options (different themes, switches
-to change behaviour, etc), but I will add such features in the future, 
+to change behaviour, etc), but I will add such features in the future,
 perhaps.
 
 WWW: https://github.com/samaelszafran/bsdinfo

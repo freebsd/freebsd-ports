@@ -8,12 +8,12 @@ es, um ein Unix-System als Server im Z-NETZ (im alten Sinne) einsetzen
 zu koennen. Nebeneffekt ist die Gateway-Funktion. Gerade die Gateway-Routinen
 sind relativ gut portabel (ANSI-C ohne wesentliche UNIX-Einfluesse), und daher
 bereits auf anderen Computertypen realisiert worden. Bei den Online-Routinen
-ist das schwieriger, aber nicht unmoeglich. 
+ist das schwieriger, aber nicht unmoeglich.
 
 UNIX-Connect kann auch als Point benutzt werden - also um am heimischen
 Linux-System die Nachrichten aus der Z-NETZ MailBox vor Ort im ELM oder NN
-zu lesen. Dieser Einsatzmoeglichkeit widmet die Dokumentation ein eigenes 
-Kapitel, da hierbei sehr viele Konfigurationsprobleme von vornherein 
+zu lesen. Dieser Einsatzmoeglichkeit widmet die Dokumentation ein eigenes
+Kapitel, da hierbei sehr viele Konfigurationsprobleme von vornherein
 vermieden werden koennen.
 
 LICENSE: GPL2 or later

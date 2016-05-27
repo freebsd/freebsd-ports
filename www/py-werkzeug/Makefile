@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	werkzeug
-PORTVERSION=	0.11.9
+PORTVERSION=	0.11.10
 CATEGORIES=	www python
-#MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-#DISTNAME=	Werkzeug-${DISTVERSION}
+DISTNAME=	Werkzeug-${DISTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python utilities collection for building WSGI applications
@@ -14,9 +14,6 @@ COMMENT=	Python utilities collection for building WSGI applications
 LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	EXAMPLES
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	pallets
 
 NO_ARCH=	yes
 USES=		python

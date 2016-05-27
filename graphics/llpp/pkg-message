@@ -1,7 +1,7 @@
 llppac can auto-convert file formats for viewing in llpp.  The
 following optional ports are required:
 
-Port			Adds support for 
+Port			Adds support for
 ------------------------------------------------------------
 textproc/unoconv	Word and Libre/OpenOffice documents
 graphics/djvulibre	DjVu

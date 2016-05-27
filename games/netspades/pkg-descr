@@ -1,10 +1,10 @@
-Spades (known in some places as 500) is a four-player, team-based 
-game whose object is to be the first team to score 500 points by 
+Spades (known in some places as 500) is a four-player, team-based
+game whose object is to be the first team to score 500 points by
 bidding on, and taking tricks.
 
 NetSpades includes:
-- the server program, 
+- the server program,
 - a console-based client (using the SLang library),
-- and an X-based client (using the GTK library).  
+- and an X-based client (using the GTK library).
 
 WWW: http://www.ece.rice.edu/~brentmh/spades/

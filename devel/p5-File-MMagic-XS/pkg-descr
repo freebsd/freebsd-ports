@@ -1,13 +1,13 @@
-This is a port of Apache2 mod_mime_magic.c in Perl, written in XS with the 
-aim of being efficient and fast especially for applications that need to 
+This is a port of Apache2 mod_mime_magic.c in Perl, written in XS with the
+aim of being efficient and fast especially for applications that need to
 be run for an extended amount of time.
 
-There is a compatibility layer for File::MMagic. you can specify :compat 
+There is a compatibility layer for File::MMagic. you can specify :compat
 when importing the module
 
    use File::MMagic::XS qw(:compat);
 
-And then the following methods are going to be available from 
+And then the following methods are going to be available from
 File::MMagic::XS:
 
    checktype_filename
@@ -15,8 +15,8 @@ File::MMagic::XS:
    checktype_contents
    addMagicEntry
 
-Currently this software is in beta. If you have 
-suggestions/recommendations about the interface or anything else, now is 
+Currently this software is in beta. If you have
+suggestions/recommendations about the interface or anything else, now is
 your chance to send them!
 
 WWW: http://search.cpan.org/dist/File-MMagic-XS/

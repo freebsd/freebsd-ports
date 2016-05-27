@@ -8,7 +8,7 @@ CATEGORIES=	shells
 MASTER_SITES=	\
 		http://www.zsh.org/pub/:doc \
 		http://www.zsh.org/pub/ \
-		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+		SF \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 

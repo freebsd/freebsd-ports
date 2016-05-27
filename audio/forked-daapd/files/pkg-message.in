@@ -1,0 +1,21 @@
+forked-daapd uses FFmpeg for transcoding audio playback.
+The default ports/pkg build of FFmpeg on FreeBSD has a number
+of options which could be SET/UNSET to provide support for
+additional audio codecs.
+
+If you find forked-daapd does not support the audio codecs you
+require, it is recommended to recompile the multimedia/ffmpeg
+package from ports with the necessary options ENABLED (SET).
+
+You should review and edit the forked-daapd configuration
+file %%PREFIX%%/etc/forked-daapd.conf before first use.
+
+To automatically start forked-daapd at boot time:
+# sysrc 'dbus_enable=YES'
+# sysrc 'avahi_daemon_enable=YES'
+# sysrc 'forked_daapd_enable=YES'
+
+To then manually start forked-daapd without rebooting:
+# service dbus start
+# service avahi-daemon start
+# service forked-daapd start

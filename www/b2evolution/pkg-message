@@ -14,7 +14,7 @@ you may need to perform the following steps.
   (change user and/or password if required)
 
    # mysql -u root -p
-   mysql> GRANT ALL ON b2evolution.* TO b2evouser@localhost 
+   mysql> GRANT ALL ON b2evolution.* TO b2evouser@localhost
  	  IDENTIFIED BY 'b2evopassword';
    mysql> FLUSH PRIVILEGES;
    mysql> QUIT;
@@ -32,17 +32,17 @@ you may need to perform the following steps.
    </Directory>
    #
 
-5. Open b2evo installation page in your web browser 
+5. Open b2evo installation page in your web browser
    and login with b2evouser/b2evopassword
 
    http://www.your.host/%%B2EVO_URL%%/blogs/install/
 
    (if you are doing a fresh install...)
-   Note that password carefully! It is a random password that is given to you 
+   Note that password carefully! It is a random password that is given to you
    when you install b2evolution.
    If you lose it, you will have to delete the database tables and reinstall.
 
-   If you upgrade from b2evolution version 1.x.y you may need to upgrade 
+   If you upgrade from b2evolution version 1.x.y you may need to upgrade
    your database as described at
 
    http://manual.b2evolution.net/Upgrade_from_an_older_version

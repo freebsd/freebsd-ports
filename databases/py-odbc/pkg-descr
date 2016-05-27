@@ -5,4 +5,4 @@ It implements the Python Database API Specification v2.0, but
 additional features have been added to simplify database
 programming even more.
 
-WWW: http://code.google.com/p/pyodbc/
+WWW: https://github.com/mkleehammer/pyodbc

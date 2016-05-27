@@ -1,6 +1,6 @@
-NetStrain is a tool to measure practical data throughput between two machines 
-over a TCP connection. It can be used for performance testing, 
-stress/stability testing and to demonstrate various network effects. It 
-supports both IPv4 and IPv6, provided the underlying system does. 
+NetStrain is a tool to measure practical data throughput between two machines
+over a TCP connection. It can be used for performance testing,
+stress/stability testing and to demonstrate various network effects. It
+supports both IPv4 and IPv6, provided the underlying system does.
 
 WWW: http://netstrain.sourceforge.net/

@@ -1,2 +1,3 @@
-SHA256 (pandas-0.17.0.tar.gz) = 320d4fdf734b82adebc8fde9d8ca4b05fe155a72b6f7aa95d76242da8748d6a4
-SIZE (pandas-0.17.0.tar.gz) = 6508621
+TIMESTAMP = 1463318239
+SHA256 (pandas-0.18.1.tar.gz) = d2e483692c7915916dffd1b83256ea9761b4224c8d45646ceddf48b977ee77b2
+SIZE (pandas-0.18.1.tar.gz) = 7283184

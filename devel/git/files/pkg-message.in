@@ -19,7 +19,7 @@ All you have to do to make gitweb work is:
 If you installed the CONTRIB option please note that the scripts are
 installed in %%PREFIX%%/share/git-core/contrib. Some of them require
 other ports to be installed (perl, python, etc), which you may need to
-install manually. 
+install manually.
 *************************** CONTRIB ************************************
 ------------------------------------------------------------------------
 

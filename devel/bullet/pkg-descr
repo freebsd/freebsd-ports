@@ -1,15 +1,15 @@
-Bullet is a professional open source multi-threaded 3D Collision Detection and 
-Rigid Body Dynamics Library. It is free for commercial use under the ZLib 
+Bullet is a professional open source multi-threaded 3D Collision Detection and
+Rigid Body Dynamics Library. It is free for commercial use under the ZLib
 license.
 
-The library is being used by several professional game developers on PC, 
+The library is being used by several professional game developers on PC,
 PlayStation 3, XBox 360 and Nintendo Wii.
 
-Sony Computer Entertainment provides a parallel SPU optimized version, and 
-collaborations with IBM, Intel, AMD and NVidia to exploit their parallel 
+Sony Computer Entertainment provides a parallel SPU optimized version, and
+collaborations with IBM, Intel, AMD and NVidia to exploit their parallel
 hardware.
 
-Bullet is native part of Blender 3D modeler and it supports COLLADA Physics 
+Bullet is native part of Blender 3D modeler and it supports COLLADA Physics
 file format.
 
 

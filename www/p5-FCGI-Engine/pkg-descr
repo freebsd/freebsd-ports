@@ -1,5 +1,5 @@
-This module helps manage FCGI based web applications by providing a wrapper 
-which handles most of the low-level FCGI details for you. It can run FCGI 
+This module helps manage FCGI based web applications by providing a wrapper
+which handles most of the low-level FCGI details for you. It can run FCGI
 programs as simple scripts or as full standalone socket based servers who
 are managed by FCGI::Engine::ProcManager.
 

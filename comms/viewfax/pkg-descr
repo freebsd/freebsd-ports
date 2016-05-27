@@ -11,4 +11,4 @@ dimensional) and group 4 can be displayed.
 The fax images are rendered at full resolution and then successively
 scaled down by a linear factor of 2 prior to display, until they fit
 on the screen.  The display can be controlled interactively using
-mouse and keyboard commands.  
+mouse and keyboard commands.

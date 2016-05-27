@@ -11,9 +11,9 @@ have issues starting depending on the modules you are using.
 - more modules are now enabled per default in the port
 - icons and error pages moved from WWWDIR to DATADIR
 
-   If build with modular MPM and no MPM is activated in 
+   If build with modular MPM and no MPM is activated in
    httpd.conf, then mpm_prefork will be activated as default
-   MPM in etc/apache24/modules.d to keep compatibility with 
+   MPM in etc/apache24/modules.d to keep compatibility with
    existing php/perl/python modules!
 
 Please compare the existing httpd.conf with httpd.conf.sample

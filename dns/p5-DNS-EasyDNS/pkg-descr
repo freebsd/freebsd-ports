@@ -1,5 +1,5 @@
-This module allows you to update your EasyDNS ( http://www.easydns.com/ ) 
-dynamic DNS records. This is done via an http get using the libwww-perl 
+This module allows you to update your EasyDNS ( http://www.easydns.com/ )
+dynamic DNS records. This is done via an http get using the libwww-perl
 modules.
 
 WWW: http://search.cpan.org/dist/DNS-EasyDNS/

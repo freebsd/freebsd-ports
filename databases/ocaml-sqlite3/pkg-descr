@@ -1,8 +1,8 @@
 Sqlite3 bindings for Objective Caml
 
 Sqlite 3 database library wrapper for ocaml.
-Sqlite 3 is available from http://www.sqlite.org 
-This wrapper is written in a way that enables a friendly 
+Sqlite 3 is available from http://www.sqlite.org
+This wrapper is written in a way that enables a friendly
 coexistence with the old (version 2) sqlite and its
 ocaml wrapper ocaml-sqlite.
 

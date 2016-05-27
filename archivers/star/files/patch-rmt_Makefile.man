@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- rmt/Makefile.man.orig	2016-02-10 20:47:23 UTC
 +++ rmt/Makefile.man
 @@ -8,10 +8,10 @@ include		$(SRCROOT)/$(RULESDIR)/rules.to

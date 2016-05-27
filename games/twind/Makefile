@@ -5,7 +5,7 @@ PORTNAME=	twind
 PORTVERSION=	1.1.0
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Match and remove all of the blocks before time runs out

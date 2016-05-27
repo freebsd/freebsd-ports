@@ -18,6 +18,6 @@ Features:
           o Cache
           o Rather advanced HTTP/1.1 usage such as Range, deflate, etc. (of course you can set it in header by yourself)
 
-For more detail, see API document at dev.ctor.org/doc/httpclient/ 
+For more detail, see API document at dev.ctor.org/doc/httpclient/
 
 WWW: https://github.com/nahi/httpclient

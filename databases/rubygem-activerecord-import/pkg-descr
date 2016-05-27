@@ -1,0 +1,4 @@
+Extraction of the ActiveRecord::Base#import functionality from ar-extensions for
+Rails 3 and beyond.
+
+WWW: http://github.com/zdennis/activerecord-import

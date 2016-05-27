@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.6.1:databases/py-sqlalchemy-migrate \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0:databases/py-sqlalchemy07 \
 		${PYTHON_PKGNAMEPREFIX}sqlobject>=0:databases/py-sqlobject
 
 OPTIONS_DEFINE=	DOCS

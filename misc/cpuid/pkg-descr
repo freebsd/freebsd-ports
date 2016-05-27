@@ -1,5 +1,5 @@
 This is a fairly complete CPU identification utility. It has been tested on
 several Intel, AMD and Cyrix CPUs. If the Pentium III serial number misfeature
-is present and enabled, this program will display it. 
+is present and enabled, this program will display it.
 
 WWW: http://www.ka9q.net/code/cpuid/

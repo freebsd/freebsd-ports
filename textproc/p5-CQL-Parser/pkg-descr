@@ -1,19 +1,19 @@
-CQL::Parser provides a mechanism to parse Common Query Language (CQL) 
-statements. The best description of CQL comes from the CQL homepage at the 
+CQL::Parser provides a mechanism to parse Common Query Language (CQL)
+statements. The best description of CQL comes from the CQL homepage at the
 Library of Congress http://www.loc.gov/z3950/agency/zing/cql/
 
-CQL is a formal language for representing queries to information retrieval 
-systems such as web indexes, bibliographic catalogs and museum collection 
-information. The CQL design objective is that queries be human readable 
-and human writable, and that the language be intuitive while maintaining 
+CQL is a formal language for representing queries to information retrieval
+systems such as web indexes, bibliographic catalogs and museum collection
+information. The CQL design objective is that queries be human readable
+and human writable, and that the language be intuitive while maintaining
 the expressiveness of more complex languages.
 
-A CQL statement can be as simple as a single keyword, or as complicated as 
-a set of compoenents indicating search indexes, relations, relational 
-modifiers, proximity clauses and boolean logic. CQL::Parser will parse CQL 
-statements and return the root node for a tree of nodes which describes 
-the CQL statement. This data structure can then be used by a client 
-application to analyze the statement, and possibly turn it into a query 
+A CQL statement can be as simple as a single keyword, or as complicated as
+a set of compoenents indicating search indexes, relations, relational
+modifiers, proximity clauses and boolean logic. CQL::Parser will parse CQL
+statements and return the root node for a tree of nodes which describes
+the CQL statement. This data structure can then be used by a client
+application to analyze the statement, and possibly turn it into a query
 for a local repository.
 
 WWW: http://search.cpan.org/dist/CQL-Parser/

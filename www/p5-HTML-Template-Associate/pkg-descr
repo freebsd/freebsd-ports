@@ -1,9 +1,9 @@
-HTML::Template::Associate bridges gap between HTML::Template and 
-other modules that can be used in conjunction with it to do something 
+HTML::Template::Associate bridges gap between HTML::Template and
+other modules that can be used in conjunction with it to do something
 useful together, like for example Data::FormValidator that can verify form
-inputs. 
+inputs.
 
 The primary reason I wrote this is that I needed something to bridge those
-two and the thought of creating something more expandable came to mind.   
+two and the thought of creating something more expandable came to mind.
 
 WWW: http://search.cpan.org/dist/HTML-Template-Associate/

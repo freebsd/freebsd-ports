@@ -10,6 +10,6 @@ It contains:
     * UMFPACK: sparse multifrontal LU factorization
     * UFconfig: common configuration for all of the above
     * CSparse: a concise sparse matrix package
-    * CXSparse: and extended version of CSparse 
+    * CXSparse: and extended version of CSparse
 
 WWW: http://www.cise.ufl.edu/research/sparse/SuiteSparse/

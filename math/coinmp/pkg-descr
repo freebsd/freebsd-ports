@@ -1,6 +1,6 @@
-CoinMP is a C-API interface library that supports most of the 
-functionality of the CLP (Coin LP), CBC (Coin Branch-and-Cut), and CGL 
-(Cut Generation Library) projects. When compiled for Unix it generates a 
+CoinMP is a C-API interface library that supports most of the
+functionality of the CLP (Coin LP), CBC (Coin Branch-and-Cut), and CGL
+(Cut Generation Library) projects. When compiled for Unix it generates a
 CoinMP.so library that can be similarly used in other Unix C/C++ projects.
 
 WWW: https://projects.coin-or.org/CoinMP

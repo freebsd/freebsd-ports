@@ -11,7 +11,6 @@ DISTNAME=	lua-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Iconv binding for Lua 5
 
-WRKSRC=		${WRKDIR}/lua-${PORTNAME}-${PORTVERSION}
 USES=		pkgconfig iconv lua
 
 USE_GITHUB=	yes

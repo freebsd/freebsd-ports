@@ -1,6 +1,6 @@
-Pal is a command-line calendar program for Unix/Linux systems that can 
-keep track of events. It has similarities with the Unix cal command, the 
-more complex GNU gcal program, and the calendar program distributed with 
+Pal is a command-line calendar program for Unix/Linux systems that can
+keep track of events. It has similarities with the Unix cal command, the
+more complex GNU gcal program, and the calendar program distributed with
 the BSDs.
 
 WWW: http://palcal.sourceforge.net/

@@ -112,8 +112,9 @@ sbin/icinga2
 %%DATADIR%%/include/plugins
 %%DATADIR%%/include/plugins-contrib
 %%DATADIR%%/include/plugins-contrib.d/databases.conf
-%%DATADIR%%/include/plugins-contrib.d/ipmi.conf
 %%DATADIR%%/include/plugins-contrib.d/hardware.conf
+%%DATADIR%%/include/plugins-contrib.d/icingacli.conf
+%%DATADIR%%/include/plugins-contrib.d/ipmi.conf
 %%DATADIR%%/include/plugins-contrib.d/network-components.conf
 %%DATADIR%%/include/plugins-contrib.d/operating-system.conf
 %%DATADIR%%/include/plugins-contrib.d/virtualization.conf

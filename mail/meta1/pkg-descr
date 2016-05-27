@@ -5,7 +5,7 @@ these main topics in minds:
   * Reliability
   * Efficiency
   * Configurability
-  * Extendibility 
+  * Extendibility
 
 MeTA1 consists of five main modules of which only one runs as root:
 
@@ -18,4 +18,4 @@ MeTA1 consists of five main modules of which only one runs as root:
   * smar: the address resolver provides lookups in various maps
     including DNS for mail routing.
   * qmgr: the queue manager controls the flow of e-mails through the
-    SMTP servers and clients. 
+    SMTP servers and clients.

@@ -1,53 +1,29 @@
-*** psconv.jman.orig	Mon Jun  9 14:16:33 1997
---- psconv.jman	Mon Jun  9 14:18:21 1997
-***************
-*** 104,110 ****
-  です。
-  .PD
-  .RS
-! .ta +16;
-  .ie n .TP 15
-  .el .TP 10
-  .B \-V
---- 104,110 ----
-  です。
-  .PD
-  .RS
-! .ta +16
-  .ie n .TP 15
-  .el .TP 10
-  .B \-V
-***************
-*** 136,142 ****
-  .IP
-  書式は任意に指定することもできます。
-  .RS
-! .ta +16;
-  .ie n .TP 15
-  .el .TP 10
-  .B \-V\fIwid\fB\-\fIlen
---- 136,142 ----
-  .IP
-  書式は任意に指定することもできます。
-  .RS
-! .ta +16
-  .ie n .TP 15
-  .el .TP 10
-  .B \-V\fIwid\fB\-\fIlen
-***************
-*** 181,187 ****
-  指示できる要素には以下の 4 種類があります。
-  .LP
-  .RS 10
-! .ta +5n;
-  \fBR\fR	標準
-  .br
-  \fBB\fR	太字（bold）
---- 181,187 ----
-  指示できる要素には以下の 4 種類があります。
-  .LP
-  .RS 10
-! .ta +5n
-  \fBR\fR	標準
-  .br
-  \fBB\fR	太字（bold）
+--- psconv.jman.orig	1994-03-22 07:04:56 UTC
++++ psconv.jman
+@@ -104,7 +104,7 @@ _\^_\^_\^_\fB^M\fR\fIcccc\fR\fB^M\fR\fIc
+ です。
+ .PD
+ .RS
+-.ta +16;
++.ta +16
+ .ie n .TP 15
+ .el .TP 10
+ .B \-V
+@@ -136,7 +136,7 @@ _\^_\^_\^_\fB^M\fR\fIcccc\fR\fB^M\fR\fIc
+ .IP
+ 書式は任意に指定することもできます。
+ .RS
+-.ta +16;
++.ta +16
+ .ie n .TP 15
+ .el .TP 10
+ .B \-V\fIwid\fB\-\fIlen
+@@ -181,7 +181,7 @@ 半角かなに対してカタカナの代わりにひらが
+ 指示できる要素には以下の 4 種類があります。
+ .LP
+ .RS 10
+-.ta +5n;
++.ta +5n
+ \fBR\fR	標準
+ .br
+ \fBB\fR	太字（bold）

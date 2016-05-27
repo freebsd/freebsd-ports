@@ -13,7 +13,7 @@ COMMENT=	Partial ordering for regular expressions
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USE_PERL5=	5.18+ configure
+USE_PERL5=	configure
 USES=		perl5
 
 post-install:

@@ -1,7 +1,7 @@
 Battray is a python program that displays a tray icon to inform you of the
 battery status of your notebook.
 
-It is also able to take certain actions depending on battery status. 
+It is also able to take certain actions depending on battery status.
 
 It's simple, easy, fairly environment-independent, and "just works" without
 tons of (Gnome|KDE|..) dependencies.

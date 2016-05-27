@@ -1,6 +1,6 @@
-You can use tpl to store and reload your C data quickly and easily. 
-Tpl works with files, memory buffers and file descriptors so it's 
-suitable for use as a file format, IPC message format or any scenario 
+You can use tpl to store and reload your C data quickly and easily.
+Tpl works with files, memory buffers and file descriptors so it's
+suitable for use as a file format, IPC message format or any scenario
 where you need to store and retrieve your data.
 
 WWW: http://troydhanson.github.io/tpl/

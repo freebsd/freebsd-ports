@@ -68,6 +68,8 @@ LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
+OPENMP_EXTRA_PATCHES= \
+	${PATCHDIR}/openmp-patch-tools_openmp_runtime_tools_expand-vars.pl
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	ld.gold:devel/binutils

@@ -1,36 +1,6 @@
-Includes the following upstream commit to fix the build with CMake 3.0+:
-
-commit ec580cb815c16ec1ab43a469d5af7d51d8d03082
-Author: Chocobozzz <florian.chocobo@gmail.com>
-Date:   Wed Jul 16 15:57:25 2014 +0200
-
-    No namespaces for DBus interfaces. Fixes #4401
---- src/CMakeLists.txt.orig	2013-10-20 17:40:58.416968707 +0000
-+++ src/CMakeLists.txt	2013-10-20 17:41:24.671967496 +0000
-@@ -892,11 +892,6 @@ optional_source(LINUX SOURCES widgets/osd_x11.cpp)
- if(HAVE_DBUS)
-   file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/dbus)
- 
--  # Hack to get it to generate interfaces without namespaces - required
--  # because otherwise org::freedesktop::UDisks and
--  # org::freedesktop::UDisks::Device conflict.
--  list(APPEND QT_DBUSXML2CPP_EXECUTABLE -N)
--
-   # MPRIS DBUS interfaces
-   qt4_add_dbus_adaptor(SOURCES
-       dbus/org.freedesktop.MediaPlayer.player.xml
-@@ -964,6 +959,10 @@ if(HAVE_DBUS)
- 
-   # DeviceKit DBUS interfaces
-   if(HAVE_DEVICEKIT)
-+    set_source_files_properties(dbus/org.freedesktop.UDisks.xml
-+        PROPERTIES NO_NAMESPACE dbus/udisks)
-+    set_source_files_properties(dbus/org.freedesktop.UDisks.Device.xml
-+        PROPERTIES NO_NAMESPACE dbus/udisksdevice)
-     qt4_add_dbus_interface(SOURCES
-         dbus/org.freedesktop.UDisks.xml
-         dbus/udisks)
-@@ -1322,6 +1322,7 @@
+--- src/CMakeLists.txt.orig	2016-04-19 15:08:35 UTC
++++ src/CMakeLists.txt
+@@ -1388,6 +1388,7 @@ add_executable(clementine
  
  if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
    target_link_libraries(clementine execinfo)

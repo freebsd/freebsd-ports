@@ -18,7 +18,7 @@ LICENSE=	LGPL21
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2
 USE_GSTREAMER1=	yes
-USE_KDE4=	kdeprefix automoc4
+USE_KDE4=	automoc4
 USE_QT4=	corelib gui opengl phonon \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11

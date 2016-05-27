@@ -1,6 +1,6 @@
 The Zild Database Library implements a small and fast database API
 with the following features: C database library - easy to use API
 - connect to multiple database systems - zero runtime configuration,
-connect using URL scheme - Thread safe Connection Pooling.         
+connect using URL scheme - Thread safe Connection Pooling.
 
 WWW: http://www.tildeslash.com/libzdb/

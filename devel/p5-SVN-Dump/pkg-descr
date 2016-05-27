@@ -1,13 +1,13 @@
 An SVN::Dump object represents a Subversion dump.
 
-This module follow the semantics used in the reference 
+This module follow the semantics used in the reference
 document:
 
 * A dump is a collection of records (SVN::Dump::Record objects).
-* A record is composed of a set of headers (a SVN::Dump::Headers 
+* A record is composed of a set of headers (a SVN::Dump::Headers
   object), a set of properties (a SVN::Dump::Property object) and
   an optional bloc of text (a SVN::Dump::Text object).
-* Some special records (delete records with a Node-kind header) 
+* Some special records (delete records with a Node-kind header)
   recursively contain included records.
 
 WWW: http://search.cpan.org/dist/SVN-Dump/

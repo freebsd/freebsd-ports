@@ -4,7 +4,7 @@ chips via 3 methods: ISA-I/O, SMBus, VIA-direct.
 
 Run "mbmon -h" or "xmbmon -help" to see the usage.
 
-***CAUTION*** 
+***CAUTION***
 
 These programs access to the SMBus or the ISA-IO port directly under
 the superuser privilege, so it may cause a system crash.  Please test

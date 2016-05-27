@@ -3,7 +3,7 @@ exiftran is a command line utility to transform digital image jpeg images.
 It can do lossless rotations like jpegtran, but unlike jpegtran it cares
 about the EXIF data: It can rotate images automatically by checking the exif
 orientation tag, it updates the exif informaton if needed (image dimension,
-orientation), it also rotates the exif thumbnail. 
-It can process multiple images at once. 
+orientation), it also rotates the exif thumbnail.
+It can process multiple images at once.
 
 WWW: http://www.kraxel.org/blog/linux/fbida/

@@ -1,6 +1,6 @@
 Purpose of this icon theme is to extend the base icon theme that follows the
 Tango style guidelines for specific purposes. This would include OSD messages,
-panel system/notification area, and possibly menu icons. 
+panel system/notification area, and possibly menu icons.
 
 Icons follow the naming specification, but have a -symbolic suffix, so only
 applications specifically looking up these symbolic icons will render them. If

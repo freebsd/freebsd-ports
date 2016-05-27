@@ -1,11 +1,11 @@
---- usr/sbin/pkcsconf/pkcsconf.c.orig	2010-07-29 21:28:41.000000000 +0900
-+++ usr/sbin/pkcsconf/pkcsconf.c	2010-10-20 00:47:46.462984231 +0900
-@@ -654,6 +654,8 @@
-       free (newpin2);
-    }
+--- usr/sbin/pkcsconf/pkcsconf.c.orig	2016-04-29 17:26:46 UTC
++++ usr/sbin/pkcsconf/pkcsconf.c
+@@ -777,6 +777,8 @@ display_pkcs11_info(void){
+    printf("\tLibrary Version %d.%d \n", CryptokiInfo.libraryVersion.major,
+          CryptokiInfo.libraryVersion.minor);
  
 +   cleanup();
 +
     return rc;
- 
  }
+ 

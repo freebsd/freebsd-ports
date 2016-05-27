@@ -1,4 +1,4 @@
 mod_geoip is a lighttpd module that looks up the country code
 for the IP address making the request without using reverse DNS.
 
-WWW:	http://redmine.lighttpd.net/wiki/1/Docs:ModGeoip
+WWW: http://redmine.lighttpd.net/wiki/1/Docs:ModGeoip

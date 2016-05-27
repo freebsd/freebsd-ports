@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	5.7.3
-PORTREVISION=	2
+PORTVERSION=	5.9.2p1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
-DISTNAME=	${PORTNAME}-${PORTVERSION}p2
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
@@ -31,8 +30,6 @@ TABLE_DB_DESC=		Build table-db plugin (aliases)
 USES=		cpe libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE} --sysconfdir=${PREFIX}/etc/mail/ \
-		--with-mailwrapper --with-ssl-dir=${OPENSSLBASE}
 
 CPE_VENDOR=	openbsd
 
@@ -42,29 +39,39 @@ SUB_FILES=	pkg-install pkg-deinstall pkg-message
 CONFLICTS_INSTALL=	postfix-[0-9]* sendmail-[0-9]* opensmtpd-devel-[0-9]*
 
 USERS=		_smtpd _smtpq
-GROUPS=		_smtpd
+GROUPS=		_smtpd _smtpq
 
 OPTIONS_SUB=	yes
 
-CA_BUNDLE_CONFIGURE_WITH=	ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
+CA_BUNDLE_CONFIGURE_WITH=	path-CAfile=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 LIBASRDEVEL_LIB_DEPENDS_OFF=	libasr.so:dns/libasr
 LIBASRDEVEL_LIB_DEPENDS=	libasr.so:dns/libasr-devel
-LIBASRDEVEL_BROKEN=		incompatible with libasr-devel
 
-PAM_CONFIGURE_WITH=	pam pam-service=smtpd
-
-TABLE_DB_CONFIGURE_ENABLE=	table-db
+PAM_CONFIGURE_WITH=	auth-pam=smtpd
+SSL_PORT_VARS=		with_openssl_port=yes
+TABLE_DB_CONFIGURE_WITH=	table-db
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && ! ${PORT_OPTIONS:MSSL_PORT}
+.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1000015
 WITH_OPENSSL_PORT=	yes
 .endif
 
-.if ${PORT_OPTIONS:MSSL_PORT}
-WITH_OPENSSL_PORT=	yes
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
+			--with-libevent=${LOCALBASE} \
+			--with-libssl=${OPENSSLBASE} \
+			--sysconfdir=${PREFIX}/etc/mail/
+
+post-patch:
+	${REINPLACE_CMD} -e '/chmod 2555/d' ${WRKSRC}/mk/smtpctl/Makefile.in
+
+.if ${PORT_OPTIONS:MTABLE_DB}
+post-install:
+	@${LN} -sf ${PREFIX}/sbin/smtpctl ${STAGEDIR}${PREFIX}/libexec/opensmtpd/makemap
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

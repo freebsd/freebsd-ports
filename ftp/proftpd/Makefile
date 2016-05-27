@@ -87,7 +87,7 @@ PLIST_FILES+=	libexec/proftpd/${m}.a \
 .endfor
 .else
 OPTIONS_DEFINE=	DOCS HTMLDOCS IPV6 NLS MEMCACHE PCRE
-OPTIONS_DEFAULT=	IPV6 NLS PCRE
+OPTIONS_DEFAULT=	PCRE
 
 HTMLDOCS_DESC=		Include HTML documentation
 MEMCACHE_DESC=		Memcache support using libmemcached
@@ -152,7 +152,7 @@ PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 MEMCACHE_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 MEMCACHE_CONFIGURE_ENABLE=	memcache
 MEMCACHE_VARS=		MODULES+="mod_memcache mod_tls_memcache" \
-			LIBS+="-L${LOCALBASE}/lib -lmemcached -lmemcachedutil"	
+			LIBS+="-L${LOCALBASE}/lib -lmemcached -lmemcachedutil"
 
 .include <bsd.port.options.mk>
 

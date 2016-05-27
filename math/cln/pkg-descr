@@ -1,5 +1,5 @@
 CLN is a library for computations with all kinds of numbers. It has a
-rich set of number classes: 
+rich set of number classes:
 
    - Integers (with unlimited precision),
    - Rational numbers,
@@ -15,6 +15,6 @@ rich set of number classes:
 The subtypes of the complex numbers among these are exactly the types
 of numbers known to the Common Lisp language. Therefore CLN can be used
 for Common Lisp implementations, giving `CLN' another meaning: it
-becomes an abbreviation of "Common Lisp Numbers". 
+becomes an abbreviation of "Common Lisp Numbers".
 
 WWW: http://www.ginac.de/CLN/

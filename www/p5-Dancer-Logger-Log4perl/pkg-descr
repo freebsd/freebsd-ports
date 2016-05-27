@@ -1,4 +1,4 @@
 An interface between Dancer's logging engine abstraction layer and the
-Log::Log4perl library. 
+Log::Log4perl library.
 
 WWW: http://search.cpan.org/dist/Dancer-Logger-Log4perl/

@@ -1,6 +1,6 @@
---- tpmd/unix/CMakeLists.txt.orig	2011-12-21 03:30:06.000000000 +0900
-+++ tpmd/unix/CMakeLists.txt	2012-10-10 01:03:34.000000000 +0900
-@@ -10,8 +10,8 @@
+--- tpmd/unix/CMakeLists.txt.orig	2011-12-20 18:30:06 UTC
++++ tpmd/unix/CMakeLists.txt
+@@ -10,8 +10,8 @@ add_executable(tpmd ${tpmd_SRCS})
  if(MTM_EMULATOR)
  add_definitions(-DMTM_EMULATOR)
  target_link_libraries(tpmd mtm tpm tpm_crypto)

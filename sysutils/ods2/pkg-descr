@@ -2,7 +2,7 @@ From aaareadme.txt:
 
 Say, what is this?
    ODS2 is a program to read VMS disk volumes written in VMS
-   ODS2 format. 
+   ODS2 format.
 
 What can it do?
    Basically ODS2 provides cut down DIRECTORY, COPY and

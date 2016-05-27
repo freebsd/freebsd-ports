@@ -1,4 +1,4 @@
---- jsobfu.gemspec.orig	2016-03-31 16:31:06 UTC
+--- jsobfu.gemspec.orig	2016-05-18 07:32:13 UTC
 +++ jsobfu.gemspec
 @@ -21,7 +21,7 @@ Gem::Specification.new do |s|
      s.specification_version = 4

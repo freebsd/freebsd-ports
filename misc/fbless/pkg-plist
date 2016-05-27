@@ -5,9 +5,9 @@ bin/fbless
 %%PYTHON_SITELIBDIR%%/fbless_lib/const.py
 %%PYTHON_SITELIBDIR%%/fbless_lib/const.pyc
 %%PYTHON_SITELIBDIR%%/fbless_lib/const.pyo
-%%PYTHON_SITELIBDIR%%/fbless_lib/fb2parser-old.py
-%%PYTHON_SITELIBDIR%%/fbless_lib/fb2parser-old.pyc
-%%PYTHON_SITELIBDIR%%/fbless_lib/fb2parser-old.pyo
+%%PYTHON_SITELIBDIR%%/fbless_lib/defaults.py
+%%PYTHON_SITELIBDIR%%/fbless_lib/defaults.pyc
+%%PYTHON_SITELIBDIR%%/fbless_lib/defaults.pyo
 %%PYTHON_SITELIBDIR%%/fbless_lib/fb2parser.py
 %%PYTHON_SITELIBDIR%%/fbless_lib/fb2parser.pyc
 %%PYTHON_SITELIBDIR%%/fbless_lib/fb2parser.pyo

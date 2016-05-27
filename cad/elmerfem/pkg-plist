@@ -44,6 +44,7 @@ share/elmersolver/include/gebhardtfactorglobals.mod
 share/elmersolver/include/generalutils.mod
 share/elmersolver/include/globmat.mod
 share/elmersolver/include/globmatc.mod
+share/elmersolver/include/harmutils.mod
 share/elmersolver/include/hashtable.mod
 share/elmersolver/include/huti_aux.mod
 share/elmersolver/include/huti_bicgstab.mod
@@ -74,6 +75,7 @@ share/elmersolver/include/maxwellaxis.mod
 share/elmersolver/include/maxwellgeneral.mod
 share/elmersolver/include/meshutils.mod
 share/elmersolver/include/messages.mod
+share/elmersolver/include/mgdynmaterialutils.mod
 share/elmersolver/include/modeldescription.mod
 share/elmersolver/include/multigrid.mod
 share/elmersolver/include/navierstokes.mod
@@ -101,6 +103,7 @@ share/elmersolver/include/timeintegrate.mod
 share/elmersolver/include/toroidcurrents.mod
 share/elmersolver/include/types.mod
 share/elmersolver/include/vectorhelmholtzutils.mod
+share/elmersolver/include/vecutils.mod
 share/elmersolver/include/viewfactorglobals.mod
 share/elmersolver/include/vtklegacyfile.mod
 share/elmersolver/lib/Acoustics.so
@@ -108,13 +111,17 @@ share/elmersolver/lib/AdvectionDiffusion.so
 share/elmersolver/lib/AdvectionReaction.so
 share/elmersolver/lib/ArteryOutlet.so
 share/elmersolver/lib/ArtificialCompressibility.so
+share/elmersolver/lib/CMakeFiles.so
 share/elmersolver/lib/CircuitsAndDynamics.so
 share/elmersolver/lib/CoilSolver.so
 share/elmersolver/lib/CompressibleNS.so
+share/elmersolver/lib/CoordinateTransform.so
 share/elmersolver/lib/CoupledNSUpdate.so
+share/elmersolver/lib/CraigBamptonSolver.so
 share/elmersolver/lib/DCRComplexSolve.so
 share/elmersolver/lib/DFTSolver.so
 share/elmersolver/lib/DataToFieldSolver.so
+share/elmersolver/lib/DirectionSolver.so
 share/elmersolver/lib/DistanceSolve.so
 share/elmersolver/lib/DivProjection.so
 share/elmersolver/lib/DivergenceSolver.so
@@ -138,6 +145,7 @@ share/elmersolver/lib/FreeSurfaceSolver.so
 share/elmersolver/lib/HeatSolve.so
 share/elmersolver/lib/HelmholtzBEM.so
 share/elmersolver/lib/HelmholtzSolve.so
+share/elmersolver/lib/I26.so
 share/elmersolver/lib/Isosurface.so
 share/elmersolver/lib/KESolver.so
 share/elmersolver/lib/Komega.so
@@ -155,6 +163,7 @@ share/elmersolver/lib/ParStokes.so
 share/elmersolver/lib/ParticleAdvector.so
 share/elmersolver/lib/ParticleDynamics.so
 share/elmersolver/lib/PhaseChangeSolve.so
+share/elmersolver/lib/Poisson.so
 share/elmersolver/lib/PoissonBEM.so
 share/elmersolver/lib/PoissonBoltzmannSolve.so
 share/elmersolver/lib/PressurePrecond.so
@@ -194,12 +203,15 @@ share/elmersolver/lib/ThermoElectricSolver.so
 share/elmersolver/lib/TransientPhaseChange.so
 share/elmersolver/lib/TransportEquation.so
 share/elmersolver/lib/V2FSolver.so
+share/elmersolver/lib/VectorHelmholtz.so
 share/elmersolver/lib/VelocityPrecond.so
 share/elmersolver/lib/ViscousCompressibility.so
-share/elmersolver/lib/VectorHelmholtz.so
 share/elmersolver/lib/VorticitySolver.so
+share/elmersolver/lib/WPotentialSolver.so
 share/elmersolver/lib/WaveSolver.so
+share/elmersolver/lib/Wsolver.so
 share/elmersolver/lib/elements.def
+share/elmersolver/lib/phasecurrents.so
 share/elmersolver/license_texts/GPL-2.txt
 share/elmersolver/license_texts/LGPL-2.1.txt
 share/elmersolver/license_texts/LICENSES

@@ -1,5 +1,5 @@
 'userneu' is a Perl script that parses a list of usernames and additional
-information (such as the real name or other information to be put in the 
+information (such as the real name or other information to be put in the
 GECOS field in /etc/passwd) and creates Unix accounts and (if desired)
 Samba accounts as well.
 

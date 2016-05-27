@@ -6,15 +6,15 @@ actions can be performed, such as adding/deleting a domain.  Accessing
 user email account information to allow modification of user passwords
 and quota's.  Account service restrictions include enabling or disabling
 of pop access, authentication based smtp relay control, courier-imap
-access and sqwebmail access. 
+access and sqwebmail access.
 
 vqadmin and qmailadmin can work together.  qmailadmin can be used to
 allow users to administer thier own domains but not create new domains.
 Creation or deletion of domains is normally associated with the
 owner/admin's of the machine.  vqadmin is for onwer/admin's or their
-technical support staff. 
+technical support staff.
 
-Features 
-. Add / Delete virtual email domains. 
-. Change user passwords, quota's. 
+Features
+. Add / Delete virtual email domains.
+. Change user passwords, quota's.
 . Turn off account services such as pop, imap, web email or smtp relay.

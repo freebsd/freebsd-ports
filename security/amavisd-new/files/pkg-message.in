@@ -3,7 +3,7 @@
  To use amavisd-new, you need to install at least one virus scanner.
  The following virus scanners are available in the FreeBSD ports
  collection:
- 
+
  /usr/ports/security/clamav	Clam Antivirus
  /usr/ports/security/f-prot	F-Prot Antivirus
 

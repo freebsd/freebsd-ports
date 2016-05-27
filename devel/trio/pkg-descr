@@ -1,12 +1,12 @@
 Trio is a fully matured and stable set of printf and string functions designed
 be used by applications with focus on portability or with the need for
-additional features that are not supported by standard stdio implementation. 
+additional features that are not supported by standard stdio implementation.
 
-There are several cases where you may want to consider using trio: 
+There are several cases where you may want to consider using trio:
 
-   1.Portability across heterogeneous platforms. 
-   2.Embedded systems without stdio support. 
-   3.Extendability of unsupported features. 
-   4.Your native version don't do everything you need. 
+   1.Portability across heterogeneous platforms.
+   2.Embedded systems without stdio support.
+   3.Extendability of unsupported features.
+   4.Your native version don't do everything you need.
 
 WWW: http://daniel.haxx.se/projects/trio/

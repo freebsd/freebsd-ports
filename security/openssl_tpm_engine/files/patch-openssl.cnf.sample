@@ -1,6 +1,6 @@
---- openssl.cnf.sample.orig	2005-09-30 00:02:58.000000000 +0900
-+++ openssl.cnf.sample	2010-11-07 00:53:39.968569790 +0900
-@@ -18,7 +18,7 @@
+--- openssl.cnf.sample.orig	2012-09-19 17:56:45 UTC
++++ openssl.cnf.sample
+@@ -18,7 +18,7 @@ engines = engine_section
  foo = tpm_section
  
  [tpm_section]

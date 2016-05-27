@@ -1,7 +1,6 @@
-diff -ur ../gcipher-1.0.orig/src/gcipher.desktop ./src/gcipher.desktop
---- ../gcipher-1.0.orig/src/gcipher.desktop	Wed Jun 25 15:07:51 2003
-+++ ./src/gcipher.desktop	Wed Jun 25 15:08:47 2003
-@@ -4,8 +4,8 @@
+--- src/gcipher.desktop.orig	2003-06-21 21:17:28 UTC
++++ src/gcipher.desktop
+@@ -4,8 +4,8 @@ Comment=A simple encryption tool
  Name[en_US.ISO8859-15]=GCipher
  Comment[en_US.ISO8859-15]=A simple encryption tool
  Exec=gcipher

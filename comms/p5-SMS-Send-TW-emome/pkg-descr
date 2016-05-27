@@ -1,4 +1,4 @@
-SMS::Send::TW::emome is a SMS::Send driver 
+SMS::Send::TW::emome is a SMS::Send driver
 which allows you to send messages through http://www.emome.net/
 
 WWW: http://search.cpan.org/dist/SMS-Send-TW-emome/

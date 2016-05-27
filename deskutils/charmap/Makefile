@@ -14,7 +14,6 @@ BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gnustep
 USE_GNUSTEP=	back build
 

@@ -15,6 +15,6 @@ Current CPUs supported:
  * Intel 8080, 8085, and 8085 with undocumented instructions
  * Fairchild F8
  * Atari Jaguar "Tom" and "Jerry" coprocessors
- * Zilog Z-80 and Nintendo Gameboy Z-80 variant 
+ * Zilog Z-80 and Nintendo Gameboy Z-80 variant
 
 WWW: http://xi6.com/projects/asmx/

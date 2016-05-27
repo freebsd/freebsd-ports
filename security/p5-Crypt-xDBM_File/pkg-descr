@@ -1,16 +1,16 @@
-Crypt::xDBM_File encrypts/decrypts the data in a gdbm, ndbm, sdbm (and 
-maybe even berkeleyDB, but I didn't test that) file. It gets tied to a 
-hash and you just access the hash like normal. The crypt function can 
-be any of the CPAN modules that use encrypt, decrypt, keysize, blocksize 
+Crypt::xDBM_File encrypts/decrypts the data in a gdbm, ndbm, sdbm (and
+maybe even berkeleyDB, but I didn't test that) file. It gets tied to a
+hash and you just access the hash like normal. The crypt function can
+be any of the CPAN modules that use encrypt, decrypt, keysize, blocksize
 (so Crypt::IDEA, Crypt::DES, Crypt::Blowfish, ... should all work)
 
-***IMPORTANT*** Encryption keys (the key you pass in on the tie line) 
-will be padded or truncated to fit the keysize(). Data (the key/values of 
-the hash) is padded to fill complete blocks of blocksize(). 
+***IMPORTANT*** Encryption keys (the key you pass in on the tie line)
+will be padded or truncated to fit the keysize(). Data (the key/values of
+the hash) is padded to fill complete blocks of blocksize().
 
-The padding is stripped before being returned to the user so you shouldn't 
-need to worry about it (except truncated keys). Read the doc that comes 
-with crypt function to get an idea of what these sizes are. If keysize 
+The padding is stripped before being returned to the user so you shouldn't
+need to worry about it (except truncated keys). Read the doc that comes
+with crypt function to get an idea of what these sizes are. If keysize
 or blocksize returns a zero the default is set to 8 bytes (64 bits).
 
 WWW: http://search.cpan.org/dist/Crypt-xDBM_File/

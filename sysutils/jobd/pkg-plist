@@ -1,0 +1,13 @@
+bin/jobctl
+lib/libjob.so.0
+lib/libjob.so
+lib/libjob.a
+etc/rc.d/jobd
+sbin/jobd
+man/man1/jobctl.1.gz
+man/man1/jobcfg.1.gz
+man/man5/job.5.gz
+man/man8/jobd.8.gz
+@dir etc/job.d
+@dir /var/cache/jobd
+@dir /var/db/jobd

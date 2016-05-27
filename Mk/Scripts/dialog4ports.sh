@@ -3,6 +3,8 @@
 # Maintainer: portmgr@FreeBSD.org
 set -e
 
+[ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DIALOG4PORTS}" ] && set -x
+
 if [ -z "${DIALOG4PORTS}" -o -z "${PORTSDIR}" -o -z "${MAKE}" ]; then
 	echo "DIALOG4PORTS, MAKE and PORTSDIR required in environment." >&2
 	exit 1

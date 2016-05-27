@@ -1,5 +1,5 @@
---- emil.man.orig	1996-06-04 13:42:42.000000000 +0200
-+++ emil.man	2011-07-25 20:21:13.000000000 +0200
+--- emil.man.orig	1996-06-04 11:42:42 UTC
++++ emil.man
 @@ -1,4 +1,4 @@
 -.TH EMIL 8 "19 December 1994"
 +.TH EMIL 1 "19 December 1994"

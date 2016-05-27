@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.0.9
+PORTVERSION=	4.0.10
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -28,7 +28,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	squid*-3.*
 
-USES=		compiler:c++11-lang cpe perl5 shebangfix tar:xz
+USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
@@ -55,8 +55,8 @@ OPTIONS_DEFINE=	ARP_ACL CACHE_DIGESTS DEBUG DELAY_POOLS ECAP ESI \
 OPTIONS_SINGLE=	GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
-OPTIONS_DEFAULT=ARP_ACL AUTH_NIS CACHE_DIGESTS DELAY_POOLS DOCS EXAMPLES FOLLOW_XFF \
-		FS_AUFS FS_DISKD FS_ROCK HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE \
+OPTIONS_DEFAULT=ARP_ACL AUTH_NIS CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF \
+		FS_AUFS FS_DISKD FS_ROCK HTCP ICAP ICMP IDENT KQUEUE LARGEFILE \
 		LAX_HTTP SNMP SSL SSL_CRTD TP_IPFW VIA_DB WCCP WCCPV2 GSSAPI_BASE
 
 ARP_ACL_CONFIGURE_ENABLE=	eui
@@ -205,6 +205,10 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--disable-arch-native
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+IGNORE=		Doesn't build, messes C++ headers and libs
+.endif
 
 # Authentication methods and modules:
 

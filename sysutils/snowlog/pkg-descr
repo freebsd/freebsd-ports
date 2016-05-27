@@ -1,6 +1,6 @@
-Snowlog is a program that lets you browse your web server's access log files. 
-It does not generate static HTML status reports but instead shows you all 
-accesses in a list that you can filter, sort and search easily. It's a 
+Snowlog is a program that lets you browse your web server's access log files.
+It does not generate static HTML status reports but instead shows you all
+accesses in a list that you can filter, sort and search easily. It's a
 console application and supposed to run on the server via ssh.
 
 Filters that accept regular expressions can be applied.

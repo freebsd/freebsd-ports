@@ -140,7 +140,6 @@
 %%WWWDIR%%/godmode/events/events.php
 %%WWWDIR%%/godmode/extensions.php
 %%WWWDIR%%/godmode/gis_maps/configure_gis_map.php
-%%WWWDIR%%/godmode/gis_maps/index.php
 %%WWWDIR%%/godmode/groups/configure_group.php
 %%WWWDIR%%/godmode/groups/configure_modu_group.php
 %%WWWDIR%%/godmode/groups/group_list.php

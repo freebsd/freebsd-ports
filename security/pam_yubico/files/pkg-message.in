@@ -1,5 +1,5 @@
 
-For setup instructions on authenticating with your YubiKey, see: 
+For setup instructions on authenticating with your YubiKey, see:
 %%DOCSDIR%%/README
 or
 https://github.com/Yubico/yubico-pam/blob/master/README

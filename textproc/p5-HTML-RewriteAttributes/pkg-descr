@@ -1,6 +1,6 @@
-HTML::RewriteAttributes is designed for simple yet powerful HTML 
-attribute rewriting.  You simply specify a callback to run for each 
-attribute and we do the rest for you.  This module is designed to 
-be subclassable to make handling special cases eaiser. 
+HTML::RewriteAttributes is designed for simple yet powerful HTML
+attribute rewriting.  You simply specify a callback to run for each
+attribute and we do the rest for you.  This module is designed to
+be subclassable to make handling special cases eaiser.
 
 WWW: http://search.cpan.org/dist/HTML-RewriteAttributes/

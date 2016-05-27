@@ -103,6 +103,7 @@ agk:*:172:
 polipo:*:173:
 flowtools:*:174:
 twms:*:175:
+mlvpn:*:176:
 gdnsd:*:179:
 rt:*:180:
 nagios:*:181:
@@ -147,6 +148,7 @@ fcron:*:247:
 _adsuck:*:253:
 _tor:*:256:
 _smtpd:*:257:
+_smtpq:*:258:
 meta1s:*:260:
 meta1q:*:261:
 meta1c:*:262:meta1s
@@ -247,6 +249,7 @@ sogod:*:846:
 domoticz:*:847:
 graylog:*:848:
 guacamole:*:899:
+seafile:*:900:
 fossy:*:901:www
 scanlogd:*:902:
 _ocserv:*:903:

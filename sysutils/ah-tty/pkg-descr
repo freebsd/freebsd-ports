@@ -1,7 +1,7 @@
-A helpful termulator Emulator - ah-tty provides context-sensitive help 
-at a UNIX shell prompt. ah-tty executes an inferior shell, and watches 
-the output from the shell and the input to it from the user carefully, 
-to determine what is a prompt, and what is actually a command typed by 
+A helpful termulator Emulator - ah-tty provides context-sensitive help
+at a UNIX shell prompt. ah-tty executes an inferior shell, and watches
+the output from the shell and the input to it from the user carefully,
+to determine what is a prompt, and what is actually a command typed by
 the user.
 
 WWW: http://ah-tty.sourceforge.net/

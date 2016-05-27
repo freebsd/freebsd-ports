@@ -4,7 +4,7 @@ scrollbars and more complete mouse integration.
 
 vile is a text editor which is extremely compatible with vi in terms of
 "finger feel".  in addition, it has extended capabilities in many areas,
-notably: 
+notably:
 
 	multi-file editing and viewing
 	key rebinding (in addition to :map, :map!, and :abbr)

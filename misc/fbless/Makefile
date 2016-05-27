@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	fbless
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	misc textproc python
 
 MAINTAINER=	alexander.4mail@gmail.com
 COMMENT=	Text-mode fb2 books reader
+
+LICENSE=	GPLv2
 
 USES=		python
 USE_PYTHON=	distutils

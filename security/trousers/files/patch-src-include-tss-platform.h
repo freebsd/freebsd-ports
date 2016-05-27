@@ -1,6 +1,6 @@
---- src/include/tss/platform.h.orig	2010-01-29 01:27:51.000000000 +0900
-+++ src/include/tss/platform.h	2010-10-24 21:04:04.830556101 +0900
-@@ -15,7 +15,7 @@
+--- src/include/tss/platform.h.orig	2014-04-24 18:05:44 UTC
++++ src/include/tss/platform.h
+@@ -15,7 +15,7 @@ There are platform dependent and general
  #if !defined(WIN32)
  #include <stdint.h>
     typedef uint8_t            BYTE;

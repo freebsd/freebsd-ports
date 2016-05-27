@@ -1,6 +1,6 @@
---- chrootuid.c.orig	Wed Jul 25 09:47:44 2001
-+++ chrootuid.c	Sun Jun 23 15:06:10 2002
-@@ -81,6 +81,10 @@
+--- chrootuid.c.orig	2001-07-25 16:47:44 UTC
++++ chrootuid.c
+@@ -81,6 +81,10 @@ char  **argv;
  	syslog(LOG_ERR, "usage: %s path user command", argv[0]);
  	return (0);
      }

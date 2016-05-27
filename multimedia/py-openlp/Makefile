@@ -15,12 +15,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.5:databases/py-sqlalchemy
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.5:databases/py-sqlalchemy07
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup32>0:www/py-beautifulsoup32 \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-phonon>=0:multimedia/py-qt4-phonon \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.5:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.5:databases/py-sqlalchemy07 \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=0:www/py-qt4-webkit \
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:net/py-qt4-network \
@@ -38,7 +38,6 @@ USES=		desktop-file-utils python
 USE_PYTHON=	distutils autoplist
 USE_GSTREAMER=	good bad ugly
 USE_QT4=	linguist phonon-gst
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 NO_ARCH=	yes
 

@@ -8,7 +8,7 @@ without flooding the network.
 	 host in a round-robin fashion. If a host replies, it is noted and
 	 removed from the list of hosts to check. If a host does not respond
 	 within a certain time limit and/or retry limit it will be considered
-	 unreachable. 
+	 unreachable.
 
      Unlike ping, fping is meant to be used in scripts and its
      output is easy to parse.

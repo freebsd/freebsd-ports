@@ -1,6 +1,6 @@
-Clio is a great way to build commandline tools. 
-It provides an advanced options parser with a variety of notations 
+Clio is a great way to build commandline tools.
+It provides an advanced options parser with a variety of notations
 suited to almost any perfered style, and provides a very rich and easy to use
 library for generating console output.
- 
+
 WWW: http://rubygems.org/gems/clio/

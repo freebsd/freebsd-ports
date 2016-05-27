@@ -11,8 +11,6 @@ DISTNAME=	UrbanTerror${PORTVERSION:S/.//}_full
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Urban Terror
 
-NO_PACKAGE=	package will be 445MB, set FORCE_PACKAGE if you really want it
-
 USES=		gmake zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

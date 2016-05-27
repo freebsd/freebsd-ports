@@ -1,6 +1,6 @@
 
 You have installed ModSecurity.
-To enable ModSecurity in Apache, follow the instructions in 
+To enable ModSecurity in Apache, follow the instructions in
 
  %%PREFIX%%/%%APACHEETCDIR%%/modules.d/%%APMOD_FILE%%
 

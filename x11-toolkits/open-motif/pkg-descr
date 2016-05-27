@@ -4,7 +4,7 @@ platforms.  It provides application developers, end users, and system
 vendors with the industry's most widely used environment for standardizing
 application presentation on a wide range of platforms.  Motif is the
 leading user interface toolkit for the UNIX(r) system.
- 
+
 NOTE: Some ports with GNU configure do not know that Motif 2.1 requires -lXp.
 In that case, you need to edit Makefile after configure, or, hack
 configure(.in) before configure.

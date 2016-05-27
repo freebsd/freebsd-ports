@@ -2,14 +2,14 @@
 
 Congratulations, you have installed jabberd14.
 
-To configure jabberd14, please copy: 
+To configure jabberd14, please copy:
 %%PREFIX%%/etc/jabber.xml.sample to %%PREFIX%%/etc/jabber.xml
 and edit this file.
 
-For automatic startup define in your rc.conf: 
+For automatic startup define in your rc.conf:
 jabber_enable="YES"
 
-If you want to use file logging instead of syslog, 
+If you want to use file logging instead of syslog,
 confgiure this in jabber.xml and create the log directory defined there
 (default log directory: %%JABBER_LOGDIR%%)
 and change its owner/group to the user/group jabberd14 runs as

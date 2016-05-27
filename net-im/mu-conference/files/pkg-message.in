@@ -7,9 +7,9 @@ If necessary, please create directories owned by user "%%JABBER_USER%%":
 %%MUC_LOGDIR%%
 
 Please read instructions for different jabber daemons you desire to use:
-- jabberd14 (net-im/jabber): 
+- jabberd14 (net-im/jabber):
 	%%DOCSDIR%%/README.FreeBSD.jabberd14
-- jabberd2 (net-im/jabberd): 
+- jabberd2 (net-im/jabberd):
 	%%DOCSDIR%%/README.FreeBSD.jabberd2
 
 If you did not select WITH_JABBER, WITH_JABBERD or WITH_EJABBERD, you may want

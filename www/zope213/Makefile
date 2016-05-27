@@ -98,5 +98,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/#.*effective-user chrism/effective-user ${ZOPE_USER}/' \
 		${WRKSRC}/src/Zope2/utilities/skel/etc/zope.conf.in
 	@${RM} ${WRKSRC}/src/Zope2/utilities/skel/etc/zope.conf.in.bak
+	@${RM} ${WRKSRC}/src/Zope2/Startup/zopectl.py.orig
 
 .include <bsd.port.mk>

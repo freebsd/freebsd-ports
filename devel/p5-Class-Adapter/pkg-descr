@@ -1,4 +1,4 @@
-The Class::Adapter class is intended as an abstract base class for creating 
+The Class::Adapter class is intended as an abstract base class for creating
 any sort of class or object that follows the Adapter pattern.
 
 WWW: http://search.cpan.org/dist/Class-Adapter/

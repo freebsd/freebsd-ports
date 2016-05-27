@@ -1,5 +1,5 @@
 Rugments is a syntax highlighter written in Ruby. It has been forked
 from Rouge and its HTML output is compatible with stylesheets
-designed for pygments. 
+designed for pygments.
 
 WWW: https://github.com/rumpelsepp/rugments

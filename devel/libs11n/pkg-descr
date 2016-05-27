@@ -1,15 +1,15 @@
-s11n (an abbreviation for serialization) is an Open Source project focused 
-on the generic serialization of objects (i.e., object persistence) in the 
+s11n (an abbreviation for serialization) is an Open Source project focused
+on the generic serialization of objects (i.e., object persistence) in the
 C++ programming language.
 
-The project's flagship library, appropriately named libs11n, can easily 
-serialize all manner of PODs (Plain Old Data types), most STL containers, 
-and user-defined Serializable types. By taking advantage of relatively 
-new, advanced C++ techniques s11n turns this formerly-difficult task into 
-child's play. It supports literally hundreds of millions of combinations 
-of standard containers out of the box. libs11n is 100% data-format 
-agnostic, and currently includes support for many formats, including 3 XML 
-flavours. (As far as i am aware, this exceeds support provided by any 
-other serialization framework, regardless of the implementation language!) 
+The project's flagship library, appropriately named libs11n, can easily
+serialize all manner of PODs (Plain Old Data types), most STL containers,
+and user-defined Serializable types. By taking advantage of relatively
+new, advanced C++ techniques s11n turns this formerly-difficult task into
+child's play. It supports literally hundreds of millions of combinations
+of standard containers out of the box. libs11n is 100% data-format
+agnostic, and currently includes support for many formats, including 3 XML
+flavours. (As far as i am aware, this exceeds support provided by any
+other serialization framework, regardless of the implementation language!)
 
 WWW: http://s11n.net

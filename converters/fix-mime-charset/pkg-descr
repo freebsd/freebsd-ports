@@ -1,6 +1,6 @@
-Fix-mime-charset automatically detects character sets of email message and 
-modifies the Content-Type header appropriately. It can be used as mail 
+Fix-mime-charset automatically detects character sets of email message and
+modifies the Content-Type header appropriately. It can be used as mail
 filter in mailing lists where users often set the charset of their messages
-incorrectly. It processes messages fast and accurately, ignoring 
-attachments, and correctly interprets transfer-encodings. None but the 
+incorrectly. It processes messages fast and accurately, ignoring
+attachments, and correctly interprets transfer-encodings. None but the
 Content-Type header is changed.

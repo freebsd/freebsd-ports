@@ -1,6 +1,6 @@
---- string.h.orig	Thu Jan 18 01:21:24 2001
-+++ string.h	Fri Jan 26 05:36:32 2001
-@@ -2,7 +2,6 @@
+--- string.h.orig	2001-11-03 18:09:21 UTC
++++ string.h
+@@ -2,14 +2,13 @@
  #   define __STRING_H
  
  #include <ctype.h>
@@ -8,3 +8,11 @@
  
  #define CR '\n'
  #define TAB '\t'
+ 
+ char *readline(FILE *fp);
+ char *findline(char *start, int *foundend);
+-int getline(const char *, char *);
++int get_line(const char *, char *);
+ int substr(const char *, char *, char);
+ int strtokenize(char *line, char delim, char **tokens, int maxtokens);
+ char *stradp(char *filename);

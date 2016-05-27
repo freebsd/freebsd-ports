@@ -1,14 +1,14 @@
-OcempGUI is a small toolkit, which comes with various modules suitable for 
+OcempGUI is a small toolkit, which comes with various modules suitable for
 event management, user interfaces, 2D drawing and accessibility.
 
-OcempGUI enables developers to enhance their python and/or pygame applications 
-and games easily with graphical UI elements such as buttons, entry boxes, 
-scrolling abilities and more as well as simple event brokers or features, which 
+OcempGUI enables developers to enhance their python and/or pygame applications
+and games easily with graphical UI elements such as buttons, entry boxes,
+scrolling abilities and more as well as simple event brokers or features, which
 enhance the program by adding accessibility to its objects.
 
-It can save a developer much time by providing a broad range of drawing 
-routines and ready-to-use event capable object types. The developer can focus 
-on the main tasks instead of taking care about needed low-level components, 
+It can save a developer much time by providing a broad range of drawing
+routines and ready-to-use event capable object types. The developer can focus
+on the main tasks instead of taking care about needed low-level components,
 which are given to him with OcempGUI.
 
 WWW: http://ocemp.sourceforge.net/gui.html

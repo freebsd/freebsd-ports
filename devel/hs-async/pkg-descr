@@ -1,13 +1,13 @@
 This package provides a higher-level interface over threads, in which an
 Async a is a concurrent thread that will eventually deliver a value of
 type a. The package provides ways to create Async computations, wait for
-their results, and cancel them. 
+their results, and cancel them.
 
-Using Async is safer than using threads in two ways: 
+Using Async is safer than using threads in two ways:
 
  - When waiting for a thread to return a result, if the thread dies with
    an exception then the caller must either re-throw the exception (wait)
-   or handle it (waitCatch); the exception cannot be ignored. 
+   or handle it (waitCatch); the exception cannot be ignored.
 
  - The API makes it possible to build a tree of threads that are
    automatically killed when their parent dies (see withAsync).

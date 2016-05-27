@@ -1,12 +1,12 @@
-This Input Handler verifies that it is dealing with a reasonable date. 
-Reasonably means anything that Date::Manip thinks is sensible, so you 
-could use any of (for example): "December 12, 2001" "12th December, 2001" 
+This Input Handler verifies that it is dealing with a reasonable date.
+Reasonably means anything that Date::Manip thinks is sensible, so you
+could use any of (for example): "December 12, 2001" "12th December, 2001"
 "2001-12-12" "next Tuesday" "third Wednesday in March"
 
-See Date::Manip for much more information on what date formats are 
+See Date::Manip for much more information on what date formats are
 acceptable.
 
-The resulting date will be a Date::Simple object. Date::Simple for more 
+The resulting date will be a Date::Simple object. Date::Simple for more
 information on this.
 
 WWW: http://search.cpan.org/dist/CGI-Untaint-date/

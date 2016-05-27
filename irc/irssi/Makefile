@@ -2,7 +2,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.19
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/irssi/irssi/releases/download/${PORTVERSION}/
 
@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--with-ncurses=${NCURSESBASE}
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT DOCS TRUECOLOR
-OPTIONS_DEFAULT=	PERL IPV6 DOCS
+OPTIONS_DEFAULT=	PERL
 OPTIONS_SUB=	yes
 SOCKS_DESC=	Socks proxy support
 SOCKS_CONFIGURE_WITH=	socks
@@ -54,5 +54,11 @@ post-configure:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules
+
+post-install-PERL-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Irssi/Irssi.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Irssi/Irc/Irc.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Irssi/TextUI/TextUI.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Irssi/UI/UI.so
 
 .include <bsd.port.mk>

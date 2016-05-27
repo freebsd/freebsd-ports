@@ -14,7 +14,7 @@ Copy your smb.conf (usually in %%PREFIX%%/etc/) and
 	% cp %%PREFIX%%/etc/smb.conf %%DOCSDIR%%/smbnetfs.conf ~/.smb/
 
 Make mountpoint for smb network and mount it:
-	
+
 	% mkdir ~/mountpoint
 	% smbnetfs ~/mountpoint
 

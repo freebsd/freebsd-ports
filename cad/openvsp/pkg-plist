@@ -20,9 +20,11 @@ bin/vspviewer
 %%DATADIR%%/Seat.vsppart
 %%DATADIR%%/SeatGroup.vsppart
 %%DATADIR%%/SharkTeeth.tga
+%%DATADIR%%/SnapToDemo.vspscript
 %%DATADIR%%/Stack.vspscript
 %%DATADIR%%/SubSurface.vspscript
 %%DATADIR%%/TestAll.vspscript
+%%DATADIR%%/TestAnalysis.vspscript
 %%DATADIR%%/TransportFuse.vsppart
 %%DATADIR%%/Wing.vspscript
 %%DATADIR%%/b737a.af

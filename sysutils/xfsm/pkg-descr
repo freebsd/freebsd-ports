@@ -1,6 +1,6 @@
 xfsm stands for X File System Monitor and runs under MIT's X11
-window system on several flavors of UNIX. It is a tool designed 
-to make monitoring your file systems' status easy by displaying 
+window system on several flavors of UNIX. It is a tool designed
+to make monitoring your file systems' status easy by displaying
 a simple bar graph for each file system greater than size 0. It
-updates the file systems' statistics at regular, user definable 
+updates the file systems' statistics at regular, user definable
 intervals.

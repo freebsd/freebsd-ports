@@ -1,5 +1,5 @@
 The gnome-shell extensions won't be usable until the gnome-shell
-gets restarted. To do so, running the shell, press ALT+F2 and 
+gets restarted. To do so, running the shell, press ALT+F2 and
 type 'r'. That will restart the shell.
 
 To enable or configure an extension, after restarting the shell, you

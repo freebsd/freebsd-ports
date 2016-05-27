@@ -20,7 +20,7 @@ with Fedora 10 (legacy).
 
 Since the OSS interface was removed, Skype now uses linux-pulseaudio compat packages.
 By default you get one device corresponding to your default OSS dsp device (so
-Skype will use it for ringing, incoming voice and mic). 
+Skype will use it for ringing, incoming voice and mic).
 For this to function properly, we've sourced a very specific libpulse.so, which
 implements most of the things Skype actually needs through OSS, and not much
 else. And that's okay, as libpulse.so is used exclusively for Skype via

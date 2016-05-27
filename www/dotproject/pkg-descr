@@ -1,6 +1,6 @@
 dotProject is a PHP web-based project management framework that includes modules
 for companies, projects, tasks (with Gantt charts), forums, files, calendar,
-contacts, tickets/helpdesk, multi-language support, user/module permissions and 
+contacts, tickets/helpdesk, multi-language support, user/module permissions and
 themes.
 
 Features Include
@@ -14,7 +14,7 @@ Features Include
     * Contact List
     * Calendar
     * Discussion Forum
-    * Resource Based Permissions 
+    * Resource Based Permissions
 
 
 WWW: http://www.dotproject.net

@@ -9,7 +9,7 @@ JUMP GIS by Vivid Solutions. It's features include:
     * It works, even with medium size datasets, and with professional
       touch.
     * It provides a GIS API with a flexible plugin structure, so that
-      new features are relatively easy to develope around the sound 
+      new features are relatively easy to develope around the sound
       mapping platform.
     * It utilises standards like GML, WMS and WFS.
     * It is already translated in English, Finnish, French, German,

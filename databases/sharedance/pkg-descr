@@ -2,4 +2,4 @@ Sharedance is a high-performance server that centralize ephemeral
 key/data pairs on remote hosts, without the overhead and the
 complexity of an SQL database.
 
-WWW:	http://sharedance.pureftpd.org/project/sharedance
+WWW: http://sharedance.pureftpd.org/project/sharedance

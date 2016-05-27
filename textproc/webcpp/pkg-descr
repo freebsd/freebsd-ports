@@ -1,4 +1,4 @@
-Webcpp converts source code to syntax highlighted HTML, and supports multiple 
+Webcpp converts source code to syntax highlighted HTML, and supports multiple
 languages and also colour schemes.
 Features:
  - Specific support for over 30 programming, scripting, and shading languages
@@ -8,7 +8,7 @@ Features:
  - Automatic filetype detection for higlighting
  - Filetype forcing for syntax highlighting
  - Automatic #include file hyperlinking and file generation
- - Piping the input or output to or from STDIN/STDOUT to collaborate with 
+ - Piping the input or output to or from STDIN/STDOUT to collaborate with
 other programs
  - The ability of allowing custom HTML tags to be added
  - Generic support for unknown text based files

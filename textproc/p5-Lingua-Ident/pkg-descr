@@ -1,4 +1,4 @@
-This module implements a statistical language identifier. 
+This module implements a statistical language identifier.
 
 The filename attributes to the constructor must refer to files
 containing tables of n-gram probabilites for languages. These tables

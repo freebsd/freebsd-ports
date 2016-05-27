@@ -1,7 +1,7 @@
-Class::Declare allows class authors to specify public, private and protected 
+Class::Declare allows class authors to specify public, private and protected
 attributes and methods for their classes, giving them control over how their
-modules may be accessed. The standard object oriented programming concepts 
-of public, private and protected have been implemented for both class and 
-instance (or object) attributes and methods.  
+modules may be accessed. The standard object oriented programming concepts
+of public, private and protected have been implemented for both class and
+instance (or object) attributes and methods.
 
 WWW: http://search.cpan.org/dist/Class-Declare/

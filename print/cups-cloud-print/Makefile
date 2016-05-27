@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups-cloud-print
-PORTVERSION=	20140814.3
-PORTREVISION=	2
+PORTVERSION=	20160502
 CATEGORIES=	print
 
 MAINTAINER=	ports@FreeBSD.org
@@ -40,6 +39,6 @@ post-patch:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README.md ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

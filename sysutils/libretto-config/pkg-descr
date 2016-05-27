@@ -4,21 +4,21 @@ libretto-config - Libretto BIOS Setting Program
 setting of the mini notebook computer, Toshiba Libretto. Changes to
 the setting are immediately done, so rebooting is not necessary.
   I don't know whether these programs work on any other machines but
-Libretto. In case of Toshiba's notebook machines, some function may 
-work. 
+Libretto. In case of Toshiba's notebook machines, some function may
+work.
 
 *** Disclaimer *****************************************************
-     The information used to write these programs was obtained by 
+     The information used to write these programs was obtained by
 analyzing Libretto individually, not provided by Toshiba. Therefore,
-they might contain fatal bugs and might cause damages to your 
-Libretto. You can use them freely but the authors are not 
+they might contain fatal bugs and might cause damages to your
+Libretto. You can use them freely but the authors are not
 responsible for the programs. Redistribution of the programs are not
-restricted, but you must attach this caution and the source. 
+restricted, but you must attach this caution and the source.
 ********************************************************************
 
- The original program were written by Mr. Iizuka 
-(PXN02133@niftyserve.or.jp), which rewrite the CMOS setting directly. 
-Mr. Nomura (GBB00111@niftyserve.or.jp) have extended the program to 
+ The original program were written by Mr. Iizuka
+(PXN02133@niftyserve.or.jp), which rewrite the CMOS setting directly.
+Mr. Nomura (GBB00111@niftyserve.or.jp) have extended the program to
 support SMI and BIOS calling. Thanks.
  I, Ishioka, combined programs to the package. If you have any troubles,
 bug reports, or requests, please notify me.

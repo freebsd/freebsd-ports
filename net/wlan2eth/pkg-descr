@@ -1,5 +1,5 @@
 A simple tool to convert packet captures in 802.11 format to Ethernet format.
-Lots of tools can only understand Ethernet link types, so I wrote this 
+Lots of tools can only understand Ethernet link types, so I wrote this
 tool to convert captures to a format that they can understand.
 Note that this tool is really only useful for encrypted traffic.
 

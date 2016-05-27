@@ -2,7 +2,7 @@ HTTP client/server for Python asyncio (PEP-3156)
 
 Features:
 
- * Compression (deflate) 
+ * Compression (deflate)
  * HTTP Basic Authenntication
  * Chunked Transfer Encoding
  * Connection Pooling

@@ -1,8 +1,8 @@
 This package contains three source control utilities from Peter Miller
 
-    fhist: Keeps track of versions of a file.  
+    fhist: Keeps track of versions of a file.
     fcomp: Compares two versions of a file.
-    fmerge: Merges together edits from two descendants of a file.  
+    fmerge: Merges together edits from two descendants of a file.
 
 This program is based on the algorithm in ``An O(ND) Difference
 Algorithm and Its Variations'', Eugene W. Myers, TR 85-6, 10-April-1985,

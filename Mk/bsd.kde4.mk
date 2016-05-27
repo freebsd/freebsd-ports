@@ -14,7 +14,7 @@ Kde_Pre_Include=	bsd.kde4.mk
 #
 # KDE4 related ports can use this as follows:
 #
-# USE_KDE4=		kdelibs kdeprefix
+# USE_KDE4=		kdelibs
 # USE_QT4=		corelib # Set Qt 4 components here.
 #
 # .include <bsd.port.mk>
@@ -32,8 +32,6 @@ Kde_Pre_Include=	bsd.kde4.mk
 # kactivities           - KDE activities library
 # kate			- KDE text editor framework
 # kdelibs		- KDE Developer Platform
-# kdeprefix		- If set, port will be installed into ${KDE4_PREFIX} instead of
-#			  ${LOCALBASE}
 # kfilemetadata		- KDE library for extracting file metadata
 # korundum		- KDE Ruby bindings
 # libkcddb		- KDE CDDB library
@@ -94,16 +92,6 @@ KDE4_PREFIX?=	${LOCALBASE}
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH="${LOCALBASE};${KDE4_PREFIX}" \
 		-DKDE4_BUILD_TESTS:BOOL=OFF
 
-# ${PREFIX} and ${NO_MTREE} have to be defined in the pre-makefile section.
-.if defined(USE_KDE4) && ${USE_KDE4:Mkdeprefix} != ""
-. if ${.MAKEFLAGS:MPREFIX=*} == ""
-PREFIX=		${KDE4_PREFIX}
-.  if ${KDE4_PREFIX} != ${LOCALBASE}
-NO_MTREE=	yes
-.  endif
-. endif
-.endif
-
 PLIST_SUB+=	KDE4_PREFIX="${KDE4_PREFIX}" \
 		KDE4_VERSION="${KDE4_VERSION}" \
 		KDE4_GENERIC_LIB_VERSION=${KDE4_VERSION} \
@@ -144,10 +132,6 @@ _USE_KDE4_ALL=		baloo baloo-widgets \
 # These components are not part of the Software Compilation.
 _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 			strigi
-# Meta components
-_USE_KDE4_ALL+=		kdeprefix
-# Deprecated
-_USE_KDE4_ALL+=		kdehier
 
 baloo_PORT=		sysutils/baloo
 baloo_PATH=		${KDE4_PREFIX}/lib/libbaloocore.so
@@ -167,12 +151,6 @@ kate_PATH=		${KDE4_PREFIX}/lib/libkateinterfaces.so
 
 kdelibs_PORT=		x11/kdelibs4
 kdelibs_PATH=		${KDE4_PREFIX}/lib/libkdecore.so
-
-.if ${KDE4_PREFIX} != ${LOCALBASE}
-kdeprefix_PORT=		misc/kdehier4
-kdeprefix_PATH=		kdehier4>=1.3
-kdeprefix_TYPE=		run
-.endif
 
 kfilemetadata_PORT=	sysutils/kfilemetadata
 kfilemetadata_PATH=	${KDE4_PREFIX}/lib/libkfilemetadata.so
@@ -287,7 +265,7 @@ strigi_PATH=		${LOCALBASE}/lib/libstreamanalyzer.so.0
 .for component in ${USE_KDE4:O:u:C/_.+//}
   # Check that the component is valid.
 . if ${_USE_KDE4_ALL:M${component}} != ""
-   # Skip meta-components (e.g. kdeprefix).
+   # Skip meta-components
 .  if defined(${component}_PORT) && defined(${component}_PATH)
 ${component}_DEPENDS=	${${component}_PATH}:${${component}_PORT}
     # Check if a dependency type is explicitly requested.

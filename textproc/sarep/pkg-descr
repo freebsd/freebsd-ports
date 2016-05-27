@@ -2,4 +2,4 @@ Sarep is a command-line search and replace tool written in Perl. It
 supports regular expressions, case insensitivity/sensitivity, multiple
 file search-and-replace, wildcards, writing out to a new file (rather than
 overwriting the modified file), proper handling of metacharacters, reading
-search/replace string from a file, and silent/verbose modes. 
+search/replace string from a file, and silent/verbose modes.

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	2015.8.8
-PORTREVISION=	1
+PORTVERSION=	2016.3.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -74,7 +73,7 @@ post-patch:
 .for file in conf/minion conf/master doc/man/salt-key.1 \
 	doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \
 	doc/man/salt-master.1 doc/man/salt-run.1 doc/man/salt.7 doc/man/salt.1 \
-	doc/man/salt-call.1 salt/config.py \
+	doc/man/salt-call.1 \
 	salt/modules/mysql.py salt/utils/parsers.py salt/modules/tls.py \
 	salt/modules/postgres.py salt/utils/migrations.py
 	@${REINPLACE_CMD} -e 's|/etc/salt|${ETCDIR}|' \

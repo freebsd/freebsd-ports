@@ -1,5 +1,5 @@
---- xgraph.h.orig	Thu Jul 17 03:40:41 1997
-+++ xgraph.h	Fri Dec 10 03:10:48 1999
+--- xgraph.h.orig	1997-07-16 18:40:41 UTC
++++ xgraph.h
 @@ -5,7 +5,12 @@
  #ifndef _XGRAPH_H_
  #define _XGRAPH_H_
@@ -13,7 +13,7 @@
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
  #include <X11/cursorfont.h>
-@@ -33,20 +38,9 @@
+@@ -33,20 +38,9 @@ extern void do_hardcopy();	/* Carries ou
  extern void ho_dialog();	/* Hardcopy dialog         */
  extern void set_X();		/* Initializes X device    */
  
@@ -33,7 +33,7 @@
 +#define MAX(a,b)	((a) > (b) ? (a) : (b))
 +#define MIN(a,b)	((a) < (b) ? (a) : (b))
  #endif
--
--extern void abort();
  
+-extern void abort();
+-
  #endif /* _XGRAPH_H_ */

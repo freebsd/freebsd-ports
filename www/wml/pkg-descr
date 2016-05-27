@@ -1,6 +1,6 @@
-  __        ___  __ _     
+  __        ___  __ _
   \ \      / / \/  | |      Website META Language
-   \ \ /\ / / |\/| | |    
+   \ \ /\ / / |\/| | |
     \ V  V /| |  | | |___   ``WML is the Unix toolkit for getting
      \_/\_/ |_|  |_|_____|    your webdesigner's HTML job done.''
 
@@ -12,7 +12,7 @@
   written in ANSI C and Perl 5, build via a GNU Autoconf based source tree
   and runs out-of-the-box on all major Unix derivates.  It can be used
   free of charge both in educational and commercial environments.
-  
+
   WML consists of a control frontend driving up to nine backends in a
   sequential pass-oriented filtering scheme. Each backend provides one
   particular core language. For maximum power WML additionally ships with a

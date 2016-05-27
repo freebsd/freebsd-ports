@@ -14,6 +14,8 @@ COMMENT=	SHOUTcast Distributed Network Audio Server
 RESTRICTED=	redistribution of software is not permitted
 IA32_BINARY_PORT=	yes
 
+BROKEN=		does not fetch (404)
+
 USES=		dos2unix shebangfix
 DOS2UNIX_REGEX=	.*\.(conf|css|html|js|txt|xml)
 bash_CMD=	${SH}
@@ -25,8 +27,8 @@ CONFLICTS=	linux-shoutcast-[0-9]*
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFAULT=	SERVERSETUP EXAMPLES
 OPTIONS_DEFINE=	SERVERSETUP DOCS EXAMPLES
+OPTIONS_DEFAULT=	SERVERSETUP
 OPTIONS_SUB=	yes
 SETUPSERVER_DESC=	SHOUTcast Server Setup Tools
 EXAMPLE_DESC=	SHOUTcast Server Example Configuration Files

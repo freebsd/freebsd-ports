@@ -1,7 +1,7 @@
 A no-nonsense, simple to use, small viewer for cbr and cbz (comic book archive)
 files. As it is written in C, the executable is small and fast. It views jpg
 (or jpeg), gif and png images, and you can zoom in and out.
-     
+
 It's main features are:
    * Simple usage: A navigation bar stays on top of the pages.
    * It works on any RAR-compressed image archive - normally the extension
