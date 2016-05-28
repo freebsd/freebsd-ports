@@ -222,6 +222,7 @@ _xsi:*:600:
 _tss:*:601:
 _pkcs11:*:602:
 freeswitch:*:610:
+ntpa:*:615:
 caldavd:*:639:
 monkeysphere:*:641:
 aox:*:666:

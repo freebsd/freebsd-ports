@@ -1,0 +1,9 @@
+ntpa has been installed.
+It requires a MySQL or PostgreeSQL user and database configured for it.
+
+You can do this with the following MySQL commands:
+
+CREATE DATABASE ntpa;
+CREATE USER 'ntpau'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON ntpa.* TO 'ntpau'@'localhost';
+FLUSH PRIVILEGES;
