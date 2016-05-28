@@ -13,7 +13,7 @@ PYQT_DIST=	yes
 
 USES=		python pyqt:4
 USE_PYQT=	sip_build core_run
-USE_QT4=	moc_build network qmake_build
+USE_QT4=	moc_build corelib network qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API
