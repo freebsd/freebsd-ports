@@ -24,7 +24,8 @@ RUN_DEPENDS=	cagibid:net/cagibi
 
 USE_KDE4=	kactivities kdelibs oxygen \
 		attica automoc4 pimlibs strigi nepomuk-core
-USES=		cmake:outsource gettext gmake jpeg shared-mime-info shebangfix tar:xz
+USES=		cmake:outsource gettext gmake jpeg shared-mime-info shebangfix \
+		tar:xz
 USE_QT4=	corelib dbus declarative designer_build gui phonon \
 		network qtestlib script svg webkit xml \
 		moc_build qmake_build rcc_build uic_build
