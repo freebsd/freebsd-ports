@@ -12,7 +12,7 @@ include/nghttp2/nghttp2ver.h
 lib/libnghttp2.a
 lib/libnghttp2.so
 lib/libnghttp2.so.14
-lib/libnghttp2.so.14.7.0
+lib/libnghttp2.so.14.8.0
 %%ASIO%%lib/libnghttp2_asio.a
 %%ASIO%%lib/libnghttp2_asio.so
 %%ASIO%%lib/libnghttp2_asio.so.1
