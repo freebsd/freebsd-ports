@@ -1065,6 +1065,8 @@
     SUBDIR += tkdvd
     SUBDIR += tlsdate
     SUBDIR += tm
+    SUBDIR += tmate
+    SUBDIR += tmate-slave
     SUBDIR += tmpreaper
     SUBDIR += tmpwatch
     SUBDIR += tmux

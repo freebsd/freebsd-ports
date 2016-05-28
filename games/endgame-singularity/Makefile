@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	endgame-
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Simulates the life of a true AI
 
 RUN_DEPENDS=	py*-game>=1.8:devel/py-game \

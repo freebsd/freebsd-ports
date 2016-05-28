@@ -1,0 +1,8 @@
+NTP Analyzer is a tool dedicated to analyze the operation of time
+servers.
+
+NTP Analyzer works by collecting data from the ntp daemon. Graphs
+and web pages can then be generated to visualize the activities of
+hosts and peers.
+
+WWW: https://bitbucket.org/anguist/ntpa

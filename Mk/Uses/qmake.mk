@@ -107,7 +107,8 @@ qmake-configure:
 		${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${QMAKE_SOURCE_PATH}
 
 .if !target(do-configure) && ! ${qmake_ARGS:M_env}
-_USES_configure+=	450:qmake-configure
+do-configure: qmake-configure
+	@${DO_NADA}
 .endif
 
 .endif # !defined(_INCLUDE_USES_QMAKE_MK)

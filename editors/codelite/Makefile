@@ -5,7 +5,7 @@ PORTNAME=	codelite
 PORTVERSION=	9.1
 CATEGORIES=	editors devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Open Source IDE for C/C++
 
 LICENSE=	GPLv2+

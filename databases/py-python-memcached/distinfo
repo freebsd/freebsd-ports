@@ -1,2 +1,3 @@
-SHA256 (python-memcached-1.57.tar.gz) = 3b689a135afb2fdb6da2298d5213780f43a3f210cf8c960d50b252acb3f62902
-SIZE (python-memcached-1.57.tar.gz) = 22620
+TIMESTAMP = 1464431462
+SHA256 (python-memcached-1.58.tar.gz) = 2775829cb54b9e4c5b3bbd8028680f0c0ab695db154b9c46f0f074ff97540eb6
+SIZE (python-memcached-1.58.tar.gz) = 30562

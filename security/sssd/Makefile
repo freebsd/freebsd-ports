@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sssd
-DISTVERSION=	1.11.7
+PORTVERSION=	1.11.7
 PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
@@ -11,7 +11,7 @@ MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 MAINTAINER=	lukas.slebodnik@intrak.sk
 COMMENT=	System Security Services Daemon
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
@@ -72,8 +72,6 @@ OPTIONS_SUB=	yes
 SMB_DESC=		Install IPA and AD providers (requires Samba4)
 SMB_BUILD_DEPENDS=	samba42>=4.2.11:net/samba42
 SMB_CONFIGURE_WITH=	samba
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|SIGCLD|SIGCHLD|g' ${WRKSRC}/src/util/signal.c

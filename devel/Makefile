@@ -1482,7 +1482,6 @@
     SUBDIR += makedepend
     SUBDIR += mate-common
     SUBDIR += matreshka
-    SUBDIR += maven-ant-tasks
     SUBDIR += maven-wrapper
     SUBDIR += maven3
     SUBDIR += maven31
@@ -1620,6 +1619,7 @@
     SUBDIR += open-usp-tukubai
     SUBDIR += opencl
     SUBDIR += opencvs
+    SUBDIR += opendht
     SUBDIR += opengrok
     SUBDIR += openmp
     SUBDIR += openocd
@@ -4996,6 +4996,7 @@
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-launchy22
+    SUBDIR += rubygem-lazy_priority_queue
     SUBDIR += rubygem-librarian
     SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2

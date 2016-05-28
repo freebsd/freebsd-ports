@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Auth-Extensible
-PORTVERSION=	0.501
+PORTVERSION=	0.502
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,8 +27,7 @@ DPAEPD_DESC=	Extra dependencies for Provider::Database
 DPAEPU_DESC=	Extra dependencies for Provider::Unix
 
 DPAEPD_BUILD_DEPENDS=	p5-Dancer2-Plugin-Database>=0:databases/p5-Dancer2-Plugin-Database
-DPAEPU_BUILD_DEPENDS=	p5-Authen-Simple-PAM>=0:security/p5-Authen-Simple-PAM \
-			p5-Unix-Passwd-File>=0:security/p5-Unix-Passwd-File
+DPAEPU_BUILD_DEPENDS=	p5-Authen-Simple-PAM>=0:security/p5-Authen-Simple-PAM
 
 # bin/generate-crypted-password belongs to D1 version
 post-patch:
