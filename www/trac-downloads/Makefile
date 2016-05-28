@@ -12,7 +12,7 @@ DIST_SUBDIR=	trac
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trac plugin providing a downloads section
 
-RUN_DEPENDS+=	tracd:www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 TRAC_VERSION=	0.12
 PLUGIN_VERSION=	0.3
@@ -20,6 +20,7 @@ SVN_REV=	10047
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .if defined(BOOTSTRAP)
 do-fetch:
@@ -27,8 +28,7 @@ do-fetch:
 	svn export -r ${SVN_REV} http://trac-hacks.org/svn/downloadsplugin/${TRAC_VERSION}/ ${WRKSRC}
 	${MKDIR} ${_DISTDIR}
 	cd ${WRKDIR} && \
-	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
+	    ${TAR} cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

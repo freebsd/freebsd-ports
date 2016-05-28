@@ -1,4 +1,4 @@
---- tracdownloads/tags.py.orig
+--- tracdownloads/tags.py.orig	2010-10-12 12:42:10 UTC
 +++ tracdownloads/tags.py
 @@ -1,11 +1,5 @@
  # -*- coding: utf-8 -*-
