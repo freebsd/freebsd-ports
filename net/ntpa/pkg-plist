@@ -1,0 +1,77 @@
+sbin/ntpa
+sbin/ntpac
+sbin/ntpav
+libexec/ntpa/NPlot.dll
+libexec/ntpa/Ntp.Analyzer.Cli.exe
+libexec/ntpa/Ntp.Analyzer.Data.dll
+libexec/ntpa/Ntp.Analyzer.dll
+libexec/ntpa/Ntp.Analyzer.Import.dll
+libexec/ntpa/Ntp.Analyzer.Localize.dll
+libexec/ntpa/Ntp.Analyzer.Log.dll
+libexec/ntpa/Ntp.Analyzer.Objects.dll
+libexec/ntpa/Ntp.Analyzer.Process.dll
+libexec/ntpa/Ntp.Analyzer.Validate.Cli.exe
+libexec/ntpa/Ntp.Common.dll
+libexec/ntpa/Ntp.Config.dll
+libexec/ntpa/Ntp.Data.dll
+libexec/ntpa/Ntp.Data.Provider.dll
+libexec/ntpa/Ntp.Interop.dll
+libexec/ntpa/Ntp.Monitor.Client.dll
+libexec/ntpa/Ntp.Monitor.Cli.exe
+libexec/ntpa/Ntp.Monitor.Server.dll
+libexec/ntpa/Ntp.Process.dll
+%%MYSQL%%libexec/ntpa/MySql.Data.dll
+%%PGSQL%%libexec/ntpa/Npgsql.dll
+%%PGSQL%%libexec/ntpa/de/Npgsql.resources.dll
+%%PGSQL%%libexec/ntpa/es/Npgsql.resources.dll
+%%PGSQL%%libexec/ntpa/fi/Npgsql.resources.dll
+%%PGSQL%%libexec/ntpa/fr/Npgsql.resources.dll
+%%PGSQL%%libexec/ntpa/ja/Npgsql.resources.dll
+%%PGSQL%%libexec/ntpa/zh-CN/Npgsql.resources.dll
+man/man8/ntpa.8.gz
+@sample(,ntpa,640) %%ETCDIR%%/ntpa.conf.sample
+@owner www
+@group www
+%%WWWDIR%%/index.html
+%%WWWDIR%%/css/bootstrap.css
+%%WWWDIR%%/css/bootstrap.css.map
+%%WWWDIR%%/css/bootstrap.min.css
+%%WWWDIR%%/css/bootstrap.min.css.map
+%%WWWDIR%%/css/bootstrap-theme.css
+%%WWWDIR%%/css/bootstrap-theme.css.map
+%%WWWDIR%%/css/bootstrap-theme.min.css
+%%WWWDIR%%/css/bootstrap-theme.min.css.map
+%%WWWDIR%%/css/graph.css
+%%WWWDIR%%/css/host.css
+%%WWWDIR%%/css/peer.css
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.eot
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.svg
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.ttf
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff2
+%%WWWDIR%%/js/bootstrap.js
+%%WWWDIR%%/js/bootstrap.min.js
+%%WWWDIR%%/js/jquery.js
+%%WWWDIR%%/js/jquery.min.js
+%%WWWDIR%%/js/jquery.min.map
+%%WWWDIR%%/js/npm.js
+@owner
+@group
+%%EXAMPLESDIR%%/ntpa.conf
+%%EXAMPLESDIR%%/ntpa.graph.conf
+%%EXAMPLESDIR%%/ntpa.inc.conf
+%%EXAMPLESDIR%%/ntpa.inc.graphs1
+%%EXAMPLESDIR%%/ntpa.inc.graphs2
+%%EXAMPLESDIR%%/ntpa.inc.menu
+%%EXAMPLESDIR%%/ntpa.inc.pages1
+%%EXAMPLESDIR%%/ntpa.inc.pages2
+%%EXAMPLESDIR%%/ntpa.stat2.conf
+%%EXAMPLESDIR%%/ntpa.stat.conf
+%%EXAMPLESDIR%%/ntpa.web.conf
+%%EXAMPLESDIR%%/ntpa.web.small.conf
+@dir(www,ntpa,775) %%WWWDIR%%
+@dir(www,www,) %%WWWDIR%%/css
+@dir(www,www,) %%WWWDIR%%/fonts
+@dir(www,www,) %%WWWDIR%%/js
+@dir(ntpa,ntpa,750) /var/log/ntpa
+@dir(ntpa,ntpa,755) /var/run/ntpa
