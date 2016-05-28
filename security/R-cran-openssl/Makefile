@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -20,8 +20,5 @@ WITH_OPENSSL_PORT=	yes
 R_POSTCMD_INSTALL_OPTIONS+=	--configure-vars="INCLUDE_DIR=${OPENSSLINC} LIB_DIR=${OPENSSLLIB}"
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/bin\//s|bash|sh|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
