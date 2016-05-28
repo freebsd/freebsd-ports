@@ -368,6 +368,7 @@
     SUBDIR += dasm
     SUBDIR += datadraw
     SUBDIR += dbus
+    SUBDIR += dbus-c++
     SUBDIR += dbus-glib
     SUBDIR += dbus-qt4
     SUBDIR += dbus-qt5
