@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/ntop/nDPI
 DISTNAME=	nDPI-${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	NTOP-maintained superset of the popular OpenDPI library
 
 LICENSE=	GPLv3
