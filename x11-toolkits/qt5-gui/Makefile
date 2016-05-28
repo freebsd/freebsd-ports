@@ -2,6 +2,7 @@
 
 PORTNAME=	gui
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -24,7 +25,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USES=		jpeg
 USE_GL=		gl egl
 USE_GNOME=	glib20
-USE_QT5=	core dbus qmake_build buildtools_build
+USE_QT5=	core dbus network qmake_build buildtools_build
 QT_DIST=	base
 USE_XORG=	ice sm x11 xi xrender
 HAS_CONFIGURE=	yes
@@ -41,8 +42,10 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 # they depend on QtGui itself, so they can't be added as dependencies.
 # QtPlatformSupport doesn't need to be installed (it's a static
 # library), but might be needed by people porting Qt on new platforms.
-MORE_WRKSRCS=	src/platformsupport \
-		src/plugins/platforms
+MORE_WRKSRCS=	src/platformheaders \
+		src/platformsupport \
+		src/plugins/platforms \
+		src/plugins/generic
 
 # Image formats are split through different tarballs, these are the
 # main ones; input contexts require no additional dependency.
