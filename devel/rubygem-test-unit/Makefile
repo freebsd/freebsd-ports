@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	test-unit
-PORTVERSION=	3.1.8
+PORTVERSION=	3.1.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
