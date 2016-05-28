@@ -5,7 +5,7 @@ PORTVERSION=	20131225
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Implementation of the Code Sourcery C++ ABI
 
 LICENSE=	BSD2CLAUSE
