@@ -4996,6 +4996,7 @@
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-launchy22
+    SUBDIR += rubygem-lazy_priority_queue
     SUBDIR += rubygem-librarian
     SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2
