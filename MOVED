@@ -8200,7 +8200,6 @@ mail/pronto||2016-02-18|No release since 2002 http://www.muhri.net/pronto/page.p
 russian/muttprint||2016-02-25|The Russian translation is included in print/muttprint
 security/openssh-portable-devel|security/openssh-portable|2016-02-29|Outdated and insecure, use the main port
 audio/audacious-dumb||2016-02-29|Has expired: Broken for more than 6 months
-net/ntopng||2016-02-29|Has expired: Broken for more than 6 months
 audio/rezound||2016-02-29|Has expired: Broken for more than 6 months
 net/rubygem-amqp067|net/rubygem-bunny|2016-02-29|Has expired: Upstream prefers net/rubygem-bunny
 devel/py-unittestplus||2016-02-29|Has expired: Tarballs and upstream website disappeared
