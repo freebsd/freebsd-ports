@@ -76,11 +76,13 @@ include/simgear/ephemeris/star.hxx
 include/simgear/ephemeris/stardata.hxx
 include/simgear/ephemeris/uranus.hxx
 include/simgear/ephemeris/venus.hxx
+include/simgear/io/AbstractRepository.hxx
 include/simgear/io/DAVMultiStatus.hxx
+include/simgear/io/DNSClient.hxx
 include/simgear/io/HTTPClient.hxx
-include/simgear/io/HTTPContentDecode.hxx
 include/simgear/io/HTTPFileRequest.hxx
 include/simgear/io/HTTPMemoryRequest.hxx
+include/simgear/io/HTTPRepository.hxx
 include/simgear/io/HTTPRequest.hxx
 include/simgear/io/SVNDirectory.hxx
 include/simgear/io/SVNReportParser.hxx
@@ -137,6 +139,7 @@ include/simgear/misc/gzcontainerfile.hxx
 include/simgear/misc/interpolator.hxx
 include/simgear/misc/make_new.hxx
 include/simgear/misc/sg_dir.hxx
+include/simgear/misc/sg_hash.hxx
 include/simgear/misc/sg_path.hxx
 include/simgear/misc/sgstream.hxx
 include/simgear/misc/stdint.hxx
