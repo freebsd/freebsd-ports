@@ -1,0 +1,6 @@
+dbus-c++ attempts to provide a C++ API for D-BUS. The library has a
+glib/gtk and an Ecore mainloop integration. It also offers an optional
+own main loop.
+
+WWW: https://github.com/andreas-volz/dbus-cplusplus/
+WWW: https://sourceforge.net/projects/dbus-cplusplus/
