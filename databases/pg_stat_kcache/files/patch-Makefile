@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-01-21 22:44:44.214163699 +0100
++++ Makefile	2016-01-21 22:44:51.788162213 +0100
+@@ -3,7 +3,7 @@
+ TESTS        = $(wildcard test/sql/*.sql)
+ REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
+ REGRESS_OPTS = --inputdir=test
+-DOCS         = $(wildcard README.rst)
++DOCS         = $(wildcard *-README.rst)
+ 
+ PG_CONFIG = pg_config
+ 
