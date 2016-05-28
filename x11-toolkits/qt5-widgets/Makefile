@@ -27,7 +27,6 @@ QT_CONFIG=	accessibility accessibility-atspi-bridge xlib
 OPTIONS_DEFINE=	GTK2
 OPTIONS_SUB=	yes
 
-
 GTK2_DESC=	GTK+-based Qt theme
 GTK2_USE=	GNOME=gtk20
 GTK2_CONFIGURE_ON=	-gtkstyle
