@@ -1619,6 +1619,7 @@
     SUBDIR += open-usp-tukubai
     SUBDIR += opencl
     SUBDIR += opencvs
+    SUBDIR += opendht
     SUBDIR += opengrok
     SUBDIR += openmp
     SUBDIR += openocd
