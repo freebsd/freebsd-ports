@@ -1,9 +1,7 @@
-# Created by: Takefu
 # $FreeBSD$
 
 PORTNAME=	jacode.pl
-PORTVERSION=	2.13.4.11
-PORTREVISION=	1
+PORTVERSION=	2.13.4.12
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:INA/${PORTNAME:S|.pl||}
@@ -19,6 +17,7 @@ USES=		perl5
 USE_PERL5=	run
 PLIST_FILES=	${SITE_PERL_REL}/${PORTNAME}
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 pre-install:
 	@cd ${WRKSRC}; ${PERL} ${WRKSRC}/t/001_test.t
