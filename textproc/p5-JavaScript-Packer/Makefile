@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	JavaScript-Packer
-PORTVERSION=	2.00
+PORTVERSION=	2.02
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	p5-Regexp-RegGrp>=1.001001:devel/p5-Regexp-RegGrp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.22:devel/p5-Test-Pod
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
