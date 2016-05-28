@@ -449,7 +449,7 @@ proxydeps_suggest_uses() {
 		warn "you need USE_GL+=glut"
 	# Xorg-libraries: this should be by XORG_MODULES @ bsd.xorg.mk
 	elif echo ${pkg} | grep -E '/lib(X11|Xau|Xdmcp|Xext|SM|ICE|Xfixes|Xft|Xdamage|Xcomposite|Xcursor|Xinerama|Xmu|Xmuu|Xpm|Xt|Xtst|Xi|Xrandr|Xrender|Xres|XScrnSaver|Xv|Xxf86vm|Xxf86dga|Xxf86misc|xcb)$' > /dev/null; then
-		warn "you need USE_XORG+=$(echo ${pkg} | sed -E 's|.*/lib//' | tr '[:upper:]' '[:lower:]')"
+		warn "you need USE_XORG+=$(echo ${pkg} | sed -E 's|.*/lib||' | tr '[:upper:]' '[:lower:]')"
 	elif [ ${pkg} = 'x11/pixman' ]; then
 		warn "you need USE_XORG+=pixman"
 	# Qt4
