@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -eu
+mkdir -p %%DATADIR%%/httpdocs/geoip
+
+# arguments:
+# $1 URL
+# $2 output file name
+_fetch() {
+    url="$1"
+    out="$2"
+    TEMPFILE="$(mktemp "%%DATADIR%%"/httpdocs/geoip/GeoIP.dat-XXXXXX)"
+    trap 'rc=$? ; set +e ; rm -f "'"$TEMPFILE"'" ; exit $rc' 0
+    if fetch -o - "$url" | gunzip >> "$TEMPFILE" ; then
+	chmod 444 "$TEMPFILE"
+	if ! mv -f "$TEMPFILE" "%%DATADIR%%"/"$2" ; then
+	    echo "Unable to replace %%DATADIR%%/$2"
+	    return 2
+	fi
+    else
+	echo "$2 download failed"
+	return 1
+    fi
+    rm -f "$TEMPFILE"
+    trap - 0
+    return 0
+}
+
+echo Fetching GeoLiteCity.dat...
+_fetch "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" GeoLiteCity.dat
+
+echo Fetching GeoLiteCityv6.dat...
+_fetch "http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz" GeoLiteCityv6.dat
+
+echo Fetching GeoIPASNum.dat...
+_fetch "http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz" GeoIPASNum.dat.gz
+
+echo Fetching GeoIPASNumv6.dat...
+_fetch "http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNumv6.dat.gz" GeoIPASNumv6.dat.gz

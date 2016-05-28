@@ -164,6 +164,7 @@ devmon:*:283:
 vnstat:*:284:
 exaddos:*:285:exaddos
 rancid:*:286:
+ntopng:*:288:
 backuppc:*:300:
 _sphinx:*:312:
 dkfilter:*:325:
