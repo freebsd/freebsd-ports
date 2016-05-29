@@ -17,16 +17,16 @@ post-install: <<EOD
   /*) file="%@" ;;
   *) file="%D/%@" ;;
   esac
-        cp /etc/shells /etc/shells.bak
-        (grep -v "^${file}$" /etc/shells.bak; echo ${file}) > /etc/shells
-        rm -f /etc/shells.bak
+        cp ${PKG_ROOTDIR}/etc/shells ${PKG_ROOTDIR}/etc/shells.bak
+        (grep -v "^${file}$" ${PKG_ROOTDIR}/etc/shells.bak; echo ${file}) > ${PKG_ROOTDIR}/etc/shells
+        rm -f ${PKG_ROOTDIR}/etc/shells.bak
 EOD
 pre-deinstall: <<EOD
   case "%@" in
   /*) file="%@" ;;
   *) file="%D/%@" ;;
   esac
-        cp /etc/shells /etc/shells.bak
-        grep -v "^${file}$" /etc/shells.bak > /etc/shells
-        rm -f /etc/shells.bak
+        cp ${PKG_ROOTDIR}/etc/shells ${PKG_ROOTDIR}/etc/shells.bak
+        grep -v "^${file}$" ${PKG_ROOTDIR}/etc/shells.bak > ${PKG_ROOTDIR}/etc/shells
+        rm -f ${PKG_ROOTDIR}/etc/shells.bak
 EOD
