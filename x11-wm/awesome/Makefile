@@ -10,7 +10,8 @@ MASTER_SITES=	http://awesome.naquadah.org/download/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Highly configurable, next generation framework window manager
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		convert:graphics/ImageMagick \
