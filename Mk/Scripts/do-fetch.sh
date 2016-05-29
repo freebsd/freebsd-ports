@@ -65,12 +65,12 @@ for _file in "${@}"; do
 		case ${dp_TARGET} in
 		do-fetch|makesum)
 			${dp_ECHO_MSG} "=> $file doesn't seem to exist in ${dp_DISTDIR}."
+			if [ ! -w "${dp_DISTDIR}" ]; then
+				${dp_ECHO_MSG} "=> ${dp_DISTDIR} is not writable by you; cannot fetch."
+				exit 1
+			fi
 			;;
 		esac
-		if [ ! -w "${dp_DISTDIR}" ]; then
-			${dp_ECHO_MSG} "=> ${dp_DISTDIR} is not writable by you; cannot fetch."
-			exit 1
-		fi
 		if [ -n "$select" ] ; then
 			__MASTER_SITES_TMP=
 			for group in $select; do
