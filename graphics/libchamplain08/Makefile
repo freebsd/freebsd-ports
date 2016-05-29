@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	08
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C library provides a Gtk+ widget to display rasterized maps/markers
 
+DEPRECATED=	Old version, not needed any more
+EXPIRATION_DATE=2016-06-29
+
 LIB_DEPENDS=	libclutter-gtk-0.10.so:graphics/clutter-gtk \
 		libsoup-gnome-2.4.so:devel/libsoup-gnome
 
