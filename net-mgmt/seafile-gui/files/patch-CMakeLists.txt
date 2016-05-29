@@ -1,24 +1,15 @@
---- CMakeLists.txt.orig	2015-02-05 08:43:51 UTC
+--- CMakeLists.txt.orig	2016-04-29 04:32:14 UTC
 +++ CMakeLists.txt
-@@ -98,7 +98,7 @@ IF(USE_QT5)
-       SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "WebKit" "WebKitWidgets")
-       ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
+@@ -81,7 +81,7 @@ IF (WIN32)
      ENDIF()
--    IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+    IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
-       SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
-     ENDIF()
-     FIND_PACKAGE(Qt5 REQUIRED ${USE_QT_LIBRARIES})
-@@ -113,7 +113,7 @@ ELSE()
-       SET(QtWebKit "QtWebKit")
-       ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
-     ENDIF()
--    IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+    IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
-         SET(QtDBus "QtDBus")
-     ENDIF()
-     FIND_PACKAGE(Qt4 REQUIRED QtCore QtGui QtNetwork ${QtDBus} ${QtWebKit})
-@@ -263,7 +263,7 @@ PKG_CHECK_MODULES(LIBCCNET REQUIRED libc
+     SET(platform_specific_moc_headers src/ext-handler.h)
+     SET(platform_specific_sources src/ext-handler.cpp)
+-ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
++ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
+     INCLUDE_DIRECTORIES(${QT_QTDBUS_INCLUDE_DIR})
+     LINK_DIRECTORIES(${QT_QTDBUS_LIBRARIES})
+     SET(EXTRA_LIBS ${EXTRA_LIBS} ${QT_QTDBUS_LIBRARIES})
+@@ -318,7 +318,7 @@ PKG_CHECK_MODULES(LIBCCNET REQUIRED libc
  
  PKG_CHECK_MODULES(LIBSEARPC REQUIRED libsearpc>=1.0)
  
@@ -26,4 +17,22 @@
 +#PKG_CHECK_MODULES(OPENSSL REQUIRED openssl>=0.98)
  
  PKG_CHECK_MODULES(LIBSEAFILE REQUIRED libseafile>=1.7)
- ####################
+ 
+@@ -515,7 +515,7 @@ IF (WIN32)
+         src/utils/registry.cpp
+         src/utils/utils-win.cpp
+         )
+-ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
++ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
+     LIST(APPEND utils_sources
+         src/utils/process-linux.cpp
+         )
+@@ -714,7 +714,7 @@ QT5_USE_MODULES(seafile-applet ${WEBKIT_
+ ENDIF()
+ 
+ ## QtBus
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
+   TARGET_LINK_LIBRARIES(seafile-applet
+     ${QT_QTDBUS_LIBRARIES}
+   )
