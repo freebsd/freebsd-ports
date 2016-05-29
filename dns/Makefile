@@ -37,6 +37,7 @@
     SUBDIR += dnscrypt-wrapper
     SUBDIR += dnsdbck
     SUBDIR += dnsdist
+    SUBDIR += dnsenum
     SUBDIR += dnsflood
     SUBDIR += dnshistory
     SUBDIR += dnsjava
