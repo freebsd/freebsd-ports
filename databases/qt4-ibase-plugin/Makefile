@@ -5,6 +5,6 @@ PORTREVISION=	1
 
 COMMENT=	Qt InterBase/Firebird database plugin
 DB=		ibase
-USES+=		firebird
+USES=		firebird
 
 .include "${.CURDIR:H:H}/devel/qt4/Makefile.sqldrivers"
