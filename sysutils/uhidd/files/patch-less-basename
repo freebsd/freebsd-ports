@@ -1,0 +1,286 @@
+commit ea1925e
+Author: Jan Beich <jbeich@FreeBSD.org>
+Date:   Sun May 29 16:13:33 2016 +0000
+
+    Drop unused /dev/ prefix to unbreak FreeBSD 11.0
+    
+    uhidd.c:291:16: error: passing 'const char *' to parameter of type 'char *' discards qualifiers
+          [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+                        basename(hi->dev));
+                                 ^~~~~~~
+    /usr/include/libgen.h:38:22: note: passing argument to parameter here
+    char    *basename(char *);
+                            ^
+
+--- uhidd/uhidd.c.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd.c
+@@ -174,7 +174,7 @@ main(int argc, char **argv)
+ 
+ 	STAILQ_INIT(&hilist);
+ 
+-	if (find_device(*argv) < 0) {
++	if (find_device(basename(*argv)) < 0) {
+ 		eval = 1;
+ 		goto uhidd_end;
+ 	}
+@@ -231,7 +231,7 @@ create_runtime_dir(void)
+ 	hi = STAILQ_FIRST(&hilist);
+ 	if (hi != NULL && hi->dev != NULL) {
+ 		snprintf(dpath, sizeof(dpath), "/var/run/uhidd.%s",
+-		    basename(hi->dev));
++		    hi->dev);
+ 		mkdir(dpath, 0755);
+ 	}
+ }
+@@ -247,7 +247,7 @@ remove_runtime_dir(void)
+ 	hi = STAILQ_FIRST(&hilist);
+ 	if (hi != NULL && hi->dev != NULL) {
+ 		snprintf(dpath, sizeof(dpath), "/var/run/uhidd.%s",
+-		    basename(hi->dev));
++		    hi->dev);
+ 		if ((dir = opendir(dpath)) != NULL) {
+ 			while ((d = readdir(dir)) != NULL) {
+ 				snprintf(fpath, sizeof(fpath), "%s/%s", dpath,
+@@ -286,7 +286,7 @@ find_device(const char *dev)
+ 	unsigned int bus, addr;
+ 	int ret;
+ 
+-	if (sscanf(dev, "/dev/ugen%u.%u", &bus, &addr) < 2) {
++	if (sscanf(dev, "ugen%u.%u", &bus, &addr) < 2) {
+ 		syslog(LOG_ERR, "%s not found", dev);
+ 		return (-1);
+ 	}
+@@ -405,7 +405,7 @@ open_iface(const char *dev, struct libus
+ 	e = libusb20_dev_request_sync(pdev, &req, rdesc, &actlen, 0, 0);
+ 	if (e) {
+ 		syslog(LOG_ERR, "%s[%d]=> libusb20_dev_request_sync"
+-		    " failed", basename(dev), ndx);
++		    " failed", dev, ndx);
+ 		return;
+ 	}
+ 
+@@ -497,7 +497,7 @@ alloc_hid_interface_be(struct hid_interf
+ 
+ 	assert(hi != NULL);
+ 
+-	if (sscanf(hi->dev, "/dev/ugen%u.%u", &bus, &addr) < 2) {
++	if (sscanf(hi->dev, "ugen%u.%u", &bus, &addr) < 2) {
+ 		syslog(LOG_ERR, "%s not found", hi->dev);
+ 		return (-1);
+ 	}
+@@ -547,7 +547,7 @@ start_hid_interface(void *arg)
+ 	xfer = libusb20_tr_get_pointer(hi->pdev, x);
+ 	if (xfer == NULL) {
+ 		syslog(LOG_ERR, "%s[%d] libusb20_tr_get_pointer failed\n",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		goto parent_end;
+ 	}
+ 
+@@ -556,7 +556,7 @@ start_hid_interface(void *arg)
+ 		PRINT1("xfer already opened\n");
+ 	} else if (e) {
+ 		syslog(LOG_ERR, "%s[%d] libusb20_tr_open failed\n",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		goto parent_end;
+ 	}
+ 
+@@ -628,14 +628,14 @@ hid_interrupt_out(void *context, int rep
+ 	xfer = libusb20_tr_get_pointer(hi->pdev, x);
+ 	if (xfer == NULL) {
+ 		syslog(LOG_ERR, "%s[%d] libusb20_tr_get_pointer failed\n",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		return (-1);
+ 	}
+ 
+ 	e = libusb20_tr_open(xfer, 4096, 1, XXX); /* FIXME */
+ 	if (e && e != LIBUSB20_ERROR_BUSY) {
+ 		syslog(LOG_ERR, "%s[%d] libusb20_tr_open failed\n",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		return (-1);
+ 	}
+ 	
+@@ -720,12 +720,12 @@ hid_set_report(void *context, int report
+ 		e = libusb20_dev_request_sync(hi->pdev, &req, buf, &actlen, 0, 0);
+ 		if (e && verbose)
+ 			syslog(LOG_ERR, "%s[%d] libusb20_dev_request_sync failed",
+-			    basename(hi->dev), hi->ndx);
++			    hi->dev, hi->ndx);
+ 		try++;
+ 	} while (e && try < _SET_REPORT_RETRY);
+ 	if (e) {
+ 		syslog(LOG_ERR, "%s[%d] libusb20_dev_request_sync failed",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		return (-1);
+ 	}
+ 	if (verbose) {
+--- uhidd/uhidd.h.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd.h
+@@ -227,7 +227,7 @@ struct hid_interface {
+ 	do {								\
+ 		char pb[64], pb2[1024];					\
+ 									\
+-		snprintf(pb, sizeof(pb), "%s[%d]", basename(d), n);	\
++		snprintf(pb, sizeof(pb), "%s[%d]", d, n);		\
+ 		snprintf(pb2, sizeof(pb2), __VA_ARGS__);		\
+ 		printf("%s-> %s", pb, pb2);				\
+ 	} while (0);
+@@ -236,7 +236,7 @@ struct hid_interface {
+ 	do {								\
+ 		char pb[64], pb2[1024];					\
+ 									\
+-		snprintf(pb, sizeof(pb), "%s[%d]", basename(hi->dev),	\
++		snprintf(pb, sizeof(pb), "%s[%d]", hi->dev,		\
+ 		    hi->ndx);						\
+ 		snprintf(pb2, sizeof(pb2), __VA_ARGS__);		\
+ 		printf("%s-> %s", pb, pb2);				\
+--- uhidd/uhidd_cc.c.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd_cc.c
+@@ -175,11 +175,11 @@ cc_write_keymap_file(struct hid_interfac
+ 	int i;
+ 
+ 	snprintf(fpath, sizeof(fpath), "/var/run/uhidd.%s/cc_keymap",
+-	    basename(hi->dev));
++	    hi->dev);
+ 	fp = fopen(fpath, "w+");
+ 	if (fp == NULL) {
+ 		syslog(LOG_ERR, "%s[%d] fopen %s failed: %m",
+-		    basename(hi->dev), hi->ndx, fpath);
++		    hi->dev, hi->ndx, fpath);
+ 		return;
+ 	}
+ 	fprintf(fp, "0x%04x:0x%04x={\n", hi->vendor_id, hi->product_id);
+--- uhidd/uhidd_kbd.c.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd_kbd.c
+@@ -582,7 +582,7 @@ kbd_attach(struct hid_appcol *ha)
+ 	/* Open /dev/vkbdctl. */
+ 	if ((kd->vkbd_fd = open("/dev/vkbdctl", O_RDWR)) < 0) {
+ 		syslog(LOG_ERR, "%s[%d] could not open /dev/vkbdctl: %m",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		if (verbose && errno == ENOENT)
+ 			PRINT1("vkbd.ko kernel module not loaded?\n")
+ 		return (-1);
+@@ -591,7 +591,7 @@ kbd_attach(struct hid_appcol *ha)
+ 	if (verbose) {
+ 		if (fstat(kd->vkbd_fd, &sb) < 0) {
+ 			syslog(LOG_ERR, "%s[%d] fstat: /dev/vkbdctl: %m",
+-			    basename(hi->dev), hi->ndx);
++			    hi->dev, hi->ndx);
+ 			return (-1);
+ 		}
+ 		PRINT1("kbd device name: %s\n", devname(sb.st_rdev, S_IFCHR));
+--- uhidd/uhidd_mouse.c.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd_mouse.c
+@@ -91,7 +91,7 @@ mouse_attach(struct hid_appcol *ha)
+ 	md->cons_fd = open("/dev/consolectl", O_RDWR);
+ 	if (md->cons_fd < 0) {
+ 		syslog(LOG_ERR, "%s[%d] could not open /dev/consolectl: %m",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		return (-1);
+ 	}
+ 
+@@ -212,5 +212,5 @@ mouse_recv(struct hid_appcol *ha, struct
+ 
+ 	if (ioctl(md->cons_fd, CONS_MOUSECTL, &mi) < 0)
+ 		syslog(LOG_ERR, "%s[%d] could not submit mouse data:"
+-		    " ioctl failed: %m", basename(hi->dev), hi->ndx);
++		    " ioctl failed: %m", hi->dev, hi->ndx);
+ }
+--- uhidd/uhidd_vhid.c.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd_vhid.c
+@@ -97,7 +97,7 @@ vhid_attach(struct hid_appcol *ha)
+ 	 */
+ 	if ((vd->vd_fd = open("/dev/uvhidctl", O_RDWR)) < 0) {
+ 		syslog(LOG_ERR, "%s[%d] could not open /dev/uvhidctl: %m",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		if (verbose && errno == ENOENT)
+ 			PRINT1("uvhid.ko kernel moduel not loaded?\n")
+ 		return (-1);
+@@ -105,13 +105,13 @@ vhid_attach(struct hid_appcol *ha)
+ 
+ 	if (fstat(vd->vd_fd, &sb) < 0) {
+ 		syslog(LOG_ERR, "%s[%d] fstat: /dev/uvhidctl: %m",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		close(vd->vd_fd);
+ 		return (-1);
+ 	}
+ 
+ 	if ((vd->vd_name = strdup(devname(sb.st_rdev, S_IFCHR))) == NULL) {
+-		syslog(LOG_ERR, "%s[%d] strdup failed: %m", basename(hi->dev),
++		syslog(LOG_ERR, "%s[%d] strdup failed: %m", hi->dev,
+ 		    hi->ndx);
+ 		close(vd->vd_fd);
+ 		return (-1);
+@@ -129,7 +129,7 @@ vhid_attach(struct hid_appcol *ha)
+ 
+ 	if (ioctl(vd->vd_fd, USB_SET_REPORT_DESC, &ugd) < 0) {
+ 		syslog(LOG_ERR, "%s[%d] ioctl(USB_SET_REPORT_DESC): %m",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		return (-1);
+ 	}
+ 
+@@ -148,7 +148,7 @@ vhid_attach(struct hid_appcol *ha)
+ 
+ 	if (ioctl(vd->vd_fd, USB_SET_REPORT_ID, &vd->vd_rid) < 0) {
+ 		syslog(LOG_ERR, "%s[%d] ioctl(USB_SET_REPORT_ID): %m",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		return (-1);
+ 	}
+ 
+@@ -156,7 +156,7 @@ vhid_attach(struct hid_appcol *ha)
+ 	e = pthread_create(&vd->vd_task, NULL, vhid_task, (void *) ha);
+ 	if (e) {
+ 		syslog(LOG_ERR, "%s[%d] pthread_create failed: %m",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		close(vd->vd_fd);
+ 		return (-1);
+ 	}
+@@ -189,7 +189,7 @@ vhid_recv_raw(struct hid_appcol *ha, uin
+ 	}
+ 
+ 	if (write(vd->vd_fd, buf, len) < 0)
+-		syslog(LOG_ERR, "%s[%d] write failed: %m", basename(hi->dev),
++		syslog(LOG_ERR, "%s[%d] write failed: %m", hi->dev,
+ 		    hi->ndx);
+ }
+ 
+@@ -217,7 +217,7 @@ vhid_task(void *arg)
+ 			continue;
+ 		}
+ 		if (verbose) {
+-			PRINT1("%s[%d] vhid_task recevied:", basename(hi->dev),
++			PRINT1("%s[%d] vhid_task recevied:", hi->dev,
+ 			    hi->ndx);
+ 			for (i = 0; i < len; i++)
+ 				printf("%d ", buf[i]);
+--- uhidd/uhidd_vhid_cuse.c.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd_vhid_cuse.c
+@@ -192,7 +192,7 @@ vhid_attach(struct hid_appcol *ha)
+ 		vd->vd_rsz = ha->ha_rsz;
+ 	} else {
+ 		syslog(LOG_ERR, "%s[%d] report descriptor too big!",
+-		    basename(hi->dev), hi->ndx);
++		    hi->dev, hi->ndx);
+ 		return (-1);
+ 	}
+ 
+@@ -468,7 +468,7 @@ vhid_write(struct cuse_dev *cdev, int ff
+ 		goto write_done;
+ 
+ 	if (verbose) {
+-		PRINT1("%s[%d] vhid_task recevied:", basename(hi->dev),
++		PRINT1("%s[%d] vhid_task recevied:", hi->dev,
+ 		    hi->ndx);
+ 		for (i = 0; i < len; i++)
+ 			printf("%d ", buf[i]);
