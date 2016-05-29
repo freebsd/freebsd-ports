@@ -2,32 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	geeqie
-PORTVERSION=	1.1
-PORTREVISION=	4
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.geeqie.org/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image viewer forked from GQview
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gettext gmake pkgconfig desktop-file-utils
-USE_GNOME=	gtk20 intltool
+USES=		autoreconf gettext gmake jpeg localbase pkgconfig \
+		desktop-file-utils tar:xz lua:51
+USE_GNOME=	gtk30 intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
-		--htmldir="${DOCSDIR}/html" \
-		--with-htmldir="${DOCSDIR}/html" \
-		--with-readmedir="${DOCSDIR}"
-
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	${CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ARGS+=	top_builddir="${WRKSRC}"
+CONFIGURE_ARGS=	--with-readmedir="${DOCSDIR}"
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	EXIV2 LCMS LIRC GPS DOCS
+OPTIONS_DEFINE=	EXIV2 LCMS LIRC GPS TIFF DOCS
 OPTIONS_DEFAULT=EXIV2 LCMS
 EXIV2_DESC=	Metadata editing
 LCMS_DESC=	Color adjusting
@@ -37,23 +32,25 @@ GPS_DESC=	GPS map support via libchamplain (experimental!)
 EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_CONFIGURE_ENABLE=	exiv2
 
-LCMS_LIB_DEPENDS=	liblcms.so:graphics/lcms
+LCMS_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 LCMS_CONFIGURE_ENABLE=	lcms
 
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
 
-GPS_LIB_DEPENDS=	libchamplain-0.8.so:graphics/libchamplain08
-GPS_CONFIGURE_ENABLE=	gps
+GPS_LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
+			libclutter-gtk-1.0.so:graphics/clutter-gtk3
+GPS_CONFIGURE_ENABLE=	gps clutter
+
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_CONFIGURE_ENABLE=	tiff
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|champlain-0\.4|champlain-0.8|g; \
-		s|champlain-gtk-0\.4|champlain-gtk-0.8|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|MAP_ANONYMOUS|MAP_ANON|' ${WRKSRC}/src/main.c
-	@${REINPLACE_CMD} -e 's| -r %F||' ${WRKSRC}/geeqie.desktop
+	@${REINPLACE_CMD} -e 's| -r %F||' ${WRKSRC}/geeqie.desktop.in
+	@${REINPLACE_CMD} -e '/readme_DATA/ s|COPYING||' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|lua5.1|lua-5.1|' ${WRKSRC}/configure.in
 # I cannot get gnome-doc-tool working properly: Outputs gibberish
 	@${REINPLACE_CMD} -Ee '/^(SUBDIRS|DIST_SUBDIRS)/ s|doc||' \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
