@@ -1,6 +1,6 @@
---- trackeywords/templates/keywords.cs.orig	2010-09-12 23:33:05.000000000 +0400
-+++ trackeywords/templates/keywords.cs	2010-09-12 23:33:25.000000000 +0400
-@@ -9,7 +9,7 @@
+--- trackeywords/templates/keywords.cs.orig	2007-09-11 15:09:40 UTC
++++ trackeywords/templates/keywords.cs
+@@ -9,7 +9,7 @@ function initTags() {
      var el = document.getElementById('keywords');
      var currentTags = el.value.split(/\s+/);
      for(i in currentTags) {
@@ -9,9 +9,9 @@
          if(link)
              link.className = "sel";
      }
---- trackeywords/templates/keywords.html.orig	2010-09-12 23:33:05.000000000 +0400
-+++ trackeywords/templates/keywords.html	2010-09-12 23:33:46.000000000 +0400
-@@ -14,7 +14,7 @@
+--- trackeywords/templates/keywords.html.orig	2009-09-09 13:18:34 UTC
++++ trackeywords/templates/keywords.html
+@@ -14,7 +14,7 @@ function initTags() {
      var currentTags = el.value.split(/\s+/);
  
      for(i in currentTags) {

@@ -12,8 +12,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphviz plugin for Trac's wiki
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	urwfonts>0:x11-fonts/urwfonts \
+RUN_DEPENDS=	urwfonts>0:x11-fonts/urwfonts \
 		dot:graphics/graphviz \
 		tracd:www/trac
 
@@ -24,9 +25,9 @@ NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    -e 's|%%PREFIX%%|${PREFIX}|' \
 	    -e 's|%%OSMAJOR%%|${OSREL:C/\..*$//}|' \
-	${WRKSRC}/graphviz/graphviz.py
+		${WRKSRC}/graphviz/graphviz.py
 
 .include <bsd.port.mk>

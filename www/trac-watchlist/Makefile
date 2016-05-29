@@ -13,15 +13,16 @@ DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Watchlist feature for wikis and tickets of Trac
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+
+RUN_DEPENDS=	tracd:www/trac
 
 SVN_REV=	11526
-
-RUN_DEPENDS+=	tracd:www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 
@@ -29,5 +30,4 @@ post-extract:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 644
 	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

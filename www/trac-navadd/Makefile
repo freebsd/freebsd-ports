@@ -11,11 +11,11 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for adding navigation items into Trac navigation bars
 
-RUN_DEPENDS+=	tracd:www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

@@ -12,11 +12,14 @@ DISTNAME=	trackeywordsplugin-r${REL}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Plugin for using pre-configured keywords
 
-RUN_DEPENDS+=	trac>=0.11:www/trac
+LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	trac>=0.11:www/trac
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist
 WRKSRC=		${WRKDIR}/trackeywordsplugin/0.11
+NO_ARCH=	yes
 REL=		7273
 
 post-extract:
@@ -25,5 +28,4 @@ post-extract:
 # Seems like web_ui.py was misplaced too.
 	@${MV} ${WRKDIR}/trackeywordsplugin/0.10/trackeywords/web_ui.py ${WRKSRC}/trackeywords/
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
