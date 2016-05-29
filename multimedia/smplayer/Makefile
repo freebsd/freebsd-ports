@@ -17,7 +17,7 @@ RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		smplayer-themes>=0:multimedia/smplayer-themes
 
 USE_QT4=	gui dbus network script xml moc_build rcc_build uic_build \
-		uic3_build porting_build linguist_build
+		uic3_build porting_build linguisttools_build
 
 ALL_TARGET=	src/smplayer
 CONFIGURE_WRKSRC=	${WRKSRC}/src
