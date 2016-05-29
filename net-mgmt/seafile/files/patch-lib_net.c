@@ -1,6 +1,6 @@
---- lib/net.c.orig	2015-01-28 00:52:56.000000000 -0500
-+++ lib/net.c	2015-01-28 00:55:31.000000000 -0500
-@@ -157,7 +157,11 @@
+--- lib/net.c.orig	2015-09-21 03:42:11 UTC
++++ lib/net.c
+@@ -157,7 +157,11 @@ ccnet_net_bind_tcp (int port, int nonblo
  
      snprintf (buf, sizeof(buf), "%d", port);
  

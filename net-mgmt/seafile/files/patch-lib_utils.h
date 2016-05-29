@@ -1,5 +1,5 @@
---- lib/utils.h.orig	2015-01-28 00:57:13.000000000 -0500
-+++ lib/utils.h	2015-01-28 01:01:59.000000000 -0500
+--- lib/utils.h.orig	2015-09-21 03:42:11 UTC
++++ lib/utils.h
 @@ -3,6 +3,9 @@
  #ifndef CCNET_UTILS_H
  #define CCNET_UTILS_H

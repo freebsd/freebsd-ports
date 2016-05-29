@@ -1,5 +1,5 @@
---- lib/utils.c.orig	2015-01-28 01:03:42.000000000 -0500
-+++ lib/utils.c	2015-01-28 01:26:32.000000000 -0500
+--- lib/utils.c.orig	2015-09-21 03:42:11 UTC
++++ lib/utils.c
 @@ -56,6 +56,16 @@
  
  #include <zlib.h>
@@ -17,7 +17,7 @@
  extern int inet_pton(int af, const char *src, void *dst);
  
  
-@@ -2097,14 +2107,19 @@
+@@ -2112,14 +2122,19 @@ wchar_from_utf8 (const char *utf8)
  
  #endif  /* ifdef WIN32 */
  
@@ -38,7 +38,7 @@
          return -1;
      }
  
-@@ -2128,7 +2143,8 @@
+@@ -2143,7 +2158,8 @@ find_process_in_dirent(struct dirent *di
  }
  
  /* read the /proc fs to determine whether some process is running */
@@ -48,7 +48,7 @@
  {
      DIR *proc_dir = opendir("/proc");
      if (!proc_dir) {
-@@ -2153,7 +2169,8 @@
+@@ -2168,7 +2184,8 @@ gboolean process_is_running (const char 
      return FALSE;
  }
  
@@ -58,7 +58,7 @@
  {
      int count = 0;
      DIR *proc_dir = opendir("/proc");
-@@ -2177,6 +2194,14 @@
+@@ -2192,6 +2209,14 @@ int count_process(const char *process_na
      return count;
  }
  
@@ -73,7 +73,7 @@
  #endif
  
  #ifdef __APPLE__
-@@ -2187,6 +2212,119 @@
+@@ -2202,6 +2227,119 @@ gboolean process_is_running (const char 
  }
  #endif
  
