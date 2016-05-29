@@ -1,0 +1,12 @@
+--- contrib/native/pjproject-2.4.5/pjsip/build/Makefile.orig	2015-08-12 04:46:22 UTC
++++ contrib/native/pjproject-2.4.5/pjsip/build/Makefile
+@@ -152,8 +152,7 @@ export PJSUA2_LIB_LDFLAGS += $(PJSUA_LIB
+ 			     $(PJNATH_LDLIB) \
+ 			     $(PJLIB_UTIL_LDLIB) \
+ 			     $(PJLIB_LDLIB) \
+-			     $(_LDFLAGS) \
+-			     -lstdc++
++			     $(_LDFLAGS)
+ 
+ 
+ ###############################################################################
