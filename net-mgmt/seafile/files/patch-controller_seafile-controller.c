@@ -1,5 +1,5 @@
---- controller/seafile-controller.c.orig	2015-01-28 13:03:24.000000000 -0500
-+++ controller/seafile-controller.c	2015-01-28 13:15:05.000000000 -0500
+--- controller/seafile-controller.c.orig	2015-09-21 03:42:11 UTC
++++ controller/seafile-controller.c
 @@ -17,6 +17,19 @@
  #include "log.h"
  #include "seafile-controller.h"
@@ -20,7 +20,7 @@
  #define CHECK_PROCESS_INTERVAL 10        /* every 10 seconds */
  
  SeafileController *ctl;
-@@ -247,7 +260,20 @@
+@@ -247,7 +260,20 @@ static void
  init_seafile_path ()
  {
      GError *error = NULL;
@@ -41,7 +41,7 @@
      char *tmp = NULL;
      if (error != NULL) {
          seaf_warning ("failed to readlink: %s\n", error->message);
-@@ -261,7 +287,9 @@
+@@ -261,7 +287,9 @@ init_seafile_path ()
  
      topdir = g_path_get_dirname (installpath);
  
@@ -51,7 +51,7 @@
      g_free (tmp);
  }
  
-@@ -401,11 +429,40 @@
+@@ -402,11 +430,40 @@ need_restart (int which)
          return FALSE;
      } else {
          char buf[256];
@@ -92,7 +92,7 @@
          }
      }
  }
-@@ -852,6 +909,9 @@
+@@ -877,6 +934,9 @@ int main (int argc, char **argv)
          exit (1);
      }
  
