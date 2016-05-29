@@ -1,6 +1,6 @@
---- setup.py.orig	2008-08-13 08:54:31.000000000 -0400
-+++ setup.py	2008-08-13 08:54:44.000000000 -0400
-@@ -9,8 +9,8 @@
+--- setup.py.orig	2006-07-20 17:08:15 UTC
++++ setup.py
+@@ -9,8 +9,8 @@ setup (
          packages = ['tracgantt'],
          package_data={'tracgantt': ['templates/*.cs', 'htdocs/*.css']},
  
