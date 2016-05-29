@@ -1,5 +1,5 @@
---- send_user_notifications.sh.template.orig	2014-08-27 23:32:32.180696163 -0400
-+++ send_user_notifications.sh.template	2014-08-27 23:49:17.160755773 -0400
+--- send_user_notifications.sh.template.orig	2015-11-26 15:49:19 UTC
++++ send_user_notifications.sh.template
 @@ -1,9 +1,9 @@
  #!/bin/sh
  
