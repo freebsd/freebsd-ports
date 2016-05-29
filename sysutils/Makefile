@@ -852,6 +852,7 @@
     SUBDIR += qpxtool
     SUBDIR += qsynergy
     SUBDIR += qt5-qtpaths
+    SUBDIR += qtpass
     SUBDIR += quicksynergy
     SUBDIR += qzeitgeist
     SUBDIR += racktables
