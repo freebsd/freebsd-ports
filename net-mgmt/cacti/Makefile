@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rrdtool:databases/rrdtool
 
-USES=		cpe shebangfix
-USE_MYSQL=	yes
+USES=		cpe mysql shebangfix
 USE_PHP=	mysqli pcre session sockets snmp xml
 WANT_PHP_WEB=	yes
 NO_ARCH=	yes
