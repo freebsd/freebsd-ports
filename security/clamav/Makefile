@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.99.1
+PORTVERSION=	0.99.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
