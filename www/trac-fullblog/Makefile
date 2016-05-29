@@ -12,11 +12,12 @@ DIST_SUBDIR=	trac
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin that provides a project Blog
 
-RUN_DEPENDS+=	htmldoc:textproc/htmldoc \
+RUN_DEPENDS=	htmldoc:textproc/htmldoc \
 		tracd:www/trac
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .if defined(BOOTSTRAP)
 do-fetch:
@@ -24,8 +25,7 @@ do-fetch:
 	svn export http://trac-hacks.org/svn/fullblogplugin/0.11/ ${WRKSRC}
 	${MKDIR} ${_DISTDIR}
 	cd ${WRKDIR} && \
-	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
+	    ${TAR} cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

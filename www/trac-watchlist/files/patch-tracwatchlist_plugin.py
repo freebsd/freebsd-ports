@@ -1,6 +1,6 @@
---- tracwatchlist/plugin.py.orig	2013-08-30 19:07:32.000000000 +0800
-+++ tracwatchlist/plugin.py	2013-08-30 19:08:43.000000000 +0800
-@@ -527,7 +527,7 @@
+--- tracwatchlist/plugin.py.orig	2012-04-05 10:15:12 UTC
++++ tracwatchlist/plugin.py
+@@ -527,7 +527,7 @@ class WatchlistPlugin(Component):
                      self.set_notify(req, realm, res)
                  db.commit()
              if redirectback and len(new_res) == 1:

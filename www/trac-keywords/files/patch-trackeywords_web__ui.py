@@ -1,6 +1,6 @@
---- trackeywords/web_ui.py.orig	2009-09-09 17:18:34.000000000 +0400
-+++ trackeywords/web_ui.py	2010-04-05 11:32:50.000000000 +0400
-@@ -80,7 +80,8 @@
+--- trackeywords/web_ui.py.orig	2009-09-09 13:18:34 UTC
++++ trackeywords/web_ui.py
+@@ -80,7 +80,8 @@ class TracKeywordsComponent(core.Compone
  
      # changed to Genshi signature
      def post_process_request(self, req, template, data, content_type):

@@ -1,5 +1,5 @@
---- ./WikiNotification/templates/wiki_notification_email_template.txt.orig	2008-03-14 05:02:03.000000000 -0400
-+++ ./WikiNotification/templates/wiki_notification_email_template.txt	2010-10-08 11:41:19.000000000 -0400
+--- WikiNotification/templates/wiki_notification_email_template.txt.orig	2008-03-14 09:02:03 UTC
++++ WikiNotification/templates/wiki_notification_email_template.txt
 @@ -1,40 +1,40 @@
  
 -#if action == 'added'

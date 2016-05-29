@@ -13,7 +13,7 @@ COMMENT=	Trac AccountManager plugin using LDAP authentication store
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	tracd:www/trac \
+RUN_DEPENDS=	tracd:www/trac \
 		trac-accountmanager>0:www/trac-accountmanager \
 		trac-ldap>0:www/trac-ldap \
 		${PYTHON_PKGNAMEPREFIX}ldap>0:net/py-ldap
@@ -41,5 +41,4 @@ do-fetch:
 	cd ${WRKDIR} && tar cvf ${DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

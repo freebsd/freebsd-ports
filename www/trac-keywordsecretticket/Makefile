@@ -10,6 +10,9 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	Ticket security policy based on keyword for Trac
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	tracd:www/trac
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KKBOX
@@ -17,9 +20,8 @@ GH_PROJECT=	trac-keyword-secret-ticket-plugin
 GH_TAGNAME=	98edea2
 GITDATE=	20130401
 
-RUN_DEPENDS+=	tracd:www/trac
-
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -12,12 +12,15 @@ DISTNAME=	${PORTNAME}plugin.${PORTVERSION}
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Plugin for Trac which extends the Wiki with some goodies
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	tracd:www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

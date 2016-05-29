@@ -12,13 +12,13 @@ DISTNAME=	trac${PORTNAME}plugin-r${REL}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Plugin for making ticket templates
 
-RUN_DEPENDS+=	trac>=0.11:www/trac
+RUN_DEPENDS=	trac>=0.11:www/trac
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin/0.11
 REL=		10605
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
