@@ -10,11 +10,12 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Discussion forum plugin for Trac
 
-RUN_DEPENDS+=	tracd:www/trac \
+RUN_DEPENDS=	tracd:www/trac \
 		trac-TracSpamFilter>=0.2.1:www/trac-spam-filter
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 # Maintainter targets below this point
 
@@ -26,8 +27,7 @@ do-fetch:
 	cd ${WRKDIR} && \
 	    svn export http://trac-hacks.org/svn/discussionplugin/0.11/ \
 	    ${DISTNAME}
-	cd ${WRKDIR} && tar cvf ${DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
+	cd ${WRKDIR} && ${TAR} cvf ${DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

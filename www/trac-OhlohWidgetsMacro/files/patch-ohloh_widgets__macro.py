@@ -1,6 +1,6 @@
---- ./ohloh_widgets/macro.py.orig	2013-06-17 12:52:47.000000000 -0700
-+++ ./ohloh_widgets/macro.py	2013-06-17 12:53:17.000000000 -0700
-@@ -46,7 +46,7 @@
+--- ohloh_widgets/macro.py.orig	2010-07-04 06:54:44 UTC
++++ ohloh_widgets/macro.py
+@@ -46,7 +46,7 @@ class OhlohWidgetMacro(MacroWithValidati
         ![[OhlohWidget(project_id, widget_name)]]
      
      The macro gets two parameters which you can get from Ohloh's widget page
@@ -9,7 +9,7 @@
      look at the embeddable HTML snippet:
      
       * project_id -- a 6 digit number which identifies your project
-@@ -70,7 +70,7 @@
+@@ -70,7 +70,7 @@ class OhlohWidgetMacro(MacroWithValidati
      
      def url(self, parameters):
          query_string = ''

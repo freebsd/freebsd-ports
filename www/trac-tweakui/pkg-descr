@@ -6,4 +6,4 @@ The plugin supports the Trac web admin system, and it can apply
 Javascript tweaks to multiple pages by matching their names with
 regular expressions.
 
-WWW:    http://trac-hacks.org/wiki/TracTweakUiPlugin
+WWW: http://trac-hacks.org/wiki/TracTweakUiPlugin

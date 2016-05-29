@@ -14,14 +14,15 @@ COMMENT=	Provides an XML-RPC interface to Trac
 
 LICENSE=	BSD3CLAUSE
 
-SVN_REV=	13203
+RUN_DEPENDS=	tracd:www/trac
 
-RUN_DEPENDS+=	tracd:www/trac
+SVN_REV=	13203
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/trunk
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
