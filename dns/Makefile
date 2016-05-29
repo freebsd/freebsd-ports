@@ -45,6 +45,7 @@
     SUBDIR += dnsmax-perl
     SUBDIR += dnsperf
     SUBDIR += dnsproxy
+    SUBDIR += dnsrecon
     SUBDIR += dnsreflector
     SUBDIR += dnstable
     SUBDIR += dnstop

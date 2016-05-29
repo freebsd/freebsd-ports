@@ -1,0 +1,12 @@
+bin/dnsrecon
+%%PYTHON_SITELIBDIR%%/dnsrecon/__init__.py
+%%PYTHON_SITELIBDIR%%/dnsrecon/dnshelper.py
+%%PYTHON_SITELIBDIR%%/dnsrecon/gooenum.py
+%%PYTHON_SITELIBDIR%%/dnsrecon/mdnsenum.py
+%%PYTHON_SITELIBDIR%%/dnsrecon/msf_print.py
+%%PYTHON_SITELIBDIR%%/dnsrecon/whois.py
+%%DATADIR%%/namelist.txt
+%%DATADIR%%/subdomains-top1mil-20000.txt
+%%DATADIR%%/subdomains-top1mil-5000.txt
+%%DATADIR%%/subdomains-top1mil.txt
+%%DOCSDIR%%/README
