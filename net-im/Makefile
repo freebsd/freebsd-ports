@@ -150,6 +150,7 @@
     SUBDIR += ramblercontacts
     SUBDIR += ricochet
     SUBDIR += ring-daemon
+    SUBDIR += ring-libclient
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
     SUBDIR += rubygem-lita
