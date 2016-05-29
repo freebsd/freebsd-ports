@@ -13,10 +13,12 @@ MASTER_SITES=	SF/tclpad/tclpad/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows XP (TM) enhanced Notepad clone written in Tcl/Tk
 
-RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
+LICENSE=	GPLv2+
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
+USES=		tk:84,run
 PORTDOCS=	ChangeLog bug.html conf.html embed.html index.html intro.html \
 		keys.html log.html mouse.html tidy.html tidy.png todo tpad.html
 PLIST_SUB=	LIBDIR=lib/tpad${PORTVERSION}
@@ -36,10 +38,12 @@ do-install:
 	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s tpad tview)
 	${INSTALL_MAN} ${WRKDIR}/man/man1/tpad.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	(cd ${STAGEDIR}${MANPREFIX}/man/man1 && ${LN} -s tpad.1.gz tview.1.gz)
+	${INSTALL_DATA} ${WRKDIR}/etc/tpad.conf \
+		${STAGEDIR}${PREFIX}/etc/tpad.conf.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/share/doc/tpad && ${INSTALL_DATA} ${PORTDOCS} \
 		${STAGEDIR}${DOCSDIR})
-	${INSTALL_DATA} ${WRKDIR}/etc/tpad.conf \
-		${STAGEDIR}${PREFIX}/etc/tpad.conf.sample
 
 .include <bsd.port.mk>
