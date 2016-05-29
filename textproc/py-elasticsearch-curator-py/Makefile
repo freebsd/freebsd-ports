@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=		curator
-PORTVERSION=		3.4.0
+PORTVERSION=		3.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		textproc python
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}elasticsearch-
+PKGNAMESUFFIX=  -py
 
 MAINTAINER=		dvl@FreeBSD.org
 COMMENT=		Python index manager for Elasticsearch
