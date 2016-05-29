@@ -1,6 +1,6 @@
---- plugins/ufraw/geeqie-ufraw.orig	2010-02-18 00:21:15.000000000 +0300
-+++ plugins/ufraw/geeqie-ufraw	2010-05-22 17:06:21.000000000 +0400
-@@ -37,7 +37,7 @@
+--- plugins/ufraw/geeqie-ufraw.orig	2016-03-07 10:21:06 UTC
++++ plugins/ufraw/geeqie-ufraw
+@@ -37,7 +37,7 @@ add_xmp_from_sidecar ()
  
      basename=${input%.*}
      dirname=${basename%/*}
@@ -9,7 +9,7 @@
      [ -f "$xmp" ] || return 1
  
      output=`get_output_from_id "$idfile"`
-@@ -75,7 +75,7 @@
+@@ -75,7 +75,7 @@ raw_file_not_processed ()
      rawfile=$1
      basename=${rawfile%.*}
      dirname=${basename%/*}
@@ -18,7 +18,7 @@
      [ -z "$outfiles" ] # return true if no possible output file exists
  
      # raw+jpeg pair created by the camera is considered processed, 
-@@ -136,12 +136,12 @@
+@@ -136,12 +136,12 @@ process_tree ()
  {
      list=`mktemp /tmp/geeqie-ufraw-list.XXXXXXXXXX` || exit 1
  
