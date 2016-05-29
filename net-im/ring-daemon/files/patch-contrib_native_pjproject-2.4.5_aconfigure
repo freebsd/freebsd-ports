@@ -1,0 +1,11 @@
+--- contrib/native/pjproject-2.4.5/aconfigure.orig	2015-08-12 04:46:22 UTC
++++ contrib/native/pjproject-2.4.5/aconfigure
+@@ -7158,7 +7158,7 @@ $as_echo "Using OpenH264 prefix... $with
+ 		  { $as_echo "$as_me:${as_lineno-$LINENO}: checking OpenH264 usability" >&5
+ $as_echo_n "checking OpenH264 usability... " >&6; }
+ 
+-		  OPENH264_LIBS="-lopenh264 -lstdc++"
++		  OPENH264_LIBS="-lopenh264"
+ 
+ 		  SAVED_LIBS="$LIBS"
+ 		  SAVED_LDFLAGS="$LDFLAGS"

@@ -149,6 +149,7 @@
     SUBDIR += qxmpp
     SUBDIR += ramblercontacts
     SUBDIR += ricochet
+    SUBDIR += ring-daemon
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
     SUBDIR += rubygem-lita

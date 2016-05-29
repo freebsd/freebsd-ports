@@ -1,0 +1,11 @@
+--- src/media/video/test/Makefile.am.orig	2016-05-10 20:45:50 UTC
++++ src/media/video/test/Makefile.am
+@@ -9,7 +9,7 @@ test_video_rtp_LDADD=$(top_builddir)/src
+ test_video_input_SOURCES=test_video_input.cpp test_video_input.h
+ test_video_input_LDADD=$(top_builddir)/src/libring.la $(top_builddir)/src/media/video/libvideo.la $(YAML_LIBS)
+ 
+-if HAVE_LINUX
++if HAVE_FREEBSD
+ test_shm_SOURCES=test_shm.cpp shm_src.cpp shm_src.h
+ test_shm_LDADD=$(top_builddir)/src/libring.la $(top_builddir)/src/media/video/libvideo.la $(YAML_LIBS) -lrt
+ test_shm_CXXFLAGS=$(AM_CXXFLAGS)

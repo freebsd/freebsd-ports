@@ -1,0 +1,21 @@
+--- contrib/bootstrap.orig	2016-05-10 20:45:50 UTC
++++ contrib/bootstrap
+@@ -74,7 +74,7 @@ done
+ if test -z "$BUILD"
+ then
+ 	echo -n "Guessing build system... "
+-	BUILD="`${CC:-cc} -dumpmachine`"
++	BUILD="`uname -m`-portbld-freebsd"
+ 	if test -z "$BUILD"; then
+ 		echo "FAIL!"
+ 		exit 1
+@@ -212,6 +212,9 @@ case "${OS}" in
+ 			add_make_enabled "HAVE_IOS" "HAVE_DARWIN_OS" "HAVE_BSD" "HAVE_NEON" "HAVE_ARMV7A"
+ 		fi
+ 		;;
++	*freebsd*)
++		add_make_enabled "HAVE_FREEBSD"
++		;;
+ 	*bsd*)
+ 		add_make_enabled "HAVE_BSD"
+ 		;;
