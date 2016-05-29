@@ -1,1 +1,0 @@
-import os, site; site.addsitedir(os.getenv('PYTHONPATH'))
