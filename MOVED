@@ -8331,3 +8331,4 @@ misc/kdehier4||2016-05-25|Not used since 2014
 devel/maven-ant-tasks||2016-05-27|Use Maven directly
 graphics/py-imaging||2016-05-28|Has expired: Unmaintained upstream; use graphics/py-pillow
 textproc/py-curator|textproc/py-elasticsearch-curator-py|2016-05-29|Follow existing Elasticsearch naming conventions
+databases/py-psycopg|databases/py-psycopg2|2016-05-29|Has expired: This port is obsoleted by databases/py-psycopg2.
