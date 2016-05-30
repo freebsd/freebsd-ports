@@ -1,0 +1,10 @@
+======================================================================
+You installed the Ring softphone and IM Gnome client.
+
+Ring is currently in beta, and might not always function as expected.
+
+It will only work when pulseaudio server is running.
+
+For video to work you need to make sure that your webcam is available
+through the V4L interface.
+======================================================================
