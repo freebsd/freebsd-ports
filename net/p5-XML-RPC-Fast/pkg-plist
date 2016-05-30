@@ -10,7 +10,6 @@
 %%PERL5_MAN3%%/XML::RPC::Enc.3.gz
 %%PERL5_MAN3%%/XML::RPC::Enc::LibXML.3.gz
 %%PERL5_MAN3%%/XML::RPC::Fast.3.gz
-%%PERL5_MAN3%%/XML::RPC::README.3.gz
 %%PERL5_MAN3%%/XML::RPC::UA.3.gz
 %%PERL5_MAN3%%/XML::RPC::UA::AnyEvent.3.gz
 %%PERL5_MAN3%%/XML::RPC::UA::AnyEventSync.3.gz

@@ -2,7 +2,6 @@
 %%PERL5_MAN3%%/Text::CSV::Encoded::Coder::Base.3.gz
 %%PERL5_MAN3%%/Text::CSV::Encoded::Coder::Encode.3.gz
 %%PERL5_MAN3%%/Text::CSV::Encoded::Coder::EncodeGuess.3.gz
-%%PERL5_MAN3%%/Text::CSV::README.3.gz
 %%SITE_PERL%%/Text/CSV/Encoded.pm
 %%SITE_PERL%%/Text/CSV/Encoded/Coder/Base.pm
 %%SITE_PERL%%/Text/CSV/Encoded/Coder/Encode.pm

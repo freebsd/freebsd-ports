@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Test/Fake/HTTPD.pm
 %%SITE_PERL%%/Test/Fake/README.pod
 %%PERL5_MAN3%%/Test::Fake::HTTPD.3.gz
-%%PERL5_MAN3%%/Test::Fake::README.3.gz
