@@ -2290,7 +2290,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/ielm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/iimage.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/iimage.elc
-@dir %%DATADIR%%/%%EMACS_VER%%/lisp/image
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-dired.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-dired.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-file.el.gz
