@@ -3,7 +3,7 @@
 
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.2
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -50,13 +50,15 @@ REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	libboard.so:graphics/libboard
 
 . if !defined(WITH_DEBUG)
-LIB_DEPENDS+=	libpng.so:graphics/png		\
+LIB_DEPENDS+=	libcurl.so:ftp/curl			\
+		libpng.so:graphics/png			\
 		libtiff.so:graphics/tiff		\
-		libIlmImf.so:graphics/OpenEXR	\
+		libHalf.so:graphics/ilmbase		\
+		libIlmImf.so:graphics/OpenEXR		\
 		libgimp-2.0.so:graphics/gimp-app	\
-		libfftw3.so:math/fftw3		\
+		libfftw3.so:math/fftw3			\
 		libopencv_legacy.so:graphics/opencv	\
-		libopencv_core.so:graphics/opencv-core\
+		libopencv_core.so:graphics/opencv-core	\
 		libGraphicsMagick.so:graphics/GraphicsMagick
 USES+=		jpeg
 ALL_TARGET=	Mlinux
@@ -79,6 +81,7 @@ LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg
 USES+=	fortran
 . endif
 
+USE_XORG+=	x11 xrandr
 . if defined(WITH_XSHM)
 USE_XORG+=	xext
 . endif
