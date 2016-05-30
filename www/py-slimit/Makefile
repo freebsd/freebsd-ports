@@ -9,13 +9,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript minifier written in Python
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4:devel/py-ply
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4:devel/py-ply
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 # Maintainer: Reminder to keep testing python 3.x compatibility.
 .include <bsd.port.pre.mk>
@@ -26,7 +27,7 @@ pre-build:
 	@cd ${WRKSRC} && 2to3-${PYTHON_VER} -w src
 .endif
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.post.mk>
