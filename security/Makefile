@@ -824,7 +824,6 @@
     SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer
     SUBDIR += py-certifi
-    SUBDIR += py-clamav
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
     SUBDIR += py-crits
