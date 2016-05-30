@@ -3,7 +3,7 @@
 
 PORTNAME=	burrtools
 PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -21,7 +21,6 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		gmake
 USE_XORG=	x11 xt xext xmu xi
 USE_GL=		glu
-USE_GCC=	yes # clang generates incorrect binaries: cause SIGILL
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
 
@@ -36,12 +35,6 @@ PLIST_FILES=	bin/burrTxt bin/burrTxt2 bin/burrGui \
 DESKTOP_ENTRIES="BurrGui" "" "${PREFIX}/pixmaps/burricons.png" "burrGui" "" ""
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
-LDFLAGS+=	-lc++
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
