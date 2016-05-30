@@ -18,3 +18,12 @@
  
  
  void stlExporter_c::write(const char * fname, const voxel_c & v, const faceList_c & holes)
+@@ -62,7 +64,7 @@ void stlExporter_c::write(const char * f
+   FILE * f;
+   unsigned long triangleCount = 0;
+ 
+-  const char * title = basename(fname);
++  const char * title = basename(const_cast<char*>(fname));
+ 
+   if (binaryMode)
+   {
