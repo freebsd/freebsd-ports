@@ -1403,6 +1403,9 @@
 %%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_user_reset.py
 %%SEAHUBDIR%%/tests/seahub/views/test_list_lib_dir.py
 %%SEAHUBDIR%%/tests/seahub/views/wiki/test_personal_wiki.py
+%%SEAHUBDIR%%/tests/seahub/share/views/test_ajax_get_download_link.py
+%%SEAHUBDIR%%/tests/seahub/share/views/test_ajax_get_upload_link.py
+%%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_settings.py
 %%SEAHUBDIR%%/tests/seahubtests.sh
 %%SEAHUBDIR%%/tests/ui/__init__.py
 %%SEAHUBDIR%%/tests/ui/conftest.py
