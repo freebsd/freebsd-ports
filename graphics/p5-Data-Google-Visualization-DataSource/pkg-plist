@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Data/Google/Visualization/DataSource.pm
 %%SITE_PERL%%/Data/Google/Visualization/README.pod
 %%PERL5_MAN3%%/Data::Google::Visualization::DataSource.3.gz
-%%PERL5_MAN3%%/Data::Google::Visualization::README.3.gz

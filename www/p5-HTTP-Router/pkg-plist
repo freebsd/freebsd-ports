@@ -5,7 +5,6 @@
 %%SITE_PERL%%/HTTP/Router/Match.pm
 %%SITE_PERL%%/HTTP/Router.pm
 %%SITE_PERL%%/Test/HTTP/Router.pm
-%%PERL5_MAN3%%/HTTP::README.3.gz
 %%PERL5_MAN3%%/HTTP::Router.3.gz
 %%PERL5_MAN3%%/HTTP::Router::Debug.3.gz
 %%PERL5_MAN3%%/HTTP::Router::Declare.3.gz
