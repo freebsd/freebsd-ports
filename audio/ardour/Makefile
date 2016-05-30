@@ -67,6 +67,8 @@ MAKE_ARGS+=	FPU_OPTIMIZATION=0
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS}|' ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e 's|alsa_pcm|oss|g' ${WRKSRC}/templates/*.template
+	@${REINPLACE_CMD} -e 's|std::pair<double|std::pair<const double|' \
+		${WRKSRC}/gtk2_ardour/tempo_lines.h
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/ardour2/templates
