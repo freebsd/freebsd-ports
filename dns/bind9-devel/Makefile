@@ -16,8 +16,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0.a20160522
-HASH=		da06956
+ISCVERSION=	9.11.0.a20160530
+HASH=		44fa277
 
 MAKE_JOBS_UNSAFE=	yes
 
