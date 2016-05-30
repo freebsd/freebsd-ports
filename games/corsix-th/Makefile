@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	corsixth
-PORTVERSION=	0.50
+PORTVERSION=	0.60
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem \
 		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg
 
-USES=		cmake compiler:c++11-lang dos2unix iconv lua pkgconfig
+USES=		cmake compiler:c++11-lib dos2unix iconv lua pkgconfig
 USE_SDL=	mixer2
 DOS2UNIX_FILES=	CMake/FindFFmpeg.cmake \
 		CorsixTH/CMakeLists.txt \
@@ -29,12 +28,18 @@ GH_ACCOUNT=	CorsixTH
 GH_PROJECT=	CorsixTH
 
 OPTIONS_DEFINE=	MOVIES
-#OPTIONS_DEFAULT=	MOVIES
+OPTIONS_DEFAULT=	MOVIES
 MOVIES_DESC=	Play in-game movies
 
 MOVIES_CMAKE_ON=	-DWITH_MOVIES=ON
 MOVIES_CMAKE_OFF=	-DWITH_MOVIES=OFF
 MOVIES_LIB_DEPENDS=	libswresample.so:multimedia/ffmpeg
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000024 && ${CHOSEN_COMPILER_TYPE} == gcc
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
+.endif
 
 post-patch:
 # Allow the game to find its resources without wrapper scripts
@@ -49,4 +54,4 @@ do-install:
 	cd ${WRKSRC}/CorsixTH && ${COPYTREE_SHARE} "Bitmap Levels Lua" \
 		${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
