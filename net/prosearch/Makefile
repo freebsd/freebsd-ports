@@ -2,7 +2,7 @@
 
 PORTNAME=	prosearch
 PORTVERSION=	0.19.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 
@@ -56,7 +56,9 @@ nmap:security/nmap \
 p5-Net-DirectConnect>=0:net-p2p/p5-Net-DirectConnect
 .endif
 
-SAMBA_RUN_DEPENDS=smbclient:net/samba44
+.if ${PORT_OPTIONS:MSAMBA}
+RUN_DEPENDS+=smbclient:net/samba44
+.endif
 
 .if ${PORT_OPTIONS:MRSYNC}
 RUN_DEPENDS+=	rsync:net/rsync
