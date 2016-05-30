@@ -257,7 +257,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/consoles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-cds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-dvds.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/crypt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ctm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/current-stable.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvs-tags.html
@@ -276,7 +275,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-encrypting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-growing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-hast.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-naming.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-virtual.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace-enable.html
@@ -290,7 +288,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-apps.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-concepts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-ipf.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-ipfw.html
@@ -302,7 +299,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-ggate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-gjournal.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-intro.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-graid.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-mirror.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-raid3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-striping.html
@@ -327,6 +324,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-application.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-build.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-ezjail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-terms.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-tuning.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails.html
@@ -344,10 +342,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-maple.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-mathematica.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-matlab.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-oracle.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-biba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-bsdextended.html
@@ -402,7 +396,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-routing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-samba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-servers.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-syslogd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-usb-tethering.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-wireless.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/nutshell.html
@@ -424,16 +417,14 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ppp-troubleshoot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pppoa.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pppoe.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-advanced.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-intro-setup.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-intro-spooler.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-lpd-alternatives.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-troubleshooting.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-using.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-connections.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-direct.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-lpd.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-other.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-pdls.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/quotas.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/scanners.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/securing-freebsd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-accounting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-advisories.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-intro.html
