@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Database.pm
 %%SITE_PERL%%/Mojolicious/Plugin/README.pod
 %%PERL5_MAN3%%/Mojolicious::Plugin::Database.3.gz
-%%PERL5_MAN3%%/Mojolicious::Plugin::README.3.gz

@@ -2,7 +2,6 @@
 %%PERL5_MAN3%%/RedisDB::Parser::Error.3.gz
 %%PERL5_MAN3%%/RedisDB::Parser::PP.3.gz
 %%PERL5_MAN3%%/RedisDB::Parser::XS.3.gz
-%%PERL5_MAN3%%/RedisDB::README.3.gz
 %%SITE_ARCH%%/auto/RedisDB/Parser/Parser.so
 %%SITE_ARCH%%/RedisDB/Parser.pm
 %%SITE_ARCH%%/RedisDB/Parser/Error.pm

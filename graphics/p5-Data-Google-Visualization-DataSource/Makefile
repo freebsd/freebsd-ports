@@ -2,6 +2,7 @@
 
 PORTNAME=	Data-Google-Visualization-DataSource
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
