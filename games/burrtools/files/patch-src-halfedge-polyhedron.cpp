@@ -1,6 +1,6 @@
---- src/halfedge/polyhedron.cpp.orig	2011-07-23 21:04:15.000000000 +0400
-+++ src/halfedge/polyhedron.cpp	2014-02-19 09:19:56.242568734 +0400
-@@ -206,12 +206,12 @@
+--- src/halfedge/polyhedron.cpp.orig	2013-05-08 19:02:06 UTC
++++ src/halfedge/polyhedron.cpp
+@@ -206,12 +206,12 @@ void Polyhedron::finalize(void)
      // add the edge, to make sure we don't process it again
      handeled.insert(idx);
  
