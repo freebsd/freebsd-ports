@@ -2,6 +2,7 @@ lib/kde4/kstyle_skulpture_config.so
 lib/kde4/kwin3_skulpture.so
 lib/kde4/kwin_skulpture_config.so
 %%QT_PLUGINDIR%%/styles/libskulpture.so
+share/apps/color-schemes/SkulptureBeton.colors
 share/apps/color-schemes/SkulptureChocolate.colors
 share/apps/color-schemes/SkulptureIce.colors
 share/apps/color-schemes/SkulptureMint.colors
