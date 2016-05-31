@@ -179,7 +179,8 @@ MASTER_SITE_ECLIPSE+= \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/eclipse/downloads/drops/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/eclipse/downloads/drops4/%SUBDIR%/ \
-	http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/%SUBDIR%/
+	http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/%SUBDIR%/ \
+	http://eclipse.stu.edu.tw/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EXIM)
