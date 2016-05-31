@@ -25,7 +25,4 @@ PLIST_FILES=	bin/tmate-slave
 
 BROKEN_FreeBSD_9=	Does not build
 
-pre-configure:
-	@cd $(wrksrc} && ./autogen.sh
-
 .include <bsd.port.mk>
