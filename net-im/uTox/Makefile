@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-PORTVERSION=	0.8.2.20160511
+PORTVERSION=	0.9.5.20160530
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
@@ -17,12 +17,13 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libsodium.so:security/libsodium \
 		libv4lconvert.so:multimedia/libv4l \
 		libvpx.so:multimedia/libvpx \
-		libfilteraudio.so:audio/libfilteraudio
+		libfilteraudio.so:audio/libfilteraudio\
+		libopus.so:audio/opus
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GrayHatter
-GH_TAGNAME=	cc4388c
+GH_TAGNAME=	c85c747
 
 USES=		compiler:c11 desktop-file-utils gmake openal:al pkgconfig
 USE_XORG=	x11 xext xrender
