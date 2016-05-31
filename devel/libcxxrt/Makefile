@@ -2,7 +2,7 @@
 
 PORTNAME=	libcxxrt
 PORTVERSION=	20131225
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	mokhi64@gmail.com
@@ -15,6 +15,7 @@ GH_ACCOUNT=	pathscale
 GH_TAGNAME=	2f150a6
 
 USES=		cmake compiler:c++11-lang
+USE_LDCONFIG=	yes
 CXXFLAGS+=	-nostdlib
 
 do-install:
