@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--disable-manager
 .endif
 
 do-install-DOCS-on:
-${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
