@@ -1,0 +1,31 @@
+# $FreeBSD$
+#!/bin/sh
+#
+# PROVIDE: spoofer
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable spoofer:
+#
+# spoofer_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=spoofer
+rcvar=spoofer_enable
+
+command="%%PREFIX%%/bin/spoofer-scheduler"
+command_args="-D"
+
+load_rc_config $name
+
+: ${spoofer_enable="NO"}
+: ${spoofer_flags="-s 1"}
+
+spoofer_stop()
+{
+    %%PREFIX%%/bin/spoofer-cli shutdown
+}
+
+run_rc_command "$1"
