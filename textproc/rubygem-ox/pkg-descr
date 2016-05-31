@@ -1,0 +1,9 @@
+Ox, standing for Optimized XML, is a XML parser and object serializer,
+which is designed to be a speed-optimized alternative to Nokogiri and Marshal.
+
+* Ox is self contained, and uses nothing other than standard C libraries.
+* Ox writes/parses generic XML documents including HTML documents.
+* Ox serializes Objects into human readable XML in contrast to Marshal
+* Ox also supports SAX parsing. 
+
+WWW: http://ohler.com/ox/
