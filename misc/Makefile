@@ -393,6 +393,7 @@
     SUBDIR += qt4-l10n
     SUBDIR += qt4-qtconfig
     SUBDIR += qt4-qtdemo
+    SUBDIR += qt5-doc
     SUBDIR += qt5-examples
     SUBDIR += qt5-l10n
     SUBDIR += qt5ct
