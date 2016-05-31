@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	DEBUG JSON PCRE XML
 DEBUG_VARS=	PYDISTUTILS_BUILDARGS+=--debug
 JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-XML_LIB_DEPENDS=	libexpat.so:textproc/expat2
+XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 .include <bsd.port.options.mk>
 
@@ -39,8 +39,7 @@ O_PCRE=		false
 .endif
 
 .if ${PORT_OPTIONS:MXML}
-O_XML=		expat
-CFLAGS+=	"-I${LOCALBASE}/include"
+O_XML=		libxml2
 .else
 O_XML=		false
 .endif
