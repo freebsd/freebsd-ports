@@ -1,5 +1,0 @@
-#!/bin/sh
-
-if [ "$2" = "POST-INSTALL" ]; then
-	mkdir -p ${PKG_PREFIX}/lib/treeline/plugins
-fi
