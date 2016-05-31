@@ -15,14 +15,13 @@ RUN_DEPENDS=	chromaprint>=0.4:audio/chromaprint \
 		${PYTHON_PKGNAMEPREFIX}musicbrainz2>=0:audio/py-musicbrainz2 \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=1.14:audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}configobj>=4.5.0:devel/py-configobj \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=1.5.1:devel/py-pyparsing \
-		${PYTHON_PKGNAMEPREFIX}qt4-svg>=4.5.0:graphics/py-qt4-svg \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.5.0:x11-toolkits/py-qt4-gui
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=1.5.1:devel/py-pyparsing
 
-USES=		python:2
+USES=		python:2 pyqt:4
 USE_PYTHON=	autoplist distutils
-INSTALLS_ICONS=	yes
+USE_PYQT=	gui_run svg_run
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's|share/man/man1|man/man1|' ${WRKSRC}/setup.py
