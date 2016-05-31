@@ -2,14 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	cminpack
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	math
-MASTER_SITES=	http://devernay.free.fr/hacks/${PORTNAME}/
+MASTER_SITES=	GH
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Solving nonlinear equations and nonlinear least squares problems
 
+LICENSE_FILE=	${WRKSRC}/CopyrightMINPACK.txt
+
 USES=		cmake:outsource
+
+USE_GITHUB=	yes
+GH_PROJECT=	cminpack
+GH_ACCOUNT=	devernay
+GH_TAGNAME=	e89f19c
 
 OPTIONS_DEFINE=	EXAMPLES
 
