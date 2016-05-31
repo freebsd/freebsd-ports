@@ -1,0 +1,4 @@
+%%GUI%%bin/spoofer-cli
+%%GUI%%bin/spoofer-gui
+bin/spoofer-prober
+%%GUI%%bin/spoofer-scheduler
