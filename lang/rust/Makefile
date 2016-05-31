@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.8.0
+PORTVERSION?=	1.9.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
-		http://static.rust-lang.org/stage0-snapshots/:bootstrap
+		http://static.rust-lang.org/stage0-snapshots/:bootstrap \
+		https://github.com/dhuseby/rust-manual-snapshots/raw/master/:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}
 DISTFILES?=	${DISTNAME}-src${EXTRACT_SUFX}:src
 DISTFILES+=	${RUST_BOOT}:bootstrap
@@ -36,9 +37,9 @@ CONFLICTS_INSTALL?=	rust-nightly
 
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG_${ARCH}}.tar.bz2
 
-RUST_BOOT_SIG_x86_64?=	2016-02-17-4d3eebf-dragonfly-x86_64-765bb5820ad406e966ec0ac51c8070b656459b02
-RUST_BOOT_SIG_amd64?=	2016-02-17-4d3eebf-freebsd-x86_64-f38991fbb81c1cd8d0bbda396f98f13a55b42804
-RUST_BOOT_SIG_i386?=	2016-02-17-4d3eebf-freebsd-i386-4e2af0b34eb335e173aebff543be693724a956c2
+RUST_BOOT_SIG_x86_64?=	2016-03-18-235d774-dragonfly-x86_64-e790279a7b286ddf2e716ccd3bb1b7f0a386a5c7
+RUST_BOOT_SIG_amd64?=	2016-03-18-235d774-freebsd-x86_64-390b9a9f60f3d0d6a52c04d939a0355f572d03b3
+RUST_BOOT_SIG_i386?=	2016-03-18-235d774-freebsd-i386-b5a87e66e3e3eed5f0b68367ad22f25f0be2d4ea
 
 # Rust's libraries are named librustc_${component}-${RUST_VSN_HASH}.so.
 # The hash depends on Rust version and, if the channel is not "stable",
