@@ -1,5 +1,5 @@
---- ./config.h.orig	2014-08-05 15:15:31.000000000 +0200
-+++ ./config.h	2014-08-05 15:17:19.486687132 +0200
+--- config.h.orig	2016-05-31 18:04:39 UTC
++++ config.h
 @@ -137,7 +137,7 @@
  /*
   * OPTION: Use the POSIX "termios" methods in "main-gcu.c"
