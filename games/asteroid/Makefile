@@ -6,7 +6,7 @@ PORTVERSION=	1.2.1
 PORTREVISION=	3
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Modern version of the arcade classic Asteroid
 
 LICENSE=	GPLv3
@@ -14,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chazomaticus
-GH_TAGNAME=	ffeb0fd
+GH_TAGNAME=	64869df
 
 USES=		cmake
 USE_GL=		glut
 USE_SDL=	mixer sdl
-USE_GNOME=	gtk20
+USE_GNOME=	gtk30
 USE_XORG=	xmu
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-lm
