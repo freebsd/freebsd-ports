@@ -23,14 +23,15 @@ MYSQLSERVER_DESC=	Use MySQL-Server on localhost
 .include <bsd.port.options.mk>
 
 USE_PHP=	mysql mbstring pcre xml iconv
-USE_MYSQL=	yes
 
 .if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 .endif
 
 .if ${PORT_OPTIONS:MMYSQLSERVER}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:databases/mysql${MYSQL_VER}-server
+USES+=		mysql:client,server
+.else
+USES+=		mysql
 .endif
 
 RUN_DEPENDS+=	curl:ftp/curl

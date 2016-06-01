@@ -35,7 +35,6 @@ SHEBANG_FILES=	programs/scripts/database/mythconverg_backup.pl \
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build imageformats
 QT_NONSTANDARD=	yes
-USE_MYSQL=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/mythtv/filters
 REINPLACE_ARGS=	-i ""
@@ -66,7 +65,8 @@ OPTIONS_SUB=	BINDINGS
 BINDINGS_DESC=	Perl and Python bindings
 
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
-MYSQL_RUN_DEPENDS=	mysqld_safe:databases/mysql${MYSQL_VER}-server
+MYSQL_USES=	mysql:client,server
+MYSQL_USES_OFF=	mysql
 
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
