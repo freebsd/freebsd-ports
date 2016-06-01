@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -22,7 +22,6 @@ NC_DESC=	Install TLS-enabled netcat
 CONFLICTS?=	libressl-devel-[0-9]* \
 		openssl-[0-9]* \
 		openssl-devel-[0-9]*
-MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
