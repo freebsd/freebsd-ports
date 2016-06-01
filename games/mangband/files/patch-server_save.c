@@ -1,6 +1,6 @@
---- ./server/save.c.orig	2014-08-05 15:15:31.916658572 +0200
-+++ ./server/save.c	2014-08-05 15:15:32.016684533 +0200
-@@ -941,7 +941,7 @@
+--- server/save.c.orig	2016-05-31 18:05:21 UTC
++++ server/save.c
+@@ -941,7 +941,7 @@ bool save_player(int Ind)
  #ifdef VERIFY_SAVEFILE
  
  		/* Lock on savefile */
