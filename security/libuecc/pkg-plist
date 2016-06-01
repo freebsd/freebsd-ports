@@ -1,6 +1,6 @@
-include/libuecc-6/libuecc/ecc.h
+include/libuecc-7/libuecc/ecc.h
 lib/libuecc.a
 lib/libuecc.so
 lib/libuecc.so.0
-lib/libuecc.so.0.6
+lib/libuecc.so.0.7
 libdata/pkgconfig/libuecc.pc
