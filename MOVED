@@ -8334,3 +8334,5 @@ textproc/py-curator|textproc/py-elasticsearch-curator-py|2016-05-29|Follow exist
 databases/py-psycopg|databases/py-psycopg2|2016-05-29|Has expired: This port is obsoleted by databases/py-psycopg2.
 security/py-clamav|security/py-pyclamd|2016-05-30|Has expired: Not updated since 2008 by upstream and abandoned in favor of pyClamd (security/py-pyclamd)
 graphics/ruby-gdal||2016-05-31|Has expired: disabled by upstream (https://trac.osgeo.org/gdal/changeset/28756)
+net/omcmd||2016-06-01|Has expired: Unfetchable and depends on expired net/isc-dhcp41-server
+net/isc-dhcp41-server|net/isc-dhcp43-server|2016-06-01|Has expired: isc-dhcp 4.1 is now End of Life

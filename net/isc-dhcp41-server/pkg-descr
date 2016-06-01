@@ -1,9 +1,0 @@
-The ISC Dynamic Host Configuration Protocol Distribution provides a
-freely redistributable reference implementation of all aspects of the
-DHCP protocol, through a suite of DHCP tools:
-
-  * A DHCP server (this port)
-  * A DHCP client
-  * A DHCP relay agent
-
-WWW: http://www.isc.org/products/DHCP/

@@ -261,7 +261,6 @@
     SUBDIR += ipxe
     SUBDIR += irrd
     SUBDIR += isboot-kmod
-    SUBDIR += isc-dhcp41-server
     SUBDIR += isc-dhcp43-client
     SUBDIR += isc-dhcp43-relay
     SUBDIR += isc-dhcp43-server
@@ -471,7 +470,6 @@
     SUBDIR += ocserv
     SUBDIR += ohphone
     SUBDIR += olsrd
-    SUBDIR += omcmd
     SUBDIR += omnitty
     SUBDIR += onenetd
     SUBDIR += onioncat
