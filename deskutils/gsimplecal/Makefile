@@ -2,6 +2,7 @@
 
 PORTNAME=	gsimplecal
 PORTVERSION=	2.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
 MAINTAINER=	lme@FreeBSD.org
@@ -11,7 +12,6 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dmedvinsky
-GH_TAGNAME=	c544ee9
 
 GNU_CONFIGURE=	yes
 

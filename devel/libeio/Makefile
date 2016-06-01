@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libeio
-PORTVERSION=	4.18.0
+PORTVERSION=	4.18
+DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	2
 CATEGORIES=	devel
 
@@ -11,7 +12,6 @@ COMMENT=	Full-featured asynchronous I/O library for C
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	scunningham
-GH_TAGNAME=	e1a62ab
 USES=		alias autoreconf libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

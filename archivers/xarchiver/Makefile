@@ -3,6 +3,7 @@
 
 PORTNAME=	xarchiver
 PORTVERSION=	0.5.4.6
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	archivers
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -17,7 +18,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ib
-GH_TAGNAME=	bb5fce0
 
 USES=		desktop-file-utils gmake pkgconfig tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool

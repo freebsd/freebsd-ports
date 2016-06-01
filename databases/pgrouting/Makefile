@@ -3,6 +3,7 @@
 
 PORTNAME=	pgrouting
 PORTVERSION=	2.2.3
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	databases geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
@@ -19,6 +20,5 @@ USES=		compiler:c++11-lib cmake localbase pgsql:9.1+ pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgRouting
-GH_TAGNAME=	8416c60
 
 .include <bsd.port.mk>

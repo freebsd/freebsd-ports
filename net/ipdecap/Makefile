@@ -2,6 +2,7 @@
 
 PORTNAME=	ipdecap
 PORTVERSION=	0.7.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	loic-freebsd@loicp.eu
@@ -18,7 +19,6 @@ PLIST_FILES=	bin/ipdecap\
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lpefferkorn
-GH_TAGNAME=	e9c6ba5
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake

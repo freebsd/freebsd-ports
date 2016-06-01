@@ -2,6 +2,7 @@
 
 PORTNAME=	rtv
 PORTVERSION=	1.9.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	arved@FreeBSD.org
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=3.2:www/py-tornado \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	michael-lazar
-GH_TAGNAME=	fc8d70f
 USES=		tar:xz python:3.3+
 USE_PYTHON=	distutils autoplist
 

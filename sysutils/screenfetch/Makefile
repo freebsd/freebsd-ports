@@ -3,6 +3,7 @@
 
 PORTNAME=	screenFetch
 PORTVERSION=	3.7.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/jgh/sysutils/${PORTNAME:tl}/
 
@@ -19,7 +20,6 @@ OPTIONS_DEFINE=	DOCS
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	KittyKatt
-GH_TAGNAME=	ca2175e
 
 PLIST_FILES=	bin/screenFetch bin/screenfetch man/man1/screenfetch.1.gz
 PORTDOCS=	CHANGELOG README.mkdn TODO

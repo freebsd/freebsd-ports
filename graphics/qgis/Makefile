@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.14.2
+DISTVERSIONPREFIX=	final-
+DISTVERSION=	2_14_2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -23,7 +24,6 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	b3e642c
 
 USES=		cpe bison cmake desktop-file-utils execinfo fortran gmake python:2 sqlite
 USE_QT4=	gui svg xml network sql designer testlib linguist_build \

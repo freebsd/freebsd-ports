@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	pg_stat_kcache
-PORTVERSION=	2.0.2
+DISTVERSIONPREFIX=	REL
+DISTVERSION=	2_0_2
 CATEGORIES=	databases
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dalibo
-GH_TAGNAME=	REL2_0_2
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Gather statistics about PostgreSQL I/O and CPU usage 

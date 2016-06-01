@@ -4,7 +4,6 @@
 PORTNAME=	check_zpools
 PORTVERSION=	1.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	GH
 PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	tj@FreeBSD.org
@@ -14,7 +13,6 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Napsty
-GH_PROJECT=	check_zpools
 GH_TAGNAME=	0334625
 NO_BUILD=	yes
 USES=		shebangfix

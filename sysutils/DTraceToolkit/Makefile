@@ -4,14 +4,14 @@
 PORTNAME=	dtrace-toolkit
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-USE_GITHUB=	yes
-GH_ACCOUNT=	opendtrace
-GH_PROJECT=	toolkit
-GH_TAGNAME=	f36d00b
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of useful scripts for DTrace
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	opendtrace
+GH_PROJECT=	toolkit
+GH_TAGNAME=	f36d00b
 USES=		shebangfix
 SHEBANG_LANG=	sh
 sh_OLD_CMD=	/usr/bin/sh ./sh

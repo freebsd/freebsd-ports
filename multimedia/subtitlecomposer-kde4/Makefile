@@ -2,6 +2,7 @@
 
 PORTNAME=	subtitlecomposer
 PORTVERSION=	0.5.7
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	multimedia kde
 
@@ -16,7 +17,6 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build phonon
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxrd2
-GH_TAGNAME=	c73db78
 
 OPTIONS_GROUP=	BACKEND
 BACKEND_DESC=	Additional video backens
