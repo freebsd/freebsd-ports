@@ -1,6 +1,6 @@
---- config.mk.orig	2014-11-15 15:01:02.000000000 +0100
-+++ config.mk	2015-01-08 12:08:14.000000000 +0100
-@@ -4,7 +4,7 @@
+--- config.mk.orig	2016-01-09 11:40:56 UTC
++++ config.mk
+@@ -4,14 +4,14 @@ VERSION = 0.15
  # Customize below to fit your system
  
  PREFIX ?= /usr/local
@@ -9,16 +9,11 @@
  # specify your systems terminfo directory
  # leave empty to install into your home folder
  TERMINFO := ${DESTDIR}${PREFIX}/share/terminfo
-@@ -21,10 +21,10 @@
- # Cygwin
- #INCS = -I/usr/include/ncurses
  
--CFLAGS += -std=c99 -Os ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700
-+CFLAGS += -std=c99 ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -D__BSD_VISIBLE
+ INCS = -I.
+ LIBS = -lc -lutil -lncursesw
+-CPPFLAGS = -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -D_XOPEN_SOURCE_EXTENDED
++CPPFLAGS = -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -D_XOPEN_SOURCE_EXTENDED -D__BSD_VISIBLE
+ CFLAGS += -std=c99 ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG ${CPPFLAGS}
  LDFLAGS += ${LIBS}
  
- DEBUG_CFLAGS = ${CFLAGS} -UNDEBUG -O0 -g -ggdb -Wall -Wextra -Wno-unused-parameter
- 
--CC = cc
-+CC ?= cc
- STRIP = strip
