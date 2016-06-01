@@ -5,6 +5,36 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160601
+  AFFECTS: users of security/libressl-devel
+  AUTHOR: brnrd@FreeBSD.org
+
+  The port has been updated to the latest "unstable" version of LibreSSL.
+  The shared library versions of the libraries have been bumped.
+  With this update, the patch for the OPENSSL_VERSION_NUMBER has been
+  removed. This causes issues with a number of ports. Patches for many of
+  these issues can be found on 
+  https://wiki.freebsd.org/OpenSSL/Ports#OPENSSL_VERSION_NUMBER
+
+  After upgrading to 2.4.0, manually update all packages that depend on
+  any of the libraries provided by LibreSSL (libssl, libcrypto and
+  libtls) since the versions of these libraries have changed. Normally,
+  you can obtain the list of dependent software by running the following
+  command:
+
+  # pkg info -r libressl-devel
+
+  Then you should rebuild all ports depending on libressl-devel to avoid
+  dangling shared library dependencies. Poudriere and pkg handle this
+  correctly, portmaster and portupgrade users can use the following to
+  rebuild all dependent ports.
+
+  Portmaster users:
+      portmaster -r libressl-devel
+  Portupgrade users:
+      portupgrade -fr security/libressl-devel
+
+
 20160527
   AFFECTS: Users of mail/opensmtpd-extras (any of them)
   AUTHOR: adamw@FreeBSD.org
