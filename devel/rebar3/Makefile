@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
-DISTFILES=	rebar3-cache-4${EXTRACT_SUFX}:deps
+DISTFILES=	rebar3-cache-5${EXTRACT_SUFX}:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		rebar3-cache-4${EXTRACT_SUFX}
+		rebar3-cache-5${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Build tool for Erlang
@@ -36,11 +36,11 @@ REBAR_DEPS=	bbmustache-1.0.4 \
 		certifi-0.4.0 \
 		cf-0.2.1 \
 		cth_readable-1.2.2 \
-		erlware_commons-0.19.0 \
+		erlware_commons-0.21.0 \
 		eunit_formatters-0.3.1 \
 		getopt-0.8.2 \
 		providers-1.6.0 \
-		relx-3.17.0 \
+		relx-3.19.0 \
 		ssl_verify_hostname-1.0.5
 
 .for _dep in ${REBAR_DEPS} ${REBAR_PLUGINS}
