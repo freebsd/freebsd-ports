@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbluray
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
