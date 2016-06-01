@@ -23,7 +23,7 @@ include/tcl%%TCL_VER%%/generic/tclParse.h
 include/tcl%%TCL_VER%%/generic/tclPlatDecls.h
 include/tcl%%TCL_VER%%/generic/tclPort.h
 include/tcl%%TCL_VER%%/generic/tclRegexp.h
-include/tcl%%TCL_VER%%/generic/tclStringRep.h                                                                                                      
+include/tcl%%TCL_VER%%/generic/tclStringRep.h
 include/tcl%%TCL_VER%%/generic/tclStringTrim.h
 include/tcl%%TCL_VER%%/generic/tclTomMath.h
 include/tcl%%TCL_VER%%/generic/tclTomMathDecls.h
@@ -67,14 +67,14 @@ lib/tcl%%TCL_VER%%/encoding/cp850.enc
 lib/tcl%%TCL_VER%%/encoding/cp852.enc
 lib/tcl%%TCL_VER%%/encoding/cp855.enc
 lib/tcl%%TCL_VER%%/encoding/cp857.enc
-lib/tcl%%TCL_VER%%/encoding/cp860.enc                                                                                                              
-lib/tcl%%TCL_VER%%/encoding/cp861.enc                                                                                                              
-lib/tcl%%TCL_VER%%/encoding/cp862.enc                                                                                                              
-lib/tcl%%TCL_VER%%/encoding/cp863.enc                                                                                                              
-lib/tcl%%TCL_VER%%/encoding/cp864.enc                                                                                                              
-lib/tcl%%TCL_VER%%/encoding/cp865.enc                                                                                                              
-lib/tcl%%TCL_VER%%/encoding/cp866.enc                                                                                                              
-lib/tcl%%TCL_VER%%/encoding/cp869.enc                                                                                                              
+lib/tcl%%TCL_VER%%/encoding/cp860.enc
+lib/tcl%%TCL_VER%%/encoding/cp861.enc
+lib/tcl%%TCL_VER%%/encoding/cp862.enc
+lib/tcl%%TCL_VER%%/encoding/cp863.enc
+lib/tcl%%TCL_VER%%/encoding/cp864.enc
+lib/tcl%%TCL_VER%%/encoding/cp865.enc
+lib/tcl%%TCL_VER%%/encoding/cp866.enc
+lib/tcl%%TCL_VER%%/encoding/cp869.enc
 lib/tcl%%TCL_VER%%/encoding/cp874.enc
 lib/tcl%%TCL_VER%%/encoding/cp932.enc
 lib/tcl%%TCL_VER%%/encoding/cp936.enc
@@ -1319,7 +1319,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Bahrain
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Baku
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Bangkok
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Barnaul                                                                                                             
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Barnaul
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Beirut
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Bishkek
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Brunei
@@ -1391,7 +1391,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Thimbu
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Thimphu
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Tokyo
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Tomsk                                                                                                               
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Tomsk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ujung_Pandang
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ulaanbaatar
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ulan_Bator
@@ -1497,7 +1497,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Etc/Zulu
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Amsterdam
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Andorra
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Astrakhan                                                                                                         
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Astrakhan
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Athens
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Belfast
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Belgrade
@@ -1518,7 +1518,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Jersey
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Kaliningrad
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Kiev
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Kirov                                                                                                             
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Kirov
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Lisbon
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Ljubljana
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/London
@@ -1546,7 +1546,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Tallinn
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Tirane
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Tiraspol
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Ulyanovsk 
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Ulyanovsk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Uzhgorod
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Vaduz
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Vatican
