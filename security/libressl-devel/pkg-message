@@ -1,0 +1,15 @@
+
+****************************************************************************
+
+In version 2.4.0, the OPENSSL_VERSION_NUMBER patch has been removed.
+
+Before, the version for the FreeBSD ports was locked to the time of forking,
+which was 1.0.1f (0x1000107fL). Now the version is unmodified (0x20000000L).
+
+Ports that check e.g. >= 0x10002000 to determine features added in OpenSSL
+1.0.2 are likely to fail during build. Fixes for ports known to fail this
+way are collected in:
+
+   https://wiki.freebsd.org/LibreSSL/Ports#OPENSSL_VERSION_NUMBER
+
+****************************************************************************
