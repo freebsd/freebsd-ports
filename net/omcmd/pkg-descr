@@ -1,6 +1,0 @@
-omcmd is a CLI utility for performing OMAPI queries and updates on a
-running ISC DHCP server, such as adding a host entry or querying a lease.
-Unlike omshell, it is designed to be readily usable by shell scripts;
-it has simple one-shot commands and returns error codes.
-
-WWW: http://freshmeat.net/projects/omcmd
