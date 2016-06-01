@@ -12,10 +12,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig
-RUN_DEPENDS=	mysql${MYSQL_VER}-server>5.6:databases/mysql56-server
 
 USE_OPENLDAP=	yes
-USES=		gmake mysql
+USES=		gmake mysql:client,server
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ateamsystems
