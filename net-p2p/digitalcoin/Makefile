@@ -9,6 +9,8 @@ CATEGORIES=	net-p2p
 MAINTAINER=	myst3r10n@rocketmail.com
 COMMENT=	Alternative Bitcoin peer-to-peer currency client
 
+BROKEN=		Unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 

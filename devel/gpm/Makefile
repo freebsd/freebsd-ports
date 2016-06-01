@@ -3,6 +3,7 @@
 
 PORTNAME=	gpm
 PORTVERSION=	1.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	lukejee@gmail.com
@@ -16,7 +17,6 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pote
-GH_TAGNAME=	fef7bf2
 
 NO_BUILD=	yes
 

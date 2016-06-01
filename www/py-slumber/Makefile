@@ -26,7 +26,6 @@ USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
 GH_ACCOUNT=	samgiles
-GH_TAGNAME=	d84e140
 
 NO_ARCH=	yes
 

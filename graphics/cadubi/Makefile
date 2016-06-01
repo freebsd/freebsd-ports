@@ -13,7 +13,6 @@ LICENSE=	ART10
 RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
 GH_ACCOUNT=	statico
-GH_PROJECT=	cadubi
 GH_TAGNAME=	v1.3
 USE_GITHUB=	yes
 USES=		perl5 shebangfix

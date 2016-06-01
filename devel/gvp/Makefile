@@ -3,6 +3,7 @@
 
 PORTNAME=	gvp
 PORTVERSION=	0.3.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	lukejee@gmail.com
@@ -20,7 +21,6 @@ SHEBANG_FILES=	bin/gvp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pote
-GH_TAGNAME=	8bcab74
 
 NO_BUILD=	yes
 

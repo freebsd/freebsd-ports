@@ -3,6 +3,7 @@
 
 PORTNAME=	sshfs
 PORTVERSION=	2.7
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -15,7 +16,6 @@ KMODDIR?=	${LOCALBASE}/modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libfuse
-GH_TAGNAME=	a9a1cc0
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf fuse pkgconfig

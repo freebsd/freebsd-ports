@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	bareos
+DISTVERSIONPREFIX=	Release/
 DISTVERSION=	15.2.2
 PORTREVISION?=	3
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
 
-USE_GITHUB=	yes
-GH_TAGNAME=	fb775025d54ef77abb4d67cc5aa9ecb90bca4839
-
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Backup archiving recovery open sourced (server)
+
+USE_GITHUB=	yes
 
 USES+=		libtool:keepla pkgconfig
 

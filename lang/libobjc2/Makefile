@@ -3,6 +3,7 @@
 
 PORTNAME=	libobjc2
 PORTVERSION=	1.8.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	lang devel gnustep
 
 MAINTAINER=	theraven@FreeBSD.org
@@ -16,7 +17,6 @@ BROKEN_sparc64=		Does not compile on sparc64: Cannot configure clang properly
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnustep
-GH_TAGNAME=	5a21dd1
 
 .include <bsd.port.options.mk>
 

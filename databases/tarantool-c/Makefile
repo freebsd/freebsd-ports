@@ -11,7 +11,6 @@ COMMENT=	C client for Tarantool 1.6+
 LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck
 
 USE_GITHUB=	yes
-GH_PROJECT=	${PORTNAME}
 GH_ACCOUNT=	tarantool
 GH_TAGNAME=	a251965
 
