@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	9.1.0
+PORTVERSION=	9.2.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--without-curl \
 		--with-boost-regex=boost_regex
 
 BROKEN_sparc64=	does not install
-BROKEN_FreeBSD_9=	segfault in gcc
 
 OPTIONS_DEFINE=	FLAC NLS QT5
 OPTIONS_DEFAULT=	FLAC QT5
