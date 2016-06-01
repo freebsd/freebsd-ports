@@ -18,6 +18,8 @@ NO_WRKSUBDIR=	yes
 USES=		gmake lua:51 shebangfix
 SHEBANG_FILES=	DBI.lua
 
+MAKE_JOBS_UNSAFE=	yes
+
 CFLAGS+=	-fpic -I${LOCALBASE}/include -I${LUA_INCDIR} -I. \
 		-I${LOCALBASE}/include/postgresql/server
 LDFLAGS+=	-shared -L${LOCALBASE}/lib -L${LUA_LIBDIR}
