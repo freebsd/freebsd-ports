@@ -298,7 +298,7 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_INCDIR} \
 				--with-extra-libs=${LOCALBASE}/lib
 .endif # !defined(QT_NONSTANDARD)
 
-_USE_QT_ALL=	assistant clucene dbus declarative designer gui help \
+_USE_QT_ALL=	assistant clucene dbus declarative designer doc gui help \
 				imageformats l10n linguist linguisttools multimedia \
 				network opengl pixeltool qdbusviewer qmake script \
 				scripttools sql sql-ibase sql-mysql sql-odbc sql-pgsql \
@@ -306,7 +306,7 @@ _USE_QT_ALL=	assistant clucene dbus declarative designer gui help \
 				xml xmlpatterns
 
 _USE_QT4_ONLY=	accessible assistant-adp assistantclient codecs-cn codecs-jp \
-				codecs-kr codecs-tw corelib demo doc graphicssystems-opengl \
+				codecs-kr codecs-tw corelib demo graphicssystems-opengl \
 				help-tools iconengines inputmethods makeqpf moc phonon \
 				phonon-gst porting qdoc3 qmlviewer qt3support qtconfig \
 				qtestlib qvfb rcc uic uic3 xmlpatterns-tool
