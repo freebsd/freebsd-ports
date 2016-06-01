@@ -11,8 +11,6 @@ DISTNAME=	Tcl+Source+Code-${FOSSIL_CHECKIN}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tool Command Language
 
-FOSSIL_CHECKIN=	a9621cd6b9
-
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
@@ -24,6 +22,8 @@ TCLMAN_DESC=	Install Tcl function manpages
 TZDATA_DESC=	Install Tcl timezone data
 MODULES_DESC=	Install Tcl common modules
 OPTIONS_SUB=	yes
+
+FOSSIL_CHECKIN=	a9621cd6b9
 
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME:S/+/_/g}
 WRKSRC=		${PATCH_WRKSRC}/unix
