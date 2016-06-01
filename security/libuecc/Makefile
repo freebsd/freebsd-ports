@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libuecc
-PORTVERSION=	6
-PORTREVISION=	1
+PORTVERSION=	7
 CATEGORIES=	security
 MASTER_SITES=	https://git.universe-factory.net/libuecc/snapshot/ \
 		http://git.universe-factory.net/libuecc/snapshot/
