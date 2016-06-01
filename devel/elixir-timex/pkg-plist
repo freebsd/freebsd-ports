@@ -131,6 +131,13 @@ lib/elixir/lib/timex/priv/translations/en/LC_MESSAGES/relative_time.po
 lib/elixir/lib/timex/priv/translations/en/LC_MESSAGES/symbols.po
 lib/elixir/lib/timex/priv/translations/en/LC_MESSAGES/units.po
 lib/elixir/lib/timex/priv/translations/en/LC_MESSAGES/weekdays.po
+lib/elixir/lib/timex/priv/translations/it/LC_MESSAGES/day_periods.po
+lib/elixir/lib/timex/priv/translations/it/LC_MESSAGES/months.po
+lib/elixir/lib/timex/priv/translations/it/LC_MESSAGES/numbers.po
+lib/elixir/lib/timex/priv/translations/it/LC_MESSAGES/relative_time.po
+lib/elixir/lib/timex/priv/translations/it/LC_MESSAGES/symbols.po
+lib/elixir/lib/timex/priv/translations/it/LC_MESSAGES/units.po
+lib/elixir/lib/timex/priv/translations/it/LC_MESSAGES/weekdays.po
 lib/elixir/lib/timex/priv/translations/ja/LC_MESSAGES/day_periods.po
 lib/elixir/lib/timex/priv/translations/ja/LC_MESSAGES/months.po
 lib/elixir/lib/timex/priv/translations/ja/LC_MESSAGES/numbers.po
@@ -140,6 +147,13 @@ lib/elixir/lib/timex/priv/translations/ja/LC_MESSAGES/units.po
 lib/elixir/lib/timex/priv/translations/ja/LC_MESSAGES/weekdays.po
 lib/elixir/lib/timex/priv/translations/months.pot
 lib/elixir/lib/timex/priv/translations/numbers.pot
+lib/elixir/lib/timex/priv/translations/pt/LC_MESSAGES/day_periods.po
+lib/elixir/lib/timex/priv/translations/pt/LC_MESSAGES/months.po
+lib/elixir/lib/timex/priv/translations/pt/LC_MESSAGES/numbers.po
+lib/elixir/lib/timex/priv/translations/pt/LC_MESSAGES/relative_time.po
+lib/elixir/lib/timex/priv/translations/pt/LC_MESSAGES/symbols.po
+lib/elixir/lib/timex/priv/translations/pt/LC_MESSAGES/units.po
+lib/elixir/lib/timex/priv/translations/pt/LC_MESSAGES/weekdays.po
 lib/elixir/lib/timex/priv/translations/relative_time.pot
 lib/elixir/lib/timex/priv/translations/ru/LC_MESSAGES/day_periods.po
 lib/elixir/lib/timex/priv/translations/ru/LC_MESSAGES/months.po
