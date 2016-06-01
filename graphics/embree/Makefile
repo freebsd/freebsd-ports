@@ -4,6 +4,7 @@
 PORTNAME=	embree
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -24,8 +25,7 @@ USE_XORG=	xmu
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DRTCORE_TASKING_SYSTEM:STRING=INTERNAL \
-		-DENABLE_ISPC_SUPPORT:BOOL=OFF \
-		-DCOMPILER:STRING=${CHOSEN_COMPILER_TYPE:tu}
+		-DENABLE_ISPC_SUPPORT:BOOL=OFF
 
 CXXFLAGS+=	-msse2					# required on i386
 
@@ -57,5 +57,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/encodeRGB8_to_JPEG/s,size_t \*,unsigned \
 		long *,' ${WRKSRC}/tutorials/common/image/image.h \
 		${WRKSRC}/tutorials/common/image/jpeg.cpp
+	@${REINPLACE_CMD} -e 's,__forceinline,inline __attribute__((always_inline)),' \
+		${WRKSRC}/include/embree2/rtcore_ray.h
 
 .include <bsd.port.mk>
