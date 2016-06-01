@@ -17,8 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClusterLabs
-GH_PROJECT=	crmsh
-GH_TAGNAME=	2.2.0
 
 USES=		autoreconf gmake python:2 shebangfix
 GNU_CONFIGURE=	yes

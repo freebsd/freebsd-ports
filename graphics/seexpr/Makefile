@@ -13,14 +13,13 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wdas
+GH_PROJECT=	SeExpr
 
 USES=		bison cmake compiler:c++0x pyqt:4 python
 USE_PYQT=	gui_build sip_build
 USE_QT4=	moc_build qmake_build rcc_build uic_build gui opengl
 
 MAKE_JOBS_UNSAFE=	yes
-
-WRKSRC=		${WRKDIR}/SeExpr-${GH_TAGNAME_EXTRACT}
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 

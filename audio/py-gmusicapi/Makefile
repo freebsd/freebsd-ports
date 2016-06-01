@@ -29,8 +29,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.3.0:devel/py-appdirs \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simon-weber
-GH_PROJECT=	gmusicapi
-GH_TAGNAME=	18ff98e
 
 USES=		python
 USE_PYTHON=	distutils autoplist

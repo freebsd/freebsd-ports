@@ -22,7 +22,6 @@ DATADIRLIB=	${PREFIX}/lib/${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	dswd
 GH_PROJECT=	Swine
-GH_TAGNAME=	1770c40
 
 USES=		gmake python
 NO_BUILD=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	pacemaker
 PORTVERSION=	1.1.14
+DISTVERSIONPREFIX=	Pacemaker-
 CATEGORIES=	net
 
 MAINTAINER=	dpejesh@yahoo.com
@@ -30,8 +31,6 @@ GROUPS=		haclient
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClusterLabs
-GH_PROJECT=	pacemaker
-GH_TAGNAME=	Pacemaker-1.1.14
 
 USES=		autoreconf gmake libtool pathfix pkgconfig python shebangfix
 USE_GCC=	yes

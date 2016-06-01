@@ -19,7 +19,6 @@ SHEBANG_FILES=	../../arch/lkl/scripts/headers_install.py
 USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	lkl
 GH_PROJECT=	linux
 GH_TAGNAME=	64a367f522c6ec4fbed0193589d7733b06ab7968
 

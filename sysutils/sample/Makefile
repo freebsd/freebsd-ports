@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/libbfd \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freenas
-GH_PROJECT=	sample
 GH_TAGNAME=	45e2b86
 
 USES=		python:build kmod

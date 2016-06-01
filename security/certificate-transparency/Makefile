@@ -31,7 +31,6 @@ CONFIGURE_ENV+=	"CFLAGS+=-I${LOCALBASE}/include CXXFLAGS+=-lgtest CXXFLAGS+=-lgm
 MAKE_FLAGS+=	"V=1"
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_PROJECT=	certificate-transparency
 GH_TAGNAME=	1cdd6b5
 
 CPPFLAGS+=	"-I${LOCALBASE}/include"

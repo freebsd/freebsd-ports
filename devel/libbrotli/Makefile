@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
 post-extract:
-	${RMDIR} ${WRKSRC}/brotli && ${MV} ${WRKDIR}/brotli-${BROTLI_VERSION} ${WRKSRC}/brotli
+	${RMDIR} ${WRKSRC}/brotli && ${MV} ${WRKSRC_brotli} ${WRKSRC}/brotli
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
