@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	baikal
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fruux/Baikal/releases/download/${PORTVERSION}/
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=	zip
-USE_PHP=	ctype filter xml xmlreader xmlwriter pdo_sqlite session mbstring dom
+USE_PHP=	ctype dom filter mbstring openssl pdo_sqlite session xml xmlreader xmlwriter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

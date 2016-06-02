@@ -862,6 +862,7 @@
 %%WWWDIR%%/vendor/sabre/vobject/lib/ITip/SameOrganizerForAllComponentsException.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/InvalidDataException.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Node.php
+%%WWWDIR%%/vendor/sabre/vobject/lib/PHPUnitAssertions.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Parameter.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/ParseException.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Parser/Json.php
@@ -944,6 +945,7 @@
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerProcessMessageTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerProcessReplyTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerTester.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerTimezoneInParseEventInfoWithoutMasterTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerUpdateEventTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/EvolutionTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/MessageTest.php
@@ -998,7 +1000,6 @@
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Splitter/ICalendarTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Splitter/VCardTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/StringUtilTest.php
-%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/TestCase.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/TimeZoneUtilTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/UUIDUtilTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/VCard21Test.php
@@ -1008,7 +1009,6 @@
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/issue153.vcf
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/issue64.vcf
 %%WWWDIR%%/vendor/sabre/vobject/tests/bootstrap.php
-%%WWWDIR%%/vendor/sabre/vobject/tests/phpcs/ruleset.xml
 %%WWWDIR%%/vendor/sabre/vobject/tests/phpunit.xml
 %%WWWDIR%%/vendor/sabre/xml/.gitignore
 %%WWWDIR%%/vendor/sabre/xml/.travis.yml
