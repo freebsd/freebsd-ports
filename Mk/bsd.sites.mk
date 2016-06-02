@@ -611,8 +611,8 @@ GH_TAGNAME:=	${GH_TAGNAME_DEFAULT}
 .  if defined(GH_TAGNAME)
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
 # Github silently converts tags starting with v to not have v in the filename
-# and extraction directory.
-GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/}
+# and extraction directory.  It also replaces + with -.
+GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g}
 .  endif 
 .  if defined(_GITHUB_MUST_SET_DISTNAME)
 # GH_TAGNAME defaults to DISTVERSIONFULL; Avoid adding DISTVERSIONFULL in twice
