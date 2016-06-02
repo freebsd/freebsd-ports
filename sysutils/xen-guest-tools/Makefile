@@ -2,32 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	xen-guest-tools
-PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTVERSION=	4.6.1
 CATEGORIES=	sysutils
+MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 DISTNAME=	xen-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Xen tools within FreeBSD domU
 
-MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
-DISTFILES=	xen-${PORTVERSION}.tar.gz
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/lib/libglib-2.0.so:devel/glib20 \
+		${LOCALBASE}/lib/libargp.so:devel/argp-standalone \
 		${LOCALBASE}/lib/libyajl.so:devel/yajl
+
+ONLY_FOR_ARCHS=		amd64 i386 ia64
+ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386, or ia64"
+CONFLICTS=	xen-tools-[0-9]*
 
 USES=		gmake python:2.7:configure perl5 gettext-runtime:build gettext-tools:build pkgconfig
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD} PYTHON_PATH=${PYTHON_CMD}
 CONFIGURE_ENV+=	APPEND_LIB="${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-I${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-
-CONFLICTS=	xen-tools-[0-9]*
-
-ONLY_FOR_ARCHS=		amd64 i386 ia64
-ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386, or ia64"
 
 PLIST_FILES=	lib/libxenstore.so.3.0 \
 		bin/xen-detect \
