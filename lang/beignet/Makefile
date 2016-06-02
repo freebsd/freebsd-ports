@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beignet
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/
 DISTVERSIONSUFFIX=	-source
@@ -36,9 +35,6 @@ BROKEN_FreeBSD_9=	Beignet is only supported on FreeBSD 10.1 and newer
 # running tests from makefile doesn't work quite yet, so comment them out for now.
 #OPTIONS_DEFINE=	TESTS
 #TESTS_DESC=	Build and run the test suite
-
-EXTRA_PATCHES=	${PATCHDIR}/llvm37-68b5180:-p1 \
-		${PATCHDIR}/llvm37-27522f9:-p1
 
 .include <bsd.port.options.mk>
 
