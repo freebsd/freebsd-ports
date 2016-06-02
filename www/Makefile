@@ -839,6 +839,7 @@
     SUBDIR += p5-Dancer-Plugin-Lexicon
     SUBDIR += p5-Dancer-Plugin-Memcached
     SUBDIR += p5-Dancer-Plugin-REST
+    SUBDIR += p5-Dancer-Plugin-RPC
     SUBDIR += p5-Dancer-Plugin-SiteMap
     SUBDIR += p5-Dancer-Plugin-ValidationClass
     SUBDIR += p5-Dancer-Session-Cookie
