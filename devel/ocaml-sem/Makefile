@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX semaphores for OCaml
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		gmake tar:bzip2
 USE_OCAML=	yes
 USE_OCAML_LDCONFIG=	yes
@@ -21,15 +24,16 @@ MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/sem" \
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-OPTIONS_DEFINE=	DOCS
 
 .if !defined(WITH_CUSTOM)
 MAKE_ENV+=	NO_CUSTOM=y
 .endif
 
-post-install:
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
-	${CP} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
