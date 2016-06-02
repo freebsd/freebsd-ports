@@ -290,7 +290,6 @@
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
     SUBDIR += rubinius
-    SUBDIR += ruby20
     SUBDIR += ruby21
     SUBDIR += ruby22
     SUBDIR += ruby23
@@ -340,6 +339,7 @@
     SUBDIR += tcl84
     SUBDIR += tcl85
     SUBDIR += tcl86
+    SUBDIR += tcl87
     SUBDIR += tclX
     SUBDIR += tinypy
     SUBDIR += tolua

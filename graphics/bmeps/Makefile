@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	bmpp
-PORTVERSION=	4.2.2
+PORTVERSION=	4.3.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	takefu@airport.fm
 COMMENT=	Convert PNG/JPEG/TIFF to PDF/EPS
 
 LICENSE=	BSD3CLAUSE

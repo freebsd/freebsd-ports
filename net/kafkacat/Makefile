@@ -4,7 +4,6 @@
 PORTNAME=	kafkacat
 PORTVERSION=	1.2.0
 CATEGORIES=	net
-DISTNAME=	${GH_ACCOUNT}-${PORTNAME}-${PORTVERSION}-${GH_TAGNAME}
 
 MAINTAINER=	xnasx@yandex.ru
 COMMENT=	Generic command line non-JVM Apache Kafka producer and consumer
@@ -17,7 +16,6 @@ LIB_DEPENDS=	librdkafka.so:net/librdkafka
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	edenhill
-GH_TAGNAME=	e2806ae
 
 PLIST_FILES=	bin/kafkacat
 

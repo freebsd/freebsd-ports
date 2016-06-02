@@ -14,9 +14,8 @@ LICENSE=	APACHE20
 USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	cc6329d
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 .include <bsd.port.mk>

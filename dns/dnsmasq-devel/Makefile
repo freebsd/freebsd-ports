@@ -14,7 +14,7 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-#IGNORE=		build stable version instead, it is newer than this release candidate
+IGNORE=		build stable version instead, it is newer than this release candidate
 CONFLICTS_INSTALL=dnsmasq-2*
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
@@ -26,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
 OPTIONS_DEFINE=		IPV6 DBUS LUA DNSSEC DOCS
-OPTIONS_DEFAULT=	IPV6 NLS DNSSEC
+OPTIONS_DEFAULT=	DNSSEC
 OPTIONS_EXCLUDE+=	EXAMPLES
 OPTIONS_RADIO=		INTL
 OPTIONS_RADIO_INTL=	IDN NLS

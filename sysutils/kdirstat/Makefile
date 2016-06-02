@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/jeromerobert-k4dirstat-3a4663ee20e7
 
 USES=		cmake cpe desktop-file-utils gettext-tools tar:bzip2
 CPE_VENDOR=	kdirstat_project
-USE_KDE4=	automoc4 kdelibs kdeprefix libkonq
+USE_KDE4=	automoc4 kdelibs libkonq
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes
 

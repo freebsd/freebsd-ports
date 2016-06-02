@@ -15,17 +15,17 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Structured information storage program
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 BUILD_DEPENDS=	aspell:textproc/aspell
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:net/py-qt4-network \
-		aspell:textproc/aspell
+RUN_DEPENDS=	aspell:textproc/aspell
 
-WRKSRC=		${WRKDIR}/TreeLine
-USE_QT4=	# empty
-USES=		python:2
+USES=		python:2 pyqt:4
+USE_PYQT=	gui network sip_build	
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+WRKSRC=		${WRKDIR}/TreeLine
 
 DESKTOP_ENTRIES=	"TreeLine" "" "${DATADIR}/icons/tree/treeline.png" \
 			"${PORTNAME}" "Utility;" false

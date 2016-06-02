@@ -1,4 +1,3 @@
 %%SITE_PERL%%/HTML/FormatText/WithLinks/AndTables.pm
 %%SITE_PERL%%/HTML/FormatText/WithLinks/README.pod
 %%PERL5_MAN3%%/HTML::FormatText::WithLinks::AndTables.3.gz
-%%PERL5_MAN3%%/HTML::FormatText::WithLinks::README.3.gz

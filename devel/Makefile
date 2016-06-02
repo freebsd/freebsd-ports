@@ -53,6 +53,7 @@
     SUBDIR += ace
     SUBDIR += ace+tao-doc
     SUBDIR += acme
+    SUBDIR += acsccid
     SUBDIR += activitymail
     SUBDIR += ada-util
     SUBDIR += adabooch
@@ -307,6 +308,7 @@
     SUBDIR += cppi
     SUBDIR += cpptest
     SUBDIR += cppunit
+    SUBDIR += cpputest
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += cram
@@ -366,6 +368,7 @@
     SUBDIR += dasm
     SUBDIR += datadraw
     SUBDIR += dbus
+    SUBDIR += dbus-c++
     SUBDIR += dbus-glib
     SUBDIR += dbus-qt4
     SUBDIR += dbus-qt5
@@ -1480,7 +1483,6 @@
     SUBDIR += makedepend
     SUBDIR += mate-common
     SUBDIR += matreshka
-    SUBDIR += maven-ant-tasks
     SUBDIR += maven-wrapper
     SUBDIR += maven3
     SUBDIR += maven31
@@ -1618,6 +1620,7 @@
     SUBDIR += open-usp-tukubai
     SUBDIR += opencl
     SUBDIR += opencvs
+    SUBDIR += opendht
     SUBDIR += opengrok
     SUBDIR += openmp
     SUBDIR += openocd
@@ -4138,6 +4141,7 @@
     SUBDIR += py-hghooks
     SUBDIR += py-hgsubversion
     SUBDIR += py-hgtools
+    SUBDIR += py-http-prompt
     SUBDIR += py-humanize
     SUBDIR += py-hypothesis
     SUBDIR += py-icalendar
@@ -4315,6 +4319,7 @@
     SUBDIR += py-pymtbl
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
+    SUBDIR += py-pyqi
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
@@ -4641,6 +4646,7 @@
     SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
+    SUBDIR += qbs
     SUBDIR += qbzr
     SUBDIR += qca
     SUBDIR += qca-qt5
@@ -4794,7 +4800,6 @@
     SUBDIR += rubygem-ast
     SUBDIR += rubygem-astrolabe
     SUBDIR += rubygem-atomic
-    SUBDIR += rubygem-atoulme-antwrap
     SUBDIR += rubygem-attic
     SUBDIR += rubygem-attr_required
     SUBDIR += rubygem-authlogic
@@ -4992,6 +4997,7 @@
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-launchy22
+    SUBDIR += rubygem-lazy_priority_queue
     SUBDIR += rubygem-librarian
     SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2

@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2016-05-25 09:58:50 UTC
++++ Makefile.in
+@@ -1,4 +1,5 @@
+ CFLAGS = @CFLAGS@
++CPPFLAGS= @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ CC = @CC@
+@@ -57,4 +58,4 @@ install_html: $(EXE).html
+ 	$(INSTALL) -D -m 0644 $< $(DESTDIR)$(htmldir)/$<
+ 
+ .c.o: $(HEADERS)
+-	$(CC) -c $(CFLAGS) -DVERSION='"$(VERSION)"' $<
++	$(CC) -c $(CFLAGS) $(CPPFLAGS) -DVERSION='"$(VERSION)"' $<

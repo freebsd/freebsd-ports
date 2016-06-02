@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ndpi
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	net
 MASTER_SITES=	SF/ntop/nDPI
 DISTNAME=	nDPI-${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	NTOP-maintained superset of the popular OpenDPI library
 
 LICENSE=	GPLv3
@@ -20,7 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-ljson-c
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=	 	alias autoreconf libtool pathfix pkgconfig compiler:c++11-lang
+USES=	 	alias autoreconf compiler:c++11-lang libtool pathfix pkgconfig tar:tgz
 WRKSRC=		${WRKDIR}/nDPI-${PORTVERSION}
 INSTALL_TARGET=	install-strip
 

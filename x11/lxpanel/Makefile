@@ -26,7 +26,7 @@ USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--with-plugins=netstatus,volume,volumealsa,deskno,batt,kbled,xkb,thermal,cpu,cpufreq,monitors,wnckpager \
-		--with-x \
+		--with-x --disable-silent-rules \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${WRKSRC}
@@ -41,14 +41,7 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MALSA}
-PLIST_SUB+=	VOLUME="@comment "
-.else
-PLIST_SUB+=	VOLUME=""
-.endif
+NLS_USES_OFF=	gettext-tools
 
 post-patch:
 	@${REINPLACE_CMD} -e '/g_thread_create/ \
@@ -105,22 +98,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|linux|sys|' \
 		${WRKSRC}/src/plugins/volume/volume-impl.c
 
-.if ! ${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's|po man|man|' \
 		${WRKSRC}/Makefile.in
-.endif
 
 post-install:
-.for l in netstatus deskno batt kbled xkb thermal cpu cpufreq monitors wnckpager
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lxpanel/plugins/${l}.so
-.endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lxpanel/plugins/*.so
 
-.if ${PORT_OPTIONS:MALSA}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lxpanel/plugins/volumealsa.so
-.else
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lxpanel/plugins/volume.so
-.endif
-
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

@@ -21,6 +21,7 @@
     SUBDIR += apq-mysql
     SUBDIR += apq-odbc
     SUBDIR += apq-pgsql
+    SUBDIR += ateam_mysql_ldap_auth
     SUBDIR += autobackupmysql
     SUBDIR += bbdb
     SUBDIR += beansdb
@@ -553,6 +554,7 @@
     SUBDIR += pg_citus
     SUBDIR += pg_reorg
     SUBDIR += pg_rman
+    SUBDIR += pg_stat_kcache
     SUBDIR += pg_statsinfo
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
@@ -572,6 +574,7 @@
     SUBDIR += pgpool-II-30
     SUBDIR += pgpool-II-33
     SUBDIR += pgpoolAdmin
+    SUBDIR += pgreplay
     SUBDIR += pgrouting
     SUBDIR += pgsphere
     SUBDIR += pgtcl
@@ -755,7 +758,6 @@
     SUBDIR += py-pickleshare
     SUBDIR += py-postgresql
     SUBDIR += py-psycogreen
-    SUBDIR += py-psycopg
     SUBDIR += py-psycopg2
     SUBDIR += py-psycopg2cffi
     SUBDIR += py-pyPgSQL
@@ -792,6 +794,7 @@
     SUBDIR += py-sybase
     SUBDIR += py-tarantool
     SUBDIR += py-umemcache
+    SUBDIR += py-unqlite
     SUBDIR += py-whisper
     SUBDIR += py3-bsddb3
     SUBDIR += py33-gdbm

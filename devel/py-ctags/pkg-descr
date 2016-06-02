@@ -9,4 +9,4 @@ This project wrote a wrapper for readtags.c. I have been using the package in
 a couple of projects and it has been shown that it could easily handle hundreds
 source files.
 
-WWW:	http://www.python.org/pypi/python-ctags/
+WWW: http://www.python.org/pypi/python-ctags/

@@ -1,0 +1,11 @@
+--- contrib/native/pjproject-2.4.5/aconfigure.ac.orig	2015-08-12 04:46:22 UTC
++++ contrib/native/pjproject-2.4.5/aconfigure.ac
+@@ -1151,7 +1151,7 @@ AC_ARG_ENABLE(openh264,
+ 
+ 		  AC_MSG_CHECKING([OpenH264 usability])
+ 
+-		  OPENH264_LIBS="-lopenh264 -lstdc++"
++		  OPENH264_LIBS="-lopenh264"
+ 		  
+ 		  SAVED_LIBS="$LIBS"
+ 		  SAVED_LDFLAGS="$LDFLAGS"

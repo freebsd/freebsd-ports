@@ -1,24 +1,15 @@
-============================================================
-    WARNING: THE API OF LibreSSL-devel is volatile
-============================================================
- This is the latest version of LibreSSL that will change
- its API and shared library version often. This will result
- in problems if you do not manage your ports rigorously.
 
- This version is safe for use and provides the latest
- libtls features.
+****************************************************************************
 
- Normally, you can obtain the list of dependent software by
- running the following command:
+In version 2.4.0, the OPENSSL_VERSION_NUMBER patch has been removed.
 
-  # pkg info -r libressl-devel
+Before, the version for the FreeBSD ports was locked to the time of forking,
+which was 1.0.1f (0x1000107fL). Now the version is unmodified (0x20000000L).
 
- Users using poudriere will automatically rebuild all ports
- that require SSL. 
+Ports that check e.g. >= 0x10002000 to determine features added in OpenSSL
+1.0.2 are likely to fail during build. Fixes for ports known to fail this
+way are collected in:
 
- Portmaster users:
-     portmaster -r libressl-devel
- Portupgrade users:
-     portupgrade -fr security/libressl-devel
+   https://wiki.freebsd.org/LibreSSL/Ports#OPENSSL_VERSION_NUMBER
 
-============================================================
+****************************************************************************

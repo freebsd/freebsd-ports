@@ -13,7 +13,7 @@ COMMENT=	KDE thumbnail generator for CHM files
 LIB_DEPENDS=	libchm.so:misc/chmlib
 
 USES=		cmake
-USE_KDE4=	kdeprefix kdelibs automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

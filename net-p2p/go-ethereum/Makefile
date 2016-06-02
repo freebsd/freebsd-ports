@@ -26,7 +26,7 @@ RLPDUMP_DESC=	Prints RLP structures
 USE_GITHUB=	yes
 GH_ACCOUNT=	ethereum
 
-USE_GCC=	4.8+
+USE_GCC=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/geth ${STAGEDIR}${PREFIX}/bin

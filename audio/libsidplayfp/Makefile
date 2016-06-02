@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	libsidplayfp
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.6
 CATEGORIES=	audio
 MASTER_SITES=	SF/sidplay-residfp/libsidplayfp/${PORTVERSION:R}
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Library to play Commodore 64 music derived from libsidplay2
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -35,7 +36,7 @@ MMX_CONFIGURE_ENABLE=	mmx
 
 BUILD_DEPENDS+=	xa65:devel/xa65
 
-SIDPLAYFP_SHLIB_VERSION=	4.2.5
+SIDPLAYFP_SHLIB_VERSION=	4.2.7
 STILVIEW_SHLIB_VERSION=	0.0.3
 PLIST_SUB+=	\
 	SIDPLAYFP_SHLIB_VER=${SIDPLAYFP_SHLIB_VERSION:C/\.[[:digit:].]+//} \

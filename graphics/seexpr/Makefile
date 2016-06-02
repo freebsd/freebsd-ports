@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	seexpr
-DISTVERSION=	1.0.1.2015.08.29
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+PORTVERSION=	2.9
 CATEGORIES=	graphics math
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -13,13 +13,13 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wdas
-GH_TAGNAME=	36ffb818b8
+GH_PROJECT=	SeExpr
 
 USES=		bison cmake compiler:c++0x pyqt:4 python
-USE_PYQT=	gui_build
+USE_PYQT=	gui_build sip_build
 USE_QT4=	moc_build qmake_build rcc_build uic_build gui opengl
 
-WRKSRC=		${WRKDIR}/SeExpr-${GH_TAGNAME_EXTRACT}
+MAKE_JOBS_UNSAFE=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 

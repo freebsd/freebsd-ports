@@ -4,4 +4,4 @@ just a handy little templating language for when your project
 outgrows string.Template or % substitution. It's small, it
 embeds Python in strings, and it doesn't do much else.
 
-WWW:	http://pythonpaste.org/tempita/
+WWW: http://pythonpaste.org/tempita/

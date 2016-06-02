@@ -38,7 +38,7 @@ OPTIONS_DEFINE=	GRADIENT CLOSE NLS
 GRADIENT_DESC=	Show a gradient look in the default theme
 CLOSE_DESC=	Show the close button in the default theme
 
-OPTIONS_DEFAULT=CLOSE NLS
+OPTIONS_DEFAULT=CLOSE
 
 .include <bsd.port.options.mk>
 

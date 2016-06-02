@@ -231,7 +231,6 @@
     SUBDIR += kde4-l10n-wa
     SUBDIR += kde4-xdg-env
     SUBDIR += kdeedu4
-    SUBDIR += kdehier4
     SUBDIR += kdeutils4
     SUBDIR += kenny
     SUBDIR += kgeography
@@ -416,6 +415,8 @@
     SUBDIR += qt4-l10n
     SUBDIR += qt4-qtconfig
     SUBDIR += qt4-qtdemo
+    SUBDIR += qt5-doc
+    SUBDIR += qt5-examples
     SUBDIR += qt5-l10n
     SUBDIR += qt5ct
     SUBDIR += quotes

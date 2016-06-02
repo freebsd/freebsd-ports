@@ -1,15 +1,10 @@
---- t/porting/customized.dat.orig	2016-05-17 05:00:57 UTC
+--- t/porting/customized.dat.orig	2016-05-29 22:48:24 UTC
 +++ t/porting/customized.dat
-@@ -14,7 +14,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/Mksymlists.pm 23a4b33b974e036d59bf55aa02e025506a408048
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM.pm 288df61e9ba7be3505b58b6345091fe1f310a117
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_AIX.pm 8578f2ea4ec9e764a789f6ecf620ea449ddca8c1
--ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm 9f1f6c51fb0337726c99332facc52159c0619fe2
+@@ -1,10 +1,11 @@
+ CPAN cpan/CPAN/lib/CPAN.pm ce62c43d72f101c011184dbbc59e21c2790826f0
+ Encode cpan/Encode/encoding.pm 51c19efc9bfe8467d6ae12a4654f6e7f980715bf
+ ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t a0369c919e216fb02767a637666bb4577ad79b02
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm fc5a731797f5c4fedf02ea2b5277aa720f0880ab
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_BeOS.pm a0ec076bedfa0c2e52fc2b735fbc75b4c2706bbf
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Cygwin.pm 976b10ec76d1fe6f7ee9000b5596e8950434880b
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Darwin.pm bc4b33fa5296ab35bcb1be1c18759b93c4de2598
-@@ -39,7 +39,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
  File::Path cpan/File-Path/lib/File/Path.pm fd8ce4420a0c113d3f47dd3223859743655c1da8
  File::Path cpan/File-Path/t/Path_win32.t 94b9276557ce7f80b91f6fd9bfa7a0cd9bf9683e
  Math::BigRat cpan/Math-BigRat/lib/Math/BigRat.pm 6eabc68e04f67694f6fe523e64eb013fc337ca5b

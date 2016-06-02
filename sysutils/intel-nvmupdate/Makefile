@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvmupdate
-DISTVERSION=	5_02
+DISTVERSION=	5_04
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -36,8 +36,8 @@ NVMUPDATE_DIR=	intel-nvmupdate
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1002000
-IGNORE=		is not supported on FreeBSD 10.1 and older
+.if ${OSVERSION} < 1001000
+IGNORE=		is not supported on FreeBSD 10.0 and older
 .endif
 
 .if ${OSVERSION} >= 1100000

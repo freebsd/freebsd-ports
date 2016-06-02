@@ -22,7 +22,7 @@ QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 
 USES=		python pyqt:4
 USE_PYQT=	sip core gui
-USE_QT4=	gui moc_build qmake_build
+USE_QT4=	corelib gui moc_build qmake_build
 
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace

@@ -1,8 +1,11 @@
 %%MYSQL%%include/adabase/adabase-bindings-mysql.ads
+%%PGSQL%%include/adabase/adabase-bindings-postgresql.ads
 %%SQLITE%%include/adabase/adabase-bindings-sqlite.ads
 include/adabase/adabase-bindings.ads
 %%MYSQL%%include/adabase/adabase-connection-base-mysql.adb
 %%MYSQL%%include/adabase/adabase-connection-base-mysql.ads
+%%PGSQL%%include/adabase/adabase-connection-base-postgresql.adb
+%%PGSQL%%include/adabase/adabase-connection-base-postgresql.ads
 %%SQLITE%%include/adabase/adabase-connection-base-sqlite.adb
 %%SQLITE%%include/adabase/adabase-connection-base-sqlite.ads
 include/adabase/adabase-connection-base.adb
@@ -10,6 +13,8 @@ include/adabase/adabase-connection-base.ads
 include/adabase/adabase-connection.ads
 %%MYSQL%%include/adabase/adabase-driver-base-mysql.adb
 %%MYSQL%%include/adabase/adabase-driver-base-mysql.ads
+%%PGSQL%%include/adabase/adabase-driver-base-postgresql.adb
+%%PGSQL%%include/adabase/adabase-driver-base-postgresql.ads
 %%SQLITE%%include/adabase/adabase-driver-base-sqlite.adb
 %%SQLITE%%include/adabase/adabase-driver-base-sqlite.ads
 include/adabase/adabase-driver-base.adb
@@ -40,6 +45,8 @@ include/adabase/adabase-results-sets.ads
 include/adabase/adabase-results.ads
 %%MYSQL%%include/adabase/adabase-statement-base-mysql.adb
 %%MYSQL%%include/adabase/adabase-statement-base-mysql.ads
+%%PGSQL%%include/adabase/adabase-statement-base-postgresql.adb
+%%PGSQL%%include/adabase/adabase-statement-base-postgresql.ads
 %%SQLITE%%include/adabase/adabase-statement-base-sqlite.adb
 %%SQLITE%%include/adabase/adabase-statement-base-sqlite.ads
 include/adabase/adabase-statement-base.adb
@@ -49,13 +56,16 @@ include/adabase/adabase.ads
 include/adabase/commontext.adb
 include/adabase/commontext.ads
 %%MYSQL%%lib/adabase/adabase-bindings-mysql.ali
+%%PGSQL%%lib/adabase/adabase-bindings-postgresql.ali
 %%SQLITE%%lib/adabase/adabase-bindings-sqlite.ali
 lib/adabase/adabase-bindings.ali
 %%MYSQL%%lib/adabase/adabase-connection-base-mysql.ali
+%%PGSQL%%lib/adabase/adabase-connection-base-postgresql.ali
 %%SQLITE%%lib/adabase/adabase-connection-base-sqlite.ali
 lib/adabase/adabase-connection-base.ali
 lib/adabase/adabase-connection.ali
 %%MYSQL%%lib/adabase/adabase-driver-base-mysql.ali
+%%PGSQL%%lib/adabase/adabase-driver-base-postgresql.ali
 %%SQLITE%%lib/adabase/adabase-driver-base-sqlite.ali
 lib/adabase/adabase-driver-base.ali
 lib/adabase/adabase-driver.ali
@@ -75,6 +85,7 @@ lib/adabase/adabase-results-generic_converters.ali
 lib/adabase/adabase-results-sets.ali
 lib/adabase/adabase-results.ali
 %%MYSQL%%lib/adabase/adabase-statement-base-mysql.ali
+%%PGSQL%%lib/adabase/adabase-statement-base-postgresql.ali
 %%SQLITE%%lib/adabase/adabase-statement-base-sqlite.ali
 lib/adabase/adabase-statement-base.ali
 lib/adabase/adabase-statement.ali

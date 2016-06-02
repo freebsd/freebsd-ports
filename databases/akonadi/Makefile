@@ -6,7 +6,6 @@ PORTVERSION=	1.13.0
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=	KDE
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for KDE-Pim
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
-USE_KDE4=	kdeprefix automoc4 soprano
+USE_KDE4=	automoc4 soprano
 USES=		cmake:outsource execinfo shared-mime-info compiler:c++11-lang tar:bzip2
 USE_QT4=	corelib dbus gui network qtestlib_build sql xml \
 		moc_build qmake_build rcc_build uic_build
@@ -31,7 +30,8 @@ OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_SUB=	yes # SQLITE
 
 MYSQL_DESC=	Install MySQL Qt plugin and server
-MYSQL_USE=	MYSQL=server QT4=sql-mysql_run
+MYSQL_USE=	QT4=sql-mysql_run
+MYSQL_USES=	mysql:server
 
 PGSQL_DESC=	Install PostgreSQL Qt plugin
 # Do not add a dependency on PostgreSQL server as someone preferring

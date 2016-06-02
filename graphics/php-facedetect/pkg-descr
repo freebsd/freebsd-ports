@@ -3,4 +3,4 @@ The extension offers two new functions. In principle, they differ only by
 their return value. The first returns only the number of faces found on the
 given image and the other an associative array of their coordinates.
 
-WWW:	http://www.xarg.org/project/php-facedetect/
+WWW: http://www.xarg.org/project/php-facedetect/

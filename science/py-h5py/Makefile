@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	h5py
-PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	xmj@FreeBSD.org
 COMMENT=	General-purpose Python interface to the HDF5 library
 
 LICENSE=	BSD3CLAUSE
@@ -34,14 +33,14 @@ PORTEXAMPLES=	multiprocessing_example.py swmr_multiprocess.py \
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/docs) && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${COPYTREE_SHARE} ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
 do-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>

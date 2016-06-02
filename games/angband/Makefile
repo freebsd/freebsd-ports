@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	angband
-PORTVERSION=	3.5.1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	4.0.5
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/${PORTVERSION:R}/
 
@@ -17,7 +16,7 @@ BROKEN_powerpc64=	Does not build
 OPTIONS_DEFINE=	SDL X11 DOCS
 OPTIONS_DEFAULT=X11
 
-USES=		gmake ncurses
+USES=		autoreconf gmake ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_NCURSES_CONFIG=${TRUE}
 CONFIGURE_ARGS=	--localstatedir=/var
@@ -30,16 +29,14 @@ DOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
 SDL_USE=		SDL=image,mixer,ttf,sdl
 SDL_CONFIGURE_ENABLE=	sdl
 
-X11_USE=		XORG=sm,x11
+X11_USE=		XORG=ice,sm,x11
 X11_RUN_DEPENDS=	xorg-fonts-miscbitmaps>=0:x11-fonts/xorg-fonts-miscbitmaps
 X11_CONFIGURE_ENABLE=	x11
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-Wno-missing-field-initializers || ; \
-		 s|/games$$|/bin|' ${WRKSRC}/configure
+		'/-Wno-missing-field-initializers/,/fi$$/d ; \
+		s|/games$$|/bin|' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e \
 		's|.SILENT:||' ${WRKSRC}/mk/buildsys.mk.in
 	@${REINPLACE_CMD} -e \
@@ -47,7 +44,7 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/angband
-.for i in apex save user
+.for i in user/save user/scores
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${i}
 .endfor
 

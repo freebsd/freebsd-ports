@@ -2,7 +2,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.76.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}:src \
 		SF/docbook/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -21,14 +21,6 @@ NO_BUILD=	yes
 INSTDIR=	share/xsl/docbook
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST+=	INSTDIR="${INSTDIR}" \
-		XMLCATMGR="${XMLCATMGR}" \
-		CATALOG_PORTS="${LOCALBASE}/share/xml/catalog.ports"
-
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_XSL=	${WRKSRC}/catalog
 
 MODULES=	common fo html images lib manpages params xhtml
 

@@ -3,11 +3,12 @@
 # Provide support for MySQL
 # Feature:	mysql
 # Usage:	USES=mysql or USES=mysql:args
-# Valid ARGS:	<version>, server, embedded
+# Valid ARGS:	<version>, client, server, embedded
 #
 # version	If no version is given (by the maintainer via the port), try to
 #		find the currently installed version.  Fall back to default if
 #		necessary (MySQL-5.6 = 56).
+# client	Depends on the libmysqlclient library (default)
 # server/embedded
 #		Depend on the server at run/build time. If none of these is
 #		set, depends on the client.
@@ -39,6 +40,10 @@ _MYSQL_ARGS:=	${_MYSQL_ARGS:Nserver}
 .if ${_MYSQL_ARGS:Membedded}
 _WANT_MYSQL_EMBEDDED=	yes
 _MYSQL_ARGS:=	${_MYSQL_ARGS:Nembedded}
+.endif
+.if ${_MYSQL_ARGS:Mclient}
+_WANT_MYSQL_CLIENT=	yes
+_MYSQL_ARGS:=	${_MYSQL_ARGS:Nclient}
 .endif
 
 # Port requested a version
@@ -126,7 +131,9 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${_MYSQL_SERVER}
 .if defined(_WANT_MYSQL_EMBEDDED)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqld.a:${_MYSQL_SERVER}
 .endif
-.else
+.endif
+.if defined(_WANT_MYSQL_CLIENT) || \
+	!(defined(_WANT_MYSQL_SERVER) || defined(_WANT_MYSQL_EMBEDDED))
 LIB_DEPENDS+=	libmysqlclient.so.${MYSQL${MYSQL_VER}_LIBVER}:${_MYSQL_CLIENT}
 .endif
 .else

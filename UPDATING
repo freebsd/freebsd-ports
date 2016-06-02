@@ -5,6 +5,116 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160601
+  AFFECTS: users of security/libressl-devel
+  AUTHOR: brnrd@FreeBSD.org
+
+  The port has been updated to the latest "unstable" version of LibreSSL.
+  The shared library versions of the libraries have been bumped.
+  With this update, the patch for the OPENSSL_VERSION_NUMBER has been
+  removed. This causes issues with a number of ports. Patches for many of
+  these issues can be found on 
+  https://wiki.freebsd.org/OpenSSL/Ports#OPENSSL_VERSION_NUMBER
+
+  After upgrading to 2.4.0, manually update all packages that depend on
+  any of the libraries provided by LibreSSL (libssl, libcrypto and
+  libtls) since the versions of these libraries have changed. Normally,
+  you can obtain the list of dependent software by running the following
+  command:
+
+  # pkg info -r libressl-devel
+
+  Then you should rebuild all ports depending on libressl-devel to avoid
+  dangling shared library dependencies. Poudriere and pkg handle this
+  correctly, portmaster and portupgrade users can use the following to
+  rebuild all dependent ports.
+
+  Portmaster users:
+      portmaster -r libressl-devel
+  Portupgrade users:
+      portupgrade -fr security/libressl-devel
+
+
+20160527
+  AFFECTS: Users of mail/opensmtpd-extras (any of them)
+  AUTHOR: adamw@FreeBSD.org
+
+  The invocation for extras has changed. Some extras might fail unless
+  you pass all options/arguments separated by quotes:
+
+      filter myfilter dnsbl "-c /var/chroot/dnsbl" "-h my.dnsbl.com"
+  
+  Additionally, extras now run in a chroot. Either pass "-C" to skip the
+  chroot entirely (not recommended), or put all required config files,
+  resolv.conf, and external binaries into the chroot. For example:
+
+      # mkdir -p /var/chroot/dnsbl/etc
+      # cp /etc/resolv.conf /var/chroot/dnsbl/etc
+
+      And pass "-c /var/chroot/dnsbl" to the filter.
+
+20160526:
+  AFFECTS: Users of mail/opensmtpd
+  AUTHOR: brnrd@FreeBSD.org
+
+  Due to changes to the rc-script you must stop smtpd prior to upgrading
+  mail/opensmtpd to version 5.9.2
+
+  # service smtpd stop
+
+  Then upgrade OpenSMTPD to version 5.9.2.
+  Additionally version 5.9.2 changes the file mode bits for two directories.
+  To allow existing installations to start succesfully you must apply the
+  following changes
+ 
+  # chown -R root:_smtpq /var/spool/smtpd/offline
+  # chmod -R 770 /var/spool/smtpd/offline
+  # chmod -R 700 /var/spool/smtpd/purge
+
+  After applying the changes, the smtpd daemon can succesfully be started.
+
+20160525:
+  AFFECTS: Users of devel/qtcreator
+  AUTHOR: nolden@kde.org
+
+  QBS (Qt Build System) was previously shipped as part of qtcreator, now
+  it is independently available as devel/qbs. However, on upgrading
+  qtcreator to 3.6.1, the depends will detect qbs through a previously
+  installed qtcreator port and will not build/install correctly
+  (devel/qbs won't be installed automatically as depends)
+
+  The solution is to pkg remove qtcreator, then building works correctly.
+
+20160523:
+  AFFECTS: Users of databases/db6
+  AUTHOR: mandree@FreeBSD.org
+
+  The databases/db6 port has been updated to release 6.2.23.
+
+  This requires manual action in two places:
+    1. dependent applications need to be recompiled,
+    2. SQL databases, if any, need to be reindexed.
+
+  To obtain a list of ports needing a recompilation,
+  the following command should provide it:
+
+  # pkg info -r db6
+
+  Then rebuild db6 and the dependent ports.  For pkg users, this should
+  be transparent.
+
+  Portmaster users:
+  #  portmaster -r databases/db6
+  Portupgrade users:
+  #  portupgrade -fr databases/db6
+
+  In order to reindex SQL databases, a db6-upgrade61.sh script is
+  provided in ${PREFIX}/bin, if and only if the port's SQL option is
+  enabled.  For detailed reindexing instructions, see
+  http://docs.oracle.com/cd/E17076_05/html/installation/sqlite_ver61.html
+  and note that the FreeBSD port installs the upgrade61.sh script with a
+  db6- prefix that you need to add.
+
 20160511:
   AFFECTS: Users of audio/clementine-player
   AUTHOR: sbruno@FreeBSD.org

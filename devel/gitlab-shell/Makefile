@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-shell
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=v${PORTVERSION}&dummy=/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

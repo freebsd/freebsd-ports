@@ -4,4 +4,4 @@ Nmap and a dynamic engine that can adapt its behaviour based on network
 feedback. It allows for rapid, yet reliable large-scale auditing of
 multiple hosts.
 
-WWW:	http://nmap.org/ncrack/
+WWW: http://nmap.org/ncrack/

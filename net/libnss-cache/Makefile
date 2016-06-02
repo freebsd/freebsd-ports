@@ -3,6 +3,7 @@
 
 PORTNAME=	libnss-cache
 PORTVERSION=	0.15
+DISTVERSIONPREFIX=	version/
 CATEGORIES=	net
 
 MAINTAINER=	k@kev009.com
@@ -15,7 +16,6 @@ USES=		gmake
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	version/0.15
 
 PLIST_FILES=	lib/nss_nsscache.so lib/nss_nsscache.so.1
 

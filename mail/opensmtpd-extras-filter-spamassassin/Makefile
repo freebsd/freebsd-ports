@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-spamassassin
+PORTREVISION=		1
 
 COMMENT=		Spamassassin filter addon for OpenSMTPD
 MAINTAINER=		adamw@FreeBSD.org

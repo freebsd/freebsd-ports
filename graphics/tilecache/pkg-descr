@@ -1,4 +1,4 @@
 TileCache provides a Python-based WMS-C/TMS server, with pluggable
 caching mechanisms and rendering backends.
 
-WWW:	http://tilecache.org/
+WWW: http://tilecache.org/

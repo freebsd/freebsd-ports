@@ -3,6 +3,7 @@
 
 PORTNAME=	surrealtodo
 PORTVERSION=	0.6.1.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/surrealtodo/Surreal%20ToDo/
 DISTNAME=	surrealtodo_v${PORTVERSION}
@@ -13,12 +14,13 @@ COMMENT=	Surreal ToDo is an AJAX enabled web 2.0 list manager
 BROKEN_powerpc64=	Does not build
 
 USES=		zip
-USE_PHP+=	mysql
-USE_MYSQL=	yes
+USE_PHP=	mysql
+IGNORE_WITH_PHP=	70
 NO_BUILD=	yes
+NO_ARCH=	yes
+
 WWWOWN=		www
 WWWGRP=		${WWWOWN}
-IGNORE_WITH_PHP=	70
 
 PKGMESSAGE=	${WRKDIR}/${PORTNAME}/pkg-message
 SUB_FILES=	pkg-message
@@ -28,17 +30,9 @@ OPTIONS_DEFINE=	PGSQL APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
 LIGHTTPD_DESC=	Use Lighttpd webserver
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPOSTGRE}
-USE_PHP+=	pgsql
-.endif
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22
-.endif
-.if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:www/lighttpd
-.endif
+PGSQL_USE=	PHP=pgsql
+APACHE_USE=	APACHE_RUN=22
+LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

@@ -2,4 +2,4 @@ Perl module which implements version 4.0 of the Wordnik API and provides a
 simple object-oriented interface with methods named after the REST ones
 provided by Wordnik.
 
-WWW:	http://search.cpan.org/dist/WWW-Wordnik-API/
+WWW: http://search.cpan.org/dist/WWW-Wordnik-API/

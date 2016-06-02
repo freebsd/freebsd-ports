@@ -22,7 +22,7 @@ share/xsl/slides/browser/xbStyle-css.js
 share/xsl/slides/browser/xbStyle-nn4.js
 share/xsl/slides/browser/xbStyle-not-supported.js
 share/xsl/slides/browser/xbStyle.js
-share/xsl/slides/catalog
+@xmlcatmgr share/xsl/slides/catalog
 share/xsl/slides/graphics/ChangeLog
 share/xsl/slides/graphics/active/ChangeLog
 share/xsl/slides/graphics/active/arr-next.png

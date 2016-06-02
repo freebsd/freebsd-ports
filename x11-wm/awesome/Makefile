@@ -10,7 +10,8 @@ MASTER_SITES=	http://awesome.naquadah.org/download/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Highly configurable, next generation framework window manager
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		convert:graphics/ImageMagick \
@@ -42,7 +43,7 @@ LDFLAGS+=	${ICONV_LIB}
 PORTDOCS=	AUTHORS BUGS LICENSE README
 
 OPTIONS_DEFINE=	DBUS DOCS
-OPTIONS_DEFAULT=DBUS DOCS
+OPTIONS_DEFAULT=DBUS
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CMAKE_ON=		-DWITH_DBUS=YES

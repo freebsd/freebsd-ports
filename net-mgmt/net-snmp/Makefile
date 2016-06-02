@@ -16,8 +16,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	IPV6 MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
-		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL
-OPTIONS_DEFAULT=IPV6 PERL PERL_EMBEDDED DUMMY SMUX
+		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL AX_DISABLE_TRAP
+OPTIONS_DEFAULT=PERL PERL_EMBEDDED DUMMY SMUX
 
 MFD_REWRITES_DESC=	Build with 64-bit Interface Counters
 PERL_EMBEDDED_DESC=	Build embedded perl
@@ -25,6 +25,7 @@ DUMMY_DESC=		Enable dummy values as placeholders
 TKMIB_DESC=		Install graphical MIB browser
 #DMALLOC_DESC=		Enable dmalloc debug memory allocator
 AX_SOCKONLY_DESC=	Disable UDP/TCP transports for agentx
+AX_DISABLE_TRAP_DESC=	Disable agentx subagent code in snmptrapd
 UNPRIVILEGED_DESC=	Allow unprivileged users to execute net-snmp
 SMUX_DESC=		Build with SNMP multiplexing (SMUX) support
 JAIL_DESC=		Options for running snmpd within a jail(8)
@@ -122,6 +123,10 @@ PLIST_SUB+=	WITH_PERL="@comment "
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql
 CONFIGURE_ENV+=	MYSQLCONFIG=${LOCALBASE}/bin/mysql_config
+.endif
+
+.if ${PORT_OPTIONS:MAX_DISABLE_TRAP}
+CONFIGURE_ARGS+=--disable-snmptrapd-subagent
 .endif
 
 .if ${PORT_OPTIONS:MAX_SOCKONLY}

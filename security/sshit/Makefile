@@ -21,7 +21,6 @@ USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	sshit
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 

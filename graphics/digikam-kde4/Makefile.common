@@ -111,7 +111,7 @@ vkontakte_DESC=		Export images to VKontakte web service
 yandexfotki_DESC=	Export images to Yandex web service
 
 DISTNAME=	digikam-${DIGIKAM_VER}
-DISTINFO_FILE=	${.CURDIR}/../../graphics/digikam-kde4/distinfo
+DISTINFO_FILE=	${.CURDIR:H:H}/graphics/digikam-kde4/distinfo
 
 LICENSE?=	GPLv2
 
@@ -119,7 +119,7 @@ USES+=		tar:bzip2
 
 .if !defined(NO_BUILD)
 USES+=		cmake
-USE_KDE4+=	automoc4 kdeprefix kdelibs
+USE_KDE4+=	automoc4 kdelibs
 USE_QT4+=	qmake_build moc_build rcc_build uic_build
 
 WRKSRC?=	${WRKDIR}/${DISTNAME}/extra/${PORTNAME}
@@ -129,14 +129,14 @@ PLIST_SUB+=	SHLIB_VER=${DIGIKAM_VER}
 . if defined(KIPI_PLUGIN)
 CONFLICTS_INSTALL=	kipi-plugins-2.*
 
-DESCR=		${.CURDIR}/../../graphics/kipi-plugins-kde4/pkg-descr
+DESCR=		${.CURDIR:H:H}/graphics/kipi-plugins-kde4/pkg-descr
 USES+=		pkgconfig
 
 .if ${KIPI_PLUGIN} != "libkipiplugins"
-EXTRA_PATCHES=	${.CURDIR}/../../graphics/kipi-plugins-kde4/files/extrapatch-CMakeLists.txt
+EXTRA_PATCHES=	${.CURDIR:H:H}/graphics/kipi-plugins-kde4/files/extrapatch-CMakeLists.txt
 LIB_DEPENDS+=	libkipiplugins.so:graphics/libkipiplugins
 .endif
-EXTRA_PATCHES+=	${.CURDIR}/../../graphics/kipi-plugins-kde4/files/extrapatch-extra_kipi_plugins_cmakelists.patch
+EXTRA_PATCHES+=	${.CURDIR:H:H}/graphics/kipi-plugins-kde4/files/extrapatch-extra_kipi_plugins_cmakelists.patch
 
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions ${DISTNAME}/extra/kipi-plugins
 WRKSRC=		${WRKDIR}/${DISTNAME}/extra/kipi-plugins

@@ -7,4 +7,4 @@ Microsoft DirectPlay Voice in DX8-9. It provides voice compression using several
 free voice codecs. The very low bitrate (VLB) codecs, those less than 6 Kbps,
 are optimized for the compression of human speech.
 
-WWW:	http://www.hawksoft.com/hawkvoice/
+WWW: http://www.hawksoft.com/hawkvoice/

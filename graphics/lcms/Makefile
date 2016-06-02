@@ -7,7 +7,7 @@ PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
-		http://www.littlecms.com/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library

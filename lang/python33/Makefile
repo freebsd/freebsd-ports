@@ -43,7 +43,7 @@ PLIST_SUB=		ABI=${ABIFLAGS} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. http://bugs.python.org/issue19554
 
 OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC THREADS TSC
-OPTIONS_DEFAULT=	IPV6 LIBFFI NLS PYMALLOC THREADS
+OPTIONS_DEFAULT=	LIBFFI PYMALLOC THREADS
 OPTIONS_SUB=		yes
 
 LIBFFI_DESC=		Use libffi from ports instead of bundled version

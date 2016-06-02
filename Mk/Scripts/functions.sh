@@ -71,7 +71,7 @@ parse_plist() {
 			esac
 		;;
 		# Handle [file] Keywords
-		@info\ *|@shell\ *)
+		@info\ *|@shell\ *|@xmlcatmgr\ *)
 			set -- $line
 			shift
 			case "$@" in
@@ -215,4 +215,38 @@ export_ports_env() {
 			echo "export ${var}=\"${value}\""
 		fi
 	done
+}
+
+distinfo_data() {
+	local alg file
+
+	alg=$1
+	file=$2
+
+	if [ \( -n "${dp_DISABLE_SIZE}" -a -n "${dp_NO_CHECKSUM}" \) -o ! -f "${dp_DISTINFO_FILE}" ]; then
+		exit
+	fi
+	awk -v alg="$alg" -v file="${file}" \
+		'$1 == alg && $2 == "(" file ")" {print $4}' "${dp_DISTINFO_FILE}"
+}
+
+check_checksum_algorithms() {
+	for alg in ${dp_CHECKSUM_ALGORITHMS}; do
+		eval "alg_executable=\$dp_$alg"
+		if [ -z "$alg_executable" ]; then
+			${dp_ECHO_MSG} "Checksum algorithm $alg: Couldn't find the executable."
+			${dp_ECHO_MSG} "Set $alg=/path/to/$alg in /etc/make.conf and try again."
+			exit 1
+		elif [ ! -x "$alg_executable" ]; then
+			${dp_ECHO_MSG} "Checksum algorithm $alg: $alg_executable is not executable."
+			${dp_ECHO_MSG} "Fix modes, or change $alg=$alg_executable in /etc/make.conf and try again."
+			exit 1
+		fi
+	done
+}
+escape() {
+	echo "$1" | sed -e 's/[&;()!#]/\\&/g'
+}
+unescape() {
+	echo "$1" | sed -e 's/\\//g'
 }

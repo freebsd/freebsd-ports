@@ -38,7 +38,6 @@ USES=		desktop-file-utils python
 USE_PYTHON=	distutils autoplist
 USE_GSTREAMER=	good bad ugly
 USE_QT4=	linguist phonon-gst
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 NO_ARCH=	yes
 

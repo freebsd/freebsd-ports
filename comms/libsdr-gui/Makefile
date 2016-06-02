@@ -3,6 +3,7 @@
 
 PORTNAME=	libsdr-gui
 PORTVERSION=	0.1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	jeff@baitis.net
@@ -16,8 +17,6 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatuschek
-GH_PROJECT=	libsdr-gui
-GH_TAGNAME=	96846d1
 
 USE_QT5=	core buildtools_build qmake widgets
 USES=		cmake pkgconfig

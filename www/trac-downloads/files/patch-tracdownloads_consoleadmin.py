@@ -1,6 +1,6 @@
---- tracdownloads/consoleadmin.py.orig
+--- tracdownloads/consoleadmin.py.orig	2011-04-07 08:36:09 UTC
 +++ tracdownloads/consoleadmin.py
-@@ -122,7 +122,8 @@
+@@ -122,7 +122,8 @@ class DownloadsConsoleAdmin(Component):
          self.log.debug(download)
  
          # Upload file to DB and file storage.

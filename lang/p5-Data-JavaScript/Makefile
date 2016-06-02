@@ -11,7 +11,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Data::JavaScript - Dump perl structures to JavaScript code
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
 

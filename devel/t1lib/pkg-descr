@@ -4,3 +4,5 @@ are returned in a data structure with type GLYPH. This special GLYPH-type is
 also used in the X11 window system to describe character bitmaps. It contains
 the bitmap data as well as some metric information. But t1lib is in itself
 entirely independent of the X11-system or any other graphical user interface.
+
+WWW: http://www.t1lib.org/

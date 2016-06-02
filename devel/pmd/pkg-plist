@@ -1,7 +1,9 @@
 bin/pmd
+%%DATADIR%%/antlr4-runtime-4.5.2-1.jar
 %%DATADIR%%/asm-5.0.4.jar
 %%DATADIR%%/commons-io-2.4.jar
 %%DATADIR%%/commons-lang3-3.4.jar
+%%DATADIR%%/gson-2.5.jar
 %%DATADIR%%/javacc-5.0.jar
 %%DATADIR%%/jaxen-1.1.6.jar
 %%DATADIR%%/jcommander-1.48.jar
@@ -20,6 +22,8 @@ bin/pmd
 %%DATADIR%%/pmd-python-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-ruby-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-scala-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-swift-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-ui-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-vm-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-xml-%%PORTVERSION%%.jar
 %%DATADIR%%/rhino-1.7.7.jar

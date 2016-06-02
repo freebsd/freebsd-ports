@@ -20,7 +20,7 @@ USES=		compiler:c++11-lang
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	derekmarcotte		mitchellh:gu	op:gl
-GH_PROJECT=	hfm			go-libucl:gu	go-logging:gl
+GH_PROJECT=	${PORTNAME}		go-libucl:gu	go-logging:gl
 GH_TAGNAME=	${DISTVERSIONFULL}	f9d0e55:gu	dfaf3df:gl
 
 USERS=		_hfm

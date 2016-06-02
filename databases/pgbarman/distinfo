@@ -1,4 +1,5 @@
-SHA256 (barman-1.6.0.tar.gz) = 771957451fafef93f64d7ce08f43530b86f52fb31451ecc180a40856c707bc76
-SIZE (barman-1.6.0.tar.gz) = 157048
+TIMESTAMP = 1464011005
+SHA256 (barman-1.6.1.tar.gz) = 2fb8bbf0a386114dda4f1ade3e02a79aede5e3dd77c6b8d4f872b75fd1427e65
+SIZE (barman-1.6.1.tar.gz) = 189826
 SHA256 (tutorial.pdf) = 21acf6152b959c55b996fb6479c722d3f416eac3384479498a25911a3912a158
 SIZE (tutorial.pdf) = 349394

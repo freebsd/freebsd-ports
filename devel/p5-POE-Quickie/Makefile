@@ -22,6 +22,7 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0.07:devel/p5-Capture-Tiny \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 post-patch:
 	@${RM} ${WRKSRC}/lib/POE/Quickie.pm.orig

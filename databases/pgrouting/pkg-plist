@@ -1,8 +1,9 @@
 lib/postgresql/libpgrouting-2.2.so
-share/postgresql/extension/pgrouting--2.0.0--2.2.2.sql
-share/postgresql/extension/pgrouting--2.0.1--2.2.2.sql
-share/postgresql/extension/pgrouting--2.1.0--2.2.2.sql
-share/postgresql/extension/pgrouting--2.2.0--2.2.2.sql
-share/postgresql/extension/pgrouting--2.2.1--2.2.2.sql
-share/postgresql/extension/pgrouting--2.2.2.sql
+share/postgresql/extension/pgrouting--2.0.0--2.2.3.sql
+share/postgresql/extension/pgrouting--2.0.1--2.2.3.sql
+share/postgresql/extension/pgrouting--2.1.0--2.2.3.sql
+share/postgresql/extension/pgrouting--2.2.0--2.2.3.sql
+share/postgresql/extension/pgrouting--2.2.1--2.2.3.sql
+share/postgresql/extension/pgrouting--2.2.2--2.2.3.sql
+share/postgresql/extension/pgrouting--2.2.3.sql
 share/postgresql/extension/pgrouting.control

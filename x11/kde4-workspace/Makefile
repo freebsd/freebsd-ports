@@ -42,7 +42,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:misc/kde4-xdg-env \
 
 USE_GL=		glu
 USE_GNOME=	glib20
-USE_KDE4=	kactivities kdelibs kdeprefix nepomuk-core oxygen \
+USE_KDE4=	kactivities kdelibs nepomuk-core oxygen \
 		pimlibs akonadi automoc4 ontologies qimageblitz soprano strigi
 USES=		cmake:outsource compiler:c++11-lib gettext gmake jpeg \
 		pkgconfig shebangfix tar:xz

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mangband
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES=	games
 MASTER_SITES=	http://mangband.org/download/
 
@@ -12,7 +11,6 @@ COMMENT=	Free online multiplayer real-time roguelike game
 
 LICENSE=	GPLv2
 
-BROKEN=		unfetchable
 ALL_TARGET=	mangclient mangband
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes

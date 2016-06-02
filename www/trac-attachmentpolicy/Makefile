@@ -22,8 +22,8 @@ RUN_DEPENDS+=	tracd:www/trac
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

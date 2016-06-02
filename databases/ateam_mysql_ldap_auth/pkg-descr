@@ -1,0 +1,23 @@
+A-Team MySQL LDAP Authenticator (ateam_mysql_ldap_auth) is an authentication
+plugin for MySQL 5.5.7 and up, and has been tested with 5.6 under FreeBSD.
+This module allows you to create MySQL users that are then authenticated
+against an LDAP server. This reduces administrative overhead and eliminates
+your users having to remember a seperate username and password for MySQL.
+Just like MySQL Enterprise's PAM module, for client side authentication
+this plugin uses the clear_text password module as the LDAP server must
+perform the password hasing and comparison.  For command line clients this
+is done by setting the following environment variable:
+
+  export LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN=1
+
+In MySQL Workbench this is acheived by going to go to the "Advanced" tab and
+checking "Enable Cleartext Authentication Plugin" when editing a connction.
+
+!!! IMPORTANT:
+!!! ------------------------------------------------------------------------
+!!! ENSURE THE COMMUNICATIONS PATH BETWEEN THE CLIENT AND SERVER IS SECURE!
+!!! ------------------------------------------------------------------------
+!!! By default MySQL does not use SSL so additional steps and network design
+!!! are needed to ensure you're not exposing your credetials.
+
+WWW: https://github.com/ateamsystems/ateam_mysql_ldap_auth

@@ -7,7 +7,7 @@ CATEGORIES=	devel kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE bindings (meta port)
 
-USE_KDE4=	kdeprefix
+USE_KDE4=	# blank, needed to get KDE4_VERSION
 USES=		metaport
 
 OPTIONS_DEFINE=	PERL PYTHON RUBY

@@ -473,10 +473,13 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Term/ReadLine.pm
 %%PRIV_LIB%%/Test.pm
 %%PRIV_LIB%%/Test/Builder.pm
+%%PRIV_LIB%%/Test/Builder/Formatter.pm
 %%PRIV_LIB%%/Test/Builder/IO/Scalar.pm
 %%PRIV_LIB%%/Test/Builder/Module.pm
 %%PRIV_LIB%%/Test/Builder/Tester.pm
 %%PRIV_LIB%%/Test/Builder/Tester/Color.pm
+%%PRIV_LIB%%/Test/Builder/TodoDiag.pm
+%%PRIV_LIB%%/Test/FAQ.pod
 %%PRIV_LIB%%/Test/Harness.pm
 %%PRIV_LIB%%/Test/More.pm
 %%PRIV_LIB%%/Test/Simple.pm
@@ -486,6 +489,36 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test/Tester/Delegate.pm
 %%PRIV_LIB%%/Test/Tutorial.pod
 %%PRIV_LIB%%/Test/use/ok.pm
+%%PRIV_LIB%%/Test2.pm
+%%PRIV_LIB%%/Test2/API.pm
+%%PRIV_LIB%%/Test2/API/Breakage.pm
+%%PRIV_LIB%%/Test2/API/Context.pm
+%%PRIV_LIB%%/Test2/API/Instance.pm
+%%PRIV_LIB%%/Test2/API/Stack.pm
+%%PRIV_LIB%%/Test2/Event.pm
+%%PRIV_LIB%%/Test2/Event/Bail.pm
+%%PRIV_LIB%%/Test2/Event/Diag.pm
+%%PRIV_LIB%%/Test2/Event/Exception.pm
+%%PRIV_LIB%%/Test2/Event/Note.pm
+%%PRIV_LIB%%/Test2/Event/Ok.pm
+%%PRIV_LIB%%/Test2/Event/Plan.pm
+%%PRIV_LIB%%/Test2/Event/Skip.pm
+%%PRIV_LIB%%/Test2/Event/Subtest.pm
+%%PRIV_LIB%%/Test2/Event/Waiting.pm
+%%PRIV_LIB%%/Test2/Formatter.pm
+%%PRIV_LIB%%/Test2/Formatter/TAP.pm
+%%PRIV_LIB%%/Test2/Hub.pm
+%%PRIV_LIB%%/Test2/Hub/Interceptor.pm
+%%PRIV_LIB%%/Test2/Hub/Interceptor/Terminator.pm
+%%PRIV_LIB%%/Test2/Hub/Subtest.pm
+%%PRIV_LIB%%/Test2/IPC.pm
+%%PRIV_LIB%%/Test2/IPC/Driver.pm
+%%PRIV_LIB%%/Test2/IPC/Driver/Files.pm
+%%PRIV_LIB%%/Test2/Transition.pod
+%%PRIV_LIB%%/Test2/Util.pm
+%%PRIV_LIB%%/Test2/Util/ExternalMeta.pm
+%%PRIV_LIB%%/Test2/Util/HashBase.pm
+%%PRIV_LIB%%/Test2/Util/Trace.pm
 %%PRIV_LIB%%/Text/Abbrev.pm
 %%PRIV_LIB%%/Text/Balanced.pm
 %%PRIV_LIB%%/Text/ParseWords.pm
@@ -1309,11 +1342,44 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Term::Complete.3.gz
 %%MAN3%%/Term::ReadLine.3.gz
 %%MAN3%%/Test.3.gz
+%%MAN3%%/Test2.3.gz
+%%MAN3%%/Test2::API.3.gz
+%%MAN3%%/Test2::API::Breakage.3.gz
+%%MAN3%%/Test2::API::Context.3.gz
+%%MAN3%%/Test2::API::Instance.3.gz
+%%MAN3%%/Test2::API::Stack.3.gz
+%%MAN3%%/Test2::Event.3.gz
+%%MAN3%%/Test2::Event::Bail.3.gz
+%%MAN3%%/Test2::Event::Diag.3.gz
+%%MAN3%%/Test2::Event::Exception.3.gz
+%%MAN3%%/Test2::Event::Note.3.gz
+%%MAN3%%/Test2::Event::Ok.3.gz
+%%MAN3%%/Test2::Event::Plan.3.gz
+%%MAN3%%/Test2::Event::Skip.3.gz
+%%MAN3%%/Test2::Event::Subtest.3.gz
+%%MAN3%%/Test2::Event::Waiting.3.gz
+%%MAN3%%/Test2::Formatter.3.gz
+%%MAN3%%/Test2::Formatter::TAP.3.gz
+%%MAN3%%/Test2::Hub.3.gz
+%%MAN3%%/Test2::Hub::Interceptor.3.gz
+%%MAN3%%/Test2::Hub::Interceptor::Terminator.3.gz
+%%MAN3%%/Test2::Hub::Subtest.3.gz
+%%MAN3%%/Test2::IPC.3.gz
+%%MAN3%%/Test2::IPC::Driver.3.gz
+%%MAN3%%/Test2::IPC::Driver::Files.3.gz
+%%MAN3%%/Test2::Transition.3.gz
+%%MAN3%%/Test2::Util.3.gz
+%%MAN3%%/Test2::Util::ExternalMeta.3.gz
+%%MAN3%%/Test2::Util::HashBase.3.gz
+%%MAN3%%/Test2::Util::Trace.3.gz
 %%MAN3%%/Test::Builder.3.gz
+%%MAN3%%/Test::Builder::Formatter.3.gz
 %%MAN3%%/Test::Builder::IO::Scalar.3.gz
 %%MAN3%%/Test::Builder::Module.3.gz
 %%MAN3%%/Test::Builder::Tester.3.gz
 %%MAN3%%/Test::Builder::Tester::Color.3.gz
+%%MAN3%%/Test::Builder::TodoDiag.3.gz
+%%MAN3%%/Test::FAQ.3.gz
 %%MAN3%%/Test::Harness.3.gz
 %%MAN3%%/Test::More.3.gz
 %%MAN3%%/Test::Simple.3.gz
@@ -1451,6 +1517,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5240delta.pod
 %%PRIV_LIB%%/pod/perl5250delta.pod
 %%PRIV_LIB%%/pod/perl5251delta.pod
+%%PRIV_LIB%%/pod/perl5252delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -2122,6 +2189,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5240delta.1.gz
 %%MAN1%%/perl5250delta.1.gz
 %%MAN1%%/perl5251delta.1.gz
+%%MAN1%%/perl5252delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -2299,7 +2367,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 @dir %%SITE_ARCH%%/auto
 @dir %%SITE_PERL%%/man/man1
 @dir %%SITE_PERL%%/man/man3
-@exec makewhatis %D/%%SITEMANPREFIX%%/man
-@exec makewhatis %D/%%PERLMANPREFIX%%/man
+@postexec makewhatis %D/%%SITEMANPREFIX%%/man
+@postexec makewhatis %D/%%PERLMANPREFIX%%/man
 @rmtry %%PERLMANPREFIX%%/man/whatis
+@rmtry %%PERLMANPREFIX%%/man/mandoc.db
 @rmtry %%SITEMANPREFIX%%/man/whatis
+@rmtry %%SITEMANPREFIX%%/man/mandoc.db

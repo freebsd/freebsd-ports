@@ -1,4 +1,4 @@
---- src/extra/tre/tre-internal.h.orig	2014-06-13 22:15:07 UTC
+--- src/extra/tre/tre-internal.h.orig	2016-05-05 10:54:54 UTC
 +++ src/extra/tre/tre-internal.h
 @@ -17,6 +17,7 @@
  #include <wctype.h>
@@ -8,15 +8,15 @@
  #include <ctype.h>
  #include "tre.h"
  
-@@ -48,7 +49,11 @@
+@@ -47,7 +48,11 @@
+ #ifdef TRE_WCHAR
  
  /* Wide characters. */
- typedef wint_t tre_cint_t;
 +#if WCHAR_MAX <= INT_MAX
- #define TRE_CHAR_MAX WCHAR_MAX
+ typedef wint_t tre_cint_t;
 +#else /* WCHAR_MAX > INT_MAX */
 +#define TRE_CHAR_MAX INT_MAX
 +#endif
- 
- #ifdef TRE_MULTIBYTE
- #define TRE_MB_CUR_MAX MB_CUR_MAX
+ /* Workaround problem seen on AIX, (2010 & 2015), e.g.,
+     https://stat.ethz.ch/pipermail/r-devel/2015-October/071902.html
+   WCHAR_MAX = UINT32_MAX on AIX and that is "not possible to work"

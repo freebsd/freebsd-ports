@@ -5,4 +5,4 @@ numerals, but they do not handle other number systems.
 The main functions take as input a UTF-32 Unicode string and
 compute the corresponding unsigned integer.
 
-WWW:	http://billposer.org/Software/libuninum.html
+WWW: http://billposer.org/Software/libuninum.html

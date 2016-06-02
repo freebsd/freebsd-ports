@@ -261,7 +261,6 @@
     SUBDIR += ipxe
     SUBDIR += irrd
     SUBDIR += isboot-kmod
-    SUBDIR += isc-dhcp41-server
     SUBDIR += isc-dhcp43-client
     SUBDIR += isc-dhcp43-relay
     SUBDIR += isc-dhcp43-server
@@ -459,8 +458,10 @@
     SUBDIR += ntimed
     SUBDIR += ntlmaps
     SUBDIR += ntop
+    SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
+    SUBDIR += ntpa
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
@@ -469,7 +470,6 @@
     SUBDIR += ocserv
     SUBDIR += ohphone
     SUBDIR += olsrd
-    SUBDIR += omcmd
     SUBDIR += omnitty
     SUBDIR += onenetd
     SUBDIR += onioncat
@@ -951,6 +951,7 @@
     SUBDIR += py-gntp
     SUBDIR += py-gspread
     SUBDIR += py-gspreadsheet
+    SUBDIR += py-haproxy-log-analysis
     SUBDIR += py-impacket
     SUBDIR += py-ipaddress
     SUBDIR += py-iplib
@@ -1226,6 +1227,7 @@
     SUBDIR += sntop
     SUBDIR += sobby
     SUBDIR += socat
+    SUBDIR += sock
     SUBDIR += socketbind
     SUBDIR += socketpipe
     SUBDIR += socketw

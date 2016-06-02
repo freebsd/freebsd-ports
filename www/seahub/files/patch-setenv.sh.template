@@ -1,10 +1,10 @@
---- setenv.sh.template.orig	2014-08-27 23:31:44.842536517 -0400
-+++ setenv.sh.template	2014-08-27 23:45:27.650653756 -0400
+--- setenv.sh.template.orig	2015-11-11 03:13:51 UTC
++++ setenv.sh.template
 @@ -1,3 +1,5 @@
 -export CCNET_CONF_DIR=/home/plt/dev/ccnet/seafile/tests/basic/conf2
 -export SEAFILE_CONF_DIR=/home/plt/dev/ccnet/seafile/tests/basic/conf2/seafile-data
 -export PYTHONPATH=/opt/lib/python2.6/site-packages:thirdpart:$PYTHONPATH
-+#! /bin/sh
++#!/bin/sh
 +
 +export CCNET_CONF_DIR=##FIX_WWWDIR##/ccnet
 +export SEAFILE_CONF_DIR=##FIX_WWWDIR##/seafile-data

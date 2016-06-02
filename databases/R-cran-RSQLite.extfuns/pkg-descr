@@ -1,4 +1,4 @@
 This package uses SQLite's loadable extension feature to provide a number of
 additional SQL functions and aggregates within R
 
-WWW:	http://cran.r-project.org/web/packages/RSQLite.extfuns/
+WWW: http://cran.r-project.org/web/packages/RSQLite.extfuns/

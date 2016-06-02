@@ -10,7 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Widget framework for KDE
 
-USE_KDE4=	kdelibs kdeprefix automoc4 qimageblitz
+USE_KDE4=	kdelibs automoc4 qimageblitz
 USES=		cmake:outsource python:2 tar:xz
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes

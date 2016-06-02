@@ -11,7 +11,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	FreeBSD wallpapers designed by KDE artwork team
 
 USES=		tar:bzip2
-USE_KDE4=	kdeprefix
 
 NO_BUILD=	yes
 

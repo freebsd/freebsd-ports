@@ -7,7 +7,7 @@ CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	xmj@FreeBSD.org
 COMMENT=	Implementation of the MC-AIXI-CTW AI algorithm
 
 LICENSE=	CCbySA

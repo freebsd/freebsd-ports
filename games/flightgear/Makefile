@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2016.1.2
+PORTVERSION=	2016.2.1
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -49,10 +49,6 @@ DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
 USE_GCC=	yes
 .endif
-
-post-patch:
-	${MV} "${WRKSRC}/src/GUI/ndb-small-icon .png" \
-		"${WRKSRC}/src/GUI/ndb-small-icon.png"
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/js_server/js_server \

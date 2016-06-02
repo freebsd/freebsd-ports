@@ -311,6 +311,11 @@ fix-perl-things:
 # contain it to not leave orphans directories around.
 	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod* || :
 	@${RMDIR} -p ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} 2>/dev/null || :
+# Starting at ExtUtils::MakeMaker 7.06 and Perl 5.25.1, the base README.pod is
+# no longer manified into a README.3, as the README.pod is installed and can be
+# read with perldoc, remove the README.3 files that may be generated.
+	@[ -d "${STAGEDIR}${SITE_MAN3}" ] && \
+		${FIND} ${STAGEDIR}${SITE_MAN3} -name '*::README.3' -delete || :
 
 .if !target(do-test) && (!empty(USE_PERL5:Mmodbuild*) || !empty(USE_PERL5:Mconfigure))
 TEST_TARGET?=	test

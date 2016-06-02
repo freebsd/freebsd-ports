@@ -16,7 +16,7 @@ CPE_VENDOR=	roundup-tracker
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	SQLITE PGSQL MYSQL NLS
-OPTIONS_DEFAULT=SQLITE NLS
+OPTIONS_DEFAULT=SQLITE
 
 .include <bsd.port.options.mk>
 
@@ -25,7 +25,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPRREFIX}psycopg>0:databases/py-psycopg
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}

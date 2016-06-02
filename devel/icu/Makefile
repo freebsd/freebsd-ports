@@ -17,7 +17,6 @@ LICENSE_NAME=	ICU license
 LICENSE_FILE=	${WRKSRC}/../license.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-GNU_CONFIGURE=		yes
 OPTIONS_DEFINE=	THREADS
 OPTIONS_DEFAULT=	THREADS
 THREADS_DESC=	Build thread-safe version of the library

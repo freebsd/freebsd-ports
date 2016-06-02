@@ -1,4 +1,4 @@
 Lchown allows calls from Perl5 to lchown(2) enable changes to the ownership of a
 symbolic link itself instead of to the file the link points to.
 
-WWW:	http://search.cpan.org/dist/Lchown/
+WWW: http://search.cpan.org/dist/Lchown/

@@ -673,6 +673,8 @@ include/seqan/vcf_io/vcf_io_context.h
 include/seqan/vcf_io/vcf_record.h
 include/seqan/vcf_io/write_vcf.h
 include/seqan/version.h
+libdata/pkgconfig/seqan-2.pc
+share/cmake/Modules/FindSeqAn.cmake
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.rst
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.rst

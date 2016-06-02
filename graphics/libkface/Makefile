@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
 
-USE_KDE4=	kdelibs kdeprefix automoc4 marble
+USE_KDE4=	kdelibs automoc4 marble
 USES=		cmake:outsource pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_QT4=	network phonon xml moc_build qmake_build rcc_build uic_build

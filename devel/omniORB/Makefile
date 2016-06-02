@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} --with-openssl=${OPENSSLBASE} \
 		--with-omniORB-config=${PREFIX}/etc/omniORB.cfg \
 		--with-omniNames-logdir=/var/log
 OPTIONS_DEFINE=	DOCS STATIC
-OPTIONS_DEFAULT=	DOCS STATIC
+OPTIONS_DEFAULT=	STATIC
 OPTIONS_SUB=	yes
 STATIC_CONFIGURE_OFF=	--disable-static
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-2//}

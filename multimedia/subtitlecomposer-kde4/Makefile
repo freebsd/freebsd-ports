@@ -2,6 +2,7 @@
 
 PORTNAME=	subtitlecomposer
 PORTVERSION=	0.5.7
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	multimedia kde
 
@@ -11,12 +12,11 @@ COMMENT=	Subtitle editor for KDE
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USES=		cmake:outsource gettext shared-mime-info
-USE_KDE4=	kdeprefix kdelibs automoc4
+USE_KDE4=	kdelibs automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build phonon
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxrd2
-GH_TAGNAME=	c73db78
 
 OPTIONS_GROUP=	BACKEND
 BACKEND_DESC=	Additional video backens

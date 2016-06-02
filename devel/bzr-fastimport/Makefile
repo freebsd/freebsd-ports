@@ -16,8 +16,6 @@ BUILD_DEPENDS=	bzr:devel/bzr
 RUN_DEPENDS=	bzr:devel/bzr \
 		${PYTHON_SITELIBDIR}/fastimport/__init__.py:devel/py-fastimport
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		python
 USE_PYTHON=	distutils autoplist
 

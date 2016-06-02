@@ -10,11 +10,13 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt network module
 
+LICENSE=	GPLv3 LGPL21 LGPL3 GFDL
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USE_QT4=	qmake_build moc_build rcc_build corelib
 QT_DIST=	yes
-
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 USE_OPENSSL=	yes
@@ -53,6 +55,7 @@ post-configure:
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/${QT_BINDIR_REL}/${UIC:T}|g' \
 		${WRKSRC}/lib/pkgconfig/QtNetwork.pc
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/src/network/ssl/qsslsocket_openssl.cpp
+		${WRKSRC}/src/network/ssl/qsslsocket_openssl.cpp \
+		${WRKSRC}/src/network/ssl/qsslsocket_openssl_symbols.cpp
 
 .include <bsd.port.mk>

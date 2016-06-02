@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adabase
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -19,10 +19,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
 GH_PROJECT=	AdaBase
 
+OPTIONS_DEFINE=		DEBUG
 OPTIONS_MULTI=		DBASE
-OPTIONS_MULTI_DBASE=	MYSQL SQLITE
-OPTIONS_DEFAULT=	MYSQL SQLITE
+OPTIONS_MULTI_DBASE=	MYSQL SQLITE PGSQL
+OPTIONS_DEFAULT=	MYSQL SQLITE PGSQL
 OPTIONS_SUB=		yes
+
+DBASE_DESC=		Databases Supported
 
 SQLITE_MAKE_ENV=	SQLITE=yes
 SQLITE_USES=		sqlite:3
@@ -34,10 +37,19 @@ MYSQL_USES=		mysql
 MYSQL_VARS=		DRVMYSQL=yes
 MYSQL_VARS_OFF=		DRVMYSQL=no
 
+PGSQL_MAKE_ENV=		POSTGRESQL=yes
+PGSQL_USES=		pgsql
+PGSQL_VARS=		DRVPGSQL=yes
+PGSQL_VARS_OFF=		DRVPGSQL=no
+
+DEBUG_MAKE_ENV=		DEBUGSYM=yes
+
 MAKE_ENV+=	OS_VERSION=unix
 
-post-extract:
+post-patch:
 	${RM} ${WRKSRC}/src/drivers/adabase-driver-base-firebird.ad?
+	${REINPLACE_CMD} -e '/Driver_MySQL/ s/yes/no/' \
+		${WRKSRC}/adabase.gpr
 
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
@@ -52,6 +64,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/include/adabase
 	${SED} -e "s|@PREFIX@|${PREFIX}|" \
 	       -e "s|@MYSQL@|${DRVMYSQL}|" \
+	       -e "s|@PGSQL@|${DRVPGSQL}|" \
 	       -e "s|@SQLITE@|${DRVSQLITE}|" ${WRKSRC}/adabase.gpr.in > \
 		${STAGEDIR}${PREFIX}/lib/gnat/adabase.gpr
 

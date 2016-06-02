@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-discosrv
-PORTVERSION=	0.12.2
+PORTVERSION=	0.13.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -23,9 +23,17 @@ GROUPS=		syncthing
 
 STRIP=		# stripping can break go binaries
 
+post-patch:
+	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
+		${MV} .gitignore CONTRIBUTORS LICENSE README.md build.sh \
+		clean.go db.go main.go psql.go ql.go querysrv.go stats.go \
+		vendor \
+		src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
+
 do-build:
-	@cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC}/Godeps/_workspace:${WRKSRC} go build
-	@${MV} ${WRKSRC}/discosrv-${PORTVERSION} ${WRKSRC}/syncthing-discosrv
+	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
+		${SETENV} GOPATH=${WRKSRC} go build
+	@${MV} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/discosrv ${WRKSRC}/syncthing-discosrv
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/syncthing-discosrv ${STAGEDIR}${PREFIX}/bin/

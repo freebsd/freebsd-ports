@@ -16,7 +16,7 @@ LIB_DEPENDS=	libqjson.so:devel/qjson
 
 USES=		cmake:outsource gettext pkgconfig tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdeprefix kdelibs
+USE_KDE4=	automoc4 kdelibs
 USE_LDCONFIG=	yes
 
 PLIST_SUB+=	SHLIB_VER="${PORTVERSION}"

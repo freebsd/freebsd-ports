@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdxx
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	kami@freebsd.org

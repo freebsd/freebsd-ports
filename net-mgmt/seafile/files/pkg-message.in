@@ -1,0 +1,7 @@
+For an existing config, or creating a new one, fix the UID/GID.
+Do not change %%PREFIX%%/%%SEAFILE_SERVER%% unless your front
+end is using the seafile UID/GID as well.
+
+chown -R seafile:seafile %%PREFIX%%/%%HAIWENDIR%%/conf \
+	%%PREFIX%%/%%HAIWENDIR%%/ccnet %%PREFIX%%/%%HAIWENDIR%%/seafile-data \
+	%%PREFIX%%/%%HAIWENDIR%%/pids %%PREFIX%%/%%HAIWENDIR%%/logs

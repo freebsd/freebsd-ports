@@ -2,6 +2,7 @@
 
 PORTNAME=	xdg
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	misc kde
 PKGNAMEPREFIX=	kde4-
 PKGNAMESUFFIX=	-env
@@ -9,10 +10,6 @@ DISTFILES=	# none
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Script which hooks into startkde and helps KDE pick up XDG apps/menus
-
-USE_KDE4=	kdeprefix
-
-SUB_LIST+=	KDE4_PREFIX=${KDE4_PREFIX}
 
 NO_BUILD=	yes
 

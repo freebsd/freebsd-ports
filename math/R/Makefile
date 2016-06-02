@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	R
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		ftp://cran.r-project.org/pub/R/%SUBDIR%/ \
@@ -29,6 +28,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=		${LOCALBASE}/bin/gsed:textproc/gsed \
 			texi2dvi:print/texinfo
+LIB_DEPENDS=		libcurl.so:ftp/curl
 
 CONFIGURE_ENV=		LIBR_LDFLAGS="${LDFLAGS}" OBJC="${CC}" \
 			SED="${LOCALBASE}/bin/gsed" \

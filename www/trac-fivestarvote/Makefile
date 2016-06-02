@@ -10,10 +10,11 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Five star plugin for voting on Trac resources
 
-RUN_DEPENDS+=	tracd:www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 # Maintainter targets below this point
 
@@ -28,5 +29,4 @@ do-fetch:
 	cd ${WRKDIR} && tar cvf ${DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

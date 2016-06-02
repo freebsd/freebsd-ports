@@ -29,8 +29,8 @@ ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 only.
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1002000
-IGNORE=		is not supported on FreeBSD 10.1 and older
+.if ${OSVERSION} < 1001000
+IGNORE=		is not supported on FreeBSD 10.0 and older
 .endif
 
 .if ${OSVERSION} >= 1100000

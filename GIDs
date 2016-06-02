@@ -148,6 +148,7 @@ fcron:*:247:
 _adsuck:*:253:
 _tor:*:256:
 _smtpd:*:257:
+_smtpq:*:258:
 meta1s:*:260:
 meta1q:*:261:
 meta1c:*:262:meta1s
@@ -163,6 +164,7 @@ devmon:*:283:
 vnstat:*:284:
 exaddos:*:285:exaddos
 rancid:*:286:
+ntopng:*:288:
 backuppc:*:300:
 _sphinx:*:312:
 dkfilter:*:325:
@@ -221,6 +223,7 @@ _xsi:*:600:
 _tss:*:601:
 _pkcs11:*:602:
 freeswitch:*:610:
+ntpa:*:615:
 caldavd:*:639:
 monkeysphere:*:641:
 aox:*:666:
@@ -248,6 +251,7 @@ sogod:*:846:
 domoticz:*:847:
 graylog:*:848:
 guacamole:*:899:
+seafile:*:900:
 fossy:*:901:www
 scanlogd:*:902:
 _ocserv:*:903:

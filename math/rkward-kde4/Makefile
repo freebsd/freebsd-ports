@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rkward
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
@@ -13,14 +13,14 @@ COMMENT=	IDE/GUI for the R-project
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/R:math/R
+LIB_DEPENDS=	libsoprano.so:textproc/soprano
 RUN_DEPENDS=	${LOCALBASE}/bin/R:math/R \
 		${KDE4_PREFIX}/lib/kde4/katepart.so:editors/kate
 
-CONFLICTS=	rkward-0.4.*
-
-USE_QT4=	qmake_build moc_build rcc_build uic_build phonon
-
-USE_KDE4=	kdeprefix automoc4 kdelibs
+USE_QT4=	corelib dbus gui qmake_build moc_build network phonon rcc_build	\
+		script svg uic_build webkit xml
+USE_XORG=	x11
+USE_KDE4=	automoc4 kdelibs
 USE_PHP=	yes
 WANT_PHP_CLI=	yes
 USES=		cmake gettext fortran shared-mime-info
@@ -47,7 +47,8 @@ PLIST_SUB+=	NLS=${NLS}
 LR_MOD_DIR=	${LOCALBASE}/lib/R/library
 RUN_DEPENDS+=	${LR_MOD_DIR}/R2HTML/INDEX:textproc/R-cran-R2HTML	\
 		${LR_MOD_DIR}/XML/INDEX:textproc/R-cran-XML		\
-		${LR_MOD_DIR}/mvtnorm/INDEX:math/R-cran-mvtnorm	\
+		${LR_MOD_DIR}/gdata/INDEX:devel/R-cran-gdata		\
+		${LR_MOD_DIR}/mvtnorm/INDEX:math/R-cran-mvtnorm		\
 		${LR_MOD_DIR}/outliers/INDEX:math/R-cran-outliers	\
 		${LR_MOD_DIR}/tseries/INDEX:finance/R-cran-tseries	\
 		${LR_MOD_DIR}/car/INDEX:math/R-cran-car

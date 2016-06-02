@@ -45,7 +45,6 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/QEMU,tcx.bin
 %%DATADIR%%/QEMU,cgthree.bin
 %%DATADIR%%/acpi-dsdt.aml
-%%DATADIR%%/q35-acpi-dsdt.aml
 %%DATADIR%%/bios-256k.bin
 %%DATADIR%%/bios.bin
 %%DATADIR%%/efi-e1000.rom
@@ -54,7 +53,6 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/efi-pcnet.rom
 %%DATADIR%%/efi-rtl8139.rom
 %%DATADIR%%/efi-virtio.rom
-%%DATADIR%%/s390-ccw.img
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-cirrus.bin
 %%DATADIR%%/vgabios-qxl.bin
@@ -75,7 +73,7 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/petalogix-ml605.dtb
 %%DATADIR%%/spapr-rtas.bin
 %%DATADIR%%/slof.bin
-%%DATADIR%%/s390-zipl.rom
+%%DATADIR%%/s390-ccw.img
 %%DATADIR%%/linuxboot.bin
 %%DATADIR%%/multiboot.bin
 %%DATADIR%%/sgabios.bin

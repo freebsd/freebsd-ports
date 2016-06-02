@@ -168,6 +168,7 @@ devmon:*:283:283::0:0:devmon monitor:/nonexistent:/usr/sbin/nologin
 vnstat:*:284:284::0:0:vnStat Network Monitor:/nonexistent:/usr/sbin/nologin
 exaddos:*:285:285::0:0:exaddos daemon user:/nonexistent:/usr/sbin/nologin
 rancid:*:286:286::0:0:RANCID daemon user:/usr/local/var/rancid:/bin/sh
+ntopng:*:288:288::0:0:ntopng daemon user:/nonexistent:/usr/sbin/nologin
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin
@@ -227,6 +228,7 @@ _xsi:*:600:600::0:0:XMLSysInfo User:/nonexistent:/usr/sbin/nologin
 _tss:*:601:601:daemon:0:0:TrouSerS user:/var/empty:/usr/sbin/nologin
 _pkcs11:*:602:602:daemon:0:0:opencryptoki user:/var/empty:/usr/sbin/nologin
 freeswitch:*:610:610::0:0:Freeswitch user:/nonexistent:/usr/sbin/nologin
+ntpa:*:615:615::0:0:NTPa user:/nonexistent:/usr/sbin/nologin
 _pla:*:636:80::0:0:phpLDAPAdmin Owner:/nonexistent:/usr/sbin/nologin
 caldavd:*:639:639::0:0:Caldavd user:/var/db/caldavd:/usr/sbin/nologin
 monkeysphere:*:641:641::0:0:Monkeysphere User:/var/monkeysphere:/usr/local/bin/bash
@@ -259,6 +261,7 @@ sogod:*:846:846::0:0:SOGo groupware:/nonexistent:/usr/sbin/nologin
 domoticz:*:847:847::0:0:domoticz user:/nonexistent:/usr/sbin/nologin
 graylog:*:848:848::0:0:Graylog user:/nonexistent:/usr/sbin/nologin
 guacamole:*:899:899::0:0:Guacamole user:/nonexistent:/usr/sbin/nologin
+seafile:*:900:900::0:0:Seafile user:/nonexistent:/usr/bin/nologin
 fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash
 scanlogd:*:902:902::0:0:scanlogd user:/nonexistent:/usr/sbin/nologin
 _ocserv:*:903:903::0:0:ocserv user:/nonexistent:/usr/sbin/nologin

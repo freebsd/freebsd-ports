@@ -1867,6 +1867,7 @@ lib32/wine/fakedlls/msxml2.dll
 lib32/wine/fakedlls/msxml3.dll
 lib32/wine/fakedlls/msxml4.dll
 lib32/wine/fakedlls/msxml6.dll
+lib32/wine/fakedlls/ncrypt.dll
 lib32/wine/fakedlls/nddeapi.dll
 lib32/wine/fakedlls/ndis.sys
 lib32/wine/fakedlls/net.exe
@@ -2477,6 +2478,7 @@ lib32/wine/msxml2.dll.so
 lib32/wine/msxml3.dll.so
 lib32/wine/msxml4.dll.so
 lib32/wine/msxml6.dll.so
+lib32/wine/ncrypt.dll.so
 lib32/wine/nddeapi.dll.so
 lib32/wine/ndis.sys.so
 lib32/wine/net.exe.so

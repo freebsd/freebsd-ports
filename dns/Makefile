@@ -37,6 +37,7 @@
     SUBDIR += dnscrypt-wrapper
     SUBDIR += dnsdbck
     SUBDIR += dnsdist
+    SUBDIR += dnsenum
     SUBDIR += dnsflood
     SUBDIR += dnshistory
     SUBDIR += dnsjava
@@ -45,6 +46,7 @@
     SUBDIR += dnsmax-perl
     SUBDIR += dnsperf
     SUBDIR += dnsproxy
+    SUBDIR += dnsrecon
     SUBDIR += dnsreflector
     SUBDIR += dnstable
     SUBDIR += dnstop
@@ -170,6 +172,7 @@
     SUBDIR += py-namebench
     SUBDIR += py-publicsuffix
     SUBDIR += py-py3dns
+    SUBDIR += py-pycares
     SUBDIR += py-pydnstable
     SUBDIR += py-pywdns
     SUBDIR += py-tldextract

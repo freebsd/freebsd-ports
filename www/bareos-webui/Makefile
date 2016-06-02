@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	bareos-webui
+DISTVERSIONPREFIX=	Release/
 DISTVERSION=	15.2.2
 PORTREVISION=	0
 CATEGORIES=	www sysutils
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	bareos
-GH_PROJECT=	bareos-webui
-GH_TAGNAME=	27fbfd02ab64d54e92457f0eda6ef2fd60c0cd70
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A PHP-Frontend to manage Bareos over the web
 
 LICENSE=	AGPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	bareos
+GH_PROJECT=	bareos-webui
 
 USES=		tar:tgz
 USE_PHP=	openssl

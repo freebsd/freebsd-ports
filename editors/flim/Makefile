@@ -38,7 +38,6 @@ EMACS_MASTERDIR_PKGFILES=YES
 DESCR=		${PKGDIR}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=	DOCS
 
 # target name for make build
 ALL_TARGET?=	elc

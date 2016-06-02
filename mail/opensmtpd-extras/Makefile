@@ -2,10 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd-extras
-PORTVERSION=	201605182041
-PORTREVISION?=	0
+PORTVERSION=	201605232202
+PORTREVISION?=	1
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
+
+# NB: Please reset PORTREVISION to 0 in all slave subports
+# while updating PORTVERSION for master port
 
 MAINTAINER?=	gahr@FreeBSD.org
 COMMENT?=	Addons for OpenSMTPD
@@ -13,23 +16,39 @@ COMMENT?=	Addons for OpenSMTPD
 LICENSE?=	ISCL
 
 LIB_DEPENDS+=	libevent.so:devel/libevent2
-RUN_DEPENDS+=	${LOCALBASE}/sbin/smtpctl:mail/opensmtpd
 
-USES+=		autoreconf libtool pkgconfig
+USES+=		autoreconf libtool
 USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
 GNU_CONFIGURE=	yes
 
+CONFIGURE_ARGS+=	--sysconfdir="${PREFIX}/etc/mail"
+
 # NB: Please *DO NOT* add the following; they are NOT for end-users:
-# filter-monkey, filter-stub, filter-trace, filter-void
+# filter-stub, filter-trace, filter-void
 # queue-null, queue-stub
 # scheduler-stub
 # table-stub
+
+#
+# Pass OpenSMTPD branch selection to all extras
+#
+OPTIONS_DEFINE=	OPENSMTP_DEVEL
+
+OPENSMTP_DEVEL_DESC=	Depend on opensmtpd-devel (opensmtpd if off)
+OPENSMTP_DEVEL_BUILD_DEPENDS_OFF=	smtpctl:${PORTSDIR}/mail/opensmtpd
+OPENSMTP_DEVEL_RUN_DEPENDS_OFF=		smtpctl:${PORTSDIR}/mail/opensmtpd
+OPENSMTP_DEVEL_BUILD_DEPENDS=	smtpctl:${PORTSDIR}/mail/opensmtpd-devel
+OPENSMTP_DEVEL_RUN_DEPENDS=	smtpctl:${PORTSDIR}/mail/opensmtpd-devel
+
 .if empty(SLAVE_PORT)
 OPTIONS_GROUP=		FILTER TABLE
 OPTIONS_GROUP_FILTER=	CLAMAV DKIM DNSBL PAUSE REGEX SPAMASSASSIN
 OPTIONS_GROUP_TABLE=	LDAP MYSQL PASSWD PGSQL PYTHON REDIS SMAP SQLITE
 OPTIONS_DEFAULT=	${OPTIONS_GROUP_FILTER} ${OPTIONS_GROUP_TABLE}
+
+# Groups
+FILTER_DESC=			BASE FILTERS
+TABLE_DESC=			BASE TABLES
 
 # Filters
 CLAMAV_DESC=		Check messages with ClamAV

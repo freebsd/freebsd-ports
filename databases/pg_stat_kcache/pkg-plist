@@ -1,0 +1,5 @@
+lib/postgresql/pg_stat_kcache.so
+share/doc/postgresql/extension/pg_stat_kcache-README.rst
+share/postgresql/extension/pg_stat_kcache--2.0.1--2.0.2.sql
+share/postgresql/extension/pg_stat_kcache--2.0.2.sql
+share/postgresql/extension/pg_stat_kcache.control

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libqjson.so:devel/qjson \
 		libgrantlee_gui.so:devel/grantlee
 
-USE_KDE4=	kate_run kdelibs kdeprefix automoc4
+USE_KDE4=	kate_run kdelibs automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		corelib designer_build gui webkit
 USES=		cmake:outsource compiler:c++11-lib shebangfix tar:bz2

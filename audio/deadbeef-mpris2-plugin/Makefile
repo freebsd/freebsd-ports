@@ -21,6 +21,8 @@ USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
+MAKE_JOBS_UNSAFE=	yes
+
 PLIST_FILES=	lib/deadbeef/mpris.so
 
 .include <bsd.port.mk>

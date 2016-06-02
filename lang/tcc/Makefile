@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	tcc
-PORTVERSION=	0.9.26
+DISTVERSIONPREFIX=	release_
+DISTVERSION=	0_9_26
 PORTREVISION=	4
 CATEGORIES=	lang
 
@@ -15,7 +16,6 @@ ONLY_FOR_ARCHS=	amd64 i386
 USE_GITHUB=	yes
 GH_ACCOUNT=	TinyCC
 GH_PROJECT=	tinycc
-GH_TAGNAME=	release_${PORTVERSION:C/\./_/g}
 
 USES=		gmake makeinfo perl5 tar:bzip2
 USE_PERL5=	build

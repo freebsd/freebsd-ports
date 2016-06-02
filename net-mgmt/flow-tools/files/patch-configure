@@ -1,6 +1,6 @@
---- configure.orig	Wed May 11 18:15:55 2005
-+++ configure	Wed Dec 20 01:34:55 2006
-@@ -1662,7 +1662,7 @@
+--- configure.orig	2005-05-11 14:15:55 UTC
++++ configure
+@@ -1662,7 +1662,7 @@ INSTALL_STRIP_PROGRAM="\${SHELL} \$(inst
  
  
  
@@ -9,7 +9,7 @@
  
  ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
-@@ -2254,7 +2254,6 @@
+@@ -2254,7 +2254,6 @@ echo "${ECHO_T}$ac_cv_c_compiler_gnu" >&
  GCC=`test $ac_compiler_gnu = yes && echo yes`
  ac_test_CFLAGS=${CFLAGS+set}
  ac_save_CFLAGS=$CFLAGS
@@ -17,7 +17,7 @@
  echo "$as_me:$LINENO: checking whether $CC accepts -g" >&5
  echo $ECHO_N "checking whether $CC accepts -g... $ECHO_C" >&6
  if test "${ac_cv_prog_cc_g+set}" = set; then
-@@ -2299,21 +2298,6 @@
+@@ -2299,21 +2298,6 @@ rm -f conftest.$ac_objext conftest.$ac_e
  fi
  echo "$as_me:$LINENO: result: $ac_cv_prog_cc_g" >&5
  echo "${ECHO_T}$ac_cv_prog_cc_g" >&6
@@ -39,16 +39,34 @@
  echo "$as_me:$LINENO: checking for $CC option to accept ANSI C" >&5
  echo $ECHO_N "checking for $CC option to accept ANSI C... $ECHO_C" >&6
  if test "${ac_cv_prog_cc_stdc+set}" = set; then
-@@ -3345,7 +3329,7 @@
+@@ -3204,7 +3188,7 @@ fi;
+ 
+ 
+ if test "x$WHERE_MYSQL" != "x"; then
+-  LIBS="-L$WHERE_MYSQL/lib/mysql"
++  LIBS="-L$WHERE_MYSQL/lib/mysql $LIBS"
+   echo "$as_me:$LINENO: checking for my_init in -lmysqlclient" >&5
+ echo $ECHO_N "checking for my_init in -lmysqlclient... $ECHO_C" >&6
+ if test "${ac_cv_lib_mysqlclient_my_init+set}" = set; then
+@@ -3274,7 +3258,7 @@ fi
+ fi
+ 
+ if test "x$WHERE_OPENSSL" != "x"; then
+-  LIBS="-L$WHERE_OPENSSL/lib"
++  LIBS="-L$WHERE_OPENSSL/lib $LIBS"
+   echo "$as_me:$LINENO: checking for EVP_EncryptUpdate in -lcrypto" >&5
+ echo $ECHO_N "checking for EVP_EncryptUpdate in -lcrypto... $ECHO_C" >&6
+ if test "${ac_cv_lib_crypto_EVP_EncryptUpdate+set}" = set; then
+@@ -3345,7 +3329,7 @@ fi
  
  
  if test "x$WHERE_PGSQL" != "x"; then
 -  LIBS="-L$WHERE_PGSQL/lib/pgsql"
-+  LIBS="-L$WHERE_PGSQL/lib"
++  LIBS="-L$WHERE_PGSQL/lib $LIBS"
    echo "$as_me:$LINENO: checking for PQsetdbLogin in -lpq" >&5
  echo $ECHO_N "checking for PQsetdbLogin in -lpq... $ECHO_C" >&6
  if test "${ac_cv_lib_pq_PQsetdbLogin+set}" = set; then
-@@ -3402,7 +3386,7 @@
+@@ -3402,7 +3386,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib
  echo "${ECHO_T}$ac_cv_lib_pq_PQsetdbLogin" >&6
  if test $ac_cv_lib_pq_PQsetdbLogin = yes; then
  

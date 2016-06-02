@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.3
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt devel
@@ -25,8 +25,8 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 
-USES=		autoreconf libtool localbase pathfix pkgconfig python:-2.7 \
-		shebangfix
+USES=		autoreconf gettext libtool localbase pathfix pkgconfig \
+		python:-2.7 shebangfix
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 SHEBANG_FILES=	tools/*.py
@@ -42,11 +42,11 @@ SEAFILE_SERVER=	${HAIWENDIR}/seafile-server
 SEABIN=		${SEAFILE_SERVER}/seafile/bin
 SEALIB=		${SEAFILE_SERVER}/seafile/lib
 
-SEAFILE_USERNAME?=	seafile
-SEAFILE_GROUPNAME?=	${SEAFILE_USERNAME}
+USERS=		seafile
+GROUPS=		${USERS}
 
-PLIST_SUB=	SEAFILE_USERNAME=${SEAFILE_USERNAME} \
-		SEAFILE_GROUPNAME=${SEAFILE_GROUPNAME} \
+PLIST_SUB=	USERS=${USERS} \
+		GROUPS=${GROUPS} \
 		SEAFILE_SERVER=${SEAFILE_SERVER} \
 		HAIWENDIR=${HAIWENDIR}
 

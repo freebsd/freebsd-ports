@@ -1,0 +1,17 @@
+include/dring/account_const.h
+include/dring/call_const.h
+include/dring/callmanager_interface.h
+include/dring/configurationmanager_interface.h
+include/dring/dring.h
+include/dring/media_const.h
+include/dring/presencemanager_interface.h
+include/dring/security_const.h
+include/dring/videomanager_interface.h
+lib/libring.so
+lib/libring.so.0
+lib/libring.so.0.0.0
+man/man1/dring.1.gz
+%%DBUS%%sbin/dring
+%%DBUS%%share/dbus-1/services/cx.ring.Ring.service
+share/ring/ringtones/default.wav
+share/ring/ringtones/konga.ul

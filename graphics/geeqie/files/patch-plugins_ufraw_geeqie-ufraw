@@ -1,0 +1,35 @@
+--- plugins/ufraw/geeqie-ufraw.orig	2016-03-07 10:21:06 UTC
++++ plugins/ufraw/geeqie-ufraw
+@@ -37,7 +37,7 @@ add_xmp_from_sidecar ()
+ 
+     basename=${input%.*}
+     dirname=${basename%/*}
+-    xmp=`find "$dirname" -maxdepth 1 -path "$basename.*" -regextype posix-egrep -iregex "$XMP_REGEX" -print | head -n 1`
++    xmp=`find -E "$dirname" -maxdepth 1 -path "$basename.*" -iregex "$XMP_REGEX" -print | head -n 1`
+     [ -f "$xmp" ] || return 1
+ 
+     output=`get_output_from_id "$idfile"`
+@@ -75,7 +75,7 @@ raw_file_not_processed ()
+     rawfile=$1
+     basename=${rawfile%.*}
+     dirname=${basename%/*}
+-    outfiles=`find "$dirname" -maxdepth 1 -path "$basename.*" -regextype posix-egrep \( -iregex "$OUT_REGEX" -o -regex "$ID_REGEX" \) -print `
++    outfiles=`find -E "$dirname" -maxdepth 1 -path "$basename.*" \( -iregex "$OUT_REGEX" -o -regex "$ID_REGEX" \) -print `
+     [ -z "$outfiles" ] # return true if no possible output file exists
+ 
+     # raw+jpeg pair created by the camera is considered processed, 
+@@ -136,12 +136,12 @@ process_tree ()
+ {
+     list=`mktemp /tmp/geeqie-ufraw-list.XXXXXXXXXX` || exit 1
+ 
+-    find "$@" -regextype posix-egrep -iregex "$RAW_REGEX" -print | while read rawfile ; do
++    find -E "$@" -iregex "$RAW_REGEX" -print | while read rawfile ; do
+         raw_file_not_processed "$rawfile" && echo "$rawfile" 
+     done >>$list
+     
+     #refresh output from changed id files
+-    find "$@" -regextype posix-egrep -regex "$ID_REGEX" -print | while read idfile ; do
++    find -E "$@" -regex "$ID_REGEX" -print | while read idfile ; do
+         id_file_changed "$idfile" && echo "$idfile"
+     done >>$list
+ 

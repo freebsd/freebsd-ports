@@ -287,6 +287,7 @@
     SUBDIR += lasso
     SUBDIR += lastpass-cli
     SUBDIR += letsencrypt.sh
+    SUBDIR += letskencrypt
     SUBDIR += libadacrypt
     SUBDIR += libassuan
     SUBDIR += libbeid
@@ -782,6 +783,7 @@
     SUBDIR += pinentry-gnome3
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt4
+    SUBDIR += pinentry-qt5
     SUBDIR += pinentry-tty
     SUBDIR += pixiewps
     SUBDIR += pkcrack
@@ -823,7 +825,6 @@
     SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer
     SUBDIR += py-certifi
-    SUBDIR += py-clamav
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
     SUBDIR += py-crits

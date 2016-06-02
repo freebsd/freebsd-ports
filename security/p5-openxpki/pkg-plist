@@ -305,13 +305,9 @@ bin/openxpkictl
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Persister/Null.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Stub.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator.pm
-%%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/ApprovalSignature.pm
-%%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/Bulk.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertIdentifierExists.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubject.pm
-%%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubjectAltNameParts.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubjectFields.pm
-%%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubjectParts.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/Connector.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/InvalidityTime.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/KeyLength.pm
@@ -321,7 +317,6 @@ bin/openxpkictl
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/ReasonCode.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/Regex.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/RelativeDate.pm
-%%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/SPKAC.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/SmartcardPINUnblockAuthIDs.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/ValidityTime.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Validator/ValidityWindow.pm
@@ -634,13 +629,9 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Persister::DBI::SequenceId.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Persister::Null.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::ApprovalSignature.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::Bulk.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertIdentifierExists.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertSubject.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertSubjectAltNameParts.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertSubjectFields.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertSubjectParts.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::Connector.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::InvalidityTime.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::KeyLength.3.gz
@@ -650,7 +641,6 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::ReasonCode.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::Regex.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::RelativeDate.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::SPKAC.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::SmartcardPINUnblockAuthIDs.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::ValidityTime.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::ValidityWindow.3.gz

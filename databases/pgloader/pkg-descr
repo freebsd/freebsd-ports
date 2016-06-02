@@ -19,4 +19,4 @@ the end of processing each section, a summary of overall operations,
 numbers of rows copied and commits, time it took in seconds, errors
 logged and database errors is issued.
 
-WWW:	http://pgfoundry.org/projects/pgloader/
+WWW: http://pgfoundry.org/projects/pgloader/

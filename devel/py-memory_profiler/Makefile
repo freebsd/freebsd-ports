@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	xmj@FreeBSD.org
 COMMENT=	Line-by-line and process memory consumption analysis
 
 LICENSE=	BSD2CLAUSE

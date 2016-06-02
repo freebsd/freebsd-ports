@@ -9,4 +9,4 @@ instance (change server weight, put servers into maintenance mode,
 etc.) directly out of hatop (using keybinds or the CLI) and monitor the
 results immediately.
 
-WWW:	http://feurix.org/projects/hatop/
+WWW: http://feurix.org/projects/hatop/

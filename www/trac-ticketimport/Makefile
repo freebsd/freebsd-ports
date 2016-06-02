@@ -10,11 +10,14 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Import or update tickets from a CSV file or Excel file
 
-RUN_DEPENDS+=	tracd:www/trac \
+LICENSE=	BSD3CLAUSE # "same license as trac"
+
+RUN_DEPENDS=	tracd:www/trac \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=0.7.1:textproc/py-xlrd
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 # Maintainter targets below this point
 
@@ -29,5 +32,4 @@ do-fetch:
 	cd ${WRKDIR} && tar cvf ${DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

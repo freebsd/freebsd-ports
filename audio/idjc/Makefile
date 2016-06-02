@@ -26,9 +26,8 @@ RUN_DEPENDS=	oggenc:audio/vorbis-tools \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus
 
-OPTIONS_SUB=	YES
 OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_DEFAULT=	DOCS NLS
+OPTIONS_SUB=	YES
 
 USES=		compiler:nestedfct desktop-file-utils gettext gmake \
 		libtool pathfix pkgconfig python:2.7

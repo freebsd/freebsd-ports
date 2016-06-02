@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2016-05-06 14:35:17 UTC
++++ CMakeLists.txt
+@@ -11,7 +11,7 @@ IF (CMAKE_COMPILER_IS_GNUCC)
+    ENDIF()
+ ENDIF()
+ 
+-ADD_DEFINITIONS("-std=c++1y")
++set(CMAKE_CXX_FLAGS "-std=c++1y")
+ 
+ # set project name and version
+ PROJECT(ring-client-gnome)
+@@ -306,7 +306,10 @@ GLIB_COMPILE_RESOURCES( GLIB_RESOURCES_R
+ #    ADD_SUBDIRECTORY( src/test)
+ # ENDIF()
+ 
++option(FREEBSD_NLS_ON "NLS option: install translations" OFF)
++
+ # for translations
++IF (FREEBSD_NLS_ON)
+ IF (GETTEXT_FOUND)
+ 
+   # get all translation files; they're expected to be named using the following convention:
+@@ -331,6 +334,7 @@ IF (GETTEXT_FOUND)
+   ENDFOREACH(PO_FILE)
+ 
+ ENDIF(GETTEXT_FOUND)
++ENDIF(FREEBSD_NLS_ON)
+ 
+ # install and compile glib gsettings schema
+ add_schema("cx.ring.RingGnome.gschema.xml" GSCHEMA_RING)

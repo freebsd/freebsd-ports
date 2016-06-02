@@ -1,0 +1,17 @@
+This is a standalone version of W. Richard Stevens' "sock" program,
+based on the code available for the UNIX Network Programming book.
+
+Adapted and reworked code for W. Richard Stevens' "sock" utility
+by Christian Kreibich.
+
+From the author:  In TCP/IP Illustrated Vol. 1, Richard Stevens used
+a program called "sock" to demonstrate the many properties of TCP/IP.
+Unfortunately, the book only speaks about how to use the program but
+does not point to a site for downloading its sources. While sock is
+contained in the code package accompanying UNIX Network Programming,
+this code is also getting dated.
+
+The program can be used to generate TCP or UDP packets for testing
+various network features.  It runs as either client or server.
+
+WWW: http://www.icir.org/christian/sock.html

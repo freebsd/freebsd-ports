@@ -12,11 +12,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to use Mercurial instead of Subversion in Trac
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	hg:devel/mercurial \
 		tracd:www/trac
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcbautolock
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	x11
 
 MAINTAINER=	bapt@FreeBSD.org

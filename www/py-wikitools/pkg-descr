@@ -1,4 +1,4 @@
-WWW:	http://code.google.com/p/python-wikitools/
+WWW: http://code.google.com/p/python-wikitools/
 
 A Python package for interacting with a MediaWiki wiki using
 the MediaWiki API.

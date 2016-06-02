@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	opensubdiv
-PORTVERSION=	3.0.3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3_0_3
 PORTREVISION=	1
 CATEGORIES=	graphics devel
 
@@ -16,7 +17,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/GLFW/glfw3.h:graphics/glfw
 USE_GITHUB=	yes
 GH_ACCOUNT=	PixarAnimationStudios
 GH_PROJECT=	OpenSubdiv
-GH_TAGNAME=	v3_0_3
 
 USE_LDCONFIG=	yes
 USE_GL=		glew

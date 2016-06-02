@@ -1,0 +1,78 @@
+--- configure.seed.orig	2016-05-05 13:23:53 UTC
++++ configure.seed
+@@ -14,22 +14,7 @@ NTOPNG_SHORT_VERSION="@SHORT_VERSION@"
+ # On CentOS 6 `git rev-list HEAD --count` does not work
+ #
+ #
+-REVISION=`git log --pretty=oneline | wc -l`
+-
+-if test -d "/usr/local/include"; then
+-CFLAGS="${CFLAGS} -I/usr/local/include"
+-CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
+-LDFLAGS="${LDFLAGS} -L/usr/local/lib"
+-fi
+-
+-if test -d /opt/local/include; then :
+-   CFLAGS="${CFLAGS} -I/opt/local/include"
+-   CPPFLAGS="${CPPFLAGS} -I/opt/local/include"
+-fi
+-
+-if test -d /opt/local/lib; then :
+-  LDFLAGS="${LDFLAGS} -L/opt/local/lib"
+-fi
++#REVISION=`git log --pretty=oneline | wc -l`
+ 
+ if [ test -f /usr/bin/lsb_release ]; then
+    CODENAME=`/usr/bin/lsb_release -c|cut -f 2`
+@@ -46,28 +31,9 @@ GIT_BRANCH="@GIT_BRANCH@"
+ PRO_GIT_RELEASE="@PRO_GIT_RELEASE@"
+ PRO_GIT_DATE="@PRO_GIT_DATE@"
+ 
+-AC_MSG_CHECKING(for nDPI)
+-NDPI_HOME=./nDPI
+-if test -d "$NDPI_HOME" ; then :
+-   AC_MSG_RESULT(found in $NDPI_HOME)
+-else
+-   NDPI_HOME=../nDPI
+-   if test -d "$NDPI_HOME"; then :
+-      AC_MSG_RESULT(found in $NDPI_HOME)
+-   else
+-      NDPI_HOME=$HOME/nDPI
+-      if test -d "$NDPI_HOME"; then :
+-        AC_MSG_RESULT(found in $NDPI_HOME)
+-      else
+-        AC_MSG_RESULT(not found)
+-        echo "Please do cd ..; git clone https://github.com/ntop/nDPI.git; cd nDPI; ./autogen.sh; make; cd ../ntopng"
+-        echo " and try again"
+-        exit
+-      fi
+-   fi
+-fi
++NDPI_HOME=/usr/local
+ 
+-NDPI_LIB=$NDPI_HOME/src/lib/.libs/libndpi.a
++NDPI_LIB=$NDPI_HOME/lib/libndpi.so
+ AC_MSG_CHECKING(for $NDPI_LIB)
+ if test -f "$NDPI_LIB" ; then :
+   AC_MSG_RESULT(found $NDPI_LIB)
+@@ -359,19 +325,7 @@ if test x$GPP = x
+ then
+ 	GPP="g++"
+ else
+-	GPP="$GPP -O0"
+-fi
+-
+-GIT=`which git`
+-if test x$GIT = x
+-then
+-	AC_MSG_RESULT(FATAL ERROR: git is not installed on your host)
+-fi
+-
+-WGET=`which wget`
+-if test x$WGET = x
+-then
+-	AC_MSG_RESULT(ERROR. wget is not installed on your host: you cannot download GeoIP data)
++	GPP="$GPP ${CFLAGS}"
+ fi
+ 
+ umask 002

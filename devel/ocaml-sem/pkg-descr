@@ -1,2 +1,4 @@
 POSIX semaphores for OCaml. The library mimics things found under "man sem"
 and "man sem_open".
+
+WWW: http://ocaml-sem.sourceforge.net/

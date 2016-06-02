@@ -8,7 +8,7 @@ CATEGORIES=	misc kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE SC 4
 
-USE_KDE4=	kdeprefix
+USE_KDE4=	# blank, needed to get KDE4_VERSION
 USES=		metaport
 
 KDE4_LANG_ALL=	ar bg bs ca ca@valencia cs da de el en_GB es et eu fa \

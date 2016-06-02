@@ -1,15 +1,23 @@
---- ./ntfsprogs/Makefile.in.orig	2011-07-08 16:21:25.000000000 +0100
-+++ ./ntfsprogs/Makefile.in	2011-07-08 16:21:40.000000000 +0100
-@@ -1073,12 +1073,8 @@
+--- ntfsprogs/Makefile.in.orig	2016-02-21 23:34:49.000000000 -0800
++++ ntfsprogs/Makefile.in	2016-05-26 00:04:03.566411000 -0700
+@@ -88,6 +88,7 @@
+ @ENABLE_NTFSPROGS_TRUE@	ntfslabel$(EXEEXT) \
+ @ENABLE_NTFSPROGS_TRUE@	ntfsundelete$(EXEEXT) \
+ @ENABLE_NTFSPROGS_TRUE@	ntfsresize$(EXEEXT) ntfsclone$(EXEEXT) \
++@ENABLE_NTFSPROGS_TRUE@	ntfsrecover$(EXEEXT) \
+ @ENABLE_NTFSPROGS_TRUE@	ntfscp$(EXEEXT)
+ @ENABLE_CRYPTO_TRUE@@ENABLE_NTFSPROGS_TRUE@am__append_1 = ntfsdecrypt
+ @ENABLE_EXTRAS_TRUE@@ENABLE_NTFSPROGS_TRUE@am__append_2 = $(EXTRA_PROGRAM_NAMES)
+@@ -1376,12 +1377,8 @@
  # mkfs.ntfs[.8] hard link
  
- @ENABLE_NTFSPROGS_TRUE@install-exec-hook:
--@ENABLE_NTFSPROGS_TRUE@	$(INSTALL) -d $(DESTDIR)/sbin
--@ENABLE_NTFSPROGS_TRUE@	$(LN_S) -f $(sbindir)/mkntfs $(DESTDIR)/sbin/mkfs.ntfs
+ @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@install-exec-hook:
+-@ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@	$(INSTALL) -d $(DESTDIR)/sbin
+-@ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@	$(LN_S) -f $(sbindir)/mkntfs $(DESTDIR)/sbin/mkfs.ntfs
  
- @ENABLE_NTFSPROGS_TRUE@install-data-hook:
--@ENABLE_NTFSPROGS_TRUE@	$(INSTALL) -d $(DESTDIR)$(man8dir)
--@ENABLE_NTFSPROGS_TRUE@	$(LN_S) -f mkntfs.8 $(DESTDIR)$(man8dir)/mkfs.ntfs.8
+ @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@install-data-hook:
+-@ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@	$(INSTALL) -d $(DESTDIR)$(man8dir)
+-@ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@	$(LN_S) -f mkntfs.8 $(DESTDIR)$(man8dir)/mkfs.ntfs.8
  
- @ENABLE_NTFSPROGS_TRUE@uninstall-local:
- @ENABLE_NTFSPROGS_TRUE@	$(RM) -f $(DESTDIR)/sbin/mkfs.ntfs
+ @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@uninstall-local:
+ @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@	$(RM) -f $(DESTDIR)/sbin/mkfs.ntfs

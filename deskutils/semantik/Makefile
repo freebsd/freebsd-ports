@@ -11,7 +11,7 @@ COMMENT=	KDE mind mapping tool
 
 LICENSE=	GPLv3
 
-USE_KDE4=	kdelibs kdeprefix
+USE_KDE4=	kdelibs
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_QT4=	corelib gui linguist_build svg webkit xml \

@@ -8,17 +8,17 @@ post-install: <<EOD
   /*) kmoddir="%@" ;;
   *) kmoddir="%D/%@" ;;
   esac
-  /usr/sbin/kldxref ${kmoddir}
+  /usr/sbin/kldxref ${PKG_ROOTDIR}${kmoddir}
 EOD
 post-deinstall: <<EOD
   case "%@" in
   /*) kmoddir="%@" ;;
   *) kmoddir="%D/%@" ;;
   esac
-  /usr/sbin/kldxref ${kmoddir}
+  /usr/sbin/kldxref ${PKG_ROOTDIR}${kmoddir}
   case "${kmoddir}" in
   %D/*) ;;
   /boot/modules) ;;
-  *) rmdir -p ${kmoddir} 2>/dev/null || true ;;
+  *) rmdir -p ${PKG_ROOTDIR}${kmoddir} 2>/dev/null || true ;;
   esac
 EOD
