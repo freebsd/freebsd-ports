@@ -15,7 +15,7 @@ LICENSE_NAME=	NODE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-TEST_DEPENDS=	gyp:devel/py-gyp-devel	\
+TEST_DEPENDS=	gyp:devel/py-gyp \
 		gmake:devel/gmake
 
 USES=		autoreconf libtool pathfix pkgconfig
