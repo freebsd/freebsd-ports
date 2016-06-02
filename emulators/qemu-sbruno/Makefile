@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.5.93.g20160518
+PORTVERSION=	2.6.50.g20160529
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -18,7 +18,7 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	0325195
+GH_TAGNAME=	a7fb2b9
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
