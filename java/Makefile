@@ -109,7 +109,6 @@
     SUBDIR += openjfx8-devel
     SUBDIR += phpeclipse
     SUBDIR += proguard
-    SUBDIR += rubygem-rjb
     SUBDIR += sablevm
     SUBDIR += sablevm-classpath
     SUBDIR += servingxml
