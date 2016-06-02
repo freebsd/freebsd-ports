@@ -2,6 +2,7 @@
 
 PORTNAME=	qdoc
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 PKGNAMEPREFIX=	qt5-
 
@@ -16,6 +17,12 @@ CONFIGURE_ARGS=	-no-dbus -no-gui -no-xcb
 BUILD_WRKSRC=	${WRKSRC}/src/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-PLIST_FILES=	${QT_BINDIR}/qdoc
+QT_DOCDIR=      ${PREFIX}/share/doc/qt5
+
+post-install:
+	${MKDIR} ${STAGEDIR}${QT_DOCDIR} && \
+	cd ${WRKSRC}/doc/global && \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${QT_DOCDIR}/global
+
 
 .include <bsd.port.mk>
