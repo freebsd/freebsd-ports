@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible process monitor/restart daemon written in ruby
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

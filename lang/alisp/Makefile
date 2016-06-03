@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreter for purely symbolic LISP
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USES=		uidfix
 USE_LDCONFIG=	yes

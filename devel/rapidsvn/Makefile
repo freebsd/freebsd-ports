@@ -10,6 +10,8 @@ MAINTAINER=	robert.ayrapetyan@gmail.com
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion \
 		xsltproc:textproc/libxslt \

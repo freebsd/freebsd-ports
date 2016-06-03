@@ -12,6 +12,8 @@ MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Commodore 64 "Crossroads"-like video game for X Window System
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 USE_XORG=	x11 xpm xext
 
 OPTIONS_DEFINE=	DOCS

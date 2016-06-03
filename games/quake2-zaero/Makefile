@@ -14,6 +14,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II Zaero Mission Pack
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 USES=		dos2unix zip
 DOS2UNIX_FILES=	*.[ch]
 NO_WRKSUBDIR=	yes

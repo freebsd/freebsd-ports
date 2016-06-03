@@ -10,6 +10,8 @@ MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Manages LDAP enteries for the BIND9 SDB LDAP patch
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 USES=		perl5 tar:tgz
 NO_BUILD=	yes
 

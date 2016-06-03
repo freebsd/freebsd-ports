@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Admin-configurable email user signup CGI
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	vpopmail>0:mail/vpopmail
 RUN_DEPENDS=	vpopmail>0:mail/vpopmail

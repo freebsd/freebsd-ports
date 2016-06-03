@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortunes from bash.org.ru and freebsd.rusnet.org.ru/bash
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 NO_BUILD=	yes
 

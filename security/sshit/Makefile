@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks for SSH/FTP bruteforce and blocks given IPs
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 RUN_DEPENDS=	p5-Unix-Syslog>=0:sysutils/p5-Unix-Syslog \
 		p5-IPC-Shareable>=0:devel/p5-IPC-Shareable \

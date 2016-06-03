@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display email status in tray
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USE_GNOME=	pygtk2
 USES=		python

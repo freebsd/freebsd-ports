@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collect WWW resources and generate TSV data
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 NO_ARCH=	yes
 NO_BUILD=	yes

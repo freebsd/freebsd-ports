@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic reader for SOUP (HDPF) mail and news packets
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 RUN_DEPENDS=	zip:archivers/zip
 

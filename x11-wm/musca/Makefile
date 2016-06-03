@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple window manager for X, with features from ratpoison and dwm
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 RUN_DEPENDS=	dmenu:x11/dmenu
 

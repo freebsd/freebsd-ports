@@ -12,6 +12,8 @@ MAINTAINER=	skynick@mail.sc.ru
 COMMENT=	Secure FTP client/server with TLS/SSL support
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 USE_OPENSSL=	yes
 MAKE_ENV+=	OBJFORMAT=elf
 MAKE_JOBS_UNSAFE=	yes

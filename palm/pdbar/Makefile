@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create and manipulate PalmOS database files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="" AR=${AR} RANLIB=${RANLIB} LD=${CC}
 

@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts Intel assembly language (nasm) to AT&T syntax (gas)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CXX="${CXX}"

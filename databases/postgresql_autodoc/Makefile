@@ -11,6 +11,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Automatic documentation generator for postgresql databases
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 RUN_DEPENDS=	p5-HTML-Template>=0:www/p5-HTML-Template \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \

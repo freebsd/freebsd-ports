@@ -14,6 +14,8 @@ MAINTAINER=		gavin@FreeBSD.org
 COMMENT=		Network head to head version of T*tris
 
 BROKEN=			unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 LICENSE=		GPLv2+
 
 HAS_CONFIGURE=		yes

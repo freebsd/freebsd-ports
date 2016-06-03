@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stream editor that uses the UTF routines with the sam(1) command set
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ure.h:misc/libutf
 

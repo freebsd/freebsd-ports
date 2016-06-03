@@ -13,6 +13,8 @@ MAINTAINER=	devel@stasyan.com
 COMMENT=	Graphical VRML97 editor and animation tool
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 LIB_DEPENDS=	libpng.so:graphics/png
 
 LICENSE=	GPLv2

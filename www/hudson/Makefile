@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible continuous integration engine
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

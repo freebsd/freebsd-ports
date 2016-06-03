@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Andrew Hume's mk by way of Research Unix, Plan 9, & Inferno
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 PLIST_FILES=	bin/mk man/man1/mk.1.gz
 

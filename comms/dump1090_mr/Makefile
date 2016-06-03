@@ -10,6 +10,8 @@ MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	FlightAware's Mode S decoder for RTLSDR devices
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	BSD3CLAUSE
 

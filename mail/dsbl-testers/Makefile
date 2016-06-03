@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Testing software for DSBL/DSBL-compliant services
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:misc/firestring \
 		${LOCALBASE}/include/firedns.h:dns/firedns

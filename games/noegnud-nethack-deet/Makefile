@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The noeGNUd UI for Nethack with DeeT's hack font patch
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 RUN_DEPENDS=	noegnud-data>0:games/noegnud-data
 

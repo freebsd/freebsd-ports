@@ -14,6 +14,8 @@ COMMENT=	Graphic development lightweight API
 LICENSE=	LGPL21
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 LIB_DEPENDS=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	FREETYPE X11 SDL UNIQUE TEST DOCS

@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java viewer for chemical structures in 3D
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+

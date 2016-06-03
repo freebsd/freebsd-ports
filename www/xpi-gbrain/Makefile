@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keeps your browser history at Google bookmarks
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 XPI_NUM=	2515
 XPI_ID=		gbrain@andreas.gohr

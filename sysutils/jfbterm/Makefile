@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual terminal emulator for framebuffer
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

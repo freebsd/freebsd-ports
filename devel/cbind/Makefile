@@ -14,6 +14,8 @@ COMMENT=	Translator for "thin" Ada bindings to C
 OPTIONS_DEFINE=	DOCS
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 USES=		zip
 MAKE_JOBS_UNSAFE=	yes
 

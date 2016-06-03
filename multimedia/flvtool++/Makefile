@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for hinting and manipulating the metadata of FLV files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 

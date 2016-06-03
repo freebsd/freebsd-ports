@@ -16,6 +16,8 @@ COMMENT=	Support for ticket dependencies
 RUN_DEPENDS=	trac>=0.12:www/trac
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USES=		python
 USE_PYTHON=	distutils autoplist

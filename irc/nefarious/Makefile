@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC server used by evilnet based off of Undernet's ircu
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash

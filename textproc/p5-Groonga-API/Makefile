@@ -12,6 +12,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	charsbar

@@ -13,6 +13,8 @@ COMMENT=	Varnish Module (vmod) for manipulation of duplicated headers
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	varnish4>=4.0.2:www/varnish4 \
 		rst2man:textproc/py-docutils
