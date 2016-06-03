@@ -7,6 +7,7 @@ In /etc/ttys:
 	xc0 	"/usr/libexec/getty Pc"         xterm   on  secure
 
 In /boot/loader.conf for a dom0 with 2G memory and 4 vcpus:
+	hw.pci.mcfg=0
 	xen_kernel="/boot/xen"
 	xen_cmdline="dom0_mem=2048M dom0_max_vcpus=4 dom0pvh=1 com1=115200,8n1 guest_loglvl=all loglvl=all"
 
