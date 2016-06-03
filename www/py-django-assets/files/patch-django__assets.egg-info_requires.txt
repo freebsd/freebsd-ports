@@ -1,7 +1,0 @@
---- django_assets.egg-info/requires.txt.orig	2014-07-03 12:03:42 UTC
-+++ django_assets.egg-info/requires.txt
-@@ -1,2 +1,2 @@
- Django>=1.1
--webassets==0.10
-\ No newline at end of file
-+webassets>=0.10
