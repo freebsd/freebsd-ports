@@ -1,2 +1,3 @@
-SHA256 (xen-4.5.2.tar.gz) = 4c9e5dac4eea484974e9f76da2756c8e0973b4e884d28d37e955df9ebf00e7e8
-SIZE (xen-4.5.2.tar.gz) = 18416220
+TIMESTAMP = 1464773219
+SHA256 (xen-4.7.0-rc4.tar.gz) = ad752bc80da2ab31287e5249adbeea2536b8141eefd7e8a45a3df42db727c630
+SIZE (xen-4.7.0-rc4.tar.gz) = 20696897

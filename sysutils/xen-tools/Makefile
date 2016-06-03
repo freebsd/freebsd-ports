@@ -1,11 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PORTVERSION=	4.5.2
-PORTREVISION=   3
-CATEGORIES=	sysutils emulators
-MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 PKGNAMESUFFIX=	-tools
+PORTVERSION=	4.7.0
+PORTREVISION=   0
+RCVERSION=	4
+DISTNAME=	${PORTNAME}-${DISTVERSION}-rc${RCVERSION}
+CATEGORIES=	sysutils emulators
+MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${DISTVERSION}-rc${RCVERSION}/
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Xen management tool, based on LibXenlight
@@ -17,42 +19,40 @@ BROKEN_FreeBSD_10=	does not build
 
 LIB_DEPENDS=	libyajl.so:devel/yajl \
 		liblzo2.so:archivers/lzo2 \
-		libpixman-1.so:x11/pixman
+		libpixman-1.so:x11/pixman \
+		libargp.so:devel/argp-standalone
 BUILD_DEPENDS=	dev86>0:devel/dev86 \
-		seabios>0:misc/seabios
+		seabios>0:misc/seabios \
+		markdown>0:textproc/markdown
 
 OPTIONS_DEFINE=	DOCS
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
 
-WRKSRC=		${WRKDIR}/xen-${PORTVERSION}
-
-USES=		cpe gmake libtool perl5 pkgconfig python shebangfix localbase
+USES=		cpe gmake libtool perl5 pkgconfig python shebangfix localbase \
+		gettext
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	HOSTCC="${CC}" CC="${CC}" \
-		ac_cv_path_BASH=${TRUE} \
-		ac_cv_path_XGETTEXT=${TRUE}
-MAKE_ARGS=	HOSTCC="${CC}" CC="${CC}" GCC="${CC}" cc="${GCC}" \
-		HOSTCFLAGS="${CFLAGS}" SEABIOS_PATH="${LOCALBASE}/share/seabios/bios.bin"
+MAKE_ARGS=	clang=y
 QEMU_ARGS=	--disable-gtk \
 		--disable-smartcard-nss \
 		--disable-sdl \
 		--disable-vte \
-		--disable-glx \
 		--disable-curses \
 		--disable-tools \
 		--disable-curl \
 		--cxx=c++
-CFLAGS=		-Wno-ignored-attributes -Qunused-arguments -Wno-header-guard \
-		-Wno-tautological-compare -Wno-format-extra-args -w
 
-EXTRA_PATCHES=	${FILESDIR}/0002-libxc-fix-xc_dom_load_elf_symtab.patch:-p1 \
-		${FILESDIR}/xsa160-4.6.patch:-p1
+EXTRA_PATCHES=	${FILESDIR}/var_paths.patch:-p1
 
-CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}"
+CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}" \
+			--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin
+
+# Disable bash and xgettext tests, they are not needed on FreeBSD.
+CONFIGURE_ENV+=		ac_cv_path_BASH=${TRUE}
+
 SHEBANG_FILES=	tools/misc/xencov_split \
 		tools/misc/xen-ringwatch
 ALL_TARGET=	tools docs
@@ -73,7 +73,7 @@ post-patch:
 		${WRKSRC}/tools/libxl/libxl_dm.c \
 		${WRKSRC}/tools/qemu-xen-traditional/i386-dm/helper2.c \
 		${WRKSRC}/docs/man/*
-	@for p in ${FILESDIR}/*qemuu*.patch; do \
+	@for p in `ls ${FILESDIR}/*qemuu*.patch 2>/dev/null`; do \
 		${ECHO_CMD} "====> Applying $${p##*/}" ; \
 		${PATCH} -s -p1 -i $${p} -d ${WRKSRC}/tools/qemu-xen ; \
 	done
