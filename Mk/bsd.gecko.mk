@@ -327,8 +327,6 @@ MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .if ${PORT_OPTIONS:MFFMPEG}
 # dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
 RUN_DEPENDS+=	ffmpeg>=0.8,1:multimedia/ffmpeg
-.else
-MOZ_OPTIONS+=	--disable-ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
@@ -413,7 +411,8 @@ MOZ_OPTIONS+=	--disable-debug --enable-release
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
-MOZ_OPTIONS+=	--enable-dtrace
+MOZ_OPTIONS+=	--enable-dtrace \
+		--disable-gold
 . if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100061
 LIBS+=			-lelf
 . endif
