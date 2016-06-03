@@ -106,7 +106,7 @@ OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
 .  if   defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
 OPENSSL_SHLIBVER?=	37
 .  elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl-devel
-OPENSSL_SHLIBVER?=	37
+OPENSSL_SHLIBVER?=	38
 .  elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/openssl-devel
 OPENSSL_SHLIBVER?=	9
 .  endif
