@@ -79,10 +79,10 @@ index bef567c..9807c29 100644
 +#if MOZ_NATIVE_TREMOR==1
 +tremor/ivorbiscodec.h
 +#endif
-diff --git configure.in configure.in
+diff --git old-configure.in configure.in
 index 87db361..7947626 100644
---- configure.in
-+++ configure.in
+--- old-configure.in
++++ old-configure.in
 @@ -5401,6 +5401,111 @@ if test -n "$MOZ_OMX_PLUGIN"; then
      fi
  fi
@@ -297,7 +297,7 @@ index 0833e4d..7ece97b 100644
  449754
 +
 +The in-tree copy may be omitted during build by --with-system-ogg.
-+Keep version in configure.in in sync on updates.
++Keep version in old-configure.in in sync on updates.
 diff --git media/libsoundtouch/README_MOZILLA media/libsoundtouch/README_MOZILLA
 index bfd4b1a..15b158d 100644
 --- media/libsoundtouch/README_MOZILLA
@@ -307,7 +307,7 @@ index bfd4b1a..15b158d 100644
  the patch `moz-libsoundtouch.patch`. We also use a custom soundtouch_config.h.
  
 +The in-tree copy may be omitted during build by --with-system-soundtouch.
-+Keep version in configure.in in sync on updates.
++Keep version in old-configure.in in sync on updates.
 diff --git media/libsoundtouch/src/soundtouch_perms.h media/libsoundtouch/src/soundtouch_perms.h
 index 0af2fe6..d80c145 100644
 --- media/libsoundtouch/src/soundtouch_perms.h
@@ -332,7 +332,7 @@ index d48dbfa..f08a2ed 100644
  The subversion revision used was r17578.
 +
 +The in-tree copy may be omitted during build by --with-system-theora.
-+Keep version in configure.in in sync on updates.
++Keep version in old-configure.in in sync on updates.
 diff --git media/libtheora/moz.build media/libtheora/moz.build
 index 14265b1..3069e99 100644
 --- media/libtheora/moz.build
@@ -357,7 +357,7 @@ index ee67b53..3f34a09 100644
  The subversion revision used was r17547.
 +
 +The in-tree copy may be omitted during build by --with-system-tremor.
-+Keep version in configure.in in sync on updates.
++Keep version in old-configure.in in sync on updates.
 diff --git media/libtremor/moz.build media/libtremor/moz.build
 index 31831ba..a03d576 100644
 --- media/libtremor/moz.build
@@ -378,7 +378,7 @@ index 7c7454c..55baedd 100644
  file names with other Mozilla libraries.
 +
 +The in-tree copy may be omitted during build by --with-system-vorbis.
-+Keep version in configure.in in sync on updates.
++Keep version in old-configure.in in sync on updates.
 diff --git media/libvorbis/moz.build media/libvorbis/moz.build
 index 919b99e..cc776f7 100644
 --- media/libvorbis/moz.build
