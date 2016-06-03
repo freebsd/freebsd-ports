@@ -13,6 +13,8 @@ COMMENT=	Adjust brain waves with sound
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 OPTIONS_DEFINE=	DOCS
 

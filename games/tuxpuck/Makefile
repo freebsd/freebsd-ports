@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shufflepuck Cafe Clone
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png \

@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for viewing molecular/crystallographic structures
 
 BROKEN=		checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 # PLATON may be used free of charge by the academic community under
 # the condition that it is not redistributed for a current & fresh copy.

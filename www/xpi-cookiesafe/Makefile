@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control cookie permissions
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 XPI_ID=		{9D23D0AA-D8F5-11DA-B3FC-0928ABF316DD}
 XPI_NUM=	2497

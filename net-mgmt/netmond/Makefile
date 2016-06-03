@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netmond - IP network monitoring daemon
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.2-b6
 

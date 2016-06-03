@@ -14,6 +14,8 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	The free demo of Railroad Tycoon II
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes

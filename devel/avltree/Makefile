@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	In-memory index w/ binary and string keys and key counts
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>

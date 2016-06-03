@@ -19,6 +19,8 @@ USES=		gmake libtool pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
 BROKEN=		Not compatible with Enlightenment 0.20
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 .include "../enlightenment/Makefile.plist"
 

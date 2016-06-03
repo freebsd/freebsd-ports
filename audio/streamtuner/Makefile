@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ stream directory browser
 
 BROKEN=		Is no longer able to fetch stream information
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	rarian-sk-config:textproc/rarian
 LIB_DEPENDS=	libcurl.so:ftp/curl

@@ -15,6 +15,8 @@ COMMENT=	Neverwinter Nights Linux Dedicated Server
 OPTIONS_DEFINE=	DOCS
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386 amd64

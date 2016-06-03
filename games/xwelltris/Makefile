@@ -13,6 +13,8 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	3D Tetris-like game
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/xwelltris \
 		share/xwelltris/board2.gif \

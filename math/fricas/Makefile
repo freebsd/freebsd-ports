@@ -19,6 +19,8 @@ BUILD_DEPENDS=	noweb:devel/noweb \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 BROKEN=		Does not compile with sbcl-1.3.1
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USE_XORG=	x11 ice sm xpm
 USES=		gettext iconv gmake tar:bzip2

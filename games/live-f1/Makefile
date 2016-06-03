@@ -13,6 +13,8 @@ COMMENT=	Native client for the official Formula 1 Live Timing service
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 LIB_DEPENDS=	libneon.so:www/neon
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}

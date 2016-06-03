@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Scheme interpreter with a Unix interface
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

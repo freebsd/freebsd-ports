@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Educational arcade game starring Tux
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING_GPL3

@@ -11,6 +11,8 @@ MAINTAINER=	hans@nordhaug.priv.no
 COMMENT=	Tool for making GIF animations
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 WRKSRC=		${WRKDIR}/whirlgif-3.04.orig
 
 PLIST_FILES=	bin/whirlgif man/man1/whirlgif.1.gz

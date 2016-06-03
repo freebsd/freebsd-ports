@@ -14,6 +14,8 @@ COMMENT=	GPL implementation of the Bayesian Noise Reduction algorithm
 OPTIONS_DEFINE=	DOCS DEBUG
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -12,6 +12,8 @@ COMMENT=	Ultimate outdoor aficionado's tool
 LICENSE=	GPLv3
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libroutino.so:astro/routino

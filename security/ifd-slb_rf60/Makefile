@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC/SC Lite driver for the Reflex 62 serial smart card reader
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 

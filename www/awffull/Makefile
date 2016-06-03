@@ -11,6 +11,8 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	AWFFull is a webserver log analysis tool forked from Webalizer
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

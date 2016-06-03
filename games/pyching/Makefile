@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Consult a I Ching, an ancient Chinese book of wisdom
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

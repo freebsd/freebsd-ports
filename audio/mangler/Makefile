@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ventrilo VOIP compatible client
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LIB_DEPENDS=	libcelt0.so:audio/celt \
 		libspeex.so:audio/speex \

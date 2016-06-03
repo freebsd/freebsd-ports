@@ -11,6 +11,8 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP OpenID library v2 for PEAR
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 CONFLICTS=	php-Auth_OpenID-1.*
 

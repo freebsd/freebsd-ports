@@ -11,6 +11,8 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	LaTeX to XML translator
 
 BROKEN=		fetch fails, checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	CeCILLv21
 LICENSE_NAME=	Ce(A)C(nrs)I(NRIA)L(ogiciel)L(ibre) version 2.1

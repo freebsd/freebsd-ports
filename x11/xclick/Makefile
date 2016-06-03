@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates X11 mouse button click events
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USE_XORG=	x11 xtst xext xfixes xi
 

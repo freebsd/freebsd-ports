@@ -13,6 +13,8 @@ MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Professional CAD system
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 WRKSRC=		${WRKDIR}/partlibrary-${PORTVERSION:S/.1$/-1/}
 DATADIR=	share/qcad/library
