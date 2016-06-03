@@ -60,6 +60,7 @@
     SUBDIR += c-icap-modules
     SUBDIR += cadaver
     SUBDIR += calamaris
+    SUBDIR += caldavzap
     SUBDIR += calendarserver
     SUBDIR += castget
     SUBDIR += caudium14
