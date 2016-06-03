@@ -8,9 +8,6 @@ CATEGORIES=	irc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Some scripts for expressing how you feel on IRC and the web
 
-DEPRECATED=	Depends on expiring games/cowsay
-EXPIRATION_DATE=	2016-07-04
-
 RUN_DEPENDS=	cowsay:games/cowsay \
 		figlet:misc/figlet
 
