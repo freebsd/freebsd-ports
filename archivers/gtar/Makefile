@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tar
-PORTVERSION=	1.28
-PORTREVISION=	2
+PORTVERSION=	1.29
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	g
@@ -27,9 +26,8 @@ CONFIGURE_ENV=	DEFAULT_ARCHIVE=/dev/sa0 \
 # supply result to skip a test that will abort configure if run as root
 CONFIGURE_ENV+=	gl_cv_func_mknod_works=yes
 
-# Tests 161 163 are known to fail because path resolution of ".."
-# in a removed directory fails.
-#TEST_TARGET=	check
+TEST_DEPENDS=	autom4te:devel/autoconf
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	NLS STATIC
 OPTIONS_SUB=	yes
