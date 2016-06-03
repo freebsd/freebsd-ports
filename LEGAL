@@ -234,6 +234,7 @@ tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
 unifi-3*/UniFi.unix.zip	net-mgmt/unifi3		Redistribution of bundled firmware images is not permitted
 unifi-4*/UniFi.unix.zip	net-mgmt/unifi4		Redistribution of bundled firmware images is not permitted
+unifi-5*/UniFi.unix.zip	net-mgmt/unifi5		Redistribution of bundled firmware images is not permitted
 uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any way.
 vdr-markad-*		multimedia/vdr-plugin-markad	Installs station logos
