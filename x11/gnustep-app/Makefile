@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 gnustep
 
 MAINTAINER=	theraven@FreeBSD.org
@@ -25,7 +25,6 @@ RUN_DEPENDS=	aclock>0:x11-clocks/aclock \
 		cddb-bundle>0:audio/cddb-bundle \
 		gnustep-cdplayer>0:audio/gnustep-cdplayer \
 		cenon>0:graphics/cenon \
-		displaycalibrator>0:deskutils/displaycalibrator \
 		duncan>0:textproc/duncan \
 		easydiff>0:textproc/easydiff \
 		edenmath>0:math/edenmath \
