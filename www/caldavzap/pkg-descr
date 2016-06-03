@@ -1,0 +1,23 @@
+CalDavZAP is an open source CalDAV web client implementation released under GNU
+Affero General Public License (version 3.0).
+
+Main features:
+
+* 100% JavaScript+jQuery CalDAV web client/application - no special server
+  software required for standard setup (except the CalDAV server of course)
+* server-based XML configuration generator (for special setup) with HTTP and
+  LDAP authentication plugins
+* asynchronous read-only and read/write calendar collection detection
+* asynchronous background synchronization
+* support for delegated calendars
+* support for subscribed calendars
+* time-range filtering (server support required)
+* support for RFC compliant vCalendars (version 2.0) and automatic correction
+  of most common errors in invalid vCalendars
+* support for background calendars - if there is at least one event defined for
+  the given day in a background calendar, the background color for that day
+  will be pink/light-red
+
+and much more ...
+
+WWW: https://www.inf-it.com/open-source/clients/caldavzap/
