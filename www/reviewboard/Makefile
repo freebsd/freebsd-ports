@@ -14,6 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		depends on conflicting versions of django
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 RUN_DEPENDS=	python:lang/python \
 		${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:www/py-django16 \

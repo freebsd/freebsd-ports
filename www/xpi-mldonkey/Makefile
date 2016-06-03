@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ed2k, magnet and sig2dat protocol handler
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 XPI_DISTNAME=	mldonkey_protocol_handler
 XPI_ID=		{bc72206d-b3ce-4b49-88b9-d59b388a0cde}

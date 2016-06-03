@@ -10,6 +10,8 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Assembly Preprocessor
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	BSD2CLAUSE
 

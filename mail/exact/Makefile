@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that implements POP Before SMTP Relay Authentication
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 MAILUSER?=	mailnull
 MAILGROUP?=	mailnull

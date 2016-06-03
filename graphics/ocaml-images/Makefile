@@ -14,6 +14,9 @@ DIST_SUBDIR=	ocaml-images
 MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	Objective Caml image processing library
 
+DEPRECATED=	Depends on expiring devel/omake
+EXPIRATION_DATE=	2016-07-04
+
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ocaml.m4:lang/ocaml-autoconf
 BUILD_DEPENDS+=	omake:devel/omake
 

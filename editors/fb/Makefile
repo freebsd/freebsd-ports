@@ -12,6 +12,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Binary file viewer, editor, and manipulator (and a lot more)
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 NO_WRKSUBDIR=	Yes
 
 PLIST_FILES=	bin/fb \

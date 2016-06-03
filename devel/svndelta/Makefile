@@ -11,6 +11,8 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Summarizes and manages differences between local files and Subversion
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion
 
 USE_RUBY=	yes

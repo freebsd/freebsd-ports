@@ -13,6 +13,8 @@ MAINTAINER=	m.sund@arcor.de
 COMMENT=	The ANTLR GUI Development Environment
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 NO_BUILD=	yes
 
 USE_JAVA=	yes

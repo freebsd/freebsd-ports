@@ -12,6 +12,8 @@ MAINTAINER=	syncer@gmail.com
 COMMENT=	Library provides XML output functions to MySQL server
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static

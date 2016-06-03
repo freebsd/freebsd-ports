@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to update your status with info from Rhythmbox
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	pidgin:net-im/pidgin
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib

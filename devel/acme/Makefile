@@ -13,6 +13,8 @@ COMMENT=	Crossassembler for 6502, 65c02 and 65816 processors
 LICENSE=	GPLv2
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=	gmake tar:bzip2

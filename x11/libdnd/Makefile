@@ -15,6 +15,8 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/../COPYING.LIB
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USES=		tar:tgz
 USE_XORG=	x11 xmu ice xaw

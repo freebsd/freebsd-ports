@@ -11,6 +11,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	C lib used to connect to iTunes(R) music shares
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 USES=		libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
