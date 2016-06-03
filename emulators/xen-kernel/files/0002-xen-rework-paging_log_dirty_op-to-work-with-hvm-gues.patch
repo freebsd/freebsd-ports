@@ -1,7 +1,7 @@
-From 63d4838f2f5644060c064f356078a748ca413364 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Roger=20Pau=20Monn=C3=A9?= <roger.pau@citrix.com>
-Date: Fri, 9 Oct 2015 12:57:32 +0200
-Subject: [PATCH 5/8] x86: rework paging_log_dirty_op to work with hvm guests
+From e253a2e2fb45197273cee7a7fa2b77f7a87cb67f Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Tue, 31 May 2016 16:07:26 +0200
+Subject: [PATCH 2/2] xen: rework paging_log_dirty_op to work with hvm guests
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -14,17 +14,43 @@ Fix this by independently mapping each page of the guest bitmap as needed
 without the paging lock held.
 
 Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
-Reviewed-by: Tim Deegan <tim@xen.org>
+Cc: Tim Deegan <tim@xen.org>
+Cc: Jan Beulich <jbeulich@suse.com>
+Cc: Andrew Cooper <andrew.cooper3@citrix.com>
 ---
- xen/arch/x86/mm/paging.c     | 98 +++++++++++++++++++++++++++++++++++++++-----
+Changes since v6:
+ - Move the again label to the start of the function.
+ - Set all the preempt fields if we need to map a new page (just like on the
+   preempt case).
+
+Changes since v4:
+ - Indent again label.
+ - Replace bogus paddr_t cast with proper type.
+ - Update preempt.log_dirty before dropping the paging lock.
+
+Changes since v3:
+ - Drop last parameter from map_dirty_bitmap.
+ - Drop pointless initializers in paging_log_dirty_op.
+ - Add a new field to paging_domain in order to copy i2 position.
+ - Move the again case up to make sure we don't hold cached values of the
+   contents of log_dirty.
+ - Replace the BUG_ON in paging_log_dirty_op with an ASSERT.
+
+Changes since v2:
+ - Add checks for p2m_is_ram and p2m_is_discard_write when mapping a guest
+   page.
+ - Remove error checking from memset/memcpy, they unconditionally return
+   dst.
+---
+ xen/arch/x86/mm/paging.c     | 97 +++++++++++++++++++++++++++++++++++++++-----
  xen/include/asm-x86/domain.h |  1 +
- 2 files changed, 88 insertions(+), 11 deletions(-)
+ 2 files changed, 87 insertions(+), 11 deletions(-)
 
 diff --git a/xen/arch/x86/mm/paging.c b/xen/arch/x86/mm/paging.c
-index 6b788f7..06dc7fa 100644
+index ed94ff7..595c9d6 100644
 --- a/xen/arch/x86/mm/paging.c
 +++ b/xen/arch/x86/mm/paging.c
-@@ -397,6 +397,51 @@ int paging_mfn_is_dirty(struct domain *d, mfn_t gmfn)
+@@ -406,6 +406,51 @@ int paging_mfn_is_dirty(struct domain *d, mfn_t gmfn)
      return rv;
  }
  
@@ -55,7 +81,7 @@ index 6b788f7..06dc7fa 100644
 +        p2m_mem_paging_populate(current->domain, gfn);
 +        return NULL;
 +    }
-+    if ( p2m_is_shared(p2mt) )
++    if ( p2m_is_shared(p2mt) || p2m_is_discard_write(p2mt) )
 +    {
 +        put_page(*page);
 +        return NULL;
@@ -76,7 +102,7 @@ index 6b788f7..06dc7fa 100644
  
  /* Read a domain's log-dirty bitmap and stats.  If the operation is a CLEAN,
   * clear the bitmap and stats as well. */
-@@ -409,9 +454,22 @@ static int paging_log_dirty_op(struct domain *d,
+@@ -418,7 +463,11 @@ static int paging_log_dirty_op(struct domain *d,
      mfn_t *l4 = NULL, *l3 = NULL, *l2 = NULL;
      unsigned long *l1 = NULL;
      int i4, i3, i2;
@@ -86,8 +112,12 @@ index 6b788f7..06dc7fa 100644
  
 + again:
      if ( !resuming )
-         domain_pause(d);
-+
+     {
+         /*
+@@ -439,6 +488,14 @@ static int paging_log_dirty_op(struct domain *d,
+         p2m_flush_hardware_cached_dirty(d);
+     }
+ 
 +    index_mapped = resuming ? d->arch.paging.preempt.log_dirty.done : 0;
 +    dirty_bitmap = map_dirty_bitmap(sc->dirty_bitmap, index_mapped, &page);
 +    if ( dirty_bitmap == NULL )
@@ -99,7 +129,7 @@ index 6b788f7..06dc7fa 100644
      paging_lock(d);
  
      if ( !d->arch.paging.preempt.dom )
-@@ -451,18 +509,18 @@ static int paging_log_dirty_op(struct domain *d,
+@@ -478,18 +535,18 @@ static int paging_log_dirty_op(struct domain *d,
      l4 = paging_map_log_dirty_bitmap(d);
      i4 = d->arch.paging.preempt.log_dirty.i4;
      i3 = d->arch.paging.preempt.log_dirty.i3;
@@ -108,13 +138,13 @@ index 6b788f7..06dc7fa 100644
  
      for ( ; (pages < sc->pages) && (i4 < LOGDIRTY_NODE_ENTRIES); i4++, i3 = 0 )
      {
-         l3 = (l4 && mfn_valid(l4[i4])) ? map_domain_page(mfn_x(l4[i4])) : NULL;
+         l3 = (l4 && mfn_valid(l4[i4])) ? map_domain_page(l4[i4]) : NULL;
 -        for ( ; (pages < sc->pages) && (i3 < LOGDIRTY_NODE_ENTRIES); i3++ )
 +        for ( ; (pages < sc->pages) && (i3 < LOGDIRTY_NODE_ENTRIES);
 +             i3++, i2 = 0 )
          {
              l2 = ((l3 && mfn_valid(l3[i3])) ?
-                   map_domain_page(mfn_x(l3[i3])) : NULL);
+                   map_domain_page(l3[i3]) : NULL);
 -            for ( i2 = 0;
 -                  (pages < sc->pages) && (i2 < LOGDIRTY_NODE_ENTRIES);
 -                  i2++ )
@@ -122,7 +152,7 @@ index 6b788f7..06dc7fa 100644
              {
                  unsigned int bytes = PAGE_SIZE;
                  l1 = ((l2 && mfn_valid(l2[i2])) ?
-@@ -471,15 +529,28 @@ static int paging_log_dirty_op(struct domain *d,
+@@ -498,15 +555,28 @@ static int paging_log_dirty_op(struct domain *d,
                      bytes = (unsigned int)((sc->pages - pages + 7) >> 3);
                  if ( likely(peek) )
                  {
@@ -158,7 +188,7 @@ index 6b788f7..06dc7fa 100644
                  }
                  pages += bytes << 3;
                  if ( l1 )
-@@ -496,6 +567,7 @@ static int paging_log_dirty_op(struct domain *d,
+@@ -524,6 +594,7 @@ static int paging_log_dirty_op(struct domain *d,
              {
                  d->arch.paging.preempt.log_dirty.i4 = i4;
                  d->arch.paging.preempt.log_dirty.i3 = i3 + 1;
@@ -166,7 +196,7 @@ index 6b788f7..06dc7fa 100644
                  rv = -ERESTART;
                  break;
              }
-@@ -508,6 +580,7 @@ static int paging_log_dirty_op(struct domain *d,
+@@ -536,6 +607,7 @@ static int paging_log_dirty_op(struct domain *d,
          {
              d->arch.paging.preempt.log_dirty.i4 = i4 + 1;
              d->arch.paging.preempt.log_dirty.i3 = 0;
@@ -174,7 +204,7 @@ index 6b788f7..06dc7fa 100644
              rv = -ERESTART;
          }
          if ( rv )
-@@ -537,6 +610,7 @@ static int paging_log_dirty_op(struct domain *d,
+@@ -565,6 +637,7 @@ static int paging_log_dirty_op(struct domain *d,
      if ( rv )
      {
          /* Never leave the domain paused on real errors. */
@@ -182,7 +212,7 @@ index 6b788f7..06dc7fa 100644
          ASSERT(rv == -ERESTART);
          return rv;
      }
-@@ -549,12 +623,14 @@ static int paging_log_dirty_op(struct domain *d,
+@@ -577,12 +650,14 @@ static int paging_log_dirty_op(struct domain *d,
           * paging modes (shadow or hap).  Safe because the domain is paused. */
          d->arch.paging.log_dirty.clean_dirty_bitmap(d);
      }
@@ -198,10 +228,10 @@ index 6b788f7..06dc7fa 100644
  
      if ( l1 )
 diff --git a/xen/include/asm-x86/domain.h b/xen/include/asm-x86/domain.h
-index 6a77a93..63dea9c 100644
+index 165e533..0dc1ed8 100644
 --- a/xen/include/asm-x86/domain.h
 +++ b/xen/include/asm-x86/domain.h
-@@ -197,6 +197,7 @@ struct paging_domain {
+@@ -206,6 +206,7 @@ struct paging_domain {
                  unsigned long done:PADDR_BITS - PAGE_SHIFT;
                  unsigned long i4:PAGETABLE_ORDER;
                  unsigned long i3:PAGETABLE_ORDER;
@@ -210,5 +240,5 @@ index 6a77a93..63dea9c 100644
          };
      } preempt;
 -- 
-1.9.5 (Apple Git-50.3)
+2.7.4 (Apple Git-66)
 
