@@ -74,7 +74,7 @@ POPT_PORT_LIB_DEPENDS=	libpopt.so:devel/popt
 POPT_PORT_CPPFLAGS=	-I${LOCALBASE}/include
 POPT_PORT_LDFLAGS=	-L${LOCALBASE}/lib
 
-POPT_PORT_CONFIGURE_WITH_OFF=	included-popt
+POPT_PORT_CONFIGURE_OFF=	--with-included-popt
 
 SSH_CONFIGURE_ON=	--with-rsh=ssh
 SSH_CONFIGURE_OFF=	--with-rsh=rsh
