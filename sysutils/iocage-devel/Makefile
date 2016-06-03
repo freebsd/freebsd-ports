@@ -3,6 +3,7 @@
 
 PORTNAME=	iocage
 PORTVERSION=	20160405
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -11,6 +12,8 @@ COMMENT=	Full featured, no dependency Jail container manager - devel build
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	uclcmd:devel/uclcmd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	iocage
