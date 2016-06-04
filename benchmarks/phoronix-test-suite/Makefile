@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	6.2.2
+PORTVERSION=	6.4.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
