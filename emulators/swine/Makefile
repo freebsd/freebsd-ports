@@ -11,6 +11,8 @@ COMMENT=	Qt4 graphical Wine frontend
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to stage
+
 BUILD_DEPENDS=	pyrcc4:textproc/py-qt4-xml
 RUN_DEPENDS=	xterm:x11/xterm \
 		cabextract:archivers/cabextract \
