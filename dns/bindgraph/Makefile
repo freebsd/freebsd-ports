@@ -16,9 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rrdtool>=0:databases/rrdtool	\
 		p5-File-Tail>=0:devel/p5-File-Tail
 
-NO_BUILD=	yes
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	bindgraph.pl bindgraph.cgi
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
 DATADIR?=	/var/db/bindgraph
@@ -31,8 +32,7 @@ PLIST_SUB=	CGIDIR=${CGIDIR:S,${PREFIX}/,,} \
 		BINDGRAPH_USER="${BINDGRAPH_USER}" \
 		BINDGRAPH_GROUP="${BINDGRAPH_GROUP}"
 
-DOCS=		README ChangeLog
-PORTDOCS=	${DOCS}
+PORTDOCS=	README ChangeLog
 
 OPTIONS_DEFINE=	DOCS
 
@@ -49,13 +49,15 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/bindgraph.cgi
 
 do-install:
-	${MKDIR} ${STAGEDIR}${CGIDIR}
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${CGIDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.pl ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.cgi ${STAGEDIR}${CGIDIR}/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	for f in ${DOCS}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DOCSDIR}/; \
-	done
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
+.endfor
 
 .include <bsd.port.mk>
