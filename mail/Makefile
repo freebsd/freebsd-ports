@@ -279,6 +279,7 @@
     SUBDIR += mutt_vc_query
     SUBDIR += muttils
     SUBDIR += nbsmtp
+    SUBDIR += neomutt
     SUBDIR += nmh
     SUBDIR += nmzmail
     SUBDIR += noattach
