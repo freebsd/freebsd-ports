@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit-credential
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -22,7 +22,5 @@ RUN_DEPENDS=	rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
-
-PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>
