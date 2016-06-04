@@ -28,6 +28,9 @@ SHEBANG_FILES=	smime_keys.pl
 
 OPTIONS_DEFINE=	NLS DOCS SASL ICONV IDN FLOCK GPGME
 
+FLOCK_DESC=	Use flock() to lock files
+GPGME_DESC=	Use gpgme to handle pgp
+
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-docdir="${DOCSDIR}" \
 		--with-ssl="${OPENSSLBASE}" \
