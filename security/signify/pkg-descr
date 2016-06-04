@@ -1,6 +1,9 @@
-'signify' from OpenBSD as of July 15 2014, with the necessary plumbing
-cobbled together from the OpenBSD CVS to make it compile under Linux.
+The signify utility creates and verifies cryptographic signatures.
 
-Since the CVS itself is not signed, the author provides no guarantees.
+This version of signify is part of outils, a portable collection of
+non-standard OpenBSD tools.
 
-WWW: http://www.fefe.de/signify/
+This port comes with OpenBSD's release public keys allowing you to
+verify an OpenBSD release before installation.
+
+WWW: https://github.com/chneukirchen/outils/
