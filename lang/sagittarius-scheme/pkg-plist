@@ -113,6 +113,7 @@ lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/lib%%PORTNAME%%.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/sash
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--crypto.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--ffi.so
+lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--filewatch.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--math.so
 %%ODBC%%lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--odbc.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--process.so
@@ -196,6 +197,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/crypto.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/dynamic-module.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/ffi.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/filewatch.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/interactive.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/leap-table.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/math.scm
@@ -453,6 +455,8 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a123/generic-ref.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a124.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a124/ephemerons.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a125.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a125/intermediate-hash-tables.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a126.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a126/hashtables.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a127.scm
@@ -465,6 +469,10 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a13/strings.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a131.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a131/records.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a132.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a132/sorting.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a133.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a133/vectors.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-set.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-sets.scm
@@ -552,12 +560,15 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/121.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/123.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/124.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/125.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/126.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/127.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/128.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/129.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/13.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/131.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/132.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/133.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/14.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/17.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/2.scm
