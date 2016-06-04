@@ -1,0 +1,10 @@
+--- MANIFEST.orig	2015-03-23 19:15:17 UTC
++++ MANIFEST
+@@ -66,3 +66,7 @@ t/87-stress-uid.t
+ t/lib/Scope/Upper/TestGenerator.pm
+ t/lib/Test/Leaner.pm
+ t/lib/VPIT/TestHelpers.pm
++xsh/caps.h
++xsh/debug.h
++xsh/threads.h
++xsh/util.h
