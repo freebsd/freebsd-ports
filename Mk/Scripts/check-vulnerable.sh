@@ -24,14 +24,12 @@ if [ -x "${dp_PKG_BIN}" ]; then
 	vlist=$(${dp_PKG_BIN} audit "${dp_PKGNAME}" || :)
 	if [ "${vlist}" = "0 problem(s) in the installed packages found." ]; then
 		vlist=""
+	else
+		${dp_ECHO_MSG} "===>  ${dp_PKGNAME} has known vulnerabilities:"
+		${dp_ECHO_MSG} "$vlist"
+		${dp_ECHO_MSG} "=> Please update your ports tree and try again."
+		${dp_ECHO_MSG} "=> Note: Vulnerable ports are marked as such even if there is no update available."
+		${dp_ECHO_MSG} "=> If you wish to ignore this vulnerability rebuild with 'make DISABLE_VULNERABILITIES=yes'"
+		exit 1
 	fi
-fi
-
-if [ -n "$vlist" ]; then
-	${dp_ECHO_MSG} "===>  ${dp_PKGNAME} has known vulnerabilities:"
-	${dp_ECHO_MSG} "$vlist"
-	${dp_ECHO_MSG} "=> Please update your ports tree and try again."
-	${dp_ECHO_MSG} "=> Note: Vulnerable ports are marked as such even if there is no update available."
-	${dp_ECHO_MSG} "=> If you wish to ignore this vulnerability rebuild with 'make DISABLE_VULNERABILITIES=yes'"
-	exit 1
 fi
