@@ -6,34 +6,35 @@ bin/chicken-status
 bin/chicken-uninstall
 bin/csc
 bin/csi
+%%FEATHERS%%bin/feathers
 include/chicken/chicken-config.h
 include/chicken/chicken.h
-lib/chicken/7/chicken.import.so
-lib/chicken/7/csi.import.so
-lib/chicken/7/data-structures.import.so
-lib/chicken/7/extras.import.so
-lib/chicken/7/files.import.so
-lib/chicken/7/foreign.import.so
-lib/chicken/7/irregex.import.so
-lib/chicken/7/lolevel.import.so
-lib/chicken/7/ports.import.so
-lib/chicken/7/posix.import.so
-lib/chicken/7/setup-api.import.so
-lib/chicken/7/setup-api.so
-lib/chicken/7/setup-download.import.so
-lib/chicken/7/setup-download.so
-lib/chicken/7/srfi-1.import.so
-lib/chicken/7/srfi-13.import.so
-lib/chicken/7/srfi-14.import.so
-lib/chicken/7/srfi-18.import.so
-lib/chicken/7/srfi-4.import.so
-lib/chicken/7/srfi-69.import.so
-lib/chicken/7/tcp.import.so
-lib/chicken/7/types.db
-lib/chicken/7/utils.import.so
+lib/chicken/8/chicken.import.so
+lib/chicken/8/csi.import.so
+lib/chicken/8/data-structures.import.so
+lib/chicken/8/extras.import.so
+lib/chicken/8/files.import.so
+lib/chicken/8/foreign.import.so
+lib/chicken/8/irregex.import.so
+lib/chicken/8/lolevel.import.so
+lib/chicken/8/ports.import.so
+lib/chicken/8/posix.import.so
+lib/chicken/8/setup-api.import.so
+lib/chicken/8/setup-api.so
+lib/chicken/8/setup-download.import.so
+lib/chicken/8/setup-download.so
+lib/chicken/8/srfi-1.import.so
+lib/chicken/8/srfi-13.import.so
+lib/chicken/8/srfi-14.import.so
+lib/chicken/8/srfi-18.import.so
+lib/chicken/8/srfi-4.import.so
+lib/chicken/8/srfi-69.import.so
+lib/chicken/8/tcp.import.so
+lib/chicken/8/types.db
+lib/chicken/8/utils.import.so
 lib/libchicken.a
 lib/libchicken.so
-lib/libchicken.so.7
+lib/libchicken.so.8
 man/man1/chicken-bug.1.gz
 man/man1/chicken-install.1.gz
 man/man1/chicken-profile.1.gz
@@ -42,7 +43,9 @@ man/man1/chicken-uninstall.1.gz
 man/man1/chicken.1.gz
 man/man1/csc.1.gz
 man/man1/csi.1.gz
+%%FEATHERS%%man/man1/feathers.1.gz
 %%DATADIR%%/setup.defaults
+%%FEATHERS%%%%DATADIR%%/feathers.tcl
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -55,6 +58,7 @@ man/man1/csi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual/Callbacks.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Cross development.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Data representation.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Debugging.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Declarations.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Deployment.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Deviations from the standard.html
@@ -100,5 +104,5 @@ man/man1/csi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
-@exec %D/bin/chicken-install -update-db
-@unexec rm -f %D/lib/chicken/7/modules.db
+@postexec %D/bin/chicken-install -update-db
+@postunexec rm -f %D/lib/chicken/8/modules.db
