@@ -13,8 +13,6 @@ COMMENT=	Web Based Postgres Administration
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		cpe tar:bzip2 shebangfix
