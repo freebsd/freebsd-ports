@@ -1,4 +1,4 @@
---- Makefile.orig	2010-10-02 16:21:01 UTC
+--- Makefile.orig	2016-06-03 16:29:10 UTC
 +++ Makefile
 @@ -3,7 +3,9 @@
  #	make
@@ -11,19 +11,28 @@
  #	make freebsd
  # For NetBSD 1.5 - 1.6.X
  #	make netbsd1
-@@ -120,7 +122,7 @@
+@@ -118,7 +120,7 @@ export INSTALLDIR SINSTALLDIR INCLUDEDIR
  export MANDIR SMANDIR MANDIRMODE MANMODE
- export OS_NAME OS_RELEASE
+ export OS_RELEASE
  
 -enable_nls=1
 +enable_nls?=1
  debug=0
  export enable_nls
  export debug
-@@ -162,8 +164,8 @@
+@@ -131,7 +133,7 @@ all gkrellm: gkrellm.pc
+ 	(cd server && ${MAKE} gkrellmd)
+ 
+ gkrellm.pc: Makefile
+-	echo 'prefix=$(INSTALLROOT)\n'\
++	printf 'prefix=$(INSTALLROOT)\n'\
+ 	'Name: GKrellM\n'\
+ 	'Description: Extensible GTK system monitoring application\n'\
+ 	'Version: $(VERSION)\n'\
+@@ -151,8 +153,8 @@ uninstall:
  	rm -f $(PKGCONFIGDIR)/gkrellm.pc
  
- install_gkrellm.pc:
+ install_gkrellm.pc: gkrellm.pc
 -	$(INSTALL) -d $(PKGCONFIGDIR)
 -	$(INSTALL) -m $(INCLUDEMODE) -c gkrellm.pc $(PKGCONFIGDIR)
 +	$(INSTALL) -d $(DESTDIR)$(PKGCONFIGDIR)
