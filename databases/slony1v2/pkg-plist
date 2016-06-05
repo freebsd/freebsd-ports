@@ -3,7 +3,7 @@ bin/slonik
 bin/slony_logshipper
 etc/slon.conf-sample
 %%PERLTOOLS%%etc/slon_tools.conf-sample
-lib/postgresql/slony1_funcs.2.2.4.so
+lib/postgresql/slony1_funcs.2.2.5.so
 %%PERLTOOLS%%lib/slon-tools.pm
 man/man1/slon.1.gz
 man/man1/slonik.1.gz
@@ -52,12 +52,12 @@ man/man7/SLONIK_UNSUBSCRIBE_SET.7.gz
 man/man7/SLONIK_UPDATE_FUNCTIONS.7.gz
 man/man7/SLONIK_WAIT_FOR_EVENT.7.gz
 sbin/slon-mkservice
-share/postgresql/slony1_base.2.2.4.sql
-share/postgresql/slony1_base.v83.2.2.4.sql
-share/postgresql/slony1_base.v84.2.2.4.sql
-share/postgresql/slony1_funcs.2.2.4.sql
-share/postgresql/slony1_funcs.v83.2.2.4.sql
-share/postgresql/slony1_funcs.v84.2.2.4.sql
+share/postgresql/slony1_base.2.2.5.sql
+share/postgresql/slony1_base.v83.2.2.5.sql
+share/postgresql/slony1_base.v84.2.2.5.sql
+share/postgresql/slony1_funcs.2.2.5.sql
+share/postgresql/slony1_funcs.v83.2.2.5.sql
+share/postgresql/slony1_funcs.v84.2.2.5.sql
 %%PERLTOOLS%%sbin/slon_kill
 %%PERLTOOLS%%sbin/slon_start
 %%PERLTOOLS%%sbin/slon_status
