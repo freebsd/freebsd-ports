@@ -1313,7 +1313,7 @@ share/kde4/servicetypes/kdevelopplugin.desktop
 %%NLS%%share/locale/tr/LC_MESSAGES/kdevgrepview.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/kdevkonsole.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/kdevopenwith.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevpaste%%QT_BINDIR%%.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/kdevpastebin.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/kdevpatchreview.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/kdevplatform.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/kdevproblemreporter.mo
