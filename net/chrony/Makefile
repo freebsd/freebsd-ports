@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	chrony
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
-MAINTAINER=	masaki@club.kyutech.ac.jp
+MAINTAINER=	yonas@fizk.net
 COMMENT=	System clock synchronization client and server
 
 LICENSE=	GPLv2
@@ -38,6 +38,7 @@ PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 \
 #  --without-tomcrypt   Don't use libtomcrypt even if it is available
 #  --disable-pps        Disable PPS API support
 OPTIONS_DEFINE=		IPV6
+OPTIONS_DEFAULT=	IPV6
 
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_OFF=	--disable-ipv6
