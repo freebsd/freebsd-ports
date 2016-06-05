@@ -55,7 +55,7 @@ LIB_DISTFILES=	bzip2-libs-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
 		glibc-2.12-1.166.el6_7.7.${LINUX_RPM_ARCH}.rpm \
 		gmp-4.3.1-7.el6_2.2.${LINUX_RPM_ARCH}.rpm \
 		keyutils-libs-1.4-5.el6.${LINUX_RPM_ARCH}.rpm \
-		krb5-libs-1.10.3-42.el6.${LINUX_RPM_ARCH}.rpm \
+		krb5-libs-1.10.3-42z1.el6_7.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.49-6.el6.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.44-7.el6.${LINUX_RPM_ARCH}.rpm \
 		libblkid-2.17.2-12.18.el6.${LINUX_RPM_ARCH}.rpm \
@@ -102,7 +102,7 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm:SOURCE \
 		grep-2.20-3.el6_7.1.src.rpm:SOURCE \
 		texinfo-4.13a-8.el6.src.rpm:SOURCE \
 		keyutils-1.4-5.el6.src.rpm:SOURCE \
-		krb5-1.10.3-42.el6.src.rpm:SOURCE \
+		krb5-1.10.3-42z1.el6_7.src.rpm:SOURCE \
 		less-436-13.el6.src.rpm:SOURCE \
 		acl-2.2.49-6.el6.src.rpm:SOURCE \
 		attr-2.4.44-7.el6.src.rpm:SOURCE \
