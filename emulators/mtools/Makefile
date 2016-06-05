@@ -14,7 +14,8 @@ LICENSE=	GPLv3
 
 CONFLICTS_INSTALL=	multimarkdown-*
 
-USES=		gmake makeinfo tar:bzip2
+USES=		compiler:gcc-c++11-lib gmake makeinfo tar:bzip2
+USE_CSTD=	c99
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_malloc_h=no
 CONFIGURE_ARGS=	--enable-xdf
