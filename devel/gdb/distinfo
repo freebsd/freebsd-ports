@@ -1,2 +1,3 @@
-SHA256 (gdb-7.11.tar.xz) = 7a434116cb630d77bb40776e8f5d3937bed11dea56bafebb4d2bc5dd389fe5c1
-SIZE (gdb-7.11.tar.xz) = 18934392
+TIMESTAMP = 1464770611
+SHA256 (gdb-7.11.1.tar.xz) = e9216da4e3755e9f414c1aa0026b626251dfc57ffe572a266e98da4f6988fc70
+SIZE (gdb-7.11.1.tar.xz) = 18947760
