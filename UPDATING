@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160605
+  AFFECTS: Users of www/h2o
+  AUTHOR: junovitch@FreeBSD.org
+
+  File paths no longer have a trailing / appended to them. This enables
+  directing specific paths to a file but may break existing configurations.
+  Refer to https://h2o.examp1e.net/configure/file_directives.html and
+  revise your yaml config appropriately.
+
 20160601
   AFFECTS: users of security/libressl-devel
   AUTHOR: brnrd@FreeBSD.org
@@ -33,7 +42,6 @@ you update your ports collection, before attempting any port upgrades.
       portmaster -r libressl-devel
   Portupgrade users:
       portupgrade -fr security/libressl-devel
-
 
 20160527
   AFFECTS: Users of mail/opensmtpd-extras (any of them)

@@ -14,6 +14,7 @@
 # Set it to YES to enable h2o.
 #
 # h2o_config    (string): Optional full path for h2o config file
+# h2o_perl      (string): Optional full path to perl executable
 
 . /etc/rc.subr
 
@@ -23,9 +24,11 @@ rcvar=h2o_enable
 # defaults
 : ${h2o_enable:="NO"}
 : ${h2o_config:="%%PREFIX%%/etc/${name}/${name}.conf"}
+: ${h2o_perl:="%%LOCALBASE%%/bin/perl"}
 
 # daemon
 pidfile=`grep pid-file ${h2o_config} | cut -d' ' -f2`
+h2o_env="H2O_PERL=${h2o_perl}"
 command="%%PREFIX%%/bin/${name}"
 command_args="-m daemon -c ${h2o_config}"
 procname="%%LOCALBASE%%/bin/perl"
