@@ -65,7 +65,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
 		foomatic-db>=0:print/foomatic-db \
 		gutenprint-cups>=0:print/gutenprint-cups \
 		fusefs-ntfs>=0:sysutils/fusefs-ntfs \
-		mtools>=0:emulators/mtools \
 		nss_mdns>=0:dns/nss_mdns \
 		cursor-jimmac-theme>=0:x11-themes/cursor-jimmac-theme \
 		cuse4bsd-kmod>=0:multimedia/cuse4bsd-kmod \
