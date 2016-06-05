@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.3.5
-PORTREVISION=	7
+PORTVERSION=	2.3.7
+#PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
-MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
+MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume
 PKGNAMESUFFIX=	2
 
