@@ -16,6 +16,6 @@
 %%SQLITE3%%lib/libsqlite3odbc-%%VER%%.so
 %%SQLITE3%%lib/libsqlite3odbc.a
 %%SQLITE3%%lib/libsqlite3odbc.so
-%%SQLITE%%lib/libsqliteodbc-%%VER%%.so
-%%SQLITE%%lib/libsqliteodbc.a
-%%SQLITE%%lib/libsqliteodbc.so
+%%SQLITE2%%lib/libsqliteodbc-%%VER%%.so
+%%SQLITE2%%lib/libsqliteodbc.a
+%%SQLITE2%%lib/libsqliteodbc.so
