@@ -639,7 +639,6 @@
     SUBDIR += postgis-jdbc
     SUBDIR += postgis20
     SUBDIR += postgis21
-    SUBDIR += postgis22
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
     SUBDIR += postgresql-libpqxx
