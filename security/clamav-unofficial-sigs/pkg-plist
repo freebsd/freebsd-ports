@@ -6,5 +6,3 @@ man/man8/clamav-unofficial-sigs.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clamav-unofficial-sigs-cron
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clamav-unofficial-sigs-logrotate
