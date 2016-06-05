@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.9.12
+PORTVERSION=	1.9.15
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -37,6 +38,7 @@ OPTIONS_DEFINE=	\
 	HTTP_GZIP_STATIC \
 	HTTP_GUNZIP_FILTER \
 	HTTP_IMAGE_FILTER \
+	HTTP_MP4 \
 	HTTP_PERL \
 	HTTP_RANDOM_INDEX \
 	HTTP_REALIP \
@@ -59,6 +61,7 @@ OPTIONS_DEFINE=	\
 	THREADS \
 	WWW \
 	AJP \
+	AWS_AUTH \
 	CACHE_PURGE \
 	CLOJURE \
 	CT \
@@ -76,6 +79,7 @@ OPTIONS_DEFINE=	\
 	HTTP_FOOTER \
 	HTTP_JSON_STATUS \
 	HTTP_MOGILEFS \
+	HTTP_MP4_H264 \
 	HTTP_NOTICE \
 	HTTP_PUSH \
 	HTTP_PUSH_STREAM \
@@ -85,6 +89,7 @@ OPTIONS_DEFINE=	\
 	HTTP_TARANTOOL \
 	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
+	HTTP_UPSTREAM_CHECK \
 	HTTP_UPSTREAM_FAIR \
 	HTTP_UPSTREAM_STICKY \
 	HTTP_VIDEO_THUMBEXTRACTOR \
@@ -117,12 +122,13 @@ OPTIONS_DEFINE=	\
 	STATSD \
 	UDPLOG \
 	XRID_HEADER \
-	XSS \
-	VIDEO
+	XSS
 
-OPTIONS_RADIO=		VIDEO
-OPTIONS_RADIO_VIDEO=	HTTP_MP4 HTTP_MP4_H264
-OPTIONS_DEFAULT=	IPV6 HTTP HTTP_CACHE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTPV2 WWW
+OPTIONS_DEFAULT=IPV6 FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
+		HTTP_DAV HTTP_FLV HTTP_GZIP_STATIC HTTP_GUNZIP_FILTER \
+		HTTP_MP4 HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK \
+		HTTP_SLICE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTP_SUB \
+		HTTPV2 MAIL MAIL_SSL STREAM STREAM_SSL THREADS WWW
 
 DEBUGLOG_DESC=			Enable debug log (--with-debug)
 FILE_AIO_DESC=			Enable file aio
@@ -160,6 +166,7 @@ STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
 THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
 AJP_DESC=			3rd party ajp module
+AWS_AUTH_DESC=			3rd party aws auth module
 CACHE_PURGE_DESC=		3rd party cache_purge module
 CLOJURE_DESC=			3rd party clojure module
 CT_DESC=			3rd party cert_transparency module (SSL req.)
@@ -187,6 +194,7 @@ HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
 HTTP_TARANTOOL_DESC=		3rd party tarantool upstream module
 HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
+HTTP_UPSTREAM_CHECK_DESC=	3rd party upstream check module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_VIDEO_THUMBEXTRACTOR_DESC=	3rd party video_thumbextractor module
@@ -316,12 +324,11 @@ CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_DIGEST}
-GIT_AUTH_DIGEST_VERSION=	bd1c86a
-GH_ACCOUNT+=	samizdatco:auth_digest
+GIT_AUTH_DIGEST_VERSION=	4edfb18
+GH_ACCOUNT+=	atomx:auth_digest
 GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_auth_digest_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
@@ -366,6 +373,14 @@ GH_ACCOUNT+=	yaoweibin:ajp
 GH_PROJECT+=	nginx_ajp_module:ajp
 GH_TAGNAME+=	${NGINX_AJP_VERSION}:ajp
 CONFIGURE_ARGS+=--add-module=${WRKSRC_ajp}
+.endif
+
+.if ${PORT_OPTIONS:MAWS_AUTH}
+NGINX_AWS_AUTH_VERSION=	1e62670
+GH_ACCOUNT+=	anomalizer:aws_auth
+GH_PROJECT+=	ngx_aws_auth:aws_auth
+GH_TAGNAME+=	${NGINX_AWS_AUTH_VERSION}:aws_auth
+CONFIGURE_ARGS+=--add-module=${WRKSRC_aws_auth}
 .endif
 
 .if ${PORT_OPTIONS:MCACHE_PURGE}
@@ -521,7 +536,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.99.8
+GIT_PUSH_VERSION=	0.99.12
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
@@ -571,7 +586,7 @@ LIB_DEPENDS+=	libmsgpuck.so:devel/msgpuck \
 		libyajl.so:devel/yajl
 GH_ACCOUNT+=	tarantool:nginx_tarantool
 GH_PROJECT+=	nginx_upstream_module:nginx_tarantool
-GH_TAGNAME+=	966f2f5:nginx_tarantool
+GH_TAGNAME+=	3599ba0:nginx_tarantool
 CFLAGS+=	-I${LOCALBASE}/include/msgpuck
 CONFIGURE_ARGS+=--add-module=${WRKSRC_nginx_tarantool}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
@@ -609,11 +624,28 @@ GH_TAGNAME+=	v${NGINX_UPLOADPROGRESS_VERSION}:uploadprogress
 CONFIGURE_ARGS+=--add-module=${WRKSRC_uploadprogress}
 .endif
 
+.if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_CHECK)
+# WWW: https://github.com/yaoweibin/nginx_upstream_check_module
+NGINX_UPSTREAM_CHECK_VERSION=	10782ea
+GH_ACCOUNT+=	yaoweibin:upstreamcheck
+GH_PROJECT+=	nginx_upstream_check_module:upstreamcheck
+GH_TAGNAME+=	${NGINX_UPSTREAM_CHECK_VERSION}:upstreamcheck
+CONFIGURE_ARGS+=--add-module=${WRKSRC_upstreamcheck}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_hash_module.c \
+		${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_ip_hash_module.c \
+		${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_least_conn_module.c \
+		${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.c \
+		${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.h
+.endif
+
 .if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR)
 NGINX_UPSTREAM_FAIR_VERSION=	20090923
 MASTER_SITES+=	LOCAL/osa:upstreamfair
 DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
+.if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_CHECK)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream_fair_module.c
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY}
@@ -706,7 +738,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	7410339
+NGINX_LUA_VERSION=	d44f8e0
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
 GH_TAGNAME+=	${NGINX_LUA_VERSION}:lua
@@ -827,10 +859,10 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 .endif
 
 .if ${PORT_OPTIONS:MSHIBBOLETH}
-GIT_SHIBBOLETH_VERSION=	20150121
+GIT_SHIBBOLETH_VERSION=	4f1119b
 GH_ACCOUNT+=	nginx-shib:shib
 GH_PROJECT+=	nginx-http-shibboleth:shib
-GH_TAGNAME+=	v${GIT_SHIBBOLETH_VERSION}:shib
+GH_TAGNAME+=	${GIT_SHIBBOLETH_VERSION}:shib
 CONFIGURE_ARGS+=--add-module=${WRKSRC_shib}
 .endif
 
@@ -902,7 +934,7 @@ WITH_OPENSSL_PORT=	yes
 .if ${PORT_OPTIONS:MNJS}
 GH_ACCOUNT+=	nginx:njs
 GH_PROJECT+=	njs:njs
-GH_TAGNAME+=	50fbb3b:njs
+GH_TAGNAME+=	c4a5f2b:njs
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_njs}/nginx
 .endif
 
@@ -961,7 +993,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
 .endif
 
 .if ${PORT_OPTIONS:MBROTLI}
-NGINX_BROTLI_VERSION=	86998c6
+NGINX_BROTLI_VERSION=	2fc6f12
 LIB_DEPENDS+=	libbrotlidec.so:devel/libbrotli \
 		libbrotlienc.so:devel/libbrotli
 GH_ACCOUNT+=	google:brotli
