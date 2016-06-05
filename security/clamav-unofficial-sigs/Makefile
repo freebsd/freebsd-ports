@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav-unofficial-sigs
-PORTVERSION=	5.0.5
+PORTVERSION=	5.3.2
 CATEGORIES=	security
 
 MAINTAINER=	sf@maxempire.com
@@ -11,11 +11,13 @@ COMMENT=	Update script for third-party ClamAV databases
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	clamscan:security/clamav \
+COMMON_DEPENDS=	clamscan:security/clamav \
 		rsync:net/rsync \
 		curl:ftp/curl \
 		gpg:security/gnupg \
 		bash:shells/bash
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	extremeshok
@@ -23,14 +25,19 @@ GH_ACCOUNT=	extremeshok
 USES=		perl5 shebangfix
 SHEBANG_FILES=	clamav-unofficial-sigs.sh
 USE_PERL5=	run
-NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/clamav-unofficial-sigs.sh ${WRKSRC}/cron.d/clamav-unofficial-sigs
+	@${CP} ${FILESDIR}/manpage.conf ${WRKSRC}
+	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' ${WRKSRC}/manpage.conf
+
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/clamav-unofficial-sigs.sh
+
+do-build:
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/bash ./clamav-unofficial-sigs.sh -c manpage.conf --install-man)
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/clamav-unofficial-sigs.sh ${STAGEDIR}${PREFIX}/bin
@@ -43,9 +50,5 @@ do-install:
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} INSTALL LICENSE README.md ${STAGEDIR}${DOCSDIR})
-
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/cron.d/clamav-unofficial-sigs ${STAGEDIR}${EXAMPLESDIR}/clamav-unofficial-sigs-cron
-	${INSTALL_DATA} ${WRKSRC}/logrotate.d/clamav-unofficial-sigs ${STAGEDIR}${EXAMPLESDIR}/clamav-unofficial-sigs-logrotate
 
 .include <bsd.port.mk>
