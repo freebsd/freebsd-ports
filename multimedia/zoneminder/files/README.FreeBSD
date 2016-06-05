@@ -1,216 +1,169 @@
-== Origin ==
 
-This port project started its life based on quadra's original port for
-version 1.19.2.  Brooktree (bktr) video input support code written by
-quadra is virtually unchanged in this port other than some function
-argument changes to match the latest ZoneMinder version (1.22.3).
-Although this code compiles, I have not tested its functionality.
-Currently, I only have two Axis 206 network cameras, which work fine,
-but I have not tested the set up with any other camera
-configurations.
+ZoneMinder is a free, open source Closed-circuit television software 
+application developed for Unix-like operating systems which supports 
+IP, USB and Analog cameras. 
 
-I have tested this port on FreeBSD 5.5 (i386) as well as FreeBSD 6.2
-(i386) without any problems.
+New installs
+============
 
-== Preparation ==
+ZoneMinder requires a MySQL (or MySQL forks) database backend and 
+a http server, capable to execute PHP and CGI scripts.
 
-* Download the port (zoneminder-freebsd-port-1.22.3p[version].tgz)
-* Become root and 'cd' to /usr/ports/multimedia/
-* Extract the port files.  You know how to do 'tar zxf' right?
+To simplify things, we assume, that you use MySQL and NGINX on 
+the same server.
 
-You should now have /usr/ports/multimedia/zoneminder/
+1. Preliminary steps
 
-Now, go to the directory and look at files/patch-SharedMem.pm
+1.1 Install databases/mysql56-server
+	You may choose your favourite method - ports or packages here. 
+	FreeBSD default setting use STRICT_TRANS_TABLES sql_mode. It's mandatory to disable it. Edit your my.cnf or create new in /var/db/mysql
+	
+	The following example works with ZoneMinder quite well
 
-What this patch does is to hard-wire native size to 4 (32-bits).
-On FreeBSD, Perl is configured with -Duse64bitint by default and the
-method that is used by SharedMem.pm to determine architectural bit
-width incorrectly considers an i386 machine as 64-bit capable.  I'm 
-not a perl expert -- in fact, I hate perl -- and I really have no
-idea how to properly determine pointer size in Perl, so this patch
-exists.  Obviously, if you are running FreeBSD-AMD64 (or Alpha or
-something, although I have no idea if this software would work on
-that architecture), you will want to get rid of this patch file.
-Just delete it _before_ you make.
+	[server]
+		skip-networking
+		skip-name-resolve
+		innodb_flush_method = O_DIRECT
+		skip-innodb_doublewrite
+		innodb_file_per_table
 
-And if you're bored, feel free to go through all the patch files just
-marvelling at all the trouble I had to go through ^_^;
+	ZoneMinder use very simple queries, however it tends to write to 
+	the database quite a lot depending on your capture mode and number 
+	of cameras. So tweak your MySQL instance accordantly
 
-Now that we've gotten that little quirk out of the way, we'll move on
-to Makefile.  Open Makefile using your favorite text editor and modify
-the following items if they're not suitable for you.
+	Now, enable and start MySQL
+		sysrc mysql_server_enable="YES"
+		service mysql-server start
 
-* WWWDIR : This is where your web server will serve from.  If you
-  already have apache installed, you should point this to the same
-  place where apache thinks is the web base.  Default is
-  /usr/local/www, as can be seen in the Makefile.
-* ZM_DB_HOST : This is where mysql server runs.  If you're running
-  mysql server on a different machine, you'll want to update this
-  line, but I'm not sure if you can avoid installing mysql on this
-  machine.  Disk space is cheap, so I don't think it's that big a deal
-  having mysql just sitting there, as long as it's not started.
-* ZM_DB_NAME : This is the database name that ZoneMinder will use.
-  I'm pretty sure ZoneMinder won't mind sharing a base database with
-  other applications, but it certainly doesn't hurt to let it have its
-  own database space, so this defaults to "zm"
-* ZM_DB_USER and ZM_DB_PASS are username and password for the
-  database.
+1.2 Install www/nginx 
+	We provide an example for an HTTP install, however, you should use 
+	HTTPS if you plan to expose your installation to the public. There 
+	are plenty guides how to do it and security/letsencrypt.sh is a 
+	good way to get a valid SSL certificate.
 
-We're almost ready to "make," but first, consider the following points
-and just imagine how things can break based on your situation.
+	Your server block should include the following:
 
-* If you do not have apache installed, this port will install version
-  1.xx.xx of apache.  On the other hand, if you already have apache
-  2.xx.xx installed, I do not know what will happen.  My guess is that
-  things will work just fine since php5 port will see apache2
-  installation and skip apache1 installation.
-* If you have mysql version other than 5.0.xx installed, this port
-  build will probably fail.  Even if it doesn't fail, you probably do
-  not want multiple versions of mysql installed on your machine.  You
-  can either edit the dependency in the Makefile to point to your
-  version of mysql, or get rid of the dependency statement for mysql.
-  Getting rid of it is not as nice, but I'm sure you're able to keep
-  the dependencies in mind when messing around with ports in the
-  future.
-* If you have PHP4 installed, you should modify the dependencies in
-  the Makefile to point to php4-extensions instead of
-  php5-extensions.  I know for a fact that both versions work fine
-  with ZoneMinder.
-* I have not set up dependencies for perl modules Device::SerialPort
-  and X10::ActiveHome because I do not have PTZ camera and my X10 is
-  handled by another dedicated machine.  If you want this, you'll want
-  to tinker with the port some more.  You can also manually install
-  those ports (if they exist) before doing make.  I imagine
-  ZoneMinder's configure script will pick them up.
+		server {
+				root /usr/local/www/zoneminder;
+				try_files $uri $uri/ /index.php$is_args$args;
+				index index.php;
 
-That's about it.  Let's make!
+				location = /cgi-bin/nph-zms {
+						include fastcgi_params;
+						fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+						fastcgi_pass    unix:/var/run/fcgiwrap/fcgiwrap.sock;
+				}
 
-== Making ==
+				location ~ \.php$ { 
+						include fastcgi_params;
+						fastcgi_param   SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+						fastcgi_pass    unix:/var/run/php-fpm.sock;
+				}
 
-There's really nothing special about making.  Just 'make' will do.
-However, during the dependency builds, make sure PHP install includes
-the apache module.  If you already have PHP installed without apache
-module, you can always tinker with the Makefile in
-/usr/ports/lang/php5/ and do 'make deinstall' followed by 'make
-reinstall' to reinstall the port with additional modules.
+				location /api {
+						rewrite ^/api/(.+)$ /api/index.php?p=$1 last;
+				}
+		}
 
-If the build fails, take a deep breath, yell at your computer for
-a moment, and try to figure out if you messed up anything while
-changing the Makefile in one of the above steps.  If you do not
-believe you've done anything wrong and still can't figure out why
-the build fails, there's always the forum....
+1.2.1 ZoneMinder has it's own authentication system, however it's recommend to use NGINX basic 
+	auth over HTTPS if you don't need fine grain control to ZoneMinder components.
 
-If it builds fine, feel free to 'make install'
+1.2.2 If you choose ZoneMinder authentication, it's recommended to prohibit access to 
+	image and events folder as it's possible to guess file names inside it.
 
-However, do NOT 'make clean' yet!
+        location ~ ^/(?:images|events)/ {
+                deny all;
+        }
+        
+	Enable and start NGINX
+		sysrc nginx_enable="YES"
+		service nginx start
 
-== Seeding the database ==
+1.3 Install www/fcgiwrap 
+	As NGINX lacks it's own CGI wrapper, we need external one. Please 
+	note that ZoneMinder's montage page use simultaneous access to all 
+	cameras, so you need to use at least as many fcgiwrap workers as 
+	your number of cameras. The following example assumes you have 4.
 
-If this is the first time installing ZoneMinder, you'll need to seed
-the mysql database with ZoneMinder's configuration information.  To do
-this, follow these steps as a root user.
+	Enable and start FcgiWrap
+		sysrc fcgiwrap_enable="YES"
+		sysrc fcgiwrap_user="www"
+		sysrc fcgiwrap_flags="-c 4"
 
-First, if this is the first time mysql was installed, you'll want to
-consider where you want the database files to reside.  Default is
-/var/db/mysql/ but you may have set up a dedicated partition for it.
-If you want to change it, just put the following line in /etc/rc.conf
+1.4 PHP is installed as a dependency to ZoneMinder. However, you should 
+	tweak some of it's settings.
+	Edit /usr/local/etc/php-fpm.conf and set
 
-* mysql_dbdir="/somewhere/else/you/want"
+		listen = /var/run/php-fpm.sock
+		listen.owner = www
+		listen.group = www
+		env[PATH] = /usr/local/bin:/usr/bin:/bin
 
-Obviously, you'll want this line in there, too:
+	If you want to set another path for the socket file, make sure you 
+	change it in your NGINX config well. The env[PATH] needs to be set 
+	to locate the zip utility as ZoneMinder's export functions rely on 
+	exec(). Sorry, chroot folks. 
 
-* mysql_enable="YES"
+	PHP throws warning if date.timezone option is not set. The best place 
+	to do it is an ini file in /usr/local/etc/php 
 
-Now, start the sucker up.
+		date.timezone = "UTC"
 
-shell> /usr/local/etc/rc.d/mysql-server start
+	Enable and start php-fpm
+		sysrc php_fpm_enable="YES"
+		service php-fpm start
 
-Assuming it started fine, give it a few seconds and then continue.
-Note that you should be at /usr/ports/multimedia/zoneminder/ for the
-following steps.
+1.5 ZoneMinder constantly keeps the last N frames from its cameras to 
+	preserve them when alarm occurs. This can be a performance hog if 
+	placed on spindle drive. The best practice is put it on tmpfs.
+	See https://www.freebsd.org/cgi/man.cgi?query=tmpfs for more 
+	information.
 
-shell> mysql -h localhost -u root -p
+	ZoneMinder will use /tmp for default. If you plan to change it, see 
+	ZM_PATH_MAP setting.
 
-This will ask for a password.  Just press enter to go with an empty
-password.  You should now be in mysql command line interface.
+	Mapping /tmp to tmpfs is actually a recommended step under FreeBSD.
+	Edit /etc/fstab and add the following:
 
-mysql> source work/ZoneMinder-1.22.3/db/zm_create.sql
+		tmpfs			/tmp		tmpfs	rw,nosuid,mode=01777	0	0
 
-Above runs bunch of SQL commands from the file, seeding the
-database.
+	The size of temporary files depends on your number of cameras 
+	number and frames you plan to keep. My 12 3Mbit cameras with 25 
+	last frames consumes 6 GB.
 
-mysql> grant select,insert,update,delete on zm.* to 'zmuser'@localhost identified by 'zmpass'; flush privileges;
+2. ZoneMinder installation
 
-Above sets up permissions.  Note that if you changed database name,
-user name, or password in the Makefile, you'll need to modify above
-command accordingly.
+	Connect to MySQL under root and create zm user and populate database.
 
-mysql> quit
+	mysql -u root -p
+	
+		CREATE DATABASE zm;
+		GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' IDENTIFIED BY 'zmpass';
+		FLUSH PRIVILEGES;
+		quit;
+	
+	mysql -u root -p zm < /usr/local/share/zoneminder/db/zm_create.sql
+	
+2.1 If you have chosen to change the ZoneMinder MySQL credentials to something
+	other than zmuser/zmpass then you must now edit /usr/local/etc/zm.conf. Change
+	ZM_DB_USER and ZM_DB_PASS to the values you created in the previous step.
 
-That one should be obvious to you.
+	Additionally, you must also edit 
+	/usr/local/www/zoneminder/api/app/Config/database.php in a similar 
+	manner. Scroll down and change login and password to the values you created in the previous step.
 
-== Post-Installation Quirks ==
+	Enable and start ZoneMinder
+		sysrc zoneminder_enable="YES"
+		service zoneminder start
 
-PHP5 installation does not necessarily set up the apache configuration
-file properly.  You will want to make sure that following lines are in
-apache configuration file, /usr/local/etc/apache/httpd.conf
+Upgrades
+========
 
-* AddType application/x-httpd-php .php
-* AddType application/x-httpd-php-source .phps
+1. Stop ZoneMinder
+	service zoneminder stop
 
-While you're at it, you might also want to check that following line
-is in the configuration file.
-
-* LoadModule php5_module libexec/apache/libphp5.so
-
-== Automatic Execution at Boot ==
-
-Obviously, if this is to be used as a security device, you'll want it
-to start automatically on a reboot.  Again obviously, you need to have
-both apache and mysql start up as well, unless of course, you're
-running mysql on a remote machine.  If you are, I'm sure you're an
-expert at this stuff already.
-
-Add following lines into /etc/rc.conf, if not already present.  Order
-is not important.
-
-* apache_enable="YES"
-* mysql_enable="YES"
-* zm_enable="YES"
-
-Just for your information, I had to put 'sleep 10' in ZoneMinder
-startup script because mysql port does not become available
-immediately after mysql startup script finishes.
-
-== More Quirks ==
-
-Depending on the number of cameras and their resolution settings, you
-may need a lot more shared memory than provided by a default kernel.
-If you've never built a custom kernel before, umm, time for you to
-read the FreeBSD Handbook.  It can be found at
-/usr/share/doc/handbook/index.html or at http://freebsd.org/
-
-For the rest of you, just add a reasonable-looking version of the
-following lines into your kernel configuration file and go though the
-buildkernel, installkernel process.
-
-* options SHMMAXPGS=65536
-* options SHMMNI=384
-* options SHMSEG=256
-
-I think above gives maximum of 256MB of shared memory.  SHMMNI
-statement probably isn't required since ZoneMinder probably creates
-one big instance per camera instead of many little instances.  I'm not
-sure about the last one.  Whatever the case, above works for me with
-two Axis 206 cameras.
-
-Adding the following line into /etc/sysctl.conf may speed up the
-shared memory accesses, so even though it's not required, it's
-probably a good idea.
-
-* kern.ipc.shm_use_phys=1
-
-== Modify php.ini ===
-Change in php.ini short_open_tag to On (short_open_tag = On)
-
-That's all folks!
+2. Upgrade database
+	sudo -u www zmupdate.pl
+	
+3. Start ZoneMinder
+	service zoneminder start

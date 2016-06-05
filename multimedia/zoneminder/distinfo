@@ -1,2 +1,5 @@
-SHA256 (ZoneMinder-1.25.0.tar.gz) = ec63ef47d8f4cb8af21a3bc84ff1de6968805146682dd7f10982bde975d9bb5d
-SIZE (ZoneMinder-1.25.0.tar.gz) = 1119091
+TIMESTAMP = 1464895954
+SHA256 (zoneminder-zoneminder-v1.30.0-rc1_GH0.tar.gz) = 22d2d80c473b1c00fb36fb70bf352cf72601fc839fcefe87ffa4f5fd5bd5e853
+SIZE (zoneminder-zoneminder-v1.30.0-rc1_GH0.tar.gz) = 9373740
+SHA256 (FriendsOfCake-crud-c3976f1_GH0.tar.gz) = 7dfa29dd6dd95f05bca61bb05033f813828b7ab66f9d8793d306df0dd72471ce
+SIZE (FriendsOfCake-crud-c3976f1_GH0.tar.gz) = 72961
