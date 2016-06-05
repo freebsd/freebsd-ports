@@ -1,9 +1,9 @@
 # Partially revert bug 791305 to allow building with system IJG jpeg library
 
-diff --git configure.in configure.in
+diff --git old-configure.in configure.in
 index f0aeb5d..1c01010 100644
---- configure.in
-+++ configure.in
+--- old-configure.in
++++ old-configure.in
 @@ -4027,11 +4027,7 @@ if test "$MOZ_NATIVE_JPEG" = 1; then
                       #include <jpeglib.h> ],
                     [ #if JPEG_LIB_VERSION < $MOZJPEG
