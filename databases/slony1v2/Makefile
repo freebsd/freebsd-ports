@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slony1v2
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/2.2/source/
 DISTNAME=	slony1-${PORTVERSION}
