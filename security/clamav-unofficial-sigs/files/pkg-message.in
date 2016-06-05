@@ -20,8 +20,6 @@ obsolete configuration file:
 %%PREFIX%%/etc/clamav-unofficial-sigs.conf
 
 To run the script periodically by cron, you also need to add it to
-your crontab. Sample crontab and logrotate files are located in:
-
-%%EXAMPLESDIR%%
+your crontab.
 
 **********************************************************************
