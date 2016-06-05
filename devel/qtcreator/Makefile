@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	3.6.1
+DISTVERSION=	4.0.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -11,19 +11,15 @@ DIST_SUBDIR=	KDE/Qt/qtcreator
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	C++ and QML IDE for Qt development
 
-LICENSE=	GPLv3 LGPL21 LGPL3
-LICENSE_COMB=	dual
-
 # depend on the split out qbs
 BUILD_DEPENDS=	qbs:devel/qbs
 RUN_DEPENDS=	qbs:devel/qbs
 
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USES=		qmake compiler:c++11-lib
-INSTALLS_ICONS=	yes
-USE_QT5=	buildtools concurrent core declarative designer gui linguist network\
-		qml quick quickcontrols script script sql svg webkit widgets xml\
-		xmlpatterns
+USE_QT5=	buildtools concurrent core declarative designer gui linguist \
+		network qdoc qml quick quickcontrols script script sql svg \
+		webkit widgets xml xmlpatterns
 
 # be paranoid and do not extract qbs (devel/qbs) copy from source tree
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/src/shared/qbs'
@@ -40,6 +36,19 @@ QMAKE_ARGS+=	DEFINES+=_GLIBCXX_USE_C99
 
 DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
+
+OPTIONS_DEFINE=		DOCS EXAMPLES
+DOCS_DESC=		Install the Qt5 api documentation
+DOCS_USE=		QT5=doc_run
+EXAMPLES_DESC=		Install the Qt5 example projects
+EXAMPLES_USE=		QT5=examples_run
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
+ALL_TARGET=		all
+INSTALL_TARGET=		install
+
+DOCS_ALL_TARGET=	docs
+DOCS_INSTALL_TARGET=	install_docs
 
 # Fix paths for gnuplot and ant.
 post-patch:
