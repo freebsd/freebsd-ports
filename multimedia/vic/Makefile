@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-2.8ucl1.1.6
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	MBone video conferencing tool
 
+DEPRECATED=	Depends on expiring devel/uclmmbase
+EXPIRATION_DATE=	2016-07-04
+
 BUILD_DEPENDS=	v4l_compat>=1.0.20060801:multimedia/v4l_compat
 LIB_DEPENDS=	libuclmmbase.so:devel/uclmmbase
 

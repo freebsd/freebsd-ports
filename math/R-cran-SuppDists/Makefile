@@ -17,6 +17,8 @@ COMMENT=	Supplementary distributions and RNG for R
 
 LICENSE=		GPLv2
 
+BROKEN=		fails to build
+
 BENCHMARK_SCRIPT=	R-benchmark-25.R
 USES=	cran:auto-plist
 WRKSRC=			${WRKDIR}/${PORTNAME}

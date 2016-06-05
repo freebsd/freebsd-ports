@@ -11,6 +11,8 @@ MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Encap Package Manager
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfget.a:ftp/fget
 LIB_DEPENDS=	libcurl.so:ftp/curl \

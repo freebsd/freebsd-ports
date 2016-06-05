@@ -15,6 +15,8 @@ COMMENT=	Allows simple management of a robots.txt
 RUN_DEPENDS=	tracd:www/trac
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

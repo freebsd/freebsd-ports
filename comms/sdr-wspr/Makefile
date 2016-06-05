@@ -20,5 +20,6 @@ USES=		cmake:outsource compiler:gcc-c++11-lib fortran pkgconfig
 
 PLIST_FILES=	bin/sdr-wspr share/applications/sdr-wspr.desktop \
 		share/icons/sdr-wspr.svg
+CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}"
 
 .include <bsd.port.mk>

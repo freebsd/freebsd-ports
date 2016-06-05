@@ -18,7 +18,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	11.1.2
+MESABASEVERSION=	11.2.2
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -31,7 +31,7 @@ MAINTAINER=	x11@FreeBSD.org
 BUILD_DEPENDS+=	makedepend:devel/makedepend
 LIB_DEPENDS+=	libdevq.so:devel/libdevq
 
-USES+=		compiler:c++11-lib gettext-tools gmake libtool \
+USES+=		compiler:c++11-lib bison gettext-tools gmake libtool \
 		pathfix pkgconfig python:2,build shebangfix tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -55,7 +55,7 @@ python_OLD_CMD=	"/usr/bin/env[[:space:]]python"
 python_CMD=	${LOCALBASE}/bin/python2
 SHEBANG_FILES=	src/gallium/*/*/*.py src/gallium/tools/trace/*.py \
 		src/gallium/drivers/svga/svgadump/svga_dump.py \
-		src/glsl/tests/compare_ir src/mapi/glapi/gen/*.py
+		src/mapi/glapi/gen/*.py
 SHEBANG_FILES+=	src/mapi/mapi_abi.py
 
 MASTERDIR=		${.CURDIR}/../../graphics/libGL
@@ -75,6 +75,14 @@ CONFIGURE_ARGS+=	--with-sha1=libcrypto
 CONFIGURE_ARGS+=	--disable-dri3
 
 CONFIGURE_ARGS+=	--enable-gbm
+
+# There are issues that need to be fixed to use TLS model "initial-exec"
+# So stick with "global-dynamic"'s model for now. kan@ is working on a
+# patch for rtld. We might want to backport global-dynamic or
+# pthread_setspecific which it uses now by default. But since this
+# configure switch is going away ...
+# https://lists.freebsd.org/pipermail/freebsd-arch/2016-February/017699.html
+#CONFIGURE_ARGS+=	--enable-glx-tls
 
 # libEGL, dri and clover need gallium enabled.
 # the third option in --with-egl-platforms is wayland.

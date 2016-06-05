@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSL Transformations (XSLT) implementation in Java
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j \
 		${JAVALIBDIR}/xp.jar:textproc/xp

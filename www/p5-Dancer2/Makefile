@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.166001
+PORTVERSION=	0.200000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,6 +34,7 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Role-Tiny>=2.000000:devel/p5-Role-Tiny \
 		p5-Safe-Isa>=0:devel/p5-Safe-Isa \
 		p5-Template-Tiny>=0:textproc/p5-Template-Tiny \
+		p5-Type-Tiny>=0:devel/p5-Type-Tiny \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	synergy
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	kevlo@FreeBSD.org
@@ -14,8 +14,9 @@ BROKEN_powerpc64=	Does not build
 
 USES=		cmake cpe
 CPE_VENDOR=	synergy-foss
-USE_XORG=	ice xtst x11 sm
+USE_XORG=	ice xtst x11 sm xext xinerama xrandr xi
 USE_GITHUB=	yes
+GH_ACCOUNT=     symless
 
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable

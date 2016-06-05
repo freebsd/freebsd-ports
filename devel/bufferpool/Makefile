@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bufferpool - the memory management library Feng and Felix depend upon
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

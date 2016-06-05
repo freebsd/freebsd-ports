@@ -15,6 +15,8 @@ COMMENT=	Graphical data visualisation tool
 NO_CDROM=	Restrictive copyright (do not sell for profit)
 
 BROKEN=		fails to fetch (no route to host)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}/src
 CONFIGURE_WRKSRC=	${PATCH_WRKSRC}

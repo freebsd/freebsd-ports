@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance and network tweaks for Firefox
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 XPI_NUM=	1269
 XPI_ID=		{c36177c0-224a-11da-8cd6-0800200c9a66}

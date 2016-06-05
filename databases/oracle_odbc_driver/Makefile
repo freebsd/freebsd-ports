@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oracle Open Source ODBC driver
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONFIGURE_ARGS=	--with-unixODBC=${LOCALBASE}

@@ -1,7 +1,7 @@
-diff --git configure.in configure.in
+diff --git old-configure.in configure.in
 index 48e60c0..ec08417 100644
---- configure.in
-+++ configure.in
+--- old-configure.in
++++ old-configure.in
 @@ -5591,6 +5591,67 @@ fi
  AC_SUBST(MOZ_WEBM_ENCODER)
  

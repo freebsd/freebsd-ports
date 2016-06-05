@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Kvantum
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-themes
 PKGNAMEPREFIX=	qt4-style-
@@ -18,7 +18,6 @@ GH_ACCOUNT=	tsujan
 USES=		compiler:c++11-lang qmake
 USE_QT4=	corelib gui svg rcc_build uic_build moc_build
 USE_XORG=	x11 xext
-#USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	${PORTNAME}
 

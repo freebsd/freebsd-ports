@@ -15,6 +15,9 @@ COMMENT=	F/OSS Massively Multiplayer On-line Role-playing Game (MMORPG)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../../License
 
+DEPRECATED=	Depends on expiring games/daimonin-music
+EXPIRATION_DATE=	2016-07-04
+
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libcurl.so:ftp/curl
 

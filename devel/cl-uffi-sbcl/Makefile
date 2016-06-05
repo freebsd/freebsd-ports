@@ -10,6 +10,9 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Universal Foreign Function Interface for Common Lisp (SBCL binaries)
 
+DEPRECATED=	Depends on expiring devel/cl-uffi
+EXPIRATION_DATE=	2016-07-04
+
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/uffi/uffi.asd:devel/cl-uffi
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/uffi/uffi.asd:devel/cl-uffi
 

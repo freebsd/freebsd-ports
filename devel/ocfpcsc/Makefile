@@ -12,6 +12,8 @@ MAINTAINER=	saper@saper.info
 COMMENT=	Open Card Framework to PC/SC bridge
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	IBMOCF
 LICENSE_NAME=	IBM OpenCard Framework

@@ -1,0 +1,19 @@
+This module contains two plugins for Dancer: Dancer::Plugin::RPC::XMLRPC
+and Dancer::Plugin::RPC::JSONRPC. They are plugins rather than
+Plack::Middleware.
+ 
+Dancer::Plugin::RPC::XMLRPC
+ 
+This plugin exposes the new keyword "xmlrpc" that is followed by 2
+arguments: the endpoint and the arguments to configure the xmlrpc-calls
+at this endpoint.
+ 
+Dancer::Plugin::RPC::JSONRPC
+ 
+This plugin exposes the new keyword "jsonrpc" that is followed by
+2 arguments: the endpoint and the arguments to configure the
+jsonrpc-calls at this endpoint.
+
+See the /t dir for examples (until some tutorial exists)
+
+WWW: https://metacpan.org/pod/Dancer::Plugin::RPC

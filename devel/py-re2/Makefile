@@ -13,6 +13,8 @@ COMMENT=	Python wrapper for Google RE2 using Cython
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	cython:lang/cython
 LIB_DEPENDS=	libre2.so:devel/re2
 

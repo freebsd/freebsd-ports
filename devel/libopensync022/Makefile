@@ -14,6 +14,8 @@ COMMENT=	Freedesktop synchronization framework
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 SWIG_LANGUAGES=	python
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig python tar:bzip2

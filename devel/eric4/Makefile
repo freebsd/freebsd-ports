@@ -6,6 +6,8 @@ CATEGORIES=	devel python
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui \
 		${PYTHON_SITELIBDIR}/PyQt4/Qsci.so:devel/py-qt4-qscintilla2

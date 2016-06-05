@@ -11,6 +11,8 @@ MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Shisen-sho puzzle game for X11
 
 BROKEN=		fails to start
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

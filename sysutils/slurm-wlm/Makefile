@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	15.08.11
+PORTVERSION=	15.08.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -28,7 +28,7 @@ USE_RC_SUBR=	slurmctld slurmd
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pkgconfig python:build tar:bz2
-USE_perl5=	configure
+USE_PERL5=	configure
 
 OPTIONS_DEFINE=	CURL DOCS GTK2 HDF5 HWLOC IPMI MYSQL RRD
 OPTIONS_DEFAULT=HDF5 HWLOC
@@ -46,9 +46,10 @@ GTK2_USE=		GNOME=glib20,gtk20
 DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-CURL_CONFIGURE_with=	libcurl
+CURL_CONFIGURE_WITH=	libcurl
 
-HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
+HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+			libsz.so:science/szip
 HDF5_CONFIGURE_WITH=	hdf5
 
 HWLOC_LIB_DEPENDS=	libhwloc.so:devel/hwloc

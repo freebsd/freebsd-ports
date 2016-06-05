@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sort any HTML data table
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 XPI_NUM=	2637
 XPI_ID=		{7C7F5C11-4ACD-4CDB-9293-2E3F46654E2A}

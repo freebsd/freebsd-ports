@@ -11,6 +11,8 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Implementation of the Sudoku game
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 

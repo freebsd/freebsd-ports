@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	appleseed
-DISTVERSION=	1.3.0-beta
-PORTREVISION=	1
+DISTVERSION=	1.4.0-beta
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -28,7 +27,7 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build opengl
 CMAKE_ARGS=	-DUSE_STATIC_BOOST:BOOL=OFF -DUSE_STATIC_OIIO:BOOL=OFF \
 		-DUSE_STATIC_OSL:BOOL=OFF -DWITH_DOXYGEN:BOOL=OFF \
 		-DWITH_HEADERS:BOOL=OFF -DWITH_PYTHON:BOOL=OFF \
-		-DWITH_TESTS:BOOL=OFF
+		-DWITH_TESTS:BOOL=OFF -DWARNINGS_AS_ERRORS:BOOL=OFF
 
 .for lib in EXR OIIO OSL PNG SEEXPR XERCES ZLIB
 CMAKE_ARGS+=	-DUSE_EXTERNAL_${lib}:BOOL=ON
@@ -58,6 +57,8 @@ DISNEY_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
 			libSeExprEditor.so:graphics/seexpr
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,CMAKE_SYSTEM_NAME.*,USE_RPATH_ORIGIN),' \
+		${WRKSRC}/src/appleseed.studio/CMakeLists.txt
 	@${RMDIR} ${WRKSRC}/sandbox/docs/api
 
 .include <bsd.port.mk>

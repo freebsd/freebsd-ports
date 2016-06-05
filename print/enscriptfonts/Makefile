@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	More than 120 free- and share-ware fonts to extend enscript-1.5
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-07-04
 
 NO_WRKSUBDIR=	YES
 NO_MANCOMPRESS=	YES
