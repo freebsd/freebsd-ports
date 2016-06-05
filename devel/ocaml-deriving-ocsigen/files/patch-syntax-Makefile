@@ -1,0 +1,15 @@
+--- syntax/Makefile.orig	2011-12-08 04:46:54 UTC
++++ syntax/Makefile
+@@ -39,9 +39,9 @@ ifneq (${TYPECONV},)
+ MAIN_TC := pa_deriving_tc.ml
+ endif
+ 
+-CLASSES_CMO := $(patsubst %.ml,classes/%.cmo$,${CLASSES})
+-CLASSES_CMX := $(patsubst %.ml,classes/%.cmx$,${CLASSES})
+-CLASSES_DEPS := $(patsubst %.ml,classes/.%.ml.deps$,${CLASSES})
++CLASSES_CMO := $(patsubst %.ml,classes/%.cmo,${CLASSES})
++CLASSES_CMX := $(patsubst %.ml,classes/%.cmx,${CLASSES})
++CLASSES_DEPS := $(patsubst %.ml,classes/.%.ml.deps,${CLASSES})
+ 
+ ${CLASSES_CMO} ${CLASSES_CMX} ${CLASSES_DEPS}: \
+ 	LIBS+=-syntax camlp4o -package camlp4.quotations.o -I classes
