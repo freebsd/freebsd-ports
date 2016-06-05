@@ -29,7 +29,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pc-updatemanager:sysutils/pc-updatemanager \
 		${LOCALBASE}/bin/screen:sysutils/screen \
 		${LOCALBASE}/bin/tmux:sysutils/tmux \
 		${LOCALBASE}/bin/nano:editors/nano \
-		${LOCALBASE}/bin/mosh:net/mosh \
 		${LOCALBASE}/bin/zfs-stats:sysutils/zfs-stats \
 		ataidle>=0:sysutils/ataidle \
 		openntpd>=0:net/openntpd
