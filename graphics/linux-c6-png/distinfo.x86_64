@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/libpng-1.2.49-1.el6_2.x86_64.rpm) = ea3aba4a2c5734accd67a3da4ba967168ad78d30cb744bc6379863878c594022
-SIZE (rpm/x86_64/centos/6.7/libpng-1.2.49-1.el6_2.x86_64.rpm) = 186036
-SHA256 (rpm/x86_64/centos/6.7/libpng-1.2.49-1.el6_2.i686.rpm) = 88400ce6450fa3b320266d5896714a41a3eee2632c620e9375046d4bcdb452cc
-SIZE (rpm/x86_64/centos/6.7/libpng-1.2.49-1.el6_2.i686.rpm) = 188124
-SHA256 (rpm/x86_64/centos/6.7/libpng-1.2.49-1.el6_2.src.rpm) = 156fd77c25efa50bd7623011b14d0fae1a022442453d6bd2a0c69df13587dc65
-SIZE (rpm/x86_64/centos/6.7/libpng-1.2.49-1.el6_2.src.rpm) = 688305
+TIMESTAMP = 1465158817
+SHA256 (rpm/x86_64/centos/6.7/libpng-1.2.49-2.el6_7.x86_64.rpm) = 0f18ee677b60fe81a24f200cc8db1c9bde26a404cc812e77a73b2bcfd4dd40de
+SIZE (rpm/x86_64/centos/6.7/libpng-1.2.49-2.el6_7.x86_64.rpm) = 186428
+SHA256 (rpm/x86_64/centos/6.7/libpng-1.2.49-2.el6_7.i686.rpm) = e4b2fabf9c232b1a84e677df640aceab8b089e72781bec4fcca347d984e581d1
+SIZE (rpm/x86_64/centos/6.7/libpng-1.2.49-2.el6_7.i686.rpm) = 188376
+SHA256 (rpm/x86_64/centos/6.7/libpng-1.2.49-2.el6_7.src.rpm) = e756441baabe4038f09eb9dbe4207e83d347f21cbe805eb4956c2cd961a891db
+SIZE (rpm/x86_64/centos/6.7/libpng-1.2.49-2.el6_7.src.rpm) = 691020
