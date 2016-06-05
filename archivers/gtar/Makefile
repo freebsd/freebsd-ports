@@ -41,4 +41,8 @@ STATIC_CONFIGURE_ENV=	SHLIBEXT=""
 STATIC_VARS=	STATIC_ARGS=build
 STATIC_VARS_OFF=	STATIC_ARGS=lib
 
+# do not rebuild tar.info
+post-patch:
+	touch -r ${WRKSRC}/doc/stamp-vti ${WRKSRC}/configure
+
 .include <bsd.port.mk>
