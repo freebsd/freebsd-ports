@@ -11,6 +11,7 @@ bin/vspviewer
 %%DATADIR%%/DegenGeom.vspscript
 %%DATADIR%%/Disk.vsppart
 %%DATADIR%%/Duct.vsppart
+%%DATADIR%%/DumpResults.vspscript
 %%DATADIR%%/Fuselage.vspscript
 %%DATADIR%%/LICENSE
 %%DATADIR%%/N0012_VSP.af
