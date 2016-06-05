@@ -1,0 +1,4 @@
+The mcollective package agent lets you install, uninstall, update, purge and
+query the status of packages via MCollective.
+
+WWW: https://github.com/puppetlabs/mcollective-package-agent
