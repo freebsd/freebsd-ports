@@ -1,49 +1,27 @@
---- server/Makefile.orig	2010-10-02 16:21:01 UTC
-+++ server/Makefile
-@@ -26,6 +26,7 @@
- MANMODE ?= 644
- MANDIRMODE ?= 755
- INSTALL ?= install
-+PKGCONFIGDIR ?= $(INSTALLROOT)/lib/pkgconfig
- LINK_FLAGS ?= -Wl,-E
- EXTRAOBJS =
- 
-@@ -57,18 +58,18 @@
- PKG_INCLUDE = `$(PKG_CONFIG) --cflags glib-2.0 gthread-2.0`
- PKG_LIB = `$(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 gthread-2.0`
- 
--GLIB12_INCLUDE = `glib-config --cflags`
--GLIB12_LIB = `glib-config --libs glib gmodule`
-+GLIB12_INCLUDE = `$(GLIB_CONFIG) --cflags`
-+GLIB12_LIB = `$(GLIB_CONFIG) --libs glib gmodule`
+Index: server/Makefile
+diff -u server/Makefile.orig server/Makefile
+--- server/Makefile.orig	2016-02-03 08:37:50.000000000 +0900
++++ server/Makefile	2016-06-06 01:46:16.352492000 +0900
+@@ -31,7 +31,7 @@
+ PKG_INCLUDE := $(shell $(PKG_CONFIG) --cflags glib-2.0 gmodule-2.0 gthread-2.0)
+ PKG_LIB := $(shell $(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 gthread-2.0)
  
 -FLAGS = -O2 $(PKG_INCLUDE)
 +FLAGS = $(PKG_INCLUDE)
  
- ifeq ($(glib12),1)
--    FLAGS = -O2 $(GLIB12_INCLUDE)
-+    FLAGS = $(GLIB12_INCLUDE)
- endif
- ifeq ($(glib12),yes)
--    FLAGS = -O2  $(GLIB12_INCLUDE)
-+    FLAGS = $(GLIB12_INCLUDE)
- endif
--FLAGS += $(GTOP_INCLUDE) $(PTHREAD_INC) -I.. -I$(SHARED_PATH) -DGKRELLM_SERVER
-+FLAGS += $(GTOP_INCLUDE) $(PTHREAD_INC) -I.. -I$(SHARED_PATH) -I$(LOCALBASE)/include -DGKRELLM_SERVER
+ FLAGS += $(GTOP_INCLUDE) $(PTHREAD_INC) -I.. -I$(SHARED_PATH) -DGKRELLM_SERVER
  
- LIBS = $(PKG_LIB)
- ifeq ($(glib12),1)
-@@ -115,20 +116,31 @@
+@@ -73,20 +73,31 @@
  
- all:	gkrellmd
+ all:	gkrellmd$(BINEXT)
  
--gkrellmd: $(OBJS) $(EXTRAOBJS)
-+gkrellmd: gkrellmd.pc $(OBJS) $(EXTRAOBJS)
- 	$(CC) $(OBJS) $(EXTRAOBJS) -o gkrellmd \
+-gkrellmd$(BINEXT): check_env $(OBJS) $(EXTRAOBJS)
++gkrellmd$(BINEXT): check_env gkrellmd.pc $(OBJS) $(EXTRAOBJS)
+ 	$(CC) $(OBJS) $(EXTRAOBJS) -o $@ \
  		$(LDFLAGS) $(LIBS) $(LINK_FLAGS)
  
--static: $(OBJS) $(EXTRAOBJS)
-+static: gkrellmd.pc $(OBJS) $(EXTRAOBJS)
+-static: check_env $(OBJS) $(EXTRAOBJS)
++static: check_env gkrellmd.pc $(OBJS) $(EXTRAOBJS)
  	$(CC) $(OBJS) $(EXTRAOBJS) -o gkrellmd.static -static \
  		$(LDFLAGS) $(LIBS) $(LINK_FLAGS)
  
@@ -68,9 +46,9 @@
  # Darwin target for systems that still have libkvm
  darwin: 
  	$(MAKE) STRIP= HAVE_GETADDRINFO=1 \
-@@ -176,27 +188,32 @@
+@@ -135,27 +146,32 @@
  		SYS_LIBS="-lws2_32 -lwtsapi32 -lpdh -lnetapi32 -liphlpapi -lintl" \
- 		gkrellmd
+ 		all
  
 -install: install_bin install_inc install_man
 +install: install_bin install_inc install_man install_gkrellmd.pc
@@ -110,7 +88,7 @@
  
  install_darwin install_darwin9 install_macosx:
  	$(MAKE) install STRIP=
-@@ -227,6 +244,7 @@
+@@ -186,6 +202,7 @@
  clean:
  	$(RM) *.o *~ *.bak configure.h configure.log gkrellmd gkrellmd.exe \
  		libgkrellmd.a core
