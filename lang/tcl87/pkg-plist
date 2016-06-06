@@ -46,7 +46,7 @@ include/tcl%%TCL_VER%%/unix/tclUnixThrd.h
 %%MODULES%%lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.14.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.9.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.4.0.tm
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
