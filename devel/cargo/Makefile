@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -33,7 +33,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 #   This is a collection of mainly shell scripts which are used to
 #   install Cargo.
 
-MASTER_SITES=	https://static.rust-lang.org/cargo-dist/2015-04-02/:bootstrap \
+MASTER_SITES=	https://static.rust-lang.org/cargo-dist/2016-04-10/:bootstrap \
 		LOCAL/jbeich:registry
 .if !defined(SKIP_CARGO_REGISTRY)
 DISTFILES+=	${CARGO_REGISTRY}:registry
@@ -50,9 +50,6 @@ ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap cargo
 CARGO_BOOT_SIG=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}
 CARGO_BOOT=	${PORTNAME}-nightly-${CARGO_BOOT_SIG}${EXTRACT_SUFX}
 CARGO_REGISTRY=	${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
-CARGO_REGISTRY_BOOT_HASH=	1ecc6299db9ec823
-# Like above but with: pnacl-build-helper, libressl-pnacl-sys
-CARGO_REGISTRY_CUR_HASH=	88ac128001ac3a9a
 
 # We don't USES=cmake here, because cmake is not Cargo's build system.
 # It's used by a bundled dependency (libgit2).
@@ -79,11 +76,9 @@ OPTIONS_DEFAULT=BOOTSTRAP
 
 BOOTSTRAP_DESC=		Bootstrap using pre-built vendor snapshot
 BOOTSTRAP_CONFIGURE_OFF=--local-cargo="$$(command -v cargo)" # respect PATH
-BOOTSTRAP_VARS_OFF=	EXTRACT_AFTER_ARGS="-s/${CARGO_REGISTRY_BOOT_HASH}/${CARGO_REGISTRY_CUR_HASH}/"
 BOOTSTRAP_DISTFILES=	${CARGO_BOOT}:bootstrap
 BOOTSTRAP_EXTRACT_ONLY=	${DISTFILES:N*\:bootstrap:C/:.*//}
 BOOTSTRAP_MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/target/snapshot/cargo/lib"
-BOOTSTRAP_VARS=		EXTRACT_AFTER_ARGS="-s/${CARGO_REGISTRY_CUR_HASH}/${CARGO_REGISTRY_BOOT_HASH}/"
 .if !exists(/usr/lib/libssl.so.8) # OPENSSL_SHLIBVER
 BOOTSTRAP_VARS+=	WITH_OPENSSL_PORT=yes
 .endif
