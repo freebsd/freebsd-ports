@@ -3,6 +3,7 @@
 
 PORTNAME=	tcl
 DISTVERSION=	8.7.a0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://core.tcl.tk/tcl/tarball/
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
@@ -23,7 +24,7 @@ TZDATA_DESC=	Install Tcl timezone data
 MODULES_DESC=	Install Tcl common modules
 OPTIONS_SUB=	yes
 
-FOSSIL_CHECKIN=	a9621cd6b9
+FOSSIL_CHECKIN=	942948a1ea
 
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME:S/+/_/g}
 WRKSRC=		${PATCH_WRKSRC}/unix
