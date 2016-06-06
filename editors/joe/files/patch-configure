@@ -1,0 +1,11 @@
+--- configure.orig	2016-03-06 19:35:47.000000000 +0000
++++ configure	2016-06-05 13:46:54.833041496 +0000
+@@ -8145,7 +8145,7 @@
+   done
+ IFS=$as_save_IFS
+ 
+-  test -z "$ac_cv_prog_SPELL" && ac_cv_prog_SPELL="ispell"
++  test -z "$ac_cv_prog_SPELL" && ac_cv_prog_SPELL="aspell"
+ fi
+ fi
+ SPELL=$ac_cv_prog_SPELL
