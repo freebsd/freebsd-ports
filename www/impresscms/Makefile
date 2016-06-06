@@ -11,21 +11,19 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Community Developed Content Management System
 
-BROKEN_powerpc64=	Does not build
-
 USES=		cpe shebangfix zip
 SHEBANG_FILES=	htdocs/editors/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl \
 		htdocs/libraries/phpopenid/admin/packagexml.py
 USE_PHP=	mysql pcre session iconv xml gd
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} htdocs ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} extras ${STAGEDIR}${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "htdocs extras" ${STAGEDIR}${WWWDIR}
 	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

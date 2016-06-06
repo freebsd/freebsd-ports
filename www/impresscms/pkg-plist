@@ -844,14 +844,14 @@
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace/langs/en_dlg.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace/langs/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/searchreplace/searchreplace.htm
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/classes/utils
+@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/classes/utils
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/css/content.css
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/css/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/editor_plugin.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/editor_plugin_src.js
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/img/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/img/wline.gif
-%%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/includes
+@dir %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/includes
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/spellchecker/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/style/css/index.html
 %%WWWDIR%%/htdocs/editors/tinymce/jscripts/plugins/style/css/props.css
@@ -1486,7 +1486,7 @@
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/oninstall.php
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/onuninstall.php
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/onupdate.php
-%%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/preload
+@dir %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/preload
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/search.php
 %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/xoops_version.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/.htaccess
@@ -1503,7 +1503,7 @@
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin/mymenu.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin/prefix_manager.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin_menu.php
-%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/blocks
+@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/blocks
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/blocks.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/class/ProtectorFilter.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/class/ProtectorMysqlDatabase.class.php
@@ -1527,7 +1527,7 @@
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_byconfig/precommon_bwlimit_message.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_byconfig/prepurge_exit_message.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_byconfig/spamcheck_overrun_message.php
-%%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_disabled
+@dir %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_disabled
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/filters_enabled/precommon_badip_message.php
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/images/iconbig_icms.png
 %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/images/iconsmall_icms.png
@@ -2027,7 +2027,7 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/info.ini
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer
+@dir %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/EntityLookup/entities.ser
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/GoogleVideo.php
