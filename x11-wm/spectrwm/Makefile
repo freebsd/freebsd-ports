@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	spectrwm
-PORTVERSION=	3.0.2
+DISTVERSIONPREFIX=	SPECTRWM_
+DISTVERSION=	3_0_2
 CATEGORIES=	x11-wm
 
 MAINTAINER=	zeising@FreeBSD.org
@@ -17,7 +18,6 @@ RUN_DEPENDS+=	dmenu:x11/dmenu
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	conformal
-GH_TAGNAME=	SPECTRWM_3_0_2
 
 USE_XORG=	x11 xcb xcursor xft xrandr xt
 
