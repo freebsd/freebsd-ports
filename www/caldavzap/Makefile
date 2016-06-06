@@ -3,6 +3,7 @@
 
 PORTNAME=	caldavzap
 PORTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.inf-it.com/
 DISTNAME=	CalDavZAP_${PORTVERSION}
@@ -18,7 +19,7 @@ USES=		zip
 NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
