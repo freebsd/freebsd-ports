@@ -1,0 +1,11 @@
+--- manager/Makefile.in.orig	2016-05-25 00:53:19 UTC
++++ manager/Makefile.in
+@@ -421,7 +421,7 @@ uninstall: manager.mak
+ 	    $@
+ 
+ manager.mak: $(srcdir)/manager.pro
+-	$(QMAKE) $<
++	$(QMAKE) QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" QMAKE_LINK_C="${CC}" QMAKE_LINK_C_SHLIB="${CC}" QMAKE_LINK="${CXX}" QMAKE_LINK_SHLIB="${CXX}" QMAKE_CFLAGS="${CFLAGS}" QMAKE_CXXFLAGS="${CXXFLAGS}" QMAKE_LFLAGS="${LDFLAGS}" QMAKE_LIBS="${LIBS}" QMAKE_CFLAGS_DEBUG="" QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_DEBUG="" QMAKE_CXXFLAGS_RELEASE="" $<
+ 
+ dist-hook:
+ 	@unfound=""; \
