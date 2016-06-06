@@ -3,12 +3,12 @@
 PORTNAME=	asterisk
 PORTVERSION=	13.9.1
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:main,g729
-MASTER_SITE_SUBDIR=	asterisk/:main \
-			asterisk/old-releases/:main \
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
+MASTER_SITE_SUBDIR=	asterisk/ \
+			asterisk/old-releases/ \
 			sounds/releases/:g729
 PKGNAMESUFFIX=	13
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit

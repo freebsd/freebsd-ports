@@ -4,8 +4,7 @@
 PORTNAME=	xalan-j
 PORTVERSION=	2.7.2
 CATEGORIES=	textproc java
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=xalan/xalan-j/binaries
+MASTER_SITES=	APACHE/xalan/xalan-j/binaries
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-bin
 
 MAINTAINER=	ale@FreeBSD.org

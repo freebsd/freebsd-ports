@@ -5,8 +5,7 @@ PORTNAME=	ganttproject
 PORTVERSION=	2.7.1
 DISTVERSIONSUFFIX=	-r1924
 CATEGORIES=	deskutils java
-MASTER_SITES=	https://dl.ganttproject.biz/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	https://dl.ganttproject.biz/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gantt chart based project scheduling and management tool
