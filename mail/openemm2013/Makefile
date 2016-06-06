@@ -5,12 +5,10 @@ PORTNAME=	openemm2013
 PORTVERSION=	R2
 PORTREVISION=	1
 CATEGORIES=	mail java www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT/} \
-		http://central.maven.org/maven2/%SUBDIR%/:MAVEN2
-MASTER_SITE_SUBDIR=	openemm/OpenEMM%20software/OpenEMM%202013/:DEFAULT \
-			com/lowagie/itext/2.1.7/:MAVEN2
+MASTER_SITES=	SF/openemm/OpenEMM%20software/OpenEMM%202013/ \
+		http://central.maven.org/maven2/com/lowagie/itext/2.1.7/:MAVEN2
 DISTNAME=	OpenEMM-2013_${PORTVERSION}-src
-DISTFILES=	OpenEMM-2013_${PORTVERSION}-src.tar.gz:DEFAULT OpenEMM-2013_${PORTVERSION}-JARs.tar.gz:DEFAULT \
+DISTFILES=	OpenEMM-2013_${PORTVERSION}-src.tar.gz OpenEMM-2013_${PORTVERSION}-JARs.tar.gz \
 		itext-2.1.7.jar:MAVEN2
 
 MAINTAINER=	horst.leitenmueller@liwest.at

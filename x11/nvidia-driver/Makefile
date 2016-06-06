@@ -15,7 +15,7 @@ DISTVERSION?=	346.96
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_NVIDIA}
+MASTER_SITES=	NVIDIA
 # MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
 
