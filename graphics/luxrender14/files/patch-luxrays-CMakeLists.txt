@@ -12,10 +12,10 @@
 -	MESSAGE(FATAL_ERROR "--> Could not locate required GLUT files, disabling samples build - Please check ${GLUT_SEARCH_PATH}")
 -endif()
 -
- if (NOT EMBREE_FOUND)
- 	MESSAGE(FATAL_ERROR "--> Could not locate required Intel Embree files - Please check ${EMBREE_SEARCH_PATH}")
+ if (LUXRAYS_DISABLE_OPENCL)
+ 	ADD_DEFINITIONS("-DLUXRAYS_DISABLE_OPENCL")
  endif()
-@@ -124,29 +116,6 @@ add_subdirectory(src/luxcore)
+@@ -120,20 +112,6 @@ add_subdirectory(src/luxcore)
  
  ################################################################################
  #
@@ -23,21 +23,12 @@
 -#
 -################################################################################
 -
--if(NOT APPLE OR OSX_BUILD_DEMOS)
--	add_subdirectory(samples/benchsimple)
--	add_subdirectory(samples/luxcoredemo)
--	add_subdirectory(samples/luxcorescenedemo)
--	add_subdirectory(samples/luxcoreimplserializationdemo)
--endif()
--
+-add_subdirectory(samples/benchsimple)
+-add_subdirectory(samples/luxcoredemo)
+-add_subdirectory(samples/luxcorescenedemo)
 -if(OPENGL_FOUND AND GLUT_FOUND AND GLEW_FOUND)
 -	add_subdirectory(samples/smallluxgpu4)
 -endif(OPENGL_FOUND AND GLUT_FOUND AND GLEW_FOUND)
--
--add_subdirectory(samples/luxcoreconsole)
--if(OPENGL_FOUND)
--	add_subdirectory(samples/luxcoreui)
--endif(OPENGL_FOUND)
 -
 -
 -################################################################################
