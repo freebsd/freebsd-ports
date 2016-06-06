@@ -4,8 +4,7 @@
 PORTNAME=	libnss-pgsql
 PORTVERSION=	1.5.0
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR=	projects/pgFoundry/sysauth/NSS/nss1.5.0-beta
+MASTER_SITES=	PGSQL/projects/pgFoundry/sysauth/NSS/nss1.5.0-beta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
 
 MAINTAINER=	felix@userspace.com.au

@@ -5,8 +5,7 @@ PORTNAME=	opencascade
 PORTVERSION=	6.9.1
 PORTREVISION=	1
 CATEGORIES=	cad science
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	thierry
+MASTER_SITES=	LOCAL/thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open CASCADE Technology, 3D modeling & numerical simulation

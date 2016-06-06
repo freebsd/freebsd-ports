@@ -6,7 +6,7 @@ PORTVERSION=	2.3.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.syntax-k.de/projekte/${PORTNAME}/ \
 		http://www.syntax-k.de/projekte/${PORTNAME}/:docs
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME:C/^./T/}-Linux-i386${EXTRACT_SUFX}:docs
 
 MAINTAINER=	ports@FreeBSD.org
