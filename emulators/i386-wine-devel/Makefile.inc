@@ -96,8 +96,8 @@ port-update:
 	${MAKE} pkg-plist.${osrel}${suffix:tu} PLIST=pkg-plist.${osrel}${suffix:tu} OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}
 .endfor
 .endfor
-	${MV} ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/distinfo
+	${SED} -e '2,$${' -e '/^TIMESTAMP/d' -e '}' distinfo~ > ${SLAVEDIR}/distinfo
 	python ${FILESDIR}/mergeplist.py ${SLAVEDIR}/pkg-plist.* > ${PLIST}
-	${RM} ${SLAVEDIR}/pkg-plist.*
+	${RM} ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
 
 .include <bsd.port.post.mk>
