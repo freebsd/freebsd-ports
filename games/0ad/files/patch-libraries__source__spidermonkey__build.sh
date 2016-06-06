@@ -1,14 +1,6 @@
---- libraries/source/spidermonkey/build.sh.orig	2015-09-30 20:28:13 UTC
+--- libraries/source/spidermonkey/build.sh.orig	2015-01-24 14:46:52 UTC
 +++ libraries/source/spidermonkey/build.sh
-@@ -25,7 +25,6 @@ else
-   MAKE=${MAKE:="make"}
- fi
- 
--MAKE_OPTS="${JOBS}"
- 
- CONF_OPTS="--enable-shared-js --enable-gcgenerational --disable-tests --without-intl-api" # --enable-trace-logging"
- 
-@@ -82,6 +81,14 @@ cd js/src
+@@ -95,6 +95,14 @@ cd mozjs31/js/src
  rm -rf build-debug
  rm -rf build-release
  
