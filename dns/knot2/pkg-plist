@@ -24,12 +24,12 @@ include/libknot/attribute.h
 include/libknot/binary.h
 include/libknot/codes.h
 include/libknot/consts.h
+include/libknot/control/control.h
 include/libknot/db/db.h
 include/libknot/db/db_lmdb.h
 include/libknot/db/db_trie.h
 include/libknot/descriptor.h
 include/libknot/dname.h
-include/libknot/dnssec/rrset-sign.h
 include/libknot/errcode.h
 include/libknot/error.h
 include/libknot/libknot.h
