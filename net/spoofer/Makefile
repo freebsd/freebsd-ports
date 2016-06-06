@@ -16,6 +16,7 @@ LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf
 
 PORTDOCS=	README
 
+USES=		compiler:c++11-lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-development
 
