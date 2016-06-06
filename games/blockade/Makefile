@@ -11,9 +11,6 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X version of the `blockade' Macintosh game
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11
