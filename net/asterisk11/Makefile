@@ -29,7 +29,8 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	asterisk
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-crypto=${OPENSSLBASE} \
+CONFIGURE_ARGS+=	--with-ilbc=internal \
+			--with-crypto=${OPENSSLBASE} \
 			--with-ssl=${OPENSSLBASE}
 
 CPE_VENDOR=	digium
