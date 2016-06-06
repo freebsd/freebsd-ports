@@ -622,6 +622,7 @@
     SUBDIR += geany-plugin-git-changebar
     SUBDIR += geany-plugin-insertnum
     SUBDIR += geany-plugin-latex
+    SUBDIR += geany-plugin-lineoperations
     SUBDIR += geany-plugin-lipsum
     SUBDIR += geany-plugin-lua
     SUBDIR += geany-plugin-macro
