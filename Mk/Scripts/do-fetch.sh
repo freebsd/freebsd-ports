@@ -106,6 +106,8 @@ for _file in "${@}"; do
 			else
 				SORTED_MASTER_SITES_CMD_TMP="${dp_SORTED_PATCH_SITES_DEFAULT_CMD}"
 			fi
+			# Having this set when the next eval runs creates double entries.
+			unset _${dp_SITE_FLAVOR}_SITES_DEFAULT
 		fi
 		case ${dp_TARGET} in
 			fetch-list)
