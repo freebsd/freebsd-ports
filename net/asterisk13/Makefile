@@ -32,6 +32,7 @@ USE_RC_SUBR=	asterisk
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR} \
+			--with-ilbc=internal \
 			--with-crypto=${OPENSSLBASE} \
 			--with-ssl=${OPENSSLBASE}
 
