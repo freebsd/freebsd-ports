@@ -10,7 +10,6 @@ include/node/libplatform/libplatform.h
 include/node/nameser.h
 include/node/node.h
 include/node/node_buffer.h
-include/node/node_internals.h
 include/node/node_object_wrap.h
 include/node/node_version.h
 include/node/openssl/aes.h
