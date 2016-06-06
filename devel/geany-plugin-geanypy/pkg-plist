@@ -1,12 +1,11 @@
 lib/geany/geanypy.so
+lib/geany/console.py
+lib/geany/demo.py
+lib/geany/hello.py
 lib/geany/geanypy/geany/__init__.py
 lib/geany/geanypy/geany/__init__.pyc
 lib/geany/geanypy/geany/console.py
 lib/geany/geanypy/geany/console.pyc
-lib/geany/geanypy/geany/loader.py
-lib/geany/geanypy/geany/loader.pyc
-lib/geany/geanypy/geany/manager.py
-lib/geany/geanypy/geany/manager.pyc
 lib/geany/geanypy/geany/plugin.py
 lib/geany/geanypy/geany/plugin.pyc
 lib/geany/geanypy/geany/signalmanager.py
@@ -16,6 +15,3 @@ lib/geany/geanypy/geany/signalmanager.pyc
 %%PORTDOCS%%%%DOCSDIR%%/geanypy/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/geanypy/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/geanypy/README
-share/geany/geanypy/plugins/console.py
-share/geany/geanypy/plugins/demo.py
-share/geany/geanypy/plugins/hello.py

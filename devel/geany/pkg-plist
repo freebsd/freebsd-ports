@@ -20,6 +20,7 @@ include/geany/pluginutils.h
 include/geany/prefs.h
 include/geany/project.h
 include/geany/scintilla/SciLexer.h
+include/geany/scintilla/Sci_Position.h
 include/geany/scintilla/Scintilla.h
 include/geany/scintilla/Scintilla.iface
 include/geany/scintilla/ScintillaWidget.h
@@ -29,6 +30,7 @@ include/geany/spawn.h
 include/geany/stash.h
 include/geany/support.h
 include/geany/symbols.h
+include/geany/tagmanager/tm_parser.h
 include/geany/tagmanager/tm_source_file.h
 include/geany/tagmanager/tm_tag.h
 include/geany/tagmanager/tm_tagmanager.h
