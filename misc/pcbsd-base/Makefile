@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-base
-PORTVERSION=	20160514
+PORTVERSION=	20160606
 PORTEPOCH=	2
 CATEGORIES=	misc
 MASTER_SITES=
@@ -62,7 +62,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
 		cups-pdf>=0:print/cups-pdf \
 		cups-filters>=0:print/cups-filters \
 		cups-bjnp>=0:print/cups-bjnp \
-		foomatic-db>=0:print/foomatic-db \
 		gutenprint-cups>=0:print/gutenprint-cups \
 		fusefs-ntfs>=0:sysutils/fusefs-ntfs \
 		nss_mdns>=0:dns/nss_mdns \
