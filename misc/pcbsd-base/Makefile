@@ -35,7 +35,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
 		${LOCALBASE}/bin/rsync:net/rsync \
 		${LOCALBASE}/bin/pwcview:multimedia/pwcview \
 		${LOCALBASE}/bin/rar:archivers/rar \
-		${LOCALBASE}/bin/system-config-printer:print/system-config-printer \
 		${LOCALBASE}/bin/numlockx:x11/numlockx \
 		${LOCALBASE}/bin/gpg:security/gnupg \
 		${LOCALBASE}/bin/xvkbd:x11/xvkbd \
@@ -59,10 +58,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/qsudo:sysutils/pcbsd-utils-qt5 \
 		alsa-lib>=0:audio/alsa-lib \
 		fluxbox-tenr-styles-pack>=0:x11-themes/fluxbox-tenr-styles-pack \
 		vorbis-tools>=0:audio/vorbis-tools \
-		cups-pdf>=0:print/cups-pdf \
-		cups-filters>=0:print/cups-filters \
-		cups-bjnp>=0:print/cups-bjnp \
-		gutenprint-cups>=0:print/gutenprint-cups \
 		fusefs-ntfs>=0:sysutils/fusefs-ntfs \
 		nss_mdns>=0:dns/nss_mdns \
 		cursor-jimmac-theme>=0:x11-themes/cursor-jimmac-theme \
