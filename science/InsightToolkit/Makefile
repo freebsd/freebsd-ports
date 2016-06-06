@@ -2,24 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	InsightToolkit
-PORTVERSION=	4.9.1
+PORTVERSION=	4.10.0
 CATEGORIES=	science biology
-MASTER_SITES=	SF/itk/itk/4.9
+MASTER_SITES=	SF/itk/itk/${ITK_VER}
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Insight Toolkit
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libturbojpeg.so:graphics/libjpeg-turbo \
-		libgdcmCommon.so:devel/gdcm \
+LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libexpat.so:textproc/expat2 \
 		libfftw.so:math/fftw \
 		libhdf5.so:science/hdf5 \
 		libpng.so:graphics/png \
+		libsz.so:science/szip \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:outsource
+USES=		cmake:outsource jpeg
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DITK_USE_KWSTYLE:BOOL=OFF \
 		-DITK_USE_SYSTEM_LIBRARIES:BOOL=ON \
@@ -32,6 +32,8 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DITK_USE_SYSTEM_TIFF:BOOL=ON \
 		-DITK_USE_SYSTEM_ZLIB:BOOL=ON
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
+ITK_VER=	${PORTVERSION:R}
+PLIST_SUB+=	ITK_VER=${ITK_VER}
 
 OPTIONS_DEFINE=	EXAMPLES TESTING
 EXAMPLES_DESC=	Build examples (very time consuming)
