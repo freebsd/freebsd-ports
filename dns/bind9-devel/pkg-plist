@@ -17,6 +17,7 @@ include/dns/bit.h
 include/dns/byaddr.h
 include/dns/cache.h
 include/dns/callbacks.h
+include/dns/catz.h
 include/dns/cert.h
 include/dns/client.h
 include/dns/clientinfo.h
@@ -43,6 +44,7 @@ include/dns/events.h
 include/dns/fixedname.h
 include/dns/forward.h
 include/dns/geoip.h
+include/dns/ipkeylist.h
 include/dns/iptable.h
 include/dns/journal.h
 include/dns/keydata.h
@@ -144,6 +146,7 @@ include/isc/heap.h
 include/isc/hex.h
 include/isc/hmacmd5.h
 include/isc/hmacsha.h
+include/isc/ht.h
 include/isc/httpd.h
 include/isc/int.h
 include/isc/interfaceiter.h
