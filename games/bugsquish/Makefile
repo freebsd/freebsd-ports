@@ -22,16 +22,17 @@ USES=		gmake
 USE_SDL=	image mixer sdl
 
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt
-OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Bug Squish" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	${TAR} xfjp ${_DISTDIR}/${PORTNAME}_music${EXTRACT_SUFX} -C \
 		${WRKSRC}/data/music/
 	@cd ${WRKSRC}/data/music ; ${RM} -f *.mod
-	@${FIND} ${WRKDIR} -name .xvpics | ${XARGS} ${RM} -fr
+	@${FIND} ${WRKDIR} -name .xvpics -print0 | ${XARGS} -0 ${RM} -fr
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/bugsquish/|${DATADIR}/| ; \
@@ -44,14 +45,11 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-
-.  for d in embedded images music sounds
-	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
-.  endfor
-
+	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "embedded images music sounds" ${STAGEDIR}${DATADIR})
 	${LN} -sf ${PREFIX}/share/bugsquish/images/icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
