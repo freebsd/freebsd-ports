@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-table-redis
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Redis table support for OpenSMTPD
 

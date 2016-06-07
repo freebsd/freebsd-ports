@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-dkim
-PORTREVISION=		1
+PORTREVISION=		0
 
 COMMENT=		DKIM-signing filter for OpenSMTPD
 MAINTAINER=		adamw@FreeBSD.org
