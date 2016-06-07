@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-clamav
-PORTREVISION=		1
+PORTREVISION=		0
 
 COMMENT=		Check messages with ClamAV in OpenSMTPD
 MAINTAINER=		adamw@FreeBSD.org
