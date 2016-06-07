@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	324
+PORTVERSION=	325
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/:src1 \
 		LOCAL/ehaupt:src1 LOCAL/ehaupt:src2
@@ -17,7 +17,7 @@ LICENSE=	MIT
 CONFLICTS=	x11iraf-[0-9]*
 
 USES=		ncurses tar:tgz
-USE_XORG=	xft
+USE_XORG=	xft xmu xt x11 xpm ice
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
@@ -28,7 +28,7 @@ LIBS+=		-L${LOCALBASE}/lib
 ICONVERSION=	1
 
 OPTIONS_DEFINE=	WCHAR LUIT DECTERM PCRE DABBREV 256COLOR SIXEL GNOME LOGGING \
-		SCRNDUMP REGIS
+		SCRNDUMP REGIS XINERAMA
 OPTIONS_RADIO=	3D
 OPTIONS_RADIO_3D=	XAW3D XAW3DXFT NEXTAW
 
@@ -67,6 +67,10 @@ XAW3DXFT_CONFIGURE_WITH=	Xaw3dxft
 XAW3DXFT_LIB_DEPENDS=		libXaw3dxft.so:x11-toolkits/libxaw3dxft
 NEXTAW_CONFIGURE_WITH=		neXtaw
 NEXTAW_LIB_DEPENDS=		libneXtaw.so:x11-toolkits/neXtaw
+XINERAMA_USE=			XORG=xinerama,xineramaproto
+XINERAMA_CONFIGURE_OFF=		--without-xinerama
+
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 
 .include <bsd.port.options.mk>
 
