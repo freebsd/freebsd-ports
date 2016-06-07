@@ -1,14 +1,5 @@
 --- Makefile.in.orig	2013-11-21 20:49:06 UTC
 +++ Makefile.in
-@@ -93,7 +93,7 @@ INSTALL_DATA_DIR = ${INSTALL} -d -m 755
- INSTALL_PROGRAM	= ${INSTALL} -m 755
- INSTALL_DATA	= ${INSTALL} -m 644
- INSTALL_SCRIPT	= ${INSTALL_PROGRAM}
--INSTALL_LIBRARY	= ${INSTALL_DATA}
-+INSTALL_LIBRARY	= ${INSTALL_DATA} -s
- 
- PACKAGE_NAME	= @PACKAGE_NAME@
- PACKAGE_VERSION	= @PACKAGE_VERSION@
 @@ -222,11 +222,12 @@ install-doc: doc
  	@$(INSTALL_DATA_DIR) $(DESTDIR)$(mandir)/mann
  	@echo "Installing documentation in $(DESTDIR)$(mandir)"
