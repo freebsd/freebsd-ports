@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bibtool
-PORTVERSION=	2.63
+PORTVERSION=	2.64
 CATEGORIES=	textproc print
 MASTER_SITES=	TEX_CTAN/biblio/bibtex/utils/${PORTNAME}
 DISTNAME=	BibTool-${PORTVERSION}
@@ -10,7 +10,7 @@ DISTNAME=	BibTool-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Command line manipulation of BibTeX files
 
-USE_TEX=	latex:build
+USE_TEX=	latex:build luatex:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kpathsea
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
