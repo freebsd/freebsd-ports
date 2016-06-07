@@ -1,0 +1,11 @@
+--- chrome/app/generated_resources.grd.orig	2016-05-11 19:02:13 UTC
++++ chrome/app/generated_resources.grd
+@@ -6564,7 +6564,7 @@ Keep your key file in a safe place. You 
+       <message name="IDS_FLAGS_FORCE_UI_DIRECTION_RTL" desc="Name for the option to force right-to-left UI direction mode.">
+           Right-to-left
+       </message>
+-      <if expr="is_win or is_linux">
++      <if expr="is_win or is_linux or is_posix">
+         <message name="IDS_FLAGS_ENABLE_INPUT_IME_API_NAME" desc="Name of the flag to enable che chrome.input.ime API.">
+           Enable Input IME API
+         </message>
