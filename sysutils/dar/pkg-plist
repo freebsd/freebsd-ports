@@ -13,6 +13,7 @@ include/dar/cat_directory.hpp
 include/dar/cat_entree.hpp
 include/dar/cat_inode.hpp
 include/dar/cat_nomme.hpp
+include/dar/cat_tools.hpp
 include/dar/catalogue.hpp
 include/dar/compile_time_features.hpp
 include/dar/compressor.hpp
@@ -21,6 +22,7 @@ include/dar/criterium.hpp
 include/dar/crypto.hpp
 include/dar/crypto_asym.hpp
 include/dar/crypto_sym.hpp
+include/dar/cygwin_adapt.hpp
 include/dar/data_tree.hpp
 include/dar/database.hpp
 include/dar/database_options.hpp
@@ -71,6 +73,7 @@ include/dar/scrambler.hpp
 include/dar/secu_memory_file.hpp
 include/dar/secu_string.hpp
 include/dar/slice_layout.hpp
+include/dar/smart_pointer.hpp
 include/dar/statistics.hpp
 include/dar/storage.hpp
 include/dar/thread_cancellation.hpp
@@ -86,7 +89,7 @@ include/dar/wrapperlib.hpp
 lib/libdar.a
 lib/libdar.so
 lib/libdar.so.5000
-lib/libdar.so.5000.7.3
+lib/libdar.so.5000.8.1
 libdata/pkgconfig/libdar.pc
 man/man1/dar.1.gz
 man/man1/dar_cp.1.gz
