@@ -3,26 +3,28 @@
 
 PORTNAME=	lv
 PORTVERSION=	4.51
+DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.ff.iij4u.or.jp/~nrt/freeware/
-DISTNAME=	lv451
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sue@iwmt.org
 COMMENT=	Powerful Multilingual File Viewer
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../GPL.txt
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ttdoda
+
 USES=		ncurses
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC_SUBDIR=	src
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKDIR}/${DISTNAME}; \
+	(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}; \
 		${INSTALL_DATA} *.html hello.sample* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
