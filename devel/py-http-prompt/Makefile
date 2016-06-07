@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-prompt
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=5.0:devel/py-click \
 		httpie>=0.9.0:www/httpie
 
 NO_ARCH=	yes
+SUB_FILES=	pkg-message
 USES=		python
 USE_PYTHON=	autoplist distutils
 
