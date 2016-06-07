@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adminer
-PORTVERSION=	4.2.4
-PORTREVISION=	1
+PORTVERSION=	4.2.5
 CATEGORIES=	databases www
 MASTER_SITES=	https://www.adminer.org/static/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
