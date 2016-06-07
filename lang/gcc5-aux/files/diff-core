@@ -11,13 +11,11 @@
  #undef  LINK_SPEC
 --- gcc/config/i386/freebsd.h.orig
 +++ gcc/config/i386/freebsd.h
-@@ -77,6 +77,14 @@
+@@ -77,6 +77,12 @@
     When the -shared link option is used a final link is not being
     done.  */
  
-+#if FBSD_MAJOR < 9
-+#define ELF_HASH_STYLE ""
-+#elif FBSD_MAJOR < 10
++#if FBSD_MAJOR < 10
 +#define ELF_HASH_STYLE "--hash-style=both "
 +#else
 +#define ELF_HASH_STYLE "--hash-style=gnu "
@@ -26,7 +24,7 @@
  #undef	LINK_SPEC
  #define LINK_SPEC "\
    %{p:%nconsider using '-pg' instead of '-p' with gprof(1)} \
-@@ -88,6 +96,7 @@
+@@ -88,6 +94,7 @@
          %{rdynamic:-export-dynamic} \
          -dynamic-linker %(fbsd_dynamic_linker) } \
      %{static:-Bstatic}} \
