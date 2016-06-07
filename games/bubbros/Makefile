@@ -15,17 +15,18 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYGAME}
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${PYGAME}
 
 USES=		python
 
 PORTDOCS=	*.html
-OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}
 
 DESKTOP_ENTRIES="Bub-n-Bros" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
@@ -56,13 +57,13 @@ do-install:
 	@${PYTHON_CMD} ${STAGEDIR}${DATADIR}/bubbob/images/buildcolors.py
 	${LN} -sf ${DATADIR}/http2/data/bob.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-
 .for l in bubbob/statesaver.so display/xshm.so
-	${CHMOD} u+w ${STAGEDIR}${DATADIR}/${l}
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/${l}
+	@${CHMOD} u+w ${STAGEDIR}${DATADIR}/${l}
+	@${STRIP_CMD} ${STAGEDIR}${DATADIR}/${l}
 .endfor
-
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
