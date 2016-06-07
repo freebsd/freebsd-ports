@@ -3,4 +3,5 @@ lib/libeditline.a
 lib/libeditline.so
 lib/libeditline.so.0
 lib/libeditline.so.0.0.0
-man/man3/editline.3.gz
+libdata/pkgconfig/libeditline.pc
+man/man3/libeditline.3.gz
