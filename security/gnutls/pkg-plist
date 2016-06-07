@@ -36,13 +36,12 @@ info/gnutls-modauth.png
 info/gnutls-pgp.png
 info/gnutls-x509.png
 info/pkcs11-vision.png
-@comment lib/gnutls/libpkcs11mock1.so
 %%DANE%%lib/libgnutls-dane.so
 %%DANE%%lib/libgnutls-dane.so.0
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.6.4
+lib/libgnutls.so.30.6.5
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
 lib/libgnutlsxx.so.28.1.0
