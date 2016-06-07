@@ -35,7 +35,7 @@ GPSVER=		GPS_VERSION=${PORTVERSION}
 ALL_TARGET=	default
 NO_MTREE=	yes
 SUB_FILES=	gps
-PORTGDB=	${GDBVER:S/.//}
+PORTGDB=	${GDBVER:S/.//g}
 
 # note: librsvg2 is needed to display the svg icons in the menu.  Actually
 # needed is lib/gdk-pixbuf-2.0/%%GTK2_VER%%/loaders/libpixbufloader-svg.so ,
