@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nms
-PORTVERSION=	20160429
+PORTVERSION=	0.2.0
+DISTVERSIONPREFIX=	v
+PORTEPOCH=	1
 CATEGORIES=	misc
 
 MAINTAINER=	zi@FreeBSD.org
@@ -14,10 +16,11 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	bartobri
 GH_PROJECT=	no-more-secrets
-GH_TAGNAME=	9a7a77c
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/sneakers
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/sneakers ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
