@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-dnsbl
-PORTREVISION=		1
+PORTREVISION=		0
 
 COMMENT=		DNSBL-checking filter for OpenSMTPD
 MAINTAINER=		adamw@FreeBSD.org
