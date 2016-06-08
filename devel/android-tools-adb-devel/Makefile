@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-# Hint: git describe --abbrev=12 --match android-n-preview-2
-DISTVERSION=	n-preview-2-74
-DISTVERSIONSUFFIX=	-gd61bfb9a79e3
+# Hint: git describe --abbrev=12 --match android-n-preview-3
+DISTVERSION=	n-preview-3-101
+DISTVERSIONSUFFIX=	-g35d84096e9a5
 PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 
@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	TEST_PYTHON
 
 TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}
 TEST_PYTHON_GH_PROJECT=	platform_development:development
-TEST_PYTHON_GH_TAGNAME=	${GH_MYTAG}-7-gd66a831ffc05:development
+TEST_PYTHON_GH_TAGNAME=	${GH_MYTAG}-47-g6925e3e:development
 TEST_PYTHON_BUILD_DEPENDS=${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 TEST_PYTHON_USES=	python:2.7,build
 
