@@ -55,6 +55,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 USE_GITHUB=	yes
 GH_TUPLE=	xbmc:xbmc:a5f3a99 xbmc:FFmpeg:2.8.6-Jarvis-${DISTVERSION}:ffmpeg
 
+SAMBA_PORT?=	net/samba43
+
 USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
 		libtool pkgconfig python:2
 GNU_CONFIGURE=	yes
@@ -111,8 +113,6 @@ NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 NFS_CONFIGURE_ENABLE=	nfs
 
 NONFREE_CONFIGURE_ENABLE=	non-free
-NONFREE_VARS=		NO_CDROM="Restricted binary distribution" \
-			NO_PACKAGE="Restricted binary distribution"
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
@@ -121,7 +121,7 @@ RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	rtmp
 
 SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
-SMB_RUN_DEPENDS=	nmblookup:net/samba-nmblookup
+SMB_RUN_DEPENDS=	nmblookup:${SAMBA_PORT}
 SMB_CONFIGURE_ENABLE=	samba
 
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva

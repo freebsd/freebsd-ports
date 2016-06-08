@@ -1,5 +1,5 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/print/foxitreader/Makefile 349771 2014-03-31 16:30:11Z nivit $
 
 PORTNAME=	foxitreader
 PORTVERSION=	1.1.0

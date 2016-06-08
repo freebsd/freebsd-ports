@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/textproc/linux-f10-expat/Makefile 362316 2014-07-20 12:17:42Z rene $
 
 PORTNAME=	expat
 PORTVERSION=	2.0.1

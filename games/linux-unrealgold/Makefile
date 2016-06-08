@@ -1,5 +1,5 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-unrealgold/Makefile 352986 2014-05-05 09:45:36Z bapt $
 
 PORTNAME=	unrealgold
 PORTVERSION=	436

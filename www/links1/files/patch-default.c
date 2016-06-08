@@ -1,6 +1,6 @@
---- default.c.orig	Sun May 19 20:12:20 2002
-+++ default.c	Sun May 19 20:12:23 2002
-@@ -267,7 +267,7 @@
+--- default.c.orig	2011-11-23 00:54:28 UTC
++++ default.c
+@@ -361,7 +361,7 @@ void init_home()
  	get_system_name();
  	links_home = get_home(&first_use);
  	if (!links_home) {

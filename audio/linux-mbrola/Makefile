@@ -1,5 +1,5 @@
 # Created by: trevor
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-mbrola/Makefile 362027 2014-07-16 03:47:05Z adamw $
 
 PORTNAME=	mbrola
 PORTVERSION=	3.0.1

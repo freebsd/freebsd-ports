@@ -1,0 +1,12 @@
+--- lib/ql_crypto.qpp.orig	2013-08-29 19:34:56 UTC
++++ lib/ql_crypto.qpp
+@@ -1131,7 +1131,9 @@ my string $str = SHA("hello"); returns "
+  */
+ string SHA(data[doc] data) [flags=RET_VALUE_ONLY] {
+    DigestHelper dh(args);
++#ifndef OPENSSL_NO_SHA0
+    if (dh.doDigest(SHA_ERR, EVP_sha(), xsink))
++#endif
+       return 0;
+ 
+    return dh.getString();

@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-libaudiofile/Makefile 361945 2014-07-15 15:17:37Z rene $
 
 PORTNAME=	lib${LINUX_NAME}
 PORTVERSION=	0.2.6

@@ -1,5 +1,5 @@
 # Created by: ijliao
-# $FreeBSD$
+# $FreeBSD: head/net/socat/Makefile 414484 2016-05-02 21:09:31Z brnrd $
 
 PORTNAME=	socat
 PORTVERSION=	1.7.3.1

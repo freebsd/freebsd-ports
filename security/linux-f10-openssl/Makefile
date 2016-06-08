@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/security/linux-f10-openssl/Makefile 362314 2014-07-20 12:06:46Z rene $
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.8g

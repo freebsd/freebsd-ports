@@ -1,2 +1,452 @@
-#!/bin/sh -
-exec /usr/bin/lpr "$@"
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>[ports] Log of /head/emulators/linux_base-c6/files/lp</title>
+<meta name="generator" content="ViewVC 1.1.22" />
+<link rel="shortcut icon" href="/*docroot*/images/favicon.ico" />
+<link rel="stylesheet" href="/*docroot*/styles.css" type="text/css" />
+
+</head>
+<body>
+<div class="vc_navheader">
+<table><tr>
+<td><strong><a href="/"><span class="pathdiv">/</span></a><a href="/ports/">[ports]</a><span class="pathdiv">/</span><a href="/ports/head/">head</a><span class="pathdiv">/</span><a href="/ports/head/emulators/">emulators</a><span class="pathdiv">/</span><a href="/ports/head/emulators/linux_base-c6/">linux_base-c6</a><span class="pathdiv">/</span><a href="/ports/head/emulators/linux_base-c6/files/">files</a><span class="pathdiv">/</span>lp</strong></td>
+<td style="text-align: right;"></td>
+</tr></table>
+</div>
+<div style="float: right; padding: 5px;"><a href="http://www.viewvc.org/" title="ViewVC Home"><img src="/*docroot*/images/viewvc-logo.png" alt="ViewVC logotype" width="240" height="70" /></a></div>
+<h1>Log of /head/emulators/linux_base-c6/files/lp</h1>
+
+<p style="margin:0;">
+
+<a href="/ports/head/emulators/linux_base-c6/files/"><img src="/*docroot*/images/back_small.png" class="vc_icon" alt="Parent Directory" /> Parent Directory</a>
+
+| <a href="/ports/head/emulators/linux_base-c6/files/lp?view=log"><img src="/*docroot*/images/log.png" class="vc_icon" alt="Revision Log" /> Revision Log</a>
+
+
+
+
+</p>
+
+<hr />
+<table class="auto">
+
+
+
+<tr>
+<td>Links to HEAD:</td>
+<td>
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?view=markup">view</a>)
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?view=annotate">annotate</a>)
+</td>
+</tr>
+
+
+
+<tr>
+<td>Sticky Revision:</td>
+<td><form method="get" action="/ports" style="display: inline">
+<div style="display: inline">
+<input type="hidden" name="orig_pathtype" value="FILE"/><input type="hidden" name="orig_view" value="log"/><input type="hidden" name="orig_path" value="head/emulators/linux_base-c6/files/lp"/><input type="hidden" name="view" value="redirect_pathrev"/>
+
+<input type="text" name="pathrev" value="" size="6"/>
+
+<input type="submit" value="Set" />
+</div>
+</form>
+
+</td>
+</tr>
+</table>
+ 
+
+
+
+
+
+
+
+
+
+<div>
+<hr />
+
+<a name="rev340872"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=340872"><strong>340872</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?revision=340872&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?revision=340872&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?annotate=340872">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/lp?view=log&amp;r1=340872&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Fri Jan 24 00:14:07 2014 UTC</em>
+(8 months, 1 week ago)
+by <em>mat</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 35 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/lp?r1=300896&amp;r2=340872">previous 300896</a>
+
+
+
+
+
+
+
+<pre class="vc_log">Yet another props cleanup commit.
+
+With hat:	portmgr
+Sponsored by:	Absolight
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev300896"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=300896"><strong>300896</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?revision=300896&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?revision=300896&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?annotate=300896">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/lp?view=log&amp;r1=300896&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Sat Jul 14 13:54:48 2012 UTC</em>
+(2 years, 2 months ago)
+by <em>beat</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 35 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/lp?r1=233782&amp;r2=300896">previous 233782</a>
+
+
+
+
+
+
+
+<pre class="vc_log">- Remove cvs2svn:cvs-rev property - part 2
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev233782"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=233782"><strong>233782</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?revision=233782&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?revision=233782&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?annotate=233782">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/lp?view=log&amp;r1=233782&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Tue May 12 14:54:06 2009 UTC</em>
+(5 years, 4 months ago)
+by <em>bsam</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 35 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/lp?r1=210084&amp;r2=233782">previous 210084</a>
+
+
+
+
+
+
+
+<pre class="vc_log">Repocopies finished:
+-----
+accessibility/linux-f8-atk -&gt; accessibility/linux-f10-atk
+archivers/linux-f8-ucl -&gt; archivers/linux-f10-ucl
+archivers/linux-f8-upx -&gt; archivers/linux-f10-upx
+audio/linux-f8-alsa-lib -&gt; audio/linux-f10-alsa-lib
+audio/linux-f8-arts -&gt; audio/linux-f10-arts
+audio/linux-f8-esound -&gt; audio/linux-f10-esound
+audio/linux-f8-freealut -&gt; audio/linux-f10-freealut
+audio/linux-f8-libaudiofile -&gt; audio/linux-f10-libaudiofile
+audio/linux-f8-libogg -&gt; audio/linux-f10-libogg
+audio/linux-f8-libvorbis -&gt; audio/linux-f10-libvorbis
+audio/linux-f8-openal -&gt; audio/linux-f10-openal
+audio/linux-f8-sdl_mixer -&gt; audio/linux-f10-sdl_mixer
+databases/linux-f8-sqlite3 -&gt; databases/linux-f10-sqlite3
+devel/linux-f8-allegro -&gt; devel/linux-f10-allegro
+devel/linux-f8-libglade -&gt; devel/linux-f10-libglade
+devel/linux-f8-libglade2 -&gt; devel/linux-f10-libglade2
+devel/linux-f8-libsigc++20 -&gt; devel/linux-f10-libsigc++20
+devel/linux-f8-nspr -&gt; devel/linux-f10-nspr
+devel/linux-f8-sdl12 -&gt; devel/linux-f10-sdl12
+emulators/linux_base-f10 -&gt; emulators/linux_base-f10
+ftp/linux-f8-curl -&gt; ftp/linux-f10-curl
+graphics/linux-f8-cairo -&gt; graphics/linux-f10-cairo
+graphics/linux-f8-dri -&gt; graphics/linux-f10-dri
+graphics/linux-f8-gdk-pixbuf -&gt; graphics/linux-f10-gdk-pixbuf
+graphics/linux-f8-imlib -&gt; graphics/linux-f10-imlib
+graphics/linux-f8-jpeg -&gt; graphics/linux-f10-jpeg
+graphics/linux-f8-libmng -&gt; graphics/linux-f10-libmng
+graphics/linux-f8-png -&gt; graphics/linux-f10-png
+graphics/linux-f8-png10 -&gt; graphics/linux-f10-png10
+graphics/linux-f8-sdl_image -&gt; graphics/linux-f10-sdl_image
+graphics/linux-f8-tiff -&gt; graphics/linux-f10-tiff
+graphics/linux-f8-ungif -&gt; graphics/linux-f10-ungif
+lang/linux-f8-libg2c -&gt; lang/linux-f10-libg2c
+lang/linux-f8-tcl84 -&gt; lang/linux-f10-tcl85
+multimedia/linux-f8-libtheora -&gt; multimedia/linux-f10-libtheora
+security/linux-f8-libssh2 -&gt; security/linux-f10-libssh2
+security/linux-f8-nss -&gt; security/linux-f10-nss
+security/linux-f8-openssl -&gt; security/linux-f10-openssl
+textproc/linux-f8-aspell -&gt; textproc/linux-f10-aspell
+textproc/linux-f8-expat -&gt; textproc/linux-f10-expat
+textproc/linux-f8-libxml -&gt; textproc/linux-f10-libxml
+textproc/linux-f8-libxml2 -&gt; textproc/linux-f10-libxml2
+textproc/linux-f8-scim-gtk -&gt; textproc/linux-f10-scim-gtk
+textproc/linux-f8-scim-libs -&gt; textproc/linux-f10-scim-libs
+x11-fonts/linux-f8-fontconfig -&gt; x11-fonts/linux-f10-fontconfig
+x11-themes/linux-f8-hicolor-icon-theme -&gt; x11-themes/linux-f10-hicolor-icon-theme
+x11-toolkits/linux-f8-gtk -&gt; x11-toolkits/linux-f10-gtk
+x11-toolkits/linux-f8-gtk2 -&gt; x11-toolkits/linux-f10-gtk20-openmotif
+x11-toolkits/linux-f8-pango -&gt; x11-toolkits/linux-f10-pango
+x11-toolkits/linux-f8-qt33 -&gt; x11-toolkits/linux-f10-qt33
+x11-toolkits/linux-f8-tk84 -&gt; x11-toolkits/linux-f10-tk85
+x11/linux-f8-xorg-libs -&gt; x11/linux-f10-xorg-libs
+-----
+
+PR:		ports/134265
+Submitted by:	bsam (me)
+Repocopied by:	portmgr (marcus)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev210084"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=210084"><strong>210084</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?revision=210084&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?revision=210084&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/lp?annotate=210084">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/lp?view=log&amp;r1=210084&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Added
+
+<em>Sat Mar 29 15:02:25 2008 UTC</em>
+(6 years, 6 months ago)
+by <em>bsam</em>
+
+
+
+
+
+
+
+<br />File length: 35 byte(s)
+
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">. add a script LINUXBASE/usr/bin/lp which let some linux applications   [1]
+  (most notable acroread) to print with default settings;
+. add linux_base-f7 to CONFLICTS;
+. bump PORTREVISION.
+
+Suggested by:	olli, scf [1]
+Reviewed by:	netchild  [1]
+
+</pre>
+</div>
+
+ 
+
+
+
+
+ <hr />
+<p><a name="diff"></a>
+This form allows you to request diffs between any two revisions of this file.
+For each of the two "sides" of the diff,
+
+enter a numeric revision.
+
+</p>
+<form method="get" action="/ports/head/emulators/linux_base-c6/files/lp" id="diff_select">
+<table cellpadding="2" cellspacing="0" class="auto">
+<tr>
+<td>&nbsp;</td>
+<td>
+<input type="hidden" name="view" value="diff"/>
+Diffs between
+
+<input type="text" size="12" name="r1"
+value="340872" />
+
+and
+
+<input type="text" size="12" name="r2" value="210084" />
+
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+Type of Diff should be a
+<select name="diff_format" onchange="submit()">
+<option value="h" selected="selected">Colored Diff</option>
+<option value="l" >Long Colored Diff</option>
+<option value="f" >Full Colored Diff</option>
+<option value="u" >Unidiff</option>
+<option value="c" >Context Diff</option>
+<option value="s" >Side by Side</option>
+</select>
+<input type="submit" value=" Get Diffs " />
+</td>
+</tr>
+</table>
+</form>
+
+
+
+
+
+<hr />
+<table>
+<tr>
+<td>&nbsp;</td>
+<td style="text-align: right;"><strong><a href="/*docroot*/help_log.html">ViewVC Help</a></strong></td>
+</tr>
+<tr>
+<td>Powered by <a href="http://viewvc.tigris.org/">ViewVC 1.1.22</a></td>
+<td style="text-align: right;">&nbsp;</td>
+</tr>
+</table>
+</body>
+</html>
+
+

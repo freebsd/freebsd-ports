@@ -25,7 +25,7 @@ USES=		desktop-file-utils gettext gmake pathfix pkgconfig python:2 \
 		shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GNOME=	intlhack pygobject3
+USE_GNOME=	intlhack pygobject3 pygtk2 gtk30
 
 CONFIGURE_ARGS=	--without-udev-rules \
 		--without-systemdsystemunitdir

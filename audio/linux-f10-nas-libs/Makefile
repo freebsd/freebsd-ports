@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-nas-libs/Makefile 362027 2014-07-16 03:47:05Z adamw $
 
 PORTNAME=	nas-libs
 PORTVERSION=	1.9.1

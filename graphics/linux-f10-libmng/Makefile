@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/graphics/linux-f10-libmng/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=		libmng
 PORTVERSION=		1.0.9

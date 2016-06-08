@@ -122,9 +122,9 @@ CONFIGURE_ARGS+=	--without-gnuplot
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-SAMBA_PORT?=	samba36
-BUILD_DEPENDS+=	smbclient:net/${SAMBA_PORT}
-RUN_DEPENDS+=	smbclient:net/${SAMBA_PORT}
+SAMBA_PORT?=	net/samba43
+BUILD_DEPENDS+=	smbclient:${SAMBA_PORT}
+RUN_DEPENDS+=	smbclient:${SAMBA_PORT}
 CONFIGURE_ARGS+=	--with-smbclient=${LOCALBASE}/bin/smbclient
 .endif
 

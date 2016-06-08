@@ -1,5 +1,5 @@
 # Created by: Thomas Hurst <tom@hur.st>
-# $FreeBSD$
+# $FreeBSD: head/x11/terminator/Makefile 336553 2013-12-15 16:22:17Z wg $
 
 PORTNAME=	terminator
 PORTVERSION=	0.97

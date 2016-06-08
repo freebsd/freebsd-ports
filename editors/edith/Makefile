@@ -1,5 +1,5 @@
 # Created by: Christian Brueffer <chris@unixpages.org>
-# $FreeBSD$
+# $FreeBSD: head/editors/edith/Makefile 357277 2014-06-10 07:39:01Z olgeni $
 
 PORTNAME=	edith
 PORTVERSION=	1.58

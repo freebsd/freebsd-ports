@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/graphics/linux-f10-glew/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	glew
 PORTVERSION=	1.5.1

@@ -1,5 +1,5 @@
 # Created by: Stas Timokhin <devel@stasyan.com>
-# $FreeBSD$
+# $FreeBSD: head/print/linux-f10-cups-libs/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	cups-libs
 PORTVERSION=	1.3.11

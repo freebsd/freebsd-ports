@@ -10,13 +10,11 @@ lib/squeak/%%SQUEAK_LIB_DIR%%/so.FileCopyPlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.HostWindowPlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.MIDIPlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.Mpeg3Plugin
-lib/squeak/%%SQUEAK_LIB_DIR%%/so.RomePlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.ScratchPlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.Squeak3D
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.SqueakFFIPrims
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.UUIDPlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.UnixOSProcessPlugin
-lib/squeak/%%SQUEAK_LIB_DIR%%/so.UnicodePlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.XDisplayControlPlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-display-X11
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-display-custom

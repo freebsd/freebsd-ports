@@ -1,5 +1,5 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/security/libressl-devel/Makefile 410481 2016-03-06 20:06:41Z brnrd $
 
 PORTNAME=	libressl
 PORTVERSION=	2.4.0

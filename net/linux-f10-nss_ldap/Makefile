@@ -1,5 +1,5 @@
 # Created by: rskinner port_maintainer@herveybayaustralia.com.au
-# $FreeBSD$
+# $FreeBSD: head/net/linux-f10-nss_ldap/Makefile 362935 2014-07-25 21:43:13Z rene $
 
 PORTNAME=	nss_ldap
 PORTVERSION=	${NSS_LDAP_VERSION}

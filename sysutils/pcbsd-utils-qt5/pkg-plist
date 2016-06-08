@@ -70,7 +70,7 @@ include/pcbsd-xdgutils.h
 sbin/PCDMd
 share/EasyPBI/EasyPBIicon.png
 share/PCDM/pcdm-session
-share/PCDM/themes/default/background.jpg
+share/PCDM/themes/default/background.png
 share/PCDM/themes/default/banner.png
 share/PCDM/themes/default/default-desktop.png
 share/PCDM/themes/default/default-user.png

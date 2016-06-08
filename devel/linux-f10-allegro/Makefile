@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/devel/linux-f10-allegro/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	allegro
 PORTVERSION=	4.2.2

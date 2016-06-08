@@ -217,11 +217,6 @@ detect_beadm()
    do
      be=`echo $line | awk '{print $1}'`
      flags=`echo $line | awk '{print $2}'`
-
-     # Skip the active BE
-     if [ "$flags" = "NR" -o "$flags" = "R" ] ; then
-	continue
-     fi
      BE_LIST="${be} ${BE_LIST}"
    done < /tmp/.grub-beadm.$$
    rm /tmp/.grub-beadm.$$

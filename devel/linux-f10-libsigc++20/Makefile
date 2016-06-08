@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/devel/linux-f10-libsigc++20/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=		libsigc++20
 PORTVERSION=		2.2.2

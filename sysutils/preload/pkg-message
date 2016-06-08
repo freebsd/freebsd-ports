@@ -1,0 +1,5 @@
+Preload requires linprocfs to be mounted on /compat/linux/proc.
+
+Add the following line to /etc/fstab to load linprocfs at bootup:
+
+linprocfs   /compat/linux/proc      linprocfs       rw     0       0

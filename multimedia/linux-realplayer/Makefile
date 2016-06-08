@@ -1,5 +1,5 @@
 # Created by: Kris Kennaway <kkennawa@physics.adelaide.edu.au>
-# $FreeBSD$
+# $FreeBSD: head/multimedia/linux-realplayer/Makefile 357525 2014-06-11 18:54:20Z riggs $
 
 PORTNAME=	linux-realplayer
 DISTVERSION=	10.0.9.809-20070726

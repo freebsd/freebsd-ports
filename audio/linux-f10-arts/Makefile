@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-arts/Makefile 329390 2013-10-04 21:35:35Z rene $
 
 PORTNAME=		arts
 PORTVERSION=		1.5.10

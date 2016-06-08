@@ -1,15 +1,739 @@
-# sample yp.conf file
-#
-# Legal entries are:
-#
-#	domainname <domain>		Override the default YP domain
-#					(If not set uses the one from
-#					the getdomainname() syscall)
-#
-#	ypserver <grape> [<domain>]	Define which host to contact
-#					for YP service. If the <domain>
-#					argument is included then this
-#					host service the specified YP
-#					domain.
-#domainname	my.domain
-#ypserver	localhost
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>[ports] Log of /head/emulators/linux_base-c6/files/yp.conf.sample</title>
+<meta name="generator" content="ViewVC 1.1.22" />
+<link rel="shortcut icon" href="/*docroot*/images/favicon.ico" />
+<link rel="stylesheet" href="/*docroot*/styles.css" type="text/css" />
+
+</head>
+<body>
+<div class="vc_navheader">
+<table><tr>
+<td><strong><a href="/"><span class="pathdiv">/</span></a><a href="/ports/">[ports]</a><span class="pathdiv">/</span><a href="/ports/head/">head</a><span class="pathdiv">/</span><a href="/ports/head/emulators/">emulators</a><span class="pathdiv">/</span><a href="/ports/head/emulators/linux_base-c6/">linux_base-c6</a><span class="pathdiv">/</span><a href="/ports/head/emulators/linux_base-c6/files/">files</a><span class="pathdiv">/</span>yp.conf.sample</strong></td>
+<td style="text-align: right;"></td>
+</tr></table>
+</div>
+<div style="float: right; padding: 5px;"><a href="http://www.viewvc.org/" title="ViewVC Home"><img src="/*docroot*/images/viewvc-logo.png" alt="ViewVC logotype" width="240" height="70" /></a></div>
+<h1>Log of /head/emulators/linux_base-c6/files/yp.conf.sample</h1>
+
+<p style="margin:0;">
+
+<a href="/ports/head/emulators/linux_base-c6/files/"><img src="/*docroot*/images/back_small.png" class="vc_icon" alt="Parent Directory" /> Parent Directory</a>
+
+| <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=log"><img src="/*docroot*/images/log.png" class="vc_icon" alt="Revision Log" /> Revision Log</a>
+
+
+
+
+</p>
+
+<hr />
+<table class="auto">
+
+
+
+<tr>
+<td>Links to HEAD:</td>
+<td>
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=markup">view</a>)
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=annotate">annotate</a>)
+</td>
+</tr>
+
+
+
+<tr>
+<td>Sticky Revision:</td>
+<td><form method="get" action="/ports" style="display: inline">
+<div style="display: inline">
+<input type="hidden" name="orig_pathtype" value="FILE"/><input type="hidden" name="orig_view" value="log"/><input type="hidden" name="orig_path" value="head/emulators/linux_base-c6/files/yp.conf.sample"/><input type="hidden" name="view" value="redirect_pathrev"/>
+
+<input type="text" name="pathrev" value="" size="6"/>
+
+<input type="submit" value="Set" />
+</div>
+</form>
+
+</td>
+</tr>
+</table>
+ 
+
+
+
+
+
+
+
+
+
+<div>
+<hr />
+
+<a name="rev340872"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=340872"><strong>340872</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=340872&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=340872&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?annotate=340872">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=log&amp;r1=340872&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Fri Jan 24 00:14:07 2014 UTC</em>
+(8 months, 1 week ago)
+by <em>mat</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 400 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?r1=300896&amp;r2=340872">previous 300896</a>
+
+
+
+
+
+
+
+<pre class="vc_log">Yet another props cleanup commit.
+
+With hat:	portmgr
+Sponsored by:	Absolight
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev300896"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=300896"><strong>300896</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=300896&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=300896&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?annotate=300896">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=log&amp;r1=300896&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Sat Jul 14 13:54:48 2012 UTC</em>
+(2 years, 2 months ago)
+by <em>beat</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 400 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?r1=233782&amp;r2=300896">previous 233782</a>
+
+
+
+
+
+
+
+<pre class="vc_log">- Remove cvs2svn:cvs-rev property - part 2
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev233782"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=233782"><strong>233782</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=233782&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=233782&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?annotate=233782">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=log&amp;r1=233782&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Tue May 12 14:54:06 2009 UTC</em>
+(5 years, 4 months ago)
+by <em>bsam</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 400 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?r1=209810&amp;r2=233782">previous 209810</a>
+
+
+
+
+
+
+
+<pre class="vc_log">Repocopies finished:
+-----
+accessibility/linux-f8-atk -&gt; accessibility/linux-f10-atk
+archivers/linux-f8-ucl -&gt; archivers/linux-f10-ucl
+archivers/linux-f8-upx -&gt; archivers/linux-f10-upx
+audio/linux-f8-alsa-lib -&gt; audio/linux-f10-alsa-lib
+audio/linux-f8-arts -&gt; audio/linux-f10-arts
+audio/linux-f8-esound -&gt; audio/linux-f10-esound
+audio/linux-f8-freealut -&gt; audio/linux-f10-freealut
+audio/linux-f8-libaudiofile -&gt; audio/linux-f10-libaudiofile
+audio/linux-f8-libogg -&gt; audio/linux-f10-libogg
+audio/linux-f8-libvorbis -&gt; audio/linux-f10-libvorbis
+audio/linux-f8-openal -&gt; audio/linux-f10-openal
+audio/linux-f8-sdl_mixer -&gt; audio/linux-f10-sdl_mixer
+databases/linux-f8-sqlite3 -&gt; databases/linux-f10-sqlite3
+devel/linux-f8-allegro -&gt; devel/linux-f10-allegro
+devel/linux-f8-libglade -&gt; devel/linux-f10-libglade
+devel/linux-f8-libglade2 -&gt; devel/linux-f10-libglade2
+devel/linux-f8-libsigc++20 -&gt; devel/linux-f10-libsigc++20
+devel/linux-f8-nspr -&gt; devel/linux-f10-nspr
+devel/linux-f8-sdl12 -&gt; devel/linux-f10-sdl12
+emulators/linux_base-f10 -&gt; emulators/linux_base-f10
+ftp/linux-f8-curl -&gt; ftp/linux-f10-curl
+graphics/linux-f8-cairo -&gt; graphics/linux-f10-cairo
+graphics/linux-f8-dri -&gt; graphics/linux-f10-dri
+graphics/linux-f8-gdk-pixbuf -&gt; graphics/linux-f10-gdk-pixbuf
+graphics/linux-f8-imlib -&gt; graphics/linux-f10-imlib
+graphics/linux-f8-jpeg -&gt; graphics/linux-f10-jpeg
+graphics/linux-f8-libmng -&gt; graphics/linux-f10-libmng
+graphics/linux-f8-png -&gt; graphics/linux-f10-png
+graphics/linux-f8-png10 -&gt; graphics/linux-f10-png10
+graphics/linux-f8-sdl_image -&gt; graphics/linux-f10-sdl_image
+graphics/linux-f8-tiff -&gt; graphics/linux-f10-tiff
+graphics/linux-f8-ungif -&gt; graphics/linux-f10-ungif
+lang/linux-f8-libg2c -&gt; lang/linux-f10-libg2c
+lang/linux-f8-tcl84 -&gt; lang/linux-f10-tcl85
+multimedia/linux-f8-libtheora -&gt; multimedia/linux-f10-libtheora
+security/linux-f8-libssh2 -&gt; security/linux-f10-libssh2
+security/linux-f8-nss -&gt; security/linux-f10-nss
+security/linux-f8-openssl -&gt; security/linux-f10-openssl
+textproc/linux-f8-aspell -&gt; textproc/linux-f10-aspell
+textproc/linux-f8-expat -&gt; textproc/linux-f10-expat
+textproc/linux-f8-libxml -&gt; textproc/linux-f10-libxml
+textproc/linux-f8-libxml2 -&gt; textproc/linux-f10-libxml2
+textproc/linux-f8-scim-gtk -&gt; textproc/linux-f10-scim-gtk
+textproc/linux-f8-scim-libs -&gt; textproc/linux-f10-scim-libs
+x11-fonts/linux-f8-fontconfig -&gt; x11-fonts/linux-f10-fontconfig
+x11-themes/linux-f8-hicolor-icon-theme -&gt; x11-themes/linux-f10-hicolor-icon-theme
+x11-toolkits/linux-f8-gtk -&gt; x11-toolkits/linux-f10-gtk
+x11-toolkits/linux-f8-gtk2 -&gt; x11-toolkits/linux-f10-gtk20-openmotif
+x11-toolkits/linux-f8-pango -&gt; x11-toolkits/linux-f10-pango
+x11-toolkits/linux-f8-qt33 -&gt; x11-toolkits/linux-f10-qt33
+x11-toolkits/linux-f8-tk84 -&gt; x11-toolkits/linux-f10-tk85
+x11/linux-f8-xorg-libs -&gt; x11/linux-f10-xorg-libs
+-----
+
+PR:		ports/134265
+Submitted by:	bsam (me)
+Repocopied by:	portmgr (marcus)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev209810"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=209810"><strong>209810</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=209810&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=209810&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?annotate=209810">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=log&amp;r1=209810&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Tue Mar 25 22:19:34 2008 UTC</em>
+(6 years, 6 months ago)
+by <em>bsam</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 400 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?r1=201060&amp;r2=209810">previous 201060</a>
+
+
+
+
+
+
+
+<pre class="vc_log">Repocopy linux_base-f7 -&gt; linux_base-f8 is completed.
+
+PR:		121850
+Submitted by:	bsam (me)
+Repocopied by:	portmgr (marcus)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev201060"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=201060"><strong>201060</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=201060&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=201060&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?annotate=201060">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=log&amp;r1=201060&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Sun Oct  7 22:35:05 2007 UTC</em>
+(6 years, 11 months ago)
+by <em>bsam</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 400 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?r1=199990&amp;r2=201060">previous 199990</a>
+
+
+
+
+
+
+
+<pre class="vc_log">A forced commit to finish linux_bas-fc7 -&gt; linux_base-f7 repocopy.
+
+PR:		116676
+Submitted by:	bsam (me)
+Repocopied by:	marcus (portmgr)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev199990"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=199990"><strong>199990</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=199990&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=199990&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?annotate=199990">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=log&amp;r1=199990&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Sun Sep 23 15:18:48 2007 UTC</em>
+(7 years ago)
+by <em>bsam</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 400 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?r1=188212&amp;r2=199990">previous 188212</a>
+
+
+
+
+
+
+
+<pre class="vc_log">A repocopy emulators/linux_base-fc6 -&gt; emulators/linux_base-fc7 is
+completed.
+
+Repocopied by:	portmgr (marcus)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev188212"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=188212"><strong>188212</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=188212&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=188212&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?annotate=188212">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=log&amp;r1=188212&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Modified
+
+<em>Sat Mar 24 21:40:12 2007 UTC</em>
+(7 years, 6 months ago)
+by <em>bsam</em>
+
+
+
+
+
+
+
+
+
+<br />File length: 400 byte(s)
+
+
+
+
+
+
+
+<br />Diff to <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?r1=157591&amp;r2=188212">previous 157591</a>
+
+
+
+
+
+
+
+<pre class="vc_log">A forced commit to indicate that the repocopy:
+  linux_base-fc4 -&gt; linux_base-fc6
+is finished.
+
+PR:		110714
+Submitted by:	bsam (me)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev157591"></a>
+
+
+Revision <a href="/ports?view=revision&amp;revision=157591"><strong>157591</strong></a> -
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=157591&amp;view=markup">view</a>)
+
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?revision=157591&amp;view=co">download</a>)
+
+(<a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?annotate=157591">annotate</a>)
+
+
+
+- <a href="/ports/head/emulators/linux_base-c6/files/yp.conf.sample?view=log&amp;r1=157591&amp;log_pagestart=0">[select for diffs]</a>
+
+
+
+
+<br />
+
+Added
+
+<em>Sat Mar 18 19:07:04 2006 UTC</em>
+(8 years, 6 months ago)
+by <em>netchild</em>
+
+
+
+
+
+
+
+<br />File length: 400 byte(s)
+
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">The port is intended to become the new default linux_base port (replaces
+the current linux_base-8 port).
+
+You should only switch to this port if you know what you are doing.
+You may or may not have problems with installing other linux related
+ports after switching to it. Success or failure reports welcome.
+
+To switch:
+ - echo &quot;OVERRIDE_LINUX_BASE_PORT=fc3&quot; &gt;&gt; /etc/make.conf
+ - portupgrade -fo emulators/linux_base-fc3 linux_base-8
+
+News and changes (from submitter with some small changes by me):
+ - based on linux_base-8 port;
+ - don't use linux rpm binary to install. The whole source tree is
+   created at ${WRKDIR} and then installed (using cpio);
+ - removes some files and directories (etc/passwd, etc/group,
+   usr/local, ...) to ensure using FreeBSD original files;
+ - introduces etc/nsswitch.conf.dist and etc/yp.conf.sample files,
+   uses correct install/deinstall behaviour with etc/nsswitch.conf
+   and etc/yp.conf files;
+ - doesn't do [u]mounting while install/deinstall process.
+   Thus it is possible to use jails while building packages.
+   But since linprocfs is not automounted, special measures should be
+   taken at package building for those ports which need a mounted
+   linprocfs (i.e. for linux JDK building);
+ - uses linux ldconfig in the pkg-install file (as opposed to using in
+   the Makefile). It is needed when upgrading (i.e. when other linux
+   libraries are present in the system) and when installing by packages.
+
+Submitted by:	Boris Samorodov &lt;&#98;&#115;&#97;&#109;&#64;&#105;&#112;&#116;&#46;&#114;&#117;&gt; (some small changes by me)
+
+</pre>
+</div>
+
+ 
+
+
+
+
+ <hr />
+<p><a name="diff"></a>
+This form allows you to request diffs between any two revisions of this file.
+For each of the two "sides" of the diff,
+
+enter a numeric revision.
+
+</p>
+<form method="get" action="/ports/head/emulators/linux_base-c6/files/yp.conf.sample" id="diff_select">
+<table cellpadding="2" cellspacing="0" class="auto">
+<tr>
+<td>&nbsp;</td>
+<td>
+<input type="hidden" name="view" value="diff"/>
+Diffs between
+
+<input type="text" size="12" name="r1"
+value="340872" />
+
+and
+
+<input type="text" size="12" name="r2" value="157591" />
+
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+Type of Diff should be a
+<select name="diff_format" onchange="submit()">
+<option value="h" selected="selected">Colored Diff</option>
+<option value="l" >Long Colored Diff</option>
+<option value="f" >Full Colored Diff</option>
+<option value="u" >Unidiff</option>
+<option value="c" >Context Diff</option>
+<option value="s" >Side by Side</option>
+</select>
+<input type="submit" value=" Get Diffs " />
+</td>
+</tr>
+</table>
+</form>
+
+
+
+
+
+<hr />
+<table>
+<tr>
+<td>&nbsp;</td>
+<td style="text-align: right;"><strong><a href="/*docroot*/help_log.html">ViewVC Help</a></strong></td>
+</tr>
+<tr>
+<td>Powered by <a href="http://viewvc.tigris.org/">ViewVC 1.1.22</a></td>
+<td style="text-align: right;">&nbsp;</td>
+</tr>
+</table>
+</body>
+</html>
+
+

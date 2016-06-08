@@ -1,5 +1,5 @@
 # Created by: David Yeske <dyeske@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/audio/baudline/Makefile 361932 2014-07-15 14:41:47Z adamw $
 
 PORTNAME=	baudline
 PORTVERSION=	1.08

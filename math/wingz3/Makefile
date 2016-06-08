@@ -1,5 +1,5 @@
 # Created by: erich@rrnet.com
-# $FreeBSD$
+# $FreeBSD: head/math/wingz3/Makefile 361705 2014-07-13 19:35:06Z mi $
 
 PORTNAME=	wingzpro
 PORTVERSION=	311

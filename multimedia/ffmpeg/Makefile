@@ -464,6 +464,10 @@ post-configure-THEORA-off:
 		-e 's|^(CONFIG_LIBTHEORA).*$$|\1=no|' \
 		${WRKSRC}/config.mak
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|#define HAVE_MACH_MACH_TIME_H 1||g' \
+		${WRKSRC}/config.h
+
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${DOC_FILES}" ${STAGEDIR}${DOCSDIR})

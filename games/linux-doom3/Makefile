@@ -1,5 +1,5 @@
 # Created by: alepulver
-# $FreeBSD$
+# $FreeBSD: head/games/linux-doom3/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	doom3
 PORTVERSION=	1.3.1.1304

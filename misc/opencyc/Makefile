@@ -1,5 +1,5 @@
 # Created by: Alex Semenyaka <alex@rinet.ru>
-# $FreeBSD$
+# $FreeBSD: head/misc/opencyc/Makefile 349209 2014-03-26 02:14:47Z swills $
 
 PORTNAME=	opencyc
 PORTVERSION=	0.7.0

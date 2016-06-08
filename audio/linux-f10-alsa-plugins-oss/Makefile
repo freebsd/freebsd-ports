@@ -1,5 +1,5 @@
 # Created by: hashiz
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-alsa-plugins-oss/Makefile 362375 2014-07-20 21:23:49Z rene $
 
 PORTNAME=	alsa-plugins-oss
 PORTVERSION=	1.0.21

@@ -1,5 +1,5 @@
 # Created by: Valery Komarov <komarov@valerka.net>
-# $FreeBSD$
+# $FreeBSD: head/net/yate/Makefile 398685 2015-10-06 08:08:59Z robak $
 
 PORTNAME=	yate
 DISTVERSION=	5.5.0p1

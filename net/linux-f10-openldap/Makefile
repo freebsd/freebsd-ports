@@ -1,5 +1,5 @@
 # Created by: peter
-# $FreeBSD$
+# $FreeBSD: head/net/linux-f10-openldap/Makefile 362313 2014-07-20 11:59:59Z rene $
 
 PORTNAME=	openldap
 PORTVERSION=	2.4.12

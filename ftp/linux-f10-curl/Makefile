@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/ftp/linux-f10-curl/Makefile 362311 2014-07-20 11:55:55Z rene $
 
 PORTNAME=	curl
 PORTVERSION=	7.19.6

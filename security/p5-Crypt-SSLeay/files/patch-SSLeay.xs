@@ -1,0 +1,40 @@
+--- SSLeay.xs.orig	2014-04-23 22:36:24 UTC
++++ SSLeay.xs
+@@ -45,13 +45,6 @@ extern "C" {
+ }
+ #endif
+ 
+-
+-#if SSLEAY_VERSION_NUMBER >= 0x0900
+-#define CRYPT_SSL_CLIENT_METHOD SSLv3_client_method()
+-#else
+-#define CRYPT_SSL_CLIENT_METHOD SSLv2_client_method()
+-#endif
+-
+ static void InfoCallback(const SSL *s,int where,int ret)
+     {
+     const char *str;
+@@ -145,22 +138,7 @@ SSL_CTX_new(packname, ssl_version)
+             RAND_seed(buf, CRYPT_SSLEAY_RAND_BUFSIZE);
+         }
+ 
+-        if(ssl_version == 23) {
+-            ctx = SSL_CTX_new(SSLv23_client_method());
+-        }
+-        else if(ssl_version == 3) {
+-            ctx = SSL_CTX_new(SSLv3_client_method());
+-        }
+-        else {
+-#ifndef OPENSSL_NO_SSL2
+-            /* v2 is the default */
+-            ctx = SSL_CTX_new(SSLv2_client_method());
+-#else
+-            /* v3 is the default */
+-            ctx = SSL_CTX_new(SSLv3_client_method());
+-#endif
+-        }
+-
++        ctx = SSL_CTX_new(SSLv23_client_method());
+         SSL_CTX_set_options(ctx,SSL_OP_ALL|0);
+         SSL_CTX_set_default_verify_paths(ctx);
+         SSL_CTX_set_verify(ctx, SSL_VERIFY_NONE, NULL);

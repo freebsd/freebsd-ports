@@ -1,5 +1,5 @@
 # Created by: Ed Schouten <ed@fxq.nl>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-quake4/Makefile 361946 2014-07-15 15:19:07Z adamw $
 
 PORTNAME=	quake4
 PORTVERSION=	1.4.2

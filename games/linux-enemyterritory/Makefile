@@ -1,5 +1,5 @@
 # Created by: benlutz@datacomm.ch
-# $FreeBSD$
+# $FreeBSD: head/games/linux-enemyterritory/Makefile 356896 2014-06-07 11:44:03Z bar $
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b

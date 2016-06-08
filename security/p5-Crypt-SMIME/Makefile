@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/security/p5-Crypt-SMIME/Makefile 379948 2015-02-25 19:07:59Z adamw $
 
 PORTNAME=	Crypt-SMIME
 PORTVERSION=	0.16

@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-libogg/Makefile 362027 2014-07-16 03:47:05Z adamw $
 
 PORTNAME=	libogg
 PORTVERSION=	1.1.3

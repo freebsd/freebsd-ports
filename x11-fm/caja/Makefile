@@ -1,5 +1,6 @@
 # Created by: ade, archie
-# $FreeBSD$
+# $FreeBSD: head/x11-fm/mate-file-manager/Makefile 352090 2014-04-25 07:23:15Z bapt $
+#   $MCom: ports/trunk/x11-fm/mate-file-manager/Makefile 19574 2014-04-25 21:11:18Z kwm $
 
 PORTNAME=	caja
 PORTVERSION=	1.12.4

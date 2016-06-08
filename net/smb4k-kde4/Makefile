@@ -14,7 +14,7 @@ COMMENT=	KDE 4.x SMB Network browser and SMB shares mounting center
 RUN_DEPENDS=	sudo:security/sudo \
 		smbstatus:${SAMBA_PORT}
 
-SAMBA_PORT?=	net/samba36
+SAMBA_PORT?=	net/samba41
 
 USES=		cmake gettext tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4

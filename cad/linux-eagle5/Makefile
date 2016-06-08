@@ -1,5 +1,5 @@
 # Created by: Michael Durian <durian@shadetreesoftware.com>
-# $FreeBSD$
+# $FreeBSD: head/cad/linux-eagle5/Makefile 357139 2014-06-09 11:21:52Z olgeni $
 
 PORTNAME=	eagle5
 PORTVERSION=	${EAGLEVERSION}

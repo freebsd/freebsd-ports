@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/security/linux-f10-libssh2/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	libssh2
 PORTVERSION=	0.18

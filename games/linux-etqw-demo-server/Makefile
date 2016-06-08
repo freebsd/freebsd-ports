@@ -1,5 +1,5 @@
 # Created by: ayu <ayunyan@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-etqw-demo-server/Makefile 362015 2014-07-15 23:30:05Z adamw $
 
 PORTNAME=	etqw
 PORTVERSION=	2.0.r1

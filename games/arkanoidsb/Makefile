@@ -1,5 +1,5 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/arkanoidsb/Makefile 357788 2014-06-14 15:15:06Z nemysis $
 
 PORTNAME=	arkanoidsb
 PORTVERSION=	1.3.2.10

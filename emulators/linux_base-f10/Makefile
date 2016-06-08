@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/emulators/linux_base-f10/Makefile 329540 2013-10-06 09:08:22Z antoine $
 
 PORTNAME=		f10
 PORTVERSION=		10

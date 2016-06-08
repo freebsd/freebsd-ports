@@ -1,5 +1,5 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-alsa-lib/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	alsa-lib
 PORTVERSION=	1.0.21

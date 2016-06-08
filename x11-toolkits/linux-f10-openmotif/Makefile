@@ -1,5 +1,5 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/x11-toolkits/linux-f10-openmotif/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	openmotif
 PORTVERSION=	2.3.3

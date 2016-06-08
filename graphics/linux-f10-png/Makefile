@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/graphics/linux-f10-png/Makefile 362312 2014-07-20 11:58:56Z rene $
 
 PORTNAME=	png
 PORTVERSION=	1.2.37

@@ -1,5 +1,5 @@
 # Created by: Yarema <yds@CoolRat.org>
-# $FreeBSD$
+# $FreeBSD: head/mail/mulberry/Makefile 349208 2014-03-26 01:51:58Z swills $
 
 PORTNAME=	mulberry
 DISTVERSION=	4_0_8

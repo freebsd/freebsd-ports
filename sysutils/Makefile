@@ -224,6 +224,7 @@
     SUBDIR += dolly
     SUBDIR += downtime
     SUBDIR += downtimed
+    SUBDIR += drwright
     SUBDIR += dsbbatmon
     SUBDIR += dsbdriverd
     SUBDIR += dsbmc
@@ -302,6 +303,8 @@
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
     SUBDIR += freedt
+    SUBDIR += freenas-datastore
+    SUBDIR += freenas-dispatcher
     SUBDIR += freefilesync
     SUBDIR += freeipmi
     SUBDIR += freesbie
@@ -785,6 +788,7 @@
     SUBDIR += pp
     SUBDIR += pprotectd
     SUBDIR += prelink
+    SUBDIR += preload
     SUBDIR += prips
     SUBDIR += procenv
     SUBDIR += procmap
@@ -817,6 +821,7 @@
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
     SUBDIR += py-ezjailremote
+    SUBDIR += py-fnutils
     SUBDIR += py-filelike
     SUBDIR += py-freenas.cli
     SUBDIR += py-glances
@@ -874,6 +879,7 @@
     SUBDIR += reed
     SUBDIR += rej
     SUBDIR += relaxconf
+    SUBDIR += relaunchd
     SUBDIR += rename
     SUBDIR += renameutils
     SUBDIR += reoback
@@ -1033,6 +1039,8 @@
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
+    SUBDIR += sysadm
+    SUBDIR += sysadm-client
     SUBDIR += sysgather
     SUBDIR += sysinfo
     SUBDIR += syslinux

@@ -1,5 +1,5 @@
 # Created by: alepulver
-# $FreeBSD$
+# $FreeBSD: head/games/linux-enemyterritory-jaymod/Makefile 353737 2014-05-11 21:23:09Z bar $
 
 PORTNAME=	jaymod
 PORTVERSION=	2.2.0

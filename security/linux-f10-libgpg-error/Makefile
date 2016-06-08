@@ -1,5 +1,5 @@
 # Created by: Stas Timoklhin <devel@stasyan.com>
-# $FreeBSD$
+# $FreeBSD: head/security/linux-f10-libgpg-error/Makefile 362024 2014-07-16 03:18:26Z adamw $
 
 PORTNAME=	libgpg-error
 PORTVERSION=	1.6

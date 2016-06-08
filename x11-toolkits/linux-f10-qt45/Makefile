@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/x11-toolkits/linux-f10-qt45/Makefile 329599 2013-10-06 16:09:43Z rene $
 
 PORTNAME=	${LINUX_NAME}45
 PORTVERSION=	4.5.3

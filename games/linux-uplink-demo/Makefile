@@ -1,5 +1,5 @@
 # Created by: Marcus von Appen <mva@sysfault.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-uplink-demo/Makefile 362015 2014-07-15 23:30:05Z adamw $
 
 PORTNAME=	uplink-demo
 PORTVERSION=	1.55

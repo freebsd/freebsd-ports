@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/textproc/linux-f10-scim-libs/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	scim-libs
 PORTVERSION=	1.4.7

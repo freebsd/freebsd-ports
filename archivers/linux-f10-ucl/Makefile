@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/archivers/linux-f10-ucl/Makefile 362027 2014-07-16 03:47:05Z adamw $
 
 PORTNAME=		ucl
 PORTVERSION=		1.03

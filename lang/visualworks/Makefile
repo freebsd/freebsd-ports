@@ -1,5 +1,5 @@
 # Created by: js@jeannot.org
-# $FreeBSD$
+# $FreeBSD: head/lang/visualworks/Makefile 360810 2014-07-05 19:27:03Z olgeni $
 
 PORTNAME=		visualworks
 PORTVERSION=		7.6

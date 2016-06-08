@@ -78,6 +78,7 @@
     SUBDIR += choqok
     SUBDIR += chpasswd
     SUBDIR += chromium
+    SUBDIR += chromium-npapi
     SUBDIR += chtml
     SUBDIR += ckeditor
     SUBDIR += cl-lml

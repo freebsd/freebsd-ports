@@ -1,7 +1,7 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD$
+# $FreeBSD: head/Mk/bsd.port.mk 364718 2014-08-12 16:24:27Z mat $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -1951,6 +1951,10 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 .if exists(${PORTSDIR}/Makefile.inc)
 .include "${PORTSDIR}/Makefile.inc"
 USE_SUBMAKE=	yes
+.endif
+
+.if exists(${.CURDIR}/Makefile.notes)
+.include "${.CURDIR}/Makefile.notes"
 .endif
 
 # Loading features

@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/java/linux-oracle-jdk18/Makefile 362021 2014-07-16 02:46:51Z glewis $
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}

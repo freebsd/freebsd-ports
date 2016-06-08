@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/x11/guake/Makefile 339634 2014-01-13 21:00:02Z rene $
 
 PORTNAME=	guake
 PORTVERSION=	0.8.4

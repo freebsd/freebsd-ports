@@ -20,6 +20,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi \
 		libsqlite3.so:databases/sqlite3
 
+BROKEN=		Fails to compile
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
 PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
 PYPY_MINMEM_DESC=	Use PyPy to translate (lowest memory usage)

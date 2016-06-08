@@ -1,5 +1,5 @@
 # Created by: gahr
-# $FreeBSD$
+# $FreeBSD: head/databases/mysql-connector-c/Makefile 390160 2015-06-20 10:45:13Z bofh $
 
 PORTNAME=	mysql-connector-c
 PORTVERSION=	6.1.6

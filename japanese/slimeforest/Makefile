@@ -1,5 +1,5 @@
 # Created by: nivit@email.it
-# $FreeBSD$
+# $FreeBSD: head/japanese/slimeforest/Makefile 361598 2014-07-12 04:22:39Z nivit $
 
 PORTNAME=	slimeforest
 PORTVERSION=	158

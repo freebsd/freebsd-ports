@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/graphics/linux-f10-gdk-pixbuf/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	0.22.0

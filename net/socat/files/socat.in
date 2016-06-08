@@ -2,7 +2,7 @@
 #
 # Author: Emanuel Haupt <ehaupt@FreeBSD.org>
 #
-# $FreeBSD$
+# $FreeBSD: head/net/socat/files/socat.in 342584 2014-02-04 18:26:29Z sunpoet $
 #
 
 # PROVIDE: socat

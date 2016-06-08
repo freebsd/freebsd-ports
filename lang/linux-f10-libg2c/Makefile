@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/lang/linux-f10-libg2c/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	libg2c
 PORTVERSION=	3.4.6

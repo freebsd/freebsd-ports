@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/graphics/linux-f10-tiff/Makefile 362312 2014-07-20 11:58:56Z rene $
 
 PORTNAME=	tiff
 PORTVERSION=	3.8.2

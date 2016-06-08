@@ -12,5 +12,7 @@ LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 CFFI_NAME=	ffi
 
+USE_OPENSSL=	yes
+
 .include "${.CURDIR}/../../lang/pypy/bsd.pypy.cffi.mk"
 .include <bsd.port.mk>

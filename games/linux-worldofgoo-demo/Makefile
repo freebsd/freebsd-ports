@@ -1,5 +1,5 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-worldofgoo-demo/Makefile 349211 2014-03-26 02:24:37Z swills $
 
 PORTNAME=	worldofgoo
 PORTVERSION=	1.41
@@ -26,8 +26,8 @@ OPTIONS_DEFINE=	DOCS
 .if defined(WITH_NVIDIA_GL)
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 USE_LINUX_APPS+=	libglu
-.else
-USE_LINUX_APPS+=	dri
+#.else
+#USE_LINUX_APPS+=	dri
 .endif
 
 .include <bsd.port.pre.mk>

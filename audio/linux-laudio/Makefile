@@ -1,5 +1,5 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-laudio/Makefile 349692 2014-03-30 22:39:10Z rene $
 
 PORTNAME=	laudio
 PORTVERSION=	0.4

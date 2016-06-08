@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/java/linux-oracle-jre18/Makefile 362022 2014-07-16 02:59:57Z glewis $
 
 PORTNAME=	jre
 PORTVERSION=	${JRE_VERSION}.${JRE_UPDATE_VERSION}

@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/archivers/linux-f10-upx/Makefile 360446 2014-07-03 19:06:07Z adamw $
 
 PORTNAME=		upx
 PORTVERSION=		3.03

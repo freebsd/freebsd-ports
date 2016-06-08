@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: head/games/linux-nwnclient/files/nwn.sh 340872 2014-01-24 00:14:07Z mat $
 #
 
 NWNDATADIR="%%NWNDATADIR%%"

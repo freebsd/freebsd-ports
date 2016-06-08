@@ -1,0 +1,11 @@
+--- setup/Makefile.in.orig	2013-04-21 22:37:43.305712448 +0000
++++ setup/Makefile.in	2013-04-21 22:38:09.228712176 +0000
+@@ -500,7 +500,7 @@
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(ibussetupdir)" || exit $$?; \
+ 	done || exit $$?; \
+ 	if test -n "$$dlist"; then \
+-	  $(am__py_compile) --destdir "$(DESTDIR)" \
++	  $(am__py_compile) --destdir "$(DESTDIR)$(ibussetupdir)" \
+ 	                    --basedir "$(ibussetupdir)" $$dlist; \
+ 	else :; fi
+ 

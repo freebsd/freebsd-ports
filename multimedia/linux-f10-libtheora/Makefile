@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/multimedia/linux-f10-libtheora/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	libtheora
 PORTVERSION=	1.0rc1

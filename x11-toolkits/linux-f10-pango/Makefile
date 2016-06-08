@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/x11-toolkits/linux-f10-pango/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	pango
 PORTVERSION=	1.28.3

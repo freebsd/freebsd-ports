@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2
 
-USES=		python:2,run tar:bzip2
+USES=		python:2 tar:bzip2
 GNU_CONFIGURE=	yes
 
 post-patch:

@@ -1,5 +1,5 @@
 # Created by: Kai Wang <kaiw27@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/net-im/qq/Makefile 351192 2014-04-13 09:18:40Z xmj $
 
 PORTNAME=	qq
 DISTVERSION=	v1.0.2-beta1_i386

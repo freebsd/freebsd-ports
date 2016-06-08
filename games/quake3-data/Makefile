@@ -1,5 +1,5 @@
 # Created by: Nik Clayton <nik@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/quake3-data/Makefile 361201 2014-07-08 08:51:31Z danfe $
 
 PORTNAME=	data
 DISTVERSION=	1.32b-3

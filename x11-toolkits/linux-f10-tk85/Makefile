@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/x11-toolkits/linux-f10-tk85/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	tk
 PORTVERSION=	8.5.3

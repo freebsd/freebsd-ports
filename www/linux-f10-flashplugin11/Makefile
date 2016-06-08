@@ -1,5 +1,5 @@
 # Created by: Naoki Tsurutani
-# $FreeBSD$
+# $FreeBSD: head/www/linux-f10-flashplugin11/Makefile 361777 2014-07-14 12:44:27Z eadler $
 
 DISTFILES:=	install_flash_player_11_linux.i386.tar.gz:plugin
 USE_LINUX=		f10

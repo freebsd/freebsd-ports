@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/graphics/linux-f10-imlib/Makefile 329559 2013-10-06 13:19:50Z rene $
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.15

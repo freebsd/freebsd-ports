@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/textproc/linux-f10-scim-gtk/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	scim-gtk
 PORTVERSION=	1.4.7

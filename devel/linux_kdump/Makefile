@@ -1,5 +1,5 @@
 # Created by: msmith@FreeBSD.org
-# $FreeBSD$
+# $FreeBSD: head/devel/linux_kdump/Makefile 353859 2014-05-12 16:17:12Z nox $
 
 PORTNAME=	linux_kdump
 PORTVERSION=	1.5

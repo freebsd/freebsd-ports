@@ -1,5 +1,5 @@
 # Created by: Yuichiro AIZAWA <yaizawa@2004.jukuin.keio.ac.jp>
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-neroaaccodec/Makefile 355274 2014-05-26 02:33:38Z eadler $
 
 PORTNAME=	neroaaccodec
 PORTVERSION=	1.5.1

@@ -1,5 +1,5 @@
 # Created by: Sergey Akifyev
-# $FreeBSD$
+# $FreeBSD: head/games/linux-ssamtse/Makefile 349213 2014-03-26 02:32:34Z swills $
 
 PORTNAME=	ssamtse
 PORTVERSION=	1.07b1

@@ -1,5 +1,5 @@
 # Created by: Sean Farley <sean-freebsd@farley.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-ut/Makefile 355274 2014-05-26 02:33:38Z eadler $
 
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}

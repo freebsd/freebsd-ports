@@ -1,5 +1,5 @@
 # Created by: mva
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-openal-soft/Makefile 362027 2014-07-16 03:47:05Z adamw $
 
 PORTNAME=	openal-soft
 PORTVERSION=	1.8.466

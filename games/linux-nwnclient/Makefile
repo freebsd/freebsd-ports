@@ -1,5 +1,5 @@
 # Created by: Erik Olson <erikolson@olsonexpress.com>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-nwnclient/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.69

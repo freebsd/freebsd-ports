@@ -1,5 +1,5 @@
 # Created by: Jona Joachim <walkingshadow@grummel.net>
-# $FreeBSD$
+# $FreeBSD: head/games/gish-demo/Makefile 339977 2014-01-16 20:20:03Z mva $
 
 PORTNAME=	gish-demo
 PORTVERSION=	1.60

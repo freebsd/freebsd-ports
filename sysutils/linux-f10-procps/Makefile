@@ -1,5 +1,5 @@
 # Created by: leres
-# $FreeBSD$
+# $FreeBSD: head/sysutils/linux-f10-procps/Makefile 357070 2014-06-08 19:51:27Z olgeni $
 
 PORTNAME=	procps
 PORTVERSION=	3.2.7

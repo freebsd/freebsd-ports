@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/ports-mgmt/pkg/Makefile 366286 2014-08-26 23:12:10Z bdrewery $
 
 PORTNAME=	pkg
 DISTVERSION=	1.8.4

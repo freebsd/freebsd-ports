@@ -303,6 +303,12 @@ post-patch:
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|HAVE_MACH_MACH_H|NOHAVE_MACH_MACH_H|g' \
+		${WRKSRC}/include/llvm/Config/config.h.cmake
+	@${REINPLACE_CMD} -e 's|HAVE_MACH_MACH_H|NOHAVE_MACH_MACH_H|g' \
+		${WRKSRC}/cmake/config-ix.cmake
+
 post-install:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \

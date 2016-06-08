@@ -1,5 +1,5 @@
 # Created by: Oleg V. Volkov <rover@lglobus.ru>
-# $FreeBSD$
+# $FreeBSD: head/games/adom/Makefile 351718 2014-04-21 21:15:57Z pawel $
 
 PORTNAME=	adom
 PORTVERSION=	1.1.1

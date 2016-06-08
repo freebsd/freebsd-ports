@@ -1,7 +1,7 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD$
+# $FreeBSD: head/Mk/bsd.linux-apps.mk 335358 2013-12-01 00:40:07Z rene $
 #
 # Please view me with 4 column tabs!
 

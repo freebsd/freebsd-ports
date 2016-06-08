@@ -1,5 +1,5 @@
 # Created by: alepulver
-# $FreeBSD$
+# $FreeBSD: head/games/linux-enemyterritory-shrub/Makefile 351276 2014-04-14 18:45:17Z pawel $
 
 PORTNAME=	shrub
 PORTVERSION=	1.2

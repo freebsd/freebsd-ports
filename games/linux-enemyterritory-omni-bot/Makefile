@@ -1,5 +1,5 @@
 # Created by: alepulver
-# $FreeBSD$
+# $FreeBSD: head/games/linux-enemyterritory-omni-bot/Makefile 347760 2014-03-10 14:49:26Z bapt $
 
 PORTNAME=	omni-bot
 PORTVERSION=	0.831

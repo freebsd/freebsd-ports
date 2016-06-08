@@ -1,5 +1,5 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-nerogame/Makefile 357690 2014-06-13 15:22:27Z danilo $
 
 PORTNAME=	nerogame
 PORTVERSION=	2.0

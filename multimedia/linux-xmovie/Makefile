@@ -1,5 +1,5 @@
 # Created by: MIHIRA Sanpei Yoshiro <sanpei@sanpei.org>
-# $FreeBSD$
+# $FreeBSD: head/multimedia/linux-xmovie/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	xmovie
 DISTVERSION=	1.9.8-1

@@ -1,5 +1,5 @@
 # Created by: Ayumi M <ayu@commun.jp>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-etqw-server/Makefile 360937 2014-07-06 16:23:13Z vanilla $
 
 PORTNAME=	etqw
 PORTVERSION=	1.5

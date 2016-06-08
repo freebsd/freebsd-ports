@@ -1,5 +1,5 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-doom3-demo/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	doom3-demo
 PORTVERSION=	1.1.1286

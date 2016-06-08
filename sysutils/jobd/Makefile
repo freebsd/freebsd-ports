@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/sysutils/relaunchd/Makefile 411570 2016-03-21 15:47:03Z kmoore $
 
 PORTNAME=	jobd
 PORTVERSION=	0.7.1

@@ -1,0 +1,27 @@
+#!/bin/sh
+# Script to install preload.conf
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+if [ "$2" != "POST-INSTALL" ] ; then
+   exit 0
+fi
+
+# If this is during staging, we can skip for now
+echo $PREFIX | grep -q '/stage/'
+if [ $? -eq 0 ] ; then
+   exit 0
+fi
+
+# Check if we have our warden.conf file
+if [ ! -e "${PREFIX}/etc/preload.conf" ] ; then
+   cp ${PREFIX}/etc/preload.conf.dist ${PREFIX}/etc/preload.conf
+   chmod 644 ${PREFIX}/etc/preload.conf
+fi
+
+# Make sure /var/lib/preload exists
+if [ ! -d "/var/lib/preload" ] ; then
+   mkdir /var/lib/preload
+fi
+
+exit 0

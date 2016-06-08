@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-esound/Makefile 362027 2014-07-16 03:47:05Z adamw $
 
 PORTNAME=	esound
 PORTVERSION=	0.2.41

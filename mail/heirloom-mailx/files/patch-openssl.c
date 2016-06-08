@@ -19,7 +19,26 @@
  static EVP_CIPHER *smime_cipher(const char *name);
  static int ssl_password_cb(char *buf, int size, int rwflag, void *userdata);
  static FILE *smime_sign_cert(const char *xname, const char *xname2, int warn);
-@@ -203,19 +208,25 @@ ssl_verify_cb(int success, X509_STORE_CT
+@@ -130,6 +135,7 @@ ssl_rand_init(void)
+ 	char *cp;
+ 	int state = 0;
+ 
++#ifndef OPENSSL_NO_EGD
+ 	if ((cp = value("ssl-rand-egd")) != NULL) {
+ 		cp = expand(cp);
+ 		if (RAND_egd(cp) == -1) {
+@@ -138,7 +144,9 @@ ssl_rand_init(void)
+ 					cp);
+ 		} else
+ 			state = 1;
+-	} else if ((cp = value("ssl-rand-file")) != NULL) {
++	} else 
++#endif /* OPENSSL_NO_EGD */
++	if ((cp = value("ssl-rand-file")) != NULL) {
+ 		cp = expand(cp);
+ 		if (RAND_load_file(cp, 1024) == -1) {
+ 			fprintf(stderr, catgets(catd, CATSET, 246,
+@@ -203,19 +211,25 @@ ssl_verify_cb(int success, X509_STORE_CT
  	return 1;
  }
  
@@ -49,7 +68,7 @@
  			method = TLSv1_client_method();
  		else {
  			fprintf(stderr, catgets(catd, CATSET, 244,
-@@ -308,7 +319,11 @@ ssl_check_host(const char *server, struc
+@@ -308,7 +322,11 @@ ssl_check_host(const char *server, struc
  	X509 *cert;
  	X509_NAME *subj;
  	char data[256];
@@ -61,7 +80,7 @@
  	GENERAL_NAME	*gen;
  	int	i;
  
-@@ -357,7 +372,8 @@ ssl_open(const char *server, struct sock
+@@ -357,7 +375,8 @@ ssl_open(const char *server, struct sock
  
  	ssl_init();
  	ssl_set_vrfy_level(uhp);
@@ -71,7 +90,7 @@
  		ssl_gen_err(catgets(catd, CATSET, 261, "SSL_CTX_new() failed"));
  		return STOP;
  	}
-@@ -496,7 +512,11 @@ smime_sign(FILE *ip, struct header *head
+@@ -496,7 +515,11 @@ smime_sign(FILE *ip, struct header *head
  }
  
  static int
@@ -83,7 +102,7 @@
  {
  	struct message	*x;
  	char	*cp, *sender, *to, *cc, *cnttype;
-@@ -505,7 +525,12 @@ smime_verify(struct message *m, int n, S
+@@ -505,7 +528,12 @@ smime_verify(struct message *m, int n, S
  	off_t	size;
  	BIO	*fb, *pb;
  	PKCS7	*pkcs7;
@@ -96,7 +115,7 @@
  	X509	*cert;
  	X509_NAME	*subj;
  	char	data[LINESIZE];
-@@ -614,7 +639,11 @@ cverify(void *vp)
+@@ -614,7 +642,11 @@ cverify(void *vp)
  {
  	int	*msgvec = vp, *ip;
  	int	ec = 0;
@@ -108,7 +127,7 @@
  	X509_STORE	*store;
  	char	*ca_dir, *ca_file;
  
-@@ -687,7 +716,11 @@ smime_encrypt(FILE *ip, const char *cert
+@@ -687,7 +719,11 @@ smime_encrypt(FILE *ip, const char *cert
  	X509	*cert;
  	PKCS7	*pkcs7;
  	BIO	*bb, *yb;
@@ -120,7 +139,7 @@
  	EVP_CIPHER	*cipher;
  
  	certfile = expand((char *)certfile);
-@@ -950,9 +983,14 @@ smime_certsave(struct message *m, int n,
+@@ -950,9 +986,14 @@ smime_certsave(struct message *m, int n,
  	off_t	size;
  	BIO	*fb, *pb;
  	PKCS7	*pkcs7;

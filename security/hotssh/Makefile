@@ -1,5 +1,5 @@
 # Created by: Ashish Shukla <wahjava@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/security/hotssh/Makefile 339634 2014-01-13 21:00:02Z rene $
 
 PORTNAME=	hotssh
 PORTVERSION=	0.2.7

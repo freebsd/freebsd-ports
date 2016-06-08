@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-sdl_mixer/Makefile 362027 2014-07-16 03:47:05Z adamw $
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.8

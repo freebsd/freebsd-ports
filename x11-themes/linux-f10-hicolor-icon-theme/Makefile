@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/x11-themes/linux-f10-hicolor-icon-theme/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.5

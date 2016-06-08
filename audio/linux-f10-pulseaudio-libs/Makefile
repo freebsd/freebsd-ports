@@ -1,5 +1,5 @@
 # Created by: avg
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-pulseaudio-libs/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	pulseaudio-libs
 PORTVERSION=	0.9.14

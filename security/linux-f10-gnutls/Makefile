@@ -1,5 +1,5 @@
 # Created by: Stas Timokhin <devel@stasyan.com>
-# $FreeBSD$
+# $FreeBSD: head/security/linux-f10-gnutls/Makefile 362314 2014-07-20 12:06:46Z rene $
 
 PORTNAME=	gnutls
 PORTVERSION=	2.4.2

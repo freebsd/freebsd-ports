@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/security/linux-f10-nss/Makefile 362314 2014-07-20 12:06:46Z rene $
 
 PORTNAME=	nss
 PORTVERSION=	3.12.3.99.3

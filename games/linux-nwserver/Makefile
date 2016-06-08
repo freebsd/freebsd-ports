@@ -1,5 +1,5 @@
 # Created by: Igor Pokrovsky <tiamat@comset.net>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-nwserver/Makefile 351187 2014-04-13 07:51:57Z xmj $
 
 PORTNAME=	nwserver
 PORTVERSION=	1.32

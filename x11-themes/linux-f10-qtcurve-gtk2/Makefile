@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/x11-themes/linux-f10-qtcurve-gtk2/Makefile 331383 2013-10-23 13:08:41Z makc $
 
 PORTNAME=	qtcurve-gtk2
 PORTVERSION=	0.69.2

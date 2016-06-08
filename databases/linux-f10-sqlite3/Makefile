@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/databases/linux-f10-sqlite3/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.5.9

@@ -1,5 +1,5 @@
 # Created by: Arjan van Leeuwen <freebsd-maintainer@opera.com>
-# $FreeBSD$
+# $FreeBSD: head/www/opera-linuxplugins/Makefile 354113 2014-05-15 12:41:58Z dinoex $
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}

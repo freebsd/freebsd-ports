@@ -1,4 +1,4 @@
-# Created by: Toni Gundogdu <legatvs@gmail.com>
+reated by: Toni Gundogdu <legatvs@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	quvi

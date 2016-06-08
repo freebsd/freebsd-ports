@@ -1,5 +1,5 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/net-im/yoono/Makefile 349693 2014-03-30 22:55:15Z nivit $
 
 PORTNAME=	yoono
 PORTVERSION=	1.8.43

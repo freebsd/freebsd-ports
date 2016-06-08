@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/devel/linux-f10-sdl12/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.13

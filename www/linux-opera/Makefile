@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/www/linux-opera/Makefile 362447 2014-07-21 16:17:27Z rene $
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}

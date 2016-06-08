@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/x11/linux-f10-xorg-libs/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	xorg-libs
 PORTVERSION=	7.4

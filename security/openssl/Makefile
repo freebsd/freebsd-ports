@@ -1,5 +1,5 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/security/openssl/Makefile 350548 2014-04-07 21:46:40Z bdrewery $
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.2

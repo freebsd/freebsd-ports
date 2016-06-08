@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/devel/linux-f10-dbus-glib/Makefile 362310 2014-07-20 11:52:36Z rene $
 
 PORTNAME=	dbus-glib
 PORTVERSION=	0.76

@@ -1,5 +1,5 @@
---- README.port.orig	Thu Oct 14 12:17:02 1999
-+++ README.port	Thu Oct 14 13:10:50 1999
+--- README.port.orig	2015-02-27 22:18:20 UTC
++++ README.port
 @@ -0,0 +1,44 @@
 +This is the ported version of the pipsecd program
 +from Pierre Beyssac at the ENST.

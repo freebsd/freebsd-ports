@@ -1,5 +1,5 @@
 # Created by: peter
-# $FreeBSD$
+# $FreeBSD: head/security/linux-f10-cyrus-sasl2/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	cyrus-sasl2
 PORTVERSION=	2.1.22

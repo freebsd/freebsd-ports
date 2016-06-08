@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-f10-mikmod/Makefile 362027 2014-07-16 03:47:05Z adamw $
 
 PORTNAME=	mikmod
 PORTVERSION=	3.2.0

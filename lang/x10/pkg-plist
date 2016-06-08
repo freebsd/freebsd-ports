@@ -491,8 +491,6 @@ stdlib/include/x10aux/throw.h
 stdlib/include/x10aux/vec_decl.h
 stdlib/include/x10rt.h
 stdlib/lib/libgc.a
-stdlib/lib/libgc.so
-stdlib/lib/libgc.so.1
 stdlib/lib/libx10.so
 stdlib/libx10.properties
 stdlib/x10.jar

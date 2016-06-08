@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/astro/google-earth/Makefile 354668 2014-05-20 19:14:06Z nox $
 
 PORTNAME=	google-earth
 PORTVERSION=	6.0.3.2197

@@ -1,5 +1,5 @@
 # Created by: Stas Timoknin <stast@bsdportal.ru>
-# $FreeBSD$
+# $FreeBSD: head/x11-toolkits/linux-f10-blt/Makefile 345290 2014-02-21 01:55:04Z miwi $
 
 PORTNAME=	blt
 PORTVERSION=	2.4

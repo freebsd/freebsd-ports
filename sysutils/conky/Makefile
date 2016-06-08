@@ -109,6 +109,7 @@ CONFIGURE_ARGS+=	--disable-imlib2
 .endif
 
 .if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2}
+BUILD_DEPENDS+=		tolua++:${PORTSDIR}/lang/tolua++
 USES+=			lua:51
 CONFIGURE_ARGS+=	--enable-lua
 .else

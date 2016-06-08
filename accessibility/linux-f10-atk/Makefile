@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/accessibility/linux-f10-atk/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	atk
 PORTVERSION=	1.24.0

@@ -1,5 +1,5 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/net/spideroak/Makefile 362611 2014-07-23 00:38:27Z nivit $
 
 PORTNAME=	spideroak
 PORTVERSION=	6.0
