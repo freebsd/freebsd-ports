@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Redis.pm
 %%SITE_PERL%%/Redis/Hash.pm
 %%SITE_PERL%%/Redis/List.pm
+%%SITE_PERL%%/Redis/Sentinel.pm
 %%PERL5_MAN3%%/Redis.3.gz
 %%PERL5_MAN3%%/Redis::Hash.3.gz
 %%PERL5_MAN3%%/Redis::List.3.gz
+%%PERL5_MAN3%%/Redis::Sentinel.3.gz
