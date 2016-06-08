@@ -10,6 +10,7 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Full featured Redis cache/session backend for Django
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.3:www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}redis>=2.9.0:databases/py-redis
