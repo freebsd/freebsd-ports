@@ -6,7 +6,7 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/images/binary.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bsr_nfy.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bsr_select.png
-%%PORTDOCS%%%%DOCSDIR%%/images/ca%%QT_LIBDIR%%ration.png
+%%PORTDOCS%%%%DOCSDIR%%/images/calibration.png
 %%PORTDOCS%%%%DOCSDIR%%/images/config.png
 %%PORTDOCS%%%%DOCSDIR%%/images/config1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/config10.png
@@ -70,7 +70,7 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/manual/binary.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/bsr_nfy.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/bsr_select.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/ca%%QT_LIBDIR%%ration.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/calibration.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/camera.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/closed.png
