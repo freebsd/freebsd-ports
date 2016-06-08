@@ -61,6 +61,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-TW.pak
 %%DATADIR%%/mksnapshot
+%%DATADIR%%/pseudo_locales/fake-bidi.pak
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/extension/demo/library.js
 %%DATADIR%%/resources/inspector/Images/applicationCache.png
@@ -96,7 +97,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/localStorage.png
 %%DATADIR%%/resources/inspector/Images/navigationControls.png
 %%DATADIR%%/resources/inspector/Images/navigationControls_2x.png
-%%DATADIR%%/resources/inspector/Images/notifications.svg
 %%DATADIR%%/resources/inspector/Images/paneAddButtons.png
 %%DATADIR%%/resources/inspector/Images/paneFilterButtons.png
 %%DATADIR%%/resources/inspector/Images/paneRefreshButtons.png
@@ -118,8 +118,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/resourcePlainIcon.png
 %%DATADIR%%/resources/inspector/Images/resourcePlainIconSmall.png
 %%DATADIR%%/resources/inspector/Images/resourcesTimeGraphIcon.png
-%%DATADIR%%/resources/inspector/Images/responsiveDesign.png
-%%DATADIR%%/resources/inspector/Images/responsiveDesign_2x.png
 %%DATADIR%%/resources/inspector/Images/searchNext.png
 %%DATADIR%%/resources/inspector/Images/searchPrev.png
 %%DATADIR%%/resources/inspector/Images/securityPropertyInfo.svg
@@ -142,9 +140,9 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/toolbarResizerVertical.png
 %%DATADIR%%/resources/inspector/Images/touchCursor.png
 %%DATADIR%%/resources/inspector/Images/touchCursor_2x.png
-%%DATADIR%%/resources/inspector/Images/updateServiceWorker.svg
 %%DATADIR%%/resources/inspector/InspectorBackendCommands.js
 %%DATADIR%%/resources/inspector/SupportedCSSProperties.js
+%%DATADIR%%/resources/inspector/Tests.js
 %%DATADIR%%/resources/inspector/accessibility_module.js
 %%DATADIR%%/resources/inspector/animation_module.js
 %%DATADIR%%/resources/inspector/audits_module.js
@@ -157,6 +155,8 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/diff_module.js
 %%DATADIR%%/resources/inspector/elements_module.js
 %%DATADIR%%/resources/inspector/emulated_devices_module.js
+%%DATADIR%%/resources/inspector/es_tree_module.js
+%%DATADIR%%/resources/inspector/formatter_worker_module.js
 %%DATADIR%%/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-1x.png
 %%DATADIR%%/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-2x.png
 %%DATADIR%%/resources/inspector/emulated_devices/google-nexus-5-horizontal-keyboard-1x.png
@@ -182,17 +182,14 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-1x.png
 %%DATADIR%%/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-2x.png
 %%DATADIR%%/resources/inspector/heap_snapshot_worker_module.js
-%%DATADIR%%/resources/inspector/inspector.css
 %%DATADIR%%/resources/inspector/inspector.html
 %%DATADIR%%/resources/inspector/inspector.js
 %%DATADIR%%/resources/inspector/layers_module.js
 %%DATADIR%%/resources/inspector/network_module.js
 %%DATADIR%%/resources/inspector/profiler_module.js
-%%DATADIR%%/resources/inspector/promises_module.js
 %%DATADIR%%/resources/inspector/resources_module.js
 %%DATADIR%%/resources/inspector/sass_module.js
 %%DATADIR%%/resources/inspector/screencast_module.js
-%%DATADIR%%/resources/inspector/script_formatter_worker_module.js
 %%DATADIR%%/resources/inspector/security_module.js
 %%DATADIR%%/resources/inspector/settings_module.js
 %%DATADIR%%/resources/inspector/snippets_module.js
@@ -200,7 +197,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/sources_module.js
 %%DATADIR%%/resources/inspector/temp_storage_shared_worker_module.js
 %%DATADIR%%/resources/inspector/timeline_module.js
-%%DATADIR%%/resources/inspector/toolbox.css
 %%DATADIR%%/resources/inspector/toolbox.html
 %%DATADIR%%/resources/inspector/toolbox.js
 %%DATADIR%%/resources/inspector/ui_lazy_module.js
