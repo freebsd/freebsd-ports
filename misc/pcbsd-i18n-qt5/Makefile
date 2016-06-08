@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-i18n-qt5
-PORTVERSION=	20160312
+PORTVERSION=	20160609
 CATEGORIES=	misc
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Qt5 i18n Support
 
 LICENSE=	BSD3CLAUSE
-
-RUN_DEPENDS=	pcbsd-base>=0:${PORTSDIR}/misc/pcbsd-base
 
 USE_QT5=        buildtools linguist
 USES=		tar:xz

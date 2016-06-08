@@ -5,7 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-i18n
-PORTVERSION=	1420819571
+PORTVERSION=	20160609
+PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -13,8 +14,7 @@ DISTFILES=
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD i18n Support
 
-RUN_DEPENDS=	pcbsd-base>=0:${PORTSDIR}/misc/pcbsd-base \
-		pcbsd-i18n-qt5>=0:${PORTSDIR}/misc/pcbsd-i18n-qt5 \
+RUN_DEPENDS=	pcbsd-i18n-qt5>=0:${PORTSDIR}/misc/pcbsd-i18n-qt5 \
 		ja-font-vlgothic>=0:${PORTSDIR}/japanese/font-vlgothic \
 		ibus-qt>=0:${PORTSDIR}/textproc/ibus-qt \
 		zh-ibus-chewing>=0:${PORTSDIR}/chinese/ibus-chewing \
