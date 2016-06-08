@@ -397,7 +397,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/profiles/uhd_2160p_60
 %%DATADIR%%/profiles/vcd_ntsc
 %%DATADIR%%/profiles/vcd_pal
-%%DATADIR%%/qt/filter_audiospectrum.yml
+%%QT4%%%%DATADIR%%/qt/filter_audiospectrum.yml
 %%QT4%%%%DATADIR%%/qt/filter_audiowaveform.yml
 %%QT4%%%%DATADIR%%/qt/filter_lightshow.yml
 %%QT4%%%%DATADIR%%/qt/producer_kdenlivetitle.yml

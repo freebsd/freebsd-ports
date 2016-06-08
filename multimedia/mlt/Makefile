@@ -2,7 +2,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	6.2.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -19,8 +19,9 @@ SLAVE_PORT?=	no
 # They both install bin/melt.
 CONFLICTS_INSTALL=	freeze-[0-9]*
 
-USE_GNOME=	cairo libxml2
+USE_GNOME=	libxml2
 USE_SDL=	image
+USE_XORG=	x11
 USES=		alias gmake iconv pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gpl --enable-gpl3 --target-os=FreeBSD
@@ -63,6 +64,7 @@ GTK2_CONFIGURE_ENABLE=	gtk2
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 JACK_CONFIGURE_ENABLE=	jackrack
+JACK_USE=		GNOME=glib20
 
 KDE4_CONFIGURE_ENV=	PATH="${KDE4_PREFIX}/bin:$$PATH"
 KDE4_CONFIGURE_WITH=	kde
@@ -83,6 +85,7 @@ SOX_CONFIGURE_ENABLE=	sox
 
 SWFDEC_LIB_DEPENDS=	libswfdec-0.8.so:graphics/swfdec
 SWFDEC_CONFIGURE_ENABLE=swfdec
+SWFDEC_USE=		GNOME=glib20,cairo
 
 VDPAU_CONFIGURE_ON=	--avformat-vdpau
 VDPAU_CONFIGURE_OFF=	--avformat-no-vdpau
@@ -94,10 +97,6 @@ VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
 .if ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64 (invokes i386 asm)
-.endif
-
-.if ${PORT_OPTIONS:MVDPAU} && ${PORT_OPTIONS:MFFMPEG}
-USE_XORG+=	x11
 .endif
 
 pre-configure:
