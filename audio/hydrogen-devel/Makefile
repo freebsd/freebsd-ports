@@ -9,7 +9,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	Advanced drum machine
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
@@ -17,10 +18,10 @@ CONFLICTS=	hydrogen-0.*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hydrogen-music
-GH_TAGNAME=    718b2652fb
+GH_TAGNAME=	718b2652fb
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build gui \
-		network xml xmlpatterns
+		corelib network xml xmlpatterns
 USES=		cmake desktop-file-utils pkgconfig
 
 OPTIONS_SINGLE=		EXPORT
@@ -97,7 +98,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|EXISTS(tar|EXISTS(${LOCALBASE}/lib/libtar.so|g' \
 		${WRKSRC}/CMakeLists.txt
 
-test: build
+do-test:
 	cd ${WRKSRC} && ./src/tests/tests
 
 .include <bsd.port.mk>
