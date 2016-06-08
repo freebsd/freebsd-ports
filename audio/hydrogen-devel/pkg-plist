@@ -1,7 +1,7 @@
-%%QT_BINDIR%%/h2cli
-%%QT_BINDIR%%/h2player
-%%QT_BINDIR%%/h2synth
-%%QT_BINDIR%%/hydrogen
+bin/h2cli
+bin/h2player
+bin/h2synth
+bin/hydrogen
 include/hydrogen/IO/AlsaAudioDriver.h
 include/hydrogen/IO/AlsaMidiDriver.h
 include/hydrogen/IO/AudioOutput.h
