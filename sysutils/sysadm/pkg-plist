@@ -2,11 +2,9 @@ bin/sysadm-binary
 bin/sysadm-server
 bin/sysadm-bridge
 bin/sysadm-bridge-start
-etc/launchd/daemons/org.pcbsd.sysadm.json.dist
-etc/launchd/daemons/org.pcbsd.sysadm-rest.json.dist
+etc/job.d/org.pcbsd.sysadm.json
+etc/job.d/org.pcbsd.sysadm-rest.json
 etc/sysadm.conf.dist
 etc/rc.d/sysadm
 etc/rc.d/sysadm-bridge
 etc/rc.d/sysadm-rest
-share/launchd/daemons/org.pcbsd.sysadm.json
-share/launchd/daemons/org.pcbsd.sysadm-rest.json
