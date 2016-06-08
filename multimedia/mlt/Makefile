@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.9.6
-PORTREVISION?=	1
+PORTVERSION=	6.2.0
+PORTREVISION?=	0
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -19,7 +19,7 @@ SLAVE_PORT?=	no
 # They both install bin/melt.
 CONFLICTS_INSTALL=	freeze-[0-9]*
 
-USE_GNOME=	libxml2
+USE_GNOME=	cairo libxml2
 USE_SDL=	image
 USES=		alias gmake iconv pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -66,6 +66,8 @@ JACK_CONFIGURE_ENABLE=	jackrack
 
 KDE4_CONFIGURE_ENV=	PATH="${KDE4_PREFIX}/bin:$$PATH"
 KDE4_CONFIGURE_WITH=	kde
+KDE4_USE=		kde4=kdelibs
+KDE4_IMPLIES=		QT4
 
 QT4_LIB_DEPENDS=	libexif.so:graphics/libexif
 QT4_USE=		QT4=corelib,gui,opengl,svg,xml
@@ -92,10 +94,6 @@ VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
 .if ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64 (invokes i386 asm)
-.endif
-
-.if ${PORT_OPTIONS:MKDE4} && ${PORT_OPTIONS:MQT4}
-USE_KDE4+=	kdelibs
 .endif
 
 .if ${PORT_OPTIONS:MVDPAU} && ${PORT_OPTIONS:MFFMPEG}
