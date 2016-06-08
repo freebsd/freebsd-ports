@@ -96,6 +96,7 @@
     SUBDIR += irrtoolset
     SUBDIR += isic
     SUBDIR += jnettop
+    SUBDIR += kapacitor
     SUBDIR += kismet
     SUBDIR += klg
     SUBDIR += lanmap
