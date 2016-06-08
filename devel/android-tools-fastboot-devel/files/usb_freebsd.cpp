@@ -44,7 +44,7 @@ struct usb_handle {
 
 class LibusbUsbTransport : public Transport {
 public:
-	LibusbUsbTransport(std::unique_ptr<usb_handle> handle):
+	explicit LibusbUsbTransport(std::unique_ptr<usb_handle> handle):
 		h(std::move(handle)) {}
 	~LibusbUsbTransport() override = default;
 

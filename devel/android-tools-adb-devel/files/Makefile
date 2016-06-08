@@ -30,6 +30,7 @@ SRCS+= transport_local.cpp
 SRCS+= transport_usb.cpp
 
 TEST_SRCS+= adb_io_test.cpp
+TEST_SRCS+= adb_listeners_test.cpp
 TEST_SRCS+= adb_utils_test.cpp
 TEST_SRCS+= fdevent_test.cpp
 TEST_SRCS+= shell_service_protocol_test.cpp
@@ -71,8 +72,11 @@ SRCS+= socket_local_server_unix.c
 SRCS+= socket_loopback_client_unix.c
 SRCS+= socket_loopback_server_unix.c
 SRCS+= socket_network_client_unix.c
+SRCS+= ../libcutils/sockets.cpp
 SRCS+= load_file.c
 SRCS+= threads.c
+# XXX Obsolete after 10.2 or r279980/r280329
+CPPFLAGS.sockets.cpp+= -o ${.TARGET}
 
 # required by base/file.cpp
 .PATH: ${.CURDIR}/../liblog

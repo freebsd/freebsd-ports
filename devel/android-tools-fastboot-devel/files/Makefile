@@ -56,9 +56,13 @@ CPPFLAGS.sockets.cpp+=	-o ${.TARGET} # XXX pre-r279980
 
 # required by base and libutils
 .PATH:	${.CURDIR}/../liblog
+SRCS+=	config_write.c
 SRCS+=	fake_log_device.c
-SRCS+=	logd_write.c
-CPPFLAGS.logd_write.c+=	-DFAKE_LOG_DEVICE=1
+SRCS+=	fake_writer.c
+SRCS+=	logger_lock.c
+SRCS+=	logger_name.c
+SRCS+=	logger_write.c
+CPPFLAGS.config_write.c+=	-DFAKE_LOG_DEVICE=1
 
 # required by ext4_utils
 .PATH:	${.CURDIR}/../libselinux/src
@@ -70,6 +74,7 @@ SRCS+=	label.c
 SRCS+=	label_android_property.c
 SRCS+=	label_file.c
 SRCS+=	label_support.c
+SRCS+=	regex.c
 CPPFLAGS.label_file.c+=	-D_WITH_GETLINE
 
 # required by fastboot and ext4_utils
