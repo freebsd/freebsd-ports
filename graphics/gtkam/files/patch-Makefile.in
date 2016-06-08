@@ -1,15 +1,15 @@
---- Makefile.in.orig	2008-04-23 22:55:02.000000000 +0200
-+++ Makefile.in	2008-04-23 22:56:37.000000000 +0200
-@@ -333,7 +333,7 @@
+--- Makefile.in.orig	2016-06-08 14:43:40 UTC
++++ Makefile.in
+@@ -439,7 +439,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--SUBDIRS = m4m art doc help omf-install packaging pixmaps po src test
-+SUBDIRS = m4m art doc $(GNOME_SUBDIRS) packaging pixmaps po src test
- ACLOCAL_AMFLAGS = -I m4m
+-SUBDIRS = gphoto-m4 art doc help omf-install packaging pixmaps po src test
++SUBDIRS = gphoto-m4 art doc $(GNOME_SUBDIRS) packaging pixmaps po src test
+ ACLOCAL_AMFLAGS = -I m4 -I gphoto-m4
  
  # disable scrollkeeper for distcheck
-@@ -342,7 +342,7 @@
+@@ -448,7 +448,7 @@ DISTCHECK_CONFIGURE_FLAGS = --disable-sc
  ########################################################################
  # Install a few support and doc files
  gtkamdocdir = $(datadir)/doc/gtkam
