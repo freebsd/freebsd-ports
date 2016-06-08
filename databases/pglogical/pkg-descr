@@ -1,0 +1,7 @@
+pglogical is a logical replication system implemented entirely as a
+PostgreSQL extension. Fully integrated, it requires no triggers or
+external programs. This alternative to physical replication is a
+highly efficient method of replicating data using a publish/subscribe
+model for selective replication.
+
+WWW: http://2ndquadrant.com/en/resources/pglogical/

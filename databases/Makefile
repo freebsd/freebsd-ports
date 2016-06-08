@@ -567,6 +567,7 @@
     SUBDIR += pgfouine
     SUBDIR += pglesslog
     SUBDIR += pgloader
+    SUBDIR += pglogical
     SUBDIR += pglogical-output
     SUBDIR += pgpool
     SUBDIR += pgpool-II
