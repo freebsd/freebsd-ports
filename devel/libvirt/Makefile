@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -29,6 +29,7 @@ OPTIONS_DEFINE_amd64+=	BHYVE
 OPTIONS_DEFAULT_amd64+=	BHYVE
 .else
 PLIST_SUB+=		BHYVE="@comment "
+SUB_LIST+=		BHYVE="@comment "
 CONFIGURE_ARGS+=	--without-bhyve
 .endif
 QEMU_DESC=	QEMU driver
@@ -74,8 +75,6 @@ CONFIGURE_ARGS+=	--without-avahi \
 		--without-udev \
 		--without-netcf \
 		--without-sysctl \
-		--without-lxc \
-		--without-uml \
 		--without-xen \
 		--without-login-shell \
 		--with-ssh2 \
@@ -100,6 +99,7 @@ PLIST_SUB+=	PORTVERSION="-${PORTVERSION}" \
 PORTDOCS=	*
 
 SUB_FILES=	pkg-message
+SUB_LIST+=	PORTVERSION="-${PORTVERSION}"
 
 .include <bsd.port.options.mk>
 
@@ -115,9 +115,6 @@ CONF_FILES=	\
 		qemu.conf \
 		virtlockd.conf \
 		virtlogd.conf
-
-post-extract:
-	@${CP} ${FILESDIR}/libvirt_nss_bsd.syms ${WRKSRC}/tools/nss
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(LN_S) ../default.xml default.xml|true|' \
