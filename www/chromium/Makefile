@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	51.0.2704.84
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -54,6 +55,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libxml2.so:textproc/libxml2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
+		alsa-lib>=1.1.1_1:audio/alsa-lib \
 		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf \
 		xdg-open:devel/xdg-utils
 
