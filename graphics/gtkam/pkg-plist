@@ -43,6 +43,7 @@ share/locale/da/LC_MESSAGES/gtkam.mo
 share/locale/de/LC_MESSAGES/gtkam.mo
 share/locale/eo/LC_MESSAGES/gtkam.mo
 share/locale/es/LC_MESSAGES/gtkam.mo
+share/locale/fi/LC_MESSAGES/gtkam.mo
 share/locale/fr/LC_MESSAGES/gtkam.mo
 share/locale/hu/LC_MESSAGES/gtkam.mo
 share/locale/id/LC_MESSAGES/gtkam.mo
@@ -58,6 +59,7 @@ share/locale/pt_BR/LC_MESSAGES/gtkam.mo
 share/locale/ru/LC_MESSAGES/gtkam.mo
 share/locale/sk/LC_MESSAGES/gtkam.mo
 share/locale/sl/LC_MESSAGES/gtkam.mo
+share/locale/sr/LC_MESSAGES/gtkam.mo
 share/locale/sv/LC_MESSAGES/gtkam.mo
 share/locale/uk/LC_MESSAGES/gtkam.mo
 share/locale/vi/LC_MESSAGES/gtkam.mo
