@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160610
+  AFFECTS: users of databases/postgresql-repmgr
+  AUTHOR: bofh@FreeBSD.org
+
+  The port has been repocopied to databases/postgresql-repmgr2 and current
+  post has been updated to 3.x series. If anyone is still looking forward
+  to use the 2.x please upgrade as following.
+
+  # portmaster -o databases/postgresql-repmgr2 databases/postgresql-repmgr
+    or
+  # portupgrade -o databases/postgresql-repmgr2 databases/postgresql-repmgr
+
+  Otherwise if you want to move on with 3.x series just use
+
+  # portmaster -r databases/postgresql-repmgr 
+    or
+  # portupgrade -fr databases/postgresql-repmgr
+
 20160605
   AFFECTS: Users of www/h2o
   AUTHOR: junovitch@FreeBSD.org
