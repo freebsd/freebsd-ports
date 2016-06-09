@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	xmlada
-PORTVERSION=	4.6.0.0
-PORTREVISION=	2
+PORTVERSION=	17.0.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://downloads.dragonlace.net/src/
-DISTNAME=	xmlada-gpl-2015-src
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore XML suite for the Ada language
 
 LICENSE=	GPLv3
 
-USES=		ada
+USES=		ada:run
+USE_GITHUB=	yes
+GH_ACCOUNT=	AdaCore
+GH_PROJECT=	xmlada
+GH_TAGNAME=	1184d97
+
 MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER} \
 		LIBVER=${PORTVERSION}
 ALL_TARGET=	schema/lib/static/libxmlada_schema.a \
@@ -29,12 +31,8 @@ DSCHEMA=	${WRKSRC}/schema/dummy_schema.adb
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
-ALL_TARGET+=	docs
-.endif
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+DOCS_ALL_TARGET=	gen-docs
 
 FIND1=	cd ${WRKSRC}/unicode && ${FIND} -s * \( -name "unicode*.ad[bs]" \
 	-a ! -name "unicode.ads" \) -exec ${PRINTF} ', "%s"' {} \;
@@ -50,13 +48,12 @@ FIND5=	cd ${WRKSRC}/schema && ${FIND} -s * \( -name "schema*.ad[bs]" \
 
 post-patch: dummy-unicode dummy-input_sources dummy-sax dummy-dom dummy-schema
 	@${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}
-	# vital gpr files are missing from GPL 2015, recreate them
-	@${SED} -e 's|@exec_prefix@|$${prefix}|' \
-		-e 's|@libdir@|$${exec_prefix}/lib|' \
-		-e 's|@includedir@|$${prefix}/include|' \
-		-e 's|@DEFAULT_LIBRARY_TYPE@|static|' \
-		-e 's|@PACKAGE_VERSION@|${PORTVERSION}|' \
-		${WRKSRC}/xmlada-config.in > ${WRKSRC}/xmlada-config
+	@${MKDIR} ${WRKSRC}/sax/obj/relocatable
+	@${MKDIR} ${WRKSRC}/sax/obj/static
+	@${MKDIR} ${WRKSRC}/sax/lib/relocatable
+	@${MKDIR} ${WRKSRC}/sax/lib/static
+	@${MKDIR} ${WRKSRC}/schema/obj/relocatable
+	@${MKDIR} ${WRKSRC}/schema/obj/static
 	@${SED} -e '/^with/d' -e 's|@ZONE@|unicode|' \
 		-e "s|@FILES@|`${FIND1}`|" \
 		-e 's|@VERSION@|${PORTVERSION}|' ${FILESDIR}/generic_gpr.in \
@@ -85,7 +82,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/gnat \
 		${STAGEDIR}${PREFIX}/lib/xmlada/relocatable \
 		${STAGEDIR}${PREFIX}/lib/xmlada/static \
-		${STAGEDIR}${PREFIX}/share/gps/plug-ins \
 		${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/dom/*.ad[bs] \
 		${WRKSRC}/input_sources/*.ad[bs] \
@@ -118,15 +114,12 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/xmlada/static
 	${INSTALL_DATA} ${WRKSRC}/distrib/xml*.gpr \
 		${STAGEDIR}${PREFIX}/lib/gnat
-	${INSTALL_DATA} ${WRKSRC}/distrib/xmlada_gps.py \
-		${STAGEDIR}${PREFIX}/share/gps/plug-ins
-	${INSTALL_SCRIPT} ${WRKSRC}/xmlada-config ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	(cd ${WRKSRC}/docs/_build/html && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${RM} -r ${STAGEDIR}${DOCSDIR}/_sources \
 		${STAGEDIR}${DOCSDIR}/.buildinfo
-.endif
 
 dummy-unicode:
 	@${GREP} ^package ${WRKSRC}/unicode/unicode-*.ads | \
