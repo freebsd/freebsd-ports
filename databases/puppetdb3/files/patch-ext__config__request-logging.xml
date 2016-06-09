@@ -1,0 +1,10 @@
+--- ext/config/request-logging.xml.orig	2016-02-25 00:02:56 UTC
++++ ext/config/request-logging.xml
+@@ -1,6 +1,6 @@
+ <configuration debug="false">
+     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+-        <file>/var/log/puppetlabs/puppetdb/puppetdb-access.log</file>
++        <file>/var/log/puppetdb/puppetdb-access.log</file>
+         <encoder>
+             <pattern>combined</pattern>
+             <!-- To have the same "combined" pattern with elapsedTime ('%D')
