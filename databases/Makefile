@@ -653,6 +653,7 @@
     SUBDIR += postgresql-plv8js
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
+    SUBDIR += postgresql-repmgr2
     SUBDIR += postgresql90-client
     SUBDIR += postgresql90-pgtcl
     SUBDIR += postgresql90-plperl
