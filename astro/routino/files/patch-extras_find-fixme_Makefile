@@ -1,0 +1,42 @@
+--- extras/find-fixme/Makefile.orig	2016-06-04 17:12:29 UTC
++++ extras/find-fixme/Makefile
+@@ -52,8 +52,8 @@ all-bin: $(EXE)
+ 	@[ -d $(WEBBINDIR) ] || mkdir -p $(WEBBINDIR)
+ 	@for file in $(EXE); do \
+ 	    if [ ! -f $(WEBBINDIR)/$$file ] || [ $$file -nt $(WEBBINDIR)/$$file ]; then \
+-	       echo cp $$file $(WEBBINDIR) ;\
+-	       cp -f $$file $(WEBBINDIR) ;\
++	       echo install $$file $(WEBBINDIR) ;\
++	       install $$file $(WEBBINDIR) ;\
+ 	    fi ;\
+ 	 done
+ 
+@@ -61,22 +61,22 @@ all-data:
+ 	@[ -d $(WEBDATADIR) ] || mkdir -p $(WEBDATADIR)
+ 	@for file in $(DATA); do \
+ 	    if [ ! -f $(WEBDATADIR)/$$file ] || [ $$file -nt $(WEBDATADIR)/$$file ]; then \
+-	       echo cp $$file $(WEBDATADIR) ;\
+-	       cp -f $$file $(WEBDATADIR) ;\
++	       echo install $$file $(WEBDATADIR) ;\
++	       install $$file $(WEBDATADIR) ;\
+ 	    fi ;\
+ 	 done
+ 
+ all-www:
+ 	@for file in $(WWW_COPY); do \
+ 	    if [ ! -f $(WEBWWWDIR)/$$file ] || [ $(ROUTINO_WEBWWWDIR)/$$file -nt $(WEBWWWDIR)/$$file ]; then \
+-	       echo cp $(ROUTINO_WEBWWWDIR)/$$file $(WEBWWWDIR) ;\
+-	       cp -f $(ROUTINO_WEBWWWDIR)/$$file $(WEBWWWDIR) ;\
++	       echo install $(ROUTINO_WEBWWWDIR)/$$file $(WEBWWWDIR) ;\
++	       install $(ROUTINO_WEBWWWDIR)/$$file $(WEBWWWDIR) ;\
+ 	    fi ;\
+ 	 done
+ 	@for file in $(DOC_COPY); do \
+ 	    if [ ! -f $(WEBWWWDIR)/$$file ] || [ $(ROUTINO_DOCDIR)/$$file -nt $(WEBWWWDIR)/$$file ]; then \
+-	       echo cp $(ROUTINO_DOCDIR)/$$file $(WEBWWWDIR) ;\
+-	       cp -f $(ROUTINO_DOCDIR)/$$file $(WEBWWWDIR) ;\
++	       echo install $(ROUTINO_DOCDIR)/$$file $(WEBWWWDIR) ;\
++	       install $(ROUTINO_DOCDIR)/$$file $(WEBWWWDIR) ;\
+ 	    fi ;\
+ 	 done
+ 
