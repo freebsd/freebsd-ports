@@ -12,22 +12,39 @@
 #
 # openntpd_enable (bool):	Set to NO by default.
 #				Set it to YES to enable openntpd.
+# openntpd_config (str):	Path to ntpd.conf
+#				Default: %%PREFIX%%/etc/ntpd.conf
+# openntpd_flags (str):		Flags passed to ntpd(8)
+#				Default: none
 
 . /etc/rc.subr
+
+name=openntpd
+rcvar=openntpd_enable
+
+start_precmd="openntpd_checkconfig"
+restart_precmd="openntpd_checkconfig"
+configtest_cmd="openntpd_checkconfig"
+extra_commands="configtest"
+
+load_rc_config $name
+
+: ${openntpd_enable:="NO"}
+: ${openntpd_config:="%%PREFIX%%/etc/ntpd.conf"}
+
+command=%%PREFIX%%/sbin/ntpd
+command_args="-f ${openntpd_config}"
+required_files=${openntpd_config}
 
 check_process()
 {
         pgrep -f $command
 }
 
-name=openntpd
-rcvar=openntpd_enable
-
-command=%%PREFIX%%/sbin/ntpd
-required_files=%%PREFIX%%/etc/ntpd.conf
-
-load_rc_config $name
-
-: ${openntpd_enable="NO"}
+openntpd_checkconfig()
+{
+	echo "Performing sanity check on ${name} configuration:"
+	eval ${command} ${command_args} ${openntpd_flags} -n
+}
 
 run_rc_command "$1"
