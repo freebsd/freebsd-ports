@@ -3,7 +3,7 @@
 
 PORTNAME=	Net-DNS
 PORTVERSION=	1.06
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
@@ -14,8 +14,6 @@ COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-Digest-HMAC>=1.03:security/p5-Digest-HMAC
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Digest-BubbleBabble>=0:security/p5-Digest-BubbleBabble \
 		p5-Test-Pod>=0:devel/p5-Test-Pod
 
