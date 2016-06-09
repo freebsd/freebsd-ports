@@ -3,7 +3,7 @@
 
 PORTNAME=	asis
 PORTVERSION=	2015
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src

@@ -3,7 +3,7 @@
 
 PORTNAME=	polyorb
 PORTVERSION=	2.11.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	polyorb-gpl-${YEAR}-src
