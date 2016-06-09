@@ -6,7 +6,7 @@ COMMENT=	MCollective client to interact with the NRPE monitoring system
 
 # See MASTERDIR for MAINTAINER.
 
-RUN_DEPENDS=	mcollective-nrpe-common>=${PORTVERSION}:${PORTSDIR}/sysutils/mcollective-nrpe-common
+RUN_DEPENDS=	mcollective-nrpe-common>=${PORTVERSION}:sysutils/mcollective-nrpe-common
 
 MASTERDIR=	${.CURDIR}/../mcollective-nrpe-common
 
