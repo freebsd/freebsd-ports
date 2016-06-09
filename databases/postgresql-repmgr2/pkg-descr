@@ -1,0 +1,4 @@
+repmgr allows you to monitor and manage your replicated PostgreSQL
+databases as a single cluster.
+
+WWW: http://projects.2ndquadrant.com/repmgr
