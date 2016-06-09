@@ -11,7 +11,7 @@ COMMENT=	PuppetDB storeconfigs backend terminus module
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	puppet:${PORTSDIR}/sysutils/puppet4
+BUILD_DEPENDS=	puppet:sysutils/puppet4
 
 CONFLICTS_INSTALL=	puppetdb-terminus-* puppetdb-terminus4-*
 USE_RUBY=	yes
