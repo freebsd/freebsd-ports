@@ -1,6 +1,6 @@
---- src/ffmpeg2theora.c.orig	2012-01-29 17:00:19.000000000 +0900
-+++ src/ffmpeg2theora.c	2012-07-04 01:49:09.000000000 +0900
-@@ -2970,7 +2970,11 @@
+--- src/ffmpeg2theora.c.orig	2016-01-10 04:35:56 UTC
++++ src/ffmpeg2theora.c
+@@ -3103,7 +3103,11 @@ int main(int argc, char **argv) {
                  fprintf(stderr,"\nUnable to decode input.\n");
              return(1);
          }
