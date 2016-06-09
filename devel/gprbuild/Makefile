@@ -3,10 +3,7 @@
 
 PORTNAME=	gprbuild
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://downloads.dragonlace.net/src/
-DISTNAME=	gprbuild-gpl-${YEAR}-src
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore multi-language software build tool
@@ -15,26 +12,29 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	xmlada>=4.4:textproc/xmlada
 
-YEAR=		2015
-SNAPSHOT=	20150506
+SNAPSHOT=	20160609
 USES=		ada
+USE_GITHUB=	yes
+GH_ACCOUNT=	AdaCore
+GH_PROJECT=	gprbuild
+GH_TAGNAME=	376670f
+
+PORTDOCS=	*
 MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
-PORTDOCS=	html txt pdf
-CONHOST=	${CONFIGURE_TARGET}
+BUILD_WRKSRC=	${WRKSRC}/construction
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 INSTALL_TARGET=	install
 
-OPTIONS_DEFINE=	DOCS
-DOCS_INSTALL_TARGET=	install-docs
-
-.include <bsd.port.options.mk>
+#OPTIONS_DEFINE=	DOCS
+#DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+#DOCS_ALL_TARGET=	gen-docs
+#DOCS_INSTALL_TARGET=	install-docs
 
 post-patch:
-	${CP} ${FILESDIR}/Makefile.BSD ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -i "" -e "s,@AUXPREFIX@,${PREFIX}/gcc5-aux," \
+	${MKDIR} ${WRKDIR}/trash ${BUILD_WRKSRC}
+	${CP} ${FILESDIR}/Makefile.BSD ${WRKSRC}/construction/Makefile
+	@${REINPLACE_CMD} -i "" -e "s,@AUXPREFIX@,${PREFIX}/${ADAXX}-aux," \
 		${WRKSRC}/share/gprconfig/compilers.xml
-	${SED} -e 's|@host@|${CONHOST}|' \
-		${WRKSRC}/src/gprconfig-sdefault.ads.in > \
-		${WRKSRC}/src/gprconfig-sdefault.ads
-	${MV} ${WRKSRC}/share/gprconfig/*.orig ${WRKSRC}/obj-cov
+	${MV} ${WRKSRC}/share/gprconfig/*.orig ${WRKDIR}/trash
 
 .include <bsd.port.mk>
