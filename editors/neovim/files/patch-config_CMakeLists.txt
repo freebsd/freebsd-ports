@@ -1,0 +1,11 @@
+--- config/CMakeLists.txt.orig	2016-06-09 12:33:52 UTC
++++ config/CMakeLists.txt
+@@ -74,7 +74,7 @@ check_c_source_compiles("
+   #define _BSD_SOURCE 1
+   #define _DEFAULT_SOURCE 1
+   ${SI}
+-  #include <endian.h>
++  #include <sys/endian.h>
+   #ifndef be64toh
+   # error No be64toh macros
+   #endif
