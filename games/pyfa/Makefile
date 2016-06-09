@@ -33,7 +33,7 @@ WX_COMPS=	wx:run python:run
 OPTIONS_DEFINE=		DPSGRAPHING
 DPSGRAPHING_DESC=	DPS graphing (requires NumPy and matplotlib)
 
-DPSGRAPHING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.0:${PORTSDIR}/math/py-matplotlib \
+DPSGRAPHING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.0:math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools
 

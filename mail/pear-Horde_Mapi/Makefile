@@ -15,6 +15,6 @@ USE_HORDE_RUN=	Horde_Date \
 
 USE_PHP+=	bcmath
 
-RUN_DEPENDS+=	${PEARDIR}/Math/BigInteger.php:${PORTSDIR}/math/pear-Math_BigInteger
+RUN_DEPENDS+=	${PEARDIR}/Math/BigInteger.php:math/pear-Math_BigInteger
 
 .include <bsd.port.mk>

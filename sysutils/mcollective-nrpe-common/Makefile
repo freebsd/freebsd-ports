@@ -9,7 +9,7 @@ COMMENT?=	MCollective common files to interact with the NRPE monitoring system
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS?=	mcollective>=2:${PORTSDIR}/sysutils/mcollective
+RUN_DEPENDS?=	mcollective>=2:sysutils/mcollective
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
