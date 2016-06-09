@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNS
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.06
 PORTEPOCH=	1
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
@@ -14,14 +13,14 @@ COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	p5-Digest-HMAC>=1.03:security/p5-Digest-HMAC
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Digest-BubbleBabble>=0:security/p5-Digest-BubbleBabble \
 		p5-Test-Pod>=0:devel/p5-Test-Pod
 
-OPTIONS_DEFINE=	GOST IDN IPV6 SSHFP TSIG
-OPTIONS_DEFAULT=TSIG
+OPTIONS_DEFINE=	GOST IDN IPV6 SSHFP
 GOST_DESC=	GOST support
 SSHFP_DESC=	SSH2 Fingerprint support
-TSIG_DESC=	Transaction Signature Support
 
 CONFIGURE_ARGS=	--no-IPv6-tests --no-online-tests
 NO_ARCH=	yes
@@ -34,8 +33,6 @@ IDN_BUILD_DEPENDS=	p5-Net-LibIDN>=0.12:dns/p5-Net-LibIDN
 IDN_RUN_DEPENDS=	p5-Net-LibIDN>=0.12:dns/p5-Net-LibIDN
 SSHFP_BUILD_DEPENDS=	p5-Digest-BubbleBabble>=0.01:security/p5-Digest-BubbleBabble
 SSHFP_RUN_DEPENDS=	p5-Digest-BubbleBabble>=0.01:security/p5-Digest-BubbleBabble
-TSIG_BUILD_DEPENDS=	p5-Digest-HMAC>=1.03:security/p5-Digest-HMAC
-TSIG_RUN_DEPENDS=	p5-Digest-HMAC>=1.03:security/p5-Digest-HMAC
 
 .include <bsd.port.pre.mk>
 
