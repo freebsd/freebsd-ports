@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Flask
-PORTVERSION=	0.11
+PORTVERSION=	0.11.1
 CATEGORIES=	www python
-#MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -17,9 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=0.11:www/py-werkzeug \
 		${PYTHON_PKGNAMEPREFIX}itsdangerous>=0.24:security/py-itsdangerous \
 		${PYTHON_PKGNAMEPREFIX}click>=6.6:devel/py-click
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	pallets
-GH_PROJECT=	${PORTNAME:tl}
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	pallets
+#GH_PROJECT=	${PORTNAME:tl}
 
 USES=	python
 USE_PYTHON=	distutils autoplist
