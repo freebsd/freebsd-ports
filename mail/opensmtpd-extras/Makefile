@@ -37,10 +37,10 @@ NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=	OPENSMTP_DEVEL
 
 OPENSMTP_DEVEL_DESC=	Depend on opensmtpd-devel (opensmtpd if off)
-OPENSMTP_DEVEL_BUILD_DEPENDS_OFF=	smtpctl:${PORTSDIR}/mail/opensmtpd
-OPENSMTP_DEVEL_RUN_DEPENDS_OFF=		smtpctl:${PORTSDIR}/mail/opensmtpd
-OPENSMTP_DEVEL_BUILD_DEPENDS=	smtpctl:${PORTSDIR}/mail/opensmtpd-devel
-OPENSMTP_DEVEL_RUN_DEPENDS=	smtpctl:${PORTSDIR}/mail/opensmtpd-devel
+OPENSMTP_DEVEL_BUILD_DEPENDS_OFF=	smtpctl:mail/opensmtpd
+OPENSMTP_DEVEL_RUN_DEPENDS_OFF=		smtpctl:mail/opensmtpd
+OPENSMTP_DEVEL_BUILD_DEPENDS=	smtpctl:mail/opensmtpd-devel
+OPENSMTP_DEVEL_RUN_DEPENDS=	smtpctl:mail/opensmtpd-devel
 
 .if empty(SLAVE_PORT)
 OPTIONS_GROUP=			TOOLS TABLE FILTER FILTER_EXP QUEUE SCHEDULER
@@ -129,7 +129,7 @@ TABLE_SOCKETMAP_RUN_DEPENDS=		${INSTALL_DIR}/table-socketmap:mail/opensmtpd-extr
 TABLE_SQLITE_RUN_DEPENDS=		${INSTALL_DIR}/table-sqlite:mail/opensmtpd-extras-table-sqlite
 
 # Tools
-TOOL_STATS_RUN_DEPENDS=			tool-stats:${PORTSDIR}/mail/opensmtpd-extras-tool-stats
+TOOL_STATS_RUN_DEPENDS=			tool-stats:mail/opensmtpd-extras-tool-stats
 .else
 
 # Only install this for the opensmtpd-extras master port
