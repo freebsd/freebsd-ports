@@ -15,8 +15,21 @@ load_rc_config $name
 : ${argus_procname="%%PREFIX%%/sbin/argus"}
 : ${argus_flags="-F %%PREFIX%%/etc/argus.conf"}
 
+pidfile=${argus_pidfile:-'/var/run/argus.pid'}
 required_files="${argus_config}"
 command=$argus_procname
 command_args="${argus_flags}"
+start_cmd="argus_start"
+
+argus_start()
+{
+    if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+        echo 1>&2 "${name} already running? (pid=$rc_pid)."
+        return 1
+    fi
+    echo "Starting ${name}."
+    /usr/sbin/daemon -p $pidfile ${command} -d ${argus_flags}
+    _run_rc_postcmd
+}
 
 run_rc_command "$1"
