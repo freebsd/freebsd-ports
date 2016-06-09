@@ -18,7 +18,7 @@ BUILD_DEPENDS=	rubygem-facter>=0:sysutils/rubygem-facter \
 
 USE_RC_SUBR=	puppetdb
 
-CONFLICTS_INSTALL=	puppetdb4-*
+CONFLICTS_INSTALL=	puppetdb3-* puppetdb4-*
 USES=		shebangfix
 SHEBANG_FILES=	ext/files/puppetdb \
 		ext/files/puppetdb-anonymize \
