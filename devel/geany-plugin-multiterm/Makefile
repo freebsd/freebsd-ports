@@ -4,7 +4,7 @@ PORTNAME=	geany-plugin-multiterm
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
 BUILD_DEPENDS=	valac:lang/vala
