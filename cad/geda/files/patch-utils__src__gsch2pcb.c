@@ -1,6 +1,6 @@
---- utils/src/gsch2pcb.c.orig	2013-08-18 08:44:47.000000000 +0200
-+++ utils/src/gsch2pcb.c	2014-11-18 18:53:20.303642614 +0100
-@@ -1397,13 +1397,13 @@
+--- utils/src/gsch2pcb.c.orig	2013-08-18 06:44:47 UTC
++++ utils/src/gsch2pcb.c
+@@ -1397,13 +1397,13 @@ main (gint argc, gchar ** argv)
    pcbdata_path = g_getenv ("PCBDATA");  /* do not free return value */
    if (pcbdata_path != NULL) {
      /* If PCBDATA is set, use the value */
