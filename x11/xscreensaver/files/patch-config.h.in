@@ -1,6 +1,6 @@
---- config.h.in.orig	2014-10-08 18:09:49 UTC
+--- config.h.in.orig	2016-04-03 20:07:59 UTC
 +++ config.h.in
-@@ -304,6 +304,9 @@
+@@ -307,6 +307,9 @@
  /* Define to 1 if you have the <util.h> header file. */
  #undef HAVE_UTIL_H
  
