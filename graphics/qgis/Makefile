@@ -3,7 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	2_14_2
+DISTVERSION=	2_14_3
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -12,7 +12,8 @@ COMMENT=	Geographical Information System (GIS) data viewer
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	txt2tags:textproc/txt2tags
-LIB_DEPENDS=	libgdal.so:graphics/gdal \
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
 		libgsl.so:math/gsl \
 		libproj.so:graphics/proj \
@@ -25,9 +26,11 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
 
-USES=		cpe bison cmake desktop-file-utils execinfo fortran gmake python:2 sqlite
-USE_QT4=	gui svg xml network sql designer testlib linguist_build \
-		qmake_build moc_build rcc_build uic_build
+USES=		bison cmake cpe desktop-file-utils execinfo fortran \
+		gmake python:2 sqlite
+USE_QT4=	corelib designer gui linguist_build moc_build network \
+		qmake_build rcc_build script sql svg testlib uic_build xml \
+		webkit
 
 USE_LDCONFIG=	yes
 ICON_SIZES=	8 16 22 24 32 36 42 48 64 72 80 96 128 192 256 512
@@ -65,11 +68,13 @@ GRASS_CMAKE_ON=		-DWITH_GRASS:BOOL=TRUE -DGRASS_PREFIX=${LOCALBASE}/grass-6.4.5
 GRASS_CMAKE_OFF=	-DWITH_GRASS:BOOL=FALSE
 GRASS_FORCE_MAKE_JOBS=	NO
 
+POSTGIS_USES=		pgsql
 POSTGIS_LIB_DEPENDS=	liblwgeom.so:databases/postgis21
 POSTGIS_CMAKE_ON=	-DWITH_POSTGRESQL:BOOL=TRUE
 POSTGIS_CMAKE_OFF=	-DWITH_POSTGRESQL:BOOL=FALSE
 
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.3:math/py-matplotlib \
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.3:math/py-matplotlib \
 			${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock \
 			${PYTHON_PKGNAMEPREFIX}pip>=8.0.2:devel/py-pip \
 			${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:devel/py-qt4-core \
@@ -82,7 +87,8 @@ PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.3:math/py-matplotli
 			${PYTHON_PKGNAMEPREFIX}sip>=4.14.6:devel/py-sip \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:databases/py-sqlite3 \
 			${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdal>=2.0.1:graphics/py-gdal \
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
+			${PYTHON_PKGNAMEPREFIX}gdal>=2.0.1:graphics/py-gdal \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.3:math/py-matplotlib \
 			${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock \
 			${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1:math/py-numpy \
