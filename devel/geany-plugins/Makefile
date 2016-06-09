@@ -6,7 +6,7 @@ PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 DISTFILES=	# none
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugins (meta port)
 
 USES=		metaport

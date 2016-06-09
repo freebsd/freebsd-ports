@@ -6,7 +6,7 @@ PORTVERSION=	1.27
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Fast and lightweight GTK+ IDE
 
 LICENSE=	GPLv2

@@ -4,7 +4,7 @@ PORTNAME=	geany-plugin-pg
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
 LIB_DEPENDS=	libgpgme.so:security/gpgme
