@@ -11,10 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Great cryptographic library and sample programs
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" BFLAG="${CFLAGS}" \
 		INSTALL_PATH="${PREFIX}/${DISTNAME}"
+TEST_TARGET=	test
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
@@ -52,10 +54,5 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-
-test: build
-	${MAKE_CMD} -C ${WRKSRC} test
-
-regression-test: test
 
 .include <bsd.port.mk>
