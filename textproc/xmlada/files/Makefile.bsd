@@ -133,5 +133,5 @@ schema/lib/relocatable/libxmlada_schema.so: schema/dummy_schema.adb dom/lib/relo
 # Sphinx documentation
 #
 
-docs:
-	${MAKE} -e -C docs
+gen-docs:
+	${MAKE} -e -C docs html

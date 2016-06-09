@@ -3,7 +3,7 @@
 
 PORTNAME=	aws
 PORTVERSION=	3.3.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
