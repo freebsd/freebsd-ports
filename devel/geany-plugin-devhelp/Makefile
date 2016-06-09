@@ -4,7 +4,7 @@ PORTNAME=	geany-plugin-devhelp
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
 LIB_DEPENDS=	libwnck-1.so:x11-toolkits/libwnck \
