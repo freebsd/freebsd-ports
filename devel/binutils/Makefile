@@ -4,7 +4,7 @@
 PORTNAME=	binutils
 PORTVERSION=	2.25.1
 PORTEPOCH=	1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 
@@ -47,6 +47,7 @@ INFO=		as \
 .endif
 
 CONFIGURE_ARGS+=	--disable-werror \
+			--enable-deterministic-archives \
 			--with-sysroot=/
 
 MAKE_ENV+=	ac_cv_func_sbrk=0
