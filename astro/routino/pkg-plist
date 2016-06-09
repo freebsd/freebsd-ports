@@ -35,6 +35,12 @@ bin/router-slim
 %%PORTDOCS%%%%DOCSDIR%%/html/tagging.html
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
 include/routino.h
+lib/libroutino-slim.so
+lib/libroutino-slim.so.0
+lib/libroutino-slim.so.0.0.0
+lib/libroutino.so
+lib/libroutino.so.0
+lib/libroutino.so.0.0.0
 %%DATADIR%%/profiles.xml
 %%DATADIR%%/tagging-drive.xml
 %%DATADIR%%/tagging-ride.xml

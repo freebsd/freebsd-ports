@@ -1,0 +1,60 @@
+--- web/Makefile.orig	2016-06-04 17:03:11 UTC
++++ web/Makefile
+@@ -64,8 +64,8 @@ all-bin: all-exe
+ 	@[ -d $(WEBBINDIR) ] || mkdir -p $(WEBBINDIR)
+ 	@for file in $(EXE_FILES); do \
+ 	    if [ -f $(SRCDIR)/$$file -a ! -f $(WEBBINDIR)/$$file ] || [ $(SRCDIR)/$$file -nt $(WEBBINDIR)/$$file ]; then \
+-	       echo cp $(SRCDIR)/$$file $(WEBBINDIR) ;\
+-	       cp -f $(SRCDIR)/$$file $(WEBBINDIR) ;\
++	       echo install $(SRCDIR)/$$file $(WEBBINDIR) ;\
++	       install $(SRCDIR)/$$file $(WEBBINDIR) ;\
+ 	    fi ;\
+ 	 done
+ 
+@@ -75,14 +75,14 @@ all-data: all-xml
+ 	@[ -d $(WEBDATADIR) ] || mkdir -p $(WEBDATADIR)
+ 	@for file in $(STANDARD_XML_FILES); do \
+ 	    if [ ! -f $(WEBDATADIR)/$$file ] || [ $(XMLDIR)/routino-$$file -nt $(WEBDATADIR)/$$file ]; then \
+-	       echo cp $(XMLDIR)/routino-$$file $(WEBDATADIR)/$$file ;\
+-	       cp -f $(XMLDIR)/routino-$$file $(WEBDATADIR)/$$file ;\
++	       echo install $(XMLDIR)/routino-$$file $(WEBDATADIR)/$$file ;\
++	       install $(XMLDIR)/routino-$$file $(WEBDATADIR)/$$file ;\
+ 	    fi ;\
+ 	 done
+ 	@for file in $(SPECIAL_XML_FILES); do \
+ 	    if [ ! -f $(WEBDATADIR)/$$file ] || [ $(XMLDIR)/$$file -nt $(WEBDATADIR)/$$file ]; then \
+-	       echo cp $(XMLDIR)/$$file $(WEBDATADIR)/$$file ;\
+-	       cp -f $(XMLDIR)/$$file $(WEBDATADIR)/$$file ;\
++	       echo install $(XMLDIR)/$$file $(WEBDATADIR)/$$file ;\
++	       install $(XMLDIR)/$$file $(WEBDATADIR)/$$file ;\
+ 	    fi ;\
+ 	 done
+ 
+@@ -92,8 +92,8 @@ all-doc:
+ 	@[ -d $(WEBDOCDIR) ] || mkdir -p $(WEBDOCDIR)
+ 	@for file in $(DOC_FILES); do \
+ 	    if [ ! -f $(WEBDOCDIR)/$$file ] || [ $(DOCDIR)/html/$$file -nt $(WEBDOCDIR)/$$file ]; then \
+-	       echo cp $(DOCDIR)/html/$$file $(WEBDOCDIR) ;\
+-	       cp -f $(DOCDIR)/html/$$file $(WEBDOCDIR) ;\
++	       echo install $(DOCDIR)/html/$$file $(WEBDOCDIR) ;\
++	       install $(DOCDIR)/html/$$file $(WEBDOCDIR) ;\
+ 	    fi ;\
+ 	 done
+ 
+@@ -116,12 +116,12 @@ all-translations: $(WEBWWWDIR)/router.ht
+ ifeq ($(HOST),MINGW)
+ 
+ $(WEBWWWDIR)/router.html: $(WEBWWWDIR)/router.html.en
+-	@echo cp $< $@
+-	@cp -f $< $@
++	@echo install $< $@
++	@install $< $@
+ 
+ $(WEBWWWDIR)/visualiser.html: $(WEBWWWDIR)/visualiser.html.en
+-	@echo cp $< $@
+-	@cp -f $< $@
++	@echo install $< $@
++	@install $< $@
+ 
+ else
+ 

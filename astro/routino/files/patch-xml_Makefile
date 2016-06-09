@@ -1,0 +1,19 @@
+--- xml/Makefile.orig	2016-06-04 17:08:07 UTC
++++ xml/Makefile
+@@ -56,12 +56,12 @@ test:
+ install: all
+ 	@[ -d $(DESTDIR)$(datadir) ] || mkdir -p $(DESTDIR)$(datadir)
+ 	@for file in $(STANDARD_FILES) ; do \
+-	    echo cp routino-$$file $(DESTDIR)$(datadir)/$$file ;\
+-	    cp -f routino-$$file $(DESTDIR)$(datadir)/$$file ;\
++	    echo install routino-$$file $(DESTDIR)$(datadir)/$$file ;\
++	    install routino-$$file $(DESTDIR)$(datadir)/$$file ;\
+ 	 done
+ 	@for file in $(SPECIAL_FILES); do \
+-	    echo cp $$file $(DESTDIR)$(datadir)/$$file ;\
+-	    cp -f $$file $(DESTDIR)$(datadir)/$$file ;\
++	    echo install $$file $(DESTDIR)$(datadir)/$$file ;\
++	    install $$file $(DESTDIR)$(datadir)/$$file ;\
+ 	 done
+ 
+ ########

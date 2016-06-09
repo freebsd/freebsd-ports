@@ -1,0 +1,28 @@
+--- doc/Makefile.orig	2016-06-04 17:01:05 UTC
++++ doc/Makefile
+@@ -43,19 +43,19 @@ install: install-txt install-html
+ install-txt:
+ 	@[ -d $(DESTDIR)$(docdir) ] || mkdir -p $(DESTDIR)$(docdir)
+ 	@for file in $(TOP_FILES); do \
+-	    echo cp $$file $(DESTDIR)$(docdir) ;\
+-	    cp -f $$file $(DESTDIR)$(docdir) ;\
++	    echo install $$file $(DESTDIR)$(docdir) ;\
++	    install $$file $(DESTDIR)$(docdir) ;\
+ 	 done
+ 	@for file in $(TXT_FILES); do \
+-	    echo cp $$file $(DESTDIR)$(docdir) ;\
+-	    cp -f $$file $(DESTDIR)$(docdir) ;\
++	    echo install $$file $(DESTDIR)$(docdir) ;\
++	    install $$file $(DESTDIR)$(docdir) ;\
+ 	 done
+ 
+ install-html:
+ 	@[ -d $(DESTDIR)$(docdir)/html ] || mkdir -p $(DESTDIR)$(docdir)/html
+ 	@for file in $(HTML_FILES); do \
+-	    echo cp html/$$file $(DESTDIR)$(docdir)/html ;\
+-	    cp -f html/$$file $(DESTDIR)$(docdir)/html ;\
++	    echo install html/$$file $(DESTDIR)$(docdir)/html ;\
++	    install html/$$file $(DESTDIR)$(docdir)/html ;\
+ 	 done
+ 
+ ########
