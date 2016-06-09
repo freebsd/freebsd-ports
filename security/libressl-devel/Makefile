@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -11,7 +11,7 @@ MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Free version of the SSL/TLS protocol forked from OpenSSL
 
 LICENSE=	BSD4CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+#LICENSE_FILE=	${WRKSRC}/COPYING
 
 CPE_VENDOR=	openbsd
 
