@@ -124,19 +124,19 @@ WITH_BLAS?=	reference
 
 .if ! ${PORT_OPTIONS:MBUILTIN_BLAS}
 .if ${WITH_BLAS} == atlas
-RUN_DEPENDS +=	${LOCALBASE}/lib/libatlas.so:math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=		-lptf77blas
 .elif ${WITH_BLAS} == atlas_c
-RUN_DEPENDS +=	${LOCALBASE}/lib/libatlas.so:math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=		-lptcblas
 .elif ${WITH_BLAS} == gotoblas
-RUN_DEPENDS +=	${LOCALBASE}/lib/libgoto2p.so:math/gotoblas
+LIB_DEPENDS+=	libgoto2p:math/gotoblas
 BLAS=			-lgoto2p
 .elif ${WITH_BLAS} == reference
-RUN_DEPENDS +=	${LOCALBASE}/lib/libblas.so:math/blas
+LIB_DEPENDS+=	libblas.so:math/blas
 BLAS=		-lblas
 .elif ${WITH_BLAS} == reference_c
-RUN_DEPENDS +=	${LOCALBASE}/lib/libgslcblas.so:math/gsl
+LIB_DEPENDS+=	libgslcblas.so:math/gsl
 BLAS=		-lgslcblas
 .endif #WITH_BLAS
 .endif #WITH_BUILTIN_BLAS
@@ -144,19 +144,19 @@ BLAS=		-lgslcblas
 .if ${PORT_OPTIONS:MEXTERNAL_LAPACK}
 .if !empty(WITH_BLAS:Matlas*)
 .if ${PORT_OPTIONS:MBUILTIN_BLAS}
-RUN_DEPENDS +=	${LOCALBASE}/lib/libatlas.so:math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 .endif
 LAPACK=		-lalapack -lptcblas -lptf77blas
 .elif ${WITH_BLAS} == gotoblas
 .if ${PORT_OPTIONS:MBUILTIN_BLAS}
-RUN_DEPENDS +=	${LOCALBASE}/lib/libgoto2p.so:math/gotoblas
+LIB_DEPENDS+=	libgoto2p:math/gotoblas
 .endif
 LAPACK=		-lgoto2p
 .elif !empty(WITH_BLAS:Mreference*)
-RUN_DEPENDS +=	${LOCALBASE}/lib/liblapack.so:math/lapack
+LIB_DEPENDS+=	liblapack.so:math/lapack
 LAPACK=		-llapack
 .if ${PORT_OPTIONS:MBUILTIN_BLAS} || ${PORT_OPTIONS:MCBLAS}
-RUN_DEPENDS +=	${LOCALBASE}/lib/libblas.so:math/blas
+LIB_DEPENDS+=	libblas.so:math/blas
 LAPACK+=	-lblas
 .endif
 .endif #WITH_BLAS
