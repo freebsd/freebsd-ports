@@ -1,11 +1,11 @@
---- configure.in.orig	2014-10-08 18:09:41 UTC
+--- configure.in.orig	2016-05-19 17:59:17 UTC
 +++ configure.in
-@@ -3510,7 +3510,7 @@ fi
+@@ -3538,7 +3538,7 @@ fi
  ###############################################################################
  
  PTY_LIBS=
--AC_CHECK_HEADERS(pty.h util.h)
-+AC_CHECK_HEADERS(pty.h util.h libutil.h)
+-AC_CHECK_HEADERS(pty.h util.h sys/termios.h)
++AC_CHECK_HEADERS(pty.h util.h libutil.h sys/termios.h)
  AC_CHECK_X_LIB(util, forkpty,
                 [PTY_LIBS="-lutil"
                  ac_have_forkpty=yes

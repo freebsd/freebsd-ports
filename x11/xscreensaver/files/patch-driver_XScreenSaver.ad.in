@@ -1,4 +1,4 @@
---- driver/XScreenSaver.ad.in.orig	2014-11-18 22:54:02 UTC
+--- driver/XScreenSaver.ad.in.orig	2016-05-24 18:02:30 UTC
 +++ driver/XScreenSaver.ad.in
 @@ -56,7 +56,7 @@
  *splashDuration:	0:00:05
@@ -18,7 +18,7 @@
  ! To show the time only:
  ! *dateFormat:		%I:%M %p
  ! For 24 hour time:
-@@ -157,6 +157,18 @@ GetViewPortIsFullOfLies: False
+@@ -158,6 +158,18 @@ GetViewPortIsFullOfLies: False
  ! screen savers interactively.
  !
  *programs:								      \
@@ -37,11 +37,11 @@
  				maze -root				    \n\
  @GL_KLUDGE@ GL: 				superquadrics -root			    \n\
  				attraction -root			    \n\
-@@ -457,7 +469,6 @@ XScreenSaver.bourneShell:		/bin/sh
+@@ -465,7 +477,6 @@ XScreenSaver.bourneShell:		/bin/sh
  *hacks.cwaves.name:         CWaves
  *hacks.dangerball.name:     DangerBall
  *hacks.decayscreen.name:    DecayScreen
 -*hacks.dnalogo.name:        DNA Logo
+ *hacks.dymaxionmap.name:    DymaxionMap
+ *hacks.energystream.name:   EnergyStream
  *hacks.euler2d.name:        Euler2D
- *hacks.fadeplot.name:       FadePlot
- *hacks.flipflop.name:       FlipFlop
