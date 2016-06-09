@@ -1,6 +1,6 @@
---- SConstruct.orig	2012-06-25 17:15:16 UTC
+--- SConstruct.orig	2016-01-10 04:35:56 UTC
 +++ SConstruct
-@@ -37,7 +37,7 @@ opts.AddVariables(
+@@ -38,7 +38,7 @@ opts.AddVariables(
    BoolVariable('libkate', 'enable libkate support', 1),
    BoolVariable('crossmingw', 'Set to 1 for crosscompile with mingw', 0)
  )
@@ -9,7 +9,7 @@
  Help(opts.GenerateHelpText(env))
  
  pkg_flags="--cflags --libs"
-@@ -151,7 +151,6 @@ if not env.GetOption('clean'):
+@@ -152,7 +152,6 @@ if not env.GetOption('clean'):
        "libavcodec >= 52.30.0",
        "libpostproc",
        "libswscale",
@@ -17,7 +17,7 @@
        "libavutil",
    ]
    if os.path.exists("./ffmpeg"):
-@@ -200,9 +199,8 @@ if not env.GetOption('clean'):
+@@ -214,9 +213,8 @@ if not env.GetOption('clean'):
        env.Append(CCFLAGS=[
          '-DHAVE_ICONV'
        ])
