@@ -1,0 +1,21 @@
+@sample %%ETCDIR%%/logback.xml.sample
+@sample %%ETCDIR%%/bootstrap.cfg.sample
+@sample %%ETCDIR%%/request-logging.xml.sample
+@sample %%ETCDIR%%/conf.d/config.ini.sample
+@sample %%ETCDIR%%/conf.d/database.ini.sample
+@sample %%ETCDIR%%/conf.d/jetty.ini.sample
+@sample %%ETCDIR%%/conf.d/repl.ini.sample
+%%DATADIR%%/puppetdb.jar
+@group puppetdb
+@group
+@mode 0750
+%%DATADIR%%/cli/apps/anonymize
+%%DATADIR%%/cli/apps/config-migration
+%%DATADIR%%/cli/apps/export
+%%DATADIR%%/cli/apps/foreground
+%%DATADIR%%/cli/apps/import
+%%DATADIR%%/cli/apps/ssl-setup
+sbin/puppetdb
+@mode
+@dir(puppetdb,puppetdb,) /var/log/puppetdb
+@dir(puppetdb,puppetdb,) /var/db/puppetdb

@@ -1,0 +1,21 @@
+--- ext/bin/puppetdb.orig	2016-01-25 03:46:10.797703384 +0000
++++ ext/bin/puppetdb	2016-01-25 04:12:10.048976423 +0000
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!%%PREFIX%%/bin/bash
+ 
+ set -a
+ if [ -r "/etc/default/puppetdb" ] ; then
+@@ -11,6 +11,12 @@
+     USER="_puppetdb"
+     INSTALL_DIR="/opt/puppetlabs/server/apps/puppetdb"
+     CONFIG="/etc/puppetlabs/puppetdb/conf.d"
++elif [ `uname` == "FreeBSD" ] ; then
++    JAVA_BIN="%%JAVA%%"
++    JAVA_ARGS="-Xmx192m"
++    USER="puppetdb"
++    INSTALL_DIR="%%DATADIR%%"
++    CONFIG="%%PREFIX%%/%%ETCDIR%%/conf.d"
+ else
+     echo "You seem to be missing some important configuration files; could not find /etc/default/puppetdb or /etc/sysconfig/puppetdb" >&2
+     exit 1
