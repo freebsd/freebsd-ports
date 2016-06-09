@@ -7,6 +7,15 @@
 # REQUIRE: %%REQUIRE%%
 # KEYWORD: shutdown
 
+# dovecot_enable (bool):	Set it to YES to enable dovecot
+#				Default: NO
+# dovecot_config (str):		Path to dovecot.conf
+#				Default: %%ETCDIR%%/dovecot.conf
+#				Set it to a space-separated list to start
+#				multiple dovecot instances
+# dovecot_flags (str):		Extra flags to pass to dovecot
+#				Default: empty
+
 # Define dovecot_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
@@ -48,7 +57,7 @@ restart_cmd()
 }
 
 # To start multiple instances of dovecot set dovecot_config to
-# a space seperated list of configuration files.
+# a space separated list of configuration files.
 for config in ${dovecot_config}; do
 	required_files="${config}"
 	command_args="-c ${config}"
