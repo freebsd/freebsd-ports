@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	templates_parser
-PORTVERSION=	11.10.0.0
-PORTREVISION=	4
+PORTVERSION=	17.0.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://downloads.dragonlace.net/src/
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Web page template engine module for the Ada Web Server
@@ -16,7 +14,12 @@ BUILD_DEPENDS=	gprbuild:devel/gprbuild \
 		xmlada>=4.4:textproc/xmlada
 RUN_DEPENDS=	xmlada>=4.4:textproc/xmlada
 
-USES=		ada gmake tar:bzip2
+USES=		ada:run gmake tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	AdaCore
+GH_PROJECT=	templates-parser
+GH_TAGNAME=	1d62939
+
 DESTINC=	${STAGEDIR}${PREFIX}/include/templates_parser
 PLIST_SUB=	LIBVER=${PORTVERSION:R}
 MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER} \
@@ -49,5 +52,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat
 	${INSTALL_DATA} ${FILESDIR}/templates_parser.gpr \
 		${STAGEDIR}${PREFIX}/lib/gnat
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/templates*
 
 .include <bsd.port.mk>
