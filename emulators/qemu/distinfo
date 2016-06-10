@@ -1,2 +1,3 @@
-SHA256 (qemu/2.4.1/qemu-2.4.1.tar.bz2) = e3d5cf4c8b1f9129c9c797329a515bfb6b3b1ded0ab8b394c8a316490fe3a177
-SIZE (qemu/2.4.1/qemu-2.4.1.tar.bz2) = 25087522
+TIMESTAMP = 1464476316
+SHA256 (qemu/2.5.1.1/qemu-2.5.1.1.tar.bz2) = 28d9946e43765a44ccccca3cba5f4f9034f2759ec1f2ce16594ddb6776c8efe6
+SIZE (qemu/2.5.1.1/qemu-2.5.1.1.tar.bz2) = 25474902
