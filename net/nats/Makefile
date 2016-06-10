@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nats
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -10,8 +10,6 @@ COMMENT=	Messaging system written in Go
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/crypto/bcrypt.a:security/go.crypto
 
 USES=		go
 GO_PKGNAME=	github.com/nats-io/gnatsd
