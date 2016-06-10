@@ -10,7 +10,7 @@ MASTER_SITES=	NL/fortran/ \
 DISTNAME=	fdfpp
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Fortran preprocessor for FORTRAN 77 and Fortran 90 programs
 
 ALL_TARGET=	bsd44

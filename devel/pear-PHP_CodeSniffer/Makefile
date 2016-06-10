@@ -5,7 +5,7 @@ PORTNAME=	PHP_CodeSniffer
 PORTVERSION=	2.6.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	PHP Script Tokenises and Sniffs PHP and JavaScript code
 
 LICENSE=	BSD3CLAUSE
