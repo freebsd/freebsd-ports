@@ -67,7 +67,7 @@ KRB5LIB=	-L${KRB5_HOME}/lib
 CONFIGURE_ARGS+=	--with-mesa
 MESALIB=	-lpthread
 USE_GL=	yes
-CFLAGS+=	-I${LOCALBASE}/include/FTGL
+CFLAGS+=	-I${LOCALBASE}/include/FTGL -I${LOCALBASE}/include/freetype2
 .else
 CONFIGURE_ARGS+=	--without-mesa --without-opengl
 .endif
