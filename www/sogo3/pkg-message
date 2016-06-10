@@ -5,48 +5,45 @@ SOGo 3 was installed
 In order to run the sogo daemon (sogod), you will need to create and configure
 the main configuration file, e.g.:
 
-cp -p ${LOCALBASE}/etc/sogo/sogo.conf.sample ${LOCALBASE}/etc/sogo/sogo.conf
+cp -p %%LOCALBASE%%/etc/sogo/sogo.conf.sample ${LOCALBASE}/etc/sogo/sogo.conf
 
 And to allow the service to run at system startup, add sogod_enable="YES"
 in your rc.conf.
 
-
 If you need to allow email alarms (notifications) for calendar events, copy
 the sample credentials file:
 
-cp -p ${LOCALBASE}/etc/sogo/ealarms-notify.creds.sample \
- ${LOCALBASE}/etc/sogo/ealarms-notify.creds
+cp -p %%LOCALBASE%%/etc/sogo/ealarms-notify.creds.sample \
+ %%LOCALBASE%%/etc/sogo/ealarms-notify.creds
 
 Then replace the username:password with appropriate credentials for SMTP AUTH
 sending capabilities.
 
 Then copy the sample cron executable:
 
-cp -p ${LOCALBASE}/GNUstep/Local/Tools/Admin/cron-ealarms-notify.sample \
- ${LOCALBASE}/GNUstep/Local/Tools/Admin/cron-ealarms-notify
+cp -p %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-ealarms-notify.sample \
+ %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-ealarms-notify
 
 And edit this file to suit your server timezone (e.g. TZ=Africa/Algiers).
 
 Then add the following lines to the root users' crontab (crontab -e):
 
 # Process email reminders every minute
-* * * * * ${LOCALBASE}/GNUstep/Local/Tools/Admin/cron-ealarms-notify
-
-
+* * * * * %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-ealarms-notify
 
 If you need to automatically purge vacation messages from users sieve scripts,
 copy the sample credentials file:
 
 cp -p ${LOCALBASE}/etc/sogo/expire-autoreply.creds.sample \
- ${LOCALBASE}/etc/sogo/expire-autoreply.creds
+ %%LOCALBASE%%/etc/sogo/expire-autoreply.creds
 
 Then replace the username:password with appropriate credentials for your
 IMAP servers' sieve account.
 
 Then copy the sample cron executable:
 
-cp -p ${LOCALBASE}/GNUstep/Local/Tools/Admin/cron-expire-autoreply.sample \
- ${LOCALBASE}/GNUstep/Local/Tools/Admin/cron-expire-autoreply
+cp -p %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-expire-autoreply.sample \
+ %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-expire-autoreply
 
 And edit this file to suit your server timezone (e.g. TZ=Africa/Algiers).
 
@@ -54,8 +51,7 @@ Then add the following lines to the root users' crontab (crontab -e):
 
 # Vacation messages expiration
 # The credentials file should contain the sieve admin credentials (username:passwd)
-0 0 * * * ${LOCALBASE}/GNUstep/Local/Tools/Admin/cron-expire-autoreply
-
+0 0 * * * %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-expire-autoreply
 
 For more information about using SOGo, visit:
 http://www.sogo.nu/downloads/documentation.html
