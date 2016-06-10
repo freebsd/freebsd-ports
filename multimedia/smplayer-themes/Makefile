@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smplayer-themes
-PORTVERSION=	15.12.0
-PORTREVISION=	1
+PORTVERSION=	16.6.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/smplayer/SMPlayer-themes/${PORTVERSION}/
