@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	4.5.4.8
+PORTVERSION=	4.6
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
@@ -10,10 +10,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
-
-BROKEN=		checksum mismatch
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
 
 LICENSE=	GPLv3
 
