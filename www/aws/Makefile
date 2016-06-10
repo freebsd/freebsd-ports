@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	3.3.0.0
-PORTREVISION=	7
+PORTVERSION=	17.0.0
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.dragonlace.net/src/
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore Ada Web Server and framework
@@ -21,9 +19,14 @@ BUILD_DEPENDS=	gprbuild:devel/gprbuild \
 RUN_DEPENDS=	templates_parser>11:textproc/templates_parser \
 		xmlada>=4.4:textproc/xmlada
 
+USES=		ada:run gmake python shebangfix tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	AdaCore
+GH_PROJECT=	aws
+GH_TAGNAME=	31d491e
+
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
-USES=		ada gmake python tar:bzip2
 DOTBUILD=	release
 LINK_SSL=	--
 LINK_TLS=	--
@@ -34,6 +37,7 @@ BUILD_TYPE=	release
 ADDL_RPATH=	${LOCALBASE}/lib:${LOCALBASE}/lib/aws/native/relocatable
 AUX_TARGET=	${ARCH:S/amd64/x86_64/}-aux-${OPSYS:tl}${OSREL}
 TEMPARSE=	${WRKSRC}/.build/${AUX_TARGET}/${BUILD_TYPE}
+SHEBANG_FILES=	tools/awsascb
 
 OPTIONS_SINGLE=		Secure-Socket-Layer
 OPTIONS_DEFINE=		IP6 DEBUG LDAP SHARED DOCS
@@ -41,9 +45,8 @@ OPTIONS_DEFAULT=	SSL SHARED
 OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-OPTIONS_SINGLE_Secure-Socket-Layer= SSL GNUTLS NOSSL
+OPTIONS_SINGLE_Secure-Socket-Layer= SSL GNUTLS
 
-NOSSL_DESC=		Disable SSL support
 SHARED_DESC=		Build shared libraries in addition to static ones
 IP6_DESC=		Support IPv6 instead of IPv4
 
@@ -76,11 +79,6 @@ LINK_SSL=
 CONF_ARGS+=	SOCKET=gnutls
 LIB_DEPENDS+=	libgnutls.so:security/gnutls
 LINK_TLS=
-.endif
-.if ${PORT_OPTIONS:MNOSSL}
-CONF_ARGS+=	SOCKET=std
-CONF_ARGS+=	LPATH=
-NAME_STD=
 .endif
 
 ####################
