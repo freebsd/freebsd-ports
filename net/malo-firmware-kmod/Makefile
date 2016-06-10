@@ -4,11 +4,11 @@
 PORTNAME=	malo-firmware
 PORTVERSION=	${FWVERSION}
 CATEGORIES=	net
-MASTER_SITES=	http://fbsd.es/~cpm/freebsd/project/malo/
+MASTER_SITES=	LOCAL/cpm
 PKGNAMESUFFIX=	-kmod
 DISTNAME=	${FWNAME}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Marvell Libertas 88W8335 IEEE 802.11b/g Firmware Kernel Module
 
 FWNAME=		malo-fw-${FWVERSION}
