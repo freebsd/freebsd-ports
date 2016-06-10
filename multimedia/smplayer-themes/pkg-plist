@@ -15,6 +15,9 @@
 %%DATADIR%%/themes/H2O/H2O.rcc
 %%DATADIR%%/themes/H2O/README.txt
 %%DATADIR%%/themes/H2O/style.qss
+%%DATADIR%%/themes/Masalla/Masalla.rcc
+%%DATADIR%%/themes/Masalla/README.txt
+%%DATADIR%%/themes/Masalla/style.qss
 %%DATADIR%%/themes/Monochrome/Monochrome.rcc
 %%DATADIR%%/themes/Monochrome/README.txt
 %%DATADIR%%/themes/Noia/Noia.rcc
@@ -33,6 +36,10 @@
 %%DATADIR%%/themes/Oxygen-Refit/README.txt
 %%DATADIR%%/themes/Oxygen/Oxygen.rcc
 %%DATADIR%%/themes/Oxygen/README.txt
+%%DATADIR%%/themes/Papirus/Papirus.rcc
+%%DATADIR%%/themes/Papirus/README.txt
+%%DATADIR%%/themes/PapirusDark/PapirusDark.rcc
+%%DATADIR%%/themes/PapirusDark/README.txt
 %%DATADIR%%/themes/Silk/README.txt
 %%DATADIR%%/themes/Silk/Silk.rcc
 %%DATADIR%%/themes/Tango/README.txt
