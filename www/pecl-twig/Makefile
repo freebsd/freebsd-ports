@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.twig-project.org/get/
 PKGNAMEPREFIX=	pecl-
 DISTNAME=	CTwig-${PORTVERSION}
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Twig C extension to improve performance of the Twig template language
 
 LICENSE=	BSD3CLAUSE

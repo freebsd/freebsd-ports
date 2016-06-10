@@ -6,7 +6,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.dddbl.de/dddbl-versions/
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Definition Driven Database Layer for PHP
 
 USES=		tar:bzip2

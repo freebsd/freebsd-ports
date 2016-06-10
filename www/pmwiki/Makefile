@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	WikiWikiWeb clone using PHP
 
 LICENSE=	GPLv2

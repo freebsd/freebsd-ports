@@ -6,7 +6,7 @@ PORTVERSION=	0.0.6
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Azure OAuth2 Strategy for OmniAuth
 
 LICENSE=	MIT

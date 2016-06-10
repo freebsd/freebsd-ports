@@ -6,7 +6,7 @@ PORTVERSION=	5.2.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Full Featured Email Transfer Class for PHP
 
 LICENSE=	LGPL21
