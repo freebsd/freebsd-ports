@@ -3,9 +3,9 @@
 
 PORTNAME=	xmlroff
 PORTVERSION=	0.6.2
-PORTREVISION=	5
+PORTREVISION=	6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
-MASTER_SITES=	http://xmlroff.org/download/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XSL formatter that produces PDF and PostScript
@@ -13,20 +13,23 @@ COMMENT=	XSL formatter that produces PDF and PostScript
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcairo.so:graphics/cairo
+BUILD_DEPENDS=	libfo>=0.6.2:textproc/libfo
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake libtool pkgconfig pathfix
-USE_GNOME=	libgnomeprint libxslt \
-		libxml2 gtk20 glib20 pango
-USE_LDCONFIG=	yes
+USES=		autoreconf gmake gettext pkgconfig pathfix
+USE_GITHUB=	yes
+USE_GNOME=	libgnomeprint libartlgpl2 pango glib20 \
+		libxslt libxml2 gdkpixbuf2
+GH_ACCOUNT=	xmlroff
+GH_PROJECT=	xmlroff
+EXTRACT_AFTER_ARGS=	--exclude=xmlroff/libfo
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc \
-		--with-html-dir=${PREFIX}/share/doc
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS= --with-html-dir=${PREFIX}/share/doc
+INSTALL_TARGET=	install-strip
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
-		${WRKSRC}/libfo/fo-libfo-basic.h
+OPTIONS_DEFINE=	DOCS
+DOCS_CONFIGURE_ENABLE=	gtk-doc
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-doc.pc:${PORTSDIR}/textproc/gtk-doc
 
 .include <bsd.port.mk>

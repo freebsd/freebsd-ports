@@ -1,0 +1,27 @@
+--- xmlroff/Makefile.am.orig	2016-03-26 11:00:22.298011000 +0900
++++ xmlroff/Makefile.am	2016-03-26 11:01:28.445341000 +0900
+@@ -6,8 +6,7 @@
+ 
+ INCLUDES = \
+ 	-DG_LOG_DOMAIN=\"libfo\"	\
+-	$(LIBXSLT_CFLAGS)	\
+-	$(GLIB_CFLAGS)
++	$(LIBFO_CFLAGS)
+ 
+ bin_PROGRAMS = \
+ 	xmlroff
+@@ -18,11 +17,8 @@
+ xmlroff_SOURCES = \
+ 	xmlroff.c
+ 
+-xmlroff_LDFLAGS = -static
++xmlroff_LDFLAGS = \
++	$(LIBFO_LDFLAGS)
+ 
+ xmlroff_LDADD = \
+-	../libfo/libfo-0.6.la \
+-	$(PANGO_LIBS) \
+-	$(GNOMEPRINT_LIBS) \
+-	$(LIBXSLT_LIBS) \
+-	$(FREETYPE_LIBS)
++	$(LIBFO_LIBS)
