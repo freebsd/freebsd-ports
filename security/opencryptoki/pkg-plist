@@ -7,6 +7,7 @@ lib/opencryptoki/libopencryptoki.so
 lib/opencryptoki/libopencryptoki.so.0
 lib/opencryptoki/libopencryptoki.so.0.0.0
 lib/opencryptoki/methods
+%%LDAP%%lib/opencryptoki/stdll/PKCS11_ICSF.so
 lib/opencryptoki/stdll/PKCS11_SW.so
 lib/opencryptoki/stdll/PKCS11_TPM.so
 lib/opencryptoki/stdll/libpkcs11_sw.so
@@ -15,6 +16,9 @@ lib/opencryptoki/stdll/libpkcs11_sw.so.0.0.0
 lib/opencryptoki/stdll/libpkcs11_tpm.so
 lib/opencryptoki/stdll/libpkcs11_tpm.so.0
 lib/opencryptoki/stdll/libpkcs11_tpm.so.0.0.0
+%%LDAP%%lib/opencryptoki/stdll/libpkcs11_icsf.so.0.0.0
+%%LDAP%%lib/opencryptoki/stdll/libpkcs11_icsf.so.0
+%%LDAP%%lib/opencryptoki/stdll/libpkcs11_icsf.so
 lib/pkcs11/PKCS11_API.so
 lib/pkcs11/libopencryptoki.so
 lib/pkcs11/methods
@@ -27,7 +31,9 @@ man/man5/opencryptoki.conf.5.gz
 man/man7/opencryptoki.7.gz
 man/man8/pkcsslotd.8.gz
 sbin/pkcsconf
+%%LDAP%%sbin/pkcsicsf
 sbin/pkcsslotd
+%%LDAP%%@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/icsf
 @dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/swtok/TOK_OBJ
 @dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/swtok
 @dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/tpm
