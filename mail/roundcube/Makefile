@@ -24,7 +24,6 @@ CPE_VENDOR=	roundcube
 
 WANT_PHP_WEB=	yes
 USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter openssl fileinfo exif
-IGNORE_WITH_PHP=70
 
 OPTIONS_DEFINE=	LDAP GD PSPELL NSC DOCS
 OPTIONS_SINGLE=	DB
