@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		sogo3
-PORTVERSION=		3.0.2
-PORTREVISION=		1
+PORTVERSION=		3.1.2
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -44,6 +43,7 @@ CONFIGURE_ARGS=		--disable-debug --enable-strip
 post-patch:
 	@${GREP} -rlF '/etc/sogo' ${WRKSRC} \
 		| ${XARGS} ${REINPLACE_CMD} 's#/etc/sogo#${PREFIX}/etc/sogo#g'
+	@${REINPLACE_CMD} -e 's|/usr/|/usr/local/|g' ${WRKSRC}/Apache/SOGo.conf
 
 post-patch-ACTIVESYNC-on:
 	@${REINPLACE_CMD} -e 's/Tools/Tools ActiveSync/' ${WRKSRC}/GNUmakefile
