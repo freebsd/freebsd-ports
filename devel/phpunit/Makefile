@@ -8,7 +8,7 @@ MASTER_SITES=	https://phar.phpunit.de/ \
 		http://ports.toco-domains.de/
 EXTRACT_SUFX=	.phar
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Testing framework for unit tests
 
 LICENSE=	BSD3CLAUSE

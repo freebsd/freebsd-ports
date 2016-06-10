@@ -5,7 +5,7 @@ PORTNAME=	pguri
 PORTVERSION=	1.20151224
 CATEGORIES=	databases
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	URI datatype for PostgreSQL
 
 BUILD_DEPENDS=	uriparser>=0.8.0:net/uriparser

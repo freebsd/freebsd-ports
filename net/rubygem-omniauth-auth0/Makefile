@@ -6,7 +6,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Authentication broker supporting different identity providers
 
 LICENSE=	MIT

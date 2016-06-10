@@ -6,7 +6,7 @@ PORTVERSION=	8.7.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
 
 LICENSE=	MIT

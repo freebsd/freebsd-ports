@@ -6,7 +6,7 @@ PORTVERSION=	8.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@toco-domains.de
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Detects under what license a project is distributed
 
 LICENSE=	MIT
