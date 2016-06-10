@@ -3,7 +3,7 @@
 
 PORTNAME=	libbrotli
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 MASTER_SITES=	https://github.com/bagder/libbrotli/archive/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 CATEGORIES=	devel archivers
@@ -13,7 +13,7 @@ COMMENT=	Library for generic-purpose lossless compression algorithm
 
 LICENSE=	MIT
 
-BROTLI_VERSION=	3a77ebe
+BROTLI_VERSION=	9bce220
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	google:brotli
@@ -22,7 +22,6 @@ GH_TAGNAME=	${BROTLI_VERSION}:brotli
 
 USES=		pkgconfig autoreconf libtool compiler:c++0x
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
