@@ -35,16 +35,16 @@ include/qbs/tools/settingsmodel.h
 include/qbs/tools/setupprojectparameters.h
 include/qbs/use_installed_corelib.pri
 include/qbs/use_installed_qtprofilesetup.pri
-lib/libqbscore.so
-lib/libqbscore.so.1
-lib/libqbscore.so.1.5
-lib/libqbscore.so.1.5.0
-lib/libqbsqtprofilesetup.so
-lib/libqbsqtprofilesetup.so.1
-lib/libqbsqtprofilesetup.so.1.5
-lib/libqbsqtprofilesetup.so.1.5.0
-lib/qbs/plugins/libqbs_cpp_scanner.so
-lib/qbs/plugins/libqbs_qt_scanner.so
+%%QT_LIBDIR%%/libqbscore.so
+%%QT_LIBDIR%%/libqbscore.so.1
+%%QT_LIBDIR%%/libqbscore.so.1.5
+%%QT_LIBDIR%%/libqbscore.so.1.5.1
+%%QT_LIBDIR%%/libqbsqtprofilesetup.so
+%%QT_LIBDIR%%/libqbsqtprofilesetup.so.1
+%%QT_LIBDIR%%/libqbsqtprofilesetup.so.1.5
+%%QT_LIBDIR%%/libqbsqtprofilesetup.so.1.5.1
+%%QT_LIBDIR%%/qbs/plugins/libqbs_cpp_scanner.so
+%%QT_LIBDIR%%/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/android-ndk-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/android-sdk-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/androidapk-item.html
@@ -134,8 +134,6 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/xcode-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xpcservice-item.html
 %%PORTDOCS%%%%DOCSDIR%%/qbs.qch
-%%PORTDOCS%%@dir %%DOCSDIR%%/html/images/used-in-examples
-%%PORTDOCS%%@dir %%DOCSDIR%%/html/scripts
 %%DATADIR%%/examples/app-and-lib/app/app.qbs
 %%DATADIR%%/examples/app-and-lib/app/main.cpp
 %%DATADIR%%/examples/app-and-lib/app_and_lib.qbs
@@ -285,3 +283,5 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%DATADIR%%/modules/wix/WiXModule.qbs
 %%DATADIR%%/modules/xcode/xcode.js
 %%DATADIR%%/modules/xcode/xcode.qbs
+%%PORTDOCS%%@dir %%DOCSDIR%%/html/images/used-in-examples
+%%PORTDOCS%%@dir %%DOCSDIR%%/html/scripts
