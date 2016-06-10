@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmc2
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -17,11 +17,12 @@ OPTIONS_DEFINE=	DOCS
 NO_WRKSUBDIR=	yes
 
 USES=		gmake tar:bzip2
-USE_XORG=	xmu
-USE_GL=		glu
-USE_QT4=	gui opengl phonon qtestlib webkit xml \
-		moc_build qmake_build rcc_build scripttools \
-		uic_build
+USE_XORG=	x11 xmu
+USE_GL=		gl glu
+USE_QT4=	corelib declarative gui moc_build \
+		network opengl phonon qmake_build \
+		qtestlib rcc_build script scripttools \
+		sql svg uic_build webkit xml xmlpatterns
 USE_SDL=	sdl
 
 CXXFLAGS+=	-I${LOCALBASE}/include/SDL/
