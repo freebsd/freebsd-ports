@@ -663,6 +663,13 @@ share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 %%DATADIR%%/templates/wizards/projects/qmake/qtquickapplication/qml.qrc
 %%DATADIR%%/templates/wizards/projects/qmake/qtquickapplication/qml_wizard.png
 %%DATADIR%%/templates/wizards/projects/qmake/qtquickapplication/wizard.json
+%%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrols2application/Page1.qml.tpl
+%%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrols2application/Page1Form.ui.qml.tpl
+%%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrols2application/app.pro
+%%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrols2application/main.cpp
+%%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrols2application/main.qml.tpl
+%%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrols2application/qml.qrc
+%%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrols2application/wizard.json
 %%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrolsapplication/MainForm.ui.qml.tpl
 %%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrolsapplication/app.pro
 %%DATADIR%%/templates/wizards/projects/qmake/qtquickcontrolsapplication/main.cpp
