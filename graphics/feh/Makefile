@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feh
-PORTVERSION=	2.15.4
+PORTVERSION=	2.16
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		LOCAL/uqs
@@ -14,7 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libImlib2.so:graphics/imlib2
+		libImlib2.so:graphics/imlib2 \
+		libpng16.so:graphics/png
 
 USE_XORG=	x11 xt xinerama
 USES=		cpe desktop-file-utils gmake perl5 shebangfix tar:bzip2
