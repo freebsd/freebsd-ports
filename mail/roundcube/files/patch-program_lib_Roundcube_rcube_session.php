@@ -13,7 +13,7 @@
          // if there are cached vars, update store, else insert new data
          if ($oldvars) {
 -            $newvars = $this->_fixvars($vars, $oldvars);
-+            $newvars = $vars);
++            $newvars = $vars;
              return $this->update($key, $newvars, $oldvars);
          }
          else {
