@@ -11,7 +11,7 @@
  
  # TODO: add pg_config, mysql_config etc!
 -LINK_SYSLIBDIRS="-L/usr/local/pgsql/lib -L/usr/local/lib -L/usr/lib"
-+LINK_SYSLIBDIRS="-L${LOCALBASE}/lib/postgresql -L${LOCALBASE}/lib/mysql -L${LOCALBASE}/lib -L/usr/lib"
++LINK_SYSLIBDIRS="-L%%LOCALBASE%%/lib/postgresql -L%%LOCALBASE%%/lib/mysql -L%%LOCALBASE%%/lib -L/usr/lib"
  
  # ******************** usage ********************
  
