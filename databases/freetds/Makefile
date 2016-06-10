@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.95.92
+PORTVERSION=	1.00
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
@@ -14,9 +14,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-TDS_VER?=	5.0
+TDS_VER?=	7.4
 
-USES=		autoreconf gmake iconv libtool:keepla pkgconfig readline tar:bzip2
+USES=		autoreconf gettext gmake iconv libtool:keepla pkgconfig readline tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
