@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
