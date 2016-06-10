@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	roundcube
-DISTVERSION=	1.1.5
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
@@ -24,10 +23,10 @@ CPE_PRODUCT=	webmail
 CPE_VENDOR=	roundcube
 
 WANT_PHP_WEB=	yes
-USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter
+USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter openssl fileinfo exif
 IGNORE_WITH_PHP=70
 
-OPTIONS_DEFINE=	SSL LDAP GD PSPELL NSC DOCS
+OPTIONS_DEFINE=	LDAP GD PSPELL NSC DOCS
 OPTIONS_SINGLE=	DB
 OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=MYSQL
@@ -35,7 +34,6 @@ OPTIONS_DEFAULT=MYSQL
 MYSQL_DESC=	Use MySQL backend
 PGSQL_DESC=	Use PostgreSQL backend
 SQLITE_DESC=	Use SQLite backend
-SSL_DESC=	Enable SSL support (imaps or google spellcheck)
 LDAP_DESC=	Enable LDAP support (address book)
 GD_DESC=	Enable GD support (image conversion)
 PSPELL_DESC=	Enable PSpell support (internal spellcheck)
@@ -53,10 +51,6 @@ USE_PHP+=	pdo_pgsql
 
 .if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	pdo_sqlite
-.endif
-
-.if ${PORT_OPTIONS:MSSL}
-USE_PHP+=	openssl
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
