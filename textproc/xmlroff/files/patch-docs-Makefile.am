@@ -1,0 +1,11 @@
+--- docs/Makefile.am.orig	2009-03-12 06:08:57.000000000 +0900
++++ docs/Makefile.am	2016-03-25 14:22:51.475354000 +0900
+@@ -228,7 +228,7 @@
+ DOCBOOK_XSL=http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl
+ 
+ xmlroff.fo:	xmlroff.xml ../libfo-compat.xsl
+-	xsltproc $(DOCBOOK_XSL) xmlroff.xml > xmlroff.tmp
++	env XML_CATALOG_FILES=file://${LOCALBASE}/share/xml/catalog xsltproc --nonet $(DOCBOOK_XSL) xmlroff.xml > xmlroff.tmp
+ 	xsltproc ../libfo-compat.xsl xmlroff.tmp > xmlroff.fo
+ 	rm -f xmlroff.tmp
+ 
