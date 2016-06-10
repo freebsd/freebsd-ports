@@ -3,6 +3,7 @@
 
 PORTNAME=	opencryptoki
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -40,11 +41,15 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USERS=		_pkcs11
 GROUPS=		_pkcs11
 
+OPTIONS_DEFINE=	LDAP
+OPTIONS_SUB=	yes
+LDAP_CONFIGURE_ENABLE=	icsf
+LDAP_USE=	OPENLDAP=yes
+
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/opencryptoki.conf \
 	    ${STAGEDIR}${ETCDIR}/opencryptoki.conf.sample
-	${RMDIR} ${STAGEDIR}/var/run/opencryptoki/swtok \
-	    ${STAGEDIR}/var/run/opencryptoki/tpm \
+	${RMDIR} ${STAGEDIR}/var/run/opencryptoki/* \
 	    ${STAGEDIR}/var/run/opencryptoki
 
 .include <bsd.port.mk>
