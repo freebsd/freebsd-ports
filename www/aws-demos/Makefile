@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	3.3.0.0
-PORTREVISION=	4
+PORTVERSION=	17.0.0
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	-demos
 
 MAINTAINER=	marino@FreeBSD.org
@@ -18,7 +16,11 @@ BUILD_DEPENDS=	gprbuild:devel/gprbuild \
 		xmlada>=4.4:textproc/xmlada \
 		aws>=3.1:www/aws
 
-USES=		ada gmake tar:bzip2
+USES=		ada gmake python tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	AdaCore
+GH_PROJECT=	aws
+GH_TAGNAME=	31d491e
 
 DISTINFO_FILE=	${PORTSDIR}/www/aws/distinfo
 
@@ -35,10 +37,12 @@ DEMO_DIRS+=	autobahn
 DEMO_DIRS+=	cert
 DEMO_DIRS+=	com
 DEMO_DIRS+=	dispatch
+DEMO_DIRS+=	gSOAP
 DEMO_DIRS+=	dowload_manager
 DEMO_DIRS+=	hello_world
 DEMO_DIRS+=	hello_wsdl
 DEMO_DIRS+=	hotplug
+DEMO_DIRS+=	https
 DEMO_DIRS+=	interoplab
 DEMO_DIRS+=	jabber_demo
 DEMO_DIRS+=	multiple_sessions
@@ -65,6 +69,7 @@ DEMO_DIRS+=	zdemo
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
+LIB_DEPENDS+=	libssl.so:security/openssl
 CONF_ARGS+=	SOCKET=openssl
 DEMO_DIRS+=	agent
 DEMO_DIRS+=	runme
@@ -94,10 +99,16 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/templates \
 		${STAGEDIR}${EXAMPLESDIR}/images
-.for dd in ${DEMO_DIRS}
+.for dd in ${DEMO_DIRS:Nautobahn}
 	${FIND} ${WRKSRC}/demos/${dd} -type f -perm -0001 \
-	   -exec ${INSTALL} {} ${STAGEDIR}${EXAMPLESDIR}/ \;
+	   -exec ${INSTALL_PROGRAM} {} ${STAGEDIR}${EXAMPLESDIR}/ \;
 .endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/demos/autobahn/obj/autobahn \
+		${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/demos/autobahn/autobahn/run.sh \
+		${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demos/autobahn/autobahn/aws.json \
+		${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && \
 		${COPYTREE_SHARE} web_elements ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demos/runme/aws_*.png \
