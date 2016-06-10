@@ -1,7 +1,7 @@
---- config/defaults.inc.php.orig	2014-04-06 14:13:09.000000000 +0000
-+++ config/defaults.inc.php	2014-04-10 09:08:58.242144399 +0000
-@@ -596,8 +596,8 @@
- // connect to a Nox Spell Server when using 'googie' here. Therefore specify the 'spellcheck_uri'
+--- config/defaults.inc.php.orig	2016-05-22 11:06:45 UTC
++++ config/defaults.inc.php
+@@ -717,8 +717,8 @@ $config['spellcheck_dictionary'] = false
+ // You can connect to any other googie-compliant service by setting 'spellcheck_uri' accordingly.
  $config['spellcheck_engine'] = 'googie';
  
 -// For locally installed Nox Spell Server or After the Deadline services,
