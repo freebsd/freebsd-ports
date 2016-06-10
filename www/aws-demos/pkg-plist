@@ -1,6 +1,7 @@
 %%SSL%%%%EXAMPLESDIR%%/agent
 %%EXAMPLESDIR%%/auth
 %%EXAMPLESDIR%%/autobahn
+%%EXAMPLESDIR%%/aws.json
 %%EXAMPLESDIR%%/candy
 %%EXAMPLESDIR%%/cert
 %%EXAMPLESDIR%%/com_1
@@ -9,6 +10,7 @@
 %%EXAMPLESDIR%%/download_manager
 %%EXAMPLESDIR%%/hello_world
 %%EXAMPLESDIR%%/hotplug
+%%EXAMPLESDIR%%/https
 %%EXAMPLESDIR%%/images/aws_down.png
 %%EXAMPLESDIR%%/images/aws_logo.png
 %%EXAMPLESDIR%%/images/aws_up.png
