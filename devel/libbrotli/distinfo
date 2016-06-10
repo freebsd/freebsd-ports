@@ -1,4 +1,5 @@
+TIMESTAMP = 1465596007
 SHA256 (libbrotli-1.0.tar.gz) = 5b7c02eb87017e7b3886c07eca685db95fa21f9c8afbb442469370c251a54dc1
 SIZE (libbrotli-1.0.tar.gz) = 3116
-SHA256 (google-brotli-3a77ebe_GH0.tar.gz) = 109705dcb9399d4942bc7f91d56331af34a311d9b1deb63cd9616e063241d191
-SIZE (google-brotli-3a77ebe_GH0.tar.gz) = 8061078
+SHA256 (google-brotli-9bce220_GH0.tar.gz) = 76893fd511ff0a19a9ee315c876c41db31d0e9a4b6c9dbf6b06cae2ed03c41e4
+SIZE (google-brotli-9bce220_GH0.tar.gz) = 8069813
