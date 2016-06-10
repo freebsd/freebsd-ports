@@ -1,8 +1,12 @@
 bin/qmapshack
 man/man1/qmapshack.1.gz
 share/applications/qmapshack.desktop
+share/icons/hicolor/32x32/apps/QMapShack.png
+share/icons/hicolor/48x48/apps/QMapShack.png
+share/icons/hicolor/scalable/apps/QMapShack.svg
 share/pixmaps/QMapShack.png
 %%DATADIR%%/translations/qmapshack_cs.qm
 %%DATADIR%%/translations/qmapshack_de.qm
 %%DATADIR%%/translations/qmapshack_es.qm
 %%DATADIR%%/translations/qmapshack_fr.qm
+%%DATADIR%%/translations/qmapshack_nl.qm
