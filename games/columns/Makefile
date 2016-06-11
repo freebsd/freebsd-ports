@@ -28,9 +28,11 @@ post-configure:
 	@${REINPLACE_CMD} -e '/chmod 0666/d' ${WRKSRC}/Makefile
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}/var/games
 	${MV} ${STAGEDIR}${DATADIR}/columns.hsc ${STAGEDIR}/var/games/columns.hsc.sample
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
