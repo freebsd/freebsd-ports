@@ -1,6 +1,8 @@
+@mode 555
 %%DATADIR%%/Plex DLNA Server
 %%DATADIR%%/Plex Media Scanner
 %%DATADIR%%/Plex Media Server
+@mode
 %%DATADIR%%/Plex_Media_Server
 %%DATADIR%%/Resources/Fonts/DejaVuSans-Bold.ttf
 %%DATADIR%%/Resources/Fonts/DejaVuSans-Regular.ttf
@@ -60,9 +62,11 @@
 %%DATADIR%%/Resources/Graphics/show.png
 %%DATADIR%%/Resources/Graphics/video.png
 %%DATADIR%%/Resources/LICENSE
+@mode 555
 %%DATADIR%%/Resources/Plex New Transcoder
 %%DATADIR%%/Resources/Plex Relay
 %%DATADIR%%/Resources/Plex Transcoder
+@mode
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Fanart-TV.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Fanart-TV.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Fanart-TV.bundle/Contents/Info.plist
@@ -1916,7 +1920,9 @@
 %%DATADIR%%/Resources/Profiles/iOS-iPod-4,1.xml
 %%DATADIR%%/Resources/Profiles/iOS.xml
 %%DATADIR%%/Resources/Profiles/tvOS.xml
+@mode 555
 %%DATADIR%%/Resources/Python/bin/python
+@mode
 %%DATADIR%%/Resources/Python/include/python2.7/pyconfig.h
 %%DATADIR%%/Resources/Python/lib/python2.7/BaseHTTPServer.py
 %%DATADIR%%/Resources/Python/lib/python2.7/Bastion.py
@@ -2772,7 +2778,9 @@
 %%DATADIR%%/Resources/plexmusic-combiner-albums.xml
 %%DATADIR%%/Resources/plexmusic-combiner-artists.xml
 %%DATADIR%%/Resources/rootCA.pem
+@mode 555
 %%DATADIR%%/Resources/rsync
+@mode
 %%DATADIR%%/Resources/server.crt
 %%DATADIR%%/Resources/server.key
 %%DATADIR%%/Resources/themoviedb-combiner-movies.xml
