@@ -1,9 +1,9 @@
-lib/elixir/lib/httpotion/ebin/Elixir.Access.HTTPotion.Headers.beam
 lib/elixir/lib/httpotion/ebin/Elixir.HTTPotion.AsyncChunk.beam
 lib/elixir/lib/httpotion/ebin/Elixir.HTTPotion.AsyncEnd.beam
 lib/elixir/lib/httpotion/ebin/Elixir.HTTPotion.AsyncHeaders.beam
 lib/elixir/lib/httpotion/ebin/Elixir.HTTPotion.AsyncResponse.beam
 lib/elixir/lib/httpotion/ebin/Elixir.HTTPotion.Base.beam
+lib/elixir/lib/httpotion/ebin/Elixir.HTTPotion.ErrorResponse.beam
 lib/elixir/lib/httpotion/ebin/Elixir.HTTPotion.HTTPError.beam
 lib/elixir/lib/httpotion/ebin/Elixir.HTTPotion.Headers.beam
 lib/elixir/lib/httpotion/ebin/Elixir.HTTPotion.Response.beam
