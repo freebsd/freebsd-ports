@@ -1,0 +1,11 @@
+--- configure.in.orig	2016-06-11 17:42:50 UTC
++++ configure.in
+@@ -148,7 +148,7 @@ AC_STRUCT_TM
+ 
+ # Change the gettext version according to the available version on your system.
+ # It should not be necessary to change it unless you run autoreconf -fi.
+-AM_GNU_GETTEXT_VERSION([0.18])
++AM_GNU_GETTEXT_VERSION([0.19])
+ AM_GNU_GETTEXT([external])
+ 
+ AC_SYS_LARGEFILE
