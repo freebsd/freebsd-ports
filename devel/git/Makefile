@@ -97,7 +97,7 @@ CVS_RUN_DEPENDS=	cvsps:devel/cvsps
 .include <bsd.port.options.mk>
 
 # This is intentionally not exposed as an option.
-.ifndef (WITH_DEBUG)
+.if defined(STRIP) && ${STRIP} != ""
 ALL_TARGET=	all strip
 .endif
 
