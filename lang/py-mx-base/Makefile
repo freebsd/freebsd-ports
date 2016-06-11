@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mx-base
-PORTVERSION=	3.2.8
+PORTVERSION=	3.2.9
 CATEGORIES=	lang python
 MASTER_SITES=	http://downloads.egenix.com/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
