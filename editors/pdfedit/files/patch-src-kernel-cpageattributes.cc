@@ -1,6 +1,6 @@
---- src/kernel/cpageattributes.cc.orig	2016-06-11 10:28:48.940221000 +0900
-+++ src/kernel/cpageattributes.cc	2016-06-11 10:29:31.800132000 +0900
-@@ -47,7 +47,7 @@
+--- src/kernel/cpageattributes.cc.orig	2009-07-27 08:18:10 UTC
++++ src/kernel/cpageattributes.cc
+@@ -47,7 +47,7 @@ using namespace utils;
  //
  //
  void 
@@ -9,7 +9,7 @@
  {
  	int initialized=0;
  
-@@ -59,7 +59,7 @@
+@@ -59,7 +59,7 @@ CPageAttributes::fillInherited(const sha
  		// attrs.__resources field is not specified yet, so tries this dictionary
  		if(pageDict->containsProperty(Specification::Page::RESOURCES))
  		{
@@ -18,7 +18,7 @@
  			if(isRef(prop))
  			{
  				attrs._resources=getCObjectFromRef<CDict>(prop);
-@@ -81,7 +81,7 @@
+@@ -81,7 +81,7 @@ CPageAttributes::fillInherited(const sha
  		// attrs._mediaBox field is not specified yet, so tries this array
  		if(pageDict->containsProperty(Specification::Page::MEDIABOX))
  		{
@@ -27,7 +27,7 @@
  			if(isRef(prop))
  			{
  				attrs._mediaBox=getCObjectFromRef<CArray>(prop);
-@@ -102,7 +102,7 @@
+@@ -102,7 +102,7 @@ CPageAttributes::fillInherited(const sha
  		// attrs._cropBox field is not specified yet, so tries this array
  		if(pageDict->containsProperty(Specification::Page::CROPBOX))
  		{
@@ -36,7 +36,7 @@
  			if(isRef(prop))
  			{
  				attrs._cropBox=getCObjectFromRef<CArray>(prop);
-@@ -123,7 +123,7 @@
+@@ -123,7 +123,7 @@ CPageAttributes::fillInherited(const sha
  		// attrs._rotate field is not specified yet, so tries this array
  		if(pageDict->containsProperty(Specification::Page::ROTATE))
  		{
@@ -45,7 +45,7 @@
  			if(isRef(prop))
  			{
  				attrs._rotate=getCObjectFromRef<CInt>(prop);
-@@ -147,19 +147,19 @@
+@@ -147,19 +147,19 @@ CPageAttributes::fillInherited(const sha
  		// stops recursion and initializes values with default
  		if(pageDict->containsProperty(Specification::Page::PARENT))
  		{
@@ -68,7 +68,7 @@
  
  			// default A4 sized box
  			libs::Rectangle defaultRect(
-@@ -191,7 +191,7 @@
+@@ -191,7 +191,7 @@ CPageAttributes::fillInherited(const sha
  				// direct usage of static DEFAULT_ROTATE value caused linkage
  				// error
  				int defRot=DisplayParams::DEFAULT_ROTATE;
@@ -77,7 +77,7 @@
  			}
  		}
  	}
-@@ -203,7 +203,7 @@
+@@ -203,7 +203,7 @@ CPageAttributes::fillInherited(const sha
  //
  //
  void 

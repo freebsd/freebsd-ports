@@ -1,6 +1,6 @@
---- src/tools/Makefile.orig	2016-06-12 05:05:10.782469000 +0900
-+++ src/tools/Makefile	2016-06-12 05:06:44.155717000 +0900
-@@ -25,6 +25,10 @@
+--- src/tools/Makefile.orig	2010-04-30 11:45:45 UTC
++++ src/tools/Makefile
+@@ -25,6 +25,10 @@ TARGET = displaycs pagemetrics parse_obj
  .PHONY: all clean
  all: $(TARGET)
  

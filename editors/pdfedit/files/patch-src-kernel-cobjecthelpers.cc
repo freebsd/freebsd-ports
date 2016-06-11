@@ -1,6 +1,6 @@
---- src/kernel/cobjecthelpers.cc.orig	2016-06-11 06:22:02.988983000 +0900
-+++ src/kernel/cobjecthelpers.cc	2016-06-11 06:23:38.529873000 +0900
-@@ -42,14 +42,14 @@
+--- src/kernel/cobjecthelpers.cc.orig	2009-04-06 15:24:58 UTC
++++ src/kernel/cobjecthelpers.cc
+@@ -42,14 +42,14 @@ int getIntFromDict(std::string name, boo
  {
  	using namespace boost;
  
@@ -17,7 +17,7 @@
  	return int_ptr->getValue();
  }
  
-@@ -57,14 +57,14 @@
+@@ -57,14 +57,14 @@ IndiRef getRefFromDict(std::string name,
  {
  	using namespace boost;
  
@@ -34,7 +34,7 @@
  	return int_ptr->getValue();
  }
  
-@@ -72,14 +72,14 @@
+@@ -72,14 +72,14 @@ std::string getStringFromDict(std::strin
  {
  	using namespace boost;
  
@@ -51,7 +51,7 @@
  	return str_ptr->getValue();
  }
  	
-@@ -87,14 +87,14 @@
+@@ -87,14 +87,14 @@ std::string getNameFromDict(std::string 
  {
  	using namespace boost;
  
@@ -68,7 +68,7 @@
  	std::string value;
  	name_ptr->getValue(value);
  
-@@ -125,7 +125,7 @@
+@@ -125,7 +125,7 @@ boost::shared_ptr<CDict> getDictFromRef(
  	// gets reference value and dereferences indirect object
  	IndiRef ref;
  	IProperty::getSmartCObjectPtr<CRef>(refProp)->getValue(ref);
@@ -77,7 +77,7 @@
  	assert(pdf);
  	boost::shared_ptr<IProperty> indirect_ptr=pdf->getIndirectProperty(ref);
  	if(indirect_ptr->getType() != pDict)
-@@ -237,7 +237,7 @@
+@@ -237,7 +237,7 @@ getReferencedObject (boost::shared_ptr<I
  
  			IndiRef ref;
  			IProperty::getSmartCObjectPtr<CRef>(ip)->getValue(ref);
@@ -86,7 +86,7 @@
  			assert(pdf);
  			return pdf->getIndirectProperty (ref);
  
-@@ -254,7 +254,7 @@
+@@ -254,7 +254,7 @@ using namespace boost;
  
  	// pdf specification says that two diagonal corners should be used and
  	// readers has to be prepared to normalize it
@@ -95,7 +95,7 @@
  	scoped_ptr<IProperty> llx(CRealFactory::getInstance(rect.xleft));
  	scoped_ptr<IProperty> lly(CRealFactory::getInstance(rect.yleft));
  	scoped_ptr<IProperty> urx(CRealFactory::getInstance(rect.xright));
-@@ -267,12 +267,12 @@
+@@ -267,12 +267,12 @@ using namespace boost;
  	return array;
  }
  
@@ -110,7 +110,7 @@
  	if(array->getPropertyCount() != 4)
  		throw CObjBadValue();
  
-@@ -286,7 +286,7 @@
+@@ -286,7 +286,7 @@ boost::shared_ptr<IProperty> getIPropert
  {
  using namespace boost;
  
@@ -119,7 +119,7 @@
  	char buffer[30];
  	memset(buffer, '\0', sizeof(buffer));
  
-@@ -304,7 +304,7 @@
+@@ -304,7 +304,7 @@ bool checkAndReplace(boost::shared_ptr<C
  {
  using namespace boost;
  
@@ -128,7 +128,7 @@
  	try
  	{
  		value=annotDict->getProperty(fieldName);
-@@ -323,9 +323,9 @@
+@@ -323,9 +323,9 @@ using namespace boost;
  //
  //
  ::XRef*

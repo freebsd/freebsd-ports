@@ -1,6 +1,6 @@
---- src/xpdf/fofi/FoFiType1C.cc.orig	2016-06-11 10:45:36.260108000 +0900
-+++ src/xpdf/fofi/FoFiType1C.cc	2016-06-11 10:46:10.103508000 +0900
-@@ -2261,10 +2261,10 @@
+--- src/xpdf/fofi/FoFiType1C.cc.orig	2009-09-11 12:02:56 UTC
++++ src/xpdf/fofi/FoFiType1C.cc
+@@ -2261,10 +2261,10 @@ void FoFiType1C::buildEncoding() {
    int pos, c, sid, nLeft, nSups, i, j;
  
    if (topDict.encodingOffset == 0) {

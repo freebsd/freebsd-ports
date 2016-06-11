@@ -1,6 +1,6 @@
---- src/xpdf/goo/GString.h.orig	2009-09-11 21:02:56.000000000 +0900
-+++ src/xpdf/goo/GString.h	2016-06-12 03:01:27.367470000 +0900
-@@ -67,8 +67,8 @@
+--- src/xpdf/goo/GString.h.orig	2009-09-11 12:02:56 UTC
++++ src/xpdf/goo/GString.h
+@@ -67,8 +67,8 @@ public:
    //     t -- GString *
    //     w -- blank space; arg determines width
    // To get literal curly braces, use {{ or }}.
@@ -11,7 +11,7 @@
  
    // Destructor.
    ~GString();
-@@ -95,8 +95,8 @@
+@@ -95,8 +95,8 @@ public:
    GString *append(const char *str, int lengthA);
  
    // Append a formatted string.
@@ -22,7 +22,7 @@
  
    // Insert a character or string.
    GString *insert(int i, char c);
-@@ -125,12 +125,12 @@
+@@ -125,12 +125,12 @@ private:
    void resize(int length1);
    static void formatInt(long x, char *buf, int bufSize,
  			GBool zeroFill, int width, int base,

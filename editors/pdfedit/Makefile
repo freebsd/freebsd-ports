@@ -38,17 +38,6 @@ OPTIONS_DEFAULT=DOCS
 post-extract:
 	${INSTALL_DATA} ${WRKSRC}/doc/AUTHORS ${WRKSRC}
 
-post-patch:
-	${REINPLACE_CMD} -e \
-	    's|-pedantic||g ; \
-	     s| $$(OPTIM)||g ; \
-	     s| $$(ARCH)||g ; \
-	     s| -pipe.*$$||g ; \
-	     s|^CFLAGS =|CFLAGS +=|g ; \
-	     s|^CXXFLAGS =|CXXFLAGS +=|g' ${WRKSRC}/Makefile.flags.in
-	${REINPLACE_CMD} -e \
-	    '/QMAKE/s| make| $$MAKE|g' ${WRKSRC}/src/qsa/configure
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}

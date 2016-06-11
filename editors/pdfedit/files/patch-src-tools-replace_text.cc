@@ -1,5 +1,5 @@
---- src/tools/replace_text.cc.orig	2010-02-24 03:28:09.000000000 +0900
-+++ src/tools/replace_text.cc	2016-06-12 04:26:38.191487000 +0900
+--- src/tools/replace_text.cc.orig	2010-02-23 18:28:09 UTC
++++ src/tools/replace_text.cc
 @@ -22,6 +22,7 @@
   * Project is hosted on http://sourceforge.net/projects/pdfedit
   */
@@ -8,7 +8,7 @@
  #include <kernel/pdfedit-core-dev.h>
  #include <kernel/cpdf.h>
  #include <kernel/cpage.h>
-@@ -59,7 +60,7 @@
+@@ -59,7 +60,7 @@ namespace {
  
  	struct _replace {
  		static const string name;
@@ -17,7 +17,7 @@
  		{
  			page->replaceText (what, with);
  		}
-@@ -121,14 +122,14 @@
+@@ -121,14 +122,14 @@ main(int argc, char ** argv)
  				return 1;
  
  		// open pdf
@@ -34,7 +34,7 @@
  					if (!del) return -1;
  				del->delinearize(out.c_str());
  			}
-@@ -137,7 +138,7 @@
+@@ -137,7 +138,7 @@ main(int argc, char ** argv)
  
  
  		// sane values
@@ -43,7 +43,7 @@
  
  		// now the hard stuff comes - do this crazy loops intentionally
  		for (size_t things_to_replace = 0; things_to_replace < withs.size(); ++things_to_replace)
-@@ -150,7 +151,7 @@
+@@ -150,7 +151,7 @@ main(int argc, char ** argv)
  			string with = withs[things_to_replace];
  			for (size_t i = from; i < to; ++i)
  			{

@@ -1,6 +1,6 @@
---- src/kernel/cpage.cc.orig	2016-06-11 10:20:24.977833000 +0900
-+++ src/kernel/cpage.cc	2016-06-11 10:21:15.509192000 +0900
-@@ -88,9 +88,9 @@
+--- src/kernel/cpage.cc.orig	2009-07-27 08:18:10 UTC
++++ src/kernel/cpage.cc
+@@ -88,9 +88,9 @@ CPage::CPage (boost::shared_ptr<CDict>& 
  	//
  	// Init modules
  	//
@@ -12,7 +12,7 @@
  	_modules.push_back (_display);
  	_fonts = boost::shared_ptr<CPageFonts> (new CPageFonts(this));
  	_modules.push_back (_fonts);
-@@ -252,7 +252,7 @@
+@@ -252,7 +252,7 @@ size_t
  CPage::getPagePosition () const
  {
  	if (hasValidPdf (_dict))
@@ -21,7 +21,7 @@
  
  	throw CObjInvalidOperation ();
  }
-@@ -284,9 +284,9 @@
+@@ -284,9 +284,9 @@ CPage::_objectChanged (bool invalid)
  
  	// Notify observers
  	if (invalid)

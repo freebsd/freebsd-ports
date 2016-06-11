@@ -1,5 +1,5 @@
---- src/xpdf/xpdf/NameToUnicodeTable.h.orig	2016-06-12 03:03:36.755295000 +0900
-+++ src/xpdf/xpdf/NameToUnicodeTable.h	2016-06-12 03:03:51.495599000 +0900
+--- src/xpdf/xpdf/NameToUnicodeTable.h.orig	2006-02-04 15:51:34 UTC
++++ src/xpdf/xpdf/NameToUnicodeTable.h
 @@ -8,7 +8,7 @@
  
  static struct {

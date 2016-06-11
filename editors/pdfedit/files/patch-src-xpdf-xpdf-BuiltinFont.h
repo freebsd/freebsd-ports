@@ -1,6 +1,6 @@
---- src/xpdf/xpdf/BuiltinFont.h.orig	2016-06-12 03:07:21.081040000 +0900
-+++ src/xpdf/xpdf/BuiltinFont.h	2016-06-12 03:08:04.015283000 +0900
-@@ -23,7 +23,7 @@
+--- src/xpdf/xpdf/BuiltinFont.h.orig	2008-09-09 14:21:13 UTC
++++ src/xpdf/xpdf/BuiltinFont.h
+@@ -23,7 +23,7 @@ class BuiltinFontWidths;
  //------------------------------------------------------------------------
  
  struct BuiltinFont {
@@ -9,7 +9,7 @@
    char **defaultBaseEnc;
    short ascent;
    short descent;
-@@ -34,7 +34,7 @@
+@@ -34,7 +34,7 @@ struct BuiltinFont {
  //------------------------------------------------------------------------
  
  struct BuiltinFontWidth {
@@ -18,7 +18,7 @@
    Gushort width;
    BuiltinFontWidth *next;
  };
-@@ -44,11 +44,11 @@
+@@ -44,11 +44,11 @@ public:
  
    BuiltinFontWidths(BuiltinFontWidth *widths, int sizeA);
    ~BuiltinFontWidths();

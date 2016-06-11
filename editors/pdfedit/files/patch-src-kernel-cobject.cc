@@ -1,6 +1,6 @@
---- src/kernel/cobject.cc.orig	2016-06-11 06:02:30.123217000 +0900
-+++ src/kernel/cobject.cc	2016-06-11 06:02:50.095614000 +0900
-@@ -60,7 +60,7 @@
+--- src/kernel/cobject.cc.orig	2009-09-11 12:02:56 UTC
++++ src/kernel/cobject.cc
+@@ -60,7 +60,7 @@ objHasParent (const IProperty& ip, boost
  	if (!hasValidPdf (ip))
  		throw CObjInvalidOperation ();
  
