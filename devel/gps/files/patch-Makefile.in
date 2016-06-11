@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-11-13 18:15:57 UTC
+--- Makefile.in.orig	2016-04-26 12:43:30 UTC
 +++ Makefile.in
-@@ -3,16 +3,15 @@ MV              = mv
+@@ -3,17 +3,16 @@ MV              = mv
  MKDIR           = mkdir -p
  RMDIR           = rm -rf
  STRIP           = strip
@@ -11,9 +11,11 @@
 -INSTALL         = @INSTALL@
 -INSTALL_PROGRAM = @INSTALL_PROGRAM@
 -INSTALL_DATA    = @INSTALL_DATA@
+-GNATCOLL_INSTALL  = @GNATCOLL_INSTALL@
 +PYTHON          = $(PYTHON_CMD)
 +INSTALL_PROGRAM = $(BSD_INSTALL_PROGRAM)
 +INSTALL_DATA    = $(BSD_INSTALL_DATA)
++GNATCOLL_INSTALL=
  prefix          = @prefix@
 -bindir          = $(prefix)/bin
 -sharedir        = $(prefix)/share
@@ -22,9 +24,9 @@
 +sharedir        = $(DESTDIR)$(prefix)/share
 +examplesdir     = $(DESTDIR)$(prefix)/share/examples/gps
  
- all default:
- 	$(MAKE) -C gps default
-@@ -49,20 +48,6 @@ ifeq ($(OS),Windows_NT)
+ SYS := $(shell gcc -dumpmachine)
+ 
+@@ -57,20 +56,6 @@ ifeq ($(OS),Windows_NT)
  		share/plug-ins/_subversion_ \
  		> share/plug-ins/subversion_native_windows.py
  endif
@@ -44,8 +46,8 @@
 -	$(RMDIR) $(sharedir)/gps/templates
  # update runtime.xml before copying the plug-ins files.
  	cd distrib; $(PERL) from_impunit.pl
- # update light icon set
-@@ -75,10 +60,8 @@ ifeq ($(OS),Windows_NT)
+ 
+@@ -80,10 +65,8 @@ ifeq ($(OS),Windows_NT)
  	$(MV) share/plug-ins/_subversion_ share/plug-ins/subversion.py
  	$(RM) share/plug-ins/subversion_native_windows.py
  endif
@@ -54,10 +56,10 @@
  	(cd share; tar cf - library/*.py) | (cd $(sharedir)/gps; tar xf -)
 -	(cd share; tar cf - library/GPS_old/*.py) | (cd $(sharedir)/gps; tar xf -)
  	(cd share; tar cf - support/) | (cd $(sharedir)/gps; tar xf -)
- 	-$(AWK) -f distrib/gnat_switches.awk < gnat/gnat_ugn.texi > $(sharedir)/gps/support/core/gnat_switches.py
+ 	-${PYTHON} distrib/gnat_switches.py > $(sharedir)/gps/support/core/gnat_switches.py
  	$(RM) $(sharedir)/gps/plug-ins/emacs.xml
-@@ -108,11 +91,10 @@ ifeq ($(OS),Windows_NT)
- 	$(INSTALL_PROGRAM) gnatlib/src/obj/gnatinspect.exe $(bindir)
+@@ -121,7 +104,7 @@ endif
+ endif
  	$(MAKE) -C common/expect install
  else
 -	$(INSTALL_PROGRAM) gps/obj/gps $(bindir)
@@ -65,7 +67,3 @@
  	$(INSTALL_PROGRAM) cli/obj/gnatdoc $(bindir)
  	$(INSTALL_PROGRAM) cli/obj/gps_cli $(bindir)
  	$(INSTALL_PROGRAM) spark/obj/gnatspark $(bindir)
--	$(INSTALL_PROGRAM) gnatlib/src/obj/gnatinspect $(bindir)
- endif
- 
- install-strip: install-common

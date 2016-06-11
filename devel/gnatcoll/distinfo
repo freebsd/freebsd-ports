@@ -1,2 +1,5 @@
-SHA256 (gnatcoll-gpl-2015-src.tar.gz) = ed27220497db6e4a540549e739323337427c069e7a1078cb06d0df52001f5b36
-SIZE (gnatcoll-gpl-2015-src.tar.gz) = 5337526
+TIMESTAMP = 1465650872
+SHA256 (AdaCore-gnatcoll-2016-858f72c_GH0.tar.gz) = 18e3470eacad2e445d34621a2ed7a24a32548dc3210d9aa5ae774a58e623d746
+SIZE (AdaCore-gnatcoll-2016-858f72c_GH0.tar.gz) = 4369484
+SHA256 (AdaCore-gprbuild-a2e9066_GH0.tar.gz) = 6f35607ef16e81aa76bb0e5a78bf89d0d54ce691fda50517d50e18540db8aaa5
+SIZE (AdaCore-gprbuild-a2e9066_GH0.tar.gz) = 4254762

@@ -5,7 +5,169 @@ bin/gps_cli
 bin/gps_exe
 share/gps/about.txt
 share/gps/activity_log.tmplt
+share/gps/color_themes/snapshots/Base16 3024 Dark.png
+share/gps/color_themes/snapshots/Base16 3024 Light.png
+share/gps/color_themes/snapshots/Base16 Apathy Dark.png
+share/gps/color_themes/snapshots/Base16 Apathy Light.png
+share/gps/color_themes/snapshots/Base16 Ashes Dark.png
+share/gps/color_themes/snapshots/Base16 Ashes Light.png
+share/gps/color_themes/snapshots/Base16 Atelier Dune Dark.png
+share/gps/color_themes/snapshots/Base16 Atelier Dune Light.png
+share/gps/color_themes/snapshots/Base16 Atelier Forest Dark.png
+share/gps/color_themes/snapshots/Base16 Atelier Forest Light.png
+share/gps/color_themes/snapshots/Base16 Atelier Heath Dark.png
+share/gps/color_themes/snapshots/Base16 Atelier Heath Light.png
+share/gps/color_themes/snapshots/Base16 Atelier Lakeside Dark.png
+share/gps/color_themes/snapshots/Base16 Atelier Lakeside Light.png
+share/gps/color_themes/snapshots/Base16 Atelier Seaside Dark.png
+share/gps/color_themes/snapshots/Base16 Atelier Seaside Light.png
+share/gps/color_themes/snapshots/Base16 Bespin Dark.png
+share/gps/color_themes/snapshots/Base16 Bespin Light.png
+share/gps/color_themes/snapshots/Base16 Brewer Dark.png
+share/gps/color_themes/snapshots/Base16 Brewer Light.png
+share/gps/color_themes/snapshots/Base16 Bright Dark.png
+share/gps/color_themes/snapshots/Base16 Bright Light.png
+share/gps/color_themes/snapshots/Base16 Chalk Dark.png
+share/gps/color_themes/snapshots/Base16 Chalk Light.png
+share/gps/color_themes/snapshots/Base16 Codeschool Dark.png
+share/gps/color_themes/snapshots/Base16 Codeschool Light.png
+share/gps/color_themes/snapshots/Base16 Colors Dark.png
+share/gps/color_themes/snapshots/Base16 Colors Light.png
+share/gps/color_themes/snapshots/Base16 Default Dark.png
+share/gps/color_themes/snapshots/Base16 Default Light.png
+share/gps/color_themes/snapshots/Base16 Eighties Dark.png
+share/gps/color_themes/snapshots/Base16 Eighties Light.png
+share/gps/color_themes/snapshots/Base16 Embers Dark.png
+share/gps/color_themes/snapshots/Base16 Embers Light.png
+share/gps/color_themes/snapshots/Base16 Flat Dark.png
+share/gps/color_themes/snapshots/Base16 Flat Light.png
+share/gps/color_themes/snapshots/Base16 Google Dark.png
+share/gps/color_themes/snapshots/Base16 Google Light.png
+share/gps/color_themes/snapshots/Base16 Grayscale Dark.png
+share/gps/color_themes/snapshots/Base16 Grayscale Light.png
+share/gps/color_themes/snapshots/Base16 Green Screen Dark.png
+share/gps/color_themes/snapshots/Base16 Green Screen Light.png
+share/gps/color_themes/snapshots/Base16 Hopscotch Dark.png
+share/gps/color_themes/snapshots/Base16 Hopscotch Light.png
+share/gps/color_themes/snapshots/Base16 Isotope Dark.png
+share/gps/color_themes/snapshots/Base16 Isotope Light.png
+share/gps/color_themes/snapshots/Base16 London Tube Dark.png
+share/gps/color_themes/snapshots/Base16 London Tube Light.png
+share/gps/color_themes/snapshots/Base16 Marrakesh Dark.png
+share/gps/color_themes/snapshots/Base16 Marrakesh Light.png
+share/gps/color_themes/snapshots/Base16 Mocha Dark.png
+share/gps/color_themes/snapshots/Base16 Mocha Light.png
+share/gps/color_themes/snapshots/Base16 Monokai Dark.png
+share/gps/color_themes/snapshots/Base16 Monokai Light.png
+share/gps/color_themes/snapshots/Base16 Ocean Dark.png
+share/gps/color_themes/snapshots/Base16 Ocean Light.png
+share/gps/color_themes/snapshots/Base16 Paraiso Dark.png
+share/gps/color_themes/snapshots/Base16 Paraiso Light.png
+share/gps/color_themes/snapshots/Base16 Pop Dark.png
+share/gps/color_themes/snapshots/Base16 Pop Light.png
+share/gps/color_themes/snapshots/Base16 Railscasts Dark.png
+share/gps/color_themes/snapshots/Base16 Railscasts Light.png
+share/gps/color_themes/snapshots/Base16 Solarized Dark.png
+share/gps/color_themes/snapshots/Base16 Solarized Light.png
+share/gps/color_themes/snapshots/Base16 Summerfruit Dark.png
+share/gps/color_themes/snapshots/Base16 Summerfruit Light.png
+share/gps/color_themes/snapshots/Base16 Tomorrow Dark.png
+share/gps/color_themes/snapshots/Base16 Tomorrow Light.png
+share/gps/color_themes/snapshots/Base16 Twilight Dark.png
+share/gps/color_themes/snapshots/Base16 Twilight Light.png
+share/gps/color_themes/snapshots/Base16 harmonic16 Dark.png
+share/gps/color_themes/snapshots/Base16 harmonic16 Light.png
+share/gps/color_themes/snapshots/Base16 shapeshifter Dark.png
+share/gps/color_themes/snapshots/Base16 shapeshifter Light.png
+share/gps/color_themes/snapshots/Darkside.png
+share/gps/color_themes/snapshots/Default.png
+share/gps/color_themes/snapshots/Monokai.png
+share/gps/color_themes/snapshots/Solarized (dark).png
+share/gps/color_themes/snapshots/Solarized (light).png
+share/gps/color_themes/snapshots/iPlastic.png
+share/gps/color_themes/themes/base16/LICENSE.md
+share/gps/color_themes/themes/base16/README.txt
+share/gps/color_themes/themes/base16/base16-3024.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-3024.light.tmTheme
+share/gps/color_themes/themes/base16/base16-apathy.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-apathy.light.tmTheme
+share/gps/color_themes/themes/base16/base16-ashes.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-ashes.light.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierdune.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierdune.light.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierforest.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierforest.light.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierheath.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierheath.light.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierlakeside.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierlakeside.light.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierseaside.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-atelierseaside.light.tmTheme
+share/gps/color_themes/themes/base16/base16-bespin.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-bespin.light.tmTheme
+share/gps/color_themes/themes/base16/base16-brewer.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-brewer.light.tmTheme
+share/gps/color_themes/themes/base16/base16-bright.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-bright.light.tmTheme
+share/gps/color_themes/themes/base16/base16-chalk.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-chalk.light.tmTheme
+share/gps/color_themes/themes/base16/base16-codeschool.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-codeschool.light.tmTheme
+share/gps/color_themes/themes/base16/base16-colors.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-colors.light.tmTheme
+share/gps/color_themes/themes/base16/base16-default.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-default.light.tmTheme
+share/gps/color_themes/themes/base16/base16-eighties.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-eighties.light.tmTheme
+share/gps/color_themes/themes/base16/base16-embers.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-embers.light.tmTheme
+share/gps/color_themes/themes/base16/base16-flat.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-flat.light.tmTheme
+share/gps/color_themes/themes/base16/base16-google.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-google.light.tmTheme
+share/gps/color_themes/themes/base16/base16-grayscale.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-grayscale.light.tmTheme
+share/gps/color_themes/themes/base16/base16-greenscreen.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-greenscreen.light.tmTheme
+share/gps/color_themes/themes/base16/base16-harmonic16.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-harmonic16.light.tmTheme
+share/gps/color_themes/themes/base16/base16-hopscotch.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-hopscotch.light.tmTheme
+share/gps/color_themes/themes/base16/base16-isotope.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-isotope.light.tmTheme
+share/gps/color_themes/themes/base16/base16-londontube.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-londontube.light.tmTheme
+share/gps/color_themes/themes/base16/base16-marrakesh.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-marrakesh.light.tmTheme
+share/gps/color_themes/themes/base16/base16-mocha.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-mocha.light.tmTheme
+share/gps/color_themes/themes/base16/base16-monokai.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-monokai.light.tmTheme
+share/gps/color_themes/themes/base16/base16-ocean.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-ocean.light.tmTheme
+share/gps/color_themes/themes/base16/base16-paraiso.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-paraiso.light.tmTheme
+share/gps/color_themes/themes/base16/base16-pop.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-pop.light.tmTheme
+share/gps/color_themes/themes/base16/base16-railscasts.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-railscasts.light.tmTheme
+share/gps/color_themes/themes/base16/base16-shapeshifter.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-shapeshifter.light.tmTheme
+share/gps/color_themes/themes/base16/base16-solarized.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-solarized.light.tmTheme
+share/gps/color_themes/themes/base16/base16-summerfruit.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-summerfruit.light.tmTheme
+share/gps/color_themes/themes/base16/base16-tomorrow.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-tomorrow.light.tmTheme
+share/gps/color_themes/themes/base16/base16-twilight.dark.tmTheme
+share/gps/color_themes/themes/base16/base16-twilight.light.tmTheme
+share/gps/color_themes/themes/solarized/LICENSE
+share/gps/color_themes/themes/solarized/README.mkd
+share/gps/color_themes/themes/solarized/README.txt
+share/gps/color_themes/themes/solarized/Solarized (dark).tmTheme
+share/gps/color_themes/themes/solarized/Solarized (light).tmTheme
 share/gps/default.gpr
+share/gps/fonts/README.txt
 share/gps/gnatdoc/html/compile.sh
 share/gps/gnatdoc/html/static/blank.html
 share/gps/gnatdoc/html/static/gnatdoc.css
@@ -33,313 +195,165 @@ share/gps/gnatdoc/simple/support/conf.py
 share/gps/gnatdoc/simple/support/make.bat
 share/gps/gps-Adwaita (Dark).css
 share/gps/gps-Adwaita.css
+share/gps/gps-gtk-win32-base.css
+share/gps/gps-gtk-win32-classic.css
 share/gps/gps-gtk-win32-xp.css
 share/gps/gps-gtk-win32.css
 share/gps/gps-splash.png
 share/gps/gps.css
-share/gps/icons/dark/16px/box.png
-share/gps/icons/dark/16px/build_main_16.png
-share/gps/icons/dark/16px/cleanup_16.png
-share/gps/icons/dark/16px/clear_entry_16.png
-share/gps/icons/dark/16px/compile_16.png
-share/gps/icons/dark/16px/compute_xref_16.png
-share/gps/icons/dark/16px/custom_build_16.png
-share/gps/icons/dark/16px/debug_break.png
-share/gps/icons/dark/16px/debug_indicator.png
-share/gps/icons/dark/16px/entities/circle.png
-share/gps/icons/dark/16px/entities/circle_p.png
-share/gps/icons/dark/16px/entities/circle_ps.png
-share/gps/icons/dark/16px/entities/circle_s.png
-share/gps/icons/dark/16px/entities/circle_x.png
-share/gps/icons/dark/16px/entities/circle_xs.png
-share/gps/icons/dark/16px/entities/diamond.png
-share/gps/icons/dark/16px/entities/diamond_p.png
-share/gps/icons/dark/16px/entities/diamond_ps.png
-share/gps/icons/dark/16px/entities/diamond_s.png
-share/gps/icons/dark/16px/entities/diamond_x.png
-share/gps/icons/dark/16px/entities/diamond_x_blue.png
-share/gps/icons/dark/16px/entities/diamond_xs.png
-share/gps/icons/dark/16px/entities/dot.png
-share/gps/icons/dark/16px/entities/dot_p.png
-share/gps/icons/dark/16px/entities/dot_ps.png
-share/gps/icons/dark/16px/entities/dot_s.png
-share/gps/icons/dark/16px/entities/dot_x.png
-share/gps/icons/dark/16px/entities/dot_xs.png
-share/gps/icons/dark/16px/entities/square.png
-share/gps/icons/dark/16px/entities/square_p.png
-share/gps/icons/dark/16px/entities/square_ps.png
-share/gps/icons/dark/16px/entities/square_s.png
-share/gps/icons/dark/16px/entities/square_x.png
-share/gps/icons/dark/16px/entities/square_xs.png
-share/gps/icons/dark/16px/entities/triangle.png
-share/gps/icons/dark/16px/entities/triangle_p.png
-share/gps/icons/dark/16px/entities/triangle_ps.png
-share/gps/icons/dark/16px/entities/triangle_s.png
-share/gps/icons/dark/16px/entities/triangle_x.png
-share/gps/icons/dark/16px/entities/triangle_xs.png
-share/gps/icons/dark/16px/error.png
-share/gps/icons/dark/16px/file.png
-share/gps/icons/dark/16px/file_altered.png
-share/gps/icons/dark/16px/file_error.png
-share/gps/icons/dark/16px/file_pencil.png
-share/gps/icons/dark/16px/file_warning.png
-share/gps/icons/dark/16px/finish_16.png
-share/gps/icons/dark/16px/folder_closed.png
-share/gps/icons/dark/16px/folder_e_closed.png
-share/gps/icons/dark/16px/folder_e_open.png
-share/gps/icons/dark/16px/folder_o_closed.png
-share/gps/icons/dark/16px/folder_o_open.png
-share/gps/icons/dark/16px/folder_open.png
-share/gps/icons/dark/16px/gps_16.png
-share/gps/icons/dark/16px/negate.png
-share/gps/icons/dark/16px/newfile_16.png
-share/gps/icons/dark/16px/newfile_b_16.png
-share/gps/icons/dark/16px/next_16.png
-share/gps/icons/dark/16px/play_16.png
-share/gps/icons/dark/16px/project_box.png
-share/gps/icons/dark/16px/project_box_altered.png
-share/gps/icons/dark/16px/project_box_error.png
-share/gps/icons/dark/16px/project_box_open.png
-share/gps/icons/dark/16px/project_box_open_altered.png
-share/gps/icons/dark/16px/project_box_pencil.png
-share/gps/icons/dark/16px/project_box_warning.png
-share/gps/icons/dark/16px/project_root_box.png
-share/gps/icons/dark/16px/project_runtime.png
-share/gps/icons/dark/16px/regexp.png
-share/gps/icons/dark/16px/semantic_check_16.png
-share/gps/icons/dark/16px/stack_down_16.png
-share/gps/icons/dark/16px/stack_up_16.png
-share/gps/icons/dark/16px/step_16.png
-share/gps/icons/dark/16px/stop_16.png
-share/gps/icons/dark/16px/sync_to_local.png
-share/gps/icons/dark/16px/sync_to_remote.png
-share/gps/icons/dark/16px/syntax_check_16.png
-share/gps/icons/dark/16px/warning.png
-share/gps/icons/dark/18px/build_main_18.png
-share/gps/icons/dark/18px/cleanup_18.png
-share/gps/icons/dark/18px/compile_18.png
-share/gps/icons/dark/18px/compute_xref_18.png
-share/gps/icons/dark/18px/custom_build_18.png
-share/gps/icons/dark/18px/finish_18.png
-share/gps/icons/dark/18px/newfile_18.png
-share/gps/icons/dark/18px/next_18.png
-share/gps/icons/dark/18px/play_18.png
-share/gps/icons/dark/18px/semantic_check_18.png
-share/gps/icons/dark/18px/stack_down_18.png
-share/gps/icons/dark/18px/stack_up_18.png
-share/gps/icons/dark/18px/step_18.png
-share/gps/icons/dark/18px/stop_18.png
-share/gps/icons/dark/18px/syntax_check_18.png
-share/gps/icons/dark/20px/vcs-added.png
-share/gps/icons/dark/20px/vcs-has-conflicts.png
-share/gps/icons/dark/20px/vcs-modified.png
-share/gps/icons/dark/20px/vcs-needs-merge.png
-share/gps/icons/dark/20px/vcs-needs-update.png
-share/gps/icons/dark/20px/vcs-not-registered.png
-share/gps/icons/dark/20px/vcs-removed.png
-share/gps/icons/dark/20px/vcs-unknown.png
-share/gps/icons/dark/20px/vcs-up-to-date.png
-share/gps/icons/dark/24px/build_main_24.png
-share/gps/icons/dark/24px/cleanup_24.png
-share/gps/icons/dark/24px/compile_24.png
-share/gps/icons/dark/24px/compute_xref_24.png
-share/gps/icons/dark/24px/custom_build_24.png
-share/gps/icons/dark/24px/finish_24.png
-share/gps/icons/dark/24px/newfile_24.png
-share/gps/icons/dark/24px/next_24.png
-share/gps/icons/dark/24px/play_24.png
-share/gps/icons/dark/24px/semantic_check_24.png
-share/gps/icons/dark/24px/stack_down_24.png
-share/gps/icons/dark/24px/stack_up_24.png
-share/gps/icons/dark/24px/step_24.png
-share/gps/icons/dark/24px/stop_24.png
-share/gps/icons/dark/24px/syntax_check_24.png
-share/gps/icons/dark/32px/gps_32.png
-share/gps/icons/dark/48px/gps_48.png
-share/gps/icons/dark/9px/build_error.png
-share/gps/icons/dark/9px/build_error_fixable.png
-share/gps/icons/dark/9px/build_style.png
-share/gps/icons/dark/9px/build_style_fixable.png
-share/gps/icons/dark/9px/build_warning.png
-share/gps/icons/dark/9px/build_warning_fixable.png
-share/gps/icons/dark/9px/collapse_12.png
-share/gps/icons/dark/9px/executed_code.png
-share/gps/icons/dark/9px/expand_12.png
-share/gps/icons/dark/9px/line_has_code.png
-share/gps/icons/dark/9px/line_might_have_code.png
-share/gps/icons/dark/9px/non_executed_code.png
-share/gps/icons/dark/9px/partially_covered_code.png
-share/gps/icons/dark/9px/remove_unselected_12.png
-share/gps/icons/dark/9px/toggle_links_12.png
-share/gps/icons/dark/9px/wrench.png
-share/gps/icons/dark/9px/wrench_multi.png
-share/gps/icons/dark/other/adacore_logo.png
-share/gps/icons/dark/other/button_guide.png
-share/gps/icons/dark/other/button_guide_over.png
-share/gps/icons/dark/other/button_overview.png
-share/gps/icons/dark/other/button_overview_over.png
-share/gps/icons/dark/other/button_tutorial.png
-share/gps/icons/dark/other/button_tutorial_over.png
-share/gps/icons/dark/other/get_started.png
-share/gps/icons/dark/other/welcome_header.png
-share/gps/icons/dark/svg/build.svg
-share/gps/icons/dark/svg/buildall.svg
-share/gps/icons/dark/svg/buildcustom.svg
-share/gps/icons/dark/svg/buildmain.svg
-share/gps/icons/dark/svg/circle.svg
-share/gps/icons/dark/svg/circle_s.svg
-share/gps/icons/dark/svg/circle_x.svg
-share/gps/icons/dark/svg/circle_xs.svg
-share/gps/icons/dark/svg/clean-12.svg
-share/gps/icons/dark/svg/clean.svg
-share/gps/icons/dark/svg/clear_entry.svg
-share/gps/icons/dark/svg/close.svg
-share/gps/icons/dark/svg/compile.svg
-share/gps/icons/dark/svg/copy.svg
-share/gps/icons/dark/svg/cut.svg
-share/gps/icons/dark/svg/diamond.svg
-share/gps/icons/dark/svg/diamond_s.svg
-share/gps/icons/dark/svg/diamond_x.svg
-share/gps/icons/dark/svg/diamond_x_blue.svg
-share/gps/icons/dark/svg/diamond_xs.svg
-share/gps/icons/dark/svg/document.svg
-share/gps/icons/dark/svg/dot.svg
-share/gps/icons/dark/svg/dot_s.svg
-share/gps/icons/dark/svg/dot_x.svg
-share/gps/icons/dark/svg/dot_xs.svg
-share/gps/icons/dark/svg/double_arrow.svg
-share/gps/icons/dark/svg/edit.svg
-share/gps/icons/dark/svg/environment.svg
-share/gps/icons/dark/svg/error.svg
-share/gps/icons/dark/svg/folder-12.svg
-share/gps/icons/dark/svg/folder.svg
-share/gps/icons/dark/svg/gnatcheck.svg
-share/gps/icons/dark/svg/gnatmetric.svg
-share/gps/icons/dark/svg/gnatprove-path.svg
-share/gps/icons/dark/svg/gnattest.svg
-share/gps/icons/dark/svg/gps-fold-block.svg
-share/gps/icons/dark/svg/gps-unfold-block.svg
-share/gps/icons/dark/svg/info.svg
-share/gps/icons/dark/svg/left.svg
-share/gps/icons/dark/svg/lock-12.svg
-share/gps/icons/dark/svg/lock.svg
-share/gps/icons/dark/svg/menu-12.svg
-share/gps/icons/dark/svg/menu.svg
-share/gps/icons/dark/svg/messages.svg
-share/gps/icons/dark/svg/minus.svg
-share/gps/icons/dark/svg/newdocument.svg
-share/gps/icons/dark/svg/paste.svg
-share/gps/icons/dark/svg/plus.svg
-share/gps/icons/dark/svg/power.svg
-share/gps/icons/dark/svg/print.svg
-share/gps/icons/dark/svg/project.svg
-share/gps/icons/dark/svg/redo.svg
-share/gps/icons/dark/svg/refresh.svg
-share/gps/icons/dark/svg/right.svg
-share/gps/icons/dark/svg/run.svg
-share/gps/icons/dark/svg/run_blue.svg
-share/gps/icons/dark/svg/run_blue_d.svg
-share/gps/icons/dark/svg/run_green.svg
-share/gps/icons/dark/svg/run_green_d.svg
-share/gps/icons/dark/svg/save-12.svg
-share/gps/icons/dark/svg/save.svg
-share/gps/icons/dark/svg/search-and-menu.svg
-share/gps/icons/dark/svg/search.svg
-share/gps/icons/dark/svg/settings.svg
-share/gps/icons/dark/svg/square.svg
-share/gps/icons/dark/svg/square_s.svg
-share/gps/icons/dark/svg/square_x.svg
-share/gps/icons/dark/svg/square_xs.svg
-share/gps/icons/dark/svg/triangle.svg
-share/gps/icons/dark/svg/triangle_s.svg
-share/gps/icons/dark/svg/triangle_x.svg
-share/gps/icons/dark/svg/triangle_xs.svg
-share/gps/icons/dark/svg/undo.svg
-share/gps/icons/dark/svg/unlock-12.svg
-share/gps/icons/dark/svg/unlock.svg
-share/gps/icons/dark/svg/warning.svg
-share/gps/icons/dark/svg/zip.svg
-share/gps/icons/dark/svg/zoom.svg
-share/gps/icons/dark/svg/zoomout.svg
-share/gps/icons/light/svg/build.svg
-share/gps/icons/light/svg/buildall.svg
-share/gps/icons/light/svg/buildcustom.svg
-share/gps/icons/light/svg/buildmain.svg
-share/gps/icons/light/svg/circle.svg
-share/gps/icons/light/svg/circle_s.svg
-share/gps/icons/light/svg/circle_x.svg
-share/gps/icons/light/svg/circle_xs.svg
-share/gps/icons/light/svg/clean-12.svg
-share/gps/icons/light/svg/clean.svg
-share/gps/icons/light/svg/clear_entry.svg
-share/gps/icons/light/svg/close.svg
-share/gps/icons/light/svg/compile.svg
-share/gps/icons/light/svg/copy.svg
-share/gps/icons/light/svg/cut.svg
-share/gps/icons/light/svg/diamond.svg
-share/gps/icons/light/svg/diamond_s.svg
-share/gps/icons/light/svg/diamond_x.svg
-share/gps/icons/light/svg/diamond_x_blue.svg
-share/gps/icons/light/svg/diamond_xs.svg
-share/gps/icons/light/svg/document.svg
-share/gps/icons/light/svg/dot.svg
-share/gps/icons/light/svg/dot_s.svg
-share/gps/icons/light/svg/dot_x.svg
-share/gps/icons/light/svg/dot_xs.svg
-share/gps/icons/light/svg/double_arrow.svg
-share/gps/icons/light/svg/edit.svg
-share/gps/icons/light/svg/environment.svg
-share/gps/icons/light/svg/error.svg
-share/gps/icons/light/svg/folder-12.svg
-share/gps/icons/light/svg/folder.svg
-share/gps/icons/light/svg/gnatcheck.svg
-share/gps/icons/light/svg/gnatmetric.svg
-share/gps/icons/light/svg/gnatprove-path.svg
-share/gps/icons/light/svg/gnattest.svg
-share/gps/icons/light/svg/gps-fold-block.svg
-share/gps/icons/light/svg/gps-unfold-block.svg
-share/gps/icons/light/svg/info.svg
-share/gps/icons/light/svg/left.svg
-share/gps/icons/light/svg/lock-12.svg
-share/gps/icons/light/svg/lock.svg
-share/gps/icons/light/svg/menu-12.svg
-share/gps/icons/light/svg/menu.svg
-share/gps/icons/light/svg/messages.svg
-share/gps/icons/light/svg/minus.svg
-share/gps/icons/light/svg/newdocument.svg
-share/gps/icons/light/svg/paste.svg
-share/gps/icons/light/svg/plus.svg
-share/gps/icons/light/svg/power.svg
-share/gps/icons/light/svg/print.svg
-share/gps/icons/light/svg/project.svg
-share/gps/icons/light/svg/redo.svg
-share/gps/icons/light/svg/refresh.svg
-share/gps/icons/light/svg/right.svg
-share/gps/icons/light/svg/run.svg
-share/gps/icons/light/svg/run_blue.svg
-share/gps/icons/light/svg/run_blue_d.svg
-share/gps/icons/light/svg/run_green.svg
-share/gps/icons/light/svg/run_green_d.svg
-share/gps/icons/light/svg/save-12.svg
-share/gps/icons/light/svg/save.svg
-share/gps/icons/light/svg/search-and-menu.svg
-share/gps/icons/light/svg/search.svg
-share/gps/icons/light/svg/settings.svg
-share/gps/icons/light/svg/square.svg
-share/gps/icons/light/svg/square_s.svg
-share/gps/icons/light/svg/square_x.svg
-share/gps/icons/light/svg/square_xs.svg
-share/gps/icons/light/svg/triangle.svg
-share/gps/icons/light/svg/triangle_s.svg
-share/gps/icons/light/svg/triangle_x.svg
-share/gps/icons/light/svg/triangle_xs.svg
-share/gps/icons/light/svg/undo.svg
-share/gps/icons/light/svg/unlock-12.svg
-share/gps/icons/light/svg/unlock.svg
-share/gps/icons/light/svg/warning.svg
-share/gps/icons/light/svg/zip.svg
-share/gps/icons/light/svg/zoom.svg
-share/gps/icons/light/svg/zoomout.svg
+share/gps/icons/hicolor/24x24/apps/adacore_logo.png
+share/gps/icons/hicolor/32x32/apps/button_guide.png
+share/gps/icons/hicolor/32x32/apps/button_guide_over.png
+share/gps/icons/hicolor/32x32/apps/button_overview.png
+share/gps/icons/hicolor/32x32/apps/button_overview_over.png
+share/gps/icons/hicolor/32x32/apps/button_tutorial.png
+share/gps/icons/hicolor/32x32/apps/button_tutorial_over.png
+share/gps/icons/hicolor/32x32/apps/gps_32.png
+share/gps/icons/hicolor/32x32/apps/welcome_header.png
+share/gps/icons/hicolor/index.theme
+share/gps/icons/hicolor/scalable/16x16/gps-add-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-backward-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-boardloading-debug-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-boardloading-flash-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-boardloading-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-build-all-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-build-main-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-clean-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-clear-entry-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-clear-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-close-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-codefix-multi.svg
+share/gps/icons/hicolor/scalable/16x16/gps-codefix.svg
+share/gps/icons/hicolor/scalable/16x16/gps-collapse-all-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-compile-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-compute-xref-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-config-menu-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-copy-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-custom-build-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-cut-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-debugger-down.svg
+share/gps/icons/hicolor/scalable/16x16/gps-debugger-finish.svg
+share/gps/icons/hicolor/scalable/16x16/gps-debugger-next.svg
+share/gps/icons/hicolor/scalable/16x16/gps-debugger-run.svg
+share/gps/icons/hicolor/scalable/16x16/gps-debugger-step.svg
+share/gps/icons/hicolor/scalable/16x16/gps-debugger-stop-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-debugger-up.svg
+share/gps/icons/hicolor/scalable/16x16/gps-double-arrow-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-edit-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-emulatorloading-debug-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-emulatorloading-run-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-emulatorloading-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-expand-all-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-fold-block-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-forward-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-gnatprove-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-goto-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-lock-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-new-document-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-open-file-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-open-project-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-paste-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-pause-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-print-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-redo-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-refresh-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-remove-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-remove-unselected-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-rename-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-run-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-save-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-search-and-menu-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-search-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-select-all-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-semantic-check-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-settings-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-stop-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-syntax-check-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-toggle-links-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-undo-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-unfold-block-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-unlock-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-zoom-100-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-zoom-in-symbolic.svg
+share/gps/icons/hicolor/scalable/16x16/gps-zoom-out-symbolic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-diff-conflict-symbolic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-diff-noconflict-symbolic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-alias-symbolic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-build-error.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-build-info-symbolic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-build-style.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-build-warning.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-category.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-debugger-breakpoint.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-debugger-current.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-debugger-line-has-code.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-debugger-line-might-have-code.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-directory-closed.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-directory-open.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-directory-symbolic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-generic-private-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-generic-private.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-generic-protected-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-generic-protected.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-generic-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-generic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-package-private-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-package-private.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-package-protected-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-package-protected.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-package-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-package.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-subprogram-private-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-subprogram-private.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-subprogram-protected-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-subprogram-protected.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-subprogram-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-subprogram.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-type-private-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-type-private.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-type-protected-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-type-protected.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-type-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-type.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-variable-private-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-variable-private.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-variable-protected-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-variable-protected.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-variable-spec.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-entity-variable.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-execdir-closed.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-execdir-open.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-file-modified.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-file-unmodified.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-file-unsaved.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-gcov-covered-symbolic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-gcov-uncovered-symbolic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-info.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-libdir-closed.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-libdir-open.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-objdir-closed.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-objdir-open.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-project-closed.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-project-modified-closed.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-project-modified-open.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-project-open.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-project-root-closed.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-project-root-open.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-project-runtime-closed.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-project-runtime-open.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-vcs-added.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-vcs-has-conflicts.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-vcs-modified.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-vcs-needs-merge.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-vcs-needs-update.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-vcs-not-registered.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-vcs-removed.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-vcs-unknown.svg
+share/gps/icons/hicolor/scalable/emblems/gps-emblem-vcs-up-to-date.svg
+share/gps/icons/hicolor/scalable/emblems/gps-hidden-item-symbolic.svg
+share/gps/icons/hicolor/scalable/emblems/gps-sync-to-local.svg
+share/gps/icons/hicolor/scalable/emblems/gps-sync-to-remote.svg
+share/gps/icons/hicolor/scalable/emblems/gps-unknown-item-symbolic.svg
 share/gps/key_themes/default.xml
 share/gps/key_themes/emacs.xml
 share/gps/key_themes/include/common.xml
@@ -347,12 +361,11 @@ share/gps/library/addr2line.py
 share/gps/library/auto_changelog.py
 share/gps/library/autoformat.py
 share/gps/library/autognatpp.py
-share/gps/library/clang_support.py
+share/gps/library/closeold.py
 share/gps/library/copy_paste.py
 share/gps/library/copy_paste_toolbar.py
 share/gps/library/cov_export.py
 share/gps/library/create_missing_dirs.py
-share/gps/library/createfile.py
 share/gps/library/debugger.py
 share/gps/library/dependencies.py
 share/gps/library/eclipse.py
@@ -392,8 +405,6 @@ share/gps/plug-ins/auto_highlight_occurrences.py
 share/gps/plug-ins/auto_highlight_occurrences.pyc
 share/gps/plug-ins/block_completion.py
 share/gps/plug-ins/block_completion.pyc
-share/gps/plug-ins/board_support.py
-share/gps/plug-ins/board_support.pyc
 share/gps/plug-ins/c_support.py
 share/gps/plug-ins/c_support.pyc
 share/gps/plug-ins/changelog.py
@@ -404,6 +415,8 @@ share/gps/plug-ins/codepeer.py
 share/gps/plug-ins/codepeer.pyc
 share/gps/plug-ins/csharp.py
 share/gps/plug-ins/csharp.pyc
+share/gps/plug-ins/css_support.py
+share/gps/plug-ins/css_support.pyc
 share/gps/plug-ins/cvs.py
 share/gps/plug-ins/cvs.pyc
 share/gps/plug-ins/dispatching.py
@@ -412,6 +425,8 @@ share/gps/plug-ins/editors.py
 share/gps/plug-ins/editors.pyc
 share/gps/plug-ins/expanded_code.py
 share/gps/plug-ins/expanded_code.pyc
+share/gps/plug-ins/fortran_highlighter.py
+share/gps/plug-ins/fortran_highlighter.pyc
 share/gps/plug-ins/gcov.py
 share/gps/plug-ins/gcov.pyc
 share/gps/plug-ins/git.py
@@ -424,6 +439,8 @@ share/gps/plug-ins/gnatdist.py
 share/gps/plug-ins/gnatdist.pyc
 share/gps/plug-ins/gnatdoc.py
 share/gps/plug-ins/gnatdoc.pyc
+share/gps/plug-ins/gnatemulator.py
+share/gps/plug-ins/gnatemulator.pyc
 share/gps/plug-ins/gnatname.py
 share/gps/plug-ins/gnatname.pyc
 share/gps/plug-ins/gnatpp.py
@@ -477,10 +494,10 @@ share/gps/plug-ins/shell.py
 share/gps/plug-ins/shell.pyc
 share/gps/plug-ins/sort_selection.py
 share/gps/plug-ins/sort_selection.pyc
-share/gps/plug-ins/spark.py
-share/gps/plug-ins/spark.pyc
 share/gps/plug-ins/spark2014.py
 share/gps/plug-ins/spark2014.pyc
+share/gps/plug-ins/st_link.py
+share/gps/plug-ins/st_link.pyc
 share/gps/plug-ins/subversion.py
 share/gps/plug-ins/subversion.pyc
 share/gps/plug-ins/tab.py
@@ -508,8 +525,16 @@ share/gps/support/core/auto_load.py
 share/gps/support/core/auto_load.pyc
 share/gps/support/core/build.py
 share/gps/support/core/build.pyc
+share/gps/support/core/clang/__init__.py
+share/gps/support/core/clang/__init__.pyc
+share/gps/support/core/clang/cindex.py
+share/gps/support/core/clang/cindex.pyc
+share/gps/support/core/clang/enumerations.py
+share/gps/support/core/clang/enumerations.pyc
 share/gps/support/core/color_utils.py
 share/gps/support/core/color_utils.pyc
+share/gps/support/core/compiler_paths.py
+share/gps/support/core/compiler_paths.pyc
 share/gps/support/core/completion.py
 share/gps/support/core/completion.pyc
 share/gps/support/core/console_utils.py
@@ -536,12 +561,8 @@ share/gps/support/core/gps_utils/gnatcheck_rules_editor.py
 share/gps/support/core/gps_utils/gnatcheck_rules_editor.pyc
 share/gps/support/core/gps_utils/highlighter.py
 share/gps/support/core/gps_utils/highlighter.pyc
-share/gps/support/core/gps_utils/promises.py
-share/gps/support/core/gps_utils/promises.pyc
 share/gps/support/core/gps_utils/switches.py
 share/gps/support/core/gps_utils/switches.pyc
-share/gps/support/core/gps_utils/workflow.py
-share/gps/support/core/gps_utils/workflow.pyc
 share/gps/support/core/languages.py
 share/gps/support/core/languages.pyc
 share/gps/support/core/modules.py
@@ -570,12 +591,18 @@ share/gps/support/ui/GPS_doc/Browsers.py
 share/gps/support/ui/GPS_doc/Browsers.pyc
 share/gps/support/ui/GPS_doc/__init__.py
 share/gps/support/ui/GPS_doc/__init__.pyc
+share/gps/support/ui/GPS_doc/generated_hooks.py
+share/gps/support/ui/GPS_doc/generated_hooks.pyc
 share/gps/support/ui/c_highlighter.py
 share/gps/support/ui/c_highlighter.pyc
+share/gps/support/ui/clang_support.py
+share/gps/support/ui/clang_support.pyc
 share/gps/support/ui/colorschemes.py
 share/gps/support/ui/colorschemes.pyc
 share/gps/support/ui/console.py
 share/gps/support/ui/console.pyc
+share/gps/support/ui/css_highlighter.py
+share/gps/support/ui/css_highlighter.pyc
 share/gps/support/ui/gnatmetric.py
 share/gps/support/ui/gnatmetric.pyc
 share/gps/support/ui/gpsbrowsers.py
@@ -588,8 +615,6 @@ share/gps/support/ui/highlighter/engine.py
 share/gps/support/ui/highlighter/engine.pyc
 share/gps/support/ui/highlighter/interface.py
 share/gps/support/ui/highlighter/interface.pyc
-share/gps/support/ui/icons.py
-share/gps/support/ui/icons.pyc
 share/gps/support/ui/locations_view_utils.py
 share/gps/support/ui/locations_view_utils.pyc
 share/gps/support/ui/multi_cursors.py
@@ -608,6 +633,12 @@ share/gps/support/ui/reloadcss.py
 share/gps/support/ui/reloadcss.pyc
 share/gps/support/ui/task_manager.py
 share/gps/support/ui/task_manager.pyc
+share/gps/support/ui/textmate.py
+share/gps/support/ui/textmate.pyc
+share/gps/support/ui/workflows/__init__.py
+share/gps/support/ui/workflows/__init__.pyc
+share/gps/support/ui/workflows/promises.py
+share/gps/support/ui/workflows/promises.pyc
 share/gps/templates/ajis_hello/@_project_name_@.gpr
 share/gps/templates/ajis_hello/Makefile
 share/gps/templates/ajis_hello/ajis_hello.gpt

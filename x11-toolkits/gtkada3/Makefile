@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gtkada
-PORTVERSION=	3.8.3.2
-PORTREVISION=	2
+PORTVERSION=	3.14.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	3
-DISTFILES=	gtkada-for-gps-6.1.1-src.tar.gz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Ada graphical toolkit based on Gtk3 components
@@ -15,48 +12,54 @@ COMMENT=	Ada graphical toolkit based on Gtk3 components
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	gprbuild:devel/gprbuild
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libharfbuzz.so:print/harfbuzz \
+		libdrm.so:graphics/libdrm \
+		libglapi.so:graphics/libglapi \
+		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+		libepoxy.so:graphics/libepoxy \
+		libpng16.so:graphics/png \
+		libffi.so:devel/libffi \
+		libpcre.so:devel/pcre \
+		libexpat.so:textproc/expat2 \
+		libatspi.so:accessibility/at-spi2-core \
+		libgraphite2.so:graphics/graphite2 \
+		libdbus-1.so:devel/dbus
 
-USES=		ada gmake perl5 pkgconfig
+USES=		ada:run gmake iconv:wchar_t perl5 pkgconfig
 USE_PERL5=	build
-USE_GNOME=	gtk30
-USE_GL=		gl glu
+USE_GNOME=	gtk30 cairo gdkpixbuf2
+USE_XORG=	ice sm xxf86vm xcb xdmcp xau x11 pixman xfixes xdamage \
+		xcomposite xi xext xcursor xrandr xinerama xrender
+USE_GL=		gl egl gbm glu
+USE_GITHUB=	yes
+GH_ACCOUNT=	AdaCore
+GH_PROJECT=	gtkada
+GH_TAGNAME=	1688bb8
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=	tools static relocatable
-NO_MTREE=	yes
-WRKSRC=		${WRKDIR}/gtkada-gpl-2015-src
-PORTDOCS=	gtkada_rm gtkada_ug
-PORTEXAMPLES=	testgtk
-RM_VERSION=	3.8.3.0
-LDFLAGS=	-L${LOCALBASE}/lib
+PORTDOCS=	gtkada_ug
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
 
 CONFLICTS_INSTALL=	gtkada-*
 
 CONFIGURE_ARGS+=	--with-GL=auto \
+			--with-GL-prefix=${PREFIX} \
 			--enable-shared \
 			--enable-static
 
-OPTIONS_DEFINE=		DOCS NLS EXAMPLES DEBUG
+OPTIONS_DEFINE=		DOCS NLS DEBUG
+
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-DOCS_DISTFILES=		gtkada-rm-${RM_VERSION}.tar.bz2
 DOCS_ALL_TARGET=	docs
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
-EXAMPLES_ALL_TARGET=	tests
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-build=Debug
-.else
-CONFIGURE_ARGS+=	--enable-build=Production
-.endif
-
-post-extract:
-.if ${PORT_OPTIONS:MDOCS}
-	${MV} ${WRKDIR}/gtkada-${RM_VERSION}/docs/* ${WRKSRC}/docs/
-.endif
+DEBUG_CONFIGURE_ON=	--enable-build=Debug
+DEBUG_CONFIGURE_OFF=	--enable-build=Production
 
 do-build:
 #	This target is recreated because -j cannot be set, but
@@ -65,13 +68,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata
-	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gtkada-dialog
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/gtkada/gtkada_ug/_sources
-	${RM} ${STAGEDIR}${PREFIX}/lib/libgtkada*
-	(cd ${STAGEDIR}${PREFIX}/lib && \
-	  ${LN} -s gtkada/relocatable/libgtkada.so.3.8.3 libgtkada.so && \
-	  ${LN} -s gtkada/relocatable/libgtkada_gl.so.3.8.3 libgtkada_gl.so)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtkada/relocatable/lib*.so.3.8.3
 
 .include <bsd.port.mk>

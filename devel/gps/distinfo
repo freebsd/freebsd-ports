@@ -1,2 +1,3 @@
-SHA256 (gps-6.1.1-src.tar.gz) = 14ddd84b0e79cc4b426dc314e37e8cf66ea1c48930cdd0c06d171b6094eb325d
-SIZE (gps-6.1.1-src.tar.gz) = 28924922
+TIMESTAMP = 1465580235
+SHA256 (gps-gpl-2016-src.tar.gz) = 358fe9027a8dfc8311aabab88d4090cddd4a5cc6af82edf2ad88eb787c1793db
+SIZE (gps-gpl-2016-src.tar.gz) = 30660863
