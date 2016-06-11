@@ -1,15 +1,18 @@
---- osdpip-0.1.0/Makefile.orig
-+++ osdpip-0.1.0/Makefile
-@@ -107,7 +107,7 @@ endif
+--- Makefile.orig	2012-05-16 19:06:00 UTC
++++ Makefile
+@@ -156,7 +156,11 @@ i18n: $(I18Nmsgs) $(I18Npot)
  
- ### The object files (add further files here):
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) -shared -o $@ $^ $(LIBS)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
+ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
  
--OBJS = $(PLUGIN).o osd_info.o remux.o osd.o receiver.o setup.o i18n.o pes.o quantize.o decoder.o
-+OBJS = $(PLUGIN).o osd_info.o remux.o osd.o receiver.o setup.o pes.o quantize.o decoder.o
- 
- ### The main target:
- 
-@@ -171,3 +173,6 @@ dist: clean
+ dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+@@ -168,3 +172,6 @@ dist: clean
  
  clean:
  	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ $(PODIR)/*.mo $(PODIR)/*.pot

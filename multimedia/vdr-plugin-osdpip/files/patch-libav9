@@ -1,6 +1,6 @@
 diff -urN osdpip-0.1.2.old/decoder.c osdpip-0.1.2/decoder.c
---- osdpip-0.1.2.old/decoder.c	2013-06-17 21:01:31.795476861 +0200
-+++ osdpip-0.1.2/decoder.c	2013-06-17 21:01:57.153475959 +0200
+--- decoder.c.orig	2013-06-17 21:01:31.795476861 +0200
++++ decoder.c	2013-06-17 21:01:57.153475959 +0200
 @@ -34,8 +34,8 @@
          printf("codec not found\n");
          return -1;
