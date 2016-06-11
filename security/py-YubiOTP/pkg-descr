@@ -1,0 +1,7 @@
+This is a library for verifying YubiKey OTP tokens. It includes both the
+low-level implementation for verifying tokens locally and clients for multiple
+versions of the Yubico validation web service. The primary audience is
+developers who wish to verify YubiKey tokens in their applications, presumably
+as part of a multi-factor authentication scheme.
+
+WWW: https://pypi.python.org/pypi/YubiOTP
