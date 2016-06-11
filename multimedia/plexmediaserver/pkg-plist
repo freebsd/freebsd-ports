@@ -2737,7 +2737,9 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/zipfile.py
 %%DATADIR%%/Resources/cacert.pem
 %%DATADIR%%/Resources/clientaccesspolicy.xml
+@mode 644
 %%DATADIR%%/Resources/com.plexapp.plugins.library.db
+@mode
 %%DATADIR%%/Resources/crossdomain.xml
 %%DATADIR%%/Resources/dh512.pem
 %%DATADIR%%/Resources/distribution.txt
