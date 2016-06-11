@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp-plugin-pack
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/plugins/ \
 	SF/qmmp-dev/${PORTNAME}/
@@ -12,6 +12,7 @@ COMMENT=	Additional plug-ins for QMMP (Qt4)
 LICENSE=	GPLv2
 
 CONFLICTS=	${PORTNAME}-qt5-1.*
+PORTSCOUT=	limit:^0.*
 
 LIB_DEPENDS=	libqmmpui.so:multimedia/qmmp
 BUILD_DEPENDS=	qmmp>=0.9.0:multimedia/qmmp
@@ -41,7 +42,7 @@ FFAPASM_CMAKE_ON=	-DUSE_ASM:BOOL=TRUE
 FFAPASM_CMAKE_OFF=	-DUSE_ASM:BOOL=FALSE
 
 MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123 \
-	libtag.so:audio/taglib
+		libtag.so:audio/taglib
 MPG123_USE=	QT4=uic_build
 MPG123_CMAKE_ON=	-DUSE_MPG123:BOOL=TRUE
 MPG123_CMAKE_OFF=	-DUSE_MPG123:BOOL=FALSE
@@ -50,8 +51,6 @@ XMP_DESC=		Support various module formats using libxmp
 XMP_LIB_DEPENDS=	libxmp.so:audio/libxmp
 XMP_CMAKE_ON=	-DUSE_XMP:BOOL=TRUE
 XMP_CMAKE_OFF=	-DUSE_XMP:BOOL=FALSE
-
-CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:PATH=${LOCALBASE}/include
 
 pre-configure:
 	@${RM} -f ${BUILD_WRKSRC}/CMakeCache.txt
