@@ -1,6 +1,6 @@
---- src/gui/pdfutil.cc.orig	2009-04-07 00:24:47.000000000 +0900
-+++ src/gui/pdfutil.cc	2011-03-21 20:36:57.000000000 +0900
-@@ -451,7 +451,20 @@
+--- src/gui/pdfutil.cc.orig	2009-04-06 15:24:47 UTC
++++ src/gui/pdfutil.cc
+@@ -451,7 +451,20 @@ QString annotTypeName(boost::shared_ptr<
   @param askPassword If true, password will be asked for if necessary
  */
  boost::shared_ptr<CPdf> getPdfInstance(QWidget *parent, const QString &filename, CPdf::OpenMode mode, bool askPassword) {

@@ -1,6 +1,6 @@
---- src/kernel/ccontentstream.cc.orig	2010-04-28 03:42:09.000000000 +0900
-+++ src/kernel/ccontentstream.cc	2016-06-11 06:33:26.838638000 +0900
-@@ -68,7 +68,7 @@
+--- src/kernel/ccontentstream.cc.orig	2010-04-27 18:42:09 UTC
++++ src/kernel/ccontentstream.cc
+@@ -68,7 +68,7 @@ namespace {
  	 * @param observer Operand observer.
  	 */
  	void
@@ -9,7 +9,7 @@
  					boost::weak_ptr<CPdf> pdf, 
  					IndiRef rf, 
  					CContentStream& cs, 
-@@ -204,7 +204,7 @@
+@@ -204,7 +204,7 @@ namespace {
  			}else 
  			{// We have an OPERAND
  				
@@ -18,7 +18,7 @@
  				operands.push_back (pIp);
  			}
  
-@@ -223,14 +223,14 @@
+@@ -223,14 +223,14 @@ namespace {
  	 * @param streamreader CStreams parser from which we get an xpdf object.
  	 * @param operands Operands of operator. They are shared through subcalls.
  	 */
@@ -35,7 +35,7 @@
  		
  		//
  		// SPECIAL CASE for inline image (stream within a text stream)
-@@ -246,8 +246,8 @@
+@@ -246,8 +246,8 @@ namespace {
  				throw ElementBadTypeException ("Content stream operator has incorrect operand type.");
  			}
  			
@@ -46,7 +46,7 @@
  		}
  
  		// factory function for all other operators
-@@ -269,11 +269,11 @@
+@@ -269,11 +269,11 @@ namespace {
  	 *
  	 * @return New pdf operator.
  	 */
@@ -60,7 +60,7 @@
  	
  		if (result && isCompositeOp (result) && !isInlineImageOp (result))
  		{
-@@ -283,7 +283,7 @@
+@@ -283,7 +283,7 @@ namespace {
  			bool foundEndTag = false;
  			
  			// The same as in (re)parse
@@ -69,7 +69,7 @@
  
  			//
  			// Use recursion to get all operators
-@@ -348,7 +348,7 @@
+@@ -348,7 +348,7 @@ namespace {
  			if (!hasValidPdf (*it) || !hasValidRef (*it))
  				throw CObjInvalidObject ();
  		}
@@ -78,7 +78,7 @@
  		assert (pdf.lock());
  		IndiRef rf = streams.front()->getIndiRef ();
  
-@@ -357,8 +357,8 @@
+@@ -357,8 +357,8 @@ namespace {
  		streamreader.open ();
  	
  		PdfOperator::Operands operands;
@@ -89,7 +89,7 @@
  
  		//
  		// Parsing can throw, if so the stream is invalid
-@@ -469,10 +469,10 @@
+@@ -469,10 +469,10 @@ namespace {
  		typedef PdfOperator::BBox BBox;
  
  		// Init resources
@@ -102,7 +102,7 @@
  		{
  			// If not initialized, means an error occured (missing font etc..)
  			if (!BBox::isInitialized (rc))
-@@ -736,7 +736,7 @@
+@@ -736,7 +736,7 @@ CContentStream::_objectChanged ()
  
  	// Notify observers
  	boost::shared_ptr<CContentStream> current (this, EmptyDeallocator<CContentStream> ());
@@ -111,7 +111,7 @@
  }
  
  
-@@ -856,7 +856,7 @@
+@@ -856,7 +856,7 @@ CContentStream::insertOperator (Operator
  	// Set correct IndiRef, CPdf and cs to inserted operator
  	assert (hasValidRef (cstreams.front()));
  	assert (hasValidPdf (cstreams.front()));
@@ -120,7 +120,7 @@
  	assert (pdf.lock());
  	IndiRef rf = cstreams.front()->getIndiRef ();
  	opsSetPdfRefCs (newOper, pdf, rf, *this, operandobserver);
-@@ -937,7 +937,7 @@
+@@ -937,7 +937,7 @@ CContentStream::frontInsertOperator (boo
  	// Check whether we can make the change
  	cstreams.front()->canChange();
  	IndiRef rf = cstreams.front()->getIndiRef ();
@@ -129,7 +129,7 @@
  	assert (pdf.lock());
  	// set accordingly	
  	opsSetPdfRefCs (newoper, pdf, rf, *this, operandobserver);
-@@ -949,9 +949,9 @@
+@@ -949,9 +949,9 @@ CContentStream::frontInsertOperator (boo
  	{ // Insert into
  		opsSetPdfRefCs (newoper, pdf, rf, *this, operandobserver);
  
@@ -141,7 +141,7 @@
  		secondoper->setPrev (lastofnew);
  		lastofnew->setNext (secondoper);
  	}
-@@ -992,7 +992,7 @@
+@@ -992,7 +992,7 @@ CContentStream::replaceOperator (Operato
  	// Set correct IndiRef, CPdf and cs to inserted operator
  	assert (hasValidRef (cstreams.front()));
  	assert (hasValidPdf (cstreams.front()));

@@ -1,6 +1,6 @@
---- src/tools/pdf_to_text.cc.orig	2010-04-23 15:58:36.000000000 +0900
-+++ src/tools/pdf_to_text.cc	2016-06-12 03:51:28.186690000 +0900
-@@ -45,8 +45,16 @@
+--- src/tools/pdf_to_text.cc.orig	2010-04-23 06:58:36 UTC
++++ src/tools/pdf_to_text.cc
+@@ -45,8 +45,16 @@ namespace {
  	};
  	// what to do with a page
  	struct _textify {
@@ -18,7 +18,7 @@
  			string text;
  			static const std::string encoding="UTF-8";
  			page->getText (text, &encoding);
-@@ -97,13 +105,13 @@
+@@ -97,13 +105,13 @@ main(int argc, char ** argv)
  				return 1;
  
  		// open pdf
@@ -34,7 +34,7 @@
  				std::cout << "\nPage " << i << ":\n" << _textify()(page);
  			}
  		}
-@@ -117,7 +125,7 @@
+@@ -117,7 +125,7 @@ main(int argc, char ** argv)
  					continue;
  				}
  

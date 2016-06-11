@@ -1,6 +1,6 @@
---- src/kernel/pdfoperatorsbase.cc.orig	2016-06-11 06:35:15.369169000 +0900
-+++ src/kernel/pdfoperatorsbase.cc	2016-06-11 06:36:00.937632000 +0900
-@@ -48,7 +48,7 @@
+--- src/kernel/pdfoperatorsbase.cc.orig	2009-04-06 15:25:00 UTC
++++ src/kernel/pdfoperatorsbase.cc
+@@ -48,7 +48,7 @@ using namespace debug;
  //
  //
  //
@@ -9,7 +9,7 @@
  PdfOperator::getContentStream () const
  {
  		assert (_contentstream);
-@@ -57,7 +57,7 @@
+@@ -57,7 +57,7 @@ PdfOperator::getContentStream () const
  }
  	
  void 
@@ -18,7 +18,7 @@
  {
  	if (behindWhich && which)
  	{
-@@ -92,7 +92,7 @@
+@@ -92,7 +92,7 @@ PdfOperator::putBehind (shared_ptr<PdfOp
  //
  //
  void 
@@ -27,7 +27,7 @@
  {
  		assert (oper);
  		kernelPrintDbg (debug::DBG_DBG, "");
-@@ -136,7 +136,7 @@
+@@ -136,7 +136,7 @@ CompositePdfOperator::push_back (const s
  //
  //
  void
@@ -36,7 +36,7 @@
  { 
  	PdfOperators::iterator it =  find (_children.begin(), _children.end(), op);
  		assert (it != _children.end());
-@@ -160,8 +160,8 @@
+@@ -160,8 +160,8 @@ CompositePdfOperator::getChildren (PdfOp
  //
  //
  void 
@@ -47,7 +47,7 @@
  {
  	PdfOperators::iterator it = std::find (_children.begin(), _children.end(), oper);
  	_children.insert (++it, newOper);
-@@ -189,7 +189,7 @@
+@@ -189,7 +189,7 @@ CompositePdfOperator::getStringRepresent
  }
  
  void 
@@ -56,7 +56,7 @@
  { 
  	for (PdfOperators::iterator it = _children.begin (); it != _children.end(); ++it)
  		(*it)->init_operands (observer, pdf, rf);
-@@ -204,8 +204,8 @@
+@@ -204,8 +204,8 @@ CompositePdfOperator::init_operands (sha
  //
  //
  //
@@ -67,7 +67,7 @@
  {
  		if (!isCompositeOp (oper) || 0 == oper->getChildrenCount())
  			return oper;
-@@ -213,7 +213,7 @@
+@@ -213,7 +213,7 @@ getLastOperator (shared_ptr<PdfOperator>
  	PdfOperator::PdfOperators opers;
  	oper->getChildren (opers);
  	assert (!opers.empty());

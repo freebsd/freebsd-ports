@@ -1,6 +1,6 @@
---- src/xpdf/fofi/FoFiTrueType.h.orig	2016-06-11 10:41:33.311317000 +0900
-+++ src/xpdf/fofi/FoFiTrueType.h	2016-06-11 10:41:43.645672000 +0900
-@@ -156,7 +156,7 @@
+--- src/xpdf/fofi/FoFiTrueType.h.orig	2009-09-11 12:02:56 UTC
++++ src/xpdf/fofi/FoFiTrueType.h
+@@ -156,7 +156,7 @@ private:
    Guint computeTableChecksum(Guchar *data, int length);
    void parse();
    void readPostTable();

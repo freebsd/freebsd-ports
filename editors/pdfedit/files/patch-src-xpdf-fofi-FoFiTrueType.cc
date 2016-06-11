@@ -1,6 +1,6 @@
---- src/xpdf/fofi/FoFiTrueType.cc.orig	2016-06-11 10:37:17.000155000 +0900
-+++ src/xpdf/fofi/FoFiTrueType.cc	2016-06-11 10:40:14.853257000 +0900
-@@ -143,7 +143,7 @@
+--- src/xpdf/fofi/FoFiTrueType.cc.orig	2009-09-11 12:02:56 UTC
++++ src/xpdf/fofi/FoFiTrueType.cc
+@@ -143,7 +143,7 @@ static int cmpTrueTypeTableTag(const voi
  //------------------------------------------------------------------------
  
  struct T42Table {
@@ -9,7 +9,7 @@
    GBool required;		// required by the TrueType spec?
  };
  
-@@ -173,7 +173,7 @@
+@@ -173,7 +173,7 @@ static T42Table t42Tables[nT42Tables] = 
  
  // Glyph names in some arbitrary standard order that Apple uses for
  // their TrueType fonts.
@@ -18,7 +18,7 @@
    ".notdef",        "null",           "CR",             "space",
    "exclam",         "quotedbl",       "numbersign",     "dollar",
    "percent",        "ampersand",      "quotesingle",    "parenleft",
-@@ -2011,7 +2011,7 @@
+@@ -2011,7 +2011,7 @@ void FoFiTrueType::readPostTable() {
    }
  }
  

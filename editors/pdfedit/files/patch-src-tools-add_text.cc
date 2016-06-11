@@ -1,6 +1,6 @@
---- src/tools/add_text.cc.orig	2016-06-12 03:53:24.278803000 +0900
-+++ src/tools/add_text.cc	2016-06-12 03:53:43.440512000 +0900
-@@ -54,7 +54,7 @@
+--- src/tools/add_text.cc.orig	2010-04-30 12:44:31 UTC
++++ src/tools/add_text.cc
+@@ -54,7 +54,7 @@ namespace {
  	};
  
  	struct _add {
@@ -9,7 +9,7 @@
  						  const string& what, 
  						  const Position& where, 
  						  std::string font_id)
-@@ -126,14 +126,14 @@
+@@ -126,14 +126,14 @@ main(int argc, char ** argv)
  				return 1;
  
  		// open pdf
@@ -26,7 +26,7 @@
  					if (!del) return -1;
  				del->delinearize(out.c_str());
  			}
-@@ -154,7 +154,7 @@
+@@ -154,7 +154,7 @@ main(int argc, char ** argv)
  					continue;
  				}
  

@@ -1,6 +1,6 @@
---- src/kernel/textoutputengines.cc.orig	2016-06-12 03:44:13.431031000 +0900
-+++ src/kernel/textoutputengines.cc	2016-06-12 03:44:31.197856000 +0900
-@@ -232,13 +232,13 @@
+--- src/kernel/textoutputengines.cc.orig	2009-09-11 12:02:56 UTC
++++ src/kernel/textoutputengines.cc
+@@ -232,13 +232,13 @@ namespace {
  			PdfOperator::Operands ops;
  			op->getParameters (ops);
  			assert (1 == ops.size());
@@ -16,7 +16,7 @@
  				if (isNumber (ip))
  				{
  					int wMode = s->getFont()->getWMode();
-@@ -253,8 +253,8 @@
+@@ -253,8 +253,8 @@ namespace {
  					// Create Tj with text and add it to output
  					string txt = getStringFromIProperty (ip);
  					PdfOperator::Operands opers;

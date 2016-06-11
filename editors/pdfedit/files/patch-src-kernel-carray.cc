@@ -1,6 +1,6 @@
---- src/kernel/carray.cc.orig	2009-09-11 21:02:56.000000000 +0900
-+++ src/kernel/carray.cc	2016-06-11 05:52:59.028080000 +0900
-@@ -80,7 +80,7 @@
+--- src/kernel/carray.cc.orig	2009-09-11 12:02:56 UTC
++++ src/kernel/carray.cc
+@@ -80,7 +80,7 @@ CArray::getStringRepresentation (string&
  //
  //
  //
@@ -9,7 +9,7 @@
  CArray::getProperty (PropertyId id) const
  {
  	//kernelPrintDbg (debug::DBG_DBG,"getProperty() " << id);
-@@ -88,7 +88,7 @@
+@@ -88,7 +88,7 @@ CArray::getProperty (PropertyId id) cons
  	if (id >= value.size())
  		throw OutOfRange ();
  	
@@ -18,7 +18,7 @@
  	// Set mode only if pdf is valid
  	_setMode (ip,id);
  
-@@ -146,7 +146,7 @@
+@@ -146,7 +146,7 @@ CArray::delProperty (PropertyId id)
  	// Check whether we can make the change
  	this->canChange();
  
@@ -27,7 +27,7 @@
  
  	// Delete that item
  	value.erase (remove (value.begin(), value.end(), oldip));
-@@ -156,11 +156,11 @@
+@@ -156,11 +156,11 @@ CArray::delProperty (PropertyId id)
  		assert (hasValidRef (this));
  		
  		// Create contest
@@ -41,7 +41,7 @@
  			
  		}catch (PdfException&)
  		{
-@@ -181,7 +181,7 @@
+@@ -181,7 +181,7 @@ CArray::delProperty (PropertyId id)
  //
  // Correctly to add an object (without name) can be done only to Array object
  //
@@ -50,7 +50,7 @@
  CArray::addProperty (const IProperty& newIp)
  {
  	//kernelPrintDbg (debug::DBG_DBG,"addProperty(...)");
-@@ -193,7 +193,7 @@
+@@ -193,7 +193,7 @@ CArray::addProperty (const IProperty& ne
  //
  // REMARK: because of the compiler, we can't put PropertyId here
  //
@@ -59,7 +59,7 @@
  CArray::addProperty (PropertyId position, const IProperty& newIp)
  {
  	//kernelPrintDbg (debug::DBG_DBG,"addProperty(" << position << ")");
-@@ -208,7 +208,7 @@
+@@ -208,7 +208,7 @@ CArray::addProperty (PropertyId position
  	this->canChange();
  
  	// Clone the added property
@@ -68,7 +68,7 @@
  	assert (newIpClone);
  	
  	// Inherit id, gen number and pdf
-@@ -230,7 +230,7 @@
+@@ -230,7 +230,7 @@ CArray::addProperty (PropertyId position
  		assert (hasValidRef (this));
  		
  		// Create contest
@@ -77,7 +77,7 @@
  
  		try {
  			// notify observers and dispatch the change
-@@ -256,7 +256,7 @@
+@@ -256,7 +256,7 @@ CArray::addProperty (PropertyId position
  //
  //
  //
@@ -86,7 +86,7 @@
  CArray::setProperty (PropertyId id, IProperty& newIp)
  {
  	//kernelPrintDbg (debug::DBG_DBG, "setProperty(" << id << ")");
-@@ -269,9 +269,9 @@
+@@ -269,9 +269,9 @@ CArray::setProperty (PropertyId id, IPro
  	this->canChange();
  
  	// Save the old one
@@ -98,7 +98,7 @@
  	assert (newIpClone);
  	
  	// Inherit id, gen number and pdf
-@@ -289,7 +289,7 @@
+@@ -289,7 +289,7 @@ CArray::setProperty (PropertyId id, IPro
  		assert (hasValidRef (this));
  		
  		// Create contest
@@ -107,7 +107,7 @@
  
  		try {
  			// notify observers and dispatch the change
-@@ -437,7 +437,7 @@
+@@ -437,7 +437,7 @@ CArray::doClone () const
  //
  //
  IProperty::ObserverContext* 

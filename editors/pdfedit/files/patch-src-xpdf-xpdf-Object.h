@@ -1,6 +1,6 @@
---- src/xpdf/xpdf/Object.h.orig	2015-08-23 03:17:00.826883000 +0900
-+++ src/xpdf/xpdf/Object.h	2015-08-23 03:17:15.658920000 +0900
-@@ -206,7 +206,7 @@
+--- src/xpdf/xpdf/Object.h.orig	2009-09-11 12:04:43 UTC
++++ src/xpdf/xpdf/Object.h
+@@ -206,7 +206,7 @@ public:
  private:
  
    ObjType type;			// object type

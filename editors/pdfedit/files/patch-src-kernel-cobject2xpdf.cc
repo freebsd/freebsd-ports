@@ -1,6 +1,6 @@
---- src/kernel/cobject2xpdf.cc.orig	2016-06-11 06:17:18.518993000 +0900
-+++ src/kernel/cobject2xpdf.cc	2016-06-11 06:18:14.021576000 +0900
-@@ -453,16 +453,16 @@
+--- src/kernel/cobject2xpdf.cc.orig	2009-09-11 12:02:56 UTC
++++ src/kernel/cobject2xpdf.cc
+@@ -453,16 +453,16 @@ namespace {
  				// Get Object at i-th position
  				array.arrayGetNF (i, obj.get());
  					
@@ -20,7 +20,7 @@
  				}
  
  				if (cobj)
-@@ -504,12 +504,12 @@
+@@ -504,12 +504,12 @@ namespace {
  				obj->free ();
  				dict.dictGetValNF (i,obj.get());
  
@@ -36,7 +36,7 @@
  
  				if (cobj)
  				{
-@@ -1021,7 +1021,7 @@
+@@ -1021,7 +1021,7 @@ size_t streamToCharBuffer (const Object 
  	// for Dict -> String conversion
  	// initDict increases streamDict's reference thus we need to
  	// decrease it back by free

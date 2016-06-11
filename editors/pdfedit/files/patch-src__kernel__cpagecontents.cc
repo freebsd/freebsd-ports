@@ -1,6 +1,6 @@
---- src/kernel/cpagecontents.cc.orig	2010-04-30 21:44:30.000000000 +0900
-+++ src/kernel/cpagecontents.cc	2016-06-11 10:25:06.981679000 +0900
-@@ -55,8 +55,8 @@
+--- src/kernel/cpagecontents.cc.orig	2010-04-30 12:44:30 UTC
++++ src/kernel/cpagecontents.cc
+@@ -55,8 +55,8 @@ using namespace utils;
  //
  //
  void 
@@ -11,7 +11,7 @@
  {
  		kernelPrintDbg (debug::DBG_DBG, "context type=" << context->getType());
  
-@@ -84,7 +84,7 @@
+@@ -84,7 +84,7 @@ CPageContents::ContentsWatchDog::notify 
  		case ComplexChangeContextType:
  		{
  			// Is it a dictionary Page dictionary
@@ -20,7 +20,7 @@
  				dynamic_pointer_cast<const CDict::CDictComplexObserverContext, 
  									 const IChangeContext<IProperty> > (context); 
  			if (ctxtdict)
-@@ -102,7 +102,7 @@
+@@ -102,7 +102,7 @@ CPageContents::ContentsWatchDog::notify 
  				// 1.2 Contents entry was removed
  				if (isNull(newValue))
  				{
@@ -29,7 +29,7 @@
  					// Unregister observer
  					_cnt->unreg_observer (oldValue);
  				
-@@ -116,7 +116,7 @@
+@@ -116,7 +116,7 @@ CPageContents::ContentsWatchDog::notify 
  			}
  
  			// Is it an array (Contents) -- do nothing just reparse
@@ -38,7 +38,7 @@
  				dynamic_pointer_cast<const CArray::CArrayComplexObserverContext, 
  									 const IChangeContext<IProperty> > (context); 
  			if (ctxtarray)
-@@ -162,7 +162,7 @@
+@@ -162,7 +162,7 @@ namespace {
  	createStreamFromObjects (const Container& cont, boost::weak_ptr<CPdf> pdf)
  	{
  		// Create stream with one default property Length
@@ -47,7 +47,7 @@
  		
  		// Insert our change tag
  		std::string str;
-@@ -234,7 +234,7 @@
+@@ -234,7 +234,7 @@ CPageContents::~CPageContents ()
  }
  
  
@@ -56,7 +56,7 @@
  CPageContents::getContentStream (CContentStream* cc)
  {
  	init();
-@@ -247,7 +247,7 @@
+@@ -247,7 +247,7 @@ CPageContents::getContentStream (CConten
  }
  
  
@@ -65,7 +65,7 @@
  CPageContents::getContentStream (size_t pos)
  {
  	init();
-@@ -265,7 +265,7 @@
+@@ -265,7 +265,7 @@ void 
  CPageContents::addToFront (const Container& cont)
  { 
  	// Create cstream from container of pdf operators
@@ -74,7 +74,7 @@
  	assert (hasValidRef (stream)); assert (hasValidPdf (stream));
  	if (!hasValidPdf(stream) || !hasValidPdf(stream))
  		throw CObjInvalidObject ();
-@@ -294,8 +294,8 @@
+@@ -294,8 +294,8 @@ CPageContents::addToFront (const Contain
  	// Indicate change
  	change ();
  }
@@ -85,7 +85,7 @@
  
  //
  //
-@@ -307,7 +307,7 @@
+@@ -307,7 +307,7 @@ CPageContents::addToBack (const Containe
  	// Create cstream from container of pdf operators
  	if (!hasValidPdf(_dict))
  		throw CObjInvalidObject ();
@@ -94,7 +94,7 @@
  	assert (hasValidRef (stream)); assert (hasValidPdf (stream));
  	if (!hasValidPdf(stream) || !hasValidPdf(stream))
  		throw CObjInvalidObject ();
-@@ -332,8 +332,8 @@
+@@ -332,8 +332,8 @@ CPageContents::addToBack (const Containe
  	// Indicate change
  	change ();
  }
@@ -105,7 +105,7 @@
  
  
  //
-@@ -379,6 +379,12 @@
+@@ -379,6 +379,12 @@ CPageContents::getText (std::string& tex
  
  	// Get the text
  	libs::Rectangle rec = (rc)? *rc : _page->display()->getPageRect();
@@ -118,7 +118,7 @@
  	scoped_ptr<GString> gtxt (textDev->getText(rec.xleft, rec.yleft, rec.xright, rec.yright));
  	text = gtxt->getCString();
  }
-@@ -484,11 +490,11 @@
+@@ -484,11 +490,11 @@ CPageContents::addText (const std::strin
  	if (fontName.empty())
  		fontName = "PDFEDIT_F1";
      double fontSize = 15.0;
@@ -134,7 +134,7 @@
      q->push_back(BT,q);
      BT->push_back(createOperator("Tf", fontOperands), getLastOperator(BT));
      
-@@ -497,13 +503,13 @@
+@@ -497,13 +503,13 @@ CPageContents::addText (const std::strin
      BT->push_back(createOperator("Tm", posOperands), getLastOperator(BT));
  
      PdfOperator::Operands textOperands;
@@ -150,7 +150,7 @@
      contents.push_back(q);
      
  	addToBack (contents);
-@@ -531,7 +537,7 @@
+@@ -531,7 +537,7 @@ CPageContents::addInlineImage (const CSt
  	// EI
  	// Q
  	//
@@ -159,7 +159,7 @@
  
  	// translate
  	q->push_back(createOperatorTranslation(where.x, where.y), getLastOperator(q));
-@@ -540,19 +546,23 @@
+@@ -540,19 +546,23 @@ CPageContents::addInlineImage (const CSt
  
  
  	CDict image_dict;
@@ -190,7 +190,7 @@
      contents.push_back(q);
      
  	addToBack (contents);
-@@ -595,7 +605,7 @@
+@@ -595,7 +605,7 @@ namespace {
  	// addSomewhere
  	template<OPERWHERE WHERE>
  	void
@@ -199,7 +199,7 @@
  	{
  		// contents not present
  		if (!_dict->containsProperty (Specification::Page::CONTENTS))
-@@ -607,8 +617,8 @@
+@@ -607,8 +617,8 @@ namespace {
  		// contents present
  		}else
  		{
@@ -210,7 +210,7 @@
  				assert (content);
  			// Contents can be either stream or an array of streams
  			if (isStream (realcontent))	
-@@ -620,7 +630,7 @@
+@@ -620,7 +630,7 @@ namespace {
  			}else if (isArray (realcontent))
  			{
  				// We can be sure that streams are indirect objects (pdf spec)
@@ -219,7 +219,7 @@
  				OpTrait<WHERE>::Oper::add (*array, ref);
  			
  			}else // Neither stream nor array
-@@ -672,7 +682,7 @@
+@@ -672,7 +682,7 @@ CPageContents::toBack (CRef& ref)
   * Indicats that the page changed.
   */
  template<typename Cont>
@@ -228,7 +228,7 @@
  {
  
  	if (dict->containsProperty (Specification::Page::CONTENTS))
-@@ -682,7 +692,7 @@
+@@ -682,7 +692,7 @@ void CPageContents::setContents (shared_
  	// Loop throug all content streams and add all cstreams from each
  	// content streams to Contents entry of page dictionary
  	//
@@ -237,7 +237,7 @@
  	Css css;
  	getAllCStreams (cont, css);
  	
-@@ -698,14 +708,14 @@
+@@ -698,14 +708,14 @@ void CPageContents::setContents (shared_
  	}
  }
  // Explicit instantiation
@@ -255,7 +255,7 @@
  {
  		if (!_dict->containsProperty (Specification::Page::CONTENTS))
  			throw CObjInvalidOperation ();
-@@ -717,7 +727,7 @@
+@@ -717,7 +727,7 @@ CPageContents::remove (shared_ptr<const 
  		// Loop throug all content streams and add all cstreams from each
  		// content streams to Contents entry of page dictionary
  		//
@@ -264,7 +264,7 @@
  		Css css;
  		cs->getCStreams (css);
  		
-@@ -743,8 +753,8 @@
+@@ -743,8 +753,8 @@ CPageContents::remove (shared_ptr<const 
  void 
  CPageContents::remove (const IndiRef& rf)
  {
@@ -275,7 +275,7 @@
  		assert (content);
  	// Contents can be either stream or an array of streams
  	if (isStream (realcontent))	
-@@ -756,7 +766,7 @@
+@@ -756,7 +766,7 @@ CPageContents::remove (const IndiRef& rf
  	}else if (isArray (realcontent))
  	{
  		// We can be sure that streams are indirect objects (pdf spec)
@@ -284,7 +284,7 @@
  		for (size_t i = 0; i < array->getPropertyCount(); ++i)
  		{
  			IndiRef _rf = getRefFromArray (array,i);
-@@ -821,7 +831,7 @@
+@@ -821,7 +831,7 @@ CPageContents::parse ()
  	//
  		if (!_dict->containsProperty (Specification::Page::CONTENTS))
  			return true;
@@ -293,7 +293,7 @@
  		assert (contents);
  	
  	CContentStream::CStreams streams;
-@@ -831,13 +841,13 @@
+@@ -831,13 +841,13 @@ CPageContents::parse ()
  	//
  	if (isStream (contents))	
  	{
@@ -309,7 +309,7 @@
  		for (size_t i = 0; i < array->getPropertyCount(); ++i)
  			streams.push_back (getCStreamFromArray(array,i));
  		
-@@ -854,7 +864,7 @@
+@@ -854,7 +864,7 @@ CPageContents::parse ()
  	// True if Contents is not [ ]
  	while (!streams.empty())
  	{
@@ -318,7 +318,7 @@
  		// Save smart pointer of the content stream so pdfoperators can return it
  		cc->setSmartPointer (cc);
  		_ccs.push_back (cc);
-@@ -911,7 +921,7 @@
+@@ -911,7 +921,7 @@ CPageContents::reg_observer (boost::shar
  		// If it contains Contents register observer on it too
  		if (_dict->containsProperty(Specification::Page::CONTENTS))
  		{
@@ -327,7 +327,7 @@
  			REGISTER_SHAREDPTR_OBSERVER(prop, _wd);
  		}
  	}
-@@ -933,7 +943,7 @@
+@@ -933,7 +943,7 @@ CPageContents::unreg_observer (boost::sh
  		// Unregister contents observer
  		if (_dict->containsProperty(Specification::Page::CONTENTS))
  		{
@@ -336,7 +336,7 @@
  			UNREGISTER_SHAREDPTR_OBSERVER(prop, _wd);
  		}
  	}
-@@ -963,7 +973,7 @@
+@@ -963,7 +973,7 @@ CPageContents::_page_pos () const
  //
  //
  void 
@@ -345,7 +345,7 @@
  {
  	// Get the next item
  	init();
-@@ -975,7 +985,7 @@
+@@ -975,7 +985,7 @@ CPageContents::moveAbove (shared_ptr<con
  			throw OutOfRange ();
  
  	// Delete next item but store it
@@ -354,7 +354,7 @@
  	_ccs.erase (itNext, itNext + 1);
  	// Insert stored item before supplied (simply swap ct with the next item)
  	_ccs.insert (find (_ccs.begin(), _ccs.end(), ct), tmp);
-@@ -993,7 +1003,7 @@
+@@ -993,7 +1003,7 @@ CPageContents::moveAbove (shared_ptr<con
  //
  //
  void 
@@ -363,7 +363,7 @@
  {
  	// Get the item index
  	unsigned int pos = 0;
-@@ -1007,7 +1017,7 @@
+@@ -1007,7 +1017,7 @@ CPageContents::moveBelow (shared_ptr<con
  			throw CObjInvalidOperation ();
  	
  	// Swap

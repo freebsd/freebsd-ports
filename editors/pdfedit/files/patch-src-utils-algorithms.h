@@ -1,5 +1,5 @@
---- src/utils/algorithms.h.orig	2016-06-11 10:27:29.196801000 +0900
-+++ src/utils/algorithms.h	2016-06-11 10:27:51.958626000 +0900
+--- src/utils/algorithms.h.orig	2009-04-06 15:25:01 UTC
++++ src/utils/algorithms.h
 @@ -22,7 +22,7 @@
   * Project is hosted on http://sourceforge.net/projects/pdfedit
   */

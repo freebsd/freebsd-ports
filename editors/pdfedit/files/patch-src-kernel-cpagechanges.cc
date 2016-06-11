@@ -1,6 +1,6 @@
---- src/kernel/cpagechanges.cc.orig	2016-06-11 10:31:04.066936000 +0900
-+++ src/kernel/cpagechanges.cc	2016-06-11 10:31:47.070535000 +0900
-@@ -50,7 +50,7 @@
+--- src/kernel/cpagechanges.cc.orig	2009-04-06 15:24:59 UTC
++++ src/kernel/cpagechanges.cc
+@@ -50,7 +50,7 @@ void 
  CPageChanges::displayChange (::OutputDev& out, const Container& cont) const
  {
  
@@ -9,7 +9,7 @@
  		assert (fakeDict);
  
  	CPageContents::setContents (fakeDict, cont);
-@@ -66,7 +66,7 @@
+@@ -66,7 +66,7 @@ CPageChanges::displayChange (::OutputDev
  	// Display page using our dictionary
  	_page->display()->displayPage (out, fakeDict);
  }
@@ -18,7 +18,7 @@
  
  
  //
-@@ -87,10 +87,10 @@
+@@ -87,10 +87,10 @@ CPageChanges::displayChange (::OutputDev
  //
  //
  //
@@ -31,7 +31,7 @@
  	
  	CCs ccs;
  	getChanges (ccs);
-@@ -122,9 +122,9 @@
+@@ -122,9 +122,9 @@ namespace {
  	 */
  	struct ccs_change_sorter 
  	{
@@ -43,7 +43,7 @@
  			static const bool FIRST_IS_OUR_LAST = true;
  			static const bool SECOND_IS_OUR_LAST = false;
  			
-@@ -163,7 +163,7 @@
+@@ -163,7 +163,7 @@ CPageChanges::getChanges (Changes& cont)
  	_page->contents()->getContentStreams (ccs);
  	for (CCs::const_iterator it = ccs.begin(); it != ccs.end(); ++it)
  	{

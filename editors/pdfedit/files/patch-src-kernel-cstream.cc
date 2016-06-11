@@ -1,6 +1,6 @@
---- ./src/kernel/cstream.cc.orig	2015-08-23 03:19:33.639621000 +0900
-+++ ./src/kernel/cstream.cc	2015-08-23 03:20:30.110651000 +0900
-@@ -123,7 +123,7 @@
+--- src/kernel/cstream.cc.orig	2010-04-27 18:42:09 UTC
++++ src/kernel/cstream.cc
+@@ -123,7 +123,7 @@ void
  CStream::createReqEntries ()
  {
  	// Add one required entry in the stream dictionary (according to pdf specification)
@@ -9,7 +9,7 @@
  	assert (len);
  	dictionary.addProperty ("Length", *len);
  }
-@@ -152,7 +152,7 @@
+@@ -152,7 +152,7 @@ CStream::doClone () const
  	CDict::Value::const_iterator it = dictionary.value.begin ();
  	for (; it != dictionary.value.end (); ++it)
  	{
@@ -18,7 +18,7 @@
  		assert (newIp);
  		CDict::Value::value_type item =  make_pair ((*it).first, newIp);
  		clone_->dictionary.value.push_back (item);
-@@ -204,7 +204,7 @@
+@@ -204,7 +204,7 @@ CStream::setRawBuffer (const Buffer& buf
  	this->canChange();
  
  	// Create context
@@ -27,7 +27,7 @@
  
  	// Copy buf to buffer
  	buffer.clear ();
-@@ -324,7 +324,7 @@
+@@ -324,7 +324,7 @@ CStream::getDecodedStringRepresentation 
  size_t
  CStream::getLength () const 
  {
@@ -36,7 +36,7 @@
  	if (isInt (len))
  	{
  		int length;
-@@ -345,7 +345,7 @@
+@@ -345,7 +345,7 @@ CStream::getLength () const 
  IProperty::ObserverContext* 
  CStream::_createContext () const
  {
@@ -45,7 +45,7 @@
  }
  
  
-@@ -353,7 +353,7 @@
+@@ -353,7 +353,7 @@ CStream::_createContext () const
  //
  //
  void 
@@ -54,7 +54,7 @@
  {
  	// Do not notify anything if we are not in a valid pdf
  	if (!hasValidPdf (this))
-@@ -380,7 +380,7 @@
+@@ -380,7 +380,7 @@ CStream::_objectChanged (shared_ptr<cons
  		// doesn't clone but rather wrap this with shared pointer
  		// and empty deallocator to prevent from this instance
  		// deallocation
