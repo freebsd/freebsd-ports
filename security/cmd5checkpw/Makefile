@@ -6,7 +6,7 @@ PORTVERSION=	0.22
 CATEGORIES=	security
 MASTER_SITES=	http://beautytech.googlecode.com/svn-history/r6/trunk/src/qmail/tar/
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkpassword compatible authentication program that uses CRAM-MD5
 
 OPTIONS_DEFINE=	DOCS
