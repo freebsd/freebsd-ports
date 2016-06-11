@@ -1,6 +1,6 @@
---- src/tools/displaycs.cc.orig	2016-06-12 03:46:15.039573000 +0900
-+++ src/tools/displaycs.cc	2016-06-12 03:46:33.669788000 +0900
-@@ -74,7 +74,7 @@
+--- src/tools/displaycs.cc.orig	2010-02-23 18:28:09 UTC
++++ src/tools/displaycs.cc
+@@ -74,7 +74,7 @@ int main(int argc, char ** argv)
  	size_t from = vm["from"].as<size_t>();
  
  	// open pdf
@@ -9,7 +9,7 @@
  
  	// sane values
  	size_t to = pdf->getPageCount()+1;
-@@ -90,8 +90,8 @@
+@@ -90,8 +90,8 @@ int main(int argc, char ** argv)
  	{
  		std::cout << "=====================" << endl;
  		std::cout << "PAGE NUMBER " << i << endl;

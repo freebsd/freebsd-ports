@@ -1,6 +1,6 @@
---- src/kernel/pdfoperators.cc.orig	2016-06-11 06:39:28.304555000 +0900
-+++ src/kernel/pdfoperators.cc	2016-06-11 06:42:54.331017000 +0900
-@@ -129,7 +129,7 @@
+--- src/kernel/pdfoperators.cc.orig	2010-04-27 18:42:09 UTC
++++ src/kernel/pdfoperators.cc
+@@ -129,7 +129,7 @@ SimpleGenericOperator::getStringRepresen
  //
  //
  //
@@ -9,7 +9,7 @@
  SimpleGenericOperator::clone ()
  {
  	// Clone operands
-@@ -144,7 +144,7 @@
+@@ -144,7 +144,7 @@ SimpleGenericOperator::clone ()
  
  
  void 
@@ -18,7 +18,7 @@
  									  boost::weak_ptr<CPdf> pdf, 
  									  IndiRef* rf)
  { 
-@@ -204,20 +204,20 @@
+@@ -204,20 +204,20 @@ using namespace utils;
  	}
  	else if (name == "TJ")
  	{
@@ -44,7 +44,7 @@
  
  			// TODO consider spacing coming from values
  			if(!(isString(p)))
-@@ -264,7 +264,7 @@
+@@ -264,7 +264,7 @@ TextSimpleOperator::setRawText (std::str
  	}
  	else if (name == "TJ")
  	{
@@ -53,7 +53,7 @@
  			if (!isArray(op) || ops.size() != 1)
  			{
  				utilsPrintDbg(debug::DBG_WARN, "Bad operands for TJ operator: ops[type="<< op->getType() <<" size="<<ops.size()<<"]");
-@@ -311,7 +311,7 @@
+@@ -311,7 +311,7 @@ GfxFont* TextSimpleOperator::getCurrentF
  {
  	assert(fontData);
  	const char* tag = fontData->getFontTag();
@@ -62,7 +62,7 @@
  	GfxFont* font = res->lookupFont(tag);
  	if(!font)
  		utilsPrintDbg(debug::DBG_ERR, "Unable to get font(name="
-@@ -407,10 +407,10 @@
+@@ -407,10 +407,10 @@ UnknownCompositePdfOperator::getStringRe
  //
  //
  //
@@ -75,7 +75,7 @@
  
  	for (PdfOperators::iterator it = _children.begin(); it != _children.end(); ++it)
  		clone->push_back ((*it)->clone(),getLastOperator(clone));
-@@ -482,13 +482,13 @@
+@@ -482,13 +482,13 @@ InlineImageCompositePdfOperator::getPara
  //
  //
  //
@@ -92,7 +92,7 @@
  }
  
  
-@@ -505,7 +505,7 @@
+@@ -505,7 +505,7 @@ boost::shared_ptr<PdfOperator> createOpe
  	const StateUpdater::CheckTypes* chcktp = StateUpdater::findOp (name.c_str());
  	// Operator not found, create unknown operator
  	if (NULL == chcktp)
@@ -101,7 +101,7 @@
  	
  	assert (chcktp);
  	utilsPrintDbg (DBG_DBG, "Operator found. " << chcktp->name);
-@@ -524,13 +524,13 @@
+@@ -524,13 +524,13 @@ boost::shared_ptr<PdfOperator> createOpe
  	// If endTag is "" it is a simple operator, composite otherwise
  	// 
  	if (isTextOp(*chcktp))

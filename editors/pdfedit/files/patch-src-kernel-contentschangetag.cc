@@ -1,6 +1,6 @@
---- src/kernel/contentschangetag.cc.orig	2016-06-12 02:53:06.107246000 +0900
-+++ src/kernel/contentschangetag.cc	2016-06-12 02:53:37.952146000 +0900
-@@ -51,11 +51,11 @@
+--- src/kernel/contentschangetag.cc.orig	2009-07-27 08:18:10 UTC
++++ src/kernel/contentschangetag.cc
+@@ -51,11 +51,11 @@ ContentsChangeTag::create ()
  	PdfOperator::Operands opers;
  	
  	// Name or our application
@@ -14,7 +14,7 @@
  	time_t t = time (NULL);
  	ostringstream oss;
  	oss << t;
-@@ -72,7 +72,7 @@
+@@ -72,7 +72,7 @@ ContentsChangeTag::create ()
  //
  //
  time_t

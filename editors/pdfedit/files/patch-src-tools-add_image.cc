@@ -1,6 +1,6 @@
---- src/tools/add_image.cc.orig	2010-04-30 18:32:18.000000000 +0900
-+++ src/tools/add_image.cc	2016-06-12 04:11:42.137365000 +0900
-@@ -104,10 +104,10 @@
+--- src/tools/add_image.cc.orig	2010-04-30 09:32:18 UTC
++++ src/tools/add_image.cc
+@@ -104,10 +104,10 @@ namespace {
  
  			png_read_info(png_ptr, info_ptr);
  
@@ -15,7 +15,7 @@
  
  			number_of_passes = png_set_interlace_handling(png_ptr);
  			png_read_update_info(png_ptr, info_ptr);
-@@ -116,13 +116,13 @@
+@@ -116,13 +116,13 @@ namespace {
  			if (setjmp(png_jmpbuf(png_ptr)))
  				return;
  
@@ -32,7 +32,7 @@
  			}
  
  	        fclose(fp);
-@@ -132,7 +132,7 @@
+@@ -132,7 +132,7 @@ namespace {
  	};
  
  	struct _add {
@@ -41,7 +41,7 @@
  						  const Position& where, 
  						  Point image_dim, 
  						  size_t bit_depth, 
-@@ -191,14 +191,14 @@
+@@ -191,14 +191,14 @@ main(int argc, char ** argv)
  				return 1;
  
  		// open pdf
@@ -58,7 +58,7 @@
  					if (!del) return -1;
  				del->delinearize(out.c_str());
  			}
-@@ -226,7 +226,7 @@
+@@ -226,7 +226,7 @@ main(int argc, char ** argv)
  					continue;
  				}
  

@@ -1,6 +1,6 @@
---- src/kernel/cdict.h.orig	2016-06-11 05:41:31.261535000 +0900
-+++ src/kernel/cdict.h	2016-06-11 05:44:42.503741000 +0900
-@@ -799,7 +799,7 @@
+--- src/kernel/cdict.h.orig	2010-04-27 18:42:09 UTC
++++ src/kernel/cdict.h
+@@ -799,7 +799,7 @@ setSimpleValueInDict (const IProperty& i
  	}
  
  	// Cast it to dict
@@ -9,7 +9,7 @@
  	setSimpleValueInDict<Value, ItemType, ItemPType> (*dict, name, val);
  }
  
-@@ -812,7 +812,7 @@
+@@ -812,7 +812,7 @@ setSimpleValueInDict (const IProperty& i
  		throw ElementBadTypeException ("");
  
  	// Cast it to dict

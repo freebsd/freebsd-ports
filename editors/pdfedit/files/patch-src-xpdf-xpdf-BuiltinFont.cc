@@ -1,6 +1,6 @@
---- src/xpdf/xpdf/BuiltinFont.cc.orig	2016-06-12 03:09:00.143158000 +0900
-+++ src/xpdf/xpdf/BuiltinFont.cc	2016-06-12 03:09:30.242137000 +0900
-@@ -39,7 +39,7 @@
+--- src/xpdf/xpdf/BuiltinFont.cc.orig	2008-09-09 14:21:13 UTC
++++ src/xpdf/xpdf/BuiltinFont.cc
+@@ -39,7 +39,7 @@ BuiltinFontWidths::~BuiltinFontWidths() 
    gfree(tab);
  }
  
@@ -9,7 +9,7 @@
    int h;
    BuiltinFontWidth *p;
  
-@@ -53,8 +53,8 @@
+@@ -53,8 +53,8 @@ GBool BuiltinFontWidths::getWidth(char *
    return gFalse;
  }
  

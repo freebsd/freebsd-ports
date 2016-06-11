@@ -1,6 +1,6 @@
---- src/kernel/pdfwriter.cc.orig	2016-06-11 06:46:45.675949000 +0900
-+++ src/kernel/pdfwriter.cc	2016-06-11 06:47:46.394754000 +0900
-@@ -110,7 +110,7 @@
+--- src/kernel/pdfwriter.cc.orig	2010-04-26 11:39:32 UTC
++++ src/kernel/pdfwriter.cc
+@@ -110,7 +110,7 @@ using namespace observer;
  		printf("Unsupported context.\n");
  		return;
  	}
@@ -9,7 +9,7 @@
  		dynamic_pointer_cast<const IPdfWriter::ChangeContext>(context);
  	size_t total=progressContext->getScope()->total;
  	if(!started)
-@@ -427,7 +427,7 @@
+@@ -427,7 +427,7 @@ using namespace std;
  	// contain binary data
  	if(obj.isStream())
  	{
@@ -18,7 +18,7 @@
  		assert(filter->supportObject(obj));
  		filter->compress(obj, ref, stream);
  	}else
-@@ -502,11 +502,11 @@
+@@ -502,11 +502,11 @@ using namespace boost;
  	size_t index=0;
  	
  	// creates context for observers
@@ -33,7 +33,7 @@
  
  	// prepares offTable and writes objects
  	for(i=objectList.begin(); i!=objectList.end(); i++, index++)
-@@ -659,10 +659,10 @@
+@@ -659,10 +659,10 @@ size_t OldStylePdfWriter::writeTrailer(c
  	utilsPrintDbg(DBG_DBG, "Writing "<<subSectionTable.size()<<" subsections");
  	
  	// creates context for observers
@@ -46,7 +46,7 @@
  
  	// writes all subsection
  	size_t index=1;
-@@ -704,7 +704,7 @@
+@@ -704,7 +704,7 @@ size_t OldStylePdfWriter::writeTrailer(c
  		}
  		
  		// notifies observers

@@ -1,6 +1,6 @@
---- src/kernel/stateupdater.cc.orig	2016-06-11 06:44:12.114485000 +0900
-+++ src/kernel/stateupdater.cc	2016-06-11 06:45:25.066472000 +0900
-@@ -1227,7 +1227,7 @@
+--- src/kernel/stateupdater.cc.orig	2009-09-11 12:02:56 UTC
++++ src/kernel/stateupdater.cc
+@@ -1227,7 +1227,7 @@ bool checkAndFixOperator (const StateUpd
  			{ // Convert it to real
  				double dval = 0.0;
  				dval = IProperty::getSmartCObjectPtr<CInt>(*it)->getValue();

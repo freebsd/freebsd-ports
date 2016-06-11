@@ -1,6 +1,6 @@
---- src/kernel/cannotation.cc.orig	2009-07-27 17:18:10.000000000 +0900
-+++ src/kernel/cannotation.cc	2016-06-11 05:49:08.538858000 +0900
-@@ -114,13 +114,13 @@
+--- src/kernel/cannotation.cc.orig	2009-07-27 08:18:10 UTC
++++ src/kernel/cannotation.cc
+@@ -114,13 +114,13 @@ bool UniversalAnnotInitializer::operator
  	AnnotList::const_iterator implElem;
  	if((implElem=implList.find(annotType))==implList.end())
  		return false;
@@ -16,7 +16,7 @@
  {
  	AnnotList::iterator elem=implList.find(annotType);
  	if(elem!=implList.end())
-@@ -229,10 +229,10 @@
+@@ -229,10 +229,10 @@ bool LinkAnnotInitializer::operator()(bo
  } // namespace utils
  
  // initialization of static
@@ -30,7 +30,7 @@
  {
  using namespace debug;
  using namespace utils;
-@@ -240,7 +240,7 @@
+@@ -240,7 +240,7 @@ using namespace utils;
  	kernelPrintDbg(DBG_DBG, "");
  	
  	// creates new empty dictionary for annotation
@@ -39,7 +39,7 @@
  
  	// initializes annotation dictionary maintaining information:
  	// Type of annotation dictionary has to be Annot (this is not strongly
-@@ -249,7 +249,7 @@
+@@ -249,7 +249,7 @@ using namespace utils;
  	checkAndReplace(annotDictionary, "Type", *typeField);
  
  	// Rectangle of annotation is constructed from given parameter
@@ -48,7 +48,7 @@
  	checkAndReplace(annotDictionary, "Rect", *rectField);
  
  	// last modified date field (M) is initialized to current local time
-@@ -257,7 +257,7 @@
+@@ -257,7 +257,7 @@ using namespace utils;
  	time(&currTime);
  	struct tm currLocalTime;
  	localtime_r(&currTime, &currLocalTime);
@@ -57,7 +57,7 @@
  	checkAndReplace(annotDictionary, "M", *mField);
  	
  	// initializes annotation dictionary according desired type - at least Type
-@@ -270,7 +270,7 @@
+@@ -270,7 +270,7 @@ using namespace utils;
  	if(!initialized)
  		kernelPrintDbg(DBG_WARN, "Unable to initialize annotation dictionary with type="<<annotType);
  	
@@ -66,7 +66,7 @@
  }
  
  void CAnnotation::invalidate()
-@@ -285,8 +285,8 @@
+@@ -285,8 +285,8 @@ using namespace utils;
  	// Uses this instance as newValue, but uses EmptyDeallocator to keep
  	// instance alive when shared_ptr tries to destroy its content.
  	// context is empty
@@ -77,7 +77,7 @@
  }
  
  CAnnotation::AnnotType CAnnotation::getType()const
-@@ -295,14 +295,14 @@
+@@ -295,14 +295,14 @@ using namespace debug;
  
  	try
  	{

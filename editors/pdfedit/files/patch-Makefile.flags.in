@@ -1,6 +1,6 @@
---- Makefile.flags.in.bak	2010-02-24 03:28:09.000000000 +0900
-+++ Makefile.flags.in	2016-06-12 05:13:20.961050000 +0900
-@@ -131,20 +131,20 @@
+--- Makefile.flags.in.orig	2010-02-23 18:28:09 UTC
++++ Makefile.flags.in
+@@ -131,20 +131,20 @@ EXTRA_XPDF_CFLAGS = @EXTRA_XPDF_CFLAGS@
  # from autoconf --enable-observer-debug
  OBSERVER_CXXFLAGS = @OBSERVER_CXXFLAGS@
  

@@ -1,5 +1,5 @@
---- src/xpdf/fofi/FoFiEncodings.h.orig	2016-06-11 10:35:39.548372000 +0900
-+++ src/xpdf/fofi/FoFiEncodings.h	2016-06-11 10:36:01.939673000 +0900
+--- src/xpdf/fofi/FoFiEncodings.h.orig	2008-09-09 14:21:11 UTC
++++ src/xpdf/fofi/FoFiEncodings.h
 @@ -21,14 +21,14 @@
  // Type 1 and 1C font data
  //------------------------------------------------------------------------
