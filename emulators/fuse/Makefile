@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fuse
-PORTVERSION=	1.1.1
-PORTREVISION=	9
+PORTVERSION=	1.2.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -12,13 +11,16 @@ COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libspectrum.so:emulators/libspectrum \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgcrypt.so:security/libgcrypt \
 		libpng.so:graphics/png \
-		libgcrypt.so:security/libgcrypt
+		libspectrum.so:emulators/libspectrum
 
 GNU_CONFIGURE=	yes
-USES=		gmake localbase pkgconfig
-USE_GNOME=	libxml2 glib20
+USES=		gettext gmake localbase pkgconfig
+USE_GNOME=	cairo libxml2 glib20
+USE_XORG=	x11
 
 CONFIGURE_ARGS+=--without-alsa --without-joystick
 
@@ -57,6 +59,7 @@ INSTALLS_ICONS=	yes
 
 post-extract:
 	${CP} ${WRKSRC}/roms/README.copyright ${WRKSRC}
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}

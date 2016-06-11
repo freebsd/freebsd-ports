@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libspectrum
-PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTVERSION=	1.2.0
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -12,18 +11,13 @@ COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
+		libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig libtool
-
-OPTIONS_DEFINE=	AUDIOFILE DOCS
-AUDIOFILE_DESC=	Support loading from .wav files
-
-AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
-AUDIOFILE_CONFIGURE_OFF=	--without-libaudiofile
+USES=		gettext gmake libtool pkgconfig
 
 INSTALL_TARGET=	install-strip
 
