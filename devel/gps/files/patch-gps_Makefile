@@ -1,22 +1,11 @@
---- gps/Makefile.orig	2014-11-13 18:15:57 UTC
+--- gps/Makefile.orig	2016-04-25 15:08:09 UTC
 +++ gps/Makefile
-@@ -10,9 +10,9 @@ GPRBUILD_FLAGS=
+@@ -17,7 +17,7 @@ endif
+ 
+ GPRBUILD=gprbuild
+ GPRBUILD_FLAGS=
+-PYTHON=python
++PYTHON=${PYTHON_CMD}
+ 
  Build?=Debug
  
- ifeq ($(Build),Production)
--  GPRBUILD_BUILD_TYPE_FLAGS=-XBuild=Production -XGnatcoll_Build=Production
-+  GPRBUILD_BUILD_TYPE_FLAGS=-XBuild=Production
- else
--  GPRBUILD_BUILD_TYPE_FLAGS=-XBuild=Debug -XGnatcoll_Build=Debug
-+  GPRBUILD_BUILD_TYPE_FLAGS=-XBuild=Debug
- endif
- 
- .PHONY: default resources do_links all clean
-@@ -27,7 +27,6 @@ include ../Makefile.gnat
- # NOTE: we need to build gnatcoll separately, since we cannot use
- # gnat.adc (No_Tasking restriction) on all gnatcoll sources.
- all: resources do_links
--	$(MAKE) Gnatcoll_Build=${Build} -C ../gnatlib
- 	$(GPRBUILD) $(GPRBUILD_FLAGS) -m -ws -P../spark/spark
- 	$(GPRBUILD) $(GPRBUILD_FLAGS) -m -p -ws -XTP_TASKING=No_Tasking \
- 	  $(GPRBUILD_BUILD_TYPE_FLAGS) -Pgps -largs `pkg-config gmodule-2.0 --libs`
