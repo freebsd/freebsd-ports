@@ -21,7 +21,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libopus.so:audio/opus \
 		libsndfile.so:audio/libsndfile
 
-CONFLICTS_BUILD=	xmlrpc-c-devel-*
+CONFLICTS_BUILD=	xmlrpc-c-*
 
 BROKEN_FreeBSD_9=	Fails in configure due to compiler issues
 ONLY_FOR_ARCHS=	amd64

@@ -3,6 +3,7 @@
 
 PORTNAME=		opensips
 PORTVERSION=		2.1.2
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
@@ -15,7 +16,7 @@ LICENSE_FILE=		${WRKSRC}/COPYING
 BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
-			libxmlrpc.so:net/xmlrpc-c-devel \
+			libxmlrpc.so:net/xmlrpc-c \
 			libpcre.so:devel/pcre \
 			libconfuse.so:devel/libconfuse \
 			librabbitmq.so:net/rabbitmq-c-devel \
