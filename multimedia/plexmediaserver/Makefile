@@ -45,6 +45,9 @@ post-patch:
 	${FIND} ${WRKSRC}/Resources -name '*.so' -exec ${STRIP_CMD} {} \+
 	${STRIP_CMD} ${WRKSRC}/lib* ${WRKSRC}/Resources/Plex*
 	${RM} ${WRKSRC}/start.sh
+	# Older verisons of Plex we have to create a symlink
+	# Newer versions of Plex ship a duplicate file; we'll just symlink
+	${RM} ${WRKSRC}/libpython2.7.so
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR})
