@@ -3,7 +3,7 @@
 
 PORTNAME=	opencryptoki
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -19,6 +19,10 @@ LIB_DEPENDS=	libtspi.so:security/trousers
 
 USES=		alias autoreconf gmake libtool tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
+USE_OPENSSL=	yes
+.if exists(/usr/include/openssl/md2.h)
+WITH_OPENSSL_PORT=yes
+.endif
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
@@ -29,6 +33,7 @@ CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
 		--with-lockdir=/var/run/opencryptoki \
 		--with-logdir=/var/log/opencryptoki \
 		--localstatedir=/var \
+		--with-openssl=${OPENSSLBASE} \
 		--with-pkcs11user=${USERS} \
 		--with-pkcs11group=${GROUPS} \
 		ac_cv_path_CHGRP=true
