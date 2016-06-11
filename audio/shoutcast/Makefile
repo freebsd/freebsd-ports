@@ -5,7 +5,8 @@ PORTNAME=	shoutcast
 PORTVERSION=	2.4.7.256
 PORTREVISION=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://download.nullsoft.com/shoutcast/tools/
+MASTER_SITES=	http://download.nullsoft.com/shoutcast/tools/ \
+		http://people.freebsd.org/~sbruno/shoutcast/distfiles/
 DISTNAME=	sc_serv2_bsd-latest
 
 MAINTAINER=	sbruno@FreeBSD.org
@@ -13,8 +14,6 @@ COMMENT=	SHOUTcast Distributed Network Audio Server
 
 RESTRICTED=	redistribution of software is not permitted
 IA32_BINARY_PORT=	yes
-
-BROKEN=		does not fetch (404)
 
 USES=		dos2unix shebangfix
 DOS2UNIX_REGEX=	.*\.(conf|css|html|js|txt|xml)
