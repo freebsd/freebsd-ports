@@ -3,6 +3,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.8.16
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -19,7 +20,6 @@ CPE_VENDOR=	todd_miller
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lgcc
-LDFLAGS+=	-lssp_nonshared
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-ignore-dot \
