@@ -1,6 +1,6 @@
---- configure.orig
+--- configure.orig	2016-04-05 00:45:51 UTC
 +++ configure
-@@ -8461,9 +8461,6 @@ case "${host_os}" in
+@@ -8471,9 +8471,6 @@ case "${host_os}" in
      ;;
    freebsd*)
      SYS=freebsd
@@ -10,7 +10,7 @@
      ;;
    openbsd*)
      SYS=openbsd
-@@ -26098,7 +26095,7 @@ main ()
+@@ -25539,7 +25536,7 @@ main ()
    return 0;
  }
  _ACEOF
@@ -19,7 +19,7 @@
  
          ac_cv_c_o4=yes
  
-@@ -26142,7 +26139,7 @@ main ()
+@@ -25583,7 +25580,7 @@ main ()
    return 0;
  }
  _ACEOF
@@ -28,7 +28,7 @@
  
            ac_cv_c_o3=yes
  
-@@ -27336,7 +27333,7 @@ _ACEOF
+@@ -26777,7 +26774,7 @@ _ACEOF
  if ac_fn_c_try_compile "$LINENO"; then :
    ac_cv_altivec_inline="yes"
  else
@@ -37,7 +37,7 @@
            cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -27349,7 +27346,7 @@ asm volatile("vperm 0,1,2,3");
+@@ -26790,7 +26787,7 @@ asm volatile("vperm 0,1,2,3");
  }
  _ACEOF
  if ac_fn_c_try_compile "$LINENO"; then :
@@ -46,3 +46,12 @@
  else
    ac_cv_altivec_inline=no
  fi
+@@ -49199,7 +49196,7 @@ fi
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+ 
+-        as_fn_error $? "\"You cannot build VLC with Qt-5.5.0. You need to backport I78ef29975181ee22429c9bd4b11d96d9e68b7a9c\"" "$LINENO" 5
++        $as_echo "Qt-5.5.x found. Ensure Qt I78ef29975181ee22429c9bd4b11d96d9e68b7a9c is backported." >&5
+ 
+ fi
+ 
