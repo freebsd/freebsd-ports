@@ -1,0 +1,77 @@
+Description: Replace deprecated FFmpeg API
+Author: Andreas Cadhalpun <Andreas.Cadhalpun@googlemail.com>
+Last-Update: <2015-11-02>
+
+--- channels/tsmf/client/ffmpeg/tsmf_ffmpeg.c.orig	2016-06-11 21:12:27.134896000 +0200
++++ channels/tsmf/client/ffmpeg/tsmf_ffmpeg.c	2016-06-11 21:14:05.282247000 +0200
+@@ -103,7 +103,7 @@
+ 	mdecoder->codec_context->bit_rate = media_type->BitRate;
+ 	mdecoder->codec_context->time_base.den = media_type->SamplesPerSecond.Numerator;
+ 	mdecoder->codec_context->time_base.num = media_type->SamplesPerSecond.Denominator;
+-	mdecoder->frame = avcodec_alloc_frame();
++	mdecoder->frame = av_frame_alloc();
+ 	return TRUE;
+ }
+ 
+@@ -322,14 +322,14 @@
+ 									 mdecoder->codec_context->width, mdecoder->codec_context->height);
+ 			mdecoder->decoded_data = malloc(mdecoder->decoded_size);
+ 			ZeroMemory(mdecoder->decoded_data, mdecoder->decoded_size);
+-			frame = avcodec_alloc_frame();
++			frame = av_frame_alloc();
+ 			avpicture_fill((AVPicture *) frame, mdecoder->decoded_data,
+ 						   mdecoder->codec_context->pix_fmt,
+ 						   mdecoder->codec_context->width, mdecoder->codec_context->height);
+ 			av_picture_copy((AVPicture *) frame, (AVPicture *) mdecoder->frame,
+ 							mdecoder->codec_context->pix_fmt,
+ 							mdecoder->codec_context->width, mdecoder->codec_context->height);
+-			av_free(frame);
++			av_frame_free(&frame);
+ 		}
+ 	return ret;
+ }
+@@ -385,7 +385,7 @@
+ 									(int16_t *) dst, &frame_size, src, src_size);
+ #else
+ 		{
+-			AVFrame *decoded_frame = avcodec_alloc_frame();
++			AVFrame *decoded_frame = av_frame_alloc();
+ 			int got_frame = 0;
+ 			AVPacket pkt;
+ 			av_init_packet(&pkt);
+@@ -398,7 +398,7 @@
+ 														decoded_frame->nb_samples, mdecoder->codec_context->sample_fmt, 1);
+ 				memcpy(dst, decoded_frame->data[0], frame_size);
+ 			}
+-			av_free(decoded_frame);
++			av_frame_free(&decoded_frame);
+ 		}
+ #endif
+ 		if(len <= 0 || frame_size <= 0)
+@@ -464,7 +464,7 @@
+ 	TSMFFFmpegDecoder *mdecoder = (TSMFFFmpegDecoder *) decoder;
+ 	switch(mdecoder->codec_context->pix_fmt)
+ 	{
+-		case PIX_FMT_YUV420P:
++		case AV_PIX_FMT_YUV420P:
+ 			return RDP_PIXFMT_I420;
+ 		default:
+ 			CLOG_ERR("unsupported pixel format %u",
+@@ -492,7 +492,7 @@
+ {
+ 	TSMFFFmpegDecoder *mdecoder = (TSMFFFmpegDecoder *) decoder;
+ 	if(mdecoder->frame)
+-		av_free(mdecoder->frame);
++		av_frame_free(&mdecoder->frame);
+ 	if(mdecoder->decoded_data)
+ 		free(mdecoder->decoded_data);
+ 	if(mdecoder->codec_context)
+@@ -501,7 +501,7 @@
+ 			avcodec_close(mdecoder->codec_context);
+ 		if(mdecoder->codec_context->extradata)
+ 			free(mdecoder->codec_context->extradata);
+-		av_free(mdecoder->codec_context);
++		av_frame_free(&mdecoder->codec_context);
+ 	}
+ 	free(decoder);
+ }
