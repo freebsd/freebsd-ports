@@ -1,0 +1,29 @@
+commit b5e012b47fa9e242a38c3f66678aa2f47946a9c9
+Author: Dmitry Marakasov <amdmi3@amdmi3.ru>
+Date:   Thu May 26 17:37:28 2016 +0300
+
+    Fix crontab argument order for writing
+    
+    Currently, when writing user's crontab, ansible calls
+    
+        crontab <file> -u <user>
+    
+    This is incorrect according to crontab(1) on both FreeBSD and Linux,
+    which suggest that file argument should be the last.
+    
+    At least on FreeBSD, this leads to incorrect cron module bahavior which
+    writes to root's crontab instead of users's
+
+diff --git system/cron.py system/cron.py
+index ab97606..b9f0940 100644
+--- lib/ansible/modules/core/system/cron.py
++++ lib/ansible/modules/core/system/cron.py
+@@ -488,7 +488,7 @@ class CronTab(object):
+                 return "chown %s %s ; su '%s' -c '%s %s'" % (pipes.quote(self.user), pipes.quote(path), pipes.quote(self.user), CRONCMD, pipes.quote(path))
+             else:
+                 user = '-u %s' % pipes.quote(self.user)
+-        return "%s %s %s" % (CRONCMD , pipes.quote(path), user)
++        return "%s %s %s" % (CRONCMD , user, pipes.quote(path))
+ 
+ 
+ 
