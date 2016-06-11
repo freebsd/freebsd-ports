@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.19.10
+PORTVERSION=	0.19.15
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -11,12 +11,12 @@ COMMENT=	Remote-controllable music daemon
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
+		libicudata.so:devel/icu
+
 USES=		gmake pkgconfig compiler:c++11-lib tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
-		libicudata.so:devel/icu
 
 USE_RC_SUBR=	${PORTNAME}
 CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar
@@ -198,7 +198,7 @@ post-patch:
 		${WRKSRC}/doc/mpdconf.example) - 1); \
 	 finish=$$(for n in $$(${JOT} 10 $$start); do \
 		     [ "$$(${SED} -n $${n}p ${WRKSRC}/doc/mpdconf.example)" = \
-				"#}" ] && echo $$n || true; done); \
+				"#}" ] && ${ECHO_CMD} $$n || true; done); \
 	 ${REINPLACE_CMD} -e "$${start},$${finish}s,^#,," \
 		${WRKSRC}/doc/mpdconf.example
 # Fix man pages for executable names
