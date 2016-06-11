@@ -215,6 +215,7 @@
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
+    SUBDIR += pdfedit
     SUBDIR += pico-alpine
     SUBDIR += pluma
     SUBDIR += plume-creator-devel

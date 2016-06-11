@@ -1,0 +1,13 @@
+--- src/tools/Makefile.orig	2016-06-12 05:05:10.782469000 +0900
++++ src/tools/Makefile	2016-06-12 05:06:44.155717000 +0900
+@@ -25,6 +25,10 @@
+ .PHONY: all clean
+ all: $(TARGET)
+ 
++install: $(TARGET)
++	$(MKDIR) $(INSTALL_ROOT)$(bindir)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(INSTALL_ROOT)$(bindir)
++
+ displaycs: displaycs.o
+ 	$(LINK) $(LDFLAGS) -o displaycs displaycs.o $(TOOLS_LIBS)
+ 
