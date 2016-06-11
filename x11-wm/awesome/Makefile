@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awesome
-PORTVERSION=	3.5.8
+PORTVERSION=	3.5.9
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
@@ -33,7 +33,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libImlib2.so:graphics/imlib2
 
-USES=		cmake execinfo iconv pkgconfig lua tar:xz
+USES=		cmake execinfo gettext iconv pkgconfig lua tar:xz
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
 USE_GNOME=	glib20 pango gdkpixbuf2
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
