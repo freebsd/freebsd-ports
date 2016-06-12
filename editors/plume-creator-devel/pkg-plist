@@ -1,4 +1,4 @@
-%%QT_BINDIR%%/plume-creator
+bin/plume-creator
 share/applications/plume-creator.desktop
 share/icons/hicolor/128x128/apps/plume-creator-backup.png
 share/icons/hicolor/128x128/apps/plume-creator.png
