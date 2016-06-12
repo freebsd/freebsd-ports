@@ -1,4 +1,4 @@
-%%QT_BINDIR%%/saaghar
+bin/saaghar
 share/applications/Saaghar.desktop
 share/pixmaps/saaghar.png
 %%DATADIR%%/AUTHORS
