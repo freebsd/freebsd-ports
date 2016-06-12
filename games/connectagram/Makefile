@@ -27,7 +27,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|std::lround|lround|' ${WRKSRC}/src/*.cpp
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} CREDITS ChangeLog NEWS README \
 		${STAGEDIR}${DOCSDIR})
