@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	checkstyle
-PORTVERSION=	6.3
+PORTVERSION=	6.19
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	java-
@@ -29,6 +29,7 @@ PORTEXAMPLES=	*
 SUB_FILES=	${PORTNAME}.sh
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+NO_ARCH=	yes
 
 do-install:
 	@-${MKDIR} ${STAGEDIR}${JAVAJARDIR}
@@ -36,13 +37,16 @@ do-install:
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+do-install-DOCS-on:
 	@-${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE* RIGHTS.antlr \
 		${STAGEDIR}${DOCSDIR})
+
+do-install-EXAMPLES-on:
 	@-${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for EXAMPLEFILE in checkstyle_checks import-control suppressions
-	${INSTALL_DATA} ${WRKSRC}/${EXAMPLEFILE}.xml ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/config/${EXAMPLEFILE}.xml ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
