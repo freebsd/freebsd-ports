@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-spark
 DISTNAME=	why3-for-spark-gpl-${PORTVERSION}-src
 
 MAINTAINER=	marino@FreeBSD.org
-COMMENT=	Component of SPARK 2015
+COMMENT=	Component of SPARK ${PORTVERSION}
 
 LICENSE=	LGPL21 GPLv3
 LICENSE_COMB=	multi
