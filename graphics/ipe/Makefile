@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ipe
-PORTVERSION=	7.2.2
+PORTVERSION=	7.2.3
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.bintray.com/otfried/generic/ipe/${PORTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extensible vector graphics editor with LaTeX support
 
 LICENSE=	GPLv3+
