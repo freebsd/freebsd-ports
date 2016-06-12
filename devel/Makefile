@@ -1206,6 +1206,7 @@
     SUBDIR += libewf
     SUBDIR += libexecinfo
     SUBDIR += libexplain
+    SUBDIR += libfastjson
     SUBDIR += libffi
     SUBDIR += libfirm
     SUBDIR += libfortuna
