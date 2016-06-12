@@ -1,0 +1,5 @@
+This is a django-otp plugin that handles YubiKey devices using the Yubico OTP
+algorithm. This includes two device definitions: one to verify YubiKey tokens
+locally and another to verify them against a web service.
+
+WWW: https://pypi.python.org/pypi/django-otp-yubikey
