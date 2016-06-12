@@ -1,15 +1,16 @@
+This qjail version is not intended for RELEASES older than RELEASE-10.0.
+
 Qjail [ q = quick ] is a 4th generation wrapper for the basic chroot jail
 system that includes security and performance enhancements. Plus a new level
 of "user friendliness" enhancements dealing with deploying just a few jails or
 large scale jail environments consisting of 100's of jails.
 
-This version of qjail uses the jail(8) jail.conf method. This provides the
-ability to enable the following options on a per-jail basis. exec.fib,
-securelevel, allow.sysvipc, devfs_rulesets, allow.raw_sockets, allow.quotas,
-allow.mount.nullfs, allow.mount.tmpfs, allow.mount.zfs, vnet.interface, and
-vnet. The vnet option gives a jail its own network stack using the experimental
-vimage kernel module. This qjail version is not intended for RELEASES older than
-RELEASE-9.2. The vnet option has only been tested on i386 and amd64 equipment.
+Qjail uses the jail(8) jail.conf method. This provides the ability to enable 
+the following options on a per-jail basis. exec.fib, securelevel, allow.sysvipc,
+devfs_rulesets, allow.raw_sockets, allow.quotas, allow.mount.nullfs, 
+allow.mount.tmpfs, allow.mount.zfs, vnet.interface, and vnet. The vnet option 
+gives a jail its own network stack using the experimental vimage kernel module.
+The vnet option has only been tested on i386 and amd64 equipment.
 
 Qjail requires no knowledge of the jail command usage. It uses "nullfs" for
 read-only system executables, sharing one copy of them with all the jails.
@@ -27,7 +28,7 @@ group of jails.
 Ability to designate a portion of the jail name as a group prefix so the
 command being executed will apply to only those jail names matching that prefix.
 
-Qjail has been incorporated into the Finch open source project,
+Qjail has been incorporated into the Finch open source project, 
 see http://dreamcat4.github.io/finch/ for details.
 
 WWW: http://qjail.sourceforge.net/

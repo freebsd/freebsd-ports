@@ -15,9 +15,10 @@ man/man8/qjail-howto.8.gz
 %%EXAMPLESDIR%%/default/etc/make.conf
 %%EXAMPLESDIR%%/default/etc/motd
 %%EXAMPLESDIR%%/default/etc/periodic.conf
-%%EXAMPLESDIR%%/default/etc/periodic103.conf
+%%EXAMPLESDIR%%/default/etc/periodic102.conf
+%%EXAMPLESDIR%%/default/etc/newsyslog102.conf
 %%EXAMPLESDIR%%/default/etc/rc.conf
-%%EXAMPLESDIR%%/default/etc/rc103.conf
+%%EXAMPLESDIR%%/default/etc/rc102.conf
 %%EXAMPLESDIR%%/default/root/.cshrc
 %%EXAMPLESDIR%%/default/usr/local/etc/pkg.conf
 %%EXAMPLESDIR%%/default/usr/local/etc/sudoers
@@ -27,10 +28,11 @@ man/man8/qjail-howto.8.gz
 %%EXAMPLESDIR%%/ssh-default/etc/motd
 %%EXAMPLESDIR%%/ssh-default/etc/passwd
 %%EXAMPLESDIR%%/ssh-default/etc/periodic.conf
-%%EXAMPLESDIR%%/ssh-default/etc/periodic103.conf
+%%EXAMPLESDIR%%/ssh-default/etc/periodic102.conf
+%%EXAMPLESDIR%%/ssh-default/etc/newsyslog102.conf
 %%EXAMPLESDIR%%/ssh-default/etc/pwd.db
 %%EXAMPLESDIR%%/ssh-default/etc/rc.conf
-%%EXAMPLESDIR%%/ssh-default/etc/rc103.conf
+%%EXAMPLESDIR%%/ssh-default/etc/rc102.conf
 %%EXAMPLESDIR%%/ssh-default/etc/spwd.db
 %%EXAMPLESDIR%%/ssh-default/etc/ssh/sshd_config
 %%EXAMPLESDIR%%/ssh-default/root/.cshrc
