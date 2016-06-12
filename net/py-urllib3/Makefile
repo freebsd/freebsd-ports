@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	urllib3
-PORTVERSION=	1.15.1
+PORTVERSION=	1.16
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi \
-	${PYTHON_PKGNAMEPREFIX}pysocks>=1.5.0:net/py-pysocks
+	${PYTHON_PKGNAMEPREFIX}pysocks>=1.5.7:net/py-pysocks
 
 USES=	python
 USE_PYTHON=	distutils autoplist
