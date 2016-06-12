@@ -4,4 +4,4 @@ LuaSQL is a simple interface from Lua to a DBMS. It enables a Lua program to:
     * Execute arbitrary SQL statements;
     * Retrieve results in a row-by-row cursor fashion.
 
-WWW: http://www.keplerproject.org/luasql/
+WWW: https://github.com/keplerproject/luasql/
