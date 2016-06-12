@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	luasql
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.3
 DISTVERSIONPREFIX=	v
 PORTREVISION?=	0
 CATEGORIES=	databases
@@ -29,7 +29,6 @@ MAKE_ARGS=	LUA_DIR=${LUA_SUBDIR} \
 		WARN="${CFLAGS}" \
 		CC="${CC}"
 
-USE_CSTD=	gnu89
 CFLAGS+=	-Wno-return-type
 
 PLIST_SUB=	LUA_MIDLIBDIR=${LUA_MODLIBDIR} \
@@ -50,6 +49,16 @@ COMMENT=	Lua interface to SQLite3
 USES+=		sqlite
 MAKE_ARGS+=	DRIVER_LIBS_sqlite3="-L ${LOCALBASE}/lib -lsqlite3" \
 		DRIVER_INCS_sqlite3="-I ${LOCALBASE}/include"
+.elif ${LUASQL_DRIVER} == "odbc"
+COMMENT=	Lua interface to ODBC
+LIB_DEPENDS+=	libodbc.so:databases/unixODBC
+MAKE_ARGS+=	DRIVER_LIBS_odbc="-L ${LOCALBASE}/lib -lodbc" \
+		DRIVER_INCS_odbc="-I ${LOCALBASE}/include -DUNIXODBC"
+.elif ${LUASQL_DRIVER} == "firebird"
+COMMENT=	Lua interface to Firebird
+USES+=		firebird
+MAKE_ARGS+=	DRIVER_LIBS_firebird="-L ${LOCALBASE}/lib -lfbclient" \
+		DRIVER_INCS_firebird="-I ${LOCALBASE}/include"
 .else
 IGNORE=		unknown or unsupported luasql driver
 .endif
