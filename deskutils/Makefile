@@ -188,6 +188,7 @@
     SUBDIR += plasma-applet-yawp
     SUBDIR += plopfolio
     SUBDIR += preferences
+    SUBDIR += puush
     SUBDIR += py-bugwarrior
     SUBDIR += py-khal
     SUBDIR += py-pycarddav
