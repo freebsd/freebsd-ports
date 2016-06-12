@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chrony
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
@@ -10,6 +10,8 @@ MAINTAINER=	yonas@fizk.net
 COMMENT=	System clock synchronization client and server
 
 LICENSE=	GPLv2
+
+BUILD_DEPENDS=	rubygem-asciidoctor>=0:textproc/rubygem-asciidoctor
 
 USES=		cpe gmake makeinfo readline
 CPE_VENDOR=	tuxfamily
@@ -23,11 +25,11 @@ USE_RC_SUBR=	chronyd
 
 ALL_TARGET=	all docs
 INSTALL_TARGET=	install install-docs
-INFO=		chrony
 EXTRAPORTDOCS=	FAQ NEWS README
-PORTDOCS=	chrony.html chrony.txt ${EXTRAPORTDOCS}
+PORTDOCS=	chrony.conf.html chronyc.html chronyd.html faq.html \
+		installation.html ${EXTRAPORTDOCS}
 PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 \
-	chrony.conf.example3 chrony.keys.example
+		chrony.conf.example3 chrony.keys.example
 
 # XXX: there are also other potentially useful options worth looking into:
 #  --without-nss        Don't use NSS even if it is available
