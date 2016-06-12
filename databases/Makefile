@@ -177,6 +177,7 @@
     SUBDIR += lmdb
     SUBDIR += luadbi
     SUBDIR += luasql-mysql
+    SUBDIR += luasql-odbc
     SUBDIR += luasql-postgres
     SUBDIR += luasql-sqlite3
     SUBDIR += mantis
