@@ -125,6 +125,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/import/wstx.h
 %%DATADIR%%/import/wsu.h
 %%DATADIR%%/import/xenc.h
+%%DATADIR%%/import/xenc2.h
 %%DATADIR%%/import/xlink.h
 %%DATADIR%%/import/xmime.h
 %%DATADIR%%/import/xmime4.h
