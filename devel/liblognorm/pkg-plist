@@ -9,6 +9,6 @@ include/ptree.h
 include/samp.h
 lib/liblognorm.a
 lib/liblognorm.so
-lib/liblognorm.so.2
-lib/liblognorm.so.2.0.0
+lib/liblognorm.so.5
+lib/liblognorm.so.5.0.0
 libdata/pkgconfig/lognorm.pc
