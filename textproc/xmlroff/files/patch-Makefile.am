@@ -1,6 +1,6 @@
---- Makefile.am.orig	2009-03-12 06:08:57.000000000 +0900
-+++ Makefile.am	2016-03-26 11:11:44.004539000 +0900
-@@ -6,26 +6,14 @@
+--- Makefile.am.orig	2009-03-11 21:08:57 UTC
++++ Makefile.am
+@@ -6,26 +6,14 @@ if ENABLE_CUNIT
  CUNIT_DIRS = cunit
  endif
  
