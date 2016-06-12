@@ -88,6 +88,7 @@
     SUBDIR += font-mplus-ipa
     SUBDIR += font-mplus-outline
     SUBDIR += font-naga10
+    SUBDIR += font-nasu
     SUBDIR += font-ricty
     SUBDIR += font-ricty-discord
     SUBDIR += font-sazanami
