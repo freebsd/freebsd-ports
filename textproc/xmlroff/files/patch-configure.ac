@@ -1,6 +1,6 @@
---- configure.ac.orig	2009-03-12 06:08:57.000000000 +0900
-+++ configure.ac	2016-03-26 11:07:28.607576000 +0900
-@@ -230,30 +230,26 @@
+--- configure.ac.orig	2009-03-11 21:08:57 UTC
++++ configure.ac
+@@ -230,30 +230,26 @@ fi
  AM_CONDITIONAL(ENABLE_MAN, test x$enable_man != xno)
  
  #
@@ -42,7 +42,7 @@
  
  AC_ARG_ENABLE(rebuilds,
  	      AC_HELP_STRING([--disable-rebuilds],
-@@ -623,14 +619,6 @@
+@@ -623,14 +619,6 @@ cunit/Makefile
  docs/Makefile
  examples/Makefile
  examples/xml2003/Makefile

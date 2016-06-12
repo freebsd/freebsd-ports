@@ -1,6 +1,6 @@
---- xmlroff/Makefile.am.orig	2016-03-26 11:00:22.298011000 +0900
-+++ xmlroff/Makefile.am	2016-03-26 11:01:28.445341000 +0900
-@@ -6,8 +6,7 @@
+--- xmlroff/Makefile.am.orig	2009-03-11 21:08:57 UTC
++++ xmlroff/Makefile.am
+@@ -6,8 +6,7 @@ endif
  
  INCLUDES = \
  	-DG_LOG_DOMAIN=\"libfo\"	\
@@ -10,7 +10,7 @@
  
  bin_PROGRAMS = \
  	xmlroff
-@@ -18,11 +17,8 @@
+@@ -18,11 +17,8 @@ bin_PROGRAMS = \
  xmlroff_SOURCES = \
  	xmlroff.c
  
