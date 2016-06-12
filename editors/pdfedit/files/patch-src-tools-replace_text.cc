@@ -39,7 +39,7 @@
  
  		// sane values
 -		to = std::min(to, pdf->getPageCount()+1);
-+		to = std::min(to, (unsigned long)(pdf->getPageCount()+1));
++		to = std::min(to, (size_t)(pdf->getPageCount()+1));
  
  		// now the hard stuff comes - do this crazy loops intentionally
  		for (size_t things_to_replace = 0; things_to_replace < withs.size(); ++things_to_replace)
