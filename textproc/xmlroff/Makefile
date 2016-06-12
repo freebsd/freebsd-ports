@@ -22,7 +22,6 @@ USE_GNOME=	libgnomeprint libartlgpl2 pango glib20 \
 		libxslt libxml2 gdkpixbuf2
 GH_ACCOUNT=	xmlroff
 GH_PROJECT=	xmlroff
-EXTRACT_AFTER_ARGS=	--exclude=xmlroff/libfo
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-html-dir=${PREFIX}/share/doc
@@ -30,6 +29,6 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 DOCS_CONFIGURE_ENABLE=	gtk-doc
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-doc.pc:${PORTSDIR}/textproc/gtk-doc
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-doc.pc:textproc/gtk-doc
 
 .include <bsd.port.mk>

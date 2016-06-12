@@ -1,6 +1,15 @@
---- docs/Makefile.am.orig	2009-03-12 06:08:57.000000000 +0900
-+++ docs/Makefile.am	2016-03-25 14:22:51.475354000 +0900
-@@ -228,7 +228,7 @@
+--- docs/Makefile.am.orig	2009-03-11 21:08:57 UTC
++++ docs/Makefile.am
+@@ -186,7 +186,7 @@ GTKDOC_CFLAGS = \
+ 	-I$(top_builddir)
+ 
+ GTKDOC_LIBS = \
+-	../libfo/libfo-0.6.la \
++	$(LIBFO_LIBS) \
+ 	$(PANGO_LIBS) \
+ 	$(GNOMEPRINT_LIBS) \
+ 	$(GDKPIXBUF_LIBS)	\
+@@ -228,7 +228,7 @@ dist-hook-local:
  DOCBOOK_XSL=http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl
  
  xmlroff.fo:	xmlroff.xml ../libfo-compat.xsl
