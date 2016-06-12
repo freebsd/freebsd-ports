@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	assimp
-PORTVERSION=	3.1.1
-DISTVERSIONSUFFIX=	_no_test_models
+PORTVERSION=	3.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.1
 
-MAINTAINER=	yuri@tsoft.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to import various 3D model formats in a uniform manner
 
 LICENSE=	BSD3CLAUSE
@@ -15,13 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	Does not build
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USES=		cmake pkgconfig zip
+USES=		cmake pkgconfig
+USE_GITHUB=		yes
 USE_LDCONFIG=	yes
 
 # CMAKE_ARGS instructs cmake to skip runtime path removal during install
-CMAKE_ARGS+=	"-DCMAKE_SKIP_RPATH=ON"
+CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON -DASSIMP_BUILD_TESTS:BOOL=OFF
 
 OPTIONS_DEFINE=	BOOST
 OPTIONS_DEFAULT=	BOOST
@@ -35,8 +33,11 @@ BOOST_CMAKE_ON=	-DASSIMP_ENABLE_BOOST_WORKAROUND:BOOL=OFF
 USE_GCC=	yes
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} 's|$${ASSIMP_LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
+post-patch: .SILENT
+	${REINPLACE_CMD} -e '/zzip-zlib-config/d' \
+		${WRKSRC}/cmake-modules/FindZLIB.cmake
+	${REINPLACE_CMD} -e '/working branch$$/,/^)/d ; /minizip/d ; \
+		s|$${ASSIMP_LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
