@@ -176,6 +176,7 @@
     SUBDIR += liquibase
     SUBDIR += lmdb
     SUBDIR += luadbi
+    SUBDIR += luasql-firebird
     SUBDIR += luasql-mysql
     SUBDIR += luasql-odbc
     SUBDIR += luasql-postgres
