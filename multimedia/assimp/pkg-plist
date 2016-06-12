@@ -42,9 +42,9 @@ include/assimp/vector2.inl
 include/assimp/vector3.h
 include/assimp/vector3.inl
 include/assimp/version.h
-lib/cmake/assimp-3.1/assimp-config-version.cmake
-lib/cmake/assimp-3.1/assimp-config.cmake
+lib/cmake/assimp-3.2/assimp-config-version.cmake
+lib/cmake/assimp-3.2/assimp-config.cmake
 lib/libassimp.so
 lib/libassimp.so.3
-lib/libassimp.so.3.1.1
+lib/libassimp.so.3.2.0
 libdata/pkgconfig/assimp.pc
