@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tint2
-PORTVERSION=	0.12.9
+PORTVERSION=	0.12.11
 CATEGORIES=	x11
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/tint/
 
@@ -11,12 +11,14 @@ COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
-		libstartup-notification-1.so:x11/startup-notification
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libImlib2.so:graphics/imlib2 \
+		libstartup-notification-1.so:x11/startup-notification \
 
 USES=		alias cmake gettext pkgconfig tar:xz
-USE_GNOME=	glib20 gtk20 librsvg2 pango
-USE_XORG=	x11 xcomposite xdamage xinerama xrandr xrender
+USE_GNOME=	cairo glib20 gtk20 librsvg2 pango
+USE_XORG=	x11 xcomposite xdamage xfixes xinerama xrandr xrender
 INSTALLS_ICONS=	yes
 
 CMAKE_ARGS=	-DMANDIR:PATH=man -DSYSCONFDIR:PATH=etc
