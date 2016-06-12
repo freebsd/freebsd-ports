@@ -15,6 +15,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/core.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/dates.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/api/languages.rst
+%%PORTDOCS%%%%DOCSDIR%%/api/lists.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/messages/catalog.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/messages/extract.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/messages/index.rst
@@ -23,10 +25,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/numbers.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/plural.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/support.rst
+%%PORTDOCS%%%%DOCSDIR%%/api/units.rst
 %%PORTDOCS%%%%DOCSDIR%%/changelog.rst
 %%PORTDOCS%%%%DOCSDIR%%/cmdline.rst
 %%PORTDOCS%%%%DOCSDIR%%/conf.py
 %%PORTDOCS%%%%DOCSDIR%%/dates.rst
+%%PORTDOCS%%%%DOCSDIR%%/dev.rst
 %%PORTDOCS%%%%DOCSDIR%%/index.rst
 %%PORTDOCS%%%%DOCSDIR%%/installation.rst
 %%PORTDOCS%%%%DOCSDIR%%/intro.rst
