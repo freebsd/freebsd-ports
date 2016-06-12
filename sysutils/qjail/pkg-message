@@ -10,8 +10,33 @@ For the BIG PICTURE issue "man qjail-howto".
 
 ########################################################################
 
-If your host is running 9.3-RELEASE or 10.0-RELEASE, please verify that
-/etc/defaults/rc.conf parameter "devfs_load_rulesets" looks like this
-                devfs_load_rulesets="YES"
+For users who have existing qjail environments. Please take note.
+There are changes to the internals of the jail(8) command and changes to 
+parameter names in the periodic files that have occured in FreeBSD 
+Release 10.2 that effects jail behavior in a very minor way. 
+IF your running qjail on an 10.2 or newer version of FreeBSD you should 
+consider doing the following.
 
+This version of qjail has an built in auto convert function that you may select
+to choose that fixes those minor behavior problems with your existing jails.
+This auto convert function is not documented in the qjail manual. Its only 
+shown here. So write it down. 
+
+       Issue [ qjail update -u ] from the host console. 
+
+This will cause the existing "flavors" default & ssh-default directories to be 
+renamed and new ones populated. Then in each existing jail the periodic.conf
+and newsyslog.conf files will be renamed with .saved suffix and new ones added. 
+The rc.conf file will be updated in place changing the 
+syslogd_enable= parameter value from "NO" to "YES".
+
+The new periodic.conf file has many sendmail reporting options disabled because
+sendmail is disabled in the jails rc.conf file by default. This drastically
+reduces the daily. weekly, monthly system and security status reports elapse
+run times. This has a major effect on operating system performance where there 
+are a large number of jails.
+
+The [ qjail install ] command will install all the correct files depending on
+what version of FreeBSD your host is running.     
+ 
 ########################################################################
