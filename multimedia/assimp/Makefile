@@ -6,7 +6,7 @@ PORTVERSION=	3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	Library to import various 3D model formats in a uniform manner
 
 LICENSE=	BSD3CLAUSE
