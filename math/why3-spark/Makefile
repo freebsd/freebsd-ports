@@ -45,7 +45,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' \
 		${WRKSRC}/src/util/sysutil.ml
 	@${REINPLACE_CMD} -e '/cp -f share\/Make/d' \
-		${WRKSRC}/Makefile.in
+		-e '/gcc/d' ${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*why3
