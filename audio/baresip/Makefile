@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	baresip
-PORTVERSION=	0.4.8
-PORTREVISION=	4
+PORTVERSION=	0.4.19
 CATEGORIES=	audio
 MASTER_SITES=	http://www.creytiv.com/pub/
 
@@ -12,8 +11,8 @@ COMMENT=	Small SIP client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-BUILD_DEPENDS=	re>=0.4.6:audio/re \
-		rem>=0.4.4:audio/rem
+BUILD_DEPENDS=	re>=0.4.14:audio/re \
+		rem>=0.4.7:audio/rem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake pkgconfig
@@ -23,10 +22,11 @@ MAKE_ARGS=	MOD_AUTODETECT=""
 PLIST_FILES=	bin/baresip
 PORTDATA=	*
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 #OPTIONS_NOT_YET_WORKING=	ALSA BV32 G722_1 PLC ISAC OPENGLES
-OPTIONS_DEFINE=	CELT CONS DOCS FFMPEG G711 G722 G726 GSM GSTREAMER ILBC L16 \
-	OPUS OSS PORTAUDIO SDL SNDFILE SPEEX SRTP STDIO UUID V4L V4L2 X11 \
+OPTIONS_DEFINE=	CONS DOCS EXAMPLES FFMPEG G711 G722 G726 GSM GSTREAMER ILBC \
+	L16 OPUS OSS PORTAUDIO SDL SNDFILE SPEEX SRTP STDIO UUID V4L V4L2 X11 \
 	DTLS_SRTP AUBRIDGE VIDBRIDGE HTTPD DSHOW DIRECTFB ACCOUNT \
 	NATPMP SDL MIW SNAPSHOT SELFVIEW VUMETER AULOOP CONTACT \
 	MENU PRESENCE SYSLOG VIDLOOP
@@ -34,7 +34,6 @@ OPTIONS_DEFAULT=CONS G711 G722 G726 L16
 
 AULOOP_DESC=	Audio-loop test module
 BV32_DESC=	BroadVoice32 Wideband Audio codec
-CELT_DESC=	Celt support [broken]
 CONTACT_DESC=	Contacts module
 CONS_DESC=	Console input driver
 DTLS_SRTP_DESC=	DTLS Secure RTP module [broken]
@@ -84,7 +83,7 @@ MAKE_ARGS+=	USE_$s=yes
 MAKE_ARGS+=	HAVE_SPEEXDSP=yes
 .endif
 
-.for o in CELT SRTP V4L DTLS_SRTP V4L2 X11
+.for o in SRTP V4L DTLS_SRTP V4L2 X11
 .  if ${PORT_OPTIONS:M$o}
 BROKEN=	OPTIONS marked as BROKEN have not been updated to the new Baresip API
 .  endif
@@ -106,8 +105,6 @@ post-patch:
 	${ECHO_CMD} ".PHONY: showmodules" >> ${WRKSRC}/Makefile
 	${ECHO_CMD} "showmodules:" >> ${WRKSRC}/Makefile
 	${ECHO_CMD} '	@${ECHO_CMD} $$(MODULES)' >> ${WRKSRC}/Makefile
-	${REINPLACE_CMD} 's,-lcelt[0-9]*,$$(pkg-config --libs celt),' \
-		${WRKSRC}/modules/celt/module.mk
 	${REINPLACE_CMD} 's,-lportaudio[0-9]*,-L${LOCALBASE}/lib -lportaudio,' \
 		${WRKSRC}/modules/portaudio/module.mk
 
@@ -124,7 +121,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/baresip/modules; \
 	   ${ECHO_CMD} lib/${PORTNAME}/modules/$$m.so >> ${TMPPLIST}; \
 	done
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	${MV} ${STAGEDIR}${DOCSDIR}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/examples
 
 .include <bsd.port.mk>

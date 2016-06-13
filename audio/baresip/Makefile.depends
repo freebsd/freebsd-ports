@@ -2,7 +2,6 @@
 
 ALSA_DEPEND=	${LOCALBASE}/include/alsa/asoundlib.h:audio/alsa-lib
 BV32_DEPEND=	# nonexistent
-CELT_DEPEND=	${LOCALBASE}/include/celt/celt.h:audio/celt
 CONS_DEPEND=	# unnecessary
 DTLS_SRTP_DEPEND=	# unnecessary
 EVDEV_DEPEND=

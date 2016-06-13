@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	re
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTVERSION=	0.4.16
 CATEGORIES=	audio devel
 MASTER_SITES=	http://www.creytiv.com/pub/
 
