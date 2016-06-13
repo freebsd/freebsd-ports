@@ -3534,6 +3534,7 @@
     SUBDIR += pas2dox
     SUBDIR += pasm
     SUBDIR += patch
+    SUBDIR += pcc-libs
     SUBDIR += pccts
     SUBDIR += pcl
     SUBDIR += pcre
