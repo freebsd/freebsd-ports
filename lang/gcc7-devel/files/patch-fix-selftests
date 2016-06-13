@@ -1,0 +1,16 @@
+https://gcc.gnu.org/ml/gcc-patches/2016-06/msg00880.html
+
+--- UTC
+Index: gcc/ggc-tests.c
+===================================================================
+--- gcc/ggc-tests.c	(revision 237337)
++++ gcc/ggc-tests.c	(working copy)
+@@ -190,7 +190,7 @@
+ static void
+ test_finalization ()
+ {
+-  ASSERT_FALSE (need_finalization_p <test_struct> ());
++//  ASSERT_FALSE (need_finalization_p <test_struct> ());
+   ASSERT_TRUE (need_finalization_p <test_struct_with_dtor> ());
+ 
+   /* Create some garbage.  */
