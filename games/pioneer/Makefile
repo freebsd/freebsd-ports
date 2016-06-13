@@ -38,7 +38,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
-GH_TAGNAME=	20160404
+GH_TAGNAME=	20160610
 
 USES=		autoreconf gmake pkgconfig
 USE_GL=		gl
@@ -47,7 +47,7 @@ USE_SDL=	image2 sdl2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PIONEER_DATA_DIR="${DATADIR}/data"
 CONFIGURE_ARGS=	--with-version="${GH_TAGNAME}"
-EXTRACT_AFTER_ARGS=	--exclude .gitignore
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions --exclude .gitignore
 
 PORTDATA=	data
 PORTDOCS=	AUTHORS.txt Changelog.txt Modelviewer.txt Quickstart.txt README.md
@@ -90,6 +90,8 @@ post-patch: .SILENT
 		${WRKSRC}/configure.ac
 	${REINPLACE_CMD} -e 's/std:://g' \
 		${WRKSRC}/src/Orbit.cpp
+	${REINPLACE_CMD} -e 's/std::to_string/to_string/g' \
+		${WRKSRC}/src/graphics/opengl/RendererGL.cpp
 
 post-patch-MODELCOMPILER-off: .SILENT
 	${REINPLACE_CMD} -e 's/pioneer modelcompiler/pioneer/' \
@@ -104,9 +106,11 @@ post-patch-PROFILER-off: .SILENT
 		${WRKSRC}/configure.ac
 
 post-install:
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${WRKSRC}/application-icon/pngs/pioneer-256x256.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+post-install-DOCS-on:
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 post-install-MODELCOMPILER-on:
 	${MV} ${STAGEDIR}${PREFIX}/bin/modelcompiler \
