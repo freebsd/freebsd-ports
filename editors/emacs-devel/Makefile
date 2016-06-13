@@ -19,7 +19,7 @@ BROKEN_ia64=	Emacs does not currently build on ia64
 
 CONFLICTS=	emacs24-[0-9]* emacs-nox11-[0-9]*
 
-EMACS_VER=	25.0.94
+EMACS_VER=	25.0.95
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
 INFO_PATH=	${DATADIR_REL}/info
