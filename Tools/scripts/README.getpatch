@@ -69,8 +69,12 @@ EXAMPLES
 
      Redirection <() depends on the shell you're using; validated with zsh and bash.
 
-DIAGNOSTICS
-     getpatch exits 0 on success or 1 if a help message was displayed.
+EXIT STATUS
+     getpatch exits with one of the following values according to sysexits code:
+
+     0 	on success.
+     64	if a help message was displayed.
+     69	if patches are not found.
 
 SEE ALSO
      getpr
@@ -82,4 +86,4 @@ BUGS
      If you're using getpatch and you encounter a bug or want an improvement
      don't hesitate to mail me.
 
-FreeBSD 			 18 June 2014	                         FreeBSD
+FreeBSD 			 12 June 2016	                         FreeBSD

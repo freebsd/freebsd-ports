@@ -30,7 +30,9 @@
 
 import argparse
 import codecs
+import os
 import re
+import ssl
 import sys
 if sys.version_info.major == 3:
     import urllib.request as urllib2
@@ -40,6 +42,14 @@ else:
 """
 FreeBSD getpatch handles Gnats and Bugzilla patch attachments
 """
+
+
+def create_ssl_context(cafile):
+    if os.path.exists(cafile):
+        return ssl.create_default_context(cafile=cafile)
+    else:
+        return ssl._create_unverified_context()
+
 
 class GetPatch(object):
 
@@ -51,25 +61,26 @@ class GetPatch(object):
         self.patch = ""
         self.output_stdout = False
         self.default_locale = sys.getdefaultencoding()
+        self.ssl_context = create_ssl_context('/usr/local/etc/ssl/cert.pem')
 
     def fetch(self, *largs, **kwargs):
         raise NotImplementedError()
 
     def write(self, filename, data):
         if filename.endswith(('.patch', '.txt')):
-            filename = filename[:filename.rindex('.')]+'.diff'
-        f=codecs.open(filename, encoding=self.default_locale, mode='w')
+            filename = "{}.diff".format(filename[:filename.rindex('.')])
+        f = codecs.open(filename, encoding=self.default_locale, mode='w')
         f.write(data.decode(self.default_locale))
         f.close()
-        self.out("[+] %s created" % filename)
+        self.out("[+] {} created".format(filename))
 
-    def get(self,only_last=False, output_stdout=False):
+    def get(self, only_last=False, output_stdout=False):
         self.output_stdout = output_stdout
         self.fetch(self.pr, category=self.category)
 
         if len(self.patchs) == 0:
             self.out("[-] No patch found")
-            sys.exit(1)
+            sys.exit(os.EX_UNAVAILABLE)
 
         if only_last:
             self.patchs = [self.patchs.pop()]
@@ -78,7 +89,7 @@ class GetPatch(object):
             url = patch['url']
             p = patch['name']
 
-            data = urllib2.urlopen(url).read()
+            data = urllib2.urlopen(url, context=self.ssl_context).read()
 
             if self.output_stdout:
                 sys.stdout.write(data.decode(self.default_locale))
@@ -92,10 +103,11 @@ class GetPatch(object):
         if not self.output_stdout:
             print(s)
 
+
 class GnatsGetPatch(GetPatch):
 
     URL_BASE = 'https://www.freebsd.org/cgi'
-    URL = '%s/query-pr.cgi?pr=' % URL_BASE
+    URL = '{}/query-pr.cgi?pr='.format(URL_BASE)
     REGEX = r'<b>Download <a href="([^"]*)">([^<]*)</a>'
 
     def __init__(self, pr, category):
@@ -103,22 +115,25 @@ class GnatsGetPatch(GetPatch):
 
     def fetch(self, *largs, **kwargs):
         category = kwargs['category']
-        target = ("%s/%s" % (category, self.pr), "%s" % self.pr)[category=='']
-        self.out("[+] Fetching patch for pr %s" % target)
+        target = ("{}/{}".format(category, self.pr),
+                  "{}".format(self.pr))[category == '']
+        self.out("[+] Fetching patch for pr {}".format(target))
         pattern = re.compile(self.REGEX)
-        u = urllib2.urlopen(self.URL+'%s' % target)
+        u = urllib2.urlopen("{}{}".format(self.URL, target),
+                            context=self.ssl_context)
         data = u.read()
-        if data == None:
+        if data is None:
             self.out("[-] No patch found")
-            sys.exit(1)
+            sys.exit(os.EX_UNAVAILABLE)
 
         for patchs in re.findall(pattern, str(data)):
             self.add_patch(patchs[0], patchs[1])
 
+
 class BzGetPatch(GetPatch):
 
-    URL_BASE= 'https://bugs.freebsd.org/bugzilla/'
-    URL_SHOW = '%s/show_bug.cgi?id=' % URL_BASE
+    URL_BASE = 'https://bugs.freebsd.org/bugzilla/'
+    URL_SHOW = '{}/show_bug.cgi?id='.format(URL_BASE)
     REGEX_URL = r'<a href="([^<]+)">Details</a>'
     REGEX = r'<div class="details">([^ ]+) \(text/plain(?:; charset=[-\w]+)?\)'
 
@@ -126,19 +141,21 @@ class BzGetPatch(GetPatch):
         GetPatch.__init__(self, pr, category)
 
     def _get_patch_name(self, url):
-        match = re.search(self.REGEX, urllib2.urlopen(url).read())
+        data = urllib2.urlopen(url, context=self.ssl_context).read()
+        match = re.search(self.REGEX, str(data))
         if match is None:
             return None
         return match.group(1)
 
     def _get_patch_urls(self, data):
         patch_urls = {}
-        for url in re.findall(self.REGEX_URL, data):
-            url = '%s/%s' % (self.URL_BASE, url)
+        for url in re.findall(self.REGEX_URL, str(data)):
+            url = '{}{}'.format(self.URL_BASE, url)
             file_name = self._get_patch_name(url)
             if file_name is None:
-                self.out("[-] Could not determine the patch file name in %s. "
-                         "Skipping." % url)
+                msg = "[-] Could not determine the patch file name in {}." \
+                    "Skipping."
+                self.out(msg.format(url))
                 continue
             download_url = url[:url.find('&')]
             patch_urls[download_url] = file_name
@@ -146,21 +163,25 @@ class BzGetPatch(GetPatch):
 
     def fetch(self, *largs, **kwargs):
         category = kwargs['category']
-        self.out("[+] Fetching patch for pr %s/%s" % (category, self.pr))
-        u = urllib2.urlopen(self.URL_SHOW+'%s' % self.pr)
+        target = ("{}/{}".format(category, self.pr),
+                  "{}".format(self.pr))[category == '']
+        self.out("[+] Fetching patch for pr {}".format(target))
+        u = urllib2.urlopen("{}{}".format(self.URL_SHOW, self.pr),
+                            context=self.ssl_context)
         data = u.read()
 
-        if data == None:
+        if data is None:
             self.out("[-] No patch found")
-            sys.exit(1)
+            sys.exit(os.EX_UNAVAILABLE)
 
         patch_urls = self._get_patch_urls(data)
         if not patch_urls:
             self.out("[-] No patch found")
-            sys.exit(1)
+            sys.exit(os.EX_UNAVAILABLE)
 
-        for url, file_name in patch_urls.iteritems():
+        for url, file_name in patch_urls.items():
             self.add_patch(url, file_name)
+
 
 def main():
 
@@ -168,29 +189,31 @@ def main():
             description='Gets patch attachments from a Bug Tracking System'
     )
     parser.add_argument('pr', metavar='pr', type=str, nargs=1,
-            help='Pr id number')
-    parser.add_argument('--mode', type=str, choices=['gnats','bz'],
-            default='bz', help='available modes to retrieve patch')
+                        help='Pr id number')
+    parser.add_argument('--mode', type=str, choices=['gnats', 'bz'],
+                        default='bz', help='available modes to retrieve patch')
     parser.add_argument('--last', action='store_true',
-            help='only retrieve the latest iteration of a patch')
+                        help='only retrieve the latest iteration of a patch')
     parser.add_argument('--stdout', action='store_true',
-            help='dump patch on stdout')
+                        help='dump patch on stdout')
 
     if len(sys.argv) == 1:
         parser.print_help()
-        sys.exit(1)
+        sys.exit(os.EX_USAGE)
 
     args = parser.parse_args()
 
     category = ""
     pr = str(args.pr[0])
 
-    if '/' in pr and pr is not None:
+    if pr and '/' in pr:
         category, pr = pr.split('/')
 
     Clazz = globals()['%sGetPatch' % args.mode.capitalize()]
     gp = Clazz(pr, category)
     gp.get(only_last=args.last, output_stdout=args.stdout)
 
+    return os.EX_OK
+
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
