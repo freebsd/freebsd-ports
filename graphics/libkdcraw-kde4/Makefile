@@ -3,7 +3,7 @@
 
 PORTNAME=	libkdcraw
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -11,8 +11,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LibRaw interface for KDE
 
-LIB_DEPENDS=	libjasper.so:graphics/jasper \
-		liblcms.so:graphics/lcms \
+LIB_DEPENDS=	liblcms.so:graphics/lcms \
 		libxml2.so:textproc/libxml2 \
 		libraw.so:graphics/libraw
 
