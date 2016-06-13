@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unifi5
-PORTVERSION=	5.0.6
+PORTVERSION=	5.0.7
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}/ \
@@ -16,7 +16,7 @@ COMMENT=	UniFi Controller v5
 RUN_DEPENDS=	mongodb>0:databases/mongodb \
 		snappyjava>0:archivers/snappy-java
 
-BUILD=		3060
+BUILD=		3093
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR}
 PLIST_SUB+=	BUILDVERSION="${PORTVERSION}.${BUILD}"
