@@ -1507,8 +1507,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/template.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/texi.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/texi.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/character-fold.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/character-fold.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/char-fold.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/char-fold.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/chistory.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/chistory.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cmuscheme.el.gz
