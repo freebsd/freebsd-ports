@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_strip.cc.orig	2016-05-11 19:02:16 UTC
-+++ chrome/browser/ui/views/tabs/tab_strip.cc
-@@ -333,7 +333,7 @@ NewTabButton::NewTabButton(TabStrip* tab
+--- chrome/browser/ui/views/tabs/tab_strip.cc.orig	2016-06-06 21:05:14.000000000 +0200
++++ chrome/browser/ui/views/tabs/tab_strip.cc	2016-06-13 22:03:03.000000000 +0200
+@@ -331,7 +331,7 @@
      : views::ImageButton(listener),
        tab_strip_(tab_strip),
        destroyed_(NULL) {
