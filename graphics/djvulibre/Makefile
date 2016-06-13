@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.25.3
-PORTREVISION=	3
+PORTVERSION=	3.5.27
 CATEGORIES=	graphics www
-MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION:R}
+MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
@@ -13,21 +12,24 @@ COMMENT=	DjVu base libraries and utilities
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	rsvg-convert:graphics/librsvg2
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
+INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		TIFF_CFLAGS="-I${LOCALBASE}/include" \
 		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-USES=		cpe iconv jpeg libtool pathfix
+USES=		cpe gmake iconv jpeg libtool shared-mime-info
 CPE_VENDOR=	djvulibre_project
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 CONFLICTS=	djvulibre-nox11-3*
-WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
-PORTDOCS=	djvu2spec.djvu djvu3spec.djvu djvuchanges.txt lizard2002.djvu lizard2007.djvu
+PORTDOCS=	*.djvu *.pdf *.txt
 
 OPTIONS_DEFINE=		DOCS ANY2DJVU
 OPTIONS_SUB=		yes
@@ -35,27 +37,22 @@ OPTIONS_SUB=		yes
 ANY2DJVU_DESC=		Install any2djvu script (requires curl)
 ANY2DJVU_RUN_DEPENDS=	curl:ftp/curl
 
-.include <bsd.port.options.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/-[Og]\*)/d ; \
-		s|$$OPTS -O[[:digit:]]*|$$OPTS|g ; \
-		s|$$OPTS $$opt|$$OPTS|g' \
+# Remove custom optimization compiler flags
+	@${REINPLACE_CMD} -e '/-[Og]\*)/d ; \
+		/^ opt=/s|-O[[:digit:]]*||g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|$${FLAGS}|| ; \
-		s|@CPPFLAGS@|$${FLAGS} &|' \
-		${WRKSRC}/tools/jb2cmp/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|_PROGRAM} -m 0755|_SCRIPT}|' \
-		${WRKSRC}/tools/Makefile.in
-.if empty(PORT_OPTIONS:MANY2DJVU)
-	@${REINPLACE_CMD} -e 's,any2djvu,,' ${WRKSRC}/tools/Makefile.in
-.endif
+# Convert bash to sh script, which uses fetch instead of wget
+	@${REINPLACE_CMD} -e '/^#!/s|bash -f|sh| ; \
+		s|^function || ; s| == | = |g ; \
+		s|wget $$wgetopts -O|${FETCH_BINARY} $$wgetopts -o|' \
+		${WRKSRC}/tools/any2djvu
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
+post-patch-ANY2DJVU-off:
+	@${REINPLACE_CMD} -e 's/any2djvu // ; s/any2djvu\.1 //' \
+		${WRKSRC}/tools/Makefile.in
+
+post-install-DOCS-on:
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
