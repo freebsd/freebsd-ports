@@ -295,10 +295,10 @@ AUTHOR: mat@FreeBSD.org
 
 20150528:
 AUTHOR: mat@FreeBSD.org
-  
+
   USE_GITHUB can now fetch multiple distfiles.  It uses a grouping feature
   similar to MASTER_SITES/PATCH_SITES.
-  
+
   Some helpful variables are provided: WRKSRC_<group> for putting things in the
   right place in post-extract, and DISTNAME_<group>/DISTFILE_<group> for use
   with EXTRACT_ONLY.
