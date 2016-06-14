@@ -15,6 +15,7 @@
     SUBDIR += clearlooks-phenix-theme
     SUBDIR += clearlooks-themes
     SUBDIR += clearlooks-themes-extras
+    SUBDIR += cursor-ardoise-theme
     SUBDIR += cursor-chameleon-anthracite
     SUBDIR += cursor-chameleon-darkskyblue
     SUBDIR += cursor-chameleon-pearl
