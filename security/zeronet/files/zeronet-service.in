@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# Copyright (C) 2015 by Yuri Victorovich. All rights reserved.
+
+# PROVIDE: zeronet
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# zeronet is disabled by default, if you have configuration file
+#
+# Add the following line to /etc/rc.conf to enable zeronet:
+#
+#zeronet_enable="YES"
+
+. /etc/rc.subr
+
+
+name="zeronet"
+rcvar=zeronet_enable
+start_cmd="zeronet_start"
+stop_cmd="zeronet_stop"
+
+load_rc_config ${name}
+
+: ${zeronet_enable="NO"}
+: ${zeronet_args=""}
+
+is_process_running() {
+  local pidfile=$1
+  [ -f $pidfile ] && procstat `cat $pidfile` >/dev/null 2>&1
+}
+
+stop_daemon() {
+  # assume PID is also PGID (daemon(8) PID is always PGID)
+  [ -f "$1" ] && kill -- -$(cat $1)
+}
+
+zeronet_start() {
+  local logfile=/var/log/zeronet.log
+  local pidfile=/var/run/zeronet.pid
+  # already running?
+  if is_process_running $pidfile; then
+    echo "zeronet is already running (pid=$(cat $pidfile))"
+    return 1
+  fi
+  # log file
+  touch $logfile
+  chmod 640 $logfile
+  # user depends on the port option, so better force it on directories to avoid user confusion
+  chown -R %%USER%%:%%GROUP%% /var/db/zeronet /var/log/zeronet
+  # workaround for https://github.com/HelloZeroNet/ZeroNet/issues/477: ZeroNet shouldn't be re-running coffee on the pre-installed files.
+  (cd %%LOCALBASE%%/share/zeronet && touch `find . -name all.js`)
+  # run
+  cd %%LOCALBASE%%/share/zeronet
+  /usr/sbin/daemon -P $pidfile -u %%USER%% %%LOCALBASE%%/share/zeronet/zeronet.py ${zeronet_args} >>$logfile 2>&1
+  # make sure it runs
+  if is_process_running $pidfile; then
+    echo "started zeronet (pid=$(cat $pidfile))"
+  else
+    echo "failed to start zeronet"
+  fi
+}
+
+zeronet_stop() {
+  local pidfile=/var/run/zeronet.pid
+  if is_process_running $pidfile; then
+    echo "stopping zeronet (pid=$(cat $pidfile))"
+    stop_daemon $pidfile
+  else
+    echo "zeronet isn't running"
+  fi
+}
+
+command="/usr/bin/true"
+
+run_rc_command "$1"
