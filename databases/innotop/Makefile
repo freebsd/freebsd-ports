@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	innotop
-PORTVERSION=	1.9.1
-PORTREVISION=	2
+PORTVERSION=	1.11.1
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	MySQL and InnoDB monitoring program
@@ -16,9 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql \
 		p5-DBI>=1.46:databases/p5-DBI \
 		p5-Term-ReadKey>=2.10:devel/p5-Term-ReadKey
-RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql \
-		p5-DBI>=1.46:databases/p5-DBI \
-		p5-Term-ReadKey>=2.10:devel/p5-Term-ReadKey
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	innotop
+GH_PROJECT=	innotop
+GH_TAGNAME=	v${PORTVERSION}
 
 USES=		perl5
 USE_PERL5=	configure
