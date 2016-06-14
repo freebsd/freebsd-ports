@@ -12,8 +12,6 @@ COMMENT=	Scientific plotting package
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to configure
-
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}qt4-svg>0:graphics/py-qt4-svg
