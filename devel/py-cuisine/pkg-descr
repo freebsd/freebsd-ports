@@ -1,0 +1,6 @@
+Cuisine is a small set of functions that sit on top of Fabric, to
+abstract common administration operations such as file/dir operations,
+user/group creation, package install/upgrade, making it easier to
+write portable administration and deployment scripts.
+
+WWW: https://github.com/sebastien/cuisine
