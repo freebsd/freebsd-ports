@@ -15,7 +15,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.8-P4
+ISCVERSION=	9.9.9-P1
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE} \
 		--with-readline=-ledit \
+		--with-dlopen=yes \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
@@ -42,7 +43,7 @@ CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFAULT=	IPV6 SSL THREADS SIGCHASE IDN GSSAPI_NONE RRL
+OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE RRL DLZ_FILESYSTEM
 OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE FIXED_RRSET SIGCHASE \
 			IPV6 THREADS FILTER_AAAA GOST PYTHON START_LATE MINCACHE \
 			LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS \
@@ -179,20 +180,22 @@ PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
-.if ${PORT_OPTIONS:MGOST}
-WITH_OPENSSL_PORT=yes
-.endif
 .else
 PLIST_SUB+=	NOBASE="@comment " BASE=""
 SUB_LIST+=	NOBASE="@comment " BASE=""
-.if ${PORT_OPTIONS:MSSL}
-WITH_OPENSSL_PORT=	yes
-.endif
 .endif
 
 PKGDEINSTALL=	${PKGINSTALL}
 
 PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.if ( ${PORT_OPTIONS:MGOST} ) && defined(WITH_OPENSSL_BASE)
+BROKEN=	OpenSSL from the base system does not support GOST, add \
+	WITH_OPENSSL_PORT=yes to your /etc/make.conf and rebuild everything \
+	that needs SSL.
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|readline/readline.h|editline/readline.h|; \
@@ -241,4 +244,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
