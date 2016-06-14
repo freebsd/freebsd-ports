@@ -1,16 +1,15 @@
---- Makefile.orig	2016-04-28 22:59:03 UTC
+--- Makefile.orig	2016-06-14 21:37:21 UTC
 +++ Makefile
-@@ -11,8 +11,7 @@ MANDIR ?= $(PREFIX)/man
- SHAREDIR ?= $(PREFIX)/share
+@@ -12,7 +12,7 @@ SHAREDIR ?= $(PREFIX)/share
  PYTHON ?= /usr/bin/env python
  
--# set SYSCONFDIR to /etc if PREFIX=/usr or PREFIX=/usr/local
+ # set SYSCONFDIR to /etc if PREFIX=/usr or PREFIX=/usr/local
 -SYSCONFDIR != if [ $(PREFIX) = /usr -o $(PREFIX) = /usr/local ]; then echo /etc; else echo $(PREFIX)/etc; fi
 +SYSCONFDIR ?= $(PREFIX)/etc
  
  install: youtube-dl youtube-dl.1 youtube-dl.bash-completion youtube-dl.zsh youtube-dl.fish
  	install -d $(DESTDIR)$(BINDIR)
-@@ -20,11 +19,11 @@ install: youtube-dl youtube-dl.1 youtube
+@@ -20,11 +20,11 @@ install: youtube-dl youtube-dl.1 youtube
  	install -d $(DESTDIR)$(MANDIR)/man1
  	install -m 644 youtube-dl.1 $(DESTDIR)$(MANDIR)/man1
  	install -d $(DESTDIR)$(SYSCONFDIR)/bash_completion.d
@@ -25,12 +24,12 @@
  
  codetest:
  	flake8 .
-@@ -68,11 +67,6 @@ supportedsites:
+@@ -68,11 +68,6 @@ supportedsites:
  README.txt: README.md
  	pandoc -f markdown -t plain README.md -o README.txt
  
 -youtube-dl.1: README.md
--	$(PYTHON) devscripts/prepare_manpage.py >youtube-dl.1.temp.md
+-	$(PYTHON) devscripts/prepare_manpage.py youtube-dl.1.temp.md
 -	pandoc -s -f markdown -t man youtube-dl.1.temp.md -o youtube-dl.1
 -	rm -f youtube-dl.1.temp.md
 -
