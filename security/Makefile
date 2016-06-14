@@ -1154,6 +1154,7 @@
     SUBDIR += yubikey-personalization-gui
     SUBDIR += zebedee
     SUBDIR += zenmap
+    SUBDIR += zeronet
     SUBDIR += zxid
     SUBDIR += zzuf
 
