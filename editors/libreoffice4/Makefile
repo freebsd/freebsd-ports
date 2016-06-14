@@ -113,8 +113,6 @@ CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
 			GPERF=${LOCALBASE}/bin/gperf \
 			OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
 			OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
-			OPENSSL_CFLAGS="-I/usr/include" \
-			OPENSSL_LIBS="-lcrypto -lssl" \
 			PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 			PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
 
