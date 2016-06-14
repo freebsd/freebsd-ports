@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160614
+  AFFECTS: users of www/node, www/node5, and www/node4
+  AUTHOR: adamw@FreeBSD.org
+
+  node now prefers a few libraries from ports to the versions bundled
+  with node. However, node cannot use the libssl from LibreSSL. If you
+  are using LibreSSL as your SSL provider, you must enable the
+  "BUNDLED_SSL" option when building node.
+
 20160611
   AFFECTS: users of textproc/xmlroff
   AUTHOR: hrs@FreeBSD.org
