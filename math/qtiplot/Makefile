@@ -10,8 +10,6 @@ MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data analysis and scientific plotting
 
-BROKEN=		fails to build
-
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libmuparser.so:math/muparser \
 		libpng.so:graphics/png
