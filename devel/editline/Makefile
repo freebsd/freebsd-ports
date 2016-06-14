@@ -9,7 +9,7 @@ COMMENT=	Minix editline: A free readline() for UNIX
 
 LICENSE=	BSD4CLAUSE
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	troglobit
 
@@ -20,7 +20,6 @@ INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 
 post-patch:
-	${REINPLACE_CMD} 's|-ltermcap||' ${WRKSRC}/examples/Makefile.am
 	${REINPLACE_CMD} '/^pkgconfigdir/s|=.*|= ${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.am
 	# rename to libeditline.3 to avoid conflict with libedit
