@@ -39,7 +39,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Otherwise if you want to move on with 3.x series just use
 
-  # portmaster -r databases/postgresql-repmgr 
+  # portmaster -r databases/postgresql-repmgr
     or
   # portupgrade -fr databases/postgresql-repmgr
 
@@ -60,7 +60,7 @@ you update your ports collection, before attempting any port upgrades.
   The shared library versions of the libraries have been bumped.
   With this update, the patch for the OPENSSL_VERSION_NUMBER has been
   removed. This causes issues with a number of ports. Patches for many of
-  these issues can be found on 
+  these issues can be found on
   https://wiki.freebsd.org/LibreSSL/Ports#OPENSSL_VERSION_NUMBER
 
   After upgrading to 2.4.0, manually update all packages that depend on
@@ -89,7 +89,7 @@ you update your ports collection, before attempting any port upgrades.
   you pass all options/arguments separated by quotes:
 
       filter myfilter dnsbl "-c /var/chroot/dnsbl" "-h my.dnsbl.com"
-  
+
   Additionally, extras now run in a chroot. Either pass "-C" to skip the
   chroot entirely (not recommended), or put all required config files,
   resolv.conf, and external binaries into the chroot. For example:
@@ -112,7 +112,7 @@ you update your ports collection, before attempting any port upgrades.
   Additionally version 5.9.2 changes the file mode bits for two directories.
   To allow existing installations to start succesfully you must apply the
   following changes
- 
+
   # chown -R root:_smtpq /var/spool/smtpd/offline
   # chmod -R 770 /var/spool/smtpd/offline
   # chmod -R 700 /var/spool/smtpd/purge
@@ -167,7 +167,7 @@ you update your ports collection, before attempting any port upgrades.
 
   The audio/clementine-player port has been updated to v1.3.1, the latest
   upstream release.  The music database code now has a hard dependency on
-  databases/sqlite having the FTS3_TOKENIZER option enabled.  This has 
+  databases/sqlite having the FTS3_TOKENIZER option enabled.  This has
   been made the default option in databases/sqlite.
 
   Without this option, clementine-player will crash on startup.
@@ -249,10 +249,10 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: Users of net-mgmt/icinga2
   AUTHOR: lme@FreeBSD.org
 
-  The creation of Icinga2 directories and files in /var is now controlled 
-  by the /etc/rc.conf variable icinga2_mkvar.  Earlier ports always 
-  created the /var entries, but could slow startup significantly when /var 
-  was a normal disk rather than a RAM disk.  icinga2_mkvar defaults to 
+  The creation of Icinga2 directories and files in /var is now controlled
+  by the /etc/rc.conf variable icinga2_mkvar.  Earlier ports always
+  created the /var entries, but could slow startup significantly when /var
+  was a normal disk rather than a RAM disk.  icinga2_mkvar defaults to
   "NO".
 
 20160415:
@@ -327,9 +327,9 @@ you update your ports collection, before attempting any port upgrades.
   BadLock(http://badlock.org) vulnerability, as well as few other
   discovered.
 
-  Please note that Samba 4.1.x and older versions are also affected by 
+  Please note that Samba 4.1.x and older versions are also affected by
   the issues fixed with this release but are not supported anymore. It is
-  strongly recommend to upgrade to a recent version at your earliest 
+  strongly recommend to upgrade to a recent version at your earliest
   convenience.
 
   The security updates include new smb.conf options and a number of
@@ -362,7 +362,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: All users of www/pecl-http
   AUTHOR: bofh
 
-  www/pecl-http has been updated to the latest 3.x stable release, which 
+  www/pecl-http has been updated to the latest 3.x stable release, which
   supports php70+ and a new port www/pecl-http2 has been created for the
   2.x branch.
 
