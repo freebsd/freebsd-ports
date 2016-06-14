@@ -1,6 +1,6 @@
---- configure.ac.orig	2015-01-28 07:00:34.000000000 -0500
-+++ configure.ac	2015-01-28 18:11:00.936172000 -0500
-@@ -7789,7 +7789,7 @@
+--- configure.ac.orig	2015-04-20 19:36:29 UTC
++++ configure.ac
+@@ -7798,7 +7798,7 @@ dnl Check for system libcmis
  dnl ===================================================================
  # libcmis requires curl and we can't build curl for iOS
  if test $_os != iOS; then
@@ -9,3 +9,12 @@
      ENABLE_CMIS=TRUE
  else
      ENABLE_CMIS=
+@@ -9428,7 +9428,7 @@ if test "$enable_openssl" = "yes"; then
+ 
+         with_system_openssl=no
+         libo_CHECK_SYSTEM_MODULE([openssl],[OPENSSL],[openssl])
+-    elif test "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o "$_os" = "DragonFly" \
++    elif test "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o "$_os" = "DragonFly" \
+             && test "$with_system_openssl" != "no"; then
+         with_system_openssl=yes
+         SYSTEM_OPENSSL=TRUE
