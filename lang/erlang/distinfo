@@ -1,3 +1,4 @@
+TIMESTAMP = 1465896413
 SHA256 (erlang/otp_src_18.3.tar.gz) = fdab8129a1cb935db09f1832e3a7d511a4aeb2b9bb3602ca6a7ccb9730d5c9c3
 SIZE (erlang/otp_src_18.3.tar.gz) = 68292101
 SHA256 (erlang/otp_doc_man_18.3.tar.gz) = 978be100e9016874921b3ad1a65ee46b7b6a1e597b8db2ec4b5ef436d4c9ecc2
@@ -22,3 +23,5 @@ SHA256 (erlang/patch-otp-18.3.2) = 064065ebeadc26a76fcd1b291bc884039117ee8699fe5
 SIZE (erlang/patch-otp-18.3.2) = 70255
 SHA256 (erlang/patch-otp-18.3.3) = 5a55b18ee8ec15c8cfe9ffd4687588c0a6f71216538575ae3bbbf67eb5a0485a
 SIZE (erlang/patch-otp-18.3.3) = 87238
+SHA256 (erlang/patch-otp-18.3.4) = 33ceea8b53d7d2a67b78085d7bc80c8b04f5cac792aee49410c86ac45895151a
+SIZE (erlang/patch-otp-18.3.4) = 31596
