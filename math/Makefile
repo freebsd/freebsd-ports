@@ -597,6 +597,7 @@
     SUBDIR += py-fpconst
     SUBDIR += py-gato
     SUBDIR += py-gmpy
+    SUBDIR += py-gmpy2
     SUBDIR += py-gnuplot
     SUBDIR += py-graphillion
     SUBDIR += py-gsl
