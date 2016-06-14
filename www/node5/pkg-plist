@@ -1,5 +1,4 @@
 bin/node
-include/node/android-ifaddrs.h
 include/node/ares.h
 include/node/ares_build.h
 include/node/ares_rules.h
@@ -107,20 +106,6 @@ include/node/node_version.h
 %%BUNDLED_SSL%%include/node/openssl/x509.h
 %%BUNDLED_SSL%%include/node/openssl/x509_vfy.h
 %%BUNDLED_SSL%%include/node/openssl/x509v3.h
-include/node/pthread-fixes.h
-include/node/stdint-msvc2008.h
-include/node/tree.h
-include/node/uv-aix.h
-include/node/uv-bsd.h
-include/node/uv-darwin.h
-include/node/uv-errno.h
-include/node/uv-linux.h
-include/node/uv-sunos.h
-include/node/uv-threadpool.h
-include/node/uv-unix.h
-include/node/uv-version.h
-include/node/uv-win.h
-include/node/uv.h
 include/node/v8-debug.h
 include/node/v8-platform.h
 include/node/v8-profiler.h
