@@ -1,6 +1,6 @@
---- SABnzbd.py.orig	2012-07-23 23:26:14.000000000 -0400
-+++ SABnzbd.py	2012-07-23 23:28:04.000000000 -0400
-@@ -40,6 +40,9 @@
+--- SABnzbd.py.orig	2016-06-04 11:45:01 UTC
++++ SABnzbd.py
+@@ -51,6 +51,9 @@ except:
      print "The Python module Cheetah is required"
      sys.exit(1)
  
@@ -8,10 +8,10 @@
 +# instead of any version that may be installed otherwise.
 +sys.path.insert(0,%%DATADIR%%)
  import cherrypy
- if not cherrypy.__version__.startswith("3.2"):
-     print "Sorry, requires Python module Cherrypy 3.2 (use the included version)"
-@@ -1011,7 +1014,7 @@
- 
+ if [int(n) for n in cherrypy.__version__.split('.')] < [3, 8, 0]:
+     print 'Sorry, requires Python module Cherrypy 3.8.0+ (use the included version)'
+@@ -1006,7 +1009,7 @@ def main():
+             
      sabnzbd.MY_FULLNAME = os.path.normpath(os.path.abspath(sabnzbd.MY_FULLNAME))
      sabnzbd.MY_NAME = os.path.basename(sabnzbd.MY_FULLNAME)
 -    sabnzbd.DIR_PROG = os.path.dirname(sabnzbd.MY_FULLNAME)
