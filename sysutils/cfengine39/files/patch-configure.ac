@@ -1,0 +1,32 @@
+--- configure.ac.orig	2016-06-06 03:01:06.000000000 -0700
++++ configure.ac	2016-06-14 18:39:28.962538000 -0700
+@@ -41,28 +41,10 @@
+ dnl
+ AC_CHECK_PROG(MAKEINFO, makeinfo, makeinfo)
+ 
+-m4_define([revision], m4_esyscmd_s([git rev-list -1 --abbrev-commit HEAD]))
+-
+-m4_define([cfversion_from_env], m4_esyscmd_s([echo $EXPLICIT_VERSION]))
+-m4_ifblank(cfversion_from_env, [
+-    m4_define([cfversion_from_detect], m4_esyscmd_s([misc/determine-version.py]))
+-    m4_if(m4_sysval, 0, [], [
+-        m4_fatal([Could not determine CFEngine version. Please set EXPLICIT_VERSION in the environment or make sure all git tags are up to date.])
+-    ])
+-    m4_define([cfversion], cfversion_from_detect[]a1.revision)
+-    m4_undefine([cfversion_from_detect])
+-], [
+-    m4_define([cfversion], cfversion_from_env)
+-])
+-
+ _AM_SET_OPTION([tar-ustar])
+-AM_INIT_AUTOMAKE(cfengine, cfversion)
++AM_INIT_AUTOMAKE(cfengine, 3.9.0)
+ AM_MAINTAINER_MODE([enable])
+ 
+-m4_undefine([revision])
+-m4_undefine([cfversion])
+-m4_undefine([cfversion_from_env])
+-
+ AC_DEFINE(BUILD_YEAR, esyscmd([date +%Y | tr -d '\n']), "Software build year")
+ 
+ AC_DEFINE_UNQUOTED(ABS_TOP_SRCDIR,
