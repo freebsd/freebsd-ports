@@ -3,7 +3,7 @@
 PORTNAME=	node
 PORTVERSION=	6.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
@@ -19,7 +19,7 @@ OPTIONS_SUB=	yes
 BUNDLED_SSL_DESC=	Use node.js's bundled OpenSSL implementation
 BUNDLED_SSL_USE_OFF=	OPENSSL=yes
 
-USES=		compiler execinfo gmake python:2 localbase
+USES=		compiler execinfo gmake python:2,build localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
