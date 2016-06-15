@@ -6,7 +6,7 @@ PORTVERSION=	2.6.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@FreeBSD.org
+MAINTAINER=	johannes@perceivon.net
 COMMENT=	General-purpose Python interface to the HDF5 library
 
 LICENSE=	BSD3CLAUSE

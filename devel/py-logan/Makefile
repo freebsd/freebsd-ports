@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@FreeBSD.org
+MAINTAINER=	johannes@perceivon.net
 COMMENT=	Logan is a toolkit for running standalone Django applications
 
 LICENSE=	APACHE20

@@ -1,4 +1,4 @@
-# Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
+# Created by: Johannes Jost Meixner <johannes@perceivon.net>
 # $FreeBSD$
 
 PORTNAME=	pyganim
@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pyganim-${PORTVERSION}
 
-MAINTAINER=	xmj@FreeBSD.org
+MAINTAINER=	johannes@perceivon.net
 COMMENT=	Sprite animation module for Pygame
 
 LICENSE=	BSD2CLAUSE
