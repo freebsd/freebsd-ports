@@ -183,6 +183,7 @@ include/fxt/comb/catalan-rgs.h
 include/fxt/comb/catalan-step-rgs-colex.h
 include/fxt/comb/catalan-step-rgs-lex.h
 include/fxt/comb/catalan-step-rgs-subset-lexrev.h
+include/fxt/comb/catalan-step-rgs-to-paren-string.h
 include/fxt/comb/catalan.h
 include/fxt/comb/cayley-perm.h
 include/fxt/comb/change-rgs.h
@@ -438,6 +439,7 @@ include/fxt/comb/setpart-rgs-subset-lex.h
 include/fxt/comb/setpart-s-zero-map-rgs.h
 include/fxt/comb/setpart-zero-map-rgs.h
 include/fxt/comb/setpart.h
+include/fxt/comb/skew-binary.h
 include/fxt/comb/sl-gray-compare.h
 include/fxt/comb/smooth-rfact-rgs.h
 include/fxt/comb/stringsubst.h
@@ -1394,6 +1396,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/setpart-zero-map-rgs-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/shift-subsets-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/shift-subsets-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/skew-binary-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/skew-binary-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/smooth-rfact-rgs-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/smooth-rfact-rgs-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/stirling1-demo.cc
