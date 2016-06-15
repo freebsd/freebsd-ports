@@ -3,6 +3,7 @@
 
 PORTNAME=	playonbsd
 PORTVERSION=	4.2.10
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	se@FreeBSD.org
@@ -17,7 +18,10 @@ RUN_DEPENDS=	7z:archivers/p7zip \
 		gsed:textproc/gsed \
 		sudo:security/sudo \
 		xdg-open:devel/xdg-utils \
-		xterm:x11/xterm
+		xterm:x11/xterm \
+		cabextract:archivers/cabextract \
+		wget:ftp/wget \
+		icotool:graphics/icoutils
 
 OPTIONS_DEFINE=	GECKO MONO
 OPTIONS_DEFAULT=	GECKO MONO
