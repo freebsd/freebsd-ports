@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@FreeBSD.org
+MAINTAINER=	johannes@perceivon.net
 COMMENT=	Python module to interface with the pkg-config command line tool
 
 LICENSE=	MIT

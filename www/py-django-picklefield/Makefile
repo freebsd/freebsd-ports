@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
 DISTNAME=	django-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	xmj@FreeBSD.org
+MAINTAINER=	johannes@perceivon.net
 COMMENT=	Pickled object field for Django
 
 LICENSE=	MIT

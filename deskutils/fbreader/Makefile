@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-freebsdport
 PORTREVISION=	2
 CATEGORIES=	deskutils
 
-MAINTAINER=	xmj@FreeBSD.org
+MAINTAINER=	johannes@perceivon.net
 COMMENT=	Powerful e-book reader
 
 LICENSE=	GPLv2+
