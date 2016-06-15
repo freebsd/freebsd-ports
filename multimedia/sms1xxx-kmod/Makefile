@@ -3,7 +3,7 @@
 
 PORTNAME=	sms1xxx
 PORTVERSION=	20120113
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-siano/
 PKGNAMESUFFIX=	-kmod
@@ -54,12 +54,7 @@ DISTFILE_INSTRUCTIONS=\n\
 .endif
 DISTFILE_INSTRUCTIONS+=	\
 	\n- Please, get the appropriate firmware for your Stellar device\n\
-	and copy the file to '${DISTDIR}/${DIST_SUBDIR}/${STELLAR_FW}.fw'\n\
-	e.g. :\n\
-	wget 'ftp://ftp.terratec.net/Receiver/Cinergy_Piranha/Update/Cinergy_Piranha_Drv_Vista_XP_3.09.02.00.exe'\n\
-	unzip -j 'Cinergy_Piranha_Drv_Vista_XP_3.09.02.00.exe' \\\\\n\
-	\t'Cinergy Piranha/BDA Driver 3.09.02.00/Windos XP (32Bit)/SMS100x_Dvbt.inp'\n\
-	mv 'SMS100x_Dvbt.inp' '${DISTDIR}/${DIST_SUBDIR}/${STELLAR_FW}.fw'\n
+	and copy the file to '${DISTDIR}/${DIST_SUBDIR}/${STELLAR_FW}.fw'\n
 .endif
 .endif
 
@@ -72,12 +67,7 @@ DISTFILE_INSTRUCTIONS=\n\
 .endif
 DISTFILE_INSTRUCTIONS+=	\
 	\n- Please, get the appropriate firmware for your Nova device\n\
-	and copy the file to '${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw'\n\
-	e.g. :\n\
-	wget 'http://www.wintvcd.co.uk/drivers/WinTV-MiniStick_4_2_26_28027_WHQL.zip'\n\
-	unzip -j 'WinTV-MiniStick_4_2_26_28027_WHQL.zip' \\\\\n\
-	\t'driver17/hcw17dvb.1b0'\n\
-	mv 'hcw17dvb.1b0' '${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw'\n
+	and copy the file to '${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw'\n
 .endif
 .endif
 
