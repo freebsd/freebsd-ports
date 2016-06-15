@@ -175,7 +175,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-history-settings.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-share-link-admin.0672516d5f06.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-share-link-admin.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/dir.02920cbcae41.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/dir.183e15199cd5.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dir.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dirent-grid.651b5500f929.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dirent-grid.js
@@ -307,7 +307,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/jquery.ui.widget.1.11.3.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.75e6d0132deb.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.99a559b6c639.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.9ba7ea1624da.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/main.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.04fc935872de.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.js
@@ -902,7 +902,6 @@
 %%SEAHUBDIR%%/seahub/profile/urls.py
 %%SEAHUBDIR%%/seahub/profile/utils.py
 %%SEAHUBDIR%%/seahub/profile/views.py
-%%SEAHUBDIR%%/seahub/seahub2.db
 %%SEAHUBDIR%%/seahub/share/__init__.py
 %%SEAHUBDIR%%/seahub/share/decorators.py
 %%SEAHUBDIR%%/seahub/share/forms.py
@@ -1343,6 +1342,15 @@
 %%SEAHUBDIR%%/tests/common/common.py
 %%SEAHUBDIR%%/tests/common/utils.py
 %%SEAHUBDIR%%/tests/install-deps.sh
+%%SEAHUBDIR%%/seahub/institutions/templates/institutions/useradmin_search.html
+%%SEAHUBDIR%%/seahub/templates/sysadmin/sys_inst_info_admins.html
+%%SEAHUBDIR%%/seahub/templates/sysadmin/sys_inst_search_user.html
+%%SEAHUBDIR%%/tests/api/endpoints/test_group_members.py
+%%SEAHUBDIR%%/tests/seahub/institutions/test_views.py
+%%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_inst_info_admins.py
+%%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_inst_info_user.py
+%%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_inst_search_user.py
+%%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_inst_toggle_admin.py
 %%SEAHUBDIR%%/tests/seahub/__init__.py
 %%SEAHUBDIR%%/tests/seahub/auth/views/test_login.py
 %%SEAHUBDIR%%/tests/seahub/auth/views/test_password_change.py
