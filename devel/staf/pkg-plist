@@ -58,6 +58,7 @@ lib/libSTAFMon.so
 lib/libSTAFPool.so
 lib/libSTAFReg.so
 lib/libSTAFTCP.so
+lib/libSTAFZip.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/staf.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/staf/PYSTAF.so
 %%PYTHON%%%%PYTHON_2%%%%PYTHON_SITELIBDIR%%/staf/PySTAF.py
