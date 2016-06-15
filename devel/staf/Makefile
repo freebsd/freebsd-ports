@@ -3,6 +3,7 @@
 
 PORTNAME=	staf
 PORTVERSION=	3.4.23
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/V${PORTVERSION}
 DISTNAME=	STAF${PORTVERSION:S/.//g}-src
@@ -26,6 +27,7 @@ MAKE_ARGS=	OS_NAME="freebsd" \
 		LINKFLAGS="${LDFLAGS}" \
 		STAF_USE_SSL=${STAF_USE_SSL} \
 		STAF_USE_IPV6=${STAF_USE_IPV6} \
+		ZLIB_ROOT=/usr \
 		BUILD_TYPE=${STAF_BUILD_TYPE} \
 		PROJECTS="${STAF_PROJECTS}"
 
@@ -59,11 +61,12 @@ USE_RC_SUBR=	stafproc
 SUB_LIST+=	STAF_VAR_DIR=${STAF_VAR_DIR}
 PLIST_SUB+=	STAF_VAR_DIR=${STAF_VAR_DIR}
 
-STAF_PROJECTS=	staf connprov_tcp connprov_localipc
+STAF_PROJECTS=	staf connprov_tcp connprov_localipc zip
 STAF_BIN_FILES=	STAF STAFProc STAFReg STAFLoop STAFExecProxy FmtLog
 STAF_LIB_FILES=	libHello.so libSTAF.so libSTAFDSLS.so libSTAFDeviceService.so \
 		libSTAFEXECPROXY.so libSTAFLIPC.so libSTAFLog.so \
-		libSTAFMon.so libSTAFPool.so libSTAFReg.so libSTAFTCP.so
+		libSTAFMon.so libSTAFPool.so libSTAFReg.so libSTAFTCP.so \
+		libSTAFZip.so
 STAF_PYLIB_FILES=	PySTAFLog.py PySTAFMon.py
 STAF_SSL_FILES=	CAList.crt STAFDefault.crt STAFDefault.key
 STAF_PYTHON_VERSIONS=	22 23 24 25 26 27 30 31 32 33 34
