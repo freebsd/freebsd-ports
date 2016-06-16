@@ -33,7 +33,7 @@ TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 
 LOCALBASE?=	/usr/local
 
-.include <${PORTSDIR}/Mk/bsd.default-versions.mk>
+.include <${.CURDIR}/../../Mk/bsd.default-versions.mk>
 
 .if ${SSL_DEFAULT} != base
 OPTIONS_DEFAULT+=	GSSAPI_NONE
