@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils py3kplist
+USE_PYTHON=	autoplist concurrent distutils
 
 do-test: extract
 	@(cd ${WRKSRC}; ${PYTHON_CMD} ${PORTNAME}.py \
