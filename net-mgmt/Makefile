@@ -5,6 +5,7 @@
 
     SUBDIR += 2ping
     SUBDIR += TkTopNetFlows
+    SUBDIR += adcli
     SUBDIR += aggregate
     SUBDIR += aircrack-ng
     SUBDIR += ap-utils
