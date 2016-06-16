@@ -68,14 +68,14 @@ RUBY_DEFAULT?=		2.2
 .  if defined(WITH_OPENSSL_PORT)
 .    if defined(OPENSSL_PORT)
 SSL_DEFAULT:=${OPENSSL_PORT:T}
-WARNING+=	"Using WITH_OPENSSL_PORT and OPENSSL_PORT in make.conf is deprecated, replace them with DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}"
+WARNING+=	"Using WITH_OPENSSL_PORT and OPENSSL_PORT in make.conf is deprecated, replace them with DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT} in your make.conf"
 .    else
 SSL_DEFAULT=openssl
-WARNING+=	"Using WITH_OPENSSL_PORT in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=openssl"
+WARNING+=	"Using WITH_OPENSSL_PORT in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=openssl in your make.conf"
 .    endif
 .  elif defined(WITH_OPENSSL_BASE)
 SSL_DEFAULT=base
-WARNING+=	"USing WITH_OPENSSL_BASE in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=base"
+WARNING+=	"USing WITH_OPENSSL_BASE in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=base in your make.conf"
 .  elif	!defined(WITH_OPENSSL_BASE) && \
 	!defined(WITH_OPENSSL_PORT) && \
 	!defined(SSL_DEFAULT) && \
@@ -95,7 +95,7 @@ OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.s
 .      endif
 .      if defined(OPENSSL_INSTALLED) && !empty(OPENSSL_INSTALLED)
 SSL_DEFAULT:=		${OPENSSL_INSTALLED:T}
-WARNING+=	"You have ${OPENSSL_INSTALLED} installed but do not have DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT} set"
+WARNING+=	"You have ${OPENSSL_INSTALLED} installed but do not have DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT} set in your make.conf"
 .      endif
 .    endif
 .  endif
