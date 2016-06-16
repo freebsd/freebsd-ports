@@ -33,9 +33,7 @@ TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 
 LOCALBASE?=	/usr/local
 
-.include <${.CURDIR}/../../Mk/bsd.default-versions.mk>
-
-.if ${SSL_DEFAULT} != base
+.if exists(${LOCALBASE}/lib/libcrypto.so)
 OPTIONS_DEFAULT+=	GSSAPI_NONE
 .else
 OPTIONS_DEFAULT+=	GSSAPI_BASE
@@ -141,7 +139,7 @@ TLS_SRP_CONFIGURE_ENABLE=	tls-srp
 WOLFSSL_CONFIGURE_WITH=	cyassl
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL} && ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
@@ -191,4 +189,4 @@ pre-test-PROXY-off:
 	@${ECHO_MSG} "* This is being addressed.               *"
 	@${ECHO_MSG} "******************************************"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
