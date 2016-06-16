@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 PORTREVISION=	0
 CATEGORIES=	cad
@@ -30,6 +30,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/include/eli/code_eli.hpp:graphics/code-eli \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/include/eigen3/Eigen/Array:math/eigen3
+
+USE_GL		+= gl
 
 BROKEN_FreeBSD_9=	dependency graphics/code-eli needs additional math functions
 

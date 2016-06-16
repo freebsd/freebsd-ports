@@ -26,6 +26,7 @@ bin/vspviewer
 %%DATADIR%%/SubSurface.vspscript
 %%DATADIR%%/TestAll.vspscript
 %%DATADIR%%/TestAnalysis.vspscript
+%%DATADIR%%/TestAreaProj.vspscript
 %%DATADIR%%/TransportFuse.vsppart
 %%DATADIR%%/Wing.vspscript
 %%DATADIR%%/b737a.af
