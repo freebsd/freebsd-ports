@@ -1111,7 +1111,7 @@ GROUPS?=${WWWGRP}
 .if defined(NGINX_OPENSSL)
 USE_OPENSSL=	yes
 .if ${OSVERSION} < 1100000
-DEFAULT_VERSIONS+=ssl=openssl
+WITH_OPENSSL_PORT=yes
 .endif
 .endif
 
