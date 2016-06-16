@@ -31,16 +31,9 @@
 
 OpenSSL_Include_MAINTAINER=	dinoex@FreeBSD.org
 
-#	If no preference was set, check for an installed base version
-#	but give an installed port preference over it.
-.if	!defined(WITH_OPENSSL_BASE) && \
-	!defined(WITH_OPENSSL_PORT) && \
-	!exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so) && \
-	exists(${DESTDIR}/usr/include/openssl/opensslv.h)
-WITH_OPENSSL_BASE=yes
-.endif
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
-.if defined(WITH_OPENSSL_BASE)
+.if ${SSL_DEFAULT} == base
 OPENSSLBASE=		/usr
 OPENSSLDIR?=		/etc/ssl
 
@@ -59,7 +52,7 @@ check-depends::
 	@${ECHO_CMD} "Dependency error: This port wants the OpenSSL library from the FreeBSD"
 	@${ECHO_CMD} "base system. You can't build against it, while a newer"
 	@${ECHO_CMD} "version is installed by a port."
-	@${ECHO_CMD} "Please deinstall the port or undefine WITH_OPENSSL_BASE."
+	@${ECHO_CMD} "Please deinstall the port, remove DEFAULT_VERSIONS=ssl=base or undefine WITH_OPENSSL_BASE."
 	@${FALSE}
 .  endif
 
@@ -81,39 +74,18 @@ OPENSSL_CFLAGS+=	-DNO_IDEA
 MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 .  endif
 
-.else # !defined(WITH_OPENSSL_BASE)
+.else # ${SSL_DEFAULT} != base
 
 OPENSSLBASE=		${LOCALBASE}
-.  if	!defined(OPENSSL_PORT) && \
-	exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so)
-# find installed port and use it for dependency
-.    if !defined(OPENSSL_INSTALLED)
-.      if defined(DESTDIR)
-PKGARGS=	-c ${DESTDIR}
-.      else
-PKGARGS=
-.      endif
-OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so || :
-.    endif
-.    if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
-OPENSSL_PORT=		${OPENSSL_INSTALLED}
-OPENSSL_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | ${GREP} "^`${PKG_QUERY} "%p" ${OPENSSL_INSTALLED}`/lib/libcrypto.so.[0-9]*$$"
-OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
-.    endif
-.  endif
 
-# LibreSSL and OpenSSL-BETA specific SHLIBVER
-.  if   defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
-OPENSSL_SHLIBVER?=	37
-.  elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl-devel
-OPENSSL_SHLIBVER?=	38
-.  elif defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/openssl-devel
-OPENSSL_SHLIBVER?=	9
-.  endif
+OPENSSL_PORT=		security/${SSL_DEFAULT}
 
-# default
-OPENSSL_PORT?=		security/openssl
-OPENSSL_SHLIBVER?=	8
+# Get OPENSSL_SHLIBVER from the port
+.sinclude <${PORTSDIR}/${OPENSSL_PORT}/version.mk>
+
+.  if !defined(OPENSSL_SHLIBVER)
+.error You are using an unsupported SSL provider ${SSL_DEFAULT}
+.  endif
 
 OPENSSLDIR?=		${OPENSSLBASE}/openssl
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${OPENSSL_PORT}
