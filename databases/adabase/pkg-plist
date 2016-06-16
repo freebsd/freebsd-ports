@@ -55,6 +55,10 @@ include/adabase/adabase-statement.ads
 include/adabase/adabase.ads
 include/adabase/commontext.adb
 include/adabase/commontext.ads
+include/adabase/spatial_data-well_known_binary.adb
+include/adabase/spatial_data-well_known_binary.ads
+include/adabase/spatial_data.adb
+include/adabase/spatial_data.ads
 %%MYSQL%%lib/adabase/adabase-bindings-mysql.ali
 %%PGSQL%%lib/adabase/adabase-bindings-postgresql.ali
 %%SQLITE%%lib/adabase/adabase-bindings-sqlite.ali
@@ -92,4 +96,6 @@ lib/adabase/adabase-statement.ali
 lib/adabase/adabase.ali
 lib/adabase/commontext.ali
 lib/adabase/libadabase.a
+lib/adabase/spatial_data-well_known_binary.ali
+lib/adabase/spatial_data.ali
 lib/gnat/adabase.gpr
