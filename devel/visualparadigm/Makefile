@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	visualparadigm
-PORTVERSION=	13.1.20160507
+PORTVERSION=	13.1.20160602
 CATEGORIES=	devel
 MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce${PORTVERSION:R}/${PORTVERSION:E}/
 DISTNAME=	Visual_Paradigm_CE_${PORTVERSION:C/\./_/g}_Unix_InstallFree
