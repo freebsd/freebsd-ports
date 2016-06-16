@@ -114,7 +114,7 @@ post-stage:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL_PORT) && defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
+.if ${SSL_DEFAULT} == libressl
 IGNORE=	this version of OpenXPKI is not fully functional with LibreSSL library, use OpenSSL instead
 .endif
 

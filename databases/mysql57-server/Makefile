@@ -129,7 +129,7 @@ PERFSCHM_SUB_LIST+=	PERFSCHEMRC=""
 PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ### Just for the sake of FreeBSD 9.X ###
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
@@ -137,10 +137,14 @@ PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
 EXTRA_PATCHES+=		${PATCHDIR}/rapid_plugin-patch-_x_mysqlxtest__src_mysqlxtest.cc
 .endif
 WITH_OPENSSL_PORT=	yes
+CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
+.endif
+
+.include <bsd.port.pre.mk>
 
 ### FreeBSD Version > 9.X ###
-.else
-.if defined(WITH_OPENSSL_BASE)
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+.if ${SSL_DEFAULT} == base
 CMAKE_ARGS+=		-DWITH_SSL=system
 .else
 CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}

@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL_PORT)
+.if ${SSL_DEFAULT} != base
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

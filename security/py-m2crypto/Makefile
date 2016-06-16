@@ -27,7 +27,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/M2Crypto/_m2crypto.py \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
+.if ${OSVERSION} < 1000000 && ${SSL_DEFAULT} == base
 IGNORE=		py-m2crypto requires OpenSSL 1.0.1e+
 .endif
 

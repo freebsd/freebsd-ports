@@ -17,17 +17,17 @@ GH_TAGNAME=	c6da8bb
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		gmake
+USE_OPENSSL=yes
 USE_LDCONFIG=	yes
 NO_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message Makefile
 ALL_TARGET=	bin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
 
@@ -50,4 +50,4 @@ do-install:
 tests: build
 	${GMAKE} PLATFORM=FreeBSD CRYPTO_LDFLAGS=-L${LOCALBASE}/lib -C ${WRKSRC}/tests
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

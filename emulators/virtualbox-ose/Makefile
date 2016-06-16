@@ -209,7 +209,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
 		${PATCHDIR}/extrapatch-src-recompiler-Makefile.kmk
 .endif
 
-.if !defined(WITH_OPENSSL_BASE)
+.if ${SSL_DEFAULT} != base
 CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 .endif
 

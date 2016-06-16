@@ -43,7 +43,7 @@ USE_OPENSSL=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/Libs:/s/@LDFLAGS@//' -e '/Libs:/s/@LIBS@//' \
 		${WRKSRC}/libssh2.pc.in
-.if defined(WITH_OPENSSL_BASE)
+.if ${SSL_DEFAULT} == base
 	@${REINPLACE_CMD} -e 's/LIBSREQUIRED=libssl,libcrypto/LIBS="$$LIBS -lssl -lcrypto"/' \
 		${WRKSRC}/configure
 .endif

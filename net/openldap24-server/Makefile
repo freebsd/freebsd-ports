@@ -189,14 +189,6 @@ CONFIGURE_ARGS=		--with-threads=posix \
 # XXX FreeBSD does not implement O_DSYNC and fdatasync at this time.
 CFLAGS+=		-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
 
-.if !${PORT_OPTIONS:MFETCH}
-CONFIGURE_ARGS+=	--without-fetch
-.else
-. if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != "" || defined(WITH_OPENSSL_PORT)
-BROKEN=	using OpenSSL from ports and OPTION FETCH together is not supported
-. endif
-.endif
-
 .if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
@@ -512,6 +504,16 @@ PLIST_SUB+=		SHLIB_MAJOR=${OPENLDAP_SHLIB_MAJOR}
 PLIST_SUB+=		SHLIB_MINOR=${OPENLDAP_SHLIB_MINOR}
 PLIST_SUB+=		OPENLDAP_MAJOR=${OPENLDAP_MAJOR}
 
+.include <bsd.port.pre.mk>
+
+.if !${PORT_OPTIONS:MFETCH}
+CONFIGURE_ARGS+=	--without-fetch
+.else
+. if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != "" || ${SSL_DEFAULT} != base
+BROKEN=	using OpenSSL from ports and OPTION FETCH together is not supported
+. endif
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%LOCALSTATEDIR%/run/|${LDAP_RUN_DIR}/|g' \
 		${SED_MODULES} ${WRKSRC}/servers/slapd/slapd.conf
@@ -588,4 +590,4 @@ post-install:
 .endif
 .endif # defined(CLIENT_ONLY)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
