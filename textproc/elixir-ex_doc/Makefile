@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ex_doc
-PORTVERSION=	0.11.5
+PORTVERSION=	0.12.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elixir-
@@ -18,5 +18,6 @@ GH_ACCOUNT=	elixir-lang
 
 MIX_BUILD_DEPS=	textproc/elixir-earmark
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
+MIX_REWRITE=	yes
 
 .include <bsd.port.mk>
