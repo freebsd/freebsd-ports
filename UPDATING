@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160616
+  AFFECTS: users of security/openssl*, security/libressl*
+  AUTHOR: mat@FreeBSD.org
+
+  Previously, to tell the ports tree, you needed to set:
+
+  WITH_OPENSSL_PORT=yes
+  
+  And if you wanted a port that was not security/openssl, you needed to add,
+  for example:
+
+  OPENSSL_PORT=	security/libressl
+
+  Now, all you need to do is:
+
+  DEFAULT_VERSIONS+=  ssl=libressl
+  
+  Valid values are base, openssl, openssl-devel, libressl, and libressl-devel.
+
 20160614
   AFFECTS: users of www/node, www/node5, and www/node4
   AUTHOR: adamw@FreeBSD.org

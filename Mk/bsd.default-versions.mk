@@ -61,6 +61,47 @@ PYTHON2_DEFAULT?=	2.7
 PYTHON3_DEFAULT?=	3.4
 # Possible values: 2.0, 2.1, 2.2, 2.3
 RUBY_DEFAULT?=		2.2
+# Possible values: base, openssl, openssl-devel, libressl, libressl-devel
+.if !defined(SSL_DEFAULT)
+#	If no preference was set, check for an installed base version
+#	but give an installed port preference over it.
+.  if defined(WITH_OPENSSL_PORT)
+.    if defined(OPENSSL_PORT)
+SSL_DEFAULT:=${OPENSSL_PORT:T}
+WARNING+=	"Using WITH_OPENSSL_PORT and OPENSSL_PORT in make.conf is deprecated, replace them with DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}"
+.    else
+SSL_DEFAULT=openssl
+WARNING+=	"Using WITH_OPENSSL_PORT in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=openssl"
+.    endif
+.  elif defined(WITH_OPENSSL_BASE)
+SSL_DEFAULT=base
+WARNING+=	"USing WITH_OPENSSL_BASE in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=base"
+.  elif	!defined(WITH_OPENSSL_BASE) && \
+	!defined(WITH_OPENSSL_PORT) && \
+	!defined(SSL_DEFAULT) && \
+	!exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so) && \
+	exists(${DESTDIR}/usr/include/openssl/opensslv.h)
+SSL_DEFAULT=	base
+.  else
+.    if exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so)
+# find installed port and use it for dependency
+.      if !defined(OPENSSL_INSTALLED)
+.        if defined(DESTDIR)
+PKGARGS=	-c ${DESTDIR}
+.        else
+PKGARGS=
+.        endif
+OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so || :
+.      endif
+.      if defined(OPENSSL_INSTALLED) && !empty(OPENSSL_INSTALLED)
+SSL_DEFAULT:=		${OPENSSL_INSTALLED:T}
+WARNING+=	"You have ${OPENSSL_INSTALLED} installed but do not have DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT} set"
+.      endif
+.    endif
+.  endif
+# Make sure we have a default in the end
+SSL_DEFAULT?=	base
+.endif
 # Possible values: 8.4, 8.5, 8.6
 TCLTK_DEFAULT?=		8.6
 
