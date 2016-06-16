@@ -1,0 +1,4 @@
+tibble provides a 'tbl_df' class that offers better checking and
+printing capabilities than traditional data frames.
+
+WWW: https://cran.r-project.org/web/packages/tibble/
