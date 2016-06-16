@@ -178,8 +178,8 @@ EXTRACONFIGURE+=	no-ec_nistp_64_gcc_128
 pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# this ports conflicts with your base system"
-	@${ECHO_CMD} "# please undefine OPENSSL_OVERWRITE_PORT"
-	@${ECHO_CMD} "# and use WITH_OPENSSL_BASE=yes instead."
+	@${ECHO_CMD} "# you have to uninstall your ssl port"
+	@${ECHO_CMD} "# please use DEFAULT_VERSIONS+= ssl=base instead."
 	@${ECHO_CMD} "#"
 	@${FALSE}
 
