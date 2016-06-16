@@ -1,0 +1,35 @@
+
+***********************************************************************
+*                         MIGRATION FROM OWNCLOUD                     *
+***********************************************************************
+
+If you are migrating from existing owncloud instance, you should do
+the following steps:
+
+- Copy/Move owncloud/data directory to nextcloud/data (don't forget
+        hidden files)
+- Copy/Move owncloud/config/config.php to nextcloud/config/config.php
+- Change the datadirectory in nextcloud/config/config.php
+- Ensure nextcloud/data and nextcloud/config/config.php are owned by 
+        www user and group
+
+
+***********************************************************************
+*                         POST INSTALL CONFIGURATION                  *
+***********************************************************************
+
+Please note that everything has been installed in %%WWWDIR%%.
+
+You will probably want to add an alias to your httpd.conf file, something
+like this:
+
+    	Alias /nextcloud %%WWWDIR%%
+	AcceptPathInfo On
+	<Directory %%WWWDIR%%>
+	    AllowOverride All
+	    Require all granted
+	</Directory>
+
+And restart Apache.
+
+
