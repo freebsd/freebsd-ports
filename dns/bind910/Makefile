@@ -232,9 +232,9 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ( ${PORT_OPTIONS:MGOST} || ${PORT_OPTIONS:MGOST_ASN1} ) && defined(WITH_OPENSSL_BASE)
+.if ( ${PORT_OPTIONS:MGOST} || ${PORT_OPTIONS:MGOST_ASN1} ) && ${SSL_DEFAULT} == base
 BROKEN=	OpenSSL from the base system does not support GOST, add \
-	WITH_OPENSSL_PORT=yes to your /etc/make.conf and rebuild everything \
+	DEFAULT_VERSIONS+=ssl=openssl to your /etc/make.conf and rebuild everything \
 	that needs SSL.
 .endif
 

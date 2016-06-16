@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 USES=	cran:auto-plist
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
@@ -21,4 +21,4 @@ R_POSTCMD_INSTALL_OPTIONS+=	--configure-vars="INCLUDE_DIR=${OPENSSLINC} LIB_DIR=
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

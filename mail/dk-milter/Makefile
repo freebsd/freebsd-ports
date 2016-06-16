@@ -85,7 +85,7 @@ SITE_SUB+=	-e '\|bld_USE_ARLIB|s/^dnl //g'
 SITE_SUB+=	-e '/-DPOPAUTH/s/^dnl //g'
 .endif
 
-.if defined(WITH_OPENSSL_BASE)
+.if ${SSL_DEFAULT} == base
 SITE_SUB+=	-e 's|%%OPENSSL%%|dnl |g'
 .else
 SITE_SUB+=	-e 's|%%OPENSSL%%||g' \

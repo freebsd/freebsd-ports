@@ -41,7 +41,7 @@ USE_OPENSSL=	yes
 post-patch:
 	@ ${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
 	    ${WRKSRC}/Makefile.in
-.if !defined(WITH_OPENSSL_PORT)
+.if ${SSL_DEFAULT} == base
 	@ ${REINPLACE_CMD} -e "s|Requires: openssl|Requires:|" ${WRKSRC}/libopkele.pc.in
 .endif
 

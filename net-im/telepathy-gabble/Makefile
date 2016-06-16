@@ -33,7 +33,9 @@ INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	PVERSION=${PORTVERSION}
 
-.if defined(WITH_OPENSSL_BASE)
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
 CONFIGURE_ENV+=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/include"
 .endif
 
@@ -41,4 +43,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/lib/ext/wocky/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

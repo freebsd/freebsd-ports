@@ -215,7 +215,7 @@ CONFLICTS=	ucd-snmp-4.* net-snmp-5.3.*
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL_PORT) || defined(OPENSSL_PORT)
+.if ${SSL_DEFAULT} != base
 LCRYPTO=	-lcrypto
 .else
 LCRYPTO=

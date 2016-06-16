@@ -310,7 +310,7 @@ help:
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTLS}
-.if !defined(WITH_OPENSSL_BASE)
+.if ${SSL_DEFAULT} != base
 SITE+=	${FILESDIR}/site.config.m4.ssl
 .endif
 SITE+=	${FILESDIR}/site.config.m4.tls

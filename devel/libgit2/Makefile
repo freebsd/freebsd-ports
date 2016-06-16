@@ -40,7 +40,7 @@ BROKEN_sparc64=	does not install: thread-local storage not supported
 post-patch:
 	@${REINPLACE_CMD} -e "s|/pkgconfig|/../libdata/pkgconfig|; \
 		/LIBGIT2_PC_REQUIRES.*zlib/ d" ${WRKSRC}/CMakeLists.txt
-.if defined(WITH_OPENSSL_BASE)
+.if ${SSL_DEFAULT} == base
 	@${REINPLACE_CMD} -e "/LIBGIT2_PC_REQUIRES.*openssl/ d" \
 		${WRKSRC}/CMakeLists.txt
 .endif
