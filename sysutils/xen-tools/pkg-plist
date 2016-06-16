@@ -252,7 +252,7 @@ sbin/xen-lowmemd
 sbin/xen-mfndump
 sbin/xen-ringwatch
 sbin/xen-tmem-list-parse
-sbin/xen-xsplice
+sbin/xen-livepatch
 sbin/xenbaked
 sbin/xenconsoled
 sbin/xencov
@@ -513,7 +513,7 @@ sbin/xl
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/xl-numa-placement.html
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/xl-psr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/xsm-flask.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/misc/xsplice.html
+%%PORTDOCS%%%%DOCSDIR%%/html/misc/livepatch.html
 share/pkgconfig/xenlight.pc
 share/pkgconfig/xlutil.pc
 share/qemu-xen/qemu/QEMU,cgthree.bin
