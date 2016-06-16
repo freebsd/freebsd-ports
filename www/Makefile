@@ -550,6 +550,7 @@
     SUBDIR += netstiff
     SUBDIR += netsurf
     SUBDIR += newsbeuter
+    SUBDIR += nextcloud
     SUBDIR += nghttp2
     SUBDIR += nginx
     SUBDIR += nginx-devel
