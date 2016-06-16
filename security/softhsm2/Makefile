@@ -38,8 +38,10 @@ CRYP_OPEN_USE=		openssl=yes
 CRYP_OPEN_VARS=		WITH_OPENSSL_PORT=yes
 CRYP_OPEN_CONFIGURE_ON=	--with-crypto-backend=openssl
 
-.if defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == libressl
 CONFIGURE_ARGS+=	--disable-gost
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

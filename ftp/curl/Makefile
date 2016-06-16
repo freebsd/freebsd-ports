@@ -32,7 +32,10 @@ THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 
 LOCALBASE?=	/usr/local
-.if defined(WITH_OPENSSL_PORT) || (!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so))
+
+.include <${PORTSDIR}/Mk/bsd.default-versions.mk>
+
+.if ${SSL_DEFAULT} != base
 OPTIONS_DEFAULT+=	GSSAPI_NONE
 .else
 OPTIONS_DEFAULT+=	GSSAPI_BASE
@@ -148,11 +151,11 @@ IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 IGNORE=		only supports LDAPS with SSL
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL} && (defined(WITH_OPENSSL_PORT) || (!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so)))
+.if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT} != base
 IGNORE=		GSSAPI_BASE is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
 .endif
 
-.if defined(OPENSSL_PORT) && ${OPENSSL_PORT} == "security/libressl"
+.if ${SSL_DEFAULT} == libressl
 .if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL}
 IGNORE=		GSSAPI_BASE is not compatible with LibreSSL. Use other GSSAPI options
 .endif

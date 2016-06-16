@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	\
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_OPENSSL_PORT) && \
+.if ${SSL_DEFAULT} == base && \
 	${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
 # src/thrift/transport/TSSLSocket.cpp:147: error: 'TLSv1_1_method' was not declared in this scope
 # src/thrift/transport/TSSLSocket.cpp:149: error: 'TLSv1_2_method' was not declared in this scope

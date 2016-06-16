@@ -150,10 +150,10 @@ GNUTLS_LIB_DEPENDS=     libgnutls.so:security/gnutls
 POLARSSL_CONFIGURE_WITH=mbedtls
 POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
-IGNORE=   OpenSSL from the base system is too old, add WITH_OPENSSL_PORT to your /etc/make.conf and rebuild everything that needs SSL.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && ${SSL_DEFAULT} == base
+IGNORE=   OpenSSL from the base system is too old, add DEFAULT_VERSIONS+=ssl=openssl to your /etc/make.conf and rebuild everything that needs SSL.
 .endif
 
 post-patch:
@@ -192,6 +192,8 @@ post-install:
 		${COPYTREE_SHARE} "ibm_db2 mysql oracle postgresql sqlite3" \
 		${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/database/)
 .endif
+.else # frontend
+.include <bsd.port.pre.mk>
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

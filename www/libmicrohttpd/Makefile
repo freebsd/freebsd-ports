@@ -41,7 +41,7 @@ PLIST_FILES=	include/microhttpd.h \
 
 .include <bsd.port.pre.mk>
 
-.if !(defined(WITH_OPENSSL_BASE) && ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015)
+.if !(${SSL_DEFAULT} == base && ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015)
 PLIST_FILES+=	include/microspdy.h \
 		lib/libmicrospdy.a \
 		lib/libmicrospdy.so \

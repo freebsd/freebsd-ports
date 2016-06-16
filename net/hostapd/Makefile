@@ -24,16 +24,16 @@ OPTIONS_DEFINE=	PORTS_SSL
 
 PORTS_SSL_DESC= Build with OpenSSL from ports (instead of base system)
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPORTS_SSL}
-.if !defined(WITH_OPENSSL_PORT)
-IGNORE=		the PORTS_SSL option not allowed when WITH_OPENSSL_PORT is not set
+.if ${SSL_DEFAULT} == base
+IGNORE=		the PORTS_SSL option not allowed when using SSL from base
 .endif
 CONFIGURE_ARGS+= --with-ssl-dir=${PREFIX}
 .else
-.if defined(WITH_OPENSSL_PORT)
-IGNORE=		the PORTS_SSL option is required when WITH_OPENSSL_PORT is set
+.if ${SSL_DEFAULT} != base
+IGNORE=		the PORTS_SSL option is required when using SSL from ports
 .endif
 .endif
 
@@ -52,4 +52,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/hostapd/hostapd.8 \
 		${STAGEDIR}${MANPREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

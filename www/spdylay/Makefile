@@ -37,7 +37,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
+.if ${OSVERSION} < 1000000 && ${SSL_DEFAULT} == base
 IGNORE=		spdylay requires OpenSSL 1.0.1+
 .endif
 
