@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library to maintain a list of partially ordered elements
 
-LICENSE=	LGPL21
+LICENSE=	LGPL20+ # source says LGPL20+, COPYING says LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
@@ -32,11 +33,13 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS.txt CHANGES.txt README.md
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
