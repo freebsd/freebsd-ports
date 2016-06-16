@@ -4,7 +4,7 @@
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
-# The user/port can now set these options in the Makefiles.
+# The port can now set these options in the Makefiles.
 #
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
 # WITH_OPENSSL_PORT=yes	- Use the OpenSSL port, even if base is up to date.
@@ -14,8 +14,9 @@
 #
 # Overrideable defaults:
 #
-# OPENSSL_SHLIBVER=	8
-# OPENSSL_PORT=		security/openssl
+# DEFAULT_VERSIONS+=	ssl=<openssl variant>
+#
+# Variants being base, openssl, openssl-devel, libressl, and libressl-devel.
 #
 # The Makefile sets these variables:
 # OPENSSLBASE		- "/usr" or ${LOCALBASE}
@@ -78,7 +79,7 @@ MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 
 OPENSSLBASE=		${LOCALBASE}
 
-OPENSSL_PORT?=		security/${SSL_DEFAULT}
+OPENSSL_PORT=		security/${SSL_DEFAULT}
 
 # Get OPENSSL_SHLIBVER from the port
 .sinclude <${PORTSDIR}/${OPENSSL_PORT}/version.mk>
