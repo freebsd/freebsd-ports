@@ -12,7 +12,9 @@ COMMENT=	Tool for performing actions on an Active Directory domain
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libldap.so:net/openldap24-sasl-client
-BUILD_DEPENDS=	xsltproc:textproc/libxslt
+BUILD_DEPENDS=	xsltproc:textproc/libxslt	\
+		docbook-xml>0:textproc/docbook-xml	\
+		docbook-xsl>0:textproc/docbook-xsl
 
 PLIST_FILES=	sbin/adcli man/man8/adcli.8.gz
 GNU_CONFIGURE=	yes
