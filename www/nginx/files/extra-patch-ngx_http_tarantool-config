@@ -1,5 +1,5 @@
---- ../nginx_upstream_module-3599ba0/config.orig	2015-08-20 23:33:02.000000000 +0300
-+++ ../nginx_upstream_module-3599ba0/config	2015-08-23 16:04:59.572045669 +0300
+--- ../nginx_upstream_module-b852195/config.orig	2015-08-20 23:33:02.000000000 +0300
++++ ../nginx_upstream_module-b852195/config	2015-08-23 16:04:59.572045669 +0300
 @@ -4,7 +4,7 @@
            "
  
