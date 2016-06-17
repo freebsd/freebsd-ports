@@ -3,10 +3,9 @@
 
 PORTNAME=	imaze
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	TUCOWS/x11/entertain/ \
-		http://www.sourcefiles.org/Games/Arcade/
+MASTER_SITES=	http://www.sourcefiles.org/Games/Arcade/
 PKGNAMESUFFIX=	-${TOOLKIT}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,48 +14,30 @@ COMMENT=	Multi-player network action game for TCP/IP with 3D graphics
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
 OPTIONS_DEFINE=	AUDIO JOYSTICK
-OPTIONS_RADIO=	GUI
-OPTIONS_RADIO_GUI=	XVIEW MOTIF
-OPTIONS_DEFAULT=	AUDIO JOYSTICK XVIEW
+OPTIONS_SINGLE=	GUI
+OPTIONS_SINGLE_GUI=	ATHENA MOTIF XVIEW
+OPTIONS_DEFAULT=	ATHENA AUDIO JOYSTICK
+
+ATHENA_DESC=	Athena widget library support
+ATHENA_VARS=	TOOLKIT=athena
 AUDIO_DESC=	Audio support
+AUDIO_CONFIGURE_OFF=	noaudio
 JOYSTICK_DESC=	Joystick support
+JOYSTICK_CONFIGURE_OFF=	nojoystick
+MOTIF_USES=	motif
+MOTIF_VARS=	MOTIFLIB="-L${LOCALBASE}/lib -lXm -lXt" TOOLKIT=motif
 XVIEW_DESC=	XView widget library support
+XVIEW_LIB_DEPENDS=	libxview.so:x11-toolkits/xview
+XVIEW_VARS=	TOOLKIT=xview
 
 CONFIGURE_WRKSRC=${WRKSRC}/source
 BUILD_WRKSRC=	${WRKSRC}/source
 
-USE_XORG=	x11 xaw xt
+USE_XORG=	x11 xaw xmu xt
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${TOOLKIT} X11Dir="${LOCALBASE}" CFlags="${CFLAGS}"
 MAKE_ENV=	SOUNDDIR="${DATADIR}/sounds"
-
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MAUDIO)
-CONFIGURE_ARGS+=noaudio
-.endif
-
-.if empty(PORT_OPTIONS:MJOYSTICK)
-CONFIGURE_ARGS+=nojoystick
-.endif
-
-.if empty(PORT_OPTIONS:MMOTIF) && empty(PORT_OPTIONS:MXVIEW)
-TOOLKIT=	athena
-.endif
-
-.if ${PORT_OPTIONS:MMOTIF}
-USES+=		motif
-TOOLKIT=	motif
-.endif
-
-.if ${PORT_OPTIONS:MXVIEW}
-LIB_DEPENDS+=	libxview.so:x11-toolkits/xview
-TOOLKIT=	xview
-.endif
 
 do-install:
 .for i in genlab imaze imazesrv imazestat ninja xlabed

@@ -1,6 +1,6 @@
---- source/Makefile.in.orig	Thu Dec 13 10:50:40 2001
-+++ source/Makefile.in	Thu Dec 13 10:56:34 2001
-@@ -43,7 +43,7 @@
+--- source/Makefile.in.orig	2001-12-10 00:47:32 UTC
++++ source/Makefile.in
+@@ -43,7 +43,7 @@ Unconfigured:
  	@echo "run ./configure first, don't use this makefile"
  #END configure output
  
@@ -9,7 +9,7 @@
  #
  # possible values:
  #
-@@ -66,7 +66,7 @@
+@@ -66,7 +66,7 @@ INSTALL=install -s -m 755
  X11Libs=-lX11
  #AthenaLibs=-lXaw -lXt
  AthenaLibs=-lXaw -lXt -lXmu
