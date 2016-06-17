@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--disable-drng-support --enable-static=yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 DOCS=		AUTHORS ChangeLog ChangeLog-2011 INSTALL NEWS README \
 		README.GIT THANKS TODO doc/HACKING doc/README.apichanges
@@ -46,8 +47,5 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-
-regression-test: build
-	cd ${WRKSRC} && ${MAKE_CMD} check
 
 .include <bsd.port.mk>
