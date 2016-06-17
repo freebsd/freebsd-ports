@@ -989,6 +989,7 @@
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
+    SUBDIR += py-pyshark
     SUBDIR += py-pysmb
     SUBDIR += py-pysocks
     SUBDIR += py-pystun
