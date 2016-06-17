@@ -1,6 +1,6 @@
---- ./lib/direct/log.c.orig	2010-11-15 22:12:08.000000000 +0100
-+++ ./lib/direct/log.c	2010-12-03 16:44:12.000000000 +0100
-@@ -335,12 +335,14 @@
+--- lib/direct/log.c.orig	2012-05-23 13:43:12 UTC
++++ lib/direct/log.c
+@@ -335,12 +335,14 @@ parse_host_addr( const char       *hostp
                      D_ERROR( "Direct/Log: Port %s is unreachable!\n", portstr );
                      return DR_FAILURE;
                 
