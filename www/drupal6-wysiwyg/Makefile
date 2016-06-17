@@ -9,6 +9,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 TINYMCEDIR=	www/tinymce
 
 # we support either tinymce2 or tinymce3

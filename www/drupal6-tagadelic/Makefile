@@ -10,6 +10,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Tagadelic module for Drupal 6
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,module
 MODULE_DIRS=	translations
 MODULE_FILES=	tagadelic.css tagadelic.info tagadelic.install \

@@ -10,6 +10,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Drupal 6 module for syntax highlighting
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 RUN_DEPENDS=	${LOCALBASE}/lib/php/geshi/geshi.php:devel/php5-geshi
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

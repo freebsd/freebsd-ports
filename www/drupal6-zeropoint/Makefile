@@ -9,6 +9,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The zeropoint drupal theme
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,theme
 USE_PHP=	ctype
 MODULE_DIRS=	_custom/headerimg _custom css images/all images/ink \

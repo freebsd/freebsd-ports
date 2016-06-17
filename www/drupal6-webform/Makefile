@@ -9,6 +9,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to allow easy creation of forms
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,module
 
 MODULE_FILES=	components/date.inc \

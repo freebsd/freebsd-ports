@@ -9,6 +9,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Token module for Drupal
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,module
 MODULE_FILES=	translations/token.pot translations/da.po translations/de.po \
 		translations/es.po translations/hu.po translations/ja.po \

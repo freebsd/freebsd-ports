@@ -8,6 +8,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module which allows the end-user to set meta tags for nodes
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,module
 MODULE_DIRS=	nodewords_basic nodewords_extra includes nodewords_og
 MODULE_FILES=	includes/forum.inc includes/image.inc includes/node.inc \
