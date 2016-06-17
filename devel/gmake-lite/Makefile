@@ -18,6 +18,8 @@ CONFIGURE_ARGS+=	--program-prefix=g \
 			--program-suffix=-lite \
 			--without-guile \
 			--disable-nls
+# fmake does not like PO_DEPENDS_ON_POT being undefined
+MAKE_ARGS=	PO_DEPENDS_ON_POT=
 
 USES=	cpe tar:bzip2
 CPE_VENDOR=	gnu
