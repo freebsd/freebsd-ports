@@ -1,5 +1,5 @@
---- source/voxware_audio.c.orig	Sat Jun 28 15:55:41 2003
-+++ source/voxware_audio.c	Sat Jun 28 15:56:08 2003
+--- source/voxware_audio.c.orig	2001-12-10 00:47:46 UTC
++++ source/voxware_audio.c
 @@ -50,7 +50,7 @@
  #ifdef linux
  #include <linux/soundcard.h>
