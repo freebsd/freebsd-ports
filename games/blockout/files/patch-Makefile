@@ -1,32 +1,18 @@
---- BlockOut/Makefile.orig	2014-05-06 16:47:56.000000000 +0700
-+++ BlockOut/Makefile	2015-08-30 12:41:52.375668000 +0600
-@@ -41,33 +41,37 @@
- 
- ADD_LIBS = ../ImageLib/src/libimagelib.a
- 
--ifdef _linux64
--SDL_LIBS = /usr/lib/x86_64-linux-gnu
--else
--SDL_LIBS = /usr/lib/i386-linux-gnu
--endif
-+#ifdef _linux64
-+#SDL_LIBS = /usr/lib/x86_64-linux-gnu
-+#else
-+#SDL_LIBS = /usr/lib/i386-linux-gnu
-+#endif
-+SDL_LIBS = /usr/local/lib
-+
-+#CXX		= g++
+--- BlockOut/Makefile.orig	2014-05-06 13:47:56.000000000 +0400
++++ BlockOut/Makefile	2016-05-23 20:37:54.725070000 +0300
+@@ -47,27 +47,27 @@
+ SDL_LIBS = /usr/lib/i386-linux-gnu
+ endif
  
 -CXX		= g++
-+SDL_ROOT	= /usr/local
-+IMGLIB_ROOT	= ../ImageLib/src
++#CXX		= g++
  
  ifdef _release
  
- CXXFLAGS =     -O2 -Dlinux -c \
+-CXXFLAGS =     -O2 -Dlinux -c \
 -               -I/usr/include/SDL -I../ImageLib/src -I.
-+		-I/usr/include -I$(SDL_ROOT)/include/SDL -I$(SDL_ROOT)/include -I$(IMGLIB_ROOT) -I.
++CXXFLAGS +=     -Dlinux -c \
++		-I$(LOCALBASE)/include/SDL -I$(LOCALBASE)/include -I../ImageLib/src -I.
  
  LFLAGS   =      -Wl,--strip-all \
  		$(ADD_LIBS) \
@@ -36,11 +22,13 @@
  
  else
  
- CXXFLAGS =     -g -D_DEBUG -Dlinux -c \
+-CXXFLAGS =     -g -D_DEBUG -Dlinux -c \
 -               -I/usr/include/SDL -I../ImageLib/src -I.
-+		-I/usr/include -I$(SDL_ROOT)/include/SDL -I$(SDL_ROOT)/include -I$(IMGLIB_ROOT) -I.
++CXXFLAGS +=     -D_DEBUG -Dlinux -c \
++		-I$(LOCALBASE)/include/SDL -I$(LOCALBASE)/include -I../ImageLib/src -I.
  
- LFLAGS   =      -L $(SDL_LIBS) \
+-LFLAGS   =      -L $(SDL_LIBS) \
++LFLAGS   =      -L $(LOCALBASE)/lib \
  		$(ADD_LIBS) \
  		-lSDL_mixer -lSDL -lasound \
 -		-lGL -lGLU -lpthread -lm -ldl
