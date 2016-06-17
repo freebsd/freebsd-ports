@@ -2,6 +2,7 @@
 
 PORTNAME=	fossil
 PORTVERSION=	1.35
+PORTREVISION=	1
 DISTVERSIONPREFIX=	src-
 PORTEPOCH=	2
 CATEGORIES=	devel www
@@ -31,7 +32,8 @@ JSON_CONFIGURE_ON=	--json
 STATIC_CONFIGURE_ON=	--static
 FUSE_CONFIGURE_OFF=	--disable-fusefs
 FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
-FUSE_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+FUSE_CFLAGS=		-I${LOCALBASE}/include
+FUSE_LDFLAGS=		-L${LOCALBASE}/lib
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fossil
