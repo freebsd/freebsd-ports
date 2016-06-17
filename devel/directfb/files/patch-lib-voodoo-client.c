@@ -1,6 +1,6 @@
---- ./lib/voodoo/client.c.orig	2010-11-15 22:13:05.000000000 +0100
-+++ ./lib/voodoo/client.c	2010-12-03 16:44:12.000000000 +0100
-@@ -161,12 +161,14 @@
+--- lib/voodoo/client.c.orig	2012-05-23 13:43:12 UTC
++++ lib/voodoo/client.c
+@@ -164,12 +164,14 @@ voodoo_client_create( const char     *ho
                      D_ERROR( "Direct/Log: Service is unreachable!\n" );
                      return DR_FAILURE;
  

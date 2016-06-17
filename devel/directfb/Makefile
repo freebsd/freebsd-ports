@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	directfb
-PORTVERSION=	1.4.13
-PORTREVISION=	7
+PORTVERSION=	1.4.17
 CATEGORIES=	devel
-MASTER_SITES=	http://www.directfb.org/downloads/Core/${DISTNAME:R}/
+MASTER_SITES=	http://sources.buildroot.net/
 DISTNAME=	DirectFB-${PORTVERSION}
 
 MAINTAINER=	anatoly.borodin@gmail.com
@@ -13,9 +12,6 @@ COMMENT=	Graphic development lightweight API
 
 LICENSE=	LGPL21
 
-BROKEN=		Does not fetch
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
 LIB_DEPENDS=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	FREETYPE X11 SDL UNIQUE TEST DOCS
@@ -31,10 +27,9 @@ USES=		cpe gmake jpeg libtool ncurses pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 PORTDOCS=	*
-EXTRA_PATCHES=	${FILESDIR}/extra-libpng15:-p1
 
-DIRECTFB_SHLIB=	5.0.8	# LT_BINARY.LT_AGE.LT_REVISION
-DIRECTFB_BIN=	5	# LT_BINARY
+DIRECTFB_SHLIB=	6.0.11	# LT_BINARY.LT_AGE.LT_REVISION
+DIRECTFB_BIN=	${DIRECTFB_SHLIB:R:R}	# LT_BINARY
 PLIST_SUB+=	DIRECTFB_VERSION="${PORTVERSION}" \
 		DIRECTFB_RELEASE="${PORTVERSION:R}" \
 		DIRECTFB_SHLIB="${DIRECTFB_SHLIB}" \
@@ -55,7 +50,7 @@ DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
 X11_USE=	XORG=x11,xext,xproto
-X11_CONFIGURE_ENABLE=	--x11
+X11_CONFIGURE_ENABLE=	x11
 SDL_USE=	sdl
 SDL_CONFIGURE_ENABLE=	sdl
 UNIQUE_CONFIGURE_ENABLE=	unique
@@ -83,7 +78,7 @@ post-patch:
 	@${GREP} -lr alloca\.h ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e 's|<alloca\.h>|<stdlib.h>|g'
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for f in AUTHORS ChangeLog NEWS README TODO fb.modes docs/README.screenshots docs/*.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}

@@ -1,4 +1,4 @@
---- lib/direct/interface.c
+--- lib/direct/interface.c.orig	2016-06-08 05:59:40 UTC
 +++ lib/direct/interface.c
 @@ -71,7 +71,11 @@ typedef struct {
       int                   references;
@@ -11,4 +11,4 @@
 +#endif
  static DirectLink      *implementations       = NULL;
  
- /**************************************************************************************************/
+ static inline int
