@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.0.10
+PORTVERSION=	4.0.11
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -63,12 +63,16 @@ ARP_ACL_CONFIGURE_ENABLE=	eui
 AUTH_LDAP_CFLAGS=		-I${LOCALBASE}/include
 AUTH_LDAP_LDFLAGS=		-L${LOCALBASE}/lib
 AUTH_LDAP_USE=			OPENLDAP=yes
+AUTH_LDAP_VARS=			BASIC_AUTH+=LDAP EXTERNAL_ACL+=LDAP_group
 AUTH_SASL_CFLAGS=		-I${LOCALBASE}/include
 AUTH_SASL_CPPFLAGS=		-I${LOCALBASE}/include
 AUTH_SASL_LDFLAGS=		-L${LOCALBASE}/lib
 AUTH_SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
+AUTH_SASL_VARS=			BASIC_AUTH+=SASL
 AUTH_SMB_RUN_DEPENDS=		smbclient:net/samba42
+AUTH_SMB_VARS=			BASIC_AUTH+=SMB EXTERNAL_ACL+=wbinfo_group
 AUTH_SQL_RUN_DEPENDS=		p5-DBI>=1.08:databases/p5-DBI
+AUTH_SQL_VARS=			EXTERNAL_ACL+=SQL_session
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
 DELAY_POOLS_CONFIGURE_ENABLE=	delay-pools
 ECAP_CFLAGS=			-I${LOCALBASE}/include
@@ -90,14 +94,31 @@ IPV6_CONFIGURE_ENABLE=		ipv6
 KQUEUE_CONFIGURE_ENABLE=	kqueue
 LARGEFILE_CONFIGURE_WITH=	large-files
 LAX_HTTP_CONFIGURE_ENABLE=	http-violations
+FS_AUFS_VARS=			STORAGE_SCHEMES+=aufs DISKIO_MODULES+=DiskThreads
+# Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS,
+# e.g. SQUID_CONFIGURE_ARGS=--with-aufs-threads=N
+FS_AUFS_LDFLAGS=		-pthread
+FS_AUFS_CONFIGURE_OFF=		--without-pthreads
+FS_DISKD_VARS=			STORAGE_SCHEMES+=diskd DISKIO_MODULES+=DiskDaemon
+FS_ROCK_VARS=			STORAGE_SCHEMES+=rock
 NETTLE_LIB_DEPENDS=		libnettle.so:security/nettle
 NETTLE_CONFIGURE_OFF=		--without-nettle
 SNMP_CONFIGURE_ENABLE=		snmp
 SSL_CONFIGURE_ENABLE=		ssl
+SSL_CONFIGURE_ON=		--with-openssl=${OPENSSLBASE} \
+				--enable-security-cert-generators="file" \
+				LIBOPENSSL_CFLAGS=-I${OPENSSLINC} \
+				LIBOPENSSL_LIBS="-lcrypto -lssl"
+SSL_USE=			OPENSSL=yes
 SSL_CRTD_CONFIGURE_ENABLE=	ssl-crtd
+SSL_CRTD_IMPLIES=		SSL
 STACKTRACES_CONFIGURE_ENABLE=	stacktraces
+STACKTRACES_EXTRA_PATCHES=	${FILESDIR}/extra-patch-gen-stacktrace
 STACKTRACES_LIB_DEPENDS=	libunwind.so:devel/libunwind
 STACKTRACES_CONFIGURE_ON=	--disable-strict-error-checking
+STACKTRACES_CFLAGS=		-g
+STACKTRACES_LDFLAGS=		-lunwind -L${LOCALBASE}/lib
+STACKTRACES_VARS=		STRIP=""
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
 TP_IPF_CONFIGURE_ENABLE=	ipf-transparent
 TP_PF_CONFIGURE_ENABLE=		pf-transparent
@@ -112,23 +133,23 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-heimdal-krb5 \
 
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_BASE_PLIST_SUB=		AUTH_KERB=""
+# Make it build on FreeBSD < 10
+GSSAPI_BASE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-build-8-9
 
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_HEIMDAL_PLIST_SUB=	AUTH_KERB=""
 
 GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-mit-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_MIT_PLIST_SUB=		AUTH_KERB=""
 
 # TODO:
 # add an option for external_acl/session (requires some kind of external
 # Berkeley DB support, unsure which one)
 ARP_ACL_DESC=		ARP/MAC/EUI based authentification
 AUTH_DESC=		Authentication helpers
-GSSAPI_DESC=		Install Kerberos authentication helpers
-GSSAPI_NONE_DESC=	Build without Kerberos support
-GSSAPI_BASE_DESC=	Build with Kerberos support from base
-GSSAPI_HEIMDAL_DESC=	Build with Kerberos support from security/heimdal
-GSSAPI_MIT_DESC=	Build with Kerberos support from security/krb5
 AUTH_LDAP_DESC=		Install LDAP authentication helpers
 AUTH_NIS_DESC=		Install NIS/YP authentication helpers
 AUTH_SASL_DESC=		Install SASL authentication helpers
@@ -207,134 +228,48 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-IGNORE=		Doesn't build, messes C++ headers and libs
+IGNORE=		doesn't build, messes C++ headers and libs
 .endif
 
 # Authentication methods and modules:
 
-basic_auth=	DB SMB_LM NCSA PAM POP3 RADIUS fake getpwnam
-digest_auth=	file
-external_acl=	file_userip time_quota unix_group
-ntlm_auth=	fake SMB_LM
-
-.if ${PORT_OPTIONS:MAUTH_LDAP}
-basic_auth+=	LDAP
-external_acl+=	LDAP_group
-.endif
-
-.if ${PORT_OPTIONS:MAUTH_SASL}
-basic_auth+=	SASL
-.endif
-
-.if ${PORT_OPTIONS:MAUTH_SMB}
-basic_auth+=	SMB
-external_acl+=	wbinfo_group
-.endif
-
-.if ${PORT_OPTIONS:MAUTH_SQL}
-external_acl+=	SQL_session
-.endif
+BASIC_AUTH+=	DB SMB_LM NCSA PAM POP3 RADIUS fake getpwnam
+EXTERNAL_ACL+=	file_userip time_quota unix_group
 
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MAUTH_NIS} && !defined(NO_NIS) && !defined(WITHOUT_NIS)
-basic_auth+=	NIS
+BASIC_AUTH+=	NIS
 .endif
 
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MGSSAPI_NONE} || defined(NO_KERBEROS) || defined(WITHOUT_KERBEROS)
-negotiate_auth=	none
+NEGOTIATE_AUTH=	none
 PLIST_SUB+=	AUTH_KERB="@comment "
 .else
 # The kerberos_ldap_group external helper also depends on LDAP and SASL:
 . if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
-external_acl+=	kerberos_ldap_group
+EXTERNAL_ACL+=	kerberos_ldap_group
 . endif
-negotiate_auth=	kerberos wrapper
-PLIST_SUB+=	AUTH_KERB=""
+NEGOTIATE_AUTH=	kerberos wrapper
 .endif
-
-# Make it build on FreeBSD < 10
-.if ${PORT_OPTIONS:MGSSAPI_BASE}
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-build-8-9
-.endif
-
-CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
-			--enable-auth-digest="${digest_auth}" \
-			--enable-external-acl-helpers="${external_acl}" \
-			--enable-auth-negotiate="${negotiate_auth}" \
-			--enable-auth-ntlm="${ntlm_auth}"
 
 # Storage schemes:
-storage_schemes=	ufs
-diskio_modules=		AIO Blocking IpcIo Mmapped
+STORAGE_SCHEMES+=	ufs
+DISKIO_MODULES+=	AIO Blocking IpcIo Mmapped
 
-.if ${PORT_OPTIONS:MFS_AUFS}
-storage_schemes+=	aufs
-diskio_modules+=	DiskThreads
-# Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS,
-# e.g. SQUID_CONFIGURE_ARGS=--with-aufs-threads=N
-LDFLAGS+=		-pthread
-.else
-CONFIGURE_ARGS+=	--without-pthreads
-.endif
-
-.if ${PORT_OPTIONS:MFS_DISKD}
-storage_schemes+=	diskd
-diskio_modules+=	DiskDaemon
-.endif
-
-.if ${PORT_OPTIONS:MFS_ROCK}
-storage_schemes+=	rock
-.endif
-
-CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}" \
-			--enable-disk-io="${diskio_modules}"
-
-# Log daemon helpers:
-logdaemon_helpers=	file
-CONFIGURE_ARGS+=	--enable-log-daemon-helpers="${logdaemon_helpers}"
-
-# URL rewrite helpers:
-url_rewrite_helpers=	fake
-CONFIGURE_ARGS+=	--enable-url-rewrite-helpers="${url_rewrite_helpers}"
-
-# Storeid rewrite helpers:
-storeid_rewrite_helpers=	file
-CONFIGURE_ARGS+=	--enable-storeid-rewrite-helpers="${storeid_rewrite_helpers}"
-
-# Security certificate validator helpers:
-security_cert_validators=	fake
-CONFIGURE_ARGS+=	--enable-security-cert-validators="${security_cert_validators}"
+CONFIGURE_ARGS+=	--enable-auth-basic="${BASIC_AUTH}" \
+			--enable-auth-digest="file" \
+			--enable-external-acl-helpers="${EXTERNAL_ACL}" \
+			--enable-auth-negotiate="${NEGOTIATE_AUTH}" \
+			--enable-auth-ntlm="fake SMB_LM" \
+			--enable-storeio="${STORAGE_SCHEMES}" \
+			--enable-disk-io="${DISKIO_MODULES}" \
+			--enable-log-daemon-helpers="file" \
+			--enable-url-rewrite-helpers="fake" \
+			--enable-storeid-rewrite-helpers="file" \
+			--enable-security-cert-validators="fake"
 
 # Other options set via 'make config':
-
-.if ${PORT_OPTIONS:MSSL}
-# we need to .include bsd.openssl.mk manually here.because USE_OPENSSL only
-# works when it is defined before bsd.port{.pre}.mk is .included.
-# This makes it currently impossible to combine this macro with OPTIONS to
-# conditionally include OpenSSL support.
-# XXX: is this still true with OptionsNG as of 2015-03?
-#.include "${.CURDIR}/../../Mk/bsd.openssl.mk"
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
-CFLAGS+=		-I${OPENSSLINC}
-LDFLAGS+=		-L${OPENSSLLIB}
-
-# Security certificate generator helpers:
-security_cert_generators=	file
-CONFIGURE_ARGS+=	--enable-security-cert-generators="${security_cert_generators}"
-.endif
-
-.if ${PORT_OPTIONS:MSSL_CRTD} && !${PORT_OPTIONS:MSSL}
-IGNORE=SSL_CRTD option can be used only if SSL option is enabled
-.endif
-
-.if ${PORT_OPTIONS:MSTACKTRACES}
-CFLAGS+=	-g
-LDFLAGS+=	-lunwind -L${LOCALBASE}/lib
-STRIP=
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gen-stacktrace
-.endif
 
 .if ${PORT_OPTIONS:MDEBUG} || defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--disable-optimizations --enable-debug-cbdata
