@@ -8,6 +8,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds the Google Analytics web stats tracking system to your website
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,module
 
 MODULE_FILES=	googleanalytics.admin.inc googleanalytics.install googleanalytics.module \

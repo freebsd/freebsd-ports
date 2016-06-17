@@ -9,6 +9,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for Consistent Server Side Mime Detection
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
