@@ -119,12 +119,6 @@ RUN_DEPENDS+=		${OCAMLC_DEPEND}
 PLIST_SUB+=	OCAML_SITELIBDIR="${OCAML_SITELIBDIR}"
 .endif
 
-.if defined(USE_OCAML_FINDLIB) || defined(USE_OCAML_LDCONFIG)
-. if !target(post-install-script)
-post-install-script: ocaml-findlib ocaml-ldconfig ocaml-wash
-. endif
-.endif
-
 .if defined(USE_OCAML_FINDLIB)
 #
 # We'll additionally add ocamlfind to RUN_DEPENDS, since
@@ -141,6 +135,7 @@ MAKE_ENV+=	OCAMLFIND_DESTDIR="${STAGEDIR}${OCAMLFIND_DESTDIR}" \
 # Directories under site-lib to process automatically
 #
 OCAML_PKGDIRS?=	${PORTNAME}
+_USES_install+=	735:ocaml-findlib
 . if !target(ocaml-findlib)
 ocaml-findlib:
 .  for DIR in ${OCAML_PKGDIRS}
@@ -174,6 +169,7 @@ RUN_DEPENDS+=		${OCAMLTK_DEPENDS}
 # Directories under PREFIX for appending to ld.conf
 #
 OCAML_LDLIBS?=	${OCAML_SITELIBDIR}/${PORTNAME}
+_USES_install+=	740:ocaml-ldconfig
 . if !target(ocaml-ldconfig)
 ocaml-ldconfig:
 .  for LIB in ${OCAML_LDLIBS}
@@ -186,25 +182,11 @@ ocaml-ldconfig:
 
 .if defined(USE_OCAML_WASH)
 . if !target(ocaml-wash)
+_USES_install+=	745:ocaml-wash
 ocaml-wash:
 #	If ld.conf is empty
 	@${ECHO_CMD} "@postunexec if [ ! -s %D/${OCAML_LDCONF} ]; then ${RM} -f %D/${OCAML_LDCONF}; fi || true" >> ${TMPPLIST}
 . endif
-.endif
-
-.if !target(ocaml-findlib)
-ocaml-findlib:
-	@${DO_NADA}
-.endif
-
-.if !target(ocaml-ldconfig)
-ocaml-ldconfig:
-	@${DO_NADA}
-.endif
-
-.if !target(ocaml-wash)
-ocaml-wash:
-	@${DO_NADA}
 .endif
 
 .endif #!defined(OCAML_include)

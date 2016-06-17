@@ -614,13 +614,6 @@ gecko-do-configure:
 pre-install: gecko-moz-pis-pre-install
 post-install-script: gecko-create-plist
 
-gecko-create-plist: port-post-install
-
-.if !target(port-post-install)
-port-post-install:
-		@${DO_NADA}
-.endif
-
 gecko-create-plist:
 # Create the plist
 	${RM} -f ${PLISTF}
