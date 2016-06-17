@@ -40,4 +40,8 @@ OPTIONS_SUB=	yes
 
 PLIST_SUB=	VERSION="4.6"
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/scripts/xflock4
+
 .include <bsd.port.mk>
