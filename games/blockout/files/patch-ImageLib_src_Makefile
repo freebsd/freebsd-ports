@@ -1,6 +1,6 @@
---- ImageLib/src/Makefile.orig	2014-02-09 13:14:33.000000000 +0700
-+++ ImageLib/src/Makefile	2014-02-09 13:15:28.000000000 +0700
-@@ -32,8 +32,8 @@
+--- ImageLib/src/Makefile.orig	2013-12-11 19:03:43.000000000 +0400
++++ ImageLib/src/Makefile	2016-05-23 20:38:27.381210000 +0300
+@@ -32,11 +32,11 @@
  
  #---------------------------------------------------------------------
  
@@ -9,5 +9,10 @@
 +#CXX	= g++
 +#CC	= gcc
  
- CXXFLAGS    = -O2 -Dlinux -c -I.
- CFLAGS      = -O2 -Dlinux -c -I.
+-CXXFLAGS    = -O2 -Dlinux -c -I.
+-CFLAGS      = -O2 -Dlinux -c -I.
++CXXFLAGS    += -Dlinux -c -I.
++CFLAGS      += -Dlinux -c -I.
+ 
+ 
+ #--------------------------------------------------------------------
