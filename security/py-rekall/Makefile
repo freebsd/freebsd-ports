@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rekall
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,6 @@ post-extract:
 	@${CHMOD} -R a+rX ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} 's,ipython==4.0.0,ipython,' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} 's|ipython >= 4.1.2, < 5.0|ipython|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
