@@ -446,18 +446,15 @@ RUBY_RD_HTML_FILES=	${RUBY_RD_FILES:S/.rb$//:S/.rd././:S/.rd$//:S/$/.html/}
 
 PLIST_SUB+=		RUBY_RD_HTML_FILES=""
 
-pre-install:	ruby-rd-build
-
-ruby-rd-build:
 .if !empty(RUBY_RD_FILES)
+_USES_build+=	290:ruby-rd-build
+ruby-rd-build:
 	@${ECHO_MSG} "===>  Generating HTML documents from RD documents"
 	@cd ${WRKSRC}; for rd in ${RUBY_RD_FILES}; do \
 		html=$$(echo $$rd | ${SED} 's/\.rb$$//;s/\.rd\././;s/\.rd$$//').html; \
 		${ECHO_MSG} "${RUBY_RD2} $$rd > $$html"; \
 		${RUBY_RD2} $$rd > $$html; \
 	done
-.else
-	@${DO_NADA}
 .endif
 
 .else

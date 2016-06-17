@@ -487,6 +487,7 @@ PLIST_SUB+=	AP_MOD_EN="${AP_MOD_EN}"
 
 .if defined(AP_FAST_BUILD)
 .if !target(ap-gen-plist)
+_USES_build+=	490:ap-gen-plist
 ap-gen-plist:
 .if defined(AP_GENPLIST)
 .	if !exists(${PLIST})
@@ -496,13 +497,11 @@ ap-gen-plist:
 	@${ECHO} "@postunexec ${SED} -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
 	@${ECHO} "@postunexec echo \"Don't forget to remove all ${MODULENAME}-related directives in your httpd.conf\"">> ${PLIST}
 .	endif
-.else
-	@${DO_NADA}
 .endif
 .endif
 
 .if !target(do-build)
-do-build: ap-gen-plist
+do-build:
 	(cd ${WRKSRC} && ${APXS} -c ${AP_EXTRAS} -o ${MODULENAME}.la ${SRC_FILE})
 .endif
 
