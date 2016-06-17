@@ -825,6 +825,7 @@
     SUBDIR += py-halite
     SUBDIR += py-honcho
     SUBDIR += py-iowait
+    SUBDIR += py-logbook
     SUBDIR += py-nagiosplugin
     SUBDIR += py-pkginfo
     SUBDIR += py-ploy
