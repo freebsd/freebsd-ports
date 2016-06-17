@@ -1,0 +1,17 @@
+--- doc/Makefile.in.orig	2008-03-11 18:54:15 UTC
++++ doc/Makefile.in
+@@ -602,10 +602,10 @@ uninstall-am: uninstall-dvi-am uninstall
+ 	uninstall-pdf-am uninstall-ps-am
+ 
+ 
+-all-local: html
+-install-data-local: install-html
+-installdirs-local: installdirs-html
+-uninstall-local: uninstall-html
++all-local: # html
++install-data-local: # install-html
++installdirs-local: # installdirs-html
++uninstall-local: # uninstall-html
+ 
+ html: html-$(HTMLSTYLE)
+ install-html: install-html-$(HTMLSTYLE)

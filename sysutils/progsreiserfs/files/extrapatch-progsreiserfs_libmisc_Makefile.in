@@ -1,0 +1,37 @@
+--- progsreiserfs/libmisc/Makefile.in.orig	2002-12-12 12:38:22 UTC
++++ progsreiserfs/libmisc/Makefile.in
+@@ -110,7 +110,7 @@ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+ noinst_LTLIBRARIES = libmisc.la
+-libmisc_la_SOURCES = tools.c getopt.c getopt1.c
++libmisc_la_SOURCES = tools.c getopt.c
+ 
+ INCLUDES = -I$(top_srcdir)/include @INTLINCS@
+ subdir = progsreiserfs/libmisc
+@@ -121,7 +121,7 @@ LTLIBRARIES = $(noinst_LTLIBRARIES)
+ 
+ libmisc_la_LDFLAGS =
+ libmisc_la_LIBADD =
+-am_libmisc_la_OBJECTS = tools.lo getopt.lo getopt1.lo
++am_libmisc_la_OBJECTS = tools.lo getopt.lo
+ libmisc_la_OBJECTS = $(am_libmisc_la_OBJECTS)
+ 
+ DEFS = @DEFS@
+@@ -130,7 +130,7 @@ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+-@AMDEP_TRUE@DEP_FILES = $(DEPDIR)/getopt.Plo $(DEPDIR)/getopt1.Plo \
++@AMDEP_TRUE@DEP_FILES = $(DEPDIR)/getopt.Plo \
+ @AMDEP_TRUE@	$(DEPDIR)/tools.Plo
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -177,7 +177,6 @@ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/getopt.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/getopt1.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/tools.Plo@am__quote@
+ 
+ distclean-depend:

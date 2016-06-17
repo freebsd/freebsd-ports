@@ -14,7 +14,7 @@ COMMENT=	The networking library used in UNIX Network Programming Volume 1 2e
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-pre-patch:
+post-extract:
 	@${CP} ${WRKSRC}/lib/wrapsock.c ${WRKSRC}/lib/wrapsock_r.c
 
 post-configure:

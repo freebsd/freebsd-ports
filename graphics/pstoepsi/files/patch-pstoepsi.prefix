@@ -1,0 +1,16 @@
+--- pstoepsi.prefix.orig	2016-06-17 22:43:43 UTC
++++ pstoepsi.prefix
+@@ -33,10 +33,10 @@ USAGE="Usage: $0 [ -gs | -news ] [ -stri
+ <file>.ps <file>.epsi"
+ 
+ ########################## Edit these variables #####################
+-GS='/usr/local/bin/X11/gs'
++GS='%%PREFIX%%/bin/gs'
+ PSTOPPM='/usr/local/libdata/X11/gs/pstoppm.ps'
+-PBMTOEPSI='./pbmtoepsi'
+-RASTTOPNM='/mm/bin/rasttopnm'
++PBMTOEPSI='%%PREFIX%%/bin/pbmtoepsi'
++RASTTOPNM='%%PREFIX%%/bin/rasttopnm'
+ INTERP='gs'
+ STRIP='false'
+ HIRES='false'

@@ -99,8 +99,8 @@ AUTOSIEVE_BROKEN=	Not buildable with autosieve patch
 
 DRAC_EXTRA_PATCHES=	${WRKSRC}/contrib/drac_auth.patch \
 			${FILESDIR}/extra-patch-configure.in \
-			${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4 \
-			${FILESDIR}/extra-patch-cmulocal::sasl2.m4
+			${FILESDIR}/extra-patch-cmulocal_ucdsnmp.m4 \
+			${FILESDIR}/extra-patch-cmulocal_sasl2.m4
 DRAC_USE=	AUTOTOOLS=autoconf,autoheader
 
 MANDIRS=	${CYRUS_PREFIX}/man

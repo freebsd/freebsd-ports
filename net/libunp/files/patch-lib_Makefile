@@ -1,5 +1,5 @@
---- lib/Makefile.orig	Fri Apr 11 17:38:27 1997
-+++ lib/Makefile	Thu Sep 30 11:34:21 1999
+--- lib/Makefile.orig	1997-04-11 21:38:27 UTC
++++ lib/Makefile
 @@ -1,8 +1,16 @@
  include ../Make.defines
  
@@ -11,10 +11,10 @@
 +libunp.a:	${LIB_OBJS}
  		ar rv ${LIBUNP_NAME} $?
  		${RANLIB} ${LIBUNP_NAME}
-+
+ 
 +libunp_r.a:	${LIB_THREADSAFE_OBJS}
 +		ar rv ${LIBUNP_THREADSAFE_NAME} $?
 +		${RANLIB} ${LIBUNP_THREADSAFE_NAME}
- 
++
  clean:
  		rm -f ${PROGS} ${CLEANFILES}

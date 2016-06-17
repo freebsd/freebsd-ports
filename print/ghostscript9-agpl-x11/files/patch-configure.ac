@@ -1,6 +1,6 @@
---- configure.ac.orig	2015-03-30 17:21:24.000000000 +0900
-+++ configure.ac	2015-08-22 03:37:13.515866000 +0900
-@@ -892,35 +892,6 @@
+--- configure.ac.orig	2015-03-30 08:21:24 UTC
++++ configure.ac
+@@ -892,35 +892,6 @@ AC_SUBST(FTSRCDIR)
  AC_SUBST(FT_CFLAGS)
  AC_SUBST(FT_LIBS)
    
@@ -36,7 +36,7 @@
  AC_SUBST(SHARE_LIBJPEG)
  AC_SUBST(LIBJPEGDIR)
  dnl check for the internal jpeg memory header
-@@ -1607,7 +1578,7 @@
+@@ -1607,7 +1578,7 @@ X_CFLAGS=""
  X_DEVS=""
  X_LIBS=""
  
@@ -45,7 +45,7 @@
          if test "$x_libraries" = "/usr/lib"; then
                  echo "Ignoring X library directory \"$x_libraries\" requested by configure."
                  x_libraries="NONE"
-@@ -2074,7 +2045,10 @@
+@@ -2074,7 +2045,10 @@ AC_ARG_ENABLE([dynamic], AC_HELP_STRING(
                          DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
                          ;;
                          *BSD)
@@ -57,7 +57,7 @@
                          DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
                          X11_DEVS=""
                          OPT_CFLAGS="$DYNAMIC_CFLAGS $OPT_CFLAGS"
-@@ -2133,11 +2107,11 @@
+@@ -2133,11 +2107,11 @@ if test "x$fontpath" = "x"; then
          fontpath="${fontpath}:$datadir/fonts/default/TrueType"
  
          # These font directories are used by IRIX...

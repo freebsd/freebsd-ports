@@ -1,6 +1,6 @@
---- src/omonad.c.orig
+--- src/omonad.c.orig	2001-01-31 00:18:40 UTC
 +++ src/omonad.c
-@@ -526,7 +526,7 @@
+@@ -526,7 +526,7 @@ typedef int socklen_t;
  
  static int maxfd = -1;
  

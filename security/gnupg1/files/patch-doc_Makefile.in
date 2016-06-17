@@ -1,0 +1,40 @@
+--- doc/Makefile.in.orig	2015-12-20 07:53:15 UTC
++++ doc/Makefile.in
+@@ -77,7 +77,7 @@ am__make_running_with_option = \
+   test $$has_opt = yes
+ am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+ am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/doc/gnupg1
+ pkgincludedir = $(includedir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkglibexecdir = $(libexecdir)/@PACKAGE@
+@@ -422,7 +422,11 @@ gnupg1_TEXINFOS = gnupg1.texi
+ 
+ # Need this to avoid building of dvis with automake 1.4
+ DVIS = 
++ifdef NOPORTDOCS 
++pkgdata_DATA =
++else
+ pkgdata_DATA = FAQ
++endif
+ 
+ # we can't add gpg.texi gpgv.texi here because automake does not like them to
+ # be built files.
+@@ -670,6 +674,8 @@ uninstall-man1:
+ 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
+ 	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
+ install-pkgdataDATA: $(pkgdata_DATA)
++ifdef NOPORTDOCS
++else
+ 	@$(NORMAL_INSTALL)
+ 	@list='$(pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
+ 	if test -n "$$list"; then \
+@@ -684,6 +690,7 @@ install-pkgdataDATA: $(pkgdata_DATA)
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pkgdatadir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pkgdatadir)" || exit $$?; \
+ 	done
++endif
+ 
+ uninstall-pkgdataDATA:
+ 	@$(NORMAL_UNINSTALL)

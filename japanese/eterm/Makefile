@@ -9,9 +9,9 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports Japanese
 
 EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure \
-		${.CURDIR}/files/extra-patch-src:command.c \
-		${.CURDIR}/files/extra-patch-src:defaultfont.h \
-		${.CURDIR}/files/extra-patch-src:feature.h
+		${.CURDIR}/files/extra-patch-src_command.c \
+		${.CURDIR}/files/extra-patch-src_defaultfont.h \
+		${.CURDIR}/files/extra-patch-src_feature.h
 
 CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
