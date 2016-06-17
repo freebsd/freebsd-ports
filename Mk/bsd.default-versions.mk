@@ -75,7 +75,7 @@ WARNING+=	"Using WITH_OPENSSL_PORT in make.conf is deprecated, replace it with D
 .    endif
 .  elif defined(WITH_OPENSSL_BASE)
 SSL_DEFAULT=base
-WARNING+=	"USing WITH_OPENSSL_BASE in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=base in your make.conf"
+WARNING+=	"Using WITH_OPENSSL_BASE in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=base in your make.conf"
 .  elif	!defined(WITH_OPENSSL_BASE) && \
 	!defined(WITH_OPENSSL_PORT) && \
 	!defined(SSL_DEFAULT) && \
