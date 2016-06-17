@@ -439,6 +439,7 @@
     SUBDIR += installwatch
     SUBDIR += intel-nvmupdate
     SUBDIR += intel-pcm
+    SUBDIR += intel-qcu
     SUBDIR += iocage
     SUBDIR += iocage-devel
     SUBDIR += iogen
