@@ -1,6 +1,6 @@
---- docs/Makefile.in.orig	2008-06-02 14:05:50.000000000 +0200
-+++ docs/Makefile.in	2008-06-02 14:05:58.000000000 +0200
-@@ -681,7 +681,7 @@
+--- docs/Makefile.in.orig	2012-05-23 13:45:15 UTC
++++ docs/Makefile.in
+@@ -803,7 +803,7 @@ uninstall-man: uninstall-man1 uninstall-
  @HAVE_MAN2HTML_TRUE@	rm -f $(HTMLMANS)
  
  @HAVE_MAN2HTML_TRUE@%.html: %
