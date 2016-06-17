@@ -74,6 +74,7 @@
     SUBDIR += clambc
     SUBDIR += clamcour
     SUBDIR += clamd-stream-client
+    SUBDIR += clamfs
     SUBDIR += clamsmtp
     SUBDIR += clamtk
     SUBDIR += clusterssh
