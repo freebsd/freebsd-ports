@@ -8,6 +8,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide an API for creating drupal web services
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,module
 MODULE_DIRS=	auth/services_keyauth auth servers/xmlrpc_server servers \
 		services/comment_service services/file_service \

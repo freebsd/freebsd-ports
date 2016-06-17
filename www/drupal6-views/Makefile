@@ -9,6 +9,9 @@ CATEGORIES=	www
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Controls how content lists are generated
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,module
 MODULE_DIRS=	css \
 		docs \

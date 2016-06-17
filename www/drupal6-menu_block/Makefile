@@ -8,6 +8,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to provide configurable menu tree blocks
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,module
 MODULE_FILES=	menu-block-wrapper.tpl.php menu_block.admin.inc menu_block.book.inc menu_block.info \
 		menu_block.module menu_block.sort.inc menu-block-admin.css menu-block.js menu_block.api.php \

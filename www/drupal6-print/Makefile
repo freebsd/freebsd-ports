@@ -10,6 +10,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Drupal 6 module that add printer-friendly pages
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 USES=		drupal:6,module
 MODULE_DIRS=	icons translations
 MODULE_FILES=	icons/mail_icon.gif icons/pdf_icon.gif icons/print_icon.gif \

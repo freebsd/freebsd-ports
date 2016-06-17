@@ -8,6 +8,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to provide fine-grained control of page titles
 
+DEPRECATED=	www/drupal6 upstream is EOL and port expired 2016-04-24
+EXPIRATION_DATE=	2016-04-24
+
 RUN_DEPENDS=	drupal6-token>=0:www/drupal6-token
 
 USES=		drupal:6,module
