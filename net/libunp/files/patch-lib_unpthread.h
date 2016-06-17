@@ -1,5 +1,5 @@
---- lib/unpthread.h.orig	Thu Sep 30 11:13:20 1999
-+++ lib/unpthread.h	Thu Sep 30 11:13:41 1999
+--- lib/unpthread.h.orig	1997-06-25 19:16:58 UTC
++++ lib/unpthread.h
 @@ -4,7 +4,7 @@
  #ifndef	__unp_pthread_h
  #define	__unp_pthread_h

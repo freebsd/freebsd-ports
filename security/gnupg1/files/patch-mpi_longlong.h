@@ -1,4 +1,4 @@
---- mpi/longlong.h.orig	2014-06-30 16:46:23 UTC
+--- mpi/longlong.h.orig	2015-12-19 14:08:22 UTC
 +++ mpi/longlong.h
 @@ -184,8 +184,8 @@ extern UDItype __udiv_qrnnd ();
  #define add_ssaaaa(sh, sl, ah, al, bh, bl) \

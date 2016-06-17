@@ -1,6 +1,6 @@
---- intro/Makefile.orig	Tue Sep 28 11:39:20 1999
-+++ intro/Makefile	Tue Sep 28 11:39:35 1999
-@@ -2,7 +2,6 @@
+--- intro/Makefile.orig	1997-05-08 22:37:08 UTC
++++ intro/Makefile
+@@ -2,7 +2,6 @@ include ../Make.defines
  
  PROGS =	daytimetcpcli daytimetcpcli1 daytimetcpcli2 daytimetcpcli3 \
  		daytimetcpsrv daytimetcpsrv1 daytimetcpsrv2 daytimetcpsrv3 \

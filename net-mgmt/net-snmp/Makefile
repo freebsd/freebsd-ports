@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=--with-dummy-values
 .endif
 
 .if ! ${PORT_OPTIONS:MTKMIB}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local_Makefile.in
 PLIST_SUB+=	WITH_TKMIB="@comment "
 .else
 RUN_DEPENDS+=	p5-Tk>=0:x11-toolkits/p5-Tk

@@ -1,0 +1,57 @@
+--- base/configure.ac.orig	2009-11-24 08:36:27 UTC
++++ base/configure.ac
+@@ -402,7 +402,7 @@ if test -f libpng/pngread.c; then
+ 	PNGDEVS="$PNGDEVS_ALL"
+ else
+ 	AC_MSG_RESULT([no])
+-	AC_CHECK_LIB(png, png_check_sig, [
++	AC_CHECK_LIB(png, png_sig_cmp, [
+ 	  AC_CHECK_HEADERS(png.h, [
+ 		SHARE_LIBPNG=1
+ 		PNGDEVS="$PNGDEVS_ALL"
+@@ -434,7 +434,7 @@ case "x$with_system_libtiff" in
+ 	AC_CHECK_LIB(tiff, TIFFOpen,
+ 		     [AC_CHECK_HEADERS(tiff.h, [HAVE_SYSTEM_LIBTIFF=1;SHARE_LIBTIFF=1])],
+ 		     [], [-ljpeg])
+-	if test -z $LOCAL_LIBTIFF_VERSION && test "x$HAVE_SYSTEM_LIBTIFF" == x; then
++	if test -z $LOCAL_LIBTIFF_VERSION && test "x$HAVE_SYSTEM_LIBTIFF" = x; then
+ 	    AC_MSG_NOTICE([Could not find a copy of libtiff on your system.
+ Disabling tiff output devices.])
+ 	else
+@@ -758,7 +758,7 @@ X_CFLAGS=""
+ X_DEVS=""
+ X_LIBS=""
+ 
+-if test x$no_x != xyes; then
++if test x$with_x != xno; then
+ 	if test "$x_libraries" = "/usr/lib"; then
+ 		echo "Ignoring X library directory \"$x_libraries\" requested by configure."
+ 		x_libraries="NONE"
+@@ -1063,7 +1063,11 @@ AC_ARG_ENABLE([dynamic], AC_HELP_STRING(
+ 		;;
+ 		*BSD)
+ 		DYNAMIC_CFLAGS="-fPIC"
+-		DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
++		if test "x$X_DEVS" != x; then
++			INSTALL_SHARED="install-shared"
++		else
++			DYNAMIC_DEVS=""
++		fi
+ 		DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
+ 		DYNAMIC_LDFLAGS="-fPIC -shared"
+ 		DYNAMIC_LIBS=""
+@@ -1119,11 +1123,11 @@ if test "x$fontpath" = "x"; then
+ 	fontpath="${fontpath}:$datadir/fonts/default/TrueType"
+ 
+ 	# These font directories are used by IRIX...
+-	fontpath="${fontpath}:/usr/lib/DPS/outline/base"
++	# fontpath="${fontpath}:/usr/lib/DPS/outline/base"
+ 
+ 	# These font directories are used by Solaris...
+-	fontpath="${fontpath}:/usr/openwin/lib/X11/fonts/Type1"
+-	fontpath="${fontpath}:/usr/openwin/lib/X11/fonts/TrueType"
++	# fontpath="${fontpath}:/usr/openwin/lib/X11/fonts/Type1"
++	# fontpath="${fontpath}:/usr/openwin/lib/X11/fonts/TrueType"
+ 
+ 	# This font directory is used by CUPS...
+ 	if test "x$CUPSCONFIG" != x; then

@@ -21,7 +21,7 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-pre-patch:
+post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/pstoepsi ${WRKSRC}/pstoepsi.prefix
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/README.this-site ${WRKSRC}
 

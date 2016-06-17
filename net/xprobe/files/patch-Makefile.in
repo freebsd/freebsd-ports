@@ -1,6 +1,6 @@
---- Makefile.in~
+--- Makefile.in.orig	2005-07-27 08:38:17 UTC
 +++ Makefile.in
-@@ -43,8 +40,8 @@ SIG=md5sum -b
+@@ -43,8 +43,8 @@ SIG=md5sum -b
  
  
  all: 
@@ -11,7 +11,7 @@
  
  
  clean:
-@@ -55,11 +52,11 @@ distclean: clean
+@@ -55,11 +55,11 @@ distclean: clean
  	cd libs-external/USI++/src; ${MAKE} distclean
  	cd src; ${MAKE} distclean
  install: src/xprobe2
