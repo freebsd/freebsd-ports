@@ -1,6 +1,6 @@
---- Run.orig	Sun Dec 19 01:34:20 2004
-+++ Run	Sun Dec 19 01:39:54 2004
-@@ -88,11 +88,11 @@
+--- Run.orig	1999-07-28 22:04:47 UTC
++++ Run
+@@ -88,11 +88,11 @@ else
  fi
  
  # check that the required files are in the proper places
@@ -17,7 +17,7 @@
  
  
  # establish full paths to directories
-@@ -114,7 +114,7 @@
+@@ -114,7 +114,7 @@ cd $SCRPDIR
  SCRPDIR=`pwd`
  cd $_WD
  
@@ -26,7 +26,7 @@
  cd $TMPDIR
  TMPDIR=`pwd`
  cd $_WD
-@@ -367,10 +367,11 @@
+@@ -367,10 +367,11 @@ do				# line argument processing
  	C)  
  		logmsg="C Compiler Throughput"
  		prog="looper ${looper-60} ${CC} cctest.c"
@@ -39,7 +39,7 @@
  		;;
  
  	arithoh)
-@@ -385,8 +386,8 @@
+@@ -385,8 +386,8 @@ do				# line argument processing
  
  	dc)  
  		logmsg="Dc: sqrt(2) to 99 decimal places"
@@ -50,7 +50,7 @@
  		stdout=/dev/null
  		cleanopt="-m $TMPTIMES"
  		;;
-@@ -508,7 +509,7 @@
+@@ -508,7 +509,7 @@ do				# line argument processing
      ########### some specific cleanup routines ##############
      case $bench in
        C)

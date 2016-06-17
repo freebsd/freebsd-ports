@@ -1,6 +1,6 @@
---- Makefile.orig	2014-02-20 12:06:18.000000000 +0100
-+++ Makefile	2014-02-20 12:08:16.000000000 +0100
-@@ -5,14 +5,14 @@
+--- Makefile.orig	2000-09-13 22:17:47 UTC
++++ Makefile
+@@ -5,14 +5,14 @@ all:
  	cd src; make
  
  install: ohugs

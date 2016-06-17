@@ -1,0 +1,70 @@
+--- Resource/Init/cidfmap.orig	2015-03-30 08:21:24 UTC
++++ Resource/Init/cidfmap
+@@ -29,6 +29,67 @@
+ %   /ShinGo-Bold   /HeiseiKakuGo-W5 ;
+ %   /Ryumin-Medium << /FileType /TrueType /Path (H:/AuxFiles/Fonts/BATANG.TTC) /SubfontID 3 /CSI [(Japan1) 2] >> ;
+ %   /Ryumin-Medium << /FileType /TrueType /Path (windir) getenv not {(c:/windows)}if (/Fonts/BATANG.TTC)concatstrings /SubfontID 3 /CSI [(Japan1) 2] >> ;
++/Ryumin-Light << /FileType /TrueType /Path (Ryumin-Light) /SubfontID 0 /CSI [(Japan1) 6] >> ;
++/GothicBBB-Medium << /FileType /TrueType /Path (GothicBBB-Medium) /SubfontID 0 /CSI [(Japan1) 6] >> ;
++
++/Ryumin-Medium		/Ryumin-Light ;
++/Ryumin-Regular		/Ryumin-Light ;
++/RyuminPro-Light	/Ryumin-Light ;
++
++/GothicBBBPro-Medium	/GothicBBB-Medium ;
++
++/KozGoPro-Bold		/GothicBBB-Medium ;
++/KozGoPro-Heavy		/GothicBBB-Medium ;
++/KozGoPro-Medium	/GothicBBB-Medium ;
++/KozGoPro-Regular	/GothicBBB-Medium ;
++
++/KozMinPro-Bold		/Ryumin-Light ;
++/KozMinPro-Light	/Ryumin-Light ;
++/KozMinPro-Medium	/Ryumin-Light ;
++/KozMinPro-Regular	/Ryumin-Light ;
++
++/HiraKakuPro-W3		/GothicBBB-Medium ;
++/HiraKakuPro-W6		/GothicBBB-Medium ;
++/HiraKakuStd-W8		/GothicBBB-Medium ;
++
++/HiraMaruPro-W4		/GothicBBB-Medium ;
++
++/HiraMinPro-W3		/Ryumin-Light ;
++
++/HeiseiMin-W3		/Ryumin-Light ;
++/HeiseiKakuGo-W5	/GothicBBB-Medium ;
++
++/FutoMinA101-Bold	/Ryumin-Light ;
++/FutoMinA101Pro-Bold	/Ryumin-Light ;
++/FutoGoB101-Bold	/GothicBBB-Medium ;
++/FutoGoB101Pro-Bold	/GothicBBB-Medium ;
++
++/Jun101-Light		/Ryumin-Light ;
++/Jun101Pro-Light	/Ryumin-Light ;
++
++/MidashiGo-MB31		/GothicBBB-Medium ;
++/MidashiGoPro-MB31	/GothicBBB-Medium ;
++
++/MidashiMinPro-MA31	/Ryumin-Light ;
++
++/MS-Mincho		/Ryumin-Light ;
++/MS-PMincho		/Ryumin-Light ;
++/MS-Gothic		/GothicBBB-Medium ;
++/MS-PGothic		/GothicBBB-Medium ;
++
++%/Munhwa-Regular	/Munhwa-Regular ;
++%/MunhwaGothic-Regular	/MunhwaGothic-Regular ;
++%/Munhwa-Bold		/Munhwa-Bold ;
++%/MunhwaGothic-Bold	/MunhwaGothic-Bold ;
++
++/HYGoThic-Medium	/MunhwaGothic-Regular ;
++/HYSMyeongJo-Medium	/Munhwa-Regular ;
++/HYRGoThic-Medium	/MunhwaGothic-Bold ;
++
++/STHeiti-Regular << /FileType /TrueType /Path (STHeiti-Regular) /SubfontID 0 /CSI [(CNS1) 5] >> ;
++/STSong-Light << /FileType /TrueType /Path (STSong-Light) /SubfontID 0 /CSI [(GB1) 5] >> ;
++/MSung-Light << /FileType /TrueType /Path (MSung-Light) /SubfontID 0 /CSI [(CNS1) 5] >> ;
++/MHei-Medium << /FileType /TrueType /Path (MHei-Medium) /SubfontID 0 /CSI [(GB1) 5] >> ;
+ %
+ %   NOTE: getenv returns a boolean to indicate success of or failure, as well as the value on success. In the example, it uses this
+ %         to include a default value should getenv fail.

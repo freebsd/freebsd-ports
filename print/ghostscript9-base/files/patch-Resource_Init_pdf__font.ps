@@ -1,0 +1,15 @@
+--- Resource/Init/pdf_font.ps.orig	2012-08-08 08:01:36 UTC
++++ Resource/Init/pdf_font.ps
+@@ -1751,10 +1751,12 @@ currentdict /CMap_read_dict undef
+ 
+ /buildCIDType0 {	% <CIDFontType0-font-resource> buildCIDType0 <font>
+   dup /BaseFont get findCIDFont exch pop
++  addCIDmetrics /CIDFont defineresource
+ } bdef
+ 
+ /buildCIDType2 {	% <CIDFontType2-font-resource> buildCIDType2 <font>
+   dup /BaseFont get findCIDFont exch pop
++  addCIDmetrics /CIDFont defineresource
+ } bdef
+ 
+ /processCIDToGIDMap { % <fontres> <cidfont> processCIDToGIDMap <fontres> <cidfont>

@@ -109,7 +109,7 @@ AUTOSIEVE_PATCH_SITES=	LOCAL/mm:autosieve
 AUTOSIEVE_PATCHFILES=	${PORTNAME}-2.4.12-autosieve-${AUTOSIEVE_VERSION}.patch:-p1:autosieve
 AUTOSIEVE_EXTRA_PATCHES=${FILESDIR}/extra-patch-imap__lmtp_sieve.c
 
-DRAC_EXTRA_PATCHES=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
+DRAC_EXTRA_PATCHES=	${FILESDIR}/extra-patch-cmulocal_sasl2.m4
 DRAC_USE=	AUTOTOOLS=autoconf,autoheader
 
 MANDIRS=	${CYRUS_PREFIX}/man

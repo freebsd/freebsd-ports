@@ -1,6 +1,6 @@
---- Make.defines.in.orig	Thu Jun 12 16:20:21 1997
-+++ Make.defines.in	Thu Sep 30 10:13:57 1999
-@@ -17,6 +17,7 @@
+--- Make.defines.in.orig	1997-06-12 20:20:21 UTC
++++ Make.defines.in
+@@ -17,6 +17,7 @@ RANLIB = @RANLIB@
  # Following is the main library, built from all the object files
  # in the lib/ and libfree/ directories.
  LIBUNP_NAME = @LIBUNP_NAME@
@@ -8,7 +8,7 @@
  
  # Following is the XTI library, built from all the object files
  # in the libxti/ directory.
-@@ -24,6 +25,7 @@
+@@ -24,6 +25,7 @@ LIBUNPXTI_NAME = @LIBUNPXTI_NAME@
  
  # Following are all the object files to create in the lib/ directory.
  LIB_OBJS = @LIB_OBJS@

@@ -1,6 +1,6 @@
---- lib/wrappthread.c.orig	Thu Sep 30 11:06:22 1999
-+++ lib/wrappthread.c	Thu Sep 30 11:06:34 1999
-@@ -40,17 +40,6 @@
+--- lib/wrappthread.c.orig	1997-06-27 22:04:01 UTC
++++ lib/wrappthread.c
+@@ -40,17 +40,6 @@ Pthread_detach(pthread_t tid)
  }
  
  void

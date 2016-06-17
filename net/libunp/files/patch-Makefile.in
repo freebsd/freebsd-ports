@@ -1,0 +1,18 @@
+--- Makefile.in.orig	1997-04-11 22:42:26 UTC
++++ Makefile.in
+@@ -1,8 +1,13 @@
+ include ./Make.defines
+ 
++SUBDIRS =	lib libfree libgai libroute
++
+ all:
+-	@echo "Nothing to make in this directory"
+-	@echo "Please read the README file"
++	PWD=`pwd`; \
++	for dir in $(SUBDIRS) ; \
++	do \
++		cd $$PWD/$$dir && $(MAKE) && cd .. ;\
++	done
+ 
+ clean:
+ 	rm -f $(CLEANFILES)

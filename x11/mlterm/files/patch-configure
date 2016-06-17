@@ -1,6 +1,6 @@
---- configure.orig	2014-05-25 14:42:27.000000000 +0900
-+++ configure	2014-06-16 19:51:51.000000000 +0900
-@@ -21375,7 +21375,7 @@
+--- configure.orig	2016-03-13 10:57:40 UTC
++++ configure
+@@ -21869,7 +21869,7 @@ if test "$utmp" = "yes" -a "$pty_helper"
  	if test "$has_utmp" ; then
  		INSTALL_OPT="-m 2755 -g utmp"
  	else
@@ -9,11 +9,11 @@
  	fi
  else
  	INSTALL_OPT="-m 755"
-@@ -21529,6 +21529,7 @@
+@@ -22095,6 +22095,7 @@ $as_echo "yes" >&6; }
  fi
  	fi
  	if test "$have_vte" = "yes" ; then
 +		MAKE_DIRS="gtk ${MAKE_DIRS}"
  		OUTPUT_FILES="gtk/Makefile ${OUTPUT_FILES}"
- 		# "tr ..." is hack for cygwin.
- 		# (removing \r which is output by win32 native pkg-config.)
+ 
+ 	fi

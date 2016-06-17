@@ -1,0 +1,28 @@
+--- Resource/Init/gs_ttf.ps.orig	2012-08-08 08:01:36 UTC
++++ Resource/Init/gs_ttf.ps
+@@ -1047,10 +1047,21 @@ mark
+   } ifelse
+                 % Stack: ... /FontInfo mark key1 value1 ...
+   post //null ne {
+-    /ItalicAngle first_post_string 4 gets32 65536.0 div
+-    /isFixedPitch first_post_string 12 getu32 0 ne
+-    /UnderlinePosition first_post_string 8 gets16 upem div
+-    /UnderlineThickness first_post_string 10 gets16 upem div
++%    /ItalicAngle first_post_string 4 gets32 65536.0 div
++%    /isFixedPitch first_post_string 12 getu32 0 ne
++%    /UnderlinePosition first_post_string 8 gets16 upem div
++%    /UnderlineThickness first_post_string 10 gets16 upem div
++    post type /arraytype eq {
++      % this post table is a big table. /post should be [(...) ...]
++      % data we actually need here should be first one in array.
++      /posttable post 1 get def
++    } {
++      /posttable post def
++    } ifelse
++    /ItalicAngle posttable 4 gets32 65536.0 div
++    /isFixedPitch posttable 12 getu32 0 ne
++    /UnderlinePosition posttable 8 gets16 upem div
++    /UnderlineThickness posttable 10 gets16 upem div
+   } if
+   counttomark 0 ne { .dicttomark } { pop pop } ifelse
+   /XUID [orgXUID 42 curxuid]

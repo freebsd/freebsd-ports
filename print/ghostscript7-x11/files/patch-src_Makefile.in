@@ -1,0 +1,166 @@
+--- src/Makefile.in.orig	2003-04-29 18:33:31 UTC
++++ src/Makefile.in
+@@ -50,8 +50,10 @@ PSD=$(PSGENDIR)/
+ # initialization files (gs_*.ps) and the fonts.
+ 
+ INSTALL = $(GLSRCDIR)/instcopy -c
+-INSTALL_PROGRAM = $(INSTALL) -m 755
+-INSTALL_DATA = $(INSTALL) -m 644
++INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
++INSTALL_SCRIPT = ${BSD_INSTALL_SCRIPT}
++INSTALL_DATA = ${BSD_INSTALL_DATA}
++INSTALL_SHARED = @INSTALL_SHARED@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+@@ -63,6 +65,8 @@ man1ext = 1
+ datadir = @datadir@
+ gsdir = $(datadir)/ghostscript
+ gsdatadir = $(gsdir)/$(GS_DOT_VERSION)
++gssharedir = @libdir@/ghostscript/$(GS_DOT_VERSION)
++gsincludedir = @includedir@/ghostscript/
+ 
+ docdir=$(gsdatadir)/doc
+ exdir=$(gsdatadir)/examples
+@@ -142,7 +146,7 @@ JVERSION=6
+ # some older JPEG streams that violate the standard. If the JPEG
+ # library built from local sources, the patch will be applied.
+ 
+-SHARE_JPEG=@SHARE_LIBJPEG@
++SHARE_JPEG=1
+ JPEG_NAME=jpeg
+ 
+ # Define the directory where the PNG library sources are stored,
+@@ -150,14 +154,14 @@ JPEG_NAME=jpeg
+ # You may need to change this if the libpng version changes.
+ # See libpng.mak for more information.
+ 
+-SHARE_LIBPNG=@SHARE_LIBPNG@
++SHARE_LIBPNG=1
+ PSRCDIR=@LIBPNGDIR@
+ LIBPNG_NAME=png
+ 
+ # Define the directory where the zlib sources are stored.
+ # See zlib.mak for more information.
+ 
+-SHARE_ZLIB=@SHARE_ZLIB@
++SHARE_ZLIB=1
+ ZSRCDIR=@ZLIBDIR@
+ #ZLIB_NAME=gz
+ ZLIB_NAME=z
+@@ -197,15 +201,15 @@ CC=@CC@
+ CCLD=$(CC)
+ 
+ # Define the general cc flags, warnings and such.
+-GCFLAGS=@GCFLAGS@
++GCFLAGS=@CPPFLAGS@ @GCFLAGS@ @CFLAGS@
+ 
+ # Define the added flags for standard, debugging, profiling 
+ # and shared object builds.
+ 
+-CFLAGS_STANDARD=@OPT_CFLAGS@
++CFLAGS_STANDARD?=@OPT_CFLAGS@
+ CFLAGS_DEBUG=-g -O
+ CFLAGS_PROFILE=-pg @OPT_CFLAGS@
+-CFLAGS_SO=-fPIC
++CFLAGS_SO=@DYNAMIC_CFLAGS@
+ 
+ # Define the other compilation flags.  Add at most one of the following:
+ #	-DBSD4_2 for 4.2bsd systems.
+@@ -218,7 +222,7 @@ CFLAGS_SO=-fPIC
+ # We don't include -ansi, because this gets in the way of the platform-
+ #   specific stuff that <math.h> typically needs; nevertheless, we expect
+ #   gcc to accept ANSI-style function prototypes and function definitions.
+-XCFLAGS=
++XCFLAGS=@DYNAMIC_FLAGS@
+ 
+ # defines from autoconf; note that we don't use these at present.
+ ACDEFS=@DEFS@
+@@ -232,9 +236,9 @@ CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(X
+ #	-R /usr/local/xxx/lib:/usr/local/lib
+ # giving the full path names of the shared library directories.
+ # XLDFLAGS can be set from the command line.
+-XLDFLAGS=
+ 
+-LDFLAGS=$(XLDFLAGS)
++LDFLAGS=@LDFLAGS@
++XLDFLAGS=$(LDFLAGS)
+ 
+ # Define any extra libraries to link into the executable.
+ # ISC Unix 2.2 wants -linet.
+@@ -243,7 +247,7 @@ LDFLAGS=$(XLDFLAGS)
+ # Solaris may need -lnsl -lsocket -lposix4.
+ # (Libraries required by individual drivers are handled automatically.)
+ 
+-EXTRALIBS=
++EXTRALIBS=@LIBS@ @DYNAMIC_LIBS@
+ 
+ # Define the standard libraries to search at the end of linking.
+ # Most platforms require -lpthread for the POSIX threads library;
+@@ -252,10 +256,7 @@ EXTRALIBS=
+ # All reasonable platforms require -lm, but Rhapsody and perhaps one or
+ # two others fold libm into libc and don't require any additional library.
+ 
+-#STDLIBS=-lpthread -lm
+-
+-# Since the default build is for nosync, don't include pthread lib
+-STDLIBS=-lm
++STDLIBS=@PTHREAD_LIBS@ -lm
+ 
+ # Define the include switch(es) for the X11 header files.
+ # This can be null if handled in some other way (e.g., the files are
+@@ -279,9 +280,10 @@ XINCLUDE=@X_CFLAGS@
+ # should be slotted into XLIBS below and X_PRE_LIBS which should go
+ # before -lX11. We do not handle these and should, but they are empty
+ # on most modern platforms.
+-XLIBDIRS=@X_LIBS@
++XLIBDIRS=@X_LDFLAGS@
+ XLIBDIR=
+-XLIBS=Xt Xext X11
++#XLIBS=Xt Xext X11
++XLIBS=@X_LIBS@
+ 
+ # Define whether this platform has floating point hardware:
+ #	FPU_TYPE=2 means floating point is faster than fixed point.
+@@ -301,15 +303,19 @@ USE_ASM=0
+ # primitives for this platform.
+ 
+ # If POSIX sync primitives are used, also change the STDLIBS to include
+-# the pthread library.
++# the pthread library. Otherwise use SYNC=nosync
+ #SYNC=posync
+-
+-# Default is No sync primitives since some platforms don't have it (HP-UX)
+-SYNC=nosync
++#SYNC=nosync
++SYNC=@SYNC@
+ 
+ # programs we use
+ RM=rm -f
+ 
++# ------ Dynamic loader options ------- #
++SOC_CFLAGS      =       @SOC_CFLAGS@
++SOC_LIBS        =       @SOC_LIBS@
++SOC_LOADER      =       @SOC_LOADER@
++
+ # ------ Devices and features ------ #
+ 
+ # Choose the language feature(s) to include.  See gs.mak for details.
+@@ -385,6 +391,9 @@ DEVICE_DEVS18=
+ DEVICE_DEVS19=
+ DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev
+ 
++# Shared library target to build.
++GS_SHARED_OBJS=@DYNAMIC_DEVS@
++
+ # ---------------------------- End of options --------------------------- #
+ 
+ # Define the name of the partial makefile that specifies options --
+@@ -407,6 +416,7 @@ CC_LEAF_PG=$(CC_)
+ # These are the specific warnings we have to turn off to compile those
+ # specific few files that need this.  We may turn off others in the future.
+ CC_NO_WARN=$(CC_)
++CC_SHARED=$(CC_) @DYNAMIC_LDFLAGS@
+ 
+ # ---------------- End of platform-specific section ---------------- #
+ 

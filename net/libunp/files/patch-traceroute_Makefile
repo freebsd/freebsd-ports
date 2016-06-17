@@ -1,5 +1,5 @@
---- traceroute/Makefile.orig	Tue Sep 28 11:41:09 1999
-+++ traceroute/Makefile	Tue Sep 28 11:41:17 1999
+--- traceroute/Makefile.orig	1997-04-13 19:51:29 UTC
++++ traceroute/Makefile
 @@ -1,6 +1,6 @@
  include ../Make.defines
  

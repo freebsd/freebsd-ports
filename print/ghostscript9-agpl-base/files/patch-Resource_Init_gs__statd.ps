@@ -1,0 +1,15 @@
+--- Resource/Init/gs_statd.ps.orig	2015-03-30 08:21:24 UTC
++++ Resource/Init/gs_statd.ps
+@@ -124,6 +124,12 @@ STRICT { (%END SIZES) .skipeof } if
+  /ANSI_D {1585 2448 //.setpagesize exec} bind def
+  /ANSI_E {2448 3168 //.setpagesize exec} bind def
+  /ANSI_F {2016 2880 //.setpagesize exec} bind def
++ /postcard {284 419 //.setpagesize exec} bind def
++ /dbl_postcard {419 568 //.setpagesize exec} bind def
++ /Executive {522 756 //.setpagesize exec} bind def
++ /jenv_you4 {298 666 //.setpagesize exec} bind def
++ /jenv_you2 {324 460 //.setpagesize exec} bind def
++ /jenv_kaku2 {682 942 //.setpagesize exec} bind def
+ %END SIZES
+ currentdict end
+ dup /.setpagesize .undef
