@@ -321,6 +321,7 @@ include/wine/windows/fci.h
 include/wine/windows/fdi.h
 include/wine/windows/fileapi.h
 include/wine/windows/fltdefs.h
+include/wine/windows/fontsub.h
 include/wine/windows/fusion.h
 include/wine/windows/fusion.idl
 include/wine/windows/gameux.h
@@ -1779,7 +1780,6 @@ lib/wine/fakedlls/xaudio2_3.dll
 lib/wine/fakedlls/xaudio2_4.dll
 lib/wine/fakedlls/xaudio2_5.dll
 lib/wine/fakedlls/xaudio2_6.dll
-lib/wine/fakedlls/xaudio2_8.dll
 lib/wine/fakedlls/xcopy.exe
 lib/wine/fakedlls/xinput1_1.dll
 lib/wine/fakedlls/xinput1_2.dll
@@ -1991,6 +1991,7 @@ lib/wine/libsti.def
 lib/wine/libstrmbase.a
 lib/wine/libstrmiids.a
 lib/wine/libsxs.def
+lib/wine/libt2embed.def
 lib/wine/libtapi32.def
 lib/wine/libunicows.def
 lib/wine/liburl.def
@@ -2390,7 +2391,6 @@ lib/wine/xaudio2_3.dll.so
 lib/wine/xaudio2_4.dll.so
 lib/wine/xaudio2_5.dll.so
 lib/wine/xaudio2_6.dll.so
-lib/wine/xaudio2_8.dll.so
 lib/wine/xcopy.exe.so
 lib/wine/xinput1_1.dll.so
 lib/wine/xinput1_2.dll.so
