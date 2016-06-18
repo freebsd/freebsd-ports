@@ -3,7 +3,7 @@
 PORTNAME=	node
 PORTVERSION=	6.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
@@ -19,7 +19,7 @@ OPTIONS_SUB=	yes
 BUNDLED_SSL_DESC=	Use node.js's bundled OpenSSL implementation
 BUNDLED_SSL_USE_OFF=	OPENSSL=yes
 
-USES=		compiler execinfo gmake python:2,build localbase
+USES=		compiler execinfo gmake python:2,build pkgconfig
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -28,14 +28,17 @@ CONFLICTS_INSTALL=	node4-* node-0.[02-9][0-9]* node-devel-0.[0-9]* node010-[0-9]
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--without-npm \
+		--with-intl=system-icu \
 		--shared-cares \
 		--shared-libuv \
 		--shared-zlib
+
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
-MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX} LDFLAGS.host="${LDFLAGS}" LDFLAGS.target="${LDFLAGS}"
+MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 
 LIB_DEPENDS+=	libcares.so:dns/c-ares\
+		libicui18n.so:devel/icu \
 		libuv.so:devel/libuv
 
 .include <bsd.port.options.mk>
@@ -90,6 +93,9 @@ post-patch:
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp \
 		${WRKSRC}/deps/v8/src/d8.gyp \
 		${WRKSRC}/node.gyp
+
+post-configure:
+	@cd ${WRKSRC}/out/tools/icu && ${REINPLACE_CMD} '/\/usr\/local\/include/d' *
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node

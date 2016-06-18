@@ -3,7 +3,7 @@
 PORTNAME=	node
 PORTVERSION=	5.11.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	5
@@ -23,7 +23,7 @@ OPTIONS_SUB=	yes
 BUNDLED_SSL_DESC=	Use node.js's bundled OpenSSL implementation
 BUNDLED_SSL_USE_OFF=	OPENSSL=yes
 
-USES=		compiler execinfo gmake python:2 localbase
+USES=		compiler execinfo gmake python:2 pkgconfig
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -31,14 +31,16 @@ CONFLICTS_INSTALL=	node-[0-9]* node-devel-[0-9]* node010-[0-9]* node012-[0-9]* i
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
+		--with-intl=system-icu \
 		--without-npm \
 		--shared-libuv \
 		--shared-zlib
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
-MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX} LDFLAGS.host="${LDFLAGS}" LDFLAGS.target="${LDFLAGS}"
+MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 
-LIB_DEPENDS+=	libuv.so:devel/libuv
+LIB_DEPENDS+=	libicui18n.so:devel/icu \
+		libuv.so:devel/libuv
 
 .include <bsd.port.options.mk>
 
