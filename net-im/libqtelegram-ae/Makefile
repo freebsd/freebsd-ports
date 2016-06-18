@@ -19,6 +19,11 @@ GH_PROJECT=	libqtelegram-aseman-edition
 
 USES=		qmake:outsource
 USE_QT5=	qmake_build buildtools_build core gui network multimedia
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "/OPENSSL_INCLUDE_PATH/d" \
+		${WRKSRC}/libqtelegram-ae.pri
 
 .include <bsd.port.mk>
