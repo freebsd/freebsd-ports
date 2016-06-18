@@ -350,6 +350,7 @@ lib/calibre/calibre/ebooks/metadata/lrx.py
 lib/calibre/calibre/ebooks/metadata/meta.py
 lib/calibre/calibre/ebooks/metadata/mobi.py
 lib/calibre/calibre/ebooks/metadata/odt.py
+lib/calibre/calibre/ebooks/metadata/opf.py
 lib/calibre/calibre/ebooks/metadata/opf2.py
 lib/calibre/calibre/ebooks/metadata/pdb.py
 lib/calibre/calibre/ebooks/metadata/pdf.py
@@ -381,6 +382,7 @@ lib/calibre/calibre/ebooks/metadata/tag_mapper.py
 lib/calibre/calibre/ebooks/metadata/toc.py
 lib/calibre/calibre/ebooks/metadata/topaz.py
 lib/calibre/calibre/ebooks/metadata/txt.py
+lib/calibre/calibre/ebooks/metadata/utils.py
 lib/calibre/calibre/ebooks/metadata/worker.py
 lib/calibre/calibre/ebooks/metadata/xisbn.py
 lib/calibre/calibre/ebooks/metadata/xmp.py
@@ -772,6 +774,7 @@ lib/calibre/calibre/gui2/device_drivers/mtp_folder_browser.py
 lib/calibre/calibre/gui2/dialogs/__init__.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
+lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.py
 lib/calibre/calibre/gui2/dialogs/authors_edit.py
 lib/calibre/calibre/gui2/dialogs/book_info.py
 lib/calibre/calibre/gui2/dialogs/catalog.py
@@ -1305,6 +1308,7 @@ lib/calibre/calibre/utils/ipc/simple_worker.py
 lib/calibre/calibre/utils/ipc/worker.py
 lib/calibre/calibre/utils/iphlpapi.py
 lib/calibre/calibre/utils/ipython.py
+lib/calibre/calibre/utils/iso8601.py
 lib/calibre/calibre/utils/linux_trash.py
 lib/calibre/calibre/utils/localization.py
 lib/calibre/calibre/utils/localunzip.py
@@ -1935,6 +1939,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/templates/inline_toc_styles.css
 %%DATADIR%%/templates/lrf.xsl
 %%DATADIR%%/templates/new_book.html
+%%DATADIR%%/templates/new_nav.html
 %%DATADIR%%/templates/rtf.xsl
 %%DATADIR%%/tracer.epub
 %%DATADIR%%/user-manual-translation-stats.json
