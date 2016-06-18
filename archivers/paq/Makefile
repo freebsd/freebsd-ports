@@ -66,7 +66,8 @@ PORTDATA=	${WDATA} ${DDATA} zpsfx
 
 .if ${PORT_OPTIONS:MOPENMP}
 OPENMP_CFLAGS+=	-fopenmp
-USE_GCC=		any
+USE_GCC=	any
+BROKEN=		does not build
 .endif
 
 post-extract:
