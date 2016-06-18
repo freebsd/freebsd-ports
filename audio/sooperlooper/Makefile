@@ -3,7 +3,7 @@
 
 PORTNAME=	sooperlooper
 PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://essej.net/sooperlooper/
 
@@ -38,14 +38,13 @@ OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENV_OFF=	ac_cv_header_alsa_asoundlib_h=no
-WXGTK_USE=		WX=2.8
+WXGTK_USE=		WX=3.0
 WXGTK_CONFIGURE_ON=	--with-wxconfig-path=${WX_CONFIG}
 WXGTK_CONFIGURE_OFF=	--without-gui
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWXGTK}
-WX_UNICODE=	yes
 DESKTOP_ENTRIES="SooperLooper" "" "${DATADIR}/sl_logo.xpm" "slgui" \
 		"AudioVideo;Audio;Player;GTK;" ""
 .endif
