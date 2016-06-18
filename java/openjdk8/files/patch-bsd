@@ -1067,20 +1067,20 @@
    ifneq (,$$($1_BIN))
      $$(error BIN has been replaced with OBJECT_DIR)
 --- ./hotspot/make/bsd/Makefile	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/Makefile	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/Makefile	Fri Jun 17 22:08:33 2016 -0700
 @@ -66,6 +66,10 @@
      FORCE_TIERED=1
    endif
  endif
 +# C1 is not ported on ppc64, so we cannot build a tiered VM:
-+ifeq ($(ARCH),ppc64)
++ifneq (,$(findstring $(ARCH), ppc ppc64))
 +  FORCE_TIERED=0
 +endif
  
  ifdef LP64
    ifeq ("$(filter $(LP64_ARCH),$(BUILDARCH))","")
 --- ./hotspot/make/bsd/makefiles/build_vm_def.sh	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Fri Jun 17 22:08:33 2016 -0700
 @@ -1,12 +1,28 @@
  #!/bin/sh
  
@@ -1117,7 +1117,7 @@
 +    }' | sort -u ;;
 +esac
 --- ./hotspot/make/bsd/makefiles/debug.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/debug.make	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/debug.make	Fri Jun 17 22:08:33 2016 -0700
 @@ -35,7 +35,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -1131,8 +1131,8 @@
  VERSION = debug
  SYSDEFS += -DASSERT
 --- ./hotspot/make/bsd/makefiles/defs.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/defs.make	Mon May 09 17:15:53 2016 -0400
-@@ -29,7 +29,10 @@
++++ ./hotspot/make/bsd/makefiles/defs.make	Fri Jun 17 22:08:33 2016 -0700
+@@ -29,7 +29,15 @@
  SLASH_JAVA ?= /java
  
  # Need PLATFORM (os-arch combo names) for jdk and hotspot, plus libarch name
@@ -1140,27 +1140,41 @@
 +# ARCH can be set explicitly in spec.gmk
 +ifndef ARCH
 +  ARCH := $(shell uname -m)
++  # Fold little endian PowerPC64 into big-endian (if ARCH is set in
++  # hotspot-spec.gmk, this will be done by the configure script).
++  ifeq ($(ARCH),ppc64le)
++    ARCH := ppc64
++  endif
 +endif
  PATH_SEP = :
  ifeq ($(LP64), 1)
    ARCH_DATA_MODEL ?= 64
-@@ -124,6 +127,15 @@
-   HS_ARCH          = ppc
+@@ -117,11 +125,19 @@
  endif
  
-+# PPC64
-+ifeq ($(ARCH), ppc64)
-+  ARCH_DATA_MODEL  = 64
-+  MAKE_ARGS        += LP64=1
-+  PLATFORM         = bsd-ppc64
-+  VM_PLATFORM      = bsd_ppc64
-+  HS_ARCH          = ppc
-+endif
-+
+ # PPC
+-ifeq ($(ARCH), ppc)
+-  ARCH_DATA_MODEL  = 32
+-  PLATFORM         = bsd-ppc
+-  VM_PLATFORM      = bsd_ppc
+-  HS_ARCH          = ppc
++# Notice: after 8046471 ARCH will be 'ppc' for top-level ppc64 builds but
++# 'ppc64' for HotSpot-only ppc64 builds. Need to detect both variants here!
++ifneq (,$(findstring $(ARCH), ppc ppc64))
++  ifeq ($(ARCH_DATA_MODEL), 64)
++    MAKE_ARGS        += LP64=1
++    PLATFORM         = bsd-ppc64
++    VM_PLATFORM      = bsd_ppc64
++  else
++    ARCH_DATA_MODEL  = 32
++    PLATFORM         = bsd-ppc
++    VM_PLATFORM      = bsd_ppc
++  endif
++  HS_ARCH = ppc
+ endif
+ 
  # On 32 bit bsd we build server and client, on 64 bit just server.
- ifeq ($(JVM_VARIANTS),)
-   ifeq ($(ARCH_DATA_MODEL), 32)
-@@ -321,6 +333,18 @@
+@@ -321,6 +337,18 @@
  ifeq ($(JVM_VARIANT_MINIMAL1),true)
    EXPORT_LIST += $(EXPORT_MINIMAL_DIR)/Xusage.txt
    EXPORT_LIST += $(EXPORT_MINIMAL_DIR)/libjvm.$(LIBRARY_SUFFIX)
@@ -1180,7 +1194,7 @@
  
  # Serviceability Binaries
 --- ./hotspot/make/bsd/makefiles/fastdebug.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/fastdebug.make	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/fastdebug.make	Fri Jun 17 22:08:33 2016 -0700
 @@ -56,7 +56,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -1194,7 +1208,7 @@
  VERSION = fastdebug
  SYSDEFS += -DASSERT -DCHECK_UNHANDLED_OOPS
 --- ./hotspot/make/bsd/makefiles/gcc.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/gcc.make	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/gcc.make	Fri Jun 17 22:08:33 2016 -0700
 @@ -168,6 +168,9 @@
    CFLAGS += -DDONT_USE_PRECOMPILED_HEADER
  endif
@@ -1321,7 +1335,7 @@
  endif
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/launcher.make	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/launcher.make	Fri Jun 17 22:08:33 2016 -0700
 @@ -0,0 +1,117 @@
 +#
 +# Copyright (c) 2005, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -1441,7 +1455,7 @@
 +	$(QUIETLY) chmod +x $@
 +
 --- ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Fri Jun 17 22:08:33 2016 -0700
 @@ -21,246 +21,254 @@
  # questions.
  #
@@ -1449,16 +1463,10 @@
 -# Only used for OSX/Darwin builds
  
  # Define public interface.
-+
-+SUNWprivate_1.1 {
-+        global:
-                 # _JNI
+-                # _JNI
 -                _JNI_CreateJavaVM
 -                _JNI_GetCreatedJavaVMs
 -                _JNI_GetDefaultJavaVMInitArgs
-+                JNI_CreateJavaVM;
-+                JNI_GetCreatedJavaVMs;
-+                JNI_GetDefaultJavaVMInitArgs;
  
 -                # _JVM
 -                _JVM_Accept
@@ -1677,6 +1685,17 @@
 -                _JVM_Write
 -                _JVM_Yield
 -                _JVM_handle_bsd_signal
++SUNWprivate_1.1 {
++        global:
++                # _JNI
++                JNI_CreateJavaVM;
++                JNI_GetCreatedJavaVMs;
++                JNI_GetDefaultJavaVMInitArgs;
+ 
+-                # debug _JVM
+-                _JVM_AccessVMBooleanFlag
+-                _JVM_AccessVMIntFlag
+-                _JVM_VMBreakPoint
 +                # JVM
 +                JVM_Accept;
 +                JVM_ActiveProcessorCount;
@@ -1894,11 +1913,7 @@
 +                JVM_Write;
 +                JVM_Yield;
 +                JVM_handle_bsd_signal;
- 
--                # debug _JVM
--                _JVM_AccessVMBooleanFlag
--                _JVM_AccessVMIntFlag
--                _JVM_VMBreakPoint
++
 +                # debug JVM
 +                JVM_AccessVMBooleanFlag;
 +                JVM_AccessVMIntFlag;
@@ -1929,7 +1944,7 @@
 +                *;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx	Fri Jun 17 22:08:33 2016 -0700
 @@ -0,0 +1,266 @@
 +#
 +# Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2198,7 +2213,7 @@
 +                # INSERT VTABLE SYMBOLS HERE
 +
 --- ./hotspot/make/bsd/makefiles/mapfile-vers-product	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Fri Jun 17 22:08:33 2016 -0700
 @@ -21,241 +21,249 @@
  # questions.
  #
@@ -2206,16 +2221,10 @@
 -# Only used for OSX/Darwin builds
  
  # Define public interface.
-+
-+SUNWprivate_1.1 {
-+        global:
-                 # _JNI
+-                # _JNI
 -                _JNI_CreateJavaVM
 -                _JNI_GetCreatedJavaVMs
 -                _JNI_GetDefaultJavaVMInitArgs
-+                JNI_CreateJavaVM;
-+                JNI_GetCreatedJavaVMs;
-+                JNI_GetDefaultJavaVMInitArgs;
  
 -                # _JVM
 -                _JVM_Accept
@@ -2434,6 +2443,13 @@
 -                _JVM_Write
 -                _JVM_Yield
 -                _JVM_handle_bsd_signal
++SUNWprivate_1.1 {
++        global:
++                # _JNI
++                JNI_CreateJavaVM;
++                JNI_GetCreatedJavaVMs;
++                JNI_GetDefaultJavaVMInitArgs;
++
 +                # JVM
 +                JVM_Accept;
 +                JVM_ActiveProcessorCount;
@@ -2677,7 +2693,7 @@
 +                *;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-product.macosx	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-product.macosx	Fri Jun 17 22:08:33 2016 -0700
 @@ -0,0 +1,261 @@
 +#
 +# Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2941,7 +2957,7 @@
 +                # INSERT VTABLE SYMBOLS HERE
 +
 --- ./hotspot/make/bsd/makefiles/optimized.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/optimized.make	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/optimized.make	Fri Jun 17 22:08:33 2016 -0700
 @@ -38,6 +38,9 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -2954,59 +2970,8 @@
  
  VERSION = optimized
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/ppc64.make	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,102 @@
-+#
-+# Copyright (c) 2004, 2013, Oracle and/or its affiliates. All rights reserved.
-+# Copyright 2012, 2013 SAP AG. All rights reserved.
-+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+#
-+# This code is free software; you can redistribute it and/or modify it
-+# under the terms of the GNU General Public License version 2 only, as
-+# published by the Free Software Foundation.
-+#
-+# This code is distributed in the hope that it will be useful, but WITHOUT
-+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+# version 2 for more details (a copy is included in the LICENSE file that
-+# accompanied this code).
-+#
-+# You should have received a copy of the GNU General Public License version
-+# 2 along with this work; if not, write to the Free Software Foundation,
-+# Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+#
-+# Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+# or visit www.oracle.com if you need additional information or have any
-+# questions.
-+#
-+#
-+
-+# make c code know it is on a 64 bit platform.
-+CFLAGS += -D_LP64=1
-+
-+ifeq ($(origin OPENJDK_TARGET_CPU_ENDIAN),undefined)
-+  # This can happen during hotspot standalone build. Set endianness from
-+  # uname. We assume build and target machines are the same.
-+  OPENJDK_TARGET_CPU_ENDIAN:=$(if $(filter ppc64le,$(shell uname -m)),little,big)
-+endif
-+
-+ifeq ($(filter $(OPENJDK_TARGET_CPU_ENDIAN),big little),)
-+  $(error OPENJDK_TARGET_CPU_ENDIAN value should be 'big' or 'little')
-+endif
-+
-+ifeq ($(OPENJDK_TARGET_CPU_ENDIAN),big)
-+  # fixes `relocation truncated to fit' error for gcc 4.1.
-+  CFLAGS += -mminimal-toc
-+
-+  # finds use ppc64 instructions, but schedule for power5
-+  CFLAGS += -mcpu=powerpc64 -mtune=power5 -minsert-sched-nops=regroup_exact -mno-multiple -mno-string
-+else
-+  # Little endian machine uses ELFv2 ABI.
-+  CFLAGS += -DVM_LITTLE_ENDIAN -DABI_ELFv2
-+
-+  # Use Power8, this is the first CPU to support PPC64 LE with ELFv2 ABI.
-+  CFLAGS += -mcpu=power7 -mtune=power8 -minsert-sched-nops=regroup_exact -mno-multiple -mno-string
-+endif
++++ ./hotspot/make/bsd/makefiles/ppc64.make	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,51 @@
 +#
 +# Copyright (c) 2004, 2013, Oracle and/or its affiliates. All rights reserved.
 +# Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -3059,7 +3024,7 @@
 +  CFLAGS += -mcpu=power7 -mtune=power8 -minsert-sched-nops=regroup_exact -mno-multiple -mno-string
 +endif
 --- ./hotspot/make/bsd/makefiles/product.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/product.make	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/product.make	Fri Jun 17 22:08:33 2016 -0700
 @@ -38,7 +38,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -3073,7 +3038,7 @@
  SYSDEFS += -DPRODUCT
  VERSION = optimized
 --- ./hotspot/make/bsd/makefiles/rules.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/rules.make	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/rules.make	Fri Jun 17 22:08:33 2016 -0700
 @@ -34,7 +34,7 @@
  CC_COMPILE       = $(CC) $(CXXFLAGS) $(CFLAGS)
  CXX_COMPILE      = $(CXX) $(CXXFLAGS) $(CFLAGS)
@@ -3084,7 +3049,7 @@
  COMPILE.CC       = $(CC_COMPILE) -c
  GENASM.CC        = $(CC_COMPILE) -S
 --- ./hotspot/make/bsd/makefiles/vm.make	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/make/bsd/makefiles/vm.make	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/make/bsd/makefiles/vm.make	Fri Jun 17 22:08:33 2016 -0700
 @@ -107,7 +107,7 @@
  # File specific flags
  CXXFLAGS += $(CXXFLAGS/BYFILE)
@@ -3095,25 +3060,8 @@
  endif
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/platform_ppc64	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,34 @@
-+os_family = bsd
-+
-+arch = ppc
-+
-+arch_model = ppc_64
-+
-+os_arch = bsd_ppc
-+
-+os_arch_model = bsd_ppc_64
-+
-+lib_arch = ppc64
-+
-+compiler = gcc
-+
-+gnu_dis_arch = ppc64
-+
-+sysdefs = -DBSD -D_ALLBSD_SOURCE -D_GNU_SOURCE -DPPC64
++++ ./hotspot/make/bsd/platform_ppc64	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,17 @@
 +os_family = bsd
 +
 +arch = ppc
@@ -3132,7 +3080,7 @@
 +
 +sysdefs = -DBSD -D_ALLBSD_SOURCE -D_GNU_SOURCE -DPPC64
 --- ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -277,5 +277,9 @@
  #if defined(TARGET_OS_ARCH_linux_ppc)
  #include "bytes_linux_ppc.inline.hpp"
@@ -3144,7 +3092,7 @@
  
  #endif // CPU_PPC_VM_BYTES_PPC_HPP
 --- ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -307,6 +307,8 @@
    // Although AIX runs on big endian CPU, float is in most significant
    // word of an argument slot.
@@ -3154,8 +3102,19 @@
  #else
  #error "unknown OS"
  #endif
+--- ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Tue Mar 22 11:05:52 2016 -0700
++++ ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -778,6 +778,8 @@
+       // Although AIX runs on big endian CPU, float is in the most
+       // significant word of an argument slot.
+ #define FLOAT_WORD_OFFSET_IN_SLOT 0
++#elif defined(BSD)
++#define FLOAT_WORD_OFFSET_IN_SLOT 1
+ #else
+ #error "unknown OS"
+ #endif
 --- ./hotspot/src/cpu/x86/vm/jni_x86.h	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/jni_x86.h	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/cpu/x86/vm/jni_x86.h	Fri Jun 17 22:08:33 2016 -0700
 @@ -34,7 +34,7 @@
  #ifndef __has_attribute
    #define __has_attribute(x) 0
@@ -3166,7 +3125,7 @@
    #define JNIIMPORT     __attribute__((visibility("default")))
  #else
 --- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -2266,7 +2266,7 @@
    if (!is_critical_native) {
      // reset handle block
@@ -3177,7 +3136,7 @@
      // Any exception pending?
      __ cmpptr(Address(thread, in_bytes(Thread::pending_exception_offset())), (int32_t)NULL_WORD);
 --- ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -1293,7 +1293,7 @@
  
    // reset handle block
@@ -3188,7 +3147,7 @@
    // If result was an oop then unbox and save it in the frame
    { Label L;
 --- ./hotspot/src/cpu/x86/vm/x86_32.ad	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/cpu/x86/vm/x86_32.ad	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/cpu/x86/vm/x86_32.ad	Fri Jun 17 22:08:33 2016 -0700
 @@ -1250,6 +1250,7 @@
  
  
@@ -3198,7 +3157,7 @@
  
  #ifndef PRODUCT
 --- ./hotspot/src/os/aix/vm/os_aix.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/aix/vm/os_aix.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/aix/vm/os_aix.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -5236,6 +5236,10 @@
      return 0;
    }
@@ -3211,7 +3170,7 @@
  }
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -0,0 +1,53 @@
 +/*
 + * Copyright (c) 1997, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -3267,7 +3226,7 @@
 +}
 +#endif
 --- ./hotspot/src/os/bsd/vm/jsig.c	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/jsig.c	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/bsd/vm/jsig.c	Fri Jun 17 22:08:33 2016 -0700
 @@ -165,9 +165,8 @@
  }
  
@@ -3281,7 +3240,7 @@
  static int call_os_sigaction(int sig, const struct sigaction  *act,
                               struct sigaction *oact) {
 --- ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -50,6 +50,7 @@
      case INTERRUPT_SIGNAL:
      case SIGFPE:
@@ -3392,7 +3351,7 @@
 +  return true;
  }
 --- ./hotspot/src/os/bsd/vm/jvm_bsd.h	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/jvm_bsd.h	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/bsd/vm/jvm_bsd.h	Fri Jun 17 22:08:33 2016 -0700
 @@ -112,20 +112,6 @@
  #define SHUTDOWN2_SIGNAL SIGINT
  #define SHUTDOWN3_SIGNAL SIGTERM
@@ -3415,7 +3374,7 @@
  
  #endif // OS_BSD_VM_JVM_BSD_H
 --- ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -30,7 +30,7 @@
  
  void OSThread::pd_initialize() {
@@ -3426,7 +3385,7 @@
  #else
    _thread_id        = NULL;
 --- ./hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -97,16 +97,31 @@
  # include <sys/shm.h>
  #ifndef __APPLE__
@@ -3989,7 +3948,7 @@
  
  #ifndef PRODUCT
 --- ./hotspot/src/os/bsd/vm/os_bsd.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -58,12 +58,16 @@
    // For signal flags diagnostics
    static int sigflags[MAXSIGNUM];
@@ -4018,7 +3977,7 @@
    static void set_page_size(int val)                                { _page_size = val; }
  
 --- ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -33,30 +33,50 @@
  #include <sys/syscall.h>
  #include <unistd.h>
@@ -4081,7 +4040,7 @@
        yes = false;
      }
 --- ./hotspot/src/os/linux/vm/os_linux.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/linux/vm/os_linux.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/linux/vm/os_linux.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -6048,6 +6048,10 @@
      return 0;
    }
@@ -4094,7 +4053,7 @@
  }
  
 --- ./hotspot/src/os/posix/vm/os_posix.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/posix/vm/os_posix.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/posix/vm/os_posix.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -53,12 +53,11 @@
    n = get_core_path(buffer, bufferSize);
  
@@ -4158,7 +4117,7 @@
  #ifdef SI_TKILL
      { SI_TKILL,     "SI_TKILL",    "Signal sent by tkill (pthread_kill)" },
 --- ./hotspot/src/os/solaris/vm/os_solaris.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/os/solaris/vm/os_solaris.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/os/solaris/vm/os_solaris.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -6375,6 +6375,10 @@
      return 0;
    }
@@ -4171,8 +4130,8 @@
  }
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/atomic_bsd_ppc.inline.hpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,800 @@
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/atomic_bsd_ppc.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,400 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -4573,448 +4532,9 @@
 +#undef strasm_nobarrier_clobber_memory
 +
 +#endif // OS_CPU_BSD_PPC_VM_ATOMIC_BSD_PPC_INLINE_HPP
-+/*
-+ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2013 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#ifndef OS_CPU_BSD_PPC_VM_ATOMIC_BSD_PPC_INLINE_HPP
-+#define OS_CPU_BSD_PPC_VM_ATOMIC_BSD_PPC_INLINE_HPP
-+
-+#include "runtime/atomic.hpp"
-+#include "runtime/os.hpp"
-+#include "vm_version_ppc.hpp"
-+
-+#ifndef PPC64
-+#error "Atomic currently only implemented for PPC64"
-+#endif
-+
-+// Implementation of class atomic
-+
-+inline void Atomic::store    (jbyte    store_value, jbyte*    dest) { *dest = store_value; }
-+inline void Atomic::store    (jshort   store_value, jshort*   dest) { *dest = store_value; }
-+inline void Atomic::store    (jint     store_value, jint*     dest) { *dest = store_value; }
-+inline void Atomic::store    (jlong    store_value, jlong*    dest) { *dest = store_value; }
-+inline void Atomic::store_ptr(intptr_t store_value, intptr_t* dest) { *dest = store_value; }
-+inline void Atomic::store_ptr(void*    store_value, void*     dest) { *(void**)dest = store_value; }
-+
-+inline void Atomic::store    (jbyte    store_value, volatile jbyte*    dest) { *dest = store_value; }
-+inline void Atomic::store    (jshort   store_value, volatile jshort*   dest) { *dest = store_value; }
-+inline void Atomic::store    (jint     store_value, volatile jint*     dest) { *dest = store_value; }
-+inline void Atomic::store    (jlong    store_value, volatile jlong*    dest) { *dest = store_value; }
-+inline void Atomic::store_ptr(intptr_t store_value, volatile intptr_t* dest) { *dest = store_value; }
-+inline void Atomic::store_ptr(void*    store_value, volatile void*     dest) { *(void* volatile *)dest = store_value; }
-+
-+inline jlong Atomic::load(volatile jlong* src) { return *src; }
-+
-+//
-+// machine barrier instructions:
-+//
-+// - sync            two-way memory barrier, aka fence
-+// - lwsync          orders  Store|Store,
-+//                            Load|Store,
-+//                            Load|Load,
-+//                   but not Store|Load
-+// - eieio           orders memory accesses for device memory (only)
-+// - isync           invalidates speculatively executed instructions
-+//                   From the POWER ISA 2.06 documentation:
-+//                    "[...] an isync instruction prevents the execution of
-+//                   instructions following the isync until instructions
-+//                   preceding the isync have completed, [...]"
-+//                   From IBM's AIX assembler reference:
-+//                    "The isync [...] instructions causes the processor to
-+//                   refetch any instructions that might have been fetched
-+//                   prior to the isync instruction. The instruction isync
-+//                   causes the processor to wait for all previous instructions
-+//                   to complete. Then any instructions already fetched are
-+//                   discarded and instruction processing continues in the
-+//                   environment established by the previous instructions."
-+//
-+// semantic barrier instructions:
-+// (as defined in orderAccess.hpp)
-+//
-+// - release         orders Store|Store,       (maps to lwsync)
-+//                           Load|Store
-+// - acquire         orders  Load|Store,       (maps to lwsync)
-+//                           Load|Load
-+// - fence           orders Store|Store,       (maps to sync)
-+//                           Load|Store,
-+//                           Load|Load,
-+//                          Store|Load
-+//
-+
-+#define strasm_sync                       "\n  sync    \n"
-+#define strasm_lwsync                     "\n  lwsync  \n"
-+#define strasm_isync                      "\n  isync   \n"
-+#define strasm_release                    strasm_lwsync
-+#define strasm_acquire                    strasm_lwsync
-+#define strasm_fence                      strasm_sync
-+#define strasm_nobarrier                  ""
-+#define strasm_nobarrier_clobber_memory   ""
-+
-+inline jint     Atomic::add    (jint     add_value, volatile jint*     dest) {
-+
-+  unsigned int result;
-+
-+  __asm__ __volatile__ (
-+    strasm_lwsync
-+    "1: lwarx   %0,  0, %2    \n"
-+    "   add     %0, %0, %1    \n"
-+    "   stwcx.  %0,  0, %2    \n"
-+    "   bne-    1b            \n"
-+    strasm_isync
-+    : /*%0*/"=&r" (result)
-+    : /*%1*/"r" (add_value), /*%2*/"r" (dest)
-+    : "cc", "memory" );
-+
-+  return (jint) result;
-+}
-+
-+
-+inline intptr_t Atomic::add_ptr(intptr_t add_value, volatile intptr_t* dest) {
-+
-+  long result;
-+
-+  __asm__ __volatile__ (
-+    strasm_lwsync
-+    "1: ldarx   %0,  0, %2    \n"
-+    "   add     %0, %0, %1    \n"
-+    "   stdcx.  %0,  0, %2    \n"
-+    "   bne-    1b            \n"
-+    strasm_isync
-+    : /*%0*/"=&r" (result)
-+    : /*%1*/"r" (add_value), /*%2*/"r" (dest)
-+    : "cc", "memory" );
-+
-+  return (intptr_t) result;
-+}
-+
-+inline void*    Atomic::add_ptr(intptr_t add_value, volatile void*     dest) {
-+  return (void*)add_ptr(add_value, (volatile intptr_t*)dest);
-+}
-+
-+
-+inline void Atomic::inc    (volatile jint*     dest) {
-+
-+  unsigned int temp;
-+
-+  __asm__ __volatile__ (
-+    strasm_nobarrier
-+    "1: lwarx   %0,  0, %2    \n"
-+    "   addic   %0, %0,  1    \n"
-+    "   stwcx.  %0,  0, %2    \n"
-+    "   bne-    1b            \n"
-+    strasm_nobarrier
-+    : /*%0*/"=&r" (temp), "=m" (*dest)
-+    : /*%2*/"r" (dest), "m" (*dest)
-+    : "cc" strasm_nobarrier_clobber_memory);
-+
-+}
-+
-+inline void Atomic::inc_ptr(volatile intptr_t* dest) {
-+
-+  long temp;
-+
-+  __asm__ __volatile__ (
-+    strasm_nobarrier
-+    "1: ldarx   %0,  0, %2    \n"
-+    "   addic   %0, %0,  1    \n"
-+    "   stdcx.  %0,  0, %2    \n"
-+    "   bne-    1b            \n"
-+    strasm_nobarrier
-+    : /*%0*/"=&r" (temp), "=m" (*dest)
-+    : /*%2*/"r" (dest), "m" (*dest)
-+    : "cc" strasm_nobarrier_clobber_memory);
-+
-+}
-+
-+inline void Atomic::inc_ptr(volatile void*     dest) {
-+  inc_ptr((volatile intptr_t*)dest);
-+}
-+
-+
-+inline void Atomic::dec    (volatile jint*     dest) {
-+
-+  unsigned int temp;
-+
-+  __asm__ __volatile__ (
-+    strasm_nobarrier
-+    "1: lwarx   %0,  0, %2    \n"
-+    "   addic   %0, %0, -1    \n"
-+    "   stwcx.  %0,  0, %2    \n"
-+    "   bne-    1b            \n"
-+    strasm_nobarrier
-+    : /*%0*/"=&r" (temp), "=m" (*dest)
-+    : /*%2*/"r" (dest), "m" (*dest)
-+    : "cc" strasm_nobarrier_clobber_memory);
-+
-+}
-+
-+inline void Atomic::dec_ptr(volatile intptr_t* dest) {
-+
-+  long temp;
-+
-+  __asm__ __volatile__ (
-+    strasm_nobarrier
-+    "1: ldarx   %0,  0, %2    \n"
-+    "   addic   %0, %0, -1    \n"
-+    "   stdcx.  %0,  0, %2    \n"
-+    "   bne-    1b            \n"
-+    strasm_nobarrier
-+    : /*%0*/"=&r" (temp), "=m" (*dest)
-+    : /*%2*/"r" (dest), "m" (*dest)
-+    : "cc" strasm_nobarrier_clobber_memory);
-+
-+}
-+
-+inline void Atomic::dec_ptr(volatile void*     dest) {
-+  dec_ptr((volatile intptr_t*)dest);
-+}
-+
-+inline jint Atomic::xchg(jint exchange_value, volatile jint* dest) {
-+
-+  // Note that xchg_ptr doesn't necessarily do an acquire
-+  // (see synchronizer.cpp).
-+
-+  unsigned int old_value;
-+  const uint64_t zero = 0;
-+
-+  __asm__ __volatile__ (
-+    /* lwsync */
-+    strasm_lwsync
-+    /* atomic loop */
-+    "1:                                                 \n"
-+    "   lwarx   %[old_value], %[dest], %[zero]          \n"
-+    "   stwcx.  %[exchange_value], %[dest], %[zero]     \n"
-+    "   bne-    1b                                      \n"
-+    /* isync */
-+    strasm_sync
-+    /* exit */
-+    "2:                                                 \n"
-+    /* out */
-+    : [old_value]       "=&r"   (old_value),
-+                        "=m"    (*dest)
-+    /* in */
-+    : [dest]            "b"     (dest),
-+      [zero]            "r"     (zero),
-+      [exchange_value]  "r"     (exchange_value),
-+                        "m"     (*dest)
-+    /* clobber */
-+    : "cc",
-+      "memory"
-+    );
-+
-+  return (jint) old_value;
-+}
-+
-+inline intptr_t Atomic::xchg_ptr(intptr_t exchange_value, volatile intptr_t* dest) {
-+
-+  // Note that xchg_ptr doesn't necessarily do an acquire
-+  // (see synchronizer.cpp).
-+
-+  long old_value;
-+  const uint64_t zero = 0;
-+
-+  __asm__ __volatile__ (
-+    /* lwsync */
-+    strasm_lwsync
-+    /* atomic loop */
-+    "1:                                                 \n"
-+    "   ldarx   %[old_value], %[dest], %[zero]          \n"
-+    "   stdcx.  %[exchange_value], %[dest], %[zero]     \n"
-+    "   bne-    1b                                      \n"
-+    /* isync */
-+    strasm_sync
-+    /* exit */
-+    "2:                                                 \n"
-+    /* out */
-+    : [old_value]       "=&r"   (old_value),
-+                        "=m"    (*dest)
-+    /* in */
-+    : [dest]            "b"     (dest),
-+      [zero]            "r"     (zero),
-+      [exchange_value]  "r"     (exchange_value),
-+                        "m"     (*dest)
-+    /* clobber */
-+    : "cc",
-+      "memory"
-+    );
-+
-+  return (intptr_t) old_value;
-+}
-+
-+inline void* Atomic::xchg_ptr(void* exchange_value, volatile void* dest) {
-+  return (void*)xchg_ptr((intptr_t)exchange_value, (volatile intptr_t*)dest);
-+}
-+
-+inline jint Atomic::cmpxchg(jint exchange_value, volatile jint* dest, jint compare_value) {
-+
-+  // Note that cmpxchg guarantees a two-way memory barrier across
-+  // the cmpxchg, so it's really a a 'fence_cmpxchg_acquire'
-+  // (see atomic.hpp).
-+
-+  unsigned int old_value;
-+  const uint64_t zero = 0;
-+
-+  __asm__ __volatile__ (
-+    /* fence */
-+    strasm_sync
-+    /* simple guard */
-+    "   lwz     %[old_value], 0(%[dest])                \n"
-+    "   cmpw    %[compare_value], %[old_value]          \n"
-+    "   bne-    2f                                      \n"
-+    /* atomic loop */
-+    "1:                                                 \n"
-+    "   lwarx   %[old_value], %[dest], %[zero]          \n"
-+    "   cmpw    %[compare_value], %[old_value]          \n"
-+    "   bne-    2f                                      \n"
-+    "   stwcx.  %[exchange_value], %[dest], %[zero]     \n"
-+    "   bne-    1b                                      \n"
-+    /* acquire */
-+    strasm_sync
-+    /* exit */
-+    "2:                                                 \n"
-+    /* out */
-+    : [old_value]       "=&r"   (old_value),
-+                        "=m"    (*dest)
-+    /* in */
-+    : [dest]            "b"     (dest),
-+      [zero]            "r"     (zero),
-+      [compare_value]   "r"     (compare_value),
-+      [exchange_value]  "r"     (exchange_value),
-+                        "m"     (*dest)
-+    /* clobber */
-+    : "cc",
-+      "memory"
-+    );
-+
-+  return (jint) old_value;
-+}
-+
-+inline jlong Atomic::cmpxchg(jlong exchange_value, volatile jlong* dest, jlong compare_value) {
-+
-+  // Note that cmpxchg guarantees a two-way memory barrier across
-+  // the cmpxchg, so it's really a a 'fence_cmpxchg_acquire'
-+  // (see atomic.hpp).
-+
-+  long old_value;
-+  const uint64_t zero = 0;
-+
-+  __asm__ __volatile__ (
-+    /* fence */
-+    strasm_sync
-+    /* simple guard */
-+    "   ld      %[old_value], 0(%[dest])                \n"
-+    "   cmpd    %[compare_value], %[old_value]          \n"
-+    "   bne-    2f                                      \n"
-+    /* atomic loop */
-+    "1:                                                 \n"
-+    "   ldarx   %[old_value], %[dest], %[zero]          \n"
-+    "   cmpd    %[compare_value], %[old_value]          \n"
-+    "   bne-    2f                                      \n"
-+    "   stdcx.  %[exchange_value], %[dest], %[zero]     \n"
-+    "   bne-    1b                                      \n"
-+    /* acquire */
-+    strasm_sync
-+    /* exit */
-+    "2:                                                 \n"
-+    /* out */
-+    : [old_value]       "=&r"   (old_value),
-+                        "=m"    (*dest)
-+    /* in */
-+    : [dest]            "b"     (dest),
-+      [zero]            "r"     (zero),
-+      [compare_value]   "r"     (compare_value),
-+      [exchange_value]  "r"     (exchange_value),
-+                        "m"     (*dest)
-+    /* clobber */
-+    : "cc",
-+      "memory"
-+    );
-+
-+  return (jlong) old_value;
-+}
-+
-+inline intptr_t Atomic::cmpxchg_ptr(intptr_t exchange_value, volatile intptr_t* dest, intptr_t compare_value) {
-+  return (intptr_t)cmpxchg((jlong)exchange_value, (volatile jlong*)dest, (jlong)compare_value);
-+}
-+
-+inline void* Atomic::cmpxchg_ptr(void* exchange_value, volatile void* dest, void* compare_value) {
-+  return (void*)cmpxchg((jlong)exchange_value, (volatile jlong*)dest, (jlong)compare_value);
-+}
-+
-+#undef strasm_sync
-+#undef strasm_lwsync
-+#undef strasm_isync
-+#undef strasm_release
-+#undef strasm_acquire
-+#undef strasm_fence
-+#undef strasm_nobarrier
-+#undef strasm_nobarrier_clobber_memory
-+
-+#endif // OS_CPU_BSD_PPC_VM_ATOMIC_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/bytes_bsd_ppc.inline.hpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,78 @@
-+/*
-+ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2014 Google Inc.  All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#ifndef OS_CPU_BSD_PPC_VM_BYTES_BSD_PPC_INLINE_HPP
-+#define OS_CPU_BSD_PPC_VM_BYTES_BSD_PPC_INLINE_HPP
-+
-+#if defined(VM_LITTLE_ENDIAN)
-+#include <byteswap.h>
-+
-+// Efficient swapping of data bytes from Java byte
-+// ordering to native byte ordering and vice versa.
-+inline u2 Bytes::swap_u2(u2 x) { return bswap_16(x); }
-+inline u4 Bytes::swap_u4(u4 x) { return bswap_32(x); }
-+inline u8 Bytes::swap_u8(u8 x) { return bswap_64(x); }
-+#endif // VM_LITTLE_ENDIAN
-+
-+#endif // OS_CPU_BSD_PPC_VM_BYTES_BSD_PPC_INLINE_HPP
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/bytes_bsd_ppc.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,39 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2014 Google Inc.  All rights reserved.
@@ -5055,62 +4575,8 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_BYTES_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/globals_bsd_ppc.hpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,108 @@
-+/*
-+ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2013 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#ifndef OS_CPU_BSD_PPC_VM_GLOBALS_BSD_PPC_HPP
-+#define OS_CPU_BSD_PPC_VM_GLOBALS_BSD_PPC_HPP
-+
-+// Sets the default values for platform dependent flags used by the runtime system.
-+// (see globals.hpp)
-+
-+define_pd_global(bool, DontYieldALot,            false);
-+define_pd_global(intx, ThreadStackSize,          2048); // 0 => use system default
-+define_pd_global(intx, VMThreadStackSize,        2048);
-+
-+// if we set CompilerThreadStackSize to a value different than 0, it will
-+// be used in os::create_thread(). Otherwise, due the strange logic in os::create_thread(),
-+// the stack size for compiler threads will default to VMThreadStackSize, although it
-+// is defined to 4M in os::Bsd::default_stack_size()!
-+define_pd_global(intx, CompilerThreadStackSize,  4096);
-+
-+// Allow extra space in DEBUG builds for asserts.
-+define_pd_global(uintx,JVMInvokeMethodSlack,     8192);
-+
-+define_pd_global(intx, StackYellowPages,         6);
-+define_pd_global(intx, StackRedPages,            1);
-+define_pd_global(intx, StackShadowPages,         6 DEBUG_ONLY(+2));
-+
-+// Only used on 64 bit platforms
-+define_pd_global(uintx,HeapBaseMinAddress,       2*G);
-+// Only used on 64 bit Windows platforms
-+define_pd_global(bool, UseVectoredExceptions,    false);
-+
-+#endif // OS_CPU_BSD_PPC_VM_GLOBALS_BSD_PPC_HPP
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/globals_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,54 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -5166,157 +4632,8 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_GLOBALS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/orderAccess_bsd_ppc.inline.hpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,298 @@
-+/*
-+ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2013 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#ifndef OS_CPU_BSD_PPC_VM_ORDERACCESS_BSD_PPC_INLINE_HPP
-+#define OS_CPU_BSD_PPC_VM_ORDERACCESS_BSD_PPC_INLINE_HPP
-+
-+#include "runtime/orderAccess.hpp"
-+#include "vm_version_ppc.hpp"
-+
-+#ifndef PPC64
-+#error "OrderAccess currently only implemented for PPC64"
-+#endif
-+
-+// Implementation of class OrderAccess.
-+
-+//
-+// Machine barrier instructions:
-+//
-+// - sync            Two-way memory barrier, aka fence.
-+// - lwsync          orders  Store|Store,
-+//                            Load|Store,
-+//                            Load|Load,
-+//                   but not Store|Load
-+// - eieio           orders  Store|Store
-+// - isync           Invalidates speculatively executed instructions,
-+//                   but isync may complete before storage accesses
-+//                   associated with instructions preceding isync have
-+//                   been performed.
-+//
-+// Semantic barrier instructions:
-+// (as defined in orderAccess.hpp)
-+//
-+// - release         orders Store|Store,       (maps to lwsync)
-+//                           Load|Store
-+// - acquire         orders  Load|Store,       (maps to lwsync)
-+//                           Load|Load
-+// - fence           orders Store|Store,       (maps to sync)
-+//                           Load|Store,
-+//                           Load|Load,
-+//                          Store|Load
-+//
-+
-+#define inlasm_sync()     __asm__ __volatile__ ("sync"   : : : "memory");
-+#define inlasm_lwsync()   __asm__ __volatile__ ("lwsync" : : : "memory");
-+#define inlasm_eieio()    __asm__ __volatile__ ("eieio"  : : : "memory");
-+#define inlasm_isync()    __asm__ __volatile__ ("isync"  : : : "memory");
-+#define inlasm_release()  inlasm_lwsync();
-+#define inlasm_acquire()  inlasm_lwsync();
-+// Use twi-isync for load_acquire (faster than lwsync).
-+#define inlasm_acquire_reg(X) __asm__ __volatile__ ("twi 0,%0,0\n isync\n" : : "r" (X) : "memory");
-+#define inlasm_fence()    inlasm_sync();
-+
-+inline void     OrderAccess::loadload()   { inlasm_lwsync();  }
-+inline void     OrderAccess::storestore() { inlasm_lwsync();  }
-+inline void     OrderAccess::loadstore()  { inlasm_lwsync();  }
-+inline void     OrderAccess::storeload()  { inlasm_fence();   }
-+
-+inline void     OrderAccess::acquire()    { inlasm_acquire(); }
-+inline void     OrderAccess::release()    { inlasm_release(); }
-+inline void     OrderAccess::fence()      { inlasm_fence();   }
-+
-+inline jbyte    OrderAccess::load_acquire(volatile jbyte*   p) { register jbyte t = *p;   inlasm_acquire_reg(t); return t; }
-+inline jshort   OrderAccess::load_acquire(volatile jshort*  p) { register jshort t = *p;  inlasm_acquire_reg(t); return t; }
-+inline jint     OrderAccess::load_acquire(volatile jint*    p) { register jint t = *p;    inlasm_acquire_reg(t); return t; }
-+inline jlong    OrderAccess::load_acquire(volatile jlong*   p) { register jlong t = *p;   inlasm_acquire_reg(t); return t; }
-+inline jubyte   OrderAccess::load_acquire(volatile jubyte*  p) { register jubyte t = *p;  inlasm_acquire_reg(t); return t; }
-+inline jushort  OrderAccess::load_acquire(volatile jushort* p) { register jushort t = *p; inlasm_acquire_reg(t); return t; }
-+inline juint    OrderAccess::load_acquire(volatile juint*   p) { register juint t = *p;   inlasm_acquire_reg(t); return t; }
-+inline julong   OrderAccess::load_acquire(volatile julong*  p) { return (julong)load_acquire((volatile jlong*)p); }
-+inline jfloat   OrderAccess::load_acquire(volatile jfloat*  p) { register jfloat t = *p;  inlasm_acquire(); return t; }
-+inline jdouble  OrderAccess::load_acquire(volatile jdouble* p) { register jdouble t = *p; inlasm_acquire(); return t; }
-+
-+inline intptr_t OrderAccess::load_ptr_acquire(volatile intptr_t*   p) { return (intptr_t)load_acquire((volatile jlong*)p); }
-+inline void*    OrderAccess::load_ptr_acquire(volatile void*       p) { return (void*)   load_acquire((volatile jlong*)p); }
-+inline void*    OrderAccess::load_ptr_acquire(const volatile void* p) { return (void*)   load_acquire((volatile jlong*)p); }
-+
-+inline void     OrderAccess::release_store(volatile jbyte*   p, jbyte   v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store(volatile jshort*  p, jshort  v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store(volatile jint*    p, jint    v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store(volatile jlong*   p, jlong   v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store(volatile jubyte*  p, jubyte  v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store(volatile jushort* p, jushort v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store(volatile juint*   p, juint   v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store(volatile julong*  p, julong  v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store(volatile jfloat*  p, jfloat  v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store(volatile jdouble* p, jdouble v) { inlasm_release(); *p = v; }
-+
-+inline void     OrderAccess::release_store_ptr(volatile intptr_t* p, intptr_t v) { inlasm_release(); *p = v; }
-+inline void     OrderAccess::release_store_ptr(volatile void*     p, void*    v) { inlasm_release(); *(void* volatile *)p = v; }
-+
-+inline void     OrderAccess::store_fence(jbyte*   p, jbyte   v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_fence(jshort*  p, jshort  v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_fence(jint*    p, jint    v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_fence(jlong*   p, jlong   v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_fence(jubyte*  p, jubyte  v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_fence(jushort* p, jushort v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_fence(juint*   p, juint   v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_fence(julong*  p, julong  v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_fence(jfloat*  p, jfloat  v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_fence(jdouble* p, jdouble v) { *p = v; inlasm_fence(); }
-+
-+inline void     OrderAccess::store_ptr_fence(intptr_t* p, intptr_t v) { *p = v; inlasm_fence(); }
-+inline void     OrderAccess::store_ptr_fence(void**    p, void*    v) { *p = v; inlasm_fence(); }
-+
-+inline void     OrderAccess::release_store_fence(volatile jbyte*   p, jbyte   v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_fence(volatile jshort*  p, jshort  v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_fence(volatile jint*    p, jint    v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_fence(volatile jlong*   p, jlong   v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_fence(volatile jubyte*  p, jubyte  v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_fence(volatile jushort* p, jushort v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_fence(volatile juint*   p, juint   v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_fence(volatile julong*  p, julong  v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_fence(volatile jfloat*  p, jfloat  v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_fence(volatile jdouble* p, jdouble v) { inlasm_release(); *p = v; inlasm_fence(); }
-+
-+inline void     OrderAccess::release_store_ptr_fence(volatile intptr_t* p, intptr_t v) { inlasm_release(); *p = v; inlasm_fence(); }
-+inline void     OrderAccess::release_store_ptr_fence(volatile void*     p, void*    v) { inlasm_release(); *(void* volatile *)p = v; inlasm_fence(); }
-+
-+#undef inlasm_sync
-+#undef inlasm_lwsync
-+#undef inlasm_eieio
-+#undef inlasm_isync
-+#undef inlasm_release
-+#undef inlasm_acquire
-+#undef inlasm_fence
-+
-+#endif // OS_CPU_BSD_PPC_VM_ORDERACCESS_BSD_PPC_INLINE_HPP
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/orderAccess_bsd_ppc.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,149 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -5467,674 +4784,8 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_ORDERACCESS_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.cpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,1332 @@
-+/*
-+ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2007, 2008, 2009, 2010 Red Hat, Inc.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+// no precompiled headers
-+#include "assembler_ppc.inline.hpp"
-+#include "classfile/classLoader.hpp"
-+#include "classfile/systemDictionary.hpp"
-+#include "classfile/vmSymbols.hpp"
-+#include "code/icBuffer.hpp"
-+#include "code/vtableStubs.hpp"
-+#include "interpreter/interpreter.hpp"
-+#include "jvm_bsd.h"
-+#include "memory/allocation.inline.hpp"
-+#include "mutex_bsd.inline.hpp"
-+#include "nativeInst_ppc.hpp"
-+#include "os_share_bsd.hpp"
-+#include "prims/jniFastGetField.hpp"
-+#include "prims/jvm.h"
-+#include "prims/jvm_misc.hpp"
-+#include "runtime/arguments.hpp"
-+#include "runtime/extendedPC.hpp"
-+#include "runtime/frame.inline.hpp"
-+#include "runtime/interfaceSupport.hpp"
-+#include "runtime/java.hpp"
-+#include "runtime/javaCalls.hpp"
-+#include "runtime/mutexLocker.hpp"
-+#include "runtime/osThread.hpp"
-+#include "runtime/sharedRuntime.hpp"
-+#include "runtime/stubRoutines.hpp"
-+#include "runtime/thread.inline.hpp"
-+#include "runtime/timer.hpp"
-+#include "utilities/events.hpp"
-+#include "utilities/vmError.hpp"
-+#ifdef COMPILER1
-+#include "c1/c1_Runtime1.hpp"
-+#endif
-+#ifdef COMPILER2
-+#include "opto/runtime.hpp"
-+#endif
-+
-+// put OS-includes here
-+# include <sys/types.h>
-+# include <sys/mman.h>
-+# include <pthread.h>
-+# include <signal.h>
-+# include <errno.h>
-+# include <dlfcn.h>
-+# include <stdlib.h>
-+# include <stdio.h>
-+# include <unistd.h>
-+# include <sys/resource.h>
-+# include <pthread_np.h>
-+# include <sys/stat.h>
-+# include <sys/time.h>
-+# include <sys/utsname.h>
-+# include <sys/socket.h>
-+# include <sys/wait.h>
-+# include <pwd.h>
-+# include <poll.h>
-+# include <ucontext.h>
-+
-+
-+address os::current_stack_pointer() {
-+  intptr_t* csp;
-+
-+  // inline assembly `mr regno(csp), R1_SP':
-+  __asm__ __volatile__ ("mr %0, 1":"=r"(csp):);
-+
-+  return (address) csp;
-+}
-+
-+char* os::non_memory_address_word() {
-+  // Must never look like an address returned by reserve_memory,
-+  // even in its subfields (as defined by the CPU immediate fields,
-+  // if the CPU splits constants across multiple instructions).
-+
-+  return (char*) -1;
-+}
-+
-+void os::initialize_thread(Thread *thread) { }
-+
-+address os::Bsd::ucontext_get_pc(ucontext_t * uc) {
-+  guarantee(uc->uc_mcontext.mc_gpr != NULL, "only use ucontext_get_pc in sigaction context");
-+  return (address)uc->uc_mcontext.mc_srr0;
-+}
-+
-+intptr_t* os::Bsd::ucontext_get_sp(ucontext_t * uc) {
-+  return (intptr_t*)uc->uc_mcontext.mc_gpr[1/*REG_SP*/];
-+}
-+
-+intptr_t* os::Bsd::ucontext_get_fp(ucontext_t * uc) {
-+  return NULL;
-+}
-+
-+ExtendedPC os::fetch_frame_from_context(void* ucVoid,
-+                    intptr_t** ret_sp, intptr_t** ret_fp) {
-+
-+  ExtendedPC  epc;
-+  ucontext_t* uc = (ucontext_t*)ucVoid;
-+
-+  if (uc != NULL) {
-+    epc = ExtendedPC(os::Bsd::ucontext_get_pc(uc));
-+    if (ret_sp) *ret_sp = os::Bsd::ucontext_get_sp(uc);
-+    if (ret_fp) *ret_fp = os::Bsd::ucontext_get_fp(uc);
-+  } else {
-+    // construct empty ExtendedPC for return value checking
-+    epc = ExtendedPC(NULL);
-+    if (ret_sp) *ret_sp = (intptr_t *)NULL;
-+    if (ret_fp) *ret_fp = (intptr_t *)NULL;
-+  }
-+
-+  return epc;
-+}
-+
-+frame os::fetch_frame_from_context(void* ucVoid) {
-+  intptr_t* sp;
-+  intptr_t* fp;
-+  ExtendedPC epc = fetch_frame_from_context(ucVoid, &sp, &fp);
-+  return frame(sp, epc.pc());
-+}
-+
-+frame os::get_sender_for_C_frame(frame* fr) {
-+  if (*fr->sp() == 0) {
-+    // fr is the last C frame
-+    return frame(NULL, NULL);
-+  }
-+  return frame(fr->sender_sp(), fr->sender_pc());
-+}
-+
-+
-+frame os::current_frame() {
-+  intptr_t* csp = (intptr_t*) *((intptr_t*) os::current_stack_pointer());
-+  // hack.
-+  frame topframe(csp, (address)0x8);
-+  // return sender of current topframe which hopefully has pc != NULL.
-+  return os::get_sender_for_C_frame(&topframe);
-+}
-+
-+// Utility functions
-+
-+extern "C" JNIEXPORT int
-+JVM_handle_bsd_signal(int sig, siginfo_t* info, void* ucVoid, int abort_if_unrecognized) {
-+
-+  ucontext_t* uc = (ucontext_t*) ucVoid;
-+
-+  Thread* t = ThreadLocalStorage::get_thread_slow();   // slow & steady
-+
-+  SignalHandlerMark shm(t);
-+
-+  // Note: it's not uncommon that JNI code uses signal/sigset to install
-+  // then restore certain signal handler (e.g. to temporarily block SIGPIPE,
-+  // or have a SIGILL handler when detecting CPU type). When that happens,
-+  // JVM_handle_bsd_signal() might be invoked with junk info/ucVoid. To
-+  // avoid unnecessary crash when libjsig is not preloaded, try handle signals
-+  // that do not require siginfo/ucontext first.
-+
-+  if (sig == SIGPIPE) {
-+    if (os::Bsd::chained_handler(sig, info, ucVoid)) {
-+      return 1;
-+    } else {
-+      if (PrintMiscellaneous && (WizardMode || Verbose)) {
-+        warning("Ignoring SIGPIPE - see bug 4229104");
-+      }
-+      return 1;
-+    }
-+  }
-+
-+  JavaThread* thread = NULL;
-+  VMThread* vmthread = NULL;
-+  if (os::Bsd::signal_handlers_are_installed) {
-+    if (t != NULL) {
-+      if(t->is_Java_thread()) {
-+        thread = (JavaThread*)t;
-+      }
-+      else if(t->is_VM_thread()) {
-+        vmthread = (VMThread *)t;
-+      }
-+    }
-+  }
-+
-+  // Decide if this trap can be handled by a stub.
-+  address stub = NULL;
-+
-+  // retrieve program counter
-+  address const pc = uc ? os::Bsd::ucontext_get_pc(uc) : NULL;
-+
-+  // retrieve crash address
-+  address const addr = info ? (const address) info->si_addr : NULL;
-+
-+  // SafeFetch 32 handling:
-+  // - make it work if _thread is null
-+  // - make it use the standard os::...::ucontext_get/set_pc APIs
-+  if (uc) {
-+    address const pc = os::Bsd::ucontext_get_pc(uc);
-+    if (pc && StubRoutines::is_safefetch_fault(pc)) {
-+      uc->uc_mcontext.mc_srr0 = (unsigned long)StubRoutines::continuation_for_safefetch_fault(pc);
-+      return true;
-+    }
-+  }
-+
-+  // Handle SIGDANGER right away. AIX would raise SIGDANGER whenever available swap
-+  // space falls below 30%. This is only a chance for the process to gracefully abort.
-+  // We can't hope to proceed after SIGDANGER since SIGKILL tailgates.
-+  // if (sig == SIGDANGER) {
-+  //  goto report_and_die;
-+  // }
-+
-+  if (info == NULL || uc == NULL || thread == NULL && vmthread == NULL) {
-+    goto run_chained_handler;
-+  }
-+
-+  // If we are a java thread...
-+  if (thread != NULL) {
-+
-+    // Handle ALL stack overflow variations here
-+    if (sig == SIGSEGV && (addr < thread->stack_base() &&
-+                           addr >= thread->stack_base() - thread->stack_size())) {
-+      // stack overflow
-+      //
-+      // If we are in a yellow zone and we are inside java, we disable the yellow zone and
-+      // throw a stack overflow exception.
-+      // If we are in native code or VM C code, we report-and-die. The original coding tried
-+      // to continue with yellow zone disabled, but that doesn't buy us much and prevents
-+      // hs_err_pid files.
-+      if (thread->in_stack_yellow_zone(addr)) {
-+        thread->disable_stack_yellow_zone();
-+        if (thread->thread_state() == _thread_in_Java) {
-+          // Throw a stack overflow exception.
-+          // Guard pages will be reenabled while unwinding the stack.
-+          stub = SharedRuntime::continuation_for_implicit_exception(thread, pc, SharedRuntime::STACK_OVERFLOW);
-+          goto run_stub;
-+        } else {
-+          // Thread was in the vm or native code. Return and try to finish.
-+          return 1;
-+        }
-+      } else if (thread->in_stack_red_zone(addr)) {
-+        // Fatal red zone violation. Disable the guard pages and fall through
-+        // to handle_unexpected_exception way down below.
-+        thread->disable_stack_red_zone();
-+        tty->print_raw_cr("An irrecoverable stack overflow has occurred.");
-+        goto report_and_die;
-+      } else {
-+        // This means a segv happened inside our stack, but not in
-+        // the guarded zone. I'd like to know when this happens,
-+        tty->print_raw_cr("SIGSEGV happened inside stack but outside yellow and red zone.");
-+        goto report_and_die;
-+      }
-+
-+    } // end handle SIGSEGV inside stack boundaries
-+
-+    if (thread->thread_state() == _thread_in_Java) {
-+      // Java thread running in Java code
-+
-+      // The following signals are used for communicating VM events:
-+      //
-+      // SIGILL: the compiler generates illegal opcodes
-+      //   at places where it wishes to interrupt the VM:
-+      //   Safepoints, Unreachable Code, Entry points of Zombie methods,
-+      //    This results in a SIGILL with (*pc) == inserted illegal instruction.
-+      //
-+      //   (so, SIGILLs with a pc inside the zero page are real errors)
-+      //
-+      // SIGTRAP:
-+      //   The ppc trap instruction raises a SIGTRAP and is very efficient if it
-+      //   does not trap. It is used for conditional branches that are expected
-+      //   to be never taken. These are:
-+      //     - zombie methods
-+      //     - IC (inline cache) misses.
-+      //     - null checks leading to UncommonTraps.
-+      //     - range checks leading to Uncommon Traps.
-+      //   On Bsd, these are especially null checks, as the ImplicitNullCheck
-+      //   optimization works only in rare cases, as the page at address 0 is only
-+      //   write protected.      //
-+      //   Note: !UseSIGTRAP is used to prevent SIGTRAPS altogether, to facilitate debugging.
-+      //
-+      // SIGSEGV:
-+      //   used for safe point polling:
-+      //     To notify all threads that they have to reach a safe point, safe point polling is used:
-+      //     All threads poll a certain mapped memory page. Normally, this page has read access.
-+      //     If the VM wants to inform the threads about impending safe points, it puts this
-+      //     page to read only ("poisens" the page), and the threads then reach a safe point.
-+      //   used for null checks:
-+      //     If the compiler finds a store it uses it for a null check. Unfortunately this
-+      //     happens rarely.  In heap based and disjoint base compressd oop modes also loads
-+      //     are used for null checks.
-+
-+      // A VM-related SIGILL may only occur if we are not in the zero page.
-+      // On AIX, we get a SIGILL if we jump to 0x0 or to somewhere else
-+      // in the zero page, because it is filled with 0x0. We ignore
-+      // explicit SIGILLs in the zero page.
-+      if (sig == SIGILL && (pc < (address) 0x200)) {
-+        if (TraceTraps) {
-+          tty->print_raw_cr("SIGILL happened inside zero page.");
-+        }
-+        goto report_and_die;
-+      }
-+
-+      // Handle signal from NativeJump::patch_verified_entry().
-+      if (( TrapBasedNotEntrantChecks && sig == SIGTRAP && nativeInstruction_at(pc)->is_sigtrap_zombie_not_entrant()) ||
-+          (!TrapBasedNotEntrantChecks && sig == SIGILL  && nativeInstruction_at(pc)->is_sigill_zombie_not_entrant())) {
-+        if (TraceTraps) {
-+          tty->print_cr("trap: zombie_not_entrant (%s)", (sig == SIGTRAP) ? "SIGTRAP" : "SIGILL");
-+        }
-+        stub = SharedRuntime::get_handle_wrong_method_stub();
-+        goto run_stub;
-+      }
-+
-+      else if (sig == SIGSEGV && os::is_poll_address(addr)) {
-+        if (TraceTraps) {
-+          tty->print_cr("trap: safepoint_poll at " INTPTR_FORMAT " (SIGSEGV)", pc);
-+        }
-+        stub = SharedRuntime::get_poll_stub(pc);
-+        goto run_stub;
-+      }
-+
-+      // SIGTRAP-based ic miss check in compiled code.
-+      else if (sig == SIGTRAP && TrapBasedICMissChecks &&
-+               nativeInstruction_at(pc)->is_sigtrap_ic_miss_check()) {
-+        if (TraceTraps) {
-+          tty->print_cr("trap: ic_miss_check at " INTPTR_FORMAT " (SIGTRAP)", pc);
-+        }
-+        stub = SharedRuntime::get_ic_miss_stub();
-+        goto run_stub;
-+      }
-+
-+      // SIGTRAP-based implicit null check in compiled code.
-+      else if (sig == SIGTRAP && TrapBasedNullChecks &&
-+               nativeInstruction_at(pc)->is_sigtrap_null_check()) {
-+        if (TraceTraps) {
-+          tty->print_cr("trap: null_check at " INTPTR_FORMAT " (SIGTRAP)", pc);
-+        }
-+        stub = SharedRuntime::continuation_for_implicit_exception(thread, pc, SharedRuntime::IMPLICIT_NULL);
-+        goto run_stub;
-+      }
-+
-+      // SIGSEGV-based implicit null check in compiled code.
-+      else if (sig == SIGSEGV && ImplicitNullChecks &&
-+               CodeCache::contains((void*) pc) &&
-+               !MacroAssembler::needs_explicit_null_check((intptr_t) info->si_addr)) {
-+        if (TraceTraps) {
-+          tty->print_cr("trap: null_check at " INTPTR_FORMAT " (SIGSEGV)", pc);
-+        }
-+        stub = SharedRuntime::continuation_for_implicit_exception(thread, pc, SharedRuntime::IMPLICIT_NULL);
-+      }
-+
-+#ifdef COMPILER2
-+      // SIGTRAP-based implicit range check in compiled code.
-+      else if (sig == SIGTRAP && TrapBasedRangeChecks &&
-+               nativeInstruction_at(pc)->is_sigtrap_range_check()) {
-+        if (TraceTraps) {
-+          tty->print_cr("trap: range_check at " INTPTR_FORMAT " (SIGTRAP)", pc);
-+        }
-+        stub = SharedRuntime::continuation_for_implicit_exception(thread, pc, SharedRuntime::IMPLICIT_NULL);
-+        goto run_stub;
-+      }
-+#endif
-+
-+      else if (sig == SIGFPE /* && info->si_code == FPE_INTDIV */) {
-+        if (TraceTraps) {
-+          tty->print_raw_cr("Fix SIGFPE handler, trying divide by zero handler.");
-+        }
-+        stub = SharedRuntime::continuation_for_implicit_exception(thread, pc, SharedRuntime::IMPLICIT_DIVIDE_BY_ZERO);
-+        goto run_stub;
-+      }
-+
-+      else if (sig == SIGBUS) {
-+        // BugId 4454115: A read from a MappedByteBuffer can fault here if the
-+        // underlying file has been truncated. Do not crash the VM in such a case.
-+        CodeBlob* cb = CodeCache::find_blob_unsafe(pc);
-+        nmethod* nm = cb->is_nmethod() ? (nmethod*)cb : NULL;
-+        if (nm != NULL && nm->has_unsafe_access()) {
-+          // We don't really need a stub here! Just set the pending exeption and
-+          // continue at the next instruction after the faulting read. Returning
-+          // garbage from this read is ok.
-+          thread->set_pending_unsafe_access_error();
-+          uc->uc_mcontext.mc_srr0 = ((unsigned long)pc) + 4;
-+          return 1;
-+        }
-+      }
-+    }
-+
-+    else { // thread->thread_state() != _thread_in_Java
-+      // Detect CPU features. This is only done at the very start of the VM. Later, the
-+      // VM_Version::is_determine_features_test_running() flag should be false.
-+
-+      if (sig == SIGILL && VM_Version::is_determine_features_test_running()) {
-+        // SIGILL must be caused by VM_Version::determine_features().
-+        *(int *)pc = 0; // patch instruction to 0 to indicate that it causes a SIGILL,
-+                        // flushing of icache is not necessary.
-+        stub = pc + 4;  // continue with next instruction.
-+        goto run_stub;
-+      }
-+      else if (thread->thread_state() == _thread_in_vm &&
-+               sig == SIGBUS && thread->doing_unsafe_access()) {
-+        // We don't really need a stub here! Just set the pending exeption and
-+        // continue at the next instruction after the faulting read. Returning
-+        // garbage from this read is ok.
-+        thread->set_pending_unsafe_access_error();
-+        uc->uc_mcontext.mc_srr0 = ((unsigned long)pc) + 4;
-+        return 1;
-+      }
-+    }
-+
-+    // Check to see if we caught the safepoint code in the
-+    // process of write protecting the memory serialization page.
-+    // It write enables the page immediately after protecting it
-+    // so we can just return to retry the write.
-+    if ((sig == SIGSEGV) &&
-+        os::is_memory_serialize_page(thread, addr)) {
-+      // Synchronization problem in the pseudo memory barrier code (bug id 6546278)
-+      // Block current thread until the memory serialize page permission restored.
-+      os::block_on_serialize_page_trap();
-+      return true;
-+    }
-+  }
-+
-+run_stub:
-+
-+  // One of the above code blocks ininitalized the stub, so we want to
-+  // delegate control to that stub.
-+  if (stub != NULL) {
-+    // Save all thread context in case we need to restore it.
-+    if (thread != NULL) thread->set_saved_exception_pc(pc);
-+    uc->uc_mcontext.mc_srr0 = (unsigned long)stub;
-+    return 1;
-+  }
-+
-+run_chained_handler:
-+
-+  // signal-chaining
-+  if (os::Bsd::chained_handler(sig, info, ucVoid)) {
-+    return 1;
-+  }
-+  if (!abort_if_unrecognized) {
-+    // caller wants another chance, so give it to him
-+    return 0;
-+  }
-+
-+report_and_die:
-+
-+  // Use sigthreadmask instead of sigprocmask on AIX and unmask current signal.
-+  sigset_t newset;
-+  sigemptyset(&newset);
-+  sigaddset(&newset, sig);
-+  sigprocmask(SIG_UNBLOCK, &newset, NULL);
-+
-+  VMError err(t, sig, pc, info, ucVoid);
-+  err.report_and_die();
-+
-+  ShouldNotReachHere();
-+  return 0;
-+}
-+
-+void os::Bsd::init_thread_fpu_state(void) {
-+  // Disable FP exceptions.
-+  __asm__ __volatile__ ("mtfsfi 6,0");
-+}
-+
-+///////////////////////////////////////////////////////////////////////////////
-+// thread stack
-+
-+size_t os::Bsd::min_stack_allowed = 128*K;
-+
-+bool os::Bsd::supports_variable_stack_size() { return true; }
-+
-+// return default stack size for thr_type
-+size_t os::Bsd::default_stack_size(os::ThreadType thr_type) {
-+  // default stack size (compiler thread needs larger stack)
-+  // Notice that the setting for compiler threads here have no impact
-+  // because of the strange 'fallback logic' in os::create_thread().
-+  // Better set CompilerThreadStackSize in globals_<os_cpu>.hpp if you want to
-+  // specify a different stack size for compiler threads!
-+  size_t s = (thr_type == os::compiler_thread ? 4 * M : 1024 * K);
-+  return s;
-+}
-+
-+size_t os::Bsd::default_guard_size(os::ThreadType thr_type) {
-+  return 2 * page_size();
-+}
-+
-+// Java thread:
-+//
-+//   Low memory addresses
-+//    +------------------------+
-+//    |                        |\  JavaThread created by VM does not have glibc
-+//    |    glibc guard page    | - guard, attached Java thread usually has
-+//    |                        |/  1 page glibc guard.
-+// P1 +------------------------+ Thread::stack_base() - Thread::stack_size()
-+//    |                        |\
-+//    |  HotSpot Guard Pages   | - red and yellow pages
-+//    |                        |/
-+//    +------------------------+ JavaThread::stack_yellow_zone_base()
-+//    |                        |\
-+//    |      Normal Stack      | -
-+//    |                        |/
-+// P2 +------------------------+ Thread::stack_base()
-+//
-+// Non-Java thread:
-+//
-+//   Low memory addresses
-+//    +------------------------+
-+//    |                        |\
-+//    |  glibc guard page      | - usually 1 page
-+//    |                        |/
-+// P1 +------------------------+ Thread::stack_base() - Thread::stack_size()
-+//    |                        |\
-+//    |      Normal Stack      | -
-+//    |                        |/
-+// P2 +------------------------+ Thread::stack_base()
-+//
-+// ** P1 (aka bottom) and size ( P2 = P1 - size) are the address and stack size returned from
-+//    pthread_attr_getstack()
-+
-+static void current_stack_region(address * bottom, size_t * size) {
-+#ifdef __APPLE__
-+  pthread_t self = pthread_self();
-+  void *stacktop = pthread_get_stackaddr_np(self);
-+  *size = pthread_get_stacksize_np(self);
-+  // workaround for OS X 10.9.0 (Mavericks)
-+  // pthread_get_stacksize_np returns 128 pages even though the actual size is 2048 pages
-+  if (pthread_main_np() == 1) {
-+    if ((*size) < (DEFAULT_MAIN_THREAD_STACK_PAGES * (size_t)getpagesize())) {
-+      char kern_osrelease[256];
-+      size_t kern_osrelease_size = sizeof(kern_osrelease);
-+      int ret = sysctlbyname("kern.osrelease", kern_osrelease, &kern_osrelease_size, NULL, 0);
-+      if (ret == 0) {
-+        // get the major number, atoi will ignore the minor amd micro portions of the version string
-+        if (atoi(kern_osrelease) >= OS_X_10_9_0_KERNEL_MAJOR_VERSION) {
-+          *size = (DEFAULT_MAIN_THREAD_STACK_PAGES*getpagesize());
-+        }
-+      }
-+    }
-+  }
-+  *bottom = (address) stacktop - *size;
-+#elif defined(__OpenBSD__)
-+  stack_t ss;
-+  int rslt = pthread_stackseg_np(pthread_self(), &ss);
-+
-+  if (rslt != 0)
-+    fatal(err_msg("pthread_stackseg_np failed with err = %d", rslt));
-+
-+  *bottom = (address)((char *)ss.ss_sp - ss.ss_size);
-+  *size   = ss.ss_size;
-+#else
-+  pthread_attr_t attr;
-+
-+  int rslt = pthread_attr_init(&attr);
-+
-+  // JVM needs to know exact stack location, abort if it fails
-+  if (rslt != 0)
-+    fatal(err_msg("pthread_attr_init failed with err = %d", rslt));
-+
-+  rslt = pthread_attr_get_np(pthread_self(), &attr);
-+
-+  if (rslt != 0)
-+    fatal(err_msg("pthread_attr_get_np failed with err = %d", rslt));
-+
-+  if (pthread_attr_getstackaddr(&attr, (void **)bottom) != 0 ||
-+    pthread_attr_getstacksize(&attr, size) != 0) {
-+    fatal("Can not locate current stack attributes!");
-+  }
-+
-+  pthread_attr_destroy(&attr);
-+#endif
-+  assert(os::current_stack_pointer() >= *bottom &&
-+         os::current_stack_pointer() < *bottom + *size, "just checking");
-+}
-+
-+address os::current_stack_base() {
-+  address bottom;
-+  size_t size;
-+  current_stack_region(&bottom, &size);
-+  return (bottom + size);
-+}
-+
-+size_t os::current_stack_size() {
-+  // stack size includes normal stack and HotSpot guard pages
-+  address bottom;
-+  size_t size;
-+  current_stack_region(&bottom, &size);
-+  return size;
-+}
-+
-+/////////////////////////////////////////////////////////////////////////////
-+// helper functions for fatal error handler
-+
-+void os::print_context(outputStream *st, void *context) {
-+  if (context == NULL) return;
-+
-+  ucontext_t* uc = (ucontext_t*)context;
-+
-+  st->print_cr("Registers:");
-+  st->print("pc =" INTPTR_FORMAT "  ", uc->uc_mcontext.mc_srr0);
-+  st->print("lr =" INTPTR_FORMAT "  ", uc->uc_mcontext.mc_lr);
-+  st->print("ctr=" INTPTR_FORMAT "  ", uc->uc_mcontext.mc_ctr);
-+  st->cr();
-+  for (int i = 0; i < 32; i++) {
-+    st->print("r%-2d=" INTPTR_FORMAT "  ", i, uc->uc_mcontext.mc_gpr[i]);
-+    if (i % 3 == 2) st->cr();
-+  }
-+  st->cr();
-+  st->cr();
-+
-+  intptr_t *sp = (intptr_t *)os::Bsd::ucontext_get_sp(uc);
-+  st->print_cr("Top of Stack: (sp=" PTR_FORMAT ")", p2i(sp));
-+  print_hex_dump(st, (address)sp, (address)(sp + 128), sizeof(intptr_t));
-+  st->cr();
-+
-+  // Note: it may be unsafe to inspect memory near pc. For example, pc may
-+  // point to garbage if entry point in an nmethod is corrupted. Leave
-+  // this at the end, and hope for the best.
-+  address pc = os::Bsd::ucontext_get_pc(uc);
-+  st->print_cr("Instructions: (pc=" PTR_FORMAT ")", p2i(pc));
-+  print_hex_dump(st, pc - 64, pc + 64, /*instrsize=*/4);
-+  st->cr();
-+}
-+
-+void os::print_register_info(outputStream *st, void *context) {
-+  if (context == NULL) return;
-+
-+  ucontext_t *uc = (ucontext_t*)context;
-+
-+  st->print_cr("Register to memory mapping:");
-+  st->cr();
-+
-+  // this is only for the "general purpose" registers
-+  for (int i = 0; i < 32; i++) {
-+    st->print("r%-2d=", i);
-+    print_location(st, uc->uc_mcontext.mc_gpr[i]);
-+  }
-+  st->cr();
-+}
-+
-+extern "C" {
-+  int SpinPause() {
-+    return 0;
-+  }
-+}
-+
-+#ifndef PRODUCT
-+void os::verify_stack_alignment() {
-+  assert(((intptr_t)os::current_stack_pointer() & (StackAlignmentInBytes-1)) == 0, "incorrect stack alignment");
-+}
-+#endif
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,666 @@
 +/*
 + * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2007, 2008, 2009, 2010 Red Hat, Inc.
@@ -6802,43 +5453,8 @@
 +}
 +#endif
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.hpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,70 @@
-+/*
-+ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2013 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#ifndef OS_CPU_BSD_PPC_VM_OS_BSD_PPC_HPP
-+#define OS_CPU_BSD_PPC_VM_OS_BSD_PPC_HPP
-+
-+  static void setup_fpu() {}
-+
-+  // Used to register dynamic code cache area with the OS
-+  // Note: Currently only used in 64 bit Windows implementations
-+  static bool register_code_area(char *low, char *high) { return true; }
-+
-+#endif // OS_CPU_BSD_PPC_VM_OS_BSD_PPC_HPP
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,35 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -6875,58 +5491,8 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_OS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/prefetch_bsd_ppc.inline.hpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,100 @@
-+/*
-+ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2013 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#ifndef OS_CPU_BSD_PPC_VM_PREFETCH_BSD_PPC_INLINE_HPP
-+#define OS_CPU_BSD_PPC_VM_PREFETCH_BSD_PPC_INLINE_HPP
-+
-+#include "runtime/prefetch.hpp"
-+
-+
-+inline void Prefetch::read(void *loc, intx interval) {
-+  __asm__ __volatile__ (
-+    "   dcbt   0, %0       \n"
-+    :
-+    : /*%0*/"r" ( ((address)loc) +((long)interval) )
-+    //:
-+    );
-+}
-+
-+inline void Prefetch::write(void *loc, intx interval) {
-+  __asm__ __volatile__ (
-+    "   dcbtst 0, %0       \n"
-+    :
-+    : /*%0*/"r" ( ((address)loc) +((long)interval) )
-+    //:
-+    );
-+}
-+
-+#endif // OS_CPU_BSD_PPC_VM_PREFETCH_BSD_PPC_INLINE_HPP
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/prefetch_bsd_ppc.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,50 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -6978,8 +5544,8 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_PREFETCH_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.cpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,78 @@
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,39 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -7019,84 +5585,9 @@
 +void ThreadLocalStorage::pd_set_thread(Thread* thread) {
 +  os::thread_local_storage_at_put(ThreadLocalStorage::thread_index(), thread);
 +}
-+/*
-+ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2013 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#include "precompiled.hpp"
-+#include "runtime/threadLocalStorage.hpp"
-+
-+void ThreadLocalStorage::generate_code_for_get_thread() {
-+    // nothing we can do here for user-level thread
-+}
-+
-+void ThreadLocalStorage::pd_init() {
-+  // Nothing to do
-+}
-+
-+void ThreadLocalStorage::pd_set_thread(Thread* thread) {
-+  os::thread_local_storage_at_put(ThreadLocalStorage::thread_index(), thread);
-+}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.hpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,72 @@
-+/*
-+ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2013 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#ifndef OS_CPU_BSD_PPC_VM_THREADLS_BSD_PPC_HPP
-+#define OS_CPU_BSD_PPC_VM_THREADLS_BSD_PPC_HPP
-+
-+  // Processor dependent parts of ThreadLocalStorage
-+
-+public:
-+  static Thread* thread() {
-+    return (Thread *) os::thread_local_storage_at(thread_index());
-+  }
-+
-+#endif // OS_CPU_BSD_PPC_VM_THREADLS_BSD_PPC_HPP
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,36 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -7134,44 +5625,8 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_THREADLS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.cpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,72 @@
-+/*
-+ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2014 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#include "precompiled.hpp"
-+#include "runtime/frame.hpp"
-+#include "runtime/thread.hpp"
-+
-+// Forte Analyzer AsyncGetCallTrace profiling support is not implemented on Bsd/PPC.
-+bool JavaThread::pd_get_top_frame_for_signal_handler(frame* fr_addr, void* ucontext, bool isInJava) {
-+  Unimplemented();
-+  return false;
-+}
-+
-+void JavaThread::cache_global_variables() { }
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.cpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,36 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2014 SAP AG. All rights reserved.
@@ -7209,91 +5664,8 @@
 +
 +void JavaThread::cache_global_variables() { }
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.hpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,166 @@
-+/*
-+ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2013 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#ifndef OS_CPU_BSD_PPC_VM_THREAD_BSD_PPC_HPP
-+#define OS_CPU_BSD_PPC_VM_THREAD_BSD_PPC_HPP
-+
-+ private:
-+
-+  void pd_initialize() {
-+    _anchor.clear();
-+    _last_interpreter_fp = NULL;
-+  }
-+
-+  // The `last' frame is the youngest Java frame on the thread's stack.
-+  frame pd_last_frame() {
-+    assert(has_last_Java_frame(), "must have last_Java_sp() when suspended");
-+
-+    intptr_t* sp = last_Java_sp();
-+    address pc = _anchor.last_Java_pc();
-+
-+    // Last_Java_pc ist not set, if we come here from compiled code.
-+    if (pc == NULL) {
-+      pc = (address) *(sp + 2);
-+    }
-+
-+    return frame(sp, pc);
-+  }
-+
-+ public:
-+
-+  void set_base_of_stack_pointer(intptr_t* base_sp) {}
-+  intptr_t* base_of_stack_pointer() { return NULL; }
-+  void record_base_of_stack_pointer() {}
-+
-+  // These routines are only used on cpu architectures that
-+  // have separate register stacks (Itanium).
-+  static bool register_stack_overflow() { return false; }
-+  static void enable_register_stack_guard() {}
-+  static void disable_register_stack_guard() {}
-+
-+  bool pd_get_top_frame_for_signal_handler(frame* fr_addr, void* ucontext, bool isInJava);
-+
-+ protected:
-+
-+  // -Xprof support
-+  //
-+  // In order to find the last Java fp from an async profile
-+  // tick, we store the current interpreter fp in the thread.
-+  // This value is only valid while we are in the C++ interpreter
-+  // and profiling.
-+  intptr_t *_last_interpreter_fp;
-+
-+ public:
-+
-+  static ByteSize last_interpreter_fp_offset() {
-+    return byte_offset_of(JavaThread, _last_interpreter_fp);
-+  }
-+
-+  intptr_t* last_interpreter_fp() { return _last_interpreter_fp; }
-+
-+#endif // OS_CPU_BSD_PPC_VM_THREAD_BSD_PPC_HPP
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,83 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -7378,63 +5750,8 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_THREAD_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/vmStructs_bsd_ppc.hpp	Mon May 09 17:15:53 2016 -0400
-@@ -0,0 +1,110 @@
-+/*
-+ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2012, 2013 SAP AG. All rights reserved.
-+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-+ *
-+ * This code is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License version 2 only, as
-+ * published by the Free Software Foundation.
-+ *
-+ * This code is distributed in the hope that it will be useful, but WITHOUT
-+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-+ * version 2 for more details (a copy is included in the LICENSE file that
-+ * accompanied this code).
-+ *
-+ * You should have received a copy of the GNU General Public License version
-+ * 2 along with this work; if not, write to the Free Software Foundation,
-+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
-+ *
-+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
-+ * or visit www.oracle.com if you need additional information or have any
-+ * questions.
-+ *
-+ */
-+
-+#ifndef OS_CPU_BSD_PPC_VM_VMSTRUCTS_BSD_PPC_HPP
-+#define OS_CPU_BSD_PPC_VM_VMSTRUCTS_BSD_PPC_HPP
-+
-+// These are the OS and CPU-specific fields, types and integer
-+// constants required by the Serviceability Agent. This file is
-+// referenced by vmStructs.cpp.
-+
-+#define VM_STRUCTS_OS_CPU(nonstatic_field, static_field, unchecked_nonstatic_field, volatile_nonstatic_field, nonproduct_nonstatic_field, c2_nonstatic_field, unchecked_c1_static_field, unchecked_c2_static_field) \
-+                                                                                                                                     \
-+  /******************************/                                                                                                   \
-+  /* Threads (NOTE: incomplete) */                                                                                                   \
-+  /******************************/                                                                                                   \
-+  nonstatic_field(OSThread,                      _thread_id,                                      pid_t)                             \
-+  nonstatic_field(OSThread,                      _pthread_id,                                     pthread_t)
-+
-+
-+#define VM_TYPES_OS_CPU(declare_type, declare_toplevel_type, declare_oop_type, declare_integer_type, declare_unsigned_integer_type, declare_c1_toplevel_type, declare_c2_type, declare_c2_toplevel_type) \
-+                                                                          \
-+  /**********************/                                                \
-+  /* Posix Thread IDs   */                                                \
-+  /**********************/                                                \
-+                                                                          \
-+  declare_integer_type(pid_t)                                             \
-+  declare_unsigned_integer_type(pthread_t)
-+
-+#define VM_INT_CONSTANTS_OS_CPU(declare_constant, declare_preprocessor_constant, declare_c1_constant, declare_c2_constant, declare_c2_preprocessor_constant)
-+
-+#define VM_LONG_CONSTANTS_OS_CPU(declare_constant, declare_preprocessor_constant, declare_c1_constant, declare_c2_constant, declare_c2_preprocessor_constant)
-+
-+#endif // OS_CPU_BSD_PPC_VM_VMSTRUCTS_BSD_PPC_HPP
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/vmStructs_bsd_ppc.hpp	Fri Jun 17 22:08:33 2016 -0700
+@@ -0,0 +1,55 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
 + * Copyright 2012, 2013 SAP AG. All rights reserved.
@@ -7491,7 +5808,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_VMSTRUCTS_BSD_PPC_HPP
 --- ./hotspot/src/share/vm/opto/node.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/opto/node.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/opto/node.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -286,6 +286,10 @@
  #ifdef _MSC_VER // the IDX_INIT hack falls foul of warning C4355
  #pragma warning( disable:4355 ) // 'this' : used in base member initializer list
@@ -7515,7 +5832,7 @@
  //------------------------------clone------------------------------------------
  // Clone a Node.
 --- ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -63,6 +63,9 @@
  #endif
  
@@ -7527,7 +5844,7 @@
  # include "atomic_bsd_x86.inline.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/globals.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/globals.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/runtime/globals.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -94,6 +94,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "globals_aix_ppc.hpp"
@@ -7539,7 +5856,7 @@
  # include "globals_bsd_x86.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -64,6 +64,9 @@
  #endif
  
@@ -7551,7 +5868,7 @@
  # include "orderAccess_bsd_x86.inline.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/os.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/os.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/runtime/os.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -420,15 +420,6 @@
      if (_native_java_library == NULL) {
        vm_exit_during_initialization("Unable to load native library", ebuf);
@@ -7569,7 +5886,7 @@
    static jboolean onLoaded = JNI_FALSE;
    if (onLoaded) {
 --- ./hotspot/src/share/vm/runtime/os.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/os.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/runtime/os.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -835,6 +835,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "os_aix_ppc.hpp"
@@ -7581,7 +5898,7 @@
  # include "os_bsd_x86.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -63,6 +63,9 @@
  #endif
  
@@ -7593,7 +5910,7 @@
  # include "prefetch_bsd_x86.inline.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/thread.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/thread.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/runtime/thread.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -1732,6 +1732,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "thread_aix_ppc.hpp"
@@ -7605,7 +5922,7 @@
  # include "thread_bsd_x86.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -75,6 +75,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "threadLS_aix_ppc.hpp"
@@ -7617,7 +5934,7 @@
  # include "threadLS_bsd_x86.hpp"
  #endif
 --- ./hotspot/src/share/vm/runtime/vmStructs.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/runtime/vmStructs.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/runtime/vmStructs.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -146,6 +146,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "vmStructs_aix_ppc.hpp"
@@ -7638,7 +5955,7 @@
    NOT_ZERO(X86_ONLY(declare_constant(frame::entry_frame_call_wrapper_offset)))      \
    declare_constant(frame::pc_return_offset)                               \
 --- ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -30,6 +30,11 @@
  // This file holds compiler-dependent includes,
  // globally used constants & types, class (forward)
@@ -7671,7 +5988,7 @@
  #endif
  
 --- ./hotspot/src/share/vm/utilities/vmError.cpp	Tue Mar 22 11:05:52 2016 -0700
-+++ ./hotspot/src/share/vm/utilities/vmError.cpp	Mon May 09 17:15:53 2016 -0400
++++ ./hotspot/src/share/vm/utilities/vmError.cpp	Fri Jun 17 22:08:33 2016 -0700
 @@ -22,7 +22,6 @@
   *
   */
@@ -7681,7 +5998,7 @@
  #include "compiler/compileBroker.hpp"
  #include "gc_interface/collectedHeap.hpp"
 --- ./jdk/make/CompileDemos.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/CompileDemos.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/CompileDemos.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -323,7 +323,7 @@
  $(eval $(call SetupJVMTIDemo,hprof, java_crw_demo, \
      -I$(JDK_TOPDIR)/src/share/npt -I$(JDK_TOPDIR)/src/$(OPENJDK_TARGET_OS_API_DIR)/npt \
@@ -7692,7 +6009,7 @@
  $(eval $(call SetupJVMTIDemo,minst, agent_util java_crw_demo))
  $(eval $(call SetupJVMTIDemo,mtrace, agent_util java_crw_demo))
 --- ./jdk/make/CompileJavaClasses.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/CompileJavaClasses.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/CompileJavaClasses.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -128,23 +128,32 @@
        sun/nio/fs/LinuxFileStore.java \
        sun/nio/fs/LinuxFileSystem.java \
@@ -7747,23 +6064,24 @@
  endif
  
 -MACOSX_SRC_DIRS :=
+-ifeq ($(OPENJDK_TARGET_OS), macosx)
+-  MACOSX_SRC_DIRS += $(JDK_TOPDIR)/src/macosx/classes
 +BSD_SRC_DIRS :=
 +ifneq (, $(filter $(OPENJDK_TARGET_OS), bsd macosx))
 +  BSD_SRC_DIRS += $(JDK_TOPDIR)/src/bsd/classes
-+
-+  # these files are duplicated in BSD_SRC_DIRS
-+  EXFILES += $(JDK_TOPDIR)/src/solaris/classes/java/net/DefaultInterface.java \
-+      $(JDK_TOPDIR)/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java
-+endif
-+
- ifeq ($(OPENJDK_TARGET_OS), macosx)
--  MACOSX_SRC_DIRS += $(JDK_TOPDIR)/src/macosx/classes
-+  BSD_SRC_DIRS += $(JDK_TOPDIR)/src/macosx/classes
  
 -  # this files are duplicated in MACOSX_SRC_DIRS
 -  EXFILES += $(JDK_TOPDIR)/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java \
 -      $(JDK_TOPDIR)/src/solaris/classes/sun/java2d/BackBufferCapsProvider.java \
 -      $(JDK_TOPDIR)/src/solaris/classes/java/net/DefaultInterface.java \
++  # these files are duplicated in BSD_SRC_DIRS
++  EXFILES += $(JDK_TOPDIR)/src/solaris/classes/java/net/DefaultInterface.java \
++      $(JDK_TOPDIR)/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java
++endif
++
++ifeq ($(OPENJDK_TARGET_OS), macosx)
++  BSD_SRC_DIRS += $(JDK_TOPDIR)/src/macosx/classes
++
 +  # these files are duplicated in BSD_SRC_DIRS
 +  EXFILES += $(JDK_TOPDIR)/src/solaris/classes/sun/java2d/BackBufferCapsProvider.java \
        $(JDK_TOPDIR)/src/solaris/classes/java/lang/ClassLoaderHelper.java \
@@ -7794,7 +6112,7 @@
      INCLUDES := $(SECURITY_PKGS), \
      EXCLUDES := $(EXCLUDES), \
 --- ./jdk/make/CompileLaunchers.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/CompileLaunchers.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/CompileLaunchers.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -49,7 +49,7 @@
    ORIGIN_ROOT := /..
  endif
@@ -7900,7 +6218,7 @@
  endif
  
 --- ./jdk/make/CopyFiles.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/CopyFiles.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/CopyFiles.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -29,6 +29,8 @@
  
  ifeq ($(OPENJDK_TARGET_OS), windows)
@@ -7944,7 +6262,7 @@
            endif
          endif
 --- ./jdk/make/Images.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/Images.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/Images.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -236,11 +236,11 @@
  endif
  
@@ -8015,7 +6333,7 @@
  
  ################################################################################
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/data/classlist/classlist.bsd	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/data/classlist/classlist.bsd	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,2559 @@
 +java/lang/Object
 +java/lang/String
@@ -10577,7 +8895,7 @@
 +sun/awt/X11/XErrorEvent
 +# eea35d9d56e0006e
 --- ./jdk/make/gendata/GendataFontConfig.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/gendata/GendataFontConfig.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/gendata/GendataFontConfig.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -73,6 +73,13 @@
    GENDATA_FONT_CONFIG_SRC_PREFIX := aix.
  endif
@@ -10593,7 +8911,7 @@
  
  $(GENDATA_FONT_CONFIG_DST)/%.src: \
 --- ./jdk/make/lib/Awt2dLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/Awt2dLibraries.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/lib/Awt2dLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -309,7 +309,7 @@
      debug_trace.c \
      debug_util.c
@@ -10719,7 +9037,7 @@
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -lpthread
    endif
 --- ./jdk/make/lib/CoreLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/CoreLibraries.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/lib/CoreLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -82,7 +82,7 @@
  endif
  
@@ -10807,7 +9125,7 @@
      LDFLAGS_SUFFIX_windows := -export:nptInitialize -export:nptTerminate, \
      LDFLAGS_SUFFIX_solaris := -lc, \
 --- ./jdk/make/lib/NetworkingLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/NetworkingLibraries.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/lib/NetworkingLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -42,7 +42,7 @@
    LIBNET_EXCLUDE_FILES += linux_close.c
  endif
@@ -10837,7 +9155,7 @@
          delayimp.lib $(WIN_JAVA_LIB) advapi32.lib \
          -DELAYLOAD:secur32.dll -DELAYLOAD:iphlpapi.dll, \
 --- ./jdk/make/lib/NioLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/NioLibraries.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/lib/NioLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -77,9 +77,28 @@
        UnixNativeDispatcher.c
  endif
@@ -10899,7 +9217,7 @@
 +  endif
  endif
 --- ./jdk/make/lib/ServiceabilityLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/ServiceabilityLibraries.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/lib/ServiceabilityLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -34,7 +34,7 @@
  ifneq ($(OPENJDK_TARGET_OS), linux)
    LIBATTACH_EXCLUDE_FILES += LinuxVirtualMachine.c
@@ -10990,7 +9308,7 @@
      LIBHPROF_OPTIMIZATION := LOW
    endif
 --- ./jdk/make/lib/SoundLibraries.gmk	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/lib/SoundLibraries.gmk	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/lib/SoundLibraries.gmk	Tue Jun 14 11:51:15 2016 -0700
 @@ -75,6 +75,13 @@
    LIBJSOUND_CFLAGS += -DX_PLATFORM=X_AIX
  endif # OPENJDK_TARGET_OS aix
@@ -11023,7 +9341,7 @@
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libjsoundalsa, \
        DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))
 --- ./jdk/make/mapfiles/launchers/mapfile-ppc64	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/mapfiles/launchers/mapfile-ppc64	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/mapfiles/launchers/mapfile-ppc64	Tue Jun 14 11:51:15 2016 -0700
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -11033,7 +9351,7 @@
  	local:
  		*;
 --- ./jdk/make/mapfiles/launchers/mapfile-x86	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/mapfiles/launchers/mapfile-x86	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/mapfiles/launchers/mapfile-x86	Tue Jun 14 11:51:15 2016 -0700
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -11043,7 +9361,7 @@
  		_start;		# exported from ctr1/crtn, the clever hacker
  		_init;		# might know about them.  However note, that
 --- ./jdk/make/mapfiles/launchers/mapfile-x86_64	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/mapfiles/launchers/mapfile-x86_64	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/mapfiles/launchers/mapfile-x86_64	Tue Jun 14 11:51:15 2016 -0700
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -11053,7 +9371,7 @@
  	local:
  		*;
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/mapfiles/libattach/mapfile-bsd	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/mapfiles/libattach/mapfile-bsd	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,42 @@
 +#
 +# Copyright (c) 2005, Oracle and/or its affiliates. All rights reserved.
@@ -11098,7 +9416,7 @@
 +		*;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/mapfiles/libnio/mapfile-bsd	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/mapfiles/libnio/mapfile-bsd	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,195 @@
 +#
 +# Copyright (c) 2001, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -11296,7 +9614,7 @@
 +		*;
 +};
 --- ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Tue Jun 14 11:51:15 2016 -0700
 @@ -26,6 +26,9 @@
  # Define library interface.
  
@@ -11308,7 +9626,7 @@
  	    *;
  };
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/netbeans/common/bsd-sources.ent	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/netbeans/common/bsd-sources.ent	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,45 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +
@@ -11356,7 +9674,7 @@
 +    <location>${root}/src/bsd/classes</location>
 +</source-folder>
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/netbeans/common/bsd-view.ent	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/netbeans/common/bsd-view.ent	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,39 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +
@@ -11398,7 +9716,7 @@
 +    <excludes>${excludes}</excludes>
 +</source-folder>
 --- ./jdk/make/netbeans/common/java-data-native.ent	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/netbeans/common/java-data-native.ent	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/netbeans/common/java-data-native.ent	Tue Jun 14 11:51:15 2016 -0700
 @@ -34,6 +34,7 @@
  <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/4">
      <compilation-unit>
@@ -11408,7 +9726,7 @@
          <package-root>${root}/src/solaris/classes</package-root>
          <package-root>${root}/src/windows/classes</package-root>
 --- ./jdk/make/netbeans/common/make.xml	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/netbeans/common/make.xml	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/netbeans/common/make.xml	Tue Jun 14 11:51:15 2016 -0700
 @@ -32,16 +32,21 @@
  -->
  
@@ -11444,7 +9762,7 @@
              <attribute name="target"/>
              <attribute name="dir"/>
 --- ./jdk/make/netbeans/j2se/nbproject/project.xml	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/netbeans/j2se/nbproject/project.xml	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/netbeans/j2se/nbproject/project.xml	Tue Jun 14 11:51:15 2016 -0700
 @@ -34,6 +34,7 @@
  <!DOCTYPE project [
      <!ENTITY properties SYSTEM "../../common/properties.ent">
@@ -11478,7 +9796,7 @@
                      &unix-view;
                      &windows-view;
 --- ./jdk/make/netbeans/world/nbproject/project.xml	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/make/netbeans/world/nbproject/project.xml	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/make/netbeans/world/nbproject/project.xml	Tue Jun 14 11:51:15 2016 -0700
 @@ -34,12 +34,14 @@
  <!DOCTYPE project [
      <!ENTITY properties SYSTEM "../../common/properties.ent">
@@ -11511,7 +9829,7 @@
                      &unix-view;
                      &windows-view;
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/java/net/DefaultInterface.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/bsd/classes/java/net/DefaultInterface.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,97 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -11611,7 +9929,7 @@
 +    }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/DefaultSelectorProvider.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/bsd/classes/sun/nio/ch/DefaultSelectorProvider.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,48 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -11662,7 +9980,7 @@
 +
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueArrayWrapper.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueArrayWrapper.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,213 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -11878,7 +10196,7 @@
 +    private static native void interrupt(int fd);
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorImpl.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorImpl.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,263 @@
 +/*
 + * Copyright (c) 2011, 2015, Oracle and/or its affiliates. All rights reserved.
@@ -12144,7 +10462,7 @@
 +    }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorProvider.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorProvider.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,44 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -12191,7 +10509,7 @@
 +    }
 +}
 --- ./jdk/src/bsd/doc/man/javah.1	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/bsd/doc/man/javah.1	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/bsd/doc/man/javah.1	Tue Jun 14 11:51:15 2016 -0700
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -12211,7 +10529,7 @@
  \fIWindows\fR:
  
 --- ./jdk/src/bsd/doc/man/rmic.1	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/bsd/doc/man/rmic.1	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/bsd/doc/man/rmic.1	Tue Jun 14 11:51:15 2016 -0700
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -12240,7 +10558,7 @@
  .TP 0.2i    
  \(bu
 --- ./jdk/src/bsd/doc/man/rmid.1	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/bsd/doc/man/rmid.1	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/bsd/doc/man/rmid.1	Tue Jun 14 11:51:15 2016 -0700
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -12260,7 +10578,7 @@
  .TP 0.2i    
  \(bu
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,171 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -13288,7 +11606,7 @@
 -}
 -
 --- ./jdk/src/share/bin/jli_util.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/bin/jli_util.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/bin/jli_util.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -87,7 +87,7 @@
  #define _LARGFILE64_SOURCE
  #define JLI_Lseek                       lseek64
@@ -13299,7 +11617,7 @@
  #endif
  #ifdef _AIX
 --- ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -1146,7 +1146,7 @@
       */
      HashMap<String, Boolean> existsMap;
@@ -13310,7 +11628,7 @@
          } else if (existsMap == null) {
             existsMap = new HashMap<String, Boolean>();
 --- ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -39,6 +39,7 @@
          WINDOWS,
          LINUX,
@@ -13331,7 +11649,7 @@
                  return MACOSX;
              }
 --- ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -48,6 +48,8 @@
  
      public static boolean isLinux;
@@ -13351,7 +11669,7 @@
  
                  String t2kStr = System.getProperty("sun.java2d.font.scaler");
 --- ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -418,7 +418,7 @@
                           * registerFonts method as on-screen these JRE fonts
                           * always go through the T2K rasteriser.
@@ -13362,7 +11680,7 @@
                              registerFontDir(jreFontDirName);
                          }
 --- ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -1306,7 +1306,7 @@
          String osName = AccessController.doPrivileged(
              new GetPropertyAction("os.name"));
@@ -13373,7 +11691,7 @@
                      new String[] {
                          "COMPOUND_TEXT",        // JDK historical
 --- ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -1587,9 +1587,31 @@
          }
  
@@ -13409,7 +11727,7 @@
                  execCmd[n++] = "-P" + printer;
              }
 --- ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -48,6 +48,7 @@
                      public Boolean run() {
                              String osname = System.getProperty("os.name");
@@ -13419,7 +11737,7 @@
                                  osname.startsWith("Linux")) {
                                  return new Boolean(System.getProperty
 --- ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -90,6 +90,12 @@
                                      "libgssapi_krb5.so",
                                      "libgssapi_krb5.so.2",
@@ -13434,7 +11752,7 @@
                                  gssLibs = new String[]{
                                      "libgssapi_krb5.dylib",
 --- ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Jun 14 11:51:15 2016 -0700
 @@ -31,4 +31,5 @@
  #[windows]sun.tools.attach.WindowsAttachProvider
  #[linux]sun.tools.attach.LinuxAttachProvider
@@ -13442,7 +11760,7 @@
 +#[bsd]sun.tools.attach.BsdAttachProvider
  #[aix]sun.tools.attach.AixAttachProvider
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/share/lib/security/java.security-bsd	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/lib/security/java.security-bsd	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,626 @@
 +#
 +# This is the "master security properties file".
@@ -14071,7 +12389,7 @@
 +#       EE386BFB 5A899FA5 AE9F2411 7C4B1FE6 49286651 ECE65381 \
 +#       FFFFFFFF FFFFFFFF, 2}
 --- ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Jun 14 11:51:15 2016 -0700
 @@ -62,7 +62,7 @@
  
  #endif // End of ZLIB
@@ -14082,7 +12400,7 @@
      ((((a) << 8) & 0xff00) | 0x00ff) & (((a) >> 8) | 0xff00)
  #else
 --- ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -121,7 +121,7 @@
  }
  
@@ -14111,7 +12429,7 @@
  #define MAP_NATIVE2BE16(a) MAP_SWAP16_impl(a)
  #define MAP_NATIVE2LE32(a) (a)
 --- ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -28,7 +28,7 @@
  
  
@@ -14122,7 +12440,7 @@
  #else
      return 1;
 --- ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -40,7 +40,7 @@
  #endif
  #endif
@@ -14133,7 +12451,7 @@
  #define __LO(x) *(int*)&x
  #define __HIp(x) *(1+(int*)x)
 --- ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -624,7 +624,7 @@
      switch(type) {
          case java_awt_image_BufferedImage_TYPE_INT_ARGB:
@@ -14162,7 +12480,7 @@
              colorOrder[1] = 1;
              colorOrder[2] = 0;
 --- ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -1176,7 +1176,7 @@
  
  #define NLUT 8
@@ -14173,7 +12491,7 @@
  #else
  #define INDEXES    { 0, 1, 2, 3, 4, 5, 6, 7 }
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -86,7 +86,7 @@
  #endif /* MLIB_USE_FTOI_CLAMPING */
  
@@ -14214,7 +12532,7 @@
  #endif /* _NO_LONGLONG */
  
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -14255,7 +12573,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -14296,7 +12614,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -14337,7 +12655,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -95,7 +95,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -14378,7 +12696,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -14419,7 +12737,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -14460,7 +12778,7 @@
  
  /***************************************************************/
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -95,7 +95,7 @@
      dst = dp[0];
      if (ld_offset + size < 32) {
@@ -14681,7 +12999,7 @@
  
  #else  /* _LONGLONG */
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -168,7 +168,7 @@
  }
  
@@ -14963,7 +13281,7 @@
        dp[13] = t1;
        dp[14] = t2;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -88,7 +88,7 @@
  } d64_2_f32;
  
@@ -15116,7 +13434,7 @@
    ((mlib_u32*)lh)[0] = l;  ((mlib_u32*)lh)[1] = l;
    ((mlib_u32*)lh)[2] = l;  ((mlib_u32*)lh)[3] = h;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -30,7 +30,7 @@
  typedef union {
    mlib_d64 db;
@@ -15127,7 +13445,7 @@
  #else
      mlib_s32 int0, int1;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -275,11 +275,11 @@
        for (i = 0; j <= (b_size - 4); j += 4, i++) {
          src0 = src1;
@@ -15227,7 +13545,7 @@
          dp += SIZE;
          sp += SIZE;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -120,7 +120,7 @@
    }                                                               \
  }
@@ -15310,6 +13628,1011 @@
 +#endif /* VM_LITTLE_ENDIAN */
          sp = (mlib_u8 *) sa;
          i += 5;
+ 
+@@ -1226,505 +1226,505 @@
+ 
+       sa = (mlib_u32 *) sp;
+ 
+-      if (((mlib_addr) dp & 3) == 0) {
+-        da = (mlib_u32 *) dp;
+-
+-        s0 = sa[0];
+-        sa++;
+-
+-#ifdef __SUNPRO_C
+-#pragma pipeloop(0)
+-#endif /* __SUNPRO_C */
+-        for (i = 0; i < size - 7; i += 4, da += 2, sa++) {
+-          READ_U8_S16_ALIGN(tab0, tab1, tab2, tab3);
+-          res1 = (t0 << 16) + t1;
+-          res2 = (t2 << 16) + t3;
+-          s0 = sa[0];
+-          da[0] = res1;
+-          da[1] = res2;
+-        }
+-
+-        READ_U8_S16_ALIGN(tab0, tab1, tab2, tab3);
+-        res1 = (t0 << 16) + t1;
+-        res2 = (t2 << 16) + t3;
+-        da[0] = res1;
+-        da[1] = res2;
+-        da += 2;
+-        dp = (mlib_u16 *) da;
+-        sp = (mlib_u8 *) sa;
+-        i += 4;
+-
+-        if (i < size) {
+-          *dp++ = tab0[(*sp)];
+-          i++;
+-          sp++;
+-        }
+-
+-        if (i < size) {
+-          *dp++ = tab1[(*sp)];
+-          i++;
+-          sp++;
+-        }
+-
+-        if (i < size) {
+-          *dp = tab2[(*sp)];
+-        }
+-
+-      }
+-      else {
+-
+-        *dp++ = tab0[(*sp)];
+-        size--;
+-        da = (mlib_u32 *) dp;
+-
+-        s0 = sa[0];
+-        s1 = sa[1];
+-        sa += 2;
+-
+-#ifdef __SUNPRO_C
+-#pragma pipeloop(0)
+-#endif /* __SUNPRO_C */
+-        for (i = 0; i < size - 10; i += 4, da += 2, sa++) {
+-          READ_U8_S16_NOTALIGN(tab1, tab2, tab3, tab0);
+-          s0 = s1;
+-          res1 = (t0 << 16) + t1;
+-          res2 = (t2 << 16) + t3;
+-          s1 = sa[0];
+-          da[0] = res1;
+-          da[1] = res2;
+-        }
+-
+-        READ_U8_S16_NOTALIGN(tab1, tab2, tab3, tab0);
+-        res1 = (t0 << 16) + t1;
+-        res2 = (t2 << 16) + t3;
+-        da[0] = res1;
+-        da[1] = res2;
+-        ADD_READ_U8_S16_NOTALIGN(tab1, tab2, tab3);
+-        res1 = (t0 << 16) + t1;
+-        da[2] = res1;
+-        da += 3;
+-        dp = (mlib_u16 *) da;
+-        *dp++ = (mlib_u16) t2;
+-        sp = (mlib_u8 *) sa;
+-        i += 7;
+-
+-        if (i < size) {
+-          *dp++ = tab0[(*sp)];
+-          i++;
+-          sp++;
+-        }
+-
+-        if (i < size) {
+-          *dp++ = tab1[(*sp)];
+-          i++;
+-          sp++;
+-        }
+-
+-        if (i < size) {
+-          *dp = tab2[(*sp)];
+-        }
+-      }
+-    }
+-  }
+-}
+-
+-/***************************************************************/
+-void mlib_c_ImageLookUp_S16_S16(const mlib_s16 *src,
+-                                mlib_s32       slb,
+-                                mlib_s16       *dst,
+-                                mlib_s32       dlb,
+-                                mlib_s32       xsize,
+-                                mlib_s32       ysize,
+-                                mlib_s32       csize,
+-                                const mlib_s16 **table)
+-{
+-  const mlib_s16 *table_base[4];
+-  mlib_s32 c;
+-
+-  for (c = 0; c < csize; c++) {
+-    table_base[c] = &table[c][32768];
+-  }
+-
+-  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_s16, table_base);
+-}
+-
+-/***************************************************************/
+-void mlib_c_ImageLookUp_U16_S16(const mlib_u16 *src,
+-                                mlib_s32       slb,
+-                                mlib_s16       *dst,
+-                                mlib_s32       dlb,
+-                                mlib_s32       xsize,
+-                                mlib_s32       ysize,
+-                                mlib_s32       csize,
+-                                const mlib_s16 **table)
+-{
+-  const mlib_s16 *table_base[4];
+-  mlib_s32 c;
+-
+-  for (c = 0; c < csize; c++) {
+-    table_base[c] = &table[c][0];
+-  }
+-
+-  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_u16, table_base);
+-}
+-
+-/***************************************************************/
+-void mlib_c_ImageLookUp_S32_S16(const mlib_s32 *src,
+-                                mlib_s32       slb,
+-                                mlib_s16       *dst,
+-                                mlib_s32       dlb,
+-                                mlib_s32       xsize,
+-                                mlib_s32       ysize,
+-                                mlib_s32       csize,
+-                                const mlib_s16 **table)
+-{
+-  const mlib_s16 *table_base[4];
+-  mlib_s32 c;
+-
+-  for (c = 0; c < csize; c++) {
+-    table_base[c] = &table[c][TABLE_SHIFT_S32];
+-  }
+-
+-  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_s32, table_base);
+-}
+-
+-/***************************************************************/
+-void mlib_c_ImageLookUp_S16_U16(const mlib_s16 *src,
+-                                mlib_s32       slb,
+-                                mlib_u16       *dst,
+-                                mlib_s32       dlb,
+-                                mlib_s32       xsize,
+-                                mlib_s32       ysize,
+-                                mlib_s32       csize,
+-                                const mlib_s16 **table)
+-{
+-  const mlib_s16 *table_base[4];
+-  mlib_s32 c;
+-
+-  for (c = 0; c < csize; c++) {
+-    table_base[c] = &table[c][32768];
+-  }
+-
+-  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_s16, table_base);
+-}
+-
+-/***************************************************************/
+-void mlib_c_ImageLookUp_U16_U16(const mlib_u16 *src,
+-                                mlib_s32       slb,
+-                                mlib_u16       *dst,
+-                                mlib_s32       dlb,
+-                                mlib_s32       xsize,
+-                                mlib_s32       ysize,
+-                                mlib_s32       csize,
+-                                const mlib_s16 **table)
+-{
+-  const mlib_s16 *table_base[4];
+-  mlib_s32 c;
+-
+-  for (c = 0; c < csize; c++) {
+-    table_base[c] = &table[c][0];
+-  }
+-
+-  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_u16, table_base);
+-}
+-
+-/***************************************************************/
+-void mlib_c_ImageLookUp_S32_U16(const mlib_s32 *src,
+-                                mlib_s32       slb,
+-                                mlib_u16       *dst,
+-                                mlib_s32       dlb,
+-                                mlib_s32       xsize,
+-                                mlib_s32       ysize,
+-                                mlib_s32       csize,
+-                                const mlib_s16 **table)
+-{
+-  const mlib_s16 *table_base[4];
+-  mlib_s32 c;
+-
+-  for (c = 0; c < csize; c++) {
+-    table_base[c] = &table[c][TABLE_SHIFT_S32];
+-  }
+-
+-  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_s32, table_base);
+-}
+-
+-/***************************************************************/
+-void mlib_c_ImageLookUp_U8_S32(const mlib_u8  *src,
+-                               mlib_s32       slb,
+-                               mlib_s32       *dst,
+-                               mlib_s32       dlb,
+-                               mlib_s32       xsize,
+-                               mlib_s32       ysize,
+-                               mlib_s32       csize,
+-                               const mlib_s32 **table)
+-{
+-
+-  if (xsize * csize < 7) {
+-    MLIB_C_IMAGELOOKUP(mlib_s32, mlib_u8, table);
+-  }
+-  else if (csize == 1) {
+-    mlib_s32 i, j;
+-
+-    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
+-      mlib_u32 *sa;
+-      mlib_u32 *tab = (mlib_u32 *) table[0];
+-      mlib_u32 s0, t0, t1, t2, t3;
+-      mlib_s32 off;
+-      mlib_s32 size = xsize;
+-      mlib_u32 *dp = (mlib_u32 *) dst;
+-      mlib_u8 *sp = (void *)src;
+-
+-      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
+-
+-      for (i = 0; i < off; i++, sp++) {
+-        *dp++ = tab[sp[0]];
+-        size--;
+-      }
+-
+-      sa = (mlib_u32 *) sp;
+-
+-      s0 = sa[0];
+-      sa++;
+-
+-#ifdef __SUNPRO_C
+-#pragma pipeloop(0)
+-#endif /* __SUNPRO_C */
+-      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
+-        READ_U8_S32(tab, tab, tab, tab);
+-        s0 = sa[0];
+-        dp[0] = t0;
+-        dp[1] = t1;
+-        dp[2] = t2;
+-        dp[3] = t3;
+-      }
+-
+-      READ_U8_S32(tab, tab, tab, tab);
+-      dp[0] = t0;
+-      dp[1] = t1;
+-      dp[2] = t2;
+-      dp[3] = t3;
+-      dp += 4;
+-      sp = (mlib_u8 *) sa;
+-      i += 4;
+-      for (; i < size; i++, dp++, sp++)
+-        dp[0] = tab[sp[0]];
+-    }
+-
+-  }
+-  else if (csize == 2) {
+-    mlib_s32 i, j;
+-
+-    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
+-      mlib_u32 *sa;
+-      mlib_u32 *tab0 = (mlib_u32 *) table[0];
+-      mlib_u32 *tab1 = (mlib_u32 *) table[1];
+-      mlib_u32 *tab;
+-      mlib_u32 s0, t0, t1, t2, t3;
+-      mlib_s32 off;
+-      mlib_s32 size = xsize * 2;
+-      mlib_u32 *dp = (mlib_u32 *) dst;
+-      mlib_u8 *sp = (void *)src;
+-
+-      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
+-
+-      for (i = 0; i < off - 1; i += 2, sp += 2) {
+-        *dp++ = tab0[sp[0]];
+-        *dp++ = tab1[sp[1]];
+-        size -= 2;
+-      }
+-
+-      if ((off & 1) != 0) {
+-        *dp++ = tab0[*sp];
+-        size--;
+-        sp++;
+-        tab = tab0;
+-        tab0 = tab1;
+-        tab1 = tab;
+-      }
+-
+-      sa = (mlib_u32 *) sp;
+-
+-      s0 = sa[0];
+-      sa++;
+-
+-#ifdef __SUNPRO_C
+-#pragma pipeloop(0)
+-#endif /* __SUNPRO_C */
+-      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
+-        READ_U8_S32(tab0, tab1, tab0, tab1);
+-        s0 = sa[0];
+-        dp[0] = t0;
+-        dp[1] = t1;
+-        dp[2] = t2;
+-        dp[3] = t3;
+-      }
+-
+-      READ_U8_S32(tab0, tab1, tab0, tab1);
+-      dp[0] = t0;
+-      dp[1] = t1;
+-      dp[2] = t2;
+-      dp[3] = t3;
+-      dp += 4;
+-      sp = (mlib_u8 *) sa;
+-      i += 4;
+-
+-      for (; i < size - 1; i += 2, sp += 2) {
+-        *dp++ = tab0[sp[0]];
+-        *dp++ = tab1[sp[1]];
+-      }
+-
+-      if (i < size)
+-        *dp = tab0[(*sp)];
+-    }
+-
+-  }
+-  else if (csize == 3) {
+-    mlib_s32 i, j;
+-
+-    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
+-      mlib_u32 *sa;
+-      mlib_u32 *tab0 = (mlib_u32 *) table[0];
+-      mlib_u32 *tab1 = (mlib_u32 *) table[1];
+-      mlib_u32 *tab2 = (mlib_u32 *) table[2];
+-      mlib_u32 *tab;
+-      mlib_u32 s0, t0, t1, t2, t3;
+-      mlib_s32 off;
+-      mlib_s32 size = xsize * 3;
+-      mlib_u32 *dp = (mlib_u32 *) dst;
+-      mlib_u8 *sp = (void *)src;
+-
+-      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
+-
+-      if (off == 1) {
+-        *dp++ = tab0[(*sp)];
+-        tab = tab0;
+-        tab0 = tab1;
+-        tab1 = tab2;
+-        tab2 = tab;
+-        size--;
+-        sp++;
+-      }
+-      else if (off == 2) {
+-        *dp++ = tab0[sp[0]];
+-        *dp++ = tab1[sp[1]];
+-        tab = tab2;
+-        tab2 = tab1;
+-        tab1 = tab0;
+-        tab0 = tab;
+-        size -= 2;
+-        sp += 2;
+-      }
+-      else if (off == 3) {
+-        *dp++ = tab0[sp[0]];
+-        *dp++ = tab1[sp[1]];
+-        *dp++ = tab2[sp[2]];
+-        size -= 3;
+-        sp += 3;
+-      }
+-
+-      sa = (mlib_u32 *) sp;
+-
+-      s0 = sa[0];
+-      sa++;
+-
+-#ifdef __SUNPRO_C
+-#pragma pipeloop(0)
+-#endif /* __SUNPRO_C */
+-      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
+-        READ_U8_S32(tab0, tab1, tab2, tab0);
+-        tab = tab0;
+-        tab0 = tab1;
+-        tab1 = tab2;
+-        tab2 = tab;
+-        s0 = sa[0];
+-        dp[0] = t0;
+-        dp[1] = t1;
+-        dp[2] = t2;
+-        dp[3] = t3;
+-      }
+-
+-      READ_U8_S32(tab0, tab1, tab2, tab0);
+-      dp[0] = t0;
+-      dp[1] = t1;
+-      dp[2] = t2;
+-      dp[3] = t3;
+-      dp += 4;
+-      sp = (mlib_u8 *) sa;
+-      i += 4;
+-
+-      if (i < size) {
+-        *dp++ = tab1[(*sp)];
+-        i++;
+-        sp++;
+-      }
+-
+-      if (i < size) {
+-        *dp++ = tab2[(*sp)];
+-        i++;
+-        sp++;
+-      }
+-
+-      if (i < size) {
+-        *dp = tab0[(*sp)];
+-      }
+-    }
+-
+-  }
+-  else if (csize == 4) {
+-    mlib_s32 i, j;
+-
+-    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
+-      mlib_u32 *sa;
+-      mlib_u32 *tab0 = (mlib_u32 *) table[0];
+-      mlib_u32 *tab1 = (mlib_u32 *) table[1];
+-      mlib_u32 *tab2 = (mlib_u32 *) table[2];
+-      mlib_u32 *tab3 = (mlib_u32 *) table[3];
+-      mlib_u32 *tab;
+-      mlib_u32 s0, t0, t1, t2, t3;
+-      mlib_s32 off;
+-      mlib_s32 size = xsize * 4;
+-      mlib_u32 *dp = (mlib_u32 *) dst;
+-      mlib_u8 *sp = (void *)src;
+-
+-      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
+-
+-      if (off == 1) {
+-        *dp++ = tab0[(*sp)];
+-        tab = tab0;
+-        tab0 = tab1;
+-        tab1 = tab2;
+-        tab2 = tab3;
+-        tab3 = tab;
+-        size--;
+-        sp++;
+-      }
+-      else if (off == 2) {
+-        *dp++ = tab0[sp[0]];
+-        *dp++ = tab1[sp[1]];
+-        tab = tab0;
+-        tab0 = tab2;
+-        tab2 = tab;
+-        tab = tab1;
+-        tab1 = tab3;
+-        tab3 = tab;
+-        size -= 2;
+-        sp += 2;
+-      }
+-      else if (off == 3) {
+-        *dp++ = tab0[sp[0]];
+-        *dp++ = tab1[sp[1]];
+-        *dp++ = tab2[sp[2]];
+-        tab = tab3;
+-        tab3 = tab2;
+-        tab2 = tab1;
+-        tab1 = tab0;
+-        tab0 = tab;
+-        size -= 3;
+-        sp += 3;
+-      }
+-
+-      sa = (mlib_u32 *) sp;
+-
++      if (((mlib_addr) dp & 3) == 0) {
++        da = (mlib_u32 *) dp;
++
++        s0 = sa[0];
++        sa++;
++
++#ifdef __SUNPRO_C
++#pragma pipeloop(0)
++#endif /* __SUNPRO_C */
++        for (i = 0; i < size - 7; i += 4, da += 2, sa++) {
++          READ_U8_S16_ALIGN(tab0, tab1, tab2, tab3);
++          res1 = (t0 << 16) + t1;
++          res2 = (t2 << 16) + t3;
++          s0 = sa[0];
++          da[0] = res1;
++          da[1] = res2;
++        }
++
++        READ_U8_S16_ALIGN(tab0, tab1, tab2, tab3);
++        res1 = (t0 << 16) + t1;
++        res2 = (t2 << 16) + t3;
++        da[0] = res1;
++        da[1] = res2;
++        da += 2;
++        dp = (mlib_u16 *) da;
++        sp = (mlib_u8 *) sa;
++        i += 4;
++
++        if (i < size) {
++          *dp++ = tab0[(*sp)];
++          i++;
++          sp++;
++        }
++
++        if (i < size) {
++          *dp++ = tab1[(*sp)];
++          i++;
++          sp++;
++        }
++
++        if (i < size) {
++          *dp = tab2[(*sp)];
++        }
++
++      }
++      else {
++
++        *dp++ = tab0[(*sp)];
++        size--;
++        da = (mlib_u32 *) dp;
++
++        s0 = sa[0];
++        s1 = sa[1];
++        sa += 2;
++
++#ifdef __SUNPRO_C
++#pragma pipeloop(0)
++#endif /* __SUNPRO_C */
++        for (i = 0; i < size - 10; i += 4, da += 2, sa++) {
++          READ_U8_S16_NOTALIGN(tab1, tab2, tab3, tab0);
++          s0 = s1;
++          res1 = (t0 << 16) + t1;
++          res2 = (t2 << 16) + t3;
++          s1 = sa[0];
++          da[0] = res1;
++          da[1] = res2;
++        }
++
++        READ_U8_S16_NOTALIGN(tab1, tab2, tab3, tab0);
++        res1 = (t0 << 16) + t1;
++        res2 = (t2 << 16) + t3;
++        da[0] = res1;
++        da[1] = res2;
++        ADD_READ_U8_S16_NOTALIGN(tab1, tab2, tab3);
++        res1 = (t0 << 16) + t1;
++        da[2] = res1;
++        da += 3;
++        dp = (mlib_u16 *) da;
++        *dp++ = (mlib_u16) t2;
++        sp = (mlib_u8 *) sa;
++        i += 7;
++
++        if (i < size) {
++          *dp++ = tab0[(*sp)];
++          i++;
++          sp++;
++        }
++
++        if (i < size) {
++          *dp++ = tab1[(*sp)];
++          i++;
++          sp++;
++        }
++
++        if (i < size) {
++          *dp = tab2[(*sp)];
++        }
++      }
++    }
++  }
++}
++
++/***************************************************************/
++void mlib_c_ImageLookUp_S16_S16(const mlib_s16 *src,
++                                mlib_s32       slb,
++                                mlib_s16       *dst,
++                                mlib_s32       dlb,
++                                mlib_s32       xsize,
++                                mlib_s32       ysize,
++                                mlib_s32       csize,
++                                const mlib_s16 **table)
++{
++  const mlib_s16 *table_base[4];
++  mlib_s32 c;
++
++  for (c = 0; c < csize; c++) {
++    table_base[c] = &table[c][32768];
++  }
++
++  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_s16, table_base);
++}
++
++/***************************************************************/
++void mlib_c_ImageLookUp_U16_S16(const mlib_u16 *src,
++                                mlib_s32       slb,
++                                mlib_s16       *dst,
++                                mlib_s32       dlb,
++                                mlib_s32       xsize,
++                                mlib_s32       ysize,
++                                mlib_s32       csize,
++                                const mlib_s16 **table)
++{
++  const mlib_s16 *table_base[4];
++  mlib_s32 c;
++
++  for (c = 0; c < csize; c++) {
++    table_base[c] = &table[c][0];
++  }
++
++  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_u16, table_base);
++}
++
++/***************************************************************/
++void mlib_c_ImageLookUp_S32_S16(const mlib_s32 *src,
++                                mlib_s32       slb,
++                                mlib_s16       *dst,
++                                mlib_s32       dlb,
++                                mlib_s32       xsize,
++                                mlib_s32       ysize,
++                                mlib_s32       csize,
++                                const mlib_s16 **table)
++{
++  const mlib_s16 *table_base[4];
++  mlib_s32 c;
++
++  for (c = 0; c < csize; c++) {
++    table_base[c] = &table[c][TABLE_SHIFT_S32];
++  }
++
++  MLIB_C_IMAGELOOKUP(mlib_s16, mlib_s32, table_base);
++}
++
++/***************************************************************/
++void mlib_c_ImageLookUp_S16_U16(const mlib_s16 *src,
++                                mlib_s32       slb,
++                                mlib_u16       *dst,
++                                mlib_s32       dlb,
++                                mlib_s32       xsize,
++                                mlib_s32       ysize,
++                                mlib_s32       csize,
++                                const mlib_s16 **table)
++{
++  const mlib_s16 *table_base[4];
++  mlib_s32 c;
++
++  for (c = 0; c < csize; c++) {
++    table_base[c] = &table[c][32768];
++  }
++
++  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_s16, table_base);
++}
++
++/***************************************************************/
++void mlib_c_ImageLookUp_U16_U16(const mlib_u16 *src,
++                                mlib_s32       slb,
++                                mlib_u16       *dst,
++                                mlib_s32       dlb,
++                                mlib_s32       xsize,
++                                mlib_s32       ysize,
++                                mlib_s32       csize,
++                                const mlib_s16 **table)
++{
++  const mlib_s16 *table_base[4];
++  mlib_s32 c;
++
++  for (c = 0; c < csize; c++) {
++    table_base[c] = &table[c][0];
++  }
++
++  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_u16, table_base);
++}
++
++/***************************************************************/
++void mlib_c_ImageLookUp_S32_U16(const mlib_s32 *src,
++                                mlib_s32       slb,
++                                mlib_u16       *dst,
++                                mlib_s32       dlb,
++                                mlib_s32       xsize,
++                                mlib_s32       ysize,
++                                mlib_s32       csize,
++                                const mlib_s16 **table)
++{
++  const mlib_s16 *table_base[4];
++  mlib_s32 c;
++
++  for (c = 0; c < csize; c++) {
++    table_base[c] = &table[c][TABLE_SHIFT_S32];
++  }
++
++  MLIB_C_IMAGELOOKUP(mlib_u16, mlib_s32, table_base);
++}
++
++/***************************************************************/
++void mlib_c_ImageLookUp_U8_S32(const mlib_u8  *src,
++                               mlib_s32       slb,
++                               mlib_s32       *dst,
++                               mlib_s32       dlb,
++                               mlib_s32       xsize,
++                               mlib_s32       ysize,
++                               mlib_s32       csize,
++                               const mlib_s32 **table)
++{
++
++  if (xsize * csize < 7) {
++    MLIB_C_IMAGELOOKUP(mlib_s32, mlib_u8, table);
++  }
++  else if (csize == 1) {
++    mlib_s32 i, j;
++
++    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
++      mlib_u32 *sa;
++      mlib_u32 *tab = (mlib_u32 *) table[0];
++      mlib_u32 s0, t0, t1, t2, t3;
++      mlib_s32 off;
++      mlib_s32 size = xsize;
++      mlib_u32 *dp = (mlib_u32 *) dst;
++      mlib_u8 *sp = (void *)src;
++
++      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
++
++      for (i = 0; i < off; i++, sp++) {
++        *dp++ = tab[sp[0]];
++        size--;
++      }
++
++      sa = (mlib_u32 *) sp;
++
++      s0 = sa[0];
++      sa++;
++
++#ifdef __SUNPRO_C
++#pragma pipeloop(0)
++#endif /* __SUNPRO_C */
++      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
++        READ_U8_S32(tab, tab, tab, tab);
++        s0 = sa[0];
++        dp[0] = t0;
++        dp[1] = t1;
++        dp[2] = t2;
++        dp[3] = t3;
++      }
++
++      READ_U8_S32(tab, tab, tab, tab);
++      dp[0] = t0;
++      dp[1] = t1;
++      dp[2] = t2;
++      dp[3] = t3;
++      dp += 4;
++      sp = (mlib_u8 *) sa;
++      i += 4;
++      for (; i < size; i++, dp++, sp++)
++        dp[0] = tab[sp[0]];
++    }
++
++  }
++  else if (csize == 2) {
++    mlib_s32 i, j;
++
++    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
++      mlib_u32 *sa;
++      mlib_u32 *tab0 = (mlib_u32 *) table[0];
++      mlib_u32 *tab1 = (mlib_u32 *) table[1];
++      mlib_u32 *tab;
++      mlib_u32 s0, t0, t1, t2, t3;
++      mlib_s32 off;
++      mlib_s32 size = xsize * 2;
++      mlib_u32 *dp = (mlib_u32 *) dst;
++      mlib_u8 *sp = (void *)src;
++
++      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
++
++      for (i = 0; i < off - 1; i += 2, sp += 2) {
++        *dp++ = tab0[sp[0]];
++        *dp++ = tab1[sp[1]];
++        size -= 2;
++      }
++
++      if ((off & 1) != 0) {
++        *dp++ = tab0[*sp];
++        size--;
++        sp++;
++        tab = tab0;
++        tab0 = tab1;
++        tab1 = tab;
++      }
++
++      sa = (mlib_u32 *) sp;
++
++      s0 = sa[0];
++      sa++;
++
++#ifdef __SUNPRO_C
++#pragma pipeloop(0)
++#endif /* __SUNPRO_C */
++      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
++        READ_U8_S32(tab0, tab1, tab0, tab1);
++        s0 = sa[0];
++        dp[0] = t0;
++        dp[1] = t1;
++        dp[2] = t2;
++        dp[3] = t3;
++      }
++
++      READ_U8_S32(tab0, tab1, tab0, tab1);
++      dp[0] = t0;
++      dp[1] = t1;
++      dp[2] = t2;
++      dp[3] = t3;
++      dp += 4;
++      sp = (mlib_u8 *) sa;
++      i += 4;
++
++      for (; i < size - 1; i += 2, sp += 2) {
++        *dp++ = tab0[sp[0]];
++        *dp++ = tab1[sp[1]];
++      }
++
++      if (i < size)
++        *dp = tab0[(*sp)];
++    }
++
++  }
++  else if (csize == 3) {
++    mlib_s32 i, j;
++
++    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
++      mlib_u32 *sa;
++      mlib_u32 *tab0 = (mlib_u32 *) table[0];
++      mlib_u32 *tab1 = (mlib_u32 *) table[1];
++      mlib_u32 *tab2 = (mlib_u32 *) table[2];
++      mlib_u32 *tab;
++      mlib_u32 s0, t0, t1, t2, t3;
++      mlib_s32 off;
++      mlib_s32 size = xsize * 3;
++      mlib_u32 *dp = (mlib_u32 *) dst;
++      mlib_u8 *sp = (void *)src;
++
++      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
++
++      if (off == 1) {
++        *dp++ = tab0[(*sp)];
++        tab = tab0;
++        tab0 = tab1;
++        tab1 = tab2;
++        tab2 = tab;
++        size--;
++        sp++;
++      }
++      else if (off == 2) {
++        *dp++ = tab0[sp[0]];
++        *dp++ = tab1[sp[1]];
++        tab = tab2;
++        tab2 = tab1;
++        tab1 = tab0;
++        tab0 = tab;
++        size -= 2;
++        sp += 2;
++      }
++      else if (off == 3) {
++        *dp++ = tab0[sp[0]];
++        *dp++ = tab1[sp[1]];
++        *dp++ = tab2[sp[2]];
++        size -= 3;
++        sp += 3;
++      }
++
++      sa = (mlib_u32 *) sp;
++
++      s0 = sa[0];
++      sa++;
++
++#ifdef __SUNPRO_C
++#pragma pipeloop(0)
++#endif /* __SUNPRO_C */
++      for (i = 0; i < size - 7; i += 4, dp += 4, sa++) {
++        READ_U8_S32(tab0, tab1, tab2, tab0);
++        tab = tab0;
++        tab0 = tab1;
++        tab1 = tab2;
++        tab2 = tab;
++        s0 = sa[0];
++        dp[0] = t0;
++        dp[1] = t1;
++        dp[2] = t2;
++        dp[3] = t3;
++      }
++
++      READ_U8_S32(tab0, tab1, tab2, tab0);
++      dp[0] = t0;
++      dp[1] = t1;
++      dp[2] = t2;
++      dp[3] = t3;
++      dp += 4;
++      sp = (mlib_u8 *) sa;
++      i += 4;
++
++      if (i < size) {
++        *dp++ = tab1[(*sp)];
++        i++;
++        sp++;
++      }
++
++      if (i < size) {
++        *dp++ = tab2[(*sp)];
++        i++;
++        sp++;
++      }
++
++      if (i < size) {
++        *dp = tab0[(*sp)];
++      }
++    }
++
++  }
++  else if (csize == 4) {
++    mlib_s32 i, j;
++
++    for (j = 0; j < ysize; j++, dst += dlb, src += slb) {
++      mlib_u32 *sa;
++      mlib_u32 *tab0 = (mlib_u32 *) table[0];
++      mlib_u32 *tab1 = (mlib_u32 *) table[1];
++      mlib_u32 *tab2 = (mlib_u32 *) table[2];
++      mlib_u32 *tab3 = (mlib_u32 *) table[3];
++      mlib_u32 *tab;
++      mlib_u32 s0, t0, t1, t2, t3;
++      mlib_s32 off;
++      mlib_s32 size = xsize * 4;
++      mlib_u32 *dp = (mlib_u32 *) dst;
++      mlib_u8 *sp = (void *)src;
++
++      off = (mlib_s32) ((4 - ((mlib_addr) src & 3)) & 3);
++
++      if (off == 1) {
++        *dp++ = tab0[(*sp)];
++        tab = tab0;
++        tab0 = tab1;
++        tab1 = tab2;
++        tab2 = tab3;
++        tab3 = tab;
++        size--;
++        sp++;
++      }
++      else if (off == 2) {
++        *dp++ = tab0[sp[0]];
++        *dp++ = tab1[sp[1]];
++        tab = tab0;
++        tab0 = tab2;
++        tab2 = tab;
++        tab = tab1;
++        tab1 = tab3;
++        tab3 = tab;
++        size -= 2;
++        sp += 2;
++      }
++      else if (off == 3) {
++        *dp++ = tab0[sp[0]];
++        *dp++ = tab1[sp[1]];
++        *dp++ = tab2[sp[2]];
++        tab = tab3;
++        tab3 = tab2;
++        tab2 = tab1;
++        tab1 = tab0;
++        tab0 = tab;
++        size -= 3;
++        sp += 3;
++      }
++
++      sa = (mlib_u32 *) sp;
++
+       s0 = sa[0];
+       sa++;
  
 @@ -1852,21 +1852,21 @@
      s0 = tab0[0];
@@ -16461,7 +15784,7 @@
        dp[13] = t1;
        dp[14] = t2;
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -27,9 +27,6 @@
  #ifndef MLIB_IMAGE_H
  #define MLIB_IMAGE_H
@@ -16473,7 +15796,7 @@
  #include <mlib_status.h>
  #include <mlib_sys.h>
 --- ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -29,7 +29,7 @@
  #ifdef MACOSX
  #include <unistd.h>
@@ -16494,7 +15817,7 @@
    return (void *) memalign(8, size);
  #endif /* _MSC_VER */
 --- ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -136,7 +136,7 @@
  #define U_CAPI extern "C"
  
@@ -16505,7 +15828,7 @@
      #endif
  #endif
 --- ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -182,7 +182,7 @@
          return 0L;
      }
@@ -16516,7 +15839,7 @@
      if (isInIntPacked) {
          inFormatter ^= DOSWAP_SH(1);
 --- ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -27,6 +27,7 @@
  #include <jni.h>
  #include "management.h"
@@ -16526,7 +15849,7 @@
  JNIEXPORT void JNICALL Java_sun_management_DiagnosticCommandImpl_setNotificationEnabled
  (JNIEnv *env, jobject dummy, jboolean enabled) {
 --- ./jdk/src/solaris/back/util_md.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/back/util_md.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/back/util_md.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -51,7 +51,7 @@
  
  /* On little endian machines, convert java big endian numbers. */
@@ -16537,7 +15860,7 @@
  #define HOST_TO_JAVA_CHAR(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
  #define HOST_TO_JAVA_SHORT(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
 --- ./jdk/src/solaris/bin/ergo_i586.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/bin/ergo_i586.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/bin/ergo_i586.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -106,7 +106,7 @@
  
  #endif /* __solaris__ */
@@ -16557,7 +15880,7 @@
  /*
   * Routines shared by solaris-i586 and linux-i586.
 --- ./jdk/src/solaris/bin/java_md_solinux.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/bin/java_md_solinux.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/bin/java_md_solinux.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -35,6 +35,9 @@
  #include <sys/stat.h>
  #include <unistd.h>
@@ -16650,7 +15973,7 @@
  
  int
 --- ./jdk/src/solaris/bin/java_md_solinux.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/bin/java_md_solinux.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/bin/java_md_solinux.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -26,17 +26,26 @@
  #ifndef JAVA_MD_SOLINUX_H
  #define JAVA_MD_SOLINUX_H
@@ -16692,7 +16015,7 @@
  static const char *system_dir   = "/usr/java";
  static const char *user_dir     = "/java";
 --- ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -82,6 +82,8 @@
  
          LINUX(LaunchMechanism.VFORK, LaunchMechanism.FORK),
@@ -16741,7 +16064,7 @@
              case AIX:
                  // There is a risk that pid will be recycled, causing us to
 --- ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -234,7 +234,7 @@
          if (fontID != null) {
              fileName = (String)fontNameMap.get(fontID);
@@ -16770,7 +16093,7 @@
                !mFontConfig.fontFilesArePresent()) ||
               (FontUtilities.isSolaris && !mFontConfig.fontFilesArePresent()))) {
 --- ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Tue Jun 14 11:51:15 2016 -0700
 @@ -26,134 +26,134 @@
  
  # Version
@@ -16787,165 +16110,185 @@
 -dialog.plain.korean=Baekmuk Gulim
 -dialog.plain.chinese-big5=AR PL ShanHeiSun Uni
 -dialog.plain.chinese-gb18030=AR PL ShanHeiSun Uni
+-
+-dialog.bold.latin-1=DejaVu LGC Sans Bold
+-dialog.bold.japanese-x0208=Sazanami Gothic
+-dialog.bold.korean=Baekmuk Gulim
+-dialog.bold.chinese-big5=AR PL ShanHeiSun Uni
+-dialog.bold.chinese-gb18030=AR PL ShanHeiSun Uni
+-
+-dialog.italic.latin-1=DejaVu LGC Sans Oblique
+-dialog.italic.japanese-x0208=Sazanami Gothic
+-dialog.italic.korean=Baekmuk Gulim
+-dialog.italic.chinese-big5=AR PL ShanHeiSun Uni
+-dialog.italic.chinese-gb18030=AR PL ShanHeiSun Uni
+-
+-dialog.bolditalic.latin-1=DejaVu LGC Sans Bold Oblique
+-dialog.bolditalic.japanese-x0208=Sazanami Gothic
+-dialog.bolditalic.korean=Baekmuk Gulim
+-dialog.bolditalic.chinese-big5=AR PL ShanHeiSun Uni
+-dialog.bolditalic.chinese-gb18030=AR PL ShanHeiSun Uni
 +dialog.plain.korean=NanumGothic
 +dialog.plain.chinese-big5=AR PL UMing
 +dialog.plain.chinese-gb18030=AR PL UMing
  
--dialog.bold.latin-1=DejaVu LGC Sans Bold
+-
+-sansserif.plain.latin-1=DejaVu LGC Sans
+-sansserif.plain.japanese-x0208=Sazanami Gothic
+-sansserif.plain.korean=Baekmuk Gulim
+-sansserif.plain.chinese-big5=AR PL ShanHeiSun Uni
+-sansserif.plain.chinese-gb18030=AR PL ShanHeiSun Uni
 +dialog.bold.latin-1=DejaVu Sans Bold
- dialog.bold.japanese-x0208=Sazanami Gothic
--dialog.bold.korean=Baekmuk Gulim
--dialog.bold.chinese-big5=AR PL ShanHeiSun Uni
--dialog.bold.chinese-gb18030=AR PL ShanHeiSun Uni
++dialog.bold.japanese-x0208=Sazanami Gothic
 +dialog.bold.korean=NanumGothic Bold
 +dialog.bold.chinese-big5=AR PL UMing
 +dialog.bold.chinese-gb18030=AR PL UMing
  
--dialog.italic.latin-1=DejaVu LGC Sans Oblique
+-sansserif.bold.latin-1=DejaVu LGC Sans Bold
+-sansserif.bold.japanese-x0208=Sazanami Gothic
+-sansserif.bold.korean=Baekmuk Gulim
+-sansserif.bold.chinese-big5=AR PL ShanHeiSun Uni
+-sansserif.bold.chinese-gb18030=AR PL ShanHeiSun Uni
 +dialog.italic.latin-1=DejaVu Sans Oblique
- dialog.italic.japanese-x0208=Sazanami Gothic
--dialog.italic.korean=Baekmuk Gulim
--dialog.italic.chinese-big5=AR PL ShanHeiSun Uni
--dialog.italic.chinese-gb18030=AR PL ShanHeiSun Uni
++dialog.italic.japanese-x0208=Sazanami Gothic
 +dialog.italic.korean=NanumGothic
 +dialog.italic.chinese-big5=AR PL UMing
 +dialog.italic.chinese-gb18030=AR PL UMing
  
--dialog.bolditalic.latin-1=DejaVu LGC Sans Bold Oblique
+-sansserif.italic.latin-1=DejaVu LGC Sans Oblique
+-sansserif.italic.japanese-x0208=Sazanami Gothic
+-sansserif.italic.korean=Baekmuk Gulim
+-sansserif.italic.chinese-big5=AR PL ShanHeiSun Uni
+-sansserif.italic.chinese-gb18030=AR PL ShanHeiSun Uni
+-
+-sansserif.bolditalic.latin-1=DejaVu LGC Sans Bold Oblique
+-sansserif.bolditalic.japanese-x0208=Sazanami Gothic
+-sansserif.bolditalic.korean=Baekmuk Gulim
+-sansserif.bolditalic.chinese-big5=AR PL ShanHeiSun Uni
+-sansserif.bolditalic.chinese-gb18030=AR PL ShanHeiSun Uni
 +dialog.bolditalic.latin-1=DejaVu Sans Bold Oblique
- dialog.bolditalic.japanese-x0208=Sazanami Gothic
--dialog.bolditalic.korean=Baekmuk Gulim
--dialog.bolditalic.chinese-big5=AR PL ShanHeiSun Uni
--dialog.bolditalic.chinese-gb18030=AR PL ShanHeiSun Uni
++dialog.bolditalic.japanese-x0208=Sazanami Gothic
 +dialog.bolditalic.korean=NanumGothic Bold
 +dialog.bolditalic.chinese-big5=AR PL UMing
 +dialog.bolditalic.chinese-gb18030=AR PL UMing
  
  
--sansserif.plain.latin-1=DejaVu LGC Sans
+-serif.plain.latin-1=DejaVu LGC Serif
+-serif.plain.japanese-x0208=Sazanami Mincho
+-serif.plain.korean=Baekmuk Batang
+-serif.plain.chinese-big5=AR PL ZenKai Uni
+-serif.plain.chinese-gb18030=AR PL ZenKai Uni
 +sansserif.plain.latin-1=DejaVu Sans
- sansserif.plain.japanese-x0208=Sazanami Gothic
--sansserif.plain.korean=Baekmuk Gulim
--sansserif.plain.chinese-big5=AR PL ShanHeiSun Uni
--sansserif.plain.chinese-gb18030=AR PL ShanHeiSun Uni
++sansserif.plain.japanese-x0208=Sazanami Gothic
 +sansserif.plain.korean=NanumGothic
 +sansserif.plain.chinese-big5=AR PL UMing
 +sansserif.plain.chinese-gb18030=AR PL UMing
  
--sansserif.bold.latin-1=DejaVu LGC Sans Bold
+-serif.bold.latin-1=DejaVu LGC Serif Bold
+-serif.bold.japanese-x0208=Sazanami Mincho
+-serif.bold.korean=Baekmuk Batang
+-serif.bold.chinese-big5=AR PL ZenKai Uni
+-serif.bold.chinese-gb18030=AR PL ZenKai Uni
 +sansserif.bold.latin-1=DejaVu Sans Bold
- sansserif.bold.japanese-x0208=Sazanami Gothic
--sansserif.bold.korean=Baekmuk Gulim
--sansserif.bold.chinese-big5=AR PL ShanHeiSun Uni
--sansserif.bold.chinese-gb18030=AR PL ShanHeiSun Uni
++sansserif.bold.japanese-x0208=Sazanami Gothic
 +sansserif.bold.korean=NanumGothic Bold
 +sansserif.bold.chinese-big5=AR PL UMing
 +sansserif.bold.chinese-gb18030=AR PL UMing
  
--sansserif.italic.latin-1=DejaVu LGC Sans Oblique
+-serif.italic.latin-1=DejaVu LGC Serif Oblique
+-serif.italic.japanese-x0208=Sazanami Mincho
+-serif.italic.korean=Baekmuk Batang
+-serif.italic.chinese-big5=AR PL ZenKai Uni
+-serif.italic.chinese-gb18030=AR PL ZenKai Uni
 +sansserif.italic.latin-1=DejaVu Sans Oblique
- sansserif.italic.japanese-x0208=Sazanami Gothic
--sansserif.italic.korean=Baekmuk Gulim
--sansserif.italic.chinese-big5=AR PL ShanHeiSun Uni
--sansserif.italic.chinese-gb18030=AR PL ShanHeiSun Uni
++sansserif.italic.japanese-x0208=Sazanami Gothic
 +sansserif.italic.korean=NanumGothic
 +sansserif.italic.chinese-big5=AR PL UMing
 +sansserif.italic.chinese-gb18030=AR PL UMing
  
--sansserif.bolditalic.latin-1=DejaVu LGC Sans Bold Oblique
+-serif.bolditalic.latin-1=DejaVu LGC Serif Bold Oblique
+-serif.bolditalic.japanese-x0208=Sazanami Mincho
+-serif.bolditalic.korean=Baekmuk Batang
+-serif.bolditalic.chinese-big5=AR PL ZenKai Uni
+-serif.bolditalic.chinese-gb18030=AR PL ZenKai Uni
 +sansserif.bolditalic.latin-1=DejaVu Sans Bold Oblique
- sansserif.bolditalic.japanese-x0208=Sazanami Gothic
--sansserif.bolditalic.korean=Baekmuk Gulim
--sansserif.bolditalic.chinese-big5=AR PL ShanHeiSun Uni
--sansserif.bolditalic.chinese-gb18030=AR PL ShanHeiSun Uni
++sansserif.bolditalic.japanese-x0208=Sazanami Gothic
 +sansserif.bolditalic.korean=NanumGothic Bold
 +sansserif.bolditalic.chinese-big5=AR PL UMing
 +sansserif.bolditalic.chinese-gb18030=AR PL UMing
  
  
--serif.plain.latin-1=DejaVu LGC Serif
+-monospaced.plain.latin-1=DejaVu LGC Sans Mono
+-monospaced.plain.japanese-x0208=Sazanami Gothic
+-monospaced.plain.korean=Baekmuk Gulim
+-monospaced.plain.chinese-big5=AR PL ShanHeiSun Uni
+-monospaced.plain.chinese-gb18030=AR PL ShanHeiSun Uni
 +serif.plain.latin-1=DejaVu Serif
- serif.plain.japanese-x0208=Sazanami Mincho
--serif.plain.korean=Baekmuk Batang
--serif.plain.chinese-big5=AR PL ZenKai Uni
--serif.plain.chinese-gb18030=AR PL ZenKai Uni
++serif.plain.japanese-x0208=Sazanami Mincho
 +serif.plain.korean=NanumMyeongjo
 +serif.plain.chinese-big5=AR PL UKai
 +serif.plain.chinese-gb18030=AR PL UKai
  
--serif.bold.latin-1=DejaVu LGC Serif Bold
+-monospaced.bold.latin-1=DejaVu LGC Sans Mono Bold
+-monospaced.bold.japanese-x0208=Sazanami Gothic
+-monospaced.bold.korean=Baekmuk Gulim
+-monospaced.bold.chinese-big5=AR PL ShanHeiSun Uni
+-monospaced.bold.chinese-gb18030=AR PL ShanHeiSun Uni
 +serif.bold.latin-1=DejaVu Serif Bold
- serif.bold.japanese-x0208=Sazanami Mincho
--serif.bold.korean=Baekmuk Batang
--serif.bold.chinese-big5=AR PL ZenKai Uni
--serif.bold.chinese-gb18030=AR PL ZenKai Uni
++serif.bold.japanese-x0208=Sazanami Mincho
 +serif.bold.korean=NanumMyeongjo Bold
 +serif.bold.chinese-big5=AR PL UKai
 +serif.bold.chinese-gb18030=AR PL UKai
  
--serif.italic.latin-1=DejaVu LGC Serif Oblique
+-monospaced.italic.latin-1=DejaVu LGC Sans Mono Oblique
+-monospaced.italic.japanese-x0208=Sazanami Gothic
+-monospaced.italic.korean=Baekmuk Gulim
+-monospaced.italic.chinese-big5=AR PL ShanHeiSun Uni
+-monospaced.italic.chinese-gb18030=AR PL ShanHeiSun Uni
 +serif.italic.latin-1=DejaVu Serif Italic
- serif.italic.japanese-x0208=Sazanami Mincho
--serif.italic.korean=Baekmuk Batang
--serif.italic.chinese-big5=AR PL ZenKai Uni
--serif.italic.chinese-gb18030=AR PL ZenKai Uni
++serif.italic.japanese-x0208=Sazanami Mincho
 +serif.italic.korean=NanumMyeongjo
 +serif.italic.chinese-big5=AR PL UKai
 +serif.italic.chinese-gb18030=AR PL UKai
  
--serif.bolditalic.latin-1=DejaVu LGC Serif Bold Oblique
+-monospaced.bolditalic.latin-1=DejaVu LGC Sans Mono Bold Oblique
+-monospaced.bolditalic.japanese-x0208=Sazanami Gothic
+-monospaced.bolditalic.korean=Baekmuk Gulim
+-monospaced.bolditalic.chinese-big5=AR PL ShanHeiSun Uni
+-monospaced.bolditalic.chinese-gb18030=AR PL ShanHeiSun Uni
 +serif.bolditalic.latin-1=DejaVu Serif Bold Italic
- serif.bolditalic.japanese-x0208=Sazanami Mincho
--serif.bolditalic.korean=Baekmuk Batang
--serif.bolditalic.chinese-big5=AR PL ZenKai Uni
--serif.bolditalic.chinese-gb18030=AR PL ZenKai Uni
++serif.bolditalic.japanese-x0208=Sazanami Mincho
 +serif.bolditalic.korean=NanumMyeongjo Bold
 +serif.bolditalic.chinese-big5=AR PL UKai
 +serif.bolditalic.chinese-gb18030=AR PL UKai
  
  
--monospaced.plain.latin-1=DejaVu LGC Sans Mono
+-dialoginput.plain.latin-1=DejaVu LGC Sans Mono
 +monospaced.plain.latin-1=DejaVu Sans Mono
- monospaced.plain.japanese-x0208=Sazanami Gothic
--monospaced.plain.korean=Baekmuk Gulim
--monospaced.plain.chinese-big5=AR PL ShanHeiSun Uni
--monospaced.plain.chinese-gb18030=AR PL ShanHeiSun Uni
++monospaced.plain.japanese-x0208=Sazanami Gothic
 +monospaced.plain.korean=NanumGothic
 +monospaced.plain.chinese-big5=AR PL UMing
 +monospaced.plain.chinese-gb18030=AR PL UMing
- 
--monospaced.bold.latin-1=DejaVu LGC Sans Mono Bold
++
 +monospaced.bold.latin-1=DejaVu Sans Mono Bold
- monospaced.bold.japanese-x0208=Sazanami Gothic
--monospaced.bold.korean=Baekmuk Gulim
--monospaced.bold.chinese-big5=AR PL ShanHeiSun Uni
--monospaced.bold.chinese-gb18030=AR PL ShanHeiSun Uni
++monospaced.bold.japanese-x0208=Sazanami Gothic
 +monospaced.bold.korean=NanumGothic Bold
 +monospaced.bold.chinese-big5=AR PL UMing
 +monospaced.bold.chinese-gb18030=AR PL UMing
- 
--monospaced.italic.latin-1=DejaVu LGC Sans Mono Oblique
++
 +monospaced.italic.latin-1=DejaVu Sans Mono Oblique
- monospaced.italic.japanese-x0208=Sazanami Gothic
--monospaced.italic.korean=Baekmuk Gulim
--monospaced.italic.chinese-big5=AR PL ShanHeiSun Uni
--monospaced.italic.chinese-gb18030=AR PL ShanHeiSun Uni
++monospaced.italic.japanese-x0208=Sazanami Gothic
 +monospaced.italic.korean=NanumGothic
 +monospaced.italic.chinese-big5=AR PL UMing
 +monospaced.italic.chinese-gb18030=AR PL UMing
- 
--monospaced.bolditalic.latin-1=DejaVu LGC Sans Mono Bold Oblique
++
 +monospaced.bolditalic.latin-1=DejaVu Sans Mono Bold Oblique
- monospaced.bolditalic.japanese-x0208=Sazanami Gothic
--monospaced.bolditalic.korean=Baekmuk Gulim
--monospaced.bolditalic.chinese-big5=AR PL ShanHeiSun Uni
--monospaced.bolditalic.chinese-gb18030=AR PL ShanHeiSun Uni
++monospaced.bolditalic.japanese-x0208=Sazanami Gothic
 +monospaced.bolditalic.korean=NanumGothic Bold
 +monospaced.bolditalic.chinese-big5=AR PL UMing
 +monospaced.bolditalic.chinese-gb18030=AR PL UMing
- 
- 
--dialoginput.plain.latin-1=DejaVu LGC Sans Mono
++
++
 +dialoginput.plain.latin-1=DejaVu Sans Mono
  dialoginput.plain.japanese-x0208=Sazanami Gothic
 -dialoginput.plain.korean=Baekmuk Gulim
@@ -16995,29 +16338,25 @@
 -filename.DejaVu_LGC_Sans_Bold=/usr/share/fonts/dejavu-lgc/DejaVuLGCSans-Bold.ttf
 -filename.DejaVu_LGC_Sans_Oblique=/usr/share/fonts/dejavu-lgc/DejaVuLGCSans-Oblique.ttf
 -filename.DejaVu_LGC_Sans_Bold_Oblique=/usr/share/fonts/dejavu-lgc/DejaVuLGCSans-BoldOblique.ttf
+-
+-filename.DejaVu_LGC_Sans_Mono=/usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono.ttf
+-filename.DejaVu_LGC_Sans_Mono_Bold=/usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono-Bold.ttf
+-filename.DejaVu_LGC_Sans_Mono_Oblique=/usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono-Oblique.ttf
+-filename.DejaVu_LGC_Sans_Mono_Bold_Oblique=/usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono-BoldOblique.ttf
 +## FIXME: Should not hardcode /usr/local
 +filename.DejaVu_Sans=/usr/local/lib/X11/fonts/dejavu/DejaVuSans.ttf
 +filename.DejaVu_Sans_Bold=/usr/local/lib/X11/fonts/dejavu/DejaVuSans-Bold.ttf
 +filename.DejaVu_Sans_Oblique=/usr/local/lib/X11/fonts/dejavu/DejaVuSans-Oblique.ttf
 +filename.DejaVu_Sans_Bold_Oblique=/usr/local/lib/X11/fonts/dejavu/DejaVuSans-BoldOblique.ttf
  
--filename.DejaVu_LGC_Sans_Mono=/usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono.ttf
--filename.DejaVu_LGC_Sans_Mono_Bold=/usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono-Bold.ttf
--filename.DejaVu_LGC_Sans_Mono_Oblique=/usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono-Oblique.ttf
--filename.DejaVu_LGC_Sans_Mono_Bold_Oblique=/usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono-BoldOblique.ttf
-+filename.DejaVu_Sans_Mono=/usr/local/lib/X11/fonts/dejavu/DejaVuSansMono.ttf
-+filename.DejaVu_Sans_Mono_Bold=/usr/local/lib/X11/fonts/dejavu/DejaVuSansMono-Bold.ttf
-+filename.DejaVu_Sans_Mono_Oblique=/usr/local/lib/X11/fonts/dejavu/DejaVuSansMono-Oblique.ttf
-+filename.DejaVu_Sans_Mono_Bold_Oblique=/usr/local/lib/X11/fonts/dejavu/DejaVuSansMono-BoldOblique.ttf
- 
 -filename.DejaVu_LGC_Serif=/usr/share/fonts/dejavu-lgc/DejaVuLGCSerif.ttf
 -filename.DejaVu_LGC_Serif_Bold=/usr/share/fonts/dejavu-lgc/DejaVuLGCSerif-Bold.ttf
 -filename.DejaVu_LGC_Serif_Oblique=/usr/share/fonts/dejavu-lgc/DejaVuLGCSerif-Oblique.ttf
 -filename.DejaVu_LGC_Serif_Bold_Oblique=/usr/share/fonts/dejavu-lgc/DejaVuLGCSerif-BoldOblique.ttf
-+filename.DejaVu_Serif=/usr/local/lib/X11/fonts/dejavu/DejaVuSerif.ttf
-+filename.DejaVu_Serif_Bold=/usr/local/lib/X11/fonts/dejavu/DejaVuSerif-Bold.ttf
-+filename.DejaVu_Serif_Italic=/usr/local/lib/X11/fonts/dejavu/DejaVuSerif-Italic.ttf
-+filename.DejaVu_Serif_Bold_Italic=/usr/local/lib/X11/fonts/dejavu/DejaVuSerif-BoldItalic.ttf
++filename.DejaVu_Sans_Mono=/usr/local/lib/X11/fonts/dejavu/DejaVuSansMono.ttf
++filename.DejaVu_Sans_Mono_Bold=/usr/local/lib/X11/fonts/dejavu/DejaVuSansMono-Bold.ttf
++filename.DejaVu_Sans_Mono_Oblique=/usr/local/lib/X11/fonts/dejavu/DejaVuSansMono-Oblique.ttf
++filename.DejaVu_Sans_Mono_Bold_Oblique=/usr/local/lib/X11/fonts/dejavu/DejaVuSansMono-BoldOblique.ttf
  
 -filename.Sazanami_Gothic=/usr/share/fonts/japanese/TrueType/sazanami-gothic.ttf
 -filename.Sazanami_Mincho=/usr/share/fonts/japanese/TrueType/sazanami-mincho.ttf
@@ -17025,6 +16364,11 @@
 -filename.AR_PL_ZenKai_Uni=/usr/share/fonts/chinese/TrueType/ukai.ttf
 -filename.Baekmuk_Gulim=/usr/share/fonts/korean/TrueType/gulim.ttf
 -filename.Baekmuk_Batang=/usr/share/fonts/korean/TrueType/batang.ttf
++filename.DejaVu_Serif=/usr/local/lib/X11/fonts/dejavu/DejaVuSerif.ttf
++filename.DejaVu_Serif_Bold=/usr/local/lib/X11/fonts/dejavu/DejaVuSerif-Bold.ttf
++filename.DejaVu_Serif_Italic=/usr/local/lib/X11/fonts/dejavu/DejaVuSerif-Italic.ttf
++filename.DejaVu_Serif_Bold_Italic=/usr/local/lib/X11/fonts/dejavu/DejaVuSerif-BoldItalic.ttf
++
 +filename.Sazanami_Gothic=/usr/local/share/font-sazanami/sazanami-gothic.ttf
 +filename.Sazanami_Mincho=/usr/local/share/font-sazanami/sazanami-mincho.ttf
 +filename.AR_PL_ShanHeiSun_Uni=/usr/local/share/fonts/TrueType/uming.ttc
@@ -17034,7 +16378,7 @@
 +filename.NanumMyeongjo=/usr/local/lib/X11/fonts/nanum-ttf/NanumMyeongjo.ttf
 +filename.NanumMyeongjo_Bold=/usr/local/lib/X11/fonts/nanum-ttf/NanumMyeongjoBold.ttf
 --- ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -52,7 +52,7 @@
                      } else if (os.startsWith("SunOS")) {
                          defaultLower = 32768;
@@ -17045,7 +16389,7 @@
                          defaultUpper = 65535;
                      } else if (os.startsWith("AIX")) {
 --- ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -66,7 +66,7 @@
              return createProvider("sun.nio.ch.SolarisAsynchronousChannelProvider");
          if (osname.equals("Linux"))
@@ -17056,7 +16400,7 @@
          if (osname.equals("AIX"))
              return createProvider("sun.nio.ch.AixAsynchronousChannelProvider");
 --- ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -25,10 +25,14 @@
  
  package sun.nio.fs;
@@ -17091,7 +16435,7 @@
 +    }
  }
 --- ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -61,6 +61,8 @@
              return createProvider("sun.nio.fs.SolarisFileSystemProvider");
          if (osname.equals("Linux"))
@@ -17102,7 +16446,7 @@
              return createProvider("sun.nio.fs.MacOSXFileSystemProvider");
          if (osname.equals("AIX"))
 --- ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -161,6 +161,7 @@
  
      static boolean isBSD() {
@@ -17127,7 +16471,7 @@
      };
  
 --- ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Tue Jun 14 11:51:15 2016 -0700
 @@ -273,7 +273,7 @@
              try {
                  b = s.getBytes("UTF-8");
@@ -17138,7 +16482,7 @@
              BsdVirtualMachine.write(fd, b, 0, b.length);
          }
 --- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -672,6 +672,7 @@
              return -1;
          }
@@ -17156,7 +16500,7 @@
          TRACE0("xrun_recovery: EAGAIN try again flag.\n");
          return 0;
 --- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -140,7 +140,7 @@
                                        (float) ((int) sr->samp_rates[s]),
                                        DAUDIO_PCM, /* encoding - let's only do PCM */
@@ -17167,7 +16511,7 @@
  #else
                                        (bits[b] > 8)?TRUE:FALSE  /* big endian */
 --- ./jdk/src/solaris/native/common/jni_util_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/common/jni_util_md.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/common/jni_util_md.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -28,6 +28,7 @@
  #include "jni.h"
  #include "jni_util.h"
@@ -17177,7 +16521,7 @@
  jstring nativeNewStringPlatform(JNIEnv *env, const char *str) {
      return NULL;
 --- ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -151,7 +151,7 @@
      lc = setlocale(cat, NULL);
  #endif
@@ -17213,7 +16557,7 @@
      /* user properties */
      {
 --- ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -36,20 +36,13 @@
  #include <stdlib.h>
  #include <ctype.h>
@@ -17255,7 +16599,7 @@
  
      if (error) {
 --- ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -33,7 +33,7 @@
  #include <strings.h>
  #include <stdlib.h>
@@ -17298,7 +16642,7 @@
      /* Try once, with our static buffer. */
      memset(&hints, 0, sizeof(hints));
 --- ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -67,14 +67,19 @@
  #include <sys/param.h>
  #include <sys/ioctl.h>
@@ -17322,7 +16666,7 @@
  #include "jvm.h"
  #include "jni_util.h"
 --- ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -2210,7 +2210,7 @@
                  }
              }
@@ -17333,7 +16677,7 @@
                  index = getDefaultScopeID(env);
              }
 --- ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/bsd_close.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -316,11 +316,8 @@
  }
  
@@ -17348,8 +16692,91 @@
  }
  
  int NET_Connect(int s, struct sockaddr *addr, int addrlen) {
+@@ -345,6 +342,76 @@
+  * signal other than our wakeup signal.
+  */
+ int NET_Timeout(int s, long timeout) {
++/*
++ * On MacOS X, poll(2) is not working correctly, so a select(2) based
++ * implementation is preferred.  See
++ *
++ * http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=7131399
++ *
++ * However, on FreeBSD, the select(2) based implementation can cause
++ * crashes under load and poll(2) is preferred.  See
++ *
++ * http://docs.freebsd.org/cgi/getmsg.cgi?fetch=215525+0+current/freebsd-java
++ *
++ * Other *BSD will use poll(2) for now, but please adjust as appropriate.
++ */
++#ifndef __APPLE__
++    long prevtime = 0, newtime;
++    struct timeval t;
++    fdEntry_t *fdEntry = getFdEntry(s);
++
++    /*
++     * Check that fd hasn't been closed.
++     */
++    if (fdEntry == NULL) {
++        errno = EBADF;
++        return -1;
++    }
++
++    /*
++     * Pick up current time as may need to adjust timeout
++     */
++    if (timeout > 0) {
++        gettimeofday(&t, NULL);
++        prevtime = t.tv_sec * 1000  +  t.tv_usec / 1000;
++    }
++
++    for(;;) {
++        struct pollfd pfd;
++        int rv;
++        threadEntry_t self;
++
++        /*
++         * Poll the fd. If interrupted by our wakeup signal
++         * errno will be set to EBADF.
++         */
++        pfd.fd = s;
++        pfd.events = POLLIN | POLLERR;
++
++        startOp(fdEntry, &self);
++        rv = poll(&pfd, 1, timeout);
++        endOp(fdEntry, &self);
++
++        /*
++         * If interrupted then adjust timeout. If timeout
++         * has expired return 0 (indicating timeout expired).
++         */
++        if (rv < 0 && errno == EINTR) {
++            if (timeout > 0) {
++                gettimeofday(&t, NULL);
++                newtime = t.tv_sec * 1000  +  t.tv_usec / 1000;
++                timeout -= newtime - prevtime;
++                if (timeout <= 0) {
++                    return 0;
++                }
++                prevtime = newtime;
++            }
++        } else {
++            return rv;
++        }
++
++    }
++#else
+     long prevtime = 0, newtime;
+     struct timeval t, *tp = &t;
+     fd_set fds;
+@@ -431,4 +498,5 @@
+         }
+ 
+     }
++#endif
+ }
 --- ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/net_util_md.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -45,6 +45,10 @@
  #endif
  #endif
@@ -17371,7 +16798,7 @@
      static jfieldID ni_defaultIndexID;
      if (ni_class == NULL) {
 --- ./jdk/src/solaris/native/java/net/net_util_md.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/net/net_util_md.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/java/net/net_util_md.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -47,7 +47,7 @@
     close subroutine does not return until the select call returns.
     ...
@@ -17382,7 +16809,7 @@
  extern int NET_Read(int s, void* buf, size_t len);
  extern int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
 --- ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -56,7 +56,11 @@
  #endif
  
@@ -17447,7 +16874,7 @@
 -#endif /* MACOSX */
 +#endif /* _ALLBSD_SOURCE */
 --- ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -255,7 +255,7 @@
              if (strcmp(style, "regular") == 0) {
                  altstyle = "roman";
@@ -17458,7 +16885,7 @@
                  family = "lucida";
              }
 --- ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -121,7 +121,7 @@
   */
  
@@ -17544,7 +16971,7 @@
      return point;
  }
 --- ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -52,7 +52,7 @@
                                  XIMPreeditDrawCallbackStruct *);
  static void PreeditCaretCallback(XIC, XPointer,
@@ -17765,7 +17192,7 @@
      adjustStatusWindow(window);
      AWT_UNLOCK();
 --- ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -45,7 +45,7 @@
  #include "wsutils.h"
  #include "list.h"
@@ -17776,7 +17203,7 @@
  #endif
  
 --- ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/extutil.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -58,7 +58,7 @@
   */
  /* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */
@@ -17793,7 +17220,7 @@
 -#endif /* __linux__ || MACOSX */
 +#endif /* __linux__ || _ALLBSD_SOURCE */
 --- ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -23,9 +23,9 @@
   * questions.
   */
@@ -17883,7 +17310,7 @@
  #endif
               ) {
 --- ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -28,11 +28,11 @@
  #include <sys/types.h>
  
@@ -17900,7 +17327,7 @@
  typedef unsigned char   jubyte;
  typedef unsigned short  jushort;
 --- ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -63,9 +63,6 @@
   *    MLIB_EDGE_SRC_PADDED
   */
@@ -18006,7 +17433,7 @@
        }
        else {                                               /* aligned */
 --- ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -804,7 +804,7 @@
  static int initialized;
  static int usevis = JNI_TRUE;
@@ -18017,7 +17444,7 @@
  #else
  #   define ULTRA_CHIP   "sun4u"
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/solaris/native/sun/management/BsdOperatingSystem.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/management/BsdOperatingSystem.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -0,0 +1,42 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -18062,7 +17489,7 @@
 +    return (jdouble) -1;
 +}
 --- ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -56,6 +56,9 @@
  #include <limits.h>
  #include <stdlib.h>
@@ -18218,7 +17645,7 @@
      }
  
 --- ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/net/portconfig.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -67,6 +67,24 @@
          range->lower = net_getParam("/dev/tcp", "tcp_smallest_anon_port");
          return 0;
@@ -18245,7 +17672,7 @@
      {
          int ret;
 --- ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Tue Jun 14 11:51:15 2016 -0700
 @@ -67,7 +67,7 @@
  
  
@@ -18295,7 +17722,7 @@
  
  #endif /* !SUN_NIO_CH_SCTP_H */
 --- ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -58,6 +58,7 @@
   */
  jboolean loadSocketExtensionFuncs
@@ -18313,7 +17740,7 @@
      funcsLoaded = JNI_TRUE;
      return JNI_TRUE;
 --- ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -31,6 +31,12 @@
  #include <dlfcn.h>
  #include <string.h>
@@ -18337,7 +17764,7 @@
              return JNI_FALSE;
          }
 --- ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -54,7 +54,7 @@
      }
  
@@ -18348,7 +17775,7 @@
  #else
      void *hModule = dlopen(libName, RTLD_NOLOAD);
 --- ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -37,7 +37,9 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -18360,7 +17787,7 @@
  #include <fcntl.h>
  
 --- ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Jun 14 11:51:15 2016 -0700
 @@ -886,7 +886,7 @@
  {
      KeySym originalKeysym = *keysym;
@@ -18371,7 +17798,7 @@
       * not to echo on JTextField when the NumLock is on. The
       * keysyms will be 0, because the last parameter 2 is not defined.
 --- ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Tue Mar 22 11:33:41 2016 -0700
-+++ ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Mon May 09 17:18:41 2016 -0400
++++ ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Tue Jun 14 11:51:15 2016 -0700
 @@ -308,7 +308,7 @@
                                        DAUDIO_PCM,
                                        (bitsArray[bitIndex]==8)?FALSE:TRUE,  /* signed */
