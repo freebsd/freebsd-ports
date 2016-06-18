@@ -30,22 +30,20 @@ GCRYPT_CONFIGURE_ON=	--with-libgcrypt --without-openssl
 GCRYPT_CONFIGURE_OFF=	--without-libgcrypt --with-openssl
 GCRYPT_CPPFLAGS=	-I${LOCALBASE}/include
 GCRYPT_LIBS=		-L${LOCALBASE}/lib
+GCRYPT_USE_OFF=	openssl=yes
 ZLIB_CONFIGURE_WITH=	libz
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MGCRYPT}
-USE_OPENSSL=	yes
-.endif
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/Libs:/s/@LDFLAGS@//' -e '/Libs:/s/@LIBS@//' \
 		${WRKSRC}/libssh2.pc.in
-.if ${SSL_DEFAULT} == base
+.if ! ${PORT_OPTIONS:MGCRYPT}
+.  if ${SSL_DEFAULT} == base
 	@${REINPLACE_CMD} -e 's/LIBSREQUIRED=libssl,libcrypto/LIBS="$$LIBS -lssl -lcrypto"/' \
 		${WRKSRC}/configure
+.  endif
 .endif
 
 post-build:
