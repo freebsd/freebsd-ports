@@ -107,8 +107,8 @@ RBLAS_SOVERSION=	2
 RLAPACK_SOVERSION=	4
 RMATH_SOVERSION=	0
 USES+=			fortran
-USE_GCC=		yes
 
+.include "${.CURDIR}/compiler.mk"
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "powerpc64"
