@@ -1,6 +1,0 @@
-A standardized solution of integrating external applications with Drupal.
-Service callbacks may be used with multiple interfaces like XMLRPC, JSON,
-JSON-RPC, REST, SOAP, AMF, etc. This allows a Drupal site to provide web
-services via multiple interfaces while using the same callback code.
-
-WWW: http://drupal.org/project/services

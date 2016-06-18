@@ -1,7 +1,0 @@
-This module allows you to manage permissions for content types by
-role and author. It allows you to specifiy custom view, edit and
-delete permissions for each content type. Optionally you can enable
-per content access settings, so you can customize the access for
-each content node.
-
-WWW: http://drupal.org/project/content_access

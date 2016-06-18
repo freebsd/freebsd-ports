@@ -1,5 +1,0 @@
-This module allows you to generate printer friendly versions of any
-node by navigating to www.example.com/print/nid, where nid is the
-node id of content to render.
-
-WWW: http://drupal.org/project/print
