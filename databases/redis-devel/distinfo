@@ -1,2 +1,3 @@
-SHA256 (redis-3.2.0.tar.gz) = 989f1af3dc0ac1828fdac48cd6c608f5a32a235046dddf823226f760c0fd8762
-SIZE (redis-3.2.0.tar.gz) = 1525900
+TIMESTAMP = 1466265413
+SHA256 (redis-3.2.1.tar.gz) = df7bfb7b527d99981eba3912ae22703764eb19adda1357818188b22fdd09d5c9
+SIZE (redis-3.2.1.tar.gz) = 1534696
