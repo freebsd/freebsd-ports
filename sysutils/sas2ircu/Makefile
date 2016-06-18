@@ -4,7 +4,7 @@ PORTNAME=	sas2ircu
 PORTVERSION=	20.00.00.00
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://docs.avagotech.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_6g_p20/
+MASTER_SITES=	http://docs.avagotech.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_6g_p20_point6/
 DISTNAME=	SAS2IRCU_P20
 
 MAINTAINER=	freebsd-ports@dan.me.uk
