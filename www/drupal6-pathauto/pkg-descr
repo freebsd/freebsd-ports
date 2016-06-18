@@ -1,5 +1,0 @@
-Pathauto is a Drupal module which automatically generates path aliases for
-various kinds of content (nodes, categories, users) without requiring the
-user to manually specify the path alias.
-
-WWW: http://drupal.org/project/pathauto
