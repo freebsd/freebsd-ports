@@ -8339,3 +8339,30 @@ lang/ruby20||2016-06-01|Has expired: Upstream support ended
 java/rubygem-rjb||2016-06-02|Has expired: fails to create JVM
 devel/rubygem-atoulme-antwrap||2016-06-02|Removed, depends on java/rubygem-rjb
 net/xmlrpc-c-devel||2016-06-11|Retired, older than net/xmlrpc-c
+www/drupal6-content_access||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-google_analytics||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-seo_checklist||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-pathauto||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-wysiwyg||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-advanced_help||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-path_redirect||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-webform||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-imce||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-mimedetect||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-tagadelic||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-panels||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-zeropoint||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-geshifilter||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-chaos||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-token||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-print||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-nodewords||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-image||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-menu_block||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-views||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-services||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-ckeditor||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-nice_menus||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-page_title||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6-cck||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
+www/drupal6||2016-06-18|Has expired: EOL upstream as of 2016-02-24

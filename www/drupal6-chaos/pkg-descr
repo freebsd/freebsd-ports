@@ -1,6 +1,0 @@
-This suite is primarily a set of APIs and tools to improve the developer
-experience. It also contains a module called the Page Manager whose is
-to manage pages. In particular it manages panel pages, but as it grows
-it will be able to manage far more than just Panels.
-
-WWW: http://drupal.org/project/ctools

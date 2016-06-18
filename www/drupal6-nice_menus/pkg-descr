@@ -1,8 +1,0 @@
-Nice Menus is a module for the Drupal CMS which enables drop-down / right /
-left expandable menus. The module uses CSS to display the menus on browsers
-which have functional CSS.  Internet Explorer is supported using Javascript.
-
-Three styles of menus are currently possible: horizontal (menus drop down);
-vertical (menus drop to the left); vertical (menus drop to the right).
-
-WWW: http://drupal.org/project/nice_menus

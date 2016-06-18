@@ -1,7 +1,0 @@
-This module will allow Drupal to replace textarea fields with the CKEditor -
-a visual HTML editor, sometimes called WYSIWYG editor.
-This HTML text editor brings many of the powerful WYSIWYG editing functions
-of known desktop editors like Word to the web. It's very fast and doesn't
-require any kind of installation on the client computer.
-
-WWW: http://drupal.org/project/ckeditor

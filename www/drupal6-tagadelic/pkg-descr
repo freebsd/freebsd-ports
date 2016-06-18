@@ -1,8 +1,0 @@
-Tagadelic is a small module, without any databases, or configuration,
-that generates a page with weighted tags. The cool thing is that
-by merely altering font sizes, these lists suddenly gain a dimension.
-Tagadelic offers various ways to add terms and vocabularies in one
-tag cloud. By using the urls, you can create your own clouds pages.
-It also offers a sideblock for each taxonomy tree.
-
-WWW: http://drupal.org/project/tagadelic
