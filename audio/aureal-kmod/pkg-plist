@@ -1,4 +1,3 @@
-@unexec `if [ -e /bin/chflags ]; then echo /bin/chflags; else echo /usr/bin/chflags; fi` noschg /%%KMODDIR%%/snd_au88?0.ko
 /%%KMODDIR%%/snd_au8810.ko
 /%%KMODDIR%%/snd_au8820.ko
 /%%KMODDIR%%/snd_au8830.ko
