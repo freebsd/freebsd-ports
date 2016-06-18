@@ -1,5 +1,5 @@
-@unexec if [ ! -s %D/etc/mongodb.conf ]; then /bin/rm -f %D/etc/mongodb.conf; fi
-@exec  if [ ! -f %D/etc/mongodb.conf ]; then /usr/bin/touch %D/etc/mongodb.conf; fi
+@postunexec if [ ! -s %D/etc/mongodb.conf ]; then /bin/rm -f %D/etc/mongodb.conf; fi
+@postexec  if [ ! -f %D/etc/mongodb.conf ]; then /usr/bin/touch %D/etc/mongodb.conf; fi
 bin/bsondump
 bin/mongo
 bin/mongod
