@@ -5,18 +5,15 @@ PORTNAME=	charmap
 PORTVERSION=	0.2
 PORTREVISION=	5
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	SAVANNAH
+MASTER_SITES=	http://www.sourcefiles.org/Utilities/GUI/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Character map for GNUstep
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gnustep
-USE_GNUSTEP=	back build
+USE_GNUSTEP=	back base build gui
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Charmap.app/Charmap
