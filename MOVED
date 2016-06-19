@@ -8366,3 +8366,4 @@ www/drupal6-nice_menus||2016-06-18|Has expired: www/drupal6 upstream is EOL and 
 www/drupal6-page_title||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
 www/drupal6-cck||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
 www/drupal6||2016-06-18|Has expired: EOL upstream as of 2016-02-24
+x11-toolkits/gtk-sharp10||2016-06-20|Not depend on anymore superceeded by gtk-sharp20 and gtk-sharp30

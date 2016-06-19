@@ -37,7 +37,6 @@
     SUBDIR += gstreamer1-plugins-gtksink
     SUBDIR += gstreamer1-plugins-pango
     SUBDIR += gtk-sharp-beans
-    SUBDIR += gtk-sharp10
     SUBDIR += gtk-sharp20
     SUBDIR += gtk-sharp30
     SUBDIR += gtk12
