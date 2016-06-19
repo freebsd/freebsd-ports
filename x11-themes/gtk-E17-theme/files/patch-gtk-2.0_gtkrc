@@ -1,0 +1,13 @@
+--- gtk-2.0/gtkrc.orig	2016-06-05 17:56:12 UTC
++++ gtk-2.0/gtkrc
+@@ -1030,8 +1030,8 @@ style "misc-panel"
+ style "view"
+ {
+ 	# It's better not to have too bright text views.
+-	base[NORMAL] = "#ECECEC"
+-	text[NORMAL] = "#000000"
++	base[NORMAL] = @bg_color
++	text[NORMAL] = "#FFFFFF"
+ }
+ 
+ style "entry"

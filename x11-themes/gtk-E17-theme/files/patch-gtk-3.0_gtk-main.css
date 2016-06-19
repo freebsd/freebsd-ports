@@ -1,0 +1,11 @@
+--- gtk-3.0/gtk-main.css.orig	2016-06-05 18:00:05 UTC
++++ gtk-3.0/gtk-main.css
+@@ -21,7 +21,7 @@
+ 
+ @define-color theme_main_color #000000;
+ 
+-@define-color view_color #ECECEC;
++@define-color view_color @base_color;
+ 
+ @define-color button_gradient_color_a #5F5F5F; /*shade(@theme_bg_color, 1.75);*/
+ @define-color button_gradient_color_b #434343;
