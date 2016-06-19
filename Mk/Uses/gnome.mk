@@ -78,7 +78,7 @@ _USE_GNOME_ALL+= gdkpixbuf glib12 gtk12
 _USE_GNOME_ALL+= atk atspi cairo gal2 \
 		gdkpixbuf2 gconf2 glib20 \
 		gnomedocutils gnomesharp20 \
-		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
+		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libbonoboui libgda4 libglade2 libgnome \
 		libgnomecanvas libgnomekbd libgnomeprint libgnomeprintui \
