@@ -1,0 +1,53 @@
+http://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=50863
+
+--- src/tty.c.orig	2014-06-18 19:07:45 UTC
++++ src/tty.c
+@@ -499,6 +499,9 @@ tty_setup(EditLine *el)
+ 	if (el->el_flags & EDIT_DISABLED)
+ 		return 0;
+ 
++	if (el->el_tty.t_initialized)
++		return -1;
++
+ 	if (!isatty(el->el_outfd)) {
+ #ifdef DEBUG_TTY
+ 		(void) fprintf(el->el_errfile, "%s: isatty: %s\n", __func__,
+@@ -558,6 +561,7 @@ tty_setup(EditLine *el)
+ 
+ 	tty__setchar(&el->el_tty.t_ed, el->el_tty.t_c[ED_IO]);
+ 	tty_bind_char(el, 1);
++	el->el_tty.t_initialized = 1;
+ 	return 0;
+ }
+ 
+@@ -567,6 +571,7 @@ tty_init(EditLine *el)
+ 
+ 	el->el_tty.t_mode = EX_IO;
+ 	el->el_tty.t_vdisable = _POSIX_VDISABLE;
++	el->el_tty.t_initialized = 0;
+ 	(void) memcpy(el->el_tty.t_t, ttyperm, sizeof(ttyperm_t));
+ 	(void) memcpy(el->el_tty.t_c, ttychar, sizeof(ttychar_t));
+ 	return tty_setup(el);
+@@ -580,6 +585,9 @@ protected void
+ /*ARGSUSED*/
+ tty_end(EditLine *el)
+ {
++	if (!el->el_tty.t_initialized)
++		return;
++
+ 	if (tty_setty(el, TCSAFLUSH, &el->el_tty.t_or) == -1) {
+ #ifdef DEBUG_TTY
+ 		(void) fprintf(el->el_errfile,
+--- src/tty.h.orig	2014-06-18 16:05:56 UTC
++++ src/tty.h
+@@ -474,8 +474,9 @@ typedef struct {
+     int t_tabs;
+     int t_eight;
+     speed_t t_speed;
+-    int t_mode;
++    unsigned char t_mode;
+     unsigned char t_vdisable;
++    unsigned char t_initialized;
+ } el_tty_t;
+ 
+ 
