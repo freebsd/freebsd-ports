@@ -1,0 +1,37 @@
+#!/bin/sh
+
+set -e
+
+DOMAIN="example.net"
+LEDIR="%%PREFIX%%/etc/ssl/letsencrypt"
+JAILSDIR="/usr/jails"
+TARGETS="mail http"
+for jail in ${targets}; do
+  targetdir="${JAILSDIR}/${jail}/etc/ssl"
+  # Check if the certificate has changed
+  [[ -z "`diff -rq ${LEDIR}/${domain}/fullchain.pem ${targetdir}/certs/${domain}.pem`" ]] && continue
+  cp -L "${LEDIR}/private/${domain}.pem"   "${targetdir}/priv/${domain}.pem"
+  cp -L "${LEDIR}/${domain}/fullchain.pem" "${targetdir}/certs/${domain}.pem"
+  chmod 400 "${targetdir}/priv/${domain}.pem"
+  chmod 644 "${targetdir}/certs/${domain}.pem"
+  # Restart/-load relevant services
+  [[ "${jail}" = "http" ]] && jexec ${jail} service apache24 restart
+  [[ "${jail}" = "mail" ]] && jexec ${jail} service smtpd    restart
+done
+
+# Repeat for other certificates
+#DOMAIN="example.org"
+#TARGETS="mail"
+#for jail in ${targets}; do
+#  targetdir="${JAILSDIR}/${jail}/etc/ssl"
+#  # Check if the certificate has changed
+#  [[ -z "`diff -rq ${LEDIR}/${domain}/fullchain.pem ${targetdir}/certs/${domain}.pem`" ]] && continue
+#  cp -L "${LEDIR}/private/${domain}.pem"   "${targetdir}/priv/${domain}.pem"
+#  cp -L "${LEDIR}/${domain}/fullchain.pem" "${targetdir}/certs/${domain}.pem"
+#  chmod 400 "${targetdir}/priv/${domain}.pem"
+#  chmod 644 "${targetdir}/certs/${domain}.pem"
+#  # Restart/-load relevant services
+#  [[ "${jail}" = "http" ]] && jexec ${jail} service apache24 restart
+#  [[ "${jail}" = "mail" ]] && jexec ${jail} service smtpd    restart
+#done
+
