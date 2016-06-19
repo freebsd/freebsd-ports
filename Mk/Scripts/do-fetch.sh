@@ -22,7 +22,6 @@ cd "${dp_DISTDIR}"
 
 for _file in "${@}"; do
 	file=${_file%%:*}
-	unescaped_file=$(unescape "${file}")
 
 	# If this files has groups
 	if [ "$_file" = "$file" ]; then
@@ -43,7 +42,7 @@ for _file in "${@}"; do
 			fi
 		done
 	fi
-	if [ ! -f "${unescaped_file}" -a ! -f "$filebasename" -o "$force_fetch" = "true" ]; then
+	if [ ! -f "${file}" -a ! -f "$filebasename" -o "$force_fetch" = "true" ]; then
 		full_file="${dp_DIST_SUBDIR:+${dp_DIST_SUBDIR}/}${file}"
 		if [ -L "$file" -o -L "$filebasename" ]; then
 			${dp_ECHO_MSG} "=> ${dp_DISTDIR}/$file is a broken symlink."
@@ -71,7 +70,8 @@ for _file in "${@}"; do
 		esac
 		__MASTER_SITES_TMP=
 		for group in $select; do
-			# Disable nounset for this, it may come up empty.
+			# Disable nounset for this, it may come up empty, but
+			# we don't want to fail with a strange error here.
 			set +u
 			eval ___MASTER_SITES_TMP="\${_${dp_SITE_FLAVOR}_SITES_${group}}"
 			set -u
@@ -104,32 +104,33 @@ for _file in "${@}"; do
 				;;
 		esac
 		sites_remaining=0
-		sites="$(eval "${SORTED_MASTER_SITES_CMD_TMP} ${dp_RANDOMIZE_SITES}")"
+		sites="$(${SORTED_MASTER_SITES_CMD_TMP} ${dp_RANDOMIZE_SITES})"
 		for site in ${sites}; do
 			sites_remaining=$((sites_remaining + 1))
 		done
 		for site in ${sites}; do
 			sites_remaining=$((sites_remaining - 1))
 			CKSIZE=$(distinfo_data SIZE "${full_file}")
-			# The site may contain special shell characters, they
-			# need to be escaped.
-			site=$(escape "${site}")
 			# There is a lot of escaping, but the " needs to survive echo/eval.
 			case ${file} in
 				*/*)
 					mkdir -p "${file%/*}"
-					args="-o \\\"${file}\\\" \\\"${site}${file}\\\""
+					args="-o ${file} ${site}${file}"
 					;;
 				*)
-					args="\\\"${site}${file}\\\""
+					args="${site}${file}"
 					;;
 			esac
-			_fetch_cmd=$(eval "echo ${dp_FETCH_ENV} ${dp_FETCH_CMD} ${dp_FETCH_BEFORE_ARGS} ${args} ${dp_FETCH_AFTER_ARGS}")
+			_fetch_cmd="${dp_FETCH_CMD} ${dp_FETCH_BEFORE_ARGS}"
+			if [ -z "${dp_DISABLE_SIZE}" -a -n "${CKSIZE}" ]; then
+				_fetch_cmd="${_fetch_cmd} -S ${CKSIZE}"
+			fi
+			_fetch_cmd="${_fetch_cmd} ${args} ${dp_FETCH_AFTER_ARGS}"
 			case ${dp_TARGET} in
 			do-fetch|makesum)
 				${dp_ECHO_MSG} "=> Attempting to fetch ${site}${file}"
-				if eval "env ${_fetch_cmd}"; then
-					actual_size=$(eval stat -f %z "${file}")
+				if env -S "${dp_FETCH_ENV}" ${_fetch_cmd}; then
+					actual_size=$(stat -f %z "${file}")
 					if [ -n "${dp_DISABLE_SIZE}" ] || [ -z "${CKSIZE}" ] || [ "${actual_size}" -eq "${CKSIZE}" ]; then
 						continue 2
 					else
@@ -142,10 +143,10 @@ for _file in "${@}"; do
 				fi
 				;;
 			fetch-list)
-				echo -n "env ${_fetch_cmd} || "
+				echo -n "env $(escape "${_fetch_cmd}") || "
 				;;
 			fetch-url-list-int)
-				eval "echo $(eval "echo ${args}")"
+				echo ${args}
 				;;
 			esac
 		done
@@ -156,7 +157,7 @@ for _file in "${@}"; do
 			exit 1
 			;;
 		fetch-list)
-			echo "echo ${file} not fetched; }" ; \
+			echo "echo \"${file}\" not fetched; }" ; \
 			;;
 		esac
 	fi

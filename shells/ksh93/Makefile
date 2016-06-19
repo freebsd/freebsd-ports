@@ -26,7 +26,7 @@ LICENSE=	EPL
 
 OPTIONS_DEFINE=	EXAMPLES STATIC
 
-FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
+FETCH_ENV=	HTTP_AUTH=basic:*:I\ accept\ www.opensource.org/licenses/cpl:.
 LDFLAGS+=	-lm
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
 NO_WRKSUBDIR=	yes

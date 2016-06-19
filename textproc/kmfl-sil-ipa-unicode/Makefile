@@ -5,8 +5,8 @@ PORTNAME=	kmfl-sil-ipa-unicode
 PORTVERSION=	1.2
 PORTREVISION=	4
 CATEGORIES=	textproc
-MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12_Src\&filename=/:1 \
-		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12.pdf\&filename=/:2
+MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=IPAUni_12_Src&filename=/:1 \
+		http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=IPAUni_12.pdf&filename=/:2
 DISTFILES=	IPAUni_Src12.zip:1 \
 		IPA+Unicode+5.1_ver+1.2_KMN.pdf:2
 DIST_SUBDIR=	kmfl
