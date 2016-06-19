@@ -1,6 +1,6 @@
-E17gtk is a dark Gtk theme with sharp corners, which is designed for use in
-Enlightenment and gives the elegant look of Enlightenment to Gtk3, Gtk2 and
-Qt widgets. Of course, it can be used with any GTK based environment too,
-but it is not tuned to Gnome or any of its apps.
+E17gtk is a dark GTK2/GTK3.18 theme with sharp corners, which is designed for
+use in Enlightenment and gives the elegant look of Enlightenment to GTK widgets.
+Of course, it can be used with any GTK based environment too, but it is not
+tuned to Gnome or any of its apps.
 
-WWW: http://gnome-look.org/content/show.php/?content=163472
+WWW: https://www.gnome-look.org/p/1013662/
