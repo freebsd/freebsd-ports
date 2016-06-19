@@ -28,7 +28,7 @@ if [ -f "${dp_DISTINFO_FILE}" ]; then
 			eval "alg_executable=\$dp_${alg}"
 
 			if [ "$alg_executable" != "NO" ]; then
-				MKSUM=$(eval $alg_executable \< "${file}")
+				MKSUM=$($alg_executable < "${file}")
 				CKSUM=$(distinfo_data "${alg}" "${file}")
 			else
 				ignore="true"
