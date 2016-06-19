@@ -1862,7 +1862,6 @@ CO_ENV+=	NO_PREFIX_RMDIR=0
 
 
 METADIR=		${WRKDIR}/.metadir
-MANIFESTF=		${METADIR}/+MANIFEST
 
 PKGPREINSTALL?=		${PKGDIR}/pkg-pre-install
 PKGPOSTINSTALL?=	${PKGDIR}/pkg-post-install
@@ -2968,7 +2967,7 @@ ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR}:
 # Warn user about deprecated packages.  Advisory only.
 
 .if !target(check-deprecated)
-# Try and keep these messages in sync with the ones in create-manifest
+# Try and keep these messages in sync with the ones in Mk/Scripts/create-manifest.sh
 check-deprecated:
 .if ${MAINTAINER} == "ports@FreeBSD.org"
 	@${ECHO_MSG} "===>   NOTICE:"
@@ -4211,99 +4210,49 @@ ACTUAL-PACKAGE-DEPENDS?= \
 	done ; \
 	${SETENV} PKG_BIN="${PKG_BIN}" ${SH} ${SCRIPTSDIR}/actual-package-depends.sh $${depfiles} ${RUN_DEPENDS:C/(.*)\:.*/"\1"/}
 
-create-manifest:
-	@${MKDIR} ${METADIR}; \
-	(\
-		echo "name: \"${PKGBASE}\"" ; \
-		echo "version: \"${PKGVERSION}\"" ; \
-		echo "origin: ${PKGORIGIN}" ; \
-		echo "comment: <<EOD" ; \
-		echo ${COMMENT:Q} ; \
-		echo "EOD" ; \
-		echo "maintainer: ${MAINTAINER}" ; \
-		echo "prefix: ${PREFIX}" ; \
-		[ -z "${WWW}" ] || echo "www: ${WWW}" ; \
-		echo "deps: { "; \
-		${ACTUAL-PACKAGE-DEPENDS} | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u ; \
-		echo "}" ; \
-		echo "categories: [ ${CATEGORIES:u:S/$/,/} ]" ; \
-		l=${LICENSE_COMB} ; \
-		[ -n "${NO_ARCH}" ] && echo "arch : `${PKG_BIN} config abi | tr '[:upper:]' '[:lower:]' | ${CUT} -d: -f1,2`:*" ; \
-		[ -n "${NO_ARCH}" ] && echo "abi : `${PKG_BIN} config abi | ${CUT} -d: -f1,2`:*" ; \
-		echo "licenselogic: $${l:-single}" ; \
-		[ -z "${LICENSE}" ] || echo "licenses: [ ${LICENSE:u:S/$/,/} ]" ; \
-		[ -z "${USERS}" ] || echo "users: [ ${USERS:u:S/$/,/} ]" ; \
-		[ -z "${GROUPS}" ] || echo "groups: [ ${GROUPS:u:S/$/,/} ]" ; \
-	) > ${MANIFESTF}
-	@${ECHO_CMD} -n "options: {" >> ${MANIFESTF}
-.for opt in ${COMPLETE_OPTIONS_LIST}
-	@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="on" ; ${ECHO_MSG} -n " ${opt}: $${match:-off}," >> ${MANIFESTF}
-.endfor
-	@${ECHO_CMD} "}" >> ${MANIFESTF}
-.if defined(PKG_NOTES)
-	@${ECHO_CMD} -n "annotations: {" >> ${MANIFESTF}
+PKG_NOTES_ENV?=
 .for note in ${PKG_NOTES}
-	@${ECHO_CMD} -n ' ${note}: "${PKG_NOTE_${note}:S/"/\"/g}",' >> ${MANIFESTF}
+PKG_NOTES_ENV+=	dp_PKG_NOTE_${note}=${PKG_NOTE_${note}:Q}
 .endfor
-	@${ECHO_CMD} " }" >> ${MANIFESTF}
-.endif
-	@[ -f ${PKGINSTALL} ] && ${CP} ${PKGINSTALL} ${METADIR}/+INSTALL; \
-	${RM} -f ${METADIR}/+PRE_INSTALL ; \
-	for a in ${PKGPREINSTALL}; do \
-		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+PRE_INSTALL ; \
-	done ; \
-	${RM} -f ${METADIR}/+POST_INSTALL ; \
-	for a in ${PKGPOSTINSTALL}; do \
-		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+POST_INSTALL ; \
-	done ; \
-	[ -f ${PKGDEINSTALL} ] && ${CP} ${PKGDEINSTALL} ${METADIR}/+DEINSTALL; \
-	${RM} -f ${METADIR}/+PRE_DEINSTALL ; \
-	for a in ${PKGPREDEINSTALL}; do \
-		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+PRE_DEINSTALL ; \
-	done ; \
-	${RM} -f ${METADIR}/+POST_DEINSTALL ; \
-	for a in ${PKGPOSTDEINSTALL}; do \
-		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+POST_DEINSTALL ; \
-	done ; \
-	[ -f ${PKGUPGRADE} ] && ${CP} ${PKGUPGRADE} ${METADIR}/+UPGRADE; \
-	[ -f ${PKGPREUPGRADE} ] && ${CP} ${PKGPREUPGRADE} ${METADIR}/+PRE_UPGRADE; \
-	[ -f ${PKGPOSTUPGRADE} ] && ${CP} ${PKGPOSTUPGRADE} ${METADIR}/+POST_UPGRADE; \
-	${CP} ${DESCR} ${METADIR}/+DESC; \
-	[ -f ${PKGMESSAGE} ] && ${CP} ${PKGMESSAGE} ${METADIR}/+DISPLAY || return 0
-# Try and keep these messages in sync with check-deprecated
-.if ${MAINTAINER} == "ports@FreeBSD.org"
-	@( \
-		if [ -f "${METADIR}/+DISPLAY" ]; then ${ECHO_CMD}; fi; \
-		${ECHO_CMD} "===>   NOTICE:"; \
-		${ECHO_CMD}; \
-		${ECHO_CMD} "The ${PORTNAME} port currently does not have a maintainer. As a result, it is"; \
-		${ECHO_CMD} "more likely to have unresolved issues, not be up-to-date, or even be removed in"; \
-		${ECHO_CMD} "the future. To volunteer to maintain this port, please create an issue at:"; \
-		${ECHO_CMD}; \
-		${ECHO_CMD} "https://bugs.freebsd.org/bugzilla"; \
-		${ECHO_CMD}; \
-		${ECHO_CMD} "More information about port maintainership is available at:"; \
-		${ECHO_CMD}; \
-		${ECHO_CMD} "https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port"; \
-	) >> ${METADIR}/+DISPLAY
-.endif
-.if defined(DEPRECATED)
-	@( \
-		if [ -f "${METADIR}/+DISPLAY" ]; then ${ECHO_CMD}; fi; \
-		${ECHO_CMD} "===>   NOTICE:"; \
-		${ECHO_CMD}; \
-		${ECHO_CMD} "This port is deprecated; you may wish to reconsider installing it:"; \
-		${ECHO_CMD}; \
-		${ECHO_CMD} ${DEPRECATED:Q}.; \
-		${ECHO_CMD}; \
-	) >> ${METADIR}/+DISPLAY
-.if defined(EXPIRATION_DATE)
-	@( \
-		${ECHO_CMD} "It is scheduled to be removed on or after ${EXPIRATION_DATE}."; \
-		${ECHO_CMD}; \
-	) >> ${METADIR}/+DISPLAY
-.endif
-.endif
+
+create-manifest:
+	@${SETENV} \
+			dp_SCRIPTSDIR='${SCRIPTSDIR}'                         \
+			dp_ACTUAL_PACKAGE_DEPENDS='${ACTUAL-PACKAGE-DEPENDS}' \
+			dp_CATEGORIES='${CATEGORIES:u:S/$/,/}'                \
+			dp_COMMENT=${COMMENT:Q}                               \
+			dp_COMPLETE_OPTIONS_LIST='${COMPLETE_OPTIONS_LIST}'   \
+			dp_DEPRECATED='${DEPRECATED:Q}'                       \
+			dp_DESCR='${DESCR}'                                   \
+			dp_EXPIRATION_DATE='${EXPIRATION_DATE}'               \
+			dp_GROUPS='${GROUPS:u:S/$/,/}'                        \
+			dp_LICENSE='${LICENSE:u:S/$/,/}'                      \
+			dp_LICENSE_COMB='${LICENSE_COMB}'                     \
+			dp_MAINTAINER='${MAINTAINER}'                         \
+			dp_METADIR='${METADIR}'                               \
+			dp_NO_ARCH='${NO_ARCH}'                               \
+			dp_PKGBASE='${PKGBASE}'                               \
+			dp_PKGDEINSTALL='${PKGDEINSTALL}'                     \
+			dp_PKGINSTALL='${PKGINSTALL}'                         \
+			dp_PKGMESSAGE='${PKGMESSAGE}'                         \
+			dp_PKGORIGIN='${PKGORIGIN}'                           \
+			dp_PKGPOSTDEINSTALL='${PKGPOSTDEINSTALL}'             \
+			dp_PKGPOSTINSTALL='${PKGPOSTINSTALL}'                 \
+			dp_PKGPOSTUPGRADE='${PKGPOSTUPGRADE}'                 \
+			dp_PKGPREDEINSTALL='${PKGPREDEINSTALL}'               \
+			dp_PKGPREINSTALL='${PKGPREINSTALL}'                   \
+			dp_PKGPREUPGRADE='${PKGPREUPGRADE}'                   \
+			dp_PKGUPGRADE='${PKGUPGRADE}'                         \
+			dp_PKGVERSION='${PKGVERSION}'                         \
+			dp_PKG_BIN='${PKG_BIN}'                               \
+			dp_PKG_IGNORE_DEPENDS='${PKG_IGNORE_DEPENDS}'         \
+			dp_PKG_NOTES='${PKG_NOTES}'                           \
+			dp_PORT_OPTIONS='${PORT_OPTIONS}'                     \
+			dp_PREFIX='${PREFIX}'                                 \
+			dp_USERS='${USERS:u:S/$/,/}'                          \
+			dp_WWW='${WWW}'                                       \
+			${PKG_NOTES_ENV}                                      \
+			${SH} ${SCRIPTSDIR}/create-manifest.sh
 
 
 # Print out package names.
