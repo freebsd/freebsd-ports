@@ -39,24 +39,26 @@ if [ -f "${dp_DISTINFO_FILE}" ]; then
 				ignore="true"
 			fi
 
-			if [ $ignore = "false" ]; then
-				match="false"
-				for chksum in $CKSUM; do
-					if [ "$chksum" = "$MKSUM" ]; then
-						match="true"
-						break
-					fi
-				done
-				if [ $match = "true" ]; then
-					${dp_ECHO_MSG} "=> $alg Checksum OK for $file."
-					ignored="false"
-				else
-					${dp_ECHO_MSG} "=> $alg Checksum mismatch for $file."
-					refetchlist="$refetchlist $file "
-					OK="${OK:-retry}"
-					[ "${OK}" = "retry" -a "${dp_FETCH_REGET}" -gt 0 ] && rm -f "${file}"
-					ignored="false"
+			if [ $ignore != "false" ]; then
+				continue
+			fi
+
+			match="false"
+			for chksum in $CKSUM; do
+				if [ "$chksum" = "$MKSUM" ]; then
+					match="true"
+					break
 				fi
+			done
+			if [ $match = "true" ]; then
+				${dp_ECHO_MSG} "=> $alg Checksum OK for $file."
+				ignored="false"
+			else
+				${dp_ECHO_MSG} "=> $alg Checksum mismatch for $file."
+				refetchlist="$refetchlist $file "
+				OK="${OK:-retry}"
+				[ "${OK}" = "retry" -a "${dp_FETCH_REGET}" -gt 0 ] && rm -f "${file}"
+				ignored="false"
 			fi
 		done
 
