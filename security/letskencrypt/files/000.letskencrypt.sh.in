@@ -16,8 +16,6 @@ case "$weekly_letskencrypt_enable" in
 
 	if [ -x "$weekly_letskencrypt_renewscript" ] ; then
 		$weekly_letskencrypt_renewscript
-	elif [ -x %%PREFIX%%/letsencrypt/letskencrypt.sh ] ; then
-		%%PREFIX%%/letsencrypt/letskencrypt.sh 
 	else
 		if [ -z "$weekly_letskencrypt_domains" ] ; then
 			weekly_letskencrypt_domains=$(hostname -f)
