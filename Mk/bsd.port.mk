@@ -2057,9 +2057,6 @@ FETCH_ENV?=		SSL_NO_VERIFY_PEER=1 SSL_NO_VERIFY_HOSTNAME=1
 FETCH_BINARY?=	/usr/bin/fetch
 FETCH_ARGS?=	-Fpr
 FETCH_REGET?=	1
-.if !defined(DISABLE_SIZE)
-FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
-.endif
 FETCH_CMD?=		${FETCH_BINARY} ${FETCH_ARGS}
 
 .if defined(RANDOMIZE_MASTER_SITES)
@@ -2471,24 +2468,24 @@ MASTER_SORT_AWK+=	{ rest = rest " " $$0; } END { n=split(gl, gla); for(i=1;i<=n;
 #
 # Hackery to enable simple fetch targets with several dynamic MASTER_SITES
 #
-_MASTER_SITES_ENV=	_MASTER_SITES_DEFAULT="${_MASTER_SITES_DEFAULT}"
+_MASTER_SITES_ENV=	_MASTER_SITES_DEFAULT=${_MASTER_SITES_DEFAULT:Q}
 .for _F in ${DISTFILES}
 _F_TEMP=	${_F:S/^${_F:C/:[^:]+$//}//:S/^://}
 .	if !empty(_F_TEMP)
 .		for _group in ${_F_TEMP:S/,/ /g}
 .			if defined(_MASTER_SITES_${_group})
-_MASTER_SITES_ENV+=	_MASTER_SITES_${_group}="${_MASTER_SITES_${_group}}"
+_MASTER_SITES_ENV+=	_MASTER_SITES_${_group}=${_MASTER_SITES_${_group}:Q}
 .			endif
 .		endfor
 .	endif
 .endfor
-_PATCH_SITES_ENV=	_PATCH_SITES_DEFAULT="${_PATCH_SITES_DEFAULT}"
+_PATCH_SITES_ENV=	_PATCH_SITES_DEFAULT=${_PATCH_SITES_DEFAULT:Q}
 .for _F in ${PATCHFILES}
 _F_TEMP=	${_F:S/^${_F:C/:[^-:][^:]*$//}//:S/^://}
 .	if !empty(_F_TEMP)
 .		for _group in ${_F_TEMP:S/,/ /g}
 .			if defined(_PATCH_SITES_${_group})
-_PATCH_SITES_ENV+=	_PATCH_SITES_${_group}="${_PATCH_SITES_${_group}}"
+_PATCH_SITES_ENV+=	_PATCH_SITES_${_group}=${_PATCH_SITES_${_group}:Q}
 .			endif
 .		endfor
 .	endif
@@ -3029,7 +3026,7 @@ _DO_FETCH_ENV= \
 			dp_FETCH_AFTER_ARGS='${FETCH_AFTER_ARGS}' \
 			dp_FETCH_BEFORE_ARGS='${FETCH_BEFORE_ARGS}' \
 			dp_FETCH_CMD='${FETCH_CMD}' \
-			dp_FETCH_ENV=${FETCH_ENV:Q:Q} \
+			dp_FETCH_ENV=${FETCH_ENV:Q} \
 			dp_FORCE_FETCH_ALL='${FORCE_FETCH_ALL}' \
 			dp_FORCE_FETCH_LIST='${FORCE_FETCH_LIST}' \
 			dp_MASTER_SITE_BACKUP='${_MASTER_SITE_BACKUP}' \
@@ -3792,7 +3789,7 @@ pre-distclean:
 
 .if !target(distclean)
 distclean: pre-distclean clean
-	@cd ${.CURDIR} && ${MAKE} delete-distfiles RESTRICTED_FILES="${_DISTFILES} ${_PATCHFILES}"
+	@cd ${.CURDIR} && ${MAKE} delete-distfiles RESTRICTED_FILES="${_DISTFILES:Q} ${_PATCHFILES:Q}"
 .endif
 
 .if !target(delete-distfiles)
