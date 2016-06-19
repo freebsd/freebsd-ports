@@ -2468,47 +2468,6 @@ MASTER_SORT_AWK+=	/${srt:S|/|\\/|g}/ { good["${srt:S|\\|\\\\|g}"] = good["${srt:
 .endfor
 MASTER_SORT_AWK+=	{ rest = rest " " $$0; } END { n=split(gl, gla); for(i=1;i<=n;i++) { print good[gla[i]]; } print rest; }
 
-SORTED_MASTER_SITES_DEFAULT_CMD=	cd ${.CURDIR} && ${MAKE} master-sites-DEFAULT
-SORTED_PATCH_SITES_DEFAULT_CMD=		cd ${.CURDIR} && ${MAKE} patch-sites-DEFAULT
-SORTED_MASTER_SITES_ALL_CMD=	cd ${.CURDIR} && ${MAKE} master-sites-ALL
-SORTED_PATCH_SITES_ALL_CMD=	cd ${.CURDIR} && ${MAKE} patch-sites-ALL
-
-# has similar effect to old targets, i.e., access only {MASTER,PATCH}_SITES, not working with the new _n variables
-master-sites-DEFAULT:
-	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_MASTER_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
-patch-sites-DEFAULT:
-	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_PATCH_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
-
-#
-# Sort the master site list according to the patterns in MASTER_SORT
-# according to grouping rules (:something)
-#
-# for use in the fetch targets
-.for _S in ${MASTER_SITES}
-_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
-.	if !empty(_S_TEMP)
-.		for _group in ${_S_TEMP:S/^://:S/,/ /g}
-.			if !target(master-sites-${_group})
-SORTED_MASTER_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} master-sites-${_group}
-master-sites-${_group}:
-	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_MASTER_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
-.			endif
-.		endfor
-.	endif
-.endfor
-.for _S in ${PATCH_SITES}
-_S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
-.	if !empty(_S_TEMP)
-.		for _group in ${_S_TEMP:S/^://:S/,/ /g}
-.			if !target(patch-sites-${_group})
-SORTED_PATCH_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} patch-sites-${_group}
-patch-sites-${_group}:
-	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_PATCH_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
-.			endif
-.		endfor
-.	endif
-.endfor
-
 #
 # Hackery to enable simple fetch targets with several dynamic MASTER_SITES
 #
@@ -2534,21 +2493,6 @@ _PATCH_SITES_ENV+=	_PATCH_SITES_${_group}="${_PATCH_SITES_${_group}}"
 .		endfor
 .	endif
 .endfor
-
-master-sites-ALL:
-	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_MASTER_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
-patch-sites-ALL:
-	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_PATCH_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
-
-# synonyms, mnemonics
-master-sites-all: master-sites-ALL
-patch-sites-all: patch-sites-ALL
-master-sites-default: master-sites-DEFAULT
-patch-sites-default: patch-sites-DEFAULT
-
-# compatibility with old behavior
-master-sites: master-sites-DEFAULT
-patch-sites: patch-sites-DEFAULT
 
 CKSUMFILES=		${ALLFILES}
 
@@ -3021,7 +2965,7 @@ options-message:
 	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
 .endif
 
-${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} ${WRKSRC}:
+${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR}:
 	@${MKDIR} ${.TARGET}
 
 # Warn user about deprecated packages.  Advisory only.
@@ -3094,8 +3038,6 @@ _DO_FETCH_ENV= \
 			dp_NO_CHECKSUM='${NO_CHECKSUM}' \
 			dp_RANDOMIZE_SITES='${_RANDOMIZE_SITES}' \
 			dp_SCRIPTSDIR='${SCRIPTSDIR}' \
-			dp_SORTED_MASTER_SITES_DEFAULT_CMD='${SORTED_MASTER_SITES_DEFAULT_CMD}' \
-			dp_SORTED_PATCH_SITES_DEFAULT_CMD='${SORTED_PATCH_SITES_DEFAULT_CMD}' \
 			dp_TARGET='${.TARGET}'
 .if defined(DEVELOPER)
 _DO_FETCH_ENV+= dp_DEVELOPER=yes
