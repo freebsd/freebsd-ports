@@ -11,9 +11,7 @@ validate_env dp_DEVELOPER dp_DISABLE_SIZE dp_DISTDIR dp_DISTINFO_FILE \
 	dp_DIST_SUBDIR dp_ECHO_MSG dp_FETCH_AFTER_ARGS dp_FETCH_BEFORE_ARGS \
 	dp_FETCH_CMD dp_FETCH_ENV dp_FORCE_FETCH_ALL dp_FORCE_FETCH_LIST \
 	dp_MASTER_SITE_BACKUP dp_MASTER_SITE_OVERRIDE dp_MASTER_SORT_AWK \
-	dp_NO_CHECKSUM dp_RANDOMIZE_SITES dp_SITE_FLAVOR dp_SCRIPTSDIR \
-	dp_SORTED_MASTER_SITES_DEFAULT_CMD dp_SORTED_PATCH_SITES_DEFAULT_CMD \
-	dp_TARGET
+	dp_NO_CHECKSUM dp_RANDOMIZE_SITES dp_SITE_FLAVOR dp_TARGET
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DO_FETCH}" ] && set -x
 
@@ -28,7 +26,7 @@ for _file in "${@}"; do
 
 	# If this files has groups
 	if [ "$_file" = "$file" ]; then
-		select=''
+		select=DEFAULT
 	else
 		select=$(echo "${_file##*:}" | sed -e 's/,/ /g')
 	fi
@@ -71,44 +69,34 @@ for _file in "${@}"; do
 			fi
 			;;
 		esac
-		if [ -n "$select" ] ; then
-			__MASTER_SITES_TMP=
-			for group in $select; do
-				# Disable nounset for this, it may come up empty.
-				set +u
-				eval ___MASTER_SITES_TMP="\${_${dp_SITE_FLAVOR}_SITES_${group}}"
-				set -u
-				if [ -n "${___MASTER_SITES_TMP}" ] ; then
-					__MASTER_SITES_TMP="${__MASTER_SITES_TMP} ${___MASTER_SITES_TMP}"
-				else
-					case ${dp_TARGET} in
-					do-fetch|makesum)
-						if [ -n "${dp_DEVELOPER}" ]; then
-							${dp_ECHO_MSG} "===> /!\\ Error /!\\"
-						else
-							${dp_ECHO_MSG} "===> /!\\ Warning /!\\"
-						fi
-						${dp_ECHO_MSG} "     The :${group} group used for $file is missing"
-						${dp_ECHO_MSG} "     from ${dp_SITE_FLAVOR}_SITES. Check for typos, or errors."
-						if [ -n "${dp_DEVELOPER}" ]; then
-							exit 1
-						fi
-						;;
-					esac
-
-				fi
-			done
-			___MASTER_SITES_TMP=
-			SORTED_MASTER_SITES_CMD_TMP="echo ${dp_MASTER_SITE_OVERRIDE} $(echo -n "${__MASTER_SITES_TMP}" | awk "${dp_MASTER_SORT_AWK}") ${dp_MASTER_SITE_BACKUP}"
-		else
-			if [ ${dp_SITE_FLAVOR} = "MASTER" ]; then
-				SORTED_MASTER_SITES_CMD_TMP="${dp_SORTED_MASTER_SITES_DEFAULT_CMD}"
+		__MASTER_SITES_TMP=
+		for group in $select; do
+			# Disable nounset for this, it may come up empty.
+			set +u
+			eval ___MASTER_SITES_TMP="\${_${dp_SITE_FLAVOR}_SITES_${group}}"
+			set -u
+			if [ -n "${___MASTER_SITES_TMP}" ] ; then
+				__MASTER_SITES_TMP="${__MASTER_SITES_TMP} ${___MASTER_SITES_TMP}"
 			else
-				SORTED_MASTER_SITES_CMD_TMP="${dp_SORTED_PATCH_SITES_DEFAULT_CMD}"
+				case ${dp_TARGET} in
+				do-fetch|makesum)
+					if [ -n "${dp_DEVELOPER}" ]; then
+						${dp_ECHO_MSG} "===> /!\\ Error /!\\"
+					else
+						${dp_ECHO_MSG} "===> /!\\ Warning /!\\"
+					fi
+					${dp_ECHO_MSG} "     The :${group} group used for $file is missing"
+					${dp_ECHO_MSG} "     from ${dp_SITE_FLAVOR}_SITES. Check for typos, or errors."
+					if [ -n "${dp_DEVELOPER}" ]; then
+						exit 1
+					fi
+					;;
+				esac
+
 			fi
-			# Having this set when the next eval runs creates double entries.
-			unset _${dp_SITE_FLAVOR}_SITES_DEFAULT
-		fi
+		done
+		___MASTER_SITES_TMP=
+		SORTED_MASTER_SITES_CMD_TMP="echo ${dp_MASTER_SITE_OVERRIDE} $(echo -n "${__MASTER_SITES_TMP}" | awk "${dp_MASTER_SORT_AWK}") ${dp_MASTER_SITE_BACKUP}"
 		case ${dp_TARGET} in
 			fetch-list)
 				echo -n "mkdir -p ${dp_DISTDIR} && "
