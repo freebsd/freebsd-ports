@@ -8014,6 +8014,7 @@ share/mime/packages/scilab.xml
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/javasci/overview-frame.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/javasci/overview-summary.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/javasci/package-list
+%%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/javasci/script.js
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/javasci/serialized-form.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/javasci/stylesheet.css
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/types/allclasses-frame.html
@@ -8024,6 +8025,7 @@ share/mime/packages/scilab.xml
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/types/overview-frame.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/types/overview-summary.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/types/package-list
+%%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/types/script.js
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/types/serialized-form.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/org/scilab/modules/types/stylesheet.css
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/overview-frame.html
@@ -8037,8 +8039,10 @@ share/mime/packages/scilab.xml
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/resources/overview-frame.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/resources/overview-summary.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/resources/package-list
+%%GUI%%%%DATADIR%%/modules/javasci/javadoc/resources/script.js
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/resources/serialized-form.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/resources/stylesheet.css
+%%GUI%%%%DATADIR%%/modules/javasci/javadoc/script.js
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/serialized-form.html
 %%GUI%%%%DATADIR%%/modules/javasci/javadoc/stylesheet.css
 %%GUI%%%%DATADIR%%/modules/javasci/license.txt
