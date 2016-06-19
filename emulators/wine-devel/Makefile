@@ -3,6 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.9.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -35,8 +36,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-osmesa \
 		--with-oss \
 		--without-sane \
-		--without-tiff \
-		--without-xinerama
+		--without-tiff
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
@@ -98,9 +98,9 @@ V4L_LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML
 
-X11_CONFIGURE_WITH=	x cms fontconfig freetype glu jpeg opengl png xinput2 xrandr xrender
+X11_CONFIGURE_WITH=	x cms fontconfig freetype glu jpeg opengl png xinerama xinput2 xrandr xrender
 X11_USES=		jpeg
-X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xrandr,xrender
+X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xinerama,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			liblcms2.so:graphics/lcms2 \
