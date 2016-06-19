@@ -12,6 +12,9 @@ MASTER_SITES=	http://www.outguess.org/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated tool for detecting steganographic content in JPEGs
 
+DEPRECATED=	Does not fetch
+EXPIRATION_DATE=	2016-07-20
+
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
 
