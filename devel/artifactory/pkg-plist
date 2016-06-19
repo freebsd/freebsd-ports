@@ -1,5 +1,4 @@
-%%APP_HOME%%/COPYING
-%%APP_HOME%%/COPYING.LESSER
+%%APP_HOME%%/COPYING.AFFERO
 %%APP_HOME%%/README.txt
 %%APP_HOME%%/Third-Parties-Usage-About-Box.html
 @mode 0755
@@ -8,7 +7,6 @@
 %%APP_HOME%%/bin/artifactoryctl
 %%APP_HOME%%/bin/configure.mysql.sh
 %%APP_HOME%%/bin/installService.sh
-%%APP_HOME%%/bin/recover.backup.sh
 %%APP_HOME%%/bin/uninstallService.sh
 @mode
 %%APP_HOME%%/backup
