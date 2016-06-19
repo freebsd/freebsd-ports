@@ -2202,6 +2202,12 @@ _S_TEMP=	${_S:S/^${_S:C@/?:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
+.			if ${_G_TEMP:C/[a-zA-Z0-9_]//g}
+check-makevars::
+				@${ECHO_MSG} "The ${_S} MASTER_SITES line has"
+				@${ECHO_MSG} "a group with invalid characters, only use [a-zA-Z0-9_]"
+				@${FALSE}
+.			endif
 .			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
 check-makevars::
 				@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
@@ -2219,6 +2225,12 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
+.			if ${_G_TEMP:C/[a-zA-Z0-9_]//g}
+check-makevars::
+				@${ECHO_MSG} "The ${_S} PATCH_SITES line has"
+				@${ECHO_MSG} "a group with invalid characters, only use [a-zA-Z0-9_]"
+				@${FALSE}
+.			endif
 .			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
 check-makevars::
 				@${ECHO_MSG} "The words all, ALL and default are reserved and cannot be"

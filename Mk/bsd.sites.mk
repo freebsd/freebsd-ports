@@ -522,6 +522,15 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 		not "reroll" as soon as the branch is updated
 .  endif
 .  if defined(GH_TUPLE)
+.for _tuple in ${GH_TUPLE}
+_t_tmp=${_tuple}
+.if ${_t_tmp:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\4@:S/://:C/[a-zA-Z0-9_]//g}
+check-makevars::
+	@${ECHO_MSG} "The ${_tuple} GH_TUPLE line has"
+	@${ECHO_MSG} "a tag containing something else than [a-zA-Z0-9_]"
+	@${FALSE}
+.endif
+.endfor
 GH_ACCOUNT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\1\4@}
 GH_PROJECT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\2\4@}
 GH_TAGNAME+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:]*)?)@\3\4@}
