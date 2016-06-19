@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160619
+  AFFECTS: users of databases/py-apsw
+  AUTHOR: rm@FreeBSD.org
+
+  SQLite 3.12 completely changed the semantics of VFS.xGetLastError() in an
+  incompatible way. This required a rewrite of the relevant C, Python and test
+  code. If you implement or use this method then you have to rewrite your code
+  too. Also note that running the test suite from an earlier version of APSW
+  against this or future SQLite versions will result in consuming all memory,
+  swap or address space (an underlying integer changed meaning).
+
 20160616
   AFFECTS: users of security/openssl*, security/libressl*
   AUTHOR: mat@FreeBSD.org
