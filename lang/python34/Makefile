@@ -3,7 +3,7 @@
 
 PORTNAME=	python34
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -119,7 +119,7 @@ PLIST_SUB+=	NO_NIS=""
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/libpython3.so						# Upstream Issue: http://bugs.python.org/issue17975
+	${RM} ${STAGEDIR}${PREFIX}/lib/libpython3.so						# Upstream Issue: http://bugs.python.org/issue17975
 .endif
 	for i in ${STAGEDIR}${PREFIX}/lib/python3.4/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done								# Strip shared extensions
