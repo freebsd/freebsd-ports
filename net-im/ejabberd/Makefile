@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	16.03
+PORTVERSION=	16.04
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
 		LOCAL/ashish:deps
-DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-6.tar.xz:deps
+DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-7.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -31,7 +31,7 @@ USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 CPE_VENDOR=	process-one
 
-OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL ICONV RIAK ZLIB REDIS SQLITE TOOLS FULLXML
+OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL ICONV RIAK ZLIB REDIS SQLITE TOOLS FULLXML LOGDB
 OPTIONS_DEFAULT=	ICONV
 
 EJABBERD_LIBDIR=lib/erlang/lib
@@ -56,6 +56,7 @@ OPTIONS_SUB=		yes
 RIAK_DESC=	Riak database support
 TOOLS_DESC=	Build development tools
 FULLXML_DESC=	Full XML support
+LOGDB_DESC=	Build with mod_logdb patch (3rd party)
 PAM_CONFIGURE_ENABLE=	pam
 ODBC_CONFIGURE_ENABLE=	odbc
 MYSQL_CONFIGURE_ENABLE=	mysql
@@ -71,6 +72,8 @@ SQLITE_USES=		sqlite
 ICONV_USES=		iconv:wchar_t
 ICONV_LDFLAGS=		${ICONV_LIB}
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
+LOGDB_PATCH_SITES=	http://www.dp.uz.gov.ua/o.palij/mod_logdb/
+LOGDB_PATCHFILES=	patch-mod_logdb-${PORTVERSION}.diff:-p1
 
 USE_OPENSSL=	yes
 
@@ -78,6 +81,10 @@ USE_OPENSSL=	yes
 
 post-extract:
 	@${LN} -s ${WRKDIR}/deps ${WRKSRC}/
+
+post-extract-LOGDB-on:
+	@${MV} ${WRKDIR}/deps/p1_mysql ${WRKDIR}/deps/p1_mysql_old
+	@${MV} ${WRKDIR}/deps/p1_mysql_logdb ${WRKDIR}/deps/p1_mysql
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
