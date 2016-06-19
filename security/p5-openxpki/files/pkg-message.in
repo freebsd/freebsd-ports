@@ -49,3 +49,13 @@ install -m 660 -o www -g www /dev/null /var/log/openxpki/soap.log
     /var/log/openxpki: server log files.
     /var/tmp: temporary directory.
 ==================================================================
+If you update across v1.10, please update your SQL schema and logger config
+as described here:
+http://openxpki.readthedocs.io/en/latest/upgrading.html#release-v1-10
+
+If you are unable to update your schema, you can workaround the problem by
+removing the "DBI" target from the "AUTH" facility in
+%%PREFIX%%/etc/openxpki/log.conf:
+
+log4perl.category.openxpki.auth = INFO, Logfile
+==================================================================
