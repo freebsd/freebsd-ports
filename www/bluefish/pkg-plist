@@ -84,6 +84,7 @@ share/applications/bluefish.desktop
 %%DATADIR%%/bflib/bflib_xhtml.xml.gz
 %%DATADIR%%/bluefish_splash.png
 %%DATADIR%%/css_decompressor
+%%DATADIR%%/cssmin.py
 %%DATADIR%%/default_accelmap
 %%DATADIR%%/encodings
 %%DATADIR%%/jsbeautifier/__init__.py
