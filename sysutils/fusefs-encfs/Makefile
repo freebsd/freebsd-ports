@@ -2,31 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	encfs
-PORTVERSION=	1.7.4
-PORTREVISION=	7
+PORTVERSION=	1.8.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dg@syrec.org
 COMMENT=	Encrypted pass-through FUSE filesystem
 
-BROKEN_powerpc64=	Does not build
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	librlog.so:devel/rlog \
 		libboost_serialization.so:devel/boost-libs
 
-BROKEN_sparc64=	cannot link with boost
+BROKEN_powerpc64=	does not build
+BROKEN_sparc64=		cannot link with boost
 
 WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
 
+USES=		compiler:c++11-lib fuse autoreconf libtool pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	vgough
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization \
-		--with-boost-system=boost_system \
-		--with-boost-filesystem=boost_filesystem
+CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		fuse gmake libtool pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 INSTALL_TARGET=	install-strip
@@ -36,10 +36,8 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} '/OPENSSL_LIBS=/s/-lssl/& -lcrypto/' \
-		${WRKSRC}/configure
-	@${FIND} ${WRKSRC}/encfs -type f | ${XARGS} ${REINPLACE_CMD} -E \
-		's/(^|[[:space:]])(shared_ptr)/\1boost::\2/g'
+		${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
