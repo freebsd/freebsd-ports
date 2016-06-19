@@ -11,7 +11,7 @@ PLIST_FILES=		libexec/opensmtpd/filter-python
 
 CONFIGURE_ARGS+=	--with-filter-python --with-python-type=${PYTHON_VERSION}
 
-USES=			python pkgconfig
+USES=			python:2 pkgconfig
 
 MASTERDIR=		${.CURDIR}/../opensmtpd-extras
 SLAVE_PORT=		yes
