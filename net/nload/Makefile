@@ -3,6 +3,7 @@
 
 PORTNAME=	nload
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.roland-riegel.de/nload/ \
 		LOCAL/ehaupt
