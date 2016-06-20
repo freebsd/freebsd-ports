@@ -4,7 +4,6 @@
 PORTNAME=	gdk-pixbuf2
 PORTVERSION=	2.24.1
 CATEGORIES=	graphics linux
-MASTER_SITES=	CENTOS_LINUX_UPDATES
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the gdk-pixbuf lib (Linux CentOS ${LINUX_DIST_VER})

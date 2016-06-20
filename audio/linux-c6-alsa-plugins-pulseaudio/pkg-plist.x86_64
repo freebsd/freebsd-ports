@@ -4,6 +4,6 @@ usr/lib/alsa-lib/libasound_module_pcm_pulse.so
 usr/lib64/alsa-lib/libasound_module_conf_pulse.so
 usr/lib64/alsa-lib/libasound_module_ctl_pulse.so
 usr/lib64/alsa-lib/libasound_module_pcm_pulse.so
-%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.21/COPYING
-%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.21/COPYING.GPL
-%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.21/README-pulse
+%%PORTDOCS%%usr/share/doc/alsa-plugins-pulseaudio-1.1.0/COPYING
+%%PORTDOCS%%usr/share/doc/alsa-plugins-pulseaudio-1.1.0/COPYING.GPL
+%%PORTDOCS%%usr/share/doc/alsa-plugins-pulseaudio-1.1.0/README-pulse

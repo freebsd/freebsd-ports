@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.x86_64.rpm) = 414b4892afff1ea1938616177855ae3b46a5a7b9ada54c5435a69c1ee01f95d8
-SIZE (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.x86_64.rpm) = 359616
-SHA256 (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.i686.rpm) = fed6b64dd11c7674f083e247f88155f694926a371d0011d9c963675273a2afe4
-SIZE (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.i686.rpm) = 359024
-SHA256 (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.src.rpm) = 4fa4091e3df6a9aca36fcc4f97bce5ff3204c9e9d59501852cec75627ee55201
-SIZE (rpm/x86_64/centos/6.7/pango-1.28.1-10.el6.src.rpm) = 1441149
+TIMESTAMP = 1466256989
+SHA256 (rpm/x86_64/centos/6.8/pango-1.28.1-11.el6.x86_64.rpm) = 0663a5ce99cebf5285d96c4d92fc83155e859976bfd72980bf8691c3e89f92ad
+SIZE (rpm/x86_64/centos/6.8/pango-1.28.1-11.el6.x86_64.rpm) = 359752
+SHA256 (rpm/x86_64/centos/6.8/pango-1.28.1-11.el6.i686.rpm) = 1ae8ed9e7dfc0a5d162f1fb129bfdd2c7fb7d849ca0595da225a73796e770cb6
+SIZE (rpm/x86_64/centos/6.8/pango-1.28.1-11.el6.i686.rpm) = 359152
+SHA256 (rpm/x86_64/centos/6.8/pango-1.28.1-11.el6.src.rpm) = b7769f4cfbec69171ef48b8e2bb686555a578515eec225ebebfae286a343e384
+SIZE (rpm/x86_64/centos/6.8/pango-1.28.1-11.el6.src.rpm) = 1441312

@@ -1897,7 +1897,7 @@ usr/lib64/crtn.o
 usr/lib64/gcrt1.o
 usr/lib64/libBrokenLocale.so
 usr/lib64/libanl.so
-usr/lib64/libbfd-2.20.51.0.2-5.43.el6.so
+usr/lib64/libbfd-2.20.51.0.2-5.44.el6.so
 usr/lib64/libbfd.a
 usr/lib64/libbfd.so
 usr/lib64/libbsd-compat.a
@@ -1923,7 +1923,7 @@ usr/lib64/libnss_files.so
 usr/lib64/libnss_hesiod.so
 usr/lib64/libnss_nis.so
 usr/lib64/libnss_nisplus.so
-usr/lib64/libopcodes-2.20.51.0.2-5.43.el6.so
+usr/lib64/libopcodes-2.20.51.0.2-5.44.el6.so
 usr/lib64/libopcodes.a
 usr/lib64/libopcodes.so
 usr/lib64/libpthread.so

@@ -1,7 +1,7 @@
-TIMESTAMP = 1465155949
-SHA256 (rpm/x86_64/centos/6.7/gnutls-2.8.5-19.el6_7.x86_64.rpm) = 93478fbb225e309223547a6cfe0c0fdffe7e67d8c6fa41a25a75ad3b5aef516f
-SIZE (rpm/x86_64/centos/6.7/gnutls-2.8.5-19.el6_7.x86_64.rpm) = 355536
-SHA256 (rpm/x86_64/centos/6.7/gnutls-2.8.5-19.el6_7.i686.rpm) = 0eb31a49120fa25c404589fd876c9d7cfc4aeef7cd7b2a2a2d24711e967f8279
-SIZE (rpm/x86_64/centos/6.7/gnutls-2.8.5-19.el6_7.i686.rpm) = 349720
-SHA256 (rpm/x86_64/centos/6.7/gnutls-2.8.5-19.el6_7.src.rpm) = a562cd4f57e2d3a65a61a233190b1efa90750a3ec2a8f63301222d65928dfb1d
-SIZE (rpm/x86_64/centos/6.7/gnutls-2.8.5-19.el6_7.src.rpm) = 6330363
+TIMESTAMP = 1466257380
+SHA256 (rpm/x86_64/centos/6.8/gnutls-2.8.5-19.el6_7.x86_64.rpm) = 93478fbb225e309223547a6cfe0c0fdffe7e67d8c6fa41a25a75ad3b5aef516f
+SIZE (rpm/x86_64/centos/6.8/gnutls-2.8.5-19.el6_7.x86_64.rpm) = 355536
+SHA256 (rpm/x86_64/centos/6.8/gnutls-2.8.5-19.el6_7.i686.rpm) = 0eb31a49120fa25c404589fd876c9d7cfc4aeef7cd7b2a2a2d24711e967f8279
+SIZE (rpm/x86_64/centos/6.8/gnutls-2.8.5-19.el6_7.i686.rpm) = 349720
+SHA256 (rpm/x86_64/centos/6.8/gnutls-2.8.5-19.el6_7.src.rpm) = a562cd4f57e2d3a65a61a233190b1efa90750a3ec2a8f63301222d65928dfb1d
+SIZE (rpm/x86_64/centos/6.8/gnutls-2.8.5-19.el6_7.src.rpm) = 6330363

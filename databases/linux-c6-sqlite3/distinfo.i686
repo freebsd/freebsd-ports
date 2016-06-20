@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/sqlite-3.6.20-1.el6_7.2.i686.rpm) = 6d06ed0adf5e60dadb88da40e062b961cf2661f07f5ec84c5bce5c3a5e7c9ecd
-SIZE (rpm/i686/centos/6.7/sqlite-3.6.20-1.el6_7.2.i686.rpm) = 313792
-SHA256 (rpm/i686/centos/6.7/sqlite-3.6.20-1.el6_7.2.src.rpm) = 09b54fd6a222696b67bf4c9cad01ae5f55a3f71b3d63d9f6a9a2842ae47c0fc9
-SIZE (rpm/i686/centos/6.7/sqlite-3.6.20-1.el6_7.2.src.rpm) = 5327584
+TIMESTAMP = 1466256707
+SHA256 (rpm/i686/centos/6.8/sqlite-3.6.20-1.el6_7.2.i686.rpm) = 6d06ed0adf5e60dadb88da40e062b961cf2661f07f5ec84c5bce5c3a5e7c9ecd
+SIZE (rpm/i686/centos/6.8/sqlite-3.6.20-1.el6_7.2.i686.rpm) = 313792
+SHA256 (rpm/i686/centos/6.8/sqlite-3.6.20-1.el6_7.2.src.rpm) = 09b54fd6a222696b67bf4c9cad01ae5f55a3f71b3d63d9f6a9a2842ae47c0fc9
+SIZE (rpm/i686/centos/6.8/sqlite-3.6.20-1.el6_7.2.src.rpm) = 5327584

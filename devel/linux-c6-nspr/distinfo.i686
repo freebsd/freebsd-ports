@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/nspr-4.11.0-0.1.el6_7.i686.rpm) = 3b223ca6b209603975d7067ca45911b0f61f445196fb4b87e8e30b881ba9c2e5
-SIZE (rpm/i686/centos/6.7/nspr-4.11.0-0.1.el6_7.i686.rpm) = 119120
-SHA256 (rpm/i686/centos/6.7/nspr-4.11.0-0.1.el6_7.src.rpm) = 34bfff2b29fc9e980193a8cdc85aa65bae37e6c8e622de0882d0237365aa0c47
-SIZE (rpm/i686/centos/6.7/nspr-4.11.0-0.1.el6_7.src.rpm) = 904178
+TIMESTAMP = 1466251231
+SHA256 (rpm/i686/centos/6.8/nspr-4.11.0-1.el6.i686.rpm) = 2d2ee3dd00d4b2cebada34acb99d911680ec491a91a409ada45e6de2f21df43f
+SIZE (rpm/i686/centos/6.8/nspr-4.11.0-1.el6.i686.rpm) = 119188
+SHA256 (rpm/i686/centos/6.8/nspr-4.11.0-1.el6.src.rpm) = 8e39c9165f52742cf85cf5141681bf6bf0b216321f67eef7b3b7857265005c16
+SIZE (rpm/i686/centos/6.8/nspr-4.11.0-1.el6.src.rpm) = 904272

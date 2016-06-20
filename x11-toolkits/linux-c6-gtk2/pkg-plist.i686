@@ -24,7 +24,7 @@ usr/lib/libgtk-x11-2.0.so.0.2400.23
 usr/lib/libjasper.so.1
 usr/lib/libjasper.so.1.0.0
 usr/lib/libpixman-1.so.0
-usr/lib/libpixman-1.so.0.32.4
+usr/lib/libpixman-1.so.0.32.8
 %%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/AUTHORS
 %%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/COPYING
 %%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/NEWS
@@ -223,4 +223,3 @@ usr/share/themes/ThinIce/gtk-2.0/gtkrc
 @dir usr/lib/gtk-2.0/2.10.0/immodules
 @dir usr/lib/gtk-2.0/immodules
 @dir usr/share/gtk-2.0
-
