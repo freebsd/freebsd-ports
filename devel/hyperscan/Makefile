@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperscan
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
 MASTER_SITES=	GH:hs SF/boost/boost/1.59.0:boost
