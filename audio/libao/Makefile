@@ -3,12 +3,14 @@
 
 PORTNAME=	libao
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Portable audio output library
+
+LICENSE=	GPLv2
 
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
