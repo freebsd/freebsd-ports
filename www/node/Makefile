@@ -94,9 +94,6 @@ post-patch:
 		${WRKSRC}/deps/v8/src/d8.gyp \
 		${WRKSRC}/node.gyp
 
-post-configure:
-	@cd ${WRKSRC}/out/tools/icu && ${REINPLACE_CMD} '/\/usr\/local\/include/d' *
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
 
