@@ -103,6 +103,7 @@
     SUBDIR += bsdmoted
     SUBDIR += bsdploy
     SUBDIR += bsdstats
+    SUBDIR += bstack
     SUBDIR += btsixad
     SUBDIR += bulk_extractor
     SUBDIR += burp
