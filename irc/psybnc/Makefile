@@ -16,6 +16,8 @@ LICENSE=	GPLv1+ # though COPYING is GPLv2
 BROKEN_powerpc64=	Does not build
 
 USE_OPENSSL=	yes
+USES=		dos2unix
+DOS2UNIX_GLOB=	*.c *.h
 WRKSRC=		${WRKDIR}/psybnc
 PSYBASE?=	${PREFIX}/psybnc
 MAKE_ARGS=	PSYBASE=${PSYBASE}

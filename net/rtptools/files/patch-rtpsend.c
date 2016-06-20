@@ -1,6 +1,6 @@
---- rtpsend.c.orig	Tue Sep 10 13:24:10 2002
-+++ rtpsend.c	Sat Aug 16 08:58:12 2003
-@@ -353,9 +353,9 @@
+--- rtpsend.c.orig	2016-06-20 15:59:04 UTC
++++ rtpsend.c
+@@ -354,9 +354,9 @@ static int rtcp_rr(node_t *list, char *p
        if (strcmp(n->type, "ssrc") == 0)
          rr->ssrc = htonl(n->num);
        else if (strcmp(n->type, "fraction") == 0)
@@ -13,7 +13,7 @@
        else if (strcmp(n->type, "last_seq") == 0)
          rr->last_seq = htonl(n->num);
        else if (strcmp(n->type, "jit") == 0)
-@@ -919,6 +919,8 @@
+@@ -926,6 +926,8 @@ int main(int argc, char *argv[])
        local = (struct in_addr *)host->h_addr_list[0];
        sin.sin_addr = *local;
      }

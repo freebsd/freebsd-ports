@@ -1,5 +1,5 @@
---- doc/sdts++.texi.orig	Wed Jan 12 00:48:47 2000
-+++ doc/sdts++.texi	Fri Jul 28 09:12:44 2000
+--- doc/sdts++.texi.orig	2003-06-10 18:15:51 UTC
++++ doc/sdts++.texi
 @@ -7,6 +7,10 @@
  @setfilename sdts++.info
  @settitle @code{sdts++} Library

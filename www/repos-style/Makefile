@@ -15,7 +15,8 @@ BROKEN_powerpc64=	Does not build
 
 RUN_DEPENDS=	subversion>=0:devel/subversion
 
-USES=		zip
+USES=		dos2unix zip
+DOS2UNIX_GLOB=	*.xsl *.php
 NO_BUILD=	YES
 
 USE_PHP=	xml

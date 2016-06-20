@@ -1,4 +1,4 @@
---- Makefile.orig	2005-06-03 13:47:32 UTC
+--- Makefile.orig	2016-06-20 15:08:34 UTC
 +++ Makefile
 @@ -30,12 +30,12 @@ delbadfiles.o: delbadfiles.c ibsh.h
  	${CC} -c delbadfiles.c

@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun 26 05:46:47 2001
-+++ configure	Sun Sep  8 15:42:06 2002
-@@ -1580,7 +1563,6 @@
+--- configure.orig	2001-06-26 12:46:47 UTC
++++ configure
+@@ -1580,7 +1580,6 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtoo
  exec 5>>./config.log
  
  

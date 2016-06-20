@@ -17,7 +17,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	tpm-emulator>=0.7.4_1:emulators/tpm-emulator
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		alias autoreconf gmake iconv libtool pkgconfig
+USES=		dos2unix alias autoreconf gmake iconv libtool pkgconfig
+DOS2UNIX_GLOB=	*.h *.c
 USE_OPENSSL=	YES
 USE_LDCONFIG=	YES
 USE_RC_SUBR=	tcsd
@@ -39,8 +40,6 @@ GROUPS=		_tss
 
 OPTIONS_DEFINE=	DEBUG
 DEBUG_CONFIGURE_ENABLE=	debug
-
-.include <bsd.port.options.mk>
 
 post-install:
 	${INSTALL_DATA} \

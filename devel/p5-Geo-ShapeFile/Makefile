@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Tree-R>0:devel/p5-Tree-R \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
-USES=		perl5
+USES=		dos2unix perl5
+DOS2UNIX_GLOB=	*.pm *.pl *.t
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

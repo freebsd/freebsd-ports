@@ -16,7 +16,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig
+USES=		dos2unix gmake pkgconfig
+DOS2UNIX_GLOB=	*.c
 MAKE_ARGS=	PREFIX="${PREFIX}" LIBDIR="${PREFIX}/lib" \
 		PURPLE_DATAROOT_DIR="${PREFIX}/share"
 

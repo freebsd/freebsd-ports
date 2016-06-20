@@ -1,5 +1,5 @@
---- sndserv/Makefile.orig	Sat Oct 23 11:02:21 1999
-+++ sndserv/Makefile	Thu Jan 10 19:34:23 2002
+--- sndserv/Makefile.orig	1999-10-23 09:02:21 UTC
++++ sndserv/Makefile
 @@ -1,6 +1,6 @@
 -CC = gcc
 +#CC = gcc

@@ -1,5 +1,5 @@
---- java/src/charvax/swing/text/JTextComponent.java.orig	Sat Dec 17 15:27:30 2005
-+++ java/src/charvax/swing/text/JTextComponent.java	Mon Jan 29 09:39:30 2007
+--- java/src/charvax/swing/text/JTextComponent.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charvax/swing/text/JTextComponent.java
 @@ -19,6 +19,7 @@
  
  package charvax.swing.text;

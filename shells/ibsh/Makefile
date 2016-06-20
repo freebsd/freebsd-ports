@@ -12,7 +12,7 @@ COMMENT=	Restricted unix shell
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		dos2unix gmake
 ALL_TARGET=	ibsh
 INSTALL_TARGET=	ibsh_install
 MAKE_ARGS=	CC="${CC}" PREFIX="${STAGEDIR}${PREFIX}"

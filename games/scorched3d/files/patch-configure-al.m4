@@ -1,5 +1,5 @@
---- configure-al.m4.orig	2011-12-31 23:51:36.000000000 +0900
-+++ configure-al.m4	2012-03-08 02:09:57.000000000 +0900
+--- configure-al.m4.orig	2011-12-31 14:51:36 UTC
++++ configure-al.m4
 @@ -1,118 +1,8 @@
  dnl Checking for OpenAL
 -AC_ARG_WITH([openal-static],

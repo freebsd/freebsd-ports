@@ -1,6 +1,6 @@
---- rtp.h.orig	Thu Mar  9 07:35:26 2000
-+++ rtp.h	Sat Apr 21 21:52:49 2001
-@@ -110,13 +110,18 @@
+--- rtp.h.orig	2001-12-29 12:48:24 UTC
++++ rtp.h
+@@ -112,13 +112,18 @@ typedef struct {
  #define RTCP_VALID_MASK (0xc000 | 0x2000 | 0xfe)
  #define RTCP_VALID_VALUE ((RTP_VERSION << 14) | RTCP_SR)
  

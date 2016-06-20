@@ -1,6 +1,6 @@
---- core/com/lowagie/text/xml/xmp/XmpReader.java.orig	2011-11-24 16:34:23.000000000 +0100
-+++ core/com/lowagie/text/xml/xmp/XmpReader.java	2011-11-24 16:41:54.000000000 +0100
-@@ -103,8 +103,19 @@
+--- core/com/lowagie/text/xml/xmp/XmpReader.java.orig	2016-06-20 15:02:42 UTC
++++ core/com/lowagie/text/xml/xmp/XmpReader.java
+@@ -103,8 +103,19 @@ public class XmpReader {
  	public boolean replace(String namespaceURI, String localName, String value) {
  		NodeList nodes = domDocument.getElementsByTagNameNS(namespaceURI, localName);
  		Node node;

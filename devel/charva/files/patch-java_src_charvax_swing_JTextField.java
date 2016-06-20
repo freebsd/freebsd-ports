@@ -1,5 +1,5 @@
---- java/src/charvax/swing/JTextField.java.orig	Fri Dec 30 16:15:12 2005
-+++ java/src/charvax/swing/JTextField.java	Mon Jan 29 09:39:30 2007
+--- java/src/charvax/swing/JTextField.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charvax/swing/JTextField.java
 @@ -118,11 +118,6 @@ public class JTextField
          return _columns;
      }
@@ -32,12 +32,12 @@
  
              /* If it is a control character, ignore it.
               * @todo Do something more useful with control chars.
-@@ -414,8 +408,6 @@ public class JTextField
- 
+@@ -415,8 +409,6 @@ public class JTextField
      //====================================================================
      // INSTANCE VARIABLES
--
--    protected boolean _bold = false;
  
+-    protected boolean _bold = false;
+-
      protected int _columns;
  
+     /**

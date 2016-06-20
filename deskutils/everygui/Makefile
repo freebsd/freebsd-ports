@@ -10,7 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic GUI for an OS command
 
-USES=		python
+USES=		dos2unix python
+DOS2UNIX_GLOB=	*.py
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	libglade2 pygnome2
 

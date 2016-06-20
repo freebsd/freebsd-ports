@@ -1,6 +1,6 @@
---- dcetest.c.orig	Tue Feb 15 11:32:36 2005
-+++ dcetest.c	Tue Feb 15 11:31:48 2005
-@@ -359,7 +359,7 @@
+--- dcetest.c.orig	2016-06-20 15:23:56 UTC
++++ dcetest.c
+@@ -359,7 +359,7 @@ dce_parse_enum_response(const unsigned c
    int tint;
    char annotation[EPT_MAX_ANNOTATION_SIZE+1];
    int floor, floors;

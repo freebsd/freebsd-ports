@@ -1,5 +1,5 @@
---- java/src/charva/awt/Container.java.orig	Mon Aug  7 12:07:52 2006
-+++ java/src/charva/awt/Container.java	Mon Jan 29 09:39:30 2007
+--- java/src/charva/awt/Container.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charva/awt/Container.java
 @@ -89,6 +89,23 @@ public abstract class Container
          invalidate();
      }

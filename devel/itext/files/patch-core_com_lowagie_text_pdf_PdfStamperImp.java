@@ -1,6 +1,6 @@
---- core/com/lowagie/text/pdf/PdfStamperImp.java.orig	2009-11-16 13:48:42.000000000 +0100
-+++ core/com/lowagie/text/pdf/PdfStamperImp.java	2012-07-12 10:27:01.000000000 +0200
-@@ -208,8 +208,17 @@
+--- core/com/lowagie/text/pdf/PdfStamperImp.java.orig	2016-06-20 15:02:42 UTC
++++ core/com/lowagie/text/pdf/PdfStamperImp.java
+@@ -208,8 +208,17 @@ class PdfStamperImp extends PdfWriter {
          }
          // metadata
          int skipInfo = -1;

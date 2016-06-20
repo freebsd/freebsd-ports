@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jan 15 17:54:38 2002
-+++ Makefile	Tue Jan 15 17:56:37 2002
+--- Makefile.orig	2016-06-20 12:40:27 UTC
++++ Makefile
 @@ -1,8 +1,6 @@
 -CC     = g++
 -CFLAGS = -O2 -Wall
@@ -11,7 +11,7 @@
  # for linux
  LIBS   = -lXpm -lX11 -lXext -lm
  # for Solaris
-@@ -19,14 +17,14 @@
+@@ -19,14 +17,14 @@ OBJS   = wmSolar.o \
  		RiseSet.o \
  		Vsop.o
  .c.o:

@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	Set of tools to record, playback, and monitor RTPv2 data streams
 
+USES=	dos2unix
+DOS2UNIX_GLOB=	*.c
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/rtpdump bin/rtpplay bin/rtpsend bin/rtptrans
