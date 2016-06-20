@@ -1,0 +1,12 @@
+bstack - gstack for FreeBSD
+
+This is a port of gstack, a script build around gdb on RedHat and other
+Linux distros, to FreeBSD.
+
+bstack take a PID as only parameter and print out the back trace of that
+running process. If the process is multithread, the backtrace of all
+threads is printed.
+
+It works with the last version of GDB
+
+WWW: https://github.com/pizzamig/bstack
