@@ -2,4 +2,11 @@ usr/lib/libpng.so.3
 usr/lib/libpng.so.3.49.0
 usr/lib/libpng12.so.0
 usr/lib/libpng12.so.0.49.0
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CMakeLists.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/example.c
+%%PORTDOCS%%%%DOCSDIR%%/libpng-1.2.49.txt
 usr/share/man/man5/png.5.gz

@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/libsndfile-1.0.20-5.el6.i686.rpm) = 70068f93a67f926518cf850c8fc082ae3fb82bddcf080f28fcabe412b5f47aac
-SIZE (rpm/i686/centos/6.7/libsndfile-1.0.20-5.el6.i686.rpm) = 250528
-SHA256 (rpm/i686/centos/6.7/libsndfile-1.0.20-5.el6.src.rpm) = 2c464568eab538961923c232e9291723e85309f019648b3228b105ce3a373833
-SIZE (rpm/i686/centos/6.7/libsndfile-1.0.20-5.el6.src.rpm) = 935996
+TIMESTAMP = 1466256764
+SHA256 (rpm/i686/centos/6.8/libsndfile-1.0.20-5.el6.i686.rpm) = 70068f93a67f926518cf850c8fc082ae3fb82bddcf080f28fcabe412b5f47aac
+SIZE (rpm/i686/centos/6.8/libsndfile-1.0.20-5.el6.i686.rpm) = 250528
+SHA256 (rpm/i686/centos/6.8/libsndfile-1.0.20-5.el6.src.rpm) = 2c464568eab538961923c232e9291723e85309f019648b3228b105ce3a373833
+SIZE (rpm/i686/centos/6.8/libsndfile-1.0.20-5.el6.src.rpm) = 935996

@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/ncurses-base-5.7-4.20090207.el6.i686.rpm) = 5811c992ccefadbecbdf3b9091b1971e2e80cbd47eb8b7a1bd307d80a86f67ca
-SIZE (rpm/i686/centos/6.7/ncurses-base-5.7-4.20090207.el6.i686.rpm) = 62504
-SHA256 (rpm/i686/centos/6.7/ncurses-5.7-4.20090207.el6.src.rpm) = f60edf25d3cc6e9cf6f9a590a869d351ceb6cae161abf3102939c678be421f55
-SIZE (rpm/i686/centos/6.7/ncurses-5.7-4.20090207.el6.src.rpm) = 2647744
+TIMESTAMP = 1466256743
+SHA256 (rpm/i686/centos/6.8/ncurses-base-5.7-4.20090207.el6.i686.rpm) = 5811c992ccefadbecbdf3b9091b1971e2e80cbd47eb8b7a1bd307d80a86f67ca
+SIZE (rpm/i686/centos/6.8/ncurses-base-5.7-4.20090207.el6.i686.rpm) = 62504
+SHA256 (rpm/i686/centos/6.8/ncurses-5.7-4.20090207.el6.src.rpm) = f60edf25d3cc6e9cf6f9a590a869d351ceb6cae161abf3102939c678be421f55
+SIZE (rpm/i686/centos/6.8/ncurses-5.7-4.20090207.el6.src.rpm) = 2647744

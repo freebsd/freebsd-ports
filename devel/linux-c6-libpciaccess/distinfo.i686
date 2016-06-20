@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/libpciaccess-0.13.3-0.1.el6.i686.rpm) = 0baa68c3f0078ff741093c44f7a1a34c590e850accc34dd70b730f76f9a8bd0d
-SIZE (rpm/i686/centos/6.7/libpciaccess-0.13.3-0.1.el6.i686.rpm) = 26320
-SHA256 (rpm/i686/centos/6.7/libpciaccess-0.13.3-0.1.el6.src.rpm) = 166c510984cfad7b9652a89c1ab5eeb605977f2637393c4703faaeba804e8016
-SIZE (rpm/i686/centos/6.7/libpciaccess-0.13.3-0.1.el6.src.rpm) = 73004
+TIMESTAMP = 1466256716
+SHA256 (rpm/i686/centos/6.8/libpciaccess-0.13.4-1.el6.i686.rpm) = 363686cb3f00686dc6995a25e0ffc11f27e6ae4c3df04c6f95a3b8f8b6417676
+SIZE (rpm/i686/centos/6.8/libpciaccess-0.13.4-1.el6.i686.rpm) = 26508
+SHA256 (rpm/i686/centos/6.8/libpciaccess-0.13.4-1.el6.src.rpm) = b9309775598eb598a99911314826ae5afbb01cf02dff1e773d17a9b688144b18
+SIZE (rpm/i686/centos/6.8/libpciaccess-0.13.4-1.el6.src.rpm) = 385375

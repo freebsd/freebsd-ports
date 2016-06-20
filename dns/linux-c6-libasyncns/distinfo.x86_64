@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/libasyncns-0.8-1.1.el6.x86_64.rpm) = 40302e7bc4628ce8cba6df68b1aaabe4c227906a44d3ec7618d962a498e778e4
-SIZE (rpm/x86_64/centos/6.7/libasyncns-0.8-1.1.el6.x86_64.rpm) = 24936
-SHA256 (rpm/x86_64/centos/6.7/libasyncns-0.8-1.1.el6.i686.rpm) = 29b5986a6ed47b9c54857df3238f8a6348792cfeb9c8923f75208d9738c49748
-SIZE (rpm/x86_64/centos/6.7/libasyncns-0.8-1.1.el6.i686.rpm) = 24888
-SHA256 (rpm/x86_64/centos/6.7/libasyncns-0.8-1.1.el6.src.rpm) = 6d0b1cd3002d4d79c43bc121e28f5c9bd65b69a80f9cd117cef234caecc47537
-SIZE (rpm/x86_64/centos/6.7/libasyncns-0.8-1.1.el6.src.rpm) = 346427
+TIMESTAMP = 1466256943
+SHA256 (rpm/x86_64/centos/6.8/libasyncns-0.8-1.1.el6.x86_64.rpm) = 40302e7bc4628ce8cba6df68b1aaabe4c227906a44d3ec7618d962a498e778e4
+SIZE (rpm/x86_64/centos/6.8/libasyncns-0.8-1.1.el6.x86_64.rpm) = 24936
+SHA256 (rpm/x86_64/centos/6.8/libasyncns-0.8-1.1.el6.i686.rpm) = 29b5986a6ed47b9c54857df3238f8a6348792cfeb9c8923f75208d9738c49748
+SIZE (rpm/x86_64/centos/6.8/libasyncns-0.8-1.1.el6.i686.rpm) = 24888
+SHA256 (rpm/x86_64/centos/6.8/libasyncns-0.8-1.1.el6.src.rpm) = 6d0b1cd3002d4d79c43bc121e28f5c9bd65b69a80f9cd117cef234caecc47537
+SIZE (rpm/x86_64/centos/6.8/libasyncns-0.8-1.1.el6.src.rpm) = 346427

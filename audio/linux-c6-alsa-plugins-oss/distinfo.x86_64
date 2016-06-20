@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/alsa-plugins-oss-1.0.21-3.el6.x86_64.rpm) = 4596288975ced8f80aeca78e64a0ebe0b3181267676efcdb248dea29a7ffcb59
-SIZE (rpm/x86_64/centos/6.7/alsa-plugins-oss-1.0.21-3.el6.x86_64.rpm) = 29016
-SHA256 (rpm/x86_64/centos/6.7/alsa-plugins-oss-1.0.21-3.el6.i686.rpm) = 120d11f7e4fe4e4e0c615690e6f471a78dcd2f48e7ba756ea71b0248fc1e2908
-SIZE (rpm/x86_64/centos/6.7/alsa-plugins-oss-1.0.21-3.el6.i686.rpm) = 28660
-SHA256 (rpm/x86_64/centos/6.7/alsa-plugins-1.0.21-3.el6.src.rpm) = ef92534d1459f389f7a69176760f6247981b70c864aa4ae9bfe0565b4e7bd0e6
-SIZE (rpm/x86_64/centos/6.7/alsa-plugins-1.0.21-3.el6.src.rpm) = 340131
+TIMESTAMP = 1466257283
+SHA256 (rpm/x86_64/centos/6.8/alsa-plugins-oss-1.1.0-1.el6.x86_64.rpm) = 4b0e5da16e68381b0683fef424a2a1e3da2bd9921949d79095f8274a5b6890eb
+SIZE (rpm/x86_64/centos/6.8/alsa-plugins-oss-1.1.0-1.el6.x86_64.rpm) = 29068
+SHA256 (rpm/x86_64/centos/6.8/alsa-plugins-oss-1.1.0-1.el6.i686.rpm) = 365237b3aad6528f3b0f68912e108eb3dfab3b37ee580ce165d65e31cb9cea39
+SIZE (rpm/x86_64/centos/6.8/alsa-plugins-oss-1.1.0-1.el6.i686.rpm) = 28740
+SHA256 (rpm/x86_64/centos/6.8/alsa-plugins-1.1.0-1.el6.src.rpm) = 231cd1118cc663ece2d96c3d4e5ebe4515b63959ec45ed13ad143b947c5ed6eb
+SIZE (rpm/x86_64/centos/6.8/alsa-plugins-1.1.0-1.el6.src.rpm) = 380059

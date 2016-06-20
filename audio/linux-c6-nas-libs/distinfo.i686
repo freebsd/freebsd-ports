@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/nas-1.9.1-7.el6.i686.rpm) = f9830ef307755aa66c0b8356912c2591c9b00be426dff36c988e0d7e58a126f9
-SIZE (rpm/i686/centos/6.7/nas-1.9.1-7.el6.i686.rpm) = 339968
-SHA256 (rpm/i686/centos/6.7/nas-1.9.1-7.el6.src.rpm) = 051cc5ab26e5296ecb22044daaf2781f2c7124cb6b3a18fe73b7e1f795749747
-SIZE (rpm/i686/centos/6.7/nas-1.9.1-7.el6.src.rpm) = 1442022
+TIMESTAMP = 1466256778
+SHA256 (rpm/i686/centos/6.8/nas-1.9.1-7.el6.i686.rpm) = f9830ef307755aa66c0b8356912c2591c9b00be426dff36c988e0d7e58a126f9
+SIZE (rpm/i686/centos/6.8/nas-1.9.1-7.el6.i686.rpm) = 339968
+SHA256 (rpm/i686/centos/6.8/nas-1.9.1-7.el6.src.rpm) = 051cc5ab26e5296ecb22044daaf2781f2c7124cb6b3a18fe73b7e1f795749747
+SIZE (rpm/i686/centos/6.8/nas-1.9.1-7.el6.src.rpm) = 1442022
