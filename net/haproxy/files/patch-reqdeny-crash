@@ -1,0 +1,109 @@
+BUG/MAJOR: http: fix breakage of "reqdeny" causing random crashes
+
+Commit 108b1dd ("MEDIUM: http: configurable http result codes for
+http-request deny") introduced in 1.6-dev2 was incomplete. It introduced
+a new field "rule_deny_status" into struct http_txn, which is filled only
+by actions "http-request deny" and "http-request tarpit". It's then used
+in the deny code path to emit the proper error message, but is used
+uninitialized when the deny comes from a "reqdeny" rule, causing random
+behaviours ranging from returning a 200, an empty response, or crashing
+the process. Often upon startup only 200 was returned but after the fields
+are used the crash happens. This can be sped up using -dM.
+
+There's no need at all for storing this status in the http_txn struct
+anyway since it's used immediately after being set. Let's store it in
+a temporary variable instead which is passed as an argument to function
+http_req_get_intercept_rule().
+
+As an extra benefit, removing it from struct http_txn reduced the size
+of this struct by 8 bytes.
+
+This fix must be backported to 1.6 where the bug was detected. Special
+thanks to Falco Schmutz for his detailed report including an exploitable
+core and a reproducer.
+
+--- include/types/proto_http.h.orig	Tue May 10 15:42:00 2016
++++ include/types/proto_http.h	Tue Jun 14 15:10:23 2016
+@@ -362,7 +362,6 @@ struct http_txn {
+ 	unsigned int flags;             /* transaction flags */
+ 	enum http_meth_t meth;          /* HTTP method */
+ 	/* 1 unused byte here */
+-	short rule_deny_status;         /* HTTP status from rule when denying */
+ 	short status;                   /* HTTP status from the server, negative if from proxy */
+ 
+ 	char *uri;                      /* first line if log needed, NULL otherwise */
+Security fix for CVE-2016-5360
+http://git.haproxy.org/?p=haproxy-1.6.git;a=commitdiff;h=60f01f8c89e4fb2723d5a9f2046286e699567e0b
+
+--- src/proto_http.c.orig	Sun Dec 27 15:04:17 2015
++++ src/proto_http.c	Wed Jun 15 09:02:24 2016
+@@ -3489,10 +3489,12 @@ static int http_transform_header(struct stream* s, str
+  * further processing of the request (auth, deny, ...), and defaults to
+  * HTTP_RULE_RES_STOP if it executed all rules or stopped on an allow, or
+  * HTTP_RULE_RES_CONT if the last rule was reached. It may set the TX_CLTARPIT
+- * on txn->flags if it encounters a tarpit rule.
++ * on txn->flags if it encounters a tarpit rule. If <deny_status> is not NULL
++ * and a deny/tarpit rule is matched, it will be filled with this rule's deny
++ * status.
+  */
+ enum rule_result
+-http_req_get_intercept_rule(struct proxy *px, struct list *rules, struct stream *s)
++http_req_get_intercept_rule(struct proxy *px, struct list *rules, struct stream *s, int *deny_status)
+ {
+ 	struct session *sess = strm_sess(s);
+ 	struct http_txn *txn = s->txn;
+@@ -3538,12 +3540,14 @@ resume_execution:
+ 			return HTTP_RULE_RES_STOP;
+ 
+ 		case ACT_ACTION_DENY:
+-			txn->rule_deny_status = rule->deny_status;
++			if (deny_status)
++				*deny_status = rule->deny_status;
+ 			return HTTP_RULE_RES_DENY;
+ 
+ 		case ACT_HTTP_REQ_TARPIT:
+ 			txn->flags |= TX_CLTARPIT;
+-			txn->rule_deny_status = rule->deny_status;
++			if (deny_status)
++				*deny_status = rule->deny_status;
+ 			return HTTP_RULE_RES_DENY;
+ 
+ 		case ACT_HTTP_REQ_AUTH:
+@@ -4302,6 +4306,7 @@ int http_process_req_common(struct stream *s, struct c
+ 	struct redirect_rule *rule;
+ 	struct cond_wordlist *wl;
+ 	enum rule_result verdict;
++	int deny_status = HTTP_ERR_403;
+ 
+ 	if (unlikely(msg->msg_state < HTTP_MSG_BODY)) {
+ 		/* we need more data */
+@@ -4322,7 +4327,7 @@ int http_process_req_common(struct stream *s, struct c
+ 
+ 	/* evaluate http-request rules */
+ 	if (!LIST_ISEMPTY(&px->http_req_rules)) {
+-		verdict = http_req_get_intercept_rule(px, &px->http_req_rules, s);
++		verdict = http_req_get_intercept_rule(px, &px->http_req_rules, s, &deny_status);
+ 
+ 		switch (verdict) {
+ 		case HTTP_RULE_RES_YIELD: /* some data miss, call the function later. */
+@@ -4368,7 +4373,7 @@ int http_process_req_common(struct stream *s, struct c
+ 
+ 		/* parse the whole stats request and extract the relevant information */
+ 		http_handle_stats(s, req);
+-		verdict = http_req_get_intercept_rule(px, &px->uri_auth->http_req_rules, s);
++		verdict = http_req_get_intercept_rule(px, &px->uri_auth->http_req_rules, s, &deny_status);
+ 		/* not all actions implemented: deny, allow, auth */
+ 
+ 		if (verdict == HTTP_RULE_RES_DENY) /* stats http-request deny */
+@@ -4487,9 +4492,9 @@ int http_process_req_common(struct stream *s, struct c
+ 
+  deny:	/* this request was blocked (denied) */
+ 	txn->flags |= TX_CLDENY;
+-	txn->status = http_err_codes[txn->rule_deny_status];
++	txn->status = http_err_codes[deny_status];
+ 	s->logs.tv_request = now;
+-	stream_int_retnclose(&s->si[0], http_error_message(s, txn->rule_deny_status));
++	stream_int_retnclose(&s->si[0], http_error_message(s, deny_status));
+ 	stream_inc_http_err_ctr(s);
+ 	sess->fe->fe_counters.denied_req++;
+ 	if (sess->fe != s->be)
