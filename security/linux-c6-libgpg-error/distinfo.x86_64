@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/libgpg-error-1.7-4.el6.x86_64.rpm) = cb494b9932409f9b592d213b8cf8f3ef2ca9a7af16b9cdfcca7998e33a20674a
-SIZE (rpm/x86_64/centos/6.7/libgpg-error-1.7-4.el6.x86_64.rpm) = 60628
-SHA256 (rpm/x86_64/centos/6.7/libgpg-error-1.7-4.el6.i686.rpm) = ee1e0dfaa0e6bf4e06b1d6f1f3ce7da90abe8b1d1d46fe61bc1fe79e3227c4ad
-SIZE (rpm/x86_64/centos/6.7/libgpg-error-1.7-4.el6.i686.rpm) = 60532
-SHA256 (rpm/x86_64/centos/6.7/libgpg-error-1.7-4.el6.src.rpm) = 955d0a4d5aaa3539c7a58d94cef41ef09a0d8cc08c0aeb5b0986c623aebd53be
-SIZE (rpm/x86_64/centos/6.7/libgpg-error-1.7-4.el6.src.rpm) = 413579
+TIMESTAMP = 1466257412
+SHA256 (rpm/x86_64/centos/6.8/libgpg-error-1.7-4.el6.x86_64.rpm) = cb494b9932409f9b592d213b8cf8f3ef2ca9a7af16b9cdfcca7998e33a20674a
+SIZE (rpm/x86_64/centos/6.8/libgpg-error-1.7-4.el6.x86_64.rpm) = 60628
+SHA256 (rpm/x86_64/centos/6.8/libgpg-error-1.7-4.el6.i686.rpm) = ee1e0dfaa0e6bf4e06b1d6f1f3ce7da90abe8b1d1d46fe61bc1fe79e3227c4ad
+SIZE (rpm/x86_64/centos/6.8/libgpg-error-1.7-4.el6.i686.rpm) = 60532
+SHA256 (rpm/x86_64/centos/6.8/libgpg-error-1.7-4.el6.src.rpm) = 955d0a4d5aaa3539c7a58d94cef41ef09a0d8cc08c0aeb5b0986c623aebd53be
+SIZE (rpm/x86_64/centos/6.8/libgpg-error-1.7-4.el6.src.rpm) = 413579

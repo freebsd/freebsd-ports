@@ -3,7 +3,7 @@
 
 PORTNAME=	pulseaudio-utils
 PORTVERSION=	0.9.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,7 +13,7 @@ USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs pulseaudio-libs
 
-RPMVERSION=	21.el6
+RPMVERSION=	24.el6
 USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/usr/share/doc/pulseaudio-${PORTVERSION}

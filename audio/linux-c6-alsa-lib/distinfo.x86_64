@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/alsa-lib-1.0.22-3.el6.x86_64.rpm) = 921f9aa4d5d677233b2c25db3ffb7e883279ec0b5bafef24c706844bf9a66870
-SIZE (rpm/x86_64/centos/6.7/alsa-lib-1.0.22-3.el6.x86_64.rpm) = 379052
-SHA256 (rpm/x86_64/centos/6.7/alsa-lib-1.0.22-3.el6.i686.rpm) = bf1ab0941cd82cf78281246b73ad79bd4c575f29ee59dca35f11c63f2cdde0f8
-SIZE (rpm/x86_64/centos/6.7/alsa-lib-1.0.22-3.el6.i686.rpm) = 377492
-SHA256 (rpm/x86_64/centos/6.7/alsa-lib-1.0.22-3.el6.src.rpm) = f2415ca52513095fffde190840a1f2bd7873870767250298ad116a9e57082dec
-SIZE (rpm/x86_64/centos/6.7/alsa-lib-1.0.22-3.el6.src.rpm) = 865098
+TIMESTAMP = 1466257275
+SHA256 (rpm/x86_64/centos/6.8/alsa-lib-1.1.0-4.el6.x86_64.rpm) = bfc2cdcd83083c9df5bf4a9ce1b6b73121b54c85d9eb5834dce75caae58b9a4a
+SIZE (rpm/x86_64/centos/6.8/alsa-lib-1.1.0-4.el6.x86_64.rpm) = 398332
+SHA256 (rpm/x86_64/centos/6.8/alsa-lib-1.1.0-4.el6.i686.rpm) = 3f18536968313c6fe6d4be3b7d89c38d125ade6478b2cf16390dc201cad6fe1d
+SIZE (rpm/x86_64/centos/6.8/alsa-lib-1.1.0-4.el6.i686.rpm) = 396620
+SHA256 (rpm/x86_64/centos/6.8/alsa-lib-1.1.0-4.el6.src.rpm) = c9da74019a70c7d5dc9841702220d8a8aec7426f95276c28edd489a8ab6124f5
+SIZE (rpm/x86_64/centos/6.8/alsa-lib-1.1.0-4.el6.src.rpm) = 953455

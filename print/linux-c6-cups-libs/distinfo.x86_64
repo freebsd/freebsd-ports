@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/cups-libs-1.4.2-72.el6.x86_64.rpm) = d2a5e61c191622f5978db2cc3932380850a13add6b7306ff186cd5b12efcea1b
-SIZE (rpm/x86_64/centos/6.7/cups-libs-1.4.2-72.el6.x86_64.rpm) = 328876
-SHA256 (rpm/x86_64/centos/6.7/cups-libs-1.4.2-72.el6.i686.rpm) = 11f947418eee7bf2d1f2a1abe93f5b7e9afa71daf8d77a18e2e5affb72930282
-SIZE (rpm/x86_64/centos/6.7/cups-libs-1.4.2-72.el6.i686.rpm) = 338940
-SHA256 (rpm/x86_64/centos/6.7/cups-1.4.2-72.el6.src.rpm) = f53d045a61aa27b55a62595e766d1d01e311f27fb913ef8286994595cd503983
-SIZE (rpm/x86_64/centos/6.7/cups-1.4.2-72.el6.src.rpm) = 4678197
+TIMESTAMP = 1466257258
+SHA256 (rpm/x86_64/centos/6.8/cups-libs-1.4.2-74.el6.x86_64.rpm) = 3d4973bcce244d127798ad20948479e8b8698efa11b2164c80be4ec50f60ebb5
+SIZE (rpm/x86_64/centos/6.8/cups-libs-1.4.2-74.el6.x86_64.rpm) = 329344
+SHA256 (rpm/x86_64/centos/6.8/cups-libs-1.4.2-74.el6.i686.rpm) = 6906749fd25ea31056d7bbb4766dcef157037be453ee8956f52e49a33210b1ba
+SIZE (rpm/x86_64/centos/6.8/cups-libs-1.4.2-74.el6.i686.rpm) = 339432
+SHA256 (rpm/x86_64/centos/6.8/cups-1.4.2-74.el6.src.rpm) = 00089025dd9d712ee03ec4934c221c5b5214af3c7771133337967c00620f0aaa
+SIZE (rpm/x86_64/centos/6.8/cups-1.4.2-74.el6.src.rpm) = 4680232

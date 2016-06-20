@@ -1,5 +1,5 @@
-TIMESTAMP = 1465156461
-SHA256 (rpm/i686/centos/6.7/libssh2-1.4.2-2.el6_7.1.i686.rpm) = 3dd5f11872a5254b65711f88a89b4400c87329ed185af7d69d1d705f94abe13d
-SIZE (rpm/i686/centos/6.7/libssh2-1.4.2-2.el6_7.1.i686.rpm) = 127152
-SHA256 (rpm/i686/centos/6.7/libssh2-1.4.2-2.el6_7.1.src.rpm) = 042b1f294e214d514f5b16332956e168cc168c90a416bcfe4bbc1625636581fc
-SIZE (rpm/i686/centos/6.7/libssh2-1.4.2-2.el6_7.1.src.rpm) = 694227
+TIMESTAMP = 1466256783
+SHA256 (rpm/i686/centos/6.8/libssh2-1.4.2-2.el6_7.1.i686.rpm) = 3dd5f11872a5254b65711f88a89b4400c87329ed185af7d69d1d705f94abe13d
+SIZE (rpm/i686/centos/6.8/libssh2-1.4.2-2.el6_7.1.i686.rpm) = 127152
+SHA256 (rpm/i686/centos/6.8/libssh2-1.4.2-2.el6_7.1.src.rpm) = 042b1f294e214d514f5b16332956e168cc168c90a416bcfe4bbc1625636581fc
+SIZE (rpm/i686/centos/6.8/libssh2-1.4.2-2.el6_7.1.src.rpm) = 694227

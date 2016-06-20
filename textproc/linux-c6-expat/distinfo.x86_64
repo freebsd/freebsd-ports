@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/expat-2.0.1-11.el6_2.x86_64.rpm) = 28847d115e3c8dd72e6535b8148a61fb9e33f66a00de8bea82f449aca78d6970
-SIZE (rpm/x86_64/centos/6.7/expat-2.0.1-11.el6_2.x86_64.rpm) = 78336
-SHA256 (rpm/x86_64/centos/6.7/expat-2.0.1-11.el6_2.i686.rpm) = aefccd0285b312ec3cf053715b66c45e7883145255c993c7e2bd1848b420deb1
-SIZE (rpm/x86_64/centos/6.7/expat-2.0.1-11.el6_2.i686.rpm) = 80684
-SHA256 (rpm/x86_64/centos/6.7/expat-2.0.1-11.el6_2.src.rpm) = e73a78c840f047c382984201f9be499041c411f82e26f02359183f5fe25fad6a
-SIZE (rpm/x86_64/centos/6.7/expat-2.0.1-11.el6_2.src.rpm) = 463965
+TIMESTAMP = 1466257433
+SHA256 (rpm/x86_64/centos/6.8/expat-2.0.1-11.el6_2.x86_64.rpm) = 28847d115e3c8dd72e6535b8148a61fb9e33f66a00de8bea82f449aca78d6970
+SIZE (rpm/x86_64/centos/6.8/expat-2.0.1-11.el6_2.x86_64.rpm) = 78336
+SHA256 (rpm/x86_64/centos/6.8/expat-2.0.1-11.el6_2.i686.rpm) = aefccd0285b312ec3cf053715b66c45e7883145255c993c7e2bd1848b420deb1
+SIZE (rpm/x86_64/centos/6.8/expat-2.0.1-11.el6_2.i686.rpm) = 80684
+SHA256 (rpm/x86_64/centos/6.8/expat-2.0.1-11.el6_2.src.rpm) = e73a78c840f047c382984201f9be499041c411f82e26f02359183f5fe25fad6a
+SIZE (rpm/x86_64/centos/6.8/expat-2.0.1-11.el6_2.src.rpm) = 463965

@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/cyrus-sasl-lib-2.1.23-15.el6_6.2.x86_64.rpm) = 92bf37f8fba52b15726f6cade5bcf35c18acd305a3c472cb9360fedd515965bf
-SIZE (rpm/x86_64/centos/6.7/cyrus-sasl-lib-2.1.23-15.el6_6.2.x86_64.rpm) = 139644
-SHA256 (rpm/x86_64/centos/6.7/cyrus-sasl-lib-2.1.23-15.el6_6.2.i686.rpm) = fdff3dbb8d482d9c49d84abdb8421a622344eff4acb047aeeca8fea51823160a
-SIZE (rpm/x86_64/centos/6.7/cyrus-sasl-lib-2.1.23-15.el6_6.2.i686.rpm) = 139208
-SHA256 (rpm/x86_64/centos/6.7/cyrus-sasl-2.1.23-15.el6_6.2.src.rpm) = a12449366385bb4ad18c1639c79e8999013e9e5cbd90474dfcc3c9269d8554ee
-SIZE (rpm/x86_64/centos/6.7/cyrus-sasl-2.1.23-15.el6_6.2.src.rpm) = 1671069
+TIMESTAMP = 1466257353
+SHA256 (rpm/x86_64/centos/6.8/cyrus-sasl-lib-2.1.23-15.el6_6.2.x86_64.rpm) = 92bf37f8fba52b15726f6cade5bcf35c18acd305a3c472cb9360fedd515965bf
+SIZE (rpm/x86_64/centos/6.8/cyrus-sasl-lib-2.1.23-15.el6_6.2.x86_64.rpm) = 139644
+SHA256 (rpm/x86_64/centos/6.8/cyrus-sasl-lib-2.1.23-15.el6_6.2.i686.rpm) = fdff3dbb8d482d9c49d84abdb8421a622344eff4acb047aeeca8fea51823160a
+SIZE (rpm/x86_64/centos/6.8/cyrus-sasl-lib-2.1.23-15.el6_6.2.i686.rpm) = 139208
+SHA256 (rpm/x86_64/centos/6.8/cyrus-sasl-2.1.23-15.el6_6.2.src.rpm) = a12449366385bb4ad18c1639c79e8999013e9e5cbd90474dfcc3c9269d8554ee
+SIZE (rpm/x86_64/centos/6.8/cyrus-sasl-2.1.23-15.el6_6.2.src.rpm) = 1671069

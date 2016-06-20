@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/SDL_ttf-2.0.11-6.el6.x86_64.rpm) = e1661d0ffdf707118070fbbe5085144ab1d17b22e0c785373f5c6f59a1157f5c
-SIZE (rpm/x86_64/centos/6.7/SDL_ttf-2.0.11-6.el6.x86_64.rpm) = 21896
-SHA256 (rpm/x86_64/centos/6.7/SDL_ttf-2.0.11-6.el6.i686.rpm) = d6f344c7f3e50f6b072fb7fb39aa7882cdf621b6f1cee62ec9fa09647802b1a7
-SIZE (rpm/x86_64/centos/6.7/SDL_ttf-2.0.11-6.el6.i686.rpm) = 21752
-SHA256 (rpm/x86_64/centos/6.7/SDL_ttf-2.0.11-6.el6.src.rpm) = 6c940edece8b714623f049cb2a4dd163f5fc8ef6c1b0d1778113df0bbbce004e
-SIZE (rpm/x86_64/centos/6.7/SDL_ttf-2.0.11-6.el6.src.rpm) = 4058837
+TIMESTAMP = 1466257461
+SHA256 (rpm/x86_64/centos/6.8/SDL_ttf-2.0.11-6.el6.x86_64.rpm) = e1661d0ffdf707118070fbbe5085144ab1d17b22e0c785373f5c6f59a1157f5c
+SIZE (rpm/x86_64/centos/6.8/SDL_ttf-2.0.11-6.el6.x86_64.rpm) = 21896
+SHA256 (rpm/x86_64/centos/6.8/SDL_ttf-2.0.11-6.el6.i686.rpm) = d6f344c7f3e50f6b072fb7fb39aa7882cdf621b6f1cee62ec9fa09647802b1a7
+SIZE (rpm/x86_64/centos/6.8/SDL_ttf-2.0.11-6.el6.i686.rpm) = 21752
+SHA256 (rpm/x86_64/centos/6.8/SDL_ttf-2.0.11-6.el6.src.rpm) = 6c940edece8b714623f049cb2a4dd163f5fc8ef6c1b0d1778113df0bbbce004e
+SIZE (rpm/x86_64/centos/6.8/SDL_ttf-2.0.11-6.el6.src.rpm) = 4058837

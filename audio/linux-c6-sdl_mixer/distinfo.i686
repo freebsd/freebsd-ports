@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/SDL_mixer-1.2.12-1.el6.i686.rpm) = fe55d342e9a75f481dbf13e441f6090e078c6022f3493186ee06084672ea3a7c
-SIZE (rpm/i686/centos/6.7/SDL_mixer-1.2.12-1.el6.i686.rpm) = 85304
-SHA256 (rpm/i686/centos/6.7/SDL_mixer-1.2.12-1.el6.src.rpm) = 935b0d8e096dd8f9ec746be2a841531161d247da6de7400fa4072ac61d39a140
-SIZE (rpm/i686/centos/6.7/SDL_mixer-1.2.12-1.el6.src.rpm) = 3700092
+TIMESTAMP = 1466256763
+SHA256 (rpm/i686/centos/6.8/SDL_mixer-1.2.12-1.el6.i686.rpm) = fe55d342e9a75f481dbf13e441f6090e078c6022f3493186ee06084672ea3a7c
+SIZE (rpm/i686/centos/6.8/SDL_mixer-1.2.12-1.el6.i686.rpm) = 85304
+SHA256 (rpm/i686/centos/6.8/SDL_mixer-1.2.12-1.el6.src.rpm) = 935b0d8e096dd8f9ec746be2a841531161d247da6de7400fa4072ac61d39a140
+SIZE (rpm/i686/centos/6.8/SDL_mixer-1.2.12-1.el6.src.rpm) = 3700092

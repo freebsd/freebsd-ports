@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/libmikmod-3.2.0-10.beta2.el6.i686.rpm) = b8092168a549a2966bdd9a388d13560e9af66deccd7e65b26fa487413e163382
-SIZE (rpm/i686/centos/6.7/libmikmod-3.2.0-10.beta2.el6.i686.rpm) = 163544
-SHA256 (rpm/i686/centos/6.7/libmikmod-3.2.0-10.beta2.el6.src.rpm) = 61c1ccfe2d9afd2b942fe7ffa2a36d0c8b5a713bd71e8c578df55ef3a053e00e
-SIZE (rpm/i686/centos/6.7/libmikmod-3.2.0-10.beta2.el6.src.rpm) = 559890
+TIMESTAMP = 1466256771
+SHA256 (rpm/i686/centos/6.8/libmikmod-3.2.0-10.beta2.el6.i686.rpm) = b8092168a549a2966bdd9a388d13560e9af66deccd7e65b26fa487413e163382
+SIZE (rpm/i686/centos/6.8/libmikmod-3.2.0-10.beta2.el6.i686.rpm) = 163544
+SHA256 (rpm/i686/centos/6.8/libmikmod-3.2.0-10.beta2.el6.src.rpm) = 61c1ccfe2d9afd2b942fe7ffa2a36d0c8b5a713bd71e8c578df55ef3a053e00e
+SIZE (rpm/i686/centos/6.8/libmikmod-3.2.0-10.beta2.el6.src.rpm) = 559890

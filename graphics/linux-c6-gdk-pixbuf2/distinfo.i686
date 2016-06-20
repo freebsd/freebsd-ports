@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/gdk-pixbuf2-2.24.1-6.el6_7.i686.rpm) = 07b16ceca0ae64ba2f21b9fb2e87ecd4aeecec4fc603ef8294f89afc66480bcd
-SIZE (rpm/i686/centos/6.7/gdk-pixbuf2-2.24.1-6.el6_7.i686.rpm) = 510288
-SHA256 (rpm/i686/centos/6.7/gdk-pixbuf2-2.24.1-6.el6_7.src.rpm) = 56cb617816f942b83c1693e0dce4572fb432b9f8d1433fda187e39e7b764bce9
-SIZE (rpm/i686/centos/6.7/gdk-pixbuf2-2.24.1-6.el6_7.src.rpm) = 1188220
+TIMESTAMP = 1466256380
+SHA256 (rpm/i686/centos/6.8/gdk-pixbuf2-2.24.1-6.el6_7.i686.rpm) = 07b16ceca0ae64ba2f21b9fb2e87ecd4aeecec4fc603ef8294f89afc66480bcd
+SIZE (rpm/i686/centos/6.8/gdk-pixbuf2-2.24.1-6.el6_7.i686.rpm) = 510288
+SHA256 (rpm/i686/centos/6.8/gdk-pixbuf2-2.24.1-6.el6_7.src.rpm) = 56cb617816f942b83c1693e0dce4572fb432b9f8d1433fda187e39e7b764bce9
+SIZE (rpm/i686/centos/6.8/gdk-pixbuf2-2.24.1-6.el6_7.src.rpm) = 1188220

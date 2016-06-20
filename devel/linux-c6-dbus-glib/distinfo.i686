@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/dbus-glib-0.86-6.el6.i686.rpm) = e1cb0f93ab95f372e8f1db1f5cb478bef50162df83529b30df86d3a2230b15ad
-SIZE (rpm/i686/centos/6.7/dbus-glib-0.86-6.el6.i686.rpm) = 174260
-SHA256 (rpm/i686/centos/6.7/dbus-glib-0.86-6.el6.src.rpm) = 64debf22fe3655502f1afa6e27451b0de83a3a8ac922470ce5694087f656c82f
-SIZE (rpm/i686/centos/6.7/dbus-glib-0.86-6.el6.src.rpm) = 717593
+TIMESTAMP = 1466256742
+SHA256 (rpm/i686/centos/6.8/dbus-glib-0.86-6.el6.i686.rpm) = e1cb0f93ab95f372e8f1db1f5cb478bef50162df83529b30df86d3a2230b15ad
+SIZE (rpm/i686/centos/6.8/dbus-glib-0.86-6.el6.i686.rpm) = 174260
+SHA256 (rpm/i686/centos/6.8/dbus-glib-0.86-6.el6.src.rpm) = 64debf22fe3655502f1afa6e27451b0de83a3a8ac922470ce5694087f656c82f
+SIZE (rpm/i686/centos/6.8/dbus-glib-0.86-6.el6.src.rpm) = 717593

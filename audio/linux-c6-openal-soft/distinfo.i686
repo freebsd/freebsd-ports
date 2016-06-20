@@ -1,4 +1,5 @@
-SHA256 (rpm/i686/centos/6.7/openal-soft-1.12.854-1.el6.i686.rpm) = fc2dd7f0c3e49be942e38bd73a73e32ab950c1ca2390ccf9f208de561d6b3e5c
-SIZE (rpm/i686/centos/6.7/openal-soft-1.12.854-1.el6.i686.rpm) = 115708
-SHA256 (rpm/i686/centos/6.7/openal-soft-1.12.854-1.el6.src.rpm) = efdf8696cd2d3a9bd035815adbde6607c97ea48b91de06aa2bcec6b9bbd10ba7
-SIZE (rpm/i686/centos/6.7/openal-soft-1.12.854-1.el6.src.rpm) = 113553
+TIMESTAMP = 1466256773
+SHA256 (rpm/i686/centos/6.8/openal-soft-1.12.854-1.el6.i686.rpm) = fc2dd7f0c3e49be942e38bd73a73e32ab950c1ca2390ccf9f208de561d6b3e5c
+SIZE (rpm/i686/centos/6.8/openal-soft-1.12.854-1.el6.i686.rpm) = 115708
+SHA256 (rpm/i686/centos/6.8/openal-soft-1.12.854-1.el6.src.rpm) = efdf8696cd2d3a9bd035815adbde6607c97ea48b91de06aa2bcec6b9bbd10ba7
+SIZE (rpm/i686/centos/6.8/openal-soft-1.12.854-1.el6.src.rpm) = 113553

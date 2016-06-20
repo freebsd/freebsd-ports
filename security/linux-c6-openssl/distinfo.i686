@@ -1,5 +1,5 @@
-TIMESTAMP = 1465158642
-SHA256 (rpm/i686/centos/6.7/openssl-1.0.1e-42.el6_7.4.i686.rpm) = 31cacdfe88b5e4b420bd2dd1fe6b491b35a2a57c7e3b4ef5b960573b095fc519
-SIZE (rpm/i686/centos/6.7/openssl-1.0.1e-42.el6_7.4.i686.rpm) = 1588564
-SHA256 (rpm/i686/centos/6.7/openssl-1.0.1e-42.el6_7.4.src.rpm) = 152d1ec6f40854680bbad1524f2b7766c8f583de6b1a136b635ec9b257d4b088
-SIZE (rpm/i686/centos/6.7/openssl-1.0.1e-42.el6_7.4.src.rpm) = 3225080
+TIMESTAMP = 1466435154
+SHA256 (rpm/i686/centos/6.8/openssl-1.0.1e-48.el6_8.1.i686.rpm) = c1fecdc422c1b8063eb6e85b157253c91a6416a6533f4d2ba53a001d2162888c
+SIZE (rpm/i686/centos/6.8/openssl-1.0.1e-48.el6_8.1.i686.rpm) = 1589860
+SHA256 (rpm/i686/centos/6.8/openssl-1.0.1e-48.el6_8.1.src.rpm) = c45f08df9e51ee980b050143604f3fc299f5f8fbc69712bcbc569c6e445e5d86
+SIZE (rpm/i686/centos/6.8/openssl-1.0.1e-48.el6_8.1.src.rpm) = 3233479

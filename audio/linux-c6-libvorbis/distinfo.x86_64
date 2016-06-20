@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/libvorbis-1.2.3-4.el6_2.1.x86_64.rpm) = da803914d66eca64ef7a9dd69cfcf4a0afb3da2d781547fbf4a663f06c0e4431
-SIZE (rpm/x86_64/centos/6.7/libvorbis-1.2.3-4.el6_2.1.x86_64.rpm) = 171824
-SHA256 (rpm/x86_64/centos/6.7/libvorbis-1.2.3-4.el6_2.1.i686.rpm) = ffd0931ac246c926bb29585865f972e262460ac75edeccd35e59bdc4bd6e4e15
-SIZE (rpm/x86_64/centos/6.7/libvorbis-1.2.3-4.el6_2.1.i686.rpm) = 160680
-SHA256 (rpm/x86_64/centos/6.7/libvorbis-1.2.3-4.el6_2.1.src.rpm) = 8fa60e212c3ec73da945e31723866426421e1ce376a3bd7c0550719ea489fa57
-SIZE (rpm/x86_64/centos/6.7/libvorbis-1.2.3-4.el6_2.1.src.rpm) = 1207467
+TIMESTAMP = 1466257329
+SHA256 (rpm/x86_64/centos/6.8/libvorbis-1.2.3-4.el6_2.1.x86_64.rpm) = da803914d66eca64ef7a9dd69cfcf4a0afb3da2d781547fbf4a663f06c0e4431
+SIZE (rpm/x86_64/centos/6.8/libvorbis-1.2.3-4.el6_2.1.x86_64.rpm) = 171824
+SHA256 (rpm/x86_64/centos/6.8/libvorbis-1.2.3-4.el6_2.1.i686.rpm) = ffd0931ac246c926bb29585865f972e262460ac75edeccd35e59bdc4bd6e4e15
+SIZE (rpm/x86_64/centos/6.8/libvorbis-1.2.3-4.el6_2.1.i686.rpm) = 160680
+SHA256 (rpm/x86_64/centos/6.8/libvorbis-1.2.3-4.el6_2.1.src.rpm) = 8fa60e212c3ec73da945e31723866426421e1ce376a3bd7c0550719ea489fa57
+SIZE (rpm/x86_64/centos/6.8/libvorbis-1.2.3-4.el6_2.1.src.rpm) = 1207467

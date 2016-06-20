@@ -1,6 +1,7 @@
-SHA256 (rpm/x86_64/centos/6.7/esound-libs-0.2.41-3.1.el6.x86_64.rpm) = 203d1e83ab2c53554ba054c7b763fad55e4e32aa87763a0bef225c369f698038
-SIZE (rpm/x86_64/centos/6.7/esound-libs-0.2.41-3.1.el6.x86_64.rpm) = 75984
-SHA256 (rpm/x86_64/centos/6.7/esound-libs-0.2.41-3.1.el6.i686.rpm) = 01deb1ca2dbcdcf6738b7c6399b6328393c70df5d7107a4b89b8630163089835
-SIZE (rpm/x86_64/centos/6.7/esound-libs-0.2.41-3.1.el6.i686.rpm) = 75756
-SHA256 (rpm/x86_64/centos/6.7/esound-0.2.41-3.1.el6.src.rpm) = 764e4f001f96f71dd6fdcc5ad7dafd990ea734152aee7c6f2293503d8a8f51b4
-SIZE (rpm/x86_64/centos/6.7/esound-0.2.41-3.1.el6.src.rpm) = 412396
+TIMESTAMP = 1466257281
+SHA256 (rpm/x86_64/centos/6.8/esound-libs-0.2.41-3.1.el6.x86_64.rpm) = 203d1e83ab2c53554ba054c7b763fad55e4e32aa87763a0bef225c369f698038
+SIZE (rpm/x86_64/centos/6.8/esound-libs-0.2.41-3.1.el6.x86_64.rpm) = 75984
+SHA256 (rpm/x86_64/centos/6.8/esound-libs-0.2.41-3.1.el6.i686.rpm) = 01deb1ca2dbcdcf6738b7c6399b6328393c70df5d7107a4b89b8630163089835
+SIZE (rpm/x86_64/centos/6.8/esound-libs-0.2.41-3.1.el6.i686.rpm) = 75756
+SHA256 (rpm/x86_64/centos/6.8/esound-0.2.41-3.1.el6.src.rpm) = 764e4f001f96f71dd6fdcc5ad7dafd990ea734152aee7c6f2293503d8a8f51b4
+SIZE (rpm/x86_64/centos/6.8/esound-0.2.41-3.1.el6.src.rpm) = 412396

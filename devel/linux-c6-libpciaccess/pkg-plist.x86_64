@@ -2,5 +2,5 @@ usr/lib/libpciaccess.so.0
 usr/lib/libpciaccess.so.0.11.1
 usr/lib64/libpciaccess.so.0
 usr/lib64/libpciaccess.so.0.11.1
-usr/share/doc/libpciaccess-0.13.3/AUTHORS
-usr/share/doc/libpciaccess-0.13.3/COPYING
+%%PORTDOCS%%usr/share/doc/libpciaccess-0.13.4/AUTHORS
+%%PORTDOCS%%usr/share/doc/libpciaccess-0.13.4/COPYING
