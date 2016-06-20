@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	x11 xpm xtst xext xmu
-USES=		gmake
+USES=		dos2unix gmake
+DOS2UNIX_FILES=	getopt/getopt.c
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gpm
 

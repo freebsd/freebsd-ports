@@ -1,12 +1,12 @@
---- Makefile	Thu Jan  1 01:00:00 1970
-+++ Makefile	Wed Oct 27 17:03:17 2004
+--- Makefile.orig	2016-06-20 12:38:29 UTC
++++ Makefile
 @@ -0,0 +1,4 @@
 +
 +SUBDIR= lib apps
 +
 +.include <bsd.subdir.mk>
---- apps/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/Makefile
 @@ -0,0 +1,6 @@
 +
 +SUBDIR= atodtst counter coupler fish gethumd memutil mweather shaapp \
@@ -14,8 +14,8 @@
 +
 +.include <bsd.subdir.mk>
 +
---- apps/atodtst/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/atodtst/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/atodtst/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/atodtst/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		atodtst
 +PREFIX?=	/usr/local
@@ -32,8 +32,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/counter/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/counter/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/counter/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/counter/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		counter
 +PREFIX?=	/usr/local
@@ -50,8 +50,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/coupler/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/coupler/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/coupler/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/coupler/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		coupler
 +PREFIX?=	/usr/local
@@ -68,8 +68,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/fish/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/fish/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/fish/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/fish/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		fish
 +PREFIX?=	/usr/local
@@ -86,8 +86,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/gethumd/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/gethumd/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/gethumd/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/gethumd/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		gethumd
 +PREFIX?=	/usr/local
@@ -104,8 +104,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/memutil/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/memutil/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/memutil/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/memutil/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		memutil
 +PREFIX?=	/usr/local
@@ -122,8 +122,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/mweather/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/mweather/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/mweather/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/mweather/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		mweather
 +PREFIX?=	/usr/local
@@ -140,8 +140,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/shaapp/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/shaapp/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/shaapp/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/shaapp/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		shaapp
 +PREFIX?=	/usr/local
@@ -158,8 +158,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/swtloop/Makefile.app	Thu Jan  1 01:00:00 1970
-+++ apps/swtloop/Makefile.app	Wed Oct 27 17:03:17 2004
+--- apps/swtloop/Makefile.app.orig	2016-06-20 12:38:29 UTC
++++ apps/swtloop/Makefile.app
 @@ -0,0 +1,8 @@
 +PROG=		tstfind
 +CFLAGS=         -I. -Wall -I ../../common
@@ -169,8 +169,8 @@
 +SRCS=           tstfind.c
 +
 +.include	<bsd.prog.mk>
---- apps/swtsngl/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/swtsngl/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/swtsngl/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/swtsngl/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		swtsngl
 +PREFIX?=	/usr/local
@@ -187,8 +187,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/temp/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/temp/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/temp/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/temp/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		temp
 +PREFIX?=	/usr/local
@@ -205,8 +205,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- apps/thermo/Makefile.app	Thu Jan  1 01:00:00 1970
-+++ apps/thermo/Makefile.app	Wed Oct 27 17:03:17 2004
+--- apps/thermo/Makefile.app.orig	2016-06-20 12:38:29 UTC
++++ apps/thermo/Makefile.app
 @@ -0,0 +1,8 @@
 +PROG=		tstfind
 +CFLAGS=         -I. -Wall -I ../../common
@@ -216,8 +216,8 @@
 +SRCS=           tstfind.c
 +
 +.include	<bsd.prog.mk>
---- apps/tstfind/Makefile	Thu Jan  1 01:00:00 1970
-+++ apps/tstfind/Makefile	Wed Oct 27 17:03:17 2004
+--- apps/tstfind/Makefile.orig	2016-06-20 12:38:29 UTC
++++ apps/tstfind/Makefile
 @@ -0,0 +1,15 @@
 +PROG=		tstfind
 +PREFIX?=	/usr/local
@@ -234,8 +234,8 @@
 +		./${PROG} /dev/cuaa0
 +
 +.include	<bsd.prog.mk>
---- common/ownet.h	Fri Sep 28 21:42:02 2001
-+++ common/ownet.h	Wed Oct 27 17:03:17 2004
+--- common/ownet.h.orig	2016-06-20 12:38:29 UTC
++++ common/ownet.h
 @@ -133,6 +133,10 @@
           typedef unsigned short ushort;
           typedef unsigned long  ulong;
@@ -247,14 +247,14 @@
     #endif
     #ifdef SDCC
        //intent of ushort is 2 bytes unsigned.
---- lib/Makefile	Thu Jan  1 01:00:00 1970
-+++ lib/Makefile	Wed Oct 27 17:03:17 2004
+--- lib/Makefile.orig	2016-06-20 12:38:29 UTC
++++ lib/Makefile
 @@ -0,0 +1,3 @@
 +SUBDIR= userial
 +
 +.include <bsd.subdir.mk>
---- lib/userial/Link/linuxlnk.c	Fri Sep 28 21:42:14 2001
-+++ lib/userial/Link/linuxlnk.c	Wed Oct 27 17:03:17 2004
+--- lib/userial/Link/linuxlnk.c.orig	2016-06-20 12:38:29 UTC
++++ lib/userial/Link/linuxlnk.c
 @@ -93,6 +93,7 @@
  #include <termios.h>
  #include <errno.h>
@@ -263,8 +263,8 @@
  
  #include "ds2480.h"
  #include "ownet.h"
---- lib/userial/Makefile	Thu Jan  1 01:00:00 1970
-+++ lib/userial/Makefile	Wed Oct 27 17:03:56 2004
+--- lib/userial/Makefile.orig	2016-06-20 12:38:29 UTC
++++ lib/userial/Makefile
 @@ -0,0 +1,33 @@
 +MLANCOM=	${.CURDIR}/../../common
 +MLANLNK=	${.CURDIR}/Link

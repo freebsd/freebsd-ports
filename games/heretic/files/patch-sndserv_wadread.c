@@ -1,5 +1,5 @@
---- sndserv/wadread.c	Thu Nov 25 05:24:49 1999
-+++ sndserv/wadread.c.new	Sun Feb 13 03:54:46 2000
+--- sndserv/wadread.c.orig	1999-11-25 10:24:49 UTC
++++ sndserv/wadread.c
 @@ -39,7 +39,7 @@
   */
  

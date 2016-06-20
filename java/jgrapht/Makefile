@@ -10,7 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/JGraphT/Version%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java package for mathematical graph-theory objects and algorithms
 
-USES=		zip
+USES=		dos2unix zip
+DOS2UNIX_GLOB=	*.xml *.java
 USE_JAVA=	yes
 JAVA_VERSION=	1.6 1.7
 
@@ -30,7 +31,7 @@ NO_BUILD=	yes
 
 PORTDOCS=	*
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
 
 .include <bsd.port.pre.mk>
 

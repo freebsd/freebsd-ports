@@ -1,5 +1,5 @@
---- build.xml.orig	Sun Sep 10 22:10:16 2006
-+++ build.xml	Tue Dec 12 08:37:44 2006
+--- build.xml.orig	2016-06-20 12:40:44 UTC
++++ build.xml
 @@ -90,6 +90,7 @@
      <property name="src.home" value="${basedir}/java/src"/>
      <property name="test.home" value="${basedir}/test"/>

@@ -1,7 +1,7 @@
---- configure.orig	2008-01-02 15:05:04.000000000 -0500
-+++ configure	2008-01-10 20:48:21.000000000 -0500
-@@ -21484,7 +21484,7 @@
- _ACEOF
+--- configure.orig	2013-05-23 15:11:54 UTC
++++ configure
+@@ -12742,7 +12742,7 @@ $as_echo "#define X_HAVE_XAAGETROP 1" >>
+ $as_echo "#define X_NEED_I2CSTART 1" >>confdefs.h
  
  
 -DRIVER_MAN_SUFFIX="4"

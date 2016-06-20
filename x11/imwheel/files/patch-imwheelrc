@@ -1,6 +1,6 @@
---- imwheelrc.orig	Wed Feb 23 15:14:20 2000
-+++ imwheelrc	Wed Feb 23 15:25:12 2000
-@@ -34,6 +34,10 @@
+--- imwheelrc.orig	2004-06-10 01:41:49 UTC
++++ imwheelrc
+@@ -96,6 +96,10 @@ Control_L,	Down,	C
  None,       Down,	KP_Subtract
  None,       Up,		KP_Add
  
@@ -11,7 +11,7 @@
  "^Xman"
  None,		Down,	F
  Shift_L,	Down,	3
-@@ -52,14 +56,14 @@
+@@ -138,14 +142,14 @@ None,   	Up,     Shift_L|Page_Up
  None,   	Down,   Shift_L|Page_Down
  
  "^rxvt"
@@ -31,4 +31,4 @@
 +None,		Right,	Control_L|E
  #Shift_L,	Down,	Shift_L|1
  
- "^Netscape"
+ "^VMware"

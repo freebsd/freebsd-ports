@@ -1,5 +1,5 @@
---- build.xml.orig	2012-01-10 16:24:58.000000000 +0100
-+++ build.xml	2012-01-10 16:25:09.000000000 +0100
+--- build.xml.orig	2016-06-20 14:54:06 UTC
++++ build.xml
 @@ -32,7 +32,7 @@
  	</target>
  	
@@ -9,10 +9,3 @@
  		    <src path="${src}"/>
  		</javac>
  	</target>
-@@ -77,4 +77,4 @@
- 			<filelocation location="${build}/image" childfilesonly="true" /> 
- 		</udfimage>
- 	</target>
--</project>
-\ No newline at end of file
-+</project>

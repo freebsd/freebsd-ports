@@ -15,7 +15,7 @@ GH_ACCOUNT=	engerim42
 
 PLIST_FILES=	bin/wmSolar
 USE_XORG=	x11 xext xpm
-USES=		gmake
+USES=		dos2unix gmake
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|values.h|float.h|; s|MAXDOUBLE|DBL_MAX|g' \

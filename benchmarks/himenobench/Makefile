@@ -19,7 +19,8 @@ LICENSE=	LGPL20 # (or later)
 
 EXTRACT_DEPENDS=	lha:archivers/lha
 
-USES=		fortran zip
+USES=		dos2unix fortran zip
+DOS2UNIX_GLOB=	*.c *.f
 NO_WRKSUBDIR=	yes
 
 

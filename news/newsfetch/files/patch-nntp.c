@@ -1,6 +1,6 @@
---- nntp.c.orig	Thu Jul 23 12:03:11 1998
-+++ nntp.c	Thu Jan 27 17:19:01 2005
-@@ -20,6 +20,7 @@
+--- nntp.c.orig	2016-06-20 15:59:53 UTC
++++ nntp.c
+@@ -20,6 +20,7 @@ extern FILE *rcfp, *rctmpfp, *socket_fp[
  
  char *header;
  #define MAXBUFSIZE 500
@@ -8,7 +8,7 @@
  char command_buf[MAXBUFSIZE+1];
  
  readNNTPdata()
-@@ -33,7 +34,7 @@
+@@ -33,7 +34,7 @@ setReaderMode()
  {
  	/* dummy read to flush input */
  	readNNTPdata();
@@ -17,7 +17,7 @@
  	readNNTPdata();
  return(get_error(command_buf));
  }
-@@ -140,7 +141,8 @@
+@@ -140,7 +141,8 @@ while(comment)
  	else
  		fprintf(rctmpfp,"%s",command_buf);
  	}
@@ -27,7 +27,7 @@
  	if(items_read < 2)
  		return(0);
  return(items_read);
-@@ -151,7 +153,7 @@
+@@ -151,7 +153,7 @@ checkGroup()
  int first_art, last_art, total_art, tmp ;
  
  	fprintf(stderr,"%s: ",group);
@@ -36,7 +36,7 @@
  	readNNTPdata();
  	
  	#ifdef DEBUG
-@@ -180,7 +182,7 @@
+@@ -180,7 +182,7 @@ int first_art, last_art, total_art, tmp 
  		first_article = last_art - max_article + 1;
  	}
  	
@@ -45,7 +45,7 @@
  	readNNTPdata();
  
  	while(!get_error1(command_buf))
-@@ -196,7 +198,7 @@
+@@ -196,7 +198,7 @@ int first_art, last_art, total_art, tmp 
  			return(0); 
  			}
  
@@ -54,7 +54,7 @@
  		readNNTPdata();
  		}
  	fprintf(stderr,"articles %d to %d\n",first_article,last_art);
-@@ -256,7 +258,7 @@
+@@ -256,7 +258,7 @@ int check_header = 1;
  		fprintf(stderr,"                                    %c",0xd);
  	}
  
@@ -63,7 +63,7 @@
  	readNNTPdata();
  	if(!get_error(command_buf))
  		return(0);	
-@@ -275,7 +277,7 @@
+@@ -275,7 +277,7 @@ int check_header = 1;
  		}
  
  	/* Make it little fast */
@@ -72,7 +72,7 @@
  
  	article_fetching=1;
  
-@@ -329,17 +331,19 @@
+@@ -329,17 +331,19 @@ getGroupList()
  char groupname[100];
  
  	fprintf(stderr, "\nList of NewsGroups:\n"); 
@@ -95,7 +95,7 @@
  		}
  exit(1);
  
-@@ -348,7 +352,7 @@
+@@ -348,7 +352,7 @@ exit(1);
  sendQuit()
  {
  

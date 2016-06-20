@@ -1,5 +1,5 @@
---- XORSearch.c.orig	Tue Dec 18 07:27:32 2007
-+++ XORSearch.c	Tue Dec 18 07:27:38 2007
+--- XORSearch.c.orig	2016-06-20 15:09:40 UTC
++++ XORSearch.c
 @@ -20,7 +20,6 @@
  #include <stdio.h>
  #include <stdlib.h>

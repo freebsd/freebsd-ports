@@ -10,16 +10,17 @@ DISTNAME=	XORSearch_V1_2_0
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Search for a given string in an XOR or ROL encoded binary file
 
-USES=		zip
-WRKSRC=		${WRKDIR}
+USES=		dos2unix zip
+DOS2UNIX_GLOB=	*.c
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/xorsearch
 
 do-build:
-	${CC} -o ${WRKDIR}/XORSearch ${WRKDIR}/XORSearch.c
+	${CC} -o ${WRKSRC}/XORSearch ${WRKSRC}/XORSearch.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/XORSearch \
+	${INSTALL_PROGRAM} ${WRKSRC}/XORSearch \
 		${STAGEDIR}${PREFIX}/bin/xorsearch
 
 .include <bsd.port.mk>

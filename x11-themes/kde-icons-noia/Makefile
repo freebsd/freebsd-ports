@@ -9,7 +9,7 @@ DISTNAME=	noia-kde-icons-${PORTVERSION}
 COMMENT=	KDE Noia complete iconset
 
 USES=		tar:tgz
-WRKSRC=		"${WRKDIR}/noia_kde_${PORTVERSION:C/\.//}"
+WRKSRC=		${WRKDIR}/noia_kde_${PORTVERSION:C/\.//}
 PORT_SHAREDIR=	${PORTNAME}
 
 .include "${.CURDIR}/Makefile.icons"

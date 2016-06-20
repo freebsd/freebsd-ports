@@ -1,5 +1,5 @@
---- build.xml.orig	2012-01-10 13:14:30.000000000 +0100
-+++ build.xml	2012-01-10 13:14:40.000000000 +0100
+--- build.xml.orig	2016-06-20 15:05:02 UTC
++++ build.xml
 @@ -40,7 +40,7 @@
  
        <property name="name" value="commons-pool"/>

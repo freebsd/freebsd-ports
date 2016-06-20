@@ -14,7 +14,7 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 
 NO_BUILD=	yes
-USES=		shebangfix perl5
+USES=		dos2unix shebangfix perl5
 SHEBANG_FILES=	torrentsniff
 
 do-install:

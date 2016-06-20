@@ -1,4 +1,4 @@
---- himenobmtxp_m.f.orig	2002-01-07 04:54:48 UTC
+--- himenobmtxp_m.f.orig	2016-06-20 13:01:22 UTC
 +++ himenobmtxp_m.f
 @@ -39,7 +39,6 @@ C -------------------
  C "use portlib" statement on the next line is for Visual fortran

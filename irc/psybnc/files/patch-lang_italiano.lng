@@ -1,6 +1,6 @@
---- ./lang/italiano.lng	Sat Jun  1 18:08:25 2002
-+++ ../../psybnc.mina/lang/italiano.lng	Sun Nov 24 19:14:44 2002
-@@ -1998,7 +1998,7 @@
+--- lang/italiano.lng.orig	2008-10-22 19:10:54 UTC
++++ lang/italiano.lng
+@@ -1999,7 +1999,7 @@ msg0994=SYSTEM
  ; psybnc.c line 201:
  msg0995=PORT1
  ; psybnc.c line 203:

@@ -11,7 +11,8 @@ DISTNAME=	SeamCarvingGui-Src-${PORTVERSION}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	The Seam Carving GUI is a GUI front end to CAIR
 
-USES=		gmake qmake
+USES=		dos2unix gmake qmake
+DOS2UNIX_GLOB=	*.cpp
 USE_QT4=	gui imageformats_run moc_build uic_build
 
 WRKSRC=		${WRKDIR}/Src\ Seam\ Carving\ GUI\ ${PORTVERSION}

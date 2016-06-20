@@ -1,6 +1,6 @@
---- Makefile.PL.orig	2012-12-23 11:07:17.511361339 +0900
-+++ Makefile.PL	2012-12-23 11:09:35.165438990 +0900
-@@ -9,7 +9,6 @@
+--- Makefile.PL.orig	2009-06-11 18:26:48 UTC
++++ Makefile.PL
+@@ -9,7 +9,6 @@ requires => 'XML::Parser';
  build_requires => 'Test';
  build_requires => 'IO::File';
  

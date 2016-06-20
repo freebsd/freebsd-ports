@@ -11,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read from a Reiser file system
 
 PLIST_FILES=	bin/rfstool
-USES=		zip
+USES=		dos2unix zip
+DOS2UNIX_FILES=	reiserfs.h
 WRKSRC=		${WRKDIR}/rfstool-0.14/RFSTOOL
 MAKEFILE=	makefile.gcc3x
 

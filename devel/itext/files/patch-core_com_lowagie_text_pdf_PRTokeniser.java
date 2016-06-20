@@ -1,6 +1,6 @@
---- core/com/lowagie/text/pdf/PRTokeniser.java.orig	2012-07-03 16:02:24.000000000 +0200
-+++ core/com/lowagie/text/pdf/PRTokeniser.java	2012-07-03 16:03:30.000000000 +0200
-@@ -281,6 +281,12 @@
+--- core/com/lowagie/text/pdf/PRTokeniser.java.orig	2016-06-20 15:02:42 UTC
++++ core/com/lowagie/text/pdf/PRTokeniser.java
+@@ -281,6 +281,12 @@ public class PRTokeniser {
                  }
              }
          }
