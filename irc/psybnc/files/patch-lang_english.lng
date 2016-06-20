@@ -1,6 +1,6 @@
---- ./lang/english.lng	Sat Jun  1 18:07:47 2002
-+++ ../../psybnc.mina/lang/english.lng	Sun Nov 24 19:14:01 2002
-@@ -1998,7 +1998,7 @@
+--- lang/english.lng.orig	2008-10-22 19:09:46 UTC
++++ lang/english.lng
+@@ -1999,7 +1999,7 @@ msg0994=SYSTEM
  ; psybnc.c line 201:
  msg0995=PORT1
  ; psybnc.c line 203:

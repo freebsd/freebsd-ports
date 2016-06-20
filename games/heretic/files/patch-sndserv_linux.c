@@ -1,8 +1,8 @@
---- sndserv/linux.c.orig	Thu Jan 10 19:06:58 2002
-+++ sndserv/linux.c	Thu Jan 10 19:07:06 2002
-@@ -32,7 +32,7 @@
- #include <unistd.h>
+--- sndserv/linux.c.orig	2003-12-08 22:44:54 UTC
++++ sndserv/linux.c
+@@ -33,7 +33,7 @@
  #include <sys/ioctl.h>
+ #include <errno.h>
  
 -#include <linux/soundcard.h>
 +#include <soundcard.h>

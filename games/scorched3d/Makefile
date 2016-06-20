@@ -27,13 +27,11 @@ USE_GL=		glew glu
 USE_SDL=	mixer net sdl
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
-WX_UNICODE=	yes
 USES=		autoreconf dos2unix gmake iconv jpeg openal:al,alut perl5 pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
-DOS2UNIX_FILES=	src/client/GLEXT/GLFont2dFreeType.h \
-		src/launcher/wxdialogs/TrueTypeFont.h
+DOS2UNIX_GLOB=	*.h *.cpp
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

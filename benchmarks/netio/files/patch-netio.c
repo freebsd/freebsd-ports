@@ -1,6 +1,6 @@
---- netio.c.orig	2012-11-22 17:47:38.000000000 +0100
-+++ netio.c	2015-03-23 11:52:42.000000000 +0100
-@@ -136,6 +136,7 @@
+--- netio.c.orig	2016-06-20 13:21:43 UTC
++++ netio.c
+@@ -136,6 +136,7 @@ static char *rcsrev = "$Revision: 1.32 $
  #include <ctype.h>
  #include <signal.h>
  #if defined(UNIX) || defined(DJGPP)
@@ -8,7 +8,7 @@
  #include <sys/time.h>
  #include <unistd.h>
  #include <errno.h>
-@@ -546,7 +547,7 @@
+@@ -546,7 +547,7 @@ int send_data(int socket, void *buffer, 
  
  int recv_data(int socket, void *buffer, size_t size, int flags)
  {
@@ -17,7 +17,7 @@
  
    if (rc < 0)
    {
-@@ -563,8 +564,13 @@
+@@ -563,8 +564,13 @@ int recv_data(int socket, void *buffer, 
  const int sobufsize = 131072;
  int nPort = DEFAULTPORT;
  int nAuxPort = DEFAULTPORT + 1;
@@ -31,7 +31,7 @@
  
  int udpsocket, udpd;
  unsigned long nUDPCount;
-@@ -577,7 +583,11 @@
+@@ -577,7 +583,11 @@ THREAD TCP_Server(void *arg)
    TIMER nTimer;
    long nTime;
    long long nData;
@@ -43,7 +43,7 @@
    int server, client;
    socklen_type length;
    struct timeval tv;
-@@ -591,7 +601,11 @@
+@@ -591,7 +601,11 @@ THREAD TCP_Server(void *arg)
      return THREADRESULT;
    }
  
@@ -55,7 +55,7 @@
    {
      psock_errno("socket()");
      free(cBuffer);
-@@ -601,9 +615,15 @@
+@@ -601,9 +615,15 @@ THREAD TCP_Server(void *arg)
    setsockopt(server, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
    setsockopt(server, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
  
@@ -71,7 +71,7 @@
  
    if (bind(server, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -753,7 +773,11 @@
+@@ -753,7 +773,11 @@ void TCP_Bench(void *arg)
    long nTime;
    long long nData;
    int i;
@@ -83,7 +83,7 @@
    int server;
    int rc;
    int nByte;
-@@ -764,7 +788,11 @@
+@@ -764,7 +788,11 @@ void TCP_Bench(void *arg)
      return;
    }
  
@@ -95,7 +95,7 @@
    {
      psock_errno("socket()");
      free(cBuffer);
-@@ -774,21 +802,33 @@
+@@ -774,21 +802,33 @@ void TCP_Bench(void *arg)
    setsockopt(server, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
    setsockopt(server, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
  
@@ -130,7 +130,7 @@
  
    if (connect(server, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -911,7 +951,11 @@
+@@ -911,7 +951,11 @@ void TCP_Bench(void *arg)
  THREAD UDP_Receiver(void *arg)
  {
    char *cBuffer;
@@ -142,7 +142,7 @@
    int rc;
    socklen_type nBytes;
  
-@@ -921,7 +965,11 @@
+@@ -921,7 +965,11 @@ THREAD UDP_Receiver(void *arg)
      return THREADRESULT;
    }
  
@@ -154,7 +154,7 @@
    {
      psock_errno("socket(DGRAM)");
      free(cBuffer);
-@@ -931,9 +979,15 @@
+@@ -931,9 +979,15 @@ THREAD UDP_Receiver(void *arg)
    setsockopt(udpsocket, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
    setsockopt(udpsocket, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
  
@@ -170,7 +170,7 @@
  
    if (bind(udpsocket, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -973,7 +1027,11 @@
+@@ -973,7 +1027,11 @@ THREAD UDP_Server(void *arg)
    TIMER nTimer;
    long nTime;
    long long nData;
@@ -182,7 +182,7 @@
    int server, client;
    struct timeval tv;
    fd_set fds;
-@@ -986,7 +1044,11 @@
+@@ -986,7 +1044,11 @@ THREAD UDP_Server(void *arg)
      return THREADRESULT;
    }
  
@@ -194,7 +194,7 @@
    {
      psock_errno("socket(STREAM)");
      free(cBuffer);
-@@ -996,9 +1058,15 @@
+@@ -996,9 +1058,15 @@ THREAD UDP_Server(void *arg)
    setsockopt(server, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
    setsockopt(server, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
  
@@ -210,7 +210,7 @@
  
    if (bind(server, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -1044,7 +1112,11 @@
+@@ -1044,7 +1112,11 @@ THREAD UDP_Server(void *arg)
      printf("UDP connection established ... ");
      fflush(stdout);
  
@@ -222,7 +222,7 @@
  
      for (;;)
      {
-@@ -1160,7 +1232,11 @@
+@@ -1160,7 +1232,11 @@ void UDP_Bench(void *arg)
    long nResult;
    long long nData;
    int i;
@@ -234,7 +234,7 @@
    int server;
    int rc, nByte;
  
-@@ -1170,7 +1246,11 @@
+@@ -1170,7 +1246,11 @@ void UDP_Bench(void *arg)
      return;
    }
  
@@ -246,7 +246,7 @@
    {
      psock_errno("socket()");
      free(cBuffer);
-@@ -1180,21 +1260,33 @@
+@@ -1180,21 +1260,33 @@ void UDP_Bench(void *arg)
    setsockopt(server, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
    setsockopt(server, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
  
@@ -281,7 +281,7 @@
  
    if (connect(server, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -1425,17 +1517,29 @@
+@@ -1425,17 +1517,29 @@ int main(int argc, char **argv)
        return psock_errno("sock_init()"), 1;
  
      if (szLocal == 0)
@@ -311,7 +311,7 @@
        }
      }
  
-@@ -1445,13 +1549,21 @@
+@@ -1445,13 +1549,21 @@ int main(int argc, char **argv)
  	usage();
  
        if (isdigit(*argv[optind]))

@@ -1,5 +1,5 @@
---- java/src/charva/awt/Toolkit.java.orig	Mon Aug 14 20:59:42 2006
-+++ java/src/charva/awt/Toolkit.java	Mon Jan 29 09:39:30 2007
+--- java/src/charva/awt/Toolkit.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charva/awt/Toolkit.java
 @@ -157,13 +157,9 @@ public class Toolkit {
       *             key as defined in the "VK_*" values.
       */

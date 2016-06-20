@@ -1,5 +1,5 @@
---- Vsop.h.orig	Tue Nov 26 15:41:59 2002
-+++ Vsop.h	Tue Nov 26 15:42:13 2002
+--- Vsop.h.orig	2016-06-20 12:40:27 UTC
++++ Vsop.h
 @@ -12,6 +12,7 @@
  #define VSOP__H
  

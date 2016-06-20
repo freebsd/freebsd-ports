@@ -10,7 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/Spar/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular math parser
 
-USES=		libtool ncurses readline
+USES=		dos2unix libtool ncurses readline
+DOS2UNIX_FILES=	lib/randist/rand.c
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes

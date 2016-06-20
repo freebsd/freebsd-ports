@@ -1,6 +1,6 @@
---- ./lang/german.lng	Sat Jun  1 18:08:01 2002
-+++ ../../psybnc.mina/lang/german.lng	Sun Nov 24 19:14:22 2002
-@@ -2003,7 +2003,7 @@
+--- lang/german.lng.orig	2008-10-22 19:10:34 UTC
++++ lang/german.lng
+@@ -2004,7 +2004,7 @@ msg0994=SYSTEM
  ; psybnc.c line 201:
  msg0995=PORT1
  ; psybnc.c line 203:

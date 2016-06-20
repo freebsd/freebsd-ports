@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jan 11 06:22:46 2003
-+++ Makefile	Sat Jan 11 06:23:10 2003
+--- Makefile.orig	2001-08-20 20:40:40 UTC
++++ Makefile
 @@ -1,6 +1,6 @@
  .SUFFIXES: .a .o .c
  CC              =  gcc

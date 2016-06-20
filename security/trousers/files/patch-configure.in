@@ -1,6 +1,6 @@
---- configure.in.orig	2014-04-25 03:05:43.000000000 +0900
-+++ configure.in	2016-05-19 02:57:32.524179000 +0900
-@@ -52,7 +52,7 @@
+--- configure.in.orig	2014-04-24 18:05:43 UTC
++++ configure.in
+@@ -52,7 +52,7 @@ AC_ARG_WITH(openssl,
  		AC_MSG_ERROR([$OPENSSL_INCLUDE_DIR or $OPENSSL_LIB_DIR doen't exist!])
  	 else
  		AC_MSG_RESULT([yes])
@@ -9,7 +9,7 @@
  		AC_SUBST([OPENSSL_LIB_DIR])
  	 fi],
  	[AC_MSG_RESULT([no])
-@@ -72,6 +72,21 @@
+@@ -72,6 +72,21 @@ AC_ARG_ENABLE(gcov,
  		[CFLAGS="$CFLAGS -ftest-coverage -fprofile-arcs"
  		 AC_MSG_RESULT([*** Enabling gcov at user request ***])],)
  
@@ -31,7 +31,7 @@
  # profiling support
  AC_ARG_ENABLE(gprof,
  		[AC_HELP_STRING([--enable-gprof], [enable profiling with gprof [default=off]])],
-@@ -356,6 +371,8 @@
+@@ -356,6 +371,8 @@ AC_PROG_LIBTOOL
  AC_C_BIGENDIAN([AC_DEFINE(_BIG_ENDIAN, 1, [big-endian host])])
  AC_CHECK_DECL(htole32, [AC_DEFINE(HTOLE_DEFINED, 1, [htole32 function is available])])
  AC_CHECK_HEADER(sys/byteorder.h, [AC_DEFINE(HAVE_BYTEORDER_H, 1, [sys/byteorder.h header])])
@@ -40,7 +40,7 @@
  AC_CHECK_FUNC(daemon, [ AC_DEFINE(HAVE_DAEMON, 1, [daemon function is available]) ])
   
  if test "x${GCC}" = "xyes"; then
-@@ -363,6 +380,7 @@
+@@ -363,6 +380,7 @@ if test "x${GCC}" = "xyes"; then
  fi
  
  CFLAGS="$CFLAGS -I../include \

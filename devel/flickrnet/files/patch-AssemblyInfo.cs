@@ -1,6 +1,6 @@
---- AssemblyInfo.cs.orig
+--- AssemblyInfo.cs.orig	2016-06-20 14:46:51 UTC
 +++ AssemblyInfo.cs
-@@ -61,10 +61,10 @@
+@@ -61,7 +61,7 @@ using System.Runtime.InteropServices;
  [assembly: AssemblyKeyName("")]
  
  #if !WindowsCE
@@ -9,8 +9,3 @@
  [assembly: AllowPartiallyTrustedCallers()]
  [assembly: SecurityPermission(SecurityAction.RequestMinimum, Execution = true)]
  #endif
- 
- [assembly: CLSCompliantAttribute(true)]
--[assembly: ComVisible(false)]
-\ No newline at end of file
-+[assembly: ComVisible(false)]

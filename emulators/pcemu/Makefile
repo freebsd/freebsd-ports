@@ -16,6 +16,8 @@ RUN_DEPENDS=	mkfontdir:x11-fonts/mkfontdir \
 		mkfontscale:x11-fonts/mkfontscale
 
 USE_XORG=	x11 xext
+USES=		dos2unix
+DOS2UNIX_FILES=	programs/config.sys
 MAKE_ENV=	FILESDIR=${FILESDIR} STAGEDIR=${STAGEDIR}
 MAKE_ARGS=	CC="${CC}"
 

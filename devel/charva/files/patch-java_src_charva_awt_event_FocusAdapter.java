@@ -1,5 +1,5 @@
---- java/src/charva/awt/event/FocusAdapter.java.orig	Mon Jan 29 09:39:30 2007
-+++ java/src/charva/awt/event/FocusAdapter.java	Mon Jan 29 09:39:30 2007
+--- java/src/charva/awt/event/FocusAdapter.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charva/awt/event/FocusAdapter.java
 @@ -0,0 +1,17 @@
 +package charva.awt.event;
 +

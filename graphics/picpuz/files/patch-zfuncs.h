@@ -1,5 +1,5 @@
---- zfuncs.h.orig	2009-10-29 08:38:40.000000000 +0000
-+++ zfuncs.h	2013-03-30 09:03:57.000000000 +0000
+--- zfuncs.h.orig	2016-06-20 15:52:16 UTC
++++ zfuncs.h
 @@ -36,7 +36,201 @@
  #include <signal.h>
  #include <execinfo.h>
@@ -212,7 +212,7 @@
  #define  mutex_init     pthread_mutex_init
  #define  mutex_lock     pthread_mutex_lock
  #define  mutex_trylock  pthread_mutex_trylock
-@@ -495,7 +689,7 @@
+@@ -495,7 +689,7 @@ class  Queue
  {
     char        wmi[8];
     Vxstring  * vd;                                                         //  vector of xstrings

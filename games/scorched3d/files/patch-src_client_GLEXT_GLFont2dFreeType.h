@@ -1,5 +1,5 @@
---- src/client/GLEXT/GLFont2dFreeType.h.orig	2013-12-17 09:58:11.000000000 +0100
-+++ src/client/GLEXT/GLFont2dFreeType.h	2013-12-17 09:59:18.000000000 +0100
+--- src/client/GLEXT/GLFont2dFreeType.h.orig	2016-06-20 14:16:37 UTC
++++ src/client/GLEXT/GLFont2dFreeType.h
 @@ -23,10 +23,10 @@
  
  #include <GLEXT/GLFont2dStorage.h>

@@ -18,7 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp
 
 PATCH_STRIP=	-p1
 
-USES=		qmail gmake fakeroot
+USES=		dos2unix qmail gmake fakeroot
+DOS2UNIX_FILES=	doc/README.vpopmaild
 
 CONFLICTS=	vpopmail-devel-5.*
 

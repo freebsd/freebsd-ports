@@ -1,5 +1,5 @@
---- java/src/charvax/swing/AbstractButton.java.orig	Sat Dec 17 15:27:30 2005
-+++ java/src/charvax/swing/AbstractButton.java	Mon Jan 29 09:39:30 2007
+--- java/src/charvax/swing/AbstractButton.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charvax/swing/AbstractButton.java
 @@ -19,15 +19,16 @@
  
  package charvax.swing;

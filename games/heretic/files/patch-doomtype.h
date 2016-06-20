@@ -1,6 +1,6 @@
---- doomtype.h.orig	Wed Oct  5 07:40:18 2005
-+++ doomtype.h	Wed Oct  5 07:40:41 2005
-@@ -59,9 +59,7 @@
+--- doomtype.h.orig	2000-01-07 20:42:41 UTC
++++ doomtype.h
+@@ -59,9 +59,7 @@ typedef unsigned char byte;
  #define MININT		((int)0x80000000)
  #define MINLONG		((long)0x8000000000000000)
  

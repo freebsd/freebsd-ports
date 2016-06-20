@@ -1,5 +1,5 @@
---- java/src/charva/awt/VerticalFlowLayout.java.orig	Mon Jan 29 09:39:30 2007
-+++ java/src/charva/awt/VerticalFlowLayout.java	Mon Jan 29 09:39:30 2007
+--- java/src/charva/awt/VerticalFlowLayout.java.orig	2016-06-20 12:40:44 UTC
++++ java/src/charva/awt/VerticalFlowLayout.java
 @@ -0,0 +1,229 @@
 +/* class FlowLayout
 + *
