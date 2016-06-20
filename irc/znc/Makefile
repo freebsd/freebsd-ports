@@ -29,8 +29,7 @@ PYTHON_DESC=	Python scripting module
 TCL_DESC=	Tcl scripting module
 
 CHARSET_CONFIGURE_OFF=	--disable-charset
-CHARSET_LIB_DEPENDS=	libicuuc.so.55:devel/icu \
-			libicudata.so.55:devel/icu
+CHARSET_LIB_DEPENDS=	libicuuc.so:devel/icu
 CYRUS_CONFIGURE_ON=	--enable-cyrus
 CYRUS_LDFLAGS=	-L${LOCALBASE}/lib
 CYRUS_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
