@@ -4,7 +4,7 @@
 #
 # Feature:	fortran
 # Usage:	USES=fortran
-# Valid ARGS:	gcc (default), ifort
+# Valid ARGS:	gcc (default)
 #
 # MAINTAINER:	fortran@FreeBSD.org
 
@@ -32,11 +32,6 @@ FFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 FCFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 		-L${LOCALBASE}/lib/gcc${_GCC_VER} -B${LOCALBASE}/bin
-.elif ${fortran_ARGS} == ifort
-BUILD_DEPENDS+=	${LOCALBASE}/intel_fc_80/bin/ifort:lang/ifc
-RUN_DEPENDS+=	${LOCALBASE}/intel_fc_80/bin/ifort:lang/ifc
-F77=		${LOCALBASE}/intel_fc_80/bin/ifort
-FC=		${LOCALBASE}/intel_fc_80/bin/ifort
 .else
 IGNORE=		USES=fortran: invalid arguments: ${fortran_ARGS}
 .endif
