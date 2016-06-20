@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rmilter
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
