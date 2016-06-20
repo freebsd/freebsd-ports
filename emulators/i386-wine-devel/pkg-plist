@@ -1082,6 +1082,7 @@ lib32/libXdmcp.so.6
 lib32/libXext.so.6
 lib32/libXfixes.so.3
 lib32/libXi.so.6
+lib32/libXinerama.so.1
 lib32/libXrandr.so.2
 lib32/libXrender.so.1
 lib32/libXxf86vm.so.1
