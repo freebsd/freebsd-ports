@@ -1,7 +1,7 @@
---- t/porting/customized.dat.orig	2016-06-06 00:43:48 UTC
+--- t/porting/customized.dat.orig	2016-06-20 10:48:35 UTC
 +++ t/porting/customized.dat
 @@ -1,11 +1,12 @@
- CPAN cpan/CPAN/lib/CPAN.pm ce62c43d72f101c011184dbbc59e21c2790826f0
+ Encode cpan/Encode/Byte/Makefile.PL 54f446297d614331ef3f51e8310faff27cc44f90
  Encode cpan/Encode/encoding.pm 51c19efc9bfe8467d6ae12a4654f6e7f980715bf
  ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t a0369c919e216fb02767a637666bb4577ad79b02
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm fc5a731797f5c4fedf02ea2b5277aa720f0880ab
