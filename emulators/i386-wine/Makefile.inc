@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/
@@ -82,8 +82,8 @@ port-update:
 	${RM} ${SLAVEDIR}/distinfo
 	${MAKE} pkg-plist.${osrel}${suffix:tu} PLIST=pkg-plist.${osrel}${suffix:tu} OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}
 .endfor
-	${MV} ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/distinfo
+	${SED} -e '2,$${' -e '/^TIMESTAMP/d' -e '}' distinfo~ > ${SLAVEDIR}/distinfo
 	python ${FILESDIR}/mergeplist.py ${SLAVEDIR}/pkg-plist.* > ${PLIST}
-	${RM} ${SLAVEDIR}/pkg-plist.*
+	${RM} ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
 
 .include <bsd.port.post.mk>
