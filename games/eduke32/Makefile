@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20160103
+PORTVERSION=	20160610
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNREVISION}/:eduke32
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}:eduke32
 EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}
 
-MAINTAINER=	pkubaj@riseup.net
+MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 
 LICENSE=	GPLv2
@@ -25,7 +25,7 @@ USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
-SVNREVISION=	5506
+SVNREVISION=	5775
 DATADIR=	${LOCALBASE}/share/duke3d
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR}
@@ -53,6 +53,8 @@ TIMIDITY_DESC=	Use Timidity for music support
 TIMIDITY_RUN_DEPENDS=	timidity:audio/timidity
 TIMIDITYPLUS_DESC=	Use Timidity++ for music support
 TIMIDITYPLUS_RUN_DEPENDS=	timidity:audio/timidity++
+
+CFLAGS+=	-flax-vector-conversions
 
 .include <bsd.port.options.mk>
 
