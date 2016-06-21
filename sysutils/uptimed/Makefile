@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	uptimed
-PORTVERSION=	0.3.17
-PORTREVISION=	2
+PORTVERSION=	0.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	http://podgorny.cz/uptimed/releases/ \
-		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Uptime daemon
 
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rpodgorny
 
 USES=		autoreconf gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
