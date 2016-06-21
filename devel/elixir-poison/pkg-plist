@@ -12,6 +12,7 @@ lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.HashSet.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.Integer.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.List.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.Map.beam
+lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.MapSet.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.Range.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.Stream.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.beam
