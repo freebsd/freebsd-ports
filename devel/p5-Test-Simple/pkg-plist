@@ -23,6 +23,7 @@
 %%SITE_PERL%%/Test2/Event/Bail.pm
 %%SITE_PERL%%/Test2/Event/Diag.pm
 %%SITE_PERL%%/Test2/Event/Exception.pm
+%%SITE_PERL%%/Test2/Event/Generic.pm
 %%SITE_PERL%%/Test2/Event/Note.pm
 %%SITE_PERL%%/Test2/Event/Ok.pm
 %%SITE_PERL%%/Test2/Event/Plan.pm
@@ -43,7 +44,6 @@
 %%SITE_PERL%%/Test2/Util/ExternalMeta.pm
 %%SITE_PERL%%/Test2/Util/HashBase.pm
 %%SITE_PERL%%/Test2/Util/Trace.pm
-%%SITE_PERL%%/ok.pm
 %%PERL5_MAN3%%/Test2.3.gz
 %%PERL5_MAN3%%/Test2::API.3.gz
 %%PERL5_MAN3%%/Test2::API::Breakage.3.gz
@@ -54,6 +54,7 @@
 %%PERL5_MAN3%%/Test2::Event::Bail.3.gz
 %%PERL5_MAN3%%/Test2::Event::Diag.3.gz
 %%PERL5_MAN3%%/Test2::Event::Exception.3.gz
+%%PERL5_MAN3%%/Test2::Event::Generic.3.gz
 %%PERL5_MAN3%%/Test2::Event::Note.3.gz
 %%PERL5_MAN3%%/Test2::Event::Ok.3.gz
 %%PERL5_MAN3%%/Test2::Event::Plan.3.gz
@@ -89,3 +90,4 @@
 %%PERL5_MAN3%%/Test::Tutorial.3.gz
 %%PERL5_MAN3%%/Test::use::ok.3.gz
 %%PERL5_MAN3%%/ok.3.gz
+%%SITE_PERL%%/ok.pm
