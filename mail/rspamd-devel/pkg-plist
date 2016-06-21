@@ -34,6 +34,7 @@ bin/rspamc
 %%ETCDIR%%/modules.d/surbl.conf
 %%ETCDIR%%/modules.d/whitelist.conf
 @sample %%ETCDIR%%/options.inc.sample
+%%ETCDIR%%/redirectors.inc
 @sample %%ETCDIR%%/rspamd.conf.sample
 @sample %%ETCDIR%%/spf_dkim_whitelist.inc.sample
 @sample %%ETCDIR%%/statistic.conf.sample
@@ -50,6 +51,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/fann_scores.lua
 %%DATADIR%%/lua/forged_recipients.lua
 %%DATADIR%%/lua/fun.lua
+%%DATADIR%%/lua/greylist.lua
 %%DATADIR%%/lua/hfilter.lua
 %%DATADIR%%/lua/ip_score.lua
 %%DATADIR%%/lua/maillist.lua
@@ -58,12 +60,14 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/once_received.lua
 %%DATADIR%%/lua/phishing.lua
 %%DATADIR%%/lua/ratelimit.lua
+%%DATADIR%%/lua/replies.lua
 %%DATADIR%%/lua/rbl.lua
 %%DATADIR%%/lua/rspamd_update.lua
 %%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/spamassassin.lua
 %%DATADIR%%/lua/trie.lua
 %%DATADIR%%/lua/whitelist.lua
+%%DATADIR%%/rules/forwarding.lua
 %%DATADIR%%/rules/html.lua
 %%DATADIR%%/rules/http_headers.lua
 %%DATADIR%%/rules/misc.lua
@@ -71,6 +75,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/rules/regexp/fraud.lua
 %%DATADIR%%/rules/regexp/headers.lua
 %%DATADIR%%/rules/regexp/lotto.lua
+%%DATADIR%%/rules/regexp/upstream_spam_filters.lua
 %%DATADIR%%/rules/rspamd.classifiers.lua
 %%DATADIR%%/rules/rspamd.lua
 %%DATADIR%%/www/README.md
