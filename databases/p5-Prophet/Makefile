@@ -34,7 +34,7 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
 		p5-Proc-InvokeEditor>=0:editors/p5-Proc-InvokeEditor \
 		p5-Template-Declare>=0.35:textproc/p5-Template-Declare \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
-		p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl \
+		p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl \
 		p5-Time-Progress>=0:devel/p5-Time-Progress \
 		p5-URI>=0:net/p5-URI \
 		p5-UUID-Tiny>=1.02:devel/p5-UUID-Tiny \

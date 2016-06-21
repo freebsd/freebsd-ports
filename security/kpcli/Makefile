@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=1.08:security/p5-Crypt-Rijndael \
 		p5-Sort-Naturally>=1.02:textproc/p5-Sort-Naturally \
 		p5-File-KeePass>=2.03:security/p5-File-KeePass \
 		p5-Term-ShellUI>=0.9:shells/p5-Term-ShellUI \
-		p5-ReadLine-Gnu>=1.19:devel/p5-ReadLine-Gnu \
+		p5-Term-ReadLine-Gnu>=1.19:devel/p5-Term-ReadLine-Gnu \
 		p5-Data-Password>=0:security/p5-Data-Password \
 		p5-Clone>=0.31:devel/p5-Clone \
 		p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \

@@ -36,11 +36,11 @@ PLIST_FILES=	bin/${PORTNAME}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
-RUN_DEPENDS+=	p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl
+RUN_DEPENDS+=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
 .endif
 
 .if ${PORT_OPTIONS:MRLTTYTTER}
-RUN_DEPENDS+=	p5-ReadLine-TTYtter>=1.4:devel/p5-ReadLine-TTYtter
+RUN_DEPENDS+=	p5-Term-ReadLine-TTYtter>=1.4:devel/p5-Term-ReadLine-TTYtter
 .endif
 
 do-extract:
