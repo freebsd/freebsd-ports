@@ -1,28 +1,35 @@
---- Gemfile.orig	2015-12-05 08:47:22 UTC
-+++ Gemfile
-@@ -1,37 +1,29 @@
- source 'https://rubygems.org'
+--- Gemfile.orig	2016-05-05 18:39:09.000000000 +0000
++++ Gemfile	2016-06-06 19:49:50.462089000 +0000
+@@ -4,11 +4,11 @@
+   abort "Redmine requires Bundler 1.5.0 or higher (you're using #{Bundler::VERSION}).\nPlease update with 'gem update bundler'."
+ end
  
--gem "rails", "3.2.22"
-+gem "rails", "~> 3.2"
- gem "rack-cache", "1.2" if RUBY_VERSION < "1.9.3"
- gem "jquery-rails", "~> 3.1.4"
+-gem "rails", "4.2.5.2"
+-gem "jquery-rails", "~> 3.1.4"
++gem "rails", ">= 4.2.5.2"
++gem "jquery-rails"
  gem "coderay", "~> 1.1.0"
- gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
  gem "builder", ">= 3.0.4"
 -gem "request_store", "1.0.5"
 +gem "request_store", ">= 1.0.5"
- gem "mime-types"
--gem "rbpdf", "~> 1.18.7"
-+gem "rbpdf", ">= 1.18.7"
+ gem "mime-types", (RUBY_VERSION >= "2.0" ? "~> 3.0" : "~> 2.99")
+ gem "protected_attributes"
+ gem "actionpack-action_caching"
+@@ -17,7 +17,7 @@
+ gem "mimemagic"
  
--gem "i18n", "~> 0.6.11"
-+gem "i18n", ">= 0.6.11"
+ # Request at least nokogiri 1.6.7.2 because of security advisories
+-gem "nokogiri", ">= 1.6.7.2"
++gem "nokogiri"
+ 
+ # Request at least rails-html-sanitizer 1.0.3 because of security advisories 
+ gem "rails-html-sanitizer", ">= 1.0.3"
+@@ -28,27 +28,15 @@
  
  # Optional gem for LDAP authentication
  group :ldap do
--  gem "net-ldap", "~> 0.3.1"
-+  gem "net-ldap", ">= 0.3.1"
+-  gem "net-ldap", "~> 0.12.0"
++  gem "net-ldap"
  end
  
  # Optional gem for OpenID authentication
@@ -32,28 +39,22 @@
    gem "rack-openid"
  end
  
- platforms :mri, :mingw do
+-platforms :mri, :mingw, :x64_mingw do
 -  # Optional gem for exporting the gantt to a PNG file, not supported with jruby
 -  group :rmagick do
--    # RMagick 2 supports ruby 1.9
--    # RMagick 1 would be fine for ruby 1.8 but Bundler does not support
--    # different requirements for the same gem on different platforms
--    gem "rmagick", (RUBY_VERSION < "1.9" ? "2.13.3" : "~> 2.13.4")
+-    gem "rmagick", ">= 2.14.0"
 -  end
 -
-   # Optional Markdown support, not for JRuby
-   group :markdown do
-     gem "redcarpet", (RUBY_VERSION < "1.9" ? "~> 2.3.0" : "~> 3.3.2")
-@@ -62,7 +54,7 @@ if File.exist?(database_file)
-         gem "mysql", "~> 2.8.1", :platforms => [:mri, :mingw]
-         gem "activerecord-jdbcmysql-adapter", :platforms => :jruby
-       when /postgresql/
--        gem "pg", "~> 0.17.1", :platforms => [:mri, :mingw]
-+        gem "pg", "~> 0.18.4", :platforms => [:mri, :mingw]
-         gem "activerecord-jdbcpostgresql-adapter", :platforms => :jruby
-       when /sqlite3/
-         gem "sqlite3", :platforms => [:mri, :mingw]
-@@ -82,23 +74,6 @@ else
+-  # Optional Markdown support, not for JRuby
+-  group :markdown do
+-    gem "redcarpet", "~> 3.3.2"
+-  end
+-end
+-
+ platforms :jruby do
+   # jruby-openssl is bundled with JRuby 1.7.0
+   gem "jruby-openssl" if Object.const_defined?(:JRUBY_VERSION) && JRUBY_VERSION < '1.7.0'
+@@ -92,21 +80,6 @@
    warn("Please configure your config/database.yml first")
  end
  
@@ -64,22 +65,20 @@
 -
 -group :test do
 -  gem "minitest"
--  gem "test-unit", "~> 3.0"
--  gem "shoulda", "~> 3.3.2"
--  gem "shoulda-matchers", "1.4.1"
--  gem "mocha", "~> 1.0.0", :require => 'mocha/api'
--  if RUBY_VERSION >= '1.9.3'
--    gem "capybara"
--    gem "selenium-webdriver"
--  end
+-  gem "rails-dom-testing"
+-  gem "mocha"
+-  gem "simplecov", "~> 0.9.1", :require => false
+-  # For running UI tests
+-  gem "capybara"
+-  gem "selenium-webdriver"
 -end
 -
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
-   puts "Loading Gemfile.local ..." if $DEBUG # `ruby -d` or `bundle -v`
-@@ -111,3 +86,7 @@ Dir.glob File.expand_path("../plugins/*/
-   #TODO: switch to "eval_gemfile file" when bundler >= 1.2.0 will be required (rails 4)
-   instance_eval File.read(file), file
+   eval_gemfile local_gemfile
+@@ -116,3 +89,7 @@
+ Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
+   eval_gemfile file
  end
 +
 +Dir["#{File.dirname(__FILE__)}/bundler.d/*.rb"].each do |bundle|
