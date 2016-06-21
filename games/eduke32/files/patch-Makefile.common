@@ -1,6 +1,6 @@
---- Makefile.common.orig	2015-07-08 03:34:34 UTC
+--- Makefile.common.orig	2016-06-03 04:50:55 UTC
 +++ Makefile.common
-@@ -258,7 +258,6 @@ ifndef LTO
+@@ -252,7 +252,6 @@ ifndef LTO
      endif
  endif
  
@@ -8,13 +8,12 @@
  COMPILERFLAGS=
  
  ifeq ($(PACKAGE_REPOSITORY),0)
-@@ -278,8 +277,8 @@ ifneq ($(RELEASE)$(DEBUGANYWAY),10)
-     OPTIMIZATIONS += $(DEBUGFLAG)
+@@ -273,7 +272,7 @@ ifneq ($(RELEASE)$(DEBUGANYWAY),10)
  endif
  
  CONLYFLAGS=-std=gnu99 -Wimplicit -Werror-implicit-function-declaration
--CPPONLYFLAGS= -fno-exceptions -fno-rtti -Wno-write-strings
-+CPPONLYFLAGS= -fno-exceptions -fno-rtti -fpermissive -Wno-write-strings
- ASFORMAT=elf$(SYSBITS)
+-CXXONLYFLAGS= -fno-exceptions -fno-rtti
++CXXONLYFLAGS= -fno-exceptions -fno-rtti -fpermissive
+ ASFORMAT=elf$(BITS)
  ASFLAGS=-s -f $(ASFORMAT) #-g
  LINKERFLAGS=
