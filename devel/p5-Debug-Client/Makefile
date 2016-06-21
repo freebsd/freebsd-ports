@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-PadWalker>=1.96:devel/p5-PadWalker \
-		p5-ReadLine-Perl>=1.0303:devel/p5-ReadLine-Perl
+		p5-Term-ReadLine-Perl>=1.0303:devel/p5-Term-ReadLine-Perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-HomeDir>=1:devel/p5-File-HomeDir \
-		p5-ReadLine-Gnu>=1.20:devel/p5-ReadLine-Gnu \
+		p5-Term-ReadLine-Gnu>=1.20:devel/p5-Term-ReadLine-Gnu \
 		p5-Test-CheckDeps>=0.006:devel/p5-Test-CheckDeps \
 		p5-Test-Class>=0.39:devel/p5-Test-Class \
 		p5-Test-Deep>=0.110:devel/p5-Test-Deep \

@@ -13,7 +13,7 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Interactive shell used to administer ldap directories
 
 BUILD_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
-		p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl \
+		p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl \
 		p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-ParseLex>=0:devel/p5-ParseLex

@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Term-Size>=0:devel/p5-Term-Size \
 		p5-Term-ReadKey>=2.14:devel/p5-Term-ReadKey \
-		p5-ReadLine-Gnu>=0:devel/p5-ReadLine-Gnu
+		p5-Term-ReadLine-Gnu>=0:devel/p5-Term-ReadLine-Gnu
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

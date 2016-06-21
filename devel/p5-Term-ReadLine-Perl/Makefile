@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	anes@anes.su
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Quick implementation of the minimal interface to Readline libraries
 
 BUILD_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey

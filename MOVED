@@ -8242,8 +8242,8 @@ graphics/hugin-2016||2016-03-22|overtaken by released version
 net/rubygem-omniauth-cas3||2016-03-28|Removed
 textproc/libvisio||2016-03-28|No longer used by other ports: use textproc/libvisio01 instead
 textproc/libe-book00||2016-03-28|No longer used by other ports: use textproc/libe-book instead
-graphics/libtxc_dxtn|graphics/s2tc|2016-03-29|Superseded by graphics/s2tc
 devel/erlang-ssl_verify_hostname|devel/erlang-ssl_verify_fun|2016-03-28|Project renamed
+graphics/libtxc_dxtn|graphics/s2tc|2016-03-29|Superseded by graphics/s2tc
 www/session2||2016-03-29|Has expired: That is a part of Quixote webapp framework we no longer have in ports
 www/py-django-pipeline14||2016-03-29|Has expired: This port depends upon expired www/py-django16 and have no consumers
 textproc/libwpd||2016-03-29|Has expired: Not used any more
@@ -8321,16 +8321,16 @@ databases/postgresql90-contrib||2016-05-16|Has expired: "EOL was reached in Sept
 databases/postgresql90-pltcl||2016-05-16|Has expired: "EOL was reached in September 2015"
 databases/postgresql90-docs||2016-05-16|Has expired: "EOL was reached in September 2015"
 devel/py-gyp-devel|devel/py-gyp|2016-05-16|Renamed to devel/py-gyp
+databases/py-sqlalchemy|databases/py-sqlalchemy07|2016-05-18|Renamed to databases/py-sqlalchemy07
+databases/py-sqlalchemy-devel|databases/py-sqlalchemy08|2016-05-18|Renamed to databases/py-sqlalchemy08
 sysutils/relaunchd|sysutils/jobd|2016-05-20|Renamed to sysutils/jobd
 dns/nsd3|dns/nsd|2016-05-20|Has expired: NSD 3 is EOL, please upgrade to NSD 4 in dns/nsd
 security/easypg||2016-05-22|Has expired: Included into emacs since 2.3
-databases/py-sqlalchemy|databases/py-sqlalchemy07|2016-05-18|Renamed to databases/py-sqlalchemy07
-databases/py-sqlalchemy-devel|databases/py-sqlalchemy08|2016-05-18|Renamed to databases/py-sqlalchemy08
 misc/kdehier4||2016-05-25|Not used since 2014
 devel/maven-ant-tasks||2016-05-27|Use Maven directly
 graphics/py-imaging|graphics/py-pillow|2016-05-28|Has expired: Unmaintained upstream; use graphics/py-pillow
 textproc/py-curator|textproc/py-elasticsearch-curator-py|2016-05-29|Follow existing Elasticsearch naming conventions
-databases/py-psycopg|databases/py-psycopg2|2016-05-29|Has expired: This port is obsoleted by databases/py-psycopg2.
+databases/py-psycopg|databases/py-psycopg2|2016-05-29|Has expired: This port is obsoleted by databases/py-psycopg2
 security/py-clamav|security/py-pyclamd|2016-05-30|Has expired: Not updated since 2008 by upstream and abandoned in favor of pyClamd (security/py-pyclamd)
 graphics/ruby-gdal||2016-05-31|Has expired: disabled by upstream (https://trac.osgeo.org/gdal/changeset/28756)
 net/omcmd||2016-06-01|Has expired: Unfetchable and depends on expired net/isc-dhcp41-server
@@ -8367,3 +8367,6 @@ www/drupal6-page_title||2016-06-18|Has expired: www/drupal6 upstream is EOL and 
 www/drupal6-cck||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
 www/drupal6||2016-06-18|Has expired: EOL upstream as of 2016-02-24
 x11-toolkits/gtk-sharp10||2016-06-20|Not depend on anymore superceeded by gtk-sharp20 and gtk-sharp30
+devel/p5-ReadLine-Perl|devel/p5-Term-ReadLine-Perl|2016-06-21|Duplicates
+devel/p5-ReadLine-Gnu|devel/p5-Term-ReadLine-Gnu|2016-06-21|Rename to match upstream
+devel/p5-ReadLine-TTYtter|devel/p5-Term-ReadLine-TTYtter|2016-06-21|Rename to match upstream

@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-libwww>=5.827:www/p5-libwww \
 		p5-File-Stat-Bits>=1.01:sysutils/p5-File-Stat-Bits \
-		p5-ReadLine-Gnu>=1.09:devel/p5-ReadLine-Gnu \
+		p5-Term-ReadLine-Gnu>=1.09:devel/p5-Term-ReadLine-Gnu \
 		p5-Term-ScreenColor>=1.13:devel/p5-Term-ScreenColor
 
 USES=		perl5

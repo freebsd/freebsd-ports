@@ -1,12 +1,11 @@
 # Created by: Matthew Hunt <mph@pobox.com>
 # $FreeBSD$
 
-PORTNAME=	ReadLine-Gnu
+PORTNAME=	Term-ReadLine-Gnu
 PORTVERSION=	1.31
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN/Term
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Term-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Allow Term::ReadLine to use GNU readline
