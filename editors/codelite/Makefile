@@ -3,6 +3,7 @@
 
 PORTNAME=	codelite
 PORTVERSION=	9.1
+PORTREVISION=	1
 CATEGORIES=	editors devel
 
 MAINTAINER=	mokhi64@gmail.com
@@ -16,13 +17,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	eranif
 
 USES=		cmake:outsource compiler:c++11-lib dos2unix execinfo gettext \
-		shebangfix sqlite
+		pathfix shebangfix sqlite
 DOS2UNIX_GLOB=	*.cpp *.txt
 SHEBANG_FILES=	Runtime/codelite_xterm
 bash_CMD=	/bin/sh
 USE_WX=		3.0
-CMAKE_ARGS=	-DENABLE_LLDB:STRING=0 \
-		-DPREFIX:STRING="${PREFIX}" \
+CMAKE_ARGS=	-DPREFIX:STRING="${PREFIX}" \
 		-DIS_FREEBSD:STRING=1 \
 		-DCL_WX_CONFIG:STRING="${WX_CONFIG:T}"
 USE_LDCONFIG=	${PREFIX}/lib/codelite
@@ -33,22 +33,8 @@ LDFLAGS+=	${EXECINFO_LDFLAGS}
 
 OPTIONS_DEFINE=		CSCOPE SFTP
 OPTIONS_RADIO=		CLANG
-OPTIONS_RADIO_CLANG=	CLANG34 CLANG35 CLANG36 CLANG37
 OPTIONS_SUB=		yes
 
-CLANG_DESC=		Clang code-completion
-CLANG34_DESC=		Clang 3.4.x
-CLANG34_BUILD_DEPENDS=	clang34>0:lang/clang34
-CLANG34_RUN_DEPENDS=	clang34>0:lang/clang34
-CLANG35_DESC=		Clang 3.5.x
-CLANG35_BUILD_DEPENDS=	clang35>0:lang/clang35
-CLANG35_RUN_DEPENDS=	clang35>0:lang/clang35
-CLANG36_DESC=		Clang 3.6.x
-CLANG36_BUILD_DEPENDS=	clang36>0:lang/clang36
-CLANG36_RUN_DEPENDS=	clang36>0:lang/clang36
-CLANG37_DESC=		Clang 3.7.x
-CLANG37_BUILD_DEPENDS=	clang37>0:lang/clang37
-CLANG37_RUN_DEPENDS=	clang37>0:lang/clang37
 CSCOPE_DESC=		CScope integration
 CSCOPE_RUN_DEPENDS=	cscope:devel/cscope
 SFTP_DESC=		Secure FTP support via libssh
@@ -56,12 +42,27 @@ SFTP_LIB_DEPENDS=	libssh.so:security/libssh
 SFTP_CMAKE_OFF=		-DENABLE_SFTP:STRING=0
 SFTP_USES=		localbase
 
+CLANG_DESC=		Clang code-completion
+
+.for v in 34 35 36 37 38
+OPTIONS_RADIO_CLANG+=	CLANG$v
+CLANG$v_DESC=		Clang ${v:C/(.)(.)/\1.\2.x/}
+CLANG$v_BUILD_DEPENDS=	clang$v>0:lang/clang$v
+CLANG$v_RUN_DEPENDS=	clang$v>0:lang/clang$v
+
+post-patch-CLANG$v-on:
+	@${REINPLACE_CMD} -e \
+		's|/usr/lib/llvm-.*/|${LOCALBASE}/llvm$v/|' \
+		${WRKSRC}/cmake/Modules/FindLibClang.cmake \
+		${WRKSRC}/cmake/Modules/FindLibLLDB.cmake
+.endfor
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCLANG34} || ${PORT_OPTIONS:MCLANG35} || ${PORT_OPTIONS:MCLANG36}
-CMAKE_ARGS+=	-DENABLE_CLANG:STRING=1
+.if ${PORT_OPTIONS:MCLANG*}
+CMAKE_ARGS+=	-DENABLE_LLDB:STRING=1 -DENABLE_CLANG:STRING=1
 .else
-CMAKE_ARGS+=	-DENABLE_CLANG:STRING=0
+CMAKE_ARGS+=	-DENABLE_LLDB:STRING=0 -DENABLE_CLANG:STRING=0
 .endif
 
 post-patch:
@@ -83,20 +84,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/ADDITIONAL_LIBRARIES/s|""|"-lexecinfo"|' \
 		${WRKSRC}/sdk/codelite_cppcheck/CMakeLists.txt
-
-post-patch-CLANG34-on:
 	@${REINPLACE_CMD} -e \
-		's|/usr/lib/llvm-.*/|${LOCALBASE}/llvm34/|' \
-		${WRKSRC}/cmake/Modules/FindLibClang.cmake
-
-post-patch-CLANG35-on:
-	@${REINPLACE_CMD} -e \
-		's|/usr/lib/llvm-.*/|${LOCALBASE}/llvm35/|' \
-		${WRKSRC}/cmake/Modules/FindLibClang.cmake
-
-post-patch-CLANG36-on:
-	@${REINPLACE_CMD} -e \
-		's|/usr/lib/llvm-.*/|${LOCALBASE}/llvm36/|' \
+		's|/bin/grep|/usr/bin/grep|' \
 		${WRKSRC}/cmake/Modules/FindLibClang.cmake
 
 .include <bsd.port.mk>
