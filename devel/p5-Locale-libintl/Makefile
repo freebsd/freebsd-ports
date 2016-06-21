@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Locale-libintl
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,12 @@ COMMENT=	Internationalization library for Perl
 
 LICENSE=	LGPL21
 
-USES=		gettext perl5
+USES=		gettext iconv:translit perl5
 USE_PERL5=	configure
+
+post-configure:
+	@${REINPLACE_CMD} -e '/cd gettext_xs/s=cd =cd $$(.CURDIR)/=' \
+		${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Locale/gettext_xs/gettext_xs.so
