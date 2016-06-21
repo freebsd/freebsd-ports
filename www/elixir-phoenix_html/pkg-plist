@@ -6,9 +6,13 @@ lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Format.beam
 lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Link.beam
 lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Atom.beam
 lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.BitString.beam
+lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Date.beam
+lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.DateTime.beam
 lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Float.beam
 lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Integer.beam
 lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.List.beam
+lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.NaiveDateTime.beam
+lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Time.beam
 lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.Tuple.beam
 lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Safe.beam
 lib/elixir/lib/phoenix_html/ebin/Elixir.Phoenix.HTML.Tag.beam
