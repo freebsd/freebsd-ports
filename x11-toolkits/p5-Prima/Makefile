@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Prima
-PORTVERSION=	1.46
+PORTVERSION=	1.47
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,8 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libtiff.so:graphics/tiff
 
 OPTIONS_DEFINE=	GTK2 ICONV XFT
@@ -21,7 +23,7 @@ OPTIONS_DEFAULT=ICONV XFT
 
 USES=		jpeg perl5 pkgconfig
 USE_PERL5=	configure
-USE_XORG=	x11 xext xpm xrender
+USE_XORG=	x11 xext xpm xrender xrandr
 MAKE_JOBS_UNSAFE=	yes
 
 GTK2_CONFIGURE_OFF=	WITH_GTK2=0
@@ -36,5 +38,7 @@ XFT_USE=		XORG=xft
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Prima/Prima.so
+	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' \
+		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/Prima/Config.pm
 
 .include <bsd.port.mk>

@@ -47,6 +47,7 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/DockManager.pm
 %%SITE_ARCH%%/Prima/Docks.pm
 %%SITE_ARCH%%/Prima/Drawable.pod
+%%SITE_ARCH%%/Prima/Drawable/Basic.pm
 %%SITE_ARCH%%/Prima/Drawable/CurvedText.pm
 %%SITE_ARCH%%/Prima/Drawable/Subcanvas.pm
 %%SITE_ARCH%%/Prima/Edit.pm
@@ -178,6 +179,8 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/Window.pod
 %%SITE_ARCH%%/Prima/X11.pod
 %%SITE_ARCH%%/Prima/codecs.pod
+%%SITE_ARCH%%/Prima/conversions.gif
+%%SITE_ARCH%%/Prima/curvedtext.gif
 %%SITE_ARCH%%/Prima/examples/Hand.gif
 %%SITE_ARCH%%/Prima/examples/amba.pl
 %%SITE_ARCH%%/Prima/examples/animate.pl
@@ -234,14 +237,19 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/examples/transparent.pl
 %%SITE_ARCH%%/Prima/examples/triangle.pl
 %%SITE_ARCH%%/Prima/faq.pod
+%%SITE_ARCH%%/Prima/fills.gif
 %%SITE_ARCH%%/Prima/fontabc.gif
 %%SITE_ARCH%%/Prima/gettextbox.gif
 %%SITE_ARCH%%/Prima/gp-problems.pod
 %%SITE_ARCH%%/Prima/image-load.pod
 %%SITE_ARCH%%/Prima/internals.pod
 %%SITE_ARCH%%/Prima/leadings.gif
+%%SITE_ARCH%%/Prima/lineends.gif
+%%SITE_ARCH%%/Prima/linejoins.gif
+%%SITE_ARCH%%/Prima/linepats.gif
 %%SITE_ARCH%%/Prima/noARGV.pm
 %%SITE_ARCH%%/Prima/noX11.pm
+%%SITE_ARCH%%/Prima/scalings.gif
 %%SITE_ARCH%%/Prima/sys/gtk2/FileDialog.pm
 %%SITE_ARCH%%/Prima/sys/win32/FileDialog.pm
 %%SITE_ARCH%%/Prima/sys/win32/sysimage.gif
@@ -260,6 +268,7 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/tutorial/menu1.gif
 %%SITE_ARCH%%/Prima/tutorial/menu2.gif
 %%SITE_ARCH%%/Prima/tutorial/menu3.gif
+%%SITE_ARCH%%/Prima/windings.gif
 %%SITE_ARCH%%/auto/Prima/Prima.so
 %%SITE_ARCH%%/gencls.pod
 %%PERL5_MAN1%%/VB.1.gz
@@ -283,6 +292,7 @@ bin/tmlink
 %%PERL5_MAN3%%/Prima::DetailedOutline.3.gz
 %%PERL5_MAN3%%/Prima::DockManager.3.gz
 %%PERL5_MAN3%%/Prima::Docks.3.gz
+%%PERL5_MAN3%%/Prima::Drawable::Basic.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::CurvedText.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Subcanvas.3.gz
 %%PERL5_MAN3%%/Prima::Edit.3.gz
