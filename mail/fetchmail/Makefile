@@ -3,7 +3,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
 		http://mandree.home.pages.de/${PORTNAME}/
@@ -16,7 +16,6 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-# Note USERS can only contain a single word as parts below rely on that.
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
@@ -24,8 +23,7 @@ USES=		cpe gmake shebangfix tar:xz
 SHEBANG_FILES=	fetchmailconf.py
 
 USE_RC_SUBR=	fetchmail
-SUB_FILES=	pkg-message pkg-install pkg-deinstall
-SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} PORTNAME=${PORTNAME}
+SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -36,60 +34,42 @@ CONFIGURE_ENV=	ac_cv_have_decl_SSLv2_client_method=no
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	X11 NLS NTLM GSSAPI POP2 DOCS
-OPTIONS_DEFAULT=	GSSAPI
+OPTIONS_DEFINE=	X11 NLS NTLM POP2 DOCS
+OPTIONS_SINGLE=	GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
+OPTIONS_DEFAULT=	GSSAPI_BASE
 OPTIONS_SUB=	yes
+
+GSSAPI_BASE_USES=	gssapi
+GSSAPI_BASE_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_MIT_USES=	gssapi:mit
+GSSAPI_MIT_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
+
 X11_DESC=	Python/Tkinter dependencies for ``fetchmailconf''
 POP2_DESC=	POP2 Protocol support[obsolete]
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-NLS_CONFIGURE_ON=	--enable-nls
-NLS_CONFIGURE_OFF=	--disable-nls
+
+NTLM_CONFIGURE_ENABLE=	NTLM
+NTLM_PORTDOCS=		README.NTLM
+
+# POP2 is obsolete
+POP2_CONFIGURE_ENABLE=	POP2
+
+X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter
+X11_USES=	python
+X11_CONFIGURE_OFF=	PYTHON=:
+X11_SUB_FILES_OFF=	fetchmailconf
 
 PORTDOCS=	FAQ FEATURES NEWS NOTES README README.SSL \
 		design-notes.html fetchmail-FAQ.html fetchmail-features.html \
 		esrs-design-notes.html
 
-.include <bsd.port.options.mk>
-
-# Pop2 is obsolete
-.if ${PORT_OPTIONS:MPOP2}
-CONFIGURE_ARGS+=	--enable-POP2
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USES+=		python
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter
-PLIST_SUB+=	NOX11="@comment "
-.else
-CONFIGURE_ARGS+=	PYTHON=:
-SUB_FILES+=	fetchmailconf
-PLIST_SUB+=	NOX11=""
-.endif
-
-.if ${PORT_OPTIONS:MGSSAPI}
-.if !defined(KRB5_HOME)
-.if exists(${LOCALBASE}/lib/libkrb5.a)
-KRB5_HOME=	${LOCALBASE}
-.elif exists(/usr/lib/libkrb5.a)
-KRB5_HOME=	/usr
-.endif
-.endif
-
-.if defined(KRB5_HOME) && !exists(${KRB5_HOME}/lib/libkrb5.a)
-BROKEN=	KRB5_HOME is set but doesn\'t provide lib/libkrb5.a
-.endif
-
-.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libkrb5.a)
-CONFIGURE_ARGS+=	--with-gssapi=${KRB5_HOME}
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MNTLM}
-CONFIGURE_ARGS+=	--enable-NTLM
-PORTDOCS+=	README.NTLM
-.endif
+#.include <bsd.port.options.mk>
 
 post-patch:
 .if !exists(/usr/lib/libcom_err.so)
@@ -99,7 +79,8 @@ post-patch:
 post-build:
 	@${MAKE_CMD} -C ${WRKSRC} check
 
-post-install:
+post-stage:
+	${INSTALL} -d ${STAGEDIR}/var/run/fetchmail
 	${INSTALL_DATA} ${FILESDIR}/fetchmailrc.sample \
 		${STAGEDIR}${PREFIX}/etc/fetchmailrc.sample
 
