@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Scope-Upper
-PORTVERSION=	0.28
-PORTREVISION=	1
+PORTVERSION=	0.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VPIT
@@ -21,10 +20,4 @@ USE_PERL5=	configure
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Scope/Upper/Upper.so
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502308
-BROKEN=		Fails to build after argarray removal
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
