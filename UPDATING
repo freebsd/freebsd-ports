@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160621
+  AFFECTS: users of ftp/wget
+  AUTHOR: vlad-fbsd@acheronmedia.com
+
+  Wget 1.18 fixes a security vulnerability (CVE-2016-4971) and the fix
+  introduces a backward-incompatibility for HTTP->FTP redirects. Any script that
+  relies on the old behaviour must use --trust-server-names in order to trust
+  the HTTP response and redirect to the new filename.
+
 20160619
   AFFECTS: users of databases/py-apsw
   AUTHOR: rm@FreeBSD.org
