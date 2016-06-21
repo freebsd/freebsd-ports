@@ -1,13 +1,12 @@
 # Created by: Sébastien Santoro <dereckson@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	ReadLine-TTYtter
+PORTNAME=	Term-ReadLine-TTYtter
 PORTVERSION=	1.4
 PORTREVISION=	2
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN/Term
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Term-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Perl5 module for Term::ReadLine allowing rich editing

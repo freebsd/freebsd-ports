@@ -66,8 +66,8 @@ FFTW_LIB_DEPENDS=	libfftw.so:math/fftw
 GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 HDF_LIB_DEPENDS=	libdf.so:science/hdf
 PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
-READLINE_RUN_DEPENDS=	p5-ReadLine-Gnu>=0:devel/p5-ReadLine-Gnu
-READLINE_RUN_DEPENDS_OFF=	p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl
+READLINE_RUN_DEPENDS=	p5-Term-ReadLine-Gnu>=0:devel/p5-Term-ReadLine-Gnu
+READLINE_RUN_DEPENDS_OFF=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
 SINK_RUN_DEPENDS=	ppmtogif:graphics/netpbm \
 			mpeg_encode:multimedia/mpeg_encode \
 			saoimage:astro/saoimage
