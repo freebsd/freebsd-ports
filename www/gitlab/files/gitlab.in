@@ -2,8 +2,6 @@
 
 # $FreeBSD$
 
-# $FreeBSD$
-
 ### BEGIN INIT INFO
 # Provides:          gitlab
 # Required-Start:    $local_fs $remote_fs $network $syslog redis-server
