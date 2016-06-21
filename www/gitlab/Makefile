@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	8.7.5
+PORTVERSION=	8.8.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -23,8 +23,8 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-default_value_for>=3.0.1:devel/rubygem-default_value_for \
 	rubygem-pg>=0.18.2:databases/rubygem-pg \
 	rubygem-devise-rails4>=3.5.4:devel/rubygem-devise-rails4 \
+	rubygem-doorkeeper>=3.1:security/rubygem-doorkeeper \
 	rubygem-devise-async-rails4>=0.9.0:devel/rubygem-devise-async-rails4 \
-	rubygem-doorkeeper>=2.2.0:security/rubygem-doorkeeper \
 	rubygem-omniauth>=1.3.1:security/rubygem-omniauth \
 	rubygem-omniauth-auth0>=1.4.1:net/rubygem-omniauth-auth0 \
 	rubygem-omniauth-azure-oauth2>=0.0.6:net/rubygem-omniauth-azure-oauth2 \
@@ -39,6 +39,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-omniauth-twitter>=1.2.0:net/rubygem-omniauth-twitter \
 	rubygem-omniauth_crowd>=2.2.0:devel/rubygem-omniauth_crowd \
 	rubygem-rack-oauth2>=1.2.1:security/rubygem-rack-oauth2 \
+	rubygem-jwt>=1.0:www/rubygem-jwt \
 	rubygem-recaptcha>=0:devel/rubygem-recaptcha \
 	rubygem-akismet>=2.0:devel/rubygem-akismet \
 	rubygem-devise-two-factor>=2.0.0:security/rubygem-devise-two-factor \
@@ -98,14 +99,14 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-asana>=0.4.0:www/rubygem-asana \
 	rubygem-ruby-fogbugz>=0.2.1:devel/rubygem-ruby-fogbugz \
 	rubygem-d3_rails-rails4>=3.5.0:www/rubygem-d3_rails-rails4 \
-	rubygem-cal-heatmap-rails-rails4>=3.5.0:www/rubygem-cal-heatmap-rails-rails4 \
+	rubygem-cal-heatmap-rails-rails4>=3.6.0:www/rubygem-cal-heatmap-rails-rails4 \
 	rubygem-underscore-rails>=1.8.0:www/rubygem-underscore-rails \
 	rubygem-sanitize>=2.0:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2:textproc/rubygem-babosa \
 	rubygem-loofah>=2.0.3:textproc/rubygem-loofah \
 	rubygem-licensee>=8.0:devel/rubygem-licensee \
 	rubygem-rack-attack>=4.3.1:www/rubygem-rack-attack \
-	rubygem-ace-rails-ap>=2.0.1:www/rubygem-ace-rails-ap \
+	rubygem-ace-rails-ap>=4.0.2:www/rubygem-ace-rails-ap \
 	rubygem-mousetrap-rails>=1.4.6:www/rubygem-mousetrap-rails \
 	rubygem-charlock_holmes>=0.7.3:textproc/rubygem-charlock_holmes \
 	rubygem-sass-rails5>=5.0.0:textproc/rubygem-sass-rails5 \
@@ -119,14 +120,14 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-gitlab_emoji>=0.3:graphics/rubygem-gitlab_emoji \
 	rubygem-gon>=6.0.1:www/rubygem-gon \
 	rubygem-jquery-atwho-rails-rails4>=1.3.2:www/rubygem-jquery-atwho-rails-rails4 \
-	rubygem-jquery-rails4>=4.0.0:www/rubygem-jquery-rails4 \
-	rubygem-jquery-scrollto-rails>=1.4.3:www/rubygem-jquery-scrollto-rails \
+	rubygem-jquery-rails4>=4.1.0:www/rubygem-jquery-rails4 \
 	rubygem-jquery-ui-rails-rails4>=5.0.0:www/rubygem-jquery-ui-rails-rails4 \
 	rubygem-raphael-rails>=2.1.2:www/rubygem-raphael-rails \
 	rubygem-request_store>=1.3.0:devel/rubygem-request_store \
 	rubygem-select2-rails>=3.5.9:www/rubygem-select2-rails \
 	rubygem-virtus>=1.0.1:devel/rubygem-virtus \
 	rubygem-net-ssh>=3.0.1:security/rubygem-net-ssh \
+	rubygem-base32>=0.3.2:converters/rubygem-base32 \
 	rubygem-sentry-raven>=0.15.4:devel/rubygem-sentry-raven \
 	rubygem-premailer-rails>=1.9.0:mail/rubygem-premailer-rails \
 	rubygem-gitlab_meta>=7.0:devel/rubygem-gitlab_meta \
@@ -134,13 +135,14 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-newrelic-grape>=0:devel/rubygem-newrelic-grape \
 	rubygem-newrelic_rpm>=3.14:devel/rubygem-newrelic_rpm \
 	rubygem-octokit>=4.3.0:net/rubygem-octokit \
-	rubygem-mail_room>=0.6.1:mail/rubygem-mail_room \
+	rubygem-mail_room>=0.7:mail/rubygem-mail_room \
 	rubygem-email_reply_parser>=0.5.8:mail/rubygem-email_reply_parser \
 	rubygem-activerecord-deprecated_finders>=1.0.3:devel/rubygem-activerecord-deprecated_finders \
 	rubygem-activerecord-session_store>=0.1.0:databases/rubygem-activerecord-session_store \
 	rubygem-nested_form>=0.3.2:www/rubygem-nested_form \
 	rubygem-oauth2>=1.0.0:net/rubygem-oauth2 \
 	rubygem-paranoia>=2.0:databases/rubygem-paranoia \
+	rubygem-health_check>=1.5.1:devel/rubygem-health_check \
 	rubygem-rinku>=1.7.3:www/rubygem-rinku
 
 USE=	pgsql=yes
@@ -165,6 +167,7 @@ do-install:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
 	${FIND} ${WRKSRC} -name '*.gitkeep' -delete
+	${FIND} ${WRKSRC} -name '*.gitignore' -delete
 	${FIND} ${WRKSRC} -name "Gemfile.lock" -delete
 	${MV} ${WRKSRC}/config/gitlab.yml.example ${WRKSRC}/config/gitlab.yml.sample
 	${MV} ${WRKSRC}/config/unicorn.rb.example ${WRKSRC}/config/unicorn.rb.sample
