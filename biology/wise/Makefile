@@ -10,8 +10,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent algorithms for DNA searches
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 BUILD_WRKSRC=	${WRKSRC}/src
 
 USES=		pkgconfig
@@ -19,10 +17,6 @@ USE_GNOME=	glib20
 MAKEFILE=	makefile
 
 SUB_FILES=	pkg-message
-
-PORTDOCS=	*
-PORTEXAMPLES=	*
-PLIST_FILES=	${BINFILES:S,^,bin/,} ${DATAFILES:S,^,%%DATADIR%%/,}
 
 #
 # Actually want an 'ALL_TARGET = all perl' which then requires
@@ -42,6 +36,12 @@ DATAFILES=	BLOSUM30.bla BLOSUM45.bla BLOSUM62.bla BLOSUM80.bla aa.rnd \
 		human.stats idenity.bla methods pb.gf pombe.gf tm.pri \
 		wise.2 wise.per worm.gf
 
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	${BINFILES:S,^,bin/,} ${DATAFILES:S,^,%%DATADIR%%/,}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name "makefile" | ${XARGS} \
 		${REINPLACE_CMD} -e \
@@ -60,8 +60,12 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/wisecfg && ${INSTALL_DATA} ${DATAFILES} \
 		${STAGEDIR}${DATADIR})
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/test_data && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

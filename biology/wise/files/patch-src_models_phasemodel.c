@@ -1,4 +1,4 @@
---- src/models/phasemodel.c.orig	2007-09-08 08:05:32.000000000 +0000
+--- src/models/phasemodel.c.orig	2007-09-08 08:05:32 UTC
 +++ src/models/phasemodel.c
 @@ -3,6 +3,10 @@ extern "C" {
  #endif
