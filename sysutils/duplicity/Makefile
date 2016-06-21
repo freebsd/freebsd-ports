@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.7.06
+PORTVERSION=	0.7.07.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.7-series/${PORTVERSION}/+download/
 
 MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
 
-LIB_DEPENDS=	librsync.so:net/librsync
+LIB_DEPENDS=	librsync.so:net/librsync1
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>=0:devel/py-lockfile
 
 USES=		python:2
@@ -91,6 +91,7 @@ post-patch:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/duplicity/_librsync.so
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
