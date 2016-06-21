@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poison
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
