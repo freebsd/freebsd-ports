@@ -2,7 +2,6 @@
 %%SITE_PERL%%/Method/Generate/BuildAll.pm
 %%SITE_PERL%%/Method/Generate/Constructor.pm
 %%SITE_PERL%%/Method/Generate/DemolishAll.pm
-%%SITE_PERL%%/Method/Inliner.pm
 %%SITE_PERL%%/Moo.pm
 %%SITE_PERL%%/Moo/HandleMoose.pm
 %%SITE_PERL%%/Moo/HandleMoose/FakeMetaClass.pm
