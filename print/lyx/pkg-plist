@@ -295,6 +295,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/de/ItemizeBullets.lyx
 %%DATADIR%%/examples/de/Lebenslauf.lyx
 %%DATADIR%%/examples/de/MultilingualCaptions.lyx
+%%DATADIR%%/examples/de/PDF-comment.lyx
 %%DATADIR%%/examples/de/beamer-article.lyx
 %%DATADIR%%/examples/de/beamer.lyx
 %%DATADIR%%/examples/de/beispiel_gelyxt.lyx
@@ -2251,6 +2252,9 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/lyx2lyx/lyx_2_1.py
 %%DATADIR%%/lyx2lyx/lyx_2_1.pyc
 %%DATADIR%%/lyx2lyx/lyx_2_1.pyo
+%%DATADIR%%/lyx2lyx/lyx_2_2.py
+%%DATADIR%%/lyx2lyx/lyx_2_2.pyc
+%%DATADIR%%/lyx2lyx/lyx_2_2.pyo
 %%DATADIR%%/lyx2lyx/parser_tools.py
 %%DATADIR%%/lyx2lyx/parser_tools.pyc
 %%DATADIR%%/lyx2lyx/parser_tools.pyo
