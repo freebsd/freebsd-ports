@@ -11,6 +11,9 @@ COMMENT=	Perl script to produce statistics out of Squid log files
 
 LICENSE=	GPLv2
 
+RUN_DEPENDS=	p5-GD-Graph>=0:graphics/p5-GD-Graph \
+		p5-NetAddr-Ip>=0:net-mgmt/p5-NetAddr-IP
+
 CONFLICTS_INSTALL=	calamaris-[0-9]*
 
 USES=		shebangfix perl5
