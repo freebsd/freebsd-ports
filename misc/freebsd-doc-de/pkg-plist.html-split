@@ -204,7 +204,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/adding-swap-space.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/anoncvs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/appendices.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-config.html
@@ -259,8 +258,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-dvds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ctm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/current-stable.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvs-tags.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvsup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-browsers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-finance.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-productivity.html
@@ -335,7 +332,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-devices.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-basics.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-compiling.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
@@ -428,7 +424,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-accounting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-advisories.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-intro.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-portaudit.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-pkg.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-resourcelimits.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sendmail.html
@@ -462,7 +458,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-bhyve.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-virtualbox.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-compiz-fusion.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config.html
