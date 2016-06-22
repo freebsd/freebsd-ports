@@ -1,5 +1,5 @@
---- gnuefi/Makefile.orig	2014-08-08 21:33:08.000000000 +0200
-+++ gnuefi/Makefile	2014-12-01 02:08:56.000000000 +0100
+--- gnuefi/Makefile.orig	2015-08-17 20:06:47 UTC
++++ gnuefi/Makefile
 @@ -47,6 +47,8 @@ FILES	= reloc_$(ARCH)  
  
  OBJS	= $(FILES:%=%.o)
@@ -8,3 +8,4 @@
 +
  # on aarch64, avoid jump tables before all relocations have been processed
  reloc_aarch64.o: CFLAGS += -fno-jump-tables
+ 
