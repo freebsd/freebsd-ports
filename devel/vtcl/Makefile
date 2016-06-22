@@ -13,19 +13,17 @@ COMMENT=	Application Development Environment for Tcl/Tk
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-NO_BUILD=	yes
-
-USES+=		dos2unix tk:84
+USES=		dos2unix tk:84
 DOS2UNIX_FILES=	configure
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${PREFIX}
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -48,15 +46,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/images/edit/*.gif ${STAGEDIR}${PREFIX}/lib/vtcl/images/edit
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vtcl/lib
 	@(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/vtcl/lib)
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample
 	@(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/sample)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/demo
 	@(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/demo)
-.endif
 
 .include <bsd.port.mk>
