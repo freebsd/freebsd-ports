@@ -130,7 +130,7 @@ IGNORE?=		cannot install: does not work with postgresql${PGSQL_VER_NODOT}-client
 .	endfor
 .    endif # IGNORE_WITH_PGSQL
 
-.if !defined(WANT_PGSQL) || ${WANT_PGSQL} == lib
+.if !defined(WANT_PGSQL) || ${WANT_PGSQL:Mlib}
 LIB_DEPENDS+=	libpq.so.${PGSQL${PGSQL_VER_NODOT}_LIBVER}:databases/postgresql${PGSQL_VER_NODOT}-client
 .endif
 
