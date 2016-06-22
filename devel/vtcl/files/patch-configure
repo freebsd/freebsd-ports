@@ -1,6 +1,6 @@
---- configure.orig	Tue Dec 18 07:20:13 2001
-+++ configure	Wed Feb 27 14:04:17 2002
-@@ -56,9 +56,9 @@
+--- configure.orig	2016-05-23 13:26:31 UTC
++++ configure
+@@ -56,9 +56,9 @@ fi
  echo
  
  cd `dirname $0`
@@ -12,7 +12,7 @@
  #!/bin/sh
  
  PATH_TO_WISH=$WISH
-@@ -70,4 +70,4 @@
+@@ -70,4 +70,4 @@ export VTCL_HOME
  exec \${PATH_TO_WISH} \${VTCL_HOME}/vtcl.tcl \$*
  EOF
  
