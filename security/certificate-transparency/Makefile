@@ -5,7 +5,7 @@ PORTNAME=	certificate-transparency
 PORTVERSION=	20160102
 CATEGORIES=	security
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open framework for monitoring and auditing SSL certificates
 
 LICENSE=	APACHE20
