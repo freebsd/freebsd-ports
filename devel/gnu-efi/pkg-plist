@@ -20,6 +20,7 @@ include/efi/efiprot.h
 include/efi/efipxebc.h
 include/efi/efirtlib.h
 include/efi/efiser.h
+include/efi/efisetjmp.h
 include/efi/efishellintf.h
 include/efi/efishellparm.h
 include/efi/efistdarg.h
@@ -39,6 +40,7 @@ include/efi/protocol/vgaclass.h
 include/efi/romload.h
 include/efi/x86_64/efibind.h
 include/efi/x86_64/efilibplat.h
+include/efi/x86_64/efisetjmp_arch.h
 include/efi/x86_64/pe.h
 lib/crt0-efi-x86_64.o
 lib/elf_x86_64_fbsd_efi.lds

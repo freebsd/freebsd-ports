@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-efi
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.3
 CATEGORIES=	devel
 MASTER_SITES=	SF/gnu-efi
 
@@ -20,5 +20,8 @@ CFLAGS+=	"-fPIC"
 CPPFLAGS+=	"-fPIC"
 MAKE_ARGS+=	CC=${CC} HOSTCC=${CC} AR=${AR}
 ONLY_FOR_ARCHS=	amd64
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/crt0-efi-x86_64.o
 
 .include <bsd.port.mk>
