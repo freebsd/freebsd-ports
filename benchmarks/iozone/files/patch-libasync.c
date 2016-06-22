@@ -37,13 +37,13 @@ and the like) and other warnings.
 +#	endif
  #endif
  #if defined(OSFV5)
-@@ -151,13 +164,13 @@
+@@ -151,13 +164,14 @@
   * this structure type.
   */
 -char version[] = "Libasync Version $Revision: 3.25 $";
 +static const char version[] = "Libasync Version $Revision: 3.25 $";
  struct cache_ent {
- 	struct aiocb myaiocb;			/* For use in small file mode */
+-	struct aiocb myaiocb;			/* For use in small file mode */
  #ifdef _LARGEFILE64_SOURCE 
  #if defined(__CrayX1__)
 -	aiocb64_t myaiocb64;		/* For use in large file mode */
@@ -53,6 +53,8 @@ and the like) and other warnings.
 -#endif 
 +	struct aiocb64 myaiocb;		/* For use in large file mode */
 +#endif
++#else
++	struct aiocb myaiocb;
  #endif 
  	long long fd;				/* File descriptor */
 @@ -192,6 +205,6 @@
