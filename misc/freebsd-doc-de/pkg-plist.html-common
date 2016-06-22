@@ -38,6 +38,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/net-routing.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/pxe-nfs.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/static-routes.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics/disk-layout.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics/example-dir1.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics/example-dir2.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics/example-dir3.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics/example-dir4.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics/example-dir5.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-adduser1.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-adduser2.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-adduser3.png
