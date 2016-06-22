@@ -35,8 +35,7 @@ post-install: <<EOD
   *) target_file="%D/${target_file}" ;;
   esac
   if ! [ -f "${target_file}" ]; then
-    /bin/cp -p "${sample_file}" "${target_file}" && \
-      /bin/chmod u+w "${target_file}"
+    /bin/cp -p "${sample_file}" "${target_file}"
   fi
 EOD
 pre-deinstall: <<EOD
