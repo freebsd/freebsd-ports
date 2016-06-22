@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd-extras
-PORTVERSION=	201606062304
+PORTVERSION=	201606212257
 PORTREVISION?=	0
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.opensmtpd.org/archives/
 # NB: Please reset PORTREVISION to 0 in all slave subports
 # while updating PORTVERSION for master port
 
-MAINTAINER?=	gahr@FreeBSD.org
+MAINTAINER?=	fluffy@FreeBSD.org
 COMMENT?=	Addons for OpenSMTPD
 
 LICENSE?=	ISCL
