@@ -333,6 +333,7 @@
     SUBDIR += gwenview-kde4
     SUBDIR += gx
     SUBDIR += hdr_tools
+    SUBDIR += hiptext
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
     SUBDIR += hs-HGL
