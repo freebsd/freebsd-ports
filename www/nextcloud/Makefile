@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloud
-PORTVERSION=	9.0.50
+PORTVERSION=	9.0.51
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 
