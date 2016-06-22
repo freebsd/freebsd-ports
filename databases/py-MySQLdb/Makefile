@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	farcepest
 GH_PROJECT=	${PORTNAME}1
 
-CONFLICTS=	py*-MySQLdb-[0-9]* py*-MySQLdb5[0-9]-[0-9]*
+CONFLICTS=	py*-MySQLdb-[0-9]* py*-MySQLdb5[0-9]-[0-9]* py*-mysqlclient-[0-9]*
 
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
