@@ -193,6 +193,7 @@ slurm:*:468:
 consul:*:469:
 serf:*:470:
 vault:*:471:
+nomad:*:472:
 _bbstored:*:505:
 radmind:*:506:
 skkserv:*:507:

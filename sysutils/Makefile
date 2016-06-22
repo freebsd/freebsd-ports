@@ -629,6 +629,7 @@
     SUBDIR += nfsping
     SUBDIR += nitrogen
     SUBDIR += no-login
+    SUBDIR += nomad
     SUBDIR += npadmin
     SUBDIR += nrg2iso
     SUBDIR += ntfsprogs
