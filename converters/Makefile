@@ -146,6 +146,7 @@
     SUBDIR += psiconv
     SUBDIR += py-bencode
     SUBDIR += py-bencoder
+    SUBDIR += py-better-bencode
     SUBDIR += py-bsdconv
     SUBDIR += py-iconv
     SUBDIR += py-pisa
