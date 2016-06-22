@@ -6,7 +6,7 @@ PORTVERSION=	3.0.3
 CATEGORIES=	devel
 MASTER_SITES=	SF/gnu-efi
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	SDK for EFI applications
 
 LICENSE=	GPLv2
