@@ -1,0 +1,4 @@
+jaraco.itertools Tools for working with iterables. Complements itertools
+and more_itertools.
+
+WWW: https://github.com/jaraco/jaraco.itertools
