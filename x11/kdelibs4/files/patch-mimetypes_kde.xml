@@ -1,5 +1,5 @@
---- mimetypes/kde.xml.orig	2014-08-21 16:18:35.265799343 +0200
-+++ mimetypes/kde.xml	2014-08-21 16:24:17.444776007 +0200
+--- mimetypes/kde.xml.orig	2016-06-14 20:05:36.032272000 +0000
++++ mimetypes/kde.xml	2016-06-14 20:10:12.125459000 +0000
 @@ -13,64 +13,6 @@
    the mime type there.
  -->
@@ -9,7 +9,7 @@
 -    <comment>Metalink download</comment>
 -    <comment xml:lang="ar">تنزيل Metalink</comment>
 -    <comment xml:lang="ast">Descarga Metalink</comment>
--    <comment xml:lang="bs">metalink preuzimanje</comment>
+-    <comment xml:lang="bs">Metalink preuzimanje</comment>
 -    <comment xml:lang="ca">Baixada de «Metalink»</comment>
 -    <comment xml:lang="ca@valencia">Baixada de «Metalink»</comment>
 -    <comment xml:lang="cs">Stahování Metalink</comment>
@@ -132,7 +132,7 @@
    <mime-type type="application/x-plasma">
      <sub-class-of type="application/zip"/>
      <comment>plasmoid</comment>
-@@ -1544,9 +1426,6 @@
+@@ -1546,9 +1428,6 @@
      <glob pattern="*.pnx"/>
      <glob pattern="*.rdc"/>
    </mime-type>
@@ -142,7 +142,7 @@
    <mime-type type="text/x-hex">
      <sub-class-of type="text/plain"/>
      <comment>Intel® hexadecimal object file</comment>
-@@ -3804,236 +3683,6 @@
+@@ -3462,236 +3341,6 @@
      <glob pattern="*.wmp"/>
    </mime-type>
  
@@ -379,7 +379,7 @@
    <!-- http://www4.wiwiss.fu-berlin.de/bizer/TriG/ -->
    <!-- Used in Nepomuk to encode almost all ontologies -->
    <mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-trig"> <!-- fdo #18089 -->
-@@ -4213,121 +3862,4 @@
+@@ -3872,123 +3521,4 @@
      </magic>
      <glob pattern="*.pic"/>
    </mime-type>
@@ -415,6 +415,7 @@
 -    <comment xml:lang="nb">FIl for Qt oppmerkingsspråk</comment>
 -    <comment xml:lang="nds">Qt-Schriftsatzspraakdatei</comment>
 -    <comment xml:lang="nl">Qt Markup Language-bestand</comment>
+-    <comment xml:lang="nn">Fil for Qt-oppmerkingsspråk</comment>
 -    <comment xml:lang="pl">Plik języka znaczników dla Qt</comment>
 -    <comment xml:lang="pt">Ficheiro na Qt Markup Language</comment>
 -    <comment xml:lang="pt_BR">Arquivo da Qt Markup Language</comment>
@@ -470,6 +471,7 @@
 -    <comment xml:lang="nb">Mobipocket e-bok</comment>
 -    <comment xml:lang="nds">E-Book för Mobipocket</comment>
 -    <comment xml:lang="nl">Mobipocket e-book</comment>
+-    <comment xml:lang="nn">Mobipocket e-bøk</comment>
 -    <comment xml:lang="pl">Mobipocket e-book</comment>
 -    <comment xml:lang="pt">E-Book do Mobipocket</comment>
 -    <comment xml:lang="pt_BR">E-book do Mobipocket</comment>
