@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	kdelibs
-PORTVERSION=	${KDE4_VERSION}
+PORTVERSION=	${KDE4_KDELIBS_VERSION}
 PORTREVISION=	6
 CATEGORIES=	x11 kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=   KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,13 +14,11 @@ COMMENT=	Base set of libraries needed by KDE programs
 LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libjasper.so:graphics/jasper \
 		libpcre.so:devel/pcre \
-		libavahi-core.so:net/avahi-app \
 		libenchant.so:textproc/enchant \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
 		libhal.so:sysutils/hal \
 		libqca.so:devel/qca \
-		libHUpnp.so:net/hupnp \
 		libpolkit-qt-core-1.so:sysutils/polkit-qt \
 		libdbusmenu-qt.so:devel/libdbusmenu-qt \
 		libgrantlee_gui.so:devel/grantlee
@@ -36,7 +34,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	oxygen \
 		attica automoc4 ontologies soprano strigi
-USES=		cmake:outsource fam gettext jpeg perl5 shared-mime-info shebangfix tar:xz
+USES=		cmake:outsource fam gettext jpeg perl5 shared-mime-info \
+		shebangfix tar:xz
 USE_OPENSSL=	yes
 USE_QT4=	corelib dbus declarative designer_build gui \
 		network opengl phonon qt3support \
@@ -52,7 +51,6 @@ CMAKE_ARGS+=	-DWITH_ACL:BOOL=Off \
 		-DWITH_ASPELL:BOOL=Off \
 		-DWITH_HSPELL:BOOL=Off \
 		-DWITH_UDev:BOOL=Off \
-		-DHUPNP_ENABLED:BOOL=On \
 		-DKDE_DISTRIBUTION_TEXT:STRING="${OPSYS}" \
 		-DKDE_DEFAULT_HOME:STRING=".kde4"
 
@@ -75,6 +73,15 @@ SHEBANG_FILES=	kdecore/kconfig_compiler/checkkcfg.pl \
 		kio/useragent.pl \
 		kio/proxytype.pl \
 		kioslave/http/kcookiejar/kcookiescfg.pl
+
+OPTIONS_DEFINE=	AVAHI UPNP
+OPTIONS_DEFAULT=AVAHI
+
+AVAHI_LIB_DEPENDS=	libavahi-core.so:${PORTSDIR}/net/avahi-app
+
+UPNP_DESC=	UPnP backend for Solid (WARNING: Unstable)
+UPNP_LIB_DEPENDS=	libHUpnp.so:${PORTSDIR}/net/hupnp
+UPNP_CMAKE_ON=	-DHUPNP_ENABLED:BOOL=On
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \

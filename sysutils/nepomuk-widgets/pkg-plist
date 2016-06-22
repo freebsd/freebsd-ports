@@ -9,4 +9,4 @@ lib/cmake/NepomukWidgets/NepomukWidgetsTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cm
 lib/cmake/NepomukWidgets/NepomukWidgetsTargetsWithPrefix.cmake
 lib/libnepomukwidgets.so
 lib/libnepomukwidgets.so.4
-lib/libnepomukwidgets.so.%%KDE4_GENERIC_LIB_VERSION%%
+lib/libnepomukwidgets.so.%%KDE4_KDELIBS_VERSION%%
