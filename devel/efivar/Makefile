@@ -5,7 +5,7 @@ PORTNAME=	efivar
 PORTVERSION=	0.15
 CATEGORIES=	devel
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools and library to manipulate EFI variables
 
 LICENSE=	LGPL21

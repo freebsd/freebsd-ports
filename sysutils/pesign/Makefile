@@ -5,7 +5,7 @@ PORTNAME=	pesign
 PORTVERSION=	0.110
 CATEGORIES=	sysutils
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv2
