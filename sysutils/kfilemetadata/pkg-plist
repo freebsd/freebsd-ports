@@ -21,7 +21,7 @@ lib/kde4/kfilemetadata_popplerextractor.so
 lib/kde4/kfilemetadata_taglibextractor.so
 lib/libkfilemetadata.so
 lib/libkfilemetadata.so.4
-lib/libkfilemetadata.so.%%KDE4_GENERIC_LIB_VERSION%%
+lib/libkfilemetadata.so.%%KDE4_KDELIBS_VERSION%%
 share/kde4/services/kfilemetadata_epubextractor.desktop
 share/kde4/services/kfilemetadata_exiv2extractor.desktop
 share/kde4/services/kfilemetadata_ffmpegextractor.desktop

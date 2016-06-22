@@ -1,3 +1,4 @@
+# Created by: Raphael Kubo da Costa <rakuco@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nepomuk-core

@@ -1,3 +1,6 @@
+Find the okular headers when they are installed into a subdirectory of
+${LOCALBASE}/include too (it currently follows x11/kdelibs4 and installs into
+include/kde4).
 --- OkularConfig.cmake.orig	2016-03-11 08:43:22 UTC
 +++ OkularConfig.cmake
 @@ -7,7 +7,7 @@ get_filename_component( _okularBaseDir  
