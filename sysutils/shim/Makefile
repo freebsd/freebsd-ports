@@ -6,7 +6,7 @@ PORTVERSION=	0.8
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UEFI Secure Boot shim loader
 
 LICENSE=	BSD2CLAUSE

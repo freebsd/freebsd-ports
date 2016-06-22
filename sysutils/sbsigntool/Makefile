@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpad.net/ubuntu/+archive/primary/+files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv3
