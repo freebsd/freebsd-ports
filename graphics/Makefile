@@ -543,7 +543,6 @@
     SUBDIR += linux-adobesvg
     SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-dri
-    SUBDIR += linux-c6-dri-compat
     SUBDIR += linux-c6-gdk-pixbuf2
     SUBDIR += linux-c6-glx-utils
     SUBDIR += linux-c6-jpeg
