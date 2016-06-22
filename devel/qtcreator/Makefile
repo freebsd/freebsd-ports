@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	4.0.1
+DISTVERSION=	4.0.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -56,7 +56,5 @@ post-patch:
 				${WRKSRC}/share/qtcreator/debugger/dumper.py
 	${REINPLACE_CMD} -e 's|/usr/bin/ant|${LOCALBASE}/bin/ant|' \
 				${WRKSRC}/src/plugins/android/androidsettingswidget.cpp
-	${REINPLACE_CMD} -e '/unix:!openbsd: LIBS += -ldl/d' \
-				${WRKSRC}/src/libs/sqlite/sqlite-lib.pri
 
 .include <bsd.port.mk>
