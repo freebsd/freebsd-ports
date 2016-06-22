@@ -603,6 +603,7 @@
     SUBDIR += py-gsl
     SUBDIR += py-igraph
     SUBDIR += py-intspan
+    SUBDIR += py-keras
     SUBDIR += py-luminol
     SUBDIR += py-mathdom
     SUBDIR += py-matplotlib
