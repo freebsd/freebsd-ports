@@ -1,0 +1,28 @@
+--- Makefile.orig	2016-06-21 21:09:17 UTC
++++ Makefile
+@@ -48,7 +48,7 @@ check: test
+ 	./test --alsologtostderr --gtest_color=yes
+ 
+ clean:
+-	$(RM) test hiptext $(wildcard *.o *.d *.S $(GTEST_DIR)/*.o) cpplint.py
++	$(RM) test hiptext $(wildcard *.o *.d *.S) cpplint.py
+ 
+ install: hiptext
+ 	install --mode=0755 hiptext $(PREFIX)/bin
+@@ -78,12 +78,11 @@ pixel_parse.o: CXXFLAGS := $(filter-out 
+ font.%:        CXXFLAGS += $(shell freetype-config --cflags)
+ 
+ # google-test integration magic.
+-GTEST_DIR ?= gtest
+-TESTS = $(GTEST_DIR)/src/gtest-all.o $(GTEST_DIR)/src/gtest_main.o \
+-        $(patsubst %.cc,%.o,$(wildcard *_test.cc))
+-$(TESTS): CXXFLAGS += -I$(GTEST_DIR)/include -I$(GTEST_DIR) -pthread
++GTEST_DIR ?= $(PREFIX)
++TESTS = $(patsubst %.cc,%.o,$(wildcard *_test.cc))
++$(TESTS): CXXFLAGS += -I$(GTEST_DIR)/include -pthread
+ $(filter gtest%,$(TESTS)): CXXFLAGS := $(filter-out -MD -Wall,$(CXXFLAGS))
+-test: $(TESTS) $(SOURCES) ; $(LINK.cc) $^ $(LDLIBS) -lpthread -o $@
++test: $(TESTS) $(SOURCES) ; $(LINK.cc) $^ $(LDLIBS) -lpthread -L$(GTEST_DIR)/lib -lgtest -lgtest_main -o $@
+ 
+ # Recompile sources when headers change.
+ CXXFLAGS += -MD
