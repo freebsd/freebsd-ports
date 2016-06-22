@@ -5,6 +5,7 @@ PORTNAME=	calamaris
 PORTVERSION=	2.99.4.5
 CATEGORIES=	www textproc
 MASTER_SITES=	http://cord.de/files/calamaris/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl script to produce statistics out of Squid log files
