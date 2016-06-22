@@ -4165,6 +4165,7 @@
     SUBDIR += py-itools
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.functools
+    SUBDIR += py-jaraco.itertools
     SUBDIR += py-jaraco.timing
     SUBDIR += py-jaraco.util
     SUBDIR += py-jcc
