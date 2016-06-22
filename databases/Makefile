@@ -719,6 +719,7 @@
     SUBDIR += pxlib
     SUBDIR += pxtools
     SUBDIR += py-Elixir
+    SUBDIR += py-mysqlclient
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb55
     SUBDIR += py-MySQLdb56
