@@ -437,6 +437,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/Info.plist
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/Resources/attribution.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/README.md
@@ -1254,15 +1255,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexThemeMusic.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexThemeMusic.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexThemeMusic.bundle/README.md
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexVevo.bundle/.gitignore
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexVevo.bundle/Contents/Code/__init__.py
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexVevo.bundle/Contents/DefaultPrefs.json
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexVevo.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexVevo.bundle/Contents/Resources/attribution.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexVevo.bundle/Contents/Resources/icon-default.jpg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexVevo.bundle/Contents/Services/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexVevo.bundle/Contents/Services/URL/VEVO/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexVevo.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Scanners.bundle/.gitignore
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Scanners.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Scanners.bundle/Contents/Resources/Common/AudioFiles.py
@@ -2419,8 +2411,6 @@
 %%DATADIR%%/Resources/start.sh
 %%DATADIR%%/Resources/themoviedb-combiner-movies.xml
 %%DATADIR%%/Resources/thetvdb-combiner-shows.xml
-%%DATADIR%%/Resources/vevo-thumb.png
-%%DATADIR%%/Resources/vevo.png
 %%DATADIR%%/libavcodec.so.57
 %%DATADIR%%/libavformat.so.57
 %%DATADIR%%/libavutil.so.55
