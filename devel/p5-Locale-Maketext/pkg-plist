@@ -1,11 +1,11 @@
-%%PERL5_MAN3%%/Locale::Maketext.3.gz
-%%PERL5_MAN3%%/Locale::Maketext::Cookbook.3.gz
-%%PERL5_MAN3%%/Locale::Maketext::Guts.3.gz
-%%PERL5_MAN3%%/Locale::Maketext::GutsLoader.3.gz
-%%PERL5_MAN3%%/Locale::Maketext::TPJ13.3.gz
 %%SITE_PERL%%/Locale/Maketext.pm
 %%SITE_PERL%%/Locale/Maketext.pod
 %%SITE_PERL%%/Locale/Maketext/Cookbook.pod
 %%SITE_PERL%%/Locale/Maketext/Guts.pm
 %%SITE_PERL%%/Locale/Maketext/GutsLoader.pm
 %%SITE_PERL%%/Locale/Maketext/TPJ13.pod
+%%PERL5_MAN3%%/Locale::Maketext.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Cookbook.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Guts.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::GutsLoader.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::TPJ13.3.gz
