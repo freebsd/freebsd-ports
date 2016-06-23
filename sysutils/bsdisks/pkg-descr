@@ -1,0 +1,6 @@
+UDisks2 service provides interfaces to enumerate
+and perform operations on disks and storage devices
+via D-Bus API. Bsdisks is an implementation of UDisks2
+service for FreeBSD.
+
+WWW: http://bitbucket.org/arrowd/bsdisks
