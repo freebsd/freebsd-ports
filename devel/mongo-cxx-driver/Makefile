@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongo-cxx-driver
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=legacy-
 CATEGORIES=	devel
 
