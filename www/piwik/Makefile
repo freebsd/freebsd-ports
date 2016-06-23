@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwik
-PORTVERSION=	2.16.0
+PORTVERSION=	2.16.1
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -13,7 +13,8 @@ LICENSE=	GPLv3
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-USE_PHP=	ctype dom gd filter hash iconv json session xml zlib
+USE_PHP=	ctype dom gd filter hash iconv json session xml zlib \
+		mbstring simplexml
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	PHPPDOMYSQL PHPMYSQLI
