@@ -3,7 +3,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.6.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -13,7 +13,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 
-RUN_DEPENDS=	gm4:devel/m4
+RUN_DEPENDS=	gm4:devel/m4 \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 # Other ports this port cannot coexist with
 CONFLICTS?=	fvwm-1.* fvwm-2.[457].*
