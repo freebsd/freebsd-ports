@@ -1,0 +1,31 @@
+# HG changeset patch
+# User Gleb Popov <6yearold@gmail.com>
+# Date 1466501926 -10800
+#      Tue Jun 21 12:38:46 2016 +0300
+# Node ID 920139e9b9d6a2f03b1d24458cb7228a68c44e30
+# Parent  58acee356be5291cca539d2617b9afca82038ddf
+Fix build on 11-CURRENT.
+
+diff -r 58acee356be5 -r 920139e9b9d6 devdthread.cpp
+--- devdthread.cpp	Wed Jun 01 19:27:58 2016 +0300
++++ devdthread.cpp	Tue Jun 21 12:38:46 2016 +0300
+@@ -28,6 +28,7 @@
+ 
+ #include <QHash>
+ 
++#include <errno.h>
+ #include <sys/types.h>
+ #include <sys/event.h>
+ #include <sys/socket.h>
+diff -r 58acee356be5 -r 920139e9b9d6 geomprober.h
+--- geomprober.h	Wed Jun 01 19:27:58 2016 +0300
++++ geomprober.h	Tue Jun 21 12:38:46 2016 +0300
+@@ -26,6 +26,8 @@
+ 
+ #pragma once
+ 
++#include <sys/types.h>
++
+ #include <QObject>
+ #include <QSharedData>
+ #include <QRunnable>
