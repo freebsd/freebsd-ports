@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
@@ -32,7 +32,7 @@ PLIST_FILES=	bin/bsdcat \
 		lib/libarchive.a \
 		lib/libarchive.so \
 		lib/libarchive.so.13 \
-		lib/libarchive.so.13.2.0 \
+		lib/libarchive.so.13.2.1 \
 		libdata/pkgconfig/libarchive.pc \
 		man/man1/bsdcat.1.gz \
 		man/man1/bsdcpio.1.gz \
@@ -92,6 +92,10 @@ NETTLE_USE_OFF=		OPENSSL=yes
 NETTLE_CONFIGURE_OFF=	--with-openssl
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002504
+CONFIGURE_ENV+=	ac_cv_lzma_has_mt=no
+.endif
 
 .if empty(ICONV_LIB)
 CONFIGURE_ENV+=	ac_cv_header_localcharset_h=no \
