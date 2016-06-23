@@ -2,7 +2,7 @@
 
 PORTNAME=	arcanist
 PORTVERSION=	20151220
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
@@ -30,6 +30,6 @@ ENCODINGS_USE=	PHP=mbstring
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}
 	cd ${WRKSRC} ; ${PAX} -rw * ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}
-	${LN} -sf ${PREFIX}/${PHP_DESTDIR}/scripts/arcanist.php ${STAGEDIR}${PREFIX}/bin/arc
+	${LN} -sf ../${PHP_DESTDIR}/scripts/arcanist.php ${STAGEDIR}${PREFIX}/bin/arc
 
 .include <bsd.port.mk>
