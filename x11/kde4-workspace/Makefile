@@ -133,6 +133,5 @@ post-install-GSTREAMER-on:
 post-install-GSTREAMER-off:
 	@${CAT} ${FILESDIR}/pkg-message.gstreamer >> ${PKGMESSAGE}
 	@${HEAD} -1 ${PKGMESSAGE} >> ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
