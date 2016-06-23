@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	olsrd
-DISTVERSION=	0.6.6.2
-PORTREVISION=	2
+DISTVERSION=	0.9.0.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.olsr.org/releases/0.6/ \
-		http://ftp2.za.freebsd.org/pub/mesh/pc/protocols/olsr/
+MASTER_SITES=	http://www.olsr.org/releases/0.9/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koue@chaosophia.net
 COMMENT=	OLSR routing daemon
 
-BUILD_DEPENDS=	makedepend:devel/makedepend
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		bison gmake tar:bzip2
 USE_LDCONFIG=	yes
@@ -26,11 +25,8 @@ MULTI_IF_DESC=	IPv4 multiple interface support
 MULTI_IF_LIB_DEPENDS=	libnet.so:net/libnet
 MULTI_IF_MAKE_ARGS=	LIBNET=1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
+CFLAGS_ia64=	-fPIC
+CFLAGS_amd64=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/sbin/ldconfig|:|g' ${WRKSRC}/make/Makefile.fbsd
@@ -39,4 +35,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
