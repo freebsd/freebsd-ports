@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.200001
+PORTVERSION=	0.200002
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,17 +38,18 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
+TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-LWP-Protocol-PSGI>=0.06:www/p5-LWP-Protocol-PSGI \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-MockTime>=0:devel/p5-Test-MockTime \
-		p5-YAML>=0.86:textproc/p5-YAML \
-		${XS_BUILD_DEPENDS}
+		p5-YAML>=0.86:textproc/p5-YAML
 
 OPTIONS_DEFINE=		XS
+OPTIONS_DEFAULT=	XS
 
 XS_BUILD_DEPENDS=	p5-CGI-Deurl-XS>=0:www/p5-CGI-Deurl-XS \
 			p5-Class-Load-XS>=0:devel/p5-Class-Load-XS \
