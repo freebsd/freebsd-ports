@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.SLIBTOOL
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
 USES=		gmake tar:xz
 
 post-patch:
