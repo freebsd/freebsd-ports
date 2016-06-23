@@ -31,9 +31,9 @@ RESOLV_DESC=		DNS resolving options
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 
-LOCALBASE?=	/usr/local
+.include <${.CURDIR}/../../Mk/bsd.default-versions.mk>
 
-.if exists(${LOCALBASE}/lib/libcrypto.so)
+.if ${SSL_DEFAULT} != base
 OPTIONS_DEFAULT+=	GSSAPI_NONE
 .else
 OPTIONS_DEFAULT+=	GSSAPI_BASE

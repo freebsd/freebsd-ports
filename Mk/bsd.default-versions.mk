@@ -13,6 +13,8 @@
 .if !defined(_INCLUDE_BSD_DEFAULT_VERSIONS_MK)
 _INCLUDE_BSD_DEFAULT_VERSIONS_MK=	yes
 
+LOCALBASE?=	/usr/local
+
 .for lang in ${DEFAULT_VERSIONS}
 _l=		${lang:C/=.*//g}
 ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
@@ -84,18 +86,26 @@ WARNING+=	"Using WITH_OPENSSL_BASE in make.conf is deprecated, replace it with D
 SSL_DEFAULT=	base
 .  else
 .    if exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so)
+.      if defined(PKG_BIN)
 # find installed port and use it for dependency
-.      if !defined(OPENSSL_INSTALLED)
-.        if defined(DESTDIR)
+.        if !defined(OPENSSL_INSTALLED)
+.          if defined(DESTDIR)
 PKGARGS=	-c ${DESTDIR}
-.        else
+.          else
 PKGARGS=
-.        endif
+.          endif
 OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so || :
-.      endif
-.      if defined(OPENSSL_INSTALLED) && !empty(OPENSSL_INSTALLED)
+.        endif
+.        if defined(OPENSSL_INSTALLED) && !empty(OPENSSL_INSTALLED)
 SSL_DEFAULT:=		${OPENSSL_INSTALLED:T}
 WARNING+=	"You have ${OPENSSL_INSTALLED} installed but do not have DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT} set in your make.conf"
+.        endif
+.      else
+check-makevars::
+	@${ECHO_MSG} "You have a ${LOCALBASE}/lib/libcrypto.so file installed, but the framework is unable"
+	@${ECHO_MSG} "to determine what port it comes from."
+	@${ECHO_MSG} "Add DEFAULT_VERSIONS+=ssl=<openssl package name> to your /etc/make.conf and try again."
+	@${FALSE}
 .      endif
 .    endif
 .  endif
