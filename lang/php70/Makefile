@@ -169,12 +169,12 @@ post-patch:
 		${WRKSRC}/sapi/fpm/php-fpm.conf.in
 .endif
 
+# Work around issues with newer (>=2.64) autoconf
 pre-configure:
 	@${REINPLACE_CMD} -E 's:^((m4_)?divert)[(]([0-9]*)[)]:\1(600\3):' \
 		${WRKSRC}/configure.in `${FIND} ${WRKSRC} -name '*.m4'`
 	@${RM} ${WRKSRC}/configure
 	@${CAT} ${WRKSRC}/acinclude.m4 ${WRKSRC}/build/libtool.m4 > ${WRKSRC}/aclocal.m4
-
 
 .if !defined(PKGNAMEPREFIX)
 post-build:
@@ -182,6 +182,8 @@ post-build:
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_EXT_INC=pcre spl" >> ${WRKDIR}/php.conf
+	@${ECHO_CMD} -n "PHP_EXT_DIR=" >> ${WRKDIR}/php.conf
+	@${SH} ${WRKSRC}/scripts/php-config --extension-dir | sed -ne 's,^${PREFIX}/lib/php/,,p' >> ${WRKDIR}/php.conf
 
 test: build
 	@(cd ${WRKSRC} && ${MAKE} test)

@@ -1359,8 +1359,9 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
 .endif
 
-.if defined(USE_PHP)
-.include "${PORTSDIR}/Mk/bsd.php.mk"
+.if defined(USE_PHP) && (!defined(USES) || ( defined(USES) && !${USES:Mphp} ))
+DEV_WARNING+=		"Using USE_PHP alone is deprecated, please use USES=php"
+USES+=	php
 .endif
 
 .if defined(USE_FPC) || defined(WANT_FPC_BASE) || defined(WANT_FPC_ALL)
@@ -1919,8 +1920,9 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
-.if defined(USE_PHP)
-.include "${PORTSDIR}/Mk/bsd.php.mk"
+.if defined(USE_PHP) && (!defined(USES) || ( defined(USES) && !${USES:Mphp} ))
+DEV_WARNING+=		"Using USE_PHP alone is deprecated, please use USES=php"
+_USES_POST+=	php
 .endif
 
 .if defined(USE_WX) || defined(USE_WX_NOT)
