@@ -32,6 +32,8 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/phear ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}; ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR})
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
