@@ -66,7 +66,7 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/nomad; \
 	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
-		-ldflags "-X main.GitDescribe v${PORTVERSION}" -o bin/nomad
+		-ldflags "-X main.GitDescribe=v${PORTVERSION}" -o bin/nomad
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/nomad/bin/nomad ${STAGEDIR}${PREFIX}/bin/nomad
