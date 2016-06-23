@@ -719,7 +719,6 @@
     SUBDIR += pxlib
     SUBDIR += pxtools
     SUBDIR += py-Elixir
-    SUBDIR += py-mysqlclient
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb55
     SUBDIR += py-MySQLdb56
@@ -754,6 +753,7 @@
     SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysql-connector-python2
     SUBDIR += py-mysql2pgsql
+    SUBDIR += py-mysqlclient
     SUBDIR += py-odbc
     SUBDIR += py-oops
     SUBDIR += py-oursql
@@ -973,6 +973,7 @@
     SUBDIR += tcl-sqlite3
     SUBDIR += tdb
     SUBDIR += tdbc
+    SUBDIR += tile38
     SUBDIR += tinycdb
     SUBDIR += tokyocabinet
     SUBDIR += tokyotyrant
