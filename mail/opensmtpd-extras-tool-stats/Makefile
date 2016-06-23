@@ -5,7 +5,6 @@ PKGNAMESUFFIX=		-tool-stats
 PORTREVISION=		0
 
 COMMENT=		Statistics tool for OpenSMTPD
-MAINTAINER=		fluffy@FreeBSD.org
 
 PLIST_FILES=		bin/tool-stats \
 			man/man8/tool-stats.8.gz

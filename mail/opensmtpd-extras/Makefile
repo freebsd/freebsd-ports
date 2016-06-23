@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd-extras
-PORTVERSION=	201606212257
+PORTVERSION=	201606230001
 PORTREVISION?=	0
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.opensmtpd.org/archives/
 # NB: Please reset PORTREVISION to 0 in all slave subports
 # while updating PORTVERSION for master port
 
-MAINTAINER?=	fluffy@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	Addons for OpenSMTPD
 
 LICENSE?=	ISCL
@@ -135,7 +135,9 @@ TOOL_STATS_RUN_DEPENDS=			tool-stats:mail/opensmtpd-extras-tool-stats
 # Only install this for the opensmtpd-extras master port
 pre-patch:
 	@${REINPLACE_CMD} -e '/man_MANS.*filter_api.3/s/^/#/' \
-		${WRKSRC}/extras/wip/filters/Makefile.am
+		${WRKSRC}/extras/filters/Makefile.am
+# While filters still experimental feature, suppress extra call warnings from logs
+	${REINPLACE_CMD} -e '/is EXPERIMENTAL/d' ${WRKSRC}/api/filter_api.c
 
 .endif
 

@@ -5,11 +5,10 @@ PKGNAMESUFFIX=		-filter-perl
 PORTREVISION=		0
 
 COMMENT=		Perl-script filter support for OpenSMTPD
-MAINTAINER=		fluffy@FreeBSD.org
 
 PLIST_FILES=		libexec/opensmtpd/filter-perl
 
-CONFIGURE_ARGS+=	--with-filter-perl --with-perl-type=${perl_VERSION}
+CONFIGURE_ARGS+=	--with-experimental-filter-perl --with-perl-type=${perl_VERSION}
 
 USES=			perl5
 

@@ -5,7 +5,6 @@ PKGNAMESUFFIX=		-queue-ram
 PORTREVISION=		0
 
 COMMENT=		RAM queue support for OpenSMTPD
-MAINTAINER=		fluffy@FreeBSD.org
 
 PLIST_FILES=		libexec/opensmtpd/queue-ram
 
