@@ -5,7 +5,6 @@ PKGNAMESUFFIX=		-table-ldap
 PORTREVISION=		0
 
 COMMENT=		LDAP table support for OpenSMTPD
-MAINTAINER=		fluffy@FreeBSD.org
 
 PLIST_FILES=		libexec/opensmtpd/table-ldap
 
