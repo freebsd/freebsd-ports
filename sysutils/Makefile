@@ -100,6 +100,7 @@
     SUBDIR += bsdcrashtar
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
+    SUBDIR += bsdisks
     SUBDIR += bsdmoted
     SUBDIR += bsdploy
     SUBDIR += bsdstats
