@@ -398,6 +398,7 @@
     SUBDIR += miredo
     SUBDIR += miruo
     SUBDIR += mlvpn
+    SUBDIR += mobile-broadband-provider-info
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
