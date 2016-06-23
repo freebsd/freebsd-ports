@@ -14,18 +14,12 @@ the same server.
 
 1. Preliminary steps
 
-1.1 Install databases/mysql56-server
+1.1 Install databases/mysql56-server or newer
 	You may choose your favourite method - ports or packages here. 
-	FreeBSD default setting use STRICT_TRANS_TABLES sql_mode. It's mandatory to disable it. Edit your my.cnf or create new in /var/db/mysql
-	
-	The following example works with ZoneMinder quite well
+	FreeBSD default setting use STRICT_TRANS_TABLES sql_mode. It's mandatory to disable it. Edit your my.cnf accordingly
 
-	[server]
-		skip-networking
-		skip-name-resolve
-		innodb_flush_method = O_DIRECT
-		skip-innodb_doublewrite
-		innodb_file_per_table
+	The following SQL mode should be compatible with ZM:
+		sql_mode= NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 
 	ZoneMinder use very simple queries, however it tends to write to 
 	the database quite a lot depending on your capture mode and number 
@@ -105,7 +99,7 @@ the same server.
 	exec(). Sorry, chroot folks. 
 
 	PHP throws warning if date.timezone option is not set. The best place 
-	to do it is an ini file in /usr/local/etc/php 
+	to do it is to create new ini file in /usr/local/etc/php with overrides
 
 		date.timezone = "UTC"
 
@@ -147,10 +141,6 @@ the same server.
 2.1 If you have chosen to change the ZoneMinder MySQL credentials to something
 	other than zmuser/zmpass then you must now edit /usr/local/etc/zm.conf. Change
 	ZM_DB_USER and ZM_DB_PASS to the values you created in the previous step.
-
-	Additionally, you must also edit 
-	/usr/local/www/zoneminder/api/app/Config/database.php in a similar 
-	manner. Scroll down and change login and password to the values you created in the previous step.
 
 	Enable and start ZoneMinder
 		sysrc zoneminder_enable="YES"
