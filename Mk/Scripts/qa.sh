@@ -134,6 +134,9 @@ symlinks() {
 				err "Bad symlink '${l#${STAGEDIR}${PREFIX}/}' pointing inside the stage directory"
 				rc=1
 				;;
+			/*)
+				warn "Bad symlink '${l#${STAGEDIR}}' pointing to an absolute pathname '${link}'"
+				;;
 		esac
 	# Use heredoc to avoid losing rc from find|while subshell.
 	done <<-EOF
@@ -607,7 +610,9 @@ proxydeps() {
 	return ${rc}
 }
 
-checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl prefixvar baselibs terminfo proxydeps"
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
+checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
+checks="$checks proxydeps"
 
 ret=0
 cd ${STAGEDIR}
