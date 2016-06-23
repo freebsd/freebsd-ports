@@ -72,7 +72,7 @@ PHP_EXT_INC=	pcre spl
 
 HTTPD?=		${LOCALBASE}/sbin/httpd
 .    if exists(${HTTPD})
-APACHE_THR!=	${HTTPD} -V | ${GREP} threaded
+APACHE_THR!=	${HTTPD} -V | ${AWK} '/threaded/ {print $2}'
 .      if ${APACHE_THR:Myes}
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
 .      endif
