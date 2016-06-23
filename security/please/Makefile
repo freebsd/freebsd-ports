@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	please
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	security
 
 MAINTAINER=	gblach@FreeBSD.org
@@ -13,11 +13,11 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	MagikBSD
 
-PLIST_FILES=	"@(,,6555) bin/please" "@sample etc/pam.d/please.sample" \
+PLIST_FILES=	"@(,,4555) bin/please" "@sample etc/pam.d/please.sample" \
 		man/man1/please.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-m 6555,-m 0555,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,-m 4555,-m 0555,g" ${WRKSRC}/Makefile
 
 post-install:
 	${CP} ${WRKSRC}/pam.d/please.FreeBSD \
