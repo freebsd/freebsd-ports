@@ -2,7 +2,7 @@ OpenJUMP/bin/default-plugins.xml
 OpenJUMP/bin/log4j.xml
 OpenJUMP/bin/openjump
 OpenJUMP/bin/readme.txt
-OpenJUMP/lib/OpenJUMP-1.9.0-r4795-nosrc.jar
+OpenJUMP/lib/OpenJUMP-1.9.1-r4840-nosrc.jar
 OpenJUMP/lib/batik-awt-util-1.6.jar
 OpenJUMP/lib/batik-bridge-1.6.jar
 OpenJUMP/lib/batik-css-1.6.jar
@@ -1081,7 +1081,7 @@ OpenJUMP/lib/jython-2.2.jar
 OpenJUMP/lib/log4j-1.2.17.jar
 OpenJUMP/lib/native/jecw-0.0.7.jar
 OpenJUMP/lib/org-netbeans-swing-outline-7.2.jar
-OpenJUMP/lib/postgresql-9.4-1206-jdbc4.jar
+OpenJUMP/lib/postgresql-9.4.1208.jre6.jar
 OpenJUMP/lib/xercesImpl-2.11.0.jar
 OpenJUMP/lib/xml-apis-1.4.01.jar
 OpenJUMP/lib/xmlParserAPIs-2.0.2.jar
