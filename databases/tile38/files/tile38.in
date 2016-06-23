@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $FreeBSD: $
+#
+
+# PROVIDE: tile38
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `tile38':
+#
+# tile38_enable="YES"
+#
+# optional:
+#
+# tile38_flags (flags):      Set extra flags here. More options in tile38(1)
+#                               Default is empty "".
+# tile38_user (user):        Set user to run tile38.
+#                               Default is "%%TILE38_USER%%".
+# tile38_data (data):        Set data directory path
+#                               Default is "%%TILE38_DBDIR%%".
+
+. /etc/rc.subr
+
+name="tile38"
+rcvar="${name}_enable"
+
+start_cmd="tile38_start"
+
+command="%%PREFIX%%/bin/tile38-server"
+pidfile="%%TILE38_RUNDIR%%/$name.pid"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${tile38_enable="NO"}
+: ${tile38_user="%%TILE38_USER%%"}
+: ${tile38_data="%%TILE38_DBDIR%%"}
+
+tile38_start()
+{
+	/usr/sbin/daemon -f -p ${pidfile} -u ${tile38_user} ${command} -d ${tile38_data} ${tile38_flags} ${rc_arg}
+}
+
+run_rc_command "$1"
