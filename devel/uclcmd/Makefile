@@ -4,7 +4,7 @@ PORTNAME=	uclcmd
 PORTVERSION=	0.1
 CATEGORIES=	devel
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	johannes@perceivon.net
 COMMENT=	Command line tool for working with UCL config files
 
 LICENSE=	BSD2CLAUSE
