@@ -3,6 +3,7 @@
 
 PORTNAME=	remind
 PORTVERSION=	3.1.15
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -70,7 +71,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${i}.1 ${STAGEDIR}${PREFIX}/man/man1
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/man/rem.1 ${STAGEDIR}${PREFIX}/man/man1
-	${LN} -sf ${PREFIX}/bin/remind ${STAGEDIR}${PREFIX}/bin/rem
+	${LN} -sf ../bin/remind ${STAGEDIR}${PREFIX}/bin/rem
 .if ${PORT_OPTIONS:MTCLTK}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/cm2rem.tcl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/tkremind ${STAGEDIR}${PREFIX}/bin
