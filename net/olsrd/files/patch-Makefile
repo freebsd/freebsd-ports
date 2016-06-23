@@ -1,7 +1,7 @@
---- Makefile.orig	2014-06-02 12:15:27.000000000 +0200
-+++ Makefile	2014-06-07 21:42:39.688352979 +0200
-@@ -128,15 +128,15 @@
- uninstall: uninstall_olsrd
+--- Makefile.orig	2015-09-20 12:22:23 UTC
++++ Makefile
+@@ -143,15 +143,15 @@ cfgparser_clean:
+ 		$(MAKECMDPREFIX)$(MAKECMD) -C $(CFGDIR) clean
  
  install_bin:
 -		mkdir -p $(SBINDIR)
@@ -23,7 +23,7 @@
  		fi
  endif
  
-@@ -147,29 +147,26 @@
+@@ -162,29 +162,26 @@ uninstall_bin:
  install_olsrd:	install_bin
  		@echo ========= C O N F I G U R A T I O N - F I L E ============
  		@echo $(EXENAME) uses the configfile $(CFGFILE)
@@ -65,9 +65,9 @@
 +		mkdir -p ${DESTDIR}$(MANDIR)/man5/
 +		cp files/olsrd.conf.5.gz ${DESTDIR}$(MANDIR)/man5/$(CFGNAME).5.gz
  endif
- 
- uninstall_olsrd:	uninstall_bin
-@@ -217,7 +214,7 @@
+ ifneq ($(RCDIR),)
+ 		cp $(RCFILE) $(RCDIR)/olsrd
+@@ -239,7 +236,7 @@ libs_clean clean_libs:
  		-for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=$(LIBDIR) clean;rm -f lib/$$dir/*.so lib/$$dir/*.dll;done
  
  libs_install install_libs:
