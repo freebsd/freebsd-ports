@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcl
-DISTVERSION=	8.7.a0.20160606
+DISTVERSION=	8.7.a0.20160623
 CATEGORIES=	lang
 MASTER_SITES=	http://core.tcl.tk/tcl/tarball/
 PKGNAMESUFFIX=	${PORTVERSION:R:R:S/.//}
@@ -23,7 +23,7 @@ TZDATA_DESC=	Install Tcl timezone data
 MODULES_DESC=	Install Tcl common modules
 OPTIONS_SUB=	yes
 
-FOSSIL_CHECKIN=	942948a1ea
+FOSSIL_CHECKIN=	a633d16fae
 
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME:S/+/_/g}
 WRKSRC=		${PATCH_WRKSRC}/unix
@@ -36,7 +36,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--enable-man-suffix=.${MAN_SUFFIX} \
-		--includedir=${PREFIX}/include/tcl${TCL_VER}
+		--includedir=${PREFIX}/include/tcl${TCL_VER} \
+		--enable-symbols
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 
 TCL_VER=	${PORTVERSION:R:R}
