@@ -1,2 +1,3 @@
-SHA256 (tomcat-native-1.2.2-src.tar.gz) = 9bd4deb1a816efda8208bfb4f55ee1689571e1d05a5c1e84faf2ad1021a9cae6
-SIZE (tomcat-native-1.2.2-src.tar.gz) = 400183
+TIMESTAMP = 1466667598
+SHA256 (tomcat-native-1.2.7-src.tar.gz) = 19e87bc6ea7f763bf9e6515f8c31d8e9bb3e0c1132b36769cdf32c6702723d25
+SIZE (tomcat-native-1.2.7-src.tar.gz) = 390573
