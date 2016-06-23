@@ -2,7 +2,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	6.0.3.2197
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/:previous \
@@ -75,7 +75,7 @@ do-install:
 		${STAGEDIR}${DATADIR}/googleearth.desktop
 	${INSTALL_SCRIPT} ${FILESDIR}/browserwrapper \
 		${STAGEDIR}${DATADIR}/bin/
-	${LN} -sf ${DATADIR}/bin/googleearth \
+	${LN} -sf ../${DATADIR_REL}/bin/googleearth \
 		${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 PORTNAME=	qcad
 PORTVERSION=	3.15.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -62,10 +62,10 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${RESDIR}/qcad-bin ${STAGEDIR}${PREFIX}/bin/
-	${LN} -sf ${PREFIX}/bin/qcad-bin ${STAGEDIR}${PREFIX}/bin/qcad
+	${LN} -sf qcad-bin ${STAGEDIR}${PREFIX}/bin/qcad
 .for lib in ${SHRLIBS:C|^|lib|:C|$|.so|}
 	${INSTALL_LIB} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/${lib}.0
-	${LN} -sf ${PREFIX}/lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
+	${LN} -sf lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
 .endfor
 .for lib in ${STALIBS:C|^|lib|:C|$|.a|}
 	${INSTALL_DATA} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/

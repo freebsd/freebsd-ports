@@ -3,7 +3,7 @@
 
 PORTNAME=	leocad
 PORTVERSION=	0.80.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
 DISTFILES=	LeoCAD-Source-${PORTVERSION}.tgz
@@ -86,7 +86,7 @@ post-install:
 	@cd ${WRKSRC}/tools/icon && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${DATADIR}
 .endfor
-	@${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+	@${LN} -sf ../icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/docs/leocad.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 

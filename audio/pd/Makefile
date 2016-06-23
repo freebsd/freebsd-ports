@@ -4,7 +4,7 @@
 PORTNAME=	pd
 DISTVERSION=	0.47-0
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://msp.ucsd.edu/Software/
 
@@ -79,7 +79,7 @@ do-install:
 .for i in LICENSE.txt README.txt
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-	${LN} -sf ${DOCSDIR} ${STAGEDIR}${PREFIX}/lib/pd/doc
+	${LN} -sf ../../${DOCSDIR_REL} ${STAGEDIR}${PREFIX}/lib/pd/doc
 	${FIND} ${STAGEDIR}${PREFIX}/lib/pd -name "*.pd_linux" | ${XARGS} \
 		${STRIP_CMD}
 
