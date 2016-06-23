@@ -34,6 +34,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/calamaris.conf ${STAGEDIR}${PREFIX}/etc/calamaris.conf.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/EXAMPLES ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/EXAMPLES.v3 ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
