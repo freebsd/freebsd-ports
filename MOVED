@@ -8371,3 +8371,4 @@ devel/p5-ReadLine-Perl|devel/p5-Term-ReadLine-Perl|2016-06-21|Duplicates
 devel/p5-ReadLine-Gnu|devel/p5-Term-ReadLine-Gnu|2016-06-21|Rename to match upstream
 devel/p5-ReadLine-TTYtter|devel/p5-Term-ReadLine-TTYtter|2016-06-21|Rename to match upstream
 graphics/linux-c6-dri-compat|graphics/linux-c6-dri|2016-06-22|Obsolete
+security/py-letsencrypt|security/py-certbot|2016-06-23|The LetsEncrypt project has renamed the utility
