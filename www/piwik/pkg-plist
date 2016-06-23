@@ -450,6 +450,7 @@
 %%WWWDIR%%/core/Updates/2.15.0-b4.php
 %%WWWDIR%%/core/Updates/2.15.0.php
 %%WWWDIR%%/core/Updates/2.16.0-rc2.php
+%%WWWDIR%%/core/Updates/2.16.1-b3.php
 %%WWWDIR%%/core/Updates/2.2.0-b15.php
 %%WWWDIR%%/core/Updates/2.2.3-b6.php
 %%WWWDIR%%/core/Updates/2.3.0-rc2.php
@@ -1721,6 +1722,7 @@
 %%WWWDIR%%/plugins/Contents/lang/tl.json
 %%WWWDIR%%/plugins/Contents/lang/tr.json
 %%WWWDIR%%/plugins/Contents/lang/vi.json
+%%WWWDIR%%/plugins/Contents/lang/zh-cn.json
 %%WWWDIR%%/plugins/Contents/stylesheets/datatable.less
 %%WWWDIR%%/plugins/CoreAdminHome/API.php
 %%WWWDIR%%/plugins/CoreAdminHome/Commands/DeleteLogsData.php
@@ -2227,7 +2229,6 @@
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/HtmlTable.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/HtmlTable/AllColumns.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/HtmlTable/Config.php
-%%WWWDIR%%/plugins/CoreVisualizations/Visualizations/HtmlTable/PivotBy.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/HtmlTable/RequestConfig.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/JqplotGraph.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/JqplotGraph/Bar.php
@@ -2706,6 +2707,7 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/AM.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/AN.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/AR.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/browsers/AT.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/AV.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/AW.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/B2.gif
@@ -2757,6 +2759,7 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/KM.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/KO.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/KP.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/browsers/KY.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/KZ.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/LB.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/LG.gif
@@ -2782,6 +2785,7 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/ON.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/OP.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/OR.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/browsers/OT.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/OV.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/OW.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/PL.gif
@@ -2798,7 +2802,9 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/SH.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/SL.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/SM.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/browsers/SP.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/SR.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/browsers/SS.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/TB.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/TI.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/browsers/TZ.gif
@@ -2986,12 +2992,19 @@
 %%WWWDIR%%/plugins/Diagnostics/Test/Unit/DiagnosticReportTest.php
 %%WWWDIR%%/plugins/Diagnostics/Test/Unit/DiagnosticServiceTest.php
 %%WWWDIR%%/plugins/Diagnostics/config/config.php
+%%WWWDIR%%/plugins/Diagnostics/lang/ar.json
 %%WWWDIR%%/plugins/Diagnostics/lang/cs.json
 %%WWWDIR%%/plugins/Diagnostics/lang/de.json
 %%WWWDIR%%/plugins/Diagnostics/lang/el.json
 %%WWWDIR%%/plugins/Diagnostics/lang/en.json
+%%WWWDIR%%/plugins/Diagnostics/lang/fi.json
+%%WWWDIR%%/plugins/Diagnostics/lang/fr.json
 %%WWWDIR%%/plugins/Diagnostics/lang/it.json
+%%WWWDIR%%/plugins/Diagnostics/lang/nb.json
 %%WWWDIR%%/plugins/Diagnostics/lang/pt-br.json
+%%WWWDIR%%/plugins/Diagnostics/lang/ro.json
+%%WWWDIR%%/plugins/Diagnostics/lang/ru.json
+%%WWWDIR%%/plugins/Diagnostics/lang/sq.json
 %%WWWDIR%%/plugins/Diagnostics/lang/sv.json
 %%WWWDIR%%/plugins/Diagnostics/plugin.json
 %%WWWDIR%%/plugins/Diagnostics/stylesheets/configfile.less
@@ -3027,6 +3040,7 @@
 %%WWWDIR%%/plugins/Ecommerce/lang/el.json
 %%WWWDIR%%/plugins/Ecommerce/lang/en.json
 %%WWWDIR%%/plugins/Ecommerce/lang/es.json
+%%WWWDIR%%/plugins/Ecommerce/lang/fi.json
 %%WWWDIR%%/plugins/Ecommerce/lang/fr.json
 %%WWWDIR%%/plugins/Ecommerce/lang/hi.json
 %%WWWDIR%%/plugins/Ecommerce/lang/it.json
@@ -3037,9 +3051,11 @@
 %%WWWDIR%%/plugins/Ecommerce/lang/pt.json
 %%WWWDIR%%/plugins/Ecommerce/lang/ru.json
 %%WWWDIR%%/plugins/Ecommerce/lang/sk.json
+%%WWWDIR%%/plugins/Ecommerce/lang/sq.json
 %%WWWDIR%%/plugins/Ecommerce/lang/sr.json
 %%WWWDIR%%/plugins/Ecommerce/lang/sv.json
 %%WWWDIR%%/plugins/Ecommerce/lang/ta.json
+%%WWWDIR%%/plugins/Ecommerce/lang/vi.json
 %%WWWDIR%%/plugins/Ecommerce/plugin.json
 %%WWWDIR%%/plugins/Ecommerce/templates/ecommerceLog.twig
 %%WWWDIR%%/plugins/Ecommerce/templates/products.twig
@@ -3092,6 +3108,7 @@
 %%WWWDIR%%/plugins/Events/lang/ru.json
 %%WWWDIR%%/plugins/Events/lang/sk.json
 %%WWWDIR%%/plugins/Events/lang/sl.json
+%%WWWDIR%%/plugins/Events/lang/sq.json
 %%WWWDIR%%/plugins/Events/lang/sr.json
 %%WWWDIR%%/plugins/Events/lang/sv.json
 %%WWWDIR%%/plugins/Events/lang/ta.json
@@ -3824,6 +3841,7 @@
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/el.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/en.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/es.json
+%%WWWDIR%%/plugins/MobileAppMeasurable/lang/fi.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/fr.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/hi.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/hu.json
@@ -3834,6 +3852,7 @@
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/nl.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/pt-br.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/sk.json
+%%WWWDIR%%/plugins/MobileAppMeasurable/lang/sq.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/sr.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/sv.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/plugin.json
@@ -3879,6 +3898,7 @@
 %%WWWDIR%%/plugins/MobileMessaging/lang/ru.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/sk.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/sl.json
+%%WWWDIR%%/plugins/MobileMessaging/lang/sq.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/sr.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/sv.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/ta.json
@@ -4989,6 +5009,7 @@
 %%WWWDIR%%/plugins/SegmentEditor/lang/ru.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/sk.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/sl.json
+%%WWWDIR%%/plugins/SegmentEditor/lang/sq.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/sr.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/sv.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/tl.json
@@ -5121,6 +5142,7 @@
 %%WWWDIR%%/plugins/Transitions/lang/ro.json
 %%WWWDIR%%/plugins/Transitions/lang/ru.json
 %%WWWDIR%%/plugins/Transitions/lang/sl.json
+%%WWWDIR%%/plugins/Transitions/lang/sq.json
 %%WWWDIR%%/plugins/Transitions/lang/sr.json
 %%WWWDIR%%/plugins/Transitions/lang/sv.json
 %%WWWDIR%%/plugins/Transitions/lang/th.json
@@ -6125,6 +6147,7 @@
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/el.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/en.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/es.json
+%%WWWDIR%%/plugins/WebsiteMeasurable/lang/fi.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/fr.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/hi.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/it.json
@@ -6138,6 +6161,7 @@
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/sq.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/sr.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/sv.json
+%%WWWDIR%%/plugins/WebsiteMeasurable/lang/tr.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/zh-tw.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/plugin.json
 %%WWWDIR%%/plugins/Widgetize/Controller.php
