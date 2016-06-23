@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -14,16 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
-USES=		alias autoreconf gmake libtool pkgconfig tar:bzip2
+USES=		alias autoreconf gmake libtool localbase pkgconfig tar:bzip2
 USE_XORG=	glproto pciaccess xext xfixes
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=va
 USE_LDCONFIG=	yes
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread
 # prevent types conflict: videodev2.h vs. drm.h
-CFLAGS+=	-I${LOCALBASE}/include -DHAVE_LINUX_INTEGER_TYPES
+CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES
 
 OPTIONS_DEFINE=	DEBUG
 
