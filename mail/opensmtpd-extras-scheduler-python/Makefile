@@ -5,7 +5,6 @@ PKGNAMESUFFIX=		-scheduler-python
 PORTREVISION=		0
 
 COMMENT=		Python scheduler support for OpenSMTPD
-MAINTAINER=		fluffy@FreeBSD.org
 
 PLIST_FILES=		libexec/opensmtpd/scheduler-python
 

@@ -5,7 +5,6 @@ PKGNAMESUFFIX=		-scheduler-ram
 PORTREVISION=		0
 
 COMMENT=		RAM scheduler support for OpenSMTPD
-MAINTAINER=		fluffy@FreeBSD.org
 
 PLIST_FILES=		libexec/opensmtpd/scheduler-ram
 
