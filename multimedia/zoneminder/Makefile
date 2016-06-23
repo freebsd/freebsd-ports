@@ -4,6 +4,7 @@ PORTNAME=	zoneminder
 PORTVERSION=	1.30.0
 DISTVERSIONPREFIX=v
 DISTVERSIONSUFFIX=-rc1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -36,10 +37,9 @@ GH_TAGNAME=	c3976f1:crud
 
 WRKSRC=		${WRKDIR}/ZoneMinder-${DISTVERSION}${DISTVERSIONSUFFIX}
 
-USES=		cmake jpeg mysql perl5 shebangfix
+USES=		cmake jpeg mysql perl5 php shebangfix
 USE_RC_SUBR=	zoneminder
-PHP=		json pdo_mysql session
-IGNORE_WITH_PHP=70
+USE_PHP=	json pdo_mysql session gd sockets
 
 ONLY_FOR_ARCHS=	amd64 i386
 
