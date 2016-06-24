@@ -15,6 +15,7 @@ GH_PROJECT=	doas
 GH_TAGNAME=	720db72
 
 BINMODE=	4755
+ETCDIR=	${PREFIX}/etc
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/doas \
