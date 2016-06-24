@@ -9,7 +9,7 @@ is not the letsencrypt-auto bootstrap/wrapper script.
 
 To obtain certificates, use the 'certonly' command as follows:
 
- # sudo letsencrypt --server <server-URL> certonly
+ # sudo certbot --server <server-URL> certonly
 
 Note: The client currently requires the ability to bind on TCP port 80. If
 you have a server running on this port, it will need to be temporarily stopped
