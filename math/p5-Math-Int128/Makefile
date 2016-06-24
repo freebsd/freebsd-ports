@@ -23,7 +23,7 @@ NOT_FOR_ARCHS=	i386 armv6
 .include <bsd.port.pre.mk>
 
 # need clang 3.2+ or GCC 4.4+
-.if exists(/usr/bin/clang) && ${OSVERSION} > 901505
+.if exists(/usr/bin/clang)
 CC=	/usr/bin/clang
 .else
 USE_GCC=	yes
