@@ -1,0 +1,10 @@
+==========================================================
+
+By default, zsh looks for system-wide defaults in
+%%PREFIX%%/etc.
+
+If you previously set up /etc/zprofile, /etc/zshenv, etc.,
+either move them to %%PREFIX%%/etc or rebuild zsh with the
+ETCDIR option enabled.
+
+==========================================================

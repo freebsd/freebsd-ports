@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160624
+  AFFECTS: users of shells/zsh
+  AUTHOR: adamw@FreeBSD.org
+
+  zsh now looks for system-wide conf files in ${PREFIX}/etc, instead of
+  /etc. If you have files like zshrc, zshenv, zprofile, zlogin, or zlogout
+  in /etc, either move them to /usr/local/etc or rebuild zsh with the
+  ETCDIR option on.
+
+  Note that this change only affects system-wide conf files, which are not
+  installed or created by a default installation.
+
 20160621
   AFFECTS: users of www/redmine
   AUTHOR: tz@FreeBSD.org
