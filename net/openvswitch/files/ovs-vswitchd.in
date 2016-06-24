@@ -5,6 +5,7 @@
 
 # PROVIDE: ovs_vswitchd
 # REQUIRE: LOGIN ovsdb_server
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
