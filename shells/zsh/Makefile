@@ -74,7 +74,7 @@ GDBM_DESC=		Enable GDBM support (GPL)
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ENABLE=	gdbm
 
-ETCDIR_DESC=		System-wide defaults in /etc (instead of ${PREFIX}/etc)
+ETCDIR_DESC=		System-wide defaults in /etc (instead of $${PREFIX}/etc)
 ETCDIR_CONFIGURE_OFF=	--enable-etcdir=${PREFIX}/etc
 
 MAILDIR_DESC=			Enable support for Maildirs in MAIL(PATH)
