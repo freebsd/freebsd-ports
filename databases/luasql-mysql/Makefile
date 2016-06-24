@@ -16,7 +16,8 @@ LICENSE=	MIT
 USE_GITHUB=	yes
 GH_ACCOUNT=	keplerproject
 
-USES=		lua gmake
+USES=		lua gmake dos2unix
+DOS2UNIX_FILES=	src/*.c
 ALL_TARGET=	${LUASQL_DRIVER}
 
 LUASQL_DRIVER?=	mysql
