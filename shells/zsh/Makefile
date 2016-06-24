@@ -3,10 +3,9 @@
 
 PORTNAME=	zsh
 DISTVERSION=	5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
-MASTER_SITES=	\
-		http://www.zsh.org/pub/:doc \
+MASTER_SITES=	http://www.zsh.org/pub/:doc \
 		http://www.zsh.org/pub/ \
 		SF \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -25,6 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 ZSH_VER=	${PORTVERSION}
 PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
+SUB_FILES=	pkg-message
 
 USES=		iconv ncurses shebangfix tar:xz
 
@@ -46,7 +46,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
 CONFIGURE_ARGS=	--with-tcsetpgrp \
-		--enable-function-subdirs --enable-multibyte \
+		--enable-function-subdirs \
+		--enable-multibyte \
 		--sysconfdir=${PREFIX}/etc
 
 DOCS=		LICENCE META-FAQ README \
@@ -60,7 +61,7 @@ PORTEXAMPLES=	zlogin zshenv zshrc
 #EXTRA_COMPLETION_FILES=	_sockstat
 #EXTRA_COMPLETION_DIR=	Completion/BSD/Command
 
-OPTIONS_DEFINE=	GDBM MEM SECURE_FREE MAILDIR PCRE STATIC DEBUG \
+OPTIONS_DEFINE=	DEBUG ETCDIR GDBM MAILDIR MEM PCRE SECURE_FREE STATIC \
 		DOCS EXAMPLES
 OPTIONS_DEFAULT=SECURE_FREE MAILDIR
 OPTIONS_SUB=	yes
@@ -73,13 +74,16 @@ GDBM_DESC=		Enable GDBM support (GPL)
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ENABLE=	gdbm
 
-MAILDIR_DESC=		Enable support for Maildirs in MAIL(PATH)
+ETCDIR_DESC=		System-wide defaults in /etc (instead of ${PREFIX}/etc)
+ETCDIR_CONFIGURE_OFF=	--enable-etcdir=${PREFIX}/etc
+
+MAILDIR_DESC=			Enable support for Maildirs in MAIL(PATH)
 MAILDIR_CONFIGURE_ENABLE=	maildir-support
 
 MEM_DESC=		Enable zsh-mem options
 MEM_CONFIGURE_ENABLE=	zsh-mem
 
-SECURE_FREE_DESC=	Enable zsh-secure-free
+SECURE_FREE_DESC=		Enable zsh-secure-free
 SECURE_FREE_CONFIGURE_ENABLE=	zsh-secure-free
 
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
