@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvswitch
-PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTVERSION=	2.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
@@ -11,6 +10,8 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Production quality, multilayer virtual switch
 
 LICENSE=	APACHE20
+
+BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 
 USES=		cpe gmake libtool perl5 pkgconfig python shebangfix
 SHEBANG_FILES=	vtep/ovs-vtep
