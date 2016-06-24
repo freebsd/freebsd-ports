@@ -212,6 +212,7 @@
     SUBDIR += gpx2map
     SUBDIR += grafana
     SUBDIR += grafana2
+    SUBDIR += grafana3
     SUBDIR += grails
     SUBDIR += graylog-web-interface
     SUBDIR += gregarius
