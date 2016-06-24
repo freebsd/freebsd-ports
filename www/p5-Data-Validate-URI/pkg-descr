@@ -15,4 +15,4 @@ out the URI/URL into chunks.
 Right now the module focuses on HTTP URIs, since they're arguably the most
 common.
 
-WWW: http://search.cpan.org/dist/Data-Validate-URI
+WWW: http://search.cpan.org/dist/Data-Validate-URI/

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Validate-URI
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +17,6 @@ RUN_DEPENDS=	p5-Data-Validate-Domain>=0:dns/p5-Data-Validate-Domain \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
