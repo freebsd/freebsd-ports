@@ -16,7 +16,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20160621
   AFFECTS: users of ftp/wget
-  AUTHOR: vlad-fbsd@acheronmedia.com
+  AUTHOR: vd@FreeBSD.org
 
   Wget 1.18 fixes a security vulnerability (CVE-2016-4971) and the fix
   introduces a backward-incompatibility for HTTP->FTP redirects. Any script that
