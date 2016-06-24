@@ -132,6 +132,7 @@
     SUBDIR += digikam-kde4
     SUBDIR += digikam-kde4-doc
     SUBDIR += digikam-kde4-l10n
+    SUBDIR += dilay
     SUBDIR += ditaa
     SUBDIR += djview4
     SUBDIR += djview4-qt4
