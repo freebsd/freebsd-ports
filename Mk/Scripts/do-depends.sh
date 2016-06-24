@@ -27,12 +27,10 @@ install_depends()
 		return 0
 	fi
 
-	read pkgfile <<- EOF
-	$(${dp_MAKE} -C ${origin} -VPKGFILE)
-	EOF
-	read pkgbase <<- EOF
-	$(${dp_MAKE} -C ${origin} -VPKGBASE)
-	EOF
+	port_var_fetch "${origin}" "${depends_args}" \
+	    PKGFILE pkgfile \
+	    PKGBASE pkgbase
+
 	if [ -r "${pkgfile}" -a "${target}" = "${dp_DEPENDS_TARGET}" ]; then
 		echo "===>   Installing existing package ${pkgfile}"
 		if [ "${pkgbase}" = "pkg" ]; then
