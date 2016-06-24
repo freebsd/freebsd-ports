@@ -6,5 +6,6 @@
 %%SITE_PERL%%/auto/Data/Validate/URI/is_web_uri.al
 %%SITE_PERL%%/auto/Data/Validate/URI/is_tel_uri.al
 %%SITE_PERL%%/auto/Data/Validate/URI/_split_uri.al
+%%SITE_PERL%%/auto/Data/Validate/URI/_test_uri.al
 %%SITE_PERL%%/auto/Data/Validate/URI/autosplit.ix
 %%PERL5_MAN3%%/Data::Validate::URI.3.gz
