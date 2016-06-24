@@ -1813,6 +1813,7 @@
     SUBDIR += red5
     SUBDIR += redaxo
     SUBDIR += redmine
+    SUBDIR += redmine-a_common_libs
     SUBDIR += redmine-backlogs
     SUBDIR += redmine-basecamp
     SUBDIR += redmine-default_assign
