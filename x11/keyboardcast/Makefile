@@ -3,13 +3,18 @@
 
 PORTNAME=	keyboardcast
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	GOOGLE_CODE \
-		http://desrt.mcmaster.ca/code/keyboardcast/
 
 MAINTAINER=	eimar.koort@gmail.com
 COMMENT=	Broadcast keystrokes to multiple X windows for Gnome2
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ekoort
 
 USE_XORG=	xmu x11
 USE_GNOME=	libwnck libglade2 gtk20
