@@ -246,6 +246,7 @@
     SUBDIR += ifstat
     SUBDIR += ifstated
     SUBDIR += igmpproxy
+    SUBDIR += iipsrv
     SUBDIR += ilbc
     SUBDIR += imapproxy
     SUBDIR += intel-ixl-kmod
