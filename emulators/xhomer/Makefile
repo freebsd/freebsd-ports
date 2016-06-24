@@ -14,21 +14,28 @@ COMMENT=	Emulator for the DEC Pro 350 computer
 USES=		gmake tar:tgz
 USE_XORG=	xt sm ice xext x11
 ALL_TARGET=	clean xhomer
-INSTALL_TARGET=
+INSTALL_TARGET=	# empty
 CFLAGS+=	-Wall -ffloat-store
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PLIST_FILES=	bin/xhomer %%EXAMPLESDIR%%/xhomer.cfg
+SUB_FILES=	pkg-message
+
+PLIST_FILES=	bin/xhomer
 PORTDOCS=	README LICENSE SIMH
+PORTEXAMPLES=	xhomer.cfg
 
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/xhomer ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/xhomer.cfg ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
