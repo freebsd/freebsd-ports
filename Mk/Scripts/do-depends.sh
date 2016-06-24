@@ -45,7 +45,7 @@ install_depends()
 		fi
 	elif [ -n "${dp_USE_PACKAGE_DEPENDS_ONLY}" -a "${target}" = "${dp_DEPENDS_TARGET}" ]; then
 		echo "===>   ${dp_PKGNAME} depends on package: ${pkgfile} - not found" >&2
-		echo "===>   dp_USE_PACKAGE_DEPENDS_ONLY set - not building missing dependency from source" >&2
+		echo "===>   USE_PACKAGE_DEPENDS_ONLY set - not building missing dependency from source" >&2
 		exit 1
 	else
 		${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
