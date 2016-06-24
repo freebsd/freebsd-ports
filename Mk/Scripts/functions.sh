@@ -250,3 +250,32 @@ escape() {
 unescape() {
 	echo "$1" | sed -e 's/\\//g'
 }
+
+# Fetch vars from the Makefile and set them locally.
+# port_var_fetch ports-mgmt/pkg "" PKGNAME pkgname PKGBASE pkgbase ...
+# the 2nd variable is for passing any wanted make arguments, such as
+# DEPENDS_ARGS.
+port_var_fetch() {
+	local origin="$1"
+	local make_args="$2"
+	local _makeflags _vars
+	local _portvar _var _line
+
+	_makeflags=
+	_vars=
+	shift 2
+	while [ $# -ge 2 ]; do
+		_portvar="$1"
+		_var="$2"
+		_makeflags="${_makeflags}${_makeflags:+ }-V${_portvar}"
+		_vars="${_vars}${_vars:+ }${_var}"
+		shift 2
+	done
+	set -- ${_vars}
+	while read -r _line; do
+		setvar "$1" "${_line}"
+		shift
+	done <<-EOF
+	$(${dp_MAKE} -C "${origin}" ${make_args} ${_makeflags} || echo)
+	EOF
+}
