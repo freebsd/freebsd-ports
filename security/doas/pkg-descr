@@ -1,0 +1,6 @@
+This is the FreeBSD port of the OpenBSD "doas" command. The doas program
+allows a regular user to run commands as another user (usually root). The
+doas command is a simplified (hopefully more secure) version of the "sudo"
+command and offers an easier to read/modify configuration.
+
+WWW: https://github.com/slicer69/doas/

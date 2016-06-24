@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-06-22 22:59:03 UTC
++++ Makefile
+@@ -3,7 +3,7 @@ YC?=yacc
+ BIN=doas
+ PREFIX?=/usr/local
+ OBJECTS=doas.o env.o execvpe.o y.tab.o
+-CFLAG+= -DUSE_PAM
++CFLAG+= -DUSE_PAM -DDOAS_CONF=\"${PREFIX}/etc/doas.conf\"
+ LFLAG+= -lpam
+ 
+ all: $(OBJECTS)
