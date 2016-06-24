@@ -1,0 +1,99 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: iipsrv
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable iipsrv:
+# iipsrv_(instance_)?enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable iipsrv.
+# iipsrv_(instance_)?flags (str):	Custom additional arguments to be passed
+#			to iipsrv. Default to "--bind 127.0.0.1:9111".
+# iipsrv_(instance_)?pidfile (str): Custum PID file path and name.
+#			Default to "/var/run/iipsrv.${instance}.pid".
+# iipsrv_(instance_)?user (str): User to run iipsrv as
+#			Default to "nobody".
+# iipsrv_(instance_)?config (str): Config file with environment
+#			variables (default empty).
+# iipsrv_instances (str): Set to "" by default. 
+#			If defined, list of instances to enable
+
+. /etc/rc.subr
+
+name="iipsrv"
+rcvar=iipsrv_enable
+
+load_rc_config $name
+
+: ${iipsrv_enable="NO"}
+: ${iipsrv_flags="--bind 127.0.0.1:9111"}
+: ${iipsrv_pidfile="/var/run/iipsrv.pid"}
+: ${iipsrv_user="nobody"}
+
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/iipsrv.fcgi"
+start_precmd="${name}_prestart"
+
+if [ -n "$2" ]; then
+	instance="$2"
+	load_rc_config ${name}_${instance}
+	case "$iipsrv_instances" in
+	"$2 "*|*" $2 "*|*" $2"|"$2")
+		eval iipsrv_flags="\${iipsrv_${instance}_flags:-\"${iipsrv_flags}\"}"
+		eval iipsrv_config="\${iipsrv_${instance}_config:-\"${iipsrv_config}\"}"
+		eval iipsrv_user="\${iipsrv_${instance}_user:-\"${iipsrv_user}\"}"
+		eval iipsrv_pidfile="\${iipsrv_${instance}_pidfile:-\"/var/run/iipsrv.${instance}.pid\"}"
+	;;
+	*)
+		err 1 "$2 not found in iipsrv_instances" ;;
+	esac
+else
+	if [ -n "${iipsrv_instances}" -a -n "$1" ]; then
+		for instance in ${iipsrv_instances}; do
+			eval _enable="\${iipsrv_${instance}_enable}"
+			case "${_enable:-${iipsrv_enable}}" in
+			[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+				continue
+			;;
+			[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+			;;
+			*)
+				if [ -z "$_enable" ]; then
+					_var=iipsrv_enable
+				else
+					_var=iipsrv_${instance}_enable
+				fi
+				warn "Bad value" \
+					"'${_enable:-${iipsrv_enable}}'" \
+					"for ${_var}. " \
+					"Instance ${instance} skipped."
+				continue
+			;;
+			esac
+			echo "===> iipsrv instance: ${instance}"
+			if %%PREFIX%%/etc/rc.d/iipsrv $1 ${instance}; then
+				success="${instance} ${success}"
+			else
+				failed="${instance} (${retcode}) ${failed}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+
+pidfile=$iipsrv_pidfile
+daemon_user=$iipsrv_user
+iipsrv_flags="-p ${iipsrv_pidfile} -u ${daemon_user} ${procname} ${iipsrv_flags}"
+iipsrv_user=""
+
+iipsrv_prestart()
+{
+	if [ -n "${iipsrv_config}" -a -r ${iipsrv_config} ]; then
+		command="/usr/bin/env `grep -v '\s*#' ${iipsrv_config} | tr '\n' ' '` ${command}"
+	fi
+}
+
+run_rc_command "$1"

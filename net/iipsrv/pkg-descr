@@ -1,0 +1,9 @@
+IIPImage is an advanced high-performance feature-rich image
+server system for web-based streamed viewing and zooming of
+ultra high-resolution images with low processor and memory
+requirements. The system can handle gigapixel size images as
+well as advanced image features such as 8/16/32 bits per
+channel, CIELAB colorimetric images and scientific imagery
+such as multispectral images and digital elevation maps.
+
+WWW: http://iipimage.sourceforge.net/
