@@ -4,6 +4,7 @@
 %%DATADIR%%/Plex Media Server
 @mode
 %%DATADIR%%/Plex_Media_Server
+%%DATADIR%%/Resources/English.lproj/Localizable.strings
 %%DATADIR%%/Resources/Fonts/DejaVuSans-Bold.ttf
 %%DATADIR%%/Resources/Fonts/DejaVuSans-Regular.ttf
 %%DATADIR%%/Resources/Fonts/NotoNaskhArabic-Bold.ttf
@@ -40,6 +41,7 @@
 %%DATADIR%%/Resources/Fonts/NotoSansYi-Regular.ttf
 %%DATADIR%%/Resources/Fonts/OpenSans-Bold.ttf
 %%DATADIR%%/Resources/Fonts/OpenSans-Regular.ttf
+%%DATADIR%%/Resources/Gracenote.bin
 %%DATADIR%%/Resources/Graphics/DefaultAlbumCover.png
 %%DATADIR%%/Resources/Graphics/actor-icon.png
 %%DATADIR%%/Resources/Graphics/album-fanart.jpg
@@ -60,11 +62,12 @@
 %%DATADIR%%/Resources/Graphics/photo.png
 %%DATADIR%%/Resources/Graphics/show-fanart.jpg
 %%DATADIR%%/Resources/Graphics/show.png
+%%DATADIR%%/Resources/Graphics/sugar.cmake
 %%DATADIR%%/Resources/Graphics/video.png
 %%DATADIR%%/Resources/LICENSE
 @mode 555
-%%DATADIR%%/Resources/Plex New Transcoder
 %%DATADIR%%/Resources/Plex Relay
+%%DATADIR%%/Resources/Plex Script Host
 %%DATADIR%%/Resources/Plex Transcoder
 @mode
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Fanart-TV.bundle/Contents/Code/__init__.py
@@ -76,8 +79,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Fanart-TV.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/.gitignore
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/FreeBSD/i386/Frameworks/README
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/FreeBSD/i386/Libraries/README
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/BeautifulSoup.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/RestrictedPython/Eval.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/RestrictedPython/Guards.py
@@ -150,6 +151,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/dateutil/tzwin.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/dateutil/zoneinfo/__init__.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/demjson.py
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/fcrypt.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/feedparser.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/httplib_new.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/pyamf/__init__.py
@@ -435,6 +437,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/Info.plist
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/Resources/attribution.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/LastFM.bundle/README.md
@@ -664,6 +667,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/biography_channel.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/black_bear_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blackdog.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bleecker_street.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blind_ambition_entertainment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blue_sky.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blue_underground.png
@@ -704,6 +708,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/channel_seven.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/channel_ten.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/cheyenne.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/chiller.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/cinemax.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/city.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/cmt.png
@@ -886,6 +891,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/lawrence_bender_productions.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/league of noble peers.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/legendary_pictures.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/lego.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/liberty_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/lifetime.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/lift.png
@@ -1022,6 +1028,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/roadside_attractions.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rogue_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/romar.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rte_one.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rtl.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rtl4.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rtl5.png
@@ -1068,6 +1075,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/spyglass_entertainment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/squareenix.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/stage6.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/stan.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/starbucks_entertainment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/starz.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/steele.png
@@ -1120,6 +1128,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/tvnz.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/tvp.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/twisted_pictures.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/twit.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/ugc.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/uk_film_council.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/united_artists.png
@@ -1312,362 +1321,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Scanners.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Scanners.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Scanners.bundle/README.md
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/.gitignore
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Resources/icon-default.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.5by5/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.5by5/URL/5by5/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.abc/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.abc/URL/ABC/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.abcfamily/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.abcfamily/URL/ABC Family/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.absoluteradio/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.absoluteradio/URL/Absolute Radio/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.adobetv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.adobetv/URL/Adobe TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.adultswim/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.adultswim/URL/Adult Swim/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aetv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aetv/URL/AETV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt/URL/iTunes Movie Trailers/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.annakimphotography/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.annakimphotography/URL/Anna Kim Photography/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aolon/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aolon/URL/AOL On/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.arbejdsglaedeTV/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.arbejdsglaedeTV/URL/arbejdsglaedeTV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bbvms/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bbvms/URL/Blue Billywig/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bing/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bing/URL/Bing/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bodybuilding/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bodybuilding/URL/Bodybuilding.com/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.breakcom/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.breakcom/URL/Break.com/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.brightcove/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.brightcove/URL/Brightcove/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.canalplus/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.canalplus/URL/Canal Plus France/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.canoetv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.canoetv/URL/CanoeTV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.catspawimages/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.catspawimages/URL/Cats Paw Images/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cbcnewsnetwork/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cbcnewsnetwork/URL/CBC/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cbs/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cbs/URL/CBS/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.channel9/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.channel9/URL/Channel9/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cnettv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cnettv/URL/CNET/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cnn/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cnn/URL/CNN/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.college_humor/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.college_humor/URL/CollegeHumor/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/URL/Comedy Central/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.crackle/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.crackle/URL/Crackle/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/URL/Dailymotion/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.discovery/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.discovery/URL/Discovery/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.disney/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.disney/URL/Disney/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dolectures/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dolectures/URL/DoLectures/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dplay/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dplay/URL/Dplay/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.drdk/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.drdk/URL/drdk/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dumpert/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dumpert/URL/Dumpert/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.einthusan/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.einthusan/URL/Einthusan/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.eurogamer/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.eurogamer/URL/Eurogamer/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.extreme/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.extreme/URL/extreme/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.facebook/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.facebook/URL/Facebook/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fallback/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fallback/URL/Fallback/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.finkammat/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.finkammat/URL/Finkammat/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foodnetwork/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foodnetwork/URL/Food Network/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foratv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foratv/URL/ForaTV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fox/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fox/URL/FOX/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foxnews/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foxnews/URL/Fox News/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.freakonomics/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.freakonomics/URL/Freakonomics/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.freecaster/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.freecaster/URL/Freecaster TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.freedocumentaries/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.freedocumentaries/URL/FreeDocumentaries/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.funnyordie/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.funnyordie/URL/FunnyOrDie/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fxguidetv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fxguidetv/URL/fxguidetv/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.g4tv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.g4tv/URL/G4TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamernl/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamernl/URL/GamerNL/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gametrailers/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gametrailers/URL/GameTrailers/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/URL/GiantBomb/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/URL/Goal/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.golfchannel/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.golfchannel/URL/GolfChannel/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.googledrive/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.googledrive/URL/Google Drive/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.hgtvcanada/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.hgtvcanada/URL/HGTV Canada/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.history_canada/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.history_canada/URL/History Canada/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.historychannel/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.historychannel/URL/History Channel/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.hollywoodreporter/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.hollywoodreporter/URL/Hollywood Reporter/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.howcast/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.howcast/URL/Howcast/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ign/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ign/URL/IGN/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.imovies/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.imovies/URL/iMovies/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.indieclicktv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.indieclicktv/URL/IndieClick TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.internetarchive/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.internetarchive/URL/Internet Archive/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL/BBC iPlayer/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kelbytv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kelbytv/URL/Kelby TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/URL/KhanAcademy/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/URL/Lifetime/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/URL/LiveLeak/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.locotv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.locotv/URL/LocoTV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.logotv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.logotv/URL/Logo TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lstudio/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lstudio/URL/L Studio/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.makingof/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.makingof/URL/MakingOf/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.medici/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.medici/URL/Medici TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.metacafe/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.metacafe/URL/Metacafe/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.mevio/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.mevio/URL/Mevio/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.moviefone/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.moviefone/URL/moviefone/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.mpora/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.mpora/URL/MPORA Photos/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.mpora/URL/MPORA/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.mtv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.mtv/URL/MTV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.myspace/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.myspace/URL/MySpace/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nationalgeographic/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nationalgeographic/URL/National Geographic Canada/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nationalgeographic/URL/National Geographic Photography/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nationalgeographic/URL/National Geographic/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/NBC/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ndtv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ndtv/URL/NDTV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.newsy/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.newsy/URL/Newsy/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.newyorker/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.newyorker/URL/The New Yorker/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nme/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nme/URL/NME/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/URL/NOS/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/URL/NPO/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.oratv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.oratv/URL/Ora TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.orftvthek/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.orftvthek/URL/ORF TVThek Live/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.orftvthek/URL/ORF TVThek VOD/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/Shared Code/CoveAPI.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/Shared Code/PBS_API.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/Shared Code/SortThumbs.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/URL/PBS/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/faststream.in/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/gorillavid.in/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/royalvids.eu/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/vidzi.tv/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/vodlocker.com/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pitchforktv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pitchforktv/URL/Pitchfork.tv/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pixelcorps/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pixelcorps/URL/PixelCorps TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.redbulltv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.redbulltv/URL/Red Bull TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.revision3/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.revision3/URL/Revision3/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rottentomatoes/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rottentomatoes/URL/RottenTomatoes/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rt/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rt/URL/RT/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtbf/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtbf/URL/RTBF/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtlxl/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rtlxl/URL/RTL XL/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutube/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutube/URL/Rutube/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutv/URL/RU TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sapo/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sapo/URL/Sapo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.schweizerfernsehen/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.schweizerfernsehen/URL/Schweizer Fernsehen/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.showmedo/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.showmedo/URL/ShowMeDo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/URL/Slice/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.snagfilms/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.snagfilms/URL/SnagFilms/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.snotr/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.snotr/URL/Snotr/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sohutv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sohutv/URL/Sohu TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.soundcloud/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.soundcloud/URL/SoundCloud/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.southpark/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.southpark/URL/South Park/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.spike/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.spike/URL/Spike/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.springboard/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.springboard/URL/Springboard/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.stubru/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.stubru/URL/Studio Brussel/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.stumbleupon/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.stumbleupon/URL/StumbleUpon/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.svtplay/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.svtplay/URL/SVTPlay/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.t3/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.t3/URL/T3/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.teamcoco/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.teamcoco/URL/Team Coco/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.teamhww/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.teamhww/URL/TeamHWW/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.teamtreehouse/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.teamtreehouse/URL/Team Treehouse/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ted/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ted/URL/TED Talks/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tested/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tested/URL/Tested/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theberrics/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theberrics/URL/The Berrics/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thecw/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thecw/URL/The CW/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theguardian/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theguardian/URL/The Guardian/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thenytimes/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thenytimes/URL/New York Times/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theonion/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theonion/URL/The Onion/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theverge/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theverge/URL/The Verge/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.toutv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.toutv/URL/TOU TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.traileraddict/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.traileraddict/URL/Trailer Addict/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.triplem/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.triplem/URL/TripleM/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tubitv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tubitv/URL/Tubi TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/Shared Code/tv4play.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/URL/TV4 Play/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/URL/TV4 Play/ServicePrefs.json
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvkultura/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvkultura/URL/TVKultura/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvland/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvland/URL/TVLand/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvone/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvone/URL/TV One/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL/TVTropolis/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/URL/Tweakers/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twit/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twit/URL/TWiT/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL/Twitch.tv/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ukfilmtrailer/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ukfilmtrailer/URL/UK Filmtrailer/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.universalsports/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.universalsports/URL/Universal Sports/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.urplay/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.urplay/URL/URPlay/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/URL/Ustream/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vevo/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vevo/URL/Vevo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viasat/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viasat/URL/Viasat Play/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vice/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vice/URL/Vice/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viddler/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viddler/URL/Viddler/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videobash/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videobash/URL/Videobash/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videojug/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videojug/URL/VideoJug/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videostrip/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videostrip/URL/Videostrip/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts/URL/Vimcasts/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/URL/Vimeo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/URL/Vimeo/ServicePrefs.json
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vine/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vine/URL/Vine/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vk/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vk/URL/VK/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vrt/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vrt/URL/VRT/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.wimp/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.wimp/URL/Wimp/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.wsj/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.wsj/URL/WSJ/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/URL/RedTube/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/URL/beeg/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/URL/xHamster/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.yahoo/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.yahoo/URL/Yahoo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.youtube/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.youtube/URL/YouTube/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.youtube/URL/YouTube/ServicePrefs.json
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.zdfmediathek/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.zdfmediathek/URL/ZDF Mediathek/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.zideo/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.zideo/URL/Zideo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.zie/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.zie/URL/Zie/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.search.videosurf/Resources/SourceIcon-Vimeo.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.search.videosurf/Resources/SourceIcon-YouTube.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.search.videosurf/Search/VideoSurf/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.search.videosurf/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/VERSION
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/System.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/System.bundle/Contents/Code/agentservice.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/System.bundle/Contents/Code/bundleservice.py
@@ -1705,19 +1358,21 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheMovieDB.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheMovieDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/Code/__init__.py
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/Resources/attribution.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.17dc895a940c1a1ff2112611a5d346e6.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.8a15495ac101fa04d0fdd60953ffe6e0.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.6f2ab52fa24ee9930ee495e06d294ddd.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.98432f91c10077f507d0733d02bf9df1.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon-mask.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon.ico
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/plex-logo.96faf245690b14fdd33eccd3294ac57f.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/plex-pass.e73cc397459c4930e842b86b27d05eb9.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/pms-logo.70f6a544befb024685e4a294f6e5505e.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/posters/avatar-560.9f88d7ebc3a9659a9e1ee1b471e72951.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/posters/square.f5415a2d8a1fccd963e88194af15ddc0.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/vendor-logos/lyricfind.0752dd542f235693d1fdaecbfcf339a3.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/blank.png
@@ -1790,18 +1445,19 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/queue/bookmarklet-steps-ie.3cbda4e75b0dd0e186e0c24999ab0d1d.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/queue/bookmarklet-steps.abc5147d9257f0ec59f7b2257db9cb8f.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/queue/email-links.f1b12dd82ea85b39a4c0fa07dd6df095.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/setup/setup-devices.4c444242863ca1234c65de48ef80a5e8.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/upsell/upsell-camera-upload.c292737601a4452f02cb86a5ff46cd7f.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/upsell/upsell-cloud-sync.58594567e630cc4dae0ad42b6573f225.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/upsell/upsell-forum.a35de654d388b5416cd87ddd45e904f7.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/upsell/upsell-gracenote.47143d9a798b6044bb41469630e662db.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/upsell/upsell-mobile-sync.6a66674e2cb992f1134481602860f06f.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/upsell/upsell-trailers-extras.1ad0852cbe3bde7198f897afd6bc14dd.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/upsell/upsell-vevo.5dc7dc8cf83733aeeb7519a500dab286.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/gracenote.18089cb7063ad397523859fa93f2d54c.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/vevo.0aa36b37d6a9aedfe67df4c5ff2ae8e0.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.64626698ddf4e9a7e118.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest.41a0b9187a1b9e94d122.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.9e967496c0f98e36a534.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.680e756a4530d9e6abed.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest.e03b68e82ebe9b435e8b.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.aaa70f9e87699b781838.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/zxcvbn.c9ed0d9139df193d94df.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/mp3/null.2036f08ba858d37814b7f6982d26414a.mp3
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
@@ -1874,7 +1530,10 @@
 %%DATADIR%%/Resources/Profiles/Plex Home Theater.xml
 %%DATADIR%%/Resources/Profiles/Popcorn Hour.xml
 %%DATADIR%%/Resources/Profiles/Roku-3.1.xml
+%%DATADIR%%/Resources/Profiles/Roku-5.x.xml
 %%DATADIR%%/Resources/Profiles/Roku-5000X-6.0.xml
+%%DATADIR%%/Resources/Profiles/Roku-6.x.xml
+%%DATADIR%%/Resources/Profiles/Roku-7.x.xml
 %%DATADIR%%/Resources/Profiles/Roku.xml
 %%DATADIR%%/Resources/Profiles/RokuDLNA-3.1.xml
 %%DATADIR%%/Resources/Profiles/RokuDLNA-4400X-7.x.xml
@@ -1896,10 +1555,12 @@
 %%DATADIR%%/Resources/Profiles/Universal Mobile.xml
 %%DATADIR%%/Resources/Profiles/Universal TV.xml
 %%DATADIR%%/Resources/Profiles/Unknown Browser.xml
+%%DATADIR%%/Resources/Profiles/Vivaldi.xml
 %%DATADIR%%/Resources/Profiles/Web.xml
-%%DATADIR%%/Resources/Profiles/WebM.xml
 %%DATADIR%%/Resources/Profiles/Western Digital TV Live.xml
 %%DATADIR%%/Resources/Profiles/Wii U.xml
+%%DATADIR%%/Resources/Profiles/Windows 10 Desktop.xml
+%%DATADIR%%/Resources/Profiles/Windows 10 Mobile.xml
 %%DATADIR%%/Resources/Profiles/Windows Phone.xml
 %%DATADIR%%/Resources/Profiles/Windows.xml
 %%DATADIR%%/Resources/Profiles/Xbox 360 App.xml
@@ -1919,76 +1580,74 @@
 %%DATADIR%%/Resources/Profiles/iOS-iPod-3,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPod-4,1.xml
 %%DATADIR%%/Resources/Profiles/iOS.xml
+%%DATADIR%%/Resources/Profiles/sugar.cmake
 %%DATADIR%%/Resources/Profiles/tvOS.xml
-@mode 555
-%%DATADIR%%/Resources/Python/bin/python
-@mode
 %%DATADIR%%/Resources/Python/include/python2.7/pyconfig.h
-%%DATADIR%%/Resources/Python/lib/python2.7/BaseHTTPServer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/Bastion.py
-%%DATADIR%%/Resources/Python/lib/python2.7/CGIHTTPServer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ConfigParser.py
-%%DATADIR%%/Resources/Python/lib/python2.7/Cookie.py
-%%DATADIR%%/Resources/Python/lib/python2.7/DocXMLRPCServer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/HTMLParser.py
+%%DATADIR%%/Resources/Python/lib/python2.7/BaseHTTPServer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/Bastion.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/CGIHTTPServer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ConfigParser.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/Cookie.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/DocXMLRPCServer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/HTMLParser.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/LICENSE.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/MimeWriter.py
-%%DATADIR%%/Resources/Python/lib/python2.7/Queue.py
-%%DATADIR%%/Resources/Python/lib/python2.7/SimpleHTTPServer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/SimpleXMLRPCServer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/SocketServer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/StringIO.py
-%%DATADIR%%/Resources/Python/lib/python2.7/UserDict.py
-%%DATADIR%%/Resources/Python/lib/python2.7/UserList.py
-%%DATADIR%%/Resources/Python/lib/python2.7/UserString.py
-%%DATADIR%%/Resources/Python/lib/python2.7/_LWPCookieJar.py
-%%DATADIR%%/Resources/Python/lib/python2.7/_MozillaCookieJar.py
-%%DATADIR%%/Resources/Python/lib/python2.7/__future__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/__phello__.foo.py
-%%DATADIR%%/Resources/Python/lib/python2.7/_abcoll.py
-%%DATADIR%%/Resources/Python/lib/python2.7/_osx_support.py
-%%DATADIR%%/Resources/Python/lib/python2.7/_pyio.py
-%%DATADIR%%/Resources/Python/lib/python2.7/_strptime.py
-%%DATADIR%%/Resources/Python/lib/python2.7/_threading_local.py
-%%DATADIR%%/Resources/Python/lib/python2.7/_weakrefset.py
-%%DATADIR%%/Resources/Python/lib/python2.7/abc.py
-%%DATADIR%%/Resources/Python/lib/python2.7/aifc.py
-%%DATADIR%%/Resources/Python/lib/python2.7/antigravity.py
-%%DATADIR%%/Resources/Python/lib/python2.7/anydbm.py
-%%DATADIR%%/Resources/Python/lib/python2.7/argparse.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ast.py
-%%DATADIR%%/Resources/Python/lib/python2.7/asynchat.py
-%%DATADIR%%/Resources/Python/lib/python2.7/asyncore.py
-%%DATADIR%%/Resources/Python/lib/python2.7/atexit.py
-%%DATADIR%%/Resources/Python/lib/python2.7/audiodev.py
-%%DATADIR%%/Resources/Python/lib/python2.7/base64.py
-%%DATADIR%%/Resources/Python/lib/python2.7/bdb.py
-%%DATADIR%%/Resources/Python/lib/python2.7/binhex.py
-%%DATADIR%%/Resources/Python/lib/python2.7/bisect.py
-%%DATADIR%%/Resources/Python/lib/python2.7/cProfile.py
-%%DATADIR%%/Resources/Python/lib/python2.7/calendar.py
-%%DATADIR%%/Resources/Python/lib/python2.7/cgi.py
-%%DATADIR%%/Resources/Python/lib/python2.7/cgitb.py
-%%DATADIR%%/Resources/Python/lib/python2.7/chunk.py
-%%DATADIR%%/Resources/Python/lib/python2.7/cmd.py
-%%DATADIR%%/Resources/Python/lib/python2.7/code.py
-%%DATADIR%%/Resources/Python/lib/python2.7/codecs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/codeop.py
-%%DATADIR%%/Resources/Python/lib/python2.7/collections.py
-%%DATADIR%%/Resources/Python/lib/python2.7/colorsys.py
-%%DATADIR%%/Resources/Python/lib/python2.7/commands.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compileall.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/ast.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/consts.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/future.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/misc.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/pyassem.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/pycodegen.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/symbols.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/syntax.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/transformer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/compiler/visitor.py
+%%DATADIR%%/Resources/Python/lib/python2.7/MimeWriter.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/Queue.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/SimpleHTTPServer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/SimpleXMLRPCServer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/SocketServer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/StringIO.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/UserDict.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/UserList.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/UserString.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/_LWPCookieJar.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/_MozillaCookieJar.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/__future__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/__phello__.foo.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/_abcoll.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/_osx_support.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/_pyio.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/_strptime.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/_threading_local.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/_weakrefset.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/abc.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/aifc.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/antigravity.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/anydbm.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/argparse.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ast.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/asynchat.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/asyncore.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/atexit.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/audiodev.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/base64.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/bdb.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/binhex.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/bisect.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/cProfile.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/calendar.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/cgi.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/cgitb.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/chunk.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/cmd.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/code.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/codecs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/codeop.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/collections.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/colorsys.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/commands.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compileall.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/ast.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/consts.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/future.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/misc.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/pyassem.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/pycodegen.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/symbols.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/syntax.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/transformer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/compiler/visitor.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/config/Makefile
 %%DATADIR%%/Resources/Python/lib/python2.7/config/Setup
 %%DATADIR%%/Resources/Python/lib/python2.7/config/Setup.config
@@ -1996,291 +1655,290 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/config/config.c
 %%DATADIR%%/Resources/Python/lib/python2.7/config/config.c.in
 %%DATADIR%%/Resources/Python/lib/python2.7/config/install-sh
-%%DATADIR%%/Resources/Python/lib/python2.7/config/libpython2.7.a
 %%DATADIR%%/Resources/Python/lib/python2.7/config/makesetup
 %%DATADIR%%/Resources/Python/lib/python2.7/config/python.o
-%%DATADIR%%/Resources/Python/lib/python2.7/contextlib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/cookielib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/copy.py
-%%DATADIR%%/Resources/Python/lib/python2.7/copy_reg.py
-%%DATADIR%%/Resources/Python/lib/python2.7/csv.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/_endian.py
+%%DATADIR%%/Resources/Python/lib/python2.7/contextlib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/cookielib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/copy.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/copy_reg.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/csv.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/_endian.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/README.ctypes
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/dyld.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/dylib.py
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/dyld.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/dylib.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/fetch_macholib
 %%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/fetch_macholib.bat
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/framework.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/runtests.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_anon.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_array_in_pointer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_arrays.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_as_parameter.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_bitfields.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_buffers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_byteswap.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_callbacks.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_cast.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_cfuncs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_checkretval.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_delattr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_errcheck.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_errno.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_find.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_frombuffer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_funcptr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_functions.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_incomplete.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_init.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_integers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_internals.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_keeprefs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_libc.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_loading.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_macholib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_memfunctions.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_numbers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_objects.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_parameters.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_pep3118.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_pickling.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_pointers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_prototypes.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_python_api.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_random_things.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_refcounts.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_repr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_returnfuncptrs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_simplesubclasses.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_sizes.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_slicing.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_stringptr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_strings.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_struct_fields.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_structures.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_unaligned_structures.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_unicode.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_values.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_varsize_struct.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_win32.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/util.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/wintypes.py
-%%DATADIR%%/Resources/Python/lib/python2.7/curses/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/curses/ascii.py
-%%DATADIR%%/Resources/Python/lib/python2.7/curses/has_key.py
-%%DATADIR%%/Resources/Python/lib/python2.7/curses/panel.py
-%%DATADIR%%/Resources/Python/lib/python2.7/curses/textpad.py
-%%DATADIR%%/Resources/Python/lib/python2.7/curses/wrapper.py
-%%DATADIR%%/Resources/Python/lib/python2.7/dbhash.py
-%%DATADIR%%/Resources/Python/lib/python2.7/decimal.py
-%%DATADIR%%/Resources/Python/lib/python2.7/difflib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/dircache.py
-%%DATADIR%%/Resources/Python/lib/python2.7/dis.py
-%%DATADIR%%/Resources/Python/lib/python2.7/doctest.py
-%%DATADIR%%/Resources/Python/lib/python2.7/dumbdbm.py
-%%DATADIR%%/Resources/Python/lib/python2.7/dummy_thread.py
-%%DATADIR%%/Resources/Python/lib/python2.7/dummy_threading.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/_parseaddr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/base64mime.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/charset.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/encoders.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/errors.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/feedparser.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/generator.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/header.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/iterators.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/message.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/application.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/audio.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/base.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/image.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/message.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/multipart.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/nonmultipart.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/text.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/parser.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/quoprimime.py
-%%DATADIR%%/Resources/Python/lib/python2.7/email/utils.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/aliases.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/ascii.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/base64_codec.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/big5.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/big5hkscs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/bz2_codec.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/charmap.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp037.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1006.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1026.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1140.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1250.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1251.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1252.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1253.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1254.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1255.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1256.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1257.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1258.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp424.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp437.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp500.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp720.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp737.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp775.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp850.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp852.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp855.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp856.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp857.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp858.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp860.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp861.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp862.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp863.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp864.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp865.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp866.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp869.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp874.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp875.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp932.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp949.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp950.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/euc_jis_2004.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/euc_jisx0213.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/euc_jp.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/euc_kr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/gb18030.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/gb2312.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/gbk.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/hex_codec.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/hp_roman8.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/hz.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/idna.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_1.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_2.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_2004.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_3.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_ext.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_kr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_1.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_10.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_11.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_13.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_14.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_15.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_16.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_2.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_3.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_4.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_5.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_6.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_7.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_8.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_9.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/johab.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/koi8_r.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/koi8_u.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/latin_1.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_arabic.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_centeuro.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_croatian.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_cyrillic.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_farsi.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_greek.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_iceland.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_latin2.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_roman.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_romanian.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_turkish.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mbcs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/palmos.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/ptcp154.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/punycode.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/quopri_codec.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/raw_unicode_escape.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/rot_13.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/shift_jis.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/shift_jis_2004.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/shift_jisx0213.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/string_escape.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/tis_620.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/undefined.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/unicode_escape.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/unicode_internal.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_16.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_16_be.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_16_le.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_32.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_32_be.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_32_le.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_7.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_8.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_8_sig.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/uu_codec.py
-%%DATADIR%%/Resources/Python/lib/python2.7/encodings/zlib_codec.py
-%%DATADIR%%/Resources/Python/lib/python2.7/filecmp.py
-%%DATADIR%%/Resources/Python/lib/python2.7/fileinput.py
-%%DATADIR%%/Resources/Python/lib/python2.7/fnmatch.py
-%%DATADIR%%/Resources/Python/lib/python2.7/formatter.py
-%%DATADIR%%/Resources/Python/lib/python2.7/fpformat.py
-%%DATADIR%%/Resources/Python/lib/python2.7/fractions.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ftplib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/functools.py
-%%DATADIR%%/Resources/Python/lib/python2.7/genericpath.py
-%%DATADIR%%/Resources/Python/lib/python2.7/getopt.py
-%%DATADIR%%/Resources/Python/lib/python2.7/getpass.py
-%%DATADIR%%/Resources/Python/lib/python2.7/gettext.py
-%%DATADIR%%/Resources/Python/lib/python2.7/glob.py
-%%DATADIR%%/Resources/Python/lib/python2.7/gzip.py
-%%DATADIR%%/Resources/Python/lib/python2.7/hashlib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/heapq.py
-%%DATADIR%%/Resources/Python/lib/python2.7/hmac.py
-%%DATADIR%%/Resources/Python/lib/python2.7/hotshot/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/hotshot/log.py
-%%DATADIR%%/Resources/Python/lib/python2.7/hotshot/stats.py
-%%DATADIR%%/Resources/Python/lib/python2.7/hotshot/stones.py
-%%DATADIR%%/Resources/Python/lib/python2.7/htmlentitydefs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/htmllib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/httplib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ihooks.py
-%%DATADIR%%/Resources/Python/lib/python2.7/imaplib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/imghdr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/importlib/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/imputil.py
-%%DATADIR%%/Resources/Python/lib/python2.7/inspect.py
-%%DATADIR%%/Resources/Python/lib/python2.7/io.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/decoder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/encoder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/scanner.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_check_circular.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_decode.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_default.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_dump.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_encode_basestring_ascii.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_fail.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_float.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_indent.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_pass1.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_pass2.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_pass3.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_recursion.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_scanstring.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_separators.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_speedups.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_tool.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_unicode.py
-%%DATADIR%%/Resources/Python/lib/python2.7/json/tool.py
-%%DATADIR%%/Resources/Python/lib/python2.7/keyword.py
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/macholib/framework.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/runtests.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_anon.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_array_in_pointer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_arrays.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_as_parameter.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_bitfields.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_buffers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_byteswap.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_callbacks.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_cast.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_cfuncs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_checkretval.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_delattr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_errcheck.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_errno.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_find.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_frombuffer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_funcptr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_functions.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_incomplete.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_init.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_integers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_internals.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_keeprefs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_libc.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_loading.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_macholib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_memfunctions.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_numbers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_objects.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_parameters.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_pep3118.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_pickling.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_pointers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_prototypes.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_python_api.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_random_things.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_refcounts.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_repr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_returnfuncptrs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_simplesubclasses.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_sizes.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_slicing.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_stringptr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_strings.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_struct_fields.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_structures.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_unaligned_structures.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_unicode.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_values.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_varsize_struct.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/test/test_win32.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/util.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ctypes/wintypes.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/curses/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/curses/ascii.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/curses/has_key.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/curses/panel.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/curses/textpad.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/curses/wrapper.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/dbhash.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/decimal.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/difflib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/dircache.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/dis.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/doctest.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/dumbdbm.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/dummy_thread.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/dummy_threading.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/_parseaddr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/base64mime.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/charset.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/encoders.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/errors.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/feedparser.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/generator.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/header.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/iterators.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/message.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/application.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/audio.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/base.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/image.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/message.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/multipart.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/nonmultipart.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/mime/text.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/parser.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/quoprimime.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/email/utils.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/aliases.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/ascii.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/base64_codec.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/big5.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/big5hkscs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/bz2_codec.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/charmap.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp037.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1006.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1026.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1140.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1250.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1251.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1252.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1253.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1254.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1255.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1256.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1257.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp1258.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp424.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp437.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp500.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp720.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp737.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp775.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp850.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp852.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp855.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp856.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp857.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp858.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp860.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp861.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp862.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp863.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp864.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp865.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp866.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp869.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp874.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp875.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp932.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp949.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/cp950.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/euc_jis_2004.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/euc_jisx0213.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/euc_jp.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/euc_kr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/gb18030.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/gb2312.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/gbk.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/hex_codec.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/hp_roman8.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/hz.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/idna.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_1.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_2.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_2004.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_3.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_jp_ext.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso2022_kr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_1.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_10.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_11.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_13.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_14.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_15.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_16.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_2.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_3.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_4.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_5.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_6.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_7.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_8.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/iso8859_9.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/johab.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/koi8_r.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/koi8_u.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/latin_1.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_arabic.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_centeuro.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_croatian.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_cyrillic.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_farsi.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_greek.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_iceland.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_latin2.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_roman.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_romanian.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mac_turkish.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/mbcs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/palmos.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/ptcp154.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/punycode.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/quopri_codec.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/raw_unicode_escape.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/rot_13.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/shift_jis.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/shift_jis_2004.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/shift_jisx0213.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/string_escape.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/tis_620.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/undefined.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/unicode_escape.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/unicode_internal.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_16.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_16_be.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_16_le.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_32.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_32_be.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_32_le.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_7.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_8.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/utf_8_sig.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/uu_codec.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/encodings/zlib_codec.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/filecmp.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/fileinput.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/fnmatch.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/formatter.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/fpformat.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/fractions.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ftplib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/functools.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/genericpath.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/getopt.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/getpass.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/gettext.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/glob.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/gzip.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/hashlib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/heapq.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/hmac.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/hotshot/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/hotshot/log.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/hotshot/stats.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/hotshot/stones.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/htmlentitydefs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/htmllib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/httplib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ihooks.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/imaplib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/imghdr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/importlib/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/imputil.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/inspect.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/io.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/decoder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/encoder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/scanner.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_check_circular.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_decode.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_default.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_dump.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_encode_basestring_ascii.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_fail.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_float.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_indent.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_pass1.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_pass2.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_pass3.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_recursion.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_scanstring.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_separators.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_speedups.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_tool.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tests/test_unicode.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/json/tool.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/keyword.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/Python-2.7.4-py2.7.egg-info
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_bisect.so
 %%DATADIR%%/Resources/Python/lib/python2.7/lib-dynload/_codecs_cn.so
@@ -2346,395 +2004,367 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/Grammar2.7.4.final.0.pickle
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/PatternGrammar.txt
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/PatternGrammar2.7.4.final.0.pickle
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/__main__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/btm_matcher.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/btm_utils.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixer_base.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixer_util.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_apply.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_basestring.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_buffer.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_callable.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_dict.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_except.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_exec.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_execfile.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_exitfunc.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_filter.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_funcattrs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_future.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_getcwdu.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_has_key.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_idioms.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_import.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_imports.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_imports2.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_input.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_intern.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_isinstance.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_itertools.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_itertools_imports.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_long.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_map.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_metaclass.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_methodattrs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_ne.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_next.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_nonzero.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_numliterals.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_operator.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_paren.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_print.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_raise.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_raw_input.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_reduce.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_renames.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_repr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_set_literal.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_standarderror.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_sys_exc.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_throw.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_tuple_params.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_types.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_unicode.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_urllib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_ws_comma.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_xrange.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_xreadlines.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_zip.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/main.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/patcomp.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/conv.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/driver.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/grammar.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/literals.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/parse.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/pgen.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/token.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/tokenize.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pygram.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pytree.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/refactor.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/__init__.py
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/__main__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/btm_matcher.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/btm_utils.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixer_base.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixer_util.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_apply.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_basestring.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_buffer.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_callable.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_dict.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_except.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_exec.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_execfile.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_exitfunc.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_filter.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_funcattrs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_future.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_getcwdu.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_has_key.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_idioms.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_import.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_imports.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_imports2.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_input.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_intern.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_isinstance.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_itertools.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_itertools_imports.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_long.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_map.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_metaclass.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_methodattrs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_ne.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_next.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_nonzero.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_numliterals.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_operator.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_paren.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_print.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_raise.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_raw_input.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_reduce.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_renames.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_repr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_set_literal.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_standarderror.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_sys_exc.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_throw.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_tuple_params.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_types.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_unicode.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_urllib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_ws_comma.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_xrange.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_xreadlines.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/fixes/fix_zip.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/main.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/patcomp.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/conv.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/driver.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/grammar.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/literals.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/parse.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/pgen.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/token.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pgen2/tokenize.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pygram.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/pytree.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/refactor.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/__init__.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/README
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/bom.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/crlf.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/different_encoding.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/bad_order.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/myfixes/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/myfixes/fix_explicit.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/myfixes/fix_first.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/myfixes/fix_last.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/myfixes/fix_parrot.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/myfixes/fix_preorder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/no_fixer_cls.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/parrot_example.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/infinite_recursion.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/py2_test_grammar.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/py3_test_grammar.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/pytree_idempotency.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/support.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_all_fixers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_fixers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_main.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_parser.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_pytree.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_refactor.py
-%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_util.py
-%%DATADIR%%/Resources/Python/lib/python2.7/linecache.py
-%%DATADIR%%/Resources/Python/lib/python2.7/locale.py
-%%DATADIR%%/Resources/Python/lib/python2.7/logging/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/logging/config.py
-%%DATADIR%%/Resources/Python/lib/python2.7/logging/handlers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/macpath.py
-%%DATADIR%%/Resources/Python/lib/python2.7/macurl2path.py
-%%DATADIR%%/Resources/Python/lib/python2.7/mailbox.py
-%%DATADIR%%/Resources/Python/lib/python2.7/mailcap.py
-%%DATADIR%%/Resources/Python/lib/python2.7/markupbase.py
-%%DATADIR%%/Resources/Python/lib/python2.7/md5.py
-%%DATADIR%%/Resources/Python/lib/python2.7/mhlib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/mimetools.py
-%%DATADIR%%/Resources/Python/lib/python2.7/mimetypes.py
-%%DATADIR%%/Resources/Python/lib/python2.7/mimify.py
-%%DATADIR%%/Resources/Python/lib/python2.7/modulefinder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multifile.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/connection.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/dummy/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/dummy/connection.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/forking.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/heap.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/managers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/pool.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/process.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/queues.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/reduction.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/sharedctypes.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/synchronize.py
-%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/util.py
-%%DATADIR%%/Resources/Python/lib/python2.7/mutex.py
-%%DATADIR%%/Resources/Python/lib/python2.7/netrc.py
-%%DATADIR%%/Resources/Python/lib/python2.7/new.py
-%%DATADIR%%/Resources/Python/lib/python2.7/nntplib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ntpath.py
-%%DATADIR%%/Resources/Python/lib/python2.7/nturl2path.py
-%%DATADIR%%/Resources/Python/lib/python2.7/numbers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/opcode.py
-%%DATADIR%%/Resources/Python/lib/python2.7/optparse.py
-%%DATADIR%%/Resources/Python/lib/python2.7/os.py
-%%DATADIR%%/Resources/Python/lib/python2.7/os2emxpath.py
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/pytree_idempotency.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/support.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_all_fixers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_fixers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_main.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_parser.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_pytree.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_refactor.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/test_util.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/linecache.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/locale.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/logging/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/logging/config.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/logging/handlers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/macpath.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/macurl2path.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/mailbox.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/mailcap.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/markupbase.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/md5.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/mhlib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/mimetools.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/mimetypes.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/mimify.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/modulefinder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multifile.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/connection.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/dummy/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/dummy/connection.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/forking.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/heap.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/managers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/pool.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/process.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/queues.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/reduction.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/sharedctypes.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/synchronize.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/multiprocessing/util.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/mutex.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/netrc.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/new.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/nntplib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ntpath.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/nturl2path.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/numbers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/opcode.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/optparse.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/os.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/os2emxpath.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/pdb.doc
-%%DATADIR%%/Resources/Python/lib/python2.7/pdb.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pickle.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pickletools.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pipes.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pkgutil.py
-%%DATADIR%%/Resources/Python/lib/python2.7/plat-freebsd9/IN.py
+%%DATADIR%%/Resources/Python/lib/python2.7/pdb.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pickle.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pickletools.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pipes.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pkgutil.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/plat-freebsd9/IN.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/plat-freebsd9/regen
-%%DATADIR%%/Resources/Python/lib/python2.7/platform.py
-%%DATADIR%%/Resources/Python/lib/python2.7/plistlib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/popen2.py
-%%DATADIR%%/Resources/Python/lib/python2.7/poplib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/posixfile.py
-%%DATADIR%%/Resources/Python/lib/python2.7/posixpath.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pprint.py
-%%DATADIR%%/Resources/Python/lib/python2.7/profile.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pstats.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pty.py
-%%DATADIR%%/Resources/Python/lib/python2.7/py_compile.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pyclbr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pydoc.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pydoc_data/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pydoc_data/topics.py
-%%DATADIR%%/Resources/Python/lib/python2.7/pydoc_topics.py
-%%DATADIR%%/Resources/Python/lib/python2.7/quopri.py
-%%DATADIR%%/Resources/Python/lib/python2.7/random.py
-%%DATADIR%%/Resources/Python/lib/python2.7/re.py
-%%DATADIR%%/Resources/Python/lib/python2.7/repr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/rexec.py
-%%DATADIR%%/Resources/Python/lib/python2.7/rfc822.py
-%%DATADIR%%/Resources/Python/lib/python2.7/rlcompleter.py
-%%DATADIR%%/Resources/Python/lib/python2.7/robotparser.py
-%%DATADIR%%/Resources/Python/lib/python2.7/runpy.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sched.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sets.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sgmllib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sha.py
-%%DATADIR%%/Resources/Python/lib/python2.7/shelve.py
-%%DATADIR%%/Resources/Python/lib/python2.7/shlex.py
-%%DATADIR%%/Resources/Python/lib/python2.7/shutil.py
+%%DATADIR%%/Resources/Python/lib/python2.7/platform.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/plistlib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/popen2.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/poplib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/posixfile.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/posixpath.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pprint.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/profile.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pstats.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pty.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/py_compile.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pyclbr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pydoc.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pydoc_data/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pydoc_data/topics.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/pydoc_topics.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/quopri.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/random.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/re.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/repr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/rexec.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/rfc822.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/rlcompleter.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/robotparser.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/runpy.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sched.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sets.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sgmllib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sha.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/shelve.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/shlex.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/shutil.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/README
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/cjson.so
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/easy-install.pth
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/native_libs.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/ElementInclude.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/_elementpath.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/builder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/cssselect.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/doctestcompare.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/etree.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/etree.so
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/ElementSoup.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/_dictmixin.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/_diffcommand.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/_html5builder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/_setmixin.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/builder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/clean.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/defs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/diff.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/formfill.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/html5parser.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/soupparser.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/html/usedoctest.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/resources/rng/iso-schematron.rng
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/resources/xsl/RNG2Schtrn.xsl
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/resources/xsl/XSD2Schtrn.xsl
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_abstract_expand.xsl
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_dsdl_include.xsl
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_message.xsl
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_skeleton_for_xslt1.xsl
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_svrl_for_xslt1.xsl
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/objectify.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/objectify.so
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/pyclasslookup.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/sax.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7-freebsd-9.1-RELEASE-amd64.egg/lxml/usedoctest.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml-2.3-py2.7.egg-info
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/ElementInclude.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/_elementpath.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/builder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/cssselect.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/doctestcompare.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/etree.so
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/ElementSoup.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/_dictmixin.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/_diffcommand.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/_html5builder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/_setmixin.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/builder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/clean.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/defs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/diff.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/formfill.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/html5parser.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/soupparser.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/html/usedoctest.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/rng/iso-schematron.rng
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/RNG2Schtrn.xsl
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/XSD2Schtrn.xsl
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_abstract_expand.xsl
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_dsdl_include.xsl
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_message.xsl
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_skeleton_for_xslt1.xsl
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_svrl_for_xslt1.xsl
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/objectify.so
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/pyclasslookup.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/sax.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/lxml/usedoctest.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/site-packages/python_cjson-1.0.5-py2.7.egg-info
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/PKG-INFO
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/SOURCES.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/dependency_links.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/native_libs.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/not-zip-safe
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/EGG-INFO/top_level.txt
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/_speedups.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/_speedups.so
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/compat.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/decoder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/encoder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/ordered_dict.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/scanner.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_bigint_as_string.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_check_circular.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_decimal.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_decode.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_default.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_dump.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_encode_basestring_ascii.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_encode_for_html.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_errors.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_fail.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_float.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_for_json.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_indent.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_item_sort_key.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_namedtuple.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_pass1.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_pass2.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_pass3.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_recursion.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_scanstring.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_separators.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_speedups.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_tool.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_tuple.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tests/test_unicode.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7-freebsd-9.1-RELEASE-amd64.egg/simplejson/tool.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/site.py
-%%DATADIR%%/Resources/Python/lib/python2.7/site.py
-%%DATADIR%%/Resources/Python/lib/python2.7/smtpd.py
-%%DATADIR%%/Resources/Python/lib/python2.7/smtplib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sndhdr.py
-%%DATADIR%%/Resources/Python/lib/python2.7/socket.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/dbapi2.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/dump.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/dbapi.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/dump.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/factory.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/hooks.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/py25tests.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/regression.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/transactions.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/types.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/userfunctions.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sre.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sre_compile.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sre_constants.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sre_parse.py
-%%DATADIR%%/Resources/Python/lib/python2.7/ssl.py
-%%DATADIR%%/Resources/Python/lib/python2.7/stat.py
-%%DATADIR%%/Resources/Python/lib/python2.7/statvfs.py
-%%DATADIR%%/Resources/Python/lib/python2.7/string.py
-%%DATADIR%%/Resources/Python/lib/python2.7/stringold.py
-%%DATADIR%%/Resources/Python/lib/python2.7/stringprep.py
-%%DATADIR%%/Resources/Python/lib/python2.7/struct.py
-%%DATADIR%%/Resources/Python/lib/python2.7/subprocess.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sunau.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sunaudio.py
-%%DATADIR%%/Resources/Python/lib/python2.7/symbol.py
-%%DATADIR%%/Resources/Python/lib/python2.7/symtable.py
-%%DATADIR%%/Resources/Python/lib/python2.7/sysconfig.py
-%%DATADIR%%/Resources/Python/lib/python2.7/tabnanny.py
-%%DATADIR%%/Resources/Python/lib/python2.7/tarfile.py
-%%DATADIR%%/Resources/Python/lib/python2.7/telnetlib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/tempfile.py
-%%DATADIR%%/Resources/Python/lib/python2.7/textwrap.py
-%%DATADIR%%/Resources/Python/lib/python2.7/this.py
-%%DATADIR%%/Resources/Python/lib/python2.7/threading.py
-%%DATADIR%%/Resources/Python/lib/python2.7/timeit.py
-%%DATADIR%%/Resources/Python/lib/python2.7/toaiff.py
-%%DATADIR%%/Resources/Python/lib/python2.7/token.py
-%%DATADIR%%/Resources/Python/lib/python2.7/tokenize.py
-%%DATADIR%%/Resources/Python/lib/python2.7/trace.py
-%%DATADIR%%/Resources/Python/lib/python2.7/traceback.py
-%%DATADIR%%/Resources/Python/lib/python2.7/tty.py
-%%DATADIR%%/Resources/Python/lib/python2.7/types.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/__main__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/case.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/loader.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/main.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/result.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/runner.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/signals.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/suite.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/dummy.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/support.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_assertions.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_break.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_case.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_discovery.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_functiontestcase.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_loader.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_program.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_result.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_runner.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_setups.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_skipping.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_suite.py
-%%DATADIR%%/Resources/Python/lib/python2.7/unittest/util.py
-%%DATADIR%%/Resources/Python/lib/python2.7/urllib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/urllib2.py
-%%DATADIR%%/Resources/Python/lib/python2.7/urlparse.py
-%%DATADIR%%/Resources/Python/lib/python2.7/user.py
-%%DATADIR%%/Resources/Python/lib/python2.7/uu.py
-%%DATADIR%%/Resources/Python/lib/python2.7/uuid.py
-%%DATADIR%%/Resources/Python/lib/python2.7/warnings.py
-%%DATADIR%%/Resources/Python/lib/python2.7/wave.py
-%%DATADIR%%/Resources/Python/lib/python2.7/weakref.py
-%%DATADIR%%/Resources/Python/lib/python2.7/webbrowser.py
-%%DATADIR%%/Resources/Python/lib/python2.7/whichdb.py
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson-3.4.0-py2.7.egg-info
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/_speedups.so
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/compat.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/decoder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/encoder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/ordered_dict.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/scanner.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_bigint_as_string.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_check_circular.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_decimal.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_decode.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_default.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_dump.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_encode_basestring_ascii.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_encode_for_html.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_errors.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_fail.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_float.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_for_json.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_indent.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_item_sort_key.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_namedtuple.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_pass1.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_pass2.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_pass3.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_recursion.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_scanstring.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_separators.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_speedups.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_tool.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_tuple.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tests/test_unicode.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site-packages/simplejson/tool.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/site.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/smtpd.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/smtplib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sndhdr.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/socket.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/dbapi2.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/dump.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/dbapi.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/dump.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/factory.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/hooks.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/py25tests.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/regression.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/transactions.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/types.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sqlite3/test/userfunctions.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sre.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sre_compile.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sre_constants.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sre_parse.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/ssl.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/stat.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/statvfs.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/string.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/stringold.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/stringprep.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/struct.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/subprocess.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sunau.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sunaudio.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/symbol.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/symtable.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/sysconfig.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/tabnanny.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/tarfile.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/telnetlib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/tempfile.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/textwrap.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/this.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/threading.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/timeit.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/toaiff.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/token.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/tokenize.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/trace.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/traceback.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/tty.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/types.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/__main__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/case.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/loader.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/main.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/result.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/runner.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/signals.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/suite.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/dummy.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/support.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_assertions.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_break.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_case.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_discovery.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_functiontestcase.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_loader.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_program.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_result.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_runner.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_setups.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_skipping.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/test/test_suite.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/unittest/util.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/urllib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/urllib2.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/urlparse.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/user.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/uu.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/uuid.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/warnings.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/wave.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/weakref.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/webbrowser.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/whichdb.pyc
 %%DATADIR%%/Resources/Python/lib/python2.7/wsgiref.egg-info
-%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/handlers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/headers.py
-%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/simple_server.py
-%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/util.py
-%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/validate.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xdrlib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/NodeFilter.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/domreg.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/expatbuilder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/minicompat.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/minidom.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/pulldom.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/xmlbuilder.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/ElementInclude.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/ElementPath.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/ElementTree.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/cElementTree.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/parsers/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/parsers/expat.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/__init__.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/_exceptions.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/expatreader.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/handler.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/saxutils.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/xmlreader.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xmllib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/xmlrpclib.py
-%%DATADIR%%/Resources/Python/lib/python2.7/zipfile.py
+%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/handlers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/headers.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/simple_server.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/util.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/wsgiref/validate.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xdrlib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/NodeFilter.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/domreg.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/expatbuilder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/minicompat.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/minidom.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/pulldom.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/dom/xmlbuilder.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/ElementInclude.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/ElementPath.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/ElementTree.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/etree/cElementTree.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/parsers/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/parsers/expat.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/__init__.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/_exceptions.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/expatreader.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/handler.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/saxutils.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xml/sax/xmlreader.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xmllib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/xmlrpclib.pyc
+%%DATADIR%%/Resources/Python/lib/python2.7/zipfile.pyc
+%%DATADIR%%/Resources/StatusItemTemplate.png
+%%DATADIR%%/Resources/StatusItemTemplate@2x.png
 %%DATADIR%%/Resources/cacert.pem
 %%DATADIR%%/Resources/clientaccesspolicy.xml
 @mode 644
@@ -2746,26 +2376,32 @@
 %%DATADIR%%/Resources/empty.ts
 %%DATADIR%%/Resources/empty.vtt
 %%DATADIR%%/Resources/fonts.conf
+%%DATADIR%%/Resources/html_parser__init__.py
 %%DATADIR%%/Resources/imdb-combiner-movies.xml
 %%DATADIR%%/Resources/lastfm-combiner-albums.xml
 %%DATADIR%%/Resources/lastfm-combiner-artists.xml
 %%DATADIR%%/Resources/locale/ar/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/ca_AD/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/cs_CZ/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/da/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/de/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/en/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/es/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/et_EE/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/fr/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/he/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/hr_HR/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/hu_HU/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/it/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/ja_JP/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/ko/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/lt/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/nl/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/nl_BE/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/no/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/pt_BR/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/ro/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/ru/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/sr/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/sv/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/locale/zh_CN/LC_MESSAGES/plex.mo
@@ -2780,36 +2416,34 @@
 %%DATADIR%%/Resources/plexmusic-combiner-albums.xml
 %%DATADIR%%/Resources/plexmusic-combiner-artists.xml
 %%DATADIR%%/Resources/rootCA.pem
-@mode 555
-%%DATADIR%%/Resources/rsync
-@mode
 %%DATADIR%%/Resources/server.crt
+%%DATADIR%%/Resources/server.csr
 %%DATADIR%%/Resources/server.key
+%%DATADIR%%/Resources/start.sh
 %%DATADIR%%/Resources/themoviedb-combiner-movies.xml
 %%DATADIR%%/Resources/thetvdb-combiner-shows.xml
 %%DATADIR%%/Resources/vevo-thumb.png
 %%DATADIR%%/Resources/vevo.png
-%%DATADIR%%/libavcodec.so.56
-%%DATADIR%%/libavformat.so.56
-%%DATADIR%%/libavutil.so.54
+%%DATADIR%%/libavcodec.so.57
+%%DATADIR%%/libavformat.so.57
+%%DATADIR%%/libavutil.so.55
+%%DATADIR%%/libboost_atomic.so.1.59.0
 %%DATADIR%%/libboost_chrono.so.1.59.0
+%%DATADIR%%/libboost_date_time.so.1.59.0
 %%DATADIR%%/libboost_filesystem.so.1.59.0
 %%DATADIR%%/libboost_iostreams.so.1.59.0
 %%DATADIR%%/libboost_locale.so.1.59.0
 %%DATADIR%%/libboost_program_options.so.1.59.0
 %%DATADIR%%/libboost_regex.so.1.59.0
-%%DATADIR%%/libboost_signals.so.1.59.0
 %%DATADIR%%/libboost_system.so.1.59.0
 %%DATADIR%%/libboost_thread.so.1.59.0
 %%DATADIR%%/libboost_timer.so.1.59.0
 %%DATADIR%%/libcrypto.so.1.0.0
 %%DATADIR%%/libcurl.so.7
-%%DATADIR%%/libdcadec.so
 %%DATADIR%%/libexpat.so.6
 %%DATADIR%%/libexslt.so.8
 %%DATADIR%%/libfreeimage.so
 %%DATADIR%%/libiconv.so.7
-%%DATADIR%%/libidn.so.17
 %%DATADIR%%/liblrc.so.0
 %%DATADIR%%/libmediainfo.so.0
 %%DATADIR%%/libminiupnpc.so.10
@@ -2822,18 +2456,10 @@
 %%DATADIR%%/libsoci_sqlite3.so.3.0.0
 %%DATADIR%%/libsqlite3.so.8
 %%DATADIR%%/libssl.so.1.0.0
-%%DATADIR%%/libswscale.so.3
+%%DATADIR%%/libswscale.so.4
 %%DATADIR%%/libtag.so.1
-%%DATADIR%%/libtag_c.so.0
-%%DATADIR%%/libvo-aacenc.so.0
 %%DATADIR%%/libxml2.so.9
 %%DATADIR%%/libxslt.so.2
 %%DATADIR%%/libz.so.1
 %%DATADIR%%/libzen.so.0
-@dir %%DATADIR%%/Resources/English.lproj
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/bsddb
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/distutils
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/email/test
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/idlelib
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/lib-tk
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/test
+@dir %%DATADIR%%/Resources/Python/lib/python2.7/lib2to3/tests/data/fixers/myfixes
