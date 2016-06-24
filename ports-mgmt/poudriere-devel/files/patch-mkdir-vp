@@ -1,0 +1,19 @@
+commit e7a21685d30fc183b46cd7c5e0f134ce3a6126fc
+Author: Bryan Drewery <bryan@shatow.net>
+Date:   Fri Jun 24 08:52:08 2016 -0700
+
+    Don't use -v for mkdir
+
+diff --git src/share/poudriere/common.sh src/share/poudriere/common.sh
+index 00eecca..75c02b7 100755
+--- src/share/poudriere/common.sh
++++ src/share/poudriere/common.sh
+@@ -1179,7 +1179,7 @@ do_jail_mounts() {
+ 
+ 	fi
+ 	echo ${nullpaths} | tr ' ' '\n' | sed -e "s,^/,${mnt}/," | \
+-	    xargs mkdir -vp
++	    xargs mkdir -p
+ 	for nullpath in ${nullpaths}; do
+ 		[ -d "${from}${nullpath}" -a "${from}" != "${mnt}" ] && \
+ 		    ${NULLMOUNT} -o ro "${from}${nullpath}" "${mnt}${nullpath}"
