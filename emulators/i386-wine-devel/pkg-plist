@@ -207,6 +207,8 @@ include/wine/windows/d3d10_1.idl
 include/wine/windows/d3d10_1shader.h
 include/wine/windows/d3d10effect.h
 include/wine/windows/d3d10misc.h
+include/wine/windows/d3d10sdklayers.h
+include/wine/windows/d3d10sdklayers.idl
 include/wine/windows/d3d10shader.h
 include/wine/windows/d3d11.h
 include/wine/windows/d3d11.idl
@@ -2218,12 +2220,10 @@ lib32/wine/libcomdlg32.def
 lib32/wine/libcompstui.def
 lib32/wine/libcomsvcs.def
 lib32/wine/libcredui.def
-lib32/wine/libcrtdll.def
 lib32/wine/libcrypt32.def
 lib32/wine/libcryptdll.def
 lib32/wine/libcryptnet.def
 lib32/wine/libcryptui.def
-lib32/wine/libctl3d32.def
 lib32/wine/libd2d1.def
 lib32/wine/libd3d10.def
 lib32/wine/libd3d10_1.def
@@ -2232,7 +2232,6 @@ lib32/wine/libd3d11.def
 lib32/wine/libd3d8.def
 lib32/wine/libd3d9.def
 lib32/wine/libd3dcompiler.def
-lib32/wine/libd3dim.def
 lib32/wine/libd3drm.def
 lib32/wine/libd3dx10.def
 lib32/wine/libd3dx9.def
@@ -2243,9 +2242,7 @@ lib32/wine/libdciman32.def
 lib32/wine/libddraw.def
 lib32/wine/libdinput.a
 lib32/wine/libdinput8.def
-lib32/wine/libdmusic32.def
 lib32/wine/libdnsapi.def
-lib32/wine/libdplay.def
 lib32/wine/libdplayx.def
 lib32/wine/libdpnet.def
 lib32/wine/libdsound.def
@@ -2293,8 +2290,6 @@ lib32/wine/libmsvcr71.def
 lib32/wine/libmsvcr80.def
 lib32/wine/libmsvcr90.def
 lib32/wine/libmsvcrt.def
-lib32/wine/libmsvcrt20.def
-lib32/wine/libmsvcrt40.def
 lib32/wine/libmsvcrtd.def
 lib32/wine/libmsvfw32.def
 lib32/wine/libmswsock.def
@@ -2329,7 +2324,6 @@ lib32/wine/librsaenh.def
 lib32/wine/librtutils.def
 lib32/wine/libsecur32.def
 lib32/wine/libsensapi.def
-lib32/wine/libserialui.def
 lib32/wine/libsetupapi.def
 lib32/wine/libsfc.def
 lib32/wine/libsfc_os.def
