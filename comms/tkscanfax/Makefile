@@ -25,10 +25,10 @@ post-patch:
 		's|/usr/local/lib|${PREFIX}/lib|g'
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}${TKSCANFAXDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}${TKSCANFAXDIR})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${TKSCANFAXDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${TKSCANFAXDIR})
 .for file in tkfax tkscan
-	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}${TKSCANFAXDIR}/${file}
+	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/${TKSCANFAXDIR}/${file}
 	${LN} -sf ../${TKSCANFAXDIR}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
