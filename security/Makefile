@@ -1154,6 +1154,7 @@
     SUBDIR += yersinia
     SUBDIR += ykclient
     SUBDIR += ykpers
+    SUBDIR += yubico-piv-tool
     SUBDIR += yubikey-personalization-gui
     SUBDIR += zebedee
     SUBDIR += zenmap
