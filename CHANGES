@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160625:
+AUTHOR: adamw@FreeBSD.org
+
+  A new ${opt}_CMAKE_BOOL OPTIONS helper has been added. Instead of:
+
+    FOO_CMAKE_ON=	-DWITH_FOO:BOOL=YES -DWITH_BAR:BOOL=YES
+    FOO_CMAKE_OFF=	-DWITH_FOO:BOOL=NO  -DWITH_BAR:BOOL=NO
+
+  you can use this shortcut:
+
+    SOMEOPT_CMAKE_BOOL=	WITH_FOO WITH_BAR
+
 20160525:
 AUTHOR: mat@FreeBSD.org
 
