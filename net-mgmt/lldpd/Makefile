@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lldpd
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/ \
 		http://mirror.1labs.ch/${PORTNAME}/
@@ -53,6 +53,9 @@ JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
 JSON_USES=		pkgconfig
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}|g' ${WRKSRC}/src/daemon/lldpd.8.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/README.bsd ${STAGEDIR}${DOCSDIR}

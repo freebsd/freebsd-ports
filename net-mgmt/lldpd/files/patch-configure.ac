@@ -1,0 +1,11 @@
+--- configure.ac.orig	2016-06-10 06:11:26 UTC
++++ configure.ac
+@@ -90,6 +90,8 @@ AX_CFLAGS_GCC_OPTION([-Wno-sign-compare]
+ AX_LDFLAGS_OPTION([-Wl,-z,relro], [LLDP_LDFLAGS])
+ AX_LDFLAGS_OPTION([-Wl,-z,now], [LLDP_LDFLAGS])
+ 
++AC_C_TYPEOF
++
+ # Hardening
+ AC_ARG_ENABLE([hardening],
+   [AS_HELP_STRING([--enable-hardening],
