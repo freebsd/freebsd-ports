@@ -1,5 +1,6 @@
 bin/qmmp
 include/qmmp/abstractengine.h
+include/qmmp/audioconverter.h
 include/qmmp/audioparameters.h
 include/qmmp/buffer.h
 include/qmmp/channelmap.h
@@ -60,11 +61,12 @@ lib/qmmp/CommandLineOptions/libseekoption.so
 lib/qmmp/CommandLineOptions/libstatusoption.so
 %%LADSPA%%lib/qmmp/Effect/libladspa.so
 %%BS2B%%lib/qmmp/Effect/libbs2b.so
-%%SRCONV%%lib/qmmp/Effect/libsrconverter.so
+%%SOXR%%lib/qmmp/Effect/libsoxr.so
 %%STEREO%%lib/qmmp/Effect/libstereo.so
 %%CROSSFADE%%lib/qmmp/Effect/libcrossfade.so
 %%MPLAYER%%lib/qmmp/Engines/libmplayer.so
 %%QMMP_DIALOG%%lib/qmmp/FileDialogs/libqmmpfiledialog.so
+%%TWOPANELDIALOG%%lib/qmmp/FileDialogs/libtwopanelfiledialog.so
 %%CONVERTER%%lib/qmmp/General/libconverter.so
 %%COPYPASTE%%lib/qmmp/General/libcopypaste.so
 %%COVER%%lib/qmmp/General/libcovermanager.so
@@ -103,6 +105,7 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%OSS%%lib/qmmp/Output/liboss.so
 %%OSS4%%lib/qmmp/Output/liboss4.so
 %%PULSEAUDIO%%lib/qmmp/Output/libpulseaudio.so
+%%QTMULTIMEDIA%%lib/qmmp/Output/libqtmultimedia.so
 lib/qmmp/PlayListFormats/libm3uplaylistformat.so
 lib/qmmp/PlayListFormats/libplsplaylistformat.so
 lib/qmmp/PlayListFormats/libxspfplaylistformat.so
