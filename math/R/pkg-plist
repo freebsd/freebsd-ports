@@ -99,10 +99,10 @@ lib/R/include/Rinternals.h
 lib/R/include/Rmath.h
 lib/R/include/Rversion.h
 lib/R/include/S.h
-%%LAPACK%%lib/R/lib/libRblas.so
-%%LAPACK%%lib/R/lib/libRblas.so.%%RBLAS_SOVERSION%%
-%%LAPACK%%lib/R/lib/libRlapack.so
-%%LAPACK%%lib/R/lib/libRlapack.so.%%RLAPACK_SOVERSION%%
+%%RBLAS%%lib/R/lib/libRblas.so
+%%RBLAS%%lib/R/lib/libRblas.so.%%RBLAS_SOVERSION%%
+%%RBLAS%%lib/R/lib/libRlapack.so
+%%RBLAS%%lib/R/lib/libRlapack.so.%%RLAPACK_SOVERSION%%
 %%LIBR%%lib/R/lib/libR.so
 %%LIBR%%lib/R/lib/libR.so.%%R_SOVERSION%%
 lib/R/library/KernSmooth/DESCRIPTION

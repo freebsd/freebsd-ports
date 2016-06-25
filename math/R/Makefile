@@ -3,6 +3,7 @@
 
 PORTNAME?=	R
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		ftp://cran.r-project.org/pub/R/%SUBDIR%/ \
@@ -19,7 +20,6 @@ MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		http://cran.stat.ucla.edu/%SUBDIR%/ \
 		http://probability.ca/cran/%SUBDIR%/
 MASTER_SITE_SUBDIR=	src/base/R-${PORTVERSION:C|\..*||}
-DISTNAME=	R-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT?=	Language for statistical computing and graphics
@@ -34,9 +34,29 @@ CONFIGURE_ENV=		LIBR_LDFLAGS="${LDFLAGS}" OBJC="${CC}" \
 			SED="${LOCALBASE}/bin/gsed" \
 			ac_cv_have_decl_powl=yes ac_cv_have_decl_log1pl=yes
 
-OPTIONS_DEFINE=		MISSING DOCS
+OPTIONS_DEFINE=		MISSING DOCS LTO OPENMP LONGDOUBLE
 
 MISSING_DESC=		use libmissing rather than libquadmath
+LTO_DESC=		Try to produce faster code through LTO
+LONGDOUBLE_DESC=	Enable use of long double data type
+LTO_CONFIGURE_ENABLE=	lto
+OPENMP_CONFIGURE_ENABLE=	openmp
+LONGDOUBLE_CONFIGURE_ENABLE=	long-double
+
+OPTIONS_SINGLE=		BLAS
+OPTIONS_SINGLE_BLAS=	RBLAS ATLAS OPENBLAS NETLIB
+OPTIONS_DEFAULT=	OPENBLAS
+
+RBLAS_DESC=		Use internal blas implementation
+
+OPENBLAS_USES=		blaslapack:openblas
+NETLIB_USES=		blaslapack:netlib
+ATLAS_USES=		blaslapack:atlas
+RBLAS_CONFIGURE_ON=	--without-blas --without-lapack
+RBLAS_CONFIGURE_OFF=	--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
+			--with-lapack="${LAPACKLIB}"
+
+OPTIONS_SUB=		RBLAS
 
 .if defined(LIBRMATH_SLAVEPORT)
 BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
@@ -57,9 +77,8 @@ CONFIGURE_ENV+=		FCFLAGS="${FFLAGS}" \
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE+=	ATLAS ICU PCRE_PORT THREADS
+OPTIONS_DEFINE+=	ICU PCRE_PORT THREADS
 
-ATLAS_DESC=		Use ATLAS instead of BLAS/LAPACK
 ICU_DESC=		Use ICU for collation in multibyte locales
 PCRE_PORT_DESC=		Use devel/pcre instead of the bundled PCRE
 
@@ -85,8 +104,8 @@ PNG_DESC=		png() graphics device
 TCLTK_DESC=		tcltk package
 X11_DESC=		X11() graphics device
 
-OPTIONS_DEFAULT+=	GHOSTSCRIPT INFO_MANUALS JPEG LIBR PANGOCAIRO PNG \
-			TCLTK TIFF X11
+OPTIONS_DEFAULT+=	GHOSTSCRIPT INFO_MANUALS JPEG LTO OPENMP \
+			PANGOCAIRO PNG TCLTK TIFF X11
 
 OPTIONS_DEFAULT_armv6+=		MISSING
 OPTIONS_DEFAULT_powerpc+=	MISSING
@@ -144,20 +163,6 @@ LIBMH=			<quadmath.h>
 .endif
 
 .if !defined(LIBRMATH_SLAVEPORT)
-.if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=		libatlas.so:math/atlas
-BLAS?=			${LIBM} -lf77blas
-LAPACK?=		${LIBM} -lalapack -lcblas
-.else
-BLAS?=			no
-LAPACK?=		no
-.endif
-CONFIGURE_ARGS+=	--with-blas="${BLAS}" --with-lapack="${LAPACK}"
-.if ${BLAS} == "no" || ${LAPACK} == "no"
-PLIST_SUB+=		LAPACK=""
-.else
-PLIST_SUB+=		LAPACK="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MICU}
 LIB_DEPENDS+=		libicui18n.so:devel/icu
@@ -218,7 +223,7 @@ PLIST_SUB+=		LIBR="@comment "
 
 .if ${PORT_OPTIONS:MPANGOCAIRO}
 USES+=			pkgconfig
-USE_GNOME+=		pango
+USE_GNOME+=		pango cairo
 PLIST_SUB+=		PANGOCAIRO=""
 .else
 CONFIGURE_ARGS+=	--without-cairo
@@ -252,7 +257,7 @@ CONFIGURE_ARGS+=	--without-libtiff
 
 .if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--with-x
-USE_XORG=		x11 xmu xt
+USE_XORG=		ice sm x11 xext xmu xscrnsaver xt
 PLIST_SUB+=		X11=""
 .else
 CONFIGURE_ARGS+=	--without-x
@@ -290,7 +295,12 @@ post-patch:
 .if !${PORT_OPTIONS:MMISSING}
 .if ${OSVERSION} < 1000016
 	@${REINPLACE_CMD} -e 's/# define EXP expl/# define EXP(x) (long double)expq((__float128)(x))/' \
-		${WRKSRC}/src/nmath/pnchisq.c
+		${WRKSRC}/src/nmath/pnchisq.c\
+		${WRKSRC}/src/nmath/pgamma.c
+	@${REINPLACE_CMD} -e 's/# define LOG logl/# define LOG(x) (long double)logq((__float128)(x))/' \
+		${WRKSRC}/src/nmath/pnchisq.c\
+		${WRKSRC}/src/nmath/pgamma.c
+
 .endif
 .if ${OSVERSION} < 1000034
 	@${REINPLACE_CMD} -Ee 's/(log)(1p)?l\(/(long double)\1\2q((__float128)/' \
@@ -369,8 +379,9 @@ check-all: build
 
 post-install:
 .for L in R Rblas Rlapack
-	@(cd ${STAGEDIR}${PREFIX}/lib/R/lib; if [ -f lib${L}.so ] ; then \
-	${LN} -sf lib${L}.so lib${L}.so.${${L:tu}_SOVERSION} ; fi)
+	@if [ -d ${STAGEDIR}${PREFIX}/lib/R/lib ] ; then \
+	cd ${STAGEDIR}${PREFIX}/lib/R/lib; if [ -f lib${L}.so ] ; then \
+	${LN} -sf lib${L}.so lib${L}.so.${${L:tu}_SOVERSION} ; fi; fi
 .endfor
 .if ${PORT_OPTIONS:MINFO_MANUALS} && ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc/manual; \
