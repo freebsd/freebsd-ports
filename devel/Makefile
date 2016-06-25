@@ -5306,6 +5306,7 @@
     SUBDIR += smokeqt
     SUBDIR += smv
     SUBDIR += soapui
+    SUBDIR += sonarqube
     SUBDIR += sope2
     SUBDIR += sope3
     SUBDIR += sourcenav

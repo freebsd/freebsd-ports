@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: %%SQ_RC%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Configuration settings for %%SQ_RC%% in /etc/rc.conf:
+#
+# %%SQ_RC%%_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable %%SQ_RC%%.
+#
+
+. /etc/rc.subr
+
+name="%%SQ_RC%%"
+rcvar=%%SQ_RC%%_enable
+extra_commands="restart status"
+
+load_rc_config $name
+
+%%SQ_RC%%_enable="${%%SQ_RC%%_enable:-"NO"}"
+
+start_precmd="%%SQ_RC%%_prestart"
+start_cmd="%%SQ_RC%%_start"
+stop_cmd="%%SQ_RC%%_stop"
+restart_cmd="%%SQ_RC%%_restart"
+status_cmd="%%SQ_RC%%_status"
+
+%%SQ_RC%%_prestart()
+{
+	if [ ! -f "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%" ]; then
+		mkdir -p "%%SQ_LOG_DIR%%"
+		touch "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%"
+		chown -R "%%SQ_USER%%:%%SQ_GROUP%%" "%%SQ_LOG_DIR%%"
+		chmod 755 "%%SQ_LOG_DIR%%"
+		chmod 640 "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%"
+	fi
+}
+
+%%SQ_RC%%_start()
+{
+	%%SQ_RUN%% start
+}
+
+%%SQ_RC%%_stop()
+{
+	%%SQ_RUN%% stop
+}
+
+%%SQ_RC%%_restart()
+{
+	%%SQ_RUN%% restart
+}
+
+%%SQ_RC%%_status()
+{
+	%%SQ_RUN%% status
+}
+
+run_rc_command "$1"
