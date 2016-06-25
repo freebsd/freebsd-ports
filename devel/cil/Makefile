@@ -65,7 +65,6 @@ post-patch:
 		${WRKSRC}/lib/App/Cilly/TempFile.pm
 	@${REINPLACE_CMD} '/MACHDEPCC/ s|gcc|${CC}|' ${WRKSRC}/Makefile.in
 
-
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/bin/cilly.native
 
@@ -81,10 +80,12 @@ do-install:
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/CIL/App)
 	(cd ${WRKSRC}/lib && ${INSTALL_DATA} ${LIBBINS} \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/CIL)
+# Remove orphan dir created by bsd.ocaml.mk
+	-@${RMDIR} -p ${STAGEDIR}${OCAMLFIND_DESTDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${RM} -rf ${WRKSRC}/doc/cilcode.tmp
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-# Remove orphan dir created by bsd.ocaml.mk
-	-@${RMDIR} -p ${STAGEDIR}${OCAMLFIND_DESTDIR}
 
 .include <bsd.port.mk>
