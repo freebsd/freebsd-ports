@@ -4,6 +4,7 @@ Additional plug-ins for Qt MultiMedia Player
 		libmpg123 library
 - FFap:		provides enhanced Monkey's Audio (APE) support
 		(24-bit samples and embedded cue support)
-- XMP:		Decodes module audio and renders sound
+- xmp:		Decodes module audio and renders sound
+- Sample Rate Converter:	Changes frequency of sample rate.
 
 WWW: http://qmmp.ylsoftware.com/
