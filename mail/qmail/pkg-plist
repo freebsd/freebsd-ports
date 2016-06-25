@@ -1,8 +1,10 @@
 @unexec for alias in postmaster root mailer-daemon; do if [ -f %D/alias/.qmail-${alias} ] && [ $(stat -f '%%z' %D/alias/.qmail-${alias}) -eq 0 ]; then rm -f %D/alias/.qmail-${alias}; fi; done
 @exec for alias in postmaster root mailer-daemon; do if ! [ -f %D/alias/.qmail-${alias} ]; then :> %D/alias/.qmail-${alias}; fi; done
 %%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmailsmtpd
-%%RCDLINK%%@exec /bin/ln -fs %D/rc %%LOCALBASE%%/etc/rc.d/qmailsmtpd
-%%RCDLINK%%@exec echo; echo "A %%LOCALBASE%%/etc/rc.d/qmailsmtpd symlink was created. To enable qmail at boot time you need to copy a script to %D/rc.  There are some examples at %D/boot" | /usr/bin/fmt; echo
+%%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmailsend
+%%RCDLINK%%@exec /bin/ln -fs %D/boot/qmailsmtpd %%LOCALBASE%%/etc/rc.d/qmailsmtpd
+%%RCDLINK%%@exec /bin/ln -fs %D/boot/qmailsend %%LOCALBASE%%/etc/rc.d/qmailsend
+%%RCDLINK%%@exec echo; echo "A %%LOCALBASE%%/etc/rc.d/qmailsmtpd and a %%LOCALBASE%%/etc/rc.d/qmailsend symlink were created." | /usr/bin/fmt; echo
 %%LDAP%%bin/auth_dovecot
 %%LDAP%%bin/auth_imap
 %%LDAP%%bin/auth_pop
@@ -90,6 +92,7 @@ bin/tcp-env
 %%NO_LDAP%%boot/proc
 %%NO_LDAP%%boot/proc+df
 %%NO_LDAP%%boot/qmailsmtpd
+%%NO_LDAP%%boot/qmailsend
 %%LDAP%%boot/qmail/log/run
 %%LDAP%%boot/qmail/run
 %%LDAP%%boot/qmail-smtpd/log/run
