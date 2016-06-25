@@ -108,6 +108,7 @@
     SUBDIR += dirmngr
     SUBDIR += distcache
     SUBDIR += dmitry
+    SUBDIR += doas
     SUBDIR += doorman
     SUBDIR += doscan
     SUBDIR += dradis
