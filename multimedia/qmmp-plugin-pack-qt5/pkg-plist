@@ -1,3 +1,4 @@
+%%SRCONV%%lib/qmmp/Effect/libsrconverter.so
 %%FFAP%%lib/qmmp/Input/libffap.so
 %%MPG123%%lib/qmmp/Input/libmpg123.so
 %%XMP%%lib/qmmp/Input/libxmp.so
