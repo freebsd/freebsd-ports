@@ -3,6 +3,7 @@
 
 PORTNAME=	himenobench
 PORTVERSION=	2015.07.09
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://accc.riken.jp/wp-content/uploads/2015/07/
 DISTFILES=	himenobmtxp_xl.zip himenobmtxp_l.zip \
@@ -22,7 +23,6 @@ EXTRACT_DEPENDS=	lha:archivers/lha
 USES=		dos2unix fortran zip
 DOS2UNIX_GLOB=	*.c *.f
 NO_WRKSUBDIR=	yes
-
 
 OPTIONS_DEFINE=		ICC OPTIMIZED_CFLAGS
 OPTIONS_SUB=		yes

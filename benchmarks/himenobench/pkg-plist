@@ -1,4 +1,4 @@
-%%NO_IFC%%bin/himenobmtxp
+bin/himenobmtxp
 bin/himenobmtxp_l
 bin/himenobmtxp_m
 bin/himenobmtxp_s
@@ -12,7 +12,3 @@ bin/himenobmtxps_ss
 %%ICC%%bin/himenobmtxps_m.icc
 %%ICC%%bin/himenobmtxps_s.icc
 %%ICC%%bin/himenobmtxps_ss.icc
-%%IFC%%bin/himenobmtxp.ifc
-%%IFC%%bin/himenobmtxp_l.ifc
-%%IFC%%bin/himenobmtxp_m.ifc
-%%IFC%%bin/himenobmtxp_s.ifc
