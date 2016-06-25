@@ -636,6 +636,7 @@
     SUBDIR += php70-pdo_pgsql
     SUBDIR += php70-pdo_sqlite
     SUBDIR += php70-pgsql
+    SUBDIR += php70-redis
     SUBDIR += php70-sqlite3
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
