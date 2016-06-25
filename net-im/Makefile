@@ -15,6 +15,7 @@
     SUBDIR += convey
     SUBDIR += corebird
     SUBDIR += cutegram
+    SUBDIR += diligent
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += ekiga
