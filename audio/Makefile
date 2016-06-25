@@ -405,6 +405,7 @@
     SUBDIR += libsidplayfp
     SUBDIR += libsmf
     SUBDIR += libsndfile
+    SUBDIR += libsoxr
     SUBDIR += libtremor
     SUBDIR += libumidi
     SUBDIR += libvorbis
