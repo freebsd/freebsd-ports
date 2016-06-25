@@ -1,0 +1,21 @@
+The SonarQube platform is an open source quality management platform,
+dedicated to continuously analyzing and measuring the technical quality of
+source code, from project portfolio down to the method level.
+
+Features:
+- Supports languages: Java, C/C++, Objective-C, C#, PHP, Flex, Groovy,
+  JavaScript, Python, PL/SQL, COBOL, etc.
+- Can also be used in Android development.
+- Offers reports on duplicated code, coding standards, unit tests, code
+  coverage, complex code, potential bugs, comments and design and
+  architecture.
+- Records metrics history and provides evolution graphs ("time machine")
+  and differential views.
+- Provides fully automated analyses: integrates with Maven, Ant, Gradle and
+  continuous integration tools (Atlassian Bamboo, Jenkins, Hudson, etc.).
+- Integrates with the Eclipse development environment.
+- Integrates with external tools: JIRA, Mantis, LDAP, Fortify, etc.
+- Is expandable with the use of plugins.
+- Implements the SQALE methodology to compute technical debt.
+
+WWW: http://www.sonarqube.org/
