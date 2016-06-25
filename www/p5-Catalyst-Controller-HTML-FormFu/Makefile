@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Controller-HTML-FormFu
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Catalyst-Component-InstancePerContext>=0:www/p5-Catalyst-Component-InstancePerContext \
 		p5-Catalyst-Runtime>=5.71001:www/p5-Catalyst-Runtime \
 		p5-Config-Any>=0:devel/p5-Config-Any \
-		p5-HTML-FormFu>=1:www/p5-HTML-FormFu \
+		p5-HTML-FormFu>=2:www/p5-HTML-FormFu \
 		p5-Moose>=1:devel/p5-Moose \
 		p5-MooseX-Attribute-Chained>=1.0.1:devel/p5-MooseX-Attribute-Chained \
 		p5-Regexp-Assemble>=0:devel/p5-Regexp-Assemble \
@@ -35,5 +35,6 @@ TEST_DEPENDS=	p5-Catalyst-Action-RenderView>=0:www/p5-Catalyst-Action-RenderView
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
