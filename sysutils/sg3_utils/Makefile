@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sg3_utils
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 
