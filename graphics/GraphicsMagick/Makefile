@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.23
-PORTREVISION=	3
+PORTVERSION=	1.3.24
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -39,8 +38,8 @@ DPS_LIB_DEPENDS=	libdps.so:x11/dgs
 DPS_USE=		XORG=xt
 FPX_CONFIGURE_WITH=	fpx
 FPX_LIB_DEPENDS=	libfpx.so:graphics/libfpx
-FREETYPE_CONFIGURE_WITH=	ttf
-FREETYPE_LIB_DEPENDS=		libfreetype.so:print/freetype2
+FREETYPE_CONFIGURE_WITH=ttf
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 JASPER_CONFIGURE_WITH=	jp2
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 JBIG_CONFIGURE_WITH=	jbig
@@ -49,8 +48,8 @@ JPEG_CONFIGURE_WITH=	jpeg
 JPEG_USES=		jpeg
 LCMS2_CONFIGURE=	lcms2
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
-OPENMP_CONFIGURE_OFF=	--without-threads --disable-openmp
-OPENMP_CONFIGURE_ON=	--with-threads --enable-openmp --disable-openmp-slow
+OPENMP_CONFIGURE_OFF=	--disable-openmp --without-threads
+OPENMP_CONFIGURE_ON=	--disable-openmp-slow --enable-openmp --with-threads
 OPENMP_USES=		compiler:openmp
 PNG_CONFIGURE_WITH=	png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
