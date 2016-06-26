@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	Additional facilities to supplement Python’s stdlib logging module
+COMMENT=	Additional facilities to supplement Python's stdlib logging module
 
 LICENSE=	MIT
 
