@@ -10,7 +10,7 @@ lib/libmpg123.so.0
 lib/libmpg123.so.0.42.2
 lib/libout123.so
 lib/libout123.so.0
-lib/libout123.so.0.1.3
+lib/libout123.so.0.1.4
 lib/mpg123/output_dummy.so
 lib/mpg123/output_oss.so
 libdata/pkgconfig/libmpg123.pc
