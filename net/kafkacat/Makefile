@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	kafkacat
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	net
 
 MAINTAINER=	xnasx@yandex.ru
 COMMENT=	Generic command line non-JVM Apache Kafka producer and consumer
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	bash:shells/bash \
 		pkg-config:devel/pkgconf
