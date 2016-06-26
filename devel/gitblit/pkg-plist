@@ -372,7 +372,7 @@
 %%GB_HOME%%/WEB-INF/lib/force-partner-api-24.0.0.jar
 %%GB_HOME%%/WEB-INF/lib/force-wsc-24.0.0.jar
 %%GB_HOME%%/WEB-INF/lib/freemarker-2.3.22.jar
-%%GB_HOME%%/WEB-INF/lib/gitblit-1.7.1.jar
+%%GB_HOME%%/WEB-INF/lib/gitblit-1.8.0.jar
 %%GB_HOME%%/WEB-INF/lib/groovy-all-2.4.4.jar
 %%GB_HOME%%/WEB-INF/lib/gson-2.3.1.jar
 %%GB_HOME%%/WEB-INF/lib/guava-18.0.jar
@@ -513,6 +513,7 @@
 %%GB_HOME%%/fontawesome/fonts/fontawesome-webfont.svg
 %%GB_HOME%%/fontawesome/fonts/fontawesome-webfont.ttf
 %%GB_HOME%%/fontawesome/fonts/fontawesome-webfont.woff
+%%GB_HOME%%/fontawesome/fonts/fontawesome-webfont.woff2
 %%GB_HOME%%/fork-black_16x16.png
 %%GB_HOME%%/fork_16x16.png
 %%GB_HOME%%/git-black-16x16.png
@@ -521,6 +522,8 @@
 %%GB_HOME%%/git-black_32x32.png
 %%GB_HOME%%/git-orange-16x16.png
 %%GB_HOME%%/gitblit.css
+%%GB_HOME%%/gitblit-editor.min.css
+%%GB_HOME%%/gitblit-editor.min.js
 %%GB_HOME%%/gitblt-favicon.png
 %%GB_HOME%%/gitblt-logo.png
 %%GB_HOME%%/gitblt2.png
