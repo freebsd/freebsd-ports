@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorriso
-PORTVERSION=	1.3.4
-PORTREVISION=	5
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
@@ -11,7 +10,7 @@ DISTNAME=	libisoburn-${PORTVERSION}
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	ISO image manipulation tool based on Libburnia
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	libburn>=1.1.0:devel/libburn \
 		libisofs>=1.1.2:devel/libisofs
