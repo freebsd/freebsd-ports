@@ -52,8 +52,7 @@ do-install:
 		-not -name "*.rpm" \
 		-not -name "*.desktop" \
 		-exec ${INSTALL_DATA} \{} ${STAGEDIR}${DATADIR}/\{} \;
-	@${FIND} ${STAGEDIR}/${DATADIR} -depth -empty -type d \
-		-exec ${RMDIR} \{} +
+	@${FIND} ${STAGEDIR}/${DATADIR} -depth -empty -type d -delete
 	${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${STAGEDIR}${PREFIX}/bin/davmail
 	${INSTALL_DATA} ${WRKSRC}/src/etc/davmail.properties \
 		${STAGEDIR}${PREFIX}/etc/davmail.properties.sample
