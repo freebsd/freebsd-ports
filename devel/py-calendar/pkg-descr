@@ -1,0 +1,5 @@
+calendar is a python library for parsing and generating iCalendar data.
+See RFC 5545 and 6350.
+http://svn.calendarserver.org/repository/calendarserver/PyCalendar/trunk
+
+WWW: http://trac.calendarserver.org/wiki/twext
