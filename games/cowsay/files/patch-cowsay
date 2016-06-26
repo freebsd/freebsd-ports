@@ -1,7 +1,7 @@
 $NetBSD: patch-aa,v 1.1.1.1 2000/03/25 20:13:24 jlam Exp $
 
---- cowsay.orig	Thu Nov  4 11:29:53 1999
-+++ cowsay	Sat Mar 25 12:07:09 2000
+--- cowsay.orig	2016-06-25 02:45:15 UTC
++++ cowsay
 @@ -7,7 +7,7 @@
  ##
  
@@ -11,11 +11,10 @@ $NetBSD: patch-aa,v 1.1.1.1 2000/03/25 20:13:24 jlam Exp $
  use File::Basename;
  use Getopt::Std;
  use Cwd;
-@@ -180,4 +180,21 @@
- Usage: $progname [-bdgpstwy] [-h] [-e eyes] [-f cowfile] 
+@@ -185,3 +185,20 @@ Usage: $progname [-bdgpstwy] [-h] [-e ey
            [-l] [-n] [-T tongue] [-W wrapcolumn] [message]
  EOF
-+}
+ }
 +
 +sub fill {
 +    my ($ip, $xp, @raw) = @_;
@@ -32,4 +31,4 @@ $NetBSD: patch-aa,v 1.1.1.1 2000/03/25 20:13:24 jlam Exp $
 +    # separate paragraphs with blank lines
 +
 +    return join ($ip eq $xp ? "\n\n" : "\n", @para);
- }
++}
