@@ -1,4 +1,5 @@
 bin/shotwell
+lib/libshotwell-plugin-common.so
 lib/shotwell/plugins/builtin/f-spot-24.png
 lib/shotwell/plugins/builtin/facebook.png
 lib/shotwell/plugins/builtin/facebook_publishing_options_pane.glade
