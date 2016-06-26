@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Parse-Method-Signatures
-PORTVERSION=	1.003016
-PORTREVISION=	1
+PORTVERSION=	1.003017
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +26,7 @@ TEST_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-aliased>=0:devel/p5-aliased
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
