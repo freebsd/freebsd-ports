@@ -12,16 +12,10 @@ DISTNAME=	ocamlsdl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml interface to the SDL
 
-LICENSE=	LGPL21
+LICENSE=	LGPL20+ # source says LGPL20+, COPYING says LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	ocaml-lablgl>0:graphics/ocaml-lablgl
-
-OPTIONS_DEFINE=	SDL_GFX SDL_IMAGE SDL_MIXER SDL_TTF DOCS
-OPTIONS_DEFAULT=SDL_GFX SDL_IMAGE SDL_MIXER SDL_TTF
-SDL_GFX_DESC=	Enable SDL_gfx support
-SDL_IMAGE_DESC=	Enable SDL_image support
-SDL_MIXER_DESC=	Enable SDL_mixer support
-SDL_TTF_DESC=	Enable SDL_ttf support
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
@@ -40,40 +34,32 @@ DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 INFO=		ocamlsdl
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	SDL_GFX SDL_IMAGE SDL_MIXER SDL_TTF DOCS
+OPTIONS_DEFAULT=SDL_GFX SDL_IMAGE SDL_MIXER SDL_TTF
 
-.if ${PORT_OPTIONS:MSDL_GFX}
-USE_SDL+=	gfx
-.else
-CONFIGURE_ARGS+=--disable-sdl-gfx
-.endif
+SDL_GFX_DESC=	Enable SDL_gfx support
+SDL_IMAGE_DESC=	Enable SDL_image support
+SDL_MIXER_DESC=	Enable SDL_mixer support
+SDL_TTF_DESC=	Enable SDL_ttf support
 
-.if ${PORT_OPTIONS:MSDL_IMAGE}
-USE_SDL+=	image
-.else
-CONFIGURE_ARGS+=--disable-sdl-image
-.endif
+SDL_GFX_USE=		SDL=gfx
+SDL_GFX_CONFIGURE_OFF=	--disable-sdl-gfx
 
-.if ${PORT_OPTIONS:MSDL_MIXER}
-USE_SDL+=	mixer
-.else
-CONFIGURE_ARGS+=--disable-sdl-mixer
-.endif
+SDL_IMAGE_USE=		SDL=image
+SDL_IMAGE_CONFIGURE_OFF=--disable-sdl-image
 
-.if ${PORT_OPTIONS:MSDL_TTF}
-USE_SDL+=	ttf
-.else
-CONFIGURE_ARGS+=--disable-sdl-ttf
-.endif
+SDL_MIXER_USE=		SDL=mixer
+SDL_MIXER_CONFIGURE_OFF=--disable-sdl-mixer
+
+SDL_TTF_USE=		SDL=ttf
+SDL_TTF_CONFIGURE_OFF=	--disable-sdl-ttf
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/dllsdlloaderstub.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/dllsdlttfstub.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/dllsdlgfxstub.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/dllsdlmixerstub.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/dllsdlstub.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/*.so
 	${INSTALL_DATA} ${WRKSRC}/doc/ocamlsdl.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc/html && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
