@@ -3,6 +3,7 @@
 
     COMMENT = Java language support
 
+    SUBDIR += aparapi
     SUBDIR += avis
     SUBDIR += berkeley-db
     SUBDIR += bluej
