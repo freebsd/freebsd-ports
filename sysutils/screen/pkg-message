@@ -1,0 +1,9 @@
+=============================================================
+
+As of GNU Screen 4.4.0:
+
+Note that there was fix to screen message structure field
+responsible for $TERM handling, making it impossible
+to attach to older versions.
+
+=============================================================
