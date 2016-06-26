@@ -4493,6 +4493,7 @@
     SUBDIR += py-turbokid
     SUBDIR += py-tvrage
     SUBDIR += py-tw.forms
+    SUBDIR += py-twext
     SUBDIR += py-twiggy
     SUBDIR += py-twine
     SUBDIR += py-twisted
