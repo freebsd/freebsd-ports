@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-aws
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Module for the 'fog' gem to support Amazon Web Services
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-fog-core>=1.27:devel/rubygem-fog-core \
+RUN_DEPENDS=	rubygem-fog-core>=1.38:devel/rubygem-fog-core \
 		rubygem-fog-json>=1.0:devel/rubygem-fog-json \
 		rubygem-fog-xml>=0.1:textproc/rubygem-fog-xml \
 		rubygem-ipaddress>=0.8:net/rubygem-ipaddress
