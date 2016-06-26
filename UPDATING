@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160626
+  AFFECTS: users of www/calendarserver
+  AUTHOR: pi@FreeBSD.org
+
+  Please note that updating from the previous version (5.1) to the current
+  version (8.0) requires manual steps. Please consult the pkg-message for
+  details.
+
 20160624
   AFFECTS: users of shells/zsh
   AUTHOR: adamw@FreeBSD.org
