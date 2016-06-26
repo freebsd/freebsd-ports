@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Exception-LessClever
-PORTVERSION=	0.006
-PORTREVISION=	1
+PORTVERSION=	0.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +16,10 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Mock-Quick>=1.100:devel/p5-Mock-Quick
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=2016-07-31
+
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5
 
