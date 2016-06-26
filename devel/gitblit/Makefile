@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitblit
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	devel java
 MASTER_SITES=	http://dl.bintray.com/${PORTNAME}/releases/
 EXTRACT_SUFX=	.war
