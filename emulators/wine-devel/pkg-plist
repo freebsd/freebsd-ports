@@ -217,6 +217,11 @@ include/wine/windows/d3dx10async.h
 %%STAGING%%include/wine/windows/d3dx10core.h
 %%STAGING%%include/wine/windows/d3dx10core.idl
 include/wine/windows/d3dx10tex.h
+include/wine/windows/d3dx11.h
+include/wine/windows/d3dx11async.h
+include/wine/windows/d3dx11core.h
+include/wine/windows/d3dx11core.idl
+include/wine/windows/d3dx11tex.h
 include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9anim.h
 include/wine/windows/d3dx9core.h
@@ -1985,6 +1990,7 @@ lib/wine/libd3d9.def
 lib/wine/libd3dcompiler.def
 lib/wine/libd3drm.def
 lib/wine/libd3dx10.def
+lib/wine/libd3dx11.def
 lib/wine/libd3dx9.def
 lib/wine/libd3dxof.def
 lib/wine/libdbgeng.def
@@ -2050,7 +2056,7 @@ lib/wine/libnewdev.def
 lib/wine/libnormaliz.def
 lib/wine/libntdll.def
 lib/wine/libntdsapi.def
-lib/wine/libntoskrnl.exe.def
+lib/wine/libntoskrnl.def
 lib/wine/libodbc32.def
 lib/wine/libodbccp32.def
 lib/wine/libole32.def
@@ -2094,7 +2100,7 @@ lib/wine/libtapi32.def
 lib/wine/libunicows.def
 lib/wine/liburl.def
 lib/wine/liburlmon.def
-lib/wine/libusbd.sys.def
+lib/wine/libusbd.def
 lib/wine/libuser32.def
 lib/wine/libuserenv.def
 lib/wine/libusp10.def
