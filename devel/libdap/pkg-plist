@@ -22,6 +22,7 @@ include/libdap/D4ConstraintEvaluator.h
 include/libdap/D4Dimensions.h
 include/libdap/D4Enum.h
 include/libdap/D4EnumDefs.h
+include/libdap/D4FilterClause.h
 include/libdap/D4Function.h
 include/libdap/D4FunctionEvaluator.h
 include/libdap/D4Group.h
