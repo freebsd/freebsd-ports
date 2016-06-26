@@ -6,12 +6,12 @@ Supported formats:
 	PCM Wave (and other formats via libsndfile), and Chiptune formats
 	(AY, GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, VGM, VGZ, VTX)
 DSP effects:
-	Effects of Bauer Stereophonic-to-Binaural, LADSPA,
+	Effects of Bauer Stereophonic-to-Binaural, SoX resampling, LADSPA,
 	extra stereo, and crossfade
 Visual effects:
 	Spectrum Analyzer, and projectM audio visulaliser
 Output system support:
-	PulseAudio, OSS, OSS4, ALSA, and Qt multimedia API
+	PulseAudio, OSS, OSS4, jack, ALSA, and Qt multimedia API
 Other features:
 	multi-band equalizer, Last.fm/Libre.fm scrobbler, global hotkey,
 	streaming (MP3, Vorbis, AAC, AAC+ via IceCast/ShoutCast) and browser,
