@@ -5,15 +5,12 @@ PORTNAME=	bsdftpd-ssl
 PORTVERSION=	1.1.0
 PORTREVISION=	4
 CATEGORIES=	ftp
-MASTER_SITES=	http://bsdftpd.org/files/bsdftpd-ssl/archive/1.1/src/ \
-		http://www.sourcefiles.org/System/Daemons/FTP/
+MASTER_SITES=	http://www.sourcefiles.org/System/Daemons/FTP/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	skynick@mail.sc.ru
 COMMENT=	Secure FTP client/server with TLS/SSL support
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
 USE_OPENSSL=	yes
 MAKE_ENV+=	OBJFORMAT=elf
 MAKE_JOBS_UNSAFE=	yes
