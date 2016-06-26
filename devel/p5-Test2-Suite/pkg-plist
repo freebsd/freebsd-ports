@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Test2/Bundle/Simple.pm
 %%SITE_PERL%%/Test2/Compare.pm
 %%SITE_PERL%%/Test2/Compare/Array.pm
+%%SITE_PERL%%/Test2/Compare/Bag.pm
 %%SITE_PERL%%/Test2/Compare/Base.pm
 %%SITE_PERL%%/Test2/Compare/Custom.pm
 %%SITE_PERL%%/Test2/Compare/Delta.pm
@@ -67,6 +68,7 @@
 %%PERL5_MAN3%%/Test2::Bundle::Simple.3.gz
 %%PERL5_MAN3%%/Test2::Compare.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Array.3.gz
+%%PERL5_MAN3%%/Test2::Compare::Bag.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Base.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Custom.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Delta.3.gz
