@@ -1,5 +1,5 @@
---- lang/sql/upgrade61.sh.orig	2016-03-28 19:45:53 UTC
-+++ lang/sql/upgrade61.sh
+--- ../lang/sql/upgrade61.sh.orig	2016-03-28 19:45:53 UTC
++++ ../lang/sql/upgrade61.sh
 @@ -1,12 +1,19 @@
  #!/bin/sh
  # This script upgrades SQL databases from BDB 5.0 to early 6.1
