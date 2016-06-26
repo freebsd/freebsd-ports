@@ -199,6 +199,7 @@ _bbstored:*:505:
 radmind:*:506:
 skkserv:*:507:
 pwhois:*:512:
+davmail:*:521:
 nullmail:*:522:
 freevo:*:523:
 dkimproxy:*:525:
