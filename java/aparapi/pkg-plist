@@ -1,0 +1,2 @@
+lib/libaparapi.so
+%%JAVAJARDIR%%/aparapi.jar
