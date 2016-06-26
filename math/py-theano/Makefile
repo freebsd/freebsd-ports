@@ -3,6 +3,7 @@
 
 PORTNAME=	theano
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP/source/T/Theano
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +20,8 @@ USE_PYTHON=	concurrent distutils autoplist
 
 SUB_FILES=	pkg-message
 SUB_LIST=	CXX=${CXX}
+
+post-extract:
+	@${CHMOD} -R a+rX ${WRKSRC}
 
 .include <bsd.port.mk>
