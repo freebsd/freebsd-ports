@@ -5,7 +5,7 @@ include/mpv/opengl_cb.h
 include/mpv/qthelper.hpp
 lib/libmpv.so
 lib/libmpv.so.1
-lib/libmpv.so.1.20.0
+lib/libmpv.so.1.21.0
 libdata/pkgconfig/mpv.pc
 man/man1/mpv.1.gz
 share/applications/mpv.desktop
