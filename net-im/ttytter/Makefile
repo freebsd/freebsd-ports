@@ -21,6 +21,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS=	curl:ftp/curl \
 		p5-TimeDate>=0:devel/p5-TimeDate
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	run
@@ -33,15 +34,8 @@ RLTTYTTER_DESC=	Use T::R::TTYtter readline driver (beta!)
 
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MREADLINE}
-RUN_DEPENDS+=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
-.endif
-
-.if ${PORT_OPTIONS:MRLTTYTTER}
-RUN_DEPENDS+=	p5-Term-ReadLine-TTYtter>=1.4:devel/p5-Term-ReadLine-TTYtter
-.endif
+READLINE_RUN_DEPENDS=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
+RLTTYTTER_RUN_DEPENDS=	p5-Term-ReadLine-TTYtter>=1.4:devel/p5-Term-ReadLine-TTYtter
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
