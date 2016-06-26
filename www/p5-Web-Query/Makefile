@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Web-Query
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Yet another scraping library like jQuery
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-HTML-Selector-XPath>=0.06:www/p5-HTML-Selector-XPath \
