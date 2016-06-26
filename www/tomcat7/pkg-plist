@@ -341,7 +341,8 @@
 %%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.class
 %%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.java
 %%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$1.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandler.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerBinary.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerText.class
 %%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.class
 %%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.java
 %%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Direction.class
@@ -626,5 +627,5 @@
 @dir %%T%%/endorsed
 @dir %%T%%/logs
 @dir %%T%%/work
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/webapps %D/%%T%%/work
-@unexec [ ! -d %D/%%T%% ] || echo If permanently deleting this package, %D/%%T%% must be removed manually
+@postexec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/webapps %D/%%T%%/work
+@postunexec [ ! -d %D/%%T%% ] || echo If permanently deleting this package, %D/%%T%% must be removed manually
