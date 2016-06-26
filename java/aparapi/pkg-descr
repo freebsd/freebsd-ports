@@ -1,0 +1,8 @@
+aparapi is an open source API for expressing data parallel workflows in Java.
+
+Originally an AMD product, Aparapi was released to open source on September
+14, 2011. Aparapi is an API for expressing data parallel workloads in Java
+and a runtime component capable of converting the Java# bytecode of compatible
+workloads into OpenCL# so that it can be executed on a variety of GPU devices.
+
+WWW: https://github.com/aparapi/aparapi
