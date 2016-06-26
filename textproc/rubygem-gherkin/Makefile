@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gherkin
-PORTVERSION=	3.2.0
+PORTVERSION=	4.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
