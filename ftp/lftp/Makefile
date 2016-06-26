@@ -17,6 +17,7 @@ MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Shell-like command line ftp client
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
@@ -32,7 +33,7 @@ SHEBANG_FILES=	src/verify-file \
 		src/convert-mozilla-cookies \
 		src/xdg-move
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	OPENSSL GNUTLS
 OPTIONS_DEFAULT=	SSL OPENSSL
@@ -57,6 +58,8 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/lftp.conf \
 		${STAGEDIR}${PREFIX}/etc/lftp.conf.sample
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
