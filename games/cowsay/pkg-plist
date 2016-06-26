@@ -2,7 +2,15 @@ bin/cowsay
 bin/cowthink
 man/man1/cowsay.1.gz
 man/man1/cowthink.1.gz
+share/cows/DragonAndCow.pm
+share/cows/Example.pm
+share/cows/Frogs.pm
+share/cows/MechAndCow.pm
+share/cows/Stegosaurus.pm
+share/cows/TextBalloon.pm
+share/cows/TuxStab.pm
 share/cows/beavis.zen.cow
+share/cows/blowfish.cow
 share/cows/bong.cow
 share/cows/box.cow
 share/cows/bud-frogs.cow
@@ -46,8 +54,8 @@ share/cows/telebears.cow
 share/cows/three-eyes.cow
 share/cows/turkey.cow
 share/cows/turtle.cow
-share/cows/tux.cow
 share/cows/tux-stab.cow
+share/cows/tux.cow
 share/cows/udder.cow
 share/cows/vader-koala.cow
 share/cows/vader.cow

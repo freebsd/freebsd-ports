@@ -2,15 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	cowsay
-PORTVERSION=	3.03
-PORTREVISION=	2
+PORTVERSION=	3.04
+DISTVERSIONPREFIX=	cowsay-
 CATEGORIES=	games
-MASTER_SITES=	SF/lifanov-ports-distfiles/${CATEGORIES}/${PORTNAME}
 
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Configurable talking characters in ASCII art
 
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		perl5
+
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	tnalpgge
+GH_PROJECT=	rank-amateur-cowsay
 
 NO_BUILD=	# defined
 
@@ -20,8 +27,8 @@ post-patch:
 do-install:
 	cd ${WRKSRC}; ${SH} install.sh ${STAGEDIR}${PREFIX}
 	@${SED} -i '' 's,${STAGEDIR},,' ${STAGEDIR}${PREFIX}/bin/cowsay
-	@${INSTALL_DATA} ${FILESDIR}/box.cow ${STAGEDIR}${PREFIX}/share/cows
-	@${INSTALL_DATA} ${FILESDIR}/jkh.cow ${STAGEDIR}${PREFIX}/share/cows
-	@${INSTALL_DATA} ${FILESDIR}/tux-stab.cow ${STAGEDIR}${PREFIX}/share/cows
+	${INSTALL_DATA} ${FILESDIR}/box.cow ${STAGEDIR}${PREFIX}/share/cows
+	${INSTALL_DATA} ${FILESDIR}/jkh.cow ${STAGEDIR}${PREFIX}/share/cows
+	${INSTALL_DATA} ${FILESDIR}/tux-stab.cow ${STAGEDIR}${PREFIX}/share/cows
 
 .include <bsd.port.mk>
