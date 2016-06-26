@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	byacc
-PORTVERSION=	20160324
-PORTREVISION=	1
+PORTVERSION=	20160606
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/ \
 		LOCAL/sunpoet
