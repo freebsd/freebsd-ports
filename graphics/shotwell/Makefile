@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.23.1
+PORTVERSION=	0.23.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
@@ -15,7 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	vala>=0.20.1:lang/vala \
 		bash:shells/bash
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libexiv2.so:graphics/exiv2 \
 		libgee-0.8.so:devel/libgee \
+		libgstreamer-1.0.so:multimedia/gstreamer1 \
+		liblcms2.so:graphics/lcms2 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup \
 		libgexiv2.so:graphics/gexiv2 \
@@ -27,13 +30,16 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		librest-0.7.so:devel/librest
 
 USES=		shebangfix gettext desktop-file-utils gmake pkgconfig sqlite tar:xz
-USE_GNOME=	dconf gtk30 gnomedocutils
+USE_GNOME=	cairo dconf gtk30 gnomedocutils
 USE_GSTREAMER1=	yes
+USE_LDCONFIG=	yes
+USE_XORG=	x11
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-icon-update
 CONFIGURE_ENV+=	--define=NO_CAMERA
 INSTALLS_ICONS=	yes
 PORTSCOUT=	limitw:1,even
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	OPENMP
 OPTIONS_DEFAULT=
@@ -65,6 +71,7 @@ post-configure:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/bin/shotwell \
+		${STAGEDIR}${LOCALBASE}/lib/libshotwell-plugin-common.so \
 		${STAGEDIR}${LOCALBASE}/lib/shotwell/plugins/builtin/shotwell-transitions.so \
 		${STAGEDIR}${LOCALBASE}/lib/shotwell/plugins/builtin/shotwell-publishing.so \
 		${STAGEDIR}${LOCALBASE}/lib/shotwell/plugins/builtin/shotwell-data-imports.so \
