@@ -28,9 +28,8 @@ CONFIGURE_SCRIPT=	../dist/configure
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
 INSTALL_TARGET=	install_include install_lib install_utilities
-WRKSRC_SUBDIR=	build_unix
-#WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
-#PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 PLIST_SUB=	BDBMAJ=${BDBMAJ} BDBVER=${BDBVER}
 MAKE_ARGS+=	docdir=${DOCSDIR}
