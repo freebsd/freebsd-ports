@@ -1,14 +1,6 @@
---- build.xml.orig	2015-07-04 15:28:32.000000000 -0700
-+++ build.xml	2015-07-04 15:28:59.000000000 -0700
-@@ -26,6 +26,7 @@
-         <or>
-             <equals arg1="${ant.java.version}" arg2="1.6"/>
-             <equals arg1="${ant.java.version}" arg2="1.7"/>
-+            <equals arg1="${ant.java.version}" arg2="1.8"/>
-         </or>
-     </condition>
- 
-@@ -59,7 +60,7 @@
+--- build.xml.orig	2016-04-09 15:14:49 UTC
++++ build.xml
+@@ -61,7 +61,7 @@
      </target>
  
      <target name="defaultrelease" unless="is.svn">
