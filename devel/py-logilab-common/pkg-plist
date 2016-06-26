@@ -1,5 +1,5 @@
 bin/pytest
-%%PYTHON_SITELIBDIR%%/logilab_common-1.1.0-py%%PYTHON_VER%%-nspkg.pth
+%%PYTHON_SITELIBDIR%%/logilab_common-1.2.2-py%%PYTHON_VER%%-nspkg.pth
 %%PYTHON_SITELIBDIR%%/logilab/common/__init__.py
 %%PYTHON_SITELIBDIR%%/logilab/common/__init__.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/__init__.pyo
