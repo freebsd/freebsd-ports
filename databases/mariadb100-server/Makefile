@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.25
+PORTVERSION=	10.0.26
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -17,6 +17,9 @@ MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
+LICENSE_NAME_PerconaFT=	PerconaFT patents license
+LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
+LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_powerpc64=	Does not build
 
@@ -86,8 +89,6 @@ TOKUDB_DESC=	Fractal tree index tree data structure engine
 
 OPTIONS_SUB=	yes
 
-TOKUDB_PORTDOCS=	PATENTS README.md
-
 .endif
 
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
@@ -120,17 +121,18 @@ OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 # See See https://mariadb.atlassian.net/browse/MDEV-8051.
 OQGRAPH_USE=		gcc
 OQGRAPH_BROKEN=		OQGraph does not build
+TOKUDB_LIB_DEPENDS=	libsnappy.so:archivers/snappy
+TOKUDB_PORTDOCS=	PATENTS README.md
+TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
 
 post-install:
 	# Remove programs to avoid conflict with mariadb100-client
 	# These are "client" components, so there should be a switch that
 	# prevents them from being installed but it's unknown right now
-	${RM} ${STAGEDIR}${PREFIX}/bin/msql2mysql \
-		${STAGEDIR}${PREFIX}/bin/mysql_config \
-		${STAGEDIR}${PREFIX}/bin/mysql_find_rows \
-		${STAGEDIR}${PREFIX}/bin/mysqlaccess \
-		${STAGEDIR}${DOCSDIR}/COPYING.AGPLv3 \
-		${STAGEDIR}${DOCSDIR}/COPYING.GPLv2
+.	for f in bin/msql2mysql bin/mysql_config bin/mysql_find_rows \
+		bin/mysqlaccess COPYING.AGPLv3 COPYING.GPLv2
+		${RM} ${STAGEDIR}${PREFIX}/${f}
+.	endfor
 .endif
 
 .include <bsd.port.pre.mk>
