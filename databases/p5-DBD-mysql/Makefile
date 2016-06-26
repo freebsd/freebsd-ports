@@ -20,9 +20,8 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 CONFLICTS_INSTALL?=	p5-DBD-mysql[45][0-9]-[0-9]*
 
-USE_MYSQL=	yes
 USE_PERL5=	configure
-USES=		perl5
+USES=		mysql perl5
 
 OPTIONS_DEFINE=	SSL
 SSL_BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
