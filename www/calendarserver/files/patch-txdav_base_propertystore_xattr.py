@@ -1,6 +1,6 @@
---- txdav/base/propertystore/xattr.py.orig	2013-05-30 01:18:39 UTC
+--- txdav/base/propertystore/xattr.py.orig	2016-01-07 15:18:44 UTC
 +++ txdav/base/propertystore/xattr.py
-@@ -47,10 +47,14 @@
+@@ -47,10 +47,14 @@ from txdav.idav import PropertyStoreErro
  # expose.  Its value is 93.
  #
  

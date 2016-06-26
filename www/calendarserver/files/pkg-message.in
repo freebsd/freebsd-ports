@@ -3,7 +3,8 @@ which is a CalDAV, CardDAV, WebDAV, and HTTP server.
 
 For general information about the server, see:
 	http://www.calendarserver.org/
-plus online DOCs, including RFCs (if installed).
+plus online DOCs, including RFCs in
+	%%PREFIX%%/share/doc/calendarserver .
 
 Getting Started
 ---------------
@@ -14,6 +15,7 @@ If you installed the examples configuration, you could start with a test
 configuration by copying and editing from
 %%PREFIX%%/share/examples/calendarserver/ to %%PREFIX%%/etc/caldavd/
 the files
+
 caldavd*.plist
 auth/accounts.dtd
 auth/accounts.xml
@@ -30,11 +32,13 @@ Some of the directory services which are supported by the Calendar and
 Contacts Server include:
 
 - XMLDirectoryService: this service is configurable via an XML file that
-contains principal information. The file auth/accounts.xml provides
-an example principals configuration.
+  contains principal information. The file auth/accounts.xml provides
+  an example principals configuration.
 
-- OpenDirectoryService: this service uses Apple's OpenDirectory client (which in
-turn uses LDAP, Active Directory, etc.) to obtain principal information.
+- OpenDirectoryService: this service uses Apple's OpenDirectory
+  client (which in turn uses LDAP, Active Directory, etc.) to obtain
+  principal information.
+
 The above configuration uses XMLDirectoryService by default.
 This is a generally useful configuration for development and testing.
 
@@ -42,6 +46,57 @@ This file contains a user principal, named admin, with password admin,
 which is set up (in caldavd-test.plist) to have administrative permissions
 on the server.
 
+The value of 'user name' in the client configuration is the value of the
+attribute <short-name>. Often an e-mail address is usefull here.
+In this case there is no need to define a server path on the client.
+
 Updates from earlier versions may require a DB schema update, which is done
 automatically on server start up, if <key>FailIfUpgradeNeeded</key> is set to
-<true/>.
+<false/>.
+
+
+Upgrading
+---------
+
+Upgrading from the previous version of this port (5.1) requires adjustments
+to the configuration:
+
+1. Stop the server, install the new version.
+
+2. accounts.xml has a new layout - see
+	%%PREFIX%%/share/examples/calendarserver/auth/accounts.xml
+
+   In that file <guid> is optional. If present, it must be a valid UUID like
+	FCB7BFFB-624D-4201-BA65-E133E439A661
+   If you have invalid UUID values in your guid attributes, the fastest
+   way to upgrade would be to delete them.
+   Any change on <guid> requires adjustment of the client configuration, as
+   the old server path
+	principals/__uids__/something
+   changes.
+
+   Creating new uuids can be done with python like this:
+
+	# python
+	Python 2.7.11 (default, Jun	 5 2016, 06:09:57)
+	[GCC 4.2.1 Compatible FreeBSD Clang 3.4.1 . . .
+	>>> import uuid
+	>>> str(uuid.uuid4()).upper()
+	'22F5BC05-8EDE-421E-99DD-CEDE1B814635'
+	>>> str(uuid.uuid4()).upper()
+	'A7211FE0-1D8F-474B-A5AB-262668EECE6C'
+
+3. Fix caldavd.plist
+
+   Adjust AdminPrincipals if you changed the admin uid above.
+   DatabaseConnection has a new format.
+
+   For these and all other changes review your plist, using
+	%%PREFIX%%/share/examples/calendarserver/caldavd.plist
+	 
+4. Start the server and follow server log. You should see messages about 
+   schema and data migration like
+	Starting schema upgrade from version 24 to 60.
+	Schema upgraded from version 24 to 60.
+   These schould complete without errors.
+
