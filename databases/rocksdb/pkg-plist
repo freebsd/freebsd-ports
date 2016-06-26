@@ -17,6 +17,7 @@ include/rocksdb/compaction_job_stats.h
 include/rocksdb/comparator.h
 include/rocksdb/convenience.h
 include/rocksdb/db.h
+include/rocksdb/db_bench_tool.h
 include/rocksdb/db_dump_tool.h
 include/rocksdb/env.h
 include/rocksdb/experimental.h
