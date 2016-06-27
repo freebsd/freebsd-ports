@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcre
-PORTVERSION=	8.38
-PORTREVISION=	1
+PORTVERSION=	8.39
 CATEGORIES=	devel
 MASTER_SITES=	SF \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/${PORTNAME}/ \
@@ -16,37 +15,35 @@ COMMENT=	Perl Compatible Regular Expressions library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-GNU_CONFIGURE=	yes
 USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 		--enable-pcre8 --enable-pcre16 --enable-pcre32
-INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		DOCS STACK_RECURSION
-OPTIONS_DEFAULT=	STACK_RECURSION
-OPTIONS_RADIO=	CLI
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
+PORTDOCS=	*
+
+OPTIONS_DEFINE=		DOCS MAN3 STACK_RECURSION
+OPTIONS_DEFAULT=	MAN3 STACK_RECURSION
+OPTIONS_SUB=		yes
+
+OPTIONS_RADIO=		CLI
 OPTIONS_RADIO_CLI=	LIBEDIT READLINE
 
+MAN3_DESC=		Install API manpages (section 3)
 STACK_RECURSION_DESC=	Use the stack for recursion during matching
 
-LIBEDIT_CONFIGURE_ENABLE=	pcretest-libedit
 LIBEDIT_USES=			libedit
+LIBEDIT_CONFIGURE_ENABLE=	pcretest-libedit
 
 READLINE_USES=			readline
 READLINE_CONFIGURE_ENABLE=	pcretest-libreadline
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} != "sparc64" && ${ARCH} != "ia64" && ${ARCH:Mmips64*} == ""
-CONFIGURE_ARGS+=	--enable-jit
-.else
-CONFIGURE_ARGS+=	--disable-jit
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
 
 # Using the heap rather than the stack for recursion is slower but less
 # prone to segfaults from stack exhaustion when matching certain patterns
@@ -87,29 +84,19 @@ CONFIGURE_ARGS+=	--with-parens-nest-limit=${WITH_PARENS_NEST_LIMIT}
 CONFIGURE_ARGS+=	--with-posix-malloc-threshold=${WITH_POSIX_MALLOC_THRESHOLD}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "sparc64" && ${ARCH} != "ia64" && ${ARCH:Mmips64*} == ""
+CONFIGURE_ARGS+=	--enable-jit
+.else
+CONFIGURE_ARGS+=	--disable-jit
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "/^\.rs/d" ${WRKSRC}/doc/*.3 ${WRKSRC}/doc/*.1
 	@${REINPLACE_CMD} -e "s/£//g" ${WRKSRC}/doc/pcre_compile2.3
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -E -e '/^install-data-am/,/^$$/ s,install-(dist_doc|dist_html|html)DATA,,g' \
-		${WRKSRC}/Makefile.in
-.endif
-
-#prevent regression test coredumps from causing failures on the
-#package-building cluster:
-.ifndef(MAINTAINER_MODE)
-CORELIMIT?=	/usr/bin/limits -Sc 0
-.endif
-TESTLOGS?=	RunGrepTest RunTest pcre_jit_test pcre_scanner_unittest \
-		pcre_stringpiece_unittest pcrecpp_unittest
 
 post-stage:
 	${LN} -s libpcre.so.1 ${STAGEDIR}${PREFIX}/lib/libpcre.so.3
 
-check regression-test test: build
-	@cd ${WRKSRC} ; \
-	${SETENV} ${MAKE_ENV} ${CORELIMIT} ${MAKE_CMD} ${MAKE_ARGS} check ; \
-	for _l in ${TESTLOGS} ; do if ${TEST} -f $${_l}.log ; then \
-	${PRINTF} "\n\n$${_l}.log\n\n\n" ; ${CAT} $${_l}.log ; fi ; done
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
