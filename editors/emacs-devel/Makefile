@@ -3,6 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU_ALPHA/emacs/pretest
@@ -42,7 +43,7 @@ INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
 	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar	\
 	srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
-OPTIONS_DEFINE=	ACL DBUS GNUTLS LLDB LTO MODULES SOURCES X11 XML
+OPTIONS_DEFINE=	ACL DBUS GNUTLS LLDB MODULES SOURCES X11 XML
 
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
 OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
@@ -55,7 +56,7 @@ OPTIONS_GROUP_NEEDX11=		GCONF GSETTINGS M17N OTF SCROLLBARS XFT XIM     \
 				XWIDGETS
 
 ACL_DESC=	Access control list support
-CAIRO_DESC=	Cairo library support         (experimental)
+CAIRO_DESC=	Experimental Cairo support    (implies PNG, XFT)
 FILENOTIFY_DESC=File notification support
 GCONF_DESC=	GConf configuration support
 GFILE_DESC=	File notification via gfile
@@ -63,22 +64,23 @@ GRAPHICS_DESC=	Graphics support (each implies X11)
 GSETTINGS_DESC=	GSettings support             (implies DBUS)
 KQUEUE_DESC=	File notification via kqueue
 LLDB_DESC=	Enable LLDB support for GUD
-LTO_DESC=	Enable link-time optimization (requires GCC 4.6+)
+#LTO_DESC=	Enable link-time optimization
 MAGICK_DESC=	ImageMagick support
-M17N_DESC=	M17N support for text-shaping
+M17N_DESC=	M17N support for text-shaping (implies XFT)
 MODULES_DESC=	Dynamic modules support
 NEEDX11_DESC=	Other X11-dependent (each implies X11)
-OTF_DESC=	Opentype fonts support
+OTF_DESC=	Opentype fonts support        (implies XFT)
 SCROLLBARS_DESC=Toolkit scroll-bars
 SOURCES_DESC=	Install sources
-X11_DESC=	X11 support                   (choose toolkit below)
+SVG_DESC=	SVG support (implies PNG)
+X11_DESC=	X11 support
 X11TOOLKIT_DESC=X11 toolkit (each implies X11)
 XAW3D_DESC=	Athena3D widgets
 XAW_DESC=	Athena widgets
 XIM_DESC=	X Input Method Support
 XWIDGETS_DESC=	GTK widgets in Emacs buffers  (requires GTK3)
 
-OPTIONS_DEFAULT=ACL DBUS FREEDESKTOP GCONF GIF GNUTLS GSETTINGS GTK2 JPEG	\
+OPTIONS_DEFAULT=ACL DBUS FREEDESKTOP GCONF GIF GNUTLS GSETTINGS GTK2 JPEG       \
 		KQUEUE M17N MAGICK MODULES OSS OTF PNG SCROLLBARS SOURCES SVG	\
 		TIFF X11 XFT XIM XML XPM
 
@@ -91,12 +93,12 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 CAIRO_USE=		GNOME=cairo
 CAIRO_CONFIGURE_WITH=	cairo
-CAIRO_IMPLIES=		X11
+CAIRO_IMPLIES=		PNG XFT X11
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=	dbus
 
-GCONF_USE=		gnome=gconf2
+GCONF_USE=		GNOME=gconf2
 GCONF_CONFIGURE_WITH=	gconf
 GCONF_IMPLIES=		X11
 
@@ -109,15 +111,19 @@ GIF_IMPLIES=		X11
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 
-GSETTINGS_USE=		gnome=glib20
+GSETTINGS_USE=		GNOME=glib20
 GSETTINGS_CONFIGURE_WITH=gsettings
 GSETTINGS_IMPLIES=	DBUS X11
 
-GTK2_USE=		GNOME=gtk20
+GTK2_USE=		GNOME=cairo,gtk20
+GTK2_USES=		gettext
 GTK2_CONFIGURE_ON=	--with-x-toolkit=gtk2
 GTK2_IMPLIES=		X11
+GTK2_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+			libfontconfig.so:x11-fonts/fontconfig
 
-GTK3_USE=		GNOME=gtk30
+GTK3_USE=		GNOME=cairo,gtk30
+GTK3_USES=		gettext
 GTK3_CONFIGURE_ON=	--with-x-toolkit=gtk3
 GTK3_IMPLIES=		X11
 
@@ -129,8 +135,7 @@ KQUEUE_CONFIGURE_ON=	--with-file-notification=kqueue
 
 LLDB_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-lldb-gud.el
 
-LTO_CONFIGURE_ON=	--enable-link-time-optimization
-LTO_USE=		GCC=4.6+
+#LTO_CONFIGURE_ON=	--enable-link-time-optimization
 
 M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=	m17n-flt
@@ -145,12 +150,13 @@ MODULES_CONFIGURE_WITH=	modules
 MOTIF_USES=		motif
 MOTIF_CONFIGURE_ON=	--with-x-toolkit=motif
 MOTIF_IMPLIES=		X11
+MOTIF_LIB_DEPENDS=	libXp.so:x11/libXp
 
 OSS_CONFIGURE_ON=	--with-sound=oss
 
 OTF_LIB_DEPENDS=	libotf.so:print/libotf
 OTF_CONFIGURE_WITH=	libotf
-OTF_IMPLIES=		XFT
+OTF_IMPLIES=		X11 XFT
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
@@ -159,9 +165,10 @@ PNG_IMPLIES=		X11
 SCROLLBARS_CONFIGURE_WITH=toolkit-scroll-bars
 SCROLLBARS_IMPLIES=	X11
 
-SVG_USE=		GNOME=librsvg2
+SVG_USE=		GNOME=cairo,librsvg2
 SVG_CONFIGURE_WITH=	rsvg
-SVG_IMPLIES=		X11
+SVG_IMPLIES=		X11 PNG
+SVG_USES=		gettext
 
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=	tiff
@@ -169,7 +176,7 @@ TIFF_IMPLIES=		X11
 
 X11_CONFIGURE_OFF=	--without-x --with-x-toolkit=no
 X11_CONFIGURE_ON=	--with-x
-X11_USE=		XORG=x11
+X11_USE=		XORG=ice,sm,x11,xcb,xext,xfixes,xinerama,xmu,xrandr,xt
 X11_USES=		desktop-file-utils
 X11_VARS=		installs_icons=yes
 X11_VARS_OFF=		without_x11=yes
@@ -182,10 +189,11 @@ XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_ON=	--with-x-toolkit=athena
 XAW3D_IMPLIES=		X11
 
-XFT_USE=		XORG=xft
-XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2
+XFT_USE=		XORG=xft,xrender
 XFT_CONFIGURE_WITH=	xft
 XFT_IMPLIES=		X11
+XFT_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
 
 XIM_CONFIGURE_WITH=	xim
 XIM_IMPLIES=		X11
@@ -197,6 +205,7 @@ XPM_USE=		XORG=xpm
 XPM_CONFIGURE_WITH=	xpm
 XPM_IMPLIES=		X11
 
+XWIDGETS_USE=		XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=xwidgets
 XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 XWIDGETS_IMPLIES=	X11
@@ -214,11 +223,9 @@ USE_GCC=any
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MX11}
 .if ! ${PORT_OPTIONS:MGTK2} && ! ${PORT_OPTIONS:MGTK3} && \
 ! ${PORT_OPTIONS:MMOTIF} && ! ${PORT_OPTIONS:MXAW} && ! ${PORT_OPTIONS:MXAW3D}
-IGNORE=option X11 requires an X11 toolkit
-.endif
+CONFIGURE_ARGS+=	--with-x-toolkit=no
 .endif
 
 .include <bsd.port.pre.mk>
