@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	NL/blas/blast-forum/ LOCAL/bf
 DISTFILES=	cblas.tgz
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reference implementation of the C interface to the legacy Fortran BLAS
 
 LICENSE=	BLAS

@@ -6,7 +6,7 @@ PORTVERSION=	1.99
 CATEGORIES=	devel perl5
 MASTER_SITES=	LOCAL/bf/${PORTNAME}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
 
 LICENSE=	LGPL20 GPLv2

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
 
 LICENSE=	GPLv2+

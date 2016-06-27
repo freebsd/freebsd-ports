@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://cmp.felk.cvut.cz/~xfrancv/ocas/ LOCAL/bf
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient training of SVM classifiers
 
 LICENSE=	GPLv3

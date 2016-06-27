@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/software/RngStreams/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C implementation of a high-quality uniform random number generator
 
 USES=		libtool

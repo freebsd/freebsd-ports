@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	GNU/${PORTNAME}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript and PDF previewer
 
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d

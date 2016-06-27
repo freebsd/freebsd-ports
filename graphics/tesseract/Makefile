@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 DISTFILES=	tesseract-ocr-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

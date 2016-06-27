@@ -9,7 +9,7 @@ DISTFILES=	wbpe110.zip zpaqd633.zip zpaq657.zip zpipe.201.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Family of archivers with extremely high compression ratios
 
 LICENSE=	GPLv3 MIT

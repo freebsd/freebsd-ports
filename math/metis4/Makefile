@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/
 DISTNAME=	metis-${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for unstructured graph partitioning
 
 LICENSE=	METIS

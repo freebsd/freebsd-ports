@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/bastard/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Bastard Disassembly Environment x86 disassembler library and CLI
 
 OPTIONS_DEFINE=	DOCS

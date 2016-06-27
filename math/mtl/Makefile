@@ -6,7 +6,7 @@ DISTVERSION=	2.1.2-23.tentative
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.osl.iu.edu/download/research/mtl/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Matrix Template Library, Version 2
 
 LICENSE=	MTL

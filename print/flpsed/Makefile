@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG Postscript annotator
 
 LICENSE=	GPLv3

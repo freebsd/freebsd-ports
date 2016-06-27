@@ -10,7 +10,7 @@ MASTER_SITES=	SF \
 		ftp://ftp.fu-berlin.de/unix/misc/${PORTNAME}/ \
 		ftp://ftp.tin.org/pub/libs/${PORTNAME}/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library
 
 LICENSE=	BSD3CLAUSE
