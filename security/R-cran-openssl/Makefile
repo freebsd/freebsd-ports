@@ -18,7 +18,7 @@ USES=	cran:auto-plist
 .if ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
 R_POSTCMD_INSTALL_OPTIONS+=	--configure-vars="INCLUDE_DIR=${OPENSSLINC} LIB_DIR=${OPENSSLLIB}"
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USES+=		ssl
 .endif
 
 .include <bsd.port.mk>

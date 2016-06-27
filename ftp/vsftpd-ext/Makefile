@@ -57,7 +57,7 @@ VSFTPD_NO_OPTIMIZED=	-e "s|-O2 ||"
 .endif
 
 .if ${PORT_OPTIONS:MVSFTPD_SSL} && !defined(WITHOUT_SSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USES+=		ssl
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
