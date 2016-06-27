@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160627:
+  AFFECTS: users of sysutils/rsyslog7
+  AUTHOR: brd@FreeBSD.org
+
+  Rsyslog 7.x has reached end of life status and is being marked as
+  depreciated.  Rsyslog 8 has been made the default.
+
 20160626
   AFFECTS: users of www/calendarserver
   AUTHOR: pi@FreeBSD.org
