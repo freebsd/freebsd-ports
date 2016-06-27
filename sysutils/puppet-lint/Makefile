@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet-lint
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
