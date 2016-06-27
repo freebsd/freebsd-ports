@@ -1,16 +1,14 @@
 --- encfs/encfs.cpp.orig	2015-03-24 20:45:16 UTC
 +++ encfs/encfs.cpp
-@@ -529,6 +529,17 @@ int encfs_open(const char *path, struct 
+@@ -529,6 +529,15 @@ int encfs_open(const char *path, struct 
    return res;
  }
  
-+int encfs_create(const char *path, mode_t mode, struct fuse_file_info *file)
-+{
-+  int res;
-+
-+  res = encfs_mknod(path, mode, 0);
-+  if (res)
++int encfs_create(const char *path, mode_t mode, struct fuse_file_info *file) {
++  int res = encfs_mknod(path, mode, 0);
++  if (res) {
 +    return res;
++  }
 +
 +  return encfs_open(path, file);
 +}
