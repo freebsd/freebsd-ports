@@ -1,6 +1,6 @@
---- tuxpuck.c.orig	Thu Apr 25 23:24:18 2002
-+++ tuxpuck.c	Thu Apr 25 23:24:39 2002
-@@ -40,7 +40,7 @@
+--- tuxpuck.c.orig	2002-11-08 10:50:29 UTC
++++ tuxpuck.c
+@@ -17,7 +17,7 @@
  #endif
  
  /* externals */
