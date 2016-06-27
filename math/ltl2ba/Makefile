@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.lsv.ens-cachan.fr/~gastin/ltl2ba/ LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast translation from LTL formulae to Buechi automata
 
 LICENSE=	GPLv2

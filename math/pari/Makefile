@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/ \
 		http://mirrors.rit.edu/zi/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package
 
 LICENSE=	GPLv2

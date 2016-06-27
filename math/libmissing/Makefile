@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard math functions missing from the FreeBSD libm
 
 LICENSE=	BSD2CLAUSE

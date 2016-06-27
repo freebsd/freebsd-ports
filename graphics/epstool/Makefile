@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or extract preview bitmaps in EPS files
 
 LICENSE=	GPLv2

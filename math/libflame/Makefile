@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	flame/snapshots/:1 field/docs/:2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:3 libflame.pdf:3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLAME dense linear algebra library
 
 LICENSE=	LGPL21

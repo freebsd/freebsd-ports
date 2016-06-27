@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/ LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Random number generator testsuite
 
 LICENSE=	GPLv2

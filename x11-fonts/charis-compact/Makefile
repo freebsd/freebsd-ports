@@ -12,7 +12,7 @@ MASTER_SITES=	http://scripts.sil.org/ttw/fonts2go.cgi?family=CharisSIL&pkg=Compa
 MASTER_SITES=	LOCAL/bf
 .endif
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Charis SIL TrueType font collection, compact variant
 
 LICENSE=	OFL11

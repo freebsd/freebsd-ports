@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/ahze
 #	http://www.moshier.net/
 DISTFILES=	${LDOUBLE_DISTFILE}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Long double math precision functions
 
 NO_WRKSUBDIR=	yes

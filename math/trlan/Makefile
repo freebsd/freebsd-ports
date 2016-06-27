@@ -11,7 +11,7 @@ MASTER_SITES=	https://codeforge.lbl.gov/frs/download.php/210/:1 \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1 trlan-ug.pdf:2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thick-restart Lanczos method for eigenproblems
 
 BROKEN_powerpc64=	Does not build

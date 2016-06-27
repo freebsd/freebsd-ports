@@ -11,7 +11,7 @@ DISTFILES=	${TESSERACT_LANGS_300:O:u:S|$|.traineddata.gz|} \
 		${TESSERACT_LANGS_302:O:u:S|^|tesseract-ocr-3.02.|:S|$|.tar.gz|}
 EXTRACT_ONLY=	#empty
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trained language data for the Tesseract OCR engine
 
 LICENSE=	APACHE20

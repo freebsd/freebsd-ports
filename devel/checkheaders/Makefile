@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks headers in C/C++ programs
 
 USES=		gmake zip

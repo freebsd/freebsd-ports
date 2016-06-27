@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	NL/xblas LOCAL/bf
 DISTNAME=	xblas
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extra Precise Basic Linear Algebra Subroutines (BLAS)
 
 LICENSE=	BSD3CLAUSE
