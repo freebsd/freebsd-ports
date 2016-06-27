@@ -33,7 +33,7 @@ STACKPROTECTOR_DESC=	Build with stack-protector
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVSFTPD_SSL} && !defined(WITHOUT_SSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USES+=		ssl
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}

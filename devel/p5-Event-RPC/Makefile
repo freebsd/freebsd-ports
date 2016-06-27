@@ -26,7 +26,6 @@ SSL_DESC=	Dependency to SSL lib
 OPTIONS_DEFAULT=	EVENT ANYEVENT SSL
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	p5-Storable>=0:devel/p5-Storable
 
@@ -43,11 +42,10 @@ BUILD_DEPENDS+=	p5-Glib2>=0:devel/p5-Glib2
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USES+=		ssl
 BUILD_DEPENDS+=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 .endif
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
