@@ -7,6 +7,7 @@
     SUBDIR += blogbench
     SUBDIR += bonnie
     SUBDIR += bonnie++
+    SUBDIR += clpeak
     SUBDIR += cpipe
     SUBDIR += dbench
     SUBDIR += dbs
