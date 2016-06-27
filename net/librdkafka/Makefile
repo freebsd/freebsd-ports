@@ -5,10 +5,11 @@ PORTNAME=	librdkafka
 PORTVERSION=	0.9.1
 CATEGORIES=	net
 
-MAINTAINER=	xnasx@yandex.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache Kafka C/C++ library
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	Does not build
 
@@ -17,10 +18,12 @@ BUILD_DEPENDS=	bash:shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	edenhill
 
-USE_LDCONFIG=	yes
-
-USES=	gmake perl5 python
+USES=		gmake perl5 python shebangfix ssl
+SHEBANG_FILES=	lds-gen.py
 GNU_CONFIGURE=	yes
+MAKE_ENV=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
+
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -28,8 +31,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-march=pentium
 .endif
 
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librdkafka.so.1
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librdkafka++.so.1
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
 
 .include <bsd.port.post.mk>
