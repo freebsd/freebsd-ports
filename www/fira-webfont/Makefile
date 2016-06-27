@@ -20,6 +20,8 @@ COMMENT=	Sans-serif and monospaced Web Font for small screens
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/${DISTNAME}Fonts${PORTVERSION:S|.||}/License.txt
 
+BROKEN=		unfetchable
+
 USES=		zip
 NO_ARCH=	yes
 NO_BUILD=	yes
