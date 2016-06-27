@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
-USES=		cpe gmake iconv ncurses pkgconfig python:3,build tar:xz
+USES=		cpe gmake iconv ncurses pkgconfig python:build tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
