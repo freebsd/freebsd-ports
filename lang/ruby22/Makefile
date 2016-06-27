@@ -100,6 +100,10 @@ CONFIGURE_ARGS+=	--disable-dtrace
 .endif
 .endif
 
+.if ${ARCH} == "powerpc" || ${ARCH} == "powerpc64"
+USE_GCC=	4.9+
+.endif
+
 .if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
 CONFIGURE_ARGS+=	--with-setjmp-type=_setjmp
 CONFIGURE_ENV+=	ac_cv_func__setjmp=yes
