@@ -1156,6 +1156,7 @@
     SUBDIR += ykpers
     SUBDIR += yubico-piv-tool
     SUBDIR += yubikey-personalization-gui
+    SUBDIR += yubikey-piv-manager
     SUBDIR += zebedee
     SUBDIR += zenmap
     SUBDIR += zeronet
