@@ -357,8 +357,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_SDL		- If set, this port uses the sdl libraries.
 #				  See bsd.sdl.mk for more information.
 ##
-# USE_OPENSSL	- If set, this port relies on the OpenSSL package.
-##
 # USE_OPENLDAP	- If set, this port uses the OpenLDAP libraries.
 #				  Implies: WANT_OPENLDAP_VER?=24
 # WANT_OPENLDAP_VER

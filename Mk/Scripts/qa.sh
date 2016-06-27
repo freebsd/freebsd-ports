@@ -529,7 +529,7 @@ proxydeps_suggest_uses() {
 	elif [ ${pkg} = "security/openssl" -o ${pkg} = "security/openssl-devel" \
 	  -o ${pkg} = "security/libressl" -o ${pkg} = "security/libressl-devel" \
 	  ]; then
-		warn "you need USE_OPENSSL=yes"
+		warn "you need USES=ssl"
 	# Tcl
 	elif expr ${pkg} : "^lang/tcl" > /dev/null; then
 		warn "you need USES+=tcl"
