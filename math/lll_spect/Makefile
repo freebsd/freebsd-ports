@@ -10,7 +10,7 @@ DISTFILES=	lll_spect.C lll_search.C examples.txt
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LLL-spectral test of linear congruential random number generators
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:math/ntl

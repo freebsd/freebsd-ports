@@ -8,7 +8,7 @@ MASTER_SITES=	https://biostatistics.mdanderson.org/SoftwareDownload/ProductDownl
 		LOCAL/bf
 DISTNAME=	RANDLIB_V90
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of Routines for Random Number Generation
 
 USES=		uidfix

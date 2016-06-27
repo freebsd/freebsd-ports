@@ -9,7 +9,7 @@ MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for parallel (mpi) unstructured graph partitioning
 
 LICENSE=	METIS

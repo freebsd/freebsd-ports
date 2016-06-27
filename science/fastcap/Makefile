@@ -6,7 +6,7 @@ DISTVERSION=	2.0wr-011109
 CATEGORIES=	science cad
 MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three-dimensional capacitance extraction program
 
 HAS_CONFIGURE=	yes

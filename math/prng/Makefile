@@ -6,7 +6,7 @@ DISTVERSION=	3.0.2
 CATEGORIES=	math
 MASTER_SITES=	http://statistik.wu-wien.ac.at/software/prng/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, high-performance ANSI-C pseudorandom number generators
 
 LICENSE=	GPLv2

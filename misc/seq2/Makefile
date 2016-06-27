@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the UNIX(tm) program called seq
 
 LICENSE=	GPLv2

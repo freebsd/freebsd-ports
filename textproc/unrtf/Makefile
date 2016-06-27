@@ -6,7 +6,7 @@ PORTVERSION=	0.21.5
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter from RTF to several formats, including HTML and LaTeX
 
 LICENSE=	GPLv3+

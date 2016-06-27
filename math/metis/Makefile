@@ -6,7 +6,7 @@ PORTVERSION=	5.1.0
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for unstructured graph partitioning
 
 LICENSE=	APACHE20

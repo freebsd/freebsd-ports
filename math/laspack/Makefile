@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	NL/linalg
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for solving large sparse systems of linear equations
 
 USES=		tar:tgz

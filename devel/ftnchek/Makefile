@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SUNSITE/devel/lang/fortran \
 		http://www.dsm.fordham.edu/~ftnchek/download/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortran 77 semantic checking utility
 
 LICENSE=	MIT

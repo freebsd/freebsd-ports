@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz
 DIST_SUBDIR=	arpack
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.gz
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
 BUILD_DEPENDS=	tradcpp:devel/tradcpp

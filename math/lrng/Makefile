@@ -14,7 +14,7 @@ DISTFILES=	ex1.c:1 lfsr258.c:1 lfsr113.c:1 WELL1024a.h:1 WELL19937a.h:1 WELL512a
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uniform random number generators of P. L'Ecuyer and his colleagues
 
 LICENSE=	GPLv3
