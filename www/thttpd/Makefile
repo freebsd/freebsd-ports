@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thttpd
-PORTVERSION=	2.26
-PORTREVISION=	1
+PORTVERSION=	2.27
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/thttpd/
 
@@ -22,15 +21,17 @@ CPE_VENDOR=	acme
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	SENDFILE IPREAL INDEXES
+OPTIONS_DEFINE=	SENDFILE IPREAL INDEXES HTACCESS
 OPTIONS_DEFAULT=	SENDFILE IPREAL
 
 SENDFILE_DESC=	Use sendfile(2) to serve files
 IPREAL_DESC=	Respect (pass on) "X-Forwarded-For" header
 INDEXES_DESC=	Generate index pages for directories
+HTACCESS_DESC=	IP-based authorization (.htaccess) support
 
 SENDFILE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-config.h
 IPREAL_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ip_real
+HTACCESS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-htaccess
 
 .include <bsd.port.options.mk>
 
@@ -48,5 +49,8 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/thttpd.conf.sample ${STAGEDIR}${PREFIX}/etc
+	${PRINTF} "/var/log/thttpd.log\t  ${WWWOWN}:${WWWGRP}\t640 7 * @T00\
+		J\t/var/run/thttpd.pid\n" > \
+		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/${PORTNAME}.conf
 
 .include <bsd.port.mk>
