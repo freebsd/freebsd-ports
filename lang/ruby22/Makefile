@@ -18,8 +18,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 MAKE_JOBS_UNSAFE=	yes
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
