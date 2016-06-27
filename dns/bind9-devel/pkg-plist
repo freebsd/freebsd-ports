@@ -32,7 +32,6 @@ include/dns/dlz_dlopen.h
 include/dns/dns64.h
 include/dns/dnssec.h
 include/dns/dnstap.h
-include/dns/dnstap.pb-c.h
 include/dns/ds.h
 include/dns/dsdigest.h
 include/dns/dyndb.h
