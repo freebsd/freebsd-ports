@@ -29,6 +29,7 @@ LDFLAGS+=	-lm -lreadline -lncurses
 USES+=		tk
 CFLAGS+=	-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -ltk${TK_SHLIB_VER} -ltcl${TCL_SHLIB_VER} -lTix8.4.3
+.else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_prelude.h
 .endif
 
