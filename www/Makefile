@@ -1826,7 +1826,6 @@
     SUBDIR += redmine-redcarpet_formatter
     SUBDIR += redmine-sidebar_hide
     SUBDIR += redmine-single_auth
-    SUBDIR += redmine-stuff_to_do
     SUBDIR += redmine-wiki_notes
     SUBDIR += rejik
     SUBDIR += rekonq
