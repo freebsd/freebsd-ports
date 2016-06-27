@@ -1,4 +1,4 @@
---- encfs/makeKey.cpp.orig	2016-06-18 20:53:44 UTC
+--- encfs/makeKey.cpp.orig	2015-03-24 20:45:16 UTC
 +++ encfs/makeKey.cpp
 @@ -25,6 +25,7 @@
  #include "openssl.h"
