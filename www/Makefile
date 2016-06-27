@@ -1778,6 +1778,7 @@
     SUBDIR += py-uliweb
     SUBDIR += py-urlgrabber
     SUBDIR += py-urljr
+    SUBDIR += py-urlobject
     SUBDIR += py-user_agent
     SUBDIR += py-utidy
     SUBDIR += py-w3lib
