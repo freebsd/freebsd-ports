@@ -107,6 +107,7 @@ lib/calibre/calibre/devices/kobo/__init__.py
 lib/calibre/calibre/devices/kobo/bookmark.py
 lib/calibre/calibre/devices/kobo/books.py
 lib/calibre/calibre/devices/kobo/driver.py
+lib/calibre/calibre/devices/kobo/kobotouch_config.py
 lib/calibre/calibre/devices/manager.py
 lib/calibre/calibre/devices/mime.py
 lib/calibre/calibre/devices/misc.py
@@ -352,6 +353,8 @@ lib/calibre/calibre/ebooks/metadata/mobi.py
 lib/calibre/calibre/ebooks/metadata/odt.py
 lib/calibre/calibre/ebooks/metadata/opf.py
 lib/calibre/calibre/ebooks/metadata/opf2.py
+lib/calibre/calibre/ebooks/metadata/opf3.py
+lib/calibre/calibre/ebooks/metadata/opf3_test.py
 lib/calibre/calibre/ebooks/metadata/pdb.py
 lib/calibre/calibre/ebooks/metadata/pdf.py
 lib/calibre/calibre/ebooks/metadata/plucker.py
@@ -473,6 +476,7 @@ lib/calibre/calibre/ebooks/oeb/polish/tests/cascade.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/container.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/main.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/parsing.py
+lib/calibre/calibre/ebooks/oeb/polish/tests/structure.py
 lib/calibre/calibre/ebooks/oeb/polish/toc.py
 lib/calibre/calibre/ebooks/oeb/polish/utils.py
 lib/calibre/calibre/ebooks/oeb/reader.py
@@ -771,6 +775,7 @@ lib/calibre/calibre/gui2/device_drivers/configwidget.py
 lib/calibre/calibre/gui2/device_drivers/configwidget_ui.py
 lib/calibre/calibre/gui2/device_drivers/mtp_config.py
 lib/calibre/calibre/gui2/device_drivers/mtp_folder_browser.py
+lib/calibre/calibre/gui2/device_drivers/tabbed_device_config.py
 lib/calibre/calibre/gui2/dialogs/__init__.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
@@ -1346,6 +1351,7 @@ lib/calibre/calibre/utils/rapydscript.py
 lib/calibre/calibre/utils/recycle_bin.py
 lib/calibre/calibre/utils/resources.py
 lib/calibre/calibre/utils/rss_gen.py
+lib/calibre/calibre/utils/run_tests.py
 lib/calibre/calibre/utils/search_query_parser.py
 lib/calibre/calibre/utils/serve_coffee.py
 lib/calibre/calibre/utils/sftp.py
