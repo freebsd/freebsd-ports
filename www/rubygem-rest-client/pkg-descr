@@ -1,4 +1,4 @@
 A simple Simple HTTP and REST client for Ruby, inspired by the Sinatra
 microframework style of specifying actions: get, put, post, delete.
 
-WWW: https://github.com/archiloque/rest-client
+WWW: https://github.com/rest-client/rest-client
