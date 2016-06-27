@@ -20,7 +20,6 @@
 # OPENSSLRPATH		- rpath for dynamic linker
 #
 # MAKE_ENV		- extended with the variables above
-# CONFIGURE_ENV		- extended with LDFLAGS
 # BUILD_DEPENDS		- are added if needed
 # RUN_DEPENDS		- are added if needed
 #
