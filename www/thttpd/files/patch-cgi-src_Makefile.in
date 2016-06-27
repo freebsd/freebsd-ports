@@ -9,6 +9,15 @@
  DEFS =		@DEFS@
  INCLS =		-I..
  CFLAGS =	$(CCOPT) $(DEFS) $(INCLS)
+@@ -46,7 +46,7 @@
+ 
+ .c.o:
+ 	@rm -f $@
+-	$(CC) $(CFLAGS) -c $*.c
++	$(CC) $(CFLAGS) -o $@ -c $<
+ 
+ all:		redirect ssi phf
+ 
 @@ -67,17 +67,17 @@
  	cd .. ; $(MAKE) $(MFLAGS) strerror.o
  
