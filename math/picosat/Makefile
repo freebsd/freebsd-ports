@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	picosat
-DISTVERSION=	957
+DISTVERSION=	965
 CATEGORIES=	math
 MASTER_SITES=	http://fmv.jku.at/picosat/
 
@@ -12,9 +12,16 @@ COMMENT=	Satisfiability (SAT) solver for boolean variables
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_LDCONFIG=		yes
+OPTIONS_DEFINE=	DEBUG
+
+DEBUG_CONFIGURE_ON=	--debug --log
+
+USE_LDCONFIG=	yes
+
 HAS_CONFIGURE=		yes
-CONFIGURE_ARGS=		--shared --trace --stats
+CONFIGURE_ARGS=		--shared --static
+CONFIGURE_SCRIPT=	configure.sh
+
 MAKEFILE=		makefile
 MAKE_JOBS_UNSAFE=	yes
 
