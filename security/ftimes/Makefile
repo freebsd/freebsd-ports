@@ -61,6 +61,8 @@ HASHDIG_TOOLS_DESC=	Install hashdig tools
 MAP_TOOLS_DESC=		Install map tools
 XMAGIC_DESC=		XMagic support
 
+SSL_USES=	ssl
+
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS+=		libpcre.so:devel/pcre
@@ -110,8 +112,6 @@ PLIST_SUB+=		MAP_TOOLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--without-ssl

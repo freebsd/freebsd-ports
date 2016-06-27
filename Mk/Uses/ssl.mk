@@ -1,18 +1,12 @@
-#
 # $FreeBSD$
-# bsd.openssl.mk - Support for OpenSSL based ports.
 #
-# Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
+# Handle dependency on *ssl ports.
 #
-# The port can now set these options in the Makefiles.
+# Feature:	SSL_DEFAULT
+# Usage:	USES=ssl
+# Valid ARGS:	none
 #
-# WITH_OPENSSL_BASE=yes	- Use the version in the base system.
-# WITH_OPENSSL_PORT=yes	- Use the OpenSSL port, even if base is up to date.
-#
-# USE_OPENSSL_RPATH=yes	- Pass RFLAGS options in CFLAGS,
-#			  needed for ports who don't use LDFLAGS.
-#
-# Overrideable defaults:
+# The use can choose which ssl library he wants with:
 #
 # DEFAULT_VERSIONS+=	ssl=<openssl variant>
 #
@@ -29,8 +23,11 @@
 # CONFIGURE_ENV		- extended with LDFLAGS
 # BUILD_DEPENDS		- are added if needed
 # RUN_DEPENDS		- are added if needed
-
-OpenSSL_Include_MAINTAINER=	dinoex@FreeBSD.org
+#
+# MAINTAINER:	portmgr@FreeBSD.org
+#
+.if !defined(_INCLUDE_USES_SSL_MK)
+_INCLUDE_USES_SSL_MK=	yes
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
@@ -113,5 +110,4 @@ OPENSSL_LDFLAGS+=	-Wl,-rpath,${OPENSSLRPATH}
 
 LDFLAGS+=		${OPENSSL_LDFLAGS}
 
-### crypto
-#RESTRICTED=		"Contains cryptography."
+.endif

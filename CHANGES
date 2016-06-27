@@ -10,6 +10,11 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160627:
+AUTHOR: mat@FreeBSD.org
+
+  USE_OPENSSL has been replaced by USES=ssl.
+
 20160625:
 AUTHOR: adamw@FreeBSD.org
 
