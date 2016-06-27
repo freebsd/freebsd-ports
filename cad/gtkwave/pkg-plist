@@ -84,6 +84,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
 share/icons/gtkwave_256x256x32.png
 share/icons/gtkwave_files_256x256x32.png
 share/icons/gtkwave_savefiles_256x256x32.png
+share/icons/hicolor/scalable/apps/gtkwave.svg
 %%EXAMPLESDIR%%/des.fst
 %%EXAMPLESDIR%%/des.gtkw
 %%EXAMPLESDIR%%/des.tcl
