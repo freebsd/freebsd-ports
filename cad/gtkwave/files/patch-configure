@@ -1,6 +1,6 @@
---- configure.orig	2012-04-19 14:52:53.532889214 +0600
-+++ configure	2012-04-19 14:52:32.373895264 +0600
-@@ -9212,6 +9212,7 @@
+--- configure.orig	2016-05-11 18:22:21 UTC
++++ configure
+@@ -10257,6 +10257,7 @@ OLD_LDFLAGS="${LDFLAGS}"
  TCLSPEC_LHS="${TCL_LIB_SPEC% *}"
  TKLSPEC_LHS="${TK_LIB_SPEC% *}"
  LDFLAGS="${LDFLAGS} ${TCLSPEC_LHS} ${TKLSPEC_LHS}"
