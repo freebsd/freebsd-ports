@@ -47,15 +47,6 @@ WARNING+=	"DEFAULT_PHP_VER is defined, consider using DEFAULT_VERSIONS=php=${DEF
 .  if defined(USE_PHPIZE) && empty(php_ARGS:Mphpize)
 php_ARGS+=	phpize
 .  endif
-.  if defined(USE_PHPEXT) && empty(php_ARGS:Mext)
-php_ARGS+=	ext
-.  endif
-.  if defined(USE_ZENDEXT) && empty(php_ARGS:Mzend)
-php_ARGS+=	zend
-.  endif
-.  if defined(USE_PHP_BUILD) && empty(php_ARGS:Mbuild)
-php_ARGS+=	build
-.  endif
 .  if defined(WANT_PHP_CLI) && empty(php_ARGS:Mcli)
 php_ARGS+=	cli
 .  endif
