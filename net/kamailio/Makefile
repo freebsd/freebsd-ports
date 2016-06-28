@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kamailio
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -43,7 +43,7 @@ SCTP_DESC=	SCTP support
 PRESENCE_DESC=	Presence support
 WEBSOCKET_DESC=	Websocket support
 
-MYSQL_USE=	mysql=yes
+MYSQL_USES=	mysql
 PGSQL_USES=	pgsql
 JITSI_RUN_DEPENDS=	jitsi:net-im/jitsi
 UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
