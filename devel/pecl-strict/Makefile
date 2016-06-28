@@ -13,9 +13,7 @@ COMMENT=	Strict scalar parameter type hint support for 5.4+
 
 LICENSE=	PHP301
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

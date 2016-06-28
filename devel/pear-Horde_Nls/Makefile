@@ -17,7 +17,7 @@ USE_HORDE_RUN=	Horde_Translation \
 OPTIONS_DEFINE=	GEOIP
 GEOIP_DESC=	Depend on geoip PHP extension
 
-GEOIP_USE=	PHP=yes
+GEOIP_USES=	php
 GEOIP_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/geoip.so:net/pecl-geoip
 
 .include <bsd.port.mk>

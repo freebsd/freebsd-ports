@@ -14,8 +14,7 @@ COMMENT=	Named and unnamed synchronization objects in PHP
 
 LICENSE=	MIT
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

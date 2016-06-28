@@ -21,24 +21,19 @@ OPTIONS_DEFINE=	LOG PHP
 OPTIONS_DEFAULT=	LOG PHP
 LOG_DESC=	Enable loggin
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPHP}
-USE_PHP=	yes
-WANT_PHP_CGI=	yes
-.endif
+PHP_USES=	php:cgi
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g;s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/defaults/pserv.conf ${WRKSRC}/sources/main.h
-.if ! ${PORT_OPTIONS:MLOG}
+
+post-patch-LOG-off:
 	@${REINPLACE_CMD} "s|define LOG|undef LOG|" \
 		${WRKSRC}/sources/main.h
-.endif
-.if ! ${PORT_OPTIONS:MPHP}
+
+post-patch-PHP-off:
 	@${REINPLACE_CMD} "s|define PHP|undef PHP|" \
 		${WRKSRC}/sources/main.h
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sources/pserv ${STAGEDIR}${PREFIX}/sbin/

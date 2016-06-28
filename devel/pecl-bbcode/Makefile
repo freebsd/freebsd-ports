@@ -14,10 +14,7 @@ COMMENT=	PECL extension which allows quick and efficient BBCode Parsing
 LICENSE=	PHP301 BSD3CLAUSE
 LICENSE_COMB=	multi
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP= 56 70
 
 CONFIGURE_ARGS=	--enable-bbcode

@@ -15,10 +15,8 @@ LICENSE=	PHP301
 
 BROKEN_powerpc64=	Does not build
 
-USES=		tar:tgz
-USE_PHP=	hash
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
+USE_PHP=	hash:build
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-phk

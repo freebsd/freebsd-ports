@@ -15,10 +15,7 @@ LICENSE=	PHP30
 
 LIB_DEPENDS=	libenchant.so:textproc/enchant
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	${PORTNAME}
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	56 70
 CONFIGURE_ARGS+=	--with-enchant=${LOCALBASE}
 

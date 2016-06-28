@@ -16,8 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libcconv.so:chinese/cconv
 
 CONFIGURE_ARGS=	--with-cconv-dir=${LOCALBASE}
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 post-patch:

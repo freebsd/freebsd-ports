@@ -15,10 +15,7 @@ COMMENT=	PECL Weakref extension
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 CFLAGS+=	-I${LOCALBASE}/include

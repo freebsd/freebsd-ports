@@ -23,10 +23,6 @@ GH_PROJECT=	MaxMind-DB-Reader-php
 
 WRKSRC_SUBDIR=	ext
 
-USE_PHP=	yes
-IGNORE_WITH_PHP=4
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 
 .include <bsd.port.mk>

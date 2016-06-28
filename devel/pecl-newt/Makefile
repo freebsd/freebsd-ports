@@ -13,12 +13,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libnewt.so:devel/newt
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	newt
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 post-patch:

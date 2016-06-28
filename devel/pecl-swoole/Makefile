@@ -14,10 +14,8 @@ COMMENT=	Asynchronous & concurrent & distributed networking framework
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 CFLAGS+=	-I${LOCALBASE}/include
-PHP_MODNAME=	${PORTNAME}
 USE_PHP=	pcre
-USE_PHPEXT=	yes
 
 .include <bsd.port.mk>

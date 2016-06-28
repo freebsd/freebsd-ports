@@ -17,10 +17,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

@@ -12,11 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	buganini@gmail.com
 COMMENT=	POP3 Client Library for PHP
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	pop3
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

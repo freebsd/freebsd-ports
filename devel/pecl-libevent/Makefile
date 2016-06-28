@@ -15,13 +15,8 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libevent.so:devel/libevent2
 
-USES=	tar:tgz
+USES=	php:ext tar:tgz
 
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	libevent
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

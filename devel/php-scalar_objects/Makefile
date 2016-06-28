@@ -16,10 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nikic
 GH_TAGNAME=	baf4985
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
-USE_PHP_BUILD=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

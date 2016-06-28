@@ -13,8 +13,7 @@ COMMENT=	PHP Web-based News Reader
 
 LICENSE=	GPLv2+
 
-USES=		tar:tgz
-USE_PHP=	yes
+USES=		php tar:tgz
 NO_BUILD=	yes
 
 PNEWSDIR?=	www/pnews

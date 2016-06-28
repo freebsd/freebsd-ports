@@ -12,7 +12,7 @@ COMMENT=	Web content management system
 
 LICENSE=	GPLv2+
 
-USES=		cpe
+USES=		cpe php
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
@@ -20,7 +20,6 @@ SUB_FILES=	pkg-message
 USE_MYSQL=	yes
 
 NO_BUILD=	yes
-USE_PHP=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

@@ -19,8 +19,7 @@ LIB_DEPENDS=	libgd.so:graphics/gd
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		zip
-USE_PHP=	yes
+USES=		php zip
 
 PHPLOT_DIR=	${STAGEDIR}${PREFIX}/include/php/phplot
 

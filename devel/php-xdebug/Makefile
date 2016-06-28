@@ -13,10 +13,7 @@ COMMENT=	Xdebug extension for PHP
 LICENSE=	PHP30
 
 CONFIGURE_ARGS=	--enable-xdebug
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_ZENDEXT=	yes
-USES=		tar:tgz
+USES=		php:zend tar:tgz
 
 SUB_FILES=	pkg-message
 

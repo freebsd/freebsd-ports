@@ -16,8 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bobthecow
 GH_PROJECT=	mustache.php
 
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
+USES=		php:build
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message

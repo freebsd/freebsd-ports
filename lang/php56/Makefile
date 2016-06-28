@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=--enable-fpm \
 .endif
 
 .if defined(PKGNAMEPREFIX)
-USE_PHP=	yes
+USES+=	php
 PHP_DEFAULT=	5.6
 IGNORE_WITH_PHP=53 54 5
 USE_APACHE=	22+

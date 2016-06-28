@@ -14,12 +14,10 @@ COMMENT=	PECL extension that provides WBXML conversion capabilities
 
 LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
 
-USES=tar:tgz
+USES=		php:ext tar:tgz
 
 CONFIGURE_ARGS=	--with-wbxml=${LOCALBASE} \
 		--with-libexpat-dir=${LOCALBASE}
-USE_PHP=	yes
-USE_PHPEXT=	yes
 IGNORE_WITH_PHP=	70
 
 post-patch:

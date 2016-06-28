@@ -12,8 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde LZ4 Compression Extension for php
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=	php:ext
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-horde_lz4

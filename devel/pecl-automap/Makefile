@@ -13,11 +13,8 @@ COMMENT=	PECL extension offering a fast map-based autoloader
 
 LICENSE=	PHP301
 
-USES=		tar:tgz
-USE_PHP=	spl
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	automap
+USES=		php:ext tar:tgz
+USE_PHP=	spl:build
 IGNORE_WITH_PHP=	56 70
 
 CONFIGURE_ARGS=	--enable-automap

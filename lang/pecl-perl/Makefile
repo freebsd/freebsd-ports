@@ -13,12 +13,8 @@ COMMENT=	Embedded Perl
 
 LICENSE=	PHP301
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-USE_PHP_BUILD=	yes
 IGNORE_WITH_PHP=	70
 
-USES=		perl5 tar:tgz
+USES=		perl5 php:ext tar:tgz
 
 .include <bsd.port.mk>

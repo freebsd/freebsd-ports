@@ -15,12 +15,7 @@ LICENSE=	PHP301
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	pthreads
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 
 .include <bsd.port.options.mk>
 

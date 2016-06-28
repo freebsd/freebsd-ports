@@ -9,12 +9,10 @@ MASTER_SITES=	http://www.dddbl.de/dddbl-versions/
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Definition Driven Database Layer for PHP
 
-USES=		tar:bzip2
+USES=		php tar:bzip2
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-
-USE_PHP=	yes
 
 WRKSRC=		${WRKDIR}/dddbl2
 

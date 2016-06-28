@@ -16,9 +16,8 @@ BROKEN_powerpc64=	Does not build
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USE_PHP=	session
-USE_PHPEXT=	yes
-USE_PHP_BUILD=	yes
+USES=		php:ext
+USE_PHP=	session:build
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-suhosin

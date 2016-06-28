@@ -22,9 +22,7 @@ GH_TAGNAME=	4b1dfe1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lopencv_core
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 
 CONFIGURE_ARGS+=	--with-facedetect
 

@@ -10,9 +10,8 @@ COMMENT=	PHP7 extension for Redis
 
 LICENSE=	PHP301
 
-USE_PHP=	session
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
+USE_PHP=	session:build
 PHP_DEFAULT=	7.0
 IGNORE_WITH_PHP=	55 56
 

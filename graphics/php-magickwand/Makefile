@@ -14,9 +14,7 @@ COMMENT=	PHP extension to manipulate images
 
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 
-USES=		pkgconfig
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext pkgconfig
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--with-magickwand=${LOCALBASE}

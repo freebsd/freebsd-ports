@@ -15,11 +15,9 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
-USES=		pkgconfig tar:tgz
+USES=		php:ext pkgconfig tar:tgz
 CONFIGURE_ARGS=	--with-jsonc --with-libjson
 MAKE_ARGS=	EXTRA_CFLAGS=-DCOMPILE_DL_JSON=1
-USE_PHP=	yes
-USE_PHPEXT=	yes
 IGNORE_WITH_PHP=70
 CONFLICTS_INSTALL=	php54-json-5* php55-json-5* php5-json-5*
 

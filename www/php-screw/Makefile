@@ -13,9 +13,8 @@ COMMENT=	PHP script encryption tool
 
 CRYPTKEY?=	11152, 368, 192, 1281, 62
 
-USES=		libtool
+USES=		php:phpize libtool
 USE_PHP=	zlib
-USE_PHPIZE=	yes
 PLIST_SUB=	PHP_EXTDIR="${PHP_EXT_DIR}"
 SUB_FILES=	pkg-message
 
