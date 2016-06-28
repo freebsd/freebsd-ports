@@ -1,6 +1,7 @@
-SHA256 (numpy-1.11.0.tar.gz) = a1d1268d200816bfb9727a7a27b78d8e37ecec2e4d5ebd33eb64e2789e0db43e
-SIZE (numpy-1.11.0.tar.gz) = 4169494
-SHA256 (reference.pdf) = 8e0e95e2b73d08a6a1b70f941e083189aceba93dd6b7a509df386dda17defbc0
-SIZE (reference.pdf) = 2488720
-SHA256 (userguide.pdf) = 72622fd49c47e74135c66d793ad69484cf5c8a74f488d524deab7a6fc0d3c3b3
-SIZE (userguide.pdf) = 528010
+TIMESTAMP = 1467053000
+SHA256 (numpy-1.11.1.tar.gz) = dc4082c43979cc856a2bf352a8297ea109ccb3244d783ae067eb2ee5b0d577cd
+SIZE (numpy-1.11.1.tar.gz) = 4171162
+SHA256 (reference.pdf) = 4bb6c7b199dfdf1ea9678b5d27191e41ae60620c1094848a34d49261cefea9db
+SIZE (reference.pdf) = 4488536
+SHA256 (userguide.pdf) = 7375c95f0e88bc2fda1d376d8de2ab657d5afce4de08757624743498090c4037
+SIZE (userguide.pdf) = 524993
