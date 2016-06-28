@@ -1,0 +1,10 @@
+Crypt::LE provides the functionality necessary to use Let's Encrypt
+API and generate free SSL certificates for your domains. It can
+also be used to generate RSA keys and Certificate Signing Requests
+or to revoke previously issued certificates. Crypt::LE is shipped
+with a self-sufficient client for obtaining SSL certificates -
+le.pl.
+
+The client supports 'http' and 'dns' domain verification out of the box.
+
+WWW: http://search.cpan.org/dist/Crypt-LE/
