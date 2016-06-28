@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	extracturl
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script that extracts URLs from email in MIME or plain text format
 
 LICENSE=	BSD2CLAUSE

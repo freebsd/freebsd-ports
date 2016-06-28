@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF/lxde/LXTask%20%28task%20manager%29/LXTask%20${PORTVERSION}/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight desktop-independent task manager
 
 LICENSE=	GPLv2

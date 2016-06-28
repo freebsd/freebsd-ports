@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addons for the Ruby implementation of the Haml template language
 
 LICENSE=	MIT

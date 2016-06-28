@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%20${PORTVERSION}/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Session Manager
 
 BUILD_DEPENDS=	valac:lang/vala
