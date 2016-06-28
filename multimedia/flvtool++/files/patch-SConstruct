@@ -1,5 +1,5 @@
---- SConstruct.orig	2007-09-08 03:24:22.000000000 +0400
-+++ SConstruct	2008-08-21 20:38:10.000000000 +0400
+--- SConstruct.orig	2012-03-09 14:32:30 UTC
++++ SConstruct
 @@ -1,5 +1,7 @@
 +import os
 +
