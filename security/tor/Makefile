@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	Anonymizing overlay network for TCP
 
 LICENSE=	BSD3CLAUSE
