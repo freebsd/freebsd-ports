@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang-metrics
-PORTVERSION=	1.2.0
+PORTVERSION=	2.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
