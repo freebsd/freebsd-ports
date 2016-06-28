@@ -1,4 +1,4 @@
-SHA256 (qemu/2.6.50.g20160621/seanbruno-qemu-bsd-user-2.6.50.g20160621-711f104_GH0.tar.gz) = adc60cbf7ec1f2da82c059e51de9ede555bea79001464b9a6073ac44affbf81f
-SIZE (qemu/2.6.50.g20160621/seanbruno-qemu-bsd-user-2.6.50.g20160621-711f104_GH0.tar.gz) = 12124411
-SHA256 (qemu/2.6.50.g20160621/dtc-v1.4.0.tar.gz) = 39d0713efd82a27adc065ecb9ef36401c53d5ee87ae1764e2bb243fcd97488e3
+SHA256 (qemu/2.6.50.g20160628/seanbruno-qemu-bsd-user-2.6.50.g20160628-4c46f61_GH0.tar.gz) = 698c0bd95b8cd24d68fe60b3c62295f942073ed1ffacbb5e699cb5bbffef95a1
+SIZE (qemu/2.6.50.g20160628/seanbruno-qemu-bsd-user-2.6.50.g20160628-4c46f61_GH0.tar.gz) = 12124250
+SHA256 (qemu/2.6.50.g20160628/dtc-v1.4.0.tar.gz) = 39d0713efd82a27adc065ecb9ef36401c53d5ee87ae1764e2bb243fcd97488e3
 SIZE (qemu/2.6.50.g201605/dtc-v1.4.0.tar.gz) = 131893
