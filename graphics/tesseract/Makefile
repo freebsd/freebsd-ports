@@ -41,10 +41,13 @@ post-patch:
 	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 	${WRKSRC}/Makefile.in
 
-post-install:
+.include <bsd.port.options.mk>
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS:Nhtml} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
+post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
