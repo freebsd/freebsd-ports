@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gpsbabel
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+DISTVERSIONPREFIX=	${PORTNAME}_
+DISTVERSION=	1_5_3
 CATEGORIES=	astro geography
-MASTER_SITES=	https://secure.ohos.nl/downloads/ \
-		LOCAL/glebius
 
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	GPS file translating tool
@@ -14,11 +12,17 @@ COMMENT=	GPS file translating tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+# Unbundle libminizip
+LIB_DEPENDS=	libminizip.so:archivers/minizip
+
+USE_GITHUB=	yes
+
 CONFLICTS=	gpsbabel14-[0-9]*
 
 USE_QT4=	corelib qmake_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-zlib=system
+USES=		localbase
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_SUB=	GUI
@@ -32,6 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} '/langPath_ = / \
 		s|QApplication::applicationDirPath()|"${DATADIR}"|' \
 			${WRKSRC}/gui/mainwindow.cc
+	@${RM} -rf ${WRKSRC}/zlib/contrib/minizip
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpsbabel ${STAGEDIR}${PREFIX}/bin/
