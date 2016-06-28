@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-json>=1.8:devel/rubygem-json \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBY_RDOC=	yes
 USES=		gem
 
 .include <bsd.port.mk>
