@@ -1,3 +1,4 @@
+bin/verify-char-width
 %%SITE_PERL%%/PDF/Create/Page.pm
 %%SITE_PERL%%/PDF/Create/Outline.pm
 %%SITE_PERL%%/PDF/Create.pm
