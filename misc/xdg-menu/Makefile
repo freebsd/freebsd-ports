@@ -12,7 +12,7 @@ DISTFILES=	XDG-Menu-${DISTVERSION}.tgz \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	XDG-Menu-${DISTVERSION}.tgz
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ROX panel applet that displays an applications menu button
 
 LICENSE=	GPLv2+

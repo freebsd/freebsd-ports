@@ -6,7 +6,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/PCManFM/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PCMan File Manager
 
 LICENSE=	GPLv2

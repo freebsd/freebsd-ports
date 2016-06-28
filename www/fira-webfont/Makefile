@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}Boilerplate${PORTVERSION:S|.||}${EXTRACT_SUFX}:bp \
 		${DISTNAME}MonoFonts${MONO_VERSION}${EXTRACT_SUFX}:mono
 EXTRACT_ONLY=	${DISTFILES:C|:[^:]+$||:M*.zip}
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sans-serif and monospaced Web Font for small screens
 
 LICENSE=	OFL11

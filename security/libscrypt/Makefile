@@ -6,7 +6,7 @@ PORTVERSION=	1.20
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for the scrypt key derivation function
 
 LICENSE=	BSD2CLAUSE

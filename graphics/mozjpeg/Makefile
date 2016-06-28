@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced JPEG encoder for the Web
 
 LICENSE=	BSD3CLAUSE

@@ -6,7 +6,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%20${PORTVERSION}/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight terminal emulator from the LXDE project
 
 LICENSE=	GPLv2

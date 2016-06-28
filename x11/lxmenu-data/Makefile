@@ -6,7 +6,7 @@ PORTVERSION=	0.1.5
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/lxmenu-data%20%28desktop%20menu%29/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu data used by lxpanel
 
 LICENSE=	LGPL21

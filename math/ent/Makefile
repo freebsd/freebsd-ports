@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.fourmilab.ch/random/
 DISTNAME=	random
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Entropy calculation and analysis of putative random sequences
 
 USES=		compiler zip
