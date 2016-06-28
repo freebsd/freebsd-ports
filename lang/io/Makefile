@@ -5,7 +5,7 @@ PORTNAME=	io
 PORTVERSION=	2015.11.11
 CATEGORIES=	lang
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Small prototype-based programming language
 
 LICENSE=	BSD3CLAUSE
