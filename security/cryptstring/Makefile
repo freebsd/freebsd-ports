@@ -16,7 +16,7 @@ EXPIRATION_DATE=	2016-07-04
 LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
-USE_PHP=	mcrypt mhash
+USE_PHP=	mcrypt hash
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

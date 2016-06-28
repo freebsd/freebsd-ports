@@ -10,7 +10,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Resolver library used to communicate with a DNS server
 
 PORTSCOUT=	skipv:1.00b2,1.00b1
-USE_PHP=	mhash
+USE_PHP=	hash
 USES=	pear
 
 .include <bsd.port.mk>
