@@ -129,11 +129,13 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/latex/icon-paused.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/icon-syncing.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/iftex.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/ignored_files_editor.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/log_output_window.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/logo-blue.pdf
 %%PORTDOCS%%%%DOCSDIR%%/latex/mac-share.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/menu.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/needspace.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/newfloat.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.aux
 %%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.idx
