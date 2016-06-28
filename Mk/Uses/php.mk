@@ -385,18 +385,18 @@ zip_DEPENDS=	archivers/php${PHP_VER}-zip
 zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
 
 .    for extension in ${USE_PHP}
-.      if ${_USE_PHP_VER${PHP_VER}:M${extension}} != ""
-.        if ${PHP_EXT_INC:M${extension}} == ""
-.          if ${php_ARGS:Mbuild}
-BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${${extension}_DEPENDS}
+ext=		${extension}
+.      if ${_USE_PHP_VER${PHP_VER}:M${ext:S/:build//}} != ""
+.        if ${PHP_EXT_INC:M${extension:S/:build//}} == ""
+.          if !empty(php_ARGS:Mbuild) || !empty(ext:M*\:build)
+BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension:S/:build//}.so:${${extension:S/:build//}_DEPENDS}
 .          endif
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${${extension}_DEPENDS}
+RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension:S/:build//}.so:${${extension:S/:build//}_DEPENDS}
 .        endif
 .      else
-ext=		${extension}
 .        if ${ext:tl} != "yes"
 check-makevars::
-			@${ECHO_CMD} "Unknown extension ${extension} for PHP ${PHP_VER}."
+			@${ECHO_CMD} "Unknown extension ${extension:S/:build//} for PHP ${PHP_VER}."
 			@${FALSE}
 .        endif
 .      endif
