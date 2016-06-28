@@ -8,7 +8,7 @@ CATEGORIES=	security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP wrapper to Colin Percival's scrypt implementation
 
 LICENSE=	BSD2CLAUSE

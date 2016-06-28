@@ -6,7 +6,7 @@ PORTVERSION=	0.6.3
 CATEGORIES=	x11
 MASTER_SITES=	SF/florence/florence/${PORTVERSION}/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible scalable virtual keyboard
 
 LICENSE=	GPLv2 GFDL

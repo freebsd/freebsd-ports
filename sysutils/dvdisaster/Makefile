@@ -6,7 +6,7 @@ PORTVERSION=	0.72.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dvdisaster.net/downloads/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD/DVD error recovery tool
 
 LICENSE=	GPLv2

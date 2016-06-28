@@ -8,7 +8,7 @@ PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://launchpadlibrarian.net/170877450/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synchronous multi-master replication engine
 
 LICENSE=	GPLv2

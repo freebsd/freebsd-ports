@@ -6,7 +6,7 @@ PORTVERSION=	2.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts HTML into Haml
 
 LICENSE=	MIT

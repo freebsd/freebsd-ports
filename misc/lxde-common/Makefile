@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	SF/lxde/${PORTNAME}%20%28default%20config%29/LXDE%20Common%20${PORTVERSION}/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Common files
 
 LICENSE=	GPLv2

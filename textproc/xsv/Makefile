@@ -7,7 +7,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/XSV/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Schema Validator
 
 LICENSE=	GPLv2

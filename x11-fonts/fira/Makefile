@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}Fonts${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
 		${DISTNAME}MonoFonts${MONO_VERSION}${EXTRACT_SUFX}:mono
 EXTRACT_ONLY=	${DISTFILES:C|:[^:]+$||:M*.zip}
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sans-serif and monospaced typeface for small screens
 
 LICENSE=	OFL11

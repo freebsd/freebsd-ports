@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/${PORTNAME}/${PORTVERSION:R}/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library used to read freedesktop.org menus
 
 LICENSE=	LGPL21

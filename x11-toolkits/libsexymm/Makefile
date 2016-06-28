@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexymm/
 
-MAINTAINER=	horia@racoviceanu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ bindings for libsexy
 
 LICENSE=	LGPL21
