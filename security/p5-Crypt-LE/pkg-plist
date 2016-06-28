@@ -1,0 +1,7 @@
+bin/le.pl
+%%SITE_PERL%%/Crypt/LE.pm
+%%SITE_PERL%%/Crypt/LE/Challenge/Simple.pm
+%%SITE_PERL%%/Crypt/LE/Complete/Simple.pm
+%%PERL5_MAN3%%/Crypt::LE.3.gz
+%%PERL5_MAN3%%/Crypt::LE::Challenge::Simple.3.gz
+%%PERL5_MAN3%%/Crypt::LE::Complete::Simple.3.gz
