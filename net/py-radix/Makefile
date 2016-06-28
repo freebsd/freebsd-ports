@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	radix
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	net python
-MASTER_SITES=	http://www2.mindrot.org/files/py-radix/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lerik@nolink.net
 COMMENT=	Python radix-tree implementation
+
+LICENSE=	ISCL BSD4CLAUSE
+LICENSE_COMB=	dual
 
 USES=		python
 USE_PYTHON=	distutils autoplist
