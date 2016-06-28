@@ -17,8 +17,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS+=	libsnappy.so:archivers/snappy
 CONFIGURE_ARGS+=	--with-snappy-includedir=${LOCALBASE}/include
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 PHP_MODNAME=	snappy
 WRKSRC=		${WRKDIR}/${PROJECTHOST}
 OPTIONS_DEFINE=	TEST

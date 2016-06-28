@@ -1,7 +1,6 @@
 COMMENT=	The ${PHP_MODNAME} shared extension for php
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES+=	php:ext
 PHP_MODNAME=	${PKGNAMESUFFIX:S/-//}
 PHP_DEFAULT=	5.6
 IGNORE_WITH_PHP=	55 70
@@ -232,8 +231,7 @@ CONFIGURE_ARGS+=--enable-pdo
 .if ${PHP_MODNAME} == "pdo_dblib"
 CONFIGURE_ARGS+=--with-pdo-dblib=${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 
 OPTIONS_DEFINE=	MSSQL
 
@@ -243,8 +241,7 @@ MSSQL_DESC=	Enable Microsoft SQL Server support
 .if ${PHP_MODNAME} == "pdo_firebird"
 CONFIGURE_ARGS+=--with-pdo-firebird=${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 
 USES+=		firebird
 .endif
@@ -255,16 +252,14 @@ OPTIONS_DEFAULT=MYSQLND
 
 MYSQLND_DESC=	Use MySQL Native Driver
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 .endif
 
 .if ${PHP_MODNAME} == "pdo_odbc"
 LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 CONFIGURE_ARGS+=--with-pdo-odbc=unixODBC,${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 .endif
 
 .if ${PHP_MODNAME} == "pdo_pgsql"
@@ -272,16 +267,14 @@ USES+=		pgsql
 
 CONFIGURE_ARGS+=--with-pdo-pgsql=${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 .endif
 
 .if ${PHP_MODNAME} == "pdo_sqlite"
 USES+=		sqlite
 CONFIGURE_ARGS+=--with-pdo-sqlite=${LOCALBASE}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
+USE_PHP=	pdo:build
 .endif
 
 .if ${PHP_MODNAME} == "pgsql"
@@ -294,8 +287,7 @@ CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 CONFIGURE_ARGS+=--enable-phar \
 		--with-pcre-dir=${LOCALBASE}
 
-USE_PHP=	hash
-USE_PHP_BUILD=	yes
+USE_PHP=	hash:build
 .endif
 
 .if ${PHP_MODNAME} == "posix"
@@ -308,8 +300,7 @@ LIB_DEPENDS+=	libaspell.so:textproc/aspell
 CONFIGURE_ARGS+=--with-pspell=${LOCALBASE}
 
 # Ugly hack to load session before psell to avoid crashes
-USE_PHP=	session
-USE_PHP_BUILD=	yes
+USE_PHP=	session:build
 .endif
 
 .if ${PHP_MODNAME} == "readline"
@@ -357,8 +348,7 @@ CONFIGURE_ARGS+=--enable-soap \
 
 USE_GNOME=	libxml2
 
-USE_PHP=	session
-USE_PHP_BUILD=	yes
+USE_PHP=	session:build
 .endif
 
 .if ${PHP_MODNAME} == "sockets"
@@ -404,8 +394,7 @@ CONFIGURE_ARGS+=--enable-wddx \
 
 USE_GNOME=	libxml2
 
-USE_PHP=	xml session
-USE_PHP_BUILD=	yes
+USE_PHP=	xml:build session:build
 .endif
 
 .if ${PHP_MODNAME} == "xml"
@@ -421,8 +410,7 @@ CONFIGURE_ARGS+=--enable-xmlreader \
 
 USE_GNOME=	libxml2
 
-USE_PHP=	dom
-USE_PHP_BUILD=	yes
+USE_PHP=	dom:build
 .endif
 
 .if ${PHP_MODNAME} == "xmlrpc"
@@ -435,8 +423,7 @@ USE_GNOME=	libxml2
 
 PHP_HEADER_DIRS=libxmlrpc
 
-USE_PHP=	xml
-USE_PHP_BUILD=	yes
+USE_PHP=	xml:build
 .endif
 
 .if ${PHP_MODNAME} == "xmlwriter"
@@ -450,8 +437,7 @@ USE_GNOME=      libxml2
 CONFIGURE_ARGS+=--with-xsl=${LOCALBASE}
 
 USE_GNOME=	libxslt
-USE_PHP=	dom xml
-USE_PHP_BUILD=	yes
+USE_PHP=	dom:build xml:build
 .endif
 
 .if ${PHP_MODNAME} == "zip"

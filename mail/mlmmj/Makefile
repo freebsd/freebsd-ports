@@ -25,8 +25,7 @@ OPTIONS_SUB=		yes
 PERL_RUN_DEPENDS=	p5-URI>0:net/p5-URI \
 			p5-CGI-FastTemplate>0:www/p5-CGI-FastTemplate \
 			p5-HTML-Parser>0:www/p5-HTML-Parser
-PHP_USE=		php=yes
-PHP_VERS=		WANT_PHP_WEB=yes
+PHP_USES=		php:web
 
 post-patch:
 	@${REINPLACE_CMD} -e \

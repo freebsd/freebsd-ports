@@ -13,9 +13,7 @@ COMMENT=	PECL extension for ctemplate library
 
 LIB_DEPENDS=	libctemplate.so:textproc/google-ctemplate
 
-USES=		tar:xz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	vanillahsu
 GH_PROJECT=	pecl-ctemplate

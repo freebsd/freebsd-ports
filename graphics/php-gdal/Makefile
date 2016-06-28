@@ -23,9 +23,7 @@ CFLAGS+=	-fPIC
 IGNORE_WITH_PHP=70
 MAKEFILE=	GNUmakefile
 PHP_MOD_NAME=	php_${PORTNAME}
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USES=		gmake localbase tar:xz
+USES=		php:build gmake localbase tar:xz
 
 WRKSRC_SUBDIR=	swig/php
 

@@ -12,8 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Automates the process of being the program chair of a conference
 
-USE_PHP=	yes
-WANT_PHP_WEB=	yes
+USES=	php:web
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 

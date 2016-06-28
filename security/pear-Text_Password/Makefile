@@ -8,7 +8,6 @@ CATEGORIES=	security www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR random password creator
 
-USE_PHP=	yes
 USES=	pear
 WRKSRC=		${WRKDIR}/Text_Password-${PORTVERSION}
 

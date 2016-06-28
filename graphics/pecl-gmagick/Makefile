@@ -15,10 +15,8 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
 
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--with-gmagick=${LOCALBASE}

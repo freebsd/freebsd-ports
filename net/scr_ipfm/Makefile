@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
-USE_PHP=	yes
+USES=		php
 MYADMDIR?=	www/data/scr_ipfm
 PLIST_SUB=	MYADMDIR=${MYADMDIR}
 SUB_FILES=	pkg-message

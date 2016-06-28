@@ -14,8 +14,7 @@ COMMENT=	Trader extension based on TA-Lib
 
 LICENSE=	BSD2CLAUSE
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

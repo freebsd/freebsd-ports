@@ -17,11 +17,8 @@ BROKEN_powerpc64=	Does not build
 
 WRKSRC=		${WRKDIR}/PDO_USER-${PORTVERSION}
 
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	pdo_user
+USES=		php:ext
+USE_PHP=	pdo:build
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

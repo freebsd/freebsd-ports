@@ -18,9 +18,6 @@ LIB_DEPENDS=	libgd.so:graphics/gd \
 		libavutil.so:multimedia/ffmpeg
 
 IGNORE_WITH_PHP=70
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
-USES=		localbase tar:xz
+USES=		localbase php:ext tar:xz
 
 .include <bsd.port.mk>

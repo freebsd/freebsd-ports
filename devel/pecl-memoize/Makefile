@@ -14,9 +14,7 @@ COMMENT=	PHP extension which transparently caches PHP functions
 
 LICENSE=	PHP301
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 CONFIGURE_ARGS=	--enable-memoize
 IGNORE_WITH_PHP=	70
 

@@ -31,9 +31,7 @@ IGNORE_WITH_PHP=55 56 70
 PHP_MODNAME=	${PORTNAME:tl}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 
 PORTDOCS=	CHANGELOG INSTALL NOTICE apc.php
 

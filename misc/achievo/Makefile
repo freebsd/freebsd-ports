@@ -12,8 +12,7 @@ DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 MAINTAINER=	kevin@caomhin.demon.co.uk
 COMMENT=	Flexible web-based resource management tool
 
-USE_PHP=	yes
-WANT_PHP_MOD=	yes
+USES=	php:mod
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	YES

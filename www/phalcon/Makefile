@@ -11,10 +11,8 @@ COMMENT=	Phalcon PHP Framework written in C-language
 
 LICENSE=	BSD3CLAUSE
 
-USE_PHP=	hash pdo
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
-USE_PHP_BUILD=	yes
+USES=		php:ext
+USE_PHP=	hash:build pdo:build
 IGNORE_WITH_PHP=	70
 
 ONLY_FOR_ARCHS=	amd64 i386

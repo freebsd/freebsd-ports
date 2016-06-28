@@ -18,10 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_powerpc64=	does not build
 
 IGNORE_WITH_PHP=70
-USE_PHP=	session
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
-USES=		tar:tgz
+USE_PHP=	session:build
+USES=		php:ext tar:tgz
 
 .include <bsd.port.mk>

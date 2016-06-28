@@ -17,7 +17,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
-USE_PHP=	yes
+USES=		php
 
 OPTIONS_MULTI=	database
 OPTIONS_MULTI_database=	MYSQL PGSQL

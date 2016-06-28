@@ -64,7 +64,7 @@ LOC_EXECINFO=	${LOCALBASE}/lib/libexecinfo.so
 
 .if ${PORT_OPTIONS:MPHP}
 USE_PHP=	tokenizer
-USE_PHP_BUILD=	yes
+USES+=		php:build
 WITH_SWIG=	yes
 CMAKE_ARGS+=	-DPHP5_INSTALL_PATH:FILEPATH="lib/php/${PHP_EXT_DIR}"
 PLIST_SUB+=	PHP_EXTLIBDIR="lib/php/${PHP_EXT_DIR}"

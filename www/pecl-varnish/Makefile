@@ -20,10 +20,8 @@ EXPIRATION_DATE=	2016-07-04
 
 BUILD_DEPENDS=	varnish4>=0:www/varnish4
 
-USES=	tar:tgz
-USE_PHP=	hash
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=	php:ext tar:tgz
+USE_PHP=	hash:build
 
 IGNORE_WITH_PHP=	52
 

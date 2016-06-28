@@ -17,11 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FriendsOfPHP
 GH_TAGNAME=	483c1e5
 
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/extension
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+WRKSRC_SUBDIR=	extension
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

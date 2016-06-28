@@ -12,8 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-php
 MAINTAINER=	mbowie@buzmo.com
 COMMENT=	PHP extension for TrustCommerce credit card processing
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 USE_OPENSSL=	yes
 
 IGNORE_WITH_PHP=	70

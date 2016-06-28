@@ -14,9 +14,7 @@ COMMENT=	PHP Accelerator designed mainly for graphic work
 
 LICENSE=	PHP301
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 USE_GCC=	any
 IGNORE_WITH_PHP=	70
 

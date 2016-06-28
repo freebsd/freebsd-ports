@@ -14,9 +14,7 @@ COMMENT=	Handles LZF de/compression
 
 LICENSE=	PHP202
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 
 CONFIGURE_ARGS=	--enable-lzf
 WRKSRC=		${WRKDIR}/${DISTNAME:tu}

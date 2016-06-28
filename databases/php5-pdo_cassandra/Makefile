@@ -21,11 +21,9 @@ GH_ACCOUNT=	mkoppanen
 GH_PROJECT=	php-${PORTNAME}
 GH_TAGNAME=	7debd5b
 
-USES=		compiler:c++11-lib pkgconfig
+USES=		compiler:c++11-lib php:ext pkgconfig
 USE_CXXSTD=	c++11
-USE_PHP_BUILD=	yes
-USE_PHP=	pdo
-USE_PHPEXT=	yes
+USE_PHP=	pdo:build
 
 IGNORE_WITH_PHP=	70
 

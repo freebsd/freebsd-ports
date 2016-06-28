@@ -10,10 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webbased iCal calendar viewer
 
-USES=		tar:tgz
+USES=		php tar:tgz
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PHP=	yes
 WRKSRC=		${WRKDIR}/iWebCal
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 

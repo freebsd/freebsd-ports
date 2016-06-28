@@ -13,8 +13,6 @@ COMMENT=	High resolution timing for PHP
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 
 .include <bsd.port.mk>

@@ -12,7 +12,6 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PECL extension that allows changing the current process' name
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 
 .include <bsd.port.mk>

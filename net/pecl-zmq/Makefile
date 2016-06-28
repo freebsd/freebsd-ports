@@ -15,9 +15,6 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libzmq.so:net/libzmq4
 
-USES=		tar:tgz pkgconfig
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
+USES=		php:ext pkgconfig tar:tgz
 
 .include <bsd.port.mk>

@@ -17,11 +17,8 @@ BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libtokyotyrant.so:databases/tokyotyrant
 
-USES=		pkgconfig tar:tgz
-USE_PHP=	session
-USE_PHP_BUILD=	spl
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
+USES=		php:ext pkgconfig tar:tgz
+USE_PHP=	session:build
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

@@ -14,8 +14,7 @@ COMMENT=	CalDAV web client implementation
 LICENSE=	AGPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_PHP=	yes
-USES=		zip
+USES=		php zip
 NO_BUILD=	yes
 
 do-install:

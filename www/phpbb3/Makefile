@@ -16,8 +16,7 @@ LICENSE=	GPLv2
 CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]* \
 		phpbb-[0-2]*
 
-USES=		tar:bzip2
-USE_PHP=	yes
+USES=		php tar:bzip2
 
 OPTIONS_DEFINE=	DOCS
 
