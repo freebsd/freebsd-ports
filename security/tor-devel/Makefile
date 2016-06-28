@@ -7,7 +7,7 @@ CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	Anonymizing overlay network for TCP
 
 LICENSE=	BSD3CLAUSE
