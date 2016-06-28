@@ -4,7 +4,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		46
 PORTVERSION=		4.3.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		shells
 MASTER_SITES=		GNU/${PORTNAME}
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -52,7 +52,8 @@ PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH README \
 
 CONFIGURE_ARGS+=	--without-bash-malloc \
 			--disable-rpath \
-			--enable-disabled-builtins
+			--enable-disabled-builtins \
+			--with-libiconv-prefix=${ICONV_PREFIX}
 
 CFLAGS+=		-DUSE_MKTEMP=1 -DUSE_MKSTEMP=1
 
@@ -96,10 +97,6 @@ post-patch:
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|"
-.if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e "s|#define HAVE_ICONV 1|#undef HAVE_ICONV|g" \
-		${WRKSRC}/config.h
-.endif
 
 pre-build:
 	@${ECHO_CMD} $$((${PORTREVISION}-1)) > ${WRKSRC}/.build
