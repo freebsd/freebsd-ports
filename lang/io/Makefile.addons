@@ -77,16 +77,18 @@ DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 EditLine_USES=		libedit
 Font_LIB_DEPENDS=	libfreetype.so:print/freetype2
 Font_USE=		GL=glut XORG=xmu
-GLFW_LIB_DEPENDS=	libglfw.so.0:graphics/glfw2
+GLFW_LIB_DEPENDS=	libglfw.so:graphics/glfw2
+GLFW_USE+=		GL=glu,gl XORG=sm,ice,x11,xext,xi
 Image_LIB_DEPENDS=	libpng.so:graphics/png \
 			libtiff.so:graphics/tiff
 Image_USES=		jpeg
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LibSndFile_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 Libxml2_USE=		GNOME=libxml2
+Libxml2_USES=		iconv
 Loudmouth_LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 Memcached_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
-MySQL_USE=		MYSQL=client
+MySQL_USES=		mysql:client
 Ogg_LIB_DEPENDS=	libogg.so:audio/libogg
 OpenGL_USE=		GL=glut XORG=xmu
 PostgreSQL_USES=	pgsql
