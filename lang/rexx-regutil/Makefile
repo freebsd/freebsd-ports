@@ -34,8 +34,6 @@ PORTEXAMPLES=	*.rex
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-#include <bsd.options.mk>
-
 do-install:
 		${INSTALL_LIB} ${WRKSRC}/librexxutil.so ${STAGEDIR}${PREFIX}/lib/
 		${INSTALL_MAN} ${WRKDIR}/regutil.1 ${STAGEDIR}${PREFIX}/man/man1/
