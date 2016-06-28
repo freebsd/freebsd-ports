@@ -12,7 +12,7 @@ DISTFILES=	Encore-${PORTVERSION}-src.tgz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility classes for GNUstep
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gnustep
@@ -28,8 +28,10 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Library/Frameworks/Encore.framework/Versions/0/libEncore.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/Encore-${PORTVERSION}-api-ref && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Library/Frameworks/Encore.framework/Versions/0/libEncore.so
 
 .include <bsd.port.mk>
