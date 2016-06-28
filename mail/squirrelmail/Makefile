@@ -19,7 +19,7 @@ BROKEN_powerpc64=	Does not build
 # patches, but the only guaranteed compatibility is with php 5.3.
 # If you encounter problems, downgrade to php 5.3.
 
-USE_PHP=	session mhash gettext mbstring pcre openssl xml
+USE_PHP=	session hash gettext mbstring pcre openssl xml
 WANT_PHP_WEB=	yes
 
 USES=		cpe gettext perl5 tar:bzip2

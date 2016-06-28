@@ -4,7 +4,17 @@
 #
 # Feature:	php
 # Usage:	USES=php
-# Valid ARGS:	(none)
+# Valid ARGS:	(none), phpize, ext, zend, build, cli, cgi, mod, web, embed
+#
+#	- phpize   : Use to build a PHP extension.
+#	- ext      : Use to build, install and register a PHP extension.
+#	- zend     : Use to build, install and register a Zend extension.
+#	- build    : Set PHP also as a build dependency.
+#	- cli      : Want the CLI version of PHP.
+#	- cgi      : Want the CGI version of PHP.
+#	- mod      : Want the Apache Module for PHP.
+#	- web      : Want the Apache Module or the CGI version of PHP.
+#	- embed    : Want the embedded library version of PHP.
 #
 # If the port requires a predefined set of PHP extensions, they can be
 # listed in this way:
@@ -15,15 +25,6 @@
 #
 # DEFAULT_PHP_VER=N - Use PHP version N if PHP is not yet installed.
 # IGNORE_WITH_PHP=N - The port doesn't work with PHP version N.
-# USE_PHPIZE=yes    - Use to build a PHP extension.
-# USE_PHPEXT=yes    - Use to build, install and register a PHP extension.
-# USE_ZENDEXT=yes   - Use to build, install and register a Zend extension.
-# USE_PHP_BUILD=yes - Set PHP also as a build dependency.
-# WANT_PHP_CLI=yes  - Want the CLI version of PHP.
-# WANT_PHP_CGI=yes  - Want the CGI version of PHP.
-# WANT_PHP_MOD=yes  - Want the Apache Module for PHP.
-# WANT_PHP_WEB=yes  - Want the Apache Module or the CGI version of PHP.
-# WANT_PHP_EMB=yes  - Want the embedded library version of PHP.
 #
 # You may combine multiple WANT_PHP_* knobs.
 # Don't specify any WANT_PHP_* knob if your port will work with every PHP SAPI.
@@ -41,6 +42,44 @@ _INCLUDE_USES_PHP_MK=	yes
 
 .  if defined(DEFAULT_PHP_VER)
 WARNING+=	"DEFAULT_PHP_VER is defined, consider using DEFAULT_VERSIONS=php=${DEFAULT_PHP_VER} instead"
+.  endif
+
+.  if defined(USE_PHPIZE) && empty(php_ARGS:Mphpize)
+php_ARGS+=	phpize
+.  endif
+.  if defined(USE_PHPEXT) && empty(php_ARGS:Mext)
+php_ARGS+=	ext
+.  endif
+.  if defined(USE_ZENDEXT) && empty(php_ARGS:Mzend)
+php_ARGS+=	zend
+.  endif
+.  if defined(USE_PHP_BUILD) && empty(php_ARGS:Mbuild)
+php_ARGS+=	build
+.  endif
+.  if defined(WANT_PHP_CLI) && empty(php_ARGS:Mcli)
+php_ARGS+=	cli
+.  endif
+.  if defined(WANT_PHP_CGI) && empty(php_ARGS:Mcgi)
+php_ARGS+=	cgi
+.  endif
+.  if defined(WANT_PHP_MOD) && empty(php_ARGS:Mmod)
+php_ARGS+=	mod
+.  endif
+.  if defined(WANT_PHP_WEB) && empty(php_ARGS:Mweb)
+php_ARGS+=	web
+.  endif
+.  if defined(WANT_PHP_EMB) && empty(php_ARGS:Membed)
+php_ARGS+=	embed
+.  endif
+
+.  if ${php_ARGS:Mbuild} && ( ${php_ARGS:Mphpize} || ${php_ARGS:Mext} || ${php_ARGS:Mzend} )
+DEV_WARNING+=	"USES=php:build is included in USES=php:phpize, USES=php:ext, and USES=php:zend, so it is not needed"
+.  endif
+.  if ${php_ARGS:Mphpize} && ( ${php_ARGS:Mext} || ${php_ARGS:Mzend} )
+DEV_WARNING+=	"USES=php:phpize is included in USES=php:ext and USES=php:zend, so it is not needed"
+.  endif
+.  if ${php_ARGS:Mext} && ${php_ARGS:Mzend}
+DEV_WARNING+=	"USES=php:ext is included in USES=php:zend, so it is not needed"
 .  endif
 
 PHPBASE?=	${LOCALBASE}
@@ -98,16 +137,16 @@ IGNORE=		cannot be installed: doesn't work with lang/php${PHP_VER} port\
 .    endfor
 .  endif
 
-.  if defined(WANT_PHP_WEB)
-.    if defined(WANT_PHP_CGI) || defined(WANT_PHP_MOD)
+.  if ${php_ARGS:Mweb}
+.    if ${php_ARGS:Mcgi} || ${php_ARGS:Mmod}
 check-makevars::
-		@${ECHO_CMD} "If you define WANT_PHP_WEB you cannot set also WANT_PHP_CGI"
-		@${ECHO_CMD} "or WANT_PHP_MOD. Use only one of them."
+		@${ECHO_CMD} "If you use :web you cannot also use :cgi"
+		@${ECHO_CMD} "or :mod. Use only one of them."
 		@${FALSE}
 .    endif
 .  endif
 
-.  if defined(WANT_PHP_CGI)
+.  if ${php_ARGS:Mcgi}
 .    if defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the CGI version of PHP, but you have already"
@@ -116,7 +155,7 @@ check-makevars::
 .    endif
 .  endif
 
-.  if defined(WANT_PHP_CLI)
+.  if ${php_ARGS:Mcli}
 .    if defined(PHP_VERSION) && ${PHP_SAPI:Mcli} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the CLI version of PHP, but you have already"
@@ -125,7 +164,7 @@ check-makevars::
 .    endif
 .  endif
 
-.  if defined(WANT_PHP_EMB)
+.  if ${php_ARGS:Membed}
 .    if defined(PHP_VERSION) && ${PHP_SAPI:Membed} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the embedded library version of PHP, but you have already"
@@ -137,11 +176,11 @@ check-makevars::
 PHP_PORT?=	lang/php${PHP_VER}
 MOD_PHP_PORT?=	www/mod_php${PHP_VER}
 
-.  if defined(USE_PHP_BUILD)
+.  if ${php_ARGS:Mbuild}
 BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PHP_PORT}
 .  endif
 RUN_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PHP_PORT}
-.  if defined(WANT_PHP_MOD) || (defined(WANT_PHP_WEB) && defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "")
+.  if  ${php_ARGS:Mmod} || (${php_ARGS:Mweb} && defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "")
 USE_APACHE_RUN=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 RUN_DEPENDS+=	${PHPBASE}/${APACHEMODDIR}/libphp5.so:${MOD_PHP_PORT}
@@ -150,7 +189,7 @@ RUN_DEPENDS+=	${PHPBASE}/${APACHEMODDIR}/libphp5.so:${MOD_PHP_PORT}
 PLIST_SUB+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 SUB_LIST+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 
-.  if defined(USE_PHPIZE) || defined(USE_PHPEXT) || defined(USE_ZENDEXT)
+.  if ${php_ARGS:Mphpize} || ${php_ARGS:Mext} || ${php_ARGS:Mzend}
 BUILD_DEPENDS+=	${PHPBASE}/bin/phpize:${PHP_PORT}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS+=	autoconf:env
@@ -172,7 +211,7 @@ _USES_POST+=php
 
 _INCLUDE_USES_PHP_POST_MK=yes
 
-.  if (defined(USE_PHPEXT) || defined(USE_ZENDEXT))
+.  if ${php_ARGS:Mext} || ${php_ARGS:Mzend}
 PHP_MODNAME?=	${PORTNAME}
 PHP_HEADER_DIRS?=	""
 
@@ -206,7 +245,7 @@ add-plist-phpext:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@dir etc/php" \
 		>> ${TMPPLIST}
-.    if defined(USE_ZENDEXT)
+.    if ${php_ARGS:Mzend}
 	@${ECHO_CMD} "@exec echo zend_extension=%D/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so >> %D/etc/php/extensions.ini" \
 		>> ${TMPPLIST}
 .    else
@@ -215,7 +254,7 @@ add-plist-phpext:
 .    endif
 	@${ECHO_CMD} "@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig" \
 		>> ${TMPPLIST}
-.    if defined(USE_ZENDEXT)
+.    if ${php_ARGS:Mzend}
 	@${ECHO_CMD} "@unexec grep -v zend_extension=%D/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}\\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true" \
 		>> ${TMPPLIST}
 .    else
@@ -235,7 +274,7 @@ php-ini:
 	@${ECHO_CMD} "The following line has been added to your ${PREFIX}/etc/php/extensions.ini"
 	@${ECHO_CMD} "configuration file to automatically load the installed extension:"
 	@${ECHO_CMD} ""
-.    if defined(USE_ZENDEXT)
+.    if ${php_ARGS:Mzend}
 	@${ECHO_CMD} "zend_extension=${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so"
 .    else
 	@${ECHO_CMD} "extension=${PHP_MODNAME}.so"
@@ -245,7 +284,7 @@ php-ini:
 .  endif
 
 # Extensions
-.  if ${USE_PHP:tl} != "yes"
+.  if defined(USE_PHP) && ${USE_PHP:tl} != "yes"
 # non-version specific components
 _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 		exif fileinfo filter ftp gd gettext gmp \
@@ -297,7 +336,6 @@ ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
 memcache_DEPENDS=	databases/pecl-memcache
-mhash_DEPENDS=	security/php${PHP_VER}-mhash
 mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysql_DEPENDS=	databases/php${PHP_VER}-mysql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
@@ -349,19 +387,14 @@ zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
 .    for extension in ${USE_PHP}
 .      if ${_USE_PHP_VER${PHP_VER}:M${extension}} != ""
 .        if ${PHP_EXT_INC:M${extension}} == ""
-.          if defined(USE_PHP_BUILD)
+.          if ${php_ARGS:Mbuild}
 BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${${extension}_DEPENDS}
 .          endif
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${${extension}_DEPENDS}
 .        endif
 .      else
 ext=		${extension}
-.        if ${ext} == "mhash"
-.          if defined(USE_PHP_BUILD)
-BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/hash.so:${hash_DEPENDS}
-.          endif
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/hash.so:${hash_DEPENDS}
-.        elif ${ext:tl} != "yes"
+.        if ${ext:tl} != "yes"
 check-makevars::
 			@${ECHO_CMD} "Unknown extension ${extension} for PHP ${PHP_VER}."
 			@${FALSE}

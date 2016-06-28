@@ -9,6 +9,6 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for generating CHAP packets
 
 USES=	pear
-USE_PHP=	mcrypt mhash
+USE_PHP=	mcrypt hash
 
 .include <bsd.port.mk>
