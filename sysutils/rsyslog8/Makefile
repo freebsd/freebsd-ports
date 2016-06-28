@@ -13,7 +13,7 @@ BUILD_DEPENDS=	libgcrypt-config:security/libgcrypt \
 
 LIB_DEPENDS=	libee.so:devel/libee \
 		libestr.so:devel/libestr \
-		libjson-c.so:devel/json-c \
+		libfastjson.so:devel/libfastjson \
 		liblogging-stdlog.so:devel/liblogging \
 		libuuid.so:misc/e2fsprogs-libuuid
 
