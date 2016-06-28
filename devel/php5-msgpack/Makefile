@@ -15,11 +15,8 @@ USE_GITHUB=	yes
 GH_TAGNAME=	980a652
 WRKSRC_SUBDIR=	php
 
-USE_PHP=	session
-USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	msgpack
+USES=		php:ext
+USE_PHP=	session:build
 
 IGNORE_WITH_PHP=	70
 

@@ -18,9 +18,7 @@ OPTIONS_DEFINE=	X11
 X11_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:graphics/ImageMagick-nox11
 
-USES=		pkgconfig tar:tgz localbase
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext pkgconfig tar:tgz localbase
 
 CONFIGURE_ARGS=	--with-imagick=${LOCALBASE}
 

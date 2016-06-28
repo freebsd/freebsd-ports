@@ -26,9 +26,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 PHP_DEFAULT=	7.0
 IGNORE_WITH_PHP=	55 56
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 CONFLICTS=	pecl-http[12]*
 
 .include <bsd.port.mk>

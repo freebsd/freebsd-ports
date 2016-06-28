@@ -15,7 +15,7 @@ COMMENT=	Loader for ionCube-encoded PHP files
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
-USE_PHP=	yes
+USES=		php
 
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}

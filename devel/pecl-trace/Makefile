@@ -13,14 +13,11 @@ COMMENT=	Low-overhead tracing tool for PHP
 
 LICENSE=	APACHE20
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/extension
+WRKSRC_SUBDIR=	extension
 CMDTOOLSRC=	${WRKSRC}/../cmdtool
 
 GNU_CONFIGURE=	yes
-USES=		gmake shebangfix tar:tgz
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		gmake php:ext shebangfix tar:tgz
 IGNORE_WITH_PHP=	70
 
 SHEBANG_FILES=	${CMDTOOLSRC}/phptrace

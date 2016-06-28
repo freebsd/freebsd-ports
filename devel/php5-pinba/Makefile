@@ -17,9 +17,7 @@ GH_ACCOUNT=	tony2001
 GH_PROJECT=	pinba_extension
 GH_TAGNAME=	f76b673
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	pinba
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

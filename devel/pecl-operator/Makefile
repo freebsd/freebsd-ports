@@ -13,10 +13,7 @@ COMMENT=	PHP extension that provides operator overloading for PHP objects
 
 LICENSE=	PHP30
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	${PORTNAME}
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	56 70
 
 post-extract::

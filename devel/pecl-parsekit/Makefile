@@ -14,9 +14,7 @@ COMMENT=	Extension for opcodes runtime analysis
 
 LICENSE=	PHP301
 
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	56 70
 
 CONFIGURE_ARGS=	--enable-parsekit

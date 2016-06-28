@@ -92,7 +92,7 @@ GVEDIT_USE=	qt4=qmake_build,moc_build,rcc_build,uic_build \
 		qt4=linguist_build,corelib,gui
 GHOSTSCRIPT_USES=ghostscript
 PERL_USES=	perl5
-PHP_USE=	PHP=yes PHP_BUILD=yes
+PHP_USES=	php:build
 PYTHON_USES=	python:2.7,build
 RUBY_USE=	RUBY=yes
 LUA_USES=	lua

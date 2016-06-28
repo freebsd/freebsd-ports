@@ -16,9 +16,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion18
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

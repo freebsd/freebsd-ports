@@ -22,13 +22,11 @@ RUN_DEPENDS=	cacti>=0:net-mgmt/cacti \
 		p5-Time-HiRes>=0:devel/p5-Time-HiRes \
 		bash:shells/bash
 
-USES=		shebangfix perl5
+USES=		shebangfix perl5 php:cli
 USE_PERL5=	run
 SHEBANG_FILES=	nagios/bin/pmp-check-pt-table-checksum \
 		cacti/bin/pmp-cacti-*
 USE_MYSQL=	yes
-USE_PHP=	yes
-WANT_PHP_CLI=	yes
 
 NO_BUILD=	yes
 NO_ARCH=	yes

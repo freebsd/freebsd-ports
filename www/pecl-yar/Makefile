@@ -15,12 +15,8 @@ LICENSE=	PHP301
 
 BROKEN_powerpc64=	Does not build
 
-USES=		tar:tgz
-PHP_MODNAME=	yar
-USE_PHP=	json curl
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
-USE_PHP_BUILD=	yes
+USES=		php:ext tar:tgz
+USE_PHP=	json:build curl:build
 IGNORE_WITH_PHP=	70
 
 CFLAGS+=	-I${LOCALBASE}/include

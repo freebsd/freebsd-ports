@@ -16,9 +16,7 @@ LICENSE=	PHP30
 
 LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	56 70
 
 OPTIONS_DEFINE=	RE2C

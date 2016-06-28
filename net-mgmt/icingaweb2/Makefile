@@ -18,7 +18,7 @@ GH_ACCOUNT=	icinga
 
 NO_BUILD=	yes
 
-USE_PHP_BUILD=	yes # Needed for creation of webserver configs during installation
+USES=		php:build
 USE_PHP=	ctype dom gd gettext hash json openssl session sockets
 
 SUB_FILES=	pkg-message

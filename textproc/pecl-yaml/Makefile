@@ -16,10 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

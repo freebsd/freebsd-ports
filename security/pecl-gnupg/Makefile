@@ -18,9 +18,7 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include
 IGNORE_WITH_PHP=70
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=		localbase tar:tgz
+USES=		localbase php:ext tar:tgz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$GNUPG_DIR/lib|${LOCALBASE}/lib|; s| -ldl||g' ${WRKSRC}/config.m4

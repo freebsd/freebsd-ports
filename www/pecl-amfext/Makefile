@@ -14,9 +14,7 @@ COMMENT=	Implements encoding and decoding of AMF and AMF3 messages
 
 LICENSE=	PHP30
 
-USES=		dos2unix libtool tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		dos2unix libtool php:ext tar:tgz
 PHP_MODNAME=	amf
 IGNORE_WITH_PHP=	70
 

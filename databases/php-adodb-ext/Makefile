@@ -14,17 +14,14 @@ COMMENT=	ADOdb Extension
 
 WRKSRC=		${WRKDIR}/adodb-${PORTVERSION:S/.//}
 
-USES=		dos2unix zip
-USE_PHP=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	adodb
+USES=		dos2unix php:ext zip
 IGNORE_WITH_PHP=56 70
 
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${PHP_VER} == "5" || ${PHP_VER} == "54" || ${PHP_VER} == "55"
+.if ${PHP_VER} == "55"
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-php54-adodb.c
 .endif
 

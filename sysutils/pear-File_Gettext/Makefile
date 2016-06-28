@@ -9,6 +9,5 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR GNU Gettext file parser
 
 USES=	pear
-USE_PHP=	yes
 
 .include <bsd.port.mk>

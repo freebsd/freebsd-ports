@@ -17,9 +17,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libcapn.so:net/libcapn
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 CONFIGURE_ARGS=	--with-apn=${LOCALBASE}
 IGNORE_WITH_PHP=	70
 

@@ -15,10 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Template framework for PHP
 
 WRKSRC=		${WRKDIR}/templates
-USES=		dos2unix
+USES=		dos2unix php:phpize
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-templates=shared

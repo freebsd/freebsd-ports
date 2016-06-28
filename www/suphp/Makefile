@@ -13,14 +13,12 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf libtool
+USES=		autoreconf libtool php:cgi
 SUB_FILES=	pkg-message
 
 USE_APACHE=	22+
 CFLAGS+=	-I${LOCALBASE}/include
 USE_CSTD=	gnu89
-USE_PHP=	yes
-WANT_PHP_CGI=	yes
 
 MYPORTDOCS=	apache/CONFIG \
 		apache/INSTALL \

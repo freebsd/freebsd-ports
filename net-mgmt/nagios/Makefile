@@ -17,9 +17,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 
 PORTSCOUT=	limit:^3.
 
-USES=		cpe perl5
+USES=		cpe perl5 php
 USE_PERL5=	build
-USE_PHP=	yes
 USE_RC_SUBR=	nagios
 
 CONFLICTS=	nagios-[12].* nagios-devel-* nagios4-*

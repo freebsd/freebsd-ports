@@ -16,9 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTSCOUT=	limit:^2.*
 
-USES=		gmake tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		gmake php:ext tar:tgz
 IGNORE_WITH_PHP=	55 56
 CONFLICTS=	pecl-propro-1*
 

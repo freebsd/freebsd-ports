@@ -13,8 +13,7 @@ COMMENT=	PECL extension that provides direct access to low level IO
 
 LICENSE=	PHP30
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

@@ -16,9 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	Does not build
 
-USES=		tar:tgz
-USE_PHP=	json
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
+USE_PHP=	json:build
 
 .include <bsd.port.mk>

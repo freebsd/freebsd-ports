@@ -17,10 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	http
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	56 70
 CONFLICTS=	pecl-http-*
 

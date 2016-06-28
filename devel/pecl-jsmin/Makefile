@@ -13,9 +13,7 @@ COMMENT=	PHP extension for minifying JavaScript
 
 LICENSE=	PHP301
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

@@ -12,9 +12,7 @@ COMMENT=	PECL classes for MongoDB
 
 LICENSE=	APACHE20
 
-USES=		tar:tgz
-USE_PHP=	spl
-USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
+USE_PHP=	spl:build
 
 .include <bsd.port.mk>

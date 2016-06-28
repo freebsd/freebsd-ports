@@ -13,9 +13,7 @@ COMMENT=	Dump the internal representation of PHP scripts
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-vld

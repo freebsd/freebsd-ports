@@ -15,10 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USE_PHPIZE=	yes
-USES=		tar:tgz
+USES=		php:ext tar:tgz
 
 CONFIGURE_ARGS=	--with-libsmbclient=${LOCALBASE}
 

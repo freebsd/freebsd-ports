@@ -12,11 +12,10 @@ COMMENT=	Phoronix Benchmarking Suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		php:cli,build
 USE_GCC=	any
 USE_PHP=	ctype curl dom filter gd hash json openssl pcntl posix session \
 	simplexml sockets sqlite3 zip zlib
-USE_PHP_BUILD=	yes
-WANT_PHP_CLI=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phoronix-test-suite
 

@@ -12,12 +12,12 @@ COMMENT=	Native PHP syntax highlighting engine
 
 LICENSE=	GPLv2
 
+USES=	php
 USE_GITHUB=	yes
 GH_ACCOUNT=	GeSHi
 GH_PROJECT=	geshi-1.0
 
 NO_BUILD=	yes
-USE_PHP=	yes
 OPTIONS_DEFINE=	DOCS
 NO_ARCH=	yes
 

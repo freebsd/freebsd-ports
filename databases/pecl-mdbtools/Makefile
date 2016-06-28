@@ -17,10 +17,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmdb.a:databases/mdbtools
 RUN_DEPENDS=	${LOCALBASE}/lib/libmdb.a:databases/mdbtools
 
-USES=		pkgconfig tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
-USE_PHP_BUILD=	yes
+USES=		php:ext pkgconfig tar:tgz
 IGNORE_WITH_PHP= 56 70
 
 CONFIGURE_ARGS=	--with-mdbtools=${LOCALBASE}

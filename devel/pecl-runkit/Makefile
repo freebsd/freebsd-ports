@@ -13,10 +13,7 @@ COMMENT=	PECL extension to modify constants, user-defined functions, and classes
 
 LICENSE=	PHP30
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	runkit
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-runkit=classkit

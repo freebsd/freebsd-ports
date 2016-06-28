@@ -14,9 +14,7 @@ COMMENT=	PECL extension which provides word stemming
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:tgz
-USE_PHP=	yes
-USE_PHPEXT=	yes
+USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70
 
 post-configure:

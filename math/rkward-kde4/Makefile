@@ -21,9 +21,7 @@ USE_QT4=	corelib dbus gui qmake_build moc_build network phonon rcc_build	\
 		script svg uic_build webkit xml
 USE_XORG=	x11
 USE_KDE4=	automoc4 kdelibs
-USE_PHP=	yes
-WANT_PHP_CLI=	yes
-USES=		cmake gettext fortran shared-mime-info
+USES=		cmake gettext fortran php:cli shared-mime-info
 INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
