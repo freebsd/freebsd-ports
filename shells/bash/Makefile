@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=		bash
-PATCHLEVEL=		42
+PATCHLEVEL=		46
 PORTVERSION=		4.3.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+PORTREVISION?=		0
 CATEGORIES=		shells
 MASTER_SITES=		GNU/${PORTNAME}
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -30,7 +30,7 @@ COLONBREAKSWORDS_DESC=	Colons break words
 HELP_DESC=		Enable builtin help
 IMPORTFUNCTIONS_DESC=	Import function from env without --import-functions
 
-USES=			bison cpe makeinfo
+USES=			bison cpe iconv makeinfo
 OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
 
@@ -41,7 +41,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/extrapatch-import-functions
 
 HELP_CONFIGURE_ENABLE=	help-builtin
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext iconv
+NLS_USES=		gettext
 
 INFO=			bash
 
