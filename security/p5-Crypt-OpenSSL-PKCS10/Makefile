@@ -1,0 +1,18 @@
+# $FreeBSD$
+
+PORTNAME=	Crypt-OpenSSL-PKCS10
+PORTVERSION=	0.15
+CATEGORIES=	security perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	pi@FreeBSD.org
+COMMENT=	Perl extension for OpenSSL PKCS10 API
+
+LICENSE=	ART10
+
+USES=		perl5 ssl
+USE_PERL5=	configure
+MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
+
+.include <bsd.port.mk>
