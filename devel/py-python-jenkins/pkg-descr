@@ -2,4 +2,4 @@ Python Jenkins is a python wrapper for the Jenkins REST API which aims to
 provide a more conventionally pythonic way of controlling a Jenkins server.
 It provides a higher-level API containing a number of convenience functions.
 
-WWW: http://python-jenkins.readthedocs.org/en/latest/
+WWW: http://python-jenkins.readthedocs.io/en/latest/
