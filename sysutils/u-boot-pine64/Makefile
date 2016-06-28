@@ -2,6 +2,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	2016.05
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/:uboot \
 		http://download.opensuse.org/repositories/devel:/ARM:/Factory:/Contrib:/Pine64/standard/src/:firmware
