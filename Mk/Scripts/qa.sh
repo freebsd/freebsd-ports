@@ -120,7 +120,7 @@ baselibs() {
 		-type f -exec readelf -d {} + 2>/dev/null)
 	EOF
 	if [ -z "${USESSSL}" -a -n "${found_openssl}" ]; then
-		warn "you need USES=nssl"
+		warn "you need USES=ssl"
 	elif [ -n "${USESSSL}" -a -z "${found_openssl}" ]; then
 		warn "you may not need USES=ssl"
 	fi
