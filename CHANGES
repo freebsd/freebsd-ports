@@ -10,6 +10,23 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160628:
+AUTHOR: mat@FreeBSD.org
+
+  USEify USES=php.
+
+  The following variables have been folded into arguments:
+
+  - USE_PHPIZE -> USES=php:phpize
+  - USE_PHPEXT -> USES=php:ext
+  - USE_ZENDEXT -> USES=php:zend
+  - USE_PHP_BUILD -> USES=php:build
+  - WANT_PHP_CLI -> USES=php:cli
+  - WANT_PHP_CGI -> USES=php:cgi
+  - WANT_PHP_MOD -> USES=php:mod
+  - WANT_PHP_WEB -> USES=php:web
+  - WANT_PHP_EMB -> USES=php:embed
+
 20160627:
 AUTHOR: mat@FreeBSD.org
 

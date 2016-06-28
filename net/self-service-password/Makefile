@@ -18,7 +18,7 @@ BROKEN_powerpc64=	Does not build
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USE_PHP=	ldap openssl session hash mhash mcrypt mbstring filter
+USE_PHP=	ldap openssl session hash hash mcrypt mbstring filter
 
 WANT_PHP_WEB=	yes
 
