@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDOC=		yes
+MAKE_ENV+=		RUBY_RDOC=${LOCALBASE}/bin/rdoc
 
 CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR}
