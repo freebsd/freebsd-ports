@@ -22,6 +22,7 @@ libexec/poudriere/tsort
 man/man8/poudriere.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf.sample
+%%DATADIR%%/MANIFESTS
 %%DATADIR%%/awk/dependency_loop.awk
 %%DATADIR%%/awk/humanize.awk
 %%DATADIR%%/awk/json.awk
