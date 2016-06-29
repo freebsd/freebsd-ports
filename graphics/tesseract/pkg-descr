@@ -4,4 +4,4 @@ it is probably one of the most accurate open source OCR engines
 available. The source code will read a binary, grey or color image and
 output text.
 
-WWW: http://code.google.com/p/tesseract-ocr/
+WWW: https://github.com/tesseract-ocr/tesseract
