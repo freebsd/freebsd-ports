@@ -32,29 +32,29 @@ man/man8/ntpa.8.gz
 @sample(,ntpa,640) %%ETCDIR%%/ntpa.conf.sample
 @owner www
 @group www
-%%WWWDIR%%/index.html
-%%WWWDIR%%/css/bootstrap.css
-%%WWWDIR%%/css/bootstrap.css.map
-%%WWWDIR%%/css/bootstrap.min.css
-%%WWWDIR%%/css/bootstrap.min.css.map
-%%WWWDIR%%/css/bootstrap-theme.css
-%%WWWDIR%%/css/bootstrap-theme.css.map
-%%WWWDIR%%/css/bootstrap-theme.min.css
-%%WWWDIR%%/css/bootstrap-theme.min.css.map
-%%WWWDIR%%/css/graph.css
-%%WWWDIR%%/css/host.css
-%%WWWDIR%%/css/peer.css
-%%WWWDIR%%/fonts/glyphicons-halflings-regular.eot
-%%WWWDIR%%/fonts/glyphicons-halflings-regular.svg
-%%WWWDIR%%/fonts/glyphicons-halflings-regular.ttf
-%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff
-%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff2
-%%WWWDIR%%/js/bootstrap.js
-%%WWWDIR%%/js/bootstrap.min.js
-%%WWWDIR%%/js/jquery.js
-%%WWWDIR%%/js/jquery.min.js
-%%WWWDIR%%/js/jquery.min.map
-%%WWWDIR%%/js/npm.js
+%%WEBFILES%%%%WWWDIR%%/index.html
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap.css
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap.css.map
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap.min.css
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap.min.css.map
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap-theme.css
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap-theme.css.map
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap-theme.min.css
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap-theme.min.css.map
+%%WEBFILES%%%%WWWDIR%%/css/graph.css
+%%WEBFILES%%%%WWWDIR%%/css/host.css
+%%WEBFILES%%%%WWWDIR%%/css/peer.css
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.eot
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.svg
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.ttf
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff2
+%%WEBFILES%%%%WWWDIR%%/js/bootstrap.js
+%%WEBFILES%%%%WWWDIR%%/js/bootstrap.min.js
+%%WEBFILES%%%%WWWDIR%%/js/jquery.js
+%%WEBFILES%%%%WWWDIR%%/js/jquery.min.js
+%%WEBFILES%%%%WWWDIR%%/js/jquery.min.map
+%%WEBFILES%%%%WWWDIR%%/js/npm.js
 @owner
 @group
 %%EXAMPLESDIR%%/ntpa.conf
@@ -69,9 +69,9 @@ man/man8/ntpa.8.gz
 %%EXAMPLESDIR%%/ntpa.stat.conf
 %%EXAMPLESDIR%%/ntpa.web.conf
 %%EXAMPLESDIR%%/ntpa.web.small.conf
-@dir(www,ntpa,775) %%WWWDIR%%
-@dir(www,www,) %%WWWDIR%%/css
-@dir(www,www,) %%WWWDIR%%/fonts
-@dir(www,www,) %%WWWDIR%%/js
+%%WEBFILES%%@dir(www,ntpa,775) %%WWWDIR%%
+%%WEBFILES%%@dir(www,www,) %%WWWDIR%%/css
+%%WEBFILES%%@dir(www,www,) %%WWWDIR%%/fonts
+%%WEBFILES%%@dir(www,www,) %%WWWDIR%%/js
 @dir(ntpa,ntpa,750) /var/log/ntpa
 @dir(ntpa,ntpa,755) /var/run/ntpa
