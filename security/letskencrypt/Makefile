@@ -20,7 +20,6 @@ MAKEFILE=	GNUmakefile
 MAKE_ARGS=	PREFIX=${STAGEDIR}/${PREFIX}
 
 WITH_OPENSSL_PORT=	yes
-OPENSSL_PORT=	security/libressl
 
 WWWDIR=		${PREFIX}/www/letsencrypt
 
@@ -50,4 +49,10 @@ post-stage:
 		${INSTALL_SCRIPT} ${WRKDIR}/${d} ${STAGEDIR}${PREFIX}/etc/letsencrypt/${d}
 .	endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if empty(SSL_DEFAULT:Mlibressl*)
+IGNORE=		Need LibreSSL to build. set DEFAULT_VERSIONS+=ssl=libressl and rebuild everything.
+.endif
+
+.include <bsd.port.post.mk>

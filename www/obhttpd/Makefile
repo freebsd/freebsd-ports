@@ -20,7 +20,6 @@ USE_RC_SUBR=	obhttpd
 USES=		uidfix
 
 WITH_OPENSSL_PORT=yes
-OPENSSL_PORT=	security/libressl
 
 CFLAGS+=	-Wall
 
@@ -48,4 +47,10 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/src/etc/examples/httpd.conf \
 		${STAGEDIR}${PREFIX}/etc/obhttpd.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if empty(SSL_DEFAULT:Mlibressl*)
+IGNORE=		Need LibreSSL to build. set DEFAULT_VERSIONS+=ssl=libressl and rebuild everything.
+.endif
+
+.include <bsd.port.post.mk>
