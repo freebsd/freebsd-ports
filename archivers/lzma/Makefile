@@ -45,7 +45,7 @@ do-install:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
-regression-test: build
+do-test:
 	${BUILD_WRKSRC}/${PORTNAME} b
 
 .include <bsd.port.mk>
