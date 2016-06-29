@@ -7,6 +7,7 @@ minecraft-server/banned-players.json
 minecraft-server/debug
 minecraft-server/eula.txt
 minecraft-server/logs
+minecraft-server/minecraft_server.jar
 minecraft-server/minecraft_server.%%VERSION%%.jar
 minecraft-server/ops.json
 minecraft-server/server.properties
