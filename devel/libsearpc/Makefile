@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_TAGNAME=	v3.0-latest
 
-USES=		autoreconf libtool pathfix pkgconfig python:2
+USES=		autoreconf gettext libtool pathfix pkgconfig python:2
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 
