@@ -1,9 +1,6 @@
-ntpa has been installed.
-It requires a MySQL or PostgreeSQL user and database configured for it.
+************************************************************************
 
-You can do this with the following MySQL commands:
+NTP Analyzer has been installed. If this is the first time remember to
+create a MySQL or PostgreeSQL user and database first.
 
-CREATE DATABASE ntpa;
-CREATE USER 'ntpau'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON ntpa.* TO 'ntpau'@'localhost';
-FLUSH PRIVILEGES;
+************************************************************************
