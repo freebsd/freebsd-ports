@@ -3,6 +3,7 @@
 
 PORTNAME=	single_auth
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://bitbucket.org/dkuk/${PORTNAME}/get/
 PKGNAMEPREFIX=	redmine-
