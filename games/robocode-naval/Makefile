@@ -14,6 +14,8 @@ COMMENT=	Game for learning Java[tm] programming language
 
 LICENSE=	EPL
 
+PORTSCOUT=	limit:^\d+\.\d+\.\d+$
+
 USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.css *.team *.properties package-list MANIFEST.MF
 USE_JAVA=	yes
