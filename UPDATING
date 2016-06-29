@@ -12,7 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   Rsyslog 7.x has reached end of life status and is being marked as
   depreciated.  Rsyslog 8 has been made the default.
 
-20160626
+20160626:
   AFFECTS: users of www/calendarserver
   AUTHOR: pi@FreeBSD.org
 
@@ -20,7 +20,7 @@ you update your ports collection, before attempting any port upgrades.
   version (8.0) requires manual steps. Please consult the pkg-message for
   details.
 
-20160624
+20160624:
   AFFECTS: users of shells/zsh
   AUTHOR: adamw@FreeBSD.org
 
@@ -32,7 +32,7 @@ you update your ports collection, before attempting any port upgrades.
   Note that this change only affects system-wide conf files, which are not
   installed or created by a default installation.
 
-20160621
+20160621:
   AFFECTS: users of www/redmine
   AUTHOR: tz@FreeBSD.org
 
@@ -41,7 +41,7 @@ you update your ports collection, before attempting any port upgrades.
   For further update instructions please have a look at:
   https://www.redmine.org/projects/redmine/wiki/RedmineUpgrade
 
-20160621
+20160621:
   AFFECTS: users of ftp/wget
   AUTHOR: vd@FreeBSD.org
 
@@ -50,7 +50,7 @@ you update your ports collection, before attempting any port upgrades.
   relies on the old behaviour must use --trust-server-names in order to trust
   the HTTP response and redirect to the new filename.
 
-20160619
+20160619:
   AFFECTS: users of databases/py-apsw
   AUTHOR: rm@FreeBSD.org
 
@@ -61,7 +61,7 @@ you update your ports collection, before attempting any port upgrades.
   against this or future SQLite versions will result in consuming all memory,
   swap or address space (an underlying integer changed meaning).
 
-20160616
+20160616:
   AFFECTS: users of security/openssl*, security/libressl*
   AUTHOR: mat@FreeBSD.org
 
@@ -80,7 +80,7 @@ you update your ports collection, before attempting any port upgrades.
   
   Valid values are base, openssl, openssl-devel, libressl, and libressl-devel.
 
-20160614
+20160614:
   AFFECTS: users of www/node, www/node5, and www/node4
   AUTHOR: adamw@FreeBSD.org
 
@@ -89,7 +89,7 @@ you update your ports collection, before attempting any port upgrades.
   are using LibreSSL as your SSL provider, you must enable the
   "BUNDLED_SSL" option when building node.
 
-20160611
+20160611:
   AFFECTS: users of textproc/xmlroff
   AUTHOR: hrs@FreeBSD.org
 
@@ -100,7 +100,7 @@ you update your ports collection, before attempting any port upgrades.
 
   pkg-static: libfo-0.6.2 conflicts with xmlroff-0.6.2_5 (installs files into the same place).  Problematic file: /usr/local/include/libfo-0.6/libfo/area/fo-area.h
 
-20160610
+20160610:
   AFFECTS: users of databases/postgresql-repmgr
   AUTHOR: bofh@FreeBSD.org
 
@@ -118,7 +118,7 @@ you update your ports collection, before attempting any port upgrades.
     or
   # portupgrade -fr databases/postgresql-repmgr
 
-20160605
+20160605:
   AFFECTS: Users of www/h2o
   AUTHOR: junovitch@FreeBSD.org
 
@@ -127,7 +127,7 @@ you update your ports collection, before attempting any port upgrades.
   Refer to https://h2o.examp1e.net/configure/file_directives.html and
   revise your yaml config appropriately.
 
-20160601
+20160601:
   AFFECTS: users of security/libressl-devel
   AUTHOR: brnrd@FreeBSD.org
 
@@ -156,7 +156,7 @@ you update your ports collection, before attempting any port upgrades.
   Portupgrade users:
       portupgrade -fr security/libressl-devel
 
-20160527
+20160527:
   AFFECTS: Users of mail/opensmtpd-extras (any of them)
   AUTHOR: adamw@FreeBSD.org
 
@@ -1587,7 +1587,7 @@ you update your ports collection, before attempting any port upgrades.
   If you use portupgrade:
         portupgrade -fr devel/icu
 
-20150419
+20150419:
   AFFECTS: Users of emulators/wine-devel
   AUTHOR: gerald@FreeBSD.org
 
