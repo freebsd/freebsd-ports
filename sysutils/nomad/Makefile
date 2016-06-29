@@ -14,6 +14,8 @@ LICENSE=	MPL
 BUILD_DEPENDS=	go>=1.4:lang/go
 RUN_DEPENDS=	go>=1.4:lang/go
 
+ONLY_FOR_ARCHS=	amd64
+
 USES=	compiler
 
 USE_GITHUB=	yes
