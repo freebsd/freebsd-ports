@@ -21,7 +21,7 @@ OPTIONS_SUB=	yes
 BUNDLED_SSL_DESC=	Use node.js's bundled OpenSSL implementation
 BUNDLED_SSL_USE_OFF=	OPENSSL=yes
 
-USES=		compiler execinfo gmake python:2 pkgconfig
+USES=		compiler execinfo gmake python:2 pkgconfig localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -90,6 +90,16 @@ post-patch:
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp \
 		${WRKSRC}/node.gyp \
 		${WRKSRC}/tools/icu/icu-generic.gyp
+
+post-configure:
+	# Post-process Makefile and *.mk files created by node-gyp and remove
+	# all occurrences of -I${LOCALBASE}/include. C*FLAGS include this
+	# before all -I../deps/* for bundled code. This can cause build
+	# breakages if the dependency is installed in ${LOCALBASE}. The
+	# USES+=localbase above will ensure that we pick up includes for real
+	# external dependencies.
+	${FIND} ${WRKSRC}/out -type f -print0 \
+		| ${XARGS} -0 ${REINPLACE_CMD} -e "s|-I${LOCALBASE}/include||g"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
