@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	14.3.20160428
+PORTVERSION=	14.3.20160525
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-14.3/${PORTNAME}-${PORTVERSION}
-DISTFILES=	${PORTNAME:tl}-epl-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Web-based GroupWare system
@@ -13,13 +11,25 @@ COMMENT=	Web-based GroupWare system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-USES=		cpe tar:bzip2
-USE_PHP=	bcmath bz2 ctype json mcrypt session simplexml xmlreader zlib
+RUN_DEPENDS=	${LOCALBASE}/share/pear/Net/Sieve.php:net/pear-Net_Sieve \
+		${LOCALBASE}/share/pear/Horde/Imap/Client.php:mail/pear-Horde_Imap_Client \
+		${LOCALBASE}/share/pear/Horde/Nls.php:devel/pear-Horde_Nls \
+		${LOCALBASE}/share/pear/Horde/Mail/Transport.php:mail/pear-Horde_Mail \
+		${LOCALBASE}/share/pear/Horde/Smtp.php:mail/pear-Horde_Smtp \
+		${LOCALBASE}/share/pear/Horde/Compress.php:archivers/pear-Horde_Compress \
+		${LOCALBASE}/share/pear/Horde/Icalendar.php:devel/pear-Horde_Icalendar \
+		${LOCALBASE}/share/pear/Horde/Mapi.php:mail/pear-Horde_Mapi
+
+USES=		cpe php tar:bzip2
+USE_PHP=	bcmath bz2 ctype json mcrypt session simplexml tidy xmlreader zlib
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
 SUB_LIST=	EG_DIR=${EG_DIR} \
 		EG_DATA=${EG_DATA}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	EGroupware
 
 OPTIONS_DEFINE=	MYSQL POSTGRES OSSL ZIP GD LDAP MBSTRING
 OPTIONS_DEFAULT=MYSQL OSSL ZIP
@@ -37,7 +47,7 @@ ZIP_USE=	PHP=zip
 GD_USE=		PHP=gd
 LDAP_USE=	PHP=ldap
 
-WRKSRC=	${WRKDIR}/egroupware
+WRKSRC=	${WRKDIR}/egroupware-${PORTVERSION}
 EG_DIR=	www/eg
 EG_WWWDIR=	${PREFIX}/${EG_DIR}
 EG_DATA=	www/egdata
