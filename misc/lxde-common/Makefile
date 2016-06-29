@@ -11,21 +11,23 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Common files
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake iconv
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GMSGFMT="${LOCALBASE}/bin/msgfmt" \
 		--with-xsession-path=${PREFIX}/share/xsessions \
 		--with-xdg-path=${PREFIX}/share/applications
+NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/lxde
-INSTALLS_ICONS=	YES
+INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS README
+
 OPTIONS_DEFINE=	DOCS
 
 post-install:
@@ -34,6 +36,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pcmanfm/pcmanfm.conf \
 		${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
