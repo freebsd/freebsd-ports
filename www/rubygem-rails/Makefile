@@ -42,7 +42,6 @@ NOPORTDOCS=	yes
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RUBY_RDOC=	yes
 USES=		cpe gem
 
 PLIST_DIRS=	${GEM_LIB_DIR}
