@@ -10,17 +10,16 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU version of the traditional tape archiver
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 INFO=		tar
 
-USES=		charsetfix cpe iconv:${STATIC_ARGS} makeinfo tar:xz
+USES=		charsetfix cpe iconv:${STATIC_ARGS} localbase makeinfo tar:xz
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--disable-silent-rules
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	DEFAULT_ARCHIVE=/dev/sa0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
 # supply result to skip a test that will abort configure if run as root
@@ -43,6 +42,6 @@ STATIC_VARS_OFF=	STATIC_ARGS=lib
 
 # do not rebuild tar.info
 post-patch:
-	touch -r ${WRKSRC}/doc/stamp-vti ${WRKSRC}/configure
+	${TOUCH} -r ${WRKSRC}/doc/stamp-vti ${WRKSRC}/configure
 
 .include <bsd.port.mk>
