@@ -5713,9 +5713,9 @@ share/foomatic/db/source/printer/Gestetner-MP_2554.xml
 share/foomatic/db/source/printer/Gestetner-MP_2851.xml
 share/foomatic/db/source/printer/Gestetner-MP_301.xml
 share/foomatic/db/source/printer/Gestetner-MP_3010_DSm730e.xml
-share/foomatic/db/source/printer/Gestetner-MP_305+.xml
 share/foomatic/db/source/printer/Gestetner-MP_3053.xml
 share/foomatic/db/source/printer/Gestetner-MP_3054.xml
+share/foomatic/db/source/printer/Gestetner-MP_305plus.xml
 share/foomatic/db/source/printer/Gestetner-MP_3350.xml
 share/foomatic/db/source/printer/Gestetner-MP_3350B.xml
 share/foomatic/db/source/printer/Gestetner-MP_3351.xml
@@ -6504,9 +6504,9 @@ share/foomatic/db/source/printer/Infotec-MP_2554.xml
 share/foomatic/db/source/printer/Infotec-MP_2851.xml
 share/foomatic/db/source/printer/Infotec-MP_2852.xml
 share/foomatic/db/source/printer/Infotec-MP_301.xml
-share/foomatic/db/source/printer/Infotec-MP_305+.xml
 share/foomatic/db/source/printer/Infotec-MP_3053.xml
 share/foomatic/db/source/printer/Infotec-MP_3054.xml
+share/foomatic/db/source/printer/Infotec-MP_305plus.xml
 share/foomatic/db/source/printer/Infotec-MP_3350.xml
 share/foomatic/db/source/printer/Infotec-MP_3350B.xml
 share/foomatic/db/source/printer/Infotec-MP_3351.xml
@@ -6931,9 +6931,9 @@ share/foomatic/db/source/printer/Lanier-MP_2851_LD528.xml
 share/foomatic/db/source/printer/Lanier-MP_2852.xml
 share/foomatic/db/source/printer/Lanier-MP_301.xml
 share/foomatic/db/source/printer/Lanier-MP_3010_LD330.xml
-share/foomatic/db/source/printer/Lanier-MP_305+.xml
 share/foomatic/db/source/printer/Lanier-MP_3053.xml
 share/foomatic/db/source/printer/Lanier-MP_3054.xml
+share/foomatic/db/source/printer/Lanier-MP_305plus.xml
 share/foomatic/db/source/printer/Lanier-MP_3350B_LD433B.xml
 share/foomatic/db/source/printer/Lanier-MP_3350_LD433.xml
 share/foomatic/db/source/printer/Lanier-MP_3351_LD533.xml
@@ -7517,9 +7517,9 @@ share/foomatic/db/source/printer/NRG-MP_2851.xml
 share/foomatic/db/source/printer/NRG-MP_2852.xml
 share/foomatic/db/source/printer/NRG-MP_301.xml
 share/foomatic/db/source/printer/NRG-MP_3010.xml
-share/foomatic/db/source/printer/NRG-MP_305+.xml
 share/foomatic/db/source/printer/NRG-MP_3053.xml
 share/foomatic/db/source/printer/NRG-MP_3054.xml
+share/foomatic/db/source/printer/NRG-MP_305plus.xml
 share/foomatic/db/source/printer/NRG-MP_3350.xml
 share/foomatic/db/source/printer/NRG-MP_3350B.xml
 share/foomatic/db/source/printer/NRG-MP_3351.xml
@@ -8116,10 +8116,10 @@ share/foomatic/db/source/printer/Ricoh-MP_2501.xml
 share/foomatic/db/source/printer/Ricoh-MP_2553.xml
 share/foomatic/db/source/printer/Ricoh-MP_2554.xml
 share/foomatic/db/source/printer/Ricoh-MP_2554J.xml
-share/foomatic/db/source/printer/Ricoh-MP_305+.xml
 share/foomatic/db/source/printer/Ricoh-MP_3053.xml
 share/foomatic/db/source/printer/Ricoh-MP_3054.xml
 share/foomatic/db/source/printer/Ricoh-MP_3054J.xml
+share/foomatic/db/source/printer/Ricoh-MP_305plus.xml
 share/foomatic/db/source/printer/Ricoh-MP_3353.xml
 share/foomatic/db/source/printer/Ricoh-MP_3554.xml
 share/foomatic/db/source/printer/Ricoh-MP_3554J.xml
@@ -8526,9 +8526,9 @@ share/foomatic/db/source/printer/Savin-MP_2553.xml
 share/foomatic/db/source/printer/Savin-MP_2554.xml
 share/foomatic/db/source/printer/Savin-MP_2852.xml
 share/foomatic/db/source/printer/Savin-MP_301.xml
-share/foomatic/db/source/printer/Savin-MP_305+.xml
 share/foomatic/db/source/printer/Savin-MP_3053.xml
 share/foomatic/db/source/printer/Savin-MP_3054.xml
+share/foomatic/db/source/printer/Savin-MP_305plus.xml
 share/foomatic/db/source/printer/Savin-MP_3352.xml
 share/foomatic/db/source/printer/Savin-MP_3353.xml
 share/foomatic/db/source/printer/Savin-MP_3554.xml
