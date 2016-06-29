@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-gui
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt devel
 
@@ -16,13 +16,16 @@ LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
 		libseafile.so:net-mgmt/seafile \
 		libsqlite3.so:databases/sqlite3 \
 		libccnet.so:net-mgmt/ccnet \
-		libjansson.so:devel/jansson
+		libjansson.so:devel/jansson \
+		libevent.so:devel/libevent2 \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile-client
+GH_TAGNAME=	1a63e1f
 
-USES=		compiler:c++11-lang cmake pkgconfig shebangfix
+USES=		compiler:c++11-lang cmake gettext pkgconfig shebangfix
 SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \
 		scripts/*.py
 USE_OPENSSL=	yes

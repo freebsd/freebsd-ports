@@ -18,15 +18,19 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libzdb.so:databases/libzdb \
 		libcurl.so:ftp/curl \
 		libinotify.so:devel/libinotify \
-		libccnet.so:net-mgmt/ccnet
+		libccnet.so:net-mgmt/ccnet \
+		libevent.so:devel/libevent2 \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libjansson.so:devel/jansson
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 
-USES=		autoreconf iconv libarchive libtool mysql pathfix pkgconfig python:-2.7 \
-		shebangfix
+USES=		autoreconf gettext iconv libarchive libtool mysql pathfix \
+		pkgconfig python:-2.7 shebangfix sqlite
+USE_GNOME=	glib20
 SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh  tests/*.py tests/basic/*.sh \
 		tests/sync-auto-test/*.template *.sh scripts/build/*.py \
 		scripts/*.py *.py scripts/upgrade/*.py app/seaf-cli \
