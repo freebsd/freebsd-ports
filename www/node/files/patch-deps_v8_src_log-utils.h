@@ -1,8 +1,8 @@
---- deps/v8/src/log-utils.h.orig	2015-12-09 04:12:52 UTC
+--- deps/v8/src/log-utils.h.orig	2016-06-02 21:53:46 UTC
 +++ deps/v8/src/log-utils.h
-@@ -5,6 +5,9 @@
- #ifndef V8_LOG_UTILS_H_
- #define V8_LOG_UTILS_H_
+@@ -9,6 +9,9 @@
+ 
+ #include <cstdarg>
  
 +#include <cstdio>
 +#include <cstdarg>
