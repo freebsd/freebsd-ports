@@ -377,8 +377,8 @@ zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
 
 .    for extension in ${USE_PHP}
 ext=		${extension}
-.      if ${_USE_PHP_VER${PHP_VER}:M${ext:S/:build//}} != ""
-.        if ${PHP_EXT_INC:M${extension:S/:build//}} == ""
+.      if !empty(_USE_PHP_VER${PHP_VER}:M${extension:S/:build//})
+.        if empty(PHP_EXT_INC:M${extension:S/:build//})
 .          if !empty(php_ARGS:Mbuild) || !empty(ext:M*\:build)
 BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension:S/:build//}.so:${${extension:S/:build//}_DEPENDS}
 .          endif
