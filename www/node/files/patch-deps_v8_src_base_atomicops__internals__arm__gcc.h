@@ -1,4 +1,4 @@
---- deps/v8/src/base/atomicops_internals_arm_gcc.h.orig	2016-01-19 17:14:41 UTC
+--- deps/v8/src/base/atomicops_internals_arm_gcc.h.orig	2016-06-02 21:53:45 UTC
 +++ deps/v8/src/base/atomicops_internals_arm_gcc.h
 @@ -13,6 +13,11 @@
  #include <sys/cpuinline.h>
