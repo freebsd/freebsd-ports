@@ -26,6 +26,6 @@ OPTIONS_DEFINE=	IGBINARY
 IGBINARY_DESC=	Build with Igbinary serializer
 
 IGBINARY_CONFIGURE_ENABLE=	redis-igbinary
-IGBINARY_USE=			php=igbinary
+IGBINARY_USE=			php=igbinary:build
 
 .include <bsd.port.mk>
