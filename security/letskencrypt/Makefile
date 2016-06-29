@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	letskencrypt
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 DISTVERSIONPREFIX=	portable-
 CATEGORIES=	security
 MASTER_SITES=	https://kristaps.bsd.lv/letskencrypt/snapshots/ \
@@ -13,13 +13,10 @@ COMMENT=	Native C client for Let's Encrypt, designed for security
 
 LICENSE=	ISCL
 
-USES=		gmake tar:tgz
-USE_OPENSSL=	yes
+USES=		gmake ssl:libressl tar:tgz
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	PREFIX=${STAGEDIR}/${PREFIX}
-
-WITH_OPENSSL_PORT=	yes
 
 WWWDIR=		${PREFIX}/www/letsencrypt
 
