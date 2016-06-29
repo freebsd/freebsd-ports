@@ -11,7 +11,9 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Corewars Redcode Evolver
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+ PD
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.TXT
 
 USES=		dos2unix
 DOS2UNIX_GLOB=	*.txt
@@ -19,8 +21,9 @@ NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 
 PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	CRE_Manual.txt Exhaust_README.txt
 
-PORTDOCS=	*.txt
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${BUILD_WRKSRC}
@@ -36,6 +39,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
