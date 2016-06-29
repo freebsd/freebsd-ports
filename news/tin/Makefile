@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tin
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
@@ -21,6 +21,7 @@ MAINTAINER?=	johans@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	libuu.so:converters/uulib \
+		libicuuc.so:devel/icu \
 		libpcre.so:devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
@@ -31,7 +32,7 @@ SHEBANG_FILES=	tools/opt-case.pl tools/tinews.pl tools/url_handler.pl \
 TIN_EDITOR?=	/usr/bin/ee
 TIN_SCREEN?=	ncursesw
 
-OPTIONS_DEFINE=		GNUPG ISPELL METAMAIL CANLOCK NNTP_ONLY NLS
+OPTIONS_DEFINE=		GNUPG ISPELL METAMAIL CANLOCK NNTP_ONLY SLRNFACE NLS
 OPTIONS_DEFAULT=	GNUPG ISPELL METAMAIL
 OPTIONS_SUB=		yes
 NNTP_ONLY_DESC=		Only read news via NNTP (no spool dir support)
@@ -42,12 +43,17 @@ GNUPG_CONFIGURE_ON=	--with-gpg=${PREFIX}/bin/gpg \
 GNUPG_CONFIGURE_OFF=	--disable-pgp-gpg
 ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 ISPELL_CONFIGURE_ARGS=	--with-ispell=${PREFIX}/bin/ispell
+METAMAIL_DESC?=		Use metamail to handle MIME attachments
 METAMAIL_RUN_DEPENDS=	metamail:mail/metamail
 METAMAIL_CONFIGURE_ARGS=--with-metamail=${PREFIX}/bin/metamail
 CANLOCK_DESC=		Enable Cancel-Lock key support via libcanlock
 CANLOCK_CONFIGURE_ENABLE=cancel-locks
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+SLRNFACE_DESC?=		Use slrnface to displace sender images
+SLRNFACE_CONFIGURE_WITH=	slrnface=slrnface
+SLRNFACE_BUILD_DEPENDS=	slrnface:news/slrnface
+SLRNFACE_RUN_DEPENDS=	slrnface:news/slrnface
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
 # national environment.
@@ -68,8 +74,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	build
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -Ee 's:5/(mmdf|mbox):5/tin_\1:g' \
 		${WRKSRC}/src/Makefile.in
@@ -87,11 +91,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/include/tin.h
 	${MV}   ${WRKSRC}/tools/url_handler.pl \
 		${WRKSRC}/tools/tinurl_handler.pl
-
-.if ${PORT_OPTIONS:MNLS}
-post-build:
-	${MAKE_CMD} -C ${WRKSRC}/po
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/tin.defaults \
