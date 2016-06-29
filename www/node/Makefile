@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--shared-openssl
 .include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MBUNDLED_SSL)
-.if defined(OPENSSL_PORT) && (${OPENSSL_PORT} == "security/libressl" || ${OPENSSL_PORT} == "security/libressl-devel")
+.if !empty(SSL_DEFAULT:Mlibressl*)
 IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 .endif
 .endif
