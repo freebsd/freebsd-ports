@@ -21,12 +21,12 @@ PLIST_FILES=	include/randlib.h \
 		lib/librandlib.so \
 		lib/librandlib.so.1
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
-OPTIONS_DEFINE=	DOCS
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/source/randlib.c/doc/* ${STAGEDIR}${DOCSDIR}
 
