@@ -25,7 +25,7 @@ MEMCACHED_DESC=	Enable memcached storage module
 MEMORY_DESC=	Enable the memoize memory storage module
 
 APC_CONFIGURE_ON=	--enable-memoize-apc
-APC_USE=		PHP=apc
+APC_USE=		PHP=apc:build
 MEMCACHED_CONFIGURE_ON=	--with-memoize-memcached
 MEMCACHED_BUILD_DEPENDS=libmemcached>=0:databases/libmemcached
 MEMCACHED_RUN_DEPENDS=	libmemcached>=0:databases/libmemcached

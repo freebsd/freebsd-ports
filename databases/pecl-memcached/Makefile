@@ -28,7 +28,7 @@ USE_PHP=	json:build session:build
 USES=		php:ext pkgconfig tar:tgz
 
 IGBINARY_CONFIGURE_ENABLE=	memcached-igbinary
-IGBINARY_USE=		PHP=igbinary
+IGBINARY_USE=		PHP=igbinary:build
 SASL_CONFIGURE_ENABLE=	memcached-sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
