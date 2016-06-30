@@ -5,7 +5,7 @@ PORTNAME=	zfsnap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-beta2
 CATEGORIES=	sysutils
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Portable performant script to make rolling ZFS snapshots easy
