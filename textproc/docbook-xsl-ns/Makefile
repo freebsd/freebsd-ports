@@ -32,6 +32,9 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_DISTFILES=	docbook-xsl-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
 
+post-extract:
+	${RM} ${WRKSRC}/svn-commit.tmp
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${INSTDIR}
