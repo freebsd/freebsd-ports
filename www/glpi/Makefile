@@ -2,23 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	glpi
-PORTVERSION=	0.85.2
+PORTVERSION=	0.90.3
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://droidng.free.fr/freebsd/ \
-		http://glpi-project.org/IMG/gz/
+MASTER_SITES=	http://github.com/glpi-project/glpi/releases/download/0.90.3/
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
-USES=		cpe
+USES=		cpe gettext php
 CPE_VENDOR=	glpi-project
 USE_PHP=	mysqli mbstring pcre session xml json ctype gd
-WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

@@ -19,7 +19,7 @@ Make sur Apache supports PHP (www/mod_php5) and add a config file for GLPI in In
 
     Alias /glpi %%PREFIX%%/%%GLPIDIR%%
     <Directory %%PREFIX%%/%%GLPIDIR%%>
-        AllowOverride Options FileInfo
+        AllowOverride Options FileInfo Limit
         Options Indexes FollowSymLinks
         Require all granted
         DirectoryIndex index.php
