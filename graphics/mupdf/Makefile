@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.8
+PORTVERSION=	1.9a
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.mupdf.com/download/ \
-		http://www.mupdf.com/download/archive/
+MASTER_SITES=	http://www.mupdf.com/downloads/ \
+		http://www.mupdf.com/downloads/archive/
 
 MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Lightweight PDF viewer and toolkit
@@ -17,14 +17,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libjbig2dec.so:graphics/jbig2dec \
 		libopenjp2.so:graphics/openjpeg
 
-CFLAGS+=	-I${WRKSRC}/include/mupdf
+CFLAGS+=	-I${WRKSRC}/include/mupdf -I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
 USES=		cpe compiler:c++11-lang gmake jpeg pkgconfig
-USE_XORG=	x11 xext
+USE_XORG=	x11 xcursor xext xinerama xrandr
+USE_GL=	gl
 
 CPE_VENDOR=	artifex
 
@@ -45,9 +47,13 @@ post-patch:
 		-e 's|/usr/local|${LOCALBASE}|' \
 		-e 's/Linux/FreeBSD/' \
 		${WRKSRC}/Makerules
-	@${REINPLACE_CMD} '/^CFLAGS/s|$$| -I${LOCALBASE}/include|' \
-		${WRKSRC}/Makefile
-	@${RM} -r ${WRKSRC}/thirdparty/*
+	@${RM} -r ${WRKSRC}/thirdparty/curl \
+		${WRKSRC}/thirdparty/jbig2dec \
+		${WRKSRC}/thirdparty/freetype \
+		${WRKSRC}/thirdparty/harfbuzz \
+		${WRKSRC}/thirdparty/jpeg \
+		${WRKSRC}/thirdparty/openjpeg \
+		${WRKSRC}/thirdparty/zlib
 
 post-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
@@ -56,8 +62,10 @@ post-build:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdf.a \
 		${STAGEDIR}${PREFIX}/lib/libmupdf_pic.a
+	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdfthird.a \
+		${STAGEDIR}${PREFIX}/lib/libmupdfthird_pic.a
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 ${STAGEDIR}${PREFIX}/bin/mupdf
-.for binary in mutool mujstest mupdf mupdf-x11-curl
+.for binary in mutool mujstest mupdf mupdf-gl mupdf-x11-curl
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${binary}
 .endfor
 

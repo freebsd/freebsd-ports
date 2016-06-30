@@ -11,6 +11,4 @@ x11-toolkits/pango	Fonts
 graphics/imagemagick	Image formats besides PNG and JPEG
 textproc/hs-pandoc	Text files
 
-It might be necessary to first create a cache directory with
-
-$ mkdir -p ~/.cache/llpp
+Auto-converted documents are cached in ~/.cache/llpp.
