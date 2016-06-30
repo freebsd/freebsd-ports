@@ -1,0 +1,13 @@
+man/man8/zfsnap.8.gz
+sbin/zfsnap
+share/zfsnap/commands/destroy.sh
+share/zfsnap/commands/recurseback.sh
+share/zfsnap/commands/snapshot.sh
+share/zfsnap/core.sh
+%%BASH%%etc/bash_completion.d/zfsnap.sh
+%%ZSH%%share/zsh/site-functions/_zfsnap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/periodic/xPERIODICx_zfsnap_delete.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/periodic/xPERIODICx_zfsnap.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/completion/zfsnap-completion.bash
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/completion/zfsnap-completion.tcsh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/completion/zfsnap-completion.zsh
