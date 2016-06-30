@@ -14,3 +14,5 @@ Snapshot names are in the format of pool/fs@[prefix]Timestamp--TimeToLive
 be quite useful for filtering, Timestamp is the date and time when the snapshot
 was created, and TimeToLive (TTL) is the amount of time the snapshot will be
 kept until it can be deleted.
+
+WWW: https://github.com/zfsnap/zfsnap
