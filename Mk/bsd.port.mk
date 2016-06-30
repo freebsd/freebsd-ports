@@ -1561,9 +1561,11 @@ MAKE_ENV+=              NM=${NM} \
                                 PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
 CONFIGURE_ENV+= LD="${X_BUILD_FOR}-freebsd-ld" STRIP="${X_BUILD_FOR}-freebsd-strip" PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
 INCS=          -I=/usr/include
-CFLAGS+=        --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
-CXXFLAGS+= --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
-CPPFLAGS+= --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
+CPU_ARGS=       -march=mips32 -msoft-float -Wa,-msoft-float
+CFLAGS+=        --sysroot=${X_SYSROOT} ${CPU_ARGS} -O
+CXXFLAGS+= --sysroot=${X_SYSROOT} ${CPU_ARGS} -O
+CPPFLAGS+= ${INCS}
+LDFLAGS+=       -Wl,--gc-sections
 LATE_INSTALL_ARGS+=     STRIPBIN=${X_BUILD_FOR}-freebsd-strip
 INSTALL_PROGRAM_ENV=    STRIPPROG=${STRIP_CMD}
 .endif
