@@ -1085,6 +1085,7 @@ X_SYSROOT=      /usr/root/${X_BUILD_FOR}_ap
 TRIPLE=         ${X_BUILD_FOR}-portbld-freebsd${OSREL}
 CC=             ${LOCALBASE}/bin/${TRIPLE}-gcc
 CXX=            ${LOCALBASE}/bin/${TRIPLE}-g++
+CPP=            ${LOCALBASE}/bin/${TRIPLE}-cpp
 NM=             ${X_BUILD_FOR}-freebsd-nm
 STRIP_CMD=      ${X_BUILD_FOR}-freebsd-strip
 # only bmake support the below
