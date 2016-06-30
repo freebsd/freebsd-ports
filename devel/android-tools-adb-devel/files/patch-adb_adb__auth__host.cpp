@@ -16,7 +16,7 @@
  
 +#if !defined(OPENSSL_IS_BORINGSSL)
 +// https://boringssl.googlesource.com/boringssl/+/6601402%5E!/
-+int EVP_EncodedLength(size_t *out_len, size_t len) {
++static int EVP_EncodedLength(size_t *out_len, size_t len) {
 +  if (len + 2 < len) {
 +    return 0;
 +  }
