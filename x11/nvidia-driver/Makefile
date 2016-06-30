@@ -312,16 +312,13 @@ post-install: .SILENT
 # update distinfo (i.e., keeping other driver version entries intact)
 .if ${.TARGETS:Mupdate-distinfo}
 DISTINFO_FILE=	${MASTERDIR}/distinfo.new
-JOIN?=		/usr/bin/join
 .endif
 
 update-distinfo: makesum .SILENT
-	${REINPLACE_CMD} -i '' -e '/${ARCH_SUFX}-${NVVERSION:R}/s/^/~/' \
-		${MASTERDIR}/distinfo ${DISTINFO_FILE}
-	${SED} -e '/^~/s/(.*//' ${MASTERDIR}/distinfo | ${JOIN} -a 1 \
-		- ${DISTINFO_FILE} | ${SED} -e 's/^~//' \
-		> ${MASTERDIR}/distinfo.tmp
-	${MV} ${MASTERDIR}/distinfo.tmp ${MASTERDIR}/distinfo
-	${RM} ${DISTINFO_FILE}
+	${REINPLACE_CMD} -e '/${ARCH_SUFX}-${NVVERSION:R}/s/^/~/' \
+		${MASTERDIR}/distinfo
+	${REINPLACE_CMD} -e '/^~SHA256/r ${DISTINFO_FILE}' -e '/^~/d' \
+		${MASTERDIR}/distinfo
+	${RM} ${DISTINFO_FILE} ${MASTERDIR}/distinfo.bak
 
 .include <bsd.port.mk>
