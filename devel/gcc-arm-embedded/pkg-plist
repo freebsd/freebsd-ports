@@ -616,6 +616,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/bits/st
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/bits/streambuf.tcc
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/bits/streambuf_iterator.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/bits/stringfwd.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/bits/uniform_int_dist.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/bits/unique_ptr.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/bits/unordered_map.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/bits/unordered_set.h
@@ -1177,6 +1178,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/utility
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/valarray
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/vector
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/complex.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/cpio.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/ctype.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/dirent.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/envlock.h
@@ -1197,6 +1199,8 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/limits.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/locale.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_arc4random.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_default_types.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_endian.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_time.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_types.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/ansi.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/endian.h
