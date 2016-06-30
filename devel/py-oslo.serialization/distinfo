@@ -1,3 +1,3 @@
-TIMESTAMP = 1465728893
-SHA256 (oslo.serialization-2.8.0.tar.gz) = c6e6df0e550616fd6b8d1b7d87cb05972b006206cfdf34d36de4246b471cb579
-SIZE (oslo.serialization-2.8.0.tar.gz) = 23504
+TIMESTAMP = 1467240763
+SHA256 (oslo.serialization-2.10.0.tar.gz) = 5f8ec814d55fe15a24527b6328ceef6101d43ca974a5c18781d7fa92ce0082f6
+SIZE (oslo.serialization-2.10.0.tar.gz) = 23555
