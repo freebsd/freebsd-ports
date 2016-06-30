@@ -1,6 +1,0 @@
-%%SITE_PERL%%/WWW/Google/Notebook.pm
-%%SITE_PERL%%/WWW/Google/Notebook/Note.pm
-%%SITE_PERL%%/WWW/Google/Notebook/Notebook.pm
-%%PERL5_MAN3%%/WWW::Google::Notebook.3.gz
-%%PERL5_MAN3%%/WWW::Google::Notebook::Note.3.gz
-%%PERL5_MAN3%%/WWW::Google::Notebook::Notebook.3.gz

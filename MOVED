@@ -8374,3 +8374,9 @@ graphics/linux-c6-dri-compat|graphics/linux-c6-dri|2016-06-22|Obsolete
 security/py-letsencrypt|security/py-certbot|2016-06-23|The LetsEncrypt project has renamed the utility
 textproc/py-beautifulsoup4|www/py-beautifulsoup|2016-06-26|Duplicate port deleted
 textproc/kibana42|textproc/kibana45|2016-06-27|Has expired: not actively supported - use kibana 4.5 (textproc/kibana45) instead
+graphics/libchamplain08||2016-06-30|Has expired: Old version, not needed any more
+sysutils/syslog-ng35||2016-06-30|Has expired: EOL, no longer supported by bababit.hu
+sysutils/syslog-ng34||2016-06-30|Has expired: EOL, no longer supported by bababit.hu
+devel/jenkins2|devel/jenkins|2016-06-30|Has expired: Use devel/jenkins
+www/p5-WWW-Google-Notebook||2016-06-30|Has expired: Google Notebook has shut down
+sysutils/syslog-ng-incubator03||2016-06-30|Has expired: EOL, no longer supported by bababit.hu

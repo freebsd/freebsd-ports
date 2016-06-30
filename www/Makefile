@@ -1246,7 +1246,6 @@
     SUBDIR += p5-WWW-Google-Calculator
     SUBDIR += p5-WWW-Google-News
     SUBDIR += p5-WWW-Google-News-TW
-    SUBDIR += p5-WWW-Google-Notebook
     SUBDIR += p5-WWW-Google-PageRank
     SUBDIR += p5-WWW-Google-Video
     SUBDIR += p5-WWW-HatenaDiary
