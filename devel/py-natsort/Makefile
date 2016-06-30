@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	natsort
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,13 @@ COMMENT=	Natural sorting for python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
+
 USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
