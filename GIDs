@@ -238,6 +238,7 @@ openxpki:*:777:
 zetacoin:*:780:
 foreman_proxy:*:812:
 puppet:*:814:
+uchiwa:*:815:
 btsync:*:817:
 jenkins:*:818:
 rundeck:*:819:

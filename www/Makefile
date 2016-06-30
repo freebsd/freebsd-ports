@@ -2235,6 +2235,7 @@
     SUBDIR += typo3
     SUBDIR += typo3-lts
     SUBDIR += typolight
+    SUBDIR += uchiwa
     SUBDIR += udmsearch
     SUBDIR += uglifyjs
     SUBDIR += usermanager

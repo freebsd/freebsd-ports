@@ -247,6 +247,7 @@ openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
 zetacoin:*:780:780::0:0:ZetaCoin Daemon:/nonexistent:/usr/sbin/nologin
 foreman_proxy:*:812:812::0:0:Foreman Smart Proxy:/usr/local/share/foreman-proxy:/usr/sbin/nologin
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
+uchiwa:*:815:815::0:0:Uchiwa Dashboard:/nonexistent:/usr/sbin/nologin
 btsync:*:817:817::0:0:BitTorrent Sync Daemon:/nonexistent:/usr/sbin/nologin
 jenkins:*:818:818::0:0:Jenkins CI:/usr/local/jenkins:/bin/sh
 rundeck:*:819:819::0:0:Rundeck:/usr/local/rundeck:/bin/sh
