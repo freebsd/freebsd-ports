@@ -1229,7 +1229,7 @@
     SUBDIR += zfs-stats
     SUBDIR += zfs-stats-lite
     SUBDIR += zfsnap
-    SUBDIR += zfsnap-devel
+    SUBDIR += zfsnap2
     SUBDIR += zfstools
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
