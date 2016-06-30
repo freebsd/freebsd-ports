@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	10.15
+PORTVERSION=	10.20
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		CPAN
@@ -19,6 +19,7 @@ CONFLICTS=	p5-Image-ExifTool-devel-[0-9]*
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 PORTDOCS=	*
 
