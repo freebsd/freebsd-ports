@@ -1074,26 +1074,28 @@ MINIMAL_PKG_VERSION=	1.6.0
 
 .if defined(X_BUILD_FOR)
 .if !defined(.PARSEDIR)
-IGNORE=	Cross building can only be done when using bmake(1) as make(1)
+IGNORE= Cross building can only be done when using bmake(1) as make(1)
 .endif
 # Do not define CPP on purpose
 .if !defined(HOSTCC)
-HOSTCC:=	${CC}
-HOSTCXX:=	${CXX}
+HOSTCC:=        ${CC}
+HOSTCXX:=       ${CXX}
 .endif
-.if !exists(/usr/${X_BUILD_FOR}/usr/bin/cc)
-X_SYSROOT=	${LOCALBASE}/${X_BUILD_FOR}
-.else
-X_SYSROOT=	/usr/${X_BUILD_FOR}
-.endif
-CC=		${X_SYSROOT}/usr/bin/cc
-CXX=	${X_SYSROOT}/usr/bin/c++
-NM=		${X_BUILD_FOR}-nm
-STRIP_CMD=	${X_BUILD_FOR}-strip
+X_SYSROOT=      /usr/root/${X_BUILD_FOR}_ap
+TRIPLE=         ${X_BUILD_FOR}-portbld-freebsd${OSREL}
+CC=             ${LOCALBASE}/bin/${TRIPLE}-gcc
+CXX=            ${LOCALBASE}/bin/${TRIPLE}-g++
+NM=             ${X_BUILD_FOR}-freebsd-nm
+STRIP_CMD=      ${X_BUILD_FOR}-freebsd-strip
 # only bmake support the below
-STRIPBIN=	${STRIP_CMD}
+STRIPBIN=       ${STRIP_CMD}
 .export.env STRIPBIN
+#STAGEDIR=      ${X_SYSROOT}
+DESTDIR=        ${X_SYSROOT}
+CHROOTED=       no
+NO_PKG_REGISTER=yes
 .endif
+
 
 #
 # DESTDIR section to start a chrooted process if invoked with DESTDIR set
@@ -1552,13 +1554,20 @@ CO_ENV+=		STAGEDIR=${STAGEDIR} \
 				PORTSDIR="${PORTSDIR}"
 
 .if defined(X_BUILD_FOR)
-BUILD_DEPENDS+=	${X_BUILD_FOR}-cc:devel/${X_BUILD_FOR}-xdev
-PKG_ENV+=		ABI_FILE=${X_SYSROOT}/usr/lib/crt1.o
-MAKE_ENV+=		NM=${NM} \
-				STRIPBIN=${X_BUILD_FOR}-strip \
-				PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
-CONFIGURE_ENV+=	PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
+BUILD_DEPENDS+= ${X_BUILD_FOR}-portbld-freebsd${OSREL}-gcc:devel/${X_BUILD_FOR}-gcc
+PKG_ENV+=               ABI_FILE=${X_SYSROOT}/usr/lib/crt1.o
+MAKE_ENV+=              NM=${NM} \
+                                STRIPBIN=${X_BUILD_FOR}-freebsd-strip \
+                                PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
+CONFIGURE_ENV+= LD="${X_BUILD_FOR}-freebsd-ld" STRIP="${X_BUILD_FOR}-freebsd-strip" PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
+INCS=          -I=/usr/include
+CFLAGS+=        --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
+CXXFLAGS+= --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
+CPPFLAGS+= --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
+LATE_INSTALL_ARGS+=     STRIPBIN=${X_BUILD_FOR}-freebsd-strip
+INSTALL_PROGRAM_ENV=    STRIPPROG=${STRIP_CMD}
 .endif
+
 
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB)
