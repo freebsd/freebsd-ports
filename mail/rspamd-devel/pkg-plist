@@ -40,6 +40,7 @@ bin/rspamc
 @sample %%ETCDIR%%/statistic.conf.sample
 @sample %%ETCDIR%%/surbl-whitelist.inc.sample
 @sample %%ETCDIR%%/worker-controller.inc.sample
+@sample %%ETCDIR%%/worker-fuzzy.inc
 @sample %%ETCDIR%%/worker-normal.inc.sample
 @sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
 /usr/local/etc/newsyslog.conf.d/rspamd.newsyslog.conf
