@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcl
-DISTVERSION=	8.7.a0.20160623
+DISTVERSION=	8.7.a0.20160701
 CATEGORIES=	lang
 MASTER_SITES=	http://core.tcl.tk/tcl/tarball/
 PKGNAMESUFFIX=	${PORTVERSION:R:R:S/.//}
@@ -23,7 +23,7 @@ TZDATA_DESC=	Install Tcl timezone data
 MODULES_DESC=	Install Tcl common modules
 OPTIONS_SUB=	yes
 
-FOSSIL_CHECKIN=	a633d16fae
+FOSSIL_CHECKIN=	726413c61a
 
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME:S/+/_/g}
 WRKSRC=		${PATCH_WRKSRC}/unix
