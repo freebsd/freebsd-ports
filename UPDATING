@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160701:
+  AFFECTS: users of www/node5
+  AUTHOR: bradleythughes@fastmail.fm
+
+  Node.js v5.x has reached end of life and has been removed. Users that
+  have not yet moved to v6.x should do so now by switching to the www/node
+  port.
+
 20160627:
   AFFECTS: users of sysutils/rsyslog7
   AUTHOR: brd@FreeBSD.org
