@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	xvt
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES+=	x11
 MASTER_SITES=	http://BSDforge.com/projects/source/x11/xvt/
 
 MAINTAINER=	portmaster@bsdforge.com
-COMMENT=	Xterm replacement supporting color, transparency, and more, with less
+COMMENT=	Xterm replacement, supporting color, transparency, and more, with less
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
+
+PORTDOCS=	xvt.1.html xvtRef.html xvtRef.txt
 
 USES=		libtool perl5 tar:xz
 USE_LDCONFIG=	yes
@@ -24,7 +26,7 @@ DESKTOP_ENTRIES=	"xvt" "xvt terminal emulator" \
 			false
 
 OPTIONS_DEFINE=	256_COLOR BIG5 EUCJ GB GREEK KR LINESPACE MENUBAR NEXT XVT \
-		SJIS SMART TRANSPARENCY XIM XTERM
+		SJIS SMART TRANSPARENCY XIM XTERM DOCS
 
 256_COLOR_DESC=		Build with 256-color support
 BIG5_DESC=		Build with BIG5 support
@@ -43,7 +45,7 @@ XIM_DESC=		Build with XIM support
 XTERM_DESC=		Build with Xterm scrollbar
 
 OPTIONS_DEFAULT=256_COLOR GB LINESPACE MENUBAR NEXT XVT SMART TRANSPARENCY \
-		XIM XTERM
+		XIM XTERM DOCS
 
 CONFIGURE_ARGS=	--enable-utmp --enable-lastlog \
 		--with-xpm --enable-xpm-background --enable-shared \
@@ -85,6 +87,10 @@ XTERM_CONFIGURE_ON=	--enable-xterm-scroll
 post-patch:
 	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \
 		${WRKSRC}/src/ptytty.c
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}/
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xvt; \
