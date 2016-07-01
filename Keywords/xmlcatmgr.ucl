@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 actions: [file]
-arguments: true
 post-install: <<EOD
   case "%@" in
   /*) cat="%@" ;;
