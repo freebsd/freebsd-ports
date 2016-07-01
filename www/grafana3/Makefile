@@ -3,6 +3,7 @@
 PORTNAME=	grafana3
 PORTVERSION=	3.0.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	john@pcbsd.org
@@ -230,6 +231,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/grafana/grafana/bin/grafana-server \
 		${STAGEDIR}${PREFIX}/bin/grafana-server
+	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/grafana/grafana/bin/grafana-cli \
+		${STAGEDIR}${PREFIX}/bin/grafana-cli
 	cd ${WRKSRC}/src/github.com/grafana/grafana && \
 		${COPYTREE_SHARE} public ${STAGEDIR}${PREFIX}/share/grafana
 	cd ${WRKSRC}/src/github.com/grafana/grafana && \
