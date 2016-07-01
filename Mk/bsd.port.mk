@@ -1081,21 +1081,24 @@ IGNORE= Cross building can only be done when using bmake(1) as make(1)
 HOSTCC:=        ${CC}
 HOSTCXX:=       ${CXX}
 .endif
-X_SYSROOT=      /usr/root/${X_BUILD_FOR}_ap
+X_SYSROOT=      /usr/root/mips_ap
+DESTDIR=        ${X_SYSROOT}
+CHROOTED=       no
+#PREFIX=                /
+NO_PKG_REGISTER=1
+PKG_DBDIR=      ${X_SYSROOT}/var/db/pkg
+PORT_DBDIR=     ${X_SYSROOT}/var/db/ports
 TRIPLE=         ${X_BUILD_FOR}-portbld-freebsd${OSREL}
 CC=             ${LOCALBASE}/bin/${TRIPLE}-gcc
 CXX=            ${LOCALBASE}/bin/${TRIPLE}-g++
-CPP=            ${LOCALBASE}/bin/${TRIPLE}-cpp
+#CPP=           ${LOCALBASE}/bin/${TRIPLE}-cpp
 NM=             ${X_BUILD_FOR}-freebsd-nm
 STRIP_CMD=      ${X_BUILD_FOR}-freebsd-strip
 # only bmake support the below
 STRIPBIN=       ${STRIP_CMD}
 .export.env STRIPBIN
-#STAGEDIR=      ${X_SYSROOT}
-DESTDIR=        ${X_SYSROOT}
-CHROOTED=       no
-NO_PKG_REGISTER=yes
 .endif
+
 
 
 #
@@ -1561,15 +1564,17 @@ MAKE_ENV+=              NM=${NM} \
                                 STRIPBIN=${X_BUILD_FOR}-freebsd-strip \
                                 PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
 CONFIGURE_ENV+= LD="${X_BUILD_FOR}-freebsd-ld" STRIP="${X_BUILD_FOR}-freebsd-strip" PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
-INCS=          -I=/usr/include
+INCS=          -I=/usr/include -I=/usr/local/include
 CPU_ARGS=       -march=mips32 -msoft-float -Wa,-msoft-float
-CFLAGS+=        --sysroot=${X_SYSROOT} ${CPU_ARGS} -O
-CXXFLAGS+= --sysroot=${X_SYSROOT} ${CPU_ARGS} -O
-CPPFLAGS+= ${INCS}
-LDFLAGS+=       -Wl,--gc-sections
+CFLAGS+=        --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
+CXXFLAGS+= --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
+LDFLAGS+=  --sysroot=${X_SYSROOT}     -Wl,--gc-sections
+LDFLAGS+=        -L${X_SYSROOT}/lib -L${X_SYSROOT}/usr/lib -L${X_SYSROOT}${LOCALBASE}/lib
 LATE_INSTALL_ARGS+=     STRIPBIN=${X_BUILD_FOR}-freebsd-strip
 INSTALL_PROGRAM_ENV=    STRIPPROG=${STRIP_CMD}
+LIB_DIRS=       ${X_SYSROOT}/lib ${X_SYSROOT}/usr/lib ${X_SYSROOT}${LOCALBASE}/lib
 .endif
+
 
 
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
