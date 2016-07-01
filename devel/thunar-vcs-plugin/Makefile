@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunar-vcs-plugin
-PORTVERSION=	0.1.4
-PORTREVISION=	13
+PORTVERSION=	0.1.5
 CATEGORIES=	devel xfce
 MASTER_SITES=	XFCE/src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -15,9 +14,9 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	thunar
 INSTALLS_ICONS=	yes
-USES=		pkgconfig gmake libtool gettext-tools xfce tar:bzip2
-
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		gettext-tools gmake libtool localbase pkgconfig tar:bzip2 \
+		xfce
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NLS GIT SVN
 OPTIONS_DEFAULT=	SVN
