@@ -1,4 +1,5 @@
-xvt - an xterm replacement supporting color, transparency, and more, with less!
+xvt - an xterm replacement, supporting color, transparency, and more,
+with less!
 
 xvt, simply continues on the original authors work -- John Bovey, University
 of Kent at Canterbury. With few exceptions, it does everything Xterm does.
