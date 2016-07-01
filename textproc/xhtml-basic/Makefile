@@ -28,8 +28,7 @@ PORTDATA=	xhtml-basic10-model-1.mod \
 		xhtml-basic10.dtd \
 		xml1.dcl
 
-PLIST_FILES+=	%%DATADIR%%/catalog.xml \
-		"@xmlcatmgr %%DATADIR%%/catalog.xml"
+PLIST_FILES+=	"@xmlcatmgr %%DATADIR%%/catalog.xml"
 
 PORTDOCS=	Overview.html \
 		W3C-REC.css \
