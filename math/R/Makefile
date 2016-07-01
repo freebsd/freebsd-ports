@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	R
-PORTVERSION=	3.3.0
-PORTREVISION=	2
+PORTVERSION=	3.3.1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		ftp://cran.r-project.org/pub/R/%SUBDIR%/ \
@@ -28,7 +27,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=		${LOCALBASE}/bin/gsed:textproc/gsed \
 			texi2dvi:print/texinfo
-LIB_DEPENDS=		libcurl.so:ftp/curl
+LIB_DEPENDS=		libcurl.so:ftp/curl \
+			libpcre.so:devel/pcre
 
 CONFIGURE_ENV=		LIBR_LDFLAGS="${LDFLAGS}" OBJC="${CC}" \
 			SED="${LOCALBASE}/bin/gsed" \
@@ -74,15 +74,13 @@ CONFIGURE_ARGS=		--enable-memory-profiling rdocdir=${DOCSDIR} \
 			--with-system-bzlib --with-system-zlib
 CONFIGURE_ENV+=		FCFLAGS="${FFLAGS}" \
 			R_LD_LIBRARY_PATH="${R_LD_LIBRARY_PATH}" TAR="${TAR}"
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE+=	ICU PCRE_PORT THREADS
+OPTIONS_DEFINE+=	ICU THREADS
 
 ICU_DESC=		Use ICU for collation in multibyte locales
-PCRE_PORT_DESC=		Use devel/pcre instead of the bundled PCRE
 
-OPTIONS_DEFAULT+=	ICU PCRE_PORT THREADS
+OPTIONS_DEFAULT+=	ICU THREADS
+
 .if !defined(LIBR_SLAVEPORT)
 RUN_DEPENDS+=		${LOCALBASE}/bin/gsed:textproc/gsed
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
@@ -177,13 +175,6 @@ PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPCRE_PORT}
-LIB_DEPENDS+=		libpcre.so:devel/pcre
-CONFIGURE_ARGS+=	--with-system-pcre
-.else
-CONFIGURE_ARGS+=	--without-system-pcre
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -389,6 +380,8 @@ post-install:
 		${INSTALL_DATA} $${infofile}.info* ${STAGEDIR}${PREFIX}/${INFO_PATH}/; \
 	done)
 .endif
+
+	${FIND} ${STAGEDIR}${PREFIX}/lib/ -name "*.so" | ${XARGS} ${STRIP_CMD}
 
 .endif # LIBR_SLAVEPORT
 .else # !LIBRMATH_SLAVEPORT
