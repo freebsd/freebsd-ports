@@ -3,7 +3,7 @@
 
 PORTNAME=	xhtml-basic
 PORTVERSION=	1.0.${RECDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/TR/2000/REC-${PORTNAME}-${RECDATE}/
 DISTNAME=	${PORTNAME}
@@ -28,7 +28,8 @@ PORTDATA=	xhtml-basic10-model-1.mod \
 		xhtml-basic10.dtd \
 		xml1.dcl
 
-PLIST_FILES+=	%%DATADIR%%/catalog.xml
+PLIST_FILES+=	%%DATADIR%%/catalog.xml \
+		"@xmlcatmgr %%DATADIR%%/catalog.xml"
 
 PORTDOCS=	Overview.html \
 		W3C-REC.css \
