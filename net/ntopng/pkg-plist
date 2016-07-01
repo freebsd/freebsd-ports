@@ -209,6 +209,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/js/pie-chart.js
 %%DATADIR%%/httpdocs/js/prettify.js
 %%DATADIR%%/httpdocs/js/rickshaw.js
+%%DATADIR%%/httpdocs/js/ripe_widget_api.js
 %%DATADIR%%/httpdocs/js/sankey.js
 %%DATADIR%%/httpdocs/js/sequence_sunburst.js
 %%DATADIR%%/httpdocs/js/springy-ntop.js
@@ -306,6 +307,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/iface_local_stats.lua
 %%DATADIR%%/scripts/lua/iface_ndpi_stats.lua
 %%DATADIR%%/scripts/lua/iface_ports_list.lua
+%%DATADIR%%/scripts/lua/iface_tcp_stats.lua
 %%DATADIR%%/scripts/lua/inc/add_user_dialog.lua
 %%DATADIR%%/scripts/lua/inc/change_user_password_form.lua
 %%DATADIR%%/scripts/lua/inc/delete_user_dialog.lua
@@ -357,7 +359,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/protocols/dns_aggregations.lua
 %%DATADIR%%/scripts/lua/protocols/epp_aggregations.lua
 %%DATADIR%%/scripts/lua/resolve_address.lua
-%%DATADIR%%/scripts/lua/set_active_interface.lua
+%%DATADIR%%/scripts/lua/runtime.lua
 %%DATADIR%%/scripts/lua/set_if_prefs.lua
 %%DATADIR%%/scripts/lua/sflow_tree.lua
 %%DATADIR%%/scripts/lua/sflows_stats.lua
