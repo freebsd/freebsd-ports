@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-gui
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt devel
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile-client
-GH_TAGNAME=	1a63e1f
 
 USES=		compiler:c++11-lang cmake gettext pkgconfig shebangfix
 SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \
