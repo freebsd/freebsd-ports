@@ -3,7 +3,7 @@
 
 PORTNAME=	vuxml
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security textproc
 MASTER_SITES=	http://www.vuxml.org/dtd/vuxml-1/
 DISTFILES=	vuxml-10.dtd  vuxml-model-10.mod \
@@ -17,6 +17,7 @@ COMMENT=	Vulnerability and eXposure Markup Language DTD
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr \
+		xsltproc:textproc/libxslt \
 		${LOCALBASE}/share/xml/dtd/xhtml-modularization/VERSION:textproc/xhtml-modularization \
 		${LOCALBASE}/share/xml/dtd/xhtml-basic/xhtml-basic10.dtd:textproc/xhtml-basic
 
