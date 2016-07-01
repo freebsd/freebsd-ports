@@ -3,7 +3,7 @@
 PORTNAME=	nomad
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	john@pcbsd.org
@@ -23,10 +23,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp:DEFAULT kardianos:govendor mitchellh:gox \
 	golang:tools axw:gocov matm:gocov_html ugorji:go
 
-GH_PROJECT=	nomad govendor:govendor gox:gox tools:tools gocov:gocov \
+GH_PROJECT=	nomad:nomad govendor:govendor gox:gox tools:tools gocov:gocov \
 	gocov-html:gocov_html go:go
 
-GH_TAGNAME=	3bbf3a5 fa2e272:govendor 54b6194:gox c887be1:tools \
+GH_TAGNAME=	v0.4.0:nomad 36255b7:govendor  6e9ee79:gox  0d2bde8:tools \
 	f5b2b5c:gocov b729399:gocov_html b94837a:go
 
 USE_RC_SUBR= nomad
