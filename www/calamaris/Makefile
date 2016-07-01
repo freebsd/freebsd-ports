@@ -3,7 +3,7 @@
 
 PORTNAME=	calamaris
 PORTVERSION=	2.59
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www textproc
 MASTER_SITES=	http://cord.de/files/calamaris/
 

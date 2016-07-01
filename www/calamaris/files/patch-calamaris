@@ -1,5 +1,14 @@
---- calamaris.orig	2013-03-11 16:52:12.000000000 +0400
-+++ calamaris	2013-03-11 16:52:45.000000000 +0400
+--- calamaris.orig	2016-07-01 12:14:22.630107000 +0300
++++ calamaris	2016-07-01 12:14:58.852151000 +0300
+@@ -1728,7 +1728,7 @@
+       $hier++;
+       $hier_size += $log_size;
+       $hier_time += $log_reqtime;
+-      if ( $log_hier_method =~ m#DIRECT|SOURCE_FASTEST#o ) {
++      if ( $log_hier_method =~ m#ORIGINAL_DST|DIRECT|SOURCE_FASTEST#o ) {
+ 	$hier_direct++;
+ 	$hier_direct_size += $log_size;
+ 	$hier_direct_time += $log_reqtime;';
 @@ -2606,7 +2606,7 @@
  	    100, 100 * $tcp_hit / $tcp );
    }
