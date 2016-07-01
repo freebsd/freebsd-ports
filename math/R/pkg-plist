@@ -772,6 +772,7 @@ lib/R/library/mgcv/libs/mgcv.so
 lib/R/library/nlme/CITATION
 lib/R/library/nlme/DESCRIPTION
 lib/R/library/nlme/INDEX
+lib/R/library/nlme/LICENCE
 lib/R/library/nlme/Meta/Rd.rds
 lib/R/library/nlme/Meta/data.rds
 lib/R/library/nlme/Meta/hsearch.rds
@@ -813,6 +814,7 @@ lib/R/library/nlme/scripts/ch04.R
 lib/R/library/nlme/scripts/ch05.R
 lib/R/library/nlme/scripts/ch06.R
 lib/R/library/nlme/scripts/ch08.R
+lib/R/library/nlme/scripts/runme.R
 lib/R/library/nlme/scripts/sims.rda
 lib/R/library/nnet/CITATION
 lib/R/library/nnet/DESCRIPTION
