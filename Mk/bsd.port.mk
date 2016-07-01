@@ -1081,24 +1081,25 @@ IGNORE= Cross building can only be done when using bmake(1) as make(1)
 HOSTCC:=        ${CC}
 HOSTCXX:=       ${CXX}
 .endif
-X_SYSROOT=      /usr/root/mips_ap
-DESTDIR=        ${X_SYSROOT}
+DESTDIR=        /usr/root/${X_BUILD_FOR}_ap
+PREFIX=         ${DESTDIR}
+X_SYSROOT=      ${PREFIX}
 CHROOTED=       no
-#PREFIX=                /
-NO_PKG_REGISTER=1
+#NO_PKG_REGISTER=1
 PKG_DBDIR=      ${X_SYSROOT}/var/db/pkg
 PORT_DBDIR=     ${X_SYSROOT}/var/db/ports
 TRIPLE=         ${X_BUILD_FOR}-portbld-freebsd${OSREL}
 CC=             ${LOCALBASE}/bin/${TRIPLE}-gcc
 CXX=            ${LOCALBASE}/bin/${TRIPLE}-g++
-#CPP=           ${LOCALBASE}/bin/${TRIPLE}-cpp
+CPP=            ${LOCALBASE}/bin/${TRIPLE}-cpp
 NM=             ${X_BUILD_FOR}-freebsd-nm
+AR=             ${X_BUILD_FOR}=freebsd=ar
 STRIP_CMD=      ${X_BUILD_FOR}-freebsd-strip
 # only bmake support the below
 STRIPBIN=       ${STRIP_CMD}
 .export.env STRIPBIN
+LIB_DIRS+=       ${X_SYSROOT}/lib ${X_SYSROOT}/usr/lib ${X_SYSROOT}${LOCALBASE}/lib
 .endif
-
 
 
 #
@@ -1561,19 +1562,23 @@ CO_ENV+=		STAGEDIR=${STAGEDIR} \
 BUILD_DEPENDS+= ${X_BUILD_FOR}-portbld-freebsd${OSREL}-gcc:devel/${X_BUILD_FOR}-gcc
 PKG_ENV+=               ABI_FILE=${X_SYSROOT}/usr/lib/crt1.o
 MAKE_ENV+=              NM=${NM} \
-                                STRIPBIN=${X_BUILD_FOR}-freebsd-strip \
-                                PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
-CONFIGURE_ENV+= LD="${X_BUILD_FOR}-freebsd-ld" STRIP="${X_BUILD_FOR}-freebsd-strip" PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
+                        AR=${AR} \
+                        STRIPBIN=${X_BUILD_FOR}-freebsd-strip \
+                        PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
+CONFIGURE_ENV+= LD="${X_BUILD_FOR}-freebsd-ld" STRIP="${X_BUILD_FOR}-freebsd-strip" PKG_
+CONFIG_SYSROOT_DIR="${X_SYSROOT}"
 INCS=          -I=/usr/include -I=/usr/local/include
 CPU_ARGS=       -march=mips32 -msoft-float -Wa,-msoft-float
 CFLAGS+=        --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
 CXXFLAGS+= --sysroot=${X_SYSROOT} ${CPU_ARGS} ${INCS} -O
-LDFLAGS+=  --sysroot=${X_SYSROOT}     -Wl,--gc-sections
-LDFLAGS+=        -L${X_SYSROOT}/lib -L${X_SYSROOT}/usr/lib -L${X_SYSROOT}${LOCALBASE}/lib
+CPPFLAGS+=      --sysroot=${X_SYSROOT} ${INCS}
+LDFLAGS+=  -Wl,--gc-sections
+LDFLAGS+=       --sysroot=${X_SYSROOT}   -L${X_SYSROOT}/lib -L${X_SYSROOT}/usr/lib -L${X
+_SYSROOT}${LOCALBASE}/lib
 LATE_INSTALL_ARGS+=     STRIPBIN=${X_BUILD_FOR}-freebsd-strip
 INSTALL_PROGRAM_ENV=    STRIPPROG=${STRIP_CMD}
-LIB_DIRS=       ${X_SYSROOT}/lib ${X_SYSROOT}/usr/lib ${X_SYSROOT}${LOCALBASE}/lib
 .endif
+
 
 
 
@@ -2605,7 +2610,7 @@ GNU_CONFIGURE_MANPREFIX?=	${MANPREFIX}
 CONFIG_SITE?=		${PORTSDIR}/Templates/config.site
 CONFIGURE_ARGS+=	--prefix=${GNU_CONFIGURE_PREFIX} $${_LATE_CONFIGURE_ARGS}
 .if defined(X_BUILD_FOR)
-CONFIGURE_ARGS+=	--host=${X_BUILD_FOR}-portbld-freebsd
+CONFIGURE_ARGS+=	--host=${X_BUILD_FOR}-portbld-freebsd --with-sysroot=${X_SYSROOT}
 .endif
 CONFIGURE_ENV+=		CONFIG_SITE=${CONFIG_SITE} lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
