@@ -39,6 +39,7 @@ lib/rustlib/components
 lib/rustlib/etc/debugger_pretty_printers_common.py
 lib/rustlib/etc/gdb_load_rust_pretty_printers.py
 lib/rustlib/etc/gdb_rust_pretty_printing.py
+%%PORTDOCS%%lib/rustlib/manifest-rust-docs
 lib/rustlib/manifest-rust-std-%%RUST_TARGET%%
 lib/rustlib/manifest-rustc
 lib/rustlib/rust-installer-version
@@ -93,7 +94,3 @@ lib/rustlib/%%RUST_TARGET%%/lib/libtest-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libtest-%%RUST_VSN_HASH%%.so
 man/man1/rustc.1.gz
 man/man1/rustdoc.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE-APACHE
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE-MIT
-%%PORTDOCS%%%%DOCSDIR%%/README.md
