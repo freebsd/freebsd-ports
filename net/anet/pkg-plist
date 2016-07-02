@@ -1,6 +1,8 @@
 include/anet/anet-byte_swapping.adb
 include/anet/anet-byte_swapping.ads
 include/anet/anet-constants.ads
+include/anet/anet-errno.adb
+include/anet/anet-errno.ads
 include/anet/anet-ipv4.adb
 include/anet/anet-ipv4.ads
 include/anet/anet-net_ifaces.adb
@@ -45,6 +47,7 @@ include/anet/anet.adb
 include/anet/anet.ads
 lib/anet/anet-byte_swapping.ali
 lib/anet/anet-constants.ali
+lib/anet/anet-errno.ali
 lib/anet/anet-ipv4.ali
 lib/anet/anet-net_ifaces.ali
 lib/anet/anet-os.ali
