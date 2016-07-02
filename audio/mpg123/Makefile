@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpg123
-PORTVERSION=	1.23.5
+PORTVERSION=	1.23.6
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
