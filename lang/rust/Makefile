@@ -3,6 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap \
@@ -60,19 +61,22 @@ PLIST_SUB+=	RUST_TARGET=${RUST_TARGET}
 
 USES=		compiler gmake libedit python:2,build
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-valgrind --disable-docs \
+CONFIGURE_ARGS=	--disable-valgrind \
 		${CHOSEN_COMPILER_TYPE:Mclang:C/.+/--enable-&/} \
 		--mandir=${MANPREFIX}/man \
 		--release-channel=${RUST_CHANNEL}
+
+PORTDOCS=	*
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 MAKE_ARGS+=	VERBOSE=1
 .endif
 
-OPTIONS_DEFINE=		GDB LLNEXTGEN PORT_LLVM
+OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN PORT_LLVM
 GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
 LLNEXTGEN_DESC=		Build with grammar verification
 
+DOCS_CONFIGURE_ENABLE=	docs
 GDB_RUN_DEPENDS=		${LOCALBASE}/bin/gdb:devel/gdb
 LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:devel/llnextgen
 
@@ -141,6 +145,16 @@ pre-install:
 		${STAGEDIR}${PREFIX}/lib/rustlib/rust-installer-version \
 		${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 
+pre-install-DOCS-on:
+	@for f in manifest-rust-docs; do \
+	    if test -f ${STAGEDIR}${PREFIX}/lib/rustlib/$$f; then \
+		${SED} -E -e 's,^(dir|file:),${STAGEDIR},' \
+		< ${STAGEDIR}${PREFIX}/lib/rustlib/$$f \
+		| ${XARGS} ${RM}; \
+	    fi; \
+	done
+	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rust-docs
+
 post-install:
 	@for f in manifest-rustc manifest-rust-std-${RUST_TARGET}; do \
 		${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
@@ -155,5 +169,13 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/rustdoc \
 		${STAGEDIR}${PREFIX}/lib/*.so \
 		${STAGEDIR}${PREFIX}/lib/rustlib/*/lib/*.so
+
+post-install-DOCS-on:
+	@for f in manifest-rust-docs; do \
+		${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
+			${STAGEDIR}${PREFIX}/lib/rustlib/$$f; \
+		${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/$$f.bak; \
+	done
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/rust/html/extra
 
 .include <bsd.port.mk>
