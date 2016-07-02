@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	setproctitle
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,9 +21,11 @@ PORTDOCS=	COPYRIGHT HISTORY.rst README.rst
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/setproctitle.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/setproctitle.so
 
 do-test:
 	@cd ${WRKSRC}/tests && ${PYTHON_CMD} ${WRKSRC}/tests/setproctitle_test.py
