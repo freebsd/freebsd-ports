@@ -2,6 +2,6 @@
 Note that we now install a few more files in %%PREFIX%%/share/mercurial:
 - shell completion scripts (bash, tcsh and zsh)
 - CGI / WSGI scripts for web access to repositories
-  see http://mercurial.selenic.com/wiki/PublishingRepositories
+  see http://www.mercurial-scm.org/wiki/PublishingRepositories
 - various documentation files
 ====
