@@ -19,19 +19,18 @@ SUB_FILES=	pkg-message thttpd.conf.sample
 SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 CPE_VENDOR=	acme
 
-OPTIONS_DEFINE=	SENDFILE IPREAL INDEXES HTACCESS
-OPTIONS_DEFAULT=	SENDFILE IPREAL
+OPTIONS_DEFINE=	SENDFILE IPREAL INDEXES HTACCESS STATS
+OPTIONS_DEFAULT=	SENDFILE IPREAL STATS
 
 SENDFILE_DESC=	Use sendfile(2) to serve files
 IPREAL_DESC=	Respect (pass on) "X-Forwarded-For" header
 INDEXES_DESC=	Generate index pages for directories
 HTACCESS_DESC=	IP-based authorization (.htaccess) support
+STATS_DESC=	Collect internal stats and print to system log
 
 SENDFILE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-config.h
 IPREAL_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ip_real
 HTACCESS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-htaccess
-
-.include <bsd.port.options.mk>
 
 post-patch:
 # To avoid conflict with other ports that also install htpasswd(1)
@@ -40,10 +39,14 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's|/var/www|${WWWDIR}|' \
 		${WRKSRC}/extras/makeweb.1
-.if ! ${PORT_OPTIONS:MINDEXES}
+
+post-patch-INDEXES-off:
 	@${REINPLACE_CMD} -e '/GENERATE_INDEXES/s|.*|/* & */|' \
 		${WRKSRC}/config.h
-.endif
+
+post-patch-STATS-off:
+	@${REINPLACE_CMD} -e '/STATS_TIME/s|.*|/* & */|' \
+		${WRKSRC}/config.h
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/thttpd.conf.sample ${STAGEDIR}${PREFIX}/etc
