@@ -1,5 +1,5 @@
-TIMESTAMP = 1463242475
-SHA256 (BitTorrent-Sync_freebsd_i386.tar.gz) = b2cfc7a741f732c6210b88dc0d21640453821212a38b7fd9ef2d5174c3e66543
-SIZE (BitTorrent-Sync_freebsd_i386.tar.gz) = 5714346
-SHA256 (BitTorrent-Sync_freebsd_x64.tar.gz) = 50263101a7ada661e49fbaceb29b8dceebfd84adcbb2ba2fcc4e5b2b62b2de67
-SIZE (BitTorrent-Sync_freebsd_x64.tar.gz) = 5878898
+TIMESTAMP = 1466844210
+SHA256 (BitTorrent-Sync_freebsd_i386.tar.gz) = 103ba012acd4af2365243f10f2fa8a2bdc551b47ac326b00a71624a0289c73fc
+SIZE (BitTorrent-Sync_freebsd_i386.tar.gz) = 5714805
+SHA256 (BitTorrent-Sync_freebsd_x64.tar.gz) = fa0312f6616eb29ac9daa4b436ffda3dda3790d03f57008271963c63006060f6
+SIZE (BitTorrent-Sync_freebsd_x64.tar.gz) = 5879165
