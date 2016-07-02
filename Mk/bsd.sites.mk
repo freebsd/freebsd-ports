@@ -478,6 +478,7 @@ MASTER_SITE_GENTOO+= \
 	http://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
 	http://gentoo.gg3.net/%SUBDIR%/ \
 	http://gentoo.kems.net/%SUBDIR%/ \
+	http://mirrors.163.com/gentoo/%SUBDIR%/ \
 	ftp://ftp.gtlib.gatech.edu/pub/gentoo/%SUBDIR%/ \
 	ftp://mirror.iawnet.sandia.gov/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.ussg.iu.edu/pub/linux/gentoo/%SUBDIR%/ \
@@ -622,7 +623,7 @@ GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
 # Github silently converts tags starting with v to not have v in the filename
 # and extraction directory.  It also replaces + with -.
 GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g}
-.  endif 
+.  endif
 .  if defined(_GITHUB_MUST_SET_DISTNAME)
 # GH_TAGNAME defaults to DISTVERSIONFULL; Avoid adding DISTVERSIONFULL in twice
 .    if ${GH_TAGNAME} != ${DISTVERSIONFULL}
