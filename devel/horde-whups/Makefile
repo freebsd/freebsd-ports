@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	whups
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	horde-
 
