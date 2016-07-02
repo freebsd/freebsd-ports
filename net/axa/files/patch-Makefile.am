@@ -1,0 +1,12 @@
+--- Makefile.am.orig	2016-06-29 19:21:44 UTC
++++ Makefile.am
+@@ -88,8 +88,7 @@ nobase_include_HEADERS = \
+ 	axa/socket.h \
+ 	axa/strbuf.h \
+ 	axa/trie.h \
+-	axa/wire.h \
+-	libmy/b64_encode.h
++	axa/wire.h
+ lib_LTLIBRARIES = axa/libaxa.la
+ 
+ axa_libaxa_la_SOURCES = \
