@@ -19,18 +19,21 @@ SUB_FILES=	pkg-message thttpd.conf.sample
 SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 CPE_VENDOR=	acme
 
-OPTIONS_DEFINE=	SENDFILE IPREAL INDEXES HTACCESS STATS
-OPTIONS_DEFAULT=	SENDFILE IPREAL STATS
+OPTIONS_DEFINE=	SENDFILE IPREAL INDEXES HTACCESS STATS LOG_UNKNOWN FLUSH_LOG
+OPTIONS_DEFAULT=	SENDFILE IPREAL STATS FLUSH_LOG
 
 SENDFILE_DESC=	Use sendfile(2) to serve files
 IPREAL_DESC=	Respect (pass on) "X-Forwarded-For" header
 INDEXES_DESC=	Generate index pages for directories
 HTACCESS_DESC=	IP-based authorization (.htaccess) support
 STATS_DESC=	Collect internal stats and print to system log
+LOG_UNKNOWN_DESC=	Log unknown request headers
+FLUSH_LOG_DESC=	fflush() the log file after each request
 
 SENDFILE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-config.h
 IPREAL_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ip_real
 HTACCESS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-htaccess
+LOG_UNKNOWN_EXTRA_PATCHES=	${FILESDIR}/extra-patch-log_unknown_headers
 
 post-patch:
 # To avoid conflict with other ports that also install htpasswd(1)
@@ -46,6 +49,10 @@ post-patch-INDEXES-off:
 
 post-patch-STATS-off:
 	@${REINPLACE_CMD} -e '/STATS_TIME/s|.*|/* & */|' \
+		${WRKSRC}/config.h
+
+post-patch-FLUSH_LOG-off:
+	@${REINPLACE_CMD} -e '/FLUSH_LOG_EVERY_TIME/s|.*|/* & */|' \
 		${WRKSRC}/config.h
 
 post-install:
