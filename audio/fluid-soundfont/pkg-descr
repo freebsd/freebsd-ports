@@ -1,0 +1,8 @@
+This is a Fluid (R3) General MIDI soundfonts, for use with any modern MIDI
+synthesizer: hardware (like the EMU10K1 sound card), or software (like e.g.
+FluidSynth).
+
+This package provides both the larger GM sound set and smaller GS sound set
+of Roland Sound Canvas extensions.
+
+WWW: https://musescore.org/en/handbook/soundfont
