@@ -163,6 +163,7 @@
     SUBDIR += flacon
     SUBDIR += flake
     SUBDIR += flite
+    SUBDIR += fluid-soundfont
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmit
