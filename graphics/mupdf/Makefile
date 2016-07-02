@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjbig2dec.so:graphics/jbig2dec \
 		libopenjp2.so:graphics/openjpeg
 
-CFLAGS+=	-I${WRKSRC}/include/mupdf -I${LOCALBASE}/include
+CFLAGS+=	-I${WRKSRC}/include/mupdf
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
 USES=		cpe compiler:c++11-lang gmake jpeg pkgconfig
