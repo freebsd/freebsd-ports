@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slade
-PORTVERSION=	3.1.1.1
+PORTVERSION=	3.1.1.2
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -29,16 +29,12 @@ OPTIONS_DEFINE=	FLUIDSYNTH
 OPTIONS_DEFAULT=	FLUIDSYNTH
 
 FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
+FLUIDSYNTH_RUN_DEPENDS=	${LOCALBASE}/share/sounds/sf2/FluidR3_GM.sf2:audio/fluid-soundfont
 FLUIDSYNTH_CMAKE_OFF=	-DNO_FLUIDSYNTH:BOOL=ON
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,"alsa","oss",' \
-		${WRKSRC}/src/Audio/MIDIPlayer.cpp
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}3
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pk3 \
-		${STAGEDIR}${PREFIX}/share/${PORTNAME}3
+	@${REINPLACE_CMD} -e 's,"alsa","oss", ; \
+		/share\/sounds\/sf2/s,/usr,${LOCALBASE},g' \
+			${WRKSRC}/src/Audio/MIDIPlayer.cpp
 
 .include <bsd.port.mk>
