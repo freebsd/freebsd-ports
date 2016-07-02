@@ -45,7 +45,7 @@ include/libosinfo-1.0/osinfo/osinfo_version.h
 lib/girepository-1.0/Libosinfo-1.0.typelib
 lib/libosinfo-1.0.so
 lib/libosinfo-1.0.so.0
-lib/libosinfo-1.0.so.0.3.0
+lib/libosinfo-1.0.so.0.3.1
 libdata/pkgconfig/libosinfo-1.0.pc
 man/man1/osinfo-db-validate.1.gz
 man/man1/osinfo-detect.1.gz
@@ -150,6 +150,8 @@ share/gtk-doc/html/Libosinfo/up.png
 %%DATADIR%%/db/install-script/microsoft.com/windows-sif-jeos.xml
 %%DATADIR%%/db/install-script/microsoft.com/windows-unattend-desktop.xml
 %%DATADIR%%/db/install-script/microsoft.com/windows-unattend-jeos.xml
+%%DATADIR%%/db/install-script/opensuse.org/opensuse-autoyast-desktop.xml
+%%DATADIR%%/db/install-script/opensuse.org/opensuse-autoyast-jeos.xml
 %%DATADIR%%/db/install-script/redhat.com/rhel-kickstart-desktop.xml
 %%DATADIR%%/db/install-script/redhat.com/rhel-kickstart-jeos.xml
 %%DATADIR%%/db/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
@@ -193,6 +195,7 @@ share/gtk-doc/html/Libosinfo/up.png
 %%DATADIR%%/db/os/debian.org/debian-6.xml
 %%DATADIR%%/db/os/debian.org/debian-7.xml
 %%DATADIR%%/db/os/debian.org/debian-8.xml
+%%DATADIR%%/db/os/debian.org/debian-testing.xml
 %%DATADIR%%/db/os/fedoraproject.org/fedora-1.xml
 %%DATADIR%%/db/os/fedoraproject.org/fedora-10.xml
 %%DATADIR%%/db/os/fedoraproject.org/fedora-11.xml
@@ -220,6 +223,8 @@ share/gtk-doc/html/Libosinfo/up.png
 %%DATADIR%%/db/os/freebsd.org/freebsd-1.0.xml
 %%DATADIR%%/db/os/freebsd.org/freebsd-10.0.xml
 %%DATADIR%%/db/os/freebsd.org/freebsd-10.1.xml
+%%DATADIR%%/db/os/freebsd.org/freebsd-10.2.xml
+%%DATADIR%%/db/os/freebsd.org/freebsd-10.3.xml
 %%DATADIR%%/db/os/freebsd.org/freebsd-2.0.5.xml
 %%DATADIR%%/db/os/freebsd.org/freebsd-2.0.xml
 %%DATADIR%%/db/os/freebsd.org/freebsd-2.2.8.xml
@@ -372,7 +377,9 @@ share/gtk-doc/html/Libosinfo/up.png
 %%DATADIR%%/db/os/opensuse.org/opensuse-12.3.xml
 %%DATADIR%%/db/os/opensuse.org/opensuse-13.1.xml
 %%DATADIR%%/db/os/opensuse.org/opensuse-13.2.xml
+%%DATADIR%%/db/os/opensuse.org/opensuse-42.1.xml
 %%DATADIR%%/db/os/opensuse.org/opensuse-factory.xml
+%%DATADIR%%/db/os/opensuse.org/opensuse-tumbleweed.xml
 %%DATADIR%%/db/os/opensuse.org/opensuse-unknown.xml
 %%DATADIR%%/db/os/oracle.com/solaris-11.xml
 %%DATADIR%%/db/os/redhat.com/rhel-2.1.1.xml
@@ -423,11 +430,13 @@ share/gtk-doc/html/Libosinfo/up.png
 %%DATADIR%%/db/os/redhat.com/rhel-6.5.xml
 %%DATADIR%%/db/os/redhat.com/rhel-6.6.xml
 %%DATADIR%%/db/os/redhat.com/rhel-6.7.xml
+%%DATADIR%%/db/os/redhat.com/rhel-6.8.xml
 %%DATADIR%%/db/os/redhat.com/rhel-7.0.xml
 %%DATADIR%%/db/os/redhat.com/rhel-7.1.xml
 %%DATADIR%%/db/os/redhat.com/rhel-7.2.xml
 %%DATADIR%%/db/os/redhat.com/rhel-atomic-7.0.xml
 %%DATADIR%%/db/os/redhat.com/rhel-atomic-7.1.xml
+%%DATADIR%%/db/os/redhat.com/rhel-atomic-7.2.xml
 %%DATADIR%%/db/os/redhat.com/rhl-1.0.xml
 %%DATADIR%%/db/os/redhat.com/rhl-1.1.xml
 %%DATADIR%%/db/os/redhat.com/rhl-2.0.xml
@@ -457,6 +466,7 @@ share/gtk-doc/html/Libosinfo/up.png
 %%DATADIR%%/db/os/suse.com/sled-11.3.xml
 %%DATADIR%%/db/os/suse.com/sled-11.4.xml
 %%DATADIR%%/db/os/suse.com/sled-11.xml
+%%DATADIR%%/db/os/suse.com/sled-12.1.xml
 %%DATADIR%%/db/os/suse.com/sled-12.xml
 %%DATADIR%%/db/os/suse.com/sled-9.xml
 %%DATADIR%%/db/os/suse.com/sles-10.xml
@@ -465,6 +475,7 @@ share/gtk-doc/html/Libosinfo/up.png
 %%DATADIR%%/db/os/suse.com/sles-11.3.xml
 %%DATADIR%%/db/os/suse.com/sles-11.4.xml
 %%DATADIR%%/db/os/suse.com/sles-11.xml
+%%DATADIR%%/db/os/suse.com/sles-12.1.xml
 %%DATADIR%%/db/os/suse.com/sles-12.xml
 %%DATADIR%%/db/os/suse.com/sles-9.xml
 %%DATADIR%%/db/os/ubuntu.com/ubuntu-10.04.xml
@@ -479,6 +490,7 @@ share/gtk-doc/html/Libosinfo/up.png
 %%DATADIR%%/db/os/ubuntu.com/ubuntu-14.10.xml
 %%DATADIR%%/db/os/ubuntu.com/ubuntu-15.04.xml
 %%DATADIR%%/db/os/ubuntu.com/ubuntu-15.10.xml
+%%DATADIR%%/db/os/ubuntu.com/ubuntu-16.04.xml
 %%DATADIR%%/db/os/ubuntu.com/ubuntu-4.10.xml
 %%DATADIR%%/db/os/ubuntu.com/ubuntu-5.04.xml
 %%DATADIR%%/db/os/ubuntu.com/ubuntu-5.10.xml
