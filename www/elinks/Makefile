@@ -11,8 +11,7 @@ MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Links text WWW browser with enhancements
 
 GNU_CONFIGURE=	yes
-USES=		bison cpe execinfo gmake localbase tar:bzip2
-USE_OPENSSL=	yes
+USES=		bison cpe execinfo gmake localbase ssl tar:bzip2
 CONFIGURE_ARGS=	--without-zlib
 
 LIBS+=		-lexecinfo
