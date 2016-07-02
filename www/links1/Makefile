@@ -14,7 +14,7 @@ COMMENT=	Lynx-like text WWW browser
 
 GNU_CONFIGURE=	yes
 
-USE_OPENSSL=	yes
+USES=		ssl
 CONFLICTS=	links-2*
 
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
