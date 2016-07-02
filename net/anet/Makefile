@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anet
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libanet-${PORTVERSION}
@@ -22,24 +21,12 @@ MAKE_ARGS+=	NUM_CPUS=${MAKE_JOBS_NUMBER} \
 
 OPTIONS_DEFINE=	TEST DOCS
 TEST_DESC=	Run unit test suite before installation
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == DragonFly && ${ARCH} == i386
-IGNORE=		will not build; atomics are not supported on DF i386
-.endif
-
-.if ${PORT_OPTIONS:MTEST}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
-ALL_TARGET+=	tests
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+= asciidoc:textproc/asciidoc \
-		source-highlight:textproc/source-highlight
-ALL_TARGET+=	doc
-USES+=		gmake
-.endif
+TEST_ALL_TARGET=	tests
+TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
+DOCS_USES=		gmake
+DOCS_ALL_TARGET=	doc
+DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+			source-highlight:textproc/source-highlight
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|dynamic|static|g' \
@@ -58,13 +45,13 @@ do-install:
 		${STAGEDIR}${PREFIX}/include/anet
 	${INSTALL_DATA} ${WRKSRC}/src/*.ad[bs] ${WRKSRC}/src/bsd/*.ad[bs] \
 		${STAGEDIR}${PREFIX}/include/anet
-	${INSTALL_DATA} ${WRKSRC}/lib/static/*.ali \
+	${INSTALL_DATA} ${WRKSRC}/lib/bsd/static/*.ali \
 		${STAGEDIR}${PREFIX}/lib/anet
-	${INSTALL_DATA} ${WRKSRC}/lib/static/*.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/bsd/static/*.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/gnat/anet.gpr ${STAGEDIR}${PREFIX}/lib/gnat
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
