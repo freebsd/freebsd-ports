@@ -8386,3 +8386,4 @@ devel/jenkins2|devel/jenkins|2016-06-30|Has expired: Use devel/jenkins
 www/p5-WWW-Google-Notebook||2016-06-30|Has expired: Google Notebook has shut down
 sysutils/syslog-ng-incubator03||2016-06-30|Has expired: EOL, no longer supported by bababit.hu
 www/node5|www/node|2016-07-01|Has expired: upstream support has ended, use www/node instead
+devel/p5-Test2|devel/p5-Test-Simple|2016-07-02|Has expired: Test2 has been merged into Test-Simple distribution
