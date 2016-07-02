@@ -26,6 +26,7 @@ etc/logrotate.d/libvirtd.lxc
 etc/logrotate.d/libvirtd.qemu
 etc/logrotate.d/libvirtd.uml
 etc/logrotate.d/libvirtd.libxl
+include/libvirt/libvirt-admin.h
 include/libvirt/libvirt-common.h
 include/libvirt/libvirt-domain-snapshot.h
 include/libvirt/libvirt-domain.h
@@ -57,9 +58,10 @@ lib/libvirt.so.0
 lib/libvirt.so.%%SHLIB_VER%%
 %%NSS%%lib/libnss_libvirt.so.1
 %%NSS%%lib/nss_libvirt.so.1
-libdata/pkgconfig/libvirt.pc
+libdata/pkgconfig/libvirt-admin.pc
 libdata/pkgconfig/libvirt-lxc.pc
 libdata/pkgconfig/libvirt-qemu.pc
+libdata/pkgconfig/libvirt.pc
 libexec/libvirt-guests.sh
 libexec/libvirt_iohelper
 libexec/libvirt_leaseshelper
@@ -144,6 +146,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/html/up.png
 %%DOCSDIR%%%%PORTVERSION%%/html/hvsupport.html
 %%DOCSDIR%%%%PORTVERSION%%/html/index.html
+%%DOCSDIR%%%%PORTVERSION%%/html/internals/eventloop.html
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/command.html
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/locking.html
 %%PORTDOCS%%%%DOCSDIR%%%%PORTVERSION%%/html/locking-lockd.html
@@ -225,6 +228,7 @@ share/gtk-doc/html/libvirt/style.css
 share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/cpu_map.xml
 %%DATADIR%%/libvirtLogo.png
+%%DATADIR%%/api/libvirt-admin-api.xml
 %%DATADIR%%/api/libvirt-api.xml
 %%DATADIR%%/api/libvirt-lxc-api.xml
 %%DATADIR%%/api/libvirt-qemu-api.xml
