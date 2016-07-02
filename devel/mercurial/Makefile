@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	3.8.3
+PORTVERSION=	3.8.4
 CATEGORIES=	devel python
-MASTER_SITES=	http://mercurial.selenic.com/release/
+MASTER_SITES=	http://mercurial-scm.org/release/
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, lightweight source control management system
