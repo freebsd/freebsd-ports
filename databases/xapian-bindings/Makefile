@@ -3,6 +3,7 @@
 
 PORTNAME=	xapian-bindings
 PORTVERSION=	1.2.23
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -39,7 +40,7 @@ PYTHON_CONFIGURE_ENV=	PYTHON_LIB=${PYTHON_SITELIBDIR}
 PYTHON_CONFIGURE_WITH=	python
 PYTHON_USES=		python:2
 RUBY_CONFIGURE_WITH=	ruby
-USE_RUBY=		yes
+RUBY_USE=		RUBY=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
