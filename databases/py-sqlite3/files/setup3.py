@@ -37,7 +37,7 @@ try:
 except AttributeError:
     macros.append(('SQLITE_OMIT_LOAD_EXTENSION', '1'))
 
-setup(name = "_sqlite3",
+setup(name = "sqlite3",
       description = "SQLite 3 extension to Python",
 
       ext_modules = [Extension('_sqlite3', sqlite_srcs,
