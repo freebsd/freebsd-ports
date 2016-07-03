@@ -1,15 +1,18 @@
 bin/bsatool
 bin/esmtool
 bin/openmw
+bin/openmw-cs
 bin/openmw-essimporter
 bin/openmw-iniimporter
 bin/openmw-launcher
 bin/openmw-wizard
 %%ETCDIR%%/gamecontrollerdb.txt
+%%ETCDIR%%/openmw-cs.cfg
 %%ETCDIR%%/openmw.cfg
 %%ETCDIR%%/settings-default.cfg
 %%ETCDIR%%/version
 share/appdata/openmw.appdata.xml
+share/applications/openmw-cs.desktop
 share/applications/openmw.desktop
 %%DATADIR%%/resources/defaultfilters
 %%DATADIR%%/resources/mygui/DejaVuLGCSansMono.ttf
@@ -97,9 +100,16 @@ share/applications/openmw.desktop
 %%DATADIR%%/resources/mygui/openmw_wait_dialog_progressbar.layout
 %%DATADIR%%/resources/mygui/openmw_windows.skin.xml
 %%DATADIR%%/resources/mygui/skins.xml
+%%DATADIR%%/resources/shaders/lighting.glsl
+%%DATADIR%%/resources/shaders/objects_fragment.glsl
+%%DATADIR%%/resources/shaders/objects_vertex.glsl
+%%DATADIR%%/resources/shaders/parallax.glsl
+%%DATADIR%%/resources/shaders/terrain_fragment.glsl
+%%DATADIR%%/resources/shaders/terrain_vertex.glsl
 %%DATADIR%%/resources/shaders/water_fragment.glsl
 %%DATADIR%%/resources/shaders/water_nm.png
 %%DATADIR%%/resources/shaders/water_vertex.glsl
 %%DATADIR%%/resources/version
+share/pixmaps/openmw-cs.png
 share/pixmaps/openmw.png
 @dir %%DATADIR%%/data
