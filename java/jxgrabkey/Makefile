@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 
 do-build:
 	${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC}/JXGrabKey/C++	\
-		-f ${FILESDIR}/Makefile.JXGrabKey
+		-f ${FILESDIR}/Makefile.JXGrabKey libJXGrabKey.so
 	cd ${WRKSRC}/JXGrabKey/Java && ${ANT} -verbose jar
 
 do-install:
