@@ -1,0 +1,28 @@
+qca-ossl: Fix build without support for SHA-0 
+https://quickgit.kde.org/?p=qca.git&a=commit&h=0dbed8eb38afd1561907a52283091c37e7b85156
+
+LibreSSL >= 2.3.0 removed support for SHA-0, so there's no EVP_sha 
+anymore. 
+Wikipedia says about SHA-0: "160-bit hash function published in 1993 
+under the name SHA. It was withdrawn shortly after publication due to 
+an undisclosed "significant flaw" and replaced by the slightly revised 
+version SHA-1.' 
+
+REVIEW: 125387 
+
+--- plugins/qca-ossl/CMakeLists.txt.orig
++++ plugins/qca-ossl/CMakeLists.txt
+@@ -24,6 +24,13 @@
+   else(HAVE_OPENSSL_AES_CTR)
+     message(WARNING "qca-ossl will be compiled without AES CTR mode encryption support")
+   endif(HAVE_OPENSSL_AES_CTR)
++
++  check_function_exists(EVP_sha HAVE_OPENSSL_SHA0)
++  if(HAVE_OPENSSL_SHA0)
++    add_definitions(-DHAVE_OPENSSL_SHA0)
++  else(HAVE_OPENSSL_SHA0)
++    message(WARNING "qca-ossl will be compiled without SHA-0 digest algorithm support")
++  endif(HAVE_OPENSSL_SHA0)
+ 
+   set(QCA_OSSL_SOURCES qca-ossl.cpp)
+ 
