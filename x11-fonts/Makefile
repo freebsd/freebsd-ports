@@ -137,6 +137,7 @@
     SUBDIR += mkitalic
     SUBDIR += mondulkiri
     SUBDIR += montecarlo_fonts
+    SUBDIR += montserrat
     SUBDIR += moveable-type-fonts
     SUBDIR += nexfontsel
     SUBDIR += noto
