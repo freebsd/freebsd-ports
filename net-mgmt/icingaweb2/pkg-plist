@@ -2839,6 +2839,8 @@
 %%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Object/MacroTest.php
 %%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataSetTest.php
 %%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php
+%%WWWDIR%%/modules/monitoring/test/php/regression/Bug11728Test.php
+%%WWWDIR%%/modules/monitoring/test/php/regression/Bug11796Test.php
 %%WWWDIR%%/modules/monitoring/test/php/regression/Bug6088Test.php
 %%WWWDIR%%/modules/monitoring/test/php/regression/Bug7043Test.php
 %%WWWDIR%%/modules/setup/application/clicommands/ConfigCommand.php
@@ -3033,6 +3035,7 @@
 %%WWWDIR%%/public/img/logo_icinga.png
 %%WWWDIR%%/public/img/logo_icinga_big.png
 %%WWWDIR%%/public/img/logo_icinga_big_dark.png
+%%WWWDIR%%/public/img/touch-icon.png
 %%WWWDIR%%/public/img/tree/tree-minus.gif
 %%WWWDIR%%/public/img/tree/tree-plus.gif
 %%WWWDIR%%/public/img/winter/logo_icinga_big_winter.png
