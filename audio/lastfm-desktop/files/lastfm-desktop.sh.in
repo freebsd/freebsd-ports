@@ -1,3 +1,2 @@
 #!/bin/sh
-LASTFM='Last.fm Scrobbler'
-LD_LIBRARY_PATH=%%DATADIR%% %%DATADIR%%/"${LASTFM}"
+cd %%DATADIR%% && ./lastfm-scrobbler -stylesheet "Last.fm Scrobbler.css"
