@@ -3,7 +3,6 @@ bin/CrashPlanDesktop
 %%DATADIR%%/bin/CrashPlanEngine
 %%DATADIR%%/bin/restartLinux.sh
 %%DATADIR%%/bin/run.conf
-%%DATADIR%%/bin/uninstall.sh
 %%DATADIR%%/conf/custom_sample.properties
 %%DATADIR%%/conf/default.service.xml
 %%DATADIR%%/conf/service.log.xml
@@ -33,8 +32,11 @@ bin/CrashPlanDesktop
 %%DATADIR%%/lang/txt_th.properties
 %%DATADIR%%/lang/txt_zh.properties
 %%DATADIR%%/lang/txt_zh_TW.properties
+%%DATADIR%%/lib/aopalliance.jar
 %%DATADIR%%/lib/bcpkix-jdk15on.jar
 %%DATADIR%%/lib/bcprov-jdk15on.jar
+%%DATADIR%%/lib/c42-shared-engine.jar
+%%DATADIR%%/lib/c42_protolib_client.jar
 %%DATADIR%%/lib/c42_protolib_shared.jar
 %%DATADIR%%/lib/com.backup42.desktop.jar
 %%DATADIR%%/lib/comfyj-2.10.jar
@@ -49,7 +51,12 @@ bin/CrashPlanDesktop
 %%DATADIR%%/lib/ezmorph.jar
 %%DATADIR%%/lib/gson.jar
 %%DATADIR%%/lib/guava.jar
+%%DATADIR%%/lib/guice.jar
+%%DATADIR%%/lib/guice-multibindings.jar
 %%DATADIR%%/lib/javassist-3.20.0.jar
+%%DATADIR%%/lib/javax.inject.jar
+%%DATADIR%%/lib/javax.servlet-api-jar.jar
+%%DATADIR%%/lib/jcip-annotations-1.0-1.jar
 %%DATADIR%%/lib/jetty-continuation-9.2.9.v20150224.jar
 %%DATADIR%%/lib/jetty-http-9.2.9.v20150224.jar
 %%DATADIR%%/lib/jetty-io-9.2.9.v20150224.jar
@@ -72,7 +79,9 @@ bin/CrashPlanDesktop
 %%DATADIR%%/lib/log4j-iostreams-2.3.jar
 %%DATADIR%%/lib/log4j-jcl-2.1.jar
 %%DATADIR%%/lib/log4j-slf4j-impl.jar
+%%DATADIR%%/lib/metrics-core.jar
 %%DATADIR%%/lib/miglayout15-swt.jar
+%%DATADIR%%/lib/netty-all.jar
 %%DATADIR%%/lib/org.eclipse.core.commands_3.6.1.v20120814-150512.jar
 %%DATADIR%%/lib/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar
 %%DATADIR%%/lib/org.eclipse.jface_3.8.101.v20120817-083647.jar
@@ -81,7 +90,6 @@ bin/CrashPlanDesktop
 %%DATADIR%%/lib/reflections-0.9.10.jar
 %%DATADIR%%/lib/rhino.jar
 %%DATADIR%%/lib/sbbi-upnplib.jar
-%%DATADIR%%/lib/servlet-api-3.1.jar
 %%DATADIR%%/lib/slf4j-api.jar
 %%DATADIR%%/lib/sqlite-jdbc.jar
 %%DATADIR%%/lib/swt-64.jar
@@ -93,10 +101,15 @@ bin/CrashPlanDesktop
 %%DATADIR%%/lib/websocket-common-9.2.9.v20150224.jar
 %%DATADIR%%/lib/websocket-server-9.2.9.v20150224.jar
 %%DATADIR%%/lib/websocket-servlet-9.2.9.v20150224.jar
+%%DATADIR%%/libc42archive.so
+%%DATADIR%%/libc42archive64.so
+%%DATADIR%%/libc42core.so
 %%DATADIR%%/libjniwrap.so
 %%DATADIR%%/libjniwrap64.so
 %%DATADIR%%/libjtux.so
 %%DATADIR%%/libjtux64.so
+%%DATADIR%%/libleveldb.so
+%%DATADIR%%/libleveldb64.so
 %%DATADIR%%/libmd5.so
 %%DATADIR%%/libmd564.so
 %%DATADIR%%/skin/icon_app_128x128.png
@@ -110,7 +123,6 @@ bin/CrashPlanDesktop
 %%DATADIR%%/skin/window_bg.jpg
 %%DATADIR%%/upgrade/start.bat
 %%DATADIR%%/upgrade/start.sh
-%%DATADIR%%/upgrade/startDesktop.bat
 %%DATADIR%%/upgrade/startDesktop.sh
 %%DATADIR%%/upgrade/startDesktopLinux.sh
 %%DATADIR%%/upgrade/startDesktopSolaris.sh
