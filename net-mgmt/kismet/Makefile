@@ -2,17 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	kismet
-DISTVERSION=	2013-03-R1b
-PORTREVISION=	1
+DISTVERSION=	2016-07-R1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.kismetwireless.net/code/:1 \
-		http://anonsvn.wireshark.org/wireshark/trunk/:2
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.kismetwireless.net/code/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 
 LICENSE=	GPLv2
@@ -31,8 +26,7 @@ WRKSRC=	${WRKDIR}/${DISTNAME:S/a$$//}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	README manuf
-DISTFILES+=	manuf:2
+PORTDOCS=	README
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -62,7 +56,7 @@ PLIST_SUB+=	SUID="@comment " SUIDGROUP=""
 .if ${PORT_OPTIONS:MPLUGINS}
 ALL_TARGET=	depend all all-plugins
 INSTALL_TARGET+=	all-plugins-install
-USE_OPENSSL=	yes
+USES+=	ssl
 PLIST_SUB+=	PLUGINS=""
 .else
 PLIST_SUB+=	PLUGINS="@comment "
@@ -88,21 +82,20 @@ post-patch:
 		-e 's,-o $$(INSTUSR) -g $$(SUIDGROUP) -m 4550,,'
 
 post-build:
-	@cd ${WRKSRC}; ${STRIP_CMD} kismet_client kismet_drone kismet_server */*.so
+	cd ${WRKSRC}; ${STRIP_CMD} kismet_client kismet_drone kismet_server */*.so
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manuf ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ruby/* ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/ruby/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
-	@${MV} ${STAGEDIR}${PREFIX}/etc/kismet.conf \
+	${MV} ${STAGEDIR}${PREFIX}/etc/kismet.conf \
 		${STAGEDIR}${PREFIX}/etc/kismet.conf.sample
-	@${MV} ${STAGEDIR}${PREFIX}/etc/kismet_drone.conf \
+	${MV} ${STAGEDIR}${PREFIX}/etc/kismet_drone.conf \
 		${STAGEDIR}${PREFIX}/etc/kismet_drone.conf.sample
 
 .include <bsd.port.mk>
