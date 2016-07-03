@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.26
+PORTVERSION=	2.26.1
 CATEGORIES=	lang
 MASTER_SITES=	SOURCEWARE/binutils/releases
 PKGNAMEPREFIX=	gnatdroid-
