@@ -902,6 +902,7 @@
     SUBDIR += py-service_identity
     SUBDIR += py-signedjson
     SUBDIR += py-slowaes
+    SUBDIR += py-spake2
     SUBDIR += py-ssh
     SUBDIR += py-sslstrip
     SUBDIR += py-stem
