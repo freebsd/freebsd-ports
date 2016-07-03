@@ -15,7 +15,7 @@ LICENSE=	GPLv3+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah
 LIB_DEPENDS=	libgdome.so:textproc/gdome2
 
-USES=		gettext gmake pathfix pkgconfig python
+USES=		gettext gmake pathfix pkgconfig python:2.7
 USE_XORG=	recordproto x11 xext xmu xscrnsaver xtst
 USE_GNOME=	intlhack gconf2 gtkmm24
 GNU_CONFIGURE=	yes
