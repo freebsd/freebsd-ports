@@ -395,6 +395,7 @@
     SUBDIR += xineramaproto
     SUBDIR += xinit
     SUBDIR += xinput
+    SUBDIR += xkb-switch
     SUBDIR += xkbcomp
     SUBDIR += xkbctrl
     SUBDIR += xkbevd
