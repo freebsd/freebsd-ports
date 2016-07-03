@@ -12,7 +12,7 @@ COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki12[356]-[0-9]*
+CONFLICTS=	mediawiki12[3567]-[0-9]*
 
 DEPRECATED=	EOL upstream
 EXPIRATION_DATE=	2016-08-23
