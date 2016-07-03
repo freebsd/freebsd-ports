@@ -2,7 +2,6 @@
 
 PORTNAME=	python27
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -13,14 +12,12 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		cpe ncurses pkgconfig readline tar:xz
+USES=		cpe ncurses pkgconfig readline ssl tar:xz
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
-CPE_VERSION=	${PORTVERSION}
 
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV+=		ac_cv_opt_olimit_ok=no OPT=""				# Null out OPT to respect user CFLAGS and remove optimizations
