@@ -18,8 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 OPTIONS_DEFINE=	DOVECOT DOCS
 DOVECOT_DESC=	Use with dovecot2
 
-USES=		autoreconf tar:bzip2 ncurses pathfix
-USE_OPENSSL=	yes
+USES=		autoreconf tar:bzip2 ncurses pathfix ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
 
