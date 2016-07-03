@@ -1,0 +1,22 @@
+--- restricted-plugin-autowep/Makefile.orig	2016-07-02 18:06:10 UTC
++++ restricted-plugin-autowep/Makefile
+@@ -9,8 +9,8 @@ top_builddir = $(BLDHOME)
+ 
+ PLUGINLDFLAGS += -shared -rdynamic
+ LIBS	+= -lstdc++ 
+-CFLAGS 	+= -I$(KIS_INC_DIR) -g -fPIC
+-CXXFLAGS 	+= -I$(KIS_INC_DIR) -g -fPIC
++CFLAGS 	+= -I$(KIS_INC_DIR) -fPIC
++CXXFLAGS 	+= -I$(KIS_INC_DIR) -fPIC
+ 
+ PLUGOBJS = autowep-kismet.o
+ PLUGOUT = autowep-kismet.so
+@@ -22,7 +22,7 @@ $(PLUGOUT):	$(PLUGOBJS)
+ 
+ install:	$(PLUGOUT)
+ 	mkdir -p $(DESTDIR)/$(plugindir)
+-	$(INSTALL) -o $(INSTUSR) -g $(INSTGRP) -m 644 $^ $(DESTDIR)/$(plugindir)/$^
++	$(INSTALL)  -m 644 $(PLUGOUT) $(DESTDIR)/$(plugindir)/$(PLUGOUT)
+ 
+ userinstall:	$(PLUGOUT)
+ 	mkdir -p ${HOME}/.kismet/plugins/
