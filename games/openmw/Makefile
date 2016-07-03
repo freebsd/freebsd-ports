@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmw
-PORTVERSION=	0.38.0
+PORTVERSION=	0.39.0
 DISTVERSIONPREFIX=	openmw-
 CATEGORIES=	games
 
@@ -24,10 +24,12 @@ BROKEN_FreeBSD_9=	does not build
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMW
 
-USES=		cmake:outsource compiler:c++11-lib ninja openal pkgconfig
+USES=		cmake:outsource compiler:c++14-lang ninja openal pkgconfig
 USE_GL=		gl
-USE_QT5=	qmake_build buildtools_build core widgets network opengl
+USE_QT5=	qmake_build buildtools_build core gui network opengl \
+		printsupport widgets
 USE_SDL=	sdl2
+USE_XORG=	xt
 
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
 		-DDESIRED_QT_VERSION=5 \
@@ -37,7 +39,7 @@ CMAKE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
 		-DBUILD_LAUNCHER=ON \
 		-DBUILD_MWINIIMPORTER=ON \
 		-DBUILD_ESSIMPORTER=ON \
-		-DBUILD_OPENCS=OFF \
+		-DBUILD_OPENCS=ON \
 		-DBUILD_WIZARD=ON \
 		-DBUILD_WITH_CODE_COVERAGE=OFF \
 		-DBUILD_UNITTEST=OFF \
