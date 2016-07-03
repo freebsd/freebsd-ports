@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minecraft-server
-PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTVERSION=	1.10.2
 CATEGORIES=	games java
 MASTER_SITES=	https://s3.amazonaws.com/Minecraft.Download/versions/${PORTVERSION}/
 DISTFILES=	minecraft_server.${PORTVERSION}.jar
