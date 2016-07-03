@@ -467,6 +467,8 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a129/titlecase.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a13.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a13/strings.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a130.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a130/strings.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a131.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a131/records.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a132.scm
@@ -566,6 +568,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/128.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/129.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/13.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/130.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/131.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/132.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/133.scm
