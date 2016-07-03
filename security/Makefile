@@ -847,6 +847,7 @@
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
     SUBDIR += py-gpsoauth
+    SUBDIR += py-hkdf
     SUBDIR += py-htpasswd
     SUBDIR += py-itsdangerous
     SUBDIR += py-kerberos
