@@ -2,25 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	ezmlm-idx
-PORTVERSION=	7.1.1
-PORTREVISION=	2
+PORTVERSION=	7.2.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.ezmlm.org/archive/${PORTVERSION}/ \
-		http://ezmlm.sericyb.com.au/archive/${PORTVERSION}/
+MASTER_SITES=	http://untroubled.org/ezmlm/archive/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of the ezmlm mailing list manager
 
-MAKE_JOBS_UNSAFE=	yes
-
 LICENSE=	GPLv2
-LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 USES=		qmail:run
 
 CONFLICTS=	ezmlm-0.*
 
 SUB_FILES=	pkg-message
+
+MAKE_JOBS_UNSAFE=	yes
+LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 OPTIONS_DEFINE=		DB DOCS
 OPTIONS_SINGLE=		DB
@@ -30,13 +28,12 @@ MYSQL_DESC=		Build the MySQL extension
 PGSQL_DESC=		Build the PostgreSQL extension
 SQLITE_DESC=		Build the SQLite3 extension
 
-
 .include <bsd.port.options.mk>
 
 ALL_TARGET=	it
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXTRACT_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lm
 ALL_TARGET+=	mysql

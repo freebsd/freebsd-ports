@@ -1,5 +1,6 @@
 bin/ezmlm-accept
 bin/ezmlm-archive
+bin/ezmlm-cgi
 bin/ezmlm-check
 bin/ezmlm-checksub
 bin/ezmlm-clean
@@ -10,6 +11,7 @@ bin/ezmlm-gate
 bin/ezmlm-get
 bin/ezmlm-glconf
 bin/ezmlm-idx
+bin/ezmlm-import
 bin/ezmlm-issubn
 bin/ezmlm-limit
 bin/ezmlm-list
@@ -19,6 +21,7 @@ bin/ezmlm-moderate
 bin/ezmlm-reject
 bin/ezmlm-request
 bin/ezmlm-return
+bin/ezmlm-rmtab
 bin/ezmlm-send
 bin/ezmlm-split
 bin/ezmlm-store
@@ -600,11 +603,9 @@ etc/ezmlm/sv/text/unsub-confirm
 etc/ezmlm/sv/text/unsub-nop
 etc/ezmlm/sv/text/unsub-ok
 lib/ezmlm/sub-std.so
-%%MYSQL%%lib/ezmlm/sub-mysql.so
-%%PGSQL%%lib/ezmlm/sub-pgsql.so
-%%SQLITE%%lib/ezmlm/sub-sqlite3.so
 man/man1/ezmlm-accept.1.gz
 man/man1/ezmlm-archive.1.gz
+man/man1/ezmlm-cgi.1.gz
 man/man1/ezmlm-check.1.gz
 man/man1/ezmlm-checksub.1.gz
 man/man1/ezmlm-clean.1.gz
@@ -615,6 +616,7 @@ man/man1/ezmlm-gate.1.gz
 man/man1/ezmlm-get.1.gz
 man/man1/ezmlm-glconf.1.gz
 man/man1/ezmlm-idx.1.gz
+man/man1/ezmlm-import.1.gz
 man/man1/ezmlm-issubn.1.gz
 man/man1/ezmlm-limit.1.gz
 man/man1/ezmlm-list.1.gz
@@ -624,6 +626,7 @@ man/man1/ezmlm-moderate.1.gz
 man/man1/ezmlm-reject.1.gz
 man/man1/ezmlm-request.1.gz
 man/man1/ezmlm-return.1.gz
+man/man1/ezmlm-rmtab.1.gz
 man/man1/ezmlm-send.1.gz
 man/man1/ezmlm-split.1.gz
 man/man1/ezmlm-store.1.gz
@@ -636,6 +639,8 @@ man/man5/ezmlm.5.gz
 man/man5/ezmlmglrc.5.gz
 man/man5/ezmlmrc.5.gz
 man/man5/ezmlmsubrc.5.gz
+%%MYSQL%%lib/ezmlm/sub-mysql.so
+%%PGSQL%%lib/ezmlm/sub-pgsql.so
 %%PORTDOCS%%%%DOCSDIR%%/BLURB
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -649,3 +654,4 @@ man/man5/ezmlmsubrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.std
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%SQLITE%%lib/ezmlm/sub-sqlite3.so
