@@ -37,6 +37,7 @@ man/man1/medusa.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/medusa-pcanywhere.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-pop3.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-postgres.html
+%%PORTDOCS%%%%DOCSDIR%%/medusa-rdp.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-rexec.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-rlogin.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-rsh.html

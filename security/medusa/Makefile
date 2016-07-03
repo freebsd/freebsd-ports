@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	medusa
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.foofus.net/~jmk/tools/ \
-		http://redundancy.redundancy.org/mirror/
+MASTER_SITES=	http://www.foofus.net/~jmk/tools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Speedy, massively parallel, modular, login brute-forcer
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libssh2.so:security/libssh2
+
+USES=	ssl
 
 BROKEN_ia64=	Does not build on ia64
 
