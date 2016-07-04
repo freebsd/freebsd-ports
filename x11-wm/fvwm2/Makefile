@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fvwm
-PORTVERSION=	2.6.5
-PORTREVISION=	8
+PORTVERSION=	2.6.6
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
+MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/version-2_6_6/ \
 		http://www.fvwm.org/generated/icon_download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,14 +14,17 @@ COMMENT=	Popular virtual window manager for X
 
 RUN_DEPENDS=	gm4:devel/m4 \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 # Other ports this port cannot coexist with
 CONFLICTS?=	fvwm-1.* fvwm-2.[457].*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mandoc --without-gnome --disable-gtk
-USES=		gmake perl5 pkgconfig tar:bzip2
-USE_XORG=	xcursor xft xinerama xpm xrender
+USES=		gmake perl5 pkgconfig gettext readline
+USE_XORG=	xcursor xft xinerama xpm xrender x11 ice xext
+USE_GNOME=	cairo
 
 OPTIONS_DEFINE=	ICONS ICONV STROKE RPLAY SESSION_MGMT PNG SVG BIDI NLS
 OPTIONS_DEFAULT=ICONS ICONV SESSION_MGMT PNG
@@ -93,7 +95,6 @@ CONFIGURE_ARGS+=	--disable-bidi
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
 CONFIGURE_ARGS+=	--with-intl-library=${LOCALBASE}/lib \
 			--with-intl-includes=${LOCALBASE}/include
 .else
