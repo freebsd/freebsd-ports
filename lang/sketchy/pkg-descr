@@ -5,4 +5,4 @@ LISP plus global definitions and some input/output functions.
 This package contains the SketchyLISP interpreter and library,
 the manual, and example programs.
 
-WWW: http://www.t3x.org/sketchy/
+WWW: http://sketchy-lisp.sourceforge.net/
