@@ -68,6 +68,8 @@ PORTS_SSL_DESC=	Build with OpenSSL from ports (instead of base system)
 
 OPTIONS_EXCLUDE=NLS DOCS
 
+PORTS_SSL_VARS=	WITH_OPENSSL_PORT=yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBROCCOLI}
@@ -134,8 +136,6 @@ CMAKE_ARGS+=	-D ENABLE_PERFTOOLS:BOOL=false
 
 .if ${PORT_OPTIONS:MPORTS_SSL}
 CMAKE_ARGS+=	-D CMAKE_EXE_LINKER_FLAGS="${OPENSSL_LDFLAGS}"
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcrypto.so:security/openssl
-RUN_DEPENDS+=	${LOCALBASE}/lib/libcrypto.so:security/openssl
 .else
 .if ${SSL_DEFAULT} != base
 IGNORE=		the SSL option is requred when using SSL from ports
