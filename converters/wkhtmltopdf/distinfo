@@ -1,2 +1,5 @@
-SHA256 (wkhtmltox-0.12.2.1.tar.bz2) = acb62fa593c537f028883bc827cbb459ed232611d810be109f3942ec8c5aa5c2
-SIZE (wkhtmltox-0.12.2.1.tar.bz2) = 36248626
+TIMESTAMP = 1467664988
+SHA256 (wkhtmltopdf-wkhtmltopdf-0.12.3.2_GH0.tar.gz) = 721523ef87ccb937bf3714ade19b112f4cb8a2cd840e34b30f26ee262c41fe16
+SIZE (wkhtmltopdf-wkhtmltopdf-0.12.3.2_GH0.tar.gz) = 128050
+SHA256 (wkhtmltopdf-qt-fe194f9_GH0.tar.gz) = fa3f9dfc3fe3ee68280226bd1f4b8500883dd2549b985373e71aeff4e958b95a
+SIZE (wkhtmltopdf-qt-fe194f9_GH0.tar.gz) = 173008155
