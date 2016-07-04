@@ -1,0 +1,13 @@
+--- mapedit/Makefile.am.orig	2016-05-14 01:04:00 UTC
++++ mapedit/Makefile.am
+@@ -92,8 +92,8 @@ EXTRA_DIST=	\
+ 
+ if GIMP_PLUGIN
+ install-exec-local:
+-	install -d $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
+-	install -c $(GIMP_PLUGINS) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
++	$(MKDIR_P) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
++	$(INSTALL_PROGRAM) $(GIMP_PLUGINS) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
+ else
+ install-exec-local:
+ endif
