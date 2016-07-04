@@ -7,7 +7,7 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/heirloom/heirloom-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	heirloom-
 
-MAINTAINER=	jamie@dyslexicfish.net
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP, and S/MIME extensions
 
 LICENSE=	BSD4CLAUSE
