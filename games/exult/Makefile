@@ -2,50 +2,58 @@
 # $FreeBSD$
 
 PORTNAME=	exult
-PORTVERSION=	1.5.0.20130315
-PORTREVISION=	3
+PORTVERSION=	1.5.0.20160514
 CATEGORIES=	games
-MASTER_SITES=	http://www.math.leidenuniv.nl/~wpalenst/cvs/
-DISTNAME=	exult-20130315-0400
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultima VII engine
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	timidity:audio/timidity
-RUN_DEPENDS=	timidity:audio/timidity
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libpng.so:graphics/png
 
-USE_SDL=	sdl mixer
-USE_XORG=	x11
-USES=		autoreconf gmake libtool pkgconfig
+USE_GITHUB=	yes
+GH_TAGNAME=	b15afba
+
+USES=		autoreconf compiler:c++11-lib gmake libtool localbase pkgconfig
+USE_XORG=	xext
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-WRKSRC=		${WRKDIR}/exult
+CONFIGURE_ARGS=	--disable-alsa \
+		--with-icondir=${PREFIX}/share/pixmaps
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	STUDIO
-OPTIONS_DEFAULT=STUDIO
-OPTIONS_SUB=	yes
-STUDIO_DESC=	Install Exult Studio
+OPTIONS_DEFINE=		DOCS FLUIDSYNTH GIMP STUDIO THUMBNAILER
+OPTIONS_SINGLE=		SDL
+OPTIONS_SINGLE_SDL=	SDL1 SDL2
+OPTIONS_DEFAULT=	SDL1 STUDIO
+OPTIONS_SUB=		yes
 
-.include <bsd.port.options.mk>
+FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
+FLUIDSYNTH_CONFIGURE_ENABLE=\
+			fluidsynth
+GIMP_DESC=		GIMP plugin support
+GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
+GIMP_CONFIGURE_ENABLE=	gimp-plugin
+SDL1_DESC=		Simple Direct Media Layer 1 support
+SDL1_USE=		sdl=mixer
+SDL1_CONFIGURE_ARGS=	--with-sdl=sdl12
+SDL2_DESC=		Simple Direct Media Layer 2 support
+SDL2_USE=		sdl=mixer2
+SDL2_CONFIGURE_ARGS=	--with-sdl=sdl2
+STUDIO_DESC=		Install Exult Studio
+STUDIO_CONFIGURE_ENABLE=\
+			exult-studio exult-studio-support
+STUDIO_USE=		gnome=libglade2
+THUMBNAILER_DESC=	Gnome SHP thumbnailer support
+THUMBNAILER_USES=	shared-mime-info
+THUMBNAILER_USE=	gnome=libgnomeui
+THUMBNAILER_CONFIGURE_ENABLE=\
+			gnome-shp-thumbnailer
 
-.if ${PORT_OPTIONS:MSTUDIO}
-CONFIGURE_ARGS+=--enable-exult-studio \
-		--enable-exult-studio-support
-USE_GNOME+=	libglade2
-.endif
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in FAQ NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
