@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlwt
-PORTVERSION=	0.7.5
+PORTVERSION=	1.1.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,6 @@ COMMENT=	Writing data and formatting information from Excel files
 LICENSE=	BSD4CLAUSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
