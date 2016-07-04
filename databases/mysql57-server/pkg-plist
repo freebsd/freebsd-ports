@@ -62,6 +62,8 @@ lib/mysql/plugin/rewriter.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/test_security_context.so
+lib/mysql/plugin/keyring_udf.so
+lib/mysql/plugin/test_udf_services.so
 lib/mysql/plugin/validate_password.so
 lib/mysql/plugin/version_token.so
 libdata/pkgconfig/LIBMYSQL_OS_OUTPUT_NAME-NOTFOUND.pc

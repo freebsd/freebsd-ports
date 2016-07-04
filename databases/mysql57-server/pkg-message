@@ -11,9 +11,10 @@ in /root/.mysql_secret
 
 *****************************************************************************
 
-Please keep in mind that the default location for my.cnf will be changed
-from "/var/db/mysql/my.cnf" to "/usr/local/etc/mysql/my.cnf" in the near
-future.  If you do not want to move your my.cnf to the new location then
-you must set "mysql_optfile" in /etc/rc.conf to "/var/db/mysql/my.cnf".
+The default location for my.cnf has changed from "/var/db/mysql/my.cnf" to
+"/usr/local/etc/mysql/my.cnf". Existing my.cnf files must be merged manually
+with the new default and moved to the new location. To continue using the
+my.cnf file at the old location, set "mysql_optfile" in /etc/rc.conf to
+point to the location of the existing my.cnf file.
 
 *****************************************************************************
