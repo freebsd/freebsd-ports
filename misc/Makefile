@@ -29,7 +29,6 @@
     SUBDIR += bogosort
     SUBDIR += bottlerocket
     SUBDIR += boxes
-    SUBDIR += boxquote.el
     SUBDIR += brs
     SUBDIR += buffer
     SUBDIR += cave
@@ -56,7 +55,6 @@
     SUBDIR += crosspad
     SUBDIR += cs
     SUBDIR += cstream
-    SUBDIR += cuecat
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
     SUBDIR += dahdi-kmod26
@@ -388,7 +386,6 @@
     SUBDIR += py-tqdm
     SUBDIR += py-yolk
     SUBDIR += pylize
-    SUBDIR += pypanda
     SUBDIR += qbrew
     SUBDIR += qlas
     SUBDIR += qmetro
@@ -400,7 +397,6 @@
     SUBDIR += qt5-examples
     SUBDIR += qt5-l10n
     SUBDIR += qt5ct
-    SUBDIR += quotes
     SUBDIR += raspberrypi-userland
     SUBDIR += raspbsd-led
     SUBDIR += ree

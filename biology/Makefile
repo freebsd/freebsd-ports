@@ -74,7 +74,6 @@
     SUBDIR += phred
     SUBDIR += phylip
     SUBDIR += phyml
-    SUBDIR += platon
     SUBDIR += plink
     SUBDIR += plinkseq
     SUBDIR += primer3

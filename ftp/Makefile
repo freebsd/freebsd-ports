@@ -17,7 +17,6 @@
     SUBDIR += curl-hiphop
     SUBDIR += curlpp
     SUBDIR += dmachine
-    SUBDIR += fget
     SUBDIR += filezilla
     SUBDIR += fmirror
     SUBDIR += fpc-libcurl

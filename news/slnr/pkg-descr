@@ -1,5 +1,0 @@
-This is a port of slnr (Simple Local News Reader).  Slnr is intended
-as a SOUP reader for non-UNIX machines so the port includes a few
-modifications to make it more consistant with the UNIX paradigm.  No
-advanced features, such as kill-files, are available and you should,
-if possible, use news-readers such as `trn' to read your news.

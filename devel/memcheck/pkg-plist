@@ -1,7 +1,0 @@
-include/arm-ucontext.h
-include/memcheck.h
-include/x86_64-ucontext.h
-lib/libmemcheck.a
-lib/libmemcheck.so
-lib/libmemcheck.so.0
-lib/libmemcheck.so.0.2.4

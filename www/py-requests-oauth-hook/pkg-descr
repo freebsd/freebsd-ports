@@ -1,8 +1,0 @@
-This is a hook for python-requests great python HTTP library, that
-makes python-requests support Open Authentication version 1.0.
-
-This hook is based on python-oauth2 and uses portions of its code
-at the moment, kudos to the authors and contributors for doing a
-huge effort in providing OAuth to python httplib2.
-
-WWW: https://github.com/maraujop/requests-oauth-hook

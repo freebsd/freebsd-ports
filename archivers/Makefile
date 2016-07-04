@@ -23,7 +23,6 @@
     SUBDIR += dzip
     SUBDIR += ecm
     SUBDIR += engrampa
-    SUBDIR += epkg
     SUBDIR += fastjar
     SUBDIR += file-roller
     SUBDIR += fpc-bzip2

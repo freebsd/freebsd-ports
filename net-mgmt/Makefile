@@ -89,7 +89,6 @@
     SUBDIR += ipaudit
     SUBDIR += ipcad
     SUBDIR += ipcalc
-    SUBDIR += ipfm
     SUBDIR += ipplan
     SUBDIR += ipv6calc
     SUBDIR += ipv6gen
@@ -168,7 +167,6 @@
     SUBDIR += netmagis-utils
     SUBDIR += netmagis-www
     SUBDIR += netmask
-    SUBDIR += netmond
     SUBDIR += netspoc
     SUBDIR += netustad
     SUBDIR += netwag

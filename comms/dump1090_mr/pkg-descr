@@ -1,5 +1,0 @@
-Dump1090 MR is a FlightAware fork of Malcolm Robb's fork of Salvatore
-Sanfilippo's dump1090 program. FlightAware uses it as an important
-element of PiAware (https://flightaware.com/adsb/piaware/).
-
-WWW: https://github.com/flightaware/dump1090_mr

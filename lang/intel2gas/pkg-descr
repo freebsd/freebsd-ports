@@ -1,9 +1,0 @@
-Intel2gas is a small text parser that can convert assembler source
-written in Intel (nasm) syntax to AT&T (gas) syntax.  And nowadays
-more often also the other way.
-
-The program does minimal error checking and does not understand the
-text it's converting.  It just tries to find matches from its syntax
-database.
-
-WWW: http://www.niksula.cs.hut.fi/~mtiihone/intel2gas/

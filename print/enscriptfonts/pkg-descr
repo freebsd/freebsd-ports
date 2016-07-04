@@ -1,6 +1,0 @@
-The enscriptfonts More than 120 free- and share-ware fonts to extend enscript.
-
-In the README file in the ${DESTDIR} which defaults to
-/usr/local/share/enscript/xenscript  is a list of the font names for the 120+
-fonts. Also in this directory are many *.readme files from the shareware
-distributions. Please consult this files for licensing conditions.

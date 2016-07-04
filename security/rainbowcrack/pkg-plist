@@ -1,5 +1,0 @@
-bin/rcrack
-bin/rtgen
-bin/rtdump
-bin/rtsort
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charset.txt

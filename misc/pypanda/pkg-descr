@@ -1,4 +1,0 @@
-pyPanda is a python script that uses the pySDL and pygame interfaces to the
-SDL multimedia library. This program allows you to view the web's killer app,
-the San Diego Zoo Panda Cam, in a window on your desktop. A mouse click
-anywhere in the window will refresh the view, and a key press will quit.

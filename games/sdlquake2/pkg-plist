@@ -1,6 +1,0 @@
-%%CLIENT%%bin/sdlquake2
-%%DEDICATED%%bin/sdlquake2-ded
-%%GAME%%lib/sdlquake2/baseq2/game.so
-%%CLIENT%%lib/sdlquake2/ref_sdlgl.so
-@dir lib/sdlquake2/baseq2
-@dir lib/sdlquake2

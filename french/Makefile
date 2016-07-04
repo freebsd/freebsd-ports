@@ -7,7 +7,6 @@
     SUBDIR += aster
     SUBDIR += calligra-l10n
     SUBDIR += eficas
-    SUBDIR += eric4
     SUBDIR += eric6
     SUBDIR += fortune-mod-zarathoustra
     SUBDIR += geonext

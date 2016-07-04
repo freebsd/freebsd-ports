@@ -29,9 +29,7 @@
     SUBDIR += dtcyber
     SUBDIR += dynagen
     SUBDIR += dynagui
-    SUBDIR += dynamips
     SUBDIR += dynamips-community
-    SUBDIR += dynamips-devel
     SUBDIR += e-uae
     SUBDIR += fceux
     SUBDIR += fmsx
@@ -82,7 +80,6 @@
     SUBDIR += mastergear
     SUBDIR += mednafen
     SUBDIR += mess
-    SUBDIR += minivmac
     SUBDIR += mtools
     SUBDIR += mupen64plus
     SUBDIR += mupen64plus-audio-sdl
@@ -129,7 +126,6 @@
     SUBDIR += raine
     SUBDIR += rtc
     SUBDIR += rubygem-fission
-    SUBDIR += sim6811
     SUBDIR += simh
     SUBDIR += skyeye
     SUBDIR += snes9express

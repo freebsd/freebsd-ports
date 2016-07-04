@@ -158,7 +158,6 @@
     SUBDIR += libXxf86misc
     SUBDIR += libXxf86vm
     SUBDIR += libdmx
-    SUBDIR += libdnd
     SUBDIR += libexo
     SUBDIR += libfakekey
     SUBDIR += libfm
@@ -337,14 +336,12 @@
     SUBDIR += xcb-util-renderutil
     SUBDIR += xcb-util-wm
     SUBDIR += xcbautolock
-    SUBDIR += xclick
     SUBDIR += xclip
     SUBDIR += xclipboard
     SUBDIR += xcm
     SUBDIR += xcmd
     SUBDIR += xcmiscproto
     SUBDIR += xcmsdb
-    SUBDIR += xco
     SUBDIR += xcoloredit
     SUBDIR += xcolors
     SUBDIR += xcolorsel
@@ -412,7 +409,6 @@
     SUBDIR += xlogo
     SUBDIR += xlsatoms
     SUBDIR += xlsclients
-    SUBDIR += xlupe
     SUBDIR += xmag
     SUBDIR += xman
     SUBDIR += xmangekyou
