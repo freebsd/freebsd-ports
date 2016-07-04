@@ -30,18 +30,13 @@ post-patch:
 		 s|gcc -E|$$(CC) -E|' ${WRKSRC}/Makefile
 
 do-install:
-# Program.
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} x${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME})
-
-# Data.
+	${INSTALL_PROGRAM} ${WRKSRC}/x${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for d in rc rc-test
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
-.endfor
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "rc rc-test" ${STAGEDIR}${DATADIR})
 
-# Documentation (optional).
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
