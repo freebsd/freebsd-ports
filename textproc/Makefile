@@ -1218,6 +1218,7 @@
     SUBDIR += py-acora
     SUBDIR += py-alabaster
     SUBDIR += py-asv
+    SUBDIR += py-awesome-slugify
     SUBDIR += py-bugzillatools
     SUBDIR += py-chardet
     SUBDIR += py-cloud_sptheme
