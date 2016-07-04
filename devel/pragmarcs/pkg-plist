@@ -30,6 +30,8 @@ include/pragmarcs/pragmarc-hash_fast_variable_length.ads
 include/pragmarcs/pragmarc-images-image.ads
 include/pragmarcs/pragmarc-images.adb
 include/pragmarcs/pragmarc-images.ads
+include/pragmarcs/pragmarc-job_pools.adb
+include/pragmarcs/pragmarc-job_pools.ads
 include/pragmarcs/pragmarc-kiss_random.adb
 include/pragmarcs/pragmarc-kiss_random.ads
 include/pragmarcs/pragmarc-least_squares_fitting.adb
@@ -152,6 +154,7 @@ lib/pragmarcs/pragmarc-get_line.ali
 lib/pragmarcs/pragmarc-hash_fast_variable_length.ali
 lib/pragmarcs/pragmarc-images-image.ali
 lib/pragmarcs/pragmarc-images.ali
+lib/pragmarcs/pragmarc-job_pools.ali
 lib/pragmarcs/pragmarc-kiss_random.ali
 lib/pragmarcs/pragmarc-least_squares_fitting.ali
 lib/pragmarcs/pragmarc-linear_equation_solver.ali
