@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PKGNAMESUFFIX=	-minimal
-PORTVERSION=	6.2
+PORTVERSION=	6.5
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -11,39 +10,46 @@ MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://mirror.csclub.uwaterloo.ca/racket/racket-installers/${PORTVERSION}/ \
 		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${PORTVERSION}/ \
 		http://racket.infogroep.be/${PORTVERSION}/
-
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}-src
+PKGNAMESUFFIX=	-minimal
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}-src-builtpkgs
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Interactive, integrated, graphical Scheme programming environment
 
+LICENSE=	LGPL3
+
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=		RACKET_PLACES
-OPTIONS_DEFAULT=	RACKET_PLACES
-RACKET_PLACES_DESC=	Enable Places
-RACKET_PLACES_CONFIGURE_ENABLE=	places
-
 CONFLICTS=	racket-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-lt --enable-shared --enable-pthread
+CONFIGURE_ARGS=	-enable-libffi --enable-pthread --enable-places --enable-shared
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
+PATCH_WRKSRC=	${WRKDIR}/racket-${PORTVERSION}
 USES=		iconv libtool tar:tgz
 USE_LDCONFIG=	yes
+REINPLACE_ARGS=	-i ""
+OPTIONS_DEFINE=	FUTURES
+OPTIONS_DEFAULT=FUTURES
 
-ONLY_FOR_ARCHS=	i386 amd64
+OPTIONS_DEFINE_amd64=	JIT
+OPTIONS_DEFINE_i386=	JIT
+OPTIONS_DEFAULT_amd64=	JIT
+OPTIONS_DEFAULT_i386=	JIT
 
-.include <bsd.port.options.mk>
+FUTURES_DESC=	Enable futures
+JIT_DESC=	Enable JIT compiler
+JIT_CFLAGS=	-msse -msse2 -mfpmath=sse
 
-.if ${ARCH} == "amd64"
-CPPFLAGS+=	-DLONG64
-.endif
+FUTURES_CONFIGURE_ENABLE=	futures
+JIT_CONFIGURE_ENABLE=	jit
+
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
 
 .include <bsd.port.mk>

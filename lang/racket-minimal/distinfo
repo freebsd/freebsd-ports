@@ -1,2 +1,3 @@
-SHA256 (racket-minimal/6.2/racket-minimal-6.2-src.tgz) = 5e2947c84791233493429519a28a874a89e751c5c2aac8671763af34769cbffc
-SIZE (racket-minimal/6.2/racket-minimal-6.2-src.tgz) = 6034994
+TIMESTAMP = 1467016094
+SHA256 (racket-minimal/6.5/racket-minimal-6.5-src-builtpkgs.tgz) = 44fe95a4ec4d442b4f6f68e360104ca9715bd1fe3795d302d6cddaceb15696dc
+SIZE (racket-minimal/6.5/racket-minimal-6.5-src-builtpkgs.tgz) = 11037268
