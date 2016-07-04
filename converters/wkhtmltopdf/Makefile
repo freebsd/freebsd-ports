@@ -2,17 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	wkhtmltopdf
-PORTVERSION=	0.12.2.1
-PORTREVISION=	1
+PORTVERSION=	0.12.3.2
 CATEGORIES=	converters
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
-DISTNAME=	wkhtmltox-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Convert HTML (or live webpages) to PDF or image
 
 LICENSE=	LGPL3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	Does not build
 
@@ -20,13 +17,15 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
-USES=		gmake iconv jpeg perl5 pkgconfig tar:bzip2
+USES=		gmake iconv jpeg perl5 pkgconfig
 USE_XORG=	x11 xext xrender
 USE_PERL5=	build
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+WKQT_TAGNAME=	fe194f9
+GH_TUPLE=	${PORTNAME}:qt:${WKQT_TAGNAME}:qt
 HAS_CONFIGURE=	yes
 
-WRKSRC=			${WRKDIR}/wkhtmltox-${PORTVERSION}
 PATCH_WRKSRC=		${WRKSRC}/qt
 CONFIGURE_WRKSRC=	${WRKSRC}/build/qt
 BUILD_WRKSRC=		${WRKSRC}/build/qt
@@ -51,6 +50,10 @@ CONFIGURE_ARGS=	-prefix ${WRKSRC}/build/qt \
 	-no-neon
 
 MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
+
+pre-patch:
+	@${RMDIR} ${WRKSRC}/qt
+	@${LN} -s ../qt-${WKQT_TAGNAME} ${WRKSRC}/qt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
