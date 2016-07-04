@@ -1,8 +1,0 @@
-include/dcdflib.h
-lib/libdcdflib.a
-%%PROFILE%%lib/libdcdflib_p.a
-lib/libdcdflib.so
-lib/libdcdflib.so.1
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/dcdflib.chs
-%%PORTDOCS%%%%DOCSDIR%%/dcdflib.fdoc

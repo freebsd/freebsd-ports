@@ -53,7 +53,6 @@
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
     SUBDIR += ace+tao-doc
-    SUBDIR += acme
     SUBDIR += acsccid
     SUBDIR += activitymail
     SUBDIR += ada-util
@@ -83,7 +82,6 @@
     SUBDIR += antlr
     SUBDIR += antlr3
     SUBDIR += antlr4
-    SUBDIR += antlrworks
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
@@ -132,7 +130,6 @@
     SUBDIR += avalon-framework
     SUBDIR += avarice
     SUBDIR += avce00
-    SUBDIR += avltree
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc
     SUBDIR += avr-gcc-devel
@@ -179,7 +176,6 @@
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
     SUBDIR += bsdowl
-    SUBDIR += bufferpool
     SUBDIR += bugzilla44
     SUBDIR += bugzilla50
     SUBDIR += build
@@ -210,14 +206,12 @@
     SUBDIR += bzrtools
     SUBDIR += c-unit
     SUBDIR += c2mdoc
-    SUBDIR += c4
     SUBDIR += caf
     SUBDIR += calibrator
     SUBDIR += capstone
     SUBDIR += cargo
     SUBDIR += cask
     SUBDIR += catch
-    SUBDIR += cbind
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += ccache
@@ -260,8 +254,6 @@
     SUBDIR += cl-trivial-features-sbcl
     SUBDIR += cl-trivial-gray-streams
     SUBDIR += cl-trivial-gray-streams-sbcl
-    SUBDIR += cl-uffi
-    SUBDIR += cl-uffi-sbcl
     SUBDIR += clanlib
     SUBDIR += clanlib1
     SUBDIR += clanlib22
@@ -335,7 +327,6 @@
     SUBDIR += cvs2cl
     SUBDIR += cvs2darcs
     SUBDIR += cvs2html
-    SUBDIR += cvs2p4
     SUBDIR += cvs2svn
     SUBDIR += cvsadmin
     SUBDIR += cvsbook
@@ -366,7 +357,6 @@
     SUBDIR += d-feet
     SUBDIR += darts
     SUBDIR += dash.el
-    SUBDIR += dasm
     SUBDIR += datadraw
     SUBDIR += dbus
     SUBDIR += dbus-c++
@@ -398,7 +388,6 @@
     SUBDIR += distel
     SUBDIR += distorm
     SUBDIR += ditrack
-    SUBDIR += dits
     SUBDIR += djgpp-binutils
     SUBDIR += djgpp-crx
     SUBDIR += dmake
@@ -474,7 +463,6 @@
     SUBDIR += epl.el
     SUBDIR += epm
     SUBDIR += epydoc
-    SUBDIR += eric4
     SUBDIR += eric6
     SUBDIR += eris
     SUBDIR += erlang-backoff
@@ -1050,7 +1038,6 @@
     SUBDIR += icmake
     SUBDIR += icu
     SUBDIR += idutils
-    SUBDIR += ifd-test
     SUBDIR += imake
     SUBDIR += include-what-you-use
     SUBDIR += inilib
@@ -1141,7 +1128,6 @@
     SUBDIR += libbegemot
     SUBDIR += libbfd
     SUBDIR += libbinio
-    SUBDIR += libbnr
     SUBDIR += libbobcat
     SUBDIR += libbonobo
     SUBDIR += libbonobo-reference
@@ -1254,7 +1240,6 @@
     SUBDIR += liblangtag
     SUBDIR += liblas
     SUBDIR += liblas12
-    SUBDIR += liblcfg
     SUBDIR += libleaftag
     SUBDIR += liblnk
     SUBDIR += liblogging
@@ -1287,9 +1272,7 @@
     SUBDIR += liboobs
     SUBDIR += liboop
     SUBDIR += libopencm3
-    SUBDIR += libopendaap
     SUBDIR += libopensync
-    SUBDIR += libopensync022
     SUBDIR += libopkele
     SUBDIR += liborcus
     SUBDIR += liborcus07
@@ -1318,7 +1301,6 @@
     SUBDIR += libpthread-stubs
     SUBDIR += libqb
     SUBDIR += libqcow
-    SUBDIR += libqxt
     SUBDIR += libr3
     SUBDIR += librcc
     SUBDIR += librcd
@@ -1492,7 +1474,6 @@
     SUBDIR += mcpp
     SUBDIR += mdds
     SUBDIR += mdds0
-    SUBDIR += memcheck
     SUBDIR += menhir
     SUBDIR += mercator
     SUBDIR += mercurial
@@ -1516,7 +1497,6 @@
     SUBDIR += mips64-binutils
     SUBDIR += mips64-gcc
     SUBDIR += mips64-xtoolchain-gcc
-    SUBDIR += mk
     SUBDIR += mk-configure
     SUBDIR += mkcmd
     SUBDIR += mm
@@ -1566,7 +1546,6 @@
     SUBDIR += nuitka
     SUBDIR += nxt-python
     SUBDIR += obby
-    SUBDIR += obfuscatejs
     SUBDIR += objecthash
     SUBDIR += ocaml-annexlib
     SUBDIR += ocaml-calendar
@@ -1603,16 +1582,13 @@
     SUBDIR += ocaml-uutf
     SUBDIR += ocaml-xstr
     SUBDIR += ocaml-xstrp4
-    SUBDIR += ocfpcsc
     SUBDIR += ocl-icd
     SUBDIR += ode
     SUBDIR += ois
     SUBDIR += okteta
-    SUBDIR += omake
     SUBDIR += omniNotify
     SUBDIR += omniORB
     SUBDIR += omniORB-4.1
-    SUBDIR += oniguruma
     SUBDIR += oniguruma4
     SUBDIR += oniguruma5
     SUBDIR += onscripter
@@ -3529,7 +3505,6 @@
     SUBDIR += p8-platform
     SUBDIR += paexec
     SUBDIR += papi
-    SUBDIR += papp
     SUBDIR += pas2dox
     SUBDIR += pasm
     SUBDIR += patch
@@ -3895,7 +3870,6 @@
     SUBDIR += py-BytecodeAssembler
     SUBDIR += py-DateTime
     SUBDIR += py-DocumentTemplate
-    SUBDIR += py-EnthoughtBase
     SUBDIR += py-ExtensionClass
     SUBDIR += py-InlineEgg
     SUBDIR += py-Jinja
@@ -4727,7 +4701,6 @@
     SUBDIR += ragel
     SUBDIR += raknet
     SUBDIR += rapidjson
-    SUBDIR += rapidsvn
     SUBDIR += rbenv
     SUBDIR += rbtools
     SUBDIR += rclint
@@ -4760,11 +4733,9 @@
     SUBDIR += ruby-bsearch
     SUBDIR += ruby-build
     SUBDIR += ruby-byaccr
-    SUBDIR += ruby-cache
     SUBDIR += ruby-calendar
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
-    SUBDIR += ruby-event-loop
     SUBDIR += ruby-gems
     SUBDIR += ruby-intl
     SUBDIR += ruby-korundum
@@ -5346,8 +5317,6 @@
     SUBDIR += svk
     SUBDIR += svn2git
     SUBDIR += svn_load_dirs
-    SUBDIR += svndelta
-    SUBDIR += svnkit
     SUBDIR += svntrac
     SUBDIR += swank-clojure
     SUBDIR += swig13
@@ -5369,7 +5338,6 @@
     SUBDIR += tclap
     SUBDIR += tclbsd
     SUBDIR += tclcheck
-    SUBDIR += tclgetopts
     SUBDIR += tcllauncher
     SUBDIR += tcllib
     SUBDIR += tcllibc
@@ -5419,7 +5387,6 @@
     SUBDIR += uatraits
     SUBDIR += uboot-mkimage
     SUBDIR += uclcmd
-    SUBDIR += uclmmbase
     SUBDIR += ucommon
     SUBDIR += ucpp
     SUBDIR += udis86

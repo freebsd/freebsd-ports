@@ -1,6 +1,0 @@
-cvs2p4 -- CVS to Perforce Converter
-
-This CVS to Perforce converter extracts metadata from a CVS repository
-and generates a Perforce depot using Perforce client commands. The
-converter handles Attic/ and .cvsignore, and has flexible support for
-branching.

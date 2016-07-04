@@ -1,7 +1,0 @@
-bin/lcfg
-include/lcfg/lcfg.h
-include/lcfgx/lcfgx_tree.h
-lib/liblcfg.a
-lib/liblcfg.so
-lib/liblcfg.so.1
-lib/liblcfg.so.1.0.0

@@ -1,5 +1,0 @@
-This is a stock quote / currency status / Slashdot headline
-fetcher. It was designed to save bandwidth, which is particularly
-expensive in Europe. It has the capability of emailing these
-to you at so and so time designated by a crontab entry for its
-automailing program. This entire package is based on Perl.

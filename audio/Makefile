@@ -15,7 +15,6 @@
     SUBDIR += adplay
     SUBDIR += afsp
     SUBDIR += aften
-    SUBDIR += alac
     SUBDIR += alienwah
     SUBDIR += alsa-lib
     SUBDIR += alsa-plugins
@@ -297,7 +296,6 @@
     SUBDIR += gvolwheel
     SUBDIR += gxmms2
     SUBDIR += harp
-    SUBDIR += hawkvoice
     SUBDIR += herrie
     SUBDIR += hexter
     SUBDIR += hs-ALUT
@@ -461,7 +459,6 @@
     SUBDIR += madfufw
     SUBDIR += madplay
     SUBDIR += malint
-    SUBDIR += mangler
     SUBDIR += maplay
     SUBDIR += mate-media
     SUBDIR += mbox
@@ -730,7 +727,6 @@
     SUBDIR += squeezeboxserver-trackstat
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
-    SUBDIR += streamtuner
     SUBDIR += stymulator
     SUBDIR += sweep
     SUBDIR += swhplugins

@@ -1,4 +1,0 @@
-Varnish Module (vmod) for manipulation of duplicated headers (for
-instance multiple set-cookie headers).
-
-WWW: https://github.com/KristianLyng/libvmod-header/

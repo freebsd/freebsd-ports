@@ -9,7 +9,6 @@
     SUBDIR += afnix
     SUBDIR += alchemist.el
     SUBDIR += algol68g
-    SUBDIR += alisp
     SUBDIR += angelscript
     SUBDIR += arena
     SUBDIR += asis
@@ -134,7 +133,6 @@
     SUBDIR += icc
     SUBDIR += ici
     SUBDIR += icon
-    SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += io
     SUBDIR += itcl
@@ -159,7 +157,6 @@
     SUBDIR += linux-f10-tcl85
     SUBDIR += linux-j
     SUBDIR += lua-ada
-    SUBDIR += lua-mode.el
     SUBDIR += lua51
     SUBDIR += lua52
     SUBDIR += lua53
@@ -297,7 +294,6 @@
     SUBDIR += runawk
     SUBDIR += rust
     SUBDIR += rust-nightly
-    SUBDIR += s9fes
     SUBDIR += sagittarius-scheme
     SUBDIR += sather-specification
     SUBDIR += sather-tutorial
@@ -328,7 +324,6 @@
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel
-    SUBDIR += stalin
     SUBDIR += starlogo
     SUBDIR += stldoc
     SUBDIR += swi-pl

@@ -1,3 +1,0 @@
-include/avltree.h
-lib/libavltree.a
-man/man3/avltree.3.gz

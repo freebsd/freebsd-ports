@@ -51,7 +51,6 @@
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += emacs-nox11
-    SUBDIR += fb
     SUBDIR += fileobj
     SUBDIR += flim
     SUBDIR += fpc-ide
@@ -229,7 +228,6 @@
     SUBDIR += semi
     SUBDIR += shed
     SUBDIR += slime
-    SUBDIR += ssam
     SUBDIR += ssed
     SUBDIR += sted
     SUBDIR += tamago

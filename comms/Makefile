@@ -31,7 +31,6 @@
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
     SUBDIR += dump1090
-    SUBDIR += dump1090_mr
     SUBDIR += ebook2cw
     SUBDIR += ebook2cwgui
     SUBDIR += echolinux

@@ -1,6 +1,0 @@
-include/bufferpool/bufferpool.h
-lib/libbufferpool.a
-lib/libbufferpool.so
-lib/libbufferpool.so.0
-lib/libbufferpool.so.0.4.0
-libdata/pkgconfig/libbufferpool.pc

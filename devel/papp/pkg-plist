@@ -1,5 +1,0 @@
-bin/papp
-man/man1/papp.1.gz
-%%DATADIR%%/include/exceptions.mal
-%%DATADIR%%/include/lowio.mal
-%%DATADIR%%/include/syscalls.mal

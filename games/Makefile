@@ -183,8 +183,6 @@
     SUBDIR += cuyo
     SUBDIR += d2x
     SUBDIR += d2x-xl
-    SUBDIR += daimonin
-    SUBDIR += daimonin-music
     SUBDIR += dangen
     SUBDIR += dangerdeep
     SUBDIR += dangerdeep-data
@@ -255,7 +253,6 @@
     SUBDIR += farblazer
     SUBDIR += fargoal
     SUBDIR += fbg2
-    SUBDIR += fgkicker
     SUBDIR += fgrun
     SUBDIR += fightorperish
     SUBDIR += fillets-ng
@@ -306,9 +303,7 @@
     SUBDIR += frotz
     SUBDIR += frozen-bubble
     SUBDIR += fteqw
-    SUBDIR += ftjava
     SUBDIR += funnyboat
-    SUBDIR += fxsudoku
     SUBDIR += galaxis
     SUBDIR += galaxyhack
     SUBDIR += garith
@@ -337,12 +332,10 @@
     SUBDIR += glob2
     SUBDIR += glsfcave
     SUBDIR += gltron
-    SUBDIR += gma
     SUBDIR += gmastermind
     SUBDIR += gmines
     SUBDIR += gnake
     SUBDIR += gnarr
-    SUBDIR += gno3dtet
     SUBDIR += gnome-2048
     SUBDIR += gnome-chess
     SUBDIR += gnome-games
@@ -407,7 +400,6 @@
     SUBDIR += hinversi
     SUBDIR += hitori
     SUBDIR += hllib
-    SUBDIR += hlstatsx
     SUBDIR += hohlin
     SUBDIR += hoichess
     SUBDIR += holotz-castle
@@ -479,7 +471,6 @@
     SUBDIR += klines
     SUBDIR += klondike
     SUBDIR += kmahjongg
-    SUBDIR += kmancala
     SUBDIR += kmines
     SUBDIR += knavalbattle
     SUBDIR += knetwalk
@@ -504,7 +495,6 @@
     SUBDIR += ladder
     SUBDIR += lander
     SUBDIR += lapispuzzle
-    SUBDIR += latrine
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
     SUBDIR += ldmud
@@ -543,7 +533,6 @@
     SUBDIR += linux-etqw-server
     SUBDIR += linux-nerogame
     SUBDIR += linux-nwnclient
-    SUBDIR += linux-nwserver
     SUBDIR += linux-quake3
     SUBDIR += linux-quake3-demo
     SUBDIR += linux-quake4
@@ -561,7 +550,6 @@
     SUBDIR += linux-worldofgoo-demo
     SUBDIR += linwarrior
     SUBDIR += liquidwar
-    SUBDIR += live-f1
     SUBDIR += lm-solve
     SUBDIR += lmarbles
     SUBDIR += lmpc
@@ -571,7 +559,6 @@
     SUBDIR += lpairs
     SUBDIR += lskat
     SUBDIR += ltris
-    SUBDIR += lucidlife
     SUBDIR += lugaru
     SUBDIR += luola
     SUBDIR += lwjgl
@@ -640,7 +627,6 @@
     SUBDIR += netradiant
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-client-cow
-    SUBDIR += netris
     SUBDIR += netspades
     SUBDIR += nettoe
     SUBDIR += netwalk
@@ -648,18 +634,12 @@
     SUBDIR += newvox
     SUBDIR += nextgo
     SUBDIR += nexuiz
-    SUBDIR += nibbles
     SUBDIR += nighthawk
     SUBDIR += nimuh
     SUBDIR += ninix-aya
     SUBDIR += njam
     SUBDIR += nlarn
-    SUBDIR += noegnud-addons
     SUBDIR += noegnud-data
-    SUBDIR += noegnud-littlehack
-    SUBDIR += noegnud-nethack
-    SUBDIR += noegnud-nethack-deet
-    SUBDIR += noegnud-slashem
     SUBDIR += nonsense
     SUBDIR += npush
     SUBDIR += nsnake
@@ -746,7 +726,6 @@
     SUBDIR += pipepanic
     SUBDIR += pipewalker
     SUBDIR += plee-the-bear
-    SUBDIR += plonx
     SUBDIR += plutocracy
     SUBDIR += pmars
     SUBDIR += pmars-sdl
@@ -777,7 +756,6 @@
     SUBDIR += py-sgfsummary
     SUBDIR += pyawale
     SUBDIR += pycadia
-    SUBDIR += pyching
     SUBDIR += pydance
     SUBDIR += pyfa
     SUBDIR += pykawari
@@ -785,7 +763,6 @@
     SUBDIR += pyspacewar
     SUBDIR += pysycache
     SUBDIR += pysycache-lang
-    SUBDIR += pysycache-themes
     SUBDIR += pythonchess
     SUBDIR += pythonsudoku
     SUBDIR += pytowerdefense
@@ -801,7 +778,6 @@
     SUBDIR += qqwing
     SUBDIR += qstat
     SUBDIR += qtads
-    SUBDIR += qtv
     SUBDIR += quackle
     SUBDIR += quadra
     SUBDIR += quadrapassel
@@ -820,7 +796,6 @@
     SUBDIR += quake2-rogue
     SUBDIR += quake2-source
     SUBDIR += quake2-xatrix
-    SUBDIR += quake2-zaero
     SUBDIR += quake2lnx
     SUBDIR += quake2max
     SUBDIR += quake3
@@ -857,7 +832,6 @@
     SUBDIR += rocksndiamonds
     SUBDIR += rocksndiamonds-data
     SUBDIR += rottdc
-    SUBDIR += rt2-demo
     SUBDIR += rtb
     SUBDIR += rubix
     SUBDIR += rubygem-fortune_gem
@@ -880,7 +854,6 @@
     SUBDIR += sdl_jewels
     SUBDIR += sdl_lopan
     SUBDIR += sdl_scavenger
-    SUBDIR += sdlquake2
     SUBDIR += sdlroids
     SUBDIR += sdlsand
     SUBDIR += sea-defender
@@ -906,7 +879,6 @@
     SUBDIR += slump
     SUBDIR += slune
     SUBDIR += smashbattle
-    SUBDIR += smiley
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += solarconquest
@@ -935,7 +907,6 @@
     SUBDIR += stormbaancoureur
     SUBDIR += stransball2
     SUBDIR += stratagus
-    SUBDIR += sudoku
     SUBDIR += sudoku-sensei
     SUBDIR += sudoku_solver
     SUBDIR += sudsol
@@ -951,7 +922,6 @@
     SUBDIR += taipan
     SUBDIR += tali
     SUBDIR += tanglet
-    SUBDIR += tank
     SUBDIR += tanks-of-freedom
     SUBDIR += tbclock
     SUBDIR += tbe
@@ -967,7 +937,6 @@
     SUBDIR += tetzle
     SUBDIR += textmaze
     SUBDIR += thegrind
-    SUBDIR += thevalley
     SUBDIR += thudboard
     SUBDIR += tileworld
     SUBDIR += timeseal
@@ -1052,7 +1021,6 @@
     SUBDIR += widelands
     SUBDIR += wizznic
     SUBDIR += wmeyes
-    SUBDIR += wmminichess
     SUBDIR += wmpuzzle
     SUBDIR += wmqstat
     SUBDIR += wmquake
@@ -1080,7 +1048,6 @@
     SUBDIR += xboard-devel
     SUBDIR += xboing
     SUBDIR += xbomb
-    SUBDIR += xbomber
     SUBDIR += xbubble
     SUBDIR += xchadance
     SUBDIR += xcheckers
@@ -1135,7 +1102,6 @@
     SUBDIR += xoct
     SUBDIR += xoids
     SUBDIR += xoj
-    SUBDIR += xonix
     SUBDIR += xonotic
     SUBDIR += xorgramana
     SUBDIR += xosmulti
@@ -1156,7 +1122,6 @@
     SUBDIR += xrick
     SUBDIR += xrisk
     SUBDIR += xroach
-    SUBDIR += xroads
     SUBDIR += xrobots
     SUBDIR += xrot
     SUBDIR += xrubik
@@ -1185,8 +1150,6 @@
     SUBDIR += xvier
     SUBDIR += xvmahjongg
     SUBDIR += xvmines
-    SUBDIR += xwelltris
-    SUBDIR += xwordpy
     SUBDIR += xworm
     SUBDIR += xye
     SUBDIR += xzip

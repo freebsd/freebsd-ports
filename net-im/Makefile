@@ -8,7 +8,6 @@
     SUBDIR += centerim
     SUBDIR += centerim-devel
     SUBDIR += chattahoochie
-    SUBDIR += cicquin
     SUBDIR += cjc
     SUBDIR += climm
     SUBDIR += coccinella
@@ -32,7 +31,6 @@
     SUBDIR += gloox
     SUBDIR += hotot
     SUBDIR += hs-haskell-xmpp
-    SUBDIR += icb
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += imspector
@@ -112,11 +110,9 @@
     SUBDIR += pidgin-hotkeys
     SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
-    SUBDIR += pidgin-manualsize
     SUBDIR += pidgin-osd
     SUBDIR += pidgin-pidgimpd
     SUBDIR += pidgin-privacy-please
-    SUBDIR += pidgin-rhythmbox
     SUBDIR += pidgin-sipe
     SUBDIR += pidgin-skype
     SUBDIR += pidgin-skypeweb
