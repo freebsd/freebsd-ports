@@ -5,16 +5,14 @@ PORTNAME=	autozen
 PORTVERSION=	2.1
 PORTREVISION=	7
 CATEGORIES=	audio
-MASTER_SITES=	http://www.sourcefiles.org/Miscellaneous/
+MASTER_SITES=	http://www.linuxlabs.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjust brain waves with sound
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
 
 OPTIONS_DEFINE=	DOCS
 
@@ -45,7 +43,7 @@ post-patch:
 		 s|share/AutoZen|${DATADIR_REL}| ; \
 		 s|gtk-config|$${GTK_CONFIG}|g ; \
 		 s|$$(CC) seq2wav|$$(CC) $$(CFLAGS) seq2wav| ; \
-		 s|-pthread|-lm -pthread|g' \
+		 s|-pthread|-lm|' \
 		${WRKSRC}/Makefile
 
 do-install:
