@@ -3,16 +3,12 @@
 
 PORTNAME=	awffull
 PORTVERSION=	3.10.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES?=	www
-MASTER_SITES=	http://www.stedee.id.au/files/
+MASTER_SITES=	https://launchpadlibrarian.net/20395993/
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT=	AWFFull is a webserver log analysis tool forked from Webalizer
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
+COMMENT=	Webserver log analysis tool forked from Webalizer
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -31,7 +27,7 @@ FONTLABEL?=	${LOCALBASE}/share/fonts/bitstream-vera/Vera.ttf
 OPTIONS_DEFINE=	GEOIP DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-USES=		gettext iconv shebangfix
+USES=		gettext iconv localbase shebangfix
 SHEBANG_FILES=	contrib/awffull_history_regen.pl \
 		contrib/awffull_history_regen_german.pl
 
@@ -39,9 +35,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-font-default=${FONTDEFAULT} \
 		--with-font-label=${FONTLABEL} \
 		--with-etcdir=${PREFIX}/etc
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 GEOIP_CONFIGURE_ENABLE=	geoip
@@ -51,12 +44,14 @@ NLS_CONFIGURE_ENABLE=	nls
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} \
-		COPYING ChangeLog DNS.README PERFORMANCE_TIPS.txt \
+		ChangeLog DNS.README PERFORMANCE_TIPS.txt \
 		README* TODO country-codes.txt \
 		${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample* ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/*.pl ${STAGEDIR}${EXAMPLESDIR}
