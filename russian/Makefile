@@ -9,9 +9,7 @@
     SUBDIR += calligra-l10n
     SUBDIR += d1489
     SUBDIR += emkatic
-    SUBDIR += eric4
     SUBDIR += eric6
-    SUBDIR += fortune-bashorgru
     SUBDIR += fortuneru
     SUBDIR += gd
     SUBDIR += gimp-help

@@ -1,6 +1,0 @@
-bin/qmail-delivery-conf
-bin/qmail-pop3d-conf
-bin/qmail-qmqpd-conf
-bin/qmail-qmtpd-conf
-bin/qmail-smtpd-conf
-@dir service

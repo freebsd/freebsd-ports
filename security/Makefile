@@ -91,7 +91,6 @@
     SUBDIR += create-cert
     SUBDIR += cryptlib
     SUBDIR += cryptopp
-    SUBDIR += cryptstring
     SUBDIR += cvm
     SUBDIR += cyrus-sasl2
     SUBDIR += cyrus-sasl2-gssapi
@@ -246,7 +245,6 @@
     SUBDIR += iaikpkcs11wrapper
     SUBDIR += idea
     SUBDIR += identify
-    SUBDIR += ifd-slb_rf60
     SUBDIR += ike
     SUBDIR += ike-scan
     SUBDIR += integrit
@@ -407,7 +405,6 @@
     SUBDIR += openconnect
     SUBDIR += opencryptoki
     SUBDIR += openct
-    SUBDIR += openpgpsdk
     SUBDIR += opensaml2
     SUBDIR += opensc
     SUBDIR += openscep
@@ -723,7 +720,6 @@
     SUBDIR += pdfcrack
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
-    SUBDIR += pear-Auth_OpenID
     SUBDIR += pear-Auth_PrefManager
     SUBDIR += pear-Auth_SASL
     SUBDIR += pear-Crypt_Blowfish
@@ -935,8 +931,6 @@
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
     SUBDIR += radamsa
-    SUBDIR += radiusniff
-    SUBDIR += rainbowcrack
     SUBDIR += ranpwd
     SUBDIR += ratproxy
     SUBDIR += rats
@@ -1074,7 +1068,6 @@
     SUBDIR += sshguard-ipfw
     SUBDIR += sshguard-null
     SUBDIR += sshguard-pf
-    SUBDIR += sshit
     SUBDIR += sshpass
     SUBDIR += ssl-admin
     SUBDIR += sslscan
@@ -1131,7 +1124,6 @@
     SUBDIR += vault
     SUBDIR += vinetto
     SUBDIR += vlock
-    SUBDIR += vlog
     SUBDIR += vm-to-tor
     SUBDIR += vnccrack
     SUBDIR += vpnc

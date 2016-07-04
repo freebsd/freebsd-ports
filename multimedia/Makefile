@@ -75,7 +75,6 @@
     SUBDIR += gcfilms
     SUBDIR += gdialog
     SUBDIR += gdvrecv
-    SUBDIR += ggrab
     SUBDIR += gmencoder
     SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
@@ -425,7 +424,6 @@
     SUBDIR += vdr-plugin-xineliboutput
     SUBDIR += vdr-plugin-xvdr
     SUBDIR += vdr-plugins
-    SUBDIR += vic
     SUBDIR += vid.stab
     SUBDIR += vlc
     SUBDIR += vlc-qt4

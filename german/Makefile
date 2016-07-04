@@ -11,7 +11,6 @@
     SUBDIR += dict
     SUBDIR += ding
     SUBDIR += dtaus
-    SUBDIR += eric4
     SUBDIR += eric6
     SUBDIR += geonext
     SUBDIR += gimp-help

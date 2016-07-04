@@ -90,7 +90,6 @@
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
-    SUBDIR += bontmia
     SUBDIR += boxbackup
     SUBDIR += boxbackup-devel
     SUBDIR += brasero
@@ -189,7 +188,6 @@
     SUBDIR += cw
     SUBDIR += daa2iso
     SUBDIR += dae
-    SUBDIR += daedalus
     SUBDIR += daemonize
     SUBDIR += daemontools
     SUBDIR += daemontools-encore
@@ -468,7 +466,6 @@
     SUBDIR += jailutils
     SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
-    SUBDIR += jfbterm
     SUBDIR += jkill
     SUBDIR += jobd
     SUBDIR += jps
@@ -738,7 +735,6 @@
     SUBDIR += pcbsd-syscache
     SUBDIR += pcbsd-utils
     SUBDIR += pcbsd-utils-qt5
-    SUBDIR += pcfclock
     SUBDIR += pciutils
     SUBDIR += pcpustat
     SUBDIR += pdixtract
@@ -895,7 +891,6 @@
     SUBDIR += roottail
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
-    SUBDIR += rsyncmanager
     SUBDIR += rsyncrypto
     SUBDIR += rsyslog7
     SUBDIR += rsyslog8
@@ -1140,7 +1135,6 @@
     SUBDIR += vils
     SUBDIR += vimpager
     SUBDIR += virtualmin
-    SUBDIR += vlogger
     SUBDIR += vm-bhyve
     SUBDIR += vmdktool
     SUBDIR += vmtouch

@@ -33,7 +33,6 @@
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
     SUBDIR += devd-notifier
-    SUBDIR += displaycalibrator
     SUBDIR += dlume
     SUBDIR += docear
     SUBDIR += dosage

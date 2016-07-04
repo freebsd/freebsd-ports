@@ -63,7 +63,6 @@
     SUBDIR += hdf5
     SUBDIR += hs-bio
     SUBDIR += isaac-cfd
-    SUBDIR += jmol
     SUBDIR += jstrack
     SUBDIR += kalzium
     SUBDIR += kst2

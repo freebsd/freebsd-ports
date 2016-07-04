@@ -290,7 +290,6 @@
     SUBDIR += gpaint
     SUBDIR += gphoto2
     SUBDIR += gpicview
-    SUBDIR += gplot
     SUBDIR += gpsmanshp
     SUBDIR += gracula
     SUBDIR += grads
@@ -365,7 +364,6 @@
     SUBDIR += imgv
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
-    SUBDIR += import-pictures
     SUBDIR += impressive
     SUBDIR += inkscape
     SUBDIR += intel-backlight
@@ -470,7 +468,6 @@
     SUBDIR += libGLw
     SUBDIR += libafterimage
     SUBDIR += libart_lgpl
-    SUBDIR += libaux
     SUBDIR += libboard
     SUBDIR += libbpg
     SUBDIR += libcaca
@@ -1045,8 +1042,6 @@
     SUBDIR += waffle
     SUBDIR += waifu2x-converter-cpp
     SUBDIR += webp
-    SUBDIR += whirlgif
-    SUBDIR += white_dune
     SUBDIR += wings
     SUBDIR += wmicons
     SUBDIR += wxsvg

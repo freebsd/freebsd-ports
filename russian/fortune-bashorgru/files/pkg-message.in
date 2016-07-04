@@ -1,8 +1,0 @@
-
-Usage (if you are using utf-8):
-/usr/games/fortune %%PREFIX%%/share/games/fortune/ru_RU.UTF-8
-or (if you are using koi8-r)
-/usr/games/fortune %%PREFIX%%/share/games/fortune/ru_RU.KOI8-R
-
-Example script to keep your fortune up to date placed in
-%%EXAMPLESDIR%%/
