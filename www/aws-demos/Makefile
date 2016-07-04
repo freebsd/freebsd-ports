@@ -69,7 +69,8 @@ DEMO_DIRS+=	zdemo
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-LIB_DEPENDS+=	libssl.so:security/openssl
+USES+=	ssl
+WITH_OPENSSL_PORT=	yes
 CONF_ARGS+=	SOCKET=openssl
 DEMO_DIRS+=	agent
 DEMO_DIRS+=	runme

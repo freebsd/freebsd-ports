@@ -28,7 +28,6 @@ OPTIONS_DEFAULT=	RESSL
 # Requires libtls from LibreSSL
 RESSL_USE=		openssl=yes
 RESSL_VARS=		with_openssl_port=yes \
-			openssl_port=security/libressl
 RESSL_CONFIGURE_WITH=	cacert=${LOCALBASE}/etc/ssl/cert.pem
 RESSL_CPPFLAGS=		-I${LOCALBASE}/include
 RESSL_LDFLAGS=		-L${LOCALBASE}/lib
@@ -41,4 +40,10 @@ pre-build:
 post-install:
 	cd ${STAGEDIR}${PREFIX}/etc && ${MV} ntpd.conf ntpd.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MRESSL} && empty(SSL_DEFAULT:Mlibressl*)
+IGNORE=	Requires LibreSSL from ports, define DEFAULT_VERSIONS+=ssl=libressl in your make.conf and rebuild everything.
+.endif
+
+.include <bsd.port.post.mk>
