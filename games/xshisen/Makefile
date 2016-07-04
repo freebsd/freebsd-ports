@@ -10,19 +10,19 @@ MASTER_SITES=	LOCAL/hrs
 MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Shisen-sho puzzle game for X11
 
-BROKEN=		fails to start
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir="${DATADIR}"
 INSTALL_TARGET=	install-prog
 
-.if !defined(WITHOUT_MOTIF)
-USES=		motif
-CONFIGURE_ARGS+=	--with-motif
-.endif
+OPTIONS_DEFINE=		MOTIF
+OPTIONS_DEFAULT=	MOTIF
+
+MOTIF_USES=		motif
+MOTIF_CONFIGURE_WITH=	motif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
