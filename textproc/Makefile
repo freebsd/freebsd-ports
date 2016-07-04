@@ -1218,6 +1218,7 @@
     SUBDIR += py-acora
     SUBDIR += py-agate
     SUBDIR += py-agate-dbf
+    SUBDIR += py-agate-excel
     SUBDIR += py-alabaster
     SUBDIR += py-asv
     SUBDIR += py-awesome-slugify
