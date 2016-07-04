@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	RESSL
 
 # Requires libtls from LibreSSL
 RESSL_USE=		openssl=yes
-RESSL_VARS=		with_openssl_port=yes \
+RESSL_VARS=		with_openssl_port=yes
 RESSL_CONFIGURE_WITH=	cacert=${LOCALBASE}/etc/ssl/cert.pem
 RESSL_CPPFLAGS=		-I${LOCALBASE}/include
 RESSL_LDFLAGS=		-L${LOCALBASE}/lib
