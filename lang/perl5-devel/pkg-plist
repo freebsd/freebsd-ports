@@ -479,7 +479,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test/Builder/Tester.pm
 %%PRIV_LIB%%/Test/Builder/Tester/Color.pm
 %%PRIV_LIB%%/Test/Builder/TodoDiag.pm
-%%PRIV_LIB%%/Test/FAQ.pod
 %%PRIV_LIB%%/Test/Harness.pm
 %%PRIV_LIB%%/Test/More.pm
 %%PRIV_LIB%%/Test/Simple.pm
@@ -1381,7 +1380,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test::Builder::Tester.3.gz
 %%MAN3%%/Test::Builder::Tester::Color.3.gz
 %%MAN3%%/Test::Builder::TodoDiag.3.gz
-%%MAN3%%/Test::FAQ.3.gz
 %%MAN3%%/Test::Harness.3.gz
 %%MAN3%%/Test::More.3.gz
 %%MAN3%%/Test::Simple.3.gz

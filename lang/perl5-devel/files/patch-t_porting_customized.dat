@@ -1,6 +1,6 @@
---- t/porting/customized.dat.orig	2016-06-26 22:23:33 UTC
+--- t/porting/customized.dat.orig	2016-07-04 07:43:43 UTC
 +++ t/porting/customized.dat
-@@ -1,12 +1,13 @@
+@@ -1,6 +1,7 @@
  Encode cpan/Encode/Byte/Makefile.PL 54f446297d614331ef3f51e8310faff27cc44f90
  Encode cpan/Encode/encoding.pm 51c19efc9bfe8467d6ae12a4654f6e7f980715bf
  ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t a0369c919e216fb02767a637666bb4577ad79b02
@@ -8,8 +8,10 @@
  ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/t/basic.t b7ee8691baf37197bf4249534f429fcf28f5cedf
  ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/t/lib/MakeMaker/Test/Setup/XS.pm 27aaa6acefd4223b57de74299314c19891ed17bc
  File::Path cpan/File-Path/lib/File/Path.pm fd8ce4420a0c113d3f47dd3223859743655c1da8
- File::Path cpan/File-Path/t/Path_win32.t 94b9276557ce7f80b91f6fd9bfa7a0cd9bf9683e
- Math::BigRat cpan/Math-BigRat/lib/Math/BigRat.pm 6eabc68e04f67694f6fe523e64eb013fc337ca5b
+@@ -10,7 +11,7 @@ Pod::Checker cpan/Pod-Checker/t/pod/cont
+ Pod::Checker cpan/Pod-Checker/t/pod/selfcheck.t 8ce3cfd38e4b9bcf5bc7fe7f2a14195e49aed7d8
+ Pod::Checker cpan/Pod-Checker/t/pod/testcmp.pl a0cd5c8eca775c7753f4464eee96fa916e3d8a16
+ Pod::Checker cpan/Pod-Checker/t/pod/testpchk.pl b2072c7f4379fd050e15424175d7cac5facf5b3b
 -Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm fe0bc906fb74b69cfd3fb289316ba669d770d465
 +Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 07e7d337de37d19b3cc7025af17b9111fb2ba265
  Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util.pm e479a29c6b66ac5cbbde4ef2296afaab6c4635a6
