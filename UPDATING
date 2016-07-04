@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+
+20160704:
+  AFFECTS: users of databases/mysql57-*
+  AUTHOR: riggs@FreeBSD.org
+
+  The default location for my.cnf has changed from "/var/db/mysql/my.cnf"
+  to "/usr/local/etc/mysql/my.cnf". Existing my.cnf files must be merged
+  manually with the new default and moved to the new location. To
+  continue using the my.cnf file at the old location, set "mysql_optfile"
+  in /etc/rc.conf to point to the location of the existing my.cnf file.
+
 20160701:
   AFFECTS: users of www/node5
   AUTHOR: bradleythughes@fastmail.fm
