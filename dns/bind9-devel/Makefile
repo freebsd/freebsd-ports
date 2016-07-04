@@ -13,11 +13,11 @@ DISTNAME=	${PORTNAME}9-${HASH}
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 
-LICENSE=	ISCL
+LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0.a20160627
-HASH=		33d0a77
+ISCVERSION=	9.12.0a.2016.07.04
+HASH=		c8fb7e4
 
 MAKE_JOBS_UNSAFE=	yes
 
