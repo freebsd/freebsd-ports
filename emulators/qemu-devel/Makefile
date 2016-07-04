@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 DISTVERSION=	2.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 PKGNAMESUFFIX=	-devel
@@ -16,8 +16,8 @@ LICENSE=	GPLv2
 HAS_CONFIGURE=	yes
 USES=		cpe gmake pkgconfig bison perl5 python:2,build tar:bzip2
 USE_PERL5=	build
-USE_XORG=	pixman x11 xext
-USE_GNOME+=	cairo gdkpixbuf2 glib20
+USE_XORG=	pixman
+USE_GNOME+=	cairo glib20
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 
@@ -37,7 +37,7 @@ X86_TARGETS_DESC=	Build only x86 system targets
 STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP GNS3
 OPTIONS_SUB=	yes
-X11_USE=	SDL=sdl
+X11_USE=	SDL=sdl XORG=x11,xext GNOME=gdkpixbuf2
 X11_CONFIGURE_ON=	--enable-sdl
 X11_CONFIGURE_OFF=	--disable-sdl
 GTK2_USE=	GNOME=gtk20,vte
