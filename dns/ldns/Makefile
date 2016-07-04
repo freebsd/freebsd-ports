@@ -80,7 +80,7 @@ INSTALL_TARGET+=install-manpages
 
 .if ${PORT_OPTIONS:MGOST}
 . if ${OSVERSION} < 1000015
-BUILD_DEPENDS+=	openssl>=1.0:security/openssl
+WITH_OPENSSL_PORT=	yes
 CONFLICTS+=	libressl-*
 . endif
 .else
