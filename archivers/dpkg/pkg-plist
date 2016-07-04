@@ -91,6 +91,8 @@ include/dpkg/version.h
 %%SITE_PERL%%/Dpkg/Control/Hash.pm
 %%SITE_PERL%%/Dpkg/Control/HashCore.pm
 %%SITE_PERL%%/Dpkg/Control/Info.pm
+%%SITE_PERL%%/Dpkg/Control/Tests.pm
+%%SITE_PERL%%/Dpkg/Control/Tests/Entry.pm
 %%SITE_PERL%%/Dpkg/Control/Types.pm
 %%SITE_PERL%%/Dpkg/Deps.pm
 %%SITE_PERL%%/Dpkg/Dist/Files.pm
@@ -155,12 +157,10 @@ libexec/dpkg/methods/multicd/install
 libexec/dpkg/methods/multicd/names
 libexec/dpkg/methods/multicd/setup
 libexec/dpkg/methods/multicd/update
-libexec/dpkg/parsechangelog/debian
 libexec/libdpkg.a
 libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/de/man1/dpkg-architecture.1.gz
 %%NLS%%man/de/man1/dpkg-buildflags.1.gz
-%%NLS%%man/de/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/de/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/de/man1/dpkg-deb.1.gz
 %%NLS%%man/de/man1/dpkg-distaddfile.1.gz
@@ -228,7 +228,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/es/man5/dselect.cfg.5.gz
 %%NLS%%man/es/man8/start-stop-daemon.8.gz
 %%NLS%%man/fr/man1/dpkg-architecture.1.gz
-%%NLS%%man/fr/man1/dpkg-buildflags.1.gz
 %%NLS%%man/fr/man1/dpkg-deb.1.gz
 %%NLS%%man/fr/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/fr/man1/dpkg-divert.1.gz
@@ -261,8 +260,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/fr/man5/dpkg.cfg.5.gz
 %%NLS%%man/fr/man5/dselect.cfg.5.gz
 %%NLS%%man/fr/man8/start-stop-daemon.8.gz
-%%NLS%%man/hu/man5/dpkg.cfg.5.gz
-%%NLS%%man/hu/man5/dselect.cfg.5.gz
 %%NLS%%man/it/man1/dpkg-architecture.1.gz
 %%NLS%%man/it/man1/dpkg-deb.1.gz
 %%NLS%%man/it/man1/dpkg-distaddfile.1.gz
@@ -362,6 +359,8 @@ man/man3/Dpkg::Control::FieldsCore.3.gz
 man/man3/Dpkg::Control::Hash.3.gz
 man/man3/Dpkg::Control::HashCore.3.gz
 man/man3/Dpkg::Control::Info.3.gz
+man/man3/Dpkg::Control::Tests.3.gz
+man/man3/Dpkg::Control::Tests::Entry.3.gz
 man/man3/Dpkg::Control::Types.3.gz
 man/man3/Dpkg::Deps.3.gz
 man/man3/Dpkg::Exit.3.gz
@@ -399,7 +398,6 @@ man/man5/dselect.cfg.5.gz
 man/man8/start-stop-daemon.8.gz
 %%NLS%%man/nl/man1/dpkg-architecture.1.gz
 %%NLS%%man/nl/man1/dpkg-buildflags.1.gz
-%%NLS%%man/nl/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/nl/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/nl/man1/dpkg-deb.1.gz
 %%NLS%%man/nl/man1/dpkg-distaddfile.1.gz
@@ -462,7 +460,6 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/pl/man5/dselect.cfg.5.gz
 %%NLS%%man/pl/man8/start-stop-daemon.8.gz
 %%NLS%%man/sv/man1/dpkg-architecture.1.gz
-%%NLS%%man/sv/man1/dpkg-buildflags.1.gz
 %%NLS%%man/sv/man1/dpkg-deb.1.gz
 %%NLS%%man/sv/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/sv/man1/dpkg-divert.1.gz
@@ -587,8 +584,6 @@ sbin/start-stop-daemon
 @sample %%DPKGDIR%%/diversions.sample
 @sample %%DPKGDIR%%/statoverride.sample
 @sample %%DPKGDIR%%/status.sample
-%%NLS%%@dir man/hu/man8
-%%NLS%%@dir man/hu/man1
 @dir etc/dpkg/dselect.cfg.d
 @dir etc/dpkg/dpkg.cfg.d
 @dir %%DPKGDIR%%/updates
