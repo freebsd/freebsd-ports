@@ -1217,6 +1217,7 @@
     SUBDIR += py-Tempita
     SUBDIR += py-acora
     SUBDIR += py-agate
+    SUBDIR += py-agate-dbf
     SUBDIR += py-alabaster
     SUBDIR += py-asv
     SUBDIR += py-awesome-slugify
