@@ -1216,6 +1216,7 @@
     SUBDIR += py-MarkupSafe
     SUBDIR += py-Tempita
     SUBDIR += py-acora
+    SUBDIR += py-agate
     SUBDIR += py-alabaster
     SUBDIR += py-asv
     SUBDIR += py-awesome-slugify
