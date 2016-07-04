@@ -1,0 +1,19 @@
+$NetBSD: patch-lib_build_OCaml.om,v 1.1 2012/11/23 22:55:22 marino Exp $
+
+Omake will break in over a dozen places on gcc 4.7.x if warnings are
+treated as errors.  All valid but unreferenced functions and constants
+are warned about in gcc 4.7, and the alternative to removing the
+warn-error flag is to remove all these unreferenced functions and
+constants via patches.
+
+--- lib/build/OCaml.om.orig	2008-03-05 01:07:25.000000000 +0000
++++ lib/build/OCaml.om
+@@ -176,7 +176,7 @@ public.PREFIXED_OCAMLPACKS =\
+ #
+ declare OCAMLDEPFLAGS
+ public.OCAMLPPFLAGS  =
+-public.OCAMLFLAGS    = -warn-error A
++public.OCAMLFLAGS    =
+ public.OCAMLCFLAGS   = -g
+ public.OCAMLOPTFLAGS =
+ public.OCAMLCPPFLAGS =
