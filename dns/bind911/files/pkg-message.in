@@ -1,0 +1,22 @@
+**********************************************************************
+*            _  _____ _____ _____ _   _ _____ ___ ___  _   _         *
+*           / \|_   _|_   _| ____| \ | |_   _|_ _/ _ \| \ | |        *
+*          / _ \ | |   | | |  _| |  \| | | |  | | | | |  \| |        *
+*         / ___ \| |   | | | |___| |\  | | |  | | |_| | |\  |        *
+*        /_/   \_\_|   |_| |_____|_| \_| |_| |___\___/|_| \_|        *
+*                                                                    *
+*   BIND requires configuration of rndc, including a "secret" key.   *
+*    The easiest, and most secure way to configure rndc is to run    *
+*   'rndc-confgen -a' to generate the proper conf file, with a new   *
+*            random key, and appropriate file permissions.           *
+*                                                                    *
+%%NOBASE%%*     The %%PREFIX%%/etc/rc.d/named script will do that for you.     *
+%%BASE%%*    The /etc/rc.d/named script in the base will do that for you.    *
+%%BASE%%*                                                                    *
+%%BASE%%*   You will need to make sure that you have the following line      *
+%%BASE%%*   in your /etc/rc.conf in order to have the startup script         *
+%%BASE%%*   run the named version from the port:                             *
+%%BASE%%*                                                                    *
+%%BASE%%*   named_program="%%PREFIX%%/sbin/named"                            *
+*                                                                    *
+**********************************************************************

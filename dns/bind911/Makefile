@@ -3,19 +3,33 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/}
+.if defined(BIND_TOOLS_SLAVE)
+# dns/bind-tools here
 PORTREVISION=	0
+.else
+# dns/bind910 here
+PORTREVISION=	0
+.endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
-PKGNAMESUFFIX=	99
+.if defined(BIND_TOOLS_SLAVE)
+PKGNAMESUFFIX=	-tools
+.else
+PKGNAMESUFFIX=	911
+.endif
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
+.if defined(BIND_TOOLS_SLAVE)
+COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
+.else
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
+.endif
 
-LICENSE=	ISCL
+LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.9-P1
+ISCVERSION=	9.11.0b1
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -30,39 +44,55 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
+CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE} \
 		--with-readline=-ledit \
 		--with-dlopen=yes \
 		--sysconfdir=${ETCDIR}
+.if defined(BIND_TOOLS_SLAVE)
+CONFIGURE_ARGS+=	--disable-shared
+.endif
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind910-* bind911-* bind-tools-9.*
+CONFLICTS+=	bind9*-9.[456789].* bind910-* bind9*-sdb-9.[456789].*
 
+.if !defined(BIND_TOOLS_SLAVE)
 SUB_FILES=	pkg-message
+.endif
 
-OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE RRL DLZ_FILESYSTEM
-OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE FIXED_RRSET SIGCHASE \
-			IPV6 THREADS FILTER_AAAA GOST PYTHON START_LATE MINCACHE \
-			LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS \
-			PORTREVISION FETCHLIMIT QUERYTRACE
+OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE
+OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON START_LATE \
+			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA
+OPTIONS_RADIO=	CRYPTO GOSTDEF
+OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
+OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
+
+.if !defined(BIND_TOOLS_SLAVE)
+OPTIONS_DEFAULT+=	RRL DLZ_FILESYSTEM
+OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP \
+			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
+.endif	# BIND_TOOLS_SLAVE
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
 OPTIONS_SUB=	yes
 
 SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
-REPLACE_BASE_DESC=	EOL, no longer supported
 LARGE_FILE_DESC=	64-bit file support
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
 FILTER_AAAA_DESC=	Enable filtering of AAAA records
-GOST_DESC=		Enable GOST ciphers, needs SSL (see help on 8 and 9)
+CRYPTO_DESC=		Choose which crypto engine to use
+NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
+GEOIP_DESC=		Allow geographically based ACL.
+GOSTDEF_DESC=		Enable GOST ciphers, needs SSL (see help on 8 and 9)
+GOST_DESC=		GOST raw keys (new default)
+GOST_ASN1_DESC=		GOST using ASN.1
 PYTHON_DESC=		Build with Python utilities
 START_LATE_DESC=	Start BIND late in the boot process
 MINCACHE_DESC=		Use the mincachettl patch
@@ -74,7 +104,6 @@ LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
-RPZ_PATCH_DESC=		RPZ improvements
 RRL_DESC=		Response Rate Limiting
 DLZ_DESC=		Dynamically Loadable Zones
 DLZ_POSTGRESQL_DESC=	DLZ Postgres driver
@@ -83,16 +112,22 @@ DLZ_BDB_DESC=		DLZ BDB driver
 DLZ_LDAP_DESC=		DLZ LDAP driver
 DLZ_FILESYSTEM_DESC=	DLZ filesystem driver
 DLZ_STUB_DESC=		DLZ stub driver
-GSSAPI_BASE_DESC=	${GSSAPI_DESC} (Heimdal in base)
-GSSAPI_HEIMDAL_DESC=	${GSSAPI_DESC} (security/heimdal)
-GSSAPI_MIT_DESC=	${GSSAPI_DESC} (security/krb5)
-GSSAPI_NONE_DESC=	No ${GSSAPI_DESC}
+GSSAPI_BASE_DESC=	Using Heimdal in base
+GSSAPI_HEIMDAL_DESC=	Using security/heimdal
+GSSAPI_MIT_DESC=	Using security/krb5
+GSSAPI_NONE_DESC=	Disable
 MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 FETCHLIMIT_CONFIGURE_ENABLE=	fetchlimit
 QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 
+.if defined(BIND_TOOLS_SLAVE)
+CONFLICTS+=		bind910-9.10.*
+.else
+CONFLICTS+=		bind-tools-9.*
+.endif	# BIND_TOOLS_SLAVE
+
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
-SSL_USE=		openssl=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
 
 NEWSTATS_CONFIGURE_ENABLE=	newstats
@@ -110,10 +145,18 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 FILTER_AAAA_CONFIGURE_ENABLE=	filter-aaaa
 
-GOST_CONFIGURE_WITH=	gost
+NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 
-PYTHON_CONFIGURE_WITH=	python
+GEOIP_CONFIGURE_WITH=	geoip
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+
+GOST_CONFIGURE_ON=	--with-gost
+GOST_ASN1_CONFIGURE_ON=	--with-gost=asn1
+
+PYTHON_CONFIGURE_WITH=	python=${PYTHON_CMD}
 PYTHON_USES=	python
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
 DLZ_POSTGRESQL_USES=		pgsql
@@ -123,9 +166,6 @@ FIXED_RRSET_CONFIGURE_ENABLE=	fixed-rrset
 RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
-
-RPZ_PATCH_PATCHFILES=	${ISCVERSION}-rpz2+rl.14038.05.patch.xz:vix
-RPZ_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix LOCAL/mat/bind:vix
 
 RRL_CONFIGURE_ENABLE=	rrl
 
@@ -160,6 +200,10 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 
 .include <bsd.port.options.mk>
 
+.if !${PORT_OPTIONS:MGOST} && !${PORT_OPTIONS:MGOST_ASN1}
+CONFIGURE_ARGS+=	--without-gost
+.endif
+
 .if !${PORT_OPTIONS:MLINKS}
 PKGINSTALL=${NONEXISTENT}
 .endif
@@ -170,16 +214,14 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if ${PORT_OPTIONS:MREPLACE_BASE}
-IGNORE=		REPLACE_BASE is no longer supported
-.endif # REPLACE_BASE
-
 .if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100)
 PKGINSTALL=	${NONEXISTENT}
 PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
+.if !defined(BIND_TOOLS_SLAVE)
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
+.endif # !defined(BIND_TOOLS_SLAVE)
 .else
 PLIST_SUB+=	NOBASE="@comment " BASE=""
 SUB_LIST+=	NOBASE="@comment " BASE=""
@@ -187,11 +229,12 @@ SUB_LIST+=	NOBASE="@comment " BASE=""
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ( ${PORT_OPTIONS:MGOST} ) && ${SSL_DEFAULT} == base
+.if ( ${PORT_OPTIONS:MGOST} || ${PORT_OPTIONS:MGOST_ASN1} ) && ${SSL_DEFAULT} == base
 BROKEN=	OpenSSL from the base system does not support GOST, add \
 	DEFAULT_VERSIONS+=ssl=openssl to your /etc/make.conf and rebuild everything \
 	that needs SSL.
@@ -201,22 +244,31 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|readline/readline.h|editline/readline.h|; \
 		s|readline/history.h|histedit.h|' \
 		${WRKSRC}/bin/dig/nslookup.c ${WRKSRC}/bin/nsupdate/nsupdate.c
-.for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
+.if defined(BIND_TOOLS_SLAVE)
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
+		-e 's#isc-config.sh installdirs#installdirs#' \
+		-e 's#.*INSTALL.*isc-config.*##' \
+		-e 's#.*INSTALL.*bind.keys.*##' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = delv dig dnssec nsupdate \\#' \
+		-e 's#^	.*check confgen ##' \
+		${WRKSRC}/bin/Makefile.in
+.else
+.  for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${ETCDIR}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
-.endfor
+.  endfor
+.endif
 
+.if !defined(BIND_TOOLS_SLAVE)
 .if ${PORTREVISION:N0}
 post-patch-PORTREVISION-on:
 	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
 		${WRKSRC}/version
 .endif
-
-post-configure:
-	@${REINPLACE_CMD} -e '/^SO_LDFLAGS/s/-Wl,-rpath,/-rpath /' ${WRKSRC}/bin/tests/system/dlzexternal/Makefile
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
@@ -243,5 +295,10 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
+
+# Can't use USE_PYTHON=autoplist
+post-install-PYTHON-on:
+	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type f | ${SED} -e 's|${STAGEDIR}||' >> ${TMPPLIST}
+.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.post.mk>
