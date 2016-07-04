@@ -1,0 +1,11 @@
+--- bin/tests/system/dlzexternal/Makefile.in.orig	2016-06-27 17:38:13 UTC
++++ bin/tests/system/dlzexternal/Makefile.in
+@@ -35,7 +35,7 @@ OBJS =          ${DLOPENOBJS}
+ @BIND9_MAKE_RULES@
+ 
+ CFLAGS =	@CFLAGS@ @SO_CFLAGS@
+-SO_LDFLAGS =	@LDFLAGS@ @SO_LDFLAGS@
++SO_LDFLAGS =	@SO_LDFLAGS@
+ 
+ dlopen@EXEEXT@: ${DLOPENOBJS}
+ 	${LIBTOOL_MODE_LINK} ${PURIFY} ${CC} ${CFLAGS} ${LDFLAGS} \
