@@ -135,6 +135,13 @@ PGSQL_VARS=	_REQUIRE+=postgresql
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 SUB_FILES+=	pkg-message
 
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000011
+USES+=		compiler:c11
+WITH_OPENSSL_PORT=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
 CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -I${OPENSSLLIB}
 
@@ -160,4 +167,4 @@ post-install-EXAMPLES-on:
 	${MV} ${STAGEDIR}${DOCSDIR}/dovecot-openssl.cnf ${STAGEDIR}${EXAMPLESDIR}
 	${MV} ${STAGEDIR}${DOCSDIR}/mkcert.sh ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
