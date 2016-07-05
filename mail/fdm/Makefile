@@ -14,12 +14,15 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libtdb.so:databases/tdb
 
+USES=		ssl
+HAS_CONFIGURE=	yes
+MAKE_ARGS=	-DPCRE -DDB INSTALLBIN="${INSTALL_PROGRAM}"
+
 PLIST_FILES=	bin/fdm man/man1/fdm.1.gz man/man5/fdm.conf.5.gz
 PORTDOCS=	CHANGES README MANUAL
 PORTEXAMPLES=	n-marriott.conf f-terbeck.conf t-ulmer.conf w-maier.conf g-lando.conf
-MAKE_ARGS=	-DPCRE -DDB INSTALLBIN="${INSTALL_PROGRAM}"
-USE_OPENSSL=	yes
-HAS_CONFIGURE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/*.[ch15]
@@ -27,10 +30,12 @@ post-patch:
 		s|-I-||g; s|-g bin -o root||g; s|^FDEBUG|#&|;\
 		s|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${MAKEFILE}
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} \
 		${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
