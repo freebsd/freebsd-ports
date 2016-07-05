@@ -59,7 +59,7 @@ LDAP_CONFIGURE_ON=		--enable-ldap=shared
 SSL_CFLAGS=			-I${OPENSSLINC}
 SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
 SSL_LDFLAGS=			-L${OPENSSLLIB}
-SSL_USE=			OPENSSL=yes
+SSL_USES=			ssl
 
 SUEXEC_RSRCLIMIT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-suexec_rsrclimit
 SUEXEC_USERDIR_EXTRA_PATCHES=	${FILESDIR}/extra-patch-suexec_userdir
