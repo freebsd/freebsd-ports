@@ -1221,7 +1221,6 @@
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-creole
     SUBDIR += py-csvkit
-    SUBDIR += py-dbf
     SUBDIR += py-dbfread
     SUBDIR += py-diff-match-patch
     SUBDIR += py-docutils
