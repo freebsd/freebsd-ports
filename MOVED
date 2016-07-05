@@ -8596,3 +8596,6 @@ ftp/fget||2016-07-04|Has expired: Broken for more than 6 months
 net-mgmt/netmond||2016-07-04|Has expired: Broken for more than 6 months
 net-mgmt/ipfm||2016-07-04|Has expired: Broken for more than 6 months
 textproc/py-dbf|databases/py-dbf|2016-07-05|Duplicate port deleted
+games/freetennis||2016-07-05|Depends on expired graphics/ocaml-images
+graphics/ocaml-images||2016-07-05|Has expired: Depends on expiring devel/omake
+devel/omake||2016-07-05|Has expired: Broken for more than 6 months
