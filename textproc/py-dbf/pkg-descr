@@ -1,8 +1,0 @@
-Pure python package for reading/writing dBase, FoxPro, and Visual
-FoxPro .dbf files (including memos)
-
-Currently supports dBase III, Clipper, FoxPro, and Visual FoxPro
-tables. Text is returned as unicode, and codepage settings in tables
-are honored. Memos and Null fields are supported.
-
-WWW: https://pypi.python.org/pypi/dbf
