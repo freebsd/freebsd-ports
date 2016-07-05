@@ -7,14 +7,14 @@ ONLY_FOR_ARCHS?= amd64 i386
 . if ${OSVERSION} >= 1000100
 PLATFORM=	freebsd100x86_64
 . else
-PLATFORM=	freebsd70x86_64
+IGNORE=         unsupported OS release, sorry
 . endif
 
 .elif ${ARCH} == i386
 . if ${OSVERSION} >= 1000100
 PLATFORM=	freebsd100x86
 . else
-PLATFORM=	freebsd70x86
+IGNORE=         unsupported OS release, sorry
 . endif
 
 .else
