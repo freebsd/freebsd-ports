@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.20
-PORTREVISION=	1
+PORTVERSION=	2.4.23
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -50,6 +49,10 @@ APACHEDIR=	${MASTERDIR}
 WITH_HTTP_PORT?=	80
 WITH_SSL_PORT?=		443
 
+.if !defined(WITH_DEBUG)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-server_buildmark.c
+.endif
+
 .include "${APACHEDIR}/Makefile.options"
 .include "${APACHEDIR}/Makefile.options.desc"
 
@@ -58,6 +61,7 @@ AUTHN_DBD_IMPLIES=		DBD
 HEARTBEAT_IMPLIES=		WATCHDOG STATUS
 HEARTMONITOR_IMPLIES=		WATCHDOG STATUS
 LBMETHOD_HEARTBEAT_IMPLIES=	WATCHDOG STATUS HEARTMONITOR
+PROXY_HCHECK_IMPLIES=		WATCHDOG
 
 # MPM
 MPM_PREFORK_CONFIGURE_ON=	--with-mpm=prefork
@@ -76,6 +80,8 @@ HTTP2_LIB_DEPENDS=		libnghttp2.so:www/nghttp2
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
 LUA_CONFIGURE_WITH=		lua
 LUA_USES=			lua
+PROXY_HTTP2_CONFIGURE_ON=	--with-nghttp2=${LOCALBASE}
+PROXY_HTTP2_LIB_DEPENDS=	libnghttp2.so:www/nghttp2
 
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
 SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
@@ -86,7 +92,7 @@ SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
 SSL_CFLAGS=			-I${OPENSSLINC}
 SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
 SSL_LDFLAGS=			-L${OPENSSLLIB}
-SSL_USE=			OPENSSL=yes
+SSL_USES=			ssl
 
 .include <bsd.port.options.mk>
 

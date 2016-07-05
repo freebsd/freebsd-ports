@@ -175,7 +175,9 @@ libexec/apache24/mod_log_config.so
 %%MOD_PROXY_FDPASS%%libexec/apache24/mod_proxy_fdpass.so
 %%MOD_PROXY_FTP%%libexec/apache24/mod_proxy_ftp.so
 %%MOD_PROXY_HTML%%libexec/apache24/mod_proxy_html.so
+%%MOD_PROXY_HCHECK%%libexec/apache24/mod_proxy_hcheck.so
 %%MOD_PROXY_HTTP%%libexec/apache24/mod_proxy_http.so
+%%MOD_PROXY_HTTP2%%libexec/apache24/mod_proxy_http2.so
 %%MOD_PROXY_SCGI%%libexec/apache24/mod_proxy_scgi.so
 %%MOD_PROXY_WSTUNNEL%%libexec/apache24/mod_proxy_wstunnel.so
 %%MOD_RATELIMIT%%libexec/apache24/mod_ratelimit.so
