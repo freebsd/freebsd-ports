@@ -13,6 +13,8 @@ COMMENT=	Python implementation of URI Template
 
 LICENSE=	APACHE20
 
+CONFLICTS_INSTALL=	py*-uritemplate.py-[0-9]*
+
 USE_PYTHON=	autoplist distutils
 USES=	python
 
