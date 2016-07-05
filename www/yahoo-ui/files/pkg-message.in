@@ -1,9 +1,0 @@
-
-*********************************************************************
-You have just installed the Yahoo YUI toolkit.
-
-Note that you should restart your Apache web server to ensure that
-the YUI configuration file is loaded.
-
-Then browse to http://localhost/yahoo/ for documentation and examples,
-if you've installed them.
