@@ -657,6 +657,7 @@
     SUBDIR += gio-sharp
     SUBDIR += git
     SUBDIR += git-bzr-ng
+    SUBDIR += git-cinnabar
     SUBDIR += git-codereview
     SUBDIR += git-cola
     SUBDIR += git-cvs

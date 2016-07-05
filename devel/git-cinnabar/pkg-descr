@@ -1,0 +1,6 @@
+git-cinnabar is a git remote helper to interact with mercurial
+repositories. Contrary to other such helpers, it doesn't use a local
+mercurial clone under the hood, although it currently does require
+mercurial to be installed for some of its libraries.
+
+WWW: https://github.com/glandium/git-cinnabar
