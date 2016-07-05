@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cgal
-PORTVERSION=	4.6
-PORTREVISION=	1
+PORTVERSION=	4.8.1
 CATEGORIES=	math
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/34703/
+MASTER_SITES=	https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.8.1/
 DISTNAME=	CGAL-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -20,22 +19,24 @@ LIB_DEPENDS=	libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp
 
 USE_LDCONFIG=		yes
-USES=			cmake tar:bzip2 shebangfix
-USE_QT4=		corelib qmake_build moc_build rcc_build uic_build svg
-CMAKE_ARGS=		-DWITH_CGAL_Qt3=OFF
-SHEBANG_FILES=		scripts/cgal_create_CMakeLists
+USES=			cmake shebangfix tar:xz
+USE_QT5=		buildtools_build core qmake_build widgets
+SHEBANG_FILES=		scripts/cgal_create_CMakeLists \
+			scripts/cgal_create_cmake_script
 HAS_CONFIGURE=		yes
-LDFLAGS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		GUI
 OPTIONS_DEFAULT=	GUI
 OPTIONS_SUB=		yes
 
 GUI_DESC=		Build libCGAL_ImageIO and libCGAL_Qt4
-GUI_USE=		GL=glu QT4=gui,opengl
+GUI_USE=		GL=glu,gl QT5=gui,opengl
 GUI_CMAKE_OFF=		-DWITH_CGAL_Qt4=OFF -DWITH_CGAL_ImageIO=OFF
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/auxiliary/cgal_create_cmake_script.1 ${STAGEDIR}${PREFIX}/man/man1/
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386 && ${OSVERSION} >= 1100000
+USE_GCC=	yes
+.endif
 
 .include <bsd.port.mk>
