@@ -1104,6 +1104,7 @@
     SUBDIR += ucspi-tcp
     SUBDIR += ucspi-unix
     SUBDIR += udfclient
+    SUBDIR += uefi-edk2-bhyve
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
