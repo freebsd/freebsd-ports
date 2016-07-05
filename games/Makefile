@@ -294,7 +294,6 @@
     SUBDIR += freera
     SUBDIR += freesweep
     SUBDIR += freesynd
-    SUBDIR += freetennis
     SUBDIR += fretsonfire
     SUBDIR += fretsonfire-data
     SUBDIR += frikqcc
