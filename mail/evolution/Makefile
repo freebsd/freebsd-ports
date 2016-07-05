@@ -90,8 +90,8 @@ LDAP_USE=	OPENLDAP=yes
 WEATHER_LIB_DEPENDS=	libgweather-3.so:net/libgweather
 WEATHER_CONFIGURE_ENABLE=	weather
 
-SPAMASSASSIN_CONFIGURE_WITH=	spamassassin=${PREFIX}/bin/spamassassin \
-				sa-learn=${PREFIX}/bin/sa-learn
+SPAMASSASSIN_CONFIGURE_WITH=	spamassassin=${LOCALBASE}/bin/spamassassin \
+				sa-learn=${LOCALBASE}/bin/sa-learn
 SPAMASSASSIN_BUILD_DEPENDS=	spamassassin:mail/spamassassin
 SPAMASSASSIN_RUN_DEPENDS=	spamassassin:mail/spamassassin
 
