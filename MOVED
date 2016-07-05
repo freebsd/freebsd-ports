@@ -8595,3 +8595,4 @@ x11-wm/e-module-penguins||2016-07-04|Has expired: Broken for more than 6 months
 ftp/fget||2016-07-04|Has expired: Broken for more than 6 months
 net-mgmt/netmond||2016-07-04|Has expired: Broken for more than 6 months
 net-mgmt/ipfm||2016-07-04|Has expired: Broken for more than 6 months
+textproc/py-dbf|databases/py-dbf|2016-07-05|Duplicate port deleted
