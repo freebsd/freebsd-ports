@@ -2,19 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	dlint
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	dns
-MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/dns/ \
-		http://www.sourcefiles.org/Networking/Tools/DNS/
-DISTNAME=	dlint${PORTVERSION}
+MASTER_SITES=	http://BSDforge.com/projects/source/dns/dlint/
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2016-07-04
-USES=		shebangfix
+USES=		shebangfix tar:xz
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SHEBANG_FILES=	digparse
