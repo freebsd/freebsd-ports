@@ -136,8 +136,10 @@ PROXY_EXPRESS_DESC=		Dynamic mass reverse proxy extension for mod_proxy
 PROXY_FCGI_DESC=		FastCGI support module for mod_proxy
 PROXY_FDPASS_DESC=		fdpass external process support module for mod_proxy
 PROXY_FTP_DESC=			FTP support module for mod_proxy
+PROXY_HCHECK_DESC=		Dynamic health check of Balancer members (workers) for mod_proxy
 PROXY_HTML_DESC=		Fix HTML Links in a Reverse Proxy
 PROXY_HTTP_DESC=		HTTP support module for mod_proxy
+PROXY_HTTP2_DESC=		Experimental http2 proxy module for h2 and h2c
 PROXY_SCGI_DESC=		SCGI gateway module for mod_proxy
 PROXY_WSTUNNEL_DESC=		Websockets Tunnel module for mod_proxy
 
