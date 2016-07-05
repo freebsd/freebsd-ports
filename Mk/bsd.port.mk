@@ -4536,7 +4536,7 @@ add-plist-info:
 # deinstall-time
 .if !target(add-plist-post)
 .if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && \
-    ${PREFIX} != "/usr" && !defined(NO_PREFIX_RMDIR))
+    ${PREFIX} != "/usr" && ${PREFIX} != "/" && !defined(NO_PREFIX_RMDIR))
 add-plist-post:
 	@${ECHO_CMD} "@dir ${PREFIX}" >> ${TMPPLIST}
 .endif
