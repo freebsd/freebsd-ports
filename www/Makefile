@@ -2379,7 +2379,6 @@
     SUBDIR += xshttpd-devel
     SUBDIR += xsp
     SUBDIR += yabb
-    SUBDIR += yahoo-ui
     SUBDIR += yanopaste
     SUBDIR += yaws
     SUBDIR += yii
