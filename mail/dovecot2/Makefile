@@ -13,7 +13,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.24
+PORTVERSION=	2.2.25
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -26,9 +26,8 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	dovecot-1.[0-9]*
 
-USES=		cpe iconv libtool
+USES=		cpe iconv libtool ssl
 USE_RC_SUBR=	dovecot
-USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
