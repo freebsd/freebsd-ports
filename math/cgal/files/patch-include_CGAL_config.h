@@ -1,6 +1,6 @@
---- include/CGAL/config.h.orig	2015-05-14 09:38:12 UTC
+--- include/CGAL/config.h.orig	2016-07-05 08:44:07 UTC
 +++ include/CGAL/config.h
-@@ -255,7 +255,8 @@
+@@ -296,7 +296,8 @@
     || defined(__x86_64) || defined(__x86_64__) \
     || defined(__ia64) || defined(__ia64__) \
     || defined(_M_IX86) || defined(_M_IA64) \
