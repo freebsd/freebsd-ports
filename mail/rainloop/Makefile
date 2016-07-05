@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rainloop
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.2
 CATEGORIES?=	mail www
 MASTER_SITES=	http://repository.rainloop.net/v2/webmail/${PORTVERSION}/
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.${RBUILD}-${RHASH}
@@ -18,25 +18,24 @@ LICENSE_PERMS=	auto-accept
 
 .if !defined(PKGNAMESUFFIX)
 # Refresh using info from http://repository.rainloop.net/v2/core.stable.json
-RHASH=		612fd7ad99051ba0b8bf465f21998678
+RHASH=		d0fd048a2d32f3838cf32a72d97959ee
 .endif
 
 .if defined(PKGNAMESUFFIX)
 # Refresh using info from http://repository.rainloop.net/v2/core.open.json
-RHASH=		40d27141a175903a3853fe6ccf4ec753
+RHASH=		df00be1a3ed3b171ed1dd0806b2aa5b7
 .endif
 
 # Refresh using info from http://repository.rainloop.net/v2/core.(stable|open).json
-RBUILD=		107
+RBUILD=		141
 
 .if !defined(PKGNAMESUFFIX)
 RESTRICTED=	Redistribution in any form is prohibited
 .endif
-USES=		zip
+USES=		php:web zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
-WANT_PHP_WEB=	yes
 USE_PHP=	curl iconv json xml dom openssl pcre spl zlib
 RVER=		${PORTVERSION}.${RBUILD}
 PLIST_SUB=	VER="${RVER}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
