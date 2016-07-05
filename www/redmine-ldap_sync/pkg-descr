@@ -1,0 +1,4 @@
+This redmine plugin extends the ldap authentication with user/group
+synchronization.
+
+WWW: https://github.com/thorin/redmine_ldap_sync
