@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-BibTeX
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,11 @@ STRIP_FILES=	bin/dumpnames bin/biblex bin/bibparse \
 		lib/libbtparse.so
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502300
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=0.42:lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=0.42:lang/p5-Scalar-List-Utils
+.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
