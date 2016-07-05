@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	13.9.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -23,11 +24,11 @@ EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 armv6
 
-USES=		bison cpe gmake iconv localbase ncurses shebangfix sqlite
+USES=		bison cpe gmake iconv libedit localbase ncurses \
+		shebangfix sqlite ssl
 USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	asterisk
 
 GNU_CONFIGURE=	yes
@@ -124,10 +125,9 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 DAHDI_CONFIGURE_ON=	--with-dahdi --with-openr2
 DAHDI_CONFIGURE_OFF=	--without-dahdi --without-openr2
-DAHDI_BUILD_DEPENDS=	libpri>=1.4.10:misc/libpri \
-			${LOCALBASE}/include/dahdi/user.h:misc/dahdi
 DAHDI_LIB_DEPENDS=	libpri.so:misc/libpri \
-			libopenr2.so:misc/openr2
+			libopenr2.so:misc/openr2 \
+			libtonezone.so:misc/dahdi
 
 EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
 EXCHANGE_LIB_DEPENDS=	libneon.so:www/neon
@@ -285,7 +285,11 @@ post-install:
 	${FIND} ${STAGEDIR}${DATADIR}/moh -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
 
 	(cd ${STAGEDIR} && \
+		${ECHO} "@owner ${ASTERISK_USER}" >> ${TMPPLIST} && \
+		${ECHO} "@group ${ASTERISK_GROUP}" >> ${TMPPLIST} && \
 		${FIND} var/spool/${PORTNAME}/voicemail/default -type f | ${SED} "s,^,/," >> ${TMPPLIST} && \
-		${FIND} var/spool/${PORTNAME}/voicemail/ -type d | ${SED} "s,^,@dir /," >> ${TMPPLIST});
+		${FIND} var/spool/${PORTNAME}/voicemail/ -type d | ${SED} "s,^,@dir /," >> ${TMPPLIST} && \
+		${ECHO} "@owner" >> ${TMPPLIST} && \
+		${ECHO} "@group" >> ${TMPPLIST});
 
 .include <bsd.port.post.mk>
