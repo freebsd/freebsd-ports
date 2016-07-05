@@ -48,6 +48,14 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-4* \
 			virtualbox-ose-devel-4* \
 			virtualbox-ose-legacy-4*
 
+.if defined(LITE)
+PKGNAMESUFFIX+=		-lite
+CONFLICTS_INSTALL+=      ${PORTNAME}-[0-9]*
+WITHOUT+=      		NLS
+.else
+CONFLICTS_INSTALL+=      ${PORTNAME}-lite-[0-9]*
+.endif
+
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
 VBOXGROUP?=	vboxusers
@@ -63,7 +71,11 @@ VBOX_GUEST_VER=	${PORTVERSION}
 
 OPTIONS_DEFINE=	DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO PYTHON \
 		QT4 R0LOGGING UDPTUNNEL VDE VNC VPX WEBSERVICE X11
+.if defined(LITE)
+OPTIONS_DEFAULT=	UDPTUNNEL VNC
+.else
 OPTIONS_DEFAULT=	DBUS PYTHON QT4 UDPTUNNEL VNC WEBSERVICE X11
+.endif
 OPTIONS_SUB=	yes
 
 DEBUG_DESC=	Debug symbols, additional logs and assertions
