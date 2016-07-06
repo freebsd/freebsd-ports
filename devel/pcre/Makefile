@@ -15,7 +15,7 @@ COMMENT=	Perl Compatible Regular Expressions library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		libtool pathfix tar:bzip2
+USES=		cpe libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
