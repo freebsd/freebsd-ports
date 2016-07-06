@@ -24,7 +24,6 @@ THREADS_DESC=	Build thread-safe version of the library
 USE_LDCONFIG=		yes
 
 WRKSRC=			${WRKDIR}/icu/source
-TEST_TARGET=		do-test
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-data-packaging=library \
