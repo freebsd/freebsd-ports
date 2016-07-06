@@ -3,7 +3,7 @@
 
 PORTNAME=	epic4
 PORTVERSION=	2.10.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC4-PRODUCTION/ \
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USES+=			tcl:84
+USES+=			tcl
 CONFIGURE_ARGS+=	--with-tcl
 .else
 CONFIGURE_ARGS+=	--without-tcl
