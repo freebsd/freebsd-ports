@@ -3,6 +3,7 @@
 
 PORTNAME=	znc
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/ \
 		http://znc.in/releases/archive/
