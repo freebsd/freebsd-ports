@@ -13,7 +13,7 @@ COMMENT=	PHP Scripting Language
 
 LICENSE=	PHP301
 
-USES=		tar:bzip2 cpe
+USES+=		tar:bzip2 cpe
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
 .if !defined(PKGNAMESUFFIX)
