@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 BROKEN_powerpc64=	Does not build
 
-DIST_VER=	${PORTNAME}-2015-08-10a
+DIST_VER=	${PORTNAME}-2016-06-26a
 USE_PHP=	gd mbstring openssl pcre session xml zlib
 NO_ARCH=	YES
 NO_BUILD=	YES
