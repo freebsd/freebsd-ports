@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	2.2.7
+PORTVERSION=	2.3.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,14 +14,17 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	swig3.0:devel/swig30
-LIB_DEPENDS=	libproj.so:graphics/proj \
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libgdal.so:graphics/gdal \
 		libhpdf.so:print/libharu \
 		libjasper.so:graphics/jasper \
-		libtiff.so:graphics/tiff \
-		libodbc.so:databases/unixODBC \
 		liblas.so:devel/liblas12 \
-		libopencv_ml.so:graphics/opencv
+		libodbc.so:databases/unixODBC \
+		libopencv_ml.so:graphics/opencv \
+		libopencv_core.so:graphics/opencv-core \
+		libproj.so:graphics/proj \
+		libtbb.so:devel/tbb \
+		libtiff.so:graphics/tiff
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
@@ -78,8 +81,6 @@ post-extract:
 		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile.am
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2893)" + "\\n"|' \
-		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 .if ${ARCH} == "powerpc"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
 		${WRKSRC}/src/saga_core/saga_api/api_core.h
