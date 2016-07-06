@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-PORTVERSION=	57.1
+PORTVERSION=	55.1
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
 		SF/${PORTNAME}/ICU4C/${PORTVERSION}/
@@ -35,6 +36,7 @@ CONFIGURE_ARGS+=	--with-data-packaging=library \
 .if defined(X_BUILD_FOR)
 CONFIGURE_ARGS+=	--with-cross-build
 .endif
+
 
 USES=			gmake pathfix
 
@@ -75,6 +77,6 @@ post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libicuda*.so.*
 
-do-test regression-test: iotest cintltst intltest
+test regression-test: iotest cintltst intltest
 
 .include <bsd.port.mk>
