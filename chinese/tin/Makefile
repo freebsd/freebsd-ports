@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # Don't reset PORTREVISION and keep bumping it even if PORTVERSION is changed.
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
