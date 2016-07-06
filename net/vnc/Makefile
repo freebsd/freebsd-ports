@@ -5,9 +5,10 @@ PORTNAME=	vnc
 PORTVERSION=	4.1.3
 PORTREVISION=	10
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://home.bluelife.at/ports/distfiles/${DIST_SUBDIR}/:vnc
+MASTER_SITES=	http://www.cschubert.com/distfiles/xc/ \
+		http://people.freebsd.org/~cy/distfiles/xc/
 DISTNAME=	vnc-4_1_3-unixsrc
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:vnc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	xc
 
 MAINTAINER=	cy@FreeBSD.org
@@ -42,10 +43,9 @@ BROKEN=		Does not compile on arm
 .endif
 
 .if ${PORT_OPTIONS:MSERVER}
-MASTER_SITES+=	XORG/4.3.0/:x
-DISTFILES+=	X430src-1.tgz:x \
-		X430src-2.tgz:x \
-		X430src-3.tgz:x
+DISTFILES+=	X430src-1.tgz \
+		X430src-2.tgz \
+		X430src-3.tgz
 
 .if ${OSVERSION} > 1000054
 USE_GCC=	4.6
