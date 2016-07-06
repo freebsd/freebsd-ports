@@ -1,0 +1,6 @@
+include/xcb/xcb_xrm.h
+lib/libxcb-xrm.a
+lib/libxcb-xrm.so
+lib/libxcb-xrm.so.0
+lib/libxcb-xrm.so.0.0.0
+libdata/pkgconfig/xcb-xrm.pc

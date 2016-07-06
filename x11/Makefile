@@ -335,6 +335,7 @@
     SUBDIR += xcb-util-keysyms
     SUBDIR += xcb-util-renderutil
     SUBDIR += xcb-util-wm
+    SUBDIR += xcb-util-xrm
     SUBDIR += xcbautolock
     SUBDIR += xclip
     SUBDIR += xclipboard
