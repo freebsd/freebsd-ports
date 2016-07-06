@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
-PORTREVISION=	11
+PORTREVISION=	12
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
