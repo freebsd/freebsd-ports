@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-PORTVERSION=	55.1
+PORTVERSION=	57.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
 		SF/${PORTNAME}/ICU4C/${PORTVERSION}/
@@ -24,6 +24,7 @@ THREADS_DESC=	Build thread-safe version of the library
 USE_LDCONFIG=		yes
 
 WRKSRC=			${WRKDIR}/icu/source
+TEST_TARGET=		do-test
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-data-packaging=library \
@@ -35,7 +36,6 @@ CONFIGURE_ARGS+=	--with-data-packaging=library \
 .if defined(X_BUILD_FOR)
 CONFIGURE_ARGS+=	--with-cross-build
 .endif
-
 
 USES=			gmake pathfix
 
@@ -76,6 +76,6 @@ post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libicuda*.so.*
 
-test regression-test: iotest cintltst intltest
+do-test regression-test: iotest cintltst intltest
 
 .include <bsd.port.mk>

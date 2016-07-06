@@ -132,6 +132,7 @@ include/unicode/schriter.h
 include/unicode/scientificnumberformatter.h
 include/unicode/search.h
 include/unicode/selfmt.h
+include/unicode/simpleformatter.h
 include/unicode/simpletz.h
 include/unicode/smpdtfmt.h
 include/unicode/sortkey.h
@@ -202,6 +203,7 @@ include/unicode/uobject.h
 include/unicode/upluralrules.h
 include/unicode/uregex.h
 include/unicode/uregion.h
+include/unicode/ureldatefmt.h
 include/unicode/urename.h
 include/unicode/urep.h
 include/unicode/ures.h
@@ -255,5 +257,5 @@ man/man8/gencmn.8.gz
 man/man8/gensprep.8.gz
 man/man8/icupkg.8.gz
 %%DATADIR%%/%%ICUVER%%/mkinstalldirs
-%%DATADIR%%/%%ICUVER%%/license.html
+%%DATADIR%%/%%ICUVER%%/LICENSE
 %%DATADIR%%/%%ICUVER%%/config/mh-bsd-gcc
