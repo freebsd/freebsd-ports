@@ -74,13 +74,13 @@ libexec/%%PORTNAME%%/AbuseWhois.pm
 %%WWWDIR%%/colour_picker.html
 %%WWWDIR%%/colour_palette.html
 %%WWWDIR%%/alerting.php
-@dir var/%%PORTNAME%%/run
-@dir var/%%PORTNAME%%/profiles-stat/live
-@dir var/%%PORTNAME%%/profiles-stat
-@dir var/%%PORTNAME%%/profiles-data/live
-@dir var/%%PORTNAME%%/profiles-data
-@dir var/%%PORTNAME%%/profiles/live
-@dir var/%%PORTNAME%%/profiles
-@dir var/%%PORTNAME%%/filters
-@dir var/%%PORTNAME%%
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/run
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles-stat/live
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles-stat
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles-data/live
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles-data
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles/live
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/filters
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%
 @dir var
