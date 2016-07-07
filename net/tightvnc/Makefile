@@ -19,7 +19,7 @@ RUN_DEPENDS=	showrgb:x11/rgb \
 		xorg-fonts>=7.2:x11-fonts/xorg-fonts
 
 MAKE_JOBS_UNSAFE=	yes
-CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
+CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]* tigervnc-*
 WRKSRC=		${WRKDIR}/vnc_unixsrc
 USES=		cpe imake jpeg shebangfix perl5 tar:bzip2
 SHEBANG_FILES=	vncserver

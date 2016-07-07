@@ -21,7 +21,7 @@ ALL_TARGET=	World
 XFREE86_HTML_MAN=	no
 MAKE_JOBS_UNSAFE=yes
 
-CONFLICTS=	tightvnc-[0-9]* vnc-[0-9]*
+CONFLICTS=	tightvnc-[0-9]* vnc-[0-9]* tigervnc-*
 
 # .ifdef(TRIDIAVNC_BASE)
 # PREFIX=${TRIDIAVNC_BASE}

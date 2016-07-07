@@ -28,7 +28,7 @@ USE_XORG=	x11 xext xpm xext xtst sm ice inputproto
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PLIST=		${WRKDIR}/pkg-plist
-CONFLICTS=	tightvnc-[0-9]* tridiavnc-[0-9]*
+CONFLICTS=	tightvnc-[0-9]* tridiavnc-[0-9]* tigervnc-*
 
 OPTIONS_DEFINE=	SERVER
 OPTIONS_DEFAULT=	SERVER
