@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	socli
-PORTVERSION=	1.8
+PORTVERSION=	2.1
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup \
 
 USES=		python
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	gautamkrishnar
 
