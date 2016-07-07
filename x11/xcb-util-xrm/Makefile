@@ -14,10 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
-USES=		libtool pathfix pkgconfig tar:bzip2
+USES=		libtool pkgconfig tar:bzip2
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_XORG=	xcb
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,/pkgconfig,data/pkgconfig,g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
