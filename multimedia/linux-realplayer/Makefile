@@ -23,7 +23,7 @@ LICENSE_NAME=	Helix DNA Technology Binary Research Use License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept
 
-DEPRECATED=	Not maintained upstream, better alternative are available
+DEPRECATED=	Not maintained upstream, contains security issues
 EXPIRATION_DATE=	2016-08-07
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
