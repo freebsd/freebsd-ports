@@ -25,9 +25,8 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--with-dovecot="${LOCALBASE}/lib/dovecot"
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		compiler:c11 libtool ssl
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
-USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	DOCS LDAP MANAGESIEVE
 OPTIONS_DEFAULT=MANAGESIEVE
