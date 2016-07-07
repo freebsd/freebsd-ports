@@ -135,6 +135,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool_worker.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/gm_specs.hrl
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/old_builtin_types.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit_cli.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit_framing.hrl
@@ -153,6 +154,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_consistent_hash_exch
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_event_exchange-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_federation-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_federation_management-%%VERSION%%.ez
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_jms_topic_exchange-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_management-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_management_agent-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_management_visualiser-%%VERSION%%.ez
@@ -162,7 +164,9 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_sharding-0.1.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_shovel-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_shovel_management-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_stomp-%%VERSION%%.ez
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_top-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_tracing-%%VERSION%%.ez
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_trust_store-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_dispatch-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_stomp-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_stomp_examples-%%VERSION%%.ez
