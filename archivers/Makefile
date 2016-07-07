@@ -72,6 +72,7 @@
     SUBDIR += linux-f10-ucl
     SUBDIR += linux-f10-upx
     SUBDIR += lrzip
+    SUBDIR += lzfse
     SUBDIR += lzip
     SUBDIR += lzlib
     SUBDIR += lzma
