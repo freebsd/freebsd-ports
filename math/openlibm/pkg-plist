@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/openlibm/aarch64_fpmath.h
 include/openlibm/amd64_fpmath.h
 include/openlibm/bsd_cdefs.h

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/nmea/config.h
 include/nmea/context.h
 include/nmea/generate.h
