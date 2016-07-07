@@ -1,7 +1,15 @@
 TIMESTAMP = 1467890198
-SHA256 (hunspell/hunspell-en_US-2016.06.26.zip) = fd3827f91a609a4e9d3d0dbcf4b1d450667af26d15199de4812eeb88304dcd3f
-SIZE (hunspell/hunspell-en_US-2016.06.26.zip) = 196039
+SHA256 (hunspell/hunspell-en_CA-large-2016.06.26.zip) = 823a4375515e52ca4c3331a70b1de0dd032c3292adb94a700ba84b065c6d744b
+SIZE (hunspell/hunspell-en_CA-large-2016.06.26.zip) = 312211
 SHA256 (hunspell/hunspell-en_CA-2016.06.26.zip) = 5ea189fe8159d16b4acdf1a2fef5a27fb62a3c861c62555a995c4b056a9c766a
 SIZE (hunspell/hunspell-en_CA-2016.06.26.zip) = 196542
 SHA256 (hunspell/hunspell-en_GB-ise-2016.06.26.zip) = f6d78e0be076efca0de0dff4e97c3cfd0872367a4cea0cc2ce6ade20de689e2a
 SIZE (hunspell/hunspell-en_GB-ise-2016.06.26.zip) = 196673
+SHA256 (hunspell/hunspell-en_GB-ize-2016.06.26.zip) = 7e9abe563ce9e2465f837f3278a74415517c8022fd273fa1d6ddc4a2ac1596e1
+SIZE (hunspell/hunspell-en_GB-ize-2016.06.26.zip) = 196623
+SHA256 (hunspell/hunspell-en_GB-large-2016.06.26.zip) = 68c0035d6ee49eef8dee4869818b8088817250ec61a22bd1b48979994818241f
+SIZE (hunspell/hunspell-en_GB-large-2016.06.26.zip) = 314738
+SHA256 (hunspell/hunspell-en_US-2016.06.26.zip) = fd3827f91a609a4e9d3d0dbcf4b1d450667af26d15199de4812eeb88304dcd3f
+SIZE (hunspell/hunspell-en_US-2016.06.26.zip) = 196039
+SHA256 (hunspell/hunspell-en_US-large-2016.06.26.zip) = 16a431777e6ed6c471d521defe11cdc492da0322b8b90d9f2ea3aef7d8284408
+SIZE (hunspell/hunspell-en_US-large-2016.06.26.zip) = 310721
