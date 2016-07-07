@@ -3,7 +3,7 @@
 
 PORTNAME=	nfsen
 PORTVERSION=	1.3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
@@ -25,7 +25,9 @@ CPE_PRODUCT=	nfsen
 USE_PHP=	session pcre sockets
 NO_BUILD=	yes
 NO_ARCH=	yes
+NFSENOWN?=	www
 PLIST_SUB+=	PORTNAME=${PORTNAME}
+PLIST_SUB+=	NFSENOWN=${NFSENOWN}
 USE_RC_SUBR=	nfsen
 perl_OLD_CMD=	%%PERL%%
 SHEBANG_FILES=	bin/testPlugin bin/RebuildHierarchy.pl bin/nfsen bin/nfsend libexec/NfSenRRD.pm \
@@ -40,6 +42,7 @@ SUB_LIST+=	"PORTVERSION=${PORTVERSION}"
 SUB_LIST+=	"PREFIX=${PREFIX}"
 SUB_LIST+=	"WWWDIR=${WWWDIR}"
 SUB_LIST+=	"PORTNAME=${PORTNAME}"
+SUB_LIST+=	"NFSENOWN=${NFSENOWN}"
 
 post-patch:
 .for nfsenfile in ${REINPLACE_LIST}
@@ -52,6 +55,8 @@ post-patch:
 	@${REINPLACE_CMD} ${_SUB_LIST_TEMP} ${WRKSRC}/conf.php
 	@${REINPLACE_CMD} "s|/usr/bin/perl|${perl_CMD}|" ${WRKSRC}/libexec/Nfcomm.pm
 
+FIND_EXPR=	! -name \._* -prune
+
 do-install:
 	${INSTALL} -d ${STAGEDIR}/${PREFIX}/var/${PORTNAME}/profiles-data/live
 	${INSTALL} -d ${STAGEDIR}/${PREFIX}/var/${PORTNAME}/profiles-stat/live
@@ -62,10 +67,10 @@ do-install:
 	${INSTALL} -d ${STAGEDIR}/${WWWDIR}/plugins
 	(cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} * ${STAGEDIR}/${PREFIX}/bin/)
 	${INSTALL_DATA} ${WRKSRC}/etc/nfsen-dist.conf ${STAGEDIR}/${PREFIX}/etc/
-	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/)
-	(cd ${WRKSRC}/plugins/frontend/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/plugins/)
+	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/ "${FIND_EXPR}")
+	(cd ${WRKSRC}/plugins/frontend/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/plugins/ "${FIND_EXPR}")
 	(cd ${WRKSRC}/libexec && ${INSTALL_SCRIPT} * ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/)
-	(cd ${WRKSRC}/plugins/backend && ${COPYTREE_SHARE} . ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/plugins/)
+	(cd ${WRKSRC}/plugins/backend && ${COPYTREE_SHARE} . ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/plugins/ "${FIND_EXPR}")
 	${INSTALL_DATA} ${WRKSRC}/installer-items/CopyRecursive.pm ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/installer-items/RRDconvertv1.pm ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/conf.php ${STAGEDIR}/${WWWDIR}

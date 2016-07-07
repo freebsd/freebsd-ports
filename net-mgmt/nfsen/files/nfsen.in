@@ -15,6 +15,7 @@ load_rc_config $name
 
 nfsen_enable=${nfsen_enable-"NO"}
 #nfsen_flags=${nfsen_flags-""}
+nfsen_user=${nfsen_user-"%%NFSENOWN%%"}
 
 command="%%PREFIX%%/bin/nfsen"
 start_cmd="%%PREFIX%%/bin/nfsen start"
@@ -34,6 +35,7 @@ nfsen_start_precmd()
 	if [ ! -e %%PREFIX%%/var/nfsen/profiles-stat/live/profile.dat ]; then
 		time=$(/bin/date +%s);
 		timeu=$(/bin/expr $time - 300);
+		profile_dat=%%PREFIX%%/var/nfsen/profiles-stat/live/profile.dat
 		/usr/bin/printf "name = live
 		group = .
 		tbegin = $time
@@ -47,7 +49,8 @@ nfsen_start_precmd()
 		type = 0
 		locked = 0
 		status = OK
-		version = 130" | /usr/bin/tr -d '\011' > %%PREFIX%%/var/nfsen/profiles-stat/live/profile.dat;
+		version = 130" | /usr/bin/tr -d '\011' > ${profile_dat}
+		chown ${nfsen_user} ${profile_dat}
 	fi
 }
 
