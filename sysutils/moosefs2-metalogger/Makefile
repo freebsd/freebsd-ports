@@ -9,6 +9,6 @@ LICENSE=	GPLv2
 
 MFS_COMPONENT=	metalogger
 
-MASTERDIR=	${.CURDIR}/../moosefs-master
+MASTERDIR=	${.CURDIR}/../moosefs2-master
 
 .include "${MASTERDIR}/Makefile"

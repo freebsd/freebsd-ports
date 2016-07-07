@@ -8600,3 +8600,11 @@ games/freetennis||2016-07-05|Depends on expired graphics/ocaml-images
 graphics/ocaml-images||2016-07-05|Has expired: Depends on expiring devel/omake
 devel/omake||2016-07-05|Has expired: Broken for more than 6 months
 www/yahoo-ui||2016-07-05|Has expired: Broken for more than 6 months
+sysutils/moosefs-cgi|sysutils/moosefs2-cgi|2016-07-07|Moved to a numbered port name
+sysutils/moosefs-cgiserv|sysutils/moosefs2-cgiserv|2016-07-07|Moved to a numbered port name
+sysutils/moosefs-chunkserver|sysutils/moosefs2-chunkserver|2016-07-07|Moved to a numbered port name
+sysutils/moosefs-cli|sysutils/moosefs2-cli|2016-07-07|Moved to a numbered port name
+sysutils/moosefs-client|sysutils/moosefs2-client|2016-07-07|Moved to a numbered port name
+sysutils/moosefs-master|sysutils/moosefs2-master|2016-07-07|Moved to a numbered port name
+sysutils/moosefs-metalogger|sysutils/moosefs2-metalogger|2016-07-07|Moved to a numbered port name
+sysutils/moosefs-netdump|sysutils/moosefs2-netdump|2016-07-07|Moved to a numbered port name
