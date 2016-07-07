@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		diamond
-PORTVERSION=		0.8.9
+PORTVERSION=		0.8.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=		biology
 
@@ -23,7 +23,7 @@ GH_ACCOUNT=		bbuchfink
 PLIST_FILES=		bin/diamond
 
 .if ! defined(PACKAGE_BUILDING)
-CXXFLAGS+=-march=native
+CXXFLAGS+=		-march=native
 .endif
 
 .include <bsd.port.mk>
