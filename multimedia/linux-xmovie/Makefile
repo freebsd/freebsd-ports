@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.i386.rpm
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Movie player for AVI, MPEG-2/4, and MOV movies
 
+DEPRECATED=	Not maintained upstream, contains security issues
+EXPIRATION_DATE=	2016-08-07
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
