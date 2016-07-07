@@ -1,12 +1,12 @@
 # Created by: Jakub Kruszona-Zawadzki <acid@moosefs.com> ; Based on port created by: Chifeng Qu <chifeng@gmail.com>
 # $FreeBSD$
 
-PORTNAME=		moosefs
+PORTNAME=		moosefs2
 PORTVERSION=		2.0.89
 CATEGORIES=		sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
-DISTNAME=		${PORTNAME}-${PORTVERSION}-1
+DISTNAME=		moosefs-${PORTVERSION}-1
 
 MAINTAINER=		freebsd@moosefs.com
 COMMENT?=		Fault-tolerant distributed filesystem
@@ -15,7 +15,7 @@ LICENSE=		GPLv2
 
 USES=			python:build
 GNU_CONFIGURE=		yes
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=			${WRKDIR}/moosefs-${PORTVERSION}
 PLIST=			${.CURDIR}/pkg-plist
 DESCR=			${.CURDIR}/pkg-descr
 
@@ -49,7 +49,7 @@ PKGMESSAGE=		${WRKDIR}/pkg-message-cgiserv
 PLIST_SUB+=		MFS_WORKDIR="${MFS_WORKDIR}"
 CONFIGURE_ARGS+=	--enable-mfscgiserv \
 			--with-mfscgiserv-dir=${MFS_CGISERVDIR}
-RUN_DEPENDS=		moosefs-cgi>0:sysutils/moosefs-cgi
+RUN_DEPENDS=		moosefs2-cgi>0:sysutils/moosefs2-cgi
 .else
 CONFIGURE_ARGS+=	--disable-mfscgiserv
 .endif

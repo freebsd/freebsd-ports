@@ -1,14 +1,14 @@
 # Created by: Jakub Kruszona-Zawadzki <acid@moosefs.com> ; Based on port created by: Chifeng Qu <chifeng@gmail.com>
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-cli
+PKGNAMESUFFIX=	-netdump
 
-COMMENT=	MooseFS command line interface
+COMMENT=	MooseFS network packet dump utility
 
 LICENSE=	GPLv2
 
-MFS_COMPONENT=	cli
+MFS_COMPONENT=	netdump
 
-MASTERDIR=	${.CURDIR}/../moosefs-master
+MASTERDIR=	${.CURDIR}/../moosefs2-master
 
 .include "${MASTERDIR}/Makefile"
