@@ -430,6 +430,7 @@
     SUBDIR += ossec-hids-local
     SUBDIR += ossec-hids-server
     SUBDIR += osslsigncode
+    SUBDIR += otpw
     SUBDIR += outguess
     SUBDIR += p11-kit
     SUBDIR += p5-Apache-Htpasswd
