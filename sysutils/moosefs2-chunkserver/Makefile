@@ -1,14 +1,14 @@
 # Created by: Jakub Kruszona-Zawadzki <acid@moosefs.com> ; Based on port created by: Chifeng Qu <chifeng@gmail.com>
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-cgiserv
+PKGNAMESUFFIX=	-chunkserver
 
-COMMENT=	MooseFS CGI webserver
+COMMENT=	MooseFS data storage and synchronization component
 
 LICENSE=	GPLv2
 
-MFS_COMPONENT=	cgiserv
+MFS_COMPONENT=	chunkserver
 
-MASTERDIR=	${.CURDIR}/../moosefs-master
+MASTERDIR=	${.CURDIR}/../moosefs2-master
 
 .include "${MASTERDIR}/Makefile"
