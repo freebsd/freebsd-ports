@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/lzfse.h
 lib/liblzfse.a
 bin/lzfse
