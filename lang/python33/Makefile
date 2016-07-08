@@ -16,14 +16,12 @@ LICENSE=	PSFL
 DEPRECATED=	No longer receives bug fixes, only security updates. Please update to Python 3.5
 EXPIRATION_DATE=	2017-09-01
 
-USES=		cpe ncurses pkgconfig readline tar:xz
-USE_OPENSSL=	yes
+USES=		cpe ncurses pkgconfig readline ssl tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
-CPE_VERSION=	${PORTVERSION}
 
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV+=		OPT=""							# Null out OPT to respect user CFLAGS and remove optimizations
