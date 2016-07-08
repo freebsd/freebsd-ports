@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth-saml
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-omniauth>=1.3:security/rubygem-omniauth \
-		rubygem-ruby-saml>=1.1.1:security/rubygem-ruby-saml
+		rubygem-ruby-saml>=1.3:security/rubygem-ruby-saml
 
 NO_ARCH=	yes
 USE_RUBY=	yes
