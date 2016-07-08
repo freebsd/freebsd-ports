@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	8.8.5
+PORTVERSION=	8.8.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -34,7 +34,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-omniauth-github>=1.1.1:net/rubygem-omniauth-github \
 	rubygem-omniauth-gitlab>=1.0.0:security/rubygem-omniauth-gitlab \
 	rubygem-omniauth-google-oauth2>=0.2.0:net/rubygem-omniauth-google-oauth2 \
-	rubygem-omniauth-saml>=1.5.0:security/rubygem-omniauth-saml \
+	rubygem-omniauth-saml>=1.6.0:security/rubygem-omniauth-saml \
 	rubygem-omniauth-shibboleth>=1.2.0:security/rubygem-omniauth-shibboleth \
 	rubygem-omniauth-twitter>=1.2.0:net/rubygem-omniauth-twitter \
 	rubygem-omniauth_crowd>=2.2.0:devel/rubygem-omniauth_crowd \

@@ -3632,6 +3632,7 @@
 %%WWWDIR%%/spec/services/projects/upload_service_spec.rb
 %%WWWDIR%%/spec/services/repair_ldap_blocked_user_service_spec.rb
 %%WWWDIR%%/spec/services/search_service_spec.rb
+%%WWWDIR%%/spec/services/search/snippet_service_spec.rb
 %%WWWDIR%%/spec/services/system_hooks_service_spec.rb
 %%WWWDIR%%/spec/services/system_note_service_spec.rb
 %%WWWDIR%%/spec/services/test_hook_service_spec.rb
