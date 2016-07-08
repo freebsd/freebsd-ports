@@ -1,0 +1,20 @@
+--- unix/vncserver.orig	2012-05-27 21:16:41.000000000 +0900
++++ unix/vncserver	2012-05-27 21:17:13.000000000 +0900
+@@ -422,7 +422,7 @@
+ 
+     socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
+     eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
+-    if (!bind(S, pack('S n x12', $AF_INET, 6000 + $n))) {
++    if (!bind(S, sockaddr_in(6000 + $n, &INADDR_ANY))) {
+ 	close(S);
+ 	return 0;
+     }
+@@ -430,7 +430,7 @@
+ 
+     socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
+     eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
+-    if (!bind(S, pack('S n x12', $AF_INET, 5900 + $n))) {
++    if (!bind(S, sockaddr_in(5900 + $n, &INADDR_ANY))) {
+ 	close(S);
+ 	return 0;
+     }
