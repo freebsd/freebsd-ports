@@ -1298,6 +1298,7 @@
     SUBDIR += thcrut
     SUBDIR += throttled
     SUBDIR += tigervnc
+    SUBDIR += tigervnc-devel
     SUBDIR += tightvnc
     SUBDIR += tintin++
     SUBDIR += tiny-network-utilities
