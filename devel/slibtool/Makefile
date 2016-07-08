@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.SLIBTOOL
 
 HAS_CONFIGURE=	yes
-USES=		gmake:lite tar:xz
+USES=		gmake tar:xz
 
 post-patch:
 	${REINPLACE_CMD} -e "s/make/${MAKE_CMD}/g" ${WRKSRC}/configure

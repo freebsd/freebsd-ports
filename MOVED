@@ -8608,3 +8608,4 @@ sysutils/moosefs-client|sysutils/moosefs2-client|2016-07-07|Moved to a numbered 
 sysutils/moosefs-master|sysutils/moosefs2-master|2016-07-07|Moved to a numbered port name
 sysutils/moosefs-metalogger|sysutils/moosefs2-metalogger|2016-07-07|Moved to a numbered port name
 sysutils/moosefs-netdump|sysutils/moosefs2-netdump|2016-07-07|Moved to a numbered port name
+devel/gmake-lite|devel/gmake|2016-07-08|No longer needed

@@ -695,7 +695,6 @@
     SUBDIR += glrparser
     SUBDIR += glui
     SUBDIR += gmake
-    SUBDIR += gmake-lite
     SUBDIR += gnatcoll
     SUBDIR += gnatpython
     SUBDIR += gnome-builder
