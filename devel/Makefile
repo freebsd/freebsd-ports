@@ -713,6 +713,7 @@
     SUBDIR += go-bindata
     SUBDIR += go-btree
     SUBDIR += go-flags
+    SUBDIR += go-go.uuid
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
     SUBDIR += go-pretty
