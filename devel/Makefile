@@ -716,6 +716,7 @@
     SUBDIR += go-go.uuid
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
+    SUBDIR += go-metrics
     SUBDIR += go-pretty
     SUBDIR += go-raw
     SUBDIR += go-runewidth
