@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	usb_modeswitch
-PORTVERSION=	2.2.5
+PORTVERSION=	2.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.draisberghof.de/usb_modeswitch/
 DISTNAME=	${PORTNAME:S|_|-|}-${PORTVERSION}
@@ -11,6 +11,7 @@ MAINTAINER=	melifaro@ipfw.ru
 COMMENT=	Handling Mode-Switching USB Devices
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:bzip2
 
