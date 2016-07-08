@@ -1465,6 +1465,7 @@
     SUBDIR += magit
     SUBDIR += make++
     SUBDIR += makedepend
+    SUBDIR += marisa-trie
     SUBDIR += mate-common
     SUBDIR += matreshka
     SUBDIR += maven-wrapper
