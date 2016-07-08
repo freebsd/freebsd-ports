@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20160708:
+  AFFECTS: users of sysutils/screen
+  AUTHOR: cy@FreeBSD.org
+
+  As of GNU Screen 4.4.0 (r417201):
+  
+  Note that there was fix to screen message structure field
+  responsible for $TERM handling, making it impossible
+  to attach to older versions.
+
 20160704:
   AFFECTS: users of databases/mysql57-*
   AUTHOR: riggs@FreeBSD.org
