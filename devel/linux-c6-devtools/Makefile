@@ -4,7 +4,6 @@
 PORTNAME=	devtools
 PORTVERSION=	6.8
 CATEGORIES=	devel
-MASTER_SITES=	CENTOS_LINUX CENTOS_LINUX_UPDATES
 DISTFILES=	binutils-2.20.51.0.2-5.44.el6.${LINUX_RPM_ARCH}.rpm \
 		glibc-headers-2.12-1.192.el6.${LINUX_RPM_ARCH}.rpm \
 		kernel-headers-2.6.32-642.1.1.el6.${LINUX_RPM_ARCH}.rpm \
