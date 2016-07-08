@@ -13,14 +13,12 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		cpe ncurses pkgconfig readline tar:xz
-USE_OPENSSL=	yes
+USES=		cpe ncurses pkgconfig readline ssl tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
-CPE_VERSION=	${PORTVERSION}
 
 DISABLED_EXTENSIONS=	_sqlite3 _tkinter _gdbm
 CONFIGURE_ARGS+=	--enable-shared --without-ensurepip
