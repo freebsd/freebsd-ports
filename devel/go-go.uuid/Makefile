@@ -2,6 +2,7 @@
 
 PORTNAME=	go.uuid
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
@@ -14,5 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	satori
 GH_TAGNAME=	v${PORTVERSION}
 USES=		go
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 .include <bsd.port.mk>
