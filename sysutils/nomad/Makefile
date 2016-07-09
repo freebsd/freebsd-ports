@@ -3,7 +3,7 @@
 PORTNAME=	nomad
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	john@pcbsd.org
@@ -26,7 +26,7 @@ GH_ACCOUNT=	hashicorp:DEFAULT kardianos:govendor mitchellh:gox \
 GH_PROJECT=	nomad:nomad govendor:govendor gox:gox tools:tools gocov:gocov \
 	gocov-html:gocov_html go:go
 
-GH_TAGNAME=	v0.4.0:nomad 36255b7:govendor  6e9ee79:gox  0d2bde8:tools \
+GH_TAGNAME=	v0.4.0 36255b7:govendor  6e9ee79:gox  0d2bde8:tools \
 	f5b2b5c:gocov b729399:gocov_html b94837a:go
 
 USE_RC_SUBR= nomad
