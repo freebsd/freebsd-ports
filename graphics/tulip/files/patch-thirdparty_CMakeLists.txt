@@ -1,11 +1,11 @@
---- thirdparty/CMakeLists.txt.orig	2015-04-18 20:15:20 UTC
+--- thirdparty/CMakeLists.txt.orig	2016-07-07 20:15:36 UTC
 +++ thirdparty/CMakeLists.txt
-@@ -3,7 +3,7 @@ DISABLE_COMPILER_WARNINGS()
- ADD_CORE_FILES(CMakeLists.txt)
+@@ -8,7 +8,7 @@ ADD_CORE_FILES(CMakeLists.txt
+ )
  
  ADD_SUBDIRECTORY(gzstream)
 -ADD_SUBDIRECTORY(OGDF)
 +#ADD_SUBDIRECTORY(OGDF)
  ADD_SUBDIRECTORY(libqhull)
  ADD_SUBDIRECTORY(yajl)
- 
+ IF(NOT BUILD_CORE_ONLY)
