@@ -166,6 +166,7 @@ PATCH_DIST_STRIP=-p1
 .  if ${PORT_OPTIONS:MDTRACE}
 CONFIGURE_ARGS+=--enable-dtrace
 LDFLAGS+=-lelf
+INSTALL_TARGET=install
 .  endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
