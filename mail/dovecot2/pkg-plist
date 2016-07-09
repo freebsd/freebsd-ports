@@ -620,7 +620,7 @@ lib/dovecot/lib95_imap_stats_plugin.a
 lib/dovecot/lib95_imap_stats_plugin.so
 lib/dovecot/lib99_welcome_plugin.a
 lib/dovecot/lib99_welcome_plugin.so
-lib/dovecot/libdcrypt_openssl.so
+%%SSL%%lib/dovecot/libdcrypt_openssl.so
 lib/dovecot/libdovecot-compression.a
 lib/dovecot/libdovecot-compression.so
 lib/dovecot/libdovecot-compression.so.0
