@@ -1,0 +1,13 @@
+--- Configure.orig	2016-01-05 10:31:36.000000000 -0800
++++ Configure	2016-07-08 17:39:09.137355000 -0700
+@@ -1620,6 +1620,10 @@
+ 	LSOF_TSTBIGF=" "
+ 	LSOF_VERS=11000
+ 	;;
++      12*)
++	LSOF_TSTBIGF=" "
++	LSOF_VERS=12000
++	;;
+       *)
+ 	echo Unknown FreeBSD release: `uname -r`
+ 	rm -f $LSOF_HLP
