@@ -1,7 +1,7 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
 # $FreeBSD$
 
-PORTNAME=		R
+PORTNAME?=		R
 PORTVERSION=		3.3.1
 PORTREVISION=		2
 CATEGORIES=		math lang
