@@ -3,7 +3,7 @@
 PORTNAME=	node
 PORTVERSION=	6.2.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS
 OPTIONS_SUB=	yes
 
-BUNDLED_SSL_DESC=	Use node.js's bundled OpenSSL implementation
-BUNDLED_SSL_USE_OFF=	OPENSSL=yes
+BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
+BUNDLED_SSL_USES_OFF=		ssl:openssl
+BUNDLED_SSL_CONFIGURE_OFF+=	--shared-openssl
 
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
@@ -50,8 +51,6 @@ LIB_DEPENDS+=	libcares.so:dns/c-ares\
 # node.js requires openssl 1.0.2, use the port since base isn't new enough
 WITH_OPENSSL_PORT=	yes
 .endif
-
-CONFIGURE_ARGS+=	--shared-openssl
 
 .endif
 
