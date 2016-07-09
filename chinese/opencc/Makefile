@@ -2,27 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	opencc
-PORTVERSION=	0.4.3
+PORTVERSION=	1.0.4
+DISTVERSIONPREFIX=	ver.
 CATEGORIES=	chinese converters
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	GITHUB
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Open Chinese Convert library and utilities
 
 LICENSE=	APACHE20
 
-USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	BYVoid
+GH_PROJECT=	OpenCC
+
+USES=		cmake compiler:c++11-lib python:build
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	TESTS
 
-NLS_USES=	gettext
-NLS_CMAKE_ON=	-DENABLE_GETTEXT=On
+TESTS_DESC=	Build the unit testing
+TESTS_CMAKE_ON=	-DENABLE_GTEST=ON
 
-OPTIONS_SUB=	yes
+TEST_TARGET=	test
 
 post-patch:
-	@${REINPLACE_CMD} -e 's@/usr/local@${LOCALBASE}@g' \
-		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e "s|python|${PYTHON_CMD}|g" \
+		${WRKSRC}/data/CMakeLists.txt
 
 .include <bsd.port.mk>
