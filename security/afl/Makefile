@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	2.07b
+PORTVERSION=	2.19
+DISTVERSIONSUFFIX=	b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
@@ -74,7 +75,6 @@ post-build-LLVM-on:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/COPYING ${STAGEDIR}${DOCSDIR}/
-
 .for afl_script in afl-cmin afl-plot afl-whatsup
 	${INSTALL_SCRIPT} ${WRKSRC}/${afl_script} ${STAGEDIR}${PREFIX}/bin/
 .endfor
