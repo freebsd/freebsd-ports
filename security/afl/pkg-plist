@@ -5,6 +5,8 @@ bin/afl-clang++
 %%LLVM_SUB%%%%LLVM%%bin/afl-clang-fast++
 %%LLVM_SUB%%%%LLVM%%lib/afl/afl-llvm-pass.so
 %%LLVM_SUB%%%%LLVM%%lib/afl/afl-llvm-rt.o
+%%LLVM_SUB%%%%LLVM%%lib/afl/afl-llvm-rt-32.o
+%%LLVM_SUB%%%%LLVM%%lib/afl/afl-llvm-rt-64.o
 %%MINIMIZE_CORPUS%%bin/afl-cmin
 bin/afl-fuzz
 bin/afl-g++
