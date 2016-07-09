@@ -4,7 +4,7 @@
 PORTNAME=	tigervnc
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net x11-servers
 
 MAINTAINER=	meta+ports@vmeta.jp
@@ -21,21 +21,27 @@ BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/dri \
 RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
 
-CONFLICTS=	tridiavnc-[0-9]* \
+CONFLICTS=	tigervnc-devel-[0-9]* \
 		tightvnc-[0-9]* \
+		tridiavnc-[0-9]* \
 		vnc-[0-9]*
 
-USES=		autoreconf:build cmake cpe gmake jpeg libtool pkgconfig python
+USES=		autoreconf:build cmake cpe gmake iconv jpeg libtool pkgconfig \
+		python ssl
 USE_GL=		gl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	TigerVNC
 
 USE_XORG+=	bigreqsproto compositeproto damageproto fixesproto fontsproto glproto \
-		inputproto kbproto pixman randrproto renderproto resourceproto \
-		scrnsaverproto videoproto xau xdmcp xext xkbfile xcmiscproto xextproto \
-		xfont xproto xrandr xtrans xtst xorg-macros presentproto
+		ice inputproto kbproto pixman presentproto randrproto renderproto \
+		resourceproto scrnsaverproto sm videoproto x11 xau xcmiscproto xdamage \
+		xdmcp xext xextproto xfont xkbfile xorg-macros xproto xrandr xrender \
+		xtrans xtst
+
+LIB_DEPENDS=	libunwind.so:devel/libunwind \
+		libxshmfence.so:x11/libxshmfence \
+		libfontconfig.so:x11-fonts/fontconfig
 
 CFLAGS+=	-fPIC
 
