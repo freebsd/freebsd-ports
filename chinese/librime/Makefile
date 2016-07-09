@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	librime
-PORTVERSION=	1.1
+PORTVERSION=	1.2.9
 DISTVERSIONPREFIX=	rime-
-PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	lichray@gmail.com
@@ -13,8 +12,10 @@ COMMENT=	Rime Input Method Engine, the core library
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
-		libkyotocabinet.so:databases/kyotocabinet \
+		libleveldb.so:databases/leveldb \
+		libmarisa.so:devel/marisa-trie \
 		libopencc.so:chinese/opencc \
 		libyaml-cpp.so:devel/yaml-cpp
 
@@ -26,7 +27,7 @@ LDFLAGS+=	-lintl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
 
-PLIST_SUB=	VER=${PORTVERSION}.0
+PLIST_SUB=	VER=${PORTVERSION}
 
 BROKEN_powerpc64=	Does not build on powerpc64
 
