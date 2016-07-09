@@ -1,5 +1,5 @@
---- ./data/script/fcitx4-config.in.orig	2013-09-28 17:33:14.000000000 +0900
-+++ ./data/script/fcitx4-config.in	2014-03-19 13:45:08.000000000 +0900
+--- data/script/fcitx4-config.in.orig	2015-12-12 08:02:09 UTC
++++ data/script/fcitx4-config.in
 @@ -1,14 +1,26 @@
  #! /bin/sh
  
@@ -27,7 +27,7 @@
  
  usage()
  {
-@@ -23,9 +35,13 @@
+@@ -23,9 +35,13 @@ Known values for OPTION are:
    --libdir              Fcitx Library Prefix
    --includedir          Fcitx Include Prefix
    --addondir            Fcitx Addon Library Dir
@@ -41,7 +41,7 @@
    --help                display this help and exit
    --version             output version information
  EOF
-@@ -72,18 +88,34 @@
+@@ -72,18 +88,34 @@ while test $# -gt 0; do
        echo $addondir
        ;;
  
