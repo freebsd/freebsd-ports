@@ -89,7 +89,7 @@ USES+=		cpe compiler:c++11-lang gmake iconv perl5 pkgconfig \
 			python:2.7,build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_PERL5=	build
-USE_XORG=	xext xrender xt
+USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xt
 
 .if ${MOZILLA} != "libxul"
 BUNDLE_LIBS=	yes
@@ -126,7 +126,8 @@ MOZ_OPTIONS+=	${CONFIGURE_TARGET} --prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 
 CPPFLAGS+=		-isystem${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
+LDFLAGS+=		-L${LOCALBASE}/lib \
+			-Wl,-rpath,${PREFIX}/lib/${MOZILLA} -Wl,--as-needed
 
 .if ${OPSYS} != DragonFly # XXX xpcshell crash during install
 # use jemalloc 3.0.0 (4.0 for firefox 43+) API for stats/tuning
@@ -212,10 +213,10 @@ sqlite_MOZ_OPTIONS=	--enable-system-sqlite
 theora_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 theora_MOZ_OPTIONS=	--with-system-theora
 
-tremor_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
+tremor_LIB_DEPENDS=	libogg.so:audio/libogg libvorbisidec.so:audio/libtremor
 tremor_MOZ_OPTIONS=	--with-system-tremor --with-system-ogg
 
-vorbis_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+vorbis_LIB_DEPENDS=	libogg.so:audio/libogg libvorbis.so:audio/libvorbis
 vorbis_MOZ_OPTIONS=	--with-system-vorbis --with-system-ogg
 .endif
 
@@ -226,6 +227,9 @@ vpx_MOZ_OPTIONS=	--with-system-libvpx
 .for use in ${USE_MOZILLA}
 ${use:S/-/_WITHOUT_/}=	${TRUE}
 .endfor
+
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 .for dep in ${_ALL_DEPENDS} ${USE_MOZILLA:M+*:S/+//}
 .if !defined(_WITHOUT_${dep})
@@ -291,12 +295,12 @@ USE_QT5+=	qmake_build buildtools_build gui network quick printsupport
 MOZ_EXPORT+=	HOST_QMAKE="${QMAKE}" HOST_MOC="${MOC}" HOST_RCC="${RCC}"
 .elif ${MOZ_TOOLKIT:Mcairo-gtk3}
 BUILD_DEPENDS+=	gtk3>=3.14.6:x11-toolkits/gtk30
-USE_GNOME+=	gtk30
+USE_GNOME+=	gdkpixbuf2 gtk30
 . if ${MOZILLA_VER:R:R} >= 32
 USE_GNOME+= gtk20 # bug 624422
 . endif
 .else # gtk2, cairo-gtk2
-USE_GNOME+=	gtk20
+USE_GNOME+=	gdkpixbuf2 gtk20
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -317,7 +321,8 @@ RUN_DEPENDS+=	libcanberra>0:audio/libcanberra
 
 .if ${PORT_OPTIONS:MDBUS}
 BUILD_DEPENDS+=	libnotify>0:devel/libnotify
-LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib \
+LIB_DEPENDS+=	libdbus-1.so:devel/dbus \
+				libdbus-glib-1.so:devel/dbus-glib \
 				libstartup-notification-1.so:x11/startup-notification
 MOZ_OPTIONS+=	--enable-startup-notification
 .else
