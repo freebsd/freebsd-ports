@@ -1,10 +1,19 @@
---- makedefs.orig	2015-01-18 00:10:28 UTC
+--- makedefs.orig	2016-05-15 16:39:11 UTC
 +++ makedefs
-@@ -235,6 +235,15 @@ case "$SYSTEM.$RELEASE" in
+@@ -272,6 +272,24 @@ case "$SYSTEM.$RELEASE" in
  		: ${SHLIB_ENV="LD_LIBRARY_PATH=`pwd`/lib"}
  		: ${PLUGIN_LD="${CC} -shared"}
  		;;
 +  FreeBSD.11*)	SYSTYPE=FREEBSD11
++		: ${CC=cc}
++		: ${SHLIB_SUFFIX=.so}
++		: ${SHLIB_CFLAGS=-fPIC}
++		: ${SHLIB_LD="${CC} -shared"' -Wl,-soname,${LIB}'}
++		: ${SHLIB_RPATH='-Wl,-rpath,${SHLIB_DIR}'}
++		: ${SHLIB_ENV="LD_LIBRARY_PATH=`pwd`/lib"}
++		: ${PLUGIN_LD="${CC} -shared"}
++		;;
++  FreeBSD.12*)	SYSTYPE=FREEBSD12
 +		: ${CC=cc}
 +		: ${SHLIB_SUFFIX=.so}
 +		: ${SHLIB_CFLAGS=-fPIC}

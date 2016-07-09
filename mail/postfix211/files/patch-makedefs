@@ -1,10 +1,13 @@
---- makedefs.orig	2015-04-19 10:19:57 UTC
+--- makedefs.orig	2016-07-09 20:06:01 UTC
 +++ makedefs
-@@ -161,6 +161,9 @@ case "$SYSTEM.$RELEASE" in
+@@ -166,6 +166,12 @@ case "$SYSTEM.$RELEASE" in
    FreeBSD.10*)	SYSTYPE=FREEBSD10
  		: ${CC=cc}
  		;;
 +  FreeBSD.11*)	SYSTYPE=FREEBSD11
++		: ${CC=cc}
++		;;
++  FreeBSD.12*)	SYSTYPE=FREEBSD12
 +		: ${CC=cc}
 +		;;
   DragonFly.*)	SYSTYPE=DRAGONFLY

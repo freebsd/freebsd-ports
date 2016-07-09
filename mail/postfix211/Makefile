@@ -58,7 +58,7 @@ SASLKMIT_LIB_DEPENDS=	libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SPF_LIB_DEPENDS=	libspf2.so:mail/libspf2
 SQLITE_USES=		sqlite
-TLS_USE=		OPENSSL=yes
+TLS_USES=		ssl
 
 CDB_DESC=	CDB maps lookups
 INST_BASE_DESC=	Install into /usr and /etc/postfix
