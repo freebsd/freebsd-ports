@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		aseprite
-PORTVERSION=		1.1.5.6
+PORTVERSION=		1.1.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=		graphics
 
@@ -28,11 +28,13 @@ OPTIONS_DEFAULT=	WEBP
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 USE_GITHUB=		yes
-GH_TUPLE=		aseprite:aseprite:b659747
+GH_TUPLE=		aseprite:aseprite:${DISTVERSIONFULL}
+GH_TUPLE+=		aseprite:clip:8e92c5d:clip
 GH_TUPLE+=		aseprite:flic:da184cb:flic
 GH_TUPLE+=		aseprite:gtest:d63c625:gtest
-GH_TUPLE+=		aseprite:simpleini:d4a436a:simpleini
-GH_TUPLE+=		aseprite:duktape:90090c7:duk
+GH_TUPLE+=		aseprite:simpleini:0687587:simpleini
+GH_TUPLE+=		aseprite:duktape:0de771c:duk
+GH_TUPLE+=		dacap:observable:89c9740:observable
 
 USES=			cmake:outsource compiler:c++11-lib jpeg pkgconfig
 USE_XORG=		x11 xcursor xext xpm ice pixman sm xxf86dga xxf86vm
@@ -54,19 +56,19 @@ CXXFLAGS+=		-I${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2/freetype
 
 post-extract:
-	@${RMDIR} ${WRKSRC}/src/flic ${WRKSRC}/third_party/gtest ${WRKSRC}/third_party/simpleini ${WRKSRC}/third_party/duktape
-	@${MV} ${WRKDIR}/flic-* ${WRKSRC}/src/flic
+	@${RMDIR} ${WRKSRC}/third_party/gtest ${WRKSRC}/third_party/simpleini ${WRKSRC}/third_party/duktape \
+		  ${WRKSRC}/src/clip ${WRKSRC}/src/flic ${WRKSRC}/src/observable
 	@${MV} ${WRKDIR}/gtest-* ${WRKSRC}/third_party/gtest
 	@${MV} ${WRKDIR}/simpleini-* ${WRKSRC}/third_party/simpleini
 	@${MV} ${WRKDIR}/duktape-* ${WRKSRC}/third_party/duktape
+	@${MV} ${WRKDIR}/clip-* ${WRKSRC}/src/clip
+	@${MV} ${WRKDIR}/flic-* ${WRKSRC}/src/flic
+	@${MV} ${WRKDIR}/observable-* ${WRKSRC}/src/observable
 	@${MKDIR} ${WRKSRC}/third_party/pixman/pixman
 	@${CP} `${MAKE} -C ${PORTSDIR}/x11/pixman -V WRKSRC`/pixman/pixman-combine32.h \
 		${WRKSRC}/third_party/pixman/pixman/
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|-lXxf86dga |-L${LOCALBASE}/lib -lXxf86dga |g' \
-		`find ${WRKDIR} -name link.txt`
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/src/app/resource_finder.cpp
+post-patch:
+	@${REINPLACE_CMD} -e 's|1.1.6-dev|${PORTVERSION}|' ${WRKSRC}/src/config.h ${WRKSRC}/data/gui.xml
 
 .include <bsd.port.mk>
