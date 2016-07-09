@@ -27,7 +27,7 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	dovecot-1.[0-9]*
 
-USES=		cpe iconv libtool ssl
+USES=		cpe iconv libtool
 USE_RC_SUBR=	dovecot
 
 GNU_CONFIGURE=	yes
@@ -112,6 +112,7 @@ SOLR_LIB_DEPENDS=	libexpat.so:textproc/expat2
 SQLITE_USES=		sqlite:3
 SQLITE_CONFIGURE_WITH=	sqlite
 
+SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	ssl=openssl
 
 TEXTCAT_CONFIGURE_WITH=	textcat
@@ -152,7 +153,7 @@ post-patch:
 		${WRKSRC}/doc/example-config/*.conf ${WRKSRC}/doc/example-config/conf.d/*
 	@${REINPLACE_CMD} -e '/^LIBS =/s/$$/ @LTLIBICONV@/' \
 		${WRKSRC}/src/lib-mail/Makefile.in
-	# Install the sample config files into ETCDIR/example-config/
+# Install the sample config files into ETCDIR/example-config/
 	@${REINPLACE_CMD} -e '/^exampledir =/s|\$$(docdir)|${ETCDIR}|' \
 		${WRKSRC}/doc/example-config/Makefile.in \
 		${WRKSRC}/doc/example-config/conf.d/Makefile.in
