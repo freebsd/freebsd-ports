@@ -2,35 +2,33 @@
 
 PORTNAME=	uefi-edk2-bhyve
 PORTVERSION=	20160704
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
-COMMENT=	UEFI-EDK2 firmware for bhyve
+COMMENT?=	UEFI-EDK2 firmware for bhyve
 
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	bash:shells/bash \
-		gcc48:lang/gcc48 \
 		nasm:devel/nasm \
 		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3
 
 USES=		gmake \
 		python:build
+USE_GCC=	4.8
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	uefi-edk2
 GH_TAGNAME=	a36132939e259df79b16699c03c6f1d63c7454b9
 
-PLIST_FILES=    ${PREFIX}/share/uefi-firmwares/BHYVE_UEFI.fd
+PLIST_FILES=	${PREFIX}/share/uefi-firmware/BHYVE_UEFI${PLIST_SUFFIX}.fd
 
 ONLY_FOR_ARCHS=	amd64
 
-OPTIONS_DEFINE=	CSM DEBUG
-OPTIONS_DEFAULT=CSM
-CSM_DESC=	Build with Compatibility Support Module (Legacy Boot)
-CSM_VARS=	build_args+=-DCSM_ENABLE=TRUE
+OPTIONS_DEFINE=	DEBUG
 
-DEBUG_VARS=     uefi_target=DEBUG
+DEBUG_VARS=	uefi_target=DEBUG
 DEBUG_VARS_OFF=	uefi_target=RELEASE
 
 MAKE_ARGS+=	AS=${LOCALBASE}/bin/as \
@@ -43,6 +41,11 @@ MAKE_ARGS+=	AS=${LOCALBASE}/bin/as \
 BUILD_ARGS=-DDEBUG_ON_SERIAL_PORT=TRUE -D FD_SIZE_2MB
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_CSM)
+PLIST_SUFFIX=	_CSM
+BUILD_ARGS+=	-DCSM_ENABLE=TRUE
+.endif
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/BaseTools/Tests/GNUmakefile \
@@ -57,7 +60,7 @@ do-build:
 	${LN} -sf ${LOCALBASE}/bin/ar ${BUILD_WRKSRC}/Build/ar
 	${LN} -sf ${LOCALBASE}/bin/objcopy ${BUILD_WRKSRC}/Build/objcopy
 	${LN} -sf ${LOCALBASE}/bin/nasm ${BUILD_WRKSRC}/Build/nasm
-.if ${PORT_OPTIONS:MCSM}
+.if defined(WITH_CSM)
 	bash -c " \
 		cd ${BUILD_WRKSRC}; \
 		source edksetup.sh;\
@@ -73,8 +76,8 @@ do-build:
 	"
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/uefi-firmwares/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/uefi-firmware/
 	${INSTALL} ${BUILD_WRKSRC}/Build/BhyveX64/${UEFI_TARGET}_GCC48/FV/BHYVE.fd \
-		${STAGEDIR}${PREFIX}/share/uefi-firmwares/BHYVE_UEFI.fd
+		${STAGEDIR}${PREFIX}/share/uefi-firmware/BHYVE_UEFI${PLIST_SUFFIX}.fd
 
 .include <bsd.port.mk>
