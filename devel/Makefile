@@ -4364,6 +4364,7 @@
     SUBDIR += py-raven
     SUBDIR += py-rcsparse
     SUBDIR += py-re2
+    SUBDIR += py-rebulk
     SUBDIR += py-rednose
     SUBDIR += py-repl
     SUBDIR += py-repoze.lru
