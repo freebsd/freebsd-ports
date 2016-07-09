@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tulip
-PORTVERSION=	4.8.1
+PORTVERSION=	4.9.0
 DISTVERSIONSUFFIX=	_src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -17,13 +17,13 @@ LIB_DEPENDS=	libquazip.so:archivers/quazip \
 		libOGDF.so:math/ogdf \
 		libfreetype.so:print/freetype2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		cmake:outsource compiler:c++11-lib dos2unix execinfo jpeg python \
 		shebangfix
 SHEBANG_FILES=	tulip-config.in
 DOS2UNIX_FILES=	software/tulip/src/main.cpp
-USE_GL=		glew glut
+USE_GL=		gl glew glut
 USE_GNOME=	libxml2
 CMAKE_ARGS=	-DBUILD_DOC:BOOL=OFF \
 		-DOGDFInclude:STRING=${LOCALBASE}/include \
