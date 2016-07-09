@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libgd
-PORTVERSION=	2.1.0
-PORTREVISION?=	7
+PORTVERSION=	2.1.1
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	https://bitbucket.org/libgd/gd-libgd/downloads/ \
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 CONFLICTS=	bazaar-1.*
 
-USES=		jpeg libtool:keepla pathfix pkgconfig shebangfix tar:xz
+USES=		tar:xz pkgconfig pathfix libtool:keepla shebangfix jpeg iconv
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
