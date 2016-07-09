@@ -1,6 +1,6 @@
---- threadutil/inc/ithread.h.orig
+--- threadutil/inc/ithread.h.orig	2013-11-14 17:14:44 UTC
 +++ threadutil/inc/ithread.h
-@@ -50,12 +50,9 @@
+@@ -50,12 +50,9 @@ extern "C" {
  
  #include <pthread.h>
  
