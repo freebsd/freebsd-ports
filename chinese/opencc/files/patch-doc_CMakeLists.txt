@@ -1,9 +1,0 @@
---- doc/CMakeLists.txt~	2010-12-23 07:18:23.000000000 -0600
-+++ doc/CMakeLists.txt	2011-11-28 14:52:15.884747557 -0600
-@@ -3,5 +3,5 @@ install(
- 		opencc.1
- 		opencc_dict.1
- 	DESTINATION
--		${DIR_SHARE}/man/man1
-+	${CMAKE_INSTALL_PREFIX}/man/man1
- )
