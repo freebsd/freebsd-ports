@@ -3,7 +3,7 @@
 
 PORTNAME=	portaudio
 DISTVERSION=	19_20140130
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
 DISTNAME=	pa_stable_v${DISTVERSION}
@@ -60,7 +60,8 @@ post-install:
 
 post-install-PATEST-on:
 .for f in ${PATEST_BIN}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin/
+	${STRIP_CMD} ${WRKSRC}/bin/.libs/${f}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 
 post-install-DOCS-on:
