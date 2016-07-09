@@ -4948,6 +4948,7 @@
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-guess_html_encoding
     SUBDIR += rubygem-gyoku
+    SUBDIR += rubygem-hamster
     SUBDIR += rubygem-hashdiff
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
