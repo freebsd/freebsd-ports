@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	6.2.2
+PORTVERSION=	6.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
@@ -83,16 +82,14 @@ USE_GCC=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp
+	# So many different ways to run python. Fix them all.
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|python -c|${PYTHON_CMD} -c|" \
-		${WRKSRC}/deps/v8/build/toolchain.gypi
-	@${REINPLACE_CMD} -e "s|'python',|'${PYTHON_CMD}',|" \
-		${WRKSRC}/tools/icu/icu-generic.gyp \
-		${WRKSRC}/deps/v8/build/shim_headers.gypi \
-		${WRKSRC}/deps/v8/tools/gyp/v8.gyp \
-		${WRKSRC}/deps/v8/src/d8.gyp \
-		${WRKSRC}/node.gyp
+	@${FIND} ${WRKSRC} -type f -name '*.gyp*' -print0 \
+		| ${XARGS} -0 ${REINPLACE_CMD} \
+			-e "s|'python'|'${PYTHON_CMD}'|" \
+			-e 's|<!(python |<!(${PYTHON_CMD} |' \
+			-e 's|\&\& python |\&\& ${PYTHON_CMD} |'
 
 post-configure:
 	# Post-process Makefile and *.mk files created by node-gyp and remove
