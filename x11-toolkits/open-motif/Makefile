@@ -2,6 +2,7 @@
 
 PORTNAME=	open-motif
 PORTVERSION=	2.3.6
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 # MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
 MASTER_SITES=	SF/motif/Motif%202.3.6%20Source%20Code/
@@ -13,8 +14,6 @@ COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png
-
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif-[0-9]*
 
@@ -22,7 +21,8 @@ USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig
 USE_XORG=	x11 xaw xbitmaps xext xft xt xmu xrender sm ice
 LIB_DEPENDS=	libXp.so:x11/libXp \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libpng16.so:graphics/png
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
