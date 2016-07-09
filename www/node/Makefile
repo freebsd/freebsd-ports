@@ -2,8 +2,8 @@
 
 PORTNAME=	node
 PORTVERSION=	6.2.2
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
@@ -13,11 +13,14 @@ COMMENT=	V8 JavaScript for client and server (6.x)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	BUNDLED_SSL DOCS
+OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS
 OPTIONS_SUB=	yes
 
 BUNDLED_SSL_DESC=	Use node.js's bundled OpenSSL implementation
 BUNDLED_SSL_USE_OFF=	OPENSSL=yes
+
+NLS_CONFIGURE_ON=	--with-intl=system-icu
+NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USES=		compiler execinfo gmake python:2,build pkgconfig localbase
 HAS_CONFIGURE=	yes
@@ -28,7 +31,6 @@ CONFLICTS_INSTALL=	node4-* node-0.[02-9][0-9]* node-devel-0.[0-9]* node010-[0-9]
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--without-npm \
-		--with-intl=system-icu \
 		--shared-cares \
 		--shared-libuv \
 		--shared-zlib
@@ -38,7 +40,6 @@ REINPLACE_ARGS=	-i ''
 MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 
 LIB_DEPENDS+=	libcares.so:dns/c-ares\
-		libicui18n.so:devel/icu \
 		libuv.so:devel/libuv
 
 .include <bsd.port.options.mk>
