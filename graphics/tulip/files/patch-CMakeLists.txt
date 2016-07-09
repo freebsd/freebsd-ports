@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2015-10-16 02:14:39 UTC
+--- CMakeLists.txt.orig	2016-07-07 20:16:41 UTC
 +++ CMakeLists.txt
-@@ -501,8 +501,8 @@ IF(NOT BUILD_CORE_ONLY)
+@@ -564,8 +564,8 @@ IF(NOT BUILD_CORE_ONLY)
    SET(Tess2Library tess2-tulip-${TulipMMVersion})
  ENDIF(NOT BUILD_CORE_ONLY)
  
