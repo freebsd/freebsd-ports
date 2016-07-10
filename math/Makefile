@@ -96,6 +96,7 @@
     SUBDIR += blitz++
     SUBDIR += blocksolve95
     SUBDIR += bsdnt
+    SUBDIR += cadabra2
     SUBDIR += calc
     SUBDIR += calcoo
     SUBDIR += calctool

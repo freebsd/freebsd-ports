@@ -1,0 +1,25 @@
+%%GUI%%bin/cadabra-gtk
+bin/cadabra-server
+bin/cadabra2
+bin/cadabra2html
+lib/libcadabra_client.so
+lib/libcadabra_server.so
+%%GUI%%lib/libtexengine.so
+%%PYTHON_SITELIBDIR%%/cadabra2.so
+%%PYTHON_SITELIBDIR%%/cadabra2_defaults.py
+%%PYTHON_SITELIBDIR%%/cdb/gr.py
+%%GUI%%share/applications/cadabra2.desktop
+%%GUI%%%%DATADIR%%/images/cadabra2.png
+%%GUI%%%%DATADIR%%/manual/algorithms/distribute.cnb
+%%GUI%%share/icons/hicolor/256x256/apps/cadabra2.png
+%%GUI%%share/icons/hicolor/64x64/apps/cadabra2.png
+%%GUI%%share/icons/hicolor/scalable/apps/cadabra2.svg
+%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/breqn.sty
+%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/cmbase.sym
+%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/flexisym.sty
+%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/mathpazo.sym
+%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/mathptmx.sym
+%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/mathstyle.sty
+%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/msabm.sym
+%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/tableaux.sty
+%%GUI%%@dir %%DATADIR%%/manual/properties
