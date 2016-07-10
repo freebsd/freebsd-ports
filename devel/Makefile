@@ -1406,6 +1406,7 @@
     SUBDIR += linux_kdump
     SUBDIR += linux_libusb
     SUBDIR += lion
+    SUBDIR += liteide
     SUBDIR += lldb37
     SUBDIR += lldb38
     SUBDIR += llnextgen
