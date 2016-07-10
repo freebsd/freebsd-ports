@@ -2,15 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	redigo
-PORTVERSION=	20140714
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	LOCAL/gblach/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Go client for the Redis database
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/redis
+LICENSE=	APACHE20
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	garyburd
+GH_TAGNAME=	v${PORTVERSION}
 USES=		go
-GO_PKGNAME=	github.com/garyburd/${PORTNAME}/redis
+GO_PKGNAME=	github.com/garyburd/${PORTNAME}
+GO_TARGET=	${GO_PKGNAME}/redis				\
 
 .include <bsd.port.mk>
