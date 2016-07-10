@@ -1,7 +1,6 @@
 include/capstone/arm.h
 include/capstone/arm64.h
 include/capstone/capstone.h
-include/capstone/m68k.h
 include/capstone/mips.h
 include/capstone/platform.h
 include/capstone/ppc.h
@@ -11,5 +10,5 @@ include/capstone/x86.h
 include/capstone/xcore.h
 lib/libcapstone.a
 lib/libcapstone.so
-lib/libcapstone.so.4
+lib/libcapstone.so.3
 libdata/pkgconfig/capstone.pc
