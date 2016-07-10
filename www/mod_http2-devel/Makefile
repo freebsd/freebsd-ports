@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_http2-devel
-PORTVERSION=	1.5.10
+PORTVERSION=	1.5.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -18,8 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	icing
 GH_PROJECT=	mod_h2
 
-USES=		autoreconf libtool
-USE_OPENSSL=	yes
+USES=		autoreconf libtool ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=ext-
 CONFIGURE_ENV=	CONFIG_SHELL=/bin/sh
