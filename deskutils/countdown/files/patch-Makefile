@@ -1,5 +1,5 @@
---- Makefile.orig	2014-08-11 15:16:15.000000000 -0400
-+++ Makefile	2014-09-29 11:58:53.471412866 -0400
+--- Makefile.orig	2014-08-11 19:16:15 UTC
++++ Makefile
 @@ -1,15 +1,14 @@
  # Makefile for countdown
  
