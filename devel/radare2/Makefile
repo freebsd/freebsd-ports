@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radare2
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.4
 CATEGORIES=	devel
 MASTER_SITES=	http://rada.re/get/
 
@@ -14,7 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	Does not build
 
-CONFLICTS_BUILD=capstone-*
+BUILD_DEPENDS+=		pkg-config:devel/pkgconf
+LIB_DEPENDS+=		libcapstone.so:devel/capstone4
+
+CONFIGURE_ARGS+=	--with-syscapstone
 
 USES=		gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
