@@ -38,11 +38,11 @@ include/qbs/use_installed_qtprofilesetup.pri
 lib/libqbscore.so
 lib/libqbscore.so.1
 lib/libqbscore.so.1.5
-lib/libqbscore.so.1.5.1
+lib/libqbscore.so.1.5.2
 lib/libqbsqtprofilesetup.so
 lib/libqbsqtprofilesetup.so.1
 lib/libqbsqtprofilesetup.so.1.5
-lib/libqbsqtprofilesetup.so.1.5.1
+lib/libqbsqtprofilesetup.so.1.5.2
 lib/qbs/plugins/libqbs_cpp_scanner.so
 lib/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/android-ndk-module.html
@@ -109,9 +109,9 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/properties-item.html
 %%PORTDOCS%%%%DOCSDIR%%/html/propertyoptions-item.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qbs-module.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qbs.index
 %%PORTDOCS%%%%DOCSDIR%%/html/qbs.qhp
 %%PORTDOCS%%%%DOCSDIR%%/html/qbs.qhp.sha1
-%%PORTDOCS%%%%DOCSDIR%%/html/qt-build-suite.index
 %%PORTDOCS%%%%DOCSDIR%%/html/qt-modules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qt-versions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qtapplication-item.html
@@ -123,7 +123,6 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%PORTDOCS%%%%DOCSDIR%%/html/setup.html
 %%PORTDOCS%%%%DOCSDIR%%/html/shell.html
 %%PORTDOCS%%%%DOCSDIR%%/html/staticlibrary-item.html
-@comment %%PORTDOCS%%%%DOCSDIR%%/html/style/offline-simple.css
 %%PORTDOCS%%%%DOCSDIR%%/html/style/offline.css
 %%PORTDOCS%%%%DOCSDIR%%/html/subproject-item.html
 %%PORTDOCS%%%%DOCSDIR%%/html/system-requirements.html
@@ -253,8 +252,8 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%DATADIR%%/modules/cpp/genericunix-gcc.qbs
 %%DATADIR%%/modules/cpp/ios-gcc.qbs
 %%DATADIR%%/modules/cpp/linux-gcc.qbs
+%%DATADIR%%/modules/cpp/macos-gcc.qbs
 %%DATADIR%%/modules/cpp/msvc.js
-%%DATADIR%%/modules/cpp/osx-gcc.qbs
 %%DATADIR%%/modules/cpp/tvos-gcc.qbs
 %%DATADIR%%/modules/cpp/watchos-gcc.qbs
 %%DATADIR%%/modules/cpp/windows-mingw.qbs
