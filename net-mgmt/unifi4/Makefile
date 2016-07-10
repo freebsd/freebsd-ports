@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unifi4
-PORTVERSION=	4.8.18
+PORTVERSION=	4.8.20
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}/ \
@@ -16,7 +16,7 @@ COMMENT=	UniFi Controller
 RUN_DEPENDS=	mongodb>0:databases/mongodb \
 		snappyjava>0:archivers/snappy-java
 
-BUILD=		8395
+BUILD=		8422
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR}
 PLIST_SUB+=	BUILDVERSION="${PORTVERSION:S/./_/g}_${BUILD}"
