@@ -3,6 +3,7 @@
 
 PORTNAME=	openjfx8
 PORTVERSION=	20160228
+PORTREVISION=	1
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://bitbucket.org/tobik/openjfx-rt/get/ \
 		http://bitbucket.org/tobik/openjfx-rt/get/
@@ -15,8 +16,6 @@ COMMENT=	JavaFX (OpenJFX) SDK overlay for OpenJDK 8
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		does not build
 
 BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
 		antlr3>0:devel/antlr3 \
