@@ -324,7 +324,6 @@
     SUBDIR += telegraf
     SUBDIR += tornova
     SUBDIR += torrus
-    SUBDIR += unifi3
     SUBDIR += unifi4
     SUBDIR += unifi5
     SUBDIR += victorops-nagios
