@@ -256,7 +256,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/consoles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-cds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-dvds.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ctm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/current-stable.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-browsers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-finance.html
@@ -365,7 +364,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/make-delete-old.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-ftp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-rsync.html
@@ -426,6 +424,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-pkg.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-resourcelimits.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-sudo.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sendmail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/serial.html
