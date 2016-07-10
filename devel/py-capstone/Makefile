@@ -3,6 +3,7 @@
 
 PORTNAME=	capstone
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ COMMENT=	Python bindings for the Capstone Disassembly Engine
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-LIB_DEPENDS=	libcapstone.so:devel/capstone
+LIB_DEPENDS=	libcapstone.so:devel/capstone3
 
 USES=		python
 USE_PYTHON=	autoplist distutils
