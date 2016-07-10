@@ -1,4 +1,4 @@
-Zsh-syntax-highlighting enables highlighing of commands whilst they
+Zsh-syntax-highlighting enables highlighting of commands whilst they
 are typed at an interactive zsh prompt. This helps in reviewing
 commands before running them, particularly in catching syntax errors.
 
