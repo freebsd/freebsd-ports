@@ -3,7 +3,7 @@
 
 PORTNAME=	qtcreator
 DISTVERSION=	4.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -18,9 +18,10 @@ RUN_DEPENDS=	qbs:devel/qbs
 
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USES=		qmake compiler:c++11-lib
-USE_QT5=	buildtools concurrent core declarative designer gui linguist \
-		network qdoc qml quick quickcontrols script script sql svg \
-		webkit widgets xml xmlpatterns
+USE_GL=		gl
+USE_QT5=	buildtools concurrent core declarative designer gui help \
+		linguist network printsupport qdoc qml quick quickcontrols \
+		script script sql svg webkit widgets xml xmlpatterns
 
 # be paranoid and do not extract qbs (devel/qbs) copy from source tree
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/src/shared/qbs'
