@@ -58,6 +58,8 @@ lib/rustlib/%%RUST_TARGET%%/lib/libgetopts-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libgraphviz-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/liblibc-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/liblog-%%RUST_VSN_HASH%%.so
+lib/rustlib/%%RUST_TARGET%%/lib/libpanic_abort-%%RUST_VSN_HASH%%.rlib
+lib/rustlib/%%RUST_TARGET%%/lib/libpanic_unwind-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/librand-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/librbml-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/librustc-%%RUST_VSN_HASH%%.so
@@ -92,5 +94,6 @@ lib/rustlib/%%RUST_TARGET%%/lib/libterm-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libterm-%%RUST_VSN_HASH%%.so
 lib/rustlib/%%RUST_TARGET%%/lib/libtest-%%RUST_VSN_HASH%%.rlib
 lib/rustlib/%%RUST_TARGET%%/lib/libtest-%%RUST_VSN_HASH%%.so
+lib/rustlib/%%RUST_TARGET%%/lib/libunwind-%%RUST_VSN_HASH%%.rlib
 man/man1/rustc.1.gz
 man/man1/rustdoc.1.gz
