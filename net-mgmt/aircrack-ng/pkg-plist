@@ -32,10 +32,13 @@ man/man8/tkiptun-ng.8.gz
 man/man8/wesside-ng.8.gz
 sbin/airbase-ng
 sbin/aireplay-ng
+sbin/airmon-ng
 sbin/airodump-ng
+sbin/airodump-ng-oui-update
 sbin/airserv-ng
 sbin/airtun-ng
 sbin/besside-ng
 sbin/easside-ng
 sbin/tkiptun-ng
 sbin/wesside-ng
+@dir %%ETCDIR%%
