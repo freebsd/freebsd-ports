@@ -208,7 +208,8 @@
     SUBDIR += c2mdoc
     SUBDIR += caf
     SUBDIR += calibrator
-    SUBDIR += capstone
+    SUBDIR += capstone3
+    SUBDIR += capstone4
     SUBDIR += cargo
     SUBDIR += cask
     SUBDIR += catch
