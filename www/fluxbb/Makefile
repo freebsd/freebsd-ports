@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fluxbb
-PORTVERSION=	1.5.9
+PORTVERSION=	1.5.10
 CATEGORIES=	www
 MASTER_SITES=	http://fluxbb.org/download/releases/${PORTVERSION}/
 
