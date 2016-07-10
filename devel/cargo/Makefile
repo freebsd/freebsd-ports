@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -33,7 +33,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 #   This is a collection of mainly shell scripts which are used to
 #   install Cargo.
 
-MASTER_SITES=	https://static.rust-lang.org/cargo-dist/2016-04-10/:bootstrap \
+MASTER_SITES=	https://static.rust-lang.org/cargo-dist/2016-05-22/:bootstrap \
 		LOCAL/jbeich:registry
 .if !defined(SKIP_CARGO_REGISTRY)
 DISTFILES+=	${CARGO_REGISTRY}:registry
@@ -94,7 +94,7 @@ post-extract-BOOTSTRAP-on:
 post-patch:
 # Fix mandir and don't install licenses outside of ${_LICENSE_DIR}
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
-		-e 's, LICENSE-[^[:space:]]*,,g' \
+		-e 's,$$(S)LICENSE-[^[:space:]]* ,,g' \
 		${WRKSRC}/Makefile.in
 
 # In case the previous "make stage" failed, this ensures rust's
