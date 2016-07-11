@@ -187,6 +187,7 @@
     SUBDIR += jamlib
     SUBDIR += jmba
     SUBDIR += junkfilter
+    SUBDIR += jwsmtp
     SUBDIR += kbiff
     SUBDIR += kshowmail
     SUBDIR += lbdb
