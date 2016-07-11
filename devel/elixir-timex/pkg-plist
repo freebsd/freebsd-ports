@@ -38,6 +38,7 @@ lib/elixir/lib/timex/ebin/Elixir.Timex.Interval.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Macros.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Helpers.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Parser.beam
+lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Parsers.ISO8601Extended.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Parsers.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Tokenizer.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Tokenizers.Default.beam
@@ -94,6 +95,7 @@ lib/elixir/lib/timex/lib/l10n/translator.ex
 lib/elixir/lib/timex/lib/parse/datetime/helpers.ex
 lib/elixir/lib/timex/lib/parse/datetime/parser.ex
 lib/elixir/lib/timex/lib/parse/datetime/parsers.ex
+lib/elixir/lib/timex/lib/parse/datetime/parsers/iso8601_extended.ex
 lib/elixir/lib/timex/lib/parse/datetime/tokenizer.ex
 lib/elixir/lib/timex/lib/parse/datetime/tokenizers/default.ex
 lib/elixir/lib/timex/lib/parse/datetime/tokenizers/directive.ex
