@@ -6,7 +6,7 @@ PORTVERSION=	2.7
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Slightly improved screen locker based on slock
 
 LICENSE=	BSD3CLAUSE
