@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	calendar
-PORTVERSION=	0.14.2
+PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
@@ -17,5 +17,6 @@ GH_ACCOUNT=	lau
 
 MIX_BUILD_DEPS=	devel/elixir-tzdata
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
+MIX_REWRITE=	yes
 
 .include <bsd.port.mk>
