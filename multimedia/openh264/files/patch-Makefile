@@ -1,7 +1,17 @@
+# Restore SONAME after https://github.com/cisco/openh264/commit/af8240a
 # Force gmp plugin to link dynamically against libopenh264
 
 --- Makefile~
 +++ Makefile
+@@ -34,7 +34,7 @@ CCASFLAGS=$(CFLAGS)
+ STATIC_LDFLAGS=-lstdc++
+ 
+ VERSION=1.6
+-SHAREDLIBVERSION=0
++SHAREDLIBVERSION=2
+ 
+ ifeq (,$(wildcard $(SRC_PATH)gmp-api))
+ HAVE_GMP_API=No
 @@ -210,7 +210,7 @@ plugin:
  	@echo "You do not have gmp-api.  Run make gmp-bootstrap to get the gmp-api headers."
  endif
