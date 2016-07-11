@@ -1,5 +1,6 @@
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Before.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.DSLs.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Description.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Endpoint.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Exceptions.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Extend.beam
@@ -26,8 +27,10 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Helper.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Helpers.Response.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Middleware.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.GetVersion.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.NotFound.beam
-lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.Version.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.PutVersion.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.SaveConn.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Router.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Runtime.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Struct.Endpoint.beam
@@ -67,6 +70,7 @@ lib/elixir/lib/maru/ebin/maru.app
 lib/elixir/lib/maru/lib/maru.ex
 lib/elixir/lib/maru/lib/maru/builder.ex
 lib/elixir/lib/maru/lib/maru/builder/before.ex
+lib/elixir/lib/maru/lib/maru/builder/description.ex
 lib/elixir/lib/maru/lib/maru/builder/dsls.ex
 lib/elixir/lib/maru/lib/maru/builder/endpoint.ex
 lib/elixir/lib/maru/lib/maru/builder/exceptions.ex
@@ -88,6 +92,7 @@ lib/elixir/lib/maru/lib/maru/helper.ex
 lib/elixir/lib/maru/lib/maru/helpers/response.ex
 lib/elixir/lib/maru/lib/maru/middleware.ex
 lib/elixir/lib/maru/lib/maru/plugs/notfound.ex
+lib/elixir/lib/maru/lib/maru/plugs/save_conn.ex
 lib/elixir/lib/maru/lib/maru/plugs/version.ex
 lib/elixir/lib/maru/lib/maru/router.ex
 lib/elixir/lib/maru/lib/maru/runtime.ex
