@@ -137,6 +137,7 @@
     SUBDIR += elixir-phoenix
     SUBDIR += elixir-phoenix_ecto
     SUBDIR += elixir-phoenix_html
+    SUBDIR += elixir-phoenix_pubsub
     SUBDIR += elixir-webassembly
     SUBDIR += emacs-w3m
     SUBDIR += encode-explorer
