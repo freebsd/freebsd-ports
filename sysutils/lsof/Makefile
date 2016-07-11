@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lsof
-DISTVERSION=	4.90B
-PORTREVISION=	1
+DISTVERSION=	4.90C
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
