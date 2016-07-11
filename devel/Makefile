@@ -725,6 +725,7 @@
     SUBDIR += go-sql-driver
     SUBDIR += go-termbox
     SUBDIR += go-uuid
+    SUBDIR += go-yaml
     SUBDIR += gob2
     SUBDIR += gobject-introspection
     SUBDIR += godep
