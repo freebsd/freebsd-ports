@@ -716,6 +716,7 @@
     SUBDIR += go-codec
     SUBDIR += go-faker
     SUBDIR += go-flags
+    SUBDIR += go-form
     SUBDIR += go-go.uuid
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
