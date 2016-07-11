@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phoenix
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	elixir-
@@ -24,9 +24,11 @@ COWBOY_RUN_DEPENDS=	erlang-cowboy>=0:www/erlang-cowboy
 .include <bsd.port.options.mk>
 
 MIX_BUILD_DEPS=	devel/elixir-plug \
-		devel/elixir-poison
+		devel/elixir-poison \
+		www/elixir-phoenix_pubsub
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 MIX_EXTRA_APPS=	installer
 MIX_EXTRA_DIRS=	installer/lib installer/templates
+MIX_REWRITE=	yes
 
 .include <bsd.port.mk>
