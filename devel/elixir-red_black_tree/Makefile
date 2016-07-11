@@ -11,6 +11,8 @@ COMMENT=	Red-black tree implementation for Elixir
 
 LICENSE=	MIT
 
+IGNORE=		does not build with Elixir 1.3
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	SenecaSystems
