@@ -131,6 +131,7 @@ man/man6/makeweights.6.gz
 %%DATADIR%%/flags/england.png
 %%DATADIR%%/flags/france.png
 %%DATADIR%%/flags/germany.png
+%%DATADIR%%/flags/greece.png
 %%DATADIR%%/flags/iceland.png
 %%DATADIR%%/flags/italy.png
 %%DATADIR%%/flags/japan.png
@@ -216,6 +217,7 @@ share/icons/hicolor/48x48/apps/gnubg.png
 share/locale/cs/LC_MESSAGES/gnubg.mo
 share/locale/da/LC_MESSAGES/gnubg.mo
 share/locale/de/LC_MESSAGES/gnubg.mo
+share/locale/el/LC_MESSAGES/gnubg.mo
 share/locale/en_US/LC_MESSAGES/gnubg.mo
 share/locale/es/LC_MESSAGES/gnubg.mo
 share/locale/fr/LC_MESSAGES/gnubg.mo
