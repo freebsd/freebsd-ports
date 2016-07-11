@@ -726,6 +726,7 @@
     SUBDIR += go-slices
     SUBDIR += go-sql-driver
     SUBDIR += go-termbox
+    SUBDIR += go-tools
     SUBDIR += go-uuid
     SUBDIR += go-yaml
     SUBDIR += gob2
