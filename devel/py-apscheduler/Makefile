@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apscheduler
-PORTVERSION=	3.0.4
+PORTVERSION=	3.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,32 +11,37 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	In-process task scheduler with Cron-like capabilities
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}tzlocal>0:devel/py-tzlocal
+		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.2:devel/py-tzlocal
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.5.1:devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}pytest-capturelog>=0.7:devel/py-pytest-capturelog
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
-
-OPTIONS_DEFINE=	TEST
-
-TEST_BUILD_DEPENDS=${PYTHON_PKGNAMEPREFIX}pytest>=2.5.1:devel/py-pytest
-TEST_MAKE_ENV=	TZ=UTC
-PYDISTUTILS_TEST_TARGET?=	test
+TEST_ENV=	${MAKE_ENV} TZ=UTC PYTHONPATH=.
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MTEST} && ${PYTHON_REL} < 3300
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+.if ${PYTHON_REL} < 3300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures \
+		${PYTHON_PKGNAMEPREFIX}funcsigs>0:devel/py-funcsigs
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 .endif
 
-.if ${PYTHON_REL} < 3200
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '/setup_requires/,/],/d' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's/ --cov//' ${WRKSRC}/${PYSETUP:R}.cfg
+	@${REINPLACE_CMD} -e 's/set_level/setLevel/' \
+		-e 's/\.records/&()/' \
+		-e '/records/s/== 1/== 2/' \
+		-e '/message/s/\[0]./[1]./' \
+		${WRKSRC}/tests/test_schedulers.py
 
-pre-install-TEST-on:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_TEST_TARGET} ${PYDISTUTILS_TESTARGS})
+do-test:
+	@(cd ${TEST_WRKSRC}; ${SETENV} ${TEST_ENV} py.test)
 
 .include <bsd.port.post.mk>
