@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	db_connection
-PORTVERSION=	0.2.5
+DISTVERSION=	1.0.0-rc.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 USES=		elixir
 USE_GITHUB=	yes
-GH_ACCOUNT=	fishcakez
+GH_ACCOUNT=	elixir-ecto
 
 MIX_BUILD_NAME=	shared
 MIX_BUILD_DEPS=	devel/elixir-connection \
