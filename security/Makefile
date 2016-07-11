@@ -189,6 +189,7 @@
     SUBDIR += hackbot
     SUBDIR += hamachi
     SUBDIR += hashcat
+    SUBDIR += hashcat-legacy
     SUBDIR += heimdal
     SUBDIR += hitch
     SUBDIR += hlfl
