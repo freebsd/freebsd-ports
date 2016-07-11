@@ -57,6 +57,7 @@ lib/saga/libgrid_spline.so
 lib/saga/libgrid_tools.so
 lib/saga/libgrid_visualisation.so
 lib/saga/libimagery_classification.so
+lib/saga/libimagery_isocluster.so
 lib/saga/libimagery_maxent.so
 lib/saga/libimagery_opencv.so
 lib/saga/libimagery_photogrammetry.so

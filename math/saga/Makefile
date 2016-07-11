@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -85,6 +85,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
 		${WRKSRC}/src/saga_core/saga_api/api_core.h
 .endif
+	@${REINPLACE_CMD} -e 's|PORTVERSION|${PORTVERSION:C/\./-/g}|' \
+		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|cd $$(pkgdatadir);|cd ${STAGEDIR}${DATADIR};|g' \

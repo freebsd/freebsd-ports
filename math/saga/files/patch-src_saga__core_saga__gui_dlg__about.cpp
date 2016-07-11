@@ -4,7 +4,7 @@
  	s	+= "http://www.saga-gis.org\n";
  	s	+= "\n";
  	s	+= "Version: " + wxString(SAGA_VERSION) + "\n";
-+	s	+= "https://sourceforge.net/p/saga-gis/code/ci/release-2-3-0/tree/\n";
++	s	+= "https://sourceforge.net/p/saga-gis/code/ci/release-PORTVERSION/tree/\n";
  
  #ifdef _SAGA_MSW
  	#ifdef _WIN64
