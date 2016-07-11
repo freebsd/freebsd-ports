@@ -28,7 +28,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSREL:R} == 11
+.if ${OPSYS} == FreeBSD && ${OSREL:R} >= 11
 # PR 199109  The base ncurses has suffered a regression which prevents
 # adacurses from building on -CURRENT.  The PR is not getting any attention
 # and I'm sick of never-ending fallout messages so bring back ports ncurses
