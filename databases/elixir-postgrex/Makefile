@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgrex
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 USES=		elixir
 USE_GITHUB=	yes
-GH_ACCOUNT=	ericmj
+GH_ACCOUNT=	elixir-ecto
 
 MIX_BUILD_DEPS=	databases/elixir-db_connection \
 		devel/elixir-connection \

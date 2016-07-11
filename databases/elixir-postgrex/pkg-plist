@@ -1,9 +1,14 @@
+lib/elixir/lib/postgrex/ebin/Elixir.Collectable.Postgrex.Stream.beam
+lib/elixir/lib/postgrex/ebin/Elixir.DBConnection.Query.Postgrex.CopyData.beam
 lib/elixir/lib/postgrex/ebin/Elixir.DBConnection.Query.Postgrex.Parameters.beam
 lib/elixir/lib/postgrex/ebin/Elixir.DBConnection.Query.Postgrex.Query.beam
+lib/elixir/lib/postgrex/ebin/Elixir.DBConnection.Query.Postgrex.Stream.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Enumerable.Postgrex.Stream.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.App.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.BinaryExtension.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.BinaryUtils.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.CIDR.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.CopyData.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Date.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Error.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.ErrorCode.beam
@@ -43,6 +48,7 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Protocol.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Query.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Range.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Result.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Stream.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Time.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Timestamp.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.TypeInfo.beam
@@ -50,7 +56,9 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.TypeServer.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Types.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Utils.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.beam
+lib/elixir/lib/postgrex/ebin/Elixir.String.Chars.Postgrex.CopyData.beam
 lib/elixir/lib/postgrex/ebin/Elixir.String.Chars.Postgrex.Query.beam
+lib/elixir/lib/postgrex/ebin/Elixir.String.Chars.Postgrex.Stream.beam
 lib/elixir/lib/postgrex/ebin/postgrex.app
 lib/elixir/lib/postgrex/lib/postgrex.ex
 lib/elixir/lib/postgrex/lib/postgrex/app.ex
@@ -91,6 +99,7 @@ lib/elixir/lib/postgrex/lib/postgrex/parameters.ex
 lib/elixir/lib/postgrex/lib/postgrex/protocol.ex
 lib/elixir/lib/postgrex/lib/postgrex/query.ex
 lib/elixir/lib/postgrex/lib/postgrex/result.ex
+lib/elixir/lib/postgrex/lib/postgrex/stream.ex
 lib/elixir/lib/postgrex/lib/postgrex/type_info.ex
 lib/elixir/lib/postgrex/lib/postgrex/type_server.ex
 lib/elixir/lib/postgrex/lib/postgrex/types.ex
