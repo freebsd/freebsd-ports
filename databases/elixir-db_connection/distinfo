@@ -1,2 +1,3 @@
-SHA256 (fishcakez-db_connection-v0.2.5_GH0.tar.gz) = 6984e66b28e9a388487b5b93d70261d3047bf414fcd283eb0d0bdb4bbce48dab
-SIZE (fishcakez-db_connection-v0.2.5_GH0.tar.gz) = 37243
+TIMESTAMP = 1467032574
+SHA256 (elixir-ecto-db_connection-v1.0.0-rc.3_GH0.tar.gz) = ad11199bc68c4bc28c38f3d2a838a49623317bd20d2cb16ae4c3ec2656f06d8b
+SIZE (elixir-ecto-db_connection-v1.0.0-rc.3_GH0.tar.gz) = 40561
