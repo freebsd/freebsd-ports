@@ -1,0 +1,10 @@
+jwSMTP is a GPL-licensed C++ library to facilitate sending email
+programmatically. All you need to worry about is who the mail is from, who to
+send it to and the message itself, no network coding necessary. It is able to
+send mail in html or plain format. jwSMTP can send attachments, send to
+multiple recipients including Cc/Bcc recipients. LOGIN and PLAIN SMTP
+authentication. Do an MX lookup or send direct via an smtp server.
+
+Supported platforms are BSD, Linux and Windows.
+
+WWW: https://talk.mumbleface.net/jwsmtp/
