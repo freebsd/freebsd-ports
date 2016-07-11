@@ -713,6 +713,7 @@
     SUBDIR += gnustep-make
     SUBDIR += go-bindata
     SUBDIR += go-btree
+    SUBDIR += go-codec
     SUBDIR += go-faker
     SUBDIR += go-flags
     SUBDIR += go-go.uuid
