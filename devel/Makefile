@@ -718,6 +718,7 @@
     SUBDIR += go-flags
     SUBDIR += go-form
     SUBDIR += go-go.uuid
+    SUBDIR += go-goregen
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
     SUBDIR += go-metrics
