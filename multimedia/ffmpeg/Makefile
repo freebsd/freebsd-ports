@@ -233,6 +233,8 @@ OPENGL_USE=		GL=gl
 OPENGL_CONFIGURE_ENABLE=	opengl
 
 # openh264
+OPENH264_BROKEN=	libavcodec/libopenh264enc.c:132:29: error: \
+			no member named 'sSliceCfg' in 'SSpatialLayerConfig'
 OPENH264_LIB_DEPENDS=	libopenh264.so:multimedia/openh264
 OPENH264_CONFIGURE_ENABLE=	libopenh264
 
