@@ -48,4 +48,10 @@ HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000)
+EXTRA_PATCHES=		${FILESDIR}/extrapatch-src_frontends_qt4_GuiWorkArea.cpp
+.endif
+
+.include <bsd.port.post.mk>
