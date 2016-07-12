@@ -10,8 +10,8 @@ DISTNAME=	Img-Source-${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library of image format handlers for Tk4.1 and later
 
-LICENSE=	TCLTK
-LICENSE_NAME=	Tcl/Tk
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	auto-accept pkg-sell pkg-mirror dist-sell dist-mirror
 
