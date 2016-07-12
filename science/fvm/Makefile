@@ -26,11 +26,7 @@ CONFIGURE_ARGS=	--with-bft=${LOCALBASE}	\
 		--with-med=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 
-.if defined(WITH_LAM)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/liblam.a:net/lam
-RUN_DEPENDS+=	${LOCALBASE}/bin/lamboot:net/lam
-CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}
-.elif defined(WITH_OPENMPI)
+.if defined(WITH_OPENMPI)
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}/mpi/openmpi
