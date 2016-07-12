@@ -1094,6 +1094,7 @@
     SUBDIR += u-boot-cubox-hummingboard
     SUBDIR += u-boot-duovero
     SUBDIR += u-boot-olimex-a20-som-evb
+    SUBDIR += u-boot-orangepi-one
     SUBDIR += u-boot-pandaboard
     SUBDIR += u-boot-pine64
     SUBDIR += u-boot-rpi
