@@ -208,6 +208,7 @@
     SUBDIR += google-sitemapgen
     SUBDIR += googlebook_dl
     SUBDIR += goose
+    SUBDIR += gotty
     SUBDIR += gpx2map
     SUBDIR += grafana
     SUBDIR += grafana2
