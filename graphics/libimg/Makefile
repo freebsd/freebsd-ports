@@ -2,14 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	libimg
-PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTVERSION=	1.4.6
 CATEGORIES?=	graphics tk
-MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}
-DISTNAME=	tkimg${PORTVERSION}
+MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}/tkimg%20${PORTVERSION}
+DISTNAME=	Img-Source-${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library of image format handlers for Tk4.1 and later
+
+LICENSE=	TCLTK
+LICENSE_NAME=	Tcl/Tk
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	auto-accept pkg-sell pkg-mirror dist-sell dist-mirror
 
 BUILD_DEPENDS=	dtplite:devel/tcllib
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
@@ -17,27 +21,33 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-PLIST_SUB+=	SHLIB_NAME="${SHLIB_NAME}" \
-		SHLIB_LINK="${SHLIB_LINK}"
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-WRKSRC=		${WRKDIR}/tkimg${PORTVERSION:R}
-USES=		autoreconf jpeg tk:tea tar:bzip2
+WRKSRC=		${WRKDIR}/tkimg
+USES=		autoreconf jpeg tk:tea zip
 USE_XORG=	x11 xext xft xrender xscrnsaver
+TEST_TARGET=	test
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SUB=	yes
 
 # We don't need the bundled libraries:
-EXTRACT_AFTER_ARGS=	--exclude '*/libz/*' --exclude zlib \
-		--exclude 'config.*' --exclude Makefile \
-		--exclude '*/compat/*' --exclude '*/libtiff/*' \
-		--exclude '*/libjpeg/*' --exclude '*/libpng/*'
+EXTRACT_AFTER_ARGS=	-x '*/libz/*' -x zlib \
+		-x 'config.*' -x Makefile \
+		-x '*/compat/*' -x '*/libtiff/*' \
+		-x '*/libjpeg/*' -x '*/libpng/*' -a -d ${WRKDIR}
 MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}"
+MAKE_ENV+=	LANG=
 CONFIGURE_ENV=	WRKDIR="${WRKDIR}"
 
 post-patch:
 	${REINPLACE_CMD} -E -e 's,"(zlib|tiff|jpeg|png)tcl.h",<\1.h>,' \
 		-e 's,jpeg\.h,jpeglib.h,' ${WRKSRC}/*/*.[ch]
 .for d in jpeg png tiff zlib
-	touch ${WRKDIR}/$dtclConfig.sh
+	${TOUCH} ${WRKDIR}/$dtclConfig.sh
 .endfor
+
+pre-configure:
+	${CHMOD} +x ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
 .for l in jpeg png tiff
@@ -47,9 +57,13 @@ post-configure:
 		${WRKSRC}/$l/Makefile
 .endfor
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/msgs/
 	${INSTALL_DATA} ${WRKSRC}/msgs/*.msg ${STAGEDIR}${EXAMPLESDIR}/msgs/
 	${INSTALL_SCRIPT} ${WRKSRC}/demo.tcl ${WRKSRC}/tkv.tcl ${STAGEDIR}${EXAMPLESDIR}/
+.endif
 
 .include <bsd.port.mk>
