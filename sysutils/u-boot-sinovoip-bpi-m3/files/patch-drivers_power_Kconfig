@@ -1,0 +1,16 @@
+--- drivers/power/Kconfig.orig	2016-04-12 02:22:25 UTC
++++ drivers/power/Kconfig
+@@ -125,6 +125,13 @@ config AXP_DCDC5_VOLT
+ 	On A23 / A31 / A33 / A83T boards dcdc5 is VCC-DRAM and should be 1.5V,
+ 	1.35V if DDR3L is used.
+ 
++config AXP_DC1SW_EN
++	int "axp pmic dc1sw enable"
++	depends on AXP818_POWER
++	default 0 if AXP818_POWER
++	---help---
++	Enable DC1SW switch.
++
+ config AXP_ALDO1_VOLT
+ 	int "axp pmic (a)ldo1 voltage"
+ 	depends on AXP221_POWER || AXP818_POWER

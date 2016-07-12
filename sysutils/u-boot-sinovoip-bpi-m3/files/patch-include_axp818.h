@@ -1,0 +1,10 @@
+--- include/axp818.h.orig	2016-04-12 02:22:25 UTC
++++ include/axp818.h
+@@ -24,6 +24,7 @@
+ #define AXP818_OUTPUT_CTRL2_DLDO2_EN	(1 << 4)
+ #define AXP818_OUTPUT_CTRL2_DLDO3_EN	(1 << 5)
+ #define AXP818_OUTPUT_CTRL2_DLDO4_EN	(1 << 6)
++#define AXP818_OUTPUT_CTRL2_DC1SW_EN	(1 << 7)
+ #define AXP818_OUTPUT_CTRL3	0x13
+ #define AXP818_OUTPUT_CTRL3_FLDO1_EN	(1 << 2)
+ #define AXP818_OUTPUT_CTRL3_FLDO2_EN	(1 << 3)
