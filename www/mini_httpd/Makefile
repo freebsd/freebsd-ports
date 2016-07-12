@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	mini_httpd
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/mini_httpd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Small HTTP server with support for GET, HEAD, POST, CGI, SSL, IPv6
 
 LICENSE=	BSD2CLAUSE
 
-USES=		cpe
+USES=		cpe ssl
 CPE_VENDOR=	acme
-USE_OPENSSL=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/htpasswd/${PORTNAME}-htpasswd/g' ${WRKSRC}/htpasswd.1
@@ -25,7 +24,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/htpasswd ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}-htpasswd
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/500.mini_httpd-rotate ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd_wrapper ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd.sh ${STAGEDIR}${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd.sh ${STAGEDIR}${PREFIX}/etc/rc.d/mini_httpd
 	${INSTALL_MAN} ${WRKSRC}/htpasswd.1 ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}-htpasswd.1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 	${INSTALL_DATA} ${WRKSRC}/mini_httpd.cnf ${STAGEDIR}${PREFIX}/etc/mini_httpd.cnf.sample
