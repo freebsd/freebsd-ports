@@ -72,12 +72,7 @@ BIN_SCRIPTS=	autovalid check_mesh compiler_version cree_sat cs.exe gracehst	\
 BIN_DATAS=	Makefile SaturneGUI autovalid.xml cs_profile lance lance.help	\
 		macros_FreeBSD.mk
 
-.if defined(WITH_LAM)
-MPI_HOME=	${LOCALBASE}
-BUILD_DEPENDS+=	${MPI_HOME}/lib/liblam.a:net/lam
-RUN_DEPENDS+=	${MPI_HOME}/bin/lamboot:net/lam
-MPI_LIBS=	-lmpi -llam
-.elif defined(WITH_OPENMPI)
+.if defined(WITH_OPENMPI)
 MPI_HOME=	${LOCALBASE}/mpi/openmpi
 BUILD_DEPENDS+=	${MPI_HOME}/bin/mpicc:net/openmpi
 RUN_DEPENDS+=	${MPI_HOME}/bin/mpirun:net/openmpi
@@ -101,7 +96,7 @@ RUN_DEPENDS+=	xpdf:graphics/xpdf
 
 pre-everything::
 	@${ECHO_MSG}
-	@${ECHO_MSG} "By default ncs is built with MPICH2, but you can set WITH_LAM or WITH_OPENMPI"
+	@${ECHO_MSG} "By default ncs is built with MPICH2, but you can set WITH_OPENMPI"
 	@${ECHO_MSG} "if you prefer."
 	@${ECHO_MSG}
 
