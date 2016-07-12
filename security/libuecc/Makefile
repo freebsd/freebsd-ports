@@ -2,6 +2,7 @@
 
 PORTNAME=	libuecc
 PORTVERSION=	7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://git.universe-factory.net/libuecc/snapshot/ \
 		http://git.universe-factory.net/libuecc/snapshot/

@@ -2,6 +2,7 @@
 
 PORTNAME=		fastd
 PORTVERSION=		18
+PORTREVISION=		1
 CATEGORIES=		security net
 MASTER_SITES=		https://git.universe-factory.net/fastd/snapshot/
 
