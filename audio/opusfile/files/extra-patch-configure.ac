@@ -1,11 +1,6 @@
 --- configure.ac.orig	2016-01-01 01:42:01 UTC
 +++ configure.ac
-@@ -86,15 +86,16 @@ AM_COND_IF(OP_WIN32,
-     )
-   )
- )
--AC_SEARCH_LIBS(ftime, [compat], , [enable_http=no])
- 
+@@ -81,10 +81,12 @@ AM_COND_IF(OP_WIN32,
  AS_IF([test "$enable_http" != "no"], [
     openssl="openssl"
     AC_DEFINE([OP_ENABLE_HTTP], [1], [Enable HTTP support])
