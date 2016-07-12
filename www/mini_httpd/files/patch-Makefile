@@ -1,4 +1,4 @@
---- Makefile.orig	2014-10-19 06:33:43 UTC
+--- Makefile.orig	2016-07-07 03:21:44 UTC
 +++ Makefile
 @@ -15,17 +15,21 @@ CRYPT_LIB =    -lcrypt
  # tree with your OpenSSL installation - depending on how you installed it,
@@ -18,10 +18,10 @@
  
  
 -BINDIR =	/usr/local/sbin
-+BINDIR =	${PREFIX}/sbin
 -MANDIR =	/usr/local/man
-+MANDIR =	${MANPREFIX}/man
 -CC =		cc
++BINDIR =	${PREFIX}/sbin
++MANDIR =	${MANPREFIX}/man
 +CC ?=		cc
  CDEFS =		$(SSL_DEFS) $(SSL_INC)
 -CFLAGS =	-O $(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
