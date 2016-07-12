@@ -291,6 +291,7 @@
     SUBDIR += letsencrypt.sh
     SUBDIR += letskencrypt
     SUBDIR += libadacrypt
+    SUBDIR += libargon2
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf
