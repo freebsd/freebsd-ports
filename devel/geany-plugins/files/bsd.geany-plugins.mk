@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-GEANY_VER=	1.27
+GEANY_VER=	1.28
 GEANY_PLUGINS_ALL=	addons \
 			autoclose \
 			automark \
@@ -100,7 +100,6 @@ miniscript_DIR=		geanyminiscript
 numberedbookmarks_DIR=	geanynumberedbookmarks
 pg_DIR=			geanypg
 prj_DIR=		geanyprj
-sendmail_DIR=		geanysendmail
 vc_DIR=			geanyvc
 
 git-changebar_SWITCH=	--enable-gitchangebar
