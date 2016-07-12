@@ -1,7 +1,7 @@
 U-Boot loader for Olimex A20 SOM EVB.
 
-To install this bootloader, follow the instructions in
- http://linux-sunxi.org/Bootable_SD_card#Bootloader
+To install this bootloader on an sdcard just do :
+dd if=/usr/local/share/u-boot/u-boot-boardname/u-boot-sunxi-with-spl.bin of=/path/to/sdcarddevice bs=1k seek=8 conv=notrunc,sync
 
 This version is patched so that:
  * ELF and API features are enabled.
@@ -13,7 +13,7 @@ This version is patched so that:
  * By default, it loads PIE ubldr.bin from file ubldr.bin on the FAT partition
    to address 0x42000000, and launches it.
 
-For information about running FreeBSD on Cubieboard, see
+For information about running FreeBSD on Allwinner boards, see
  https://wiki.freebsd.org/FreeBSD/arm/Allwinner
 
 For general information about U-Boot see WWW: http://www.denx.de/wiki/U-Boot
