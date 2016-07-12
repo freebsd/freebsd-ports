@@ -1,4 +1,4 @@
---- api/api.c.orig	2016-05-16 14:40:32 UTC
+--- api/api.c.orig	2016-07-11 19:01:01 UTC
 +++ api/api.c
 @@ -290,6 +290,14 @@ static int API_dev_close(va_list ap)
  	if (!err)
@@ -26,9 +26,9 @@
 +	ENTRY *match, search;
 +	static char *buf;
  
- 	last = (char *)va_arg(ap, u_int32_t);
+ 	last = (char *)va_arg(ap, unsigned long);
  
- 	if ((next = (char **)va_arg(ap, u_int32_t)) == NULL)
+ 	if ((next = (char **)va_arg(ap, uintptr_t)) == NULL)
  		return API_EINVAL;
  
 -	if (last == NULL)
@@ -58,6 +58,10 @@
 -
 -			*next = ((char *)env_get_addr(i));
 -			return 0;
+-		}
+-	}
+-
+-	return 0;
 +	/*
 +	 * This leverages realloc's behavior of growing but never shrinking the
 +	 * existing buffer.
@@ -74,9 +78,9 @@
 +		if ((i = hsearch_r(search, FIND, &match, &env_htab, 0)) == 0) {
 +			i = API_EINVAL;
 +			goto done;
- 		}
- 	}
- 
++ 		}
++ 	}
++ 
 +	/* hmatch on empty string is effectively "get next entry after i". */
 +	if ((i = hmatch_r("", i, &match, &env_htab)) == 0)
 +		goto done;
@@ -84,7 +88,7 @@
 +	buf = realloc(buf, buflen);
 +	snprintf(buf, buflen, "%s=%s", match->key, match->data);
 +	*next = buf;
- 	return 0;
++ 	return 0;
 +done:
 +	free(buf);
 +	buf = NULL;

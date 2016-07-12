@@ -1,4 +1,4 @@
---- cmd/test.c.orig	2016-05-16 14:40:32 UTC
+--- cmd/test.c.orig	2016-07-11 19:01:01 UTC
 +++ cmd/test.c
 @@ -56,9 +56,14 @@ static int do_test(cmd_tbl_t *cmdtp, int
  	char * const *ap;

@@ -1,4 +1,4 @@
---- cmd/elf.c.orig	2016-05-16 14:40:32 UTC
+--- cmd/elf.c.orig	2016-07-11 19:01:01 UTC
 +++ cmd/elf.c
 @@ -110,22 +110,12 @@ static unsigned long do_bootelf_exec(ulo
  	unsigned long ret;
