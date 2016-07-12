@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	klish
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	shells
-MASTER_SITES=	http://libcode.org/attachments/download/61/
+MASTER_SITES=	http://libcode.org/attachments/download/64/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Klish - Kommand Line Interface Shell
