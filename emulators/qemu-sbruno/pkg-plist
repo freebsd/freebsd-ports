@@ -91,7 +91,6 @@
 %%SOFTMMU%%%%DATADIR%%/kvmvapic.bin
 %%SOFTMMU%%%%DATADIR%%/qemu-icon.bmp
 %%SOFTMMU%%%%DATADIR%%/qemu_logo_no_text.svg
-%%SOFTMMU%%%%DATADIR%%/trace-events
 %%SOFTMMU%%%%DATADIR%%/keymaps/ar
 %%SOFTMMU%%%%DATADIR%%/keymaps/bepo
 %%SOFTMMU%%%%DATADIR%%/keymaps/common

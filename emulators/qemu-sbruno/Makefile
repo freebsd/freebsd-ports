@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.6.50.g20160628
+PORTVERSION=	2.6.50.g20160711
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -18,11 +18,10 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	4c46f61
+GH_TAGNAME=	c94de16
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
-USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
 ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
@@ -54,6 +53,14 @@ USE_RC_SUBR=	qemu_user_static
 SUB_LIST=	NAME=qemu_user_static
 CONFIGURE_ARGS+=	--disable-tools
 .endif
+.endif
+
+# When static linking we have a build dependency on libglib-2.0.a, otherwise
+# we use glib20 in the usual way (shared-lib runtime dependency).
+.if defined(QEMU_USER_STATIC)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libglib-2.0.a:devel/glib20
+.else
+USE_GNOME+=	glib20
 .endif
 
 .include <bsd.port.options.mk>
