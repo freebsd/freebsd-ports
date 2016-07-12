@@ -175,7 +175,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-history-settings.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-share-link-admin.0672516d5f06.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-share-link-admin.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/dir.183e15199cd5.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/dir.5c29850b6d29.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dir.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dirent-grid.651b5500f929.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dirent-grid.js
@@ -245,7 +245,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/widgets/popover.js
 %%SEAHUBDIR%%/media/assets/scripts/build.a0552a4ed8dc.js
 %%SEAHUBDIR%%/media/assets/scripts/build.js
-%%SEAHUBDIR%%/media/assets/scripts/common.e04b1a324080.js
+%%SEAHUBDIR%%/media/assets/scripts/common.2b8b77693fe7.js
 %%SEAHUBDIR%%/media/assets/scripts/common.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/build.e81023b1ccb6.txt
 %%SEAHUBDIR%%/media/assets/scripts/dist/build.d9508a510082.js
@@ -307,9 +307,9 @@
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/jquery.ui.widget.1.11.3.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.75e6d0132deb.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.9ba7ea1624da.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.d43fb2e46e23.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/main.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.04fc935872de.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.0087617342d0.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.225c1b52bbee.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.js
@@ -1018,7 +1018,6 @@
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sudo_mode.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_admin_group_info.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_group_admin.html
-%%SEAHUBDIR%%/seahub/templates/sysadmin/sys_info.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_inst_admin.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_inst_info_base.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_inst_info_user.html
@@ -1338,6 +1337,7 @@
 %%SEAHUBDIR%%/tests/api/test_shares.py
 %%SEAHUBDIR%%/tests/api/test_starredfiles.py
 %%SEAHUBDIR%%/tests/api/urls.py
+%%SEAHUBDIR%%/tests/api/test_dir_sub_repo.py
 %%SEAHUBDIR%%/tests/common/__init__.py
 %%SEAHUBDIR%%/tests/common/common.py
 %%SEAHUBDIR%%/tests/common/utils.py
