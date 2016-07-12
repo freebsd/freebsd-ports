@@ -3,7 +3,7 @@
 
 PORTNAME=	libdlna
 PORTVERSION=	0.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://libdlna.geexbox.org/releases/ \
 		LOCAL/ehaupt
@@ -11,10 +11,13 @@ MASTER_SITES=	http://libdlna.geexbox.org/releases/ \
 MAINTAINER=	malus.x@gmail.com
 COMMENT=	Reference DLNA open-source implementation
 
-LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 HAS_CONFIGURE=	yes
-USES=		tar:bzip2 gmake pkgconfig
+USES=		gmake localbase pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -22,12 +25,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-optimize \
 		--includedir="${PREFIX}/include" \
 		--libdir="${PREFIX}/lib"
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's#\(PKGCONFIG_DIR = \).*#\1${STAGEDIR}${PREFIX}/libdata/pkgconfig#' \
-		${WRKSRC}/Makefile
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdlna.so
 
 .include <bsd.port.mk>
