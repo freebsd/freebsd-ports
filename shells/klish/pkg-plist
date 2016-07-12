@@ -17,6 +17,7 @@ include/lub/system.h
 include/lub/db.h
 include/lub/ini.h
 include/lub/log.h
+include/lub/conv.h
 include/konf/tree.h
 include/konf/query.h
 include/konf/buf.h
