@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} ${GADISTFILES}
 EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	vbox@FreeBSD.org
+MAINTAINER?=	vbox@FreeBSD.org
 COMMENT=	General-purpose full virtualizer for x86 hardware
 
 LICENSE=	GPLv2
