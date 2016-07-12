@@ -1030,6 +1030,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pear.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-perl5.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pgsql.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-php.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pkgconfig.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pure.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-pyqt.html
@@ -1041,6 +1042,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-shared-mime-info.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-shebangfix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-sqlite.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-ssl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-tar.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-tcl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-terminfo.html
