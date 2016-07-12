@@ -608,6 +608,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%PYTHON_SITELIBDIR%%/samba/tests/samba3sam.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/base.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/fsmo.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/gpo.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/group.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/ntacl.py
@@ -625,10 +626,10 @@ lib/shared-modules/vfs/zfsacl.so
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovision.py
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovisionneeddc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/xattr.py
-%%PYTHON_SITELIBDIR%%/samba/third_party/__init__.py
-%%PYTHON_SITELIBDIR%%/samba/third_party/iso8601/__init__.py
-%%PYTHON_SITELIBDIR%%/samba/third_party/iso8601/iso8601.py
-%%PYTHON_SITELIBDIR%%/samba/third_party/iso8601/test_iso8601.py
+%%PY_ISO8601%%%%PYTHON_SITELIBDIR%%/samba/third_party/__init__.py
+%%PY_ISO8601%%%%PYTHON_SITELIBDIR%%/samba/third_party/iso8601/__init__.py
+%%PY_ISO8601%%%%PYTHON_SITELIBDIR%%/samba/third_party/iso8601/iso8601.py
+%%PY_ISO8601%%%%PYTHON_SITELIBDIR%%/samba/third_party/iso8601/test_iso8601.py
 %%PYTHON_SITELIBDIR%%/samba/upgrade.py
 %%PYTHON_SITELIBDIR%%/samba/upgradehelpers.py
 %%PYTHON_SITELIBDIR%%/samba/web_server/__init__.py
