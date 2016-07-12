@@ -6,7 +6,8 @@ PORTVERSION?=	1.10.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/dist/:bootstrap \
-		https://github.com/dhuseby/rust-manual-snapshots/raw/master/:bootstrap
+		https://github.com/dhuseby/rust-manual-snapshots/raw/master/:bootstrap \
+		LOCAL/marino:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}
 DISTFILES?=	${DISTNAME}-src${EXTRACT_SUFX}:src
 DISTFILES+=	${RUST_BOOT}:bootstrap
