@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -47,50 +47,50 @@ LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=								\
-		p5-Archive-Zip>=0:archivers/p5-Archive-Zip	\
-		p5-libwww>=0:www/p5-libwww			\
-		p5-XML-Parser>=0:textproc/p5-XML-Parser	\
-		${LOCALBASE}/bin/unzip:archivers/unzip	\
-		zip:archivers/zip				\
-		ant:devel/apache-ant			\
+		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
+		p5-libwww>=0:www/p5-libwww				\
+		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
+		${LOCALBASE}/bin/unzip:archivers/unzip			\
+		zip:archivers/zip					\
+		ant:devel/apache-ant					\
 		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \
-		dmake:devel/dmake				\
-		epm:devel/epm				\
-		${LOCALBASE}/bin/gperf:devel/gperf		\
-		imake:devel/imake				\
-		gpatch:devel/patch				\
-		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
-		${LOCALBASE}/bin/vigra-config:graphics/vigra \
+		dmake:devel/dmake					\
+		epm:devel/epm						\
+		${LOCALBASE}/bin/gperf:devel/gperf			\
+		imake:devel/imake					\
+		gpatch:devel/patch					\
+		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends	\
+		${LOCALBASE}/bin/vigra-config:graphics/vigra		\
 		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/commons-lang.jar:java/jakarta-commons-lang \
-		${JAVALIBDIR}/junit.jar:java/junit		\
-		${JAVALIBDIR}/bsh.jar:lang/bsh		\
-		bash:shells/bash				\
-		${JAVALIBDIR}/lucene-core-3.6.2.jar:textproc/lucene \
+		${JAVALIBDIR}/junit.jar:java/junit			\
+		${JAVALIBDIR}/bsh.jar:lang/bsh				\
+		bash:shells/bash					\
+		${JAVALIBDIR}/lucene-core-3.6.2.jar:textproc/lucene	\
 		p5-libwww>=0:www/p5-libwww
 LIB_DEPENDS=								\
-		libapr-1.so:devel/apr1			\
-		libnspr4.so:devel/nspr			\
-		libcurl.so:ftp/curl				\
-		libcairo.so:graphics/cairo			\
-		libpng.so:graphics/png			\
-		libpoppler-glib.so:graphics/poppler-glib	\
-		libgraphite.so:graphics/silgraphite		\
-		libCoinMP.so:math/coinmp			\
-		libfreetype.so:print/freetype2		\
-		libnss3.so:security/nss			\
-		libexpat.so:textproc/expat2			\
-		libhunspell-1.3.so:textproc/hunspell	\
-		libhyphen.so:textproc/hyphen		\
-		libtextcat.so:textproc/libtextcat		\
-		libmythes-1.2.so:textproc/mythes		\
-		librdf.so:textproc/redland			\
-		libserf-1.so:www/serf			\
+		libapr-1.so:devel/apr1					\
+		libnspr4.so:devel/nspr					\
+		libcurl.so:ftp/curl					\
+		libcairo.so:graphics/cairo				\
+		libpng.so:graphics/png					\
+		libpoppler-glib.so:graphics/poppler-glib		\
+		libgraphite.so:graphics/silgraphite			\
+		libCoinMP.so:math/coinmp				\
+		libfreetype.so:print/freetype2				\
+		libnss3.so:security/nss					\
+		libexpat.so:textproc/expat2				\
+		libhunspell-1.3.so:textproc/hunspell			\
+		libhyphen.so:textproc/hyphen				\
+		libtextcat.so:textproc/libtextcat			\
+		libmythes-1.2.so:textproc/mythes			\
+		librdf.so:textproc/redland				\
+		libserf-1.so:www/serf					\
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient \
-		${JAVALIBDIR}/bsh.jar:lang/bsh \
+		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:x11-fonts/croscorefonts-fonts-ttf
@@ -113,6 +113,7 @@ INSTALLATION_BASEDIR?=	openoffice-${AOOSUFFIX}
 PRINSTALLATION_BASEDIR=	${PREFIX}/${INSTALLATION_BASEDIR}
 OOPATH=			${PRINSTALLATION_BASEDIR}/openoffice${AOOVERSION1}
 XDGDIR=			${OOPATH}/share/xdg
+XDGREL=			../../${INSTALLATION_BASEDIR}/openoffice${AOOVERSION1}/share/xdg
 EXECBASE?=		openoffice-${AOOSUFFIX}
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -125,12 +126,12 @@ JAVA_RUN=	jdk
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 USE_PERL5=	build
-USE_XORG=	ice x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
-		xrandr xrender xt
+USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
+		xinerama xrandr xrender xt
 USES=		autoreconf:autoconf bison compiler:c++11-lib cpe \
 		desktop-file-utils \
 		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
-		shared-mime-info tar:bzip2
+		shared-mime-info ssl tar:bzip2
 INSTALLS_ICONS=	yes
 WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
@@ -149,7 +150,8 @@ CUPS_CONFIGURE_ENABLE=		cups
 CUPS_LIB_DEPENDS=		libcups.so:print/cups
 
 GNOME_CONFIGURE_ENABLE=		dbus gconf lockdown
-GNOME_LIB_DEPENDS=		libdbus-glib-1.so:devel/dbus-glib
+GNOME_LIB_DEPENDS=		libdbus-1.so:devel/dbus \
+				libdbus-glib-1.so:devel/dbus-glib
 GNOME_USE=			GNOME=gconf2
 
 GNOMEVFS_CONFIGURE_ENABLE=	gnome-vfs
@@ -158,6 +160,7 @@ GNOMEVFS_CONFIGURE_ON=		--disable-gio
 GNOMEVFS_USE=			GNOME=gnomevfs2
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer
+MMEDIA_LIB_DEPENDS=		libgstreamer-0.10.so:multimedia/gstreamer
 MMEDIA_USE=			GSTREAMER=yes
 
 SDK_CONFIGURE_ENABLE=		odk
@@ -238,7 +241,7 @@ CONFIGURE_ARGS+=							\
 			--with-system-hyphen				\
 			--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
 			--with-system-jpeg				\
-			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
+			--with-junit=${JAVALIBDIR}/junit.jar		\
 			--with-system-libtextcat			\
 			--disable-kde					\
 			--disable-kde4					\
@@ -394,7 +397,7 @@ do-build:
 	 fi ;								  \
 	fi ;								  \
 	cd ${WRKSRC}/instsetoo_native ;					  \
-	. ../${FREEBSD_ENV_SET} ; 					  \
+	. ../${FREEBSD_ENV_SET} ;					  \
 	LANG=C LC_ALL=C build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
@@ -423,7 +426,7 @@ do-install:
 			${LN} -f ${EXECBASE} ${EXECBASE}-$${i} ; \
 	done
 	@${ECHO_CMD} "adding desktop support"
-	@${LN} -sf ${XDGDIR} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
+	@${LN} -sf ${XDGREL} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
 	@cd ${WRKSRC}/sysui/unxfbsd?.pro/misc/openoffice ;	\
 	    DESTDIR=${STAGEDIR}					\
 		GNOMEDIR=${PREFIX}				\
