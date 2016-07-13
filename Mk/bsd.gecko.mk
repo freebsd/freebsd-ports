@@ -286,14 +286,7 @@ MOZ_EXPORT+=	MOZ_GOOGLE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8 \
 MOZ_TOOLKIT=	cairo-gtk3
 .endif
 
-.if ${MOZ_TOOLKIT:Mcairo-qt}
-# don't use - transparent backgrounds (bug 521582),
-USE_MOZILLA+=	-cairo # ports/169343
-USE_DISPLAY=yes # install
-USE_GNOME+=	pango
-USE_QT5+=	qmake_build buildtools_build gui network quick printsupport
-MOZ_EXPORT+=	HOST_QMAKE="${QMAKE}" HOST_MOC="${MOC}" HOST_RCC="${RCC}"
-.elif ${MOZ_TOOLKIT:Mcairo-gtk3}
+.if ${MOZ_TOOLKIT:Mcairo-gtk3}
 BUILD_DEPENDS+=	gtk3>=3.14.6:x11-toolkits/gtk30
 USE_GNOME+=	gdkpixbuf2 gtk30
 . if ${MOZILLA_VER:R:R} >= 32
@@ -350,7 +343,7 @@ MOZ_OPTIONS+=	--enable-gconf
 MOZ_OPTIONS+=	--disable-gconf
 .endif
 
-.if ${PORT_OPTIONS:MGIO} && ! ${MOZ_TOOLKIT:Mcairo-qt}
+.if ${PORT_OPTIONS:MGIO}
 MOZ_OPTIONS+=	--enable-gio
 .else
 MOZ_OPTIONS+=	--disable-gio

@@ -38,8 +38,6 @@ SSP_UNSAFE=	yes
 USE_GECKO=	gecko
 USE_MOZILLA=	# empty
 
-USE_QT5=	# empty
-QT_NONSTANDARD=	yes
 USE_GL=		gl
 USES=		tar:xz
 
