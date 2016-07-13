@@ -145,7 +145,7 @@ WITH_OPENSSL_PORT=	yes
 .include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
-LDFLAGS+=	-L${LOCALBASE}/lib -I${OPENSSLLIB}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/dovecot,${PREFIX}/etc/dovecot,g; \
