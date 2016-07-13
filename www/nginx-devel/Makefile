@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.11.1
+PORTVERSION=	1.11.2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -325,6 +325,7 @@ NGINX_ACCESSKEY_VERSION=	2.0.3
 MASTER_SITES+=	LOCAL/osa:accesskey
 DISTFILES+=	nginx-accesskey-${NGINX_ACCESSKEY_VERSION}.tar.gz:accesskey
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_VERSION}
+IGNORE=	ACCESSKEY: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_ADDITION}
@@ -659,6 +660,7 @@ GH_ACCOUNT+=	vkholodkov:upload
 GH_PROJECT+=	nginx-upload-module:upload
 GH_TAGNAME+=	${GIT_UPLOAD_VERSION}:upload
 CONFIGURE_ARGS+=--add-module=${WRKSRC_upload}
+IGNORE=	HTTP_UPLOAD: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
@@ -699,6 +701,7 @@ NGINX_UPSTREAM_STICKY_VERSION=	1.2.4
 MASTER_SITES+=	https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng/get/:upstreamsticky
 DISTFILES+=	${NGINX_UPSTREAM_STICKY_VERSION}.tar.gz:upstreamsticky
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-goodies-nginx-sticky-module-ng-c825ea7c5c91/
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sticky_misc.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_VIDEO_THUMBEXTRACTOR}
