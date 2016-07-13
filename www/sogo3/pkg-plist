@@ -53,6 +53,7 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/3/Headers/SOGoSource.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/3/Headers/SOGoStartupLogger.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/3/Headers/SOGoStaticAuthenticator.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/3/Headers/SOGoSystemDefaults.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/3/Headers/SOGoTextTemplateFile.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/3/Headers/SOGoUser.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/3/Headers/SOGoUserDefaults.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/3/Headers/SOGoUserFolder.h
@@ -1500,6 +1501,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/fonts/MaterialIcons-Regular.woff
 GNUstep/Local/Library/SOGo/WebServerResources/fonts/MaterialIcons-Regular.woff2
 GNUstep/Local/Library/SOGo/WebServerResources/img/cardboard-transp.png
 GNUstep/Local/Library/SOGo/WebServerResources/img/felt-transp.png
+GNUstep/Local/Library/SOGo/WebServerResources/img/ic_person_grey_24px.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/inverse.png
 GNUstep/Local/Library/SOGo/WebServerResources/img/sogo-compact.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/sogo-full.svg
