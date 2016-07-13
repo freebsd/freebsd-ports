@@ -1,0 +1,9 @@
+Python-cluster is a simple package that allows to create several 
+groups (clusters) of objects from a list. It's meant to be flexible 
+and able to cluster any object. To ensure this kind of flexibility, 
+you need not only to supply the list of objects, but also a function 
+that calculates the similarity between two of those objects. 
+For simple datatypes, like integers, this can be as simple as a 
+subtraction, but more complex calculations are possible. 
+
+WWW: https://pypi.python.org/pypi/cluster

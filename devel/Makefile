@@ -4006,6 +4006,7 @@
     SUBDIR += py-clint
     SUBDIR += py-clonedigger
     SUBDIR += py-cloudpickle
+    SUBDIR += py-cluster
     SUBDIR += py-cmdln
     SUBDIR += py-codecov
     SUBDIR += py-codegen
