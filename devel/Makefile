@@ -4037,6 +4037,7 @@
     SUBDIR += py-daemons
     SUBDIR += py-dal
     SUBDIR += py-darcsver
+    SUBDIR += py-darts.util.lru
     SUBDIR += py-dateutil
     SUBDIR += py-dbus
     SUBDIR += py-debtcollector
