@@ -3,8 +3,9 @@
 
 PORTNAME=	elfutils
 PORTVERSION=	0.163
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://fedorahosted.org/releases/e/l/elfutils/
+MASTER_SITES=	https://fedorahosted.org/releases/e/l/elfutils/$(PORTVERSION)/
 
 MAINTAINER=	cem@FreeBSD.org
 COMMENT=	Library for manipulating ELF files and partial implementation of binutils
@@ -38,5 +39,6 @@ post-patch:
 	    $(LOCALBASE)/share/gnulib/lib/obstack.h \
 	    $(LOCALBASE)/share/gnulib/lib/obstack_printf.c \
 	    $(WRKSRC)/lib
+	@cd $(WRKSRC) && ${LN} -s libelf elfutils
 
 .include <bsd.port.mk>

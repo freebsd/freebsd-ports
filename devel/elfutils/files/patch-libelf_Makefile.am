@@ -1,0 +1,20 @@
+--- libelf/Makefile.am.orig	2014-12-22 15:04:49 UTC
++++ libelf/Makefile.am
+@@ -39,7 +39,7 @@ noinst_LIBRARIES = libelf_pic.a
+ noinst_PROGRAMS = $(noinst_LIBRARIES:_pic.a=.so)
+ include_HEADERS = libelf.h gelf.h nlist.h
+ 
+-pkginclude_HEADERS = elf-knowledge.h
++pkginclude_HEADERS = elf-knowledge.h elf.h
+ 
+ libelf_a_SOURCES = elf_version.c elf_hash.c elf_error.c elf_fill.c \
+ 		   elf_begin.c elf_next.c elf_rand.c elf_end.c elf_kind.c \
+@@ -117,7 +117,7 @@ uninstall: uninstall-am
+ 	rm -f $(DESTDIR)$(libdir)/libelf.so.$(VERSION)
+ 	rm -f $(DESTDIR)$(libdir)/libelf.so
+ 
+-noinst_HEADERS = elf.h abstract.h common.h exttypes.h gelf_xlate.h libelfP.h \
++noinst_HEADERS = abstract.h common.h exttypes.h gelf_xlate.h libelfP.h \
+ 		 version_xlate.h gnuhash_xlate.h note_xlate.h dl-hash.h
+ EXTRA_DIST = libelf.map
+ 
