@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
@@ -29,6 +29,8 @@ BUILD_DEPENDS=	\
 	p5-Crypt-PKCS10>=1.3:security/p5-Crypt-PKCS10 \
 	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 	p5-DBD-Mock>=0:databases/p5-DBD-Mock \
+	p5-Data-UUID>=0:devel/p5-Data-UUID \
+	p5-Devel-NYTProf>=0:devel/p5-Devel-NYTProf \
 	p5-Data-Password>=0:security/p5-Data-Password \
 	p5-Data-Serializer>=0:devel/p5-Data-Serializer \
 	p5-DateTime-Format-DateParse>=0:devel/p5-DateTime-Format-DateParse \
@@ -75,9 +77,8 @@ CONFLICTS=	\
 	p5-openxpki-client-html-mason-[0-9]*
 
 USE_GITHUB=	yes
-USE_OPENSSL=	yes
 USE_PERL5=	configure
-USES=		gmake perl5
+USES=		gmake perl5 ssl
 USE_RC_SUBR=	openxpki
 SUB_FILES=	pkg-message
 PORTDOCS=	*
