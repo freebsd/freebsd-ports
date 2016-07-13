@@ -12,7 +12,8 @@ COMMENT=	Video editing with Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator \
+RUN_DEPENDS=	convert:graphics/ImageMagick \
+		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator \
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm \
 		${PYTHON_PKGNAMEPREFIX}imageio>0:graphics/py-imageio \
 		${PYTHON_SITELIBDIR}/cv.py:graphics/py-opencv \
