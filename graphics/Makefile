@@ -842,6 +842,7 @@
     SUBDIR += py-graph-dot
     SUBDIR += py-graphy
     SUBDIR += py-gvgen
+    SUBDIR += py-imageio
     SUBDIR += py-imagesize
     SUBDIR += py-mcomix
     SUBDIR += py-ming
