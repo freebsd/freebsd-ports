@@ -1,0 +1,27 @@
+######
+# A manual migration step is needed to migration from 1.4 to 2.0.
+#
+# First migrate to at least the 1.4.10 release if you have not already done
+# so.
+#
+# Review the documentation on the OpenDNSSEC site.  This can be
+# updated in between releases to provide more help.  Especially if
+# you have tooling around OpenDNSSEC you should be aware that some
+# command line utilities have changed.  A fair amount of backward
+# compatibility has been respected, but changes are present.
+# 
+# The enforcer does require a full migration, as the internal database has
+# been completely revised.  See the documentation in 
+# %%DOCSDIR%%/1.4-2.0_db_convert/README.md for a description.
+# 
+# Migration scripts are installed in %%DOCSDIR%%.
+#
+# The signer does not require any migration.  Backward compatibility is
+# respected from earlier 1.4 release.  The signer should not require a
+# full resign of your zone when upgrading, however if you decide to downgrade
+# a full resign is required.
+######
+
+An HowTo is provided at
+<https://wiki.opendnssec.org/display/DOCS20/Quick+start+guide>
+
