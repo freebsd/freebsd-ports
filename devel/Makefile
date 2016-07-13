@@ -714,6 +714,7 @@
     SUBDIR += gnustep-make
     SUBDIR += go-bindata
     SUBDIR += go-btree
+    SUBDIR += go-cobra
     SUBDIR += go-codec
     SUBDIR += go-faker
     SUBDIR += go-flags
