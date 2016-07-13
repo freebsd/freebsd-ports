@@ -1,14 +1,5 @@
 --- libelf/libelf.h.orig	2014-08-18 19:48:26 UTC
 +++ libelf/libelf.h
-@@ -32,7 +32,7 @@
- #include <sys/types.h>
- 
- /* Get the ELF types.  */
--#include <elf.h>
-+#include <elfutils/elf.h>
- 
- 
- /* Known translation types.  */
 @@ -74,7 +74,7 @@ typedef struct
    Elf_Type d_type;		/* Type of this piece of data.  */
    unsigned int d_version;	/* ELF version.  */

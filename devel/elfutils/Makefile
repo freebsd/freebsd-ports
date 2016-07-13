@@ -3,7 +3,7 @@
 
 PORTNAME=	elfutils
 PORTVERSION=	0.163
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/e/l/elfutils/$(PORTVERSION)/
 
@@ -39,6 +39,5 @@ post-patch:
 	    $(LOCALBASE)/share/gnulib/lib/obstack.h \
 	    $(LOCALBASE)/share/gnulib/lib/obstack_printf.c \
 	    $(WRKSRC)/lib
-	@cd $(WRKSRC) && ${LN} -s libelf elfutils
 
 .include <bsd.port.mk>
