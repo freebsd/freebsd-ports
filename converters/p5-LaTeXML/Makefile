@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	LaTeXML
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	converters perl5
 MASTER_SITES=	http://dlmf.nist.gov/LaTeXML/releases/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	LaTeX to XML/HTML/MathML converter in Perl
 
-LICENSE=	GPLv1
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	PD CC0
+LICENSE_COMB=	dual
+LICENSE_NAME_CC0=	Creative Commons Zero License
+LICENSE_FILE_CC0=	${WRKSRC}/LICENSE
+LICENSE_PERMS_CC0=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git \
 		p5-File-Which>=0:sysutils/p5-File-Which \
@@ -27,14 +29,16 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git \
 		p5-libwww>=0:www/p5-libwww \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		p5-Test-More-UTF8>=0:devel/p5-Test-More-UTF8 \
+		p5-Text-Unidecode>=0:converters/p5-Text-Unidecode \
 		p5-URI>=0:net/p5-URI
 
 USES=		perl5
 USE_PERL5=	configure
 USE_TEX=	kpathsea
+NO_ARCH=	yes
 NO_BUILD=	yes
 
-PORTDOCS=		Changes INSTALL MANIFEST README manual.pdf
+PORTDOCS=		Changes README.pod manual.pdf
 
 OPTIONS_DEFINE=	DOCS
 
@@ -44,7 +48,7 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/texmf-local/tex/latex/latexml/.packlist.bak
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
