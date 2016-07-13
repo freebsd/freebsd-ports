@@ -725,6 +725,7 @@
     SUBDIR += go-metrics
     SUBDIR += go-pflag
     SUBDIR += go-pretty
+    SUBDIR += go-protobuf
     SUBDIR += go-raw
     SUBDIR += go-runewidth
     SUBDIR += go-slices
