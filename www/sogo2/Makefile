@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		sogo2
-PORTVERSION=		2.3.11
+PORTVERSION=		2.3.13
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
