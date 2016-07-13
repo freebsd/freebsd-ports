@@ -18,11 +18,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 USE_RC_SUBR=	opendnssec
 USE_GNOME=	libxml2
-USES=		perl5
-USE_OPENSSL=	yes
+USES=		perl5 ssl
 USE_LDCONFIG=	yes
 
-CONFLICTS=	opendnssec-1.[0-3]*
+CONFLICTS=	opendnssec-1.[0-3]* opendnssec2-[0-9]*
 
 USERS=		opendnssec
 GROUPS=		opendnssec
