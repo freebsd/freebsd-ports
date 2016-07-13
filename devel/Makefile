@@ -4263,6 +4263,7 @@
     SUBDIR += py-pex
     SUBDIR += py-phabricator
     SUBDIR += py-phonenumbers
+    SUBDIR += py-phply
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
     SUBDIR += py-pinocchio
