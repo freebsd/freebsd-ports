@@ -1,6 +1,6 @@
---- qb/qb.params.sh.orig	2015-07-19 09:50:27 UTC
+--- qb/qb.params.sh.orig	2016-05-02 20:17:12 UTC
 +++ qb/qb.params.sh
-@@ -59,6 +59,9 @@ parse_input() # Parse stuff :V
+@@ -63,6 +63,9 @@ parse_input() # Parse stuff :V
  	while [ "$1" ]; do
  		case "$1" in
  			--prefix=*) PREFIX=${1##--prefix=};;
