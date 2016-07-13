@@ -429,6 +429,7 @@
     SUBDIR += elfrc
     SUBDIR += elfsh
     SUBDIR += elftoaout
+    SUBDIR += elfutils
     SUBDIR += elixir-apex
     SUBDIR += elixir-bson
     SUBDIR += elixir-calendar
