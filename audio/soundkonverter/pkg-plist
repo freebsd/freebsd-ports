@@ -1,4 +1,4 @@
-bin/soundkonverter
+%%QT_BINDIR%%/soundkonverter
 lib/kde4/soundkonverter_codec_aften.so
 lib/kde4/soundkonverter_codec_faac.so
 lib/kde4/soundkonverter_codec_ffmpeg.so
@@ -83,10 +83,13 @@ share/kde4/servicetypes/soundkonverter_ripperplugin.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/de/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/es/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/es_AR/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/et/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/it/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/soundkonverter.mo
