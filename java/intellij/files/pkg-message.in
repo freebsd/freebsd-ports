@@ -6,3 +6,7 @@ trees.  To enable edit %%IDEA_HOME%%/bin/idea.properties and append
       idea.filewatcher.executable.path=%%IDEA_HOME%%/bin/fsnotifier
 
 Only enable fsnotifier if your projects have < 600 files.
+
+At systems which use links for /usr/home/user or /home/user apparently
+IDEA finds two different VCS roots while trying to integrate with Git.
+Please, use as a VCS root only one of them.
