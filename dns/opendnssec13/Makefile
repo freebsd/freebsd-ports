@@ -20,8 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 USE_RC_SUBR=	opendnssec
 USE_GNOME=	libxml2
-USES=		perl5
-USE_OPENSSL=	yes
+USES=		perl5 ssl
 USE_LDCONFIG=	yes
 
 USERS=		${PORTNAME}
@@ -29,7 +28,10 @@ GROUPS=		${PORTNAME}
 
 PLIST_SUB+=	USER=${USERS} GROUP=${GROUPS}
 
-CONFLICTS=	opendnssec-1.4*
+CONFLICTS=	opendnssec-1.4* opendnssec2-[0-9]*
+
+DEPRECATED=		Approaching EOL, upgrade to opendnssec 1.4 or 2
+EXPIRATION_DATE=	2017-07-11
 
 OPTIONS_DEFINE=		SOFTHSM AUDITOR MYSQL
 SOFTHSM_DESC=		SoftHSM cryptographic store for PKCS \#11 interface
