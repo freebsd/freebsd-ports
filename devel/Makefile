@@ -4160,6 +4160,7 @@
     SUBDIR += py-jdcal
     SUBDIR += py-jedi
     SUBDIR += py-jellyfish
+    SUBDIR += py-jenkins-job-builder
     SUBDIR += py-jep
     SUBDIR += py-jira
     SUBDIR += py-jmespath
