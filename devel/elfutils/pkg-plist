@@ -16,7 +16,6 @@ bin/eu-strip
 bin/eu-unstrip
 include/dwarf.h
 include/elfutils/elf-knowledge.h
-include/elfutils/elf.h
 include/elfutils/known-dwarf.h
 include/elfutils/libasm.h
 include/elfutils/libdw.h
