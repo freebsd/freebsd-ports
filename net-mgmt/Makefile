@@ -189,6 +189,7 @@
     SUBDIR += ocsinventory-agent
     SUBDIR += ocsinventory-ng
     SUBDIR += omping
+    SUBDIR += onionlauncher
     SUBDIR += openlldp
     SUBDIR += openvmps
     SUBDIR += p0f
