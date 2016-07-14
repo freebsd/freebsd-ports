@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libboard
-DISTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.9.4
 CATEGORIES=	graphics
-MASTER_SITES=	LOCAL/thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Vector graphics C++ library
@@ -13,6 +11,7 @@ COMMENT=	Vector graphics C++ library
 LICENSE=	LGPL3
 
 BUILD_DEPENDS=	doxygen:devel/doxygen
+LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
@@ -20,8 +19,9 @@ CONFIGURE_ENV=	CXX=${CXX}
 
 USES=		gmake
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/${DISTNAME:C/-.$//}
+USE_GITHUB=	yes
+GH_ACCOUNT=	c-koi
+GH_TAGNAME=	5b38274
 
 PORTDOCS=	*
 
@@ -34,7 +34,8 @@ CXXFLAGS+=	-fPIC
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|-O3|${CXXFLAGS}|' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's|-O3|${CXXFLAGS}|;s|g++|${CXX}|'	\
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/libboard.so ${STAGEDIR}${PREFIX}/lib/libboard.so.0
@@ -56,6 +57,6 @@ regression-test:
 .for ex in 1 2 3
 	(cd ${WRKDIR} && ${WRKSRC}/bin/example${ex})
 .endfor
-	${LS} -l ${WRKDIR}/arithm* ${WRKDIR}/draw*
+	${LS} -l ${WRKDIR}/arithm* ${WRKDIR}/example*
 
 .include <bsd.port.post.mk>
