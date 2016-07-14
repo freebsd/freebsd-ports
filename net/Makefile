@@ -997,6 +997,7 @@
     SUBDIR += py-pysocks
     SUBDIR += py-pystun
     SUBDIR += py-python-bitcoinrpc
+    SUBDIR += py-python-ntlm
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
