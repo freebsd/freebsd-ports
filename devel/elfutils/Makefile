@@ -3,7 +3,7 @@
 
 PORTNAME=	elfutils
 PORTVERSION=	0.163
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/e/l/elfutils/$(PORTVERSION)/
 
@@ -16,7 +16,8 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING-GPLV2
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 
-BUILD_DEPENDS=	gnulib>=0:devel/gnulib
+BUILD_DEPENDS=	gnulib>=0:devel/gnulib \
+		automake>=0:devel/automake
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -40,4 +41,10 @@ post-patch:
 	    $(LOCALBASE)/share/gnulib/lib/obstack_printf.c \
 	    $(WRKSRC)/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1200002
+IGNORE=		requires CURRENT elf header changes
+.endif
+
+.include <bsd.port.post.mk>
