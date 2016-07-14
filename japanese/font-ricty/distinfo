@@ -1,2 +1,5 @@
-SHA256 (yascentur-Ricty-3.2.4_GH0.tar.gz) = 1cdd909bc51c1b0cebcbec26470b391056d356b34518c0f3c924711d561b912e
-SIZE (yascentur-Ricty-3.2.4_GH0.tar.gz) = 256796
+TIMESTAMP = 1467789963
+SHA256 (ricty/ricty_generator-3.2.4.sh) = ede28e1d10bce84c545ca24b7d609d16e178c9a62daad3e0164f520285509141
+SIZE (ricty/ricty_generator-3.2.4.sh) = 20237
+SHA256 (ricty/ricty_discord_converter.pe) = 1958e6920aab27715dbe7bb9708db28bc0909d4eefbfe5c8919ce2b843e3c59e
+SIZE (ricty/ricty_discord_converter.pe) = 12196
