@@ -12,5 +12,3 @@ SHA256 (matm-gocov-html-b729399_GH0.tar.gz) = 227555a0346c27daa21ef7da1bcf27af1c
 SIZE (matm-gocov-html-b729399_GH0.tar.gz) = 125862
 SHA256 (ugorji-go-b94837a_GH0.tar.gz) = 51138e1177780f2b0204dbd03c6e40356bf493375652d880fb2c68f8e5daced8
 SIZE (ugorji-go-b94837a_GH0.tar.gz) = 167304
-SHA256 (hashicorp-nomad-v0.4.0_GH0.tar.gz) = b9098781812b93a77ffdfadecd0d3fc8fd5f73dce4b48cd76495b0124bd8cfe5
-SIZE (hashicorp-nomad-v0.4.0_GH0.tar.gz) = 14668057
