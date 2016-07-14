@@ -408,6 +408,7 @@
     SUBDIR += dulwich
     SUBDIR += duplo
     SUBDIR += dwarfdump
+    SUBDIR += dwarves
     SUBDIR += dxa65
     SUBDIR += dyncall
     SUBDIR += e00compr
