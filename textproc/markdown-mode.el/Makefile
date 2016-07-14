@@ -2,6 +2,7 @@
 
 PORTNAME=	markdown-mode.el
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://jblevins.org/projects/markdown-mode/
 DISTNAME=	markdown-mode.el
@@ -12,6 +13,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Emacs/XEmacs major mode for editing Markdown-formatted text
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
