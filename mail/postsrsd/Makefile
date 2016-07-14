@@ -3,7 +3,7 @@
 
 PORTNAME=	postsrsd
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	ports@bsdserwis.com
@@ -23,7 +23,6 @@ USES=		cmake pkgconfig
 CMAKE_ARGS=	--no-warn-unused-cli \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
 
 PORTDOCS=	README.md main.cf.ex README_UPGRADE.md
