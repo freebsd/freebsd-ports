@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liteide
-PORTVERSION=	30.1
+PORTVERSION=	30.2
 DISTVERSIONPREFIX=	x
 CATEGORIES=	devel editors
 
@@ -10,6 +10,7 @@ MAINTAINER=	dg@syrec.org
 COMMENT=	Simple, open source, cross-platform Go IDE
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
 WRKSRC_SUBDIR=	liteidex
 
