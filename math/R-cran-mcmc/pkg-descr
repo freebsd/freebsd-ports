@@ -1,0 +1,9 @@
+Simulates continuous distributions of random vectors using Markov
+chain Monte Carlo (MCMC). Users specify the distribution by an R
+function that evaluates the log unnormalized density. Algorithms
+are random walk Metropolis algorithm (function metrop), simulated
+tempering (function temper), and morphometric random walk Metropolis
+(Johnson and Geyer, Annals of Statistics, 2012, function morph.metrop),
+which achieves geometric ergodicity by change of variable.
+
+WWW: https://cran.r-project.org/web/packages/mcmc/
