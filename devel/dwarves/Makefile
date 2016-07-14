@@ -18,8 +18,7 @@ LICENSE_FILE_GPLv2=	$(WRKSRC)/COPYING
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libdw.so:devel/elfutils
-BUILD_DEPENDS=	cmake>=0:devel/cmake \
-		gnulib>=0:devel/gnulib
+PATCH_DEPENDS=	gnulib>=0:devel/gnulib
 
 WRKSRC=		$(WRKDIR)/dwarves-b52386d
 
