@@ -1,4 +1,4 @@
---- dwarves_fprintf.c.orig	2012-03-20 16:18:48 UTC
+--- dwarves_fprintf.c.orig	2016-06-30 19:30:28 UTC
 +++ dwarves_fprintf.c
 @@ -9,6 +9,9 @@
    published by the Free Software Foundation.
@@ -10,15 +10,7 @@
  #include <dwarf.h>
  #include <errno.h>
  #include <stdio.h>
-@@ -74,7 +77,6 @@ static const char *dwarf_tag_names[] = {
- 	[DW_TAG_unspecified_type]	  = "unspecified_type",
- 	[DW_TAG_partial_unit]		  = "partial_unit",
- 	[DW_TAG_imported_unit]		  = "imported_unit",
--	[DW_TAG_mutable_type]		  = "mutable_type",
- 	[DW_TAG_condition]		  = "condition",
- 	[DW_TAG_shared_type]		  = "shared_type",
- #ifdef STB_GNU_UNIQUE
-@@ -1664,7 +1666,14 @@ void cus__print_error_msg(const char *pr
+@@ -1699,7 +1702,14 @@ void cus__print_error_msg(const char *pr
  void dwarves__fprintf_init(uint16_t user_cacheline_size)
  {
  	if (user_cacheline_size == 0) {
