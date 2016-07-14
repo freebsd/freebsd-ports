@@ -1,6 +1,6 @@
---- configure.orig	2010-07-16 09:07:39.000000000 +0200
-+++ configure	2014-04-21 11:18:10.000000000 +0200
-@@ -117,23 +117,6 @@
+--- configure.orig	2016-06-09 17:30:46 UTC
++++ configure
+@@ -163,23 +163,6 @@ fi
  ##
  ## Are we on a 64 bits arch
  ##
@@ -22,9 +22,9 @@
 -fi
 -rm -f is64 is64.c
  
- cat > Makefile <<EOF
  
-@@ -147,7 +130,7 @@
+ #
+@@ -204,7 +187,7 @@ DYNLIB_NAME=\$(LIBNAME).\$(DYNLIB_EXTENS
  STATICLIB_NAME=\$(LIBNAME).\$(STATICLIB_EXTENSION)
  DYNLIB=lib/\$(DYNLIB_NAME)
  STATICLIB=lib/\$(STATICLIB_NAME)
@@ -33,10 +33,43 @@
  RM=rm -f
  CP=cp
  LD=\$(CXX)
-@@ -220,10 +203,6 @@
- 	chmod 755 \$(PREFIX)/include/board
+@@ -231,6 +214,7 @@ ${ECHO} -n "Checking plateform..."
+ WIN32=0
+ case $(uname) in
+     Linux ) WIN32=0; PLATEFORM=Linux ;;
++    FreeBSD ) WIN32=0; PLATEFORM=FreeBSD ;;
+     Darwin) WIN32=0; PLATEFORM="Mac OS X" ;;
+     Darwin ) WIN32=0; PLATEFORM="Mac OS X" ;;
+     MINGW* ) WIN32=1; PLATEFORM="Win32/Mingw" ;;
+@@ -241,7 +225,7 @@ ${ECHO} $PLATEFORM
+ ${ECHO} -n "Creating include/BoardConfig.h..."
+ sed -e 's/@Board_Have_MagickPlusPlus@/'${MAGICKPLUSPLUS}'/' \
+     -e 's/@Board_Win32@/'${WIN32}'/' \
+-    -e 's/@LibBoard_VERSION@/'${VERSION}'/' \
++    -e "s/@LibBoard_VERSION@/'${VERSION}'/" \
+     include/BoardConfig.h.in  > include/BoardConfig.h
+ ${ECHO} "done."
+ 
+@@ -269,6 +253,7 @@ obj/Board.o: src/Board.cpp include/Board
+ 
+ bin/%: examples/%.cpp \$(STATICLIB)
+ 	\$(CXX) \$(CXXFLAGSEXEC) -o \$@ \$< ${IMAGE_CXXFLAGS} ${IMAGE_LDFLAGS} \$(STATICLIB)
++	\strip \$@
+ 
+ clean:
+ 	rm -f obj/*.o lib/* bin/* include/*~ include/board/*~ src/*~ examples/*~ *~
+@@ -292,7 +277,6 @@ if [ ${ON_PLACE} = no ]; then
+ 	\$(CP) include/BoardConfig.h \$(PREFIX)/include/
+ 	\$(CP) include/board/*.h \$(PREFIX)/include/board
+ 	\$(CP) include/board/*.ih \$(PREFIX)/include/board
+-	ldconfig
+ EOF
+ fi
+ cat >> Makefile <<EOF
+@@ -300,10 +284,6 @@ cat >> Makefile <<EOF
  	chmod 644 \$(PREFIX)/include/Board.h
  	chmod 644 \$(PREFIX)/include/board/*.h
+ 	chmod 644 \$(PREFIX)/include/board/*.ih
 -	install -d \$(PREFIX)/share/libboard/examples
 -	\$(CP) examples/*.cpp \$(PREFIX)/share/libboard/examples
 -	\$(CP) examples/README \$(PREFIX)/share/libboard/examples
