@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmapshack
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 CATEGORIES=	astro
 MASTER_SITES=	https://bitbucket.org/maproom/qmapshack/downloads/
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libproj.so:graphics/proj \
 		libroutino.so:astro/routino
+RUN_DEPENDS=	${LOCALBASE}/bin/bsdisks:sysutils/bsdisks
 
 USES=		cmake compiler:c++11-lib desktop-file-utils
 USE_QT5=	buildtools core dbus gui linguisttools network printsupport \
