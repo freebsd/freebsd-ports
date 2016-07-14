@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MCMCpack
-DISTVERSION=	1.3-3
-PORTREVISION=	5
+DISTVERSION=	1.3-6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,7 +11,9 @@ COMMENT=	Markov chain Monte Carlo Package
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-coda>0.11.3:math/R-cran-coda
+RUN_DEPENDS=	R-cran-coda>0.11.3:math/R-cran-coda \
+		R-cran-mcmc>0:math/R-cran-mcmc \
+		R-cran-quantreg>0:math/R-cran-quantreg
 
 USES=		cran:auto-plist,compiles
 
