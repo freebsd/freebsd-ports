@@ -10,6 +10,7 @@
     SUBDIR += LPRng
     SUBDIR += LPRngTool
     SUBDIR += abck
+    SUBDIR += abduco
     SUBDIR += abgx360
     SUBDIR += abgx360gui
     SUBDIR += accountsservice
