@@ -46,6 +46,7 @@
     SUBDIR += R-cran-lazyeval
     SUBDIR += R-cran-lme4
     SUBDIR += R-cran-maxLik
+    SUBDIR += R-cran-mcmc
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-minqa
     SUBDIR += R-cran-miscTools
