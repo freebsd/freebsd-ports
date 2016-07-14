@@ -2,6 +2,7 @@
 
 PORTNAME=	portfind
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://dynsoft.com/files/
 
