@@ -1,4 +1,4 @@
---- dtagnames.c.orig	2012-03-20 16:17:25 UTC
+--- dtagnames.c.orig	2016-06-30 19:30:28 UTC
 +++ dtagnames.c
 @@ -9,16 +9,33 @@
  
@@ -34,4 +34,4 @@
 +#endif
  }
  
- static int class__tag_name(struct tag *self, struct cu *cu __unused,
+ static int class__tag_name(struct tag *tag, struct cu *cu __unused,

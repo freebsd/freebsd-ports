@@ -1,4 +1,4 @@
---- pglobal.c.orig	2012-03-20 16:17:25 UTC
+--- pglobal.c.orig	2016-06-30 19:30:28 UTC
 +++ pglobal.c
 @@ -8,7 +8,6 @@
   */
@@ -25,7 +25,7 @@
  	}
  }
  
-@@ -313,7 +313,10 @@ int main(int argc, char *argv[])
+@@ -315,7 +315,10 @@ int main(int argc, char *argv[])
  		twalk(tree, function_action__walk);
  	}
  

@@ -1,4 +1,4 @@
---- libctf.c.orig	2012-03-20 16:17:25 UTC
+--- libctf.c.orig	2016-06-30 19:30:28 UTC
 +++ libctf.c
 @@ -1,7 +1,8 @@
 +#include <sys/stat.h>

@@ -1,4 +1,4 @@
---- pdwtags.c.orig	2012-05-14 22:41:11 UTC
+--- pdwtags.c.orig	2016-06-30 19:30:28 UTC
 +++ pdwtags.c
 @@ -9,7 +9,6 @@
  #include <argp.h>

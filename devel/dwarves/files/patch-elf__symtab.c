@@ -1,4 +1,4 @@
---- elf_symtab.c.orig	2012-03-20 16:17:25 UTC
+--- elf_symtab.c.orig	2016-06-30 19:30:28 UTC
 +++ elf_symtab.c
 @@ -7,8 +7,8 @@
    published by the Free Software Foundation.
