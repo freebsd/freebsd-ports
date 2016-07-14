@@ -1210,6 +1210,7 @@
     SUBDIR += libfastjson
     SUBDIR += libffi
     SUBDIR += libfirm
+    SUBDIR += libflatarray
     SUBDIR += libfortuna
     SUBDIR += libfreefare
     SUBDIR += libfsntfs
