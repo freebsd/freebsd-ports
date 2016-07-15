@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	offline-npm
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Offline installation with npm install
 
 LICENSE=	MIT
