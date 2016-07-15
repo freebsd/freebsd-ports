@@ -467,10 +467,10 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Protocols.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Xref.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Yecc.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.beam
-lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Check.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Clean.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Compile.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Get.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Loadpaths.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Precompile.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Tree.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Unlock.beam
@@ -550,11 +550,11 @@ lib/elixir/lib/mix/lib/mix/tasks/compile.leex.ex
 lib/elixir/lib/mix/lib/mix/tasks/compile.protocols.ex
 lib/elixir/lib/mix/lib/mix/tasks/compile.xref.ex
 lib/elixir/lib/mix/lib/mix/tasks/compile.yecc.ex
-lib/elixir/lib/mix/lib/mix/tasks/deps.check.ex
 lib/elixir/lib/mix/lib/mix/tasks/deps.clean.ex
 lib/elixir/lib/mix/lib/mix/tasks/deps.compile.ex
 lib/elixir/lib/mix/lib/mix/tasks/deps.ex
 lib/elixir/lib/mix/lib/mix/tasks/deps.get.ex
+lib/elixir/lib/mix/lib/mix/tasks/deps.loadpaths.ex
 lib/elixir/lib/mix/lib/mix/tasks/deps.precompile.ex
 lib/elixir/lib/mix/lib/mix/tasks/deps.tree.ex
 lib/elixir/lib/mix/lib/mix/tasks/deps.unlock.ex
@@ -591,7 +591,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/eex/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/eex/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/app-21f1a20b9e.js
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/app-88251e7c81.css
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/app-9c1e3d5aa2.css
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/sidebar_items.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/eex/fonts/icomoon.svg
@@ -706,7 +706,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/elixir/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/elixir/behaviours.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-21f1a20b9e.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-88251e7c81.css
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-9c1e3d5aa2.css
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/elixir/fonts/icomoon.svg
@@ -737,7 +737,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/app-21f1a20b9e.js
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/app-88251e7c81.css
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/app-9c1e3d5aa2.css
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/fonts/icomoon.svg
@@ -751,7 +751,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/iex/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/iex/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/app-21f1a20b9e.js
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/app-88251e7c81.css
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/app-9c1e3d5aa2.css
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/iex/fonts/icomoon.svg
@@ -765,7 +765,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/logger/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/logger/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/app-21f1a20b9e.js
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/app-88251e7c81.css
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/app-9c1e3d5aa2.css
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/sidebar_items.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/logger/fonts/icomoon.svg
@@ -806,10 +806,10 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Compile.Xref.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Compile.Yecc.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Compile.html
-%%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Check.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Clean.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Compile.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Get.html
+%%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Loadpaths.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Precompile.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Tree.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Deps.Unlock.html
@@ -837,7 +837,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-21f1a20b9e.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-88251e7c81.css
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-9c1e3d5aa2.css
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/mix/fonts/icomoon.svg
