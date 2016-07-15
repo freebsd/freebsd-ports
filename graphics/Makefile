@@ -460,6 +460,7 @@
     SUBDIR += lcms2
     SUBDIR += leafpak
     SUBDIR += lensfun
+    SUBDIR += lepton
     SUBDIR += leptonica
     SUBDIR += lfview
     SUBDIR += lib3ds

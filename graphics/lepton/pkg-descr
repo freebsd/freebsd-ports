@@ -1,0 +1,9 @@
+A tool for creating and manipulating images in Lepton format.
+
+Developed by Dropbox it is currently available under Apache-2.0
+license.
+
+Compared to JPEG, the format averages 22% lower file-sizes without
+any (additional) loss of quality.
+
+WWW: https://github.com/dropbox/lepton/
