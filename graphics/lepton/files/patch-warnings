@@ -1,0 +1,52 @@
++++ src/io/MemMgrAllocator.cc
+@@ -185,5 +185,5 @@
+     }
+     if (!data) {
+-        fprintf(stderr, "Insufficient memory: unable to mmap or calloc %ld bytes\n", total_size);
++        fprintf(stderr, "Insufficient memory: unable to mmap or calloc %zu bytes\n", total_size);
+         fflush(stderr);
+         exit(37);
++++ test_suite/timing_driver.cc
+@@ -79,5 +81,5 @@
+         }
+     } else {
+-        fprintf(stderr, "Files differ in size %ld != %ld\n", data_size, roundtrip_size);
++        fprintf(stderr, "Files differ in size %zu != %zu\n", data_size, roundtrip_size);
+     }
+     int status;
+@@ -396,5 +398,5 @@
+                                                     leptonBuffer.size());
+         if (result != testImage.size()) {
+-            fprintf(stderr, "Output Size %ld != %ld\n", result, testImage.size());
++            fprintf(stderr, "Output Size %zu != %zu\n", result, testImage.size());
+         }
+         always_assert(result == (size_t)testImage.size() &&
+@@ -508,5 +510,5 @@
+     for (std::vector<const char *>::const_iterator filename = filenames.begin(); filename != filenames.end(); ++filename) {
+         testImage = load(*filename);
+-        fprintf(stderr, "Loading iPhone %ld\n", testImage.size());
++        fprintf(stderr, "Loading iPhone %u\n", testImage.size());
+         int retval = run_test(testImage,
+                               use_lepton, jailed, inject_syscall_level, allow_progressive_files, multithread,
++++ src/lepton/validation.cc
+@@ -159,5 +159,5 @@
+     }
+     if (roundtrip_size != size || memcmp(&md5[0], &rtmd5[0], md5.size()) != 0) {
+-        fprintf(stderr, "Input Size %ld != Roundtrip Size %ld\n", size, roundtrip_size);
++        fprintf(stderr, "Input Size %zu != Roundtrip Size %zu\n", size, roundtrip_size);
+         for (size_t i = 0; i < md5.size(); ++i) {
+             fprintf(stderr, "%02x", md5[i]);            
++++ src/io/ioutil.cc
+@@ -339,3 +339,3 @@
+     static_assert(sizeof(buffer) >= header.size(), "Buffer must be able to hold header");
+-    uint32_t cursor = 0;
++    ssize_t cursor = 0;
+     bool finished = false;
++++ src/lepton/jpgcoder.cc
+@@ -1101,5 +1098,5 @@
+     if (false) {
+         fprintf(stderr,
+-                "Predicted Decompress %ld\nAllocated This Run %ld vs Max allocated %ld\nMax Peak Size %ld vs %ld\naug-gbg %ld, garbage %ld\nbit_writer %ld\nmux %d\n",
++                "Predicted Decompress %zu\nAllocated This Run %zu vs Max allocated %zu\nMax Peak Size %zu vs %zu\naug-gbg %zu, garbage %zu\nbit_writer %zu\nmux %d\n",
+                 decom_memory_bound,
+                 Sirikata::memmgr_size_allocated(),
