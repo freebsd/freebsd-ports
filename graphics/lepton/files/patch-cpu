@@ -1,4 +1,4 @@
-Make -- or attempt to -- the code work on CPUs with only SSE2
+Make -- or attempt to -- the code work on CPUs with only SSE3
 instruction set...
 
 	-mi
@@ -207,3 +207,11 @@ instruction set...
 +	    _mm_shuffle_epi32(tmp2, _MM_SHUFFLE (0,0,2,0)));
 +}
 +#endif
++++ src/lepton/recoder.cc
+@@ -99,5 +99,5 @@
+ 
+ static bool aligned_memchr16ff(const unsigned char *local_huff_data) {
+-#if 1
++#if !defined(__i386__)
+     __m128i buf = _mm_load_si128((__m128i const*)local_huff_data);
+     __m128i ff = _mm_set1_epi8(-1);
