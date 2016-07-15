@@ -750,6 +750,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/don_simpson_jerry_bruckheimer_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/donners.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/dreamworks.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/dreamworks_animation.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/e4.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/ealing.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/eclectic.png
@@ -758,6 +759,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/electric_enterteinment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/electric_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/eleven_eleven.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/emi.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/emmedia.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/encore.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/endgame_entertainment.png
@@ -884,6 +886,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/kinepolis.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/king_world.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/kinowelt.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/konami.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/kopelson.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/ladd.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/lakeshore_entertainment.png
@@ -1066,7 +1069,8 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/smc.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/snl_studios.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sobini_films.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sony.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sony_pictures.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sony_pictures_animation.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/space.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/spelling_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/spike.png
@@ -1233,6 +1237,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexMovie.bundle/.gitignore
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexMovie.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexMovie.bundle/Contents/Code/chapterdb.py
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexMovie.bundle/Contents/Code/countrycode.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexMovie.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexMovie.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/PlexMovie.bundle/Contents/Resources/attribution.png
@@ -1365,8 +1370,8 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.6f2ab52fa24ee9930ee495e06d294ddd.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.98432f91c10077f507d0733d02bf9df1.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.1416505b9b181dbca92b5dc71c381efa.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.1ce2fe78e445f7bafa4900cda393659e.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon-mask.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon.ico
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/plex-logo.96faf245690b14fdd33eccd3294ac57f.svg
@@ -1453,11 +1458,12 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/upsell/upsell-mobile-sync.6a66674e2cb992f1134481602860f06f.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/upsell/upsell-trailers-extras.1ad0852cbe3bde7198f897afd6bc14dd.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/gracenote.18089cb7063ad397523859fa93f2d54c.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/songkick.28598beac20bee7c8dc681851d053bdf.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.680e756a4530d9e6abed.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.5818bb4ba210657e8552.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest.e03b68e82ebe9b435e8b.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.aaa70f9e87699b781838.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/zxcvbn.c9ed0d9139df193d94df.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.7dabc96c73af481249dc.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/zxcvbn.9159fb5badd935edaf66.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/mp3/null.2036f08ba858d37814b7f6982d26414a.mp3
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
@@ -2447,6 +2453,7 @@
 %%DATADIR%%/liblrc.so.0
 %%DATADIR%%/libmediainfo.so.0
 %%DATADIR%%/libminiupnpc.so.10
+%%DATADIR%%/libminizip.so.1
 %%DATADIR%%/libnatpmp.so.1
 %%DATADIR%%/libopencv_core.so.2.4
 %%DATADIR%%/libopencv_imgproc.so.2.4
