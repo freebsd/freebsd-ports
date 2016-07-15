@@ -67,7 +67,7 @@ instruction set...
                  xv0 = _mm_insert_epi32(xv0, 0, 0);
 +#else
 +// See http://stackoverflow.com/questions/38384520/is-there-a-sse2-equivalent-for-mm-insert-epi32
-+                xv0 = _mm_insert_epi16(_mm_insert_epi16(xv0, 0, 0), 0, 1);
++                xv0 = _mm_and_si128(xv0, _mm_set_epi32(-1,-1,-1, 0));
 +#endif
              }
          } else {
