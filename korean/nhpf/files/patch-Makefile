@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Oct 19 03:12:14 2003
-+++ Makefile	Sun Oct 19 03:12:40 2003
+--- Makefile.orig	1997-02-22 06:33:07 UTC
++++ Makefile
 @@ -1,13 +1,13 @@
  # Makefile for Netscape Hangul PS file filter
  # Lee yongjae, setup@shiva.snu.ac.kr, 1997.1.22.
@@ -17,7 +17,7 @@
  
  all: $(ALL)
  clean:
-@@ -18,7 +18,7 @@
+@@ -18,7 +18,7 @@ nhpf: nhpf.o ncode.o
  	rm -f wrapstr
  
  wrapstr: wrapstr.c
