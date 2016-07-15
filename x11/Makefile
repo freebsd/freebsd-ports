@@ -235,6 +235,7 @@
     SUBDIR += props
     SUBDIR += py-qt4-opengl
     SUBDIR += py-qt5-opengl
+    SUBDIR += py-xdot
     SUBDIR += qimageblitz
     SUBDIR += qt4-graphicssystems-opengl
     SUBDIR += qt4-inputmethods
