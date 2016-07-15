@@ -3,7 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -30,6 +30,20 @@ CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
+EXTRA_PATCHES=	${FILESDIR}/commit-21002a6 \
+		${FILESDIR}/commit-b00f86d \
+		${FILESDIR}/commit-aa1ed4a \
+		${FILESDIR}/commit-7697fc9 \
+		${FILESDIR}/commit-3350c5f \
+		${FILESDIR}/commit-2faa344 \
+		${FILESDIR}/commit-82372b2 \
+		${FILESDIR}/commit-e6cdd38 \
+		${FILESDIR}/commit-a3405d1 \
+		${FILESDIR}/commit-5077bff \
+		${FILESDIR}/commit-bb2a62e \
+		${FILESDIR}/commit-8607ea6 \
+		${FILESDIR}/commit-2c5c2a3 \
+		${FILESDIR}/commit-ee95032
 
 VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
@@ -38,7 +52,7 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6	# untested elsewhere, might w
 
 OPTIONS_DEFINE=	DEBUG EXPAT GDB_LINK GUILE KGDB PYTHON TUI
 
-OPTIONS_DEFAULT=	GDB_LINK KGDB PYTHON TUI PORT_READLINE
+OPTIONS_DEFAULT=	EXPAT GDB_LINK KGDB PYTHON TUI PORT_READLINE
 
 OPTIONS_SINGLE=	READLINE
 OPTIONS_SINGLE_READLINE=	BASE_READLINE BUNDLED_READLINE PORT_READLINE
@@ -98,6 +112,10 @@ do-install-KGDB-on:
 
 do-install-TUI-on:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdbtui${VER}
+
+do-install-EXPAT-on:
+	(cd ${WRKSRC}/gdb/data-directory ; \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
 
 do-install-GDB_LINK-on:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdb
