@@ -1,0 +1,4 @@
+This Gem contains all of the Ruby Exploitation(Rex) library for
+generating/manipulating Powershell scripts.
+
+WWW: https://github.com/rapid7/rex-powershell
