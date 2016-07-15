@@ -1006,6 +1006,7 @@
     SUBDIR += rubygem-rack-oauth2
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-recog
+    SUBDIR += rubygem-rex-random_identifier
     SUBDIR += rubygem-rex-text
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-ruby-hmac
