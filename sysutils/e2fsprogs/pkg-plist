@@ -2,6 +2,7 @@ bin/chattr
 bin/lsattr
 etc/mke2fs.conf.dist
 man/man1/chattr.1.gz
+man/man1/fuse2fs.1.gz
 man/man1/lsattr.1.gz
 man/man5/e2fsck.conf.5.gz
 man/man5/mke2fs.conf.5.gz

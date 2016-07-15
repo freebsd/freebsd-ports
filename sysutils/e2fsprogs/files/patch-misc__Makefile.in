@@ -1,27 +1,28 @@
---- misc/Makefile.in.orig	2014-08-02 23:41:18 UTC
+--- misc/Makefile.in.orig	2016-03-18 19:14:18 UTC
 +++ misc/Makefile.in
-@@ -28,15 +28,15 @@
+@@ -34,16 +34,16 @@ INSTALL = @INSTALL@
  
  SPROGS=		mke2fs badblocks tune2fs dumpe2fs $(BLKID_PROG) logsave \
  			$(E2IMAGE_PROG) @FSCK_PROG@ e2undo
--USPROGS=	mklost+found filefrag e2freefrag $(UUIDD_PROG) $(E4DEFRAG_PROG)
-+USPROGS=	mklost+found e2freefrag $(UUIDD_PROG) $(E4DEFRAG_PROG)
+-USPROGS=	mklost+found filefrag e2freefrag $(UUIDD_PROG) \
++USPROGS=	mklost+found e2freefrag $(UUIDD_PROG) \
+ 			$(E4DEFRAG_PROG) $(E4CRYPT_PROG) $(FUSE_PROG)
  SMANPAGES=	tune2fs.8 mklost+found.8 mke2fs.8 dumpe2fs.8 badblocks.8 \
  			e2label.8 $(FINDFS_MAN) $(BLKID_MAN) $(E2IMAGE_MAN) \
 -			logsave.8 filefrag.8 e2freefrag.8 e2undo.8 \
--			$(UUIDD_MAN) $(E4DEFRAG_MAN) @FSCK_MAN@
+-			$(UUIDD_MAN) $(E4DEFRAG_MAN) $(E4CRYPT_MAN) @FSCK_MAN@
 +			logsave.8 e2freefrag.8 e2undo.8 \
-+			$(E4DEFRAG_MAN) @FSCK_MAN@
++			$(E4DEFRAG_MAN) $(E4CRYPT_MAN) @FSCK_MAN@
  FMANPAGES=	mke2fs.conf.5 ext4.5
  
 -UPROGS=		chattr lsattr @UUID_CMT@ uuidgen
--UMANPAGES=	chattr.1 lsattr.1 @UUID_CMT@ uuidgen.1
+-UMANPAGES=	chattr.1 fuse2fs.1 lsattr.1 @UUID_CMT@ uuidgen.1
 +UPROGS=		chattr lsattr
-+UMANPAGES=	chattr.1 lsattr.1
++UMANPAGES=	chattr.1 fuse2fs.1 lsattr.1
  
  LPROGS=		@E2INITRD_PROG@
  
-@@ -127,14 +127,14 @@
+@@ -143,14 +143,14 @@ profiled:
  
  mke2fs.conf: $(srcdir)/mke2fs.conf.in
  	if test -f $(srcdir)/mke2fs.conf.custom.in ; then \
@@ -37,9 +38,9 @@
 -	$(Q) $(AWK) -f $(srcdir)/profile-to-c.awk < mke2fs.conf \
 +	$(Q) $(AWK) -f $(srcdir)/profile-to-c.awk < mke2fs.conf.dist \
  		>  default_profile.c
- profile.o:
- 	$(E) "	CC $<"
-@@ -515,34 +515,9 @@
+ findsuper: findsuper.o
+ 	$(E) "	LD $@"
+@@ -575,34 +575,9 @@ install: all $(SMANPAGES) $(UMANPAGES) i
  		(cd $(DESTDIR)$(man5dir); \
  			$(LN) $(LINK_INSTALL_FLAGS) ext4.5 $$i.5); \
  	done

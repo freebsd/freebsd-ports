@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.42.13
+PORTVERSION=	1.43.1
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -20,7 +20,6 @@ USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
-		--enable-quota \
 		--with-root-prefix='${PREFIX}'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib' pkgconfigdir='${PREFIX}/libdata/pkgconfig'
@@ -30,7 +29,9 @@ MAKE_ENV+=	CHECK_CMD=@true
 OPTIONS_DEFINE=		DOCS NLS
 OPTIONS_EXCLUDE+=	EXAMPLES
 
-PORTDOCS=	COPYING RELEASE-NOTES
+BUILD_DEPENDS+=	gdd:sysutils/coreutils
+
+PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
 
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
@@ -44,10 +45,25 @@ PKGDEINSTALL=	${PKGINSTALL}
 MAKE_ARGS+=	V=1
 .endif
 
+OPTIONS_DEFINE=			PARALLELTESTS
+OPTIONS_SINGLE=			SELFTEST
+OPTIONS_SINGLE_SELFTEST=	NOTESTS SMALLTESTS ALLTESTS
+OPTIONS_DEFAULT=		SMALLTESTS
+SELFTEST_DESC=	Choose which set of self-tests to run
+NOTESTS_DESC=	Do not run any self-tests (DISCOURAGED)
+SMALLTESTS_DESC=Run sets that fit into 500 MB disk space (DEFAULT)
+ALLTESTS_DESC=	Run all self-tests
+PARALLELTESTS_DESC=	Run self-tests in parallel (requires more disk space)
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv:build
+.endif
+
+.if empty(PORT_OPTIONS:MNOTESTS)
+USES+=		perl5
+USE_PERL5=	build
 .endif
 
 .include <bsd.port.pre.mk>
@@ -69,21 +85,64 @@ post-patch::
 # don't build/install libext2fs.info
 	@${REINPLACE_CMD} -e 's/ install-doc-libs$$//' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's/md5sum ([^ ]*)/printf "%s  %s\\n" $$(md5 -q \1) \1/' \
-	    -e "s/ == 0/ = 0/" ${WRKSRC}/tests/[a-t]_*/script
+	    -e "s/ == 0/ = 0/" -e "s/tar x$$/tar xf -/" -e "s/\<dd\>/gdd/" \
+	    ${WRKSRC}/tests/[a-z]_*/script
 	@${REINPLACE_CMD} -e 's/<malloc\.h>/<stdlib.h>/' ${WRKSRC}/*/*.c
-# disable f_mmp_garbage, fails on FreeBSD, and the resize*big_expand tests,
-# which are too unwieldy to run automatically (need too much free space).
-# f_extent_oobounds appears to have differences in screen output, reason
-# unclear.
-.for i in f_mmp_garbage m_bigjournal r_64bit_big_expand r_bigalloc_big_expand r_ext4_big_expand f_extent_oobounds
+.if empty(PORT_OPTIONS:MALLTESTS)
+.for i in \
+		f_baddir \
+		f_bbfile \
+		f_convert_bmap \
+		f_detect_junk \
+		f_inode_ea_collision \
+		f_lpffile \
+		f_no_cache_corrupt_inode \
+		f_opt_extent \
+		j_corrupt_descr_csum \
+		m_bigjournal \
+		m_hugefile_slack \
+		m_offset \
+		m_raid_opt \
+		r_32to64bit \
+		r_32to64bit_expand_full \
+		r_32to64bit_meta \
+		r_32to64bit_move_itable \
+		r_64to32bit \
+		r_64to32bit_meta \
+		r_expand_full \
+		r_min_itable \
+		t_change_uuid_mounted \
+		t_dangerous \
+		t_disable_changed_csum_seed_mounted \
+		t_disable_mcsum \
+		t_disable_mcsum_noinitbg \
+		t_disable_mcsum_yesinitbg \
+		t_enable_mcsum \
+		t_enable_mcsum_initbg \
+		t_iexpand_full \
+		t_iexpand_mcsum \
+		t_uninit_bg_rm \
+		u_dryrun \
+		u_mke2fs_opt_offset
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
 .endfor
+.endif
 
 .if ${MASTERDIR} == ${.CURDIR}
 pre-build:
 # fix up Makefile ordering for parallel builds
 	cd ${WRKSRC}/lib/et && ${DO_MAKE_BUILD} compile_et
-	cd ${WRKSRC}/e2fsck && ${DO_MAKE_BUILD} prof_err.h
+	cd ${WRKSRC}/lib/support && ${DO_MAKE_BUILD} prof_err.h
+
+.if ${PORT_OPTIONS:MPARALLELTESTS}
+_CHECK_JOBS=${_MAKE_JOBS}
+.else
+_CHECK_JOBS=
+.endif
+
+.if !defined(TMPDIR)
+_checkaddargs=TMPDIR=${WRKDIR}/tmp
+.endif
 
 post-build:
 # Relink e2fsck statically - We need to make sure that tools for the root file
@@ -94,16 +153,15 @@ post-build:
 		&& ${MAKE_CMD} e2fsck \
 		STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
 		../lib/libblkid.a  ../lib/libuuid.a" \
-		LIBINTL=${libintl}
+		LIBINTL=${libintl} LIBMAGIC=/usr/lib/libmagic.a\ -lz
 # Regression check: avoid a port (not upstream!) regression from 1.40.5,
 # check that e2fsck isn't dynalinked against anything but libc.so:
-	@${ECHO_CMD} -n "===>  checking that e2fsck depends on no shared objects beyond libc and libgcc: "
+	@${ECHO_CMD} -n "===>  checking that e2fsck depends on no shared objects outside /lib: "
 	@a="$$(ldd ${WRKSRC}/e2fsck/e2fsck 2>/dev/null \
 	    | ${GREP} -v 'not a dynamic executable' \
 	    | ${GREP} '=>' \
 	    | ${AWK}  '{print $$3;}' \
-	    | ${EGREP} -v '^/lib/libgcc(_s)?\.so\.' \
-	    | ${GREP} -v '^/lib/libc\.so\.' || :)"; \
+	    | ${EGREP} -v '^/lib/lib.*\.so\.' || :)"; \
 	if test "x$$a" = "x" ; then echo 'PASS' ; else \
 	    echo 'FAIL' ; echo '===>  e2fsck depends on:' ; echo "$$a" ; exit 1 ; fi
 # Update translation binary files
@@ -121,9 +179,9 @@ post-build:
 # There have been subtle failures induced by Linux-isms in the past.
 # -- Matthias Andree, package maintainer, 2007-09-18
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
-# do not add -j options to ${MAKE_CMD} below, this might break
+# do not add -j options unconditionally to ${MAKE_CMD} below, this might break
 # due to excessive disk space use.
-	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} check TMPDIR=${WRKDIR}/tmp \
+	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} check ${_CHECK_JOBS} ${_checkaddargs} \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 
 post-install:
