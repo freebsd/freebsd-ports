@@ -1,9 +1,8 @@
 # Created by: antoine@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME=	PyAFF4
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTNAME=	pyaff4
+DISTVERSION=	0.24.post1
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervaltree>=2.1.0:devel/py-intervaltree \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=4.2.1:textproc/py-rdflib
 
 NO_ARCH=	yes
-USES=		python
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 post-extract:
