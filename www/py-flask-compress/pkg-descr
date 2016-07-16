@@ -1,0 +1,3 @@
+Extension for Flask that compresses responses with gzip
+
+WWW: https://github.com/libwilliam/flask-compress
