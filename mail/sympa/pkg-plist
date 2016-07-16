@@ -109,7 +109,6 @@ libexec/sympa/Sympa/Spindle/ProcessMessage.pm
 libexec/sympa/Sympa/Spindle/ProcessModeration.pm
 libexec/sympa/Sympa/Spindle/ProcessOutgoing.pm
 libexec/sympa/Sympa/Spindle/ProcessRequest.pm
-libexec/sympa/Sympa/Spindle/ProcessReserved.pm
 libexec/sympa/Sympa/Spindle/ProcessTemplate.pm
 libexec/sympa/Sympa/Spindle/ResendArchive.pm
 libexec/sympa/Sympa/Spindle/ToAlarm.pm
@@ -138,7 +137,6 @@ libexec/sympa/Sympa/Spool/Digest/Collection.pm
 libexec/sympa/Sympa/Spool/Held.pm
 libexec/sympa/Sympa/Spool/Incoming.pm
 libexec/sympa/Sympa/Spool/Moderation.pm
-libexec/sympa/Sympa/Spool/Reserved.pm
 libexec/sympa/Sympa/Task.pm
 libexec/sympa/Sympa/Template.pm
 libexec/sympa/Sympa/Ticket.pm
@@ -284,7 +282,6 @@ man/man3/Sympa::Spindle::ProcessMessage.3Sympa.gz
 man/man3/Sympa::Spindle::ProcessModeration.3Sympa.gz
 man/man3/Sympa::Spindle::ProcessOutgoing.3Sympa.gz
 man/man3/Sympa::Spindle::ProcessRequest.3Sympa.gz
-man/man3/Sympa::Spindle::ProcessReserved.3Sympa.gz
 man/man3/Sympa::Spindle::ProcessTemplate.3Sympa.gz
 man/man3/Sympa::Spindle::ResendArchive.3Sympa.gz
 man/man3/Sympa::Spindle::ToAlarm.3Sympa.gz
@@ -313,7 +310,6 @@ man/man3/Sympa::Spool::Digest::Collection.3Sympa.gz
 man/man3/Sympa::Spool::Held.3Sympa.gz
 man/man3/Sympa::Spool::Incoming.3Sympa.gz
 man/man3/Sympa::Spool::Moderation.3Sympa.gz
-man/man3/Sympa::Spool::Reserved.3Sympa.gz
 man/man3/Sympa::Template.3Sympa.gz
 man/man3/Sympa::Ticket.3Sympa.gz
 man/man3/Sympa::Tools::File.3Sympa.gz
