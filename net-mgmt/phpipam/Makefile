@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpipam
-PORTVERSION=	1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -23,10 +23,9 @@ SUB_LIST=	DISTNAME=${DISTNAME}
 
 OPTIONS_DEFINE=	LDAP
 
-USES=		tar:
+USES=		gettext php:web tar:
 USE_PHP=	ctype gettext gmp json mysqli pcntl session simplexml
 LDAP_USE=	PHP=ldap
-WANT_PHP_WEB=	yes
 
 pre-install:
 	@if [ -f ${WRKSRC}/${CFGFILE} ]; then \
