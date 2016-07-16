@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rekall-core
-DISTVERSION=	1.5.1
+DISTVERSION=	1.5.2.post1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ COMMENT=	CORE component of the Rekall framework
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	cabextract:archivers/cabextract \
-		${PYTHON_PKGNAMEPREFIX}PyAFF4>=0.23:security/py-pyaff4 \
+		${PYTHON_PKGNAMEPREFIX}artifacts>=20160114:security/py-artifacts \
+		${PYTHON_PKGNAMEPREFIX}pyaff4>=0.23:security/py-pyaff4 \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}acora>=2.0:textproc/py-acora \
 		${PYTHON_PKGNAMEPREFIX}arrow>=0.7.0:devel/py-arrow \
