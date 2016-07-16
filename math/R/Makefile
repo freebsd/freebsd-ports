@@ -28,23 +28,18 @@ LICENSE=		GPLv2
 
 LIB_DEPENDS=		libcurl.so:ftp/curl \
 			libpcre.so:devel/pcre
-BUILD_DEPENDS=		texi2dvi:print/texinfo
 
 GNU_CONFIGURE=		yes
-USES=			fortran iconv objc:compiler
+USES=			fortran iconv objc:compiler perl5
+USE_PERL5=		build
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
-
-CONFIGURE_ARGS=		--disable-java --enable-memory-profiling \
-			rdocdir=${DOCSDIR}
-
+CONFIGURE_ARGS=		--disable-java --enable-memory-profiling rdocdir=${DOCSDIR}
 INSTALL_TARGET=		install-strip
 
 OPTIONS_DEFINE=		DOCS ICU INFO LETTER LIBR LDOUBLE LTO MISSING NLS \
 			OPENMP THREADS X11
-
 OPTIONS_GROUP=		NEEDX11
 OPTIONS_GROUP_NEEDX11=	GHOSTSCRIPT JPEG CAIROPANGO PDF PNG TCLTK TIFF
-
 OPTIONS_SINGLE=		BLAS
 OPTIONS_SINGLE_BLAS=	ATLAS OPENBLAS NETLIB RBLAS
 
@@ -77,8 +72,11 @@ OPTIONS_DEFAULT_powerpc64+=	MISSING
 OPTIONS_DEFAULT_sparc64+=	MISSING
 
 ATLAS_USES=		blaslapack:atlas
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+ATLAS_IGNORE=		Choose a BLAS option other than ATLAS for package building.
+.endif
 
-DOC_BUILD_DEPENDS=	texi2any:print/texinfo
+DOCS_BUILD_DEPENDS=	texi2any:print/texinfo
 
 GHOSTSCRIPT_IMPLIES=	X11
 GHOSTSCRIPT_USES=	ghostscript
