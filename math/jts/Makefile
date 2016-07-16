@@ -3,15 +3,18 @@
 
 PORTNAME=	jts
 PORTVERSION=	1.14
-CATEGORIES=	math databases
+CATEGORIES=	math databases java
 MASTER_SITES=	SF/${PORTNAME}-topo-suite/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JTS Topology Suite
 
-RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom		\
-	${JAVALIBDIR}/junit.jar:java/junit		\
-	${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
+
+RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom \
+		${JAVALIBDIR}/junit.jar:java/junit \
+		${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j
 
 USES=		zip
 NO_BUILD=	yes
@@ -22,6 +25,8 @@ NO_WRKSUBDIR=	yes
 VER=		${PORTVERSION:tl}
 JARFILES=	JTS_Test jts-${VER} jtsio-${VER}
 
+PORTDOCS=	*
+
 OPTIONS_DEFINE=	DOCS
 
 do-install:
@@ -31,17 +36,15 @@ do-install:
 .endfor
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 
-.if defined(MAINTAINER_MODE)
-regression-test:	install
-	${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|;	\
+do-test:
+	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|;	\
 			s|%%JAVALIBDIR%%|${JAVALIBDIR}|;\
 			s|%%JAVA%%|${JAVA}|'		\
 		${FILESDIR}/testJTS.sh.in > ${WRKSRC}/testJTS.sh
 	(cd ${WRKSRC} && ${SH} ./testJTS.sh )
-.endif
 
 .include <bsd.port.mk>
