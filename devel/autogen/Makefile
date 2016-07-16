@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	autogen
-PORTVERSION=	5.18.4
-PORTREVISION=	2
+PORTVERSION=	5.18.10
 CATEGORIES=	devel
 MASTER_SITES=	GNU/${PORTNAME}/rel${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool designed to simplify the creation and maintenance of programs
@@ -15,7 +13,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+		libgc-threaded.so:devel/boehm-gc-threaded
 
 USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:xz
 USE_PERL5=	build
