@@ -2983,6 +2983,7 @@
     SUBDIR += p5-Rcs-Agent
     SUBDIR += p5-Readonly
     SUBDIR += p5-Readonly-XS
+    SUBDIR += p5-ReadonlyX
     SUBDIR += p5-Reflex
     SUBDIR += p5-Regexp-Assemble
     SUBDIR += p5-Regexp-Assemble-Compressed
