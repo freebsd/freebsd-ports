@@ -11,15 +11,12 @@ COMMENT=	CommonMark parsing and rendering library and program in C
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	python3:lang/python3
-
-TEST_TARGET=	test
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	jgm
 
-USES=		cmake:outsource
+USES=		cmake:outsource python:3,test
 USE_LDCONFIG=	yes
+TEST_TARGET=	test
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man
 
