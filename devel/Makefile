@@ -5324,6 +5324,7 @@
     SUBDIR += splint
     SUBDIR += srecord
     SUBDIR += st
+    SUBDIR += stack
     SUBDIR += staf
     SUBDIR += statcvs
     SUBDIR += statik
