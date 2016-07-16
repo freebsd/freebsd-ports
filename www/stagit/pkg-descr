@@ -1,0 +1,16 @@
+stagit is a static Git web page generator with the following features:
+
+- Log of all commits from HEAD.
+- Log and diffstat per commit.
+- Show file tree with linkable line numbers.
+- Show references: local branches and tags.
+- Detect README and LICENSE file from HEAD and link it as a webpage.
+- Detect submodules (.gitmodules file) from HEAD and link it as a
+  webpage.
+- Atom feed log (atom.xml).
+- Make index page for multiple repositories with stagit-index.
+- After generating the pages (relatively slow) serving the files is
+  very fast, simple and requires little resources (because the content
+  is static), only a HTTP file server is required.
+
+WWW: http://git.2f30.org/stagit/log.html

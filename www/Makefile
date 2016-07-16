@@ -2088,6 +2088,7 @@
     SUBDIR += squidstats
     SUBDIR += squidview
     SUBDIR += srg
+    SUBDIR += stagit
     SUBDIR += subsonic
     SUBDIR += subsonic-standalone
     SUBDIR += suphp
