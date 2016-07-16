@@ -24,5 +24,4 @@ post-install:
 	cd ${WRKSRC}/doc/global && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${QT_DOCDIR}/global
 
-
 .include <bsd.port.mk>
