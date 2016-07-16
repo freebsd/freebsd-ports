@@ -26,6 +26,7 @@ include/telepathy-qt4/TelepathyQt/BaseCall
 include/telepathy-qt4/TelepathyQt/BaseChannel
 include/telepathy-qt4/TelepathyQt/BaseConnection
 include/telepathy-qt4/TelepathyQt/BaseConnectionManager
+include/telepathy-qt4/TelepathyQt/BaseDebug
 include/telepathy-qt4/TelepathyQt/BaseProtocol
 include/telepathy-qt4/TelepathyQt/BaseProtocolAddressingInterface
 include/telepathy-qt4/TelepathyQt/BaseProtocolAvatarsInterface
@@ -167,6 +168,7 @@ include/telepathy-qt4/TelepathyQt/GenericCapabilityFilter
 include/telepathy-qt4/TelepathyQt/GenericPropertyFilter
 include/telepathy-qt4/TelepathyQt/Global
 include/telepathy-qt4/TelepathyQt/HandledChannelNotifier
+include/telepathy-qt4/TelepathyQt/IODevice
 include/telepathy-qt4/TelepathyQt/IncomingDBusTubeChannel
 include/telepathy-qt4/TelepathyQt/IncomingFileTransferChannel
 include/telepathy-qt4/TelepathyQt/IncomingStreamTubeChannel
@@ -296,6 +298,7 @@ include/telepathy-qt4/TelepathyQt/base-call.h
 include/telepathy-qt4/TelepathyQt/base-channel.h
 include/telepathy-qt4/TelepathyQt/base-connection-manager.h
 include/telepathy-qt4/TelepathyQt/base-connection.h
+include/telepathy-qt4/TelepathyQt/base-debug.h
 include/telepathy-qt4/TelepathyQt/base-protocol.h
 include/telepathy-qt4/TelepathyQt/call-channel.h
 include/telepathy-qt4/TelepathyQt/call-content-media-description.h
@@ -347,6 +350,7 @@ include/telepathy-qt4/TelepathyQt/generic-capability-filter.h
 include/telepathy-qt4/TelepathyQt/generic-property-filter.h
 include/telepathy-qt4/TelepathyQt/global.h
 include/telepathy-qt4/TelepathyQt/handled-channel-notifier.h
+include/telepathy-qt4/TelepathyQt/io-device.h
 include/telepathy-qt4/TelepathyQt/incoming-dbus-tube-channel.h
 include/telepathy-qt4/TelepathyQt/incoming-file-transfer-channel.h
 include/telepathy-qt4/TelepathyQt/incoming-stream-tube-channel.h
@@ -420,7 +424,9 @@ lib/cmake/TelepathyQt4Service/TelepathyQt4ServiceConfigVersion.cmake
 lib/libtelepathy-qt4-farstream.so
 lib/libtelepathy-qt4-farstream.so.2
 lib/libtelepathy-qt4-farstream.so.2.%%PORTVERSION%%
-lib/libtelepathy-qt4-service.a
+lib/libtelepathy-qt4-service.so
+lib/libtelepathy-qt4-service.so.0
+lib/libtelepathy-qt4-service.so.2.%%PORTVERSION%%
 lib/libtelepathy-qt4.so
 lib/libtelepathy-qt4.so.2
 lib/libtelepathy-qt4.so.2.%%PORTVERSION%%
