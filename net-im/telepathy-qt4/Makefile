@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.9.6.1
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	net-im
 MASTER_SITES=	https://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
 DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
