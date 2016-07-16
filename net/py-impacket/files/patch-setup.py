@@ -1,8 +1,8 @@
---- setup.py.orig	2015-05-05 09:53:44 UTC
+--- setup.py.orig	2016-06-29 09:52:25 UTC
 +++ setup.py
 @@ -21,9 +21,5 @@ setup(name = PACKAGE_NAME,
        platforms = ["Unix","Windows"],
-       packages = ['impacket', 'impacket.dcerpc', 'impacket.examples', 'impacket.dcerpc.v5', 'impacket.dcerpc.v5.dcom', 'impacket.krb5'],
+       packages = ['impacket', 'impacket.dcerpc', 'impacket.examples', 'impacket.dcerpc.v5', 'impacket.dcerpc.v5.dcom', 'impacket.krb5', 'impacket.ldap', 'impacket.examples.ntlmrelayx', 'impacket.examples.ntlmrelayx.clients', 'impacket.examples.ntlmrelayx.servers', 'impacket.examples.ntlmrelayx.utils'],
        scripts = glob.glob(os.path.join('examples', '*.py')),
 -      data_files = [(os.path.join('share', 'doc', PACKAGE_NAME), ['README.md', 'LICENSE']+glob.glob('doc/*')),
 -                    (os.path.join('share', 'doc', PACKAGE_NAME, 'testcases', 'dot11'),glob.glob('impacket/testcases/dot11/*')),
