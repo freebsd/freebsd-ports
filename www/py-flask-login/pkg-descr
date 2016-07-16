@@ -1,0 +1,6 @@
+Provides user session management for Flask.
+It handles tasks of logging in, logging out, and remembering your user's
+sessions over extended periods of time.
+It is not bound to any particular database system or permissions model.
+
+WWW: https://github.com/maxcountryman/flask-login
