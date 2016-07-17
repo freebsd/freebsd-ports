@@ -14,7 +14,15 @@
  libelf = ../libelf/libelf.so
  endif
  libebl = ../libebl/libebl.a
-@@ -103,27 +103,27 @@ ranlib_no_Wstack_usage = yes
+@@ -89,6 +89,7 @@ endif
+ # XXX While the file is not finished, don't warn about this
+ ldgeneric_no_Wunused = yes
+ ldgeneric_no_Wstack_usage = yes
++ldgeneric_no_Werror = yes
+ 
+ # Bad, bad stack usage...
+ readelf_no_Wstack_usage = yes
+@@ -103,27 +104,27 @@ ranlib_no_Wstack_usage = yes
  ar_no_Wstack_usage = yes
  unstrip_no_Wstack_usage = yes
  
