@@ -1,4 +1,4 @@
---- Makefile.orig	2015-08-27 15:06:47 UTC
+--- Makefile.orig	2016-07-13 15:21:26 UTC
 +++ Makefile
 @@ -46,7 +46,7 @@ auto_gen=lex.yy.c cfg.tab.c   #lexx, yac
  # whether or not to install opensips.cfg or just opensips.cfg.default
@@ -9,31 +9,31 @@
  
  #extra modules to exclude
  skip_modules?=
-@@ -509,27 +509,14 @@ install-cfg: $(cfg-prefix)/$(cfg-dir)
- 		rm -fr $(cfg-prefix)/$(cfg-dir)$(NAME).cfg.sample0
- 		chmod 600 $(cfg-prefix)/$(cfg-dir)$(NAME).cfg.sample
- 		chmod 700 $(cfg-prefix)/$(cfg-dir)
+@@ -495,27 +495,14 @@ install-cfg: $(cfg_prefix)/$(cfg_dir)
+ 		rm -fr $(cfg_prefix)/$(cfg_dir)$(NAME).cfg.sample0
+ 		chmod 600 $(cfg_prefix)/$(cfg_dir)$(NAME).cfg.sample
+ 		chmod 700 $(cfg_prefix)/$(cfg_dir)
 -		if [ -z "${skip_cfg_install}" -a \
--				! -f $(cfg-prefix)/$(cfg-dir)$(NAME).cfg ]; then \
--			mv -f $(cfg-prefix)/$(cfg-dir)$(NAME).cfg.sample \
--				$(cfg-prefix)/$(cfg-dir)$(NAME).cfg; \
+-				! -f $(cfg_prefix)/$(cfg_dir)$(NAME).cfg ]; then \
+-			mv -f $(cfg_prefix)/$(cfg_dir)$(NAME).cfg.sample \
+-				$(cfg_prefix)/$(cfg_dir)$(NAME).cfg; \
 -		fi
  		# opensipsctl config
- 		$(INSTALL_TOUCH)   $(cfg-prefix)/$(cfg-dir)/opensipsctlrc.sample
+ 		$(INSTALL_TOUCH)   $(cfg_prefix)/$(cfg_dir)/opensipsctlrc.sample
  		$(INSTALL_CFG) scripts/opensipsctlrc \
- 			$(cfg-prefix)/$(cfg-dir)/opensipsctlrc.sample
--		if [ ! -f $(cfg-prefix)/$(cfg-dir)/opensipsctlrc ]; then \
--			mv -f $(cfg-prefix)/$(cfg-dir)/opensipsctlrc.sample \
--				$(cfg-prefix)/$(cfg-dir)/opensipsctlrc; \
+ 			$(cfg_prefix)/$(cfg_dir)/opensipsctlrc.sample
+-		if [ ! -f $(cfg_prefix)/$(cfg_dir)/opensipsctlrc ]; then \
+-			mv -f $(cfg_prefix)/$(cfg_dir)/opensipsctlrc.sample \
+-				$(cfg_prefix)/$(cfg_dir)/opensipsctlrc; \
 -		fi
  		# osipsconsole config
- 		$(INSTALL_TOUCH)   $(cfg-prefix)/$(cfg-dir)/osipsconsolerc.sample
+ 		$(INSTALL_TOUCH)   $(cfg_prefix)/$(cfg_dir)/osipsconsolerc.sample
  		$(INSTALL_CFG) scripts/osipsconsolerc \
- 			$(cfg-prefix)/$(cfg-dir)/osipsconsolerc.sample
--		if [ ! -f $(cfg-prefix)/$(cfg-dir)/osipsconsolerc ]; then \
--			mv -f $(cfg-prefix)/$(cfg-dir)/osipsconsolerc.sample \
--				$(cfg-prefix)/$(cfg-dir)/osipsconsolerc; \
+ 			$(cfg_prefix)/$(cfg_dir)/osipsconsolerc.sample
+-		if [ ! -f $(cfg_prefix)/$(cfg_dir)/osipsconsolerc ]; then \
+-			mv -f $(cfg_prefix)/$(cfg_dir)/osipsconsolerc.sample \
+-				$(cfg_prefix)/$(cfg_dir)/osipsconsolerc; \
 -		fi
  
- install-console: $(bin-prefix)/$(bin-dir)
+ install-console: $(bin_prefix)/$(bin_dir)
  		# install osipsconsole
