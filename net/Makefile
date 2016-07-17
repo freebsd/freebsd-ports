@@ -1024,6 +1024,7 @@
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-txrestapi
+    SUBDIR += py-upnp-inspector
     SUBDIR += py-uritemplate
     SUBDIR += py-uritemplate.py
     SUBDIR += py-urllib3
