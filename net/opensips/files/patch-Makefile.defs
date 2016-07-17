@@ -1,4 +1,4 @@
---- Makefile.defs.orig	2015-08-27 15:06:47 UTC
+--- Makefile.defs.orig	2016-05-30 14:13:27 UTC
 +++ Makefile.defs
 @@ -118,6 +118,14 @@ ifeq ($(OS),solaris)
  		ISSMP ?= yes
@@ -21,10 +21,10 @@
  endif
 +endif
  
- OSREL = $(shell uname -r)
- # numerical version (good for comparisons: A.B.C => A*1000000+B*1000+C)
-@@ -162,6 +171,9 @@ cfg-dir = etc/$(MAIN_NAME)/
- bin-dir = sbin/
+ #set some vars from the environment (and not make builtins)
+ CC   := $(shell echo "$${CC}")
+@@ -308,6 +317,9 @@ cfg_dir = etc/$(MAIN_NAME)/
+ bin_dir = sbin/
  
  ARCH_B = $(shell echo $(ARCH) | sed -e 's/.*64.*/64b/')
 +ifeq ($(OS),freebsd)
@@ -33,11 +33,11 @@
  ifeq ($(ARCH_B),64b)
  	LIBDIR ?= lib64
  else
-@@ -169,6 +181,7 @@ else
+@@ -315,6 +327,7 @@ else
  	# assume 32b - it is not really used further
  	ARCH_B=32b
  endif
 +endif
  
- lib-dir = $(LIBDIR)/$(MAIN_NAME)
- modules-dir = $(LIBDIR)/$(MAIN_NAME)/modules/
+ lib_dir = $(LIBDIR)/$(MAIN_NAME)
+ modules_dir = $(LIBDIR)/$(MAIN_NAME)/modules/
