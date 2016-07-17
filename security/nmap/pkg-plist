@@ -171,6 +171,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/ssh1.lua
 %%DATADIR%%/nselib/ssh2.lua
 %%DATADIR%%/nselib/sslcert.lua
+%%DATADIR%%/nselib/sslv2.lua
 %%DATADIR%%/nselib/stdnse.lua
 %%DATADIR%%/nselib/strbuf.lua
 %%DATADIR%%/nselib/strict.lua
@@ -257,6 +258,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/citrix-enum-apps.nse
 %%DATADIR%%/scripts/citrix-enum-servers-xml.nse
 %%DATADIR%%/scripts/citrix-enum-servers.nse
+%%DATADIR%%/scripts/clamav-exec.nse
 %%DATADIR%%/scripts/couchdb-databases.nse
 %%DATADIR%%/scripts/couchdb-stats.nse
 %%DATADIR%%/scripts/creds-summary.nse
@@ -334,6 +336,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-affiliate-id.nse
 %%DATADIR%%/scripts/http-apache-negotiation.nse
 %%DATADIR%%/scripts/http-apache-server-status.nse
+%%DATADIR%%/scripts/http-aspnet-debug.nse
 %%DATADIR%%/scripts/http-auth-finder.nse
 %%DATADIR%%/scripts/http-auth.nse
 %%DATADIR%%/scripts/http-avaya-ipoffice-users.nse
@@ -380,11 +383,13 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-icloud-sendmsg.nse
 %%DATADIR%%/scripts/http-iis-short-name-brute.nse
 %%DATADIR%%/scripts/http-iis-webdav-vuln.nse
+%%DATADIR%%/scripts/http-internal-ip-disclosure.nse
 %%DATADIR%%/scripts/http-joomla-brute.nse
 %%DATADIR%%/scripts/http-litespeed-sourcecode-download.nse
 %%DATADIR%%/scripts/http-ls.nse
 %%DATADIR%%/scripts/http-majordomo2-dir-traversal.nse
 %%DATADIR%%/scripts/http-malware-host.nse
+%%DATADIR%%/scripts/http-mcmp.nse
 %%DATADIR%%/scripts/http-method-tamper.nse
 %%DATADIR%%/scripts/http-methods.nse
 %%DATADIR%%/scripts/http-mobileversion-checker.nse
@@ -674,6 +679,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ssl-heartbleed.nse
 %%DATADIR%%/scripts/ssl-known-key.nse
 %%DATADIR%%/scripts/ssl-poodle.nse
+%%DATADIR%%/scripts/sslv2-drown.nse
 %%DATADIR%%/scripts/sslv2.nse
 %%DATADIR%%/scripts/sstp-discover.nse
 %%DATADIR%%/scripts/stun-info.nse
@@ -708,6 +714,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/vmauthd-brute.nse
 %%DATADIR%%/scripts/vnc-brute.nse
 %%DATADIR%%/scripts/vnc-info.nse
+%%DATADIR%%/scripts/vnc-title.nse
 %%DATADIR%%/scripts/voldemort-info.nse
 %%DATADIR%%/scripts/vuze-dht-info.nse
 %%DATADIR%%/scripts/wdb-version.nse
