@@ -3,6 +3,7 @@
 
 PORTNAME=	cadabra2
 PORTVERSION=	2.0.816
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@rawbw.com
@@ -25,6 +26,7 @@ GH_ACCOUNT=	kpeeters
 GH_TAGNAME=	8258bfc
 
 BROKEN_FreeBSD_9=	does not build: fatal error: 'type_traits' file not found
+BROKEN_FreeBSD_10=	does not build: needs clang36, but detects system-clang
 GUI_BROKEN=	Builds but has a WebSockets communication problem in the runtime
 GUI_CONFLICTS_BUILD=	websocketpp-*
 
@@ -36,11 +38,6 @@ USE_TEX=	base
 USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
 GUI_INSTALLS_ICONS=	yes
-
-BUILD_DEPENDS+=	clang36:lang/clang36
-RUN_DEPENDS+=	clang36:lang/clang36
-CC=		clang36
-CXX=		clang++36
 
 CMAKE_ARGS+=	-DBOOST_ROOT=${LOCALBASE}
 CMAKE_ARGS+=	-DUSE_PYTHON_3:BOOL=OFF
