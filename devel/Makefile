@@ -4208,6 +4208,7 @@
     SUBDIR += py-logbook
     SUBDIR += py-logan
     SUBDIR += py-logilab-common
+    SUBDIR += py-louie
     SUBDIR += py-lxml
     SUBDIR += py-magic
     SUBDIR += py-manuel
