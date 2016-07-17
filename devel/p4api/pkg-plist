@@ -9,6 +9,7 @@ include/perforce/clientuser.h
 include/perforce/datetime.h
 include/perforce/debug.h
 include/perforce/diff.h
+include/perforce/diffmerge.h
 include/perforce/echoctl.h
 include/perforce/enviro.h
 include/perforce/error.h
@@ -22,6 +23,8 @@ include/perforce/ident.h
 include/perforce/ignore.h
 include/perforce/keepalive.h
 include/perforce/macfile.h
+include/perforce/macutil.h
+include/perforce/mangle.h
 include/perforce/mapapi.h
 include/perforce/md5.h
 include/perforce/msgclient.h
@@ -40,6 +43,7 @@ include/perforce/options.h
 include/perforce/p4tags.h
 include/perforce/pathsys.h
 include/perforce/runcmd.h
+include/perforce/serverhelperapi.h
 include/perforce/signaler.h
 include/perforce/spec.h
 include/perforce/stdhdrs.h
@@ -64,3 +68,4 @@ lib/perforce/libsupp.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Version
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clientuser.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/p4api.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/p4dvcsapi.cc
