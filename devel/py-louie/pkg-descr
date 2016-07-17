@@ -1,0 +1,7 @@
+Louie provides Python programmers with a straightforward way to dispatch
+signals between objects in a wide variety of contexts. It is based on
+PyDispatcher, which in turn was based on a highly-rated recipe in the
+Python Cookbook.
+
+WWW: http://cheeseshop.python.org/pypi/Louie/
+WWW: http://11craft.github.com/louie/
