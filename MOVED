@@ -8611,3 +8611,4 @@ devel/gmake-lite|devel/gmake|2016-07-08|No longer needed
 devel/capstone|devel/capstone3|2016-07-10|Moved to a numbered port name to make place for capstone4
 net-mgmt/unifi3|net-mgmt/unifi4|2016-07-10|Has expired: Unifi 3.x is EoL. Please upgrade to net-mgmt/unifi4
 net/lam||2016-07-12|Has expired: Broken for more than 6 months
+java/wildfly82||2016-07-17|Has expired: Fully EOL when version 10.0 was released

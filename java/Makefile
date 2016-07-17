@@ -122,7 +122,6 @@
     SUBDIR += veditor
     SUBDIR += visualvm
     SUBDIR += wildfly100
-    SUBDIR += wildfly82
     SUBDIR += wildfly90
     SUBDIR += xdoclet
 
