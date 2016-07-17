@@ -3,7 +3,7 @@
 
 PORTNAME=	elfutils
 PORTVERSION=	0.163
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/e/l/elfutils/$(PORTVERSION)/
 
@@ -27,8 +27,12 @@ NLS_CONFIGURE_ENABLE=	nls
 
 USES=		gmake libtool tar:bzip2
 USE_AUTOTOOLS=	automake:env
-USE_GCC=	4.9+
+USE_GCC=	4.8+
 GNU_CONFIGURE=	yes
+
+CFLAGS+=	-Wno-unused-parameter
+# Give i386 a prayer of building, and we can fix the warnings later:
+CFLAGS_i386+=	-Wno-error
 
 # Avoid conflict with binutils / elftoolchain programs with the same names:
 CONFIGURE_ARGS+=	--program-prefix=eu-
@@ -43,4 +47,10 @@ post-patch:
 pre-configure:
 	@cd $(WRKSRC) && ${AUTOMAKE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+IGNORE=		requires FreeBSD 10.0 (strchrnul)
+.endif
+
+.include <bsd.port.post.mk>
