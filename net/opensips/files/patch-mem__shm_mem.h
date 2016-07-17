@@ -1,4 +1,4 @@
---- mem/shm_mem.h.orig	2015-08-27 15:06:47 UTC
+--- mem/shm_mem.h.orig	2016-05-30 14:13:27 UTC
 +++ mem/shm_mem.h
 @@ -62,6 +62,7 @@
  	#endif
