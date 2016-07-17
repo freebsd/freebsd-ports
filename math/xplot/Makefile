@@ -20,12 +20,16 @@ PLIST_FILES=	bin/tcpdump2xplot bin/tcpdump2xplot.pl bin/xplot \
 		man/man1/tcpdump2xplot.1.gz \
 		man/man1/xplot.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/INSTALL/s|2xplot$$|2xplot.pl|' ${WRKSRC}/Makefile.in
 
 post-install:
 	${LN} -sf tcpdump2xplot.pl ${STAGEDIR}${PREFIX}/bin/tcpdump2xplot
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
