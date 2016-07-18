@@ -13,6 +13,8 @@ COMMENT=	Open source 3D space simulator
 
 LICENSE=	GPLv2
 
+BROKEN=		does not build (numerous C++ errors)
+
 RUN_DEPENDS=	${DATADIR}/vegastrike.ico:games/vegastrike-data
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
 		libexpat.so:textproc/expat2 \
