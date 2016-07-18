@@ -8,7 +8,8 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	jsmith@resonatingmedia.com
 COMMENT=	Mount a squashfs archive and treat it like a local file system
 
-LICENSE=	GPLv2
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vasi
