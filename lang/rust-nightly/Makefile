@@ -10,6 +10,8 @@ MAINTAINER=	dumbbell@FreeBSD.org
 
 ONLY_FOR_ARCHS=	amd64
 
+BROKEN=		does not build (no suitable checksum found for rustc-1.9.0-x86_64-unknown-freebsd.tar.gz)
+
 MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
