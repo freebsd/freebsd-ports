@@ -3,4 +3,4 @@ exFAT is a simple file system created by Microsoft. It is intended to
 replace FAT32 removing some of it's limitations. exFAT is a standard FS for
 SDXC memory cards.
 
-WWW: http://code.google.com/p/exfat/
+WWW: https://github.com/relan/exfat
