@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsonlite
-PORTVERSION=	0.9.22
+PORTVERSION=	1.0
 CATEGORIES=	converters
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,6 +11,6 @@ COMMENT=	Robust, High Performance JSON Parser and Generator for R
 
 LICENSE=	MIT
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>
