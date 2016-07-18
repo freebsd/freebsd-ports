@@ -17,7 +17,7 @@ NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
-do-test: extract
+do-test:
 	@(cd ${WRKSRC}; ${PYTHON_CMD} ${PORTNAME}.py \
 		--doctest --testsuite=testsuite)
 
