@@ -15,7 +15,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jsone.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jsx.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_poison.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_poison_compat_encoder.beam
-lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_poison_ord_encoder.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_poison_lexical_encoder.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_unsupported.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa_aes.beam
@@ -82,6 +82,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jwe.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jwk.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jws.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jwt.hrl
+lib/erlang/lib/erlang-jose-%%VERSION%%/priv/Dockerfile
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose.app.src
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_app.erl
@@ -99,7 +100,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jsone.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jsx.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_poison.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_poison_compat_encoder.erl
-lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_poison_ord_encoder.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_poison_lexical_encoder.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_unsupported.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa_aes.erl
