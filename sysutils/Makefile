@@ -340,6 +340,7 @@
     SUBDIR += fusefs-simple-mtpfs
     SUBDIR += fusefs-smbnetfs
     SUBDIR += fusefs-sqlfs
+    SUBDIR += fusefs-squashfuse
     SUBDIR += fusefs-sshfs
     SUBDIR += fusefs-unionfs
     SUBDIR += fusefs-wdfs
