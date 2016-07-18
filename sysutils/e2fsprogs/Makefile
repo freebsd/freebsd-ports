@@ -33,6 +33,16 @@ BUILD_DEPENDS+=	gdd:sysutils/coreutils
 
 PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
 
+OPTIONS_DEFINE=			PARALLELTESTS
+OPTIONS_SINGLE=			SELFTEST
+OPTIONS_SINGLE_SELFTEST=	NOTESTS SMALLTESTS ALLTESTS
+OPTIONS_DEFAULT=		SMALLTESTS
+SELFTEST_DESC=	Choose which set of self-tests to run
+NOTESTS_DESC=	Do not run any self-tests (DISCOURAGED)
+SMALLTESTS_DESC=Run sets that fit into 500 MB disk space (DEFAULT)
+ALLTESTS_DESC=	Run all self-tests
+PARALLELTESTS_DESC=	Run self-tests in parallel (requires more disk space)
+
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -45,23 +55,13 @@ PKGDEINSTALL=	${PKGINSTALL}
 MAKE_ARGS+=	V=1
 .endif
 
-OPTIONS_DEFINE=			PARALLELTESTS
-OPTIONS_SINGLE=			SELFTEST
-OPTIONS_SINGLE_SELFTEST=	NOTESTS SMALLTESTS ALLTESTS
-OPTIONS_DEFAULT=		SMALLTESTS
-SELFTEST_DESC=	Choose which set of self-tests to run
-NOTESTS_DESC=	Do not run any self-tests (DISCOURAGED)
-SMALLTESTS_DESC=Run sets that fit into 500 MB disk space (DEFAULT)
-ALLTESTS_DESC=	Run all self-tests
-PARALLELTESTS_DESC=	Run self-tests in parallel (requires more disk space)
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv:build
 .endif
 
-.if empty(PORT_OPTIONS:MNOTESTS)
+.if empty(PORT_OPTIONS:MNOTESTS) && ${MASTERDIR} == ${.CURDIR}
 USES+=		perl5
 USE_PERL5=	build
 .endif
