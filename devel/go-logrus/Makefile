@@ -3,6 +3,7 @@
 
 PORTNAME=	logrus
 PORTVERSION=	0.10.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
@@ -13,7 +14,6 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Sirupsen
-GH_TAGNAME=	v${PORTVERSION}
 USES=		go
 GO_PKGNAME=	github.com/Sirupsen/logrus
 

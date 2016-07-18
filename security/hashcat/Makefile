@@ -3,6 +3,7 @@
 
 PORTNAME=	hashcat
 PORTVERSION=	3.00
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
 MAINTAINER=	lifanov@mail.lifanov.com
@@ -17,8 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl \
 BROKEN_FreeBSD_9=	does not build
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	hashcat
-GH_TAGNAME=	v${PORTVERSION}
 
 ALL_TARGET=	native
 USES=		gmake localbase

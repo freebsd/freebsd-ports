@@ -3,6 +3,7 @@
 
 PORTNAME=	innotop
 PORTVERSION=	1.11.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	skreuzer@FreeBSD.org
@@ -17,9 +18,6 @@ BUILD_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	innotop
-GH_PROJECT=	innotop
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		perl5
 USE_PERL5=	configure
