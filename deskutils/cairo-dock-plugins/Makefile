@@ -5,7 +5,7 @@ PORTVERSION=	3.4.1
 PORTREVISION=	3
 CATEGORIES=	deskutils
 
-MAINTAINER=	fidaj@ukr.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 
 LICENSE=	GPLv3
