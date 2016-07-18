@@ -49,8 +49,8 @@ pre-configure:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
-IGNORE=		requires FreeBSD 10.0 (strchrnul)
+.if ${OSVERSION} < 1003000
+IGNORE=		requires FreeBSD 10.3 (futimens)
 .endif
 
 .include <bsd.port.post.mk>
