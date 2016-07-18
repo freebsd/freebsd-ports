@@ -499,6 +499,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/Event/Diag.pm
 %%PRIV_LIB%%/Test2/Event/Exception.pm
 %%PRIV_LIB%%/Test2/Event/Generic.pm
+%%PRIV_LIB%%/Test2/Event/Info.pm
 %%PRIV_LIB%%/Test2/Event/Note.pm
 %%PRIV_LIB%%/Test2/Event/Ok.pm
 %%PRIV_LIB%%/Test2/Event/Plan.pm
@@ -1353,6 +1354,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::Event::Diag.3.gz
 %%MAN3%%/Test2::Event::Exception.3.gz
 %%MAN3%%/Test2::Event::Generic.3.gz
+%%MAN3%%/Test2::Event::Info.3.gz
 %%MAN3%%/Test2::Event::Note.3.gz
 %%MAN3%%/Test2::Event::Ok.3.gz
 %%MAN3%%/Test2::Event::Plan.3.gz
