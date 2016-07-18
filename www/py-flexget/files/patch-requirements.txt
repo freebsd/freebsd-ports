@@ -1,0 +1,16 @@
+--- requirements.txt.orig	2016-07-15 06:12:13 UTC
++++ requirements.txt
+@@ -15,11 +15,11 @@ jinja2
+ # There is a bug in requests 2.4.0 where it leaks urllib3 exceptions
+ requests>=2.8.0, <3.0
+ #Guessit requires python-dateutil<=2.5.2
+-python-dateutil>=2.5.2
++python-dateutil<=2.5.2
+ jsonschema>=2.0
+ path.py>=8.1.1
+ pathlib>=1.0
+-guessit<=2.0.4
++guessit>=2.0.4
+ apscheduler>=3.2.0
+ # WebUI Requirements
+ cherrypy>=3.7.0
