@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20160718:
+  AFFECTS: users of www/awstats
+  AUTHOR: adamw@FreeBSD.org
+
+  The directory containing icons has changed from ".../icons" to ".../icon".
+  awstats has, in its suggested configuration file, contained an alias
+  from /awstatsicons. After applying the awstats-7.5 update, you must
+  update that alias to point to /usr/local/www/awstats/icon (just remove
+  the "s" at the end).
+
 20160708:
   AFFECTS: users of sysutils/screen
   AUTHOR: cy@FreeBSD.org
