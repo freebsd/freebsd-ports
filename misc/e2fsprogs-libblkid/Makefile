@@ -1,7 +1,7 @@
 # Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc devel
 PKGNAMESUFFIX=	-libblkid
 
@@ -12,7 +12,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 CONFIGURE_ARGS=	--enable-elf-shlibs
 
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
-MAKE_ARGS=	LIB_SUBDIRS=lib/blkid
+MAKE_ARGS=	LIB_SUBDIRS=lib/blkid LDFLAGS_SHLIB=-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 ALL_TARGET=	libs
 INSTALL_TARGET=	install install-shlibs
