@@ -3,6 +3,7 @@
 
 PORTNAME=	pllua
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3481/
 PKGNAMEPREFIX=	postgresql-
@@ -10,7 +11,9 @@ PKGNAMEPREFIX=	postgresql-
 MAINTAINER=	sunghyuk@gmail.com
 COMMENT=	PL/Lua procedural language for PostgreSQL database
 
-USES+=		gmake lua pgsql:9.1-
+LICENSE=	MIT
+
+USES=		gmake lua pgsql:9.1-
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
