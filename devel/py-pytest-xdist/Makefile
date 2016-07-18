@@ -29,6 +29,6 @@ post-extract:
 	${RM} -rf ${WRKSRC}/testing/__pycache__
 
 do-test:
-	@cd ${WRKSRC} && py.test
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.mk>

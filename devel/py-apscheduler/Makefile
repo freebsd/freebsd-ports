@@ -43,6 +43,6 @@ post-patch:
 		${WRKSRC}/tests/test_schedulers.py
 
 do-test:
-	@(cd ${TEST_WRKSRC}; ${SETENV} ${TEST_ENV} py.test)
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.post.mk>
