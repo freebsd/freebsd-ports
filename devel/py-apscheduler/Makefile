@@ -2,6 +2,7 @@
 
 PORTNAME=	apscheduler
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +14,7 @@ COMMENT=	In-process task scheduler with Cron-like capabilities
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.2:devel/py-tzlocal
@@ -33,7 +35,6 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/setup_requires/,/],/d' ${WRKSRC}/${PYSETUP}
 	@${REINPLACE_CMD} -e 's/ --cov//' ${WRKSRC}/${PYSETUP:R}.cfg
 	@${REINPLACE_CMD} -e 's/set_level/setLevel/' \
 		-e 's/\.records/&()/' \
