@@ -51,6 +51,10 @@ WITH_MPM?=		prefork # or worker, event, itk, peruser
 WITH_HTTP_PORT?=	80
 WITH_SSL_PORT?=		443
 
+.if !defined(WITH_DEBUG)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-server_buildmark.c
+.endif
+
 .include "${APACHEDIR}/Makefile.options"
 
 AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
