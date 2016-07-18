@@ -21,6 +21,7 @@ LIBS+=		-L${LOCALBASE}/lib
 
 SPOOL_DIR=	/var/spool/noffle
 PLIST_SUB+=	SPOOL_DIR=${SPOOL_DIR}
+SUB_FILES=	pkg-message
 
 DOCS=		ChangeLog docs/FAQ INSTALL docs/INTERNALS README \
 		docs/testing.txt docs/noffle.lsm
@@ -50,8 +51,5 @@ do-install:
 		${STAGEDIR}${SPOOL_DIR}/overview \
 		${STAGEDIR}${SPOOL_DIR}/requested
 
-
-post-install:
-	${SED} -e "s:/usr/local:${PREFIX}:g" ${PKGMESSAGE}
 
 .include <bsd.port.mk>

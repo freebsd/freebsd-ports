@@ -3,6 +3,7 @@
 
 PORTNAME=		visualworks
 PORTVERSION=		7.6
+PORTREVISION=		1
 CATEGORIES=		lang linux
 MASTER_SITES=		http://www.cincomsmalltalk.com/bsdports/${SUBDIR}.old/
 DISTFILES=		BaseVisualWorks.tar.gz \
@@ -27,6 +28,8 @@ OPTIONS_DEFINE=	ATOOLS COM DLLC DST DATABASE DOTNET CONTRIBUTED ARAGON COAST DOM
 		SEASIDE SILVERMARK GEMSTONE I18N OBSOLETE OPENTALK PLUGIN PREVIEW STORE  \
 		WEBAPP WEBSERVICES VMLINUX VMWINDOWS VMMAC VMSOLARIS VMAIX VMHPUX VMSGI
 OPTIONS_DEFAULT=	DLLC DATABASE SEASIDE STORE
+
+SUB_FILES=	pkg-message
 
 ATOOLS_DESC=	Advanced Tools
 COM_DESC=	COM
@@ -162,20 +165,5 @@ do-install:
 	@${ECHO_CMD} "${DATADIR}/bin/linux86/visual \$$*" >> ${WRKDIR}/${MY_STARTUP_SCRIPT}
 	@${INSTALL_SCRIPT} ${WRKDIR}/${MY_STARTUP_SCRIPT} ${STAGEDIR}${DATADIR}
 	@${LN} -s ${DATADIR}/${MY_STARTUP_SCRIPT} ${STAGEDIR}${PREFIX}/bin/visual
-
-post-install:
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} " --------------------------- Please note: ---------------------------"
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} "  To start using VisualWorks, copy the default image to your"
-	@${ECHO_MSG} "  home directory:"
-	@${ECHO_MSG} "    # ${CP} ${DATADIR}/image/visualnc.im ~"
-	@${ECHO_MSG} "  Make it writeable:"
-	@${ECHO_MSG} "    # ${CHMOD} u+w ~/visualnc.im"
-	@${ECHO_MSG} "  Then run it using:"
-	@${ECHO_MSG} "    # visual ~/visualnc.im"
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} " -------------------- Thanks for your attention! --------------------"
-	@${ECHO_MSG} " "
 
 .include <bsd.port.post.mk>
