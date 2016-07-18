@@ -1,6 +1,6 @@
 	ATTENTIONATTENTION:
 
-Please make sure that you read /usr/local/share/doc/clockspeed/INSTALL.
+Please make sure that you read %%PREFIX%%/share/doc/clockspeed/INSTALL.
 It contains important information about testing and configuring
 clockspeed, and finally installing it in your system.
 
@@ -15,13 +15,13 @@ PR ports/27617.
 1) killall clockspeed (you can't have it running)
 2) sntpclock IP.OF.NTP.SERVER | clockadd
 3) enable/start clockspeed :
-	% cp /usr/local/etc/rc.d/clockspeed.sh.sample \
-	  /usr/local/etc/rc.d/clockspeed.sh
+	% cp %%PREFIX%%/etc/rc.d/clockspeed.sh.sample \
+	  %%PREFIX%%/etc/rc.d/clockspeed.sh
 	# enable clockspeed to automagically start next
 	# time you reboot. do this after testing everything
-	% /usr/local/etc/rc.d/clockspeed.sh start
+	% %%PREFIX%%/etc/rc.d/clockspeed.sh start
 	# start clockspeed now
-4) sntpclock IP.OF.NTP.SERVER > /usr/local/etc/clockspeed/adjust
+4) sntpclock IP.OF.NTP.SERVER > %%PREFIX%%/etc/clockspeed/adjust
 5) cd /usr/src/share/zoneinfo
 6) make -DLEAPSECONDS clean all install ; make clean
 
