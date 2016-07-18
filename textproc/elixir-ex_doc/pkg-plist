@@ -24,13 +24,7 @@ lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates.ex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/api_reference_entry_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/api_reference_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/detail_template.eex
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-21f1a20b9e.js
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-88251e7c81.css
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/extra_template.eex
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/fonts/icomoon.eot
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/fonts/icomoon.svg
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/fonts/icomoon.ttf
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/fonts/icomoon.woff
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/footer_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/head_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/module_template.eex
@@ -47,4 +41,10 @@ lib/elixir/lib/ex_doc/lib/ex_doc/markdown/hoedown.ex
 lib/elixir/lib/ex_doc/lib/ex_doc/markdown/pandoc.ex
 lib/elixir/lib/ex_doc/lib/ex_doc/retriever.ex
 lib/elixir/lib/ex_doc/lib/mix/tasks/docs.ex
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/templates/dist/app-21f1a20b9e.js
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/templates/dist/app-9c1e3d5aa2.css
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/templates/fonts/icomoon.eot
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/templates/fonts/icomoon.svg
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/templates/fonts/icomoon.ttf
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/templates/fonts/icomoon.woff
 %%PORTDOCS%%%%DOCSDIR%%/README.md
