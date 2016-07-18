@@ -13,6 +13,8 @@ COMMENT=	NetBIOS auditing tool
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not fetch
+
 RESTRICTED=	Redistribution prohibited by the license
 
 IA32_BINARY_PORT=yes
