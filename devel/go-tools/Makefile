@@ -11,6 +11,8 @@ COMMENT=	Go Tools
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		does not build (cannot find package "golang.org/x/net/html")
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
 GH_TAGNAME=	35c6e68a1a5ffc3e3afef71586710e9b0515582d
