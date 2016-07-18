@@ -1,7 +1,11 @@
 lib/erlang/lib/ssl_verify_fun-%%VERSION%%/ebin/ssl_verify_fingerprint.beam
 lib/erlang/lib/ssl_verify_fun-%%VERSION%%/ebin/ssl_verify_fun.app
 lib/erlang/lib/ssl_verify_fun-%%VERSION%%/ebin/ssl_verify_hostname.beam
+lib/erlang/lib/ssl_verify_fun-%%VERSION%%/ebin/ssl_verify_pk.beam
+lib/erlang/lib/ssl_verify_fun-%%VERSION%%/ebin/ssl_verify_util.beam
 lib/erlang/lib/ssl_verify_fun-%%VERSION%%/src/ssl_verify_fingerprint.erl
 lib/erlang/lib/ssl_verify_fun-%%VERSION%%/src/ssl_verify_fun.app.src
 lib/erlang/lib/ssl_verify_fun-%%VERSION%%/src/ssl_verify_hostname.erl
+lib/erlang/lib/ssl_verify_fun-%%VERSION%%/src/ssl_verify_pk.erl
+lib/erlang/lib/ssl_verify_fun-%%VERSION%%/src/ssl_verify_util.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
