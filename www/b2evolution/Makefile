@@ -30,6 +30,9 @@ WARNING=	${PKGDIR}/pkg-warning
 OPTIONS_DEFINE=	MYSQL
 OPTIONS_DEFAULT=	MYSQL
 
+SUB_FILES=	pkg-message
+SUB_LIST+=	B2EVO_DIR=${B2EVO_DIR} B2EVO_URL=${B2EVO_URL}
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -53,10 +56,5 @@ do-install:
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/${B2EVO_DIR}
 	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${B2EVO_DIR}
 	@${CHMOD} 665 ${STAGEDIR}${PREFIX}/${B2EVO_DIR}/blogs/conf/_config.php
-
-post-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
-		-e 's|%%B2EVO_DIR%%|${B2EVO_DIR}|; s|%%B2EVO_URL%%|${B2EVO_URL}|' \
-		${PKGMESSAGE}
 
 .include <bsd.port.mk>

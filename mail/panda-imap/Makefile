@@ -3,6 +3,7 @@
 
 PORTNAME=	panda-imap
 PORTVERSION=	20130621
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -31,6 +32,7 @@ ALL_TARGET=	bsf
 
 OPTIONS_DEFINE=	SSL SSL_AND_PLAINTEXT DRAC NETSCAPE_BRAIN_DAMAGE DOCS
 OPTIONS_DEFAULT=	SSL
+OPTIONS_SUB=	yes
 SSL_DESC=		Compile with SSL support
 SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
 DRAC_DESC=		Dynamically open MTA for relaying
@@ -92,32 +94,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${STAGEDIR}${PREFIX}/man/man1/
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-.if ${PORT_OPTIONS:MDRAC}
-	@${ECHO} "================================================================================"
-	@${ECHO} "To have DRAC working, you must create ${PREFIX}/etc/dracd.host, containing"
-	@${ECHO} "the hostname of the DRAC server:"
-	@${ECHO}
-	@${ECHO} "localhost"
-	@${ECHO} "================================================================================"
-.endif
-.if ${PORT_OPTIONS:MSSL}
-	@${ECHO}
-	@${ECHO} "To create and install a new SSL certificate for imapd and ipop3d, type \"make"
-	@${ECHO} "cert\". Or install manually in ${PREFIX}/certs."
-	@${ECHO}
-	@${ECHO} "Example inetd config for SSL only services:"
-	@${ECHO}
-	@${ECHO} "pop3s   stream  tcp     nowait  root    ${PREFIX}/libexec/ipop3d       ipop3d"
-	@${ECHO} "imaps   stream  tcp     nowait  root    ${PREFIX}/libexec/imapd        imapd"
-	@${ECHO} "================================================================================"
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} -m 0755 -p ${STAGEDIR}${DOCSDIR}
 	${TAR} -C ${WRKSRC}/docs -cf - . | \
 		(umask 022; ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -)
-.endif
 
 cert:
 	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/certs
