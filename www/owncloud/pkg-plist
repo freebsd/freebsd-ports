@@ -1,5 +1,5 @@
-@(,,644) %%WWWDIR%%/.htaccess
-@(,,644) %%WWWDIR%%/.user.ini
+@(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,664) %%WWWDIR%%/.htaccess
+@(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,664) %%WWWDIR%%/.user.ini
 %%WWWDIR%%/3rdparty/.gitignore
 %%WWWDIR%%/3rdparty/LICENSE INFO
 %%WWWDIR%%/3rdparty/README.md
