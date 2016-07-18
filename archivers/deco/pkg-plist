@@ -6,6 +6,7 @@ bin/deco
 %%DATADIR%%/ace|[c0-9][0-9]{2}/permissions
 %%DATADIR%%/alz/extract
 %%DATADIR%%/ape/extract
+%%DATADIR%%/apk
 %%DATADIR%%/ar
 %%DATADIR%%/arc/extract
 %%DATADIR%%/arj/extract

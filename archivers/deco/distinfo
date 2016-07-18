@@ -1,4 +1,5 @@
-SHA256 (deco-1.6.3.tar.gz) = 18caa51d3a967076a93d4f287f70071cc40c06eb68cc7f663e9ce3269ddad6f5
-SIZE (deco-1.6.3.tar.gz) = 11540
-SHA256 (deco-archive-1.6.tar.gz) = 128253a1b232ac10993d7a20b6cb31dfc1f4ad9d9015b0483a33fb6ea558844d
-SIZE (deco-archive-1.6.tar.gz) = 4682
+TIMESTAMP = 1468823216
+SHA256 (peha-deco-1.6.4_GH0.tar.gz) = 6139b3efbe9df995ea0bb4506ba2edc00398d0dff6ba2728a1148366208cfdb7
+SIZE (peha-deco-1.6.4_GH0.tar.gz) = 23150
+SHA256 (peha-deco-archive-1.7_GH0.tar.gz) = 280a9cf4df8f0a5fe5eb390870c791d3d2cf831b1397a3e4734366f112514ce1
+SIZE (peha-deco-archive-1.7_GH0.tar.gz) = 17617
