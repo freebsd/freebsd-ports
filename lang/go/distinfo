@@ -1,2 +1,3 @@
-SHA256 (go1.6.2.src.tar.gz) = 787b0b750d037016a30c6ed05a8a70a91b2e9db4bd9b1a2453aa502a63f1bccc
-SIZE (go1.6.2.src.tar.gz) = 12617724
+TIMESTAMP = 1468864454
+SHA256 (go1.6.3.src.tar.gz) = 6326aeed5f86cf18f16d6dc831405614f855e2d416a91fd3fdc334f772345b00
+SIZE (go1.6.3.src.tar.gz) = 12617426
