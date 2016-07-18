@@ -76,6 +76,6 @@ do-test:
 .if ${PYTHON_REL} >= 3000
 	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/test
 .endif
-	@cd ${WRKSRC} && py.test
+	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.post.mk>
