@@ -29,7 +29,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
-do-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

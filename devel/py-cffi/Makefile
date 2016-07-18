@@ -23,7 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-do-test: patch
+do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		${PYDISTUTILS_SETUP} build_ext -i)
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
