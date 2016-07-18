@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	awstats
-PORTVERSION=	7.4
+PORTVERSION=	7.5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 LICENSE=	GPLv3
@@ -19,78 +19,62 @@ USES=		cpe dos2unix perl5 shebangfix
 CPE_VENDOR=	laurent_destailleur
 
 SHEBANG_FILES=	tools/*.pl wwwroot/cgi-bin/*.pl wwwroot/cgi-bin/plugins/*.pm
+DOS2UNIX_GLOB=	*.xml *.pm
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_PERL5=	run
-DOS2UNIX_GLOB=	tools/*.pl \
-		wwwroot/cgi-bin/awstats.model.conf \
-		wwwroot/cgi-bin/*.pl \
-		wwwroot/cgi-bin/lang/tooltips_f/*.txt \
-		wwwroot/cgi-bin/lang/tooltips_m/*.txt \
-		wwwroot/cgi-bin/lang/tooltips_w/*.txt \
-		wwwroot/cgi-bin/lang/*.txt \
-		wwwroot/cgi-bin/lib/* \
-		wwwroot/cgi-bin/plugins/*.pm \
-		wwwroot/cgi-bin/plugins/example/* \
-		wwwroot/css/* \
-		wwwroot/js/*
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS IPV6
+OPTIONS_RADIO=	GEO
 
+OPTIONS_RADIO_GEO=	GEOIP GEOIPFREE
+GEO_DESC=	Identify country of source IPs
+GEOIP_DESC=	Country lookups via Geo::IP
+GEOIPFREE_DESC=	Country lookups via Geo::IPfree
+
+GEOIP_RUN_DEPENDS=	p5-Geo-IP>=0:net/p5-Geo-IP
+GEOIPFREE_RUN_DEPENDS=	p5-Geo-IPfree>=0:net/p5-Geo-IPfree
 IPV6_RUN_DEPENDS=	p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 			p5-Net-DNS>=0:dns/p5-Net-DNS
 
+pre-patch:
+# This file is so messed up, not even dos2unix can fix it
+	@fixme="${WRKSRC}/wwwroot/cgi-bin/plugins/export_to_csv.pm" && \
+		${TR} '\r' '\n' < $$fixme > $$fixme.new && \
+		${MV} $$fixme.new $$fixme
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/tools/awstats_buildstaticpages.pl \
-		${WRKSRC}/tools/awstats_configure.pl \
-		${WRKSRC}/tools/awstats_updateall.pl \
-		${WRKSRC}/wwwroot/cgi-bin/awstats.pl
+	@${REINPLACE_CMD} -E -e 's|/usr/local/etc/awstats|${ETCDIR}|' \
+			-e 's|/etc/awstats/(awstats.model.conf)|${ETCDIR}/\1|' \
+			-e 's,/usr/(local|share)/awstats/wwwroot,${WWWDIR},' \
+		${WRKSRC}/tools/*.pl \
+		${WRKSRC}/tools/httpd_conf \
+		${WRKSRC}/tools/nginx/* \
+		${WRKSRC}/wwwroot/cgi-bin/*.pl \
+		${WRKSRC}/wwwroot/cgi-bin/*.conf
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+			-e 's|%%WWWDIR%%|${WWWDIR}|' \
+			-e 's|AWSTATS_PATH/wwwroot|AWSTATS_PATH|' \
+		${WRKSRC}/tools/awstats_configure.pl
+
+pre-install:
+.for f in dolibarr httpd_conf nginx webmin
+	@${MV} ${WRKSRC}/tools/$f ${WRKSRC}/docs
+.endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/tools/webmin
-	(cd ${WRKSRC}/tools && ${INSTALL_SCRIPT} awstats_buildstaticpages.pl \
-		awstats_configure.pl awstats_exportlib.pl awstats_updateall.pl \
-		logresolvemerge.pl maillogconvert.pl urlaliasbuilder.pl \
-		${STAGEDIR}${WWWDIR}/tools)
-	(cd ${WRKSRC}/tools && ${COPYTREE_SHARE} xslt ${STAGEDIR}${WWWDIR}/tools)
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin
-	(cd ${WRKSRC}/wwwroot/cgi-bin && ${INSTALL_SCRIPT} awredir.pl awstats.pl \
-		awstats.model.conf ${STAGEDIR}${WWWDIR}/cgi-bin)
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin/lang/tooltips_f
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_f/*.txt \
-		${STAGEDIR}${WWWDIR}/cgi-bin/lang/tooltips_f
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin/lang/tooltips_m
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_m/*.txt \
-		${STAGEDIR}${WWWDIR}/cgi-bin/lang/tooltips_m
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin/lang/tooltips_w
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_w/*.txt \
-		${STAGEDIR}${WWWDIR}/cgi-bin/lang/tooltips_w
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/*.txt \
-		${STAGEDIR}${WWWDIR}/cgi-bin/lang
-	(cd ${WRKSRC}/wwwroot/cgi-bin && ${COPYTREE_SHARE} lib \
-		${STAGEDIR}${WWWDIR}/cgi-bin)
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/*.pm \
-		${STAGEDIR}${WWWDIR}/cgi-bin/plugins
-	(cd ${WRKSRC}/wwwroot/cgi-bin/plugins && ${COPYTREE_SHARE} example \
-		${STAGEDIR}${WWWDIR}/cgi-bin/plugins)
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/classes
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/classes/awgraphapplet.jar \
-		${STAGEDIR}${WWWDIR}/classes
-	(cd ${WRKSRC}/wwwroot && ${COPYTREE_SHARE} "js css" ${STAGEDIR}${WWWDIR})
-	(cd ${WRKSRC}/wwwroot/icon && ${COPYTREE_SHARE} "browser clock cpu \
-		flags mime os other" ${STAGEDIR}${WWWDIR}/icons)
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} tools ${STAGEDIR}${WWWDIR})
+	(cd ${WRKSRC}/wwwroot && ${COPYTREE_SHARE} "cgi-bin css icon js" ${STAGEDIR}${WWWDIR})
 
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "* Use ${WWWDIR}/tools/awstats_configure.pl to setup your hosts."
-	@${ECHO_CMD} ""
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/classes
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/classes/awgraphapplet.jar ${STAGEDIR}${WWWDIR}/classes
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR})
-	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
