@@ -30,6 +30,12 @@ MAKE_ARGS+=	ARCH=arm \
 		PLAT=sun50iw1p1 \
 		CONFIG_EFI=y
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+IGNORE=		requires FreeBSD 10 or later
+.endif
+
 post-extract:
 	(cd ${WRKSRC}; ${EXTRACT_CMD} xvf ${DISTDIR}/firmware-pine64-20160329-6.1.src.rpm)
 	${RM} -fr ${WRKSRC}/arm-trusted-firmware
@@ -50,4 +56,4 @@ do-install:
 	${CP} ${WRKSRC}/pine64.img ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/
 	${CP} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
