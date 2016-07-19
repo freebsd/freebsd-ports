@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${file}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/jdresolve
 .for i in ${DOC1}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/share/doc/jdresolve

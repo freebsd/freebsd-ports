@@ -167,8 +167,6 @@ do-install:
 	${INSTALL_MAN} ${LDAP_README} ${STAGEDIR}${DOCSDIR}
 .endif
 .endif
-
-post-install:
 .if ${SUBSYS} == client
 	${INSTALL_SCRIPT} ${WRKSRC}/client/scripts/freebsd ${STAGEDIR}${PREFIX}/sbin/dhclient-script
 .elif ${SUBSYS} == server

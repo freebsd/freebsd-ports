@@ -54,7 +54,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/nvram_export.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/hypervisor_mode.7 ${STAGEDIR}${MANPREFIX}/man/man7
 
-post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in README README.hypervisor RELEASE-NOTES ChangeLog MAINTAINERS
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

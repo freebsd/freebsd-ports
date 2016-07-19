@@ -39,7 +39,7 @@ do-install:
 .endfor
 	@${CP} ${WRKSRC}/welcome-to-nb.txt ${STAGEDIR}${DATADIR}
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in COPYING ChangeLog README TODO copyright
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}

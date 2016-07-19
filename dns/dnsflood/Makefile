@@ -27,7 +27,7 @@ pre-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dns_flood_detector ${STAGEDIR}${PREFIX}/sbin
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}

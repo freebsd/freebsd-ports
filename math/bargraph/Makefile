@@ -26,9 +26,10 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bargraph.pl ${STAGEDIR}${PREFIX}/bin/bargraph
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} ${WRKSRC}/samples/*.perf  ${WRKSRC}/samples/*.png ${STAGEDIR}${EXAMPLESDIR}
 

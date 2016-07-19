@@ -79,7 +79,7 @@ do-install:
 	@${ECHO} "Installed mysql shared library in ${MYSQL_PLUGIN_DIR}"
 .endif
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/mysql
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pgsql
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/examples

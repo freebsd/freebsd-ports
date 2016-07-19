@@ -48,11 +48,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/forrest ${STAGEDIR}${DATADIR}/bin/forrest
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/ant/bin/ant ${STAGEDIR}${DATADIR}/tools/ant/bin/ant
 	@${LN} -sf ../${DATADIR_REL}/bin/forrest ${STAGEDIR}${PREFIX}/bin/forrest
-
-post-install:
 	@cd ${STAGEDIR}${PLUGINSDIR}; \
-	${SETENV} FORREST_HOME=${STAGEDIR}${DATADIR} ${ANT} ${ANT_TARGET}; \
-	${SED} -e "/%%DATADIR%%/s//${DATADIR:S/\//\\\//g}/g" \
-		-e "/%%PORTVERSION%%/s//${PORTVERSION}/g" ${PKGMESSAGE};
+	${SETENV} FORREST_HOME=${STAGEDIR}${DATADIR} ${ANT} ${ANT_TARGET}
 
 .include <bsd.port.mk>

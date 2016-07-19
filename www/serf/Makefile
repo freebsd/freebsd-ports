@@ -58,7 +58,7 @@ post-patch:
 		-e '/^Libs.private/s|$$| -L${OPENSSLLIB} -lssl -lcrypto|' \
 		${WRKSRC}/build/serf.pc.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/design-guide.txt ${STAGEDIR}${DOCSDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libserf-1.so

@@ -35,8 +35,6 @@ do-install:
 .for i in benc.h bitset.h bterror.h btmessage.h bts.h context.h peer.h random.h segmenter.h strbuf.h stream.h types.h util.h
 	${INSTALL_DATA} ${WRKSRC}/include/${i} ${STAGEDIR}${PREFIX}/include/libbt
 .endfor
-
-post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}

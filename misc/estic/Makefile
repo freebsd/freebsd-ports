@@ -97,8 +97,6 @@ do-install:
 	${TOUCH} ${PBX_ETC}/config ${PBX_VAR}/debug
 	${CHMOD} 600 ${PBX_VAR}/debug ${PBX_ETC}/config
 	${CHMOD} 700 ${PBX_VAR} # estic will create ./1996.11 etc
-
-post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " Suggestion, try:	make demo"
 

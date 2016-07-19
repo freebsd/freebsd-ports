@@ -63,7 +63,7 @@ check regression-test test: build
 
 PORTDOCS=	Changes.html Descriptor.html Options.html Readme.html SpecType.html
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc; ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

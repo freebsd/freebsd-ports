@@ -28,7 +28,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 
-post-install:
 .if !defined(BATCH)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "###############################################################################"

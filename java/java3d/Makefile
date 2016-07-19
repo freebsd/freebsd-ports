@@ -28,8 +28,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e "s/gcc/${CC}/g" \
 		${WRKSRC}/j3d-core/src/native/ogl/build-freebsd.xml
@@ -41,12 +39,12 @@ do-build:
 						-Dis${OPSYS}=yes \
 						-Dports.localbase=${LOCALBASE} \
 						jar-opt
-.if ${PORT_OPTIONS:MDOCS}
+
+post-build-DOCS-on:
 	cd ${WRKSRC}/j3d-core \
 		&& ${SETENV} ${MAKE_ENV} ${ANT} -Dbuild.type=fcs \
 						-Dis${OPSYS}=yes \
 						docs-public
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVA_HOME}/jre/lib/ext
@@ -60,10 +58,8 @@ do-install:
 		${WRKSRC}/j3d-core/build/default/opt/native/libj3dcore-ogl.so \
 		${STAGEDIR}${JAVA_HOME}/jre/lib/${ARCH}
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${DOCSSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

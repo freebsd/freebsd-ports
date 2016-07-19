@@ -113,8 +113,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/share/* ${STAGEDIR}${DATADIR}
 
-# Install modules and add to plist
-post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules
 	for m in $$(${SETENV} ${MAKE_ENV} ${MAKE_CMD} -sC ${WRKSRC} ${MAKE_ARGS} showmodules); \
 	do ${INSTALL_LIB} ${WRKSRC}/$$m.so \

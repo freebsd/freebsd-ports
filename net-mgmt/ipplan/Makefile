@@ -57,7 +57,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
-post-install:
 	# make /var dirs
 	${MKDIR} ${STAGEDIR}/var/spool/ipplan/dhcpexport
 	${MKDIR} ${STAGEDIR}/var/spool/ipplan/exportdns

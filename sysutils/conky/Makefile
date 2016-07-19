@@ -128,8 +128,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/conky.1 ${STAGEDIR}${MANPREFIX}/man/man1
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${EXAMPLE_CONF_FILE} ${STAGEDIR}${EXAMPLESDIR}/conkyrc.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

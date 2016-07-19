@@ -57,7 +57,6 @@ DOCS_VARS=		RUBY_SETUP_OPTIONS="--destdir=${STAGEDIR}"
 do-install:
 	cd ${WRKSRC}/ && ${SETENV} ${GEM_ENV} ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
 
-post-install:
 	@${LN} -sf gem${RUBY_VER_SHORT} ${STAGEDIR}${PREFIX}/bin/gem
 
 #

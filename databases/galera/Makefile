@@ -198,14 +198,12 @@ do-install:
 		${FIND} -H -s man/man*/ -maxdepth 1 -type f -print | \
 		${SED} 's|$$|.gz|' >> ${TMPPLIST}
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR4}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	(cd ${DOCSRCDIR2} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${DOC_FILES3:S|^|${DOCSRCDIR3}/|} ${STAGEDIR}${DOCSDIR3}
 	${INSTALL_DATA} ${DOC_FILES4:S|^|${DOCSRCDIR4}/|} ${STAGEDIR}${DOCSDIR4}
 	${INSTALL_DATA} ${DOC_FILES5:S|^|${DOCSRCDIR5}/|} ${STAGEDIR}${DOCSDIR5}
-.endif
 
 .include <bsd.port.post.mk>

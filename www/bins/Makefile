@@ -53,7 +53,6 @@ post-patch::
 do-install:
 	@${SETENV} LOCALE=${PREFIX}/share/locale DESTDIR=${STAGEDIR} PREFIX=${PREFIX} RC=${PREFIX}/share/bins ${WRKSRC}/install.sh
 
-post-install:
 .for file in ${BINS_SCRIPTS}
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor

@@ -35,8 +35,6 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${SH} install.sh ${STAGEDIR}${PREFIX}
-
-post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nim
 
 .include <bsd.port.post.mk>

@@ -213,7 +213,6 @@ do-install:
 	(cd ${STAGEDIR}${PREFIX}/${PORTNAME}/webapps/ && \
 		${LN} -sf openemm/assets openemmassets)
 
-post-install:
 	# as needed from Running Q/A tests (stage-qa)
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/bav
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/smctrl

@@ -58,7 +58,6 @@ do-install:
 	${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man1/ "! -name mma-libdoc.8" && \
 	${INSTALL_MAN} mma-libdoc.8 ${STAGEDIR}${MANPREFIX}/man/man8/)
 
-post-install:
 	# update mma library (mma -g) to use ${DATADIR} path
 	@(cd ${STAGEDIR}${DATADIR} && \
 	${PYTHON_CMD} ${WRKDIR}/mma_g.py)

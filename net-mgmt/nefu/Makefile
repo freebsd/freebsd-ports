@@ -55,8 +55,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/nefu.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/nefu.conf.4 ${STAGEDIR}${PREFIX}/man/man4
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${DBDIR}
 
 .include <bsd.port.mk>

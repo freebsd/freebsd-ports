@@ -75,7 +75,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libf2c/libf2c.so.2 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libf2c.so.2 ${STAGEDIR}${PREFIX}/lib/libf2c.so
 
-post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

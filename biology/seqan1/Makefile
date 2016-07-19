@@ -3,7 +3,7 @@
 
 PORTNAME=	seqan
 PORTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.seqan.de/releases/
 PKGNAMESUFFIX=	1
@@ -19,12 +19,14 @@ NO_BUILD=	yes
 
 CONFLICTS=	seqan-[2-9]*
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/include/${PORTNAME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ./${PORTNAME} ${STAGEDIR}/${PREFIX}/include
 	cd ${WRKSRC} && ${INSTALL_DATA} ./${PORTNAME}.h ${STAGEDIR}/${PREFIX}/include
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} ./ ${STAGEDIR}${DOCSDIR}
 

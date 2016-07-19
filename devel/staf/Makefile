@@ -165,6 +165,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${INSTALL_WRKSRC}/samples && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	${MKDIR} ${STAGEDIR}${STAF_VAR_DIR}
 
 do-install-DOCS-on:
 	[ -d ${INSTALL_WRKSRC}/docs/staf ] && \
@@ -216,8 +217,5 @@ do-install-PYTHON-on:
 	${INSTALL_LIB} ${INSTALL_WRKSRC}/lib/python${PYTHON_SUFFIX}/PYSTAF.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 	${ECHO} ${PORTNAME} > ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}.pth
-
-post-install:
-	${MKDIR} ${STAGEDIR}${STAF_VAR_DIR}
 
 .include <bsd.port.post.mk>

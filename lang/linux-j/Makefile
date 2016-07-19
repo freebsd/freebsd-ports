@@ -41,7 +41,6 @@ do-install:
 	${BRANDELF} -t Linux ${WRKSRC}/j${PORTVERSION:S/b//g}/jconsole
 	${INSTALL_PROGRAM} ${WRKSRC}/j${PORTVERSION:S/b//g}/jconsole ${STAGEDIR}${PREFIX}/lib/j/jconsole
 
-post-install:
 	${MV} ${STAGEDIR}${PREFIX}/man/man1/jconsole.1 ${STAGEDIR}${PREFIX}/man/man1/j-jconsole.1
 
 .include <bsd.port.mk>
