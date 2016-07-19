@@ -20,7 +20,7 @@ include/quagga/md5.h
 include/quagga/memory.h
 include/quagga/memtypes.h
 include/quagga/network.h
-%%OSPF_OPAQUE_LSA%%include/quagga/ospfapi/ospf_apiclient.h
+include/quagga/ospfapi/ospf_apiclient.h
 include/quagga/ospfd/ospf_api.h
 include/quagga/ospfd/ospf_asbr.h
 include/quagga/ospfd/ospf_dump.h
@@ -56,10 +56,10 @@ lib/libospf.a
 lib/libospf.so
 lib/libospf.so.0
 lib/libospf.so.0.0.0
-%%OSPF_OPAQUE_LSA%%lib/libospfapiclient.a
-%%OSPF_OPAQUE_LSA%%lib/libospfapiclient.so
-%%OSPF_OPAQUE_LSA%%lib/libospfapiclient.so.0
-%%OSPF_OPAQUE_LSA%%lib/libospfapiclient.so.0.0.0
+lib/libospfapiclient.a
+lib/libospfapiclient.so
+lib/libospfapiclient.so.0
+lib/libospfapiclient.so.0.0.0
 lib/libzebra.a
 lib/libzebra.so
 lib/libzebra.so.0
@@ -68,7 +68,7 @@ man/man1/vtysh.1.gz
 man/man8/bgpd.8.gz
 %%ISISD%%man/man8/isisd.8.gz
 man/man8/ospf6d.8.gz
-%%OSPF_OPAQUE_LSA%%man/man8/ospfclient.8.gz
+man/man8/ospfclient.8.gz
 man/man8/ospfd.8.gz
 %%PIMD%%man/man8/pimd.8.gz
 man/man8/ripd.8.gz
@@ -78,7 +78,7 @@ man/man8/zebra.8.gz
 sbin/bgpd
 %%ISISD%%sbin/isisd
 sbin/ospf6d
-%%OSPF_OPAQUE_LSA%%sbin/ospfclient
+sbin/ospfclient
 sbin/ospfd
 %%PIMD%%sbin/pimd
 sbin/ripd
