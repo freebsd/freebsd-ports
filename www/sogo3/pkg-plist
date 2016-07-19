@@ -1538,6 +1538,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgAvatarImage.directive.
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgCheckmark.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgColorPicker.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgCompile.directive.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgDatepickerReadonlyInput.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgEnter.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgEscape.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgFocus.directive.js
