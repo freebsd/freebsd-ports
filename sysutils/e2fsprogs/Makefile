@@ -135,7 +135,7 @@ post-patch::
 .endif
 .endif
 
-.if ${OSVERSION} > 1100000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 BROKEN=self-test failures on FreeBSD 11+ hint to data corruption issues.
 .endif
 
