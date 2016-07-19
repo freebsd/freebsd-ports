@@ -29,7 +29,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0b1
+ISCVERSION=	9.11.0b2
 
 MAKE_JOBS_UNSAFE=	yes
 
