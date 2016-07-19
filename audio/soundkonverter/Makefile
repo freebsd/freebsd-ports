@@ -3,6 +3,7 @@
 
 PORTNAME=	soundkonverter
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio kde
 
@@ -20,7 +21,6 @@ USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 USE_QT4=	corelib dbus gui network moc_build qmake_build rcc_build svg uic_build xml
 USE_KDE4=	automoc4 kdelibs libkcddb
-INSTALLS_ICONS=	yes
 WRKSRC_SUBDIR=	src
 
 OPTIONS_DEFAULT=	VORBIS FLAC NORMALIZE VORBISGAIN CDPARANOIA

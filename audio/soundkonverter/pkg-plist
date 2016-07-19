@@ -1,4 +1,4 @@
-%%QT_BINDIR%%/soundkonverter
+bin/soundkonverter
 lib/kde4/soundkonverter_codec_aften.so
 lib/kde4/soundkonverter_codec_faac.so
 lib/kde4/soundkonverter_codec_ffmpeg.so
