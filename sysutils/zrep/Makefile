@@ -1,30 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	zrep
-PORTVERSION=	1.0.1
+PORTVERSION=	1.6.1
+DISTVERSIONPREFIX= v
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.bolthole.com/solaris/zrep/ \
-		http://www.bsdstore.ru/downloads/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	ZFS based replication and failover solution
 
+LICENSE=	bolthole
+LICENSE_NAME=	bolthole
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
+
 RUN_DEPENDS=	ksh93:shells/ksh93
+
+USE_GITHUB=     yes
+GH_ACCOUNT=     bolthole
 
 PLIST_FILES=	bin/zrep
 
 NO_BUILD=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|#!/bin/ksh -p|#!${PREFIX}/bin/ksh93 -p|' ${WRKSRC}/zrep
-
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} -p ${DISTDIR}/${PORTNAME} ${WRKSRC}
+	@${REINPLACE_CMD} -e 's|#!/bin/ksh -p|#!${LOCALBASE}/bin/ksh93 -p|' ${WRKSRC}/zrep
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
