@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmpp
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.6
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -24,15 +24,12 @@ CONFIGURE_ENV=	ac_cv_header_sys_termios_h=no \
 		ac_cv_header_db_h=no
 
 ALL_TARGET=	bmpp
-USES=		gmake jpeg
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		gmake jpeg localbase
 
 PLIST_FILES=	bin/bmpp
 
 post-patch:
-	${REINPLACE_CMD} 's@sz->lsz =@st->lsz =@' ${WRKSRC}/dk3sf.c
+	@${REINPLACE_CMD} 's@sz->lsz =@st->lsz =@' ${WRKSRC}/dk3sf.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bmpp ${STAGEDIR}${PREFIX}/bin
