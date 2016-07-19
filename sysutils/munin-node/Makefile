@@ -3,7 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -32,8 +32,8 @@ SHEBANG_FILES=	node/sbin/munin-node node/sbin/munin-sched \
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 
-ALL_TARGET=	build-node build-plugins
-INSTALL_TARGET=	install-node-prime install-plugins-prime
+ALL_TARGET=	build-node build-plugins build/node/_bin/munin-async build/node/_bin/munin-asyncd
+INSTALL_TARGET=	install-node-prime install-async-prime install-plugins-prime
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	SNMP PERL JAVA
@@ -55,7 +55,7 @@ JAVA_BUILD=	yes
 JAVA_RUN=	yes
 
 SUB_FILES=	pkg-message plugins.conf
-USE_RC_SUBR=	munin-node munin-sched
+USE_RC_SUBR=	munin-asyncd munin-node munin-sched
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -72,9 +72,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/node/sbin -type f -name "*.orig" -delete
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DBDIR}/plugin-state
-	${INSTALL_SCRIPT} ${WRKDIR}/munin-node \
-		${STAGEDIR}${PREFIX}/etc/rc.d/munin-node
+	${MKDIR} ${STAGEDIR}${DBDIR}/plugin-state ${STAGEDIR}${SPOOLDIR}/async
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf \
 		${STAGEDIR}${ETCDIR}/munin-node.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/plugins.conf \
