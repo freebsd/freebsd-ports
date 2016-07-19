@@ -5,7 +5,7 @@ PORTVERSION=	0.9.5.20160530
 PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
-MAINTAINER=	fidaj@ukr.net
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lightweight Tox client
 
 LICENSE=	GPLv3
