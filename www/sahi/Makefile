@@ -69,7 +69,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
-post-install:
 	@${CP} ${STAGEDIR}${DATADIR}/config/browser_types/linux.xml ${STAGEDIR}${DATADIR}/userdata/config/browser_types.xml
 .for	d in bin userdata/bin
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/${d}/*

@@ -52,6 +52,7 @@ do-install:
 .for n in 1 5 8
 	${INSTALL_MAN} ${DOCSRC}/man/*.${n} ${STAGEDIR}${PREFIX}/man/man${n}
 .endfor
+	${MKDIR} -m 770 ${STAGEDIR}/var/spool/fcron
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -62,8 +63,5 @@ do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
 	${INSTALL_DATA} ${DOCSRC}/${d}/* ${STAGEDIR}${DOCSDIR}/${d}
 .endfor
-
-post-install:
-	${MKDIR} -m 770 ${STAGEDIR}/var/spool/fcron
 
 .include <bsd.port.mk>

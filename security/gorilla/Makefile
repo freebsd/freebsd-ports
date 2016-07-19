@@ -69,8 +69,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${dir}
 .endfor
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README			\
 		${WRKSRC}/sources/README.install-from-source	\

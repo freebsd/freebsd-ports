@@ -34,7 +34,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/remarp/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/remarp
 	${INSTALL_SCRIPT} ${WRKSRC}/sbin/remarp.pl ${STAGEDIR}${PREFIX}/sbin/remarp
 
-post-install:
 .if !defined(BATCH)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "###############################################################################"

@@ -22,8 +22,6 @@ PLIST_FILES=	bin/${PORTNAME} ${EXAMPLESDIR}/example ${EXAMPLESDIR}/nyan.png
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sent ${STAGEDIR}${PREFIX}/bin
-
-post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example ${STAGEDIR}${EXAMPLESDIR}/example
 	${INSTALL_DATA} ${WRKSRC}/nyan.png ${STAGEDIR}${EXAMPLESDIR}/nyan.png

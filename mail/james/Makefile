@@ -57,7 +57,6 @@ do-install:
 	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${STAGEDIR}${APP_HOME}/lib/tools.jar
 	@${ECHO_MSG} " [ DONE ]"
 
-post-install:
 	@${ECHO_MSG} "${PORTNAME} ${PORTVERSION} has been installed in ${APP_HOME}."
 
 .include <bsd.port.mk>

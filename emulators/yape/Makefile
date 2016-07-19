@@ -38,7 +38,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yape ${STAGEDIR}${PREFIX}/bin
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.SDL ${STAGEDIR}${DOCSDIR}
 

@@ -51,7 +51,6 @@ do-install:
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} demos ${STAGEDIR}${EXAMPLESDIR})
 	@${ECHO_MSG} " [ DONE ]"
 
-post-install:
 .if !defined(BATCH)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Libraries installed at: ${JAVAJARDIR}"

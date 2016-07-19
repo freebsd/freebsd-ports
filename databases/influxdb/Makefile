@@ -120,8 +120,6 @@ do-install:
 		${MKDIR} ${STAGEDIR}${INFLUXD_DBDIR} \
 		${STAGEDIR}${INFLUXD_PIDDIR} \
 		${STAGEDIR}${INFLUXD_LOGDIR}
-
-post-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/influxd ${STAGEDIR}${PREFIX}/bin/influxd
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/influx ${STAGEDIR}${PREFIX}/bin/influx
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/influx_inspect ${STAGEDIR}${PREFIX}/bin/influx_inspect

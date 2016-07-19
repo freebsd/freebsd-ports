@@ -66,7 +66,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/log4j.xml ${TARGET_DIR}/bin/
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${TARGET_DIR}/bin/
 
-post-install:
 	@${ECHO_MSG} "--->  Installing documentation"
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Changes.txt ${STAGEDIR}${DOCSDIR}

@@ -167,7 +167,6 @@ do-install:
 
 # based on original from op port, written by Cyrille Lefevre
 # <clefevre@citeweb.net>.
-post-install:
 	@if [ ! -f ${CONF_DIR}/${CONF_FILE}${SAMP_SUFX} ]; then \
 		${MKDIR} ${STAGEDIR}${ETCDIR} ; \
 		if [ -f /etc/ftpusers ] && [ -n "${PORT_OPTIONS:MSAMPLE_POPUSERS}" ]; then \

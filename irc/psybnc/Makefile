@@ -59,8 +59,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/help/*.ITA ${STAGEDIR}${PSYBASE}/help/
 	${INSTALL_PROGRAM} ${WRKSRC}/psybnc ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/psybnc.conf ${STAGEDIR}${PREFIX}/etc/psybnc.conf.sample
-
-post-install:
 	if [ -f ${WRKSRC}/key/psybnc.req.pem ]; then \
 	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.cert.pem ${STAGEDIR}${PSYBASE}/key/; \
 	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.key.pem ${STAGEDIR}${PSYBASE}/key/; \

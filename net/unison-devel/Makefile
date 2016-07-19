@@ -66,7 +66,6 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unison ${STAGEDIR}${PREFIX}/bin
 
-post-install:
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${STAGEDIR}${PREFIX}/bin
 .endif

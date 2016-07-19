@@ -87,9 +87,8 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/doc/${DOCFILE} ${STAGEDIR}${DOCSDIR}
 .	endfor
 
-post-install:
 	${INSTALL} -d ${STAGEDIR}${DBDIR}
 	${INSTALL} -d ${STAGEDIR}${LOGDIR}
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL} -d ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>

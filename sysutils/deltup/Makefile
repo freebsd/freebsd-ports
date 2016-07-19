@@ -55,8 +55,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC_BZIP2_102}/bzip2 ${STAGEDIR}${PREFIX}/bin/bzip2_1.0.2
 	${INSTALL_PROGRAM} ${WRKSRC_BZIP2_103}/bzip2 ${STAGEDIR}${PREFIX}/bin/bzip2_1.0.3
 	${INSTALL_MAN} ${WRKSRC}/deltup.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}

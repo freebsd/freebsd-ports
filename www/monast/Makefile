@@ -34,7 +34,6 @@ do-install:
 .endfor
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR}/lib)
 
-post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PREFIX}/monast
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d ${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PREFIX}/monast
 

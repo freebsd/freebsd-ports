@@ -64,7 +64,6 @@ do-install:
 		${MKDIR} ${STAGEDIR}${WWWDIR}/demo-base/logs
 		${INSTALL_SCRIPT} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/sbin
 
-post-install:
 		${MKDIR} ${STAGEDIR}${ETCDIR}
 		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.sample ${STAGEDIR}${ETCDIR}/
 

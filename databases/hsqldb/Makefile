@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/sqltool.jar \
 		${STAGEDIR}${JAVAJARDIR}/sqltool.jar
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})

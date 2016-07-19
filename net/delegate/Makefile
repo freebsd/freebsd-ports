@@ -37,8 +37,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/rc.d/delegated.sh-dist
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
-
-post-install:
 # Re-sign the executable
 	@${MKDIR} ${WRKDIR}/tmp
 	@${CP} ${STAGEDIR}${PREFIX}/sbin/delegated ${WRKDIR}/tmp/dg

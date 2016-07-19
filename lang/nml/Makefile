@@ -35,10 +35,6 @@ post-patch:
 do-install:
 	${DO_MAKE_BUILD} -C ${WRKSRC} PREFIX="${STAGEDIR}${PREFIX}" ${INSTALL_TARGET}
 	@${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' ${STAGEDIR}${PREFIX}/lib/nml/ld.conf
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Changes ${WRKSRC}/LICENSE ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/contrib/emacs
 	@${MKDIR} ${STAGEDIR}${DATADIR}/contrib/vim
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/* ${STAGEDIR}${DATADIR}/contrib/emacs
@@ -46,5 +42,9 @@ post-install:
 .for i in ncamlrun nmlc nlex nmakegen nyacc nmlo
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$i
 .endfor
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changes ${WRKSRC}/LICENSE ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

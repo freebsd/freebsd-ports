@@ -23,8 +23,6 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libeatmydata.so.1.0 ${STAGEDIR}${PREFIX}/lib
-
-post-install:
 	${LN} -sf libeatmydata.so.1.0 ${STAGEDIR}${PREFIX}/lib/libeatmydata.so.1
 	${LN} -sf libeatmydata.so.1.0 ${STAGEDIR}${PREFIX}/lib/libeatmydata.so
 

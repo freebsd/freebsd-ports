@@ -63,7 +63,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/sample-config/nsca.cfg ${STAGEDIR}${PREFIX}/etc/nagios/nsca.cfg-sample
 .endif
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 

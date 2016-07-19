@@ -35,8 +35,6 @@ do-install:
 		jam -q -fJambase -j${MAKE_JOBS_NUMBER} install
 	@${MV} ${STAGEDIR}${PREFIX}/bin/License.txt \
 		${STAGEDIR}${PREFIX}/share/argyll/
-
-post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

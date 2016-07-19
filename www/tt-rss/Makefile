@@ -88,7 +88,6 @@ do-install:
 	${TOUCH} ${STAGEDIR}${WWWDIR}/icons/.empty
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${STAGEDIR}${DATADIR}
 
-post-install:
 	${MV} ${STAGEDIR}${WWWDIR}/config.php-dist ${STAGEDIR}${WWWDIR}/config.php.sample
 
 .include <bsd.port.mk>

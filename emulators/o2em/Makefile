@@ -38,8 +38,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/O2EM.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/changelog.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/license.txt ${STAGEDIR}${DOCSDIR}
-
-post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/o2em/roms
 
 .include <bsd.port.mk>
