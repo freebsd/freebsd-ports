@@ -1,5 +1,7 @@
 lib/elixir/lib/geo/ebin/Elixir.Geo.Geometry.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.GeometryCollection.beam
+lib/elixir/lib/geo/ebin/Elixir.Geo.JSON.DecodeError.beam
+lib/elixir/lib/geo/ebin/Elixir.Geo.JSON.EncodeError.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.JSON.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.LineString.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.MultiLineString.beam
