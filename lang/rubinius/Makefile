@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:sysutils/rubygem-bundler \
 
 BROKEN_FreeBSD_9=	does not build
 BROKEN_FreeBSD_11=	does not build
+BROKEN_FreeBSD_12=	does not build
 
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
