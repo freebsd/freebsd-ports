@@ -169,8 +169,8 @@
 +  install_element (RMAP_NODE, &no_set_ip_nexthop_cmd);
 +  install_element (RMAP_NODE, &no_set_ip_nexthop_val_cmd);
  }
---- vtysh/extract.pl.orig	2016-07-19 14:12:32 UTC
-+++ vtysh/extract.pl
+--- vtysh/extract.pl.in.orig	2016-03-15 23:17:17 UTC
++++ vtysh/extract.pl.in
 @@ -180,7 +180,7 @@ foreach (@ARGV) {
      }
  }
