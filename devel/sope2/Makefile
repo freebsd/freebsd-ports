@@ -3,6 +3,7 @@
 
 PORTNAME=		sope2
 PORTVERSION=		2.3.13
+PORTREVISION=		1
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
@@ -26,7 +27,7 @@ MYSQL_DESC=		Build with MySQL support
 PGSQL_DESC=		Build with PostgreSQL support
 MEMCACHED_DESC=		Install memcached
 
-USES=			gmake gnustep
+USES=			gmake iconv gnustep
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}
 
@@ -35,9 +36,9 @@ SUB_LIST+=		GNUSTEP_LOCAL_TOOLS=${GNUSTEP_LOCAL_TOOLS} \
 
 CONFIGURE_ARGS=		--with-gnustep --disable-debug --enable-strip
 
-LDAP_USE=	OPENLDAP=client
-PGSQL_USES=	pgsql
-MYSQL_USE=	MYSQL=client
+LDAP_USE=		OPENLDAP=client
+PGSQL_USES=		pgsql
+MYSQL_USE=		MYSQL=client
 MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
 
 post-patch-LDAP-off:
