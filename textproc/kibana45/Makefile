@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION?=	4.5.0
+PORTVERSION?=	4.5.3
 DISTVERSIONSUFFIX=	-linux-x86
 CATEGORIES=	textproc www
 MASTER_SITES=	https://download.elastic.co/kibana/kibana/ \
