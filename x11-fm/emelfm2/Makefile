@@ -62,7 +62,7 @@ do-install:
 		MAN_DIR="${STAGEDIR}${MAN1PREFIX}/man/man1" \
 		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${STAGEDIR}${DOCSDIR}

@@ -19,8 +19,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sokoban ${STAGEDIR}${PREFIX}/bin/sokoban
 	@${MKDIR} ${STAGEDIR}${DATADIR}/screens
 	${INSTALL_DATA} ${WRKSRC}/screens/* ${STAGEDIR}${DATADIR}/screens
-
-post-install:
 	@${MKDIR} ${STAGEDIR}/var/games/sokoban
 	truncate -s 512 ${STAGEDIR}/var/games/sokoban/scores.sample
 

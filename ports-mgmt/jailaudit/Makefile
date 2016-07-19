@@ -37,8 +37,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/jailaudit ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/jailaudit.conf.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${WRKSRC}/410.jailaudit ${STAGEDIR}${PERIODICDIR}/security
-
-post-install:
 	${MKDIR} ${STAGEDIR}${REPORTDIR}
 	${MKDIR} ${STAGEDIR}${XTMPDIR}
 

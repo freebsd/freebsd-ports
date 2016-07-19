@@ -25,8 +25,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/anacron.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/anacrontab.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 	${INSTALL_DATA} ${FILESDIR}/anacrontab.sample ${STAGEDIR}${PREFIX}/etc
-
-post-install:
 	[ -d ${STAGEDIR}/var/spool/anacron ] || ${MKDIR} ${STAGEDIR}/var/spool/anacron
 
 .include <bsd.port.mk>

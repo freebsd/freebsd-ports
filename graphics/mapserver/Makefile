@@ -199,7 +199,6 @@ do-install:
 	(cd ${BUILD_WRKSRC}/mapscript/python && ${CP} mapscript.py _mapscript.so ${STAGEDIR}${PYTHON_SITELIBDIR}/)
 .endif
 
-post-install:
 	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
 	@${LN} -s ${PREFIX}/lib/libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 

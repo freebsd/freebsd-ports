@@ -97,7 +97,6 @@ do-install:
 	${STAGEDIR}${UCHIWA_SHAREDIR} \
 	${STAGEDIR}${UCHIWA_RCDIR}
 
-post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/uchiwa ${STAGEDIR}${PREFIX}/bin/uchiwa
 	${INSTALL_DATA} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/config.json.example ${STAGEDIR}${PREFIX}/etc/uchiwa/config.json.sample
 	(cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/public && ${COPYTREE_SHARE} . ${STAGEDIR}${UCHIWA_SHAREDIR})

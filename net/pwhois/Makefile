@@ -56,9 +56,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/pwhoisd.conf \
 		${STAGEDIR}${ETCDIR}/pwhoisd.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/mysql/createdb.sql ${STAGEDIR}${DATADIR}/
-
-post-install:
-	@${INSTALL} -d -o 512 -g 512 ${STAGEDIR}/var/db/pwhois
-	@${INSTALL} -d -o 512 -g 512 ${STAGEDIR}/var/log/pwhois
+	@${INSTALL} -d ${STAGEDIR}/var/db/pwhois
+	@${INSTALL} -d ${STAGEDIR}/var/log/pwhois
 
 .include <bsd.port.mk>

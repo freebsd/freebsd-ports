@@ -57,8 +57,6 @@ do-build:	apply-slist
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CERTDIR}
 	${INSTALL_DATA} ${WRKDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/${CERTDIR}
-
-post-install:
 .if ${PORT_OPTIONS:METCSYMLINK}
 	${MKDIR} ${STAGEDIR}/etc/ssl
 	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}/etc/ssl/cert.pem

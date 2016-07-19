@@ -50,15 +50,13 @@ do-install:
 		${STAGEDIR}${DATADIR}/lpmud/ACCESS.ALLOW.example
 	${MV} ${STAGEDIR}${DATADIR}/lpmud/ACCESS.DENY \
 		${STAGEDIR}${DATADIR}/lpmud/ACCESS.DENY.example
-
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-
-post-install:
 	# Need a temporary directory for certain files
 	${MKDIR} ${STAGEDIR}${DATADIR}/tmp
 	# Link in the dgd docs
 	${LN} -sf ${PREFIX}/share/doc/dgd/kfun ${STAGEDIR}${DATADIR}/lpmud/doc
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

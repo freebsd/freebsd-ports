@@ -79,10 +79,8 @@ do-install:
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
+post-install-DOCS-on:
 	${FIND} -s ${WRKSRC}/samples -not -type d | \
 		${SED} -ne 's|^${WRKSRC}/samples|${EXAMPLESDIR:S,${PREFIX}/,,}|p' >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>

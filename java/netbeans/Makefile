@@ -45,7 +45,6 @@ do-install:
 	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/bin/netbeans
 	${LN} -sf ${DATADIR}/bin/netbeans ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
 
-post-install:
 	${FIND} ${STAGEDIR}${DATADIR} -type f -ipath "*/bin/*" | ${XARGS} ${CHMOD} ${BINMODE}
 
 .include <bsd.port.mk>

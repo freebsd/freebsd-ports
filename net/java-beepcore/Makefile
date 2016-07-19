@@ -27,7 +27,7 @@ do-install:
 	  && ${FIND} -s . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;)
 	${INSTALL_DATA} ${WRKSRC}/lib/example.jar ${STAGEDIR}${EXAMPLESDIR}
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${WRKSRC}/*.htm ${STAGEDIR}${DOCSDIR}
 

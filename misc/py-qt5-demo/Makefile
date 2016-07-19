@@ -28,8 +28,6 @@ USE_PYQT=	core_run dbus_run designer_run \
 do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
-
-post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-f -d ${PYTHONPREFIX_SITELIBDIR} \
 		${STAGEDIR}${EXAMPLESDIR}

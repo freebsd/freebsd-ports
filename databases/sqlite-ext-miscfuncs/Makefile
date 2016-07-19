@@ -44,7 +44,7 @@ do-install:
 	@${INSTALL} -d ${STAGEDIR}${PREFIX}/libexec/${DIST_SUBDIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE} ${STAGEDIR}${INST_DIR}
 
-post-install:
+post-install-DOCS-on:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	@${CP} ${WRKDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

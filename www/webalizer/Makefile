@@ -176,8 +176,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}webazolver
 	${INSTALL_DATA} ${WRKSRC}/sample.conf \
 		${STAGEDIR}${PREFIX}/etc/${PKGNAMEPREFIX}webalizer.conf-dist ;
-
-post-install:
 .for i in ${LMAN1}
 	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${STAGEDIR}${PREFIX}/man/man1/${i}
 .endfor

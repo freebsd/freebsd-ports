@@ -31,7 +31,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/mona.ttf ${FILESDIR}/fonts.dir \
 	    ${STAGEDIR}${DATADIR}
 
-post-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	cd ${STAGEDIR}${FONTSDIR} && \
 	    ${LN} -s ../../../${DATADIR_REL}/*.ttf .

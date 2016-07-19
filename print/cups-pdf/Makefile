@@ -94,8 +94,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/cups
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
-
-post-install:
 	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
 		${STAGEDIR}${PREFIX}/etc/cups/cups-pdf.conf.sample
 

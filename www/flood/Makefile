@@ -30,7 +30,6 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flood ${STAGEDIR}${PREFIX}/bin/flood
 
-post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EX_SCRIPTS}
 	@${INSTALL_SCRIPT} ${WRKSRC}/examples/$f ${STAGEDIR}${EXAMPLESDIR}

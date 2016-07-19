@@ -204,7 +204,6 @@ do-install:
 	@${ECHO_MSG} "# ===> ${.TARGET} apr-util-${APU_VERSION}"
 	(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET} ${MAKE_ARGS})
 
-post-install:
 	-${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} ${STRIP_CMD}
 
 test: build

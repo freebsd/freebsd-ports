@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/edbrowse ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBASE}/doc/man-edbrowse-debian.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/edbrowse.1
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKBASE}/CHANGES ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKBASE}/COPYING ${STAGEDIR}${DOCSDIR}

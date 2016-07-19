@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1.gz \
 		${STAGEDIR}${PREFIX}/man/man1/
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

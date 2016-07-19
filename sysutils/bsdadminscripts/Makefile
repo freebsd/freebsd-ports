@@ -47,8 +47,6 @@ do-install:
 	distviper pkg_libchk pkg_upgrade pkg_validate portconfig rcstart uma
 	${INSTALL_MAN} ${WRKSRC}/src/${f}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
-
-post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MV} ${STAGEDIR}${PREFIX}/etc/*.sample ${STAGEDIR}${ETCDIR}
 	${RM} -rf ${STAGEDIR}${PREFIX}/etc/*.sample

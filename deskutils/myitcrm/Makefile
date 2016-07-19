@@ -76,7 +76,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-post-install:
 .if defined(MAINTAINER_MODE)
 	@${MAKE} -C ${.CURDIR} rm-install
 .endif

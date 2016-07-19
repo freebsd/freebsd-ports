@@ -31,8 +31,6 @@ PORTDOCS=	README README.crash README.mtio README.pattern STARvsGNUTAR \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${FIND} ${WRKSRC} -type f -print \
 		| ${XARGS} ${REINPLACE_CMD} -e "s@/etc/default@${PREFIX}/etc@g"
@@ -56,12 +54,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/star/star.dfl ${STAGEDIR}${PREFIX}/etc/star.sample
 	${INSTALL_DATA} ${WRKSRC}/rmt/rmt.dfl ${STAGEDIR}${PREFIX}/etc/rmt.sample
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${PORTDOCS}
 	(cd ${WRKSRC}/star && ${INSTALL_DATA} ${FILE} ${STAGEDIR}${DOCSDIR}/${FILE})
 .endfor
-.endif
 
 .include <bsd.port.mk>

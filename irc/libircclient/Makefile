@@ -36,9 +36,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/libirc_rfcnumeric.h ${STAGEDIR}${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/src/libircclient.a ${STAGEDIR}${PREFIX}/lib
 
-post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>

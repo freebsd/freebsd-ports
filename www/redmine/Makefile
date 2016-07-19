@@ -80,6 +80,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/pids
 	${MKDIR} ${STAGEDIR}${WWWDIR}/bundler.d
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	${TOUCH} ${STAGEDIR}${WWWDIR}/Gemfile.lock
 
 do-install-MYSQL-on:
 	${CP} ${FILESDIR}/mysql.rb ${STAGEDIR}${WWWDIR}/bundler.d
@@ -101,8 +102,5 @@ do-install-RMAGIC-on:
 
 do-install-THIN-on:
 	${CP} ${FILESDIR}/thin.rb ${STAGEDIR}${WWWDIR}/bundler.d
-
-post-install:
-	${TOUCH} ${STAGEDIR}${WWWDIR}/Gemfile.lock
 
 .include <bsd.port.mk>

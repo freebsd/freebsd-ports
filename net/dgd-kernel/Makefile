@@ -43,8 +43,6 @@ do-install:
 	@${CHMOD} a+x ${STAGEDIR}${PREFIX}/etc/rc.d/dgd-kernel.sh.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/kernellib && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}
-
-post-install:
 	@# Need a temporary directory for certain files
 	@${MKDIR} ${STAGEDIR}${DATADIR}/tmp
 

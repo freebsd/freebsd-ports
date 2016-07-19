@@ -50,8 +50,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/zoneinfo
 	${CP} -R -p ${WRKSRC}/zoneinfo/ ${STAGEDIR}${PREFIX}/share/zoneinfo
 	${INSTALL_DATA} ${WRKSRC}/zone.tab ${STAGEDIR}${PREFIX}/share/zoneinfo
-
-post-install:
 	@if [ -f /var/db/zoneinfo -a -O /var/db/zoneinfo -a \
 	     -G /var/db/zoneinfo -a \
 	     -f /usr/share/zoneinfo/$$(cat /var/db/zoneinfo) ]; then \

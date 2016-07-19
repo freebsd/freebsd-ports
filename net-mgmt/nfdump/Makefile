@@ -143,10 +143,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${filename}.1 ${STAGEDIR}${PREFIX}/man/man1
 .endfor
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

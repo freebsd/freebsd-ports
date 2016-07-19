@@ -38,7 +38,6 @@ do-install:
 	    ${WRKSRC}/mika.ttf ${FILESDIR}/fonts.dir \
 	    ${STAGEDIR}${DATADIR}
 
-post-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	cd ${STAGEDIR}${FONTSDIR} && \
 	    ${LN} -s ../../../${DATADIR_REL}/*.ttf .
