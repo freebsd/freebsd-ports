@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fet
-PORTVERSION=	5.29.4
+PORTVERSION=	5.30.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
@@ -39,7 +39,7 @@ ONLYCL_USE_OFF=	qt4=gui,network
 ONLYCL_INSTALL_TARGET_OFF=	${WRKSRC}/fet
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/share/fet|${DATADIR}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/share/fet|${DATADIR}|g' \
 		${WRKSRC}/src/interface/fet.cpp
 
 do-install:
@@ -51,6 +51,6 @@ do-install:
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \. ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

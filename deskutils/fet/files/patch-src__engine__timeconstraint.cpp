@@ -1,6 +1,6 @@
---- ./src/engine/timeconstraint.cpp.orig	2014-02-01 14:51:03.804739136 +0100
-+++ ./src/engine/timeconstraint.cpp	2014-02-01 14:51:46.994628354 +0100
-@@ -42,6 +42,7 @@
+--- src/engine/timeconstraint.cpp.orig	2016-04-09 13:57:44 UTC
++++ src/engine/timeconstraint.cpp
+@@ -39,6 +39,7 @@ File timeconstraint.cpp
  
  //for min max functions
  #include <algorithm>
