@@ -126,6 +126,17 @@ post-patch::
 		u_mke2fs_opt_offset
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
 .endfor
+# m_rootdir behaves erratically on 9.x and fails randomly,
+# but may succeed when run again. Disable for now.
+.if ${OSVERSION} < 1000000
+.for i in m_rootdir
+	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
+.endfor
+.endif
+.endif
+
+.if ${OSVERSION} > 1100000
+BROKEN=self-test failures on FreeBSD 11+ hint to data corruption issues.
 .endif
 
 .if ${MASTERDIR} == ${.CURDIR}
@@ -178,11 +189,15 @@ post-build:
 # test on each and every system and not just package building hosts.
 # There have been subtle failures induced by Linux-isms in the past.
 # -- Matthias Andree, package maintainer, 2007-09-18
+.if empty(PORT_OPTIONS:MNOTESTS)
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
 # do not add -j options unconditionally to ${MAKE_CMD} below, this might break
 # due to excessive disk space use.
 	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} check ${_CHECK_JOBS} ${_checkaddargs} \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
+.else
+	@${ECHO_CMD} '===>  SKIPPING e2fsprogs self-test suite (DISCOURAGED!)'
+.endif
 
 post-install:
 	${RM} -f ${STAGEDIR}${PREFIX}/sbin/uuidd
