@@ -3,7 +3,6 @@
 PORTNAME=	flask-restplus
 PORTVERSION=	0.9.2
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	andrej@ebert.su
@@ -17,20 +16,27 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.8:www/py-flask \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}aniso8601>=0.82:devel/py-aniso8601
-
-TEST_DEPENDS:=	${RUN_DEPENDS} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>0:devel/py-blinker \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}rednose>0:devel/py-rednose \
-		${PYTHON_PKGNAMEPREFIX}blinker>0:devel/py-blinker \
-		${PYTHON_PKGNAMEPREFIX}tzlocal>0:devel/py-tzlocal
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}flask-restplus08
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	noirbizarre
 
 USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
-do-test:
-	@(cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PYTHON_REL} < 3300
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+.endif
+
+do-test:
+	@${RM} -fr ${TEST_WRKSRC}/build/lib/tests
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
+
+.include <bsd.port.post.mk>
