@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdocml
-PORTVERSION=	1.13.3
+PORTVERSION=	1.13.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		LOCAL/uqs
@@ -18,8 +18,9 @@ HAS_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-patch:
+post-configure:
 	@${REINPLACE_CMD} -e '/^CFLAGS/s/-g//' -e '/^PREFIX/s/=/?=/' \
-		${WRKSRC}/Makefile
+		-e 's/^INSTALL_PROGRAM.*/INSTALL_PROGRAM=${INSTALL_PROGRAM}/' \
+		${WRKSRC}/Makefile.local
 
 .include <bsd.port.mk>
