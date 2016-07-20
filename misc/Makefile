@@ -76,6 +76,7 @@
     SUBDIR += elixir-uuid
     SUBDIR += elscreen
     SUBDIR += erlang-mimerl
+    SUBDIR += erlang-mimetypes
     SUBDIR += esniper
     SUBDIR += estic
     SUBDIR += excel-writer
