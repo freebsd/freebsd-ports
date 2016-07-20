@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mosquitto
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.9
 CATEGORIES=	net
 MASTER_SITES=	http://mosquitto.org/files/source/
 
@@ -15,13 +14,19 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libcares.so:dns/c-ares
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
-USES=		cmake python:2
+USES=		cmake ssl
 NOCONFIGURE=	yes
 USE_RC_SUBR=	mosquitto
 USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USERS=		nobody
+
+OPTIONS_DEFINE=	WS
+
+WS_DESC=	MQTT over Websockets support
+WS_LIB_DEPENDS=	libwebsockets.so:net/libwebsockets
+WS_CMAKE_ON=	-DWITH_WEBSOCKETS=ON
 
 post-patch:
 # do not run ldconfig in stage dir
