@@ -7,13 +7,13 @@
 +#if 0
  #include <asm/bitsperlong.h>
 +#else
-+# if defined(__LP64__)
++# if __SIZEOF_LONG__ == 8
 +#  define __BITS_PER_LONG 64
-+# elif defined(__ILP32__)
++# elif __SIZEOF_LONG__ == 4
 +#  define __BITS_PER_LONG 32
 +# else
 +#  error What are you
-+# endif /* __LP64__ */
++# endif
 +#endif
  #include "rbtree.h"
  
