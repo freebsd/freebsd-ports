@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2016-06-06 11:59:30 UTC
++++ CMakeLists.txt
+@@ -602,7 +602,7 @@ if (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COM
+                 set(VISIBILITY_FLAG -fvisibility=hidden)
+     endif()
+     if (UNIX)
+-               set(CMAKE_C_FLAGS "-Wall -Werror ${VISIBILITY_FLAG} ${CMAKE_C_FLAGS}" )
++               set(CMAKE_C_FLAGS "-Wall ${VISIBILITY_FLAG} ${CMAKE_C_FLAGS}" )
+     else(UNIX)
+                set(CMAKE_C_FLAGS "-Wall ${VISIBILITY_FLAG} ${CMAKE_C_FLAGS}" )
+     endif(UNIX)
+@@ -1316,7 +1316,7 @@ Cflags: -I\${includedir}"
+ )
+ 
+ 	install(FILES "${PROJECT_BINARY_DIR}/libwebsockets.pc"
+-		DESTINATION lib${LIB_SUFFIX}/pkgconfig)
++		DESTINATION libdata/pkgconfig)
+ endif(UNIX)
+ 
+ #

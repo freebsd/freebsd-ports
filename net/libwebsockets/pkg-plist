@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%WEBSERVER%%bin/lwsws
+include/libwebsockets.h
+include/lws_config.h
+lib/cmake/libwebsockets/LibwebsocketsConfig.cmake
+lib/cmake/libwebsockets/LibwebsocketsConfigVersion.cmake
+lib/cmake/libwebsockets/LibwebsocketsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libwebsockets/LibwebsocketsTargets.cmake
+lib/libwebsockets.a
+lib/libwebsockets.so
+lib/libwebsockets.so.8
+libdata/pkgconfig/libwebsockets.pc
+%%WEBSERVER%%%%DATADIR%%-test-server/server-status/lwsws-logo.png
+%%WEBSERVER%%%%DATADIR%%-test-server/server-status/server-status.html
