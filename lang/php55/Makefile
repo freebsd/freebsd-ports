@@ -94,7 +94,7 @@ IGNORE=		doesn't install the Apache module anymore:\
 
 .if defined(PKGNAMEPREFIX)
 USES+=	php
-PHP_DEFAULT=	5.5
+PHP_VER=	55
 IGNORE_WITH_PHP=53 54 5
 USE_APACHE=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"

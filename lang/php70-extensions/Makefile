@@ -10,7 +10,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	"meta-port" to install PHP extensions
 
 USES=		metaport php
-PHP_DEFAULT=	7.0
+PHP_VER=	70
 IGNORE_WITH_PHP=	55 56
 
 OPTIONS_DEFINE=	BCMATH BZ2 CALENDAR CTYPE CURL DBA \
