@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icinga-classicweb
-PORTREVISION=	1
+PORTREVISION=	2
 DISTNAME=	icinga-${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org

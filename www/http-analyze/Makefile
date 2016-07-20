@@ -3,7 +3,7 @@
 
 PORTNAME=	http-analyze
 PORTVERSION=	2.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.rent-a-guru.de/pub/
 DIST_SUBDIR=	${PORTNAME}

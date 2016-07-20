@@ -3,7 +3,7 @@
 
 PORTNAME=	awffull
 PORTVERSION=	3.10.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES?=	www
 MASTER_SITES=	https://launchpadlibrarian.net/20395993/
 

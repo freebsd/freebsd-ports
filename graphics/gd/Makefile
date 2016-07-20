@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	libgd
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.2
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES+=	graphics
-MASTER_SITES=	https://bitbucket.org/libgd/gd-libgd/downloads/ \
-		http://cdn.bitbucket.org/libgd/gd-libgd/downloads/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/gd-${PORTVERSION}/
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	Graphics library for fast creation of images
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
@@ -18,12 +19,12 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 CONFLICTS=	bazaar-1.*
 
-USES=		tar:xz pkgconfig pathfix libtool:keepla shebangfix jpeg iconv
+USES=		tar:xz pkgconfig pathfix libtool:keepla shebangfix jpeg
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	FONTCONFIG ICONV VPX XPM
+OPTIONS_DEFINE=	FONTCONFIG ICONV VPX XPM WEBP
 OPTIONS_DEFAULT=FONTCONFIG
 NO_OPTIONS_SORT=yes
 FONTCONFIG_LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
@@ -35,6 +36,9 @@ VPX_CONFIGURE_OFF=	--without-vpx
 XPM_USE=	xorg=xpm,x11
 XPM_CONFIGURE_ON=	--with-x
 XPM_CONFIGURE_OFF=	--with-xpm=no
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+WEBP_CONFIGURE_OFF=	--without-webp
+WEBP_BROKEN=	circular dependencies
 
 .include <bsd.port.options.mk>
 
@@ -99,6 +103,6 @@ pre-build:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/gdhelpers.h \
 		${STAGEDIR}${PREFIX}/include/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgd.so.5
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgd.so.6.0.20202
 
 .include <bsd.port.mk>
