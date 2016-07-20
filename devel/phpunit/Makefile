@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpunit
-PORTVERSION=	5.4.4
+PORTVERSION=	5.4.6
 CATEGORIES=	devel www
 MASTER_SITES=	https://phar.phpunit.de/ \
 		http://ports.toco-domains.de/
@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	pear-PHPUnit-[1234]*
 
-USES=		cpe
+USES=		cpe php
 CPE_VENDOR=	phpunit_project
 USE_PHP=	dom json spl pcre phar
 
