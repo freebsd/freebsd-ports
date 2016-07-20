@@ -14,7 +14,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.2.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -27,13 +27,14 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	dovecot-1.[0-9]*
 
-USES=		cpe iconv libtool
+USES=		cpe iconv libtool ssl
 USE_RC_SUBR=	dovecot
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
 		--without-shadow \
+		--with-ssl=openssl \
 		--with-docs
 
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
@@ -42,8 +43,8 @@ INSTALL_TARGET=	install-strip
 USERS=		dovecot dovenull
 GROUPS=		${USERS}
 
-OPTIONS_DEFINE=	KQUEUE LIBWRAP LZ4 SSL VPOPMAIL DOCS EXAMPLES
-OPTIONS_DEFAULT=KQUEUE SSL GSSAPI_NONE
+OPTIONS_DEFINE=	KQUEUE LIBWRAP LZ4 VPOPMAIL DOCS EXAMPLES
+OPTIONS_DEFAULT=KQUEUE GSSAPI_NONE
 OPTIONS_SUB=	yes
 
 OPTIONS_GROUP=		DB FTS
@@ -109,9 +110,6 @@ SOLR_LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 SQLITE_USES=		sqlite:3
 SQLITE_CONFIGURE_WITH=	sqlite
-
-SSL_USES=		ssl
-SSL_CONFIGURE_WITH=	ssl=openssl
 
 TEXTCAT_CONFIGURE_WITH=	textcat
 TEXTCAT_LIB_DEPENDS=	libtextcat.so:textproc/libtextcat
