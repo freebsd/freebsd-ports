@@ -454,6 +454,7 @@
     SUBDIR += elixir-lager_logger
     SUBDIR += elixir-msgpax
     SUBDIR += elixir-nadia
+    SUBDIR += elixir-nimble_csv
     SUBDIR += elixir-paratize
     SUBDIR += elixir-plug
     SUBDIR += elixir-poison
