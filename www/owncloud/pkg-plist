@@ -1,5 +1,5 @@
-@(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,664) %%WWWDIR%%/.htaccess
-@(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,664) %%WWWDIR%%/.user.ini
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/.user.ini
 %%WWWDIR%%/3rdparty/.gitignore
 %%WWWDIR%%/3rdparty/LICENSE INFO
 %%WWWDIR%%/3rdparty/README.md
@@ -3265,6 +3265,7 @@
 %%WWWDIR%%/apps/dav/lib/carddav/carddavbackend.php
 %%WWWDIR%%/apps/dav/lib/carddav/contactsmanager.php
 %%WWWDIR%%/apps/dav/lib/carddav/converter.php
+%%WWWDIR%%/apps/dav/lib/carddav/imageexportplugin.php
 %%WWWDIR%%/apps/dav/lib/carddav/plugin.php
 %%WWWDIR%%/apps/dav/lib/carddav/syncjob.php
 %%WWWDIR%%/apps/dav/lib/carddav/syncservice.php
@@ -3326,6 +3327,7 @@
 %%WWWDIR%%/apps/dav/lib/migration/calendaradapter.php
 %%WWWDIR%%/apps/dav/lib/migration/migrateaddressbooks.php
 %%WWWDIR%%/apps/dav/lib/migration/migratecalendars.php
+%%WWWDIR%%/apps/dav/lib/migration/nothingtodoexception.php
 %%WWWDIR%%/apps/dav/lib/rootcollection.php
 %%WWWDIR%%/apps/dav/lib/server.php
 %%WWWDIR%%/apps/dav/lib/systemtag/systemtagmappingnode.php
@@ -8081,6 +8083,7 @@
 %%WWWDIR%%/core/command/user/resetpassword.php
 %%WWWDIR%%/core/controller/avatarcontroller.php
 %%WWWDIR%%/core/controller/lostcontroller.php
+%%WWWDIR%%/core/controller/occcontroller.php
 %%WWWDIR%%/core/controller/setupcontroller.php
 %%WWWDIR%%/core/controller/usercontroller.php
 %%WWWDIR%%/core/css/apps.css
@@ -8347,13 +8350,13 @@
 %%WWWDIR%%/core/doc/admin/_sources/installation/appliance_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/apps_management_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/apps_supported.txt
+%%WWWDIR%%/core/doc/admin/_sources/installation/changing_the_web_route.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/command_line_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/deployment_recommendations.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_wizard.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/linux_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/nginx_examples.txt
-%%WWWDIR%%/core/doc/admin/_sources/installation/nginx_owncloud_8x.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/nginx_owncloud_9x.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/php_54_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/php_55_installation.txt
@@ -8557,13 +8560,13 @@
 %%WWWDIR%%/core/doc/admin/installation/appliance_installation.html
 %%WWWDIR%%/core/doc/admin/installation/apps_management_installation.html
 %%WWWDIR%%/core/doc/admin/installation/apps_supported.html
+%%WWWDIR%%/core/doc/admin/installation/changing_the_web_route.html
 %%WWWDIR%%/core/doc/admin/installation/command_line_installation.html
 %%WWWDIR%%/core/doc/admin/installation/deployment_recommendations.html
 %%WWWDIR%%/core/doc/admin/installation/index.html
 %%WWWDIR%%/core/doc/admin/installation/installation_wizard.html
 %%WWWDIR%%/core/doc/admin/installation/linux_installation.html
 %%WWWDIR%%/core/doc/admin/installation/nginx_examples.html
-%%WWWDIR%%/core/doc/admin/installation/nginx_owncloud_8x.html
 %%WWWDIR%%/core/doc/admin/installation/nginx_owncloud_9x.html
 %%WWWDIR%%/core/doc/admin/installation/php_54_installation.html
 %%WWWDIR%%/core/doc/admin/installation/php_55_installation.html
@@ -9952,6 +9955,7 @@
 %%WWWDIR%%/lib/private/repair.php
 %%WWWDIR%%/lib/private/repair/assetcache.php
 %%WWWDIR%%/lib/private/repair/avatarpermissions.php
+%%WWWDIR%%/lib/private/repair/brokenupdaterrepair.php
 %%WWWDIR%%/lib/private/repair/cleantags.php
 %%WWWDIR%%/lib/private/repair/collation.php
 %%WWWDIR%%/lib/private/repair/copyrewritebasetoconfig.php
@@ -10275,6 +10279,7 @@
 %%WWWDIR%%/public.php
 %%WWWDIR%%/remote.php
 %%WWWDIR%%/resources/codesigning/core.crt
+%%WWWDIR%%/resources/codesigning/intermediate.crl.pem
 %%WWWDIR%%/resources/codesigning/root.crt
 %%WWWDIR%%/resources/config/ca-bundle.crt
 %%WWWDIR%%/resources/config/mimetypealiases.dist.json
@@ -10592,7 +10597,6 @@
 %%WWWDIR%%/updater/src/Command/RestartWebServerCommand.php
 %%WWWDIR%%/updater/src/Command/StartCommand.php
 %%WWWDIR%%/updater/src/Command/UpdateConfigCommand.php
-%%WWWDIR%%/updater/src/Command/UpgradeShippedAppsCommand.php
 %%WWWDIR%%/updater/src/Console/Application.php
 %%WWWDIR%%/updater/src/Controller/DownloadController.php
 %%WWWDIR%%/updater/src/Controller/IndexController.php
@@ -10609,6 +10613,7 @@
 %%WWWDIR%%/updater/src/Tests/Utils/ConfigReaderTest.php
 %%WWWDIR%%/updater/src/Tests/Utils/FeedTest.php
 %%WWWDIR%%/updater/src/Tests/Utils/FetcherTest.php
+%%WWWDIR%%/updater/src/Tests/Utils/OccRunnerTest.php
 %%WWWDIR%%/updater/src/Tests/Utils/RegistryTest.php
 %%WWWDIR%%/updater/src/Tests/bootstrap.php
 %%WWWDIR%%/updater/src/Tests/phpunit.xml
