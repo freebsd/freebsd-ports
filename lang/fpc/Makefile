@@ -4,7 +4,7 @@
 PORTNAME=	fpc
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	3_0_0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang
 MASTER_SITES=	http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
 		LOCAL/acm/freepascal/:bootstrap \

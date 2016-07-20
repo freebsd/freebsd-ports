@@ -3,7 +3,7 @@
 
 PORTNAME=	awffull
 PORTVERSION=	3.10.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES?=	www
 MASTER_SITES=	http://www.stedee.id.au/files/
 
