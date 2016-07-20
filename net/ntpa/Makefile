@@ -20,6 +20,7 @@ WEBFILES_DESC=	Install web files
 GRAPH_DESC=	Graph generation (requires Cairo)
 PGSQL_DESC=	PostgreSQL Connector
 MYSQL_DESC=	MySQL Connector (GPL)
+DATABASE_DESC=	Database provider
 
 GRAPH_LIB_DEPENDS=	libgdiplus.so:x11-toolkits/libgdiplus \
 			libcairo.so:graphics/cairo \
@@ -40,8 +41,6 @@ GROUPS=		ntpa
 
 SUB_FILES=	ntpad ntpav ntpac
 WRKSRC=		${WRKDIR}/anguist-ntpa-9204e1e36b8d
-
-.include <bsd.port.options.mk>
 
 pre-install:
 	@${MKDIR} ${WRKSRC}/script
