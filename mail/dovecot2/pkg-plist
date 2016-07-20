@@ -620,7 +620,7 @@ lib/dovecot/lib95_imap_stats_plugin.a
 lib/dovecot/lib95_imap_stats_plugin.so
 lib/dovecot/lib99_welcome_plugin.a
 lib/dovecot/lib99_welcome_plugin.so
-%%SSL%%lib/dovecot/libdcrypt_openssl.so
+lib/dovecot/libdcrypt_openssl.so
 lib/dovecot/libdovecot-compression.a
 lib/dovecot/libdovecot-compression.so
 lib/dovecot/libdovecot-compression.so.0
@@ -769,6 +769,6 @@ share/aclocal/dovecot.m4
 %%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.so
 %%SOLR%%lib/dovecot/lib21_fts_solr_plugin.a
 %%SOLR%%lib/dovecot/lib21_fts_solr_plugin.so
-%%SSL%%lib/dovecot/libssl_iostream_openssl.a
-%%SSL%%lib/dovecot/libssl_iostream_openssl.so
+lib/dovecot/libssl_iostream_openssl.a
+lib/dovecot/libssl_iostream_openssl.so
 @postunexec echo "If you are removing dovecot2 permanently, you should 'rm -rf /var/db/dovecot' to clear out any remaining data."
