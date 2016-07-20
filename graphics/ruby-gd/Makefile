@@ -3,7 +3,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	0.8.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics ruby
 MASTER_SITES=	ftp://ftp.jp.vim.org/pub/distfiles/ruby/ \
 		http://www.mmnt.net/db/0/8/ftp.jp.vim.org/pub/distfiles/ruby/

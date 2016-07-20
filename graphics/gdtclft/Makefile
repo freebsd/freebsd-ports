@@ -3,7 +3,7 @@
 
 PORTNAME=	Gdtclft
 PORTVERSION=	2.2.5
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics tcl
 MASTER_SITES=	http://BSDforge.com/projects/source/graphics/gdtclft/
 DISTNAME=	${PORTNAME}${PORTVERSION}
