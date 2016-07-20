@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}-tv/${PORTNAME}-source/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive TV guide which will create personalized TV listings
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	tv_cat:textproc/p5-xmltv
@@ -35,7 +35,7 @@ post-patch:
 		${WRKSRC}/install/linux/freeguide
 
 do-install:
-	@(cd ${BUILD_WRKSRC}; \
+	@(cd ${BUILD_WRKSRC} && \
 		${ANT} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 .include <bsd.port.mk>
