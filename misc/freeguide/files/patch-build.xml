@@ -1,5 +1,5 @@
---- build.xml.orig	2010-07-24 11:24:51.000000000 +0200
-+++ build.xml	2010-07-24 11:29:57.000000000 +0200
+--- build.xml.orig	2014-10-22 19:25:23 UTC
++++ build.xml
 @@ -200,8 +200,8 @@
          <mkdir dir="${install_share_dir}/applications" />
          <copy file="${install}/linux/freeguide.desktop" todir="${install_share_dir}/applications/" />
