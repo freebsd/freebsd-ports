@@ -37,7 +37,7 @@ post-patch:
 		's|prefix=/usr/local|prefix=${PREFIX}|; \
 		s|MYCC=gcc|MYCC?=${CC}|; \
 		s|-s -O2 -Wall||; \
-		s|sdl-config|$(SDL_CONFIG)|; \
+		s|sdl-config|${SDL_CONFIG}|; \
 		s|MAKE=make|MAKE=${MAKE}|' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc -s|${CC}|' \

@@ -73,10 +73,10 @@ CONSOLE_PLIST_SUB=	GUI="@comment "
 CSCOPE_MAKE_ARGS=	CONF_OPT_CSCOPE=--enable-cscope
 CSCOPE_RUN_DEPENDS=	cscope:devel/cscope
 EXUBERANT_CTAGS_RUN_DEPENDS=	exctags:devel/ctags
-GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2 X_LIBS="$(X_LIBS) -lX11 -lXpm -lXt"
+GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2 X_LIBS="$$(X_LIBS) -lX11 -lXpm -lXt"
 GNOME_PLIST_SUB=	GUI=""
 GNOME_USE=		GNOME=libgnomeui XORG=glproto,xpm,xt
-GTK2_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk2 X_LIBS="$(X_LIBS) -lX11 -lXpm -lXt"
+GTK2_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk2 X_LIBS="$$(X_LIBS) -lX11 -lXpm -lXt"
 GTK2_PLIST_SUB=		GUI=""
 GTK2_USE=		GNOME=gtk20 XORG=xpm,xt
 LUA_MAKE_ARGS=		CONF_OPT_LUA=--enable-luainterp=dynamic CONF_OPT_LUA_PREFIX=--with-lua-prefix=${LOCALBASE}
@@ -94,7 +94,7 @@ RUBY_MAKE_ARGS=		CONF_OPT_RUBY=--enable-rubyinterp
 RUBY_USE=		RUBY=yes
 TCL_MAKE_ARGS=		CONF_OPT_TCL="--enable-tclinterp --with-tclsh=tclsh${TCL_VER}"
 TCL_USES=		tcl:85+
-X11_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=no --with-x" X_LIBS="$(X_LIBS) -lX11 -lXt"
+X11_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=no --with-x" X_LIBS="$$(X_LIBS) -lX11 -lXt"
 X11_PLIST_SUB=		GUI="@comment "
 X11_USE=		XORG=x11,xt
 

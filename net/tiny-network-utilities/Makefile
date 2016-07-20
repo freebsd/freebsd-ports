@@ -23,7 +23,7 @@ NO_ARCH=	yes
 
 FILES_EXEC=	tiny-dhcp-server tiny-udp-proxy tiny-udp-anti-nat
 FILES_LIB=	net_checksums tiny_utils
-PLIST_FILES=	$(FILES_EXEC:%=bin/%) $(FILES_LIB:%=${PYTHON_SITELIBDIR}/%.py)
+PLIST_FILES=	${FILES_EXEC:%=bin/%} ${FILES_LIB:%=${PYTHON_SITELIBDIR}/%.py}
 
 .include <bsd.port.pre.mk>
 

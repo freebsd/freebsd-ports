@@ -20,7 +20,7 @@ LICENSE_NAME=	Rayshade license
 LICENSE_FILE=	${WRKSRC}/Doc/Copyright
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:graphics/urt
+BUILD_DEPENDS=	${LOCALBASE}/lib/librle.a:graphics/urt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:R}
 

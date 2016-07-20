@@ -17,6 +17,6 @@ ALL_TARGET=	asprint
 MAKEFILE=	makefile
 
 do-install:
-	${INSTALL_PROGRAM} $(WRKSRC)/asprint ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/asprint ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

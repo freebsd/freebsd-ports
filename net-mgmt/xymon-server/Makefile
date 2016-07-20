@@ -69,7 +69,7 @@ LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 post-patch:
 	${REINPLACE_CMD} -e 's|web-build client|web-build|' ${WRKSRC}/build/Makefile.rules
 	${REINPLACE_CMD} -e 's|install-docs install-client|install-docs|' ${WRKSRC}/build/Makefile.rules
-	${REINPLACE_CMD} -e 's|$(INSTALLETCDIR)/protocols.cfg|$(INSTALLETCDIR)/protocols.cfg.DIST|' ${WRKSRC}/xymonnet/Makefile
+	${REINPLACE_CMD} -e 's|$$(INSTALLETCDIR)/protocols.cfg|$$(INSTALLETCDIR)/protocols.cfg.DIST|' ${WRKSRC}/xymonnet/Makefile
 	${REINPLACE_CMD} -e 's|TRACEROUTE="traceroute"|TRACEROUTE="mtr -c 2 -n --report"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
 	${RM} ${WRKSRC}/docs/manpages/man1/xymonping.1.html
 	${RM} ${WRKSRC}/xymonnet/xymonping.1

@@ -16,7 +16,7 @@ MAKEFILE=	Makefile.FreeBSD
 USES=		alias tar:bzip2
 USE_GNOME=	gtk12
 
-MAKE_ARGS=	STAGEDIR="$(STAGEDIR)"
+MAKE_ARGS=	STAGEDIR="${STAGEDIR}"
 
 pre-configure:
 	@${CP} ${FILESDIR}/mntent* ${WRKSRC}

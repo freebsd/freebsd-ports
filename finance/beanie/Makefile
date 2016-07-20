@@ -19,7 +19,7 @@ LATE_INSTALL_ARGS=	BEANIEROOT="${STAGEDIR}${PREFIX}/beanie"
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
-	@${CP} ${WRKSRC}/beanie.mk.sample $(WRKSRC)/beanie.mk
+	@${CP} ${WRKSRC}/beanie.mk.sample ${WRKSRC}/beanie.mk
 	@${CP} ${WRKSRC}/tmac/lhead.sample.r ${WRKSRC}/tmac/lhead.r
 
 .include <bsd.port.mk>
