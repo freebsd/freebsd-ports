@@ -3,6 +3,7 @@
 
 PORTNAME=	avro
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/${PORTNAME}/stable
 PKGNAMESUFFIX=	-c
@@ -11,13 +12,24 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Data serialization system for ANSI C
 
+LIB_DEPENDS=	libjansson.so:devel/jansson \
+		libsnappy.so:archivers/snappy
+
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lang/c
 
-pre-configure:
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003000
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${FILESDIR}
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} '/add_subdirectory(docs)/d' \
+		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} 's|/bin/bash|/bin/sh|g' \
 		${WRKSRC}/version.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
