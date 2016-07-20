@@ -143,7 +143,6 @@ make-pkg-install:
 	@ ${ECHO_CMD} DO_NOT_CONFIG=yes >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} TW_CLOBBER="false" >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} TW_PROMPT="false" >> ${PKGPOSTINSTALL}
-	@ ${ECHO_CMD} sysconfdir="$(sysconfdir)" >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} prefix=${PREFIX} >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} sysconfdir=${TWCFG} >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} path_to_vi="/usr/bin/vi" >> ${PKGPOSTINSTALL}
