@@ -169,6 +169,7 @@
     SUBDIR += consolehm
     SUBDIR += consolekit
     SUBDIR += consul
+    SUBDIR += consul-alerts
     SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreutils
