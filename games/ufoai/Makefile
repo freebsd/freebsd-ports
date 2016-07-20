@@ -97,7 +97,7 @@ post-extract:
 
 post-build:
 	@cd ${WRKSRC} && ${MAKE_CMD} lang
-.if $(PORT_OPTIONS:MUFORADIANT)
+.if ${PORT_OPTIONS:MUFORADIANT}
 	@cd ${WRKSRC} && ${MAKE_CMD} uforadiant
 .endif
 

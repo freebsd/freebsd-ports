@@ -36,8 +36,8 @@ post-patch:
 .endif
 
 pre-install:
-	@${SH} $(WRKSRC)/fixConfFile.sh "${WRKSRC}/builders/cmake/crtmpserver/crtmpserver.lua" "${PREFIX}" "${WRKSRC}"
-	@${SH} $(WRKSRC)/fixConfFile.sh "${WRKSRC}/builders/cmake/crtmpserver/all.debug.lua" "${PREFIX}" "${WRKSRC}"
+	@${SH} ${WRKSRC}/fixConfFile.sh "${WRKSRC}/builders/cmake/crtmpserver/crtmpserver.lua" "${PREFIX}" "${WRKSRC}"
+	@${SH} ${WRKSRC}/fixConfFile.sh "${WRKSRC}/builders/cmake/crtmpserver/all.debug.lua" "${PREFIX}" "${WRKSRC}"
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/var/log/crtmpserver

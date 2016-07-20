@@ -14,13 +14,13 @@ MAINTAINER=	cem@FreeBSD.org
 COMMENT=	Debugging Information Manipulation Tools
 
 LICENSE=	GPLv2
-LICENSE_FILE_GPLv2=	$(WRKSRC)/COPYING
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libdw.so:devel/elfutils
 PATCH_DEPENDS=	gnulib>=0:devel/gnulib
 
-WRKSRC=		$(WRKDIR)/dwarves-b52386d
+WRKSRC=		${WRKDIR}/dwarves-b52386d
 
 USES=		cmake:outsource localbase tar:bzip2
 USE_LDCONFIG=	yes
@@ -29,11 +29,11 @@ CMAKE_VERBOSE=	1
 
 post-patch:
 	@${CP} -a \
-	    $(LOCALBASE)/share/gnulib/lib/gettext.h \
-	    $(LOCALBASE)/share/gnulib/lib/obstack.c \
-	    $(LOCALBASE)/share/gnulib/lib/obstack.h \
-	    $(WRKSRC)/
+	    ${LOCALBASE}/share/gnulib/lib/gettext.h \
+	    ${LOCALBASE}/share/gnulib/lib/obstack.c \
+	    ${LOCALBASE}/share/gnulib/lib/obstack.h \
+	    ${WRKSRC}/
 	@${REINPLACE_CMD} -e 's|_GL_ATTRIBUTE_PURE|__attribute__((__pure__))|g' \
-	    $(WRKSRC)/obstack.h $(WRKSRC)/obstack.c
+	    ${WRKSRC}/obstack.h ${WRKSRC}/obstack.c
 
 .include <bsd.port.mk>

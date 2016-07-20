@@ -34,7 +34,7 @@ NEW_BOARDS_TXT=	${PREFIX}/arduino/hardware/arduino/boards.txt
 INSLIST=	AnalogInOutSerial Blink BlinkWithoutDelay Fade HelloWorld \
 		WebServer master_reader toneMelody
 post-patch:
-	@ARDUINO="`$(ARDUINO_CMD)`" && \
+	@ARDUINO="`${ARDUINO_CMD}`" && \
 	    ${REINPLACE_CMD} -e "s|%%ARDUINO%%|$${ARDUINO}|g" \
 	    ${WRKSRC}/arduino-mk/Arduino.mk
 	@${REINPLACE_CMD} -e "s|'${OLD_BOARDS_TXT}'|'${NEW_BOARDS_TXT}'|g" \

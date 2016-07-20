@@ -19,7 +19,7 @@ USES=		pkgconfig tar:bzip2
 PATCH_STRIP=	-p1
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
-MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I$(LOCALBASE)/include/vdr -I${WRKSRC}"
+MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include -I${LOCALBASE}/include/vdr -I${WRKSRC}"
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 

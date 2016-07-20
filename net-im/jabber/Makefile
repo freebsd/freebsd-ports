@@ -102,7 +102,7 @@ post-patch:
 		's|locale, LOCALEDIR)|locale)|' \
 		${WRKSRC}/jabberd/lib/messages.cc
 	@${REINPLACE_CMD} -e \
-		's|"$(localedir)|"$$(DESTDIR)$(localedir)|' \
+		's|"$$(localedir)|"$$(DESTDIR)$$(localedir)|' \
 		${WRKSRC}/po/Makefile.in
 	@${LN} -s jabberd.8.in ${WRKSRC}/man/jabberd14.8.in
 

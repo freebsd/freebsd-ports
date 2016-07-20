@@ -69,8 +69,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${BIN_DEST_DIR}
 .for MODEL in ${MODELS}
 	${MKDIR} ${STAGEDIR}${DEST_DIR_${MODEL}}
-.for PPD in $(PPD_${MODEL})
-	${INSTALL_DATA} ${WRKSRC}/ppd/${PPD}.ppd ${STAGEDIR}$(DEST_DIR_${MODEL})
+.for PPD in ${PPD_${MODEL}}
+	${INSTALL_DATA} ${WRKSRC}/ppd/${PPD}.ppd ${STAGEDIR}${DEST_DIR_${MODEL}}
 .endfor
 .endfor
 

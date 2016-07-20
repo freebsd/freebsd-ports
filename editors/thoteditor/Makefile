@@ -14,7 +14,7 @@ COMMENT=	Structured document editor, offering a graphical WYSIWYG interface
 
 THOT_SUBDIR=	Target
 USES=		gmake motif
-WRKSRC=		$(WRKDIR)/Thot/$(THOT_SUBDIR)
+WRKSRC=		${WRKDIR}/Thot/${THOT_SUBDIR}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-thot --enable-plugin --without-insure --without-amaya \
 		--disable-java --disable-intr --disable-jit --disable-math \
@@ -37,7 +37,7 @@ post-patch:
 		${WRKDIR}/Thot/thotlib/include/sysdep.h
 
 do-configure:
-	(cd $(WRKSRC);../configure $(CONFIGURE_ARGS))
+	(cd ${WRKSRC};../configure ${CONFIGURE_ARGS})
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/thot/doc

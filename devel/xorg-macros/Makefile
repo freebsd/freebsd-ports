@@ -4,7 +4,7 @@
 PORTNAME=	xorg-macros
 PORTVERSION=	1.19.0
 CATEGORIES=	devel x11
-DISTNAME=	util-macros-$(PORTVERSION)
+DISTNAME=	util-macros-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org development aclocal macros

@@ -38,7 +38,7 @@ post-patch:
 		s|/share/games/edgar/|/share/edgar/|; \
 		s|/share/man/|/man/|; \
 		s|-Wall ||; \
-		s|sdl-config|$(SDL_CONFIG)|; \
+		s|sdl-config|${SDL_CONFIG}|; \
 		s|-s ||' \
 		${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e 's|SDL/SDL|${LOCALBASE}/include/SDL/SDL|g' \
