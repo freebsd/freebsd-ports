@@ -1,14 +1,7 @@
-The bulk of this patch eliminates the gratutious differences between
-LP64, LARGEFILE64 and normal cases. The differences are dealt with
-in one location and the rest of the code need not differ.
-
-Most of the other changes deal with printf-formats (%zd for ssize_t
-and the like) and other warnings.
-
-	-mi
---- libasync.c	2015-10-20 14:12:13.000000000 +0000
+--- libasync.c.orig	2015-10-20 14:12:13 UTC
 +++ libasync.c
-@@ -97,4 +97,13 @@
+@@ -96,6 +96,15 @@
+ 
  #include <sys/types.h>
  #include <aio.h>
 +
@@ -22,7 +15,9 @@ and the like) and other warnings.
 +
  #if defined(solaris) || defined(linux) || defined(SCO_Unixware_gcc) || defined(__NetBSD__)
  #else
-@@ -133,9 +142,13 @@
+ #include <sys/timers.h>
+@@ -132,11 +141,15 @@
+ #include <strings.h> /* For the BSD string functions */
  #endif
  
 -void mbcopy(char *source, char *dest, size_t len);
@@ -37,7 +32,9 @@ and the like) and other warnings.
 +#	endif
  #endif
  #if defined(OSFV5)
-@@ -151,13 +164,14 @@
+ #include <string.h>
+@@ -150,15 +163,16 @@ extern int one;
+  * cache, pointed to by async_init(gc) will be of
   * this structure type.
   */
 -char version[] = "Libasync Version $Revision: 3.25 $";
@@ -57,7 +54,9 @@ and the like) and other warnings.
 +	struct aiocb myaiocb;
  #endif 
  	long long fd;				/* File descriptor */
-@@ -192,6 +205,6 @@
+ 	long long size;				/* Size of the transfer */
+@@ -191,8 +205,8 @@ struct cache {
+ 
  long long max_depth;
  extern int errno;
 -struct cache_ent *alloc_cache();
@@ -66,22 +65,26 @@ and the like) and other warnings.
 +static struct cache_ent *incache();
  void async_init();
  void end_async();
-@@ -275,5 +288,5 @@
+ int async_suspend();
+@@ -274,7 +288,7 @@ async_suspend(struct cache_ent *ce)
+ #ifdef __LP64__
  	const struct aiocb * const cblist[1] = {&ce->myaiocb};
  #else
 -	const struct aiocb64 * const cblist[1] = {&ce->myaiocb64};
 +	const struct aiocb64 * const cblist[1] = {&ce->myaiocb};
  #endif
  #else
-@@ -348,87 +361,26 @@
+ 	const struct aiocb * const cblist[1] = {&ce->myaiocb};
+@@ -347,89 +361,28 @@ long long depth;
+ 	 */
  	if((ce=(struct cache_ent *)incache(gc,fd,offset,size)))
  	{
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
- 		while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
- 		{
- 			async_suspend(ce);
- 		}
+-		while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
+-		{
+-			async_suspend(ce);
+-		}
 -#else
 -		while((ret=aio_error64(&ce->myaiocb64))== EINPROGRESS)
 -		{
@@ -89,10 +92,10 @@ and the like) and other warnings.
 -		}
 -#endif
 -#else
--		while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
--		{
--			async_suspend(ce);
--		}
+ 		while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
+ 		{
+ 			async_suspend(ce);
+ 		}
 -#endif
  		if(ret)
  		{
@@ -117,12 +120,12 @@ and the like) and other warnings.
  		{
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
- 			mbcopy((char *)ce->myaiocb.aio_buf,(char *)ubuffer,(size_t)retval);
+-			mbcopy((char *)ce->myaiocb.aio_buf,(char *)ubuffer,(size_t)retval);
 -#else
 -			mbcopy((char *)ce->myaiocb64.aio_buf,(char *)ubuffer,(size_t)retval);
 -#endif
 -#else
--			mbcopy((char *)ce->myaiocb.aio_buf,(char *)ubuffer,(size_t)retval);
+ 			mbcopy((char *)ce->myaiocb.aio_buf,(char *)ubuffer,(size_t)retval);
 -#endif
  		}
 -#ifdef _LARGEFILE64_SOURCE 
@@ -166,28 +169,32 @@ and the like) and other warnings.
 -#endif
  				);
  		}
-@@ -444,13 +396,5 @@
+ 		ce->direct=0;
+@@ -443,21 +396,13 @@ long long depth;
+ 		del_read++;
  		first_ce=alloc_cache(gc,fd,offset,size,(long long)LIO_READ);
  again:
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
- 		ret=aio_read(&first_ce->myaiocb);
+-		ret=aio_read(&first_ce->myaiocb);
 -#else
 -		ret=aio_read64(&first_ce->myaiocb64);
 -#endif
 -#else
--		ret=aio_read(&first_ce->myaiocb);
+ 		ret=aio_read(&first_ce->myaiocb);
 -#endif
  		if(ret!=0)
  		{
-@@ -458,5 +402,5 @@
+ 			if(errno==EAGAIN)
  				goto again;
  			else
 -				printf("error returned from aio_read(). Ret %d errno %d\n",ret,errno);
 +				printf("error returned from aio_read(). Ret %zd errno %d\n",ret,errno);
  		}
  	}
-@@ -483,13 +427,5 @@
+ 	if(stride==0)	 /* User does not want read-ahead */
+@@ -482,15 +427,7 @@ again:
+ 		if((ce=incache(gc,fd,r_offset,a_size)))
  			continue;
  		ce=alloc_cache(gc,fd,r_offset,a_size,(long long)LIO_READ);
 -#ifdef _LARGEFILE64_SOURCE 
@@ -201,7 +208,9 @@ and the like) and other warnings.
 -#endif
  		if(ret!=0)
  		{
-@@ -501,81 +437,25 @@
+ 			takeoff_cache(gc,ce);
+@@ -500,83 +437,27 @@ again:
+ out:
  	if(del_read)	/* Wait for the first read to complete */
  	{
 -#ifdef _LARGEFILE64_SOURCE 
@@ -248,15 +257,11 @@ and the like) and other warnings.
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
 -			printf("aio_return error2: fd %d offset %lld buffer %lx size %d Opcode %d\n",
-+			printf("aio_return error2: ret %zd %d\n",retval,errno);
-+			printf("aio_return error2: fd %d offset %lld buffer %p size %zd Opcode %d\n",
- 				first_ce->myaiocb.aio_fildes,
+-				first_ce->myaiocb.aio_fildes,
 -				first_ce->myaiocb.aio_offset,
 -				(long)(first_ce->myaiocb.aio_buf),
-+				(long long)first_ce->myaiocb.aio_offset,
-+				first_ce->myaiocb.aio_buf,
- 				first_ce->myaiocb.aio_nbytes,
- 				first_ce->myaiocb.aio_lio_opcode
+-				first_ce->myaiocb.aio_nbytes,
+-				first_ce->myaiocb.aio_lio_opcode
 -#else
 -			printf("aio_return error2: fd %d offset %lld buffer %lx size %d Opcode %d\n",
 -				first_ce->myaiocb64.aio_fildes,
@@ -267,11 +272,15 @@ and the like) and other warnings.
 -#endif
 -#else
 -			printf("aio_return error2: fd %d offset %d buffer %lx size %d Opcode %d\n",
--				first_ce->myaiocb.aio_fildes,
++			printf("aio_return error2: ret %zd %d\n",retval,errno);
++			printf("aio_return error2: fd %d offset %lld buffer %p size %zd Opcode %d\n",
+ 				first_ce->myaiocb.aio_fildes,
 -				first_ce->myaiocb.aio_offset,
 -				(long)(first_ce->myaiocb.aio_buf),
--				first_ce->myaiocb.aio_nbytes,
--				first_ce->myaiocb.aio_lio_opcode
++				(long long)first_ce->myaiocb.aio_offset,
++				first_ce->myaiocb.aio_buf,
+ 				first_ce->myaiocb.aio_nbytes,
+ 				first_ce->myaiocb.aio_lio_opcode
 -#endif
  				);
  		}
@@ -279,23 +288,27 @@ and the like) and other warnings.
  		{
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
--			mbcopy((char *)first_ce->myaiocb.aio_buf,(char *)ubuffer,(size_t)retval);
+ 			mbcopy((char *)first_ce->myaiocb.aio_buf,(char *)ubuffer,(size_t)retval);
 -#else
 -			mbcopy((char *)first_ce->myaiocb64.aio_buf,(char *)ubuffer,(size_t)retval);
 -#endif
 -#else
- 			mbcopy((char *)first_ce->myaiocb.aio_buf,(char *)ubuffer,(size_t)retval);
+-			mbcopy((char *)first_ce->myaiocb.aio_buf,(char *)ubuffer,(size_t)retval);
 -#endif
  		}
  		first_ce->direct=0;
-@@ -602,5 +482,5 @@
+ 		takeoff_cache(gc,first_ce);
+@@ -601,7 +482,7 @@ long long fd,size,op;
+ off64_t offset;
  {
  	struct cache_ent *ce;
 -	long temp;
 +	intptr_t temp;
  	ce=(struct cache_ent *)malloc((size_t)sizeof(struct cache_ent));
  	if(ce == (struct cache_ent *)0)
-@@ -610,31 +490,11 @@
+ 	{
+@@ -609,56 +490,22 @@ off64_t offset;
+ 		exit(175);
  	}
  	bzero(ce,sizeof(struct cache_ent));
 -#ifdef _LARGEFILE64_SOURCE 
@@ -330,15 +343,15 @@ and the like) and other warnings.
 +	if(ce->myaiocb.aio_buf == NULL)
  	{
  		printf("Malloc failed\n");
-@@ -642,22 +502,8 @@
+ 		exit(176);
  	}
  	/*bzero(ce->myaiocb.aio_buf,(size_t)size);*/
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
--	ce->myaiocb.aio_reqprio=0;
--	ce->myaiocb.aio_nbytes=(size_t)size;
--	ce->myaiocb.aio_sigevent.sigev_notify=SIGEV_NONE;
--	ce->myaiocb.aio_lio_opcode=(int)op;
+ 	ce->myaiocb.aio_reqprio=0;
+ 	ce->myaiocb.aio_nbytes=(size_t)size;
+ 	ce->myaiocb.aio_sigevent.sigev_notify=SIGEV_NONE;
+ 	ce->myaiocb.aio_lio_opcode=(int)op;
 -#else
 -	ce->myaiocb64.aio_reqprio=0;
 -	ce->myaiocb64.aio_nbytes=(size_t)size;
@@ -346,21 +359,25 @@ and the like) and other warnings.
 -	ce->myaiocb64.aio_lio_opcode=(int)op;
 -#endif
 -#else
- 	ce->myaiocb.aio_reqprio=0;
- 	ce->myaiocb.aio_nbytes=(size_t)size;
- 	ce->myaiocb.aio_sigevent.sigev_notify=SIGEV_NONE;
- 	ce->myaiocb.aio_lio_opcode=(int)op;
+-	ce->myaiocb.aio_reqprio=0;
+-	ce->myaiocb.aio_nbytes=(size_t)size;
+-	ce->myaiocb.aio_sigevent.sigev_notify=SIGEV_NONE;
+-	ce->myaiocb.aio_lio_opcode=(int)op;
 -#endif
  	ce->fd=(int)fd;
  	ce->forward=0;
-@@ -688,6 +534,4 @@
+ 	ce->back=gc->tail;
+@@ -687,8 +534,6 @@ off64_t offset;
+ 		return(0);
  	}
  	move=gc->head;
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
  	while(move)
  	{
-@@ -699,26 +543,4 @@
+ 		if((move->fd == fd) && (move->myaiocb.aio_offset==(off64_t)offset) &&
+@@ -698,28 +543,6 @@ off64_t offset;
+ 			}
  		move=move->forward;
  	}
 -#else
@@ -387,40 +404,44 @@ and the like) and other warnings.
 -#endif
  	return(0);
  }
-@@ -805,24 +627,8 @@
+ 
+@@ -804,26 +627,10 @@ struct cache *gc;
+ 		ce=gc->head;
  		if(ce==0)
  			return;
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
--		while((ret = aio_cancel(0,&ce->myaiocb))==AIO_NOTCANCELED)
+ 		while((ret = aio_cancel(0,&ce->myaiocb))==AIO_NOTCANCELED)
 -#else
 -		while((ret = aio_cancel64(0,&ce->myaiocb64))==AIO_NOTCANCELED)
 -#endif
 -#else
- 		while((ret = aio_cancel(0,&ce->myaiocb))==AIO_NOTCANCELED)
+-		while((ret = aio_cancel(0,&ce->myaiocb))==AIO_NOTCANCELED)
 -#endif
  			; 
  
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
--		ret = aio_return(&ce->myaiocb);
+ 		ret = aio_return(&ce->myaiocb);
 -#else
 -		ret = aio_return64(&ce->myaiocb64);
 -#endif
 -#else
- 		ret = aio_return(&ce->myaiocb);
+-		ret = aio_return(&ce->myaiocb);
 -#endif
  		ce->direct=0;
  		takeoff_cache(gc,ce);	  /* remove from cache */
-@@ -865,98 +671,27 @@
+ 	}
+@@ -864,100 +671,29 @@ long long depth;
+ 	 */
  	if((ce=(struct cache_ent *)incache(gc,fd,offset,size)))
  	{
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
- 		while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
- 		{
- 			async_suspend(ce);
- 		}
+-		while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
+-		{
+-			async_suspend(ce);
+-		}
 -#else
 -		while((ret=aio_error64(&ce->myaiocb64))== EINPROGRESS)
 -		{
@@ -428,10 +449,10 @@ and the like) and other warnings.
 -		}
 -#endif
 -#else
--		while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
--		{
--			async_suspend(ce);
--		}
+ 		while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
+ 		{
+ 			async_suspend(ce);
+ 		}
 -#endif
  		if(ret)
 -			printf("aio_error 3: ret %d %d\n",ret,errno);
@@ -518,7 +539,9 @@ and the like) and other warnings.
 -#endif
  				);
  		}
-@@ -974,22 +709,8 @@
+ 		ce->direct=1;
+@@ -973,30 +709,16 @@ long long depth;
+ 		first_ce=alloc_cache(gc,fd,offset,size,(long long)LIO_READ); /* allocate buffer */
  		/*printf("allocated buffer/read %x offset %d\n",first_ce->myaiocb.aio_buf,offset);*/
  again:
 -#ifdef _LARGEFILE64_SOURCE 
@@ -541,22 +564,24 @@ and the like) and other warnings.
 -#endif
  		if(ret!=0)
  		{
-@@ -997,5 +718,5 @@
+ 			if(errno==EAGAIN)
  				goto again;
  			else
 -				printf("error returned from aio_read(). Ret %d errno %d\n",ret,errno);
 +				printf("error returned from aio_read(). Ret %zd errno %d\n",ret,errno);
  		}
  	}
-@@ -1022,22 +743,8 @@
+ 	if(stride==0)	 /* User does not want read-ahead */
+@@ -1021,24 +743,10 @@ again:
+ 		if((ce=incache(gc,fd,r_offset,a_size)))
  			continue;
  		ce=alloc_cache(gc,fd,r_offset,a_size,(long long)LIO_READ);
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
--		ce->oldbuf=ce->myaiocb.aio_buf;
--		ce->oldfd=ce->myaiocb.aio_fildes;
--		ce->oldsize=ce->myaiocb.aio_nbytes;
--		ret=aio_read(&ce->myaiocb);
+ 		ce->oldbuf=ce->myaiocb.aio_buf;
+ 		ce->oldfd=ce->myaiocb.aio_fildes;
+ 		ce->oldsize=ce->myaiocb.aio_nbytes;
+ 		ret=aio_read(&ce->myaiocb);
 -#else
 -		ce->oldbuf=ce->myaiocb64.aio_buf;
 -		ce->oldfd=ce->myaiocb64.aio_fildes;
@@ -564,14 +589,16 @@ and the like) and other warnings.
 -		ret=aio_read64(&ce->myaiocb64);
 -#endif
 -#else
- 		ce->oldbuf=ce->myaiocb.aio_buf;
- 		ce->oldfd=ce->myaiocb.aio_fildes;
- 		ce->oldsize=ce->myaiocb.aio_nbytes;
- 		ret=aio_read(&ce->myaiocb);
+-		ce->oldbuf=ce->myaiocb.aio_buf;
+-		ce->oldfd=ce->myaiocb.aio_fildes;
+-		ce->oldsize=ce->myaiocb.aio_nbytes;
+-		ret=aio_read(&ce->myaiocb);
 -#endif
  		if(ret!=0)
  		{
-@@ -1049,39 +756,10 @@
+ 			takeoff_cache(gc,ce);
+@@ -1048,97 +756,33 @@ again:
+ out:
  	if(del_read)	/* Wait for the first read to complete */
  	{
 -#ifdef _LARGEFILE64_SOURCE 
@@ -612,18 +639,18 @@ and the like) and other warnings.
 +			printf("aio_error 4: ret %zd %d\n",ret,errno);
  		if(first_ce->oldbuf != first_ce->myaiocb.aio_buf ||
  			first_ce->oldfd != first_ce->myaiocb.aio_fildes ||
-@@ -1089,55 +767,20 @@
+ 			first_ce->oldsize != first_ce->myaiocb.aio_nbytes) 
  			printf("It changed in flight2\n");
  		retval=aio_return(&first_ce->myaiocb);
 -#endif
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
--		if(retval < first_ce->myaiocb.aio_nbytes)
+ 		if(retval < first_ce->myaiocb.aio_nbytes)
 -#else
 -		if(retval < first_ce->myaiocb64.aio_nbytes)
 -#endif
 -#else
- 		if(retval < first_ce->myaiocb.aio_nbytes)
+-		if(retval < first_ce->myaiocb.aio_nbytes)
 -#endif
  		{
 -			printf("aio_return error5: ret %d %d\n",retval,errno);
@@ -674,7 +701,9 @@ and the like) and other warnings.
 +			*ubuffer= NULL;
  		first_ce->direct=1;	 /* do not delete the buffer */
  		takeoff_cache(gc,first_ce);
-@@ -1218,30 +861,14 @@
+ 		putoninuse(gc,first_ce);
+@@ -1217,32 +861,16 @@ long long depth;
+ 	size_t ret;
  	ce=allocate_write_buffer(gc,fd,offset,size,(long long)LIO_WRITE,depth,0LL,(char *)0,(char *)0);
  	ce->direct=0;	 /* not direct. Lib supplies buffer and must free it */
 -#ifdef _LARGEFILE64_SOURCE 
@@ -708,7 +737,9 @@ and the like) and other warnings.
 -#endif
  	if(ret==-1)
  	{
-@@ -1259,11 +886,11 @@
+ 		if(errno==EAGAIN)
+@@ -1258,13 +886,13 @@ again:
+ 		}
  		else
  		{
 -			printf("Error in aio_write: ret %d errno %d count %lld\n",ret,errno,gc->w_count);
@@ -726,14 +757,18 @@ and the like) and other warnings.
 +				ce->myaiocb.aio_nbytes);
  			*/
  			exit(177);
-@@ -1289,5 +916,5 @@
+ 		}
+@@ -1288,7 +916,7 @@ long long direct;
+ char *buffer,*free_addr;
  {
  	struct cache_ent *ce;
 -	long temp;
 +	intptr_t temp;
  	if(fd==0LL)
  	{
-@@ -1304,44 +931,10 @@
+ 		printf("Setting up write buffer insane\n");
+@@ -1303,46 +931,12 @@ char *buffer,*free_addr;
+ 		exit(179);
  	}
  	bzero(ce,sizeof(struct cache_ent));
 -#ifdef _LARGEFILE64_SOURCE 
@@ -780,7 +815,9 @@ and the like) and other warnings.
 +		temp = (intptr_t)ce->real_address;
  		temp = (temp+page_size) & ~(page_size-1);
  		ce->myaiocb.aio_buf=(volatile void *)temp;
-@@ -1353,27 +946,12 @@
+ 	}
+@@ -1352,29 +946,14 @@ char *buffer,*free_addr;
+ 		ce->real_address=(char *)free_addr;
  	}
  	if(ce->myaiocb.aio_buf == 0)
 -#endif
@@ -790,10 +827,10 @@ and the like) and other warnings.
  	}
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
--	ce->myaiocb.aio_reqprio=0;
--	ce->myaiocb.aio_nbytes=(size_t)size;
--	ce->myaiocb.aio_sigevent.sigev_notify=SIGEV_NONE;
--	ce->myaiocb.aio_lio_opcode=(int)op;
+ 	ce->myaiocb.aio_reqprio=0;
+ 	ce->myaiocb.aio_nbytes=(size_t)size;
+ 	ce->myaiocb.aio_sigevent.sigev_notify=SIGEV_NONE;
+ 	ce->myaiocb.aio_lio_opcode=(int)op;
 -#else
 -	ce->myaiocb64.aio_reqprio=0;
 -	ce->myaiocb64.aio_nbytes=(size_t)size;
@@ -801,21 +838,25 @@ and the like) and other warnings.
 -	ce->myaiocb64.aio_lio_opcode=(int)op;
 -#endif
 -#else
- 	ce->myaiocb.aio_reqprio=0;
- 	ce->myaiocb.aio_nbytes=(size_t)size;
- 	ce->myaiocb.aio_sigevent.sigev_notify=SIGEV_NONE;
- 	ce->myaiocb.aio_lio_opcode=(int)op;
+-	ce->myaiocb.aio_reqprio=0;
+-	ce->myaiocb.aio_nbytes=(size_t)size;
+-	ce->myaiocb.aio_sigevent.sigev_notify=SIGEV_NONE;
+-	ce->myaiocb.aio_lio_opcode=(int)op;
 -#endif
  	ce->fd=(int)fd;
  	return(ce);
-@@ -1409,5 +987,5 @@
+ }
+@@ -1408,7 +987,7 @@ struct cache *gc;
+ {
  	while(gc->w_head)
  	{
 -		/*printf("async_write_finish: Waiting for buffer %x to finish\n",gc->w_head->myaiocb64.aio_buf);*/
 +		/*printf("async_write_finish: Waiting for buffer %x to finish\n",gc->w_head->myaiocb.aio_buf);*/
  		async_wait_for_write(gc);
  	}
-@@ -1423,5 +1001,6 @@
+ }
+@@ -1422,7 +1001,8 @@ async_wait_for_write(gc)
+ struct cache *gc;
  {
  	struct cache_ent *ce;
 -	size_t ret,retval;
@@ -823,7 +864,9 @@ and the like) and other warnings.
 +	int retval;
  	if(gc->w_head==0)
  		return;
-@@ -1432,67 +1011,26 @@
+ 	ce=gc->w_head;
+@@ -1431,69 +1011,28 @@ struct cache *gc;
+ 	ce->forward=0;
  	if(ce==gc->w_tail)
  		gc->w_tail=0;
 -	/*printf("Wait for buffer %x  offset %lld  size %d to finish\n",
@@ -838,10 +881,10 @@ and the like) and other warnings.
  	*/
 -#ifdef _LARGEFILE64_SOURCE 
 -#ifdef __LP64__
--	while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
--	{
--		async_suspend(ce);
--	}
+ 	while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
+ 	{
+ 		async_suspend(ce);
+ 	}
 -#else
 -	while((ret=aio_error64(&ce->myaiocb64))== EINPROGRESS)
 -	{
@@ -849,10 +892,10 @@ and the like) and other warnings.
 -	}
 -#endif
 -#else
- 	while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
- 	{
- 		async_suspend(ce);
- 	}
+-	while((ret=aio_error(&ce->myaiocb))== EINPROGRESS)
+-	{
+-		async_suspend(ce);
+-	}
 -#endif
  	if(ret)
  	{
@@ -899,7 +942,9 @@ and the like) and other warnings.
 +	if(retval < 0)
  	{
  		printf("aio_return error: %d\n",errno);
-@@ -1534,19 +1072,11 @@
+ 	}
+@@ -1533,21 +1072,13 @@ char *free_addr;
+ 	ce->direct=0;	/* have library de-allocate the buffer */
  	async_put_on_write_queue(gc,ce);
  	/*
 -	printf("awnc: fd %d offset %lld, size %d\n",ce->myaiocb64.aio_fildes,
@@ -922,7 +967,9 @@ and the like) and other warnings.
 -#endif
  	if(ret==-1)
  	{
-@@ -1564,26 +1094,10 @@
+ 		if(errno==EAGAIN)
+@@ -1563,28 +1094,12 @@ again:
+ 		}
  		else
  		{
 -			printf("Error in aio_write: ret %d errno %d\n",ret,errno);
@@ -953,7 +1000,9 @@ and the like) and other warnings.
 -#endif
  			exit(182);
  		}
-@@ -1596,5 +1110,6 @@
+ 	} 
+@@ -1595,7 +1110,8 @@ again:
+ }
  
  void mbcopy(source, dest, len)
 -char *source,*dest;
@@ -961,3 +1010,4 @@ and the like) and other warnings.
 +char *dest;
  size_t len;
  {
+ 	int i;
