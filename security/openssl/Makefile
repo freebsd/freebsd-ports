@@ -216,7 +216,7 @@ do-configure:
 	${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(PREFIX)/man|' \
 		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
-		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
+		-e 's|LIBVERSION=[^ ]* |LIBVERSION=${OPENSSL_SHLIBVER} |' \
 		${WRKSRC}/Makefile
 
 post-install:

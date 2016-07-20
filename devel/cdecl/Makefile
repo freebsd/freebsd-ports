@@ -14,7 +14,7 @@ CONFLICTS=	cutils-[0-9]*
 USES=		readline
 USE_CSTD=	c89
 ALL_TARGET=	${PORTNAME}
-MAKE_ENV+=	STAGEDIR=$(STAGEDIR)
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
 PLIST_FILES=	bin/cdecl bin/c++decl man/man1/cdecl.1.gz man/man1/c++decl.1.gz
 PORTDOCS=	testset testset++

@@ -22,7 +22,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=| ; \
-		s|-c $(OPTIMISE)|-c $(CFLAGS) $(OPTIMIZE)|g' \
+		s|-c $$(OPTIMISE)|-c ${CFLAGS} ${OPTIMIZE}|g' \
 		${WRKSRC}/Makefile
 
 do-install:

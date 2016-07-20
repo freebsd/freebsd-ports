@@ -49,7 +49,7 @@ PORT_OPTIONS+=	${ALLSKINS}
 post-build-script:
 DISTFILES+=	${DEFAULT_FILE}${EXTRACT_SUFX}
 .for f in ${ALLSKINS}
-.if $(PORT_OPTIONS:M${f})
+.if ${PORT_OPTIONS:M${f}}
 PLIST_SUB+=	${f}="" WITHOUT_SKIN_${f}="@comment "
 DISTFILES+=	${${f}_FILE}${EXTRACT_SUFX}
 .else

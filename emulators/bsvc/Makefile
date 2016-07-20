@@ -34,6 +34,6 @@ post-patch:
 			 s/strstream\.h/strstream/; \
 			 s/fstream\.h/fstream/' \{\} \;
 	@${FIND} ${WRKSRC} -name Makefile -exec \
-		${REINPLACE_CMD} -e 's/make/$(MAKE)/' \{\} \;
+		${REINPLACE_CMD} -e 's/make/${MAKE}/' \{\} \;
 
 .include <bsd.port.mk>

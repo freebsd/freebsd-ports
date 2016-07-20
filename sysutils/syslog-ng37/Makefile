@@ -8,7 +8,7 @@ PORTREVISION=	4
 PKGNAMESUFFIX=	37
 .endif
 CATEGORIES=	sysutils
-DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
+DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
 #DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 #MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 DISTFILES=      syslog-ng-${DISTVERSION}_with_man.tar.gz
@@ -26,7 +26,7 @@ BUILD_DEPENDS=		xsltproc:textproc/libxslt \
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
-WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON

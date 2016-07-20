@@ -463,7 +463,7 @@ pre-configure:
 
 # XXX: Gross hack to allow build newer Samba while old one is installed.
 # This implies that LINKFLAGS_PYEMBED contains flags which are already
-# used in other parts of LINKFLAGS, namely -L$(LOCALBASE)/lib and -pthread
+# used in other parts of LINKFLAGS, namely -L${LOCALBASE}/lib and -pthread
 post-configure:
 	-${REINPLACE_CMD} -e 's|LINKFLAGS_PYEMBED.*|LINKFLAGS_PYEMBED = []|' \
 		${CONFIGURE_WRKSRC}/bin/c4che/default.cache.py

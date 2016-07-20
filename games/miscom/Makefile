@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-CFLAGS+=	-DSOUNDSDIR='\"$(DATADIR)\"' -DSOUND_SUPPORT -DMORE_SOUNDBUF
+CFLAGS+=	-DSOUNDSDIR='\"${DATADIR}\"' -DSOUND_SUPPORT -DMORE_SOUNDBUF
 .endif
 
 do-install:

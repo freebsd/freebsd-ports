@@ -118,13 +118,13 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(PREFIX)/man|' \
-		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
-		-e 's|$$(SHLIB_MAJOR).$$(SHLIB_MINOR)|$(OPENSSL_SHLIBVER)|g' \
+		-e 's|LIBVERSION=[^ ]* |LIBVERSION=${OPENSSL_SHLIBVER} |' \
+		-e 's|$$(SHLIB_MAJOR).$$(SHLIB_MINOR)|${OPENSSL_SHLIBVER}|g' \
 		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
 		-e 's| install_html_docs$$||' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} \
-		-e 's|^LIBVERSION=$$|LIBVERSION=$(OPENSSL_SHLIBVER) |' \
+		-e 's|^LIBVERSION=$$|LIBVERSION=${OPENSSL_SHLIBVER} |' \
 		${WRKSRC}/Makefile.shared
 
 post-install-SHARED-on:

@@ -19,7 +19,7 @@ USES=		autoreconf libtool pkgconfig
 INSTALL_TARGET=	install-strip
 
 post-patch:
-	${REINPLACE_CMD} -e 's|$(libdir)/pkgconfig|$(libdir)data/pkgconfig|' \
+	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(libdir)data/pkgconfig|' \
 		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

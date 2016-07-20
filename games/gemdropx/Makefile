@@ -29,10 +29,10 @@ DESKTOP_ENTRIES="Gem Drop X" "" "${PORTNAME}" \
 
 post-patch:
 	@${REINPLACE_CMD} \
-	-e 's|sdl-config|$(SDL_CONFIG)| ; \
+	-e 's|sdl-config|${SDL_CONFIG}| ; \
 	s|CC=gcc|CC?=${CC}| ; \
 	s|CXX=gcc|CXX?=${CC}| ; \
-	s|CFLAGS=-Wall $(SDL_CFLAGS)|CFLAGS+=-w $(SDL_CFLAGS)|' \
+	s|CFLAGS=-Wall ${SDL_CFLAGS}|CFLAGS+=-w ${SDL_CFLAGS}|' \
 		${WRKSRC}/Makefile
 	@${FIND} ${WRKDIR} -name .xvpics | ${XARGS} ${RM} -rf
 
