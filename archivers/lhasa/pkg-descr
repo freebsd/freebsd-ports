@@ -1,0 +1,12 @@
+Lhasa is a command line tool and library for parsing LHA archives.
+
+Currently it is only possible to decompress archives. Compressing
+LHA archives may be an enhancement for future versions. The aim is
+to be compatible with as many different variants of the LHA file
+format as possible, including LArc (.lzs) and PMarc (.pma).
+
+The command line tool aims to be interface-compatible with Unix LHA
+tool (command line syntax and output), for backwards compatibility
+with tools that expect particular output.
+
+WWW: http://fragglet.github.io/lhasa/
