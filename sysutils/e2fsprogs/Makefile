@@ -135,11 +135,11 @@ post-patch::
 .endif
 .endif
 
+.if ${MASTERDIR} == ${.CURDIR}
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 BROKEN=self-test failures on FreeBSD 11+ hint to data corruption issues.
 .endif
 
-.if ${MASTERDIR} == ${.CURDIR}
 pre-build:
 # fix up Makefile ordering for parallel builds
 	cd ${WRKSRC}/lib/et && ${DO_MAKE_BUILD} compile_et
