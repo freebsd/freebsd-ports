@@ -16,7 +16,6 @@ USES=		compiler
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcalephStorage
-GH_TAGNAME=	v0.3.3
 
 PLIST_FILES=	${PREFIX}/bin/consul-alerts
 
