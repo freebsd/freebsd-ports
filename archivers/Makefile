@@ -55,6 +55,7 @@
     SUBDIR += lcab
     SUBDIR += lha
     SUBDIR += lha-ac
+    SUBDIR += lhasa
     SUBDIR += libarc
     SUBDIR += libarchive
     SUBDIR += libcabinet
