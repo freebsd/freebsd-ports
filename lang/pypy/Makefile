@@ -1,11 +1,11 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	pypy
-PORTVERSION=	5.1.1	# Also update bsd.pypy.cffi.mk
+PORTNAME?=	pypy
+PORTVERSION?=	5.3.1	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/
-DISTVERSIONSUFFIX=	-src
+DISTNAME?=	${PORTNAME}2-v${PORTVERSION}-src
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
@@ -28,26 +28,34 @@ PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
 PYPY_MINMEM_DESC=	Use PyPy to translate (lowest memory usage)
 TRANS_DESC=	Translation method
 LOCALBASE?=	/usr/local
-.if exists(${LOCALBASE}/bin/pypy)
+.if exists(${LOCALBASE}/bin/pypy) || ${PORTNAME} != pypy
 OPTIONS_DEFAULT=	PYPY_MINMEM
 OPTIONS_SINGLE_TRANS+=	PYPY PYPY_MINMEM
 .else
 OPTIONS_SLAVE=	PYTHON
 .endif
 
-CONFLICTS_INSTALL=	pypy3-[0-9]*
+CONFLICTS_INSTALL?=	pypy3-[0-9]*
 
 ALL_TARGET=	pypy-c
-BUILD_WRKSRC=	${WRKDIR}/build/usession-release-${PORTVERSION:C/0\.0/0/}-0/testing_1
+BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-pypy2.7-v${PORTVERSION}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
 USES=		gettext-runtime gmake tar:bzip2
 
+.if ${PORTNAME} != pypy
+PYPY_BUILD_DEPENDS=	pypy:lang/pypy
+PYPY_MINMEM_DEPENDS=	pypy:lang/pypy
+.endif
 PYPY_VARS=	PYTHON_CMD=${LOCALBASE}/bin/pypy
 PYPY_MINMEM_VARS=	PYTHON_CMD="${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_longevity=300"
 PYTHON_USES=	python:2,build
 
-.include ".${CURDIR}/bsd.pypy.mk"
+DISTINFO_FILE=	${.CURDIR}/distinfo
+MASTERDIR?=	${.CURDIR}
+PLIST=		${.CURDIR}/pkg-plist
+
+.include "${MASTERDIR}/bsd.pypy.mk"
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "armv6"
@@ -75,6 +83,9 @@ do-install:
 		--without-gdbm --without-sqlite3 --without-tk
 	${EXTRACT_CMD} -C ${STAGEDIR}${PREFIX} -xf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2
 	${LN} -fs ../${PYPY_DIR}/bin/pypy ${STAGEDIR}${PREFIX}/bin/pypy
+.for cffi in curses resource audioop syslog pwdgrp
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PYPY_DIR}/lib_pypy/_${cffi}_cffi.pypy-${PYPY_CFFI_VER}.so
+.endfor
 
 do-test:
 	# See https://bitbucket.org/pypy/buildbot/src/default/bot2/pypybuildbot/builds.py?at=default#builds.py-386
