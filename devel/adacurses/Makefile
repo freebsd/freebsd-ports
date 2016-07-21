@@ -3,7 +3,7 @@
 
 PORTNAME=	adacurses
 PORTVERSION=	20150808
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/AdaCurses/
 DISTNAME=	AdaCurses-${PORTVERSION}
@@ -41,6 +41,13 @@ USES+=	ncurses
 post-patch:
 	@${REINPLACE_CMD} -e '/(INSTALL_PROG)/d' -e 's|@ADAGEN_LDFLAGS@||' \
 		${WRKSRC}/gen/Makefile.in
+	@${REINPLACE_CMD} -e '/pragma Linker_Options/d' \
+		${WRKSRC}/gen/terminal_interface-curses.ads.m4 \
+		${WRKSRC}/gen/terminal_interface-curses-menus.ads.m4 \
+		${WRKSRC}/gen/terminal_interface-curses-forms.ads.m4 \
+		${WRKSRC}/gen/terminal_interface-curses-panels.ads.m4
+	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -lmenu -lform -lpanel|' \
+		${WRKSRC}/samples/Makefile.in
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gen/adacurses-config \
@@ -48,9 +55,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat
 	${SED} "s|@PREFIX@|${PREFIX}|g" ${FILESDIR}/adacurses.gpr.in > \
 		${STAGEDIR}${PREFIX}/lib/gnat/adacurses.gpr
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} THIS=${PORTNAME} install.html)
-.endif
 
 .include <bsd.port.mk>

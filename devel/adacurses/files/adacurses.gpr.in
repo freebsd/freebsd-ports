@@ -2,14 +2,56 @@ library project ADACURSES is
 
    for Languages use ("Ada");
 
+   type Link_Style is ("dynamic", "static");
+   type Capability is ("yes", "no");
+
+   Ncurses_Link : Link_Style := external ("NCURSES_LINK", "dynamic");
+   Add_Menu     : Capability := external ("NCURSES_MENU", "no");
+   Add_Form     : Capability := external ("NCURSES_FORM", "no");
+   Add_Panel    : Capability := external ("NCURSES_PANEL", "no");
+
    for Source_Dirs use ("../../include/adacurses");
    for Library_Dir use "../../lib/adacurses";
    for Library_Name use "AdaCurses";
    for Library_Kind use "static";
    for Externally_Built use "True";
 
+   D_Base_Flags := ("-L@PREFIX@/lib", "-Wl,-R,@PREFIX@/lib",
+                    "-lncurses", "-ltinfo");
+   S_Base_Flags := ("@PREFIX@/lib/libncurses.a", "@PREFIX@/lib/libtinfo.a");
+
+   D_Menu_Flags := ();
+   S_Menu_Flags := ();
+   D_Form_Flags := ();
+   S_Form_Flags := ();
+   D_Panel_Flags := ();
+   S_Panel_Flags := ();
+
+   case Add_Menu is
+      when "no"  => null;
+      when "yes" => D_Menu_Flags := ("-lmenu");
+                    S_Menu_Flags := ("@PREFIX@/lib/libmenu.a");
+   end case;
+   case Add_Form is
+      when "no"  => null;
+      when "yes" => D_Form_Flags := ("-lform");
+                    S_Form_Flags := ("@PREFIX@/lib/libform.a");
+   end case;
+   case Add_Panel is
+      when "no"  => null;
+      when "yes" => D_Panel_Flags := ("-lpanel");
+                    S_Panel_Flags := ("@PREFIX@/lib/libpanel.a");
+   end case;
+
    package Linker is
-      for Linker_Options use ("-L@PREFIX@/lib", "-Wl,-R,@PREFIX@/lib");
+      case Ncurses_Link is
+         when "dynamic" =>
+            for Linker_Options use
+                D_Base_Flags & D_Menu_Flags & D_Form_Flags & D_Panel_Flags;
+         when "static" =>
+            for Linker_Options use
+                S_Base_Flags & S_Menu_Flags & S_Form_Flags & S_Panel_Flags;
+      end case;
    end Linker;
 
 end ADACURSES;
