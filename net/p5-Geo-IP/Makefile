@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-IP
-PORTVERSION=	1.45
+PORTVERSION=	1.50
 CATEGORIES=	net geography perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +18,8 @@ LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/IP/IP.so
 
 .include <bsd.port.mk>
