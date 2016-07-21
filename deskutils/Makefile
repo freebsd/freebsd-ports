@@ -28,6 +28,7 @@
     SUBDIR += conduit
     SUBDIR += conkyemail
     SUBDIR += conkyforecast
+    SUBDIR += copyq
     SUBDIR += countdown
     SUBDIR += cycle
     SUBDIR += dailystrips
