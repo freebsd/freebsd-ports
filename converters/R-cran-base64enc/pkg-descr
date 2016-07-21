@@ -1,0 +1,4 @@
+This package provides tools for handling base64 encoding. It is
+more flexible than the orphaned base64 package.
+
+WWW: https://cran.r-project.org/web/packages/base64enc/
