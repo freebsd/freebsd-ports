@@ -671,6 +671,7 @@
     SUBDIR += openmortal
     SUBDIR += openmsx
     SUBDIR += openmw
+    SUBDIR += openomf
     SUBDIR += openpref
     SUBDIR += openra
     SUBDIR += opensfx
