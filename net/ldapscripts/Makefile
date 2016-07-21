@@ -12,12 +12,15 @@ COMMENT=	Scripts to manage posix accounts in an OpenLDAP directory
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	ldapadd:net/openldap${OPENLDAP_VER}-client \
-		ldapsearch:net/openldap${OPENLDAP_VER}-client \
-		ldapdelete:net/openldap${OPENLDAP_VER}-client \
-		ldapmodify:net/openldap${OPENLDAP_VER}-client \
-		ldapmodrdn:net/openldap${OPENLDAP_VER}-client \
-		ldappasswd:net/openldap${OPENLDAP_VER}-client
+RUN_DEPENDS=	ldapadd:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
+		ldapsearch:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
+		ldapdelete:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
+		ldapmodify:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
+		ldapmodrdn:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
+		ldappasswd:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client
+
+OPTIONS_DEFINE=	SASL
+SASL_VARS=	OPENLDAP_FLAVOUR=-sasl WANT_OPENLDAP_SASL=yes
 
 NO_ARCH=	yes
 USE_OPENLDAP=	yes
