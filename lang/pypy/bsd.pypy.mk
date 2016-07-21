@@ -1,7 +1,9 @@
 # $FreeBSD$
 
+.if !defined(LICENSE)
 LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
+.endif
 
 USES+=		compiler:c11
 
