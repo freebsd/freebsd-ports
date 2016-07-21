@@ -26,10 +26,10 @@ _BUILDING_LIGHTTPD_MODULE=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/lighttpd
-	@${INSTALL_LIB} ${WRKSRC}/src/.libs/${PORTNAME}.so \
+	${INSTALL_LIB} ${WRKSRC}/src/.libs/${PORTNAME}.so \
 		${STAGEDIR}${PREFIX}/lib/lighttpd
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d
-	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/geoip.conf \
+	${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/geoip.conf \
 		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/geoip.conf.sample
 
 .include "${MASTERDIR}/Makefile"
