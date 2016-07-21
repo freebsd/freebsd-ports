@@ -2,7 +2,7 @@
 
 PORTNAME=	nasu
 PORTVERSION=	20141215
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SOURCEFORGE_JP
 MASTER_SITE_SUBDIR=users/7/7587
@@ -14,10 +14,13 @@ COMMENT=	Nasu Japanese TrueType fonts
 
 LICENSE=	APACHE20
 
-USES=		fonts zip
+USES=		fonts:fc zip
 FONTNAME=	nasu
 NO_ARCH=	yes
 NO_BUILD=	yes
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-install
+SUB_FILES=	pkg-install
 WRKSRC=		${WRKDIR}/${DISTNAME:C/-//}
 PORTDOCS=	*
 
