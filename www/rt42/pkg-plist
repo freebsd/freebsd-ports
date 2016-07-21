@@ -196,7 +196,6 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Shredder/Plugin/Summary.pm
 %%SITE_PERL%%/RT/Shredder/Plugin/Tickets.pm
 %%SITE_PERL%%/RT/Shredder/Plugin/Users.pm
-%%SITE_PERL%%/RT/Shredder/Record.pm
 %%SITE_PERL%%/RT/Squish.pm
 %%SITE_PERL%%/RT/Squish/CSS.pm
 %%SITE_PERL%%/RT/Squish/JS.pm
@@ -274,6 +273,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/extending/external_custom_fields.pod
 %%PORTDOCS%%%%DOCSDIR%%/extending/using_forms_widgets.pod
 %%PORTDOCS%%%%DOCSDIR%%/extensions.pod
+%%PORTDOCS%%%%DOCSDIR%%/format-strings.pod
 %%PORTDOCS%%%%DOCSDIR%%/full_text_indexing.pod
 %%PORTDOCS%%%%DOCSDIR%%/glossary.pod
 %%PORTDOCS%%%%DOCSDIR%%/hacking.pod
@@ -315,6 +315,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/acl.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/acl.SQLite
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/acl.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/indexes
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/schema.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/schema.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.3.0/schema.mysql
@@ -334,8 +335,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.3/schema.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.3/schema.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.3/schema.mysql
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.81/schema.Oracle
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.81/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.81/indexes
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.82/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.85/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.86/content
@@ -345,7 +345,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.1/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.2/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.3/content
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.3/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.3/indexes
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.4/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.6/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.8/content
@@ -734,6 +734,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/RT__Scrip/ColumnMap
 %%DATADIR%%/html/Elements/RT__Template/ColumnMap
 %%DATADIR%%/html/Elements/RT__Ticket/ColumnMap
+%%DATADIR%%/html/Elements/RT__Transaction/ColumnMap
 %%DATADIR%%/html/Elements/RT__User/ColumnMap
 %%DATADIR%%/html/Elements/Refresh
 %%DATADIR%%/html/Elements/RefreshHomepage
