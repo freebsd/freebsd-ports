@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hydra
-PORTVERSION=	8.1
+PORTVERSION=	8.2
 CATEGORIES=	security
 MASTER_SITES=	https://www.thc.org/releases/ \
 		PACKETSTORM/groups/thc/
@@ -11,6 +11,7 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Brute force attack utility working on multiple network services
 
 LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libidn.so:dns/libidn \
 		libpcre.so:devel/pcre \
@@ -21,30 +22,19 @@ CONFLICTS_INSTALL=	hydra-web-[0-9]*
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh bin/hydra-wizard.sh \
 		man/man1/hydra.1.gz man/man1/pw-inspector.1.gz
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_OPENSSL=	yes
-WANT_GNOME=	yes
+USES=		gmake localbase ssl
 
 OPTIONS_DEFINE=	FIREBIRD SSH SVN X11
 OPTIONS_DEFAULT=SSH
 OPTIONS_EXCLUDE=NLS DOCS
 FIREBIRD_USES=	firebird
 SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSH}
-CFLAGS+=	-I${LOCALBASE}/include
-LIB_DEPENDS+=	libssh.so.4:security/libssh
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USES+=		pkgconfig
-USE_GNOME=	gtk20
-PLIST_FILES+=	bin/xhydra man/man1/xhydra.1.gz
-.else
-CONFIGURE_ARGS+=	--disable-xhydra
-.endif
+SSH_LIB_DEPENDS=	libssh.so.4:security/libssh
+X11_USES=		gettext pkgconfig
+X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+X11_USE=		gnome=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
+X11_PLIST_FILES=	bin/xhydra man/man1/xhydra.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
@@ -56,11 +46,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pw-inspector ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/dpl4hydra.sh ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/hydra-wizard.sh ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/hydra.1 ${STAGEDIR}${MANPREFIX}/man/man1/hydra.1
-	${INSTALL_MAN} ${WRKSRC}/pw-inspector.1 ${STAGEDIR}${MANPREFIX}/man/man1/pw-inspector.1
-.if ${PORT_OPTIONS:MX11}
+	${INSTALL_MAN} ${WRKSRC}/hydra.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pw-inspector.1 ${STAGEDIR}${MANPREFIX}/man/man1
+post-install-X11-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/hydra-gtk/src/xhydra ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xhydra.1 ${STAGEDIR}${MANPREFIX}/man/man1/xhydra.1
-.endif
+	${INSTALL_MAN} ${WRKSRC}/xhydra.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
