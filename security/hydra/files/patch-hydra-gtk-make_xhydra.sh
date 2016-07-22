@@ -1,6 +1,6 @@
---- hydra-gtk/make_xhydra.sh.orig	Fri May 20 17:03:45 2005
-+++ hydra-gtk/make_xhydra.sh	Fri May 20 17:04:06 2005
-@@ -8,7 +8,7 @@
+--- hydra-gtk/make_xhydra.sh.orig	2016-06-16 14:57:15 UTC
++++ hydra-gtk/make_xhydra.sh
+@@ -8,7 +8,7 @@ test -e Makefile || {
    cat errors
    exit 1
  }
