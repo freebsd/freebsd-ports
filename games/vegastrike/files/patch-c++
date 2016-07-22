@@ -1,38 +1,65 @@
---- src/resizable.h	2010-02-25 09:26:53.000000000 -0500
-+++ src/resizable.h	2014-06-07 12:38:44.000000000 -0400
-@@ -1,2 +1,4 @@
+--- objconv/basemaker/base_maker_texture.cpp.orig	2016-07-22 13:40:43 UTC
++++ objconv/basemaker/base_maker_texture.cpp
+@@ -1,6 +1,7 @@
+ #include "hashtable.h"
+ #include "base_maker_texture.h"
+ #include <stdio.h>
 +#include <string.h>
-+
- #include <cstdlib>
- template < class ITEM >
---- src/cmd/unit_jump.h	2012-03-19 04:20:14.000000000 -0400
-+++ src/cmd/unit_jump.h	2014-06-07 12:46:15.000000000 -0400
-@@ -109,5 +109,5 @@
+ #include <png.h>
+ #ifdef _WIN32
+ #define XMD_H
+--- src/cmd/unit_generic.cpp.orig	2016-07-22 13:40:43 UTC
++++ src/cmd/unit_generic.cpp
+@@ -630,14 +630,6 @@ void Unit::DeactivateJumpDrive()
+         jump.drive = -1;
+ }
+ 
+-float copysign( float x, float y )
+-{
+-    if (y > 0)
+-        return x;
+-    else
+-        return -x;
+-}
+-
+ float rand01()
+ {
+     return (float) rand()/(float) RAND_MAX;
+--- src/cmd/unit_jump.h.orig	2016-07-22 13:40:44 UTC
++++ src/cmd/unit_jump.h
+@@ -108,7 +108,7 @@ bool GameUnit< UnitType >::TransferUnitT
+                      (tester = *i) != NULL; ++i)
                      if (tester->isUnit() == UNITPTR && tester != this)
                          if ( ( this->LocalPosition()-tester->LocalPosition() ).Magnitude() < this->rSize()+tester->rSize() )
 -                            SetCurPosition( this->LocalPosition()+this->cumulative_transformation_matrix.getR()
 +                            this->SetCurPosition( this->LocalPosition()+this->cumulative_transformation_matrix.getR()
                                             *( 4*( this->rSize()+tester->rSize() ) ) );
              DealPossibleJumpDamage( this );
---- objconv/basemaker/base_maker_texture.cpp	2010-03-09 21:56:23.000000000 -0500
-+++ objconv/basemaker/base_maker_texture.cpp	2014-06-07 12:48:22.000000000 -0400
-@@ -2,4 +2,5 @@
- #include "base_maker_texture.h"
- #include <stdio.h>
-+#include <string.h>
- #include <png.h>
- #ifdef _WIN32
---- src/gldrv/hashtable_3d.h	2014-06-07 13:28:18.000000000 -0400
-+++ src/gldrv/hashtable_3d.h	2014-06-07 13:51:23.000000000 -0400
-@@ -38,5 +38,5 @@
+             static int jumparrive = AUDCreateSound( vs_config->getVariable( "unitaudio", "jumparrive", "sfx43.wav" ), false );
+--- src/cmd/unit_physics.h.orig	2016-07-22 13:40:44 UTC
++++ src/cmd/unit_physics.h
+@@ -41,8 +41,6 @@
+ #include "networking/lowlevel/vsnet_clientstate.h"
+ #include "networking/netclient.h"
+ 
+-extern float copysign( float x, float y );
+-
+ extern unsigned int apply_float_to_unsigned_int( float tmp ); //short fix
+ 
+ template < class UnitType >
+--- src/gldrv/hashtable_3d.h.orig	2016-07-22 13:40:44 UTC
++++ src/gldrv/hashtable_3d.h
+@@ -37,7 +37,7 @@ class Hashtable3d
+     }
  public:
  ///Hashes a single value to a value on the collide table truncated to all 3d constraints.  Consider using a swizzle
 -    int hash_int( const double aye )
 +    static int hash_int( const double aye )
      {
          return ( (int) ( ( (aye < 0) ? (aye
---- src/networking/lowlevel/packetmem.cpp.orig	2014-06-23 21:30:46 +0800
-+++ src/networking/lowlevel/packetmem.cpp	2014-06-23 21:31:01 +0800
+                                         -COLLIDETABLEACCURACY) : aye )
+--- src/networking/lowlevel/packetmem.cpp.orig	2016-07-22 13:40:44 UTC
++++ src/networking/lowlevel/packetmem.cpp
 @@ -102,7 +102,7 @@ void PacketMem::inner_set( void* buffer,
      }
      else
@@ -42,3 +69,39 @@
          _len = 0;
      }
  }
+--- src/physics.h.orig	2016-07-22 13:40:44 UTC
++++ src/physics.h
+@@ -27,7 +27,6 @@
+ static const float oocc = (float) 0.0000000000000000111265005605; //1/c^2
+ static const float c    = (float) 299792458.0;
+ static const float co10 = (float) 29979245.8;
+-float copysign( float x, float y );
+ 
+ struct Force
+ {
+--- src/resizable.h.orig	2016-07-22 13:40:44 UTC
++++ src/resizable.h
+@@ -1,3 +1,5 @@
++#include <string.h>
++
+ #include <cstdlib>
+ template < class ITEM >
+ class Resizable
+--- src/ship_commands.cpp.orig	2016-07-22 13:40:43 UTC
++++ src/ship_commands.cpp
+@@ -5,15 +5,6 @@
+ #include "universe_util.h"
+ #include "gldrv/winsys.h"
+ 
+-static inline float fmin( float a, float b )
+-{
+-    return (a < b) ? a : b;
+-}
+-static inline float fmax( float a, float b )
+-{
+-    return (a > b) ? a : b;
+-}
+-
+ class ShipCommands
+ {
+     Functor< ShipCommands > *csetkps;
