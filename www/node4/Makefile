@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS
 OPTIONS_SUB=	yes
 
 BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
-BUNDLED_SSL_USES_OFF=		ssl:openssl
+BUNDLED_SSL_USES_OFF=		ssl
 BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl
 
 NLS_CONFIGURE_ON=	--with-intl=system-icu

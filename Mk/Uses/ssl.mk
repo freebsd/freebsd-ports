@@ -28,6 +28,10 @@
 .if !defined(_INCLUDE_USES_SSL_MK)
 _INCLUDE_USES_SSL_MK=	yes
 
+.if !empty(ssl_ARGS)
+IGNORE=	"USES=ssl does not take any argument."
+.endif
+
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 .if ${SSL_DEFAULT} == base
