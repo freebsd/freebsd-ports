@@ -1,35 +1,24 @@
-From Alan L. Cox on FreeBSD-current:
-
-    I just glanced at the virtualbox code for a couple minutes.  For
-    FreeBSD 9 and 10, these lock acquires are completely unnecessary, and
-    have been since FreeBSD 9.0.  Just delete them.  They may be equally
-    unnecessary under FreeBSD 8, but I didn't look carefully enough to
-    answer that question.
-
-[1] http://lists.freebsd.org/pipermail/freebsd-current/2012-November/037963.html
---- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2015-11-10 21:23:50 UTC
+--- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2015-12-18 16:22:29 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c
-@@ -168,14 +168,19 @@ DECLHIDDEN(int) rtR0MemObjNativeFree(RTR
+@@ -168,7 +168,7 @@ DECLHIDDEN(int) rtR0MemObjNativeFree(RTR
              VM_OBJECT_LOCK(pMemFreeBSD->pObject);
  #endif
              vm_page_t pPage = vm_page_find_least(pMemFreeBSD->pObject, 0);
+-#if __FreeBSD_version < 1000000
 +#if __FreeBSD_version < 900000
-+            /* See http://lists.freebsd.org/pipermail/freebsd-current/2012-November/037963.html */
              vm_page_lock_queues();
-+#endif
+ #endif
              for (vm_page_t pPage = vm_page_find_least(pMemFreeBSD->pObject, 0);
-                  pPage != NULL;
-                  pPage = vm_page_next(pPage))
+@@ -177,7 +177,7 @@ DECLHIDDEN(int) rtR0MemObjNativeFree(RTR
              {
                  vm_page_unwire(pPage, 0);
              }
+-#if __FreeBSD_version < 1000000
 +#if __FreeBSD_version < 900000
              vm_page_unlock_queues();
-+#endif
+ #endif
  #if __FreeBSD_version >= 1000030
-             VM_OBJECT_WUNLOCK(pMemFreeBSD->pObject);
- #else
-@@ -201,12 +206,12 @@ static vm_page_t rtR0MemObjFreeBSDContig
+@@ -205,12 +205,12 @@ static vm_page_t rtR0MemObjFreeBSDContig
      vm_page_t pPages;
      int cTries = 0;
  
@@ -44,7 +33,7 @@ From Alan L. Cox on FreeBSD-current:
      {
  #if __FreeBSD_version >= 1000030
          VM_OBJECT_WLOCK(pObject);
-@@ -220,18 +225,23 @@ static vm_page_t rtR0MemObjFreeBSDContig
+@@ -224,18 +224,23 @@ static vm_page_t rtR0MemObjFreeBSDContig
  #else
          VM_OBJECT_UNLOCK(pObject);
  #endif
@@ -73,7 +62,7 @@ From Alan L. Cox on FreeBSD-current:
              break;
          vm_contig_grow_cache(cTries, 0, VmPhysAddrHigh);
          cTries++;
-@@ -239,11 +249,8 @@ static vm_page_t rtR0MemObjFreeBSDContig
+@@ -243,11 +248,8 @@ static vm_page_t rtR0MemObjFreeBSDContig
  
      if (!pPages)
          return pPages;
@@ -86,7 +75,7 @@ From Alan L. Cox on FreeBSD-current:
      for (vm_pindex_t iPage = 0; iPage < cPages; iPage++)
      {
          vm_page_t pPage = pPages + iPage;
-@@ -255,13 +262,9 @@ static vm_page_t rtR0MemObjFreeBSDContig
+@@ -259,13 +261,9 @@ static vm_page_t rtR0MemObjFreeBSDContig
              atomic_add_int(&cnt.v_wire_count, 1);
          }
      }
@@ -100,23 +89,23 @@ From Alan L. Cox on FreeBSD-current:
  }
  
  static int rtR0MemObjFreeBSDPhysAllocHelper(vm_object_t pObject, u_long cPages,
-@@ -291,11 +294,15 @@ static int rtR0MemObjFreeBSDPhysAllocHel
+@@ -295,13 +293,13 @@ static int rtR0MemObjFreeBSDPhysAllocHel
              while (iPage-- > 0)
              {
                  pPage = vm_page_lookup(pObject, iPage);
+-#if __FreeBSD_version < 1000000
 +#if __FreeBSD_version < 900000
                  vm_page_lock_queues();
-+#endif
+ #endif
                  if (fWire)
                      vm_page_unwire(pPage, 0);
                  vm_page_free(pPage);
+-#if __FreeBSD_version < 1000000
 +#if __FreeBSD_version < 900000
                  vm_page_unlock_queues();
-+#endif
+ #endif
              }
- #if __FreeBSD_version >= 1000030
-             VM_OBJECT_WUNLOCK(pObject);
-@@ -743,7 +750,12 @@ DECLHIDDEN(int) rtR0MemObjNativeMapUser(
+@@ -751,7 +749,12 @@ DECLHIDDEN(int) rtR0MemObjNativeMapUser(
      {
          /** @todo: is this needed?. */
          PROC_LOCK(pProc);

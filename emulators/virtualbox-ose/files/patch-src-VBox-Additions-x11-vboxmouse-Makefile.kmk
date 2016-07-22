@@ -1,4 +1,4 @@
---- src/VBox/Additions/x11/vboxmouse/Makefile.kmk.orig	2016-04-20 09:56:37 UTC
+--- src/VBox/Additions/x11/vboxmouse/Makefile.kmk.orig	2016-04-18 15:20:42 UTC
 +++ src/VBox/Additions/x11/vboxmouse/Makefile.kmk
 @@ -228,6 +228,72 @@ vboxmouse_drv_112_INCS := \
  vboxmouse_drv_112_SOURCES = \

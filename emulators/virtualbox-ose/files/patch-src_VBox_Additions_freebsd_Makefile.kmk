@@ -1,0 +1,10 @@
+--- src/VBox/Additions/freebsd/Makefile.kmk.orig	2016-07-18 11:50:44 UTC
++++ src/VBox/Additions/freebsd/Makefile.kmk
+@@ -67,6 +67,7 @@ VBOX_FBSD_ADD_STRIP_BIN = \
+ 	vboxvideo_drv_15.so \
+ 	vboxvideo_drv_16.so \
+ 	vboxvideo_drv_17.so \
++	$(if $(VBOX_WITH_PAM),pam_vbox.so,) \
+ 	VBoxOGLarrayspu.so \
+ 	VBoxOGLcrutil.so \
+ 	VBoxOGLerrorspu.so \

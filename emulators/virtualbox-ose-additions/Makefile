@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.38
+PORTVERSION=	5.0.26
 CATEGORIES=	emulators
-MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
-		http://tmp.chruetertee.ch/ \
-		http://disasterarea.chruetertee.ch/
+MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-additions
-DISTNAME=	VirtualBox-${DISTVERSION}
+DISTNAME=	VirtualBox-${PORTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	VirtualBox additions for FreeBSD guests
@@ -31,7 +29,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-alsa \
-			--disable-dbus \
 			--disable-docs \
 			--disable-libvpx \
 			--disable-pulse \
@@ -40,18 +37,24 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-[3,4]* \
+CONFLICTS_INSTALL=	virtualbox-ose-[3-5]* \
 			virtualbox-ose-additions-devel-[3,4]* \
 			virtualbox-ose-devel-[3,4]* \
 			virtualbox-ose-legacy-[3,4]*
 
-OPTIONS_DEFINE=	DEBUG OPENGL X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=	DBUS DEBUG OPENGL X11
+OPTIONS_DEFAULT=	DBUS X11
 OPTIONS_SUB=	yes
 
+DBUS_CONFIGURE_OFF=	--disable-dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENGL} && empty(PORT_OPTIONS:MX11)
+BROKEN=		OPENGL requires X11 support. Run 'make config' again!
+.endif
 
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
 INPUTDIR=	${PREFIX}/lib/xorg/modules/input
@@ -73,7 +76,7 @@ MAKE_ARGS+=	DEBUG_FLAGS="-O1 -g"
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
-USE_XORG+=	xcomposite xdamage xext xfixes
+USE_XORG=	xcomposite xdamage xfixes
 USE_GL=		gl
 VBOX_LIBS=	VBoxOGL.so \
 		VBoxOGLarrayspu.so \
@@ -82,11 +85,13 @@ VBOX_LIBS=	VBoxOGL.so \
 		VBoxOGLfeedbackspu.so \
 		VBoxOGLpackspu.so \
 		VBoxOGLpassthroughspu.so
+.else
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch-src_VBox_Additions_freebsd_Makefile.kmk
 .endif
 
 .if ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/X:x11-servers/xorg-server
-USE_XORG=	xcursor xmu inputproto xorg-server xrandr
+USE_XORG+=	inputproto x11 xcursor xext xmu xorg-server xrandr xt
 USES+=		pkgconfig
 VBOX_WITH_X11=	1
 XORG_DRV_ABI=	pkgconf --modversion xorg-server | \
@@ -101,10 +106,12 @@ KMK_ARCH=	freebsd.x86
 KMK_ARCH=	freebsd.${ARCH}
 .endif
 
+SUB_LIST+=	VBOX_KMODS="${VBOX_KMODS}"
+
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-Config.kmk \
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
 		${PATCHDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk \
 		${PATCHDIR}/extrapatch-src-VBox-Additions-x11-x11include-xorg-server-1.17.1-compiler.h
 .if ${COMPILER_FEATURES:Mlibc++}
@@ -112,15 +119,15 @@ EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefil
 .endif
 .endif
 
-.if ${OSVERSION} < 1001514
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk.dri
-.else
+.if ${OSVERSION} >= 1001514
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-freebsd-drm-Makefile
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-freebsd-drm-Makefile.kmk
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk.dri2
 .endif
 
-SUB_LIST+=	KMODDIR=${KMODDIR}
+VBOX_KMODS=	vboxguest:pci/vboxguest
+.if ${PORT_OPTIONS:MOPENGL}
+VBOX_KMODS+=	vboxvideo:vgapci/vboxvideo
+.endif
 
 pre-everything::
 .if ${ARCH} == "amd64"
@@ -134,11 +141,15 @@ pre-everything::
 post-patch:
 	@${ECHO} 'VBOX_ONLY_ADDITIONS = 1' > ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_DRAG_AND_DROP = ${VBOX_WITH_X11}' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_DRAG_AND_DROP_GH = ${VBOX_WITH_X11}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> ${WRKSRC}/LocalConfig.kmk
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -fno-merge-constants||' \
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
+.if ${COMPILER_FEATURES:Mlibc++}
+	@${ECHO} 'VBOX_GCC_std = -std=c++11' >> ${WRKSRC}/LocalConfig.kmk
+.endif
 	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
@@ -173,6 +184,7 @@ do-install:
 .endif
 .endif
 
+	${INSTALL_LIB} ${VBOX_BIN}/pam_vbox.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_PROGRAM} ${VBOX_SBINS:S|^|${VBOX_BIN}/|} \
 	    ${STAGEDIR}${PREFIX}/sbin/
 
