@@ -2,7 +2,7 @@
 
 PORTNAME=	genshingothic
 PORTVERSION=	20150607
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SOURCEFORGE_JP
 MASTER_SITE_SUBDIR=users/8/8634
@@ -14,7 +14,7 @@ COMMENT=	GenShinGothic Japanese TrueType fonts
 LICENSE=	OFL11
 
 USES=		7z fonts:fc
-FONTNAME=	genshingothic
+FONTNAME=	${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
