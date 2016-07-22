@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160722:
+  AFFECTS: users of games/stonesoup-*
+  AUTHOR: lifanov@mail.lifanov.com
+
+  The WIZARD option has been renamed to NOWIZARD and is now an opt-out to
+  better reflect the upstream. If you run a shared game server and would
+  like the Wizard mode support disabled, please update port options.
 
 20160718:
   AFFECTS: users of www/awstats
