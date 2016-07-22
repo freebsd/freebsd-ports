@@ -25,7 +25,6 @@ MAKE_ENV=	NCURSES_LINK=static
 
 post-extract:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" \
-		${WRKSRC}/default.gpr \
 		${WRKSRC}/src/definitions.ads
 
 do-build:
