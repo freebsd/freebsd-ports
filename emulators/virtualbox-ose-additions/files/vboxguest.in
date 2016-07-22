@@ -22,45 +22,42 @@ rcvar=vboxguest_enable
 start_cmd="vboxguest_start"
 stop_cmd="vboxguest_stop"
 
+vboxguest_modules="%%VBOX_KMODS%%"
+
 vboxguest_start()
 {
-	if ! kldstat -q -m pci/vboxguest;
-	then
-		if ! kldload vboxguest > /dev/null 2>&1;
-		then
-			warn "Can't load vboxguest module."
-			return 1
+	local _k _m
+
+	for _m in ${vboxguest_modules}; do
+		_k=${_m%:*}
+		_m=${_m#*:}
+		if ! kldstat -q -m ${_m}; then
+			if ! kldload ${_k} > /dev/null 2>&1; then
+				warn "Can't load ${_k} module."
+				return 1
+			fi
 		fi
-	fi
-	test -f "%%KMODDIR%%/vboxvideo.ko" || return 0
-	if ! kldstat -q -m vgapci/vboxvideo;
-	then
-		if ! kldload vboxvideo > /dev/null 2>&1;
-		then
-			warn "Can't load vboxvideo module."
-			return 1
-		fi
-	fi
+	done
 }
 
 vboxguest_stop()
 {
-	if kldstat -q -m vgapci/vboxvideo;
-	then
-		if ! kldunload vboxvideo > /dev/null 2>&1;
-		then
-			warn "Can't unload vboxvideo module."
-			return 1
+	local _k _m _r
+
+	_r=
+	for _m in ${vboxguest_modules}; do
+		_r="${_m} ${_r}"
+	done
+	for _m in ${_r}; do
+		_k=${_m%:*}
+		_m=${_m#*:}
+		if kldstat -q -m ${_m}; then
+			if ! kldunload ${_k} > /dev/null 2>&1; then
+				warn "Can't unload ${_k} module."
+				return 1
+			fi
 		fi
-	fi
-        if kldstat -q -m pci/vboxguest;
-        then
-                if ! kldunload vboxguest > /dev/null 2>&1;
-                then
-                        warn "Can't unload vboxguest module."
-                        return 1
-                fi
-        fi
+	done
 }
 
 load_rc_config $name
