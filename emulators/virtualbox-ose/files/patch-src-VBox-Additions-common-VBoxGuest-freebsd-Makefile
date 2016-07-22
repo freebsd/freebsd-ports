@@ -1,6 +1,6 @@
---- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2014-09-18 22:18:11.602040183 +0400
-+++ src/VBox/Additions/common/VBoxGuest/freebsd/Makefile	2014-09-18 22:18:29.900039743 +0400
-@@ -72,6 +72,7 @@
+--- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2015-04-14 15:38:06.000000000 -0400
++++ src/VBox/Additions/common/VBoxGuest/freebsd/Makefile	2015-04-14 18:25:23.090523000 -0400
+@@ -71,6 +71,7 @@
  	handletable.c \
  	handletablectx.c \
  	once.c \
@@ -8,3 +8,13 @@
  	thread.c
  
  .PATH:	${.CURDIR}/common/string
+@@ -149,8 +150,7 @@
+ 	spinlock-r0drv-freebsd.c \
+ 	thread-r0drv-freebsd.c \
+ 	thread2-r0drv-freebsd.c \
+-	time-r0drv-freebsd.c \
+-	timer-r0drv-freebsd.c
++	time-r0drv-freebsd.c
+ 
+ .PATH:	${.CURDIR}/r0drv/generic
+ SRCS += \

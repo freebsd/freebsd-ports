@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.38
+PORTVERSION=	5.0.26
 CATEGORIES=	emulators
-MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
-		http://tmp.chruetertee.ch/ \
-		http://disasterarea.chruetertee.ch/
+MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-kmod
-DISTNAME=	VirtualBox-${DISTVERSION}
+DISTNAME=	VirtualBox-${PORTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	VirtualBox kernel module for FreeBSD

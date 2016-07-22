@@ -73,7 +73,7 @@ vboxheadless_start()
 
 vboxheadless_stop()
 {
-	local machine mpidfile pid vmname vmuser vmstop vmdelay
+	local machine mpidfile pid pids vmname vmuser vmstop vmdelay
 
 	echo "Saving states for Virtual Machines:"
 	for machine in ${vboxheadless_machines}; do
@@ -87,14 +87,17 @@ vboxheadless_stop()
 		/usr/bin/printf "%25s " "${vmname}"
 
 		if [ -n "${pid}" ]; then
+			pids="${pids} ${pid}"
 			/bin/sleep ${vmdelay}
-			/usr/bin/su ${vmuser} -c "%%VBOXDIR%%/VBoxManage controlvm '${vmname}' ${vmstop} >/dev/null" 2>/dev/null
-			wait_for_pids $pid >/dev/null
-			echo "Stopped"
-		else
-			echo "Not running?"
+			/usr/bin/su ${vmuser} -c "%%VBOXDIR%%/VBoxManage controlvm '${vmname}' ${vmstop} >/dev/null &" 2>/dev/null
 		fi
 	done
+	if [ -n "${pids}" ]; then
+		wait_for_pids $pids >/dev/null
+		echo "Stopped"
+	else
+		echo "Not running?"
+	fi
 }
 
 vboxheadless_status()

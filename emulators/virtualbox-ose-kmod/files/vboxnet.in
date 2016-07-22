@@ -22,25 +22,22 @@ rcvar=vboxnet_enable
 start_cmd="vboxnet_start"
 stop_cmd="vboxnet_stop"
 
+vboxnet_modules="vboxdrv vboxnetflt:ng_vboxnetflt vboxnetadp"
+
 vboxnet_start()
 {
-	if ! kldstat -q -m ng_vboxnetflt;
-	then
-		if ! kldload vboxnetflt > /dev/null 2>&1;
-		then
-			warn "Can't load vboxnetflt module."
-			return 1
-		fi
-	fi
+	local _k _m
 
-	if ! kldstat -q -m vboxnetadp;
-	then
-		if ! kldload vboxnetadp > /dev/null 2>&1;
-		then
-			warn "Can't load vboxnetadp module."
-			return 1
+	for _m in ${vboxnet_modules}; do
+		_k=${_m%:*}
+		_m=${_m#*:}
+		if ! kldstat -q -m ${_m}; then
+			if ! kldload ${_k} > /dev/null 2>&1; then
+				warn "Can't load ${_k} module."
+				return 1
+			fi
 		fi
-	fi
+	done
 
 	# initialize configured host-only interfaces
 	LD_LIBRARY_PATH=%%PREFIX%%/lib %%PREFIX%%/bin/VBoxManage list hostonlyifs >/dev/null
@@ -48,23 +45,22 @@ vboxnet_start()
 
 vboxnet_stop()
 {
-	if kldstat -q -m vboxnetadp;
-	then
-		if ! kldunload vboxnetadp > /dev/null 2>&1;
-		then
-			warn "Can't unload vboxnetadp module."
-			return 1
-		fi
-	fi
+	local _k _m _r
 
-	if kldstat -q -m ng_vboxnetflt;
-	then
-		if ! kldunload vboxnetflt > /dev/null 2>&1;
-		then
-			warn "Can't unload vboxnetflt module."
-			return 1
+	_r=
+	for _m in ${vboxnet_modules}; do
+		_r="${_m} ${_r}"
+	done
+	for _m in ${_r}; do
+		_k=${_m%:*}
+		_m=${_m#*:}
+		if kldstat -q -m ${_m}; then
+			if ! kldunload ${_k} > /dev/null 2>&1; then
+				warn "Can't unload ${_k} module."
+				return 1
+			fi
 		fi
-	fi
+	done
 }
 
 load_rc_config $name
