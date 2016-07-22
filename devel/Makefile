@@ -56,6 +56,7 @@
     SUBDIR += acsccid
     SUBDIR += activitymail
     SUBDIR += ada-util
+    SUBDIR += adaid
     SUBDIR += adabooch
     SUBDIR += adacurses
     SUBDIR += adime
