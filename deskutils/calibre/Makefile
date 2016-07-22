@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	2.62.0
+PORTVERSION=	2.63.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -57,12 +57,14 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 
-USES=		desktop-file-utils pkgconfig python:2 shared-mime-info shebangfix tar:xz
+USES=		desktop-file-utils pkgconfig python:2 shared-mime-info \
+		shebangfix ssl tar:xz
 SHEBANG_FILES=	resources/calibre-portable.sh \
 		src/calibre/ebooks/metadata/odt.py \
 		src/calibre/utils/*.py \
 		src/odf/*.py
-USE_QT5=	buildtools_build dbus qmake_build
+USE_QT5=	buildtools_build core dbus gui qmake_build widgets
+USE_GL=		gl
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
