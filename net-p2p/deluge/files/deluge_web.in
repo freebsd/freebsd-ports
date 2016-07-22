@@ -52,8 +52,14 @@ deluge_web_prestart()
 		mkdir -p /var/run/${name}
 	fi
 
+	if [ ! -d "/home/${deluge_web_user}/.python-eggs" ]; then
+		mkdir -p /home/${deluge_web_user}/.python-eggs
+	fi
+
 	chmod 0755 /var/run/${name}
 	chown -R $deluge_web_user /var/run/${name}
+	chown -R $deluge_web_user /home/${deluge_web_user}/.python-eggs
+	export PYTHON_EGG_CACHE="/home/${deluge_web_user}/.python-eggs"
 }
 
 deluge_web_poststop()

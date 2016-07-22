@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	deluge
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
@@ -22,28 +22,23 @@ USE_RC_SUBR=	deluged deluge_web
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 NO_ARCH=	yes
-USES=		gettext python:2 tar:lzma twisted:run,web
+USES=		gettext python:2.7 tar:xz twisted:run,web
 USE_PYTHON=	autoplist distutils
-USE_OPENSSL=	yes
 
-OPTIONS_DEFINE=	GTK2
+OPTIONS_DEFINE=	DOCS GTK2
 OPTIONS_DEFAULT=GTK2
 OPTIONS_SUB=	yes
 
-PORTDOCS=	ChangeLog README
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus \
+GTK2_RUN_DEPENDS=	\
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}game>=1.8.1:devel/py-game \
 		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:devel/py-notify \
 		xdg-utils>=1.0.2:devel/xdg-utils
+GTK2_USE=	GNOME=intltool librsvg2 pygnome2 pygtk2
+GTK2_USES=	desktop-file-utils
+GTK2_VARS=	INSTALLS_ICONS=	yes
 
-USE_GNOME+=	intltool librsvg2 pygnome2 pygtk2
-USES+=		desktop-file-utils
-INSTALLS_ICONS=	yes
-.endif
+PORTDOCS=	ChangeLog README
 
 post-patch:
 	@${REINPLACE_CMD} -e '/"new_release_check":/s|True,|False,|g ; \
@@ -52,8 +47,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/"check_new_releases":/s|True,|False,|g ; \
 		/"show_new_releases":/s|True,|False,|g' \
 			${WRKSRC}/deluge/ui/gtkui/gtkui.py
-	@${REINPLACE_CMD} -e 's|GTK|GTK;|' \
-		${WRKSRC}/deluge/data/share/applications/deluge.desktop.in
 
 post-install:
 # do these by hand, else they wind up in the wrong place
@@ -69,16 +62,18 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/deluge/data/pixmaps/deluge.${pic} \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 .endfor
-.if ${PORT_OPTIONS:MGTK2}
-	${INSTALL_DATA} ${WRKSRC}/deluge/data/share/applications/deluge.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
-.endif
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 # install man pages
 .for man in deluge.1 deluge-console.1 deluge-gtk.1 deluge-web.1 deluged.1
 	${INSTALL_MAN} ${WRKSRC}/docs/man/${man} ${STAGEDIR}${MANPREFIX}/man/man1/
 .endfor
+
+post-install-GTK2-on:
+	${INSTALL_DATA} ${WRKSRC}/deluge/data/share/applications/deluge.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
