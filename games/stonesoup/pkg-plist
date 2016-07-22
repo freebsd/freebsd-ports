@@ -43,6 +43,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/altar/nemelex_the_gamble.des
 %%DATADIR%%/dat/des/altar/okawaru_arena.des
 %%DATADIR%%/dat/des/altar/overflow.des
+%%DATADIR%%/dat/des/altar/pakellas_experiments.des
 %%DATADIR%%/dat/des/altar/trog_burn_book.des
 %%DATADIR%%/dat/des/altar/trog_wizard.des
 %%DATADIR%%/dat/des/altar/vehumet_trees.des
@@ -169,6 +170,7 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/backgrounds.txt
 %%DATADIR%%/dat/descript/branches.txt
 %%DATADIR%%/dat/descript/cards.txt
+%%DATADIR%%/dat/descript/clouds.txt
 %%DATADIR%%/dat/descript/commands.txt
 %%DATADIR%%/dat/descript/cs/ability.txt
 %%DATADIR%%/dat/descript/cs/branches.txt
@@ -388,6 +390,7 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/skills.txt
 %%DATADIR%%/dat/descript/species.txt
 %%DATADIR%%/dat/descript/spells.txt
+%%DATADIR%%/dat/descript/status.txt
 %%DATADIR%%/dat/descript/sv/ability.txt
 %%DATADIR%%/dat/descript/sv/cards.txt
 %%DATADIR%%/dat/descript/sv/commands.txt
@@ -500,6 +503,7 @@ bin/stonesoup
 %%SDL%%%%DATADIR%%/dat/tiles/gui.png
 %%SDL%%%%DATADIR%%/dat/tiles/icons.png
 %%SDL%%%%DATADIR%%/dat/tiles/logo.png
+%%SDL%%%%DATADIR%%/dat/tiles/logosmall.png
 %%SDL%%%%DATADIR%%/dat/tiles/main.png
 %%SDL%%%%DATADIR%%/dat/tiles/player.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-32x32.png
@@ -535,6 +539,7 @@ bin/stonesoup
 %%DATADIR%%/docs/develop/ctags.txt
 %%DATADIR%%/docs/develop/editor_tips.txt
 %%DATADIR%%/docs/develop/gdb_tips.txt
+%%DATADIR%%/docs/develop/keys.txt
 %%DATADIR%%/docs/develop/levels/advanced.txt
 %%DATADIR%%/docs/develop/levels/introduction.txt
 %%DATADIR%%/docs/develop/levels/syntax.txt
@@ -565,9 +570,9 @@ bin/stonesoup
 %%DATADIR%%/settings/0.13_monster_glyphs.txt
 %%DATADIR%%/settings/0.14_monster_glyphs.txt
 %%DATADIR%%/settings/0.16_monster_glyphs.txt
+%%DATADIR%%/settings/0.17_monster_glyphs.txt
 %%DATADIR%%/settings/0.9_monster_glyphs.txt
 %%DATADIR%%/settings/034_command_keys.txt
-%%DATADIR%%/settings/034_monster_glyphs.txt
 %%DATADIR%%/settings/052_monster_glyphs.txt
 %%DATADIR%%/settings/060_monster_glyphs.txt
 %%DATADIR%%/settings/071_monster_glyphs.txt

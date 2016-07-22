@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.17.1
+PORTVERSION=	0.18.1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 MASTER_SITES=	http://crawl.develz.org/release/
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
 
-MAINTAINER=	tobias.rehbein@web.de
+MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 
 LICENSE=	GPLv2
@@ -29,12 +29,6 @@ WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}/source/
 SUB_FILES=	README.FreeBSD
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
 
-OPTIONS_DEFINE=	SOUND WIZARD LUA_BINDINGS DOCS EXAMPLES
-
-SOUND_DESC=	Sound support
-WIZARD_DESC=	Wizard mode
-LUA_BINDINGS_DESC=	Bindings for LUA user scripts
-
 MAKE_ARGS=	prefix=${PREFIX} \
 		DATADIR=${DATADIR} \
 		SAVEDIR=${SAVEDIR} \
@@ -42,45 +36,38 @@ MAKE_ARGS=	prefix=${PREFIX} \
 		INSTALL_UGRP=root:games \
 		NO_AUTO_OPT=YesPlease \
 		NO_OPTIMIZE=YesPlease \
+		NO_TRY_GOLD=YesPlease \
+		POSIX=YesPlease \
 		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
 		SQLITE_LIB=-lsqlite3
-
-.include <bsd.port.options.mk>
 
 .if defined(VERBOSE)
 MAKE_ARGS+=	V=yes
 .endif
 
-.if empty(PORT_OPTIONS:MWIZARD)
-MAKE_ARGS+=	NOWIZARD=y
-.endif
+OPTIONS_DEFINE=	SDL SOUND NOWIZARD LUA DOCS EXAMPLES
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MSDL}
-CONFLICTS+=	${PORTNAME}-[0-9]*
-MAKE_ARGS+=	TILES=y \
-		GL_INCLUDE="-I ${LOCALBASE}/include/GL"
-PLIST_SUB+=	SDL=""
-PKGNAMESUFFIX=	-sdl
-BUILD_DEPENDS+=	fc-list:x11-fonts/fontconfig \
+SOUND_DESC=	Sound support
+NOWIZARD_DESC=	Disable Wizard mode
+LUA_DESC=	Bindings for LUA user scripts
+
+SDL_CONFLICTS=	${PORTNAME}-[0-9]*
+SDL_USE=	sdl=sdl2,image2 gl=gl,glu
+SDL_USES_OFF=	ncurses
+SDL_MAKE_ARGS=	TILES=y
+SDL_BUILD_DEPENDS=	\
+		fc-list:x11-fonts/fontconfig \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
-LIB_DEPENDS+=	libpng.so:graphics/png \
+SDL_RUN_DEPENDS=	\
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
+SDL_LIB_DEPENDS=libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
-USE_SDL=	sdl2 image2
-USE_GL=		yes
-.else
-USES+=		ncurses
-CONFLICTS+=	${PORTNAME}-sdl-[0-9]*
-PLIST_SUB+=	SDL="@comment "
-.endif
+SDL_CONFLICTS_OFF=	${PORTNAME}-sdl-[0-9]*
 
-.if ${PORT_OPTIONS:MSOUND}
-RUN_DEPENDS+=	sox:audio/sox
-.endif
-
-.if empty(PORT_OPTIONS:MLUA_BINDINGS)
-MAKE_ARGS+=	NO_LUA_BINDINGS=yes
-.endif
+NOWIZARD_MAKE_ARGS=	NOWIZARD=y
+SOUND_RUN_DEPENDS=	sox:audio/sox
+LUA_MAKE_ARGS_OFF=	NO_LUA_BINDINGS=yes
 
 .include <bsd.port.pre.mk>
 
@@ -89,17 +76,17 @@ CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+MAKE_ARGS+=	NO_YACC=YesPlease
 CFLAGS+=	-std=c++11
+LDFLAGS:=	-Wl,-rpath=${_GCC_RUNTIME} ${LDFLAGS}
 .endif
 
-post-patch:
-#	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
-.if ${PORT_OPTIONS:MSOUND}
+post-patch-SOUND-on:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/AppHdr.h
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,," ${WRKSRC}/AppHdr.h
-.else
+
+post-patch-SOUND-off:
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,// ," ${WRKSRC}/AppHdr.h
-.endif
 
 pre-install:
 	@${FIND} ${WRKSRC}/dat -type f -name '*.orig' | \
