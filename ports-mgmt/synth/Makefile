@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	synth
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -12,17 +12,20 @@ COMMENT=	Custom package repository builder for FreeBSD and DragonFly
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-BUILD_DEPENDS=	${GPR}/ini_file_manager.gpr:misc/ini_file_manager \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libncurses.a:devel/ncurses \
+		${GPR}/ini_file_manager.gpr:misc/ini_file_manager \
 		${GPR}/adacurses.gpr:devel/adacurses
 
-USES=		ada:6 ncurses:port
+USES=		ada:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
 
 GPR=		${LOCALBASE}/lib/gnat
+MAKE_ENV=	NCURSES_LINK=static
 
 post-extract:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" \
+		${WRKSRC}/default.gpr \
 		${WRKSRC}/src/definitions.ads
 
 do-build:
