@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.8
+PORTVERSION=	2.5.9
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
@@ -21,8 +21,7 @@ CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].*
 
 USE_RC_SUBR=	imapd
 
-USES=		cpe libtool perl5
-USE_OPENSSL=	yes
+USES=		cpe libtool perl5 ssl
 GNU_CONFIGURE=	yes
 CYRUS_PREFIX=	${PREFIX}/cyrus
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
@@ -226,11 +225,7 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
-		"! ( -name Makefile.dist -o -name Makefile \
-		-o -name .deps -o -name .dirstamp -o -name .libs \
-		-o -name .gitignore -o -name htmlstrip.Po \
-		-o -name htmlstrip.c )"
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 # there are already files in EXAMPLESDIR at that point, so no
 # need to create it.
