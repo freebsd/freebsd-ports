@@ -40,6 +40,7 @@
     SUBDIR += R-cran-gss
     SUBDIR += R-cran-gtable
     SUBDIR += R-cran-igraph
+    SUBDIR += R-cran-influenceR
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-irlba
     SUBDIR += R-cran-labeling
