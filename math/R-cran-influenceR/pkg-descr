@@ -1,0 +1,13 @@
+influenceR: Software Tools to Quantify Structural Importance of
+Nodes in a Network
+
+Provides functionality to compute various node centrality measures
+on networks. Included are functions to compute betweenness centrality
+(by utilizing Madduri and Bader's SNAP library), implementations
+of Burt's constraint and effective network size (ENS) metrics,
+Borgatti's algorithm to identify key players, and Valente's bridging
+metric. On Unix systems, the betweenness, Key Players, and bridging
+implementations are parallelized with OpenMP, which may run faster
+on systems which have OpenMP configured.
+
+WWW: https://cran.r-project.org/web/packages/influenceR/
