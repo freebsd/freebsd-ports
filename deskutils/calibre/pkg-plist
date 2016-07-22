@@ -1597,6 +1597,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/catalog/stylesheet.css
 %%DATADIR%%/catalog/template.xhtml
 %%DATADIR%%/coffee-script.js
+%%DATADIR%%/common-user-agents.txt
 %%DATADIR%%/compiled_coffeescript.zip
 %%DATADIR%%/content-server/autoreload.js
 %%DATADIR%%/content-server/calibre.png
