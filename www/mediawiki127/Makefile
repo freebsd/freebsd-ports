@@ -3,6 +3,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.27.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	127
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki12[3456]-[0-9]*
 
-USES=		shebangfix
+USES=		php:web shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/hiphop/run-server \
 		maintenance/postgres/*.pl \
@@ -23,9 +24,8 @@ SHEBANG_FILES=	maintenance/dev/*.sh \
 SHEBANG_LANG=	hhvm
 hhvm_OLD_CMD=	/usr/bin/hhvm
 hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet
-USE_PHP=	ctype dom hash iconv json mbstring pcre readline \
+USE_PHP=	ctype dom hash iconv intl json mbstring pcre readline \
 		session xml xmlreader zlib
-WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
 NO_BUILD=	yes
@@ -47,8 +47,7 @@ XCACHE_DESC=	Use xCache (instead of pecl-APC)
 IMAGICK_DESC=	Use ImageMagick
 SOCKETS_DESC=	Use sockets
 
-MYSQL_USE=	mysql=client php=mysql
-MYSQL_VARS=	IGNORE_WITH_PHP+=70
+MYSQL_USE=	mysql=client php=mysqli
 PGSQL_USE=	php=pgsql
 SQLITE_USE=	php=sqlite3
 LDAP_USE=	php=ldap
