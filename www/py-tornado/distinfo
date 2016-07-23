@@ -1,2 +1,3 @@
-SHA256 (tornado-4.3.tar.gz) = c9c2d32593d16eedf2cec1b6a41893626a2649b40b21ca9c4cac4243bde2efbf
-SIZE (tornado-4.3.tar.gz) = 450916
+TIMESTAMP = 1469297044
+SHA256 (tornado-4.4.1.tar.gz) = 371d0cf3d56c47accc66116a77ad558d76eebaa8458a6b677af71ca606522146
+SIZE (tornado-4.4.1.tar.gz) = 456992
