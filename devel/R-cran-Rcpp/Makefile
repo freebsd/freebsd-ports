@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rcpp
-PORTVERSION=	0.12.5
+PORTVERSION=	0.12.6
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,7 +11,7 @@ COMMENT=	Seamless R and C++ Integration
 
 LICENSE=	GPLv2+
 
-USES=		cran:auto-plist shebangfix
+USES=		cran:auto-plist,compiles shebangfix
 SHEBANG_FILES=	inst/examples/*/*.sh \
 		inst/examples/*/*.r \
 		inst/examples/*/*.R
