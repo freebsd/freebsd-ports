@@ -3,7 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.11.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -43,7 +43,12 @@ EXTRA_PATCHES=	${FILESDIR}/commit-21002a6 \
 		${FILESDIR}/commit-bb2a62e \
 		${FILESDIR}/commit-8607ea6 \
 		${FILESDIR}/commit-2c5c2a3 \
-		${FILESDIR}/commit-ee95032
+		${FILESDIR}/commit-ee95032 \
+		${FILESDIR}/commit-bc7b765 \
+		${FILESDIR}/commit-0064d22 \
+		${FILESDIR}/commit-da95a26 \
+		${FILESDIR}/commit-5fa14c6 \
+		${FILESDIR}/commit-dbaed38
 
 VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
@@ -83,6 +88,11 @@ PYTHON_USES=		python:2
 TUI_CONFIGURE_ENABLE=	tui
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000010
+# FreeBSD 9.x and earlier do not define SIGLIBRT in <sys/signal.h>
+CFLAGS+=	-DSIGLIBRT=33
+.endif
 
 .if ! ${PORT_OPTIONS:MBUNDLED_READLINE}
 EXCLUDE+=	readline
