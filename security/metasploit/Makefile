@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.12.12
+PORTVERSION=	4.12.15
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -25,7 +25,8 @@ RUN_DEPENDS=	nasm:devel/nasm \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.1.11:security/rubygem-metasploit-payloads \
+		rubygem-metasploit-payloads>=1.1.13:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
@@ -40,10 +41,12 @@ RUN_DEPENDS=	nasm:devel/nasm \
 		rubygem-patch_finder>=0:devel/rubygem-patch_finder \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
 		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
+		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-rex-java>=0:security/rubygem-rex-java \
 		rubygem-rex-powershell>=0:security/rubygem-rex-powershell \
 		rubygem-rex-random_identifier>=0:security/rubygem-rex-random_identifier \
 		rubygem-rex-registry>=0:security/rubygem-rex-registry \
+		rubygem-rex-struct2>=0:security/rubygem-rex-struct2 \
 		rubygem-rex-text>=0:security/rubygem-rex-text \
 		rubygem-rex-zip>=0:security/rubygem-rex-zip \
 		rubygem-robots>=0:www/rubygem-robots \
@@ -80,12 +83,11 @@ do-install:
 	cd ${WRKSRC} && ${PAX} -rw . ${STAGEDIR}${DATADIR}
 .for f in ${SCRIPTS}
 	${PRINTF} '#!/bin/sh\ncd ${DATADIR} && ./${f} "$$@"\n' > ${STAGEDIR}${PREFIX}/bin/${f}
-	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
 post-install:
 .for f in ${SCRIPTS}
-	@${ECHO} "bin/${f}" >> ${TMPPLIST}
+	@${ECHO} "@(,,555) bin/${f}" >> ${TMPPLIST}
 .endfor
 	@${FIND} ${STAGEDIR}${DATADIR} ! -type d | \
 		${SED} 's,${STAGEDIR}${PREFIX}/,, ; /Gemfile.lock/s|^|@(,,0666) |' >> ${TMPPLIST}
