@@ -1730,6 +1730,9 @@
 %%T%%/jre/lib/i386/libattach.so
 %%T%%/jre/lib/i386/libavplugin-53.so
 %%T%%/jre/lib/i386/libavplugin-54.so
+%%T%%/jre/lib/i386/libavplugin-55.so
+%%T%%/jre/lib/i386/libavplugin-56.so
+%%T%%/jre/lib/i386/libavplugin-ffmpeg-56.so
 %%T%%/jre/lib/i386/libawt.so
 %%T%%/jre/lib/i386/libawt_headless.so
 %%T%%/jre/lib/i386/libawt_xawt.so
