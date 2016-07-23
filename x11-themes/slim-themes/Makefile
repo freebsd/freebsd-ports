@@ -4,7 +4,8 @@
 PORTNAME=	slim-themes
 PORTVERSION=	1.0.1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://slim.berlios.de/themes/:new_themes \
+MASTER_SITES=	http://dist.codelabs.ru/fbsd/ports/slim-themes/:new_themes \
+		http://dist.codelabs.ru/fbsd/ports/slim-themes/:old_themes \
 		SF/slim.berlios/:old_themes
 DISTFILES=
 
