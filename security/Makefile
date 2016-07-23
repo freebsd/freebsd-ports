@@ -1011,6 +1011,7 @@
     SUBDIR += rubygem-rex-powershell
     SUBDIR += rubygem-rex-random_identifier
     SUBDIR += rubygem-rex-registry
+    SUBDIR += rubygem-rex-struct2
     SUBDIR += rubygem-rex-text
     SUBDIR += rubygem-rex-zip
     SUBDIR += rubygem-roauth
