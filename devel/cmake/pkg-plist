@@ -309,6 +309,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/FindKDE4.rst
 %%DATADIR%%/Help/module/FindLAPACK.rst
 %%DATADIR%%/Help/module/FindLATEX.rst
+%%DATADIR%%/Help/module/FindLTTngUST.rst
 %%DATADIR%%/Help/module/FindLibArchive.rst
 %%DATADIR%%/Help/module/FindLibLZMA.rst
 %%DATADIR%%/Help/module/FindLibXml2.rst
@@ -520,6 +521,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_dir/VARIABLES.rst
 %%DATADIR%%/Help/prop_dir/VS_GLOBAL_SECTION_POST_section.rst
 %%DATADIR%%/Help/prop_dir/VS_GLOBAL_SECTION_PRE_section.rst
+%%DATADIR%%/Help/prop_dir/VS_STARTUP_PROJECT.rst
 %%DATADIR%%/Help/prop_gbl/ALLOW_DUPLICATE_CUSTOM_TARGETS.rst
 %%DATADIR%%/Help/prop_gbl/AUTOGEN_TARGETS_FOLDER.rst
 %%DATADIR%%/Help/prop_gbl/AUTOMOC_TARGETS_FOLDER.rst
@@ -597,6 +599,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_test/RUN_SERIAL.rst
 %%DATADIR%%/Help/prop_test/SKIP_RETURN_CODE.rst
 %%DATADIR%%/Help/prop_test/TIMEOUT.rst
+%%DATADIR%%/Help/prop_test/TIMEOUT_AFTER_MATCH.rst
 %%DATADIR%%/Help/prop_test/WILL_FAIL.rst
 %%DATADIR%%/Help/prop_test/WORKING_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/ALIASED_TARGET.rst
@@ -657,6 +660,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/C_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/prop_tgt/DEBUG_POSTFIX.rst
 %%DATADIR%%/Help/prop_tgt/DEFINE_SYMBOL.rst
+%%DATADIR%%/Help/prop_tgt/DEPLOYMENT_REMOTE_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/ENABLE_EXPORTS.rst
 %%DATADIR%%/Help/prop_tgt/EXCLUDE_FROM_ALL.rst
 %%DATADIR%%/Help/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.rst
@@ -712,6 +716,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/JOB_POOL_COMPILE.rst
 %%DATADIR%%/Help/prop_tgt/JOB_POOL_LINK.rst
 %%DATADIR%%/Help/prop_tgt/LABELS.rst
+%%DATADIR%%/Help/prop_tgt/LANG_CLANG_TIDY.rst
 %%DATADIR%%/Help/prop_tgt/LANG_COMPILER_LAUNCHER.rst
 %%DATADIR%%/Help/prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.rst
 %%DATADIR%%/Help/prop_tgt/LANG_VISIBILITY_PRESET.rst
@@ -775,6 +780,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/TYPE.rst
 %%DATADIR%%/Help/prop_tgt/VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VISIBILITY_INLINES_HIDDEN.rst
+%%DATADIR%%/Help/prop_tgt/VS_CONFIGURATION_TYPE.rst
 %%DATADIR%%/Help/prop_tgt/VS_DESKTOP_EXTENSIONS_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_REFERENCES.rst
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_TARGET_FRAMEWORK_VERSION.rst
@@ -806,6 +812,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
+%%DATADIR%%/Help/release/3.6.rst
 %%DATADIR%%/Help/release/dev.txt
 %%DATADIR%%/Help/release/index.rst
 %%DATADIR%%/Help/variable/APPLE.rst
@@ -879,8 +886,13 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_C_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/variable/CMAKE_DEBUG_POSTFIX.rst
 %%DATADIR%%/Help/variable/CMAKE_DEBUG_TARGET_PROPERTIES.rst
+%%DATADIR%%/Help/variable/CMAKE_DEPENDS_IN_PROJECT_ONLY.rst
 %%DATADIR%%/Help/variable/CMAKE_DISABLE_FIND_PACKAGE_PackageName.rst
 %%DATADIR%%/Help/variable/CMAKE_DL_LIBS.rst
+%%DATADIR%%/Help/variable/CMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES.rst
+%%DATADIR%%/Help/variable/CMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT.rst
+%%DATADIR%%/Help/variable/CMAKE_ECLIPSE_MAKE_ARGUMENTS.rst
+%%DATADIR%%/Help/variable/CMAKE_ECLIPSE_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_EDIT_COMMAND.rst
 %%DATADIR%%/Help/variable/CMAKE_ENABLE_EXPORTS.rst
 %%DATADIR%%/Help/variable/CMAKE_ERROR_DEPRECATED.rst
@@ -919,6 +931,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_GNUtoMS.rst
 %%DATADIR%%/Help/variable/CMAKE_HOME_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_APPLE.rst
+%%DATADIR%%/Help/variable/CMAKE_HOST_SOLARIS.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_SYSTEM.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_SYSTEM_NAME.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_SYSTEM_PROCESSOR.rst
@@ -946,6 +959,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_LANG_ARCHIVE_APPEND.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_ARCHIVE_CREATE.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_ARCHIVE_FINISH.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_CLANG_TIDY.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_ABI.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_EXTERNAL_TOOLCHAIN.rst
@@ -983,6 +997,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_LANG_SIMULATE_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_SIZEOF_DATA_PTR.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_SOURCE_FILE_EXTENSIONS.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_INCLUDE_DIRECTORIES.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_LIBRARIES.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_VISIBILITY_PRESET.rst
 %%DATADIR%%/Help/variable/CMAKE_LIBRARY_ARCHITECTURE.rst
 %%DATADIR%%/Help/variable/CMAKE_LIBRARY_ARCHITECTURE_REGEX.rst
@@ -1010,6 +1026,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_MODULE_LINKER_FLAGS.rst
 %%DATADIR%%/Help/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_MODULE_PATH.rst
+%%DATADIR%%/Help/variable/CMAKE_NINJA_OUTPUT_PATH_PREFIX.rst
 %%DATADIR%%/Help/variable/CMAKE_NOT_USING_CONFIG_FLAGS.rst
 %%DATADIR%%/Help/variable/CMAKE_NO_BUILTIN_CHRPATH.rst
 %%DATADIR%%/Help/variable/CMAKE_NO_SYSTEM_FROM_IMPORTED.rst
@@ -1048,7 +1065,6 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_SKIP_RPATH.rst
 %%DATADIR%%/Help/variable/CMAKE_SOURCE_DIR.rst
 %%DATADIR%%/Help/variable/CMAKE_STAGING_PREFIX.rst
-%%DATADIR%%/Help/variable/CMAKE_STANDARD_LIBRARIES.rst
 %%DATADIR%%/Help/variable/CMAKE_STATIC_LIBRARY_PREFIX.rst
 %%DATADIR%%/Help/variable/CMAKE_STATIC_LIBRARY_SUFFIX.rst
 %%DATADIR%%/Help/variable/CMAKE_STATIC_LINKER_FLAGS.rst
@@ -1067,6 +1083,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_SYSTEM_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
 %%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_CONFIGURATION.rst
+%%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_PLATFORM_VARIABLES.rst
+%%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_TARGET_TYPE.rst
 %%DATADIR%%/Help/variable/CMAKE_TWEAK_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_USER_MAKE_RULES_OVERRIDE.rst
 %%DATADIR%%/Help/variable/CMAKE_USER_MAKE_RULES_OVERRIDE_LANG.rst
@@ -1078,7 +1096,6 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_INTEL_Fortran_PROJECT_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_MSBUILD_COMMAND.rst
-%%DATADIR%%/Help/variable/CMAKE_VS_MSDEV_COMMAND.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_NsightTegra_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_NAME.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_TOOLSET.rst
@@ -1138,6 +1155,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CTEST_DROP_SITE_USER.rst
 %%DATADIR%%/Help/variable/CTEST_EXTRA_COVERAGE_GLOB.rst
 %%DATADIR%%/Help/variable/CTEST_GIT_COMMAND.rst
+%%DATADIR%%/Help/variable/CTEST_GIT_INIT_SUBMODULES.rst
 %%DATADIR%%/Help/variable/CTEST_GIT_UPDATE_CUSTOM.rst
 %%DATADIR%%/Help/variable/CTEST_GIT_UPDATE_OPTIONS.rst
 %%DATADIR%%/Help/variable/CTEST_HG_COMMAND.rst
