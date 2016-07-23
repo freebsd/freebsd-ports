@@ -1,0 +1,20 @@
+--- OMakefile.orig	2012-11-07 22:03:19.000000000 +0100
++++ OMakefile	2012-11-07 22:04:26.000000000 +0100
+@@ -22,13 +22,13 @@
+ 
+ # Specify non standard include directories
+ INCLUDES[]=
+-  /usr/include/X11
+-  /usr/local/include
++  %%INCLUDESPORTS%%
++  %%INCLUDESX11%%
++  %%INCLUDESPNG%%
+ 
+ # Specify non standard library directories
+ LDFLAGS[]+= 
+-# for example, 
+-# LDFLAGS[]+= -L/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/
++  %%LDFLAGSPORTS%%
+ 
+ # Specify directories where X's rgb.txt can be found
+ PATH_RGB_TXT[]=

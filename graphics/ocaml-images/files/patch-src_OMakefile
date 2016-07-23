@@ -1,0 +1,15 @@
+--- src/OMakefile.orig	2012-11-07 22:43:27.000000000 +0100
++++ src/OMakefile	2012-11-07 22:44:22.000000000 +0100
+@@ -262,10 +262,10 @@
+       $(glob i, *.so)
+ 
+ INSTALL()=
+-  value $(OCAMLFIND) install $(LIBRARY_PREFIX) $(INSTALL_TARGETS)
++  value $(OCAMLFIND) install -ldconf ignore -destdir $(PREFIX)/lib/ocaml/site-lib $(LIBRARY_PREFIX) $(INSTALL_TARGETS)
+ 
+ UNINSTALL()=
+-  value $(OCAMLFIND) remove $(LIBRARY_PREFIX)
++  value $(OCAMLFIND) remove -ldconf ignore -destdir $(PREFIX)/lib/ocaml/site-lib $(LIBRARY_PREFIX)
+ 
+ install: all
+   $(INSTALL)
