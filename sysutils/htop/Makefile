@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htop
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
