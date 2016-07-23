@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkgconf
-PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTVERSION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://rabbit.dereferenced.org/~nenolod/distfiles/ \
 		http://files.etoilebsd.net/pkgconf/
@@ -12,8 +11,11 @@ COMMENT=	Utility to help to configure compiler and linker flags
 
 LICENSE=	ISCL
 
-USES=		tar:bzip2
+USES=		tar:xz libtool
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+TEST_TARGET=	check
 CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig:/usr/libdata/pkgconfig \
 		--with-system-libdir=/usr/lib \
 		--with-system-includedir=/usr/include
