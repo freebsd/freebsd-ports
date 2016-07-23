@@ -5,7 +5,7 @@
  #ifndef UWIN
  #ifndef __DragonFly__
 -typedef long long off64_t;
-+typedef long off64_t;
++typedef int64_t off64_t;
  #endif
  #endif
  #endif
