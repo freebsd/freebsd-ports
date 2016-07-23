@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.14
+PORTVERSION=	10.1.16
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -27,7 +27,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb101-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo shebangfix
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo ssl shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -95,7 +95,6 @@ CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-*
 
-USE_OPENSSL=		yes
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
 OPTIONS_SUB=		yes
 
@@ -105,8 +104,8 @@ USES+=		readline
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
 .else
 # MySQL-Server part
-USE_MYSQL=	yes
-WANT_MYSQL_VER=	101m
+USES+=		mysql:101m
+USE_GNOME=	libxml2
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 USE_RC_SUBR=	mysql-server
 USERS=		mysql
@@ -123,6 +122,7 @@ ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO \
 
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI=NO
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
+MROONGA_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 TOKUDB_LIB_DEPENDS=	libsnappy.so:archivers/snappy
@@ -170,6 +170,12 @@ post-patch:
 .if ${OPSYS} == DragonFly
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
 		${WRKSRC}/cmake/os/DragonFly.cmake
+.endif
+
+.if exists(${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt)
+post-configure:
+	@${REINPLACE_CMD} "s|/XXXusr/bin/c++ |/usr/bin/c++ -L${LOCALBASE}/lib |" \
+		${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt
 .endif
 
 .include <bsd.port.post.mk>
