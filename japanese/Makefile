@@ -79,6 +79,7 @@
     SUBDIR += font-kochi
     SUBDIR += font-koruri
     SUBDIR += font-marumoji
+    SUBDIR += font-mgenplus
     SUBDIR += font-migmix
     SUBDIR += font-migu
     SUBDIR += font-mikachan
