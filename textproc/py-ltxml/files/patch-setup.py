@@ -1,6 +1,6 @@
---- ./setup.py.orig	2008-01-11 15:26:31.000000000 +0100
-+++ ./setup.py	2014-03-24 17:33:02.100042933 +0100
-@@ -6,9 +6,7 @@
+--- setup.py.orig	2008-01-11 14:26:31 UTC
++++ setup.py
+@@ -6,9 +6,7 @@ import sys
  from distutils.core import setup, Extension
  from distutils import sysconfig
  
@@ -11,7 +11,7 @@
  
  if sys.platform.find("win32",0,5)==0:
    incldirs=['C:\\Program Files\\msys\\1.0\\include\\ltxml12','C:\\Program Files\\msys\\1.0\\include']
-@@ -32,8 +30,6 @@
+@@ -32,8 +30,6 @@ else:
    libs=['ltapi12','ltstd12', 'z']
    macros=[('FOR_LT', '1')] # ,('ALLOC_DEBUG', '1')
  
@@ -20,7 +20,7 @@
    if sys.platform.find("sunos",0,5)==0:
      extra_link_args=['-mimpure-text']
      extra_compile_args=['-mimpure-text']
-@@ -65,5 +61,4 @@
+@@ -65,5 +61,4 @@ setup(name='PyLTXML',
        See 00README for details""",
        platforms=[platform],
        packages=['PyLTXML'],
