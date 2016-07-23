@@ -1,4 +1,14 @@
 bin/pkg-config
 bin/pkgconf
+include/pkgconf/bsdstubs.h
+include/pkgconf/iter.h
+include/pkgconf/libpkgconf.h
+include/pkgconf/stdinc.h
+lib/libpkgconf.a
+lib/libpkgconf.so
+lib/libpkgconf.so.1
+lib/libpkgconf.so.1.0.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 man/man1/pkgconf.1.gz
 share/aclocal/pkg.m4
