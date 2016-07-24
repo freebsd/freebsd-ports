@@ -174,7 +174,7 @@ post-patch:
 
 .if exists(${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt)
 post-configure:
-	@${REINPLACE_CMD} "s|/XXXusr/bin/c++ |/usr/bin/c++ -L${LOCALBASE}/lib |" \
+	@${REINPLACE_CMD} "s|/usr/bin/c++ |/usr/bin/c++ -L${LOCALBASE}/lib |" \
 		${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt
 .endif
 
