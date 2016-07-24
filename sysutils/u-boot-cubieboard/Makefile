@@ -45,7 +45,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/u-boot-sunxi-with-spl.bin \
 		${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
 	${INSTALL_DATA} ${WRKSRC}/u-boot.img ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
-	${INSTALL_DATA} ${.CURDIR}/pkg-descr \
-		${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
+	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
 .include <bsd.port.mk>
