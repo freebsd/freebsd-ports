@@ -42,7 +42,7 @@ post-extract:
 	(cd ${WRKSRC}; ${EXTRACT_CMD} xvf pine64atf.tar.xz)
 
 do-configure:
-	(cd ${WRKSRC}; ${GMAKE} pine64_plus_defconfig)
+	(cd ${WRKSRC}; ${MAKE_CMD} pine64_plus_defconfig)
 
 post-build:
 	(cd ${WRKSRC}/arm-trusted-firmware; ${GMAKE} ${MAKE_ARGS} DEBUG=1)
@@ -53,7 +53,7 @@ post-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
-	${CP} ${WRKSRC}/pine64.img ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/
-	${CP} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
+	${INSTALL_DATA} ${WRKSRC}/pine64.img ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
+	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
 .include <bsd.port.post.mk>
