@@ -70,7 +70,6 @@
  55.8,		37.6,		"ache,bsam,demon,maxim,rik,skv,vsevolod,yar"	# Moscow, Russia
  55.768764,	37.588938,	"sergei"			# Moscow, Russia
  55.750799,	37.565689,	"krion"				# Moscow, Russia
- 35.82715,	-78.79659,	"osa"				# Cary, NC, USA
  55.7203,	37.4314,	"sat"				# Moscow, Russia
  48.464722,	35.046111,	"mav"				# Dniepropetrovsk, Ukraine
  44.95,		34.1,		"phantom,ru"			# Simferopol, Ukraine
@@ -133,7 +132,6 @@
  53.56,		10.02,		"cracauer"			# Hamburg, Germany
  53.64,		9.84,		"hm"		align=left	# Rellingen, Germany
  48.336389,	9.836389,	"helbig"			# Waiblingen, Germany
- 28.898118,	-97.037111,	"xride"				# Victoria, TX, USA
  49.00,		9.5,		"schweikh"			# Weinstadt, Germany
  51.20,		9.20,		"dinoex"			# Habichtswald, Germany
  45.467,	9.200,		"piso"				# Milano, Italy
@@ -227,8 +225,8 @@
 -15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
 -20.950,	-47.917,	"garga"				# Limeira, SP, Brazil
 -15.789297,	-47.931097,	"dcs"				# Brasilia, DF, Brazil
--25.477905,	-49.212143,	"wg"				# Curitiba, PR, Brazil
 -27.583,	-48.765,	"araujo"			# Florianopolis, SC, Brazil
+-25.477905,	-49.212143,	"wg"				# Curitiba, PR, Brazil
 -30.043826,	-51.13801,	"mnag"				# Porto Alegre, RS, Brazil
 -34.600,	-58.450,	"alepulver"			# Buenos Aires, Argentina
  42.1411,	-70.8453,	"jeh"		align=below	# Hanover, MA, USA
@@ -256,6 +254,7 @@
  39.128555,	-77.203029,	"   ,green"			# Gaithersburg, MD, USA
  35.798,	-78.781,	"wxs"				# Cary, NC, USA
  35.791,	-78.781,	"marcus"			# Cary, NC, USA
+ 35.82715,	-78.79659,	"osa"				# Cary, NC, USA
  35.8072,	-78.7994,	"gallatin"			# Cary, NC, USA
  35.653138,	-78.843137,	"swills"			# Holly Springs, NC, USA
  35.73,		-78.91,		"bsd"				# Apex, NC, USA
@@ -287,6 +286,7 @@
  30.715833	-95.5525,	"ade"				# Huntsville, TX, USA
  37.0625,	-95.677068,	"kmacy"				# Palo Alto, CA, USA
  29.7925,	-95.8225,	"dwcjr"				# Katy, TX, USA
+ 28.898118,	-97.037111,	"xride"				# Victoria, TX, USA
  30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
  37.972,	-100.872,	"mezz"				# Garden City, KS, USA
  39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
@@ -325,6 +325,7 @@
  47.382689,	-122.227021,	"garys"				# Kent, WA, USA
  37.81875,	-122.2466,	"kientzle"			# Oakland, CA, USA
  37.84,		-122.25,	"jmg"				# Oakland, CA, USA
+ 37.4703,	-122.2548	"dhw"				# Redwood City, CA, USA
  37.887398,	-122.264896,	"gsutter,sam"			# Berkeley, CA, USA
  37.386666,	-122.268966,	"fenner"			# Sky Londa, CA, USA
  37.848966,	-122.288577,	"dteske"			# Emeryville, CA, USA
@@ -333,7 +334,6 @@
  37.90641,	-122.30927,	"gshapiro"			# Richmond, CA, USA
  47.672538,	-122.383830,	"zml"				# Seattle, WA, USA
  45.31,		-122.39,	"alexbl"			# Portland, OR, USA
- 37.4703,	-122.2548	"dhw"				# Redwood City, CA, USA
  37.781,	-122.398,	"billf"				# SOMA, San Francisco, CA, USA
  37.8067,	-122.4113,	"jmallett"			# North Beach, San Francisco, CA, USA
  37.76,		-122.42,	"lx"				# San Francisco, CA, USA
