@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	homebank
-PORTVERSION=	5.0.8
+PORTVERSION=	5.0.9
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libosp.so:textproc/opensp
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake localbase pkgconfig \
 		shared-mime-info
-USE_GNOME=	gtk30 intltool
+USE_GNOME=	cairo gtk30 intltool
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
