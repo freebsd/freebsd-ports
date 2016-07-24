@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		opensips
-PORTVERSION=		2.1.3
+PORTVERSION=		2.1.4
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
