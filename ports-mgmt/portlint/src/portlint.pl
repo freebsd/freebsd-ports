@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.390 2016/07/07 17:40:43 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.393 2016/07/24 14:20:19 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 3;
+my $micro = 4;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1439,11 +1439,17 @@ sub checkmakefile {
 					"for more details)");
 			}
 			if ($plist_file =~ m|\.core$| && $plist_file !~ /^\@/) {
-				&perror("WARN", "", -1, "this port installs a file which ".
+				&perror("WARN", "", -1, "PLIST_FILES: this port installs a file which ".
 					"ends in \".core\".  This file may be deleted if ".
 					"daily_clean_disks_enable=\"YES\" in /etc/periodic.conf.  ".
 					"If possible, install this file with a different name.");
 			}
+			if ($plist_file =~ m|^share/icons/.*/| &&
+				$makevar{INSTALLS_ICONS} eq '') {
+				&perror("WARN", "", -1, "PLIST_FILES: installing icons, ".
+					"please define INSTALLS_ICONS as appropriate");
+			}
+
 		}
 	}
 
@@ -1574,6 +1580,8 @@ sub checkmakefile {
 		PLIST_FILES
 		USE
 		USES
+		VARS
+		VARS_OFF
 	);
 
 	my $m = join("|", @options_helpers);
