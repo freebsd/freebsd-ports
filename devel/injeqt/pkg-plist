@@ -8,6 +8,7 @@ include/injeqt/exception/empty-type.h
 include/injeqt/exception/exception.h
 include/injeqt/exception/instantiation-failed.h
 include/injeqt/exception/interface-not-implemented.h
+include/injeqt/exception/invalid-action.h
 include/injeqt/exception/invalid-dependency.h
 include/injeqt/exception/invalid-qobject.h
 include/injeqt/exception/invalid-setter.h
@@ -21,6 +22,6 @@ include/injeqt/injeqt.h
 include/injeqt/module.h
 include/injeqt/type.h
 lib/libinjeqt.so
-lib/libinjeqt.so.0
+lib/libinjeqt.so.1
 lib/libinjeqt.so.%%VERSION%%
 libdata/pkgconfig/injeqt.pc
