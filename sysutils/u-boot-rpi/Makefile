@@ -2,6 +2,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	2016.01
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/ \
 		LOCAL/ian/:bootfiles
@@ -31,6 +32,8 @@ PLIST_FILES=	${U_BOOT_DIR}/u-boot.img \
 		${U_BOOT_DIR}/config.txt \
 		${U_BOOT_DIR}/fixup.dat \
 		${U_BOOT_DIR}/fixup_cd.dat \
+		${U_BOOT_DIR}/fixup_db.dat \
+		${U_BOOT_DIR}/fixup_x.dat \
 		${U_BOOT_DIR}/start.elf \
 		${U_BOOT_DIR}/start_cd.elf
 
@@ -38,7 +41,7 @@ MAKE_ARGS+=	ARCH=arm \
 		CROSS_COMPILE=arm-none-eabi-
 
 do-configure:
-	(cd ${WRKSRC}; ${GMAKE} rpi_defconfig)
+	(cd ${WRKSRC}; ${MAKE_CMD} rpi_defconfig)
 
 # The output of the u-boot build process is u-boot.bin.  We have to put a
 # standard (for the RPi) image header on the front of it, and the resulting
@@ -49,6 +52,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
 	${GZCAT} ${FILESDIR}/imgprefix.bin.gz >${IMGFILE}
 	${CAT} ${WRKSRC}/u-boot.bin >>${IMGFILE}
-	${CP} ${WRK_BOOTFILES}/* ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/
+	${INSTALL_DATA} ${WRK_BOOTFILES}/* ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
 
 .include <bsd.port.mk>

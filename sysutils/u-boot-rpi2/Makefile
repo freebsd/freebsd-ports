@@ -41,7 +41,7 @@ MAKE_ARGS+=	ARCH=arm \
 		CROSS_COMPILE=arm-none-eabi-
 
 do-configure:
-	(cd ${WRKSRC}; ${GMAKE} rpi_2_defconfig)
+	(cd ${WRKSRC}; ${MAKE_CMD} rpi_2_defconfig)
 
 # The output of the u-boot build process is u-boot.bin.  Older firmware
 # versions require a standard header, but the recent versions (our case)
@@ -51,8 +51,8 @@ do-configure:
 IMGFILE=${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/u-boot.img
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
-	${CP} ${WRKSRC}/u-boot.bin ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/
-	${CP} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
-	${CP} ${WRK_BOOTFILES}/* ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/
+	${INSTALL_DATA} ${WRKSRC}/u-boot.bin ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
+	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
+	${INSTALL_DATA} ${WRK_BOOTFILES}/* ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
 
 .include <bsd.port.mk>
