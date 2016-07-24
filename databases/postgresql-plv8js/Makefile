@@ -15,7 +15,7 @@ LICENSE=	PostgreSQL
 LIB_DEPENDS+=	libv8.so:lang/v8
 
 WRKSRC=		${WRKDIR}/plv8-${PORTVERSION}
-USES=		gmake perl5 pgsql:9.1+
+USES=		compiler:c++11-lang gmake perl5 pgsql:9.1+
 USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	plv8
