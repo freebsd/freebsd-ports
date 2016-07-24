@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portlint
-PORTVERSION=	2.17.3
+PORTVERSION=	2.17.4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -15,6 +15,7 @@ LICENSE_NAME=	Itojun License
 LICENSE_TEXT=	All rights reserved. Freely redistributable.  Absolutely no warranty.
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/src
 USES=		perl5 shebangfix
