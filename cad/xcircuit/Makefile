@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.8.78
-PORTREVISION=	2
+PORTVERSION=	3.8.81
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
@@ -16,8 +15,8 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USE_XORG=	xpm xscrnsaver xt
-USES=	tk:tea ghostscript:x11,run gmake tar:tgz
+USE_XORG=	ice sm x11 xpm xscrnsaver xt
+USES=		tk:tea ghostscript:x11,run gmake tar:tgz
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
