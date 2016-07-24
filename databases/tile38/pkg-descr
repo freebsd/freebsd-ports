@@ -7,7 +7,7 @@ Features:
     Spatial index with search methods such as NEARBY, WITHIN, and INTERSECTS.
     Realtime geofencing through persistent sockets or webhooks.
     Object types of lat/lon, bbox, Geohash, GeoJSON, QuadKey, and XYZ tile.
-    Support for lots of Clients Libraries written in many different langauges.
+    Support for lots of Clients Libraries written in many different languages.
     Variety of client protocols, including http (curl), websockets, telnet,
         and the Redis RESP.
     Server responses are RESP or JSON.
