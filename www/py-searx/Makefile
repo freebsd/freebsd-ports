@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lblot@unix-experience.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Searx / a privacy-respecting, hackable metasearch engine
 
 LICENSE=	AGPLv3
