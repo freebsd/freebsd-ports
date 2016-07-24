@@ -5,3 +5,8 @@ end is using the seafile UID/GID as well.
 chown -R seafile:seafile %%PREFIX%%/%%HAIWENDIR%%/conf \
 	%%PREFIX%%/%%HAIWENDIR%%/ccnet %%PREFIX%%/%%HAIWENDIR%%/seafile-data \
 	%%PREFIX%%/%%HAIWENDIR%%/pids %%PREFIX%%/%%HAIWENDIR%%/logs
+
+Don't forget to run update scripts after every minor and major update located in
+	%%PREFIX%%/%%SEAFILE_SERVER%%/upgrade
+
+Patch updates (5.1.x) don't require these scripts, however do required a restarted.
