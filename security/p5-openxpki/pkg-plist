@@ -261,6 +261,7 @@ bin/openxpkictl
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/SetContextHash.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/SetErrorCode.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/SetSource.pm
+%%SITE_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/StringToArray.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/TriggerCertificatePublish.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/UpdateCertificateMetadata.pm
 %%SITE_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/WFArray.pm
@@ -592,6 +593,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::SetContextHash.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::SetErrorCode.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::SetSource.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::StringToArray.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::TriggerCertificatePublish.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::WFArray.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::WFHash.3.gz
@@ -680,6 +682,7 @@ bin/openxpkictl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi-bin/rpc.fcgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi-bin/sc.fcgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi-bin/scep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi-bin/scep.fcgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi-bin/soap.fcgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi-bin/webui.fcgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config/README.md
@@ -763,6 +766,7 @@ bin/openxpkictl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config/openxpki/config.d/realm/ca-one/uicontrol/RA Operator.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config/openxpki/config.d/realm/ca-one/uicontrol/_default.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config/openxpki/config.d/realm/ca-one/workflow/def/ca_publish.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config/openxpki/config.d/realm/ca-one/workflow/def/certificate_bulk_revoke.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config/openxpki/config.d/realm/ca-one/workflow/def/certificate_export.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config/openxpki/config.d/realm/ca-one/workflow/def/certificate_privkey_export.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config/openxpki/config.d/realm/ca-one/workflow/def/certificate_publishing.yaml
