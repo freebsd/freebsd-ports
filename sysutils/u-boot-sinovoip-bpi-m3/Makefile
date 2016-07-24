@@ -41,13 +41,14 @@ post-patch:
 		${WRKSRC}/include/configs/sunxi-common.h
 
 do-configure:
-	(cd ${WRKSRC}; ${GMAKE} ${CONF_TARGET})
+	(cd ${WRKSRC}; ${MAKE_CMD} ${CONF_TARGET})
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
-	${CP} ${WRKSRC}/spl/sunxi-spl.bin ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
-	${CP} ${WRKSRC}/u-boot-sunxi-with-spl.bin ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
-	${CP} ${WRKSRC}/u-boot.img ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
-	${CP} ${.CURDIR}/pkg-descr ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
+	${INSTALL_DATA} ${WRKSRC}/spl/sunxi-spl.bin ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
+	${INSTALL_DATA} ${WRKSRC}/u-boot-sunxi-with-spl.bin \
+		${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
+	${INSTALL_DATA} ${WRKSRC}/u-boot.img ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
+	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
 .include <bsd.port.post.mk>
