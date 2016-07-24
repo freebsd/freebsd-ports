@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafile
-PORTVERSION=	5.1.3
+PORTVERSION=	5.1.4
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt
@@ -23,20 +23,20 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3 \
 		bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 
 USES=		autoreconf gettext iconv libarchive libtool mysql pathfix \
-		pkgconfig python:-2.7 shebangfix sqlite
+		pkgconfig python:-2.7 shebangfix sqlite ssl
 USE_GNOME=	glib20
 SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh  tests/*.py tests/basic/*.sh \
 		tests/sync-auto-test/*.template *.sh scripts/build/*.py \
 		scripts/*.py *.py scripts/upgrade/*.py app/seaf-cli \
 		tools/seafile-admin
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
