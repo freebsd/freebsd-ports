@@ -231,6 +231,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/notes.png
 %%DATADIR%%/img/circles/ok.png
 %%DATADIR%%/img/circles/opengl.png
+%%DATADIR%%/img/circles/optimize.png
 %%DATADIR%%/img/circles/pacman.png
 %%DATADIR%%/img/circles/pdf.png
 %%DATADIR%%/img/circles/pencils.png
@@ -534,6 +535,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/notes.png
 %%DATADIR%%/img/classic/ok.png
 %%DATADIR%%/img/classic/opengl.png
+%%DATADIR%%/img/classic/optimize.png
 %%DATADIR%%/img/classic/pacman.png
 %%DATADIR%%/img/classic/pdf.png
 %%DATADIR%%/img/classic/pencils.png
@@ -856,6 +858,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/notes.png
 %%DATADIR%%/img/crazy-black/ok.png
 %%DATADIR%%/img/crazy-black/opengl.png
+%%DATADIR%%/img/crazy-black/optimize.png
 %%DATADIR%%/img/crazy-black/pacman.png
 %%DATADIR%%/img/crazy-black/pdf.png
 %%DATADIR%%/img/crazy-black/pencils.png
@@ -1158,6 +1161,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/notes.png
 %%DATADIR%%/img/crazy/ok.png
 %%DATADIR%%/img/crazy/opengl.png
+%%DATADIR%%/img/crazy/optimize.png
 %%DATADIR%%/img/crazy/pacman.png
 %%DATADIR%%/img/crazy/pdf.png
 %%DATADIR%%/img/crazy/pencils.png
@@ -1460,6 +1464,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/notes.png
 %%DATADIR%%/img/cubes/ok.png
 %%DATADIR%%/img/cubes/opengl.png
+%%DATADIR%%/img/cubes/optimize.png
 %%DATADIR%%/img/cubes/pacman.png
 %%DATADIR%%/img/cubes/pdf.png
 %%DATADIR%%/img/cubes/pencils.png
@@ -1718,6 +1723,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/notes.png
 %%DATADIR%%/img/ok.png
 %%DATADIR%%/img/opengl.png
+%%DATADIR%%/img/optimize.png
 %%DATADIR%%/img/pacman.png
 %%DATADIR%%/img/pdf.png
 %%DATADIR%%/img/pencils.png
