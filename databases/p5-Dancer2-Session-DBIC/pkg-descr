@@ -1,0 +1,7 @@
+This module implements a session engine for Dancer2 by serializing
+the session, and storing it in a database via DBIx::Class.
+
+JSON was chosen as the default serialization format,
+as it is fast, terse, and portable.
+
+WWW: http://search.cpan.org/dist/Dancer2-Session-DBIC/
