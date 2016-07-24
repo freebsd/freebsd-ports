@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet
-PORTVERSION=	5.1.3
+PORTVERSION=	5.1.4
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt devel
@@ -26,9 +26,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 
 USES=		autoreconf gettext libtool localbase pathfix pkgconfig \
-		python:-2.7 shebangfix
+		python:-2.7 shebangfix ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 SHEBANG_FILES=	tools/*.py
 PATHFIX_MAKEFILEIN=	Makefile.am
 
