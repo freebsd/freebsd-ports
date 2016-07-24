@@ -44,7 +44,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
 	dd bs=1k oseek=0  conv=sync of=${IMXFILE} if=${WRKSRC}/SPL
 	dd bs=1k oseek=68 conv=sync of=${IMXFILE} if=${WRKSRC}/u-boot.img
-	${INSTALL_DATA} ${.CURDIR}/pkg-descr \
-		${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
+	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
 .include <bsd.port.mk>
