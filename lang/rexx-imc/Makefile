@@ -41,12 +41,16 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/librexx.so.2 ${WRKSRC}/rxmathfn.rxfn \
 		${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/rxmathfn.rxlib ${STAGEDIR}${PREFIX}/lib
-	@${LN} -sf librexx.so.2 ${STAGEDIR}${PREFIX}/lib/librexx.so
+	${LN} -sf librexx.so.2 ${STAGEDIR}${PREFIX}/lib/librexx.so
 	(cd ${WRKSRC} && ${INSTALL_MAN} rexx.1 rxstack.1 rxque.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${RMEFILES} \
 		${STAGEDIR}${DOCSDIR})
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} box rexxcps.rexx rexxtest.rexx \
 		rxmathfn.rexx shell.rexx ${STAGEDIR}${EXAMPLESDIR})
