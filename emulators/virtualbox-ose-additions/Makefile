@@ -78,7 +78,8 @@ MAKE_ARGS+=	DEBUG_FLAGS="-O1 -g"
 .if ${PORT_OPTIONS:MOPENGL}
 USE_XORG=	xcomposite xdamage xfixes
 USE_GL=		gl
-VBOX_LIBS=	VBoxOGL.so \
+VBOX_LIBS=	VBoxEGL.so \
+		VBoxOGL.so \
 		VBoxOGLarrayspu.so \
 		VBoxOGLcrutil.so \
 		VBoxOGLerrorspu.so \
