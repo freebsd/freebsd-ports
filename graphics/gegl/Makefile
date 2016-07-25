@@ -219,10 +219,11 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOCS}
 pre-configure:
-.if !exists(${LOCALBASE}/bin/vimdot)
-	@${ECHO_CMD} "${PKGNAME}: Needs graphics/graphviz with PANGOCAIRO support enabled."
-	@${FALSE}
-.endif
+# .if !exists() evaluates too early before graphviz has a chance to be installed
+	@if ! hash vimdot 2>/dev/null; then \
+		${ECHO_MSG} "${PKGNAME}: Needs graphics/graphviz with PANGOCAIRO support enabled."; \
+		${FALSE}; \
+	fi
 .endif
 
 post-build:
