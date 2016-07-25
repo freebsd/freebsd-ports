@@ -1,5 +1,6 @@
 bin/rspamd-%%RSPAMDVERSION%%
 bin/rspamd
+bin/rspamd_stats
 bin/rspamadm-%%RSPAMDVERSION%%
 bin/rspamadm
 bin/rspamc-%%RSPAMDVERSION%%
@@ -34,11 +35,13 @@ bin/rspamc
 %%ETCDIR%%/modules.d/surbl.conf
 %%ETCDIR%%/modules.d/whitelist.conf
 @sample %%ETCDIR%%/options.inc.sample
+%%ETCDIR%%/redirectors.inc
 @sample %%ETCDIR%%/rspamd.conf.sample
 @sample %%ETCDIR%%/spf_dkim_whitelist.inc.sample
 @sample %%ETCDIR%%/statistic.conf.sample
 @sample %%ETCDIR%%/surbl-whitelist.inc.sample
 @sample %%ETCDIR%%/worker-controller.inc.sample
+@sample %%ETCDIR%%/worker-fuzzy.inc
 @sample %%ETCDIR%%/worker-normal.inc.sample
 @sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
 /usr/local/etc/newsyslog.conf.d/rspamd.newsyslog.conf
@@ -50,6 +53,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/fann_scores.lua
 %%DATADIR%%/lua/forged_recipients.lua
 %%DATADIR%%/lua/fun.lua
+%%DATADIR%%/lua/greylist.lua
 %%DATADIR%%/lua/hfilter.lua
 %%DATADIR%%/lua/ip_score.lua
 %%DATADIR%%/lua/maillist.lua
@@ -58,12 +62,14 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/once_received.lua
 %%DATADIR%%/lua/phishing.lua
 %%DATADIR%%/lua/ratelimit.lua
+%%DATADIR%%/lua/replies.lua
 %%DATADIR%%/lua/rbl.lua
 %%DATADIR%%/lua/rspamd_update.lua
 %%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/spamassassin.lua
 %%DATADIR%%/lua/trie.lua
 %%DATADIR%%/lua/whitelist.lua
+%%DATADIR%%/rules/forwarding.lua
 %%DATADIR%%/rules/html.lua
 %%DATADIR%%/rules/http_headers.lua
 %%DATADIR%%/rules/misc.lua
@@ -71,9 +77,11 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/rules/regexp/fraud.lua
 %%DATADIR%%/rules/regexp/headers.lua
 %%DATADIR%%/rules/regexp/lotto.lua
+%%DATADIR%%/rules/regexp/upstream_spam_filters.lua
 %%DATADIR%%/rules/rspamd.classifiers.lua
 %%DATADIR%%/rules/rspamd.lua
 %%DATADIR%%/www/README.md
+%%DATADIR%%/www/css/d3evolution.css
 %%DATADIR%%/www/css/datatables.min.css
 %%DATADIR%%/www/css/glyphicons-halflings-regular.woff
 %%DATADIR%%/www/css/glyphicons-halflings-regular.woff2
@@ -84,8 +92,10 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/img/spinner.gif
 %%DATADIR%%/www/img/spinner.png
 %%DATADIR%%/www/index.html
+%%DATADIR%%/www/js/d3evolution.min.js
 %%DATADIR%%/www/js/d3pie.min.js
 %%DATADIR%%/www/js/datatables.min.js
+%%DATADIR%%/www/js/humanize.min.js
 %%DATADIR%%/www/js/rspamd.js
 %%DATADIR%%/www/plugins.txt
 %%DATADIR%%/www/react-index.html

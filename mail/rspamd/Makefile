@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.2.8
+PORTVERSION=	1.3.0
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgmime-2.4.so:mail/gmime24 \
 		libevent.so:devel/libevent2 \
 		libluajit-5.1.so:lang/luajit
+BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd
 
