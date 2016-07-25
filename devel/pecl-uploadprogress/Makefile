@@ -8,7 +8,7 @@ MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides track progress of a file upload
 
 LICENSE=	PHP301

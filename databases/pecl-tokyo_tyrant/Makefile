@@ -7,7 +7,7 @@ CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper to the Tokyo Tyrant client library
 
 LICENSE=	PHP301

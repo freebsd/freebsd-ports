@@ -7,7 +7,7 @@ CATEGORIES=	textproc www pear
 MASTER_SITES=	http://pear.symfony-project.com/get/
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Symfony YAML Component
 
 BUILD_DEPENDS=	${PEARDIR}/.channels/pear.symfony-project.com.reg:devel/pear-channel-symfony

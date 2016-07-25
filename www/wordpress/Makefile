@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2

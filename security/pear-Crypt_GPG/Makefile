@@ -5,7 +5,7 @@ PORTNAME=	Crypt_GPG
 PORTVERSION=	1.4.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Privacy Guard (GPG)
 
 LICENSE=	LGPL21
