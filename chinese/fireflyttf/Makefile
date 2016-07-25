@@ -3,7 +3,7 @@
 
 PORTNAME=	fireflyttf
 PORTVERSION=	1.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES?=	LOCAL/chinsan/fonts
 DISTNAME?=	fireflysung-${PORTVERSION}
