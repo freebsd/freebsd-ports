@@ -3,7 +3,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.11.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
