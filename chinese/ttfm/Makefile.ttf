@@ -63,7 +63,7 @@ do-install-ttf:
 .endfor
 .if ${PORT_OPTIONS:MX11}
 	@${ECHO_MSG} "===>  Running fc-cache"
-	-@${LOCALBASE}/bin/fc-cache -f -v ${STAGEDIR}${XFONTSDIR}
+	-@${LOCALBASE}/bin/fc-cache -f -s -v ${STAGEDIR}${XFONTSDIR}
 .endif
 
 add-plist-post: add-plist-ttf
@@ -82,8 +82,8 @@ add-plist-ttf:
 .	endfor
 .endfor
 .if ${PORT_OPTIONS:MX11}
-	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/fc-cache -f -s -v ${XFONTSDIR} || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/fc-cache -f -s -v ${XFONTSDIR} || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec find ${XFONTSDIR} -size -3c -delete || true" >> ${TMPPLIST}
 .endif
 
