@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql-repmgr
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.repmgr.org/download/
 DISTNAME=	repmgr-${PORTVERSION}
