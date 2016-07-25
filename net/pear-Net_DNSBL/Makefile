@@ -5,7 +5,7 @@ PORTNAME=	Net_DNSBL
 PORTVERSION=	1.3.7
 CATEGORIES=	net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR DNSBL Checker
 
 BUILD_DEPENDS=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite \

@@ -6,7 +6,7 @@ PORTVERSION=	1.10.1
 CATEGORIES=	devel
 MASTER_SITES=	http://mirror.miwibox.org/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR framework for PHP
 
 LICENSE=	PHP301

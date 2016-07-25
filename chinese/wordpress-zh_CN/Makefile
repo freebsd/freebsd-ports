@@ -8,7 +8,7 @@ CATEGORIES=	chinese www
 MASTER_SITES=	http://cn.wordpress.org/
 PKGNAMESUFFIX=	-zh_CN
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2+

@@ -5,7 +5,7 @@ PORTNAME=	File_MARC
 PORTVERSION=	1.1.2
 CATEGORIES=	textproc pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse, modify, and create MARC records
 
 USES=	pear

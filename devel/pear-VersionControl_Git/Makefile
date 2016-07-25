@@ -5,7 +5,7 @@ PORTNAME=	VersionControl_Git
 PORTVERSION=	0.4.4
 CATEGORIES=	devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OO interface to handle Git repository
 
 USES=	pear

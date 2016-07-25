@@ -5,7 +5,7 @@ PORTNAME=	Text_Highlighter
 PORTVERSION=	0.7.3
 CATEGORIES=	textproc pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Syntax highlighting
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
