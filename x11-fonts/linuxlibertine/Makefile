@@ -3,7 +3,7 @@
 
 PORTNAME=	linuxlibertine
 PORTVERSION=	4.7.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	LinLibertineFont-${PORTVERSION}-2
@@ -27,7 +27,6 @@ LICENSE_NAME_OFL=	Open Fonts License
 LICENSE_FILE_OFL=	${WRKSRC}/OFL.txt
 LICENSE_PERMS_OFL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-SUB_FILES=	pkg-deinstall
 WRKSRC=		${WRKDIR}/LinLibertine
 NO_BUILD=	yes
 
