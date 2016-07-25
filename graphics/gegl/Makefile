@@ -3,7 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
@@ -140,7 +140,7 @@ CONFIGURE_ARGS+=--without-libopenraw
 PLIST_SUB+=	OPENRAW="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSIMD}
+.if ! ${PORT_OPTIONS:MSIMD}
 CONFIGURE_ARGS+=--disable-mmx \
 		--disable-sse
 .endif
