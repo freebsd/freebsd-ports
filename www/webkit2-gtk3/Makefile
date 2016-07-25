@@ -69,10 +69,11 @@ post-patch:
 		${WRKSRC}/Source/WebKit2/UIProcess/Plugins/unix/PluginInfoStoreUnix.cpp
 
 pre-configure:
-.if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-egl.pc)
-	@${ECHO_CMD} "${PKGNAME}: Needs cairo with OPENGL support enabled."
-	@${FALSE}
-.endif
+# .if !exists() evaluates too early before cairo has a chance to be installed
+	@if ! pkg-config --exists cairo-egl; then \
+		${ECHO_MSG} "${PKGNAME}: Needs cairo with OPENGL support enabled."; \
+		${FALSE}; \
+	fi
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/jsc \
