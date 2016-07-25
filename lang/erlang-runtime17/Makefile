@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=--without-dynamic-trace
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=--without-ssl
