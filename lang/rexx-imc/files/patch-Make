@@ -1,6 +1,6 @@
---- Make.orig	2002-02-26 07:29:20.000000000 -0500
-+++ Make	2007-12-19 21:18:32.000000000 -0500
-@@ -18,7 +18,7 @@
+--- Make.orig	2002-02-26 12:29:20 UTC
++++ Make
+@@ -18,7 +18,7 @@ CC=gcc                     # compiler an
  LD=ld                      # linker for shared objects
  COMPILEFLAG=""             # general compilation flags for cc
  LINKFLAG=""                # general linker flags *for cc*
@@ -9,7 +9,7 @@
                             # (not guaranteed to work on all systems)
  SMALL=false                # true if you like small executables (not guaranteed
                             # and not for ELF executables either)
-@@ -98,6 +98,9 @@
+@@ -98,6 +98,9 @@ if [ "x$PREFIX" = "x" ]; then
          SunOS:5.*)
              PREFIX="/opt/REXXimc"
              ;;
@@ -19,7 +19,7 @@
          *|unknown)
              PREFIX="/usr/local"
              ;;
-@@ -386,14 +389,14 @@
+@@ -386,14 +389,14 @@ case $UNAME_S:$UNAME_R in
          esac
          egrep -q tm_gmtoff /usr/include/time.h && CCFLAG="$CCFLAG -DHAS_GMTOFF"
          ;;
@@ -36,7 +36,7 @@
  #       Uncomment above line if you have problems with LD_LIBRARY_PATH
          case $CC in
              gcc)
-@@ -407,6 +410,48 @@
+@@ -407,6 +410,48 @@ case $UNAME_S:$UNAME_R in
                  ;;
          esac
          ;;
