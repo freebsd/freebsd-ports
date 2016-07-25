@@ -16,8 +16,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 
-USES=		cmake:outsource bison
-USE_OPENSSL=	yes
+USES=		cmake:outsource bison pkgconfig ssl
 USE_GNOME=	glib20
 
 USERS=		_rmilter
