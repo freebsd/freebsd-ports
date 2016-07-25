@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newtonsoft-json
-PORTVERSION=	8.0.3
+PORTVERSION=	9.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
