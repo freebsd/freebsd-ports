@@ -383,6 +383,7 @@ man/man8/named-checkconf.8.gz
 man/man8/named-checkzone.8.gz
 man/man8/named-compilezone.8.gz
 man/man8/named-journalprint.8.gz
+%%LMDB%%man/man8/named-nzd2nzf.8.gz
 man/man8/named.8.gz
 man/man8/nsec3hash.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-destroy.8.gz
@@ -413,6 +414,7 @@ sbin/named-checkconf
 sbin/named-checkzone
 sbin/named-compilezone
 sbin/named-journalprint
+%%LMDB%%sbin/named-nzd2nzf
 sbin/named-rrchecker
 sbin/nsec3hash
 %%NATIVE_PKCS11%%sbin/pkcs11-destroy
