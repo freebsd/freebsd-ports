@@ -18,6 +18,7 @@ GH_ACCOUNT=	vstakhov
 
 USES=		cmake:outsource bison
 USE_OPENSSL=	yes
+USE_GNOME=	glib20
 
 USERS=		_rmilter
 GROUPS=		_rmilter
