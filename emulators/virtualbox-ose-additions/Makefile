@@ -125,9 +125,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-freebsd-drm-Makefile.k
 .endif
 
 VBOX_KMODS=	vboxguest:pci/vboxguest
-.if ${PORT_OPTIONS:MOPENGL}
-VBOX_KMODS+=	vboxvideo:vgapci/vboxvideo
-.endif
+# DRI support was removed from the X.Org vboxvideo driver:
+# https://www.virtualbox.org/changeset/59194
+#.if ${PORT_OPTIONS:MOPENGL}
+#VBOX_KMODS+=	vboxvideo:vgapci/vboxvideo
+#.endif
 
 pre-everything::
 .if ${ARCH} == "amd64"
