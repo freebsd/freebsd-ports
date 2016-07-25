@@ -3,6 +3,7 @@
 
 PORTNAME=	telegram-purple
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	pidgin:net-im/pidgin
 RUN_DEPENDS=	pidgin:net-im/pidgin
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
