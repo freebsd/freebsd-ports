@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rmilter
-PORTVERSION=	1.8.6
+PORTVERSION=	1.9.0
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -40,7 +40,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/rmilter ${STAGEDIR}${PREFIX}/etc/rc.d/
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/rmilter ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/rmilter.conf.sample ${STAGEDIR}${PREFIX}/etc/
-	${INSTALL_MAN} ${WRKSRC}/doc/rmilter.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 
 post-stage:
 	${INSTALL} -d ${STAGEDIR}/var/run/rmilter
