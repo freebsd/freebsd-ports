@@ -25,8 +25,6 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/flpsed ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/flpsed.1 ${STAGEDIR}${PREFIX}/man/man1
