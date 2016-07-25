@@ -5,7 +5,7 @@ PORTNAME=	Console_CommandLine
 PORTVERSION=	1.2.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured command line options and arguments parser
 
 LICENSE=	MIT

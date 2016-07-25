@@ -5,7 +5,7 @@ PORTNAME=	PEAR_Info
 PORTVERSION=	1.9.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show Information about your PEAR install and its packages
 
 BUILD_DEPENDS=	${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs

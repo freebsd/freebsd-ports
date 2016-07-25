@@ -5,7 +5,7 @@ PORTNAME=	XML_RSS
 PORTVERSION=	1.0.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR RSS parser
 
 RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
