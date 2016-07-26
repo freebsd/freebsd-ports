@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smarty
-PORTVERSION=	2.6.29
+PORTVERSION=	2.6.30
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://www.smarty.net/files/docs/:manual
@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
 USE_PHP=	pcre
-WANT_PHP_WEB=	yes
+USES=		php:web
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
