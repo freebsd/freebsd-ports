@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	units
-PORTVERSION=	2.11
+PORTVERSION=	2.13
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Unit conversion and calculation
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
