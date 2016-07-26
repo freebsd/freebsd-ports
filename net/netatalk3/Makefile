@@ -84,21 +84,24 @@ SUB_LIST+=		ZEROCONF=""
 
 .if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
-CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 LIB_DEPENDS+=		libavahi-client.so:net/avahi-app
 SUB_LIST+=		ZEROCONF="avahi_daemon"
 .endif
 
 .if ${PORT_OPTIONS:MMDNSRESPONDER}
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
-CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 LIB_DEPENDS+=		libdns_sd.so:net/mDNSResponder
 SUB_LIST+=		ZEROCONF="mdnsd"
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
-CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 USE_OPENLDAP=		yes
 .else
 CONFIGURE_ARGS+=	--without-ldap
