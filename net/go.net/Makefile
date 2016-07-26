@@ -2,30 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	go.net
-PORTVERSION=	20131227
+PORTVERSION=	20160708
 CATEGORIES=	net devel
-MASTER_SITES=	http://jlaffaye.net/ LOCAL/jlaffaye
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Additional Net packages for Go
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.text:textproc/go.text
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/text/cases.a:textproc/go.text \
+		go.crypto>=20160709:security/go.crypto
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	golang
+GH_PROJECT=	net
+GH_TAGNAME=	f841c39de738b1d0df95b5a7187744f0e03d8112
 USES=		go
-GO_PKGNAME=	code.google.com/p/go.net
-GO_TARGET=	${GO_PKGNAME}/dict		\
-		${GO_PKGNAME}/html		\
-		${GO_PKGNAME}/html/atom 	\
-		${GO_PKGNAME}/html/charset	\
-		${GO_PKGNAME}/idna		\
-		${GO_PKGNAME}/ipv4		\
-		${GO_PKGNAME}/ipv6		\
-		${GO_PKGNAME}/netutil		\
-		${GO_PKGNAME}/proxy		\
-		${GO_PKGNAME}/publicsuffix	\
-		${GO_PKGNAME}/spdy		\
-		${GO_PKGNAME}/websocket
+GO_TARGET=	${GO_PKGNAME}/bpf               \
+		${GO_PKGNAME}/context           \
+		${GO_PKGNAME}/context/ctxhttp   \
+		${GO_PKGNAME}/dict              \
+		${GO_PKGNAME}/html              \
+		${GO_PKGNAME}/html/atom         \
+		${GO_PKGNAME}/html/charset      \
+		${GO_PKGNAME}/http2             \
+		${GO_PKGNAME}/http2/h2i         \
+		${GO_PKGNAME}/http2/hpack       \
+		${GO_PKGNAME}/icmp              \
+		${GO_PKGNAME}/idna              \
+		${GO_PKGNAME}/ipv4              \
+		${GO_PKGNAME}/ipv6              \
+		${GO_PKGNAME}/lex/httplex       \
+		${GO_PKGNAME}/netutil           \
+		${GO_PKGNAME}/proxy             \
+		${GO_PKGNAME}/publicsuffix      \
+		${GO_PKGNAME}/route             \
+		${GO_PKGNAME}/trace             \
+		${GO_PKGNAME}/webdav            \
+		${GO_PKGNAME}/websocket         \
+		${GO_PKGNAME}/xsrftoken
+
+GO_PKGNAME=	golang.org/x/net
 
 .include <bsd.port.mk>
