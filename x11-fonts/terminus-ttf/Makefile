@@ -19,6 +19,7 @@ USES=		fonts zip
 
 FONTNAME=	TerminusTTF
 SUB_FILES=	pkg-message
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}/
