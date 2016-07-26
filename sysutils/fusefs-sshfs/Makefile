@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sshfs
-PORTVERSION=	2.7
-DISTVERSIONPREFIX=	${PORTNAME}-
+PORTVERSION=	2.8
+DISTVERSIONPREFIX=	${PORTNAME}_
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	libfuse
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf fuse pkgconfig
+USES=		autoreconf fuse gettext pkgconfig
 USE_GNOME=	glib20
 
 PLIST_FILES=	bin/sshfs \
