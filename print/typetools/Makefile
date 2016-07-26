@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typetools
-PORTVERSION=	2.105
+PORTVERSION=	2.106
 CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/type/
 DISTNAME=	lcdf-${PORTNAME}-${PORTVERSION}
