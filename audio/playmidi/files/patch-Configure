@@ -1,6 +1,6 @@
---- Configure.orig	Mon May 12 06:26:36 1997
-+++ Configure	Tue Aug 15 22:51:15 2000
-@@ -8,7 +8,7 @@
+--- Configure.orig	1997-05-11 21:26:36 UTC
++++ Configure
+@@ -8,7 +8,7 @@ fmmode=0
  mididevno=-1
  play=PLAY_MIDI
  gus1=/dos/ultrasnd/midi

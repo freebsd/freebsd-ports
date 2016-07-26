@@ -1,5 +1,5 @@
---- src/libwavpack.cpp.orig	2009-09-28 04:52:56.000000000 +0200
-+++ src/libwavpack.cpp	2011-06-27 13:19:20.000000000 +0200
+--- src/libwavpack.cpp.orig	2009-09-28 02:52:56 UTC
++++ src/libwavpack.cpp
 @@ -40,7 +40,7 @@ extern "C" {
  #define M_LN10   2.3025850929940456840179914546843642
  #endif

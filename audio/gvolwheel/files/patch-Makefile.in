@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-04-08 00:37:17.000000000 +0200
-+++ Makefile.in	2013-08-03 17:39:52.000000000 +0200
-@@ -315,14 +315,8 @@
+--- Makefile.in.orig	2012-04-07 22:37:17 UTC
++++ Makefile.in
+@@ -315,14 +315,8 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = src po 

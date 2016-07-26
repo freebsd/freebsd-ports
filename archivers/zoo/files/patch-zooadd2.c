@@ -1,6 +1,6 @@
---- ./zooadd2.c.orig	1991-07-20 01:38:10.000000000 +0200
-+++ ./zooadd2.c	2011-12-22 14:00:55.000000000 +0100
-@@ -258,12 +258,15 @@
+--- zooadd2.c.orig	1991-07-19 23:38:10 UTC
++++ zooadd2.c
+@@ -258,12 +258,15 @@ void newdir (direntry)
  register struct direntry *direntry;
  {
  #ifdef GETTZ

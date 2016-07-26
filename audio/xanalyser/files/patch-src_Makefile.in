@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2008-12-06 06:52:34.000000000 -0500
-+++ src/Makefile.in	2013-12-30 15:17:23.000000000 -0500
-@@ -194,7 +194,8 @@
+--- src/Makefile.in.orig	2008-12-06 11:52:34 UTC
++++ src/Makefile.in
+@@ -194,7 +194,8 @@ xanalyser_SOURCES = \
  	utils.cc utils.h		\
  	Trans.h
  
@@ -10,7 +10,7 @@
  	$(FFTWLDADD) $(ALSALDADD)
  
  EXTRA_DIST = XAnalyser.ad help.txt *.xpm
-@@ -474,8 +475,8 @@
+@@ -474,8 +475,8 @@ help.txt.h: help.txt
  	txt2c help.txt > help.txt.h
  
  install-data-hook:

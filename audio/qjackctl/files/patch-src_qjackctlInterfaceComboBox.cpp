@@ -1,6 +1,6 @@
---- src/qjackctlInterfaceComboBox.cpp.orig	2015-10-28 15:24:52 UTC
+--- src/qjackctlInterfaceComboBox.cpp.orig	2016-04-05 15:57:30 UTC
 +++ src/qjackctlInterfaceComboBox.cpp
-@@ -191,9 +191,16 @@ private:
+@@ -210,9 +210,16 @@ private:
  
  			// Fill HostApi info...
  			const PaHostApiIndex iNumHostApi = Pa_GetHostApiCount();

@@ -1,5 +1,5 @@
---- Imakefile.orig	Tue Jan 12 19:59:29 1993
-+++ Imakefile	Mon Aug 25 00:47:20 2003
+--- Imakefile.orig	1993-01-12 18:59:29 UTC
++++ Imakefile
 @@ -15,6 +15,11 @@
  
  LOCAL_LIBRARIES = XawClientLibs
@@ -12,7 +12,7 @@
  #ifdef SunArchitecture
             SRCS = main.c top_setup.c logo_setup.c button_setup.c cdrom_callb.c\
                    cdrom_sun.c internals.c shuffle.c program.c leds.c debug.c 
-@@ -38,5 +43,4 @@
+@@ -38,5 +43,4 @@ AllTarget(${PROGRAMS})
  ComplexProgramTarget(xcdplayer)
  NormalProgramTarget(cdinfo, cdinfo.o,,,)
  NormalProgramTarget(cdgrab, cdgrab.o,,,)

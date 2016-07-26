@@ -1,6 +1,6 @@
---- 9e.c.orig	Thu Jun 15 13:40:52 2000
-+++ 9e.c	Fri Jun 23 04:16:00 2000
-@@ -139,17 +139,16 @@
+--- 9e.c.orig	2000-06-15 13:40:52 UTC
++++ 9e.c
+@@ -139,17 +139,16 @@ void do_file(char *file, FILE *fin) {
      }
  
      if(Hdrs) {

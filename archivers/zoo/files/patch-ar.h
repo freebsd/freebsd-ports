@@ -1,6 +1,6 @@
---- ./ar.h.orig	1993-05-01 06:04:22.000000000 +0200
-+++ ./ar.h	2011-12-22 14:00:55.000000000 +0100
-@@ -15,10 +15,12 @@
+--- ar.h.orig	1993-05-01 04:04:22 UTC
++++ ar.h
+@@ -15,10 +15,12 @@ Adapted from "ar" archiver written by Ha
  /* uchar should be 8 bits or more */
  /* typedef unsigned char  uchar;   -- already in zoo.h */
  

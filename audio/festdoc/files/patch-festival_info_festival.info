@@ -1,7 +1,7 @@
 $NetBSD: patch-aa,v 1.1 2000/01/06 01:40:11 wiz Exp $
 
---- festival/info/festival.info.orig	Sat Jun 19 17:08:03 1999
-+++ festival/info/festival.info	Wed Jan  5 16:36:08 2000
+--- festival/info/festival.info.orig	1999-06-19 15:08:03 UTC
++++ festival/info/festival.info
 @@ -1,6 +1,11 @@
  This is Info file festival.info, produced by Makeinfo-1.63 from the
  input file festival.texi.

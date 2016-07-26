@@ -1,5 +1,5 @@
---- sample.c.orig	Sun Sep  8 03:00:57 2002
-+++ sample.c	Sun Sep  8 03:01:20 2002
+--- sample.c.orig	2001-12-04 20:52:55 UTC
++++ sample.c
 @@ -43,7 +43,7 @@
  #ifdef __NetBSD__
  #include <soundcard.h>

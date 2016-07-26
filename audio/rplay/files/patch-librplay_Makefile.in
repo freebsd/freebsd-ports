@@ -1,6 +1,6 @@
---- librplay/Makefile.in.orig	Tue Mar 23 11:38:38 1999
-+++ librplay/Makefile.in	Thu Jun 22 00:07:42 2000
-@@ -19,11 +19,12 @@
+--- librplay/Makefile.in.orig	1999-03-23 02:38:38 UTC
++++ librplay/Makefile.in
+@@ -19,11 +19,12 @@ LDFLAGS=	$(LD_OPTIONS) -shared @LDFLAGS@
  		$(CC) -c -fPIC $(CPPFLAGS) $(CFLAGS) -o $@ $<
  
  TARGET=		$(LIBRPLAY_NAME)
@@ -14,7 +14,7 @@
  
  #
  # Use the following for SunOS 4.1.x, Solaris 2.x, Linux, NetBSD
-@@ -32,8 +33,9 @@
+@@ -32,8 +33,9 @@ $(TARGET):	$(OBJS)
  		$(AR) rcv $@ $?
  		$(RANLIB) $@
  
@@ -26,7 +26,7 @@
  
  #
  # For HP-UX comment above and uncomment below.
-@@ -50,7 +52,8 @@
+@@ -50,7 +52,8 @@ librplay.so:	$(SHAREDOBJS)
  install:	all
  		$(MKINSTALLDIRS) $(libdir)
  		$(INSTALL_DATA) $(TARGET) $(libdir)

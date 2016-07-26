@@ -1,5 +1,5 @@
---- Makefile.inc.orig	Thu Jun 21 22:34:06 2001
-+++ Makefile.inc	Thu Jun 21 22:37:50 2001
+--- Makefile.inc.orig	2016-07-26 13:37:02 UTC
++++ Makefile.inc
 @@ -0,0 +1,14 @@
 +.PATH: /sys/dev/sound/pci ${WRKSRC}
 +

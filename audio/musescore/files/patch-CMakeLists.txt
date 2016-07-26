@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2015-07-16 10:58:43 UTC
+--- CMakeLists.txt.orig	2015-07-16 21:02:34 UTC
 +++ CMakeLists.txt
 @@ -74,6 +74,10 @@ option(HAS_AUDIOFILE "enable audio expor
  option(USE_SYSTEM_QTSINGLEAPPLICATION "Use system QtSingleApplication" OFF)

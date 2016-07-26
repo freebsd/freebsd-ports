@@ -1,6 +1,6 @@
---- screen.c.orig	2010-03-18 19:50:01.000000000 -0700
-+++ screen.c	2010-03-18 19:54:07.000000000 -0700
-@@ -275,9 +275,13 @@
+--- screen.c.orig	2002-04-28 13:30:35 UTC
++++ screen.c
+@@ -275,9 +275,13 @@ void screen_message( ScreenData *data, g
     gchar *tmp, *str;
     
     va_start(az, fmt);

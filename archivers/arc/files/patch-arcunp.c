@@ -1,6 +1,6 @@
---- ./arcunp.c.orig	Tue Aug 10 23:03:25 1999
-+++ ./arcunp.c	Tue Aug 10 23:01:57 1999
-@@ -123,7 +123,7 @@
+--- arcunp.c.orig	2010-08-07 13:06:42 UTC
++++ arcunp.c
+@@ -122,7 +122,7 @@ unpack(f, t, hdr)		/* unpack an archive 
  		break;
  
  	default:		/* unknown method */
@@ -9,7 +9,7 @@
  			printf("I don't know how to unpack file %s\n", hdr->name);
  			printf("I think you need a newer version of ARC\n");
  			nerrs++;
-@@ -135,7 +135,7 @@
+@@ -134,7 +134,7 @@ unpack(f, t, hdr)		/* unpack an archive 
  	/* cleanups common to all methods */
  
  	if (crcval != hdr->crc) {

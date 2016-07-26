@@ -1,6 +1,6 @@
---- Imakefile.orig	Sun Sep  5 08:24:23 1999
-+++ Imakefile	Wed Aug  2 04:41:16 2000
-@@ -5,11 +5,10 @@
+--- Imakefile.orig	1999-09-04 23:24:23 UTC
++++ Imakefile
+@@ -5,11 +5,10 @@ NAME 		= ascd
  BINDIR		= CBINDIR
  MANDIR		= CMANDIR
  THEMESDIR	= CTHDIR

@@ -1,6 +1,6 @@
---- Makefile.common.orig	2011-10-05 03:29:42.000000000 +0200
-+++ Makefile.common	2013-05-13 02:19:31.000000000 +0200
-@@ -50,8 +50,8 @@
+--- Makefile.common.orig	2011-10-05 01:29:42 UTC
++++ Makefile.common
+@@ -50,8 +50,8 @@ endif
  
  Default_CXX          := g++
  Default_STRIP        := strip

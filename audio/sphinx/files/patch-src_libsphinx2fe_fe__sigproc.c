@@ -1,4 +1,4 @@
---- src/libsphinx2fe/fe_sigproc.c.orig	2016-06-20 13:31:26 UTC
+--- src/libsphinx2fe/fe_sigproc.c.orig	2016-07-26 15:58:05 UTC
 +++ src/libsphinx2fe/fe_sigproc.c
 @@ -43,7 +43,7 @@
  

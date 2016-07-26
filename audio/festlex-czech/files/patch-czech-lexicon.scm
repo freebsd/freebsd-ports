@@ -1,5 +1,5 @@
---- czech-lexicon.scm.orig	Wed Dec 26 17:22:02 2007
-+++ czech-lexicon.scm	Wed Dec 26 17:28:09 2007
+--- czech-lexicon.scm.orig	2006-06-21 07:32:07 UTC
++++ czech-lexicon.scm
 @@ -263,3 +263,51 @@
  ("softwary" nil (((s o f t v e: r i) 0)))
  ("softwarù" nil (((s o f t v e: r u:) 0)))

@@ -1,4 +1,4 @@
---- doc/Makefile.orig	2016-06-04 17:01:05 UTC
+--- doc/Makefile.orig	2014-03-22 11:28:26 UTC
 +++ doc/Makefile
 @@ -43,19 +43,19 @@ install: install-txt install-html
  install-txt:

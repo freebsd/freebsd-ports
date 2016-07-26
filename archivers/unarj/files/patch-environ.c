@@ -1,6 +1,6 @@
---- environ.c.orig	Mon Sep 29 14:00:24 1997
-+++ environ.c	Thu Feb 18 01:14:35 1999
-@@ -430,16 +430,24 @@
+--- environ.c.orig	2002-06-05 08:28:06 UTC
++++ environ.c
+@@ -430,16 +430,24 @@ uint  host;
  
  #define SUBS_DEFINED
  
@@ -28,7 +28,7 @@
  
  FILE *
  file_open(name, mode)
-@@ -535,8 +543,12 @@
+@@ -535,8 +543,12 @@ uint mode;
  }
  
  long
@@ -42,7 +42,7 @@
  #define NOONOFFSET    43200L
  #define SEC_IN_DAY    (24L * 60L * 60L)
  #define INV_VALUE     (SEC_IN_DAY + 1L)
-@@ -552,6 +564,7 @@
+@@ -552,6 +564,7 @@ gettz()         /* returns the offset fr
      noontm = localtime(&noon);
      retval = NOONOFFSET - 60 * (60 * noontm->tm_hour - noontm->tm_min);
      return retval;
@@ -50,7 +50,7 @@
  }
  
  long
-@@ -600,19 +613,29 @@
+@@ -600,19 +613,29 @@ uint  host;
  {
      time_t m_time;
      struct utimbuf

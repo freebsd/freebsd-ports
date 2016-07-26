@@ -1,4 +1,4 @@
---- lib-src/FileDialog/mac/Makefile.am.orig	1970-01-01 00:00:00 UTC
+--- lib-src/FileDialog/mac/Makefile.am.orig	2016-07-26 13:34:07 UTC
 +++ lib-src/FileDialog/mac/Makefile.am
 @@ -0,0 +1,10 @@
 +ACLOCAL_AMFLAGS=	-I m4

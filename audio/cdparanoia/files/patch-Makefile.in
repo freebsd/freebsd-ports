@@ -1,6 +1,6 @@
---- Makefile.in.orig	2001-03-28 00:46:58.000000000 +0200
-+++ Makefile.in	2014-02-09 13:21:39.449603274 +0100
-@@ -8,7 +8,7 @@
+--- Makefile.in.orig	2001-03-27 22:46:58 UTC
++++ Makefile.in
+@@ -8,7 +8,7 @@ VPATH=@srcdir@
  srcdir=@srcdir@
  
  @SET_MAKE@
@@ -9,7 +9,7 @@
  OPT=@OPT@ $(FLAGS)
  DEBUG=@DEBUG@ $(FLAGS)
  CC=@CC@
-@@ -32,7 +32,7 @@
+@@ -32,7 +32,7 @@ export VERSION
  
  ifeq ($(STATIC),TRUE)
  	LIBS = interface/libcdda_interface.a paranoia/libcdda_paranoia.a \
@@ -18,7 +18,7 @@
  	LIBDEP = interface/libcdda_interface.a paranoia/libcdda_paranoia.a
  else
  	LIBS = -lcdda_interface -lcdda_paranoia -lm
-@@ -64,28 +64,27 @@
+@@ -64,28 +64,27 @@ slib:
  	cd paranoia && $(MAKE) slib
  
  install:

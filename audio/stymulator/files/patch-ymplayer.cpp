@@ -1,5 +1,5 @@
---- ./ymplayer.cpp.orig	2010-04-23 13:49:47.000000000 +0200
-+++ ./ymplayer.cpp	2010-04-23 13:49:47.000000000 +0200
+--- ymplayer.cpp.orig	2016-07-26 16:04:42 UTC
++++ ymplayer.cpp
 @@ -6,7 +6,6 @@
  	Project Page: http://atariarea.krap.pl/stymulator
  	
@@ -27,7 +27,7 @@
  bool digi;
  
  int main(int argc, char **argv)
-@@ -55,7 +58,7 @@
+@@ -55,7 +58,7 @@ bool playing;
  bool ff = false;
  bool rew = false;
  	
@@ -36,7 +36,7 @@
  
  	if (PLATFORM)
  		platform = "64bit";
-@@ -69,30 +72,22 @@
+@@ -69,30 +72,22 @@ char *platform;
  		return -1;
  	}
  
@@ -73,7 +73,7 @@
  			exit(EXIT_FAILURE);
  		}
  
-@@ -113,15 +108,10 @@
+@@ -113,15 +108,10 @@ char *platform;
  			if (digi)
  				draw_time(ymMusicGetPos(pMusic) / 1000);
  
@@ -93,7 +93,7 @@
  			switch(getch()) {
  				case 27: case 'q':	quit = true; break;
  				case 'z':	pmode = true;	break; //play
-@@ -132,6 +122,7 @@
+@@ -132,6 +122,7 @@ char *platform;
  				case 'n':	rew = true; break;
  			}
  			if (rmode)
@@ -101,7 +101,7 @@
  				if (repeat) {
  					ymMusicSetLoopMode(pMusic,YMTRUE);
  					mvaddstr(pos_y+7,pos_x+67,"Yes");
-@@ -143,7 +134,7 @@
+@@ -143,7 +134,7 @@ char *platform;
  					rmode = false;
  					repeat = true;
  				}
@@ -110,7 +110,7 @@
  			if (!stop && playing) {
  				if (pmode && !paused)
  					mvaddstr(pos_y+6,pos_x+67,"Play");	//play
-@@ -168,18 +159,20 @@
+@@ -168,18 +159,20 @@ char *platform;
  				pmode = false;
  			}
  

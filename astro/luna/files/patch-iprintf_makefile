@@ -1,5 +1,5 @@
---- iprintf/makefile.orig	Sun May 10 03:03:06 1992
-+++ iprintf/makefile	Sat Feb 12 23:27:55 2000
+--- iprintf/makefile.orig	2016-07-26 13:07:24 UTC
++++ iprintf/makefile
 @@ -3,11 +3,11 @@
  # 
  
@@ -16,7 +16,7 @@
  
  #
  # All modules
-@@ -15,9 +15,9 @@
+@@ -15,9 +15,9 @@ CFLAGS = -Ox -AS -DANSI -W4
  SRCS = iansilib.c idoprnt.c iprintf.c isprintf.c
  
  # MSDOS

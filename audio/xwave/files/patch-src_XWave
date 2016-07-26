@@ -1,5 +1,5 @@
---- src/XWave.orig	Mon Nov  9 08:22:55 1998
-+++ src/XWave	Fri Jun 30 20:08:56 2000
+--- src/XWave.orig	1998-11-08 23:22:55 UTC
++++ src/XWave
 @@ -1,7 +1,7 @@
  ! My self defined Resources
  

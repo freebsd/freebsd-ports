@@ -1,6 +1,6 @@
---- mixer-oss.c.orig	Wed Jul 14 18:00:14 2004
-+++ mixer-oss.c	Wed Jul 14 17:58:50 2004
-@@ -94,7 +94,9 @@
+--- mixer-oss.c.orig	2004-05-13 00:27:04 UTC
++++ mixer-oss.c
+@@ -94,7 +94,9 @@ static int prev_modify_counter = -1;
  
  static bool get_mixer_state(void)
  {
@@ -10,7 +10,7 @@
      int dev_lr_volume, dev_left_volume, dev_right_volume;
      float left, right;
      int srcmask;
-@@ -103,14 +105,16 @@
+@@ -103,14 +105,16 @@ static bool get_mixer_state(void)
      /* to really keep track of updates */
      static MixerChannel oldmixer[SOUND_MIXER_NRDEVICES];
  
@@ -28,7 +28,7 @@
      /* Mixer state was changed by another program, so we need
       * to update. As OSS cannot tell us specifically which
       * channels changed, we read all of them in.
-@@ -157,7 +161,7 @@
+@@ -157,7 +161,7 @@ static bool get_mixer_state(void)
  	}
  	mixer[ch].is_recording = ((1 << mixer[ch].dev) & srcmask) != 0;
      }
@@ -37,7 +37,7 @@
      /* check if this was due to OSS stupidity or if we really changed */
      if (!memcmp(&mixer, &oldmixer, sizeof(mixer))) {
  	memcpy(&oldmixer, &mixer, sizeof(mixer));
-@@ -224,7 +228,9 @@
+@@ -224,7 +228,9 @@ static void set_record_state(void)
  void mixer_init(const char *mixer_device, bool verbose, const char * exclude[])
  {
      int devmask, srcmask, recmask, stmask;
@@ -47,7 +47,7 @@
      int count;
      int mask;
  
-@@ -256,15 +262,19 @@
+@@ -256,15 +262,19 @@ void mixer_init(const char *mixer_device
  	exit(EXIT_FAILURE);
      }
  

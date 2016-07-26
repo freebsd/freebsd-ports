@@ -1,5 +1,5 @@
---- libgpsd.pc.in.orig	2015-01-23 18:48:09.000000000 +0000
-+++ libgpsd.pc.in	2015-05-21 02:11:05.192169497 +0000
+--- libgpsd.pc.in.orig	2015-01-23 18:48:09 UTC
++++ libgpsd.pc.in
 @@ -1,6 +1,6 @@
  prefix=@prefix@
  exec_prefix=${prefix}

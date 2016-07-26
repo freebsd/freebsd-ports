@@ -1,6 +1,6 @@
---- Imakefile.orig	Wed Feb  2 13:54:35 1994
-+++ Imakefile	Wed Nov  1 10:25:40 2000
-@@ -14,4 +14,6 @@
+--- Imakefile.orig	1994-02-02 04:54:35 UTC
++++ Imakefile
+@@ -14,4 +14,6 @@ all::  $(PROGRAMS)
  
  LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
  

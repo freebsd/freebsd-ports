@@ -1,5 +1,5 @@
---- mixctl.h.orig	Tue Mar  6 07:39:43 2001
-+++ mixctl.h	Thu Apr 25 21:19:40 2002
+--- mixctl.h.orig	2001-03-02 10:32:05 UTC
++++ mixctl.h
 @@ -19,7 +19,7 @@
  #include <soundcard.h>
  #endif

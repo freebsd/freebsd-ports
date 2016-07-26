@@ -1,6 +1,6 @@
---- arcio.c.orig	Wed Apr 15 02:58:26 1992
-+++ arcio.c	Sat Aug 11 22:10:55 2001
-@@ -46,7 +46,7 @@
+--- arcio.c.orig	2010-08-07 13:06:42 UTC
++++ arcio.c
+@@ -46,7 +46,7 @@ readhdr(hdr, f)			/* read a header from 
  		return 0;	/* then signal end of archive */
  
  	if (hdrver != ARCMARK) {	/* check archive validity */
@@ -9,7 +9,7 @@
  			printf("An entry in %s has a bad header.\n", arcname);
  			nerrs++;
  		}
-@@ -63,10 +63,10 @@
+@@ -67,10 +67,10 @@ readhdr(hdr, f)			/* read a header from 
  		if (feof(f) && first)
  			arcdie("%s is not an archive", arcname);
  
@@ -22,7 +22,7 @@
  			printf("  %d bytes skipped.\n", try);
  
  		if (feof(f))
-@@ -110,7 +110,8 @@
+@@ -118,7 +118,8 @@ readhdr(hdr, f)			/* read a header from 
  	hdr->crc = (short) ((dummy[22] << 8) + dummy[21]);
  	for (i = 0, hdr->length=0; i<4; hdr->length<<=8, hdr->length += dummy[26-i], i++);
  #endif

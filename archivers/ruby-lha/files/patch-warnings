@@ -1,6 +1,7 @@
---- ext/crcio.c	2006-09-17 12:38:22.000000000 -0400
-+++ ext/crcio.c	2015-03-23 10:29:59.000000000 -0400
-@@ -34,9 +34,11 @@
+--- ext/crcio.c.orig	2006-09-17 16:38:22 UTC
++++ ext/crcio.c
+@@ -33,11 +33,13 @@ make_crctable( /* void */ )
+ 
  /* ------------------------------------------------------------------------ */
  unsigned int
 -calccrc(crc, p, n)
@@ -14,14 +15,18 @@
 +
      while (n-- > 0)
          crc = UPDATE_CRC(crc, *p++);
-@@ -68,5 +70,5 @@
+     return crc;
+@@ -67,7 +69,7 @@ fread_crc(crcp, p, n, fp)
+ void
  fwrite_crc(crcp, p, n, fp)
      unsigned int *crcp;
 -    unsigned char  *p;
 +    const unsigned char  *p;
      int             n;
      FILE           *fp;
-@@ -139,9 +141,11 @@
+ {
+@@ -138,11 +140,13 @@ putc_euc(c, fd)
+ 
  /* ------------------------------------------------------------------------ */
  int
 -fwrite_txt(p, n, fp)
@@ -35,7 +40,9 @@
 +
      while (--n >= 0) {
          if (*p != '\015' && *p != '\032') {
-@@ -161,6 +165,6 @@
+ #ifdef EUC
+@@ -160,13 +164,14 @@ fwrite_txt(p, n, fp)
+ 
  /* ------------------------------------------------------------------------ */
  int
 -fread_txt(p, n, fp)
@@ -44,24 +51,28 @@
 +    void  *_p;
      int             n;
      FILE           *fp;
-@@ -168,4 +172,5 @@
+ {
      int             c;
      int             cnt = 0;
 +    unsigned char *p = _p;
  
      while (cnt < n) {
---- ext/extract.c	2006-09-17 13:45:51.000000000 -0400
-+++ ext/extract.c	2015-03-23 10:42:48.000000000 -0400
-@@ -15,5 +15,5 @@
+         if (getc_euc_cache != EOF) {
+--- ext/extract.c.orig	2006-09-17 17:45:51 UTC
++++ ext/extract.c
+@@ -14,7 +14,7 @@ decode_lzhuf(infp, outfp, original_size,
+     FILE           *outfp;
      size_t          original_size;
      size_t          packed_size;
 -    char           *name;
 +    const char     *name;
      int             method;
      size_t         *read_sizep;
---- ext/header.c	2006-09-17 12:38:22.000000000 -0400
-+++ ext/header.c	2015-03-23 10:54:36.000000000 -0400
-@@ -49,10 +49,11 @@
+ {
+--- ext/header.c.orig	2006-09-17 16:38:22 UTC
++++ ext/header.c
+@@ -48,12 +48,13 @@ int default_system_kanji_code = MULTIBYT
+ int default_system_kanji_code = NONE;
  #endif
  
 -int
@@ -76,42 +87,54 @@
 +    const char *p = _p;
  
      while (len--) sum += *p++;
-@@ -68,5 +69,5 @@
+ 
+@@ -67,7 +68,7 @@ dump_get_byte()
+     int c;
  
      if (verbose_listing && verbose > 1)
 -        printf("%02d %2d: ", get_ptr - start_ptr, 1);
 +        printf("%02td %2d: ", get_ptr - start_ptr, 1);
      c = GET_BYTE();
      if (verbose_listing && verbose > 1) {
-@@ -85,5 +86,5 @@
+         if (isprint(c))
+@@ -84,7 +85,7 @@ dump_skip_bytes(len)
+ {
      if (len == 0) return;
      if (verbose_listing && verbose > 1) {
 -        printf("%02d %2d: ", get_ptr - start_ptr, len);
 +        printf("%02td %2d: ", get_ptr - start_ptr, len);
          while (len--)
              printf("0x%02x ", GET_BYTE());
-@@ -103,5 +104,5 @@
+         printf("... ignored\n");
+@@ -102,7 +103,7 @@ get_word()
+ 
  #if DUMP_HEADER
      if (verbose_listing && verbose > 1)
 -        printf("%02d %2d: ", get_ptr - start_ptr, 2);
 +        printf("%02td %2d: ", get_ptr - start_ptr, 2);
  #endif
      b0 = GET_BYTE();
-@@ -131,5 +132,5 @@
+     b1 = GET_BYTE();
+@@ -130,7 +131,7 @@ get_longword()
+ 
  #if DUMP_HEADER
      if (verbose_listing && verbose > 1)
 -        printf("%02d %2d: ", get_ptr - start_ptr, 4);
 +        printf("%02td %2d: ", get_ptr - start_ptr, 4);
  #endif
      b0 = GET_BYTE();
-@@ -164,5 +165,5 @@
+     b1 = GET_BYTE();
+@@ -163,7 +164,7 @@ get_bytes(buf, len, size)
+ 
  #if DUMP_HEADER
      if (verbose_listing && verbose > 1)
 -        printf("%02d %2d: \"", get_ptr - start_ptr, len);
 +        printf("%02td %2d: \"", get_ptr - start_ptr, len);
  
      for (i = 0; i < len; i++) {
-@@ -1172,9 +1173,9 @@
+         if (i < size) buf[i] = get_ptr[i];
+@@ -1171,11 +1172,11 @@ seek_lha_header(fp)
+ 
  
  /* remove leading `xxxx/..' */
 -static char *
@@ -125,16 +148,20 @@
 +    const char *ptr = NULL;
  
      if (strcmp(first, "..") == 0) {
-@@ -1201,5 +1202,5 @@
+         warning("Removing leading `..' from member name.");
+@@ -1200,7 +1201,7 @@ remove_leading_dots(char *path)
+     }
  
      if (ptr) {
 -        warning("Removing leading `%.*s' from member name.", ptr-first, first);
 +        warning("Removing leading `%.*s' from member name.", (int)(ptr - first), first);
          return ptr;
      }
---- ext/huf.c	2006-09-17 12:38:22.000000000 -0400
-+++ ext/huf.c	2015-03-23 10:37:51.000000000 -0400
-@@ -235,7 +235,5 @@
+ 
+--- ext/huf.c.orig	2006-09-17 16:38:22 UTC
++++ ext/huf.c
+@@ -234,9 +234,7 @@ send_block( /* void */ )
+ /* ------------------------------------------------------------------------ */
  /* lh4, 5, 6, 7 */
  void
 -output_st1(c, p)
@@ -143,16 +170,20 @@
 +output_st1(unsigned short c, unsigned short p)
  {
      static unsigned short cpos;
---- ext/lha.h	2006-09-18 04:53:29.000000000 -0400
-+++ ext/lha.h	2015-03-23 11:03:01.000000000 -0400
-@@ -212,4 +212,6 @@
+ 
+--- ext/lha.h.orig	2006-09-18 08:53:29 UTC
++++ ext/lha.h
+@@ -211,6 +211,8 @@ int fnmatch(const char *pattern, const c
+ 
  #include "lha_macro.h"
  
 +unsigned char *alloc_buf(void);
 +
  #define exit(n) lha_exit(n)
  
-@@ -301,32 +303,34 @@
+ struct encode_option {
+@@ -300,41 +302,56 @@ LHALIB_EXTERN void cmd_extract(const cha
+ LHALIB_EXTERN FILE * open_old_archive(const char* archive);
  LHALIB_EXTERN boolean need_file(const char*);
  LHALIB_EXTERN boolean archive_is_msdos_sfx1(const char*);
 -LHALIB_EXTERN void output_dyn();
@@ -214,7 +245,8 @@
 +LHALIB_EXTERN void init_code_cache(void);
  LHALIB_EXTERN void putcode(unsigned char n, unsigned short x);
  LHALIB_EXTERN void putbits(unsigned char n, unsigned short x);
-@@ -335,5 +339,18 @@
+ LHALIB_EXTERN unsigned short getbits(unsigned char n);
+ LHALIB_EXTERN void fillbuf(unsigned char n);
  LHALIB_EXTERN void encode_p_st0(unsigned short j);
  
 -
@@ -234,34 +266,42 @@
 +PRINTF_ARGS(int xsnprintf(char *dst, size_t size, const char *fmt, ...), 3, 4);
  
  #define start_indicator(name, size, ing, len) 0
---- ext/lhalib.c	2006-09-18 05:11:35.000000000 -0400
-+++ ext/lhalib.c	2015-03-23 11:00:35.000000000 -0400
-@@ -19,5 +19,5 @@
+ #define finish_indicator(name, ed) 0
+--- ext/lhalib.c.orig	2006-09-18 09:11:35 UTC
++++ ext/lhalib.c
+@@ -18,7 +18,7 @@
+ #define LHALIB_VERSION "0.8.1"
  
  #include "lha.h"
 -#include "st.h"
 +#include <ruby/st.h>
  
  static VALUE lhalib;
-@@ -76,5 +76,5 @@
+ 
+@@ -75,7 +75,7 @@ static VALUE s_ex(int argc, VALUE* argv,
+   VALUE file;
    proc = Qnil;
    rb_scan_args(argc, argv, "1&", &file, &proc);
 -  rb_check_safe_str(file);
 +  SafeStringValue(file);
    rb_secure(4);
  
---- ext/lharc.c	2006-09-17 12:38:22.000000000 -0400
-+++ ext/lharc.c	2015-03-23 10:58:33.000000000 -0400
-@@ -53,5 +53,5 @@
+   file_count = 0;
+--- ext/lharc.c.orig	2006-09-17 16:38:22 UTC
++++ ext/lharc.c
+@@ -52,7 +52,7 @@ static int error_occurred;
+ /* ------------------------------------------------------------------------ */
  static          boolean
  open_old_archive_1(name, v_fp)
 -    char           *name;
 +    const char     *name;
      FILE          **v_fp;
  {
---- ext/lhext.c	2006-09-17 12:38:22.000000000 -0400
-+++ ext/lhext.c	2015-03-23 10:41:48.000000000 -0400
-@@ -27,6 +27,7 @@
+     FILE           *fp;
+--- ext/lhext.c.orig	2006-09-17 16:38:22 UTC
++++ ext/lhext.c
+@@ -26,8 +26,9 @@ static char    *methods[] =
+     NULL
  };
  
 -static void add_dirinfo(char* name, LzHeader* hdr);
@@ -271,7 +311,9 @@
 +static int is_directory_traversal(const char *path);
  
  /* ------------------------------------------------------------------------ */
-@@ -396,6 +397,6 @@
+ static          boolean
+@@ -395,8 +396,8 @@ cmd_extract(const char* archive_name, ad
+     return;
  }
  
 -int
@@ -280,16 +322,20 @@
 +is_directory_traversal(const char *path)
  {
      int state = 0;
-@@ -437,5 +438,5 @@
+ 
+@@ -436,7 +437,7 @@ typedef struct lhdDirectoryInfo_t {
+ 
  static LzHeaderList *dirinfo;
  
 -static void add_dirinfo(char *name, LzHeader *hdr)
 +static void add_dirinfo(const char *name, LzHeader *hdr)
  {
      LzHeaderList *p;
---- ext/maketbl.c	2006-09-17 12:38:22.000000000 -0400
-+++ ext/maketbl.c	2015-03-23 10:32:06.000000000 -0400
-@@ -10,9 +10,6 @@
+ 
+--- ext/maketbl.c.orig	2006-09-17 16:38:22 UTC
++++ ext/maketbl.c
+@@ -9,11 +9,8 @@
+ #include "lha.h"
  
  void
 -make_table(nchar, bitlen, tablebits, table)
@@ -301,18 +347,22 @@
 +    unsigned short table[])
  {
      unsigned short  count[17];  /* count of bitlen */
---- ext/maketree.c	2006-09-17 13:36:33.000000000 -0400
-+++ ext/maketree.c	2015-03-23 11:02:50.000000000 -0400
-@@ -96,5 +96,5 @@
+     unsigned short  weight[17]; /* 0x10000ul >> bitlen */
+--- ext/maketree.c.orig	2006-09-17 17:36:33 UTC
++++ ext/maketree.c
+@@ -95,7 +95,7 @@ downheap(i, heap, heapsize, freq)
+     int i;
      short *heap;
      size_t heapsize;
 -    unsigned short *freq;
 +    const unsigned short *freq;
  {
      short j, k;
---- ext/util.c	2006-09-18 04:53:29.000000000 -0400
-+++ ext/util.c	2015-03-23 10:57:53.000000000 -0400
-@@ -115,8 +115,9 @@
+ 
+--- ext/util.c.orig	2006-09-18 08:53:29 UTC
++++ ext/util.c
+@@ -114,10 +114,11 @@ archive_is_msdos_sfx1(const char* name)
+ 
  int
  #if STDC_HEADERS
 -xsnprintf(char *dest, size_t size, char *fmt, ...)
@@ -324,3 +374,4 @@
 +    const char *fmt;
      size_t size;
      va_dcl
+ #endif

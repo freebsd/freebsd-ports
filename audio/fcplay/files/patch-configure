@@ -1,6 +1,6 @@
---- configure.orig	Thu May 28 04:08:00 1998
-+++ configure	Tue Dec 12 02:51:01 2000
-@@ -1631,41 +1631,6 @@
+--- configure.orig	1998-05-27 19:08:00 UTC
++++ configure
+@@ -1631,41 +1631,6 @@ fi
  fi;
  
  
@@ -42,7 +42,7 @@
  # Extract the first word of "ranlib", so it can be a program name with args.
  set dummy ranlib; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
-@@ -2297,4 +2262,3 @@
+@@ -2297,4 +2262,3 @@ rm -fr confdefs* $ac_clean_files
  test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
  
  

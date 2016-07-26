@@ -1,6 +1,6 @@
---- src/main.cc.orig	Tue Aug 29 08:54:53 2006
-+++ src/main.cc	Tue Aug 29 08:55:01 2006
-@@ -5448,7 +5448,7 @@
+--- src/main.cc.orig	2009-01-24 15:25:10 UTC
++++ src/main.cc
+@@ -5480,7 +5480,7 @@ main(int argc, char *argv[], char *envp[
  			{ 0, 0, 0, 0}
  		};
  		

@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Apr  2 09:20:41 2007
-+++ Makefile	Mon Apr  2 09:20:55 2007
+--- Makefile.orig	2005-11-29 00:18:03 UTC
++++ Makefile
 @@ -1,19 +1,18 @@
  PREFIX=/usr/local
  
@@ -23,7 +23,7 @@
  
  
  ST_TARGET = libconvolve.a
-@@ -53,5 +52,5 @@
+@@ -53,5 +52,5 @@ install: $(TARGET)
  	cp $(TARGET) $(PREFIX)/lib/
  	cp $(ST_TARGET) $(PREFIX)/lib/
  	cp convolve.h $(PREFIX)/include/

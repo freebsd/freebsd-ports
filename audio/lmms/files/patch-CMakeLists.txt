@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2016-04-24 11:28:57 UTC
+--- CMakeLists.txt.orig	2016-07-26 15:14:45 UTC
 +++ CMakeLists.txt
 @@ -325,6 +325,7 @@ ENDIF(LMMS_BUILD_WIN32)
  

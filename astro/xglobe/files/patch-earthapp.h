@@ -1,5 +1,5 @@
---- earthapp.h.orig	1999-12-06 08:14:23.000000000 -0800
-+++ earthapp.h	2011-01-18 14:22:52.000000000 -0800
+--- earthapp.h.orig	1999-12-06 16:14:23 UTC
++++ earthapp.h
 @@ -54,6 +54,8 @@
  #define _EARTHAPP_H
  

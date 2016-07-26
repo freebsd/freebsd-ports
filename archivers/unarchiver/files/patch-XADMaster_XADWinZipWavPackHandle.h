@@ -1,4 +1,4 @@
---- XADMaster/XADWinZipWavPackHandle.h.orig	2015-09-23 20:24:59 UTC
+--- XADMaster/XADWinZipWavPackHandle.h.orig	2016-05-17 06:39:04 UTC
 +++ XADMaster/XADWinZipWavPackHandle.h
 @@ -1,6 +1,6 @@
  #import "CSBlockStreamHandle.h"

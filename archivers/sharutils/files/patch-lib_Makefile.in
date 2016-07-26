@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	2015-05-30 15:35:32 UTC
++++ lib/Makefile.in
+@@ -2126,7 +2126,7 @@ install-exec-localcharset: all-local
+ 	  case '$(host_os)' in \
+ 	    darwin[56]*) \
+ 	      need_charset_alias=true ;; \
+-	    darwin* | cygwin* | mingw* | pw32* | cegcc*) \
++	    freebsd* | darwin* | cygwin* | mingw* | pw32* | cegcc*) \
+ 	      need_charset_alias=false ;; \
+ 	    *) \
+ 	      need_charset_alias=true ;; \

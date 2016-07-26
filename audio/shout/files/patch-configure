@@ -1,6 +1,6 @@
---- configure	Thu Apr 20 03:41:45 2000
-+++ configure.new	Wed Jun 14 19:34:23 2000
-@@ -539,9 +539,9 @@
+--- configure.orig	2000-04-20 07:41:45 UTC
++++ configure
+@@ -539,9 +539,9 @@ if test "x$enable_fsstd" = "xyes"; then
          LOGDIR="/var/log/icecast"
  else
          echo "FSSTD DISABLED"

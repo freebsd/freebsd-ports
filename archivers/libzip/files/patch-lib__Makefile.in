@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	2015-08-26 18:39:20 UTC
+--- lib/Makefile.in.orig	2016-02-19 14:21:44 UTC
 +++ lib/Makefile.in
-@@ -355,8 +355,8 @@ AM_CFLAGS = @CFLAG_VISIBILITY@
+@@ -367,8 +367,8 @@ AM_CFLAGS = @CFLAG_VISIBILITY@
  libincludedir = ${libdir}/@PACKAGE@/include
  lib_LTLIBRARIES = libzip.la
  noinst_HEADERS = zipint.h
@@ -11,7 +11,7 @@
  
  # also update CMakeLists.txt when changing version
  libzip_la_LDFLAGS = -no-undefined -version-info 4:0:0
-@@ -869,8 +869,7 @@ info: info-am
+@@ -882,8 +882,7 @@ info: info-am
  
  info-am:
  

@@ -1,4 +1,4 @@
---- Makefile.in.orig	2015-12-31 00:25:51 UTC
+--- Makefile.in.orig	2016-07-16 11:29:48 UTC
 +++ Makefile.in
 @@ -146,8 +146,8 @@ install: all
  	@echo "Installing xmp.h..."

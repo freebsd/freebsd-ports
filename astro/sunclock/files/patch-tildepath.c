@@ -1,6 +1,6 @@
---- tildepath.c.orig	Fri Aug 24 07:06:53 2001
-+++ tildepath.c	Fri Aug 24 07:06:59 2001
-@@ -38,7 +38,6 @@
+--- tildepath.c.orig	2000-09-01 15:34:51 UTC
++++ tildepath.c
+@@ -38,7 +38,6 @@ T* AUTHOR
  #include <stdio.h>
  #include <stdlib.h>
  #include <pwd.h>

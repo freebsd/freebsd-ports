@@ -1,7 +1,7 @@
---- Makefile.orig	Fri Oct 31 05:32:51 2003
-+++ Makefile	Wed Nov  5 13:53:51 2003
-@@ -38,14 +38,14 @@
- OPT = -O
+--- Makefile.orig	2010-08-07 13:06:42 UTC
++++ Makefile
+@@ -44,14 +44,14 @@ SYSTEM = -DSYSV=1
+ OPT = -O -Wall
  # For MWC 3.0 on the Atari ST, use:
  #CFLAGS = -VCOMPAC -VPEEP
 -CFLAGS = $(OPT) $(SYSTEM)

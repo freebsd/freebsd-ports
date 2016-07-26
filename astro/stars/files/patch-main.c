@@ -1,6 +1,6 @@
---- main.c.orig	1996-04-10 12:58:49.000000000 +0200
-+++ main.c	2011-12-20 20:04:16.146176426 +0100
-@@ -48,7 +48,7 @@
+--- main.c.orig	1996-04-10 10:58:49 UTC
++++ main.c
+@@ -48,7 +48,7 @@ void setup();
  void events();
  void shutdn();
  
@@ -9,7 +9,7 @@
  {
    setup();
    events();
-@@ -241,37 +241,37 @@
+@@ -241,37 +241,37 @@ void events()
  
      XQueryKeymap(xgh.display, keys);
  

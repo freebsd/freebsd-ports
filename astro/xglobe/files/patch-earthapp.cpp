@@ -1,5 +1,5 @@
---- earthapp.cpp.orig	1999-12-06 08:14:10.000000000 -0800
-+++ earthapp.cpp	2011-01-19 09:28:15.000000000 -0800
+--- earthapp.cpp.orig	1999-12-06 16:14:10 UTC
++++ earthapp.cpp
 @@ -69,6 +69,12 @@
  #include "config.h"
  #include "earthapp.h"
@@ -13,7 +13,7 @@
  
  /* ------------------------------------------------------------------------*/
  
-@@ -334,7 +340,7 @@
+@@ -334,7 +340,7 @@ EarthApplication::EarthApplication(int &
    if(use_kde)
    {
      dwidget = new DesktopWidget();
@@ -22,7 +22,7 @@
      dwidget->update();
    }
  }
-@@ -343,9 +349,9 @@
+@@ -343,9 +349,9 @@ EarthApplication::EarthApplication(int &
  
  EarthApplication::~EarthApplication(void)
  {
@@ -34,7 +34,7 @@
    timer->stop();
    delete timer;
  
-@@ -937,8 +943,8 @@
+@@ -937,8 +943,8 @@ void EarthApplication::readOutFileName(i
  
  void EarthApplication::randomPosition()
  {
@@ -45,7 +45,7 @@
  }
  
  /* ------------------------------------------------------------------------*/
-@@ -1233,7 +1239,7 @@
+@@ -1233,7 +1239,7 @@ void EarthApplication::init()
    r->setRotation(rotation);
  
    timer = new QTimer(this);
@@ -54,7 +54,7 @@
    
    connect(timer, SIGNAL(timeout()), this, SLOT(recalc()));
    QTimer::singleShot(1, this, SLOT(recalc())); // this will start rendering
-@@ -1307,7 +1313,19 @@
+@@ -1307,7 +1313,19 @@ void EarthApplication::recalc()
    {
      QPixmap pm;
      pm.convertFromImage(*(r->getImage()));

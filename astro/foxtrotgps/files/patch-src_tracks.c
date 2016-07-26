@@ -1,4 +1,4 @@
---- src/tracks.c.orig	2015-05-21 11:26:32 UTC
+--- src/tracks.c.orig	2014-10-24 04:57:10 UTC
 +++ src/tracks.c
 @@ -41,8 +41,10 @@ bbox_t		get_track_bbox(GSList *track);
  GSList *	load_log_file_into_list(char *file);

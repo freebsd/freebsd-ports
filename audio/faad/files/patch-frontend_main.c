@@ -1,6 +1,6 @@
---- frontend/main.c.orig
+--- frontend/main.c.orig	2008-09-22 17:55:09 UTC
 +++ frontend/main.c
-@@ -137,6 +137,31 @@
+@@ -137,6 +137,31 @@ static void advance_buffer(aac_buffer *b
  		b->bytes_into_buffer = 0;
  }
  
@@ -32,7 +32,7 @@
  static int adts_sample_rates[] = {96000,88200,64000,48000,44100,32000,24000,22050,16000,12000,11025,8000,7350,0,0,0};
  
  static int adts_parse(aac_buffer *b, int *bitrate, float *length)
-@@ -424,6 +449,8 @@
+@@ -424,6 +449,8 @@ static int decodeAACfile(char *aacfile, 
      float length = 0;
  
      int first_time = 1;
@@ -41,7 +41,7 @@
  
      aac_buffer b;
  
-@@ -439,17 +466,39 @@
+@@ -439,17 +466,39 @@ static int decodeAACfile(char *aacfile, 
          }
      }
  
@@ -89,7 +89,7 @@
  
      if (!(b.buffer = (unsigned char*)malloc(FAAD_MIN_STREAMSIZE*MAX_CHANNELS)))
      {
-@@ -494,19 +543,39 @@
+@@ -494,19 +543,39 @@ static int decodeAACfile(char *aacfile, 
  
      /* get AAC infos for printing */
      header_type = 0;
@@ -139,7 +139,7 @@
  
          header_type = 1;
      } else if (memcmp(b.buffer, "ADIF", 4) == 0) {
-@@ -538,7 +607,8 @@
+@@ -538,7 +607,8 @@ static int decodeAACfile(char *aacfile, 
          if (b.buffer)
              free(b.buffer);
          NeAACDecClose(hDecoder);
@@ -149,7 +149,7 @@
          return 1;
      }
      advance_buffer(&b, bread);
-@@ -564,7 +634,8 @@
+@@ -564,7 +634,8 @@ static int decodeAACfile(char *aacfile, 
      if (infoOnly)
      {
          NeAACDecClose(hDecoder);
@@ -159,7 +159,7 @@
          if (b.buffer)
              free(b.buffer);
          return 0;
-@@ -621,7 +692,8 @@
+@@ -621,7 +692,8 @@ static int decodeAACfile(char *aacfile, 
                      if (b.buffer)
                          free(b.buffer);
                      NeAACDecClose(hDecoder);
@@ -169,7 +169,7 @@
                      return 0;
                  }
              } else {
-@@ -662,7 +734,8 @@
+@@ -662,7 +734,8 @@ static int decodeAACfile(char *aacfile, 
          fclose(adtsFile);
      }
  
@@ -179,7 +179,7 @@
  
      if (!first_time && !adts_out)
          close_audio_file(aufile);
-@@ -750,6 +823,11 @@
+@@ -750,6 +823,11 @@ static int decodeMP4file(char *mp4file, 
      /* initialise the callback structure */
      mp4ff_callback_t *mp4cb = malloc(sizeof(mp4ff_callback_t));
  
@@ -191,7 +191,7 @@
      mp4File = fopen(mp4file, "rb");
      mp4cb->read = read_callback;
      mp4cb->seek = seek_callback;
-@@ -1016,6 +1094,7 @@
+@@ -1016,6 +1094,7 @@ int main(int argc, char *argv[])
      int result;
      int infoOnly = 0;
      int writeToStdio = 0;
@@ -199,7 +199,7 @@
      int object_type = LC;
      int def_srate = 0;
      int downMatrix = 0;
-@@ -1229,15 +1308,30 @@
+@@ -1229,15 +1308,30 @@ int main(int argc, char *argv[])
      }
  
      /* check for mp4 file */
@@ -237,7 +237,7 @@
      if (header[4] == 'f' && header[5] == 't' && header[6] == 'y' && header[7] == 'p')
          mp4file = 1;
  
-@@ -1246,6 +1340,18 @@
+@@ -1246,6 +1340,18 @@ int main(int argc, char *argv[])
          result = decodeMP4file(aacFileName, audioFileName, adtsFileName, writeToStdio,
              outputFormat, format, downMatrix, noGapless, infoOnly, adts_out, &length);
      } else {

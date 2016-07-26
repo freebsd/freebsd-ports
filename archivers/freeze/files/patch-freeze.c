@@ -1,6 +1,6 @@
---- ./freeze.c.orig	1993-02-24 14:36:55.000000000 +0100
-+++ ./freeze.c	2014-02-13 12:43:34.946976981 +0100
-@@ -176,7 +176,7 @@
+--- freeze.c.orig	1993-02-24 13:36:55 UTC
++++ freeze.c
+@@ -176,7 +176,7 @@ void    writeerr(), copystat(), version(
  
  /* From compress.c. Replace .Z --> .F etc */
  

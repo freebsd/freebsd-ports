@@ -1,6 +1,6 @@
---- wmMoonClock.c.orig	Thu Aug 15 18:15:26 2002
-+++ wmMoonClock.c	Thu Aug 15 18:15:51 2002
-@@ -162,7 +162,8 @@
+--- wmMoonClock.c.orig	1999-06-07 14:27:18 UTC
++++ wmMoonClock.c
+@@ -162,7 +162,8 @@ int main(int argc, char *argv[]) {
      int			i, n, k, j, ImageNumber;
      int 		Year, Month, DayOfWeek, DayOfMonth;
      int			Hours, Mins, Secs, OldSecs, digit, xoff, xsize;

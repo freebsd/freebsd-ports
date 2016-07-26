@@ -1,6 +1,6 @@
---- gnomoradio/browser-link.cc.orig	2007-12-06 15:46:11.000000000 +0100
-+++ gnomoradio/browser-link.cc	2007-12-06 15:48:02.000000000 +0100
-@@ -32,7 +32,7 @@
+--- gnomoradio/browser-link.cc.orig	2004-10-17 01:41:23 UTC
++++ gnomoradio/browser-link.cc
+@@ -32,7 +32,7 @@ static void mozilla_fallback (const Glib
  {
  	gchar *my_url = g_strdup(Glib::locale_from_utf8(url).c_str());
  	if (fork() == 0) {

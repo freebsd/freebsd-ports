@@ -1,4 +1,4 @@
---- sid2wav.cpp.orig
+--- sid2wav.cpp.orig	2002-03-11 10:42:10 UTC
 +++ sid2wav.cpp
 @@ -18,9 +18,9 @@
  //  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA

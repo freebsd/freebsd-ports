@@ -1,8 +1,8 @@
 
 $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ai,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
---- logo_setup.c.orig	Tue Jan 12 19:59:46 1993
-+++ logo_setup.c	Mon Aug 25 00:38:35 2003
+--- logo_setup.c.orig	1993-01-12 18:59:46 UTC
++++ logo_setup.c
 @@ -28,6 +28,9 @@
  # include <stdio.h>
  
@@ -22,7 +22,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ai,v 1.4 2005/12/11 20:48:46 joerg
  static Widget	track_button_widget;
  static Widget	timer_button_widget;
  static Widget	volume_scroll_widget;
-@@ -55,19 +60,19 @@
+@@ -55,19 +60,19 @@ Widget		title_dialog_widget;
  Widget		title_done_widget;
  
  static int	vol;
@@ -50,7 +50,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ai,v 1.4 2005/12/11 20:48:46 joerg
  	Widget		version_label_widget;
  	char		version_string[80];
  
-@@ -126,15 +131,16 @@
+@@ -126,15 +131,16 @@ logo_setup(parent_widget)
  
  	track_button_update();
  
@@ -71,7 +71,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ai,v 1.4 2005/12/11 20:48:46 joerg
  	thumb_pixmap = XCreateBitmapFromData(XtDisplay(logo_form_widget),
  						  rootwin(logo_form_widget),
  						  thumb_bits,
-@@ -171,10 +177,10 @@
+@@ -171,10 +177,10 @@ logo_setup(parent_widget)
  
  #ifdef sgi
  	if ((vol = cdrom_get_volume()) == 0) {
@@ -84,7 +84,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ai,v 1.4 2005/12/11 20:48:46 joerg
  #endif
  	cdrom_volume(vol, vol); 
  #ifdef sgi
-@@ -356,7 +362,7 @@
+@@ -356,7 +362,7 @@ timer_button_update() {
  	Arg		args[1];
  	Boolean		state;
  
@@ -93,7 +93,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ai,v 1.4 2005/12/11 20:48:46 joerg
  		return;
  
  	    if ((cdi.state & CDROM_STATE_PAUSE) == 0)
-@@ -413,7 +419,7 @@
+@@ -413,7 +419,7 @@ volume_jump_proc(scroll_widget, client_d
  	vol = PCT2VAL(*(float *)percent);
  #else
  	vol = (*(float *) percent) * MAXVOL;

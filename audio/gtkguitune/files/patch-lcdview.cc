@@ -1,4 +1,4 @@
---- lcdview.cc.orig
+--- lcdview.cc.orig	2008-09-16 09:56:09 UTC
 +++ lcdview.cc
 @@ -23,11 +23,12 @@
  

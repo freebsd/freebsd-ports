@@ -1,4 +1,4 @@
---- UniversalDetector/Makefile.freebsd.orig	2015-09-23 20:24:59 UTC
+--- UniversalDetector/Makefile.freebsd.orig	2016-05-17 06:39:04 UTC
 +++ UniversalDetector/Makefile.freebsd
 @@ -1,10 +1,7 @@
  # Compilers and linkers

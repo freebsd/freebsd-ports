@@ -1,13 +1,8 @@
-*** Imakefile.orig	Mon Apr  2 03:17:43 2001
---- Imakefile	Mon Apr  2 03:17:51 2001
-***************
-*** 10,13 ****
-  SRCS = wmsmixer.cc
-  OBJS = wmsmixer.o
-  
-! ComplexProgramTarget(wmsmixer)
---- 10,13 ----
-  SRCS = wmsmixer.cc
-  OBJS = wmsmixer.o
-  
-! ComplexProgramTargetNoMan(wmsmixer)
+--- Imakefile.orig	2003-04-12 22:08:16 UTC
++++ Imakefile
+@@ -12,4 +12,4 @@ LD = c++ -m32 -nostdlib
+ SRCS = wmsmixer.cc
+ OBJS = wmsmixer.o
+ 
+-ComplexProgramTarget(wmsmixer)
++ComplexProgramTargetNoMan(wmsmixer)

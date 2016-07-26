@@ -1,4 +1,4 @@
---- src/AudioIO.h.orig	2015-07-11 10:02:22 UTC
+--- src/AudioIO.h.orig	2016-07-26 13:34:06 UTC
 +++ src/AudioIO.h
 @@ -13,7 +13,7 @@
  #ifndef __AUDACITY_AUDIO_IO__

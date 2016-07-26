@@ -1,5 +1,5 @@
---- clients/audio/aupanel/aupanel.c.orig	Tue Nov 22 03:09:06 2005
-+++ clients/audio/aupanel/aupanel.c	Sat May 20 10:58:12 2006
+--- clients/audio/aupanel/aupanel.c.orig	2013-10-07 17:05:47 UTC
++++ clients/audio/aupanel/aupanel.c
 @@ -28,6 +28,7 @@
   */
  
@@ -8,7 +8,7 @@
  #include <stdlib.h>
  #ifndef SYSV
  #include <audio/Aos.h>		/* for string and other os stuff */
-@@ -271,7 +272,7 @@
+@@ -280,7 +281,7 @@ inputModeCB(Widget w, XtPointer gp, XtPo
      if (!state)			/* ignore resets */
  	return;
  
@@ -17,7 +17,7 @@
  	? AuDeviceInputModeLineIn : AuDeviceInputModeMicrophone;
  
      AuSetDeviceAttributes(g->aud, AuDeviceIdentifier(da),
-@@ -335,7 +336,7 @@
+@@ -331,7 +332,7 @@ setGain(Widget w, XtPointer gp, XtPointe
  {
      GlobalDataPtr   g = (GlobalDataPtr) gp;
      AuDeviceAttributes *da = &g->da[g->deviceNum];
@@ -26,7 +26,7 @@
  
      AuDeviceGain(da) = AuFixedPointFromSum(value, 0);
      AuSetDeviceAttributes(g->aud, AuDeviceIdentifier(da),
-@@ -366,7 +367,7 @@
+@@ -359,7 +360,7 @@ muteCB(Widget w, XtPointer gp, XtPointer
          g->restoreValues[g->deviceNum] = current;
          setGain(w, gp, (XtPointer)0);
      } else if(g->restoreValues[g->deviceNum] > 0){

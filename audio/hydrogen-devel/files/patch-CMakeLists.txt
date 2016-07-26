@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2015-09-07 03:44:01 UTC
+--- CMakeLists.txt.orig	2015-08-31 19:04:48 UTC
 +++ CMakeLists.txt
 @@ -107,12 +107,12 @@ ENDIF()
  IF(APPLE)

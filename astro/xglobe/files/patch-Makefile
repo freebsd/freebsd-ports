@@ -1,5 +1,5 @@
---- Makefile.orig	1999-07-19 05:56:27.000000000 -0700
-+++ Makefile	2011-01-19 09:39:21.000000000 -0800
+--- Makefile.orig	1999-07-19 12:56:27 UTC
++++ Makefile
 @@ -4,43 +4,44 @@
  
  ####### Installation directory

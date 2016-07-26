@@ -1,6 +1,6 @@
---- macunpack/lzh.c.orig	2014-07-27 11:11:36.000000000 -0400
-+++ macunpack/lzh.c	2014-07-27 11:11:39.000000000 -0400
-@@ -23,7 +23,7 @@
+--- macunpack/lzh.c.orig	1993-10-02 20:16:00 UTC
++++ macunpack/lzh.c
+@@ -23,7 +23,7 @@ extern void de_lzah();
  extern unsigned char (*lzah_getbyte)();
  extern void de_lzh();
  
@@ -9,7 +9,7 @@
  	char *name;
  	int number;
  };
-@@ -40,13 +40,13 @@
+@@ -40,13 +40,13 @@ static struct methodinfo methods[] = {
      {"-lzs-", lzs}
  };
  static char *lzh_archive;

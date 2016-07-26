@@ -1,6 +1,6 @@
---- vsound.c.orig	Sat Jul 10 23:29:33 2004
-+++ vsound.c	Tue Oct  4 00:20:25 2005
-@@ -73,11 +73,11 @@
+--- vsound.c.orig	2004-07-10 21:29:33 UTC
++++ vsound.c
+@@ -73,11 +73,11 @@ typedef int request_t;
  /*------------------------------------------------------------------------------
  ** Macros to handle big/little endian issues.
  */
@@ -14,7 +14,7 @@
  	#if (__BYTE_ORDER == __LITTLE_ENDIAN)
  		#define	CPU_IS_LITTLE_ENDIAN		1
  		#define	CPU_IS_BIG_ENDIAN			0
-@@ -210,7 +210,7 @@
+@@ -210,7 +210,7 @@ int open (const char *pathname, int flag
  	dsp_init () ;
  
  	va_start (args, flags) ;

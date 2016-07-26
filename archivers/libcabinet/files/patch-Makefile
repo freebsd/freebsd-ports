@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Aug 19 18:15:11 2003
-+++ Makefile	Tue Aug 19 18:33:06 2003
+--- Makefile.orig	2016-07-26 12:03:27 UTC
++++ Makefile
 @@ -0,0 +1,16 @@
 +NO_PROFILE=	true
 +CXXFLAGS+=	-Wno-deprecated 

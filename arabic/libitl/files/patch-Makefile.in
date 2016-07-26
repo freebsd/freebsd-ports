@@ -1,5 +1,5 @@
---- Makefile.in.orig	2013-09-25 23:27:38.000000000 +0800
-+++ Makefile.in	2013-09-25 23:28:25.000000000 +0800
+--- Makefile.in.orig	2009-03-17 16:26:28 UTC
++++ Makefile.in
 @@ -83,15 +83,15 @@ debinstall: components
  
  install: build/libitl.so build/libitl.a

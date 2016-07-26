@@ -1,5 +1,5 @@
---- smf/SMFHead.h.orig	2013-09-24 09:15:40.000000000 +0200
-+++ smf/SMFHead.h	2013-09-24 09:15:50.000000000 +0200
+--- smf/SMFHead.h.orig	1996-08-05 03:47:35 UTC
++++ smf/SMFHead.h
 @@ -34,10 +34,10 @@
  extern "C" {
  #include <tcl.h>

@@ -1,6 +1,6 @@
---- mp32ogg.orig	Thu May  9 20:59:03 2002
-+++ mp32ogg	Thu May  9 20:59:56 2002
-@@ -89,9 +89,9 @@
+--- mp32ogg.orig	2016-07-26 15:20:33 UTC
++++ mp32ogg
+@@ -89,9 +89,9 @@ use String::ShellQuote;
  
  use_winamp_genres();
  

@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Jul 14 11:24:17 2005
-+++ Makefile	Thu Jul 14 11:34:05 2005
+--- Makefile.orig	2003-10-14 23:59:50 UTC
++++ Makefile
 @@ -19,15 +19,18 @@
  # 
  ##########################################################################
@@ -26,7 +26,7 @@
  
  TARGET = libsap.so
  
-@@ -43,15 +46,15 @@
+@@ -43,15 +46,15 @@ all: library plugin
  plugin: $(OBJS)
  	@./scripts/gen_symbols sap_plug.o 
  	@echo 

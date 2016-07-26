@@ -1,4 +1,4 @@
---- lib-src/libnyquist/nyquist/nyqsrc/sound.h.orig	2016-01-08 22:05:48 UTC
+--- lib-src/libnyquist/nyquist/nyqsrc/sound.h.orig	2016-07-26 13:34:06 UTC
 +++ lib-src/libnyquist/nyquist/nyqsrc/sound.h
 @@ -459,7 +459,7 @@ double step_to_hz(double);
  

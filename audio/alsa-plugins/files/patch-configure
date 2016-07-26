@@ -1,6 +1,6 @@
---- configure.orig	2010-04-16 13:18:56.000000000 +0200
-+++ configure	2010-05-11 00:08:29.000000000 +0200
-@@ -19608,14 +19608,6 @@ else
+--- configure.orig	2016-03-31 13:14:07 UTC
++++ configure
+@@ -12402,14 +12402,6 @@ else
  $as_echo "yes" >&6; }
  	HAVE_SPEEXDSP="yes"
  fi
@@ -15,7 +15,7 @@
  
  
  # Check whether --with-speex was given.
-@@ -19626,6 +19618,15 @@ else
+@@ -12420,6 +12412,15 @@ else
  fi
  
  

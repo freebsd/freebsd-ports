@@ -1,5 +1,5 @@
---- src/aomodule.c.orig	2010-06-06 18:41:04.000000000 +0200
-+++ src/aomodule.c	2010-06-06 18:45:01.000000000 +0200
+--- src/aomodule.c.orig	2003-07-24 06:52:59 UTC
++++ src/aomodule.c
 @@ -4,7 +4,7 @@
  static ao_option *
  dict_to_options(PyObject *dict)

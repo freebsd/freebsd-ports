@@ -1,0 +1,11 @@
+--- gtkdatabox-0.6.0.0/gtk/Makefile.am.orig	2009-06-25 04:09:55 UTC
++++ gtkdatabox-0.6.0.0/gtk/Makefile.am
+@@ -30,8 +30,4 @@ INCLUDES		= \
+ AM_CFLAGS			=\
+ 			-O2\
+ 			-Wall -pedantic\
+-			-DG_DISABLE_DEPRECATED\
+-			-DGDK_DISABLE_DEPRECATED\
+-			-DGDK_PIXBUF_DISABLE_DEPRECATED\
+-			-DGTK_DISABLE_DEPRECATED\
+ 			`pkg-config gtk+-2.0 --cflags`

@@ -1,5 +1,5 @@
---- aflib/aflibMemCache.cc.orig	2014-01-30 12:09:41.000000000 +0100
-+++ aflib/aflibMemCache.cc	2014-01-30 12:10:12.000000000 +0100
+--- aflib/aflibMemCache.cc.orig	2007-01-16 19:26:39 UTC
++++ aflib/aflibMemCache.cc
 @@ -24,6 +24,7 @@
  #include <config.h>
  #endif

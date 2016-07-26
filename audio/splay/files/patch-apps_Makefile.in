@@ -1,0 +1,11 @@
+--- apps/Makefile.in.orig	2001-05-06 22:00:36 UTC
++++ apps/Makefile.in
+@@ -81,7 +81,7 @@ LDADD = ../libs/libmpeg.a
+ INCLUDES = -I../libs  -I/usr/include/qt
+ xsplay_LDADD = -lqt $(LDADD)
+ 
+-man_MANS = splay.1 xsplay.1
++man_MANS = splay.1
+ EXTRA_DIST = $(man_MANS)
+ 
+ LIBS = @LIBS@

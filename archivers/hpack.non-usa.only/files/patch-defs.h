@@ -1,6 +1,6 @@
---- defs.h.orig	Mon May 31 10:17:00 1993
-+++ defs.h	Tue Dec 28 20:01:38 1999
-@@ -43,7 +43,7 @@
+--- defs.h.orig	1993-05-31 15:17:00 UTC
++++ defs.h
+@@ -43,7 +43,7 @@ typedef int		BOOLEAN;
  
  /* 'inline' patch for compilers which can't handle this */
  

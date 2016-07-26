@@ -1,5 +1,5 @@
---- modplugplay.c.orig	Mon Oct  6 09:33:56 2003
-+++ modplugplay.c	Thu Feb  5 20:40:53 2004
+--- modplugplay.c.orig	2003-10-06 07:33:56 UTC
++++ modplugplay.c
 @@ -1,8 +1,7 @@
 -
  /*
@@ -10,7 +10,7 @@
  
  TODO
  unlock /dev/dsp when in 'p'ause mode
-@@ -151,7 +150,7 @@
+@@ -151,7 +150,7 @@ void ansi_cursor(int visible)
  
  void help(char *s)
  {
@@ -19,7 +19,7 @@
          printf("Version %s compiled on %s at %s.\n",VERSION,__DATE__,__TIME__);
  	printf("\n");
  	printf("%s: too few arguments\n",s);
-@@ -183,10 +182,10 @@
+@@ -183,10 +182,10 @@ int get_byteorder(void)
      char t[sz];
      int i, lit, big;
  
@@ -32,7 +32,7 @@
          char c = ival&0xff;
          ival >>= 8;
          if (s[i] == c) lit++;
-@@ -250,6 +249,7 @@
+@@ -250,6 +249,7 @@ int setrelpcmvol(int newvol)
      }
      ioctl(mixer_fd,MIXER_WRITE(SOUND_MIXER_PCM),&newvol);
      close(mixer_fd);
@@ -40,7 +40,7 @@
  }
  
  int main(int argc, char* argv[])
-@@ -257,7 +257,7 @@
+@@ -257,7 +257,7 @@ int main(int argc, char* argv[])
      FILE *f;
      long size;
      char *d;
@@ -49,7 +49,7 @@
      ModPlugFile *f2;
      int len,mlen;
      struct timeval tvstart;
-@@ -269,8 +269,11 @@
+@@ -269,8 +269,11 @@ int main(int argc, char* argv[])
      char songname[41];
      char notpaus[4];
      
@@ -62,7 +62,7 @@
      /*
      struct count_info ci;
      ioctl(audio_fd,SNDCTL_DSP_GETOPTR,&ci);
-@@ -289,7 +292,6 @@
+@@ -289,7 +292,6 @@ int main(int argc, char* argv[])
      int channels = 2;
      int speed = 44100;
  
@@ -70,7 +70,7 @@
      char buffer[128];
      int result, nread;
      struct pollfd pollfds;
-@@ -299,19 +301,10 @@
+@@ -299,19 +301,10 @@ int main(int argc, char* argv[])
      int mono=0;
      int bits=0;
      int song;
@@ -90,7 +90,7 @@
  
      if (get_byteorder()==0) {
  	format=AFMT_S16_LE;
-@@ -335,7 +328,7 @@
+@@ -335,7 +328,7 @@ int main(int argc, char* argv[])
  
  /*
      if (strstr(argv[1],"-v")) {

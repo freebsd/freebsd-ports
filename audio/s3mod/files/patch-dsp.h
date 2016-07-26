@@ -1,5 +1,5 @@
---- dsp.h.orig	2012-10-10 23:31:11.000000000 +0800
-+++ dsp.h	2012-10-10 23:31:22.000000000 +0800
+--- dsp.h.orig	1995-10-21 06:52:31 UTC
++++ dsp.h
 @@ -34,7 +34,7 @@ extern uint8                  *audio_sta
  extern uint8                  *audio_end_buffer;
  extern uint8                  *audio_curptr;

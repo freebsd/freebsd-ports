@@ -1,5 +1,5 @@
---- ./freeze.h.orig	1993-02-24 14:36:58.000000000 +0100
-+++ ./freeze.h	2014-02-13 12:43:34.947977110 +0100
+--- freeze.h.orig	1993-02-24 13:36:58 UTC
++++ freeze.h
 @@ -5,21 +5,6 @@
  # include <sys/stdtypes.h>
  #endif

@@ -1,5 +1,5 @@
---- radio.c.orig	Tue Nov 27 13:30:42 2001
-+++ radio.c	Sun Sep  8 03:13:58 2002
+--- radio.c.orig	2001-11-27 21:30:42 UTC
++++ radio.c
 @@ -63,17 +63,17 @@
  #ifdef __NetBSD__
  #include <dev/ic/bt8xx.h>

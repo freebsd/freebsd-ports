@@ -1,6 +1,6 @@
---- src/tar.c.orig	2016-03-09 15:25:48 UTC
+--- src/tar.c.orig	2016-07-19 21:54:07 UTC
 +++ src/tar.c
-@@ -330,7 +330,7 @@ gboolean xa_tar_extract(XArchive *archiv
+@@ -334,7 +334,7 @@ gboolean xa_tar_extract(XArchive *archiv
  						#else
  								archive->overwrite ? " --overwrite" : " --keep-old-files",
  						#endif
@@ -9,7 +9,7 @@
  								" -C ",archive->extraction_path," ",names->str,NULL);
  		}
  		else
-@@ -349,7 +349,7 @@ gboolean xa_tar_extract(XArchive *archiv
+@@ -353,7 +353,7 @@ gboolean xa_tar_extract(XArchive *archiv
  						#else
  								archive->overwrite ? " --overwrite" : " --keep-old-files",
  						#endif
@@ -18,7 +18,7 @@
  								" -C ",archive->extraction_path," ",names->str,NULL);
  		}
  		else
-@@ -368,7 +368,7 @@ gboolean xa_tar_extract(XArchive *archiv
+@@ -372,7 +372,7 @@ gboolean xa_tar_extract(XArchive *archiv
  						#else
  								archive->overwrite ? " --overwrite" : " --keep-old-files",
  						#endif
@@ -27,7 +27,7 @@
  								" -C ",archive->extraction_path," ",names->str,NULL);
  		}
  		else
-@@ -387,7 +387,7 @@ gboolean xa_tar_extract(XArchive *archiv
+@@ -391,7 +391,7 @@ gboolean xa_tar_extract(XArchive *archiv
  						#else
  								archive->overwrite ? " --overwrite" : " --keep-old-files",
  						#endif
@@ -36,7 +36,7 @@
  								" -C ",archive->extraction_path," ",names->str,NULL);
  		}
  		else
-@@ -406,7 +406,7 @@ gboolean xa_tar_extract(XArchive *archiv
+@@ -410,7 +410,7 @@ gboolean xa_tar_extract(XArchive *archiv
  						#else
  								archive->overwrite ? " --overwrite" : " --keep-old-files",
  						#endif
@@ -45,7 +45,7 @@
  								" -C ",archive->extraction_path," ",names->str,NULL);
  		}
  		else
-@@ -425,7 +425,7 @@ gboolean xa_tar_extract(XArchive *archiv
+@@ -429,7 +429,7 @@ gboolean xa_tar_extract(XArchive *archiv
  						#else
  								archive->overwrite ? " --overwrite" : " --keep-old-files",
  						#endif

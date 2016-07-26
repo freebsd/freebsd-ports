@@ -1,5 +1,5 @@
---- Makefile.orig	2010-03-27 07:28:34.000000000 +0800
-+++ Makefile	2010-05-15 02:52:55.000000000 +0800
+--- Makefile.orig	2010-03-26 23:28:34 UTC
++++ Makefile
 @@ -1,20 +1,21 @@
 -all: id3v2
 +all:	clean id3v2
@@ -30,7 +30,7 @@
  
  clean:
  	rm -f id3v2 create_map core *.o
-@@ -25,4 +26,5 @@
+@@ -25,4 +26,5 @@ tarball:
  		--exclude=id3v2-${VERSION}/id3v2-${VERSION} \
  		id3v2-${VERSION}
  	rm id3v2-${VERSION}

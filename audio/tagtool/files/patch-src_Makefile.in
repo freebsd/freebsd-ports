@@ -1,4 +1,4 @@
---- src/Makefile.in.orig	2015-05-20 17:11:37 UTC
+--- src/Makefile.in.orig	2007-02-27 20:34:13 UTC
 +++ src/Makefile.in
 @@ -193,7 +193,7 @@ tagtool_CFLAGS = -Wall -Wno-pointer-sign
  	${vorbis_cflags} -DDATADIR='"$(datadir)/${PACKAGE_NAME}"'

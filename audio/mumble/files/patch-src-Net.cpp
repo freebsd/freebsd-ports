@@ -1,7 +1,7 @@
---- src/Net.cpp.orig	2010-01-08 00:37:46.000000000 +0200
-+++ src/Net.cpp	2010-01-10 23:55:48.000000000 +0200
-@@ -29,6 +29,12 @@
- */
+--- src/Net.cpp.orig	2014-08-08 15:51:59 UTC
++++ src/Net.cpp
+@@ -31,6 +31,12 @@
+ #include "murmur_pch.h"
  
  #include "Net.h"
 +#ifdef __FreeBSD__

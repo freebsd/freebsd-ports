@@ -1,5 +1,5 @@
---- header.cc.orig	Thu Jun 23 22:14:35 1994
-+++ header.cc	Thu Nov 21 16:42:47 2002
+--- header.cc.orig	1994-06-23 12:14:35 UTC
++++ header.cc
 @@ -20,15 +20,15 @@
  
  /*
@@ -29,7 +29,7 @@
  {
    uint32 headerstring;
  
-@@ -45,41 +45,41 @@
+@@ -45,41 +45,41 @@ bool Header::read_header (Ibitstream *st
  
    if ((headerstring & 0xFFF80000) != 0xFFF80000)
    {
@@ -81,7 +81,7 @@
      exit (1);
    }
    h_padding_bit = (headerstring >> 9) & 1;
-@@ -90,7 +90,7 @@
+@@ -90,7 +90,7 @@ bool Header::read_header (Ibitstream *st
  	 h_mode != single_channel) ||
  	(h_bitrate_index >= 11 && h_mode == single_channel))
      {
@@ -90,7 +90,7 @@
  	      "  mode: " << mode_string ()
  	   << "\n  bitrate: " << bitrate_string () << '\n';
        exit (1);
-@@ -161,7 +161,7 @@
+@@ -161,7 +161,7 @@ uint32 Header::calculate_framesize ()
    static const int32 bitrates_layer_2[15] = {
      0 /*free format*/, 32000, 48000, 56000, 64000, 80000, 96000,
      112000, 128000, 160000, 192000, 224000, 256000, 320000, 384000 };

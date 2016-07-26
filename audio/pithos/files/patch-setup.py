@@ -1,6 +1,6 @@
---- setup.py.orig	2014-05-01 18:33:16.000000000 -0400
-+++ setup.py	2014-07-24 20:19:53.091960936 -0400
-@@ -37,11 +37,11 @@
+--- setup.py.orig	2014-05-01 22:33:16 UTC
++++ setup.py
+@@ -37,11 +37,11 @@ def read(fname):
  
  if sys.platform != 'win32':
      data_files = [
@@ -17,7 +17,7 @@
      ]
  else:
      data_files = []
-@@ -78,6 +78,7 @@
+@@ -78,6 +78,7 @@ setup(
      ],
      packages=find_packages(),
      include_package_data=True,

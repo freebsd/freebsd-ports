@@ -1,6 +1,6 @@
---- configure.orig	Tue May 31 16:40:06 2005
-+++ configure	Tue May 31 16:40:28 2005
-@@ -1183,21 +1183,21 @@
+--- configure.orig	2004-07-10 18:34:52 UTC
++++ configure
+@@ -1183,21 +1183,21 @@ fi
  echo "$ac_t""$CPP" 1>&6
  
  
@@ -26,7 +26,7 @@
  ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
  if test -z "$ac_err"; then
    rm -rf conftest*
-@@ -1233,7 +1233,7 @@
+@@ -1233,7 +1233,7 @@ else
  ac_cv_cpu_endian_ness="unknown"
  
  case "$target_cpu" in
@@ -35,7 +35,7 @@
  		ac_cv_cpu_endian_ness="little"
  		;;
  		
-@@ -1941,7 +1941,7 @@
+@@ -1941,7 +1941,7 @@ if test "$dlopen_found" = no; then
  fi
  
  if test "$ac_cv_prog_gcc" = yes ; then

@@ -1,5 +1,5 @@
---- luna.c.orig	1992-05-25 01:01:32.000000000 +0200
-+++ luna.c	2011-12-20 19:57:51.404175556 +0100
+--- luna.c.orig	2016-07-26 13:07:24 UTC
++++ luna.c
 @@ -25,27 +25,43 @@
  #include	"luna.h"
  
@@ -51,7 +51,7 @@
  
  		if (numonly) {
  			printf("  ");
-@@ -62,10 +78,11 @@
+@@ -62,10 +78,11 @@ main(argc, argv)
  
  		today = FALSE;
  		tomorrow(localtmp);
@@ -64,7 +64,7 @@
  }
  
  
-@@ -177,18 +194,15 @@
+@@ -177,18 +194,15 @@ usage()
  
  
  void
@@ -86,7 +86,7 @@
  	struct tm		*localtmp;
  
  	argnumcnt = 0;
-@@ -375,20 +389,7 @@
+@@ -375,20 +389,7 @@ getoptions(argc, argv, localtmpp, algotm
  	localtmp -> tm_yday
  		= ymd2yday(localtmp -> tm_year, localtmp -> tm_mon,
  			localtmp -> tm_mday);

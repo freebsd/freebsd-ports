@@ -1,5 +1,5 @@
---- ./sound.h.orig	2010-04-23 13:49:47.000000000 +0200
-+++ ./sound.h	2010-04-23 13:49:47.000000000 +0200
+--- sound.h.orig	2016-07-26 16:04:42 UTC
++++ sound.h
 @@ -6,7 +6,6 @@
  	Project Page: http://atariarea.krap.pl/stymulator
  	

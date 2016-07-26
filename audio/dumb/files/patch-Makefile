@@ -1,5 +1,5 @@
---- Makefile.orig	2005-08-08 04:18:41.000000000 +0400
-+++ Makefile	2008-06-12 06:27:26.000000000 +0400
+--- Makefile.orig	2005-08-08 00:18:41 UTC
++++ Makefile
 @@ -22,7 +22,7 @@
  #                    (Note that this is unable to delete the dumbask
  #                    executable if the configuration is absent.)
@@ -9,7 +9,7 @@
  
  .PHONY: all install uninstall clean veryclean distclean config config-if-necessary make-outdirs
  
-@@ -36,12 +36,12 @@
+@@ -36,12 +36,12 @@ PHONY_TARGETS := core allegro core-examp
  COMMA := ,
  
  ifdef USE_ICC
@@ -25,7 +25,7 @@
  endif
  endif
  AR := ar
-@@ -215,24 +215,21 @@
+@@ -215,24 +215,21 @@ make-outdirs:
  ifdef USE_ICC
  WFLAGS := -Wall -DDUMB_DECLARE_DEPRECATED
  WFLAGS_ALLEGRO :=
@@ -55,7 +55,7 @@
  
  LDFLAGS := -s
  
-@@ -251,8 +248,8 @@
+@@ -251,8 +248,8 @@ CORE_LIB_FILE_DEBUG := $(LIBDIR)/libdumb
  ALLEGRO_LIB_FILE_DEBUG := $(LIBDIR)/libaldmd.a
  
  
@@ -66,7 +66,7 @@
  
  core-examples: $(CORE_EXAMPLES_EXE)
  allegro-examples: $(ALLEGRO_EXAMPLES_EXE)
-@@ -263,11 +260,9 @@
+@@ -263,11 +260,9 @@ allegro-headers:
  
  install-core: core
  	$(call COPY,$(CORE_LIB_FILE_RELEASE),$(LIB_INSTALL_PATH))
@@ -78,7 +78,7 @@
  
  ifeq "$(COMSPEC)" ""
  install-core-examples: core-examples
-@@ -321,12 +316,6 @@
+@@ -321,12 +316,6 @@ CORE_LIB_FILE := $(LIBDIR)/libdumb.a
  ALLEGRO_LIB_FILE := $(LIBDIR)/libaldmb.a
  include make/Makefile.inc
  

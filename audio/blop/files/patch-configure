@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun 15 18:11:25 2004
-+++ configure	Mon Aug 30 03:37:21 2004
-@@ -4533,8 +4533,7 @@
+--- configure.orig	2004-06-15 09:11:25 UTC
++++ configure
+@@ -4533,8 +4533,7 @@ if test "${enable_debug+set}" = set; the
    enableval="$enable_debug"
    CFLAGS="-pipe -Wall -O0 -g"
  else

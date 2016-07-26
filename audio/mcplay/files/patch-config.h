@@ -1,5 +1,5 @@
---- config.h.orig	2010-03-18 18:48:31.000000000 -0700
-+++ config.h	2010-03-18 18:50:27.000000000 -0700
+--- config.h.orig	2002-04-28 13:30:35 UTC
++++ config.h
 @@ -26,7 +26,7 @@
  #define LOGFILE_S LOGDIR_S""G_DIR_SEPARATOR_S""PROGNAME_S".log"
  

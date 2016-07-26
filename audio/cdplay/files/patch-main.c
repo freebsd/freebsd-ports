@@ -1,6 +1,6 @@
---- ./main.c.orig	Mon May 19 15:44:41 2003
-+++ ./main.c	Mon May 19 15:55:24 2003
-@@ -35,11 +35,14 @@
+--- main.c.orig	1997-11-17 09:26:26 UTC
++++ main.c
+@@ -35,11 +35,14 @@ extern struct termios old_ttyattr;
  int main(int argc, char **argv)
  {
    char cmd[1];
@@ -16,7 +16,7 @@
    if(argc>1 && !strcmp(argv[1],"-d"))
      cd_device=argv[2];
    else if(argc>1)
-@@ -68,19 +71,20 @@
+@@ -68,19 +71,20 @@ int main(int argc, char **argv)
  
    while(1){
      if(select(1,&rset,(fd_set *) 0,(fd_set *) 0,&stime)>0) {
@@ -43,12 +43,10 @@
      }
      update_cdinfo();
      move_up(5);
-@@ -90,6 +94,36 @@
-   }
-     
+@@ -92,6 +96,36 @@ int main(int argc, char **argv)
      exit(0);
-+}
-+
+ }
+ 
 +void getcommand(char *command, int *repetivity)
 +{
 +  static char stored_command;
@@ -77,6 +75,8 @@
 +  }
 +  stored_command='\0';
 +  return;
- }
- 
++}
++
  void hs_cont(void)
+ {
+   init_term();

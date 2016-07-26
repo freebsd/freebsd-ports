@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-06-28 23:14:25.000000000 +0900
-+++ Makefile.in	2012-10-01 02:41:14.000000000 +0900
-@@ -284,7 +284,6 @@
+--- Makefile.in.orig	2012-06-28 14:14:25 UTC
++++ Makefile.in
+@@ -284,7 +284,6 @@ M4DIR = autoconf
  SUBDIRS = \
  	autoconf \
  	utils \

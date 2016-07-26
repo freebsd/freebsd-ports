@@ -1,6 +1,6 @@
---- configure.orig	Mon Nov 17 17:34:08 2003
-+++ configure	Mon Nov 24 18:26:28 2003
-@@ -7818,7 +7819,7 @@
+--- configure.orig	2014-05-27 19:52:46 UTC
++++ configure
+@@ -11719,7 +11719,7 @@ if test -z "$GCC"; then
  		;;
          *)
                  DEBUG="-g"
@@ -9,7 +9,7 @@
                  PROFILE="-g -p"
  		;;
          esac
-@@ -7841,8 +7842,8 @@
+@@ -11742,8 +11742,8 @@ else
  		;;
          *)
                  DEBUG="-g -Wall -fsigned-char"

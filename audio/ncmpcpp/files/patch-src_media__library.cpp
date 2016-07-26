@@ -1,4 +1,4 @@
---- src/media_library.cpp.orig	2015-11-04 20:01:29 UTC
+--- src/media_library.cpp.orig	2016-04-17 05:41:01 UTC
 +++ src/media_library.cpp
 @@ -40,6 +40,7 @@
  #include "utility/type_conversions.h"

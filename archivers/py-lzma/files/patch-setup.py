@@ -1,8 +1,8 @@
---- ./setup.py.orig	2010-10-23 22:50:04.000000000 +0200
-+++ ./setup.py	2011-01-27 02:30:39.000000000 +0100
-@@ -27,13 +27,10 @@
- from distutils import log
+--- setup.py.orig	2016-07-26 12:20:39 UTC
++++ setup.py
+@@ -28,13 +28,10 @@ from distutils import log
  from distutils.command.build_ext import build_ext as _build_ext
+ from version import get_git_version
  
 -try:
 -    from setuptools import setup, Extension

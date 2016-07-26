@@ -1,7 +1,6 @@
 Index: Makefile
-diff -u Makefile.orig Makefile
---- Makefile.orig	Sat Jan 22 02:02:17 2005
-+++ Makefile	Mon Feb 14 10:42:06 2005
+--- Makefile.orig	2005-01-21 17:02:17 UTC
++++ Makefile
 @@ -3,8 +3,8 @@
  # You may want to rename the binary-file.
  BIN_FILENAME = gkrellmms
@@ -13,7 +12,7 @@ diff -u Makefile.orig Makefile
  IMLIB_INCLUDE ?= 
  IMLIB_LIB ?= 
  
-@@ -18,9 +18,9 @@
+@@ -18,9 +18,9 @@ endif
  
  PLUGIN_DIR ?= /usr/local/lib/gkrellm2/plugins
  
@@ -25,7 +24,7 @@ diff -u Makefile.orig Makefile
  
  ifdef USE_BMP
     FLAGS += -DUSE_BMP
-@@ -35,8 +35,7 @@
+@@ -35,8 +35,7 @@ PACKAGE ?= gkrellmms
  FLAGS += -DPACKAGE="\"$(PACKAGE)\"" 
  export PACKAGE LOCALEDIR
  
@@ -35,7 +34,7 @@ diff -u Makefile.orig Makefile
  
  INSTALL = install -c
  INSTALL_PROGRAM = $(INSTALL) -s
-@@ -47,7 +46,7 @@
+@@ -47,7 +46,7 @@ all:	$(BIN_FILENAME).so
  	(cd po && ${MAKE} all )
  
  $(BIN_FILENAME).so: $(OBJS)

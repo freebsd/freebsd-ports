@@ -1,8 +1,8 @@
 
 $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ae,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
---- cdrom_callb.c.orig	Tue Jan 12 19:59:48 1993
-+++ cdrom_callb.c	Mon Aug 25 00:38:35 2003
+--- cdrom_callb.c.orig	1993-01-12 18:59:48 UTC
++++ cdrom_callb.c
 @@ -22,6 +22,9 @@
  
  # include "debug.h"
@@ -22,7 +22,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ae,v 1.4 2005/12/11 20:48:46 joerg
  void		cdrom_new_disc();
  
  /*
-@@ -287,7 +292,7 @@
+@@ -287,7 +292,7 @@ cb_cdrom_previous(widget, client_data, c
  	 * if playing less than replayThreshold seconds, back up to 
  	 * previous track; otherwise start at beginning of current track:
  	 */

@@ -1,6 +1,6 @@
---- GNUmakefile.orig	2012-03-14 13:40:38.000000000 +0600
-+++ GNUmakefile	2012-05-05 17:48:54.102866059 +0600
-@@ -81,26 +81,14 @@
+--- GNUmakefile.orig	2016-04-05 12:55:12 UTC
++++ GNUmakefile
+@@ -81,26 +81,14 @@ install :
  	     $(MAKE) -k -C $$DIR $@ ; \
  	   done
  	   $(INSTALL) -m 444 wcsconfig.h wcsconfig_f77.h $(INCDIR)

@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Dec 11 04:36:06 2002
-+++ Makefile	Wed Aug 25 13:09:01 2004
-@@ -4,11 +4,9 @@
+--- Makefile.orig	2002-12-11 03:36:06 UTC
++++ Makefile
+@@ -4,12 +4,10 @@ GTK_LIB = `pkg-config gtk+-2.0 --libs`
  INSTALLDIR = ${DESTDIR}/usr/lib/gkrellm2/plugins
  
  
@@ -8,8 +8,9 @@
 +CFLAGS += -Wall -fPIC $(GTK_INCLUDE)
  LIBS = $(GTK_LIB)
  LFLAGS = -shared
--
--CC = gcc $(CFLAGS) $(FLAGS)
  
+-CC = gcc $(CFLAGS) $(FLAGS)
+-
  OBJS = gkrellmoon.o MoonRise.o CalcEphem.o Moon.o
  
+ gkrellmoon.so: $(OBJS)

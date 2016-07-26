@@ -1,5 +1,5 @@
---- ../juke.orig/src/conf.h	Thu Apr 15 21:44:53 1999
-+++ ./src/conf.h	Sun May  2 12:16:58 1999
+--- src/conf.h.orig	1999-04-07 17:47:53 UTC
++++ src/conf.h
 @@ -1,6 +1,11 @@
  #define CFG_ARGS     10
  #define CFG_STRLEN  100

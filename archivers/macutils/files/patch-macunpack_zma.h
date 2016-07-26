@@ -1,5 +1,5 @@
---- macunpack/zma.h.orig	Fri Apr 16 01:04:19 1999
-+++ macunpack/zma.h	Fri Apr 16 01:04:29 1999
+--- macunpack/zma.h.orig	1993-10-02 20:16:00 UTC
++++ macunpack/zma.h
 @@ -20,7 +20,7 @@
  #define	Z_RCRC		44	/* Resource crc */
  #define	Z_FNAME		46	/* File name length and name */

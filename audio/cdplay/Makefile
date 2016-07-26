@@ -26,7 +26,7 @@ post-patch:
 		-e 's/^OPTIMISE=.*$$/OPTIMISE=/'\
 		${WRKSRC}/Makefile
 
-pre-patch:
+post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/cdplay.1.gz
 
 do-install:

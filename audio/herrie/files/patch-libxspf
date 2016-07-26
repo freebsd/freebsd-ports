@@ -1,6 +1,6 @@
---- configure
+--- configure.orig	2008-10-14 16:20:58 UTC
 +++ configure
-@@ -301,7 +301,7 @@ fi
+@@ -288,7 +288,7 @@ fi
  if [ "$CFG_XSPF" != "" ]
  then
  	CFLAGS="$CFLAGS -DBUILD_XSPF"
@@ -9,7 +9,7 @@
  	SRCS="$SRCS util vfs_xspf"
  	PLAYQ_DUMPFILE="autosave.xspf"
  else
---- src/conftest.c
+--- src/conftest.c.orig	2008-10-14 16:20:58 UTC
 +++ src/conftest.c
 @@ -56,16 +56,10 @@
  #include <vorbis/codec.h>
@@ -28,7 +28,7 @@
  
  	return (0);
  }
---- src/vfs_xspf.c
+--- src/vfs_xspf.c.orig	2008-10-14 16:20:58 UTC
 +++ src/vfs_xspf.c
 @@ -30,7 +30,7 @@
  
@@ -39,7 +39,7 @@
  
  #include "util.h"
  #include "vfs.h"
-@@ -50,22 +50,22 @@ vfs_xspf_match(struct vfsent *ve, int isdir)
+@@ -50,22 +50,22 @@ vfs_xspf_match(struct vfsent *ve, int is
  int
  vfs_xspf_populate(struct vfsent *ve)
  {

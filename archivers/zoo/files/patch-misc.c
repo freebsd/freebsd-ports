@@ -1,6 +1,6 @@
---- ./misc.c.orig	1991-07-16 17:52:54.000000000 +0200
-+++ ./misc.c	2011-12-22 14:02:23.000000000 +0100
-@@ -135,11 +135,16 @@
+--- misc.c.orig	1991-07-16 15:52:54 UTC
++++ misc.c
+@@ -135,11 +135,16 @@ if available, else the short filename is
  char *fullpath (direntry)
  struct direntry *direntry;
  {
@@ -18,7 +18,7 @@
  	return (result);
  }
  
-@@ -172,7 +177,11 @@
+@@ -172,7 +177,11 @@ int preserve;
  
     frd_zooh (header, zoo_file);
  

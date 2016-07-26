@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar 11 11:42:18 2002
-+++ configure	Tue Jul 30 14:09:39 2002
-@@ -1416,7 +1416,7 @@
+--- configure.orig	2002-09-28 18:44:14 UTC
++++ configure
+@@ -1414,7 +1414,7 @@ else
  fi
  done
  

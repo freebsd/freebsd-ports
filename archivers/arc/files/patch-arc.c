@@ -1,6 +1,6 @@
---- arc.c.orig	Sun Oct  9 03:38:22 2005
-+++ arc.c	Fri Oct 14 14:22:38 2005
-@@ -290,7 +290,7 @@
+--- arc.c.orig	2010-08-07 13:06:42 UTC
++++ arc.c
+@@ -298,7 +298,7 @@ main(num, arg)			/* system entry point *
  			keepbak = 1;
  
  		else if (*a == 'W')	/* suppress warnings */
@@ -9,7 +9,7 @@
  #if	!DOS
  		else if (*a == 'I')	/* image mode, no ASCII/EBCDIC x-late */
  			image = !image;
-@@ -426,7 +426,7 @@
+@@ -434,7 +434,7 @@ static	VOID
  expandlst(n)			/* expand an indirect reference */
  	int		n;	/* number of entry to expand */
  {

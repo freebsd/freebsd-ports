@@ -1,11 +1,11 @@
---- src/pulse/introspect.c.orig	2008-01-03 20:01:31.000000000 -0500
-+++ src/pulse/introspect.c	2008-01-03 20:01:39.000000000 -0500
-@@ -26,6 +26,8 @@
+--- src/pulse/introspect.c.orig	2015-09-10 04:51:41 UTC
++++ src/pulse/introspect.c
+@@ -22,6 +22,8 @@
  #include <config.h>
  #endif
  
 +#include <string.h>
 +
  #include <pulse/context.h>
- 
- #include <pulsecore/gccmacro.h>
+ #include <pulse/direction.h>
+ #include <pulse/xmalloc.h>

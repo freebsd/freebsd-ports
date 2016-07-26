@@ -1,5 +1,5 @@
---- cfcreate.cpp.orig	1999-10-24 07:29:53.000000000 -0400
-+++ cfcreate.cpp	2014-02-21 15:48:26.812268415 -0500
+--- cfcreate.cpp.orig	1999-10-24 11:29:53 UTC
++++ cfcreate.cpp
 @@ -29,6 +29,10 @@
  #include <unistd.h>
  #endif
@@ -11,7 +11,7 @@
  ///////////////////////////////////////***************************************
  
  int cfc_fileinfo::write_entry(ostream& out)
-@@ -129,7 +133,7 @@
+@@ -129,7 +133,7 @@ int cfc_folderinfo::add_file(const char*
  		}
  	}
  
@@ -20,7 +20,7 @@
  #ifndef unix
  	if(getftime(in.rdbuf()->fd(), &datetime) != 0) return GETTIME_FAILURE;
  #endif
-@@ -194,7 +198,7 @@
+@@ -194,7 +198,7 @@ int cfc_folderinfo::read_block(istream& 
  	unprocessed_data = NULL;				// Reset buffer holder
  	unprocessed_data_len = 0u;
  
@@ -29,7 +29,7 @@
  	{
  		delete[] buf;
  		buf = NULL;
-@@ -272,7 +276,7 @@
+@@ -272,7 +276,7 @@ int cfc_folderinfo::process_block(const 
  		return WRITE_ERROR;
  	}
  

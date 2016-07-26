@@ -4,37 +4,46 @@ and allow this code to compile with Ruby-2.x
 
 	-mi
 
---- ext/slide.c	2006-09-17 13:45:51.000000000 -0400
-+++ ext/slide.c	2015-03-23 10:27:10.000000000 -0400
-@@ -88,5 +88,5 @@
+--- ext/slide.c.orig	2006-09-17 17:45:51 UTC
++++ ext/slide.c
+@@ -87,7 +87,7 @@ static struct decode_option decode_set;
+ 
  static unsigned int txtsiz;
  static unsigned long dicsiz;
 -static unsigned int remainder;
 +static unsigned int iremainder;
  
  struct matchdata {
-@@ -163,5 +163,5 @@
+     int len;
+@@ -162,7 +162,7 @@ update_dict(pos, crc)
+ 
      n = fread_crc(crc, &text[txtsiz - dicsiz], dicsiz, infile);
  
 -    remainder += n;
 +    iremainder += n;
  
      *pos -= dicsiz;
-@@ -271,5 +271,5 @@
+     for (i = 0; i < HSHSIZ; i++) {
+@@ -270,7 +270,7 @@ search_dict(token, pos, min, m)
+         /* re-search */
          search_dict_1(token, pos, 0, off+2, m);
  
 -    if (m->len > remainder) m->len = remainder;
 +    if (m->len > iremainder) m->len = iremainder;
  }
  
-@@ -281,5 +281,5 @@
+ /* slide dictionary */
+@@ -280,7 +280,7 @@ next_token(token, pos, crc)
+     unsigned int *pos;
      unsigned int *crc;
  {
 -    remainder--;
 +    iremainder--;
      if (++*pos >= txtsiz - maxmatch) {
          update_dict(pos, crc);
-@@ -317,9 +317,9 @@
+ #ifdef DEBUG
+@@ -316,17 +316,17 @@ encode(intf)
+     encode_set.encode_start();
      memset(text, ' ', TXTSIZ);
  
 -    remainder = fread_crc(&crc, &text[dicsiz], txtsiz-dicsiz, infile);
@@ -46,10 +55,11 @@ and allow this code to compile with Ruby-2.x
 +    if (match.len > iremainder) match.len = iremainder;
  
      pos = dicsiz;
-@@ -327,5 +327,5 @@
+     token = INIT_HASH(pos);
      insert_hash(token, pos);     /* associate token and pos */
  
 -    while (remainder > 0 && ! unpackable) {
 +    while (iremainder > 0 && ! unpackable) {
          last = match;
  
+         next_token(&token, &pos, &crc);

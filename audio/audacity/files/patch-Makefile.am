@@ -1,4 +1,4 @@
---- Makefile.am.orig	2016-01-08 22:05:48 UTC
+--- Makefile.am.orig	2016-07-26 13:34:06 UTC
 +++ Makefile.am
 @@ -1,4 +1,4 @@
 -SUBDIRS = help images lib-src po src tests

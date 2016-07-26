@@ -1,6 +1,6 @@
---- configure.orig	2012-09-12 09:17:21.000000000 +0700
-+++ configure	2013-02-24 02:48:14.000000000 +0700
-@@ -793,6 +793,7 @@
+--- configure.orig	2014-02-18 01:46:17 UTC
++++ configure
+@@ -793,6 +793,7 @@ with_theora
  with_speex
  with_curl
  with_curl_config
@@ -8,7 +8,7 @@
  enable_yp
  with_openssl
  '
-@@ -17610,6 +17611,16 @@
+@@ -17648,6 +17649,16 @@ $as_echo "$as_me: WARNING: Speex support
  
  fi
  
@@ -25,7 +25,7 @@
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for kate_decode_init in -lkate" >&5
  $as_echo_n "checking for kate_decode_init in -lkate... " >&6; }
-@@ -17707,6 +17718,7 @@
+@@ -17745,6 +17756,7 @@ $as_echo "#define HAVE_KATE 1" >>confdef
  fi
  #ICECAST_OPTIONAL="$ICECAST_OPTIONAL format_kate.o"
  

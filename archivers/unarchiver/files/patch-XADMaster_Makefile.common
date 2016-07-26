@@ -1,6 +1,6 @@
---- XADMaster/Makefile.common.orig	2015-09-23 20:24:59 UTC
+--- XADMaster/Makefile.common.orig	2016-05-17 06:39:04 UTC
 +++ XADMaster/Makefile.common
-@@ -206,12 +206,6 @@ LIBRARY_C_FILES =	BWT.c \
+@@ -209,12 +209,6 @@ LIBRARY_C_FILES =	BWT.c \
  			PPMd/VariantG.c \
  			PPMd/VariantH.c \
  			PPMd/VariantI.c \

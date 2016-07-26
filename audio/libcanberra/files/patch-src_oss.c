@@ -1,6 +1,6 @@
---- src/oss.c.orig	2010-02-19 18:39:40.000000000 -0500
-+++ src/oss.c	2010-03-14 15:04:16.000000000 -0400
-@@ -262,7 +262,7 @@ static int open_oss(ca_context *c, struc
+--- src/oss.c.orig	2011-02-23 01:51:00 UTC
++++ src/oss.c
+@@ -259,7 +259,7 @@ static int open_oss(ca_context *c, struc
                  val = AFMT_S16_NE;
                  break;
          case CA_SAMPLE_S16RE:

@@ -1,12 +1,12 @@
---- ./ogg2mp3.orig	2009-09-10 19:33:42.000000000 +0200
-+++ ./ogg2mp3	2009-09-10 19:34:42.000000000 +0200
+--- ogg2mp3.orig	2009-08-28 00:49:03 UTC
++++ ogg2mp3
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
 +#!%%LOCALBASE%%/bin/perl
  
  # ogg2mp3
  # Maintained by: James Ausmus <james.ausmus.code@gmail.com>
-@@ -50,10 +50,10 @@
+@@ -50,10 +50,10 @@ print "    Maintainership assumed by Jam
  print "  This code is released under the General Public License v2.\n";
  print " ------------------------------------------------------------------- \n\n";
  

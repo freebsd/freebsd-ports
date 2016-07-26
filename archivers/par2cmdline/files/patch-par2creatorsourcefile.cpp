@@ -1,6 +1,6 @@
---- par2creatorsourcefile.cpp.orig	2009-03-10 07:10:35.860499029 +0000
-+++ par2creatorsourcefile.cpp	2009-03-10 07:12:53.111712521 +0000
-@@ -224,6 +224,10 @@
+--- par2creatorsourcefile.cpp.orig	2004-04-15 13:45:23 UTC
++++ par2creatorsourcefile.cpp
+@@ -224,6 +224,10 @@ bool Par2CreatorSourceFile::Open(Command
            cout << newfraction/10 << '.' << newfraction%10 << "%\r" << flush;
          }
        }

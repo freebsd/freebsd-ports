@@ -1,6 +1,6 @@
---- xanalyser.spec.in.orig	2008-12-06 06:50:02.000000000 -0500
-+++ xanalyser.spec.in	2010-05-25 13:16:27.000000000 -0400
-@@ -47,6 +47,6 @@
+--- xanalyser.spec.in.orig	2008-12-06 11:50:02 UTC
++++ xanalyser.spec.in
+@@ -47,6 +47,6 @@ rm -rf $RPM_BUILD_ROOT
  %defattr (-, root, root)
  /usr/bin/xanalyser
  %doc %{_mandir}/man1/xanalyser.1.gz

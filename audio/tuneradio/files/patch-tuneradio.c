@@ -1,5 +1,5 @@
---- tuneradio.c.orig	Fri Oct 31 06:53:39 2003
-+++ tuneradio.c	Mon Feb  9 21:40:26 2004
+--- tuneradio.c.orig	2003-10-31 05:53:39 UTC
++++ tuneradio.c
 @@ -41,7 +41,12 @@
  #include <unistd.h>
  #include <sys/ioctl.h>

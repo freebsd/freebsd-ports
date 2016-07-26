@@ -1,5 +1,5 @@
---- Main.cpp.orig	Mon Mar  3 22:47:00 1997
-+++ Main.cpp	Tue Jun  6 21:05:07 2006
+--- Main.cpp.orig	1997-03-03 21:47:00 UTC
++++ Main.cpp
 @@ -1,8 +1,11 @@
 -#include <fstream.h>
 +#include <fstream>
@@ -14,7 +14,7 @@
  
  #include "FC.h"
  #include "MyTypes.h"
-@@ -95,11 +98,7 @@
+@@ -95,11 +98,7 @@ int main(int argc, char *argv[])
      streampos fileLen = 0;
    
      // open binary input file stream at end of file
@@ -27,7 +27,7 @@
  	// As a replacement for !is_open(), bad() and the NOT-operator don't seem
  	// to work on all systems.
  #if defined(DONT_HAVE_IS_OPEN)
-@@ -119,20 +118,20 @@
+@@ -119,20 +118,20 @@ int main(int argc, char *argv[])
      fileLen = (udword)myIn.tellg();
  #endif
  	fileLen = myIn.tellg();
@@ -51,7 +51,7 @@
          cout << "." << flush;
  	}
  	cout << endl << flush;
-@@ -147,7 +146,7 @@
+@@ -147,7 +146,7 @@ int main(int argc, char *argv[])
      extern udword pcmFreq;
      pcmFreq = 44100;
  

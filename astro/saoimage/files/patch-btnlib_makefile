@@ -1,5 +1,5 @@
---- btnlib/makefile.orig	Wed Dec  6 14:51:17 1995
-+++ btnlib/makefile	Thu Sep 24 15:54:53 1998
+--- btnlib/makefile.orig	1995-12-06 20:51:17 UTC
++++ btnlib/makefile
 @@ -8,7 +8,7 @@
  # the library would build.  It is preferable to build btnlib as part of the
  # make procedure in the parent SAOimage directory.
@@ -9,7 +9,7 @@
  
  LINT   = lint
  RANLIB = ranlib
-@@ -27,7 +27,7 @@
+@@ -27,7 +27,7 @@ OBJS =	attach.o	draw.o		event.o		border.
  	press.o		remote.o	resize.o	util.o
  
  LIB	= libbtn.a

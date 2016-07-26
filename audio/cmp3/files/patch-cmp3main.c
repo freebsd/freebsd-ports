@@ -1,6 +1,6 @@
---- cmp3main.c.orig	2001-07-07 16:17:23.000000000 -0300
-+++ cmp3main.c	2009-09-20 11:11:06.000000000 -0300
-@@ -33,13 +33,18 @@
+--- cmp3main.c.orig	2001-07-07 19:17:23 UTC
++++ cmp3main.c
+@@ -33,13 +33,18 @@ int main(int argc, char **argv)
      int         lastleftline = 0;
      int         lastrightline = 0;
      char       *init_dir = NULL;

@@ -21,7 +21,7 @@ MAKE_ENV+=	PROG=untar NO_MAN=yes
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE" \
 		LDFLAGS="${LDFLAGS} -static"
 
-pre-patch:
+post-extract:
 	@${CP} ${DISTDIR}/untar.c ${WRKSRC}
 
 do-install:

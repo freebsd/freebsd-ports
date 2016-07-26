@@ -1,6 +1,6 @@
---- arcext.c.orig	Sat Oct  8 22:24:37 2005
-+++ arcext.c	Fri Oct 14 00:52:14 2005
-@@ -143,7 +143,7 @@
+--- arcext.c.orig	2010-08-07 13:06:42 UTC
++++ arcext.c
+@@ -143,7 +143,7 @@ extfile(hdr, path, prt)		/* extract a fi
  	if (note)
  		printf("Extracting file: %s\n", fix);
  
@@ -9,7 +9,7 @@
  		if ((f = fopen(fix, "r"))) {	/* see if it exists */
  				fclose(f);
  				printf("WARNING: File %s already exists!", fix);
-@@ -190,7 +190,7 @@
+@@ -191,7 +191,7 @@ extfile(hdr, path, prt)		/* extract a fi
  	if (!f)
  #endif
  	{

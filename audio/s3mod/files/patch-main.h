@@ -1,6 +1,6 @@
---- main.h.orig	Sat Oct 21 15:56:32 1995
-+++ main.h	Sat Jan 27 15:30:30 2001
-@@ -43,7 +43,7 @@
+--- main.h.orig	1995-10-21 06:56:32 UTC
++++ main.h
+@@ -43,7 +43,7 @@ extern uint32 mixspeed;
  
  void help(void);
  void get_audio_device(void);

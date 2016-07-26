@@ -1,6 +1,6 @@
---- ./zoolist.c.orig	1991-07-20 00:57:27.000000000 +0200
-+++ ./zoolist.c	2011-12-22 14:00:55.000000000 +0100
-@@ -539,10 +539,12 @@
+--- zoolist.c.orig	1991-07-19 22:57:27 UTC
++++ zoolist.c
+@@ -539,10 +539,12 @@ int file_tz;
  {
  	long gettz();
  	int diff_tz;				/* timezone difference */

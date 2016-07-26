@@ -1,6 +1,6 @@
---- ./pm3umpdl-1.0.0.orig	2014-09-19 23:21:45.605430746 +0400
-+++ ./pm3umpdl-1.0.0	2014-09-19 23:27:36.057142106 +0400
-@@ -103,6 +103,8 @@
+--- pm3umpdl-1.0.0.orig	2016-07-26 15:41:09 UTC
++++ pm3umpdl-1.0.0
+@@ -103,6 +103,8 @@ pm3umpdl B<-f> <file> [B<-c>] [B<-l>] [B
  
  =head1 FLAGS
  
@@ -9,7 +9,7 @@
  =item -c
  
  If set, it will clear the playlist first.
-@@ -119,12 +121,18 @@
+@@ -119,12 +121,18 @@ If set, along with -p, this will play th
  
  If set, it 
  

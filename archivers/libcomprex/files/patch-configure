@@ -1,6 +1,6 @@
---- configure.orig	2003-03-06 07:31:05.000000000 +0300
-+++ configure	2009-11-04 07:04:24.000000000 +0300
-@@ -9263,7 +9263,7 @@
+--- configure.orig	2003-03-06 04:31:05 UTC
++++ configure
+@@ -9263,7 +9263,7 @@ if test "x$static_scheme_curl" = "xyes";
  		extern_scheme_init="$extern_scheme_init CxSchemeOps *init_curl_scheme_module(void);"
  		load_scheme_mod="$load_scheme_mod init_curl_scheme_module();"
  	else

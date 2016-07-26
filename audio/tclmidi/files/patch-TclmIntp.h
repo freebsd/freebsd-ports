@@ -1,6 +1,6 @@
---- TclmIntp.h.orig	2013-05-14 11:24:39.000000000 +0200
-+++ TclmIntp.h	2013-05-14 11:25:36.000000000 +0200
-@@ -64,6 +64,5 @@
+--- TclmIntp.h.orig	1996-07-28 18:53:08 UTC
++++ TclmIntp.h
+@@ -64,6 +64,5 @@ private:
  	int current_song;
  	int current_dev;
  	int current_patch;

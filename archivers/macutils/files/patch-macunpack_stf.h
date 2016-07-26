@@ -1,5 +1,5 @@
---- macunpack/stf.h.orig	Fri Apr 16 00:22:12 1999
-+++ macunpack/stf.h	Fri Apr 16 00:22:19 1999
+--- macunpack/stf.h.orig	1993-10-02 20:16:00 UTC
++++ macunpack/stf.h
 @@ -5,7 +5,7 @@
  #define	S_RSRCLNGTH	3	/* + NAMELENGTH */
  #define	S_DATALNGTH	7	/* + NAMELENGTH */

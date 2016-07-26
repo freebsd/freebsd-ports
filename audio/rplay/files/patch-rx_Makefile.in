@@ -1,6 +1,6 @@
---- rx/Makefile.in.orig	Wed Jun 21 22:57:55 2000
-+++ rx/Makefile.in	Wed Jun 21 22:59:43 2000
-@@ -64,11 +64,11 @@
+--- rx/Makefile.in.orig	1998-07-14 22:35:25 UTC
++++ rx/Makefile.in
+@@ -64,11 +64,11 @@ gen_c_files=rgx.x
  all: librx.a
  
  install: all

@@ -1,5 +1,5 @@
---- obuffer.h.orig	Thu Jun 23 22:14:40 1994
-+++ obuffer.h	Thu Nov 21 16:35:11 2002
+--- obuffer.h.orig	1994-06-23 12:14:40 UTC
++++ obuffer.h
 @@ -27,7 +27,7 @@
  #ifndef OBUFFER_H
  #define OBUFFER_H
@@ -9,7 +9,7 @@
  #include <unistd.h>
  #include <stdlib.h>
  #include "all.h"
-@@ -123,20 +123,20 @@
+@@ -123,20 +123,20 @@ private:
  
  public:
  #ifdef ULAW
@@ -34,7 +34,7 @@
  	// returnvalue == False: no 16-bit output possible (class unsuitable)
  #endif
  };
-@@ -159,7 +159,7 @@
+@@ -159,7 +159,7 @@ public:
    void	append (uint32 channel, int16 value);
    void	write_buffer (int dummy);
  

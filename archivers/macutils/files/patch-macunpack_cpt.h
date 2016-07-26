@@ -1,5 +1,5 @@
---- macunpack/cpt.h.orig	Fri Apr 16 00:31:28 1999
-+++ macunpack/cpt.h	Fri Apr 16 00:32:07 1999
+--- macunpack/cpt.h.orig	1993-10-02 20:16:00 UTC
++++ macunpack/cpt.h
 @@ -31,7 +31,7 @@
  
  typedef long	OSType;
@@ -9,7 +9,7 @@
  	unsigned char	signature;	/* = 1 -- for verification */
  	unsigned char	volume;		/* for multi-file archives */
  	unsigned short	xmagic;		/* verification multi-file consistency*/
-@@ -42,7 +42,7 @@
+@@ -42,7 +42,7 @@ typedef struct cptHdr {			/* 8 bytes */
  	unsigned char	commentsize;	/* number of bytes comment that follow*/
  };
  

@@ -1,6 +1,6 @@
---- ./bin/googleearth.orig	2011-05-17 10:42:02.000000000 +0300
-+++ ./bin/googleearth	2014-03-13 08:59:26.456795260 +0200
-@@ -8,6 +8,17 @@
+--- bin/googleearth.orig	2011-05-17 07:42:02 UTC
++++ bin/googleearth
+@@ -8,6 +8,17 @@ if [ "${GOOGLEEARTH_DATA_PATH}" = "" ]; 
    GOOGLEEARTH_DATA_PATH="$(dirname "$(readlink -f "$0")")"
  fi
  
@@ -18,7 +18,7 @@
  LD_LIBRARY_PATH=.:${GOOGLEEARTH_DATA_PATH}:${LD_LIBRARY_PATH}
  export LD_LIBRARY_PATH
  
-@@ -15,10 +26,11 @@
+@@ -15,10 +26,11 @@ export LD_LIBRARY_PATH
  if [ -x "${GOOGLEEARTH_DATA_PATH}/googleearth-bin" ]
  then
  	cd "${GOOGLEEARTH_DATA_PATH}/"

@@ -1,9 +1,10 @@
---- config/NetAudio.def.orig	Sun Feb 13 05:31:14 2000
-+++ config/NetAudio.def	Fri Mar 24 04:55:49 2000
-@@ -8,5 +8,5 @@
+--- config/NetAudio.def.orig	2013-04-27 00:41:00 UTC
++++ config/NetAudio.def
+@@ -8,6 +8,6 @@
  
  XCOMM Directory where NAS will look for it's config file(s)
  #ifndef NasConfigSearchPath
 -#define NasConfigSearchPath /etc/nas/
 +#define NasConfigSearchPath $(PROJECTROOT)/etc/
  #endif
+ 

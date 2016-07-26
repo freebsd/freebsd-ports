@@ -1,6 +1,6 @@
---- rplayd/sound.h.orig	Wed Jun  9 15:27:44 1999
-+++ rplayd/sound.h	Wed Jun 21 22:29:37 2000
-@@ -170,9 +170,9 @@
+--- rplayd/sound.h.orig	1999-06-09 06:27:44 UTC
++++ rplayd/sound.h
+@@ -170,9 +170,9 @@ typedef struct _sindex
      int gsm_bit_frame_bytes;	/* Number of bytes in gsm_bit_frame */
      int gsm_fixed_buffer_size;
  #endif /* HAVE_GSM */

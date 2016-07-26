@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Oct  3 18:47:32 2005
-+++ Makefile.in	Mon Oct  3 18:47:49 2005
-@@ -81,7 +81,7 @@
+--- Makefile.in.orig	1999-09-02 00:12:26 UTC
++++ Makefile.in
+@@ -81,7 +81,7 @@ XMMS_PATH = @XMMS_PATH@
  
  lib_LTLIBRARIES = libnas.la
  

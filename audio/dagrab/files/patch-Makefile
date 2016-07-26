@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Feb 19 15:41:30 2000
-+++ Makefile	Fri Apr 21 17:12:20 2000
+--- Makefile.orig	2000-02-19 15:41:30 UTC
++++ Makefile
 @@ -1,8 +1,8 @@
 -CC=gcc
 +#CC=gcc

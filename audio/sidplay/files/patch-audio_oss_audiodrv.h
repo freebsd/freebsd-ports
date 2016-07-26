@@ -1,5 +1,5 @@
---- audio/oss/audiodrv.h.org	Tue Jan 21 19:51:13 2003
-+++ audio/oss/audiodrv.h	Tue Jan 21 19:51:50 2003
+--- audio/oss/audiodrv.h.orig	2002-09-28 18:43:38 UTC
++++ audio/oss/audiodrv.h
 @@ -16,8 +16,8 @@
  
  #if defined(HAVE_LINUX) && defined(HAVE_LINUX_SOUNDCARD_H)

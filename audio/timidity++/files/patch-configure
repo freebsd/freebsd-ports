@@ -1,4 +1,4 @@
---- configure.orig	2012-06-28 14:14:25.000000000 +0000
+--- configure.orig	2012-06-28 14:14:25 UTC
 +++ configure
 @@ -3930,6 +3930,10 @@ case "$target" in
          test -n "$SHLD" || SHLD="ld -Bshareable"

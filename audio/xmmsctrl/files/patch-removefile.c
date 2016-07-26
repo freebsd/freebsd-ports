@@ -1,6 +1,6 @@
---- removefile.c.orig	Thu Apr  1 08:26:19 2004
-+++ removefile.c	Thu Sep 22 13:41:04 2005
-@@ -111,7 +111,7 @@
+--- removefile.c.orig	2004-04-01 13:26:19 UTC
++++ removefile.c
+@@ -111,7 +111,7 @@ static void remove_dirname(int root_len,
      DIR *dir = opendir(".");
      if (dir) {
        /* xmms uses absolute paths */
@@ -9,7 +9,7 @@
        struct dirent *entry;
        struct stat file_stat;
  
-@@ -189,7 +189,7 @@
+@@ -189,7 +189,7 @@ void remove_file(gint session, char *fil
        gint *remove_pos = (gint*) malloc(list_size*sizeof(gint));
  
        if (remove_pos) {

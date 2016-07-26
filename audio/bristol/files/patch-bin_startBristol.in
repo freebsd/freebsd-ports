@@ -1,6 +1,6 @@
---- bin/startBristol.in.orig	2012-04-27 13:07:18.000000000 +0200
-+++ bin/startBristol.in	2012-09-24 13:30:26.589848964 +0200
-@@ -39,14 +39,19 @@
+--- bin/startBristol.in.orig	2012-04-27 11:07:18 UTC
++++ bin/startBristol.in
+@@ -39,14 +39,19 @@ FREQ=0
  #PORT=5028
  # Randomise the port numbers, can be overridden by -port which would be a
  # requirement for multitimbral
@@ -27,7 +27,7 @@
  fi
  
  valgrind=0
-@@ -497,12 +502,12 @@
+@@ -497,12 +502,12 @@ if [ $engine = 1 ]; then
  		fi
  	else
  		echo checking availability of TCP port $PORT

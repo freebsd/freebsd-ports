@@ -1,8 +1,8 @@
 
 $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
---- internals.c.orig	Tue Jan 12 19:59:45 1993
-+++ internals.c	Wed May 30 19:20:48 2007
+--- internals.c.orig	1993-01-12 18:59:45 UTC
++++ internals.c
 @@ -22,6 +22,9 @@
  
  # include "debug.h"
@@ -29,7 +29,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  
  int
  cdrom_get_curtime() {
-@@ -46,7 +50,7 @@
+@@ -46,7 +50,7 @@ cdrom_get_curtime() {
  
  	if (cdrom_open() == -1) {
  		debug_printf(1, "cdrom_get_curtime: error from cdrom_open\n");
@@ -38,7 +38,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  	}
  
  	switch (cdrom_status()) {
-@@ -54,7 +58,7 @@
+@@ -54,7 +58,7 @@ cdrom_get_curtime() {
  	case CDROM_PLAYING:
  	    if (cdrom_get_curmsf(&curmsf) == -1) {
  		debug_printf(1, "get_curtime: error reading location\n");
@@ -47,7 +47,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  	    }
  
  	    if (((curtrack = cdrom_get_curtrack()) == -1) ||
-@@ -76,6 +80,7 @@
+@@ -76,6 +80,7 @@ cdrom_get_curtime() {
  	}
  }
  
@@ -55,7 +55,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  
  /*
   * we poll the cd-rom drive every TIMER_PERIOD milliseconds to see where 
-@@ -83,7 +88,6 @@
+@@ -83,7 +88,6 @@ cdrom_get_curtime() {
   */
  void
  cdrom_timer_on() {
@@ -63,7 +63,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  
  	if (cdi.state & CDROM_STATE_PLAY)
  		ivid = XtAppAddTimeOut(appc, TIMER_PERIOD, update_track, NULL);
-@@ -170,7 +174,6 @@
+@@ -170,7 +174,6 @@ cdrom_rewind () {
  	struct msf	track_start;
          struct msf	start_addr, end_addr;
  	int		curtrack;
@@ -71,7 +71,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  
  	if (cdrom_get_curmsf(&start_addr) == -1) {
  		debug_printf(1, "rew: error reading location\n");
-@@ -196,11 +199,11 @@
+@@ -196,11 +199,11 @@ cdrom_rewind () {
  	    if (((cdi.state & CDROM_STATE_PLAY) && 
  		 ((track_start.minute * 60) + track_start.second) >=
  		 ((start_addr.minute * 60) + start_addr.second - 
@@ -85,7 +85,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  	    {
  	        start_addr = track_start;
  	        start_addr.second++; /* guarantee we never back up too far */
-@@ -208,9 +211,9 @@
+@@ -208,9 +211,9 @@ cdrom_rewind () {
  	    else
  	    {
  		if (cdi.state & CDROM_STATE_PAUSE) {
@@ -97,7 +97,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  		}
  	        if ((char) start_addr.second < 0)
  	        {
-@@ -223,9 +226,9 @@
+@@ -223,9 +226,9 @@ cdrom_rewind () {
  	else /* normal case */
  	{
  		if (cdi.state & CDROM_STATE_PAUSE) {
@@ -109,7 +109,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  		}
  		if ((char) start_addr.second < 0)
  		{
-@@ -274,7 +277,7 @@
+@@ -274,7 +277,7 @@ cdrom_rewind () {
  	{
  	    if (scanivid == -1)
  		scanivid = XtAppAddTimeOut(appc, 
@@ -118,7 +118,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  			scan_update, NULL);
  
  	    cdi.state &= ~CDROM_STATE_PAUSE;	/* allow timer to change */
-@@ -304,7 +307,6 @@
+@@ -304,7 +307,6 @@ cdrom_ff () {
          struct msf	start_addr, end_addr,  next_start;
  	char		t;
  	int		curtrack;
@@ -126,7 +126,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  
  	if (cdrom_get_curmsf(&start_addr) == -1) {
  		debug_printf(1, "ff: error reading location\n");
-@@ -332,11 +334,11 @@
+@@ -332,11 +334,11 @@ cdrom_ff () {
  	    if (((cdi.state & CDROM_STATE_PLAY) && 
  		 ((next_start.minute * 60) + next_start.second) <=
  		 ((start_addr.minute * 60) + start_addr.second +
@@ -140,7 +140,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  	    {
  	    
  	        /* start at end of current track */
-@@ -346,9 +348,9 @@
+@@ -346,9 +348,9 @@ cdrom_ff () {
  	    else
  	    {
  		    if (cdi.state & CDROM_STATE_PAUSE) {
@@ -152,7 +152,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  		    }
  		    if (start_addr.second >= 60)
  		    {
-@@ -360,9 +362,9 @@
+@@ -360,9 +362,9 @@ cdrom_ff () {
  	else
  	{
  	    if (cdi.state & CDROM_STATE_PAUSE) {
@@ -164,7 +164,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  	    }
  	    if (start_addr.second >= 60)
  	    {
-@@ -413,7 +415,7 @@
+@@ -413,7 +415,7 @@ cdrom_ff () {
  	{
  	    if (scanivid == -1)
  		scanivid = XtAppAddTimeOut(appc, 
@@ -173,7 +173,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  			scan_update, NULL);
  
  	    cdi.state &= ~CDROM_STATE_PAUSE;	/* allow timer to change */
-@@ -557,7 +559,7 @@
+@@ -557,7 +559,7 @@ scan_update(data, id)
  				 cdi.state &= ~CDROM_STATE_STOP;
  		}
  	        ivid = XtAppAddTimeOut(appc, 
@@ -182,7 +182,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  			scan_update, NULL);
  	}
  	else
-@@ -574,7 +576,7 @@
+@@ -574,7 +576,7 @@ scan_update(data, id)
  			}
  
  			ivid = XtAppAddTimeOut(appc,
@@ -191,7 +191,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  				scan_update, NULL);
  		}
  		else if (scanivid != -1) {
-@@ -662,7 +664,7 @@
+@@ -662,7 +664,7 @@ update_track(data, id)
  				 cdi.state &= ~CDROM_STATE_STOP;
  		}
  	        ivid = XtAppAddTimeOut(appc, 
@@ -200,7 +200,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg
  			update_track, NULL);
  	}
  	else
-@@ -679,7 +681,7 @@
+@@ -679,7 +681,7 @@ update_track(data, id)
  			}
  
  			ivid = XtAppAddTimeOut(appc,

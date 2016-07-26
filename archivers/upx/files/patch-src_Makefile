@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2013-09-30 15:51:00 UTC
++++ src/Makefile
+@@ -55,7 +55,7 @@ upx_OBJECTS := $(notdir $(upx_SOURCES:.c
+ # we need UCL and zlib - you can set envvar UPX_UCLDIR
+ ifneq ($(wildcard $(UPX_UCLDIR)/include/ucl/ucl.h),)
+ INCLUDES += -I$(UPX_UCLDIR)/include
+-LIBS += $(addprefix -L,$(dir $(wildcard $(UPX_UCLDIR)/libucl$(libext) $(UPX_UCLDIR)/src/.libs/libucl$(libext))))
++LIBS += -L$(UPX_UCLDIR)/lib
+ endif
+ LIBS += -lucl -lz
+ # you should set envvar UPX_LZMADIR to point to your unpacked LZMA SDK

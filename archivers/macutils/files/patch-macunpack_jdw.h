@@ -1,5 +1,5 @@
---- macunpack/jdw.h.orig	Fri Apr 16 00:13:34 1999
-+++ macunpack/jdw.h	Fri Apr 16 00:13:37 1999
+--- macunpack/jdw.h.orig	1993-10-02 20:16:00 UTC
++++ macunpack/jdw.h
 @@ -8,7 +8,7 @@
  #define	J_MTIME		34
  #define	J_FLENGTH	38
