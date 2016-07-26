@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vala
-PORTVERSION=	0.30.1
+PORTVERSION=	0.30.2
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
@@ -14,11 +14,9 @@ LICENSE=	LGPL21
 PORTSCOUT=	limitw:1,even
 
 USES=		bison gettext-runtime gmake gnome libtool \
-		pathfix pkgconfig tar:xz
+		localbase pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix libxslt
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
