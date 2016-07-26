@@ -1,0 +1,16 @@
+# Origin: https://cgit.freedesktop.org/harfbuzz/commit/?id=dd31fc9f7e6d23b414b22874de96eb3c002c80ba
+# Subject: Don't build UCDN support when building with GLib (#296)
+# Regression from: b424b6c372dfe4c0ed75a49761eb34a416819446.
+# Applied to configure instead of configure.ac file, because it was generated.
+
+--- configure.orig	2016-07-21 08:57:54 UTC
++++ configure
+@@ -18678,7 +18678,7 @@ fi
+ 
+ 
+ have_ucdn=true
+-if $have_glib || $have_icu && test "x$with_icu" = "xbuiltin"; then
++if $have_glib || test \( $have_icu -a "x$with_icu" = "xbuiltin" \); then
+ 	have_ucdn=false
+ fi
+ if $have_ucdn; then
