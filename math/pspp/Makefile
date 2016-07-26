@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pspp
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	texinfo>0:print/texinfo
 LIB_DEPENDS=	libgslcblas.so:math/gsl
 
-USES=		charsetfix gmake iconv libtool perl5 pkgconfig readline
+USES=		charsetfix gmake iconv localbase libtool perl5 pkgconfig readline
 USE_GNOME=	libxml2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
@@ -22,9 +22,6 @@ MAKE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 		XMLLINT="${LOCALBASE}/bin/xmllint"
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
