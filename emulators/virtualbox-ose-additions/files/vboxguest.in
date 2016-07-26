@@ -22,7 +22,7 @@ rcvar=vboxguest_enable
 start_cmd="vboxguest_start"
 stop_cmd="vboxguest_stop"
 
-vboxguest_modules="%%VBOX_KMODS%%"
+vboxguest_modules="vboxguest:pci/vboxguest"
 
 vboxguest_start()
 {
