@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	onscripter
-PORTVERSION=	20160327
+PORTVERSION=	20160726
 CATEGORIES=	devel games
 MASTER_SITES=	http://onscripter.osdn.jp/
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	sdl_ttf>=2.0.11_6:graphics/sdl_ttf
 
-USES=		gmake
+USES=		gmake jpeg
 USE_SDL=	image mixer ttf
 MAKEFILE=	Makefile.Linux
 ALL_TARGET=	ALL
