@@ -13,9 +13,8 @@ COMMENT=	Replacement and extension for Tripwire
 
 LIB_DEPENDS=	libmhash.so:security/mhash
 
-USES=		bison gmake
+USES=		autoreconf bison gmake
 
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
