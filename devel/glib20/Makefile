@@ -50,7 +50,8 @@ gio_MAN=	gdbus.1 gsettings.1 gio-querymodules.1 \
 gobject_MAN=	glib-genmarshal.1 glib-mkenums.1 gobject-query.1
 
 OPTIONS_DEFINE=	COLLATION_FIX DEBUG GDB
-COLLATION_FIX_DESC=	fix string collation
+# libc collation was fixed by https://svnweb.freebsd.org/changeset/base/290494
+COLLATION_FIX_DESC=	Use ICU for UTF-8 string collation (if libc is broken)
 GDB_DESC=	Install python gdb scripts
 
 .include <bsd.port.pre.mk>
