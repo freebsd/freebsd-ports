@@ -35,6 +35,7 @@ include/groonga/groonga/file_reader.h
 include/groonga/groonga/geo.h
 include/groonga/groonga/groonga.h
 include/groonga/groonga/hash.h
+include/groonga/groonga/id.h
 include/groonga/groonga/ii.h
 include/groonga/groonga/nfkc.h
 include/groonga/groonga/normalizer.h
@@ -96,10 +97,14 @@ lib/groonga/plugins/query_expanders/tsv.so
 %%RUBY%%lib/groonga/scripts/ruby/expression_rewriters.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_size_estimator.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree.rb
+%%RUBY%%lib/groonga/scripts/ruby/expression_tree/accessor.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/binary_operation.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/constant.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/function_call.rb
+%%RUBY%%lib/groonga/scripts/ruby/expression_tree/index_column.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/logical_operation.rb
+%%RUBY%%lib/groonga/scripts/ruby/expression_tree/options.rb
+%%RUBY%%lib/groonga/scripts/ruby/expression_tree/procedure.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/variable.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree_builder.rb
 %%RUBY%%lib/groonga/scripts/ruby/fixed_size_column.rb
