@@ -1,0 +1,18 @@
+@sample etc/mfs/mfsmaster.cfg.sample
+@sample etc/mfs/mfsexports.cfg.sample
+@sample etc/mfs/mfstopology.cfg.sample
+sbin/mfsmaster
+sbin/mfsmetadump
+sbin/mfsmetarestore
+sbin/mfsstatsdump
+man/man5/mfsexports.cfg.5.gz
+man/man5/mfsmaster.cfg.5.gz
+man/man5/mfstopology.cfg.5.gz
+man/man8/mfsmaster.8.gz
+man/man8/mfsmetarestore.8.gz
+man/man8/mfsmetadump.8.gz
+man/man8/mfsstatsdump.8.gz
+@owner mfs
+@group mfs
+@dir %%MFS_WORKDIR%%/mfs
+%%MFS_WORKDIR%%/mfs/metadata.mfs.empty

@@ -606,6 +606,13 @@
     SUBDIR += moosefs2-metalogger
     SUBDIR += moosefs2-netdump
     SUBDIR += moosefs3-cgi
+    SUBDIR += moosefs3-cgiserv
+    SUBDIR += moosefs3-chunkserver
+    SUBDIR += moosefs3-cli
+    SUBDIR += moosefs3-client
+    SUBDIR += moosefs3-master
+    SUBDIR += moosefs3-metalogger
+    SUBDIR += moosefs3-netdump
     SUBDIR += moreutils
     SUBDIR += most
     SUBDIR += mount.app
