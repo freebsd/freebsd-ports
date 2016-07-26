@@ -1,7 +1,7 @@
---- Makefile.orig	Wed Oct 22 16:40:23 2003
-+++ Makefile	Wed Oct 22 16:40:34 2003
+--- Makefile.orig	2003-01-05 20:18:07 UTC
++++ Makefile
 @@ -1,6 +1,6 @@
- VERSION = 0.9
+ VERSION = 0.8
 -CC = gcc
 -CFLAGS = -g -O2
 +CC ?= cc

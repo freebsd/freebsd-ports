@@ -1,4 +1,4 @@
---- configure.orig	2015-05-20 17:11:37 UTC
+--- configure.orig	2007-02-27 20:34:14 UTC
 +++ configure
 @@ -9044,8 +9044,10 @@ echo "${ECHO_T}$LINGUAS" >&6; }
  

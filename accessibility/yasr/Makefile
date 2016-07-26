@@ -23,7 +23,6 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-yasr__main.c
 
 PLIST_FILES=	bin/yasr \
 		man/man1/yasr.1.gz \

@@ -1,4 +1,4 @@
---- qpress.cpp.orig	2013-11-02 00:43:30.451058000 +0000
+--- qpress.cpp.orig	2016-07-26 12:20:52 UTC
 +++ qpress.cpp
 @@ -88,6 +88,7 @@ and finally outputs an UPDIR:
  

@@ -1,0 +1,11 @@
+--- src/frontends/audacious/Makefile.in.orig	2009-10-29 21:01:12 UTC
++++ src/frontends/audacious/Makefile.in
+@@ -7,7 +7,7 @@ DEBUGFLAGS={DEBUGFLAGS}
+ AUDACIOUSFLAGS={AUDACIOUSFLAGS}
+ AUDACIOUSLIBS={AUDACIOUSLIBS}
+ SHAREDLIBRARYFLAGS={SHAREDLIBRARYFLAGS}
+-CFLAGS = -Wall -O2 $(SHAREDLIBRARYFLAGS) $(AUDACIOUSFLAGS) $(ARCHFLAGS) $(DEBUGFLAGS) -I../common -I../../include
++CFLAGS = $(SHAREDLIBRARYFLAGS) $(AUDACIOUSFLAGS) $(ARCHFLAGS) $(DEBUGFLAGS) -I../common -I../../include
+ CLIBS = $(XMLIBS) -lm
+ 
+ all:	libuade2.so

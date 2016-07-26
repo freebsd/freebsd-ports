@@ -1,0 +1,10 @@
+--- interface/Makefile.in.orig	2012-06-28 14:14:25 UTC
++++ interface/Makefile.in
+@@ -340,7 +340,6 @@ SUBDIRS = motif_bitmaps bitmaps pixmaps
+ 
+ INCLUDES = \
+ 	-I$(top_srcdir)/timidity \
+-	-I$(top_srcdir)/libarc \
+ 	-I$(top_srcdir)/utils
+ 
+ 

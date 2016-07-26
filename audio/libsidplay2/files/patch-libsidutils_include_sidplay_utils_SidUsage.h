@@ -1,6 +1,6 @@
---- libsidutils/include/sidplay/utils/SidUsage.h.orig	Sat Sep 30 19:49:52 2006
-+++ libsidutils/include/sidplay/utils/SidUsage.h	Sat Sep 30 19:50:54 2006
-@@ -33,7 +33,7 @@
+--- libsidutils/include/sidplay/utils/SidUsage.h.orig	2004-06-14 20:08:08 UTC
++++ libsidutils/include/sidplay/utils/SidUsage.h
+@@ -33,7 +33,7 @@ struct sid2_usage_t: public sid_usage_t
      uint_least16_t length;  // usage scan length
  
      // Copy common parts of basic usage to extended usage.

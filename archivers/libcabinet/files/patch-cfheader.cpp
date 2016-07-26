@@ -1,5 +1,5 @@
---- cfheader.cpp.orig	1999-10-24 02:13:29.000000000 -0400
-+++ cfheader.cpp	2014-02-21 16:02:37.285291121 -0500
+--- cfheader.cpp.orig	1999-10-24 06:13:29 UTC
++++ cfheader.cpp
 @@ -18,17 +18,23 @@
  #define __CFHEADER_CPP__
  
@@ -26,7 +26,7 @@
  ////////////////////////////////////////****************************************
  
  // Initializes a valid fixed cabinet header
-@@ -127,7 +133,7 @@
+@@ -127,7 +133,7 @@ Error cabinet_header::read(istream& in)
  		{
  			reserved_area = new byte[cabinet_ra_size];
  
@@ -35,7 +35,7 @@
  			{
  				return (in.fail()) ? READ_ERROR : UNEXPECTED_EOF;
  			}
-@@ -172,7 +178,7 @@
+@@ -172,7 +178,7 @@ Error cabinet_header::write(ostream& out
  
  		if(cabinet_ra_size > 0)			// If has cabinet reserved area
  		{
@@ -44,7 +44,7 @@
  			{
  				return WRITE_ERROR;
  			}
-@@ -210,4 +216,4 @@
+@@ -210,4 +216,4 @@ Error cabinet_header::write(ostream& out
  
  ////////////////////////////////////////****************************************
  

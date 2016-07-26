@@ -1,6 +1,6 @@
---- configure.orig	Thu Oct 10 19:57:27 1996
-+++ configure	Sun Mar 28 22:54:44 2004
-@@ -1604,7 +1604,7 @@
+--- configure.orig	1996-10-11 02:57:27 UTC
++++ configure
+@@ -1604,7 +1604,7 @@ if eval "test \"`echo '$ac_cv_header_'$a
  	        # Greg figured out how to use gcc instead of ld..
  		# -lgcc can be found in /usr/lib/gcc-lib/i486-linux/2.7.0/
  		# or something similar.
@@ -9,7 +9,7 @@
  		DL_OBJS="tclLoadDld.o"
  		DL_LIBS="-ldld"
  		LD_FLAGS=""
-@@ -1727,12 +1727,12 @@
+@@ -1727,12 +1727,12 @@ fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    

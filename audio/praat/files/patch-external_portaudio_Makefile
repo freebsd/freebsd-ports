@@ -1,4 +1,4 @@
---- external/portaudio/Makefile.orig	2015-05-20 01:47:31 UTC
+--- external/portaudio/Makefile.orig	2016-07-26 15:41:19 UTC
 +++ external/portaudio/Makefile
 @@ -3,8 +3,9 @@
  

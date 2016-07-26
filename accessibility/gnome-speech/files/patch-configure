@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun  7 02:40:27 2005
-+++ configure	Tue Jun  7 02:41:02 2005
-@@ -20213,8 +20213,8 @@
+--- configure.orig	2009-02-15 17:43:46 UTC
++++ configure
+@@ -21415,8 +21415,8 @@ fi
  
  fi
  if test "x$JAVAC" != "x" ; then
@@ -11,11 +11,11 @@
    JAVAC="$JAVAC -source 1.4"
  fi
  
-@@ -20423,6 +20423,7 @@
+@@ -21634,6 +21634,7 @@ fi
  fi
  
  # Find the Java Access Bridge
 +JAB="no"
  
  
- # Check whether --with-jab_dir or --without-jab_dir was given.
+ # Check whether --with-jab_dir was given.

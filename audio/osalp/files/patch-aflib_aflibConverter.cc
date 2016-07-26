@@ -1,6 +1,6 @@
---- ./aflib/aflibConverter.cc.orig	2014-01-30 14:56:04.000000000 +0100
-+++ ./aflib/aflibConverter.cc	2014-01-30 14:56:11.000000000 +0100
-@@ -226,7 +226,7 @@
+--- aflib/aflibConverter.cc.orig	2007-01-16 19:26:39 UTC
++++ aflib/aflibConverter.cc
+@@ -226,7 +226,7 @@ aflibConverter::resample(       /* numbe
  
  
  int

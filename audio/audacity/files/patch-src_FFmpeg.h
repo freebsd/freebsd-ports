@@ -1,4 +1,4 @@
---- src/FFmpeg.h.orig	2015-07-11 10:02:22 UTC
+--- src/FFmpeg.h.orig	2016-07-26 13:34:06 UTC
 +++ src/FFmpeg.h
 @@ -689,7 +689,7 @@ extern "C" {
     FFMPEG_FUNCTION_WITH_RETURN(

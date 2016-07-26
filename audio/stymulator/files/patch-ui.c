@@ -1,5 +1,5 @@
---- ./ui.c.orig	2010-04-23 13:49:47.000000000 +0200
-+++ ./ui.c	2010-04-23 13:49:47.000000000 +0200
+--- ui.c.orig	2016-07-26 16:04:42 UTC
++++ ui.c
 @@ -6,7 +6,6 @@
  	Project Page: http://atariarea.krap.pl/stymulator
  	

@@ -1,5 +1,5 @@
---- tclmUtil.cxx.orig	2013-09-24 09:20:50.000000000 +0200
-+++ tclmUtil.cxx	2013-09-24 09:22:32.000000000 +0200
+--- tclmUtil.cxx.orig	1996-07-28 19:09:06 UTC
++++ tclmUtil.cxx
 @@ -31,8 +31,8 @@
  extern "C" {
  #include <tcl.h>
@@ -11,7 +11,7 @@
  #include <stdlib.h>
  #include <ctype.h>
  #include <string.h>
-@@ -99,12 +99,12 @@
+@@ -99,12 +99,12 @@ Tclm_ParseDataByte(Tcl_Interp *interp, c
  }
  
  void

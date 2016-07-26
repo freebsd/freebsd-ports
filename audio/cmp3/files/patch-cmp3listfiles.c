@@ -1,6 +1,6 @@
---- cmp3listfiles.c.orig	Fri Jul 18 17:55:33 2003
-+++ cmp3listfiles.c	Fri Jul 18 17:56:23 2003
-@@ -270,13 +270,13 @@
+--- cmp3listfiles.c.orig	2001-06-13 20:13:16 UTC
++++ cmp3listfiles.c
+@@ -270,13 +270,13 @@ void writelist(char *filepath)
  /*         XXX - alert person */
          return;
      fprintf(outfile,

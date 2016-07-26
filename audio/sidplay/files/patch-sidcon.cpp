@@ -1,4 +1,4 @@
---- sidcon.cpp.orig
+--- sidcon.cpp.orig	2002-02-19 19:48:37 UTC
 +++ sidcon.cpp
 @@ -25,12 +25,18 @@
  #include <stdio.h>

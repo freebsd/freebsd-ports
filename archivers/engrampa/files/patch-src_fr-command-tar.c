@@ -1,6 +1,6 @@
---- src/fr-command-tar.c.orig	2014-11-19 15:44:09.000000000 +0100
-+++ src/fr-command-tar.c	2014-12-04 18:28:31.998497849 +0100
-@@ -245,6 +245,10 @@
+--- src/fr-command-tar.c.orig	2015-10-14 17:33:41 UTC
++++ src/fr-command-tar.c
+@@ -245,6 +245,10 @@ begin_tar_command (FrCommand *comm)
  		g_free (command);
  		command = g_strdup ("/usr/sfw/bin/gtar");
  	}

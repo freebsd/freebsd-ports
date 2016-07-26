@@ -1,4 +1,4 @@
---- extras/find-fixme/Makefile.orig	2016-06-04 17:12:29 UTC
+--- extras/find-fixme/Makefile.orig	2016-02-09 19:05:19 UTC
 +++ extras/find-fixme/Makefile
 @@ -52,8 +52,8 @@ all-bin: $(EXE)
  	@[ -d $(WEBBINDIR) ] || mkdir -p $(WEBBINDIR)

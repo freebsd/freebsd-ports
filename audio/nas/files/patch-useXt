@@ -1,6 +1,6 @@
---- lib/audio/Imakefile.orig	2011-01-26 14:10:17.000000000 -0200
-+++ lib/audio/Imakefile	2011-08-23 13:58:17.000000000 -0300
-@@ -150,9 +150,7 @@
+--- lib/audio/Imakefile.orig	2013-04-27 00:41:05 UTC
++++ lib/audio/Imakefile
+@@ -150,9 +150,7 @@ XAULIB = 
  XAULIB = -lXau
  #endif
  

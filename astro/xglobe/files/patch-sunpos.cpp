@@ -1,6 +1,6 @@
---- sunpos.cpp.orig	1998-12-09 10:51:09.000000000 -0800
-+++ sunpos.cpp	2011-01-18 14:22:52.000000000 -0800
-@@ -203,7 +203,7 @@
+--- sunpos.cpp.orig	1998-12-09 18:51:09 UTC
++++ sunpos.cpp
+@@ -203,7 +203,7 @@ double SunPos::julian_date(int y, int m,
    double JD;
  
    /* lazy test to ensure gregorian calendar */

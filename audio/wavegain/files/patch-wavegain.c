@@ -1,5 +1,5 @@
---- wavegain.c.orig	2009-02-14 07:27:18.005266616 +0800
-+++ wavegain.c	2009-02-14 07:29:15.783066588 +0800
+--- wavegain.c.orig	2016-07-26 16:16:05 UTC
++++ wavegain.c
 @@ -19,20 +19,8 @@
  #include <string.h>
  #include <ctype.h>
@@ -31,7 +31,7 @@
  extern int          write_to_log;
  dither_t            Dither;
  double              doubletmp;
-@@ -639,7 +630,14 @@
+@@ -639,7 +630,14 @@ int write_gains(const char *filename, do
  				goto exit;
  			}
      
@@ -47,7 +47,7 @@
  				fprintf(stderr, " Error renaming '" TEMP_NAME "' to '%s' (uh-oh)\n", filename);
  				goto exit;
  			}
-@@ -650,4 +648,61 @@
+@@ -650,4 +648,61 @@ exit:
  	return result;
  }
  
@@ -64,7 +64,7 @@
 +
 +  if (strcmp(oldpath, newpath) == 0)
 +    return 0;
-+
+ 
 +#ifdef __EMX__
 +  if (unlink(newpath) == -1 && errno != ENOENT)
 +    return -1;
@@ -106,6 +106,6 @@
 +      return -1;
 +    }
 +  }
- 
++
 +  return 0;
 +}

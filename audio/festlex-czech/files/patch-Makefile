@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jun 21 09:32:07 2006
-+++ Makefile	Wed Dec 26 16:42:28 2007
-@@ -36,10 +36,9 @@
+--- Makefile.orig	2006-06-21 07:32:07 UTC
++++ Makefile
+@@ -36,10 +36,9 @@ distfiles := *.scm *.out
  all: czech-lexicon.out
  
  %.out: %.scm

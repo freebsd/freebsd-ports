@@ -1,4 +1,4 @@
---- test/midifile.c.orig	2015-02-26 12:34:52 UTC
+--- test/midifile.c.orig	2016-03-31 13:10:39 UTC
 +++ test/midifile.c
 @@ -71,7 +71,7 @@
  #endif

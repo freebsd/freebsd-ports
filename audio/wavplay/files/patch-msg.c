@@ -1,28 +1,24 @@
-*** msg.c.orig	Sat Jan 15 12:58:40 2000
---- msg.c	Sat Jan 15 13:16:12 2000
-***************
-*** 47,53 ****
---- 47,55 ----
-  #include <unistd.h>
-  #include <errno.h>
-  #include <fcntl.h>
-+ #ifndef FREEBSD
-  #include <malloc.h>
-+ #endif
-  #include <string.h>
-  #include <memory.h>
-  #include <signal.h>
-***************
-*** 56,62 ****
---- 58,68 ----
-  #include <sys/msg.h>
-  #include <sys/ioctl.h>
-  #include <assert.h>
-+ #ifndef FREEBSD
-  #include <linux/soundcard.h>
-+ #else
-+ #include <sys/soundcard.h>
-+ #endif
-  #include "wavplay.h"
-  
-  /*
+--- msg.c.orig	1999-12-04 00:06:42 UTC
++++ msg.c
+@@ -47,7 +47,9 @@ static const char rcsid[] = "@(#)msg.c $
+ #include <unistd.h>
+ #include <errno.h>
+ #include <fcntl.h>
++#ifndef FREEBSD
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ #include <memory.h>
+ #include <signal.h>
+@@ -56,7 +58,11 @@ static const char rcsid[] = "@(#)msg.c $
+ #include <sys/msg.h>
+ #include <sys/ioctl.h>
+ #include <assert.h>
++#ifndef FREEBSD
+ #include <linux/soundcard.h>
++#else
++#include <sys/soundcard.h>
++#endif
+ #include "wavplay.h"
+ 
+ /*

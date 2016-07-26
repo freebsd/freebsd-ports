@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Mar  6 02:59:34 2001
-+++ Makefile	Fri Jan  7 09:56:53 2005
+--- Makefile.orig	2012-05-15 20:31:03 UTC
++++ Makefile
 @@ -1,12 +1,12 @@
  all:
 -	make -C src all

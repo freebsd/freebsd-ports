@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Sep 24 11:02:34 2003
-+++ Makefile	Wed Sep 24 19:43:19 2003
+--- Makefile.orig	2003-09-24 18:02:34 UTC
++++ Makefile
 @@ -1,11 +1,10 @@
  ################################
  # Configuration

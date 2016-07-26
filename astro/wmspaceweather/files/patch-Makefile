@@ -1,5 +1,5 @@
---- ./Makefile.orig	1999-01-04 22:20:45.000000000 +0100
-+++ ./Makefile	2014-04-04 21:55:35.196529518 +0200
+--- Makefile.orig	1999-01-04 21:20:45 UTC
++++ Makefile
 @@ -1,8 +1,7 @@
 -CC     = gcc
 -CFLAGS = -O2 -Wall
@@ -13,7 +13,7 @@
  # for linux
  LIBS   = -lXpm -lX11 -lXext
  # for Solaris
-@@ -12,14 +11,14 @@
+@@ -12,14 +11,14 @@ OBJS   = wmSpaceWeather.o \
  
  
  .c.o:
@@ -30,7 +30,7 @@
  
  clean:
  	for i in $(OBJS) ; do \
-@@ -28,7 +27,7 @@
+@@ -28,7 +27,7 @@ clean:
  	rm -f wmSpaceWeather
  
  install:: wmSpaceWeather

@@ -1,6 +1,6 @@
---- config.m4.orig	2015-12-10 14:23:55.176546745 +0300
-+++ config.m4	2015-12-10 14:29:14.284524651 +0300
-@@ -4,8 +4,38 @@
+--- config.m4.orig	2016-06-21 19:56:50 UTC
++++ config.m4
+@@ -4,8 +4,38 @@ dnl config.m4 for extension phar
  PHP_ARG_ENABLE(phar, for phar archive support,
  [  --disable-phar          Disable phar support], yes)
  

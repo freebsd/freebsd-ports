@@ -1,6 +1,6 @@
---- utils.c.orig	2009-02-24 14:41:16.000000000 +0100
-+++ utils.c	2009-02-24 14:41:55.000000000 +0100
-@@ -59,6 +59,9 @@
+--- utils.c.orig	1999-01-01 23:57:50 UTC
++++ utils.c
+@@ -59,6 +59,9 @@ void *tmalloc (size_t size)
  	return (mem);
  }
  
@@ -10,7 +10,7 @@
  char *strndup (char *src, int num)
  {
  	char *dst;
-@@ -68,6 +71,8 @@
+@@ -68,6 +71,8 @@ char *strndup (char *src, int num)
  	dst[num] = '\0';
  	return (strncpy(dst, src, num));
  }

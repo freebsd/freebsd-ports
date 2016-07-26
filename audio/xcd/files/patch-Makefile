@@ -1,5 +1,5 @@
---- ./Makefile.orig	1998-10-26 22:14:26.000000000 -0200
-+++ ./Makefile	2013-12-07 16:02:51.000000000 -0200
+--- Makefile.orig	1998-10-27 00:14:26 UTC
++++ Makefile
 @@ -1,6 +1,6 @@
 -BINDIR = /usr/local/bin
 -CDDIR  = /usr/local/lib/xcd
@@ -10,7 +10,7 @@
  
  all: cdplayer xcd
  xcd:	xcd.in
-@@ -8,20 +8,20 @@
+@@ -8,20 +8,20 @@ xcd:	xcd.in
  		< xcd.in > $@
  	chmod ugo+x xcd
  cdplayer: cdplayer.cc

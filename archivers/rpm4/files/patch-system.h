@@ -1,6 +1,6 @@
---- system.h.orig	2011-06-10 15:27:05.000000000 +0200
-+++ system.h	2011-06-10 15:27:09.000000000 +0200
-@@ -39,6 +39,13 @@ char * stpncpy(char * dest, const char *
+--- system.h.orig	2014-06-30 08:47:14 UTC
++++ system.h
+@@ -41,6 +41,13 @@ char * stpncpy(char * dest, const char *
  #define	getenv(_s)	__secure_getenv(_s)
  #endif
  

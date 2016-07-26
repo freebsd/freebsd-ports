@@ -1,4 +1,4 @@
---- packages/modplug/fpmake.pp.orig	2015-08-07 13:22:31 UTC
+--- packages/modplug/fpmake.pp.orig	2015-11-13 21:15:29 UTC
 +++ packages/modplug/fpmake.pp
 @@ -17,7 +17,7 @@ begin
      P.Directory:=ADirectory;

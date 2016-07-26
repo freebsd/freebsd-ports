@@ -1,4 +1,4 @@
---- install.sh.orig	2004-04-21 19:27:01.000000000 +0000
+--- install.sh.orig	2004-04-21 19:27:01 UTC
 +++ install.sh
 @@ -625,7 +625,7 @@ if [ "$OS_SYS" = A/UX ]
  then

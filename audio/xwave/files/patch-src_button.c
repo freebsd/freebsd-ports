@@ -1,6 +1,6 @@
---- src/button.c.orig	Mon Nov  9 08:22:55 1998
-+++ src/button.c	Fri Jun 30 19:49:16 2000
-@@ -679,7 +679,7 @@
+--- src/button.c.orig	1998-11-08 23:22:55 UTC
++++ src/button.c
+@@ -679,7 +679,7 @@ Boolean set_playline(XtPointer client_da
      now_clock=clock();
      sample_time=(float)md->wd->tlength/(float)md->wd->freq;
  

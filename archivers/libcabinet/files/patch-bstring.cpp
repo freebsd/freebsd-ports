@@ -1,5 +1,5 @@
---- bstring.cpp.orig	2014-07-27 11:17:34.000000000 -0400
-+++ bstring.cpp	2014-07-27 11:17:37.000000000 -0400
+--- bstring.cpp.orig	1999-10-24 11:29:53 UTC
++++ bstring.cpp
 @@ -15,7 +15,7 @@
  
  #include "bstring.h"
@@ -9,7 +9,7 @@
  
  ///////////////////////////////////////***************************************
  
-@@ -91,7 +91,7 @@
+@@ -91,7 +91,7 @@ b_string& b_string::operator += (const c
  
  b_string b_string::operator + (const char* s)
  {
@@ -18,7 +18,7 @@
  	return temp += s;
  }
  
-@@ -150,7 +150,7 @@
+@@ -150,7 +150,7 @@ b_string& b_string::StpCpy(const char* s
  		if(strlen(str) < strlen(s))	// If more memory is needed
  			*this = s;			// Use assign function
  		else						// If stpcpy can be used
@@ -27,7 +27,7 @@
  	}
  
  	return *this;					// Return a refrence to this object
-@@ -217,4 +217,4 @@
+@@ -217,4 +217,4 @@ istream& operator >> (istream& input, b_
  
  //*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/
  

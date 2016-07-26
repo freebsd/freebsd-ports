@@ -1,12 +1,11 @@
-diff -urN pianobar-2013.09.15.orig/Makefile pianobar-2013.09.15/Makefile
---- Makefile	2013-09-15 06:54:04.000000000 -0700
-+++ Makefile	2013-09-23 12:20:05.869414665 -0700
-@@ -4,7 +4,7 @@
+--- Makefile.orig	2016-06-02 06:49:26 UTC
++++ Makefile
+@@ -4,7 +4,7 @@ PREFIX:=/usr/local
  BINDIR:=${PREFIX}/bin
  LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
 -MANDIR:=${PREFIX}/share/man
 +MANDIR:=${PREFIX}/man
  DYNLINK:=0
+ CFLAGS?=-O2 -DNDEBUG
  
- # Respect environment variables set by user; does not work with :=

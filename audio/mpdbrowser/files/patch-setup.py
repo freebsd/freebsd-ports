@@ -1,6 +1,6 @@
---- ./setup.py.orig	2010-12-27 18:06:29.000000000 +0100
-+++ ./setup.py	2014-05-14 23:15:44.000000000 +0200
-@@ -62,9 +62,7 @@
+--- setup.py.orig	2010-12-27 17:06:29 UTC
++++ setup.py
+@@ -62,9 +62,7 @@ os.system("intltool-merge -d -u   po mpd
  # Create mo files:
  if not os.path.exists("mo/"):
  	os.mkdir("mo/")

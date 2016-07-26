@@ -1,6 +1,6 @@
---- xmms-timidity.cpp.orig	2005-07-21 02:44:56.000000000 -0700
-+++ xmms-timidity.cpp	2009-07-19 22:30:38.000000000 -0700
-@@ -347,7 +347,7 @@
+--- xmms-timidity.cpp.orig	2005-07-21 09:44:56 UTC
++++ xmms-timidity.cpp
+@@ -347,7 +347,7 @@ void setSongTitle(void)
  
  void *infoThread(void *pData)
  {

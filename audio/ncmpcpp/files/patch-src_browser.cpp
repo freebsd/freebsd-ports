@@ -1,4 +1,4 @@
---- src/browser.cpp.orig	2015-11-04 20:01:29 UTC
+--- src/browser.cpp.orig	2016-04-17 05:41:01 UTC
 +++ src/browser.cpp
 @@ -42,6 +42,7 @@
  #include "utility/comparators.h"

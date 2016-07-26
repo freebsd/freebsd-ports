@@ -1,4 +1,4 @@
---- astropy/io/fits/setup_package.py.orig	2016-07-02 18:54:36 UTC
+--- astropy/io/fits/setup_package.py.orig	2016-03-10 22:20:43 UTC
 +++ astropy/io/fits/setup_package.py
 @@ -39,7 +39,7 @@ def _get_compression_extension():
                      '-Wno-uninitialized', '-Wno-format',

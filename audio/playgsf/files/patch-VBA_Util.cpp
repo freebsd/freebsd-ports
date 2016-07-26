@@ -1,6 +1,6 @@
---- ./VBA/Util.cpp.orig	2013-04-02 11:32:02.322879639 +0200
-+++ ./VBA/Util.cpp	2013-04-02 11:33:58.107884638 +0200
-@@ -1484,7 +1484,8 @@
+--- VBA/Util.cpp.orig	2016-07-26 15:40:39 UTC
++++ VBA/Util.cpp
+@@ -1484,7 +1484,8 @@ void utilWriteData(gzFile gzFile, variab
  
  gzFile utilGzOpen(const char *file, const char *mode)
  {

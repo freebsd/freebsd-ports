@@ -1,6 +1,6 @@
---- src/id666.c.orig	Sat Jun 11 14:13:07 2005
-+++ src/id666.c	Sat Jun 11 14:13:27 2005
-@@ -100,6 +100,7 @@
+--- src/id666.c.orig	2002-10-12 01:07:41 UTC
++++ src/id666.c
+@@ -100,6 +100,7 @@ static void spc_read_ext_id666(int fd, i
  					break;
  
  			default:	/* Who knows. Ignore it. */

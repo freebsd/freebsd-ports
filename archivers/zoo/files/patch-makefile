@@ -1,5 +1,5 @@
---- ./makefile.orig	1991-07-16 17:52:08.000000000 +0200
-+++ ./makefile	2011-12-22 14:00:55.000000000 +0100
+--- makefile.orig	1991-07-16 15:52:08 UTC
++++ makefile
 @@ -18,13 +18,13 @@
  
  MAKE = make	      # needed for some systems e.g. older BSD
@@ -18,7 +18,7 @@
  
  #List of all object files created for Zoo
  ZOOOBJS = addbfcrc.o addfname.o basename.o comment.o crcdefs.o \
-@@ -67,7 +67,7 @@
+@@ -67,7 +67,7 @@ help :
  	@echo "lint_turboc:  Run lint under **IX for checking Turbo C/MSDOS code"
  
  # install alpha zoo as "tzoo"
@@ -27,7 +27,7 @@
  	mv zoo $(DESTDIR)/tzoo
  
  # install beta zoo as "bzoo"
-@@ -75,8 +75,9 @@
+@@ -75,8 +75,9 @@ inst_beta:
  	mv zoo $(DESTDIR)/bzoo
  
  # install production zoo as "zoo"

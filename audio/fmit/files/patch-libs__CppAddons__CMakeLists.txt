@@ -1,9 +1,0 @@
---- libs/CppAddons/CMakeLists.txt.orig	2011-01-28 08:09:11.000000000 +0900
-+++ libs/CppAddons/CMakeLists.txt	2011-08-21 21:54:31.000000000 +0900
-@@ -8,6 +8,4 @@
-     ${CMAKE_CURRENT_BINARY_DIR}
- )
- 
--set(CMAKE_CXX_FLAGS "-Wall -ansi -pedantic")
--
- add_library(CppAddons STATIC ${libCppAddons_SRCS})

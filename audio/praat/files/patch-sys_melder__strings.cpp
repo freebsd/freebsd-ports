@@ -1,4 +1,4 @@
---- sys/melder_strings.cpp.orig	2015-02-01 16:38:59 UTC
+--- sys/melder_strings.cpp.orig	2015-05-20 01:47:31 UTC
 +++ sys/melder_strings.cpp
 @@ -386,7 +386,7 @@ void MelderString32_appendCharacter (Mel
  	expandIfNecessary (char32)

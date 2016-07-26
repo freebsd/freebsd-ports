@@ -1,6 +1,6 @@
---- shairport.pl.orig	2012-01-08 22:34:35.000000000 +1000
-+++ shairport.pl	2012-01-08 22:34:14.000000000 +1000
-@@ -270,6 +270,7 @@
+--- shairport.pl.orig	2012-01-02 10:57:00 UTC
++++ shairport.pl
+@@ -270,6 +270,7 @@ $SIG{__DIE__} = sub {
  $avahi_publish = fork();
  my $pw_clause = (length $password) ? "pw=true" : "pw=false";
  if ($avahi_publish==0) {
@@ -8,7 +8,7 @@
      { exec 'avahi-publish-service',
          join('', map { sprintf "%02X", $_ } @hw_addr) . "\@$apname",
          "_raop._tcp",
-@@ -329,7 +330,6 @@
+@@ -329,7 +330,6 @@ my $sel = new IO::Select($listen);
  
  if ($daemon) {
      chdir "/" or die "Could not chdir to '/': $!";

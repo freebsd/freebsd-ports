@@ -1,47 +1,27 @@
-*** Makefile.orig	Thu Jun 23 21:14:46 1994
---- Makefile	Thu Dec  9 06:09:27 1999
-***************
-*** 27,33 ****
-  #
-  
-  
-! CFLAGS = $(COMPILERFLAGS)
-  # debugging: -ggdb -DDEBUG
-  # profiling: -pg (gprof) or -p (prof)
-  # strip command has to be removed for debugging or profiling
---- 27,33 ----
-  #
-  
-  
-! CFLAGS += $(COMPILERFLAGS)
-  # debugging: -ggdb -DDEBUG
-  # profiling: -pg (gprof) or -p (prof)
-  # strip command has to be removed for debugging or profiling
-***************
-*** 39,52 ****
-  
-  .SUFFIXES:	.cc
-  
-! install:
-  		@./configuration.sh
-  
-- all:		maplay
-- 
-  maplay:		$(OBJS)
-  		$(COMPILER) $(CFLAGS) $(OBJS) -o $@ $(LIBRARIES) -lm
-- 		-strip $@
-  
-  .cc.o:
-  		$(COMPILER) -c $(CFLAGS) $(INCLUDEDIRS) $*.cc -o $@
---- 39,49 ----
-  
-  .SUFFIXES:	.cc
-  
-! all:
-  		@./configuration.sh
-  
-  maplay:		$(OBJS)
-  		$(COMPILER) $(CFLAGS) $(OBJS) -o $@ $(LIBRARIES) -lm
-  
-  .cc.o:
-  		$(COMPILER) -c $(CFLAGS) $(INCLUDEDIRS) $*.cc -o $@
+--- Makefile.orig	1994-06-23 12:14:46 UTC
++++ Makefile
+@@ -27,7 +27,7 @@
+ #
+ 
+ 
+-CFLAGS = $(COMPILERFLAGS)
++CFLAGS += $(COMPILERFLAGS)
+ # debugging: -ggdb -DDEBUG
+ # profiling: -pg (gprof) or -p (prof)
+ # strip command has to be removed for debugging or profiling
+@@ -39,14 +39,11 @@ OBJS = maplay.o ibitstream.o header.o sc
+ 
+ .SUFFIXES:	.cc
+ 
+-install:
++all:
+ 		@./configuration.sh
+ 
+-all:		maplay
+-
+ maplay:		$(OBJS)
+ 		$(COMPILER) $(CFLAGS) $(OBJS) -o $@ $(LIBRARIES) -lm
+-		-strip $@
+ 
+ .cc.o:
+ 		$(COMPILER) -c $(CFLAGS) $(INCLUDEDIRS) $*.cc -o $@

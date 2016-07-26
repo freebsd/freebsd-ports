@@ -1,5 +1,5 @@
---- desktopwidget.cpp.orig	1998-12-09 10:15:52.000000000 -0800
-+++ desktopwidget.cpp	2011-01-18 22:40:26.000000000 -0800
+--- desktopwidget.cpp.orig	1998-12-09 18:15:52 UTC
++++ desktopwidget.cpp
 @@ -18,10 +18,14 @@
   */
  
@@ -16,7 +16,7 @@
  {
    haveImage = FALSE;
    currentImage = new QPixmap(width(), height());
-@@ -43,6 +47,7 @@
+@@ -43,6 +47,7 @@ void DesktopWidget::paintEvent(QPaintEve
  {
    QPainter p(this);
    
@@ -24,7 +24,7 @@
    if(!haveImage)
    {
      p.setFont(QFont("helvetica", 35));
-@@ -62,7 +67,8 @@
+@@ -62,7 +67,8 @@ void DesktopWidget::paintEvent(QPaintEve
  
  void DesktopWidget::updateDisplay(QImage *image)
  {

@@ -1,8 +1,8 @@
 Index: Slim/Schema.pm
 ===================================================================
---- Slim/Schema.pm	(revision 31006)
-+++ Slim/Schema.pm	(working copy)
-@@ -274,11 +274,15 @@
+--- Slim/Schema.pm.orig	2011-01-24 15:15:39 UTC
++++ Slim/Schema.pm
+@@ -274,11 +274,15 @@ sub _connect {
  	# For custom exceptions
  	$class->storage_type('Slim::Schema::Storage');
  	
@@ -19,11 +19,9 @@ Index: Slim/Schema.pm
  		PrintError    => 0,
  		Taint         => 1,
  		on_connect_do => [
-Index: scanner.pl
-===================================================================
---- scanner.pl	(revision 31006)
-+++ scanner.pl	(working copy)
-@@ -236,9 +236,6 @@
+--- scanner.pl.orig	2011-03-21 13:05:58 UTC
++++ scanner.pl
+@@ -236,9 +236,6 @@ sub main {
  
  	main::INFOLOG && $log->info("Squeezebox Server Scanner done init...\n");
  
@@ -33,5 +31,3 @@ Index: scanner.pl
  	my $scanType = 'SETUP_STANDARDRESCAN';
  
  	if ($wipe) {
-
---------------020502080403070605040408--

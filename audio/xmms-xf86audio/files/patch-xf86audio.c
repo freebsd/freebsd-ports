@@ -1,6 +1,6 @@
---- xf86audio.c.orig
+--- xf86audio.c.orig	2006-07-09 01:30:47 UTC
 +++ xf86audio.c
-@@ -110,6 +110,7 @@
+@@ -110,6 +110,7 @@ static void plugin_cleanup()
  static void plugin_about()
  {
  	static GtkWidget *about;
@@ -8,7 +8,7 @@
  	gchar *s;
  
  	if (about != NULL) {
-@@ -117,8 +118,8 @@
+@@ -117,8 +118,8 @@ static void plugin_about()
  		return;
  	}
  
@@ -19,7 +19,7 @@
  		"This plugin enables the XF86Audio keysyms produced by\n"
  		  "multimedia keyboards to control XMMS playback.\n\n"
  		  "Note that this plugin will not set up the initial keysym\n"
-@@ -145,6 +146,11 @@
+@@ -145,6 +146,11 @@ static GtkWidget *config_window;
  
  static void plugin_configure()
  {
@@ -31,7 +31,7 @@
  
  	if (config_window) {
  		gdk_window_raise(config_window->window);
-@@ -163,29 +169,29 @@
+@@ -163,29 +169,29 @@ static void plugin_configure()
  	gtk_signal_connect(GTK_OBJECT(config_window), "destroy", GTK_SIGNAL_FUNC(gtk_widget_destroyed), &config_window);
  	gtk_container_border_width(GTK_CONTAINER(config_window), 10);
  
@@ -68,7 +68,7 @@
  			GTK_RADIO_BUTTON(pa_pause),
  			_("Restart the current song"));
  	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(
-@@ -198,7 +204,7 @@
+@@ -198,7 +204,7 @@ static void plugin_configure()
  	
  	gtk_box_pack_start(GTK_BOX(pa_vbox), pa_pause, FALSE, FALSE, 0);
  	gtk_box_pack_start(GTK_BOX(pa_vbox), pa_restart, FALSE, FALSE, 0);
@@ -77,7 +77,7 @@
  			_("Regardless of this setting, the current song can be restarted"
  			"\nby holding down Shift while pressing the Play key.")
  		);
-@@ -217,22 +223,22 @@
+@@ -217,22 +223,22 @@ static void plugin_configure()
  
  	/* Volume change frame */
  
@@ -106,7 +106,7 @@
  			1.0, 0);
  	gtk_signal_connect(GTK_OBJECT(vol_spin), "changed",
  			GTK_SIGNAL_FUNC(on_volume_increment_change), NULL);
-@@ -246,23 +252,23 @@
+@@ -246,23 +252,23 @@ static void plugin_configure()
  
  	/* Button box at bottom of window */
  

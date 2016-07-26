@@ -1,6 +1,6 @@
---- ./nixtime.i.orig	1991-07-16 17:53:46.000000000 +0200
-+++ ./nixtime.i	2011-12-22 14:00:55.000000000 +0100
-@@ -52,7 +52,8 @@
+--- nixtime.i.orig	1991-07-16 15:53:46 UTC
++++ nixtime.i
+@@ -52,7 +52,8 @@ unsigned int date, time;
  	long mstonix();
  	long gettz();
  	long utimbuf[2];

@@ -1,6 +1,6 @@
---- tools/bseloopfuncs.cc.orig	2010-02-14 00:47:12.000000000 +0000
-+++ tools/bseloopfuncs.cc	2010-09-15 12:05:05.000000000 +0000
-@@ -526,7 +526,7 @@
+--- tools/bseloopfuncs.cc.orig	2013-01-19 00:23:42 UTC
++++ tools/bseloopfuncs.cc
+@@ -469,7 +469,7 @@ gsl_data_find_loop2 (GslDataHandle     *
        ep = sp + minll;
        {
          gdouble score = score_headloop (dhandle, sp, ep - sp, config->block_length / 2, G_MAXDOUBLE);
@@ -9,7 +9,7 @@
          continue;
          if (score <= config->score)
            {
-@@ -555,7 +555,7 @@
+@@ -496,7 +496,7 @@ gsl_data_find_loop2 (GslDataHandle     *
        for (ep = sp + minll; ep < cstart; ep++)
          {
            gdouble score = score_headloop (dhandle, sp, ep - sp, config->block_length / 2, config->score);

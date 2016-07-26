@@ -1,6 +1,5 @@
-diff -ru ../cam-1.02-virgin/sounds.c ./sounds.c
---- ../cam-1.02-virgin/sounds.c	Mon Oct 21 13:33:55 1996
-+++ ./sounds.c	Sun Nov 10 12:20:22 1996
+--- sounds.c.orig	1996-10-21 18:33:55 UTC
++++ sounds.c
 @@ -36,7 +36,7 @@
  
  
@@ -10,7 +9,7 @@ diff -ru ../cam-1.02-virgin/sounds.c ./sounds.c
  char *mixer_dev = "/dev/mixer";
  struct devices
  {
-@@ -287,7 +287,7 @@
+@@ -287,7 +287,7 @@ void init_sliders(void)
            else
               dev_vol[dev_count].vol_right = dev_vol[dev_count].vol_left;
  

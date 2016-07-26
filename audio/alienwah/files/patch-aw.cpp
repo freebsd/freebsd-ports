@@ -1,6 +1,6 @@
---- aw.cpp.orig	2002-01-26 02:51:03.000000000 +0900
-+++ aw.cpp	2013-12-04 04:50:18.000000000 +0900
-@@ -62,11 +62,11 @@
+--- aw.cpp.orig	2002-01-25 17:51:03 UTC
++++ aw.cpp
+@@ -62,11 +62,11 @@ The output of this effect is the real pa
  
  /*****************************************************************************/
  
@@ -17,7 +17,7 @@
  
  /*****************************************************************************/
  
-@@ -85,6 +85,8 @@
+@@ -85,6 +85,8 @@ The output of this effect is the real pa
  #define AW_INPUT2     6
  #define AW_OUTPUT2    7
  
@@ -26,7 +26,7 @@
  /*****************************************************************************/
  /* Make number of samples represented by 'delay' proportional to
   * the sample rate, such that delay=1 is 1 sample buffer at
-@@ -118,10 +120,10 @@
+@@ -118,10 +120,10 @@ unsigned long t;               //??
  unsigned long t2;              //??
  unsigned long k;               // index for delaybuf
  unsigned long k2;              // index for delaybuf2
@@ -41,7 +41,7 @@
  float freq;
  float startphase;
  float feedback;
-@@ -135,25 +137,61 @@
+@@ -135,25 +137,61 @@ AW(const long lSampleRate) :
  	samplerate(lSampleRate),
  	t(0), t2(0),
  	k(0), k2(0),
@@ -86,10 +86,10 @@
 +		delaybuf[i] = std::complex<float>(0,0);
 +	}
 +}
- 
++
 +};
 +
-+
+ 
 +/*
 + * simply calls the constructor
 + */
@@ -111,7 +111,7 @@
  	switch (port) {
  	case AW_FREQ:
  		((AW *)instance)->lfreq = *datalocation;
-@@ -182,41 +220,19 @@
+@@ -182,41 +220,19 @@ friend void connectPortToAW(LADSPA_Handl
   * connect_port may be called before of after here, so we
   * cannot rely upon port data for initialization
   */
@@ -158,7 +158,7 @@
  	float lfoskip = me->freq * 2 * PI / me->samplerate;
  
  	if (! me->inited) me->initState(1);
-@@ -224,7 +240,7 @@
+@@ -224,7 +240,7 @@ friend void runAW_Mono(LADSPA_Handle ins
  	for(unsigned int i=0; i<samplecount; ++i) {
  		if ((me->t++ % LFO_SKIPSAMPLES) == 0) {
  			lfo = 1 + cos(me->t * lfoskip + me->startphase);
@@ -167,7 +167,7 @@
  				 sin(lfo) * me->feedback);
  		}
  		outc = me->c * me->delaybuf[me->k] + (1 - me->feedback) * 
-@@ -238,10 +254,11 @@
+@@ -238,10 +254,11 @@ friend void runAW_Mono(LADSPA_Handle ins
  /*
   * Stereo effect?
   */
@@ -181,7 +181,7 @@
  	float lfoskip = me->freq * 2 * PI / me->samplerate;
  
  	if (! me->inited) me->initState(2);
-@@ -249,7 +266,7 @@
+@@ -249,7 +266,7 @@ friend void runAW_Stereo(LADSPA_Handle i
  	for(unsigned int i=0; i<samplecount; ++i) {
  		if ((me->t++ % LFO_SKIPSAMPLES) == 0) {
  			lfo = 1 + cos(me->t * lfoskip + me->startphase);
@@ -190,7 +190,7 @@
  				 sin(lfo) * me->feedback);
  		}
  		outc = me->c * me->delaybuf[me->k] + (1 - me->feedback) * 
-@@ -262,7 +279,7 @@
+@@ -262,7 +279,7 @@ friend void runAW_Stereo(LADSPA_Handle i
  	for(unsigned int i=0; i<samplecount; ++i) {
  		if ((me->t2++ % LFO_SKIPSAMPLES) == 0) {
  			lfo = 1 + cos(me->t2 * lfoskip);
@@ -199,7 +199,7 @@
  				 sin(lfo) * me->feedback);
  		}
  		outc = me->c2 * me->delaybuf2[me->k2] + (1 - me->feedback) * 
-@@ -273,13 +290,11 @@
+@@ -273,13 +290,11 @@ friend void runAW_Stereo(LADSPA_Handle i
  	}
  }
  
@@ -216,7 +216,7 @@
  /*****************************************************************************/
  
  typedef char * char_ptr;
-@@ -342,7 +357,7 @@
+@@ -342,7 +357,7 @@ StartupShutdownHandler() {
      desc[plug]->PortCount 
  	= 6;
      portdesc
@@ -225,7 +225,7 @@
      desc[plug]->PortDescriptors 
  	= (const LADSPA_PortDescriptor *)portdesc;
      portdesc[AW_FREQ]
-@@ -358,7 +373,7 @@
+@@ -358,7 +373,7 @@ StartupShutdownHandler() {
      portdesc[AW_OUTPUT1]
  	= LADSPA_PORT_OUTPUT | LADSPA_PORT_AUDIO;
      pnames
@@ -234,7 +234,7 @@
      desc[plug]->PortNames
  	= (const char **)pnames;
      pnames[AW_FREQ]
-@@ -376,7 +391,7 @@
+@@ -376,7 +391,7 @@ StartupShutdownHandler() {
  
  /* range hints */
      rangehints 
@@ -243,7 +243,7 @@
      desc[plug]->PortRangeHints
  	= (const LADSPA_PortRangeHint *)rangehints;
  
-@@ -417,7 +432,7 @@
+@@ -417,7 +432,7 @@ StartupShutdownHandler() {
      desc[plug]->PortCount 
  	= 8;
      portdesc
@@ -252,7 +252,7 @@
      desc[plug]->PortDescriptors 
  	= (const LADSPA_PortDescriptor *)portdesc;
      portdesc[AW_FREQ]
-@@ -437,7 +452,7 @@
+@@ -437,7 +452,7 @@ StartupShutdownHandler() {
      portdesc[AW_OUTPUT1]
  	= LADSPA_PORT_OUTPUT | LADSPA_PORT_AUDIO;
      pnames
@@ -261,7 +261,7 @@
      desc[plug]->PortNames
  	= (const char **)pnames;
      pnames[AW_FREQ]
-@@ -459,7 +474,7 @@
+@@ -459,7 +474,7 @@ StartupShutdownHandler() {
  
  /* range hints */
      rangehints 

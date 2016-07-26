@@ -1,6 +1,6 @@
---- crypt/keymgmt.c.orig	Tue Aug 17 16:56:14 1993
-+++ crypt/keymgmt.c	Tue Dec 28 20:01:38 1999
-@@ -495,11 +495,24 @@
+--- crypt/keymgmt.c.orig	1993-08-17 21:56:14 UTC
++++ crypt/keymgmt.c
+@@ -495,11 +495,24 @@ BOOLEAN getKey( const BOOLEAN isPemKey, 
  	FD keyFileFD, savedInFD = getInputFD();
  	BOOLEAN matched, firstTime = TRUE;
  	char *matchID, firstChar;

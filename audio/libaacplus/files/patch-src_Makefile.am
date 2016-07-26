@@ -1,6 +1,6 @@
---- src/Makefile.am.orig	2010-11-11 06:27:41.000000000 +0900
-+++ src/Makefile.am	2014-05-22 07:32:03.000000000 +0900
-@@ -206,14 +206,14 @@
+--- src/Makefile.am.orig	2010-11-10 21:27:41 UTC
++++ src/Makefile.am
+@@ -206,14 +206,14 @@ $(library_sources_used):
  	$(MAKE) unpack_3gp_sources
  
  $(srcdir)/FloatFR_aacPlusenc:

@@ -1,6 +1,6 @@
---- ./mixer.c.orig	1996-11-07 11:00:26.000000000 -0500
-+++ ./mixer.c	2012-01-07 00:24:32.000000000 -0500
-@@ -124,7 +124,7 @@
+--- mixer.c.orig	1996-11-07 16:00:26 UTC
++++ mixer.c
+@@ -124,7 +124,7 @@ STATIC ctlinfo_t	ctlsav;		/* Saved state
   *	Nothing
   */
  STATIC void

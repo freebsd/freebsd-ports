@@ -1,5 +1,5 @@
---- src/aomodule.h.orig	2010-06-06 18:45:10.000000000 +0200
-+++ src/aomodule.h	2010-06-06 18:45:25.000000000 +0200
+--- src/aomodule.h.orig	2003-07-24 06:58:07 UTC
++++ src/aomodule.h
 @@ -9,6 +9,7 @@
  typedef struct {
    PyObject_HEAD

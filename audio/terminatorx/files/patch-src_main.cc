@@ -1,5 +1,5 @@
---- src/main.cc.orig	Thu Aug 21 06:41:24 2003
-+++ src/main.cc	Sat Aug 23 04:52:05 2003
+--- src/main.cc.orig	2011-01-30 21:01:30 UTC
++++ src/main.cc
 @@ -33,7 +33,7 @@
      4 October 1999: Rewrite ;) - back to C++
  */

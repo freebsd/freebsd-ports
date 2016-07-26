@@ -1,6 +1,6 @@
---- extract.cpp.orig	2009-06-30 09:18:53.000000000 +0300
-+++ extract.cpp	2009-07-09 10:02:21.000000000 +0300
-@@ -354,6 +354,7 @@
+--- extract.cpp.orig	2010-03-15 06:30:52 UTC
++++ extract.cpp
+@@ -354,6 +354,7 @@ bool CmdExtract::ExtractCurrentFile(Comm
      char CurVolName[NM];
      strcpy(CurVolName,ArcName);
  

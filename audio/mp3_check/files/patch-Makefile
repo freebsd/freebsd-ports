@@ -11,7 +11,7 @@
  OBJS = 	mp3_check.o \
  	mp3_check_misc.o
  
-@@ -21,7 +21,7 @@
+@@ -21,7 +21,7 @@ trim: 	$(OBJS)
  	cat MILESTONE.INTRO
  
  install: all

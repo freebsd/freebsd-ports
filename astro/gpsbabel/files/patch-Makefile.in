@@ -1,4 +1,4 @@
---- Makefile.in.orig
+--- Makefile.in.orig	2016-01-03 02:09:17 UTC
 +++ Makefile.in
 @@ -148,10 +148,10 @@ toolinfo
  all: gpsbabel$(EXEEXT)

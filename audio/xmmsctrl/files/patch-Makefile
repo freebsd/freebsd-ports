@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Apr  2 15:00:12 2004
-+++ Makefile	Sun Oct  2 01:30:57 2005
-@@ -6,17 +6,15 @@
+--- Makefile.orig	2004-04-02 13:00:12 UTC
++++ Makefile
+@@ -6,17 +6,15 @@ TARGET   := xmmsctrl
  VERSION  := 1.8
  DIRNAME  := $(shell basename $(PWD))
  
@@ -8,9 +8,8 @@
  WARN     := -Wall -Wshadow -Wmissing-prototypes -W
  DEFS     := -DPRETTY_PRINT -D_GNU_SOURCE -DVERSION=\"$(VERSION)\"
 -CFLAGS   := $(WARN) -O2 $(shell xmms-config --cflags) $(DEFS)
--LDFLAGS  := $(shell xmms-config --libs)
 +CFLAGS   += $(WARN) $(shell xmms-config --cflags) $(DEFS)
-+LDFLAGS  := $(shell xmms-config --libs)
+ LDFLAGS  := $(shell xmms-config --libs)
  
 -all : $(TARGET) HELP
 +all : $(TARGET)

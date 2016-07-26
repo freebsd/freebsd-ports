@@ -1,4 +1,4 @@
---- configure.in.orig	1994-11-08 13:30:51.000000000 +0000
+--- configure.in.orig	1994-11-08 13:30:51 UTC
 +++ configure.in
 @@ -11,7 +11,8 @@ hplay=dummy
  dbm=none

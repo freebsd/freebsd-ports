@@ -1,5 +1,5 @@
---- hpacklib.h.orig	Thu Aug  5 04:10:40 1993
-+++ hpacklib.h	Tue Dec 28 20:01:38 1999
+--- hpacklib.h.orig	1993-08-05 09:10:40 UTC
++++ hpacklib.h
 @@ -26,12 +26,12 @@
  
  #include <stdio.h>					/* Prototypes for generic functions */

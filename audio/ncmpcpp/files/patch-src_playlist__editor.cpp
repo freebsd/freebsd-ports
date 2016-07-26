@@ -1,4 +1,4 @@
---- src/playlist_editor.cpp.orig	2015-11-04 20:01:29 UTC
+--- src/playlist_editor.cpp.orig	2016-04-17 05:41:01 UTC
 +++ src/playlist_editor.cpp
 @@ -39,6 +39,7 @@
  #include "utility/comparators.h"

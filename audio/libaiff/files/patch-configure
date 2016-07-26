@@ -1,6 +1,6 @@
---- configure.orig	2014-01-30 12:04:02.000000000 +0100
-+++ configure	2014-01-30 12:04:11.000000000 +0100
-@@ -645,6 +645,7 @@
+--- configure.orig	2007-09-20 19:42:28 UTC
++++ configure
+@@ -645,6 +645,7 @@ libdir
  localedir
  mandir
  DEFS

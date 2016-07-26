@@ -1,6 +1,6 @@
---- gui.c.orig	Thu Feb 20 15:43:08 2003
-+++ gui.c	Thu Feb 20 15:43:21 2003
-@@ -2261,7 +2261,6 @@
+--- gui.c.orig	2007-11-03 18:20:09 UTC
++++ gui.c
+@@ -2425,7 +2425,6 @@ GLOBALFUN int main(int argc, char *argv[
      }
      else
      {

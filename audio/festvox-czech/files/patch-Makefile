@@ -1,6 +1,6 @@
---- ./Makefile.orig	2005-10-05 13:30:55.000000000 +0200
-+++ ./Makefile	2014-04-06 19:24:31.351531891 +0200
-@@ -53,11 +53,11 @@
+--- Makefile.orig	2005-10-05 11:30:55 UTC
++++ Makefile
+@@ -53,11 +53,11 @@ distclean: clean
  maintainer-clean: distclean
  
  install: group/ph.group festvox/czech_ph.scm

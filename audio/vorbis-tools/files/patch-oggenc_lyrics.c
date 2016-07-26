@@ -1,5 +1,5 @@
---- oggenc/lyrics.c.orig	2010-06-05 17:00:07.000000000 +0200
-+++ oggenc/lyrics.c	2010-06-05 17:00:17.000000000 +0200
+--- oggenc/lyrics.c.orig	2010-01-22 06:28:06 UTC
++++ oggenc/lyrics.c
 @@ -16,7 +16,7 @@
  #endif
  

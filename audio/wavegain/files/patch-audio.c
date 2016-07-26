@@ -1,5 +1,5 @@
---- audio.c.orig	2009-02-14 06:54:45.932023788 +0800
-+++ audio.c	2009-02-14 06:55:01.958134649 +0800
+--- audio.c.orig	2016-07-26 16:16:05 UTC
++++ audio.c
 @@ -32,20 +32,8 @@
  #include <sys/types.h>
  #include <math.h>

@@ -1,6 +1,6 @@
---- configure.orig	2002-10-09 03:30:34.000000000 +0200
-+++ configure	2013-12-18 12:38:19.000000000 +0100
-@@ -5699,7 +5699,6 @@
+--- configure.orig	2002-10-09 01:30:34 UTC
++++ configure
+@@ -5699,7 +5699,6 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtoo
  
  
  

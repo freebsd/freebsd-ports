@@ -1,6 +1,6 @@
---- lib-src/lv2/configure	2016-01-08 14:05:48.000000000 -0800
-+++ lib-src/lv2/configure	2016-01-27 17:18:31.280753000 -0800
-@@ -54,7 +54,7 @@
+--- lib-src/lv2/configure.orig	2016-01-08 22:05:48 UTC
++++ lib-src/lv2/configure
+@@ -54,7 +54,7 @@ includedir=.
  Name: ${pkg}
  Version: ${version}
  Description: Temporary fake config file
@@ -8,3 +8,4 @@
 +Libs: -L\${libdir} ${lib} -lm
  Cflags: -I\${includedir}/${pkg}${major}
  EOF
+ 

@@ -1,6 +1,6 @@
---- Makefile	Tue Jun 13 07:21:19 2000
-+++ Makefile	Tue Jun 20 17:44:24 2000
-@@ -14,20 +15,30 @@
+--- Makefile.orig	2000-06-13 04:21:19 UTC
++++ Makefile
+@@ -14,23 +14,33 @@ OBJS = inflate.o url.o url_file.o url_in
         url_hqxdecode.o url_qsdecode.o url_news.o url_newsgroup.o url_cgiesc.o \
         arc_mime.o
  
@@ -36,3 +36,6 @@
 +
 +.c.so:
 +	$(CC) $(CFLAGS) -fPIC -fpic -DPIC -c $(.IMPSRC) -o $(.TARGET)
+ install::
+ 	test -d $(PREFIX)/lib || mkdir -p $(PREFIX)/lib
+ 	$(INSTALL) -m 444 $(LIB) $(PREFIX)/lib

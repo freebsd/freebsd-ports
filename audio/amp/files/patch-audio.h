@@ -1,5 +1,5 @@
---- audio.h	Thu Aug 21 10:00:18 1997
-+++ audio.h	Wed Apr 13 00:21:47 2005
+--- audio.h.orig	1997-08-21 13:00:18 UTC
++++ audio.h
 @@ -9,6 +9,7 @@
  #include <stdio.h>
  
@@ -8,7 +8,7 @@
  	int ID;
  	int layer;
  	int protection_bit;
-@@ -55,8 +56,8 @@
+@@ -55,8 +56,8 @@ extern void report_header_error(int err)
  
  extern int scalefac_l[2][2][22];
  extern int scalefac_s[2][2][13][3];
@@ -19,7 +19,7 @@
  extern short t_bitrate[2][3][15];
  
  extern int is[2][578];
-@@ -64,7 +65,7 @@
+@@ -64,7 +65,7 @@ extern float xr[2][32][18];
  
  extern int *t_l,*t_s;
  extern int nch;
@@ -28,7 +28,7 @@
  
  extern int A_QUIET,A_SHOW_CNT,A_FORMAT_WAVE,A_DUMP_BINARY;
  extern int A_WRITE_TO_AUDIO,A_WRITE_TO_FILE;
-@@ -106,9 +107,14 @@
+@@ -106,9 +107,14 @@ float xr[2][32][18];
  
  int *t_l,*t_s;
  int nch;
@@ -46,7 +46,7 @@
  };
  
  /* GUI control stuff */
-@@ -143,28 +149,47 @@
+@@ -143,28 +149,47 @@ short t_bitrate[2][3][15] = {{
  /* the last sfb is given implicitly on pg.28. of the standard. scalefactors 
   * for that one are 0, pretab also 
   */

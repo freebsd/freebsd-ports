@@ -1,5 +1,5 @@
---- configure.ac.orig	2013-07-02 22:51:54.000000000 +0200
-+++ configure.ac	2013-07-11 21:40:55.000000000 +0200
+--- configure.ac.orig	2013-07-02 20:51:54 UTC
++++ configure.ac
 @@ -5,17 +5,10 @@
  
  AC_PREREQ(2.57)
@@ -21,7 +21,7 @@
  
  AC_CANONICAL_TARGET
  AM_INIT_AUTOMAKE(dist-zip)
-@@ -55,8 +48,6 @@
+@@ -55,8 +48,6 @@ if test -z "`echo ${LDFLAGS} | grep ${tm
  fi
  
  # set posix source on linux

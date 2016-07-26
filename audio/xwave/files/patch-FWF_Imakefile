@@ -13,9 +13,9 @@
    to do a final 'ar' of all OBJS after all of them are build. This
    can be done by adding an auxiliary target in FWF/Imakefile.
 
---- FWF/Imakefile.orig	Mon Nov  9 00:22:54 1998
-+++ FWF/Imakefile	Mon Jan  1 15:47:50 2001
-@@ -9,14 +9,25 @@
+--- FWF/Imakefile.orig	1998-11-08 23:22:54 UTC
++++ FWF/Imakefile
+@@ -9,14 +9,25 @@ ALLDIRS = $(INITIALDIRS) include/Xfwf li
  MakeDirectories(all,$(ALLDIRS))
  
  InitSubdirs($(SUBDIRS))

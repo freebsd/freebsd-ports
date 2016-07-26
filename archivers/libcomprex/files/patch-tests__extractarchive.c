@@ -1,5 +1,5 @@
---- tests/extractarchive.c.orig	Fri Dec 20 08:03:40 2002
-+++ tests/extractarchive.c	Mon Jun 23 13:16:14 2003
+--- tests/extractarchive.c.orig	2002-12-19 23:03:40 UTC
++++ tests/extractarchive.c
 @@ -37,7 +37,9 @@
  void
  __extractprogress(CxArchive *archive, CxFile *file, size_t onFile, size_t fileCount)

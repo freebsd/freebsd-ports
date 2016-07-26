@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jun 11 07:59:00 2003
-+++ Makefile	Wed Jun 11 08:00:47 2003
+--- Makefile.orig	2003-06-05 14:38:33 UTC
++++ Makefile
 @@ -1,16 +1,19 @@
 -opzioni=-O3
 +CFLAGS ?= ${CFLAGS}

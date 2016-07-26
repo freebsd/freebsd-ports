@@ -1,4 +1,4 @@
---- sys/melder.h.orig	2015-03-22 17:29:26 UTC
+--- sys/melder.h.orig	2015-05-20 01:47:31 UTC
 +++ sys/melder.h
 @@ -51,6 +51,8 @@
  	#define INT54_MIN  -9007199254740991LL

@@ -1,5 +1,5 @@
---- nevlib/Makefile.in.orig	2001-07-29 02:09:13.000000000 -0300
-+++ nevlib/Makefile.in	2009-09-20 11:11:06.000000000 -0300
+--- nevlib/Makefile.in.orig	2001-07-29 05:09:13 UTC
++++ nevlib/Makefile.in
 @@ -1,6 +1,6 @@
  CC = @CC@
  

@@ -1,6 +1,6 @@
---- src/mumble/mumble.pro.orig	2013-06-04 11:46:38.900573055 -0500
-+++ src/mumble/mumble.pro	2013-06-04 11:47:41.836576507 -0500
-@@ -161,7 +161,16 @@
+--- src/mumble/mumble.pro.orig	2014-08-08 15:51:59 UTC
++++ src/mumble/mumble.pro
+@@ -161,7 +161,16 @@ unix {
  
    CONFIG *= link_pkgconfig
  

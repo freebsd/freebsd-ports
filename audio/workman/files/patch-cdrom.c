@@ -1,6 +1,6 @@
---- cdrom.c.orig	1997-06-15 10:05:03.000000000 +0200
-+++ cdrom.c	2013-10-16 13:14:49.440566031 +0200
-@@ -531,7 +531,7 @@
+--- cdrom.c.orig	1997-06-15 08:05:03 UTC
++++ cdrom.c
+@@ -531,7 +531,7 @@ find_trkind(track, index, start)
  	int	top = 0, bottom, current, interval, ret = 0, i;
  
  	if (cur_cdmode == EJECTED || cd == NULL)

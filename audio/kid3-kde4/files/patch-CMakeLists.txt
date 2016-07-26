@@ -1,8 +1,8 @@
---- ./CMakeLists.txt.orig	2013-10-29 17:19:33.000000000 +0000
-+++ ./CMakeLists.txt	2013-11-12 15:45:23.799504953 +0000
-@@ -110,8 +110,8 @@
-     set(WITH_TRANSLATIONSDIR_DEFAULT "share/kid3-qt/translations")
+--- CMakeLists.txt.orig	2015-09-30 06:40:08 UTC
++++ CMakeLists.txt
+@@ -137,8 +137,8 @@ else (APPLE)
    endif (BUILD_KDE_APP OR BUILD_SHARED_LIBS)
+   set(WITH_QMLDIR_DEFAULT "share/kid3/qml")
    set(WITH_BINDIR_DEFAULT "bin")
 -  set(WITH_LIBDIR_DEFAULT "lib${LIB_SUFFIX}/kid3")
 -  set(WITH_PLUGINSDIR_DEFAULT "${WITH_LIBDIR_DEFAULT}/plugins")

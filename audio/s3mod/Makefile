@@ -14,7 +14,7 @@ COMMENT=	MOD/S3M player
 ALL_TARGET=	freebsd
 PLIST_FILES=	bin/s3mod
 
-pre-patch:
+post-extract:
 	@${CP} ${WRKSRC}/DspDrivers/linux_dsp.c ${WRKSRC}/dsp.c
 
 do-install:

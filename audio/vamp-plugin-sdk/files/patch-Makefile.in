@@ -1,6 +1,6 @@
---- Makefile.in.orig	2011-11-24 13:27:03 UTC
+--- Makefile.in.orig	2015-06-22 08:28:58 UTC
 +++ Makefile.in
-@@ -87,11 +87,11 @@ INSTALL_HOSTSDK_LINK_DEV  = libvamp-host
+@@ -90,11 +90,11 @@ INSTALL_HOSTSDK_LINK_DEV  = libvamp-host
  INSTALL_HOSTSDK_STATIC    = libvamp-hostsdk.a
  INSTALL_HOSTSDK_LA        = libvamp-hostsdk.la
  
@@ -14,7 +14,7 @@
  SDK_DYNAMIC_LDFLAGS	= $(DYNAMIC_LDFLAGS) -Wl,-soname=$(INSTALL_SDK_LINK_ABI)
  HOSTSDK_DYNAMIC_LDFLAGS	= $(DYNAMIC_LDFLAGS) -Wl,-soname=$(INSTALL_HOSTSDK_LINK_ABI)
  
-@@ -288,18 +288,6 @@ install:	$(SDK_STATIC) $(SDK_DYNAMIC) $(
+@@ -298,18 +298,6 @@ install:	$(SDK_STATIC) $(SDK_DYNAMIC) $(
  		> $(DESTDIR)$(INSTALL_PKGCONFIG)/vamp-sdk.pc
  		sed "s,%PREFIX%,$(INSTALL_PREFIX)," $(PCDIR)/vamp-hostsdk.pc.in \
  		> $(DESTDIR)$(INSTALL_PKGCONFIG)/vamp-hostsdk.pc

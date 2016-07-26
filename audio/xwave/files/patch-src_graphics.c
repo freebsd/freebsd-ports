@@ -1,5 +1,5 @@
---- src/graphics.c.orig	Mon Nov  9 08:22:55 1998
-+++ src/graphics.c	Fri Jun 30 19:49:18 2000
+--- src/graphics.c.orig	1998-11-08 23:22:55 UTC
++++ src/graphics.c
 @@ -30,7 +30,7 @@
  
  #ifdef linux
@@ -9,7 +9,7 @@
  #include <machine/endian.h>
  #elif defined (sgi)
  #include <sys/endian.h>
-@@ -1476,7 +1476,7 @@
+@@ -1476,7 +1476,7 @@ void expose_action (Widget w, Main_Data 
      if (md->mb->exposing) return;
      */
      
@@ -18,7 +18,7 @@
      if (resizing) {
  	resizing=FALSE;
  	return;
-@@ -1532,7 +1532,7 @@
+@@ -1532,7 +1532,7 @@ Next_Wave *get_nw(Main_Data *md,Widget w
  
  void expose_canvas (Widget w, Main_Data *md, XExposeEvent *event, Boolean *flg)
  {

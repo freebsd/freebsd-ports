@@ -18,7 +18,7 @@ RPMVERSION=	4.fc10
 SRC_DISTFILES=	${PORTNAME:S/-libs//}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 USE_LDCONFIG=	yes
 
-pre-patch:
+post-extract:
 	@(cd ${WRKSRC}/etc/pulse && ${MV} client.conf client.conf.sample)
 
 post-patch:

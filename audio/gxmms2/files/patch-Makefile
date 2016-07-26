@@ -1,5 +1,5 @@
---- Makefile.orig	2009-01-04 19:30:38.000000000 +0100
-+++ Makefile	2013-12-15 22:56:10.004889065 +0100
+--- Makefile.orig	2009-01-04 18:30:38 UTC
++++ Makefile
 @@ -1,8 +1,6 @@
  # Makefile for gxmms2 and gkrellxmms2
  
@@ -9,7 +9,7 @@
  
  ALLFILES=gkrellxmms2/*.c gkrellxmms2/*.h gkrellxmms2/*.xpm gmedialib/*.c gmedialib/*.h gmedialib/*.xpm gtrackinfo/*.c gtrackinfo/*.h gxmms2src/*.c gxmms2src/*.h gxmms2src/*.xpm sdecode/*.c sdecode/*.h xmms2ctrl/*.c xmms2ctrl/*.h Makefile README COPYING CHANGELOG
  
-@@ -13,7 +11,7 @@
+@@ -13,7 +11,7 @@ XMMS2_LIB=$(shell pkg-config xmms2-clien
  
  CFLAGS ?= -O2
  CFLAGS := -Wall -fPIC $(GTK_CFLAGS) $(XMMS2_CFLAGS) -I. $(CFLAGS)

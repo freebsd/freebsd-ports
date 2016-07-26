@@ -1,6 +1,6 @@
---- ./reedsolomon.cpp.orig	Tue May 27 02:01:31 2003
-+++ ./reedsolomon.cpp	Fri Mar 23 00:49:59 2007
-@@ -51,7 +51,7 @@
+--- reedsolomon.cpp.orig	2003-05-26 18:01:31 UTC
++++ reedsolomon.cpp
+@@ -51,7 +51,7 @@ u32 gcd(u32 a, u32 b)
    }
  }
  
@@ -9,7 +9,7 @@
  {
    inputcount = (u32)present.size();
  
-@@ -80,7 +80,7 @@
+@@ -80,7 +80,7 @@ bool ReedSolomon<Galois8>::SetInput(cons
    return true;
  }
  
@@ -18,7 +18,7 @@
  {
    inputcount = count;
  
-@@ -101,7 +101,7 @@
+@@ -101,7 +101,7 @@ bool ReedSolomon<Galois8>::SetInput(u32 
    return true;
  }
  
@@ -27,7 +27,7 @@
  {
    // Look up the appropriate element in the RS matrix
    Galois8 factor = leftmatrix[outputindex * (datapresent + datamissing) + inputindex];
-@@ -189,7 +189,7 @@
+@@ -189,7 +189,7 @@ bool ReedSolomon<Galois8>::Process(size_
  
  // Set which of the source files are present and which are missing
  // and compute the base values to use for the vandermonde matrix.
@@ -36,7 +36,7 @@
  {
    inputcount = (u32)present.size();
  
-@@ -233,7 +233,7 @@
+@@ -233,7 +233,7 @@ bool ReedSolomon<Galois16>::SetInput(con
  
  // Record that the specified number of source files are all present
  // and compute the base values to use for the vandermonde matrix.
@@ -45,7 +45,7 @@
  {
    inputcount = count;
  
-@@ -267,7 +267,7 @@
+@@ -267,7 +267,7 @@ bool ReedSolomon<Galois16>::SetInput(u32
    return true;
  }
  

@@ -1,6 +1,6 @@
---- audio.c	Sat Aug 23 08:30:21 1997
-+++ audio.c	Wed Apr 13 00:22:25 2005
-@@ -56,7 +56,7 @@
+--- audio.c.orig	1997-08-23 11:30:21 UTC
++++ audio.c
+@@ -56,7 +56,7 @@ void statusDisplay(struct AUDIO_HEADER *
  		msg("{ %d } ",frameNo);
  	}
  	if (A_SHOW_TIME && !(frameNo%10)) {
@@ -9,7 +9,7 @@
  		minutes=seconds/60;
  		seconds=seconds % 60;
  		msg("[%d:%02d]",minutes,seconds);
-@@ -245,10 +245,6 @@
+@@ -245,10 +245,6 @@ void report_header_error(int err)
  	switch (err) {
  		case GETHDR_ERR: die("error reading mpeg bitstream. exiting.\n");
  					break;
@@ -20,7 +20,7 @@
  		case GETHDR_FL1: warn("ISO/MPEG layer 1 is not supported by amp (yet).\n");
  					break;
  		case GETHDR_FF : warn("free format bitstreams are not supported. sorry.\n");
-@@ -268,10 +264,10 @@
+@@ -268,10 +264,10 @@ int setup_audio(struct AUDIO_HEADER *hea
  {
  	if (A_AUDIO_PLAY)  
  		if (AUDIO_BUFFER_SIZE==0)

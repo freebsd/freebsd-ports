@@ -1,5 +1,5 @@
---- cftypes.cpp.orig	1999-10-24 02:13:29.000000000 -0400
-+++ cftypes.cpp	2014-02-21 16:06:43.971192116 -0500
+--- cftypes.cpp.orig	1999-10-24 06:13:29 UTC
++++ cftypes.cpp
 @@ -10,11 +10,20 @@
  #ifndef __CFTYPES_CPP__
  #define __CFTYPES_CPP__
@@ -23,7 +23,7 @@
  /******************************************************************************/
  
  int convert_z_error_code(int code)
-@@ -138,15 +147,20 @@
+@@ -138,15 +147,20 @@ const char* get_cabinet_error_string(int
  
  int io_read(istream& in, byte* buf, word len)
  {
@@ -49,7 +49,7 @@
  		? (in.fail()) ? READ_ERROR : UNEXPECTED_EOF : OK;
  }
  
-@@ -154,14 +168,19 @@
+@@ -154,14 +168,19 @@ int io_read(istream& in, byte* buf, word
  
  int io_write(ostream& out, const byte* buf, word len)
  {

@@ -1,6 +1,6 @@
---- cli.c.orig	Sat Sep  4 22:23:48 1993
-+++ cli.c	Tue Dec 28 20:01:38 1999
-@@ -724,12 +724,18 @@
+--- cli.c.orig	1993-09-05 03:23:48 UTC
++++ cli.c
+@@ -724,12 +724,18 @@ static BOOLEAN checkStealthMode( char *a
  
  void doConfigFile( void )
  	{

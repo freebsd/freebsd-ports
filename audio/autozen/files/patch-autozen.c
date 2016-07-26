@@ -1,5 +1,5 @@
---- ./autozen.c.orig	2001-09-16 04:09:04.000000000 +0200
-+++ ./autozen.c	2012-08-24 12:22:50.546913397 +0200
+--- autozen.c.orig	2001-09-16 02:09:04 UTC
++++ autozen.c
 @@ -27,7 +27,7 @@
   
  /* "The nice thing about standards..." */
@@ -9,7 +9,7 @@
  #else
  #if defined (__NetBSD__) || defined (__OpenBSD__)
  #include <soundcard.h>          /* OSS emulation */
-@@ -113,7 +113,7 @@
+@@ -113,7 +113,7 @@ char bQuit=0;
  //
  /////////////////////////////////
  
@@ -18,7 +18,7 @@
  
  #define MAX_HARMONICS 10
  #define DEFAULT_HARMONICS 3
-@@ -253,7 +253,7 @@
+@@ -253,7 +253,7 @@ void Play (GtkWidget *widget, gpointer d
  }
  
  
@@ -27,7 +27,7 @@
  {
  char *token;
  int tmp;
-@@ -672,7 +672,7 @@
+@@ -672,7 +672,7 @@ void *SoundThread(void *v)
  
  	}	// end while		
  
@@ -36,7 +36,7 @@
  }
  
  gint volTimeOut(gpointer data) {
-@@ -729,6 +729,11 @@
+@@ -729,6 +729,11 @@ GtkWidget *create_HelpWindow (const char
  	GtkWidget *help_text;
  	GtkWidget *HelpQuit;
  
@@ -48,7 +48,7 @@
  	HelpWindow = gtk_window_new (GTK_WINDOW_TOPLEVEL);
  	gtk_object_set_data (GTK_OBJECT (HelpWindow), "HelpWindow", HelpWindow);
  	gtk_window_set_title (GTK_WINDOW (HelpWindow), "AutoZen Help");
-@@ -740,9 +745,16 @@
+@@ -740,9 +745,16 @@ GtkWidget *create_HelpWindow (const char
  	gtk_widget_show (vbox1);
  	gtk_container_add (GTK_CONTAINER (HelpWindow), vbox1);
  
@@ -65,7 +65,7 @@
  
  
  	gtk_object_set_data (GTK_OBJECT (HelpWindow), "help_text", help_text);
-@@ -751,7 +763,11 @@
+@@ -751,7 +763,11 @@ GtkWidget *create_HelpWindow (const char
  //	gtk_widget_set_sensitive (help_text, FALSE);
  	GTK_WIDGET_UNSET_FLAGS (help_text, GTK_CAN_FOCUS);
  	gtk_widget_realize (help_text);

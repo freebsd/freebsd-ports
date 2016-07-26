@@ -1,6 +1,6 @@
---- Makefile.orig	2002-04-28 06:30:35.000000000 -0700
-+++ Makefile	2010-03-19 11:07:59.000000000 -0700
-@@ -13,7 +13,7 @@
+--- Makefile.orig	2002-04-28 13:30:35 UTC
++++ Makefile
+@@ -13,7 +13,7 @@ OGG_CFLAGS=-DHAVE_OGG123
  SOX_CFLAGS=-DHAVE_SOX
  
  #uncomment _one_ of these for midi support
@@ -9,7 +9,7 @@
  #MID_CFLAGS=-DHAVE_PLAYMIDI
  
  #uncomment these two lines if you have lirc
-@@ -24,7 +24,7 @@
+@@ -24,7 +24,7 @@ MID_CFLAGS=-DHAVE_DRVMIDI
  #LOG_CFLAGS=-DLOG_DIR_S=\"/tmp\"
  
  #set install dirs here
@@ -18,7 +18,7 @@
  BINDIR=$(INSTDIR)/bin
  
  #####################################################################
-@@ -33,7 +33,7 @@
+@@ -33,7 +33,7 @@ BINDIR=$(INSTDIR)/bin
  PROGNAME=mcplay
  VERSION=0.3i
  DISTDIR=$(PROGNAME)-$(VERSION)
@@ -27,7 +27,7 @@
  TARGET=mcplay
  OBJECTS=mcplay.o \
          screen.o \
-@@ -48,7 +48,7 @@
+@@ -48,7 +48,7 @@ OBJECTS=mcplay.o \
  
  DATA=Makefile COPYING
  
@@ -36,7 +36,7 @@
  MY_LFLAGS=
  
  PLAYER_CFLAGS=$(MPG_CFLAGS) $(OGG_CFLAGS) $(SOX_CFLAGS) $(MID_CFLAGS)
-@@ -60,7 +60,7 @@
+@@ -60,7 +60,7 @@ GLIB_LFLAGS=`glib-config --libs`
  NCURSES_CFLAGS=
  NCURSES_LFLAGS=-lncurses
  

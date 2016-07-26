@@ -1,6 +1,6 @@
---- btnlib/border.c.orig	Fri May  5 00:21:13 1995
-+++ btnlib/border.c	Fri Jun 29 11:08:51 2007
-@@ -35,6 +35,10 @@
+--- btnlib/border.c.orig	1995-05-04 17:21:13 UTC
++++ btnlib/border.c
+@@ -35,6 +35,10 @@ static char SccsId[] = "%W%  %G%";
   * Note:	For each byte, bit 0 (0x01) appears on the left.
   * Note:	For each byte, bit 7 (0x80) appears on the right.
   */
@@ -11,7 +11,7 @@
  void btn_MakeBdrBitmap ( buttonmap, width, height, byte_width, form, inverse )
       unsigned char *buttonmap;	/* i,o: pointer to bitmap of button */
       int width, height;		/* i: dimensions of button window (to cover) */
-@@ -52,8 +56,6 @@
+@@ -52,8 +56,6 @@ void btn_MakeBdrBitmap ( buttonmap, widt
    int right_form_bit;		/* l: bit in first right form byte to use */
    int right_bdr_byte;		/* l: index of first line byte for right bdr */
    int right_bdr_bit;		/* l: bit in first line byte for right bdr */
@@ -20,7 +20,7 @@
  
    /* portion of pattern form used (clip overlap if button very small) */
    /* middle overlap on odd size counted for height, omitted for width */
-@@ -119,6 +121,9 @@
+@@ -119,6 +121,9 @@ void btn_MakeBdrBitmap ( buttonmap, widt
   * Subroutine:	btn_MakeBdrLine
   * Purpose:	set the bits for one line of the button's border
   */
@@ -30,7 +30,7 @@
  static void btn_MakeBdrLine ( line, form, byte_width, inverse,
  			      right_bdr_byte, right_bdr_bit,
  			      right_form_byte, right_form_bit )
-@@ -131,7 +136,6 @@
+@@ -131,7 +136,6 @@ static void btn_MakeBdrLine ( line, form
       int right_bdr_byte;	/* l: index of first line byte for right bdr */
       int right_bdr_bit;		/* l: bit in first line byte for right bdr */
  {
@@ -38,9 +38,9 @@
    /* copy in top left, store reverse for top right */
    *line = *form;
    *(line+1) = *(++form);
---- btnlib/create.c.orig	Sun Apr 29 04:17:46 1990
-+++ btnlib/create.c	Fri Jun 29 11:09:21 2007
-@@ -53,6 +53,9 @@
+--- btnlib/create.c.orig	1990-04-28 20:17:46 UTC
++++ btnlib/create.c
+@@ -53,6 +53,9 @@ static GC def_gc = NULL;
   * Note:	Buttonboxes must later be combined into menus and panels
   * Note:	Call TouchButton to activate buttons and submenus when ready
   */
@@ -50,7 +50,7 @@
  ButtonBox MakeButtonBox ( parent, gc, visual, background, geo, defs, borders )
       BoxParent *parent;		/* i: Parent window info */
       GC gc;			/* i: graphics context for drawing labels */
-@@ -70,7 +73,6 @@
+@@ -70,7 +73,6 @@ ButtonBox MakeButtonBox ( parent, gc, vi
    int x, y;			/* l: coordinates of box in parent */
    int i;			/* l: loop counter */
    char *btn_Alloc();
@@ -58,9 +58,9 @@
    void btn_LabelButtons(), btn_Dimensions();
  
    /* allocate the space for the new record */
---- btnlib/draw.c.orig	Sat Jun 22 06:40:21 1991
-+++ btnlib/draw.c	Fri Jun 29 11:06:53 2007
-@@ -103,11 +103,13 @@
+--- btnlib/draw.c.orig	1991-06-21 23:40:21 UTC
++++ btnlib/draw.c
+@@ -103,11 +103,13 @@ void btn_PutImage ( button, phase )
   * Xlib calls:	none
   * Method:	Dim this box and all co-menu boxes
   */
@@ -75,7 +75,7 @@
  
    btn_DimButtons(buttonbox);
    for( i=0; i < buttonbox->co_menu_count; i++ ) {
-@@ -153,11 +155,13 @@
+@@ -153,11 +155,13 @@ static void btn_DimButtons ( buttonbox )
   * Uses:	btn_LightButtons() below
   * Xlib calls:	none
   */
@@ -90,9 +90,9 @@
  
    btn_LightButtons(buttonbox);
    for( i=0; i < buttonbox->co_menu_count; i++ ) {
---- btnlib/event.c.orig	Fri May  5 00:27:33 1995
-+++ btnlib/event.c	Fri Jun 29 11:07:53 2007
-@@ -52,12 +52,14 @@
+--- btnlib/event.c.orig	1995-05-04 17:27:33 UTC
++++ btnlib/event.c
+@@ -52,12 +52,14 @@ static int select_size=0;
   *		with their active submenus.
   * Note:	Must be called with a buttonbox at the base of the menu tree
   */
@@ -108,7 +108,7 @@
  
    /* is the event in the primary buttonbox (or its sub-menus) */
    if( btn_Event(buttonbox, event) != 0 ) {
-@@ -139,6 +141,10 @@
+@@ -139,6 +141,10 @@ static int btn_Event ( buttonbox, event 
   *		with their active submenus.
   * Note:	Must be called with a buttonbox at the base of the menu tree
   */
@@ -119,7 +119,7 @@
  int ButtonControl ( buttonbox, event, response )
       ButtonBox buttonbox;	/* i: top handle for button menu group */
       XEvent *event;		/* i: pointer to filled event record */
-@@ -147,8 +153,6 @@
+@@ -147,8 +153,6 @@ int ButtonControl ( buttonbox, event, re
    int status;		/* o: reason for return code (-1,0,1) */
    int not_found;	/* l: event search status */
    int i;		/* l: loop counter */
@@ -128,7 +128,7 @@
  
    status = 1;
    *response = NULL;
-@@ -206,6 +210,9 @@
+@@ -206,6 +210,9 @@ int ButtonControl ( buttonbox, event, re
   *		until one fields it.  If still not, return NULL, else (it
   *		was fielded) get the next event and loop again.
   */
@@ -138,7 +138,7 @@
  static int btn_Control ( buttonbox, event, response )
       ButtonBox buttonbox;	/* i: top handle for button menu tree */
       XEvent *event;		/* i: pointer to filled event record */
-@@ -218,7 +225,6 @@
+@@ -218,7 +225,6 @@ static int btn_Control ( buttonbox, even
    int type;		/* l: temp for button response type */
    int id;		/* l: temp for button id */
    int mask[2];		/* l: temp store for select mask (select changes it) */
@@ -146,9 +146,9 @@
    int btn_PushButton();
    void btn_PutImage(), btn_DrawButton(), btn_ReleaseButton();
  
---- btnlib/image.c.orig	Sun Aug  4 05:42:11 1991
-+++ btnlib/image.c	Fri Jun 29 11:10:36 2007
-@@ -38,6 +38,9 @@
+--- btnlib/image.c.orig	1991-08-03 22:42:11 UTC
++++ btnlib/image.c
+@@ -38,6 +38,9 @@ static char SccsId[] = "%W%  %G%";
   * Post-state:	off_out, off_in, on_out, on_in XImage's set in button record.
   * Exception:	Only labels present are installed.
   */
@@ -158,7 +158,7 @@
  void btn_MakeXImages ( button, width, height, byte_width, visual,
  		       off_out, off_in, on_out, on_in, mapsz, off, on, motf )
       ButtonRecord *button;	/* i: main structure describing button */
-@@ -56,7 +59,6 @@
+@@ -56,7 +59,6 @@ void btn_MakeXImages ( button, width, he
    unsigned char *data;		/* l: pointer to bitmap currently processing */
    XImage *ximage;
    char *btn_Alloc();
@@ -166,7 +166,7 @@
  
  #ifdef ALLIANT
    extern int nbutton;
-@@ -173,6 +175,9 @@
+@@ -173,6 +175,9 @@ void btn_MakeXImages ( button, width, he
   * Exception:	Label is not stenciled if one dimension would be zero.
   * Method:	Get basic alignment parameters and call btn_StencilLabel();
   */
@@ -176,7 +176,7 @@
  static void btn_AddLabel ( label, width, height, byte_width, bitmap, inverse )
       ButtonLabel *label;	/* i: record of label bitmap to stencil in */
       int width;			/* i: width in pixels of button */
-@@ -185,7 +190,6 @@
+@@ -185,7 +190,6 @@ static void btn_AddLabel ( label, width,
    int dst_x, dst_y;	/* l: coords of start of stencil in dst (button) */
    int xwdth;		/* l: width (cols) to stencil */
    int yhght;		/* l: number of lines (rows) to stencil */
@@ -184,9 +184,9 @@
    void btn_StencilLabel();
  
    if( ((xwdth = btn_LabelX(label, width, &src_x, &dst_x)) > 0) &&
---- btnlib/label.c.orig	Fri May  5 00:19:37 1995
-+++ btnlib/label.c	Fri Jun 29 11:09:45 2007
-@@ -42,6 +42,10 @@
+--- btnlib/label.c.orig	1995-05-04 17:19:37 UTC
++++ btnlib/label.c
+@@ -42,6 +42,10 @@ static unsigned char lmask[8] = { 0x01,0
   * Note:	For each byte, bit 0 (0x01) appears on the left.
   * Note:	For each byte, bit 7 (0x80) appears on the right.
   */
@@ -197,19 +197,19 @@
  void btn_StencilLabel ( src, msk, dst, src_byte_width, dst_byte_width,
  		        src_x, src_y, dst_x, dst_y, width, height, inverse )
       unsigned char *src;	/* i: ptr to first byte of pattern */
-@@ -65,9 +69,6 @@
-   unsigned char *last_dst;	/* l: ptr to last byte used in first line */
+@@ -66,9 +70,6 @@ void btn_StencilLabel ( src, msk, dst, s
    int first_mask;		/* l: bit mask, with coded sign (see above) */
    int last_mask;		/* l: bit mask, with coded sign (see above) */
--
+ 
 -  static void btn_Stencil(), btn_StencilInv();
 -  static void btn_StencilAlligned(),btn_StencilAllignedInv();
- 
+-
    /* advance src and msk to their first used bytes */
    byte_offset = (src_y * src_byte_width) + (src_x / 8);
---- btnlib/mount.c.orig	Sat Apr 21 05:56:27 1990
-+++ btnlib/mount.c	Fri Jun 29 11:11:16 2007
-@@ -35,11 +35,13 @@
+   src += byte_offset;
+--- btnlib/mount.c.orig	1990-04-20 21:56:27 UTC
++++ btnlib/mount.c
+@@ -35,11 +35,13 @@ static char SccsId[] = "%W%  %G%";
   * Xlib calls:	none
   * Note:	This routine moves latterally to cover co-menus
   */
@@ -224,7 +224,7 @@
  
    btn_MapButtonbox(buttonbox);
    for( i = 0; i < buttonbox->co_menu_count; i++ )
-@@ -109,6 +111,9 @@
+@@ -109,6 +111,9 @@ static void btn_UnmapButtonbox ( buttonb
   *		map submenus of new button.
   * Note:	Unmapping submenus is harmless if they were not mapped.
   */
@@ -234,7 +234,7 @@
  void btn_ReplaceSubmenus ( buttonbox, btn, op_num, mapping )
       ButtonBox buttonbox;
       int btn;
-@@ -116,7 +121,6 @@
+@@ -116,7 +121,6 @@ void btn_ReplaceSubmenus ( buttonbox, bt
       int mapping;		/* i: switch allows suppression of mapping */
  {
    int i;
@@ -242,7 +242,7 @@
  
    /* clear out the old submenus */
    for( i=0; i < buttonbox->submenu_count; i++ )
-@@ -149,6 +153,9 @@
+@@ -149,6 +153,9 @@ void btn_ReplaceSubmenus ( buttonbox, bt
   * Note:	Requires search through co-menus
   * Note:	Unmapping cosubmenus is harmless if they were not mapped.
   */
@@ -252,7 +252,7 @@
  void btn_ReplaceCosubmenus ( buttonbox, btn, op_num, mapping )
       ButtonBox buttonbox;
       int btn;
-@@ -156,7 +163,6 @@
+@@ -156,7 +163,6 @@ void btn_ReplaceCosubmenus ( buttonbox, 
       int mapping;		/* i: switch allows suppression of mapping */
  {
    int i, j;
@@ -260,9 +260,9 @@
  
    /* check to see if we have the co-mode submenus */
    if( buttonbox->cosubmenu_count > 0 ) {
---- btnlib/resize.c.orig	Sat Apr 21 06:15:57 1990
-+++ btnlib/resize.c	Fri Jun 29 11:11:35 2007
-@@ -33,12 +33,14 @@
+--- btnlib/resize.c.orig	1990-04-20 22:15:57 UTC
++++ btnlib/resize.c
+@@ -33,12 +33,14 @@ static char SccsId[] = "%W%  %G%";
   * Post-state:	All buttonboxes having given parent are resized to fill
   * Method:	Call btn_ChkResize with this menu and then its co-menus.
   */
@@ -278,9 +278,9 @@
  
    /* check this buttonbox */
    btn_ChkResize(buttonbox, parent);
---- clralloc.c.orig	Thu May 13 01:40:45 1999
-+++ clralloc.c	Fri Jun 29 11:12:28 2007
-@@ -39,12 +39,14 @@
+--- clralloc.c.orig	1999-05-12 18:40:45 UTC
++++ clralloc.c
+@@ -39,12 +39,14 @@ static unsigned long overlay_mask;	/* fo
   * Method:	Try for at least min cells in default colormap, if failed
   *		try to create a private colormap.
   */
@@ -297,9 +297,9 @@
  
    if( (color->map.default_permit != NO) &&
        (color->map.default_enable == YES) &&
---- clrctrl.c.orig	Fri Apr 20 22:43:37 1990
-+++ clrctrl.c	Fri Jun 29 11:13:02 2007
-@@ -36,13 +36,15 @@
+--- clrctrl.c.orig	1990-04-20 14:43:37 UTC
++++ clrctrl.c
+@@ -36,13 +36,15 @@ extern struct cgraphRec cgraph;
   * Subroutine:	select_color
   * Purpose:	Things to do when a buttonbox color menu button is selected
   */
@@ -316,7 +316,7 @@
  
    if( control.response[0] == VOP ) {
      switch( control.response[1] ) {
-@@ -218,10 +220,12 @@
+@@ -218,10 +220,12 @@ static void new_color_table ( map_code )
   * Purpose:	Reverse all colors at once (respond to invert button)
   * Xlib call:	XStoreColors()
   */
@@ -330,9 +330,9 @@
  
    /* invert color tables and remake storemap */
    invert_table(&color.ctable.red);
---- clrhard.c.orig	Fri Apr 20 21:54:21 1990
-+++ clrhard.c	Fri Jun 29 11:30:10 2007
-@@ -29,11 +29,13 @@
+--- clrhard.c.orig	1990-04-20 13:54:21 UTC
++++ clrhard.c
+@@ -29,11 +29,13 @@ static char SccsId[] = "%W%  %G%";
   * Subroutine:	init_hard_colors
   * Purpose:	Set up basic hardware colors
   */
@@ -347,7 +347,7 @@
  
    color->hard.red =
      get_hard_color(color->display, colormap, "red", 63000, 0, 0);
-@@ -58,12 +60,14 @@
+@@ -58,12 +60,14 @@ void init_hard_colors ( color, colormap 
   * Subroutine:	lookup_cursor_colors
   * Purpose:	Get color parameters from named cursor colors
   */
@@ -363,7 +363,7 @@
  
    /* update xcolor structs if needed */
    if( init || (color->cur.desired_cur != NULL) ) {
-@@ -90,12 +94,14 @@
+@@ -90,12 +94,14 @@ void lookup_cursor_colors ( color, color
   * Pre-state:	XColor for cur, one, and two, initialized
   * Post-state:	Pixel values for one and two set, that for cur returned.
   */
@@ -379,7 +379,7 @@
  
    if( (color->cur.disp_one =
        alloc_hard_color(color->display, colormap, &color->cur.color_one)) < 0 )
-@@ -113,10 +119,12 @@
+@@ -113,10 +119,12 @@ int alloc_cursor_cell_color ( color, col
   * Subroutine:	free_cursor_cell_color
   * Purpose:	Free cell color overlay colors
   */
@@ -393,9 +393,9 @@
  
    free_readonly_color(color, (int)color->cur.color_one.pixel);
    free_readonly_color(color, (int)color->cur.color_two.pixel);
---- clrinit.c.orig	Sat Dec 15 05:17:55 2001
-+++ clrinit.c	Fri Jun 29 11:30:25 2007
-@@ -38,6 +38,9 @@
+--- clrinit.c.orig	2001-12-14 23:17:55 UTC
++++ clrinit.c
+@@ -38,6 +38,9 @@ static Display *display;
   * Subroutine:	init_color
   * Purpose:	Claim and set up colors (and do any needed initial work)
   */
@@ -405,7 +405,7 @@
  void init_color ( color, init )
       struct colorRec *color;
       int init;
-@@ -46,7 +49,6 @@
+@@ -46,7 +49,6 @@ void init_color ( color, init )
    void exit_errmsg(), init_hard_colors(), init_halftone();
    void free_color_cells(), lookup_cursor_colors(), free_cursor_cell_color();
    void init_overlay_color(), init_cell_color(), init_halftone_color();
@@ -413,9 +413,9 @@
  
    if( init ) {
      display = color->display;
---- clrmenu.c.orig	Sun Apr 29 06:40:14 1990
-+++ clrmenu.c	Fri Jun 29 11:31:13 2007
-@@ -35,14 +35,16 @@
+--- clrmenu.c.orig	1990-04-28 22:40:14 UTC
++++ clrmenu.c
+@@ -35,14 +35,16 @@ EditStruct *color_edit;	/* key to popup 
   * Purpose:	Get a new pre-defined color table and load it for use
   * Returns:	1 if succeeded, else 0
   */
@@ -434,7 +434,7 @@
  
    switch( table_code ) {
    case MOP_Init_A:
-@@ -111,13 +113,15 @@
+@@ -111,13 +113,15 @@ static ColorTable *read_color_file ( )
   * Subroutine: write_color_file
   * Purpose:    Open and write a color table file
   */
@@ -451,7 +451,7 @@
    EditStruct *init_edit_popup();
    int open_output_file();
    void timestamp();
-@@ -189,11 +193,13 @@
+@@ -189,11 +193,13 @@ static void print_one_color ( fp, table 
   * Subroutine:	load_newtable
   * Purpose:	Load an internally stored color table for use
   */
@@ -466,9 +466,9 @@
  
    load_subtable(&ctable->red, &new->red);
    load_subtable(&ctable->green, &new->green);
---- clrread.c.orig	Sun Apr 29 07:30:35 1990
-+++ clrread.c	Fri Jun 29 11:31:49 2007
-@@ -25,6 +25,9 @@
+--- clrread.c.orig	1990-04-28 23:30:35 UTC
++++ clrread.c
+@@ -25,6 +25,9 @@ static char SccsId[] = "%W%  %G%";
   * Subroutine:	parse_color_file
   * Purpose:	Parse values after color identifier
   */
@@ -478,7 +478,7 @@
  int parse_color_file ( fp, ctable, max_entries )
       ColorTable *ctable;
       int max_entries;
-@@ -35,7 +38,6 @@
+@@ -35,7 +38,6 @@ int parse_color_file ( fp, ctable, max_e
    char line[SZ_LINE];
    char cbuf[SZ_LINE];
    struct SubTable *table;
@@ -486,7 +486,7 @@
  
    line_num = 0;
    /* advance to first non-comment line */
-@@ -95,6 +97,9 @@
+@@ -95,6 +97,9 @@ int parse_color_file ( fp, ctable, max_e
   * Purpose:	Read color table entries for one color
   * Note:	Values may start with word "gamma" and its value
   */
@@ -496,7 +496,7 @@
  static int parse_color_table ( fp, line, cbuf, i, len, line_num,
  			       farb, max_entries, color_cnt )
       FILE *fp;
-@@ -110,7 +115,6 @@
+@@ -110,7 +115,6 @@ static int parse_color_table ( fp, line,
    float level, intensity;
    char *level_token, *intensity_token;
    int status, entry;
@@ -504,7 +504,7 @@
    int check_parens();
    char *next_token();
  
-@@ -227,6 +231,9 @@
+@@ -227,6 +231,9 @@ static int parse_color_table ( fp, line,
   *		Negative val if string starts with a number or paren
   *		0 if file ended, or first character was neither char nor num
   */
@@ -514,7 +514,7 @@
  static int advance_to_ascii ( fp, line, scratch, len, line_num, dont_end )
       FILE *fp;		/* i: file descriptor */
       char *line;	/* i: buffer to get entire line */
-@@ -236,7 +243,6 @@
+@@ -236,7 +243,6 @@ static int advance_to_ascii ( fp, line, 
       int dont_end;	/* flag that more is definitely expected */
  {
    int i;
@@ -522,9 +522,9 @@
    int check_parens();
  
    /* advance to first non-comment line */
---- clrsetup.c.orig	Sun Jun  3 12:07:29 1990
-+++ clrsetup.c	Fri Jun 29 11:32:20 2007
-@@ -29,12 +29,14 @@
+--- clrsetup.c.orig	1990-06-03 04:07:29 UTC
++++ clrsetup.c
+@@ -29,12 +29,14 @@ static char SccsId[] = "%W%  %G%";
   * Purpose:	Set up color parameters unique to overlay type usage
   * Xlib calls:	XStoreColors()
   */
@@ -540,7 +540,7 @@
  
    init_cellstore(color->cellstore, color->pixvalmap, color->ncolors);
    /* color in the cursor range of the color map */
-@@ -75,12 +77,14 @@
+@@ -75,12 +77,14 @@ void init_overlay_color ( color )
   * Purpose:	Set up color parameters unique to cell usage without overlay
   * Xlib calls:	XStoreColors()
   */
@@ -556,9 +556,9 @@
  
    init_cellstore(color->cellstore, color->pixvalmap, color->ncolors);
    /* Not cursor plane */
---- clrvary.c.orig	Fri Apr 20 21:57:20 1990
-+++ clrvary.c	Fri Jun 29 11:32:33 2007
-@@ -130,6 +130,9 @@
+--- clrvary.c.orig	1990-04-20 13:57:20 UTC
++++ clrvary.c
+@@ -130,6 +130,9 @@ void vary_colors ( event, mode, track, x
   * Subroutine:	vary_contrast_and_bias
   * Purpose:	change color table cell_levels as per new contrast and bias
   */
@@ -568,7 +568,7 @@
  void vary_contrast_and_bias ( table, contrast, bias )
       struct subtableRec *table;
       double contrast;		/* i: normal = 1.0 */
-@@ -137,7 +140,6 @@
+@@ -137,7 +140,6 @@ void vary_contrast_and_bias ( table, con
  {
    double *base_level, *cell_level;
    int vertex_cnt;
@@ -576,9 +576,9 @@
  
    base_level = table->base_level;
    cell_level = table->cell_level;
---- cmdnew.c.orig	Fri Jun  6 21:52:04 1997
-+++ cmdnew.c	Fri Jun 29 11:33:12 2007
-@@ -73,9 +73,11 @@
+--- cmdnew.c.orig	1997-06-06 14:52:04 UTC
++++ cmdnew.c
+@@ -73,9 +73,11 @@ static char *prompt = "Enter new image f
   * Called by:	key_response() in MainKey.c
   * Called by:	select_environment() in MainSelect.c
   */
@@ -591,7 +591,7 @@
    int get_edit_input();
    EditStruct *init_edit_popup();
  
-@@ -95,6 +97,11 @@
+@@ -95,6 +97,11 @@ void get_new_cmd ( )
   * Purpose:	Given a new command line, parse it and do what is called for
   * Returns:	1 = success, 0 = user decided not to do anything, -1 = error
   */
@@ -603,7 +603,7 @@
  static int new_command ( input_line )
       char *input_line;
  {
-@@ -104,9 +111,6 @@
+@@ -104,9 +111,6 @@ static int new_command ( input_line )
    int headersize;
    int parse_cmdline(), check_image();
    void reinit_color(), redraw_magnifier(), touch_submenu_button();
@@ -613,9 +613,9 @@
  
    /* store some key initial values */
    headersize = img.headersize;
---- cmdparse.c.orig	Tue Apr  9 02:26:55 2002
-+++ cmdparse.c	Fri Jun 29 11:33:24 2007
-@@ -47,6 +47,9 @@
+--- cmdparse.c.orig	2002-04-08 19:26:55 UTC
++++ cmdparse.c
+@@ -47,6 +47,9 @@ extern int bad_buttons;
   * Purpose:	Process options to set filename and change defaults
   * Returns:	-1 on error, 0 OK but no filename, 1 OK and new filename given
   */
@@ -625,7 +625,7 @@
  int parse_cmdline ( argc, argv, displayname )
       int argc;
       char *argv[];
-@@ -58,7 +61,6 @@
+@@ -58,7 +61,6 @@ int parse_cmdline ( argc, argv, displayn
    int parse_rotate(), parse_scale(), parse_color(), parse_fileread(), usage();
    int parse_cursor();
    void init_cmdline();
@@ -633,9 +633,9 @@
  
    if( displayname != NULL ) {
      /* if initial program command line, strip off program name, store line */
---- crdinvrt.c.orig	Fri Apr 20 22:00:26 1990
-+++ crdinvrt.c	Fri Jun 29 11:33:51 2007
-@@ -28,12 +28,14 @@
+--- crdinvrt.c.orig	1990-04-20 14:00:26 UTC
++++ crdinvrt.c
+@@ -28,12 +28,14 @@ static char SccsId[] = "%W%  %G%";
   * Purpose:	Compute parameters of the inverse transform
   * Method:	Uses LU decomposition method
   */
@@ -651,7 +651,7 @@
  
    scratch[0][0] = old->inx_outx;
    scratch[1][0] = old->iny_outx;
-@@ -65,13 +67,15 @@
+@@ -65,13 +67,15 @@ void invert_matrix ( old, new )
   * Purpose:	Compute the offsets used for integer transforms
   * Method:	Uses matrix inversion
   */
@@ -668,9 +668,9 @@
  
    /* set transform equations in matrix form */
    scratch[0][0] = old->inx_outx;
---- crdrot.c.orig	Fri Apr 20 22:00:51 1990
-+++ crdrot.c	Fri Jun 29 11:35:13 2007
-@@ -55,6 +55,9 @@
+--- crdrot.c.orig	1990-04-20 14:00:51 UTC
++++ crdrot.c
+@@ -55,6 +55,9 @@ static char SccsId[] = "%W%  %G%";
   * As each transform is applied to the front, we apply them in reverse order
   *  the result is, from img->A,B,C,imgtofile(as given)->file
   */
@@ -680,7 +680,7 @@
  void rotate_transform ( img, imgtofile, flip, rotcode )
       Coordsys *img;
       Transform *imgtofile;
-@@ -63,7 +66,6 @@
+@@ -63,7 +66,6 @@ void rotate_transform ( img, imgtofile, 
  {
    double xmove, ymove;
    int angle;
@@ -688,7 +688,7 @@
  
    /* if no rotation, do nothing */
    if( (rotcode == 0) && (flip == 0) ) return;
-@@ -93,6 +95,9 @@
+@@ -93,6 +95,9 @@ void rotate_transform ( img, imgtofile, 
   * Note:	ioff is not used for turn or flip, as it is assumed that both
   * 		will be bracketed between two moves (to place origin at center)
   */
@@ -698,7 +698,7 @@
  static void move_mtrx ( mtrx, xtran, ytran, ioff, prior )
       Transform *mtrx;
       double xtran, ytran;
-@@ -100,7 +105,6 @@
+@@ -100,7 +105,6 @@ static void move_mtrx ( mtrx, xtran, ytr
       int prior;
  {
    Transform translate;
@@ -706,7 +706,7 @@
  
    bzero((char *)(&translate), sizeof(Transform));
    translate.inx_outx = 1.0;
-@@ -119,12 +123,14 @@
+@@ -119,12 +123,14 @@ static void move_mtrx ( mtrx, xtran, ytr
   * Subroutine:	flip_mtrx
   * Purpose:	Apply a mirror reflection to the passed Transform
   */
@@ -722,7 +722,7 @@
  
    bzero((char *)(&reflect), sizeof(Transform));
    reflect.inx_outx = 1.0;
-@@ -141,6 +147,9 @@
+@@ -141,6 +147,9 @@ static void flip_mtrx ( mtrx, prior )
   * Note:	the pivot is 0,0 of the passed Transform's coordinate system
   * Exception:	only multiples of 90 degrees are allowed
   */
@@ -732,7 +732,7 @@
  static void turn_mtrx ( mtrx, angle, prior )
       Transform *mtrx;
       int angle;
-@@ -148,7 +157,6 @@
+@@ -148,7 +157,6 @@ static void turn_mtrx ( mtrx, angle, pri
  {
    Transform rotate;
    void exit_errmsg();
@@ -740,9 +740,9 @@
  
    while( angle >= 360 ) angle -= 360;
    while( angle < 0 ) angle += 360;
---- crdsynth.c.orig	Fri Apr 20 22:01:55 1990
-+++ crdsynth.c	Fri Jun 29 11:35:34 2007
-@@ -147,11 +147,13 @@
+--- crdsynth.c.orig	1990-04-20 14:01:55 UTC
++++ crdsynth.c
+@@ -147,11 +147,13 @@ void combine_transform ( new, first, sec
   * Subroutine:	set_trans_speed
   * Purpose:	Set parameters for fast integer computation
   */
@@ -757,9 +757,9 @@
  
    trans->ixzoom = 0;
    trans->iyzoom = 0;
---- crdtemp.c.orig	Tue Feb 27 02:14:19 1996
-+++ crdtemp.c	Fri Jun 29 11:35:55 2007
-@@ -126,6 +126,9 @@
+--- crdtemp.c.orig	1996-02-26 20:14:19 UTC
++++ crdtemp.c
+@@ -126,6 +126,9 @@ void set_disptran ( coord )
   * Purpose:	set up zoom given edges of desired display and
   *		appropriate img transform
   */
@@ -769,7 +769,7 @@
  void panedge_zoom ( coord, wintoimgtrans, win_x, win_y )
       struct coordRec *coord;	/* i: collected coords */
       Transform *wintoimgtrans;	/* i: transform from mouse's window to img */
-@@ -134,7 +137,6 @@
+@@ -134,7 +137,6 @@ void panedge_zoom ( coord, wintoimgtrans
    float imgX, imgY;
    int box_width, box_height;
    void i_transform();
@@ -777,9 +777,9 @@
  
    /* calculate image coordinates of win_x and win_y */
    i_transform(wintoimgtrans, win_x, win_y, &imgX, &imgY);
---- csrarea.c.orig	Fri Apr 20 22:07:03 1990
-+++ csrarea.c	Fri Jun 29 11:36:28 2007
-@@ -28,13 +28,15 @@
+--- csrarea.c.orig	1990-04-20 14:07:03 UTC
++++ csrarea.c
+@@ -28,13 +28,15 @@ static char SccsId[] = "%W%  %G%";
   * Purpose:	Calculate area, in float units file pixels, enclosed by cursor
   * Method:	Use mathematical formula appropriate to cursor type
   */
@@ -796,7 +796,7 @@
  
    switch( cursor->type ) {
    case COP_Circle:
-@@ -83,13 +85,15 @@
+@@ -83,13 +85,15 @@ static double x11, y11, x12, y12;
   *		are not tested since neighbors cannot cross but neighbors do
   *		share a common point.
   */
@@ -813,9 +813,9 @@
  
    if( (i+2) >= cnt ) {
      return( 0 );
---- csrgrab.c.orig	Fri Apr 20 22:08:42 1990
-+++ csrgrab.c	Fri Jun 29 11:37:13 2007
-@@ -38,12 +38,14 @@
+--- csrgrab.c.orig	1990-04-20 14:08:42 UTC
++++ csrgrab.c
+@@ -38,12 +38,14 @@ extern struct colorRec color;	/* need to
   * Purpose:	Change size of cursor to intersect current mouse cursor
   *		while keeping aspect ratio of cursor constant
   */
@@ -831,7 +831,7 @@
  
    /* if this event is initiating tracking, don't erase the cursor */
    if( event->type == MotionNotify )
-@@ -64,13 +66,15 @@
+@@ -64,13 +66,15 @@ void size_annuli ( cursor, event )
   * Purpose:	Respond to a mouse request to delete an annulus
   *
   */
@@ -849,7 +849,7 @@
  
    /* if there are two or more annuli */
    if( (cursor->next_annulus != 0) &&
-@@ -169,14 +173,16 @@
+@@ -169,14 +173,16 @@ static void remove_annulus ( parent )
   * Purpose:	Set up cursor to for a size annulus interaction
   * Called by:	size_annuli()
   */
@@ -868,9 +868,9 @@
  
    code = on_annulus(cursor, &parent);
    /* decide what to draw */
---- csrpoly1.c.orig	Fri Apr 20 22:11:54 1990
-+++ csrpoly1.c	Fri Jun 29 11:37:39 2007
-@@ -36,6 +36,9 @@
+--- csrpoly1.c.orig	1990-04-20 14:11:54 UTC
++++ csrpoly1.c
+@@ -36,6 +36,9 @@ extern struct colorRec color;	/* need to
   *		Used when initiating a move or size action
   * Called by:	control_cursor() in CursorCtrl.c
   */
@@ -880,7 +880,7 @@
  void grab_polygon_vertex ( cursor, event, size )
       struct cursorRec *cursor;
       XEvent *event;		/* i: XbuttonEvent (ButtonPress) for x & y */
-@@ -45,7 +48,6 @@
+@@ -45,7 +48,6 @@ void grab_polygon_vertex ( cursor, event
    int pt;			/* l: index of polygon vertex */
    int closest_polygon_line();
    void draw_cursor(), add_polygon_vertex();
@@ -888,7 +888,7 @@
  
    /* erase existing cursor */
    draw_cursor(cursor, &color.gcset.undraw);
-@@ -84,13 +86,15 @@
+@@ -84,13 +86,15 @@ void grab_polygon_vertex ( cursor, event
   * Returns:	1 if image must be redrawn, else 0
   * Called by:	control_cursor() in CursorCtrl.c
   */
@@ -905,9 +905,9 @@
  
    i = on_polygon_vertex((int)event->xbutton.x, (int)event->xbutton.y,
  			cursor->points, cursor->poly_cnt);
---- csrpoly2.c.orig	Thu Jul  9 23:29:27 1998
-+++ csrpoly2.c	Fri Jun 29 11:37:55 2007
-@@ -72,12 +72,14 @@
+--- csrpoly2.c.orig	1998-07-09 16:29:27 UTC
++++ csrpoly2.c
+@@ -72,12 +72,14 @@ void collapse_polygon ( cursor )
   * Subroutine:	start_polygon
   * Purpose:	Install polygon drawing stuff for the active cursor
   */
@@ -923,9 +923,9 @@
  
    if( polysz == 0 )
      init_polygon();
---- csrpoly3.c.orig	Fri Apr 20 22:11:40 1990
-+++ csrpoly3.c	Fri Jun 29 11:38:09 2007
-@@ -28,6 +28,9 @@
+--- csrpoly3.c.orig	1990-04-20 14:11:40 UTC
++++ csrpoly3.c
+@@ -28,6 +28,9 @@ static char SccsId[] = "%W%  %G%";
   *		vector from pointer to closest point on segment
   * Method:	top down search
   */
@@ -935,7 +935,7 @@
  int closest_polygon_line ( x, y, vertex, cnt )
       int x, y;
       XPoint *vertex;
-@@ -38,7 +41,6 @@
+@@ -38,7 +41,6 @@ int closest_polygon_line ( x, y, vertex,
    int min_endpoint, endpoint;
    int min_j;
    int i, j;
@@ -943,9 +943,9 @@
  
    min_distance = 1.0E30;
    min_j = 0;
---- csrshape.c.orig	Tue Oct 20 01:46:41 1998
-+++ csrshape.c	Fri Jun 29 11:40:32 2007
-@@ -31,9 +31,6 @@
+--- csrshape.c.orig	1998-10-19 18:46:41 UTC
++++ csrshape.c
+@@ -31,9 +31,6 @@ static char SccsId[] = "%W%  %G%";
  
  #include "defs/circle.def"	/*  Define Unit_circles  */
  
@@ -955,7 +955,7 @@
  void		make_cursor(	struct cursorRec *cursor);
  static int	make_arrow(	double xtip, double ytip, double xray,
  				double rotsin, double rotcos, XPoint *points);
-@@ -41,28 +38,20 @@
+@@ -41,28 +38,20 @@ static int	make_boxcur(	double xcen, dou
  				double xray, double yray,
  				double rotsin, double rotcos, XPoint *points);
  static int	make_circur(	double xcen, double ycen, double radius,
@@ -990,9 +990,9 @@
  
  /*  Declare and initialize drawing tools  */
  double *UnitPieX = Circle12X;
---- ctrlcntn.c.orig	Thu Jul  9 23:29:00 1998
-+++ ctrlcntn.c	Fri Jun 29 11:41:15 2007
-@@ -61,6 +61,9 @@
+--- ctrlcntn.c.orig	1998-07-09 16:29:00 UTC
++++ ctrlcntn.c
+@@ -61,6 +61,9 @@ void init_connections ()
   * Purpose:	Open a connection to a remote process and update event handlers
   * Returns:	-1 on failure, else IPC number
   */
@@ -1002,7 +1002,7 @@
  int open_connection ( connection )
       struct connectRec *connection;
  {
-@@ -71,7 +74,6 @@
+@@ -71,7 +74,6 @@ int open_connection ( connection )
    extern int ButtonSelectMask(), open_pipe();
    extern int open_socket_listener();
    extern struct connectRec *accept_socket_connection();
@@ -1010,9 +1010,9 @@
  #endif
  
  #ifdef NOPIPEFLUSH
---- ctrlfile.c.orig	Fri Apr 20 21:49:12 1990
-+++ ctrlfile.c	Fri Jun 29 11:41:47 2007
-@@ -40,6 +40,9 @@
+--- ctrlfile.c.orig	1990-04-20 13:49:12 UTC
++++ ctrlfile.c
+@@ -40,6 +40,9 @@ extern int errno;
   * Post state:	Sets pointer to file, open and ready for writing
   * Returns:	2 = append, 1 = new file, 0 = user decided not to, -1 = error
   */
@@ -1022,7 +1022,7 @@
  int open_output_file ( fd, edit, one_popup_row, prompt )
       FILE **fd;
       EditStruct *edit;
-@@ -56,7 +59,6 @@
+@@ -56,7 +59,6 @@ int open_output_file ( fd, edit, one_pop
    int get_edit_input();
    EditStruct *init_edit_popup();
    void clear_edit_buf(), unmap_popwin();
@@ -1030,7 +1030,7 @@
  
    open_type[0] = 0;
    if( (get_edit_input(edit, one_popup_row, 1, 0, prompt) <= 0) ||
-@@ -137,6 +139,9 @@
+@@ -137,6 +139,9 @@ int open_output_file ( fd, edit, one_pop
   * Note:	Sets pointer of file open and ready for reading
   * Returns:	1 on success, 0 if user decided not to, -1 on error
   */
@@ -1040,7 +1040,7 @@
  int open_input_file ( fd, edit, one_popup_row, prompt )
       FILE **fd;
       EditStruct *edit;
-@@ -146,7 +151,6 @@
+@@ -146,7 +151,6 @@ int open_input_file ( fd, edit, one_popu
    char filename[132];
    int exist;
    int get_edit_input();
@@ -1048,9 +1048,9 @@
  
    if( get_edit_input(edit, one_popup_row, 1, 1, prompt) <= 0 )
      return( 0 );
---- ctrlgc.c.orig	Wed May  2 16:19:55 1990
-+++ ctrlgc.c	Fri Jun 29 11:42:09 2007
-@@ -237,10 +237,12 @@
+--- ctrlgc.c.orig	1990-05-02 08:19:55 UTC
++++ ctrlgc.c
+@@ -237,10 +237,12 @@ GC set_edit_gc ( font, foreground, backg
   * Subroutine:	get_fontstruct
   * Returns:	Pointer to the specified fontstruct
   */
@@ -1064,7 +1064,7 @@
  
    if( (app_font[app_code] == NULL) && (init_font(app_code) == NULL) )
      return( NULL );
-@@ -253,11 +255,13 @@
+@@ -253,11 +255,13 @@ XFontStruct *get_fontstruct ( app_code )
   * Purpose:	Load the fonts used by this program
   * Returns:	Font on success, else 0
   */
@@ -1079,9 +1079,9 @@
  
    for( i=0; i<OPTION_COUNT; i++ ) {
      name_index = preference[app_code][i];
---- dispblnk.c.orig	Fri Apr 20 22:23:14 1990
-+++ dispblnk.c	Fri Jun 29 11:42:36 2007
-@@ -181,13 +181,15 @@
+--- dispblnk.c.orig	1990-04-20 14:23:14 UTC
++++ dispblnk.c
+@@ -181,13 +181,15 @@ static int display_blink ( index )
   * For each button release, if it is on top of stack, release it and display
   *  one below, else just release it
   */
@@ -1098,9 +1098,9 @@
  
    if( control.event.type == ButtonPress ) {
      /* don't respond if it's with a meta key (window resize) */
---- dispbtmp.c.orig	Sat Jun 22 05:58:15 1991
-+++ dispbtmp.c	Fri Jun 29 11:42:53 2007
-@@ -55,9 +55,11 @@
+--- dispbtmp.c.orig	1991-06-21 22:58:15 UTC
++++ dispbtmp.c
+@@ -55,9 +55,11 @@ void init_halftone ()
   * Subroutine:	select_halftone
   * Purpose:	Respond to halftone selection command
   */
@@ -1113,9 +1113,9 @@
  
    switch( control.response[1] ) {
    case 0:
---- editctrl.c.orig	Sun Jun  3 12:07:48 1990
-+++ editctrl.c	Fri Jun 29 11:44:00 2007
-@@ -61,6 +61,9 @@
+--- editctrl.c.orig	1990-06-03 04:07:48 UTC
++++ editctrl.c
+@@ -61,6 +61,9 @@ extern int  XZ_efn;
   * Subroutine:	init_edit_popup
   * Purpose:	Get everything ready for running editor sessions
   */
@@ -1125,7 +1125,7 @@
  EditStruct *init_edit_popup ( string, max_chars )
       char *string;
       int max_chars;
-@@ -69,7 +72,6 @@
+@@ -69,7 +72,6 @@ EditStruct *init_edit_popup ( string, ma
    int len;
    EditStruct *get_edit_struct();
    void init_edit_struct(), load_edit_struct();
@@ -1133,7 +1133,7 @@
  
    if( init_window ) {
      init_popwin(color.gcset.menu.foreground, color.gcset.menu.background);
-@@ -91,6 +93,9 @@
+@@ -91,6 +93,9 @@ EditStruct *init_edit_popup ( string, ma
   *		(but expose is fielded and configure is saved for end).
   * Returns:	1 if user returns with a response, 0 if user cancels session
   */
@@ -1143,7 +1143,7 @@
  int get_edit_input ( edit, one_row, map, unmap, prompt )
       EditStruct *edit;
       int one_row;	/* i: put-edit-after-prompt-on-same-line */
-@@ -104,7 +109,6 @@
+@@ -104,7 +109,6 @@ int get_edit_input ( edit, one_row, map,
    int emacs_response();
    void draw_new_string(), redraw_edit_string();
    void adjust_desktop(), redraw_window(), unmap_popwin();
@@ -1151,9 +1151,9 @@
  
    map_popwin(edit, one_row, prompt, map);
    if( !map ) {
---- grphbtmp.c.orig	Fri Apr 20 22:31:04 1990
-+++ grphbtmp.c	Fri Jun 29 11:44:16 2007
-@@ -27,6 +27,9 @@
+--- grphbtmp.c.orig	1990-04-20 14:31:04 UTC
++++ grphbtmp.c
+@@ -27,6 +27,9 @@ extern struct colorRec color;
   * Subroutine:	make_halftone_panimage
   * Purpose:	Make halftone bitmap for pan window (panbox)
   */
@@ -1163,7 +1163,7 @@
  void make_halftone_colorbar ( bytedata, bitdata,
  			      width, height, bytes_per_line )
       unsigned char *bytedata;
-@@ -34,7 +37,6 @@
+@@ -34,7 +37,6 @@ void make_halftone_colorbar ( bytedata, 
       int width, height;
       int bytes_per_line;
  {
@@ -1171,9 +1171,9 @@
  
    bzero((char *)bitdata, bytes_per_line * height);
    if( color.halftone.mode == BOP_Dither ) {
---- grphgrab.c.orig	Fri Apr 20 22:33:27 1990
-+++ grphgrab.c	Fri Jun 29 11:45:43 2007
-@@ -30,10 +30,12 @@
+--- grphgrab.c.orig	1990-04-20 14:33:27 UTC
++++ grphgrab.c
+@@ -30,10 +30,12 @@ extern struct cgraphRec cgraph;
   * Subroutine:	grab_cgraph_vertex
   * Purpose:	When a mouse button is pressed, assign a vertex to that button
   */
@@ -1187,7 +1187,7 @@
  
    switch( event->xbutton.button ) {
    case Button1:
-@@ -58,10 +60,12 @@
+@@ -58,10 +60,12 @@ void get_cgraph_vertex ( event )
   *		event
   * Returns:	1 if a vertex was dropped, else 0
   */
@@ -1201,7 +1201,7 @@
  
    switch( event->xbutton.button ) {
    case Button1:
-@@ -83,13 +87,15 @@
+@@ -83,13 +87,15 @@ int drop_cgraph_vertex ( event )
   * Purpose:	Handle grab vertex event for single color 
   * Method:	Grab old vertex or make new vertex - under mouse pointer
   */
@@ -1219,7 +1219,7 @@
  
    /* clip against limits */
    if( x < cgraph.graph.xzero )
-@@ -151,6 +157,9 @@
+@@ -151,6 +157,9 @@ static int grab_old_color_vertex ( x, y,
   * Subroutine:	install_new_color_vertex
   * Purpose:	Given hash position, install a new vertex, and make active
   */
@@ -1229,7 +1229,7 @@
  static void install_new_color_vertex ( x, y, col )
       int x, y;			/* i: position of ULcorner of new hash mark */
       struct colgRec *col;	/* i: color info structure for one color */
-@@ -158,7 +167,6 @@
+@@ -158,7 +167,6 @@ static void install_new_color_vertex ( x
    double intensity, cell_level;
    int match;
    int select_best_hash_position();
@@ -1237,7 +1237,7 @@
  
    col->active_hash = select_best_hash_position(x, y, col->hash, col->hash_cnt,
  					       &match, cgraph.vertical);
-@@ -251,11 +259,13 @@
+@@ -251,11 +259,13 @@ static void add_color_vertex_hash ( col,
   * Purpose:	Delete a color table vertex if one is under the mouse position
   * Returns:	1 if vertex was dropped, else 0
   */
@@ -1252,9 +1252,9 @@
  
    /* hash mark positions are upper left corner of hash box */
    x -= HASH_RAY;
---- grphinit.c.orig	Fri Apr 20 22:40:44 1990
-+++ grphinit.c	Fri Jun 29 11:46:50 2007
-@@ -46,9 +46,11 @@
+--- grphinit.c.orig	1990-04-20 14:40:44 UTC
++++ grphinit.c
+@@ -46,9 +46,11 @@ extern int  XZ_efn;
   * Subroutine:	init_colorbox
   * Purpose:	Handle program init-time color bar and graph initialization
   */
@@ -1267,7 +1267,7 @@
  
    cgraph.ncolors = color.ncolors;
    cgraph.red.table = &color.ctable.red;
-@@ -68,10 +70,12 @@
+@@ -68,10 +70,12 @@ void init_colorbox ( )
   * Purpose:	Initialize color bar and related params
   * Xlib calls:	XCreateSimpleWindow(), XMapSubwindows()
   */
@@ -1281,7 +1281,7 @@
  
    colorbar.display = colorbox.display;
    colorbar.ref_width = colorbox.width;
-@@ -92,10 +96,12 @@
+@@ -92,10 +96,12 @@ static void init_main_colorbar ( )
   * Subroutine:	adjust_main_colorbar
   * Purpose:	Adjust color bar size params and/or color data if needed
   */
@@ -1295,7 +1295,7 @@
  
    if( (colorbox.width != colorbar.ref_width) ||
        (colorbox.height != colorbar.ref_height) ) {
-@@ -113,11 +119,13 @@
+@@ -113,11 +119,13 @@ void adjust_main_colorbar ( )
   * Purpose:	Initialize color bar and related params
   * Xlib calls:	XMapSubwindows()
   */
@@ -1310,7 +1310,7 @@
  
    cgraph.bar.display = graphbox.display;
    cgraph.bar.ref_width = graphbox.width;
-@@ -149,11 +157,13 @@
+@@ -149,11 +157,13 @@ void init_graph_colorbar ( )
   * Subroutine:	adjust_graph_colorbar
   * Purpose:	Adjust color bar size params and/or color data if needed
   */
@@ -1325,9 +1325,9 @@
  
    if( cgraph.vertical ) {
      if( graphbox.height != cgraph.bar.ref_height ) {
---- grphmove.c.orig	Fri Apr 20 22:37:26 1990
-+++ grphmove.c	Fri Jun 29 11:47:08 2007
-@@ -26,12 +26,14 @@
+--- grphmove.c.orig	1990-04-20 14:37:26 UTC
++++ grphmove.c
+@@ -26,12 +26,14 @@ extern struct cgraphRec cgraph;
   * Purpose:	Change values (and position) of designated vertices in
   *		response to mouse movement
   */
@@ -1343,9 +1343,9 @@
  
    /* clip against limits */
    if( x < cgraph.graph.xzero )
---- grpholap.c.orig	Fri Apr 20 22:36:00 1990
-+++ grpholap.c	Fri Jun 29 11:47:22 2007
-@@ -28,13 +28,15 @@
+--- grpholap.c.orig	1990-04-20 14:36:00 UTC
++++ grpholap.c
+@@ -28,13 +28,15 @@ extern struct cgraphRec cgraph;
   * Subroutine:	mark_colorline_overlap
   * Purpose:	Make line representing more than one color black (or white)
   */
@@ -1362,9 +1362,9 @@
  
    j = 0;
    if( cgraph.vertical ) {
---- grphtext.c.orig	Fri Apr 20 22:39:37 1990
-+++ grphtext.c	Fri Jun 29 11:49:42 2007
-@@ -33,6 +33,9 @@
+--- grphtext.c.orig	1990-04-20 14:39:37 UTC
++++ grphtext.c
+@@ -33,6 +33,9 @@ extern struct cgraphRec cgraph;
   * Purpose:	Set labeling pieces according to the graph window size
   * Xlib calls:	XMoveWindow(), XResizeWindow(), XMapWindow()
   */
@@ -1374,7 +1374,7 @@
  void init_color_graph_label ( )
  {
    int new = 0;
-@@ -40,7 +43,6 @@
+@@ -40,7 +43,6 @@ void init_color_graph_label ( )
    int resize = 0;
    Window create_cgraph_box();
    void init_color_graph_label();
@@ -1382,9 +1382,9 @@
  
    if( cgraph.graphlabel.active == 0 )
      return;
---- histdist.c.orig	Wed Jul 29 01:56:45 1998
-+++ histdist.c	Fri Jun 29 11:51:37 2007
-@@ -24,6 +24,9 @@
+--- histdist.c.orig	1998-07-28 18:56:45 UTC
++++ histdist.c
+@@ -24,6 +24,9 @@ static char SccsId[] = "%W%  %G%";
   * Purpose:	Distribute the levels among histogram sub-groups
   * Returns:	number of groups with no assigned color levels
   */
@@ -1394,7 +1394,7 @@
  int distribute_levels ( linklist, pixel_area, color_levels,
  		        pmin, pmax, ncolor )
       SubrangeLink *linklist;
-@@ -39,7 +42,6 @@
+@@ -39,7 +42,6 @@ int distribute_levels ( linklist, pixel_
  #ifdef DEBUG
    int census = 0;
  #endif
@@ -1402,9 +1402,9 @@
  
    /* if all one group (no strong peaks), allocation is simple */
    if( linklist->next == 0 ) {
---- histeql.c.orig	Fri Apr 20 22:59:27 1990
-+++ histeql.c	Fri Jun 29 11:51:55 2007
-@@ -24,6 +24,10 @@
+--- histeql.c.orig	1990-04-20 14:59:27 UTC
++++ histeql.c
+@@ -24,6 +24,10 @@ static char SccsId[] = "%W%  %G%";
   *		output level optimization accounts for large cell counts
   *		for single levels (e.g. half of all pixels with value 0)
   */
@@ -1415,7 +1415,7 @@
  void histogram_equalize ( scalemap, histogram, area, pmin, pmax,
  			  color_levels, pixels )
       unsigned char *scalemap;	/* i/o: scalemap (for signed indexing) */
-@@ -42,8 +46,6 @@
+@@ -42,8 +46,6 @@ void histogram_equalize ( scalemap, hist
    char *calloc_errchk();
    int distribute_levels();
    void generate_scalemap(), scan_histogram_for_peaks(), resolve_zeroes();
@@ -1424,9 +1424,9 @@
  
    /* initialize link list */
    linklist = (SubrangeLink *)calloc_errchk(10, sizeof(int), "HElink");
---- histlist.c.orig	Sat Jun 22 05:58:44 1991
-+++ histlist.c	Fri Jun 29 11:52:24 2007
-@@ -29,6 +29,12 @@
+--- histlist.c.orig	1991-06-21 22:58:44 UTC
++++ histlist.c
+@@ -29,6 +29,12 @@ static char SccsId[] = "%W%  %G%";
   * Subroutine:	make_equalized_list
   * Purpose:	Distributing levels for a subrange section of the histogram
   */
@@ -1439,7 +1439,7 @@
  void make_equalized_list ( histogram, list, low_entry, high_entry,
  			   pixel_area, color_levels )
       int *histogram;
-@@ -47,10 +53,6 @@
+@@ -47,10 +53,6 @@ void make_equalized_list ( histogram, li
    int best_levels_under;
    int best_average_over = 0;	/* average_area used to get best_levels */
    int best_average_under = 0;
@@ -1450,9 +1450,9 @@
  
    /* else allocation distribution must first be determined */
    /* run through histgram section making basic allocation and taking notes */
---- histmap.c.orig	Fri Apr 20 23:00:13 1990
-+++ histmap.c	Fri Jun 29 11:53:06 2007
-@@ -28,6 +28,9 @@
+--- histmap.c.orig	1990-04-20 15:00:13 UTC
++++ histmap.c
+@@ -28,6 +28,9 @@ static char SccsId[] = "%W%  %G%";
   *		safely be applied.
   * Note:	The original link-list of groups is freed.
   */
@@ -1462,7 +1462,7 @@
  void generate_scalemap ( hist, subrange, scalemap, pixels )
       int *hist;				/* i: histogram (for signed offsets) */
       SubrangeLink *subrange;	/* i: linklist of subranges */
-@@ -36,7 +39,6 @@
+@@ -36,7 +39,6 @@ void generate_scalemap ( hist, subrange,
  {
    int baselevel;
    SubrangeLink *trash;
@@ -1470,7 +1470,7 @@
  
    baselevel = 0;
    while( subrange != 0 ) {
-@@ -54,6 +56,9 @@
+@@ -54,6 +56,9 @@ void generate_scalemap ( hist, subrange,
   * Purpose:	Make a section of scale map using histgroup link as guide 
   * Called by:	make_HE_scalemap() in HistEqual.c
   */
@@ -1480,7 +1480,7 @@
  static void
    make_subrange_scalemap ( histogram, subrange, scalemap, baselevel, pixels )
       int *histogram;
-@@ -67,7 +72,6 @@
+@@ -67,7 +72,6 @@ static void
    unsigned char dispval;
    char *calloc_errchk();
    void make_equalized_list();
@@ -1488,7 +1488,7 @@
  
    /* if only one level, make map section */
    if( subrange->color_levels <= 1 ) {
-@@ -135,6 +139,10 @@
+@@ -135,6 +139,10 @@ static void list_to_map ( scalemap, hist
   * Purpose:	Allocate levels for a histogram subrange.  Special process
   * 		for situation when more levels than actually used values.
   */
@@ -1499,7 +1499,7 @@
  static void make_gapped_list ( histogram, list, low, high, levels )
       int *histogram;
       SubrangeList *list;
-@@ -142,8 +150,6 @@
+@@ -142,8 +150,6 @@ static void make_gapped_list ( histogram
  {
    int range_j, max_range;
    int levels_used;
@@ -1508,9 +1508,9 @@
  
    levels_used =
      first_shortlist_pass(histogram, list, low, high, levels,
---- histscan.c.orig	Fri Apr 20 23:00:36 1990
-+++ histscan.c	Fri Jun 29 11:53:29 2007
-@@ -21,6 +21,10 @@
+--- histscan.c.orig	1990-04-20 15:00:36 UTC
++++ histscan.c
+@@ -21,6 +21,10 @@ static char SccsId[] = "%W%  %G%";
   * Purpose:	Scan the image histogram picking out large cell count values
   *		make sub-groups of the histogram between the large count levels
   */
@@ -1521,7 +1521,7 @@
  void scan_histogram_for_peaks ( subrange, histogram,
  			        pixel_area, map_levels, average )
       SubrangeLink *subrange;	/* i/o: link (initially covers range) */
-@@ -36,8 +40,6 @@
+@@ -36,8 +40,6 @@ void scan_histogram_for_peaks ( subrange
    int sr_nzentries;		/* l: number of non-zero entries in subrange */
    int sr_pixel_area;		/* l: number of pixels in current subrange */
    int sr_max_peak;		/* l: highest peak within current  subrange */
@@ -1530,9 +1530,9 @@
  
    /* set initial pixel_count values */
    sr_pixel_area = 0;
---- histzero.c.orig	Fri Apr 20 23:01:03 1990
-+++ histzero.c	Fri Jun 29 11:53:39 2007
-@@ -23,13 +23,15 @@
+--- histzero.c.orig	1990-04-20 15:01:03 UTC
++++ histzero.c
+@@ -23,13 +23,15 @@ static char SccsId[] = "%W%  %G%";
   * Note:	Adjoining groups are large count single level groups
   * Called by:	histrogram_equalize() above
   */
@@ -1549,9 +1549,9 @@
  
    /* if very first entry is a zero allocated link */
    if( PriorLink->color_levels == 0 ) {
---- imgcheck.c.orig	Tue Mar 13 03:31:30 2001
-+++ imgcheck.c	Fri Jun 29 11:54:08 2007
-@@ -46,13 +46,15 @@
+--- imgcheck.c.orig	2001-03-12 21:31:30 UTC
++++ imgcheck.c
+@@ -46,13 +46,15 @@ static char SccsId[] = "%W%  %G%";
   * Purpose:	Do some consistency checks on image type and size
   * Returns:	0 if no errors found, else -1
   */
@@ -1568,7 +1568,7 @@
    extern int isfits();
  
    ext = NULL;
-@@ -148,6 +150,9 @@
+@@ -148,6 +150,9 @@ int check_image ( img, got_status )
   * Purpose:	Check array size vs file size etc
   * Returns:	0 if size determined and/or OK, else -1
   */
@@ -1578,7 +1578,7 @@
  static int check_array ( img )
       struct imageRec *img;
  {
-@@ -156,7 +161,6 @@
+@@ -156,7 +161,6 @@ static int check_array ( img )
    float posdim;		/* possible dimension */
    int headersize;	/* size in bytes of header */
    int rawsize;
@@ -1586,9 +1586,9 @@
  
    /* get header size */
    headersize = img->headersize;
---- imglogo.c.orig	Fri Apr 27 00:31:48 1990
-+++ imglogo.c	Fri Jun 29 11:54:27 2007
-@@ -372,13 +372,15 @@
+--- imglogo.c.orig	1990-04-26 16:31:48 UTC
++++ imglogo.c
+@@ -372,13 +372,15 @@ static unsigned char logo[LOGO_SZ] = {
   * Subroutine:	load_logo
   * Purpose:	place logo image in image buffer
   */
@@ -1605,9 +1605,9 @@
  
    /* fill buffer with background color */
    bufpt = shortbuf;
---- imgnew.c.orig	Thu Oct 15 06:01:58 1998
-+++ imgnew.c	Fri Jun 29 11:54:42 2007
-@@ -52,6 +52,9 @@
+--- imgnew.c.orig	1998-10-14 23:01:58 UTC
++++ imgnew.c
+@@ -52,6 +52,9 @@ extern struct windowRec desktop;
   *  Purpose:	Create all image coordinate parameters from the beginning
   * 		and take care of all that might be affected
   */
@@ -1617,7 +1617,7 @@
  void new_display ( dispnow, clear, load, scale )
       int dispnow;	/* i: put-display-in-window-now flag */
       int clear;		/* i: clear img buf before reading flag */
-@@ -61,7 +64,6 @@
+@@ -61,7 +64,6 @@ void new_display ( dispnow, clear, load,
    void set_disptran(), new_pancursor(), new_scalemap();
    void combine_transform(), set_edges(), set_dispoff(), set_magnifier();
    void adjust_cursor_coords(), map_dispbox(), disp_dispbox();
@@ -1625,9 +1625,9 @@
  
    /*  Set disp to img and disp to file transforms  */
    set_disptran(&coord);
---- imgtrans.c.orig	Fri Apr 20 23:13:46 1990
-+++ imgtrans.c	Fri Jun 29 11:55:10 2007
-@@ -26,6 +26,9 @@
+--- imgtrans.c.orig	1990-04-20 15:13:46 UTC
++++ imgtrans.c
+@@ -26,6 +26,9 @@ static char SccsId[] = "%W%  %G%";
   * 	4-7 = flip y axis then rotate clockwise by (code - 4) * 90 degrees
   * Called by:	load_image() in ImageRead.c
   */
@@ -1637,7 +1637,7 @@
  void rotate_buf ( buf, flip, rotcode, width, height, buf_squared, buf_doubled )
       short *buf;
       int flip;
-@@ -36,7 +39,6 @@
+@@ -36,7 +39,6 @@ void rotate_buf ( buf, flip, rotcode, wi
    int maxdim;
    void xflip_buf(), yflip_buf(), zflip_buf(), cwturn_buf(), ccwturn_buf();
    void transfer_buf();
@@ -1645,9 +1645,9 @@
  
    if( flip )
      rotcode += 4;
---- irafcrd.c.orig	Fri Apr 20 23:16:02 1990
-+++ irafcrd.c	Fri Jun 29 11:55:49 2007
-@@ -45,13 +45,15 @@
+--- irafcrd.c.orig	1990-04-20 15:16:02 UTC
++++ irafcrd.c
+@@ -45,13 +45,15 @@ static char SccsId[] = "%W%  %G%";
   *		If found and parsed, compute new transform for file coord.
   * Returns:	1 if subsection found and parsed successfully, else 0
   */
@@ -1664,7 +1664,7 @@
    void set_trans_speed(), combine_transform(), clear_coord_area();
  
    if( parse_iraf_subsection(title, &xoff, &yoff, &block) == 0 ) {
-@@ -92,6 +94,10 @@
+@@ -92,6 +94,10 @@ int guess_true_file_coords ( title )
   * Purpose:	Parse for subsection and blocking from the image name
   * Returns:	1 if subsection or blocking was used, else 0
   */
@@ -1675,7 +1675,7 @@
  static int parse_iraf_subsection ( s, xoff, yoff, block )
       char *s;			/* i: file name */
       int *xoff;			/* o: x offset */
-@@ -99,8 +105,6 @@
+@@ -99,8 +105,6 @@ static int parse_iraf_subsection ( s, xo
       int *block;		/* o: block */
  {
    char *t, *u;			/* temp char pointers */
@@ -1684,7 +1684,7 @@
  
    /* seed the default values */
    *xoff = 1;
-@@ -139,6 +143,9 @@
+@@ -139,6 +143,9 @@ static int parse_iraf_subsection ( s, xo
   * Subroutine:	get_subsection_offsets
   * Purpose:	parse subsection syntax for x and y offsets of subsection
   */
@@ -1694,7 +1694,7 @@
  static void get_subsection_offsets ( s, xoff, yoff, is_qp )
       char *s;
       int *xoff, *yoff;
-@@ -147,7 +154,6 @@
+@@ -147,7 +154,6 @@ static void get_subsection_offsets ( s, 
    int x1, x2;
    int y1, y2;
    char *sy, *s2, *st;
@@ -1702,9 +1702,9 @@
  
    /* if not qp, grab the initial x offset right after the '[' */
    sy = fn_substr(s, ",");
---- irafimtl.c.orig	Thu Feb 26 01:52:37 1998
-+++ irafimtl.c	Fri Jun 29 11:56:14 2007
-@@ -46,6 +46,9 @@
+--- irafimtl.c.orig	1998-02-25 19:52:37 UTC
++++ irafimtl.c
+@@ -46,6 +46,9 @@ static char wcsbuf[SZ_WCSBUF];
   * Subroutine:	imtool_response
   * Purpose:	Read imtool messages from iraf (return 1 if pipe trouble)
   */
@@ -1714,7 +1714,7 @@
  void imtool_response ( port, imhead, ndatabytes )
       struct connectRec *port;	/* i: struct of port for IRAF input */
       struct imtoolRec *imhead;	/* i: packet header, already read in */
-@@ -60,7 +63,6 @@
+@@ -60,7 +63,6 @@ void imtool_response ( port, imhead, nda
    void set_curpos_to_iraf_trigger(), set_cursor_from_iraf(), imtool_output();
    void set_imtool_scale(), set_cursor_to_iraf(), disp_subpiece();
    void map_panbox(), disp_panbox(), send_curpos_to_iraf(), flush_connection();
@@ -1722,7 +1722,7 @@
  
    switch( imhead->subunit & 077 ) {
    case FEEDBACK:
-@@ -189,6 +191,9 @@
+@@ -189,6 +191,9 @@ void imtool_response ( port, imhead, nda
   * Purpose:	Reset buffer sizes, coordinate systems and parameters as
   *		needed.
   */
@@ -1732,7 +1732,7 @@
  void imtool_newimage ( is_wcs, imhead )
       int is_wcs;
       struct imtoolRec *imhead;
-@@ -199,7 +204,6 @@
+@@ -199,7 +204,6 @@ void imtool_newimage ( is_wcs, imhead )
    void set_disptran(), combine_transform(), set_edges(), set_dispoff();
    void adjust_cursor_coords(), set_magnifier(), disp_subpiece(), set_tdisp();
    void set_imtool_scale(), imtool_reinit(), new_pancursor();
@@ -1740,9 +1740,9 @@
  
    /* set size and frame */
    if( is_wcs )
---- irafio.c.orig	Tue Oct 13 00:17:50 1992
-+++ irafio.c	Fri Jun 29 11:56:48 2007
-@@ -102,6 +102,9 @@
+--- irafio.c.orig	1992-10-12 17:17:50 UTC
++++ irafio.c
+@@ -102,6 +102,9 @@ void rename_imtool_connection ( name, in
   * Subroutine:	imtool_output
   * Purpose:	Write image data back to iraf device channel
   */
@@ -1752,7 +1752,7 @@
  void imtool_output ( imhead, odev, imagebuf, width, height )
       struct imtoolRec *imhead;
       struct connectRec *odev;
-@@ -116,7 +119,6 @@
+@@ -116,7 +119,6 @@ void imtool_output ( imhead, odev, image
    int buferr = 0;
    char fifobuf[SZ_FIFOBUF + 4];
    int write_connection();
@@ -1760,7 +1760,7 @@
  
    ndatabytes = -(int)imhead->thingct;
    x = imhead->x & 077777;
-@@ -153,6 +155,9 @@
+@@ -153,6 +155,9 @@ void imtool_output ( imhead, odev, image
   * Called by:	imtool_response() in RemoteImtool.c
   * Returns:	-1 if read no bytes, 1 if trouble, else 0
   */
@@ -1770,7 +1770,7 @@
  int imtool_input ( imhead, idev, readbuf, iwdth, owdth, y1, y2,
  		   imagebuf, imbufsz )
       struct imtoolRec *imhead;
-@@ -171,7 +176,6 @@
+@@ -171,7 +176,6 @@ int imtool_input ( imhead, idev, readbuf
    int got, try, gotten;
    short *obuf;
    int read_connection();
@@ -1778,9 +1778,9 @@
  
    /* get data count and packing type */
    ndatavals = -(int)imhead->thingct;
---- irafpipe.c.orig	Thu Feb 26 01:52:26 1998
-+++ irafpipe.c	Fri Jun 29 11:57:01 2007
-@@ -33,6 +33,9 @@
+--- irafpipe.c.orig	1998-02-25 19:52:26 UTC
++++ irafpipe.c
+@@ -33,6 +33,9 @@ static char SccsId[] = "%W%  %G%";
   * Subroutine:	read_imtool_packet()
   * Purpose:	event handler for packet input from iraf
   */
@@ -1790,7 +1790,7 @@
  void read_imtool_packet( port )
       struct connectRec *port;
  {
-@@ -48,7 +51,6 @@
+@@ -48,7 +51,6 @@ void read_imtool_packet( port )
  #endif
    int read_connection();
    void imtool_response(), swap_bytes();
@@ -1798,9 +1798,9 @@
  
    /* read the header */
    bytes = read_connection(port, (char *)&imhead, sizeof(struct imtoolRec));
---- maininit.c.orig	Tue Dec  2 05:21:35 2003
-+++ maininit.c	Fri Jun 29 11:57:26 2007
-@@ -76,11 +76,13 @@
+--- maininit.c.orig	2003-12-01 23:21:35 UTC
++++ maininit.c
+@@ -76,11 +76,13 @@ Display *display;		/* display connection
   * Xlib calls:	XSetErrorHandler()
   * UNIX calls:	setrlimit()
   */
@@ -1815,7 +1815,7 @@
    void crash_on_error(), control_event_loop();
    void say_goodbye();
    
-@@ -141,13 +143,15 @@
+@@ -141,13 +143,15 @@ void say_goodbye ( code )
   * Purpose:	Initialize parameters in the records
   * Note:	Resource or default file not yet used
   */
@@ -1832,9 +1832,9 @@
    int parse_cmdline(), check_image();
    void say_goodbye(), init_connections();
  
---- mainkey.c.orig	Thu Sep 25 05:38:25 2003
-+++ mainkey.c	Fri Jun 29 11:58:47 2007
-@@ -87,6 +87,9 @@
+--- mainkey.c.orig	2003-09-24 22:38:25 UTC
++++ mainkey.c
+@@ -87,6 +87,9 @@ static double oldypix = 0.0;
  
  static double oldxpos, oldypos;
  
@@ -1844,7 +1844,7 @@
  void
  key_response()
  {
-@@ -110,7 +113,6 @@
+@@ -110,7 +113,6 @@ key_response()
    void print_center(), print_cursor();
    void move_pointer();
    void get_cursor_pos();
@@ -1852,9 +1852,9 @@
    void toggle_region_visibility(), toggle_region_labeling();
    double xbuf, ybuf, xfile, yfile;
    double newxpos, newypos, distance;
---- mgfyctrl.c.orig	Fri May  7 02:47:12 1999
-+++ mgfyctrl.c	Fri Jun 29 11:59:53 2007
-@@ -45,12 +45,14 @@
+--- mgfyctrl.c.orig	1999-05-06 19:47:12 UTC
++++ mgfyctrl.c
+@@ -45,12 +45,14 @@ extern struct magRec magset;
   * Purpose:	Magnify location of a dispbox event
   * Xlib calls:	XCheckWindowEvent(), XSync()
   */
@@ -1870,7 +1870,7 @@
  
    /* get only the most recent mouse moved event */
    XSync(dispbox.display, 0);
-@@ -132,6 +134,9 @@
+@@ -132,6 +134,9 @@ void redraw_magnifier ( )
   * Purpose:	Show pointer coordinates and image value in display window
   * Xlib calls:	XDrawImageString()
   */
@@ -1880,7 +1880,7 @@
  static void label_file_coords ( bufX, bufY )
       double bufX, bufY;
  {
-@@ -142,7 +147,6 @@
+@@ -142,7 +147,6 @@ static void label_file_coords ( bufX, bu
    float fileX, fileY;
    GC gc, set_edit_gc();
    void d_transform();
@@ -1888,7 +1888,7 @@
    static int lwcs0 = 0;
    static int lpix0 = 0;
    int i;
-@@ -289,6 +293,9 @@
+@@ -289,6 +293,9 @@ void clear_coord_area ()
   *		but has not been refined for the val section.
   * Xlib call:	XDrawImageString()
   */
@@ -1898,7 +1898,7 @@
  static void label_file_coords_proportional ( bufX, bufY )
       double bufX, bufY;
  {
-@@ -297,7 +304,6 @@
+@@ -297,7 +304,6 @@ static void label_file_coords_proportion
    float fileX, fileY;
    GC gc, set_edit_gc();
    void d_transform();
@@ -1906,9 +1906,9 @@
  
    gc = set_edit_gc(magset.text.font,
  		   magset.text.foreground, magset.text.background);
---- mgfytabl.c.orig	Thu Jul  9 23:28:28 1998
-+++ mgfytabl.c	Fri Jun 29 12:00:33 2007
-@@ -30,6 +30,10 @@
+--- mgfytabl.c.orig	1998-07-09 16:28:28 UTC
++++ mgfytabl.c
+@@ -30,6 +30,10 @@ static char SccsId[] = "%W%  %G%";
   *		coordinates
   * Note:	Uses event coords in control struct (control.event.xkey)
   */
@@ -1919,7 +1919,7 @@
  void print_table ()
  {
    int bufx, bufy;
-@@ -39,8 +43,6 @@
+@@ -39,8 +43,6 @@ void print_table ()
    int table_size;
    int col_width;
    int rot;
@@ -1928,9 +1928,9 @@
  
    /* determine the buffer coordinates of the event */
    if( get_key_buf_coords(&control.event.xkey, &bufx, &bufy) == 0 ) {
---- pancrsr.c.orig	Wed May  2 14:49:17 1990
-+++ pancrsr.c	Fri Jun 29 12:01:31 2007
-@@ -45,13 +45,15 @@
+--- pancrsr.c.orig	1990-05-02 06:49:17 UTC
++++ pancrsr.c
+@@ -45,13 +45,15 @@ void draw_pancursor ( )
   * Subroutine:	new_pancursor
   * Purpose:	Create and draw panbox cursor given image coordinates
   */
@@ -1947,9 +1947,9 @@
  
    if( pancur_present ) {
      /* erase the old box if it was visible */
---- panimage.c.orig	Sat Apr 21 00:17:38 1990
-+++ panimage.c	Fri Jun 29 12:01:53 2007
-@@ -45,12 +45,14 @@
+--- panimage.c.orig	1990-04-20 16:17:38 UTC
++++ panimage.c
+@@ -45,12 +45,14 @@ void disp_panbox ( )
   * Subroutine:	map_panbox
   * Purpose:	Fill the panbox display buffer, mapping from its short buffer
   */
@@ -1968,9 +1968,9 @@
    void panimage_halftone();
  
    if( color.ncolors <= 1 ) {
---- prntcent.c.orig	Sat Aug 21 05:18:40 1999
-+++ prntcent.c	Fri Jun 29 12:41:46 2007
-@@ -36,6 +36,11 @@
+--- prntcent.c.orig	1999-08-20 22:18:40 UTC
++++ prntcent.c
+@@ -36,6 +36,11 @@ static char SccsId[] = "%W%  %G%";
   *		Returns 1 if successful, else 0
   * Note:	Uses event coords in control struct (control.event.xkey)
   */
@@ -1982,7 +1982,7 @@
  void
  print_center ( xc, yc )
  
-@@ -59,9 +64,6 @@
+@@ -59,9 +64,6 @@ double *xc, *yc;		/* Returned centroided
    int xfile, yfile;
    char string[64];
    int lstr = 48;
@@ -1992,9 +1992,9 @@
    void d_trans();
    int iswcs();
  
---- prntcurs.c.orig	Thu Jan 17 04:54:18 2002
-+++ prntcurs.c	Fri Jun 29 12:41:28 2007
-@@ -31,12 +31,14 @@
+--- prntcurs.c.orig	2002-01-16 22:54:18 UTC
++++ prntcurs.c
+@@ -31,12 +31,14 @@ static char SccsId[] = "%W%  %G%";
   * Subroutine:	print_cursor
   * Purpose:	print location of a dispbox event
   */
@@ -2010,9 +2010,9 @@
  
    (void)get_cursor_pos (event, &bufx, &bufy, &filex, &filey );
    (void)print_file_value ( bufx, bufy, filex, filey );
---- readarr.c.orig	Tue Feb 23 20:05:41 1999
-+++ readarr.c	Fri Jun 29 12:02:06 2007
-@@ -28,6 +28,9 @@
+--- readarr.c.orig	1999-02-23 14:05:41 UTC
++++ readarr.c
+@@ -28,6 +28,9 @@ static char SccsId[] = "%W%  %G%";
   * Purpose:	Read array data from a file
   * Note:	Assumes file was tested benignly, exits here if trouble
   */
@@ -2022,7 +2022,7 @@
  void read_array ( fd, img, imgbuf, filebuf, width, height, X, Y, block,
  		  verbose )
       int fd;			/* if >=0 handle to open & ready image file */
-@@ -40,7 +43,6 @@
+@@ -40,7 +43,6 @@ void read_array ( fd, img, imgbuf, fileb
       int verbose;		/* whether to print explanatory messages */
  {
    int vals;
@@ -2030,9 +2030,9 @@
    int image_start;
    int open_disk(), lseek_disk();
    void close_disk();
---- readfith.c.orig	Tue Sep 29 22:40:06 1998
-+++ readfith.c	Fri Jun 29 12:02:34 2007
-@@ -46,6 +46,9 @@
+--- readfith.c.orig	1998-09-29 15:40:06 UTC
++++ readfith.c
+@@ -46,6 +46,9 @@ static char SccsId[] = "%W%  %G%";
   * Purpose:	Find important FITS parameters in FITS header
   * Returns:	1 if success, else 0
   */
@@ -2042,7 +2042,7 @@
  int read_fitsheader ( header, length, bitpix, naxis, naxes, scale, bias )
       char *header;
       int length;
-@@ -55,7 +58,6 @@
+@@ -55,7 +58,6 @@ int read_fitsheader ( header, length, bi
       float *scale;
       float *bias;
  {
@@ -2050,7 +2050,7 @@
    struct WorldCoor *wcsinit();
    char *header0;
    header0 = header;
-@@ -144,6 +146,9 @@
+@@ -144,6 +146,9 @@ static int get_keyint ( header, keyword,
   * Purpose:	Return the float value in the data field for a given FITS
   *		header keyword.  If key not found, return 0.
   */
@@ -2060,7 +2060,7 @@
  static int get_keyfloat ( header, keyword, length, val, report_error)
       char *header;	/* buffer start */
       char *keyword;	/* keyword to match */
-@@ -153,7 +158,6 @@
+@@ -153,7 +158,6 @@ static int get_keyfloat ( header, keywor
  {
    int key_not_end;
    int i;
@@ -2068,9 +2068,9 @@
    void no_fitscomment();
  
    key_not_end = (strncmp(keyword, "END     ", 8) != 0);
---- rgnanli.c.orig	Sat Apr 21 00:25:03 1990
-+++ rgnanli.c	Fri Jun 29 12:02:53 2007
-@@ -89,14 +89,16 @@
+--- rgnanli.c.orig	1990-04-20 16:25:03 UTC
++++ rgnanli.c
+@@ -89,14 +89,16 @@ void new_annulus_edge ( cursor )
   * Note:	"vala valb valc ..." and "val1 val2 n=int" are both
   *		permitted syntax forms
   */
@@ -2089,9 +2089,9 @@
    char *next_token();
  
    i = 0;
---- rgndraw.c.orig	Tue Dec  1 03:46:40 1998
-+++ rgndraw.c	Fri Jun 29 12:04:06 2007
-@@ -115,12 +115,14 @@
+--- rgndraw.c.orig	1998-11-30 21:46:40 UTC
++++ rgndraw.c
+@@ -115,12 +115,14 @@ void disp_regions ( cursor )
   * Subroutine:	disp_region
   * Purpose:	Draw one saved cursor region and its labels
   */
@@ -2108,7 +2108,7 @@
  
    if( rgdraw.visible && (region != NULL) ) {
      gc = set_region_gc(region);
-@@ -215,11 +217,13 @@
+@@ -215,11 +217,13 @@ static void draw_region_label ( string, 
   * Purpose:	Draw one saved cursor region outline or point index
   * Note:	gc is already set, hence NULL GCspec in draw calls
   */
@@ -2123,7 +2123,7 @@
    void draw_annuli(), draw_cursor();
  
    if( region->type != COP_Point ) {
-@@ -246,12 +250,14 @@
+@@ -246,12 +250,14 @@ static void draw_region ( region, gc )
  /*
   * Subroutine:	label_annuli
   */
@@ -2139,7 +2139,7 @@
  
    /* apply label to outer annulus */
    annulus = region;
-@@ -268,6 +274,10 @@
+@@ -268,6 +274,10 @@ static void label_annuli ( region, gc )
   * Purpose:	Draw one region's label line and text for center and edge
   * Xlib calls:	XDrawLine()
   */
@@ -2150,7 +2150,7 @@
  static void label_region ( region, gc )
       struct cursorRec *region;
       GC gc;
-@@ -277,8 +287,6 @@
+@@ -277,8 +287,6 @@ static void label_region ( region, gc )
    char edge_string[132];
    int len;
    int exclude;
@@ -2159,9 +2159,9 @@
  
    /* if label not requested or don't know how to label or will another part */
    if( (!rgdraw.label) || (region->type == COP_Polygon) )
---- rgndrop.c.orig	Sat Apr 21 00:31:38 1990
-+++ rgndrop.c	Fri Jun 29 12:04:34 2007
-@@ -64,14 +64,16 @@
+--- rgndrop.c.orig	1990-04-20 16:31:38 UTC
++++ rgndrop.c
+@@ -64,14 +64,16 @@ void unsave_region ( cursor, dead_meat )
   *		cursors enclose one or two digit label but have 0 area).
   *		In case of equal areas (i.e. points), closer center is used.
   */
@@ -2180,7 +2180,7 @@
  
    chosen = NULL;
    region = cursor->next_region;
-@@ -115,13 +117,15 @@
+@@ -115,13 +117,15 @@ static int closer_to_center ( challenger
   * Subroutine:	is_inside_region
   * Purpose:	Determine if mouse is within a region
   */
@@ -2197,9 +2197,9 @@
  
    if( region->type == COP_Polygon )
      return( pointer_is_inside_polygon((double)x, (double)y,
---- rgnwpros.c.orig	Wed Jan  9 10:57:30 1991
-+++ rgnwpros.c	Fri Jun 29 12:29:12 2007
-@@ -45,11 +45,13 @@
+--- rgnwpros.c.orig	1991-01-09 03:57:30 UTC
++++ rgnwpros.c
+@@ -45,11 +45,13 @@ static char SccsId[] = "%W%  %G%";
   * Purpose:	Write ROSAT PROS style region description to file
   * Method:	Recurse first to start writing from end of link list
   */
@@ -2214,7 +2214,7 @@
  
    /*  Check for pointer before doing anything  */
    if( region == NULL )
-@@ -84,13 +86,15 @@
+@@ -84,13 +86,15 @@ void write_region_pros ( fd, region )
  /*  Subroutine:	cat_shape
   *  Purpose:	Put simple PROS description of given cursor in line buffer
   */     
@@ -2231,7 +2231,7 @@
  
    switch( region->type ) {
    case COP_Box:
-@@ -205,12 +209,14 @@
+@@ -205,12 +209,14 @@ static void cat_cen ( region, line )
   * Subroutine:	cat_polypts
   * Purpose:	Add list of point coordinates to line buffer (for polygon)
   */
@@ -2247,7 +2247,7 @@
  
    cat_pt((double)region->poly[0].fileX, (double)region->poly[0].fileY,
  	 line, 0);
-@@ -254,12 +260,14 @@
+@@ -254,12 +260,14 @@ static void cat_pt ( x, y, line, comma )
   * Purpose:	Put a PROS style description of circular annuli on the
   *		line buffer
   */
@@ -2263,7 +2263,7 @@
  
    (void)strcat(line, "ANNULUS(");
    cat_cen(region, line);
-@@ -275,14 +283,16 @@
+@@ -275,14 +283,16 @@ static void cat_annulus ( region, line )
   * Subroutine:	write_annuli
   * Purpose:	Write PROS type description to produce annuli of given shapes
   */
@@ -2282,7 +2282,7 @@
  
    /* annuli start with next_annulus (base region is not one of them) */ 
    if( (annulus = region->next_annulus) != NULL ) {
-@@ -309,11 +319,13 @@
+@@ -309,11 +319,13 @@ static void write_annuli ( region, line,
   * Purpose:	Add outer shape anded with not of inner shape to make
   *		an annular ring
   */
@@ -2297,9 +2297,9 @@
  
    if( region->next_annulus != NULL ) {
      if( region->exclude_region )
---- rgnwrite.c.orig	Fri Jun 29 12:42:50 2007
-+++ rgnwrite.c	Fri Jun 29 12:29:47 2007
-@@ -58,6 +58,9 @@
+--- rgnwrite.c.orig	1995-09-08 22:29:19 UTC
++++ rgnwrite.c
+@@ -58,6 +58,9 @@ EditStruct *region_edit;
   * Subroutine:	write_regions
   * Purpose:	Write region info to a file
   */
@@ -2309,7 +2309,7 @@
  void write_regions ( cursor, image, output_type )
       struct cursorRec *cursor;
       struct imageRec *image;
-@@ -66,7 +69,6 @@
+@@ -66,7 +69,6 @@ void write_regions ( cursor, image, outp
    FILE *fd;
    static int last_output_type = 0;
    char fname[SZ_FNAME];
@@ -2317,7 +2317,7 @@
    int open_output_file();
    EditStruct *init_edit_popup();
    void set_path_iraf(), write_region_pros(), load_edit_struct(), timestamp();
-@@ -146,13 +148,15 @@
+@@ -146,13 +148,15 @@ static void write_region_imtool ( fd, re
   * Subroutine:	timestamp
   * Purpose:	Write date and filename (if known) to region file
   */
@@ -2334,9 +2334,9 @@
  
    /* timestamp the first entry in the output file. */
    set_time_string (line);
---- sclctrl.c.orig	Thu Oct 10 22:55:57 1996
-+++ sclctrl.c	Fri Jun 29 12:30:24 2007
-@@ -70,6 +70,9 @@
+--- sclctrl.c.orig	1996-10-10 15:55:57 UTC
++++ sclctrl.c
+@@ -70,6 +70,9 @@ void select_scalemap ()
   * Subroutine:	new_scalemap
   * Purpose:	Scalemap calculation for a new image
   */
@@ -2346,7 +2346,7 @@
  void new_scalemap ( )
  {
    static double cmdMin = 0.0;
-@@ -78,7 +81,6 @@
+@@ -78,7 +81,6 @@ void new_scalemap ( )
    static int max_given = 0;
    static int imtool_200 = 0;
    static int init = 1;		/* identify first time called */
@@ -2354,9 +2354,9 @@
    void make_scalemap(), color_logo();
  #ifdef IMTOOL
    void set_imtool_colors();
---- sclmap.c.orig	Tue Oct 25 21:25:02 1994
-+++ sclmap.c	Fri Jun 29 12:30:47 2007
-@@ -36,11 +36,13 @@
+--- sclmap.c.orig	1994-10-25 15:25:02 UTC
++++ sclmap.c
+@@ -36,11 +36,13 @@ static char SccsId[] = "%W%  %G%";
   * Note:	Map goes from image value to hardware value (through ideal
   *		map value using pixels array from XAllocColors)
   */
@@ -2371,7 +2371,7 @@
  
    /* note the range of data for which mapping is to be calculated */
    if( image_max == image_min )
-@@ -105,6 +107,9 @@
+@@ -105,6 +107,9 @@ void make_scalemap ( image_min, image_ma
   * Subroutine:	linear_scale
   * Purpose:	Distribute color levels in the map evenly
   */
@@ -2381,7 +2381,7 @@
  static void linear_scale ( image_min, image_max )
    int image_min, image_max;		/* i: limits of values in display */
  {
-@@ -118,7 +123,6 @@
+@@ -118,7 +123,6 @@ static void linear_scale ( image_min, im
    register int imageval;
    register int pixval;
    register int imagelim;
@@ -2389,9 +2389,9 @@
  
    range_min = image_min;
    range_max = image_max;
---- wndwconf.c.orig	Sat Jan 21 06:27:13 1995
-+++ wndwconf.c	Fri Jun 29 12:40:29 2007
-@@ -55,9 +55,11 @@
+--- wndwconf.c.orig	1995-01-21 00:27:13 UTC
++++ wndwconf.c
+@@ -55,9 +55,11 @@ static unsigned int geo_width, geo_heigh
   * Method:	The size can be given or set to norm.  If given but less
   *		than min (i.e. 0,0) it becomes the minimum configuration.
   */
@@ -2404,9 +2404,9 @@
  
    desktop.hints.min_width =
      (2 * desktop.xzero) + (2 * dispbox.bdrwidth) + dispbox.hints.min_width;
---- wndwinit.c.orig	Sat Dec 15 05:19:23 2001
-+++ wndwinit.c	Fri Jun 29 12:41:01 2007
-@@ -53,11 +53,13 @@
+--- wndwinit.c.orig	2001-12-14 23:19:23 UTC
++++ wndwinit.c
+@@ -53,11 +53,13 @@ static char **cmd_argv;		/* i: command l
   * Uses:	create_window() in WndwCreate.c
   * Xlib calls:	DisplayWidth(), DisplayHeight();
   */
@@ -2421,7 +2421,7 @@
    void init_desktop(), create_window();
  
    /* set display screen parameters for all to see */
-@@ -81,9 +83,11 @@
+@@ -81,9 +83,11 @@ void init_windows1 ( argc, argv )
   * Uses:	configure_windows() in WndwConfig.c
   * Uses:	get_window_dimensions(), create_window() in WndwCreate.c
   */
@@ -2434,7 +2434,7 @@
    void get_window_dimensions(), configure_windowgroup(), create_window();
  
    /* install runtime environment parameters for all windows */
-@@ -175,11 +179,13 @@
+@@ -175,11 +179,13 @@ void raise_windows ( )
   * Subroutine:	init_window_basics, set_window_basics
   * Purpose:	Set the runtime environment parameters
   */
@@ -2449,9 +2449,9 @@
  
    ximage = XCreateImage(desktop.display, color.visual, color.screen_depth,
  			dispbox.image.format, 0, malloc(4), 2, 2,
---- wndwmaus.c.orig	Thu Dec 20 04:06:46 2001
-+++ wndwmaus.c	Fri Jun 29 12:41:12 2007
-@@ -61,11 +61,13 @@
+--- wndwmaus.c.orig	2001-12-19 22:06:46 UTC
++++ wndwmaus.c
+@@ -61,11 +61,13 @@ static Cursor keycursor;
   * Subroutine:	init_mousepointers
   * Purpose:	Set up the various mouse pointer icons for all windows
   */

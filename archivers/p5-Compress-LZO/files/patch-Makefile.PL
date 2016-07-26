@@ -1,6 +1,6 @@
---- Makefile.PL.orig	1998-08-23 18:14:41.000000000 +0800
-+++ Makefile.PL	2011-12-06 09:11:59.832206442 +0800
-@@ -14,6 +14,8 @@
+--- Makefile.PL.orig	1998-08-23 10:14:41 UTC
++++ Makefile.PL
+@@ -14,6 +14,8 @@ use Config;
  # installed.
  
  #$LZO_LIB     = '-L/usr/local/lib';
@@ -9,7 +9,7 @@
  
  
  # It shouldn't be necessary to change anything from here on.
-@@ -21,7 +23,7 @@
+@@ -21,7 +23,7 @@ use Config;
  WriteMakefile(
                  NAME   	 	=> 'Compress::LZO',
  		VERSION_FROM  	=> 'LZO.pm',

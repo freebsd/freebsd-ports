@@ -1,4 +1,4 @@
---- src/error.h.orig	2016-05-03 08:56:07 UTC
+--- src/error.h.orig	2002-12-22 15:18:57 UTC
 +++ src/error.h
 @@ -24,7 +24,7 @@
  #ifndef MY_ERROR_H

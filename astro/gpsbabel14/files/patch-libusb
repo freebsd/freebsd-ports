@@ -1,6 +1,6 @@
---- configure.in.orig	2008-10-31 15:43:21.000000000 +0300
-+++ configure.in	2009-03-07 01:08:46.000000000 +0300
-@@ -170,6 +169,28 @@
+--- configure.in.orig	2012-09-03 22:09:52 UTC
++++ configure.in
+@@ -189,6 +189,28 @@ case "$target" in
        AC_DEFINE(HAVE_LIBUSB, 1)
        CFLAGS="$CFLAGS -Imac/libusb/"
        ;;

@@ -1,5 +1,5 @@
---- xmixer.man.orig	Thu Nov 16 17:32:10 2000
-+++ xmixer.man	Tue Feb 20 02:05:12 2001
+--- xmixer.man.orig	2000-11-16 08:32:10 UTC
++++ xmixer.man
 @@ -4,9 +4,10 @@
  .\"
  .TH XMIXER 1 "Aug 1999" "GNU" "Version 0.9"

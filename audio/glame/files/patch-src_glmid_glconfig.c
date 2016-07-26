@@ -1,5 +1,5 @@
---- src/glmid/glconfig.c.orig	2008-03-02 14:05:46.000000000 -0500
-+++ src/glmid/glconfig.c	2008-03-02 14:06:23.000000000 -0500
+--- src/glmid/glconfig.c.orig	2004-10-23 13:09:23 UTC
++++ src/glmid/glconfig.c
 @@ -125,7 +125,8 @@ int glame_config_get_long(const char *ke
  	snprintf(cmd, 255, "(glame-config-get '%s)", key);
  	/* FIXME: execute with catch. */

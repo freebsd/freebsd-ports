@@ -1,6 +1,6 @@
---- zpsfx.cpp.orig	2012-04-09 04:01:23.000000000 -0400
-+++ zpsfx.cpp	2012-04-09 04:02:25.000000000 -0400
-@@ -16,19 +16,38 @@
+--- zpsfx.cpp.orig	2016-07-26 12:10:41 UTC
++++ zpsfx.cpp
+@@ -16,19 +16,38 @@ Or use appropriate optimization options.
  the executable smaller. -DNDEBUG turns off run time checks.
  To convert a ZPAQ archive to a self extracting archive:
  
@@ -39,7 +39,7 @@
  The program reads itself and decompresses the appended archive.
  You must enter the .exe extension as shown. If the file is not in
  the current folder then you need to specify the path. The PATH environment
-@@ -44,7 +63,11 @@
+@@ -44,7 +63,11 @@ stored filename. SHA-1 checksums are not
  #include <stdio.h>
  #include <stdlib.h>
  #include <string>
@@ -51,7 +51,7 @@
  
  // An error handler is required as shown in this example. libzpaq will
  // call it with an English language message in case of a fatal error.
-@@ -96,7 +119,11 @@
+@@ -96,7 +119,11 @@ struct Buf: public libzpaq::Writer {
  
  // Return '/' in Linux or '\' in Windows
  char slash() {
@@ -63,7 +63,7 @@
  }
  
  // Create directories as needed. For example if path="/tmp/foo/bar"
-@@ -106,7 +133,11 @@
+@@ -106,7 +133,11 @@ void makepath(std::string& path) {
    for (int i=0; i<path.size(); ++i) {
      if (path[i]=='\\' || path[i]=='/') {
        path[i]=0;

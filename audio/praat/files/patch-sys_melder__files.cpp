@@ -1,4 +1,4 @@
---- sys/melder_files.cpp.orig	2015-03-24 09:58:31 UTC
+--- sys/melder_files.cpp.orig	2015-05-20 01:47:31 UTC
 +++ sys/melder_files.cpp
 @@ -301,7 +301,7 @@ void MelderFile_setToNull (MelderFile fi
  }

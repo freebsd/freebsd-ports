@@ -1,6 +1,6 @@
---- ./mynet.c.orig	2006-08-20 17:51:17.000000000 +0300
-+++ ./mynet.c	2012-08-12 12:29:05.000000000 +0300
-@@ -86,7 +86,7 @@
+--- mynet.c.orig	2006-08-20 14:51:17 UTC
++++ mynet.c
+@@ -86,7 +86,7 @@ int server_connect (char *servername, in
  {
    struct sockaddr_in serverSockAddr;
    struct hostent *serverHostEnt;
@@ -9,7 +9,7 @@
    
  #if WIN32
    int res;
-@@ -105,7 +105,7 @@
+@@ -105,7 +105,7 @@ int server_connect (char *servername, in
    hostAddr = inet_addr(servername); 
    
    /* If it is an ip address */

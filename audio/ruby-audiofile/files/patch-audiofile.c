@@ -1,6 +1,6 @@
 --- audiofile.c.orig	2003-08-09 23:29:57 UTC
 +++ audiofile.c
-@@ -161,7 +161,7 @@
+@@ -161,7 +161,7 @@ static VALUE af_initialize(int argc, VAL
  
              /* get mode into a C-string */
              mode = malloc(2);
@@ -9,7 +9,7 @@
              mode[1] = '\0';
  
              switch(*mode) {
-@@ -188,7 +188,7 @@
+@@ -188,7 +188,7 @@ static VALUE af_initialize(int argc, VAL
      switch(*mode) {
          case 'r':
  
@@ -18,7 +18,7 @@
              if(fh != AF_NULL_FILEHANDLE) {
                  afp = ALLOC(struct af_data);
                  DATA_PTR(obj) = afp;
-@@ -212,8 +212,8 @@
+@@ -212,8 +212,8 @@ static VALUE af_initialize(int argc, VAL
  
          case 'w':
              
@@ -29,7 +29,7 @@
  
              afp = ALLOC(struct af_data);
              DATA_PTR(obj) = afp;
-@@ -335,8 +335,8 @@
+@@ -335,8 +335,8 @@ static VALUE af_read_into(VALUE obj, VAL
      
  
      Check_Type(readIntoString, T_STRING);
@@ -40,7 +40,7 @@
  
      frame_size = afGetFrameSize(afp->handle, AF_DEFAULT_TRACK, EXPAND_3TO4);
      frames = bytes / frame_size;
-@@ -357,8 +357,8 @@
+@@ -357,8 +357,8 @@ static VALUE actually_write(VALUE obj, V
      GetAFP(obj, afp);
  
      Check_Type(writeFromString, T_STRING);
@@ -51,7 +51,7 @@
  
      frame_size = afGetFrameSize(afp->handle, AF_DEFAULT_TRACK, EXPAND_3TO4);
      frames = bytes / frame_size;
-@@ -679,18 +679,18 @@
+@@ -679,18 +679,18 @@ static VALUE af_pcm_mapping_eq(VALUE obj
      struct af_data *afp;
  
      Check_Type(args, T_ARRAY);
@@ -77,7 +77,7 @@
      Check_Type(v_slope, T_FLOAT);
      Check_Type(v_intercept, T_FLOAT);
      Check_Type(v_min_clip, T_FLOAT);
-@@ -700,12 +700,12 @@
+@@ -700,12 +700,12 @@ static VALUE af_pcm_mapping_eq(VALUE obj
  
      if(af_is_open(afp)) {
          afSetTrackPCMMapping(afp->handle, AF_DEFAULT_TRACK, 

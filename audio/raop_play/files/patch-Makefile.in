@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2005-12-16 14:16:59 UTC
++++ Makefile.in
+@@ -1,9 +1,9 @@
+ SUBDIRS = rendezvous raop_play aexcl
+ 
+ all:
+-	for i in $(SUBDIRS); do make -C $$i; done
++	for i in $(SUBDIRS); do gmake -C $$i; done
+ 
+ install uninstall clean:
+-	for i in $(SUBDIRS); do make -C $$i $@; done
++	for i in $(SUBDIRS); do gmake -C $$i $@; done
+ 
+ distclean:

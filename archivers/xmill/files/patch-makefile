@@ -1,22 +1,21 @@
---- makefile.orig	2008-07-26 04:10:14.000000000 +0700
-+++ makefile	2008-07-26 04:08:44.000000000 +0700
-@@ -43,25 +43,18 @@
+--- makefile.orig	2016-07-26 12:48:05 UTC
++++ makefile
+@@ -43,25 +43,18 @@ INSPECTSRC = ./xmillinspect
  PPMZIPSRC = ./ppmzip
  PPMSRC = ./ppmdi
  
 -CPP = g++
 -CC = gcc
 -LINK = g++
--
++CPP = $(CXX)
++CC = $(CC)
++LINK = $(CPP)
+ 
 -CFLAGS = -O3 -c -w
 -CPPFLAGS_XMILL = $(CFLAGS) -DXMILL -Izlib -Ibzlib -IXMill -Ippmdi
 -CPPFLAGS_XDEMILL = $(CFLAGS) -Izlib -Ibzlib -DXDEMILL -Ippmdi
 -CPPFLAGS_XMILLTEST = $(CFLAGS) -IXMill
 -CPPFLAGS_PPMZIP = $(CFLAGS) -Ippmdi
-+CPP = $(CXX)
-+CC = $(CC)
-+LINK = $(CPP)
-+
 +CPPFLAGS = $(CXXFLAGS) -c -w
 +CPPFLAGS_XMILL = $(CPPFLAGS) -DXMILL -IXMill -Ippmdi
 +CPPFLAGS_XDEMILL = $(CPPFLAGS) -DXDEMILL -Ippmdi
@@ -35,7 +34,7 @@
  XMILLLIB_MISC  =  \
  		   $(TMP)/CompressMan.o $(TMP)/ContMan.o $(TMP)/PathDict.o \
  		   $(TMP)/UnCompCont.o \
-@@ -120,9 +113,9 @@
+@@ -120,9 +113,9 @@ XMILL_OBJSPART = $(TMP)/realmain.o $(TMP
  XDEMILL_OBJSPART = $(TMP)/realmain_u.o $(TMP)/Options_u.o
  XMILLTEST_OBJSPART = $(TMP)/testset.o $(TMP)/xmilltest.o
  
@@ -48,7 +47,7 @@
  
  XMILLINSPECTOBJS = $(TMP)/containers.o $(TMP)/exprinfo.o \
  			$(TMP)/globals.o \
-@@ -131,27 +124,27 @@
+@@ -131,27 +124,27 @@ XMILLINSPECTOBJS = $(TMP)/containers.o $
  			$(TMP)/lists.o \
  			$(TMP)/main.o \
  			$(TMP)/xmillinspect.o \

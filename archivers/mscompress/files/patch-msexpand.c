@@ -1,5 +1,5 @@
---- msexpand.c.orig	2011-12-22 00:20:38.000000000 +0800
-+++ msexpand.c	2011-12-22 00:20:44.000000000 +0800
+--- msexpand.c.orig	2000-04-15 13:15:45 UTC
++++ msexpand.c
 @@ -215,7 +215,7 @@ usage (char *progname)
    exit (0);
  }

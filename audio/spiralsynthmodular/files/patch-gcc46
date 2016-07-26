@@ -1,4 +1,4 @@
---- SpiralSound/ChannelHandler.C~
+--- SpiralSound/ChannelHandler.C.orig	2003-02-21 00:51:15 UTC
 +++ SpiralSound/ChannelHandler.C
 @@ -19,6 +19,9 @@
  #include "ChannelHandler.h"
@@ -10,7 +10,7 @@
  using namespace std;
  
  //#define CHANNEL_DEBUG
---- SpiralSound/Plugins/LADSPAPlugin/LADSPAInfo.C~
+--- SpiralSound/Plugins/LADSPAPlugin/LADSPAInfo.C.orig	2003-08-08 17:58:26 UTC
 +++ SpiralSound/Plugins/LADSPAPlugin/LADSPAInfo.C
 @@ -30,6 +30,7 @@
  #include <stdio.h>
@@ -20,7 +20,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <dirent.h>
---- SpiralSound/Sample.h~
+--- SpiralSound/Sample.h.orig	2003-07-22 22:08:41 UTC
 +++ SpiralSound/Sample.h
 @@ -23,6 +23,7 @@
  

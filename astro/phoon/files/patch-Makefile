@@ -1,5 +1,5 @@
---- ./Makefile.orig	2003-01-21 04:04:36.000000000 +0100
-+++ ./Makefile	2014-02-12 22:39:19.404018490 +0100
+--- Makefile.orig	2003-01-21 03:04:36 UTC
++++ Makefile
 @@ -1,15 +1,15 @@
  # Makefile for phoon
  
@@ -21,7 +21,7 @@
  
  
  all:		phoon
-@@ -24,7 +24,7 @@
+@@ -24,7 +24,7 @@ date_parse.o:	date_parse.h
  astro.o:	astro.h
  
  install:	all

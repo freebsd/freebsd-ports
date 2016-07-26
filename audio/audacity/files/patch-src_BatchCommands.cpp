@@ -1,4 +1,4 @@
---- src/BatchCommands.cpp.orig	2016-01-08 22:05:48 UTC
+--- src/BatchCommands.cpp.orig	2016-07-26 13:34:06 UTC
 +++ src/BatchCommands.cpp
 @@ -151,7 +151,7 @@ bool BatchCommands::ReadChain(const wxSt
           else if (cmd == wxT("ExportWav"))

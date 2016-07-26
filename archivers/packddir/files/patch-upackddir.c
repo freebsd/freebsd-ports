@@ -1,6 +1,6 @@
---- upackddir.c.orig	2009-08-22 04:48:16.000000000 +0900
-+++ upackddir.c	2009-08-22 04:48:39.000000000 +0900
-@@ -253,7 +253,7 @@
+--- upackddir.c.orig	2004-01-17 12:08:52 UTC
++++ upackddir.c
+@@ -253,7 +253,7 @@ int packfile_extract(char *packfile, int
  	}
  
  	/* Let's jump to the beginning of our sweet data */
@@ -9,7 +9,7 @@
  
  	for (i = 0; i < pack->numfiles; i++) {
  		fprintf(stderr, "%s\n", mapped->name);
-@@ -297,7 +297,7 @@
+@@ -297,7 +297,7 @@ int packfile_extract_filename(char *pack
  	}
  
  	/* Let's jump to the beginning of our sweet data */
