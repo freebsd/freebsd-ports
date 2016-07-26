@@ -1,7 +1,7 @@
---- Tests/Unit/GNUmakefile.orig	2015-09-16 18:41:31 UTC
+--- Tests/Unit/GNUmakefile.orig	2016-07-12 16:56:44 UTC
 +++ Tests/Unit/GNUmakefile
-@@ -35,7 +35,10 @@ $(TEST_TOOL)_CPPFLAGS += \
- 	-Wall -D_GNU_SOURCE -I../../SOPE/ -I../../SoObjects/ -I../../UI/
+@@ -43,7 +43,10 @@ $(TEST_TOOL)_CPPFLAGS += \
+ 	-Wall -D_GNU_SOURCE -I../../SOPE/ -I../../SoObjects/ -I../../UI/ -I../../OpenChange
  
  ADDITIONAL_LIB_DIRS += \
 -	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -L../../SOPE/NGCards/obj -L../../SOPE/GDLContentStore/obj -lSOGo -lNGMime -lNGCards -lGDLContentStore -lNGExtensions -lSBJson -lobjc \
