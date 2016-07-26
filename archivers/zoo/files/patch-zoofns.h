@@ -1,6 +1,6 @@
---- ./zoofns.h.orig	1993-05-01 05:57:35.000000000 +0200
-+++ ./zoofns.h	2011-12-22 14:00:55.000000000 +0100
-@@ -94,7 +94,11 @@
+--- zoofns.h.orig	1993-05-01 03:57:35 UTC
++++ zoofns.h
+@@ -94,7 +94,11 @@ void exit PARMS ((int));
  void fixslash PARMS ((char *));
  void makelist PARMS ((int, char *[], char *[], int, char *, char *, char *, int *));
  void memerr PARMS ((unsigned int));

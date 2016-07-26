@@ -1,6 +1,6 @@
---- configure.py.orig	Sat Jan 24 18:44:11 2004
-+++ configure.py	Sat Jan 24 18:46:37 2004
-@@ -7,7 +7,7 @@
+--- configure.py.orig	2002-05-01 03:59:28 UTC
++++ configure.py
+@@ -7,7 +7,7 @@ import string
  import getopt
  
  usagemessage = 'usage: ' + sys.argv[0] + ' [-d NAME] [-i] [-I /dir/path] [-L /dir/path] [-l]'
@@ -9,7 +9,7 @@
  
  helpmessage = 'Boodler configuration script\n\n' + usagemessage + '''
  
-@@ -68,8 +68,8 @@
+@@ -68,8 +68,8 @@ loop, but does not eliminate them entire
  '''
  
  try:
@@ -20,7 +20,7 @@
  except getopt.error, ex:
  	print (sys.argv[0] + ':'), str(ex)
  	print usagemessage
-@@ -101,6 +101,8 @@
+@@ -101,6 +101,8 @@ for (opname, opval) in opts:
  		extraheaders.append(opval)
  	if (opname == '--lib' or opname == '-L'):
  		extralibs.append(opval)

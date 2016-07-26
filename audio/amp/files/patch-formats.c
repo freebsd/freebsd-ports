@@ -1,6 +1,6 @@
---- formats.c	Sat May 31 14:47:58 1997
-+++ formats.c	Wed Apr 13 00:21:47 2005
-@@ -27,7 +27,7 @@
+--- formats.c.orig	1997-05-31 17:47:58 UTC
++++ formats.c
+@@ -27,7 +27,7 @@ unsigned char iza[8]={0x64 ,0x61 ,0x74 ,
  int len,fs,i;
  
  	len=ftell(out_file)-44;

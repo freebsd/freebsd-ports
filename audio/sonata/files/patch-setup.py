@@ -1,6 +1,6 @@
---- setup.py	2009-03-18 03:23:09.000000000 +0100
-+++ setup.py.port	2009-05-30 22:04:54.000000000 +0200
-@@ -54,6 +54,38 @@
+--- setup.py.orig	2009-09-21 21:02:16 UTC
++++ setup.py
+@@ -54,6 +54,38 @@ VERSION = %r
  """ % sonata.svnversion.VERSION)
  versionfile.close()
  
@@ -37,9 +37,9 @@
 +	port_data_files.append(('man/man1', ['sonata.1']))
 +
  setup(name='Sonata',
-         version=sonata.svnversion.VERSION,
+         version="1.6.2.1",
          description='GTK+ client for the Music Player Daemon (MPD).',
-@@ -77,34 +109,7 @@
+@@ -77,34 +109,7 @@ setup(name='Sonata',
          extra_link_args=capture("pkg-config --libs gtk+-2.0 pygtk-2.0").split()
           ),],
          scripts = ['sonata/sonata'],

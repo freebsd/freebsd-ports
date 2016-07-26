@@ -1,6 +1,6 @@
---- macunpack/dd.c.orig	Fri Apr 16 00:26:39 1999
-+++ macunpack/dd.c	Fri Apr 16 00:26:45 1999
-@@ -45,7 +45,7 @@
+--- macunpack/dd.c.orig	1993-10-02 20:16:00 UTC
++++ macunpack/dd.c
+@@ -45,7 +45,7 @@ static int dd_getbits();
  #endif /* UNTESTED */
  static void dd_cpt_compat();
  

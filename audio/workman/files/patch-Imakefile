@@ -1,5 +1,5 @@
---- Imakefile.orig	Fri Feb 27 10:08:37 2004
-+++ Imakefile	Fri Feb 27 10:09:01 2004
+--- Imakefile.orig	1995-06-05 00:10:44 UTC
++++ Imakefile
 @@ -1,19 +1,19 @@
 -/**/# @(#)Imakefile	1.16 04 Jun 1995
 +# @(#)Imakefile	1.16 04 Jun 1995

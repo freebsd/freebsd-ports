@@ -1,5 +1,5 @@
---- obuffer.cc.orig	Mon Jun 27 21:14:03 1994
-+++ obuffer.cc	Thu Nov 21 16:45:14 2002
+--- obuffer.cc.orig	1994-06-27 11:14:03 UTC
++++ obuffer.cc
 @@ -47,7 +47,7 @@
  #include <unistd.h>
  #include <fcntl.h>
@@ -9,7 +9,7 @@
  #include "obuffer.h"
  #include "header.h"
  #ifdef ULAW
-@@ -65,14 +65,14 @@
+@@ -65,14 +65,14 @@ FileObuffer::FileObuffer (uint32 number_
  #ifdef DEBUG
    if (!number_of_channels || number_of_channels > MAXCHANNELS)
    {
@@ -26,7 +26,7 @@
  #endif
    channels = number_of_channels;
    for (int i = 0; i < number_of_channels; ++i)
-@@ -85,12 +85,12 @@
+@@ -85,12 +85,12 @@ void FileObuffer::append (uint32 channel
  #ifdef DEBUG
    if (channel >= channels)
    {
@@ -41,7 +41,7 @@
      exit (1);
    }
  #endif
-@@ -143,7 +143,7 @@
+@@ -143,7 +143,7 @@ IndigoObuffer::IndigoObuffer (uint32 num
  #ifdef DEBUG
    if (!number_of_channels || number_of_channels > MAXCHANNELS)
    {
@@ -50,7 +50,7 @@
      exit (1);
    }
  #endif
-@@ -155,7 +155,7 @@
+@@ -155,7 +155,7 @@ IndigoObuffer::IndigoObuffer (uint32 num
    ALconfig config;
    if (!(config = ALnewconfig ()))
    {
@@ -59,7 +59,7 @@
      exit (1);
    }
    ALsetwidth (config, AL_SAMPLE_16);
-@@ -165,7 +165,7 @@
+@@ -165,7 +165,7 @@ IndigoObuffer::IndigoObuffer (uint32 num
      ALsetchannels (config, AL_STEREO);
    if (!(port = ALopenport ("MPEG audio player", "w", config)))
    {
@@ -68,7 +68,7 @@
      exit (1);
    }
  
-@@ -190,12 +190,12 @@
+@@ -190,12 +190,12 @@ void IndigoObuffer::append (uint32 chann
  #ifdef DEBUG
    if (channel >= channels)
    {
@@ -83,7 +83,7 @@
      exit (1);
    }
  #endif
-@@ -217,17 +217,17 @@
+@@ -217,17 +217,17 @@ void IndigoObuffer::write_buffer (int)
  int SparcObuffer::audio_fd = -1;
  
  #ifdef ULAW
@@ -104,7 +104,7 @@
      exit (1);
    }
  #endif
-@@ -235,7 +235,7 @@
+@@ -235,7 +235,7 @@ SparcObuffer::SparcObuffer (uint32 numbe
  
    if (audio_fd < 0)
    {
@@ -113,7 +113,7 @@
  	    "by SparcObuffer::class_suitable()!\n";
      exit (1);
    }
-@@ -296,7 +296,7 @@
+@@ -296,7 +296,7 @@ void SparcObuffer::append (uint32 channe
  #ifdef DEBUG
    if (bufferp - buffer >= OBUFFERSIZE >> 1)
    {
@@ -122,7 +122,7 @@
      exit (1);
    }
  #endif
-@@ -307,12 +307,12 @@
+@@ -307,12 +307,12 @@ void SparcObuffer::append (uint32 channe
  #ifdef DEBUG
    if (channel >= channels)
    {
@@ -137,7 +137,7 @@
      exit (1);
    }
  #endif
-@@ -351,7 +351,7 @@
+@@ -351,7 +351,7 @@ int SparcObuffer::open_audio_device (voi
    if ((fd = open ("/dev/audio", O_WRONLY | O_NDELAY, 0)) < 0)
      if (errno == EBUSY)
      {
@@ -146,7 +146,7 @@
        exit (1);
      }
      else
-@@ -398,7 +398,7 @@
+@@ -398,7 +398,7 @@ int SparcObuffer::get_device_type (int f
    }
    return devtype;
  #else
@@ -155,7 +155,7 @@
    return -1;
  #endif
  }
-@@ -406,15 +406,15 @@
+@@ -406,15 +406,15 @@ int SparcObuffer::get_device_type (int f
  
  
  #ifdef ULAW
@@ -174,7 +174,7 @@
  	    "Please use the option -l or -r for stereo streams.\n";
      return False;
    }
-@@ -436,7 +436,7 @@
+@@ -436,7 +436,7 @@ bool SparcObuffer::class_suitable (void)
        return True;
      else if (!strcmp (devtype.name, "SUNW,dbri"))
      {
@@ -183,7 +183,7 @@
  	      "but this binary was compiled for 8 kHz u-law ouput. (telephone quality)\n"
  	      "Please recompile it without the ULAW define in COMPILERFLAGS.\n"
  	      "(or use the -amd option to use this binary with low-quality output)\n";
-@@ -448,7 +448,7 @@
+@@ -448,7 +448,7 @@ bool SparcObuffer::class_suitable (void)
        return True;
      else if (!strcmp (devtype.name, "SUNW,am79c30"))
      {
@@ -192,7 +192,7 @@
  	      "but this binary was compiled for CD-quality output.\n"
  	      "Please recompile it with ULAW defined in COMPILERFLAGS\n"
  	      "or use it in stdout mode as an decoder only.\n";
-@@ -464,7 +464,7 @@
+@@ -464,7 +464,7 @@ bool SparcObuffer::class_suitable (void)
  #   ifdef ULAW
        return True;
  #   else
@@ -201,7 +201,7 @@
  	      "but this binary was compiled for CD-quality output.\n"
  	      "Please recompile it with ULAW defined in COMPILERFLAGS\n"
  	      "or use it in stdout mode as an decoder only.\n";
-@@ -479,7 +479,7 @@
+@@ -479,7 +479,7 @@ bool SparcObuffer::class_suitable (void)
  	return True;
        else if (device_type == AUDIO_DEV_SPEAKERBOX)
        {
@@ -210,7 +210,7 @@
  		"but this binary was compiled for 8 kHz u-law ouput. (telephone quality)\n"
  		"Please recompile it without the ULAW define in COMPILERFLAGS.\n"
  		"(or use the -amd option to use this binary with low-quality output)\n";
-@@ -491,7 +491,7 @@
+@@ -491,7 +491,7 @@ bool SparcObuffer::class_suitable (void)
  	return True;
        else if (device_type == AUDIO_DEV_AMD)
        {
@@ -219,7 +219,7 @@
  		"but this binary was compiled for CD-quality output.\n"
  		"Please recompile it with ULAW defined in COMPILERFLAGS\n"
  		"or use it in stdout mode as an decoder only.\n";
-@@ -504,7 +504,7 @@
+@@ -504,7 +504,7 @@ bool SparcObuffer::class_suitable (void)
  
  #ifndef SunOS4_1_1
    close (audio_fd);
@@ -228,7 +228,7 @@
  # ifdef ULAW
  	  "Please try the -amd option or use the stdout mode.\n";
  # else
-@@ -527,7 +527,7 @@
+@@ -527,7 +527,7 @@ int LinuxObuffer::open_audio_device (voi
    if ((fd = open ("/dev/dsp", O_WRONLY | O_NDELAY, 0)) < 0)
      if (errno == EBUSY)
      {
@@ -237,7 +237,7 @@
        exit (1);
      }
      else
-@@ -537,6 +537,7 @@
+@@ -537,6 +537,7 @@ int LinuxObuffer::open_audio_device (voi
      }
  
    // turn NDELAY mode off:
@@ -245,7 +245,7 @@
    int flags;
    if ((flags = fcntl (fd, F_GETFL, 0)) < 0)
    {
-@@ -549,6 +550,7 @@
+@@ -549,6 +550,7 @@ int LinuxObuffer::open_audio_device (voi
      perror ("fcntl F_SETFL on /dev/audio failed");
      exit (1);
    }
@@ -253,7 +253,7 @@
    return fd;
  }
  
-@@ -558,7 +560,7 @@
+@@ -558,7 +560,7 @@ LinuxObuffer::LinuxObuffer (uint32 numbe
  #ifdef DEBUG
    if (!number_of_channels || number_of_channels > MAXCHANNELS)
    {
@@ -262,7 +262,7 @@
      exit (1);
    }
  #endif
-@@ -568,7 +570,7 @@
+@@ -568,7 +570,7 @@ LinuxObuffer::LinuxObuffer (uint32 numbe
  
    if (audio_fd < 0)
    {
@@ -271,7 +271,7 @@
  	    "by LinuxObuffer::class_suitable()!\n";
      exit (1);
    }
-@@ -602,12 +604,12 @@
+@@ -602,12 +604,12 @@ void LinuxObuffer::append (uint32 channe
  #ifdef DEBUG
    if (channel >= channels)
    {
@@ -286,7 +286,7 @@
      exit (1);
    }
  #endif
-@@ -629,7 +631,7 @@
+@@ -629,7 +631,7 @@ void LinuxObuffer::write_buffer (int)
  }
  
  

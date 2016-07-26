@@ -1,5 +1,5 @@
---- dagrab.c.orig	Sat Feb 19 17:32:46 2000
-+++ dagrab.c	Tue Nov 18 00:05:29 2003
+--- dagrab.c.orig	2000-02-19 16:32:46 UTC
++++ dagrab.c
 @@ -94,26 +94,21 @@
  #include <string.h>
  #include <errno.h>
@@ -51,7 +51,7 @@
  #define KW_TRACK 0
  #define KW_FULLD 1
  #define KW_AUTHOR 2
-@@ -206,16 +207,20 @@
+@@ -206,16 +207,20 @@ struct kword kwords[]={
  
  struct Wavefile cd_newave(unsigned size)
  {
@@ -82,7 +82,7 @@
    return dummy;
  }
  
-@@ -226,16 +231,16 @@
+@@ -226,16 +231,16 @@ char *resttime(int sec)
    return buf;
  }
  
@@ -105,7 +105,7 @@
  }
  
  void cd_read_audio(int lba,int num,char *buf)
-@@ -244,16 +249,27 @@
+@@ -244,16 +249,27 @@ void cd_read_audio(int lba,int num,char 
  	/*NOTE: if num>CDROM_NBLOCKS_BUFFER as defined in ide_cd.c (8 in linux 2.0.32)
  	  jitter correction may be required inside the block. */					   
  {
@@ -139,7 +139,7 @@
  		exit(1);
  	}
  }
-@@ -471,7 +487,7 @@
+@@ -471,7 +487,7 @@ int cddb_main(struct cd_trk_list *tl)
    DIR *d;
    struct dirent *e;
    char *id2,*p,*cddb,*loc;
@@ -148,7 +148,7 @@
    char id[12];
    char *path;
    char path2[500];
-@@ -645,10 +661,10 @@
+@@ -645,10 +661,10 @@ void ExpandTempl (char *templ,char *out,
  int cd_getinfo(char *cd_dev,struct cd_trk_list *tl)
  {
  	int i;
@@ -162,7 +162,7 @@
  		fprintf(stderr,"%s: error opening device %s\n",progname,cd_dev);
  		exit(1);
  	}
-@@ -656,7 +672,7 @@
+@@ -656,7 +672,7 @@ int cd_getinfo(char *cd_dev,struct cd_tr
  		fprintf(stderr,"%s: read TOC ioctl failed: %s\n",progname,strerror(errno));
  		exit(1);
  	}
@@ -171,7 +171,7 @@
  	if((tl->starts=(int *)malloc((tl->max-tl->min+2)*sizeof(int)))==NULL){
  		fprintf(stderr,"%s: list data allocation failed\n",progname);
  		exit(1);
-@@ -668,21 +684,21 @@
+@@ -668,21 +684,21 @@ int cd_getinfo(char *cd_dev,struct cd_tr
  
  	for (i=tl->min;i<=tl->max;i++)
  	{
@@ -199,7 +199,7 @@
  	
          i=cddb_main(tl);
  	if(i==-1) {
-@@ -796,6 +812,7 @@
+@@ -796,6 +812,7 @@ int cd_read_track(char *basename,int tn,
  	struct Wavefile header;
  	int fd,bytes,i,n,q,space;
  	int bcount, sc, missing, speed = 0, ldp, now;
@@ -207,7 +207,7 @@
  
  	if(tn<tl->min || tn>tl->max) return (-1);
  	space = ((tl->starts[tn-tl->min+1]-tl->starts[tn-tl->min]) * 
-@@ -879,8 +896,10 @@
+@@ -879,8 +896,10 @@ int cd_read_track(char *basename,int tn,
  					d = p1[c];
  					buf3[c] = ((short)(d&65535) + (short)(d>>16)) >> 1;
  				}
@@ -220,7 +220,7 @@
  				fprintf(stderr,"%s: error writing wave file %s: %s\n",
  					progname,nam,strerror(errno));
  				exit(1);
-@@ -896,7 +915,17 @@
+@@ -896,7 +915,17 @@ int cd_read_track(char *basename,int tn,
  	/* dump last bytes */
  	if (bytes<(tl->starts[tn+1]-tl->starts[tn])*CD_FRAMESIZE_RAW){
  		n=(tl->starts[tn+1]-tl->starts[tn])*CD_FRAMESIZE_RAW-bytes;
@@ -239,7 +239,7 @@
  			fprintf(stderr,"%s: error writing wave file %s: %s\n",progname,nam,strerror(errno));
  			exit(1);
  		};
-@@ -961,7 +990,7 @@
+@@ -961,7 +990,7 @@ void usage(void)
  int main(int ac,char **av)
  {
  	int i,l,disp_TOC=0;
@@ -248,7 +248,7 @@
  	int all_tracks=0;
  	struct cd_trk_list tl;
  	char cd_dev[BLEN+1]=CDDEVICE;
-@@ -969,10 +998,8 @@
+@@ -969,10 +998,8 @@ int main(int ac,char **av)
  	char filter[BLEN+1] = "";
  	char path[500];
  	FILE *f;

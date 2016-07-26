@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2014-09-29 10:48:48.000000000 +0400
-+++ CMakeLists.txt	2015-01-23 14:17:02.000000000 +0300
-@@ -77,7 +77,7 @@
+--- CMakeLists.txt.orig	2014-09-29 06:48:48 UTC
++++ CMakeLists.txt
+@@ -77,7 +77,7 @@ set(PUBLIC_HEADERS
  	clunk/v3.h
  	clunk/clunk_c.h
  	clunk/window_function.h

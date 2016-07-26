@@ -1,5 +1,5 @@
---- misc/config.h.default.orig	Sun Aug  8 21:23:05 1999
-+++ misc/config.h.default	Sun Aug  8 21:23:38 1999
+--- misc/config.h.default.orig	1999-04-19 17:25:01 UTC
++++ misc/config.h.default
 @@ -1,5 +1,5 @@
  #define PACKAGE "ascd"
  #define DEFAULT_COLOR "#2FAFAF"

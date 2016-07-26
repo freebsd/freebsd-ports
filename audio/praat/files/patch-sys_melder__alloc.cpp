@@ -1,4 +1,4 @@
---- sys/melder_alloc.cpp.orig	2015-01-30 17:35:26 UTC
+--- sys/melder_alloc.cpp.orig	2015-05-20 01:47:31 UTC
 +++ sys/melder_alloc.cpp
 @@ -317,8 +317,8 @@ int Melder_strcmp (const char *string1, 
  }

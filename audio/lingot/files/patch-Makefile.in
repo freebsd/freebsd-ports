@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2011-08-22 10:10:09.000000000 -0400
-+++ ./Makefile.in	2014-06-18 23:12:35.000000000 -0400
-@@ -291,21 +291,21 @@
+--- Makefile.in.orig	2011-08-22 14:10:09 UTC
++++ Makefile.in
+@@ -291,21 +291,21 @@ SUBDIRS = po src pixmaps
  lingotdocdir = ${docdir}
  lingotdoc_DATA = \
  	README\

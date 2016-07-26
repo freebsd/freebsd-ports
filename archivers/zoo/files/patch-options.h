@@ -1,6 +1,6 @@
---- ./options.h.orig	1993-05-01 06:27:59.000000000 +0200
-+++ ./options.h	2011-12-22 14:00:55.000000000 +0100
-@@ -96,7 +96,6 @@
+--- options.h.orig	1993-05-01 04:27:59 UTC
++++ options.h
+@@ -96,7 +96,6 @@ For documentation about this file, see o
  #define NIXTIME
  #define NIXFNAME
  #define NEEDCTYP
@@ -8,7 +8,7 @@
  #define REN_STDC
  #define SETBUF
  #define GETTZ
-@@ -110,6 +109,7 @@
+@@ -110,6 +109,7 @@ For documentation about this file, see o
  #define ANSI_PROTO
  #define VOIDPTR		void *
  #else

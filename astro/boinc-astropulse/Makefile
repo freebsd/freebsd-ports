@@ -21,7 +21,7 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool pkgconfig tar:xz
-WRKSRC=		${WRKDIR}/${DISTNAME}/client
+WRKSRC_SUBDIR=		client
 
 CPPFLAGS+=	-I${LOCALBASE}/include/boinc -I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

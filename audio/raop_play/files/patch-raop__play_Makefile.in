@@ -1,0 +1,29 @@
+--- raop_play/Makefile.in.orig	2005-12-16 14:17:00 UTC
++++ raop_play/Makefile.in
+@@ -1,6 +1,7 @@
+ SHELL = @SHELL@
+ CC = @CC@
+ DEFS = @DEFS@
++LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+@@ -12,15 +13,15 @@ mkinstalldirs = $(SHELL) $(top_srcdir)/m
+ TARGET=raop_play
+ DESTDIR =
+ 
+-CFLAGS=-Wall
++CFLAGS=-Wall -I$(prefix)/include/
+ OBJS := raop_play.o raop_client.o rtsp_client.o aexcl_lib.o base64.o aes.o m4a_stream.o \
+ audio_stream.o wav_stream.o mp3_stream.o flac_stream.o ogg_stream.o aac_stream.o pls_stream.o \
+-pcm_stream.o flac_stream.o
++pcm_stream.o flac_stream.o ../rendezvous/getline.o
+ 
+ all: $(TARGET)
+ 
+ raop_play: $(OBJS)
+-	$(CC) -o $@  -lssl -lsamplerate -lid3tag $^
++	$(CC) -o $@ $(LDFLAGS) -lssl -lsamplerate -lid3tag $^
+ 
+ install:
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)/

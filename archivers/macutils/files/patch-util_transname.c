@@ -1,5 +1,5 @@
---- util/transname.c.orig	Fri Apr 16 00:02:36 1999
-+++ util/transname.c	Fri Apr 16 00:02:38 1999
+--- util/transname.c.orig	1993-10-02 20:16:00 UTC
++++ util/transname.c
 @@ -1,5 +1,5 @@
  #include <sys/types.h>
 -#include <sys/dir.h>

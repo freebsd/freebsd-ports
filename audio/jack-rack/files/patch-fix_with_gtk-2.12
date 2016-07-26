@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2007-10-25 11:55:32.000000000 -0500
-+++ src/Makefile.in	2007-10-25 11:55:48.000000000 -0500
-@@ -265,12 +265,7 @@
+--- src/Makefile.in.orig	2007-11-26 22:24:06 UTC
++++ src/Makefile.in
+@@ -261,12 +261,7 @@ jack_rack_CFLAGS = \
  	$(XML_CFLAGS) \
  	-DPKGDATADIR=\"$(pkgdatadir)\" \
  	-DPIXMAPDIR=\"$(pixmapdir)\" \

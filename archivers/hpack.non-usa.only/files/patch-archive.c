@@ -1,6 +1,6 @@
---- archive.c.orig	Tue Jun 29 05:27:52 1993
-+++ archive.c	Tue Dec 28 20:01:38 1999
-@@ -326,12 +326,22 @@
+--- archive.c.orig	1993-06-29 10:27:52 UTC
++++ archive.c
+@@ -326,12 +326,22 @@ BOOLEAN confirmSkip( const char *str1, c
  
  void getFileName( char *fileName )
  	{

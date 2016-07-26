@@ -1,5 +1,5 @@
---- config.h.orig	Sat Oct 21 20:59:55 1995
-+++ config.h	Sun Dec 29 10:50:41 2002
+--- config.h.orig	1995-10-21 19:59:55 UTC
++++ config.h
 @@ -64,6 +64,11 @@
  #define GUS
  #endif /* GUS */

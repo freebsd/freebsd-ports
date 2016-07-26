@@ -1,4 +1,4 @@
---- src/mpdpp.h.orig	2015-11-09 12:51:44 UTC
+--- src/mpdpp.h.orig	2016-04-17 05:41:01 UTC
 +++ src/mpdpp.h
 @@ -23,6 +23,7 @@
  

@@ -1,4 +1,4 @@
---- xml/Makefile.orig	2016-06-04 17:08:07 UTC
+--- xml/Makefile.orig	2015-05-28 18:03:07 UTC
 +++ xml/Makefile
 @@ -56,12 +56,12 @@ test:
  install: all

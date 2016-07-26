@@ -1,6 +1,6 @@
---- guicontrol.c.orig	Fri Aug  6 17:54:38 2004
-+++ guicontrol.c	Fri Aug  6 17:55:44 2004
-@@ -375,7 +375,8 @@
+--- guicontrol.c.orig	1997-08-23 11:30:51 UTC
++++ guicontrol.c
+@@ -375,7 +375,8 @@ int decodeMPEG_2(int inFilefd)
  	break;	
        case GETHDR_SYN: warn("oops, we're out of sync.\n");
  	break;

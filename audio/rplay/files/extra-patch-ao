@@ -1,13 +1,6 @@
-bllslkjl
-slkj; 
-
-lkjsl slk
-
-
-diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/lib/Makefile.in rplay/lib/Makefile.in
---- lib/Makefile.in	1998-07-15 08:35:23.000000000 +1000
-+++ rplay/lib/Makefile.in	2012-04-05 12:54:44.000000000 +1000
-@@ -25,8 +13,8 @@
+--- lib/Makefile.in.orig	1998-07-14 22:35:23 UTC
++++ lib/Makefile.in
+@@ -13,8 +13,8 @@ CPPFLAGS=	$(CC_OPTIONS) -I. -I../include
  		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
  
  TARGET=		librp.a
@@ -18,22 +11,9 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/lib/Makefile
  
  all:		$(TARGET)
  
-diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/Makefile.in rplay/rplayd/Makefile.in
---- rplayd/Makefile.in	2012-04-05 15:19:53.000000000 +1000
-+++ rplay/rplayd/Makefile.in	2012-04-05 15:21:58.000000000 +1000
-@@ -25,7 +25,7 @@
- 		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
- 
- LDFLAGS=	$(LD_OPTIONS) -L../librplay -lrplay -L../lib -lrp \
--		-L../adpcm -ladpcm @GSM_LIBS@ -L../rx -lrx @LDFLAGS@ @LIBS@ -lm
-+		-L../adpcm -ladpcm @GSM_LIBS@ @LDFLAGS@ @LIBS@ -lm
- 
- TARGET=		rplayd
- 
-diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/helper.c rplay/rplayd/helper.c
---- rplayd/helper.c	1999-03-10 18:58:03.000000000 +1100
-+++ rplay/rplayd/helper.c	2012-04-05 14:31:10.000000000 +1000
-@@ -110,7 +110,7 @@
+--- rplayd/helper.c.orig	1999-03-10 07:58:03 UTC
++++ rplayd/helper.c
+@@ -110,7 +110,7 @@ helper_read(filename)
  	    done(1);
  	}
  	//memset ((char *) &hp->pattern, 0, sizeof (hp->pattern));
@@ -42,7 +22,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/helpe
  	if (error)
  	{
  	    report(REPORT_ERROR, "helper_read: %d line %d\n", error, line);
-@@ -188,7 +188,7 @@
+@@ -188,7 +188,7 @@ helper_lookup(sound)
  
      for (hp = helpers; hp; hp = hp->next)
      {
@@ -51,10 +31,9 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/helpe
  	{
  	    return hp;
  	}
-diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/host.c rplay/rplayd/host.c
---- rplayd/host.c	1999-06-09 16:27:44.000000000 +1000
-+++ rplay/rplayd/host.c	2012-04-05 14:14:12.000000000 +1000
-@@ -95,10 +95,10 @@
+--- rplayd/host.c.orig	1999-06-09 06:27:44 UTC
++++ rplayd/host.c
+@@ -95,10 +95,10 @@ host_read(filename)
      //memset ((char *) &access_write, 0, sizeof (access_write));
      //memset ((char *) &access_execute, 0, sizeof (access_execute));
  
@@ -69,7 +48,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/host.
  
      do
      {
-@@ -162,7 +162,7 @@
+@@ -162,7 +162,7 @@ host_read(filename)
  
      if (strlen(expr_read) == 3)
      {
@@ -78,7 +57,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/host.
      }
      else
      {
-@@ -171,7 +171,7 @@
+@@ -171,7 +171,7 @@ host_read(filename)
      strcat(expr_read, "$");
      if (strlen(expr_write) == 3)
      {
@@ -87,7 +66,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/host.
      }
      else
      {
-@@ -180,7 +180,7 @@
+@@ -180,7 +180,7 @@ host_read(filename)
      strcat(expr_write, "$");
      if (strlen(expr_execute) == 3)
      {
@@ -96,7 +75,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/host.
      }
      else
      {
-@@ -189,7 +189,7 @@
+@@ -189,7 +189,7 @@ host_read(filename)
      strcat(expr_execute, "$");
      if (strlen(expr_monitor) == 3)
      {
@@ -105,7 +84,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/host.
      }
      else
      {
-@@ -197,35 +197,35 @@
+@@ -197,35 +197,35 @@ host_read(filename)
      }
      strcat(expr_monitor, "$");
  
@@ -153,7 +132,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/host.
  	done(1);
      }
  }
-@@ -354,22 +354,22 @@
+@@ -354,22 +354,22 @@ host_insert(expr_read, expr_write, expr_
  	{
  	case HOST_READ:
  	    strcat(expr_read, re_name);
@@ -180,7 +159,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/host.
  	    break;
  
  	default:
-@@ -432,7 +432,7 @@
+@@ -432,7 +432,7 @@ host_access(sin, access_mode)
  	done(1);
      }
  
@@ -189,9 +168,8 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/host.
  
      return !n;
  }
-diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/native.c rplay/rplayd/native.c
---- rplayd/native.c	1999-03-10 18:58:03.000000000 +1100
-+++ rplay/rplayd/native.c	2012-04-05 12:58:20.000000000 +1000
+--- rplayd/native.c.orig	1999-03-10 07:58:03 UTC
++++ rplayd/native.c
 @@ -32,6 +32,7 @@
  #include "rplayd.h"
  #include "native.h"
@@ -200,10 +178,9 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/nativ
  
  /* Native means 16-bit signed. */
  
-diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/sound.c rplay/rplayd/sound.c
---- rplayd/sound.c	1999-06-09 16:27:44.000000000 +1000
-+++ rplay/rplayd/sound.c	2012-04-05 14:31:19.000000000 +1000
-@@ -96,14 +96,14 @@
+--- rplayd/sound.c.orig	1999-06-09 06:27:44 UTC
++++ rplayd/sound.c
+@@ -96,14 +96,14 @@ bad_dirs_init()
  
      dirs = strdup(BAD_DIRS);	/* XXX */
  
@@ -220,7 +197,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/sound
  	}
      }
  
-@@ -119,7 +119,7 @@
+@@ -119,7 +119,7 @@ bad_dirs_init()
      }
  
      first = 1;
@@ -229,7 +206,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/sound
      while (p = (char *) strtok(first ? dirs : 0, ":"))
      {
  	if (first)
-@@ -129,12 +129,12 @@
+@@ -129,12 +129,12 @@ bad_dirs_init()
  	}
  	else
  	{
@@ -245,7 +222,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/sound
  
  #if 0
      report(REPORT_DEBUG, "bad_dirs=%s, strlen=%d, length=%d\n",
-@@ -143,9 +143,9 @@
+@@ -143,9 +143,9 @@ bad_dirs_init()
  
      //memset ((char *) &bad_dirs, 0, sizeof (bad_dirs));
  
@@ -257,7 +234,7 @@ diff -rwu /export/ports_work/usr/ports/audio/rplay/work/rplay-3.3.2/rplayd/sound
  	done(1);
      }
  
-@@ -162,7 +162,7 @@
+@@ -162,7 +162,7 @@ bad_dir(dir)
  #endif
  {
      /* return 1 if bad */

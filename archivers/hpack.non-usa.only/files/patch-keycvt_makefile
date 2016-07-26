@@ -1,6 +1,6 @@
---- keycvt/makefile.orig	Tue May 18 00:43:30 1993
-+++ keycvt/makefile	Sun Jul 21 17:32:13 2002
-@@ -48,7 +48,7 @@
+--- keycvt/makefile.orig	1993-05-17 21:43:30 UTC
++++ keycvt/makefile
+@@ -48,7 +48,7 @@ DEFINES		= $(OS)
  
  PROJ	= keycvt
  
@@ -9,7 +9,7 @@
  
  LFLAGS	= -o $(PROJ) $(CMDL)			# Flags for linker
  
-@@ -60,6 +60,7 @@
+@@ -60,6 +60,7 @@ LD		= $(CC)				# Linker (just use the C 
  LS		= ls -l				# Directory command
  ECHO	= echo				# Echo to screen command
  MAKE	= make				# The make command
@@ -17,7 +17,7 @@
  
  #****************************************************************************
  #*																			*
-@@ -71,7 +72,7 @@
+@@ -71,7 +72,7 @@ default:
  		@$(ECHO)
  		@$(ECHO) "To create KEYCVT you have to enter the Unix system type you want to build"
  		@$(ECHO) "KEYCVT for.  Possible options are: aix (RS6000), aix370, aix386, convex,"
@@ -26,16 +26,16 @@
  		@$(ECHO) "(Ultrix 3.x or earlier), and uts4.  If none of the above fit, try"
  		@$(ECHO) "'make generic', and send a copy of any changes necessary to the author,"
  		@$(ECHO) "pgut1@cs.aukuni.ac.nz"
-@@ -128,6 +129,12 @@
- 
+@@ -129,6 +130,12 @@ aix386:
  convex:
  		@$(MAKE) keycvt CC="cc"
-+
+ 
 +freebsd:
 +		@$(MAKE) $(PROJ)
 +
 +freebsd.install:
 +		$(BSD_INSTALL_PROGRAM) $(PROJ) $(PREFIX)/bin
- 
++
  # Generic: Generic BSD-ish system running gcc.  Can't continue, we really
  # need user intervention here.
+ 

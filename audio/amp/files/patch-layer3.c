@@ -1,6 +1,6 @@
---- layer3.c	Mon Aug 18 09:42:17 1997
-+++ layer3.c	Wed Apr 13 00:21:47 2005
-@@ -61,7 +61,7 @@
+--- layer3.c.orig	1997-08-18 12:42:17 UTC
++++ layer3.c
+@@ -61,7 +61,7 @@ int mean_frame_size,bitrate,fs,hsize,ssi
  /* MPEG2 only has one granule
  */
  	bitrate=t_bitrate[header->ID][3-header->layer][header->bitrate_index];
@@ -9,7 +9,7 @@
          if (header->ID) mean_frame_size=144000*bitrate/fs;
          else mean_frame_size=72000*bitrate/fs;
  
-@@ -96,8 +96,8 @@
+@@ -96,8 +96,8 @@ int mean_frame_size,bitrate,fs,hsize,ssi
  
  /* these two should go away
  */

@@ -1,6 +1,6 @@
---- utils.h.orig	2009-02-24 14:41:21.000000000 +0100
-+++ utils.h	2009-02-24 14:42:08.000000000 +0100
-@@ -63,6 +63,9 @@
+--- utils.h.orig	1999-01-01 23:57:51 UTC
++++ utils.h
+@@ -63,6 +63,9 @@ void *tmalloc (size_t size);
   *   allocated.
   */
  
@@ -10,7 +10,7 @@
  char *strndup (char *src, int num);
  /*
   *   Like strdup(), but limits the string length to at most
-@@ -71,6 +74,8 @@
+@@ -71,6 +74,8 @@ char *strndup (char *src, int num);
   *   Always allocates <num>+1 bytes, even if less space would
   *   be sufficient to store <src>.
   */

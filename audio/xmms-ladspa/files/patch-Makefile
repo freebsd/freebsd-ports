@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Apr  7 23:52:16 2004
-+++ Makefile	Wed Apr  7 23:52:50 2004
-@@ -4,7 +4,7 @@
+--- Makefile.orig	2005-03-16 02:39:32 UTC
++++ Makefile
+@@ -4,7 +4,7 @@ VER=1.1
  DOCS= README PLUGINS COPYING ChangeLog
  CODE= Makefile ladspa.c ladspa.h
  
@@ -9,7 +9,7 @@
  
  all: ladspa.so
  	@echo
-@@ -24,4 +24,4 @@
+@@ -24,4 +24,4 @@ clean:
  	rm ladspa.so
  
  ladspa.so: ladspa.c

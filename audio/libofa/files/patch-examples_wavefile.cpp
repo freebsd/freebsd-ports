@@ -1,5 +1,5 @@
---- examples/wavefile.cpp.orig	2013-09-12 08:58:25.000000000 +0000
-+++ examples/wavefile.cpp	2013-09-12 08:58:31.000000000 +0000
+--- examples/wavefile.cpp.orig	2016-07-26 15:10:24 UTC
++++ examples/wavefile.cpp
 @@ -11,6 +11,8 @@
  #include "io.h"
  #endif

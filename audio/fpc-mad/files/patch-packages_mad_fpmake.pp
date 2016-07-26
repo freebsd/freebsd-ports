@@ -1,4 +1,4 @@
---- packages/mad/fpmake.pp.orig	2015-08-29 16:37:05 UTC
+--- packages/mad/fpmake.pp.orig	2015-11-13 21:15:29 UTC
 +++ packages/mad/fpmake.pp
 @@ -17,7 +17,7 @@ begin
      P.Directory:=ADirectory;

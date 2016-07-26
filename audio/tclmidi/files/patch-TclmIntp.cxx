@@ -1,5 +1,5 @@
---- TclmIntp.cxx.orig	2013-05-14 11:25:42.000000000 +0200
-+++ TclmIntp.cxx	2013-05-14 11:25:49.000000000 +0200
+--- TclmIntp.cxx.orig	1996-07-28 19:09:03 UTC
++++ TclmIntp.cxx
 @@ -37,8 +37,7 @@
  #endif
  #include "TclmIntp.h"

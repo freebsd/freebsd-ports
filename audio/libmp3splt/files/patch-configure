@@ -1,6 +1,6 @@
---- configure.orig	2013-07-25 15:33:15.000000000 +0000
+--- configure.orig	2014-11-09 16:48:20 UTC
 +++ configure
-@@ -15422,7 +15422,7 @@ elif test "x$prefix" != "xNONE"; then
+@@ -15614,7 +15614,7 @@ elif test "x$prefix" != "xNONE"; then
    ID3_LIBS="-L$prefix/lib"
  fi
  

@@ -1,7 +1,7 @@
---- src/mumble/ServerHandler.cpp.orig	2013-06-04 11:44:15.381594007 -0500
-+++ src/mumble/ServerHandler.cpp	2013-06-04 11:44:36.772583833 -0500
-@@ -45,6 +45,12 @@
- #include "PacketDataStream.h"
+--- src/mumble/ServerHandler.cpp.orig	2014-08-08 15:51:59 UTC
++++ src/mumble/ServerHandler.cpp
+@@ -46,6 +46,12 @@
+ #include "RichTextEditor.h"
  #include "SSL.h"
  #include "User.h"
 +#ifdef __FreeBSD__

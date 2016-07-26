@@ -1,6 +1,6 @@
---- mpiosh/Makefile.am.orig	2009-04-08 01:39:27.000000000 +0400
-+++ mpiosh/Makefile.am	2009-04-08 01:39:41.000000000 +0400
-@@ -12,7 +12,7 @@
+--- mpiosh/Makefile.am.orig	2002-10-29 20:03:34 UTC
++++ mpiosh/Makefile.am
+@@ -12,7 +12,7 @@ mpiosh_SOURCES = mpiosh.c \
  
  AM_CFLAGS=-DSYSCONFDIR=\"@sysconfdir@\"
  
@@ -9,7 +9,7 @@
  
  noinst_HEADERS = mpiosh.h \
  		callback.h \
-@@ -20,4 +20,4 @@
+@@ -20,4 +20,4 @@ noinst_HEADERS = mpiosh.h \
  		command.h \
  		global.h \
  		cfgio.h \

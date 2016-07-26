@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Aug 31 09:50:33 1996
-+++ Makefile	Fri Sep 27 13:57:55 1996
+--- Makefile.orig	1996-08-31 07:50:33 UTC
++++ Makefile
 @@ -1,29 +1,17 @@
 -
 -CC = gcc

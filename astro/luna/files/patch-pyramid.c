@@ -1,6 +1,6 @@
---- pyramid.c.orig	Mon May 25 01:26:10 1992
-+++ pyramid.c	Mon Feb 21 02:23:51 2000
-@@ -67,7 +67,7 @@
+--- pyramid.c.orig	2016-07-26 13:07:24 UTC
++++ pyramid.c
+@@ -67,7 +67,7 @@ getlocaltm()
  	Time_t		ltime;
  
  	time(&ltime);
@@ -9,7 +9,7 @@
  #endif	/* MSDOS or UNIX */
  }
  
-@@ -197,19 +197,14 @@
+@@ -197,19 +197,14 @@ char *
  Asctime(struct tm *tmp)
  {
  	static char	s[LASCTIME];

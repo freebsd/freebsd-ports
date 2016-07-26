@@ -1,0 +1,10 @@
+--- gui/Makefile.in.orig	2006-08-20 14:51:17 UTC
++++ gui/Makefile.in
+@@ -1,6 +1,6 @@
+ CFLAGS += @CFLAGS@ -I..
+ CLIBS += @CLIBS@
+-CC := gcc
++CC ?= gcc
+ 
+ all: configurator
+ 

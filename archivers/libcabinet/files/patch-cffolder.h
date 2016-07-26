@@ -1,5 +1,5 @@
---- cffolder.h.orig	1999-10-24 02:13:29.000000000 -0400
-+++ cffolder.h	2014-02-21 15:52:05.724747639 -0500
+--- cffolder.h.orig	1999-10-24 06:13:29 UTC
++++ cffolder.h
 @@ -15,7 +15,7 @@
  #define __CFFOLDER_H__
  
@@ -9,7 +9,7 @@
  #include "cftypes.h"
  #include "cfheader.h"
  
-@@ -89,4 +89,5 @@
+@@ -89,4 +89,5 @@ class cabinet_folder_header : public cab
  
  ////////////////////////////////////////////////////////////////////////////////
  

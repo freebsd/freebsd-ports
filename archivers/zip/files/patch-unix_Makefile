@@ -1,6 +1,6 @@
---- unix/Makefile.orig	2008-05-07 02:33:56.000000000 +0400
-+++ unix/Makefile	2008-08-03 06:36:20.000000000 +0400
-@@ -22,7 +22,6 @@
+--- unix/Makefile.orig	2008-05-07 06:33:56 UTC
++++ unix/Makefile
+@@ -22,7 +22,6 @@ SHELL = /bin/sh
  LN = ln -s
  
  # (to use the GNU compiler, change cc to gcc in CC)
@@ -8,7 +8,7 @@
  BIND = $(CC)
  AS = $(CC) -c
  CPP = /lib/cpp
-@@ -57,8 +56,7 @@
+@@ -57,8 +56,7 @@ IZ_OUR_BZIP2_DIR = bzip2
  #   CFLAGS    flags for C compile
  #   LFLAGS1   flags after output file spec, before obj file list
  #   LFLAGS2   flags after obj file list (libraries, etc)

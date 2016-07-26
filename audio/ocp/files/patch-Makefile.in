@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-05-17 11:55:17.000000000 +0200
-+++ Makefile.in	2010-05-17 12:44:57.000000000 +0200
-@@ -35,8 +35,8 @@
+--- Makefile.in.orig	2011-11-17 21:46:08 UTC
++++ Makefile.in
+@@ -35,8 +35,8 @@ endif
  
  
  install: all

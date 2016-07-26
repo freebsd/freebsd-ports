@@ -1,5 +1,5 @@
---- ibitstream.cc.orig	Thu Jun 23 22:14:35 1994
-+++ ibitstream.cc	Thu Nov 21 16:41:11 2002
+--- ibitstream.cc.orig	1994-06-23 12:14:35 UTC
++++ ibitstream.cc
 @@ -29,7 +29,7 @@
  #include <unistd.h>
  #include <errno.h>
@@ -9,7 +9,7 @@
  #include "all.h"
  #include "ibitstream.h"
  
-@@ -50,7 +50,7 @@
+@@ -50,7 +50,7 @@ Ibitstream::Ibitstream (const char *file
  {
    if ((fd = open (filename, O_RDONLY, 0)) < 0)
    {
@@ -18,7 +18,7 @@
      exit (1);
    }
    wordpointer = buffer;
-@@ -64,7 +64,7 @@
+@@ -64,7 +64,7 @@ Ibitstream::~Ibitstream (void)				// des
  }
  
  
@@ -27,7 +27,7 @@
  {
    int readvalue;
  
-@@ -102,13 +102,13 @@
+@@ -102,13 +102,13 @@ bool Ibitstream::get_header (uint32 *hea
  }
  
  
@@ -43,7 +43,7 @@
      exit (1);
    }
  
-@@ -170,7 +170,7 @@
+@@ -170,7 +170,7 @@ uint32 Ibitstream::get_bits (uint32 numb
  #ifdef DEBUG
    if (number_of_bits < 1 || number_of_bits > 16)
    {
@@ -52,7 +52,7 @@
      exit (1);
    }
  #endif
-@@ -184,7 +184,7 @@
+@@ -184,7 +184,7 @@ uint32 Ibitstream::get_bits (uint32 numb
        bitindex = 0;
        if ((char *)++wordpointer > (char *)buffer + framesize)
        {
@@ -61,7 +61,7 @@
  	exit (1);
        }
      }
-@@ -197,7 +197,7 @@
+@@ -197,7 +197,7 @@ uint32 Ibitstream::get_bits (uint32 numb
    *(int16 *)&returnvalue = *((int16 *)wordpointer + 1);
    if ((char *)++wordpointer > (char *)buffer + framesize)
    {
@@ -70,7 +70,7 @@
      exit (1);
    }
    *((int16 *)&returnvalue + 1) = *(int16 *)wordpointer;
-@@ -205,7 +205,7 @@
+@@ -205,7 +205,7 @@ uint32 Ibitstream::get_bits (uint32 numb
    *((int16 *)&returnvalue + 1) = *(int16 *)wordpointer;
    if ((char *)++wordpointer > (char *)buffer + framesize)
    {

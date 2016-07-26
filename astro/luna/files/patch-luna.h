@@ -1,6 +1,6 @@
---- luna.h~	1992-05-25 00:48:34.000000000 +0200
-+++ luna.h	2011-12-20 19:57:27.963178999 +0100
-@@ -32,7 +32,7 @@
+--- luna.h.orig	2016-07-26 13:07:24 UTC
++++ luna.h
+@@ -32,7 +32,7 @@ typedef enum {
  
  
  #if defined(ANSI)
@@ -9,7 +9,7 @@
  	extern void		drawluna(int aotmoon);
  	extern void		usage(void);
  	extern void		getoptions(int argc, char **argv,
-@@ -40,7 +40,7 @@
+@@ -40,7 +40,7 @@ typedef enum {
  	extern int		getext(int year, int mon, int day);
  	extern void		printextstate(int age);
  #else

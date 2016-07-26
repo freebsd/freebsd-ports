@@ -1,5 +1,5 @@
---- coresound.c.orig	2010-06-06 14:23:02.000000000 +0200
-+++ coresound.c	2010-06-06 14:23:40.000000000 +0200
+--- coresound.c.orig	2006-09-16 13:50:12 UTC
++++ coresound.c
 @@ -132,6 +132,7 @@ CoreSound_InitAudio()
  	if (drv < 0)
  		return FALSE;

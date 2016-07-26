@@ -1,26 +1,32 @@
---- clients/audio/auedit/Graph.c	Sun Jun 20 15:01:41 2004
-+++ clients/audio/auedit/Graph.c	Mon Oct 10 11:21:15 2005
-@@ -29,4 +29,5 @@
+--- clients/audio/auedit/Graph.c.orig	2013-04-27 00:41:00 UTC
++++ clients/audio/auedit/Graph.c
+@@ -28,6 +28,7 @@
+  */
  
  #include "config.h"
 +#include <inttypes.h>
  
  #if defined(HAVE_LIMITS_H)
-@@ -453,5 +454,5 @@
+ # include <limits.h>
+@@ -452,14 +453,14 @@ GraphWidget     old,
+     if (w->graph.leftMarker != old->graph.leftMarker)
      {
  	XtCallCallbacks((Widget) w, XtNleftProc,
 -			(XtPointer) w->graph.leftMarker);
 +			(XtPointer)(intptr_t)w->graph.leftMarker);
  	redraw = TRUE;
      }
-@@ -460,5 +461,5 @@
+ 
+     if (w->graph.rightMarker != old->graph.rightMarker)
      {
  	XtCallCallbacks((Widget) w, XtNrightProc,
 -			(XtPointer) w->graph.rightMarker);
 +			(XtPointer)(intptr_t)w->graph.rightMarker);
  	redraw = TRUE;
      }
-@@ -540,8 +541,8 @@
+ 
+@@ -539,10 +540,10 @@ XButtonEvent   *event;
+ 
      if (w->graph.marker == GraphLeftMarker)
  	XtCallCallbacks((Widget) w, XtNleftProc,
 -			(XtPointer) w->graph.leftMarker);
@@ -31,3 +37,4 @@
 +			(XtPointer)(intptr_t)w->graph.rightMarker);
  }
  
+ /* public functions */

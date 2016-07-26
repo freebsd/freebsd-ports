@@ -1,5 +1,5 @@
---- zipmix.c.orig	2013-05-27 12:33:32.795062151 +0200
-+++ zipmix.c	2013-05-27 12:33:52.048486869 +0200
+--- zipmix.c.orig	2016-07-26 12:48:42 UTC
++++ zipmix.c
 @@ -4,6 +4,17 @@ zipmix.exe: zipmix.c; cl zipmix.c /O1 /G
  !if 0
  #endif

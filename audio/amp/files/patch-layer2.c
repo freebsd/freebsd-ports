@@ -1,6 +1,6 @@
---- layer2.c	Mon Jun 16 14:53:15 1997
-+++ layer2.c	Wed Apr 13 00:21:47 2005
-@@ -34,7 +34,7 @@
+--- layer2.c.orig	1997-06-16 17:53:15 UTC
++++ layer2.c
+@@ -34,7 +34,7 @@ int hsize,fs,mean_frame_size;
  	if (header->protection_bit==0) hsize+=2;
  
  	bitrate=t_bitrate[header->ID][3-header->layer][header->bitrate_index];

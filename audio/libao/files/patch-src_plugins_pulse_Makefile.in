@@ -1,5 +1,5 @@
---- src/plugins/pulse/Makefile.in.orig	2014-05-28 17:53:30.000000000 +0200
-+++ src/plugins/pulse/Makefile.in	2014-05-28 17:58:05.000000000 +0200
+--- src/plugins/pulse/Makefile.in.orig	2014-01-27 23:57:42 UTC
++++ src/plugins/pulse/Makefile.in
 @@ -348,7 +348,7 @@ AUTOMAKE_OPTIONS = foreign
  @HAVE_PULSE_TRUE@pulseltlibs = libpulse.la
  @HAVE_PULSE_FALSE@pulsesources = 

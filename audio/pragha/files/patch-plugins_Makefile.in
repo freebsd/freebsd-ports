@@ -1,8 +1,8 @@
 Remove 'gnome-media-keys' plugin, it requires sysutils/gnome-settings-daemon.
 
---- plugins/Makefile.in.orig	2015-02-21 22:11:57 UTC
+--- plugins/Makefile.in.orig	2015-09-23 23:30:18 UTC
 +++ plugins/Makefile.in
-@@ -182,7 +182,7 @@ am__define_uniq_tagged_files = \
+@@ -192,7 +192,7 @@ am__define_uniq_tagged_files = \
    done | $(am__uniquify_input)`
  ETAGS = etags
  CTAGS = ctags
@@ -10,8 +10,8 @@ Remove 'gnome-media-keys' plugin, it requires sysutils/gnome-settings-daemon.
 +DIST_SUBDIRS = mpris2 song-info keybinder notify \
  	devices removable-media mtp acoustid tunein dlna dlna-renderer \
  	cdrom lastfm
- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-@@ -467,7 +467,7 @@ AM_CPPFLAGS = \
+ am__DIST_COMMON = $(srcdir)/Makefile.in
+@@ -474,7 +474,7 @@ AM_CPPFLAGS = \
  
  pluginincludedir = $(includedir)/pragha/plugins
  plugininclude_HEADERS = pragha-plugin-macros.h

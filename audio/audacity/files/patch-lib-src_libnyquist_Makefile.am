@@ -1,4 +1,4 @@
---- lib-src/libnyquist/Makefile.am.orig	2016-01-08 22:05:48 UTC
+--- lib-src/libnyquist/Makefile.am.orig	2016-07-26 13:34:06 UTC
 +++ lib-src/libnyquist/Makefile.am
 @@ -3,7 +3,7 @@
  # Written by Richard Ash following Gary Vaughan's Autobook

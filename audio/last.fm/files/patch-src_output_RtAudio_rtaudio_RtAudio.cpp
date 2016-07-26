@@ -1,4 +1,4 @@
---- src/output/RtAudio/rtaudio/RtAudio.cpp.orig	2014-04-04 08:59:58.151014000 +0000
+--- src/output/RtAudio/rtaudio/RtAudio.cpp.orig	2016-07-26 15:06:09 UTC
 +++ src/output/RtAudio/rtaudio/RtAudio.cpp
 @@ -42,7 +42,7 @@
  #include <QtGlobal>

@@ -1,6 +1,6 @@
---- ../juke.orig/src/conf.c	Thu Apr 15 21:44:53 1999
-+++ ./src/conf.c	Sun May  2 12:18:07 1999
-@@ -207,11 +207,11 @@
+--- src/conf.c.orig	2000-03-06 20:43:13 UTC
++++ src/conf.c
+@@ -207,11 +207,11 @@ void config_load (struct CONFIG *cfg)
        return;
      }
    }

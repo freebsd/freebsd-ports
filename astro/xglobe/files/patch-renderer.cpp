@@ -1,6 +1,6 @@
---- renderer.cpp.orig	1999-12-06 08:13:35.000000000 -0800
-+++ renderer.cpp	2011-01-18 14:22:52.000000000 -0800
-@@ -123,7 +123,7 @@
+--- renderer.cpp.orig	1999-12-06 16:13:35 UTC
++++ renderer.cpp
+@@ -123,7 +123,7 @@ Renderer::Renderer(const QSize &size, co
    this->ambientGreen = 0.15;
    this->ambientBlue = 0.15;
    this->markerpixmap = new QPixmap((const char **)marker_xpm);
@@ -9,7 +9,7 @@
    this->show_label = TRUE;
    this->gridtype = NO_GRID;
    this->d_gridline = 15.0*PI/180.;
-@@ -448,7 +448,7 @@
+@@ -448,7 +448,7 @@ double Renderer::getZoom()
  
  void Renderer::setMarkerList(MarkerList *l)
  {
@@ -18,7 +18,7 @@
    markerlist = l;
  }
  
-@@ -1136,7 +1136,7 @@
+@@ -1136,7 +1136,7 @@ void Renderer::drawMarkers()
    Location **visible_locations;
  
    visible_locations = new Location*[markerlist->count()];
@@ -27,7 +27,7 @@
  
    // Matrix M of renderFrame, but transposed
    m11 = cos(rot)*cos(view_long)-sin(view_lat)*sin(view_long)*sin(rot);
-@@ -1151,8 +1151,9 @@
+@@ -1151,8 +1151,9 @@ void Renderer::drawMarkers()
  
    visible_angle = radius/center_dist;
    
@@ -38,7 +38,7 @@
      lon = l->getLongitude()*PI/180.;
      lat = l->getLatitude()*PI/180.;
  
-@@ -1185,12 +1186,9 @@
+@@ -1185,12 +1186,9 @@ void Renderer::drawMarkers()
      l->x = screen_x + shift_x;
      l->y = screen_y + shift_y;
  
@@ -52,7 +52,7 @@
    // sort the markers according to depth
    qsort(visible_locations, num, sizeof(Location *),
          Renderer::compareLocations);
-@@ -1208,8 +1206,8 @@
+@@ -1208,8 +1206,8 @@ int Renderer::compareLocations(const voi
  {
    double c1, c2;
    
@@ -63,7 +63,7 @@
    
    if(c1 > c2)
      return 1;
-@@ -1364,7 +1362,7 @@
+@@ -1364,7 +1362,7 @@ QImage *Renderer::getImage()
    QImage *clonedImage = NULL;
  
    clonedImage = new QImage(*renderedImage);
@@ -72,7 +72,7 @@
    return clonedImage;
  }
  
-@@ -1391,7 +1389,7 @@
+@@ -1391,7 +1389,7 @@ void Renderer::paintMarker(int x, int y,
  #if QT_VERSION >= 200  
    p.setPen(Qt::black);
  #else
@@ -81,7 +81,7 @@
  #endif
    wx = -br.x()+markerpixmap->width()+2;
    wy = -br.y();
-@@ -1434,7 +1432,7 @@
+@@ -1434,7 +1432,7 @@ void Renderer::paintMarker(int x, int y,
      
      for(wx=0 ; wx<visiblerect.width(); wx++)
      {
@@ -90,7 +90,7 @@
        {
          case 0x00000000:
            *dest++ = 0;
-@@ -1483,8 +1481,8 @@
+@@ -1483,8 +1481,8 @@ void Renderer::drawLabel()
    labelstring.sprintf("%s, %s %d. %d, %d:%02d %s\n"
                        "View pos %2.2f° %c %2.2f° %c\n"
                        "Sun pos %2.2f° %c %2.2f° %c",
@@ -101,7 +101,7 @@
                        dt.date().day(), dt.date().year(),
                        dt.time().hour(), dt.time().minute(),
                        tzname[tm->tm_isdst],
-@@ -1499,7 +1497,7 @@
+@@ -1499,7 +1497,7 @@ void Renderer::drawLabel()
    QRect br = fm.boundingRect(0, 0, 0, 0, Qt::AlignLeft|Qt::AlignTop,
                               labelstring);
  #else
@@ -110,7 +110,7 @@
  #endif
    QPixmap pm(br.width()+10, br.height()+10);
    
-@@ -1512,8 +1510,8 @@
+@@ -1512,8 +1510,8 @@ void Renderer::drawLabel()
    p.drawText(5, 5, br.width(), br.height(), Qt::AlignLeft|Qt::AlignTop,
               labelstring);
  #else
@@ -121,7 +121,7 @@
  #endif
    p.end();
    
-@@ -1562,9 +1560,9 @@
+@@ -1562,9 +1560,9 @@ void Renderer::drawStars()
    
    for(int i=0; i<numstars; i++)
    {

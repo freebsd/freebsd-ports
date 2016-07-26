@@ -1,6 +1,6 @@
---- FWF/src/Imakefile.orig	Mon Nov  9 08:22:54 1998
-+++ FWF/src/Imakefile	Fri Jun 30 19:53:43 2000
-@@ -34,6 +34,7 @@
+--- FWF/src/Imakefile.orig	1998-11-08 23:22:54 UTC
++++ FWF/src/Imakefile
+@@ -34,6 +34,7 @@ SUBDIRS = Board Common Frame Group Radio
  
  
  InitSubdirs($(SUBDIRS))

@@ -1,6 +1,6 @@
---- rplayd/rplayd.c.orig	Wed Mar 10 16:58:04 1999
-+++ rplayd/rplayd.c	Fri Jan 31 02:12:40 2003
-@@ -421,10 +421,9 @@
+--- rplayd/rplayd.c.orig	1999-03-10 07:58:04 UTC
++++ rplayd/rplayd.c
+@@ -421,10 +421,9 @@ main(argc, argv)
      /* Fork */
      if (do_fork)
      {

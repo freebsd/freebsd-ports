@@ -1,4 +1,4 @@
---- lib-src/libnyquist/nyquist/cmt/cext.h.orig	2015-07-11 10:02:22 UTC
+--- lib-src/libnyquist/nyquist/cmt/cext.h.orig	2016-07-26 13:34:07 UTC
 +++ lib-src/libnyquist/nyquist/cmt/cext.h
 @@ -58,7 +58,7 @@ EXIT(n)  -- calls exit(n) after shutting
  #include <malloc.h>

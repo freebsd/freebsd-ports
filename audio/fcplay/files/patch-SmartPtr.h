@@ -1,6 +1,6 @@
---- SmartPtr.h.orig	Tue Jun  6 20:00:27 2006
-+++ SmartPtr.h	Tue Jun  6 20:00:38 2006
-@@ -207,16 +207,16 @@
+--- SmartPtr.h.orig	1998-11-30 19:10:00 UTC
++++ SmartPtr.h
+@@ -207,16 +207,16 @@ class smartPtr : public smartPtrBase<T>
      {
          if ( bufferLen >= 1 )
          {

@@ -1,5 +1,5 @@
---- doc/RPLAY.texi.orig	Wed Jul 15 07:35:23 1998
-+++ doc/RPLAY.texi	Wed Jun 21 22:38:54 2000
+--- doc/RPLAY.texi.orig	1998-07-14 22:35:23 UTC
++++ doc/RPLAY.texi
 @@ -2,6 +2,10 @@
  @c %**start of header
  @setfilename RPLAY.info

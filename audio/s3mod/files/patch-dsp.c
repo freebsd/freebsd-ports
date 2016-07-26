@@ -1,5 +1,5 @@
---- dsp.c.orig	2012-10-10 23:29:01.000000000 +0800
-+++ dsp.c	2012-10-10 23:30:54.000000000 +0800
+--- dsp.c.orig	2016-07-26 15:51:01 UTC
++++ dsp.c
 @@ -22,20 +22,20 @@
   *  linux_dsp.c - Support for the Linux DSP driver from the Voxware(C) Drivers.
   */

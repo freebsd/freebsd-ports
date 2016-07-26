@@ -1,6 +1,6 @@
---- configure.in.orig	2010-08-14 21:50:15.000000000 +0200
-+++ configure.in	2010-08-14 21:53:26.000000000 +0200
-@@ -118,6 +118,32 @@
+--- configure.in.orig	2011-11-13 12:53:51 UTC
++++ configure.in
+@@ -118,6 +118,32 @@ if test "$tX_threads" = "no"; then
  	AC_MSG_ERROR([** failed to detect pthreads implementation **])
  fi
  
@@ -33,7 +33,7 @@
  dnl GTK+ search. Enable FileChooser for gtk+>=2.4
  
  AM_PATH_GTK_2_0(, [
-@@ -490,6 +516,8 @@
+@@ -509,6 +535,8 @@ AC_MSG_CHECKING(for GNOME)
     		AC_MSG_RESULT([Found GNOME - installing terminatorX.desktop.])
  		OPTION_GNOME="yes"
      	else
@@ -42,7 +42,7 @@
     		AC_MSG_RESULT([GNOME not found.])
      	fi
  	AM_CONDITIONAL(GNOMEpresent, test "$gnomepresent" = yes)
-@@ -544,7 +572,7 @@
+@@ -563,7 +591,7 @@ AC_SUBST(XML_LIBS)
  AC_SUBST(XML_CFLAGS)
  
  if test "$prefix" != "NONE"; then

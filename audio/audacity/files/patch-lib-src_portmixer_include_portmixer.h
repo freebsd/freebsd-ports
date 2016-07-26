@@ -1,4 +1,4 @@
---- lib-src/portmixer/include/portmixer.h.orig	2015-07-11 10:02:22 UTC
+--- lib-src/portmixer/include/portmixer.h.orig	2016-07-26 13:34:07 UTC
 +++ lib-src/portmixer/include/portmixer.h
 @@ -45,7 +45,7 @@ extern "C"
   *

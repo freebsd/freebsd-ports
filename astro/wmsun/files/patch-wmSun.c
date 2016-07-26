@@ -1,6 +1,6 @@
---- wmSun.c.orig	Thu Aug 15 18:04:04 2002
-+++ wmSun.c	Thu Aug 15 18:06:24 2002
-@@ -76,7 +76,8 @@
+--- wmSun.c.orig	2015-04-01 21:07:58 UTC
++++ wmSun.c
+@@ -76,7 +76,8 @@ int main(int argc, char *argv[]) {
      int			LocalDayOfMonth, DayOfMonth;
      int			Hours, Mins, Secs, OldSecs, digit, xoff, xsize;
      int			OldMins;

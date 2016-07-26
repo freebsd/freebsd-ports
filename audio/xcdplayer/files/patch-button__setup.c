@@ -1,8 +1,8 @@
 
 $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ad,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
---- button_setup.c.orig	Tue Jan 12 19:59:47 1993
-+++ button_setup.c	Mon Aug 25 00:38:35 2003
+--- button_setup.c.orig	1993-01-12 18:59:47 UTC
++++ button_setup.c
 @@ -20,6 +20,9 @@
  # include <X11/Xaw/Toggle.h>
  
@@ -37,11 +37,10 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ad,v 1.4 2005/12/11 20:48:46 joerg
  
  static Widget	buttons_form_widget;
  static Widget	play_button_widget;
-@@ -71,25 +91,6 @@
- 	Widget		parent_widget;
+@@ -72,25 +92,6 @@ button_setup(parent_widget)
  {
  	Arg		args[1];
--
+ 
 -	extern void	title_dialog_setup();
 -	extern void	play_button_setup();
 -	extern void	stop_button_setup();
@@ -60,6 +59,7 @@ $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ad,v 1.4 2005/12/11 20:48:46 joerg
 -	extern void	pgm_button_setup();
 -	extern void	buttons_reset();
 -
- 
+-
  	buttons_form_widget = XtCreateManagedWidget("buttonsForm",
  						    formWidgetClass,
+ 						    parent_widget,

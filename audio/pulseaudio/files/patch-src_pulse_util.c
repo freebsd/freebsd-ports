@@ -1,5 +1,5 @@
---- src/pulse/util.c.orig	2015-02-12 09:10:35.000000000 -0500
-+++ src/pulse/util.c	2015-06-13 17:15:14.603153000 -0400
+--- src/pulse/util.c.orig	2015-12-29 00:56:00 UTC
++++ src/pulse/util.c
 @@ -30,6 +30,10 @@
  #include <time.h>
  #include <unistd.h>
@@ -25,15 +25,14 @@
  #ifdef __FreeBSD__
      {
 -        char *rp;
--
++        int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()};
++        struct kinfo_proc kp;
++        size_t sz = sizeof(kp);
+ 
 -        if ((rp = pa_readlink("/proc/curproc/file"))) {
 -            pa_strlcpy(s, pa_path_get_filename(rp), l);
 -            pa_xfree(rp);
 -            return s;
-+        int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()};
-+        struct kinfo_proc kp;
-+        size_t sz = sizeof(kp);
-+
 +        if (sysctl(mib, 4, &kp, &sz, NULL, 0) == 0)
 +        {
 +          pa_strlcpy(s, kp.ki_comm, l);

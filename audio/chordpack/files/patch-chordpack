@@ -1,6 +1,6 @@
---- chordpack.orig	Sun Jul  8 01:09:29 2001
-+++ chordpack	Sun Jul  8 01:09:32 2001
-@@ -1590,7 +1590,7 @@
+--- chordpack.orig	2001-07-23 13:47:11 UTC
++++ chordpack
+@@ -1598,7 +1598,7 @@ if ($task eq "ascii") {
  
          # {{{  Comment (programmer's kind of)
          if (/^\x23/) {    # \x23 is  hash

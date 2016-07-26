@@ -1,5 +1,5 @@
---- tables.h.orig	Sat Oct 21 15:59:26 1995
-+++ tables.h	Sat Jan 27 15:31:20 2001
+--- tables.h.orig	1995-10-21 06:59:26 UTC
++++ tables.h
 @@ -13,7 +13,8 @@
  unsigned short base_freq_table[] =
  {

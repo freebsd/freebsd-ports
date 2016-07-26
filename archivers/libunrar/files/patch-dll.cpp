@@ -1,6 +1,6 @@
-diff -ruN unrar.orig/dll.cpp unrar/dll.cpp
+--- dll.cpp.orig	2010-03-15 06:30:52 UTC
 +++ dll.cpp
-@@ -272,7 +272,9 @@
+@@ -281,7 +281,9 @@ int PASCAL ProcessFile(HANDLE hArcData,i
        strcpy(Data->Cmd.Command,Operation==RAR_EXTRACT ? "X":"T");
        Data->Cmd.Test=Operation!=RAR_EXTRACT;
        bool Repeat=false;

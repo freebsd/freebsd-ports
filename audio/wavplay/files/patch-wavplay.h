@@ -1,6 +1,6 @@
---- wavplay.h.orig	Thu Aug  5 17:24:45 2004
-+++ wavplay.h	Thu Aug  5 17:24:49 2004
-@@ -500,7 +500,7 @@
+--- wavplay.h.orig	1999-12-04 00:06:42 UTC
++++ wavplay.h
+@@ -500,7 +500,7 @@ extern int LockDSP(int ipc,int playrecx,
  extern int UnlockDSP(int ipc,int playrecx,ErrFunc erf);
  
  extern WAVFILE *WavOpenForRead(const char *Pathname,ErrFunc erf);

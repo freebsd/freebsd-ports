@@ -1,6 +1,6 @@
---- configure.ac.orig	2009-03-07 01:48:24.000000000 +0300
-+++ configure.ac	2009-03-07 01:49:07.000000000 +0300
-@@ -74,13 +74,7 @@
+--- configure.ac.orig	2006-08-08 18:11:58 UTC
++++ configure.ac
+@@ -74,13 +74,7 @@ if test "x$libusb" = "xyes"; then
      AC_MSG_RESULT(yes)
      AC_DEFINE_UNQUOTED(WITH_LIBUSB)
  

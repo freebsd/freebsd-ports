@@ -1,4 +1,4 @@
---- include/lmms_math.h.orig	2016-05-05 22:56:00 UTC
+--- include/lmms_math.h.orig	2015-03-08 02:47:14 UTC
 +++ include/lmms_math.h
 @@ -26,15 +26,14 @@
  #ifndef LMMS_MATH_H

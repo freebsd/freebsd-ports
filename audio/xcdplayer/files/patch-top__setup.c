@@ -1,5 +1,5 @@
---- top_setup.c.orig	Tue Jan 12 19:59:40 1993
-+++ top_setup.c	Mon Aug 25 00:38:35 2003
+--- top_setup.c.orig	1993-01-12 18:59:40 UTC
++++ top_setup.c
 @@ -26,18 +26,8 @@
  # include "logo.xbm"
  
@@ -21,7 +21,7 @@
  
  extern char	*getenv();
  
-@@ -55,36 +45,36 @@
+@@ -55,36 +45,36 @@ static XrmOptionDescRec options[] = {
  };
  
  static XtResource	resources[] = {
@@ -77,7 +77,7 @@
  };
  
  Widget
-@@ -98,6 +88,20 @@
+@@ -98,6 +88,20 @@ top_setup(argc, argv)
  	Arg		arg;
  	char		*s;
  
@@ -98,7 +98,7 @@
  	XtToolkitInitialize();
  
  	appc = XtCreateApplicationContext();
-@@ -123,12 +127,12 @@
+@@ -123,12 +127,12 @@ top_setup(argc, argv)
  	XtSetValues(top_shell, &arg, 1);
  	
  

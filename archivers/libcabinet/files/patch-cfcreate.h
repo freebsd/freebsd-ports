@@ -1,5 +1,5 @@
---- cfcreate.h.orig	1999-10-24 07:29:53.000000000 -0400
-+++ cfcreate.h	2014-02-21 15:47:18.116272433 -0500
+--- cfcreate.h.orig	1999-10-24 11:29:53 UTC
++++ cfcreate.h
 @@ -20,6 +20,8 @@
  #include "cffile.h"
  #include "zlib.h"
@@ -9,7 +9,7 @@
  #ifdef unix
  #include <unistd.h>
  #endif
-@@ -211,7 +213,7 @@
+@@ -211,7 +213,7 @@ class cfc_folderinfo : public ObjectBase
  		int process_block(const byte* data, word datalen);
  		int read_block(istream& in, byte* &buf, int& bytesread);
  		int compress_block(byte* &dest, word &destlen, byte* src, word srclen);

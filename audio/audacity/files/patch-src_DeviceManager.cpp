@@ -1,4 +1,4 @@
---- src/DeviceManager.cpp.orig	2015-07-11 10:02:22 UTC
+--- src/DeviceManager.cpp.orig	2016-07-26 13:34:06 UTC
 +++ src/DeviceManager.cpp
 @@ -6,7 +6,7 @@
  

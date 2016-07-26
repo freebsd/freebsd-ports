@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2005-02-26 21:37:07.000000000 -0500
-+++ ./Makefile.in	2012-05-19 08:49:13.000000000 -0400
-@@ -78,7 +78,7 @@
+--- Makefile.in.orig	2005-02-27 02:37:07 UTC
++++ Makefile.in
+@@ -78,7 +78,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
@@ -9,7 +9,7 @@
  LIBTOOL = @LIBTOOL@
  LN_S = @LN_S@
  LTLIBOBJS = @LTLIBOBJS@
-@@ -173,9 +173,9 @@
+@@ -173,9 +173,9 @@ libxmms_scrobbler_la_SOURCES = xmms_scro
  queue.c queue.h tags/tags.c tags/include/tags.h tags/unicode.c \
  tags/include/unicode.h fmt.c fmt.h gtkstuff.c gtkstuff.h md5.c md5.h \
  tags/include/endian.h tags/id3v1.c tags/id3v2.c tags/vorbis.c tags/ape.c \
@@ -21,7 +21,7 @@
  
  
  libbmp_scrobbler_la_CFLAGS = $(AM_CFLAGS) @BMP_CFLAGS@ -DMAKE_BMP=1 \
-@@ -188,13 +188,13 @@
+@@ -188,13 +188,13 @@ libbmp_scrobbler_la_SOURCES = xmms_scrob
  queue.c queue.h tags/tags.c tags/include/tags.h tags/unicode.c \
  tags/include/unicode.h fmt.c fmt.h gtkstuff.c gtkstuff.h md5.c md5.h \
  tags/include/endian.h tags/id3v1.c tags/id3v2.c tags/vorbis.c tags/ape.c \
@@ -38,7 +38,7 @@
  subdir = .
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -210,7 +210,7 @@
+@@ -210,7 +210,7 @@ am_libbmp_scrobbler_la_OBJECTS = libbmp_
  	libbmp_scrobbler_la-md5.lo libbmp_scrobbler_la-id3v1.lo \
  	libbmp_scrobbler_la-id3v2.lo libbmp_scrobbler_la-vorbis.lo \
  	libbmp_scrobbler_la-ape.lo libbmp_scrobbler_la-itunes.lo \
@@ -47,7 +47,7 @@
  	libbmp_scrobbler_la-wma.lo
  libbmp_scrobbler_la_OBJECTS = $(am_libbmp_scrobbler_la_OBJECTS)
  libxmms_scrobbler_la_LIBADD =
-@@ -221,7 +221,6 @@
+@@ -221,7 +221,6 @@ am_libxmms_scrobbler_la_OBJECTS = libxmm
  	libxmms_scrobbler_la-md5.lo libxmms_scrobbler_la-id3v1.lo \
  	libxmms_scrobbler_la-id3v2.lo libxmms_scrobbler_la-vorbis.lo \
  	libxmms_scrobbler_la-ape.lo libxmms_scrobbler_la-itunes.lo \
@@ -55,7 +55,7 @@
  	libxmms_scrobbler_la-id3genres.lo libxmms_scrobbler_la-wma.lo
  libxmms_scrobbler_la_OBJECTS = $(am_libxmms_scrobbler_la_OBJECTS)
  
-@@ -229,7 +228,6 @@
+@@ -229,7 +228,6 @@ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I.
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
  @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/libbmp_scrobbler_la-ape.Plo \
@@ -63,7 +63,7 @@
  @AMDEP_TRUE@	./$(DEPDIR)/libbmp_scrobbler_la-fmt.Plo \
  @AMDEP_TRUE@	./$(DEPDIR)/libbmp_scrobbler_la-gtkstuff.Plo \
  @AMDEP_TRUE@	./$(DEPDIR)/libbmp_scrobbler_la-id3genres.Plo \
-@@ -245,7 +243,6 @@
+@@ -245,7 +243,6 @@ am__depfiles_maybe = depfiles
  @AMDEP_TRUE@	./$(DEPDIR)/libbmp_scrobbler_la-wma.Plo \
  @AMDEP_TRUE@	./$(DEPDIR)/libbmp_scrobbler_la-xmms_scrobbler.Plo \
  @AMDEP_TRUE@	./$(DEPDIR)/libxmms_scrobbler_la-ape.Plo \
@@ -71,7 +71,7 @@
  @AMDEP_TRUE@	./$(DEPDIR)/libxmms_scrobbler_la-fmt.Plo \
  @AMDEP_TRUE@	./$(DEPDIR)/libxmms_scrobbler_la-gtkstuff.Plo \
  @AMDEP_TRUE@	./$(DEPDIR)/libxmms_scrobbler_la-id3genres.Plo \
-@@ -381,7 +378,6 @@
+@@ -381,7 +378,6 @@ distclean-compile:
  	-rm -f *.tab.c
  
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbmp_scrobbler_la-ape.Plo@am__quote@
@@ -79,7 +79,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbmp_scrobbler_la-fmt.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbmp_scrobbler_la-gtkstuff.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbmp_scrobbler_la-id3genres.Plo@am__quote@
-@@ -397,7 +393,6 @@
+@@ -397,7 +393,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbmp_scrobbler_la-wma.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbmp_scrobbler_la-xmms_scrobbler.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libxmms_scrobbler_la-ape.Plo@am__quote@
@@ -87,7 +87,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libxmms_scrobbler_la-fmt.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libxmms_scrobbler_la-gtkstuff.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libxmms_scrobbler_la-id3genres.Plo@am__quote@
-@@ -875,39 +870,6 @@
+@@ -875,39 +870,6 @@ libbmp_scrobbler_la-itunes.lo: tags/itun
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libbmp_scrobbler_la_CFLAGS) $(CFLAGS) -c -o libbmp_scrobbler_la-itunes.lo `test -f 'tags/itunes.c' || echo '$(srcdir)/'`tags/itunes.c
  

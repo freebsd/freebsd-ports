@@ -1,6 +1,6 @@
---- ./configure.orig	2014-04-09 19:40:22.000000000 +0000
-+++ ./configure	2014-04-09 22:42:39.000000000 +0000
-@@ -13405,7 +13405,7 @@
+--- configure.orig	2014-04-09 19:40:22 UTC
++++ configure
+@@ -13405,7 +13405,7 @@ $as_echo "#define HAVE_LC_MESSAGES 1" >>
  
      fi
    fi

@@ -1,6 +1,6 @@
---- src/precession.c.orig	Tue Jan 10 23:35:08 2006
-+++ src/precession.c	Tue Aug 15 18:03:50 2006
-@@ -56,21 +56,21 @@
+--- src/precession.c.orig	2011-07-28 11:02:50 UTC
++++ src/precession.c
+@@ -82,21 +82,21 @@ void ln_get_equ_prec (struct ln_equ_posn
  	theta = ln_deg_to_rad (theta); 
  
  	/* calc A,B,C equ 20.4 */
@@ -28,7 +28,7 @@
  	}
  
  	/* change to degrees */
-@@ -114,21 +114,21 @@
+@@ -140,21 +140,21 @@ void ln_get_equ_prec2 (struct ln_equ_pos
  	theta = ln_deg_to_rad (theta); 
  
  	/* calc A,B,C equ 20.4 */

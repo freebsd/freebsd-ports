@@ -1,6 +1,6 @@
---- Zlib.pm.orig	Sun Feb 13 00:43:08 2005
-+++ Zlib.pm	Sun Feb 13 00:43:30 2005
-@@ -297,7 +297,7 @@
+--- Zlib.pm.orig	2009-07-14 21:30:41 UTC
++++ Zlib.pm
+@@ -289,7 +289,7 @@ use strict;
  use vars qw($VERSION $AUTOLOAD @ISA);
  
  use Carp;

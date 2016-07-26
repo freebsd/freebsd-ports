@@ -1,4 +1,4 @@
---- Makefile.in.orig	2015-01-25 20:25:32 UTC
+--- Makefile.in.orig	2015-10-03 03:58:31 UTC
 +++ Makefile.in
 @@ -345,7 +345,7 @@ top_srcdir = @top_srcdir@
  SUBDIRS = src po

@@ -1,5 +1,5 @@
---- src/alutUtil.c.orig	Fri Mar 31 14:48:10 2006
-+++ src/alutUtil.c	Fri Mar 31 14:48:22 2006
+--- src/alutUtil.c.orig	2006-05-08 09:28:07 UTC
++++ src/alutUtil.c
 @@ -2,6 +2,7 @@
  
  #if HAVE_NANOSLEEP && HAVE_TIME_H

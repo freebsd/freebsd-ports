@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Wed Jul 15 07:35:23 1998
-+++ doc/Makefile.in	Thu Jun 22 00:41:13 2000
-@@ -23,15 +23,15 @@
+--- doc/Makefile.in.orig	1998-07-14 22:35:23 UTC
++++ doc/Makefile.in
+@@ -23,15 +23,15 @@ MKINSTALLDIRS= @srcdir@/../mkinstalldirs
  .texi.html:
  	$(TEXI2HTML) $(TEXI2HTML_FLAGS) $<
  
@@ -21,7 +21,7 @@
  
  man:
  	./genman rplay.1.in
-@@ -50,7 +50,7 @@
+@@ -50,7 +50,7 @@ install: all
  	-$(INSTALL_DATA) RPLAY.info $(infodir)/RPLAY.info
  	-$(INSTALL_DATA) RPTP.info $(infodir)/RPTP.info
  	-$(INSTALL_DATA) librplay.info $(infodir)/librplay.info
@@ -30,7 +30,7 @@
  
  uninstall:
  	-$(RM) $(mandir)/man1/rplay.1
-@@ -63,7 +63,7 @@
+@@ -63,7 +63,7 @@ uninstall:
  	-$(RM) $(infodir)/RPLAY.info
  	-$(RM) $(infodir)/RPTP.info
  	-$(RM) $(infodir)/librplay.info

@@ -1,4 +1,4 @@
---- src/tag_editor.cpp.orig	2015-11-04 20:01:29 UTC
+--- src/tag_editor.cpp.orig	2016-04-17 05:41:01 UTC
 +++ src/tag_editor.cpp
 @@ -42,6 +42,7 @@
  #include "title.h"

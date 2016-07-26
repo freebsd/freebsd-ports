@@ -1,6 +1,6 @@
---- src/linklist.h.orig	Sun Oct  1 18:28:22 2006
-+++ src/linklist.h	Sun Oct  1 18:28:52 2006
-@@ -44,7 +44,7 @@
+--- src/linklist.h.orig	2004-02-13 16:58:16 UTC
++++ src/linklist.h
+@@ -44,7 +44,7 @@ class Linklist {
    bool movedown(int pos);
    bool moveto(int num, int pos);
    Entry *pick(int pos);  

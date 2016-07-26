@@ -1,6 +1,6 @@
---- rplayd/Makefile.in.orig	Wed Jun  9 15:27:43 1999
-+++ rplayd/Makefile.in	Wed Jun 21 23:04:00 2000
-@@ -54,7 +54,6 @@
+--- rplayd/Makefile.in.orig	1999-06-09 06:27:43 UTC
++++ rplayd/Makefile.in
+@@ -54,7 +54,6 @@ $(TARGET):	$(OBJS) ../librplay/$(LIBRPLA
  install:	all
  		$(MKINSTALLDIRS) $(sbindir)
  		$(INSTALL_PROGRAM) $(TARGET) $(sbindir)/$(TARGET)

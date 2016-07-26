@@ -1,6 +1,6 @@
---- ./ym2wav.cpp.orig	2010-04-23 13:49:47.000000000 +0200
-+++ ./ym2wav.cpp	2010-04-23 13:49:47.000000000 +0200
-@@ -71,7 +71,7 @@
+--- ym2wav.cpp.orig	2016-07-26 16:04:42 UTC
++++ ym2wav.cpp
+@@ -71,7 +71,7 @@ typedef struct
  
  int main(int argc, char* argv[])
  {

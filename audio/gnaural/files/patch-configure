@@ -1,6 +1,6 @@
---- configure.orig	2011-05-26 00:38:21.000000000 +0200
-+++ configure	2013-10-31 06:32:24.000000000 +0100
-@@ -7642,7 +7642,7 @@
+--- configure.orig	2011-05-25 22:38:21 UTC
++++ configure
+@@ -7642,7 +7642,7 @@ case $host in
  esac
  
  #do pkgconfig stuff:

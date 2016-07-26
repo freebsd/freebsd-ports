@@ -1,7 +1,7 @@
---- setup.py.orig	2009-06-16 07:04:23.000000000 +0200
-+++ setup.py	2009-09-11 09:45:41.000000000 +0200
-@@ -185,7 +185,7 @@
-             100.0 * (total_lines - bad_lines) / float(total_lines))
+--- setup.py.orig	2016-06-07 11:07:56 UTC
++++ setup.py
+@@ -214,7 +214,7 @@ class coverage_cmd(Command):
+ 
  
  if os.name == "posix":
 -    data_files = [('share/man/man1', glob.glob("man/*.1"))]

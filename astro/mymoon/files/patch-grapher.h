@@ -1,6 +1,6 @@
---- grapher.h.orig	Wed Jul 16 21:24:46 2003
-+++ grapher.h	Fri Oct 14 20:08:52 2005
-@@ -13,15 +13,14 @@
+--- grapher.h.orig	2003-07-16 11:24:46 UTC
++++ grapher.h
+@@ -13,15 +13,14 @@ memset(&arrow, 0, sizeof(arrow));
  for (z=0;z<=progress;z++) {arrow[z]=bar;}for (k=z;k<=max/4;k++) {arrow[k]=empty;}
  
  mvprintw(row/4,0,  

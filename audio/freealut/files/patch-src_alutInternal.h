@@ -1,5 +1,5 @@
---- src/alutInternal.h.orig	Fri Mar 31 06:15:08 2006
-+++ src/alutInternal.h	Fri Mar 31 06:15:46 2006
+--- src/alutInternal.h.orig	2006-05-08 09:28:07 UTC
++++ src/alutInternal.h
 @@ -13,23 +13,8 @@
  
  #if HAVE_STDINT_H
@@ -24,4 +24,4 @@
 +#include <inttypes.h>
  #endif
  
- typedef uint16_t UInt16LittleEndian;
+ typedef int16_t Int16BigEndian;

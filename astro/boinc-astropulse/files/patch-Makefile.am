@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2009-06-11 17:35:16 UTC
++++ Makefile.am
+@@ -31,7 +31,7 @@ if ENABLE_GUI
+      GUI_C_FLAGS = $(CLIENT_C_FLAGS) $(GRAPHICS_CFLAGS)
+      GUI_LD_FLAGS = $(CLIENT_LD_FLAGS)
+      GUI_LD_ADD = -L$(BOINCDIR)/api -L$(BOINCDIR)/lib $(BOINC_LIBS) $(GRAPHICS_LIBS_RAW) $(APP_LIBS)
+-     CLIENT_LD_FLAGS += $(LDSTATIC) -nodefaultlibs
++     CLIENT_LD_FLAGS += $(LDSTATIC)
+      CLIENT_LD_ADD += -L$(BOINCDIR)/api -L$(BOINCDIR)/lib $(BOINC_LIBS) $(AM_LIBS) $(APP_LIBS)
+      AP_GRX_SOURCES = ap_gfx_main.cpp 
+ else

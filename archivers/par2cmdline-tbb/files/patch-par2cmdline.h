@@ -1,6 +1,6 @@
---- par2cmdline.h.orig	2010-08-28 00:21:07.730518551 +0200
-+++ par2cmdline.h	2010-08-28 00:21:42.779186595 +0200
-@@ -428,6 +428,7 @@
+--- par2cmdline.h.orig	2009-02-03 05:14:49 UTC
++++ par2cmdline.h
+@@ -428,6 +428,7 @@ typedef enum Result
  #include <vector>
  #include <map>
  #include <algorithm>

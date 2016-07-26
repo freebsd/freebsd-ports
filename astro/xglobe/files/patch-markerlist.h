@@ -1,6 +1,6 @@
---- markerlist.h.orig	1999-07-13 11:14:07.000000000 -0700
-+++ markerlist.h	2011-01-18 14:22:52.000000000 -0800
-@@ -56,21 +56,23 @@
+--- markerlist.h.orig	1999-07-13 18:14:07 UTC
++++ markerlist.h
+@@ -56,21 +56,23 @@ private:
  class MarkerList
  {
  public:

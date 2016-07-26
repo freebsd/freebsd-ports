@@ -1,29 +1,6 @@
---- configure.in.orig	2012-02-28 19:50:27.000000000 +0100
-+++ configure.in	2016-01-25 20:15:46.034842000 +0100
-@@ -96,9 +96,19 @@
- 		 sys/soundcard.h \
- 		 sys/time.h \
- 		 unistd.h \
--		 xmmintrin.h \
- 		 linux/soundcard.h)
- 
-+dnl Checks for actually working SSE intrinsics
-+AC_MSG_CHECKING(working SSE intrinsics)
-+AC_COMPILE_IFELSE(
-+    [AC_LANG_PROGRAM(
-+	[[#include <xmmintrin.h>]],
-+	[[_mm_sfence();]])],
-+    [AC_DEFINE([HAVE_XMMINTRIN_H], [1], [Define if SSE intrinsics work.])
-+     ac_cv_header_xmmintrin_h=yes],
-+   [ac_cv_header_xmmintrin_h=no])
-+AC_MSG_RESULT(${ac_cv_header_xmmintrin_h})
-+
- dnl Checks for typedefs, structures, and compiler characteristics.
- AC_C_CONST
- AC_C_INLINE
---- configure.orig	2012-02-28 19:54:37.000000000 +0100
-+++ configure	2016-01-25 20:16:07.429512000 +0100
-@@ -11922,7 +11918,6 @@
+--- configure.orig	2012-02-28 18:54:37 UTC
++++ configure
+@@ -11922,7 +11922,6 @@ for ac_header in \
  		 sys/soundcard.h \
  		 sys/time.h \
  		 unistd.h \
@@ -31,7 +8,7 @@
  		 linux/soundcard.h
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
-@@ -11937,6 +11932,31 @@
+@@ -11937,6 +11936,31 @@ fi
  done
  
  
@@ -63,3 +40,26 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for an ANSI C-conforming const" >&5
  $as_echo_n "checking for an ANSI C-conforming const... " >&6; }
  if ${ac_cv_c_const+:} false; then :
+--- configure.in.orig	2012-02-28 18:50:27 UTC
++++ configure.in
+@@ -96,9 +96,19 @@ AC_CHECK_HEADERS( \
+ 		 sys/soundcard.h \
+ 		 sys/time.h \
+ 		 unistd.h \
+-		 xmmintrin.h \
+ 		 linux/soundcard.h)
+ 
++dnl Checks for actually working SSE intrinsics
++AC_MSG_CHECKING(working SSE intrinsics)
++AC_COMPILE_IFELSE(
++    [AC_LANG_PROGRAM(
++	[[#include <xmmintrin.h>]],
++	[[_mm_sfence();]])],
++    [AC_DEFINE([HAVE_XMMINTRIN_H], [1], [Define if SSE intrinsics work.])
++     ac_cv_header_xmmintrin_h=yes],
++   [ac_cv_header_xmmintrin_h=no])
++AC_MSG_RESULT(${ac_cv_header_xmmintrin_h})
++
+ dnl Checks for typedefs, structures, and compiler characteristics.
+ AC_C_CONST
+ AC_C_INLINE

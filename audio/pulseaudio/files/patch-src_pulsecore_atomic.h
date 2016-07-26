@@ -1,6 +1,6 @@
---- src/pulsecore/atomic.h.orig	2015-02-12 15:10:35.000000000 +0100
-+++ src/pulsecore/atomic.h	2015-03-29 15:54:11.161110000 +0200
-@@ -185,39 +185,6 @@
+--- src/pulsecore/atomic.h.orig	2015-09-10 04:51:41 UTC
++++ src/pulsecore/atomic.h
+@@ -185,39 +185,6 @@ static inline bool pa_atomic_ptr_cmpxchg
  #include <sys/param.h>
  #include <machine/atomic.h>
  

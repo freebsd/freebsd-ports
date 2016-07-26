@@ -1,5 +1,5 @@
---- src/au.c.orig	Mon Nov  9 08:22:55 1998
-+++ src/au.c	Fri Jun 30 19:49:15 2000
+--- src/au.c.orig	1998-11-08 23:22:55 UTC
++++ src/au.c
 @@ -32,7 +32,7 @@
  
  #ifdef linux

@@ -1,5 +1,5 @@
---- registryd/registry-main.c.orig	2010-02-27 00:19:33.000000000 -0500
-+++ registryd/registry-main.c	2010-02-27 00:21:10.000000000 -0500
+--- registryd/registry-main.c.orig	2010-09-09 02:51:14 UTC
++++ registryd/registry-main.c
 @@ -198,6 +198,7 @@ main (int argc, char **argv)
     * has been set.  If we have not been relocated, we will exit if the
     * at-spi-dbus key has been set.

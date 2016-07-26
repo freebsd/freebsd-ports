@@ -1,17 +1,17 @@
---- CMakeLists.txt~	2012-06-29 17:55:35.000000000 -0300
-+++ CMakeLists.txt	2012-06-29 17:56:25.000000000 -0300
-@@ -6,7 +6,7 @@
- include(KDE4Defaults)
- include(MacroLibrary)
+--- CMakeLists.txt.orig	2014-07-16 08:24:17 UTC
++++ CMakeLists.txt
+@@ -9,7 +9,7 @@ include(MacroLibrary)
+ # Do not yet REQUIRE Phonon. Hint: As long as we do not find_package(), ${KDE4_PHONON_LIBS} will be empty below, but that should not hurt.
+ #find_package(Phonon REQUIRED)
  
 -find_package(Alsa)
 +find_file(CONFIG_ALSA_H_CMAKE config-alsa.h.cmake ${CMAKE_MODULE_PATH})
  
- macro_optional_find_package(PulseAudio "0.9.12")
- macro_log_feature(PULSEAUDIO_FOUND "PulseAudio" "PulseAudio Audio Server" "http://www.pulseaudio.org/" FALSE "0.9.12" "libpulse is needed to let KMix control PulseAudio")
-@@ -14,7 +14,7 @@
- macro_optional_find_package(Canberra)
- macro_log_feature(CANBERRA_FOUND "libcanberra" "libcanberra audio library" "http://0pointer.de/lennart/projects/libcanberra/" FALSE "" "libcanberra is needed for kmix sound feedback")
+ set(PA_VER "0.9.16")
+ macro_optional_find_package(PulseAudio "${PA_VER}")
+@@ -20,7 +20,7 @@ macro_optional_find_package(Canberra)
+ macro_log_feature(CANBERRA_FOUND "libcanberra" "libcanberra audio library"
+     "http://0pointer.de/lennart/projects/libcanberra/" FALSE "" "libcanberra is needed for kmix sound feedback")
  
 -alsa_configure_file(${CMAKE_BINARY_DIR}/config-alsa.h)
 +configure_file(${CONFIG_ALSA_H_CMAKE} ${CMAKE_BINARY_DIR}/config-alsa.h)

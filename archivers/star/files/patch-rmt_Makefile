@@ -1,4 +1,4 @@
---- rmt/Makefile.orig	2016-02-10 20:47:23 UTC
+--- rmt/Makefile.orig	2011-04-15 20:06:22 UTC
 +++ rmt/Makefile
 @@ -6,13 +6,13 @@ include		$(SRCROOT)/$(RULESDIR)/rules.to
  ###########################################################################

@@ -1,6 +1,6 @@
---- compiler.pri.orig	2009-12-11 03:05:44.000000000 +0900
-+++ compiler.pri	2009-12-22 02:29:38.000000000 +0900
-@@ -93,7 +93,7 @@
+--- compiler.pri.orig	2015-07-09 13:23:46 UTC
++++ compiler.pri
+@@ -111,7 +111,7 @@ unix:!macx {
  	CONFIG(debug, debug|release) {
  		QMAKE_CFLAGS *= -fstack-protector -fPIE -pie
  		QMAKE_CXXFLAGS *= -fstack-protector -fPIE -pie

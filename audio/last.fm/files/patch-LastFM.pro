@@ -1,6 +1,6 @@
---- LastFM.pro.orig	2012-12-02 14:23:24.000000000 +0100
-+++ LastFM.pro	2012-12-02 14:23:37.000000000 +0100
-@@ -37,7 +37,7 @@
+--- LastFM.pro.orig	2010-09-20 10:43:11 UTC
++++ LastFM.pro
+@@ -37,7 +37,7 @@ mac {
      SUBDIRS -= src/mediadevices/ipod
  }
  

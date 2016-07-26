@@ -1,10 +1,10 @@
---- zlib.c.orig	2012-07-09 15:25:31.000000000 +0200
-+++ zlib.c	2012-07-09 15:26:07.000000000 +0200
-@@ -957,6 +957,7 @@
+--- zlib.c.orig	2016-06-22 01:50:40 UTC
++++ zlib.c
+@@ -977,6 +977,7 @@ static PHP_MSHUTDOWN_FUNCTION(zlib)
  /* {{{ PHP_RINIT_FUNCTION */
  static PHP_RINIT_FUNCTION(zlib)
  {
 +	ZLIBG(output_compression) = 0;
  	ZLIBG(compression_coding) = 0;
- 
- 	php_zlib_output_compression_start(TSRMLS_C);
+     if (!ZLIBG(handler_registered)) {
+         ZLIBG(output_compression) = ZLIBG(output_compression_default);

@@ -1,6 +1,6 @@
---- config.m4.orig	2011-09-07 10:27:21.000000000 +0200
-+++ config.m4	2014-05-17 13:31:39.000000000 +0200
-@@ -53,7 +53,7 @@
+--- config.m4.orig	2011-09-07 08:27:21 UTC
++++ config.m4
+@@ -53,7 +53,7 @@ if test "$PHP_SNAPPY" != "no"; then
  
    if test "$PHP_SNAPPY_INCLUDEDIR" != "no" && test "$PHP_SNAPPY_INCLUDEDIR" != "yes"; then
      if test -r "$PHP_SNAPPY_INCLUDEDIR/snappy.h"; then
@@ -9,7 +9,7 @@
      else
        AC_MSG_ERROR([Can't find snappy headers under "$PHP_SNAPPY_INCLUDEDIR"])
      fi
-@@ -61,12 +61,12 @@
+@@ -61,12 +61,12 @@ if test "$PHP_SNAPPY" != "no"; then
      SEARCH_PATH="/usr/local /usr"     # you might want to change this
      SEARCH_FOR="/include/snappy-c.h"  # you most likely want to change this
      if test -r $PHP_SNAPPY/$SEARCH_FOR; then # path given as parameter
@@ -24,7 +24,7 @@
            AC_MSG_RESULT(found in $i)
          fi
        done
-@@ -80,7 +80,7 @@
+@@ -80,7 +80,7 @@ if test "$PHP_SNAPPY" != "no"; then
  
    dnl # add include path
  
@@ -33,7 +33,7 @@
  
    dnl # check for lib
  
-@@ -90,7 +90,7 @@
+@@ -90,7 +90,7 @@ if test "$PHP_SNAPPY" != "no"; then
    AC_LANG_CPLUSPLUS
    AC_TRY_COMPILE(
    [

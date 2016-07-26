@@ -1,6 +1,6 @@
---- network.c.orig
+--- network.c.orig	2002-03-24 05:49:56 UTC
 +++ network.c
-@@ -225,7 +225,8 @@
+@@ -225,7 +225,8 @@ int http_open(char *arg)
       * a html page and not the stream */
      snprintf(http_request, sizeof(http_request), "GET /%s HTTP/1.0\r\n"
  /*  "User-Agent: Mozilla/2.0 (Win95; I)\r\n" */

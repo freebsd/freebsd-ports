@@ -1,5 +1,5 @@
---- Dump.h.orig	Mon Mar  3 22:47:00 1997
-+++ Dump.h	Tue Jun  6 20:05:48 2006
+--- Dump.h.orig	1997-03-03 21:47:00 UTC
++++ Dump.h
 @@ -2,8 +2,9 @@
  #define DUMP_H
  

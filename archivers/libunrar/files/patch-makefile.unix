@@ -1,5 +1,5 @@
---- makefile.unix.orig	2008-10-09 15:43:06.000000000 +0200
-+++ makefile.unix	2008-11-06 01:43:52.000000000 +0100
+--- makefile.unix.orig	2009-05-03 05:18:45 UTC
++++ makefile.unix
 @@ -7,10 +7,11 @@
  
  # Linux using GCC
@@ -14,16 +14,16 @@
  
  # Linux using LCC
  #CXX=lcc
-@@ -100,7 +101,7 @@
+@@ -100,7 +101,7 @@ LINK=$(CXX)
  WHAT=UNRAR
  
  UNRAR_OBJ=filestr.o recvol.o rs.o scantree.o
 -LIB_OBJ=filestr.o scantree.o dll.o
 +LIB_OBJ=dll.o
  
- OBJECTS=rar.o strlist.o strfn.o pathfn.o int64.o savepos.o global.o file.o filefn.o filcreat.o \
+ OBJECTS=rar.o strlist.o strfn.o pathfn.o savepos.o smallfn.o global.o file.o filefn.o filcreat.o \
  	archive.o arcread.o unicode.o system.o isnt.o crypt.o crc.o rawread.o encname.o \
-@@ -131,9 +132,15 @@
+@@ -131,9 +132,15 @@ sfx:	$(OBJECTS)
  	$(STRIP) default.sfx
  
  lib:	WHAT=RARDLL

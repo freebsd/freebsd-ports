@@ -1,6 +1,6 @@
---- setup.py.orig	2012-10-17 02:09:15.000000000 +0800
-+++ setup.py	2012-12-12 13:13:04.000000000 +0800
-@@ -13,15 +13,13 @@
+--- setup.py.orig	2013-07-19 08:20:47 UTC
++++ setup.py
+@@ -13,15 +13,13 @@ if os.name == "posix":
          description = 'Offline Map Viewer',
          version = VERSION,
          url = WEB_ADDRESS,

@@ -1,6 +1,6 @@
---- ./Makefile.orig	2006-04-26 19:14:26.000000000 +0000
-+++ ./Makefile	2014-02-23 10:31:06.000000000 +0000
-@@ -43,8 +43,8 @@
+--- Makefile.orig	2006-04-26 19:14:26 UTC
++++ Makefile
+@@ -43,8 +43,8 @@ WAV49	= -DWAV49
  # CC		= /usr/lang/acc
  # CCFLAGS 	= -c -O
  
@@ -11,7 +11,7 @@
  
  LD 		= $(CC)
  
-@@ -59,11 +59,13 @@
+@@ -59,11 +59,13 @@ LD 		= $(CC)
  ######### Includes needed by $(CC)
  
  # LDINC	= -L/usr/gnu/lib/gcc-2.1/gcc-lib/sparc-sun-sunos4.1.2/2.1
@@ -25,7 +25,7 @@
  
  # Where do you want to install libraries, binaries, a header file
  # and the manual pages?
-@@ -71,7 +73,7 @@
+@@ -71,7 +73,7 @@ LD 		= $(CC)
  # Leave INSTALL_ROOT empty (or just don't execute "make install") to
  # not install gsm and toast outside of this directory.
  
@@ -34,7 +34,7 @@
  
  # Where do you want to install the gsm library, header file, and manpages?
  #
-@@ -80,7 +82,7 @@
+@@ -80,7 +82,7 @@ INSTALL_ROOT	=
  
  GSM_INSTALL_ROOT = $(INSTALL_ROOT)
  GSM_INSTALL_LIB = $(GSM_INSTALL_ROOT)/lib
@@ -43,7 +43,7 @@
  GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/man/man3
  
  
-@@ -106,6 +108,7 @@
+@@ -106,6 +108,7 @@ COMPRESS 	= compress
  COMPRESSFLAGS 	= 
  # RANLIB 	= true
  RANLIB	 	= ranlib
@@ -51,7 +51,7 @@
  
  #
  #    You shouldn't have to configure below this line if you're porting.
-@@ -129,18 +132,19 @@
+@@ -129,18 +132,19 @@ INC	= $(ROOT)/inc
  # DEBUG	= -DNDEBUG
  ######### Remove -DNDEBUG to enable assertions.
  
@@ -74,7 +74,7 @@
  TOAST	= $(BIN)/toast
  UNTOAST	= $(BIN)/untoast
  TCAT	= $(BIN)/tcat
-@@ -257,13 +261,15 @@
+@@ -257,13 +261,15 @@ STUFF = 	ChangeLog			\
  # Install targets
  
  GSM_INSTALL_TARGETS =	\
@@ -91,7 +91,7 @@
  TOAST_INSTALL_TARGETS =	\
  		$(TOAST_INSTALL_BIN)/toast		\
  		$(TOAST_INSTALL_BIN)/tcat		\
-@@ -277,9 +283,12 @@
+@@ -277,9 +283,12 @@ TOAST_INSTALL_TARGETS =	\
  		$(CC) $(CFLAGS) $?
  		@-mv `$(BASENAME) $@` $@ > /dev/null 2>&1
  
@@ -105,7 +105,7 @@
  		@-echo $(ROOT): Done.
  
  tst:		$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/test-result
-@@ -299,24 +308,28 @@
+@@ -299,24 +308,28 @@ install:	toastinstall gsminstall
  
  # The basic API: libgsm
  
@@ -144,7 +144,7 @@
  
  
  # The local bin and lib directories
-@@ -342,62 +355,66 @@
+@@ -342,62 +355,66 @@ toastinstall:
  
  gsmuninstall:
  		-if [ x"$(GSM_INSTALL_ROOT)" != x ] ; then	\

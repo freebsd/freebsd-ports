@@ -1,5 +1,5 @@
---- src/riff.c.orig	Mon Nov  9 08:22:55 1998
-+++ src/riff.c	Fri Jun 30 19:49:19 2000
+--- src/riff.c.orig	1998-11-08 23:22:55 UTC
++++ src/riff.c
 @@ -33,7 +33,7 @@
  
  #ifdef linux

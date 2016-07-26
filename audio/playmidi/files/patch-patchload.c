@@ -1,5 +1,5 @@
---- patchload.c.orig	Sat Feb  7 17:22:51 1998
-+++ patchload.c	Mon Nov 17 22:10:07 2003
+--- patchload.c.orig	1998-02-07 16:22:51 UTC
++++ patchload.c
 @@ -19,7 +19,6 @@
  #ifdef linux
  #include <linux/ultrasound.h>
@@ -8,7 +8,7 @@
  #endif
  #include <sys/stat.h>
  #include <fcntl.h>
-@@ -93,7 +92,6 @@
+@@ -93,7 +92,6 @@ int pgm;
  
      if (pgm < 0) {
  	use8bit = force8bit;

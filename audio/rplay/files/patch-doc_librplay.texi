@@ -1,5 +1,5 @@
---- doc/librplay.texi.orig	Wed Jul 15 07:35:23 1998
-+++ doc/librplay.texi	Wed Jun 21 22:38:58 2000
+--- doc/librplay.texi.orig	1998-07-14 22:35:23 UTC
++++ doc/librplay.texi
 @@ -2,6 +2,10 @@
  @c %**start of header
  @setfilename librplay.info

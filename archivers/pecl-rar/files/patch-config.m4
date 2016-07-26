@@ -1,6 +1,6 @@
---- config.m4.orgi	2013-05-28 16:35:29.000000000 +0800
-+++ config.m4	2013-05-28 16:35:47.000000000 +0800
-@@ -27,6 +27,6 @@
+--- config.m4.orig	2013-10-14 15:30:44 UTC
++++ config.m4
+@@ -27,6 +27,6 @@ if test "$PHP_RAR" != "no"; then
    PHP_REQUIRE_CXX()
    PHP_ADD_LIBRARY_WITH_PATH(stdc++, "", RAR_SHARED_LIBADD)
  
