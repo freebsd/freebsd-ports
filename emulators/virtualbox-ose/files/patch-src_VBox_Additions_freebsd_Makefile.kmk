@@ -1,5 +1,14 @@
 --- src/VBox/Additions/freebsd/Makefile.kmk.orig	2016-07-18 11:50:44 UTC
 +++ src/VBox/Additions/freebsd/Makefile.kmk
+@@ -24,7 +24,7 @@ endif
+ 
+ # Include sub-makefiles.
+ #include $(PATH_SUB_CURRENT)/vboxvfs/Makefile.kmk
+-include $(PATH_SUB_CURRENT)/drm/Makefile.kmk
++#include $(PATH_SUB_CURRENT)/drm/Makefile.kmk
+ 
+ #
+ # Globals
 @@ -67,6 +67,7 @@ VBOX_FBSD_ADD_STRIP_BIN = \
  	vboxvideo_drv_15.so \
  	vboxvideo_drv_16.so \
@@ -8,3 +17,13 @@
  	VBoxOGLarrayspu.so \
  	VBoxOGLcrutil.so \
  	VBoxOGLerrorspu.so \
+@@ -76,8 +77,7 @@ VBOX_FBSD_ADD_STRIP_BIN = \
+ 	VBoxOGL.so
+ 
+ VBOX_FBSD_ADD_MODULES = \
+-	vboxguest \
+-	vboxvideo_drm
++	vboxguest
+ 
+ #
+ # All the bin files that go into the archives.

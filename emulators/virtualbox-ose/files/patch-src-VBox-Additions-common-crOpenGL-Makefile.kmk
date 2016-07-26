@@ -1,20 +1,22 @@
---- src/VBox/Additions/common/crOpenGL/Makefile.kmk.orig	2014-11-21 10:16:35.000000000 -0500
-+++ src/VBox/Additions/common/crOpenGL/Makefile.kmk	2014-12-19 16:55:22.000000000 -0500
-@@ -172,7 +172,7 @@
-   VBoxOGL_SOURCES.solaris += \
-   	$(VBOX_PATH_CROGL_GENFILES)/solaris_exports.c
-   VBoxOGL_SOURCES.freebsd += \
--  	$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.c
-+  	$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.asm
-  endif
- endif
+--- src/VBox/Additions/common/crOpenGL/Makefile.kmk.orig	2016-07-18 11:50:43 UTC
++++ src/VBox/Additions/common/crOpenGL/Makefile.kmk
+@@ -47,9 +47,7 @@ endif
+ if1of ($(KBUILD_TARGET), linux solaris freebsd)
+  #VBoxOGL_DRI = 1
+  DLLS += VBoxEGL
+- ifn1of ($(KBUILD_TARGET),linux solaris)   # No DRI on Solaris yet
+-  VBoxOGL_FAKEDRI = 1
+- endif
++ #VBoxOGL_FAKEDRI = 1
  
-@@ -190,10 +190,12 @@
- 	$(VBOX_PATH_CROGL_GENFILES)/linux_exports.asm
+  # Only Solaris right now needs C stubs because I can't figure out how to
+  # generate the GOT based relocation ASM yet.
+@@ -184,10 +182,12 @@ VBoxOGL_CLEAN.linux        += \
+ 	$(VBOX_PATH_CROGL_GENFILES)/linux_exports.c
  VBoxOGL_CLEAN.solaris        += \
  	$(VBOX_PATH_CROGL_GENFILES)/solaris_exports.c
 +VBoxOGL_CLEAN.freebsd  += \
-+	$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.asm
++	$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.c
  VBoxOGL_CLEAN.win      = \
  	$(VBOX_PATH_CROGL_GENFILES)/windows_exports.asm \
  	$(VBOX_PATH_CROGL_GENFILES)/cropengl.def
@@ -23,7 +25,7 @@
   ifdef VBoxOGL_DRI
    VBoxOGL_CLEAN   += \
   	$(VBOX_PATH_CROGL_GENFILES)/cr_gl.h \
-@@ -206,6 +208,8 @@
+@@ -200,6 +200,8 @@ if1of ($(KBUILD_TARGET), linux solaris)
   	$(VBOX_PATH_CROGL_GENFILES)/linux_glxapi_exports.asm
    VBoxOGL_CLEAN.solaris   += \
   	$(VBOX_PATH_CROGL_GENFILES)/solaris_glxapi_exports.asm
@@ -32,7 +34,16 @@
   endif
  endif
  VBoxOGL_LIBS = \
-@@ -235,7 +239,7 @@
+@@ -229,6 +231,8 @@ if1of ($(KBUILD_TARGET), linux solaris f
+  else
+   VBoxOGL_SONAME.linux = libGL.so.1
+   VBoxOGL_LDFLAGS.linux += -Wl,-e,LibMain
++  VBoxOGL_SONAME.freebsd = libGL.so.1
++  VBoxOGL_LDFLAGS.freebsd += -Wl,-e,LibMain
+  endif
+ endif
+ ifdef VBOX_WITH_CRHGSMI
+@@ -237,7 +241,7 @@ endif
  ifdef VBOX_WITH_WDDM
  VBoxOGL_DEFS.win   += VBOX_WITH_WDDM
  endif
@@ -41,22 +52,10 @@
  VBoxOGL_LDFLAGS += -Wl,-z,nodelete
  endif
  ifdef VBOX_WITH_WDDM
-@@ -317,8 +321,8 @@
- 	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $< $(VBOX_PATH_CROGL_GLAPI)
- 
-   else ifeq ($(KBUILD_TARGET),freebsd)
--$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.c: \
--		$(PATH_SUB_CURRENT)/FreeBSD_exports.py \
-+$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.asm: \
-+		$(PATH_SUB_CURRENT)/FreeBSD_i386_exports.py \
- 		$(VBOX_CROGL_API_FILES) $(PATH_SUB_CURRENT)/entrypoints.py \
- 		| $$(dir $$@)
- 	$(call MSG_GENERATE,python,$@,$<)
-@@ -387,7 +391,16 @@
+@@ -395,6 +399,16 @@ $(VBOX_PATH_CROGL_GENFILES)/solaris_expo
  $(VBOX_PATH_CROGL_GENFILES)/solaris_glxapi_exports.asm: $(PATH_SUB_CURRENT)/SunOS_i386_glxapi_exports.py | $$(dir $$@)
  	$(call MSG_GENERATE,python,$@,$<)
  	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $<
--
 +   else ifeq ($(KBUILD_TARGET),freebsd)
 +$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports_dri.asm: \
 +		$(PATH_SUB_CURRENT)/FreeBSD_i386_exports_dri.py \
@@ -67,6 +66,14 @@
 +$(VBOX_PATH_CROGL_GENFILES)/freebsd_glxapi_exports.asm: $(PATH_SUB_CURRENT)/FreeBSD_i386_glxapi_exports.py | $$(dir $$@)
 +	$(call MSG_GENERATE,python,$@,$<)
 +	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $<
+ 
     else
  $(VBOX_PATH_CROGL_GENFILES)/linux_exports_dri.asm: \
- 		$(PATH_SUB_CURRENT)/Linux_i386_exports_dri.py \
+@@ -712,6 +726,7 @@ VBoxEGL_SOURCES        = egl.c
+ VBoxEGL_INCS           = $(VBOX_PATH_X11_ROOT)/mesa-11.0.7
+ VBoxEGL_LIBS           = $(VBOX_LIB_OGL) $(VBOX_LIB_IPRT_GUEST_R3_SHARED)
+ VBoxEGL_SONAME.linux   = libEGL.so.1
++VBoxEGL_SONAME.freebsd = libEGL.so.1
+ 
+ include $(FILE_KBUILD_SUB_FOOTER)
+ 
