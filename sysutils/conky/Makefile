@@ -88,7 +88,7 @@ RSS_USE=		gnome=glib20,libxml2
 RSS_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 X11_USE=		xorg=x11,xext,xdamage,xfixes
-X11_CONFIGURE_ENABLE=	X11 own-window
+X11_CONFIGURE_ENABLE=	x11 own-window
 X11_VARS=		EXAMPLE_CONF_FILE=${WRKSRC}/data/conky.conf
 X11_VARS_OFF=		EXAMPLE_CONF_FILE=${WRKSRC}/data/conky_no_x11.conf
 
