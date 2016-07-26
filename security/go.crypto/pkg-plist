@@ -3,6 +3,8 @@
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/bn256.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/cast5.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/curve25519.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/ed25519.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/ed25519/internal/edwards25519.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/hkdf.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/md4.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/nacl/box.a
@@ -17,6 +19,8 @@
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp/s2k.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/otr.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/pbkdf2.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/pkcs12.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/pkcs12/internal/rc2.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/poly1305.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ripemd160.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/salsa20.a
@@ -28,6 +32,7 @@
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ssh/terminal.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ssh/test.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ssh/testdata.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/tea.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/twofish.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/xtea.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/xts.a
@@ -60,6 +65,11 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/mont25519_amd64.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/mul_amd64.s
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/square_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ed25519/ed25519.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ed25519/ed25519_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ed25519/internal/edwards25519/const.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ed25519/internal/edwards25519/edwards25519.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ed25519/testdata/sign.input.gz
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/hkdf/example_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/hkdf/hkdf.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/hkdf/hkdf_test.go
@@ -128,6 +138,21 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/otr/smp.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2/pbkdf2.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2/pbkdf2_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/bmp-string.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/bmp-string_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/crypto.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/crypto_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/errors.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/internal/rc2/bench_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/internal/rc2/rc2.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/internal/rc2/rc2_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/mac.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/mac_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/pbkdf.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/pbkdf_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/pkcs12.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/pkcs12_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pkcs12/safebags.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305/const_amd64.s
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305/poly1305.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305/poly1305_amd64.s
@@ -162,6 +187,7 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3/xor_unaligned.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/client.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/client_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/example_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/forward.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/keyring.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/keyring_test.go
@@ -206,6 +232,7 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util_bsd.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util_linux.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util_plan9.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util_windows.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/agent_unix_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/cert_test.go
@@ -220,6 +247,8 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/testdata_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/transport.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/transport_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/tea/cipher.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/tea/tea_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish/twofish.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish/twofish_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea/block.go

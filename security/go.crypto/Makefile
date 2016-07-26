@@ -1,13 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	go.crypto
-PORTVERSION=	20160105
+PORTVERSION=	20160709
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.c-s.li/ports/
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Additional cryptography packages for Go
 
+LICENSE=	BSD3CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	golang
+GH_PROJECT=	crypto
+GH_TAGNAME=	c2f4947f41766b144bb09066e919466da5eddeae
 USES=		go
 GO_PKGNAME=	golang.org/x/crypto
 GO_TARGET=	${GO_PKGNAME}/bcrypt		\
@@ -15,6 +20,8 @@ GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/bn256		\
 		${GO_PKGNAME}/cast5		\
 		${GO_PKGNAME}/curve25519	\
+		${GO_PKGNAME}/ed25519		\
+		${GO_PKGNAME}/ed25519/internal/edwards25519\
 		${GO_PKGNAME}/hkdf		\
 		${GO_PKGNAME}/md4		\
 		${GO_PKGNAME}/nacl/box		\
@@ -29,6 +36,8 @@ GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/openpgp/s2k	\
 		${GO_PKGNAME}/otr		\
 		${GO_PKGNAME}/pbkdf2		\
+		${GO_PKGNAME}/pkcs12		\
+		${GO_PKGNAME}/pkcs12/internal/rc2\
 		${GO_PKGNAME}/poly1305		\
 		${GO_PKGNAME}/ripemd160		\
 		${GO_PKGNAME}/salsa20		\
@@ -40,6 +49,7 @@ GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/ssh/terminal	\
 		${GO_PKGNAME}/ssh/test		\
 		${GO_PKGNAME}/ssh/testdata	\
+		${GO_PKGNAME}/tea		\
 		${GO_PKGNAME}/twofish		\
 		${GO_PKGNAME}/xtea		\
 		${GO_PKGNAME}/xts
