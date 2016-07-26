@@ -13,15 +13,13 @@ COMMENT?=	Advanced, highly configurable system monitor for X11
 CONFLICTS?=	conky-awesome-[0-9]*
 SLAVEDIRS=	sysutils/conky-awesome
 
-USES=		cpe gmake iconv pkgconfig tar:bzip2
+USES=		cpe gmake iconv localbase pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp \
 			--disable-alsa \
 			--disable-bmpx \
 			--disable-iostats
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/conky man/man1/conky.1.gz
 PORTEXAMPLES=	conkyrc.sample
@@ -40,24 +38,36 @@ APCUPSD_CONFIGURE_ENABLE=apcupsd
 
 ARGB_DESC=		Use an ARGB visual to draw on X11
 ARGB_CONFIGURE_ENABLE=	argb
+ARGB_IMPLIES=		X11
 
 AUDACIOUS_DESC=		Control Audacious sound player
 AUDACIOUS_CONFIGURE_ENABLE=audacious
 AUDACIOUS_LIB_DEPENDS=	libaudclient.so:multimedia/audacious
 
-DOUBLE_BUFFER_DESC=	Enable X11 double buffering
+DOUBLE_BUFFER_DESC=	X11 double buffering
 DOUBLE_BUFFER_CONFIGURE_ENABLE=double-buffer
+DOUBLE_BUFFER_IMPLIES=	X11
+
+IMLIB2_CONFIGURE_ENABLE=imlib2
+IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
+IMLIB2_IMPLIES=		X11
 
 INOTIFY_DESC=		Monitor file changes via Inotify
 INOTIFY_CONFIGURE_ENABLE=inotify
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 
+LUA_USES=		lua:51
+LUA_CONFIGURE_ENABLE=	lua
+LUA_LIB_DEPENDS=	libtolua++-5.1.so:lang/tolua++
+
 LUA_CAIRO_DESC=		Lua-Cairo binding
 LUA_CAIRO_CONFIGURE_ENABLE=lua-cairo
-LUA_CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
+LUA_CAIRO_USE=		gnome=cairo
+LUA_CAIRO_IMPLIES=	LUA X11
 
 LUA_IMLIB2_DESC=	Lua-Imlib2 binding
 LUA_IMLIB2_CONFIGURE_ENABLE=lua-imlib2
+LUA_IMLIB2_IMPLIES=	IMLIB2 LUA X11
 
 METAR_DESC=		Display METAR weather reports
 METAR_CONFIGURE_ENABLE=	weather-metar
@@ -74,12 +84,17 @@ NCURSES_CONFIGURE_ENABLE=ncurses
 
 RSS_DESC=		Display RSS feeds
 RSS_CONFIGURE_ENABLE=	rss
-RSS_USE=		GNOME=glib20
-RSS_LIB_DEPENDS=	libcurl.so:ftp/curl \
-			libxml2.so:textproc/libxml2
+RSS_USE=		gnome=glib20,libxml2
+RSS_LIB_DEPENDS=	libcurl.so:ftp/curl
+
+X11_USE=		xorg=x11,xext,xdamage,xfixes
+X11_CONFIGURE_ENABLE=	X11 own-window
+X11_VARS=		EXAMPLE_CONF_FILE=${WRKSRC}/data/conky.conf
+X11_VARS_OFF=		EXAMPLE_CONF_FILE=${WRKSRC}/data/conky_no_x11.conf
 
 XFT_CONFIGURE_ENABLE=	xft
-XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
+XFT_USE=		xorg=xft
+XFT_IMPLIES=		X11
 
 XMMS2_DESC=		Control XMMS2 media player
 XMMS2_CONFIGURE_ENABLE=	xmms2
@@ -87,37 +102,8 @@ XMMS2_LIB_DEPENDS=	libxmmsclient.so:audio/xmms2
 
 XOAP_DESC=		Display XOAP weather reports
 XOAP_CONFIGURE_ENABLE=	weather-xoap
-XOAP_LIB_DEPENDS=	libcurl.so:ftp/curl \
-			libxml2.so:textproc/libxml2
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MARGB} || ${PORT_OPTIONS:MDOUBLE_BUFFER} || ${PORT_OPTIONS:MIMLIB2} || ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2} || ${PORT_OPTIONS:MXFT} || ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xext xdamage
-CONFIGURE_ARGS+=	--enable-x11 --enable-own-window
-EXAMPLE_CONF_FILE=	${WRKSRC}/data/conky.conf
-.else
-CONFIGURE_ARGS+=	--disable-x11 --disable-own-window
-EXAMPLE_CONF_FILE=	${WRKSRC}/data/conky_no_x11.conf
-.endif
-
-.if ${PORT_OPTIONS:MIMLIB2} || ${PORT_OPTIONS:MLUA_IMLIB2}
-LIB_DEPENDS+=		libImlib2.so:graphics/imlib2
-CONFIGURE_ARGS+=	--enable-imlib2
-.else
-CONFIGURE_ARGS+=	--disable-imlib2
-.endif
-
-.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2}
-USES+=			lua:51
-CONFIGURE_ARGS+=	--enable-lua
-.else
-CONFIGURE_ARGS+=	--disable-lua
-.endif
-
-.if ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2}
-LIB_DEPENDS+=		libtolua++-5.1.so:lang/tolua++
-.endif
+XOAP_LIB_DEPENDS=	libcurl.so:ftp/curl
+XOAP_USE=		gnome=libxml2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,lua5\.1,lua-5.1,g' \
