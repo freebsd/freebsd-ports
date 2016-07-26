@@ -36,8 +36,8 @@ CONFLICTS_BUILD?=	rust-nightly
 CONFLICTS_BUILD+=	${PKGBASE}
 CONFLICTS_INSTALL?=	rust-nightly
 
-RUST_BOOT_VERSION=	1.9.0
-RUST_BOOT=	rustc-${RUST_BOOT_VERSION}-${RUST_TARGET}.tar.gz
+RUST_BOOT_VERSION?=	1.9.0
+RUST_BOOT=		rustc-${RUST_BOOT_VERSION}-${RUST_TARGET}.tar.gz
 
 # Rust's libraries are named librustc_${component}-${RUST_VSN_HASH}.so.
 # The hash depends on Rust version and, if the channel is not "stable",
