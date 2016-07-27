@@ -10,7 +10,8 @@ MASTER_SITES=	SF \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Replacement and extension for Tripwire
 
-LIB_DEPENDS=	libmhash.so:security/mhash
+LIB_DEPENDS=	libmhash.so:security/mhash \
+		libpcre.so:devel/pcre
 
 USES=		autoreconf bison gmake
 
