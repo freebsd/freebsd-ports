@@ -4861,6 +4861,7 @@
     SUBDIR += rubygem-cf-uaa-lib
     SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-chronic
+    SUBDIR += rubygem-chronic_duration
     SUBDIR += rubygem-clamp
     SUBDIR += rubygem-classifier
     SUBDIR += rubygem-classifier-reborn
