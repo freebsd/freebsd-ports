@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-PORTVERSION=	${EMACS_VER}
-PORTREVISION=	1
+DISTVERSION=	25.1-rc1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU_ALPHA/emacs/pretest
@@ -20,7 +19,9 @@ BROKEN_ia64=	Emacs does not currently build on ia64
 
 CONFLICTS=	emacs24-[0-9]* emacs-nox11-[0-9]*
 
-EMACS_VER=	25.0.95
+EMACS_VER=	${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${EMACS_VER}
+
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
 INFO_PATH=	${DATADIR_REL}/info
@@ -208,7 +209,7 @@ XPM_IMPLIES=		X11
 XWIDGETS_USE=		XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=xwidgets
 XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
-XWIDGETS_IMPLIES=	X11
+XWIDGETS_IMPLIES=	GTK3
 
 .include <bsd.port.options.mk>
 
