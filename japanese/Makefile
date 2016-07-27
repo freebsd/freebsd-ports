@@ -94,6 +94,7 @@
     SUBDIR += font-nasu
     SUBDIR += font-ricty
     SUBDIR += font-ricty-discord
+    SUBDIR += font-rounded-mgenplus
     SUBDIR += font-sazanami
     SUBDIR += font-shinonome
     SUBDIR += font-std
