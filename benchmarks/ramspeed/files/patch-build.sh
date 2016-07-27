@@ -1,6 +1,6 @@
---- build.sh.orig	2007-11-01 22:00:00.000000000 +0100
-+++ build.sh	2014-01-25 19:53:28.000000000 +0100
-@@ -15,6 +15,16 @@
+--- build.sh.orig	2007-11-01 21:00:00 UTC
++++ build.sh
+@@ -15,6 +15,16 @@ fi
  if [ "$1" ]; then OS=$1; fi
  if [ "$2" ]; then ARCH=$2; fi
  
@@ -17,7 +17,7 @@
  case $OS in
  
      FreeBSD)
-@@ -127,10 +137,20 @@
+@@ -127,10 +137,20 @@ case $OS in
  esac
  
  echo "building for $OS $RELEASE $ARCH"
@@ -41,7 +41,7 @@
  
  if [ $TARGET = "GENERIC" ]
  then echo "WARNING! BUILDING FOR AN UNSUPPORTED OPERATING SYSTEM AND\OR ARCHITECTURE!"
-@@ -139,8 +159,10 @@
+@@ -139,8 +159,10 @@ then echo "WARNING! BUILDING FOR AN UNSU
       echo " "
  fi
  

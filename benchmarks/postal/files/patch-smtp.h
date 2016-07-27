@@ -1,4 +1,4 @@
---- smtp.h.orig
+--- smtp.h.orig	2012-01-14 12:36:56 UTC
 +++ smtp.h
 @@ -4,14 +4,18 @@
  using namespace std;
@@ -20,7 +20,7 @@
  #include "tcp.h"
  #include "mutex.h"
  
-@@ -30,7 +34,11 @@
+@@ -30,7 +34,11 @@ struct eqlng
    }
  };
  

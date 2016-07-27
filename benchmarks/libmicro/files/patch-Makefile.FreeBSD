@@ -1,5 +1,5 @@
---- /dev/null	Sat Aug  6 14:00:00 2005
-+++ Makefile.FreeBSD	Sat Aug  6 14:00:04 2005
+--- Makefile.FreeBSD.orig	2016-07-27 14:59:58 UTC
++++ Makefile.FreeBSD
 @@ -0,0 +1,42 @@
 +#
 +# CDDL HEADER START

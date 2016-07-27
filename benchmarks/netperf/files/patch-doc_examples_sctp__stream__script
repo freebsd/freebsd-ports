@@ -1,0 +1,11 @@
+--- doc/examples/sctp_stream_script.orig	2011-02-10 17:04:20 UTC
++++ doc/examples/sctp_stream_script
+@@ -24,7 +24,7 @@ fi
+ # where the programs are
+ #NETHOME=/usr/local/netperf
+ #NETHOME="/opt/netperf"
+-NETHOME=.
++NETHOME="%%PREFIX%%/bin"
+ 
+ # at what port will netserver be waiting? If you decide to run
+ # netserver at a differnet port than the default of 12865, then set

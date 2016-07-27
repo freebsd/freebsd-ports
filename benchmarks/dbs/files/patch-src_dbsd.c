@@ -1,5 +1,5 @@
---- src/dbsd.c.orig	Sun Jun  7 19:23:26 1998
-+++ src/dbsd.c	Sat Sep 18 17:19:36 1999
+--- src/dbsd.c.orig	1998-06-08 00:23:26 UTC
++++ src/dbsd.c
 @@ -51,6 +51,9 @@
  
  #define DBSD
@@ -19,7 +19,7 @@
  #include <malloc.h>
  #endif
  
-@@ -1002,8 +1005,13 @@
+@@ -1002,8 +1005,13 @@ struct timeval origin_time;
  	    d[i].snd_max      = htonl((int)rt.d[i].td_cb.snd_max);
  	    d[i].snd_cwnd     = htonl((int)rt.d[i].td_cb.snd_cwnd);
  	    d[i].snd_ssthresh = htonl((int)rt.d[i].td_cb.snd_ssthresh);

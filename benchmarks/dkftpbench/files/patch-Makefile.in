@@ -1,6 +1,6 @@
---- Makefile.in.orig	2002-07-31 19:00:13.000000000 +0400
-+++ Makefile.in	2015-09-08 20:28:30.951369000 +0300
-@@ -92,19 +92,6 @@
+--- Makefile.in.orig	2002-07-31 15:00:13 UTC
++++ Makefile.in
+@@ -92,19 +92,6 @@ HAND_TESTS = \
  # Real programs 
  bin_PROGRAMS = dkftpbench
  
@@ -20,7 +20,7 @@
  # No info yet
  info_TEXINFOS = 
  
-@@ -828,7 +815,7 @@
+@@ -828,7 +815,7 @@ installcheck: installcheck-am
  install-exec-am: install-libLIBRARIES install-binPROGRAMS
  install-exec: install-exec-am
  
@@ -29,7 +29,7 @@
  install-data: install-data-am
  
  install-am: all-am
-@@ -843,7 +830,7 @@
+@@ -843,7 +830,7 @@ install-strip:
  	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
  installdirs:
  	$(mkinstalldirs)  $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) \

@@ -1,5 +1,5 @@
---- src/Makefile--	Sat Aug  1 19:13:01 1998
-+++ src/Makefile	Sat Aug  1 19:44:49 1998
+--- src/Makefile.orig	1998-06-08 00:25:16 UTC
++++ src/Makefile
 @@ -27,10 +27,10 @@
  #    make install
  #
@@ -13,7 +13,7 @@
  
  #CFLAGS	=-g                    # debug
  #CFLAGS =-g -DDEBUGMODE
-@@ -51,7 +51,7 @@
+@@ -51,7 +51,7 @@ all:: dbsc dbsd
  obj::
  	(cd ../obj/$(UNAME); make)
  
@@ -22,7 +22,7 @@
  dir::
  	-@ mkdir ../obj
  	-@ mkdir ../obj/$(UNAME)
-@@ -74,7 +74,7 @@
+@@ -74,7 +74,7 @@ tags::
  	etags *.c *.h
  
  install::

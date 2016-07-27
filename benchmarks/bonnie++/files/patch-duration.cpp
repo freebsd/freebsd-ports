@@ -1,12 +1,12 @@
---- duration.cpp.orig	2008-12-23 23:26:42.000000000 +0100
-+++ duration.cpp	2014-05-10 12:04:40.000000000 +0200
+--- duration.cpp.orig	2008-12-23 22:26:42 UTC
++++ duration.cpp
 @@ -1,5 +1,3 @@
 -using namespace std;
 -
  #include <stdlib.h>
  
  #include "duration.h"
-@@ -20,6 +18,8 @@
+@@ -20,6 +18,8 @@ using namespace std;
  #endif
  #endif
  
@@ -15,7 +15,7 @@
  Duration_Base::Duration_Base()
   : m_start(0.0)
   , m_max(0.0)
-@@ -38,7 +38,7 @@
+@@ -38,7 +38,7 @@ double Duration_Base::stop()
    getTime(&tv);
    double ret;
    ret = tv - m_start;

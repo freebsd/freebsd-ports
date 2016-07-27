@@ -1,6 +1,6 @@
---- mutex.c.orig	Sat Aug  6 14:17:43 2005
-+++ mutex.c	Sat Aug  6 14:18:26 2005
-@@ -125,9 +125,11 @@
+--- mutex.c.orig	2011-05-11 00:58:23 UTC
++++ mutex.c
+@@ -121,9 +121,11 @@ benchmark_initrun()
  		errors++;
  	} else {
  		(void) pthread_mutexattr_init(&attr);

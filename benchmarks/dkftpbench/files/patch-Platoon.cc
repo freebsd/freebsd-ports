@@ -1,5 +1,5 @@
---- Platoon.cc.orig	2007-07-08 09:20:15.000000000 +0400
-+++ Platoon.cc	2007-07-08 09:20:35.000000000 +0400
+--- Platoon.cc.orig	2002-02-15 05:11:46 UTC
++++ Platoon.cc
 @@ -1,3 +1,5 @@
 +#include <assert.h>
 +
