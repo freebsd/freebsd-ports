@@ -3,8 +3,8 @@
 PORTNAME=	zoneminder
 PORTVERSION=	1.30.0
 DISTVERSIONPREFIX=v
-DISTVERSIONSUFFIX=-rc1
-PORTREVISION=	1
+DISTVERSIONSUFFIX=-rc2
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -31,13 +31,12 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 		zip:archivers/zip
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	FriendsOfCake:crud
-GH_PROJECT=	crud:crud
-GH_TAGNAME=	c3976f1:crud
+GH_TUPLE=	zoneminder:zoneminder:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
+		FriendsOfCake:crud:c3976f1:crud
 
 WRKSRC=		${WRKDIR}/ZoneMinder-${DISTVERSION}${DISTVERSIONSUFFIX}
 
-USES=		cmake jpeg mysql perl5 php shebangfix
+USES=		cmake jpeg mysql perl5 php shebangfix ssl
 USE_RC_SUBR=	zoneminder
 USE_PHP=	json pdo_mysql session gd sockets
 
@@ -76,12 +75,21 @@ CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \
 		-DZM_CGIDIR=${WWWDIR}/cgi-bin \
 		-DZM_CONTENTDIR=${WWWDIR} \
 		-DHAVE_SENDFILE=0 \
+		-DZM_NO_CURL=ON \
+		-DZM_NO_LIBVLC=ON \
+		-DPCRE_LIBRARIES=0 \
+		-DGNUTLS_LIBRARIES=0 \
 		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && ${ARCH} == i386
 CFLAGS+=	-msse
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+LIB_DEPENDS+=	libexecinfo.so:devel/libexecinfo
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -92,7 +100,6 @@ post-extract:
 	${CP} ${FILESDIR}/README.FreeBSD ${PKGMESSAGE}
 	${REINPLACE_CMD} -e 's|/dev/shm|/tmp|g' ${WRKSRC}/scripts/ZoneMinder/lib/ZoneMinder/ConfigData.pm.in
 	${REINPLACE_CMD} -e 's|E_ALL|E_ALL^E_NOTICE|g' ${WRKSRC}/web/index.php
-	${REINPLACE_CMD} -e 's|sizeof(loc_addr.sun_family))+1|sizeof(loc_addr.sun_family)+1)|g' ${WRKSRC}/src/zm_stream.cpp
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/images
