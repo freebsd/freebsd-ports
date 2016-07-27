@@ -61,6 +61,7 @@
     SUBDIR += fcitx-skk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
+    SUBDIR += font-aozoramincho
     SUBDIR += font-ayu18
     SUBDIR += font-ayu20
     SUBDIR += font-elisa10
