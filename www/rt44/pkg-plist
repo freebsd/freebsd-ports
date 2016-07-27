@@ -21,6 +21,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/ACE.pm
 %%SITE_PERL%%/RT/ACL.pm
 %%SITE_PERL%%/RT/Action.pm
+%%SITE_PERL%%/RT/Action/AddPriority.pm
 %%SITE_PERL%%/RT/Action/AutoOpen.pm
 %%SITE_PERL%%/RT/Action/AutoOpenInactive.pm
 %%SITE_PERL%%/RT/Action/Autoreply.pm
@@ -232,7 +233,6 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Shredder/Plugin/Summary.pm
 %%SITE_PERL%%/RT/Shredder/Plugin/Tickets.pm
 %%SITE_PERL%%/RT/Shredder/Plugin/Users.pm
-%%SITE_PERL%%/RT/Shredder/Record.pm
 %%SITE_PERL%%/RT/Squish.pm
 %%SITE_PERL%%/RT/Squish/CSS.pm
 %%SITE_PERL%%/RT/Squish/JS.pm
@@ -370,9 +370,6 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/security.pod
 %%PORTDOCS%%%%DOCSDIR%%/subscriptions_feeds.pod
 %%PORTDOCS%%%%DOCSDIR%%/ticket_metadata.pod
-%%PORTDOCS%%%%DOCSDIR%%/web_deployment.pod
-%%PORTDOCS%%%%DOCSDIR%%/writing_extensions.pod
-%%PORTDOCS%%%%DOCSDIR%%/writing_portlets.pod
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.SQLite
@@ -558,14 +555,14 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.13/schema.SQLite
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.13/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.2/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.2/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.2/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.2/schema.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.2/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.3/schema.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.3/schema.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.3/schema.SQLite
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.3/schema.mysql
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.4/schema.Oracle
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.4/schema.Pg
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.4/schema.SQLite
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.4/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.5/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.6/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.7/schema.Oracle
@@ -578,6 +575,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.8/schema.SQLite
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.8/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.9/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.4.1/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink-cgm-table
@@ -589,6 +587,9 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/upgrade-mysql-schema.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/upgrade-sla
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/vulnerable-passwords
+%%PORTDOCS%%%%DOCSDIR%%/web_deployment.pod
+%%PORTDOCS%%%%DOCSDIR%%/writing_extensions.pod
+%%PORTDOCS%%%%DOCSDIR%%/writing_portlets.pod
 @dir %%DATADIR%%/etc
 %%DATADIR%%/fonts/Droid.README
 %%DATADIR%%/fonts/DroidSans.ttf
@@ -813,6 +814,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Dashboards/Elements/ShowPortlet/component
 %%DATADIR%%/html/Dashboards/Elements/ShowPortlet/dashboard
 %%DATADIR%%/html/Dashboards/Elements/ShowPortlet/search
+%%DATADIR%%/html/Dashboards/Elements/SubscriptionRecipients
 %%DATADIR%%/html/Dashboards/Modify.html
 %%DATADIR%%/html/Dashboards/Queries.html
 %%DATADIR%%/html/Dashboards/Render.html
@@ -933,6 +935,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/SelectOwnerDropdown
 %%DATADIR%%/html/Elements/SelectPriority
 %%DATADIR%%/html/Elements/SelectQueue
+%%DATADIR%%/html/Elements/SelectQueueAutocomplete
 %%DATADIR%%/html/Elements/SelectResultsPerPage
 %%DATADIR%%/html/Elements/SelectSLA
 %%DATADIR%%/html/Elements/SelectStatus
@@ -941,6 +944,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/SelectUsers
 %%DATADIR%%/html/Elements/SelectWatcherType
 %%DATADIR%%/html/Elements/SetupSessionCookie
+%%DATADIR%%/html/Elements/ShortcutHelp
 %%DATADIR%%/html/Elements/ShowCustomFieldBinary
 %%DATADIR%%/html/Elements/ShowCustomFieldCustomGroupings
 %%DATADIR%%/html/Elements/ShowCustomFieldDate
@@ -983,6 +987,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Helpers/Autocomplete/CustomFieldValues
 %%DATADIR%%/html/Helpers/Autocomplete/Groups
 %%DATADIR%%/html/Helpers/Autocomplete/Owners
+%%DATADIR%%/html/Helpers/Autocomplete/Queues
 %%DATADIR%%/html/Helpers/Autocomplete/Tickets
 %%DATADIR%%/html/Helpers/Autocomplete/Users
 %%DATADIR%%/html/Helpers/Autocomplete/autohandler
@@ -991,6 +996,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Helpers/ShortcutHelp
 %%DATADIR%%/html/Helpers/ShowSimplifiedRecipients
 %%DATADIR%%/html/Helpers/SpawnLinkedTicket
+%%DATADIR%%/html/Helpers/TicketAttachments
 %%DATADIR%%/html/Helpers/TicketHistory
 %%DATADIR%%/html/Helpers/TicketHistoryPage
 %%DATADIR%%/html/Helpers/TicketTimer
@@ -1121,6 +1127,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Elements/SearchArticle
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Users
+%%DATADIR%%/html/SelfService/Helpers/ShortcutHelp
+%%DATADIR%%/html/SelfService/Helpers/Upload/Add
 %%DATADIR%%/html/SelfService/Prefs.html
 %%DATADIR%%/html/SelfService/Update.html
 %%DATADIR%%/html/SelfService/index.html
