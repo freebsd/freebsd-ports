@@ -3,11 +3,11 @@
 
 PORTNAME=	zsh
 DISTVERSION=	5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
-MASTER_SITES=	http://www.zsh.org/pub/:doc \
-		http://www.zsh.org/pub/ \
+MASTER_SITES=	http://www.zsh.org/pub/ \
 		SF \
+		http://www.zsh.org/pub/:doc \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -21,80 +21,61 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_UNSAFE=	yes
 
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
-ZSH_VER=	${PORTVERSION}
-PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
-SUB_FILES=	pkg-message
-
 USES=		iconv ncurses shebangfix tar:xz
 
 SHEBANG_LANG=	zsh
-zsh_OLD_CMD=	/bin/zsh
-zsh_CMD=	${PREFIX}/bin/zsh
-SHEBANG_FILES=	Functions/Calendar/calendar_add \
-		Functions/Misc/checkmail \
-		Functions/Misc/run-help \
-		Functions/Misc/sticky-note \
-		Functions/Misc/zcalc \
-		Functions/Misc/zed \
-		Functions/Misc/zkbd
+zsh_OLD_CMD=	zsh	# shebang appears as /bin/zsh and just zsh
+SHEBANG_FILES=	Functions/Calendar/* \
+		Functions/Misc/*
 
-GNU_CONFIGURE=	yes
-TEST_TARGET=	test
-
-CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
-LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
-CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
 CONFIGURE_ARGS=	--with-tcsetpgrp \
 		--enable-function-subdirs \
+		--enable-maildir-support \
 		--enable-multibyte \
+		--enable-zsh-secure-free \
 		--sysconfdir=${PREFIX}/etc
+CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
+
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
+LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
+TEST_TARGET=	test
+
+OPTIONS_DEFINE=	DEBUG ETCDIR GDBM MEM PCRE STATIC \
+		DOCS EXAMPLES
+OPTIONS_SUB=	yes
+
+GDBM_DESC=	Enable GDBM support (GPL)
+ETCDIR_DESC=	System-wide defaults in /etc (instead of $${PREFIX}/etc)
+MEM_DESC=	Enable zsh-mem options
+
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+
+DEBUG_CONFIGURE_ENABLE=	zsh-debug
+GDBM_CONFIGURE_ENABLE=	gdbm
+ETCDIR_CONFIGURE_OFF=	--enable-etcdir=${PREFIX}/etc
+MEM_CONFIGURE_ENABLE=	zsh-mem
+PCRE_CONFIGURE_ENABLE=	pcre
+
+## Some modules can only be built as a shared library.
+## If you enable STATIC, you may get strange errors if you, a script,
+## or a plugin tries to use the regex module.
+STATIC_LDFLAGS=		-static
+STATIC_CONFIGURE_ON=	--disable-dynamic --with-term-lib="tinfow tinfo"
+STATIC_CONFIGURE_OFF=	--enable-dynamic  --with-term-lib="ncursesw ncurses"
 
 DOCS=		LICENCE META-FAQ README \
 		Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ Etc/completion-style-guide \
 		Doc/zsh*.html Doc/zsh.dvi
+DOCS_DISTFILES=	${DISTNAME}-doc${EXTRACT_SUFX}:doc
 
 PORTDOCS=	*
 PORTEXAMPLES=	zlogin zshenv zshrc
 
-## Vendor completions to be added into the port (none used now)
-#EXTRA_COMPLETION_FILES=	_sockstat
-#EXTRA_COMPLETION_DIR=	Completion/BSD/Command
-
-OPTIONS_DEFINE=	DEBUG ETCDIR GDBM MAILDIR MEM PCRE SECURE_FREE STATIC \
-		DOCS EXAMPLES
-OPTIONS_DEFAULT=SECURE_FREE MAILDIR
-OPTIONS_SUB=	yes
-
-DEBUG_CONFIGURE_ENABLE=	zsh-debug
-
-DOCS_DISTFILES=	${DISTNAME}-doc${EXTRACT_SUFX}:doc
-
-GDBM_DESC=		Enable GDBM support (GPL)
-GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
-GDBM_CONFIGURE_ENABLE=	gdbm
-
-ETCDIR_DESC=		System-wide defaults in /etc (instead of $${PREFIX}/etc)
-ETCDIR_CONFIGURE_OFF=	--enable-etcdir=${PREFIX}/etc
-
-MAILDIR_DESC=			Enable support for Maildirs in MAIL(PATH)
-MAILDIR_CONFIGURE_ENABLE=	maildir-support
-
-MEM_DESC=		Enable zsh-mem options
-MEM_CONFIGURE_ENABLE=	zsh-mem
-
-SECURE_FREE_DESC=		Enable zsh-secure-free
-SECURE_FREE_CONFIGURE_ENABLE=	zsh-secure-free
-
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE_CONFIGURE_ENABLE=	pcre
-
-## Some modules can only be built dynamically (such as the regex module).
-## If you enable STATIC, you may get strange errors if scripts/plugins
-## try to use the regex module.
-STATIC_LDFLAGS=		-static
-STATIC_CONFIGURE_ON=	--disable-dynamic --with-term-lib="tinfow tinfo"
-STATIC_CONFIGURE_OFF=	--enable-dynamic  --with-term-lib="ncursesw ncurses"
+ZSH_VER=	${PORTVERSION}
+PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -103,31 +84,18 @@ CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e '1s|zsh|${zsh_CMD}|' ${WRKSRC}/Functions/Misc/run-help-ip
-	@${REINPLACE_CMD} -e '/LIBS/s/-lrt//' ${WRKSRC}/configure
-	@${SED} -i "" -e "s,link=dynamic,link=either," \
-		${WRKSRC}/Src/Modules/*.mdd
-	@${SED} -i "" -e "s,/etc/,${LOCALBASE}/etc/," \
+# FreeBSD's clock_gettime(2) is in libc, not librt; see PR 167857
+	@${REINPLACE_CMD} -e '/LIBS/s|-lrt||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|/etc/|${LOCALBASE}/etc/|" \
 		${WRKSRC}/Functions/MIME/zsh-mime-setup
 
-# Adding vendor completions into the package
-.ifdef EXTRA_COMPLETION_FILES
-	@${ECHO} "===>  Installing extra completion files"
-.for COMPFILE in ${EXTRA_COMPLETION_FILES}
-	@(if [ -f ${WRKSRC}/${EXTRA_COMPLETION_DIR}/${COMPFILE} ] ; then \
-		${ECHO} "${EXTRA_COMPLETION_DIR}/${COMPFILE} already exists" ; \
-		exit 1 ; \
-	else \
-		${ECHO} ${EXTRA_COMPLETION_DIR}/${COMPFILE} ; \
-		${CP} ${FILESDIR}/${COMPFILE} \
-			${WRKSRC}/${EXTRA_COMPLETION_DIR}/${COMPFILE} ; \
-	fi)
-.endfor
-.endif
-	@${FIND} ${WRKSRC}/Completion -type f -iname '*.orig' -delete
+post-patch-STATIC-on:
+	@${REINPLACE_CMD} -e "s|link=dynamic|link=either|" \
+		${WRKSRC}/Src/Modules/*.mdd
 
 post-build:
 # Fix ".so" macro problem by using "soelim" command.
+# soelim needs the manpages in man1/
 	${LN} -sf ${WRKSRC}/Doc ${WRKSRC}/man1
 	${MV} ${WRKSRC}/Doc/zshall.1 ${WRKSRC}/Doc/zshall.1.source
 	(cd ${WRKSRC} && ${SOELIM} -r ${WRKSRC}/Doc/zshall.1.source > \

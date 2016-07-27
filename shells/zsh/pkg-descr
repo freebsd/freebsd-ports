@@ -1,16 +1,15 @@
-Zsh is a UNIX command interpreter (shell) which of the standard shells
-most resembles the Korn shell (ksh), although it is not completely
-compatible.  It includes enhancements of many types, notably in the
-command-line editor, options for customising its behaviour, filename
-globbing, features to make C-shell (csh) users feel more at home and
-extra features drawn from tcsh (another `custom' shell).
+Zsh is the Swiss Army knife of shells. It combines the most popular
+features of every other shell, and then lets you customize every
+inch of it. Users of bourne-style and C-style shells will feel at
+home in it.
 
-If you want to use zsh completion system, you should type the following
-commands:
+Zsh does intelligent completion, spell-checking, has a rich syntax
+for precise globbing, and is fully extensible through plugin
+systems.
+
+To fire up the zsh completion system, type the following commands:
 
 	$ autoload -U compinstall
 	$ compinstall
-
-See also zshcompsys(1) manpage. :)
 
 WWW: http://www.zsh.org/

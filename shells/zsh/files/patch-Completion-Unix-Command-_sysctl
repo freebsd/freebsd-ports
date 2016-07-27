@@ -1,5 +1,5 @@
---- Completion/Unix/Command/_sysctl.orig	2014-10-02 21:28:23.000000000 +0200
-+++ Completion/Unix/Command/_sysctl	2014-10-09 07:57:47.570857223 +0200
+--- Completion/Unix/Command/_sysctl.orig	2015-11-29 21:46:55 UTC
++++ Completion/Unix/Command/_sysctl
 @@ -1,7 +1,7 @@
  #compdef sysctl
  
