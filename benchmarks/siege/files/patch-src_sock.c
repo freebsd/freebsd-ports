@@ -1,6 +1,6 @@
---- src/sock.c.orig	2015-12-22 20:12:40 UTC
+--- src/sock.c.orig	2016-05-20 11:41:06 UTC
 +++ src/sock.c
-@@ -148,7 +148,7 @@ new_socket(CONN *C, const char *hostpara
+@@ -149,7 +149,7 @@ new_socket(CONN *C, const char *hostpara
        hp = NULL;
      }
    }
@@ -9,7 +9,7 @@
  # ifdef HAVE_GETIPNODEBYNAME
    hp = getipnodebyname(hn, AF_INET, 0, &herrno);
  # else /* default use gethostbyname_r*/
-@@ -190,7 +190,7 @@ new_socket(CONN *C, const char *hostpara
+@@ -191,7 +191,7 @@ new_socket(CONN *C, const char *hostpara
  
    memset((void*) &cli, 0, sizeof(cli));
    memcpy(&cli.sin_addr, hp->h_addr, hp->h_length);

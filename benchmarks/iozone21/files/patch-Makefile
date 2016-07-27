@@ -1,38 +1,36 @@
-*** /dev/null	Wed Oct  5 14:46:59 1994
---- Makefile	Wed Oct  5 16:03:22 1994
-***************
-*** 0 ****
---- 1,33 ----
-+ all: iozone
-+ 
-+ iozone:
-+ 	$(CC) $(CFLAGS) -Dbsd4_3 -DOS_TYPE="\"FreeBSD 2.x\"" -o iozone iozone.c
-+ 
-+ install:
-+ 	-@mkdir -p $(DESTDIR)${PREFIX}/bin
-+ 	-@mkdir -p $(DESTDIR)${PREFIX}/man/man1
-+ 	${BSD_INSTALL_PROGRAM} iozone $(DESTDIR)${PREFIX}/bin
-+ 	@echo .Dd `/bin/date` > iozone.1
-+ 	@echo .Dt IOZONE 1 >> iozone.1
-+ 	@echo .Sh NAME >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Nd Performance Test of Sequential File I/O  >> iozone.1
-+ 	@echo .Sh SYNOPSIS >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Op Ar megabytes >> iozone.1
-+ 	@echo .Op Ar record_length_in_bytes >> iozone.1
-+ 	@echo .Op Ar [path]filename>> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Ar auto[=filename] >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Ar raw[=filename] >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Ar cdrom[=filename] >> iozone.1
-+ 	@echo .Nm iozone >> iozone.1
-+ 	@echo .Ar help >> iozone.1
-+ 	@echo .Sh DESCRIPTION >> iozone.1
-+ 	./iozone help|awk '{if (/Copyright/) x++} {if (/For V1.06/) exit;}\
-+ 		 {if (x) print $0}' >>iozone.1
-+ 	@echo .Sh AUTHOR >> iozone.1
-+ 	@echo Bill Norcott >> iozone.1
-+ 	${BSD_INSTALL_MAN} iozone.1 $(DESTDIR)${PREFIX}/man/man1
+--- Makefile.orig	2016-07-27 14:59:13 UTC
++++ Makefile
+@@ -0,0 +1,33 @@
++all: iozone
++
++iozone:
++	$(CC) $(CFLAGS) -Dbsd4_3 -DOS_TYPE="\"FreeBSD 2.x\"" -o iozone iozone.c
++
++install:
++	-@mkdir -p $(DESTDIR)${PREFIX}/bin
++	-@mkdir -p $(DESTDIR)${PREFIX}/man/man1
++	${BSD_INSTALL_PROGRAM} iozone $(DESTDIR)${PREFIX}/bin
++	@echo .Dd `/bin/date` > iozone.1
++	@echo .Dt IOZONE 1 >> iozone.1
++	@echo .Sh NAME >> iozone.1
++	@echo .Nm iozone >> iozone.1
++	@echo .Nd Performance Test of Sequential File I/O  >> iozone.1
++	@echo .Sh SYNOPSIS >> iozone.1
++	@echo .Nm iozone >> iozone.1
++	@echo .Op Ar megabytes >> iozone.1
++	@echo .Op Ar record_length_in_bytes >> iozone.1
++	@echo .Op Ar [path]filename>> iozone.1
++	@echo .Nm iozone >> iozone.1
++	@echo .Ar auto[=filename] >> iozone.1
++	@echo .Nm iozone >> iozone.1
++	@echo .Ar raw[=filename] >> iozone.1
++	@echo .Nm iozone >> iozone.1
++	@echo .Ar cdrom[=filename] >> iozone.1
++	@echo .Nm iozone >> iozone.1
++	@echo .Ar help >> iozone.1
++	@echo .Sh DESCRIPTION >> iozone.1
++	./iozone help|awk '{if (/Copyright/) x++} {if (/For V1.06/) exit;}\
++		 {if (x) print $0}' >>iozone.1
++	@echo .Sh AUTHOR >> iozone.1
++	@echo Bill Norcott >> iozone.1
++	${BSD_INSTALL_MAN} iozone.1 $(DESTDIR)${PREFIX}/man/man1

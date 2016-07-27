@@ -1,6 +1,6 @@
---- libmicro.c.orig	Sat Aug  6 14:15:04 2005
-+++ libmicro.c	Sat Aug  6 14:15:52 2005
-@@ -854,10 +854,14 @@
+--- libmicro.c.orig	2011-05-11 00:58:23 UTC
++++ libmicro.c
+@@ -859,10 +859,14 @@ barrier_create(int hwm, int datasize)
  	b->ba_flag  = 0;
  
  	(void) pthread_mutexattr_init(&attr);

@@ -1,6 +1,6 @@
---- ./configure.orig	2012-05-12 07:05:20.000000000 +1000
-+++ ./configure	2012-05-12 07:22:49.000000000 +1000
-@@ -6567,7 +6567,7 @@
+--- configure.orig	2015-07-20 17:30:24 UTC
++++ configure
+@@ -6567,7 +6567,7 @@ fi
  done
  
  		case "$host" in
@@ -9,7 +9,7 @@
  			# FreeBSD 7.x and later SCTP support doesn't need -lsctp.
  			;;
  		*)
-@@ -7142,7 +7142,7 @@
+@@ -7142,7 +7142,7 @@ ac_cv_lib_kstat=ac_cv_lib_kstat_main
  			enable_cpuutil="kstat - auto"
  			NETCPU_SOURCE="kstat"
  			;;

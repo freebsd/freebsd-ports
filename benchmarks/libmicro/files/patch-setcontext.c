@@ -1,6 +1,6 @@
---- setcontext.c.orig	Sat Aug  6 16:15:12 2005
-+++ setcontext.c	Sat Aug  6 16:15:31 2005
-@@ -36,6 +36,7 @@
+--- setcontext.c.orig	2011-05-11 00:58:23 UTC
++++ setcontext.c
+@@ -31,6 +31,7 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <unistd.h>

@@ -1,6 +1,6 @@
---- getrusage.c.orig	Sat Aug  6 16:12:36 2005
-+++ getrusage.c	Sat Aug  6 16:12:57 2005
-@@ -40,6 +40,7 @@
+--- getrusage.c.orig	2011-05-11 00:58:23 UTC
++++ getrusage.c
+@@ -36,6 +36,7 @@
  #include <unistd.h>
  #include <stdlib.h>
  #include <stdio.h>

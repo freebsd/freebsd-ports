@@ -1,5 +1,5 @@
---- src/sendrecv.c--	Mon Oct 13 03:27:19 1997
-+++ src/sendrecv.c	Sat Aug  1 19:37:02 1998
+--- src/sendrecv.c.orig	1997-10-13 03:27:19 UTC
++++ src/sendrecv.c
 @@ -70,12 +70,12 @@
  #define INIT_RECORD()  (rdp = rd->d, rd->n=0)
  #define INIT_RECORD2() (rdp2 = rd2->d, rd2->n=0)

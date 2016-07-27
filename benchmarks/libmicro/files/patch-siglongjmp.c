@@ -1,6 +1,6 @@
---- siglongjmp.c.orig	Wed Aug 31 11:53:57 2005
-+++ siglongjmp.c	Wed Aug 31 11:55:14 2005
-@@ -60,7 +60,7 @@
+--- siglongjmp.c.orig	2011-05-11 00:58:23 UTC
++++ siglongjmp.c
+@@ -56,7 +56,7 @@ benchmark(void *tsd, result_t *res)
  {
  	tsd_t			*ts = (tsd_t *)tsd;
  

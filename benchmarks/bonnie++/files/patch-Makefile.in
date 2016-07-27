@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-12-30 22:04:25.000000000 +0100
-+++ Makefile.in	2013-11-05 05:59:48.000000000 +0100
-@@ -9,7 +9,7 @@
+--- Makefile.in.orig	2008-12-30 21:04:25 UTC
++++ Makefile.in
+@@ -9,7 +9,7 @@ prefix=@prefix@
  eprefix=@exec_prefix@
  #MORE_WARNINGS=-Weffc++
  WFLAGS=-Wall -W -Wshadow -Wpointer-arith -Wwrite-strings -pedantic -ffor-scope -Wcast-align -Wsign-compare -Wpointer-arith -Wwrite-strings -Wformat-security -Wswitch-enum -Winit-self $(MORE_WARNINGS)
@@ -9,7 +9,7 @@
  CXX=@CXX@ $(CFLAGS)
  LINK=@CXX@
  THREAD_LFLAGS=@thread_ldflags@
-@@ -52,15 +52,15 @@
+@@ -52,15 +52,15 @@ generate_randfile: generate_randfile.o
  	$(LINK) generate_randfile.o -o generate_randfile
  
  install-bin: $(EXE) $(EXES)

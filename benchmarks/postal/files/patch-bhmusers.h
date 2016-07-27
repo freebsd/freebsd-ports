@@ -1,6 +1,6 @@
---- bhmusers.h.orig
+--- bhmusers.h.orig	2006-09-28 15:20:28 UTC
 +++ bhmusers.h
-@@ -6,12 +6,16 @@
+@@ -6,12 +6,16 @@ using namespace std;
  #include <string>
  #include "conf.h"
  
@@ -17,7 +17,7 @@
  
  #include "postal.h"
  
-@@ -23,7 +27,12 @@
+@@ -23,7 +27,12 @@ typedef struct
    int sync_time;
  } BHM_DATA;
  
@@ -30,7 +30,7 @@
  {
    template<> struct hash< std::string >
    {
-@@ -34,7 +43,11 @@
+@@ -34,7 +43,11 @@ namespace __gnu_cxx
    };
  }
  
