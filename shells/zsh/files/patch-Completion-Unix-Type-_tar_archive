@@ -1,6 +1,9 @@
---- ./Completion/Unix/Type/_tar_archive.orig	2009-12-05 18:29:12.000000000 +0100
-+++ ./Completion/Unix/Type/_tar_archive	2011-02-27 23:44:32.000000000 +0100
-@@ -14,17 +14,8 @@
+bsdtar/libarchive knows how to handle compressed tarballs
+natively, without needing fiddly command switches.
+
+--- Completion/Unix/Type/_tar_archive.orig	2014-12-13 23:55:54 UTC
++++ Completion/Unix/Type/_tar_archive
+@@ -14,17 +14,8 @@ local expl
  _description files expl 'archive file'
  
  if [[ "$1" = *[urtx]* ]]; then
