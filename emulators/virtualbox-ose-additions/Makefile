@@ -147,7 +147,7 @@ post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/kBuild/units/qt4.kmk \
 		${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
-		${WRKSRC}/src/VBox/Additions/common/crOpenGL/fakedri_drv.c \
+		${WRKSRC}/src/VBox/Additions/common/crOpenGL/load.c \
 		${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
 		${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop
 	@${REINPLACE_CMD} -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' ${WRKSRC}/configure
