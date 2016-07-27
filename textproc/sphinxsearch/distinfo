@@ -1,5 +1,5 @@
-TIMESTAMP = 1464425151
-SHA256 (sphinx-2.2.10-release.tar.gz) = 054cb86e64bd48997d89386e1224d4405063d9857b2d7c33dc6cc1b9ef6df440
-SIZE (sphinx-2.2.10-release.tar.gz) = 3109250
+TIMESTAMP = 1469637573
+SHA256 (sphinx-2.2.11-release.tar.gz) = 6662039f093314f896950519fa781bc87610f926f64b3d349229002f06ac41a9
+SIZE (sphinx-2.2.11-release.tar.gz) = 3061998
 SHA256 (libstemmer_c.tgz) = 6530c3638f29f5b03bc3786bb9212e39adaf3bf15b5b0a483b2eb5111f7f416e
 SIZE (libstemmer_c.tgz) = 129584
