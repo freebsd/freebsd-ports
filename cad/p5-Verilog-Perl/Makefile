@@ -7,8 +7,10 @@ CATEGORIES=	cad perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	otacilio.neto@ee.ufcg.edu.br
+MAINTAINER=	otacilio.neto@bsd.com.br
 COMMENT=	Building point for Verilog support in the Perl language
+
+LICENSE=	LGPL3
 
 BUILD_DEPENDS=	flex>=2.5.35:textproc/flex
 
@@ -18,12 +20,11 @@ CONFIGURE_ENV=	CXX=${CXX}\
 		CPP=${CPP}\
 		CC=${CC}
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Verilog/Parser/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Verilog/Preproc/*.so
 
 regression-test: build
 	make test -C ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
