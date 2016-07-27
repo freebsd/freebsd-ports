@@ -30,4 +30,6 @@ GH_ACCOUNT=	simonvik
 GH_PROJECT=	libvmod_maxminddb
 GH_TAGNAME=	4ae6a7f
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
