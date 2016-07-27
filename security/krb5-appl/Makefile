@@ -18,12 +18,11 @@ BUILD_DEPENDS=		krb5-config:security/krb5
 CONFLICTS=		krb4-[0-9]* krb5-1.[0-7].* heimdal-[0-9]* srp-[0-9]*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
-USE_OPENSSL=		yes
-USES=			gmake ncurses perl5 gssapi:mit
+USES=			autoreconf gmake ncurses perl5 gssapi:mit ssl
+GNU_CONFIGURE=		yes
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu89
-USE_AUTOTOOLS=		autoheader autoconf
 CONFIGURE_ARGS?=	--enable-shared --with-krb5=${PREFIX}/bin/krb5-config
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc
 MAKE_ARGS=		INSTALL="${INSTALL}"
