@@ -28,6 +28,8 @@ make_xlfd()
 	_poc=$5
 	_weight=$6
 
+	[ -r ${_file} ] || return
+
 	case "${_poc}:${_enc}" in
 	p:jisx0201.1976-*)	PFIX="bw=0.5" ;;
 	c:jisx0201.1976-*)	PFIX="bw=0.5" ;;
