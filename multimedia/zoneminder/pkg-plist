@@ -2973,7 +2973,6 @@ bin/zmx10.pl
 %%SITE_PERL%%/ZoneMinder.pm
 %%SITE_PERL%%/ZoneMinder/Base.pm
 %%SITE_PERL%%/ZoneMinder/Config.pm
-%%SITE_PERL%%/ZoneMinder/ConfigAdmin.pm
 %%SITE_PERL%%/ZoneMinder/ConfigData.pm
 %%SITE_PERL%%/ZoneMinder/Control.pm
 %%SITE_PERL%%/ZoneMinder/Control/3S.pm
@@ -5968,7 +5967,6 @@ bin/zmx10.pl
 %%PERL5_MAN3%%/ZoneMinder.3.gz
 %%PERL5_MAN3%%/ZoneMinder::Base.3.gz
 %%PERL5_MAN3%%/ZoneMinder::Config.3.gz
-%%PERL5_MAN3%%/ZoneMinder::ConfigAdmin.3.gz
 %%PERL5_MAN3%%/ZoneMinder::ConfigData.3.gz
 %%PERL5_MAN3%%/ZoneMinder::Control.3.gz
 %%PERL5_MAN3%%/ZoneMinder::Control::3S.3.gz
