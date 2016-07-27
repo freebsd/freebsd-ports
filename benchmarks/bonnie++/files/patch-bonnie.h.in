@@ -1,5 +1,5 @@
---- bonnie.h.in.orig    2009-08-21 18:45:50.068536643 +0000
-+++ bonnie.h.in 2009-08-21 18:45:58.564755017 +0000
+--- bonnie.h.in.orig	2009-07-03 03:39:33 UTC
++++ bonnie.h.in
 @@ -1,8 +1,6 @@
  #ifndef BONNIE
  #define BONNIE
@@ -9,7 +9,7 @@
  #define BON_VERSION "@version@"
  #define CSV_VERSION "@csv_version@"
  
-@@ -12,6 +10,8 @@
+@@ -12,6 +10,8 @@ using namespace std;
  #include <sys/stat.h>
  #include <fcntl.h>
  

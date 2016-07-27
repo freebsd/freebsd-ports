@@ -1,4 +1,4 @@
---- postal.cpp.orig
+--- postal.cpp.orig	2012-01-14 12:08:12 UTC
 +++ postal.cpp
 @@ -6,15 +6,11 @@
  #include "smtp.h"

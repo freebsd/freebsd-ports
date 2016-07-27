@@ -1,6 +1,6 @@
---- tcp.h.orig
+--- tcp.h.orig	2007-01-12 07:12:10 UTC
 +++ tcp.h
-@@ -100,7 +100,11 @@
+@@ -100,7 +100,11 @@ private:
  
  #ifdef USE_SSL
  #ifdef USE_OPENSSL

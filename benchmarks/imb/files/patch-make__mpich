@@ -1,0 +1,18 @@
+--- make_mpich.orig	2016-07-27 14:58:51 UTC
++++ make_mpich
+@@ -1,5 +1,5 @@
+ # Enter root directory of mpich install
+-MPI_HOME=
++#MPI_HOME=
+ 
+ MPICC=$(shell find ${MPI_HOME} -name mpicc -print)
+ 
+@@ -12,7 +12,7 @@ endif
+ LIB_PATH    =
+ LIBS        = 
+ CC          = ${MPI_HOME}/bin/mpicc 
+-OPTFLAGS    = -O3
++OPTFLAGS    = ${CFLAGS}
+ CLINKER     = ${CC}
+ LDFLAGS     =
+ CPPFLAGS    = 

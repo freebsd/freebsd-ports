@@ -1,6 +1,6 @@
---- zcav.cpp.orig	2009-08-24 07:31:32.060913886 +0000
-+++ zcav.cpp	2009-08-24 07:33:16.257389975 +0000
-@@ -15,9 +15,7 @@
+--- zcav.cpp.orig	2012-11-23 07:26:19 UTC
++++ zcav.cpp
+@@ -15,9 +15,7 @@ void usage()
         , "Usage: zcav [-b block-size[:chunk-size]] [-c count]\n"
           "            [-r [start offset:]end offset] [-w]\n"
           "            [-u uid-to-use:gid-to-use] [-g gid-to-use]\n"
@@ -10,7 +10,7 @@
           "            [-l log-file] [-f] file-name\n"
           "            [-l log-file [-f] file-name]...\n"
           "\n"
-@@ -186,9 +184,7 @@
+@@ -186,9 +184,7 @@ int main(int argc, char *argv[])
    const char *log = "-";
    const char *file = "";
    while(-1 != (c = getopt(argc, argv, "-c:b:f:l:r:w"
@@ -20,7 +20,7 @@
                                       "u:g:")) )
    {
      switch(char(c))
-@@ -225,11 +221,9 @@
+@@ -225,11 +221,9 @@ int main(int argc, char *argv[])
          }
        }
        break;

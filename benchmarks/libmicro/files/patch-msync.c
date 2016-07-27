@@ -1,8 +1,8 @@
---- msync.c.orig	Sat Aug  6 16:14:27 2005
-+++ msync.c	Sat Aug  6 16:14:45 2005
-@@ -7,6 +7,7 @@
- #pragma ident	"@(#)msync.c	1.1	05/08/04 SMI"
- #endif
+--- msync.c.orig	2011-05-11 00:58:23 UTC
++++ msync.c
+@@ -28,6 +28,7 @@
+  * Use is subject to license terms.
+  */
  
 +#include <sys/types.h>
  #include <sys/mman.h>

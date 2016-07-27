@@ -1,6 +1,6 @@
---- ./dbench.c.orig	2011-01-07 14:33:29.000000000 +0000
-+++ ./dbench.c	2011-01-07 14:36:43.000000000 +0000
-@@ -304,7 +304,7 @@
+--- dbench.c.orig	2008-02-18 00:49:35 UTC
++++ dbench.c
+@@ -304,7 +304,7 @@ static void create_procs(int nprocs, voi
  				exit(1);
  			}
  
@@ -9,7 +9,7 @@
  
  			fn(&children[i*options.clients_per_process], options.loadfile);
  			_exit(0);
-@@ -334,7 +334,7 @@
+@@ -334,7 +334,7 @@ static void create_procs(int nprocs, voi
  		exit(1);
  	}
  

@@ -1,0 +1,12 @@
+--- doc/netperf.man.orig	2011-06-30 00:03:05 UTC
++++ doc/netperf.man
+@@ -53,8 +53,7 @@ a test (possibly at the expense of perfo
+ .TP
+ .B \-D [secs,units] (*)
+ Display interim results at least every secs seconds uning units as the
+-initial guess for units per second. This is only available when
+-netperf has been configured with --enable-demo.
++initial guess for units per second.
+ .TP
+ .B \-f GMKgmk
+ Change the units of measure for *_STREAM tests. Capital letters are

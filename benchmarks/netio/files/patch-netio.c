@@ -1,4 +1,4 @@
---- netio.c.orig	2016-06-20 13:21:43 UTC
+--- netio.c.orig	2016-07-27 15:01:12 UTC
 +++ netio.c
 @@ -136,6 +136,7 @@ static char *rcsrev = "$Revision: 1.32 $
  #include <ctype.h>

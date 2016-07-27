@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2014-06-01 10:35:20.000000000 +0200
-+++ ./Makefile.in	2014-06-01 10:36:46.000000000 +0200
-@@ -32,12 +32,12 @@
+--- Makefile.in.orig	2008-02-18 00:49:25 UTC
++++ Makefile.in
+@@ -32,12 +32,12 @@ tbench_srv: $(SRV_OBJS)
  
  # Careful here: don't install client.txt over itself.
  install: all

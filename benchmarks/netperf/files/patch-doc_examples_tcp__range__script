@@ -1,0 +1,11 @@
+--- doc/examples/tcp_range_script.orig	2011-02-10 17:04:20 UTC
++++ doc/examples/tcp_range_script
+@@ -43,7 +43,7 @@ PORT=""
+ # where is netperf, and are there any "constant" options such as 
+ # the netserver port number
+ #NETHOME=/usr/etc/net_perf
+-NETHOME="."
++NETHOME="%%PREFIX%%/bin"
+ NETPERF=$NETHOME/netperf $PORT
+ 
+ # How accurate we want the estimate of performance: 

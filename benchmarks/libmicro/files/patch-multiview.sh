@@ -1,6 +1,6 @@
---- multiview.sh.orig	Wed Aug 17 22:48:57 2005
-+++ multiview.sh	Wed Aug 17 22:49:00 2005
-@@ -40,15 +40,15 @@
+--- multiview.sh.orig	2011-05-11 00:58:23 UTC
++++ multiview.sh
+@@ -38,15 +38,15 @@
  #	the redder the color, the slower the result, the greener the
  #       faster
   
@@ -19,7 +19,7 @@
  	}
  /^\!/ { 
  	split($0, A_header, ":"); 
-@@ -59,7 +59,7 @@
+@@ -57,7 +57,7 @@
  		header_names[name] = ++header_count;
  		headers[header_count] = name;
  	}
@@ -28,7 +28,7 @@
  }
  
  	{ 
-@@ -136,7 +136,7 @@
+@@ -136,7 +136,7 @@ END { 
  				
  			for (j = 2; j < ARGC; j++) 
  				printf("<td>%s</td>\n", "not computed");

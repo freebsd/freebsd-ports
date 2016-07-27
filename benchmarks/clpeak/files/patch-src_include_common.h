@@ -1,4 +1,4 @@
---- src/include/common.h.orig	2016-05-28 05:15:40 UTC
+--- src/include/common.h.orig	2015-11-04 06:03:41 UTC
 +++ src/include/common.h
 @@ -8,13 +8,19 @@
      #include <CL/cl.hpp>
