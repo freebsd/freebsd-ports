@@ -1,4 +1,4 @@
-This module collects ip validation routines to make input validation, and
+This module collects IP validation routines to make input validation, and
 untainting easier and more readable.
 
 All functions return an untainted value if the test passes, and undef if it
