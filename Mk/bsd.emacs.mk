@@ -83,7 +83,7 @@ PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 # Emacs-24.x (development version)
 .elif (${EMACS_PORT_NAME} == "emacs-devel")
 EMACS_NAME=		emacs
-EMACS_VER=		25.0.95
+EMACS_VER=		25.1
 EMACS_MAJOR_VER=	25
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
@@ -97,11 +97,27 @@ DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
 
+.elif (${EMACS_PORT_NAME} == "emacs-nox11")
+EMACS_NAME=		emacs
+EMACS_VER=		24.5
+EMACS_MAJOR_VER=	24
+EMACS_LIBDIR=		share/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER?= share/${EMACS_NAME}/${EMACS_VER}
+EMACS_PORTDIR=		editors/emacs-nox11
+EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		YES
+EMACS_NO_SUBDIRSEL=	NO
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
+
 .else
 check-makevars::
 	@${ECHO} "Makefile error: Bad value of EMACS_PORT_NAME: ${EMACS_PORT_NAME}."
 	@${ECHO} "Valid values are:"
-	@${ECHO} "	Emacs  family: emacs24 emacs-devel"
+	@${ECHO} "	Emacs  family: emacs24 emacs-devel emacs-nox11"
 	@${FALSE}
 .endif
 
