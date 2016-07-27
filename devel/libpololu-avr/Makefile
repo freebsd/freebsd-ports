@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libpololu-avr
-PORTVERSION=	140513
+PORTVERSION=	151002
 CATEGORIES=	devel
 MASTER_SITES=	http://www.pololu.com/file/download/
-EXTRACT_SUFX=	.zip?file_id=0J757
+EXTRACT_SUFX=	.zip?file_id=0J1058
 
 MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Support libraries for Pololu robots
