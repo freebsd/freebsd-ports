@@ -13,7 +13,7 @@ COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png
 
-USES=		jpeg shebangfix zip:infozip
+USES=		compiler:features jpeg shebangfix zip:infozip
 SHEBANG_FILES=	server/rcon.pl server/rcon2irc/rcon2irc.pl
 WRKSRC=		${WRKDIR}/Xonotic
 BUILD_WRKSRC=	${WRKSRC}/source/darkplaces
@@ -25,7 +25,6 @@ MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" \
 		STRIP="${STRIP_CMD}"
 MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	# empty
-USE_GCC=	yes
 
 PORTDATA=	*
 
@@ -39,7 +38,7 @@ CLIENT_LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
 			libtheora.so:multimedia/libtheora \
 			libvorbis.so:audio/libvorbis \
 			libogg.so:audio/libogg
-CLIENT_USE=		SDL=sdl
+CLIENT_USE=		SDL=sdl XORG=x11
 CLIENT_ALL_TARGET=	sdl-release
 CLIENT_PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.ico
 CLIENT_DESKTOP_ENTRIES=	"Xonotic" \
@@ -55,6 +54,13 @@ DEDICATED_PLIST_FILES=	bin/${PORTNAME}-dedicated
 
 ENCRYPTION_DESC=	Build encryption (required for stats submission)
 ENCRYPTION_LIB_DEPENDS=	libd0_rijndael.so:security/d0_blind_id
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} == 42
+# internal compiler error with base gcc
+USE_GCC=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
@@ -81,4 +87,4 @@ do-install-DEDICATED-on:
 do-install-ENCRYPTION-on:
 	${INSTALL_DATA} ${WRKSRC}/key_0.d0pk ${STAGEDIR}${DATADIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
