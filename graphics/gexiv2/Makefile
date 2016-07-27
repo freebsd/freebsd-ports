@@ -3,7 +3,7 @@
 
 PORTNAME=	gexiv2
 PORTVERSION=	0.6.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/libgexiv2/libgexiv2_0.6.1.tar.xz/5bd2ba92b765a2b3721874ebd2647734/
 DISTNAME=	lib${PORTNAME}_${PORTVERSION}

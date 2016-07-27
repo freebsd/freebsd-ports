@@ -1,0 +1,22 @@
+FreeBSD does hat have -ldl. 
+ 
+Instead of unconditionally passing 'dl' to the linker, use cmakes 'CMAKE_DL_LIBS' [1] 
+which handles that properly on all systems.
+
+[1] https://cmake.org/cmake/help/v3.6/variable/CMAKE_DL_LIBS.html
+
+--- src/CMakeLists.txt.orig	2016-07-23 14:00:07 UTC
++++ src/CMakeLists.txt
+@@ -247,9 +247,9 @@ if ( MSVC )
+     TARGET_LINK_LIBRARIES( exiv2lib ${SSH_LIBRARIES} )
+ else()
+     if ( NOT MINGW )
+-        TARGET_LINK_LIBRARIES( exiv2lib dl ${EXPAT_LIBRARIES} )
+-        TARGET_LINK_LIBRARIES( exiv2lib dl ${CURL_LIBRARIES} )
+-        TARGET_LINK_LIBRARIES( exiv2lib dl ${SSH_LIBRARIES} )
++        TARGET_LINK_LIBRARIES( exiv2lib ${CMAKE_DL_LIBS} ${EXPAT_LIBRARIES} )
++        TARGET_LINK_LIBRARIES( exiv2lib ${CMAKE_DL_LIBS} ${CURL_LIBRARIES} )
++        TARGET_LINK_LIBRARIES( exiv2lib ${CMAKE_DL_LIBS} ${SSH_LIBRARIES} )
+     else()
+         TARGET_LINK_LIBRARIES( exiv2lib    ${EXPAT_LIBRARIES} )
+         TARGET_LINK_LIBRARIES( exiv2lib    ${CURL_LIBRARIES} )
