@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	texstudio
-PORTVERSION=	2.10.8
+PORTVERSION=	2.11.0
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TeXstudio%20${PORTVERSION}
 
@@ -14,11 +14,13 @@ USES=		desktop-file-utils dos2unix execinfo ghostscript:run \
 		pkgconfig qmake
 DOS2UNIX_FILES=	${PORTNAME}.pro
 
-_USE_QT4=	gui network script svg xml \
+_USE_QT4=	corelib gui network script svg xml \
 		iconengines_run designer_build moc_build rcc_build uic_build
-_USE_QT5=	gui network script svg xml \
+_USE_QT5=	core gui network script svg widgets xml \
 		printsupport concurrent uitools buildtools_build
 
+USE_XORG=	x11
+USE_GL=		gl
 USE_TEX=	latex dvipsk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
