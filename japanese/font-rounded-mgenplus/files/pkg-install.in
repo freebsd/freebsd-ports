@@ -1,0 +1,121 @@
+#!/bin/sh
+# $FreeBSD$
+
+catfontsdir()
+{
+    while read _IN
+    do
+      case "${_IN}" in
+      *"-adobe-rounded mgen+"*|[0-9]*|"") ;;
+      *)       echo ${_IN} ;;
+      esac
+    done
+}
+
+ROMA=""
+BOLD="ds=y"
+ITAL="ai=0.15"
+OBLI="ai=0.15"
+RITA="ai=0.08"
+ROBL="ai=0.08"
+
+make_xlfd()
+{
+	_enc=$1
+	_file=$2
+	_vendor=$3
+	_fname=$4
+	_poc=$5
+	_weight=$6
+
+	[ -r ${_file} ] || return
+
+	case "${_poc}:${_enc}" in
+	p:jisx0201.1976-*)	PFIX="bw=0.5" ;;
+	c:jisx0201.1976-*)	PFIX="bw=0.5" ;;
+	p:*)			PFIX="" ;;
+	c:*)			PFIX="" ;;
+	esac
+
+	set --	""	${_weight}-r \
+		${ITAL} ${_weight}-i \
+		${OBLI}	${_weight}-o \
+		${RITA}	${_weight}-ri \
+		${ROBL}	${_weight}-ro
+	while [ $# != 0 ]; do
+		_prefix="${PFIX}:$1"; shift
+		_variant=$1; shift
+		[ ${index_type} = "scale" -a ${_prefix} != ":" ] && continue
+		printf "%s:%s -%s-%s-%s-normal--0-0-0-0-%s-0-%s\n" \
+		       $_prefix $_file $_vendor "$_fname" $_variant $_poc $_enc
+	done | sed -e 's,::,:,g' -e 's,^:,,'
+}
+
+addentries()
+{
+	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0 jisx0208.1997-0 jisx0213.2004-1
+	do
+		for FAM in 1c 1cp 1p 1pp 2c 2cp 2p 2pp
+		do
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-black.ttf adobe "rounded mgen+ ${FAM}" p black
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-bold.ttf adobe "rounded mgen+ ${FAM}" p bold
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-heavy.ttf adobe "rounded mgen+ ${FAM}" p extrabold
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-light.ttf adobe "rounded mgen+ ${FAM}" p extralight
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-medium.ttf adobe "rounded mgen+ ${FAM}" p medium
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-regular.ttf adobe "rounded mgen+ ${FAM}" p book
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-thin.ttf adobe "rounded mgen+ ${FAM}" p thin
+		done
+		for FAM in 1m 1mn 2m
+		do
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-bold.ttf adobe "rounded mgen+ ${FAM}" c bold
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-light.ttf adobe "rounded mgen+ ${FAM}" c extralight
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-medium.ttf adobe "rounded mgen+ ${FAM}" c medium
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-regular.ttf adobe "rounded mgen+ ${FAM}" c book
+			make_xlfd ${ENC} rounded-mgenplus-${FAM}-thin.ttf adobe "rounded mgen+ ${FAM}" c thin
+		done
+	done
+}
+
+nfonts()
+{
+    _L=0; while read _IN; do _L=$((${_L}+1)); done; echo ${_L}
+}
+
+install_fontsdir()
+{
+	index_type=${1:-"dir"}
+	index="fonts.${index_type}"
+	tmpfile="${index}.tmp"
+	touch ${index}
+	(catfontsdir < ${index}; addentries ${index_type}) > ${tmpfile}
+	nfonts < ${tmpfile} > ${index}
+	cat ${tmpfile} >> ${index}
+	rm -f ${tmpfile}
+}
+
+deinstall_fontsdir()
+{
+	index_type=${1:-"dir"}
+	index="fonts.${index_type}"
+	tmpfile="${index}.tmp"
+	catfontsdir < ${index} > ${tmpfile}
+	nfonts < ${tmpfile} > ${index}
+	cat ${tmpfile} >> ${index}
+	rm -f ${tmpfile}
+	if [ -r ${index} -a $(wc -l < ${index}) = 1 ]; then
+		rm -f ${index}
+	fi
+}
+
+case "$2" in
+POST-INSTALL)
+	cd %%FONTSDIR%%
+	install_fontsdir dir
+	install_fontsdir scale
+	;;
+POST-DEINSTALL)
+	cd %%FONTSDIR%%
+	deinstall_fontsdir dir
+	deinstall_fontsdir scale
+	;;
+esac
