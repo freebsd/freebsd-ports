@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20160722:
+  AFFECTS: users of emulators/virtualbox-ose
+  AUTHOR: jkim@FreeBSD.org
+
+  VirtualBox has been updated to 5.0.26 and it is incompatible with old
+  kernel modules.  You should upgrade emulators/virtualbox-ose-kmod and
+  load new kernel modules before starting new version, e.g.,
+
+  # service vboxnet restart
+
+20160722:
   AFFECTS: users of games/stonesoup-*
   AUTHOR: lifanov@mail.lifanov.com
 
