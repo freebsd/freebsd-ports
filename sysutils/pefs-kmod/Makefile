@@ -24,10 +24,22 @@ OPTIONS_DEFINE=	AESNI
 OPTIONS_DEFAULT=
 AESNI_DESC=	Enable AES-NI hardware acceleration
 
+PLIST_FILES=	sbin/pefs \
+		lib/pam_pefs.so \
+		man/man8/pam_pefs.8.gz \
+		man/man8/pefs.8.gz \
+		/${KMODDIR}/pefs.ko
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAESNI}
 MAKE_ENV+=	PEFS_AESNI=yes
+.endif
+
+.if ${OSVERSION} >= 1100117
+PLIST_FILES+=	lib/pam_pefs.so.6
+.else
+PLIST_FILES+=	lib/pam_pefs.so.5
 .endif
 
 .include <bsd.port.mk>
