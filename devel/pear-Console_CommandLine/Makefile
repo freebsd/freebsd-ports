@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Console_CommandLine
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Full featured command line options and arguments parser
 
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USES=		pear
+USES=		pear php
+USE_PHP=	dom
 
 .include <bsd.port.mk>
