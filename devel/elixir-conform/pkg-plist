@@ -2,6 +2,7 @@ lib/elixir/lib/conform/ebin/Elixir.Conform.Conf.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Options.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Parse.ParseError.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Parse.beam
+lib/elixir/lib/conform/ebin/Elixir.Conform.ReleasePlugin.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Schema.Mapping.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Schema.SchemaError.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Schema.Transform.beam
@@ -20,11 +21,12 @@ lib/elixir/lib/conform/ebin/Elixir.Mix.Tasks.Conform.Archive.beam
 lib/elixir/lib/conform/ebin/Elixir.Mix.Tasks.Conform.Configure.beam
 lib/elixir/lib/conform/ebin/Elixir.Mix.Tasks.Conform.Effective.beam
 lib/elixir/lib/conform/ebin/Elixir.Mix.Tasks.Conform.New.beam
-lib/elixir/lib/conform/ebin/conf_parse.beam
 lib/elixir/lib/conform/ebin/conform.app
+lib/elixir/lib/conform/ebin/conform_parse.beam
 lib/elixir/lib/conform/lib/conform.ex
 lib/elixir/lib/conform/lib/conform/conf.ex
 lib/elixir/lib/conform/lib/conform/parse.ex
+lib/elixir/lib/conform/lib/conform/releases/plugin.ex
 lib/elixir/lib/conform/lib/conform/schema.ex
 lib/elixir/lib/conform/lib/conform/schema/mapping.ex
 lib/elixir/lib/conform/lib/conform/schema/transform.ex
@@ -41,4 +43,5 @@ lib/elixir/lib/conform/lib/mix/tasks/conform.configure.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.effective.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.new.ex
 lib/elixir/lib/conform/priv/bin/conform
+lib/elixir/lib/conform/priv/bin/pre_start.sh
 %%PORTDOCS%%%%DOCSDIR%%/README.md
