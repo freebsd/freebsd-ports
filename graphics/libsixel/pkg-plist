@@ -5,7 +5,7 @@ include/sixel.h
 lib/libsixel.a
 lib/libsixel.so
 lib/libsixel.so.1
-lib/libsixel.so.1.0.5
+lib/libsixel.so.1.0.6
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsixel/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsixel/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsixel/__init__.pyo
