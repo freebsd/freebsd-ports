@@ -5,4 +5,3 @@ man/mann/thread.n.gz
 man/mann/tpool.n.gz
 man/mann/tsv.n.gz
 man/mann/ttrace.n.gz
-include/tclThread.h
