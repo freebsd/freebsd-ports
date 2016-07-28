@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	thread
-PORTVERSION=	2.7.3
+PORTVERSION=	2.8.0
 CATEGORIES=	devel
-MASTER_SITES=	SF/tcl/Thread%20Extension/${PORTVERSION}
+MASTER_SITES=	SF/tcl/Tcl/8.6.6/
 PKGNAMEPREFIX=	tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
@@ -21,14 +21,17 @@ USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
 
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
-INSTALL_TARGET=	install-binaries install-libraries install-doc
+INSTALL_TARGET=	install-binaries install-doc
 TEST_TARGET=	test
 
-OPTIONS_DEFINE=	GDBM DOCS
+OPTIONS_DEFINE=	DOCS GDBM LMDB
 OPTIONS_DEFAULT=GDBM
 GDBM_DESC=	Persistent shared variables using GDBM
+LMDB_DESC=	Persistent shared variables using LMDB
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_CONFIGURE_WITH=	lmdb
 
 PORTDOCS=	*
 
@@ -41,8 +44,6 @@ post-install:
 .for FILE in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.for FILE in thread.html tpool.html tsv.html ttrace.html
-	${INSTALL_DATA} ${WRKSRC}/doc/html/${FILE} ${STAGEDIR}${DOCSDIR}/html
-.endfor
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html
 
 .include <bsd.port.mk>
