@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		zsh-navigation-tools
-PORTVERSION=		2.1.15
+PORTVERSION=		2.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		shells
 
