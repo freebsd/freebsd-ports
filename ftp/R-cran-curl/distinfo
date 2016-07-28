@@ -1,2 +1,3 @@
-SHA256 (curl_0.9.7.tar.gz) = 46e150998723fd1937da598f47f49fe47e40c1f57ec594436c6ef1e0145b44dc
-SIZE (curl_0.9.7.tar.gz) = 263926
+TIMESTAMP = 1469528190
+SHA256 (curl_1.0.tar.gz) = f8927228754fdfb21dbf08b9e67c5f97e06764c4adf327a4126eed84b1508f3d
+SIZE (curl_1.0.tar.gz) = 283402
