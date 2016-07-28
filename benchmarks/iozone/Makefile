@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iozone
-DISTVERSION=	3_434
-PORTREVISION=	1
+DISTVERSION=	3_457
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${DISTVERSION}
