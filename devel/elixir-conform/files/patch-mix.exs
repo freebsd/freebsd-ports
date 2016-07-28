@@ -1,12 +1,12 @@
---- mix.exs.orig	2016-03-01 19:24:43 UTC
+--- mix.exs.orig	2016-07-28 11:30:56 UTC
 +++ mix.exs
-@@ -14,8 +14,7 @@ defmodule Conform.Mixfile do
-      escript: [main_module: Conform],
-      compilers: compilers(@do_peg_compile?),
-      description: description,
--     package: package,
--     deps: deps]
-+     package: package]
+@@ -26,8 +26,7 @@ defmodule Conform.Mixfile do
+   defp compilers(_),    do: nil
+ 
+   defp deps do
+-    [{:neotoma, "~> 1.7.3"},
+-     {:ex_doc, "~> 0.13", only: :dev}]
++    []
    end
  
-   def application do
+   defp description, do: "Easy release configuration for Elixir apps."
