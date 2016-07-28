@@ -1,6 +1,6 @@
---- configure.orig	2014-08-27 18:23:13.000000000 +0200
-+++ configure	2014-08-29 13:46:28.000000000 +0200
-@@ -5606,15 +5606,11 @@
+--- configure.orig	2016-07-26 14:07:50 UTC
++++ configure
+@@ -5456,15 +5456,11 @@ fi
  		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
  fi
  
