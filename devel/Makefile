@@ -4453,6 +4453,7 @@
     SUBDIR += py-snack
     SUBDIR += py-snackwich
     SUBDIR += py-sortedcontainers
+    SUBDIR += py-sourcemap
     SUBDIR += py-spark
     SUBDIR += py-speaklater
     SUBDIR += py-spyder
