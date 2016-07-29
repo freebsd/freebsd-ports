@@ -33,6 +33,9 @@ MAKE_FLAGS=	fmts= all_mems=
 BROKEN=		Segfault during build on ia64
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e "s/getline/get_line/g" ${WRKSRC}/web2c/tangleboot.*
+
 pre-configure:
 	cd ${WRKDIR} && ${FIND} . -name \*.gz | ${XARGS} ${GUNZIP_CMD} -f
 
